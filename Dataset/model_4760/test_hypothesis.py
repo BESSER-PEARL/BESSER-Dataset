@@ -3,52 +3,52 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    effbdpattern::Impact,
+from python_code import (
+    effbdpattern_Impact,
     AbstractModel,
-    effbdpattern::PatternModel,
-    effbdpattern::Force,
-    effbdpattern::Parameter,
-    effbdpattern::Indexable,
+    effbdpattern_PatternModel,
+    effbdpattern_Force,
+    effbdpattern_Parameter,
+    effbdpattern_Indexable,
     Indexable,
-    effbdpattern::AbstractModel,
-    effbdpattern::ModelElement,
-    effbdpattern::Allocation,
-    effbdpattern::Keyword,
-    effbdpattern::Domain,
-    effbdpattern::Problem,
-    effbdpattern::Workbench,
-    effbdpattern::SystemPattern,
-    effbdpattern::PatternCatalog,
-    effbdpattern::Model,
-    effbdpattern::Context,
-    effbdpattern::Condition,
-    effbdpattern::Feature,
+    effbdpattern_AbstractModel,
+    effbdpattern_ModelElement,
+    effbdpattern_Allocation,
+    effbdpattern_Keyword,
+    effbdpattern_Domain,
+    effbdpattern_Problem,
+    effbdpattern_Workbench,
+    effbdpattern_SystemPattern,
+    effbdpattern_PatternCatalog,
+    effbdpattern_Model,
+    effbdpattern_Context,
+    effbdpattern_Condition,
+    effbdpattern_Feature,
     Port,
     Sequence,
-    effbdpattern::Loop,
-    effbdpattern::Iteration,
-    effbdpattern::Or,
-    effbdpattern::Start,
-    effbdpattern::Final,
-    effbdpattern::LoopExit,
-    effbdpattern::And,
-    effbdpattern::SequenceNode,
-    effbdpattern::Item,
-    effbdpattern::FunctionProperty,
-    effbdpattern::Port,
-    effbdpattern::Token,
-    effbdpattern::Description,
-    effbdpattern::InputPort,
-    effbdpattern::OutputPort,
-    effbdpattern::Flow,
+    effbdpattern_Final,
+    effbdpattern_Or,
+    effbdpattern_LoopExit,
+    effbdpattern_Loop,
+    effbdpattern_Iteration,
+    effbdpattern_Start,
+    effbdpattern_And,
+    effbdpattern_SequenceNode,
+    effbdpattern_Item,
+    effbdpattern_FunctionProperty,
+    effbdpattern_Port,
+    effbdpattern_Token,
+    effbdpattern_Description,
+    effbdpattern_InputPort,
+    effbdpattern_OutputPort,
+    effbdpattern_Flow,
     ModelElement,
-    effbdpattern::Component,
+    effbdpattern_Component,
     SequenceNode,
-    effbdpattern::Sequence,
-    effbdpattern::Function,
+    effbdpattern_Sequence,
+    effbdpattern_Function,
     FunctionDomain,
 )
 
@@ -58,33 +58,33 @@ from classes import (
 
 
 
-def test_effbdpattern::impact_is_not_abstract():
-    assert not inspect.isabstract(effbdpattern::Impact)
+def test_effbdpattern_impact_is_not_abstract():
+    assert not inspect.isabstract(effbdpattern_Impact)
 
 
-def test_effbdpattern::impact_constructor_exists():
-    assert callable(effbdpattern::Impact.__init__)
+def test_effbdpattern_impact_constructor_exists():
+    assert callable(effbdpattern_Impact.__init__)
 
 
-def test_effbdpattern::impact_constructor_args():
-    sig = inspect.signature(effbdpattern::Impact.__init__)
+def test_effbdpattern_impact_constructor_args():
+    sig = inspect.signature(effbdpattern_Impact.__init__)
     params = list(sig.parameters.keys())
     assert "scale" in params, "Missing parameter 'scale'"
     assert "value" in params, "Missing parameter 'value'"
 
-def test_effbdpattern::impact_has_scale():
-    assert hasattr(effbdpattern::Impact, "scale")
+def test_effbdpattern_impact_has_scale():
+    assert hasattr(effbdpattern_Impact, "scale")
     descriptor = None
-    for klass in effbdpattern::Impact.__mro__:
+    for klass in effbdpattern_Impact.__mro__:
         if "scale" in klass.__dict__:
             descriptor = klass.__dict__["scale"]
             break
     assert isinstance(descriptor, property)
 
-def test_effbdpattern::impact_has_value():
-    assert hasattr(effbdpattern::Impact, "value")
+def test_effbdpattern_impact_has_value():
+    assert hasattr(effbdpattern_Impact, "value")
     descriptor = None
-    for klass in effbdpattern::Impact.__mro__:
+    for klass in effbdpattern_Impact.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -106,81 +106,81 @@ def test_abstractmodel_constructor_args():
 
 
 
-def test_effbdpattern::patternmodel_is_not_abstract():
-    assert not inspect.isabstract(effbdpattern::PatternModel)
+def test_effbdpattern_patternmodel_is_not_abstract():
+    assert not inspect.isabstract(effbdpattern_PatternModel)
 
 
-def test_effbdpattern::patternmodel_constructor_exists():
-    assert callable(effbdpattern::PatternModel.__init__)
+def test_effbdpattern_patternmodel_constructor_exists():
+    assert callable(effbdpattern_PatternModel.__init__)
 
 
-def test_effbdpattern::patternmodel_constructor_args():
-    sig = inspect.signature(effbdpattern::PatternModel.__init__)
+def test_effbdpattern_patternmodel_constructor_args():
+    sig = inspect.signature(effbdpattern_PatternModel.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_effbdpattern::force_is_not_abstract():
-    assert not inspect.isabstract(effbdpattern::Force)
+def test_effbdpattern_force_is_not_abstract():
+    assert not inspect.isabstract(effbdpattern_Force)
 
 
-def test_effbdpattern::force_constructor_exists():
-    assert callable(effbdpattern::Force.__init__)
+def test_effbdpattern_force_constructor_exists():
+    assert callable(effbdpattern_Force.__init__)
 
 
-def test_effbdpattern::force_constructor_args():
-    sig = inspect.signature(effbdpattern::Force.__init__)
+def test_effbdpattern_force_constructor_args():
+    sig = inspect.signature(effbdpattern_Force.__init__)
     params = list(sig.parameters.keys())
-    assert "scale" in params, "Missing parameter 'scale'"
-    assert "value" in params, "Missing parameter 'value'"
     assert "description" in params, "Missing parameter 'description'"
+    assert "value" in params, "Missing parameter 'value'"
+    assert "scale" in params, "Missing parameter 'scale'"
 
-def test_effbdpattern::force_has_scale():
-    assert hasattr(effbdpattern::Force, "scale")
+def test_effbdpattern_force_has_description():
+    assert hasattr(effbdpattern_Force, "description")
     descriptor = None
-    for klass in effbdpattern::Force.__mro__:
-        if "scale" in klass.__dict__:
-            descriptor = klass.__dict__["scale"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_effbdpattern::force_has_value():
-    assert hasattr(effbdpattern::Force, "value")
-    descriptor = None
-    for klass in effbdpattern::Force.__mro__:
-        if "value" in klass.__dict__:
-            descriptor = klass.__dict__["value"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_effbdpattern::force_has_description():
-    assert hasattr(effbdpattern::Force, "description")
-    descriptor = None
-    for klass in effbdpattern::Force.__mro__:
+    for klass in effbdpattern_Force.__mro__:
         if "description" in klass.__dict__:
             descriptor = klass.__dict__["description"]
             break
     assert isinstance(descriptor, property)
 
+def test_effbdpattern_force_has_value():
+    assert hasattr(effbdpattern_Force, "value")
+    descriptor = None
+    for klass in effbdpattern_Force.__mro__:
+        if "value" in klass.__dict__:
+            descriptor = klass.__dict__["value"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_effbdpattern_force_has_scale():
+    assert hasattr(effbdpattern_Force, "scale")
+    descriptor = None
+    for klass in effbdpattern_Force.__mro__:
+        if "scale" in klass.__dict__:
+            descriptor = klass.__dict__["scale"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_effbdpattern::parameter_is_not_abstract():
-    assert not inspect.isabstract(effbdpattern::Parameter)
+
+def test_effbdpattern_parameter_is_not_abstract():
+    assert not inspect.isabstract(effbdpattern_Parameter)
 
 
-def test_effbdpattern::parameter_constructor_exists():
-    assert callable(effbdpattern::Parameter.__init__)
+def test_effbdpattern_parameter_constructor_exists():
+    assert callable(effbdpattern_Parameter.__init__)
 
 
-def test_effbdpattern::parameter_constructor_args():
-    sig = inspect.signature(effbdpattern::Parameter.__init__)
+def test_effbdpattern_parameter_constructor_args():
+    sig = inspect.signature(effbdpattern_Parameter.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_effbdpattern::parameter_has_name():
-    assert hasattr(effbdpattern::Parameter, "name")
+def test_effbdpattern_parameter_has_name():
+    assert hasattr(effbdpattern_Parameter, "name")
     descriptor = None
-    for klass in effbdpattern::Parameter.__mro__:
+    for klass in effbdpattern_Parameter.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -188,16 +188,16 @@ def test_effbdpattern::parameter_has_name():
 
 
 
-def test_effbdpattern::indexable_is_not_abstract():
-    assert not inspect.isabstract(effbdpattern::Indexable)
+def test_effbdpattern_indexable_is_not_abstract():
+    assert not inspect.isabstract(effbdpattern_Indexable)
 
 
-def test_effbdpattern::indexable_constructor_exists():
-    assert callable(effbdpattern::Indexable.__init__)
+def test_effbdpattern_indexable_constructor_exists():
+    assert callable(effbdpattern_Indexable.__init__)
 
 
-def test_effbdpattern::indexable_constructor_args():
-    sig = inspect.signature(effbdpattern::Indexable.__init__)
+def test_effbdpattern_indexable_constructor_args():
+    sig = inspect.signature(effbdpattern_Indexable.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -216,101 +216,101 @@ def test_indexable_constructor_args():
 
 
 
-def test_effbdpattern::abstractmodel_is_not_abstract():
-    assert not inspect.isabstract(effbdpattern::AbstractModel)
+def test_effbdpattern_abstractmodel_is_not_abstract():
+    assert not inspect.isabstract(effbdpattern_AbstractModel)
 
 
-def test_effbdpattern::abstractmodel_constructor_exists():
-    assert callable(effbdpattern::AbstractModel.__init__)
+def test_effbdpattern_abstractmodel_constructor_exists():
+    assert callable(effbdpattern_AbstractModel.__init__)
 
 
-def test_effbdpattern::abstractmodel_constructor_args():
-    sig = inspect.signature(effbdpattern::AbstractModel.__init__)
+def test_effbdpattern_abstractmodel_constructor_args():
+    sig = inspect.signature(effbdpattern_AbstractModel.__init__)
     params = list(sig.parameters.keys())
-    assert "version" in params, "Missing parameter 'version'"
     assert "name" in params, "Missing parameter 'name'"
+    assert "version" in params, "Missing parameter 'version'"
 
-def test_effbdpattern::abstractmodel_has_version():
-    assert hasattr(effbdpattern::AbstractModel, "version")
+def test_effbdpattern_abstractmodel_has_name():
+    assert hasattr(effbdpattern_AbstractModel, "name")
     descriptor = None
-    for klass in effbdpattern::AbstractModel.__mro__:
-        if "version" in klass.__dict__:
-            descriptor = klass.__dict__["version"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_effbdpattern::abstractmodel_has_name():
-    assert hasattr(effbdpattern::AbstractModel, "name")
-    descriptor = None
-    for klass in effbdpattern::AbstractModel.__mro__:
+    for klass in effbdpattern_AbstractModel.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
-
-
-def test_effbdpattern::modelelement_is_not_abstract():
-    assert not inspect.isabstract(effbdpattern::ModelElement)
-
-
-def test_effbdpattern::modelelement_constructor_exists():
-    assert callable(effbdpattern::ModelElement.__init__)
-
-
-def test_effbdpattern::modelelement_constructor_args():
-    sig = inspect.signature(effbdpattern::ModelElement.__init__)
-    params = list(sig.parameters.keys())
-    assert "modelName" in params, "Missing parameter 'modelName'"
-    assert "modelId" in params, "Missing parameter 'modelId'"
-
-def test_effbdpattern::modelelement_has_modelName():
-    assert hasattr(effbdpattern::ModelElement, "modelName")
+def test_effbdpattern_abstractmodel_has_version():
+    assert hasattr(effbdpattern_AbstractModel, "version")
     descriptor = None
-    for klass in effbdpattern::ModelElement.__mro__:
-        if "modelName" in klass.__dict__:
-            descriptor = klass.__dict__["modelName"]
+    for klass in effbdpattern_AbstractModel.__mro__:
+        if "version" in klass.__dict__:
+            descriptor = klass.__dict__["version"]
             break
     assert isinstance(descriptor, property)
 
-def test_effbdpattern::modelelement_has_modelId():
-    assert hasattr(effbdpattern::ModelElement, "modelId")
+
+
+def test_effbdpattern_modelelement_is_not_abstract():
+    assert not inspect.isabstract(effbdpattern_ModelElement)
+
+
+def test_effbdpattern_modelelement_constructor_exists():
+    assert callable(effbdpattern_ModelElement.__init__)
+
+
+def test_effbdpattern_modelelement_constructor_args():
+    sig = inspect.signature(effbdpattern_ModelElement.__init__)
+    params = list(sig.parameters.keys())
+    assert "modelId" in params, "Missing parameter 'modelId'"
+    assert "modelName" in params, "Missing parameter 'modelName'"
+
+def test_effbdpattern_modelelement_has_modelId():
+    assert hasattr(effbdpattern_ModelElement, "modelId")
     descriptor = None
-    for klass in effbdpattern::ModelElement.__mro__:
+    for klass in effbdpattern_ModelElement.__mro__:
         if "modelId" in klass.__dict__:
             descriptor = klass.__dict__["modelId"]
             break
     assert isinstance(descriptor, property)
 
+def test_effbdpattern_modelelement_has_modelName():
+    assert hasattr(effbdpattern_ModelElement, "modelName")
+    descriptor = None
+    for klass in effbdpattern_ModelElement.__mro__:
+        if "modelName" in klass.__dict__:
+            descriptor = klass.__dict__["modelName"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_effbdpattern::allocation_is_not_abstract():
-    assert not inspect.isabstract(effbdpattern::Allocation)
+
+def test_effbdpattern_allocation_is_not_abstract():
+    assert not inspect.isabstract(effbdpattern_Allocation)
 
 
-def test_effbdpattern::allocation_constructor_exists():
-    assert callable(effbdpattern::Allocation.__init__)
+def test_effbdpattern_allocation_constructor_exists():
+    assert callable(effbdpattern_Allocation.__init__)
 
 
-def test_effbdpattern::allocation_constructor_args():
-    sig = inspect.signature(effbdpattern::Allocation.__init__)
+def test_effbdpattern_allocation_constructor_args():
+    sig = inspect.signature(effbdpattern_Allocation.__init__)
     params = list(sig.parameters.keys())
     assert "id" in params, "Missing parameter 'id'"
     assert "redundant" in params, "Missing parameter 'redundant'"
 
-def test_effbdpattern::allocation_has_id():
-    assert hasattr(effbdpattern::Allocation, "id")
+def test_effbdpattern_allocation_has_id():
+    assert hasattr(effbdpattern_Allocation, "id")
     descriptor = None
-    for klass in effbdpattern::Allocation.__mro__:
+    for klass in effbdpattern_Allocation.__mro__:
         if "id" in klass.__dict__:
             descriptor = klass.__dict__["id"]
             break
     assert isinstance(descriptor, property)
 
-def test_effbdpattern::allocation_has_redundant():
-    assert hasattr(effbdpattern::Allocation, "redundant")
+def test_effbdpattern_allocation_has_redundant():
+    assert hasattr(effbdpattern_Allocation, "redundant")
     descriptor = None
-    for klass in effbdpattern::Allocation.__mro__:
+    for klass in effbdpattern_Allocation.__mro__:
         if "redundant" in klass.__dict__:
             descriptor = klass.__dict__["redundant"]
             break
@@ -318,23 +318,23 @@ def test_effbdpattern::allocation_has_redundant():
 
 
 
-def test_effbdpattern::keyword_is_not_abstract():
-    assert not inspect.isabstract(effbdpattern::Keyword)
+def test_effbdpattern_keyword_is_not_abstract():
+    assert not inspect.isabstract(effbdpattern_Keyword)
 
 
-def test_effbdpattern::keyword_constructor_exists():
-    assert callable(effbdpattern::Keyword.__init__)
+def test_effbdpattern_keyword_constructor_exists():
+    assert callable(effbdpattern_Keyword.__init__)
 
 
-def test_effbdpattern::keyword_constructor_args():
-    sig = inspect.signature(effbdpattern::Keyword.__init__)
+def test_effbdpattern_keyword_constructor_args():
+    sig = inspect.signature(effbdpattern_Keyword.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
 
-def test_effbdpattern::keyword_has_value():
-    assert hasattr(effbdpattern::Keyword, "value")
+def test_effbdpattern_keyword_has_value():
+    assert hasattr(effbdpattern_Keyword, "value")
     descriptor = None
-    for klass in effbdpattern::Keyword.__mro__:
+    for klass in effbdpattern_Keyword.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -342,33 +342,33 @@ def test_effbdpattern::keyword_has_value():
 
 
 
-def test_effbdpattern::domain_is_not_abstract():
-    assert not inspect.isabstract(effbdpattern::Domain)
+def test_effbdpattern_domain_is_not_abstract():
+    assert not inspect.isabstract(effbdpattern_Domain)
 
 
-def test_effbdpattern::domain_constructor_exists():
-    assert callable(effbdpattern::Domain.__init__)
+def test_effbdpattern_domain_constructor_exists():
+    assert callable(effbdpattern_Domain.__init__)
 
 
-def test_effbdpattern::domain_constructor_args():
-    sig = inspect.signature(effbdpattern::Domain.__init__)
+def test_effbdpattern_domain_constructor_args():
+    sig = inspect.signature(effbdpattern_Domain.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
     assert "description" in params, "Missing parameter 'description'"
 
-def test_effbdpattern::domain_has_name():
-    assert hasattr(effbdpattern::Domain, "name")
+def test_effbdpattern_domain_has_name():
+    assert hasattr(effbdpattern_Domain, "name")
     descriptor = None
-    for klass in effbdpattern::Domain.__mro__:
+    for klass in effbdpattern_Domain.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
-def test_effbdpattern::domain_has_description():
-    assert hasattr(effbdpattern::Domain, "description")
+def test_effbdpattern_domain_has_description():
+    assert hasattr(effbdpattern_Domain, "description")
     descriptor = None
-    for klass in effbdpattern::Domain.__mro__:
+    for klass in effbdpattern_Domain.__mro__:
         if "description" in klass.__dict__:
             descriptor = klass.__dict__["description"]
             break
@@ -376,33 +376,33 @@ def test_effbdpattern::domain_has_description():
 
 
 
-def test_effbdpattern::problem_is_not_abstract():
-    assert not inspect.isabstract(effbdpattern::Problem)
+def test_effbdpattern_problem_is_not_abstract():
+    assert not inspect.isabstract(effbdpattern_Problem)
 
 
-def test_effbdpattern::problem_constructor_exists():
-    assert callable(effbdpattern::Problem.__init__)
+def test_effbdpattern_problem_constructor_exists():
+    assert callable(effbdpattern_Problem.__init__)
 
 
-def test_effbdpattern::problem_constructor_args():
-    sig = inspect.signature(effbdpattern::Problem.__init__)
+def test_effbdpattern_problem_constructor_args():
+    sig = inspect.signature(effbdpattern_Problem.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
     assert "description" in params, "Missing parameter 'description'"
 
-def test_effbdpattern::problem_has_name():
-    assert hasattr(effbdpattern::Problem, "name")
+def test_effbdpattern_problem_has_name():
+    assert hasattr(effbdpattern_Problem, "name")
     descriptor = None
-    for klass in effbdpattern::Problem.__mro__:
+    for klass in effbdpattern_Problem.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
-def test_effbdpattern::problem_has_description():
-    assert hasattr(effbdpattern::Problem, "description")
+def test_effbdpattern_problem_has_description():
+    assert hasattr(effbdpattern_Problem, "description")
     descriptor = None
-    for klass in effbdpattern::Problem.__mro__:
+    for klass in effbdpattern_Problem.__mro__:
         if "description" in klass.__dict__:
             descriptor = klass.__dict__["description"]
             break
@@ -410,121 +410,121 @@ def test_effbdpattern::problem_has_description():
 
 
 
-def test_effbdpattern::workbench_is_not_abstract():
-    assert not inspect.isabstract(effbdpattern::Workbench)
+def test_effbdpattern_workbench_is_not_abstract():
+    assert not inspect.isabstract(effbdpattern_Workbench)
 
 
-def test_effbdpattern::workbench_constructor_exists():
-    assert callable(effbdpattern::Workbench.__init__)
+def test_effbdpattern_workbench_constructor_exists():
+    assert callable(effbdpattern_Workbench.__init__)
 
 
-def test_effbdpattern::workbench_constructor_args():
-    sig = inspect.signature(effbdpattern::Workbench.__init__)
+def test_effbdpattern_workbench_constructor_args():
+    sig = inspect.signature(effbdpattern_Workbench.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_effbdpattern::systempattern_is_not_abstract():
-    assert not inspect.isabstract(effbdpattern::SystemPattern)
+def test_effbdpattern_systempattern_is_not_abstract():
+    assert not inspect.isabstract(effbdpattern_SystemPattern)
 
 
-def test_effbdpattern::systempattern_constructor_exists():
-    assert callable(effbdpattern::SystemPattern.__init__)
+def test_effbdpattern_systempattern_constructor_exists():
+    assert callable(effbdpattern_SystemPattern.__init__)
 
 
-def test_effbdpattern::systempattern_constructor_args():
-    sig = inspect.signature(effbdpattern::SystemPattern.__init__)
+def test_effbdpattern_systempattern_constructor_args():
+    sig = inspect.signature(effbdpattern_SystemPattern.__init__)
     params = list(sig.parameters.keys())
+    assert "description" in params, "Missing parameter 'description'"
+    assert "creationDate" in params, "Missing parameter 'creationDate'"
     assert "alias" in params, "Missing parameter 'alias'"
     assert "name" in params, "Missing parameter 'name'"
-    assert "creationDate" in params, "Missing parameter 'creationDate'"
     assert "challeng" in params, "Missing parameter 'challeng'"
     assert "patternId" in params, "Missing parameter 'patternId'"
     assert "knownApplications" in params, "Missing parameter 'knownApplications'"
-    assert "description" in params, "Missing parameter 'description'"
 
-def test_effbdpattern::systempattern_has_alias():
-    assert hasattr(effbdpattern::SystemPattern, "alias")
+def test_effbdpattern_systempattern_has_description():
+    assert hasattr(effbdpattern_SystemPattern, "description")
     descriptor = None
-    for klass in effbdpattern::SystemPattern.__mro__:
-        if "alias" in klass.__dict__:
-            descriptor = klass.__dict__["alias"]
+    for klass in effbdpattern_SystemPattern.__mro__:
+        if "description" in klass.__dict__:
+            descriptor = klass.__dict__["description"]
             break
     assert isinstance(descriptor, property)
 
-def test_effbdpattern::systempattern_has_name():
-    assert hasattr(effbdpattern::SystemPattern, "name")
+def test_effbdpattern_systempattern_has_creationDate():
+    assert hasattr(effbdpattern_SystemPattern, "creationDate")
     descriptor = None
-    for klass in effbdpattern::SystemPattern.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_effbdpattern::systempattern_has_creationDate():
-    assert hasattr(effbdpattern::SystemPattern, "creationDate")
-    descriptor = None
-    for klass in effbdpattern::SystemPattern.__mro__:
+    for klass in effbdpattern_SystemPattern.__mro__:
         if "creationDate" in klass.__dict__:
             descriptor = klass.__dict__["creationDate"]
             break
     assert isinstance(descriptor, property)
 
-def test_effbdpattern::systempattern_has_challeng():
-    assert hasattr(effbdpattern::SystemPattern, "challeng")
+def test_effbdpattern_systempattern_has_alias():
+    assert hasattr(effbdpattern_SystemPattern, "alias")
     descriptor = None
-    for klass in effbdpattern::SystemPattern.__mro__:
+    for klass in effbdpattern_SystemPattern.__mro__:
+        if "alias" in klass.__dict__:
+            descriptor = klass.__dict__["alias"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_effbdpattern_systempattern_has_name():
+    assert hasattr(effbdpattern_SystemPattern, "name")
+    descriptor = None
+    for klass in effbdpattern_SystemPattern.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_effbdpattern_systempattern_has_challeng():
+    assert hasattr(effbdpattern_SystemPattern, "challeng")
+    descriptor = None
+    for klass in effbdpattern_SystemPattern.__mro__:
         if "challeng" in klass.__dict__:
             descriptor = klass.__dict__["challeng"]
             break
     assert isinstance(descriptor, property)
 
-def test_effbdpattern::systempattern_has_patternId():
-    assert hasattr(effbdpattern::SystemPattern, "patternId")
+def test_effbdpattern_systempattern_has_patternId():
+    assert hasattr(effbdpattern_SystemPattern, "patternId")
     descriptor = None
-    for klass in effbdpattern::SystemPattern.__mro__:
+    for klass in effbdpattern_SystemPattern.__mro__:
         if "patternId" in klass.__dict__:
             descriptor = klass.__dict__["patternId"]
             break
     assert isinstance(descriptor, property)
 
-def test_effbdpattern::systempattern_has_knownApplications():
-    assert hasattr(effbdpattern::SystemPattern, "knownApplications")
+def test_effbdpattern_systempattern_has_knownApplications():
+    assert hasattr(effbdpattern_SystemPattern, "knownApplications")
     descriptor = None
-    for klass in effbdpattern::SystemPattern.__mro__:
+    for klass in effbdpattern_SystemPattern.__mro__:
         if "knownApplications" in klass.__dict__:
             descriptor = klass.__dict__["knownApplications"]
             break
     assert isinstance(descriptor, property)
 
-def test_effbdpattern::systempattern_has_description():
-    assert hasattr(effbdpattern::SystemPattern, "description")
-    descriptor = None
-    for klass in effbdpattern::SystemPattern.__mro__:
-        if "description" in klass.__dict__:
-            descriptor = klass.__dict__["description"]
-            break
-    assert isinstance(descriptor, property)
 
 
-
-def test_effbdpattern::patterncatalog_is_not_abstract():
-    assert not inspect.isabstract(effbdpattern::PatternCatalog)
-
-
-def test_effbdpattern::patterncatalog_constructor_exists():
-    assert callable(effbdpattern::PatternCatalog.__init__)
+def test_effbdpattern_patterncatalog_is_not_abstract():
+    assert not inspect.isabstract(effbdpattern_PatternCatalog)
 
 
-def test_effbdpattern::patterncatalog_constructor_args():
-    sig = inspect.signature(effbdpattern::PatternCatalog.__init__)
+def test_effbdpattern_patterncatalog_constructor_exists():
+    assert callable(effbdpattern_PatternCatalog.__init__)
+
+
+def test_effbdpattern_patterncatalog_constructor_args():
+    sig = inspect.signature(effbdpattern_PatternCatalog.__init__)
     params = list(sig.parameters.keys())
     assert "id" in params, "Missing parameter 'id'"
 
-def test_effbdpattern::patterncatalog_has_id():
-    assert hasattr(effbdpattern::PatternCatalog, "id")
+def test_effbdpattern_patterncatalog_has_id():
+    assert hasattr(effbdpattern_PatternCatalog, "id")
     descriptor = None
-    for klass in effbdpattern::PatternCatalog.__mro__:
+    for klass in effbdpattern_PatternCatalog.__mro__:
         if "id" in klass.__dict__:
             descriptor = klass.__dict__["id"]
             break
@@ -532,37 +532,37 @@ def test_effbdpattern::patterncatalog_has_id():
 
 
 
-def test_effbdpattern::model_is_not_abstract():
-    assert not inspect.isabstract(effbdpattern::Model)
+def test_effbdpattern_model_is_not_abstract():
+    assert not inspect.isabstract(effbdpattern_Model)
 
 
-def test_effbdpattern::model_constructor_exists():
-    assert callable(effbdpattern::Model.__init__)
+def test_effbdpattern_model_constructor_exists():
+    assert callable(effbdpattern_Model.__init__)
 
 
-def test_effbdpattern::model_constructor_args():
-    sig = inspect.signature(effbdpattern::Model.__init__)
+def test_effbdpattern_model_constructor_args():
+    sig = inspect.signature(effbdpattern_Model.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_effbdpattern::context_is_not_abstract():
-    assert not inspect.isabstract(effbdpattern::Context)
+def test_effbdpattern_context_is_not_abstract():
+    assert not inspect.isabstract(effbdpattern_Context)
 
 
-def test_effbdpattern::context_constructor_exists():
-    assert callable(effbdpattern::Context.__init__)
+def test_effbdpattern_context_constructor_exists():
+    assert callable(effbdpattern_Context.__init__)
 
 
-def test_effbdpattern::context_constructor_args():
-    sig = inspect.signature(effbdpattern::Context.__init__)
+def test_effbdpattern_context_constructor_args():
+    sig = inspect.signature(effbdpattern_Context.__init__)
     params = list(sig.parameters.keys())
     assert "description" in params, "Missing parameter 'description'"
 
-def test_effbdpattern::context_has_description():
-    assert hasattr(effbdpattern::Context, "description")
+def test_effbdpattern_context_has_description():
+    assert hasattr(effbdpattern_Context, "description")
     descriptor = None
-    for klass in effbdpattern::Context.__mro__:
+    for klass in effbdpattern_Context.__mro__:
         if "description" in klass.__dict__:
             descriptor = klass.__dict__["description"]
             break
@@ -570,23 +570,23 @@ def test_effbdpattern::context_has_description():
 
 
 
-def test_effbdpattern::condition_is_not_abstract():
-    assert not inspect.isabstract(effbdpattern::Condition)
+def test_effbdpattern_condition_is_not_abstract():
+    assert not inspect.isabstract(effbdpattern_Condition)
 
 
-def test_effbdpattern::condition_constructor_exists():
-    assert callable(effbdpattern::Condition.__init__)
+def test_effbdpattern_condition_constructor_exists():
+    assert callable(effbdpattern_Condition.__init__)
 
 
-def test_effbdpattern::condition_constructor_args():
-    sig = inspect.signature(effbdpattern::Condition.__init__)
+def test_effbdpattern_condition_constructor_args():
+    sig = inspect.signature(effbdpattern_Condition.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_effbdpattern::condition_has_name():
-    assert hasattr(effbdpattern::Condition, "name")
+def test_effbdpattern_condition_has_name():
+    assert hasattr(effbdpattern_Condition, "name")
     descriptor = None
-    for klass in effbdpattern::Condition.__mro__:
+    for klass in effbdpattern_Condition.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -594,33 +594,33 @@ def test_effbdpattern::condition_has_name():
 
 
 
-def test_effbdpattern::feature_is_not_abstract():
-    assert not inspect.isabstract(effbdpattern::Feature)
+def test_effbdpattern_feature_is_not_abstract():
+    assert not inspect.isabstract(effbdpattern_Feature)
 
 
-def test_effbdpattern::feature_constructor_exists():
-    assert callable(effbdpattern::Feature.__init__)
+def test_effbdpattern_feature_constructor_exists():
+    assert callable(effbdpattern_Feature.__init__)
 
 
-def test_effbdpattern::feature_constructor_args():
-    sig = inspect.signature(effbdpattern::Feature.__init__)
+def test_effbdpattern_feature_constructor_args():
+    sig = inspect.signature(effbdpattern_Feature.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
     assert "description" in params, "Missing parameter 'description'"
 
-def test_effbdpattern::feature_has_name():
-    assert hasattr(effbdpattern::Feature, "name")
+def test_effbdpattern_feature_has_name():
+    assert hasattr(effbdpattern_Feature, "name")
     descriptor = None
-    for klass in effbdpattern::Feature.__mro__:
+    for klass in effbdpattern_Feature.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
-def test_effbdpattern::feature_has_description():
-    assert hasattr(effbdpattern::Feature, "description")
+def test_effbdpattern_feature_has_description():
+    assert hasattr(effbdpattern_Feature, "description")
     descriptor = None
-    for klass in effbdpattern::Feature.__mro__:
+    for klass in effbdpattern_Feature.__mro__:
         if "description" in klass.__dict__:
             descriptor = klass.__dict__["description"]
             break
@@ -656,165 +656,165 @@ def test_sequence_constructor_args():
 
 
 
-def test_effbdpattern::loop_is_not_abstract():
-    assert not inspect.isabstract(effbdpattern::Loop)
+def test_effbdpattern_final_is_not_abstract():
+    assert not inspect.isabstract(effbdpattern_Final)
 
 
-def test_effbdpattern::loop_constructor_exists():
-    assert callable(effbdpattern::Loop.__init__)
+def test_effbdpattern_final_constructor_exists():
+    assert callable(effbdpattern_Final.__init__)
 
 
-def test_effbdpattern::loop_constructor_args():
-    sig = inspect.signature(effbdpattern::Loop.__init__)
+def test_effbdpattern_final_constructor_args():
+    sig = inspect.signature(effbdpattern_Final.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_effbdpattern::iteration_is_not_abstract():
-    assert not inspect.isabstract(effbdpattern::Iteration)
+def test_effbdpattern_or_is_not_abstract():
+    assert not inspect.isabstract(effbdpattern_Or)
 
 
-def test_effbdpattern::iteration_constructor_exists():
-    assert callable(effbdpattern::Iteration.__init__)
+def test_effbdpattern_or_constructor_exists():
+    assert callable(effbdpattern_Or.__init__)
 
 
-def test_effbdpattern::iteration_constructor_args():
-    sig = inspect.signature(effbdpattern::Iteration.__init__)
+def test_effbdpattern_or_constructor_args():
+    sig = inspect.signature(effbdpattern_Or.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_effbdpattern::or_is_not_abstract():
-    assert not inspect.isabstract(effbdpattern::Or)
+def test_effbdpattern_loopexit_is_not_abstract():
+    assert not inspect.isabstract(effbdpattern_LoopExit)
 
 
-def test_effbdpattern::or_constructor_exists():
-    assert callable(effbdpattern::Or.__init__)
+def test_effbdpattern_loopexit_constructor_exists():
+    assert callable(effbdpattern_LoopExit.__init__)
 
 
-def test_effbdpattern::or_constructor_args():
-    sig = inspect.signature(effbdpattern::Or.__init__)
+def test_effbdpattern_loopexit_constructor_args():
+    sig = inspect.signature(effbdpattern_LoopExit.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_effbdpattern::start_is_not_abstract():
-    assert not inspect.isabstract(effbdpattern::Start)
+def test_effbdpattern_loop_is_not_abstract():
+    assert not inspect.isabstract(effbdpattern_Loop)
 
 
-def test_effbdpattern::start_constructor_exists():
-    assert callable(effbdpattern::Start.__init__)
+def test_effbdpattern_loop_constructor_exists():
+    assert callable(effbdpattern_Loop.__init__)
 
 
-def test_effbdpattern::start_constructor_args():
-    sig = inspect.signature(effbdpattern::Start.__init__)
+def test_effbdpattern_loop_constructor_args():
+    sig = inspect.signature(effbdpattern_Loop.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_effbdpattern::final_is_not_abstract():
-    assert not inspect.isabstract(effbdpattern::Final)
+def test_effbdpattern_iteration_is_not_abstract():
+    assert not inspect.isabstract(effbdpattern_Iteration)
 
 
-def test_effbdpattern::final_constructor_exists():
-    assert callable(effbdpattern::Final.__init__)
+def test_effbdpattern_iteration_constructor_exists():
+    assert callable(effbdpattern_Iteration.__init__)
 
 
-def test_effbdpattern::final_constructor_args():
-    sig = inspect.signature(effbdpattern::Final.__init__)
+def test_effbdpattern_iteration_constructor_args():
+    sig = inspect.signature(effbdpattern_Iteration.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_effbdpattern::loopexit_is_not_abstract():
-    assert not inspect.isabstract(effbdpattern::LoopExit)
+def test_effbdpattern_start_is_not_abstract():
+    assert not inspect.isabstract(effbdpattern_Start)
 
 
-def test_effbdpattern::loopexit_constructor_exists():
-    assert callable(effbdpattern::LoopExit.__init__)
+def test_effbdpattern_start_constructor_exists():
+    assert callable(effbdpattern_Start.__init__)
 
 
-def test_effbdpattern::loopexit_constructor_args():
-    sig = inspect.signature(effbdpattern::LoopExit.__init__)
+def test_effbdpattern_start_constructor_args():
+    sig = inspect.signature(effbdpattern_Start.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_effbdpattern::and_is_not_abstract():
-    assert not inspect.isabstract(effbdpattern::And)
+def test_effbdpattern_and_is_not_abstract():
+    assert not inspect.isabstract(effbdpattern_And)
 
 
-def test_effbdpattern::and_constructor_exists():
-    assert callable(effbdpattern::And.__init__)
+def test_effbdpattern_and_constructor_exists():
+    assert callable(effbdpattern_And.__init__)
 
 
-def test_effbdpattern::and_constructor_args():
-    sig = inspect.signature(effbdpattern::And.__init__)
+def test_effbdpattern_and_constructor_args():
+    sig = inspect.signature(effbdpattern_And.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_effbdpattern::sequencenode_is_not_abstract():
-    assert not inspect.isabstract(effbdpattern::SequenceNode)
+def test_effbdpattern_sequencenode_is_not_abstract():
+    assert not inspect.isabstract(effbdpattern_SequenceNode)
 
 
-def test_effbdpattern::sequencenode_constructor_exists():
-    assert callable(effbdpattern::SequenceNode.__init__)
+def test_effbdpattern_sequencenode_constructor_exists():
+    assert callable(effbdpattern_SequenceNode.__init__)
 
 
-def test_effbdpattern::sequencenode_constructor_args():
-    sig = inspect.signature(effbdpattern::SequenceNode.__init__)
+def test_effbdpattern_sequencenode_constructor_args():
+    sig = inspect.signature(effbdpattern_SequenceNode.__init__)
     params = list(sig.parameters.keys())
+    assert "tMin" in params, "Missing parameter 'tMin'"
     assert "name" in params, "Missing parameter 'name'"
     assert "tMax" in params, "Missing parameter 'tMax'"
-    assert "tMin" in params, "Missing parameter 'tMin'"
 
-def test_effbdpattern::sequencenode_has_name():
-    assert hasattr(effbdpattern::SequenceNode, "name")
+def test_effbdpattern_sequencenode_has_tMin():
+    assert hasattr(effbdpattern_SequenceNode, "tMin")
     descriptor = None
-    for klass in effbdpattern::SequenceNode.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_effbdpattern::sequencenode_has_tMax():
-    assert hasattr(effbdpattern::SequenceNode, "tMax")
-    descriptor = None
-    for klass in effbdpattern::SequenceNode.__mro__:
-        if "tMax" in klass.__dict__:
-            descriptor = klass.__dict__["tMax"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_effbdpattern::sequencenode_has_tMin():
-    assert hasattr(effbdpattern::SequenceNode, "tMin")
-    descriptor = None
-    for klass in effbdpattern::SequenceNode.__mro__:
+    for klass in effbdpattern_SequenceNode.__mro__:
         if "tMin" in klass.__dict__:
             descriptor = klass.__dict__["tMin"]
             break
     assert isinstance(descriptor, property)
 
+def test_effbdpattern_sequencenode_has_name():
+    assert hasattr(effbdpattern_SequenceNode, "name")
+    descriptor = None
+    for klass in effbdpattern_SequenceNode.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_effbdpattern_sequencenode_has_tMax():
+    assert hasattr(effbdpattern_SequenceNode, "tMax")
+    descriptor = None
+    for klass in effbdpattern_SequenceNode.__mro__:
+        if "tMax" in klass.__dict__:
+            descriptor = klass.__dict__["tMax"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_effbdpattern::item_is_not_abstract():
-    assert not inspect.isabstract(effbdpattern::Item)
+
+def test_effbdpattern_item_is_not_abstract():
+    assert not inspect.isabstract(effbdpattern_Item)
 
 
-def test_effbdpattern::item_constructor_exists():
-    assert callable(effbdpattern::Item.__init__)
+def test_effbdpattern_item_constructor_exists():
+    assert callable(effbdpattern_Item.__init__)
 
 
-def test_effbdpattern::item_constructor_args():
-    sig = inspect.signature(effbdpattern::Item.__init__)
+def test_effbdpattern_item_constructor_args():
+    sig = inspect.signature(effbdpattern_Item.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_effbdpattern::item_has_name():
-    assert hasattr(effbdpattern::Item, "name")
+def test_effbdpattern_item_has_name():
+    assert hasattr(effbdpattern_Item, "name")
     descriptor = None
-    for klass in effbdpattern::Item.__mro__:
+    for klass in effbdpattern_Item.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -822,23 +822,23 @@ def test_effbdpattern::item_has_name():
 
 
 
-def test_effbdpattern::functionproperty_is_not_abstract():
-    assert not inspect.isabstract(effbdpattern::FunctionProperty)
+def test_effbdpattern_functionproperty_is_not_abstract():
+    assert not inspect.isabstract(effbdpattern_FunctionProperty)
 
 
-def test_effbdpattern::functionproperty_constructor_exists():
-    assert callable(effbdpattern::FunctionProperty.__init__)
+def test_effbdpattern_functionproperty_constructor_exists():
+    assert callable(effbdpattern_FunctionProperty.__init__)
 
 
-def test_effbdpattern::functionproperty_constructor_args():
-    sig = inspect.signature(effbdpattern::FunctionProperty.__init__)
+def test_effbdpattern_functionproperty_constructor_args():
+    sig = inspect.signature(effbdpattern_FunctionProperty.__init__)
     params = list(sig.parameters.keys())
     assert "description" in params, "Missing parameter 'description'"
 
-def test_effbdpattern::functionproperty_has_description():
-    assert hasattr(effbdpattern::FunctionProperty, "description")
+def test_effbdpattern_functionproperty_has_description():
+    assert hasattr(effbdpattern_FunctionProperty, "description")
     descriptor = None
-    for klass in effbdpattern::FunctionProperty.__mro__:
+    for klass in effbdpattern_FunctionProperty.__mro__:
         if "description" in klass.__dict__:
             descriptor = klass.__dict__["description"]
             break
@@ -846,23 +846,23 @@ def test_effbdpattern::functionproperty_has_description():
 
 
 
-def test_effbdpattern::port_is_not_abstract():
-    assert not inspect.isabstract(effbdpattern::Port)
+def test_effbdpattern_port_is_not_abstract():
+    assert not inspect.isabstract(effbdpattern_Port)
 
 
-def test_effbdpattern::port_constructor_exists():
-    assert callable(effbdpattern::Port.__init__)
+def test_effbdpattern_port_constructor_exists():
+    assert callable(effbdpattern_Port.__init__)
 
 
-def test_effbdpattern::port_constructor_args():
-    sig = inspect.signature(effbdpattern::Port.__init__)
+def test_effbdpattern_port_constructor_args():
+    sig = inspect.signature(effbdpattern_Port.__init__)
     params = list(sig.parameters.keys())
     assert "id" in params, "Missing parameter 'id'"
 
-def test_effbdpattern::port_has_id():
-    assert hasattr(effbdpattern::Port, "id")
+def test_effbdpattern_port_has_id():
+    assert hasattr(effbdpattern_Port, "id")
     descriptor = None
-    for klass in effbdpattern::Port.__mro__:
+    for klass in effbdpattern_Port.__mro__:
         if "id" in klass.__dict__:
             descriptor = klass.__dict__["id"]
             break
@@ -870,37 +870,37 @@ def test_effbdpattern::port_has_id():
 
 
 
-def test_effbdpattern::token_is_not_abstract():
-    assert not inspect.isabstract(effbdpattern::Token)
+def test_effbdpattern_token_is_not_abstract():
+    assert not inspect.isabstract(effbdpattern_Token)
 
 
-def test_effbdpattern::token_constructor_exists():
-    assert callable(effbdpattern::Token.__init__)
+def test_effbdpattern_token_constructor_exists():
+    assert callable(effbdpattern_Token.__init__)
 
 
-def test_effbdpattern::token_constructor_args():
-    sig = inspect.signature(effbdpattern::Token.__init__)
+def test_effbdpattern_token_constructor_args():
+    sig = inspect.signature(effbdpattern_Token.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_effbdpattern::description_is_not_abstract():
-    assert not inspect.isabstract(effbdpattern::Description)
+def test_effbdpattern_description_is_not_abstract():
+    assert not inspect.isabstract(effbdpattern_Description)
 
 
-def test_effbdpattern::description_constructor_exists():
-    assert callable(effbdpattern::Description.__init__)
+def test_effbdpattern_description_constructor_exists():
+    assert callable(effbdpattern_Description.__init__)
 
 
-def test_effbdpattern::description_constructor_args():
-    sig = inspect.signature(effbdpattern::Description.__init__)
+def test_effbdpattern_description_constructor_args():
+    sig = inspect.signature(effbdpattern_Description.__init__)
     params = list(sig.parameters.keys())
     assert "content" in params, "Missing parameter 'content'"
 
-def test_effbdpattern::description_has_content():
-    assert hasattr(effbdpattern::Description, "content")
+def test_effbdpattern_description_has_content():
+    assert hasattr(effbdpattern_Description, "content")
     descriptor = None
-    for klass in effbdpattern::Description.__mro__:
+    for klass in effbdpattern_Description.__mro__:
         if "content" in klass.__dict__:
             descriptor = klass.__dict__["content"]
             break
@@ -908,51 +908,51 @@ def test_effbdpattern::description_has_content():
 
 
 
-def test_effbdpattern::inputport_is_not_abstract():
-    assert not inspect.isabstract(effbdpattern::InputPort)
+def test_effbdpattern_inputport_is_not_abstract():
+    assert not inspect.isabstract(effbdpattern_InputPort)
 
 
-def test_effbdpattern::inputport_constructor_exists():
-    assert callable(effbdpattern::InputPort.__init__)
+def test_effbdpattern_inputport_constructor_exists():
+    assert callable(effbdpattern_InputPort.__init__)
 
 
-def test_effbdpattern::inputport_constructor_args():
-    sig = inspect.signature(effbdpattern::InputPort.__init__)
+def test_effbdpattern_inputport_constructor_args():
+    sig = inspect.signature(effbdpattern_InputPort.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_effbdpattern::outputport_is_not_abstract():
-    assert not inspect.isabstract(effbdpattern::OutputPort)
+def test_effbdpattern_outputport_is_not_abstract():
+    assert not inspect.isabstract(effbdpattern_OutputPort)
 
 
-def test_effbdpattern::outputport_constructor_exists():
-    assert callable(effbdpattern::OutputPort.__init__)
+def test_effbdpattern_outputport_constructor_exists():
+    assert callable(effbdpattern_OutputPort.__init__)
 
 
-def test_effbdpattern::outputport_constructor_args():
-    sig = inspect.signature(effbdpattern::OutputPort.__init__)
+def test_effbdpattern_outputport_constructor_args():
+    sig = inspect.signature(effbdpattern_OutputPort.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_effbdpattern::flow_is_not_abstract():
-    assert not inspect.isabstract(effbdpattern::Flow)
+def test_effbdpattern_flow_is_not_abstract():
+    assert not inspect.isabstract(effbdpattern_Flow)
 
 
-def test_effbdpattern::flow_constructor_exists():
-    assert callable(effbdpattern::Flow.__init__)
+def test_effbdpattern_flow_constructor_exists():
+    assert callable(effbdpattern_Flow.__init__)
 
 
-def test_effbdpattern::flow_constructor_args():
-    sig = inspect.signature(effbdpattern::Flow.__init__)
+def test_effbdpattern_flow_constructor_args():
+    sig = inspect.signature(effbdpattern_Flow.__init__)
     params = list(sig.parameters.keys())
     assert "flowName" in params, "Missing parameter 'flowName'"
 
-def test_effbdpattern::flow_has_flowName():
-    assert hasattr(effbdpattern::Flow, "flowName")
+def test_effbdpattern_flow_has_flowName():
+    assert hasattr(effbdpattern_Flow, "flowName")
     descriptor = None
-    for klass in effbdpattern::Flow.__mro__:
+    for klass in effbdpattern_Flow.__mro__:
         if "flowName" in klass.__dict__:
             descriptor = klass.__dict__["flowName"]
             break
@@ -974,16 +974,16 @@ def test_modelelement_constructor_args():
 
 
 
-def test_effbdpattern::component_is_not_abstract():
-    assert not inspect.isabstract(effbdpattern::Component)
+def test_effbdpattern_component_is_not_abstract():
+    assert not inspect.isabstract(effbdpattern_Component)
 
 
-def test_effbdpattern::component_constructor_exists():
-    assert callable(effbdpattern::Component.__init__)
+def test_effbdpattern_component_constructor_exists():
+    assert callable(effbdpattern_Component.__init__)
 
 
-def test_effbdpattern::component_constructor_args():
-    sig = inspect.signature(effbdpattern::Component.__init__)
+def test_effbdpattern_component_constructor_args():
+    sig = inspect.signature(effbdpattern_Component.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1002,37 +1002,37 @@ def test_sequencenode_constructor_args():
 
 
 
-def test_effbdpattern::sequence_is_not_abstract():
-    assert not inspect.isabstract(effbdpattern::Sequence)
+def test_effbdpattern_sequence_is_not_abstract():
+    assert not inspect.isabstract(effbdpattern_Sequence)
 
 
-def test_effbdpattern::sequence_constructor_exists():
-    assert callable(effbdpattern::Sequence.__init__)
+def test_effbdpattern_sequence_constructor_exists():
+    assert callable(effbdpattern_Sequence.__init__)
 
 
-def test_effbdpattern::sequence_constructor_args():
-    sig = inspect.signature(effbdpattern::Sequence.__init__)
+def test_effbdpattern_sequence_constructor_args():
+    sig = inspect.signature(effbdpattern_Sequence.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_effbdpattern::function_is_not_abstract():
-    assert not inspect.isabstract(effbdpattern::Function)
+def test_effbdpattern_function_is_not_abstract():
+    assert not inspect.isabstract(effbdpattern_Function)
 
 
-def test_effbdpattern::function_constructor_exists():
-    assert callable(effbdpattern::Function.__init__)
+def test_effbdpattern_function_constructor_exists():
+    assert callable(effbdpattern_Function.__init__)
 
 
-def test_effbdpattern::function_constructor_args():
-    sig = inspect.signature(effbdpattern::Function.__init__)
+def test_effbdpattern_function_constructor_args():
+    sig = inspect.signature(effbdpattern_Function.__init__)
     params = list(sig.parameters.keys())
     assert "domain" in params, "Missing parameter 'domain'"
 
-def test_effbdpattern::function_has_domain():
-    assert hasattr(effbdpattern::Function, "domain")
+def test_effbdpattern_function_has_domain():
+    assert hasattr(effbdpattern_Function, "domain")
     descriptor = None
-    for klass in effbdpattern::Function.__mro__:
+    for klass in effbdpattern_Function.__mro__:
         if "domain" in klass.__dict__:
             descriptor = klass.__dict__["domain"]
             break
@@ -1046,9 +1046,9 @@ def test_functiondomain_has_all_literals():
     # Collect the names of literals in this Enumeration
     enum_literals = [lit.name for lit in FunctionDomain]
     expected_literals = [
+        "time",
         "space",
         "form",
-        "time",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
@@ -1066,8 +1066,8 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-effbdpattern::Impact_strategy = st.builds(
-    effbdpattern::Impact,
+effbdpattern_Impact_strategy = st.builds(
+    effbdpattern_Impact,
     scale=
         st.integers(),
     value=
@@ -1076,109 +1076,109 @@ effbdpattern::Impact_strategy = st.builds(
 AbstractModel_strategy = st.builds(
     AbstractModel,
 )
-effbdpattern::PatternModel_strategy = st.builds(
-    effbdpattern::PatternModel,
+effbdpattern_PatternModel_strategy = st.builds(
+    effbdpattern_PatternModel,
 )
-effbdpattern::Force_strategy = st.builds(
-    effbdpattern::Force,
-    scale=
-        st.integers(),
+effbdpattern_Force_strategy = st.builds(
+    effbdpattern_Force,
+    description=
+        safe_text,
     value=
         st.integers(),
-    description=
-        safe_text
+    scale=
+        st.integers()
 )
-effbdpattern::Parameter_strategy = st.builds(
-    effbdpattern::Parameter,
+effbdpattern_Parameter_strategy = st.builds(
+    effbdpattern_Parameter,
     name=
         safe_text
 )
-effbdpattern::Indexable_strategy = st.builds(
-    effbdpattern::Indexable,
+effbdpattern_Indexable_strategy = st.builds(
+    effbdpattern_Indexable,
 )
 Indexable_strategy = st.builds(
     Indexable,
 )
-effbdpattern::AbstractModel_strategy = st.builds(
-    effbdpattern::AbstractModel,
-    version=
-        safe_text,
+effbdpattern_AbstractModel_strategy = st.builds(
+    effbdpattern_AbstractModel,
     name=
+        safe_text,
+    version=
         safe_text
 )
-effbdpattern::ModelElement_strategy = st.builds(
-    effbdpattern::ModelElement,
-    modelName=
-        safe_text,
+effbdpattern_ModelElement_strategy = st.builds(
+    effbdpattern_ModelElement,
     modelId=
-        st.integers()
+        st.integers(),
+    modelName=
+        safe_text
 )
-effbdpattern::Allocation_strategy = st.builds(
-    effbdpattern::Allocation,
+effbdpattern_Allocation_strategy = st.builds(
+    effbdpattern_Allocation,
     id=
         safe_text,
     redundant=
         st.booleans()
 )
-effbdpattern::Keyword_strategy = st.builds(
-    effbdpattern::Keyword,
+effbdpattern_Keyword_strategy = st.builds(
+    effbdpattern_Keyword,
     value=
         safe_text
 )
-effbdpattern::Domain_strategy = st.builds(
-    effbdpattern::Domain,
+effbdpattern_Domain_strategy = st.builds(
+    effbdpattern_Domain,
     name=
         safe_text,
     description=
         safe_text
 )
-effbdpattern::Problem_strategy = st.builds(
-    effbdpattern::Problem,
+effbdpattern_Problem_strategy = st.builds(
+    effbdpattern_Problem,
     name=
         safe_text,
     description=
         safe_text
 )
-effbdpattern::Workbench_strategy = st.builds(
-    effbdpattern::Workbench,
+effbdpattern_Workbench_strategy = st.builds(
+    effbdpattern_Workbench,
 )
-effbdpattern::SystemPattern_strategy = st.builds(
-    effbdpattern::SystemPattern,
+effbdpattern_SystemPattern_strategy = st.builds(
+    effbdpattern_SystemPattern,
+    description=
+        safe_text,
+    creationDate=
+        st.dates(),
     alias=
         safe_text,
     name=
         safe_text,
-    creationDate=
-        st.dates(),
     challeng=
         safe_text,
     patternId=
         st.integers(),
     knownApplications=
-        safe_text,
-    description=
         safe_text
 )
-effbdpattern::PatternCatalog_strategy = st.builds(
-    effbdpattern::PatternCatalog,
+effbdpattern_PatternCatalog_strategy = st.builds(
+    effbdpattern_PatternCatalog,
     id=
         safe_text
 )
-effbdpattern::Model_strategy = st.builds(
-    effbdpattern::Model,
+effbdpattern_Model_strategy = st.builds(
+    effbdpattern_Model,
 )
-effbdpattern::Context_strategy = st.builds(
-    effbdpattern::Context,
+effbdpattern_Context_strategy = st.builds(
+    effbdpattern_Context,
     description=
         safe_text
 )
-effbdpattern::Condition_strategy = st.builds(
-    effbdpattern::Condition,
+effbdpattern_Condition_strategy = st.builds(
+    effbdpattern_Condition,
     name=
         safe_text
 )
-effbdpattern::Feature_strategy = st.builds(
-    effbdpattern::Feature,
+effbdpattern_Feature_strategy = st.builds(
+    effbdpattern_Feature,
     name=
         safe_text,
     description=
@@ -1190,111 +1190,105 @@ Port_strategy = st.builds(
 Sequence_strategy = st.builds(
     Sequence,
 )
-effbdpattern::Loop_strategy = st.builds(
-    effbdpattern::Loop,
+effbdpattern_Final_strategy = st.builds(
+    effbdpattern_Final,
 )
-effbdpattern::Iteration_strategy = st.builds(
-    effbdpattern::Iteration,
+effbdpattern_Or_strategy = st.builds(
+    effbdpattern_Or,
 )
-effbdpattern::Or_strategy = st.builds(
-    effbdpattern::Or,
+effbdpattern_LoopExit_strategy = st.builds(
+    effbdpattern_LoopExit,
 )
-effbdpattern::Start_strategy = st.builds(
-    effbdpattern::Start,
+effbdpattern_Loop_strategy = st.builds(
+    effbdpattern_Loop,
 )
-effbdpattern::Final_strategy = st.builds(
-    effbdpattern::Final,
+effbdpattern_Iteration_strategy = st.builds(
+    effbdpattern_Iteration,
 )
-effbdpattern::LoopExit_strategy = st.builds(
-    effbdpattern::LoopExit,
+effbdpattern_Start_strategy = st.builds(
+    effbdpattern_Start,
 )
-effbdpattern::And_strategy = st.builds(
-    effbdpattern::And,
+effbdpattern_And_strategy = st.builds(
+    effbdpattern_And,
 )
-effbdpattern::SequenceNode_strategy = st.builds(
-    effbdpattern::SequenceNode,
+effbdpattern_SequenceNode_strategy = st.builds(
+    effbdpattern_SequenceNode,
+    tMin=
+        st.integers(),
     name=
         safe_text,
     tMax=
-        st.integers(),
-    tMin=
         st.integers()
 )
-effbdpattern::Item_strategy = st.builds(
-    effbdpattern::Item,
+effbdpattern_Item_strategy = st.builds(
+    effbdpattern_Item,
     name=
         safe_text
 )
-effbdpattern::FunctionProperty_strategy = st.builds(
-    effbdpattern::FunctionProperty,
+effbdpattern_FunctionProperty_strategy = st.builds(
+    effbdpattern_FunctionProperty,
     description=
         safe_text
 )
-effbdpattern::Port_strategy = st.builds(
-    effbdpattern::Port,
+effbdpattern_Port_strategy = st.builds(
+    effbdpattern_Port,
     id=
         safe_text
 )
-effbdpattern::Token_strategy = st.builds(
-    effbdpattern::Token,
+effbdpattern_Token_strategy = st.builds(
+    effbdpattern_Token,
 )
-effbdpattern::Description_strategy = st.builds(
-    effbdpattern::Description,
+effbdpattern_Description_strategy = st.builds(
+    effbdpattern_Description,
     content=
         safe_text
 )
-effbdpattern::InputPort_strategy = st.builds(
-    effbdpattern::InputPort,
+effbdpattern_InputPort_strategy = st.builds(
+    effbdpattern_InputPort,
 )
-effbdpattern::OutputPort_strategy = st.builds(
-    effbdpattern::OutputPort,
+effbdpattern_OutputPort_strategy = st.builds(
+    effbdpattern_OutputPort,
 )
-effbdpattern::Flow_strategy = st.builds(
-    effbdpattern::Flow,
+effbdpattern_Flow_strategy = st.builds(
+    effbdpattern_Flow,
     flowName=
         safe_text
 )
 ModelElement_strategy = st.builds(
     ModelElement,
 )
-effbdpattern::Component_strategy = st.builds(
-    effbdpattern::Component,
+effbdpattern_Component_strategy = st.builds(
+    effbdpattern_Component,
 )
 SequenceNode_strategy = st.builds(
     SequenceNode,
 )
-effbdpattern::Sequence_strategy = st.builds(
-    effbdpattern::Sequence,
+effbdpattern_Sequence_strategy = st.builds(
+    effbdpattern_Sequence,
 )
-effbdpattern::Function_strategy = st.builds(
-    effbdpattern::Function,
+effbdpattern_Function_strategy = st.builds(
+    effbdpattern_Function,
     domain=
         safe_text
 )
 
-@given(instance=effbdpattern::Impact_strategy)
+@given(instance=effbdpattern_Impact_strategy)
 @settings(max_examples=50)
-def test_effbdpattern::impact_instantiation(instance):
-    assert isinstance(instance, effbdpattern::Impact)
-
-@given(instance=effbdpattern::Impact_strategy)
-def test_effbdpattern::impact_scale_type(instance):
-    assert isinstance(instance.scale, int)
+def test_effbdpattern_impact_instantiation(instance):
+    assert isinstance(instance, effbdpattern_Impact)
 
 
-@given(instance=effbdpattern::Impact_strategy)
-def test_effbdpattern::impact_scale_setter(instance):
+
+@given(instance=effbdpattern_Impact_strategy)
+def test_effbdpattern_impact_scale_setter(instance):
     original = instance.scale
     instance.scale = original
     assert instance.scale == original
 
-@given(instance=effbdpattern::Impact_strategy)
-def test_effbdpattern::impact_value_type(instance):
-    assert isinstance(instance.value, int)
 
 
-@given(instance=effbdpattern::Impact_strategy)
-def test_effbdpattern::impact_value_setter(instance):
+@given(instance=effbdpattern_Impact_strategy)
+def test_effbdpattern_impact_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
@@ -1304,389 +1298,308 @@ def test_effbdpattern::impact_value_setter(instance):
 def test_abstractmodel_instantiation(instance):
     assert isinstance(instance, AbstractModel)
 
-@given(instance=effbdpattern::PatternModel_strategy)
+@given(instance=effbdpattern_PatternModel_strategy)
 @settings(max_examples=50)
-def test_effbdpattern::patternmodel_instantiation(instance):
-    assert isinstance(instance, effbdpattern::PatternModel)
+def test_effbdpattern_patternmodel_instantiation(instance):
+    assert isinstance(instance, effbdpattern_PatternModel)
 
-@given(instance=effbdpattern::Force_strategy)
+@given(instance=effbdpattern_Force_strategy)
 @settings(max_examples=50)
-def test_effbdpattern::force_instantiation(instance):
-    assert isinstance(instance, effbdpattern::Force)
-
-@given(instance=effbdpattern::Force_strategy)
-def test_effbdpattern::force_scale_type(instance):
-    assert isinstance(instance.scale, int)
+def test_effbdpattern_force_instantiation(instance):
+    assert isinstance(instance, effbdpattern_Force)
 
 
-@given(instance=effbdpattern::Force_strategy)
-def test_effbdpattern::force_scale_setter(instance):
-    original = instance.scale
-    instance.scale = original
-    assert instance.scale == original
 
-@given(instance=effbdpattern::Force_strategy)
-def test_effbdpattern::force_value_type(instance):
-    assert isinstance(instance.value, int)
-
-
-@given(instance=effbdpattern::Force_strategy)
-def test_effbdpattern::force_value_setter(instance):
-    original = instance.value
-    instance.value = original
-    assert instance.value == original
-
-@given(instance=effbdpattern::Force_strategy)
-def test_effbdpattern::force_description_type(instance):
-    assert isinstance(instance.description, str)
-
-
-@given(instance=effbdpattern::Force_strategy)
-def test_effbdpattern::force_description_setter(instance):
+@given(instance=effbdpattern_Force_strategy)
+def test_effbdpattern_force_description_setter(instance):
     original = instance.description
     instance.description = original
     assert instance.description == original
 
-@given(instance=effbdpattern::Parameter_strategy)
+
+
+@given(instance=effbdpattern_Force_strategy)
+def test_effbdpattern_force_value_setter(instance):
+    original = instance.value
+    instance.value = original
+    assert instance.value == original
+
+
+
+@given(instance=effbdpattern_Force_strategy)
+def test_effbdpattern_force_scale_setter(instance):
+    original = instance.scale
+    instance.scale = original
+    assert instance.scale == original
+
+@given(instance=effbdpattern_Parameter_strategy)
 @settings(max_examples=50)
-def test_effbdpattern::parameter_instantiation(instance):
-    assert isinstance(instance, effbdpattern::Parameter)
-
-@given(instance=effbdpattern::Parameter_strategy)
-def test_effbdpattern::parameter_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_effbdpattern_parameter_instantiation(instance):
+    assert isinstance(instance, effbdpattern_Parameter)
 
 
-@given(instance=effbdpattern::Parameter_strategy)
-def test_effbdpattern::parameter_name_setter(instance):
+
+@given(instance=effbdpattern_Parameter_strategy)
+def test_effbdpattern_parameter_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=effbdpattern::Indexable_strategy)
+@given(instance=effbdpattern_Indexable_strategy)
 @settings(max_examples=50)
-def test_effbdpattern::indexable_instantiation(instance):
-    assert isinstance(instance, effbdpattern::Indexable)
+def test_effbdpattern_indexable_instantiation(instance):
+    assert isinstance(instance, effbdpattern_Indexable)
 
 @given(instance=Indexable_strategy)
 @settings(max_examples=50)
 def test_indexable_instantiation(instance):
     assert isinstance(instance, Indexable)
 
-@given(instance=effbdpattern::AbstractModel_strategy)
+@given(instance=effbdpattern_AbstractModel_strategy)
 @settings(max_examples=50)
-def test_effbdpattern::abstractmodel_instantiation(instance):
-    assert isinstance(instance, effbdpattern::AbstractModel)
-
-@given(instance=effbdpattern::AbstractModel_strategy)
-def test_effbdpattern::abstractmodel_version_type(instance):
-    assert isinstance(instance.version, str)
+def test_effbdpattern_abstractmodel_instantiation(instance):
+    assert isinstance(instance, effbdpattern_AbstractModel)
 
 
-@given(instance=effbdpattern::AbstractModel_strategy)
-def test_effbdpattern::abstractmodel_version_setter(instance):
+
+@given(instance=effbdpattern_AbstractModel_strategy)
+def test_effbdpattern_abstractmodel_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+
+
+@given(instance=effbdpattern_AbstractModel_strategy)
+def test_effbdpattern_abstractmodel_version_setter(instance):
     original = instance.version
     instance.version = original
     assert instance.version == original
 
-@given(instance=effbdpattern::AbstractModel_strategy)
-def test_effbdpattern::abstractmodel_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=effbdpattern::AbstractModel_strategy)
-def test_effbdpattern::abstractmodel_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
-
-@given(instance=effbdpattern::ModelElement_strategy)
+@given(instance=effbdpattern_ModelElement_strategy)
 @settings(max_examples=50)
-def test_effbdpattern::modelelement_instantiation(instance):
-    assert isinstance(instance, effbdpattern::ModelElement)
-
-@given(instance=effbdpattern::ModelElement_strategy)
-def test_effbdpattern::modelelement_modelName_type(instance):
-    assert isinstance(instance.modelName, str)
+def test_effbdpattern_modelelement_instantiation(instance):
+    assert isinstance(instance, effbdpattern_ModelElement)
 
 
-@given(instance=effbdpattern::ModelElement_strategy)
-def test_effbdpattern::modelelement_modelName_setter(instance):
-    original = instance.modelName
-    instance.modelName = original
-    assert instance.modelName == original
 
-@given(instance=effbdpattern::ModelElement_strategy)
-def test_effbdpattern::modelelement_modelId_type(instance):
-    assert isinstance(instance.modelId, int)
-
-
-@given(instance=effbdpattern::ModelElement_strategy)
-def test_effbdpattern::modelelement_modelId_setter(instance):
+@given(instance=effbdpattern_ModelElement_strategy)
+def test_effbdpattern_modelelement_modelId_setter(instance):
     original = instance.modelId
     instance.modelId = original
     assert instance.modelId == original
 
-@given(instance=effbdpattern::Allocation_strategy)
+
+
+@given(instance=effbdpattern_ModelElement_strategy)
+def test_effbdpattern_modelelement_modelName_setter(instance):
+    original = instance.modelName
+    instance.modelName = original
+    assert instance.modelName == original
+
+@given(instance=effbdpattern_Allocation_strategy)
 @settings(max_examples=50)
-def test_effbdpattern::allocation_instantiation(instance):
-    assert isinstance(instance, effbdpattern::Allocation)
-
-@given(instance=effbdpattern::Allocation_strategy)
-def test_effbdpattern::allocation_id_type(instance):
-    assert isinstance(instance.id, str)
+def test_effbdpattern_allocation_instantiation(instance):
+    assert isinstance(instance, effbdpattern_Allocation)
 
 
-@given(instance=effbdpattern::Allocation_strategy)
-def test_effbdpattern::allocation_id_setter(instance):
+
+@given(instance=effbdpattern_Allocation_strategy)
+def test_effbdpattern_allocation_id_setter(instance):
     original = instance.id
     instance.id = original
     assert instance.id == original
 
-@given(instance=effbdpattern::Allocation_strategy)
-def test_effbdpattern::allocation_redundant_type(instance):
-    assert isinstance(instance.redundant, bool)
 
 
-@given(instance=effbdpattern::Allocation_strategy)
-def test_effbdpattern::allocation_redundant_setter(instance):
+@given(instance=effbdpattern_Allocation_strategy)
+def test_effbdpattern_allocation_redundant_setter(instance):
     original = instance.redundant
     instance.redundant = original
     assert instance.redundant == original
 
-@given(instance=effbdpattern::Keyword_strategy)
+@given(instance=effbdpattern_Keyword_strategy)
 @settings(max_examples=50)
-def test_effbdpattern::keyword_instantiation(instance):
-    assert isinstance(instance, effbdpattern::Keyword)
-
-@given(instance=effbdpattern::Keyword_strategy)
-def test_effbdpattern::keyword_value_type(instance):
-    assert isinstance(instance.value, str)
+def test_effbdpattern_keyword_instantiation(instance):
+    assert isinstance(instance, effbdpattern_Keyword)
 
 
-@given(instance=effbdpattern::Keyword_strategy)
-def test_effbdpattern::keyword_value_setter(instance):
+
+@given(instance=effbdpattern_Keyword_strategy)
+def test_effbdpattern_keyword_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
 
-@given(instance=effbdpattern::Domain_strategy)
+@given(instance=effbdpattern_Domain_strategy)
 @settings(max_examples=50)
-def test_effbdpattern::domain_instantiation(instance):
-    assert isinstance(instance, effbdpattern::Domain)
-
-@given(instance=effbdpattern::Domain_strategy)
-def test_effbdpattern::domain_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_effbdpattern_domain_instantiation(instance):
+    assert isinstance(instance, effbdpattern_Domain)
 
 
-@given(instance=effbdpattern::Domain_strategy)
-def test_effbdpattern::domain_name_setter(instance):
+
+@given(instance=effbdpattern_Domain_strategy)
+def test_effbdpattern_domain_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=effbdpattern::Domain_strategy)
-def test_effbdpattern::domain_description_type(instance):
-    assert isinstance(instance.description, str)
 
 
-@given(instance=effbdpattern::Domain_strategy)
-def test_effbdpattern::domain_description_setter(instance):
+@given(instance=effbdpattern_Domain_strategy)
+def test_effbdpattern_domain_description_setter(instance):
     original = instance.description
     instance.description = original
     assert instance.description == original
 
-@given(instance=effbdpattern::Problem_strategy)
+@given(instance=effbdpattern_Problem_strategy)
 @settings(max_examples=50)
-def test_effbdpattern::problem_instantiation(instance):
-    assert isinstance(instance, effbdpattern::Problem)
-
-@given(instance=effbdpattern::Problem_strategy)
-def test_effbdpattern::problem_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_effbdpattern_problem_instantiation(instance):
+    assert isinstance(instance, effbdpattern_Problem)
 
 
-@given(instance=effbdpattern::Problem_strategy)
-def test_effbdpattern::problem_name_setter(instance):
+
+@given(instance=effbdpattern_Problem_strategy)
+def test_effbdpattern_problem_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=effbdpattern::Problem_strategy)
-def test_effbdpattern::problem_description_type(instance):
-    assert isinstance(instance.description, str)
 
 
-@given(instance=effbdpattern::Problem_strategy)
-def test_effbdpattern::problem_description_setter(instance):
+@given(instance=effbdpattern_Problem_strategy)
+def test_effbdpattern_problem_description_setter(instance):
     original = instance.description
     instance.description = original
     assert instance.description == original
 
-@given(instance=effbdpattern::Workbench_strategy)
+@given(instance=effbdpattern_Workbench_strategy)
 @settings(max_examples=50)
-def test_effbdpattern::workbench_instantiation(instance):
-    assert isinstance(instance, effbdpattern::Workbench)
+def test_effbdpattern_workbench_instantiation(instance):
+    assert isinstance(instance, effbdpattern_Workbench)
 
-@given(instance=effbdpattern::SystemPattern_strategy)
+@given(instance=effbdpattern_SystemPattern_strategy)
 @settings(max_examples=50)
-def test_effbdpattern::systempattern_instantiation(instance):
-    assert isinstance(instance, effbdpattern::SystemPattern)
-
-@given(instance=effbdpattern::SystemPattern_strategy)
-def test_effbdpattern::systempattern_alias_type(instance):
-    assert isinstance(instance.alias, str)
+def test_effbdpattern_systempattern_instantiation(instance):
+    assert isinstance(instance, effbdpattern_SystemPattern)
 
 
-@given(instance=effbdpattern::SystemPattern_strategy)
-def test_effbdpattern::systempattern_alias_setter(instance):
-    original = instance.alias
-    instance.alias = original
-    assert instance.alias == original
 
-@given(instance=effbdpattern::SystemPattern_strategy)
-def test_effbdpattern::systempattern_name_type(instance):
-    assert isinstance(instance.name, str)
+@given(instance=effbdpattern_SystemPattern_strategy)
+def test_effbdpattern_systempattern_description_setter(instance):
+    original = instance.description
+    instance.description = original
+    assert instance.description == original
 
 
-@given(instance=effbdpattern::SystemPattern_strategy)
-def test_effbdpattern::systempattern_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
 
-@given(instance=effbdpattern::SystemPattern_strategy)
-def test_effbdpattern::systempattern_creationDate_type(instance):
-    assert isinstance(instance.creationDate, date)
-
-
-@given(instance=effbdpattern::SystemPattern_strategy)
-def test_effbdpattern::systempattern_creationDate_setter(instance):
+@given(instance=effbdpattern_SystemPattern_strategy)
+def test_effbdpattern_systempattern_creationDate_setter(instance):
     original = instance.creationDate
     instance.creationDate = original
     assert instance.creationDate == original
 
-@given(instance=effbdpattern::SystemPattern_strategy)
-def test_effbdpattern::systempattern_challeng_type(instance):
-    assert isinstance(instance.challeng, str)
 
 
-@given(instance=effbdpattern::SystemPattern_strategy)
-def test_effbdpattern::systempattern_challeng_setter(instance):
+@given(instance=effbdpattern_SystemPattern_strategy)
+def test_effbdpattern_systempattern_alias_setter(instance):
+    original = instance.alias
+    instance.alias = original
+    assert instance.alias == original
+
+
+
+@given(instance=effbdpattern_SystemPattern_strategy)
+def test_effbdpattern_systempattern_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+
+
+@given(instance=effbdpattern_SystemPattern_strategy)
+def test_effbdpattern_systempattern_challeng_setter(instance):
     original = instance.challeng
     instance.challeng = original
     assert instance.challeng == original
 
-@given(instance=effbdpattern::SystemPattern_strategy)
-def test_effbdpattern::systempattern_patternId_type(instance):
-    assert isinstance(instance.patternId, int)
 
 
-@given(instance=effbdpattern::SystemPattern_strategy)
-def test_effbdpattern::systempattern_patternId_setter(instance):
+@given(instance=effbdpattern_SystemPattern_strategy)
+def test_effbdpattern_systempattern_patternId_setter(instance):
     original = instance.patternId
     instance.patternId = original
     assert instance.patternId == original
 
-@given(instance=effbdpattern::SystemPattern_strategy)
-def test_effbdpattern::systempattern_knownApplications_type(instance):
-    assert isinstance(instance.knownApplications, str)
 
 
-@given(instance=effbdpattern::SystemPattern_strategy)
-def test_effbdpattern::systempattern_knownApplications_setter(instance):
+@given(instance=effbdpattern_SystemPattern_strategy)
+def test_effbdpattern_systempattern_knownApplications_setter(instance):
     original = instance.knownApplications
     instance.knownApplications = original
     assert instance.knownApplications == original
 
-@given(instance=effbdpattern::SystemPattern_strategy)
-def test_effbdpattern::systempattern_description_type(instance):
-    assert isinstance(instance.description, str)
-
-
-@given(instance=effbdpattern::SystemPattern_strategy)
-def test_effbdpattern::systempattern_description_setter(instance):
-    original = instance.description
-    instance.description = original
-    assert instance.description == original
-
-@given(instance=effbdpattern::PatternCatalog_strategy)
+@given(instance=effbdpattern_PatternCatalog_strategy)
 @settings(max_examples=50)
-def test_effbdpattern::patterncatalog_instantiation(instance):
-    assert isinstance(instance, effbdpattern::PatternCatalog)
-
-@given(instance=effbdpattern::PatternCatalog_strategy)
-def test_effbdpattern::patterncatalog_id_type(instance):
-    assert isinstance(instance.id, str)
+def test_effbdpattern_patterncatalog_instantiation(instance):
+    assert isinstance(instance, effbdpattern_PatternCatalog)
 
 
-@given(instance=effbdpattern::PatternCatalog_strategy)
-def test_effbdpattern::patterncatalog_id_setter(instance):
+
+@given(instance=effbdpattern_PatternCatalog_strategy)
+def test_effbdpattern_patterncatalog_id_setter(instance):
     original = instance.id
     instance.id = original
     assert instance.id == original
 
-@given(instance=effbdpattern::Model_strategy)
+@given(instance=effbdpattern_Model_strategy)
 @settings(max_examples=50)
-def test_effbdpattern::model_instantiation(instance):
-    assert isinstance(instance, effbdpattern::Model)
+def test_effbdpattern_model_instantiation(instance):
+    assert isinstance(instance, effbdpattern_Model)
 
-@given(instance=effbdpattern::Context_strategy)
+@given(instance=effbdpattern_Context_strategy)
 @settings(max_examples=50)
-def test_effbdpattern::context_instantiation(instance):
-    assert isinstance(instance, effbdpattern::Context)
-
-@given(instance=effbdpattern::Context_strategy)
-def test_effbdpattern::context_description_type(instance):
-    assert isinstance(instance.description, str)
+def test_effbdpattern_context_instantiation(instance):
+    assert isinstance(instance, effbdpattern_Context)
 
 
-@given(instance=effbdpattern::Context_strategy)
-def test_effbdpattern::context_description_setter(instance):
+
+@given(instance=effbdpattern_Context_strategy)
+def test_effbdpattern_context_description_setter(instance):
     original = instance.description
     instance.description = original
     assert instance.description == original
 
-@given(instance=effbdpattern::Condition_strategy)
+@given(instance=effbdpattern_Condition_strategy)
 @settings(max_examples=50)
-def test_effbdpattern::condition_instantiation(instance):
-    assert isinstance(instance, effbdpattern::Condition)
-
-@given(instance=effbdpattern::Condition_strategy)
-def test_effbdpattern::condition_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_effbdpattern_condition_instantiation(instance):
+    assert isinstance(instance, effbdpattern_Condition)
 
 
-@given(instance=effbdpattern::Condition_strategy)
-def test_effbdpattern::condition_name_setter(instance):
+
+@given(instance=effbdpattern_Condition_strategy)
+def test_effbdpattern_condition_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=effbdpattern::Feature_strategy)
+@given(instance=effbdpattern_Feature_strategy)
 @settings(max_examples=50)
-def test_effbdpattern::feature_instantiation(instance):
-    assert isinstance(instance, effbdpattern::Feature)
-
-@given(instance=effbdpattern::Feature_strategy)
-def test_effbdpattern::feature_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_effbdpattern_feature_instantiation(instance):
+    assert isinstance(instance, effbdpattern_Feature)
 
 
-@given(instance=effbdpattern::Feature_strategy)
-def test_effbdpattern::feature_name_setter(instance):
+
+@given(instance=effbdpattern_Feature_strategy)
+def test_effbdpattern_feature_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=effbdpattern::Feature_strategy)
-def test_effbdpattern::feature_description_type(instance):
-    assert isinstance(instance.description, str)
 
 
-@given(instance=effbdpattern::Feature_strategy)
-def test_effbdpattern::feature_description_setter(instance):
+@given(instance=effbdpattern_Feature_strategy)
+def test_effbdpattern_feature_description_setter(instance):
     original = instance.description
     instance.description = original
     assert instance.description == original
@@ -1701,170 +1614,146 @@ def test_port_instantiation(instance):
 def test_sequence_instantiation(instance):
     assert isinstance(instance, Sequence)
 
-@given(instance=effbdpattern::Loop_strategy)
+@given(instance=effbdpattern_Final_strategy)
 @settings(max_examples=50)
-def test_effbdpattern::loop_instantiation(instance):
-    assert isinstance(instance, effbdpattern::Loop)
+def test_effbdpattern_final_instantiation(instance):
+    assert isinstance(instance, effbdpattern_Final)
 
-@given(instance=effbdpattern::Iteration_strategy)
+@given(instance=effbdpattern_Or_strategy)
 @settings(max_examples=50)
-def test_effbdpattern::iteration_instantiation(instance):
-    assert isinstance(instance, effbdpattern::Iteration)
+def test_effbdpattern_or_instantiation(instance):
+    assert isinstance(instance, effbdpattern_Or)
 
-@given(instance=effbdpattern::Or_strategy)
+@given(instance=effbdpattern_LoopExit_strategy)
 @settings(max_examples=50)
-def test_effbdpattern::or_instantiation(instance):
-    assert isinstance(instance, effbdpattern::Or)
+def test_effbdpattern_loopexit_instantiation(instance):
+    assert isinstance(instance, effbdpattern_LoopExit)
 
-@given(instance=effbdpattern::Start_strategy)
+@given(instance=effbdpattern_Loop_strategy)
 @settings(max_examples=50)
-def test_effbdpattern::start_instantiation(instance):
-    assert isinstance(instance, effbdpattern::Start)
+def test_effbdpattern_loop_instantiation(instance):
+    assert isinstance(instance, effbdpattern_Loop)
 
-@given(instance=effbdpattern::Final_strategy)
+@given(instance=effbdpattern_Iteration_strategy)
 @settings(max_examples=50)
-def test_effbdpattern::final_instantiation(instance):
-    assert isinstance(instance, effbdpattern::Final)
+def test_effbdpattern_iteration_instantiation(instance):
+    assert isinstance(instance, effbdpattern_Iteration)
 
-@given(instance=effbdpattern::LoopExit_strategy)
+@given(instance=effbdpattern_Start_strategy)
 @settings(max_examples=50)
-def test_effbdpattern::loopexit_instantiation(instance):
-    assert isinstance(instance, effbdpattern::LoopExit)
+def test_effbdpattern_start_instantiation(instance):
+    assert isinstance(instance, effbdpattern_Start)
 
-@given(instance=effbdpattern::And_strategy)
+@given(instance=effbdpattern_And_strategy)
 @settings(max_examples=50)
-def test_effbdpattern::and_instantiation(instance):
-    assert isinstance(instance, effbdpattern::And)
+def test_effbdpattern_and_instantiation(instance):
+    assert isinstance(instance, effbdpattern_And)
 
-@given(instance=effbdpattern::SequenceNode_strategy)
+@given(instance=effbdpattern_SequenceNode_strategy)
 @settings(max_examples=50)
-def test_effbdpattern::sequencenode_instantiation(instance):
-    assert isinstance(instance, effbdpattern::SequenceNode)
-
-@given(instance=effbdpattern::SequenceNode_strategy)
-def test_effbdpattern::sequencenode_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_effbdpattern_sequencenode_instantiation(instance):
+    assert isinstance(instance, effbdpattern_SequenceNode)
 
 
-@given(instance=effbdpattern::SequenceNode_strategy)
-def test_effbdpattern::sequencenode_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
 
-@given(instance=effbdpattern::SequenceNode_strategy)
-def test_effbdpattern::sequencenode_tMax_type(instance):
-    assert isinstance(instance.tMax, int)
-
-
-@given(instance=effbdpattern::SequenceNode_strategy)
-def test_effbdpattern::sequencenode_tMax_setter(instance):
-    original = instance.tMax
-    instance.tMax = original
-    assert instance.tMax == original
-
-@given(instance=effbdpattern::SequenceNode_strategy)
-def test_effbdpattern::sequencenode_tMin_type(instance):
-    assert isinstance(instance.tMin, int)
-
-
-@given(instance=effbdpattern::SequenceNode_strategy)
-def test_effbdpattern::sequencenode_tMin_setter(instance):
+@given(instance=effbdpattern_SequenceNode_strategy)
+def test_effbdpattern_sequencenode_tMin_setter(instance):
     original = instance.tMin
     instance.tMin = original
     assert instance.tMin == original
 
-@given(instance=effbdpattern::Item_strategy)
-@settings(max_examples=50)
-def test_effbdpattern::item_instantiation(instance):
-    assert isinstance(instance, effbdpattern::Item)
-
-@given(instance=effbdpattern::Item_strategy)
-def test_effbdpattern::item_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
-@given(instance=effbdpattern::Item_strategy)
-def test_effbdpattern::item_name_setter(instance):
+@given(instance=effbdpattern_SequenceNode_strategy)
+def test_effbdpattern_sequencenode_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=effbdpattern::FunctionProperty_strategy)
+
+
+@given(instance=effbdpattern_SequenceNode_strategy)
+def test_effbdpattern_sequencenode_tMax_setter(instance):
+    original = instance.tMax
+    instance.tMax = original
+    assert instance.tMax == original
+
+@given(instance=effbdpattern_Item_strategy)
 @settings(max_examples=50)
-def test_effbdpattern::functionproperty_instantiation(instance):
-    assert isinstance(instance, effbdpattern::FunctionProperty)
-
-@given(instance=effbdpattern::FunctionProperty_strategy)
-def test_effbdpattern::functionproperty_description_type(instance):
-    assert isinstance(instance.description, str)
+def test_effbdpattern_item_instantiation(instance):
+    assert isinstance(instance, effbdpattern_Item)
 
 
-@given(instance=effbdpattern::FunctionProperty_strategy)
-def test_effbdpattern::functionproperty_description_setter(instance):
+
+@given(instance=effbdpattern_Item_strategy)
+def test_effbdpattern_item_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+@given(instance=effbdpattern_FunctionProperty_strategy)
+@settings(max_examples=50)
+def test_effbdpattern_functionproperty_instantiation(instance):
+    assert isinstance(instance, effbdpattern_FunctionProperty)
+
+
+
+@given(instance=effbdpattern_FunctionProperty_strategy)
+def test_effbdpattern_functionproperty_description_setter(instance):
     original = instance.description
     instance.description = original
     assert instance.description == original
 
-@given(instance=effbdpattern::Port_strategy)
+@given(instance=effbdpattern_Port_strategy)
 @settings(max_examples=50)
-def test_effbdpattern::port_instantiation(instance):
-    assert isinstance(instance, effbdpattern::Port)
-
-@given(instance=effbdpattern::Port_strategy)
-def test_effbdpattern::port_id_type(instance):
-    assert isinstance(instance.id, str)
+def test_effbdpattern_port_instantiation(instance):
+    assert isinstance(instance, effbdpattern_Port)
 
 
-@given(instance=effbdpattern::Port_strategy)
-def test_effbdpattern::port_id_setter(instance):
+
+@given(instance=effbdpattern_Port_strategy)
+def test_effbdpattern_port_id_setter(instance):
     original = instance.id
     instance.id = original
     assert instance.id == original
 
-@given(instance=effbdpattern::Token_strategy)
+@given(instance=effbdpattern_Token_strategy)
 @settings(max_examples=50)
-def test_effbdpattern::token_instantiation(instance):
-    assert isinstance(instance, effbdpattern::Token)
+def test_effbdpattern_token_instantiation(instance):
+    assert isinstance(instance, effbdpattern_Token)
 
-@given(instance=effbdpattern::Description_strategy)
+@given(instance=effbdpattern_Description_strategy)
 @settings(max_examples=50)
-def test_effbdpattern::description_instantiation(instance):
-    assert isinstance(instance, effbdpattern::Description)
-
-@given(instance=effbdpattern::Description_strategy)
-def test_effbdpattern::description_content_type(instance):
-    assert isinstance(instance.content, str)
+def test_effbdpattern_description_instantiation(instance):
+    assert isinstance(instance, effbdpattern_Description)
 
 
-@given(instance=effbdpattern::Description_strategy)
-def test_effbdpattern::description_content_setter(instance):
+
+@given(instance=effbdpattern_Description_strategy)
+def test_effbdpattern_description_content_setter(instance):
     original = instance.content
     instance.content = original
     assert instance.content == original
 
-@given(instance=effbdpattern::InputPort_strategy)
+@given(instance=effbdpattern_InputPort_strategy)
 @settings(max_examples=50)
-def test_effbdpattern::inputport_instantiation(instance):
-    assert isinstance(instance, effbdpattern::InputPort)
+def test_effbdpattern_inputport_instantiation(instance):
+    assert isinstance(instance, effbdpattern_InputPort)
 
-@given(instance=effbdpattern::OutputPort_strategy)
+@given(instance=effbdpattern_OutputPort_strategy)
 @settings(max_examples=50)
-def test_effbdpattern::outputport_instantiation(instance):
-    assert isinstance(instance, effbdpattern::OutputPort)
+def test_effbdpattern_outputport_instantiation(instance):
+    assert isinstance(instance, effbdpattern_OutputPort)
 
-@given(instance=effbdpattern::Flow_strategy)
+@given(instance=effbdpattern_Flow_strategy)
 @settings(max_examples=50)
-def test_effbdpattern::flow_instantiation(instance):
-    assert isinstance(instance, effbdpattern::Flow)
-
-@given(instance=effbdpattern::Flow_strategy)
-def test_effbdpattern::flow_flowName_type(instance):
-    assert isinstance(instance.flowName, str)
+def test_effbdpattern_flow_instantiation(instance):
+    assert isinstance(instance, effbdpattern_Flow)
 
 
-@given(instance=effbdpattern::Flow_strategy)
-def test_effbdpattern::flow_flowName_setter(instance):
+
+@given(instance=effbdpattern_Flow_strategy)
+def test_effbdpattern_flow_flowName_setter(instance):
     original = instance.flowName
     instance.flowName = original
     assert instance.flowName == original
@@ -1874,33 +1763,30 @@ def test_effbdpattern::flow_flowName_setter(instance):
 def test_modelelement_instantiation(instance):
     assert isinstance(instance, ModelElement)
 
-@given(instance=effbdpattern::Component_strategy)
+@given(instance=effbdpattern_Component_strategy)
 @settings(max_examples=50)
-def test_effbdpattern::component_instantiation(instance):
-    assert isinstance(instance, effbdpattern::Component)
+def test_effbdpattern_component_instantiation(instance):
+    assert isinstance(instance, effbdpattern_Component)
 
 @given(instance=SequenceNode_strategy)
 @settings(max_examples=50)
 def test_sequencenode_instantiation(instance):
     assert isinstance(instance, SequenceNode)
 
-@given(instance=effbdpattern::Sequence_strategy)
+@given(instance=effbdpattern_Sequence_strategy)
 @settings(max_examples=50)
-def test_effbdpattern::sequence_instantiation(instance):
-    assert isinstance(instance, effbdpattern::Sequence)
+def test_effbdpattern_sequence_instantiation(instance):
+    assert isinstance(instance, effbdpattern_Sequence)
 
-@given(instance=effbdpattern::Function_strategy)
+@given(instance=effbdpattern_Function_strategy)
 @settings(max_examples=50)
-def test_effbdpattern::function_instantiation(instance):
-    assert isinstance(instance, effbdpattern::Function)
-
-@given(instance=effbdpattern::Function_strategy)
-def test_effbdpattern::function_domain_type(instance):
-    assert isinstance(instance.domain, str)
+def test_effbdpattern_function_instantiation(instance):
+    assert isinstance(instance, effbdpattern_Function)
 
 
-@given(instance=effbdpattern::Function_strategy)
-def test_effbdpattern::function_domain_setter(instance):
+
+@given(instance=effbdpattern_Function_strategy)
+def test_effbdpattern_function_domain_setter(instance):
     original = instance.domain
     instance.domain = original
     assert instance.domain == original

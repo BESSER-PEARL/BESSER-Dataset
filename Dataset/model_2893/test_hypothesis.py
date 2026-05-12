@@ -3,33 +3,33 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    webGui::DomainPathTail,
+from python_code import (
+    webGui_DomainPathTail,
     Value,
-    webGui::DomainPath,
+    webGui_DomainPath,
     PageElement,
-    webGui::DisplayElement,
-    webGui::ActionElement,
-    webGui::PageElement,
-    webGui::NumberLiteral,
+    webGui_DisplayElement,
+    webGui_ActionElement,
+    webGui_PageElement,
+    webGui_NumberLiteral,
     Expression,
-    webGui::Divide,
-    webGui::Add,
-    webGui::Multiply,
-    webGui::Subtract,
-    webGui::Value,
-    webGui::Model,
-    webGui::Page,
-    webGui::Expression,
-    webGui::Feature,
+    webGui_Multiply,
+    webGui_Subtract,
+    webGui_Add,
+    webGui_Divide,
+    webGui_Value,
+    webGui_Model,
+    webGui_Page,
+    webGui_Expression,
+    webGui_Feature,
     Type,
-    webGui::DataType,
-    webGui::Entity,
-    webGui::Type,
-    webGui::WebModel,
-    webGui::DomainModel,
+    webGui_DataType,
+    webGui_Entity,
+    webGui_Type,
+    webGui_WebModel,
+    webGui_DomainModel,
 )
 
 # =============================================================================
@@ -38,16 +38,16 @@ from classes import (
 
 
 
-def test_webgui::domainpathtail_is_not_abstract():
-    assert not inspect.isabstract(webGui::DomainPathTail)
+def test_webgui_domainpathtail_is_not_abstract():
+    assert not inspect.isabstract(webGui_DomainPathTail)
 
 
-def test_webgui::domainpathtail_constructor_exists():
-    assert callable(webGui::DomainPathTail.__init__)
+def test_webgui_domainpathtail_constructor_exists():
+    assert callable(webGui_DomainPathTail.__init__)
 
 
-def test_webgui::domainpathtail_constructor_args():
-    sig = inspect.signature(webGui::DomainPathTail.__init__)
+def test_webgui_domainpathtail_constructor_args():
+    sig = inspect.signature(webGui_DomainPathTail.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -66,16 +66,16 @@ def test_value_constructor_args():
 
 
 
-def test_webgui::domainpath_is_not_abstract():
-    assert not inspect.isabstract(webGui::DomainPath)
+def test_webgui_domainpath_is_not_abstract():
+    assert not inspect.isabstract(webGui_DomainPath)
 
 
-def test_webgui::domainpath_constructor_exists():
-    assert callable(webGui::DomainPath.__init__)
+def test_webgui_domainpath_constructor_exists():
+    assert callable(webGui_DomainPath.__init__)
 
 
-def test_webgui::domainpath_constructor_args():
-    sig = inspect.signature(webGui::DomainPath.__init__)
+def test_webgui_domainpath_constructor_args():
+    sig = inspect.signature(webGui_DomainPath.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -94,37 +94,37 @@ def test_pageelement_constructor_args():
 
 
 
-def test_webgui::displayelement_is_not_abstract():
-    assert not inspect.isabstract(webGui::DisplayElement)
+def test_webgui_displayelement_is_not_abstract():
+    assert not inspect.isabstract(webGui_DisplayElement)
 
 
-def test_webgui::displayelement_constructor_exists():
-    assert callable(webGui::DisplayElement.__init__)
+def test_webgui_displayelement_constructor_exists():
+    assert callable(webGui_DisplayElement.__init__)
 
 
-def test_webgui::displayelement_constructor_args():
-    sig = inspect.signature(webGui::DisplayElement.__init__)
+def test_webgui_displayelement_constructor_args():
+    sig = inspect.signature(webGui_DisplayElement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_webgui::actionelement_is_not_abstract():
-    assert not inspect.isabstract(webGui::ActionElement)
+def test_webgui_actionelement_is_not_abstract():
+    assert not inspect.isabstract(webGui_ActionElement)
 
 
-def test_webgui::actionelement_constructor_exists():
-    assert callable(webGui::ActionElement.__init__)
+def test_webgui_actionelement_constructor_exists():
+    assert callable(webGui_ActionElement.__init__)
 
 
-def test_webgui::actionelement_constructor_args():
-    sig = inspect.signature(webGui::ActionElement.__init__)
+def test_webgui_actionelement_constructor_args():
+    sig = inspect.signature(webGui_ActionElement.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_webgui::actionelement_has_name():
-    assert hasattr(webGui::ActionElement, "name")
+def test_webgui_actionelement_has_name():
+    assert hasattr(webGui_ActionElement, "name")
     descriptor = None
-    for klass in webGui::ActionElement.__mro__:
+    for klass in webGui_ActionElement.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -132,37 +132,37 @@ def test_webgui::actionelement_has_name():
 
 
 
-def test_webgui::pageelement_is_not_abstract():
-    assert not inspect.isabstract(webGui::PageElement)
+def test_webgui_pageelement_is_not_abstract():
+    assert not inspect.isabstract(webGui_PageElement)
 
 
-def test_webgui::pageelement_constructor_exists():
-    assert callable(webGui::PageElement.__init__)
+def test_webgui_pageelement_constructor_exists():
+    assert callable(webGui_PageElement.__init__)
 
 
-def test_webgui::pageelement_constructor_args():
-    sig = inspect.signature(webGui::PageElement.__init__)
+def test_webgui_pageelement_constructor_args():
+    sig = inspect.signature(webGui_PageElement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_webgui::numberliteral_is_not_abstract():
-    assert not inspect.isabstract(webGui::NumberLiteral)
+def test_webgui_numberliteral_is_not_abstract():
+    assert not inspect.isabstract(webGui_NumberLiteral)
 
 
-def test_webgui::numberliteral_constructor_exists():
-    assert callable(webGui::NumberLiteral.__init__)
+def test_webgui_numberliteral_constructor_exists():
+    assert callable(webGui_NumberLiteral.__init__)
 
 
-def test_webgui::numberliteral_constructor_args():
-    sig = inspect.signature(webGui::NumberLiteral.__init__)
+def test_webgui_numberliteral_constructor_args():
+    sig = inspect.signature(webGui_NumberLiteral.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
 
-def test_webgui::numberliteral_has_value():
-    assert hasattr(webGui::NumberLiteral, "value")
+def test_webgui_numberliteral_has_value():
+    assert hasattr(webGui_NumberLiteral, "value")
     descriptor = None
-    for klass in webGui::NumberLiteral.__mro__:
+    for klass in webGui_NumberLiteral.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -184,93 +184,93 @@ def test_expression_constructor_args():
 
 
 
-def test_webgui::divide_is_not_abstract():
-    assert not inspect.isabstract(webGui::Divide)
+def test_webgui_multiply_is_not_abstract():
+    assert not inspect.isabstract(webGui_Multiply)
 
 
-def test_webgui::divide_constructor_exists():
-    assert callable(webGui::Divide.__init__)
+def test_webgui_multiply_constructor_exists():
+    assert callable(webGui_Multiply.__init__)
 
 
-def test_webgui::divide_constructor_args():
-    sig = inspect.signature(webGui::Divide.__init__)
+def test_webgui_multiply_constructor_args():
+    sig = inspect.signature(webGui_Multiply.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_webgui::add_is_not_abstract():
-    assert not inspect.isabstract(webGui::Add)
+def test_webgui_subtract_is_not_abstract():
+    assert not inspect.isabstract(webGui_Subtract)
 
 
-def test_webgui::add_constructor_exists():
-    assert callable(webGui::Add.__init__)
+def test_webgui_subtract_constructor_exists():
+    assert callable(webGui_Subtract.__init__)
 
 
-def test_webgui::add_constructor_args():
-    sig = inspect.signature(webGui::Add.__init__)
+def test_webgui_subtract_constructor_args():
+    sig = inspect.signature(webGui_Subtract.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_webgui::multiply_is_not_abstract():
-    assert not inspect.isabstract(webGui::Multiply)
+def test_webgui_add_is_not_abstract():
+    assert not inspect.isabstract(webGui_Add)
 
 
-def test_webgui::multiply_constructor_exists():
-    assert callable(webGui::Multiply.__init__)
+def test_webgui_add_constructor_exists():
+    assert callable(webGui_Add.__init__)
 
 
-def test_webgui::multiply_constructor_args():
-    sig = inspect.signature(webGui::Multiply.__init__)
+def test_webgui_add_constructor_args():
+    sig = inspect.signature(webGui_Add.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_webgui::subtract_is_not_abstract():
-    assert not inspect.isabstract(webGui::Subtract)
+def test_webgui_divide_is_not_abstract():
+    assert not inspect.isabstract(webGui_Divide)
 
 
-def test_webgui::subtract_constructor_exists():
-    assert callable(webGui::Subtract.__init__)
+def test_webgui_divide_constructor_exists():
+    assert callable(webGui_Divide.__init__)
 
 
-def test_webgui::subtract_constructor_args():
-    sig = inspect.signature(webGui::Subtract.__init__)
+def test_webgui_divide_constructor_args():
+    sig = inspect.signature(webGui_Divide.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_webgui::value_is_not_abstract():
-    assert not inspect.isabstract(webGui::Value)
+def test_webgui_value_is_not_abstract():
+    assert not inspect.isabstract(webGui_Value)
 
 
-def test_webgui::value_constructor_exists():
-    assert callable(webGui::Value.__init__)
+def test_webgui_value_constructor_exists():
+    assert callable(webGui_Value.__init__)
 
 
-def test_webgui::value_constructor_args():
-    sig = inspect.signature(webGui::Value.__init__)
+def test_webgui_value_constructor_args():
+    sig = inspect.signature(webGui_Value.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_webgui::model_is_not_abstract():
-    assert not inspect.isabstract(webGui::Model)
+def test_webgui_model_is_not_abstract():
+    assert not inspect.isabstract(webGui_Model)
 
 
-def test_webgui::model_constructor_exists():
-    assert callable(webGui::Model.__init__)
+def test_webgui_model_constructor_exists():
+    assert callable(webGui_Model.__init__)
 
 
-def test_webgui::model_constructor_args():
-    sig = inspect.signature(webGui::Model.__init__)
+def test_webgui_model_constructor_args():
+    sig = inspect.signature(webGui_Model.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_webgui::model_has_name():
-    assert hasattr(webGui::Model, "name")
+def test_webgui_model_has_name():
+    assert hasattr(webGui_Model, "name")
     descriptor = None
-    for klass in webGui::Model.__mro__:
+    for klass in webGui_Model.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -278,83 +278,83 @@ def test_webgui::model_has_name():
 
 
 
-def test_webgui::page_is_not_abstract():
-    assert not inspect.isabstract(webGui::Page)
+def test_webgui_page_is_not_abstract():
+    assert not inspect.isabstract(webGui_Page)
 
 
-def test_webgui::page_constructor_exists():
-    assert callable(webGui::Page.__init__)
+def test_webgui_page_constructor_exists():
+    assert callable(webGui_Page.__init__)
 
 
-def test_webgui::page_constructor_args():
-    sig = inspect.signature(webGui::Page.__init__)
+def test_webgui_page_constructor_args():
+    sig = inspect.signature(webGui_Page.__init__)
     params = list(sig.parameters.keys())
-    assert "name" in params, "Missing parameter 'name'"
     assert "title" in params, "Missing parameter 'title'"
+    assert "name" in params, "Missing parameter 'name'"
 
-def test_webgui::page_has_name():
-    assert hasattr(webGui::Page, "name")
+def test_webgui_page_has_title():
+    assert hasattr(webGui_Page, "title")
     descriptor = None
-    for klass in webGui::Page.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_webgui::page_has_title():
-    assert hasattr(webGui::Page, "title")
-    descriptor = None
-    for klass in webGui::Page.__mro__:
+    for klass in webGui_Page.__mro__:
         if "title" in klass.__dict__:
             descriptor = klass.__dict__["title"]
             break
     assert isinstance(descriptor, property)
 
-
-
-def test_webgui::expression_is_not_abstract():
-    assert not inspect.isabstract(webGui::Expression)
-
-
-def test_webgui::expression_constructor_exists():
-    assert callable(webGui::Expression.__init__)
-
-
-def test_webgui::expression_constructor_args():
-    sig = inspect.signature(webGui::Expression.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_webgui::feature_is_not_abstract():
-    assert not inspect.isabstract(webGui::Feature)
-
-
-def test_webgui::feature_constructor_exists():
-    assert callable(webGui::Feature.__init__)
-
-
-def test_webgui::feature_constructor_args():
-    sig = inspect.signature(webGui::Feature.__init__)
-    params = list(sig.parameters.keys())
-    assert "name" in params, "Missing parameter 'name'"
-    assert "multivalued" in params, "Missing parameter 'multivalued'"
-
-def test_webgui::feature_has_name():
-    assert hasattr(webGui::Feature, "name")
+def test_webgui_page_has_name():
+    assert hasattr(webGui_Page, "name")
     descriptor = None
-    for klass in webGui::Feature.__mro__:
+    for klass in webGui_Page.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
-def test_webgui::feature_has_multivalued():
-    assert hasattr(webGui::Feature, "multivalued")
+
+
+def test_webgui_expression_is_not_abstract():
+    assert not inspect.isabstract(webGui_Expression)
+
+
+def test_webgui_expression_constructor_exists():
+    assert callable(webGui_Expression.__init__)
+
+
+def test_webgui_expression_constructor_args():
+    sig = inspect.signature(webGui_Expression.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_webgui_feature_is_not_abstract():
+    assert not inspect.isabstract(webGui_Feature)
+
+
+def test_webgui_feature_constructor_exists():
+    assert callable(webGui_Feature.__init__)
+
+
+def test_webgui_feature_constructor_args():
+    sig = inspect.signature(webGui_Feature.__init__)
+    params = list(sig.parameters.keys())
+    assert "multivalued" in params, "Missing parameter 'multivalued'"
+    assert "name" in params, "Missing parameter 'name'"
+
+def test_webgui_feature_has_multivalued():
+    assert hasattr(webGui_Feature, "multivalued")
     descriptor = None
-    for klass in webGui::Feature.__mro__:
+    for klass in webGui_Feature.__mro__:
         if "multivalued" in klass.__dict__:
             descriptor = klass.__dict__["multivalued"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_webgui_feature_has_name():
+    assert hasattr(webGui_Feature, "name")
+    descriptor = None
+    for klass in webGui_Feature.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
@@ -374,51 +374,51 @@ def test_type_constructor_args():
 
 
 
-def test_webgui::datatype_is_not_abstract():
-    assert not inspect.isabstract(webGui::DataType)
+def test_webgui_datatype_is_not_abstract():
+    assert not inspect.isabstract(webGui_DataType)
 
 
-def test_webgui::datatype_constructor_exists():
-    assert callable(webGui::DataType.__init__)
+def test_webgui_datatype_constructor_exists():
+    assert callable(webGui_DataType.__init__)
 
 
-def test_webgui::datatype_constructor_args():
-    sig = inspect.signature(webGui::DataType.__init__)
+def test_webgui_datatype_constructor_args():
+    sig = inspect.signature(webGui_DataType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_webgui::entity_is_not_abstract():
-    assert not inspect.isabstract(webGui::Entity)
+def test_webgui_entity_is_not_abstract():
+    assert not inspect.isabstract(webGui_Entity)
 
 
-def test_webgui::entity_constructor_exists():
-    assert callable(webGui::Entity.__init__)
+def test_webgui_entity_constructor_exists():
+    assert callable(webGui_Entity.__init__)
 
 
-def test_webgui::entity_constructor_args():
-    sig = inspect.signature(webGui::Entity.__init__)
+def test_webgui_entity_constructor_args():
+    sig = inspect.signature(webGui_Entity.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_webgui::type_is_not_abstract():
-    assert not inspect.isabstract(webGui::Type)
+def test_webgui_type_is_not_abstract():
+    assert not inspect.isabstract(webGui_Type)
 
 
-def test_webgui::type_constructor_exists():
-    assert callable(webGui::Type.__init__)
+def test_webgui_type_constructor_exists():
+    assert callable(webGui_Type.__init__)
 
 
-def test_webgui::type_constructor_args():
-    sig = inspect.signature(webGui::Type.__init__)
+def test_webgui_type_constructor_args():
+    sig = inspect.signature(webGui_Type.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_webgui::type_has_name():
-    assert hasattr(webGui::Type, "name")
+def test_webgui_type_has_name():
+    assert hasattr(webGui_Type, "name")
     descriptor = None
-    for klass in webGui::Type.__mro__:
+    for klass in webGui_Type.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -426,30 +426,30 @@ def test_webgui::type_has_name():
 
 
 
-def test_webgui::webmodel_is_not_abstract():
-    assert not inspect.isabstract(webGui::WebModel)
+def test_webgui_webmodel_is_not_abstract():
+    assert not inspect.isabstract(webGui_WebModel)
 
 
-def test_webgui::webmodel_constructor_exists():
-    assert callable(webGui::WebModel.__init__)
+def test_webgui_webmodel_constructor_exists():
+    assert callable(webGui_WebModel.__init__)
 
 
-def test_webgui::webmodel_constructor_args():
-    sig = inspect.signature(webGui::WebModel.__init__)
+def test_webgui_webmodel_constructor_args():
+    sig = inspect.signature(webGui_WebModel.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_webgui::domainmodel_is_not_abstract():
-    assert not inspect.isabstract(webGui::DomainModel)
+def test_webgui_domainmodel_is_not_abstract():
+    assert not inspect.isabstract(webGui_DomainModel)
 
 
-def test_webgui::domainmodel_constructor_exists():
-    assert callable(webGui::DomainModel.__init__)
+def test_webgui_domainmodel_constructor_exists():
+    assert callable(webGui_DomainModel.__init__)
 
 
-def test_webgui::domainmodel_constructor_args():
-    sig = inspect.signature(webGui::DomainModel.__init__)
+def test_webgui_domainmodel_constructor_args():
+    sig = inspect.signature(webGui_DomainModel.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -464,153 +464,147 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-webGui::DomainPathTail_strategy = st.builds(
-    webGui::DomainPathTail,
+webGui_DomainPathTail_strategy = st.builds(
+    webGui_DomainPathTail,
 )
 Value_strategy = st.builds(
     Value,
 )
-webGui::DomainPath_strategy = st.builds(
-    webGui::DomainPath,
+webGui_DomainPath_strategy = st.builds(
+    webGui_DomainPath,
 )
 PageElement_strategy = st.builds(
     PageElement,
 )
-webGui::DisplayElement_strategy = st.builds(
-    webGui::DisplayElement,
+webGui_DisplayElement_strategy = st.builds(
+    webGui_DisplayElement,
 )
-webGui::ActionElement_strategy = st.builds(
-    webGui::ActionElement,
+webGui_ActionElement_strategy = st.builds(
+    webGui_ActionElement,
     name=
         safe_text
 )
-webGui::PageElement_strategy = st.builds(
-    webGui::PageElement,
+webGui_PageElement_strategy = st.builds(
+    webGui_PageElement,
 )
-webGui::NumberLiteral_strategy = st.builds(
-    webGui::NumberLiteral,
+webGui_NumberLiteral_strategy = st.builds(
+    webGui_NumberLiteral,
     value=
         st.integers()
 )
 Expression_strategy = st.builds(
     Expression,
 )
-webGui::Divide_strategy = st.builds(
-    webGui::Divide,
+webGui_Multiply_strategy = st.builds(
+    webGui_Multiply,
 )
-webGui::Add_strategy = st.builds(
-    webGui::Add,
+webGui_Subtract_strategy = st.builds(
+    webGui_Subtract,
 )
-webGui::Multiply_strategy = st.builds(
-    webGui::Multiply,
+webGui_Add_strategy = st.builds(
+    webGui_Add,
 )
-webGui::Subtract_strategy = st.builds(
-    webGui::Subtract,
+webGui_Divide_strategy = st.builds(
+    webGui_Divide,
 )
-webGui::Value_strategy = st.builds(
-    webGui::Value,
+webGui_Value_strategy = st.builds(
+    webGui_Value,
 )
-webGui::Model_strategy = st.builds(
-    webGui::Model,
+webGui_Model_strategy = st.builds(
+    webGui_Model,
     name=
         safe_text
 )
-webGui::Page_strategy = st.builds(
-    webGui::Page,
-    name=
-        safe_text,
+webGui_Page_strategy = st.builds(
+    webGui_Page,
     title=
+        safe_text,
+    name=
         safe_text
 )
-webGui::Expression_strategy = st.builds(
-    webGui::Expression,
+webGui_Expression_strategy = st.builds(
+    webGui_Expression,
 )
-webGui::Feature_strategy = st.builds(
-    webGui::Feature,
-    name=
-        safe_text,
+webGui_Feature_strategy = st.builds(
+    webGui_Feature,
     multivalued=
-        st.booleans()
+        st.booleans(),
+    name=
+        safe_text
 )
 Type_strategy = st.builds(
     Type,
 )
-webGui::DataType_strategy = st.builds(
-    webGui::DataType,
+webGui_DataType_strategy = st.builds(
+    webGui_DataType,
 )
-webGui::Entity_strategy = st.builds(
-    webGui::Entity,
+webGui_Entity_strategy = st.builds(
+    webGui_Entity,
 )
-webGui::Type_strategy = st.builds(
-    webGui::Type,
+webGui_Type_strategy = st.builds(
+    webGui_Type,
     name=
         safe_text
 )
-webGui::WebModel_strategy = st.builds(
-    webGui::WebModel,
+webGui_WebModel_strategy = st.builds(
+    webGui_WebModel,
 )
-webGui::DomainModel_strategy = st.builds(
-    webGui::DomainModel,
+webGui_DomainModel_strategy = st.builds(
+    webGui_DomainModel,
 )
 
-@given(instance=webGui::DomainPathTail_strategy)
+@given(instance=webGui_DomainPathTail_strategy)
 @settings(max_examples=50)
-def test_webgui::domainpathtail_instantiation(instance):
-    assert isinstance(instance, webGui::DomainPathTail)
+def test_webgui_domainpathtail_instantiation(instance):
+    assert isinstance(instance, webGui_DomainPathTail)
 
 @given(instance=Value_strategy)
 @settings(max_examples=50)
 def test_value_instantiation(instance):
     assert isinstance(instance, Value)
 
-@given(instance=webGui::DomainPath_strategy)
+@given(instance=webGui_DomainPath_strategy)
 @settings(max_examples=50)
-def test_webgui::domainpath_instantiation(instance):
-    assert isinstance(instance, webGui::DomainPath)
+def test_webgui_domainpath_instantiation(instance):
+    assert isinstance(instance, webGui_DomainPath)
 
 @given(instance=PageElement_strategy)
 @settings(max_examples=50)
 def test_pageelement_instantiation(instance):
     assert isinstance(instance, PageElement)
 
-@given(instance=webGui::DisplayElement_strategy)
+@given(instance=webGui_DisplayElement_strategy)
 @settings(max_examples=50)
-def test_webgui::displayelement_instantiation(instance):
-    assert isinstance(instance, webGui::DisplayElement)
+def test_webgui_displayelement_instantiation(instance):
+    assert isinstance(instance, webGui_DisplayElement)
 
-@given(instance=webGui::ActionElement_strategy)
+@given(instance=webGui_ActionElement_strategy)
 @settings(max_examples=50)
-def test_webgui::actionelement_instantiation(instance):
-    assert isinstance(instance, webGui::ActionElement)
-
-@given(instance=webGui::ActionElement_strategy)
-def test_webgui::actionelement_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_webgui_actionelement_instantiation(instance):
+    assert isinstance(instance, webGui_ActionElement)
 
 
-@given(instance=webGui::ActionElement_strategy)
-def test_webgui::actionelement_name_setter(instance):
+
+@given(instance=webGui_ActionElement_strategy)
+def test_webgui_actionelement_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=webGui::PageElement_strategy)
+@given(instance=webGui_PageElement_strategy)
 @settings(max_examples=50)
-def test_webgui::pageelement_instantiation(instance):
-    assert isinstance(instance, webGui::PageElement)
+def test_webgui_pageelement_instantiation(instance):
+    assert isinstance(instance, webGui_PageElement)
 
-@given(instance=webGui::NumberLiteral_strategy)
+@given(instance=webGui_NumberLiteral_strategy)
 @settings(max_examples=50)
-def test_webgui::numberliteral_instantiation(instance):
-    assert isinstance(instance, webGui::NumberLiteral)
-
-@given(instance=webGui::NumberLiteral_strategy)
-def test_webgui::numberliteral_value_type(instance):
-    assert isinstance(instance.value, int)
+def test_webgui_numberliteral_instantiation(instance):
+    assert isinstance(instance, webGui_NumberLiteral)
 
 
-@given(instance=webGui::NumberLiteral_strategy)
-def test_webgui::numberliteral_value_setter(instance):
+
+@given(instance=webGui_NumberLiteral_strategy)
+def test_webgui_numberliteral_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
@@ -620,143 +614,125 @@ def test_webgui::numberliteral_value_setter(instance):
 def test_expression_instantiation(instance):
     assert isinstance(instance, Expression)
 
-@given(instance=webGui::Divide_strategy)
+@given(instance=webGui_Multiply_strategy)
 @settings(max_examples=50)
-def test_webgui::divide_instantiation(instance):
-    assert isinstance(instance, webGui::Divide)
+def test_webgui_multiply_instantiation(instance):
+    assert isinstance(instance, webGui_Multiply)
 
-@given(instance=webGui::Add_strategy)
+@given(instance=webGui_Subtract_strategy)
 @settings(max_examples=50)
-def test_webgui::add_instantiation(instance):
-    assert isinstance(instance, webGui::Add)
+def test_webgui_subtract_instantiation(instance):
+    assert isinstance(instance, webGui_Subtract)
 
-@given(instance=webGui::Multiply_strategy)
+@given(instance=webGui_Add_strategy)
 @settings(max_examples=50)
-def test_webgui::multiply_instantiation(instance):
-    assert isinstance(instance, webGui::Multiply)
+def test_webgui_add_instantiation(instance):
+    assert isinstance(instance, webGui_Add)
 
-@given(instance=webGui::Subtract_strategy)
+@given(instance=webGui_Divide_strategy)
 @settings(max_examples=50)
-def test_webgui::subtract_instantiation(instance):
-    assert isinstance(instance, webGui::Subtract)
+def test_webgui_divide_instantiation(instance):
+    assert isinstance(instance, webGui_Divide)
 
-@given(instance=webGui::Value_strategy)
+@given(instance=webGui_Value_strategy)
 @settings(max_examples=50)
-def test_webgui::value_instantiation(instance):
-    assert isinstance(instance, webGui::Value)
+def test_webgui_value_instantiation(instance):
+    assert isinstance(instance, webGui_Value)
 
-@given(instance=webGui::Model_strategy)
+@given(instance=webGui_Model_strategy)
 @settings(max_examples=50)
-def test_webgui::model_instantiation(instance):
-    assert isinstance(instance, webGui::Model)
-
-@given(instance=webGui::Model_strategy)
-def test_webgui::model_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_webgui_model_instantiation(instance):
+    assert isinstance(instance, webGui_Model)
 
 
-@given(instance=webGui::Model_strategy)
-def test_webgui::model_name_setter(instance):
+
+@given(instance=webGui_Model_strategy)
+def test_webgui_model_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=webGui::Page_strategy)
+@given(instance=webGui_Page_strategy)
 @settings(max_examples=50)
-def test_webgui::page_instantiation(instance):
-    assert isinstance(instance, webGui::Page)
-
-@given(instance=webGui::Page_strategy)
-def test_webgui::page_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_webgui_page_instantiation(instance):
+    assert isinstance(instance, webGui_Page)
 
 
-@given(instance=webGui::Page_strategy)
-def test_webgui::page_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
 
-@given(instance=webGui::Page_strategy)
-def test_webgui::page_title_type(instance):
-    assert isinstance(instance.title, str)
-
-
-@given(instance=webGui::Page_strategy)
-def test_webgui::page_title_setter(instance):
+@given(instance=webGui_Page_strategy)
+def test_webgui_page_title_setter(instance):
     original = instance.title
     instance.title = original
     assert instance.title == original
 
-@given(instance=webGui::Expression_strategy)
-@settings(max_examples=50)
-def test_webgui::expression_instantiation(instance):
-    assert isinstance(instance, webGui::Expression)
-
-@given(instance=webGui::Feature_strategy)
-@settings(max_examples=50)
-def test_webgui::feature_instantiation(instance):
-    assert isinstance(instance, webGui::Feature)
-
-@given(instance=webGui::Feature_strategy)
-def test_webgui::feature_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
-@given(instance=webGui::Feature_strategy)
-def test_webgui::feature_name_setter(instance):
+@given(instance=webGui_Page_strategy)
+def test_webgui_page_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=webGui::Feature_strategy)
-def test_webgui::feature_multivalued_type(instance):
-    assert isinstance(instance.multivalued, bool)
+@given(instance=webGui_Expression_strategy)
+@settings(max_examples=50)
+def test_webgui_expression_instantiation(instance):
+    assert isinstance(instance, webGui_Expression)
+
+@given(instance=webGui_Feature_strategy)
+@settings(max_examples=50)
+def test_webgui_feature_instantiation(instance):
+    assert isinstance(instance, webGui_Feature)
 
 
-@given(instance=webGui::Feature_strategy)
-def test_webgui::feature_multivalued_setter(instance):
+
+@given(instance=webGui_Feature_strategy)
+def test_webgui_feature_multivalued_setter(instance):
     original = instance.multivalued
     instance.multivalued = original
     assert instance.multivalued == original
+
+
+
+@given(instance=webGui_Feature_strategy)
+def test_webgui_feature_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
 
 @given(instance=Type_strategy)
 @settings(max_examples=50)
 def test_type_instantiation(instance):
     assert isinstance(instance, Type)
 
-@given(instance=webGui::DataType_strategy)
+@given(instance=webGui_DataType_strategy)
 @settings(max_examples=50)
-def test_webgui::datatype_instantiation(instance):
-    assert isinstance(instance, webGui::DataType)
+def test_webgui_datatype_instantiation(instance):
+    assert isinstance(instance, webGui_DataType)
 
-@given(instance=webGui::Entity_strategy)
+@given(instance=webGui_Entity_strategy)
 @settings(max_examples=50)
-def test_webgui::entity_instantiation(instance):
-    assert isinstance(instance, webGui::Entity)
+def test_webgui_entity_instantiation(instance):
+    assert isinstance(instance, webGui_Entity)
 
-@given(instance=webGui::Type_strategy)
+@given(instance=webGui_Type_strategy)
 @settings(max_examples=50)
-def test_webgui::type_instantiation(instance):
-    assert isinstance(instance, webGui::Type)
-
-@given(instance=webGui::Type_strategy)
-def test_webgui::type_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_webgui_type_instantiation(instance):
+    assert isinstance(instance, webGui_Type)
 
 
-@given(instance=webGui::Type_strategy)
-def test_webgui::type_name_setter(instance):
+
+@given(instance=webGui_Type_strategy)
+def test_webgui_type_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=webGui::WebModel_strategy)
+@given(instance=webGui_WebModel_strategy)
 @settings(max_examples=50)
-def test_webgui::webmodel_instantiation(instance):
-    assert isinstance(instance, webGui::WebModel)
+def test_webgui_webmodel_instantiation(instance):
+    assert isinstance(instance, webGui_WebModel)
 
-@given(instance=webGui::DomainModel_strategy)
+@given(instance=webGui_DomainModel_strategy)
 @settings(max_examples=50)
-def test_webgui::domainmodel_instantiation(instance):
-    assert isinstance(instance, webGui::DomainModel)
+def test_webgui_domainmodel_instantiation(instance):
+    assert isinstance(instance, webGui_DomainModel)

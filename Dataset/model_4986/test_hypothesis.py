@@ -3,25 +3,25 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    dslComponent::Port,
+from python_code import (
+    dslComponent_Port,
     Port,
-    dslComponent::OutPort,
-    dslComponent::InPort,
-    dslComponent::DocumElt,
-    dslComponent::Component,
-    dslComponent::ControlSubsystem,
+    dslComponent_OutPort,
+    dslComponent_InPort,
+    dslComponent_DocumElt,
+    dslComponent_Component,
+    dslComponent_ControlSubsystem,
     Vertex,
-    dslComponent::InitialState,
-    dslComponent::SimpleState,
-    dslComponent::Subsystem,
+    dslComponent_InitialState,
+    dslComponent_SimpleState,
+    dslComponent_Subsystem,
     DocumElt,
-    dslComponent::Edge,
-    dslComponent::Vertex,
-    dslComponent::StateMachine,
-    dslComponent::WTComponents,
+    dslComponent_Edge,
+    dslComponent_Vertex,
+    dslComponent_StateMachine,
+    dslComponent_WTComponents,
 )
 
 # =============================================================================
@@ -30,23 +30,23 @@ from classes import (
 
 
 
-def test_dslcomponent::port_is_not_abstract():
-    assert not inspect.isabstract(dslComponent::Port)
+def test_dslcomponent_port_is_not_abstract():
+    assert not inspect.isabstract(dslComponent_Port)
 
 
-def test_dslcomponent::port_constructor_exists():
-    assert callable(dslComponent::Port.__init__)
+def test_dslcomponent_port_constructor_exists():
+    assert callable(dslComponent_Port.__init__)
 
 
-def test_dslcomponent::port_constructor_args():
-    sig = inspect.signature(dslComponent::Port.__init__)
+def test_dslcomponent_port_constructor_args():
+    sig = inspect.signature(dslComponent_Port.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_dslcomponent::port_has_name():
-    assert hasattr(dslComponent::Port, "name")
+def test_dslcomponent_port_has_name():
+    assert hasattr(dslComponent_Port, "name")
     descriptor = None
-    for klass in dslComponent::Port.__mro__:
+    for klass in dslComponent_Port.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -68,95 +68,95 @@ def test_port_constructor_args():
 
 
 
-def test_dslcomponent::outport_is_not_abstract():
-    assert not inspect.isabstract(dslComponent::OutPort)
+def test_dslcomponent_outport_is_not_abstract():
+    assert not inspect.isabstract(dslComponent_OutPort)
 
 
-def test_dslcomponent::outport_constructor_exists():
-    assert callable(dslComponent::OutPort.__init__)
+def test_dslcomponent_outport_constructor_exists():
+    assert callable(dslComponent_OutPort.__init__)
 
 
-def test_dslcomponent::outport_constructor_args():
-    sig = inspect.signature(dslComponent::OutPort.__init__)
+def test_dslcomponent_outport_constructor_args():
+    sig = inspect.signature(dslComponent_OutPort.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_dslcomponent::inport_is_not_abstract():
-    assert not inspect.isabstract(dslComponent::InPort)
+def test_dslcomponent_inport_is_not_abstract():
+    assert not inspect.isabstract(dslComponent_InPort)
 
 
-def test_dslcomponent::inport_constructor_exists():
-    assert callable(dslComponent::InPort.__init__)
+def test_dslcomponent_inport_constructor_exists():
+    assert callable(dslComponent_InPort.__init__)
 
 
-def test_dslcomponent::inport_constructor_args():
-    sig = inspect.signature(dslComponent::InPort.__init__)
+def test_dslcomponent_inport_constructor_args():
+    sig = inspect.signature(dslComponent_InPort.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_dslcomponent::documelt_is_not_abstract():
-    assert not inspect.isabstract(dslComponent::DocumElt)
+def test_dslcomponent_documelt_is_not_abstract():
+    assert not inspect.isabstract(dslComponent_DocumElt)
 
 
-def test_dslcomponent::documelt_constructor_exists():
-    assert callable(dslComponent::DocumElt.__init__)
+def test_dslcomponent_documelt_constructor_exists():
+    assert callable(dslComponent_DocumElt.__init__)
 
 
-def test_dslcomponent::documelt_constructor_args():
-    sig = inspect.signature(dslComponent::DocumElt.__init__)
+def test_dslcomponent_documelt_constructor_args():
+    sig = inspect.signature(dslComponent_DocumElt.__init__)
     params = list(sig.parameters.keys())
-    assert "desc" in params, "Missing parameter 'desc'"
     assert "name" in params, "Missing parameter 'name'"
+    assert "desc" in params, "Missing parameter 'desc'"
 
-def test_dslcomponent::documelt_has_desc():
-    assert hasattr(dslComponent::DocumElt, "desc")
+def test_dslcomponent_documelt_has_name():
+    assert hasattr(dslComponent_DocumElt, "name")
     descriptor = None
-    for klass in dslComponent::DocumElt.__mro__:
+    for klass in dslComponent_DocumElt.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_dslcomponent_documelt_has_desc():
+    assert hasattr(dslComponent_DocumElt, "desc")
+    descriptor = None
+    for klass in dslComponent_DocumElt.__mro__:
         if "desc" in klass.__dict__:
             descriptor = klass.__dict__["desc"]
             break
     assert isinstance(descriptor, property)
 
-def test_dslcomponent::documelt_has_name():
-    assert hasattr(dslComponent::DocumElt, "name")
-    descriptor = None
-    for klass in dslComponent::DocumElt.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
 
 
-
-def test_dslcomponent::component_is_not_abstract():
-    assert not inspect.isabstract(dslComponent::Component)
-
-
-def test_dslcomponent::component_constructor_exists():
-    assert callable(dslComponent::Component.__init__)
+def test_dslcomponent_component_is_not_abstract():
+    assert not inspect.isabstract(dslComponent_Component)
 
 
-def test_dslcomponent::component_constructor_args():
-    sig = inspect.signature(dslComponent::Component.__init__)
+def test_dslcomponent_component_constructor_exists():
+    assert callable(dslComponent_Component.__init__)
+
+
+def test_dslcomponent_component_constructor_args():
+    sig = inspect.signature(dslComponent_Component.__init__)
     params = list(sig.parameters.keys())
     assert "id" in params, "Missing parameter 'id'"
     assert "name" in params, "Missing parameter 'name'"
 
-def test_dslcomponent::component_has_id():
-    assert hasattr(dslComponent::Component, "id")
+def test_dslcomponent_component_has_id():
+    assert hasattr(dslComponent_Component, "id")
     descriptor = None
-    for klass in dslComponent::Component.__mro__:
+    for klass in dslComponent_Component.__mro__:
         if "id" in klass.__dict__:
             descriptor = klass.__dict__["id"]
             break
     assert isinstance(descriptor, property)
 
-def test_dslcomponent::component_has_name():
-    assert hasattr(dslComponent::Component, "name")
+def test_dslcomponent_component_has_name():
+    assert hasattr(dslComponent_Component, "name")
     descriptor = None
-    for klass in dslComponent::Component.__mro__:
+    for klass in dslComponent_Component.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -164,23 +164,23 @@ def test_dslcomponent::component_has_name():
 
 
 
-def test_dslcomponent::controlsubsystem_is_not_abstract():
-    assert not inspect.isabstract(dslComponent::ControlSubsystem)
+def test_dslcomponent_controlsubsystem_is_not_abstract():
+    assert not inspect.isabstract(dslComponent_ControlSubsystem)
 
 
-def test_dslcomponent::controlsubsystem_constructor_exists():
-    assert callable(dslComponent::ControlSubsystem.__init__)
+def test_dslcomponent_controlsubsystem_constructor_exists():
+    assert callable(dslComponent_ControlSubsystem.__init__)
 
 
-def test_dslcomponent::controlsubsystem_constructor_args():
-    sig = inspect.signature(dslComponent::ControlSubsystem.__init__)
+def test_dslcomponent_controlsubsystem_constructor_args():
+    sig = inspect.signature(dslComponent_ControlSubsystem.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_dslcomponent::controlsubsystem_has_name():
-    assert hasattr(dslComponent::ControlSubsystem, "name")
+def test_dslcomponent_controlsubsystem_has_name():
+    assert hasattr(dslComponent_ControlSubsystem, "name")
     descriptor = None
-    for klass in dslComponent::ControlSubsystem.__mro__:
+    for klass in dslComponent_ControlSubsystem.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -202,61 +202,61 @@ def test_vertex_constructor_args():
 
 
 
-def test_dslcomponent::initialstate_is_not_abstract():
-    assert not inspect.isabstract(dslComponent::InitialState)
+def test_dslcomponent_initialstate_is_not_abstract():
+    assert not inspect.isabstract(dslComponent_InitialState)
 
 
-def test_dslcomponent::initialstate_constructor_exists():
-    assert callable(dslComponent::InitialState.__init__)
+def test_dslcomponent_initialstate_constructor_exists():
+    assert callable(dslComponent_InitialState.__init__)
 
 
-def test_dslcomponent::initialstate_constructor_args():
-    sig = inspect.signature(dslComponent::InitialState.__init__)
+def test_dslcomponent_initialstate_constructor_args():
+    sig = inspect.signature(dslComponent_InitialState.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_dslcomponent::simplestate_is_not_abstract():
-    assert not inspect.isabstract(dslComponent::SimpleState)
+def test_dslcomponent_simplestate_is_not_abstract():
+    assert not inspect.isabstract(dslComponent_SimpleState)
 
 
-def test_dslcomponent::simplestate_constructor_exists():
-    assert callable(dslComponent::SimpleState.__init__)
+def test_dslcomponent_simplestate_constructor_exists():
+    assert callable(dslComponent_SimpleState.__init__)
 
 
-def test_dslcomponent::simplestate_constructor_args():
-    sig = inspect.signature(dslComponent::SimpleState.__init__)
+def test_dslcomponent_simplestate_constructor_args():
+    sig = inspect.signature(dslComponent_SimpleState.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_dslcomponent::subsystem_is_not_abstract():
-    assert not inspect.isabstract(dslComponent::Subsystem)
+def test_dslcomponent_subsystem_is_not_abstract():
+    assert not inspect.isabstract(dslComponent_Subsystem)
 
 
-def test_dslcomponent::subsystem_constructor_exists():
-    assert callable(dslComponent::Subsystem.__init__)
+def test_dslcomponent_subsystem_constructor_exists():
+    assert callable(dslComponent_Subsystem.__init__)
 
 
-def test_dslcomponent::subsystem_constructor_args():
-    sig = inspect.signature(dslComponent::Subsystem.__init__)
+def test_dslcomponent_subsystem_constructor_args():
+    sig = inspect.signature(dslComponent_Subsystem.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
     assert "description" in params, "Missing parameter 'description'"
 
-def test_dslcomponent::subsystem_has_name():
-    assert hasattr(dslComponent::Subsystem, "name")
+def test_dslcomponent_subsystem_has_name():
+    assert hasattr(dslComponent_Subsystem, "name")
     descriptor = None
-    for klass in dslComponent::Subsystem.__mro__:
+    for klass in dslComponent_Subsystem.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
-def test_dslcomponent::subsystem_has_description():
-    assert hasattr(dslComponent::Subsystem, "description")
+def test_dslcomponent_subsystem_has_description():
+    assert hasattr(dslComponent_Subsystem, "description")
     descriptor = None
-    for klass in dslComponent::Subsystem.__mro__:
+    for klass in dslComponent_Subsystem.__mro__:
         if "description" in klass.__dict__:
             descriptor = klass.__dict__["description"]
             break
@@ -278,51 +278,51 @@ def test_documelt_constructor_args():
 
 
 
-def test_dslcomponent::edge_is_not_abstract():
-    assert not inspect.isabstract(dslComponent::Edge)
+def test_dslcomponent_edge_is_not_abstract():
+    assert not inspect.isabstract(dslComponent_Edge)
 
 
-def test_dslcomponent::edge_constructor_exists():
-    assert callable(dslComponent::Edge.__init__)
+def test_dslcomponent_edge_constructor_exists():
+    assert callable(dslComponent_Edge.__init__)
 
 
-def test_dslcomponent::edge_constructor_args():
-    sig = inspect.signature(dslComponent::Edge.__init__)
+def test_dslcomponent_edge_constructor_args():
+    sig = inspect.signature(dslComponent_Edge.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_dslcomponent::vertex_is_not_abstract():
-    assert not inspect.isabstract(dslComponent::Vertex)
+def test_dslcomponent_vertex_is_not_abstract():
+    assert not inspect.isabstract(dslComponent_Vertex)
 
 
-def test_dslcomponent::vertex_constructor_exists():
-    assert callable(dslComponent::Vertex.__init__)
+def test_dslcomponent_vertex_constructor_exists():
+    assert callable(dslComponent_Vertex.__init__)
 
 
-def test_dslcomponent::vertex_constructor_args():
-    sig = inspect.signature(dslComponent::Vertex.__init__)
+def test_dslcomponent_vertex_constructor_args():
+    sig = inspect.signature(dslComponent_Vertex.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_dslcomponent::statemachine_is_not_abstract():
-    assert not inspect.isabstract(dslComponent::StateMachine)
+def test_dslcomponent_statemachine_is_not_abstract():
+    assert not inspect.isabstract(dslComponent_StateMachine)
 
 
-def test_dslcomponent::statemachine_constructor_exists():
-    assert callable(dslComponent::StateMachine.__init__)
+def test_dslcomponent_statemachine_constructor_exists():
+    assert callable(dslComponent_StateMachine.__init__)
 
 
-def test_dslcomponent::statemachine_constructor_args():
-    sig = inspect.signature(dslComponent::StateMachine.__init__)
+def test_dslcomponent_statemachine_constructor_args():
+    sig = inspect.signature(dslComponent_StateMachine.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_dslcomponent::statemachine_has_name():
-    assert hasattr(dslComponent::StateMachine, "name")
+def test_dslcomponent_statemachine_has_name():
+    assert hasattr(dslComponent_StateMachine, "name")
     descriptor = None
-    for klass in dslComponent::StateMachine.__mro__:
+    for klass in dslComponent_StateMachine.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -330,33 +330,33 @@ def test_dslcomponent::statemachine_has_name():
 
 
 
-def test_dslcomponent::wtcomponents_is_not_abstract():
-    assert not inspect.isabstract(dslComponent::WTComponents)
+def test_dslcomponent_wtcomponents_is_not_abstract():
+    assert not inspect.isabstract(dslComponent_WTComponents)
 
 
-def test_dslcomponent::wtcomponents_constructor_exists():
-    assert callable(dslComponent::WTComponents.__init__)
+def test_dslcomponent_wtcomponents_constructor_exists():
+    assert callable(dslComponent_WTComponents.__init__)
 
 
-def test_dslcomponent::wtcomponents_constructor_args():
-    sig = inspect.signature(dslComponent::WTComponents.__init__)
+def test_dslcomponent_wtcomponents_constructor_args():
+    sig = inspect.signature(dslComponent_WTComponents.__init__)
     params = list(sig.parameters.keys())
     assert "id" in params, "Missing parameter 'id'"
     assert "author" in params, "Missing parameter 'author'"
 
-def test_dslcomponent::wtcomponents_has_id():
-    assert hasattr(dslComponent::WTComponents, "id")
+def test_dslcomponent_wtcomponents_has_id():
+    assert hasattr(dslComponent_WTComponents, "id")
     descriptor = None
-    for klass in dslComponent::WTComponents.__mro__:
+    for klass in dslComponent_WTComponents.__mro__:
         if "id" in klass.__dict__:
             descriptor = klass.__dict__["id"]
             break
     assert isinstance(descriptor, property)
 
-def test_dslcomponent::wtcomponents_has_author():
-    assert hasattr(dslComponent::WTComponents, "author")
+def test_dslcomponent_wtcomponents_has_author():
+    assert hasattr(dslComponent_WTComponents, "author")
     descriptor = None
-    for klass in dslComponent::WTComponents.__mro__:
+    for klass in dslComponent_WTComponents.__mro__:
         if "author" in klass.__dict__:
             descriptor = klass.__dict__["author"]
             break
@@ -374,50 +374,50 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-dslComponent::Port_strategy = st.builds(
-    dslComponent::Port,
+dslComponent_Port_strategy = st.builds(
+    dslComponent_Port,
     name=
         safe_text
 )
 Port_strategy = st.builds(
     Port,
 )
-dslComponent::OutPort_strategy = st.builds(
-    dslComponent::OutPort,
+dslComponent_OutPort_strategy = st.builds(
+    dslComponent_OutPort,
 )
-dslComponent::InPort_strategy = st.builds(
-    dslComponent::InPort,
+dslComponent_InPort_strategy = st.builds(
+    dslComponent_InPort,
 )
-dslComponent::DocumElt_strategy = st.builds(
-    dslComponent::DocumElt,
-    desc=
-        safe_text,
+dslComponent_DocumElt_strategy = st.builds(
+    dslComponent_DocumElt,
     name=
+        safe_text,
+    desc=
         safe_text
 )
-dslComponent::Component_strategy = st.builds(
-    dslComponent::Component,
+dslComponent_Component_strategy = st.builds(
+    dslComponent_Component,
     id=
         safe_text,
     name=
         safe_text
 )
-dslComponent::ControlSubsystem_strategy = st.builds(
-    dslComponent::ControlSubsystem,
+dslComponent_ControlSubsystem_strategy = st.builds(
+    dslComponent_ControlSubsystem,
     name=
         safe_text
 )
 Vertex_strategy = st.builds(
     Vertex,
 )
-dslComponent::InitialState_strategy = st.builds(
-    dslComponent::InitialState,
+dslComponent_InitialState_strategy = st.builds(
+    dslComponent_InitialState,
 )
-dslComponent::SimpleState_strategy = st.builds(
-    dslComponent::SimpleState,
+dslComponent_SimpleState_strategy = st.builds(
+    dslComponent_SimpleState,
 )
-dslComponent::Subsystem_strategy = st.builds(
-    dslComponent::Subsystem,
+dslComponent_Subsystem_strategy = st.builds(
+    dslComponent_Subsystem,
     name=
         safe_text,
     description=
@@ -426,37 +426,34 @@ dslComponent::Subsystem_strategy = st.builds(
 DocumElt_strategy = st.builds(
     DocumElt,
 )
-dslComponent::Edge_strategy = st.builds(
-    dslComponent::Edge,
+dslComponent_Edge_strategy = st.builds(
+    dslComponent_Edge,
 )
-dslComponent::Vertex_strategy = st.builds(
-    dslComponent::Vertex,
+dslComponent_Vertex_strategy = st.builds(
+    dslComponent_Vertex,
 )
-dslComponent::StateMachine_strategy = st.builds(
-    dslComponent::StateMachine,
+dslComponent_StateMachine_strategy = st.builds(
+    dslComponent_StateMachine,
     name=
         safe_text
 )
-dslComponent::WTComponents_strategy = st.builds(
-    dslComponent::WTComponents,
+dslComponent_WTComponents_strategy = st.builds(
+    dslComponent_WTComponents,
     id=
         safe_text,
     author=
         safe_text
 )
 
-@given(instance=dslComponent::Port_strategy)
+@given(instance=dslComponent_Port_strategy)
 @settings(max_examples=50)
-def test_dslcomponent::port_instantiation(instance):
-    assert isinstance(instance, dslComponent::Port)
-
-@given(instance=dslComponent::Port_strategy)
-def test_dslcomponent::port_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_dslcomponent_port_instantiation(instance):
+    assert isinstance(instance, dslComponent_Port)
 
 
-@given(instance=dslComponent::Port_strategy)
-def test_dslcomponent::port_name_setter(instance):
+
+@given(instance=dslComponent_Port_strategy)
+def test_dslcomponent_port_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
@@ -466,82 +463,67 @@ def test_dslcomponent::port_name_setter(instance):
 def test_port_instantiation(instance):
     assert isinstance(instance, Port)
 
-@given(instance=dslComponent::OutPort_strategy)
+@given(instance=dslComponent_OutPort_strategy)
 @settings(max_examples=50)
-def test_dslcomponent::outport_instantiation(instance):
-    assert isinstance(instance, dslComponent::OutPort)
+def test_dslcomponent_outport_instantiation(instance):
+    assert isinstance(instance, dslComponent_OutPort)
 
-@given(instance=dslComponent::InPort_strategy)
+@given(instance=dslComponent_InPort_strategy)
 @settings(max_examples=50)
-def test_dslcomponent::inport_instantiation(instance):
-    assert isinstance(instance, dslComponent::InPort)
+def test_dslcomponent_inport_instantiation(instance):
+    assert isinstance(instance, dslComponent_InPort)
 
-@given(instance=dslComponent::DocumElt_strategy)
+@given(instance=dslComponent_DocumElt_strategy)
 @settings(max_examples=50)
-def test_dslcomponent::documelt_instantiation(instance):
-    assert isinstance(instance, dslComponent::DocumElt)
-
-@given(instance=dslComponent::DocumElt_strategy)
-def test_dslcomponent::documelt_desc_type(instance):
-    assert isinstance(instance.desc, str)
+def test_dslcomponent_documelt_instantiation(instance):
+    assert isinstance(instance, dslComponent_DocumElt)
 
 
-@given(instance=dslComponent::DocumElt_strategy)
-def test_dslcomponent::documelt_desc_setter(instance):
+
+@given(instance=dslComponent_DocumElt_strategy)
+def test_dslcomponent_documelt_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+
+
+@given(instance=dslComponent_DocumElt_strategy)
+def test_dslcomponent_documelt_desc_setter(instance):
     original = instance.desc
     instance.desc = original
     assert instance.desc == original
 
-@given(instance=dslComponent::DocumElt_strategy)
-def test_dslcomponent::documelt_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=dslComponent::DocumElt_strategy)
-def test_dslcomponent::documelt_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
-
-@given(instance=dslComponent::Component_strategy)
+@given(instance=dslComponent_Component_strategy)
 @settings(max_examples=50)
-def test_dslcomponent::component_instantiation(instance):
-    assert isinstance(instance, dslComponent::Component)
-
-@given(instance=dslComponent::Component_strategy)
-def test_dslcomponent::component_id_type(instance):
-    assert isinstance(instance.id, str)
+def test_dslcomponent_component_instantiation(instance):
+    assert isinstance(instance, dslComponent_Component)
 
 
-@given(instance=dslComponent::Component_strategy)
-def test_dslcomponent::component_id_setter(instance):
+
+@given(instance=dslComponent_Component_strategy)
+def test_dslcomponent_component_id_setter(instance):
     original = instance.id
     instance.id = original
     assert instance.id == original
 
-@given(instance=dslComponent::Component_strategy)
-def test_dslcomponent::component_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
-@given(instance=dslComponent::Component_strategy)
-def test_dslcomponent::component_name_setter(instance):
+@given(instance=dslComponent_Component_strategy)
+def test_dslcomponent_component_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=dslComponent::ControlSubsystem_strategy)
+@given(instance=dslComponent_ControlSubsystem_strategy)
 @settings(max_examples=50)
-def test_dslcomponent::controlsubsystem_instantiation(instance):
-    assert isinstance(instance, dslComponent::ControlSubsystem)
-
-@given(instance=dslComponent::ControlSubsystem_strategy)
-def test_dslcomponent::controlsubsystem_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_dslcomponent_controlsubsystem_instantiation(instance):
+    assert isinstance(instance, dslComponent_ControlSubsystem)
 
 
-@given(instance=dslComponent::ControlSubsystem_strategy)
-def test_dslcomponent::controlsubsystem_name_setter(instance):
+
+@given(instance=dslComponent_ControlSubsystem_strategy)
+def test_dslcomponent_controlsubsystem_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
@@ -551,39 +533,33 @@ def test_dslcomponent::controlsubsystem_name_setter(instance):
 def test_vertex_instantiation(instance):
     assert isinstance(instance, Vertex)
 
-@given(instance=dslComponent::InitialState_strategy)
+@given(instance=dslComponent_InitialState_strategy)
 @settings(max_examples=50)
-def test_dslcomponent::initialstate_instantiation(instance):
-    assert isinstance(instance, dslComponent::InitialState)
+def test_dslcomponent_initialstate_instantiation(instance):
+    assert isinstance(instance, dslComponent_InitialState)
 
-@given(instance=dslComponent::SimpleState_strategy)
+@given(instance=dslComponent_SimpleState_strategy)
 @settings(max_examples=50)
-def test_dslcomponent::simplestate_instantiation(instance):
-    assert isinstance(instance, dslComponent::SimpleState)
+def test_dslcomponent_simplestate_instantiation(instance):
+    assert isinstance(instance, dslComponent_SimpleState)
 
-@given(instance=dslComponent::Subsystem_strategy)
+@given(instance=dslComponent_Subsystem_strategy)
 @settings(max_examples=50)
-def test_dslcomponent::subsystem_instantiation(instance):
-    assert isinstance(instance, dslComponent::Subsystem)
-
-@given(instance=dslComponent::Subsystem_strategy)
-def test_dslcomponent::subsystem_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_dslcomponent_subsystem_instantiation(instance):
+    assert isinstance(instance, dslComponent_Subsystem)
 
 
-@given(instance=dslComponent::Subsystem_strategy)
-def test_dslcomponent::subsystem_name_setter(instance):
+
+@given(instance=dslComponent_Subsystem_strategy)
+def test_dslcomponent_subsystem_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=dslComponent::Subsystem_strategy)
-def test_dslcomponent::subsystem_description_type(instance):
-    assert isinstance(instance.description, str)
 
 
-@given(instance=dslComponent::Subsystem_strategy)
-def test_dslcomponent::subsystem_description_setter(instance):
+@given(instance=dslComponent_Subsystem_strategy)
+def test_dslcomponent_subsystem_description_setter(instance):
     original = instance.description
     instance.description = original
     assert instance.description == original
@@ -593,55 +569,46 @@ def test_dslcomponent::subsystem_description_setter(instance):
 def test_documelt_instantiation(instance):
     assert isinstance(instance, DocumElt)
 
-@given(instance=dslComponent::Edge_strategy)
+@given(instance=dslComponent_Edge_strategy)
 @settings(max_examples=50)
-def test_dslcomponent::edge_instantiation(instance):
-    assert isinstance(instance, dslComponent::Edge)
+def test_dslcomponent_edge_instantiation(instance):
+    assert isinstance(instance, dslComponent_Edge)
 
-@given(instance=dslComponent::Vertex_strategy)
+@given(instance=dslComponent_Vertex_strategy)
 @settings(max_examples=50)
-def test_dslcomponent::vertex_instantiation(instance):
-    assert isinstance(instance, dslComponent::Vertex)
+def test_dslcomponent_vertex_instantiation(instance):
+    assert isinstance(instance, dslComponent_Vertex)
 
-@given(instance=dslComponent::StateMachine_strategy)
+@given(instance=dslComponent_StateMachine_strategy)
 @settings(max_examples=50)
-def test_dslcomponent::statemachine_instantiation(instance):
-    assert isinstance(instance, dslComponent::StateMachine)
-
-@given(instance=dslComponent::StateMachine_strategy)
-def test_dslcomponent::statemachine_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_dslcomponent_statemachine_instantiation(instance):
+    assert isinstance(instance, dslComponent_StateMachine)
 
 
-@given(instance=dslComponent::StateMachine_strategy)
-def test_dslcomponent::statemachine_name_setter(instance):
+
+@given(instance=dslComponent_StateMachine_strategy)
+def test_dslcomponent_statemachine_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=dslComponent::WTComponents_strategy)
+@given(instance=dslComponent_WTComponents_strategy)
 @settings(max_examples=50)
-def test_dslcomponent::wtcomponents_instantiation(instance):
-    assert isinstance(instance, dslComponent::WTComponents)
-
-@given(instance=dslComponent::WTComponents_strategy)
-def test_dslcomponent::wtcomponents_id_type(instance):
-    assert isinstance(instance.id, str)
+def test_dslcomponent_wtcomponents_instantiation(instance):
+    assert isinstance(instance, dslComponent_WTComponents)
 
 
-@given(instance=dslComponent::WTComponents_strategy)
-def test_dslcomponent::wtcomponents_id_setter(instance):
+
+@given(instance=dslComponent_WTComponents_strategy)
+def test_dslcomponent_wtcomponents_id_setter(instance):
     original = instance.id
     instance.id = original
     assert instance.id == original
 
-@given(instance=dslComponent::WTComponents_strategy)
-def test_dslcomponent::wtcomponents_author_type(instance):
-    assert isinstance(instance.author, str)
 
 
-@given(instance=dslComponent::WTComponents_strategy)
-def test_dslcomponent::wtcomponents_author_setter(instance):
+@given(instance=dslComponent_WTComponents_strategy)
+def test_dslcomponent_wtcomponents_author_setter(instance):
     original = instance.author
     instance.author = original
     assert instance.author == original

@@ -3,20 +3,20 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     Statement,
-    uitf::TriggeredTransition,
-    uitf::AssertInState,
-    uitf::UIControl,
+    uitf_TriggeredTransition,
+    uitf_AssertInState,
+    uitf_UIControl,
     Variable,
-    uitf::UIControlVariable,
-    uitf::Variable,
-    uitf::TestSuite,
-    uitf::Statement,
-    uitf::UISUT,
-    uitf::TestCase,
+    uitf_UIControlVariable,
+    uitf_Variable,
+    uitf_TestSuite,
+    uitf_Statement,
+    uitf_UISUT,
+    uitf_TestCase,
     UserInstructionEnum,
 )
 
@@ -40,33 +40,33 @@ def test_statement_constructor_args():
 
 
 
-def test_uitf::triggeredtransition_is_not_abstract():
-    assert not inspect.isabstract(uitf::TriggeredTransition)
+def test_uitf_triggeredtransition_is_not_abstract():
+    assert not inspect.isabstract(uitf_TriggeredTransition)
 
 
-def test_uitf::triggeredtransition_constructor_exists():
-    assert callable(uitf::TriggeredTransition.__init__)
+def test_uitf_triggeredtransition_constructor_exists():
+    assert callable(uitf_TriggeredTransition.__init__)
 
 
-def test_uitf::triggeredtransition_constructor_args():
-    sig = inspect.signature(uitf::TriggeredTransition.__init__)
+def test_uitf_triggeredtransition_constructor_args():
+    sig = inspect.signature(uitf_TriggeredTransition.__init__)
     params = list(sig.parameters.keys())
     assert "scriptStr" in params, "Missing parameter 'scriptStr'"
     assert "transitionId" in params, "Missing parameter 'transitionId'"
 
-def test_uitf::triggeredtransition_has_scriptStr():
-    assert hasattr(uitf::TriggeredTransition, "scriptStr")
+def test_uitf_triggeredtransition_has_scriptStr():
+    assert hasattr(uitf_TriggeredTransition, "scriptStr")
     descriptor = None
-    for klass in uitf::TriggeredTransition.__mro__:
+    for klass in uitf_TriggeredTransition.__mro__:
         if "scriptStr" in klass.__dict__:
             descriptor = klass.__dict__["scriptStr"]
             break
     assert isinstance(descriptor, property)
 
-def test_uitf::triggeredtransition_has_transitionId():
-    assert hasattr(uitf::TriggeredTransition, "transitionId")
+def test_uitf_triggeredtransition_has_transitionId():
+    assert hasattr(uitf_TriggeredTransition, "transitionId")
     descriptor = None
-    for klass in uitf::TriggeredTransition.__mro__:
+    for klass in uitf_TriggeredTransition.__mro__:
         if "transitionId" in klass.__dict__:
             descriptor = klass.__dict__["transitionId"]
             break
@@ -74,23 +74,23 @@ def test_uitf::triggeredtransition_has_transitionId():
 
 
 
-def test_uitf::assertinstate_is_not_abstract():
-    assert not inspect.isabstract(uitf::AssertInState)
+def test_uitf_assertinstate_is_not_abstract():
+    assert not inspect.isabstract(uitf_AssertInState)
 
 
-def test_uitf::assertinstate_constructor_exists():
-    assert callable(uitf::AssertInState.__init__)
+def test_uitf_assertinstate_constructor_exists():
+    assert callable(uitf_AssertInState.__init__)
 
 
-def test_uitf::assertinstate_constructor_args():
-    sig = inspect.signature(uitf::AssertInState.__init__)
+def test_uitf_assertinstate_constructor_args():
+    sig = inspect.signature(uitf_AssertInState.__init__)
     params = list(sig.parameters.keys())
     assert "stateId" in params, "Missing parameter 'stateId'"
 
-def test_uitf::assertinstate_has_stateId():
-    assert hasattr(uitf::AssertInState, "stateId")
+def test_uitf_assertinstate_has_stateId():
+    assert hasattr(uitf_AssertInState, "stateId")
     descriptor = None
-    for klass in uitf::AssertInState.__mro__:
+    for klass in uitf_AssertInState.__mro__:
         if "stateId" in klass.__dict__:
             descriptor = klass.__dict__["stateId"]
             break
@@ -98,23 +98,23 @@ def test_uitf::assertinstate_has_stateId():
 
 
 
-def test_uitf::uicontrol_is_not_abstract():
-    assert not inspect.isabstract(uitf::UIControl)
+def test_uitf_uicontrol_is_not_abstract():
+    assert not inspect.isabstract(uitf_UIControl)
 
 
-def test_uitf::uicontrol_constructor_exists():
-    assert callable(uitf::UIControl.__init__)
+def test_uitf_uicontrol_constructor_exists():
+    assert callable(uitf_UIControl.__init__)
 
 
-def test_uitf::uicontrol_constructor_args():
-    sig = inspect.signature(uitf::UIControl.__init__)
+def test_uitf_uicontrol_constructor_args():
+    sig = inspect.signature(uitf_UIControl.__init__)
     params = list(sig.parameters.keys())
     assert "id" in params, "Missing parameter 'id'"
 
-def test_uitf::uicontrol_has_id():
-    assert hasattr(uitf::UIControl, "id")
+def test_uitf_uicontrol_has_id():
+    assert hasattr(uitf_UIControl, "id")
     descriptor = None
-    for klass in uitf::UIControl.__mro__:
+    for klass in uitf_UIControl.__mro__:
         if "id" in klass.__dict__:
             descriptor = klass.__dict__["id"]
             break
@@ -136,37 +136,37 @@ def test_variable_constructor_args():
 
 
 
-def test_uitf::uicontrolvariable_is_not_abstract():
-    assert not inspect.isabstract(uitf::UIControlVariable)
+def test_uitf_uicontrolvariable_is_not_abstract():
+    assert not inspect.isabstract(uitf_UIControlVariable)
 
 
-def test_uitf::uicontrolvariable_constructor_exists():
-    assert callable(uitf::UIControlVariable.__init__)
+def test_uitf_uicontrolvariable_constructor_exists():
+    assert callable(uitf_UIControlVariable.__init__)
 
 
-def test_uitf::uicontrolvariable_constructor_args():
-    sig = inspect.signature(uitf::UIControlVariable.__init__)
+def test_uitf_uicontrolvariable_constructor_args():
+    sig = inspect.signature(uitf_UIControlVariable.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_uitf::variable_is_not_abstract():
-    assert not inspect.isabstract(uitf::Variable)
+def test_uitf_variable_is_not_abstract():
+    assert not inspect.isabstract(uitf_Variable)
 
 
-def test_uitf::variable_constructor_exists():
-    assert callable(uitf::Variable.__init__)
+def test_uitf_variable_constructor_exists():
+    assert callable(uitf_Variable.__init__)
 
 
-def test_uitf::variable_constructor_args():
-    sig = inspect.signature(uitf::Variable.__init__)
+def test_uitf_variable_constructor_args():
+    sig = inspect.signature(uitf_Variable.__init__)
     params = list(sig.parameters.keys())
     assert "id" in params, "Missing parameter 'id'"
 
-def test_uitf::variable_has_id():
-    assert hasattr(uitf::Variable, "id")
+def test_uitf_variable_has_id():
+    assert hasattr(uitf_Variable, "id")
     descriptor = None
-    for klass in uitf::Variable.__mro__:
+    for klass in uitf_Variable.__mro__:
         if "id" in klass.__dict__:
             descriptor = klass.__dict__["id"]
             break
@@ -174,23 +174,23 @@ def test_uitf::variable_has_id():
 
 
 
-def test_uitf::testsuite_is_not_abstract():
-    assert not inspect.isabstract(uitf::TestSuite)
+def test_uitf_testsuite_is_not_abstract():
+    assert not inspect.isabstract(uitf_TestSuite)
 
 
-def test_uitf::testsuite_constructor_exists():
-    assert callable(uitf::TestSuite.__init__)
+def test_uitf_testsuite_constructor_exists():
+    assert callable(uitf_TestSuite.__init__)
 
 
-def test_uitf::testsuite_constructor_args():
-    sig = inspect.signature(uitf::TestSuite.__init__)
+def test_uitf_testsuite_constructor_args():
+    sig = inspect.signature(uitf_TestSuite.__init__)
     params = list(sig.parameters.keys())
     assert "id" in params, "Missing parameter 'id'"
 
-def test_uitf::testsuite_has_id():
-    assert hasattr(uitf::TestSuite, "id")
+def test_uitf_testsuite_has_id():
+    assert hasattr(uitf_TestSuite, "id")
     descriptor = None
-    for klass in uitf::TestSuite.__mro__:
+    for klass in uitf_TestSuite.__mro__:
         if "id" in klass.__dict__:
             descriptor = klass.__dict__["id"]
             break
@@ -198,33 +198,33 @@ def test_uitf::testsuite_has_id():
 
 
 
-def test_uitf::statement_is_not_abstract():
-    assert not inspect.isabstract(uitf::Statement)
+def test_uitf_statement_is_not_abstract():
+    assert not inspect.isabstract(uitf_Statement)
 
 
-def test_uitf::statement_constructor_exists():
-    assert callable(uitf::Statement.__init__)
+def test_uitf_statement_constructor_exists():
+    assert callable(uitf_Statement.__init__)
 
 
-def test_uitf::statement_constructor_args():
-    sig = inspect.signature(uitf::Statement.__init__)
+def test_uitf_statement_constructor_args():
+    sig = inspect.signature(uitf_Statement.__init__)
     params = list(sig.parameters.keys())
     assert "kind" in params, "Missing parameter 'kind'"
     assert "description" in params, "Missing parameter 'description'"
 
-def test_uitf::statement_has_kind():
-    assert hasattr(uitf::Statement, "kind")
+def test_uitf_statement_has_kind():
+    assert hasattr(uitf_Statement, "kind")
     descriptor = None
-    for klass in uitf::Statement.__mro__:
+    for klass in uitf_Statement.__mro__:
         if "kind" in klass.__dict__:
             descriptor = klass.__dict__["kind"]
             break
     assert isinstance(descriptor, property)
 
-def test_uitf::statement_has_description():
-    assert hasattr(uitf::Statement, "description")
+def test_uitf_statement_has_description():
+    assert hasattr(uitf_Statement, "description")
     descriptor = None
-    for klass in uitf::Statement.__mro__:
+    for klass in uitf_Statement.__mro__:
         if "description" in klass.__dict__:
             descriptor = klass.__dict__["description"]
             break
@@ -232,23 +232,23 @@ def test_uitf::statement_has_description():
 
 
 
-def test_uitf::uisut_is_not_abstract():
-    assert not inspect.isabstract(uitf::UISUT)
+def test_uitf_uisut_is_not_abstract():
+    assert not inspect.isabstract(uitf_UISUT)
 
 
-def test_uitf::uisut_constructor_exists():
-    assert callable(uitf::UISUT.__init__)
+def test_uitf_uisut_constructor_exists():
+    assert callable(uitf_UISUT.__init__)
 
 
-def test_uitf::uisut_constructor_args():
-    sig = inspect.signature(uitf::UISUT.__init__)
+def test_uitf_uisut_constructor_args():
+    sig = inspect.signature(uitf_UISUT.__init__)
     params = list(sig.parameters.keys())
     assert "objectURI" in params, "Missing parameter 'objectURI'"
 
-def test_uitf::uisut_has_objectURI():
-    assert hasattr(uitf::UISUT, "objectURI")
+def test_uitf_uisut_has_objectURI():
+    assert hasattr(uitf_UISUT, "objectURI")
     descriptor = None
-    for klass in uitf::UISUT.__mro__:
+    for klass in uitf_UISUT.__mro__:
         if "objectURI" in klass.__dict__:
             descriptor = klass.__dict__["objectURI"]
             break
@@ -256,23 +256,23 @@ def test_uitf::uisut_has_objectURI():
 
 
 
-def test_uitf::testcase_is_not_abstract():
-    assert not inspect.isabstract(uitf::TestCase)
+def test_uitf_testcase_is_not_abstract():
+    assert not inspect.isabstract(uitf_TestCase)
 
 
-def test_uitf::testcase_constructor_exists():
-    assert callable(uitf::TestCase.__init__)
+def test_uitf_testcase_constructor_exists():
+    assert callable(uitf_TestCase.__init__)
 
 
-def test_uitf::testcase_constructor_args():
-    sig = inspect.signature(uitf::TestCase.__init__)
+def test_uitf_testcase_constructor_args():
+    sig = inspect.signature(uitf_TestCase.__init__)
     params = list(sig.parameters.keys())
     assert "id" in params, "Missing parameter 'id'"
 
-def test_uitf::testcase_has_id():
-    assert hasattr(uitf::TestCase, "id")
+def test_uitf_testcase_has_id():
+    assert hasattr(uitf_TestCase, "id")
     descriptor = None
-    for klass in uitf::TestCase.__mro__:
+    for klass in uitf_TestCase.__mro__:
         if "id" in klass.__dict__:
             descriptor = klass.__dict__["id"]
             break
@@ -286,12 +286,12 @@ def test_userinstructionenum_has_all_literals():
     # Collect the names of literals in this Enumeration
     enum_literals = [lit.name for lit in UserInstructionEnum]
     expected_literals = [
-        "ManipulateUIControl",
         "AssertUIValue",
         "InstantiateUISUT",
+        "AssertUIState",
         "SetUIValue",
         "SendUITrigger",
-        "AssertUIState",
+        "ManipulateUIControl",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
@@ -312,53 +312,53 @@ safe_text = st.text(
 Statement_strategy = st.builds(
     Statement,
 )
-uitf::TriggeredTransition_strategy = st.builds(
-    uitf::TriggeredTransition,
+uitf_TriggeredTransition_strategy = st.builds(
+    uitf_TriggeredTransition,
     scriptStr=
         safe_text,
     transitionId=
         safe_text
 )
-uitf::AssertInState_strategy = st.builds(
-    uitf::AssertInState,
+uitf_AssertInState_strategy = st.builds(
+    uitf_AssertInState,
     stateId=
         safe_text
 )
-uitf::UIControl_strategy = st.builds(
-    uitf::UIControl,
+uitf_UIControl_strategy = st.builds(
+    uitf_UIControl,
     id=
         safe_text
 )
 Variable_strategy = st.builds(
     Variable,
 )
-uitf::UIControlVariable_strategy = st.builds(
-    uitf::UIControlVariable,
+uitf_UIControlVariable_strategy = st.builds(
+    uitf_UIControlVariable,
 )
-uitf::Variable_strategy = st.builds(
-    uitf::Variable,
+uitf_Variable_strategy = st.builds(
+    uitf_Variable,
     id=
         safe_text
 )
-uitf::TestSuite_strategy = st.builds(
-    uitf::TestSuite,
+uitf_TestSuite_strategy = st.builds(
+    uitf_TestSuite,
     id=
         safe_text
 )
-uitf::Statement_strategy = st.builds(
-    uitf::Statement,
+uitf_Statement_strategy = st.builds(
+    uitf_Statement,
     kind=
         safe_text,
     description=
         safe_text
 )
-uitf::UISUT_strategy = st.builds(
-    uitf::UISUT,
+uitf_UISUT_strategy = st.builds(
+    uitf_UISUT,
     objectURI=
         safe_text
 )
-uitf::TestCase_strategy = st.builds(
-    uitf::TestCase,
+uitf_TestCase_strategy = st.builds(
+    uitf_TestCase,
     id=
         safe_text
 )
@@ -368,61 +368,49 @@ uitf::TestCase_strategy = st.builds(
 def test_statement_instantiation(instance):
     assert isinstance(instance, Statement)
 
-@given(instance=uitf::TriggeredTransition_strategy)
+@given(instance=uitf_TriggeredTransition_strategy)
 @settings(max_examples=50)
-def test_uitf::triggeredtransition_instantiation(instance):
-    assert isinstance(instance, uitf::TriggeredTransition)
-
-@given(instance=uitf::TriggeredTransition_strategy)
-def test_uitf::triggeredtransition_scriptStr_type(instance):
-    assert isinstance(instance.scriptStr, str)
+def test_uitf_triggeredtransition_instantiation(instance):
+    assert isinstance(instance, uitf_TriggeredTransition)
 
 
-@given(instance=uitf::TriggeredTransition_strategy)
-def test_uitf::triggeredtransition_scriptStr_setter(instance):
+
+@given(instance=uitf_TriggeredTransition_strategy)
+def test_uitf_triggeredtransition_scriptStr_setter(instance):
     original = instance.scriptStr
     instance.scriptStr = original
     assert instance.scriptStr == original
 
-@given(instance=uitf::TriggeredTransition_strategy)
-def test_uitf::triggeredtransition_transitionId_type(instance):
-    assert isinstance(instance.transitionId, str)
 
 
-@given(instance=uitf::TriggeredTransition_strategy)
-def test_uitf::triggeredtransition_transitionId_setter(instance):
+@given(instance=uitf_TriggeredTransition_strategy)
+def test_uitf_triggeredtransition_transitionId_setter(instance):
     original = instance.transitionId
     instance.transitionId = original
     assert instance.transitionId == original
 
-@given(instance=uitf::AssertInState_strategy)
+@given(instance=uitf_AssertInState_strategy)
 @settings(max_examples=50)
-def test_uitf::assertinstate_instantiation(instance):
-    assert isinstance(instance, uitf::AssertInState)
-
-@given(instance=uitf::AssertInState_strategy)
-def test_uitf::assertinstate_stateId_type(instance):
-    assert isinstance(instance.stateId, str)
+def test_uitf_assertinstate_instantiation(instance):
+    assert isinstance(instance, uitf_AssertInState)
 
 
-@given(instance=uitf::AssertInState_strategy)
-def test_uitf::assertinstate_stateId_setter(instance):
+
+@given(instance=uitf_AssertInState_strategy)
+def test_uitf_assertinstate_stateId_setter(instance):
     original = instance.stateId
     instance.stateId = original
     assert instance.stateId == original
 
-@given(instance=uitf::UIControl_strategy)
+@given(instance=uitf_UIControl_strategy)
 @settings(max_examples=50)
-def test_uitf::uicontrol_instantiation(instance):
-    assert isinstance(instance, uitf::UIControl)
-
-@given(instance=uitf::UIControl_strategy)
-def test_uitf::uicontrol_id_type(instance):
-    assert isinstance(instance.id, str)
+def test_uitf_uicontrol_instantiation(instance):
+    assert isinstance(instance, uitf_UIControl)
 
 
-@given(instance=uitf::UIControl_strategy)
-def test_uitf::uicontrol_id_setter(instance):
+
+@given(instance=uitf_UIControl_strategy)
+def test_uitf_uicontrol_id_setter(instance):
     original = instance.id
     instance.id = original
     assert instance.id == original
@@ -432,23 +420,20 @@ def test_uitf::uicontrol_id_setter(instance):
 def test_variable_instantiation(instance):
     assert isinstance(instance, Variable)
 
-@given(instance=uitf::UIControlVariable_strategy)
+@given(instance=uitf_UIControlVariable_strategy)
 @settings(max_examples=50)
-def test_uitf::uicontrolvariable_instantiation(instance):
-    assert isinstance(instance, uitf::UIControlVariable)
+def test_uitf_uicontrolvariable_instantiation(instance):
+    assert isinstance(instance, uitf_UIControlVariable)
 
-@given(instance=uitf::Variable_strategy)
+@given(instance=uitf_Variable_strategy)
 @settings(max_examples=50)
-def test_uitf::variable_instantiation(instance):
-    assert isinstance(instance, uitf::Variable)
-
-@given(instance=uitf::Variable_strategy)
-def test_uitf::variable_id_type(instance):
-    assert isinstance(instance.id, str)
+def test_uitf_variable_instantiation(instance):
+    assert isinstance(instance, uitf_Variable)
 
 
-@given(instance=uitf::Variable_strategy)
-def test_uitf::variable_id_setter(instance):
+
+@given(instance=uitf_Variable_strategy)
+def test_uitf_variable_id_setter(instance):
     original = instance.id
     instance.id = original
     assert instance.id == original
@@ -459,38 +444,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=uitf::Variable_strategy)
+@given(instance=uitf_Variable_strategy)
 @settings(max_examples=30)
-def test_uitf::variable_assertvalue_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.assertValue()
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.assertValue).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'assertValue' in uitf::Variable is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'assertValue' in uitf::Variable did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'assertValue' in uitf::Variable is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=uitf::Variable_strategy)
-@settings(max_examples=30)
-def test_uitf::variable_setvalue_changes_state(instance):
+def test_uitf_variable_setvalue_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -504,27 +460,53 @@ def test_uitf::variable_setvalue_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'setValue' in uitf::Variable is empty"
+        assert has_statements, f"Function 'setValue' in uitf_Variable is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'setValue' in uitf::Variable did not change state; check implementation")
+            warnings.warn(f"Operation 'setValue' in uitf_Variable did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'setValue' in uitf::Variable is not implemented or raised an error")
+        warnings.warn(f"Operation 'setValue' in uitf_Variable is not implemented or raised an error")
 
-@given(instance=uitf::TestSuite_strategy)
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=uitf_Variable_strategy)
+@settings(max_examples=30)
+def test_uitf_variable_assertvalue_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.assertValue()
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.assertValue).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'assertValue' in uitf_Variable is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'assertValue' in uitf_Variable did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'assertValue' in uitf_Variable is not implemented or raised an error")
+
+@given(instance=uitf_TestSuite_strategy)
 @settings(max_examples=50)
-def test_uitf::testsuite_instantiation(instance):
-    assert isinstance(instance, uitf::TestSuite)
-
-@given(instance=uitf::TestSuite_strategy)
-def test_uitf::testsuite_id_type(instance):
-    assert isinstance(instance.id, str)
+def test_uitf_testsuite_instantiation(instance):
+    assert isinstance(instance, uitf_TestSuite)
 
 
-@given(instance=uitf::TestSuite_strategy)
-def test_uitf::testsuite_id_setter(instance):
+
+@given(instance=uitf_TestSuite_strategy)
+def test_uitf_testsuite_id_setter(instance):
     original = instance.id
     instance.id = original
     assert instance.id == original
@@ -535,38 +517,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=uitf::TestSuite_strategy)
+@given(instance=uitf_TestSuite_strategy)
 @settings(max_examples=30)
-def test_uitf::testsuite_stop_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.stop()
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.stop).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'stop' in uitf::TestSuite is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'stop' in uitf::TestSuite did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'stop' in uitf::TestSuite is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=uitf::TestSuite_strategy)
-@settings(max_examples=30)
-def test_uitf::testsuite_start_changes_state(instance):
+def test_uitf_testsuite_start_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -578,54 +531,74 @@ def test_uitf::testsuite_start_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'start' in uitf::TestSuite is empty"
+        assert has_statements, f"Function 'start' in uitf_TestSuite is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'start' in uitf::TestSuite did not change state; check implementation")
+            warnings.warn(f"Operation 'start' in uitf_TestSuite did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'start' in uitf::TestSuite is not implemented or raised an error")
+        warnings.warn(f"Operation 'start' in uitf_TestSuite is not implemented or raised an error")
 
-@given(instance=uitf::Statement_strategy)
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=uitf_TestSuite_strategy)
+@settings(max_examples=30)
+def test_uitf_testsuite_stop_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.stop()
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.stop).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'stop' in uitf_TestSuite is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'stop' in uitf_TestSuite did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'stop' in uitf_TestSuite is not implemented or raised an error")
+
+@given(instance=uitf_Statement_strategy)
 @settings(max_examples=50)
-def test_uitf::statement_instantiation(instance):
-    assert isinstance(instance, uitf::Statement)
-
-@given(instance=uitf::Statement_strategy)
-def test_uitf::statement_kind_type(instance):
-    assert isinstance(instance.kind, str)
+def test_uitf_statement_instantiation(instance):
+    assert isinstance(instance, uitf_Statement)
 
 
-@given(instance=uitf::Statement_strategy)
-def test_uitf::statement_kind_setter(instance):
+
+@given(instance=uitf_Statement_strategy)
+def test_uitf_statement_kind_setter(instance):
     original = instance.kind
     instance.kind = original
     assert instance.kind == original
 
-@given(instance=uitf::Statement_strategy)
-def test_uitf::statement_description_type(instance):
-    assert isinstance(instance.description, str)
 
 
-@given(instance=uitf::Statement_strategy)
-def test_uitf::statement_description_setter(instance):
+@given(instance=uitf_Statement_strategy)
+def test_uitf_statement_description_setter(instance):
     original = instance.description
     instance.description = original
     assert instance.description == original
 
-@given(instance=uitf::UISUT_strategy)
+@given(instance=uitf_UISUT_strategy)
 @settings(max_examples=50)
-def test_uitf::uisut_instantiation(instance):
-    assert isinstance(instance, uitf::UISUT)
-
-@given(instance=uitf::UISUT_strategy)
-def test_uitf::uisut_objectURI_type(instance):
-    assert isinstance(instance.objectURI, str)
+def test_uitf_uisut_instantiation(instance):
+    assert isinstance(instance, uitf_UISUT)
 
 
-@given(instance=uitf::UISUT_strategy)
-def test_uitf::uisut_objectURI_setter(instance):
+
+@given(instance=uitf_UISUT_strategy)
+def test_uitf_uisut_objectURI_setter(instance):
     original = instance.objectURI
     instance.objectURI = original
     assert instance.objectURI == original
@@ -636,69 +609,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=uitf::UISUT_strategy)
+@given(instance=uitf_UISUT_strategy)
 @settings(max_examples=30)
-def test_uitf::uisut_onuitrigger_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.onUITrigger(
-            "test"
-        )
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.onUITrigger).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'onUITrigger' in uitf::UISUT is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'onUITrigger' in uitf::UISUT did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'onUITrigger' in uitf::UISUT is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=uitf::UISUT_strategy)
-@settings(max_examples=30)
-def test_uitf::uisut_assertinstate_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.assertInState()
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.assertInState).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'assertInState' in uitf::UISUT is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'assertInState' in uitf::UISUT did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'assertInState' in uitf::UISUT is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=uitf::UISUT_strategy)
-@settings(max_examples=30)
-def test_uitf::uisut_onmanipulateuicontrol_changes_state(instance):
+def test_uitf_uisut_onmanipulateuicontrol_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -713,14 +626,14 @@ def test_uitf::uisut_onmanipulateuicontrol_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'onManipulateUIControl' in uitf::UISUT is empty"
+        assert has_statements, f"Function 'onManipulateUIControl' in uitf_UISUT is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'onManipulateUIControl' in uitf::UISUT did not change state; check implementation")
+            warnings.warn(f"Operation 'onManipulateUIControl' in uitf_UISUT did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'onManipulateUIControl' in uitf::UISUT is not implemented or raised an error")
+        warnings.warn(f"Operation 'onManipulateUIControl' in uitf_UISUT is not implemented or raised an error")
 
 import warnings
 import copy
@@ -728,9 +641,38 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=uitf::UISUT_strategy)
+@given(instance=uitf_UISUT_strategy)
 @settings(max_examples=30)
-def test_uitf::uisut_onmanipulateuicontroldata_changes_state(instance):
+def test_uitf_uisut_assertinstate_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.assertInState()
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.assertInState).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'assertInState' in uitf_UISUT is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'assertInState' in uitf_UISUT did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'assertInState' in uitf_UISUT is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=uitf_UISUT_strategy)
+@settings(max_examples=30)
+def test_uitf_uisut_onmanipulateuicontroldata_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -746,27 +688,55 @@ def test_uitf::uisut_onmanipulateuicontroldata_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'onManipulateUIControlData' in uitf::UISUT is empty"
+        assert has_statements, f"Function 'onManipulateUIControlData' in uitf_UISUT is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'onManipulateUIControlData' in uitf::UISUT did not change state; check implementation")
+            warnings.warn(f"Operation 'onManipulateUIControlData' in uitf_UISUT did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'onManipulateUIControlData' in uitf::UISUT is not implemented or raised an error")
+        warnings.warn(f"Operation 'onManipulateUIControlData' in uitf_UISUT is not implemented or raised an error")
 
-@given(instance=uitf::TestCase_strategy)
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=uitf_UISUT_strategy)
+@settings(max_examples=30)
+def test_uitf_uisut_onuitrigger_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.onUITrigger(
+            "test"
+        )
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.onUITrigger).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'onUITrigger' in uitf_UISUT is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'onUITrigger' in uitf_UISUT did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'onUITrigger' in uitf_UISUT is not implemented or raised an error")
+
+@given(instance=uitf_TestCase_strategy)
 @settings(max_examples=50)
-def test_uitf::testcase_instantiation(instance):
-    assert isinstance(instance, uitf::TestCase)
-
-@given(instance=uitf::TestCase_strategy)
-def test_uitf::testcase_id_type(instance):
-    assert isinstance(instance.id, str)
+def test_uitf_testcase_instantiation(instance):
+    assert isinstance(instance, uitf_TestCase)
 
 
-@given(instance=uitf::TestCase_strategy)
-def test_uitf::testcase_id_setter(instance):
+
+@given(instance=uitf_TestCase_strategy)
+def test_uitf_testcase_id_setter(instance):
     original = instance.id
     instance.id = original
     assert instance.id == original
@@ -777,9 +747,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=uitf::TestCase_strategy)
+@given(instance=uitf_TestCase_strategy)
 @settings(max_examples=30)
-def test_uitf::testcase_stop_changes_state(instance):
+def test_uitf_testcase_stop_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -791,14 +761,14 @@ def test_uitf::testcase_stop_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'stop' in uitf::TestCase is empty"
+        assert has_statements, f"Function 'stop' in uitf_TestCase is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'stop' in uitf::TestCase did not change state; check implementation")
+            warnings.warn(f"Operation 'stop' in uitf_TestCase did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'stop' in uitf::TestCase is not implemented or raised an error")
+        warnings.warn(f"Operation 'stop' in uitf_TestCase is not implemented or raised an error")
 
 import warnings
 import copy
@@ -806,9 +776,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=uitf::TestCase_strategy)
+@given(instance=uitf_TestCase_strategy)
 @settings(max_examples=30)
-def test_uitf::testcase_start_changes_state(instance):
+def test_uitf_testcase_start_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -820,11 +790,11 @@ def test_uitf::testcase_start_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'start' in uitf::TestCase is empty"
+        assert has_statements, f"Function 'start' in uitf_TestCase is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'start' in uitf::TestCase did not change state; check implementation")
+            warnings.warn(f"Operation 'start' in uitf_TestCase did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'start' in uitf::TestCase is not implemented or raised an error")
+        warnings.warn(f"Operation 'start' in uitf_TestCase is not implemented or raised an error")

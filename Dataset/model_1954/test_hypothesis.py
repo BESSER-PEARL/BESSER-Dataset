@@ -3,274 +3,202 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    softGalleryLanguage::RequestMappingProduces,
-    softGalleryLanguage::RequestMappingMethod,
-    softGalleryLanguage::RequestMappingValue,
+from python_code import (
     MappingType,
-    softGalleryLanguage::GetMapping,
-    softGalleryLanguage::PutMapping,
-    softGalleryLanguage::DeleteMapping,
-    softGalleryLanguage::PostMapping,
-    softGalleryLanguage::RequestMapping,
-    softGalleryLanguage::SpringEntity,
-    softGalleryLanguage::ResponseParameter,
-    softGalleryLanguage::MappingType,
-    softGalleryLanguage::ResponseEntity,
-    softGalleryLanguage::Autowired,
-    softGalleryLanguage::SearchCriteria,
-    softGalleryLanguage::Predicate,
-    softGalleryLanguage::Specification,
-    softGalleryLanguage::RestController,
-    softGalleryLanguage::SpringRepositoryAnnotation,
-    softGalleryLanguage::SpringRepositories,
-    softGalleryLanguage::SpringRepository,
-    softGalleryLanguage::OrderSpring,
-    softGalleryLanguage::SpringComponent,
-    softGalleryLanguage::EnableWebSecurity,
-    softGalleryLanguage::EnableResourceServer,
-    softGalleryLanguage::EnableAuthorizationServer,
-    softGalleryLanguage::EnableGlobalMethodSecurity,
-    softGalleryLanguage::Configuration,
-    softGalleryLanguage::SpringBootApplication,
-    softGalleryLanguage::AmazonWebServices,
-    softGalleryLanguage::PostgreSQL,
-    softGalleryLanguage::React,
-    softGalleryLanguage::Spring,
-    softGalleryLanguage::Technologies,
-    softGalleryLanguage::NTiersRelations,
-    softGalleryLanguage::NTierTarget,
-    softGalleryLanguage::NTierSource,
-    softGalleryLanguage::NTierConnectionContent,
-    softGalleryLanguage::NTiersConnections,
-    softGalleryLanguage::PersistenceDataComponent,
-    softGalleryLanguage::BackEnd,
-    softGalleryLanguage::FrontEnd,
-    softGalleryLanguage::ArchitectureComponents,
-    softGalleryLanguage::LayerTarget,
-    softGalleryLanguage::LayerSource,
-    softGalleryLanguage::Technology,
-    softGalleryLanguage::SingleFile,
-    softGalleryLanguage::MultipleFile,
-    softGalleryLanguage::Directories,
-    softGalleryLanguage::DirectoryContent,
-    softGalleryLanguage::SegmentStructureContent,
-    softGalleryLanguage::SegmentStructure,
-    softGalleryLanguage::DataPersistenceSegments,
-    softGalleryLanguage::DataPersistenceContent,
-    softGalleryLanguage::DataPersistenceLayer,
-    softGalleryLanguage::CriteriaAttributeType,
-    softGalleryLanguage::SpecificationSegmentElement,
-    softGalleryLanguage::ControllerSegmentElement,
-    softGalleryLanguage::LayerRelations,
-    softGalleryLanguage::BusinessLogicSegments,
-    softGalleryLanguage::BusinessLogicContent,
-    softGalleryLanguage::BusinessLogicLayer,
-    softGalleryLanguage::PresentationSegments,
-    softGalleryLanguage::PresentationContent,
-    softGalleryLanguage::PresentationLayer,
-    softGalleryLanguage::Layer,
-    softGalleryLanguage::NTiers,
-    softGalleryLanguage::Architecture,
-    softGalleryLanguage::UserException,
-    softGalleryLanguage::AlbumException,
-    softGalleryLanguage::PhotoException,
-    softGalleryLanguage::LandingFunctions,
-    softGalleryLanguage::PhotoActionsFunctions,
-    softGalleryLanguage::AlbumManagementFunctions,
-    softGalleryLanguage::ExceptionsType,
-    softGalleryLanguage::AppAccessFunctions,
-    softGalleryLanguage::ProfileManagementFunctions,
-    softGalleryLanguage::LandingActions,
-    softGalleryLanguage::PhotoActions,
-    softGalleryLanguage::AlbumManagement,
-    softGalleryLanguage::AmazonElasticComputeCloud,
-    softGalleryLanguage::Metadata,
-    softGalleryLanguage::AmazonFile,
-    softGalleryLanguage::AmazonFolder,
-    softGalleryLanguage::OnlyAuthorized,
-    softGalleryLanguage::BucketObjectsNotPublic,
-    softGalleryLanguage::ObjectsPublic,
-    softGalleryLanguage::BucketAccess,
-    softGalleryLanguage::Bucket,
-    softGalleryLanguage::BatchOperation,
-    softGalleryLanguage::AmazonSimpleStorageService,
-    softGalleryLanguage::Clause,
-    softGalleryLanguage::Query,
-    softGalleryLanguage::Privilege,
-    softGalleryLanguage::PostgresUser,
-    softGalleryLanguage::Function,
-    softGalleryLanguage::Trigger,
-    softGalleryLanguage::Policy,
-    softGalleryLanguage::PublicAccess,
-    softGalleryLanguage::Constraint,
-    softGalleryLanguage::DatatypeDB,
-    softGalleryLanguage::ColumnP,
-    softGalleryLanguage::RefTable::p,
-    softGalleryLanguage::ForeignKeyRef,
-    softGalleryLanguage::ForeignKey::n,
-    softGalleryLanguage::ForeignKey,
-    softGalleryLanguage::Table::p,
-    softGalleryLanguage::ViewSchema,
-    softGalleryLanguage::Index::p,
-    softGalleryLanguage::Schema,
-    softGalleryLanguage::Database,
-    softGalleryLanguage::Cluster,
-    softGalleryLanguage::Row,
-    softGalleryLanguage::ReactInformation,
-    softGalleryLanguage::ReactLibrary,
-    softGalleryLanguage::ReactsRelationServ,
-    softGalleryLanguage::ReactServiceRequestProps,
-    softGalleryLanguage::ReactServiceContRequest,
-    softGalleryLanguage::ReactServiceContent,
-    softGalleryLanguage::ReactServicesType,
-    softGalleryLanguage::ReactServicesRelation,
-    softGalleryLanguage::ReactActionsContent,
-    softGalleryLanguage::StylePropertiesContent,
-    softGalleryLanguage::ComponentsStylesContent,
-    softGalleryLanguage::PropsType,
-    softGalleryLanguage::StateContent,
-    softGalleryLanguage::CoreFunctionsDeclaration,
-    softGalleryLanguage::State,
-    softGalleryLanguage::ReactCoreFunctions,
-    softGalleryLanguage::ReactConstructor,
-    softGalleryLanguage::ReactImportContent,
-    softGalleryLanguage::StyleProperties,
-    softGalleryLanguage::Props,
-    softGalleryLanguage::ReactFunctions,
-    softGalleryLanguage::ReactImports,
-    softGalleryLanguage::SubcomponentCont,
-    softGalleryLanguage::ViewComponentCont,
-    softGalleryLanguage::UIContent,
-    softGalleryLanguage::ComponentClass,
-    softGalleryLanguage::LogicStructure,
-    softGalleryLanguage::LogicContent,
-    softGalleryLanguage::ComponentsStyles,
-    softGalleryLanguage::ComponentsLogic,
-    softGalleryLanguage::DOMConfigurations,
-    softGalleryLanguage::PackageVersion,
-    softGalleryLanguage::PackageName,
-    softGalleryLanguage::SingleDependencies,
-    softGalleryLanguage::ReactDependenciesSubRules,
-    softGalleryLanguage::ReactDependenciesRules,
-    softGalleryLanguage::ReactConfigurations,
-    softGalleryLanguage::ReactDependencies,
-    softGalleryLanguage::ReactInfo,
-    softGalleryLanguage::ReactLibraries,
-    softGalleryLanguage::ReactActions,
-    softGalleryLanguage::ComponentsUI,
-    softGalleryLanguage::ReactConfiguration,
-    softGalleryLanguage::ReactSubModules,
-    softGalleryLanguage::ReactModules,
-    softGalleryLanguage::StorageActionMemberName,
-    softGalleryLanguage::StorageActionMemberType,
-    softGalleryLanguage::StorageActionMember,
-    softGalleryLanguage::StorageActionReturn,
-    softGalleryLanguage::StorageActionAnnotation,
-    softGalleryLanguage::StorageAction,
-    softGalleryLanguage::StorageMemberAnnotation,
-    softGalleryLanguage::StorageMemberType,
-    softGalleryLanguage::StorageMember,
-    softGalleryLanguage::StorageClient,
-    softGalleryLanguage::SpringEntityAnnotationTypes,
-    softGalleryLanguage::ReactComponents,
-    softGalleryLanguage::ExceptionProcess,
-    softGalleryLanguage::ExceptionHandler,
-    softGalleryLanguage::ResponseParameterName,
-    softGalleryLanguage::ResponseParameterType,
-    softGalleryLanguage::ResponseParameterAnnotation,
-    softGalleryLanguage::AppAccess,
-    softGalleryLanguage::ProfileManagement,
-    softGalleryLanguage::Functionalities,
-    softGalleryLanguage::AtributeUserDomain,
-    softGalleryLanguage::AtributeAlbum,
-    softGalleryLanguage::AtributePhoto,
-    softGalleryLanguage::Entities,
-    softGalleryLanguage::ExceptionsDomain,
-    softGalleryLanguage::Functionality,
-    softGalleryLanguage::Entity,
-    softGalleryLanguage::Domain,
-    softGalleryLanguage::EObject,
-    softGalleryLanguage::Model,
+    softGalleryLanguage_RequestMapping,
+    softGalleryLanguage_SpringEntity,
+    softGalleryLanguage_ResponseParameter,
+    softGalleryLanguage_MappingType,
+    softGalleryLanguage_ResponseEntity,
+    softGalleryLanguage_Autowired,
+    softGalleryLanguage_SearchCriteria,
+    softGalleryLanguage_Predicate,
+    softGalleryLanguage_Specification,
+    softGalleryLanguage_RestController,
+    softGalleryLanguage_SpringRepositoryAnnotation,
+    softGalleryLanguage_SpringRepositories,
+    softGalleryLanguage_SpringRepository,
+    softGalleryLanguage_OrderSpring,
+    softGalleryLanguage_SpringComponent,
+    softGalleryLanguage_EnableWebSecurity,
+    softGalleryLanguage_EnableResourceServer,
+    softGalleryLanguage_EnableAuthorizationServer,
+    softGalleryLanguage_EnableGlobalMethodSecurity,
+    softGalleryLanguage_Configuration,
+    softGalleryLanguage_SpringBootApplication,
+    softGalleryLanguage_AmazonWebServices,
+    softGalleryLanguage_PostgreSQL,
+    softGalleryLanguage_React,
+    softGalleryLanguage_Spring,
+    softGalleryLanguage_Technologies,
+    softGalleryLanguage_NTiersRelations,
+    softGalleryLanguage_NTierTarget,
+    softGalleryLanguage_NTierSource,
+    softGalleryLanguage_NTierConnectionContent,
+    softGalleryLanguage_NTiersConnections,
+    softGalleryLanguage_PersistenceDataComponent,
+    softGalleryLanguage_BackEnd,
+    softGalleryLanguage_FrontEnd,
+    softGalleryLanguage_ArchitectureComponents,
+    softGalleryLanguage_LayerTarget,
+    softGalleryLanguage_LayerSource,
+    softGalleryLanguage_Technology,
+    softGalleryLanguage_SingleFile,
+    softGalleryLanguage_MultipleFile,
+    softGalleryLanguage_Directories,
+    softGalleryLanguage_DirectoryContent,
+    softGalleryLanguage_SegmentStructureContent,
+    softGalleryLanguage_SegmentStructure,
+    softGalleryLanguage_DataPersistenceSegments,
+    softGalleryLanguage_DataPersistenceContent,
+    softGalleryLanguage_DataPersistenceLayer,
+    softGalleryLanguage_CriteriaAttributeType,
+    softGalleryLanguage_SpecificationSegmentElement,
+    softGalleryLanguage_ControllerSegmentElement,
+    softGalleryLanguage_LayerRelations,
+    softGalleryLanguage_BusinessLogicSegments,
+    softGalleryLanguage_BusinessLogicContent,
+    softGalleryLanguage_BusinessLogicLayer,
+    softGalleryLanguage_PresentationSegments,
+    softGalleryLanguage_PresentationContent,
+    softGalleryLanguage_PresentationLayer,
+    softGalleryLanguage_Layer,
+    softGalleryLanguage_NTiers,
+    softGalleryLanguage_Architecture,
+    softGalleryLanguage_UserException,
+    softGalleryLanguage_AlbumException,
+    softGalleryLanguage_PhotoException,
+    softGalleryLanguage_LandingFunctions,
+    softGalleryLanguage_PhotoActionsFunctions,
+    softGalleryLanguage_AlbumManagementFunctions,
+    softGalleryLanguage_ExceptionsType,
+    softGalleryLanguage_AppAccessFunctions,
+    softGalleryLanguage_ProfileManagementFunctions,
+    softGalleryLanguage_LandingActions,
+    softGalleryLanguage_PhotoActions,
+    softGalleryLanguage_AlbumManagement,
+    softGalleryLanguage_AppAccess,
+    softGalleryLanguage_ProfileManagement,
+    softGalleryLanguage_Functionalities,
+    softGalleryLanguage_AtributeUserDomain,
+    softGalleryLanguage_AtributeAlbum,
+    softGalleryLanguage_AtributePhoto,
+    softGalleryLanguage_Entities,
+    softGalleryLanguage_ExceptionsDomain,
+    softGalleryLanguage_Functionality,
+    softGalleryLanguage_Entity,
+    softGalleryLanguage_Domain,
+    softGalleryLanguage_EObject,
+    softGalleryLanguage_Model,
+    softGalleryLanguage_AmazonElasticComputeCloud,
+    softGalleryLanguage_Metadata,
+    softGalleryLanguage_AmazonFile,
+    softGalleryLanguage_AmazonFolder,
+    softGalleryLanguage_OnlyAuthorized,
+    softGalleryLanguage_BucketObjectsNotPublic,
+    softGalleryLanguage_ObjectsPublic,
+    softGalleryLanguage_BucketAccess,
+    softGalleryLanguage_Bucket,
+    softGalleryLanguage_BatchOperation,
+    softGalleryLanguage_AmazonSimpleStorageService,
+    softGalleryLanguage_Clause,
+    softGalleryLanguage_Query,
+    softGalleryLanguage_Privilege,
+    softGalleryLanguage_PostgresUser,
+    softGalleryLanguage_Function,
+    softGalleryLanguage_Trigger,
+    softGalleryLanguage_Policy,
+    softGalleryLanguage_PublicAccess,
+    softGalleryLanguage_Constraint,
+    softGalleryLanguage_DatatypeDB,
+    softGalleryLanguage_ColumnP,
+    softGalleryLanguage_RefTable_p,
+    softGalleryLanguage_ForeignKeyRef,
+    softGalleryLanguage_ForeignKey_n,
+    softGalleryLanguage_ForeignKey,
+    softGalleryLanguage_Table_p,
+    softGalleryLanguage_ViewSchema,
+    softGalleryLanguage_Index_p,
+    softGalleryLanguage_Schema,
+    softGalleryLanguage_Database,
+    softGalleryLanguage_Cluster,
+    softGalleryLanguage_Row,
+    softGalleryLanguage_ReactInformation,
+    softGalleryLanguage_ReactLibrary,
+    softGalleryLanguage_ReactsRelationServ,
+    softGalleryLanguage_ReactServiceRequestProps,
+    softGalleryLanguage_ReactServiceContRequest,
+    softGalleryLanguage_ReactServiceContent,
+    softGalleryLanguage_ReactServicesType,
+    softGalleryLanguage_ReactServicesRelation,
+    softGalleryLanguage_ReactActionsContent,
+    softGalleryLanguage_StylePropertiesContent,
+    softGalleryLanguage_ComponentsStylesContent,
+    softGalleryLanguage_PropsType,
+    softGalleryLanguage_StateContent,
+    softGalleryLanguage_CoreFunctionsDeclaration,
+    softGalleryLanguage_State,
+    softGalleryLanguage_ReactCoreFunctions,
+    softGalleryLanguage_ReactConstructor,
+    softGalleryLanguage_ReactImportContent,
+    softGalleryLanguage_StyleProperties,
+    softGalleryLanguage_Props,
+    softGalleryLanguage_ReactFunctions,
+    softGalleryLanguage_ReactImports,
+    softGalleryLanguage_SubcomponentCont,
+    softGalleryLanguage_ViewComponentCont,
+    softGalleryLanguage_UIContent,
+    softGalleryLanguage_ComponentClass,
+    softGalleryLanguage_LogicStructure,
+    softGalleryLanguage_LogicContent,
+    softGalleryLanguage_ComponentsStyles,
+    softGalleryLanguage_ComponentsLogic,
+    softGalleryLanguage_DOMConfigurations,
+    softGalleryLanguage_PackageVersion,
+    softGalleryLanguage_PackageName,
+    softGalleryLanguage_SingleDependencies,
+    softGalleryLanguage_ReactDependenciesSubRules,
+    softGalleryLanguage_ReactDependenciesRules,
+    softGalleryLanguage_ReactConfigurations,
+    softGalleryLanguage_ReactDependencies,
+    softGalleryLanguage_ReactInfo,
+    softGalleryLanguage_ReactLibraries,
+    softGalleryLanguage_ReactActions,
+    softGalleryLanguage_ComponentsUI,
+    softGalleryLanguage_ReactConfiguration,
+    softGalleryLanguage_ReactSubModules,
+    softGalleryLanguage_ReactModules,
+    softGalleryLanguage_StorageActionMemberName,
+    softGalleryLanguage_StorageActionMemberType,
+    softGalleryLanguage_StorageActionMember,
+    softGalleryLanguage_StorageActionReturn,
+    softGalleryLanguage_StorageActionAnnotation,
+    softGalleryLanguage_StorageAction,
+    softGalleryLanguage_StorageMemberAnnotation,
+    softGalleryLanguage_StorageMemberType,
+    softGalleryLanguage_StorageMember,
+    softGalleryLanguage_StorageClient,
+    softGalleryLanguage_SpringEntityAnnotationTypes,
+    softGalleryLanguage_ReactComponents,
+    softGalleryLanguage_ExceptionProcess,
+    softGalleryLanguage_ExceptionHandler,
+    softGalleryLanguage_ResponseParameterName,
+    softGalleryLanguage_ResponseParameterType,
+    softGalleryLanguage_ResponseParameterAnnotation,
+    softGalleryLanguage_DeleteMapping,
+    softGalleryLanguage_PutMapping,
+    softGalleryLanguage_GetMapping,
+    softGalleryLanguage_PostMapping,
+    softGalleryLanguage_RequestMappingProduces,
+    softGalleryLanguage_RequestMappingMethod,
+    softGalleryLanguage_RequestMappingValue,
 )
 
 # =============================================================================
 # SECTION 1 — STRUCTURAL TESTS
 # =============================================================================
-
-
-
-def test_softgallerylanguage::requestmappingproduces_is_not_abstract():
-    assert not inspect.isabstract(softGalleryLanguage::RequestMappingProduces)
-
-
-def test_softgallerylanguage::requestmappingproduces_constructor_exists():
-    assert callable(softGalleryLanguage::RequestMappingProduces.__init__)
-
-
-def test_softgallerylanguage::requestmappingproduces_constructor_args():
-    sig = inspect.signature(softGalleryLanguage::RequestMappingProduces.__init__)
-    params = list(sig.parameters.keys())
-    assert "name" in params, "Missing parameter 'name'"
-
-def test_softgallerylanguage::requestmappingproduces_has_name():
-    assert hasattr(softGalleryLanguage::RequestMappingProduces, "name")
-    descriptor = None
-    for klass in softGalleryLanguage::RequestMappingProduces.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_softgallerylanguage::requestmappingmethod_is_not_abstract():
-    assert not inspect.isabstract(softGalleryLanguage::RequestMappingMethod)
-
-
-def test_softgallerylanguage::requestmappingmethod_constructor_exists():
-    assert callable(softGalleryLanguage::RequestMappingMethod.__init__)
-
-
-def test_softgallerylanguage::requestmappingmethod_constructor_args():
-    sig = inspect.signature(softGalleryLanguage::RequestMappingMethod.__init__)
-    params = list(sig.parameters.keys())
-    assert "name" in params, "Missing parameter 'name'"
-
-def test_softgallerylanguage::requestmappingmethod_has_name():
-    assert hasattr(softGalleryLanguage::RequestMappingMethod, "name")
-    descriptor = None
-    for klass in softGalleryLanguage::RequestMappingMethod.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_softgallerylanguage::requestmappingvalue_is_not_abstract():
-    assert not inspect.isabstract(softGalleryLanguage::RequestMappingValue)
-
-
-def test_softgallerylanguage::requestmappingvalue_constructor_exists():
-    assert callable(softGalleryLanguage::RequestMappingValue.__init__)
-
-
-def test_softgallerylanguage::requestmappingvalue_constructor_args():
-    sig = inspect.signature(softGalleryLanguage::RequestMappingValue.__init__)
-    params = list(sig.parameters.keys())
-    assert "name" in params, "Missing parameter 'name'"
-
-def test_softgallerylanguage::requestmappingvalue_has_name():
-    assert hasattr(softGalleryLanguage::RequestMappingValue, "name")
-    descriptor = None
-    for klass in softGalleryLanguage::RequestMappingValue.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
 
 
 
@@ -288,23 +216,79 @@ def test_mappingtype_constructor_args():
 
 
 
-def test_softgallerylanguage::getmapping_is_not_abstract():
-    assert not inspect.isabstract(softGalleryLanguage::GetMapping)
+def test_softgallerylanguage_requestmapping_is_not_abstract():
+    assert not inspect.isabstract(softGalleryLanguage_RequestMapping)
 
 
-def test_softgallerylanguage::getmapping_constructor_exists():
-    assert callable(softGalleryLanguage::GetMapping.__init__)
+def test_softgallerylanguage_requestmapping_constructor_exists():
+    assert callable(softGalleryLanguage_RequestMapping.__init__)
 
 
-def test_softgallerylanguage::getmapping_constructor_args():
-    sig = inspect.signature(softGalleryLanguage::GetMapping.__init__)
+def test_softgallerylanguage_requestmapping_constructor_args():
+    sig = inspect.signature(softGalleryLanguage_RequestMapping.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_softgallerylanguage_springentity_is_not_abstract():
+    assert not inspect.isabstract(softGalleryLanguage_SpringEntity)
+
+
+def test_softgallerylanguage_springentity_constructor_exists():
+    assert callable(softGalleryLanguage_SpringEntity.__init__)
+
+
+def test_softgallerylanguage_springentity_constructor_args():
+    sig = inspect.signature(softGalleryLanguage_SpringEntity.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_softgallerylanguage_responseparameter_is_not_abstract():
+    assert not inspect.isabstract(softGalleryLanguage_ResponseParameter)
+
+
+def test_softgallerylanguage_responseparameter_constructor_exists():
+    assert callable(softGalleryLanguage_ResponseParameter.__init__)
+
+
+def test_softgallerylanguage_responseparameter_constructor_args():
+    sig = inspect.signature(softGalleryLanguage_ResponseParameter.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_softgallerylanguage_mappingtype_is_not_abstract():
+    assert not inspect.isabstract(softGalleryLanguage_MappingType)
+
+
+def test_softgallerylanguage_mappingtype_constructor_exists():
+    assert callable(softGalleryLanguage_MappingType.__init__)
+
+
+def test_softgallerylanguage_mappingtype_constructor_args():
+    sig = inspect.signature(softGalleryLanguage_MappingType.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_softgallerylanguage_responseentity_is_not_abstract():
+    assert not inspect.isabstract(softGalleryLanguage_ResponseEntity)
+
+
+def test_softgallerylanguage_responseentity_constructor_exists():
+    assert callable(softGalleryLanguage_ResponseEntity.__init__)
+
+
+def test_softgallerylanguage_responseentity_constructor_args():
+    sig = inspect.signature(softGalleryLanguage_ResponseEntity.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_softgallerylanguage::getmapping_has_name():
-    assert hasattr(softGalleryLanguage::GetMapping, "name")
+def test_softgallerylanguage_responseentity_has_name():
+    assert hasattr(softGalleryLanguage_ResponseEntity, "name")
     descriptor = None
-    for klass in softGalleryLanguage::GetMapping.__mro__:
+    for klass in softGalleryLanguage_ResponseEntity.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -312,23 +296,23 @@ def test_softgallerylanguage::getmapping_has_name():
 
 
 
-def test_softgallerylanguage::putmapping_is_not_abstract():
-    assert not inspect.isabstract(softGalleryLanguage::PutMapping)
+def test_softgallerylanguage_autowired_is_not_abstract():
+    assert not inspect.isabstract(softGalleryLanguage_Autowired)
 
 
-def test_softgallerylanguage::putmapping_constructor_exists():
-    assert callable(softGalleryLanguage::PutMapping.__init__)
+def test_softgallerylanguage_autowired_constructor_exists():
+    assert callable(softGalleryLanguage_Autowired.__init__)
 
 
-def test_softgallerylanguage::putmapping_constructor_args():
-    sig = inspect.signature(softGalleryLanguage::PutMapping.__init__)
+def test_softgallerylanguage_autowired_constructor_args():
+    sig = inspect.signature(softGalleryLanguage_Autowired.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_softgallerylanguage::putmapping_has_name():
-    assert hasattr(softGalleryLanguage::PutMapping, "name")
+def test_softgallerylanguage_autowired_has_name():
+    assert hasattr(softGalleryLanguage_Autowired, "name")
     descriptor = None
-    for klass in softGalleryLanguage::PutMapping.__mro__:
+    for klass in softGalleryLanguage_Autowired.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -336,23 +320,23 @@ def test_softgallerylanguage::putmapping_has_name():
 
 
 
-def test_softgallerylanguage::deletemapping_is_not_abstract():
-    assert not inspect.isabstract(softGalleryLanguage::DeleteMapping)
+def test_softgallerylanguage_searchcriteria_is_not_abstract():
+    assert not inspect.isabstract(softGalleryLanguage_SearchCriteria)
 
 
-def test_softgallerylanguage::deletemapping_constructor_exists():
-    assert callable(softGalleryLanguage::DeleteMapping.__init__)
+def test_softgallerylanguage_searchcriteria_constructor_exists():
+    assert callable(softGalleryLanguage_SearchCriteria.__init__)
 
 
-def test_softgallerylanguage::deletemapping_constructor_args():
-    sig = inspect.signature(softGalleryLanguage::DeleteMapping.__init__)
+def test_softgallerylanguage_searchcriteria_constructor_args():
+    sig = inspect.signature(softGalleryLanguage_SearchCriteria.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_softgallerylanguage::deletemapping_has_name():
-    assert hasattr(softGalleryLanguage::DeleteMapping, "name")
+def test_softgallerylanguage_searchcriteria_has_name():
+    assert hasattr(softGalleryLanguage_SearchCriteria, "name")
     descriptor = None
-    for klass in softGalleryLanguage::DeleteMapping.__mro__:
+    for klass in softGalleryLanguage_SearchCriteria.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -360,23 +344,23 @@ def test_softgallerylanguage::deletemapping_has_name():
 
 
 
-def test_softgallerylanguage::postmapping_is_not_abstract():
-    assert not inspect.isabstract(softGalleryLanguage::PostMapping)
+def test_softgallerylanguage_predicate_is_not_abstract():
+    assert not inspect.isabstract(softGalleryLanguage_Predicate)
 
 
-def test_softgallerylanguage::postmapping_constructor_exists():
-    assert callable(softGalleryLanguage::PostMapping.__init__)
+def test_softgallerylanguage_predicate_constructor_exists():
+    assert callable(softGalleryLanguage_Predicate.__init__)
 
 
-def test_softgallerylanguage::postmapping_constructor_args():
-    sig = inspect.signature(softGalleryLanguage::PostMapping.__init__)
+def test_softgallerylanguage_predicate_constructor_args():
+    sig = inspect.signature(softGalleryLanguage_Predicate.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_softgallerylanguage::postmapping_has_name():
-    assert hasattr(softGalleryLanguage::PostMapping, "name")
+def test_softgallerylanguage_predicate_has_name():
+    assert hasattr(softGalleryLanguage_Predicate, "name")
     descriptor = None
-    for klass in softGalleryLanguage::PostMapping.__mro__:
+    for klass in softGalleryLanguage_Predicate.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -384,79 +368,37 @@ def test_softgallerylanguage::postmapping_has_name():
 
 
 
-def test_softgallerylanguage::requestmapping_is_not_abstract():
-    assert not inspect.isabstract(softGalleryLanguage::RequestMapping)
+def test_softgallerylanguage_specification_is_not_abstract():
+    assert not inspect.isabstract(softGalleryLanguage_Specification)
 
 
-def test_softgallerylanguage::requestmapping_constructor_exists():
-    assert callable(softGalleryLanguage::RequestMapping.__init__)
+def test_softgallerylanguage_specification_constructor_exists():
+    assert callable(softGalleryLanguage_Specification.__init__)
 
 
-def test_softgallerylanguage::requestmapping_constructor_args():
-    sig = inspect.signature(softGalleryLanguage::RequestMapping.__init__)
+def test_softgallerylanguage_specification_constructor_args():
+    sig = inspect.signature(softGalleryLanguage_Specification.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_softgallerylanguage::springentity_is_not_abstract():
-    assert not inspect.isabstract(softGalleryLanguage::SpringEntity)
+def test_softgallerylanguage_restcontroller_is_not_abstract():
+    assert not inspect.isabstract(softGalleryLanguage_RestController)
 
 
-def test_softgallerylanguage::springentity_constructor_exists():
-    assert callable(softGalleryLanguage::SpringEntity.__init__)
+def test_softgallerylanguage_restcontroller_constructor_exists():
+    assert callable(softGalleryLanguage_RestController.__init__)
 
 
-def test_softgallerylanguage::springentity_constructor_args():
-    sig = inspect.signature(softGalleryLanguage::SpringEntity.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_softgallerylanguage::responseparameter_is_not_abstract():
-    assert not inspect.isabstract(softGalleryLanguage::ResponseParameter)
-
-
-def test_softgallerylanguage::responseparameter_constructor_exists():
-    assert callable(softGalleryLanguage::ResponseParameter.__init__)
-
-
-def test_softgallerylanguage::responseparameter_constructor_args():
-    sig = inspect.signature(softGalleryLanguage::ResponseParameter.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_softgallerylanguage::mappingtype_is_not_abstract():
-    assert not inspect.isabstract(softGalleryLanguage::MappingType)
-
-
-def test_softgallerylanguage::mappingtype_constructor_exists():
-    assert callable(softGalleryLanguage::MappingType.__init__)
-
-
-def test_softgallerylanguage::mappingtype_constructor_args():
-    sig = inspect.signature(softGalleryLanguage::MappingType.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_softgallerylanguage::responseentity_is_not_abstract():
-    assert not inspect.isabstract(softGalleryLanguage::ResponseEntity)
-
-
-def test_softgallerylanguage::responseentity_constructor_exists():
-    assert callable(softGalleryLanguage::ResponseEntity.__init__)
-
-
-def test_softgallerylanguage::responseentity_constructor_args():
-    sig = inspect.signature(softGalleryLanguage::ResponseEntity.__init__)
+def test_softgallerylanguage_restcontroller_constructor_args():
+    sig = inspect.signature(softGalleryLanguage_RestController.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_softgallerylanguage::responseentity_has_name():
-    assert hasattr(softGalleryLanguage::ResponseEntity, "name")
+def test_softgallerylanguage_restcontroller_has_name():
+    assert hasattr(softGalleryLanguage_RestController, "name")
     descriptor = None
-    for klass in softGalleryLanguage::ResponseEntity.__mro__:
+    for klass in softGalleryLanguage_RestController.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -464,23 +406,23 @@ def test_softgallerylanguage::responseentity_has_name():
 
 
 
-def test_softgallerylanguage::autowired_is_not_abstract():
-    assert not inspect.isabstract(softGalleryLanguage::Autowired)
+def test_softgallerylanguage_springrepositoryannotation_is_not_abstract():
+    assert not inspect.isabstract(softGalleryLanguage_SpringRepositoryAnnotation)
 
 
-def test_softgallerylanguage::autowired_constructor_exists():
-    assert callable(softGalleryLanguage::Autowired.__init__)
+def test_softgallerylanguage_springrepositoryannotation_constructor_exists():
+    assert callable(softGalleryLanguage_SpringRepositoryAnnotation.__init__)
 
 
-def test_softgallerylanguage::autowired_constructor_args():
-    sig = inspect.signature(softGalleryLanguage::Autowired.__init__)
+def test_softgallerylanguage_springrepositoryannotation_constructor_args():
+    sig = inspect.signature(softGalleryLanguage_SpringRepositoryAnnotation.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_softgallerylanguage::autowired_has_name():
-    assert hasattr(softGalleryLanguage::Autowired, "name")
+def test_softgallerylanguage_springrepositoryannotation_has_name():
+    assert hasattr(softGalleryLanguage_SpringRepositoryAnnotation, "name")
     descriptor = None
-    for klass in softGalleryLanguage::Autowired.__mro__:
+    for klass in softGalleryLanguage_SpringRepositoryAnnotation.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -488,23 +430,23 @@ def test_softgallerylanguage::autowired_has_name():
 
 
 
-def test_softgallerylanguage::searchcriteria_is_not_abstract():
-    assert not inspect.isabstract(softGalleryLanguage::SearchCriteria)
+def test_softgallerylanguage_springrepositories_is_not_abstract():
+    assert not inspect.isabstract(softGalleryLanguage_SpringRepositories)
 
 
-def test_softgallerylanguage::searchcriteria_constructor_exists():
-    assert callable(softGalleryLanguage::SearchCriteria.__init__)
+def test_softgallerylanguage_springrepositories_constructor_exists():
+    assert callable(softGalleryLanguage_SpringRepositories.__init__)
 
 
-def test_softgallerylanguage::searchcriteria_constructor_args():
-    sig = inspect.signature(softGalleryLanguage::SearchCriteria.__init__)
+def test_softgallerylanguage_springrepositories_constructor_args():
+    sig = inspect.signature(softGalleryLanguage_SpringRepositories.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_softgallerylanguage::searchcriteria_has_name():
-    assert hasattr(softGalleryLanguage::SearchCriteria, "name")
+def test_softgallerylanguage_springrepositories_has_name():
+    assert hasattr(softGalleryLanguage_SpringRepositories, "name")
     descriptor = None
-    for klass in softGalleryLanguage::SearchCriteria.__mro__:
+    for klass in softGalleryLanguage_SpringRepositories.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -512,23 +454,37 @@ def test_softgallerylanguage::searchcriteria_has_name():
 
 
 
-def test_softgallerylanguage::predicate_is_not_abstract():
-    assert not inspect.isabstract(softGalleryLanguage::Predicate)
+def test_softgallerylanguage_springrepository_is_not_abstract():
+    assert not inspect.isabstract(softGalleryLanguage_SpringRepository)
 
 
-def test_softgallerylanguage::predicate_constructor_exists():
-    assert callable(softGalleryLanguage::Predicate.__init__)
+def test_softgallerylanguage_springrepository_constructor_exists():
+    assert callable(softGalleryLanguage_SpringRepository.__init__)
 
 
-def test_softgallerylanguage::predicate_constructor_args():
-    sig = inspect.signature(softGalleryLanguage::Predicate.__init__)
+def test_softgallerylanguage_springrepository_constructor_args():
+    sig = inspect.signature(softGalleryLanguage_SpringRepository.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_softgallerylanguage_orderspring_is_not_abstract():
+    assert not inspect.isabstract(softGalleryLanguage_OrderSpring)
+
+
+def test_softgallerylanguage_orderspring_constructor_exists():
+    assert callable(softGalleryLanguage_OrderSpring.__init__)
+
+
+def test_softgallerylanguage_orderspring_constructor_args():
+    sig = inspect.signature(softGalleryLanguage_OrderSpring.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_softgallerylanguage::predicate_has_name():
-    assert hasattr(softGalleryLanguage::Predicate, "name")
+def test_softgallerylanguage_orderspring_has_name():
+    assert hasattr(softGalleryLanguage_OrderSpring, "name")
     descriptor = None
-    for klass in softGalleryLanguage::Predicate.__mro__:
+    for klass in softGalleryLanguage_OrderSpring.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -536,37 +492,37 @@ def test_softgallerylanguage::predicate_has_name():
 
 
 
-def test_softgallerylanguage::specification_is_not_abstract():
-    assert not inspect.isabstract(softGalleryLanguage::Specification)
+def test_softgallerylanguage_springcomponent_is_not_abstract():
+    assert not inspect.isabstract(softGalleryLanguage_SpringComponent)
 
 
-def test_softgallerylanguage::specification_constructor_exists():
-    assert callable(softGalleryLanguage::Specification.__init__)
+def test_softgallerylanguage_springcomponent_constructor_exists():
+    assert callable(softGalleryLanguage_SpringComponent.__init__)
 
 
-def test_softgallerylanguage::specification_constructor_args():
-    sig = inspect.signature(softGalleryLanguage::Specification.__init__)
+def test_softgallerylanguage_springcomponent_constructor_args():
+    sig = inspect.signature(softGalleryLanguage_SpringComponent.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_softgallerylanguage::restcontroller_is_not_abstract():
-    assert not inspect.isabstract(softGalleryLanguage::RestController)
+def test_softgallerylanguage_enablewebsecurity_is_not_abstract():
+    assert not inspect.isabstract(softGalleryLanguage_EnableWebSecurity)
 
 
-def test_softgallerylanguage::restcontroller_constructor_exists():
-    assert callable(softGalleryLanguage::RestController.__init__)
+def test_softgallerylanguage_enablewebsecurity_constructor_exists():
+    assert callable(softGalleryLanguage_EnableWebSecurity.__init__)
 
 
-def test_softgallerylanguage::restcontroller_constructor_args():
-    sig = inspect.signature(softGalleryLanguage::RestController.__init__)
+def test_softgallerylanguage_enablewebsecurity_constructor_args():
+    sig = inspect.signature(softGalleryLanguage_EnableWebSecurity.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_softgallerylanguage::restcontroller_has_name():
-    assert hasattr(softGalleryLanguage::RestController, "name")
+def test_softgallerylanguage_enablewebsecurity_has_name():
+    assert hasattr(softGalleryLanguage_EnableWebSecurity, "name")
     descriptor = None
-    for klass in softGalleryLanguage::RestController.__mro__:
+    for klass in softGalleryLanguage_EnableWebSecurity.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -574,23 +530,23 @@ def test_softgallerylanguage::restcontroller_has_name():
 
 
 
-def test_softgallerylanguage::springrepositoryannotation_is_not_abstract():
-    assert not inspect.isabstract(softGalleryLanguage::SpringRepositoryAnnotation)
+def test_softgallerylanguage_enableresourceserver_is_not_abstract():
+    assert not inspect.isabstract(softGalleryLanguage_EnableResourceServer)
 
 
-def test_softgallerylanguage::springrepositoryannotation_constructor_exists():
-    assert callable(softGalleryLanguage::SpringRepositoryAnnotation.__init__)
+def test_softgallerylanguage_enableresourceserver_constructor_exists():
+    assert callable(softGalleryLanguage_EnableResourceServer.__init__)
 
 
-def test_softgallerylanguage::springrepositoryannotation_constructor_args():
-    sig = inspect.signature(softGalleryLanguage::SpringRepositoryAnnotation.__init__)
+def test_softgallerylanguage_enableresourceserver_constructor_args():
+    sig = inspect.signature(softGalleryLanguage_EnableResourceServer.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_softgallerylanguage::springrepositoryannotation_has_name():
-    assert hasattr(softGalleryLanguage::SpringRepositoryAnnotation, "name")
+def test_softgallerylanguage_enableresourceserver_has_name():
+    assert hasattr(softGalleryLanguage_EnableResourceServer, "name")
     descriptor = None
-    for klass in softGalleryLanguage::SpringRepositoryAnnotation.__mro__:
+    for klass in softGalleryLanguage_EnableResourceServer.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -598,23 +554,23 @@ def test_softgallerylanguage::springrepositoryannotation_has_name():
 
 
 
-def test_softgallerylanguage::springrepositories_is_not_abstract():
-    assert not inspect.isabstract(softGalleryLanguage::SpringRepositories)
+def test_softgallerylanguage_enableauthorizationserver_is_not_abstract():
+    assert not inspect.isabstract(softGalleryLanguage_EnableAuthorizationServer)
 
 
-def test_softgallerylanguage::springrepositories_constructor_exists():
-    assert callable(softGalleryLanguage::SpringRepositories.__init__)
+def test_softgallerylanguage_enableauthorizationserver_constructor_exists():
+    assert callable(softGalleryLanguage_EnableAuthorizationServer.__init__)
 
 
-def test_softgallerylanguage::springrepositories_constructor_args():
-    sig = inspect.signature(softGalleryLanguage::SpringRepositories.__init__)
+def test_softgallerylanguage_enableauthorizationserver_constructor_args():
+    sig = inspect.signature(softGalleryLanguage_EnableAuthorizationServer.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_softgallerylanguage::springrepositories_has_name():
-    assert hasattr(softGalleryLanguage::SpringRepositories, "name")
+def test_softgallerylanguage_enableauthorizationserver_has_name():
+    assert hasattr(softGalleryLanguage_EnableAuthorizationServer, "name")
     descriptor = None
-    for klass in softGalleryLanguage::SpringRepositories.__mro__:
+    for klass in softGalleryLanguage_EnableAuthorizationServer.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -622,37 +578,23 @@ def test_softgallerylanguage::springrepositories_has_name():
 
 
 
-def test_softgallerylanguage::springrepository_is_not_abstract():
-    assert not inspect.isabstract(softGalleryLanguage::SpringRepository)
+def test_softgallerylanguage_enableglobalmethodsecurity_is_not_abstract():
+    assert not inspect.isabstract(softGalleryLanguage_EnableGlobalMethodSecurity)
 
 
-def test_softgallerylanguage::springrepository_constructor_exists():
-    assert callable(softGalleryLanguage::SpringRepository.__init__)
+def test_softgallerylanguage_enableglobalmethodsecurity_constructor_exists():
+    assert callable(softGalleryLanguage_EnableGlobalMethodSecurity.__init__)
 
 
-def test_softgallerylanguage::springrepository_constructor_args():
-    sig = inspect.signature(softGalleryLanguage::SpringRepository.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_softgallerylanguage::orderspring_is_not_abstract():
-    assert not inspect.isabstract(softGalleryLanguage::OrderSpring)
-
-
-def test_softgallerylanguage::orderspring_constructor_exists():
-    assert callable(softGalleryLanguage::OrderSpring.__init__)
-
-
-def test_softgallerylanguage::orderspring_constructor_args():
-    sig = inspect.signature(softGalleryLanguage::OrderSpring.__init__)
+def test_softgallerylanguage_enableglobalmethodsecurity_constructor_args():
+    sig = inspect.signature(softGalleryLanguage_EnableGlobalMethodSecurity.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_softgallerylanguage::orderspring_has_name():
-    assert hasattr(softGalleryLanguage::OrderSpring, "name")
+def test_softgallerylanguage_enableglobalmethodsecurity_has_name():
+    assert hasattr(softGalleryLanguage_EnableGlobalMethodSecurity, "name")
     descriptor = None
-    for klass in softGalleryLanguage::OrderSpring.__mro__:
+    for klass in softGalleryLanguage_EnableGlobalMethodSecurity.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -660,37 +602,51 @@ def test_softgallerylanguage::orderspring_has_name():
 
 
 
-def test_softgallerylanguage::springcomponent_is_not_abstract():
-    assert not inspect.isabstract(softGalleryLanguage::SpringComponent)
+def test_softgallerylanguage_configuration_is_not_abstract():
+    assert not inspect.isabstract(softGalleryLanguage_Configuration)
 
 
-def test_softgallerylanguage::springcomponent_constructor_exists():
-    assert callable(softGalleryLanguage::SpringComponent.__init__)
+def test_softgallerylanguage_configuration_constructor_exists():
+    assert callable(softGalleryLanguage_Configuration.__init__)
 
 
-def test_softgallerylanguage::springcomponent_constructor_args():
-    sig = inspect.signature(softGalleryLanguage::SpringComponent.__init__)
+def test_softgallerylanguage_configuration_constructor_args():
+    sig = inspect.signature(softGalleryLanguage_Configuration.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_softgallerylanguage::enablewebsecurity_is_not_abstract():
-    assert not inspect.isabstract(softGalleryLanguage::EnableWebSecurity)
+def test_softgallerylanguage_springbootapplication_is_not_abstract():
+    assert not inspect.isabstract(softGalleryLanguage_SpringBootApplication)
 
 
-def test_softgallerylanguage::enablewebsecurity_constructor_exists():
-    assert callable(softGalleryLanguage::EnableWebSecurity.__init__)
+def test_softgallerylanguage_springbootapplication_constructor_exists():
+    assert callable(softGalleryLanguage_SpringBootApplication.__init__)
 
 
-def test_softgallerylanguage::enablewebsecurity_constructor_args():
-    sig = inspect.signature(softGalleryLanguage::EnableWebSecurity.__init__)
+def test_softgallerylanguage_springbootapplication_constructor_args():
+    sig = inspect.signature(softGalleryLanguage_SpringBootApplication.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_softgallerylanguage_amazonwebservices_is_not_abstract():
+    assert not inspect.isabstract(softGalleryLanguage_AmazonWebServices)
+
+
+def test_softgallerylanguage_amazonwebservices_constructor_exists():
+    assert callable(softGalleryLanguage_AmazonWebServices.__init__)
+
+
+def test_softgallerylanguage_amazonwebservices_constructor_args():
+    sig = inspect.signature(softGalleryLanguage_AmazonWebServices.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_softgallerylanguage::enablewebsecurity_has_name():
-    assert hasattr(softGalleryLanguage::EnableWebSecurity, "name")
+def test_softgallerylanguage_amazonwebservices_has_name():
+    assert hasattr(softGalleryLanguage_AmazonWebServices, "name")
     descriptor = None
-    for klass in softGalleryLanguage::EnableWebSecurity.__mro__:
+    for klass in softGalleryLanguage_AmazonWebServices.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -698,23 +654,23 @@ def test_softgallerylanguage::enablewebsecurity_has_name():
 
 
 
-def test_softgallerylanguage::enableresourceserver_is_not_abstract():
-    assert not inspect.isabstract(softGalleryLanguage::EnableResourceServer)
+def test_softgallerylanguage_postgresql_is_not_abstract():
+    assert not inspect.isabstract(softGalleryLanguage_PostgreSQL)
 
 
-def test_softgallerylanguage::enableresourceserver_constructor_exists():
-    assert callable(softGalleryLanguage::EnableResourceServer.__init__)
+def test_softgallerylanguage_postgresql_constructor_exists():
+    assert callable(softGalleryLanguage_PostgreSQL.__init__)
 
 
-def test_softgallerylanguage::enableresourceserver_constructor_args():
-    sig = inspect.signature(softGalleryLanguage::EnableResourceServer.__init__)
+def test_softgallerylanguage_postgresql_constructor_args():
+    sig = inspect.signature(softGalleryLanguage_PostgreSQL.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_softgallerylanguage::enableresourceserver_has_name():
-    assert hasattr(softGalleryLanguage::EnableResourceServer, "name")
+def test_softgallerylanguage_postgresql_has_name():
+    assert hasattr(softGalleryLanguage_PostgreSQL, "name")
     descriptor = None
-    for klass in softGalleryLanguage::EnableResourceServer.__mro__:
+    for klass in softGalleryLanguage_PostgreSQL.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -722,23 +678,23 @@ def test_softgallerylanguage::enableresourceserver_has_name():
 
 
 
-def test_softgallerylanguage::enableauthorizationserver_is_not_abstract():
-    assert not inspect.isabstract(softGalleryLanguage::EnableAuthorizationServer)
+def test_softgallerylanguage_react_is_not_abstract():
+    assert not inspect.isabstract(softGalleryLanguage_React)
 
 
-def test_softgallerylanguage::enableauthorizationserver_constructor_exists():
-    assert callable(softGalleryLanguage::EnableAuthorizationServer.__init__)
+def test_softgallerylanguage_react_constructor_exists():
+    assert callable(softGalleryLanguage_React.__init__)
 
 
-def test_softgallerylanguage::enableauthorizationserver_constructor_args():
-    sig = inspect.signature(softGalleryLanguage::EnableAuthorizationServer.__init__)
+def test_softgallerylanguage_react_constructor_args():
+    sig = inspect.signature(softGalleryLanguage_React.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_softgallerylanguage::enableauthorizationserver_has_name():
-    assert hasattr(softGalleryLanguage::EnableAuthorizationServer, "name")
+def test_softgallerylanguage_react_has_name():
+    assert hasattr(softGalleryLanguage_React, "name")
     descriptor = None
-    for klass in softGalleryLanguage::EnableAuthorizationServer.__mro__:
+    for klass in softGalleryLanguage_React.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -746,23 +702,23 @@ def test_softgallerylanguage::enableauthorizationserver_has_name():
 
 
 
-def test_softgallerylanguage::enableglobalmethodsecurity_is_not_abstract():
-    assert not inspect.isabstract(softGalleryLanguage::EnableGlobalMethodSecurity)
+def test_softgallerylanguage_spring_is_not_abstract():
+    assert not inspect.isabstract(softGalleryLanguage_Spring)
 
 
-def test_softgallerylanguage::enableglobalmethodsecurity_constructor_exists():
-    assert callable(softGalleryLanguage::EnableGlobalMethodSecurity.__init__)
+def test_softgallerylanguage_spring_constructor_exists():
+    assert callable(softGalleryLanguage_Spring.__init__)
 
 
-def test_softgallerylanguage::enableglobalmethodsecurity_constructor_args():
-    sig = inspect.signature(softGalleryLanguage::EnableGlobalMethodSecurity.__init__)
+def test_softgallerylanguage_spring_constructor_args():
+    sig = inspect.signature(softGalleryLanguage_Spring.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_softgallerylanguage::enableglobalmethodsecurity_has_name():
-    assert hasattr(softGalleryLanguage::EnableGlobalMethodSecurity, "name")
+def test_softgallerylanguage_spring_has_name():
+    assert hasattr(softGalleryLanguage_Spring, "name")
     descriptor = None
-    for klass in softGalleryLanguage::EnableGlobalMethodSecurity.__mro__:
+    for klass in softGalleryLanguage_Spring.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -770,51 +726,37 @@ def test_softgallerylanguage::enableglobalmethodsecurity_has_name():
 
 
 
-def test_softgallerylanguage::configuration_is_not_abstract():
-    assert not inspect.isabstract(softGalleryLanguage::Configuration)
+def test_softgallerylanguage_technologies_is_not_abstract():
+    assert not inspect.isabstract(softGalleryLanguage_Technologies)
 
 
-def test_softgallerylanguage::configuration_constructor_exists():
-    assert callable(softGalleryLanguage::Configuration.__init__)
+def test_softgallerylanguage_technologies_constructor_exists():
+    assert callable(softGalleryLanguage_Technologies.__init__)
 
 
-def test_softgallerylanguage::configuration_constructor_args():
-    sig = inspect.signature(softGalleryLanguage::Configuration.__init__)
+def test_softgallerylanguage_technologies_constructor_args():
+    sig = inspect.signature(softGalleryLanguage_Technologies.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_softgallerylanguage::springbootapplication_is_not_abstract():
-    assert not inspect.isabstract(softGalleryLanguage::SpringBootApplication)
+def test_softgallerylanguage_ntiersrelations_is_not_abstract():
+    assert not inspect.isabstract(softGalleryLanguage_NTiersRelations)
 
 
-def test_softgallerylanguage::springbootapplication_constructor_exists():
-    assert callable(softGalleryLanguage::SpringBootApplication.__init__)
+def test_softgallerylanguage_ntiersrelations_constructor_exists():
+    assert callable(softGalleryLanguage_NTiersRelations.__init__)
 
 
-def test_softgallerylanguage::springbootapplication_constructor_args():
-    sig = inspect.signature(softGalleryLanguage::SpringBootApplication.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_softgallerylanguage::amazonwebservices_is_not_abstract():
-    assert not inspect.isabstract(softGalleryLanguage::AmazonWebServices)
-
-
-def test_softgallerylanguage::amazonwebservices_constructor_exists():
-    assert callable(softGalleryLanguage::AmazonWebServices.__init__)
-
-
-def test_softgallerylanguage::amazonwebservices_constructor_args():
-    sig = inspect.signature(softGalleryLanguage::AmazonWebServices.__init__)
+def test_softgallerylanguage_ntiersrelations_constructor_args():
+    sig = inspect.signature(softGalleryLanguage_NTiersRelations.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_softgallerylanguage::amazonwebservices_has_name():
-    assert hasattr(softGalleryLanguage::AmazonWebServices, "name")
+def test_softgallerylanguage_ntiersrelations_has_name():
+    assert hasattr(softGalleryLanguage_NTiersRelations, "name")
     descriptor = None
-    for klass in softGalleryLanguage::AmazonWebServices.__mro__:
+    for klass in softGalleryLanguage_NTiersRelations.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -822,171 +764,61 @@ def test_softgallerylanguage::amazonwebservices_has_name():
 
 
 
-def test_softgallerylanguage::postgresql_is_not_abstract():
-    assert not inspect.isabstract(softGalleryLanguage::PostgreSQL)
+def test_softgallerylanguage_ntiertarget_is_not_abstract():
+    assert not inspect.isabstract(softGalleryLanguage_NTierTarget)
 
 
-def test_softgallerylanguage::postgresql_constructor_exists():
-    assert callable(softGalleryLanguage::PostgreSQL.__init__)
+def test_softgallerylanguage_ntiertarget_constructor_exists():
+    assert callable(softGalleryLanguage_NTierTarget.__init__)
 
 
-def test_softgallerylanguage::postgresql_constructor_args():
-    sig = inspect.signature(softGalleryLanguage::PostgreSQL.__init__)
-    params = list(sig.parameters.keys())
-    assert "name" in params, "Missing parameter 'name'"
-
-def test_softgallerylanguage::postgresql_has_name():
-    assert hasattr(softGalleryLanguage::PostgreSQL, "name")
-    descriptor = None
-    for klass in softGalleryLanguage::PostgreSQL.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_softgallerylanguage::react_is_not_abstract():
-    assert not inspect.isabstract(softGalleryLanguage::React)
-
-
-def test_softgallerylanguage::react_constructor_exists():
-    assert callable(softGalleryLanguage::React.__init__)
-
-
-def test_softgallerylanguage::react_constructor_args():
-    sig = inspect.signature(softGalleryLanguage::React.__init__)
-    params = list(sig.parameters.keys())
-    assert "name" in params, "Missing parameter 'name'"
-
-def test_softgallerylanguage::react_has_name():
-    assert hasattr(softGalleryLanguage::React, "name")
-    descriptor = None
-    for klass in softGalleryLanguage::React.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_softgallerylanguage::spring_is_not_abstract():
-    assert not inspect.isabstract(softGalleryLanguage::Spring)
-
-
-def test_softgallerylanguage::spring_constructor_exists():
-    assert callable(softGalleryLanguage::Spring.__init__)
-
-
-def test_softgallerylanguage::spring_constructor_args():
-    sig = inspect.signature(softGalleryLanguage::Spring.__init__)
-    params = list(sig.parameters.keys())
-    assert "name" in params, "Missing parameter 'name'"
-
-def test_softgallerylanguage::spring_has_name():
-    assert hasattr(softGalleryLanguage::Spring, "name")
-    descriptor = None
-    for klass in softGalleryLanguage::Spring.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_softgallerylanguage::technologies_is_not_abstract():
-    assert not inspect.isabstract(softGalleryLanguage::Technologies)
-
-
-def test_softgallerylanguage::technologies_constructor_exists():
-    assert callable(softGalleryLanguage::Technologies.__init__)
-
-
-def test_softgallerylanguage::technologies_constructor_args():
-    sig = inspect.signature(softGalleryLanguage::Technologies.__init__)
+def test_softgallerylanguage_ntiertarget_constructor_args():
+    sig = inspect.signature(softGalleryLanguage_NTierTarget.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_softgallerylanguage::ntiersrelations_is_not_abstract():
-    assert not inspect.isabstract(softGalleryLanguage::NTiersRelations)
+def test_softgallerylanguage_ntiersource_is_not_abstract():
+    assert not inspect.isabstract(softGalleryLanguage_NTierSource)
 
 
-def test_softgallerylanguage::ntiersrelations_constructor_exists():
-    assert callable(softGalleryLanguage::NTiersRelations.__init__)
+def test_softgallerylanguage_ntiersource_constructor_exists():
+    assert callable(softGalleryLanguage_NTierSource.__init__)
 
 
-def test_softgallerylanguage::ntiersrelations_constructor_args():
-    sig = inspect.signature(softGalleryLanguage::NTiersRelations.__init__)
-    params = list(sig.parameters.keys())
-    assert "name" in params, "Missing parameter 'name'"
-
-def test_softgallerylanguage::ntiersrelations_has_name():
-    assert hasattr(softGalleryLanguage::NTiersRelations, "name")
-    descriptor = None
-    for klass in softGalleryLanguage::NTiersRelations.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_softgallerylanguage::ntiertarget_is_not_abstract():
-    assert not inspect.isabstract(softGalleryLanguage::NTierTarget)
-
-
-def test_softgallerylanguage::ntiertarget_constructor_exists():
-    assert callable(softGalleryLanguage::NTierTarget.__init__)
-
-
-def test_softgallerylanguage::ntiertarget_constructor_args():
-    sig = inspect.signature(softGalleryLanguage::NTierTarget.__init__)
+def test_softgallerylanguage_ntiersource_constructor_args():
+    sig = inspect.signature(softGalleryLanguage_NTierSource.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_softgallerylanguage::ntiersource_is_not_abstract():
-    assert not inspect.isabstract(softGalleryLanguage::NTierSource)
+def test_softgallerylanguage_ntierconnectioncontent_is_not_abstract():
+    assert not inspect.isabstract(softGalleryLanguage_NTierConnectionContent)
 
 
-def test_softgallerylanguage::ntiersource_constructor_exists():
-    assert callable(softGalleryLanguage::NTierSource.__init__)
+def test_softgallerylanguage_ntierconnectioncontent_constructor_exists():
+    assert callable(softGalleryLanguage_NTierConnectionContent.__init__)
 
 
-def test_softgallerylanguage::ntiersource_constructor_args():
-    sig = inspect.signature(softGalleryLanguage::NTierSource.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_softgallerylanguage::ntierconnectioncontent_is_not_abstract():
-    assert not inspect.isabstract(softGalleryLanguage::NTierConnectionContent)
-
-
-def test_softgallerylanguage::ntierconnectioncontent_constructor_exists():
-    assert callable(softGalleryLanguage::NTierConnectionContent.__init__)
-
-
-def test_softgallerylanguage::ntierconnectioncontent_constructor_args():
-    sig = inspect.signature(softGalleryLanguage::NTierConnectionContent.__init__)
+def test_softgallerylanguage_ntierconnectioncontent_constructor_args():
+    sig = inspect.signature(softGalleryLanguage_NTierConnectionContent.__init__)
     params = list(sig.parameters.keys())
     assert "nTierName" in params, "Missing parameter 'nTierName'"
     assert "ntierconnection" in params, "Missing parameter 'ntierconnection'"
 
-def test_softgallerylanguage::ntierconnectioncontent_has_nTierName():
-    assert hasattr(softGalleryLanguage::NTierConnectionContent, "nTierName")
+def test_softgallerylanguage_ntierconnectioncontent_has_nTierName():
+    assert hasattr(softGalleryLanguage_NTierConnectionContent, "nTierName")
     descriptor = None
-    for klass in softGalleryLanguage::NTierConnectionContent.__mro__:
+    for klass in softGalleryLanguage_NTierConnectionContent.__mro__:
         if "nTierName" in klass.__dict__:
             descriptor = klass.__dict__["nTierName"]
             break
     assert isinstance(descriptor, property)
 
-def test_softgallerylanguage::ntierconnectioncontent_has_ntierconnection():
-    assert hasattr(softGalleryLanguage::NTierConnectionContent, "ntierconnection")
+def test_softgallerylanguage_ntierconnectioncontent_has_ntierconnection():
+    assert hasattr(softGalleryLanguage_NTierConnectionContent, "ntierconnection")
     descriptor = None
-    for klass in softGalleryLanguage::NTierConnectionContent.__mro__:
+    for klass in softGalleryLanguage_NTierConnectionContent.__mro__:
         if "ntierconnection" in klass.__dict__:
             descriptor = klass.__dict__["ntierconnection"]
             break
@@ -994,37 +826,37 @@ def test_softgallerylanguage::ntierconnectioncontent_has_ntierconnection():
 
 
 
-def test_softgallerylanguage::ntiersconnections_is_not_abstract():
-    assert not inspect.isabstract(softGalleryLanguage::NTiersConnections)
+def test_softgallerylanguage_ntiersconnections_is_not_abstract():
+    assert not inspect.isabstract(softGalleryLanguage_NTiersConnections)
 
 
-def test_softgallerylanguage::ntiersconnections_constructor_exists():
-    assert callable(softGalleryLanguage::NTiersConnections.__init__)
+def test_softgallerylanguage_ntiersconnections_constructor_exists():
+    assert callable(softGalleryLanguage_NTiersConnections.__init__)
 
 
-def test_softgallerylanguage::ntiersconnections_constructor_args():
-    sig = inspect.signature(softGalleryLanguage::NTiersConnections.__init__)
+def test_softgallerylanguage_ntiersconnections_constructor_args():
+    sig = inspect.signature(softGalleryLanguage_NTiersConnections.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_softgallerylanguage::persistencedatacomponent_is_not_abstract():
-    assert not inspect.isabstract(softGalleryLanguage::PersistenceDataComponent)
+def test_softgallerylanguage_persistencedatacomponent_is_not_abstract():
+    assert not inspect.isabstract(softGalleryLanguage_PersistenceDataComponent)
 
 
-def test_softgallerylanguage::persistencedatacomponent_constructor_exists():
-    assert callable(softGalleryLanguage::PersistenceDataComponent.__init__)
+def test_softgallerylanguage_persistencedatacomponent_constructor_exists():
+    assert callable(softGalleryLanguage_PersistenceDataComponent.__init__)
 
 
-def test_softgallerylanguage::persistencedatacomponent_constructor_args():
-    sig = inspect.signature(softGalleryLanguage::PersistenceDataComponent.__init__)
+def test_softgallerylanguage_persistencedatacomponent_constructor_args():
+    sig = inspect.signature(softGalleryLanguage_PersistenceDataComponent.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_softgallerylanguage::persistencedatacomponent_has_name():
-    assert hasattr(softGalleryLanguage::PersistenceDataComponent, "name")
+def test_softgallerylanguage_persistencedatacomponent_has_name():
+    assert hasattr(softGalleryLanguage_PersistenceDataComponent, "name")
     descriptor = None
-    for klass in softGalleryLanguage::PersistenceDataComponent.__mro__:
+    for klass in softGalleryLanguage_PersistenceDataComponent.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -1032,23 +864,23 @@ def test_softgallerylanguage::persistencedatacomponent_has_name():
 
 
 
-def test_softgallerylanguage::backend_is_not_abstract():
-    assert not inspect.isabstract(softGalleryLanguage::BackEnd)
+def test_softgallerylanguage_backend_is_not_abstract():
+    assert not inspect.isabstract(softGalleryLanguage_BackEnd)
 
 
-def test_softgallerylanguage::backend_constructor_exists():
-    assert callable(softGalleryLanguage::BackEnd.__init__)
+def test_softgallerylanguage_backend_constructor_exists():
+    assert callable(softGalleryLanguage_BackEnd.__init__)
 
 
-def test_softgallerylanguage::backend_constructor_args():
-    sig = inspect.signature(softGalleryLanguage::BackEnd.__init__)
+def test_softgallerylanguage_backend_constructor_args():
+    sig = inspect.signature(softGalleryLanguage_BackEnd.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_softgallerylanguage::backend_has_name():
-    assert hasattr(softGalleryLanguage::BackEnd, "name")
+def test_softgallerylanguage_backend_has_name():
+    assert hasattr(softGalleryLanguage_BackEnd, "name")
     descriptor = None
-    for klass in softGalleryLanguage::BackEnd.__mro__:
+    for klass in softGalleryLanguage_BackEnd.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -1056,23 +888,23 @@ def test_softgallerylanguage::backend_has_name():
 
 
 
-def test_softgallerylanguage::frontend_is_not_abstract():
-    assert not inspect.isabstract(softGalleryLanguage::FrontEnd)
+def test_softgallerylanguage_frontend_is_not_abstract():
+    assert not inspect.isabstract(softGalleryLanguage_FrontEnd)
 
 
-def test_softgallerylanguage::frontend_constructor_exists():
-    assert callable(softGalleryLanguage::FrontEnd.__init__)
+def test_softgallerylanguage_frontend_constructor_exists():
+    assert callable(softGalleryLanguage_FrontEnd.__init__)
 
 
-def test_softgallerylanguage::frontend_constructor_args():
-    sig = inspect.signature(softGalleryLanguage::FrontEnd.__init__)
+def test_softgallerylanguage_frontend_constructor_args():
+    sig = inspect.signature(softGalleryLanguage_FrontEnd.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_softgallerylanguage::frontend_has_name():
-    assert hasattr(softGalleryLanguage::FrontEnd, "name")
+def test_softgallerylanguage_frontend_has_name():
+    assert hasattr(softGalleryLanguage_FrontEnd, "name")
     descriptor = None
-    for klass in softGalleryLanguage::FrontEnd.__mro__:
+    for klass in softGalleryLanguage_FrontEnd.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -1080,37 +912,37 @@ def test_softgallerylanguage::frontend_has_name():
 
 
 
-def test_softgallerylanguage::architecturecomponents_is_not_abstract():
-    assert not inspect.isabstract(softGalleryLanguage::ArchitectureComponents)
+def test_softgallerylanguage_architecturecomponents_is_not_abstract():
+    assert not inspect.isabstract(softGalleryLanguage_ArchitectureComponents)
 
 
-def test_softgallerylanguage::architecturecomponents_constructor_exists():
-    assert callable(softGalleryLanguage::ArchitectureComponents.__init__)
+def test_softgallerylanguage_architecturecomponents_constructor_exists():
+    assert callable(softGalleryLanguage_ArchitectureComponents.__init__)
 
 
-def test_softgallerylanguage::architecturecomponents_constructor_args():
-    sig = inspect.signature(softGalleryLanguage::ArchitectureComponents.__init__)
+def test_softgallerylanguage_architecturecomponents_constructor_args():
+    sig = inspect.signature(softGalleryLanguage_ArchitectureComponents.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_softgallerylanguage::layertarget_is_not_abstract():
-    assert not inspect.isabstract(softGalleryLanguage::LayerTarget)
+def test_softgallerylanguage_layertarget_is_not_abstract():
+    assert not inspect.isabstract(softGalleryLanguage_LayerTarget)
 
 
-def test_softgallerylanguage::layertarget_constructor_exists():
-    assert callable(softGalleryLanguage::LayerTarget.__init__)
+def test_softgallerylanguage_layertarget_constructor_exists():
+    assert callable(softGalleryLanguage_LayerTarget.__init__)
 
 
-def test_softgallerylanguage::layertarget_constructor_args():
-    sig = inspect.signature(softGalleryLanguage::LayerTarget.__init__)
+def test_softgallerylanguage_layertarget_constructor_args():
+    sig = inspect.signature(softGalleryLanguage_LayerTarget.__init__)
     params = list(sig.parameters.keys())
     assert "layerelations" in params, "Missing parameter 'layerelations'"
 
-def test_softgallerylanguage::layertarget_has_layerelations():
-    assert hasattr(softGalleryLanguage::LayerTarget, "layerelations")
+def test_softgallerylanguage_layertarget_has_layerelations():
+    assert hasattr(softGalleryLanguage_LayerTarget, "layerelations")
     descriptor = None
-    for klass in softGalleryLanguage::LayerTarget.__mro__:
+    for klass in softGalleryLanguage_LayerTarget.__mro__:
         if "layerelations" in klass.__dict__:
             descriptor = klass.__dict__["layerelations"]
             break
@@ -1118,23 +950,23 @@ def test_softgallerylanguage::layertarget_has_layerelations():
 
 
 
-def test_softgallerylanguage::layersource_is_not_abstract():
-    assert not inspect.isabstract(softGalleryLanguage::LayerSource)
+def test_softgallerylanguage_layersource_is_not_abstract():
+    assert not inspect.isabstract(softGalleryLanguage_LayerSource)
 
 
-def test_softgallerylanguage::layersource_constructor_exists():
-    assert callable(softGalleryLanguage::LayerSource.__init__)
+def test_softgallerylanguage_layersource_constructor_exists():
+    assert callable(softGalleryLanguage_LayerSource.__init__)
 
 
-def test_softgallerylanguage::layersource_constructor_args():
-    sig = inspect.signature(softGalleryLanguage::LayerSource.__init__)
+def test_softgallerylanguage_layersource_constructor_args():
+    sig = inspect.signature(softGalleryLanguage_LayerSource.__init__)
     params = list(sig.parameters.keys())
     assert "layerelations" in params, "Missing parameter 'layerelations'"
 
-def test_softgallerylanguage::layersource_has_layerelations():
-    assert hasattr(softGalleryLanguage::LayerSource, "layerelations")
+def test_softgallerylanguage_layersource_has_layerelations():
+    assert hasattr(softGalleryLanguage_LayerSource, "layerelations")
     descriptor = None
-    for klass in softGalleryLanguage::LayerSource.__mro__:
+    for klass in softGalleryLanguage_LayerSource.__mro__:
         if "layerelations" in klass.__dict__:
             descriptor = klass.__dict__["layerelations"]
             break
@@ -1142,23 +974,23 @@ def test_softgallerylanguage::layersource_has_layerelations():
 
 
 
-def test_softgallerylanguage::technology_is_not_abstract():
-    assert not inspect.isabstract(softGalleryLanguage::Technology)
+def test_softgallerylanguage_technology_is_not_abstract():
+    assert not inspect.isabstract(softGalleryLanguage_Technology)
 
 
-def test_softgallerylanguage::technology_constructor_exists():
-    assert callable(softGalleryLanguage::Technology.__init__)
+def test_softgallerylanguage_technology_constructor_exists():
+    assert callable(softGalleryLanguage_Technology.__init__)
 
 
-def test_softgallerylanguage::technology_constructor_args():
-    sig = inspect.signature(softGalleryLanguage::Technology.__init__)
+def test_softgallerylanguage_technology_constructor_args():
+    sig = inspect.signature(softGalleryLanguage_Technology.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_softgallerylanguage::technology_has_name():
-    assert hasattr(softGalleryLanguage::Technology, "name")
+def test_softgallerylanguage_technology_has_name():
+    assert hasattr(softGalleryLanguage_Technology, "name")
     descriptor = None
-    for klass in softGalleryLanguage::Technology.__mro__:
+    for klass in softGalleryLanguage_Technology.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -1166,23 +998,23 @@ def test_softgallerylanguage::technology_has_name():
 
 
 
-def test_softgallerylanguage::singlefile_is_not_abstract():
-    assert not inspect.isabstract(softGalleryLanguage::SingleFile)
+def test_softgallerylanguage_singlefile_is_not_abstract():
+    assert not inspect.isabstract(softGalleryLanguage_SingleFile)
 
 
-def test_softgallerylanguage::singlefile_constructor_exists():
-    assert callable(softGalleryLanguage::SingleFile.__init__)
+def test_softgallerylanguage_singlefile_constructor_exists():
+    assert callable(softGalleryLanguage_SingleFile.__init__)
 
 
-def test_softgallerylanguage::singlefile_constructor_args():
-    sig = inspect.signature(softGalleryLanguage::SingleFile.__init__)
+def test_softgallerylanguage_singlefile_constructor_args():
+    sig = inspect.signature(softGalleryLanguage_SingleFile.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_softgallerylanguage::singlefile_has_name():
-    assert hasattr(softGalleryLanguage::SingleFile, "name")
+def test_softgallerylanguage_singlefile_has_name():
+    assert hasattr(softGalleryLanguage_SingleFile, "name")
     descriptor = None
-    for klass in softGalleryLanguage::SingleFile.__mro__:
+    for klass in softGalleryLanguage_SingleFile.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -1190,23 +1022,23 @@ def test_softgallerylanguage::singlefile_has_name():
 
 
 
-def test_softgallerylanguage::multiplefile_is_not_abstract():
-    assert not inspect.isabstract(softGalleryLanguage::MultipleFile)
+def test_softgallerylanguage_multiplefile_is_not_abstract():
+    assert not inspect.isabstract(softGalleryLanguage_MultipleFile)
 
 
-def test_softgallerylanguage::multiplefile_constructor_exists():
-    assert callable(softGalleryLanguage::MultipleFile.__init__)
+def test_softgallerylanguage_multiplefile_constructor_exists():
+    assert callable(softGalleryLanguage_MultipleFile.__init__)
 
 
-def test_softgallerylanguage::multiplefile_constructor_args():
-    sig = inspect.signature(softGalleryLanguage::MultipleFile.__init__)
+def test_softgallerylanguage_multiplefile_constructor_args():
+    sig = inspect.signature(softGalleryLanguage_MultipleFile.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_softgallerylanguage::multiplefile_has_name():
-    assert hasattr(softGalleryLanguage::MultipleFile, "name")
+def test_softgallerylanguage_multiplefile_has_name():
+    assert hasattr(softGalleryLanguage_MultipleFile, "name")
     descriptor = None
-    for klass in softGalleryLanguage::MultipleFile.__mro__:
+    for klass in softGalleryLanguage_MultipleFile.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -1214,37 +1046,37 @@ def test_softgallerylanguage::multiplefile_has_name():
 
 
 
-def test_softgallerylanguage::directories_is_not_abstract():
-    assert not inspect.isabstract(softGalleryLanguage::Directories)
+def test_softgallerylanguage_directories_is_not_abstract():
+    assert not inspect.isabstract(softGalleryLanguage_Directories)
 
 
-def test_softgallerylanguage::directories_constructor_exists():
-    assert callable(softGalleryLanguage::Directories.__init__)
+def test_softgallerylanguage_directories_constructor_exists():
+    assert callable(softGalleryLanguage_Directories.__init__)
 
 
-def test_softgallerylanguage::directories_constructor_args():
-    sig = inspect.signature(softGalleryLanguage::Directories.__init__)
+def test_softgallerylanguage_directories_constructor_args():
+    sig = inspect.signature(softGalleryLanguage_Directories.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_softgallerylanguage::directorycontent_is_not_abstract():
-    assert not inspect.isabstract(softGalleryLanguage::DirectoryContent)
+def test_softgallerylanguage_directorycontent_is_not_abstract():
+    assert not inspect.isabstract(softGalleryLanguage_DirectoryContent)
 
 
-def test_softgallerylanguage::directorycontent_constructor_exists():
-    assert callable(softGalleryLanguage::DirectoryContent.__init__)
+def test_softgallerylanguage_directorycontent_constructor_exists():
+    assert callable(softGalleryLanguage_DirectoryContent.__init__)
 
 
-def test_softgallerylanguage::directorycontent_constructor_args():
-    sig = inspect.signature(softGalleryLanguage::DirectoryContent.__init__)
+def test_softgallerylanguage_directorycontent_constructor_args():
+    sig = inspect.signature(softGalleryLanguage_DirectoryContent.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_softgallerylanguage::directorycontent_has_name():
-    assert hasattr(softGalleryLanguage::DirectoryContent, "name")
+def test_softgallerylanguage_directorycontent_has_name():
+    assert hasattr(softGalleryLanguage_DirectoryContent, "name")
     descriptor = None
-    for klass in softGalleryLanguage::DirectoryContent.__mro__:
+    for klass in softGalleryLanguage_DirectoryContent.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -1252,23 +1084,23 @@ def test_softgallerylanguage::directorycontent_has_name():
 
 
 
-def test_softgallerylanguage::segmentstructurecontent_is_not_abstract():
-    assert not inspect.isabstract(softGalleryLanguage::SegmentStructureContent)
+def test_softgallerylanguage_segmentstructurecontent_is_not_abstract():
+    assert not inspect.isabstract(softGalleryLanguage_SegmentStructureContent)
 
 
-def test_softgallerylanguage::segmentstructurecontent_constructor_exists():
-    assert callable(softGalleryLanguage::SegmentStructureContent.__init__)
+def test_softgallerylanguage_segmentstructurecontent_constructor_exists():
+    assert callable(softGalleryLanguage_SegmentStructureContent.__init__)
 
 
-def test_softgallerylanguage::segmentstructurecontent_constructor_args():
-    sig = inspect.signature(softGalleryLanguage::SegmentStructureContent.__init__)
+def test_softgallerylanguage_segmentstructurecontent_constructor_args():
+    sig = inspect.signature(softGalleryLanguage_SegmentStructureContent.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_softgallerylanguage::segmentstructurecontent_has_name():
-    assert hasattr(softGalleryLanguage::SegmentStructureContent, "name")
+def test_softgallerylanguage_segmentstructurecontent_has_name():
+    assert hasattr(softGalleryLanguage_SegmentStructureContent, "name")
     descriptor = None
-    for klass in softGalleryLanguage::SegmentStructureContent.__mro__:
+    for klass in softGalleryLanguage_SegmentStructureContent.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -1276,99 +1108,99 @@ def test_softgallerylanguage::segmentstructurecontent_has_name():
 
 
 
-def test_softgallerylanguage::segmentstructure_is_not_abstract():
-    assert not inspect.isabstract(softGalleryLanguage::SegmentStructure)
+def test_softgallerylanguage_segmentstructure_is_not_abstract():
+    assert not inspect.isabstract(softGalleryLanguage_SegmentStructure)
 
 
-def test_softgallerylanguage::segmentstructure_constructor_exists():
-    assert callable(softGalleryLanguage::SegmentStructure.__init__)
+def test_softgallerylanguage_segmentstructure_constructor_exists():
+    assert callable(softGalleryLanguage_SegmentStructure.__init__)
 
 
-def test_softgallerylanguage::segmentstructure_constructor_args():
-    sig = inspect.signature(softGalleryLanguage::SegmentStructure.__init__)
+def test_softgallerylanguage_segmentstructure_constructor_args():
+    sig = inspect.signature(softGalleryLanguage_SegmentStructure.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_softgallerylanguage::datapersistencesegments_is_not_abstract():
-    assert not inspect.isabstract(softGalleryLanguage::DataPersistenceSegments)
+def test_softgallerylanguage_datapersistencesegments_is_not_abstract():
+    assert not inspect.isabstract(softGalleryLanguage_DataPersistenceSegments)
 
 
-def test_softgallerylanguage::datapersistencesegments_constructor_exists():
-    assert callable(softGalleryLanguage::DataPersistenceSegments.__init__)
+def test_softgallerylanguage_datapersistencesegments_constructor_exists():
+    assert callable(softGalleryLanguage_DataPersistenceSegments.__init__)
 
 
-def test_softgallerylanguage::datapersistencesegments_constructor_args():
-    sig = inspect.signature(softGalleryLanguage::DataPersistenceSegments.__init__)
+def test_softgallerylanguage_datapersistencesegments_constructor_args():
+    sig = inspect.signature(softGalleryLanguage_DataPersistenceSegments.__init__)
     params = list(sig.parameters.keys())
-    assert "amazonSName" in params, "Missing parameter 'amazonSName'"
     assert "postSName" in params, "Missing parameter 'postSName'"
+    assert "amazonSName" in params, "Missing parameter 'amazonSName'"
 
-def test_softgallerylanguage::datapersistencesegments_has_amazonSName():
-    assert hasattr(softGalleryLanguage::DataPersistenceSegments, "amazonSName")
+def test_softgallerylanguage_datapersistencesegments_has_postSName():
+    assert hasattr(softGalleryLanguage_DataPersistenceSegments, "postSName")
     descriptor = None
-    for klass in softGalleryLanguage::DataPersistenceSegments.__mro__:
-        if "amazonSName" in klass.__dict__:
-            descriptor = klass.__dict__["amazonSName"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_softgallerylanguage::datapersistencesegments_has_postSName():
-    assert hasattr(softGalleryLanguage::DataPersistenceSegments, "postSName")
-    descriptor = None
-    for klass in softGalleryLanguage::DataPersistenceSegments.__mro__:
+    for klass in softGalleryLanguage_DataPersistenceSegments.__mro__:
         if "postSName" in klass.__dict__:
             descriptor = klass.__dict__["postSName"]
             break
     assert isinstance(descriptor, property)
 
+def test_softgallerylanguage_datapersistencesegments_has_amazonSName():
+    assert hasattr(softGalleryLanguage_DataPersistenceSegments, "amazonSName")
+    descriptor = None
+    for klass in softGalleryLanguage_DataPersistenceSegments.__mro__:
+        if "amazonSName" in klass.__dict__:
+            descriptor = klass.__dict__["amazonSName"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_softgallerylanguage::datapersistencecontent_is_not_abstract():
-    assert not inspect.isabstract(softGalleryLanguage::DataPersistenceContent)
+
+def test_softgallerylanguage_datapersistencecontent_is_not_abstract():
+    assert not inspect.isabstract(softGalleryLanguage_DataPersistenceContent)
 
 
-def test_softgallerylanguage::datapersistencecontent_constructor_exists():
-    assert callable(softGalleryLanguage::DataPersistenceContent.__init__)
+def test_softgallerylanguage_datapersistencecontent_constructor_exists():
+    assert callable(softGalleryLanguage_DataPersistenceContent.__init__)
 
 
-def test_softgallerylanguage::datapersistencecontent_constructor_args():
-    sig = inspect.signature(softGalleryLanguage::DataPersistenceContent.__init__)
+def test_softgallerylanguage_datapersistencecontent_constructor_args():
+    sig = inspect.signature(softGalleryLanguage_DataPersistenceContent.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_softgallerylanguage::datapersistencelayer_is_not_abstract():
-    assert not inspect.isabstract(softGalleryLanguage::DataPersistenceLayer)
+def test_softgallerylanguage_datapersistencelayer_is_not_abstract():
+    assert not inspect.isabstract(softGalleryLanguage_DataPersistenceLayer)
 
 
-def test_softgallerylanguage::datapersistencelayer_constructor_exists():
-    assert callable(softGalleryLanguage::DataPersistenceLayer.__init__)
+def test_softgallerylanguage_datapersistencelayer_constructor_exists():
+    assert callable(softGalleryLanguage_DataPersistenceLayer.__init__)
 
 
-def test_softgallerylanguage::datapersistencelayer_constructor_args():
-    sig = inspect.signature(softGalleryLanguage::DataPersistenceLayer.__init__)
+def test_softgallerylanguage_datapersistencelayer_constructor_args():
+    sig = inspect.signature(softGalleryLanguage_DataPersistenceLayer.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_softgallerylanguage::criteriaattributetype_is_not_abstract():
-    assert not inspect.isabstract(softGalleryLanguage::CriteriaAttributeType)
+def test_softgallerylanguage_criteriaattributetype_is_not_abstract():
+    assert not inspect.isabstract(softGalleryLanguage_CriteriaAttributeType)
 
 
-def test_softgallerylanguage::criteriaattributetype_constructor_exists():
-    assert callable(softGalleryLanguage::CriteriaAttributeType.__init__)
+def test_softgallerylanguage_criteriaattributetype_constructor_exists():
+    assert callable(softGalleryLanguage_CriteriaAttributeType.__init__)
 
 
-def test_softgallerylanguage::criteriaattributetype_constructor_args():
-    sig = inspect.signature(softGalleryLanguage::CriteriaAttributeType.__init__)
+def test_softgallerylanguage_criteriaattributetype_constructor_args():
+    sig = inspect.signature(softGalleryLanguage_CriteriaAttributeType.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_softgallerylanguage::criteriaattributetype_has_name():
-    assert hasattr(softGalleryLanguage::CriteriaAttributeType, "name")
+def test_softgallerylanguage_criteriaattributetype_has_name():
+    assert hasattr(softGalleryLanguage_CriteriaAttributeType, "name")
     descriptor = None
-    for klass in softGalleryLanguage::CriteriaAttributeType.__mro__:
+    for klass in softGalleryLanguage_CriteriaAttributeType.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -1376,23 +1208,23 @@ def test_softgallerylanguage::criteriaattributetype_has_name():
 
 
 
-def test_softgallerylanguage::specificationsegmentelement_is_not_abstract():
-    assert not inspect.isabstract(softGalleryLanguage::SpecificationSegmentElement)
+def test_softgallerylanguage_specificationsegmentelement_is_not_abstract():
+    assert not inspect.isabstract(softGalleryLanguage_SpecificationSegmentElement)
 
 
-def test_softgallerylanguage::specificationsegmentelement_constructor_exists():
-    assert callable(softGalleryLanguage::SpecificationSegmentElement.__init__)
+def test_softgallerylanguage_specificationsegmentelement_constructor_exists():
+    assert callable(softGalleryLanguage_SpecificationSegmentElement.__init__)
 
 
-def test_softgallerylanguage::specificationsegmentelement_constructor_args():
-    sig = inspect.signature(softGalleryLanguage::SpecificationSegmentElement.__init__)
+def test_softgallerylanguage_specificationsegmentelement_constructor_args():
+    sig = inspect.signature(softGalleryLanguage_SpecificationSegmentElement.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_softgallerylanguage::specificationsegmentelement_has_name():
-    assert hasattr(softGalleryLanguage::SpecificationSegmentElement, "name")
+def test_softgallerylanguage_specificationsegmentelement_has_name():
+    assert hasattr(softGalleryLanguage_SpecificationSegmentElement, "name")
     descriptor = None
-    for klass in softGalleryLanguage::SpecificationSegmentElement.__mro__:
+    for klass in softGalleryLanguage_SpecificationSegmentElement.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -1400,23 +1232,23 @@ def test_softgallerylanguage::specificationsegmentelement_has_name():
 
 
 
-def test_softgallerylanguage::controllersegmentelement_is_not_abstract():
-    assert not inspect.isabstract(softGalleryLanguage::ControllerSegmentElement)
+def test_softgallerylanguage_controllersegmentelement_is_not_abstract():
+    assert not inspect.isabstract(softGalleryLanguage_ControllerSegmentElement)
 
 
-def test_softgallerylanguage::controllersegmentelement_constructor_exists():
-    assert callable(softGalleryLanguage::ControllerSegmentElement.__init__)
+def test_softgallerylanguage_controllersegmentelement_constructor_exists():
+    assert callable(softGalleryLanguage_ControllerSegmentElement.__init__)
 
 
-def test_softgallerylanguage::controllersegmentelement_constructor_args():
-    sig = inspect.signature(softGalleryLanguage::ControllerSegmentElement.__init__)
+def test_softgallerylanguage_controllersegmentelement_constructor_args():
+    sig = inspect.signature(softGalleryLanguage_ControllerSegmentElement.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_softgallerylanguage::controllersegmentelement_has_name():
-    assert hasattr(softGalleryLanguage::ControllerSegmentElement, "name")
+def test_softgallerylanguage_controllersegmentelement_has_name():
+    assert hasattr(softGalleryLanguage_ControllerSegmentElement, "name")
     descriptor = None
-    for klass in softGalleryLanguage::ControllerSegmentElement.__mro__:
+    for klass in softGalleryLanguage_ControllerSegmentElement.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -1424,57 +1256,57 @@ def test_softgallerylanguage::controllersegmentelement_has_name():
 
 
 
-def test_softgallerylanguage::layerrelations_is_not_abstract():
-    assert not inspect.isabstract(softGalleryLanguage::LayerRelations)
+def test_softgallerylanguage_layerrelations_is_not_abstract():
+    assert not inspect.isabstract(softGalleryLanguage_LayerRelations)
 
 
-def test_softgallerylanguage::layerrelations_constructor_exists():
-    assert callable(softGalleryLanguage::LayerRelations.__init__)
+def test_softgallerylanguage_layerrelations_constructor_exists():
+    assert callable(softGalleryLanguage_LayerRelations.__init__)
 
 
-def test_softgallerylanguage::layerrelations_constructor_args():
-    sig = inspect.signature(softGalleryLanguage::LayerRelations.__init__)
+def test_softgallerylanguage_layerrelations_constructor_args():
+    sig = inspect.signature(softGalleryLanguage_LayerRelations.__init__)
     params = list(sig.parameters.keys())
+    assert "name" in params, "Missing parameter 'name'"
     assert "layerelations" in params, "Missing parameter 'layerelations'"
-    assert "name" in params, "Missing parameter 'name'"
 
-def test_softgallerylanguage::layerrelations_has_layerelations():
-    assert hasattr(softGalleryLanguage::LayerRelations, "layerelations")
+def test_softgallerylanguage_layerrelations_has_name():
+    assert hasattr(softGalleryLanguage_LayerRelations, "name")
     descriptor = None
-    for klass in softGalleryLanguage::LayerRelations.__mro__:
+    for klass in softGalleryLanguage_LayerRelations.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_softgallerylanguage_layerrelations_has_layerelations():
+    assert hasattr(softGalleryLanguage_LayerRelations, "layerelations")
+    descriptor = None
+    for klass in softGalleryLanguage_LayerRelations.__mro__:
         if "layerelations" in klass.__dict__:
             descriptor = klass.__dict__["layerelations"]
             break
     assert isinstance(descriptor, property)
 
-def test_softgallerylanguage::layerrelations_has_name():
-    assert hasattr(softGalleryLanguage::LayerRelations, "name")
-    descriptor = None
-    for klass in softGalleryLanguage::LayerRelations.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
 
 
-
-def test_softgallerylanguage::businesslogicsegments_is_not_abstract():
-    assert not inspect.isabstract(softGalleryLanguage::BusinessLogicSegments)
-
-
-def test_softgallerylanguage::businesslogicsegments_constructor_exists():
-    assert callable(softGalleryLanguage::BusinessLogicSegments.__init__)
+def test_softgallerylanguage_businesslogicsegments_is_not_abstract():
+    assert not inspect.isabstract(softGalleryLanguage_BusinessLogicSegments)
 
 
-def test_softgallerylanguage::businesslogicsegments_constructor_args():
-    sig = inspect.signature(softGalleryLanguage::BusinessLogicSegments.__init__)
+def test_softgallerylanguage_businesslogicsegments_constructor_exists():
+    assert callable(softGalleryLanguage_BusinessLogicSegments.__init__)
+
+
+def test_softgallerylanguage_businesslogicsegments_constructor_args():
+    sig = inspect.signature(softGalleryLanguage_BusinessLogicSegments.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_softgallerylanguage::businesslogicsegments_has_name():
-    assert hasattr(softGalleryLanguage::BusinessLogicSegments, "name")
+def test_softgallerylanguage_businesslogicsegments_has_name():
+    assert hasattr(softGalleryLanguage_BusinessLogicSegments, "name")
     descriptor = None
-    for klass in softGalleryLanguage::BusinessLogicSegments.__mro__:
+    for klass in softGalleryLanguage_BusinessLogicSegments.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -1482,165 +1314,165 @@ def test_softgallerylanguage::businesslogicsegments_has_name():
 
 
 
-def test_softgallerylanguage::businesslogiccontent_is_not_abstract():
-    assert not inspect.isabstract(softGalleryLanguage::BusinessLogicContent)
+def test_softgallerylanguage_businesslogiccontent_is_not_abstract():
+    assert not inspect.isabstract(softGalleryLanguage_BusinessLogicContent)
 
 
-def test_softgallerylanguage::businesslogiccontent_constructor_exists():
-    assert callable(softGalleryLanguage::BusinessLogicContent.__init__)
+def test_softgallerylanguage_businesslogiccontent_constructor_exists():
+    assert callable(softGalleryLanguage_BusinessLogicContent.__init__)
 
 
-def test_softgallerylanguage::businesslogiccontent_constructor_args():
-    sig = inspect.signature(softGalleryLanguage::BusinessLogicContent.__init__)
+def test_softgallerylanguage_businesslogiccontent_constructor_args():
+    sig = inspect.signature(softGalleryLanguage_BusinessLogicContent.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_softgallerylanguage::businesslogiclayer_is_not_abstract():
-    assert not inspect.isabstract(softGalleryLanguage::BusinessLogicLayer)
+def test_softgallerylanguage_businesslogiclayer_is_not_abstract():
+    assert not inspect.isabstract(softGalleryLanguage_BusinessLogicLayer)
 
 
-def test_softgallerylanguage::businesslogiclayer_constructor_exists():
-    assert callable(softGalleryLanguage::BusinessLogicLayer.__init__)
+def test_softgallerylanguage_businesslogiclayer_constructor_exists():
+    assert callable(softGalleryLanguage_BusinessLogicLayer.__init__)
 
 
-def test_softgallerylanguage::businesslogiclayer_constructor_args():
-    sig = inspect.signature(softGalleryLanguage::BusinessLogicLayer.__init__)
+def test_softgallerylanguage_businesslogiclayer_constructor_args():
+    sig = inspect.signature(softGalleryLanguage_BusinessLogicLayer.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_softgallerylanguage::presentationsegments_is_not_abstract():
-    assert not inspect.isabstract(softGalleryLanguage::PresentationSegments)
+def test_softgallerylanguage_presentationsegments_is_not_abstract():
+    assert not inspect.isabstract(softGalleryLanguage_PresentationSegments)
 
 
-def test_softgallerylanguage::presentationsegments_constructor_exists():
-    assert callable(softGalleryLanguage::PresentationSegments.__init__)
+def test_softgallerylanguage_presentationsegments_constructor_exists():
+    assert callable(softGalleryLanguage_PresentationSegments.__init__)
 
 
-def test_softgallerylanguage::presentationsegments_constructor_args():
-    sig = inspect.signature(softGalleryLanguage::PresentationSegments.__init__)
+def test_softgallerylanguage_presentationsegments_constructor_args():
+    sig = inspect.signature(softGalleryLanguage_PresentationSegments.__init__)
     params = list(sig.parameters.keys())
-    assert "presentationSName" in params, "Missing parameter 'presentationSName'"
-    assert "presentationAName" in params, "Missing parameter 'presentationAName'"
     assert "presentationCName" in params, "Missing parameter 'presentationCName'"
+    assert "presentationAName" in params, "Missing parameter 'presentationAName'"
+    assert "presentationSName" in params, "Missing parameter 'presentationSName'"
 
-def test_softgallerylanguage::presentationsegments_has_presentationSName():
-    assert hasattr(softGalleryLanguage::PresentationSegments, "presentationSName")
+def test_softgallerylanguage_presentationsegments_has_presentationCName():
+    assert hasattr(softGalleryLanguage_PresentationSegments, "presentationCName")
     descriptor = None
-    for klass in softGalleryLanguage::PresentationSegments.__mro__:
-        if "presentationSName" in klass.__dict__:
-            descriptor = klass.__dict__["presentationSName"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_softgallerylanguage::presentationsegments_has_presentationAName():
-    assert hasattr(softGalleryLanguage::PresentationSegments, "presentationAName")
-    descriptor = None
-    for klass in softGalleryLanguage::PresentationSegments.__mro__:
-        if "presentationAName" in klass.__dict__:
-            descriptor = klass.__dict__["presentationAName"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_softgallerylanguage::presentationsegments_has_presentationCName():
-    assert hasattr(softGalleryLanguage::PresentationSegments, "presentationCName")
-    descriptor = None
-    for klass in softGalleryLanguage::PresentationSegments.__mro__:
+    for klass in softGalleryLanguage_PresentationSegments.__mro__:
         if "presentationCName" in klass.__dict__:
             descriptor = klass.__dict__["presentationCName"]
             break
     assert isinstance(descriptor, property)
 
+def test_softgallerylanguage_presentationsegments_has_presentationAName():
+    assert hasattr(softGalleryLanguage_PresentationSegments, "presentationAName")
+    descriptor = None
+    for klass in softGalleryLanguage_PresentationSegments.__mro__:
+        if "presentationAName" in klass.__dict__:
+            descriptor = klass.__dict__["presentationAName"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_softgallerylanguage_presentationsegments_has_presentationSName():
+    assert hasattr(softGalleryLanguage_PresentationSegments, "presentationSName")
+    descriptor = None
+    for klass in softGalleryLanguage_PresentationSegments.__mro__:
+        if "presentationSName" in klass.__dict__:
+            descriptor = klass.__dict__["presentationSName"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_softgallerylanguage::presentationcontent_is_not_abstract():
-    assert not inspect.isabstract(softGalleryLanguage::PresentationContent)
+
+def test_softgallerylanguage_presentationcontent_is_not_abstract():
+    assert not inspect.isabstract(softGalleryLanguage_PresentationContent)
 
 
-def test_softgallerylanguage::presentationcontent_constructor_exists():
-    assert callable(softGalleryLanguage::PresentationContent.__init__)
+def test_softgallerylanguage_presentationcontent_constructor_exists():
+    assert callable(softGalleryLanguage_PresentationContent.__init__)
 
 
-def test_softgallerylanguage::presentationcontent_constructor_args():
-    sig = inspect.signature(softGalleryLanguage::PresentationContent.__init__)
+def test_softgallerylanguage_presentationcontent_constructor_args():
+    sig = inspect.signature(softGalleryLanguage_PresentationContent.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_softgallerylanguage::presentationlayer_is_not_abstract():
-    assert not inspect.isabstract(softGalleryLanguage::PresentationLayer)
+def test_softgallerylanguage_presentationlayer_is_not_abstract():
+    assert not inspect.isabstract(softGalleryLanguage_PresentationLayer)
 
 
-def test_softgallerylanguage::presentationlayer_constructor_exists():
-    assert callable(softGalleryLanguage::PresentationLayer.__init__)
+def test_softgallerylanguage_presentationlayer_constructor_exists():
+    assert callable(softGalleryLanguage_PresentationLayer.__init__)
 
 
-def test_softgallerylanguage::presentationlayer_constructor_args():
-    sig = inspect.signature(softGalleryLanguage::PresentationLayer.__init__)
+def test_softgallerylanguage_presentationlayer_constructor_args():
+    sig = inspect.signature(softGalleryLanguage_PresentationLayer.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_softgallerylanguage::layer_is_not_abstract():
-    assert not inspect.isabstract(softGalleryLanguage::Layer)
+def test_softgallerylanguage_layer_is_not_abstract():
+    assert not inspect.isabstract(softGalleryLanguage_Layer)
 
 
-def test_softgallerylanguage::layer_constructor_exists():
-    assert callable(softGalleryLanguage::Layer.__init__)
+def test_softgallerylanguage_layer_constructor_exists():
+    assert callable(softGalleryLanguage_Layer.__init__)
 
 
-def test_softgallerylanguage::layer_constructor_args():
-    sig = inspect.signature(softGalleryLanguage::Layer.__init__)
+def test_softgallerylanguage_layer_constructor_args():
+    sig = inspect.signature(softGalleryLanguage_Layer.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_softgallerylanguage::ntiers_is_not_abstract():
-    assert not inspect.isabstract(softGalleryLanguage::NTiers)
+def test_softgallerylanguage_ntiers_is_not_abstract():
+    assert not inspect.isabstract(softGalleryLanguage_NTiers)
 
 
-def test_softgallerylanguage::ntiers_constructor_exists():
-    assert callable(softGalleryLanguage::NTiers.__init__)
+def test_softgallerylanguage_ntiers_constructor_exists():
+    assert callable(softGalleryLanguage_NTiers.__init__)
 
 
-def test_softgallerylanguage::ntiers_constructor_args():
-    sig = inspect.signature(softGalleryLanguage::NTiers.__init__)
+def test_softgallerylanguage_ntiers_constructor_args():
+    sig = inspect.signature(softGalleryLanguage_NTiers.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_softgallerylanguage::architecture_is_not_abstract():
-    assert not inspect.isabstract(softGalleryLanguage::Architecture)
+def test_softgallerylanguage_architecture_is_not_abstract():
+    assert not inspect.isabstract(softGalleryLanguage_Architecture)
 
 
-def test_softgallerylanguage::architecture_constructor_exists():
-    assert callable(softGalleryLanguage::Architecture.__init__)
+def test_softgallerylanguage_architecture_constructor_exists():
+    assert callable(softGalleryLanguage_Architecture.__init__)
 
 
-def test_softgallerylanguage::architecture_constructor_args():
-    sig = inspect.signature(softGalleryLanguage::Architecture.__init__)
+def test_softgallerylanguage_architecture_constructor_args():
+    sig = inspect.signature(softGalleryLanguage_Architecture.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_softgallerylanguage::userexception_is_not_abstract():
-    assert not inspect.isabstract(softGalleryLanguage::UserException)
+def test_softgallerylanguage_userexception_is_not_abstract():
+    assert not inspect.isabstract(softGalleryLanguage_UserException)
 
 
-def test_softgallerylanguage::userexception_constructor_exists():
-    assert callable(softGalleryLanguage::UserException.__init__)
+def test_softgallerylanguage_userexception_constructor_exists():
+    assert callable(softGalleryLanguage_UserException.__init__)
 
 
-def test_softgallerylanguage::userexception_constructor_args():
-    sig = inspect.signature(softGalleryLanguage::UserException.__init__)
+def test_softgallerylanguage_userexception_constructor_args():
+    sig = inspect.signature(softGalleryLanguage_UserException.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_softgallerylanguage::userexception_has_name():
-    assert hasattr(softGalleryLanguage::UserException, "name")
+def test_softgallerylanguage_userexception_has_name():
+    assert hasattr(softGalleryLanguage_UserException, "name")
     descriptor = None
-    for klass in softGalleryLanguage::UserException.__mro__:
+    for klass in softGalleryLanguage_UserException.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -1648,23 +1480,23 @@ def test_softgallerylanguage::userexception_has_name():
 
 
 
-def test_softgallerylanguage::albumexception_is_not_abstract():
-    assert not inspect.isabstract(softGalleryLanguage::AlbumException)
+def test_softgallerylanguage_albumexception_is_not_abstract():
+    assert not inspect.isabstract(softGalleryLanguage_AlbumException)
 
 
-def test_softgallerylanguage::albumexception_constructor_exists():
-    assert callable(softGalleryLanguage::AlbumException.__init__)
+def test_softgallerylanguage_albumexception_constructor_exists():
+    assert callable(softGalleryLanguage_AlbumException.__init__)
 
 
-def test_softgallerylanguage::albumexception_constructor_args():
-    sig = inspect.signature(softGalleryLanguage::AlbumException.__init__)
+def test_softgallerylanguage_albumexception_constructor_args():
+    sig = inspect.signature(softGalleryLanguage_AlbumException.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_softgallerylanguage::albumexception_has_name():
-    assert hasattr(softGalleryLanguage::AlbumException, "name")
+def test_softgallerylanguage_albumexception_has_name():
+    assert hasattr(softGalleryLanguage_AlbumException, "name")
     descriptor = None
-    for klass in softGalleryLanguage::AlbumException.__mro__:
+    for klass in softGalleryLanguage_AlbumException.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -1672,23 +1504,23 @@ def test_softgallerylanguage::albumexception_has_name():
 
 
 
-def test_softgallerylanguage::photoexception_is_not_abstract():
-    assert not inspect.isabstract(softGalleryLanguage::PhotoException)
+def test_softgallerylanguage_photoexception_is_not_abstract():
+    assert not inspect.isabstract(softGalleryLanguage_PhotoException)
 
 
-def test_softgallerylanguage::photoexception_constructor_exists():
-    assert callable(softGalleryLanguage::PhotoException.__init__)
+def test_softgallerylanguage_photoexception_constructor_exists():
+    assert callable(softGalleryLanguage_PhotoException.__init__)
 
 
-def test_softgallerylanguage::photoexception_constructor_args():
-    sig = inspect.signature(softGalleryLanguage::PhotoException.__init__)
+def test_softgallerylanguage_photoexception_constructor_args():
+    sig = inspect.signature(softGalleryLanguage_PhotoException.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_softgallerylanguage::photoexception_has_name():
-    assert hasattr(softGalleryLanguage::PhotoException, "name")
+def test_softgallerylanguage_photoexception_has_name():
+    assert hasattr(softGalleryLanguage_PhotoException, "name")
     descriptor = None
-    for klass in softGalleryLanguage::PhotoException.__mro__:
+    for klass in softGalleryLanguage_PhotoException.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -1696,193 +1528,193 @@ def test_softgallerylanguage::photoexception_has_name():
 
 
 
-def test_softgallerylanguage::landingfunctions_is_not_abstract():
-    assert not inspect.isabstract(softGalleryLanguage::LandingFunctions)
+def test_softgallerylanguage_landingfunctions_is_not_abstract():
+    assert not inspect.isabstract(softGalleryLanguage_LandingFunctions)
 
 
-def test_softgallerylanguage::landingfunctions_constructor_exists():
-    assert callable(softGalleryLanguage::LandingFunctions.__init__)
+def test_softgallerylanguage_landingfunctions_constructor_exists():
+    assert callable(softGalleryLanguage_LandingFunctions.__init__)
 
 
-def test_softgallerylanguage::landingfunctions_constructor_args():
-    sig = inspect.signature(softGalleryLanguage::LandingFunctions.__init__)
+def test_softgallerylanguage_landingfunctions_constructor_args():
+    sig = inspect.signature(softGalleryLanguage_LandingFunctions.__init__)
     params = list(sig.parameters.keys())
-    assert "nameCarouselName" in params, "Missing parameter 'nameCarouselName'"
     assert "passPhotoName" in params, "Missing parameter 'passPhotoName'"
+    assert "nameCarouselName" in params, "Missing parameter 'nameCarouselName'"
 
-def test_softgallerylanguage::landingfunctions_has_nameCarouselName():
-    assert hasattr(softGalleryLanguage::LandingFunctions, "nameCarouselName")
+def test_softgallerylanguage_landingfunctions_has_passPhotoName():
+    assert hasattr(softGalleryLanguage_LandingFunctions, "passPhotoName")
     descriptor = None
-    for klass in softGalleryLanguage::LandingFunctions.__mro__:
-        if "nameCarouselName" in klass.__dict__:
-            descriptor = klass.__dict__["nameCarouselName"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_softgallerylanguage::landingfunctions_has_passPhotoName():
-    assert hasattr(softGalleryLanguage::LandingFunctions, "passPhotoName")
-    descriptor = None
-    for klass in softGalleryLanguage::LandingFunctions.__mro__:
+    for klass in softGalleryLanguage_LandingFunctions.__mro__:
         if "passPhotoName" in klass.__dict__:
             descriptor = klass.__dict__["passPhotoName"]
             break
     assert isinstance(descriptor, property)
 
+def test_softgallerylanguage_landingfunctions_has_nameCarouselName():
+    assert hasattr(softGalleryLanguage_LandingFunctions, "nameCarouselName")
+    descriptor = None
+    for klass in softGalleryLanguage_LandingFunctions.__mro__:
+        if "nameCarouselName" in klass.__dict__:
+            descriptor = klass.__dict__["nameCarouselName"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_softgallerylanguage::photoactionsfunctions_is_not_abstract():
-    assert not inspect.isabstract(softGalleryLanguage::PhotoActionsFunctions)
+
+def test_softgallerylanguage_photoactionsfunctions_is_not_abstract():
+    assert not inspect.isabstract(softGalleryLanguage_PhotoActionsFunctions)
 
 
-def test_softgallerylanguage::photoactionsfunctions_constructor_exists():
-    assert callable(softGalleryLanguage::PhotoActionsFunctions.__init__)
+def test_softgallerylanguage_photoactionsfunctions_constructor_exists():
+    assert callable(softGalleryLanguage_PhotoActionsFunctions.__init__)
 
 
-def test_softgallerylanguage::photoactionsfunctions_constructor_args():
-    sig = inspect.signature(softGalleryLanguage::PhotoActionsFunctions.__init__)
+def test_softgallerylanguage_photoactionsfunctions_constructor_args():
+    sig = inspect.signature(softGalleryLanguage_PhotoActionsFunctions.__init__)
     params = list(sig.parameters.keys())
     assert "nameLoad" in params, "Missing parameter 'nameLoad'"
-    assert "namePhoto" in params, "Missing parameter 'namePhoto'"
     assert "nameGenerico" in params, "Missing parameter 'nameGenerico'"
+    assert "namePhoto" in params, "Missing parameter 'namePhoto'"
 
-def test_softgallerylanguage::photoactionsfunctions_has_nameLoad():
-    assert hasattr(softGalleryLanguage::PhotoActionsFunctions, "nameLoad")
+def test_softgallerylanguage_photoactionsfunctions_has_nameLoad():
+    assert hasattr(softGalleryLanguage_PhotoActionsFunctions, "nameLoad")
     descriptor = None
-    for klass in softGalleryLanguage::PhotoActionsFunctions.__mro__:
+    for klass in softGalleryLanguage_PhotoActionsFunctions.__mro__:
         if "nameLoad" in klass.__dict__:
             descriptor = klass.__dict__["nameLoad"]
             break
     assert isinstance(descriptor, property)
 
-def test_softgallerylanguage::photoactionsfunctions_has_namePhoto():
-    assert hasattr(softGalleryLanguage::PhotoActionsFunctions, "namePhoto")
+def test_softgallerylanguage_photoactionsfunctions_has_nameGenerico():
+    assert hasattr(softGalleryLanguage_PhotoActionsFunctions, "nameGenerico")
     descriptor = None
-    for klass in softGalleryLanguage::PhotoActionsFunctions.__mro__:
-        if "namePhoto" in klass.__dict__:
-            descriptor = klass.__dict__["namePhoto"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_softgallerylanguage::photoactionsfunctions_has_nameGenerico():
-    assert hasattr(softGalleryLanguage::PhotoActionsFunctions, "nameGenerico")
-    descriptor = None
-    for klass in softGalleryLanguage::PhotoActionsFunctions.__mro__:
+    for klass in softGalleryLanguage_PhotoActionsFunctions.__mro__:
         if "nameGenerico" in klass.__dict__:
             descriptor = klass.__dict__["nameGenerico"]
             break
     assert isinstance(descriptor, property)
 
-
-
-def test_softgallerylanguage::albummanagementfunctions_is_not_abstract():
-    assert not inspect.isabstract(softGalleryLanguage::AlbumManagementFunctions)
-
-
-def test_softgallerylanguage::albummanagementfunctions_constructor_exists():
-    assert callable(softGalleryLanguage::AlbumManagementFunctions.__init__)
-
-
-def test_softgallerylanguage::albummanagementfunctions_constructor_args():
-    sig = inspect.signature(softGalleryLanguage::AlbumManagementFunctions.__init__)
-    params = list(sig.parameters.keys())
-    assert "createdAlbName" in params, "Missing parameter 'createdAlbName'"
-    assert "selectAlbName" in params, "Missing parameter 'selectAlbName'"
-
-def test_softgallerylanguage::albummanagementfunctions_has_createdAlbName():
-    assert hasattr(softGalleryLanguage::AlbumManagementFunctions, "createdAlbName")
+def test_softgallerylanguage_photoactionsfunctions_has_namePhoto():
+    assert hasattr(softGalleryLanguage_PhotoActionsFunctions, "namePhoto")
     descriptor = None
-    for klass in softGalleryLanguage::AlbumManagementFunctions.__mro__:
-        if "createdAlbName" in klass.__dict__:
-            descriptor = klass.__dict__["createdAlbName"]
+    for klass in softGalleryLanguage_PhotoActionsFunctions.__mro__:
+        if "namePhoto" in klass.__dict__:
+            descriptor = klass.__dict__["namePhoto"]
             break
     assert isinstance(descriptor, property)
 
-def test_softgallerylanguage::albummanagementfunctions_has_selectAlbName():
-    assert hasattr(softGalleryLanguage::AlbumManagementFunctions, "selectAlbName")
+
+
+def test_softgallerylanguage_albummanagementfunctions_is_not_abstract():
+    assert not inspect.isabstract(softGalleryLanguage_AlbumManagementFunctions)
+
+
+def test_softgallerylanguage_albummanagementfunctions_constructor_exists():
+    assert callable(softGalleryLanguage_AlbumManagementFunctions.__init__)
+
+
+def test_softgallerylanguage_albummanagementfunctions_constructor_args():
+    sig = inspect.signature(softGalleryLanguage_AlbumManagementFunctions.__init__)
+    params = list(sig.parameters.keys())
+    assert "selectAlbName" in params, "Missing parameter 'selectAlbName'"
+    assert "createdAlbName" in params, "Missing parameter 'createdAlbName'"
+
+def test_softgallerylanguage_albummanagementfunctions_has_selectAlbName():
+    assert hasattr(softGalleryLanguage_AlbumManagementFunctions, "selectAlbName")
     descriptor = None
-    for klass in softGalleryLanguage::AlbumManagementFunctions.__mro__:
+    for klass in softGalleryLanguage_AlbumManagementFunctions.__mro__:
         if "selectAlbName" in klass.__dict__:
             descriptor = klass.__dict__["selectAlbName"]
             break
     assert isinstance(descriptor, property)
 
-
-
-def test_softgallerylanguage::exceptionstype_is_not_abstract():
-    assert not inspect.isabstract(softGalleryLanguage::ExceptionsType)
-
-
-def test_softgallerylanguage::exceptionstype_constructor_exists():
-    assert callable(softGalleryLanguage::ExceptionsType.__init__)
-
-
-def test_softgallerylanguage::exceptionstype_constructor_args():
-    sig = inspect.signature(softGalleryLanguage::ExceptionsType.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_softgallerylanguage::appaccessfunctions_is_not_abstract():
-    assert not inspect.isabstract(softGalleryLanguage::AppAccessFunctions)
-
-
-def test_softgallerylanguage::appaccessfunctions_constructor_exists():
-    assert callable(softGalleryLanguage::AppAccessFunctions.__init__)
-
-
-def test_softgallerylanguage::appaccessfunctions_constructor_args():
-    sig = inspect.signature(softGalleryLanguage::AppAccessFunctions.__init__)
-    params = list(sig.parameters.keys())
-    assert "registerName" in params, "Missing parameter 'registerName'"
-    assert "loginName" in params, "Missing parameter 'loginName'"
-
-def test_softgallerylanguage::appaccessfunctions_has_registerName():
-    assert hasattr(softGalleryLanguage::AppAccessFunctions, "registerName")
+def test_softgallerylanguage_albummanagementfunctions_has_createdAlbName():
+    assert hasattr(softGalleryLanguage_AlbumManagementFunctions, "createdAlbName")
     descriptor = None
-    for klass in softGalleryLanguage::AppAccessFunctions.__mro__:
-        if "registerName" in klass.__dict__:
-            descriptor = klass.__dict__["registerName"]
+    for klass in softGalleryLanguage_AlbumManagementFunctions.__mro__:
+        if "createdAlbName" in klass.__dict__:
+            descriptor = klass.__dict__["createdAlbName"]
             break
     assert isinstance(descriptor, property)
 
-def test_softgallerylanguage::appaccessfunctions_has_loginName():
-    assert hasattr(softGalleryLanguage::AppAccessFunctions, "loginName")
+
+
+def test_softgallerylanguage_exceptionstype_is_not_abstract():
+    assert not inspect.isabstract(softGalleryLanguage_ExceptionsType)
+
+
+def test_softgallerylanguage_exceptionstype_constructor_exists():
+    assert callable(softGalleryLanguage_ExceptionsType.__init__)
+
+
+def test_softgallerylanguage_exceptionstype_constructor_args():
+    sig = inspect.signature(softGalleryLanguage_ExceptionsType.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_softgallerylanguage_appaccessfunctions_is_not_abstract():
+    assert not inspect.isabstract(softGalleryLanguage_AppAccessFunctions)
+
+
+def test_softgallerylanguage_appaccessfunctions_constructor_exists():
+    assert callable(softGalleryLanguage_AppAccessFunctions.__init__)
+
+
+def test_softgallerylanguage_appaccessfunctions_constructor_args():
+    sig = inspect.signature(softGalleryLanguage_AppAccessFunctions.__init__)
+    params = list(sig.parameters.keys())
+    assert "loginName" in params, "Missing parameter 'loginName'"
+    assert "registerName" in params, "Missing parameter 'registerName'"
+
+def test_softgallerylanguage_appaccessfunctions_has_loginName():
+    assert hasattr(softGalleryLanguage_AppAccessFunctions, "loginName")
     descriptor = None
-    for klass in softGalleryLanguage::AppAccessFunctions.__mro__:
+    for klass in softGalleryLanguage_AppAccessFunctions.__mro__:
         if "loginName" in klass.__dict__:
             descriptor = klass.__dict__["loginName"]
             break
     assert isinstance(descriptor, property)
 
+def test_softgallerylanguage_appaccessfunctions_has_registerName():
+    assert hasattr(softGalleryLanguage_AppAccessFunctions, "registerName")
+    descriptor = None
+    for klass in softGalleryLanguage_AppAccessFunctions.__mro__:
+        if "registerName" in klass.__dict__:
+            descriptor = klass.__dict__["registerName"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_softgallerylanguage::profilemanagementfunctions_is_not_abstract():
-    assert not inspect.isabstract(softGalleryLanguage::ProfileManagementFunctions)
+
+def test_softgallerylanguage_profilemanagementfunctions_is_not_abstract():
+    assert not inspect.isabstract(softGalleryLanguage_ProfileManagementFunctions)
 
 
-def test_softgallerylanguage::profilemanagementfunctions_constructor_exists():
-    assert callable(softGalleryLanguage::ProfileManagementFunctions.__init__)
+def test_softgallerylanguage_profilemanagementfunctions_constructor_exists():
+    assert callable(softGalleryLanguage_ProfileManagementFunctions.__init__)
 
 
-def test_softgallerylanguage::profilemanagementfunctions_constructor_args():
-    sig = inspect.signature(softGalleryLanguage::ProfileManagementFunctions.__init__)
+def test_softgallerylanguage_profilemanagementfunctions_constructor_args():
+    sig = inspect.signature(softGalleryLanguage_ProfileManagementFunctions.__init__)
     params = list(sig.parameters.keys())
     assert "viewprofileName" in params, "Missing parameter 'viewprofileName'"
     assert "editProfileName" in params, "Missing parameter 'editProfileName'"
 
-def test_softgallerylanguage::profilemanagementfunctions_has_viewprofileName():
-    assert hasattr(softGalleryLanguage::ProfileManagementFunctions, "viewprofileName")
+def test_softgallerylanguage_profilemanagementfunctions_has_viewprofileName():
+    assert hasattr(softGalleryLanguage_ProfileManagementFunctions, "viewprofileName")
     descriptor = None
-    for klass in softGalleryLanguage::ProfileManagementFunctions.__mro__:
+    for klass in softGalleryLanguage_ProfileManagementFunctions.__mro__:
         if "viewprofileName" in klass.__dict__:
             descriptor = klass.__dict__["viewprofileName"]
             break
     assert isinstance(descriptor, property)
 
-def test_softgallerylanguage::profilemanagementfunctions_has_editProfileName():
-    assert hasattr(softGalleryLanguage::ProfileManagementFunctions, "editProfileName")
+def test_softgallerylanguage_profilemanagementfunctions_has_editProfileName():
+    assert hasattr(softGalleryLanguage_ProfileManagementFunctions, "editProfileName")
     descriptor = None
-    for klass in softGalleryLanguage::ProfileManagementFunctions.__mro__:
+    for klass in softGalleryLanguage_ProfileManagementFunctions.__mro__:
         if "editProfileName" in klass.__dict__:
             descriptor = klass.__dict__["editProfileName"]
             break
@@ -1890,65 +1722,107 @@ def test_softgallerylanguage::profilemanagementfunctions_has_editProfileName():
 
 
 
-def test_softgallerylanguage::landingactions_is_not_abstract():
-    assert not inspect.isabstract(softGalleryLanguage::LandingActions)
+def test_softgallerylanguage_landingactions_is_not_abstract():
+    assert not inspect.isabstract(softGalleryLanguage_LandingActions)
 
 
-def test_softgallerylanguage::landingactions_constructor_exists():
-    assert callable(softGalleryLanguage::LandingActions.__init__)
+def test_softgallerylanguage_landingactions_constructor_exists():
+    assert callable(softGalleryLanguage_LandingActions.__init__)
 
 
-def test_softgallerylanguage::landingactions_constructor_args():
-    sig = inspect.signature(softGalleryLanguage::LandingActions.__init__)
+def test_softgallerylanguage_landingactions_constructor_args():
+    sig = inspect.signature(softGalleryLanguage_LandingActions.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_softgallerylanguage::photoactions_is_not_abstract():
-    assert not inspect.isabstract(softGalleryLanguage::PhotoActions)
+def test_softgallerylanguage_photoactions_is_not_abstract():
+    assert not inspect.isabstract(softGalleryLanguage_PhotoActions)
 
 
-def test_softgallerylanguage::photoactions_constructor_exists():
-    assert callable(softGalleryLanguage::PhotoActions.__init__)
+def test_softgallerylanguage_photoactions_constructor_exists():
+    assert callable(softGalleryLanguage_PhotoActions.__init__)
 
 
-def test_softgallerylanguage::photoactions_constructor_args():
-    sig = inspect.signature(softGalleryLanguage::PhotoActions.__init__)
+def test_softgallerylanguage_photoactions_constructor_args():
+    sig = inspect.signature(softGalleryLanguage_PhotoActions.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_softgallerylanguage::albummanagement_is_not_abstract():
-    assert not inspect.isabstract(softGalleryLanguage::AlbumManagement)
+def test_softgallerylanguage_albummanagement_is_not_abstract():
+    assert not inspect.isabstract(softGalleryLanguage_AlbumManagement)
 
 
-def test_softgallerylanguage::albummanagement_constructor_exists():
-    assert callable(softGalleryLanguage::AlbumManagement.__init__)
+def test_softgallerylanguage_albummanagement_constructor_exists():
+    assert callable(softGalleryLanguage_AlbumManagement.__init__)
 
 
-def test_softgallerylanguage::albummanagement_constructor_args():
-    sig = inspect.signature(softGalleryLanguage::AlbumManagement.__init__)
+def test_softgallerylanguage_albummanagement_constructor_args():
+    sig = inspect.signature(softGalleryLanguage_AlbumManagement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_softgallerylanguage::amazonelasticcomputecloud_is_not_abstract():
-    assert not inspect.isabstract(softGalleryLanguage::AmazonElasticComputeCloud)
+def test_softgallerylanguage_appaccess_is_not_abstract():
+    assert not inspect.isabstract(softGalleryLanguage_AppAccess)
 
 
-def test_softgallerylanguage::amazonelasticcomputecloud_constructor_exists():
-    assert callable(softGalleryLanguage::AmazonElasticComputeCloud.__init__)
+def test_softgallerylanguage_appaccess_constructor_exists():
+    assert callable(softGalleryLanguage_AppAccess.__init__)
 
 
-def test_softgallerylanguage::amazonelasticcomputecloud_constructor_args():
-    sig = inspect.signature(softGalleryLanguage::AmazonElasticComputeCloud.__init__)
+def test_softgallerylanguage_appaccess_constructor_args():
+    sig = inspect.signature(softGalleryLanguage_AppAccess.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_softgallerylanguage_profilemanagement_is_not_abstract():
+    assert not inspect.isabstract(softGalleryLanguage_ProfileManagement)
+
+
+def test_softgallerylanguage_profilemanagement_constructor_exists():
+    assert callable(softGalleryLanguage_ProfileManagement.__init__)
+
+
+def test_softgallerylanguage_profilemanagement_constructor_args():
+    sig = inspect.signature(softGalleryLanguage_ProfileManagement.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_softgallerylanguage_functionalities_is_not_abstract():
+    assert not inspect.isabstract(softGalleryLanguage_Functionalities)
+
+
+def test_softgallerylanguage_functionalities_constructor_exists():
+    assert callable(softGalleryLanguage_Functionalities.__init__)
+
+
+def test_softgallerylanguage_functionalities_constructor_args():
+    sig = inspect.signature(softGalleryLanguage_Functionalities.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_softgallerylanguage_atributeuserdomain_is_not_abstract():
+    assert not inspect.isabstract(softGalleryLanguage_AtributeUserDomain)
+
+
+def test_softgallerylanguage_atributeuserdomain_constructor_exists():
+    assert callable(softGalleryLanguage_AtributeUserDomain.__init__)
+
+
+def test_softgallerylanguage_atributeuserdomain_constructor_args():
+    sig = inspect.signature(softGalleryLanguage_AtributeUserDomain.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_softgallerylanguage::amazonelasticcomputecloud_has_name():
-    assert hasattr(softGalleryLanguage::AmazonElasticComputeCloud, "name")
+def test_softgallerylanguage_atributeuserdomain_has_name():
+    assert hasattr(softGalleryLanguage_AtributeUserDomain, "name")
     descriptor = None
-    for klass in softGalleryLanguage::AmazonElasticComputeCloud.__mro__:
+    for klass in softGalleryLanguage_AtributeUserDomain.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -1956,23 +1830,23 @@ def test_softgallerylanguage::amazonelasticcomputecloud_has_name():
 
 
 
-def test_softgallerylanguage::metadata_is_not_abstract():
-    assert not inspect.isabstract(softGalleryLanguage::Metadata)
+def test_softgallerylanguage_atributealbum_is_not_abstract():
+    assert not inspect.isabstract(softGalleryLanguage_AtributeAlbum)
 
 
-def test_softgallerylanguage::metadata_constructor_exists():
-    assert callable(softGalleryLanguage::Metadata.__init__)
+def test_softgallerylanguage_atributealbum_constructor_exists():
+    assert callable(softGalleryLanguage_AtributeAlbum.__init__)
 
 
-def test_softgallerylanguage::metadata_constructor_args():
-    sig = inspect.signature(softGalleryLanguage::Metadata.__init__)
+def test_softgallerylanguage_atributealbum_constructor_args():
+    sig = inspect.signature(softGalleryLanguage_AtributeAlbum.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_softgallerylanguage::metadata_has_name():
-    assert hasattr(softGalleryLanguage::Metadata, "name")
+def test_softgallerylanguage_atributealbum_has_name():
+    assert hasattr(softGalleryLanguage_AtributeAlbum, "name")
     descriptor = None
-    for klass in softGalleryLanguage::Metadata.__mro__:
+    for klass in softGalleryLanguage_AtributeAlbum.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -1980,37 +1854,23 @@ def test_softgallerylanguage::metadata_has_name():
 
 
 
-def test_softgallerylanguage::amazonfile_is_not_abstract():
-    assert not inspect.isabstract(softGalleryLanguage::AmazonFile)
+def test_softgallerylanguage_atributephoto_is_not_abstract():
+    assert not inspect.isabstract(softGalleryLanguage_AtributePhoto)
 
 
-def test_softgallerylanguage::amazonfile_constructor_exists():
-    assert callable(softGalleryLanguage::AmazonFile.__init__)
+def test_softgallerylanguage_atributephoto_constructor_exists():
+    assert callable(softGalleryLanguage_AtributePhoto.__init__)
 
 
-def test_softgallerylanguage::amazonfile_constructor_args():
-    sig = inspect.signature(softGalleryLanguage::AmazonFile.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_softgallerylanguage::amazonfolder_is_not_abstract():
-    assert not inspect.isabstract(softGalleryLanguage::AmazonFolder)
-
-
-def test_softgallerylanguage::amazonfolder_constructor_exists():
-    assert callable(softGalleryLanguage::AmazonFolder.__init__)
-
-
-def test_softgallerylanguage::amazonfolder_constructor_args():
-    sig = inspect.signature(softGalleryLanguage::AmazonFolder.__init__)
+def test_softgallerylanguage_atributephoto_constructor_args():
+    sig = inspect.signature(softGalleryLanguage_AtributePhoto.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_softgallerylanguage::amazonfolder_has_name():
-    assert hasattr(softGalleryLanguage::AmazonFolder, "name")
+def test_softgallerylanguage_atributephoto_has_name():
+    assert hasattr(softGalleryLanguage_AtributePhoto, "name")
     descriptor = None
-    for klass in softGalleryLanguage::AmazonFolder.__mro__:
+    for klass in softGalleryLanguage_AtributePhoto.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -2018,23 +1878,23 @@ def test_softgallerylanguage::amazonfolder_has_name():
 
 
 
-def test_softgallerylanguage::onlyauthorized_is_not_abstract():
-    assert not inspect.isabstract(softGalleryLanguage::OnlyAuthorized)
+def test_softgallerylanguage_entities_is_not_abstract():
+    assert not inspect.isabstract(softGalleryLanguage_Entities)
 
 
-def test_softgallerylanguage::onlyauthorized_constructor_exists():
-    assert callable(softGalleryLanguage::OnlyAuthorized.__init__)
+def test_softgallerylanguage_entities_constructor_exists():
+    assert callable(softGalleryLanguage_Entities.__init__)
 
 
-def test_softgallerylanguage::onlyauthorized_constructor_args():
-    sig = inspect.signature(softGalleryLanguage::OnlyAuthorized.__init__)
+def test_softgallerylanguage_entities_constructor_args():
+    sig = inspect.signature(softGalleryLanguage_Entities.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_softgallerylanguage::onlyauthorized_has_name():
-    assert hasattr(softGalleryLanguage::OnlyAuthorized, "name")
+def test_softgallerylanguage_entities_has_name():
+    assert hasattr(softGalleryLanguage_Entities, "name")
     descriptor = None
-    for klass in softGalleryLanguage::OnlyAuthorized.__mro__:
+    for klass in softGalleryLanguage_Entities.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -2042,23 +1902,65 @@ def test_softgallerylanguage::onlyauthorized_has_name():
 
 
 
-def test_softgallerylanguage::bucketobjectsnotpublic_is_not_abstract():
-    assert not inspect.isabstract(softGalleryLanguage::BucketObjectsNotPublic)
+def test_softgallerylanguage_exceptionsdomain_is_not_abstract():
+    assert not inspect.isabstract(softGalleryLanguage_ExceptionsDomain)
 
 
-def test_softgallerylanguage::bucketobjectsnotpublic_constructor_exists():
-    assert callable(softGalleryLanguage::BucketObjectsNotPublic.__init__)
+def test_softgallerylanguage_exceptionsdomain_constructor_exists():
+    assert callable(softGalleryLanguage_ExceptionsDomain.__init__)
 
 
-def test_softgallerylanguage::bucketobjectsnotpublic_constructor_args():
-    sig = inspect.signature(softGalleryLanguage::BucketObjectsNotPublic.__init__)
+def test_softgallerylanguage_exceptionsdomain_constructor_args():
+    sig = inspect.signature(softGalleryLanguage_ExceptionsDomain.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_softgallerylanguage_functionality_is_not_abstract():
+    assert not inspect.isabstract(softGalleryLanguage_Functionality)
+
+
+def test_softgallerylanguage_functionality_constructor_exists():
+    assert callable(softGalleryLanguage_Functionality.__init__)
+
+
+def test_softgallerylanguage_functionality_constructor_args():
+    sig = inspect.signature(softGalleryLanguage_Functionality.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_softgallerylanguage_entity_is_not_abstract():
+    assert not inspect.isabstract(softGalleryLanguage_Entity)
+
+
+def test_softgallerylanguage_entity_constructor_exists():
+    assert callable(softGalleryLanguage_Entity.__init__)
+
+
+def test_softgallerylanguage_entity_constructor_args():
+    sig = inspect.signature(softGalleryLanguage_Entity.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_softgallerylanguage_domain_is_not_abstract():
+    assert not inspect.isabstract(softGalleryLanguage_Domain)
+
+
+def test_softgallerylanguage_domain_constructor_exists():
+    assert callable(softGalleryLanguage_Domain.__init__)
+
+
+def test_softgallerylanguage_domain_constructor_args():
+    sig = inspect.signature(softGalleryLanguage_Domain.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_softgallerylanguage::bucketobjectsnotpublic_has_name():
-    assert hasattr(softGalleryLanguage::BucketObjectsNotPublic, "name")
+def test_softgallerylanguage_domain_has_name():
+    assert hasattr(softGalleryLanguage_Domain, "name")
     descriptor = None
-    for klass in softGalleryLanguage::BucketObjectsNotPublic.__mro__:
+    for klass in softGalleryLanguage_Domain.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -2066,23 +1968,51 @@ def test_softgallerylanguage::bucketobjectsnotpublic_has_name():
 
 
 
-def test_softgallerylanguage::objectspublic_is_not_abstract():
-    assert not inspect.isabstract(softGalleryLanguage::ObjectsPublic)
+def test_softgallerylanguage_eobject_is_not_abstract():
+    assert not inspect.isabstract(softGalleryLanguage_EObject)
 
 
-def test_softgallerylanguage::objectspublic_constructor_exists():
-    assert callable(softGalleryLanguage::ObjectsPublic.__init__)
+def test_softgallerylanguage_eobject_constructor_exists():
+    assert callable(softGalleryLanguage_EObject.__init__)
 
 
-def test_softgallerylanguage::objectspublic_constructor_args():
-    sig = inspect.signature(softGalleryLanguage::ObjectsPublic.__init__)
+def test_softgallerylanguage_eobject_constructor_args():
+    sig = inspect.signature(softGalleryLanguage_EObject.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_softgallerylanguage_model_is_not_abstract():
+    assert not inspect.isabstract(softGalleryLanguage_Model)
+
+
+def test_softgallerylanguage_model_constructor_exists():
+    assert callable(softGalleryLanguage_Model.__init__)
+
+
+def test_softgallerylanguage_model_constructor_args():
+    sig = inspect.signature(softGalleryLanguage_Model.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_softgallerylanguage_amazonelasticcomputecloud_is_not_abstract():
+    assert not inspect.isabstract(softGalleryLanguage_AmazonElasticComputeCloud)
+
+
+def test_softgallerylanguage_amazonelasticcomputecloud_constructor_exists():
+    assert callable(softGalleryLanguage_AmazonElasticComputeCloud.__init__)
+
+
+def test_softgallerylanguage_amazonelasticcomputecloud_constructor_args():
+    sig = inspect.signature(softGalleryLanguage_AmazonElasticComputeCloud.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_softgallerylanguage::objectspublic_has_name():
-    assert hasattr(softGalleryLanguage::ObjectsPublic, "name")
+def test_softgallerylanguage_amazonelasticcomputecloud_has_name():
+    assert hasattr(softGalleryLanguage_AmazonElasticComputeCloud, "name")
     descriptor = None
-    for klass in softGalleryLanguage::ObjectsPublic.__mro__:
+    for klass in softGalleryLanguage_AmazonElasticComputeCloud.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -2090,37 +2020,23 @@ def test_softgallerylanguage::objectspublic_has_name():
 
 
 
-def test_softgallerylanguage::bucketaccess_is_not_abstract():
-    assert not inspect.isabstract(softGalleryLanguage::BucketAccess)
+def test_softgallerylanguage_metadata_is_not_abstract():
+    assert not inspect.isabstract(softGalleryLanguage_Metadata)
 
 
-def test_softgallerylanguage::bucketaccess_constructor_exists():
-    assert callable(softGalleryLanguage::BucketAccess.__init__)
+def test_softgallerylanguage_metadata_constructor_exists():
+    assert callable(softGalleryLanguage_Metadata.__init__)
 
 
-def test_softgallerylanguage::bucketaccess_constructor_args():
-    sig = inspect.signature(softGalleryLanguage::BucketAccess.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_softgallerylanguage::bucket_is_not_abstract():
-    assert not inspect.isabstract(softGalleryLanguage::Bucket)
-
-
-def test_softgallerylanguage::bucket_constructor_exists():
-    assert callable(softGalleryLanguage::Bucket.__init__)
-
-
-def test_softgallerylanguage::bucket_constructor_args():
-    sig = inspect.signature(softGalleryLanguage::Bucket.__init__)
+def test_softgallerylanguage_metadata_constructor_args():
+    sig = inspect.signature(softGalleryLanguage_Metadata.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_softgallerylanguage::bucket_has_name():
-    assert hasattr(softGalleryLanguage::Bucket, "name")
+def test_softgallerylanguage_metadata_has_name():
+    assert hasattr(softGalleryLanguage_Metadata, "name")
     descriptor = None
-    for klass in softGalleryLanguage::Bucket.__mro__:
+    for klass in softGalleryLanguage_Metadata.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -2128,23 +2044,37 @@ def test_softgallerylanguage::bucket_has_name():
 
 
 
-def test_softgallerylanguage::batchoperation_is_not_abstract():
-    assert not inspect.isabstract(softGalleryLanguage::BatchOperation)
+def test_softgallerylanguage_amazonfile_is_not_abstract():
+    assert not inspect.isabstract(softGalleryLanguage_AmazonFile)
 
 
-def test_softgallerylanguage::batchoperation_constructor_exists():
-    assert callable(softGalleryLanguage::BatchOperation.__init__)
+def test_softgallerylanguage_amazonfile_constructor_exists():
+    assert callable(softGalleryLanguage_AmazonFile.__init__)
 
 
-def test_softgallerylanguage::batchoperation_constructor_args():
-    sig = inspect.signature(softGalleryLanguage::BatchOperation.__init__)
+def test_softgallerylanguage_amazonfile_constructor_args():
+    sig = inspect.signature(softGalleryLanguage_AmazonFile.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_softgallerylanguage_amazonfolder_is_not_abstract():
+    assert not inspect.isabstract(softGalleryLanguage_AmazonFolder)
+
+
+def test_softgallerylanguage_amazonfolder_constructor_exists():
+    assert callable(softGalleryLanguage_AmazonFolder.__init__)
+
+
+def test_softgallerylanguage_amazonfolder_constructor_args():
+    sig = inspect.signature(softGalleryLanguage_AmazonFolder.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_softgallerylanguage::batchoperation_has_name():
-    assert hasattr(softGalleryLanguage::BatchOperation, "name")
+def test_softgallerylanguage_amazonfolder_has_name():
+    assert hasattr(softGalleryLanguage_AmazonFolder, "name")
     descriptor = None
-    for klass in softGalleryLanguage::BatchOperation.__mro__:
+    for klass in softGalleryLanguage_AmazonFolder.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -2152,37 +2082,23 @@ def test_softgallerylanguage::batchoperation_has_name():
 
 
 
-def test_softgallerylanguage::amazonsimplestorageservice_is_not_abstract():
-    assert not inspect.isabstract(softGalleryLanguage::AmazonSimpleStorageService)
+def test_softgallerylanguage_onlyauthorized_is_not_abstract():
+    assert not inspect.isabstract(softGalleryLanguage_OnlyAuthorized)
 
 
-def test_softgallerylanguage::amazonsimplestorageservice_constructor_exists():
-    assert callable(softGalleryLanguage::AmazonSimpleStorageService.__init__)
+def test_softgallerylanguage_onlyauthorized_constructor_exists():
+    assert callable(softGalleryLanguage_OnlyAuthorized.__init__)
 
 
-def test_softgallerylanguage::amazonsimplestorageservice_constructor_args():
-    sig = inspect.signature(softGalleryLanguage::AmazonSimpleStorageService.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_softgallerylanguage::clause_is_not_abstract():
-    assert not inspect.isabstract(softGalleryLanguage::Clause)
-
-
-def test_softgallerylanguage::clause_constructor_exists():
-    assert callable(softGalleryLanguage::Clause.__init__)
-
-
-def test_softgallerylanguage::clause_constructor_args():
-    sig = inspect.signature(softGalleryLanguage::Clause.__init__)
+def test_softgallerylanguage_onlyauthorized_constructor_args():
+    sig = inspect.signature(softGalleryLanguage_OnlyAuthorized.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_softgallerylanguage::clause_has_name():
-    assert hasattr(softGalleryLanguage::Clause, "name")
+def test_softgallerylanguage_onlyauthorized_has_name():
+    assert hasattr(softGalleryLanguage_OnlyAuthorized, "name")
     descriptor = None
-    for klass in softGalleryLanguage::Clause.__mro__:
+    for klass in softGalleryLanguage_OnlyAuthorized.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -2190,37 +2106,23 @@ def test_softgallerylanguage::clause_has_name():
 
 
 
-def test_softgallerylanguage::query_is_not_abstract():
-    assert not inspect.isabstract(softGalleryLanguage::Query)
+def test_softgallerylanguage_bucketobjectsnotpublic_is_not_abstract():
+    assert not inspect.isabstract(softGalleryLanguage_BucketObjectsNotPublic)
 
 
-def test_softgallerylanguage::query_constructor_exists():
-    assert callable(softGalleryLanguage::Query.__init__)
+def test_softgallerylanguage_bucketobjectsnotpublic_constructor_exists():
+    assert callable(softGalleryLanguage_BucketObjectsNotPublic.__init__)
 
 
-def test_softgallerylanguage::query_constructor_args():
-    sig = inspect.signature(softGalleryLanguage::Query.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_softgallerylanguage::privilege_is_not_abstract():
-    assert not inspect.isabstract(softGalleryLanguage::Privilege)
-
-
-def test_softgallerylanguage::privilege_constructor_exists():
-    assert callable(softGalleryLanguage::Privilege.__init__)
-
-
-def test_softgallerylanguage::privilege_constructor_args():
-    sig = inspect.signature(softGalleryLanguage::Privilege.__init__)
+def test_softgallerylanguage_bucketobjectsnotpublic_constructor_args():
+    sig = inspect.signature(softGalleryLanguage_BucketObjectsNotPublic.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_softgallerylanguage::privilege_has_name():
-    assert hasattr(softGalleryLanguage::Privilege, "name")
+def test_softgallerylanguage_bucketobjectsnotpublic_has_name():
+    assert hasattr(softGalleryLanguage_BucketObjectsNotPublic, "name")
     descriptor = None
-    for klass in softGalleryLanguage::Privilege.__mro__:
+    for klass in softGalleryLanguage_BucketObjectsNotPublic.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -2228,23 +2130,23 @@ def test_softgallerylanguage::privilege_has_name():
 
 
 
-def test_softgallerylanguage::postgresuser_is_not_abstract():
-    assert not inspect.isabstract(softGalleryLanguage::PostgresUser)
+def test_softgallerylanguage_objectspublic_is_not_abstract():
+    assert not inspect.isabstract(softGalleryLanguage_ObjectsPublic)
 
 
-def test_softgallerylanguage::postgresuser_constructor_exists():
-    assert callable(softGalleryLanguage::PostgresUser.__init__)
+def test_softgallerylanguage_objectspublic_constructor_exists():
+    assert callable(softGalleryLanguage_ObjectsPublic.__init__)
 
 
-def test_softgallerylanguage::postgresuser_constructor_args():
-    sig = inspect.signature(softGalleryLanguage::PostgresUser.__init__)
+def test_softgallerylanguage_objectspublic_constructor_args():
+    sig = inspect.signature(softGalleryLanguage_ObjectsPublic.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_softgallerylanguage::postgresuser_has_name():
-    assert hasattr(softGalleryLanguage::PostgresUser, "name")
+def test_softgallerylanguage_objectspublic_has_name():
+    assert hasattr(softGalleryLanguage_ObjectsPublic, "name")
     descriptor = None
-    for klass in softGalleryLanguage::PostgresUser.__mro__:
+    for klass in softGalleryLanguage_ObjectsPublic.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -2252,23 +2154,37 @@ def test_softgallerylanguage::postgresuser_has_name():
 
 
 
-def test_softgallerylanguage::function_is_not_abstract():
-    assert not inspect.isabstract(softGalleryLanguage::Function)
+def test_softgallerylanguage_bucketaccess_is_not_abstract():
+    assert not inspect.isabstract(softGalleryLanguage_BucketAccess)
 
 
-def test_softgallerylanguage::function_constructor_exists():
-    assert callable(softGalleryLanguage::Function.__init__)
+def test_softgallerylanguage_bucketaccess_constructor_exists():
+    assert callable(softGalleryLanguage_BucketAccess.__init__)
 
 
-def test_softgallerylanguage::function_constructor_args():
-    sig = inspect.signature(softGalleryLanguage::Function.__init__)
+def test_softgallerylanguage_bucketaccess_constructor_args():
+    sig = inspect.signature(softGalleryLanguage_BucketAccess.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_softgallerylanguage_bucket_is_not_abstract():
+    assert not inspect.isabstract(softGalleryLanguage_Bucket)
+
+
+def test_softgallerylanguage_bucket_constructor_exists():
+    assert callable(softGalleryLanguage_Bucket.__init__)
+
+
+def test_softgallerylanguage_bucket_constructor_args():
+    sig = inspect.signature(softGalleryLanguage_Bucket.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_softgallerylanguage::function_has_name():
-    assert hasattr(softGalleryLanguage::Function, "name")
+def test_softgallerylanguage_bucket_has_name():
+    assert hasattr(softGalleryLanguage_Bucket, "name")
     descriptor = None
-    for klass in softGalleryLanguage::Function.__mro__:
+    for klass in softGalleryLanguage_Bucket.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -2276,23 +2192,23 @@ def test_softgallerylanguage::function_has_name():
 
 
 
-def test_softgallerylanguage::trigger_is_not_abstract():
-    assert not inspect.isabstract(softGalleryLanguage::Trigger)
+def test_softgallerylanguage_batchoperation_is_not_abstract():
+    assert not inspect.isabstract(softGalleryLanguage_BatchOperation)
 
 
-def test_softgallerylanguage::trigger_constructor_exists():
-    assert callable(softGalleryLanguage::Trigger.__init__)
+def test_softgallerylanguage_batchoperation_constructor_exists():
+    assert callable(softGalleryLanguage_BatchOperation.__init__)
 
 
-def test_softgallerylanguage::trigger_constructor_args():
-    sig = inspect.signature(softGalleryLanguage::Trigger.__init__)
+def test_softgallerylanguage_batchoperation_constructor_args():
+    sig = inspect.signature(softGalleryLanguage_BatchOperation.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_softgallerylanguage::trigger_has_name():
-    assert hasattr(softGalleryLanguage::Trigger, "name")
+def test_softgallerylanguage_batchoperation_has_name():
+    assert hasattr(softGalleryLanguage_BatchOperation, "name")
     descriptor = None
-    for klass in softGalleryLanguage::Trigger.__mro__:
+    for klass in softGalleryLanguage_BatchOperation.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -2300,23 +2216,37 @@ def test_softgallerylanguage::trigger_has_name():
 
 
 
-def test_softgallerylanguage::policy_is_not_abstract():
-    assert not inspect.isabstract(softGalleryLanguage::Policy)
+def test_softgallerylanguage_amazonsimplestorageservice_is_not_abstract():
+    assert not inspect.isabstract(softGalleryLanguage_AmazonSimpleStorageService)
 
 
-def test_softgallerylanguage::policy_constructor_exists():
-    assert callable(softGalleryLanguage::Policy.__init__)
+def test_softgallerylanguage_amazonsimplestorageservice_constructor_exists():
+    assert callable(softGalleryLanguage_AmazonSimpleStorageService.__init__)
 
 
-def test_softgallerylanguage::policy_constructor_args():
-    sig = inspect.signature(softGalleryLanguage::Policy.__init__)
+def test_softgallerylanguage_amazonsimplestorageservice_constructor_args():
+    sig = inspect.signature(softGalleryLanguage_AmazonSimpleStorageService.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_softgallerylanguage_clause_is_not_abstract():
+    assert not inspect.isabstract(softGalleryLanguage_Clause)
+
+
+def test_softgallerylanguage_clause_constructor_exists():
+    assert callable(softGalleryLanguage_Clause.__init__)
+
+
+def test_softgallerylanguage_clause_constructor_args():
+    sig = inspect.signature(softGalleryLanguage_Clause.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_softgallerylanguage::policy_has_name():
-    assert hasattr(softGalleryLanguage::Policy, "name")
+def test_softgallerylanguage_clause_has_name():
+    assert hasattr(softGalleryLanguage_Clause, "name")
     descriptor = None
-    for klass in softGalleryLanguage::Policy.__mro__:
+    for klass in softGalleryLanguage_Clause.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -2324,23 +2254,37 @@ def test_softgallerylanguage::policy_has_name():
 
 
 
-def test_softgallerylanguage::publicaccess_is_not_abstract():
-    assert not inspect.isabstract(softGalleryLanguage::PublicAccess)
+def test_softgallerylanguage_query_is_not_abstract():
+    assert not inspect.isabstract(softGalleryLanguage_Query)
 
 
-def test_softgallerylanguage::publicaccess_constructor_exists():
-    assert callable(softGalleryLanguage::PublicAccess.__init__)
+def test_softgallerylanguage_query_constructor_exists():
+    assert callable(softGalleryLanguage_Query.__init__)
 
 
-def test_softgallerylanguage::publicaccess_constructor_args():
-    sig = inspect.signature(softGalleryLanguage::PublicAccess.__init__)
+def test_softgallerylanguage_query_constructor_args():
+    sig = inspect.signature(softGalleryLanguage_Query.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_softgallerylanguage_privilege_is_not_abstract():
+    assert not inspect.isabstract(softGalleryLanguage_Privilege)
+
+
+def test_softgallerylanguage_privilege_constructor_exists():
+    assert callable(softGalleryLanguage_Privilege.__init__)
+
+
+def test_softgallerylanguage_privilege_constructor_args():
+    sig = inspect.signature(softGalleryLanguage_Privilege.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_softgallerylanguage::publicaccess_has_name():
-    assert hasattr(softGalleryLanguage::PublicAccess, "name")
+def test_softgallerylanguage_privilege_has_name():
+    assert hasattr(softGalleryLanguage_Privilege, "name")
     descriptor = None
-    for klass in softGalleryLanguage::PublicAccess.__mro__:
+    for klass in softGalleryLanguage_Privilege.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -2348,23 +2292,23 @@ def test_softgallerylanguage::publicaccess_has_name():
 
 
 
-def test_softgallerylanguage::constraint_is_not_abstract():
-    assert not inspect.isabstract(softGalleryLanguage::Constraint)
+def test_softgallerylanguage_postgresuser_is_not_abstract():
+    assert not inspect.isabstract(softGalleryLanguage_PostgresUser)
 
 
-def test_softgallerylanguage::constraint_constructor_exists():
-    assert callable(softGalleryLanguage::Constraint.__init__)
+def test_softgallerylanguage_postgresuser_constructor_exists():
+    assert callable(softGalleryLanguage_PostgresUser.__init__)
 
 
-def test_softgallerylanguage::constraint_constructor_args():
-    sig = inspect.signature(softGalleryLanguage::Constraint.__init__)
+def test_softgallerylanguage_postgresuser_constructor_args():
+    sig = inspect.signature(softGalleryLanguage_PostgresUser.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_softgallerylanguage::constraint_has_name():
-    assert hasattr(softGalleryLanguage::Constraint, "name")
+def test_softgallerylanguage_postgresuser_has_name():
+    assert hasattr(softGalleryLanguage_PostgresUser, "name")
     descriptor = None
-    for klass in softGalleryLanguage::Constraint.__mro__:
+    for klass in softGalleryLanguage_PostgresUser.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -2372,23 +2316,23 @@ def test_softgallerylanguage::constraint_has_name():
 
 
 
-def test_softgallerylanguage::datatypedb_is_not_abstract():
-    assert not inspect.isabstract(softGalleryLanguage::DatatypeDB)
+def test_softgallerylanguage_function_is_not_abstract():
+    assert not inspect.isabstract(softGalleryLanguage_Function)
 
 
-def test_softgallerylanguage::datatypedb_constructor_exists():
-    assert callable(softGalleryLanguage::DatatypeDB.__init__)
+def test_softgallerylanguage_function_constructor_exists():
+    assert callable(softGalleryLanguage_Function.__init__)
 
 
-def test_softgallerylanguage::datatypedb_constructor_args():
-    sig = inspect.signature(softGalleryLanguage::DatatypeDB.__init__)
+def test_softgallerylanguage_function_constructor_args():
+    sig = inspect.signature(softGalleryLanguage_Function.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_softgallerylanguage::datatypedb_has_name():
-    assert hasattr(softGalleryLanguage::DatatypeDB, "name")
+def test_softgallerylanguage_function_has_name():
+    assert hasattr(softGalleryLanguage_Function, "name")
     descriptor = None
-    for klass in softGalleryLanguage::DatatypeDB.__mro__:
+    for klass in softGalleryLanguage_Function.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -2396,23 +2340,23 @@ def test_softgallerylanguage::datatypedb_has_name():
 
 
 
-def test_softgallerylanguage::columnp_is_not_abstract():
-    assert not inspect.isabstract(softGalleryLanguage::ColumnP)
+def test_softgallerylanguage_trigger_is_not_abstract():
+    assert not inspect.isabstract(softGalleryLanguage_Trigger)
 
 
-def test_softgallerylanguage::columnp_constructor_exists():
-    assert callable(softGalleryLanguage::ColumnP.__init__)
+def test_softgallerylanguage_trigger_constructor_exists():
+    assert callable(softGalleryLanguage_Trigger.__init__)
 
 
-def test_softgallerylanguage::columnp_constructor_args():
-    sig = inspect.signature(softGalleryLanguage::ColumnP.__init__)
+def test_softgallerylanguage_trigger_constructor_args():
+    sig = inspect.signature(softGalleryLanguage_Trigger.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_softgallerylanguage::columnp_has_name():
-    assert hasattr(softGalleryLanguage::ColumnP, "name")
+def test_softgallerylanguage_trigger_has_name():
+    assert hasattr(softGalleryLanguage_Trigger, "name")
     descriptor = None
-    for klass in softGalleryLanguage::ColumnP.__mro__:
+    for klass in softGalleryLanguage_Trigger.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -2420,23 +2364,23 @@ def test_softgallerylanguage::columnp_has_name():
 
 
 
-def test_softgallerylanguage::reftable::p_is_not_abstract():
-    assert not inspect.isabstract(softGalleryLanguage::RefTable::p)
+def test_softgallerylanguage_policy_is_not_abstract():
+    assert not inspect.isabstract(softGalleryLanguage_Policy)
 
 
-def test_softgallerylanguage::reftable::p_constructor_exists():
-    assert callable(softGalleryLanguage::RefTable::p.__init__)
+def test_softgallerylanguage_policy_constructor_exists():
+    assert callable(softGalleryLanguage_Policy.__init__)
 
 
-def test_softgallerylanguage::reftable::p_constructor_args():
-    sig = inspect.signature(softGalleryLanguage::RefTable::p.__init__)
+def test_softgallerylanguage_policy_constructor_args():
+    sig = inspect.signature(softGalleryLanguage_Policy.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_softgallerylanguage::reftable::p_has_name():
-    assert hasattr(softGalleryLanguage::RefTable::p, "name")
+def test_softgallerylanguage_policy_has_name():
+    assert hasattr(softGalleryLanguage_Policy, "name")
     descriptor = None
-    for klass in softGalleryLanguage::RefTable::p.__mro__:
+    for klass in softGalleryLanguage_Policy.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -2444,37 +2388,23 @@ def test_softgallerylanguage::reftable::p_has_name():
 
 
 
-def test_softgallerylanguage::foreignkeyref_is_not_abstract():
-    assert not inspect.isabstract(softGalleryLanguage::ForeignKeyRef)
+def test_softgallerylanguage_publicaccess_is_not_abstract():
+    assert not inspect.isabstract(softGalleryLanguage_PublicAccess)
 
 
-def test_softgallerylanguage::foreignkeyref_constructor_exists():
-    assert callable(softGalleryLanguage::ForeignKeyRef.__init__)
+def test_softgallerylanguage_publicaccess_constructor_exists():
+    assert callable(softGalleryLanguage_PublicAccess.__init__)
 
 
-def test_softgallerylanguage::foreignkeyref_constructor_args():
-    sig = inspect.signature(softGalleryLanguage::ForeignKeyRef.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_softgallerylanguage::foreignkey::n_is_not_abstract():
-    assert not inspect.isabstract(softGalleryLanguage::ForeignKey::n)
-
-
-def test_softgallerylanguage::foreignkey::n_constructor_exists():
-    assert callable(softGalleryLanguage::ForeignKey::n.__init__)
-
-
-def test_softgallerylanguage::foreignkey::n_constructor_args():
-    sig = inspect.signature(softGalleryLanguage::ForeignKey::n.__init__)
+def test_softgallerylanguage_publicaccess_constructor_args():
+    sig = inspect.signature(softGalleryLanguage_PublicAccess.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_softgallerylanguage::foreignkey::n_has_name():
-    assert hasattr(softGalleryLanguage::ForeignKey::n, "name")
+def test_softgallerylanguage_publicaccess_has_name():
+    assert hasattr(softGalleryLanguage_PublicAccess, "name")
     descriptor = None
-    for klass in softGalleryLanguage::ForeignKey::n.__mro__:
+    for klass in softGalleryLanguage_PublicAccess.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -2482,37 +2412,23 @@ def test_softgallerylanguage::foreignkey::n_has_name():
 
 
 
-def test_softgallerylanguage::foreignkey_is_not_abstract():
-    assert not inspect.isabstract(softGalleryLanguage::ForeignKey)
+def test_softgallerylanguage_constraint_is_not_abstract():
+    assert not inspect.isabstract(softGalleryLanguage_Constraint)
 
 
-def test_softgallerylanguage::foreignkey_constructor_exists():
-    assert callable(softGalleryLanguage::ForeignKey.__init__)
+def test_softgallerylanguage_constraint_constructor_exists():
+    assert callable(softGalleryLanguage_Constraint.__init__)
 
 
-def test_softgallerylanguage::foreignkey_constructor_args():
-    sig = inspect.signature(softGalleryLanguage::ForeignKey.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_softgallerylanguage::table::p_is_not_abstract():
-    assert not inspect.isabstract(softGalleryLanguage::Table::p)
-
-
-def test_softgallerylanguage::table::p_constructor_exists():
-    assert callable(softGalleryLanguage::Table::p.__init__)
-
-
-def test_softgallerylanguage::table::p_constructor_args():
-    sig = inspect.signature(softGalleryLanguage::Table::p.__init__)
+def test_softgallerylanguage_constraint_constructor_args():
+    sig = inspect.signature(softGalleryLanguage_Constraint.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_softgallerylanguage::table::p_has_name():
-    assert hasattr(softGalleryLanguage::Table::p, "name")
+def test_softgallerylanguage_constraint_has_name():
+    assert hasattr(softGalleryLanguage_Constraint, "name")
     descriptor = None
-    for klass in softGalleryLanguage::Table::p.__mro__:
+    for klass in softGalleryLanguage_Constraint.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -2520,23 +2436,23 @@ def test_softgallerylanguage::table::p_has_name():
 
 
 
-def test_softgallerylanguage::viewschema_is_not_abstract():
-    assert not inspect.isabstract(softGalleryLanguage::ViewSchema)
+def test_softgallerylanguage_datatypedb_is_not_abstract():
+    assert not inspect.isabstract(softGalleryLanguage_DatatypeDB)
 
 
-def test_softgallerylanguage::viewschema_constructor_exists():
-    assert callable(softGalleryLanguage::ViewSchema.__init__)
+def test_softgallerylanguage_datatypedb_constructor_exists():
+    assert callable(softGalleryLanguage_DatatypeDB.__init__)
 
 
-def test_softgallerylanguage::viewschema_constructor_args():
-    sig = inspect.signature(softGalleryLanguage::ViewSchema.__init__)
+def test_softgallerylanguage_datatypedb_constructor_args():
+    sig = inspect.signature(softGalleryLanguage_DatatypeDB.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_softgallerylanguage::viewschema_has_name():
-    assert hasattr(softGalleryLanguage::ViewSchema, "name")
+def test_softgallerylanguage_datatypedb_has_name():
+    assert hasattr(softGalleryLanguage_DatatypeDB, "name")
     descriptor = None
-    for klass in softGalleryLanguage::ViewSchema.__mro__:
+    for klass in softGalleryLanguage_DatatypeDB.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -2544,23 +2460,23 @@ def test_softgallerylanguage::viewschema_has_name():
 
 
 
-def test_softgallerylanguage::index::p_is_not_abstract():
-    assert not inspect.isabstract(softGalleryLanguage::Index::p)
+def test_softgallerylanguage_columnp_is_not_abstract():
+    assert not inspect.isabstract(softGalleryLanguage_ColumnP)
 
 
-def test_softgallerylanguage::index::p_constructor_exists():
-    assert callable(softGalleryLanguage::Index::p.__init__)
+def test_softgallerylanguage_columnp_constructor_exists():
+    assert callable(softGalleryLanguage_ColumnP.__init__)
 
 
-def test_softgallerylanguage::index::p_constructor_args():
-    sig = inspect.signature(softGalleryLanguage::Index::p.__init__)
+def test_softgallerylanguage_columnp_constructor_args():
+    sig = inspect.signature(softGalleryLanguage_ColumnP.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_softgallerylanguage::index::p_has_name():
-    assert hasattr(softGalleryLanguage::Index::p, "name")
+def test_softgallerylanguage_columnp_has_name():
+    assert hasattr(softGalleryLanguage_ColumnP, "name")
     descriptor = None
-    for klass in softGalleryLanguage::Index::p.__mro__:
+    for klass in softGalleryLanguage_ColumnP.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -2568,37 +2484,23 @@ def test_softgallerylanguage::index::p_has_name():
 
 
 
-def test_softgallerylanguage::schema_is_not_abstract():
-    assert not inspect.isabstract(softGalleryLanguage::Schema)
+def test_softgallerylanguage_reftable_p_is_not_abstract():
+    assert not inspect.isabstract(softGalleryLanguage_RefTable_p)
 
 
-def test_softgallerylanguage::schema_constructor_exists():
-    assert callable(softGalleryLanguage::Schema.__init__)
+def test_softgallerylanguage_reftable_p_constructor_exists():
+    assert callable(softGalleryLanguage_RefTable_p.__init__)
 
 
-def test_softgallerylanguage::schema_constructor_args():
-    sig = inspect.signature(softGalleryLanguage::Schema.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_softgallerylanguage::database_is_not_abstract():
-    assert not inspect.isabstract(softGalleryLanguage::Database)
-
-
-def test_softgallerylanguage::database_constructor_exists():
-    assert callable(softGalleryLanguage::Database.__init__)
-
-
-def test_softgallerylanguage::database_constructor_args():
-    sig = inspect.signature(softGalleryLanguage::Database.__init__)
+def test_softgallerylanguage_reftable_p_constructor_args():
+    sig = inspect.signature(softGalleryLanguage_RefTable_p.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_softgallerylanguage::database_has_name():
-    assert hasattr(softGalleryLanguage::Database, "name")
+def test_softgallerylanguage_reftable_p_has_name():
+    assert hasattr(softGalleryLanguage_RefTable_p, "name")
     descriptor = None
-    for klass in softGalleryLanguage::Database.__mro__:
+    for klass in softGalleryLanguage_RefTable_p.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -2606,37 +2508,37 @@ def test_softgallerylanguage::database_has_name():
 
 
 
-def test_softgallerylanguage::cluster_is_not_abstract():
-    assert not inspect.isabstract(softGalleryLanguage::Cluster)
+def test_softgallerylanguage_foreignkeyref_is_not_abstract():
+    assert not inspect.isabstract(softGalleryLanguage_ForeignKeyRef)
 
 
-def test_softgallerylanguage::cluster_constructor_exists():
-    assert callable(softGalleryLanguage::Cluster.__init__)
+def test_softgallerylanguage_foreignkeyref_constructor_exists():
+    assert callable(softGalleryLanguage_ForeignKeyRef.__init__)
 
 
-def test_softgallerylanguage::cluster_constructor_args():
-    sig = inspect.signature(softGalleryLanguage::Cluster.__init__)
+def test_softgallerylanguage_foreignkeyref_constructor_args():
+    sig = inspect.signature(softGalleryLanguage_ForeignKeyRef.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_softgallerylanguage::row_is_not_abstract():
-    assert not inspect.isabstract(softGalleryLanguage::Row)
+def test_softgallerylanguage_foreignkey_n_is_not_abstract():
+    assert not inspect.isabstract(softGalleryLanguage_ForeignKey_n)
 
 
-def test_softgallerylanguage::row_constructor_exists():
-    assert callable(softGalleryLanguage::Row.__init__)
+def test_softgallerylanguage_foreignkey_n_constructor_exists():
+    assert callable(softGalleryLanguage_ForeignKey_n.__init__)
 
 
-def test_softgallerylanguage::row_constructor_args():
-    sig = inspect.signature(softGalleryLanguage::Row.__init__)
+def test_softgallerylanguage_foreignkey_n_constructor_args():
+    sig = inspect.signature(softGalleryLanguage_ForeignKey_n.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_softgallerylanguage::row_has_name():
-    assert hasattr(softGalleryLanguage::Row, "name")
+def test_softgallerylanguage_foreignkey_n_has_name():
+    assert hasattr(softGalleryLanguage_ForeignKey_n, "name")
     descriptor = None
-    for klass in softGalleryLanguage::Row.__mro__:
+    for klass in softGalleryLanguage_ForeignKey_n.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -2644,23 +2546,37 @@ def test_softgallerylanguage::row_has_name():
 
 
 
-def test_softgallerylanguage::reactinformation_is_not_abstract():
-    assert not inspect.isabstract(softGalleryLanguage::ReactInformation)
+def test_softgallerylanguage_foreignkey_is_not_abstract():
+    assert not inspect.isabstract(softGalleryLanguage_ForeignKey)
 
 
-def test_softgallerylanguage::reactinformation_constructor_exists():
-    assert callable(softGalleryLanguage::ReactInformation.__init__)
+def test_softgallerylanguage_foreignkey_constructor_exists():
+    assert callable(softGalleryLanguage_ForeignKey.__init__)
 
 
-def test_softgallerylanguage::reactinformation_constructor_args():
-    sig = inspect.signature(softGalleryLanguage::ReactInformation.__init__)
+def test_softgallerylanguage_foreignkey_constructor_args():
+    sig = inspect.signature(softGalleryLanguage_ForeignKey.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_softgallerylanguage_table_p_is_not_abstract():
+    assert not inspect.isabstract(softGalleryLanguage_Table_p)
+
+
+def test_softgallerylanguage_table_p_constructor_exists():
+    assert callable(softGalleryLanguage_Table_p.__init__)
+
+
+def test_softgallerylanguage_table_p_constructor_args():
+    sig = inspect.signature(softGalleryLanguage_Table_p.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_softgallerylanguage::reactinformation_has_name():
-    assert hasattr(softGalleryLanguage::ReactInformation, "name")
+def test_softgallerylanguage_table_p_has_name():
+    assert hasattr(softGalleryLanguage_Table_p, "name")
     descriptor = None
-    for klass in softGalleryLanguage::ReactInformation.__mro__:
+    for klass in softGalleryLanguage_Table_p.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -2668,23 +2584,23 @@ def test_softgallerylanguage::reactinformation_has_name():
 
 
 
-def test_softgallerylanguage::reactlibrary_is_not_abstract():
-    assert not inspect.isabstract(softGalleryLanguage::ReactLibrary)
+def test_softgallerylanguage_viewschema_is_not_abstract():
+    assert not inspect.isabstract(softGalleryLanguage_ViewSchema)
 
 
-def test_softgallerylanguage::reactlibrary_constructor_exists():
-    assert callable(softGalleryLanguage::ReactLibrary.__init__)
+def test_softgallerylanguage_viewschema_constructor_exists():
+    assert callable(softGalleryLanguage_ViewSchema.__init__)
 
 
-def test_softgallerylanguage::reactlibrary_constructor_args():
-    sig = inspect.signature(softGalleryLanguage::ReactLibrary.__init__)
+def test_softgallerylanguage_viewschema_constructor_args():
+    sig = inspect.signature(softGalleryLanguage_ViewSchema.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_softgallerylanguage::reactlibrary_has_name():
-    assert hasattr(softGalleryLanguage::ReactLibrary, "name")
+def test_softgallerylanguage_viewschema_has_name():
+    assert hasattr(softGalleryLanguage_ViewSchema, "name")
     descriptor = None
-    for klass in softGalleryLanguage::ReactLibrary.__mro__:
+    for klass in softGalleryLanguage_ViewSchema.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -2692,23 +2608,23 @@ def test_softgallerylanguage::reactlibrary_has_name():
 
 
 
-def test_softgallerylanguage::reactsrelationserv_is_not_abstract():
-    assert not inspect.isabstract(softGalleryLanguage::ReactsRelationServ)
+def test_softgallerylanguage_index_p_is_not_abstract():
+    assert not inspect.isabstract(softGalleryLanguage_Index_p)
 
 
-def test_softgallerylanguage::reactsrelationserv_constructor_exists():
-    assert callable(softGalleryLanguage::ReactsRelationServ.__init__)
+def test_softgallerylanguage_index_p_constructor_exists():
+    assert callable(softGalleryLanguage_Index_p.__init__)
 
 
-def test_softgallerylanguage::reactsrelationserv_constructor_args():
-    sig = inspect.signature(softGalleryLanguage::ReactsRelationServ.__init__)
+def test_softgallerylanguage_index_p_constructor_args():
+    sig = inspect.signature(softGalleryLanguage_Index_p.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_softgallerylanguage::reactsrelationserv_has_name():
-    assert hasattr(softGalleryLanguage::ReactsRelationServ, "name")
+def test_softgallerylanguage_index_p_has_name():
+    assert hasattr(softGalleryLanguage_Index_p, "name")
     descriptor = None
-    for klass in softGalleryLanguage::ReactsRelationServ.__mro__:
+    for klass in softGalleryLanguage_Index_p.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -2716,33 +2632,181 @@ def test_softgallerylanguage::reactsrelationserv_has_name():
 
 
 
-def test_softgallerylanguage::reactservicerequestprops_is_not_abstract():
-    assert not inspect.isabstract(softGalleryLanguage::ReactServiceRequestProps)
+def test_softgallerylanguage_schema_is_not_abstract():
+    assert not inspect.isabstract(softGalleryLanguage_Schema)
 
 
-def test_softgallerylanguage::reactservicerequestprops_constructor_exists():
-    assert callable(softGalleryLanguage::ReactServiceRequestProps.__init__)
+def test_softgallerylanguage_schema_constructor_exists():
+    assert callable(softGalleryLanguage_Schema.__init__)
 
 
-def test_softgallerylanguage::reactservicerequestprops_constructor_args():
-    sig = inspect.signature(softGalleryLanguage::ReactServiceRequestProps.__init__)
+def test_softgallerylanguage_schema_constructor_args():
+    sig = inspect.signature(softGalleryLanguage_Schema.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_softgallerylanguage_database_is_not_abstract():
+    assert not inspect.isabstract(softGalleryLanguage_Database)
+
+
+def test_softgallerylanguage_database_constructor_exists():
+    assert callable(softGalleryLanguage_Database.__init__)
+
+
+def test_softgallerylanguage_database_constructor_args():
+    sig = inspect.signature(softGalleryLanguage_Database.__init__)
+    params = list(sig.parameters.keys())
+    assert "name" in params, "Missing parameter 'name'"
+
+def test_softgallerylanguage_database_has_name():
+    assert hasattr(softGalleryLanguage_Database, "name")
+    descriptor = None
+    for klass in softGalleryLanguage_Database.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_softgallerylanguage_cluster_is_not_abstract():
+    assert not inspect.isabstract(softGalleryLanguage_Cluster)
+
+
+def test_softgallerylanguage_cluster_constructor_exists():
+    assert callable(softGalleryLanguage_Cluster.__init__)
+
+
+def test_softgallerylanguage_cluster_constructor_args():
+    sig = inspect.signature(softGalleryLanguage_Cluster.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_softgallerylanguage_row_is_not_abstract():
+    assert not inspect.isabstract(softGalleryLanguage_Row)
+
+
+def test_softgallerylanguage_row_constructor_exists():
+    assert callable(softGalleryLanguage_Row.__init__)
+
+
+def test_softgallerylanguage_row_constructor_args():
+    sig = inspect.signature(softGalleryLanguage_Row.__init__)
+    params = list(sig.parameters.keys())
+    assert "name" in params, "Missing parameter 'name'"
+
+def test_softgallerylanguage_row_has_name():
+    assert hasattr(softGalleryLanguage_Row, "name")
+    descriptor = None
+    for klass in softGalleryLanguage_Row.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_softgallerylanguage_reactinformation_is_not_abstract():
+    assert not inspect.isabstract(softGalleryLanguage_ReactInformation)
+
+
+def test_softgallerylanguage_reactinformation_constructor_exists():
+    assert callable(softGalleryLanguage_ReactInformation.__init__)
+
+
+def test_softgallerylanguage_reactinformation_constructor_args():
+    sig = inspect.signature(softGalleryLanguage_ReactInformation.__init__)
+    params = list(sig.parameters.keys())
+    assert "name" in params, "Missing parameter 'name'"
+
+def test_softgallerylanguage_reactinformation_has_name():
+    assert hasattr(softGalleryLanguage_ReactInformation, "name")
+    descriptor = None
+    for klass in softGalleryLanguage_ReactInformation.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_softgallerylanguage_reactlibrary_is_not_abstract():
+    assert not inspect.isabstract(softGalleryLanguage_ReactLibrary)
+
+
+def test_softgallerylanguage_reactlibrary_constructor_exists():
+    assert callable(softGalleryLanguage_ReactLibrary.__init__)
+
+
+def test_softgallerylanguage_reactlibrary_constructor_args():
+    sig = inspect.signature(softGalleryLanguage_ReactLibrary.__init__)
+    params = list(sig.parameters.keys())
+    assert "name" in params, "Missing parameter 'name'"
+
+def test_softgallerylanguage_reactlibrary_has_name():
+    assert hasattr(softGalleryLanguage_ReactLibrary, "name")
+    descriptor = None
+    for klass in softGalleryLanguage_ReactLibrary.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_softgallerylanguage_reactsrelationserv_is_not_abstract():
+    assert not inspect.isabstract(softGalleryLanguage_ReactsRelationServ)
+
+
+def test_softgallerylanguage_reactsrelationserv_constructor_exists():
+    assert callable(softGalleryLanguage_ReactsRelationServ.__init__)
+
+
+def test_softgallerylanguage_reactsrelationserv_constructor_args():
+    sig = inspect.signature(softGalleryLanguage_ReactsRelationServ.__init__)
+    params = list(sig.parameters.keys())
+    assert "name" in params, "Missing parameter 'name'"
+
+def test_softgallerylanguage_reactsrelationserv_has_name():
+    assert hasattr(softGalleryLanguage_ReactsRelationServ, "name")
+    descriptor = None
+    for klass in softGalleryLanguage_ReactsRelationServ.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_softgallerylanguage_reactservicerequestprops_is_not_abstract():
+    assert not inspect.isabstract(softGalleryLanguage_ReactServiceRequestProps)
+
+
+def test_softgallerylanguage_reactservicerequestprops_constructor_exists():
+    assert callable(softGalleryLanguage_ReactServiceRequestProps.__init__)
+
+
+def test_softgallerylanguage_reactservicerequestprops_constructor_args():
+    sig = inspect.signature(softGalleryLanguage_ReactServiceRequestProps.__init__)
     params = list(sig.parameters.keys())
     assert "reqPropName" in params, "Missing parameter 'reqPropName'"
     assert "reqPropDescription" in params, "Missing parameter 'reqPropDescription'"
 
-def test_softgallerylanguage::reactservicerequestprops_has_reqPropName():
-    assert hasattr(softGalleryLanguage::ReactServiceRequestProps, "reqPropName")
+def test_softgallerylanguage_reactservicerequestprops_has_reqPropName():
+    assert hasattr(softGalleryLanguage_ReactServiceRequestProps, "reqPropName")
     descriptor = None
-    for klass in softGalleryLanguage::ReactServiceRequestProps.__mro__:
+    for klass in softGalleryLanguage_ReactServiceRequestProps.__mro__:
         if "reqPropName" in klass.__dict__:
             descriptor = klass.__dict__["reqPropName"]
             break
     assert isinstance(descriptor, property)
 
-def test_softgallerylanguage::reactservicerequestprops_has_reqPropDescription():
-    assert hasattr(softGalleryLanguage::ReactServiceRequestProps, "reqPropDescription")
+def test_softgallerylanguage_reactservicerequestprops_has_reqPropDescription():
+    assert hasattr(softGalleryLanguage_ReactServiceRequestProps, "reqPropDescription")
     descriptor = None
-    for klass in softGalleryLanguage::ReactServiceRequestProps.__mro__:
+    for klass in softGalleryLanguage_ReactServiceRequestProps.__mro__:
         if "reqPropDescription" in klass.__dict__:
             descriptor = klass.__dict__["reqPropDescription"]
             break
@@ -2750,37 +2814,37 @@ def test_softgallerylanguage::reactservicerequestprops_has_reqPropDescription():
 
 
 
-def test_softgallerylanguage::reactservicecontrequest_is_not_abstract():
-    assert not inspect.isabstract(softGalleryLanguage::ReactServiceContRequest)
+def test_softgallerylanguage_reactservicecontrequest_is_not_abstract():
+    assert not inspect.isabstract(softGalleryLanguage_ReactServiceContRequest)
 
 
-def test_softgallerylanguage::reactservicecontrequest_constructor_exists():
-    assert callable(softGalleryLanguage::ReactServiceContRequest.__init__)
+def test_softgallerylanguage_reactservicecontrequest_constructor_exists():
+    assert callable(softGalleryLanguage_ReactServiceContRequest.__init__)
 
 
-def test_softgallerylanguage::reactservicecontrequest_constructor_args():
-    sig = inspect.signature(softGalleryLanguage::ReactServiceContRequest.__init__)
+def test_softgallerylanguage_reactservicecontrequest_constructor_args():
+    sig = inspect.signature(softGalleryLanguage_ReactServiceContRequest.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_softgallerylanguage::reactservicecontent_is_not_abstract():
-    assert not inspect.isabstract(softGalleryLanguage::ReactServiceContent)
+def test_softgallerylanguage_reactservicecontent_is_not_abstract():
+    assert not inspect.isabstract(softGalleryLanguage_ReactServiceContent)
 
 
-def test_softgallerylanguage::reactservicecontent_constructor_exists():
-    assert callable(softGalleryLanguage::ReactServiceContent.__init__)
+def test_softgallerylanguage_reactservicecontent_constructor_exists():
+    assert callable(softGalleryLanguage_ReactServiceContent.__init__)
 
 
-def test_softgallerylanguage::reactservicecontent_constructor_args():
-    sig = inspect.signature(softGalleryLanguage::ReactServiceContent.__init__)
+def test_softgallerylanguage_reactservicecontent_constructor_args():
+    sig = inspect.signature(softGalleryLanguage_ReactServiceContent.__init__)
     params = list(sig.parameters.keys())
     assert "functName" in params, "Missing parameter 'functName'"
 
-def test_softgallerylanguage::reactservicecontent_has_functName():
-    assert hasattr(softGalleryLanguage::ReactServiceContent, "functName")
+def test_softgallerylanguage_reactservicecontent_has_functName():
+    assert hasattr(softGalleryLanguage_ReactServiceContent, "functName")
     descriptor = None
-    for klass in softGalleryLanguage::ReactServiceContent.__mro__:
+    for klass in softGalleryLanguage_ReactServiceContent.__mro__:
         if "functName" in klass.__dict__:
             descriptor = klass.__dict__["functName"]
             break
@@ -2788,23 +2852,23 @@ def test_softgallerylanguage::reactservicecontent_has_functName():
 
 
 
-def test_softgallerylanguage::reactservicestype_is_not_abstract():
-    assert not inspect.isabstract(softGalleryLanguage::ReactServicesType)
+def test_softgallerylanguage_reactservicestype_is_not_abstract():
+    assert not inspect.isabstract(softGalleryLanguage_ReactServicesType)
 
 
-def test_softgallerylanguage::reactservicestype_constructor_exists():
-    assert callable(softGalleryLanguage::ReactServicesType.__init__)
+def test_softgallerylanguage_reactservicestype_constructor_exists():
+    assert callable(softGalleryLanguage_ReactServicesType.__init__)
 
 
-def test_softgallerylanguage::reactservicestype_constructor_args():
-    sig = inspect.signature(softGalleryLanguage::ReactServicesType.__init__)
+def test_softgallerylanguage_reactservicestype_constructor_args():
+    sig = inspect.signature(softGalleryLanguage_ReactServicesType.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_softgallerylanguage::reactservicestype_has_name():
-    assert hasattr(softGalleryLanguage::ReactServicesType, "name")
+def test_softgallerylanguage_reactservicestype_has_name():
+    assert hasattr(softGalleryLanguage_ReactServicesType, "name")
     descriptor = None
-    for klass in softGalleryLanguage::ReactServicesType.__mro__:
+    for klass in softGalleryLanguage_ReactServicesType.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -2812,51 +2876,51 @@ def test_softgallerylanguage::reactservicestype_has_name():
 
 
 
-def test_softgallerylanguage::reactservicesrelation_is_not_abstract():
-    assert not inspect.isabstract(softGalleryLanguage::ReactServicesRelation)
+def test_softgallerylanguage_reactservicesrelation_is_not_abstract():
+    assert not inspect.isabstract(softGalleryLanguage_ReactServicesRelation)
 
 
-def test_softgallerylanguage::reactservicesrelation_constructor_exists():
-    assert callable(softGalleryLanguage::ReactServicesRelation.__init__)
+def test_softgallerylanguage_reactservicesrelation_constructor_exists():
+    assert callable(softGalleryLanguage_ReactServicesRelation.__init__)
 
 
-def test_softgallerylanguage::reactservicesrelation_constructor_args():
-    sig = inspect.signature(softGalleryLanguage::ReactServicesRelation.__init__)
+def test_softgallerylanguage_reactservicesrelation_constructor_args():
+    sig = inspect.signature(softGalleryLanguage_ReactServicesRelation.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_softgallerylanguage::reactactionscontent_is_not_abstract():
-    assert not inspect.isabstract(softGalleryLanguage::ReactActionsContent)
+def test_softgallerylanguage_reactactionscontent_is_not_abstract():
+    assert not inspect.isabstract(softGalleryLanguage_ReactActionsContent)
 
 
-def test_softgallerylanguage::reactactionscontent_constructor_exists():
-    assert callable(softGalleryLanguage::ReactActionsContent.__init__)
+def test_softgallerylanguage_reactactionscontent_constructor_exists():
+    assert callable(softGalleryLanguage_ReactActionsContent.__init__)
 
 
-def test_softgallerylanguage::reactactionscontent_constructor_args():
-    sig = inspect.signature(softGalleryLanguage::ReactActionsContent.__init__)
+def test_softgallerylanguage_reactactionscontent_constructor_args():
+    sig = inspect.signature(softGalleryLanguage_ReactActionsContent.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_softgallerylanguage::stylepropertiescontent_is_not_abstract():
-    assert not inspect.isabstract(softGalleryLanguage::StylePropertiesContent)
+def test_softgallerylanguage_stylepropertiescontent_is_not_abstract():
+    assert not inspect.isabstract(softGalleryLanguage_StylePropertiesContent)
 
 
-def test_softgallerylanguage::stylepropertiescontent_constructor_exists():
-    assert callable(softGalleryLanguage::StylePropertiesContent.__init__)
+def test_softgallerylanguage_stylepropertiescontent_constructor_exists():
+    assert callable(softGalleryLanguage_StylePropertiesContent.__init__)
 
 
-def test_softgallerylanguage::stylepropertiescontent_constructor_args():
-    sig = inspect.signature(softGalleryLanguage::StylePropertiesContent.__init__)
+def test_softgallerylanguage_stylepropertiescontent_constructor_args():
+    sig = inspect.signature(softGalleryLanguage_StylePropertiesContent.__init__)
     params = list(sig.parameters.keys())
     assert "propName" in params, "Missing parameter 'propName'"
 
-def test_softgallerylanguage::stylepropertiescontent_has_propName():
-    assert hasattr(softGalleryLanguage::StylePropertiesContent, "propName")
+def test_softgallerylanguage_stylepropertiescontent_has_propName():
+    assert hasattr(softGalleryLanguage_StylePropertiesContent, "propName")
     descriptor = None
-    for klass in softGalleryLanguage::StylePropertiesContent.__mro__:
+    for klass in softGalleryLanguage_StylePropertiesContent.__mro__:
         if "propName" in klass.__dict__:
             descriptor = klass.__dict__["propName"]
             break
@@ -2864,23 +2928,23 @@ def test_softgallerylanguage::stylepropertiescontent_has_propName():
 
 
 
-def test_softgallerylanguage::componentsstylescontent_is_not_abstract():
-    assert not inspect.isabstract(softGalleryLanguage::ComponentsStylesContent)
+def test_softgallerylanguage_componentsstylescontent_is_not_abstract():
+    assert not inspect.isabstract(softGalleryLanguage_ComponentsStylesContent)
 
 
-def test_softgallerylanguage::componentsstylescontent_constructor_exists():
-    assert callable(softGalleryLanguage::ComponentsStylesContent.__init__)
+def test_softgallerylanguage_componentsstylescontent_constructor_exists():
+    assert callable(softGalleryLanguage_ComponentsStylesContent.__init__)
 
 
-def test_softgallerylanguage::componentsstylescontent_constructor_args():
-    sig = inspect.signature(softGalleryLanguage::ComponentsStylesContent.__init__)
+def test_softgallerylanguage_componentsstylescontent_constructor_args():
+    sig = inspect.signature(softGalleryLanguage_ComponentsStylesContent.__init__)
     params = list(sig.parameters.keys())
     assert "nameStyle" in params, "Missing parameter 'nameStyle'"
 
-def test_softgallerylanguage::componentsstylescontent_has_nameStyle():
-    assert hasattr(softGalleryLanguage::ComponentsStylesContent, "nameStyle")
+def test_softgallerylanguage_componentsstylescontent_has_nameStyle():
+    assert hasattr(softGalleryLanguage_ComponentsStylesContent, "nameStyle")
     descriptor = None
-    for klass in softGalleryLanguage::ComponentsStylesContent.__mro__:
+    for klass in softGalleryLanguage_ComponentsStylesContent.__mro__:
         if "nameStyle" in klass.__dict__:
             descriptor = klass.__dict__["nameStyle"]
             break
@@ -2888,67 +2952,67 @@ def test_softgallerylanguage::componentsstylescontent_has_nameStyle():
 
 
 
-def test_softgallerylanguage::propstype_is_not_abstract():
-    assert not inspect.isabstract(softGalleryLanguage::PropsType)
+def test_softgallerylanguage_propstype_is_not_abstract():
+    assert not inspect.isabstract(softGalleryLanguage_PropsType)
 
 
-def test_softgallerylanguage::propstype_constructor_exists():
-    assert callable(softGalleryLanguage::PropsType.__init__)
+def test_softgallerylanguage_propstype_constructor_exists():
+    assert callable(softGalleryLanguage_PropsType.__init__)
 
 
-def test_softgallerylanguage::propstype_constructor_args():
-    sig = inspect.signature(softGalleryLanguage::PropsType.__init__)
+def test_softgallerylanguage_propstype_constructor_args():
+    sig = inspect.signature(softGalleryLanguage_PropsType.__init__)
     params = list(sig.parameters.keys())
-    assert "propsdatas" in params, "Missing parameter 'propsdatas'"
     assert "nameProps" in params, "Missing parameter 'nameProps'"
+    assert "propsdatas" in params, "Missing parameter 'propsdatas'"
 
-def test_softgallerylanguage::propstype_has_propsdatas():
-    assert hasattr(softGalleryLanguage::PropsType, "propsdatas")
+def test_softgallerylanguage_propstype_has_nameProps():
+    assert hasattr(softGalleryLanguage_PropsType, "nameProps")
     descriptor = None
-    for klass in softGalleryLanguage::PropsType.__mro__:
-        if "propsdatas" in klass.__dict__:
-            descriptor = klass.__dict__["propsdatas"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_softgallerylanguage::propstype_has_nameProps():
-    assert hasattr(softGalleryLanguage::PropsType, "nameProps")
-    descriptor = None
-    for klass in softGalleryLanguage::PropsType.__mro__:
+    for klass in softGalleryLanguage_PropsType.__mro__:
         if "nameProps" in klass.__dict__:
             descriptor = klass.__dict__["nameProps"]
             break
     assert isinstance(descriptor, property)
 
+def test_softgallerylanguage_propstype_has_propsdatas():
+    assert hasattr(softGalleryLanguage_PropsType, "propsdatas")
+    descriptor = None
+    for klass in softGalleryLanguage_PropsType.__mro__:
+        if "propsdatas" in klass.__dict__:
+            descriptor = klass.__dict__["propsdatas"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_softgallerylanguage::statecontent_is_not_abstract():
-    assert not inspect.isabstract(softGalleryLanguage::StateContent)
+
+def test_softgallerylanguage_statecontent_is_not_abstract():
+    assert not inspect.isabstract(softGalleryLanguage_StateContent)
 
 
-def test_softgallerylanguage::statecontent_constructor_exists():
-    assert callable(softGalleryLanguage::StateContent.__init__)
+def test_softgallerylanguage_statecontent_constructor_exists():
+    assert callable(softGalleryLanguage_StateContent.__init__)
 
 
-def test_softgallerylanguage::statecontent_constructor_args():
-    sig = inspect.signature(softGalleryLanguage::StateContent.__init__)
+def test_softgallerylanguage_statecontent_constructor_args():
+    sig = inspect.signature(softGalleryLanguage_StateContent.__init__)
     params = list(sig.parameters.keys())
     assert "stateName" in params, "Missing parameter 'stateName'"
     assert "componentdatatyp" in params, "Missing parameter 'componentdatatyp'"
 
-def test_softgallerylanguage::statecontent_has_stateName():
-    assert hasattr(softGalleryLanguage::StateContent, "stateName")
+def test_softgallerylanguage_statecontent_has_stateName():
+    assert hasattr(softGalleryLanguage_StateContent, "stateName")
     descriptor = None
-    for klass in softGalleryLanguage::StateContent.__mro__:
+    for klass in softGalleryLanguage_StateContent.__mro__:
         if "stateName" in klass.__dict__:
             descriptor = klass.__dict__["stateName"]
             break
     assert isinstance(descriptor, property)
 
-def test_softgallerylanguage::statecontent_has_componentdatatyp():
-    assert hasattr(softGalleryLanguage::StateContent, "componentdatatyp")
+def test_softgallerylanguage_statecontent_has_componentdatatyp():
+    assert hasattr(softGalleryLanguage_StateContent, "componentdatatyp")
     descriptor = None
-    for klass in softGalleryLanguage::StateContent.__mro__:
+    for klass in softGalleryLanguage_StateContent.__mro__:
         if "componentdatatyp" in klass.__dict__:
             descriptor = klass.__dict__["componentdatatyp"]
             break
@@ -2956,23 +3020,23 @@ def test_softgallerylanguage::statecontent_has_componentdatatyp():
 
 
 
-def test_softgallerylanguage::corefunctionsdeclaration_is_not_abstract():
-    assert not inspect.isabstract(softGalleryLanguage::CoreFunctionsDeclaration)
+def test_softgallerylanguage_corefunctionsdeclaration_is_not_abstract():
+    assert not inspect.isabstract(softGalleryLanguage_CoreFunctionsDeclaration)
 
 
-def test_softgallerylanguage::corefunctionsdeclaration_constructor_exists():
-    assert callable(softGalleryLanguage::CoreFunctionsDeclaration.__init__)
+def test_softgallerylanguage_corefunctionsdeclaration_constructor_exists():
+    assert callable(softGalleryLanguage_CoreFunctionsDeclaration.__init__)
 
 
-def test_softgallerylanguage::corefunctionsdeclaration_constructor_args():
-    sig = inspect.signature(softGalleryLanguage::CoreFunctionsDeclaration.__init__)
+def test_softgallerylanguage_corefunctionsdeclaration_constructor_args():
+    sig = inspect.signature(softGalleryLanguage_CoreFunctionsDeclaration.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_softgallerylanguage::corefunctionsdeclaration_has_name():
-    assert hasattr(softGalleryLanguage::CoreFunctionsDeclaration, "name")
+def test_softgallerylanguage_corefunctionsdeclaration_has_name():
+    assert hasattr(softGalleryLanguage_CoreFunctionsDeclaration, "name")
     descriptor = None
-    for klass in softGalleryLanguage::CoreFunctionsDeclaration.__mro__:
+    for klass in softGalleryLanguage_CoreFunctionsDeclaration.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -2980,37 +3044,37 @@ def test_softgallerylanguage::corefunctionsdeclaration_has_name():
 
 
 
-def test_softgallerylanguage::state_is_not_abstract():
-    assert not inspect.isabstract(softGalleryLanguage::State)
+def test_softgallerylanguage_state_is_not_abstract():
+    assert not inspect.isabstract(softGalleryLanguage_State)
 
 
-def test_softgallerylanguage::state_constructor_exists():
-    assert callable(softGalleryLanguage::State.__init__)
+def test_softgallerylanguage_state_constructor_exists():
+    assert callable(softGalleryLanguage_State.__init__)
 
 
-def test_softgallerylanguage::state_constructor_args():
-    sig = inspect.signature(softGalleryLanguage::State.__init__)
+def test_softgallerylanguage_state_constructor_args():
+    sig = inspect.signature(softGalleryLanguage_State.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_softgallerylanguage::reactcorefunctions_is_not_abstract():
-    assert not inspect.isabstract(softGalleryLanguage::ReactCoreFunctions)
+def test_softgallerylanguage_reactcorefunctions_is_not_abstract():
+    assert not inspect.isabstract(softGalleryLanguage_ReactCoreFunctions)
 
 
-def test_softgallerylanguage::reactcorefunctions_constructor_exists():
-    assert callable(softGalleryLanguage::ReactCoreFunctions.__init__)
+def test_softgallerylanguage_reactcorefunctions_constructor_exists():
+    assert callable(softGalleryLanguage_ReactCoreFunctions.__init__)
 
 
-def test_softgallerylanguage::reactcorefunctions_constructor_args():
-    sig = inspect.signature(softGalleryLanguage::ReactCoreFunctions.__init__)
+def test_softgallerylanguage_reactcorefunctions_constructor_args():
+    sig = inspect.signature(softGalleryLanguage_ReactCoreFunctions.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_softgallerylanguage::reactcorefunctions_has_name():
-    assert hasattr(softGalleryLanguage::ReactCoreFunctions, "name")
+def test_softgallerylanguage_reactcorefunctions_has_name():
+    assert hasattr(softGalleryLanguage_ReactCoreFunctions, "name")
     descriptor = None
-    for klass in softGalleryLanguage::ReactCoreFunctions.__mro__:
+    for klass in softGalleryLanguage_ReactCoreFunctions.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -3018,37 +3082,37 @@ def test_softgallerylanguage::reactcorefunctions_has_name():
 
 
 
-def test_softgallerylanguage::reactconstructor_is_not_abstract():
-    assert not inspect.isabstract(softGalleryLanguage::ReactConstructor)
+def test_softgallerylanguage_reactconstructor_is_not_abstract():
+    assert not inspect.isabstract(softGalleryLanguage_ReactConstructor)
 
 
-def test_softgallerylanguage::reactconstructor_constructor_exists():
-    assert callable(softGalleryLanguage::ReactConstructor.__init__)
+def test_softgallerylanguage_reactconstructor_constructor_exists():
+    assert callable(softGalleryLanguage_ReactConstructor.__init__)
 
 
-def test_softgallerylanguage::reactconstructor_constructor_args():
-    sig = inspect.signature(softGalleryLanguage::ReactConstructor.__init__)
+def test_softgallerylanguage_reactconstructor_constructor_args():
+    sig = inspect.signature(softGalleryLanguage_ReactConstructor.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_softgallerylanguage::reactimportcontent_is_not_abstract():
-    assert not inspect.isabstract(softGalleryLanguage::ReactImportContent)
+def test_softgallerylanguage_reactimportcontent_is_not_abstract():
+    assert not inspect.isabstract(softGalleryLanguage_ReactImportContent)
 
 
-def test_softgallerylanguage::reactimportcontent_constructor_exists():
-    assert callable(softGalleryLanguage::ReactImportContent.__init__)
+def test_softgallerylanguage_reactimportcontent_constructor_exists():
+    assert callable(softGalleryLanguage_ReactImportContent.__init__)
 
 
-def test_softgallerylanguage::reactimportcontent_constructor_args():
-    sig = inspect.signature(softGalleryLanguage::ReactImportContent.__init__)
+def test_softgallerylanguage_reactimportcontent_constructor_args():
+    sig = inspect.signature(softGalleryLanguage_ReactImportContent.__init__)
     params = list(sig.parameters.keys())
     assert "impName" in params, "Missing parameter 'impName'"
 
-def test_softgallerylanguage::reactimportcontent_has_impName():
-    assert hasattr(softGalleryLanguage::ReactImportContent, "impName")
+def test_softgallerylanguage_reactimportcontent_has_impName():
+    assert hasattr(softGalleryLanguage_ReactImportContent, "impName")
     descriptor = None
-    for klass in softGalleryLanguage::ReactImportContent.__mro__:
+    for klass in softGalleryLanguage_ReactImportContent.__mro__:
         if "impName" in klass.__dict__:
             descriptor = klass.__dict__["impName"]
             break
@@ -3056,99 +3120,99 @@ def test_softgallerylanguage::reactimportcontent_has_impName():
 
 
 
-def test_softgallerylanguage::styleproperties_is_not_abstract():
-    assert not inspect.isabstract(softGalleryLanguage::StyleProperties)
+def test_softgallerylanguage_styleproperties_is_not_abstract():
+    assert not inspect.isabstract(softGalleryLanguage_StyleProperties)
 
 
-def test_softgallerylanguage::styleproperties_constructor_exists():
-    assert callable(softGalleryLanguage::StyleProperties.__init__)
+def test_softgallerylanguage_styleproperties_constructor_exists():
+    assert callable(softGalleryLanguage_StyleProperties.__init__)
 
 
-def test_softgallerylanguage::styleproperties_constructor_args():
-    sig = inspect.signature(softGalleryLanguage::StyleProperties.__init__)
+def test_softgallerylanguage_styleproperties_constructor_args():
+    sig = inspect.signature(softGalleryLanguage_StyleProperties.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_softgallerylanguage::props_is_not_abstract():
-    assert not inspect.isabstract(softGalleryLanguage::Props)
+def test_softgallerylanguage_props_is_not_abstract():
+    assert not inspect.isabstract(softGalleryLanguage_Props)
 
 
-def test_softgallerylanguage::props_constructor_exists():
-    assert callable(softGalleryLanguage::Props.__init__)
+def test_softgallerylanguage_props_constructor_exists():
+    assert callable(softGalleryLanguage_Props.__init__)
 
 
-def test_softgallerylanguage::props_constructor_args():
-    sig = inspect.signature(softGalleryLanguage::Props.__init__)
+def test_softgallerylanguage_props_constructor_args():
+    sig = inspect.signature(softGalleryLanguage_Props.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_softgallerylanguage::reactfunctions_is_not_abstract():
-    assert not inspect.isabstract(softGalleryLanguage::ReactFunctions)
+def test_softgallerylanguage_reactfunctions_is_not_abstract():
+    assert not inspect.isabstract(softGalleryLanguage_ReactFunctions)
 
 
-def test_softgallerylanguage::reactfunctions_constructor_exists():
-    assert callable(softGalleryLanguage::ReactFunctions.__init__)
+def test_softgallerylanguage_reactfunctions_constructor_exists():
+    assert callable(softGalleryLanguage_ReactFunctions.__init__)
 
 
-def test_softgallerylanguage::reactfunctions_constructor_args():
-    sig = inspect.signature(softGalleryLanguage::ReactFunctions.__init__)
+def test_softgallerylanguage_reactfunctions_constructor_args():
+    sig = inspect.signature(softGalleryLanguage_ReactFunctions.__init__)
     params = list(sig.parameters.keys())
-    assert "lifecycleclass" in params, "Missing parameter 'lifecycleclass'"
     assert "renderclass" in params, "Missing parameter 'renderclass'"
+    assert "lifecycleclass" in params, "Missing parameter 'lifecycleclass'"
 
-def test_softgallerylanguage::reactfunctions_has_lifecycleclass():
-    assert hasattr(softGalleryLanguage::ReactFunctions, "lifecycleclass")
+def test_softgallerylanguage_reactfunctions_has_renderclass():
+    assert hasattr(softGalleryLanguage_ReactFunctions, "renderclass")
     descriptor = None
-    for klass in softGalleryLanguage::ReactFunctions.__mro__:
-        if "lifecycleclass" in klass.__dict__:
-            descriptor = klass.__dict__["lifecycleclass"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_softgallerylanguage::reactfunctions_has_renderclass():
-    assert hasattr(softGalleryLanguage::ReactFunctions, "renderclass")
-    descriptor = None
-    for klass in softGalleryLanguage::ReactFunctions.__mro__:
+    for klass in softGalleryLanguage_ReactFunctions.__mro__:
         if "renderclass" in klass.__dict__:
             descriptor = klass.__dict__["renderclass"]
             break
     assert isinstance(descriptor, property)
 
+def test_softgallerylanguage_reactfunctions_has_lifecycleclass():
+    assert hasattr(softGalleryLanguage_ReactFunctions, "lifecycleclass")
+    descriptor = None
+    for klass in softGalleryLanguage_ReactFunctions.__mro__:
+        if "lifecycleclass" in klass.__dict__:
+            descriptor = klass.__dict__["lifecycleclass"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_softgallerylanguage::reactimports_is_not_abstract():
-    assert not inspect.isabstract(softGalleryLanguage::ReactImports)
+
+def test_softgallerylanguage_reactimports_is_not_abstract():
+    assert not inspect.isabstract(softGalleryLanguage_ReactImports)
 
 
-def test_softgallerylanguage::reactimports_constructor_exists():
-    assert callable(softGalleryLanguage::ReactImports.__init__)
+def test_softgallerylanguage_reactimports_constructor_exists():
+    assert callable(softGalleryLanguage_ReactImports.__init__)
 
 
-def test_softgallerylanguage::reactimports_constructor_args():
-    sig = inspect.signature(softGalleryLanguage::ReactImports.__init__)
+def test_softgallerylanguage_reactimports_constructor_args():
+    sig = inspect.signature(softGalleryLanguage_ReactImports.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_softgallerylanguage::subcomponentcont_is_not_abstract():
-    assert not inspect.isabstract(softGalleryLanguage::SubcomponentCont)
+def test_softgallerylanguage_subcomponentcont_is_not_abstract():
+    assert not inspect.isabstract(softGalleryLanguage_SubcomponentCont)
 
 
-def test_softgallerylanguage::subcomponentcont_constructor_exists():
-    assert callable(softGalleryLanguage::SubcomponentCont.__init__)
+def test_softgallerylanguage_subcomponentcont_constructor_exists():
+    assert callable(softGalleryLanguage_SubcomponentCont.__init__)
 
 
-def test_softgallerylanguage::subcomponentcont_constructor_args():
-    sig = inspect.signature(softGalleryLanguage::SubcomponentCont.__init__)
+def test_softgallerylanguage_subcomponentcont_constructor_args():
+    sig = inspect.signature(softGalleryLanguage_SubcomponentCont.__init__)
     params = list(sig.parameters.keys())
     assert "nameSubComp" in params, "Missing parameter 'nameSubComp'"
 
-def test_softgallerylanguage::subcomponentcont_has_nameSubComp():
-    assert hasattr(softGalleryLanguage::SubcomponentCont, "nameSubComp")
+def test_softgallerylanguage_subcomponentcont_has_nameSubComp():
+    assert hasattr(softGalleryLanguage_SubcomponentCont, "nameSubComp")
     descriptor = None
-    for klass in softGalleryLanguage::SubcomponentCont.__mro__:
+    for klass in softGalleryLanguage_SubcomponentCont.__mro__:
         if "nameSubComp" in klass.__dict__:
             descriptor = klass.__dict__["nameSubComp"]
             break
@@ -3156,23 +3220,23 @@ def test_softgallerylanguage::subcomponentcont_has_nameSubComp():
 
 
 
-def test_softgallerylanguage::viewcomponentcont_is_not_abstract():
-    assert not inspect.isabstract(softGalleryLanguage::ViewComponentCont)
+def test_softgallerylanguage_viewcomponentcont_is_not_abstract():
+    assert not inspect.isabstract(softGalleryLanguage_ViewComponentCont)
 
 
-def test_softgallerylanguage::viewcomponentcont_constructor_exists():
-    assert callable(softGalleryLanguage::ViewComponentCont.__init__)
+def test_softgallerylanguage_viewcomponentcont_constructor_exists():
+    assert callable(softGalleryLanguage_ViewComponentCont.__init__)
 
 
-def test_softgallerylanguage::viewcomponentcont_constructor_args():
-    sig = inspect.signature(softGalleryLanguage::ViewComponentCont.__init__)
+def test_softgallerylanguage_viewcomponentcont_constructor_args():
+    sig = inspect.signature(softGalleryLanguage_ViewComponentCont.__init__)
     params = list(sig.parameters.keys())
     assert "nameView" in params, "Missing parameter 'nameView'"
 
-def test_softgallerylanguage::viewcomponentcont_has_nameView():
-    assert hasattr(softGalleryLanguage::ViewComponentCont, "nameView")
+def test_softgallerylanguage_viewcomponentcont_has_nameView():
+    assert hasattr(softGalleryLanguage_ViewComponentCont, "nameView")
     descriptor = None
-    for klass in softGalleryLanguage::ViewComponentCont.__mro__:
+    for klass in softGalleryLanguage_ViewComponentCont.__mro__:
         if "nameView" in klass.__dict__:
             descriptor = klass.__dict__["nameView"]
             break
@@ -3180,85 +3244,85 @@ def test_softgallerylanguage::viewcomponentcont_has_nameView():
 
 
 
-def test_softgallerylanguage::uicontent_is_not_abstract():
-    assert not inspect.isabstract(softGalleryLanguage::UIContent)
+def test_softgallerylanguage_uicontent_is_not_abstract():
+    assert not inspect.isabstract(softGalleryLanguage_UIContent)
 
 
-def test_softgallerylanguage::uicontent_constructor_exists():
-    assert callable(softGalleryLanguage::UIContent.__init__)
+def test_softgallerylanguage_uicontent_constructor_exists():
+    assert callable(softGalleryLanguage_UIContent.__init__)
 
 
-def test_softgallerylanguage::uicontent_constructor_args():
-    sig = inspect.signature(softGalleryLanguage::UIContent.__init__)
+def test_softgallerylanguage_uicontent_constructor_args():
+    sig = inspect.signature(softGalleryLanguage_UIContent.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_softgallerylanguage::componentclass_is_not_abstract():
-    assert not inspect.isabstract(softGalleryLanguage::ComponentClass)
+def test_softgallerylanguage_componentclass_is_not_abstract():
+    assert not inspect.isabstract(softGalleryLanguage_ComponentClass)
 
 
-def test_softgallerylanguage::componentclass_constructor_exists():
-    assert callable(softGalleryLanguage::ComponentClass.__init__)
+def test_softgallerylanguage_componentclass_constructor_exists():
+    assert callable(softGalleryLanguage_ComponentClass.__init__)
 
 
-def test_softgallerylanguage::componentclass_constructor_args():
-    sig = inspect.signature(softGalleryLanguage::ComponentClass.__init__)
+def test_softgallerylanguage_componentclass_constructor_args():
+    sig = inspect.signature(softGalleryLanguage_ComponentClass.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_softgallerylanguage::logicstructure_is_not_abstract():
-    assert not inspect.isabstract(softGalleryLanguage::LogicStructure)
+def test_softgallerylanguage_logicstructure_is_not_abstract():
+    assert not inspect.isabstract(softGalleryLanguage_LogicStructure)
 
 
-def test_softgallerylanguage::logicstructure_constructor_exists():
-    assert callable(softGalleryLanguage::LogicStructure.__init__)
+def test_softgallerylanguage_logicstructure_constructor_exists():
+    assert callable(softGalleryLanguage_LogicStructure.__init__)
 
 
-def test_softgallerylanguage::logicstructure_constructor_args():
-    sig = inspect.signature(softGalleryLanguage::LogicStructure.__init__)
+def test_softgallerylanguage_logicstructure_constructor_args():
+    sig = inspect.signature(softGalleryLanguage_LogicStructure.__init__)
     params = list(sig.parameters.keys())
-    assert "indexCompName" in params, "Missing parameter 'indexCompName'"
     assert "appComName" in params, "Missing parameter 'appComName'"
+    assert "indexCompName" in params, "Missing parameter 'indexCompName'"
 
-def test_softgallerylanguage::logicstructure_has_indexCompName():
-    assert hasattr(softGalleryLanguage::LogicStructure, "indexCompName")
+def test_softgallerylanguage_logicstructure_has_appComName():
+    assert hasattr(softGalleryLanguage_LogicStructure, "appComName")
     descriptor = None
-    for klass in softGalleryLanguage::LogicStructure.__mro__:
-        if "indexCompName" in klass.__dict__:
-            descriptor = klass.__dict__["indexCompName"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_softgallerylanguage::logicstructure_has_appComName():
-    assert hasattr(softGalleryLanguage::LogicStructure, "appComName")
-    descriptor = None
-    for klass in softGalleryLanguage::LogicStructure.__mro__:
+    for klass in softGalleryLanguage_LogicStructure.__mro__:
         if "appComName" in klass.__dict__:
             descriptor = klass.__dict__["appComName"]
             break
     assert isinstance(descriptor, property)
 
+def test_softgallerylanguage_logicstructure_has_indexCompName():
+    assert hasattr(softGalleryLanguage_LogicStructure, "indexCompName")
+    descriptor = None
+    for klass in softGalleryLanguage_LogicStructure.__mro__:
+        if "indexCompName" in klass.__dict__:
+            descriptor = klass.__dict__["indexCompName"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_softgallerylanguage::logiccontent_is_not_abstract():
-    assert not inspect.isabstract(softGalleryLanguage::LogicContent)
+
+def test_softgallerylanguage_logiccontent_is_not_abstract():
+    assert not inspect.isabstract(softGalleryLanguage_LogicContent)
 
 
-def test_softgallerylanguage::logiccontent_constructor_exists():
-    assert callable(softGalleryLanguage::LogicContent.__init__)
+def test_softgallerylanguage_logiccontent_constructor_exists():
+    assert callable(softGalleryLanguage_LogicContent.__init__)
 
 
-def test_softgallerylanguage::logiccontent_constructor_args():
-    sig = inspect.signature(softGalleryLanguage::LogicContent.__init__)
+def test_softgallerylanguage_logiccontent_constructor_args():
+    sig = inspect.signature(softGalleryLanguage_LogicContent.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_softgallerylanguage::logiccontent_has_name():
-    assert hasattr(softGalleryLanguage::LogicContent, "name")
+def test_softgallerylanguage_logiccontent_has_name():
+    assert hasattr(softGalleryLanguage_LogicContent, "name")
     descriptor = None
-    for klass in softGalleryLanguage::LogicContent.__mro__:
+    for klass in softGalleryLanguage_LogicContent.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -3266,37 +3330,37 @@ def test_softgallerylanguage::logiccontent_has_name():
 
 
 
-def test_softgallerylanguage::componentsstyles_is_not_abstract():
-    assert not inspect.isabstract(softGalleryLanguage::ComponentsStyles)
+def test_softgallerylanguage_componentsstyles_is_not_abstract():
+    assert not inspect.isabstract(softGalleryLanguage_ComponentsStyles)
 
 
-def test_softgallerylanguage::componentsstyles_constructor_exists():
-    assert callable(softGalleryLanguage::ComponentsStyles.__init__)
+def test_softgallerylanguage_componentsstyles_constructor_exists():
+    assert callable(softGalleryLanguage_ComponentsStyles.__init__)
 
 
-def test_softgallerylanguage::componentsstyles_constructor_args():
-    sig = inspect.signature(softGalleryLanguage::ComponentsStyles.__init__)
+def test_softgallerylanguage_componentsstyles_constructor_args():
+    sig = inspect.signature(softGalleryLanguage_ComponentsStyles.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_softgallerylanguage::componentslogic_is_not_abstract():
-    assert not inspect.isabstract(softGalleryLanguage::ComponentsLogic)
+def test_softgallerylanguage_componentslogic_is_not_abstract():
+    assert not inspect.isabstract(softGalleryLanguage_ComponentsLogic)
 
 
-def test_softgallerylanguage::componentslogic_constructor_exists():
-    assert callable(softGalleryLanguage::ComponentsLogic.__init__)
+def test_softgallerylanguage_componentslogic_constructor_exists():
+    assert callable(softGalleryLanguage_ComponentsLogic.__init__)
 
 
-def test_softgallerylanguage::componentslogic_constructor_args():
-    sig = inspect.signature(softGalleryLanguage::ComponentsLogic.__init__)
+def test_softgallerylanguage_componentslogic_constructor_args():
+    sig = inspect.signature(softGalleryLanguage_ComponentsLogic.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_softgallerylanguage::componentslogic_has_name():
-    assert hasattr(softGalleryLanguage::ComponentsLogic, "name")
+def test_softgallerylanguage_componentslogic_has_name():
+    assert hasattr(softGalleryLanguage_ComponentsLogic, "name")
     descriptor = None
-    for klass in softGalleryLanguage::ComponentsLogic.__mro__:
+    for klass in softGalleryLanguage_ComponentsLogic.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -3304,57 +3368,57 @@ def test_softgallerylanguage::componentslogic_has_name():
 
 
 
-def test_softgallerylanguage::domconfigurations_is_not_abstract():
-    assert not inspect.isabstract(softGalleryLanguage::DOMConfigurations)
+def test_softgallerylanguage_domconfigurations_is_not_abstract():
+    assert not inspect.isabstract(softGalleryLanguage_DOMConfigurations)
 
 
-def test_softgallerylanguage::domconfigurations_constructor_exists():
-    assert callable(softGalleryLanguage::DOMConfigurations.__init__)
+def test_softgallerylanguage_domconfigurations_constructor_exists():
+    assert callable(softGalleryLanguage_DOMConfigurations.__init__)
 
 
-def test_softgallerylanguage::domconfigurations_constructor_args():
-    sig = inspect.signature(softGalleryLanguage::DOMConfigurations.__init__)
+def test_softgallerylanguage_domconfigurations_constructor_args():
+    sig = inspect.signature(softGalleryLanguage_DOMConfigurations.__init__)
     params = list(sig.parameters.keys())
+    assert "name" in params, "Missing parameter 'name'"
     assert "elements" in params, "Missing parameter 'elements'"
-    assert "name" in params, "Missing parameter 'name'"
 
-def test_softgallerylanguage::domconfigurations_has_elements():
-    assert hasattr(softGalleryLanguage::DOMConfigurations, "elements")
+def test_softgallerylanguage_domconfigurations_has_name():
+    assert hasattr(softGalleryLanguage_DOMConfigurations, "name")
     descriptor = None
-    for klass in softGalleryLanguage::DOMConfigurations.__mro__:
+    for klass in softGalleryLanguage_DOMConfigurations.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_softgallerylanguage_domconfigurations_has_elements():
+    assert hasattr(softGalleryLanguage_DOMConfigurations, "elements")
+    descriptor = None
+    for klass in softGalleryLanguage_DOMConfigurations.__mro__:
         if "elements" in klass.__dict__:
             descriptor = klass.__dict__["elements"]
             break
     assert isinstance(descriptor, property)
 
-def test_softgallerylanguage::domconfigurations_has_name():
-    assert hasattr(softGalleryLanguage::DOMConfigurations, "name")
-    descriptor = None
-    for klass in softGalleryLanguage::DOMConfigurations.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
 
 
-
-def test_softgallerylanguage::packageversion_is_not_abstract():
-    assert not inspect.isabstract(softGalleryLanguage::PackageVersion)
-
-
-def test_softgallerylanguage::packageversion_constructor_exists():
-    assert callable(softGalleryLanguage::PackageVersion.__init__)
+def test_softgallerylanguage_packageversion_is_not_abstract():
+    assert not inspect.isabstract(softGalleryLanguage_PackageVersion)
 
 
-def test_softgallerylanguage::packageversion_constructor_args():
-    sig = inspect.signature(softGalleryLanguage::PackageVersion.__init__)
+def test_softgallerylanguage_packageversion_constructor_exists():
+    assert callable(softGalleryLanguage_PackageVersion.__init__)
+
+
+def test_softgallerylanguage_packageversion_constructor_args():
+    sig = inspect.signature(softGalleryLanguage_PackageVersion.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_softgallerylanguage::packageversion_has_name():
-    assert hasattr(softGalleryLanguage::PackageVersion, "name")
+def test_softgallerylanguage_packageversion_has_name():
+    assert hasattr(softGalleryLanguage_PackageVersion, "name")
     descriptor = None
-    for klass in softGalleryLanguage::PackageVersion.__mro__:
+    for klass in softGalleryLanguage_PackageVersion.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -3362,23 +3426,23 @@ def test_softgallerylanguage::packageversion_has_name():
 
 
 
-def test_softgallerylanguage::packagename_is_not_abstract():
-    assert not inspect.isabstract(softGalleryLanguage::PackageName)
+def test_softgallerylanguage_packagename_is_not_abstract():
+    assert not inspect.isabstract(softGalleryLanguage_PackageName)
 
 
-def test_softgallerylanguage::packagename_constructor_exists():
-    assert callable(softGalleryLanguage::PackageName.__init__)
+def test_softgallerylanguage_packagename_constructor_exists():
+    assert callable(softGalleryLanguage_PackageName.__init__)
 
 
-def test_softgallerylanguage::packagename_constructor_args():
-    sig = inspect.signature(softGalleryLanguage::PackageName.__init__)
+def test_softgallerylanguage_packagename_constructor_args():
+    sig = inspect.signature(softGalleryLanguage_PackageName.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_softgallerylanguage::packagename_has_name():
-    assert hasattr(softGalleryLanguage::PackageName, "name")
+def test_softgallerylanguage_packagename_has_name():
+    assert hasattr(softGalleryLanguage_PackageName, "name")
     descriptor = None
-    for klass in softGalleryLanguage::PackageName.__mro__:
+    for klass in softGalleryLanguage_PackageName.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -3386,51 +3450,51 @@ def test_softgallerylanguage::packagename_has_name():
 
 
 
-def test_softgallerylanguage::singledependencies_is_not_abstract():
-    assert not inspect.isabstract(softGalleryLanguage::SingleDependencies)
+def test_softgallerylanguage_singledependencies_is_not_abstract():
+    assert not inspect.isabstract(softGalleryLanguage_SingleDependencies)
 
 
-def test_softgallerylanguage::singledependencies_constructor_exists():
-    assert callable(softGalleryLanguage::SingleDependencies.__init__)
+def test_softgallerylanguage_singledependencies_constructor_exists():
+    assert callable(softGalleryLanguage_SingleDependencies.__init__)
 
 
-def test_softgallerylanguage::singledependencies_constructor_args():
-    sig = inspect.signature(softGalleryLanguage::SingleDependencies.__init__)
+def test_softgallerylanguage_singledependencies_constructor_args():
+    sig = inspect.signature(softGalleryLanguage_SingleDependencies.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_softgallerylanguage::reactdependenciessubrules_is_not_abstract():
-    assert not inspect.isabstract(softGalleryLanguage::ReactDependenciesSubRules)
+def test_softgallerylanguage_reactdependenciessubrules_is_not_abstract():
+    assert not inspect.isabstract(softGalleryLanguage_ReactDependenciesSubRules)
 
 
-def test_softgallerylanguage::reactdependenciessubrules_constructor_exists():
-    assert callable(softGalleryLanguage::ReactDependenciesSubRules.__init__)
+def test_softgallerylanguage_reactdependenciessubrules_constructor_exists():
+    assert callable(softGalleryLanguage_ReactDependenciesSubRules.__init__)
 
 
-def test_softgallerylanguage::reactdependenciessubrules_constructor_args():
-    sig = inspect.signature(softGalleryLanguage::ReactDependenciesSubRules.__init__)
+def test_softgallerylanguage_reactdependenciessubrules_constructor_args():
+    sig = inspect.signature(softGalleryLanguage_ReactDependenciesSubRules.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_softgallerylanguage::reactdependenciesrules_is_not_abstract():
-    assert not inspect.isabstract(softGalleryLanguage::ReactDependenciesRules)
+def test_softgallerylanguage_reactdependenciesrules_is_not_abstract():
+    assert not inspect.isabstract(softGalleryLanguage_ReactDependenciesRules)
 
 
-def test_softgallerylanguage::reactdependenciesrules_constructor_exists():
-    assert callable(softGalleryLanguage::ReactDependenciesRules.__init__)
+def test_softgallerylanguage_reactdependenciesrules_constructor_exists():
+    assert callable(softGalleryLanguage_ReactDependenciesRules.__init__)
 
 
-def test_softgallerylanguage::reactdependenciesrules_constructor_args():
-    sig = inspect.signature(softGalleryLanguage::ReactDependenciesRules.__init__)
+def test_softgallerylanguage_reactdependenciesrules_constructor_args():
+    sig = inspect.signature(softGalleryLanguage_ReactDependenciesRules.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_softgallerylanguage::reactdependenciesrules_has_name():
-    assert hasattr(softGalleryLanguage::ReactDependenciesRules, "name")
+def test_softgallerylanguage_reactdependenciesrules_has_name():
+    assert hasattr(softGalleryLanguage_ReactDependenciesRules, "name")
     descriptor = None
-    for klass in softGalleryLanguage::ReactDependenciesRules.__mro__:
+    for klass in softGalleryLanguage_ReactDependenciesRules.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -3438,23 +3502,23 @@ def test_softgallerylanguage::reactdependenciesrules_has_name():
 
 
 
-def test_softgallerylanguage::reactconfigurations_is_not_abstract():
-    assert not inspect.isabstract(softGalleryLanguage::ReactConfigurations)
+def test_softgallerylanguage_reactconfigurations_is_not_abstract():
+    assert not inspect.isabstract(softGalleryLanguage_ReactConfigurations)
 
 
-def test_softgallerylanguage::reactconfigurations_constructor_exists():
-    assert callable(softGalleryLanguage::ReactConfigurations.__init__)
+def test_softgallerylanguage_reactconfigurations_constructor_exists():
+    assert callable(softGalleryLanguage_ReactConfigurations.__init__)
 
 
-def test_softgallerylanguage::reactconfigurations_constructor_args():
-    sig = inspect.signature(softGalleryLanguage::ReactConfigurations.__init__)
+def test_softgallerylanguage_reactconfigurations_constructor_args():
+    sig = inspect.signature(softGalleryLanguage_ReactConfigurations.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_softgallerylanguage::reactconfigurations_has_name():
-    assert hasattr(softGalleryLanguage::ReactConfigurations, "name")
+def test_softgallerylanguage_reactconfigurations_has_name():
+    assert hasattr(softGalleryLanguage_ReactConfigurations, "name")
     descriptor = None
-    for klass in softGalleryLanguage::ReactConfigurations.__mro__:
+    for klass in softGalleryLanguage_ReactConfigurations.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -3462,79 +3526,79 @@ def test_softgallerylanguage::reactconfigurations_has_name():
 
 
 
-def test_softgallerylanguage::reactdependencies_is_not_abstract():
-    assert not inspect.isabstract(softGalleryLanguage::ReactDependencies)
+def test_softgallerylanguage_reactdependencies_is_not_abstract():
+    assert not inspect.isabstract(softGalleryLanguage_ReactDependencies)
 
 
-def test_softgallerylanguage::reactdependencies_constructor_exists():
-    assert callable(softGalleryLanguage::ReactDependencies.__init__)
+def test_softgallerylanguage_reactdependencies_constructor_exists():
+    assert callable(softGalleryLanguage_ReactDependencies.__init__)
 
 
-def test_softgallerylanguage::reactdependencies_constructor_args():
-    sig = inspect.signature(softGalleryLanguage::ReactDependencies.__init__)
+def test_softgallerylanguage_reactdependencies_constructor_args():
+    sig = inspect.signature(softGalleryLanguage_ReactDependencies.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_softgallerylanguage::reactinfo_is_not_abstract():
-    assert not inspect.isabstract(softGalleryLanguage::ReactInfo)
+def test_softgallerylanguage_reactinfo_is_not_abstract():
+    assert not inspect.isabstract(softGalleryLanguage_ReactInfo)
 
 
-def test_softgallerylanguage::reactinfo_constructor_exists():
-    assert callable(softGalleryLanguage::ReactInfo.__init__)
+def test_softgallerylanguage_reactinfo_constructor_exists():
+    assert callable(softGalleryLanguage_ReactInfo.__init__)
 
 
-def test_softgallerylanguage::reactinfo_constructor_args():
-    sig = inspect.signature(softGalleryLanguage::ReactInfo.__init__)
+def test_softgallerylanguage_reactinfo_constructor_args():
+    sig = inspect.signature(softGalleryLanguage_ReactInfo.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_softgallerylanguage::reactlibraries_is_not_abstract():
-    assert not inspect.isabstract(softGalleryLanguage::ReactLibraries)
+def test_softgallerylanguage_reactlibraries_is_not_abstract():
+    assert not inspect.isabstract(softGalleryLanguage_ReactLibraries)
 
 
-def test_softgallerylanguage::reactlibraries_constructor_exists():
-    assert callable(softGalleryLanguage::ReactLibraries.__init__)
+def test_softgallerylanguage_reactlibraries_constructor_exists():
+    assert callable(softGalleryLanguage_ReactLibraries.__init__)
 
 
-def test_softgallerylanguage::reactlibraries_constructor_args():
-    sig = inspect.signature(softGalleryLanguage::ReactLibraries.__init__)
+def test_softgallerylanguage_reactlibraries_constructor_args():
+    sig = inspect.signature(softGalleryLanguage_ReactLibraries.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_softgallerylanguage::reactactions_is_not_abstract():
-    assert not inspect.isabstract(softGalleryLanguage::ReactActions)
+def test_softgallerylanguage_reactactions_is_not_abstract():
+    assert not inspect.isabstract(softGalleryLanguage_ReactActions)
 
 
-def test_softgallerylanguage::reactactions_constructor_exists():
-    assert callable(softGalleryLanguage::ReactActions.__init__)
+def test_softgallerylanguage_reactactions_constructor_exists():
+    assert callable(softGalleryLanguage_ReactActions.__init__)
 
 
-def test_softgallerylanguage::reactactions_constructor_args():
-    sig = inspect.signature(softGalleryLanguage::ReactActions.__init__)
+def test_softgallerylanguage_reactactions_constructor_args():
+    sig = inspect.signature(softGalleryLanguage_ReactActions.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_softgallerylanguage::componentsui_is_not_abstract():
-    assert not inspect.isabstract(softGalleryLanguage::ComponentsUI)
+def test_softgallerylanguage_componentsui_is_not_abstract():
+    assert not inspect.isabstract(softGalleryLanguage_ComponentsUI)
 
 
-def test_softgallerylanguage::componentsui_constructor_exists():
-    assert callable(softGalleryLanguage::ComponentsUI.__init__)
+def test_softgallerylanguage_componentsui_constructor_exists():
+    assert callable(softGalleryLanguage_ComponentsUI.__init__)
 
 
-def test_softgallerylanguage::componentsui_constructor_args():
-    sig = inspect.signature(softGalleryLanguage::ComponentsUI.__init__)
+def test_softgallerylanguage_componentsui_constructor_args():
+    sig = inspect.signature(softGalleryLanguage_ComponentsUI.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_softgallerylanguage::componentsui_has_name():
-    assert hasattr(softGalleryLanguage::ComponentsUI, "name")
+def test_softgallerylanguage_componentsui_has_name():
+    assert hasattr(softGalleryLanguage_ComponentsUI, "name")
     descriptor = None
-    for klass in softGalleryLanguage::ComponentsUI.__mro__:
+    for klass in softGalleryLanguage_ComponentsUI.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -3542,65 +3606,65 @@ def test_softgallerylanguage::componentsui_has_name():
 
 
 
-def test_softgallerylanguage::reactconfiguration_is_not_abstract():
-    assert not inspect.isabstract(softGalleryLanguage::ReactConfiguration)
+def test_softgallerylanguage_reactconfiguration_is_not_abstract():
+    assert not inspect.isabstract(softGalleryLanguage_ReactConfiguration)
 
 
-def test_softgallerylanguage::reactconfiguration_constructor_exists():
-    assert callable(softGalleryLanguage::ReactConfiguration.__init__)
+def test_softgallerylanguage_reactconfiguration_constructor_exists():
+    assert callable(softGalleryLanguage_ReactConfiguration.__init__)
 
 
-def test_softgallerylanguage::reactconfiguration_constructor_args():
-    sig = inspect.signature(softGalleryLanguage::ReactConfiguration.__init__)
+def test_softgallerylanguage_reactconfiguration_constructor_args():
+    sig = inspect.signature(softGalleryLanguage_ReactConfiguration.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_softgallerylanguage::reactsubmodules_is_not_abstract():
-    assert not inspect.isabstract(softGalleryLanguage::ReactSubModules)
+def test_softgallerylanguage_reactsubmodules_is_not_abstract():
+    assert not inspect.isabstract(softGalleryLanguage_ReactSubModules)
 
 
-def test_softgallerylanguage::reactsubmodules_constructor_exists():
-    assert callable(softGalleryLanguage::ReactSubModules.__init__)
+def test_softgallerylanguage_reactsubmodules_constructor_exists():
+    assert callable(softGalleryLanguage_ReactSubModules.__init__)
 
 
-def test_softgallerylanguage::reactsubmodules_constructor_args():
-    sig = inspect.signature(softGalleryLanguage::ReactSubModules.__init__)
+def test_softgallerylanguage_reactsubmodules_constructor_args():
+    sig = inspect.signature(softGalleryLanguage_ReactSubModules.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_softgallerylanguage::reactmodules_is_not_abstract():
-    assert not inspect.isabstract(softGalleryLanguage::ReactModules)
+def test_softgallerylanguage_reactmodules_is_not_abstract():
+    assert not inspect.isabstract(softGalleryLanguage_ReactModules)
 
 
-def test_softgallerylanguage::reactmodules_constructor_exists():
-    assert callable(softGalleryLanguage::ReactModules.__init__)
+def test_softgallerylanguage_reactmodules_constructor_exists():
+    assert callable(softGalleryLanguage_ReactModules.__init__)
 
 
-def test_softgallerylanguage::reactmodules_constructor_args():
-    sig = inspect.signature(softGalleryLanguage::ReactModules.__init__)
+def test_softgallerylanguage_reactmodules_constructor_args():
+    sig = inspect.signature(softGalleryLanguage_ReactModules.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_softgallerylanguage::storageactionmembername_is_not_abstract():
-    assert not inspect.isabstract(softGalleryLanguage::StorageActionMemberName)
+def test_softgallerylanguage_storageactionmembername_is_not_abstract():
+    assert not inspect.isabstract(softGalleryLanguage_StorageActionMemberName)
 
 
-def test_softgallerylanguage::storageactionmembername_constructor_exists():
-    assert callable(softGalleryLanguage::StorageActionMemberName.__init__)
+def test_softgallerylanguage_storageactionmembername_constructor_exists():
+    assert callable(softGalleryLanguage_StorageActionMemberName.__init__)
 
 
-def test_softgallerylanguage::storageactionmembername_constructor_args():
-    sig = inspect.signature(softGalleryLanguage::StorageActionMemberName.__init__)
+def test_softgallerylanguage_storageactionmembername_constructor_args():
+    sig = inspect.signature(softGalleryLanguage_StorageActionMemberName.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_softgallerylanguage::storageactionmembername_has_name():
-    assert hasattr(softGalleryLanguage::StorageActionMemberName, "name")
+def test_softgallerylanguage_storageactionmembername_has_name():
+    assert hasattr(softGalleryLanguage_StorageActionMemberName, "name")
     descriptor = None
-    for klass in softGalleryLanguage::StorageActionMemberName.__mro__:
+    for klass in softGalleryLanguage_StorageActionMemberName.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -3608,23 +3672,23 @@ def test_softgallerylanguage::storageactionmembername_has_name():
 
 
 
-def test_softgallerylanguage::storageactionmembertype_is_not_abstract():
-    assert not inspect.isabstract(softGalleryLanguage::StorageActionMemberType)
+def test_softgallerylanguage_storageactionmembertype_is_not_abstract():
+    assert not inspect.isabstract(softGalleryLanguage_StorageActionMemberType)
 
 
-def test_softgallerylanguage::storageactionmembertype_constructor_exists():
-    assert callable(softGalleryLanguage::StorageActionMemberType.__init__)
+def test_softgallerylanguage_storageactionmembertype_constructor_exists():
+    assert callable(softGalleryLanguage_StorageActionMemberType.__init__)
 
 
-def test_softgallerylanguage::storageactionmembertype_constructor_args():
-    sig = inspect.signature(softGalleryLanguage::StorageActionMemberType.__init__)
+def test_softgallerylanguage_storageactionmembertype_constructor_args():
+    sig = inspect.signature(softGalleryLanguage_StorageActionMemberType.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_softgallerylanguage::storageactionmembertype_has_name():
-    assert hasattr(softGalleryLanguage::StorageActionMemberType, "name")
+def test_softgallerylanguage_storageactionmembertype_has_name():
+    assert hasattr(softGalleryLanguage_StorageActionMemberType, "name")
     descriptor = None
-    for klass in softGalleryLanguage::StorageActionMemberType.__mro__:
+    for klass in softGalleryLanguage_StorageActionMemberType.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -3632,37 +3696,37 @@ def test_softgallerylanguage::storageactionmembertype_has_name():
 
 
 
-def test_softgallerylanguage::storageactionmember_is_not_abstract():
-    assert not inspect.isabstract(softGalleryLanguage::StorageActionMember)
+def test_softgallerylanguage_storageactionmember_is_not_abstract():
+    assert not inspect.isabstract(softGalleryLanguage_StorageActionMember)
 
 
-def test_softgallerylanguage::storageactionmember_constructor_exists():
-    assert callable(softGalleryLanguage::StorageActionMember.__init__)
+def test_softgallerylanguage_storageactionmember_constructor_exists():
+    assert callable(softGalleryLanguage_StorageActionMember.__init__)
 
 
-def test_softgallerylanguage::storageactionmember_constructor_args():
-    sig = inspect.signature(softGalleryLanguage::StorageActionMember.__init__)
+def test_softgallerylanguage_storageactionmember_constructor_args():
+    sig = inspect.signature(softGalleryLanguage_StorageActionMember.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_softgallerylanguage::storageactionreturn_is_not_abstract():
-    assert not inspect.isabstract(softGalleryLanguage::StorageActionReturn)
+def test_softgallerylanguage_storageactionreturn_is_not_abstract():
+    assert not inspect.isabstract(softGalleryLanguage_StorageActionReturn)
 
 
-def test_softgallerylanguage::storageactionreturn_constructor_exists():
-    assert callable(softGalleryLanguage::StorageActionReturn.__init__)
+def test_softgallerylanguage_storageactionreturn_constructor_exists():
+    assert callable(softGalleryLanguage_StorageActionReturn.__init__)
 
 
-def test_softgallerylanguage::storageactionreturn_constructor_args():
-    sig = inspect.signature(softGalleryLanguage::StorageActionReturn.__init__)
+def test_softgallerylanguage_storageactionreturn_constructor_args():
+    sig = inspect.signature(softGalleryLanguage_StorageActionReturn.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_softgallerylanguage::storageactionreturn_has_name():
-    assert hasattr(softGalleryLanguage::StorageActionReturn, "name")
+def test_softgallerylanguage_storageactionreturn_has_name():
+    assert hasattr(softGalleryLanguage_StorageActionReturn, "name")
     descriptor = None
-    for klass in softGalleryLanguage::StorageActionReturn.__mro__:
+    for klass in softGalleryLanguage_StorageActionReturn.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -3670,23 +3734,23 @@ def test_softgallerylanguage::storageactionreturn_has_name():
 
 
 
-def test_softgallerylanguage::storageactionannotation_is_not_abstract():
-    assert not inspect.isabstract(softGalleryLanguage::StorageActionAnnotation)
+def test_softgallerylanguage_storageactionannotation_is_not_abstract():
+    assert not inspect.isabstract(softGalleryLanguage_StorageActionAnnotation)
 
 
-def test_softgallerylanguage::storageactionannotation_constructor_exists():
-    assert callable(softGalleryLanguage::StorageActionAnnotation.__init__)
+def test_softgallerylanguage_storageactionannotation_constructor_exists():
+    assert callable(softGalleryLanguage_StorageActionAnnotation.__init__)
 
 
-def test_softgallerylanguage::storageactionannotation_constructor_args():
-    sig = inspect.signature(softGalleryLanguage::StorageActionAnnotation.__init__)
+def test_softgallerylanguage_storageactionannotation_constructor_args():
+    sig = inspect.signature(softGalleryLanguage_StorageActionAnnotation.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_softgallerylanguage::storageactionannotation_has_name():
-    assert hasattr(softGalleryLanguage::StorageActionAnnotation, "name")
+def test_softgallerylanguage_storageactionannotation_has_name():
+    assert hasattr(softGalleryLanguage_StorageActionAnnotation, "name")
     descriptor = None
-    for klass in softGalleryLanguage::StorageActionAnnotation.__mro__:
+    for klass in softGalleryLanguage_StorageActionAnnotation.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -3694,23 +3758,23 @@ def test_softgallerylanguage::storageactionannotation_has_name():
 
 
 
-def test_softgallerylanguage::storageaction_is_not_abstract():
-    assert not inspect.isabstract(softGalleryLanguage::StorageAction)
+def test_softgallerylanguage_storageaction_is_not_abstract():
+    assert not inspect.isabstract(softGalleryLanguage_StorageAction)
 
 
-def test_softgallerylanguage::storageaction_constructor_exists():
-    assert callable(softGalleryLanguage::StorageAction.__init__)
+def test_softgallerylanguage_storageaction_constructor_exists():
+    assert callable(softGalleryLanguage_StorageAction.__init__)
 
 
-def test_softgallerylanguage::storageaction_constructor_args():
-    sig = inspect.signature(softGalleryLanguage::StorageAction.__init__)
+def test_softgallerylanguage_storageaction_constructor_args():
+    sig = inspect.signature(softGalleryLanguage_StorageAction.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_softgallerylanguage::storageaction_has_name():
-    assert hasattr(softGalleryLanguage::StorageAction, "name")
+def test_softgallerylanguage_storageaction_has_name():
+    assert hasattr(softGalleryLanguage_StorageAction, "name")
     descriptor = None
-    for klass in softGalleryLanguage::StorageAction.__mro__:
+    for klass in softGalleryLanguage_StorageAction.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -3718,23 +3782,23 @@ def test_softgallerylanguage::storageaction_has_name():
 
 
 
-def test_softgallerylanguage::storagememberannotation_is_not_abstract():
-    assert not inspect.isabstract(softGalleryLanguage::StorageMemberAnnotation)
+def test_softgallerylanguage_storagememberannotation_is_not_abstract():
+    assert not inspect.isabstract(softGalleryLanguage_StorageMemberAnnotation)
 
 
-def test_softgallerylanguage::storagememberannotation_constructor_exists():
-    assert callable(softGalleryLanguage::StorageMemberAnnotation.__init__)
+def test_softgallerylanguage_storagememberannotation_constructor_exists():
+    assert callable(softGalleryLanguage_StorageMemberAnnotation.__init__)
 
 
-def test_softgallerylanguage::storagememberannotation_constructor_args():
-    sig = inspect.signature(softGalleryLanguage::StorageMemberAnnotation.__init__)
+def test_softgallerylanguage_storagememberannotation_constructor_args():
+    sig = inspect.signature(softGalleryLanguage_StorageMemberAnnotation.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_softgallerylanguage::storagememberannotation_has_name():
-    assert hasattr(softGalleryLanguage::StorageMemberAnnotation, "name")
+def test_softgallerylanguage_storagememberannotation_has_name():
+    assert hasattr(softGalleryLanguage_StorageMemberAnnotation, "name")
     descriptor = None
-    for klass in softGalleryLanguage::StorageMemberAnnotation.__mro__:
+    for klass in softGalleryLanguage_StorageMemberAnnotation.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -3742,23 +3806,23 @@ def test_softgallerylanguage::storagememberannotation_has_name():
 
 
 
-def test_softgallerylanguage::storagemembertype_is_not_abstract():
-    assert not inspect.isabstract(softGalleryLanguage::StorageMemberType)
+def test_softgallerylanguage_storagemembertype_is_not_abstract():
+    assert not inspect.isabstract(softGalleryLanguage_StorageMemberType)
 
 
-def test_softgallerylanguage::storagemembertype_constructor_exists():
-    assert callable(softGalleryLanguage::StorageMemberType.__init__)
+def test_softgallerylanguage_storagemembertype_constructor_exists():
+    assert callable(softGalleryLanguage_StorageMemberType.__init__)
 
 
-def test_softgallerylanguage::storagemembertype_constructor_args():
-    sig = inspect.signature(softGalleryLanguage::StorageMemberType.__init__)
+def test_softgallerylanguage_storagemembertype_constructor_args():
+    sig = inspect.signature(softGalleryLanguage_StorageMemberType.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_softgallerylanguage::storagemembertype_has_name():
-    assert hasattr(softGalleryLanguage::StorageMemberType, "name")
+def test_softgallerylanguage_storagemembertype_has_name():
+    assert hasattr(softGalleryLanguage_StorageMemberType, "name")
     descriptor = None
-    for klass in softGalleryLanguage::StorageMemberType.__mro__:
+    for klass in softGalleryLanguage_StorageMemberType.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -3766,23 +3830,23 @@ def test_softgallerylanguage::storagemembertype_has_name():
 
 
 
-def test_softgallerylanguage::storagemember_is_not_abstract():
-    assert not inspect.isabstract(softGalleryLanguage::StorageMember)
+def test_softgallerylanguage_storagemember_is_not_abstract():
+    assert not inspect.isabstract(softGalleryLanguage_StorageMember)
 
 
-def test_softgallerylanguage::storagemember_constructor_exists():
-    assert callable(softGalleryLanguage::StorageMember.__init__)
+def test_softgallerylanguage_storagemember_constructor_exists():
+    assert callable(softGalleryLanguage_StorageMember.__init__)
 
 
-def test_softgallerylanguage::storagemember_constructor_args():
-    sig = inspect.signature(softGalleryLanguage::StorageMember.__init__)
+def test_softgallerylanguage_storagemember_constructor_args():
+    sig = inspect.signature(softGalleryLanguage_StorageMember.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_softgallerylanguage::storagemember_has_name():
-    assert hasattr(softGalleryLanguage::StorageMember, "name")
+def test_softgallerylanguage_storagemember_has_name():
+    assert hasattr(softGalleryLanguage_StorageMember, "name")
     descriptor = None
-    for klass in softGalleryLanguage::StorageMember.__mro__:
+    for klass in softGalleryLanguage_StorageMember.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -3790,23 +3854,23 @@ def test_softgallerylanguage::storagemember_has_name():
 
 
 
-def test_softgallerylanguage::storageclient_is_not_abstract():
-    assert not inspect.isabstract(softGalleryLanguage::StorageClient)
+def test_softgallerylanguage_storageclient_is_not_abstract():
+    assert not inspect.isabstract(softGalleryLanguage_StorageClient)
 
 
-def test_softgallerylanguage::storageclient_constructor_exists():
-    assert callable(softGalleryLanguage::StorageClient.__init__)
+def test_softgallerylanguage_storageclient_constructor_exists():
+    assert callable(softGalleryLanguage_StorageClient.__init__)
 
 
-def test_softgallerylanguage::storageclient_constructor_args():
-    sig = inspect.signature(softGalleryLanguage::StorageClient.__init__)
+def test_softgallerylanguage_storageclient_constructor_args():
+    sig = inspect.signature(softGalleryLanguage_StorageClient.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_softgallerylanguage::storageclient_has_name():
-    assert hasattr(softGalleryLanguage::StorageClient, "name")
+def test_softgallerylanguage_storageclient_has_name():
+    assert hasattr(softGalleryLanguage_StorageClient, "name")
     descriptor = None
-    for klass in softGalleryLanguage::StorageClient.__mro__:
+    for klass in softGalleryLanguage_StorageClient.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -3814,23 +3878,23 @@ def test_softgallerylanguage::storageclient_has_name():
 
 
 
-def test_softgallerylanguage::springentityannotationtypes_is_not_abstract():
-    assert not inspect.isabstract(softGalleryLanguage::SpringEntityAnnotationTypes)
+def test_softgallerylanguage_springentityannotationtypes_is_not_abstract():
+    assert not inspect.isabstract(softGalleryLanguage_SpringEntityAnnotationTypes)
 
 
-def test_softgallerylanguage::springentityannotationtypes_constructor_exists():
-    assert callable(softGalleryLanguage::SpringEntityAnnotationTypes.__init__)
+def test_softgallerylanguage_springentityannotationtypes_constructor_exists():
+    assert callable(softGalleryLanguage_SpringEntityAnnotationTypes.__init__)
 
 
-def test_softgallerylanguage::springentityannotationtypes_constructor_args():
-    sig = inspect.signature(softGalleryLanguage::SpringEntityAnnotationTypes.__init__)
+def test_softgallerylanguage_springentityannotationtypes_constructor_args():
+    sig = inspect.signature(softGalleryLanguage_SpringEntityAnnotationTypes.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_softgallerylanguage::springentityannotationtypes_has_name():
-    assert hasattr(softGalleryLanguage::SpringEntityAnnotationTypes, "name")
+def test_softgallerylanguage_springentityannotationtypes_has_name():
+    assert hasattr(softGalleryLanguage_SpringEntityAnnotationTypes, "name")
     descriptor = None
-    for klass in softGalleryLanguage::SpringEntityAnnotationTypes.__mro__:
+    for klass in softGalleryLanguage_SpringEntityAnnotationTypes.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -3838,37 +3902,37 @@ def test_softgallerylanguage::springentityannotationtypes_has_name():
 
 
 
-def test_softgallerylanguage::reactcomponents_is_not_abstract():
-    assert not inspect.isabstract(softGalleryLanguage::ReactComponents)
+def test_softgallerylanguage_reactcomponents_is_not_abstract():
+    assert not inspect.isabstract(softGalleryLanguage_ReactComponents)
 
 
-def test_softgallerylanguage::reactcomponents_constructor_exists():
-    assert callable(softGalleryLanguage::ReactComponents.__init__)
+def test_softgallerylanguage_reactcomponents_constructor_exists():
+    assert callable(softGalleryLanguage_ReactComponents.__init__)
 
 
-def test_softgallerylanguage::reactcomponents_constructor_args():
-    sig = inspect.signature(softGalleryLanguage::ReactComponents.__init__)
+def test_softgallerylanguage_reactcomponents_constructor_args():
+    sig = inspect.signature(softGalleryLanguage_ReactComponents.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_softgallerylanguage::exceptionprocess_is_not_abstract():
-    assert not inspect.isabstract(softGalleryLanguage::ExceptionProcess)
+def test_softgallerylanguage_exceptionprocess_is_not_abstract():
+    assert not inspect.isabstract(softGalleryLanguage_ExceptionProcess)
 
 
-def test_softgallerylanguage::exceptionprocess_constructor_exists():
-    assert callable(softGalleryLanguage::ExceptionProcess.__init__)
+def test_softgallerylanguage_exceptionprocess_constructor_exists():
+    assert callable(softGalleryLanguage_ExceptionProcess.__init__)
 
 
-def test_softgallerylanguage::exceptionprocess_constructor_args():
-    sig = inspect.signature(softGalleryLanguage::ExceptionProcess.__init__)
+def test_softgallerylanguage_exceptionprocess_constructor_args():
+    sig = inspect.signature(softGalleryLanguage_ExceptionProcess.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_softgallerylanguage::exceptionprocess_has_name():
-    assert hasattr(softGalleryLanguage::ExceptionProcess, "name")
+def test_softgallerylanguage_exceptionprocess_has_name():
+    assert hasattr(softGalleryLanguage_ExceptionProcess, "name")
     descriptor = None
-    for klass in softGalleryLanguage::ExceptionProcess.__mro__:
+    for klass in softGalleryLanguage_ExceptionProcess.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -3876,23 +3940,23 @@ def test_softgallerylanguage::exceptionprocess_has_name():
 
 
 
-def test_softgallerylanguage::exceptionhandler_is_not_abstract():
-    assert not inspect.isabstract(softGalleryLanguage::ExceptionHandler)
+def test_softgallerylanguage_exceptionhandler_is_not_abstract():
+    assert not inspect.isabstract(softGalleryLanguage_ExceptionHandler)
 
 
-def test_softgallerylanguage::exceptionhandler_constructor_exists():
-    assert callable(softGalleryLanguage::ExceptionHandler.__init__)
+def test_softgallerylanguage_exceptionhandler_constructor_exists():
+    assert callable(softGalleryLanguage_ExceptionHandler.__init__)
 
 
-def test_softgallerylanguage::exceptionhandler_constructor_args():
-    sig = inspect.signature(softGalleryLanguage::ExceptionHandler.__init__)
+def test_softgallerylanguage_exceptionhandler_constructor_args():
+    sig = inspect.signature(softGalleryLanguage_ExceptionHandler.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_softgallerylanguage::exceptionhandler_has_name():
-    assert hasattr(softGalleryLanguage::ExceptionHandler, "name")
+def test_softgallerylanguage_exceptionhandler_has_name():
+    assert hasattr(softGalleryLanguage_ExceptionHandler, "name")
     descriptor = None
-    for klass in softGalleryLanguage::ExceptionHandler.__mro__:
+    for klass in softGalleryLanguage_ExceptionHandler.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -3900,23 +3964,23 @@ def test_softgallerylanguage::exceptionhandler_has_name():
 
 
 
-def test_softgallerylanguage::responseparametername_is_not_abstract():
-    assert not inspect.isabstract(softGalleryLanguage::ResponseParameterName)
+def test_softgallerylanguage_responseparametername_is_not_abstract():
+    assert not inspect.isabstract(softGalleryLanguage_ResponseParameterName)
 
 
-def test_softgallerylanguage::responseparametername_constructor_exists():
-    assert callable(softGalleryLanguage::ResponseParameterName.__init__)
+def test_softgallerylanguage_responseparametername_constructor_exists():
+    assert callable(softGalleryLanguage_ResponseParameterName.__init__)
 
 
-def test_softgallerylanguage::responseparametername_constructor_args():
-    sig = inspect.signature(softGalleryLanguage::ResponseParameterName.__init__)
+def test_softgallerylanguage_responseparametername_constructor_args():
+    sig = inspect.signature(softGalleryLanguage_ResponseParameterName.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_softgallerylanguage::responseparametername_has_name():
-    assert hasattr(softGalleryLanguage::ResponseParameterName, "name")
+def test_softgallerylanguage_responseparametername_has_name():
+    assert hasattr(softGalleryLanguage_ResponseParameterName, "name")
     descriptor = None
-    for klass in softGalleryLanguage::ResponseParameterName.__mro__:
+    for klass in softGalleryLanguage_ResponseParameterName.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -3924,23 +3988,23 @@ def test_softgallerylanguage::responseparametername_has_name():
 
 
 
-def test_softgallerylanguage::responseparametertype_is_not_abstract():
-    assert not inspect.isabstract(softGalleryLanguage::ResponseParameterType)
+def test_softgallerylanguage_responseparametertype_is_not_abstract():
+    assert not inspect.isabstract(softGalleryLanguage_ResponseParameterType)
 
 
-def test_softgallerylanguage::responseparametertype_constructor_exists():
-    assert callable(softGalleryLanguage::ResponseParameterType.__init__)
+def test_softgallerylanguage_responseparametertype_constructor_exists():
+    assert callable(softGalleryLanguage_ResponseParameterType.__init__)
 
 
-def test_softgallerylanguage::responseparametertype_constructor_args():
-    sig = inspect.signature(softGalleryLanguage::ResponseParameterType.__init__)
+def test_softgallerylanguage_responseparametertype_constructor_args():
+    sig = inspect.signature(softGalleryLanguage_ResponseParameterType.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_softgallerylanguage::responseparametertype_has_name():
-    assert hasattr(softGalleryLanguage::ResponseParameterType, "name")
+def test_softgallerylanguage_responseparametertype_has_name():
+    assert hasattr(softGalleryLanguage_ResponseParameterType, "name")
     descriptor = None
-    for klass in softGalleryLanguage::ResponseParameterType.__mro__:
+    for klass in softGalleryLanguage_ResponseParameterType.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -3948,23 +4012,23 @@ def test_softgallerylanguage::responseparametertype_has_name():
 
 
 
-def test_softgallerylanguage::responseparameterannotation_is_not_abstract():
-    assert not inspect.isabstract(softGalleryLanguage::ResponseParameterAnnotation)
+def test_softgallerylanguage_responseparameterannotation_is_not_abstract():
+    assert not inspect.isabstract(softGalleryLanguage_ResponseParameterAnnotation)
 
 
-def test_softgallerylanguage::responseparameterannotation_constructor_exists():
-    assert callable(softGalleryLanguage::ResponseParameterAnnotation.__init__)
+def test_softgallerylanguage_responseparameterannotation_constructor_exists():
+    assert callable(softGalleryLanguage_ResponseParameterAnnotation.__init__)
 
 
-def test_softgallerylanguage::responseparameterannotation_constructor_args():
-    sig = inspect.signature(softGalleryLanguage::ResponseParameterAnnotation.__init__)
+def test_softgallerylanguage_responseparameterannotation_constructor_args():
+    sig = inspect.signature(softGalleryLanguage_ResponseParameterAnnotation.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_softgallerylanguage::responseparameterannotation_has_name():
-    assert hasattr(softGalleryLanguage::ResponseParameterAnnotation, "name")
+def test_softgallerylanguage_responseparameterannotation_has_name():
+    assert hasattr(softGalleryLanguage_ResponseParameterAnnotation, "name")
     descriptor = None
-    for klass in softGalleryLanguage::ResponseParameterAnnotation.__mro__:
+    for klass in softGalleryLanguage_ResponseParameterAnnotation.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -3972,65 +4036,23 @@ def test_softgallerylanguage::responseparameterannotation_has_name():
 
 
 
-def test_softgallerylanguage::appaccess_is_not_abstract():
-    assert not inspect.isabstract(softGalleryLanguage::AppAccess)
+def test_softgallerylanguage_deletemapping_is_not_abstract():
+    assert not inspect.isabstract(softGalleryLanguage_DeleteMapping)
 
 
-def test_softgallerylanguage::appaccess_constructor_exists():
-    assert callable(softGalleryLanguage::AppAccess.__init__)
+def test_softgallerylanguage_deletemapping_constructor_exists():
+    assert callable(softGalleryLanguage_DeleteMapping.__init__)
 
 
-def test_softgallerylanguage::appaccess_constructor_args():
-    sig = inspect.signature(softGalleryLanguage::AppAccess.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_softgallerylanguage::profilemanagement_is_not_abstract():
-    assert not inspect.isabstract(softGalleryLanguage::ProfileManagement)
-
-
-def test_softgallerylanguage::profilemanagement_constructor_exists():
-    assert callable(softGalleryLanguage::ProfileManagement.__init__)
-
-
-def test_softgallerylanguage::profilemanagement_constructor_args():
-    sig = inspect.signature(softGalleryLanguage::ProfileManagement.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_softgallerylanguage::functionalities_is_not_abstract():
-    assert not inspect.isabstract(softGalleryLanguage::Functionalities)
-
-
-def test_softgallerylanguage::functionalities_constructor_exists():
-    assert callable(softGalleryLanguage::Functionalities.__init__)
-
-
-def test_softgallerylanguage::functionalities_constructor_args():
-    sig = inspect.signature(softGalleryLanguage::Functionalities.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_softgallerylanguage::atributeuserdomain_is_not_abstract():
-    assert not inspect.isabstract(softGalleryLanguage::AtributeUserDomain)
-
-
-def test_softgallerylanguage::atributeuserdomain_constructor_exists():
-    assert callable(softGalleryLanguage::AtributeUserDomain.__init__)
-
-
-def test_softgallerylanguage::atributeuserdomain_constructor_args():
-    sig = inspect.signature(softGalleryLanguage::AtributeUserDomain.__init__)
+def test_softgallerylanguage_deletemapping_constructor_args():
+    sig = inspect.signature(softGalleryLanguage_DeleteMapping.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_softgallerylanguage::atributeuserdomain_has_name():
-    assert hasattr(softGalleryLanguage::AtributeUserDomain, "name")
+def test_softgallerylanguage_deletemapping_has_name():
+    assert hasattr(softGalleryLanguage_DeleteMapping, "name")
     descriptor = None
-    for klass in softGalleryLanguage::AtributeUserDomain.__mro__:
+    for klass in softGalleryLanguage_DeleteMapping.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -4038,23 +4060,23 @@ def test_softgallerylanguage::atributeuserdomain_has_name():
 
 
 
-def test_softgallerylanguage::atributealbum_is_not_abstract():
-    assert not inspect.isabstract(softGalleryLanguage::AtributeAlbum)
+def test_softgallerylanguage_putmapping_is_not_abstract():
+    assert not inspect.isabstract(softGalleryLanguage_PutMapping)
 
 
-def test_softgallerylanguage::atributealbum_constructor_exists():
-    assert callable(softGalleryLanguage::AtributeAlbum.__init__)
+def test_softgallerylanguage_putmapping_constructor_exists():
+    assert callable(softGalleryLanguage_PutMapping.__init__)
 
 
-def test_softgallerylanguage::atributealbum_constructor_args():
-    sig = inspect.signature(softGalleryLanguage::AtributeAlbum.__init__)
+def test_softgallerylanguage_putmapping_constructor_args():
+    sig = inspect.signature(softGalleryLanguage_PutMapping.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_softgallerylanguage::atributealbum_has_name():
-    assert hasattr(softGalleryLanguage::AtributeAlbum, "name")
+def test_softgallerylanguage_putmapping_has_name():
+    assert hasattr(softGalleryLanguage_PutMapping, "name")
     descriptor = None
-    for klass in softGalleryLanguage::AtributeAlbum.__mro__:
+    for klass in softGalleryLanguage_PutMapping.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -4062,23 +4084,23 @@ def test_softgallerylanguage::atributealbum_has_name():
 
 
 
-def test_softgallerylanguage::atributephoto_is_not_abstract():
-    assert not inspect.isabstract(softGalleryLanguage::AtributePhoto)
+def test_softgallerylanguage_getmapping_is_not_abstract():
+    assert not inspect.isabstract(softGalleryLanguage_GetMapping)
 
 
-def test_softgallerylanguage::atributephoto_constructor_exists():
-    assert callable(softGalleryLanguage::AtributePhoto.__init__)
+def test_softgallerylanguage_getmapping_constructor_exists():
+    assert callable(softGalleryLanguage_GetMapping.__init__)
 
 
-def test_softgallerylanguage::atributephoto_constructor_args():
-    sig = inspect.signature(softGalleryLanguage::AtributePhoto.__init__)
+def test_softgallerylanguage_getmapping_constructor_args():
+    sig = inspect.signature(softGalleryLanguage_GetMapping.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_softgallerylanguage::atributephoto_has_name():
-    assert hasattr(softGalleryLanguage::AtributePhoto, "name")
+def test_softgallerylanguage_getmapping_has_name():
+    assert hasattr(softGalleryLanguage_GetMapping, "name")
     descriptor = None
-    for klass in softGalleryLanguage::AtributePhoto.__mro__:
+    for klass in softGalleryLanguage_GetMapping.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -4086,23 +4108,23 @@ def test_softgallerylanguage::atributephoto_has_name():
 
 
 
-def test_softgallerylanguage::entities_is_not_abstract():
-    assert not inspect.isabstract(softGalleryLanguage::Entities)
+def test_softgallerylanguage_postmapping_is_not_abstract():
+    assert not inspect.isabstract(softGalleryLanguage_PostMapping)
 
 
-def test_softgallerylanguage::entities_constructor_exists():
-    assert callable(softGalleryLanguage::Entities.__init__)
+def test_softgallerylanguage_postmapping_constructor_exists():
+    assert callable(softGalleryLanguage_PostMapping.__init__)
 
 
-def test_softgallerylanguage::entities_constructor_args():
-    sig = inspect.signature(softGalleryLanguage::Entities.__init__)
+def test_softgallerylanguage_postmapping_constructor_args():
+    sig = inspect.signature(softGalleryLanguage_PostMapping.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_softgallerylanguage::entities_has_name():
-    assert hasattr(softGalleryLanguage::Entities, "name")
+def test_softgallerylanguage_postmapping_has_name():
+    assert hasattr(softGalleryLanguage_PostMapping, "name")
     descriptor = None
-    for klass in softGalleryLanguage::Entities.__mro__:
+    for klass in softGalleryLanguage_PostMapping.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -4110,65 +4132,23 @@ def test_softgallerylanguage::entities_has_name():
 
 
 
-def test_softgallerylanguage::exceptionsdomain_is_not_abstract():
-    assert not inspect.isabstract(softGalleryLanguage::ExceptionsDomain)
+def test_softgallerylanguage_requestmappingproduces_is_not_abstract():
+    assert not inspect.isabstract(softGalleryLanguage_RequestMappingProduces)
 
 
-def test_softgallerylanguage::exceptionsdomain_constructor_exists():
-    assert callable(softGalleryLanguage::ExceptionsDomain.__init__)
+def test_softgallerylanguage_requestmappingproduces_constructor_exists():
+    assert callable(softGalleryLanguage_RequestMappingProduces.__init__)
 
 
-def test_softgallerylanguage::exceptionsdomain_constructor_args():
-    sig = inspect.signature(softGalleryLanguage::ExceptionsDomain.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_softgallerylanguage::functionality_is_not_abstract():
-    assert not inspect.isabstract(softGalleryLanguage::Functionality)
-
-
-def test_softgallerylanguage::functionality_constructor_exists():
-    assert callable(softGalleryLanguage::Functionality.__init__)
-
-
-def test_softgallerylanguage::functionality_constructor_args():
-    sig = inspect.signature(softGalleryLanguage::Functionality.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_softgallerylanguage::entity_is_not_abstract():
-    assert not inspect.isabstract(softGalleryLanguage::Entity)
-
-
-def test_softgallerylanguage::entity_constructor_exists():
-    assert callable(softGalleryLanguage::Entity.__init__)
-
-
-def test_softgallerylanguage::entity_constructor_args():
-    sig = inspect.signature(softGalleryLanguage::Entity.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_softgallerylanguage::domain_is_not_abstract():
-    assert not inspect.isabstract(softGalleryLanguage::Domain)
-
-
-def test_softgallerylanguage::domain_constructor_exists():
-    assert callable(softGalleryLanguage::Domain.__init__)
-
-
-def test_softgallerylanguage::domain_constructor_args():
-    sig = inspect.signature(softGalleryLanguage::Domain.__init__)
+def test_softgallerylanguage_requestmappingproduces_constructor_args():
+    sig = inspect.signature(softGalleryLanguage_RequestMappingProduces.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_softgallerylanguage::domain_has_name():
-    assert hasattr(softGalleryLanguage::Domain, "name")
+def test_softgallerylanguage_requestmappingproduces_has_name():
+    assert hasattr(softGalleryLanguage_RequestMappingProduces, "name")
     descriptor = None
-    for klass in softGalleryLanguage::Domain.__mro__:
+    for klass in softGalleryLanguage_RequestMappingProduces.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -4176,31 +4156,51 @@ def test_softgallerylanguage::domain_has_name():
 
 
 
-def test_softgallerylanguage::eobject_is_not_abstract():
-    assert not inspect.isabstract(softGalleryLanguage::EObject)
+def test_softgallerylanguage_requestmappingmethod_is_not_abstract():
+    assert not inspect.isabstract(softGalleryLanguage_RequestMappingMethod)
 
 
-def test_softgallerylanguage::eobject_constructor_exists():
-    assert callable(softGalleryLanguage::EObject.__init__)
+def test_softgallerylanguage_requestmappingmethod_constructor_exists():
+    assert callable(softGalleryLanguage_RequestMappingMethod.__init__)
 
 
-def test_softgallerylanguage::eobject_constructor_args():
-    sig = inspect.signature(softGalleryLanguage::EObject.__init__)
+def test_softgallerylanguage_requestmappingmethod_constructor_args():
+    sig = inspect.signature(softGalleryLanguage_RequestMappingMethod.__init__)
     params = list(sig.parameters.keys())
+    assert "name" in params, "Missing parameter 'name'"
+
+def test_softgallerylanguage_requestmappingmethod_has_name():
+    assert hasattr(softGalleryLanguage_RequestMappingMethod, "name")
+    descriptor = None
+    for klass in softGalleryLanguage_RequestMappingMethod.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
 
 
 
-def test_softgallerylanguage::model_is_not_abstract():
-    assert not inspect.isabstract(softGalleryLanguage::Model)
+def test_softgallerylanguage_requestmappingvalue_is_not_abstract():
+    assert not inspect.isabstract(softGalleryLanguage_RequestMappingValue)
 
 
-def test_softgallerylanguage::model_constructor_exists():
-    assert callable(softGalleryLanguage::Model.__init__)
+def test_softgallerylanguage_requestmappingvalue_constructor_exists():
+    assert callable(softGalleryLanguage_RequestMappingValue.__init__)
 
 
-def test_softgallerylanguage::model_constructor_args():
-    sig = inspect.signature(softGalleryLanguage::Model.__init__)
+def test_softgallerylanguage_requestmappingvalue_constructor_args():
+    sig = inspect.signature(softGalleryLanguage_RequestMappingValue.__init__)
     params = list(sig.parameters.keys())
+    assert "name" in params, "Missing parameter 'name'"
+
+def test_softgallerylanguage_requestmappingvalue_has_name():
+    assert hasattr(softGalleryLanguage_RequestMappingValue, "name")
+    descriptor = None
+    for klass in softGalleryLanguage_RequestMappingValue.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
 
 
 # =============================================================================
@@ -4214,3288 +4214,2877 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-softGalleryLanguage::RequestMappingProduces_strategy = st.builds(
-    softGalleryLanguage::RequestMappingProduces,
-    name=
-        safe_text
-)
-softGalleryLanguage::RequestMappingMethod_strategy = st.builds(
-    softGalleryLanguage::RequestMappingMethod,
-    name=
-        safe_text
-)
-softGalleryLanguage::RequestMappingValue_strategy = st.builds(
-    softGalleryLanguage::RequestMappingValue,
-    name=
-        safe_text
-)
 MappingType_strategy = st.builds(
     MappingType,
 )
-softGalleryLanguage::GetMapping_strategy = st.builds(
-    softGalleryLanguage::GetMapping,
+softGalleryLanguage_RequestMapping_strategy = st.builds(
+    softGalleryLanguage_RequestMapping,
+)
+softGalleryLanguage_SpringEntity_strategy = st.builds(
+    softGalleryLanguage_SpringEntity,
+)
+softGalleryLanguage_ResponseParameter_strategy = st.builds(
+    softGalleryLanguage_ResponseParameter,
+)
+softGalleryLanguage_MappingType_strategy = st.builds(
+    softGalleryLanguage_MappingType,
+)
+softGalleryLanguage_ResponseEntity_strategy = st.builds(
+    softGalleryLanguage_ResponseEntity,
     name=
         safe_text
 )
-softGalleryLanguage::PutMapping_strategy = st.builds(
-    softGalleryLanguage::PutMapping,
+softGalleryLanguage_Autowired_strategy = st.builds(
+    softGalleryLanguage_Autowired,
     name=
         safe_text
 )
-softGalleryLanguage::DeleteMapping_strategy = st.builds(
-    softGalleryLanguage::DeleteMapping,
+softGalleryLanguage_SearchCriteria_strategy = st.builds(
+    softGalleryLanguage_SearchCriteria,
     name=
         safe_text
 )
-softGalleryLanguage::PostMapping_strategy = st.builds(
-    softGalleryLanguage::PostMapping,
+softGalleryLanguage_Predicate_strategy = st.builds(
+    softGalleryLanguage_Predicate,
     name=
         safe_text
 )
-softGalleryLanguage::RequestMapping_strategy = st.builds(
-    softGalleryLanguage::RequestMapping,
+softGalleryLanguage_Specification_strategy = st.builds(
+    softGalleryLanguage_Specification,
 )
-softGalleryLanguage::SpringEntity_strategy = st.builds(
-    softGalleryLanguage::SpringEntity,
-)
-softGalleryLanguage::ResponseParameter_strategy = st.builds(
-    softGalleryLanguage::ResponseParameter,
-)
-softGalleryLanguage::MappingType_strategy = st.builds(
-    softGalleryLanguage::MappingType,
-)
-softGalleryLanguage::ResponseEntity_strategy = st.builds(
-    softGalleryLanguage::ResponseEntity,
+softGalleryLanguage_RestController_strategy = st.builds(
+    softGalleryLanguage_RestController,
     name=
         safe_text
 )
-softGalleryLanguage::Autowired_strategy = st.builds(
-    softGalleryLanguage::Autowired,
+softGalleryLanguage_SpringRepositoryAnnotation_strategy = st.builds(
+    softGalleryLanguage_SpringRepositoryAnnotation,
     name=
         safe_text
 )
-softGalleryLanguage::SearchCriteria_strategy = st.builds(
-    softGalleryLanguage::SearchCriteria,
+softGalleryLanguage_SpringRepositories_strategy = st.builds(
+    softGalleryLanguage_SpringRepositories,
     name=
         safe_text
 )
-softGalleryLanguage::Predicate_strategy = st.builds(
-    softGalleryLanguage::Predicate,
+softGalleryLanguage_SpringRepository_strategy = st.builds(
+    softGalleryLanguage_SpringRepository,
+)
+softGalleryLanguage_OrderSpring_strategy = st.builds(
+    softGalleryLanguage_OrderSpring,
     name=
         safe_text
 )
-softGalleryLanguage::Specification_strategy = st.builds(
-    softGalleryLanguage::Specification,
+softGalleryLanguage_SpringComponent_strategy = st.builds(
+    softGalleryLanguage_SpringComponent,
 )
-softGalleryLanguage::RestController_strategy = st.builds(
-    softGalleryLanguage::RestController,
+softGalleryLanguage_EnableWebSecurity_strategy = st.builds(
+    softGalleryLanguage_EnableWebSecurity,
     name=
         safe_text
 )
-softGalleryLanguage::SpringRepositoryAnnotation_strategy = st.builds(
-    softGalleryLanguage::SpringRepositoryAnnotation,
+softGalleryLanguage_EnableResourceServer_strategy = st.builds(
+    softGalleryLanguage_EnableResourceServer,
     name=
         safe_text
 )
-softGalleryLanguage::SpringRepositories_strategy = st.builds(
-    softGalleryLanguage::SpringRepositories,
+softGalleryLanguage_EnableAuthorizationServer_strategy = st.builds(
+    softGalleryLanguage_EnableAuthorizationServer,
     name=
         safe_text
 )
-softGalleryLanguage::SpringRepository_strategy = st.builds(
-    softGalleryLanguage::SpringRepository,
-)
-softGalleryLanguage::OrderSpring_strategy = st.builds(
-    softGalleryLanguage::OrderSpring,
+softGalleryLanguage_EnableGlobalMethodSecurity_strategy = st.builds(
+    softGalleryLanguage_EnableGlobalMethodSecurity,
     name=
         safe_text
 )
-softGalleryLanguage::SpringComponent_strategy = st.builds(
-    softGalleryLanguage::SpringComponent,
+softGalleryLanguage_Configuration_strategy = st.builds(
+    softGalleryLanguage_Configuration,
 )
-softGalleryLanguage::EnableWebSecurity_strategy = st.builds(
-    softGalleryLanguage::EnableWebSecurity,
+softGalleryLanguage_SpringBootApplication_strategy = st.builds(
+    softGalleryLanguage_SpringBootApplication,
+)
+softGalleryLanguage_AmazonWebServices_strategy = st.builds(
+    softGalleryLanguage_AmazonWebServices,
     name=
         safe_text
 )
-softGalleryLanguage::EnableResourceServer_strategy = st.builds(
-    softGalleryLanguage::EnableResourceServer,
+softGalleryLanguage_PostgreSQL_strategy = st.builds(
+    softGalleryLanguage_PostgreSQL,
     name=
         safe_text
 )
-softGalleryLanguage::EnableAuthorizationServer_strategy = st.builds(
-    softGalleryLanguage::EnableAuthorizationServer,
+softGalleryLanguage_React_strategy = st.builds(
+    softGalleryLanguage_React,
     name=
         safe_text
 )
-softGalleryLanguage::EnableGlobalMethodSecurity_strategy = st.builds(
-    softGalleryLanguage::EnableGlobalMethodSecurity,
+softGalleryLanguage_Spring_strategy = st.builds(
+    softGalleryLanguage_Spring,
     name=
         safe_text
 )
-softGalleryLanguage::Configuration_strategy = st.builds(
-    softGalleryLanguage::Configuration,
+softGalleryLanguage_Technologies_strategy = st.builds(
+    softGalleryLanguage_Technologies,
 )
-softGalleryLanguage::SpringBootApplication_strategy = st.builds(
-    softGalleryLanguage::SpringBootApplication,
-)
-softGalleryLanguage::AmazonWebServices_strategy = st.builds(
-    softGalleryLanguage::AmazonWebServices,
+softGalleryLanguage_NTiersRelations_strategy = st.builds(
+    softGalleryLanguage_NTiersRelations,
     name=
         safe_text
 )
-softGalleryLanguage::PostgreSQL_strategy = st.builds(
-    softGalleryLanguage::PostgreSQL,
-    name=
-        safe_text
+softGalleryLanguage_NTierTarget_strategy = st.builds(
+    softGalleryLanguage_NTierTarget,
 )
-softGalleryLanguage::React_strategy = st.builds(
-    softGalleryLanguage::React,
-    name=
-        safe_text
+softGalleryLanguage_NTierSource_strategy = st.builds(
+    softGalleryLanguage_NTierSource,
 )
-softGalleryLanguage::Spring_strategy = st.builds(
-    softGalleryLanguage::Spring,
-    name=
-        safe_text
-)
-softGalleryLanguage::Technologies_strategy = st.builds(
-    softGalleryLanguage::Technologies,
-)
-softGalleryLanguage::NTiersRelations_strategy = st.builds(
-    softGalleryLanguage::NTiersRelations,
-    name=
-        safe_text
-)
-softGalleryLanguage::NTierTarget_strategy = st.builds(
-    softGalleryLanguage::NTierTarget,
-)
-softGalleryLanguage::NTierSource_strategy = st.builds(
-    softGalleryLanguage::NTierSource,
-)
-softGalleryLanguage::NTierConnectionContent_strategy = st.builds(
-    softGalleryLanguage::NTierConnectionContent,
+softGalleryLanguage_NTierConnectionContent_strategy = st.builds(
+    softGalleryLanguage_NTierConnectionContent,
     nTierName=
         safe_text,
     ntierconnection=
         safe_text
 )
-softGalleryLanguage::NTiersConnections_strategy = st.builds(
-    softGalleryLanguage::NTiersConnections,
+softGalleryLanguage_NTiersConnections_strategy = st.builds(
+    softGalleryLanguage_NTiersConnections,
 )
-softGalleryLanguage::PersistenceDataComponent_strategy = st.builds(
-    softGalleryLanguage::PersistenceDataComponent,
+softGalleryLanguage_PersistenceDataComponent_strategy = st.builds(
+    softGalleryLanguage_PersistenceDataComponent,
     name=
         safe_text
 )
-softGalleryLanguage::BackEnd_strategy = st.builds(
-    softGalleryLanguage::BackEnd,
+softGalleryLanguage_BackEnd_strategy = st.builds(
+    softGalleryLanguage_BackEnd,
     name=
         safe_text
 )
-softGalleryLanguage::FrontEnd_strategy = st.builds(
-    softGalleryLanguage::FrontEnd,
+softGalleryLanguage_FrontEnd_strategy = st.builds(
+    softGalleryLanguage_FrontEnd,
     name=
         safe_text
 )
-softGalleryLanguage::ArchitectureComponents_strategy = st.builds(
-    softGalleryLanguage::ArchitectureComponents,
+softGalleryLanguage_ArchitectureComponents_strategy = st.builds(
+    softGalleryLanguage_ArchitectureComponents,
 )
-softGalleryLanguage::LayerTarget_strategy = st.builds(
-    softGalleryLanguage::LayerTarget,
+softGalleryLanguage_LayerTarget_strategy = st.builds(
+    softGalleryLanguage_LayerTarget,
     layerelations=
         safe_text
 )
-softGalleryLanguage::LayerSource_strategy = st.builds(
-    softGalleryLanguage::LayerSource,
+softGalleryLanguage_LayerSource_strategy = st.builds(
+    softGalleryLanguage_LayerSource,
     layerelations=
         safe_text
 )
-softGalleryLanguage::Technology_strategy = st.builds(
-    softGalleryLanguage::Technology,
+softGalleryLanguage_Technology_strategy = st.builds(
+    softGalleryLanguage_Technology,
     name=
         safe_text
 )
-softGalleryLanguage::SingleFile_strategy = st.builds(
-    softGalleryLanguage::SingleFile,
+softGalleryLanguage_SingleFile_strategy = st.builds(
+    softGalleryLanguage_SingleFile,
     name=
         safe_text
 )
-softGalleryLanguage::MultipleFile_strategy = st.builds(
-    softGalleryLanguage::MultipleFile,
+softGalleryLanguage_MultipleFile_strategy = st.builds(
+    softGalleryLanguage_MultipleFile,
     name=
         safe_text
 )
-softGalleryLanguage::Directories_strategy = st.builds(
-    softGalleryLanguage::Directories,
+softGalleryLanguage_Directories_strategy = st.builds(
+    softGalleryLanguage_Directories,
 )
-softGalleryLanguage::DirectoryContent_strategy = st.builds(
-    softGalleryLanguage::DirectoryContent,
+softGalleryLanguage_DirectoryContent_strategy = st.builds(
+    softGalleryLanguage_DirectoryContent,
     name=
         safe_text
 )
-softGalleryLanguage::SegmentStructureContent_strategy = st.builds(
-    softGalleryLanguage::SegmentStructureContent,
+softGalleryLanguage_SegmentStructureContent_strategy = st.builds(
+    softGalleryLanguage_SegmentStructureContent,
     name=
         safe_text
 )
-softGalleryLanguage::SegmentStructure_strategy = st.builds(
-    softGalleryLanguage::SegmentStructure,
+softGalleryLanguage_SegmentStructure_strategy = st.builds(
+    softGalleryLanguage_SegmentStructure,
 )
-softGalleryLanguage::DataPersistenceSegments_strategy = st.builds(
-    softGalleryLanguage::DataPersistenceSegments,
-    amazonSName=
-        safe_text,
+softGalleryLanguage_DataPersistenceSegments_strategy = st.builds(
+    softGalleryLanguage_DataPersistenceSegments,
     postSName=
-        safe_text
-)
-softGalleryLanguage::DataPersistenceContent_strategy = st.builds(
-    softGalleryLanguage::DataPersistenceContent,
-)
-softGalleryLanguage::DataPersistenceLayer_strategy = st.builds(
-    softGalleryLanguage::DataPersistenceLayer,
-)
-softGalleryLanguage::CriteriaAttributeType_strategy = st.builds(
-    softGalleryLanguage::CriteriaAttributeType,
-    name=
-        safe_text
-)
-softGalleryLanguage::SpecificationSegmentElement_strategy = st.builds(
-    softGalleryLanguage::SpecificationSegmentElement,
-    name=
-        safe_text
-)
-softGalleryLanguage::ControllerSegmentElement_strategy = st.builds(
-    softGalleryLanguage::ControllerSegmentElement,
-    name=
-        safe_text
-)
-softGalleryLanguage::LayerRelations_strategy = st.builds(
-    softGalleryLanguage::LayerRelations,
-    layerelations=
         safe_text,
+    amazonSName=
+        safe_text
+)
+softGalleryLanguage_DataPersistenceContent_strategy = st.builds(
+    softGalleryLanguage_DataPersistenceContent,
+)
+softGalleryLanguage_DataPersistenceLayer_strategy = st.builds(
+    softGalleryLanguage_DataPersistenceLayer,
+)
+softGalleryLanguage_CriteriaAttributeType_strategy = st.builds(
+    softGalleryLanguage_CriteriaAttributeType,
     name=
         safe_text
 )
-softGalleryLanguage::BusinessLogicSegments_strategy = st.builds(
-    softGalleryLanguage::BusinessLogicSegments,
+softGalleryLanguage_SpecificationSegmentElement_strategy = st.builds(
+    softGalleryLanguage_SpecificationSegmentElement,
     name=
         safe_text
 )
-softGalleryLanguage::BusinessLogicContent_strategy = st.builds(
-    softGalleryLanguage::BusinessLogicContent,
+softGalleryLanguage_ControllerSegmentElement_strategy = st.builds(
+    softGalleryLanguage_ControllerSegmentElement,
+    name=
+        safe_text
 )
-softGalleryLanguage::BusinessLogicLayer_strategy = st.builds(
-    softGalleryLanguage::BusinessLogicLayer,
+softGalleryLanguage_LayerRelations_strategy = st.builds(
+    softGalleryLanguage_LayerRelations,
+    name=
+        safe_text,
+    layerelations=
+        safe_text
 )
-softGalleryLanguage::PresentationSegments_strategy = st.builds(
-    softGalleryLanguage::PresentationSegments,
-    presentationSName=
+softGalleryLanguage_BusinessLogicSegments_strategy = st.builds(
+    softGalleryLanguage_BusinessLogicSegments,
+    name=
+        safe_text
+)
+softGalleryLanguage_BusinessLogicContent_strategy = st.builds(
+    softGalleryLanguage_BusinessLogicContent,
+)
+softGalleryLanguage_BusinessLogicLayer_strategy = st.builds(
+    softGalleryLanguage_BusinessLogicLayer,
+)
+softGalleryLanguage_PresentationSegments_strategy = st.builds(
+    softGalleryLanguage_PresentationSegments,
+    presentationCName=
         safe_text,
     presentationAName=
         safe_text,
-    presentationCName=
+    presentationSName=
         safe_text
 )
-softGalleryLanguage::PresentationContent_strategy = st.builds(
-    softGalleryLanguage::PresentationContent,
+softGalleryLanguage_PresentationContent_strategy = st.builds(
+    softGalleryLanguage_PresentationContent,
 )
-softGalleryLanguage::PresentationLayer_strategy = st.builds(
-    softGalleryLanguage::PresentationLayer,
+softGalleryLanguage_PresentationLayer_strategy = st.builds(
+    softGalleryLanguage_PresentationLayer,
 )
-softGalleryLanguage::Layer_strategy = st.builds(
-    softGalleryLanguage::Layer,
+softGalleryLanguage_Layer_strategy = st.builds(
+    softGalleryLanguage_Layer,
 )
-softGalleryLanguage::NTiers_strategy = st.builds(
-    softGalleryLanguage::NTiers,
+softGalleryLanguage_NTiers_strategy = st.builds(
+    softGalleryLanguage_NTiers,
 )
-softGalleryLanguage::Architecture_strategy = st.builds(
-    softGalleryLanguage::Architecture,
+softGalleryLanguage_Architecture_strategy = st.builds(
+    softGalleryLanguage_Architecture,
 )
-softGalleryLanguage::UserException_strategy = st.builds(
-    softGalleryLanguage::UserException,
+softGalleryLanguage_UserException_strategy = st.builds(
+    softGalleryLanguage_UserException,
     name=
         safe_text
 )
-softGalleryLanguage::AlbumException_strategy = st.builds(
-    softGalleryLanguage::AlbumException,
+softGalleryLanguage_AlbumException_strategy = st.builds(
+    softGalleryLanguage_AlbumException,
     name=
         safe_text
 )
-softGalleryLanguage::PhotoException_strategy = st.builds(
-    softGalleryLanguage::PhotoException,
+softGalleryLanguage_PhotoException_strategy = st.builds(
+    softGalleryLanguage_PhotoException,
     name=
         safe_text
 )
-softGalleryLanguage::LandingFunctions_strategy = st.builds(
-    softGalleryLanguage::LandingFunctions,
-    nameCarouselName=
-        safe_text,
+softGalleryLanguage_LandingFunctions_strategy = st.builds(
+    softGalleryLanguage_LandingFunctions,
     passPhotoName=
+        safe_text,
+    nameCarouselName=
         safe_text
 )
-softGalleryLanguage::PhotoActionsFunctions_strategy = st.builds(
-    softGalleryLanguage::PhotoActionsFunctions,
+softGalleryLanguage_PhotoActionsFunctions_strategy = st.builds(
+    softGalleryLanguage_PhotoActionsFunctions,
     nameLoad=
         safe_text,
-    namePhoto=
-        safe_text,
     nameGenerico=
+        safe_text,
+    namePhoto=
         safe_text
 )
-softGalleryLanguage::AlbumManagementFunctions_strategy = st.builds(
-    softGalleryLanguage::AlbumManagementFunctions,
-    createdAlbName=
-        safe_text,
+softGalleryLanguage_AlbumManagementFunctions_strategy = st.builds(
+    softGalleryLanguage_AlbumManagementFunctions,
     selectAlbName=
-        safe_text
-)
-softGalleryLanguage::ExceptionsType_strategy = st.builds(
-    softGalleryLanguage::ExceptionsType,
-)
-softGalleryLanguage::AppAccessFunctions_strategy = st.builds(
-    softGalleryLanguage::AppAccessFunctions,
-    registerName=
         safe_text,
-    loginName=
+    createdAlbName=
         safe_text
 )
-softGalleryLanguage::ProfileManagementFunctions_strategy = st.builds(
-    softGalleryLanguage::ProfileManagementFunctions,
+softGalleryLanguage_ExceptionsType_strategy = st.builds(
+    softGalleryLanguage_ExceptionsType,
+)
+softGalleryLanguage_AppAccessFunctions_strategy = st.builds(
+    softGalleryLanguage_AppAccessFunctions,
+    loginName=
+        safe_text,
+    registerName=
+        safe_text
+)
+softGalleryLanguage_ProfileManagementFunctions_strategy = st.builds(
+    softGalleryLanguage_ProfileManagementFunctions,
     viewprofileName=
         safe_text,
     editProfileName=
         safe_text
 )
-softGalleryLanguage::LandingActions_strategy = st.builds(
-    softGalleryLanguage::LandingActions,
+softGalleryLanguage_LandingActions_strategy = st.builds(
+    softGalleryLanguage_LandingActions,
 )
-softGalleryLanguage::PhotoActions_strategy = st.builds(
-    softGalleryLanguage::PhotoActions,
+softGalleryLanguage_PhotoActions_strategy = st.builds(
+    softGalleryLanguage_PhotoActions,
 )
-softGalleryLanguage::AlbumManagement_strategy = st.builds(
-    softGalleryLanguage::AlbumManagement,
+softGalleryLanguage_AlbumManagement_strategy = st.builds(
+    softGalleryLanguage_AlbumManagement,
 )
-softGalleryLanguage::AmazonElasticComputeCloud_strategy = st.builds(
-    softGalleryLanguage::AmazonElasticComputeCloud,
+softGalleryLanguage_AppAccess_strategy = st.builds(
+    softGalleryLanguage_AppAccess,
+)
+softGalleryLanguage_ProfileManagement_strategy = st.builds(
+    softGalleryLanguage_ProfileManagement,
+)
+softGalleryLanguage_Functionalities_strategy = st.builds(
+    softGalleryLanguage_Functionalities,
+)
+softGalleryLanguage_AtributeUserDomain_strategy = st.builds(
+    softGalleryLanguage_AtributeUserDomain,
     name=
         safe_text
 )
-softGalleryLanguage::Metadata_strategy = st.builds(
-    softGalleryLanguage::Metadata,
+softGalleryLanguage_AtributeAlbum_strategy = st.builds(
+    softGalleryLanguage_AtributeAlbum,
     name=
         safe_text
 )
-softGalleryLanguage::AmazonFile_strategy = st.builds(
-    softGalleryLanguage::AmazonFile,
-)
-softGalleryLanguage::AmazonFolder_strategy = st.builds(
-    softGalleryLanguage::AmazonFolder,
+softGalleryLanguage_AtributePhoto_strategy = st.builds(
+    softGalleryLanguage_AtributePhoto,
     name=
         safe_text
 )
-softGalleryLanguage::OnlyAuthorized_strategy = st.builds(
-    softGalleryLanguage::OnlyAuthorized,
+softGalleryLanguage_Entities_strategy = st.builds(
+    softGalleryLanguage_Entities,
     name=
         safe_text
 )
-softGalleryLanguage::BucketObjectsNotPublic_strategy = st.builds(
-    softGalleryLanguage::BucketObjectsNotPublic,
+softGalleryLanguage_ExceptionsDomain_strategy = st.builds(
+    softGalleryLanguage_ExceptionsDomain,
+)
+softGalleryLanguage_Functionality_strategy = st.builds(
+    softGalleryLanguage_Functionality,
+)
+softGalleryLanguage_Entity_strategy = st.builds(
+    softGalleryLanguage_Entity,
+)
+softGalleryLanguage_Domain_strategy = st.builds(
+    softGalleryLanguage_Domain,
     name=
         safe_text
 )
-softGalleryLanguage::ObjectsPublic_strategy = st.builds(
-    softGalleryLanguage::ObjectsPublic,
+softGalleryLanguage_EObject_strategy = st.builds(
+    softGalleryLanguage_EObject,
+)
+softGalleryLanguage_Model_strategy = st.builds(
+    softGalleryLanguage_Model,
+)
+softGalleryLanguage_AmazonElasticComputeCloud_strategy = st.builds(
+    softGalleryLanguage_AmazonElasticComputeCloud,
     name=
         safe_text
 )
-softGalleryLanguage::BucketAccess_strategy = st.builds(
-    softGalleryLanguage::BucketAccess,
-)
-softGalleryLanguage::Bucket_strategy = st.builds(
-    softGalleryLanguage::Bucket,
+softGalleryLanguage_Metadata_strategy = st.builds(
+    softGalleryLanguage_Metadata,
     name=
         safe_text
 )
-softGalleryLanguage::BatchOperation_strategy = st.builds(
-    softGalleryLanguage::BatchOperation,
+softGalleryLanguage_AmazonFile_strategy = st.builds(
+    softGalleryLanguage_AmazonFile,
+)
+softGalleryLanguage_AmazonFolder_strategy = st.builds(
+    softGalleryLanguage_AmazonFolder,
     name=
         safe_text
 )
-softGalleryLanguage::AmazonSimpleStorageService_strategy = st.builds(
-    softGalleryLanguage::AmazonSimpleStorageService,
-)
-softGalleryLanguage::Clause_strategy = st.builds(
-    softGalleryLanguage::Clause,
+softGalleryLanguage_OnlyAuthorized_strategy = st.builds(
+    softGalleryLanguage_OnlyAuthorized,
     name=
         safe_text
 )
-softGalleryLanguage::Query_strategy = st.builds(
-    softGalleryLanguage::Query,
-)
-softGalleryLanguage::Privilege_strategy = st.builds(
-    softGalleryLanguage::Privilege,
+softGalleryLanguage_BucketObjectsNotPublic_strategy = st.builds(
+    softGalleryLanguage_BucketObjectsNotPublic,
     name=
         safe_text
 )
-softGalleryLanguage::PostgresUser_strategy = st.builds(
-    softGalleryLanguage::PostgresUser,
+softGalleryLanguage_ObjectsPublic_strategy = st.builds(
+    softGalleryLanguage_ObjectsPublic,
     name=
         safe_text
 )
-softGalleryLanguage::Function_strategy = st.builds(
-    softGalleryLanguage::Function,
+softGalleryLanguage_BucketAccess_strategy = st.builds(
+    softGalleryLanguage_BucketAccess,
+)
+softGalleryLanguage_Bucket_strategy = st.builds(
+    softGalleryLanguage_Bucket,
     name=
         safe_text
 )
-softGalleryLanguage::Trigger_strategy = st.builds(
-    softGalleryLanguage::Trigger,
+softGalleryLanguage_BatchOperation_strategy = st.builds(
+    softGalleryLanguage_BatchOperation,
     name=
         safe_text
 )
-softGalleryLanguage::Policy_strategy = st.builds(
-    softGalleryLanguage::Policy,
+softGalleryLanguage_AmazonSimpleStorageService_strategy = st.builds(
+    softGalleryLanguage_AmazonSimpleStorageService,
+)
+softGalleryLanguage_Clause_strategy = st.builds(
+    softGalleryLanguage_Clause,
     name=
         safe_text
 )
-softGalleryLanguage::PublicAccess_strategy = st.builds(
-    softGalleryLanguage::PublicAccess,
+softGalleryLanguage_Query_strategy = st.builds(
+    softGalleryLanguage_Query,
+)
+softGalleryLanguage_Privilege_strategy = st.builds(
+    softGalleryLanguage_Privilege,
     name=
         safe_text
 )
-softGalleryLanguage::Constraint_strategy = st.builds(
-    softGalleryLanguage::Constraint,
+softGalleryLanguage_PostgresUser_strategy = st.builds(
+    softGalleryLanguage_PostgresUser,
     name=
         safe_text
 )
-softGalleryLanguage::DatatypeDB_strategy = st.builds(
-    softGalleryLanguage::DatatypeDB,
+softGalleryLanguage_Function_strategy = st.builds(
+    softGalleryLanguage_Function,
     name=
         safe_text
 )
-softGalleryLanguage::ColumnP_strategy = st.builds(
-    softGalleryLanguage::ColumnP,
+softGalleryLanguage_Trigger_strategy = st.builds(
+    softGalleryLanguage_Trigger,
     name=
         safe_text
 )
-softGalleryLanguage::RefTable::p_strategy = st.builds(
-    softGalleryLanguage::RefTable::p,
+softGalleryLanguage_Policy_strategy = st.builds(
+    softGalleryLanguage_Policy,
     name=
         safe_text
 )
-softGalleryLanguage::ForeignKeyRef_strategy = st.builds(
-    softGalleryLanguage::ForeignKeyRef,
-)
-softGalleryLanguage::ForeignKey::n_strategy = st.builds(
-    softGalleryLanguage::ForeignKey::n,
+softGalleryLanguage_PublicAccess_strategy = st.builds(
+    softGalleryLanguage_PublicAccess,
     name=
         safe_text
 )
-softGalleryLanguage::ForeignKey_strategy = st.builds(
-    softGalleryLanguage::ForeignKey,
-)
-softGalleryLanguage::Table::p_strategy = st.builds(
-    softGalleryLanguage::Table::p,
+softGalleryLanguage_Constraint_strategy = st.builds(
+    softGalleryLanguage_Constraint,
     name=
         safe_text
 )
-softGalleryLanguage::ViewSchema_strategy = st.builds(
-    softGalleryLanguage::ViewSchema,
+softGalleryLanguage_DatatypeDB_strategy = st.builds(
+    softGalleryLanguage_DatatypeDB,
     name=
         safe_text
 )
-softGalleryLanguage::Index::p_strategy = st.builds(
-    softGalleryLanguage::Index::p,
+softGalleryLanguage_ColumnP_strategy = st.builds(
+    softGalleryLanguage_ColumnP,
     name=
         safe_text
 )
-softGalleryLanguage::Schema_strategy = st.builds(
-    softGalleryLanguage::Schema,
-)
-softGalleryLanguage::Database_strategy = st.builds(
-    softGalleryLanguage::Database,
+softGalleryLanguage_RefTable_p_strategy = st.builds(
+    softGalleryLanguage_RefTable_p,
     name=
         safe_text
 )
-softGalleryLanguage::Cluster_strategy = st.builds(
-    softGalleryLanguage::Cluster,
+softGalleryLanguage_ForeignKeyRef_strategy = st.builds(
+    softGalleryLanguage_ForeignKeyRef,
 )
-softGalleryLanguage::Row_strategy = st.builds(
-    softGalleryLanguage::Row,
+softGalleryLanguage_ForeignKey_n_strategy = st.builds(
+    softGalleryLanguage_ForeignKey_n,
     name=
         safe_text
 )
-softGalleryLanguage::ReactInformation_strategy = st.builds(
-    softGalleryLanguage::ReactInformation,
+softGalleryLanguage_ForeignKey_strategy = st.builds(
+    softGalleryLanguage_ForeignKey,
+)
+softGalleryLanguage_Table_p_strategy = st.builds(
+    softGalleryLanguage_Table_p,
     name=
         safe_text
 )
-softGalleryLanguage::ReactLibrary_strategy = st.builds(
-    softGalleryLanguage::ReactLibrary,
+softGalleryLanguage_ViewSchema_strategy = st.builds(
+    softGalleryLanguage_ViewSchema,
     name=
         safe_text
 )
-softGalleryLanguage::ReactsRelationServ_strategy = st.builds(
-    softGalleryLanguage::ReactsRelationServ,
+softGalleryLanguage_Index_p_strategy = st.builds(
+    softGalleryLanguage_Index_p,
     name=
         safe_text
 )
-softGalleryLanguage::ReactServiceRequestProps_strategy = st.builds(
-    softGalleryLanguage::ReactServiceRequestProps,
+softGalleryLanguage_Schema_strategy = st.builds(
+    softGalleryLanguage_Schema,
+)
+softGalleryLanguage_Database_strategy = st.builds(
+    softGalleryLanguage_Database,
+    name=
+        safe_text
+)
+softGalleryLanguage_Cluster_strategy = st.builds(
+    softGalleryLanguage_Cluster,
+)
+softGalleryLanguage_Row_strategy = st.builds(
+    softGalleryLanguage_Row,
+    name=
+        safe_text
+)
+softGalleryLanguage_ReactInformation_strategy = st.builds(
+    softGalleryLanguage_ReactInformation,
+    name=
+        safe_text
+)
+softGalleryLanguage_ReactLibrary_strategy = st.builds(
+    softGalleryLanguage_ReactLibrary,
+    name=
+        safe_text
+)
+softGalleryLanguage_ReactsRelationServ_strategy = st.builds(
+    softGalleryLanguage_ReactsRelationServ,
+    name=
+        safe_text
+)
+softGalleryLanguage_ReactServiceRequestProps_strategy = st.builds(
+    softGalleryLanguage_ReactServiceRequestProps,
     reqPropName=
         safe_text,
     reqPropDescription=
         safe_text
 )
-softGalleryLanguage::ReactServiceContRequest_strategy = st.builds(
-    softGalleryLanguage::ReactServiceContRequest,
+softGalleryLanguage_ReactServiceContRequest_strategy = st.builds(
+    softGalleryLanguage_ReactServiceContRequest,
 )
-softGalleryLanguage::ReactServiceContent_strategy = st.builds(
-    softGalleryLanguage::ReactServiceContent,
+softGalleryLanguage_ReactServiceContent_strategy = st.builds(
+    softGalleryLanguage_ReactServiceContent,
     functName=
         safe_text
 )
-softGalleryLanguage::ReactServicesType_strategy = st.builds(
-    softGalleryLanguage::ReactServicesType,
+softGalleryLanguage_ReactServicesType_strategy = st.builds(
+    softGalleryLanguage_ReactServicesType,
     name=
         safe_text
 )
-softGalleryLanguage::ReactServicesRelation_strategy = st.builds(
-    softGalleryLanguage::ReactServicesRelation,
+softGalleryLanguage_ReactServicesRelation_strategy = st.builds(
+    softGalleryLanguage_ReactServicesRelation,
 )
-softGalleryLanguage::ReactActionsContent_strategy = st.builds(
-    softGalleryLanguage::ReactActionsContent,
+softGalleryLanguage_ReactActionsContent_strategy = st.builds(
+    softGalleryLanguage_ReactActionsContent,
 )
-softGalleryLanguage::StylePropertiesContent_strategy = st.builds(
-    softGalleryLanguage::StylePropertiesContent,
+softGalleryLanguage_StylePropertiesContent_strategy = st.builds(
+    softGalleryLanguage_StylePropertiesContent,
     propName=
         safe_text
 )
-softGalleryLanguage::ComponentsStylesContent_strategy = st.builds(
-    softGalleryLanguage::ComponentsStylesContent,
+softGalleryLanguage_ComponentsStylesContent_strategy = st.builds(
+    softGalleryLanguage_ComponentsStylesContent,
     nameStyle=
         safe_text
 )
-softGalleryLanguage::PropsType_strategy = st.builds(
-    softGalleryLanguage::PropsType,
-    propsdatas=
-        safe_text,
+softGalleryLanguage_PropsType_strategy = st.builds(
+    softGalleryLanguage_PropsType,
     nameProps=
+        safe_text,
+    propsdatas=
         safe_text
 )
-softGalleryLanguage::StateContent_strategy = st.builds(
-    softGalleryLanguage::StateContent,
+softGalleryLanguage_StateContent_strategy = st.builds(
+    softGalleryLanguage_StateContent,
     stateName=
         safe_text,
     componentdatatyp=
         safe_text
 )
-softGalleryLanguage::CoreFunctionsDeclaration_strategy = st.builds(
-    softGalleryLanguage::CoreFunctionsDeclaration,
+softGalleryLanguage_CoreFunctionsDeclaration_strategy = st.builds(
+    softGalleryLanguage_CoreFunctionsDeclaration,
     name=
         safe_text
 )
-softGalleryLanguage::State_strategy = st.builds(
-    softGalleryLanguage::State,
+softGalleryLanguage_State_strategy = st.builds(
+    softGalleryLanguage_State,
 )
-softGalleryLanguage::ReactCoreFunctions_strategy = st.builds(
-    softGalleryLanguage::ReactCoreFunctions,
+softGalleryLanguage_ReactCoreFunctions_strategy = st.builds(
+    softGalleryLanguage_ReactCoreFunctions,
     name=
         safe_text
 )
-softGalleryLanguage::ReactConstructor_strategy = st.builds(
-    softGalleryLanguage::ReactConstructor,
+softGalleryLanguage_ReactConstructor_strategy = st.builds(
+    softGalleryLanguage_ReactConstructor,
 )
-softGalleryLanguage::ReactImportContent_strategy = st.builds(
-    softGalleryLanguage::ReactImportContent,
+softGalleryLanguage_ReactImportContent_strategy = st.builds(
+    softGalleryLanguage_ReactImportContent,
     impName=
         safe_text
 )
-softGalleryLanguage::StyleProperties_strategy = st.builds(
-    softGalleryLanguage::StyleProperties,
+softGalleryLanguage_StyleProperties_strategy = st.builds(
+    softGalleryLanguage_StyleProperties,
 )
-softGalleryLanguage::Props_strategy = st.builds(
-    softGalleryLanguage::Props,
+softGalleryLanguage_Props_strategy = st.builds(
+    softGalleryLanguage_Props,
 )
-softGalleryLanguage::ReactFunctions_strategy = st.builds(
-    softGalleryLanguage::ReactFunctions,
-    lifecycleclass=
-        safe_text,
+softGalleryLanguage_ReactFunctions_strategy = st.builds(
+    softGalleryLanguage_ReactFunctions,
     renderclass=
+        safe_text,
+    lifecycleclass=
         safe_text
 )
-softGalleryLanguage::ReactImports_strategy = st.builds(
-    softGalleryLanguage::ReactImports,
+softGalleryLanguage_ReactImports_strategy = st.builds(
+    softGalleryLanguage_ReactImports,
 )
-softGalleryLanguage::SubcomponentCont_strategy = st.builds(
-    softGalleryLanguage::SubcomponentCont,
+softGalleryLanguage_SubcomponentCont_strategy = st.builds(
+    softGalleryLanguage_SubcomponentCont,
     nameSubComp=
         safe_text
 )
-softGalleryLanguage::ViewComponentCont_strategy = st.builds(
-    softGalleryLanguage::ViewComponentCont,
+softGalleryLanguage_ViewComponentCont_strategy = st.builds(
+    softGalleryLanguage_ViewComponentCont,
     nameView=
         safe_text
 )
-softGalleryLanguage::UIContent_strategy = st.builds(
-    softGalleryLanguage::UIContent,
+softGalleryLanguage_UIContent_strategy = st.builds(
+    softGalleryLanguage_UIContent,
 )
-softGalleryLanguage::ComponentClass_strategy = st.builds(
-    softGalleryLanguage::ComponentClass,
+softGalleryLanguage_ComponentClass_strategy = st.builds(
+    softGalleryLanguage_ComponentClass,
 )
-softGalleryLanguage::LogicStructure_strategy = st.builds(
-    softGalleryLanguage::LogicStructure,
-    indexCompName=
-        safe_text,
+softGalleryLanguage_LogicStructure_strategy = st.builds(
+    softGalleryLanguage_LogicStructure,
     appComName=
-        safe_text
-)
-softGalleryLanguage::LogicContent_strategy = st.builds(
-    softGalleryLanguage::LogicContent,
-    name=
-        safe_text
-)
-softGalleryLanguage::ComponentsStyles_strategy = st.builds(
-    softGalleryLanguage::ComponentsStyles,
-)
-softGalleryLanguage::ComponentsLogic_strategy = st.builds(
-    softGalleryLanguage::ComponentsLogic,
-    name=
-        safe_text
-)
-softGalleryLanguage::DOMConfigurations_strategy = st.builds(
-    softGalleryLanguage::DOMConfigurations,
-    elements=
         safe_text,
+    indexCompName=
+        safe_text
+)
+softGalleryLanguage_LogicContent_strategy = st.builds(
+    softGalleryLanguage_LogicContent,
     name=
         safe_text
 )
-softGalleryLanguage::PackageVersion_strategy = st.builds(
-    softGalleryLanguage::PackageVersion,
+softGalleryLanguage_ComponentsStyles_strategy = st.builds(
+    softGalleryLanguage_ComponentsStyles,
+)
+softGalleryLanguage_ComponentsLogic_strategy = st.builds(
+    softGalleryLanguage_ComponentsLogic,
     name=
         safe_text
 )
-softGalleryLanguage::PackageName_strategy = st.builds(
-    softGalleryLanguage::PackageName,
+softGalleryLanguage_DOMConfigurations_strategy = st.builds(
+    softGalleryLanguage_DOMConfigurations,
+    name=
+        safe_text,
+    elements=
+        safe_text
+)
+softGalleryLanguage_PackageVersion_strategy = st.builds(
+    softGalleryLanguage_PackageVersion,
     name=
         safe_text
 )
-softGalleryLanguage::SingleDependencies_strategy = st.builds(
-    softGalleryLanguage::SingleDependencies,
-)
-softGalleryLanguage::ReactDependenciesSubRules_strategy = st.builds(
-    softGalleryLanguage::ReactDependenciesSubRules,
-)
-softGalleryLanguage::ReactDependenciesRules_strategy = st.builds(
-    softGalleryLanguage::ReactDependenciesRules,
+softGalleryLanguage_PackageName_strategy = st.builds(
+    softGalleryLanguage_PackageName,
     name=
         safe_text
 )
-softGalleryLanguage::ReactConfigurations_strategy = st.builds(
-    softGalleryLanguage::ReactConfigurations,
+softGalleryLanguage_SingleDependencies_strategy = st.builds(
+    softGalleryLanguage_SingleDependencies,
+)
+softGalleryLanguage_ReactDependenciesSubRules_strategy = st.builds(
+    softGalleryLanguage_ReactDependenciesSubRules,
+)
+softGalleryLanguage_ReactDependenciesRules_strategy = st.builds(
+    softGalleryLanguage_ReactDependenciesRules,
     name=
         safe_text
 )
-softGalleryLanguage::ReactDependencies_strategy = st.builds(
-    softGalleryLanguage::ReactDependencies,
-)
-softGalleryLanguage::ReactInfo_strategy = st.builds(
-    softGalleryLanguage::ReactInfo,
-)
-softGalleryLanguage::ReactLibraries_strategy = st.builds(
-    softGalleryLanguage::ReactLibraries,
-)
-softGalleryLanguage::ReactActions_strategy = st.builds(
-    softGalleryLanguage::ReactActions,
-)
-softGalleryLanguage::ComponentsUI_strategy = st.builds(
-    softGalleryLanguage::ComponentsUI,
+softGalleryLanguage_ReactConfigurations_strategy = st.builds(
+    softGalleryLanguage_ReactConfigurations,
     name=
         safe_text
 )
-softGalleryLanguage::ReactConfiguration_strategy = st.builds(
-    softGalleryLanguage::ReactConfiguration,
+softGalleryLanguage_ReactDependencies_strategy = st.builds(
+    softGalleryLanguage_ReactDependencies,
 )
-softGalleryLanguage::ReactSubModules_strategy = st.builds(
-    softGalleryLanguage::ReactSubModules,
+softGalleryLanguage_ReactInfo_strategy = st.builds(
+    softGalleryLanguage_ReactInfo,
 )
-softGalleryLanguage::ReactModules_strategy = st.builds(
-    softGalleryLanguage::ReactModules,
+softGalleryLanguage_ReactLibraries_strategy = st.builds(
+    softGalleryLanguage_ReactLibraries,
 )
-softGalleryLanguage::StorageActionMemberName_strategy = st.builds(
-    softGalleryLanguage::StorageActionMemberName,
+softGalleryLanguage_ReactActions_strategy = st.builds(
+    softGalleryLanguage_ReactActions,
+)
+softGalleryLanguage_ComponentsUI_strategy = st.builds(
+    softGalleryLanguage_ComponentsUI,
     name=
         safe_text
 )
-softGalleryLanguage::StorageActionMemberType_strategy = st.builds(
-    softGalleryLanguage::StorageActionMemberType,
+softGalleryLanguage_ReactConfiguration_strategy = st.builds(
+    softGalleryLanguage_ReactConfiguration,
+)
+softGalleryLanguage_ReactSubModules_strategy = st.builds(
+    softGalleryLanguage_ReactSubModules,
+)
+softGalleryLanguage_ReactModules_strategy = st.builds(
+    softGalleryLanguage_ReactModules,
+)
+softGalleryLanguage_StorageActionMemberName_strategy = st.builds(
+    softGalleryLanguage_StorageActionMemberName,
     name=
         safe_text
 )
-softGalleryLanguage::StorageActionMember_strategy = st.builds(
-    softGalleryLanguage::StorageActionMember,
-)
-softGalleryLanguage::StorageActionReturn_strategy = st.builds(
-    softGalleryLanguage::StorageActionReturn,
+softGalleryLanguage_StorageActionMemberType_strategy = st.builds(
+    softGalleryLanguage_StorageActionMemberType,
     name=
         safe_text
 )
-softGalleryLanguage::StorageActionAnnotation_strategy = st.builds(
-    softGalleryLanguage::StorageActionAnnotation,
+softGalleryLanguage_StorageActionMember_strategy = st.builds(
+    softGalleryLanguage_StorageActionMember,
+)
+softGalleryLanguage_StorageActionReturn_strategy = st.builds(
+    softGalleryLanguage_StorageActionReturn,
     name=
         safe_text
 )
-softGalleryLanguage::StorageAction_strategy = st.builds(
-    softGalleryLanguage::StorageAction,
+softGalleryLanguage_StorageActionAnnotation_strategy = st.builds(
+    softGalleryLanguage_StorageActionAnnotation,
     name=
         safe_text
 )
-softGalleryLanguage::StorageMemberAnnotation_strategy = st.builds(
-    softGalleryLanguage::StorageMemberAnnotation,
+softGalleryLanguage_StorageAction_strategy = st.builds(
+    softGalleryLanguage_StorageAction,
     name=
         safe_text
 )
-softGalleryLanguage::StorageMemberType_strategy = st.builds(
-    softGalleryLanguage::StorageMemberType,
+softGalleryLanguage_StorageMemberAnnotation_strategy = st.builds(
+    softGalleryLanguage_StorageMemberAnnotation,
     name=
         safe_text
 )
-softGalleryLanguage::StorageMember_strategy = st.builds(
-    softGalleryLanguage::StorageMember,
+softGalleryLanguage_StorageMemberType_strategy = st.builds(
+    softGalleryLanguage_StorageMemberType,
     name=
         safe_text
 )
-softGalleryLanguage::StorageClient_strategy = st.builds(
-    softGalleryLanguage::StorageClient,
+softGalleryLanguage_StorageMember_strategy = st.builds(
+    softGalleryLanguage_StorageMember,
     name=
         safe_text
 )
-softGalleryLanguage::SpringEntityAnnotationTypes_strategy = st.builds(
-    softGalleryLanguage::SpringEntityAnnotationTypes,
+softGalleryLanguage_StorageClient_strategy = st.builds(
+    softGalleryLanguage_StorageClient,
     name=
         safe_text
 )
-softGalleryLanguage::ReactComponents_strategy = st.builds(
-    softGalleryLanguage::ReactComponents,
-)
-softGalleryLanguage::ExceptionProcess_strategy = st.builds(
-    softGalleryLanguage::ExceptionProcess,
+softGalleryLanguage_SpringEntityAnnotationTypes_strategy = st.builds(
+    softGalleryLanguage_SpringEntityAnnotationTypes,
     name=
         safe_text
 )
-softGalleryLanguage::ExceptionHandler_strategy = st.builds(
-    softGalleryLanguage::ExceptionHandler,
+softGalleryLanguage_ReactComponents_strategy = st.builds(
+    softGalleryLanguage_ReactComponents,
+)
+softGalleryLanguage_ExceptionProcess_strategy = st.builds(
+    softGalleryLanguage_ExceptionProcess,
     name=
         safe_text
 )
-softGalleryLanguage::ResponseParameterName_strategy = st.builds(
-    softGalleryLanguage::ResponseParameterName,
+softGalleryLanguage_ExceptionHandler_strategy = st.builds(
+    softGalleryLanguage_ExceptionHandler,
     name=
         safe_text
 )
-softGalleryLanguage::ResponseParameterType_strategy = st.builds(
-    softGalleryLanguage::ResponseParameterType,
+softGalleryLanguage_ResponseParameterName_strategy = st.builds(
+    softGalleryLanguage_ResponseParameterName,
     name=
         safe_text
 )
-softGalleryLanguage::ResponseParameterAnnotation_strategy = st.builds(
-    softGalleryLanguage::ResponseParameterAnnotation,
+softGalleryLanguage_ResponseParameterType_strategy = st.builds(
+    softGalleryLanguage_ResponseParameterType,
     name=
         safe_text
 )
-softGalleryLanguage::AppAccess_strategy = st.builds(
-    softGalleryLanguage::AppAccess,
-)
-softGalleryLanguage::ProfileManagement_strategy = st.builds(
-    softGalleryLanguage::ProfileManagement,
-)
-softGalleryLanguage::Functionalities_strategy = st.builds(
-    softGalleryLanguage::Functionalities,
-)
-softGalleryLanguage::AtributeUserDomain_strategy = st.builds(
-    softGalleryLanguage::AtributeUserDomain,
+softGalleryLanguage_ResponseParameterAnnotation_strategy = st.builds(
+    softGalleryLanguage_ResponseParameterAnnotation,
     name=
         safe_text
 )
-softGalleryLanguage::AtributeAlbum_strategy = st.builds(
-    softGalleryLanguage::AtributeAlbum,
+softGalleryLanguage_DeleteMapping_strategy = st.builds(
+    softGalleryLanguage_DeleteMapping,
     name=
         safe_text
 )
-softGalleryLanguage::AtributePhoto_strategy = st.builds(
-    softGalleryLanguage::AtributePhoto,
+softGalleryLanguage_PutMapping_strategy = st.builds(
+    softGalleryLanguage_PutMapping,
     name=
         safe_text
 )
-softGalleryLanguage::Entities_strategy = st.builds(
-    softGalleryLanguage::Entities,
+softGalleryLanguage_GetMapping_strategy = st.builds(
+    softGalleryLanguage_GetMapping,
     name=
         safe_text
 )
-softGalleryLanguage::ExceptionsDomain_strategy = st.builds(
-    softGalleryLanguage::ExceptionsDomain,
-)
-softGalleryLanguage::Functionality_strategy = st.builds(
-    softGalleryLanguage::Functionality,
-)
-softGalleryLanguage::Entity_strategy = st.builds(
-    softGalleryLanguage::Entity,
-)
-softGalleryLanguage::Domain_strategy = st.builds(
-    softGalleryLanguage::Domain,
+softGalleryLanguage_PostMapping_strategy = st.builds(
+    softGalleryLanguage_PostMapping,
     name=
         safe_text
 )
-softGalleryLanguage::EObject_strategy = st.builds(
-    softGalleryLanguage::EObject,
+softGalleryLanguage_RequestMappingProduces_strategy = st.builds(
+    softGalleryLanguage_RequestMappingProduces,
+    name=
+        safe_text
 )
-softGalleryLanguage::Model_strategy = st.builds(
-    softGalleryLanguage::Model,
+softGalleryLanguage_RequestMappingMethod_strategy = st.builds(
+    softGalleryLanguage_RequestMappingMethod,
+    name=
+        safe_text
 )
-
-@given(instance=softGalleryLanguage::RequestMappingProduces_strategy)
-@settings(max_examples=50)
-def test_softgallerylanguage::requestmappingproduces_instantiation(instance):
-    assert isinstance(instance, softGalleryLanguage::RequestMappingProduces)
-
-@given(instance=softGalleryLanguage::RequestMappingProduces_strategy)
-def test_softgallerylanguage::requestmappingproduces_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=softGalleryLanguage::RequestMappingProduces_strategy)
-def test_softgallerylanguage::requestmappingproduces_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
-
-@given(instance=softGalleryLanguage::RequestMappingMethod_strategy)
-@settings(max_examples=50)
-def test_softgallerylanguage::requestmappingmethod_instantiation(instance):
-    assert isinstance(instance, softGalleryLanguage::RequestMappingMethod)
-
-@given(instance=softGalleryLanguage::RequestMappingMethod_strategy)
-def test_softgallerylanguage::requestmappingmethod_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=softGalleryLanguage::RequestMappingMethod_strategy)
-def test_softgallerylanguage::requestmappingmethod_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
-
-@given(instance=softGalleryLanguage::RequestMappingValue_strategy)
-@settings(max_examples=50)
-def test_softgallerylanguage::requestmappingvalue_instantiation(instance):
-    assert isinstance(instance, softGalleryLanguage::RequestMappingValue)
-
-@given(instance=softGalleryLanguage::RequestMappingValue_strategy)
-def test_softgallerylanguage::requestmappingvalue_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=softGalleryLanguage::RequestMappingValue_strategy)
-def test_softgallerylanguage::requestmappingvalue_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
+softGalleryLanguage_RequestMappingValue_strategy = st.builds(
+    softGalleryLanguage_RequestMappingValue,
+    name=
+        safe_text
+)
 
 @given(instance=MappingType_strategy)
 @settings(max_examples=50)
 def test_mappingtype_instantiation(instance):
     assert isinstance(instance, MappingType)
 
-@given(instance=softGalleryLanguage::GetMapping_strategy)
+@given(instance=softGalleryLanguage_RequestMapping_strategy)
 @settings(max_examples=50)
-def test_softgallerylanguage::getmapping_instantiation(instance):
-    assert isinstance(instance, softGalleryLanguage::GetMapping)
+def test_softgallerylanguage_requestmapping_instantiation(instance):
+    assert isinstance(instance, softGalleryLanguage_RequestMapping)
 
-@given(instance=softGalleryLanguage::GetMapping_strategy)
-def test_softgallerylanguage::getmapping_name_type(instance):
-    assert isinstance(instance.name, str)
+@given(instance=softGalleryLanguage_SpringEntity_strategy)
+@settings(max_examples=50)
+def test_softgallerylanguage_springentity_instantiation(instance):
+    assert isinstance(instance, softGalleryLanguage_SpringEntity)
+
+@given(instance=softGalleryLanguage_ResponseParameter_strategy)
+@settings(max_examples=50)
+def test_softgallerylanguage_responseparameter_instantiation(instance):
+    assert isinstance(instance, softGalleryLanguage_ResponseParameter)
+
+@given(instance=softGalleryLanguage_MappingType_strategy)
+@settings(max_examples=50)
+def test_softgallerylanguage_mappingtype_instantiation(instance):
+    assert isinstance(instance, softGalleryLanguage_MappingType)
+
+@given(instance=softGalleryLanguage_ResponseEntity_strategy)
+@settings(max_examples=50)
+def test_softgallerylanguage_responseentity_instantiation(instance):
+    assert isinstance(instance, softGalleryLanguage_ResponseEntity)
 
 
-@given(instance=softGalleryLanguage::GetMapping_strategy)
-def test_softgallerylanguage::getmapping_name_setter(instance):
+
+@given(instance=softGalleryLanguage_ResponseEntity_strategy)
+def test_softgallerylanguage_responseentity_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=softGalleryLanguage::PutMapping_strategy)
+@given(instance=softGalleryLanguage_Autowired_strategy)
 @settings(max_examples=50)
-def test_softgallerylanguage::putmapping_instantiation(instance):
-    assert isinstance(instance, softGalleryLanguage::PutMapping)
-
-@given(instance=softGalleryLanguage::PutMapping_strategy)
-def test_softgallerylanguage::putmapping_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_softgallerylanguage_autowired_instantiation(instance):
+    assert isinstance(instance, softGalleryLanguage_Autowired)
 
 
-@given(instance=softGalleryLanguage::PutMapping_strategy)
-def test_softgallerylanguage::putmapping_name_setter(instance):
+
+@given(instance=softGalleryLanguage_Autowired_strategy)
+def test_softgallerylanguage_autowired_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=softGalleryLanguage::DeleteMapping_strategy)
+@given(instance=softGalleryLanguage_SearchCriteria_strategy)
 @settings(max_examples=50)
-def test_softgallerylanguage::deletemapping_instantiation(instance):
-    assert isinstance(instance, softGalleryLanguage::DeleteMapping)
-
-@given(instance=softGalleryLanguage::DeleteMapping_strategy)
-def test_softgallerylanguage::deletemapping_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_softgallerylanguage_searchcriteria_instantiation(instance):
+    assert isinstance(instance, softGalleryLanguage_SearchCriteria)
 
 
-@given(instance=softGalleryLanguage::DeleteMapping_strategy)
-def test_softgallerylanguage::deletemapping_name_setter(instance):
+
+@given(instance=softGalleryLanguage_SearchCriteria_strategy)
+def test_softgallerylanguage_searchcriteria_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=softGalleryLanguage::PostMapping_strategy)
+@given(instance=softGalleryLanguage_Predicate_strategy)
 @settings(max_examples=50)
-def test_softgallerylanguage::postmapping_instantiation(instance):
-    assert isinstance(instance, softGalleryLanguage::PostMapping)
-
-@given(instance=softGalleryLanguage::PostMapping_strategy)
-def test_softgallerylanguage::postmapping_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_softgallerylanguage_predicate_instantiation(instance):
+    assert isinstance(instance, softGalleryLanguage_Predicate)
 
 
-@given(instance=softGalleryLanguage::PostMapping_strategy)
-def test_softgallerylanguage::postmapping_name_setter(instance):
+
+@given(instance=softGalleryLanguage_Predicate_strategy)
+def test_softgallerylanguage_predicate_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=softGalleryLanguage::RequestMapping_strategy)
+@given(instance=softGalleryLanguage_Specification_strategy)
 @settings(max_examples=50)
-def test_softgallerylanguage::requestmapping_instantiation(instance):
-    assert isinstance(instance, softGalleryLanguage::RequestMapping)
+def test_softgallerylanguage_specification_instantiation(instance):
+    assert isinstance(instance, softGalleryLanguage_Specification)
 
-@given(instance=softGalleryLanguage::SpringEntity_strategy)
+@given(instance=softGalleryLanguage_RestController_strategy)
 @settings(max_examples=50)
-def test_softgallerylanguage::springentity_instantiation(instance):
-    assert isinstance(instance, softGalleryLanguage::SpringEntity)
-
-@given(instance=softGalleryLanguage::ResponseParameter_strategy)
-@settings(max_examples=50)
-def test_softgallerylanguage::responseparameter_instantiation(instance):
-    assert isinstance(instance, softGalleryLanguage::ResponseParameter)
-
-@given(instance=softGalleryLanguage::MappingType_strategy)
-@settings(max_examples=50)
-def test_softgallerylanguage::mappingtype_instantiation(instance):
-    assert isinstance(instance, softGalleryLanguage::MappingType)
-
-@given(instance=softGalleryLanguage::ResponseEntity_strategy)
-@settings(max_examples=50)
-def test_softgallerylanguage::responseentity_instantiation(instance):
-    assert isinstance(instance, softGalleryLanguage::ResponseEntity)
-
-@given(instance=softGalleryLanguage::ResponseEntity_strategy)
-def test_softgallerylanguage::responseentity_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_softgallerylanguage_restcontroller_instantiation(instance):
+    assert isinstance(instance, softGalleryLanguage_RestController)
 
 
-@given(instance=softGalleryLanguage::ResponseEntity_strategy)
-def test_softgallerylanguage::responseentity_name_setter(instance):
+
+@given(instance=softGalleryLanguage_RestController_strategy)
+def test_softgallerylanguage_restcontroller_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=softGalleryLanguage::Autowired_strategy)
+@given(instance=softGalleryLanguage_SpringRepositoryAnnotation_strategy)
 @settings(max_examples=50)
-def test_softgallerylanguage::autowired_instantiation(instance):
-    assert isinstance(instance, softGalleryLanguage::Autowired)
-
-@given(instance=softGalleryLanguage::Autowired_strategy)
-def test_softgallerylanguage::autowired_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_softgallerylanguage_springrepositoryannotation_instantiation(instance):
+    assert isinstance(instance, softGalleryLanguage_SpringRepositoryAnnotation)
 
 
-@given(instance=softGalleryLanguage::Autowired_strategy)
-def test_softgallerylanguage::autowired_name_setter(instance):
+
+@given(instance=softGalleryLanguage_SpringRepositoryAnnotation_strategy)
+def test_softgallerylanguage_springrepositoryannotation_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=softGalleryLanguage::SearchCriteria_strategy)
+@given(instance=softGalleryLanguage_SpringRepositories_strategy)
 @settings(max_examples=50)
-def test_softgallerylanguage::searchcriteria_instantiation(instance):
-    assert isinstance(instance, softGalleryLanguage::SearchCriteria)
-
-@given(instance=softGalleryLanguage::SearchCriteria_strategy)
-def test_softgallerylanguage::searchcriteria_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_softgallerylanguage_springrepositories_instantiation(instance):
+    assert isinstance(instance, softGalleryLanguage_SpringRepositories)
 
 
-@given(instance=softGalleryLanguage::SearchCriteria_strategy)
-def test_softgallerylanguage::searchcriteria_name_setter(instance):
+
+@given(instance=softGalleryLanguage_SpringRepositories_strategy)
+def test_softgallerylanguage_springrepositories_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=softGalleryLanguage::Predicate_strategy)
+@given(instance=softGalleryLanguage_SpringRepository_strategy)
 @settings(max_examples=50)
-def test_softgallerylanguage::predicate_instantiation(instance):
-    assert isinstance(instance, softGalleryLanguage::Predicate)
+def test_softgallerylanguage_springrepository_instantiation(instance):
+    assert isinstance(instance, softGalleryLanguage_SpringRepository)
 
-@given(instance=softGalleryLanguage::Predicate_strategy)
-def test_softgallerylanguage::predicate_name_type(instance):
-    assert isinstance(instance.name, str)
+@given(instance=softGalleryLanguage_OrderSpring_strategy)
+@settings(max_examples=50)
+def test_softgallerylanguage_orderspring_instantiation(instance):
+    assert isinstance(instance, softGalleryLanguage_OrderSpring)
 
 
-@given(instance=softGalleryLanguage::Predicate_strategy)
-def test_softgallerylanguage::predicate_name_setter(instance):
+
+@given(instance=softGalleryLanguage_OrderSpring_strategy)
+def test_softgallerylanguage_orderspring_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=softGalleryLanguage::Specification_strategy)
+@given(instance=softGalleryLanguage_SpringComponent_strategy)
 @settings(max_examples=50)
-def test_softgallerylanguage::specification_instantiation(instance):
-    assert isinstance(instance, softGalleryLanguage::Specification)
+def test_softgallerylanguage_springcomponent_instantiation(instance):
+    assert isinstance(instance, softGalleryLanguage_SpringComponent)
 
-@given(instance=softGalleryLanguage::RestController_strategy)
+@given(instance=softGalleryLanguage_EnableWebSecurity_strategy)
 @settings(max_examples=50)
-def test_softgallerylanguage::restcontroller_instantiation(instance):
-    assert isinstance(instance, softGalleryLanguage::RestController)
-
-@given(instance=softGalleryLanguage::RestController_strategy)
-def test_softgallerylanguage::restcontroller_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_softgallerylanguage_enablewebsecurity_instantiation(instance):
+    assert isinstance(instance, softGalleryLanguage_EnableWebSecurity)
 
 
-@given(instance=softGalleryLanguage::RestController_strategy)
-def test_softgallerylanguage::restcontroller_name_setter(instance):
+
+@given(instance=softGalleryLanguage_EnableWebSecurity_strategy)
+def test_softgallerylanguage_enablewebsecurity_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=softGalleryLanguage::SpringRepositoryAnnotation_strategy)
+@given(instance=softGalleryLanguage_EnableResourceServer_strategy)
 @settings(max_examples=50)
-def test_softgallerylanguage::springrepositoryannotation_instantiation(instance):
-    assert isinstance(instance, softGalleryLanguage::SpringRepositoryAnnotation)
-
-@given(instance=softGalleryLanguage::SpringRepositoryAnnotation_strategy)
-def test_softgallerylanguage::springrepositoryannotation_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_softgallerylanguage_enableresourceserver_instantiation(instance):
+    assert isinstance(instance, softGalleryLanguage_EnableResourceServer)
 
 
-@given(instance=softGalleryLanguage::SpringRepositoryAnnotation_strategy)
-def test_softgallerylanguage::springrepositoryannotation_name_setter(instance):
+
+@given(instance=softGalleryLanguage_EnableResourceServer_strategy)
+def test_softgallerylanguage_enableresourceserver_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=softGalleryLanguage::SpringRepositories_strategy)
+@given(instance=softGalleryLanguage_EnableAuthorizationServer_strategy)
 @settings(max_examples=50)
-def test_softgallerylanguage::springrepositories_instantiation(instance):
-    assert isinstance(instance, softGalleryLanguage::SpringRepositories)
-
-@given(instance=softGalleryLanguage::SpringRepositories_strategy)
-def test_softgallerylanguage::springrepositories_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_softgallerylanguage_enableauthorizationserver_instantiation(instance):
+    assert isinstance(instance, softGalleryLanguage_EnableAuthorizationServer)
 
 
-@given(instance=softGalleryLanguage::SpringRepositories_strategy)
-def test_softgallerylanguage::springrepositories_name_setter(instance):
+
+@given(instance=softGalleryLanguage_EnableAuthorizationServer_strategy)
+def test_softgallerylanguage_enableauthorizationserver_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=softGalleryLanguage::SpringRepository_strategy)
+@given(instance=softGalleryLanguage_EnableGlobalMethodSecurity_strategy)
 @settings(max_examples=50)
-def test_softgallerylanguage::springrepository_instantiation(instance):
-    assert isinstance(instance, softGalleryLanguage::SpringRepository)
-
-@given(instance=softGalleryLanguage::OrderSpring_strategy)
-@settings(max_examples=50)
-def test_softgallerylanguage::orderspring_instantiation(instance):
-    assert isinstance(instance, softGalleryLanguage::OrderSpring)
-
-@given(instance=softGalleryLanguage::OrderSpring_strategy)
-def test_softgallerylanguage::orderspring_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_softgallerylanguage_enableglobalmethodsecurity_instantiation(instance):
+    assert isinstance(instance, softGalleryLanguage_EnableGlobalMethodSecurity)
 
 
-@given(instance=softGalleryLanguage::OrderSpring_strategy)
-def test_softgallerylanguage::orderspring_name_setter(instance):
+
+@given(instance=softGalleryLanguage_EnableGlobalMethodSecurity_strategy)
+def test_softgallerylanguage_enableglobalmethodsecurity_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=softGalleryLanguage::SpringComponent_strategy)
+@given(instance=softGalleryLanguage_Configuration_strategy)
 @settings(max_examples=50)
-def test_softgallerylanguage::springcomponent_instantiation(instance):
-    assert isinstance(instance, softGalleryLanguage::SpringComponent)
+def test_softgallerylanguage_configuration_instantiation(instance):
+    assert isinstance(instance, softGalleryLanguage_Configuration)
 
-@given(instance=softGalleryLanguage::EnableWebSecurity_strategy)
+@given(instance=softGalleryLanguage_SpringBootApplication_strategy)
 @settings(max_examples=50)
-def test_softgallerylanguage::enablewebsecurity_instantiation(instance):
-    assert isinstance(instance, softGalleryLanguage::EnableWebSecurity)
+def test_softgallerylanguage_springbootapplication_instantiation(instance):
+    assert isinstance(instance, softGalleryLanguage_SpringBootApplication)
 
-@given(instance=softGalleryLanguage::EnableWebSecurity_strategy)
-def test_softgallerylanguage::enablewebsecurity_name_type(instance):
-    assert isinstance(instance.name, str)
+@given(instance=softGalleryLanguage_AmazonWebServices_strategy)
+@settings(max_examples=50)
+def test_softgallerylanguage_amazonwebservices_instantiation(instance):
+    assert isinstance(instance, softGalleryLanguage_AmazonWebServices)
 
 
-@given(instance=softGalleryLanguage::EnableWebSecurity_strategy)
-def test_softgallerylanguage::enablewebsecurity_name_setter(instance):
+
+@given(instance=softGalleryLanguage_AmazonWebServices_strategy)
+def test_softgallerylanguage_amazonwebservices_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=softGalleryLanguage::EnableResourceServer_strategy)
+@given(instance=softGalleryLanguage_PostgreSQL_strategy)
 @settings(max_examples=50)
-def test_softgallerylanguage::enableresourceserver_instantiation(instance):
-    assert isinstance(instance, softGalleryLanguage::EnableResourceServer)
-
-@given(instance=softGalleryLanguage::EnableResourceServer_strategy)
-def test_softgallerylanguage::enableresourceserver_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_softgallerylanguage_postgresql_instantiation(instance):
+    assert isinstance(instance, softGalleryLanguage_PostgreSQL)
 
 
-@given(instance=softGalleryLanguage::EnableResourceServer_strategy)
-def test_softgallerylanguage::enableresourceserver_name_setter(instance):
+
+@given(instance=softGalleryLanguage_PostgreSQL_strategy)
+def test_softgallerylanguage_postgresql_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=softGalleryLanguage::EnableAuthorizationServer_strategy)
+@given(instance=softGalleryLanguage_React_strategy)
 @settings(max_examples=50)
-def test_softgallerylanguage::enableauthorizationserver_instantiation(instance):
-    assert isinstance(instance, softGalleryLanguage::EnableAuthorizationServer)
-
-@given(instance=softGalleryLanguage::EnableAuthorizationServer_strategy)
-def test_softgallerylanguage::enableauthorizationserver_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_softgallerylanguage_react_instantiation(instance):
+    assert isinstance(instance, softGalleryLanguage_React)
 
 
-@given(instance=softGalleryLanguage::EnableAuthorizationServer_strategy)
-def test_softgallerylanguage::enableauthorizationserver_name_setter(instance):
+
+@given(instance=softGalleryLanguage_React_strategy)
+def test_softgallerylanguage_react_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=softGalleryLanguage::EnableGlobalMethodSecurity_strategy)
+@given(instance=softGalleryLanguage_Spring_strategy)
 @settings(max_examples=50)
-def test_softgallerylanguage::enableglobalmethodsecurity_instantiation(instance):
-    assert isinstance(instance, softGalleryLanguage::EnableGlobalMethodSecurity)
-
-@given(instance=softGalleryLanguage::EnableGlobalMethodSecurity_strategy)
-def test_softgallerylanguage::enableglobalmethodsecurity_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_softgallerylanguage_spring_instantiation(instance):
+    assert isinstance(instance, softGalleryLanguage_Spring)
 
 
-@given(instance=softGalleryLanguage::EnableGlobalMethodSecurity_strategy)
-def test_softgallerylanguage::enableglobalmethodsecurity_name_setter(instance):
+
+@given(instance=softGalleryLanguage_Spring_strategy)
+def test_softgallerylanguage_spring_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=softGalleryLanguage::Configuration_strategy)
+@given(instance=softGalleryLanguage_Technologies_strategy)
 @settings(max_examples=50)
-def test_softgallerylanguage::configuration_instantiation(instance):
-    assert isinstance(instance, softGalleryLanguage::Configuration)
+def test_softgallerylanguage_technologies_instantiation(instance):
+    assert isinstance(instance, softGalleryLanguage_Technologies)
 
-@given(instance=softGalleryLanguage::SpringBootApplication_strategy)
+@given(instance=softGalleryLanguage_NTiersRelations_strategy)
 @settings(max_examples=50)
-def test_softgallerylanguage::springbootapplication_instantiation(instance):
-    assert isinstance(instance, softGalleryLanguage::SpringBootApplication)
-
-@given(instance=softGalleryLanguage::AmazonWebServices_strategy)
-@settings(max_examples=50)
-def test_softgallerylanguage::amazonwebservices_instantiation(instance):
-    assert isinstance(instance, softGalleryLanguage::AmazonWebServices)
-
-@given(instance=softGalleryLanguage::AmazonWebServices_strategy)
-def test_softgallerylanguage::amazonwebservices_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_softgallerylanguage_ntiersrelations_instantiation(instance):
+    assert isinstance(instance, softGalleryLanguage_NTiersRelations)
 
 
-@given(instance=softGalleryLanguage::AmazonWebServices_strategy)
-def test_softgallerylanguage::amazonwebservices_name_setter(instance):
+
+@given(instance=softGalleryLanguage_NTiersRelations_strategy)
+def test_softgallerylanguage_ntiersrelations_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=softGalleryLanguage::PostgreSQL_strategy)
+@given(instance=softGalleryLanguage_NTierTarget_strategy)
 @settings(max_examples=50)
-def test_softgallerylanguage::postgresql_instantiation(instance):
-    assert isinstance(instance, softGalleryLanguage::PostgreSQL)
+def test_softgallerylanguage_ntiertarget_instantiation(instance):
+    assert isinstance(instance, softGalleryLanguage_NTierTarget)
 
-@given(instance=softGalleryLanguage::PostgreSQL_strategy)
-def test_softgallerylanguage::postgresql_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=softGalleryLanguage::PostgreSQL_strategy)
-def test_softgallerylanguage::postgresql_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
-
-@given(instance=softGalleryLanguage::React_strategy)
+@given(instance=softGalleryLanguage_NTierSource_strategy)
 @settings(max_examples=50)
-def test_softgallerylanguage::react_instantiation(instance):
-    assert isinstance(instance, softGalleryLanguage::React)
+def test_softgallerylanguage_ntiersource_instantiation(instance):
+    assert isinstance(instance, softGalleryLanguage_NTierSource)
 
-@given(instance=softGalleryLanguage::React_strategy)
-def test_softgallerylanguage::react_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=softGalleryLanguage::React_strategy)
-def test_softgallerylanguage::react_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
-
-@given(instance=softGalleryLanguage::Spring_strategy)
+@given(instance=softGalleryLanguage_NTierConnectionContent_strategy)
 @settings(max_examples=50)
-def test_softgallerylanguage::spring_instantiation(instance):
-    assert isinstance(instance, softGalleryLanguage::Spring)
-
-@given(instance=softGalleryLanguage::Spring_strategy)
-def test_softgallerylanguage::spring_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_softgallerylanguage_ntierconnectioncontent_instantiation(instance):
+    assert isinstance(instance, softGalleryLanguage_NTierConnectionContent)
 
 
-@given(instance=softGalleryLanguage::Spring_strategy)
-def test_softgallerylanguage::spring_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
 
-@given(instance=softGalleryLanguage::Technologies_strategy)
-@settings(max_examples=50)
-def test_softgallerylanguage::technologies_instantiation(instance):
-    assert isinstance(instance, softGalleryLanguage::Technologies)
-
-@given(instance=softGalleryLanguage::NTiersRelations_strategy)
-@settings(max_examples=50)
-def test_softgallerylanguage::ntiersrelations_instantiation(instance):
-    assert isinstance(instance, softGalleryLanguage::NTiersRelations)
-
-@given(instance=softGalleryLanguage::NTiersRelations_strategy)
-def test_softgallerylanguage::ntiersrelations_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=softGalleryLanguage::NTiersRelations_strategy)
-def test_softgallerylanguage::ntiersrelations_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
-
-@given(instance=softGalleryLanguage::NTierTarget_strategy)
-@settings(max_examples=50)
-def test_softgallerylanguage::ntiertarget_instantiation(instance):
-    assert isinstance(instance, softGalleryLanguage::NTierTarget)
-
-@given(instance=softGalleryLanguage::NTierSource_strategy)
-@settings(max_examples=50)
-def test_softgallerylanguage::ntiersource_instantiation(instance):
-    assert isinstance(instance, softGalleryLanguage::NTierSource)
-
-@given(instance=softGalleryLanguage::NTierConnectionContent_strategy)
-@settings(max_examples=50)
-def test_softgallerylanguage::ntierconnectioncontent_instantiation(instance):
-    assert isinstance(instance, softGalleryLanguage::NTierConnectionContent)
-
-@given(instance=softGalleryLanguage::NTierConnectionContent_strategy)
-def test_softgallerylanguage::ntierconnectioncontent_nTierName_type(instance):
-    assert isinstance(instance.nTierName, str)
-
-
-@given(instance=softGalleryLanguage::NTierConnectionContent_strategy)
-def test_softgallerylanguage::ntierconnectioncontent_nTierName_setter(instance):
+@given(instance=softGalleryLanguage_NTierConnectionContent_strategy)
+def test_softgallerylanguage_ntierconnectioncontent_nTierName_setter(instance):
     original = instance.nTierName
     instance.nTierName = original
     assert instance.nTierName == original
 
-@given(instance=softGalleryLanguage::NTierConnectionContent_strategy)
-def test_softgallerylanguage::ntierconnectioncontent_ntierconnection_type(instance):
-    assert isinstance(instance.ntierconnection, str)
 
 
-@given(instance=softGalleryLanguage::NTierConnectionContent_strategy)
-def test_softgallerylanguage::ntierconnectioncontent_ntierconnection_setter(instance):
+@given(instance=softGalleryLanguage_NTierConnectionContent_strategy)
+def test_softgallerylanguage_ntierconnectioncontent_ntierconnection_setter(instance):
     original = instance.ntierconnection
     instance.ntierconnection = original
     assert instance.ntierconnection == original
 
-@given(instance=softGalleryLanguage::NTiersConnections_strategy)
+@given(instance=softGalleryLanguage_NTiersConnections_strategy)
 @settings(max_examples=50)
-def test_softgallerylanguage::ntiersconnections_instantiation(instance):
-    assert isinstance(instance, softGalleryLanguage::NTiersConnections)
+def test_softgallerylanguage_ntiersconnections_instantiation(instance):
+    assert isinstance(instance, softGalleryLanguage_NTiersConnections)
 
-@given(instance=softGalleryLanguage::PersistenceDataComponent_strategy)
+@given(instance=softGalleryLanguage_PersistenceDataComponent_strategy)
 @settings(max_examples=50)
-def test_softgallerylanguage::persistencedatacomponent_instantiation(instance):
-    assert isinstance(instance, softGalleryLanguage::PersistenceDataComponent)
-
-@given(instance=softGalleryLanguage::PersistenceDataComponent_strategy)
-def test_softgallerylanguage::persistencedatacomponent_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_softgallerylanguage_persistencedatacomponent_instantiation(instance):
+    assert isinstance(instance, softGalleryLanguage_PersistenceDataComponent)
 
 
-@given(instance=softGalleryLanguage::PersistenceDataComponent_strategy)
-def test_softgallerylanguage::persistencedatacomponent_name_setter(instance):
+
+@given(instance=softGalleryLanguage_PersistenceDataComponent_strategy)
+def test_softgallerylanguage_persistencedatacomponent_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=softGalleryLanguage::BackEnd_strategy)
+@given(instance=softGalleryLanguage_BackEnd_strategy)
 @settings(max_examples=50)
-def test_softgallerylanguage::backend_instantiation(instance):
-    assert isinstance(instance, softGalleryLanguage::BackEnd)
-
-@given(instance=softGalleryLanguage::BackEnd_strategy)
-def test_softgallerylanguage::backend_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_softgallerylanguage_backend_instantiation(instance):
+    assert isinstance(instance, softGalleryLanguage_BackEnd)
 
 
-@given(instance=softGalleryLanguage::BackEnd_strategy)
-def test_softgallerylanguage::backend_name_setter(instance):
+
+@given(instance=softGalleryLanguage_BackEnd_strategy)
+def test_softgallerylanguage_backend_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=softGalleryLanguage::FrontEnd_strategy)
+@given(instance=softGalleryLanguage_FrontEnd_strategy)
 @settings(max_examples=50)
-def test_softgallerylanguage::frontend_instantiation(instance):
-    assert isinstance(instance, softGalleryLanguage::FrontEnd)
-
-@given(instance=softGalleryLanguage::FrontEnd_strategy)
-def test_softgallerylanguage::frontend_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_softgallerylanguage_frontend_instantiation(instance):
+    assert isinstance(instance, softGalleryLanguage_FrontEnd)
 
 
-@given(instance=softGalleryLanguage::FrontEnd_strategy)
-def test_softgallerylanguage::frontend_name_setter(instance):
+
+@given(instance=softGalleryLanguage_FrontEnd_strategy)
+def test_softgallerylanguage_frontend_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=softGalleryLanguage::ArchitectureComponents_strategy)
+@given(instance=softGalleryLanguage_ArchitectureComponents_strategy)
 @settings(max_examples=50)
-def test_softgallerylanguage::architecturecomponents_instantiation(instance):
-    assert isinstance(instance, softGalleryLanguage::ArchitectureComponents)
+def test_softgallerylanguage_architecturecomponents_instantiation(instance):
+    assert isinstance(instance, softGalleryLanguage_ArchitectureComponents)
 
-@given(instance=softGalleryLanguage::LayerTarget_strategy)
+@given(instance=softGalleryLanguage_LayerTarget_strategy)
 @settings(max_examples=50)
-def test_softgallerylanguage::layertarget_instantiation(instance):
-    assert isinstance(instance, softGalleryLanguage::LayerTarget)
-
-@given(instance=softGalleryLanguage::LayerTarget_strategy)
-def test_softgallerylanguage::layertarget_layerelations_type(instance):
-    assert isinstance(instance.layerelations, str)
+def test_softgallerylanguage_layertarget_instantiation(instance):
+    assert isinstance(instance, softGalleryLanguage_LayerTarget)
 
 
-@given(instance=softGalleryLanguage::LayerTarget_strategy)
-def test_softgallerylanguage::layertarget_layerelations_setter(instance):
+
+@given(instance=softGalleryLanguage_LayerTarget_strategy)
+def test_softgallerylanguage_layertarget_layerelations_setter(instance):
     original = instance.layerelations
     instance.layerelations = original
     assert instance.layerelations == original
 
-@given(instance=softGalleryLanguage::LayerSource_strategy)
+@given(instance=softGalleryLanguage_LayerSource_strategy)
 @settings(max_examples=50)
-def test_softgallerylanguage::layersource_instantiation(instance):
-    assert isinstance(instance, softGalleryLanguage::LayerSource)
-
-@given(instance=softGalleryLanguage::LayerSource_strategy)
-def test_softgallerylanguage::layersource_layerelations_type(instance):
-    assert isinstance(instance.layerelations, str)
+def test_softgallerylanguage_layersource_instantiation(instance):
+    assert isinstance(instance, softGalleryLanguage_LayerSource)
 
 
-@given(instance=softGalleryLanguage::LayerSource_strategy)
-def test_softgallerylanguage::layersource_layerelations_setter(instance):
+
+@given(instance=softGalleryLanguage_LayerSource_strategy)
+def test_softgallerylanguage_layersource_layerelations_setter(instance):
     original = instance.layerelations
     instance.layerelations = original
     assert instance.layerelations == original
 
-@given(instance=softGalleryLanguage::Technology_strategy)
+@given(instance=softGalleryLanguage_Technology_strategy)
 @settings(max_examples=50)
-def test_softgallerylanguage::technology_instantiation(instance):
-    assert isinstance(instance, softGalleryLanguage::Technology)
-
-@given(instance=softGalleryLanguage::Technology_strategy)
-def test_softgallerylanguage::technology_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_softgallerylanguage_technology_instantiation(instance):
+    assert isinstance(instance, softGalleryLanguage_Technology)
 
 
-@given(instance=softGalleryLanguage::Technology_strategy)
-def test_softgallerylanguage::technology_name_setter(instance):
+
+@given(instance=softGalleryLanguage_Technology_strategy)
+def test_softgallerylanguage_technology_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=softGalleryLanguage::SingleFile_strategy)
+@given(instance=softGalleryLanguage_SingleFile_strategy)
 @settings(max_examples=50)
-def test_softgallerylanguage::singlefile_instantiation(instance):
-    assert isinstance(instance, softGalleryLanguage::SingleFile)
-
-@given(instance=softGalleryLanguage::SingleFile_strategy)
-def test_softgallerylanguage::singlefile_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_softgallerylanguage_singlefile_instantiation(instance):
+    assert isinstance(instance, softGalleryLanguage_SingleFile)
 
 
-@given(instance=softGalleryLanguage::SingleFile_strategy)
-def test_softgallerylanguage::singlefile_name_setter(instance):
+
+@given(instance=softGalleryLanguage_SingleFile_strategy)
+def test_softgallerylanguage_singlefile_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=softGalleryLanguage::MultipleFile_strategy)
+@given(instance=softGalleryLanguage_MultipleFile_strategy)
 @settings(max_examples=50)
-def test_softgallerylanguage::multiplefile_instantiation(instance):
-    assert isinstance(instance, softGalleryLanguage::MultipleFile)
-
-@given(instance=softGalleryLanguage::MultipleFile_strategy)
-def test_softgallerylanguage::multiplefile_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_softgallerylanguage_multiplefile_instantiation(instance):
+    assert isinstance(instance, softGalleryLanguage_MultipleFile)
 
 
-@given(instance=softGalleryLanguage::MultipleFile_strategy)
-def test_softgallerylanguage::multiplefile_name_setter(instance):
+
+@given(instance=softGalleryLanguage_MultipleFile_strategy)
+def test_softgallerylanguage_multiplefile_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=softGalleryLanguage::Directories_strategy)
+@given(instance=softGalleryLanguage_Directories_strategy)
 @settings(max_examples=50)
-def test_softgallerylanguage::directories_instantiation(instance):
-    assert isinstance(instance, softGalleryLanguage::Directories)
+def test_softgallerylanguage_directories_instantiation(instance):
+    assert isinstance(instance, softGalleryLanguage_Directories)
 
-@given(instance=softGalleryLanguage::DirectoryContent_strategy)
+@given(instance=softGalleryLanguage_DirectoryContent_strategy)
 @settings(max_examples=50)
-def test_softgallerylanguage::directorycontent_instantiation(instance):
-    assert isinstance(instance, softGalleryLanguage::DirectoryContent)
-
-@given(instance=softGalleryLanguage::DirectoryContent_strategy)
-def test_softgallerylanguage::directorycontent_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_softgallerylanguage_directorycontent_instantiation(instance):
+    assert isinstance(instance, softGalleryLanguage_DirectoryContent)
 
 
-@given(instance=softGalleryLanguage::DirectoryContent_strategy)
-def test_softgallerylanguage::directorycontent_name_setter(instance):
+
+@given(instance=softGalleryLanguage_DirectoryContent_strategy)
+def test_softgallerylanguage_directorycontent_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=softGalleryLanguage::SegmentStructureContent_strategy)
+@given(instance=softGalleryLanguage_SegmentStructureContent_strategy)
 @settings(max_examples=50)
-def test_softgallerylanguage::segmentstructurecontent_instantiation(instance):
-    assert isinstance(instance, softGalleryLanguage::SegmentStructureContent)
-
-@given(instance=softGalleryLanguage::SegmentStructureContent_strategy)
-def test_softgallerylanguage::segmentstructurecontent_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_softgallerylanguage_segmentstructurecontent_instantiation(instance):
+    assert isinstance(instance, softGalleryLanguage_SegmentStructureContent)
 
 
-@given(instance=softGalleryLanguage::SegmentStructureContent_strategy)
-def test_softgallerylanguage::segmentstructurecontent_name_setter(instance):
+
+@given(instance=softGalleryLanguage_SegmentStructureContent_strategy)
+def test_softgallerylanguage_segmentstructurecontent_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=softGalleryLanguage::SegmentStructure_strategy)
+@given(instance=softGalleryLanguage_SegmentStructure_strategy)
 @settings(max_examples=50)
-def test_softgallerylanguage::segmentstructure_instantiation(instance):
-    assert isinstance(instance, softGalleryLanguage::SegmentStructure)
+def test_softgallerylanguage_segmentstructure_instantiation(instance):
+    assert isinstance(instance, softGalleryLanguage_SegmentStructure)
 
-@given(instance=softGalleryLanguage::DataPersistenceSegments_strategy)
+@given(instance=softGalleryLanguage_DataPersistenceSegments_strategy)
 @settings(max_examples=50)
-def test_softgallerylanguage::datapersistencesegments_instantiation(instance):
-    assert isinstance(instance, softGalleryLanguage::DataPersistenceSegments)
-
-@given(instance=softGalleryLanguage::DataPersistenceSegments_strategy)
-def test_softgallerylanguage::datapersistencesegments_amazonSName_type(instance):
-    assert isinstance(instance.amazonSName, str)
+def test_softgallerylanguage_datapersistencesegments_instantiation(instance):
+    assert isinstance(instance, softGalleryLanguage_DataPersistenceSegments)
 
 
-@given(instance=softGalleryLanguage::DataPersistenceSegments_strategy)
-def test_softgallerylanguage::datapersistencesegments_amazonSName_setter(instance):
-    original = instance.amazonSName
-    instance.amazonSName = original
-    assert instance.amazonSName == original
 
-@given(instance=softGalleryLanguage::DataPersistenceSegments_strategy)
-def test_softgallerylanguage::datapersistencesegments_postSName_type(instance):
-    assert isinstance(instance.postSName, str)
-
-
-@given(instance=softGalleryLanguage::DataPersistenceSegments_strategy)
-def test_softgallerylanguage::datapersistencesegments_postSName_setter(instance):
+@given(instance=softGalleryLanguage_DataPersistenceSegments_strategy)
+def test_softgallerylanguage_datapersistencesegments_postSName_setter(instance):
     original = instance.postSName
     instance.postSName = original
     assert instance.postSName == original
 
-@given(instance=softGalleryLanguage::DataPersistenceContent_strategy)
+
+
+@given(instance=softGalleryLanguage_DataPersistenceSegments_strategy)
+def test_softgallerylanguage_datapersistencesegments_amazonSName_setter(instance):
+    original = instance.amazonSName
+    instance.amazonSName = original
+    assert instance.amazonSName == original
+
+@given(instance=softGalleryLanguage_DataPersistenceContent_strategy)
 @settings(max_examples=50)
-def test_softgallerylanguage::datapersistencecontent_instantiation(instance):
-    assert isinstance(instance, softGalleryLanguage::DataPersistenceContent)
+def test_softgallerylanguage_datapersistencecontent_instantiation(instance):
+    assert isinstance(instance, softGalleryLanguage_DataPersistenceContent)
 
-@given(instance=softGalleryLanguage::DataPersistenceLayer_strategy)
+@given(instance=softGalleryLanguage_DataPersistenceLayer_strategy)
 @settings(max_examples=50)
-def test_softgallerylanguage::datapersistencelayer_instantiation(instance):
-    assert isinstance(instance, softGalleryLanguage::DataPersistenceLayer)
+def test_softgallerylanguage_datapersistencelayer_instantiation(instance):
+    assert isinstance(instance, softGalleryLanguage_DataPersistenceLayer)
 
-@given(instance=softGalleryLanguage::CriteriaAttributeType_strategy)
+@given(instance=softGalleryLanguage_CriteriaAttributeType_strategy)
 @settings(max_examples=50)
-def test_softgallerylanguage::criteriaattributetype_instantiation(instance):
-    assert isinstance(instance, softGalleryLanguage::CriteriaAttributeType)
-
-@given(instance=softGalleryLanguage::CriteriaAttributeType_strategy)
-def test_softgallerylanguage::criteriaattributetype_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_softgallerylanguage_criteriaattributetype_instantiation(instance):
+    assert isinstance(instance, softGalleryLanguage_CriteriaAttributeType)
 
 
-@given(instance=softGalleryLanguage::CriteriaAttributeType_strategy)
-def test_softgallerylanguage::criteriaattributetype_name_setter(instance):
+
+@given(instance=softGalleryLanguage_CriteriaAttributeType_strategy)
+def test_softgallerylanguage_criteriaattributetype_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=softGalleryLanguage::SpecificationSegmentElement_strategy)
+@given(instance=softGalleryLanguage_SpecificationSegmentElement_strategy)
 @settings(max_examples=50)
-def test_softgallerylanguage::specificationsegmentelement_instantiation(instance):
-    assert isinstance(instance, softGalleryLanguage::SpecificationSegmentElement)
-
-@given(instance=softGalleryLanguage::SpecificationSegmentElement_strategy)
-def test_softgallerylanguage::specificationsegmentelement_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_softgallerylanguage_specificationsegmentelement_instantiation(instance):
+    assert isinstance(instance, softGalleryLanguage_SpecificationSegmentElement)
 
 
-@given(instance=softGalleryLanguage::SpecificationSegmentElement_strategy)
-def test_softgallerylanguage::specificationsegmentelement_name_setter(instance):
+
+@given(instance=softGalleryLanguage_SpecificationSegmentElement_strategy)
+def test_softgallerylanguage_specificationsegmentelement_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=softGalleryLanguage::ControllerSegmentElement_strategy)
+@given(instance=softGalleryLanguage_ControllerSegmentElement_strategy)
 @settings(max_examples=50)
-def test_softgallerylanguage::controllersegmentelement_instantiation(instance):
-    assert isinstance(instance, softGalleryLanguage::ControllerSegmentElement)
-
-@given(instance=softGalleryLanguage::ControllerSegmentElement_strategy)
-def test_softgallerylanguage::controllersegmentelement_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_softgallerylanguage_controllersegmentelement_instantiation(instance):
+    assert isinstance(instance, softGalleryLanguage_ControllerSegmentElement)
 
 
-@given(instance=softGalleryLanguage::ControllerSegmentElement_strategy)
-def test_softgallerylanguage::controllersegmentelement_name_setter(instance):
+
+@given(instance=softGalleryLanguage_ControllerSegmentElement_strategy)
+def test_softgallerylanguage_controllersegmentelement_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=softGalleryLanguage::LayerRelations_strategy)
+@given(instance=softGalleryLanguage_LayerRelations_strategy)
 @settings(max_examples=50)
-def test_softgallerylanguage::layerrelations_instantiation(instance):
-    assert isinstance(instance, softGalleryLanguage::LayerRelations)
-
-@given(instance=softGalleryLanguage::LayerRelations_strategy)
-def test_softgallerylanguage::layerrelations_layerelations_type(instance):
-    assert isinstance(instance.layerelations, str)
+def test_softgallerylanguage_layerrelations_instantiation(instance):
+    assert isinstance(instance, softGalleryLanguage_LayerRelations)
 
 
-@given(instance=softGalleryLanguage::LayerRelations_strategy)
-def test_softgallerylanguage::layerrelations_layerelations_setter(instance):
+
+@given(instance=softGalleryLanguage_LayerRelations_strategy)
+def test_softgallerylanguage_layerrelations_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+
+
+@given(instance=softGalleryLanguage_LayerRelations_strategy)
+def test_softgallerylanguage_layerrelations_layerelations_setter(instance):
     original = instance.layerelations
     instance.layerelations = original
     assert instance.layerelations == original
 
-@given(instance=softGalleryLanguage::LayerRelations_strategy)
-def test_softgallerylanguage::layerrelations_name_type(instance):
-    assert isinstance(instance.name, str)
+@given(instance=softGalleryLanguage_BusinessLogicSegments_strategy)
+@settings(max_examples=50)
+def test_softgallerylanguage_businesslogicsegments_instantiation(instance):
+    assert isinstance(instance, softGalleryLanguage_BusinessLogicSegments)
 
 
-@given(instance=softGalleryLanguage::LayerRelations_strategy)
-def test_softgallerylanguage::layerrelations_name_setter(instance):
+
+@given(instance=softGalleryLanguage_BusinessLogicSegments_strategy)
+def test_softgallerylanguage_businesslogicsegments_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=softGalleryLanguage::BusinessLogicSegments_strategy)
+@given(instance=softGalleryLanguage_BusinessLogicContent_strategy)
 @settings(max_examples=50)
-def test_softgallerylanguage::businesslogicsegments_instantiation(instance):
-    assert isinstance(instance, softGalleryLanguage::BusinessLogicSegments)
+def test_softgallerylanguage_businesslogiccontent_instantiation(instance):
+    assert isinstance(instance, softGalleryLanguage_BusinessLogicContent)
 
-@given(instance=softGalleryLanguage::BusinessLogicSegments_strategy)
-def test_softgallerylanguage::businesslogicsegments_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=softGalleryLanguage::BusinessLogicSegments_strategy)
-def test_softgallerylanguage::businesslogicsegments_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
-
-@given(instance=softGalleryLanguage::BusinessLogicContent_strategy)
+@given(instance=softGalleryLanguage_BusinessLogicLayer_strategy)
 @settings(max_examples=50)
-def test_softgallerylanguage::businesslogiccontent_instantiation(instance):
-    assert isinstance(instance, softGalleryLanguage::BusinessLogicContent)
+def test_softgallerylanguage_businesslogiclayer_instantiation(instance):
+    assert isinstance(instance, softGalleryLanguage_BusinessLogicLayer)
 
-@given(instance=softGalleryLanguage::BusinessLogicLayer_strategy)
+@given(instance=softGalleryLanguage_PresentationSegments_strategy)
 @settings(max_examples=50)
-def test_softgallerylanguage::businesslogiclayer_instantiation(instance):
-    assert isinstance(instance, softGalleryLanguage::BusinessLogicLayer)
-
-@given(instance=softGalleryLanguage::PresentationSegments_strategy)
-@settings(max_examples=50)
-def test_softgallerylanguage::presentationsegments_instantiation(instance):
-    assert isinstance(instance, softGalleryLanguage::PresentationSegments)
-
-@given(instance=softGalleryLanguage::PresentationSegments_strategy)
-def test_softgallerylanguage::presentationsegments_presentationSName_type(instance):
-    assert isinstance(instance.presentationSName, str)
+def test_softgallerylanguage_presentationsegments_instantiation(instance):
+    assert isinstance(instance, softGalleryLanguage_PresentationSegments)
 
 
-@given(instance=softGalleryLanguage::PresentationSegments_strategy)
-def test_softgallerylanguage::presentationsegments_presentationSName_setter(instance):
-    original = instance.presentationSName
-    instance.presentationSName = original
-    assert instance.presentationSName == original
 
-@given(instance=softGalleryLanguage::PresentationSegments_strategy)
-def test_softgallerylanguage::presentationsegments_presentationAName_type(instance):
-    assert isinstance(instance.presentationAName, str)
-
-
-@given(instance=softGalleryLanguage::PresentationSegments_strategy)
-def test_softgallerylanguage::presentationsegments_presentationAName_setter(instance):
-    original = instance.presentationAName
-    instance.presentationAName = original
-    assert instance.presentationAName == original
-
-@given(instance=softGalleryLanguage::PresentationSegments_strategy)
-def test_softgallerylanguage::presentationsegments_presentationCName_type(instance):
-    assert isinstance(instance.presentationCName, str)
-
-
-@given(instance=softGalleryLanguage::PresentationSegments_strategy)
-def test_softgallerylanguage::presentationsegments_presentationCName_setter(instance):
+@given(instance=softGalleryLanguage_PresentationSegments_strategy)
+def test_softgallerylanguage_presentationsegments_presentationCName_setter(instance):
     original = instance.presentationCName
     instance.presentationCName = original
     assert instance.presentationCName == original
 
-@given(instance=softGalleryLanguage::PresentationContent_strategy)
+
+
+@given(instance=softGalleryLanguage_PresentationSegments_strategy)
+def test_softgallerylanguage_presentationsegments_presentationAName_setter(instance):
+    original = instance.presentationAName
+    instance.presentationAName = original
+    assert instance.presentationAName == original
+
+
+
+@given(instance=softGalleryLanguage_PresentationSegments_strategy)
+def test_softgallerylanguage_presentationsegments_presentationSName_setter(instance):
+    original = instance.presentationSName
+    instance.presentationSName = original
+    assert instance.presentationSName == original
+
+@given(instance=softGalleryLanguage_PresentationContent_strategy)
 @settings(max_examples=50)
-def test_softgallerylanguage::presentationcontent_instantiation(instance):
-    assert isinstance(instance, softGalleryLanguage::PresentationContent)
+def test_softgallerylanguage_presentationcontent_instantiation(instance):
+    assert isinstance(instance, softGalleryLanguage_PresentationContent)
 
-@given(instance=softGalleryLanguage::PresentationLayer_strategy)
+@given(instance=softGalleryLanguage_PresentationLayer_strategy)
 @settings(max_examples=50)
-def test_softgallerylanguage::presentationlayer_instantiation(instance):
-    assert isinstance(instance, softGalleryLanguage::PresentationLayer)
+def test_softgallerylanguage_presentationlayer_instantiation(instance):
+    assert isinstance(instance, softGalleryLanguage_PresentationLayer)
 
-@given(instance=softGalleryLanguage::Layer_strategy)
+@given(instance=softGalleryLanguage_Layer_strategy)
 @settings(max_examples=50)
-def test_softgallerylanguage::layer_instantiation(instance):
-    assert isinstance(instance, softGalleryLanguage::Layer)
+def test_softgallerylanguage_layer_instantiation(instance):
+    assert isinstance(instance, softGalleryLanguage_Layer)
 
-@given(instance=softGalleryLanguage::NTiers_strategy)
+@given(instance=softGalleryLanguage_NTiers_strategy)
 @settings(max_examples=50)
-def test_softgallerylanguage::ntiers_instantiation(instance):
-    assert isinstance(instance, softGalleryLanguage::NTiers)
+def test_softgallerylanguage_ntiers_instantiation(instance):
+    assert isinstance(instance, softGalleryLanguage_NTiers)
 
-@given(instance=softGalleryLanguage::Architecture_strategy)
+@given(instance=softGalleryLanguage_Architecture_strategy)
 @settings(max_examples=50)
-def test_softgallerylanguage::architecture_instantiation(instance):
-    assert isinstance(instance, softGalleryLanguage::Architecture)
+def test_softgallerylanguage_architecture_instantiation(instance):
+    assert isinstance(instance, softGalleryLanguage_Architecture)
 
-@given(instance=softGalleryLanguage::UserException_strategy)
+@given(instance=softGalleryLanguage_UserException_strategy)
 @settings(max_examples=50)
-def test_softgallerylanguage::userexception_instantiation(instance):
-    assert isinstance(instance, softGalleryLanguage::UserException)
-
-@given(instance=softGalleryLanguage::UserException_strategy)
-def test_softgallerylanguage::userexception_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_softgallerylanguage_userexception_instantiation(instance):
+    assert isinstance(instance, softGalleryLanguage_UserException)
 
 
-@given(instance=softGalleryLanguage::UserException_strategy)
-def test_softgallerylanguage::userexception_name_setter(instance):
+
+@given(instance=softGalleryLanguage_UserException_strategy)
+def test_softgallerylanguage_userexception_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=softGalleryLanguage::AlbumException_strategy)
+@given(instance=softGalleryLanguage_AlbumException_strategy)
 @settings(max_examples=50)
-def test_softgallerylanguage::albumexception_instantiation(instance):
-    assert isinstance(instance, softGalleryLanguage::AlbumException)
-
-@given(instance=softGalleryLanguage::AlbumException_strategy)
-def test_softgallerylanguage::albumexception_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_softgallerylanguage_albumexception_instantiation(instance):
+    assert isinstance(instance, softGalleryLanguage_AlbumException)
 
 
-@given(instance=softGalleryLanguage::AlbumException_strategy)
-def test_softgallerylanguage::albumexception_name_setter(instance):
+
+@given(instance=softGalleryLanguage_AlbumException_strategy)
+def test_softgallerylanguage_albumexception_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=softGalleryLanguage::PhotoException_strategy)
+@given(instance=softGalleryLanguage_PhotoException_strategy)
 @settings(max_examples=50)
-def test_softgallerylanguage::photoexception_instantiation(instance):
-    assert isinstance(instance, softGalleryLanguage::PhotoException)
-
-@given(instance=softGalleryLanguage::PhotoException_strategy)
-def test_softgallerylanguage::photoexception_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_softgallerylanguage_photoexception_instantiation(instance):
+    assert isinstance(instance, softGalleryLanguage_PhotoException)
 
 
-@given(instance=softGalleryLanguage::PhotoException_strategy)
-def test_softgallerylanguage::photoexception_name_setter(instance):
+
+@given(instance=softGalleryLanguage_PhotoException_strategy)
+def test_softgallerylanguage_photoexception_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=softGalleryLanguage::LandingFunctions_strategy)
+@given(instance=softGalleryLanguage_LandingFunctions_strategy)
 @settings(max_examples=50)
-def test_softgallerylanguage::landingfunctions_instantiation(instance):
-    assert isinstance(instance, softGalleryLanguage::LandingFunctions)
-
-@given(instance=softGalleryLanguage::LandingFunctions_strategy)
-def test_softgallerylanguage::landingfunctions_nameCarouselName_type(instance):
-    assert isinstance(instance.nameCarouselName, str)
+def test_softgallerylanguage_landingfunctions_instantiation(instance):
+    assert isinstance(instance, softGalleryLanguage_LandingFunctions)
 
 
-@given(instance=softGalleryLanguage::LandingFunctions_strategy)
-def test_softgallerylanguage::landingfunctions_nameCarouselName_setter(instance):
-    original = instance.nameCarouselName
-    instance.nameCarouselName = original
-    assert instance.nameCarouselName == original
 
-@given(instance=softGalleryLanguage::LandingFunctions_strategy)
-def test_softgallerylanguage::landingfunctions_passPhotoName_type(instance):
-    assert isinstance(instance.passPhotoName, str)
-
-
-@given(instance=softGalleryLanguage::LandingFunctions_strategy)
-def test_softgallerylanguage::landingfunctions_passPhotoName_setter(instance):
+@given(instance=softGalleryLanguage_LandingFunctions_strategy)
+def test_softgallerylanguage_landingfunctions_passPhotoName_setter(instance):
     original = instance.passPhotoName
     instance.passPhotoName = original
     assert instance.passPhotoName == original
 
-@given(instance=softGalleryLanguage::PhotoActionsFunctions_strategy)
+
+
+@given(instance=softGalleryLanguage_LandingFunctions_strategy)
+def test_softgallerylanguage_landingfunctions_nameCarouselName_setter(instance):
+    original = instance.nameCarouselName
+    instance.nameCarouselName = original
+    assert instance.nameCarouselName == original
+
+@given(instance=softGalleryLanguage_PhotoActionsFunctions_strategy)
 @settings(max_examples=50)
-def test_softgallerylanguage::photoactionsfunctions_instantiation(instance):
-    assert isinstance(instance, softGalleryLanguage::PhotoActionsFunctions)
-
-@given(instance=softGalleryLanguage::PhotoActionsFunctions_strategy)
-def test_softgallerylanguage::photoactionsfunctions_nameLoad_type(instance):
-    assert isinstance(instance.nameLoad, str)
+def test_softgallerylanguage_photoactionsfunctions_instantiation(instance):
+    assert isinstance(instance, softGalleryLanguage_PhotoActionsFunctions)
 
 
-@given(instance=softGalleryLanguage::PhotoActionsFunctions_strategy)
-def test_softgallerylanguage::photoactionsfunctions_nameLoad_setter(instance):
+
+@given(instance=softGalleryLanguage_PhotoActionsFunctions_strategy)
+def test_softgallerylanguage_photoactionsfunctions_nameLoad_setter(instance):
     original = instance.nameLoad
     instance.nameLoad = original
     assert instance.nameLoad == original
 
-@given(instance=softGalleryLanguage::PhotoActionsFunctions_strategy)
-def test_softgallerylanguage::photoactionsfunctions_namePhoto_type(instance):
-    assert isinstance(instance.namePhoto, str)
 
 
-@given(instance=softGalleryLanguage::PhotoActionsFunctions_strategy)
-def test_softgallerylanguage::photoactionsfunctions_namePhoto_setter(instance):
-    original = instance.namePhoto
-    instance.namePhoto = original
-    assert instance.namePhoto == original
-
-@given(instance=softGalleryLanguage::PhotoActionsFunctions_strategy)
-def test_softgallerylanguage::photoactionsfunctions_nameGenerico_type(instance):
-    assert isinstance(instance.nameGenerico, str)
-
-
-@given(instance=softGalleryLanguage::PhotoActionsFunctions_strategy)
-def test_softgallerylanguage::photoactionsfunctions_nameGenerico_setter(instance):
+@given(instance=softGalleryLanguage_PhotoActionsFunctions_strategy)
+def test_softgallerylanguage_photoactionsfunctions_nameGenerico_setter(instance):
     original = instance.nameGenerico
     instance.nameGenerico = original
     assert instance.nameGenerico == original
 
-@given(instance=softGalleryLanguage::AlbumManagementFunctions_strategy)
+
+
+@given(instance=softGalleryLanguage_PhotoActionsFunctions_strategy)
+def test_softgallerylanguage_photoactionsfunctions_namePhoto_setter(instance):
+    original = instance.namePhoto
+    instance.namePhoto = original
+    assert instance.namePhoto == original
+
+@given(instance=softGalleryLanguage_AlbumManagementFunctions_strategy)
 @settings(max_examples=50)
-def test_softgallerylanguage::albummanagementfunctions_instantiation(instance):
-    assert isinstance(instance, softGalleryLanguage::AlbumManagementFunctions)
-
-@given(instance=softGalleryLanguage::AlbumManagementFunctions_strategy)
-def test_softgallerylanguage::albummanagementfunctions_createdAlbName_type(instance):
-    assert isinstance(instance.createdAlbName, str)
+def test_softgallerylanguage_albummanagementfunctions_instantiation(instance):
+    assert isinstance(instance, softGalleryLanguage_AlbumManagementFunctions)
 
 
-@given(instance=softGalleryLanguage::AlbumManagementFunctions_strategy)
-def test_softgallerylanguage::albummanagementfunctions_createdAlbName_setter(instance):
-    original = instance.createdAlbName
-    instance.createdAlbName = original
-    assert instance.createdAlbName == original
 
-@given(instance=softGalleryLanguage::AlbumManagementFunctions_strategy)
-def test_softgallerylanguage::albummanagementfunctions_selectAlbName_type(instance):
-    assert isinstance(instance.selectAlbName, str)
-
-
-@given(instance=softGalleryLanguage::AlbumManagementFunctions_strategy)
-def test_softgallerylanguage::albummanagementfunctions_selectAlbName_setter(instance):
+@given(instance=softGalleryLanguage_AlbumManagementFunctions_strategy)
+def test_softgallerylanguage_albummanagementfunctions_selectAlbName_setter(instance):
     original = instance.selectAlbName
     instance.selectAlbName = original
     assert instance.selectAlbName == original
 
-@given(instance=softGalleryLanguage::ExceptionsType_strategy)
+
+
+@given(instance=softGalleryLanguage_AlbumManagementFunctions_strategy)
+def test_softgallerylanguage_albummanagementfunctions_createdAlbName_setter(instance):
+    original = instance.createdAlbName
+    instance.createdAlbName = original
+    assert instance.createdAlbName == original
+
+@given(instance=softGalleryLanguage_ExceptionsType_strategy)
 @settings(max_examples=50)
-def test_softgallerylanguage::exceptionstype_instantiation(instance):
-    assert isinstance(instance, softGalleryLanguage::ExceptionsType)
+def test_softgallerylanguage_exceptionstype_instantiation(instance):
+    assert isinstance(instance, softGalleryLanguage_ExceptionsType)
 
-@given(instance=softGalleryLanguage::AppAccessFunctions_strategy)
+@given(instance=softGalleryLanguage_AppAccessFunctions_strategy)
 @settings(max_examples=50)
-def test_softgallerylanguage::appaccessfunctions_instantiation(instance):
-    assert isinstance(instance, softGalleryLanguage::AppAccessFunctions)
-
-@given(instance=softGalleryLanguage::AppAccessFunctions_strategy)
-def test_softgallerylanguage::appaccessfunctions_registerName_type(instance):
-    assert isinstance(instance.registerName, str)
+def test_softgallerylanguage_appaccessfunctions_instantiation(instance):
+    assert isinstance(instance, softGalleryLanguage_AppAccessFunctions)
 
 
-@given(instance=softGalleryLanguage::AppAccessFunctions_strategy)
-def test_softgallerylanguage::appaccessfunctions_registerName_setter(instance):
-    original = instance.registerName
-    instance.registerName = original
-    assert instance.registerName == original
 
-@given(instance=softGalleryLanguage::AppAccessFunctions_strategy)
-def test_softgallerylanguage::appaccessfunctions_loginName_type(instance):
-    assert isinstance(instance.loginName, str)
-
-
-@given(instance=softGalleryLanguage::AppAccessFunctions_strategy)
-def test_softgallerylanguage::appaccessfunctions_loginName_setter(instance):
+@given(instance=softGalleryLanguage_AppAccessFunctions_strategy)
+def test_softgallerylanguage_appaccessfunctions_loginName_setter(instance):
     original = instance.loginName
     instance.loginName = original
     assert instance.loginName == original
 
-@given(instance=softGalleryLanguage::ProfileManagementFunctions_strategy)
+
+
+@given(instance=softGalleryLanguage_AppAccessFunctions_strategy)
+def test_softgallerylanguage_appaccessfunctions_registerName_setter(instance):
+    original = instance.registerName
+    instance.registerName = original
+    assert instance.registerName == original
+
+@given(instance=softGalleryLanguage_ProfileManagementFunctions_strategy)
 @settings(max_examples=50)
-def test_softgallerylanguage::profilemanagementfunctions_instantiation(instance):
-    assert isinstance(instance, softGalleryLanguage::ProfileManagementFunctions)
-
-@given(instance=softGalleryLanguage::ProfileManagementFunctions_strategy)
-def test_softgallerylanguage::profilemanagementfunctions_viewprofileName_type(instance):
-    assert isinstance(instance.viewprofileName, str)
+def test_softgallerylanguage_profilemanagementfunctions_instantiation(instance):
+    assert isinstance(instance, softGalleryLanguage_ProfileManagementFunctions)
 
 
-@given(instance=softGalleryLanguage::ProfileManagementFunctions_strategy)
-def test_softgallerylanguage::profilemanagementfunctions_viewprofileName_setter(instance):
+
+@given(instance=softGalleryLanguage_ProfileManagementFunctions_strategy)
+def test_softgallerylanguage_profilemanagementfunctions_viewprofileName_setter(instance):
     original = instance.viewprofileName
     instance.viewprofileName = original
     assert instance.viewprofileName == original
 
-@given(instance=softGalleryLanguage::ProfileManagementFunctions_strategy)
-def test_softgallerylanguage::profilemanagementfunctions_editProfileName_type(instance):
-    assert isinstance(instance.editProfileName, str)
 
 
-@given(instance=softGalleryLanguage::ProfileManagementFunctions_strategy)
-def test_softgallerylanguage::profilemanagementfunctions_editProfileName_setter(instance):
+@given(instance=softGalleryLanguage_ProfileManagementFunctions_strategy)
+def test_softgallerylanguage_profilemanagementfunctions_editProfileName_setter(instance):
     original = instance.editProfileName
     instance.editProfileName = original
     assert instance.editProfileName == original
 
-@given(instance=softGalleryLanguage::LandingActions_strategy)
+@given(instance=softGalleryLanguage_LandingActions_strategy)
 @settings(max_examples=50)
-def test_softgallerylanguage::landingactions_instantiation(instance):
-    assert isinstance(instance, softGalleryLanguage::LandingActions)
+def test_softgallerylanguage_landingactions_instantiation(instance):
+    assert isinstance(instance, softGalleryLanguage_LandingActions)
 
-@given(instance=softGalleryLanguage::PhotoActions_strategy)
+@given(instance=softGalleryLanguage_PhotoActions_strategy)
 @settings(max_examples=50)
-def test_softgallerylanguage::photoactions_instantiation(instance):
-    assert isinstance(instance, softGalleryLanguage::PhotoActions)
+def test_softgallerylanguage_photoactions_instantiation(instance):
+    assert isinstance(instance, softGalleryLanguage_PhotoActions)
 
-@given(instance=softGalleryLanguage::AlbumManagement_strategy)
+@given(instance=softGalleryLanguage_AlbumManagement_strategy)
 @settings(max_examples=50)
-def test_softgallerylanguage::albummanagement_instantiation(instance):
-    assert isinstance(instance, softGalleryLanguage::AlbumManagement)
+def test_softgallerylanguage_albummanagement_instantiation(instance):
+    assert isinstance(instance, softGalleryLanguage_AlbumManagement)
 
-@given(instance=softGalleryLanguage::AmazonElasticComputeCloud_strategy)
+@given(instance=softGalleryLanguage_AppAccess_strategy)
 @settings(max_examples=50)
-def test_softgallerylanguage::amazonelasticcomputecloud_instantiation(instance):
-    assert isinstance(instance, softGalleryLanguage::AmazonElasticComputeCloud)
+def test_softgallerylanguage_appaccess_instantiation(instance):
+    assert isinstance(instance, softGalleryLanguage_AppAccess)
 
-@given(instance=softGalleryLanguage::AmazonElasticComputeCloud_strategy)
-def test_softgallerylanguage::amazonelasticcomputecloud_name_type(instance):
-    assert isinstance(instance.name, str)
+@given(instance=softGalleryLanguage_ProfileManagement_strategy)
+@settings(max_examples=50)
+def test_softgallerylanguage_profilemanagement_instantiation(instance):
+    assert isinstance(instance, softGalleryLanguage_ProfileManagement)
+
+@given(instance=softGalleryLanguage_Functionalities_strategy)
+@settings(max_examples=50)
+def test_softgallerylanguage_functionalities_instantiation(instance):
+    assert isinstance(instance, softGalleryLanguage_Functionalities)
+
+@given(instance=softGalleryLanguage_AtributeUserDomain_strategy)
+@settings(max_examples=50)
+def test_softgallerylanguage_atributeuserdomain_instantiation(instance):
+    assert isinstance(instance, softGalleryLanguage_AtributeUserDomain)
 
 
-@given(instance=softGalleryLanguage::AmazonElasticComputeCloud_strategy)
-def test_softgallerylanguage::amazonelasticcomputecloud_name_setter(instance):
+
+@given(instance=softGalleryLanguage_AtributeUserDomain_strategy)
+def test_softgallerylanguage_atributeuserdomain_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=softGalleryLanguage::Metadata_strategy)
+@given(instance=softGalleryLanguage_AtributeAlbum_strategy)
 @settings(max_examples=50)
-def test_softgallerylanguage::metadata_instantiation(instance):
-    assert isinstance(instance, softGalleryLanguage::Metadata)
-
-@given(instance=softGalleryLanguage::Metadata_strategy)
-def test_softgallerylanguage::metadata_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_softgallerylanguage_atributealbum_instantiation(instance):
+    assert isinstance(instance, softGalleryLanguage_AtributeAlbum)
 
 
-@given(instance=softGalleryLanguage::Metadata_strategy)
-def test_softgallerylanguage::metadata_name_setter(instance):
+
+@given(instance=softGalleryLanguage_AtributeAlbum_strategy)
+def test_softgallerylanguage_atributealbum_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=softGalleryLanguage::AmazonFile_strategy)
+@given(instance=softGalleryLanguage_AtributePhoto_strategy)
 @settings(max_examples=50)
-def test_softgallerylanguage::amazonfile_instantiation(instance):
-    assert isinstance(instance, softGalleryLanguage::AmazonFile)
-
-@given(instance=softGalleryLanguage::AmazonFolder_strategy)
-@settings(max_examples=50)
-def test_softgallerylanguage::amazonfolder_instantiation(instance):
-    assert isinstance(instance, softGalleryLanguage::AmazonFolder)
-
-@given(instance=softGalleryLanguage::AmazonFolder_strategy)
-def test_softgallerylanguage::amazonfolder_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_softgallerylanguage_atributephoto_instantiation(instance):
+    assert isinstance(instance, softGalleryLanguage_AtributePhoto)
 
 
-@given(instance=softGalleryLanguage::AmazonFolder_strategy)
-def test_softgallerylanguage::amazonfolder_name_setter(instance):
+
+@given(instance=softGalleryLanguage_AtributePhoto_strategy)
+def test_softgallerylanguage_atributephoto_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=softGalleryLanguage::OnlyAuthorized_strategy)
+@given(instance=softGalleryLanguage_Entities_strategy)
 @settings(max_examples=50)
-def test_softgallerylanguage::onlyauthorized_instantiation(instance):
-    assert isinstance(instance, softGalleryLanguage::OnlyAuthorized)
-
-@given(instance=softGalleryLanguage::OnlyAuthorized_strategy)
-def test_softgallerylanguage::onlyauthorized_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_softgallerylanguage_entities_instantiation(instance):
+    assert isinstance(instance, softGalleryLanguage_Entities)
 
 
-@given(instance=softGalleryLanguage::OnlyAuthorized_strategy)
-def test_softgallerylanguage::onlyauthorized_name_setter(instance):
+
+@given(instance=softGalleryLanguage_Entities_strategy)
+def test_softgallerylanguage_entities_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=softGalleryLanguage::BucketObjectsNotPublic_strategy)
+@given(instance=softGalleryLanguage_ExceptionsDomain_strategy)
 @settings(max_examples=50)
-def test_softgallerylanguage::bucketobjectsnotpublic_instantiation(instance):
-    assert isinstance(instance, softGalleryLanguage::BucketObjectsNotPublic)
+def test_softgallerylanguage_exceptionsdomain_instantiation(instance):
+    assert isinstance(instance, softGalleryLanguage_ExceptionsDomain)
 
-@given(instance=softGalleryLanguage::BucketObjectsNotPublic_strategy)
-def test_softgallerylanguage::bucketobjectsnotpublic_name_type(instance):
-    assert isinstance(instance.name, str)
+@given(instance=softGalleryLanguage_Functionality_strategy)
+@settings(max_examples=50)
+def test_softgallerylanguage_functionality_instantiation(instance):
+    assert isinstance(instance, softGalleryLanguage_Functionality)
+
+@given(instance=softGalleryLanguage_Entity_strategy)
+@settings(max_examples=50)
+def test_softgallerylanguage_entity_instantiation(instance):
+    assert isinstance(instance, softGalleryLanguage_Entity)
+
+@given(instance=softGalleryLanguage_Domain_strategy)
+@settings(max_examples=50)
+def test_softgallerylanguage_domain_instantiation(instance):
+    assert isinstance(instance, softGalleryLanguage_Domain)
 
 
-@given(instance=softGalleryLanguage::BucketObjectsNotPublic_strategy)
-def test_softgallerylanguage::bucketobjectsnotpublic_name_setter(instance):
+
+@given(instance=softGalleryLanguage_Domain_strategy)
+def test_softgallerylanguage_domain_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=softGalleryLanguage::ObjectsPublic_strategy)
+@given(instance=softGalleryLanguage_EObject_strategy)
 @settings(max_examples=50)
-def test_softgallerylanguage::objectspublic_instantiation(instance):
-    assert isinstance(instance, softGalleryLanguage::ObjectsPublic)
+def test_softgallerylanguage_eobject_instantiation(instance):
+    assert isinstance(instance, softGalleryLanguage_EObject)
 
-@given(instance=softGalleryLanguage::ObjectsPublic_strategy)
-def test_softgallerylanguage::objectspublic_name_type(instance):
-    assert isinstance(instance.name, str)
+@given(instance=softGalleryLanguage_Model_strategy)
+@settings(max_examples=50)
+def test_softgallerylanguage_model_instantiation(instance):
+    assert isinstance(instance, softGalleryLanguage_Model)
+
+@given(instance=softGalleryLanguage_AmazonElasticComputeCloud_strategy)
+@settings(max_examples=50)
+def test_softgallerylanguage_amazonelasticcomputecloud_instantiation(instance):
+    assert isinstance(instance, softGalleryLanguage_AmazonElasticComputeCloud)
 
 
-@given(instance=softGalleryLanguage::ObjectsPublic_strategy)
-def test_softgallerylanguage::objectspublic_name_setter(instance):
+
+@given(instance=softGalleryLanguage_AmazonElasticComputeCloud_strategy)
+def test_softgallerylanguage_amazonelasticcomputecloud_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=softGalleryLanguage::BucketAccess_strategy)
+@given(instance=softGalleryLanguage_Metadata_strategy)
 @settings(max_examples=50)
-def test_softgallerylanguage::bucketaccess_instantiation(instance):
-    assert isinstance(instance, softGalleryLanguage::BucketAccess)
-
-@given(instance=softGalleryLanguage::Bucket_strategy)
-@settings(max_examples=50)
-def test_softgallerylanguage::bucket_instantiation(instance):
-    assert isinstance(instance, softGalleryLanguage::Bucket)
-
-@given(instance=softGalleryLanguage::Bucket_strategy)
-def test_softgallerylanguage::bucket_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_softgallerylanguage_metadata_instantiation(instance):
+    assert isinstance(instance, softGalleryLanguage_Metadata)
 
 
-@given(instance=softGalleryLanguage::Bucket_strategy)
-def test_softgallerylanguage::bucket_name_setter(instance):
+
+@given(instance=softGalleryLanguage_Metadata_strategy)
+def test_softgallerylanguage_metadata_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=softGalleryLanguage::BatchOperation_strategy)
+@given(instance=softGalleryLanguage_AmazonFile_strategy)
 @settings(max_examples=50)
-def test_softgallerylanguage::batchoperation_instantiation(instance):
-    assert isinstance(instance, softGalleryLanguage::BatchOperation)
+def test_softgallerylanguage_amazonfile_instantiation(instance):
+    assert isinstance(instance, softGalleryLanguage_AmazonFile)
 
-@given(instance=softGalleryLanguage::BatchOperation_strategy)
-def test_softgallerylanguage::batchoperation_name_type(instance):
-    assert isinstance(instance.name, str)
+@given(instance=softGalleryLanguage_AmazonFolder_strategy)
+@settings(max_examples=50)
+def test_softgallerylanguage_amazonfolder_instantiation(instance):
+    assert isinstance(instance, softGalleryLanguage_AmazonFolder)
 
 
-@given(instance=softGalleryLanguage::BatchOperation_strategy)
-def test_softgallerylanguage::batchoperation_name_setter(instance):
+
+@given(instance=softGalleryLanguage_AmazonFolder_strategy)
+def test_softgallerylanguage_amazonfolder_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=softGalleryLanguage::AmazonSimpleStorageService_strategy)
+@given(instance=softGalleryLanguage_OnlyAuthorized_strategy)
 @settings(max_examples=50)
-def test_softgallerylanguage::amazonsimplestorageservice_instantiation(instance):
-    assert isinstance(instance, softGalleryLanguage::AmazonSimpleStorageService)
-
-@given(instance=softGalleryLanguage::Clause_strategy)
-@settings(max_examples=50)
-def test_softgallerylanguage::clause_instantiation(instance):
-    assert isinstance(instance, softGalleryLanguage::Clause)
-
-@given(instance=softGalleryLanguage::Clause_strategy)
-def test_softgallerylanguage::clause_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_softgallerylanguage_onlyauthorized_instantiation(instance):
+    assert isinstance(instance, softGalleryLanguage_OnlyAuthorized)
 
 
-@given(instance=softGalleryLanguage::Clause_strategy)
-def test_softgallerylanguage::clause_name_setter(instance):
+
+@given(instance=softGalleryLanguage_OnlyAuthorized_strategy)
+def test_softgallerylanguage_onlyauthorized_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=softGalleryLanguage::Query_strategy)
+@given(instance=softGalleryLanguage_BucketObjectsNotPublic_strategy)
 @settings(max_examples=50)
-def test_softgallerylanguage::query_instantiation(instance):
-    assert isinstance(instance, softGalleryLanguage::Query)
-
-@given(instance=softGalleryLanguage::Privilege_strategy)
-@settings(max_examples=50)
-def test_softgallerylanguage::privilege_instantiation(instance):
-    assert isinstance(instance, softGalleryLanguage::Privilege)
-
-@given(instance=softGalleryLanguage::Privilege_strategy)
-def test_softgallerylanguage::privilege_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_softgallerylanguage_bucketobjectsnotpublic_instantiation(instance):
+    assert isinstance(instance, softGalleryLanguage_BucketObjectsNotPublic)
 
 
-@given(instance=softGalleryLanguage::Privilege_strategy)
-def test_softgallerylanguage::privilege_name_setter(instance):
+
+@given(instance=softGalleryLanguage_BucketObjectsNotPublic_strategy)
+def test_softgallerylanguage_bucketobjectsnotpublic_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=softGalleryLanguage::PostgresUser_strategy)
+@given(instance=softGalleryLanguage_ObjectsPublic_strategy)
 @settings(max_examples=50)
-def test_softgallerylanguage::postgresuser_instantiation(instance):
-    assert isinstance(instance, softGalleryLanguage::PostgresUser)
-
-@given(instance=softGalleryLanguage::PostgresUser_strategy)
-def test_softgallerylanguage::postgresuser_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_softgallerylanguage_objectspublic_instantiation(instance):
+    assert isinstance(instance, softGalleryLanguage_ObjectsPublic)
 
 
-@given(instance=softGalleryLanguage::PostgresUser_strategy)
-def test_softgallerylanguage::postgresuser_name_setter(instance):
+
+@given(instance=softGalleryLanguage_ObjectsPublic_strategy)
+def test_softgallerylanguage_objectspublic_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=softGalleryLanguage::Function_strategy)
+@given(instance=softGalleryLanguage_BucketAccess_strategy)
 @settings(max_examples=50)
-def test_softgallerylanguage::function_instantiation(instance):
-    assert isinstance(instance, softGalleryLanguage::Function)
+def test_softgallerylanguage_bucketaccess_instantiation(instance):
+    assert isinstance(instance, softGalleryLanguage_BucketAccess)
 
-@given(instance=softGalleryLanguage::Function_strategy)
-def test_softgallerylanguage::function_name_type(instance):
-    assert isinstance(instance.name, str)
+@given(instance=softGalleryLanguage_Bucket_strategy)
+@settings(max_examples=50)
+def test_softgallerylanguage_bucket_instantiation(instance):
+    assert isinstance(instance, softGalleryLanguage_Bucket)
 
 
-@given(instance=softGalleryLanguage::Function_strategy)
-def test_softgallerylanguage::function_name_setter(instance):
+
+@given(instance=softGalleryLanguage_Bucket_strategy)
+def test_softgallerylanguage_bucket_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=softGalleryLanguage::Trigger_strategy)
+@given(instance=softGalleryLanguage_BatchOperation_strategy)
 @settings(max_examples=50)
-def test_softgallerylanguage::trigger_instantiation(instance):
-    assert isinstance(instance, softGalleryLanguage::Trigger)
-
-@given(instance=softGalleryLanguage::Trigger_strategy)
-def test_softgallerylanguage::trigger_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_softgallerylanguage_batchoperation_instantiation(instance):
+    assert isinstance(instance, softGalleryLanguage_BatchOperation)
 
 
-@given(instance=softGalleryLanguage::Trigger_strategy)
-def test_softgallerylanguage::trigger_name_setter(instance):
+
+@given(instance=softGalleryLanguage_BatchOperation_strategy)
+def test_softgallerylanguage_batchoperation_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=softGalleryLanguage::Policy_strategy)
+@given(instance=softGalleryLanguage_AmazonSimpleStorageService_strategy)
 @settings(max_examples=50)
-def test_softgallerylanguage::policy_instantiation(instance):
-    assert isinstance(instance, softGalleryLanguage::Policy)
+def test_softgallerylanguage_amazonsimplestorageservice_instantiation(instance):
+    assert isinstance(instance, softGalleryLanguage_AmazonSimpleStorageService)
 
-@given(instance=softGalleryLanguage::Policy_strategy)
-def test_softgallerylanguage::policy_name_type(instance):
-    assert isinstance(instance.name, str)
+@given(instance=softGalleryLanguage_Clause_strategy)
+@settings(max_examples=50)
+def test_softgallerylanguage_clause_instantiation(instance):
+    assert isinstance(instance, softGalleryLanguage_Clause)
 
 
-@given(instance=softGalleryLanguage::Policy_strategy)
-def test_softgallerylanguage::policy_name_setter(instance):
+
+@given(instance=softGalleryLanguage_Clause_strategy)
+def test_softgallerylanguage_clause_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=softGalleryLanguage::PublicAccess_strategy)
+@given(instance=softGalleryLanguage_Query_strategy)
 @settings(max_examples=50)
-def test_softgallerylanguage::publicaccess_instantiation(instance):
-    assert isinstance(instance, softGalleryLanguage::PublicAccess)
+def test_softgallerylanguage_query_instantiation(instance):
+    assert isinstance(instance, softGalleryLanguage_Query)
 
-@given(instance=softGalleryLanguage::PublicAccess_strategy)
-def test_softgallerylanguage::publicaccess_name_type(instance):
-    assert isinstance(instance.name, str)
+@given(instance=softGalleryLanguage_Privilege_strategy)
+@settings(max_examples=50)
+def test_softgallerylanguage_privilege_instantiation(instance):
+    assert isinstance(instance, softGalleryLanguage_Privilege)
 
 
-@given(instance=softGalleryLanguage::PublicAccess_strategy)
-def test_softgallerylanguage::publicaccess_name_setter(instance):
+
+@given(instance=softGalleryLanguage_Privilege_strategy)
+def test_softgallerylanguage_privilege_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=softGalleryLanguage::Constraint_strategy)
+@given(instance=softGalleryLanguage_PostgresUser_strategy)
 @settings(max_examples=50)
-def test_softgallerylanguage::constraint_instantiation(instance):
-    assert isinstance(instance, softGalleryLanguage::Constraint)
-
-@given(instance=softGalleryLanguage::Constraint_strategy)
-def test_softgallerylanguage::constraint_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_softgallerylanguage_postgresuser_instantiation(instance):
+    assert isinstance(instance, softGalleryLanguage_PostgresUser)
 
 
-@given(instance=softGalleryLanguage::Constraint_strategy)
-def test_softgallerylanguage::constraint_name_setter(instance):
+
+@given(instance=softGalleryLanguage_PostgresUser_strategy)
+def test_softgallerylanguage_postgresuser_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=softGalleryLanguage::DatatypeDB_strategy)
+@given(instance=softGalleryLanguage_Function_strategy)
 @settings(max_examples=50)
-def test_softgallerylanguage::datatypedb_instantiation(instance):
-    assert isinstance(instance, softGalleryLanguage::DatatypeDB)
-
-@given(instance=softGalleryLanguage::DatatypeDB_strategy)
-def test_softgallerylanguage::datatypedb_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_softgallerylanguage_function_instantiation(instance):
+    assert isinstance(instance, softGalleryLanguage_Function)
 
 
-@given(instance=softGalleryLanguage::DatatypeDB_strategy)
-def test_softgallerylanguage::datatypedb_name_setter(instance):
+
+@given(instance=softGalleryLanguage_Function_strategy)
+def test_softgallerylanguage_function_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=softGalleryLanguage::ColumnP_strategy)
+@given(instance=softGalleryLanguage_Trigger_strategy)
 @settings(max_examples=50)
-def test_softgallerylanguage::columnp_instantiation(instance):
-    assert isinstance(instance, softGalleryLanguage::ColumnP)
-
-@given(instance=softGalleryLanguage::ColumnP_strategy)
-def test_softgallerylanguage::columnp_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_softgallerylanguage_trigger_instantiation(instance):
+    assert isinstance(instance, softGalleryLanguage_Trigger)
 
 
-@given(instance=softGalleryLanguage::ColumnP_strategy)
-def test_softgallerylanguage::columnp_name_setter(instance):
+
+@given(instance=softGalleryLanguage_Trigger_strategy)
+def test_softgallerylanguage_trigger_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=softGalleryLanguage::RefTable::p_strategy)
+@given(instance=softGalleryLanguage_Policy_strategy)
 @settings(max_examples=50)
-def test_softgallerylanguage::reftable::p_instantiation(instance):
-    assert isinstance(instance, softGalleryLanguage::RefTable::p)
-
-@given(instance=softGalleryLanguage::RefTable::p_strategy)
-def test_softgallerylanguage::reftable::p_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_softgallerylanguage_policy_instantiation(instance):
+    assert isinstance(instance, softGalleryLanguage_Policy)
 
 
-@given(instance=softGalleryLanguage::RefTable::p_strategy)
-def test_softgallerylanguage::reftable::p_name_setter(instance):
+
+@given(instance=softGalleryLanguage_Policy_strategy)
+def test_softgallerylanguage_policy_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=softGalleryLanguage::ForeignKeyRef_strategy)
+@given(instance=softGalleryLanguage_PublicAccess_strategy)
 @settings(max_examples=50)
-def test_softgallerylanguage::foreignkeyref_instantiation(instance):
-    assert isinstance(instance, softGalleryLanguage::ForeignKeyRef)
-
-@given(instance=softGalleryLanguage::ForeignKey::n_strategy)
-@settings(max_examples=50)
-def test_softgallerylanguage::foreignkey::n_instantiation(instance):
-    assert isinstance(instance, softGalleryLanguage::ForeignKey::n)
-
-@given(instance=softGalleryLanguage::ForeignKey::n_strategy)
-def test_softgallerylanguage::foreignkey::n_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_softgallerylanguage_publicaccess_instantiation(instance):
+    assert isinstance(instance, softGalleryLanguage_PublicAccess)
 
 
-@given(instance=softGalleryLanguage::ForeignKey::n_strategy)
-def test_softgallerylanguage::foreignkey::n_name_setter(instance):
+
+@given(instance=softGalleryLanguage_PublicAccess_strategy)
+def test_softgallerylanguage_publicaccess_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=softGalleryLanguage::ForeignKey_strategy)
+@given(instance=softGalleryLanguage_Constraint_strategy)
 @settings(max_examples=50)
-def test_softgallerylanguage::foreignkey_instantiation(instance):
-    assert isinstance(instance, softGalleryLanguage::ForeignKey)
-
-@given(instance=softGalleryLanguage::Table::p_strategy)
-@settings(max_examples=50)
-def test_softgallerylanguage::table::p_instantiation(instance):
-    assert isinstance(instance, softGalleryLanguage::Table::p)
-
-@given(instance=softGalleryLanguage::Table::p_strategy)
-def test_softgallerylanguage::table::p_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_softgallerylanguage_constraint_instantiation(instance):
+    assert isinstance(instance, softGalleryLanguage_Constraint)
 
 
-@given(instance=softGalleryLanguage::Table::p_strategy)
-def test_softgallerylanguage::table::p_name_setter(instance):
+
+@given(instance=softGalleryLanguage_Constraint_strategy)
+def test_softgallerylanguage_constraint_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=softGalleryLanguage::ViewSchema_strategy)
+@given(instance=softGalleryLanguage_DatatypeDB_strategy)
 @settings(max_examples=50)
-def test_softgallerylanguage::viewschema_instantiation(instance):
-    assert isinstance(instance, softGalleryLanguage::ViewSchema)
-
-@given(instance=softGalleryLanguage::ViewSchema_strategy)
-def test_softgallerylanguage::viewschema_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_softgallerylanguage_datatypedb_instantiation(instance):
+    assert isinstance(instance, softGalleryLanguage_DatatypeDB)
 
 
-@given(instance=softGalleryLanguage::ViewSchema_strategy)
-def test_softgallerylanguage::viewschema_name_setter(instance):
+
+@given(instance=softGalleryLanguage_DatatypeDB_strategy)
+def test_softgallerylanguage_datatypedb_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=softGalleryLanguage::Index::p_strategy)
+@given(instance=softGalleryLanguage_ColumnP_strategy)
 @settings(max_examples=50)
-def test_softgallerylanguage::index::p_instantiation(instance):
-    assert isinstance(instance, softGalleryLanguage::Index::p)
-
-@given(instance=softGalleryLanguage::Index::p_strategy)
-def test_softgallerylanguage::index::p_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_softgallerylanguage_columnp_instantiation(instance):
+    assert isinstance(instance, softGalleryLanguage_ColumnP)
 
 
-@given(instance=softGalleryLanguage::Index::p_strategy)
-def test_softgallerylanguage::index::p_name_setter(instance):
+
+@given(instance=softGalleryLanguage_ColumnP_strategy)
+def test_softgallerylanguage_columnp_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=softGalleryLanguage::Schema_strategy)
+@given(instance=softGalleryLanguage_RefTable_p_strategy)
 @settings(max_examples=50)
-def test_softgallerylanguage::schema_instantiation(instance):
-    assert isinstance(instance, softGalleryLanguage::Schema)
-
-@given(instance=softGalleryLanguage::Database_strategy)
-@settings(max_examples=50)
-def test_softgallerylanguage::database_instantiation(instance):
-    assert isinstance(instance, softGalleryLanguage::Database)
-
-@given(instance=softGalleryLanguage::Database_strategy)
-def test_softgallerylanguage::database_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_softgallerylanguage_reftable_p_instantiation(instance):
+    assert isinstance(instance, softGalleryLanguage_RefTable_p)
 
 
-@given(instance=softGalleryLanguage::Database_strategy)
-def test_softgallerylanguage::database_name_setter(instance):
+
+@given(instance=softGalleryLanguage_RefTable_p_strategy)
+def test_softgallerylanguage_reftable_p_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=softGalleryLanguage::Cluster_strategy)
+@given(instance=softGalleryLanguage_ForeignKeyRef_strategy)
 @settings(max_examples=50)
-def test_softgallerylanguage::cluster_instantiation(instance):
-    assert isinstance(instance, softGalleryLanguage::Cluster)
+def test_softgallerylanguage_foreignkeyref_instantiation(instance):
+    assert isinstance(instance, softGalleryLanguage_ForeignKeyRef)
 
-@given(instance=softGalleryLanguage::Row_strategy)
+@given(instance=softGalleryLanguage_ForeignKey_n_strategy)
 @settings(max_examples=50)
-def test_softgallerylanguage::row_instantiation(instance):
-    assert isinstance(instance, softGalleryLanguage::Row)
-
-@given(instance=softGalleryLanguage::Row_strategy)
-def test_softgallerylanguage::row_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_softgallerylanguage_foreignkey_n_instantiation(instance):
+    assert isinstance(instance, softGalleryLanguage_ForeignKey_n)
 
 
-@given(instance=softGalleryLanguage::Row_strategy)
-def test_softgallerylanguage::row_name_setter(instance):
+
+@given(instance=softGalleryLanguage_ForeignKey_n_strategy)
+def test_softgallerylanguage_foreignkey_n_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=softGalleryLanguage::ReactInformation_strategy)
+@given(instance=softGalleryLanguage_ForeignKey_strategy)
 @settings(max_examples=50)
-def test_softgallerylanguage::reactinformation_instantiation(instance):
-    assert isinstance(instance, softGalleryLanguage::ReactInformation)
+def test_softgallerylanguage_foreignkey_instantiation(instance):
+    assert isinstance(instance, softGalleryLanguage_ForeignKey)
 
-@given(instance=softGalleryLanguage::ReactInformation_strategy)
-def test_softgallerylanguage::reactinformation_name_type(instance):
-    assert isinstance(instance.name, str)
+@given(instance=softGalleryLanguage_Table_p_strategy)
+@settings(max_examples=50)
+def test_softgallerylanguage_table_p_instantiation(instance):
+    assert isinstance(instance, softGalleryLanguage_Table_p)
 
 
-@given(instance=softGalleryLanguage::ReactInformation_strategy)
-def test_softgallerylanguage::reactinformation_name_setter(instance):
+
+@given(instance=softGalleryLanguage_Table_p_strategy)
+def test_softgallerylanguage_table_p_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=softGalleryLanguage::ReactLibrary_strategy)
+@given(instance=softGalleryLanguage_ViewSchema_strategy)
 @settings(max_examples=50)
-def test_softgallerylanguage::reactlibrary_instantiation(instance):
-    assert isinstance(instance, softGalleryLanguage::ReactLibrary)
-
-@given(instance=softGalleryLanguage::ReactLibrary_strategy)
-def test_softgallerylanguage::reactlibrary_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_softgallerylanguage_viewschema_instantiation(instance):
+    assert isinstance(instance, softGalleryLanguage_ViewSchema)
 
 
-@given(instance=softGalleryLanguage::ReactLibrary_strategy)
-def test_softgallerylanguage::reactlibrary_name_setter(instance):
+
+@given(instance=softGalleryLanguage_ViewSchema_strategy)
+def test_softgallerylanguage_viewschema_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=softGalleryLanguage::ReactsRelationServ_strategy)
+@given(instance=softGalleryLanguage_Index_p_strategy)
 @settings(max_examples=50)
-def test_softgallerylanguage::reactsrelationserv_instantiation(instance):
-    assert isinstance(instance, softGalleryLanguage::ReactsRelationServ)
-
-@given(instance=softGalleryLanguage::ReactsRelationServ_strategy)
-def test_softgallerylanguage::reactsrelationserv_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_softgallerylanguage_index_p_instantiation(instance):
+    assert isinstance(instance, softGalleryLanguage_Index_p)
 
 
-@given(instance=softGalleryLanguage::ReactsRelationServ_strategy)
-def test_softgallerylanguage::reactsrelationserv_name_setter(instance):
+
+@given(instance=softGalleryLanguage_Index_p_strategy)
+def test_softgallerylanguage_index_p_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=softGalleryLanguage::ReactServiceRequestProps_strategy)
+@given(instance=softGalleryLanguage_Schema_strategy)
 @settings(max_examples=50)
-def test_softgallerylanguage::reactservicerequestprops_instantiation(instance):
-    assert isinstance(instance, softGalleryLanguage::ReactServiceRequestProps)
+def test_softgallerylanguage_schema_instantiation(instance):
+    assert isinstance(instance, softGalleryLanguage_Schema)
 
-@given(instance=softGalleryLanguage::ReactServiceRequestProps_strategy)
-def test_softgallerylanguage::reactservicerequestprops_reqPropName_type(instance):
-    assert isinstance(instance.reqPropName, str)
+@given(instance=softGalleryLanguage_Database_strategy)
+@settings(max_examples=50)
+def test_softgallerylanguage_database_instantiation(instance):
+    assert isinstance(instance, softGalleryLanguage_Database)
 
 
-@given(instance=softGalleryLanguage::ReactServiceRequestProps_strategy)
-def test_softgallerylanguage::reactservicerequestprops_reqPropName_setter(instance):
+
+@given(instance=softGalleryLanguage_Database_strategy)
+def test_softgallerylanguage_database_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+@given(instance=softGalleryLanguage_Cluster_strategy)
+@settings(max_examples=50)
+def test_softgallerylanguage_cluster_instantiation(instance):
+    assert isinstance(instance, softGalleryLanguage_Cluster)
+
+@given(instance=softGalleryLanguage_Row_strategy)
+@settings(max_examples=50)
+def test_softgallerylanguage_row_instantiation(instance):
+    assert isinstance(instance, softGalleryLanguage_Row)
+
+
+
+@given(instance=softGalleryLanguage_Row_strategy)
+def test_softgallerylanguage_row_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+@given(instance=softGalleryLanguage_ReactInformation_strategy)
+@settings(max_examples=50)
+def test_softgallerylanguage_reactinformation_instantiation(instance):
+    assert isinstance(instance, softGalleryLanguage_ReactInformation)
+
+
+
+@given(instance=softGalleryLanguage_ReactInformation_strategy)
+def test_softgallerylanguage_reactinformation_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+@given(instance=softGalleryLanguage_ReactLibrary_strategy)
+@settings(max_examples=50)
+def test_softgallerylanguage_reactlibrary_instantiation(instance):
+    assert isinstance(instance, softGalleryLanguage_ReactLibrary)
+
+
+
+@given(instance=softGalleryLanguage_ReactLibrary_strategy)
+def test_softgallerylanguage_reactlibrary_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+@given(instance=softGalleryLanguage_ReactsRelationServ_strategy)
+@settings(max_examples=50)
+def test_softgallerylanguage_reactsrelationserv_instantiation(instance):
+    assert isinstance(instance, softGalleryLanguage_ReactsRelationServ)
+
+
+
+@given(instance=softGalleryLanguage_ReactsRelationServ_strategy)
+def test_softgallerylanguage_reactsrelationserv_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+@given(instance=softGalleryLanguage_ReactServiceRequestProps_strategy)
+@settings(max_examples=50)
+def test_softgallerylanguage_reactservicerequestprops_instantiation(instance):
+    assert isinstance(instance, softGalleryLanguage_ReactServiceRequestProps)
+
+
+
+@given(instance=softGalleryLanguage_ReactServiceRequestProps_strategy)
+def test_softgallerylanguage_reactservicerequestprops_reqPropName_setter(instance):
     original = instance.reqPropName
     instance.reqPropName = original
     assert instance.reqPropName == original
 
-@given(instance=softGalleryLanguage::ReactServiceRequestProps_strategy)
-def test_softgallerylanguage::reactservicerequestprops_reqPropDescription_type(instance):
-    assert isinstance(instance.reqPropDescription, str)
 
 
-@given(instance=softGalleryLanguage::ReactServiceRequestProps_strategy)
-def test_softgallerylanguage::reactservicerequestprops_reqPropDescription_setter(instance):
+@given(instance=softGalleryLanguage_ReactServiceRequestProps_strategy)
+def test_softgallerylanguage_reactservicerequestprops_reqPropDescription_setter(instance):
     original = instance.reqPropDescription
     instance.reqPropDescription = original
     assert instance.reqPropDescription == original
 
-@given(instance=softGalleryLanguage::ReactServiceContRequest_strategy)
+@given(instance=softGalleryLanguage_ReactServiceContRequest_strategy)
 @settings(max_examples=50)
-def test_softgallerylanguage::reactservicecontrequest_instantiation(instance):
-    assert isinstance(instance, softGalleryLanguage::ReactServiceContRequest)
+def test_softgallerylanguage_reactservicecontrequest_instantiation(instance):
+    assert isinstance(instance, softGalleryLanguage_ReactServiceContRequest)
 
-@given(instance=softGalleryLanguage::ReactServiceContent_strategy)
+@given(instance=softGalleryLanguage_ReactServiceContent_strategy)
 @settings(max_examples=50)
-def test_softgallerylanguage::reactservicecontent_instantiation(instance):
-    assert isinstance(instance, softGalleryLanguage::ReactServiceContent)
-
-@given(instance=softGalleryLanguage::ReactServiceContent_strategy)
-def test_softgallerylanguage::reactservicecontent_functName_type(instance):
-    assert isinstance(instance.functName, str)
+def test_softgallerylanguage_reactservicecontent_instantiation(instance):
+    assert isinstance(instance, softGalleryLanguage_ReactServiceContent)
 
 
-@given(instance=softGalleryLanguage::ReactServiceContent_strategy)
-def test_softgallerylanguage::reactservicecontent_functName_setter(instance):
+
+@given(instance=softGalleryLanguage_ReactServiceContent_strategy)
+def test_softgallerylanguage_reactservicecontent_functName_setter(instance):
     original = instance.functName
     instance.functName = original
     assert instance.functName == original
 
-@given(instance=softGalleryLanguage::ReactServicesType_strategy)
+@given(instance=softGalleryLanguage_ReactServicesType_strategy)
 @settings(max_examples=50)
-def test_softgallerylanguage::reactservicestype_instantiation(instance):
-    assert isinstance(instance, softGalleryLanguage::ReactServicesType)
-
-@given(instance=softGalleryLanguage::ReactServicesType_strategy)
-def test_softgallerylanguage::reactservicestype_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_softgallerylanguage_reactservicestype_instantiation(instance):
+    assert isinstance(instance, softGalleryLanguage_ReactServicesType)
 
 
-@given(instance=softGalleryLanguage::ReactServicesType_strategy)
-def test_softgallerylanguage::reactservicestype_name_setter(instance):
+
+@given(instance=softGalleryLanguage_ReactServicesType_strategy)
+def test_softgallerylanguage_reactservicestype_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=softGalleryLanguage::ReactServicesRelation_strategy)
+@given(instance=softGalleryLanguage_ReactServicesRelation_strategy)
 @settings(max_examples=50)
-def test_softgallerylanguage::reactservicesrelation_instantiation(instance):
-    assert isinstance(instance, softGalleryLanguage::ReactServicesRelation)
+def test_softgallerylanguage_reactservicesrelation_instantiation(instance):
+    assert isinstance(instance, softGalleryLanguage_ReactServicesRelation)
 
-@given(instance=softGalleryLanguage::ReactActionsContent_strategy)
+@given(instance=softGalleryLanguage_ReactActionsContent_strategy)
 @settings(max_examples=50)
-def test_softgallerylanguage::reactactionscontent_instantiation(instance):
-    assert isinstance(instance, softGalleryLanguage::ReactActionsContent)
+def test_softgallerylanguage_reactactionscontent_instantiation(instance):
+    assert isinstance(instance, softGalleryLanguage_ReactActionsContent)
 
-@given(instance=softGalleryLanguage::StylePropertiesContent_strategy)
+@given(instance=softGalleryLanguage_StylePropertiesContent_strategy)
 @settings(max_examples=50)
-def test_softgallerylanguage::stylepropertiescontent_instantiation(instance):
-    assert isinstance(instance, softGalleryLanguage::StylePropertiesContent)
-
-@given(instance=softGalleryLanguage::StylePropertiesContent_strategy)
-def test_softgallerylanguage::stylepropertiescontent_propName_type(instance):
-    assert isinstance(instance.propName, str)
+def test_softgallerylanguage_stylepropertiescontent_instantiation(instance):
+    assert isinstance(instance, softGalleryLanguage_StylePropertiesContent)
 
 
-@given(instance=softGalleryLanguage::StylePropertiesContent_strategy)
-def test_softgallerylanguage::stylepropertiescontent_propName_setter(instance):
+
+@given(instance=softGalleryLanguage_StylePropertiesContent_strategy)
+def test_softgallerylanguage_stylepropertiescontent_propName_setter(instance):
     original = instance.propName
     instance.propName = original
     assert instance.propName == original
 
-@given(instance=softGalleryLanguage::ComponentsStylesContent_strategy)
+@given(instance=softGalleryLanguage_ComponentsStylesContent_strategy)
 @settings(max_examples=50)
-def test_softgallerylanguage::componentsstylescontent_instantiation(instance):
-    assert isinstance(instance, softGalleryLanguage::ComponentsStylesContent)
-
-@given(instance=softGalleryLanguage::ComponentsStylesContent_strategy)
-def test_softgallerylanguage::componentsstylescontent_nameStyle_type(instance):
-    assert isinstance(instance.nameStyle, str)
+def test_softgallerylanguage_componentsstylescontent_instantiation(instance):
+    assert isinstance(instance, softGalleryLanguage_ComponentsStylesContent)
 
 
-@given(instance=softGalleryLanguage::ComponentsStylesContent_strategy)
-def test_softgallerylanguage::componentsstylescontent_nameStyle_setter(instance):
+
+@given(instance=softGalleryLanguage_ComponentsStylesContent_strategy)
+def test_softgallerylanguage_componentsstylescontent_nameStyle_setter(instance):
     original = instance.nameStyle
     instance.nameStyle = original
     assert instance.nameStyle == original
 
-@given(instance=softGalleryLanguage::PropsType_strategy)
+@given(instance=softGalleryLanguage_PropsType_strategy)
 @settings(max_examples=50)
-def test_softgallerylanguage::propstype_instantiation(instance):
-    assert isinstance(instance, softGalleryLanguage::PropsType)
-
-@given(instance=softGalleryLanguage::PropsType_strategy)
-def test_softgallerylanguage::propstype_propsdatas_type(instance):
-    assert isinstance(instance.propsdatas, str)
+def test_softgallerylanguage_propstype_instantiation(instance):
+    assert isinstance(instance, softGalleryLanguage_PropsType)
 
 
-@given(instance=softGalleryLanguage::PropsType_strategy)
-def test_softgallerylanguage::propstype_propsdatas_setter(instance):
-    original = instance.propsdatas
-    instance.propsdatas = original
-    assert instance.propsdatas == original
 
-@given(instance=softGalleryLanguage::PropsType_strategy)
-def test_softgallerylanguage::propstype_nameProps_type(instance):
-    assert isinstance(instance.nameProps, str)
-
-
-@given(instance=softGalleryLanguage::PropsType_strategy)
-def test_softgallerylanguage::propstype_nameProps_setter(instance):
+@given(instance=softGalleryLanguage_PropsType_strategy)
+def test_softgallerylanguage_propstype_nameProps_setter(instance):
     original = instance.nameProps
     instance.nameProps = original
     assert instance.nameProps == original
 
-@given(instance=softGalleryLanguage::StateContent_strategy)
+
+
+@given(instance=softGalleryLanguage_PropsType_strategy)
+def test_softgallerylanguage_propstype_propsdatas_setter(instance):
+    original = instance.propsdatas
+    instance.propsdatas = original
+    assert instance.propsdatas == original
+
+@given(instance=softGalleryLanguage_StateContent_strategy)
 @settings(max_examples=50)
-def test_softgallerylanguage::statecontent_instantiation(instance):
-    assert isinstance(instance, softGalleryLanguage::StateContent)
-
-@given(instance=softGalleryLanguage::StateContent_strategy)
-def test_softgallerylanguage::statecontent_stateName_type(instance):
-    assert isinstance(instance.stateName, str)
+def test_softgallerylanguage_statecontent_instantiation(instance):
+    assert isinstance(instance, softGalleryLanguage_StateContent)
 
 
-@given(instance=softGalleryLanguage::StateContent_strategy)
-def test_softgallerylanguage::statecontent_stateName_setter(instance):
+
+@given(instance=softGalleryLanguage_StateContent_strategy)
+def test_softgallerylanguage_statecontent_stateName_setter(instance):
     original = instance.stateName
     instance.stateName = original
     assert instance.stateName == original
 
-@given(instance=softGalleryLanguage::StateContent_strategy)
-def test_softgallerylanguage::statecontent_componentdatatyp_type(instance):
-    assert isinstance(instance.componentdatatyp, str)
 
 
-@given(instance=softGalleryLanguage::StateContent_strategy)
-def test_softgallerylanguage::statecontent_componentdatatyp_setter(instance):
+@given(instance=softGalleryLanguage_StateContent_strategy)
+def test_softgallerylanguage_statecontent_componentdatatyp_setter(instance):
     original = instance.componentdatatyp
     instance.componentdatatyp = original
     assert instance.componentdatatyp == original
 
-@given(instance=softGalleryLanguage::CoreFunctionsDeclaration_strategy)
+@given(instance=softGalleryLanguage_CoreFunctionsDeclaration_strategy)
 @settings(max_examples=50)
-def test_softgallerylanguage::corefunctionsdeclaration_instantiation(instance):
-    assert isinstance(instance, softGalleryLanguage::CoreFunctionsDeclaration)
-
-@given(instance=softGalleryLanguage::CoreFunctionsDeclaration_strategy)
-def test_softgallerylanguage::corefunctionsdeclaration_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_softgallerylanguage_corefunctionsdeclaration_instantiation(instance):
+    assert isinstance(instance, softGalleryLanguage_CoreFunctionsDeclaration)
 
 
-@given(instance=softGalleryLanguage::CoreFunctionsDeclaration_strategy)
-def test_softgallerylanguage::corefunctionsdeclaration_name_setter(instance):
+
+@given(instance=softGalleryLanguage_CoreFunctionsDeclaration_strategy)
+def test_softgallerylanguage_corefunctionsdeclaration_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=softGalleryLanguage::State_strategy)
+@given(instance=softGalleryLanguage_State_strategy)
 @settings(max_examples=50)
-def test_softgallerylanguage::state_instantiation(instance):
-    assert isinstance(instance, softGalleryLanguage::State)
+def test_softgallerylanguage_state_instantiation(instance):
+    assert isinstance(instance, softGalleryLanguage_State)
 
-@given(instance=softGalleryLanguage::ReactCoreFunctions_strategy)
+@given(instance=softGalleryLanguage_ReactCoreFunctions_strategy)
 @settings(max_examples=50)
-def test_softgallerylanguage::reactcorefunctions_instantiation(instance):
-    assert isinstance(instance, softGalleryLanguage::ReactCoreFunctions)
-
-@given(instance=softGalleryLanguage::ReactCoreFunctions_strategy)
-def test_softgallerylanguage::reactcorefunctions_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_softgallerylanguage_reactcorefunctions_instantiation(instance):
+    assert isinstance(instance, softGalleryLanguage_ReactCoreFunctions)
 
 
-@given(instance=softGalleryLanguage::ReactCoreFunctions_strategy)
-def test_softgallerylanguage::reactcorefunctions_name_setter(instance):
+
+@given(instance=softGalleryLanguage_ReactCoreFunctions_strategy)
+def test_softgallerylanguage_reactcorefunctions_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=softGalleryLanguage::ReactConstructor_strategy)
+@given(instance=softGalleryLanguage_ReactConstructor_strategy)
 @settings(max_examples=50)
-def test_softgallerylanguage::reactconstructor_instantiation(instance):
-    assert isinstance(instance, softGalleryLanguage::ReactConstructor)
+def test_softgallerylanguage_reactconstructor_instantiation(instance):
+    assert isinstance(instance, softGalleryLanguage_ReactConstructor)
 
-@given(instance=softGalleryLanguage::ReactImportContent_strategy)
+@given(instance=softGalleryLanguage_ReactImportContent_strategy)
 @settings(max_examples=50)
-def test_softgallerylanguage::reactimportcontent_instantiation(instance):
-    assert isinstance(instance, softGalleryLanguage::ReactImportContent)
-
-@given(instance=softGalleryLanguage::ReactImportContent_strategy)
-def test_softgallerylanguage::reactimportcontent_impName_type(instance):
-    assert isinstance(instance.impName, str)
+def test_softgallerylanguage_reactimportcontent_instantiation(instance):
+    assert isinstance(instance, softGalleryLanguage_ReactImportContent)
 
 
-@given(instance=softGalleryLanguage::ReactImportContent_strategy)
-def test_softgallerylanguage::reactimportcontent_impName_setter(instance):
+
+@given(instance=softGalleryLanguage_ReactImportContent_strategy)
+def test_softgallerylanguage_reactimportcontent_impName_setter(instance):
     original = instance.impName
     instance.impName = original
     assert instance.impName == original
 
-@given(instance=softGalleryLanguage::StyleProperties_strategy)
+@given(instance=softGalleryLanguage_StyleProperties_strategy)
 @settings(max_examples=50)
-def test_softgallerylanguage::styleproperties_instantiation(instance):
-    assert isinstance(instance, softGalleryLanguage::StyleProperties)
+def test_softgallerylanguage_styleproperties_instantiation(instance):
+    assert isinstance(instance, softGalleryLanguage_StyleProperties)
 
-@given(instance=softGalleryLanguage::Props_strategy)
+@given(instance=softGalleryLanguage_Props_strategy)
 @settings(max_examples=50)
-def test_softgallerylanguage::props_instantiation(instance):
-    assert isinstance(instance, softGalleryLanguage::Props)
+def test_softgallerylanguage_props_instantiation(instance):
+    assert isinstance(instance, softGalleryLanguage_Props)
 
-@given(instance=softGalleryLanguage::ReactFunctions_strategy)
+@given(instance=softGalleryLanguage_ReactFunctions_strategy)
 @settings(max_examples=50)
-def test_softgallerylanguage::reactfunctions_instantiation(instance):
-    assert isinstance(instance, softGalleryLanguage::ReactFunctions)
-
-@given(instance=softGalleryLanguage::ReactFunctions_strategy)
-def test_softgallerylanguage::reactfunctions_lifecycleclass_type(instance):
-    assert isinstance(instance.lifecycleclass, str)
+def test_softgallerylanguage_reactfunctions_instantiation(instance):
+    assert isinstance(instance, softGalleryLanguage_ReactFunctions)
 
 
-@given(instance=softGalleryLanguage::ReactFunctions_strategy)
-def test_softgallerylanguage::reactfunctions_lifecycleclass_setter(instance):
-    original = instance.lifecycleclass
-    instance.lifecycleclass = original
-    assert instance.lifecycleclass == original
 
-@given(instance=softGalleryLanguage::ReactFunctions_strategy)
-def test_softgallerylanguage::reactfunctions_renderclass_type(instance):
-    assert isinstance(instance.renderclass, str)
-
-
-@given(instance=softGalleryLanguage::ReactFunctions_strategy)
-def test_softgallerylanguage::reactfunctions_renderclass_setter(instance):
+@given(instance=softGalleryLanguage_ReactFunctions_strategy)
+def test_softgallerylanguage_reactfunctions_renderclass_setter(instance):
     original = instance.renderclass
     instance.renderclass = original
     assert instance.renderclass == original
 
-@given(instance=softGalleryLanguage::ReactImports_strategy)
+
+
+@given(instance=softGalleryLanguage_ReactFunctions_strategy)
+def test_softgallerylanguage_reactfunctions_lifecycleclass_setter(instance):
+    original = instance.lifecycleclass
+    instance.lifecycleclass = original
+    assert instance.lifecycleclass == original
+
+@given(instance=softGalleryLanguage_ReactImports_strategy)
 @settings(max_examples=50)
-def test_softgallerylanguage::reactimports_instantiation(instance):
-    assert isinstance(instance, softGalleryLanguage::ReactImports)
+def test_softgallerylanguage_reactimports_instantiation(instance):
+    assert isinstance(instance, softGalleryLanguage_ReactImports)
 
-@given(instance=softGalleryLanguage::SubcomponentCont_strategy)
+@given(instance=softGalleryLanguage_SubcomponentCont_strategy)
 @settings(max_examples=50)
-def test_softgallerylanguage::subcomponentcont_instantiation(instance):
-    assert isinstance(instance, softGalleryLanguage::SubcomponentCont)
-
-@given(instance=softGalleryLanguage::SubcomponentCont_strategy)
-def test_softgallerylanguage::subcomponentcont_nameSubComp_type(instance):
-    assert isinstance(instance.nameSubComp, str)
+def test_softgallerylanguage_subcomponentcont_instantiation(instance):
+    assert isinstance(instance, softGalleryLanguage_SubcomponentCont)
 
 
-@given(instance=softGalleryLanguage::SubcomponentCont_strategy)
-def test_softgallerylanguage::subcomponentcont_nameSubComp_setter(instance):
+
+@given(instance=softGalleryLanguage_SubcomponentCont_strategy)
+def test_softgallerylanguage_subcomponentcont_nameSubComp_setter(instance):
     original = instance.nameSubComp
     instance.nameSubComp = original
     assert instance.nameSubComp == original
 
-@given(instance=softGalleryLanguage::ViewComponentCont_strategy)
+@given(instance=softGalleryLanguage_ViewComponentCont_strategy)
 @settings(max_examples=50)
-def test_softgallerylanguage::viewcomponentcont_instantiation(instance):
-    assert isinstance(instance, softGalleryLanguage::ViewComponentCont)
-
-@given(instance=softGalleryLanguage::ViewComponentCont_strategy)
-def test_softgallerylanguage::viewcomponentcont_nameView_type(instance):
-    assert isinstance(instance.nameView, str)
+def test_softgallerylanguage_viewcomponentcont_instantiation(instance):
+    assert isinstance(instance, softGalleryLanguage_ViewComponentCont)
 
 
-@given(instance=softGalleryLanguage::ViewComponentCont_strategy)
-def test_softgallerylanguage::viewcomponentcont_nameView_setter(instance):
+
+@given(instance=softGalleryLanguage_ViewComponentCont_strategy)
+def test_softgallerylanguage_viewcomponentcont_nameView_setter(instance):
     original = instance.nameView
     instance.nameView = original
     assert instance.nameView == original
 
-@given(instance=softGalleryLanguage::UIContent_strategy)
+@given(instance=softGalleryLanguage_UIContent_strategy)
 @settings(max_examples=50)
-def test_softgallerylanguage::uicontent_instantiation(instance):
-    assert isinstance(instance, softGalleryLanguage::UIContent)
+def test_softgallerylanguage_uicontent_instantiation(instance):
+    assert isinstance(instance, softGalleryLanguage_UIContent)
 
-@given(instance=softGalleryLanguage::ComponentClass_strategy)
+@given(instance=softGalleryLanguage_ComponentClass_strategy)
 @settings(max_examples=50)
-def test_softgallerylanguage::componentclass_instantiation(instance):
-    assert isinstance(instance, softGalleryLanguage::ComponentClass)
+def test_softgallerylanguage_componentclass_instantiation(instance):
+    assert isinstance(instance, softGalleryLanguage_ComponentClass)
 
-@given(instance=softGalleryLanguage::LogicStructure_strategy)
+@given(instance=softGalleryLanguage_LogicStructure_strategy)
 @settings(max_examples=50)
-def test_softgallerylanguage::logicstructure_instantiation(instance):
-    assert isinstance(instance, softGalleryLanguage::LogicStructure)
-
-@given(instance=softGalleryLanguage::LogicStructure_strategy)
-def test_softgallerylanguage::logicstructure_indexCompName_type(instance):
-    assert isinstance(instance.indexCompName, str)
+def test_softgallerylanguage_logicstructure_instantiation(instance):
+    assert isinstance(instance, softGalleryLanguage_LogicStructure)
 
 
-@given(instance=softGalleryLanguage::LogicStructure_strategy)
-def test_softgallerylanguage::logicstructure_indexCompName_setter(instance):
-    original = instance.indexCompName
-    instance.indexCompName = original
-    assert instance.indexCompName == original
 
-@given(instance=softGalleryLanguage::LogicStructure_strategy)
-def test_softgallerylanguage::logicstructure_appComName_type(instance):
-    assert isinstance(instance.appComName, str)
-
-
-@given(instance=softGalleryLanguage::LogicStructure_strategy)
-def test_softgallerylanguage::logicstructure_appComName_setter(instance):
+@given(instance=softGalleryLanguage_LogicStructure_strategy)
+def test_softgallerylanguage_logicstructure_appComName_setter(instance):
     original = instance.appComName
     instance.appComName = original
     assert instance.appComName == original
 
-@given(instance=softGalleryLanguage::LogicContent_strategy)
+
+
+@given(instance=softGalleryLanguage_LogicStructure_strategy)
+def test_softgallerylanguage_logicstructure_indexCompName_setter(instance):
+    original = instance.indexCompName
+    instance.indexCompName = original
+    assert instance.indexCompName == original
+
+@given(instance=softGalleryLanguage_LogicContent_strategy)
 @settings(max_examples=50)
-def test_softgallerylanguage::logiccontent_instantiation(instance):
-    assert isinstance(instance, softGalleryLanguage::LogicContent)
-
-@given(instance=softGalleryLanguage::LogicContent_strategy)
-def test_softgallerylanguage::logiccontent_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_softgallerylanguage_logiccontent_instantiation(instance):
+    assert isinstance(instance, softGalleryLanguage_LogicContent)
 
 
-@given(instance=softGalleryLanguage::LogicContent_strategy)
-def test_softgallerylanguage::logiccontent_name_setter(instance):
+
+@given(instance=softGalleryLanguage_LogicContent_strategy)
+def test_softgallerylanguage_logiccontent_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=softGalleryLanguage::ComponentsStyles_strategy)
+@given(instance=softGalleryLanguage_ComponentsStyles_strategy)
 @settings(max_examples=50)
-def test_softgallerylanguage::componentsstyles_instantiation(instance):
-    assert isinstance(instance, softGalleryLanguage::ComponentsStyles)
+def test_softgallerylanguage_componentsstyles_instantiation(instance):
+    assert isinstance(instance, softGalleryLanguage_ComponentsStyles)
 
-@given(instance=softGalleryLanguage::ComponentsLogic_strategy)
+@given(instance=softGalleryLanguage_ComponentsLogic_strategy)
 @settings(max_examples=50)
-def test_softgallerylanguage::componentslogic_instantiation(instance):
-    assert isinstance(instance, softGalleryLanguage::ComponentsLogic)
-
-@given(instance=softGalleryLanguage::ComponentsLogic_strategy)
-def test_softgallerylanguage::componentslogic_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_softgallerylanguage_componentslogic_instantiation(instance):
+    assert isinstance(instance, softGalleryLanguage_ComponentsLogic)
 
 
-@given(instance=softGalleryLanguage::ComponentsLogic_strategy)
-def test_softgallerylanguage::componentslogic_name_setter(instance):
+
+@given(instance=softGalleryLanguage_ComponentsLogic_strategy)
+def test_softgallerylanguage_componentslogic_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=softGalleryLanguage::DOMConfigurations_strategy)
+@given(instance=softGalleryLanguage_DOMConfigurations_strategy)
 @settings(max_examples=50)
-def test_softgallerylanguage::domconfigurations_instantiation(instance):
-    assert isinstance(instance, softGalleryLanguage::DOMConfigurations)
-
-@given(instance=softGalleryLanguage::DOMConfigurations_strategy)
-def test_softgallerylanguage::domconfigurations_elements_type(instance):
-    assert isinstance(instance.elements, str)
+def test_softgallerylanguage_domconfigurations_instantiation(instance):
+    assert isinstance(instance, softGalleryLanguage_DOMConfigurations)
 
 
-@given(instance=softGalleryLanguage::DOMConfigurations_strategy)
-def test_softgallerylanguage::domconfigurations_elements_setter(instance):
+
+@given(instance=softGalleryLanguage_DOMConfigurations_strategy)
+def test_softgallerylanguage_domconfigurations_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+
+
+@given(instance=softGalleryLanguage_DOMConfigurations_strategy)
+def test_softgallerylanguage_domconfigurations_elements_setter(instance):
     original = instance.elements
     instance.elements = original
     assert instance.elements == original
 
-@given(instance=softGalleryLanguage::DOMConfigurations_strategy)
-def test_softgallerylanguage::domconfigurations_name_type(instance):
-    assert isinstance(instance.name, str)
+@given(instance=softGalleryLanguage_PackageVersion_strategy)
+@settings(max_examples=50)
+def test_softgallerylanguage_packageversion_instantiation(instance):
+    assert isinstance(instance, softGalleryLanguage_PackageVersion)
 
 
-@given(instance=softGalleryLanguage::DOMConfigurations_strategy)
-def test_softgallerylanguage::domconfigurations_name_setter(instance):
+
+@given(instance=softGalleryLanguage_PackageVersion_strategy)
+def test_softgallerylanguage_packageversion_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=softGalleryLanguage::PackageVersion_strategy)
+@given(instance=softGalleryLanguage_PackageName_strategy)
 @settings(max_examples=50)
-def test_softgallerylanguage::packageversion_instantiation(instance):
-    assert isinstance(instance, softGalleryLanguage::PackageVersion)
-
-@given(instance=softGalleryLanguage::PackageVersion_strategy)
-def test_softgallerylanguage::packageversion_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_softgallerylanguage_packagename_instantiation(instance):
+    assert isinstance(instance, softGalleryLanguage_PackageName)
 
 
-@given(instance=softGalleryLanguage::PackageVersion_strategy)
-def test_softgallerylanguage::packageversion_name_setter(instance):
+
+@given(instance=softGalleryLanguage_PackageName_strategy)
+def test_softgallerylanguage_packagename_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=softGalleryLanguage::PackageName_strategy)
+@given(instance=softGalleryLanguage_SingleDependencies_strategy)
 @settings(max_examples=50)
-def test_softgallerylanguage::packagename_instantiation(instance):
-    assert isinstance(instance, softGalleryLanguage::PackageName)
+def test_softgallerylanguage_singledependencies_instantiation(instance):
+    assert isinstance(instance, softGalleryLanguage_SingleDependencies)
 
-@given(instance=softGalleryLanguage::PackageName_strategy)
-def test_softgallerylanguage::packagename_name_type(instance):
-    assert isinstance(instance.name, str)
+@given(instance=softGalleryLanguage_ReactDependenciesSubRules_strategy)
+@settings(max_examples=50)
+def test_softgallerylanguage_reactdependenciessubrules_instantiation(instance):
+    assert isinstance(instance, softGalleryLanguage_ReactDependenciesSubRules)
+
+@given(instance=softGalleryLanguage_ReactDependenciesRules_strategy)
+@settings(max_examples=50)
+def test_softgallerylanguage_reactdependenciesrules_instantiation(instance):
+    assert isinstance(instance, softGalleryLanguage_ReactDependenciesRules)
 
 
-@given(instance=softGalleryLanguage::PackageName_strategy)
-def test_softgallerylanguage::packagename_name_setter(instance):
+
+@given(instance=softGalleryLanguage_ReactDependenciesRules_strategy)
+def test_softgallerylanguage_reactdependenciesrules_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=softGalleryLanguage::SingleDependencies_strategy)
+@given(instance=softGalleryLanguage_ReactConfigurations_strategy)
 @settings(max_examples=50)
-def test_softgallerylanguage::singledependencies_instantiation(instance):
-    assert isinstance(instance, softGalleryLanguage::SingleDependencies)
-
-@given(instance=softGalleryLanguage::ReactDependenciesSubRules_strategy)
-@settings(max_examples=50)
-def test_softgallerylanguage::reactdependenciessubrules_instantiation(instance):
-    assert isinstance(instance, softGalleryLanguage::ReactDependenciesSubRules)
-
-@given(instance=softGalleryLanguage::ReactDependenciesRules_strategy)
-@settings(max_examples=50)
-def test_softgallerylanguage::reactdependenciesrules_instantiation(instance):
-    assert isinstance(instance, softGalleryLanguage::ReactDependenciesRules)
-
-@given(instance=softGalleryLanguage::ReactDependenciesRules_strategy)
-def test_softgallerylanguage::reactdependenciesrules_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_softgallerylanguage_reactconfigurations_instantiation(instance):
+    assert isinstance(instance, softGalleryLanguage_ReactConfigurations)
 
 
-@given(instance=softGalleryLanguage::ReactDependenciesRules_strategy)
-def test_softgallerylanguage::reactdependenciesrules_name_setter(instance):
+
+@given(instance=softGalleryLanguage_ReactConfigurations_strategy)
+def test_softgallerylanguage_reactconfigurations_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=softGalleryLanguage::ReactConfigurations_strategy)
+@given(instance=softGalleryLanguage_ReactDependencies_strategy)
 @settings(max_examples=50)
-def test_softgallerylanguage::reactconfigurations_instantiation(instance):
-    assert isinstance(instance, softGalleryLanguage::ReactConfigurations)
+def test_softgallerylanguage_reactdependencies_instantiation(instance):
+    assert isinstance(instance, softGalleryLanguage_ReactDependencies)
 
-@given(instance=softGalleryLanguage::ReactConfigurations_strategy)
-def test_softgallerylanguage::reactconfigurations_name_type(instance):
-    assert isinstance(instance.name, str)
+@given(instance=softGalleryLanguage_ReactInfo_strategy)
+@settings(max_examples=50)
+def test_softgallerylanguage_reactinfo_instantiation(instance):
+    assert isinstance(instance, softGalleryLanguage_ReactInfo)
+
+@given(instance=softGalleryLanguage_ReactLibraries_strategy)
+@settings(max_examples=50)
+def test_softgallerylanguage_reactlibraries_instantiation(instance):
+    assert isinstance(instance, softGalleryLanguage_ReactLibraries)
+
+@given(instance=softGalleryLanguage_ReactActions_strategy)
+@settings(max_examples=50)
+def test_softgallerylanguage_reactactions_instantiation(instance):
+    assert isinstance(instance, softGalleryLanguage_ReactActions)
+
+@given(instance=softGalleryLanguage_ComponentsUI_strategy)
+@settings(max_examples=50)
+def test_softgallerylanguage_componentsui_instantiation(instance):
+    assert isinstance(instance, softGalleryLanguage_ComponentsUI)
 
 
-@given(instance=softGalleryLanguage::ReactConfigurations_strategy)
-def test_softgallerylanguage::reactconfigurations_name_setter(instance):
+
+@given(instance=softGalleryLanguage_ComponentsUI_strategy)
+def test_softgallerylanguage_componentsui_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=softGalleryLanguage::ReactDependencies_strategy)
+@given(instance=softGalleryLanguage_ReactConfiguration_strategy)
 @settings(max_examples=50)
-def test_softgallerylanguage::reactdependencies_instantiation(instance):
-    assert isinstance(instance, softGalleryLanguage::ReactDependencies)
+def test_softgallerylanguage_reactconfiguration_instantiation(instance):
+    assert isinstance(instance, softGalleryLanguage_ReactConfiguration)
 
-@given(instance=softGalleryLanguage::ReactInfo_strategy)
+@given(instance=softGalleryLanguage_ReactSubModules_strategy)
 @settings(max_examples=50)
-def test_softgallerylanguage::reactinfo_instantiation(instance):
-    assert isinstance(instance, softGalleryLanguage::ReactInfo)
+def test_softgallerylanguage_reactsubmodules_instantiation(instance):
+    assert isinstance(instance, softGalleryLanguage_ReactSubModules)
 
-@given(instance=softGalleryLanguage::ReactLibraries_strategy)
+@given(instance=softGalleryLanguage_ReactModules_strategy)
 @settings(max_examples=50)
-def test_softgallerylanguage::reactlibraries_instantiation(instance):
-    assert isinstance(instance, softGalleryLanguage::ReactLibraries)
+def test_softgallerylanguage_reactmodules_instantiation(instance):
+    assert isinstance(instance, softGalleryLanguage_ReactModules)
 
-@given(instance=softGalleryLanguage::ReactActions_strategy)
+@given(instance=softGalleryLanguage_StorageActionMemberName_strategy)
 @settings(max_examples=50)
-def test_softgallerylanguage::reactactions_instantiation(instance):
-    assert isinstance(instance, softGalleryLanguage::ReactActions)
-
-@given(instance=softGalleryLanguage::ComponentsUI_strategy)
-@settings(max_examples=50)
-def test_softgallerylanguage::componentsui_instantiation(instance):
-    assert isinstance(instance, softGalleryLanguage::ComponentsUI)
-
-@given(instance=softGalleryLanguage::ComponentsUI_strategy)
-def test_softgallerylanguage::componentsui_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_softgallerylanguage_storageactionmembername_instantiation(instance):
+    assert isinstance(instance, softGalleryLanguage_StorageActionMemberName)
 
 
-@given(instance=softGalleryLanguage::ComponentsUI_strategy)
-def test_softgallerylanguage::componentsui_name_setter(instance):
+
+@given(instance=softGalleryLanguage_StorageActionMemberName_strategy)
+def test_softgallerylanguage_storageactionmembername_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=softGalleryLanguage::ReactConfiguration_strategy)
+@given(instance=softGalleryLanguage_StorageActionMemberType_strategy)
 @settings(max_examples=50)
-def test_softgallerylanguage::reactconfiguration_instantiation(instance):
-    assert isinstance(instance, softGalleryLanguage::ReactConfiguration)
-
-@given(instance=softGalleryLanguage::ReactSubModules_strategy)
-@settings(max_examples=50)
-def test_softgallerylanguage::reactsubmodules_instantiation(instance):
-    assert isinstance(instance, softGalleryLanguage::ReactSubModules)
-
-@given(instance=softGalleryLanguage::ReactModules_strategy)
-@settings(max_examples=50)
-def test_softgallerylanguage::reactmodules_instantiation(instance):
-    assert isinstance(instance, softGalleryLanguage::ReactModules)
-
-@given(instance=softGalleryLanguage::StorageActionMemberName_strategy)
-@settings(max_examples=50)
-def test_softgallerylanguage::storageactionmembername_instantiation(instance):
-    assert isinstance(instance, softGalleryLanguage::StorageActionMemberName)
-
-@given(instance=softGalleryLanguage::StorageActionMemberName_strategy)
-def test_softgallerylanguage::storageactionmembername_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_softgallerylanguage_storageactionmembertype_instantiation(instance):
+    assert isinstance(instance, softGalleryLanguage_StorageActionMemberType)
 
 
-@given(instance=softGalleryLanguage::StorageActionMemberName_strategy)
-def test_softgallerylanguage::storageactionmembername_name_setter(instance):
+
+@given(instance=softGalleryLanguage_StorageActionMemberType_strategy)
+def test_softgallerylanguage_storageactionmembertype_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=softGalleryLanguage::StorageActionMemberType_strategy)
+@given(instance=softGalleryLanguage_StorageActionMember_strategy)
 @settings(max_examples=50)
-def test_softgallerylanguage::storageactionmembertype_instantiation(instance):
-    assert isinstance(instance, softGalleryLanguage::StorageActionMemberType)
+def test_softgallerylanguage_storageactionmember_instantiation(instance):
+    assert isinstance(instance, softGalleryLanguage_StorageActionMember)
 
-@given(instance=softGalleryLanguage::StorageActionMemberType_strategy)
-def test_softgallerylanguage::storageactionmembertype_name_type(instance):
-    assert isinstance(instance.name, str)
+@given(instance=softGalleryLanguage_StorageActionReturn_strategy)
+@settings(max_examples=50)
+def test_softgallerylanguage_storageactionreturn_instantiation(instance):
+    assert isinstance(instance, softGalleryLanguage_StorageActionReturn)
 
 
-@given(instance=softGalleryLanguage::StorageActionMemberType_strategy)
-def test_softgallerylanguage::storageactionmembertype_name_setter(instance):
+
+@given(instance=softGalleryLanguage_StorageActionReturn_strategy)
+def test_softgallerylanguage_storageactionreturn_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=softGalleryLanguage::StorageActionMember_strategy)
+@given(instance=softGalleryLanguage_StorageActionAnnotation_strategy)
 @settings(max_examples=50)
-def test_softgallerylanguage::storageactionmember_instantiation(instance):
-    assert isinstance(instance, softGalleryLanguage::StorageActionMember)
-
-@given(instance=softGalleryLanguage::StorageActionReturn_strategy)
-@settings(max_examples=50)
-def test_softgallerylanguage::storageactionreturn_instantiation(instance):
-    assert isinstance(instance, softGalleryLanguage::StorageActionReturn)
-
-@given(instance=softGalleryLanguage::StorageActionReturn_strategy)
-def test_softgallerylanguage::storageactionreturn_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_softgallerylanguage_storageactionannotation_instantiation(instance):
+    assert isinstance(instance, softGalleryLanguage_StorageActionAnnotation)
 
 
-@given(instance=softGalleryLanguage::StorageActionReturn_strategy)
-def test_softgallerylanguage::storageactionreturn_name_setter(instance):
+
+@given(instance=softGalleryLanguage_StorageActionAnnotation_strategy)
+def test_softgallerylanguage_storageactionannotation_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=softGalleryLanguage::StorageActionAnnotation_strategy)
+@given(instance=softGalleryLanguage_StorageAction_strategy)
 @settings(max_examples=50)
-def test_softgallerylanguage::storageactionannotation_instantiation(instance):
-    assert isinstance(instance, softGalleryLanguage::StorageActionAnnotation)
-
-@given(instance=softGalleryLanguage::StorageActionAnnotation_strategy)
-def test_softgallerylanguage::storageactionannotation_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_softgallerylanguage_storageaction_instantiation(instance):
+    assert isinstance(instance, softGalleryLanguage_StorageAction)
 
 
-@given(instance=softGalleryLanguage::StorageActionAnnotation_strategy)
-def test_softgallerylanguage::storageactionannotation_name_setter(instance):
+
+@given(instance=softGalleryLanguage_StorageAction_strategy)
+def test_softgallerylanguage_storageaction_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=softGalleryLanguage::StorageAction_strategy)
+@given(instance=softGalleryLanguage_StorageMemberAnnotation_strategy)
 @settings(max_examples=50)
-def test_softgallerylanguage::storageaction_instantiation(instance):
-    assert isinstance(instance, softGalleryLanguage::StorageAction)
-
-@given(instance=softGalleryLanguage::StorageAction_strategy)
-def test_softgallerylanguage::storageaction_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_softgallerylanguage_storagememberannotation_instantiation(instance):
+    assert isinstance(instance, softGalleryLanguage_StorageMemberAnnotation)
 
 
-@given(instance=softGalleryLanguage::StorageAction_strategy)
-def test_softgallerylanguage::storageaction_name_setter(instance):
+
+@given(instance=softGalleryLanguage_StorageMemberAnnotation_strategy)
+def test_softgallerylanguage_storagememberannotation_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=softGalleryLanguage::StorageMemberAnnotation_strategy)
+@given(instance=softGalleryLanguage_StorageMemberType_strategy)
 @settings(max_examples=50)
-def test_softgallerylanguage::storagememberannotation_instantiation(instance):
-    assert isinstance(instance, softGalleryLanguage::StorageMemberAnnotation)
-
-@given(instance=softGalleryLanguage::StorageMemberAnnotation_strategy)
-def test_softgallerylanguage::storagememberannotation_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_softgallerylanguage_storagemembertype_instantiation(instance):
+    assert isinstance(instance, softGalleryLanguage_StorageMemberType)
 
 
-@given(instance=softGalleryLanguage::StorageMemberAnnotation_strategy)
-def test_softgallerylanguage::storagememberannotation_name_setter(instance):
+
+@given(instance=softGalleryLanguage_StorageMemberType_strategy)
+def test_softgallerylanguage_storagemembertype_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=softGalleryLanguage::StorageMemberType_strategy)
+@given(instance=softGalleryLanguage_StorageMember_strategy)
 @settings(max_examples=50)
-def test_softgallerylanguage::storagemembertype_instantiation(instance):
-    assert isinstance(instance, softGalleryLanguage::StorageMemberType)
-
-@given(instance=softGalleryLanguage::StorageMemberType_strategy)
-def test_softgallerylanguage::storagemembertype_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_softgallerylanguage_storagemember_instantiation(instance):
+    assert isinstance(instance, softGalleryLanguage_StorageMember)
 
 
-@given(instance=softGalleryLanguage::StorageMemberType_strategy)
-def test_softgallerylanguage::storagemembertype_name_setter(instance):
+
+@given(instance=softGalleryLanguage_StorageMember_strategy)
+def test_softgallerylanguage_storagemember_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=softGalleryLanguage::StorageMember_strategy)
+@given(instance=softGalleryLanguage_StorageClient_strategy)
 @settings(max_examples=50)
-def test_softgallerylanguage::storagemember_instantiation(instance):
-    assert isinstance(instance, softGalleryLanguage::StorageMember)
-
-@given(instance=softGalleryLanguage::StorageMember_strategy)
-def test_softgallerylanguage::storagemember_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_softgallerylanguage_storageclient_instantiation(instance):
+    assert isinstance(instance, softGalleryLanguage_StorageClient)
 
 
-@given(instance=softGalleryLanguage::StorageMember_strategy)
-def test_softgallerylanguage::storagemember_name_setter(instance):
+
+@given(instance=softGalleryLanguage_StorageClient_strategy)
+def test_softgallerylanguage_storageclient_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=softGalleryLanguage::StorageClient_strategy)
+@given(instance=softGalleryLanguage_SpringEntityAnnotationTypes_strategy)
 @settings(max_examples=50)
-def test_softgallerylanguage::storageclient_instantiation(instance):
-    assert isinstance(instance, softGalleryLanguage::StorageClient)
-
-@given(instance=softGalleryLanguage::StorageClient_strategy)
-def test_softgallerylanguage::storageclient_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_softgallerylanguage_springentityannotationtypes_instantiation(instance):
+    assert isinstance(instance, softGalleryLanguage_SpringEntityAnnotationTypes)
 
 
-@given(instance=softGalleryLanguage::StorageClient_strategy)
-def test_softgallerylanguage::storageclient_name_setter(instance):
+
+@given(instance=softGalleryLanguage_SpringEntityAnnotationTypes_strategy)
+def test_softgallerylanguage_springentityannotationtypes_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=softGalleryLanguage::SpringEntityAnnotationTypes_strategy)
+@given(instance=softGalleryLanguage_ReactComponents_strategy)
 @settings(max_examples=50)
-def test_softgallerylanguage::springentityannotationtypes_instantiation(instance):
-    assert isinstance(instance, softGalleryLanguage::SpringEntityAnnotationTypes)
+def test_softgallerylanguage_reactcomponents_instantiation(instance):
+    assert isinstance(instance, softGalleryLanguage_ReactComponents)
 
-@given(instance=softGalleryLanguage::SpringEntityAnnotationTypes_strategy)
-def test_softgallerylanguage::springentityannotationtypes_name_type(instance):
-    assert isinstance(instance.name, str)
+@given(instance=softGalleryLanguage_ExceptionProcess_strategy)
+@settings(max_examples=50)
+def test_softgallerylanguage_exceptionprocess_instantiation(instance):
+    assert isinstance(instance, softGalleryLanguage_ExceptionProcess)
 
 
-@given(instance=softGalleryLanguage::SpringEntityAnnotationTypes_strategy)
-def test_softgallerylanguage::springentityannotationtypes_name_setter(instance):
+
+@given(instance=softGalleryLanguage_ExceptionProcess_strategy)
+def test_softgallerylanguage_exceptionprocess_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=softGalleryLanguage::ReactComponents_strategy)
+@given(instance=softGalleryLanguage_ExceptionHandler_strategy)
 @settings(max_examples=50)
-def test_softgallerylanguage::reactcomponents_instantiation(instance):
-    assert isinstance(instance, softGalleryLanguage::ReactComponents)
-
-@given(instance=softGalleryLanguage::ExceptionProcess_strategy)
-@settings(max_examples=50)
-def test_softgallerylanguage::exceptionprocess_instantiation(instance):
-    assert isinstance(instance, softGalleryLanguage::ExceptionProcess)
-
-@given(instance=softGalleryLanguage::ExceptionProcess_strategy)
-def test_softgallerylanguage::exceptionprocess_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_softgallerylanguage_exceptionhandler_instantiation(instance):
+    assert isinstance(instance, softGalleryLanguage_ExceptionHandler)
 
 
-@given(instance=softGalleryLanguage::ExceptionProcess_strategy)
-def test_softgallerylanguage::exceptionprocess_name_setter(instance):
+
+@given(instance=softGalleryLanguage_ExceptionHandler_strategy)
+def test_softgallerylanguage_exceptionhandler_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=softGalleryLanguage::ExceptionHandler_strategy)
+@given(instance=softGalleryLanguage_ResponseParameterName_strategy)
 @settings(max_examples=50)
-def test_softgallerylanguage::exceptionhandler_instantiation(instance):
-    assert isinstance(instance, softGalleryLanguage::ExceptionHandler)
-
-@given(instance=softGalleryLanguage::ExceptionHandler_strategy)
-def test_softgallerylanguage::exceptionhandler_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_softgallerylanguage_responseparametername_instantiation(instance):
+    assert isinstance(instance, softGalleryLanguage_ResponseParameterName)
 
 
-@given(instance=softGalleryLanguage::ExceptionHandler_strategy)
-def test_softgallerylanguage::exceptionhandler_name_setter(instance):
+
+@given(instance=softGalleryLanguage_ResponseParameterName_strategy)
+def test_softgallerylanguage_responseparametername_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=softGalleryLanguage::ResponseParameterName_strategy)
+@given(instance=softGalleryLanguage_ResponseParameterType_strategy)
 @settings(max_examples=50)
-def test_softgallerylanguage::responseparametername_instantiation(instance):
-    assert isinstance(instance, softGalleryLanguage::ResponseParameterName)
-
-@given(instance=softGalleryLanguage::ResponseParameterName_strategy)
-def test_softgallerylanguage::responseparametername_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_softgallerylanguage_responseparametertype_instantiation(instance):
+    assert isinstance(instance, softGalleryLanguage_ResponseParameterType)
 
 
-@given(instance=softGalleryLanguage::ResponseParameterName_strategy)
-def test_softgallerylanguage::responseparametername_name_setter(instance):
+
+@given(instance=softGalleryLanguage_ResponseParameterType_strategy)
+def test_softgallerylanguage_responseparametertype_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=softGalleryLanguage::ResponseParameterType_strategy)
+@given(instance=softGalleryLanguage_ResponseParameterAnnotation_strategy)
 @settings(max_examples=50)
-def test_softgallerylanguage::responseparametertype_instantiation(instance):
-    assert isinstance(instance, softGalleryLanguage::ResponseParameterType)
-
-@given(instance=softGalleryLanguage::ResponseParameterType_strategy)
-def test_softgallerylanguage::responseparametertype_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_softgallerylanguage_responseparameterannotation_instantiation(instance):
+    assert isinstance(instance, softGalleryLanguage_ResponseParameterAnnotation)
 
 
-@given(instance=softGalleryLanguage::ResponseParameterType_strategy)
-def test_softgallerylanguage::responseparametertype_name_setter(instance):
+
+@given(instance=softGalleryLanguage_ResponseParameterAnnotation_strategy)
+def test_softgallerylanguage_responseparameterannotation_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=softGalleryLanguage::ResponseParameterAnnotation_strategy)
+@given(instance=softGalleryLanguage_DeleteMapping_strategy)
 @settings(max_examples=50)
-def test_softgallerylanguage::responseparameterannotation_instantiation(instance):
-    assert isinstance(instance, softGalleryLanguage::ResponseParameterAnnotation)
-
-@given(instance=softGalleryLanguage::ResponseParameterAnnotation_strategy)
-def test_softgallerylanguage::responseparameterannotation_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_softgallerylanguage_deletemapping_instantiation(instance):
+    assert isinstance(instance, softGalleryLanguage_DeleteMapping)
 
 
-@given(instance=softGalleryLanguage::ResponseParameterAnnotation_strategy)
-def test_softgallerylanguage::responseparameterannotation_name_setter(instance):
+
+@given(instance=softGalleryLanguage_DeleteMapping_strategy)
+def test_softgallerylanguage_deletemapping_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=softGalleryLanguage::AppAccess_strategy)
+@given(instance=softGalleryLanguage_PutMapping_strategy)
 @settings(max_examples=50)
-def test_softgallerylanguage::appaccess_instantiation(instance):
-    assert isinstance(instance, softGalleryLanguage::AppAccess)
-
-@given(instance=softGalleryLanguage::ProfileManagement_strategy)
-@settings(max_examples=50)
-def test_softgallerylanguage::profilemanagement_instantiation(instance):
-    assert isinstance(instance, softGalleryLanguage::ProfileManagement)
-
-@given(instance=softGalleryLanguage::Functionalities_strategy)
-@settings(max_examples=50)
-def test_softgallerylanguage::functionalities_instantiation(instance):
-    assert isinstance(instance, softGalleryLanguage::Functionalities)
-
-@given(instance=softGalleryLanguage::AtributeUserDomain_strategy)
-@settings(max_examples=50)
-def test_softgallerylanguage::atributeuserdomain_instantiation(instance):
-    assert isinstance(instance, softGalleryLanguage::AtributeUserDomain)
-
-@given(instance=softGalleryLanguage::AtributeUserDomain_strategy)
-def test_softgallerylanguage::atributeuserdomain_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_softgallerylanguage_putmapping_instantiation(instance):
+    assert isinstance(instance, softGalleryLanguage_PutMapping)
 
 
-@given(instance=softGalleryLanguage::AtributeUserDomain_strategy)
-def test_softgallerylanguage::atributeuserdomain_name_setter(instance):
+
+@given(instance=softGalleryLanguage_PutMapping_strategy)
+def test_softgallerylanguage_putmapping_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=softGalleryLanguage::AtributeAlbum_strategy)
+@given(instance=softGalleryLanguage_GetMapping_strategy)
 @settings(max_examples=50)
-def test_softgallerylanguage::atributealbum_instantiation(instance):
-    assert isinstance(instance, softGalleryLanguage::AtributeAlbum)
-
-@given(instance=softGalleryLanguage::AtributeAlbum_strategy)
-def test_softgallerylanguage::atributealbum_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_softgallerylanguage_getmapping_instantiation(instance):
+    assert isinstance(instance, softGalleryLanguage_GetMapping)
 
 
-@given(instance=softGalleryLanguage::AtributeAlbum_strategy)
-def test_softgallerylanguage::atributealbum_name_setter(instance):
+
+@given(instance=softGalleryLanguage_GetMapping_strategy)
+def test_softgallerylanguage_getmapping_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=softGalleryLanguage::AtributePhoto_strategy)
+@given(instance=softGalleryLanguage_PostMapping_strategy)
 @settings(max_examples=50)
-def test_softgallerylanguage::atributephoto_instantiation(instance):
-    assert isinstance(instance, softGalleryLanguage::AtributePhoto)
-
-@given(instance=softGalleryLanguage::AtributePhoto_strategy)
-def test_softgallerylanguage::atributephoto_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_softgallerylanguage_postmapping_instantiation(instance):
+    assert isinstance(instance, softGalleryLanguage_PostMapping)
 
 
-@given(instance=softGalleryLanguage::AtributePhoto_strategy)
-def test_softgallerylanguage::atributephoto_name_setter(instance):
+
+@given(instance=softGalleryLanguage_PostMapping_strategy)
+def test_softgallerylanguage_postmapping_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=softGalleryLanguage::Entities_strategy)
+@given(instance=softGalleryLanguage_RequestMappingProduces_strategy)
 @settings(max_examples=50)
-def test_softgallerylanguage::entities_instantiation(instance):
-    assert isinstance(instance, softGalleryLanguage::Entities)
-
-@given(instance=softGalleryLanguage::Entities_strategy)
-def test_softgallerylanguage::entities_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_softgallerylanguage_requestmappingproduces_instantiation(instance):
+    assert isinstance(instance, softGalleryLanguage_RequestMappingProduces)
 
 
-@given(instance=softGalleryLanguage::Entities_strategy)
-def test_softgallerylanguage::entities_name_setter(instance):
+
+@given(instance=softGalleryLanguage_RequestMappingProduces_strategy)
+def test_softgallerylanguage_requestmappingproduces_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=softGalleryLanguage::ExceptionsDomain_strategy)
+@given(instance=softGalleryLanguage_RequestMappingMethod_strategy)
 @settings(max_examples=50)
-def test_softgallerylanguage::exceptionsdomain_instantiation(instance):
-    assert isinstance(instance, softGalleryLanguage::ExceptionsDomain)
-
-@given(instance=softGalleryLanguage::Functionality_strategy)
-@settings(max_examples=50)
-def test_softgallerylanguage::functionality_instantiation(instance):
-    assert isinstance(instance, softGalleryLanguage::Functionality)
-
-@given(instance=softGalleryLanguage::Entity_strategy)
-@settings(max_examples=50)
-def test_softgallerylanguage::entity_instantiation(instance):
-    assert isinstance(instance, softGalleryLanguage::Entity)
-
-@given(instance=softGalleryLanguage::Domain_strategy)
-@settings(max_examples=50)
-def test_softgallerylanguage::domain_instantiation(instance):
-    assert isinstance(instance, softGalleryLanguage::Domain)
-
-@given(instance=softGalleryLanguage::Domain_strategy)
-def test_softgallerylanguage::domain_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_softgallerylanguage_requestmappingmethod_instantiation(instance):
+    assert isinstance(instance, softGalleryLanguage_RequestMappingMethod)
 
 
-@given(instance=softGalleryLanguage::Domain_strategy)
-def test_softgallerylanguage::domain_name_setter(instance):
+
+@given(instance=softGalleryLanguage_RequestMappingMethod_strategy)
+def test_softgallerylanguage_requestmappingmethod_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=softGalleryLanguage::EObject_strategy)
+@given(instance=softGalleryLanguage_RequestMappingValue_strategy)
 @settings(max_examples=50)
-def test_softgallerylanguage::eobject_instantiation(instance):
-    assert isinstance(instance, softGalleryLanguage::EObject)
+def test_softgallerylanguage_requestmappingvalue_instantiation(instance):
+    assert isinstance(instance, softGalleryLanguage_RequestMappingValue)
 
-@given(instance=softGalleryLanguage::Model_strategy)
-@settings(max_examples=50)
-def test_softgallerylanguage::model_instantiation(instance):
-    assert isinstance(instance, softGalleryLanguage::Model)
+
+
+@given(instance=softGalleryLanguage_RequestMappingValue_strategy)
+def test_softgallerylanguage_requestmappingvalue_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original

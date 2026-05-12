@@ -3,19 +3,19 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    programme::SemesterCourse,
-    programme::Semester,
-    programme::StudyYear,
-    programme::Specialization,
-    programme::Course,
-    programme::Programme,
-    programme::Department,
+from python_code import (
+    programme_SemesterCourse,
+    programme_Semester,
+    programme_StudyYear,
+    programme_Specialization,
+    programme_Course,
+    programme_Programme,
+    programme_Department,
     SemesterType,
-    CourseType,
     CourseLevel,
+    CourseType,
     ProgrammeType,
 )
 
@@ -25,23 +25,23 @@ from classes import (
 
 
 
-def test_programme::semestercourse_is_not_abstract():
-    assert not inspect.isabstract(programme::SemesterCourse)
+def test_programme_semestercourse_is_not_abstract():
+    assert not inspect.isabstract(programme_SemesterCourse)
 
 
-def test_programme::semestercourse_constructor_exists():
-    assert callable(programme::SemesterCourse.__init__)
+def test_programme_semestercourse_constructor_exists():
+    assert callable(programme_SemesterCourse.__init__)
 
 
-def test_programme::semestercourse_constructor_args():
-    sig = inspect.signature(programme::SemesterCourse.__init__)
+def test_programme_semestercourse_constructor_args():
+    sig = inspect.signature(programme_SemesterCourse.__init__)
     params = list(sig.parameters.keys())
     assert "courseType" in params, "Missing parameter 'courseType'"
 
-def test_programme::semestercourse_has_courseType():
-    assert hasattr(programme::SemesterCourse, "courseType")
+def test_programme_semestercourse_has_courseType():
+    assert hasattr(programme_SemesterCourse, "courseType")
     descriptor = None
-    for klass in programme::SemesterCourse.__mro__:
+    for klass in programme_SemesterCourse.__mro__:
         if "courseType" in klass.__dict__:
             descriptor = klass.__dict__["courseType"]
             break
@@ -49,23 +49,23 @@ def test_programme::semestercourse_has_courseType():
 
 
 
-def test_programme::semester_is_not_abstract():
-    assert not inspect.isabstract(programme::Semester)
+def test_programme_semester_is_not_abstract():
+    assert not inspect.isabstract(programme_Semester)
 
 
-def test_programme::semester_constructor_exists():
-    assert callable(programme::Semester.__init__)
+def test_programme_semester_constructor_exists():
+    assert callable(programme_Semester.__init__)
 
 
-def test_programme::semester_constructor_args():
-    sig = inspect.signature(programme::Semester.__init__)
+def test_programme_semester_constructor_args():
+    sig = inspect.signature(programme_Semester.__init__)
     params = list(sig.parameters.keys())
     assert "semesterType" in params, "Missing parameter 'semesterType'"
 
-def test_programme::semester_has_semesterType():
-    assert hasattr(programme::Semester, "semesterType")
+def test_programme_semester_has_semesterType():
+    assert hasattr(programme_Semester, "semesterType")
     descriptor = None
-    for klass in programme::Semester.__mro__:
+    for klass in programme_Semester.__mro__:
         if "semesterType" in klass.__dict__:
             descriptor = klass.__dict__["semesterType"]
             break
@@ -73,23 +73,23 @@ def test_programme::semester_has_semesterType():
 
 
 
-def test_programme::studyyear_is_not_abstract():
-    assert not inspect.isabstract(programme::StudyYear)
+def test_programme_studyyear_is_not_abstract():
+    assert not inspect.isabstract(programme_StudyYear)
 
 
-def test_programme::studyyear_constructor_exists():
-    assert callable(programme::StudyYear.__init__)
+def test_programme_studyyear_constructor_exists():
+    assert callable(programme_StudyYear.__init__)
 
 
-def test_programme::studyyear_constructor_args():
-    sig = inspect.signature(programme::StudyYear.__init__)
+def test_programme_studyyear_constructor_args():
+    sig = inspect.signature(programme_StudyYear.__init__)
     params = list(sig.parameters.keys())
     assert "year" in params, "Missing parameter 'year'"
 
-def test_programme::studyyear_has_year():
-    assert hasattr(programme::StudyYear, "year")
+def test_programme_studyyear_has_year():
+    assert hasattr(programme_StudyYear, "year")
     descriptor = None
-    for klass in programme::StudyYear.__mro__:
+    for klass in programme_StudyYear.__mro__:
         if "year" in klass.__dict__:
             descriptor = klass.__dict__["year"]
             break
@@ -97,23 +97,23 @@ def test_programme::studyyear_has_year():
 
 
 
-def test_programme::specialization_is_not_abstract():
-    assert not inspect.isabstract(programme::Specialization)
+def test_programme_specialization_is_not_abstract():
+    assert not inspect.isabstract(programme_Specialization)
 
 
-def test_programme::specialization_constructor_exists():
-    assert callable(programme::Specialization.__init__)
+def test_programme_specialization_constructor_exists():
+    assert callable(programme_Specialization.__init__)
 
 
-def test_programme::specialization_constructor_args():
-    sig = inspect.signature(programme::Specialization.__init__)
+def test_programme_specialization_constructor_args():
+    sig = inspect.signature(programme_Specialization.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_programme::specialization_has_name():
-    assert hasattr(programme::Specialization, "name")
+def test_programme_specialization_has_name():
+    assert hasattr(programme_Specialization, "name")
     descriptor = None
-    for klass in programme::Specialization.__mro__:
+    for klass in programme_Specialization.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -121,131 +121,131 @@ def test_programme::specialization_has_name():
 
 
 
-def test_programme::course_is_not_abstract():
-    assert not inspect.isabstract(programme::Course)
+def test_programme_course_is_not_abstract():
+    assert not inspect.isabstract(programme_Course)
 
 
-def test_programme::course_constructor_exists():
-    assert callable(programme::Course.__init__)
+def test_programme_course_constructor_exists():
+    assert callable(programme_Course.__init__)
 
 
-def test_programme::course_constructor_args():
-    sig = inspect.signature(programme::Course.__init__)
+def test_programme_course_constructor_args():
+    sig = inspect.signature(programme_Course.__init__)
     params = list(sig.parameters.keys())
-    assert "level" in params, "Missing parameter 'level'"
     assert "code" in params, "Missing parameter 'code'"
     assert "name" in params, "Missing parameter 'name'"
-    assert "taugtIn" in params, "Missing parameter 'taugtIn'"
     assert "credits" in params, "Missing parameter 'credits'"
+    assert "taugtIn" in params, "Missing parameter 'taugtIn'"
+    assert "level" in params, "Missing parameter 'level'"
 
-def test_programme::course_has_level():
-    assert hasattr(programme::Course, "level")
+def test_programme_course_has_code():
+    assert hasattr(programme_Course, "code")
     descriptor = None
-    for klass in programme::Course.__mro__:
-        if "level" in klass.__dict__:
-            descriptor = klass.__dict__["level"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_programme::course_has_code():
-    assert hasattr(programme::Course, "code")
-    descriptor = None
-    for klass in programme::Course.__mro__:
+    for klass in programme_Course.__mro__:
         if "code" in klass.__dict__:
             descriptor = klass.__dict__["code"]
             break
     assert isinstance(descriptor, property)
 
-def test_programme::course_has_name():
-    assert hasattr(programme::Course, "name")
+def test_programme_course_has_name():
+    assert hasattr(programme_Course, "name")
     descriptor = None
-    for klass in programme::Course.__mro__:
+    for klass in programme_Course.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
-def test_programme::course_has_taugtIn():
-    assert hasattr(programme::Course, "taugtIn")
+def test_programme_course_has_credits():
+    assert hasattr(programme_Course, "credits")
     descriptor = None
-    for klass in programme::Course.__mro__:
-        if "taugtIn" in klass.__dict__:
-            descriptor = klass.__dict__["taugtIn"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_programme::course_has_credits():
-    assert hasattr(programme::Course, "credits")
-    descriptor = None
-    for klass in programme::Course.__mro__:
+    for klass in programme_Course.__mro__:
         if "credits" in klass.__dict__:
             descriptor = klass.__dict__["credits"]
             break
     assert isinstance(descriptor, property)
 
-
-
-def test_programme::programme_is_not_abstract():
-    assert not inspect.isabstract(programme::Programme)
-
-
-def test_programme::programme_constructor_exists():
-    assert callable(programme::Programme.__init__)
-
-
-def test_programme::programme_constructor_args():
-    sig = inspect.signature(programme::Programme.__init__)
-    params = list(sig.parameters.keys())
-    assert "name" in params, "Missing parameter 'name'"
-    assert "programmeType" in params, "Missing parameter 'programmeType'"
-    assert "code" in params, "Missing parameter 'code'"
-
-def test_programme::programme_has_name():
-    assert hasattr(programme::Programme, "name")
+def test_programme_course_has_taugtIn():
+    assert hasattr(programme_Course, "taugtIn")
     descriptor = None
-    for klass in programme::Programme.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
+    for klass in programme_Course.__mro__:
+        if "taugtIn" in klass.__dict__:
+            descriptor = klass.__dict__["taugtIn"]
             break
     assert isinstance(descriptor, property)
 
-def test_programme::programme_has_programmeType():
-    assert hasattr(programme::Programme, "programmeType")
+def test_programme_course_has_level():
+    assert hasattr(programme_Course, "level")
     descriptor = None
-    for klass in programme::Programme.__mro__:
+    for klass in programme_Course.__mro__:
+        if "level" in klass.__dict__:
+            descriptor = klass.__dict__["level"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_programme_programme_is_not_abstract():
+    assert not inspect.isabstract(programme_Programme)
+
+
+def test_programme_programme_constructor_exists():
+    assert callable(programme_Programme.__init__)
+
+
+def test_programme_programme_constructor_args():
+    sig = inspect.signature(programme_Programme.__init__)
+    params = list(sig.parameters.keys())
+    assert "programmeType" in params, "Missing parameter 'programmeType'"
+    assert "code" in params, "Missing parameter 'code'"
+    assert "name" in params, "Missing parameter 'name'"
+
+def test_programme_programme_has_programmeType():
+    assert hasattr(programme_Programme, "programmeType")
+    descriptor = None
+    for klass in programme_Programme.__mro__:
         if "programmeType" in klass.__dict__:
             descriptor = klass.__dict__["programmeType"]
             break
     assert isinstance(descriptor, property)
 
-def test_programme::programme_has_code():
-    assert hasattr(programme::Programme, "code")
+def test_programme_programme_has_code():
+    assert hasattr(programme_Programme, "code")
     descriptor = None
-    for klass in programme::Programme.__mro__:
+    for klass in programme_Programme.__mro__:
         if "code" in klass.__dict__:
             descriptor = klass.__dict__["code"]
             break
     assert isinstance(descriptor, property)
 
+def test_programme_programme_has_name():
+    assert hasattr(programme_Programme, "name")
+    descriptor = None
+    for klass in programme_Programme.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_programme::department_is_not_abstract():
-    assert not inspect.isabstract(programme::Department)
+
+def test_programme_department_is_not_abstract():
+    assert not inspect.isabstract(programme_Department)
 
 
-def test_programme::department_constructor_exists():
-    assert callable(programme::Department.__init__)
+def test_programme_department_constructor_exists():
+    assert callable(programme_Department.__init__)
 
 
-def test_programme::department_constructor_args():
-    sig = inspect.signature(programme::Department.__init__)
+def test_programme_department_constructor_args():
+    sig = inspect.signature(programme_Department.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_programme::department_has_name():
-    assert hasattr(programme::Department, "name")
+def test_programme_department_has_name():
+    assert hasattr(programme_Department, "name")
     descriptor = None
-    for klass in programme::Department.__mro__:
+    for klass in programme_Department.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -266,6 +266,22 @@ def test_semestertype_has_all_literals():
     for lit_name in expected_literals:
         assert lit_name in enum_literals, f"Literal '' missing in SemesterType"
 
+def test_courselevel_exists():
+    # Check that the Enumeration exists
+    assert CourseLevel is not None
+
+def test_courselevel_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in CourseLevel]
+    expected_literals = [
+        "THIRD_YEAR",
+        "PHD",
+        "HIGHER",
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in CourseLevel"
+
 def test_coursetype_exists():
     # Check that the Enumeration exists
     assert CourseType is not None
@@ -275,29 +291,13 @@ def test_coursetype_has_all_literals():
     enum_literals = [lit.name for lit in CourseType]
     expected_literals = [
         "M2A",
-        "Elective",
         "Obligatory",
+        "Elective",
         "M1A",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
         assert lit_name in enum_literals, f"Literal '' missing in CourseType"
-
-def test_courselevel_exists():
-    # Check that the Enumeration exists
-    assert CourseLevel is not None
-
-def test_courselevel_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in CourseLevel]
-    expected_literals = [
-        "PHD",
-        "THIRD_YEAR",
-        "HIGHER",
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in CourseLevel"
 
 def test_programmetype_exists():
     # Check that the Enumeration exists
@@ -307,10 +307,10 @@ def test_programmetype_has_all_literals():
     # Collect the names of literals in this Enumeration
     enum_literals = [lit.name for lit in ProgrammeType]
     expected_literals = [
-        "MASTER_2_YEARS",
-        "YEAR_STUDY",
         "INTEGRATED_MASTER",
         "BACHELOR",
+        "MASTER_2_YEARS",
+        "YEAR_STUDY",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
@@ -328,228 +328,189 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-programme::SemesterCourse_strategy = st.builds(
-    programme::SemesterCourse,
+programme_SemesterCourse_strategy = st.builds(
+    programme_SemesterCourse,
     courseType=
         safe_text
 )
-programme::Semester_strategy = st.builds(
-    programme::Semester,
+programme_Semester_strategy = st.builds(
+    programme_Semester,
     semesterType=
         safe_text
 )
-programme::StudyYear_strategy = st.builds(
-    programme::StudyYear,
+programme_StudyYear_strategy = st.builds(
+    programme_StudyYear,
     year=
         st.integers()
 )
-programme::Specialization_strategy = st.builds(
-    programme::Specialization,
+programme_Specialization_strategy = st.builds(
+    programme_Specialization,
     name=
         safe_text
 )
-programme::Course_strategy = st.builds(
-    programme::Course,
-    level=
-        safe_text,
+programme_Course_strategy = st.builds(
+    programme_Course,
     code=
         safe_text,
     name=
         safe_text,
+    credits=
+        st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False),
     taugtIn=
         safe_text,
-    credits=
-        st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False)
+    level=
+        safe_text
 )
-programme::Programme_strategy = st.builds(
-    programme::Programme,
-    name=
-        safe_text,
+programme_Programme_strategy = st.builds(
+    programme_Programme,
     programmeType=
         safe_text,
     code=
+        safe_text,
+    name=
         safe_text
 )
-programme::Department_strategy = st.builds(
-    programme::Department,
+programme_Department_strategy = st.builds(
+    programme_Department,
     name=
         safe_text
 )
 
-@given(instance=programme::SemesterCourse_strategy)
+@given(instance=programme_SemesterCourse_strategy)
 @settings(max_examples=50)
-def test_programme::semestercourse_instantiation(instance):
-    assert isinstance(instance, programme::SemesterCourse)
-
-@given(instance=programme::SemesterCourse_strategy)
-def test_programme::semestercourse_courseType_type(instance):
-    assert isinstance(instance.courseType, str)
+def test_programme_semestercourse_instantiation(instance):
+    assert isinstance(instance, programme_SemesterCourse)
 
 
-@given(instance=programme::SemesterCourse_strategy)
-def test_programme::semestercourse_courseType_setter(instance):
+
+@given(instance=programme_SemesterCourse_strategy)
+def test_programme_semestercourse_courseType_setter(instance):
     original = instance.courseType
     instance.courseType = original
     assert instance.courseType == original
 
-@given(instance=programme::Semester_strategy)
+@given(instance=programme_Semester_strategy)
 @settings(max_examples=50)
-def test_programme::semester_instantiation(instance):
-    assert isinstance(instance, programme::Semester)
-
-@given(instance=programme::Semester_strategy)
-def test_programme::semester_semesterType_type(instance):
-    assert isinstance(instance.semesterType, str)
+def test_programme_semester_instantiation(instance):
+    assert isinstance(instance, programme_Semester)
 
 
-@given(instance=programme::Semester_strategy)
-def test_programme::semester_semesterType_setter(instance):
+
+@given(instance=programme_Semester_strategy)
+def test_programme_semester_semesterType_setter(instance):
     original = instance.semesterType
     instance.semesterType = original
     assert instance.semesterType == original
 
-@given(instance=programme::StudyYear_strategy)
+@given(instance=programme_StudyYear_strategy)
 @settings(max_examples=50)
-def test_programme::studyyear_instantiation(instance):
-    assert isinstance(instance, programme::StudyYear)
-
-@given(instance=programme::StudyYear_strategy)
-def test_programme::studyyear_year_type(instance):
-    assert isinstance(instance.year, int)
+def test_programme_studyyear_instantiation(instance):
+    assert isinstance(instance, programme_StudyYear)
 
 
-@given(instance=programme::StudyYear_strategy)
-def test_programme::studyyear_year_setter(instance):
+
+@given(instance=programme_StudyYear_strategy)
+def test_programme_studyyear_year_setter(instance):
     original = instance.year
     instance.year = original
     assert instance.year == original
 
-@given(instance=programme::Specialization_strategy)
+@given(instance=programme_Specialization_strategy)
 @settings(max_examples=50)
-def test_programme::specialization_instantiation(instance):
-    assert isinstance(instance, programme::Specialization)
-
-@given(instance=programme::Specialization_strategy)
-def test_programme::specialization_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_programme_specialization_instantiation(instance):
+    assert isinstance(instance, programme_Specialization)
 
 
-@given(instance=programme::Specialization_strategy)
-def test_programme::specialization_name_setter(instance):
+
+@given(instance=programme_Specialization_strategy)
+def test_programme_specialization_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=programme::Course_strategy)
+@given(instance=programme_Course_strategy)
 @settings(max_examples=50)
-def test_programme::course_instantiation(instance):
-    assert isinstance(instance, programme::Course)
-
-@given(instance=programme::Course_strategy)
-def test_programme::course_level_type(instance):
-    assert isinstance(instance.level, str)
+def test_programme_course_instantiation(instance):
+    assert isinstance(instance, programme_Course)
 
 
-@given(instance=programme::Course_strategy)
-def test_programme::course_level_setter(instance):
-    original = instance.level
-    instance.level = original
-    assert instance.level == original
 
-@given(instance=programme::Course_strategy)
-def test_programme::course_code_type(instance):
-    assert isinstance(instance.code, str)
-
-
-@given(instance=programme::Course_strategy)
-def test_programme::course_code_setter(instance):
+@given(instance=programme_Course_strategy)
+def test_programme_course_code_setter(instance):
     original = instance.code
     instance.code = original
     assert instance.code == original
 
-@given(instance=programme::Course_strategy)
-def test_programme::course_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
-@given(instance=programme::Course_strategy)
-def test_programme::course_name_setter(instance):
+@given(instance=programme_Course_strategy)
+def test_programme_course_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=programme::Course_strategy)
-def test_programme::course_taugtIn_type(instance):
-    assert isinstance(instance.taugtIn, str)
 
 
-@given(instance=programme::Course_strategy)
-def test_programme::course_taugtIn_setter(instance):
-    original = instance.taugtIn
-    instance.taugtIn = original
-    assert instance.taugtIn == original
-
-@given(instance=programme::Course_strategy)
-def test_programme::course_credits_type(instance):
-    assert isinstance(instance.credits, float)
-
-
-@given(instance=programme::Course_strategy)
-def test_programme::course_credits_setter(instance):
+@given(instance=programme_Course_strategy)
+def test_programme_course_credits_setter(instance):
     original = instance.credits
     instance.credits = original
     assert instance.credits == original
 
-@given(instance=programme::Programme_strategy)
+
+
+@given(instance=programme_Course_strategy)
+def test_programme_course_taugtIn_setter(instance):
+    original = instance.taugtIn
+    instance.taugtIn = original
+    assert instance.taugtIn == original
+
+
+
+@given(instance=programme_Course_strategy)
+def test_programme_course_level_setter(instance):
+    original = instance.level
+    instance.level = original
+    assert instance.level == original
+
+@given(instance=programme_Programme_strategy)
 @settings(max_examples=50)
-def test_programme::programme_instantiation(instance):
-    assert isinstance(instance, programme::Programme)
-
-@given(instance=programme::Programme_strategy)
-def test_programme::programme_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_programme_programme_instantiation(instance):
+    assert isinstance(instance, programme_Programme)
 
 
-@given(instance=programme::Programme_strategy)
-def test_programme::programme_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
 
-@given(instance=programme::Programme_strategy)
-def test_programme::programme_programmeType_type(instance):
-    assert isinstance(instance.programmeType, str)
-
-
-@given(instance=programme::Programme_strategy)
-def test_programme::programme_programmeType_setter(instance):
+@given(instance=programme_Programme_strategy)
+def test_programme_programme_programmeType_setter(instance):
     original = instance.programmeType
     instance.programmeType = original
     assert instance.programmeType == original
 
-@given(instance=programme::Programme_strategy)
-def test_programme::programme_code_type(instance):
-    assert isinstance(instance.code, str)
 
 
-@given(instance=programme::Programme_strategy)
-def test_programme::programme_code_setter(instance):
+@given(instance=programme_Programme_strategy)
+def test_programme_programme_code_setter(instance):
     original = instance.code
     instance.code = original
     assert instance.code == original
 
-@given(instance=programme::Department_strategy)
+
+
+@given(instance=programme_Programme_strategy)
+def test_programme_programme_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+@given(instance=programme_Department_strategy)
 @settings(max_examples=50)
-def test_programme::department_instantiation(instance):
-    assert isinstance(instance, programme::Department)
-
-@given(instance=programme::Department_strategy)
-def test_programme::department_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_programme_department_instantiation(instance):
+    assert isinstance(instance, programme_Department)
 
 
-@given(instance=programme::Department_strategy)
-def test_programme::department_name_setter(instance):
+
+@given(instance=programme_Department_strategy)
+def test_programme_department_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original

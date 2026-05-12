@@ -3,11 +3,11 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    imported::model::Book,
-    imported::model::Library,
+from python_code import (
+    imported_model_Book,
+    imported_model_Library,
     E,
 )
 
@@ -17,23 +17,23 @@ from classes import (
 
 
 
-def test_imported::model::book_is_not_abstract():
-    assert not inspect.isabstract(imported::model::Book)
+def test_imported_model_book_is_not_abstract():
+    assert not inspect.isabstract(imported_model_Book)
 
 
-def test_imported::model::book_constructor_exists():
-    assert callable(imported::model::Book.__init__)
+def test_imported_model_book_constructor_exists():
+    assert callable(imported_model_Book.__init__)
 
 
-def test_imported::model::book_constructor_args():
-    sig = inspect.signature(imported::model::Book.__init__)
+def test_imported_model_book_constructor_args():
+    sig = inspect.signature(imported_model_Book.__init__)
     params = list(sig.parameters.keys())
     assert "pages" in params, "Missing parameter 'pages'"
 
-def test_imported::model::book_has_pages():
-    assert hasattr(imported::model::Book, "pages")
+def test_imported_model_book_has_pages():
+    assert hasattr(imported_model_Book, "pages")
     descriptor = None
-    for klass in imported::model::Book.__mro__:
+    for klass in imported_model_Book.__mro__:
         if "pages" in klass.__dict__:
             descriptor = klass.__dict__["pages"]
             break
@@ -41,16 +41,16 @@ def test_imported::model::book_has_pages():
 
 
 
-def test_imported::model::library_is_not_abstract():
-    assert not inspect.isabstract(imported::model::Library)
+def test_imported_model_library_is_not_abstract():
+    assert not inspect.isabstract(imported_model_Library)
 
 
-def test_imported::model::library_constructor_exists():
-    assert callable(imported::model::Library.__init__)
+def test_imported_model_library_constructor_exists():
+    assert callable(imported_model_Library.__init__)
 
 
-def test_imported::model::library_constructor_args():
-    sig = inspect.signature(imported::model::Library.__init__)
+def test_imported_model_library_constructor_args():
+    sig = inspect.signature(imported_model_Library.__init__)
     params = list(sig.parameters.keys())
 
 def test_e_exists():
@@ -81,32 +81,29 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-imported::model::Book_strategy = st.builds(
-    imported::model::Book,
+imported_model_Book_strategy = st.builds(
+    imported_model_Book,
     pages=
         st.integers()
 )
-imported::model::Library_strategy = st.builds(
-    imported::model::Library,
+imported_model_Library_strategy = st.builds(
+    imported_model_Library,
 )
 
-@given(instance=imported::model::Book_strategy)
+@given(instance=imported_model_Book_strategy)
 @settings(max_examples=50)
-def test_imported::model::book_instantiation(instance):
-    assert isinstance(instance, imported::model::Book)
-
-@given(instance=imported::model::Book_strategy)
-def test_imported::model::book_pages_type(instance):
-    assert isinstance(instance.pages, int)
+def test_imported_model_book_instantiation(instance):
+    assert isinstance(instance, imported_model_Book)
 
 
-@given(instance=imported::model::Book_strategy)
-def test_imported::model::book_pages_setter(instance):
+
+@given(instance=imported_model_Book_strategy)
+def test_imported_model_book_pages_setter(instance):
     original = instance.pages
     instance.pages = original
     assert instance.pages == original
 
-@given(instance=imported::model::Library_strategy)
+@given(instance=imported_model_Library_strategy)
 @settings(max_examples=50)
-def test_imported::model::library_instantiation(instance):
-    assert isinstance(instance, imported::model::Library)
+def test_imported_model_library_instantiation(instance):
+    assert isinstance(instance, imported_model_Library)

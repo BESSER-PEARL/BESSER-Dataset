@@ -3,11 +3,11 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    TestMerge::B,
-    TestMerge::A,
+from python_code import (
+    TestMerge_B,
+    TestMerge_A,
 )
 
 # =============================================================================
@@ -16,37 +16,37 @@ from classes import (
 
 
 
-def test_testmerge::b_is_not_abstract():
-    assert not inspect.isabstract(TestMerge::B)
+def test_testmerge_b_is_not_abstract():
+    assert not inspect.isabstract(TestMerge_B)
 
 
-def test_testmerge::b_constructor_exists():
-    assert callable(TestMerge::B.__init__)
+def test_testmerge_b_constructor_exists():
+    assert callable(TestMerge_B.__init__)
 
 
-def test_testmerge::b_constructor_args():
-    sig = inspect.signature(TestMerge::B.__init__)
+def test_testmerge_b_constructor_args():
+    sig = inspect.signature(TestMerge_B.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_testmerge::a_is_not_abstract():
-    assert not inspect.isabstract(TestMerge::A)
+def test_testmerge_a_is_not_abstract():
+    assert not inspect.isabstract(TestMerge_A)
 
 
-def test_testmerge::a_constructor_exists():
-    assert callable(TestMerge::A.__init__)
+def test_testmerge_a_constructor_exists():
+    assert callable(TestMerge_A.__init__)
 
 
-def test_testmerge::a_constructor_args():
-    sig = inspect.signature(TestMerge::A.__init__)
+def test_testmerge_a_constructor_args():
+    sig = inspect.signature(TestMerge_A.__init__)
     params = list(sig.parameters.keys())
     assert "attr1" in params, "Missing parameter 'attr1'"
 
-def test_testmerge::a_has_attr1():
-    assert hasattr(TestMerge::A, "attr1")
+def test_testmerge_a_has_attr1():
+    assert hasattr(TestMerge_A, "attr1")
     descriptor = None
-    for klass in TestMerge::A.__mro__:
+    for klass in TestMerge_A.__mro__:
         if "attr1" in klass.__dict__:
             descriptor = klass.__dict__["attr1"]
             break
@@ -64,32 +64,29 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-TestMerge::B_strategy = st.builds(
-    TestMerge::B,
+TestMerge_B_strategy = st.builds(
+    TestMerge_B,
 )
-TestMerge::A_strategy = st.builds(
-    TestMerge::A,
+TestMerge_A_strategy = st.builds(
+    TestMerge_A,
     attr1=
         safe_text
 )
 
-@given(instance=TestMerge::B_strategy)
+@given(instance=TestMerge_B_strategy)
 @settings(max_examples=50)
-def test_testmerge::b_instantiation(instance):
-    assert isinstance(instance, TestMerge::B)
+def test_testmerge_b_instantiation(instance):
+    assert isinstance(instance, TestMerge_B)
 
-@given(instance=TestMerge::A_strategy)
+@given(instance=TestMerge_A_strategy)
 @settings(max_examples=50)
-def test_testmerge::a_instantiation(instance):
-    assert isinstance(instance, TestMerge::A)
-
-@given(instance=TestMerge::A_strategy)
-def test_testmerge::a_attr1_type(instance):
-    assert isinstance(instance.attr1, str)
+def test_testmerge_a_instantiation(instance):
+    assert isinstance(instance, TestMerge_A)
 
 
-@given(instance=TestMerge::A_strategy)
-def test_testmerge::a_attr1_setter(instance):
+
+@given(instance=TestMerge_A_strategy)
+def test_testmerge_a_attr1_setter(instance):
     original = instance.attr1
     instance.attr1 = original
     assert instance.attr1 == original

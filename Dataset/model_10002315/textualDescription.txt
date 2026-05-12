@@ -1,0 +1,21 @@
+The model has 8 class(es).
+The class 'Payment' has the following attributes: 'Payment_Date' of type str; 'Customer_s_Id' of type str; 'Payment_Description' of type str; 'Amount' of type str.
+The class 'Room' has the following attributes: 'Room_number' of type str; 'Room_description' of type str; 'Room_Id' of type str; 'Room_type' of type str.
+The class 'Customer' has the following attributes: 'Id' of type str; 'Mobile_no___Email' of type str; 'Address' of type str; 'Name' of type str.
+The class 'Booking' has the following attributes: 'Id' of type str; 'Date' of type str; 'Type' of type str; 'Description' of type str.
+The class 'Hotel' has the following attributes: 'Hotel_Address' of type str; 'Hotel_Name' of type str; 'Hotel_ID' of type str; 'Hotel_Type' of type str; 'Hotel_Rent' of type str.
+The class 'Admin' has the following attributes: 'Id' of type str; 'Name' of type str; 'Password' of type str.
+The class 'Debit_Card' has the following attributes: 'Card_No_' of type str; 'Pin_No_' of type str.
+The class 'Credit_Card' has the following attributes: 'Card_No_' of type str; 'Pin_No_' of type str.
+'Payment' (role 'customer7', cardinality 0..*) is associated with 'Customer' (role 'payment6', cardinality 0..*).
+'Customer' (role 'hotel14', cardinality 0..*) is associated with 'Hotel' (role 'customer15', cardinality 0..*).
+'Hotel' (role 'room5', cardinality 0..*) is associated with 'Room' (role 'hotel4', cardinality 0..*).
+'Booking' (role 'hotel12', cardinality 0..*) is associated with 'Hotel' (role 'booking13', cardinality 0..*).
+'Room' (role 'admin3', cardinality 0..*) is associated with 'Admin' (role 'room2', cardinality 0..*).
+'Booking' (role 'admin1', cardinality 0..*) is associated with 'Admin' (role 'booking0', cardinality 0..*).
+'Payment' (role 'hotel22', cardinality 0..*) is associated with 'Hotel' (role 'payment23', cardinality 0..*).
+'Hotel' (role 'admin17', cardinality 0..*) is associated with 'Admin' (role 'hotel16', cardinality 0..*).
+'Room' (role 'payment21', cardinality 0..*) is associated with 'Payment' (role 'room20', cardinality 0..*).
+'Payment' (role 'booking18', cardinality 0..*) is associated with 'Booking' (role 'payment19', cardinality 0..*).
+'Payment' (role 'debit_Card8', cardinality 0..*) is associated with 'Debit_Card' (role 'payment9', cardinality 0..*).
+'Credit_Card' (role 'payment11', cardinality 0..*) is associated with 'Payment' (role 'credit_Card10', cardinality 0..*).

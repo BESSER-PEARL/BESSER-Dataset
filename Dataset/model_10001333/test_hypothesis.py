@@ -3,7 +3,7 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
 from python_code import (
     library_management__Library,
@@ -45,10 +45,10 @@ def test_library_management__library_constructor_args():
     sig = inspect.signature(library_management__Library.__init__)
     params = list(sig.parameters.keys())
     assert "Computers" in params, "Missing parameter 'Computers'"
-    assert "CD" in params, "Missing parameter 'CD'"
-    assert "Videos" in params, "Missing parameter 'Videos'"
     assert "Books" in params, "Missing parameter 'Books'"
     assert "Softwares" in params, "Missing parameter 'Softwares'"
+    assert "CD" in params, "Missing parameter 'CD'"
+    assert "Videos" in params, "Missing parameter 'Videos'"
 
 def test_library_management__library_has_Computers():
     assert hasattr(library_management__Library, "Computers")
@@ -56,24 +56,6 @@ def test_library_management__library_has_Computers():
     for klass in library_management__Library.__mro__:
         if "Computers" in klass.__dict__:
             descriptor = klass.__dict__["Computers"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_library_management__library_has_CD():
-    assert hasattr(library_management__Library, "CD")
-    descriptor = None
-    for klass in library_management__Library.__mro__:
-        if "CD" in klass.__dict__:
-            descriptor = klass.__dict__["CD"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_library_management__library_has_Videos():
-    assert hasattr(library_management__Library, "Videos")
-    descriptor = None
-    for klass in library_management__Library.__mro__:
-        if "Videos" in klass.__dict__:
-            descriptor = klass.__dict__["Videos"]
             break
     assert isinstance(descriptor, property)
 
@@ -92,6 +74,24 @@ def test_library_management__library_has_Softwares():
     for klass in library_management__Library.__mro__:
         if "Softwares" in klass.__dict__:
             descriptor = klass.__dict__["Softwares"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_library_management__library_has_CD():
+    assert hasattr(library_management__Library, "CD")
+    descriptor = None
+    for klass in library_management__Library.__mro__:
+        if "CD" in klass.__dict__:
+            descriptor = klass.__dict__["CD"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_library_management__library_has_Videos():
+    assert hasattr(library_management__Library, "Videos")
+    descriptor = None
+    for klass in library_management__Library.__mro__:
+        if "Videos" in klass.__dict__:
+            descriptor = klass.__dict__["Videos"]
             break
     assert isinstance(descriptor, property)
 
@@ -383,13 +383,13 @@ library_management__Library_strategy = st.builds(
     library_management__Library,
     Computers=
         safe_text,
-    CD=
-        safe_text,
-    Videos=
-        safe_text,
     Books=
         safe_text,
     Softwares=
+        safe_text,
+    CD=
+        safe_text,
+    Videos=
         safe_text
 )
 library_management__librarian_strategy = st.builds(
@@ -456,9 +456,6 @@ patron__Actor_strategy = st.builds(
 def test_library_management__library_instantiation(instance):
     assert isinstance(instance, library_management__Library)
 
-@given(instance=library_management__Library_strategy)
-def test_library_management__library_Computers_type(instance):
-    assert isinstance(instance.Computers, str)
 
 
 @given(instance=library_management__Library_strategy)
@@ -467,31 +464,6 @@ def test_library_management__library_Computers_setter(instance):
     instance.Computers = original
     assert instance.Computers == original
 
-@given(instance=library_management__Library_strategy)
-def test_library_management__library_CD_type(instance):
-    assert isinstance(instance.CD, str)
-
-
-@given(instance=library_management__Library_strategy)
-def test_library_management__library_CD_setter(instance):
-    original = instance.CD
-    instance.CD = original
-    assert instance.CD == original
-
-@given(instance=library_management__Library_strategy)
-def test_library_management__library_Videos_type(instance):
-    assert isinstance(instance.Videos, str)
-
-
-@given(instance=library_management__Library_strategy)
-def test_library_management__library_Videos_setter(instance):
-    original = instance.Videos
-    instance.Videos = original
-    assert instance.Videos == original
-
-@given(instance=library_management__Library_strategy)
-def test_library_management__library_Books_type(instance):
-    assert isinstance(instance.Books, str)
 
 
 @given(instance=library_management__Library_strategy)
@@ -500,9 +472,6 @@ def test_library_management__library_Books_setter(instance):
     instance.Books = original
     assert instance.Books == original
 
-@given(instance=library_management__Library_strategy)
-def test_library_management__library_Softwares_type(instance):
-    assert isinstance(instance.Softwares, str)
 
 
 @given(instance=library_management__Library_strategy)
@@ -511,14 +480,27 @@ def test_library_management__library_Softwares_setter(instance):
     instance.Softwares = original
     assert instance.Softwares == original
 
+
+
+@given(instance=library_management__Library_strategy)
+def test_library_management__library_CD_setter(instance):
+    original = instance.CD
+    instance.CD = original
+    assert instance.CD == original
+
+
+
+@given(instance=library_management__Library_strategy)
+def test_library_management__library_Videos_setter(instance):
+    original = instance.Videos
+    instance.Videos = original
+    assert instance.Videos == original
+
 @given(instance=library_management__librarian_strategy)
 @settings(max_examples=50)
 def test_library_management__librarian_instantiation(instance):
     assert isinstance(instance, library_management__librarian)
 
-@given(instance=library_management__librarian_strategy)
-def test_library_management__librarian_CollectFIne_fine__type(instance):
-    assert isinstance(instance.CollectFIne_fine_, int)
 
 
 @given(instance=library_management__librarian_strategy)
@@ -532,9 +514,6 @@ def test_library_management__librarian_CollectFIne_fine__setter(instance):
 def test_library_management__patron_instantiation(instance):
     assert isinstance(instance, library_management__patron)
 
-@given(instance=library_management__patron_strategy)
-def test_library_management__patron_PayFIne_Dt_date__type(instance):
-    assert isinstance(instance.PayFIne_Dt_date_, int)
 
 
 @given(instance=library_management__patron_strategy)

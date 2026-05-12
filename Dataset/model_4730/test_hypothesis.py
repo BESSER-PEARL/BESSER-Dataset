@@ -3,96 +3,96 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     AggregateExpression,
-    logiclanguage::ProjectedAggregateExpression,
-    logiclanguage::Count,
+    logiclanguage_ProjectedAggregateExpression,
+    logiclanguage_Count,
     ProjectedAggregateExpression,
-    logiclanguage::Max,
-    logiclanguage::Min,
-    logiclanguage::Sum,
-    logiclanguage::AggregatedParameterSubstitution,
+    logiclanguage_Max,
+    logiclanguage_Min,
+    logiclanguage_Sum,
+    logiclanguage_AggregatedParameterSubstitution,
     Relation,
-    logiclanguage::RelationDefinition,
+    logiclanguage_RelationDefinition,
     Constant,
-    logiclanguage::ConstantDeclaration,
-    logiclanguage::ConstantDefinition,
-    logiclanguage::ConstantAnnotation,
+    logiclanguage_ConstantDeclaration,
+    logiclanguage_ConstantDefinition,
+    logiclanguage_ConstantAnnotation,
     Function,
-    logiclanguage::FunctionDeclaration,
-    logiclanguage::FunctionDefinition,
-    logiclanguage::RelationDeclaration,
-    logiclanguage::RelationAnnotation,
-    logiclanguage::AssertionAnnotation,
-    logiclanguage::Assertion,
-    logiclanguage::TermDescription,
-    logiclanguage::TypeDescriptor,
+    logiclanguage_FunctionDeclaration,
+    logiclanguage_FunctionDefinition,
+    logiclanguage_RelationDeclaration,
+    logiclanguage_RelationAnnotation,
+    logiclanguage_AssertionAnnotation,
+    logiclanguage_Assertion,
+    logiclanguage_TermDescription,
+    logiclanguage_TypeDescriptor,
     NumericOperation,
-    logiclanguage::Divison,
-    logiclanguage::Pow,
-    logiclanguage::Multiply,
-    logiclanguage::Minus,
-    logiclanguage::Mod,
-    logiclanguage::Plus,
+    logiclanguage_Divison,
+    logiclanguage_Mod,
+    logiclanguage_Multiply,
+    logiclanguage_Pow,
+    logiclanguage_Minus,
+    logiclanguage_Plus,
     BoolOperation,
-    logiclanguage::Iff,
-    logiclanguage::Not,
-    logiclanguage::Or,
-    logiclanguage::Impl,
-    logiclanguage::And,
+    logiclanguage_Or,
+    logiclanguage_Not,
+    logiclanguage_Iff,
+    logiclanguage_Impl,
+    logiclanguage_And,
     PrimitiveRelation,
-    logiclanguage::LessThan,
-    logiclanguage::MoreThan,
-    logiclanguage::MoreOrEqualThan,
-    logiclanguage::LessOrEqualThan,
-    logiclanguage::Distinct,
-    logiclanguage::Equals,
+    logiclanguage_MoreOrEqualThan,
+    logiclanguage_LessOrEqualThan,
+    logiclanguage_Distinct,
+    logiclanguage_LessThan,
+    logiclanguage_MoreThan,
+    logiclanguage_Equals,
     Term,
-    logiclanguage::TransitiveClosure,
-    logiclanguage::AggregateExpression,
-    logiclanguage::InstanceOf,
-    logiclanguage::NumericOperation,
-    logiclanguage::PrimitiveRelation,
-    logiclanguage::BoolOperation,
-    logiclanguage::UnknownBecauseUninterpreted,
-    logiclanguage::IfThenElse,
-    logiclanguage::SymbolicValue,
+    logiclanguage_PrimitiveRelation,
+    logiclanguage_IfThenElse,
+    logiclanguage_BoolOperation,
+    logiclanguage_NumericOperation,
+    logiclanguage_UnknownBecauseUninterpreted,
+    logiclanguage_AggregateExpression,
+    logiclanguage_TransitiveClosure,
+    logiclanguage_InstanceOf,
+    logiclanguage_SymbolicValue,
     TermDescription,
-    logiclanguage::SymbolicDeclaration,
-    logiclanguage::Term,
-    logiclanguage::FunctionAnnotation,
+    logiclanguage_SymbolicDeclaration,
+    logiclanguage_Term,
+    logiclanguage_FunctionAnnotation,
     PrimitiveTypeReference,
-    logiclanguage::StringTypeReference,
-    logiclanguage::BoolTypeReference,
-    logiclanguage::RealTypeReference,
-    logiclanguage::IntTypeReference,
+    logiclanguage_StringTypeReference,
+    logiclanguage_RealTypeReference,
+    logiclanguage_BoolTypeReference,
+    logiclanguage_IntTypeReference,
     QuantifiedExpression,
-    logiclanguage::Forall,
-    logiclanguage::Exists,
-    logiclanguage::QuantifiedExpression,
+    logiclanguage_Forall,
+    logiclanguage_Exists,
+    logiclanguage_QuantifiedExpression,
     AtomicTerm,
-    logiclanguage::StringLiteral,
-    logiclanguage::BoolLiteral,
-    logiclanguage::RealLiteral,
-    logiclanguage::IntLiteral,
-    logiclanguage::AtomicTerm,
+    logiclanguage_BoolLiteral,
+    logiclanguage_RealLiteral,
+    logiclanguage_StringLiteral,
+    logiclanguage_IntLiteral,
+    logiclanguage_AtomicTerm,
     TypeDescriptor,
-    logiclanguage::Type,
+    logiclanguage_Type,
     TypeReference,
-    logiclanguage::PrimitiveTypeReference,
-    logiclanguage::ComplexTypeReference,
-    logiclanguage::TypeReference,
+    logiclanguage_PrimitiveTypeReference,
+    logiclanguage_ComplexTypeReference,
+    logiclanguage_TypeReference,
     Type,
-    logiclanguage::TypeDeclaration,
-    logiclanguage::TypeDefinition,
+    logiclanguage_TypeDeclaration,
+    logiclanguage_TypeDefinition,
     SymbolicDeclaration,
-    logiclanguage::Function,
-    logiclanguage::Relation,
-    logiclanguage::Variable,
-    logiclanguage::Constant,
-    logiclanguage::DefinedElement,
+    logiclanguage_Variable,
+    logiclanguage_Constant,
+    logiclanguage_Relation,
+    logiclanguage_Function,
+    logiclanguage_DefinedElement,
 )
 
 # =============================================================================
@@ -115,23 +115,23 @@ def test_aggregateexpression_constructor_args():
 
 
 
-def test_logiclanguage::projectedaggregateexpression_is_not_abstract():
-    assert not inspect.isabstract(logiclanguage::ProjectedAggregateExpression)
+def test_logiclanguage_projectedaggregateexpression_is_not_abstract():
+    assert not inspect.isabstract(logiclanguage_ProjectedAggregateExpression)
 
 
-def test_logiclanguage::projectedaggregateexpression_constructor_exists():
-    assert callable(logiclanguage::ProjectedAggregateExpression.__init__)
+def test_logiclanguage_projectedaggregateexpression_constructor_exists():
+    assert callable(logiclanguage_ProjectedAggregateExpression.__init__)
 
 
-def test_logiclanguage::projectedaggregateexpression_constructor_args():
-    sig = inspect.signature(logiclanguage::ProjectedAggregateExpression.__init__)
+def test_logiclanguage_projectedaggregateexpression_constructor_args():
+    sig = inspect.signature(logiclanguage_ProjectedAggregateExpression.__init__)
     params = list(sig.parameters.keys())
     assert "projectionIndex" in params, "Missing parameter 'projectionIndex'"
 
-def test_logiclanguage::projectedaggregateexpression_has_projectionIndex():
-    assert hasattr(logiclanguage::ProjectedAggregateExpression, "projectionIndex")
+def test_logiclanguage_projectedaggregateexpression_has_projectionIndex():
+    assert hasattr(logiclanguage_ProjectedAggregateExpression, "projectionIndex")
     descriptor = None
-    for klass in logiclanguage::ProjectedAggregateExpression.__mro__:
+    for klass in logiclanguage_ProjectedAggregateExpression.__mro__:
         if "projectionIndex" in klass.__dict__:
             descriptor = klass.__dict__["projectionIndex"]
             break
@@ -139,16 +139,16 @@ def test_logiclanguage::projectedaggregateexpression_has_projectionIndex():
 
 
 
-def test_logiclanguage::count_is_not_abstract():
-    assert not inspect.isabstract(logiclanguage::Count)
+def test_logiclanguage_count_is_not_abstract():
+    assert not inspect.isabstract(logiclanguage_Count)
 
 
-def test_logiclanguage::count_constructor_exists():
-    assert callable(logiclanguage::Count.__init__)
+def test_logiclanguage_count_constructor_exists():
+    assert callable(logiclanguage_Count.__init__)
 
 
-def test_logiclanguage::count_constructor_args():
-    sig = inspect.signature(logiclanguage::Count.__init__)
+def test_logiclanguage_count_constructor_args():
+    sig = inspect.signature(logiclanguage_Count.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -167,58 +167,58 @@ def test_projectedaggregateexpression_constructor_args():
 
 
 
-def test_logiclanguage::max_is_not_abstract():
-    assert not inspect.isabstract(logiclanguage::Max)
+def test_logiclanguage_max_is_not_abstract():
+    assert not inspect.isabstract(logiclanguage_Max)
 
 
-def test_logiclanguage::max_constructor_exists():
-    assert callable(logiclanguage::Max.__init__)
+def test_logiclanguage_max_constructor_exists():
+    assert callable(logiclanguage_Max.__init__)
 
 
-def test_logiclanguage::max_constructor_args():
-    sig = inspect.signature(logiclanguage::Max.__init__)
+def test_logiclanguage_max_constructor_args():
+    sig = inspect.signature(logiclanguage_Max.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_logiclanguage::min_is_not_abstract():
-    assert not inspect.isabstract(logiclanguage::Min)
+def test_logiclanguage_min_is_not_abstract():
+    assert not inspect.isabstract(logiclanguage_Min)
 
 
-def test_logiclanguage::min_constructor_exists():
-    assert callable(logiclanguage::Min.__init__)
+def test_logiclanguage_min_constructor_exists():
+    assert callable(logiclanguage_Min.__init__)
 
 
-def test_logiclanguage::min_constructor_args():
-    sig = inspect.signature(logiclanguage::Min.__init__)
+def test_logiclanguage_min_constructor_args():
+    sig = inspect.signature(logiclanguage_Min.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_logiclanguage::sum_is_not_abstract():
-    assert not inspect.isabstract(logiclanguage::Sum)
+def test_logiclanguage_sum_is_not_abstract():
+    assert not inspect.isabstract(logiclanguage_Sum)
 
 
-def test_logiclanguage::sum_constructor_exists():
-    assert callable(logiclanguage::Sum.__init__)
+def test_logiclanguage_sum_constructor_exists():
+    assert callable(logiclanguage_Sum.__init__)
 
 
-def test_logiclanguage::sum_constructor_args():
-    sig = inspect.signature(logiclanguage::Sum.__init__)
+def test_logiclanguage_sum_constructor_args():
+    sig = inspect.signature(logiclanguage_Sum.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_logiclanguage::aggregatedparametersubstitution_is_not_abstract():
-    assert not inspect.isabstract(logiclanguage::AggregatedParameterSubstitution)
+def test_logiclanguage_aggregatedparametersubstitution_is_not_abstract():
+    assert not inspect.isabstract(logiclanguage_AggregatedParameterSubstitution)
 
 
-def test_logiclanguage::aggregatedparametersubstitution_constructor_exists():
-    assert callable(logiclanguage::AggregatedParameterSubstitution.__init__)
+def test_logiclanguage_aggregatedparametersubstitution_constructor_exists():
+    assert callable(logiclanguage_AggregatedParameterSubstitution.__init__)
 
 
-def test_logiclanguage::aggregatedparametersubstitution_constructor_args():
-    sig = inspect.signature(logiclanguage::AggregatedParameterSubstitution.__init__)
+def test_logiclanguage_aggregatedparametersubstitution_constructor_args():
+    sig = inspect.signature(logiclanguage_AggregatedParameterSubstitution.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -237,16 +237,16 @@ def test_relation_constructor_args():
 
 
 
-def test_logiclanguage::relationdefinition_is_not_abstract():
-    assert not inspect.isabstract(logiclanguage::RelationDefinition)
+def test_logiclanguage_relationdefinition_is_not_abstract():
+    assert not inspect.isabstract(logiclanguage_RelationDefinition)
 
 
-def test_logiclanguage::relationdefinition_constructor_exists():
-    assert callable(logiclanguage::RelationDefinition.__init__)
+def test_logiclanguage_relationdefinition_constructor_exists():
+    assert callable(logiclanguage_RelationDefinition.__init__)
 
 
-def test_logiclanguage::relationdefinition_constructor_args():
-    sig = inspect.signature(logiclanguage::RelationDefinition.__init__)
+def test_logiclanguage_relationdefinition_constructor_args():
+    sig = inspect.signature(logiclanguage_RelationDefinition.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -265,44 +265,44 @@ def test_constant_constructor_args():
 
 
 
-def test_logiclanguage::constantdeclaration_is_not_abstract():
-    assert not inspect.isabstract(logiclanguage::ConstantDeclaration)
+def test_logiclanguage_constantdeclaration_is_not_abstract():
+    assert not inspect.isabstract(logiclanguage_ConstantDeclaration)
 
 
-def test_logiclanguage::constantdeclaration_constructor_exists():
-    assert callable(logiclanguage::ConstantDeclaration.__init__)
+def test_logiclanguage_constantdeclaration_constructor_exists():
+    assert callable(logiclanguage_ConstantDeclaration.__init__)
 
 
-def test_logiclanguage::constantdeclaration_constructor_args():
-    sig = inspect.signature(logiclanguage::ConstantDeclaration.__init__)
+def test_logiclanguage_constantdeclaration_constructor_args():
+    sig = inspect.signature(logiclanguage_ConstantDeclaration.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_logiclanguage::constantdefinition_is_not_abstract():
-    assert not inspect.isabstract(logiclanguage::ConstantDefinition)
+def test_logiclanguage_constantdefinition_is_not_abstract():
+    assert not inspect.isabstract(logiclanguage_ConstantDefinition)
 
 
-def test_logiclanguage::constantdefinition_constructor_exists():
-    assert callable(logiclanguage::ConstantDefinition.__init__)
+def test_logiclanguage_constantdefinition_constructor_exists():
+    assert callable(logiclanguage_ConstantDefinition.__init__)
 
 
-def test_logiclanguage::constantdefinition_constructor_args():
-    sig = inspect.signature(logiclanguage::ConstantDefinition.__init__)
+def test_logiclanguage_constantdefinition_constructor_args():
+    sig = inspect.signature(logiclanguage_ConstantDefinition.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_logiclanguage::constantannotation_is_not_abstract():
-    assert not inspect.isabstract(logiclanguage::ConstantAnnotation)
+def test_logiclanguage_constantannotation_is_not_abstract():
+    assert not inspect.isabstract(logiclanguage_ConstantAnnotation)
 
 
-def test_logiclanguage::constantannotation_constructor_exists():
-    assert callable(logiclanguage::ConstantAnnotation.__init__)
+def test_logiclanguage_constantannotation_constructor_exists():
+    assert callable(logiclanguage_ConstantAnnotation.__init__)
 
 
-def test_logiclanguage::constantannotation_constructor_args():
-    sig = inspect.signature(logiclanguage::ConstantAnnotation.__init__)
+def test_logiclanguage_constantannotation_constructor_args():
+    sig = inspect.signature(logiclanguage_ConstantAnnotation.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -321,93 +321,93 @@ def test_function_constructor_args():
 
 
 
-def test_logiclanguage::functiondeclaration_is_not_abstract():
-    assert not inspect.isabstract(logiclanguage::FunctionDeclaration)
+def test_logiclanguage_functiondeclaration_is_not_abstract():
+    assert not inspect.isabstract(logiclanguage_FunctionDeclaration)
 
 
-def test_logiclanguage::functiondeclaration_constructor_exists():
-    assert callable(logiclanguage::FunctionDeclaration.__init__)
+def test_logiclanguage_functiondeclaration_constructor_exists():
+    assert callable(logiclanguage_FunctionDeclaration.__init__)
 
 
-def test_logiclanguage::functiondeclaration_constructor_args():
-    sig = inspect.signature(logiclanguage::FunctionDeclaration.__init__)
+def test_logiclanguage_functiondeclaration_constructor_args():
+    sig = inspect.signature(logiclanguage_FunctionDeclaration.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_logiclanguage::functiondefinition_is_not_abstract():
-    assert not inspect.isabstract(logiclanguage::FunctionDefinition)
+def test_logiclanguage_functiondefinition_is_not_abstract():
+    assert not inspect.isabstract(logiclanguage_FunctionDefinition)
 
 
-def test_logiclanguage::functiondefinition_constructor_exists():
-    assert callable(logiclanguage::FunctionDefinition.__init__)
+def test_logiclanguage_functiondefinition_constructor_exists():
+    assert callable(logiclanguage_FunctionDefinition.__init__)
 
 
-def test_logiclanguage::functiondefinition_constructor_args():
-    sig = inspect.signature(logiclanguage::FunctionDefinition.__init__)
+def test_logiclanguage_functiondefinition_constructor_args():
+    sig = inspect.signature(logiclanguage_FunctionDefinition.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_logiclanguage::relationdeclaration_is_not_abstract():
-    assert not inspect.isabstract(logiclanguage::RelationDeclaration)
+def test_logiclanguage_relationdeclaration_is_not_abstract():
+    assert not inspect.isabstract(logiclanguage_RelationDeclaration)
 
 
-def test_logiclanguage::relationdeclaration_constructor_exists():
-    assert callable(logiclanguage::RelationDeclaration.__init__)
+def test_logiclanguage_relationdeclaration_constructor_exists():
+    assert callable(logiclanguage_RelationDeclaration.__init__)
 
 
-def test_logiclanguage::relationdeclaration_constructor_args():
-    sig = inspect.signature(logiclanguage::RelationDeclaration.__init__)
+def test_logiclanguage_relationdeclaration_constructor_args():
+    sig = inspect.signature(logiclanguage_RelationDeclaration.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_logiclanguage::relationannotation_is_not_abstract():
-    assert not inspect.isabstract(logiclanguage::RelationAnnotation)
+def test_logiclanguage_relationannotation_is_not_abstract():
+    assert not inspect.isabstract(logiclanguage_RelationAnnotation)
 
 
-def test_logiclanguage::relationannotation_constructor_exists():
-    assert callable(logiclanguage::RelationAnnotation.__init__)
+def test_logiclanguage_relationannotation_constructor_exists():
+    assert callable(logiclanguage_RelationAnnotation.__init__)
 
 
-def test_logiclanguage::relationannotation_constructor_args():
-    sig = inspect.signature(logiclanguage::RelationAnnotation.__init__)
+def test_logiclanguage_relationannotation_constructor_args():
+    sig = inspect.signature(logiclanguage_RelationAnnotation.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_logiclanguage::assertionannotation_is_not_abstract():
-    assert not inspect.isabstract(logiclanguage::AssertionAnnotation)
+def test_logiclanguage_assertionannotation_is_not_abstract():
+    assert not inspect.isabstract(logiclanguage_AssertionAnnotation)
 
 
-def test_logiclanguage::assertionannotation_constructor_exists():
-    assert callable(logiclanguage::AssertionAnnotation.__init__)
+def test_logiclanguage_assertionannotation_constructor_exists():
+    assert callable(logiclanguage_AssertionAnnotation.__init__)
 
 
-def test_logiclanguage::assertionannotation_constructor_args():
-    sig = inspect.signature(logiclanguage::AssertionAnnotation.__init__)
+def test_logiclanguage_assertionannotation_constructor_args():
+    sig = inspect.signature(logiclanguage_AssertionAnnotation.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_logiclanguage::assertion_is_not_abstract():
-    assert not inspect.isabstract(logiclanguage::Assertion)
+def test_logiclanguage_assertion_is_not_abstract():
+    assert not inspect.isabstract(logiclanguage_Assertion)
 
 
-def test_logiclanguage::assertion_constructor_exists():
-    assert callable(logiclanguage::Assertion.__init__)
+def test_logiclanguage_assertion_constructor_exists():
+    assert callable(logiclanguage_Assertion.__init__)
 
 
-def test_logiclanguage::assertion_constructor_args():
-    sig = inspect.signature(logiclanguage::Assertion.__init__)
+def test_logiclanguage_assertion_constructor_args():
+    sig = inspect.signature(logiclanguage_Assertion.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_logiclanguage::assertion_has_name():
-    assert hasattr(logiclanguage::Assertion, "name")
+def test_logiclanguage_assertion_has_name():
+    assert hasattr(logiclanguage_Assertion, "name")
     descriptor = None
-    for klass in logiclanguage::Assertion.__mro__:
+    for klass in logiclanguage_Assertion.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -415,30 +415,30 @@ def test_logiclanguage::assertion_has_name():
 
 
 
-def test_logiclanguage::termdescription_is_not_abstract():
-    assert not inspect.isabstract(logiclanguage::TermDescription)
+def test_logiclanguage_termdescription_is_not_abstract():
+    assert not inspect.isabstract(logiclanguage_TermDescription)
 
 
-def test_logiclanguage::termdescription_constructor_exists():
-    assert callable(logiclanguage::TermDescription.__init__)
+def test_logiclanguage_termdescription_constructor_exists():
+    assert callable(logiclanguage_TermDescription.__init__)
 
 
-def test_logiclanguage::termdescription_constructor_args():
-    sig = inspect.signature(logiclanguage::TermDescription.__init__)
+def test_logiclanguage_termdescription_constructor_args():
+    sig = inspect.signature(logiclanguage_TermDescription.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_logiclanguage::typedescriptor_is_not_abstract():
-    assert not inspect.isabstract(logiclanguage::TypeDescriptor)
+def test_logiclanguage_typedescriptor_is_not_abstract():
+    assert not inspect.isabstract(logiclanguage_TypeDescriptor)
 
 
-def test_logiclanguage::typedescriptor_constructor_exists():
-    assert callable(logiclanguage::TypeDescriptor.__init__)
+def test_logiclanguage_typedescriptor_constructor_exists():
+    assert callable(logiclanguage_TypeDescriptor.__init__)
 
 
-def test_logiclanguage::typedescriptor_constructor_args():
-    sig = inspect.signature(logiclanguage::TypeDescriptor.__init__)
+def test_logiclanguage_typedescriptor_constructor_args():
+    sig = inspect.signature(logiclanguage_TypeDescriptor.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -457,86 +457,86 @@ def test_numericoperation_constructor_args():
 
 
 
-def test_logiclanguage::divison_is_not_abstract():
-    assert not inspect.isabstract(logiclanguage::Divison)
+def test_logiclanguage_divison_is_not_abstract():
+    assert not inspect.isabstract(logiclanguage_Divison)
 
 
-def test_logiclanguage::divison_constructor_exists():
-    assert callable(logiclanguage::Divison.__init__)
+def test_logiclanguage_divison_constructor_exists():
+    assert callable(logiclanguage_Divison.__init__)
 
 
-def test_logiclanguage::divison_constructor_args():
-    sig = inspect.signature(logiclanguage::Divison.__init__)
+def test_logiclanguage_divison_constructor_args():
+    sig = inspect.signature(logiclanguage_Divison.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_logiclanguage::pow_is_not_abstract():
-    assert not inspect.isabstract(logiclanguage::Pow)
+def test_logiclanguage_mod_is_not_abstract():
+    assert not inspect.isabstract(logiclanguage_Mod)
 
 
-def test_logiclanguage::pow_constructor_exists():
-    assert callable(logiclanguage::Pow.__init__)
+def test_logiclanguage_mod_constructor_exists():
+    assert callable(logiclanguage_Mod.__init__)
 
 
-def test_logiclanguage::pow_constructor_args():
-    sig = inspect.signature(logiclanguage::Pow.__init__)
+def test_logiclanguage_mod_constructor_args():
+    sig = inspect.signature(logiclanguage_Mod.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_logiclanguage::multiply_is_not_abstract():
-    assert not inspect.isabstract(logiclanguage::Multiply)
+def test_logiclanguage_multiply_is_not_abstract():
+    assert not inspect.isabstract(logiclanguage_Multiply)
 
 
-def test_logiclanguage::multiply_constructor_exists():
-    assert callable(logiclanguage::Multiply.__init__)
+def test_logiclanguage_multiply_constructor_exists():
+    assert callable(logiclanguage_Multiply.__init__)
 
 
-def test_logiclanguage::multiply_constructor_args():
-    sig = inspect.signature(logiclanguage::Multiply.__init__)
+def test_logiclanguage_multiply_constructor_args():
+    sig = inspect.signature(logiclanguage_Multiply.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_logiclanguage::minus_is_not_abstract():
-    assert not inspect.isabstract(logiclanguage::Minus)
+def test_logiclanguage_pow_is_not_abstract():
+    assert not inspect.isabstract(logiclanguage_Pow)
 
 
-def test_logiclanguage::minus_constructor_exists():
-    assert callable(logiclanguage::Minus.__init__)
+def test_logiclanguage_pow_constructor_exists():
+    assert callable(logiclanguage_Pow.__init__)
 
 
-def test_logiclanguage::minus_constructor_args():
-    sig = inspect.signature(logiclanguage::Minus.__init__)
+def test_logiclanguage_pow_constructor_args():
+    sig = inspect.signature(logiclanguage_Pow.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_logiclanguage::mod_is_not_abstract():
-    assert not inspect.isabstract(logiclanguage::Mod)
+def test_logiclanguage_minus_is_not_abstract():
+    assert not inspect.isabstract(logiclanguage_Minus)
 
 
-def test_logiclanguage::mod_constructor_exists():
-    assert callable(logiclanguage::Mod.__init__)
+def test_logiclanguage_minus_constructor_exists():
+    assert callable(logiclanguage_Minus.__init__)
 
 
-def test_logiclanguage::mod_constructor_args():
-    sig = inspect.signature(logiclanguage::Mod.__init__)
+def test_logiclanguage_minus_constructor_args():
+    sig = inspect.signature(logiclanguage_Minus.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_logiclanguage::plus_is_not_abstract():
-    assert not inspect.isabstract(logiclanguage::Plus)
+def test_logiclanguage_plus_is_not_abstract():
+    assert not inspect.isabstract(logiclanguage_Plus)
 
 
-def test_logiclanguage::plus_constructor_exists():
-    assert callable(logiclanguage::Plus.__init__)
+def test_logiclanguage_plus_constructor_exists():
+    assert callable(logiclanguage_Plus.__init__)
 
 
-def test_logiclanguage::plus_constructor_args():
-    sig = inspect.signature(logiclanguage::Plus.__init__)
+def test_logiclanguage_plus_constructor_args():
+    sig = inspect.signature(logiclanguage_Plus.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -555,72 +555,72 @@ def test_booloperation_constructor_args():
 
 
 
-def test_logiclanguage::iff_is_not_abstract():
-    assert not inspect.isabstract(logiclanguage::Iff)
+def test_logiclanguage_or_is_not_abstract():
+    assert not inspect.isabstract(logiclanguage_Or)
 
 
-def test_logiclanguage::iff_constructor_exists():
-    assert callable(logiclanguage::Iff.__init__)
+def test_logiclanguage_or_constructor_exists():
+    assert callable(logiclanguage_Or.__init__)
 
 
-def test_logiclanguage::iff_constructor_args():
-    sig = inspect.signature(logiclanguage::Iff.__init__)
+def test_logiclanguage_or_constructor_args():
+    sig = inspect.signature(logiclanguage_Or.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_logiclanguage::not_is_not_abstract():
-    assert not inspect.isabstract(logiclanguage::Not)
+def test_logiclanguage_not_is_not_abstract():
+    assert not inspect.isabstract(logiclanguage_Not)
 
 
-def test_logiclanguage::not_constructor_exists():
-    assert callable(logiclanguage::Not.__init__)
+def test_logiclanguage_not_constructor_exists():
+    assert callable(logiclanguage_Not.__init__)
 
 
-def test_logiclanguage::not_constructor_args():
-    sig = inspect.signature(logiclanguage::Not.__init__)
+def test_logiclanguage_not_constructor_args():
+    sig = inspect.signature(logiclanguage_Not.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_logiclanguage::or_is_not_abstract():
-    assert not inspect.isabstract(logiclanguage::Or)
+def test_logiclanguage_iff_is_not_abstract():
+    assert not inspect.isabstract(logiclanguage_Iff)
 
 
-def test_logiclanguage::or_constructor_exists():
-    assert callable(logiclanguage::Or.__init__)
+def test_logiclanguage_iff_constructor_exists():
+    assert callable(logiclanguage_Iff.__init__)
 
 
-def test_logiclanguage::or_constructor_args():
-    sig = inspect.signature(logiclanguage::Or.__init__)
+def test_logiclanguage_iff_constructor_args():
+    sig = inspect.signature(logiclanguage_Iff.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_logiclanguage::impl_is_not_abstract():
-    assert not inspect.isabstract(logiclanguage::Impl)
+def test_logiclanguage_impl_is_not_abstract():
+    assert not inspect.isabstract(logiclanguage_Impl)
 
 
-def test_logiclanguage::impl_constructor_exists():
-    assert callable(logiclanguage::Impl.__init__)
+def test_logiclanguage_impl_constructor_exists():
+    assert callable(logiclanguage_Impl.__init__)
 
 
-def test_logiclanguage::impl_constructor_args():
-    sig = inspect.signature(logiclanguage::Impl.__init__)
+def test_logiclanguage_impl_constructor_args():
+    sig = inspect.signature(logiclanguage_Impl.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_logiclanguage::and_is_not_abstract():
-    assert not inspect.isabstract(logiclanguage::And)
+def test_logiclanguage_and_is_not_abstract():
+    assert not inspect.isabstract(logiclanguage_And)
 
 
-def test_logiclanguage::and_constructor_exists():
-    assert callable(logiclanguage::And.__init__)
+def test_logiclanguage_and_constructor_exists():
+    assert callable(logiclanguage_And.__init__)
 
 
-def test_logiclanguage::and_constructor_args():
-    sig = inspect.signature(logiclanguage::And.__init__)
+def test_logiclanguage_and_constructor_args():
+    sig = inspect.signature(logiclanguage_And.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -639,86 +639,86 @@ def test_primitiverelation_constructor_args():
 
 
 
-def test_logiclanguage::lessthan_is_not_abstract():
-    assert not inspect.isabstract(logiclanguage::LessThan)
+def test_logiclanguage_moreorequalthan_is_not_abstract():
+    assert not inspect.isabstract(logiclanguage_MoreOrEqualThan)
 
 
-def test_logiclanguage::lessthan_constructor_exists():
-    assert callable(logiclanguage::LessThan.__init__)
+def test_logiclanguage_moreorequalthan_constructor_exists():
+    assert callable(logiclanguage_MoreOrEqualThan.__init__)
 
 
-def test_logiclanguage::lessthan_constructor_args():
-    sig = inspect.signature(logiclanguage::LessThan.__init__)
+def test_logiclanguage_moreorequalthan_constructor_args():
+    sig = inspect.signature(logiclanguage_MoreOrEqualThan.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_logiclanguage::morethan_is_not_abstract():
-    assert not inspect.isabstract(logiclanguage::MoreThan)
+def test_logiclanguage_lessorequalthan_is_not_abstract():
+    assert not inspect.isabstract(logiclanguage_LessOrEqualThan)
 
 
-def test_logiclanguage::morethan_constructor_exists():
-    assert callable(logiclanguage::MoreThan.__init__)
+def test_logiclanguage_lessorequalthan_constructor_exists():
+    assert callable(logiclanguage_LessOrEqualThan.__init__)
 
 
-def test_logiclanguage::morethan_constructor_args():
-    sig = inspect.signature(logiclanguage::MoreThan.__init__)
+def test_logiclanguage_lessorequalthan_constructor_args():
+    sig = inspect.signature(logiclanguage_LessOrEqualThan.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_logiclanguage::moreorequalthan_is_not_abstract():
-    assert not inspect.isabstract(logiclanguage::MoreOrEqualThan)
+def test_logiclanguage_distinct_is_not_abstract():
+    assert not inspect.isabstract(logiclanguage_Distinct)
 
 
-def test_logiclanguage::moreorequalthan_constructor_exists():
-    assert callable(logiclanguage::MoreOrEqualThan.__init__)
+def test_logiclanguage_distinct_constructor_exists():
+    assert callable(logiclanguage_Distinct.__init__)
 
 
-def test_logiclanguage::moreorequalthan_constructor_args():
-    sig = inspect.signature(logiclanguage::MoreOrEqualThan.__init__)
+def test_logiclanguage_distinct_constructor_args():
+    sig = inspect.signature(logiclanguage_Distinct.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_logiclanguage::lessorequalthan_is_not_abstract():
-    assert not inspect.isabstract(logiclanguage::LessOrEqualThan)
+def test_logiclanguage_lessthan_is_not_abstract():
+    assert not inspect.isabstract(logiclanguage_LessThan)
 
 
-def test_logiclanguage::lessorequalthan_constructor_exists():
-    assert callable(logiclanguage::LessOrEqualThan.__init__)
+def test_logiclanguage_lessthan_constructor_exists():
+    assert callable(logiclanguage_LessThan.__init__)
 
 
-def test_logiclanguage::lessorequalthan_constructor_args():
-    sig = inspect.signature(logiclanguage::LessOrEqualThan.__init__)
+def test_logiclanguage_lessthan_constructor_args():
+    sig = inspect.signature(logiclanguage_LessThan.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_logiclanguage::distinct_is_not_abstract():
-    assert not inspect.isabstract(logiclanguage::Distinct)
+def test_logiclanguage_morethan_is_not_abstract():
+    assert not inspect.isabstract(logiclanguage_MoreThan)
 
 
-def test_logiclanguage::distinct_constructor_exists():
-    assert callable(logiclanguage::Distinct.__init__)
+def test_logiclanguage_morethan_constructor_exists():
+    assert callable(logiclanguage_MoreThan.__init__)
 
 
-def test_logiclanguage::distinct_constructor_args():
-    sig = inspect.signature(logiclanguage::Distinct.__init__)
+def test_logiclanguage_morethan_constructor_args():
+    sig = inspect.signature(logiclanguage_MoreThan.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_logiclanguage::equals_is_not_abstract():
-    assert not inspect.isabstract(logiclanguage::Equals)
+def test_logiclanguage_equals_is_not_abstract():
+    assert not inspect.isabstract(logiclanguage_Equals)
 
 
-def test_logiclanguage::equals_constructor_exists():
-    assert callable(logiclanguage::Equals.__init__)
+def test_logiclanguage_equals_constructor_exists():
+    assert callable(logiclanguage_Equals.__init__)
 
 
-def test_logiclanguage::equals_constructor_args():
-    sig = inspect.signature(logiclanguage::Equals.__init__)
+def test_logiclanguage_equals_constructor_args():
+    sig = inspect.signature(logiclanguage_Equals.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -737,128 +737,128 @@ def test_term_constructor_args():
 
 
 
-def test_logiclanguage::transitiveclosure_is_not_abstract():
-    assert not inspect.isabstract(logiclanguage::TransitiveClosure)
+def test_logiclanguage_primitiverelation_is_not_abstract():
+    assert not inspect.isabstract(logiclanguage_PrimitiveRelation)
 
 
-def test_logiclanguage::transitiveclosure_constructor_exists():
-    assert callable(logiclanguage::TransitiveClosure.__init__)
+def test_logiclanguage_primitiverelation_constructor_exists():
+    assert callable(logiclanguage_PrimitiveRelation.__init__)
 
 
-def test_logiclanguage::transitiveclosure_constructor_args():
-    sig = inspect.signature(logiclanguage::TransitiveClosure.__init__)
+def test_logiclanguage_primitiverelation_constructor_args():
+    sig = inspect.signature(logiclanguage_PrimitiveRelation.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_logiclanguage::aggregateexpression_is_not_abstract():
-    assert not inspect.isabstract(logiclanguage::AggregateExpression)
+def test_logiclanguage_ifthenelse_is_not_abstract():
+    assert not inspect.isabstract(logiclanguage_IfThenElse)
 
 
-def test_logiclanguage::aggregateexpression_constructor_exists():
-    assert callable(logiclanguage::AggregateExpression.__init__)
+def test_logiclanguage_ifthenelse_constructor_exists():
+    assert callable(logiclanguage_IfThenElse.__init__)
 
 
-def test_logiclanguage::aggregateexpression_constructor_args():
-    sig = inspect.signature(logiclanguage::AggregateExpression.__init__)
+def test_logiclanguage_ifthenelse_constructor_args():
+    sig = inspect.signature(logiclanguage_IfThenElse.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_logiclanguage::instanceof_is_not_abstract():
-    assert not inspect.isabstract(logiclanguage::InstanceOf)
+def test_logiclanguage_booloperation_is_not_abstract():
+    assert not inspect.isabstract(logiclanguage_BoolOperation)
 
 
-def test_logiclanguage::instanceof_constructor_exists():
-    assert callable(logiclanguage::InstanceOf.__init__)
+def test_logiclanguage_booloperation_constructor_exists():
+    assert callable(logiclanguage_BoolOperation.__init__)
 
 
-def test_logiclanguage::instanceof_constructor_args():
-    sig = inspect.signature(logiclanguage::InstanceOf.__init__)
+def test_logiclanguage_booloperation_constructor_args():
+    sig = inspect.signature(logiclanguage_BoolOperation.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_logiclanguage::numericoperation_is_not_abstract():
-    assert not inspect.isabstract(logiclanguage::NumericOperation)
+def test_logiclanguage_numericoperation_is_not_abstract():
+    assert not inspect.isabstract(logiclanguage_NumericOperation)
 
 
-def test_logiclanguage::numericoperation_constructor_exists():
-    assert callable(logiclanguage::NumericOperation.__init__)
+def test_logiclanguage_numericoperation_constructor_exists():
+    assert callable(logiclanguage_NumericOperation.__init__)
 
 
-def test_logiclanguage::numericoperation_constructor_args():
-    sig = inspect.signature(logiclanguage::NumericOperation.__init__)
+def test_logiclanguage_numericoperation_constructor_args():
+    sig = inspect.signature(logiclanguage_NumericOperation.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_logiclanguage::primitiverelation_is_not_abstract():
-    assert not inspect.isabstract(logiclanguage::PrimitiveRelation)
+def test_logiclanguage_unknownbecauseuninterpreted_is_not_abstract():
+    assert not inspect.isabstract(logiclanguage_UnknownBecauseUninterpreted)
 
 
-def test_logiclanguage::primitiverelation_constructor_exists():
-    assert callable(logiclanguage::PrimitiveRelation.__init__)
+def test_logiclanguage_unknownbecauseuninterpreted_constructor_exists():
+    assert callable(logiclanguage_UnknownBecauseUninterpreted.__init__)
 
 
-def test_logiclanguage::primitiverelation_constructor_args():
-    sig = inspect.signature(logiclanguage::PrimitiveRelation.__init__)
+def test_logiclanguage_unknownbecauseuninterpreted_constructor_args():
+    sig = inspect.signature(logiclanguage_UnknownBecauseUninterpreted.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_logiclanguage::booloperation_is_not_abstract():
-    assert not inspect.isabstract(logiclanguage::BoolOperation)
+def test_logiclanguage_aggregateexpression_is_not_abstract():
+    assert not inspect.isabstract(logiclanguage_AggregateExpression)
 
 
-def test_logiclanguage::booloperation_constructor_exists():
-    assert callable(logiclanguage::BoolOperation.__init__)
+def test_logiclanguage_aggregateexpression_constructor_exists():
+    assert callable(logiclanguage_AggregateExpression.__init__)
 
 
-def test_logiclanguage::booloperation_constructor_args():
-    sig = inspect.signature(logiclanguage::BoolOperation.__init__)
+def test_logiclanguage_aggregateexpression_constructor_args():
+    sig = inspect.signature(logiclanguage_AggregateExpression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_logiclanguage::unknownbecauseuninterpreted_is_not_abstract():
-    assert not inspect.isabstract(logiclanguage::UnknownBecauseUninterpreted)
+def test_logiclanguage_transitiveclosure_is_not_abstract():
+    assert not inspect.isabstract(logiclanguage_TransitiveClosure)
 
 
-def test_logiclanguage::unknownbecauseuninterpreted_constructor_exists():
-    assert callable(logiclanguage::UnknownBecauseUninterpreted.__init__)
+def test_logiclanguage_transitiveclosure_constructor_exists():
+    assert callable(logiclanguage_TransitiveClosure.__init__)
 
 
-def test_logiclanguage::unknownbecauseuninterpreted_constructor_args():
-    sig = inspect.signature(logiclanguage::UnknownBecauseUninterpreted.__init__)
+def test_logiclanguage_transitiveclosure_constructor_args():
+    sig = inspect.signature(logiclanguage_TransitiveClosure.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_logiclanguage::ifthenelse_is_not_abstract():
-    assert not inspect.isabstract(logiclanguage::IfThenElse)
+def test_logiclanguage_instanceof_is_not_abstract():
+    assert not inspect.isabstract(logiclanguage_InstanceOf)
 
 
-def test_logiclanguage::ifthenelse_constructor_exists():
-    assert callable(logiclanguage::IfThenElse.__init__)
+def test_logiclanguage_instanceof_constructor_exists():
+    assert callable(logiclanguage_InstanceOf.__init__)
 
 
-def test_logiclanguage::ifthenelse_constructor_args():
-    sig = inspect.signature(logiclanguage::IfThenElse.__init__)
+def test_logiclanguage_instanceof_constructor_args():
+    sig = inspect.signature(logiclanguage_InstanceOf.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_logiclanguage::symbolicvalue_is_not_abstract():
-    assert not inspect.isabstract(logiclanguage::SymbolicValue)
+def test_logiclanguage_symbolicvalue_is_not_abstract():
+    assert not inspect.isabstract(logiclanguage_SymbolicValue)
 
 
-def test_logiclanguage::symbolicvalue_constructor_exists():
-    assert callable(logiclanguage::SymbolicValue.__init__)
+def test_logiclanguage_symbolicvalue_constructor_exists():
+    assert callable(logiclanguage_SymbolicValue.__init__)
 
 
-def test_logiclanguage::symbolicvalue_constructor_args():
-    sig = inspect.signature(logiclanguage::SymbolicValue.__init__)
+def test_logiclanguage_symbolicvalue_constructor_args():
+    sig = inspect.signature(logiclanguage_SymbolicValue.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -877,23 +877,23 @@ def test_termdescription_constructor_args():
 
 
 
-def test_logiclanguage::symbolicdeclaration_is_not_abstract():
-    assert not inspect.isabstract(logiclanguage::SymbolicDeclaration)
+def test_logiclanguage_symbolicdeclaration_is_not_abstract():
+    assert not inspect.isabstract(logiclanguage_SymbolicDeclaration)
 
 
-def test_logiclanguage::symbolicdeclaration_constructor_exists():
-    assert callable(logiclanguage::SymbolicDeclaration.__init__)
+def test_logiclanguage_symbolicdeclaration_constructor_exists():
+    assert callable(logiclanguage_SymbolicDeclaration.__init__)
 
 
-def test_logiclanguage::symbolicdeclaration_constructor_args():
-    sig = inspect.signature(logiclanguage::SymbolicDeclaration.__init__)
+def test_logiclanguage_symbolicdeclaration_constructor_args():
+    sig = inspect.signature(logiclanguage_SymbolicDeclaration.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_logiclanguage::symbolicdeclaration_has_name():
-    assert hasattr(logiclanguage::SymbolicDeclaration, "name")
+def test_logiclanguage_symbolicdeclaration_has_name():
+    assert hasattr(logiclanguage_SymbolicDeclaration, "name")
     descriptor = None
-    for klass in logiclanguage::SymbolicDeclaration.__mro__:
+    for klass in logiclanguage_SymbolicDeclaration.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -901,30 +901,30 @@ def test_logiclanguage::symbolicdeclaration_has_name():
 
 
 
-def test_logiclanguage::term_is_not_abstract():
-    assert not inspect.isabstract(logiclanguage::Term)
+def test_logiclanguage_term_is_not_abstract():
+    assert not inspect.isabstract(logiclanguage_Term)
 
 
-def test_logiclanguage::term_constructor_exists():
-    assert callable(logiclanguage::Term.__init__)
+def test_logiclanguage_term_constructor_exists():
+    assert callable(logiclanguage_Term.__init__)
 
 
-def test_logiclanguage::term_constructor_args():
-    sig = inspect.signature(logiclanguage::Term.__init__)
+def test_logiclanguage_term_constructor_args():
+    sig = inspect.signature(logiclanguage_Term.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_logiclanguage::functionannotation_is_not_abstract():
-    assert not inspect.isabstract(logiclanguage::FunctionAnnotation)
+def test_logiclanguage_functionannotation_is_not_abstract():
+    assert not inspect.isabstract(logiclanguage_FunctionAnnotation)
 
 
-def test_logiclanguage::functionannotation_constructor_exists():
-    assert callable(logiclanguage::FunctionAnnotation.__init__)
+def test_logiclanguage_functionannotation_constructor_exists():
+    assert callable(logiclanguage_FunctionAnnotation.__init__)
 
 
-def test_logiclanguage::functionannotation_constructor_args():
-    sig = inspect.signature(logiclanguage::FunctionAnnotation.__init__)
+def test_logiclanguage_functionannotation_constructor_args():
+    sig = inspect.signature(logiclanguage_FunctionAnnotation.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -943,58 +943,58 @@ def test_primitivetypereference_constructor_args():
 
 
 
-def test_logiclanguage::stringtypereference_is_not_abstract():
-    assert not inspect.isabstract(logiclanguage::StringTypeReference)
+def test_logiclanguage_stringtypereference_is_not_abstract():
+    assert not inspect.isabstract(logiclanguage_StringTypeReference)
 
 
-def test_logiclanguage::stringtypereference_constructor_exists():
-    assert callable(logiclanguage::StringTypeReference.__init__)
+def test_logiclanguage_stringtypereference_constructor_exists():
+    assert callable(logiclanguage_StringTypeReference.__init__)
 
 
-def test_logiclanguage::stringtypereference_constructor_args():
-    sig = inspect.signature(logiclanguage::StringTypeReference.__init__)
+def test_logiclanguage_stringtypereference_constructor_args():
+    sig = inspect.signature(logiclanguage_StringTypeReference.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_logiclanguage::booltypereference_is_not_abstract():
-    assert not inspect.isabstract(logiclanguage::BoolTypeReference)
+def test_logiclanguage_realtypereference_is_not_abstract():
+    assert not inspect.isabstract(logiclanguage_RealTypeReference)
 
 
-def test_logiclanguage::booltypereference_constructor_exists():
-    assert callable(logiclanguage::BoolTypeReference.__init__)
+def test_logiclanguage_realtypereference_constructor_exists():
+    assert callable(logiclanguage_RealTypeReference.__init__)
 
 
-def test_logiclanguage::booltypereference_constructor_args():
-    sig = inspect.signature(logiclanguage::BoolTypeReference.__init__)
+def test_logiclanguage_realtypereference_constructor_args():
+    sig = inspect.signature(logiclanguage_RealTypeReference.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_logiclanguage::realtypereference_is_not_abstract():
-    assert not inspect.isabstract(logiclanguage::RealTypeReference)
+def test_logiclanguage_booltypereference_is_not_abstract():
+    assert not inspect.isabstract(logiclanguage_BoolTypeReference)
 
 
-def test_logiclanguage::realtypereference_constructor_exists():
-    assert callable(logiclanguage::RealTypeReference.__init__)
+def test_logiclanguage_booltypereference_constructor_exists():
+    assert callable(logiclanguage_BoolTypeReference.__init__)
 
 
-def test_logiclanguage::realtypereference_constructor_args():
-    sig = inspect.signature(logiclanguage::RealTypeReference.__init__)
+def test_logiclanguage_booltypereference_constructor_args():
+    sig = inspect.signature(logiclanguage_BoolTypeReference.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_logiclanguage::inttypereference_is_not_abstract():
-    assert not inspect.isabstract(logiclanguage::IntTypeReference)
+def test_logiclanguage_inttypereference_is_not_abstract():
+    assert not inspect.isabstract(logiclanguage_IntTypeReference)
 
 
-def test_logiclanguage::inttypereference_constructor_exists():
-    assert callable(logiclanguage::IntTypeReference.__init__)
+def test_logiclanguage_inttypereference_constructor_exists():
+    assert callable(logiclanguage_IntTypeReference.__init__)
 
 
-def test_logiclanguage::inttypereference_constructor_args():
-    sig = inspect.signature(logiclanguage::IntTypeReference.__init__)
+def test_logiclanguage_inttypereference_constructor_args():
+    sig = inspect.signature(logiclanguage_IntTypeReference.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1013,44 +1013,44 @@ def test_quantifiedexpression_constructor_args():
 
 
 
-def test_logiclanguage::forall_is_not_abstract():
-    assert not inspect.isabstract(logiclanguage::Forall)
+def test_logiclanguage_forall_is_not_abstract():
+    assert not inspect.isabstract(logiclanguage_Forall)
 
 
-def test_logiclanguage::forall_constructor_exists():
-    assert callable(logiclanguage::Forall.__init__)
+def test_logiclanguage_forall_constructor_exists():
+    assert callable(logiclanguage_Forall.__init__)
 
 
-def test_logiclanguage::forall_constructor_args():
-    sig = inspect.signature(logiclanguage::Forall.__init__)
+def test_logiclanguage_forall_constructor_args():
+    sig = inspect.signature(logiclanguage_Forall.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_logiclanguage::exists_is_not_abstract():
-    assert not inspect.isabstract(logiclanguage::Exists)
+def test_logiclanguage_exists_is_not_abstract():
+    assert not inspect.isabstract(logiclanguage_Exists)
 
 
-def test_logiclanguage::exists_constructor_exists():
-    assert callable(logiclanguage::Exists.__init__)
+def test_logiclanguage_exists_constructor_exists():
+    assert callable(logiclanguage_Exists.__init__)
 
 
-def test_logiclanguage::exists_constructor_args():
-    sig = inspect.signature(logiclanguage::Exists.__init__)
+def test_logiclanguage_exists_constructor_args():
+    sig = inspect.signature(logiclanguage_Exists.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_logiclanguage::quantifiedexpression_is_not_abstract():
-    assert not inspect.isabstract(logiclanguage::QuantifiedExpression)
+def test_logiclanguage_quantifiedexpression_is_not_abstract():
+    assert not inspect.isabstract(logiclanguage_QuantifiedExpression)
 
 
-def test_logiclanguage::quantifiedexpression_constructor_exists():
-    assert callable(logiclanguage::QuantifiedExpression.__init__)
+def test_logiclanguage_quantifiedexpression_constructor_exists():
+    assert callable(logiclanguage_QuantifiedExpression.__init__)
 
 
-def test_logiclanguage::quantifiedexpression_constructor_args():
-    sig = inspect.signature(logiclanguage::QuantifiedExpression.__init__)
+def test_logiclanguage_quantifiedexpression_constructor_args():
+    sig = inspect.signature(logiclanguage_QuantifiedExpression.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1069,23 +1069,23 @@ def test_atomicterm_constructor_args():
 
 
 
-def test_logiclanguage::stringliteral_is_not_abstract():
-    assert not inspect.isabstract(logiclanguage::StringLiteral)
+def test_logiclanguage_boolliteral_is_not_abstract():
+    assert not inspect.isabstract(logiclanguage_BoolLiteral)
 
 
-def test_logiclanguage::stringliteral_constructor_exists():
-    assert callable(logiclanguage::StringLiteral.__init__)
+def test_logiclanguage_boolliteral_constructor_exists():
+    assert callable(logiclanguage_BoolLiteral.__init__)
 
 
-def test_logiclanguage::stringliteral_constructor_args():
-    sig = inspect.signature(logiclanguage::StringLiteral.__init__)
+def test_logiclanguage_boolliteral_constructor_args():
+    sig = inspect.signature(logiclanguage_BoolLiteral.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
 
-def test_logiclanguage::stringliteral_has_value():
-    assert hasattr(logiclanguage::StringLiteral, "value")
+def test_logiclanguage_boolliteral_has_value():
+    assert hasattr(logiclanguage_BoolLiteral, "value")
     descriptor = None
-    for klass in logiclanguage::StringLiteral.__mro__:
+    for klass in logiclanguage_BoolLiteral.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -1093,23 +1093,23 @@ def test_logiclanguage::stringliteral_has_value():
 
 
 
-def test_logiclanguage::boolliteral_is_not_abstract():
-    assert not inspect.isabstract(logiclanguage::BoolLiteral)
+def test_logiclanguage_realliteral_is_not_abstract():
+    assert not inspect.isabstract(logiclanguage_RealLiteral)
 
 
-def test_logiclanguage::boolliteral_constructor_exists():
-    assert callable(logiclanguage::BoolLiteral.__init__)
+def test_logiclanguage_realliteral_constructor_exists():
+    assert callable(logiclanguage_RealLiteral.__init__)
 
 
-def test_logiclanguage::boolliteral_constructor_args():
-    sig = inspect.signature(logiclanguage::BoolLiteral.__init__)
+def test_logiclanguage_realliteral_constructor_args():
+    sig = inspect.signature(logiclanguage_RealLiteral.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
 
-def test_logiclanguage::boolliteral_has_value():
-    assert hasattr(logiclanguage::BoolLiteral, "value")
+def test_logiclanguage_realliteral_has_value():
+    assert hasattr(logiclanguage_RealLiteral, "value")
     descriptor = None
-    for klass in logiclanguage::BoolLiteral.__mro__:
+    for klass in logiclanguage_RealLiteral.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -1117,23 +1117,23 @@ def test_logiclanguage::boolliteral_has_value():
 
 
 
-def test_logiclanguage::realliteral_is_not_abstract():
-    assert not inspect.isabstract(logiclanguage::RealLiteral)
+def test_logiclanguage_stringliteral_is_not_abstract():
+    assert not inspect.isabstract(logiclanguage_StringLiteral)
 
 
-def test_logiclanguage::realliteral_constructor_exists():
-    assert callable(logiclanguage::RealLiteral.__init__)
+def test_logiclanguage_stringliteral_constructor_exists():
+    assert callable(logiclanguage_StringLiteral.__init__)
 
 
-def test_logiclanguage::realliteral_constructor_args():
-    sig = inspect.signature(logiclanguage::RealLiteral.__init__)
+def test_logiclanguage_stringliteral_constructor_args():
+    sig = inspect.signature(logiclanguage_StringLiteral.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
 
-def test_logiclanguage::realliteral_has_value():
-    assert hasattr(logiclanguage::RealLiteral, "value")
+def test_logiclanguage_stringliteral_has_value():
+    assert hasattr(logiclanguage_StringLiteral, "value")
     descriptor = None
-    for klass in logiclanguage::RealLiteral.__mro__:
+    for klass in logiclanguage_StringLiteral.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -1141,23 +1141,23 @@ def test_logiclanguage::realliteral_has_value():
 
 
 
-def test_logiclanguage::intliteral_is_not_abstract():
-    assert not inspect.isabstract(logiclanguage::IntLiteral)
+def test_logiclanguage_intliteral_is_not_abstract():
+    assert not inspect.isabstract(logiclanguage_IntLiteral)
 
 
-def test_logiclanguage::intliteral_constructor_exists():
-    assert callable(logiclanguage::IntLiteral.__init__)
+def test_logiclanguage_intliteral_constructor_exists():
+    assert callable(logiclanguage_IntLiteral.__init__)
 
 
-def test_logiclanguage::intliteral_constructor_args():
-    sig = inspect.signature(logiclanguage::IntLiteral.__init__)
+def test_logiclanguage_intliteral_constructor_args():
+    sig = inspect.signature(logiclanguage_IntLiteral.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
 
-def test_logiclanguage::intliteral_has_value():
-    assert hasattr(logiclanguage::IntLiteral, "value")
+def test_logiclanguage_intliteral_has_value():
+    assert hasattr(logiclanguage_IntLiteral, "value")
     descriptor = None
-    for klass in logiclanguage::IntLiteral.__mro__:
+    for klass in logiclanguage_IntLiteral.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -1165,16 +1165,16 @@ def test_logiclanguage::intliteral_has_value():
 
 
 
-def test_logiclanguage::atomicterm_is_not_abstract():
-    assert not inspect.isabstract(logiclanguage::AtomicTerm)
+def test_logiclanguage_atomicterm_is_not_abstract():
+    assert not inspect.isabstract(logiclanguage_AtomicTerm)
 
 
-def test_logiclanguage::atomicterm_constructor_exists():
-    assert callable(logiclanguage::AtomicTerm.__init__)
+def test_logiclanguage_atomicterm_constructor_exists():
+    assert callable(logiclanguage_AtomicTerm.__init__)
 
 
-def test_logiclanguage::atomicterm_constructor_args():
-    sig = inspect.signature(logiclanguage::AtomicTerm.__init__)
+def test_logiclanguage_atomicterm_constructor_args():
+    sig = inspect.signature(logiclanguage_AtomicTerm.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1193,33 +1193,33 @@ def test_typedescriptor_constructor_args():
 
 
 
-def test_logiclanguage::type_is_not_abstract():
-    assert not inspect.isabstract(logiclanguage::Type)
+def test_logiclanguage_type_is_not_abstract():
+    assert not inspect.isabstract(logiclanguage_Type)
 
 
-def test_logiclanguage::type_constructor_exists():
-    assert callable(logiclanguage::Type.__init__)
+def test_logiclanguage_type_constructor_exists():
+    assert callable(logiclanguage_Type.__init__)
 
 
-def test_logiclanguage::type_constructor_args():
-    sig = inspect.signature(logiclanguage::Type.__init__)
+def test_logiclanguage_type_constructor_args():
+    sig = inspect.signature(logiclanguage_Type.__init__)
     params = list(sig.parameters.keys())
     assert "isAbstract" in params, "Missing parameter 'isAbstract'"
     assert "name" in params, "Missing parameter 'name'"
 
-def test_logiclanguage::type_has_isAbstract():
-    assert hasattr(logiclanguage::Type, "isAbstract")
+def test_logiclanguage_type_has_isAbstract():
+    assert hasattr(logiclanguage_Type, "isAbstract")
     descriptor = None
-    for klass in logiclanguage::Type.__mro__:
+    for klass in logiclanguage_Type.__mro__:
         if "isAbstract" in klass.__dict__:
             descriptor = klass.__dict__["isAbstract"]
             break
     assert isinstance(descriptor, property)
 
-def test_logiclanguage::type_has_name():
-    assert hasattr(logiclanguage::Type, "name")
+def test_logiclanguage_type_has_name():
+    assert hasattr(logiclanguage_Type, "name")
     descriptor = None
-    for klass in logiclanguage::Type.__mro__:
+    for klass in logiclanguage_Type.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -1241,44 +1241,44 @@ def test_typereference_constructor_args():
 
 
 
-def test_logiclanguage::primitivetypereference_is_not_abstract():
-    assert not inspect.isabstract(logiclanguage::PrimitiveTypeReference)
+def test_logiclanguage_primitivetypereference_is_not_abstract():
+    assert not inspect.isabstract(logiclanguage_PrimitiveTypeReference)
 
 
-def test_logiclanguage::primitivetypereference_constructor_exists():
-    assert callable(logiclanguage::PrimitiveTypeReference.__init__)
+def test_logiclanguage_primitivetypereference_constructor_exists():
+    assert callable(logiclanguage_PrimitiveTypeReference.__init__)
 
 
-def test_logiclanguage::primitivetypereference_constructor_args():
-    sig = inspect.signature(logiclanguage::PrimitiveTypeReference.__init__)
+def test_logiclanguage_primitivetypereference_constructor_args():
+    sig = inspect.signature(logiclanguage_PrimitiveTypeReference.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_logiclanguage::complextypereference_is_not_abstract():
-    assert not inspect.isabstract(logiclanguage::ComplexTypeReference)
+def test_logiclanguage_complextypereference_is_not_abstract():
+    assert not inspect.isabstract(logiclanguage_ComplexTypeReference)
 
 
-def test_logiclanguage::complextypereference_constructor_exists():
-    assert callable(logiclanguage::ComplexTypeReference.__init__)
+def test_logiclanguage_complextypereference_constructor_exists():
+    assert callable(logiclanguage_ComplexTypeReference.__init__)
 
 
-def test_logiclanguage::complextypereference_constructor_args():
-    sig = inspect.signature(logiclanguage::ComplexTypeReference.__init__)
+def test_logiclanguage_complextypereference_constructor_args():
+    sig = inspect.signature(logiclanguage_ComplexTypeReference.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_logiclanguage::typereference_is_not_abstract():
-    assert not inspect.isabstract(logiclanguage::TypeReference)
+def test_logiclanguage_typereference_is_not_abstract():
+    assert not inspect.isabstract(logiclanguage_TypeReference)
 
 
-def test_logiclanguage::typereference_constructor_exists():
-    assert callable(logiclanguage::TypeReference.__init__)
+def test_logiclanguage_typereference_constructor_exists():
+    assert callable(logiclanguage_TypeReference.__init__)
 
 
-def test_logiclanguage::typereference_constructor_args():
-    sig = inspect.signature(logiclanguage::TypeReference.__init__)
+def test_logiclanguage_typereference_constructor_args():
+    sig = inspect.signature(logiclanguage_TypeReference.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1297,30 +1297,30 @@ def test_type_constructor_args():
 
 
 
-def test_logiclanguage::typedeclaration_is_not_abstract():
-    assert not inspect.isabstract(logiclanguage::TypeDeclaration)
+def test_logiclanguage_typedeclaration_is_not_abstract():
+    assert not inspect.isabstract(logiclanguage_TypeDeclaration)
 
 
-def test_logiclanguage::typedeclaration_constructor_exists():
-    assert callable(logiclanguage::TypeDeclaration.__init__)
+def test_logiclanguage_typedeclaration_constructor_exists():
+    assert callable(logiclanguage_TypeDeclaration.__init__)
 
 
-def test_logiclanguage::typedeclaration_constructor_args():
-    sig = inspect.signature(logiclanguage::TypeDeclaration.__init__)
+def test_logiclanguage_typedeclaration_constructor_args():
+    sig = inspect.signature(logiclanguage_TypeDeclaration.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_logiclanguage::typedefinition_is_not_abstract():
-    assert not inspect.isabstract(logiclanguage::TypeDefinition)
+def test_logiclanguage_typedefinition_is_not_abstract():
+    assert not inspect.isabstract(logiclanguage_TypeDefinition)
 
 
-def test_logiclanguage::typedefinition_constructor_exists():
-    assert callable(logiclanguage::TypeDefinition.__init__)
+def test_logiclanguage_typedefinition_constructor_exists():
+    assert callable(logiclanguage_TypeDefinition.__init__)
 
 
-def test_logiclanguage::typedefinition_constructor_args():
-    sig = inspect.signature(logiclanguage::TypeDefinition.__init__)
+def test_logiclanguage_typedefinition_constructor_args():
+    sig = inspect.signature(logiclanguage_TypeDefinition.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1339,72 +1339,72 @@ def test_symbolicdeclaration_constructor_args():
 
 
 
-def test_logiclanguage::function_is_not_abstract():
-    assert not inspect.isabstract(logiclanguage::Function)
+def test_logiclanguage_variable_is_not_abstract():
+    assert not inspect.isabstract(logiclanguage_Variable)
 
 
-def test_logiclanguage::function_constructor_exists():
-    assert callable(logiclanguage::Function.__init__)
+def test_logiclanguage_variable_constructor_exists():
+    assert callable(logiclanguage_Variable.__init__)
 
 
-def test_logiclanguage::function_constructor_args():
-    sig = inspect.signature(logiclanguage::Function.__init__)
+def test_logiclanguage_variable_constructor_args():
+    sig = inspect.signature(logiclanguage_Variable.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_logiclanguage::relation_is_not_abstract():
-    assert not inspect.isabstract(logiclanguage::Relation)
+def test_logiclanguage_constant_is_not_abstract():
+    assert not inspect.isabstract(logiclanguage_Constant)
 
 
-def test_logiclanguage::relation_constructor_exists():
-    assert callable(logiclanguage::Relation.__init__)
+def test_logiclanguage_constant_constructor_exists():
+    assert callable(logiclanguage_Constant.__init__)
 
 
-def test_logiclanguage::relation_constructor_args():
-    sig = inspect.signature(logiclanguage::Relation.__init__)
+def test_logiclanguage_constant_constructor_args():
+    sig = inspect.signature(logiclanguage_Constant.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_logiclanguage::variable_is_not_abstract():
-    assert not inspect.isabstract(logiclanguage::Variable)
+def test_logiclanguage_relation_is_not_abstract():
+    assert not inspect.isabstract(logiclanguage_Relation)
 
 
-def test_logiclanguage::variable_constructor_exists():
-    assert callable(logiclanguage::Variable.__init__)
+def test_logiclanguage_relation_constructor_exists():
+    assert callable(logiclanguage_Relation.__init__)
 
 
-def test_logiclanguage::variable_constructor_args():
-    sig = inspect.signature(logiclanguage::Variable.__init__)
+def test_logiclanguage_relation_constructor_args():
+    sig = inspect.signature(logiclanguage_Relation.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_logiclanguage::constant_is_not_abstract():
-    assert not inspect.isabstract(logiclanguage::Constant)
+def test_logiclanguage_function_is_not_abstract():
+    assert not inspect.isabstract(logiclanguage_Function)
 
 
-def test_logiclanguage::constant_constructor_exists():
-    assert callable(logiclanguage::Constant.__init__)
+def test_logiclanguage_function_constructor_exists():
+    assert callable(logiclanguage_Function.__init__)
 
 
-def test_logiclanguage::constant_constructor_args():
-    sig = inspect.signature(logiclanguage::Constant.__init__)
+def test_logiclanguage_function_constructor_args():
+    sig = inspect.signature(logiclanguage_Function.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_logiclanguage::definedelement_is_not_abstract():
-    assert not inspect.isabstract(logiclanguage::DefinedElement)
+def test_logiclanguage_definedelement_is_not_abstract():
+    assert not inspect.isabstract(logiclanguage_DefinedElement)
 
 
-def test_logiclanguage::definedelement_constructor_exists():
-    assert callable(logiclanguage::DefinedElement.__init__)
+def test_logiclanguage_definedelement_constructor_exists():
+    assert callable(logiclanguage_DefinedElement.__init__)
 
 
-def test_logiclanguage::definedelement_constructor_args():
-    sig = inspect.signature(logiclanguage::DefinedElement.__init__)
+def test_logiclanguage_definedelement_constructor_args():
+    sig = inspect.signature(logiclanguage_DefinedElement.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1422,238 +1422,238 @@ safe_text = st.text(
 AggregateExpression_strategy = st.builds(
     AggregateExpression,
 )
-logiclanguage::ProjectedAggregateExpression_strategy = st.builds(
-    logiclanguage::ProjectedAggregateExpression,
+logiclanguage_ProjectedAggregateExpression_strategy = st.builds(
+    logiclanguage_ProjectedAggregateExpression,
     projectionIndex=
         st.integers()
 )
-logiclanguage::Count_strategy = st.builds(
-    logiclanguage::Count,
+logiclanguage_Count_strategy = st.builds(
+    logiclanguage_Count,
 )
 ProjectedAggregateExpression_strategy = st.builds(
     ProjectedAggregateExpression,
 )
-logiclanguage::Max_strategy = st.builds(
-    logiclanguage::Max,
+logiclanguage_Max_strategy = st.builds(
+    logiclanguage_Max,
 )
-logiclanguage::Min_strategy = st.builds(
-    logiclanguage::Min,
+logiclanguage_Min_strategy = st.builds(
+    logiclanguage_Min,
 )
-logiclanguage::Sum_strategy = st.builds(
-    logiclanguage::Sum,
+logiclanguage_Sum_strategy = st.builds(
+    logiclanguage_Sum,
 )
-logiclanguage::AggregatedParameterSubstitution_strategy = st.builds(
-    logiclanguage::AggregatedParameterSubstitution,
+logiclanguage_AggregatedParameterSubstitution_strategy = st.builds(
+    logiclanguage_AggregatedParameterSubstitution,
 )
 Relation_strategy = st.builds(
     Relation,
 )
-logiclanguage::RelationDefinition_strategy = st.builds(
-    logiclanguage::RelationDefinition,
+logiclanguage_RelationDefinition_strategy = st.builds(
+    logiclanguage_RelationDefinition,
 )
 Constant_strategy = st.builds(
     Constant,
 )
-logiclanguage::ConstantDeclaration_strategy = st.builds(
-    logiclanguage::ConstantDeclaration,
+logiclanguage_ConstantDeclaration_strategy = st.builds(
+    logiclanguage_ConstantDeclaration,
 )
-logiclanguage::ConstantDefinition_strategy = st.builds(
-    logiclanguage::ConstantDefinition,
+logiclanguage_ConstantDefinition_strategy = st.builds(
+    logiclanguage_ConstantDefinition,
 )
-logiclanguage::ConstantAnnotation_strategy = st.builds(
-    logiclanguage::ConstantAnnotation,
+logiclanguage_ConstantAnnotation_strategy = st.builds(
+    logiclanguage_ConstantAnnotation,
 )
 Function_strategy = st.builds(
     Function,
 )
-logiclanguage::FunctionDeclaration_strategy = st.builds(
-    logiclanguage::FunctionDeclaration,
+logiclanguage_FunctionDeclaration_strategy = st.builds(
+    logiclanguage_FunctionDeclaration,
 )
-logiclanguage::FunctionDefinition_strategy = st.builds(
-    logiclanguage::FunctionDefinition,
+logiclanguage_FunctionDefinition_strategy = st.builds(
+    logiclanguage_FunctionDefinition,
 )
-logiclanguage::RelationDeclaration_strategy = st.builds(
-    logiclanguage::RelationDeclaration,
+logiclanguage_RelationDeclaration_strategy = st.builds(
+    logiclanguage_RelationDeclaration,
 )
-logiclanguage::RelationAnnotation_strategy = st.builds(
-    logiclanguage::RelationAnnotation,
+logiclanguage_RelationAnnotation_strategy = st.builds(
+    logiclanguage_RelationAnnotation,
 )
-logiclanguage::AssertionAnnotation_strategy = st.builds(
-    logiclanguage::AssertionAnnotation,
+logiclanguage_AssertionAnnotation_strategy = st.builds(
+    logiclanguage_AssertionAnnotation,
 )
-logiclanguage::Assertion_strategy = st.builds(
-    logiclanguage::Assertion,
+logiclanguage_Assertion_strategy = st.builds(
+    logiclanguage_Assertion,
     name=
         safe_text
 )
-logiclanguage::TermDescription_strategy = st.builds(
-    logiclanguage::TermDescription,
+logiclanguage_TermDescription_strategy = st.builds(
+    logiclanguage_TermDescription,
 )
-logiclanguage::TypeDescriptor_strategy = st.builds(
-    logiclanguage::TypeDescriptor,
+logiclanguage_TypeDescriptor_strategy = st.builds(
+    logiclanguage_TypeDescriptor,
 )
 NumericOperation_strategy = st.builds(
     NumericOperation,
 )
-logiclanguage::Divison_strategy = st.builds(
-    logiclanguage::Divison,
+logiclanguage_Divison_strategy = st.builds(
+    logiclanguage_Divison,
 )
-logiclanguage::Pow_strategy = st.builds(
-    logiclanguage::Pow,
+logiclanguage_Mod_strategy = st.builds(
+    logiclanguage_Mod,
 )
-logiclanguage::Multiply_strategy = st.builds(
-    logiclanguage::Multiply,
+logiclanguage_Multiply_strategy = st.builds(
+    logiclanguage_Multiply,
 )
-logiclanguage::Minus_strategy = st.builds(
-    logiclanguage::Minus,
+logiclanguage_Pow_strategy = st.builds(
+    logiclanguage_Pow,
 )
-logiclanguage::Mod_strategy = st.builds(
-    logiclanguage::Mod,
+logiclanguage_Minus_strategy = st.builds(
+    logiclanguage_Minus,
 )
-logiclanguage::Plus_strategy = st.builds(
-    logiclanguage::Plus,
+logiclanguage_Plus_strategy = st.builds(
+    logiclanguage_Plus,
 )
 BoolOperation_strategy = st.builds(
     BoolOperation,
 )
-logiclanguage::Iff_strategy = st.builds(
-    logiclanguage::Iff,
+logiclanguage_Or_strategy = st.builds(
+    logiclanguage_Or,
 )
-logiclanguage::Not_strategy = st.builds(
-    logiclanguage::Not,
+logiclanguage_Not_strategy = st.builds(
+    logiclanguage_Not,
 )
-logiclanguage::Or_strategy = st.builds(
-    logiclanguage::Or,
+logiclanguage_Iff_strategy = st.builds(
+    logiclanguage_Iff,
 )
-logiclanguage::Impl_strategy = st.builds(
-    logiclanguage::Impl,
+logiclanguage_Impl_strategy = st.builds(
+    logiclanguage_Impl,
 )
-logiclanguage::And_strategy = st.builds(
-    logiclanguage::And,
+logiclanguage_And_strategy = st.builds(
+    logiclanguage_And,
 )
 PrimitiveRelation_strategy = st.builds(
     PrimitiveRelation,
 )
-logiclanguage::LessThan_strategy = st.builds(
-    logiclanguage::LessThan,
+logiclanguage_MoreOrEqualThan_strategy = st.builds(
+    logiclanguage_MoreOrEqualThan,
 )
-logiclanguage::MoreThan_strategy = st.builds(
-    logiclanguage::MoreThan,
+logiclanguage_LessOrEqualThan_strategy = st.builds(
+    logiclanguage_LessOrEqualThan,
 )
-logiclanguage::MoreOrEqualThan_strategy = st.builds(
-    logiclanguage::MoreOrEqualThan,
+logiclanguage_Distinct_strategy = st.builds(
+    logiclanguage_Distinct,
 )
-logiclanguage::LessOrEqualThan_strategy = st.builds(
-    logiclanguage::LessOrEqualThan,
+logiclanguage_LessThan_strategy = st.builds(
+    logiclanguage_LessThan,
 )
-logiclanguage::Distinct_strategy = st.builds(
-    logiclanguage::Distinct,
+logiclanguage_MoreThan_strategy = st.builds(
+    logiclanguage_MoreThan,
 )
-logiclanguage::Equals_strategy = st.builds(
-    logiclanguage::Equals,
+logiclanguage_Equals_strategy = st.builds(
+    logiclanguage_Equals,
 )
 Term_strategy = st.builds(
     Term,
 )
-logiclanguage::TransitiveClosure_strategy = st.builds(
-    logiclanguage::TransitiveClosure,
+logiclanguage_PrimitiveRelation_strategy = st.builds(
+    logiclanguage_PrimitiveRelation,
 )
-logiclanguage::AggregateExpression_strategy = st.builds(
-    logiclanguage::AggregateExpression,
+logiclanguage_IfThenElse_strategy = st.builds(
+    logiclanguage_IfThenElse,
 )
-logiclanguage::InstanceOf_strategy = st.builds(
-    logiclanguage::InstanceOf,
+logiclanguage_BoolOperation_strategy = st.builds(
+    logiclanguage_BoolOperation,
 )
-logiclanguage::NumericOperation_strategy = st.builds(
-    logiclanguage::NumericOperation,
+logiclanguage_NumericOperation_strategy = st.builds(
+    logiclanguage_NumericOperation,
 )
-logiclanguage::PrimitiveRelation_strategy = st.builds(
-    logiclanguage::PrimitiveRelation,
+logiclanguage_UnknownBecauseUninterpreted_strategy = st.builds(
+    logiclanguage_UnknownBecauseUninterpreted,
 )
-logiclanguage::BoolOperation_strategy = st.builds(
-    logiclanguage::BoolOperation,
+logiclanguage_AggregateExpression_strategy = st.builds(
+    logiclanguage_AggregateExpression,
 )
-logiclanguage::UnknownBecauseUninterpreted_strategy = st.builds(
-    logiclanguage::UnknownBecauseUninterpreted,
+logiclanguage_TransitiveClosure_strategy = st.builds(
+    logiclanguage_TransitiveClosure,
 )
-logiclanguage::IfThenElse_strategy = st.builds(
-    logiclanguage::IfThenElse,
+logiclanguage_InstanceOf_strategy = st.builds(
+    logiclanguage_InstanceOf,
 )
-logiclanguage::SymbolicValue_strategy = st.builds(
-    logiclanguage::SymbolicValue,
+logiclanguage_SymbolicValue_strategy = st.builds(
+    logiclanguage_SymbolicValue,
 )
 TermDescription_strategy = st.builds(
     TermDescription,
 )
-logiclanguage::SymbolicDeclaration_strategy = st.builds(
-    logiclanguage::SymbolicDeclaration,
+logiclanguage_SymbolicDeclaration_strategy = st.builds(
+    logiclanguage_SymbolicDeclaration,
     name=
         safe_text
 )
-logiclanguage::Term_strategy = st.builds(
-    logiclanguage::Term,
+logiclanguage_Term_strategy = st.builds(
+    logiclanguage_Term,
 )
-logiclanguage::FunctionAnnotation_strategy = st.builds(
-    logiclanguage::FunctionAnnotation,
+logiclanguage_FunctionAnnotation_strategy = st.builds(
+    logiclanguage_FunctionAnnotation,
 )
 PrimitiveTypeReference_strategy = st.builds(
     PrimitiveTypeReference,
 )
-logiclanguage::StringTypeReference_strategy = st.builds(
-    logiclanguage::StringTypeReference,
+logiclanguage_StringTypeReference_strategy = st.builds(
+    logiclanguage_StringTypeReference,
 )
-logiclanguage::BoolTypeReference_strategy = st.builds(
-    logiclanguage::BoolTypeReference,
+logiclanguage_RealTypeReference_strategy = st.builds(
+    logiclanguage_RealTypeReference,
 )
-logiclanguage::RealTypeReference_strategy = st.builds(
-    logiclanguage::RealTypeReference,
+logiclanguage_BoolTypeReference_strategy = st.builds(
+    logiclanguage_BoolTypeReference,
 )
-logiclanguage::IntTypeReference_strategy = st.builds(
-    logiclanguage::IntTypeReference,
+logiclanguage_IntTypeReference_strategy = st.builds(
+    logiclanguage_IntTypeReference,
 )
 QuantifiedExpression_strategy = st.builds(
     QuantifiedExpression,
 )
-logiclanguage::Forall_strategy = st.builds(
-    logiclanguage::Forall,
+logiclanguage_Forall_strategy = st.builds(
+    logiclanguage_Forall,
 )
-logiclanguage::Exists_strategy = st.builds(
-    logiclanguage::Exists,
+logiclanguage_Exists_strategy = st.builds(
+    logiclanguage_Exists,
 )
-logiclanguage::QuantifiedExpression_strategy = st.builds(
-    logiclanguage::QuantifiedExpression,
+logiclanguage_QuantifiedExpression_strategy = st.builds(
+    logiclanguage_QuantifiedExpression,
 )
 AtomicTerm_strategy = st.builds(
     AtomicTerm,
 )
-logiclanguage::StringLiteral_strategy = st.builds(
-    logiclanguage::StringLiteral,
-    value=
-        safe_text
-)
-logiclanguage::BoolLiteral_strategy = st.builds(
-    logiclanguage::BoolLiteral,
+logiclanguage_BoolLiteral_strategy = st.builds(
+    logiclanguage_BoolLiteral,
     value=
         st.booleans()
 )
-logiclanguage::RealLiteral_strategy = st.builds(
-    logiclanguage::RealLiteral,
+logiclanguage_RealLiteral_strategy = st.builds(
+    logiclanguage_RealLiteral,
     value=
         safe_text
 )
-logiclanguage::IntLiteral_strategy = st.builds(
-    logiclanguage::IntLiteral,
+logiclanguage_StringLiteral_strategy = st.builds(
+    logiclanguage_StringLiteral,
+    value=
+        safe_text
+)
+logiclanguage_IntLiteral_strategy = st.builds(
+    logiclanguage_IntLiteral,
     value=
         st.integers()
 )
-logiclanguage::AtomicTerm_strategy = st.builds(
-    logiclanguage::AtomicTerm,
+logiclanguage_AtomicTerm_strategy = st.builds(
+    logiclanguage_AtomicTerm,
 )
 TypeDescriptor_strategy = st.builds(
     TypeDescriptor,
 )
-logiclanguage::Type_strategy = st.builds(
-    logiclanguage::Type,
+logiclanguage_Type_strategy = st.builds(
+    logiclanguage_Type,
     isAbstract=
         st.booleans(),
     name=
@@ -1662,41 +1662,41 @@ logiclanguage::Type_strategy = st.builds(
 TypeReference_strategy = st.builds(
     TypeReference,
 )
-logiclanguage::PrimitiveTypeReference_strategy = st.builds(
-    logiclanguage::PrimitiveTypeReference,
+logiclanguage_PrimitiveTypeReference_strategy = st.builds(
+    logiclanguage_PrimitiveTypeReference,
 )
-logiclanguage::ComplexTypeReference_strategy = st.builds(
-    logiclanguage::ComplexTypeReference,
+logiclanguage_ComplexTypeReference_strategy = st.builds(
+    logiclanguage_ComplexTypeReference,
 )
-logiclanguage::TypeReference_strategy = st.builds(
-    logiclanguage::TypeReference,
+logiclanguage_TypeReference_strategy = st.builds(
+    logiclanguage_TypeReference,
 )
 Type_strategy = st.builds(
     Type,
 )
-logiclanguage::TypeDeclaration_strategy = st.builds(
-    logiclanguage::TypeDeclaration,
+logiclanguage_TypeDeclaration_strategy = st.builds(
+    logiclanguage_TypeDeclaration,
 )
-logiclanguage::TypeDefinition_strategy = st.builds(
-    logiclanguage::TypeDefinition,
+logiclanguage_TypeDefinition_strategy = st.builds(
+    logiclanguage_TypeDefinition,
 )
 SymbolicDeclaration_strategy = st.builds(
     SymbolicDeclaration,
 )
-logiclanguage::Function_strategy = st.builds(
-    logiclanguage::Function,
+logiclanguage_Variable_strategy = st.builds(
+    logiclanguage_Variable,
 )
-logiclanguage::Relation_strategy = st.builds(
-    logiclanguage::Relation,
+logiclanguage_Constant_strategy = st.builds(
+    logiclanguage_Constant,
 )
-logiclanguage::Variable_strategy = st.builds(
-    logiclanguage::Variable,
+logiclanguage_Relation_strategy = st.builds(
+    logiclanguage_Relation,
 )
-logiclanguage::Constant_strategy = st.builds(
-    logiclanguage::Constant,
+logiclanguage_Function_strategy = st.builds(
+    logiclanguage_Function,
 )
-logiclanguage::DefinedElement_strategy = st.builds(
-    logiclanguage::DefinedElement,
+logiclanguage_DefinedElement_strategy = st.builds(
+    logiclanguage_DefinedElement,
 )
 
 @given(instance=AggregateExpression_strategy)
@@ -1704,466 +1704,439 @@ logiclanguage::DefinedElement_strategy = st.builds(
 def test_aggregateexpression_instantiation(instance):
     assert isinstance(instance, AggregateExpression)
 
-@given(instance=logiclanguage::ProjectedAggregateExpression_strategy)
+@given(instance=logiclanguage_ProjectedAggregateExpression_strategy)
 @settings(max_examples=50)
-def test_logiclanguage::projectedaggregateexpression_instantiation(instance):
-    assert isinstance(instance, logiclanguage::ProjectedAggregateExpression)
-
-@given(instance=logiclanguage::ProjectedAggregateExpression_strategy)
-def test_logiclanguage::projectedaggregateexpression_projectionIndex_type(instance):
-    assert isinstance(instance.projectionIndex, int)
+def test_logiclanguage_projectedaggregateexpression_instantiation(instance):
+    assert isinstance(instance, logiclanguage_ProjectedAggregateExpression)
 
 
-@given(instance=logiclanguage::ProjectedAggregateExpression_strategy)
-def test_logiclanguage::projectedaggregateexpression_projectionIndex_setter(instance):
+
+@given(instance=logiclanguage_ProjectedAggregateExpression_strategy)
+def test_logiclanguage_projectedaggregateexpression_projectionIndex_setter(instance):
     original = instance.projectionIndex
     instance.projectionIndex = original
     assert instance.projectionIndex == original
 
-@given(instance=logiclanguage::Count_strategy)
+@given(instance=logiclanguage_Count_strategy)
 @settings(max_examples=50)
-def test_logiclanguage::count_instantiation(instance):
-    assert isinstance(instance, logiclanguage::Count)
+def test_logiclanguage_count_instantiation(instance):
+    assert isinstance(instance, logiclanguage_Count)
 
 @given(instance=ProjectedAggregateExpression_strategy)
 @settings(max_examples=50)
 def test_projectedaggregateexpression_instantiation(instance):
     assert isinstance(instance, ProjectedAggregateExpression)
 
-@given(instance=logiclanguage::Max_strategy)
+@given(instance=logiclanguage_Max_strategy)
 @settings(max_examples=50)
-def test_logiclanguage::max_instantiation(instance):
-    assert isinstance(instance, logiclanguage::Max)
+def test_logiclanguage_max_instantiation(instance):
+    assert isinstance(instance, logiclanguage_Max)
 
-@given(instance=logiclanguage::Min_strategy)
+@given(instance=logiclanguage_Min_strategy)
 @settings(max_examples=50)
-def test_logiclanguage::min_instantiation(instance):
-    assert isinstance(instance, logiclanguage::Min)
+def test_logiclanguage_min_instantiation(instance):
+    assert isinstance(instance, logiclanguage_Min)
 
-@given(instance=logiclanguage::Sum_strategy)
+@given(instance=logiclanguage_Sum_strategy)
 @settings(max_examples=50)
-def test_logiclanguage::sum_instantiation(instance):
-    assert isinstance(instance, logiclanguage::Sum)
+def test_logiclanguage_sum_instantiation(instance):
+    assert isinstance(instance, logiclanguage_Sum)
 
-@given(instance=logiclanguage::AggregatedParameterSubstitution_strategy)
+@given(instance=logiclanguage_AggregatedParameterSubstitution_strategy)
 @settings(max_examples=50)
-def test_logiclanguage::aggregatedparametersubstitution_instantiation(instance):
-    assert isinstance(instance, logiclanguage::AggregatedParameterSubstitution)
+def test_logiclanguage_aggregatedparametersubstitution_instantiation(instance):
+    assert isinstance(instance, logiclanguage_AggregatedParameterSubstitution)
 
 @given(instance=Relation_strategy)
 @settings(max_examples=50)
 def test_relation_instantiation(instance):
     assert isinstance(instance, Relation)
 
-@given(instance=logiclanguage::RelationDefinition_strategy)
+@given(instance=logiclanguage_RelationDefinition_strategy)
 @settings(max_examples=50)
-def test_logiclanguage::relationdefinition_instantiation(instance):
-    assert isinstance(instance, logiclanguage::RelationDefinition)
+def test_logiclanguage_relationdefinition_instantiation(instance):
+    assert isinstance(instance, logiclanguage_RelationDefinition)
 
 @given(instance=Constant_strategy)
 @settings(max_examples=50)
 def test_constant_instantiation(instance):
     assert isinstance(instance, Constant)
 
-@given(instance=logiclanguage::ConstantDeclaration_strategy)
+@given(instance=logiclanguage_ConstantDeclaration_strategy)
 @settings(max_examples=50)
-def test_logiclanguage::constantdeclaration_instantiation(instance):
-    assert isinstance(instance, logiclanguage::ConstantDeclaration)
+def test_logiclanguage_constantdeclaration_instantiation(instance):
+    assert isinstance(instance, logiclanguage_ConstantDeclaration)
 
-@given(instance=logiclanguage::ConstantDefinition_strategy)
+@given(instance=logiclanguage_ConstantDefinition_strategy)
 @settings(max_examples=50)
-def test_logiclanguage::constantdefinition_instantiation(instance):
-    assert isinstance(instance, logiclanguage::ConstantDefinition)
+def test_logiclanguage_constantdefinition_instantiation(instance):
+    assert isinstance(instance, logiclanguage_ConstantDefinition)
 
-@given(instance=logiclanguage::ConstantAnnotation_strategy)
+@given(instance=logiclanguage_ConstantAnnotation_strategy)
 @settings(max_examples=50)
-def test_logiclanguage::constantannotation_instantiation(instance):
-    assert isinstance(instance, logiclanguage::ConstantAnnotation)
+def test_logiclanguage_constantannotation_instantiation(instance):
+    assert isinstance(instance, logiclanguage_ConstantAnnotation)
 
 @given(instance=Function_strategy)
 @settings(max_examples=50)
 def test_function_instantiation(instance):
     assert isinstance(instance, Function)
 
-@given(instance=logiclanguage::FunctionDeclaration_strategy)
+@given(instance=logiclanguage_FunctionDeclaration_strategy)
 @settings(max_examples=50)
-def test_logiclanguage::functiondeclaration_instantiation(instance):
-    assert isinstance(instance, logiclanguage::FunctionDeclaration)
+def test_logiclanguage_functiondeclaration_instantiation(instance):
+    assert isinstance(instance, logiclanguage_FunctionDeclaration)
 
-@given(instance=logiclanguage::FunctionDefinition_strategy)
+@given(instance=logiclanguage_FunctionDefinition_strategy)
 @settings(max_examples=50)
-def test_logiclanguage::functiondefinition_instantiation(instance):
-    assert isinstance(instance, logiclanguage::FunctionDefinition)
+def test_logiclanguage_functiondefinition_instantiation(instance):
+    assert isinstance(instance, logiclanguage_FunctionDefinition)
 
-@given(instance=logiclanguage::RelationDeclaration_strategy)
+@given(instance=logiclanguage_RelationDeclaration_strategy)
 @settings(max_examples=50)
-def test_logiclanguage::relationdeclaration_instantiation(instance):
-    assert isinstance(instance, logiclanguage::RelationDeclaration)
+def test_logiclanguage_relationdeclaration_instantiation(instance):
+    assert isinstance(instance, logiclanguage_RelationDeclaration)
 
-@given(instance=logiclanguage::RelationAnnotation_strategy)
+@given(instance=logiclanguage_RelationAnnotation_strategy)
 @settings(max_examples=50)
-def test_logiclanguage::relationannotation_instantiation(instance):
-    assert isinstance(instance, logiclanguage::RelationAnnotation)
+def test_logiclanguage_relationannotation_instantiation(instance):
+    assert isinstance(instance, logiclanguage_RelationAnnotation)
 
-@given(instance=logiclanguage::AssertionAnnotation_strategy)
+@given(instance=logiclanguage_AssertionAnnotation_strategy)
 @settings(max_examples=50)
-def test_logiclanguage::assertionannotation_instantiation(instance):
-    assert isinstance(instance, logiclanguage::AssertionAnnotation)
+def test_logiclanguage_assertionannotation_instantiation(instance):
+    assert isinstance(instance, logiclanguage_AssertionAnnotation)
 
-@given(instance=logiclanguage::Assertion_strategy)
+@given(instance=logiclanguage_Assertion_strategy)
 @settings(max_examples=50)
-def test_logiclanguage::assertion_instantiation(instance):
-    assert isinstance(instance, logiclanguage::Assertion)
-
-@given(instance=logiclanguage::Assertion_strategy)
-def test_logiclanguage::assertion_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_logiclanguage_assertion_instantiation(instance):
+    assert isinstance(instance, logiclanguage_Assertion)
 
 
-@given(instance=logiclanguage::Assertion_strategy)
-def test_logiclanguage::assertion_name_setter(instance):
+
+@given(instance=logiclanguage_Assertion_strategy)
+def test_logiclanguage_assertion_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=logiclanguage::TermDescription_strategy)
+@given(instance=logiclanguage_TermDescription_strategy)
 @settings(max_examples=50)
-def test_logiclanguage::termdescription_instantiation(instance):
-    assert isinstance(instance, logiclanguage::TermDescription)
+def test_logiclanguage_termdescription_instantiation(instance):
+    assert isinstance(instance, logiclanguage_TermDescription)
 
-@given(instance=logiclanguage::TypeDescriptor_strategy)
+@given(instance=logiclanguage_TypeDescriptor_strategy)
 @settings(max_examples=50)
-def test_logiclanguage::typedescriptor_instantiation(instance):
-    assert isinstance(instance, logiclanguage::TypeDescriptor)
+def test_logiclanguage_typedescriptor_instantiation(instance):
+    assert isinstance(instance, logiclanguage_TypeDescriptor)
 
 @given(instance=NumericOperation_strategy)
 @settings(max_examples=50)
 def test_numericoperation_instantiation(instance):
     assert isinstance(instance, NumericOperation)
 
-@given(instance=logiclanguage::Divison_strategy)
+@given(instance=logiclanguage_Divison_strategy)
 @settings(max_examples=50)
-def test_logiclanguage::divison_instantiation(instance):
-    assert isinstance(instance, logiclanguage::Divison)
+def test_logiclanguage_divison_instantiation(instance):
+    assert isinstance(instance, logiclanguage_Divison)
 
-@given(instance=logiclanguage::Pow_strategy)
+@given(instance=logiclanguage_Mod_strategy)
 @settings(max_examples=50)
-def test_logiclanguage::pow_instantiation(instance):
-    assert isinstance(instance, logiclanguage::Pow)
+def test_logiclanguage_mod_instantiation(instance):
+    assert isinstance(instance, logiclanguage_Mod)
 
-@given(instance=logiclanguage::Multiply_strategy)
+@given(instance=logiclanguage_Multiply_strategy)
 @settings(max_examples=50)
-def test_logiclanguage::multiply_instantiation(instance):
-    assert isinstance(instance, logiclanguage::Multiply)
+def test_logiclanguage_multiply_instantiation(instance):
+    assert isinstance(instance, logiclanguage_Multiply)
 
-@given(instance=logiclanguage::Minus_strategy)
+@given(instance=logiclanguage_Pow_strategy)
 @settings(max_examples=50)
-def test_logiclanguage::minus_instantiation(instance):
-    assert isinstance(instance, logiclanguage::Minus)
+def test_logiclanguage_pow_instantiation(instance):
+    assert isinstance(instance, logiclanguage_Pow)
 
-@given(instance=logiclanguage::Mod_strategy)
+@given(instance=logiclanguage_Minus_strategy)
 @settings(max_examples=50)
-def test_logiclanguage::mod_instantiation(instance):
-    assert isinstance(instance, logiclanguage::Mod)
+def test_logiclanguage_minus_instantiation(instance):
+    assert isinstance(instance, logiclanguage_Minus)
 
-@given(instance=logiclanguage::Plus_strategy)
+@given(instance=logiclanguage_Plus_strategy)
 @settings(max_examples=50)
-def test_logiclanguage::plus_instantiation(instance):
-    assert isinstance(instance, logiclanguage::Plus)
+def test_logiclanguage_plus_instantiation(instance):
+    assert isinstance(instance, logiclanguage_Plus)
 
 @given(instance=BoolOperation_strategy)
 @settings(max_examples=50)
 def test_booloperation_instantiation(instance):
     assert isinstance(instance, BoolOperation)
 
-@given(instance=logiclanguage::Iff_strategy)
+@given(instance=logiclanguage_Or_strategy)
 @settings(max_examples=50)
-def test_logiclanguage::iff_instantiation(instance):
-    assert isinstance(instance, logiclanguage::Iff)
+def test_logiclanguage_or_instantiation(instance):
+    assert isinstance(instance, logiclanguage_Or)
 
-@given(instance=logiclanguage::Not_strategy)
+@given(instance=logiclanguage_Not_strategy)
 @settings(max_examples=50)
-def test_logiclanguage::not_instantiation(instance):
-    assert isinstance(instance, logiclanguage::Not)
+def test_logiclanguage_not_instantiation(instance):
+    assert isinstance(instance, logiclanguage_Not)
 
-@given(instance=logiclanguage::Or_strategy)
+@given(instance=logiclanguage_Iff_strategy)
 @settings(max_examples=50)
-def test_logiclanguage::or_instantiation(instance):
-    assert isinstance(instance, logiclanguage::Or)
+def test_logiclanguage_iff_instantiation(instance):
+    assert isinstance(instance, logiclanguage_Iff)
 
-@given(instance=logiclanguage::Impl_strategy)
+@given(instance=logiclanguage_Impl_strategy)
 @settings(max_examples=50)
-def test_logiclanguage::impl_instantiation(instance):
-    assert isinstance(instance, logiclanguage::Impl)
+def test_logiclanguage_impl_instantiation(instance):
+    assert isinstance(instance, logiclanguage_Impl)
 
-@given(instance=logiclanguage::And_strategy)
+@given(instance=logiclanguage_And_strategy)
 @settings(max_examples=50)
-def test_logiclanguage::and_instantiation(instance):
-    assert isinstance(instance, logiclanguage::And)
+def test_logiclanguage_and_instantiation(instance):
+    assert isinstance(instance, logiclanguage_And)
 
 @given(instance=PrimitiveRelation_strategy)
 @settings(max_examples=50)
 def test_primitiverelation_instantiation(instance):
     assert isinstance(instance, PrimitiveRelation)
 
-@given(instance=logiclanguage::LessThan_strategy)
+@given(instance=logiclanguage_MoreOrEqualThan_strategy)
 @settings(max_examples=50)
-def test_logiclanguage::lessthan_instantiation(instance):
-    assert isinstance(instance, logiclanguage::LessThan)
+def test_logiclanguage_moreorequalthan_instantiation(instance):
+    assert isinstance(instance, logiclanguage_MoreOrEqualThan)
 
-@given(instance=logiclanguage::MoreThan_strategy)
+@given(instance=logiclanguage_LessOrEqualThan_strategy)
 @settings(max_examples=50)
-def test_logiclanguage::morethan_instantiation(instance):
-    assert isinstance(instance, logiclanguage::MoreThan)
+def test_logiclanguage_lessorequalthan_instantiation(instance):
+    assert isinstance(instance, logiclanguage_LessOrEqualThan)
 
-@given(instance=logiclanguage::MoreOrEqualThan_strategy)
+@given(instance=logiclanguage_Distinct_strategy)
 @settings(max_examples=50)
-def test_logiclanguage::moreorequalthan_instantiation(instance):
-    assert isinstance(instance, logiclanguage::MoreOrEqualThan)
+def test_logiclanguage_distinct_instantiation(instance):
+    assert isinstance(instance, logiclanguage_Distinct)
 
-@given(instance=logiclanguage::LessOrEqualThan_strategy)
+@given(instance=logiclanguage_LessThan_strategy)
 @settings(max_examples=50)
-def test_logiclanguage::lessorequalthan_instantiation(instance):
-    assert isinstance(instance, logiclanguage::LessOrEqualThan)
+def test_logiclanguage_lessthan_instantiation(instance):
+    assert isinstance(instance, logiclanguage_LessThan)
 
-@given(instance=logiclanguage::Distinct_strategy)
+@given(instance=logiclanguage_MoreThan_strategy)
 @settings(max_examples=50)
-def test_logiclanguage::distinct_instantiation(instance):
-    assert isinstance(instance, logiclanguage::Distinct)
+def test_logiclanguage_morethan_instantiation(instance):
+    assert isinstance(instance, logiclanguage_MoreThan)
 
-@given(instance=logiclanguage::Equals_strategy)
+@given(instance=logiclanguage_Equals_strategy)
 @settings(max_examples=50)
-def test_logiclanguage::equals_instantiation(instance):
-    assert isinstance(instance, logiclanguage::Equals)
+def test_logiclanguage_equals_instantiation(instance):
+    assert isinstance(instance, logiclanguage_Equals)
 
 @given(instance=Term_strategy)
 @settings(max_examples=50)
 def test_term_instantiation(instance):
     assert isinstance(instance, Term)
 
-@given(instance=logiclanguage::TransitiveClosure_strategy)
+@given(instance=logiclanguage_PrimitiveRelation_strategy)
 @settings(max_examples=50)
-def test_logiclanguage::transitiveclosure_instantiation(instance):
-    assert isinstance(instance, logiclanguage::TransitiveClosure)
+def test_logiclanguage_primitiverelation_instantiation(instance):
+    assert isinstance(instance, logiclanguage_PrimitiveRelation)
 
-@given(instance=logiclanguage::AggregateExpression_strategy)
+@given(instance=logiclanguage_IfThenElse_strategy)
 @settings(max_examples=50)
-def test_logiclanguage::aggregateexpression_instantiation(instance):
-    assert isinstance(instance, logiclanguage::AggregateExpression)
+def test_logiclanguage_ifthenelse_instantiation(instance):
+    assert isinstance(instance, logiclanguage_IfThenElse)
 
-@given(instance=logiclanguage::InstanceOf_strategy)
+@given(instance=logiclanguage_BoolOperation_strategy)
 @settings(max_examples=50)
-def test_logiclanguage::instanceof_instantiation(instance):
-    assert isinstance(instance, logiclanguage::InstanceOf)
+def test_logiclanguage_booloperation_instantiation(instance):
+    assert isinstance(instance, logiclanguage_BoolOperation)
 
-@given(instance=logiclanguage::NumericOperation_strategy)
+@given(instance=logiclanguage_NumericOperation_strategy)
 @settings(max_examples=50)
-def test_logiclanguage::numericoperation_instantiation(instance):
-    assert isinstance(instance, logiclanguage::NumericOperation)
+def test_logiclanguage_numericoperation_instantiation(instance):
+    assert isinstance(instance, logiclanguage_NumericOperation)
 
-@given(instance=logiclanguage::PrimitiveRelation_strategy)
+@given(instance=logiclanguage_UnknownBecauseUninterpreted_strategy)
 @settings(max_examples=50)
-def test_logiclanguage::primitiverelation_instantiation(instance):
-    assert isinstance(instance, logiclanguage::PrimitiveRelation)
+def test_logiclanguage_unknownbecauseuninterpreted_instantiation(instance):
+    assert isinstance(instance, logiclanguage_UnknownBecauseUninterpreted)
 
-@given(instance=logiclanguage::BoolOperation_strategy)
+@given(instance=logiclanguage_AggregateExpression_strategy)
 @settings(max_examples=50)
-def test_logiclanguage::booloperation_instantiation(instance):
-    assert isinstance(instance, logiclanguage::BoolOperation)
+def test_logiclanguage_aggregateexpression_instantiation(instance):
+    assert isinstance(instance, logiclanguage_AggregateExpression)
 
-@given(instance=logiclanguage::UnknownBecauseUninterpreted_strategy)
+@given(instance=logiclanguage_TransitiveClosure_strategy)
 @settings(max_examples=50)
-def test_logiclanguage::unknownbecauseuninterpreted_instantiation(instance):
-    assert isinstance(instance, logiclanguage::UnknownBecauseUninterpreted)
+def test_logiclanguage_transitiveclosure_instantiation(instance):
+    assert isinstance(instance, logiclanguage_TransitiveClosure)
 
-@given(instance=logiclanguage::IfThenElse_strategy)
+@given(instance=logiclanguage_InstanceOf_strategy)
 @settings(max_examples=50)
-def test_logiclanguage::ifthenelse_instantiation(instance):
-    assert isinstance(instance, logiclanguage::IfThenElse)
+def test_logiclanguage_instanceof_instantiation(instance):
+    assert isinstance(instance, logiclanguage_InstanceOf)
 
-@given(instance=logiclanguage::SymbolicValue_strategy)
+@given(instance=logiclanguage_SymbolicValue_strategy)
 @settings(max_examples=50)
-def test_logiclanguage::symbolicvalue_instantiation(instance):
-    assert isinstance(instance, logiclanguage::SymbolicValue)
+def test_logiclanguage_symbolicvalue_instantiation(instance):
+    assert isinstance(instance, logiclanguage_SymbolicValue)
 
 @given(instance=TermDescription_strategy)
 @settings(max_examples=50)
 def test_termdescription_instantiation(instance):
     assert isinstance(instance, TermDescription)
 
-@given(instance=logiclanguage::SymbolicDeclaration_strategy)
+@given(instance=logiclanguage_SymbolicDeclaration_strategy)
 @settings(max_examples=50)
-def test_logiclanguage::symbolicdeclaration_instantiation(instance):
-    assert isinstance(instance, logiclanguage::SymbolicDeclaration)
-
-@given(instance=logiclanguage::SymbolicDeclaration_strategy)
-def test_logiclanguage::symbolicdeclaration_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_logiclanguage_symbolicdeclaration_instantiation(instance):
+    assert isinstance(instance, logiclanguage_SymbolicDeclaration)
 
 
-@given(instance=logiclanguage::SymbolicDeclaration_strategy)
-def test_logiclanguage::symbolicdeclaration_name_setter(instance):
+
+@given(instance=logiclanguage_SymbolicDeclaration_strategy)
+def test_logiclanguage_symbolicdeclaration_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=logiclanguage::Term_strategy)
+@given(instance=logiclanguage_Term_strategy)
 @settings(max_examples=50)
-def test_logiclanguage::term_instantiation(instance):
-    assert isinstance(instance, logiclanguage::Term)
+def test_logiclanguage_term_instantiation(instance):
+    assert isinstance(instance, logiclanguage_Term)
 
-@given(instance=logiclanguage::FunctionAnnotation_strategy)
+@given(instance=logiclanguage_FunctionAnnotation_strategy)
 @settings(max_examples=50)
-def test_logiclanguage::functionannotation_instantiation(instance):
-    assert isinstance(instance, logiclanguage::FunctionAnnotation)
+def test_logiclanguage_functionannotation_instantiation(instance):
+    assert isinstance(instance, logiclanguage_FunctionAnnotation)
 
 @given(instance=PrimitiveTypeReference_strategy)
 @settings(max_examples=50)
 def test_primitivetypereference_instantiation(instance):
     assert isinstance(instance, PrimitiveTypeReference)
 
-@given(instance=logiclanguage::StringTypeReference_strategy)
+@given(instance=logiclanguage_StringTypeReference_strategy)
 @settings(max_examples=50)
-def test_logiclanguage::stringtypereference_instantiation(instance):
-    assert isinstance(instance, logiclanguage::StringTypeReference)
+def test_logiclanguage_stringtypereference_instantiation(instance):
+    assert isinstance(instance, logiclanguage_StringTypeReference)
 
-@given(instance=logiclanguage::BoolTypeReference_strategy)
+@given(instance=logiclanguage_RealTypeReference_strategy)
 @settings(max_examples=50)
-def test_logiclanguage::booltypereference_instantiation(instance):
-    assert isinstance(instance, logiclanguage::BoolTypeReference)
+def test_logiclanguage_realtypereference_instantiation(instance):
+    assert isinstance(instance, logiclanguage_RealTypeReference)
 
-@given(instance=logiclanguage::RealTypeReference_strategy)
+@given(instance=logiclanguage_BoolTypeReference_strategy)
 @settings(max_examples=50)
-def test_logiclanguage::realtypereference_instantiation(instance):
-    assert isinstance(instance, logiclanguage::RealTypeReference)
+def test_logiclanguage_booltypereference_instantiation(instance):
+    assert isinstance(instance, logiclanguage_BoolTypeReference)
 
-@given(instance=logiclanguage::IntTypeReference_strategy)
+@given(instance=logiclanguage_IntTypeReference_strategy)
 @settings(max_examples=50)
-def test_logiclanguage::inttypereference_instantiation(instance):
-    assert isinstance(instance, logiclanguage::IntTypeReference)
+def test_logiclanguage_inttypereference_instantiation(instance):
+    assert isinstance(instance, logiclanguage_IntTypeReference)
 
 @given(instance=QuantifiedExpression_strategy)
 @settings(max_examples=50)
 def test_quantifiedexpression_instantiation(instance):
     assert isinstance(instance, QuantifiedExpression)
 
-@given(instance=logiclanguage::Forall_strategy)
+@given(instance=logiclanguage_Forall_strategy)
 @settings(max_examples=50)
-def test_logiclanguage::forall_instantiation(instance):
-    assert isinstance(instance, logiclanguage::Forall)
+def test_logiclanguage_forall_instantiation(instance):
+    assert isinstance(instance, logiclanguage_Forall)
 
-@given(instance=logiclanguage::Exists_strategy)
+@given(instance=logiclanguage_Exists_strategy)
 @settings(max_examples=50)
-def test_logiclanguage::exists_instantiation(instance):
-    assert isinstance(instance, logiclanguage::Exists)
+def test_logiclanguage_exists_instantiation(instance):
+    assert isinstance(instance, logiclanguage_Exists)
 
-@given(instance=logiclanguage::QuantifiedExpression_strategy)
+@given(instance=logiclanguage_QuantifiedExpression_strategy)
 @settings(max_examples=50)
-def test_logiclanguage::quantifiedexpression_instantiation(instance):
-    assert isinstance(instance, logiclanguage::QuantifiedExpression)
+def test_logiclanguage_quantifiedexpression_instantiation(instance):
+    assert isinstance(instance, logiclanguage_QuantifiedExpression)
 
 @given(instance=AtomicTerm_strategy)
 @settings(max_examples=50)
 def test_atomicterm_instantiation(instance):
     assert isinstance(instance, AtomicTerm)
 
-@given(instance=logiclanguage::StringLiteral_strategy)
+@given(instance=logiclanguage_BoolLiteral_strategy)
 @settings(max_examples=50)
-def test_logiclanguage::stringliteral_instantiation(instance):
-    assert isinstance(instance, logiclanguage::StringLiteral)
-
-@given(instance=logiclanguage::StringLiteral_strategy)
-def test_logiclanguage::stringliteral_value_type(instance):
-    assert isinstance(instance.value, str)
+def test_logiclanguage_boolliteral_instantiation(instance):
+    assert isinstance(instance, logiclanguage_BoolLiteral)
 
 
-@given(instance=logiclanguage::StringLiteral_strategy)
-def test_logiclanguage::stringliteral_value_setter(instance):
+
+@given(instance=logiclanguage_BoolLiteral_strategy)
+def test_logiclanguage_boolliteral_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
 
-@given(instance=logiclanguage::BoolLiteral_strategy)
+@given(instance=logiclanguage_RealLiteral_strategy)
 @settings(max_examples=50)
-def test_logiclanguage::boolliteral_instantiation(instance):
-    assert isinstance(instance, logiclanguage::BoolLiteral)
-
-@given(instance=logiclanguage::BoolLiteral_strategy)
-def test_logiclanguage::boolliteral_value_type(instance):
-    assert isinstance(instance.value, bool)
+def test_logiclanguage_realliteral_instantiation(instance):
+    assert isinstance(instance, logiclanguage_RealLiteral)
 
 
-@given(instance=logiclanguage::BoolLiteral_strategy)
-def test_logiclanguage::boolliteral_value_setter(instance):
+
+@given(instance=logiclanguage_RealLiteral_strategy)
+def test_logiclanguage_realliteral_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
 
-@given(instance=logiclanguage::RealLiteral_strategy)
+@given(instance=logiclanguage_StringLiteral_strategy)
 @settings(max_examples=50)
-def test_logiclanguage::realliteral_instantiation(instance):
-    assert isinstance(instance, logiclanguage::RealLiteral)
-
-@given(instance=logiclanguage::RealLiteral_strategy)
-def test_logiclanguage::realliteral_value_type(instance):
-    assert isinstance(instance.value, str)
+def test_logiclanguage_stringliteral_instantiation(instance):
+    assert isinstance(instance, logiclanguage_StringLiteral)
 
 
-@given(instance=logiclanguage::RealLiteral_strategy)
-def test_logiclanguage::realliteral_value_setter(instance):
+
+@given(instance=logiclanguage_StringLiteral_strategy)
+def test_logiclanguage_stringliteral_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
 
-@given(instance=logiclanguage::IntLiteral_strategy)
+@given(instance=logiclanguage_IntLiteral_strategy)
 @settings(max_examples=50)
-def test_logiclanguage::intliteral_instantiation(instance):
-    assert isinstance(instance, logiclanguage::IntLiteral)
-
-@given(instance=logiclanguage::IntLiteral_strategy)
-def test_logiclanguage::intliteral_value_type(instance):
-    assert isinstance(instance.value, int)
+def test_logiclanguage_intliteral_instantiation(instance):
+    assert isinstance(instance, logiclanguage_IntLiteral)
 
 
-@given(instance=logiclanguage::IntLiteral_strategy)
-def test_logiclanguage::intliteral_value_setter(instance):
+
+@given(instance=logiclanguage_IntLiteral_strategy)
+def test_logiclanguage_intliteral_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
 
-@given(instance=logiclanguage::AtomicTerm_strategy)
+@given(instance=logiclanguage_AtomicTerm_strategy)
 @settings(max_examples=50)
-def test_logiclanguage::atomicterm_instantiation(instance):
-    assert isinstance(instance, logiclanguage::AtomicTerm)
+def test_logiclanguage_atomicterm_instantiation(instance):
+    assert isinstance(instance, logiclanguage_AtomicTerm)
 
 @given(instance=TypeDescriptor_strategy)
 @settings(max_examples=50)
 def test_typedescriptor_instantiation(instance):
     assert isinstance(instance, TypeDescriptor)
 
-@given(instance=logiclanguage::Type_strategy)
+@given(instance=logiclanguage_Type_strategy)
 @settings(max_examples=50)
-def test_logiclanguage::type_instantiation(instance):
-    assert isinstance(instance, logiclanguage::Type)
-
-@given(instance=logiclanguage::Type_strategy)
-def test_logiclanguage::type_isAbstract_type(instance):
-    assert isinstance(instance.isAbstract, bool)
+def test_logiclanguage_type_instantiation(instance):
+    assert isinstance(instance, logiclanguage_Type)
 
 
-@given(instance=logiclanguage::Type_strategy)
-def test_logiclanguage::type_isAbstract_setter(instance):
+
+@given(instance=logiclanguage_Type_strategy)
+def test_logiclanguage_type_isAbstract_setter(instance):
     original = instance.isAbstract
     instance.isAbstract = original
     assert instance.isAbstract == original
 
-@given(instance=logiclanguage::Type_strategy)
-def test_logiclanguage::type_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
-@given(instance=logiclanguage::Type_strategy)
-def test_logiclanguage::type_name_setter(instance):
+@given(instance=logiclanguage_Type_strategy)
+def test_logiclanguage_type_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
@@ -2173,62 +2146,62 @@ def test_logiclanguage::type_name_setter(instance):
 def test_typereference_instantiation(instance):
     assert isinstance(instance, TypeReference)
 
-@given(instance=logiclanguage::PrimitiveTypeReference_strategy)
+@given(instance=logiclanguage_PrimitiveTypeReference_strategy)
 @settings(max_examples=50)
-def test_logiclanguage::primitivetypereference_instantiation(instance):
-    assert isinstance(instance, logiclanguage::PrimitiveTypeReference)
+def test_logiclanguage_primitivetypereference_instantiation(instance):
+    assert isinstance(instance, logiclanguage_PrimitiveTypeReference)
 
-@given(instance=logiclanguage::ComplexTypeReference_strategy)
+@given(instance=logiclanguage_ComplexTypeReference_strategy)
 @settings(max_examples=50)
-def test_logiclanguage::complextypereference_instantiation(instance):
-    assert isinstance(instance, logiclanguage::ComplexTypeReference)
+def test_logiclanguage_complextypereference_instantiation(instance):
+    assert isinstance(instance, logiclanguage_ComplexTypeReference)
 
-@given(instance=logiclanguage::TypeReference_strategy)
+@given(instance=logiclanguage_TypeReference_strategy)
 @settings(max_examples=50)
-def test_logiclanguage::typereference_instantiation(instance):
-    assert isinstance(instance, logiclanguage::TypeReference)
+def test_logiclanguage_typereference_instantiation(instance):
+    assert isinstance(instance, logiclanguage_TypeReference)
 
 @given(instance=Type_strategy)
 @settings(max_examples=50)
 def test_type_instantiation(instance):
     assert isinstance(instance, Type)
 
-@given(instance=logiclanguage::TypeDeclaration_strategy)
+@given(instance=logiclanguage_TypeDeclaration_strategy)
 @settings(max_examples=50)
-def test_logiclanguage::typedeclaration_instantiation(instance):
-    assert isinstance(instance, logiclanguage::TypeDeclaration)
+def test_logiclanguage_typedeclaration_instantiation(instance):
+    assert isinstance(instance, logiclanguage_TypeDeclaration)
 
-@given(instance=logiclanguage::TypeDefinition_strategy)
+@given(instance=logiclanguage_TypeDefinition_strategy)
 @settings(max_examples=50)
-def test_logiclanguage::typedefinition_instantiation(instance):
-    assert isinstance(instance, logiclanguage::TypeDefinition)
+def test_logiclanguage_typedefinition_instantiation(instance):
+    assert isinstance(instance, logiclanguage_TypeDefinition)
 
 @given(instance=SymbolicDeclaration_strategy)
 @settings(max_examples=50)
 def test_symbolicdeclaration_instantiation(instance):
     assert isinstance(instance, SymbolicDeclaration)
 
-@given(instance=logiclanguage::Function_strategy)
+@given(instance=logiclanguage_Variable_strategy)
 @settings(max_examples=50)
-def test_logiclanguage::function_instantiation(instance):
-    assert isinstance(instance, logiclanguage::Function)
+def test_logiclanguage_variable_instantiation(instance):
+    assert isinstance(instance, logiclanguage_Variable)
 
-@given(instance=logiclanguage::Relation_strategy)
+@given(instance=logiclanguage_Constant_strategy)
 @settings(max_examples=50)
-def test_logiclanguage::relation_instantiation(instance):
-    assert isinstance(instance, logiclanguage::Relation)
+def test_logiclanguage_constant_instantiation(instance):
+    assert isinstance(instance, logiclanguage_Constant)
 
-@given(instance=logiclanguage::Variable_strategy)
+@given(instance=logiclanguage_Relation_strategy)
 @settings(max_examples=50)
-def test_logiclanguage::variable_instantiation(instance):
-    assert isinstance(instance, logiclanguage::Variable)
+def test_logiclanguage_relation_instantiation(instance):
+    assert isinstance(instance, logiclanguage_Relation)
 
-@given(instance=logiclanguage::Constant_strategy)
+@given(instance=logiclanguage_Function_strategy)
 @settings(max_examples=50)
-def test_logiclanguage::constant_instantiation(instance):
-    assert isinstance(instance, logiclanguage::Constant)
+def test_logiclanguage_function_instantiation(instance):
+    assert isinstance(instance, logiclanguage_Function)
 
-@given(instance=logiclanguage::DefinedElement_strategy)
+@given(instance=logiclanguage_DefinedElement_strategy)
 @settings(max_examples=50)
-def test_logiclanguage::definedelement_instantiation(instance):
-    assert isinstance(instance, logiclanguage::DefinedElement)
+def test_logiclanguage_definedelement_instantiation(instance):
+    assert isinstance(instance, logiclanguage_DefinedElement)

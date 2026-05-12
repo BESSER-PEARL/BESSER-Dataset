@@ -3,13 +3,13 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    statemachine::Event,
-    statemachine::Transition,
-    statemachine::State,
-    statemachine::SM,
+from python_code import (
+    statemachine_Event,
+    statemachine_Transition,
+    statemachine_State,
+    statemachine_SM,
 )
 
 # =============================================================================
@@ -18,23 +18,23 @@ from classes import (
 
 
 
-def test_statemachine::event_is_not_abstract():
-    assert not inspect.isabstract(statemachine::Event)
+def test_statemachine_event_is_not_abstract():
+    assert not inspect.isabstract(statemachine_Event)
 
 
-def test_statemachine::event_constructor_exists():
-    assert callable(statemachine::Event.__init__)
+def test_statemachine_event_constructor_exists():
+    assert callable(statemachine_Event.__init__)
 
 
-def test_statemachine::event_constructor_args():
-    sig = inspect.signature(statemachine::Event.__init__)
+def test_statemachine_event_constructor_args():
+    sig = inspect.signature(statemachine_Event.__init__)
     params = list(sig.parameters.keys())
     assert "id" in params, "Missing parameter 'id'"
 
-def test_statemachine::event_has_id():
-    assert hasattr(statemachine::Event, "id")
+def test_statemachine_event_has_id():
+    assert hasattr(statemachine_Event, "id")
     descriptor = None
-    for klass in statemachine::Event.__mro__:
+    for klass in statemachine_Event.__mro__:
         if "id" in klass.__dict__:
             descriptor = klass.__dict__["id"]
             break
@@ -42,37 +42,37 @@ def test_statemachine::event_has_id():
 
 
 
-def test_statemachine::transition_is_not_abstract():
-    assert not inspect.isabstract(statemachine::Transition)
+def test_statemachine_transition_is_not_abstract():
+    assert not inspect.isabstract(statemachine_Transition)
 
 
-def test_statemachine::transition_constructor_exists():
-    assert callable(statemachine::Transition.__init__)
+def test_statemachine_transition_constructor_exists():
+    assert callable(statemachine_Transition.__init__)
 
 
-def test_statemachine::transition_constructor_args():
-    sig = inspect.signature(statemachine::Transition.__init__)
+def test_statemachine_transition_constructor_args():
+    sig = inspect.signature(statemachine_Transition.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_statemachine::state_is_not_abstract():
-    assert not inspect.isabstract(statemachine::State)
+def test_statemachine_state_is_not_abstract():
+    assert not inspect.isabstract(statemachine_State)
 
 
-def test_statemachine::state_constructor_exists():
-    assert callable(statemachine::State.__init__)
+def test_statemachine_state_constructor_exists():
+    assert callable(statemachine_State.__init__)
 
 
-def test_statemachine::state_constructor_args():
-    sig = inspect.signature(statemachine::State.__init__)
+def test_statemachine_state_constructor_args():
+    sig = inspect.signature(statemachine_State.__init__)
     params = list(sig.parameters.keys())
     assert "id" in params, "Missing parameter 'id'"
 
-def test_statemachine::state_has_id():
-    assert hasattr(statemachine::State, "id")
+def test_statemachine_state_has_id():
+    assert hasattr(statemachine_State, "id")
     descriptor = None
-    for klass in statemachine::State.__mro__:
+    for klass in statemachine_State.__mro__:
         if "id" in klass.__dict__:
             descriptor = klass.__dict__["id"]
             break
@@ -80,16 +80,16 @@ def test_statemachine::state_has_id():
 
 
 
-def test_statemachine::sm_is_not_abstract():
-    assert not inspect.isabstract(statemachine::SM)
+def test_statemachine_sm_is_not_abstract():
+    assert not inspect.isabstract(statemachine_SM)
 
 
-def test_statemachine::sm_constructor_exists():
-    assert callable(statemachine::SM.__init__)
+def test_statemachine_sm_constructor_exists():
+    assert callable(statemachine_SM.__init__)
 
 
-def test_statemachine::sm_constructor_args():
-    sig = inspect.signature(statemachine::SM.__init__)
+def test_statemachine_sm_constructor_args():
+    sig = inspect.signature(statemachine_SM.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -104,61 +104,55 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-statemachine::Event_strategy = st.builds(
-    statemachine::Event,
+statemachine_Event_strategy = st.builds(
+    statemachine_Event,
     id=
         safe_text
 )
-statemachine::Transition_strategy = st.builds(
-    statemachine::Transition,
+statemachine_Transition_strategy = st.builds(
+    statemachine_Transition,
 )
-statemachine::State_strategy = st.builds(
-    statemachine::State,
+statemachine_State_strategy = st.builds(
+    statemachine_State,
     id=
         safe_text
 )
-statemachine::SM_strategy = st.builds(
-    statemachine::SM,
+statemachine_SM_strategy = st.builds(
+    statemachine_SM,
 )
 
-@given(instance=statemachine::Event_strategy)
+@given(instance=statemachine_Event_strategy)
 @settings(max_examples=50)
-def test_statemachine::event_instantiation(instance):
-    assert isinstance(instance, statemachine::Event)
-
-@given(instance=statemachine::Event_strategy)
-def test_statemachine::event_id_type(instance):
-    assert isinstance(instance.id, str)
+def test_statemachine_event_instantiation(instance):
+    assert isinstance(instance, statemachine_Event)
 
 
-@given(instance=statemachine::Event_strategy)
-def test_statemachine::event_id_setter(instance):
+
+@given(instance=statemachine_Event_strategy)
+def test_statemachine_event_id_setter(instance):
     original = instance.id
     instance.id = original
     assert instance.id == original
 
-@given(instance=statemachine::Transition_strategy)
+@given(instance=statemachine_Transition_strategy)
 @settings(max_examples=50)
-def test_statemachine::transition_instantiation(instance):
-    assert isinstance(instance, statemachine::Transition)
+def test_statemachine_transition_instantiation(instance):
+    assert isinstance(instance, statemachine_Transition)
 
-@given(instance=statemachine::State_strategy)
+@given(instance=statemachine_State_strategy)
 @settings(max_examples=50)
-def test_statemachine::state_instantiation(instance):
-    assert isinstance(instance, statemachine::State)
-
-@given(instance=statemachine::State_strategy)
-def test_statemachine::state_id_type(instance):
-    assert isinstance(instance.id, str)
+def test_statemachine_state_instantiation(instance):
+    assert isinstance(instance, statemachine_State)
 
 
-@given(instance=statemachine::State_strategy)
-def test_statemachine::state_id_setter(instance):
+
+@given(instance=statemachine_State_strategy)
+def test_statemachine_state_id_setter(instance):
     original = instance.id
     instance.id = original
     assert instance.id == original
 
-@given(instance=statemachine::SM_strategy)
+@given(instance=statemachine_SM_strategy)
 @settings(max_examples=50)
-def test_statemachine::sm_instantiation(instance):
-    assert isinstance(instance, statemachine::SM)
+def test_statemachine_sm_instantiation(instance):
+    assert isinstance(instance, statemachine_SM)

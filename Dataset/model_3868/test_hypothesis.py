@@ -3,29 +3,29 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    core::CORENamedElement,
-    core::CORECompositionSpecification,
-    core::COREInterface,
+from python_code import (
+    core_CORENamedElement,
+    core_CORECompositionSpecification,
+    core_COREInterface,
     COREModel,
-    core::COREFeatureModel,
-    core::COREImpactModel,
-    core::COREModelReuse,
+    core_COREFeatureModel,
+    core_COREImpactModel,
+    core_COREModelReuse,
     CORENamedElement,
-    core::COREConcern,
-    core::COREConfiguration,
-    core::COREModelElement,
-    core::COREMapping,
+    core_COREConfiguration,
+    core_COREModelElement,
+    core_COREConcern,
+    core_COREMapping,
     CORECompositionSpecification,
-    core::COREPattern,
-    core::COREBinding,
-    core::COREReuse,
+    core_COREPattern,
+    core_COREBinding,
+    core_COREReuse,
     COREModelElement,
-    core::COREFeature,
-    core::COREImpactModelElement,
-    core::COREModel,
+    core_COREImpactModelElement,
+    core_COREFeature,
+    core_COREModel,
     COREFeatureSelectionStatus,
     COREFeatureRelationshipType,
 )
@@ -36,23 +36,23 @@ from classes import (
 
 
 
-def test_core::corenamedelement_is_not_abstract():
-    assert not inspect.isabstract(core::CORENamedElement)
+def test_core_corenamedelement_is_not_abstract():
+    assert not inspect.isabstract(core_CORENamedElement)
 
 
-def test_core::corenamedelement_constructor_exists():
-    assert callable(core::CORENamedElement.__init__)
+def test_core_corenamedelement_constructor_exists():
+    assert callable(core_CORENamedElement.__init__)
 
 
-def test_core::corenamedelement_constructor_args():
-    sig = inspect.signature(core::CORENamedElement.__init__)
+def test_core_corenamedelement_constructor_args():
+    sig = inspect.signature(core_CORENamedElement.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_core::corenamedelement_has_name():
-    assert hasattr(core::CORENamedElement, "name")
+def test_core_corenamedelement_has_name():
+    assert hasattr(core_CORENamedElement, "name")
     descriptor = None
-    for klass in core::CORENamedElement.__mro__:
+    for klass in core_CORENamedElement.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -60,30 +60,30 @@ def test_core::corenamedelement_has_name():
 
 
 
-def test_core::corecompositionspecification_is_not_abstract():
-    assert not inspect.isabstract(core::CORECompositionSpecification)
+def test_core_corecompositionspecification_is_not_abstract():
+    assert not inspect.isabstract(core_CORECompositionSpecification)
 
 
-def test_core::corecompositionspecification_constructor_exists():
-    assert callable(core::CORECompositionSpecification.__init__)
+def test_core_corecompositionspecification_constructor_exists():
+    assert callable(core_CORECompositionSpecification.__init__)
 
 
-def test_core::corecompositionspecification_constructor_args():
-    sig = inspect.signature(core::CORECompositionSpecification.__init__)
+def test_core_corecompositionspecification_constructor_args():
+    sig = inspect.signature(core_CORECompositionSpecification.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_core::coreinterface_is_not_abstract():
-    assert not inspect.isabstract(core::COREInterface)
+def test_core_coreinterface_is_not_abstract():
+    assert not inspect.isabstract(core_COREInterface)
 
 
-def test_core::coreinterface_constructor_exists():
-    assert callable(core::COREInterface.__init__)
+def test_core_coreinterface_constructor_exists():
+    assert callable(core_COREInterface.__init__)
 
 
-def test_core::coreinterface_constructor_args():
-    sig = inspect.signature(core::COREInterface.__init__)
+def test_core_coreinterface_constructor_args():
+    sig = inspect.signature(core_COREInterface.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -102,44 +102,44 @@ def test_coremodel_constructor_args():
 
 
 
-def test_core::corefeaturemodel_is_not_abstract():
-    assert not inspect.isabstract(core::COREFeatureModel)
+def test_core_corefeaturemodel_is_not_abstract():
+    assert not inspect.isabstract(core_COREFeatureModel)
 
 
-def test_core::corefeaturemodel_constructor_exists():
-    assert callable(core::COREFeatureModel.__init__)
+def test_core_corefeaturemodel_constructor_exists():
+    assert callable(core_COREFeatureModel.__init__)
 
 
-def test_core::corefeaturemodel_constructor_args():
-    sig = inspect.signature(core::COREFeatureModel.__init__)
+def test_core_corefeaturemodel_constructor_args():
+    sig = inspect.signature(core_COREFeatureModel.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_core::coreimpactmodel_is_not_abstract():
-    assert not inspect.isabstract(core::COREImpactModel)
+def test_core_coreimpactmodel_is_not_abstract():
+    assert not inspect.isabstract(core_COREImpactModel)
 
 
-def test_core::coreimpactmodel_constructor_exists():
-    assert callable(core::COREImpactModel.__init__)
+def test_core_coreimpactmodel_constructor_exists():
+    assert callable(core_COREImpactModel.__init__)
 
 
-def test_core::coreimpactmodel_constructor_args():
-    sig = inspect.signature(core::COREImpactModel.__init__)
+def test_core_coreimpactmodel_constructor_args():
+    sig = inspect.signature(core_COREImpactModel.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_core::coremodelreuse_is_not_abstract():
-    assert not inspect.isabstract(core::COREModelReuse)
+def test_core_coremodelreuse_is_not_abstract():
+    assert not inspect.isabstract(core_COREModelReuse)
 
 
-def test_core::coremodelreuse_constructor_exists():
-    assert callable(core::COREModelReuse.__init__)
+def test_core_coremodelreuse_constructor_exists():
+    assert callable(core_COREModelReuse.__init__)
 
 
-def test_core::coremodelreuse_constructor_args():
-    sig = inspect.signature(core::COREModelReuse.__init__)
+def test_core_coremodelreuse_constructor_args():
+    sig = inspect.signature(core_COREModelReuse.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -158,58 +158,58 @@ def test_corenamedelement_constructor_args():
 
 
 
-def test_core::coreconcern_is_not_abstract():
-    assert not inspect.isabstract(core::COREConcern)
+def test_core_coreconfiguration_is_not_abstract():
+    assert not inspect.isabstract(core_COREConfiguration)
 
 
-def test_core::coreconcern_constructor_exists():
-    assert callable(core::COREConcern.__init__)
+def test_core_coreconfiguration_constructor_exists():
+    assert callable(core_COREConfiguration.__init__)
 
 
-def test_core::coreconcern_constructor_args():
-    sig = inspect.signature(core::COREConcern.__init__)
+def test_core_coreconfiguration_constructor_args():
+    sig = inspect.signature(core_COREConfiguration.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_core::coreconfiguration_is_not_abstract():
-    assert not inspect.isabstract(core::COREConfiguration)
+def test_core_coremodelelement_is_not_abstract():
+    assert not inspect.isabstract(core_COREModelElement)
 
 
-def test_core::coreconfiguration_constructor_exists():
-    assert callable(core::COREConfiguration.__init__)
+def test_core_coremodelelement_constructor_exists():
+    assert callable(core_COREModelElement.__init__)
 
 
-def test_core::coreconfiguration_constructor_args():
-    sig = inspect.signature(core::COREConfiguration.__init__)
+def test_core_coremodelelement_constructor_args():
+    sig = inspect.signature(core_COREModelElement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_core::coremodelelement_is_not_abstract():
-    assert not inspect.isabstract(core::COREModelElement)
+def test_core_coreconcern_is_not_abstract():
+    assert not inspect.isabstract(core_COREConcern)
 
 
-def test_core::coremodelelement_constructor_exists():
-    assert callable(core::COREModelElement.__init__)
+def test_core_coreconcern_constructor_exists():
+    assert callable(core_COREConcern.__init__)
 
 
-def test_core::coremodelelement_constructor_args():
-    sig = inspect.signature(core::COREModelElement.__init__)
+def test_core_coreconcern_constructor_args():
+    sig = inspect.signature(core_COREConcern.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_core::coremapping_is_not_abstract():
-    assert not inspect.isabstract(core::COREMapping)
+def test_core_coremapping_is_not_abstract():
+    assert not inspect.isabstract(core_COREMapping)
 
 
-def test_core::coremapping_constructor_exists():
-    assert callable(core::COREMapping.__init__)
+def test_core_coremapping_constructor_exists():
+    assert callable(core_COREMapping.__init__)
 
 
-def test_core::coremapping_constructor_args():
-    sig = inspect.signature(core::COREMapping.__init__)
+def test_core_coremapping_constructor_args():
+    sig = inspect.signature(core_COREMapping.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -228,44 +228,44 @@ def test_corecompositionspecification_constructor_args():
 
 
 
-def test_core::corepattern_is_not_abstract():
-    assert not inspect.isabstract(core::COREPattern)
+def test_core_corepattern_is_not_abstract():
+    assert not inspect.isabstract(core_COREPattern)
 
 
-def test_core::corepattern_constructor_exists():
-    assert callable(core::COREPattern.__init__)
+def test_core_corepattern_constructor_exists():
+    assert callable(core_COREPattern.__init__)
 
 
-def test_core::corepattern_constructor_args():
-    sig = inspect.signature(core::COREPattern.__init__)
+def test_core_corepattern_constructor_args():
+    sig = inspect.signature(core_COREPattern.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_core::corebinding_is_not_abstract():
-    assert not inspect.isabstract(core::COREBinding)
+def test_core_corebinding_is_not_abstract():
+    assert not inspect.isabstract(core_COREBinding)
 
 
-def test_core::corebinding_constructor_exists():
-    assert callable(core::COREBinding.__init__)
+def test_core_corebinding_constructor_exists():
+    assert callable(core_COREBinding.__init__)
 
 
-def test_core::corebinding_constructor_args():
-    sig = inspect.signature(core::COREBinding.__init__)
+def test_core_corebinding_constructor_args():
+    sig = inspect.signature(core_COREBinding.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_core::corereuse_is_not_abstract():
-    assert not inspect.isabstract(core::COREReuse)
+def test_core_corereuse_is_not_abstract():
+    assert not inspect.isabstract(core_COREReuse)
 
 
-def test_core::corereuse_constructor_exists():
-    assert callable(core::COREReuse.__init__)
+def test_core_corereuse_constructor_exists():
+    assert callable(core_COREReuse.__init__)
 
 
-def test_core::corereuse_constructor_args():
-    sig = inspect.signature(core::COREReuse.__init__)
+def test_core_corereuse_constructor_args():
+    sig = inspect.signature(core_COREReuse.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -284,44 +284,44 @@ def test_coremodelelement_constructor_args():
 
 
 
-def test_core::corefeature_is_not_abstract():
-    assert not inspect.isabstract(core::COREFeature)
+def test_core_coreimpactmodelelement_is_not_abstract():
+    assert not inspect.isabstract(core_COREImpactModelElement)
 
 
-def test_core::corefeature_constructor_exists():
-    assert callable(core::COREFeature.__init__)
+def test_core_coreimpactmodelelement_constructor_exists():
+    assert callable(core_COREImpactModelElement.__init__)
 
 
-def test_core::corefeature_constructor_args():
-    sig = inspect.signature(core::COREFeature.__init__)
+def test_core_coreimpactmodelelement_constructor_args():
+    sig = inspect.signature(core_COREImpactModelElement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_core::coreimpactmodelelement_is_not_abstract():
-    assert not inspect.isabstract(core::COREImpactModelElement)
+def test_core_corefeature_is_not_abstract():
+    assert not inspect.isabstract(core_COREFeature)
 
 
-def test_core::coreimpactmodelelement_constructor_exists():
-    assert callable(core::COREImpactModelElement.__init__)
+def test_core_corefeature_constructor_exists():
+    assert callable(core_COREFeature.__init__)
 
 
-def test_core::coreimpactmodelelement_constructor_args():
-    sig = inspect.signature(core::COREImpactModelElement.__init__)
+def test_core_corefeature_constructor_args():
+    sig = inspect.signature(core_COREFeature.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_core::coremodel_is_not_abstract():
-    assert not inspect.isabstract(core::COREModel)
+def test_core_coremodel_is_not_abstract():
+    assert not inspect.isabstract(core_COREModel)
 
 
-def test_core::coremodel_constructor_exists():
-    assert callable(core::COREModel.__init__)
+def test_core_coremodel_constructor_exists():
+    assert callable(core_COREModel.__init__)
 
 
-def test_core::coremodel_constructor_args():
-    sig = inspect.signature(core::COREModel.__init__)
+def test_core_coremodel_constructor_args():
+    sig = inspect.signature(core_COREModel.__init__)
     params = list(sig.parameters.keys())
 
 def test_corefeatureselectionstatus_exists():
@@ -333,13 +333,13 @@ def test_corefeatureselectionstatus_has_all_literals():
     enum_literals = [lit.name for lit in COREFeatureSelectionStatus]
     expected_literals = [
         "NOT_SELECTED_ACTION_REQUIRED",
-        "AUTO_SELECTED",
-        "REEXPOSE_USER_SELECTED",
-        "NOT_SELECTED_NO_ACTION",
-        "WARNING_USER_SELECTED",
-        "USER_SELECTED",
-        "REEXPOSE_AUTO_SELECTED",
         "WARNING_AUTO_SELECTED",
+        "NOT_SELECTED_NO_ACTION",
+        "REEXPOSE_AUTO_SELECTED",
+        "AUTO_SELECTED",
+        "USER_SELECTED",
+        "WARNING_USER_SELECTED",
+        "REEXPOSE_USER_SELECTED",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
@@ -354,9 +354,9 @@ def test_corefeaturerelationshiptype_has_all_literals():
     enum_literals = [lit.name for lit in COREFeatureRelationshipType]
     expected_literals = [
         "Optional",
-        "XOR",
         "OR",
         "Mandatory",
+        "XOR",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
@@ -374,169 +374,171 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-core::CORENamedElement_strategy = st.builds(
-    core::CORENamedElement,
+core_CORENamedElement_strategy = st.builds(
+    core_CORENamedElement,
     name=
         safe_text
 )
-core::CORECompositionSpecification_strategy = st.builds(
-    core::CORECompositionSpecification,
+core_CORECompositionSpecification_strategy = st.builds(
+    core_CORECompositionSpecification,
 )
-core::COREInterface_strategy = st.builds(
-    core::COREInterface,
+core_COREInterface_strategy = st.builds(
+    core_COREInterface,
 )
 COREModel_strategy = st.builds(
     COREModel,
 )
-core::COREFeatureModel_strategy = st.builds(
-    core::COREFeatureModel,
+core_COREFeatureModel_strategy = st.builds(
+    core_COREFeatureModel,
 )
-core::COREImpactModel_strategy = st.builds(
-    core::COREImpactModel,
+core_COREImpactModel_strategy = st.builds(
+    core_COREImpactModel,
 )
-core::COREModelReuse_strategy = st.builds(
-    core::COREModelReuse,
+core_COREModelReuse_strategy = st.builds(
+    core_COREModelReuse,
 )
 CORENamedElement_strategy = st.builds(
     CORENamedElement,
 )
-core::COREConcern_strategy = st.builds(
-    core::COREConcern,
+core_COREConfiguration_strategy = st.builds(
+    core_COREConfiguration,
 )
-core::COREConfiguration_strategy = st.builds(
-    core::COREConfiguration,
+core_COREModelElement_strategy = st.builds(
+    core_COREModelElement,
 )
-core::COREModelElement_strategy = st.builds(
-    core::COREModelElement,
+core_COREConcern_strategy = st.builds(
+    core_COREConcern,
 )
-core::COREMapping_strategy = st.builds(
-    core::COREMapping,
+core_COREMapping_strategy = st.builds(
+    core_COREMapping,
 )
 CORECompositionSpecification_strategy = st.builds(
     CORECompositionSpecification,
 )
-core::COREPattern_strategy = st.builds(
-    core::COREPattern,
+core_COREPattern_strategy = st.builds(
+    core_COREPattern,
 )
-core::COREBinding_strategy = st.builds(
-    core::COREBinding,
+core_COREBinding_strategy = st.builds(
+    core_COREBinding,
 )
-core::COREReuse_strategy = st.builds(
-    core::COREReuse,
+core_COREReuse_strategy = st.builds(
+    core_COREReuse,
 )
 COREModelElement_strategy = st.builds(
     COREModelElement,
 )
-core::COREFeature_strategy = st.builds(
-    core::COREFeature,
+core_COREImpactModelElement_strategy = st.builds(
+    core_COREImpactModelElement,
 )
-core::COREImpactModelElement_strategy = st.builds(
-    core::COREImpactModelElement,
+core_COREFeature_strategy = st.builds(
+    core_COREFeature,
 )
-core::COREModel_strategy = st.builds(
-    core::COREModel,
+core_COREModel_strategy = st.builds(
+    core_COREModel,
 )
 
-@given(instance=core::CORENamedElement_strategy)
+@given(instance=core_CORENamedElement_strategy)
 @settings(max_examples=50)
-def test_core::corenamedelement_instantiation(instance):
-    assert isinstance(instance, core::CORENamedElement)
-
-@given(instance=core::CORENamedElement_strategy)
-def test_core::corenamedelement_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_core_corenamedelement_instantiation(instance):
+    assert isinstance(instance, core_CORENamedElement)
 
 
-@given(instance=core::CORENamedElement_strategy)
-def test_core::corenamedelement_name_setter(instance):
+
+@given(instance=core_CORENamedElement_strategy)
+def test_core_corenamedelement_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=core::CORECompositionSpecification_strategy)
+@given(instance=core_CORECompositionSpecification_strategy)
 @settings(max_examples=50)
-def test_core::corecompositionspecification_instantiation(instance):
-    assert isinstance(instance, core::CORECompositionSpecification)
+def test_core_corecompositionspecification_instantiation(instance):
+    assert isinstance(instance, core_CORECompositionSpecification)
 
-@given(instance=core::COREInterface_strategy)
+@given(instance=core_COREInterface_strategy)
 @settings(max_examples=50)
-def test_core::coreinterface_instantiation(instance):
-    assert isinstance(instance, core::COREInterface)
+def test_core_coreinterface_instantiation(instance):
+    assert isinstance(instance, core_COREInterface)
 
 @given(instance=COREModel_strategy)
 @settings(max_examples=50)
 def test_coremodel_instantiation(instance):
     assert isinstance(instance, COREModel)
 
-@given(instance=core::COREFeatureModel_strategy)
+@given(instance=core_COREFeatureModel_strategy)
 @settings(max_examples=50)
-def test_core::corefeaturemodel_instantiation(instance):
-    assert isinstance(instance, core::COREFeatureModel)
+def test_core_corefeaturemodel_instantiation(instance):
+    assert isinstance(instance, core_COREFeatureModel)
 
-@given(instance=core::COREImpactModel_strategy)
+@given(instance=core_COREImpactModel_strategy)
 @settings(max_examples=50)
-def test_core::coreimpactmodel_instantiation(instance):
-    assert isinstance(instance, core::COREImpactModel)
+def test_core_coreimpactmodel_instantiation(instance):
+    assert isinstance(instance, core_COREImpactModel)
 
-@given(instance=core::COREModelReuse_strategy)
+@given(instance=core_COREModelReuse_strategy)
 @settings(max_examples=50)
-def test_core::coremodelreuse_instantiation(instance):
-    assert isinstance(instance, core::COREModelReuse)
+def test_core_coremodelreuse_instantiation(instance):
+    assert isinstance(instance, core_COREModelReuse)
 
 @given(instance=CORENamedElement_strategy)
 @settings(max_examples=50)
 def test_corenamedelement_instantiation(instance):
     assert isinstance(instance, CORENamedElement)
 
-@given(instance=core::COREConcern_strategy)
+@given(instance=core_COREConfiguration_strategy)
 @settings(max_examples=50)
-def test_core::coreconcern_instantiation(instance):
-    assert isinstance(instance, core::COREConcern)
+def test_core_coreconfiguration_instantiation(instance):
+    assert isinstance(instance, core_COREConfiguration)
 
-@given(instance=core::COREConfiguration_strategy)
+@given(instance=core_COREModelElement_strategy)
 @settings(max_examples=50)
-def test_core::coreconfiguration_instantiation(instance):
-    assert isinstance(instance, core::COREConfiguration)
+def test_core_coremodelelement_instantiation(instance):
+    assert isinstance(instance, core_COREModelElement)
 
-@given(instance=core::COREModelElement_strategy)
+@given(instance=core_COREConcern_strategy)
 @settings(max_examples=50)
-def test_core::coremodelelement_instantiation(instance):
-    assert isinstance(instance, core::COREModelElement)
+def test_core_coreconcern_instantiation(instance):
+    assert isinstance(instance, core_COREConcern)
 
-@given(instance=core::COREMapping_strategy)
+@given(instance=core_COREMapping_strategy)
 @settings(max_examples=50)
-def test_core::coremapping_instantiation(instance):
-    assert isinstance(instance, core::COREMapping)
+def test_core_coremapping_instantiation(instance):
+    assert isinstance(instance, core_COREMapping)
 
 @given(instance=CORECompositionSpecification_strategy)
 @settings(max_examples=50)
 def test_corecompositionspecification_instantiation(instance):
     assert isinstance(instance, CORECompositionSpecification)
 
-@given(instance=core::COREPattern_strategy)
+@given(instance=core_COREPattern_strategy)
 @settings(max_examples=50)
-def test_core::corepattern_instantiation(instance):
-    assert isinstance(instance, core::COREPattern)
+def test_core_corepattern_instantiation(instance):
+    assert isinstance(instance, core_COREPattern)
 
-@given(instance=core::COREBinding_strategy)
+@given(instance=core_COREBinding_strategy)
 @settings(max_examples=50)
-def test_core::corebinding_instantiation(instance):
-    assert isinstance(instance, core::COREBinding)
+def test_core_corebinding_instantiation(instance):
+    assert isinstance(instance, core_COREBinding)
 
-@given(instance=core::COREReuse_strategy)
+@given(instance=core_COREReuse_strategy)
 @settings(max_examples=50)
-def test_core::corereuse_instantiation(instance):
-    assert isinstance(instance, core::COREReuse)
+def test_core_corereuse_instantiation(instance):
+    assert isinstance(instance, core_COREReuse)
 
 @given(instance=COREModelElement_strategy)
 @settings(max_examples=50)
 def test_coremodelelement_instantiation(instance):
     assert isinstance(instance, COREModelElement)
 
-@given(instance=core::COREFeature_strategy)
+@given(instance=core_COREImpactModelElement_strategy)
 @settings(max_examples=50)
-def test_core::corefeature_instantiation(instance):
-    assert isinstance(instance, core::COREFeature)
+def test_core_coreimpactmodelelement_instantiation(instance):
+    assert isinstance(instance, core_COREImpactModelElement)
+
+@given(instance=core_COREFeature_strategy)
+@settings(max_examples=50)
+def test_core_corefeature_instantiation(instance):
+    assert isinstance(instance, core_COREFeature)
 
 import warnings
 import copy
@@ -544,30 +546,30 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=core::COREFeature_strategy)
+@given(instance=core_COREFeature_strategy)
 @settings(max_examples=30)
-def test_core::corefeature_addrealizedby_changes_state(instance):
+def test_core_corefeature_changelink_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
-        instance.addRealizedBy(
+        instance.changeLink(
             "test"
         )
         if instance.__dict__ != before.__dict__:
             return  # test passes
         # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.addRealizedBy).strip()
+        source = inspect.getsource(instance.changeLink).strip()
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'addRealizedBy' in core::COREFeature is empty"
+        assert has_statements, f"Function 'changeLink' in core_COREFeature is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'addRealizedBy' in core::COREFeature did not change state; check implementation")
+            warnings.warn(f"Operation 'changeLink' in core_COREFeature did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'addRealizedBy' in core::COREFeature is not implemented or raised an error")
+        warnings.warn(f"Operation 'changeLink' in core_COREFeature is not implemented or raised an error")
 
 import warnings
 import copy
@@ -575,100 +577,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=core::COREFeature_strategy)
+@given(instance=core_COREFeature_strategy)
 @settings(max_examples=30)
-def test_core::corefeature_rename_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.rename(
-            "test"
-        )
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.rename).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'rename' in core::COREFeature is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'rename' in core::COREFeature did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'rename' in core::COREFeature is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=core::COREFeature_strategy)
-@settings(max_examples=30)
-def test_core::corefeature_delete_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.delete()
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.delete).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'delete' in core::COREFeature is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'delete' in core::COREFeature did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'delete' in core::COREFeature is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=core::COREFeature_strategy)
-@settings(max_examples=30)
-def test_core::corefeature_requires_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.requires(
-            "test"
-        )
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.requires).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'requires' in core::COREFeature is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'requires' in core::COREFeature did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'requires' in core::COREFeature is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=core::COREFeature_strategy)
-@settings(max_examples=30)
-def test_core::corefeature_changeparent_changes_state(instance):
+def test_core_corefeature_changeparent_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -683,14 +594,14 @@ def test_core::corefeature_changeparent_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'changeParent' in core::COREFeature is empty"
+        assert has_statements, f"Function 'changeParent' in core_COREFeature is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'changeParent' in core::COREFeature did not change state; check implementation")
+            warnings.warn(f"Operation 'changeParent' in core_COREFeature did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'changeParent' in core::COREFeature is not implemented or raised an error")
+        warnings.warn(f"Operation 'changeParent' in core_COREFeature is not implemented or raised an error")
 
 import warnings
 import copy
@@ -698,73 +609,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=core::COREFeature_strategy)
+@given(instance=core_COREFeature_strategy)
 @settings(max_examples=30)
-def test_core::corefeature_addfeature_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.addFeature(
-            "test", 
-            "test", 
-            "test"
-        )
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.addFeature).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'addFeature' in core::COREFeature is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'addFeature' in core::COREFeature did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'addFeature' in core::COREFeature is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=core::COREFeature_strategy)
-@settings(max_examples=30)
-def test_core::corefeature_removeconstraint_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.removeConstraint(
-            "test"
-        )
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.removeConstraint).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'removeConstraint' in core::COREFeature is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'removeConstraint' in core::COREFeature did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'removeConstraint' in core::COREFeature is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=core::COREFeature_strategy)
-@settings(max_examples=30)
-def test_core::corefeature_associatereuse_changes_state(instance):
+def test_core_corefeature_associatereuse_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -780,14 +627,14 @@ def test_core::corefeature_associatereuse_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'AssociateReuse' in core::COREFeature is empty"
+        assert has_statements, f"Function 'AssociateReuse' in core_COREFeature is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'AssociateReuse' in core::COREFeature did not change state; check implementation")
+            warnings.warn(f"Operation 'AssociateReuse' in core_COREFeature did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'AssociateReuse' in core::COREFeature is not implemented or raised an error")
+        warnings.warn(f"Operation 'AssociateReuse' in core_COREFeature is not implemented or raised an error")
 
 import warnings
 import copy
@@ -795,30 +642,30 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=core::COREFeature_strategy)
+@given(instance=core_COREFeature_strategy)
 @settings(max_examples=30)
-def test_core::corefeature_changelink_changes_state(instance):
+def test_core_corefeature_rename_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
-        instance.changeLink(
+        instance.rename(
             "test"
         )
         if instance.__dict__ != before.__dict__:
             return  # test passes
         # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.changeLink).strip()
+        source = inspect.getsource(instance.rename).strip()
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'changeLink' in core::COREFeature is empty"
+        assert has_statements, f"Function 'rename' in core_COREFeature is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'changeLink' in core::COREFeature did not change state; check implementation")
+            warnings.warn(f"Operation 'rename' in core_COREFeature did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'changeLink' in core::COREFeature is not implemented or raised an error")
+        warnings.warn(f"Operation 'rename' in core_COREFeature is not implemented or raised an error")
 
 import warnings
 import copy
@@ -826,9 +673,133 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=core::COREFeature_strategy)
+@given(instance=core_COREFeature_strategy)
 @settings(max_examples=30)
-def test_core::corefeature_excludes_changes_state(instance):
+def test_core_corefeature_addrealizedby_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.addRealizedBy(
+            "test"
+        )
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.addRealizedBy).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'addRealizedBy' in core_COREFeature is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'addRealizedBy' in core_COREFeature did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'addRealizedBy' in core_COREFeature is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=core_COREFeature_strategy)
+@settings(max_examples=30)
+def test_core_corefeature_addfeature_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.addFeature(
+            "test", 
+            "test", 
+            "test"
+        )
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.addFeature).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'addFeature' in core_COREFeature is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'addFeature' in core_COREFeature did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'addFeature' in core_COREFeature is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=core_COREFeature_strategy)
+@settings(max_examples=30)
+def test_core_corefeature_delete_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.delete()
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.delete).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'delete' in core_COREFeature is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'delete' in core_COREFeature did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'delete' in core_COREFeature is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=core_COREFeature_strategy)
+@settings(max_examples=30)
+def test_core_corefeature_removeconstraint_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.removeConstraint(
+            "test"
+        )
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.removeConstraint).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'removeConstraint' in core_COREFeature is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'removeConstraint' in core_COREFeature did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'removeConstraint' in core_COREFeature is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=core_COREFeature_strategy)
+@settings(max_examples=30)
+def test_core_corefeature_excludes_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -842,21 +813,47 @@ def test_core::corefeature_excludes_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'excludes' in core::COREFeature is empty"
+        assert has_statements, f"Function 'excludes' in core_COREFeature is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'excludes' in core::COREFeature did not change state; check implementation")
+            warnings.warn(f"Operation 'excludes' in core_COREFeature did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'excludes' in core::COREFeature is not implemented or raised an error")
+        warnings.warn(f"Operation 'excludes' in core_COREFeature is not implemented or raised an error")
 
-@given(instance=core::COREImpactModelElement_strategy)
-@settings(max_examples=50)
-def test_core::coreimpactmodelelement_instantiation(instance):
-    assert isinstance(instance, core::COREImpactModelElement)
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
 
-@given(instance=core::COREModel_strategy)
+@given(instance=core_COREFeature_strategy)
+@settings(max_examples=30)
+def test_core_corefeature_requires_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.requires(
+            "test"
+        )
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.requires).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'requires' in core_COREFeature is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'requires' in core_COREFeature did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'requires' in core_COREFeature is not implemented or raised an error")
+
+@given(instance=core_COREModel_strategy)
 @settings(max_examples=50)
-def test_core::coremodel_instantiation(instance):
-    assert isinstance(instance, core::COREModel)
+def test_core_coremodel_instantiation(instance):
+    assert isinstance(instance, core_COREModel)

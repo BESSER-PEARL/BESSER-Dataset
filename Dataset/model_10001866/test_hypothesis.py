@@ -3,7 +3,7 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
 from python_code import (
     Confirmar_Consulta_external,
@@ -134,10 +134,10 @@ def test_consulta_constructor_args():
     sig = inspect.signature(Consulta.__init__)
     params = list(sig.parameters.keys())
     assert "ConsultaId" in params, "Missing parameter 'ConsultaId'"
-    assert "Cliente" in params, "Missing parameter 'Cliente'"
     assert "Observacoes" in params, "Missing parameter 'Observacoes'"
     assert "Cirurgiao" in params, "Missing parameter 'Cirurgiao'"
     assert "Situacao" in params, "Missing parameter 'Situacao'"
+    assert "Cliente" in params, "Missing parameter 'Cliente'"
     assert "DataHora" in params, "Missing parameter 'DataHora'"
 
 def test_consulta_has_ConsultaId():
@@ -146,15 +146,6 @@ def test_consulta_has_ConsultaId():
     for klass in Consulta.__mro__:
         if "ConsultaId" in klass.__dict__:
             descriptor = klass.__dict__["ConsultaId"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_consulta_has_Cliente():
-    assert hasattr(Consulta, "Cliente")
-    descriptor = None
-    for klass in Consulta.__mro__:
-        if "Cliente" in klass.__dict__:
-            descriptor = klass.__dict__["Cliente"]
             break
     assert isinstance(descriptor, property)
 
@@ -185,6 +176,15 @@ def test_consulta_has_Situacao():
             break
     assert isinstance(descriptor, property)
 
+def test_consulta_has_Cliente():
+    assert hasattr(Consulta, "Cliente")
+    descriptor = None
+    for klass in Consulta.__mro__:
+        if "Cliente" in klass.__dict__:
+            descriptor = klass.__dict__["Cliente"]
+            break
+    assert isinstance(descriptor, property)
+
 def test_consulta_has_DataHora():
     assert hasattr(Consulta, "DataHora")
     descriptor = None
@@ -207,18 +207,18 @@ def test_cliente_constructor_exists():
 def test_cliente_constructor_args():
     sig = inspect.signature(Cliente.__init__)
     params = list(sig.parameters.keys())
-    assert "Telefone" in params, "Missing parameter 'Telefone'"
-    assert "Cpf" in params, "Missing parameter 'Cpf'"
     assert "ClienteId" in params, "Missing parameter 'ClienteId'"
+    assert "Cpf" in params, "Missing parameter 'Cpf'"
     assert "Nome" in params, "Missing parameter 'Nome'"
     assert "Email" in params, "Missing parameter 'Email'"
+    assert "Telefone" in params, "Missing parameter 'Telefone'"
 
-def test_cliente_has_Telefone():
-    assert hasattr(Cliente, "Telefone")
+def test_cliente_has_ClienteId():
+    assert hasattr(Cliente, "ClienteId")
     descriptor = None
     for klass in Cliente.__mro__:
-        if "Telefone" in klass.__dict__:
-            descriptor = klass.__dict__["Telefone"]
+        if "ClienteId" in klass.__dict__:
+            descriptor = klass.__dict__["ClienteId"]
             break
     assert isinstance(descriptor, property)
 
@@ -228,15 +228,6 @@ def test_cliente_has_Cpf():
     for klass in Cliente.__mro__:
         if "Cpf" in klass.__dict__:
             descriptor = klass.__dict__["Cpf"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_cliente_has_ClienteId():
-    assert hasattr(Cliente, "ClienteId")
-    descriptor = None
-    for klass in Cliente.__mro__:
-        if "ClienteId" in klass.__dict__:
-            descriptor = klass.__dict__["ClienteId"]
             break
     assert isinstance(descriptor, property)
 
@@ -258,6 +249,15 @@ def test_cliente_has_Email():
             break
     assert isinstance(descriptor, property)
 
+def test_cliente_has_Telefone():
+    assert hasattr(Cliente, "Telefone")
+    descriptor = None
+    for klass in Cliente.__mro__:
+        if "Telefone" in klass.__dict__:
+            descriptor = klass.__dict__["Telefone"]
+            break
+    assert isinstance(descriptor, property)
+
 
 
 def test_cirurgiao_is_not_abstract():
@@ -271,9 +271,18 @@ def test_cirurgiao_constructor_exists():
 def test_cirurgiao_constructor_args():
     sig = inspect.signature(Cirurgiao.__init__)
     params = list(sig.parameters.keys())
+    assert "CirurgiaoId" in params, "Missing parameter 'CirurgiaoId'"
     assert "Nome" in params, "Missing parameter 'Nome'"
     assert "Especialidade" in params, "Missing parameter 'Especialidade'"
-    assert "CirurgiaoId" in params, "Missing parameter 'CirurgiaoId'"
+
+def test_cirurgiao_has_CirurgiaoId():
+    assert hasattr(Cirurgiao, "CirurgiaoId")
+    descriptor = None
+    for klass in Cirurgiao.__mro__:
+        if "CirurgiaoId" in klass.__dict__:
+            descriptor = klass.__dict__["CirurgiaoId"]
+            break
+    assert isinstance(descriptor, property)
 
 def test_cirurgiao_has_Nome():
     assert hasattr(Cirurgiao, "Nome")
@@ -290,15 +299,6 @@ def test_cirurgiao_has_Especialidade():
     for klass in Cirurgiao.__mro__:
         if "Especialidade" in klass.__dict__:
             descriptor = klass.__dict__["Especialidade"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_cirurgiao_has_CirurgiaoId():
-    assert hasattr(Cirurgiao, "CirurgiaoId")
-    descriptor = None
-    for klass in Cirurgiao.__mro__:
-        if "CirurgiaoId" in klass.__dict__:
-            descriptor = klass.__dict__["CirurgiaoId"]
             break
     assert isinstance(descriptor, property)
 
@@ -339,38 +339,38 @@ Consulta_strategy = st.builds(
     Consulta,
     ConsultaId=
         st.integers(),
-    Cliente=
-        st.none(),
     Observacoes=
         safe_text,
     Cirurgiao=
         st.none(),
     Situacao=
         safe_text,
+    Cliente=
+        st.none(),
     DataHora=
         safe_text
 )
 Cliente_strategy = st.builds(
     Cliente,
-    Telefone=
-        safe_text,
-    Cpf=
-        safe_text,
     ClienteId=
         st.integers(),
+    Cpf=
+        safe_text,
     Nome=
         safe_text,
     Email=
+        safe_text,
+    Telefone=
         safe_text
 )
 Cirurgiao_strategy = st.builds(
     Cirurgiao,
+    CirurgiaoId=
+        st.integers(),
     Nome=
         safe_text,
     Especialidade=
-        safe_text,
-    CirurgiaoId=
-        st.integers()
+        safe_text
 )
 
 @given(instance=Confirmar_Consulta_external_strategy)
@@ -413,9 +413,6 @@ def test_cliente_actor_instantiation(instance):
 def test_consulta_instantiation(instance):
     assert isinstance(instance, Consulta)
 
-@given(instance=Consulta_strategy)
-def test_consulta_ConsultaId_type(instance):
-    assert isinstance(instance.ConsultaId, int)
 
 
 @given(instance=Consulta_strategy)
@@ -424,20 +421,6 @@ def test_consulta_ConsultaId_setter(instance):
     instance.ConsultaId = original
     assert instance.ConsultaId == original
 
-@given(instance=Consulta_strategy)
-def test_consulta_Cliente_type(instance):
-    assert isinstance(instance.Cliente, cliente)
-
-
-@given(instance=Consulta_strategy)
-def test_consulta_Cliente_setter(instance):
-    original = instance.Cliente
-    instance.Cliente = original
-    assert instance.Cliente == original
-
-@given(instance=Consulta_strategy)
-def test_consulta_Observacoes_type(instance):
-    assert isinstance(instance.Observacoes, str)
 
 
 @given(instance=Consulta_strategy)
@@ -446,9 +429,6 @@ def test_consulta_Observacoes_setter(instance):
     instance.Observacoes = original
     assert instance.Observacoes == original
 
-@given(instance=Consulta_strategy)
-def test_consulta_Cirurgiao_type(instance):
-    assert isinstance(instance.Cirurgiao, cirurgiao)
 
 
 @given(instance=Consulta_strategy)
@@ -457,9 +437,6 @@ def test_consulta_Cirurgiao_setter(instance):
     instance.Cirurgiao = original
     assert instance.Cirurgiao == original
 
-@given(instance=Consulta_strategy)
-def test_consulta_Situacao_type(instance):
-    assert isinstance(instance.Situacao, str)
 
 
 @given(instance=Consulta_strategy)
@@ -468,9 +445,14 @@ def test_consulta_Situacao_setter(instance):
     instance.Situacao = original
     assert instance.Situacao == original
 
+
+
 @given(instance=Consulta_strategy)
-def test_consulta_DataHora_type(instance):
-    assert isinstance(instance.DataHora, str)
+def test_consulta_Cliente_setter(instance):
+    original = instance.Cliente
+    instance.Cliente = original
+    assert instance.Cliente == original
+
 
 
 @given(instance=Consulta_strategy)
@@ -484,31 +466,6 @@ def test_consulta_DataHora_setter(instance):
 def test_cliente_instantiation(instance):
     assert isinstance(instance, Cliente)
 
-@given(instance=Cliente_strategy)
-def test_cliente_Telefone_type(instance):
-    assert isinstance(instance.Telefone, str)
-
-
-@given(instance=Cliente_strategy)
-def test_cliente_Telefone_setter(instance):
-    original = instance.Telefone
-    instance.Telefone = original
-    assert instance.Telefone == original
-
-@given(instance=Cliente_strategy)
-def test_cliente_Cpf_type(instance):
-    assert isinstance(instance.Cpf, str)
-
-
-@given(instance=Cliente_strategy)
-def test_cliente_Cpf_setter(instance):
-    original = instance.Cpf
-    instance.Cpf = original
-    assert instance.Cpf == original
-
-@given(instance=Cliente_strategy)
-def test_cliente_ClienteId_type(instance):
-    assert isinstance(instance.ClienteId, int)
 
 
 @given(instance=Cliente_strategy)
@@ -517,9 +474,14 @@ def test_cliente_ClienteId_setter(instance):
     instance.ClienteId = original
     assert instance.ClienteId == original
 
+
+
 @given(instance=Cliente_strategy)
-def test_cliente_Nome_type(instance):
-    assert isinstance(instance.Nome, str)
+def test_cliente_Cpf_setter(instance):
+    original = instance.Cpf
+    instance.Cpf = original
+    assert instance.Cpf == original
+
 
 
 @given(instance=Cliente_strategy)
@@ -528,9 +490,6 @@ def test_cliente_Nome_setter(instance):
     instance.Nome = original
     assert instance.Nome == original
 
-@given(instance=Cliente_strategy)
-def test_cliente_Email_type(instance):
-    assert isinstance(instance.Email, str)
 
 
 @given(instance=Cliente_strategy)
@@ -539,14 +498,27 @@ def test_cliente_Email_setter(instance):
     instance.Email = original
     assert instance.Email == original
 
+
+
+@given(instance=Cliente_strategy)
+def test_cliente_Telefone_setter(instance):
+    original = instance.Telefone
+    instance.Telefone = original
+    assert instance.Telefone == original
+
 @given(instance=Cirurgiao_strategy)
 @settings(max_examples=50)
 def test_cirurgiao_instantiation(instance):
     assert isinstance(instance, Cirurgiao)
 
+
+
 @given(instance=Cirurgiao_strategy)
-def test_cirurgiao_Nome_type(instance):
-    assert isinstance(instance.Nome, str)
+def test_cirurgiao_CirurgiaoId_setter(instance):
+    original = instance.CirurgiaoId
+    instance.CirurgiaoId = original
+    assert instance.CirurgiaoId == original
+
 
 
 @given(instance=Cirurgiao_strategy)
@@ -555,9 +527,6 @@ def test_cirurgiao_Nome_setter(instance):
     instance.Nome = original
     assert instance.Nome == original
 
-@given(instance=Cirurgiao_strategy)
-def test_cirurgiao_Especialidade_type(instance):
-    assert isinstance(instance.Especialidade, str)
 
 
 @given(instance=Cirurgiao_strategy)
@@ -565,14 +534,3 @@ def test_cirurgiao_Especialidade_setter(instance):
     original = instance.Especialidade
     instance.Especialidade = original
     assert instance.Especialidade == original
-
-@given(instance=Cirurgiao_strategy)
-def test_cirurgiao_CirurgiaoId_type(instance):
-    assert isinstance(instance.CirurgiaoId, int)
-
-
-@given(instance=Cirurgiao_strategy)
-def test_cirurgiao_CirurgiaoId_setter(instance):
-    original = instance.CirurgiaoId
-    instance.CirurgiaoId = original
-    assert instance.CirurgiaoId == original

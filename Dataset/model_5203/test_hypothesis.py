@@ -3,14 +3,14 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    TypeD::BElementName,
-    TypeD::AElementName,
-    TypeD::C,
-    TypeD::B,
-    TypeD::A,
+from python_code import (
+    TypeD_BElementName,
+    TypeD_AElementName,
+    TypeD_C,
+    TypeD_B,
+    TypeD_A,
 )
 
 # =============================================================================
@@ -19,23 +19,23 @@ from classes import (
 
 
 
-def test_typed::belementname_is_not_abstract():
-    assert not inspect.isabstract(TypeD::BElementName)
+def test_typed_belementname_is_not_abstract():
+    assert not inspect.isabstract(TypeD_BElementName)
 
 
-def test_typed::belementname_constructor_exists():
-    assert callable(TypeD::BElementName.__init__)
+def test_typed_belementname_constructor_exists():
+    assert callable(TypeD_BElementName.__init__)
 
 
-def test_typed::belementname_constructor_args():
-    sig = inspect.signature(TypeD::BElementName.__init__)
+def test_typed_belementname_constructor_args():
+    sig = inspect.signature(TypeD_BElementName.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_typed::belementname_has_name():
-    assert hasattr(TypeD::BElementName, "name")
+def test_typed_belementname_has_name():
+    assert hasattr(TypeD_BElementName, "name")
     descriptor = None
-    for klass in TypeD::BElementName.__mro__:
+    for klass in TypeD_BElementName.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -43,23 +43,23 @@ def test_typed::belementname_has_name():
 
 
 
-def test_typed::aelementname_is_not_abstract():
-    assert not inspect.isabstract(TypeD::AElementName)
+def test_typed_aelementname_is_not_abstract():
+    assert not inspect.isabstract(TypeD_AElementName)
 
 
-def test_typed::aelementname_constructor_exists():
-    assert callable(TypeD::AElementName.__init__)
+def test_typed_aelementname_constructor_exists():
+    assert callable(TypeD_AElementName.__init__)
 
 
-def test_typed::aelementname_constructor_args():
-    sig = inspect.signature(TypeD::AElementName.__init__)
+def test_typed_aelementname_constructor_args():
+    sig = inspect.signature(TypeD_AElementName.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_typed::aelementname_has_name():
-    assert hasattr(TypeD::AElementName, "name")
+def test_typed_aelementname_has_name():
+    assert hasattr(TypeD_AElementName, "name")
     descriptor = None
-    for klass in TypeD::AElementName.__mro__:
+    for klass in TypeD_AElementName.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -67,23 +67,23 @@ def test_typed::aelementname_has_name():
 
 
 
-def test_typed::c_is_not_abstract():
-    assert not inspect.isabstract(TypeD::C)
+def test_typed_c_is_not_abstract():
+    assert not inspect.isabstract(TypeD_C)
 
 
-def test_typed::c_constructor_exists():
-    assert callable(TypeD::C.__init__)
+def test_typed_c_constructor_exists():
+    assert callable(TypeD_C.__init__)
 
 
-def test_typed::c_constructor_args():
-    sig = inspect.signature(TypeD::C.__init__)
+def test_typed_c_constructor_args():
+    sig = inspect.signature(TypeD_C.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_typed::c_has_name():
-    assert hasattr(TypeD::C, "name")
+def test_typed_c_has_name():
+    assert hasattr(TypeD_C, "name")
     descriptor = None
-    for klass in TypeD::C.__mro__:
+    for klass in TypeD_C.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -91,23 +91,23 @@ def test_typed::c_has_name():
 
 
 
-def test_typed::b_is_not_abstract():
-    assert not inspect.isabstract(TypeD::B)
+def test_typed_b_is_not_abstract():
+    assert not inspect.isabstract(TypeD_B)
 
 
-def test_typed::b_constructor_exists():
-    assert callable(TypeD::B.__init__)
+def test_typed_b_constructor_exists():
+    assert callable(TypeD_B.__init__)
 
 
-def test_typed::b_constructor_args():
-    sig = inspect.signature(TypeD::B.__init__)
+def test_typed_b_constructor_args():
+    sig = inspect.signature(TypeD_B.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_typed::b_has_name():
-    assert hasattr(TypeD::B, "name")
+def test_typed_b_has_name():
+    assert hasattr(TypeD_B, "name")
     descriptor = None
-    for klass in TypeD::B.__mro__:
+    for klass in TypeD_B.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -115,23 +115,23 @@ def test_typed::b_has_name():
 
 
 
-def test_typed::a_is_not_abstract():
-    assert not inspect.isabstract(TypeD::A)
+def test_typed_a_is_not_abstract():
+    assert not inspect.isabstract(TypeD_A)
 
 
-def test_typed::a_constructor_exists():
-    assert callable(TypeD::A.__init__)
+def test_typed_a_constructor_exists():
+    assert callable(TypeD_A.__init__)
 
 
-def test_typed::a_constructor_args():
-    sig = inspect.signature(TypeD::A.__init__)
+def test_typed_a_constructor_args():
+    sig = inspect.signature(TypeD_A.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_typed::a_has_name():
-    assert hasattr(TypeD::A, "name")
+def test_typed_a_has_name():
+    assert hasattr(TypeD_A, "name")
     descriptor = None
-    for klass in TypeD::A.__mro__:
+    for klass in TypeD_A.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -149,108 +149,93 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-TypeD::BElementName_strategy = st.builds(
-    TypeD::BElementName,
+TypeD_BElementName_strategy = st.builds(
+    TypeD_BElementName,
     name=
         safe_text
 )
-TypeD::AElementName_strategy = st.builds(
-    TypeD::AElementName,
+TypeD_AElementName_strategy = st.builds(
+    TypeD_AElementName,
     name=
         safe_text
 )
-TypeD::C_strategy = st.builds(
-    TypeD::C,
+TypeD_C_strategy = st.builds(
+    TypeD_C,
     name=
         safe_text
 )
-TypeD::B_strategy = st.builds(
-    TypeD::B,
+TypeD_B_strategy = st.builds(
+    TypeD_B,
     name=
         safe_text
 )
-TypeD::A_strategy = st.builds(
-    TypeD::A,
+TypeD_A_strategy = st.builds(
+    TypeD_A,
     name=
         safe_text
 )
 
-@given(instance=TypeD::BElementName_strategy)
+@given(instance=TypeD_BElementName_strategy)
 @settings(max_examples=50)
-def test_typed::belementname_instantiation(instance):
-    assert isinstance(instance, TypeD::BElementName)
-
-@given(instance=TypeD::BElementName_strategy)
-def test_typed::belementname_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_typed_belementname_instantiation(instance):
+    assert isinstance(instance, TypeD_BElementName)
 
 
-@given(instance=TypeD::BElementName_strategy)
-def test_typed::belementname_name_setter(instance):
+
+@given(instance=TypeD_BElementName_strategy)
+def test_typed_belementname_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=TypeD::AElementName_strategy)
+@given(instance=TypeD_AElementName_strategy)
 @settings(max_examples=50)
-def test_typed::aelementname_instantiation(instance):
-    assert isinstance(instance, TypeD::AElementName)
-
-@given(instance=TypeD::AElementName_strategy)
-def test_typed::aelementname_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_typed_aelementname_instantiation(instance):
+    assert isinstance(instance, TypeD_AElementName)
 
 
-@given(instance=TypeD::AElementName_strategy)
-def test_typed::aelementname_name_setter(instance):
+
+@given(instance=TypeD_AElementName_strategy)
+def test_typed_aelementname_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=TypeD::C_strategy)
+@given(instance=TypeD_C_strategy)
 @settings(max_examples=50)
-def test_typed::c_instantiation(instance):
-    assert isinstance(instance, TypeD::C)
-
-@given(instance=TypeD::C_strategy)
-def test_typed::c_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_typed_c_instantiation(instance):
+    assert isinstance(instance, TypeD_C)
 
 
-@given(instance=TypeD::C_strategy)
-def test_typed::c_name_setter(instance):
+
+@given(instance=TypeD_C_strategy)
+def test_typed_c_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=TypeD::B_strategy)
+@given(instance=TypeD_B_strategy)
 @settings(max_examples=50)
-def test_typed::b_instantiation(instance):
-    assert isinstance(instance, TypeD::B)
-
-@given(instance=TypeD::B_strategy)
-def test_typed::b_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_typed_b_instantiation(instance):
+    assert isinstance(instance, TypeD_B)
 
 
-@given(instance=TypeD::B_strategy)
-def test_typed::b_name_setter(instance):
+
+@given(instance=TypeD_B_strategy)
+def test_typed_b_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=TypeD::A_strategy)
+@given(instance=TypeD_A_strategy)
 @settings(max_examples=50)
-def test_typed::a_instantiation(instance):
-    assert isinstance(instance, TypeD::A)
-
-@given(instance=TypeD::A_strategy)
-def test_typed::a_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_typed_a_instantiation(instance):
+    assert isinstance(instance, TypeD_A)
 
 
-@given(instance=TypeD::A_strategy)
-def test_typed::a_name_setter(instance):
+
+@given(instance=TypeD_A_strategy)
+def test_typed_a_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original

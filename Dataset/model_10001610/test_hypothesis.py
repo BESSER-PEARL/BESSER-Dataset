@@ -3,7 +3,7 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
 from python_code import (
     UserProfileRequestCreate,
@@ -99,11 +99,20 @@ def test_profile_userprofile_constructor_exists():
 def test_profile_userprofile_constructor_args():
     sig = inspect.signature(profile_UserProfile.__init__)
     params = list(sig.parameters.keys())
-    assert "attribute" in params, "Missing parameter 'attribute'"
-    assert "name" in params, "Missing parameter 'name'"
-    assert "credits" in params, "Missing parameter 'credits'"
     assert "id" in params, "Missing parameter 'id'"
+    assert "attribute" in params, "Missing parameter 'attribute'"
+    assert "credits" in params, "Missing parameter 'credits'"
+    assert "name" in params, "Missing parameter 'name'"
     assert "uid" in params, "Missing parameter 'uid'"
+
+def test_profile_userprofile_has_id():
+    assert hasattr(profile_UserProfile, "id")
+    descriptor = None
+    for klass in profile_UserProfile.__mro__:
+        if "id" in klass.__dict__:
+            descriptor = klass.__dict__["id"]
+            break
+    assert isinstance(descriptor, property)
 
 def test_profile_userprofile_has_attribute():
     assert hasattr(profile_UserProfile, "attribute")
@@ -111,15 +120,6 @@ def test_profile_userprofile_has_attribute():
     for klass in profile_UserProfile.__mro__:
         if "attribute" in klass.__dict__:
             descriptor = klass.__dict__["attribute"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_profile_userprofile_has_name():
-    assert hasattr(profile_UserProfile, "name")
-    descriptor = None
-    for klass in profile_UserProfile.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
@@ -132,12 +132,12 @@ def test_profile_userprofile_has_credits():
             break
     assert isinstance(descriptor, property)
 
-def test_profile_userprofile_has_id():
-    assert hasattr(profile_UserProfile, "id")
+def test_profile_userprofile_has_name():
+    assert hasattr(profile_UserProfile, "name")
     descriptor = None
     for klass in profile_UserProfile.__mro__:
-        if "id" in klass.__dict__:
-            descriptor = klass.__dict__["id"]
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
@@ -163,28 +163,10 @@ def test_profile_userprofilecontroller_constructor_exists():
 def test_profile_userprofilecontroller_constructor_args():
     sig = inspect.signature(profile_UserProfileController.__init__)
     params = list(sig.parameters.keys())
-    assert "attribute" in params, "Missing parameter 'attribute'"
-    assert "userProfileRepository" in params, "Missing parameter 'userProfileRepository'"
     assert "URL" in params, "Missing parameter 'URL'"
+    assert "attribute" in params, "Missing parameter 'attribute'"
     assert "userAccountRepository" in params, "Missing parameter 'userAccountRepository'"
-
-def test_profile_userprofilecontroller_has_attribute():
-    assert hasattr(profile_UserProfileController, "attribute")
-    descriptor = None
-    for klass in profile_UserProfileController.__mro__:
-        if "attribute" in klass.__dict__:
-            descriptor = klass.__dict__["attribute"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_profile_userprofilecontroller_has_userProfileRepository():
-    assert hasattr(profile_UserProfileController, "userProfileRepository")
-    descriptor = None
-    for klass in profile_UserProfileController.__mro__:
-        if "userProfileRepository" in klass.__dict__:
-            descriptor = klass.__dict__["userProfileRepository"]
-            break
-    assert isinstance(descriptor, property)
+    assert "userProfileRepository" in params, "Missing parameter 'userProfileRepository'"
 
 def test_profile_userprofilecontroller_has_URL():
     assert hasattr(profile_UserProfileController, "URL")
@@ -195,12 +177,30 @@ def test_profile_userprofilecontroller_has_URL():
             break
     assert isinstance(descriptor, property)
 
+def test_profile_userprofilecontroller_has_attribute():
+    assert hasattr(profile_UserProfileController, "attribute")
+    descriptor = None
+    for klass in profile_UserProfileController.__mro__:
+        if "attribute" in klass.__dict__:
+            descriptor = klass.__dict__["attribute"]
+            break
+    assert isinstance(descriptor, property)
+
 def test_profile_userprofilecontroller_has_userAccountRepository():
     assert hasattr(profile_UserProfileController, "userAccountRepository")
     descriptor = None
     for klass in profile_UserProfileController.__mro__:
         if "userAccountRepository" in klass.__dict__:
             descriptor = klass.__dict__["userAccountRepository"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_profile_userprofilecontroller_has_userProfileRepository():
+    assert hasattr(profile_UserProfileController, "userProfileRepository")
+    descriptor = None
+    for klass in profile_UserProfileController.__mro__:
+        if "userProfileRepository" in klass.__dict__:
+            descriptor = klass.__dict__["userProfileRepository"]
             break
     assert isinstance(descriptor, property)
 
@@ -275,26 +275,17 @@ def test_account_useraccountpublicinfo_constructor_exists():
 def test_account_useraccountpublicinfo_constructor_args():
     sig = inspect.signature(account_UserAccountPublicInfo.__init__)
     params = list(sig.parameters.keys())
-    assert "gamesPlayed" in params, "Missing parameter 'gamesPlayed'"
-    assert "alias" in params, "Missing parameter 'alias'"
-    assert "gamesWon" in params, "Missing parameter 'gamesWon'"
     assert "id" in params, "Missing parameter 'id'"
+    assert "gamesWon" in params, "Missing parameter 'gamesWon'"
+    assert "alias" in params, "Missing parameter 'alias'"
+    assert "gamesPlayed" in params, "Missing parameter 'gamesPlayed'"
 
-def test_account_useraccountpublicinfo_has_gamesPlayed():
-    assert hasattr(account_UserAccountPublicInfo, "gamesPlayed")
+def test_account_useraccountpublicinfo_has_id():
+    assert hasattr(account_UserAccountPublicInfo, "id")
     descriptor = None
     for klass in account_UserAccountPublicInfo.__mro__:
-        if "gamesPlayed" in klass.__dict__:
-            descriptor = klass.__dict__["gamesPlayed"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_account_useraccountpublicinfo_has_alias():
-    assert hasattr(account_UserAccountPublicInfo, "alias")
-    descriptor = None
-    for klass in account_UserAccountPublicInfo.__mro__:
-        if "alias" in klass.__dict__:
-            descriptor = klass.__dict__["alias"]
+        if "id" in klass.__dict__:
+            descriptor = klass.__dict__["id"]
             break
     assert isinstance(descriptor, property)
 
@@ -307,12 +298,21 @@ def test_account_useraccountpublicinfo_has_gamesWon():
             break
     assert isinstance(descriptor, property)
 
-def test_account_useraccountpublicinfo_has_id():
-    assert hasattr(account_UserAccountPublicInfo, "id")
+def test_account_useraccountpublicinfo_has_alias():
+    assert hasattr(account_UserAccountPublicInfo, "alias")
     descriptor = None
     for klass in account_UserAccountPublicInfo.__mro__:
-        if "id" in klass.__dict__:
-            descriptor = klass.__dict__["id"]
+        if "alias" in klass.__dict__:
+            descriptor = klass.__dict__["alias"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_account_useraccountpublicinfo_has_gamesPlayed():
+    assert hasattr(account_UserAccountPublicInfo, "gamesPlayed")
+    descriptor = None
+    for klass in account_UserAccountPublicInfo.__mro__:
+        if "gamesPlayed" in klass.__dict__:
+            descriptor = klass.__dict__["gamesPlayed"]
             break
     assert isinstance(descriptor, property)
 
@@ -343,17 +343,8 @@ def test_account_useraccountcontroller_constructor_exists():
 def test_account_useraccountcontroller_constructor_args():
     sig = inspect.signature(account_UserAccountController.__init__)
     params = list(sig.parameters.keys())
-    assert "userAccountRepository" in params, "Missing parameter 'userAccountRepository'"
     assert "URL" in params, "Missing parameter 'URL'"
-
-def test_account_useraccountcontroller_has_userAccountRepository():
-    assert hasattr(account_UserAccountController, "userAccountRepository")
-    descriptor = None
-    for klass in account_UserAccountController.__mro__:
-        if "userAccountRepository" in klass.__dict__:
-            descriptor = klass.__dict__["userAccountRepository"]
-            break
-    assert isinstance(descriptor, property)
+    assert "userAccountRepository" in params, "Missing parameter 'userAccountRepository'"
 
 def test_account_useraccountcontroller_has_URL():
     assert hasattr(account_UserAccountController, "URL")
@@ -361,6 +352,15 @@ def test_account_useraccountcontroller_has_URL():
     for klass in account_UserAccountController.__mro__:
         if "URL" in klass.__dict__:
             descriptor = klass.__dict__["URL"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_account_useraccountcontroller_has_userAccountRepository():
+    assert hasattr(account_UserAccountController, "userAccountRepository")
+    descriptor = None
+    for klass in account_UserAccountController.__mro__:
+        if "userAccountRepository" in klass.__dict__:
+            descriptor = klass.__dict__["userAccountRepository"]
             break
     assert isinstance(descriptor, property)
 
@@ -377,20 +377,20 @@ def test_account_useraccount_constructor_exists():
 def test_account_useraccount_constructor_args():
     sig = inspect.signature(account_UserAccount.__init__)
     params = list(sig.parameters.keys())
-    assert "alias" in params, "Missing parameter 'alias'"
+    assert "gamesWon" in params, "Missing parameter 'gamesWon'"
     assert "password" in params, "Missing parameter 'password'"
     assert "createdAt" in params, "Missing parameter 'createdAt'"
+    assert "alias" in params, "Missing parameter 'alias'"
+    assert "gamesPlayed" in params, "Missing parameter 'gamesPlayed'"
     assert "email" in params, "Missing parameter 'email'"
     assert "id" in params, "Missing parameter 'id'"
-    assert "gamesPlayed" in params, "Missing parameter 'gamesPlayed'"
-    assert "gamesWon" in params, "Missing parameter 'gamesWon'"
 
-def test_account_useraccount_has_alias():
-    assert hasattr(account_UserAccount, "alias")
+def test_account_useraccount_has_gamesWon():
+    assert hasattr(account_UserAccount, "gamesWon")
     descriptor = None
     for klass in account_UserAccount.__mro__:
-        if "alias" in klass.__dict__:
-            descriptor = klass.__dict__["alias"]
+        if "gamesWon" in klass.__dict__:
+            descriptor = klass.__dict__["gamesWon"]
             break
     assert isinstance(descriptor, property)
 
@@ -412,6 +412,24 @@ def test_account_useraccount_has_createdAt():
             break
     assert isinstance(descriptor, property)
 
+def test_account_useraccount_has_alias():
+    assert hasattr(account_UserAccount, "alias")
+    descriptor = None
+    for klass in account_UserAccount.__mro__:
+        if "alias" in klass.__dict__:
+            descriptor = klass.__dict__["alias"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_account_useraccount_has_gamesPlayed():
+    assert hasattr(account_UserAccount, "gamesPlayed")
+    descriptor = None
+    for klass in account_UserAccount.__mro__:
+        if "gamesPlayed" in klass.__dict__:
+            descriptor = klass.__dict__["gamesPlayed"]
+            break
+    assert isinstance(descriptor, property)
+
 def test_account_useraccount_has_email():
     assert hasattr(account_UserAccount, "email")
     descriptor = None
@@ -427,24 +445,6 @@ def test_account_useraccount_has_id():
     for klass in account_UserAccount.__mro__:
         if "id" in klass.__dict__:
             descriptor = klass.__dict__["id"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_account_useraccount_has_gamesPlayed():
-    assert hasattr(account_UserAccount, "gamesPlayed")
-    descriptor = None
-    for klass in account_UserAccount.__mro__:
-        if "gamesPlayed" in klass.__dict__:
-            descriptor = klass.__dict__["gamesPlayed"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_account_useraccount_has_gamesWon():
-    assert hasattr(account_UserAccount, "gamesWon")
-    descriptor = None
-    for klass in account_UserAccount.__mro__:
-        if "gamesWon" in klass.__dict__:
-            descriptor = klass.__dict__["gamesWon"]
             break
     assert isinstance(descriptor, property)
 
@@ -587,26 +587,26 @@ Integer_Interface_strategy = st.builds(
 )
 profile_UserProfile_strategy = st.builds(
     profile_UserProfile,
-    attribute=
+    id=
         safe_text,
-    name=
+    attribute=
         safe_text,
     credits=
         safe_text,
-    id=
+    name=
         safe_text,
     uid=
         safe_text
 )
 profile_UserProfileController_strategy = st.builds(
     profile_UserProfileController,
-    attribute=
-        safe_text,
-    userProfileRepository=
-        st.none(),
     URL=
         safe_text,
+    attribute=
+        safe_text,
     userAccountRepository=
+        st.none(),
+    userProfileRepository=
         st.none()
 )
 profile_UserProfileRepository_Interface_strategy = st.builds(
@@ -623,13 +623,13 @@ account_UserAccountPasswordChange_strategy = st.builds(
 )
 account_UserAccountPublicInfo_strategy = st.builds(
     account_UserAccountPublicInfo,
-    gamesPlayed=
-        safe_text,
-    alias=
+    id=
         safe_text,
     gamesWon=
         safe_text,
-    id=
+    alias=
+        safe_text,
+    gamesPlayed=
         safe_text
 )
 account_UserAccountRepository_Interface_strategy = st.builds(
@@ -637,26 +637,26 @@ account_UserAccountRepository_Interface_strategy = st.builds(
 )
 account_UserAccountController_strategy = st.builds(
     account_UserAccountController,
-    userAccountRepository=
-        st.none(),
     URL=
-        safe_text
+        safe_text,
+    userAccountRepository=
+        st.none()
 )
 account_UserAccount_strategy = st.builds(
     account_UserAccount,
-    alias=
+    gamesWon=
         safe_text,
     password=
         safe_text,
     createdAt=
         safe_text,
-    email=
-        safe_text,
-    id=
+    alias=
         safe_text,
     gamesPlayed=
         safe_text,
-    gamesWon=
+    email=
+        safe_text,
+    id=
         safe_text
 )
 game_GameController_strategy = st.builds(
@@ -706,42 +706,6 @@ def test_integer_interface_instantiation(instance):
 def test_profile_userprofile_instantiation(instance):
     assert isinstance(instance, profile_UserProfile)
 
-@given(instance=profile_UserProfile_strategy)
-def test_profile_userprofile_attribute_type(instance):
-    assert isinstance(instance.attribute, str)
-
-
-@given(instance=profile_UserProfile_strategy)
-def test_profile_userprofile_attribute_setter(instance):
-    original = instance.attribute
-    instance.attribute = original
-    assert instance.attribute == original
-
-@given(instance=profile_UserProfile_strategy)
-def test_profile_userprofile_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=profile_UserProfile_strategy)
-def test_profile_userprofile_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
-
-@given(instance=profile_UserProfile_strategy)
-def test_profile_userprofile_credits_type(instance):
-    assert isinstance(instance.credits, str)
-
-
-@given(instance=profile_UserProfile_strategy)
-def test_profile_userprofile_credits_setter(instance):
-    original = instance.credits
-    instance.credits = original
-    assert instance.credits == original
-
-@given(instance=profile_UserProfile_strategy)
-def test_profile_userprofile_id_type(instance):
-    assert isinstance(instance.id, str)
 
 
 @given(instance=profile_UserProfile_strategy)
@@ -750,9 +714,30 @@ def test_profile_userprofile_id_setter(instance):
     instance.id = original
     assert instance.id == original
 
+
+
 @given(instance=profile_UserProfile_strategy)
-def test_profile_userprofile_uid_type(instance):
-    assert isinstance(instance.uid, str)
+def test_profile_userprofile_attribute_setter(instance):
+    original = instance.attribute
+    instance.attribute = original
+    assert instance.attribute == original
+
+
+
+@given(instance=profile_UserProfile_strategy)
+def test_profile_userprofile_credits_setter(instance):
+    original = instance.credits
+    instance.credits = original
+    assert instance.credits == original
+
+
+
+@given(instance=profile_UserProfile_strategy)
+def test_profile_userprofile_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
 
 
 @given(instance=profile_UserProfile_strategy)
@@ -766,31 +751,6 @@ def test_profile_userprofile_uid_setter(instance):
 def test_profile_userprofilecontroller_instantiation(instance):
     assert isinstance(instance, profile_UserProfileController)
 
-@given(instance=profile_UserProfileController_strategy)
-def test_profile_userprofilecontroller_attribute_type(instance):
-    assert isinstance(instance.attribute, str)
-
-
-@given(instance=profile_UserProfileController_strategy)
-def test_profile_userprofilecontroller_attribute_setter(instance):
-    original = instance.attribute
-    instance.attribute = original
-    assert instance.attribute == original
-
-@given(instance=profile_UserProfileController_strategy)
-def test_profile_userprofilecontroller_userProfileRepository_type(instance):
-    assert isinstance(instance.userProfileRepository, profile_userprofilerepository_interface)
-
-
-@given(instance=profile_UserProfileController_strategy)
-def test_profile_userprofilecontroller_userProfileRepository_setter(instance):
-    original = instance.userProfileRepository
-    instance.userProfileRepository = original
-    assert instance.userProfileRepository == original
-
-@given(instance=profile_UserProfileController_strategy)
-def test_profile_userprofilecontroller_URL_type(instance):
-    assert isinstance(instance.URL, str)
 
 
 @given(instance=profile_UserProfileController_strategy)
@@ -799,9 +759,14 @@ def test_profile_userprofilecontroller_URL_setter(instance):
     instance.URL = original
     assert instance.URL == original
 
+
+
 @given(instance=profile_UserProfileController_strategy)
-def test_profile_userprofilecontroller_userAccountRepository_type(instance):
-    assert isinstance(instance.userAccountRepository, account_useraccountrepository_interface)
+def test_profile_userprofilecontroller_attribute_setter(instance):
+    original = instance.attribute
+    instance.attribute = original
+    assert instance.attribute == original
+
 
 
 @given(instance=profile_UserProfileController_strategy)
@@ -809,6 +774,14 @@ def test_profile_userprofilecontroller_userAccountRepository_setter(instance):
     original = instance.userAccountRepository
     instance.userAccountRepository = original
     assert instance.userAccountRepository == original
+
+
+
+@given(instance=profile_UserProfileController_strategy)
+def test_profile_userprofilecontroller_userProfileRepository_setter(instance):
+    original = instance.userProfileRepository
+    instance.userProfileRepository = original
+    assert instance.userProfileRepository == original
 
 @given(instance=profile_UserProfileRepository_Interface_strategy)
 @settings(max_examples=50)
@@ -820,9 +793,6 @@ def test_profile_userprofilerepository_interface_instantiation(instance):
 def test_account_useraccountpasswordchange_instantiation(instance):
     assert isinstance(instance, account_UserAccountPasswordChange)
 
-@given(instance=account_UserAccountPasswordChange_strategy)
-def test_account_useraccountpasswordchange_oldPassword_type(instance):
-    assert isinstance(instance.oldPassword, str)
 
 
 @given(instance=account_UserAccountPasswordChange_strategy)
@@ -831,9 +801,6 @@ def test_account_useraccountpasswordchange_oldPassword_setter(instance):
     instance.oldPassword = original
     assert instance.oldPassword == original
 
-@given(instance=account_UserAccountPasswordChange_strategy)
-def test_account_useraccountpasswordchange_newPassword_type(instance):
-    assert isinstance(instance.newPassword, str)
 
 
 @given(instance=account_UserAccountPasswordChange_strategy)
@@ -842,9 +809,6 @@ def test_account_useraccountpasswordchange_newPassword_setter(instance):
     instance.newPassword = original
     assert instance.newPassword == original
 
-@given(instance=account_UserAccountPasswordChange_strategy)
-def test_account_useraccountpasswordchange_email_type(instance):
-    assert isinstance(instance.email, str)
 
 
 @given(instance=account_UserAccountPasswordChange_strategy)
@@ -858,31 +822,14 @@ def test_account_useraccountpasswordchange_email_setter(instance):
 def test_account_useraccountpublicinfo_instantiation(instance):
     assert isinstance(instance, account_UserAccountPublicInfo)
 
-@given(instance=account_UserAccountPublicInfo_strategy)
-def test_account_useraccountpublicinfo_gamesPlayed_type(instance):
-    assert isinstance(instance.gamesPlayed, str)
 
 
 @given(instance=account_UserAccountPublicInfo_strategy)
-def test_account_useraccountpublicinfo_gamesPlayed_setter(instance):
-    original = instance.gamesPlayed
-    instance.gamesPlayed = original
-    assert instance.gamesPlayed == original
+def test_account_useraccountpublicinfo_id_setter(instance):
+    original = instance.id
+    instance.id = original
+    assert instance.id == original
 
-@given(instance=account_UserAccountPublicInfo_strategy)
-def test_account_useraccountpublicinfo_alias_type(instance):
-    assert isinstance(instance.alias, str)
-
-
-@given(instance=account_UserAccountPublicInfo_strategy)
-def test_account_useraccountpublicinfo_alias_setter(instance):
-    original = instance.alias
-    instance.alias = original
-    assert instance.alias == original
-
-@given(instance=account_UserAccountPublicInfo_strategy)
-def test_account_useraccountpublicinfo_gamesWon_type(instance):
-    assert isinstance(instance.gamesWon, str)
 
 
 @given(instance=account_UserAccountPublicInfo_strategy)
@@ -891,16 +838,21 @@ def test_account_useraccountpublicinfo_gamesWon_setter(instance):
     instance.gamesWon = original
     assert instance.gamesWon == original
 
-@given(instance=account_UserAccountPublicInfo_strategy)
-def test_account_useraccountpublicinfo_id_type(instance):
-    assert isinstance(instance.id, str)
 
 
 @given(instance=account_UserAccountPublicInfo_strategy)
-def test_account_useraccountpublicinfo_id_setter(instance):
-    original = instance.id
-    instance.id = original
-    assert instance.id == original
+def test_account_useraccountpublicinfo_alias_setter(instance):
+    original = instance.alias
+    instance.alias = original
+    assert instance.alias == original
+
+
+
+@given(instance=account_UserAccountPublicInfo_strategy)
+def test_account_useraccountpublicinfo_gamesPlayed_setter(instance):
+    original = instance.gamesPlayed
+    instance.gamesPlayed = original
+    assert instance.gamesPlayed == original
 
 @given(instance=account_UserAccountRepository_Interface_strategy)
 @settings(max_examples=50)
@@ -912,20 +864,6 @@ def test_account_useraccountrepository_interface_instantiation(instance):
 def test_account_useraccountcontroller_instantiation(instance):
     assert isinstance(instance, account_UserAccountController)
 
-@given(instance=account_UserAccountController_strategy)
-def test_account_useraccountcontroller_userAccountRepository_type(instance):
-    assert isinstance(instance.userAccountRepository, account_useraccountrepository_interface)
-
-
-@given(instance=account_UserAccountController_strategy)
-def test_account_useraccountcontroller_userAccountRepository_setter(instance):
-    original = instance.userAccountRepository
-    instance.userAccountRepository = original
-    assert instance.userAccountRepository == original
-
-@given(instance=account_UserAccountController_strategy)
-def test_account_useraccountcontroller_URL_type(instance):
-    assert isinstance(instance.URL, str)
 
 
 @given(instance=account_UserAccountController_strategy)
@@ -934,25 +872,27 @@ def test_account_useraccountcontroller_URL_setter(instance):
     instance.URL = original
     assert instance.URL == original
 
+
+
+@given(instance=account_UserAccountController_strategy)
+def test_account_useraccountcontroller_userAccountRepository_setter(instance):
+    original = instance.userAccountRepository
+    instance.userAccountRepository = original
+    assert instance.userAccountRepository == original
+
 @given(instance=account_UserAccount_strategy)
 @settings(max_examples=50)
 def test_account_useraccount_instantiation(instance):
     assert isinstance(instance, account_UserAccount)
 
-@given(instance=account_UserAccount_strategy)
-def test_account_useraccount_alias_type(instance):
-    assert isinstance(instance.alias, str)
 
 
 @given(instance=account_UserAccount_strategy)
-def test_account_useraccount_alias_setter(instance):
-    original = instance.alias
-    instance.alias = original
-    assert instance.alias == original
+def test_account_useraccount_gamesWon_setter(instance):
+    original = instance.gamesWon
+    instance.gamesWon = original
+    assert instance.gamesWon == original
 
-@given(instance=account_UserAccount_strategy)
-def test_account_useraccount_password_type(instance):
-    assert isinstance(instance.password, str)
 
 
 @given(instance=account_UserAccount_strategy)
@@ -961,9 +901,6 @@ def test_account_useraccount_password_setter(instance):
     instance.password = original
     assert instance.password == original
 
-@given(instance=account_UserAccount_strategy)
-def test_account_useraccount_createdAt_type(instance):
-    assert isinstance(instance.createdAt, str)
 
 
 @given(instance=account_UserAccount_strategy)
@@ -972,31 +909,14 @@ def test_account_useraccount_createdAt_setter(instance):
     instance.createdAt = original
     assert instance.createdAt == original
 
-@given(instance=account_UserAccount_strategy)
-def test_account_useraccount_email_type(instance):
-    assert isinstance(instance.email, str)
 
 
 @given(instance=account_UserAccount_strategy)
-def test_account_useraccount_email_setter(instance):
-    original = instance.email
-    instance.email = original
-    assert instance.email == original
+def test_account_useraccount_alias_setter(instance):
+    original = instance.alias
+    instance.alias = original
+    assert instance.alias == original
 
-@given(instance=account_UserAccount_strategy)
-def test_account_useraccount_id_type(instance):
-    assert isinstance(instance.id, str)
-
-
-@given(instance=account_UserAccount_strategy)
-def test_account_useraccount_id_setter(instance):
-    original = instance.id
-    instance.id = original
-    assert instance.id == original
-
-@given(instance=account_UserAccount_strategy)
-def test_account_useraccount_gamesPlayed_type(instance):
-    assert isinstance(instance.gamesPlayed, str)
 
 
 @given(instance=account_UserAccount_strategy)
@@ -1005,16 +925,21 @@ def test_account_useraccount_gamesPlayed_setter(instance):
     instance.gamesPlayed = original
     assert instance.gamesPlayed == original
 
-@given(instance=account_UserAccount_strategy)
-def test_account_useraccount_gamesWon_type(instance):
-    assert isinstance(instance.gamesWon, str)
 
 
 @given(instance=account_UserAccount_strategy)
-def test_account_useraccount_gamesWon_setter(instance):
-    original = instance.gamesWon
-    instance.gamesWon = original
-    assert instance.gamesWon == original
+def test_account_useraccount_email_setter(instance):
+    original = instance.email
+    instance.email = original
+    assert instance.email == original
+
+
+
+@given(instance=account_UserAccount_strategy)
+def test_account_useraccount_id_setter(instance):
+    original = instance.id
+    instance.id = original
+    assert instance.id == original
 
 @given(instance=game_GameController_strategy)
 @settings(max_examples=50)
@@ -1036,9 +961,6 @@ def test_game_ace_instantiation(instance):
 def test_game_card_instantiation(instance):
     assert isinstance(instance, game_Card)
 
-@given(instance=game_Card_strategy)
-def test_game_card_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
 @given(instance=game_Card_strategy)
@@ -1047,9 +969,6 @@ def test_game_card_name_setter(instance):
     instance.name = original
     assert instance.name == original
 
-@given(instance=game_Card_strategy)
-def test_game_card_suit_type(instance):
-    assert isinstance(instance.suit, str)
 
 
 @given(instance=game_Card_strategy)
@@ -1063,9 +982,6 @@ def test_game_card_suit_setter(instance):
 def test_game_deck_instantiation(instance):
     assert isinstance(instance, game_Deck)
 
-@given(instance=game_Deck_strategy)
-def test_game_deck_cards_type(instance):
-    assert isinstance(instance.cards, str)
 
 
 @given(instance=game_Deck_strategy)

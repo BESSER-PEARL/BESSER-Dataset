@@ -3,26 +3,26 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    samplemodel::LinkCrossLink,
-    samplemodel::LinkFromLink,
+from python_code import (
+    samplemodel_LinkCrossLink,
+    samplemodel_LinkFromLink,
     CommonBaseClass,
-    samplemodel::NodeTargetB,
-    samplemodel::NodeSrcA,
-    samplemodel::Link2Link,
+    samplemodel_NodeTargetB,
+    samplemodel_NodeSrcA,
+    samplemodel_Link2Link,
     NodeTargetB,
-    samplemodel::NodeTargetD,
-    samplemodel::NodeTargetC,
-    samplemodel::Child2,
-    samplemodel::Child,
-    samplemodel::LinkAtoA,
-    samplemodel::LinkAtoC::Cardinality1,
-    samplemodel::LinkAtoC::Cardinality2,
-    samplemodel::LinkAtoC,
-    samplemodel::UltimateContainer,
-    samplemodel::CommonBaseClass,
+    samplemodel_NodeTargetD,
+    samplemodel_NodeTargetC,
+    samplemodel_Child2,
+    samplemodel_Child,
+    samplemodel_LinkAtoA,
+    samplemodel_LinkAtoC_Cardinality1,
+    samplemodel_LinkAtoC_Cardinality2,
+    samplemodel_LinkAtoC,
+    samplemodel_UltimateContainer,
+    samplemodel_CommonBaseClass,
 )
 
 # =============================================================================
@@ -31,30 +31,30 @@ from classes import (
 
 
 
-def test_samplemodel::linkcrosslink_is_not_abstract():
-    assert not inspect.isabstract(samplemodel::LinkCrossLink)
+def test_samplemodel_linkcrosslink_is_not_abstract():
+    assert not inspect.isabstract(samplemodel_LinkCrossLink)
 
 
-def test_samplemodel::linkcrosslink_constructor_exists():
-    assert callable(samplemodel::LinkCrossLink.__init__)
+def test_samplemodel_linkcrosslink_constructor_exists():
+    assert callable(samplemodel_LinkCrossLink.__init__)
 
 
-def test_samplemodel::linkcrosslink_constructor_args():
-    sig = inspect.signature(samplemodel::LinkCrossLink.__init__)
+def test_samplemodel_linkcrosslink_constructor_args():
+    sig = inspect.signature(samplemodel_LinkCrossLink.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_samplemodel::linkfromlink_is_not_abstract():
-    assert not inspect.isabstract(samplemodel::LinkFromLink)
+def test_samplemodel_linkfromlink_is_not_abstract():
+    assert not inspect.isabstract(samplemodel_LinkFromLink)
 
 
-def test_samplemodel::linkfromlink_constructor_exists():
-    assert callable(samplemodel::LinkFromLink.__init__)
+def test_samplemodel_linkfromlink_constructor_exists():
+    assert callable(samplemodel_LinkFromLink.__init__)
 
 
-def test_samplemodel::linkfromlink_constructor_args():
-    sig = inspect.signature(samplemodel::LinkFromLink.__init__)
+def test_samplemodel_linkfromlink_constructor_args():
+    sig = inspect.signature(samplemodel_LinkFromLink.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -73,23 +73,23 @@ def test_commonbaseclass_constructor_args():
 
 
 
-def test_samplemodel::nodetargetb_is_not_abstract():
-    assert not inspect.isabstract(samplemodel::NodeTargetB)
+def test_samplemodel_nodetargetb_is_not_abstract():
+    assert not inspect.isabstract(samplemodel_NodeTargetB)
 
 
-def test_samplemodel::nodetargetb_constructor_exists():
-    assert callable(samplemodel::NodeTargetB.__init__)
+def test_samplemodel_nodetargetb_constructor_exists():
+    assert callable(samplemodel_NodeTargetB.__init__)
 
 
-def test_samplemodel::nodetargetb_constructor_args():
-    sig = inspect.signature(samplemodel::NodeTargetB.__init__)
+def test_samplemodel_nodetargetb_constructor_args():
+    sig = inspect.signature(samplemodel_NodeTargetB.__init__)
     params = list(sig.parameters.keys())
     assert "title" in params, "Missing parameter 'title'"
 
-def test_samplemodel::nodetargetb_has_title():
-    assert hasattr(samplemodel::NodeTargetB, "title")
+def test_samplemodel_nodetargetb_has_title():
+    assert hasattr(samplemodel_NodeTargetB, "title")
     descriptor = None
-    for klass in samplemodel::NodeTargetB.__mro__:
+    for klass in samplemodel_NodeTargetB.__mro__:
         if "title" in klass.__dict__:
             descriptor = klass.__dict__["title"]
             break
@@ -97,23 +97,23 @@ def test_samplemodel::nodetargetb_has_title():
 
 
 
-def test_samplemodel::nodesrca_is_not_abstract():
-    assert not inspect.isabstract(samplemodel::NodeSrcA)
+def test_samplemodel_nodesrca_is_not_abstract():
+    assert not inspect.isabstract(samplemodel_NodeSrcA)
 
 
-def test_samplemodel::nodesrca_constructor_exists():
-    assert callable(samplemodel::NodeSrcA.__init__)
+def test_samplemodel_nodesrca_constructor_exists():
+    assert callable(samplemodel_NodeSrcA.__init__)
 
 
-def test_samplemodel::nodesrca_constructor_args():
-    sig = inspect.signature(samplemodel::NodeSrcA.__init__)
+def test_samplemodel_nodesrca_constructor_args():
+    sig = inspect.signature(samplemodel_NodeSrcA.__init__)
     params = list(sig.parameters.keys())
     assert "label" in params, "Missing parameter 'label'"
 
-def test_samplemodel::nodesrca_has_label():
-    assert hasattr(samplemodel::NodeSrcA, "label")
+def test_samplemodel_nodesrca_has_label():
+    assert hasattr(samplemodel_NodeSrcA, "label")
     descriptor = None
-    for klass in samplemodel::NodeSrcA.__mro__:
+    for klass in samplemodel_NodeSrcA.__mro__:
         if "label" in klass.__dict__:
             descriptor = klass.__dict__["label"]
             break
@@ -121,16 +121,16 @@ def test_samplemodel::nodesrca_has_label():
 
 
 
-def test_samplemodel::link2link_is_not_abstract():
-    assert not inspect.isabstract(samplemodel::Link2Link)
+def test_samplemodel_link2link_is_not_abstract():
+    assert not inspect.isabstract(samplemodel_Link2Link)
 
 
-def test_samplemodel::link2link_constructor_exists():
-    assert callable(samplemodel::Link2Link.__init__)
+def test_samplemodel_link2link_constructor_exists():
+    assert callable(samplemodel_Link2Link.__init__)
 
 
-def test_samplemodel::link2link_constructor_args():
-    sig = inspect.signature(samplemodel::Link2Link.__init__)
+def test_samplemodel_link2link_constructor_args():
+    sig = inspect.signature(samplemodel_Link2Link.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -149,51 +149,51 @@ def test_nodetargetb_constructor_args():
 
 
 
-def test_samplemodel::nodetargetd_is_not_abstract():
-    assert not inspect.isabstract(samplemodel::NodeTargetD)
+def test_samplemodel_nodetargetd_is_not_abstract():
+    assert not inspect.isabstract(samplemodel_NodeTargetD)
 
 
-def test_samplemodel::nodetargetd_constructor_exists():
-    assert callable(samplemodel::NodeTargetD.__init__)
+def test_samplemodel_nodetargetd_constructor_exists():
+    assert callable(samplemodel_NodeTargetD.__init__)
 
 
-def test_samplemodel::nodetargetd_constructor_args():
-    sig = inspect.signature(samplemodel::NodeTargetD.__init__)
+def test_samplemodel_nodetargetd_constructor_args():
+    sig = inspect.signature(samplemodel_NodeTargetD.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_samplemodel::nodetargetc_is_not_abstract():
-    assert not inspect.isabstract(samplemodel::NodeTargetC)
+def test_samplemodel_nodetargetc_is_not_abstract():
+    assert not inspect.isabstract(samplemodel_NodeTargetC)
 
 
-def test_samplemodel::nodetargetc_constructor_exists():
-    assert callable(samplemodel::NodeTargetC.__init__)
+def test_samplemodel_nodetargetc_constructor_exists():
+    assert callable(samplemodel_NodeTargetC.__init__)
 
 
-def test_samplemodel::nodetargetc_constructor_args():
-    sig = inspect.signature(samplemodel::NodeTargetC.__init__)
+def test_samplemodel_nodetargetc_constructor_args():
+    sig = inspect.signature(samplemodel_NodeTargetC.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_samplemodel::child2_is_not_abstract():
-    assert not inspect.isabstract(samplemodel::Child2)
+def test_samplemodel_child2_is_not_abstract():
+    assert not inspect.isabstract(samplemodel_Child2)
 
 
-def test_samplemodel::child2_constructor_exists():
-    assert callable(samplemodel::Child2.__init__)
+def test_samplemodel_child2_constructor_exists():
+    assert callable(samplemodel_Child2.__init__)
 
 
-def test_samplemodel::child2_constructor_args():
-    sig = inspect.signature(samplemodel::Child2.__init__)
+def test_samplemodel_child2_constructor_args():
+    sig = inspect.signature(samplemodel_Child2.__init__)
     params = list(sig.parameters.keys())
     assert "childLabel" in params, "Missing parameter 'childLabel'"
 
-def test_samplemodel::child2_has_childLabel():
-    assert hasattr(samplemodel::Child2, "childLabel")
+def test_samplemodel_child2_has_childLabel():
+    assert hasattr(samplemodel_Child2, "childLabel")
     descriptor = None
-    for klass in samplemodel::Child2.__mro__:
+    for klass in samplemodel_Child2.__mro__:
         if "childLabel" in klass.__dict__:
             descriptor = klass.__dict__["childLabel"]
             break
@@ -201,23 +201,23 @@ def test_samplemodel::child2_has_childLabel():
 
 
 
-def test_samplemodel::child_is_not_abstract():
-    assert not inspect.isabstract(samplemodel::Child)
+def test_samplemodel_child_is_not_abstract():
+    assert not inspect.isabstract(samplemodel_Child)
 
 
-def test_samplemodel::child_constructor_exists():
-    assert callable(samplemodel::Child.__init__)
+def test_samplemodel_child_constructor_exists():
+    assert callable(samplemodel_Child.__init__)
 
 
-def test_samplemodel::child_constructor_args():
-    sig = inspect.signature(samplemodel::Child.__init__)
+def test_samplemodel_child_constructor_args():
+    sig = inspect.signature(samplemodel_Child.__init__)
     params = list(sig.parameters.keys())
     assert "childLabel" in params, "Missing parameter 'childLabel'"
 
-def test_samplemodel::child_has_childLabel():
-    assert hasattr(samplemodel::Child, "childLabel")
+def test_samplemodel_child_has_childLabel():
+    assert hasattr(samplemodel_Child, "childLabel")
     descriptor = None
-    for klass in samplemodel::Child.__mro__:
+    for klass in samplemodel_Child.__mro__:
         if "childLabel" in klass.__dict__:
             descriptor = klass.__dict__["childLabel"]
             break
@@ -225,79 +225,79 @@ def test_samplemodel::child_has_childLabel():
 
 
 
-def test_samplemodel::linkatoa_is_not_abstract():
-    assert not inspect.isabstract(samplemodel::LinkAtoA)
+def test_samplemodel_linkatoa_is_not_abstract():
+    assert not inspect.isabstract(samplemodel_LinkAtoA)
 
 
-def test_samplemodel::linkatoa_constructor_exists():
-    assert callable(samplemodel::LinkAtoA.__init__)
+def test_samplemodel_linkatoa_constructor_exists():
+    assert callable(samplemodel_LinkAtoA.__init__)
 
 
-def test_samplemodel::linkatoa_constructor_args():
-    sig = inspect.signature(samplemodel::LinkAtoA.__init__)
+def test_samplemodel_linkatoa_constructor_args():
+    sig = inspect.signature(samplemodel_LinkAtoA.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_samplemodel::linkatoc::cardinality1_is_not_abstract():
-    assert not inspect.isabstract(samplemodel::LinkAtoC::Cardinality1)
+def test_samplemodel_linkatoc_cardinality1_is_not_abstract():
+    assert not inspect.isabstract(samplemodel_LinkAtoC_Cardinality1)
 
 
-def test_samplemodel::linkatoc::cardinality1_constructor_exists():
-    assert callable(samplemodel::LinkAtoC::Cardinality1.__init__)
+def test_samplemodel_linkatoc_cardinality1_constructor_exists():
+    assert callable(samplemodel_LinkAtoC_Cardinality1.__init__)
 
 
-def test_samplemodel::linkatoc::cardinality1_constructor_args():
-    sig = inspect.signature(samplemodel::LinkAtoC::Cardinality1.__init__)
+def test_samplemodel_linkatoc_cardinality1_constructor_args():
+    sig = inspect.signature(samplemodel_LinkAtoC_Cardinality1.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_samplemodel::linkatoc::cardinality2_is_not_abstract():
-    assert not inspect.isabstract(samplemodel::LinkAtoC::Cardinality2)
+def test_samplemodel_linkatoc_cardinality2_is_not_abstract():
+    assert not inspect.isabstract(samplemodel_LinkAtoC_Cardinality2)
 
 
-def test_samplemodel::linkatoc::cardinality2_constructor_exists():
-    assert callable(samplemodel::LinkAtoC::Cardinality2.__init__)
+def test_samplemodel_linkatoc_cardinality2_constructor_exists():
+    assert callable(samplemodel_LinkAtoC_Cardinality2.__init__)
 
 
-def test_samplemodel::linkatoc::cardinality2_constructor_args():
-    sig = inspect.signature(samplemodel::LinkAtoC::Cardinality2.__init__)
+def test_samplemodel_linkatoc_cardinality2_constructor_args():
+    sig = inspect.signature(samplemodel_LinkAtoC_Cardinality2.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_samplemodel::linkatoc_is_not_abstract():
-    assert not inspect.isabstract(samplemodel::LinkAtoC)
+def test_samplemodel_linkatoc_is_not_abstract():
+    assert not inspect.isabstract(samplemodel_LinkAtoC)
 
 
-def test_samplemodel::linkatoc_constructor_exists():
-    assert callable(samplemodel::LinkAtoC.__init__)
+def test_samplemodel_linkatoc_constructor_exists():
+    assert callable(samplemodel_LinkAtoC.__init__)
 
 
-def test_samplemodel::linkatoc_constructor_args():
-    sig = inspect.signature(samplemodel::LinkAtoC.__init__)
+def test_samplemodel_linkatoc_constructor_args():
+    sig = inspect.signature(samplemodel_LinkAtoC.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_samplemodel::ultimatecontainer_is_not_abstract():
-    assert not inspect.isabstract(samplemodel::UltimateContainer)
+def test_samplemodel_ultimatecontainer_is_not_abstract():
+    assert not inspect.isabstract(samplemodel_UltimateContainer)
 
 
-def test_samplemodel::ultimatecontainer_constructor_exists():
-    assert callable(samplemodel::UltimateContainer.__init__)
+def test_samplemodel_ultimatecontainer_constructor_exists():
+    assert callable(samplemodel_UltimateContainer.__init__)
 
 
-def test_samplemodel::ultimatecontainer_constructor_args():
-    sig = inspect.signature(samplemodel::UltimateContainer.__init__)
+def test_samplemodel_ultimatecontainer_constructor_args():
+    sig = inspect.signature(samplemodel_UltimateContainer.__init__)
     params = list(sig.parameters.keys())
     assert "diagramAttribute" in params, "Missing parameter 'diagramAttribute'"
 
-def test_samplemodel::ultimatecontainer_has_diagramAttribute():
-    assert hasattr(samplemodel::UltimateContainer, "diagramAttribute")
+def test_samplemodel_ultimatecontainer_has_diagramAttribute():
+    assert hasattr(samplemodel_UltimateContainer, "diagramAttribute")
     descriptor = None
-    for klass in samplemodel::UltimateContainer.__mro__:
+    for klass in samplemodel_UltimateContainer.__mro__:
         if "diagramAttribute" in klass.__dict__:
             descriptor = klass.__dict__["diagramAttribute"]
             break
@@ -305,16 +305,16 @@ def test_samplemodel::ultimatecontainer_has_diagramAttribute():
 
 
 
-def test_samplemodel::commonbaseclass_is_not_abstract():
-    assert not inspect.isabstract(samplemodel::CommonBaseClass)
+def test_samplemodel_commonbaseclass_is_not_abstract():
+    assert not inspect.isabstract(samplemodel_CommonBaseClass)
 
 
-def test_samplemodel::commonbaseclass_constructor_exists():
-    assert callable(samplemodel::CommonBaseClass.__init__)
+def test_samplemodel_commonbaseclass_constructor_exists():
+    assert callable(samplemodel_CommonBaseClass.__init__)
 
 
-def test_samplemodel::commonbaseclass_constructor_args():
-    sig = inspect.signature(samplemodel::CommonBaseClass.__init__)
+def test_samplemodel_commonbaseclass_constructor_args():
+    sig = inspect.signature(samplemodel_CommonBaseClass.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -329,204 +329,189 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-samplemodel::LinkCrossLink_strategy = st.builds(
-    samplemodel::LinkCrossLink,
+samplemodel_LinkCrossLink_strategy = st.builds(
+    samplemodel_LinkCrossLink,
 )
-samplemodel::LinkFromLink_strategy = st.builds(
-    samplemodel::LinkFromLink,
+samplemodel_LinkFromLink_strategy = st.builds(
+    samplemodel_LinkFromLink,
 )
 CommonBaseClass_strategy = st.builds(
     CommonBaseClass,
 )
-samplemodel::NodeTargetB_strategy = st.builds(
-    samplemodel::NodeTargetB,
+samplemodel_NodeTargetB_strategy = st.builds(
+    samplemodel_NodeTargetB,
     title=
         safe_text
 )
-samplemodel::NodeSrcA_strategy = st.builds(
-    samplemodel::NodeSrcA,
+samplemodel_NodeSrcA_strategy = st.builds(
+    samplemodel_NodeSrcA,
     label=
         safe_text
 )
-samplemodel::Link2Link_strategy = st.builds(
-    samplemodel::Link2Link,
+samplemodel_Link2Link_strategy = st.builds(
+    samplemodel_Link2Link,
 )
 NodeTargetB_strategy = st.builds(
     NodeTargetB,
 )
-samplemodel::NodeTargetD_strategy = st.builds(
-    samplemodel::NodeTargetD,
+samplemodel_NodeTargetD_strategy = st.builds(
+    samplemodel_NodeTargetD,
 )
-samplemodel::NodeTargetC_strategy = st.builds(
-    samplemodel::NodeTargetC,
+samplemodel_NodeTargetC_strategy = st.builds(
+    samplemodel_NodeTargetC,
 )
-samplemodel::Child2_strategy = st.builds(
-    samplemodel::Child2,
+samplemodel_Child2_strategy = st.builds(
+    samplemodel_Child2,
     childLabel=
         safe_text
 )
-samplemodel::Child_strategy = st.builds(
-    samplemodel::Child,
+samplemodel_Child_strategy = st.builds(
+    samplemodel_Child,
     childLabel=
         safe_text
 )
-samplemodel::LinkAtoA_strategy = st.builds(
-    samplemodel::LinkAtoA,
+samplemodel_LinkAtoA_strategy = st.builds(
+    samplemodel_LinkAtoA,
 )
-samplemodel::LinkAtoC::Cardinality1_strategy = st.builds(
-    samplemodel::LinkAtoC::Cardinality1,
+samplemodel_LinkAtoC_Cardinality1_strategy = st.builds(
+    samplemodel_LinkAtoC_Cardinality1,
 )
-samplemodel::LinkAtoC::Cardinality2_strategy = st.builds(
-    samplemodel::LinkAtoC::Cardinality2,
+samplemodel_LinkAtoC_Cardinality2_strategy = st.builds(
+    samplemodel_LinkAtoC_Cardinality2,
 )
-samplemodel::LinkAtoC_strategy = st.builds(
-    samplemodel::LinkAtoC,
+samplemodel_LinkAtoC_strategy = st.builds(
+    samplemodel_LinkAtoC,
 )
-samplemodel::UltimateContainer_strategy = st.builds(
-    samplemodel::UltimateContainer,
+samplemodel_UltimateContainer_strategy = st.builds(
+    samplemodel_UltimateContainer,
     diagramAttribute=
         safe_text
 )
-samplemodel::CommonBaseClass_strategy = st.builds(
-    samplemodel::CommonBaseClass,
+samplemodel_CommonBaseClass_strategy = st.builds(
+    samplemodel_CommonBaseClass,
 )
 
-@given(instance=samplemodel::LinkCrossLink_strategy)
+@given(instance=samplemodel_LinkCrossLink_strategy)
 @settings(max_examples=50)
-def test_samplemodel::linkcrosslink_instantiation(instance):
-    assert isinstance(instance, samplemodel::LinkCrossLink)
+def test_samplemodel_linkcrosslink_instantiation(instance):
+    assert isinstance(instance, samplemodel_LinkCrossLink)
 
-@given(instance=samplemodel::LinkFromLink_strategy)
+@given(instance=samplemodel_LinkFromLink_strategy)
 @settings(max_examples=50)
-def test_samplemodel::linkfromlink_instantiation(instance):
-    assert isinstance(instance, samplemodel::LinkFromLink)
+def test_samplemodel_linkfromlink_instantiation(instance):
+    assert isinstance(instance, samplemodel_LinkFromLink)
 
 @given(instance=CommonBaseClass_strategy)
 @settings(max_examples=50)
 def test_commonbaseclass_instantiation(instance):
     assert isinstance(instance, CommonBaseClass)
 
-@given(instance=samplemodel::NodeTargetB_strategy)
+@given(instance=samplemodel_NodeTargetB_strategy)
 @settings(max_examples=50)
-def test_samplemodel::nodetargetb_instantiation(instance):
-    assert isinstance(instance, samplemodel::NodeTargetB)
-
-@given(instance=samplemodel::NodeTargetB_strategy)
-def test_samplemodel::nodetargetb_title_type(instance):
-    assert isinstance(instance.title, str)
+def test_samplemodel_nodetargetb_instantiation(instance):
+    assert isinstance(instance, samplemodel_NodeTargetB)
 
 
-@given(instance=samplemodel::NodeTargetB_strategy)
-def test_samplemodel::nodetargetb_title_setter(instance):
+
+@given(instance=samplemodel_NodeTargetB_strategy)
+def test_samplemodel_nodetargetb_title_setter(instance):
     original = instance.title
     instance.title = original
     assert instance.title == original
 
-@given(instance=samplemodel::NodeSrcA_strategy)
+@given(instance=samplemodel_NodeSrcA_strategy)
 @settings(max_examples=50)
-def test_samplemodel::nodesrca_instantiation(instance):
-    assert isinstance(instance, samplemodel::NodeSrcA)
-
-@given(instance=samplemodel::NodeSrcA_strategy)
-def test_samplemodel::nodesrca_label_type(instance):
-    assert isinstance(instance.label, str)
+def test_samplemodel_nodesrca_instantiation(instance):
+    assert isinstance(instance, samplemodel_NodeSrcA)
 
 
-@given(instance=samplemodel::NodeSrcA_strategy)
-def test_samplemodel::nodesrca_label_setter(instance):
+
+@given(instance=samplemodel_NodeSrcA_strategy)
+def test_samplemodel_nodesrca_label_setter(instance):
     original = instance.label
     instance.label = original
     assert instance.label == original
 
-@given(instance=samplemodel::Link2Link_strategy)
+@given(instance=samplemodel_Link2Link_strategy)
 @settings(max_examples=50)
-def test_samplemodel::link2link_instantiation(instance):
-    assert isinstance(instance, samplemodel::Link2Link)
+def test_samplemodel_link2link_instantiation(instance):
+    assert isinstance(instance, samplemodel_Link2Link)
 
 @given(instance=NodeTargetB_strategy)
 @settings(max_examples=50)
 def test_nodetargetb_instantiation(instance):
     assert isinstance(instance, NodeTargetB)
 
-@given(instance=samplemodel::NodeTargetD_strategy)
+@given(instance=samplemodel_NodeTargetD_strategy)
 @settings(max_examples=50)
-def test_samplemodel::nodetargetd_instantiation(instance):
-    assert isinstance(instance, samplemodel::NodeTargetD)
+def test_samplemodel_nodetargetd_instantiation(instance):
+    assert isinstance(instance, samplemodel_NodeTargetD)
 
-@given(instance=samplemodel::NodeTargetC_strategy)
+@given(instance=samplemodel_NodeTargetC_strategy)
 @settings(max_examples=50)
-def test_samplemodel::nodetargetc_instantiation(instance):
-    assert isinstance(instance, samplemodel::NodeTargetC)
+def test_samplemodel_nodetargetc_instantiation(instance):
+    assert isinstance(instance, samplemodel_NodeTargetC)
 
-@given(instance=samplemodel::Child2_strategy)
+@given(instance=samplemodel_Child2_strategy)
 @settings(max_examples=50)
-def test_samplemodel::child2_instantiation(instance):
-    assert isinstance(instance, samplemodel::Child2)
-
-@given(instance=samplemodel::Child2_strategy)
-def test_samplemodel::child2_childLabel_type(instance):
-    assert isinstance(instance.childLabel, str)
+def test_samplemodel_child2_instantiation(instance):
+    assert isinstance(instance, samplemodel_Child2)
 
 
-@given(instance=samplemodel::Child2_strategy)
-def test_samplemodel::child2_childLabel_setter(instance):
+
+@given(instance=samplemodel_Child2_strategy)
+def test_samplemodel_child2_childLabel_setter(instance):
     original = instance.childLabel
     instance.childLabel = original
     assert instance.childLabel == original
 
-@given(instance=samplemodel::Child_strategy)
+@given(instance=samplemodel_Child_strategy)
 @settings(max_examples=50)
-def test_samplemodel::child_instantiation(instance):
-    assert isinstance(instance, samplemodel::Child)
-
-@given(instance=samplemodel::Child_strategy)
-def test_samplemodel::child_childLabel_type(instance):
-    assert isinstance(instance.childLabel, str)
+def test_samplemodel_child_instantiation(instance):
+    assert isinstance(instance, samplemodel_Child)
 
 
-@given(instance=samplemodel::Child_strategy)
-def test_samplemodel::child_childLabel_setter(instance):
+
+@given(instance=samplemodel_Child_strategy)
+def test_samplemodel_child_childLabel_setter(instance):
     original = instance.childLabel
     instance.childLabel = original
     assert instance.childLabel == original
 
-@given(instance=samplemodel::LinkAtoA_strategy)
+@given(instance=samplemodel_LinkAtoA_strategy)
 @settings(max_examples=50)
-def test_samplemodel::linkatoa_instantiation(instance):
-    assert isinstance(instance, samplemodel::LinkAtoA)
+def test_samplemodel_linkatoa_instantiation(instance):
+    assert isinstance(instance, samplemodel_LinkAtoA)
 
-@given(instance=samplemodel::LinkAtoC::Cardinality1_strategy)
+@given(instance=samplemodel_LinkAtoC_Cardinality1_strategy)
 @settings(max_examples=50)
-def test_samplemodel::linkatoc::cardinality1_instantiation(instance):
-    assert isinstance(instance, samplemodel::LinkAtoC::Cardinality1)
+def test_samplemodel_linkatoc_cardinality1_instantiation(instance):
+    assert isinstance(instance, samplemodel_LinkAtoC_Cardinality1)
 
-@given(instance=samplemodel::LinkAtoC::Cardinality2_strategy)
+@given(instance=samplemodel_LinkAtoC_Cardinality2_strategy)
 @settings(max_examples=50)
-def test_samplemodel::linkatoc::cardinality2_instantiation(instance):
-    assert isinstance(instance, samplemodel::LinkAtoC::Cardinality2)
+def test_samplemodel_linkatoc_cardinality2_instantiation(instance):
+    assert isinstance(instance, samplemodel_LinkAtoC_Cardinality2)
 
-@given(instance=samplemodel::LinkAtoC_strategy)
+@given(instance=samplemodel_LinkAtoC_strategy)
 @settings(max_examples=50)
-def test_samplemodel::linkatoc_instantiation(instance):
-    assert isinstance(instance, samplemodel::LinkAtoC)
+def test_samplemodel_linkatoc_instantiation(instance):
+    assert isinstance(instance, samplemodel_LinkAtoC)
 
-@given(instance=samplemodel::UltimateContainer_strategy)
+@given(instance=samplemodel_UltimateContainer_strategy)
 @settings(max_examples=50)
-def test_samplemodel::ultimatecontainer_instantiation(instance):
-    assert isinstance(instance, samplemodel::UltimateContainer)
-
-@given(instance=samplemodel::UltimateContainer_strategy)
-def test_samplemodel::ultimatecontainer_diagramAttribute_type(instance):
-    assert isinstance(instance.diagramAttribute, str)
+def test_samplemodel_ultimatecontainer_instantiation(instance):
+    assert isinstance(instance, samplemodel_UltimateContainer)
 
 
-@given(instance=samplemodel::UltimateContainer_strategy)
-def test_samplemodel::ultimatecontainer_diagramAttribute_setter(instance):
+
+@given(instance=samplemodel_UltimateContainer_strategy)
+def test_samplemodel_ultimatecontainer_diagramAttribute_setter(instance):
     original = instance.diagramAttribute
     instance.diagramAttribute = original
     assert instance.diagramAttribute == original
 
-@given(instance=samplemodel::CommonBaseClass_strategy)
+@given(instance=samplemodel_CommonBaseClass_strategy)
 @settings(max_examples=50)
-def test_samplemodel::commonbaseclass_instantiation(instance):
-    assert isinstance(instance, samplemodel::CommonBaseClass)
+def test_samplemodel_commonbaseclass_instantiation(instance):
+    assert isinstance(instance, samplemodel_CommonBaseClass)

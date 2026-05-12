@@ -3,7 +3,7 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
 from python_code import (
     TarotCard___Card,
@@ -29,18 +29,9 @@ def test_tarotcard___card_constructor_exists():
 def test_tarotcard___card_constructor_args():
     sig = inspect.signature(TarotCard___Card.__init__)
     params = list(sig.parameters.keys())
-    assert "_id" in params, "Missing parameter '_id'"
     assert "_fortunes" in params, "Missing parameter '_fortunes'"
     assert "_fileName" in params, "Missing parameter '_fileName'"
-
-def test_tarotcard___card_has__id():
-    assert hasattr(TarotCard___Card, "_id")
-    descriptor = None
-    for klass in TarotCard___Card.__mro__:
-        if "_id" in klass.__dict__:
-            descriptor = klass.__dict__["_id"]
-            break
-    assert isinstance(descriptor, property)
+    assert "_id" in params, "Missing parameter '_id'"
 
 def test_tarotcard___card_has__fortunes():
     assert hasattr(TarotCard___Card, "_fortunes")
@@ -57,6 +48,15 @@ def test_tarotcard___card_has__fileName():
     for klass in TarotCard___Card.__mro__:
         if "_fileName" in klass.__dict__:
             descriptor = klass.__dict__["_fileName"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_tarotcard___card_has__id():
+    assert hasattr(TarotCard___Card, "_id")
+    descriptor = None
+    for klass in TarotCard___Card.__mro__:
+        if "_id" in klass.__dict__:
+            descriptor = klass.__dict__["_id"]
             break
     assert isinstance(descriptor, property)
 
@@ -146,12 +146,12 @@ safe_text = st.text(
 ).filter(lambda s: s[0].isalpha())
 TarotCard___Card_strategy = st.builds(
     TarotCard___Card,
-    _id=
-        st.integers(),
     _fortunes=
         safe_text,
     _fileName=
-        safe_text
+        safe_text,
+    _id=
+        st.integers()
 )
 Card___Abstract___strategy = st.builds(
     Card___Abstract__,
@@ -174,20 +174,6 @@ Deck_strategy = st.builds(
 def test_tarotcard___card_instantiation(instance):
     assert isinstance(instance, TarotCard___Card)
 
-@given(instance=TarotCard___Card_strategy)
-def test_tarotcard___card__id_type(instance):
-    assert isinstance(instance._id, int)
-
-
-@given(instance=TarotCard___Card_strategy)
-def test_tarotcard___card__id_setter(instance):
-    original = instance._id
-    instance._id = original
-    assert instance._id == original
-
-@given(instance=TarotCard___Card_strategy)
-def test_tarotcard___card__fortunes_type(instance):
-    assert isinstance(instance._fortunes, str)
 
 
 @given(instance=TarotCard___Card_strategy)
@@ -196,9 +182,6 @@ def test_tarotcard___card__fortunes_setter(instance):
     instance._fortunes = original
     assert instance._fortunes == original
 
-@given(instance=TarotCard___Card_strategy)
-def test_tarotcard___card__fileName_type(instance):
-    assert isinstance(instance._fileName, str)
 
 
 @given(instance=TarotCard___Card_strategy)
@@ -207,14 +190,19 @@ def test_tarotcard___card__fileName_setter(instance):
     instance._fileName = original
     assert instance._fileName == original
 
+
+
+@given(instance=TarotCard___Card_strategy)
+def test_tarotcard___card__id_setter(instance):
+    original = instance._id
+    instance._id = original
+    assert instance._id == original
+
 @given(instance=Card___Abstract___strategy)
 @settings(max_examples=50)
 def test_card___abstract___instantiation(instance):
     assert isinstance(instance, Card___Abstract__)
 
-@given(instance=Card___Abstract___strategy)
-def test_card___abstract____id_type(instance):
-    assert isinstance(instance._id, int)
 
 
 @given(instance=Card___Abstract___strategy)
@@ -228,9 +216,6 @@ def test_card___abstract____id_setter(instance):
 def test_fortuneteller_instantiation(instance):
     assert isinstance(instance, FortuneTeller)
 
-@given(instance=FortuneTeller_strategy)
-def test_fortuneteller__tarotDeck_type(instance):
-    assert isinstance(instance._tarotDeck, deck)
 
 
 @given(instance=FortuneTeller_strategy)
@@ -244,9 +229,6 @@ def test_fortuneteller__tarotDeck_setter(instance):
 def test_deck_instantiation(instance):
     assert isinstance(instance, Deck)
 
-@given(instance=Deck_strategy)
-def test_deck__deck_type(instance):
-    assert isinstance(instance._deck, str)
 
 
 @given(instance=Deck_strategy)

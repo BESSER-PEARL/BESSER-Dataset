@@ -3,11 +3,11 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    a::B,
-    a::A,
+from python_code import (
+    a_B,
+    a_A,
 )
 
 # =============================================================================
@@ -16,37 +16,37 @@ from classes import (
 
 
 
-def test_a::b_is_not_abstract():
-    assert not inspect.isabstract(a::B)
+def test_a_b_is_not_abstract():
+    assert not inspect.isabstract(a_B)
 
 
-def test_a::b_constructor_exists():
-    assert callable(a::B.__init__)
+def test_a_b_constructor_exists():
+    assert callable(a_B.__init__)
 
 
-def test_a::b_constructor_args():
-    sig = inspect.signature(a::B.__init__)
+def test_a_b_constructor_args():
+    sig = inspect.signature(a_B.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_a::a_is_not_abstract():
-    assert not inspect.isabstract(a::A)
+def test_a_a_is_not_abstract():
+    assert not inspect.isabstract(a_A)
 
 
-def test_a::a_constructor_exists():
-    assert callable(a::A.__init__)
+def test_a_a_constructor_exists():
+    assert callable(a_A.__init__)
 
 
-def test_a::a_constructor_args():
-    sig = inspect.signature(a::A.__init__)
+def test_a_a_constructor_args():
+    sig = inspect.signature(a_A.__init__)
     params = list(sig.parameters.keys())
     assert "m" in params, "Missing parameter 'm'"
 
-def test_a::a_has_m():
-    assert hasattr(a::A, "m")
+def test_a_a_has_m():
+    assert hasattr(a_A, "m")
     descriptor = None
-    for klass in a::A.__mro__:
+    for klass in a_A.__mro__:
         if "m" in klass.__dict__:
             descriptor = klass.__dict__["m"]
             break
@@ -64,32 +64,29 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-a::B_strategy = st.builds(
-    a::B,
+a_B_strategy = st.builds(
+    a_B,
 )
-a::A_strategy = st.builds(
-    a::A,
+a_A_strategy = st.builds(
+    a_A,
     m=
         st.integers()
 )
 
-@given(instance=a::B_strategy)
+@given(instance=a_B_strategy)
 @settings(max_examples=50)
-def test_a::b_instantiation(instance):
-    assert isinstance(instance, a::B)
+def test_a_b_instantiation(instance):
+    assert isinstance(instance, a_B)
 
-@given(instance=a::A_strategy)
+@given(instance=a_A_strategy)
 @settings(max_examples=50)
-def test_a::a_instantiation(instance):
-    assert isinstance(instance, a::A)
-
-@given(instance=a::A_strategy)
-def test_a::a_m_type(instance):
-    assert isinstance(instance.m, int)
+def test_a_a_instantiation(instance):
+    assert isinstance(instance, a_A)
 
 
-@given(instance=a::A_strategy)
-def test_a::a_m_setter(instance):
+
+@given(instance=a_A_strategy)
+def test_a_a_m_setter(instance):
     original = instance.m
     instance.m = original
     assert instance.m == original

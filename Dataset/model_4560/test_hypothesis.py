@@ -3,24 +3,24 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    Vehicle,
-    platoon::Vehicle,
-    platoon::Command,
-    platoon::Route,
-    platoon::FollowVehicle,
-    platoon::LeadingVehicle,
-    platoon::World,
-    platoon::Constraint,
-    platoon::Platoon,
-    Constraint,
-    platoon::HeadwayConstraint,
-    platoon::Constraints,
+from python_code import (
+    platoon_Constraints,
     Command,
-    platoon::TurnCommand,
-    platoon::ForwardCommand,
+    platoon_ForwardCommand,
+    Vehicle,
+    platoon_Vehicle,
+    platoon_Command,
+    platoon_Route,
+    platoon_FollowVehicle,
+    platoon_LeadingVehicle,
+    platoon_World,
+    platoon_Constraint,
+    platoon_Platoon,
+    Constraint,
+    platoon_HeadwayConstraint,
+    platoon_TurnCommand,
 )
 
 # =============================================================================
@@ -29,210 +29,16 @@ from classes import (
 
 
 
-def test_vehicle_is_not_abstract():
-    assert not inspect.isabstract(Vehicle)
+def test_platoon_constraints_is_not_abstract():
+    assert not inspect.isabstract(platoon_Constraints)
 
 
-def test_vehicle_constructor_exists():
-    assert callable(Vehicle.__init__)
+def test_platoon_constraints_constructor_exists():
+    assert callable(platoon_Constraints.__init__)
 
 
-def test_vehicle_constructor_args():
-    sig = inspect.signature(Vehicle.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_platoon::vehicle_is_not_abstract():
-    assert not inspect.isabstract(platoon::Vehicle)
-
-
-def test_platoon::vehicle_constructor_exists():
-    assert callable(platoon::Vehicle.__init__)
-
-
-def test_platoon::vehicle_constructor_args():
-    sig = inspect.signature(platoon::Vehicle.__init__)
-    params = list(sig.parameters.keys())
-    assert "name" in params, "Missing parameter 'name'"
-
-def test_platoon::vehicle_has_name():
-    assert hasattr(platoon::Vehicle, "name")
-    descriptor = None
-    for klass in platoon::Vehicle.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_platoon::command_is_not_abstract():
-    assert not inspect.isabstract(platoon::Command)
-
-
-def test_platoon::command_constructor_exists():
-    assert callable(platoon::Command.__init__)
-
-
-def test_platoon::command_constructor_args():
-    sig = inspect.signature(platoon::Command.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_platoon::route_is_not_abstract():
-    assert not inspect.isabstract(platoon::Route)
-
-
-def test_platoon::route_constructor_exists():
-    assert callable(platoon::Route.__init__)
-
-
-def test_platoon::route_constructor_args():
-    sig = inspect.signature(platoon::Route.__init__)
-    params = list(sig.parameters.keys())
-    assert "name" in params, "Missing parameter 'name'"
-
-def test_platoon::route_has_name():
-    assert hasattr(platoon::Route, "name")
-    descriptor = None
-    for klass in platoon::Route.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_platoon::followvehicle_is_not_abstract():
-    assert not inspect.isabstract(platoon::FollowVehicle)
-
-
-def test_platoon::followvehicle_constructor_exists():
-    assert callable(platoon::FollowVehicle.__init__)
-
-
-def test_platoon::followvehicle_constructor_args():
-    sig = inspect.signature(platoon::FollowVehicle.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_platoon::leadingvehicle_is_not_abstract():
-    assert not inspect.isabstract(platoon::LeadingVehicle)
-
-
-def test_platoon::leadingvehicle_constructor_exists():
-    assert callable(platoon::LeadingVehicle.__init__)
-
-
-def test_platoon::leadingvehicle_constructor_args():
-    sig = inspect.signature(platoon::LeadingVehicle.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_platoon::world_is_not_abstract():
-    assert not inspect.isabstract(platoon::World)
-
-
-def test_platoon::world_constructor_exists():
-    assert callable(platoon::World.__init__)
-
-
-def test_platoon::world_constructor_args():
-    sig = inspect.signature(platoon::World.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_platoon::constraint_is_not_abstract():
-    assert not inspect.isabstract(platoon::Constraint)
-
-
-def test_platoon::constraint_constructor_exists():
-    assert callable(platoon::Constraint.__init__)
-
-
-def test_platoon::constraint_constructor_args():
-    sig = inspect.signature(platoon::Constraint.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_platoon::platoon_is_not_abstract():
-    assert not inspect.isabstract(platoon::Platoon)
-
-
-def test_platoon::platoon_constructor_exists():
-    assert callable(platoon::Platoon.__init__)
-
-
-def test_platoon::platoon_constructor_args():
-    sig = inspect.signature(platoon::Platoon.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_constraint_is_not_abstract():
-    assert not inspect.isabstract(Constraint)
-
-
-def test_constraint_constructor_exists():
-    assert callable(Constraint.__init__)
-
-
-def test_constraint_constructor_args():
-    sig = inspect.signature(Constraint.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_platoon::headwayconstraint_is_not_abstract():
-    assert not inspect.isabstract(platoon::HeadwayConstraint)
-
-
-def test_platoon::headwayconstraint_constructor_exists():
-    assert callable(platoon::HeadwayConstraint.__init__)
-
-
-def test_platoon::headwayconstraint_constructor_args():
-    sig = inspect.signature(platoon::HeadwayConstraint.__init__)
-    params = list(sig.parameters.keys())
-    assert "min" in params, "Missing parameter 'min'"
-    assert "max" in params, "Missing parameter 'max'"
-
-def test_platoon::headwayconstraint_has_min():
-    assert hasattr(platoon::HeadwayConstraint, "min")
-    descriptor = None
-    for klass in platoon::HeadwayConstraint.__mro__:
-        if "min" in klass.__dict__:
-            descriptor = klass.__dict__["min"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_platoon::headwayconstraint_has_max():
-    assert hasattr(platoon::HeadwayConstraint, "max")
-    descriptor = None
-    for klass in platoon::HeadwayConstraint.__mro__:
-        if "max" in klass.__dict__:
-            descriptor = klass.__dict__["max"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_platoon::constraints_is_not_abstract():
-    assert not inspect.isabstract(platoon::Constraints)
-
-
-def test_platoon::constraints_constructor_exists():
-    assert callable(platoon::Constraints.__init__)
-
-
-def test_platoon::constraints_constructor_args():
-    sig = inspect.signature(platoon::Constraints.__init__)
+def test_platoon_constraints_constructor_args():
+    sig = inspect.signature(platoon_Constraints.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -251,49 +57,243 @@ def test_command_constructor_args():
 
 
 
-def test_platoon::turncommand_is_not_abstract():
-    assert not inspect.isabstract(platoon::TurnCommand)
+def test_platoon_forwardcommand_is_not_abstract():
+    assert not inspect.isabstract(platoon_ForwardCommand)
 
 
-def test_platoon::turncommand_constructor_exists():
-    assert callable(platoon::TurnCommand.__init__)
+def test_platoon_forwardcommand_constructor_exists():
+    assert callable(platoon_ForwardCommand.__init__)
 
 
-def test_platoon::turncommand_constructor_args():
-    sig = inspect.signature(platoon::TurnCommand.__init__)
+def test_platoon_forwardcommand_constructor_args():
+    sig = inspect.signature(platoon_ForwardCommand.__init__)
     params = list(sig.parameters.keys())
-    assert "direction" in params, "Missing parameter 'direction'"
+    assert "distance" in params, "Missing parameter 'distance'"
 
-def test_platoon::turncommand_has_direction():
-    assert hasattr(platoon::TurnCommand, "direction")
+def test_platoon_forwardcommand_has_distance():
+    assert hasattr(platoon_ForwardCommand, "distance")
     descriptor = None
-    for klass in platoon::TurnCommand.__mro__:
-        if "direction" in klass.__dict__:
-            descriptor = klass.__dict__["direction"]
+    for klass in platoon_ForwardCommand.__mro__:
+        if "distance" in klass.__dict__:
+            descriptor = klass.__dict__["distance"]
             break
     assert isinstance(descriptor, property)
 
 
 
-def test_platoon::forwardcommand_is_not_abstract():
-    assert not inspect.isabstract(platoon::ForwardCommand)
+def test_vehicle_is_not_abstract():
+    assert not inspect.isabstract(Vehicle)
 
 
-def test_platoon::forwardcommand_constructor_exists():
-    assert callable(platoon::ForwardCommand.__init__)
+def test_vehicle_constructor_exists():
+    assert callable(Vehicle.__init__)
 
 
-def test_platoon::forwardcommand_constructor_args():
-    sig = inspect.signature(platoon::ForwardCommand.__init__)
+def test_vehicle_constructor_args():
+    sig = inspect.signature(Vehicle.__init__)
     params = list(sig.parameters.keys())
-    assert "distance" in params, "Missing parameter 'distance'"
 
-def test_platoon::forwardcommand_has_distance():
-    assert hasattr(platoon::ForwardCommand, "distance")
+
+
+def test_platoon_vehicle_is_not_abstract():
+    assert not inspect.isabstract(platoon_Vehicle)
+
+
+def test_platoon_vehicle_constructor_exists():
+    assert callable(platoon_Vehicle.__init__)
+
+
+def test_platoon_vehicle_constructor_args():
+    sig = inspect.signature(platoon_Vehicle.__init__)
+    params = list(sig.parameters.keys())
+    assert "name" in params, "Missing parameter 'name'"
+
+def test_platoon_vehicle_has_name():
+    assert hasattr(platoon_Vehicle, "name")
     descriptor = None
-    for klass in platoon::ForwardCommand.__mro__:
-        if "distance" in klass.__dict__:
-            descriptor = klass.__dict__["distance"]
+    for klass in platoon_Vehicle.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_platoon_command_is_not_abstract():
+    assert not inspect.isabstract(platoon_Command)
+
+
+def test_platoon_command_constructor_exists():
+    assert callable(platoon_Command.__init__)
+
+
+def test_platoon_command_constructor_args():
+    sig = inspect.signature(platoon_Command.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_platoon_route_is_not_abstract():
+    assert not inspect.isabstract(platoon_Route)
+
+
+def test_platoon_route_constructor_exists():
+    assert callable(platoon_Route.__init__)
+
+
+def test_platoon_route_constructor_args():
+    sig = inspect.signature(platoon_Route.__init__)
+    params = list(sig.parameters.keys())
+    assert "name" in params, "Missing parameter 'name'"
+
+def test_platoon_route_has_name():
+    assert hasattr(platoon_Route, "name")
+    descriptor = None
+    for klass in platoon_Route.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_platoon_followvehicle_is_not_abstract():
+    assert not inspect.isabstract(platoon_FollowVehicle)
+
+
+def test_platoon_followvehicle_constructor_exists():
+    assert callable(platoon_FollowVehicle.__init__)
+
+
+def test_platoon_followvehicle_constructor_args():
+    sig = inspect.signature(platoon_FollowVehicle.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_platoon_leadingvehicle_is_not_abstract():
+    assert not inspect.isabstract(platoon_LeadingVehicle)
+
+
+def test_platoon_leadingvehicle_constructor_exists():
+    assert callable(platoon_LeadingVehicle.__init__)
+
+
+def test_platoon_leadingvehicle_constructor_args():
+    sig = inspect.signature(platoon_LeadingVehicle.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_platoon_world_is_not_abstract():
+    assert not inspect.isabstract(platoon_World)
+
+
+def test_platoon_world_constructor_exists():
+    assert callable(platoon_World.__init__)
+
+
+def test_platoon_world_constructor_args():
+    sig = inspect.signature(platoon_World.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_platoon_constraint_is_not_abstract():
+    assert not inspect.isabstract(platoon_Constraint)
+
+
+def test_platoon_constraint_constructor_exists():
+    assert callable(platoon_Constraint.__init__)
+
+
+def test_platoon_constraint_constructor_args():
+    sig = inspect.signature(platoon_Constraint.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_platoon_platoon_is_not_abstract():
+    assert not inspect.isabstract(platoon_Platoon)
+
+
+def test_platoon_platoon_constructor_exists():
+    assert callable(platoon_Platoon.__init__)
+
+
+def test_platoon_platoon_constructor_args():
+    sig = inspect.signature(platoon_Platoon.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_constraint_is_not_abstract():
+    assert not inspect.isabstract(Constraint)
+
+
+def test_constraint_constructor_exists():
+    assert callable(Constraint.__init__)
+
+
+def test_constraint_constructor_args():
+    sig = inspect.signature(Constraint.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_platoon_headwayconstraint_is_not_abstract():
+    assert not inspect.isabstract(platoon_HeadwayConstraint)
+
+
+def test_platoon_headwayconstraint_constructor_exists():
+    assert callable(platoon_HeadwayConstraint.__init__)
+
+
+def test_platoon_headwayconstraint_constructor_args():
+    sig = inspect.signature(platoon_HeadwayConstraint.__init__)
+    params = list(sig.parameters.keys())
+    assert "max" in params, "Missing parameter 'max'"
+    assert "min" in params, "Missing parameter 'min'"
+
+def test_platoon_headwayconstraint_has_max():
+    assert hasattr(platoon_HeadwayConstraint, "max")
+    descriptor = None
+    for klass in platoon_HeadwayConstraint.__mro__:
+        if "max" in klass.__dict__:
+            descriptor = klass.__dict__["max"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_platoon_headwayconstraint_has_min():
+    assert hasattr(platoon_HeadwayConstraint, "min")
+    descriptor = None
+    for klass in platoon_HeadwayConstraint.__mro__:
+        if "min" in klass.__dict__:
+            descriptor = klass.__dict__["min"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_platoon_turncommand_is_not_abstract():
+    assert not inspect.isabstract(platoon_TurnCommand)
+
+
+def test_platoon_turncommand_constructor_exists():
+    assert callable(platoon_TurnCommand.__init__)
+
+
+def test_platoon_turncommand_constructor_args():
+    sig = inspect.signature(platoon_TurnCommand.__init__)
+    params = list(sig.parameters.keys())
+    assert "direction" in params, "Missing parameter 'direction'"
+
+def test_platoon_turncommand_has_direction():
+    assert hasattr(platoon_TurnCommand, "direction")
+    descriptor = None
+    for klass in platoon_TurnCommand.__mro__:
+        if "direction" in klass.__dict__:
+            descriptor = klass.__dict__["direction"]
             break
     assert isinstance(descriptor, property)
 
@@ -309,201 +309,183 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-Vehicle_strategy = st.builds(
-    Vehicle,
-)
-platoon::Vehicle_strategy = st.builds(
-    platoon::Vehicle,
-    name=
-        safe_text
-)
-platoon::Command_strategy = st.builds(
-    platoon::Command,
-)
-platoon::Route_strategy = st.builds(
-    platoon::Route,
-    name=
-        safe_text
-)
-platoon::FollowVehicle_strategy = st.builds(
-    platoon::FollowVehicle,
-)
-platoon::LeadingVehicle_strategy = st.builds(
-    platoon::LeadingVehicle,
-)
-platoon::World_strategy = st.builds(
-    platoon::World,
-)
-platoon::Constraint_strategy = st.builds(
-    platoon::Constraint,
-)
-platoon::Platoon_strategy = st.builds(
-    platoon::Platoon,
-)
-Constraint_strategy = st.builds(
-    Constraint,
-)
-platoon::HeadwayConstraint_strategy = st.builds(
-    platoon::HeadwayConstraint,
-    min=
-        st.integers(),
-    max=
-        st.integers()
-)
-platoon::Constraints_strategy = st.builds(
-    platoon::Constraints,
+platoon_Constraints_strategy = st.builds(
+    platoon_Constraints,
 )
 Command_strategy = st.builds(
     Command,
 )
-platoon::TurnCommand_strategy = st.builds(
-    platoon::TurnCommand,
-    direction=
-        safe_text
-)
-platoon::ForwardCommand_strategy = st.builds(
-    platoon::ForwardCommand,
+platoon_ForwardCommand_strategy = st.builds(
+    platoon_ForwardCommand,
     distance=
         st.integers()
 )
+Vehicle_strategy = st.builds(
+    Vehicle,
+)
+platoon_Vehicle_strategy = st.builds(
+    platoon_Vehicle,
+    name=
+        safe_text
+)
+platoon_Command_strategy = st.builds(
+    platoon_Command,
+)
+platoon_Route_strategy = st.builds(
+    platoon_Route,
+    name=
+        safe_text
+)
+platoon_FollowVehicle_strategy = st.builds(
+    platoon_FollowVehicle,
+)
+platoon_LeadingVehicle_strategy = st.builds(
+    platoon_LeadingVehicle,
+)
+platoon_World_strategy = st.builds(
+    platoon_World,
+)
+platoon_Constraint_strategy = st.builds(
+    platoon_Constraint,
+)
+platoon_Platoon_strategy = st.builds(
+    platoon_Platoon,
+)
+Constraint_strategy = st.builds(
+    Constraint,
+)
+platoon_HeadwayConstraint_strategy = st.builds(
+    platoon_HeadwayConstraint,
+    max=
+        st.integers(),
+    min=
+        st.integers()
+)
+platoon_TurnCommand_strategy = st.builds(
+    platoon_TurnCommand,
+    direction=
+        safe_text
+)
 
-@given(instance=Vehicle_strategy)
+@given(instance=platoon_Constraints_strategy)
 @settings(max_examples=50)
-def test_vehicle_instantiation(instance):
-    assert isinstance(instance, Vehicle)
-
-@given(instance=platoon::Vehicle_strategy)
-@settings(max_examples=50)
-def test_platoon::vehicle_instantiation(instance):
-    assert isinstance(instance, platoon::Vehicle)
-
-@given(instance=platoon::Vehicle_strategy)
-def test_platoon::vehicle_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=platoon::Vehicle_strategy)
-def test_platoon::vehicle_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
-
-@given(instance=platoon::Command_strategy)
-@settings(max_examples=50)
-def test_platoon::command_instantiation(instance):
-    assert isinstance(instance, platoon::Command)
-
-@given(instance=platoon::Route_strategy)
-@settings(max_examples=50)
-def test_platoon::route_instantiation(instance):
-    assert isinstance(instance, platoon::Route)
-
-@given(instance=platoon::Route_strategy)
-def test_platoon::route_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=platoon::Route_strategy)
-def test_platoon::route_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
-
-@given(instance=platoon::FollowVehicle_strategy)
-@settings(max_examples=50)
-def test_platoon::followvehicle_instantiation(instance):
-    assert isinstance(instance, platoon::FollowVehicle)
-
-@given(instance=platoon::LeadingVehicle_strategy)
-@settings(max_examples=50)
-def test_platoon::leadingvehicle_instantiation(instance):
-    assert isinstance(instance, platoon::LeadingVehicle)
-
-@given(instance=platoon::World_strategy)
-@settings(max_examples=50)
-def test_platoon::world_instantiation(instance):
-    assert isinstance(instance, platoon::World)
-
-@given(instance=platoon::Constraint_strategy)
-@settings(max_examples=50)
-def test_platoon::constraint_instantiation(instance):
-    assert isinstance(instance, platoon::Constraint)
-
-@given(instance=platoon::Platoon_strategy)
-@settings(max_examples=50)
-def test_platoon::platoon_instantiation(instance):
-    assert isinstance(instance, platoon::Platoon)
-
-@given(instance=Constraint_strategy)
-@settings(max_examples=50)
-def test_constraint_instantiation(instance):
-    assert isinstance(instance, Constraint)
-
-@given(instance=platoon::HeadwayConstraint_strategy)
-@settings(max_examples=50)
-def test_platoon::headwayconstraint_instantiation(instance):
-    assert isinstance(instance, platoon::HeadwayConstraint)
-
-@given(instance=platoon::HeadwayConstraint_strategy)
-def test_platoon::headwayconstraint_min_type(instance):
-    assert isinstance(instance.min, int)
-
-
-@given(instance=platoon::HeadwayConstraint_strategy)
-def test_platoon::headwayconstraint_min_setter(instance):
-    original = instance.min
-    instance.min = original
-    assert instance.min == original
-
-@given(instance=platoon::HeadwayConstraint_strategy)
-def test_platoon::headwayconstraint_max_type(instance):
-    assert isinstance(instance.max, int)
-
-
-@given(instance=platoon::HeadwayConstraint_strategy)
-def test_platoon::headwayconstraint_max_setter(instance):
-    original = instance.max
-    instance.max = original
-    assert instance.max == original
-
-@given(instance=platoon::Constraints_strategy)
-@settings(max_examples=50)
-def test_platoon::constraints_instantiation(instance):
-    assert isinstance(instance, platoon::Constraints)
+def test_platoon_constraints_instantiation(instance):
+    assert isinstance(instance, platoon_Constraints)
 
 @given(instance=Command_strategy)
 @settings(max_examples=50)
 def test_command_instantiation(instance):
     assert isinstance(instance, Command)
 
-@given(instance=platoon::TurnCommand_strategy)
+@given(instance=platoon_ForwardCommand_strategy)
 @settings(max_examples=50)
-def test_platoon::turncommand_instantiation(instance):
-    assert isinstance(instance, platoon::TurnCommand)
-
-@given(instance=platoon::TurnCommand_strategy)
-def test_platoon::turncommand_direction_type(instance):
-    assert isinstance(instance.direction, str)
+def test_platoon_forwardcommand_instantiation(instance):
+    assert isinstance(instance, platoon_ForwardCommand)
 
 
-@given(instance=platoon::TurnCommand_strategy)
-def test_platoon::turncommand_direction_setter(instance):
-    original = instance.direction
-    instance.direction = original
-    assert instance.direction == original
 
-@given(instance=platoon::ForwardCommand_strategy)
-@settings(max_examples=50)
-def test_platoon::forwardcommand_instantiation(instance):
-    assert isinstance(instance, platoon::ForwardCommand)
-
-@given(instance=platoon::ForwardCommand_strategy)
-def test_platoon::forwardcommand_distance_type(instance):
-    assert isinstance(instance.distance, int)
-
-
-@given(instance=platoon::ForwardCommand_strategy)
-def test_platoon::forwardcommand_distance_setter(instance):
+@given(instance=platoon_ForwardCommand_strategy)
+def test_platoon_forwardcommand_distance_setter(instance):
     original = instance.distance
     instance.distance = original
     assert instance.distance == original
+
+@given(instance=Vehicle_strategy)
+@settings(max_examples=50)
+def test_vehicle_instantiation(instance):
+    assert isinstance(instance, Vehicle)
+
+@given(instance=platoon_Vehicle_strategy)
+@settings(max_examples=50)
+def test_platoon_vehicle_instantiation(instance):
+    assert isinstance(instance, platoon_Vehicle)
+
+
+
+@given(instance=platoon_Vehicle_strategy)
+def test_platoon_vehicle_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+@given(instance=platoon_Command_strategy)
+@settings(max_examples=50)
+def test_platoon_command_instantiation(instance):
+    assert isinstance(instance, platoon_Command)
+
+@given(instance=platoon_Route_strategy)
+@settings(max_examples=50)
+def test_platoon_route_instantiation(instance):
+    assert isinstance(instance, platoon_Route)
+
+
+
+@given(instance=platoon_Route_strategy)
+def test_platoon_route_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+@given(instance=platoon_FollowVehicle_strategy)
+@settings(max_examples=50)
+def test_platoon_followvehicle_instantiation(instance):
+    assert isinstance(instance, platoon_FollowVehicle)
+
+@given(instance=platoon_LeadingVehicle_strategy)
+@settings(max_examples=50)
+def test_platoon_leadingvehicle_instantiation(instance):
+    assert isinstance(instance, platoon_LeadingVehicle)
+
+@given(instance=platoon_World_strategy)
+@settings(max_examples=50)
+def test_platoon_world_instantiation(instance):
+    assert isinstance(instance, platoon_World)
+
+@given(instance=platoon_Constraint_strategy)
+@settings(max_examples=50)
+def test_platoon_constraint_instantiation(instance):
+    assert isinstance(instance, platoon_Constraint)
+
+@given(instance=platoon_Platoon_strategy)
+@settings(max_examples=50)
+def test_platoon_platoon_instantiation(instance):
+    assert isinstance(instance, platoon_Platoon)
+
+@given(instance=Constraint_strategy)
+@settings(max_examples=50)
+def test_constraint_instantiation(instance):
+    assert isinstance(instance, Constraint)
+
+@given(instance=platoon_HeadwayConstraint_strategy)
+@settings(max_examples=50)
+def test_platoon_headwayconstraint_instantiation(instance):
+    assert isinstance(instance, platoon_HeadwayConstraint)
+
+
+
+@given(instance=platoon_HeadwayConstraint_strategy)
+def test_platoon_headwayconstraint_max_setter(instance):
+    original = instance.max
+    instance.max = original
+    assert instance.max == original
+
+
+
+@given(instance=platoon_HeadwayConstraint_strategy)
+def test_platoon_headwayconstraint_min_setter(instance):
+    original = instance.min
+    instance.min = original
+    assert instance.min == original
+
+@given(instance=platoon_TurnCommand_strategy)
+@settings(max_examples=50)
+def test_platoon_turncommand_instantiation(instance):
+    assert isinstance(instance, platoon_TurnCommand)
+
+
+
+@given(instance=platoon_TurnCommand_strategy)
+def test_platoon_turncommand_direction_setter(instance):
+    original = instance.direction
+    instance.direction = original
+    assert instance.direction == original

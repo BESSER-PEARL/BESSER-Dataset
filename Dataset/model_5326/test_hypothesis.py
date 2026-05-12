@@ -3,11 +3,11 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    testPackage::OnlyInDocument,
-    testPackage::ExistsInBoth,
+from python_code import (
+    testPackage_OnlyInDocument,
+    testPackage_ExistsInBoth,
 )
 
 # =============================================================================
@@ -16,30 +16,30 @@ from classes import (
 
 
 
-def test_testpackage::onlyindocument_is_not_abstract():
-    assert not inspect.isabstract(testPackage::OnlyInDocument)
+def test_testpackage_onlyindocument_is_not_abstract():
+    assert not inspect.isabstract(testPackage_OnlyInDocument)
 
 
-def test_testpackage::onlyindocument_constructor_exists():
-    assert callable(testPackage::OnlyInDocument.__init__)
+def test_testpackage_onlyindocument_constructor_exists():
+    assert callable(testPackage_OnlyInDocument.__init__)
 
 
-def test_testpackage::onlyindocument_constructor_args():
-    sig = inspect.signature(testPackage::OnlyInDocument.__init__)
+def test_testpackage_onlyindocument_constructor_args():
+    sig = inspect.signature(testPackage_OnlyInDocument.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_testpackage::existsinboth_is_not_abstract():
-    assert not inspect.isabstract(testPackage::ExistsInBoth)
+def test_testpackage_existsinboth_is_not_abstract():
+    assert not inspect.isabstract(testPackage_ExistsInBoth)
 
 
-def test_testpackage::existsinboth_constructor_exists():
-    assert callable(testPackage::ExistsInBoth.__init__)
+def test_testpackage_existsinboth_constructor_exists():
+    assert callable(testPackage_ExistsInBoth.__init__)
 
 
-def test_testpackage::existsinboth_constructor_args():
-    sig = inspect.signature(testPackage::ExistsInBoth.__init__)
+def test_testpackage_existsinboth_constructor_args():
+    sig = inspect.signature(testPackage_ExistsInBoth.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -54,19 +54,19 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-testPackage::OnlyInDocument_strategy = st.builds(
-    testPackage::OnlyInDocument,
+testPackage_OnlyInDocument_strategy = st.builds(
+    testPackage_OnlyInDocument,
 )
-testPackage::ExistsInBoth_strategy = st.builds(
-    testPackage::ExistsInBoth,
+testPackage_ExistsInBoth_strategy = st.builds(
+    testPackage_ExistsInBoth,
 )
 
-@given(instance=testPackage::OnlyInDocument_strategy)
+@given(instance=testPackage_OnlyInDocument_strategy)
 @settings(max_examples=50)
-def test_testpackage::onlyindocument_instantiation(instance):
-    assert isinstance(instance, testPackage::OnlyInDocument)
+def test_testpackage_onlyindocument_instantiation(instance):
+    assert isinstance(instance, testPackage_OnlyInDocument)
 
-@given(instance=testPackage::ExistsInBoth_strategy)
+@given(instance=testPackage_ExistsInBoth_strategy)
 @settings(max_examples=50)
-def test_testpackage::existsinboth_instantiation(instance):
-    assert isinstance(instance, testPackage::ExistsInBoth)
+def test_testpackage_existsinboth_instantiation(instance):
+    assert isinstance(instance, testPackage_ExistsInBoth)

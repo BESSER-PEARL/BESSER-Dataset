@@ -3,19 +3,19 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    itemflow101::ProcessNode,
+from python_code import (
+    itemflow101_ProcessNode,
     Port,
-    itemflow101::Item,
-    itemflow101::Description,
-    itemflow101::InputPort,
-    itemflow101::OutputPort,
+    itemflow101_Item,
+    itemflow101_Description,
+    itemflow101_InputPort,
+    itemflow101_OutputPort,
     ProcessNode,
-    itemflow101::Flow,
-    itemflow101::Function,
-    itemflow101::Port,
+    itemflow101_Flow,
+    itemflow101_Function,
+    itemflow101_Port,
 )
 
 # =============================================================================
@@ -24,23 +24,23 @@ from classes import (
 
 
 
-def test_itemflow101::processnode_is_not_abstract():
-    assert not inspect.isabstract(itemflow101::ProcessNode)
+def test_itemflow101_processnode_is_not_abstract():
+    assert not inspect.isabstract(itemflow101_ProcessNode)
 
 
-def test_itemflow101::processnode_constructor_exists():
-    assert callable(itemflow101::ProcessNode.__init__)
+def test_itemflow101_processnode_constructor_exists():
+    assert callable(itemflow101_ProcessNode.__init__)
 
 
-def test_itemflow101::processnode_constructor_args():
-    sig = inspect.signature(itemflow101::ProcessNode.__init__)
+def test_itemflow101_processnode_constructor_args():
+    sig = inspect.signature(itemflow101_ProcessNode.__init__)
     params = list(sig.parameters.keys())
     assert "label" in params, "Missing parameter 'label'"
 
-def test_itemflow101::processnode_has_label():
-    assert hasattr(itemflow101::ProcessNode, "label")
+def test_itemflow101_processnode_has_label():
+    assert hasattr(itemflow101_ProcessNode, "label")
     descriptor = None
-    for klass in itemflow101::ProcessNode.__mro__:
+    for klass in itemflow101_ProcessNode.__mro__:
         if "label" in klass.__dict__:
             descriptor = klass.__dict__["label"]
             break
@@ -62,23 +62,23 @@ def test_port_constructor_args():
 
 
 
-def test_itemflow101::item_is_not_abstract():
-    assert not inspect.isabstract(itemflow101::Item)
+def test_itemflow101_item_is_not_abstract():
+    assert not inspect.isabstract(itemflow101_Item)
 
 
-def test_itemflow101::item_constructor_exists():
-    assert callable(itemflow101::Item.__init__)
+def test_itemflow101_item_constructor_exists():
+    assert callable(itemflow101_Item.__init__)
 
 
-def test_itemflow101::item_constructor_args():
-    sig = inspect.signature(itemflow101::Item.__init__)
+def test_itemflow101_item_constructor_args():
+    sig = inspect.signature(itemflow101_Item.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_itemflow101::item_has_name():
-    assert hasattr(itemflow101::Item, "name")
+def test_itemflow101_item_has_name():
+    assert hasattr(itemflow101_Item, "name")
     descriptor = None
-    for klass in itemflow101::Item.__mro__:
+    for klass in itemflow101_Item.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -86,23 +86,23 @@ def test_itemflow101::item_has_name():
 
 
 
-def test_itemflow101::description_is_not_abstract():
-    assert not inspect.isabstract(itemflow101::Description)
+def test_itemflow101_description_is_not_abstract():
+    assert not inspect.isabstract(itemflow101_Description)
 
 
-def test_itemflow101::description_constructor_exists():
-    assert callable(itemflow101::Description.__init__)
+def test_itemflow101_description_constructor_exists():
+    assert callable(itemflow101_Description.__init__)
 
 
-def test_itemflow101::description_constructor_args():
-    sig = inspect.signature(itemflow101::Description.__init__)
+def test_itemflow101_description_constructor_args():
+    sig = inspect.signature(itemflow101_Description.__init__)
     params = list(sig.parameters.keys())
     assert "content" in params, "Missing parameter 'content'"
 
-def test_itemflow101::description_has_content():
-    assert hasattr(itemflow101::Description, "content")
+def test_itemflow101_description_has_content():
+    assert hasattr(itemflow101_Description, "content")
     descriptor = None
-    for klass in itemflow101::Description.__mro__:
+    for klass in itemflow101_Description.__mro__:
         if "content" in klass.__dict__:
             descriptor = klass.__dict__["content"]
             break
@@ -110,30 +110,30 @@ def test_itemflow101::description_has_content():
 
 
 
-def test_itemflow101::inputport_is_not_abstract():
-    assert not inspect.isabstract(itemflow101::InputPort)
+def test_itemflow101_inputport_is_not_abstract():
+    assert not inspect.isabstract(itemflow101_InputPort)
 
 
-def test_itemflow101::inputport_constructor_exists():
-    assert callable(itemflow101::InputPort.__init__)
+def test_itemflow101_inputport_constructor_exists():
+    assert callable(itemflow101_InputPort.__init__)
 
 
-def test_itemflow101::inputport_constructor_args():
-    sig = inspect.signature(itemflow101::InputPort.__init__)
+def test_itemflow101_inputport_constructor_args():
+    sig = inspect.signature(itemflow101_InputPort.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_itemflow101::outputport_is_not_abstract():
-    assert not inspect.isabstract(itemflow101::OutputPort)
+def test_itemflow101_outputport_is_not_abstract():
+    assert not inspect.isabstract(itemflow101_OutputPort)
 
 
-def test_itemflow101::outputport_constructor_exists():
-    assert callable(itemflow101::OutputPort.__init__)
+def test_itemflow101_outputport_constructor_exists():
+    assert callable(itemflow101_OutputPort.__init__)
 
 
-def test_itemflow101::outputport_constructor_args():
-    sig = inspect.signature(itemflow101::OutputPort.__init__)
+def test_itemflow101_outputport_constructor_args():
+    sig = inspect.signature(itemflow101_OutputPort.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -152,51 +152,51 @@ def test_processnode_constructor_args():
 
 
 
-def test_itemflow101::flow_is_not_abstract():
-    assert not inspect.isabstract(itemflow101::Flow)
+def test_itemflow101_flow_is_not_abstract():
+    assert not inspect.isabstract(itemflow101_Flow)
 
 
-def test_itemflow101::flow_constructor_exists():
-    assert callable(itemflow101::Flow.__init__)
+def test_itemflow101_flow_constructor_exists():
+    assert callable(itemflow101_Flow.__init__)
 
 
-def test_itemflow101::flow_constructor_args():
-    sig = inspect.signature(itemflow101::Flow.__init__)
+def test_itemflow101_flow_constructor_args():
+    sig = inspect.signature(itemflow101_Flow.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_itemflow101::function_is_not_abstract():
-    assert not inspect.isabstract(itemflow101::Function)
+def test_itemflow101_function_is_not_abstract():
+    assert not inspect.isabstract(itemflow101_Function)
 
 
-def test_itemflow101::function_constructor_exists():
-    assert callable(itemflow101::Function.__init__)
+def test_itemflow101_function_constructor_exists():
+    assert callable(itemflow101_Function.__init__)
 
 
-def test_itemflow101::function_constructor_args():
-    sig = inspect.signature(itemflow101::Function.__init__)
+def test_itemflow101_function_constructor_args():
+    sig = inspect.signature(itemflow101_Function.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_itemflow101::port_is_not_abstract():
-    assert not inspect.isabstract(itemflow101::Port)
+def test_itemflow101_port_is_not_abstract():
+    assert not inspect.isabstract(itemflow101_Port)
 
 
-def test_itemflow101::port_constructor_exists():
-    assert callable(itemflow101::Port.__init__)
+def test_itemflow101_port_constructor_exists():
+    assert callable(itemflow101_Port.__init__)
 
 
-def test_itemflow101::port_constructor_args():
-    sig = inspect.signature(itemflow101::Port.__init__)
+def test_itemflow101_port_constructor_args():
+    sig = inspect.signature(itemflow101_Port.__init__)
     params = list(sig.parameters.keys())
     assert "id" in params, "Missing parameter 'id'"
 
-def test_itemflow101::port_has_id():
-    assert hasattr(itemflow101::Port, "id")
+def test_itemflow101_port_has_id():
+    assert hasattr(itemflow101_Port, "id")
     descriptor = None
-    for klass in itemflow101::Port.__mro__:
+    for klass in itemflow101_Port.__mro__:
         if "id" in klass.__dict__:
             descriptor = klass.__dict__["id"]
             break
@@ -214,57 +214,54 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-itemflow101::ProcessNode_strategy = st.builds(
-    itemflow101::ProcessNode,
+itemflow101_ProcessNode_strategy = st.builds(
+    itemflow101_ProcessNode,
     label=
         safe_text
 )
 Port_strategy = st.builds(
     Port,
 )
-itemflow101::Item_strategy = st.builds(
-    itemflow101::Item,
+itemflow101_Item_strategy = st.builds(
+    itemflow101_Item,
     name=
         safe_text
 )
-itemflow101::Description_strategy = st.builds(
-    itemflow101::Description,
+itemflow101_Description_strategy = st.builds(
+    itemflow101_Description,
     content=
         safe_text
 )
-itemflow101::InputPort_strategy = st.builds(
-    itemflow101::InputPort,
+itemflow101_InputPort_strategy = st.builds(
+    itemflow101_InputPort,
 )
-itemflow101::OutputPort_strategy = st.builds(
-    itemflow101::OutputPort,
+itemflow101_OutputPort_strategy = st.builds(
+    itemflow101_OutputPort,
 )
 ProcessNode_strategy = st.builds(
     ProcessNode,
 )
-itemflow101::Flow_strategy = st.builds(
-    itemflow101::Flow,
+itemflow101_Flow_strategy = st.builds(
+    itemflow101_Flow,
 )
-itemflow101::Function_strategy = st.builds(
-    itemflow101::Function,
+itemflow101_Function_strategy = st.builds(
+    itemflow101_Function,
 )
-itemflow101::Port_strategy = st.builds(
-    itemflow101::Port,
+itemflow101_Port_strategy = st.builds(
+    itemflow101_Port,
     id=
         safe_text
 )
 
-@given(instance=itemflow101::ProcessNode_strategy)
+@given(instance=itemflow101_ProcessNode_strategy)
 @settings(max_examples=50)
-def test_itemflow101::processnode_instantiation(instance):
-    assert isinstance(instance, itemflow101::ProcessNode)
-
-@given(instance=itemflow101::ProcessNode_strategy)
-def test_itemflow101::processnode_label_type(instance):
-    assert isinstance(instance.label, str)
+def test_itemflow101_processnode_instantiation(instance):
+    assert isinstance(instance, itemflow101_ProcessNode)
 
 
-@given(instance=itemflow101::ProcessNode_strategy)
-def test_itemflow101::processnode_label_setter(instance):
+
+@given(instance=itemflow101_ProcessNode_strategy)
+def test_itemflow101_processnode_label_setter(instance):
     original = instance.label
     instance.label = original
     assert instance.label == original
@@ -274,75 +271,66 @@ def test_itemflow101::processnode_label_setter(instance):
 def test_port_instantiation(instance):
     assert isinstance(instance, Port)
 
-@given(instance=itemflow101::Item_strategy)
+@given(instance=itemflow101_Item_strategy)
 @settings(max_examples=50)
-def test_itemflow101::item_instantiation(instance):
-    assert isinstance(instance, itemflow101::Item)
-
-@given(instance=itemflow101::Item_strategy)
-def test_itemflow101::item_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_itemflow101_item_instantiation(instance):
+    assert isinstance(instance, itemflow101_Item)
 
 
-@given(instance=itemflow101::Item_strategy)
-def test_itemflow101::item_name_setter(instance):
+
+@given(instance=itemflow101_Item_strategy)
+def test_itemflow101_item_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=itemflow101::Description_strategy)
+@given(instance=itemflow101_Description_strategy)
 @settings(max_examples=50)
-def test_itemflow101::description_instantiation(instance):
-    assert isinstance(instance, itemflow101::Description)
-
-@given(instance=itemflow101::Description_strategy)
-def test_itemflow101::description_content_type(instance):
-    assert isinstance(instance.content, str)
+def test_itemflow101_description_instantiation(instance):
+    assert isinstance(instance, itemflow101_Description)
 
 
-@given(instance=itemflow101::Description_strategy)
-def test_itemflow101::description_content_setter(instance):
+
+@given(instance=itemflow101_Description_strategy)
+def test_itemflow101_description_content_setter(instance):
     original = instance.content
     instance.content = original
     assert instance.content == original
 
-@given(instance=itemflow101::InputPort_strategy)
+@given(instance=itemflow101_InputPort_strategy)
 @settings(max_examples=50)
-def test_itemflow101::inputport_instantiation(instance):
-    assert isinstance(instance, itemflow101::InputPort)
+def test_itemflow101_inputport_instantiation(instance):
+    assert isinstance(instance, itemflow101_InputPort)
 
-@given(instance=itemflow101::OutputPort_strategy)
+@given(instance=itemflow101_OutputPort_strategy)
 @settings(max_examples=50)
-def test_itemflow101::outputport_instantiation(instance):
-    assert isinstance(instance, itemflow101::OutputPort)
+def test_itemflow101_outputport_instantiation(instance):
+    assert isinstance(instance, itemflow101_OutputPort)
 
 @given(instance=ProcessNode_strategy)
 @settings(max_examples=50)
 def test_processnode_instantiation(instance):
     assert isinstance(instance, ProcessNode)
 
-@given(instance=itemflow101::Flow_strategy)
+@given(instance=itemflow101_Flow_strategy)
 @settings(max_examples=50)
-def test_itemflow101::flow_instantiation(instance):
-    assert isinstance(instance, itemflow101::Flow)
+def test_itemflow101_flow_instantiation(instance):
+    assert isinstance(instance, itemflow101_Flow)
 
-@given(instance=itemflow101::Function_strategy)
+@given(instance=itemflow101_Function_strategy)
 @settings(max_examples=50)
-def test_itemflow101::function_instantiation(instance):
-    assert isinstance(instance, itemflow101::Function)
+def test_itemflow101_function_instantiation(instance):
+    assert isinstance(instance, itemflow101_Function)
 
-@given(instance=itemflow101::Port_strategy)
+@given(instance=itemflow101_Port_strategy)
 @settings(max_examples=50)
-def test_itemflow101::port_instantiation(instance):
-    assert isinstance(instance, itemflow101::Port)
-
-@given(instance=itemflow101::Port_strategy)
-def test_itemflow101::port_id_type(instance):
-    assert isinstance(instance.id, str)
+def test_itemflow101_port_instantiation(instance):
+    assert isinstance(instance, itemflow101_Port)
 
 
-@given(instance=itemflow101::Port_strategy)
-def test_itemflow101::port_id_setter(instance):
+
+@given(instance=itemflow101_Port_strategy)
+def test_itemflow101_port_id_setter(instance):
     original = instance.id
     instance.id = original
     assert instance.id == original

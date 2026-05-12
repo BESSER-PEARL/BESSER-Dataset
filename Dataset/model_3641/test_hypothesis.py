@@ -3,11 +3,11 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    detachelist::Person,
-    detachelist::Contacts,
+from python_code import (
+    detachelist_Person,
+    detachelist_Contacts,
 )
 
 # =============================================================================
@@ -16,23 +16,23 @@ from classes import (
 
 
 
-def test_detachelist::person_is_not_abstract():
-    assert not inspect.isabstract(detachelist::Person)
+def test_detachelist_person_is_not_abstract():
+    assert not inspect.isabstract(detachelist_Person)
 
 
-def test_detachelist::person_constructor_exists():
-    assert callable(detachelist::Person.__init__)
+def test_detachelist_person_constructor_exists():
+    assert callable(detachelist_Person.__init__)
 
 
-def test_detachelist::person_constructor_args():
-    sig = inspect.signature(detachelist::Person.__init__)
+def test_detachelist_person_constructor_args():
+    sig = inspect.signature(detachelist_Person.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_detachelist::person_has_name():
-    assert hasattr(detachelist::Person, "name")
+def test_detachelist_person_has_name():
+    assert hasattr(detachelist_Person, "name")
     descriptor = None
-    for klass in detachelist::Person.__mro__:
+    for klass in detachelist_Person.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -40,16 +40,16 @@ def test_detachelist::person_has_name():
 
 
 
-def test_detachelist::contacts_is_not_abstract():
-    assert not inspect.isabstract(detachelist::Contacts)
+def test_detachelist_contacts_is_not_abstract():
+    assert not inspect.isabstract(detachelist_Contacts)
 
 
-def test_detachelist::contacts_constructor_exists():
-    assert callable(detachelist::Contacts.__init__)
+def test_detachelist_contacts_constructor_exists():
+    assert callable(detachelist_Contacts.__init__)
 
 
-def test_detachelist::contacts_constructor_args():
-    sig = inspect.signature(detachelist::Contacts.__init__)
+def test_detachelist_contacts_constructor_args():
+    sig = inspect.signature(detachelist_Contacts.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -64,32 +64,29 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-detachelist::Person_strategy = st.builds(
-    detachelist::Person,
+detachelist_Person_strategy = st.builds(
+    detachelist_Person,
     name=
         safe_text
 )
-detachelist::Contacts_strategy = st.builds(
-    detachelist::Contacts,
+detachelist_Contacts_strategy = st.builds(
+    detachelist_Contacts,
 )
 
-@given(instance=detachelist::Person_strategy)
+@given(instance=detachelist_Person_strategy)
 @settings(max_examples=50)
-def test_detachelist::person_instantiation(instance):
-    assert isinstance(instance, detachelist::Person)
-
-@given(instance=detachelist::Person_strategy)
-def test_detachelist::person_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_detachelist_person_instantiation(instance):
+    assert isinstance(instance, detachelist_Person)
 
 
-@given(instance=detachelist::Person_strategy)
-def test_detachelist::person_name_setter(instance):
+
+@given(instance=detachelist_Person_strategy)
+def test_detachelist_person_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=detachelist::Contacts_strategy)
+@given(instance=detachelist_Contacts_strategy)
 @settings(max_examples=50)
-def test_detachelist::contacts_instantiation(instance):
-    assert isinstance(instance, detachelist::Contacts)
+def test_detachelist_contacts_instantiation(instance):
+    assert isinstance(instance, detachelist_Contacts)

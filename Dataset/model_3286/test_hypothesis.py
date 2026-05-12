@@ -3,16 +3,16 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    traceability::Identifiable,
-    traceability::GraphEndToEndTrace,
-    traceability::Graph,
-    traceability::EDFD,
-    traceability::EDFDGraphTrace,
-    traceability::EDFDToGraph,
-    traceability::NamedEntity,
+from python_code import (
+    traceability_Identifiable,
+    traceability_GraphEndToEndTrace,
+    traceability_Graph,
+    traceability_EDFD,
+    traceability_EDFDGraphTrace,
+    traceability_EDFDToGraph,
+    traceability_NamedEntity,
 )
 
 # =============================================================================
@@ -21,100 +21,100 @@ from classes import (
 
 
 
-def test_traceability::identifiable_is_not_abstract():
-    assert not inspect.isabstract(traceability::Identifiable)
+def test_traceability_identifiable_is_not_abstract():
+    assert not inspect.isabstract(traceability_Identifiable)
 
 
-def test_traceability::identifiable_constructor_exists():
-    assert callable(traceability::Identifiable.__init__)
+def test_traceability_identifiable_constructor_exists():
+    assert callable(traceability_Identifiable.__init__)
 
 
-def test_traceability::identifiable_constructor_args():
-    sig = inspect.signature(traceability::Identifiable.__init__)
+def test_traceability_identifiable_constructor_args():
+    sig = inspect.signature(traceability_Identifiable.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_traceability::graphendtoendtrace_is_not_abstract():
-    assert not inspect.isabstract(traceability::GraphEndToEndTrace)
+def test_traceability_graphendtoendtrace_is_not_abstract():
+    assert not inspect.isabstract(traceability_GraphEndToEndTrace)
 
 
-def test_traceability::graphendtoendtrace_constructor_exists():
-    assert callable(traceability::GraphEndToEndTrace.__init__)
+def test_traceability_graphendtoendtrace_constructor_exists():
+    assert callable(traceability_GraphEndToEndTrace.__init__)
 
 
-def test_traceability::graphendtoendtrace_constructor_args():
-    sig = inspect.signature(traceability::GraphEndToEndTrace.__init__)
+def test_traceability_graphendtoendtrace_constructor_args():
+    sig = inspect.signature(traceability_GraphEndToEndTrace.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_traceability::graph_is_not_abstract():
-    assert not inspect.isabstract(traceability::Graph)
+def test_traceability_graph_is_not_abstract():
+    assert not inspect.isabstract(traceability_Graph)
 
 
-def test_traceability::graph_constructor_exists():
-    assert callable(traceability::Graph.__init__)
+def test_traceability_graph_constructor_exists():
+    assert callable(traceability_Graph.__init__)
 
 
-def test_traceability::graph_constructor_args():
-    sig = inspect.signature(traceability::Graph.__init__)
+def test_traceability_graph_constructor_args():
+    sig = inspect.signature(traceability_Graph.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_traceability::edfd_is_not_abstract():
-    assert not inspect.isabstract(traceability::EDFD)
+def test_traceability_edfd_is_not_abstract():
+    assert not inspect.isabstract(traceability_EDFD)
 
 
-def test_traceability::edfd_constructor_exists():
-    assert callable(traceability::EDFD.__init__)
+def test_traceability_edfd_constructor_exists():
+    assert callable(traceability_EDFD.__init__)
 
 
-def test_traceability::edfd_constructor_args():
-    sig = inspect.signature(traceability::EDFD.__init__)
+def test_traceability_edfd_constructor_args():
+    sig = inspect.signature(traceability_EDFD.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_traceability::edfdgraphtrace_is_not_abstract():
-    assert not inspect.isabstract(traceability::EDFDGraphTrace)
+def test_traceability_edfdgraphtrace_is_not_abstract():
+    assert not inspect.isabstract(traceability_EDFDGraphTrace)
 
 
-def test_traceability::edfdgraphtrace_constructor_exists():
-    assert callable(traceability::EDFDGraphTrace.__init__)
+def test_traceability_edfdgraphtrace_constructor_exists():
+    assert callable(traceability_EDFDGraphTrace.__init__)
 
 
-def test_traceability::edfdgraphtrace_constructor_args():
-    sig = inspect.signature(traceability::EDFDGraphTrace.__init__)
+def test_traceability_edfdgraphtrace_constructor_args():
+    sig = inspect.signature(traceability_EDFDGraphTrace.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_traceability::edfdtograph_is_not_abstract():
-    assert not inspect.isabstract(traceability::EDFDToGraph)
+def test_traceability_edfdtograph_is_not_abstract():
+    assert not inspect.isabstract(traceability_EDFDToGraph)
 
 
-def test_traceability::edfdtograph_constructor_exists():
-    assert callable(traceability::EDFDToGraph.__init__)
+def test_traceability_edfdtograph_constructor_exists():
+    assert callable(traceability_EDFDToGraph.__init__)
 
 
-def test_traceability::edfdtograph_constructor_args():
-    sig = inspect.signature(traceability::EDFDToGraph.__init__)
+def test_traceability_edfdtograph_constructor_args():
+    sig = inspect.signature(traceability_EDFDToGraph.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_traceability::namedentity_is_not_abstract():
-    assert not inspect.isabstract(traceability::NamedEntity)
+def test_traceability_namedentity_is_not_abstract():
+    assert not inspect.isabstract(traceability_NamedEntity)
 
 
-def test_traceability::namedentity_constructor_exists():
-    assert callable(traceability::NamedEntity.__init__)
+def test_traceability_namedentity_constructor_exists():
+    assert callable(traceability_NamedEntity.__init__)
 
 
-def test_traceability::namedentity_constructor_args():
-    sig = inspect.signature(traceability::NamedEntity.__init__)
+def test_traceability_namedentity_constructor_args():
+    sig = inspect.signature(traceability_NamedEntity.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -129,59 +129,59 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-traceability::Identifiable_strategy = st.builds(
-    traceability::Identifiable,
+traceability_Identifiable_strategy = st.builds(
+    traceability_Identifiable,
 )
-traceability::GraphEndToEndTrace_strategy = st.builds(
-    traceability::GraphEndToEndTrace,
+traceability_GraphEndToEndTrace_strategy = st.builds(
+    traceability_GraphEndToEndTrace,
 )
-traceability::Graph_strategy = st.builds(
-    traceability::Graph,
+traceability_Graph_strategy = st.builds(
+    traceability_Graph,
 )
-traceability::EDFD_strategy = st.builds(
-    traceability::EDFD,
+traceability_EDFD_strategy = st.builds(
+    traceability_EDFD,
 )
-traceability::EDFDGraphTrace_strategy = st.builds(
-    traceability::EDFDGraphTrace,
+traceability_EDFDGraphTrace_strategy = st.builds(
+    traceability_EDFDGraphTrace,
 )
-traceability::EDFDToGraph_strategy = st.builds(
-    traceability::EDFDToGraph,
+traceability_EDFDToGraph_strategy = st.builds(
+    traceability_EDFDToGraph,
 )
-traceability::NamedEntity_strategy = st.builds(
-    traceability::NamedEntity,
+traceability_NamedEntity_strategy = st.builds(
+    traceability_NamedEntity,
 )
 
-@given(instance=traceability::Identifiable_strategy)
+@given(instance=traceability_Identifiable_strategy)
 @settings(max_examples=50)
-def test_traceability::identifiable_instantiation(instance):
-    assert isinstance(instance, traceability::Identifiable)
+def test_traceability_identifiable_instantiation(instance):
+    assert isinstance(instance, traceability_Identifiable)
 
-@given(instance=traceability::GraphEndToEndTrace_strategy)
+@given(instance=traceability_GraphEndToEndTrace_strategy)
 @settings(max_examples=50)
-def test_traceability::graphendtoendtrace_instantiation(instance):
-    assert isinstance(instance, traceability::GraphEndToEndTrace)
+def test_traceability_graphendtoendtrace_instantiation(instance):
+    assert isinstance(instance, traceability_GraphEndToEndTrace)
 
-@given(instance=traceability::Graph_strategy)
+@given(instance=traceability_Graph_strategy)
 @settings(max_examples=50)
-def test_traceability::graph_instantiation(instance):
-    assert isinstance(instance, traceability::Graph)
+def test_traceability_graph_instantiation(instance):
+    assert isinstance(instance, traceability_Graph)
 
-@given(instance=traceability::EDFD_strategy)
+@given(instance=traceability_EDFD_strategy)
 @settings(max_examples=50)
-def test_traceability::edfd_instantiation(instance):
-    assert isinstance(instance, traceability::EDFD)
+def test_traceability_edfd_instantiation(instance):
+    assert isinstance(instance, traceability_EDFD)
 
-@given(instance=traceability::EDFDGraphTrace_strategy)
+@given(instance=traceability_EDFDGraphTrace_strategy)
 @settings(max_examples=50)
-def test_traceability::edfdgraphtrace_instantiation(instance):
-    assert isinstance(instance, traceability::EDFDGraphTrace)
+def test_traceability_edfdgraphtrace_instantiation(instance):
+    assert isinstance(instance, traceability_EDFDGraphTrace)
 
-@given(instance=traceability::EDFDToGraph_strategy)
+@given(instance=traceability_EDFDToGraph_strategy)
 @settings(max_examples=50)
-def test_traceability::edfdtograph_instantiation(instance):
-    assert isinstance(instance, traceability::EDFDToGraph)
+def test_traceability_edfdtograph_instantiation(instance):
+    assert isinstance(instance, traceability_EDFDToGraph)
 
-@given(instance=traceability::NamedEntity_strategy)
+@given(instance=traceability_NamedEntity_strategy)
 @settings(max_examples=50)
-def test_traceability::namedentity_instantiation(instance):
-    assert isinstance(instance, traceability::NamedEntity)
+def test_traceability_namedentity_instantiation(instance):
+    assert isinstance(instance, traceability_NamedEntity)

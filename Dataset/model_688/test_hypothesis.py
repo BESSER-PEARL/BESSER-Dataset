@@ -3,169 +3,169 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    AltExp,
-    imperativeocl::ImperativeExpression,
-    ObjectTemplateExp,
-    PropertyTemplateItem,
+from python_code import (
     AnonymousTupleLiteralPart,
     DictLiteralPart,
-    essentialocl::LoopExp,
-    Janus::imperativeocl::ImperativeLoopExp,
+    essentialocl_LoopExp,
     LogExp,
+    AltExp,
+    imperativeocl_ImperativeExpression,
+    Janus_imperativeocl_ImperativeLoopExp,
+    ObjectTemplateExp,
+    PropertyTemplateItem,
+    ImperativeExpression,
+    Janus_imperativeocl_TupleExp,
+    Janus_imperativeocl_ReturnExp,
+    Janus_imperativeocl_BreakExp,
+    Janus_imperativeocl_LogExp,
+    Janus_imperativeocl_UnpackExp,
+    Janus_imperativeocl_WhileExp,
+    Janus_imperativeocl_AltExp,
+    Janus_imperativeocl_AssertExp,
+    Janus_imperativeocl_ContinueExp,
+    Janus_imperativeocl_RaiseExp,
+    Janus_imperativeocl_BlockExp,
+    Janus_imperativeocl_TryExp,
+    Janus_imperativeocl_UnlinkExp,
+    Janus_imperativeocl_ComputeExp,
+    Janus_imperativeocl_InstantiationExp,
+    Janus_imperativeocl_VariableInitExp,
+    Janus_imperativeocl_AssignExp,
+    ImperativeLoopExp,
+    Janus_imperativeocl_CollectorExp,
+    Janus_imperativeocl_ForExp,
+    Janus_imperativeocl_ImperativeIterateExp,
+    CollectionType,
+    Janus_imperativeocl_DictionaryType,
+    Janus_imperativeocl_ListType,
+    Janus_essentialocl_BagType,
+    TupleLiteralExp,
+    CallExp,
+    Janus_essentialocl_FeaturePropertyCall,
+    Janus_essentialocl_OpaqueExpression,
+    OpaqueExpression,
+    Janus_essentialocl_ExpressionInOcl,
+    TupleLiteralPart,
+    emof_Type,
+    emof_DataType,
+    Janus_essentialocl_SetType,
+    Janus_essentialocl_SequenceType,
+    Janus_essentialocl_OrderedSetType,
+    LiteralExp,
+    Janus_essentialocl_NullLiteralExp,
+    Janus_imperativeocl_DictLiteralExp,
+    Janus_essentialocl_InvalidLiteralExp,
+    Janus_imperativeocl_AnonymousTupleLiteralExp,
+    Janus_essentialocl_EnumLiteralExp,
+    Janus_template_TemplateExp,
+    Janus_essentialocl_CollectionLiteralExp,
+    Janus_essentialocl_PrimitiveLiteralExp,
+    LoopExp,
+    Janus_essentialocl_IterateExp,
+    Janus_essentialocl_IteratorExp,
+    Janus_essentialocl_TupleLiteralExp,
     CollectionLiteralExp,
     CollectionLiteralPart,
-    Janus::essentialocl::CollectionRange,
-    Janus::essentialocl::CollectionItem,
+    Janus_essentialocl_CollectionItem,
+    Janus_essentialocl_CollectionRange,
     ComputeExp,
     LetExp,
-    essentialocl::OclExpression,
-    essentialocl::CallExp,
-    Janus::imperativeocl::SwitchExp,
-    Janus::essentialocl::LoopExp,
+    essentialocl_OclExpression,
+    essentialocl_CallExp,
+    Janus_imperativeocl_SwitchExp,
+    Janus_essentialocl_LoopExp,
     FeaturePropertyCall,
-    Janus::essentialocl::PropertyCallExp,
+    Janus_essentialocl_OperationCallExp,
+    Janus_essentialocl_PropertyCallExp,
     TemplateExp,
-    Janus::template::ObjectTemplateExp,
-    Janus::template::CollectionTemplateExp,
+    Janus_template_ObjectTemplateExp,
+    Janus_template_CollectionTemplateExp,
     Predicate,
     NumericLiteralExp,
-    Janus::essentialocl::UnlimitedNaturalExp,
+    Janus_essentialocl_IntegerLiteralExp,
+    Janus_essentialocl_RealLiteralExp,
+    Janus_essentialocl_UnlimitedNaturalExp,
     TryExp,
     TypedElement,
-    Janus::essentialocl::CollectionLiteralPart,
-    Janus::essentialocl::Variable,
-    Janus::essentialocl::OclExpression,
+    Janus_essentialocl_CollectionLiteralPart,
+    Janus_essentialocl_Variable,
+    Janus_essentialocl_TupleLiteralPart,
+    Janus_essentialocl_OclExpression,
     PrimitiveLiteralExp,
-    Janus::essentialocl::BooleanLiteralExp,
+    Janus_essentialocl_StringLiteralExp,
+    Janus_essentialocl_NumericLiteralExp,
+    Janus_essentialocl_BooleanLiteralExp,
     OclExpression,
-    Janus::essentialocl::CallExp,
-    Janus::essentialocl::VariableExp,
-    Janus::essentialocl::LetExp,
-    Janus::imperativeocl::ImperativeExpression,
-    Janus::essentialocl::IfExp,
-    Janus::essentialocl::TypeExp,
+    Janus_essentialocl_TypeExp,
+    Janus_essentialocl_LetExp,
+    Janus_imperativeocl_ImperativeExpression,
+    Janus_essentialocl_VariableExp,
+    Janus_essentialocl_LiteralExp,
+    Janus_essentialocl_IfExp,
+    Janus_essentialocl_CallExp,
     Transformation,
     Relation,
     Model,
-    emof::Package,
-    emof::Class,
-    Janus::JTL::Transformation,
+    emof_Package,
+    emof_Class,
+    Janus_essentialocl_TupleType,
+    Janus_essentialocl_AnyType,
+    Janus_JTL_Transformation,
     Extent,
-    Janus::emof::URIExtent,
+    Janus_emof_URIExtent,
     Variable,
     Pattern,
     Domain,
     Package,
     NamedElement,
-    Janus::JTL::Domain,
-    Janus::JTL::Model,
-    Janus::JTL::Relation,
-    Janus::emof::TypedElement,
-    Janus::emof::Package,
-    Janus::emof::MultiplicityElement,
+    Janus_JTL_Relation,
+    Janus_emof_TypedElement,
+    Janus_JTL_Domain,
+    Janus_JTL_Model,
+    Janus_emof_Package,
+    Janus_emof_MultiplicityElement,
     Parameter,
-    emof::TypedElement,
-    emof::MultiplicityElement,
-    Janus::emof::Operation,
-    Janus::emof::Object,
-    Janus::emof::Property,
+    emof_TypedElement,
+    emof_MultiplicityElement,
+    Janus_emof_Operation,
+    Janus_emof_Object,
+    Janus_emof_Property,
     Enumeration,
-    Janus::emof::EnumerationLiteral,
-    Janus::emof::Parameter,
-    Janus::emof::Type,
+    Janus_emof_EnumerationLiteral,
+    Janus_emof_Parameter,
+    Janus_emof_Type,
     EnumerationLiteral,
     DataType,
-    Janus::emof::PrimitiveType,
-    Janus::emof::Enumeration,
+    Janus_emof_PrimitiveType,
+    Janus_essentialocl_CollectionType,
+    Janus_emof_Enumeration,
     Element,
-    Janus::JTL::Pattern,
-    Janus::emof::Comment,
-    Janus::imperativeocl::DictLiteralPart,
-    Janus::imperativeocl::AnonymousTupleLiteralPart,
-    Janus::JTL::Predicate,
-    Janus::emof::NamedElement,
-    Janus::template::PropertyTemplateItem,
-    Janus::emof::Tag,
+    Janus_imperativeocl_DictLiteralPart,
+    Janus_imperativeocl_AnonymousTupleLiteralPart,
+    Janus_emof_NamedElement,
+    Janus_JTL_Predicate,
+    Janus_template_PropertyTemplateItem,
+    Janus_emof_Comment,
+    Janus_JTL_Pattern,
+    Janus_emof_Tag,
     Comment,
     Tag,
     Object,
-    Janus::emof::Extent,
-    Janus::emof::Element,
+    Janus_emof_Extent,
+    Janus_emof_Element,
     Class,
-    Janus::imperativeocl::Typedef,
-    Janus::imperativeocl::AnonymousTupleType,
+    Janus_imperativeocl_AnonymousTupleType,
+    Janus_imperativeocl_Typedef,
     Operation,
-    ImperativeExpression,
-    Janus::imperativeocl::UnlinkExp,
-    Janus::imperativeocl::UnpackExp,
-    Janus::imperativeocl::ReturnExp,
-    Janus::imperativeocl::AltExp,
-    Janus::imperativeocl::RaiseExp,
-    Janus::imperativeocl::ContinueExp,
-    Janus::imperativeocl::VariableInitExp,
-    Janus::imperativeocl::TupleExp,
-    Janus::imperativeocl::InstantiationExp,
-    Janus::imperativeocl::BreakExp,
-    Janus::imperativeocl::ComputeExp,
-    Janus::imperativeocl::WhileExp,
-    Janus::imperativeocl::LogExp,
-    Janus::imperativeocl::TryExp,
-    Janus::imperativeocl::AssertExp,
-    Janus::imperativeocl::BlockExp,
-    Janus::imperativeocl::AssignExp,
-    ImperativeLoopExp,
-    Janus::imperativeocl::ForExp,
-    Janus::imperativeocl::CollectorExp,
-    Janus::imperativeocl::ImperativeIterateExp,
-    Janus::essentialocl::CollectionType,
-    CollectionType,
-    Janus::imperativeocl::ListType,
-    Janus::imperativeocl::DictionaryType,
-    Janus::essentialocl::BagType,
-    TupleLiteralExp,
-    Janus::essentialocl::TupleLiteralPart,
-    CallExp,
-    Janus::essentialocl::FeaturePropertyCall,
-    Janus::essentialocl::OpaqueExpression,
-    OpaqueExpression,
-    Janus::essentialocl::ExpressionInOcl,
-    TupleLiteralPart,
-    emof::Type,
-    Janus::essentialocl::AnyType,
-    emof::DataType,
-    Janus::essentialocl::TupleType,
-    Janus::essentialocl::SetType,
-    Janus::essentialocl::SequenceType,
-    Janus::essentialocl::OrderedSetType,
-    Janus::essentialocl::NumericLiteralExp,
-    LiteralExp,
-    Janus::imperativeocl::AnonymousTupleLiteralExp,
-    Janus::essentialocl::TupleLiteralExp,
-    Janus::template::TemplateExp,
-    Janus::essentialocl::EnumLiteralExp,
-    Janus::essentialocl::InvalidLiteralExp,
-    Janus::essentialocl::CollectionLiteralExp,
-    Janus::essentialocl::NullLiteralExp,
-    Janus::imperativeocl::DictLiteralExp,
-    Janus::essentialocl::PrimitiveLiteralExp,
-    Janus::essentialocl::LiteralExp,
-    Janus::essentialocl::RealLiteralExp,
-    Janus::essentialocl::OperationCallExp,
-    Janus::essentialocl::IntegerLiteralExp,
-    Janus::essentialocl::StringLiteralExp,
-    LoopExp,
-    Janus::essentialocl::IteratorExp,
-    Janus::essentialocl::IterateExp,
     Property,
     Type,
-    Janus::essentialocl::VoidType,
-    Janus::essentialocl::InvalidType,
-    Janus::emof::DataType,
-    Janus::imperativeocl::TemplateParameterType,
-    Janus::emof::Class,
+    Janus_essentialocl_VoidType,
+    Janus_imperativeocl_TemplateParameterType,
+    Janus_essentialocl_InvalidType,
+    Janus_emof_DataType,
+    Janus_emof_Class,
     CollectionKind,
     SeverityKind,
 )
@@ -173,6 +173,62 @@ from classes import (
 # =============================================================================
 # SECTION 1 — STRUCTURAL TESTS
 # =============================================================================
+
+
+
+def test_anonymoustupleliteralpart_is_not_abstract():
+    assert not inspect.isabstract(AnonymousTupleLiteralPart)
+
+
+def test_anonymoustupleliteralpart_constructor_exists():
+    assert callable(AnonymousTupleLiteralPart.__init__)
+
+
+def test_anonymoustupleliteralpart_constructor_args():
+    sig = inspect.signature(AnonymousTupleLiteralPart.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_dictliteralpart_is_not_abstract():
+    assert not inspect.isabstract(DictLiteralPart)
+
+
+def test_dictliteralpart_constructor_exists():
+    assert callable(DictLiteralPart.__init__)
+
+
+def test_dictliteralpart_constructor_args():
+    sig = inspect.signature(DictLiteralPart.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_essentialocl_loopexp_is_not_abstract():
+    assert not inspect.isabstract(essentialocl_LoopExp)
+
+
+def test_essentialocl_loopexp_constructor_exists():
+    assert callable(essentialocl_LoopExp.__init__)
+
+
+def test_essentialocl_loopexp_constructor_args():
+    sig = inspect.signature(essentialocl_LoopExp.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_logexp_is_not_abstract():
+    assert not inspect.isabstract(LogExp)
+
+
+def test_logexp_constructor_exists():
+    assert callable(LogExp.__init__)
+
+
+def test_logexp_constructor_args():
+    sig = inspect.signature(LogExp.__init__)
+    params = list(sig.parameters.keys())
 
 
 
@@ -190,16 +246,30 @@ def test_altexp_constructor_args():
 
 
 
-def test_imperativeocl::imperativeexpression_is_not_abstract():
-    assert not inspect.isabstract(imperativeocl::ImperativeExpression)
+def test_imperativeocl_imperativeexpression_is_not_abstract():
+    assert not inspect.isabstract(imperativeocl_ImperativeExpression)
 
 
-def test_imperativeocl::imperativeexpression_constructor_exists():
-    assert callable(imperativeocl::ImperativeExpression.__init__)
+def test_imperativeocl_imperativeexpression_constructor_exists():
+    assert callable(imperativeocl_ImperativeExpression.__init__)
 
 
-def test_imperativeocl::imperativeexpression_constructor_args():
-    sig = inspect.signature(imperativeocl::ImperativeExpression.__init__)
+def test_imperativeocl_imperativeexpression_constructor_args():
+    sig = inspect.signature(imperativeocl_ImperativeExpression.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_janus_imperativeocl_imperativeloopexp_is_not_abstract():
+    assert not inspect.isabstract(Janus_imperativeocl_ImperativeLoopExp)
+
+
+def test_janus_imperativeocl_imperativeloopexp_constructor_exists():
+    assert callable(Janus_imperativeocl_ImperativeLoopExp.__init__)
+
+
+def test_janus_imperativeocl_imperativeloopexp_constructor_args():
+    sig = inspect.signature(Janus_imperativeocl_ImperativeLoopExp.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -232,72 +302,776 @@ def test_propertytemplateitem_constructor_args():
 
 
 
-def test_anonymoustupleliteralpart_is_not_abstract():
-    assert not inspect.isabstract(AnonymousTupleLiteralPart)
+def test_imperativeexpression_is_not_abstract():
+    assert not inspect.isabstract(ImperativeExpression)
 
 
-def test_anonymoustupleliteralpart_constructor_exists():
-    assert callable(AnonymousTupleLiteralPart.__init__)
+def test_imperativeexpression_constructor_exists():
+    assert callable(ImperativeExpression.__init__)
 
 
-def test_anonymoustupleliteralpart_constructor_args():
-    sig = inspect.signature(AnonymousTupleLiteralPart.__init__)
+def test_imperativeexpression_constructor_args():
+    sig = inspect.signature(ImperativeExpression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_dictliteralpart_is_not_abstract():
-    assert not inspect.isabstract(DictLiteralPart)
+def test_janus_imperativeocl_tupleexp_is_not_abstract():
+    assert not inspect.isabstract(Janus_imperativeocl_TupleExp)
 
 
-def test_dictliteralpart_constructor_exists():
-    assert callable(DictLiteralPart.__init__)
+def test_janus_imperativeocl_tupleexp_constructor_exists():
+    assert callable(Janus_imperativeocl_TupleExp.__init__)
 
 
-def test_dictliteralpart_constructor_args():
-    sig = inspect.signature(DictLiteralPart.__init__)
+def test_janus_imperativeocl_tupleexp_constructor_args():
+    sig = inspect.signature(Janus_imperativeocl_TupleExp.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_essentialocl::loopexp_is_not_abstract():
-    assert not inspect.isabstract(essentialocl::LoopExp)
+def test_janus_imperativeocl_returnexp_is_not_abstract():
+    assert not inspect.isabstract(Janus_imperativeocl_ReturnExp)
 
 
-def test_essentialocl::loopexp_constructor_exists():
-    assert callable(essentialocl::LoopExp.__init__)
+def test_janus_imperativeocl_returnexp_constructor_exists():
+    assert callable(Janus_imperativeocl_ReturnExp.__init__)
 
 
-def test_essentialocl::loopexp_constructor_args():
-    sig = inspect.signature(essentialocl::LoopExp.__init__)
+def test_janus_imperativeocl_returnexp_constructor_args():
+    sig = inspect.signature(Janus_imperativeocl_ReturnExp.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_janus::imperativeocl::imperativeloopexp_is_not_abstract():
-    assert not inspect.isabstract(Janus::imperativeocl::ImperativeLoopExp)
+def test_janus_imperativeocl_breakexp_is_not_abstract():
+    assert not inspect.isabstract(Janus_imperativeocl_BreakExp)
 
 
-def test_janus::imperativeocl::imperativeloopexp_constructor_exists():
-    assert callable(Janus::imperativeocl::ImperativeLoopExp.__init__)
+def test_janus_imperativeocl_breakexp_constructor_exists():
+    assert callable(Janus_imperativeocl_BreakExp.__init__)
 
 
-def test_janus::imperativeocl::imperativeloopexp_constructor_args():
-    sig = inspect.signature(Janus::imperativeocl::ImperativeLoopExp.__init__)
+def test_janus_imperativeocl_breakexp_constructor_args():
+    sig = inspect.signature(Janus_imperativeocl_BreakExp.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_logexp_is_not_abstract():
-    assert not inspect.isabstract(LogExp)
+def test_janus_imperativeocl_logexp_is_not_abstract():
+    assert not inspect.isabstract(Janus_imperativeocl_LogExp)
 
 
-def test_logexp_constructor_exists():
-    assert callable(LogExp.__init__)
+def test_janus_imperativeocl_logexp_constructor_exists():
+    assert callable(Janus_imperativeocl_LogExp.__init__)
 
 
-def test_logexp_constructor_args():
-    sig = inspect.signature(LogExp.__init__)
+def test_janus_imperativeocl_logexp_constructor_args():
+    sig = inspect.signature(Janus_imperativeocl_LogExp.__init__)
+    params = list(sig.parameters.keys())
+    assert "level" in params, "Missing parameter 'level'"
+    assert "text" in params, "Missing parameter 'text'"
+
+def test_janus_imperativeocl_logexp_has_level():
+    assert hasattr(Janus_imperativeocl_LogExp, "level")
+    descriptor = None
+    for klass in Janus_imperativeocl_LogExp.__mro__:
+        if "level" in klass.__dict__:
+            descriptor = klass.__dict__["level"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_janus_imperativeocl_logexp_has_text():
+    assert hasattr(Janus_imperativeocl_LogExp, "text")
+    descriptor = None
+    for klass in Janus_imperativeocl_LogExp.__mro__:
+        if "text" in klass.__dict__:
+            descriptor = klass.__dict__["text"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_janus_imperativeocl_unpackexp_is_not_abstract():
+    assert not inspect.isabstract(Janus_imperativeocl_UnpackExp)
+
+
+def test_janus_imperativeocl_unpackexp_constructor_exists():
+    assert callable(Janus_imperativeocl_UnpackExp.__init__)
+
+
+def test_janus_imperativeocl_unpackexp_constructor_args():
+    sig = inspect.signature(Janus_imperativeocl_UnpackExp.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_janus_imperativeocl_whileexp_is_not_abstract():
+    assert not inspect.isabstract(Janus_imperativeocl_WhileExp)
+
+
+def test_janus_imperativeocl_whileexp_constructor_exists():
+    assert callable(Janus_imperativeocl_WhileExp.__init__)
+
+
+def test_janus_imperativeocl_whileexp_constructor_args():
+    sig = inspect.signature(Janus_imperativeocl_WhileExp.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_janus_imperativeocl_altexp_is_not_abstract():
+    assert not inspect.isabstract(Janus_imperativeocl_AltExp)
+
+
+def test_janus_imperativeocl_altexp_constructor_exists():
+    assert callable(Janus_imperativeocl_AltExp.__init__)
+
+
+def test_janus_imperativeocl_altexp_constructor_args():
+    sig = inspect.signature(Janus_imperativeocl_AltExp.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_janus_imperativeocl_assertexp_is_not_abstract():
+    assert not inspect.isabstract(Janus_imperativeocl_AssertExp)
+
+
+def test_janus_imperativeocl_assertexp_constructor_exists():
+    assert callable(Janus_imperativeocl_AssertExp.__init__)
+
+
+def test_janus_imperativeocl_assertexp_constructor_args():
+    sig = inspect.signature(Janus_imperativeocl_AssertExp.__init__)
+    params = list(sig.parameters.keys())
+    assert "severity" in params, "Missing parameter 'severity'"
+
+def test_janus_imperativeocl_assertexp_has_severity():
+    assert hasattr(Janus_imperativeocl_AssertExp, "severity")
+    descriptor = None
+    for klass in Janus_imperativeocl_AssertExp.__mro__:
+        if "severity" in klass.__dict__:
+            descriptor = klass.__dict__["severity"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_janus_imperativeocl_continueexp_is_not_abstract():
+    assert not inspect.isabstract(Janus_imperativeocl_ContinueExp)
+
+
+def test_janus_imperativeocl_continueexp_constructor_exists():
+    assert callable(Janus_imperativeocl_ContinueExp.__init__)
+
+
+def test_janus_imperativeocl_continueexp_constructor_args():
+    sig = inspect.signature(Janus_imperativeocl_ContinueExp.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_janus_imperativeocl_raiseexp_is_not_abstract():
+    assert not inspect.isabstract(Janus_imperativeocl_RaiseExp)
+
+
+def test_janus_imperativeocl_raiseexp_constructor_exists():
+    assert callable(Janus_imperativeocl_RaiseExp.__init__)
+
+
+def test_janus_imperativeocl_raiseexp_constructor_args():
+    sig = inspect.signature(Janus_imperativeocl_RaiseExp.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_janus_imperativeocl_blockexp_is_not_abstract():
+    assert not inspect.isabstract(Janus_imperativeocl_BlockExp)
+
+
+def test_janus_imperativeocl_blockexp_constructor_exists():
+    assert callable(Janus_imperativeocl_BlockExp.__init__)
+
+
+def test_janus_imperativeocl_blockexp_constructor_args():
+    sig = inspect.signature(Janus_imperativeocl_BlockExp.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_janus_imperativeocl_tryexp_is_not_abstract():
+    assert not inspect.isabstract(Janus_imperativeocl_TryExp)
+
+
+def test_janus_imperativeocl_tryexp_constructor_exists():
+    assert callable(Janus_imperativeocl_TryExp.__init__)
+
+
+def test_janus_imperativeocl_tryexp_constructor_args():
+    sig = inspect.signature(Janus_imperativeocl_TryExp.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_janus_imperativeocl_unlinkexp_is_not_abstract():
+    assert not inspect.isabstract(Janus_imperativeocl_UnlinkExp)
+
+
+def test_janus_imperativeocl_unlinkexp_constructor_exists():
+    assert callable(Janus_imperativeocl_UnlinkExp.__init__)
+
+
+def test_janus_imperativeocl_unlinkexp_constructor_args():
+    sig = inspect.signature(Janus_imperativeocl_UnlinkExp.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_janus_imperativeocl_computeexp_is_not_abstract():
+    assert not inspect.isabstract(Janus_imperativeocl_ComputeExp)
+
+
+def test_janus_imperativeocl_computeexp_constructor_exists():
+    assert callable(Janus_imperativeocl_ComputeExp.__init__)
+
+
+def test_janus_imperativeocl_computeexp_constructor_args():
+    sig = inspect.signature(Janus_imperativeocl_ComputeExp.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_janus_imperativeocl_instantiationexp_is_not_abstract():
+    assert not inspect.isabstract(Janus_imperativeocl_InstantiationExp)
+
+
+def test_janus_imperativeocl_instantiationexp_constructor_exists():
+    assert callable(Janus_imperativeocl_InstantiationExp.__init__)
+
+
+def test_janus_imperativeocl_instantiationexp_constructor_args():
+    sig = inspect.signature(Janus_imperativeocl_InstantiationExp.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_janus_imperativeocl_variableinitexp_is_not_abstract():
+    assert not inspect.isabstract(Janus_imperativeocl_VariableInitExp)
+
+
+def test_janus_imperativeocl_variableinitexp_constructor_exists():
+    assert callable(Janus_imperativeocl_VariableInitExp.__init__)
+
+
+def test_janus_imperativeocl_variableinitexp_constructor_args():
+    sig = inspect.signature(Janus_imperativeocl_VariableInitExp.__init__)
+    params = list(sig.parameters.keys())
+    assert "withResult" in params, "Missing parameter 'withResult'"
+
+def test_janus_imperativeocl_variableinitexp_has_withResult():
+    assert hasattr(Janus_imperativeocl_VariableInitExp, "withResult")
+    descriptor = None
+    for klass in Janus_imperativeocl_VariableInitExp.__mro__:
+        if "withResult" in klass.__dict__:
+            descriptor = klass.__dict__["withResult"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_janus_imperativeocl_assignexp_is_not_abstract():
+    assert not inspect.isabstract(Janus_imperativeocl_AssignExp)
+
+
+def test_janus_imperativeocl_assignexp_constructor_exists():
+    assert callable(Janus_imperativeocl_AssignExp.__init__)
+
+
+def test_janus_imperativeocl_assignexp_constructor_args():
+    sig = inspect.signature(Janus_imperativeocl_AssignExp.__init__)
+    params = list(sig.parameters.keys())
+    assert "isReset" in params, "Missing parameter 'isReset'"
+
+def test_janus_imperativeocl_assignexp_has_isReset():
+    assert hasattr(Janus_imperativeocl_AssignExp, "isReset")
+    descriptor = None
+    for klass in Janus_imperativeocl_AssignExp.__mro__:
+        if "isReset" in klass.__dict__:
+            descriptor = klass.__dict__["isReset"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_imperativeloopexp_is_not_abstract():
+    assert not inspect.isabstract(ImperativeLoopExp)
+
+
+def test_imperativeloopexp_constructor_exists():
+    assert callable(ImperativeLoopExp.__init__)
+
+
+def test_imperativeloopexp_constructor_args():
+    sig = inspect.signature(ImperativeLoopExp.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_janus_imperativeocl_collectorexp_is_not_abstract():
+    assert not inspect.isabstract(Janus_imperativeocl_CollectorExp)
+
+
+def test_janus_imperativeocl_collectorexp_constructor_exists():
+    assert callable(Janus_imperativeocl_CollectorExp.__init__)
+
+
+def test_janus_imperativeocl_collectorexp_constructor_args():
+    sig = inspect.signature(Janus_imperativeocl_CollectorExp.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_janus_imperativeocl_forexp_is_not_abstract():
+    assert not inspect.isabstract(Janus_imperativeocl_ForExp)
+
+
+def test_janus_imperativeocl_forexp_constructor_exists():
+    assert callable(Janus_imperativeocl_ForExp.__init__)
+
+
+def test_janus_imperativeocl_forexp_constructor_args():
+    sig = inspect.signature(Janus_imperativeocl_ForExp.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_janus_imperativeocl_imperativeiterateexp_is_not_abstract():
+    assert not inspect.isabstract(Janus_imperativeocl_ImperativeIterateExp)
+
+
+def test_janus_imperativeocl_imperativeiterateexp_constructor_exists():
+    assert callable(Janus_imperativeocl_ImperativeIterateExp.__init__)
+
+
+def test_janus_imperativeocl_imperativeiterateexp_constructor_args():
+    sig = inspect.signature(Janus_imperativeocl_ImperativeIterateExp.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_collectiontype_is_not_abstract():
+    assert not inspect.isabstract(CollectionType)
+
+
+def test_collectiontype_constructor_exists():
+    assert callable(CollectionType.__init__)
+
+
+def test_collectiontype_constructor_args():
+    sig = inspect.signature(CollectionType.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_janus_imperativeocl_dictionarytype_is_not_abstract():
+    assert not inspect.isabstract(Janus_imperativeocl_DictionaryType)
+
+
+def test_janus_imperativeocl_dictionarytype_constructor_exists():
+    assert callable(Janus_imperativeocl_DictionaryType.__init__)
+
+
+def test_janus_imperativeocl_dictionarytype_constructor_args():
+    sig = inspect.signature(Janus_imperativeocl_DictionaryType.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_janus_imperativeocl_listtype_is_not_abstract():
+    assert not inspect.isabstract(Janus_imperativeocl_ListType)
+
+
+def test_janus_imperativeocl_listtype_constructor_exists():
+    assert callable(Janus_imperativeocl_ListType.__init__)
+
+
+def test_janus_imperativeocl_listtype_constructor_args():
+    sig = inspect.signature(Janus_imperativeocl_ListType.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_janus_essentialocl_bagtype_is_not_abstract():
+    assert not inspect.isabstract(Janus_essentialocl_BagType)
+
+
+def test_janus_essentialocl_bagtype_constructor_exists():
+    assert callable(Janus_essentialocl_BagType.__init__)
+
+
+def test_janus_essentialocl_bagtype_constructor_args():
+    sig = inspect.signature(Janus_essentialocl_BagType.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_tupleliteralexp_is_not_abstract():
+    assert not inspect.isabstract(TupleLiteralExp)
+
+
+def test_tupleliteralexp_constructor_exists():
+    assert callable(TupleLiteralExp.__init__)
+
+
+def test_tupleliteralexp_constructor_args():
+    sig = inspect.signature(TupleLiteralExp.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_callexp_is_not_abstract():
+    assert not inspect.isabstract(CallExp)
+
+
+def test_callexp_constructor_exists():
+    assert callable(CallExp.__init__)
+
+
+def test_callexp_constructor_args():
+    sig = inspect.signature(CallExp.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_janus_essentialocl_featurepropertycall_is_not_abstract():
+    assert not inspect.isabstract(Janus_essentialocl_FeaturePropertyCall)
+
+
+def test_janus_essentialocl_featurepropertycall_constructor_exists():
+    assert callable(Janus_essentialocl_FeaturePropertyCall.__init__)
+
+
+def test_janus_essentialocl_featurepropertycall_constructor_args():
+    sig = inspect.signature(Janus_essentialocl_FeaturePropertyCall.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_janus_essentialocl_opaqueexpression_is_not_abstract():
+    assert not inspect.isabstract(Janus_essentialocl_OpaqueExpression)
+
+
+def test_janus_essentialocl_opaqueexpression_constructor_exists():
+    assert callable(Janus_essentialocl_OpaqueExpression.__init__)
+
+
+def test_janus_essentialocl_opaqueexpression_constructor_args():
+    sig = inspect.signature(Janus_essentialocl_OpaqueExpression.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_opaqueexpression_is_not_abstract():
+    assert not inspect.isabstract(OpaqueExpression)
+
+
+def test_opaqueexpression_constructor_exists():
+    assert callable(OpaqueExpression.__init__)
+
+
+def test_opaqueexpression_constructor_args():
+    sig = inspect.signature(OpaqueExpression.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_janus_essentialocl_expressioninocl_is_not_abstract():
+    assert not inspect.isabstract(Janus_essentialocl_ExpressionInOcl)
+
+
+def test_janus_essentialocl_expressioninocl_constructor_exists():
+    assert callable(Janus_essentialocl_ExpressionInOcl.__init__)
+
+
+def test_janus_essentialocl_expressioninocl_constructor_args():
+    sig = inspect.signature(Janus_essentialocl_ExpressionInOcl.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_tupleliteralpart_is_not_abstract():
+    assert not inspect.isabstract(TupleLiteralPart)
+
+
+def test_tupleliteralpart_constructor_exists():
+    assert callable(TupleLiteralPart.__init__)
+
+
+def test_tupleliteralpart_constructor_args():
+    sig = inspect.signature(TupleLiteralPart.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_emof_type_is_not_abstract():
+    assert not inspect.isabstract(emof_Type)
+
+
+def test_emof_type_constructor_exists():
+    assert callable(emof_Type.__init__)
+
+
+def test_emof_type_constructor_args():
+    sig = inspect.signature(emof_Type.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_emof_datatype_is_not_abstract():
+    assert not inspect.isabstract(emof_DataType)
+
+
+def test_emof_datatype_constructor_exists():
+    assert callable(emof_DataType.__init__)
+
+
+def test_emof_datatype_constructor_args():
+    sig = inspect.signature(emof_DataType.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_janus_essentialocl_settype_is_not_abstract():
+    assert not inspect.isabstract(Janus_essentialocl_SetType)
+
+
+def test_janus_essentialocl_settype_constructor_exists():
+    assert callable(Janus_essentialocl_SetType.__init__)
+
+
+def test_janus_essentialocl_settype_constructor_args():
+    sig = inspect.signature(Janus_essentialocl_SetType.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_janus_essentialocl_sequencetype_is_not_abstract():
+    assert not inspect.isabstract(Janus_essentialocl_SequenceType)
+
+
+def test_janus_essentialocl_sequencetype_constructor_exists():
+    assert callable(Janus_essentialocl_SequenceType.__init__)
+
+
+def test_janus_essentialocl_sequencetype_constructor_args():
+    sig = inspect.signature(Janus_essentialocl_SequenceType.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_janus_essentialocl_orderedsettype_is_not_abstract():
+    assert not inspect.isabstract(Janus_essentialocl_OrderedSetType)
+
+
+def test_janus_essentialocl_orderedsettype_constructor_exists():
+    assert callable(Janus_essentialocl_OrderedSetType.__init__)
+
+
+def test_janus_essentialocl_orderedsettype_constructor_args():
+    sig = inspect.signature(Janus_essentialocl_OrderedSetType.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_literalexp_is_not_abstract():
+    assert not inspect.isabstract(LiteralExp)
+
+
+def test_literalexp_constructor_exists():
+    assert callable(LiteralExp.__init__)
+
+
+def test_literalexp_constructor_args():
+    sig = inspect.signature(LiteralExp.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_janus_essentialocl_nullliteralexp_is_not_abstract():
+    assert not inspect.isabstract(Janus_essentialocl_NullLiteralExp)
+
+
+def test_janus_essentialocl_nullliteralexp_constructor_exists():
+    assert callable(Janus_essentialocl_NullLiteralExp.__init__)
+
+
+def test_janus_essentialocl_nullliteralexp_constructor_args():
+    sig = inspect.signature(Janus_essentialocl_NullLiteralExp.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_janus_imperativeocl_dictliteralexp_is_not_abstract():
+    assert not inspect.isabstract(Janus_imperativeocl_DictLiteralExp)
+
+
+def test_janus_imperativeocl_dictliteralexp_constructor_exists():
+    assert callable(Janus_imperativeocl_DictLiteralExp.__init__)
+
+
+def test_janus_imperativeocl_dictliteralexp_constructor_args():
+    sig = inspect.signature(Janus_imperativeocl_DictLiteralExp.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_janus_essentialocl_invalidliteralexp_is_not_abstract():
+    assert not inspect.isabstract(Janus_essentialocl_InvalidLiteralExp)
+
+
+def test_janus_essentialocl_invalidliteralexp_constructor_exists():
+    assert callable(Janus_essentialocl_InvalidLiteralExp.__init__)
+
+
+def test_janus_essentialocl_invalidliteralexp_constructor_args():
+    sig = inspect.signature(Janus_essentialocl_InvalidLiteralExp.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_janus_imperativeocl_anonymoustupleliteralexp_is_not_abstract():
+    assert not inspect.isabstract(Janus_imperativeocl_AnonymousTupleLiteralExp)
+
+
+def test_janus_imperativeocl_anonymoustupleliteralexp_constructor_exists():
+    assert callable(Janus_imperativeocl_AnonymousTupleLiteralExp.__init__)
+
+
+def test_janus_imperativeocl_anonymoustupleliteralexp_constructor_args():
+    sig = inspect.signature(Janus_imperativeocl_AnonymousTupleLiteralExp.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_janus_essentialocl_enumliteralexp_is_not_abstract():
+    assert not inspect.isabstract(Janus_essentialocl_EnumLiteralExp)
+
+
+def test_janus_essentialocl_enumliteralexp_constructor_exists():
+    assert callable(Janus_essentialocl_EnumLiteralExp.__init__)
+
+
+def test_janus_essentialocl_enumliteralexp_constructor_args():
+    sig = inspect.signature(Janus_essentialocl_EnumLiteralExp.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_janus_template_templateexp_is_not_abstract():
+    assert not inspect.isabstract(Janus_template_TemplateExp)
+
+
+def test_janus_template_templateexp_constructor_exists():
+    assert callable(Janus_template_TemplateExp.__init__)
+
+
+def test_janus_template_templateexp_constructor_args():
+    sig = inspect.signature(Janus_template_TemplateExp.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_janus_essentialocl_collectionliteralexp_is_not_abstract():
+    assert not inspect.isabstract(Janus_essentialocl_CollectionLiteralExp)
+
+
+def test_janus_essentialocl_collectionliteralexp_constructor_exists():
+    assert callable(Janus_essentialocl_CollectionLiteralExp.__init__)
+
+
+def test_janus_essentialocl_collectionliteralexp_constructor_args():
+    sig = inspect.signature(Janus_essentialocl_CollectionLiteralExp.__init__)
+    params = list(sig.parameters.keys())
+    assert "kind" in params, "Missing parameter 'kind'"
+
+def test_janus_essentialocl_collectionliteralexp_has_kind():
+    assert hasattr(Janus_essentialocl_CollectionLiteralExp, "kind")
+    descriptor = None
+    for klass in Janus_essentialocl_CollectionLiteralExp.__mro__:
+        if "kind" in klass.__dict__:
+            descriptor = klass.__dict__["kind"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_janus_essentialocl_primitiveliteralexp_is_not_abstract():
+    assert not inspect.isabstract(Janus_essentialocl_PrimitiveLiteralExp)
+
+
+def test_janus_essentialocl_primitiveliteralexp_constructor_exists():
+    assert callable(Janus_essentialocl_PrimitiveLiteralExp.__init__)
+
+
+def test_janus_essentialocl_primitiveliteralexp_constructor_args():
+    sig = inspect.signature(Janus_essentialocl_PrimitiveLiteralExp.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_loopexp_is_not_abstract():
+    assert not inspect.isabstract(LoopExp)
+
+
+def test_loopexp_constructor_exists():
+    assert callable(LoopExp.__init__)
+
+
+def test_loopexp_constructor_args():
+    sig = inspect.signature(LoopExp.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_janus_essentialocl_iterateexp_is_not_abstract():
+    assert not inspect.isabstract(Janus_essentialocl_IterateExp)
+
+
+def test_janus_essentialocl_iterateexp_constructor_exists():
+    assert callable(Janus_essentialocl_IterateExp.__init__)
+
+
+def test_janus_essentialocl_iterateexp_constructor_args():
+    sig = inspect.signature(Janus_essentialocl_IterateExp.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_janus_essentialocl_iteratorexp_is_not_abstract():
+    assert not inspect.isabstract(Janus_essentialocl_IteratorExp)
+
+
+def test_janus_essentialocl_iteratorexp_constructor_exists():
+    assert callable(Janus_essentialocl_IteratorExp.__init__)
+
+
+def test_janus_essentialocl_iteratorexp_constructor_args():
+    sig = inspect.signature(Janus_essentialocl_IteratorExp.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_janus_essentialocl_tupleliteralexp_is_not_abstract():
+    assert not inspect.isabstract(Janus_essentialocl_TupleLiteralExp)
+
+
+def test_janus_essentialocl_tupleliteralexp_constructor_exists():
+    assert callable(Janus_essentialocl_TupleLiteralExp.__init__)
+
+
+def test_janus_essentialocl_tupleliteralexp_constructor_args():
+    sig = inspect.signature(Janus_essentialocl_TupleLiteralExp.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -330,30 +1104,30 @@ def test_collectionliteralpart_constructor_args():
 
 
 
-def test_janus::essentialocl::collectionrange_is_not_abstract():
-    assert not inspect.isabstract(Janus::essentialocl::CollectionRange)
+def test_janus_essentialocl_collectionitem_is_not_abstract():
+    assert not inspect.isabstract(Janus_essentialocl_CollectionItem)
 
 
-def test_janus::essentialocl::collectionrange_constructor_exists():
-    assert callable(Janus::essentialocl::CollectionRange.__init__)
+def test_janus_essentialocl_collectionitem_constructor_exists():
+    assert callable(Janus_essentialocl_CollectionItem.__init__)
 
 
-def test_janus::essentialocl::collectionrange_constructor_args():
-    sig = inspect.signature(Janus::essentialocl::CollectionRange.__init__)
+def test_janus_essentialocl_collectionitem_constructor_args():
+    sig = inspect.signature(Janus_essentialocl_CollectionItem.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_janus::essentialocl::collectionitem_is_not_abstract():
-    assert not inspect.isabstract(Janus::essentialocl::CollectionItem)
+def test_janus_essentialocl_collectionrange_is_not_abstract():
+    assert not inspect.isabstract(Janus_essentialocl_CollectionRange)
 
 
-def test_janus::essentialocl::collectionitem_constructor_exists():
-    assert callable(Janus::essentialocl::CollectionItem.__init__)
+def test_janus_essentialocl_collectionrange_constructor_exists():
+    assert callable(Janus_essentialocl_CollectionRange.__init__)
 
 
-def test_janus::essentialocl::collectionitem_constructor_args():
-    sig = inspect.signature(Janus::essentialocl::CollectionItem.__init__)
+def test_janus_essentialocl_collectionrange_constructor_args():
+    sig = inspect.signature(Janus_essentialocl_CollectionRange.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -386,58 +1160,58 @@ def test_letexp_constructor_args():
 
 
 
-def test_essentialocl::oclexpression_is_not_abstract():
-    assert not inspect.isabstract(essentialocl::OclExpression)
+def test_essentialocl_oclexpression_is_not_abstract():
+    assert not inspect.isabstract(essentialocl_OclExpression)
 
 
-def test_essentialocl::oclexpression_constructor_exists():
-    assert callable(essentialocl::OclExpression.__init__)
+def test_essentialocl_oclexpression_constructor_exists():
+    assert callable(essentialocl_OclExpression.__init__)
 
 
-def test_essentialocl::oclexpression_constructor_args():
-    sig = inspect.signature(essentialocl::OclExpression.__init__)
+def test_essentialocl_oclexpression_constructor_args():
+    sig = inspect.signature(essentialocl_OclExpression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_essentialocl::callexp_is_not_abstract():
-    assert not inspect.isabstract(essentialocl::CallExp)
+def test_essentialocl_callexp_is_not_abstract():
+    assert not inspect.isabstract(essentialocl_CallExp)
 
 
-def test_essentialocl::callexp_constructor_exists():
-    assert callable(essentialocl::CallExp.__init__)
+def test_essentialocl_callexp_constructor_exists():
+    assert callable(essentialocl_CallExp.__init__)
 
 
-def test_essentialocl::callexp_constructor_args():
-    sig = inspect.signature(essentialocl::CallExp.__init__)
+def test_essentialocl_callexp_constructor_args():
+    sig = inspect.signature(essentialocl_CallExp.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_janus::imperativeocl::switchexp_is_not_abstract():
-    assert not inspect.isabstract(Janus::imperativeocl::SwitchExp)
+def test_janus_imperativeocl_switchexp_is_not_abstract():
+    assert not inspect.isabstract(Janus_imperativeocl_SwitchExp)
 
 
-def test_janus::imperativeocl::switchexp_constructor_exists():
-    assert callable(Janus::imperativeocl::SwitchExp.__init__)
+def test_janus_imperativeocl_switchexp_constructor_exists():
+    assert callable(Janus_imperativeocl_SwitchExp.__init__)
 
 
-def test_janus::imperativeocl::switchexp_constructor_args():
-    sig = inspect.signature(Janus::imperativeocl::SwitchExp.__init__)
+def test_janus_imperativeocl_switchexp_constructor_args():
+    sig = inspect.signature(Janus_imperativeocl_SwitchExp.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_janus::essentialocl::loopexp_is_not_abstract():
-    assert not inspect.isabstract(Janus::essentialocl::LoopExp)
+def test_janus_essentialocl_loopexp_is_not_abstract():
+    assert not inspect.isabstract(Janus_essentialocl_LoopExp)
 
 
-def test_janus::essentialocl::loopexp_constructor_exists():
-    assert callable(Janus::essentialocl::LoopExp.__init__)
+def test_janus_essentialocl_loopexp_constructor_exists():
+    assert callable(Janus_essentialocl_LoopExp.__init__)
 
 
-def test_janus::essentialocl::loopexp_constructor_args():
-    sig = inspect.signature(Janus::essentialocl::LoopExp.__init__)
+def test_janus_essentialocl_loopexp_constructor_args():
+    sig = inspect.signature(Janus_essentialocl_LoopExp.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -456,16 +1230,30 @@ def test_featurepropertycall_constructor_args():
 
 
 
-def test_janus::essentialocl::propertycallexp_is_not_abstract():
-    assert not inspect.isabstract(Janus::essentialocl::PropertyCallExp)
+def test_janus_essentialocl_operationcallexp_is_not_abstract():
+    assert not inspect.isabstract(Janus_essentialocl_OperationCallExp)
 
 
-def test_janus::essentialocl::propertycallexp_constructor_exists():
-    assert callable(Janus::essentialocl::PropertyCallExp.__init__)
+def test_janus_essentialocl_operationcallexp_constructor_exists():
+    assert callable(Janus_essentialocl_OperationCallExp.__init__)
 
 
-def test_janus::essentialocl::propertycallexp_constructor_args():
-    sig = inspect.signature(Janus::essentialocl::PropertyCallExp.__init__)
+def test_janus_essentialocl_operationcallexp_constructor_args():
+    sig = inspect.signature(Janus_essentialocl_OperationCallExp.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_janus_essentialocl_propertycallexp_is_not_abstract():
+    assert not inspect.isabstract(Janus_essentialocl_PropertyCallExp)
+
+
+def test_janus_essentialocl_propertycallexp_constructor_exists():
+    assert callable(Janus_essentialocl_PropertyCallExp.__init__)
+
+
+def test_janus_essentialocl_propertycallexp_constructor_args():
+    sig = inspect.signature(Janus_essentialocl_PropertyCallExp.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -484,23 +1272,23 @@ def test_templateexp_constructor_args():
 
 
 
-def test_janus::template::objecttemplateexp_is_not_abstract():
-    assert not inspect.isabstract(Janus::template::ObjectTemplateExp)
+def test_janus_template_objecttemplateexp_is_not_abstract():
+    assert not inspect.isabstract(Janus_template_ObjectTemplateExp)
 
 
-def test_janus::template::objecttemplateexp_constructor_exists():
-    assert callable(Janus::template::ObjectTemplateExp.__init__)
+def test_janus_template_objecttemplateexp_constructor_exists():
+    assert callable(Janus_template_ObjectTemplateExp.__init__)
 
 
-def test_janus::template::objecttemplateexp_constructor_args():
-    sig = inspect.signature(Janus::template::ObjectTemplateExp.__init__)
+def test_janus_template_objecttemplateexp_constructor_args():
+    sig = inspect.signature(Janus_template_ObjectTemplateExp.__init__)
     params = list(sig.parameters.keys())
     assert "referredClass" in params, "Missing parameter 'referredClass'"
 
-def test_janus::template::objecttemplateexp_has_referredClass():
-    assert hasattr(Janus::template::ObjectTemplateExp, "referredClass")
+def test_janus_template_objecttemplateexp_has_referredClass():
+    assert hasattr(Janus_template_ObjectTemplateExp, "referredClass")
     descriptor = None
-    for klass in Janus::template::ObjectTemplateExp.__mro__:
+    for klass in Janus_template_ObjectTemplateExp.__mro__:
         if "referredClass" in klass.__dict__:
             descriptor = klass.__dict__["referredClass"]
             break
@@ -508,23 +1296,23 @@ def test_janus::template::objecttemplateexp_has_referredClass():
 
 
 
-def test_janus::template::collectiontemplateexp_is_not_abstract():
-    assert not inspect.isabstract(Janus::template::CollectionTemplateExp)
+def test_janus_template_collectiontemplateexp_is_not_abstract():
+    assert not inspect.isabstract(Janus_template_CollectionTemplateExp)
 
 
-def test_janus::template::collectiontemplateexp_constructor_exists():
-    assert callable(Janus::template::CollectionTemplateExp.__init__)
+def test_janus_template_collectiontemplateexp_constructor_exists():
+    assert callable(Janus_template_CollectionTemplateExp.__init__)
 
 
-def test_janus::template::collectiontemplateexp_constructor_args():
-    sig = inspect.signature(Janus::template::CollectionTemplateExp.__init__)
+def test_janus_template_collectiontemplateexp_constructor_args():
+    sig = inspect.signature(Janus_template_CollectionTemplateExp.__init__)
     params = list(sig.parameters.keys())
     assert "kind" in params, "Missing parameter 'kind'"
 
-def test_janus::template::collectiontemplateexp_has_kind():
-    assert hasattr(Janus::template::CollectionTemplateExp, "kind")
+def test_janus_template_collectiontemplateexp_has_kind():
+    assert hasattr(Janus_template_CollectionTemplateExp, "kind")
     descriptor = None
-    for klass in Janus::template::CollectionTemplateExp.__mro__:
+    for klass in Janus_template_CollectionTemplateExp.__mro__:
         if "kind" in klass.__dict__:
             descriptor = klass.__dict__["kind"]
             break
@@ -560,23 +1348,71 @@ def test_numericliteralexp_constructor_args():
 
 
 
-def test_janus::essentialocl::unlimitednaturalexp_is_not_abstract():
-    assert not inspect.isabstract(Janus::essentialocl::UnlimitedNaturalExp)
+def test_janus_essentialocl_integerliteralexp_is_not_abstract():
+    assert not inspect.isabstract(Janus_essentialocl_IntegerLiteralExp)
 
 
-def test_janus::essentialocl::unlimitednaturalexp_constructor_exists():
-    assert callable(Janus::essentialocl::UnlimitedNaturalExp.__init__)
+def test_janus_essentialocl_integerliteralexp_constructor_exists():
+    assert callable(Janus_essentialocl_IntegerLiteralExp.__init__)
 
 
-def test_janus::essentialocl::unlimitednaturalexp_constructor_args():
-    sig = inspect.signature(Janus::essentialocl::UnlimitedNaturalExp.__init__)
+def test_janus_essentialocl_integerliteralexp_constructor_args():
+    sig = inspect.signature(Janus_essentialocl_IntegerLiteralExp.__init__)
+    params = list(sig.parameters.keys())
+    assert "integerSymbol" in params, "Missing parameter 'integerSymbol'"
+
+def test_janus_essentialocl_integerliteralexp_has_integerSymbol():
+    assert hasattr(Janus_essentialocl_IntegerLiteralExp, "integerSymbol")
+    descriptor = None
+    for klass in Janus_essentialocl_IntegerLiteralExp.__mro__:
+        if "integerSymbol" in klass.__dict__:
+            descriptor = klass.__dict__["integerSymbol"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_janus_essentialocl_realliteralexp_is_not_abstract():
+    assert not inspect.isabstract(Janus_essentialocl_RealLiteralExp)
+
+
+def test_janus_essentialocl_realliteralexp_constructor_exists():
+    assert callable(Janus_essentialocl_RealLiteralExp.__init__)
+
+
+def test_janus_essentialocl_realliteralexp_constructor_args():
+    sig = inspect.signature(Janus_essentialocl_RealLiteralExp.__init__)
+    params = list(sig.parameters.keys())
+    assert "realSymbol" in params, "Missing parameter 'realSymbol'"
+
+def test_janus_essentialocl_realliteralexp_has_realSymbol():
+    assert hasattr(Janus_essentialocl_RealLiteralExp, "realSymbol")
+    descriptor = None
+    for klass in Janus_essentialocl_RealLiteralExp.__mro__:
+        if "realSymbol" in klass.__dict__:
+            descriptor = klass.__dict__["realSymbol"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_janus_essentialocl_unlimitednaturalexp_is_not_abstract():
+    assert not inspect.isabstract(Janus_essentialocl_UnlimitedNaturalExp)
+
+
+def test_janus_essentialocl_unlimitednaturalexp_constructor_exists():
+    assert callable(Janus_essentialocl_UnlimitedNaturalExp.__init__)
+
+
+def test_janus_essentialocl_unlimitednaturalexp_constructor_args():
+    sig = inspect.signature(Janus_essentialocl_UnlimitedNaturalExp.__init__)
     params = list(sig.parameters.keys())
     assert "symbol" in params, "Missing parameter 'symbol'"
 
-def test_janus::essentialocl::unlimitednaturalexp_has_symbol():
-    assert hasattr(Janus::essentialocl::UnlimitedNaturalExp, "symbol")
+def test_janus_essentialocl_unlimitednaturalexp_has_symbol():
+    assert hasattr(Janus_essentialocl_UnlimitedNaturalExp, "symbol")
     descriptor = None
-    for klass in Janus::essentialocl::UnlimitedNaturalExp.__mro__:
+    for klass in Janus_essentialocl_UnlimitedNaturalExp.__mro__:
         if "symbol" in klass.__dict__:
             descriptor = klass.__dict__["symbol"]
             break
@@ -612,44 +1448,58 @@ def test_typedelement_constructor_args():
 
 
 
-def test_janus::essentialocl::collectionliteralpart_is_not_abstract():
-    assert not inspect.isabstract(Janus::essentialocl::CollectionLiteralPart)
+def test_janus_essentialocl_collectionliteralpart_is_not_abstract():
+    assert not inspect.isabstract(Janus_essentialocl_CollectionLiteralPart)
 
 
-def test_janus::essentialocl::collectionliteralpart_constructor_exists():
-    assert callable(Janus::essentialocl::CollectionLiteralPart.__init__)
+def test_janus_essentialocl_collectionliteralpart_constructor_exists():
+    assert callable(Janus_essentialocl_CollectionLiteralPart.__init__)
 
 
-def test_janus::essentialocl::collectionliteralpart_constructor_args():
-    sig = inspect.signature(Janus::essentialocl::CollectionLiteralPart.__init__)
+def test_janus_essentialocl_collectionliteralpart_constructor_args():
+    sig = inspect.signature(Janus_essentialocl_CollectionLiteralPart.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_janus::essentialocl::variable_is_not_abstract():
-    assert not inspect.isabstract(Janus::essentialocl::Variable)
+def test_janus_essentialocl_variable_is_not_abstract():
+    assert not inspect.isabstract(Janus_essentialocl_Variable)
 
 
-def test_janus::essentialocl::variable_constructor_exists():
-    assert callable(Janus::essentialocl::Variable.__init__)
+def test_janus_essentialocl_variable_constructor_exists():
+    assert callable(Janus_essentialocl_Variable.__init__)
 
 
-def test_janus::essentialocl::variable_constructor_args():
-    sig = inspect.signature(Janus::essentialocl::Variable.__init__)
+def test_janus_essentialocl_variable_constructor_args():
+    sig = inspect.signature(Janus_essentialocl_Variable.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_janus::essentialocl::oclexpression_is_not_abstract():
-    assert not inspect.isabstract(Janus::essentialocl::OclExpression)
+def test_janus_essentialocl_tupleliteralpart_is_not_abstract():
+    assert not inspect.isabstract(Janus_essentialocl_TupleLiteralPart)
 
 
-def test_janus::essentialocl::oclexpression_constructor_exists():
-    assert callable(Janus::essentialocl::OclExpression.__init__)
+def test_janus_essentialocl_tupleliteralpart_constructor_exists():
+    assert callable(Janus_essentialocl_TupleLiteralPart.__init__)
 
 
-def test_janus::essentialocl::oclexpression_constructor_args():
-    sig = inspect.signature(Janus::essentialocl::OclExpression.__init__)
+def test_janus_essentialocl_tupleliteralpart_constructor_args():
+    sig = inspect.signature(Janus_essentialocl_TupleLiteralPart.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_janus_essentialocl_oclexpression_is_not_abstract():
+    assert not inspect.isabstract(Janus_essentialocl_OclExpression)
+
+
+def test_janus_essentialocl_oclexpression_constructor_exists():
+    assert callable(Janus_essentialocl_OclExpression.__init__)
+
+
+def test_janus_essentialocl_oclexpression_constructor_args():
+    sig = inspect.signature(Janus_essentialocl_OclExpression.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -668,23 +1518,61 @@ def test_primitiveliteralexp_constructor_args():
 
 
 
-def test_janus::essentialocl::booleanliteralexp_is_not_abstract():
-    assert not inspect.isabstract(Janus::essentialocl::BooleanLiteralExp)
+def test_janus_essentialocl_stringliteralexp_is_not_abstract():
+    assert not inspect.isabstract(Janus_essentialocl_StringLiteralExp)
 
 
-def test_janus::essentialocl::booleanliteralexp_constructor_exists():
-    assert callable(Janus::essentialocl::BooleanLiteralExp.__init__)
+def test_janus_essentialocl_stringliteralexp_constructor_exists():
+    assert callable(Janus_essentialocl_StringLiteralExp.__init__)
 
 
-def test_janus::essentialocl::booleanliteralexp_constructor_args():
-    sig = inspect.signature(Janus::essentialocl::BooleanLiteralExp.__init__)
+def test_janus_essentialocl_stringliteralexp_constructor_args():
+    sig = inspect.signature(Janus_essentialocl_StringLiteralExp.__init__)
+    params = list(sig.parameters.keys())
+    assert "stringSymbol" in params, "Missing parameter 'stringSymbol'"
+
+def test_janus_essentialocl_stringliteralexp_has_stringSymbol():
+    assert hasattr(Janus_essentialocl_StringLiteralExp, "stringSymbol")
+    descriptor = None
+    for klass in Janus_essentialocl_StringLiteralExp.__mro__:
+        if "stringSymbol" in klass.__dict__:
+            descriptor = klass.__dict__["stringSymbol"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_janus_essentialocl_numericliteralexp_is_not_abstract():
+    assert not inspect.isabstract(Janus_essentialocl_NumericLiteralExp)
+
+
+def test_janus_essentialocl_numericliteralexp_constructor_exists():
+    assert callable(Janus_essentialocl_NumericLiteralExp.__init__)
+
+
+def test_janus_essentialocl_numericliteralexp_constructor_args():
+    sig = inspect.signature(Janus_essentialocl_NumericLiteralExp.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_janus_essentialocl_booleanliteralexp_is_not_abstract():
+    assert not inspect.isabstract(Janus_essentialocl_BooleanLiteralExp)
+
+
+def test_janus_essentialocl_booleanliteralexp_constructor_exists():
+    assert callable(Janus_essentialocl_BooleanLiteralExp.__init__)
+
+
+def test_janus_essentialocl_booleanliteralexp_constructor_args():
+    sig = inspect.signature(Janus_essentialocl_BooleanLiteralExp.__init__)
     params = list(sig.parameters.keys())
     assert "booleanSymbol" in params, "Missing parameter 'booleanSymbol'"
 
-def test_janus::essentialocl::booleanliteralexp_has_booleanSymbol():
-    assert hasattr(Janus::essentialocl::BooleanLiteralExp, "booleanSymbol")
+def test_janus_essentialocl_booleanliteralexp_has_booleanSymbol():
+    assert hasattr(Janus_essentialocl_BooleanLiteralExp, "booleanSymbol")
     descriptor = None
-    for klass in Janus::essentialocl::BooleanLiteralExp.__mro__:
+    for klass in Janus_essentialocl_BooleanLiteralExp.__mro__:
         if "booleanSymbol" in klass.__dict__:
             descriptor = klass.__dict__["booleanSymbol"]
             break
@@ -706,86 +1594,100 @@ def test_oclexpression_constructor_args():
 
 
 
-def test_janus::essentialocl::callexp_is_not_abstract():
-    assert not inspect.isabstract(Janus::essentialocl::CallExp)
+def test_janus_essentialocl_typeexp_is_not_abstract():
+    assert not inspect.isabstract(Janus_essentialocl_TypeExp)
 
 
-def test_janus::essentialocl::callexp_constructor_exists():
-    assert callable(Janus::essentialocl::CallExp.__init__)
+def test_janus_essentialocl_typeexp_constructor_exists():
+    assert callable(Janus_essentialocl_TypeExp.__init__)
 
 
-def test_janus::essentialocl::callexp_constructor_args():
-    sig = inspect.signature(Janus::essentialocl::CallExp.__init__)
+def test_janus_essentialocl_typeexp_constructor_args():
+    sig = inspect.signature(Janus_essentialocl_TypeExp.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_janus::essentialocl::variableexp_is_not_abstract():
-    assert not inspect.isabstract(Janus::essentialocl::VariableExp)
+def test_janus_essentialocl_letexp_is_not_abstract():
+    assert not inspect.isabstract(Janus_essentialocl_LetExp)
 
 
-def test_janus::essentialocl::variableexp_constructor_exists():
-    assert callable(Janus::essentialocl::VariableExp.__init__)
+def test_janus_essentialocl_letexp_constructor_exists():
+    assert callable(Janus_essentialocl_LetExp.__init__)
 
 
-def test_janus::essentialocl::variableexp_constructor_args():
-    sig = inspect.signature(Janus::essentialocl::VariableExp.__init__)
+def test_janus_essentialocl_letexp_constructor_args():
+    sig = inspect.signature(Janus_essentialocl_LetExp.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_janus::essentialocl::letexp_is_not_abstract():
-    assert not inspect.isabstract(Janus::essentialocl::LetExp)
+def test_janus_imperativeocl_imperativeexpression_is_not_abstract():
+    assert not inspect.isabstract(Janus_imperativeocl_ImperativeExpression)
 
 
-def test_janus::essentialocl::letexp_constructor_exists():
-    assert callable(Janus::essentialocl::LetExp.__init__)
+def test_janus_imperativeocl_imperativeexpression_constructor_exists():
+    assert callable(Janus_imperativeocl_ImperativeExpression.__init__)
 
 
-def test_janus::essentialocl::letexp_constructor_args():
-    sig = inspect.signature(Janus::essentialocl::LetExp.__init__)
+def test_janus_imperativeocl_imperativeexpression_constructor_args():
+    sig = inspect.signature(Janus_imperativeocl_ImperativeExpression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_janus::imperativeocl::imperativeexpression_is_not_abstract():
-    assert not inspect.isabstract(Janus::imperativeocl::ImperativeExpression)
+def test_janus_essentialocl_variableexp_is_not_abstract():
+    assert not inspect.isabstract(Janus_essentialocl_VariableExp)
 
 
-def test_janus::imperativeocl::imperativeexpression_constructor_exists():
-    assert callable(Janus::imperativeocl::ImperativeExpression.__init__)
+def test_janus_essentialocl_variableexp_constructor_exists():
+    assert callable(Janus_essentialocl_VariableExp.__init__)
 
 
-def test_janus::imperativeocl::imperativeexpression_constructor_args():
-    sig = inspect.signature(Janus::imperativeocl::ImperativeExpression.__init__)
+def test_janus_essentialocl_variableexp_constructor_args():
+    sig = inspect.signature(Janus_essentialocl_VariableExp.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_janus::essentialocl::ifexp_is_not_abstract():
-    assert not inspect.isabstract(Janus::essentialocl::IfExp)
+def test_janus_essentialocl_literalexp_is_not_abstract():
+    assert not inspect.isabstract(Janus_essentialocl_LiteralExp)
 
 
-def test_janus::essentialocl::ifexp_constructor_exists():
-    assert callable(Janus::essentialocl::IfExp.__init__)
+def test_janus_essentialocl_literalexp_constructor_exists():
+    assert callable(Janus_essentialocl_LiteralExp.__init__)
 
 
-def test_janus::essentialocl::ifexp_constructor_args():
-    sig = inspect.signature(Janus::essentialocl::IfExp.__init__)
+def test_janus_essentialocl_literalexp_constructor_args():
+    sig = inspect.signature(Janus_essentialocl_LiteralExp.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_janus::essentialocl::typeexp_is_not_abstract():
-    assert not inspect.isabstract(Janus::essentialocl::TypeExp)
+def test_janus_essentialocl_ifexp_is_not_abstract():
+    assert not inspect.isabstract(Janus_essentialocl_IfExp)
 
 
-def test_janus::essentialocl::typeexp_constructor_exists():
-    assert callable(Janus::essentialocl::TypeExp.__init__)
+def test_janus_essentialocl_ifexp_constructor_exists():
+    assert callable(Janus_essentialocl_IfExp.__init__)
 
 
-def test_janus::essentialocl::typeexp_constructor_args():
-    sig = inspect.signature(Janus::essentialocl::TypeExp.__init__)
+def test_janus_essentialocl_ifexp_constructor_args():
+    sig = inspect.signature(Janus_essentialocl_IfExp.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_janus_essentialocl_callexp_is_not_abstract():
+    assert not inspect.isabstract(Janus_essentialocl_CallExp)
+
+
+def test_janus_essentialocl_callexp_constructor_exists():
+    assert callable(Janus_essentialocl_CallExp.__init__)
+
+
+def test_janus_essentialocl_callexp_constructor_args():
+    sig = inspect.signature(Janus_essentialocl_CallExp.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -832,44 +1734,72 @@ def test_model_constructor_args():
 
 
 
-def test_emof::package_is_not_abstract():
-    assert not inspect.isabstract(emof::Package)
+def test_emof_package_is_not_abstract():
+    assert not inspect.isabstract(emof_Package)
 
 
-def test_emof::package_constructor_exists():
-    assert callable(emof::Package.__init__)
+def test_emof_package_constructor_exists():
+    assert callable(emof_Package.__init__)
 
 
-def test_emof::package_constructor_args():
-    sig = inspect.signature(emof::Package.__init__)
+def test_emof_package_constructor_args():
+    sig = inspect.signature(emof_Package.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_emof::class_is_not_abstract():
-    assert not inspect.isabstract(emof::Class)
+def test_emof_class_is_not_abstract():
+    assert not inspect.isabstract(emof_Class)
 
 
-def test_emof::class_constructor_exists():
-    assert callable(emof::Class.__init__)
+def test_emof_class_constructor_exists():
+    assert callable(emof_Class.__init__)
 
 
-def test_emof::class_constructor_args():
-    sig = inspect.signature(emof::Class.__init__)
+def test_emof_class_constructor_args():
+    sig = inspect.signature(emof_Class.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_janus::jtl::transformation_is_not_abstract():
-    assert not inspect.isabstract(Janus::JTL::Transformation)
+def test_janus_essentialocl_tupletype_is_not_abstract():
+    assert not inspect.isabstract(Janus_essentialocl_TupleType)
 
 
-def test_janus::jtl::transformation_constructor_exists():
-    assert callable(Janus::JTL::Transformation.__init__)
+def test_janus_essentialocl_tupletype_constructor_exists():
+    assert callable(Janus_essentialocl_TupleType.__init__)
 
 
-def test_janus::jtl::transformation_constructor_args():
-    sig = inspect.signature(Janus::JTL::Transformation.__init__)
+def test_janus_essentialocl_tupletype_constructor_args():
+    sig = inspect.signature(Janus_essentialocl_TupleType.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_janus_essentialocl_anytype_is_not_abstract():
+    assert not inspect.isabstract(Janus_essentialocl_AnyType)
+
+
+def test_janus_essentialocl_anytype_constructor_exists():
+    assert callable(Janus_essentialocl_AnyType.__init__)
+
+
+def test_janus_essentialocl_anytype_constructor_args():
+    sig = inspect.signature(Janus_essentialocl_AnyType.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_janus_jtl_transformation_is_not_abstract():
+    assert not inspect.isabstract(Janus_JTL_Transformation)
+
+
+def test_janus_jtl_transformation_constructor_exists():
+    assert callable(Janus_JTL_Transformation.__init__)
+
+
+def test_janus_jtl_transformation_constructor_args():
+    sig = inspect.signature(Janus_JTL_Transformation.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -888,16 +1818,16 @@ def test_extent_constructor_args():
 
 
 
-def test_janus::emof::uriextent_is_not_abstract():
-    assert not inspect.isabstract(Janus::emof::URIExtent)
+def test_janus_emof_uriextent_is_not_abstract():
+    assert not inspect.isabstract(Janus_emof_URIExtent)
 
 
-def test_janus::emof::uriextent_constructor_exists():
-    assert callable(Janus::emof::URIExtent.__init__)
+def test_janus_emof_uriextent_constructor_exists():
+    assert callable(Janus_emof_URIExtent.__init__)
 
 
-def test_janus::emof::uriextent_constructor_args():
-    sig = inspect.signature(Janus::emof::URIExtent.__init__)
+def test_janus_emof_uriextent_constructor_args():
+    sig = inspect.signature(Janus_emof_URIExtent.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -972,71 +1902,23 @@ def test_namedelement_constructor_args():
 
 
 
-def test_janus::jtl::domain_is_not_abstract():
-    assert not inspect.isabstract(Janus::JTL::Domain)
+def test_janus_jtl_relation_is_not_abstract():
+    assert not inspect.isabstract(Janus_JTL_Relation)
 
 
-def test_janus::jtl::domain_constructor_exists():
-    assert callable(Janus::JTL::Domain.__init__)
+def test_janus_jtl_relation_constructor_exists():
+    assert callable(Janus_JTL_Relation.__init__)
 
 
-def test_janus::jtl::domain_constructor_args():
-    sig = inspect.signature(Janus::JTL::Domain.__init__)
-    params = list(sig.parameters.keys())
-    assert "isEnforceable" in params, "Missing parameter 'isEnforceable'"
-    assert "isCheckable" in params, "Missing parameter 'isCheckable'"
-
-def test_janus::jtl::domain_has_isEnforceable():
-    assert hasattr(Janus::JTL::Domain, "isEnforceable")
-    descriptor = None
-    for klass in Janus::JTL::Domain.__mro__:
-        if "isEnforceable" in klass.__dict__:
-            descriptor = klass.__dict__["isEnforceable"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_janus::jtl::domain_has_isCheckable():
-    assert hasattr(Janus::JTL::Domain, "isCheckable")
-    descriptor = None
-    for klass in Janus::JTL::Domain.__mro__:
-        if "isCheckable" in klass.__dict__:
-            descriptor = klass.__dict__["isCheckable"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_janus::jtl::model_is_not_abstract():
-    assert not inspect.isabstract(Janus::JTL::Model)
-
-
-def test_janus::jtl::model_constructor_exists():
-    assert callable(Janus::JTL::Model.__init__)
-
-
-def test_janus::jtl::model_constructor_args():
-    sig = inspect.signature(Janus::JTL::Model.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_janus::jtl::relation_is_not_abstract():
-    assert not inspect.isabstract(Janus::JTL::Relation)
-
-
-def test_janus::jtl::relation_constructor_exists():
-    assert callable(Janus::JTL::Relation.__init__)
-
-
-def test_janus::jtl::relation_constructor_args():
-    sig = inspect.signature(Janus::JTL::Relation.__init__)
+def test_janus_jtl_relation_constructor_args():
+    sig = inspect.signature(Janus_JTL_Relation.__init__)
     params = list(sig.parameters.keys())
     assert "isTopLevel" in params, "Missing parameter 'isTopLevel'"
 
-def test_janus::jtl::relation_has_isTopLevel():
-    assert hasattr(Janus::JTL::Relation, "isTopLevel")
+def test_janus_jtl_relation_has_isTopLevel():
+    assert hasattr(Janus_JTL_Relation, "isTopLevel")
     descriptor = None
-    for klass in Janus::JTL::Relation.__mro__:
+    for klass in Janus_JTL_Relation.__mro__:
         if "isTopLevel" in klass.__dict__:
             descriptor = klass.__dict__["isTopLevel"]
             break
@@ -1044,37 +1926,85 @@ def test_janus::jtl::relation_has_isTopLevel():
 
 
 
-def test_janus::emof::typedelement_is_not_abstract():
-    assert not inspect.isabstract(Janus::emof::TypedElement)
+def test_janus_emof_typedelement_is_not_abstract():
+    assert not inspect.isabstract(Janus_emof_TypedElement)
 
 
-def test_janus::emof::typedelement_constructor_exists():
-    assert callable(Janus::emof::TypedElement.__init__)
+def test_janus_emof_typedelement_constructor_exists():
+    assert callable(Janus_emof_TypedElement.__init__)
 
 
-def test_janus::emof::typedelement_constructor_args():
-    sig = inspect.signature(Janus::emof::TypedElement.__init__)
+def test_janus_emof_typedelement_constructor_args():
+    sig = inspect.signature(Janus_emof_TypedElement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_janus::emof::package_is_not_abstract():
-    assert not inspect.isabstract(Janus::emof::Package)
+def test_janus_jtl_domain_is_not_abstract():
+    assert not inspect.isabstract(Janus_JTL_Domain)
 
 
-def test_janus::emof::package_constructor_exists():
-    assert callable(Janus::emof::Package.__init__)
+def test_janus_jtl_domain_constructor_exists():
+    assert callable(Janus_JTL_Domain.__init__)
 
 
-def test_janus::emof::package_constructor_args():
-    sig = inspect.signature(Janus::emof::Package.__init__)
+def test_janus_jtl_domain_constructor_args():
+    sig = inspect.signature(Janus_JTL_Domain.__init__)
+    params = list(sig.parameters.keys())
+    assert "isCheckable" in params, "Missing parameter 'isCheckable'"
+    assert "isEnforceable" in params, "Missing parameter 'isEnforceable'"
+
+def test_janus_jtl_domain_has_isCheckable():
+    assert hasattr(Janus_JTL_Domain, "isCheckable")
+    descriptor = None
+    for klass in Janus_JTL_Domain.__mro__:
+        if "isCheckable" in klass.__dict__:
+            descriptor = klass.__dict__["isCheckable"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_janus_jtl_domain_has_isEnforceable():
+    assert hasattr(Janus_JTL_Domain, "isEnforceable")
+    descriptor = None
+    for klass in Janus_JTL_Domain.__mro__:
+        if "isEnforceable" in klass.__dict__:
+            descriptor = klass.__dict__["isEnforceable"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_janus_jtl_model_is_not_abstract():
+    assert not inspect.isabstract(Janus_JTL_Model)
+
+
+def test_janus_jtl_model_constructor_exists():
+    assert callable(Janus_JTL_Model.__init__)
+
+
+def test_janus_jtl_model_constructor_args():
+    sig = inspect.signature(Janus_JTL_Model.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_janus_emof_package_is_not_abstract():
+    assert not inspect.isabstract(Janus_emof_Package)
+
+
+def test_janus_emof_package_constructor_exists():
+    assert callable(Janus_emof_Package.__init__)
+
+
+def test_janus_emof_package_constructor_args():
+    sig = inspect.signature(Janus_emof_Package.__init__)
     params = list(sig.parameters.keys())
     assert "uri" in params, "Missing parameter 'uri'"
 
-def test_janus::emof::package_has_uri():
-    assert hasattr(Janus::emof::Package, "uri")
+def test_janus_emof_package_has_uri():
+    assert hasattr(Janus_emof_Package, "uri")
     descriptor = None
-    for klass in Janus::emof::Package.__mro__:
+    for klass in Janus_emof_Package.__mro__:
         if "uri" in klass.__dict__:
             descriptor = klass.__dict__["uri"]
             break
@@ -1082,55 +2012,55 @@ def test_janus::emof::package_has_uri():
 
 
 
-def test_janus::emof::multiplicityelement_is_not_abstract():
-    assert not inspect.isabstract(Janus::emof::MultiplicityElement)
+def test_janus_emof_multiplicityelement_is_not_abstract():
+    assert not inspect.isabstract(Janus_emof_MultiplicityElement)
 
 
-def test_janus::emof::multiplicityelement_constructor_exists():
-    assert callable(Janus::emof::MultiplicityElement.__init__)
+def test_janus_emof_multiplicityelement_constructor_exists():
+    assert callable(Janus_emof_MultiplicityElement.__init__)
 
 
-def test_janus::emof::multiplicityelement_constructor_args():
-    sig = inspect.signature(Janus::emof::MultiplicityElement.__init__)
+def test_janus_emof_multiplicityelement_constructor_args():
+    sig = inspect.signature(Janus_emof_MultiplicityElement.__init__)
     params = list(sig.parameters.keys())
-    assert "upper" in params, "Missing parameter 'upper'"
+    assert "lower" in params, "Missing parameter 'lower'"
     assert "isOrdered" in params, "Missing parameter 'isOrdered'"
     assert "isUnique" in params, "Missing parameter 'isUnique'"
-    assert "lower" in params, "Missing parameter 'lower'"
+    assert "upper" in params, "Missing parameter 'upper'"
 
-def test_janus::emof::multiplicityelement_has_upper():
-    assert hasattr(Janus::emof::MultiplicityElement, "upper")
+def test_janus_emof_multiplicityelement_has_lower():
+    assert hasattr(Janus_emof_MultiplicityElement, "lower")
     descriptor = None
-    for klass in Janus::emof::MultiplicityElement.__mro__:
-        if "upper" in klass.__dict__:
-            descriptor = klass.__dict__["upper"]
+    for klass in Janus_emof_MultiplicityElement.__mro__:
+        if "lower" in klass.__dict__:
+            descriptor = klass.__dict__["lower"]
             break
     assert isinstance(descriptor, property)
 
-def test_janus::emof::multiplicityelement_has_isOrdered():
-    assert hasattr(Janus::emof::MultiplicityElement, "isOrdered")
+def test_janus_emof_multiplicityelement_has_isOrdered():
+    assert hasattr(Janus_emof_MultiplicityElement, "isOrdered")
     descriptor = None
-    for klass in Janus::emof::MultiplicityElement.__mro__:
+    for klass in Janus_emof_MultiplicityElement.__mro__:
         if "isOrdered" in klass.__dict__:
             descriptor = klass.__dict__["isOrdered"]
             break
     assert isinstance(descriptor, property)
 
-def test_janus::emof::multiplicityelement_has_isUnique():
-    assert hasattr(Janus::emof::MultiplicityElement, "isUnique")
+def test_janus_emof_multiplicityelement_has_isUnique():
+    assert hasattr(Janus_emof_MultiplicityElement, "isUnique")
     descriptor = None
-    for klass in Janus::emof::MultiplicityElement.__mro__:
+    for klass in Janus_emof_MultiplicityElement.__mro__:
         if "isUnique" in klass.__dict__:
             descriptor = klass.__dict__["isUnique"]
             break
     assert isinstance(descriptor, property)
 
-def test_janus::emof::multiplicityelement_has_lower():
-    assert hasattr(Janus::emof::MultiplicityElement, "lower")
+def test_janus_emof_multiplicityelement_has_upper():
+    assert hasattr(Janus_emof_MultiplicityElement, "upper")
     descriptor = None
-    for klass in Janus::emof::MultiplicityElement.__mro__:
-        if "lower" in klass.__dict__:
-            descriptor = klass.__dict__["lower"]
+    for klass in Janus_emof_MultiplicityElement.__mro__:
+        if "upper" in klass.__dict__:
+            descriptor = klass.__dict__["upper"]
             break
     assert isinstance(descriptor, property)
 
@@ -1150,121 +2080,121 @@ def test_parameter_constructor_args():
 
 
 
-def test_emof::typedelement_is_not_abstract():
-    assert not inspect.isabstract(emof::TypedElement)
+def test_emof_typedelement_is_not_abstract():
+    assert not inspect.isabstract(emof_TypedElement)
 
 
-def test_emof::typedelement_constructor_exists():
-    assert callable(emof::TypedElement.__init__)
+def test_emof_typedelement_constructor_exists():
+    assert callable(emof_TypedElement.__init__)
 
 
-def test_emof::typedelement_constructor_args():
-    sig = inspect.signature(emof::TypedElement.__init__)
+def test_emof_typedelement_constructor_args():
+    sig = inspect.signature(emof_TypedElement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_emof::multiplicityelement_is_not_abstract():
-    assert not inspect.isabstract(emof::MultiplicityElement)
+def test_emof_multiplicityelement_is_not_abstract():
+    assert not inspect.isabstract(emof_MultiplicityElement)
 
 
-def test_emof::multiplicityelement_constructor_exists():
-    assert callable(emof::MultiplicityElement.__init__)
+def test_emof_multiplicityelement_constructor_exists():
+    assert callable(emof_MultiplicityElement.__init__)
 
 
-def test_emof::multiplicityelement_constructor_args():
-    sig = inspect.signature(emof::MultiplicityElement.__init__)
+def test_emof_multiplicityelement_constructor_args():
+    sig = inspect.signature(emof_MultiplicityElement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_janus::emof::operation_is_not_abstract():
-    assert not inspect.isabstract(Janus::emof::Operation)
+def test_janus_emof_operation_is_not_abstract():
+    assert not inspect.isabstract(Janus_emof_Operation)
 
 
-def test_janus::emof::operation_constructor_exists():
-    assert callable(Janus::emof::Operation.__init__)
+def test_janus_emof_operation_constructor_exists():
+    assert callable(Janus_emof_Operation.__init__)
 
 
-def test_janus::emof::operation_constructor_args():
-    sig = inspect.signature(Janus::emof::Operation.__init__)
+def test_janus_emof_operation_constructor_args():
+    sig = inspect.signature(Janus_emof_Operation.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_janus::emof::object_is_not_abstract():
-    assert not inspect.isabstract(Janus::emof::Object)
+def test_janus_emof_object_is_not_abstract():
+    assert not inspect.isabstract(Janus_emof_Object)
 
 
-def test_janus::emof::object_constructor_exists():
-    assert callable(Janus::emof::Object.__init__)
+def test_janus_emof_object_constructor_exists():
+    assert callable(Janus_emof_Object.__init__)
 
 
-def test_janus::emof::object_constructor_args():
-    sig = inspect.signature(Janus::emof::Object.__init__)
+def test_janus_emof_object_constructor_args():
+    sig = inspect.signature(Janus_emof_Object.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_janus::emof::property_is_not_abstract():
-    assert not inspect.isabstract(Janus::emof::Property)
+def test_janus_emof_property_is_not_abstract():
+    assert not inspect.isabstract(Janus_emof_Property)
 
 
-def test_janus::emof::property_constructor_exists():
-    assert callable(Janus::emof::Property.__init__)
+def test_janus_emof_property_constructor_exists():
+    assert callable(Janus_emof_Property.__init__)
 
 
-def test_janus::emof::property_constructor_args():
-    sig = inspect.signature(Janus::emof::Property.__init__)
+def test_janus_emof_property_constructor_args():
+    sig = inspect.signature(Janus_emof_Property.__init__)
     params = list(sig.parameters.keys())
-    assert "isId" in params, "Missing parameter 'isId'"
-    assert "isDerived" in params, "Missing parameter 'isDerived'"
-    assert "isReadOnly" in params, "Missing parameter 'isReadOnly'"
     assert "default" in params, "Missing parameter 'default'"
+    assert "isReadOnly" in params, "Missing parameter 'isReadOnly'"
     assert "isComposite" in params, "Missing parameter 'isComposite'"
+    assert "isDerived" in params, "Missing parameter 'isDerived'"
+    assert "isId" in params, "Missing parameter 'isId'"
 
-def test_janus::emof::property_has_isId():
-    assert hasattr(Janus::emof::Property, "isId")
+def test_janus_emof_property_has_default():
+    assert hasattr(Janus_emof_Property, "default")
     descriptor = None
-    for klass in Janus::emof::Property.__mro__:
-        if "isId" in klass.__dict__:
-            descriptor = klass.__dict__["isId"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_janus::emof::property_has_isDerived():
-    assert hasattr(Janus::emof::Property, "isDerived")
-    descriptor = None
-    for klass in Janus::emof::Property.__mro__:
-        if "isDerived" in klass.__dict__:
-            descriptor = klass.__dict__["isDerived"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_janus::emof::property_has_isReadOnly():
-    assert hasattr(Janus::emof::Property, "isReadOnly")
-    descriptor = None
-    for klass in Janus::emof::Property.__mro__:
-        if "isReadOnly" in klass.__dict__:
-            descriptor = klass.__dict__["isReadOnly"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_janus::emof::property_has_default():
-    assert hasattr(Janus::emof::Property, "default")
-    descriptor = None
-    for klass in Janus::emof::Property.__mro__:
+    for klass in Janus_emof_Property.__mro__:
         if "default" in klass.__dict__:
             descriptor = klass.__dict__["default"]
             break
     assert isinstance(descriptor, property)
 
-def test_janus::emof::property_has_isComposite():
-    assert hasattr(Janus::emof::Property, "isComposite")
+def test_janus_emof_property_has_isReadOnly():
+    assert hasattr(Janus_emof_Property, "isReadOnly")
     descriptor = None
-    for klass in Janus::emof::Property.__mro__:
+    for klass in Janus_emof_Property.__mro__:
+        if "isReadOnly" in klass.__dict__:
+            descriptor = klass.__dict__["isReadOnly"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_janus_emof_property_has_isComposite():
+    assert hasattr(Janus_emof_Property, "isComposite")
+    descriptor = None
+    for klass in Janus_emof_Property.__mro__:
         if "isComposite" in klass.__dict__:
             descriptor = klass.__dict__["isComposite"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_janus_emof_property_has_isDerived():
+    assert hasattr(Janus_emof_Property, "isDerived")
+    descriptor = None
+    for klass in Janus_emof_Property.__mro__:
+        if "isDerived" in klass.__dict__:
+            descriptor = klass.__dict__["isDerived"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_janus_emof_property_has_isId():
+    assert hasattr(Janus_emof_Property, "isId")
+    descriptor = None
+    for klass in Janus_emof_Property.__mro__:
+        if "isId" in klass.__dict__:
+            descriptor = klass.__dict__["isId"]
             break
     assert isinstance(descriptor, property)
 
@@ -1284,44 +2214,44 @@ def test_enumeration_constructor_args():
 
 
 
-def test_janus::emof::enumerationliteral_is_not_abstract():
-    assert not inspect.isabstract(Janus::emof::EnumerationLiteral)
+def test_janus_emof_enumerationliteral_is_not_abstract():
+    assert not inspect.isabstract(Janus_emof_EnumerationLiteral)
 
 
-def test_janus::emof::enumerationliteral_constructor_exists():
-    assert callable(Janus::emof::EnumerationLiteral.__init__)
+def test_janus_emof_enumerationliteral_constructor_exists():
+    assert callable(Janus_emof_EnumerationLiteral.__init__)
 
 
-def test_janus::emof::enumerationliteral_constructor_args():
-    sig = inspect.signature(Janus::emof::EnumerationLiteral.__init__)
+def test_janus_emof_enumerationliteral_constructor_args():
+    sig = inspect.signature(Janus_emof_EnumerationLiteral.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_janus::emof::parameter_is_not_abstract():
-    assert not inspect.isabstract(Janus::emof::Parameter)
+def test_janus_emof_parameter_is_not_abstract():
+    assert not inspect.isabstract(Janus_emof_Parameter)
 
 
-def test_janus::emof::parameter_constructor_exists():
-    assert callable(Janus::emof::Parameter.__init__)
+def test_janus_emof_parameter_constructor_exists():
+    assert callable(Janus_emof_Parameter.__init__)
 
 
-def test_janus::emof::parameter_constructor_args():
-    sig = inspect.signature(Janus::emof::Parameter.__init__)
+def test_janus_emof_parameter_constructor_args():
+    sig = inspect.signature(Janus_emof_Parameter.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_janus::emof::type_is_not_abstract():
-    assert not inspect.isabstract(Janus::emof::Type)
+def test_janus_emof_type_is_not_abstract():
+    assert not inspect.isabstract(Janus_emof_Type)
 
 
-def test_janus::emof::type_constructor_exists():
-    assert callable(Janus::emof::Type.__init__)
+def test_janus_emof_type_constructor_exists():
+    assert callable(Janus_emof_Type.__init__)
 
 
-def test_janus::emof::type_constructor_args():
-    sig = inspect.signature(Janus::emof::Type.__init__)
+def test_janus_emof_type_constructor_args():
+    sig = inspect.signature(Janus_emof_Type.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1354,30 +2284,44 @@ def test_datatype_constructor_args():
 
 
 
-def test_janus::emof::primitivetype_is_not_abstract():
-    assert not inspect.isabstract(Janus::emof::PrimitiveType)
+def test_janus_emof_primitivetype_is_not_abstract():
+    assert not inspect.isabstract(Janus_emof_PrimitiveType)
 
 
-def test_janus::emof::primitivetype_constructor_exists():
-    assert callable(Janus::emof::PrimitiveType.__init__)
+def test_janus_emof_primitivetype_constructor_exists():
+    assert callable(Janus_emof_PrimitiveType.__init__)
 
 
-def test_janus::emof::primitivetype_constructor_args():
-    sig = inspect.signature(Janus::emof::PrimitiveType.__init__)
+def test_janus_emof_primitivetype_constructor_args():
+    sig = inspect.signature(Janus_emof_PrimitiveType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_janus::emof::enumeration_is_not_abstract():
-    assert not inspect.isabstract(Janus::emof::Enumeration)
+def test_janus_essentialocl_collectiontype_is_not_abstract():
+    assert not inspect.isabstract(Janus_essentialocl_CollectionType)
 
 
-def test_janus::emof::enumeration_constructor_exists():
-    assert callable(Janus::emof::Enumeration.__init__)
+def test_janus_essentialocl_collectiontype_constructor_exists():
+    assert callable(Janus_essentialocl_CollectionType.__init__)
 
 
-def test_janus::emof::enumeration_constructor_args():
-    sig = inspect.signature(Janus::emof::Enumeration.__init__)
+def test_janus_essentialocl_collectiontype_constructor_args():
+    sig = inspect.signature(Janus_essentialocl_CollectionType.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_janus_emof_enumeration_is_not_abstract():
+    assert not inspect.isabstract(Janus_emof_Enumeration)
+
+
+def test_janus_emof_enumeration_constructor_exists():
+    assert callable(Janus_emof_Enumeration.__init__)
+
+
+def test_janus_emof_enumeration_constructor_args():
+    sig = inspect.signature(Janus_emof_Enumeration.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1396,93 +2340,51 @@ def test_element_constructor_args():
 
 
 
-def test_janus::jtl::pattern_is_not_abstract():
-    assert not inspect.isabstract(Janus::JTL::Pattern)
+def test_janus_imperativeocl_dictliteralpart_is_not_abstract():
+    assert not inspect.isabstract(Janus_imperativeocl_DictLiteralPart)
 
 
-def test_janus::jtl::pattern_constructor_exists():
-    assert callable(Janus::JTL::Pattern.__init__)
+def test_janus_imperativeocl_dictliteralpart_constructor_exists():
+    assert callable(Janus_imperativeocl_DictLiteralPart.__init__)
 
 
-def test_janus::jtl::pattern_constructor_args():
-    sig = inspect.signature(Janus::JTL::Pattern.__init__)
+def test_janus_imperativeocl_dictliteralpart_constructor_args():
+    sig = inspect.signature(Janus_imperativeocl_DictLiteralPart.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_janus::emof::comment_is_not_abstract():
-    assert not inspect.isabstract(Janus::emof::Comment)
+def test_janus_imperativeocl_anonymoustupleliteralpart_is_not_abstract():
+    assert not inspect.isabstract(Janus_imperativeocl_AnonymousTupleLiteralPart)
 
 
-def test_janus::emof::comment_constructor_exists():
-    assert callable(Janus::emof::Comment.__init__)
+def test_janus_imperativeocl_anonymoustupleliteralpart_constructor_exists():
+    assert callable(Janus_imperativeocl_AnonymousTupleLiteralPart.__init__)
 
 
-def test_janus::emof::comment_constructor_args():
-    sig = inspect.signature(Janus::emof::Comment.__init__)
+def test_janus_imperativeocl_anonymoustupleliteralpart_constructor_args():
+    sig = inspect.signature(Janus_imperativeocl_AnonymousTupleLiteralPart.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_janus::imperativeocl::dictliteralpart_is_not_abstract():
-    assert not inspect.isabstract(Janus::imperativeocl::DictLiteralPart)
+def test_janus_emof_namedelement_is_not_abstract():
+    assert not inspect.isabstract(Janus_emof_NamedElement)
 
 
-def test_janus::imperativeocl::dictliteralpart_constructor_exists():
-    assert callable(Janus::imperativeocl::DictLiteralPart.__init__)
+def test_janus_emof_namedelement_constructor_exists():
+    assert callable(Janus_emof_NamedElement.__init__)
 
 
-def test_janus::imperativeocl::dictliteralpart_constructor_args():
-    sig = inspect.signature(Janus::imperativeocl::DictLiteralPart.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_janus::imperativeocl::anonymoustupleliteralpart_is_not_abstract():
-    assert not inspect.isabstract(Janus::imperativeocl::AnonymousTupleLiteralPart)
-
-
-def test_janus::imperativeocl::anonymoustupleliteralpart_constructor_exists():
-    assert callable(Janus::imperativeocl::AnonymousTupleLiteralPart.__init__)
-
-
-def test_janus::imperativeocl::anonymoustupleliteralpart_constructor_args():
-    sig = inspect.signature(Janus::imperativeocl::AnonymousTupleLiteralPart.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_janus::jtl::predicate_is_not_abstract():
-    assert not inspect.isabstract(Janus::JTL::Predicate)
-
-
-def test_janus::jtl::predicate_constructor_exists():
-    assert callable(Janus::JTL::Predicate.__init__)
-
-
-def test_janus::jtl::predicate_constructor_args():
-    sig = inspect.signature(Janus::JTL::Predicate.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_janus::emof::namedelement_is_not_abstract():
-    assert not inspect.isabstract(Janus::emof::NamedElement)
-
-
-def test_janus::emof::namedelement_constructor_exists():
-    assert callable(Janus::emof::NamedElement.__init__)
-
-
-def test_janus::emof::namedelement_constructor_args():
-    sig = inspect.signature(Janus::emof::NamedElement.__init__)
+def test_janus_emof_namedelement_constructor_args():
+    sig = inspect.signature(Janus_emof_NamedElement.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_janus::emof::namedelement_has_name():
-    assert hasattr(Janus::emof::NamedElement, "name")
+def test_janus_emof_namedelement_has_name():
+    assert hasattr(Janus_emof_NamedElement, "name")
     descriptor = None
-    for klass in Janus::emof::NamedElement.__mro__:
+    for klass in Janus_emof_NamedElement.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -1490,47 +2392,89 @@ def test_janus::emof::namedelement_has_name():
 
 
 
-def test_janus::template::propertytemplateitem_is_not_abstract():
-    assert not inspect.isabstract(Janus::template::PropertyTemplateItem)
+def test_janus_jtl_predicate_is_not_abstract():
+    assert not inspect.isabstract(Janus_JTL_Predicate)
 
 
-def test_janus::template::propertytemplateitem_constructor_exists():
-    assert callable(Janus::template::PropertyTemplateItem.__init__)
+def test_janus_jtl_predicate_constructor_exists():
+    assert callable(Janus_JTL_Predicate.__init__)
 
 
-def test_janus::template::propertytemplateitem_constructor_args():
-    sig = inspect.signature(Janus::template::PropertyTemplateItem.__init__)
+def test_janus_jtl_predicate_constructor_args():
+    sig = inspect.signature(Janus_JTL_Predicate.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_janus::emof::tag_is_not_abstract():
-    assert not inspect.isabstract(Janus::emof::Tag)
+def test_janus_template_propertytemplateitem_is_not_abstract():
+    assert not inspect.isabstract(Janus_template_PropertyTemplateItem)
 
 
-def test_janus::emof::tag_constructor_exists():
-    assert callable(Janus::emof::Tag.__init__)
+def test_janus_template_propertytemplateitem_constructor_exists():
+    assert callable(Janus_template_PropertyTemplateItem.__init__)
 
 
-def test_janus::emof::tag_constructor_args():
-    sig = inspect.signature(Janus::emof::Tag.__init__)
+def test_janus_template_propertytemplateitem_constructor_args():
+    sig = inspect.signature(Janus_template_PropertyTemplateItem.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_janus_emof_comment_is_not_abstract():
+    assert not inspect.isabstract(Janus_emof_Comment)
+
+
+def test_janus_emof_comment_constructor_exists():
+    assert callable(Janus_emof_Comment.__init__)
+
+
+def test_janus_emof_comment_constructor_args():
+    sig = inspect.signature(Janus_emof_Comment.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_janus_jtl_pattern_is_not_abstract():
+    assert not inspect.isabstract(Janus_JTL_Pattern)
+
+
+def test_janus_jtl_pattern_constructor_exists():
+    assert callable(Janus_JTL_Pattern.__init__)
+
+
+def test_janus_jtl_pattern_constructor_args():
+    sig = inspect.signature(Janus_JTL_Pattern.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_janus_emof_tag_is_not_abstract():
+    assert not inspect.isabstract(Janus_emof_Tag)
+
+
+def test_janus_emof_tag_constructor_exists():
+    assert callable(Janus_emof_Tag.__init__)
+
+
+def test_janus_emof_tag_constructor_args():
+    sig = inspect.signature(Janus_emof_Tag.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
     assert "value" in params, "Missing parameter 'value'"
 
-def test_janus::emof::tag_has_name():
-    assert hasattr(Janus::emof::Tag, "name")
+def test_janus_emof_tag_has_name():
+    assert hasattr(Janus_emof_Tag, "name")
     descriptor = None
-    for klass in Janus::emof::Tag.__mro__:
+    for klass in Janus_emof_Tag.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
-def test_janus::emof::tag_has_value():
-    assert hasattr(Janus::emof::Tag, "value")
+def test_janus_emof_tag_has_value():
+    assert hasattr(Janus_emof_Tag, "value")
     descriptor = None
-    for klass in Janus::emof::Tag.__mro__:
+    for klass in Janus_emof_Tag.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -1580,30 +2524,30 @@ def test_object_constructor_args():
 
 
 
-def test_janus::emof::extent_is_not_abstract():
-    assert not inspect.isabstract(Janus::emof::Extent)
+def test_janus_emof_extent_is_not_abstract():
+    assert not inspect.isabstract(Janus_emof_Extent)
 
 
-def test_janus::emof::extent_constructor_exists():
-    assert callable(Janus::emof::Extent.__init__)
+def test_janus_emof_extent_constructor_exists():
+    assert callable(Janus_emof_Extent.__init__)
 
 
-def test_janus::emof::extent_constructor_args():
-    sig = inspect.signature(Janus::emof::Extent.__init__)
+def test_janus_emof_extent_constructor_args():
+    sig = inspect.signature(Janus_emof_Extent.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_janus::emof::element_is_not_abstract():
-    assert not inspect.isabstract(Janus::emof::Element)
+def test_janus_emof_element_is_not_abstract():
+    assert not inspect.isabstract(Janus_emof_Element)
 
 
-def test_janus::emof::element_constructor_exists():
-    assert callable(Janus::emof::Element.__init__)
+def test_janus_emof_element_constructor_exists():
+    assert callable(Janus_emof_Element.__init__)
 
 
-def test_janus::emof::element_constructor_args():
-    sig = inspect.signature(Janus::emof::Element.__init__)
+def test_janus_emof_element_constructor_args():
+    sig = inspect.signature(Janus_emof_Element.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1622,30 +2566,30 @@ def test_class_constructor_args():
 
 
 
-def test_janus::imperativeocl::typedef_is_not_abstract():
-    assert not inspect.isabstract(Janus::imperativeocl::Typedef)
+def test_janus_imperativeocl_anonymoustupletype_is_not_abstract():
+    assert not inspect.isabstract(Janus_imperativeocl_AnonymousTupleType)
 
 
-def test_janus::imperativeocl::typedef_constructor_exists():
-    assert callable(Janus::imperativeocl::Typedef.__init__)
+def test_janus_imperativeocl_anonymoustupletype_constructor_exists():
+    assert callable(Janus_imperativeocl_AnonymousTupleType.__init__)
 
 
-def test_janus::imperativeocl::typedef_constructor_args():
-    sig = inspect.signature(Janus::imperativeocl::Typedef.__init__)
+def test_janus_imperativeocl_anonymoustupletype_constructor_args():
+    sig = inspect.signature(Janus_imperativeocl_AnonymousTupleType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_janus::imperativeocl::anonymoustupletype_is_not_abstract():
-    assert not inspect.isabstract(Janus::imperativeocl::AnonymousTupleType)
+def test_janus_imperativeocl_typedef_is_not_abstract():
+    assert not inspect.isabstract(Janus_imperativeocl_Typedef)
 
 
-def test_janus::imperativeocl::anonymoustupletype_constructor_exists():
-    assert callable(Janus::imperativeocl::AnonymousTupleType.__init__)
+def test_janus_imperativeocl_typedef_constructor_exists():
+    assert callable(Janus_imperativeocl_Typedef.__init__)
 
 
-def test_janus::imperativeocl::anonymoustupletype_constructor_args():
-    sig = inspect.signature(Janus::imperativeocl::AnonymousTupleType.__init__)
+def test_janus_imperativeocl_typedef_constructor_args():
+    sig = inspect.signature(Janus_imperativeocl_Typedef.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1660,950 +2604,6 @@ def test_operation_constructor_exists():
 
 def test_operation_constructor_args():
     sig = inspect.signature(Operation.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_imperativeexpression_is_not_abstract():
-    assert not inspect.isabstract(ImperativeExpression)
-
-
-def test_imperativeexpression_constructor_exists():
-    assert callable(ImperativeExpression.__init__)
-
-
-def test_imperativeexpression_constructor_args():
-    sig = inspect.signature(ImperativeExpression.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_janus::imperativeocl::unlinkexp_is_not_abstract():
-    assert not inspect.isabstract(Janus::imperativeocl::UnlinkExp)
-
-
-def test_janus::imperativeocl::unlinkexp_constructor_exists():
-    assert callable(Janus::imperativeocl::UnlinkExp.__init__)
-
-
-def test_janus::imperativeocl::unlinkexp_constructor_args():
-    sig = inspect.signature(Janus::imperativeocl::UnlinkExp.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_janus::imperativeocl::unpackexp_is_not_abstract():
-    assert not inspect.isabstract(Janus::imperativeocl::UnpackExp)
-
-
-def test_janus::imperativeocl::unpackexp_constructor_exists():
-    assert callable(Janus::imperativeocl::UnpackExp.__init__)
-
-
-def test_janus::imperativeocl::unpackexp_constructor_args():
-    sig = inspect.signature(Janus::imperativeocl::UnpackExp.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_janus::imperativeocl::returnexp_is_not_abstract():
-    assert not inspect.isabstract(Janus::imperativeocl::ReturnExp)
-
-
-def test_janus::imperativeocl::returnexp_constructor_exists():
-    assert callable(Janus::imperativeocl::ReturnExp.__init__)
-
-
-def test_janus::imperativeocl::returnexp_constructor_args():
-    sig = inspect.signature(Janus::imperativeocl::ReturnExp.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_janus::imperativeocl::altexp_is_not_abstract():
-    assert not inspect.isabstract(Janus::imperativeocl::AltExp)
-
-
-def test_janus::imperativeocl::altexp_constructor_exists():
-    assert callable(Janus::imperativeocl::AltExp.__init__)
-
-
-def test_janus::imperativeocl::altexp_constructor_args():
-    sig = inspect.signature(Janus::imperativeocl::AltExp.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_janus::imperativeocl::raiseexp_is_not_abstract():
-    assert not inspect.isabstract(Janus::imperativeocl::RaiseExp)
-
-
-def test_janus::imperativeocl::raiseexp_constructor_exists():
-    assert callable(Janus::imperativeocl::RaiseExp.__init__)
-
-
-def test_janus::imperativeocl::raiseexp_constructor_args():
-    sig = inspect.signature(Janus::imperativeocl::RaiseExp.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_janus::imperativeocl::continueexp_is_not_abstract():
-    assert not inspect.isabstract(Janus::imperativeocl::ContinueExp)
-
-
-def test_janus::imperativeocl::continueexp_constructor_exists():
-    assert callable(Janus::imperativeocl::ContinueExp.__init__)
-
-
-def test_janus::imperativeocl::continueexp_constructor_args():
-    sig = inspect.signature(Janus::imperativeocl::ContinueExp.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_janus::imperativeocl::variableinitexp_is_not_abstract():
-    assert not inspect.isabstract(Janus::imperativeocl::VariableInitExp)
-
-
-def test_janus::imperativeocl::variableinitexp_constructor_exists():
-    assert callable(Janus::imperativeocl::VariableInitExp.__init__)
-
-
-def test_janus::imperativeocl::variableinitexp_constructor_args():
-    sig = inspect.signature(Janus::imperativeocl::VariableInitExp.__init__)
-    params = list(sig.parameters.keys())
-    assert "withResult" in params, "Missing parameter 'withResult'"
-
-def test_janus::imperativeocl::variableinitexp_has_withResult():
-    assert hasattr(Janus::imperativeocl::VariableInitExp, "withResult")
-    descriptor = None
-    for klass in Janus::imperativeocl::VariableInitExp.__mro__:
-        if "withResult" in klass.__dict__:
-            descriptor = klass.__dict__["withResult"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_janus::imperativeocl::tupleexp_is_not_abstract():
-    assert not inspect.isabstract(Janus::imperativeocl::TupleExp)
-
-
-def test_janus::imperativeocl::tupleexp_constructor_exists():
-    assert callable(Janus::imperativeocl::TupleExp.__init__)
-
-
-def test_janus::imperativeocl::tupleexp_constructor_args():
-    sig = inspect.signature(Janus::imperativeocl::TupleExp.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_janus::imperativeocl::instantiationexp_is_not_abstract():
-    assert not inspect.isabstract(Janus::imperativeocl::InstantiationExp)
-
-
-def test_janus::imperativeocl::instantiationexp_constructor_exists():
-    assert callable(Janus::imperativeocl::InstantiationExp.__init__)
-
-
-def test_janus::imperativeocl::instantiationexp_constructor_args():
-    sig = inspect.signature(Janus::imperativeocl::InstantiationExp.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_janus::imperativeocl::breakexp_is_not_abstract():
-    assert not inspect.isabstract(Janus::imperativeocl::BreakExp)
-
-
-def test_janus::imperativeocl::breakexp_constructor_exists():
-    assert callable(Janus::imperativeocl::BreakExp.__init__)
-
-
-def test_janus::imperativeocl::breakexp_constructor_args():
-    sig = inspect.signature(Janus::imperativeocl::BreakExp.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_janus::imperativeocl::computeexp_is_not_abstract():
-    assert not inspect.isabstract(Janus::imperativeocl::ComputeExp)
-
-
-def test_janus::imperativeocl::computeexp_constructor_exists():
-    assert callable(Janus::imperativeocl::ComputeExp.__init__)
-
-
-def test_janus::imperativeocl::computeexp_constructor_args():
-    sig = inspect.signature(Janus::imperativeocl::ComputeExp.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_janus::imperativeocl::whileexp_is_not_abstract():
-    assert not inspect.isabstract(Janus::imperativeocl::WhileExp)
-
-
-def test_janus::imperativeocl::whileexp_constructor_exists():
-    assert callable(Janus::imperativeocl::WhileExp.__init__)
-
-
-def test_janus::imperativeocl::whileexp_constructor_args():
-    sig = inspect.signature(Janus::imperativeocl::WhileExp.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_janus::imperativeocl::logexp_is_not_abstract():
-    assert not inspect.isabstract(Janus::imperativeocl::LogExp)
-
-
-def test_janus::imperativeocl::logexp_constructor_exists():
-    assert callable(Janus::imperativeocl::LogExp.__init__)
-
-
-def test_janus::imperativeocl::logexp_constructor_args():
-    sig = inspect.signature(Janus::imperativeocl::LogExp.__init__)
-    params = list(sig.parameters.keys())
-    assert "level" in params, "Missing parameter 'level'"
-    assert "text" in params, "Missing parameter 'text'"
-
-def test_janus::imperativeocl::logexp_has_level():
-    assert hasattr(Janus::imperativeocl::LogExp, "level")
-    descriptor = None
-    for klass in Janus::imperativeocl::LogExp.__mro__:
-        if "level" in klass.__dict__:
-            descriptor = klass.__dict__["level"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_janus::imperativeocl::logexp_has_text():
-    assert hasattr(Janus::imperativeocl::LogExp, "text")
-    descriptor = None
-    for klass in Janus::imperativeocl::LogExp.__mro__:
-        if "text" in klass.__dict__:
-            descriptor = klass.__dict__["text"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_janus::imperativeocl::tryexp_is_not_abstract():
-    assert not inspect.isabstract(Janus::imperativeocl::TryExp)
-
-
-def test_janus::imperativeocl::tryexp_constructor_exists():
-    assert callable(Janus::imperativeocl::TryExp.__init__)
-
-
-def test_janus::imperativeocl::tryexp_constructor_args():
-    sig = inspect.signature(Janus::imperativeocl::TryExp.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_janus::imperativeocl::assertexp_is_not_abstract():
-    assert not inspect.isabstract(Janus::imperativeocl::AssertExp)
-
-
-def test_janus::imperativeocl::assertexp_constructor_exists():
-    assert callable(Janus::imperativeocl::AssertExp.__init__)
-
-
-def test_janus::imperativeocl::assertexp_constructor_args():
-    sig = inspect.signature(Janus::imperativeocl::AssertExp.__init__)
-    params = list(sig.parameters.keys())
-    assert "severity" in params, "Missing parameter 'severity'"
-
-def test_janus::imperativeocl::assertexp_has_severity():
-    assert hasattr(Janus::imperativeocl::AssertExp, "severity")
-    descriptor = None
-    for klass in Janus::imperativeocl::AssertExp.__mro__:
-        if "severity" in klass.__dict__:
-            descriptor = klass.__dict__["severity"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_janus::imperativeocl::blockexp_is_not_abstract():
-    assert not inspect.isabstract(Janus::imperativeocl::BlockExp)
-
-
-def test_janus::imperativeocl::blockexp_constructor_exists():
-    assert callable(Janus::imperativeocl::BlockExp.__init__)
-
-
-def test_janus::imperativeocl::blockexp_constructor_args():
-    sig = inspect.signature(Janus::imperativeocl::BlockExp.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_janus::imperativeocl::assignexp_is_not_abstract():
-    assert not inspect.isabstract(Janus::imperativeocl::AssignExp)
-
-
-def test_janus::imperativeocl::assignexp_constructor_exists():
-    assert callable(Janus::imperativeocl::AssignExp.__init__)
-
-
-def test_janus::imperativeocl::assignexp_constructor_args():
-    sig = inspect.signature(Janus::imperativeocl::AssignExp.__init__)
-    params = list(sig.parameters.keys())
-    assert "isReset" in params, "Missing parameter 'isReset'"
-
-def test_janus::imperativeocl::assignexp_has_isReset():
-    assert hasattr(Janus::imperativeocl::AssignExp, "isReset")
-    descriptor = None
-    for klass in Janus::imperativeocl::AssignExp.__mro__:
-        if "isReset" in klass.__dict__:
-            descriptor = klass.__dict__["isReset"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_imperativeloopexp_is_not_abstract():
-    assert not inspect.isabstract(ImperativeLoopExp)
-
-
-def test_imperativeloopexp_constructor_exists():
-    assert callable(ImperativeLoopExp.__init__)
-
-
-def test_imperativeloopexp_constructor_args():
-    sig = inspect.signature(ImperativeLoopExp.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_janus::imperativeocl::forexp_is_not_abstract():
-    assert not inspect.isabstract(Janus::imperativeocl::ForExp)
-
-
-def test_janus::imperativeocl::forexp_constructor_exists():
-    assert callable(Janus::imperativeocl::ForExp.__init__)
-
-
-def test_janus::imperativeocl::forexp_constructor_args():
-    sig = inspect.signature(Janus::imperativeocl::ForExp.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_janus::imperativeocl::collectorexp_is_not_abstract():
-    assert not inspect.isabstract(Janus::imperativeocl::CollectorExp)
-
-
-def test_janus::imperativeocl::collectorexp_constructor_exists():
-    assert callable(Janus::imperativeocl::CollectorExp.__init__)
-
-
-def test_janus::imperativeocl::collectorexp_constructor_args():
-    sig = inspect.signature(Janus::imperativeocl::CollectorExp.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_janus::imperativeocl::imperativeiterateexp_is_not_abstract():
-    assert not inspect.isabstract(Janus::imperativeocl::ImperativeIterateExp)
-
-
-def test_janus::imperativeocl::imperativeiterateexp_constructor_exists():
-    assert callable(Janus::imperativeocl::ImperativeIterateExp.__init__)
-
-
-def test_janus::imperativeocl::imperativeiterateexp_constructor_args():
-    sig = inspect.signature(Janus::imperativeocl::ImperativeIterateExp.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_janus::essentialocl::collectiontype_is_not_abstract():
-    assert not inspect.isabstract(Janus::essentialocl::CollectionType)
-
-
-def test_janus::essentialocl::collectiontype_constructor_exists():
-    assert callable(Janus::essentialocl::CollectionType.__init__)
-
-
-def test_janus::essentialocl::collectiontype_constructor_args():
-    sig = inspect.signature(Janus::essentialocl::CollectionType.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_collectiontype_is_not_abstract():
-    assert not inspect.isabstract(CollectionType)
-
-
-def test_collectiontype_constructor_exists():
-    assert callable(CollectionType.__init__)
-
-
-def test_collectiontype_constructor_args():
-    sig = inspect.signature(CollectionType.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_janus::imperativeocl::listtype_is_not_abstract():
-    assert not inspect.isabstract(Janus::imperativeocl::ListType)
-
-
-def test_janus::imperativeocl::listtype_constructor_exists():
-    assert callable(Janus::imperativeocl::ListType.__init__)
-
-
-def test_janus::imperativeocl::listtype_constructor_args():
-    sig = inspect.signature(Janus::imperativeocl::ListType.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_janus::imperativeocl::dictionarytype_is_not_abstract():
-    assert not inspect.isabstract(Janus::imperativeocl::DictionaryType)
-
-
-def test_janus::imperativeocl::dictionarytype_constructor_exists():
-    assert callable(Janus::imperativeocl::DictionaryType.__init__)
-
-
-def test_janus::imperativeocl::dictionarytype_constructor_args():
-    sig = inspect.signature(Janus::imperativeocl::DictionaryType.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_janus::essentialocl::bagtype_is_not_abstract():
-    assert not inspect.isabstract(Janus::essentialocl::BagType)
-
-
-def test_janus::essentialocl::bagtype_constructor_exists():
-    assert callable(Janus::essentialocl::BagType.__init__)
-
-
-def test_janus::essentialocl::bagtype_constructor_args():
-    sig = inspect.signature(Janus::essentialocl::BagType.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_tupleliteralexp_is_not_abstract():
-    assert not inspect.isabstract(TupleLiteralExp)
-
-
-def test_tupleliteralexp_constructor_exists():
-    assert callable(TupleLiteralExp.__init__)
-
-
-def test_tupleliteralexp_constructor_args():
-    sig = inspect.signature(TupleLiteralExp.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_janus::essentialocl::tupleliteralpart_is_not_abstract():
-    assert not inspect.isabstract(Janus::essentialocl::TupleLiteralPart)
-
-
-def test_janus::essentialocl::tupleliteralpart_constructor_exists():
-    assert callable(Janus::essentialocl::TupleLiteralPart.__init__)
-
-
-def test_janus::essentialocl::tupleliteralpart_constructor_args():
-    sig = inspect.signature(Janus::essentialocl::TupleLiteralPart.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_callexp_is_not_abstract():
-    assert not inspect.isabstract(CallExp)
-
-
-def test_callexp_constructor_exists():
-    assert callable(CallExp.__init__)
-
-
-def test_callexp_constructor_args():
-    sig = inspect.signature(CallExp.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_janus::essentialocl::featurepropertycall_is_not_abstract():
-    assert not inspect.isabstract(Janus::essentialocl::FeaturePropertyCall)
-
-
-def test_janus::essentialocl::featurepropertycall_constructor_exists():
-    assert callable(Janus::essentialocl::FeaturePropertyCall.__init__)
-
-
-def test_janus::essentialocl::featurepropertycall_constructor_args():
-    sig = inspect.signature(Janus::essentialocl::FeaturePropertyCall.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_janus::essentialocl::opaqueexpression_is_not_abstract():
-    assert not inspect.isabstract(Janus::essentialocl::OpaqueExpression)
-
-
-def test_janus::essentialocl::opaqueexpression_constructor_exists():
-    assert callable(Janus::essentialocl::OpaqueExpression.__init__)
-
-
-def test_janus::essentialocl::opaqueexpression_constructor_args():
-    sig = inspect.signature(Janus::essentialocl::OpaqueExpression.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_opaqueexpression_is_not_abstract():
-    assert not inspect.isabstract(OpaqueExpression)
-
-
-def test_opaqueexpression_constructor_exists():
-    assert callable(OpaqueExpression.__init__)
-
-
-def test_opaqueexpression_constructor_args():
-    sig = inspect.signature(OpaqueExpression.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_janus::essentialocl::expressioninocl_is_not_abstract():
-    assert not inspect.isabstract(Janus::essentialocl::ExpressionInOcl)
-
-
-def test_janus::essentialocl::expressioninocl_constructor_exists():
-    assert callable(Janus::essentialocl::ExpressionInOcl.__init__)
-
-
-def test_janus::essentialocl::expressioninocl_constructor_args():
-    sig = inspect.signature(Janus::essentialocl::ExpressionInOcl.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_tupleliteralpart_is_not_abstract():
-    assert not inspect.isabstract(TupleLiteralPart)
-
-
-def test_tupleliteralpart_constructor_exists():
-    assert callable(TupleLiteralPart.__init__)
-
-
-def test_tupleliteralpart_constructor_args():
-    sig = inspect.signature(TupleLiteralPart.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_emof::type_is_not_abstract():
-    assert not inspect.isabstract(emof::Type)
-
-
-def test_emof::type_constructor_exists():
-    assert callable(emof::Type.__init__)
-
-
-def test_emof::type_constructor_args():
-    sig = inspect.signature(emof::Type.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_janus::essentialocl::anytype_is_not_abstract():
-    assert not inspect.isabstract(Janus::essentialocl::AnyType)
-
-
-def test_janus::essentialocl::anytype_constructor_exists():
-    assert callable(Janus::essentialocl::AnyType.__init__)
-
-
-def test_janus::essentialocl::anytype_constructor_args():
-    sig = inspect.signature(Janus::essentialocl::AnyType.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_emof::datatype_is_not_abstract():
-    assert not inspect.isabstract(emof::DataType)
-
-
-def test_emof::datatype_constructor_exists():
-    assert callable(emof::DataType.__init__)
-
-
-def test_emof::datatype_constructor_args():
-    sig = inspect.signature(emof::DataType.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_janus::essentialocl::tupletype_is_not_abstract():
-    assert not inspect.isabstract(Janus::essentialocl::TupleType)
-
-
-def test_janus::essentialocl::tupletype_constructor_exists():
-    assert callable(Janus::essentialocl::TupleType.__init__)
-
-
-def test_janus::essentialocl::tupletype_constructor_args():
-    sig = inspect.signature(Janus::essentialocl::TupleType.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_janus::essentialocl::settype_is_not_abstract():
-    assert not inspect.isabstract(Janus::essentialocl::SetType)
-
-
-def test_janus::essentialocl::settype_constructor_exists():
-    assert callable(Janus::essentialocl::SetType.__init__)
-
-
-def test_janus::essentialocl::settype_constructor_args():
-    sig = inspect.signature(Janus::essentialocl::SetType.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_janus::essentialocl::sequencetype_is_not_abstract():
-    assert not inspect.isabstract(Janus::essentialocl::SequenceType)
-
-
-def test_janus::essentialocl::sequencetype_constructor_exists():
-    assert callable(Janus::essentialocl::SequenceType.__init__)
-
-
-def test_janus::essentialocl::sequencetype_constructor_args():
-    sig = inspect.signature(Janus::essentialocl::SequenceType.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_janus::essentialocl::orderedsettype_is_not_abstract():
-    assert not inspect.isabstract(Janus::essentialocl::OrderedSetType)
-
-
-def test_janus::essentialocl::orderedsettype_constructor_exists():
-    assert callable(Janus::essentialocl::OrderedSetType.__init__)
-
-
-def test_janus::essentialocl::orderedsettype_constructor_args():
-    sig = inspect.signature(Janus::essentialocl::OrderedSetType.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_janus::essentialocl::numericliteralexp_is_not_abstract():
-    assert not inspect.isabstract(Janus::essentialocl::NumericLiteralExp)
-
-
-def test_janus::essentialocl::numericliteralexp_constructor_exists():
-    assert callable(Janus::essentialocl::NumericLiteralExp.__init__)
-
-
-def test_janus::essentialocl::numericliteralexp_constructor_args():
-    sig = inspect.signature(Janus::essentialocl::NumericLiteralExp.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_literalexp_is_not_abstract():
-    assert not inspect.isabstract(LiteralExp)
-
-
-def test_literalexp_constructor_exists():
-    assert callable(LiteralExp.__init__)
-
-
-def test_literalexp_constructor_args():
-    sig = inspect.signature(LiteralExp.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_janus::imperativeocl::anonymoustupleliteralexp_is_not_abstract():
-    assert not inspect.isabstract(Janus::imperativeocl::AnonymousTupleLiteralExp)
-
-
-def test_janus::imperativeocl::anonymoustupleliteralexp_constructor_exists():
-    assert callable(Janus::imperativeocl::AnonymousTupleLiteralExp.__init__)
-
-
-def test_janus::imperativeocl::anonymoustupleliteralexp_constructor_args():
-    sig = inspect.signature(Janus::imperativeocl::AnonymousTupleLiteralExp.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_janus::essentialocl::tupleliteralexp_is_not_abstract():
-    assert not inspect.isabstract(Janus::essentialocl::TupleLiteralExp)
-
-
-def test_janus::essentialocl::tupleliteralexp_constructor_exists():
-    assert callable(Janus::essentialocl::TupleLiteralExp.__init__)
-
-
-def test_janus::essentialocl::tupleliteralexp_constructor_args():
-    sig = inspect.signature(Janus::essentialocl::TupleLiteralExp.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_janus::template::templateexp_is_not_abstract():
-    assert not inspect.isabstract(Janus::template::TemplateExp)
-
-
-def test_janus::template::templateexp_constructor_exists():
-    assert callable(Janus::template::TemplateExp.__init__)
-
-
-def test_janus::template::templateexp_constructor_args():
-    sig = inspect.signature(Janus::template::TemplateExp.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_janus::essentialocl::enumliteralexp_is_not_abstract():
-    assert not inspect.isabstract(Janus::essentialocl::EnumLiteralExp)
-
-
-def test_janus::essentialocl::enumliteralexp_constructor_exists():
-    assert callable(Janus::essentialocl::EnumLiteralExp.__init__)
-
-
-def test_janus::essentialocl::enumliteralexp_constructor_args():
-    sig = inspect.signature(Janus::essentialocl::EnumLiteralExp.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_janus::essentialocl::invalidliteralexp_is_not_abstract():
-    assert not inspect.isabstract(Janus::essentialocl::InvalidLiteralExp)
-
-
-def test_janus::essentialocl::invalidliteralexp_constructor_exists():
-    assert callable(Janus::essentialocl::InvalidLiteralExp.__init__)
-
-
-def test_janus::essentialocl::invalidliteralexp_constructor_args():
-    sig = inspect.signature(Janus::essentialocl::InvalidLiteralExp.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_janus::essentialocl::collectionliteralexp_is_not_abstract():
-    assert not inspect.isabstract(Janus::essentialocl::CollectionLiteralExp)
-
-
-def test_janus::essentialocl::collectionliteralexp_constructor_exists():
-    assert callable(Janus::essentialocl::CollectionLiteralExp.__init__)
-
-
-def test_janus::essentialocl::collectionliteralexp_constructor_args():
-    sig = inspect.signature(Janus::essentialocl::CollectionLiteralExp.__init__)
-    params = list(sig.parameters.keys())
-    assert "kind" in params, "Missing parameter 'kind'"
-
-def test_janus::essentialocl::collectionliteralexp_has_kind():
-    assert hasattr(Janus::essentialocl::CollectionLiteralExp, "kind")
-    descriptor = None
-    for klass in Janus::essentialocl::CollectionLiteralExp.__mro__:
-        if "kind" in klass.__dict__:
-            descriptor = klass.__dict__["kind"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_janus::essentialocl::nullliteralexp_is_not_abstract():
-    assert not inspect.isabstract(Janus::essentialocl::NullLiteralExp)
-
-
-def test_janus::essentialocl::nullliteralexp_constructor_exists():
-    assert callable(Janus::essentialocl::NullLiteralExp.__init__)
-
-
-def test_janus::essentialocl::nullliteralexp_constructor_args():
-    sig = inspect.signature(Janus::essentialocl::NullLiteralExp.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_janus::imperativeocl::dictliteralexp_is_not_abstract():
-    assert not inspect.isabstract(Janus::imperativeocl::DictLiteralExp)
-
-
-def test_janus::imperativeocl::dictliteralexp_constructor_exists():
-    assert callable(Janus::imperativeocl::DictLiteralExp.__init__)
-
-
-def test_janus::imperativeocl::dictliteralexp_constructor_args():
-    sig = inspect.signature(Janus::imperativeocl::DictLiteralExp.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_janus::essentialocl::primitiveliteralexp_is_not_abstract():
-    assert not inspect.isabstract(Janus::essentialocl::PrimitiveLiteralExp)
-
-
-def test_janus::essentialocl::primitiveliteralexp_constructor_exists():
-    assert callable(Janus::essentialocl::PrimitiveLiteralExp.__init__)
-
-
-def test_janus::essentialocl::primitiveliteralexp_constructor_args():
-    sig = inspect.signature(Janus::essentialocl::PrimitiveLiteralExp.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_janus::essentialocl::literalexp_is_not_abstract():
-    assert not inspect.isabstract(Janus::essentialocl::LiteralExp)
-
-
-def test_janus::essentialocl::literalexp_constructor_exists():
-    assert callable(Janus::essentialocl::LiteralExp.__init__)
-
-
-def test_janus::essentialocl::literalexp_constructor_args():
-    sig = inspect.signature(Janus::essentialocl::LiteralExp.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_janus::essentialocl::realliteralexp_is_not_abstract():
-    assert not inspect.isabstract(Janus::essentialocl::RealLiteralExp)
-
-
-def test_janus::essentialocl::realliteralexp_constructor_exists():
-    assert callable(Janus::essentialocl::RealLiteralExp.__init__)
-
-
-def test_janus::essentialocl::realliteralexp_constructor_args():
-    sig = inspect.signature(Janus::essentialocl::RealLiteralExp.__init__)
-    params = list(sig.parameters.keys())
-    assert "realSymbol" in params, "Missing parameter 'realSymbol'"
-
-def test_janus::essentialocl::realliteralexp_has_realSymbol():
-    assert hasattr(Janus::essentialocl::RealLiteralExp, "realSymbol")
-    descriptor = None
-    for klass in Janus::essentialocl::RealLiteralExp.__mro__:
-        if "realSymbol" in klass.__dict__:
-            descriptor = klass.__dict__["realSymbol"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_janus::essentialocl::operationcallexp_is_not_abstract():
-    assert not inspect.isabstract(Janus::essentialocl::OperationCallExp)
-
-
-def test_janus::essentialocl::operationcallexp_constructor_exists():
-    assert callable(Janus::essentialocl::OperationCallExp.__init__)
-
-
-def test_janus::essentialocl::operationcallexp_constructor_args():
-    sig = inspect.signature(Janus::essentialocl::OperationCallExp.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_janus::essentialocl::integerliteralexp_is_not_abstract():
-    assert not inspect.isabstract(Janus::essentialocl::IntegerLiteralExp)
-
-
-def test_janus::essentialocl::integerliteralexp_constructor_exists():
-    assert callable(Janus::essentialocl::IntegerLiteralExp.__init__)
-
-
-def test_janus::essentialocl::integerliteralexp_constructor_args():
-    sig = inspect.signature(Janus::essentialocl::IntegerLiteralExp.__init__)
-    params = list(sig.parameters.keys())
-    assert "integerSymbol" in params, "Missing parameter 'integerSymbol'"
-
-def test_janus::essentialocl::integerliteralexp_has_integerSymbol():
-    assert hasattr(Janus::essentialocl::IntegerLiteralExp, "integerSymbol")
-    descriptor = None
-    for klass in Janus::essentialocl::IntegerLiteralExp.__mro__:
-        if "integerSymbol" in klass.__dict__:
-            descriptor = klass.__dict__["integerSymbol"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_janus::essentialocl::stringliteralexp_is_not_abstract():
-    assert not inspect.isabstract(Janus::essentialocl::StringLiteralExp)
-
-
-def test_janus::essentialocl::stringliteralexp_constructor_exists():
-    assert callable(Janus::essentialocl::StringLiteralExp.__init__)
-
-
-def test_janus::essentialocl::stringliteralexp_constructor_args():
-    sig = inspect.signature(Janus::essentialocl::StringLiteralExp.__init__)
-    params = list(sig.parameters.keys())
-    assert "stringSymbol" in params, "Missing parameter 'stringSymbol'"
-
-def test_janus::essentialocl::stringliteralexp_has_stringSymbol():
-    assert hasattr(Janus::essentialocl::StringLiteralExp, "stringSymbol")
-    descriptor = None
-    for klass in Janus::essentialocl::StringLiteralExp.__mro__:
-        if "stringSymbol" in klass.__dict__:
-            descriptor = klass.__dict__["stringSymbol"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_loopexp_is_not_abstract():
-    assert not inspect.isabstract(LoopExp)
-
-
-def test_loopexp_constructor_exists():
-    assert callable(LoopExp.__init__)
-
-
-def test_loopexp_constructor_args():
-    sig = inspect.signature(LoopExp.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_janus::essentialocl::iteratorexp_is_not_abstract():
-    assert not inspect.isabstract(Janus::essentialocl::IteratorExp)
-
-
-def test_janus::essentialocl::iteratorexp_constructor_exists():
-    assert callable(Janus::essentialocl::IteratorExp.__init__)
-
-
-def test_janus::essentialocl::iteratorexp_constructor_args():
-    sig = inspect.signature(Janus::essentialocl::IteratorExp.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_janus::essentialocl::iterateexp_is_not_abstract():
-    assert not inspect.isabstract(Janus::essentialocl::IterateExp)
-
-
-def test_janus::essentialocl::iterateexp_constructor_exists():
-    assert callable(Janus::essentialocl::IterateExp.__init__)
-
-
-def test_janus::essentialocl::iterateexp_constructor_args():
-    sig = inspect.signature(Janus::essentialocl::IterateExp.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -2636,65 +2636,37 @@ def test_type_constructor_args():
 
 
 
-def test_janus::essentialocl::voidtype_is_not_abstract():
-    assert not inspect.isabstract(Janus::essentialocl::VoidType)
+def test_janus_essentialocl_voidtype_is_not_abstract():
+    assert not inspect.isabstract(Janus_essentialocl_VoidType)
 
 
-def test_janus::essentialocl::voidtype_constructor_exists():
-    assert callable(Janus::essentialocl::VoidType.__init__)
+def test_janus_essentialocl_voidtype_constructor_exists():
+    assert callable(Janus_essentialocl_VoidType.__init__)
 
 
-def test_janus::essentialocl::voidtype_constructor_args():
-    sig = inspect.signature(Janus::essentialocl::VoidType.__init__)
+def test_janus_essentialocl_voidtype_constructor_args():
+    sig = inspect.signature(Janus_essentialocl_VoidType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_janus::essentialocl::invalidtype_is_not_abstract():
-    assert not inspect.isabstract(Janus::essentialocl::InvalidType)
+def test_janus_imperativeocl_templateparametertype_is_not_abstract():
+    assert not inspect.isabstract(Janus_imperativeocl_TemplateParameterType)
 
 
-def test_janus::essentialocl::invalidtype_constructor_exists():
-    assert callable(Janus::essentialocl::InvalidType.__init__)
+def test_janus_imperativeocl_templateparametertype_constructor_exists():
+    assert callable(Janus_imperativeocl_TemplateParameterType.__init__)
 
 
-def test_janus::essentialocl::invalidtype_constructor_args():
-    sig = inspect.signature(Janus::essentialocl::InvalidType.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_janus::emof::datatype_is_not_abstract():
-    assert not inspect.isabstract(Janus::emof::DataType)
-
-
-def test_janus::emof::datatype_constructor_exists():
-    assert callable(Janus::emof::DataType.__init__)
-
-
-def test_janus::emof::datatype_constructor_args():
-    sig = inspect.signature(Janus::emof::DataType.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_janus::imperativeocl::templateparametertype_is_not_abstract():
-    assert not inspect.isabstract(Janus::imperativeocl::TemplateParameterType)
-
-
-def test_janus::imperativeocl::templateparametertype_constructor_exists():
-    assert callable(Janus::imperativeocl::TemplateParameterType.__init__)
-
-
-def test_janus::imperativeocl::templateparametertype_constructor_args():
-    sig = inspect.signature(Janus::imperativeocl::TemplateParameterType.__init__)
+def test_janus_imperativeocl_templateparametertype_constructor_args():
+    sig = inspect.signature(Janus_imperativeocl_TemplateParameterType.__init__)
     params = list(sig.parameters.keys())
     assert "specification" in params, "Missing parameter 'specification'"
 
-def test_janus::imperativeocl::templateparametertype_has_specification():
-    assert hasattr(Janus::imperativeocl::TemplateParameterType, "specification")
+def test_janus_imperativeocl_templateparametertype_has_specification():
+    assert hasattr(Janus_imperativeocl_TemplateParameterType, "specification")
     descriptor = None
-    for klass in Janus::imperativeocl::TemplateParameterType.__mro__:
+    for klass in Janus_imperativeocl_TemplateParameterType.__mro__:
         if "specification" in klass.__dict__:
             descriptor = klass.__dict__["specification"]
             break
@@ -2702,23 +2674,51 @@ def test_janus::imperativeocl::templateparametertype_has_specification():
 
 
 
-def test_janus::emof::class_is_not_abstract():
-    assert not inspect.isabstract(Janus::emof::Class)
+def test_janus_essentialocl_invalidtype_is_not_abstract():
+    assert not inspect.isabstract(Janus_essentialocl_InvalidType)
 
 
-def test_janus::emof::class_constructor_exists():
-    assert callable(Janus::emof::Class.__init__)
+def test_janus_essentialocl_invalidtype_constructor_exists():
+    assert callable(Janus_essentialocl_InvalidType.__init__)
 
 
-def test_janus::emof::class_constructor_args():
-    sig = inspect.signature(Janus::emof::Class.__init__)
+def test_janus_essentialocl_invalidtype_constructor_args():
+    sig = inspect.signature(Janus_essentialocl_InvalidType.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_janus_emof_datatype_is_not_abstract():
+    assert not inspect.isabstract(Janus_emof_DataType)
+
+
+def test_janus_emof_datatype_constructor_exists():
+    assert callable(Janus_emof_DataType.__init__)
+
+
+def test_janus_emof_datatype_constructor_args():
+    sig = inspect.signature(Janus_emof_DataType.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_janus_emof_class_is_not_abstract():
+    assert not inspect.isabstract(Janus_emof_Class)
+
+
+def test_janus_emof_class_constructor_exists():
+    assert callable(Janus_emof_Class.__init__)
+
+
+def test_janus_emof_class_constructor_args():
+    sig = inspect.signature(Janus_emof_Class.__init__)
     params = list(sig.parameters.keys())
     assert "isAbstract" in params, "Missing parameter 'isAbstract'"
 
-def test_janus::emof::class_has_isAbstract():
-    assert hasattr(Janus::emof::Class, "isAbstract")
+def test_janus_emof_class_has_isAbstract():
+    assert hasattr(Janus_emof_Class, "isAbstract")
     descriptor = None
-    for klass in Janus::emof::Class.__mro__:
+    for klass in Janus_emof_Class.__mro__:
         if "isAbstract" in klass.__dict__:
             descriptor = klass.__dict__["isAbstract"]
             break
@@ -2732,8 +2732,8 @@ def test_collectionkind_has_all_literals():
     # Collect the names of literals in this Enumeration
     enum_literals = [lit.name for lit in CollectionKind]
     expected_literals = [
-        "Bag",
         "Sequence",
+        "Bag",
         "OrderedSet",
         "Set",
     ]
@@ -2769,11 +2769,26 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
+AnonymousTupleLiteralPart_strategy = st.builds(
+    AnonymousTupleLiteralPart,
+)
+DictLiteralPart_strategy = st.builds(
+    DictLiteralPart,
+)
+essentialocl_LoopExp_strategy = st.builds(
+    essentialocl_LoopExp,
+)
+LogExp_strategy = st.builds(
+    LogExp,
+)
 AltExp_strategy = st.builds(
     AltExp,
 )
-imperativeocl::ImperativeExpression_strategy = st.builds(
-    imperativeocl::ImperativeExpression,
+imperativeocl_ImperativeExpression_strategy = st.builds(
+    imperativeocl_ImperativeExpression,
+)
+Janus_imperativeocl_ImperativeLoopExp_strategy = st.builds(
+    Janus_imperativeocl_ImperativeLoopExp,
 )
 ObjectTemplateExp_strategy = st.builds(
     ObjectTemplateExp,
@@ -2781,20 +2796,170 @@ ObjectTemplateExp_strategy = st.builds(
 PropertyTemplateItem_strategy = st.builds(
     PropertyTemplateItem,
 )
-AnonymousTupleLiteralPart_strategy = st.builds(
-    AnonymousTupleLiteralPart,
+ImperativeExpression_strategy = st.builds(
+    ImperativeExpression,
 )
-DictLiteralPart_strategy = st.builds(
-    DictLiteralPart,
+Janus_imperativeocl_TupleExp_strategy = st.builds(
+    Janus_imperativeocl_TupleExp,
 )
-essentialocl::LoopExp_strategy = st.builds(
-    essentialocl::LoopExp,
+Janus_imperativeocl_ReturnExp_strategy = st.builds(
+    Janus_imperativeocl_ReturnExp,
 )
-Janus::imperativeocl::ImperativeLoopExp_strategy = st.builds(
-    Janus::imperativeocl::ImperativeLoopExp,
+Janus_imperativeocl_BreakExp_strategy = st.builds(
+    Janus_imperativeocl_BreakExp,
 )
-LogExp_strategy = st.builds(
-    LogExp,
+Janus_imperativeocl_LogExp_strategy = st.builds(
+    Janus_imperativeocl_LogExp,
+    level=
+        st.integers(),
+    text=
+        safe_text
+)
+Janus_imperativeocl_UnpackExp_strategy = st.builds(
+    Janus_imperativeocl_UnpackExp,
+)
+Janus_imperativeocl_WhileExp_strategy = st.builds(
+    Janus_imperativeocl_WhileExp,
+)
+Janus_imperativeocl_AltExp_strategy = st.builds(
+    Janus_imperativeocl_AltExp,
+)
+Janus_imperativeocl_AssertExp_strategy = st.builds(
+    Janus_imperativeocl_AssertExp,
+    severity=
+        safe_text
+)
+Janus_imperativeocl_ContinueExp_strategy = st.builds(
+    Janus_imperativeocl_ContinueExp,
+)
+Janus_imperativeocl_RaiseExp_strategy = st.builds(
+    Janus_imperativeocl_RaiseExp,
+)
+Janus_imperativeocl_BlockExp_strategy = st.builds(
+    Janus_imperativeocl_BlockExp,
+)
+Janus_imperativeocl_TryExp_strategy = st.builds(
+    Janus_imperativeocl_TryExp,
+)
+Janus_imperativeocl_UnlinkExp_strategy = st.builds(
+    Janus_imperativeocl_UnlinkExp,
+)
+Janus_imperativeocl_ComputeExp_strategy = st.builds(
+    Janus_imperativeocl_ComputeExp,
+)
+Janus_imperativeocl_InstantiationExp_strategy = st.builds(
+    Janus_imperativeocl_InstantiationExp,
+)
+Janus_imperativeocl_VariableInitExp_strategy = st.builds(
+    Janus_imperativeocl_VariableInitExp,
+    withResult=
+        st.booleans()
+)
+Janus_imperativeocl_AssignExp_strategy = st.builds(
+    Janus_imperativeocl_AssignExp,
+    isReset=
+        st.booleans()
+)
+ImperativeLoopExp_strategy = st.builds(
+    ImperativeLoopExp,
+)
+Janus_imperativeocl_CollectorExp_strategy = st.builds(
+    Janus_imperativeocl_CollectorExp,
+)
+Janus_imperativeocl_ForExp_strategy = st.builds(
+    Janus_imperativeocl_ForExp,
+)
+Janus_imperativeocl_ImperativeIterateExp_strategy = st.builds(
+    Janus_imperativeocl_ImperativeIterateExp,
+)
+CollectionType_strategy = st.builds(
+    CollectionType,
+)
+Janus_imperativeocl_DictionaryType_strategy = st.builds(
+    Janus_imperativeocl_DictionaryType,
+)
+Janus_imperativeocl_ListType_strategy = st.builds(
+    Janus_imperativeocl_ListType,
+)
+Janus_essentialocl_BagType_strategy = st.builds(
+    Janus_essentialocl_BagType,
+)
+TupleLiteralExp_strategy = st.builds(
+    TupleLiteralExp,
+)
+CallExp_strategy = st.builds(
+    CallExp,
+)
+Janus_essentialocl_FeaturePropertyCall_strategy = st.builds(
+    Janus_essentialocl_FeaturePropertyCall,
+)
+Janus_essentialocl_OpaqueExpression_strategy = st.builds(
+    Janus_essentialocl_OpaqueExpression,
+)
+OpaqueExpression_strategy = st.builds(
+    OpaqueExpression,
+)
+Janus_essentialocl_ExpressionInOcl_strategy = st.builds(
+    Janus_essentialocl_ExpressionInOcl,
+)
+TupleLiteralPart_strategy = st.builds(
+    TupleLiteralPart,
+)
+emof_Type_strategy = st.builds(
+    emof_Type,
+)
+emof_DataType_strategy = st.builds(
+    emof_DataType,
+)
+Janus_essentialocl_SetType_strategy = st.builds(
+    Janus_essentialocl_SetType,
+)
+Janus_essentialocl_SequenceType_strategy = st.builds(
+    Janus_essentialocl_SequenceType,
+)
+Janus_essentialocl_OrderedSetType_strategy = st.builds(
+    Janus_essentialocl_OrderedSetType,
+)
+LiteralExp_strategy = st.builds(
+    LiteralExp,
+)
+Janus_essentialocl_NullLiteralExp_strategy = st.builds(
+    Janus_essentialocl_NullLiteralExp,
+)
+Janus_imperativeocl_DictLiteralExp_strategy = st.builds(
+    Janus_imperativeocl_DictLiteralExp,
+)
+Janus_essentialocl_InvalidLiteralExp_strategy = st.builds(
+    Janus_essentialocl_InvalidLiteralExp,
+)
+Janus_imperativeocl_AnonymousTupleLiteralExp_strategy = st.builds(
+    Janus_imperativeocl_AnonymousTupleLiteralExp,
+)
+Janus_essentialocl_EnumLiteralExp_strategy = st.builds(
+    Janus_essentialocl_EnumLiteralExp,
+)
+Janus_template_TemplateExp_strategy = st.builds(
+    Janus_template_TemplateExp,
+)
+Janus_essentialocl_CollectionLiteralExp_strategy = st.builds(
+    Janus_essentialocl_CollectionLiteralExp,
+    kind=
+        safe_text
+)
+Janus_essentialocl_PrimitiveLiteralExp_strategy = st.builds(
+    Janus_essentialocl_PrimitiveLiteralExp,
+)
+LoopExp_strategy = st.builds(
+    LoopExp,
+)
+Janus_essentialocl_IterateExp_strategy = st.builds(
+    Janus_essentialocl_IterateExp,
+)
+Janus_essentialocl_IteratorExp_strategy = st.builds(
+    Janus_essentialocl_IteratorExp,
+)
+Janus_essentialocl_TupleLiteralExp_strategy = st.builds(
+    Janus_essentialocl_TupleLiteralExp,
 )
 CollectionLiteralExp_strategy = st.builds(
     CollectionLiteralExp,
@@ -2802,11 +2967,11 @@ CollectionLiteralExp_strategy = st.builds(
 CollectionLiteralPart_strategy = st.builds(
     CollectionLiteralPart,
 )
-Janus::essentialocl::CollectionRange_strategy = st.builds(
-    Janus::essentialocl::CollectionRange,
+Janus_essentialocl_CollectionItem_strategy = st.builds(
+    Janus_essentialocl_CollectionItem,
 )
-Janus::essentialocl::CollectionItem_strategy = st.builds(
-    Janus::essentialocl::CollectionItem,
+Janus_essentialocl_CollectionRange_strategy = st.builds(
+    Janus_essentialocl_CollectionRange,
 )
 ComputeExp_strategy = st.builds(
     ComputeExp,
@@ -2814,34 +2979,37 @@ ComputeExp_strategy = st.builds(
 LetExp_strategy = st.builds(
     LetExp,
 )
-essentialocl::OclExpression_strategy = st.builds(
-    essentialocl::OclExpression,
+essentialocl_OclExpression_strategy = st.builds(
+    essentialocl_OclExpression,
 )
-essentialocl::CallExp_strategy = st.builds(
-    essentialocl::CallExp,
+essentialocl_CallExp_strategy = st.builds(
+    essentialocl_CallExp,
 )
-Janus::imperativeocl::SwitchExp_strategy = st.builds(
-    Janus::imperativeocl::SwitchExp,
+Janus_imperativeocl_SwitchExp_strategy = st.builds(
+    Janus_imperativeocl_SwitchExp,
 )
-Janus::essentialocl::LoopExp_strategy = st.builds(
-    Janus::essentialocl::LoopExp,
+Janus_essentialocl_LoopExp_strategy = st.builds(
+    Janus_essentialocl_LoopExp,
 )
 FeaturePropertyCall_strategy = st.builds(
     FeaturePropertyCall,
 )
-Janus::essentialocl::PropertyCallExp_strategy = st.builds(
-    Janus::essentialocl::PropertyCallExp,
+Janus_essentialocl_OperationCallExp_strategy = st.builds(
+    Janus_essentialocl_OperationCallExp,
+)
+Janus_essentialocl_PropertyCallExp_strategy = st.builds(
+    Janus_essentialocl_PropertyCallExp,
 )
 TemplateExp_strategy = st.builds(
     TemplateExp,
 )
-Janus::template::ObjectTemplateExp_strategy = st.builds(
-    Janus::template::ObjectTemplateExp,
+Janus_template_ObjectTemplateExp_strategy = st.builds(
+    Janus_template_ObjectTemplateExp,
     referredClass=
         safe_text
 )
-Janus::template::CollectionTemplateExp_strategy = st.builds(
-    Janus::template::CollectionTemplateExp,
+Janus_template_CollectionTemplateExp_strategy = st.builds(
+    Janus_template_CollectionTemplateExp,
     kind=
         safe_text
 )
@@ -2851,8 +3019,18 @@ Predicate_strategy = st.builds(
 NumericLiteralExp_strategy = st.builds(
     NumericLiteralExp,
 )
-Janus::essentialocl::UnlimitedNaturalExp_strategy = st.builds(
-    Janus::essentialocl::UnlimitedNaturalExp,
+Janus_essentialocl_IntegerLiteralExp_strategy = st.builds(
+    Janus_essentialocl_IntegerLiteralExp,
+    integerSymbol=
+        st.integers()
+)
+Janus_essentialocl_RealLiteralExp_strategy = st.builds(
+    Janus_essentialocl_RealLiteralExp,
+    realSymbol=
+        st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False)
+)
+Janus_essentialocl_UnlimitedNaturalExp_strategy = st.builds(
+    Janus_essentialocl_UnlimitedNaturalExp,
     symbol=
         safe_text
 )
@@ -2862,43 +3040,57 @@ TryExp_strategy = st.builds(
 TypedElement_strategy = st.builds(
     TypedElement,
 )
-Janus::essentialocl::CollectionLiteralPart_strategy = st.builds(
-    Janus::essentialocl::CollectionLiteralPart,
+Janus_essentialocl_CollectionLiteralPart_strategy = st.builds(
+    Janus_essentialocl_CollectionLiteralPart,
 )
-Janus::essentialocl::Variable_strategy = st.builds(
-    Janus::essentialocl::Variable,
+Janus_essentialocl_Variable_strategy = st.builds(
+    Janus_essentialocl_Variable,
 )
-Janus::essentialocl::OclExpression_strategy = st.builds(
-    Janus::essentialocl::OclExpression,
+Janus_essentialocl_TupleLiteralPart_strategy = st.builds(
+    Janus_essentialocl_TupleLiteralPart,
+)
+Janus_essentialocl_OclExpression_strategy = st.builds(
+    Janus_essentialocl_OclExpression,
 )
 PrimitiveLiteralExp_strategy = st.builds(
     PrimitiveLiteralExp,
 )
-Janus::essentialocl::BooleanLiteralExp_strategy = st.builds(
-    Janus::essentialocl::BooleanLiteralExp,
+Janus_essentialocl_StringLiteralExp_strategy = st.builds(
+    Janus_essentialocl_StringLiteralExp,
+    stringSymbol=
+        safe_text
+)
+Janus_essentialocl_NumericLiteralExp_strategy = st.builds(
+    Janus_essentialocl_NumericLiteralExp,
+)
+Janus_essentialocl_BooleanLiteralExp_strategy = st.builds(
+    Janus_essentialocl_BooleanLiteralExp,
     booleanSymbol=
         st.booleans()
 )
 OclExpression_strategy = st.builds(
     OclExpression,
 )
-Janus::essentialocl::CallExp_strategy = st.builds(
-    Janus::essentialocl::CallExp,
+Janus_essentialocl_TypeExp_strategy = st.builds(
+    Janus_essentialocl_TypeExp,
 )
-Janus::essentialocl::VariableExp_strategy = st.builds(
-    Janus::essentialocl::VariableExp,
+Janus_essentialocl_LetExp_strategy = st.builds(
+    Janus_essentialocl_LetExp,
 )
-Janus::essentialocl::LetExp_strategy = st.builds(
-    Janus::essentialocl::LetExp,
+Janus_imperativeocl_ImperativeExpression_strategy = st.builds(
+    Janus_imperativeocl_ImperativeExpression,
 )
-Janus::imperativeocl::ImperativeExpression_strategy = st.builds(
-    Janus::imperativeocl::ImperativeExpression,
+Janus_essentialocl_VariableExp_strategy = st.builds(
+    Janus_essentialocl_VariableExp,
 )
-Janus::essentialocl::IfExp_strategy = st.builds(
-    Janus::essentialocl::IfExp,
+Janus_essentialocl_LiteralExp_strategy = st.builds(
+    Janus_essentialocl_LiteralExp,
 )
-Janus::essentialocl::TypeExp_strategy = st.builds(
-    Janus::essentialocl::TypeExp,
+Janus_essentialocl_IfExp_strategy = st.builds(
+    Janus_essentialocl_IfExp,
+)
+Janus_essentialocl_CallExp_strategy = st.builds(
+    Janus_essentialocl_CallExp,
 )
 Transformation_strategy = st.builds(
     Transformation,
@@ -2909,20 +3101,26 @@ Relation_strategy = st.builds(
 Model_strategy = st.builds(
     Model,
 )
-emof::Package_strategy = st.builds(
-    emof::Package,
+emof_Package_strategy = st.builds(
+    emof_Package,
 )
-emof::Class_strategy = st.builds(
-    emof::Class,
+emof_Class_strategy = st.builds(
+    emof_Class,
 )
-Janus::JTL::Transformation_strategy = st.builds(
-    Janus::JTL::Transformation,
+Janus_essentialocl_TupleType_strategy = st.builds(
+    Janus_essentialocl_TupleType,
+)
+Janus_essentialocl_AnyType_strategy = st.builds(
+    Janus_essentialocl_AnyType,
+)
+Janus_JTL_Transformation_strategy = st.builds(
+    Janus_JTL_Transformation,
 )
 Extent_strategy = st.builds(
     Extent,
 )
-Janus::emof::URIExtent_strategy = st.builds(
-    Janus::emof::URIExtent,
+Janus_emof_URIExtent_strategy = st.builds(
+    Janus_emof_URIExtent,
 )
 Variable_strategy = st.builds(
     Variable,
@@ -2939,79 +3137,79 @@ Package_strategy = st.builds(
 NamedElement_strategy = st.builds(
     NamedElement,
 )
-Janus::JTL::Domain_strategy = st.builds(
-    Janus::JTL::Domain,
-    isEnforceable=
-        st.booleans(),
-    isCheckable=
-        st.booleans()
-)
-Janus::JTL::Model_strategy = st.builds(
-    Janus::JTL::Model,
-)
-Janus::JTL::Relation_strategy = st.builds(
-    Janus::JTL::Relation,
+Janus_JTL_Relation_strategy = st.builds(
+    Janus_JTL_Relation,
     isTopLevel=
         st.booleans()
 )
-Janus::emof::TypedElement_strategy = st.builds(
-    Janus::emof::TypedElement,
+Janus_emof_TypedElement_strategy = st.builds(
+    Janus_emof_TypedElement,
 )
-Janus::emof::Package_strategy = st.builds(
-    Janus::emof::Package,
+Janus_JTL_Domain_strategy = st.builds(
+    Janus_JTL_Domain,
+    isCheckable=
+        st.booleans(),
+    isEnforceable=
+        st.booleans()
+)
+Janus_JTL_Model_strategy = st.builds(
+    Janus_JTL_Model,
+)
+Janus_emof_Package_strategy = st.builds(
+    Janus_emof_Package,
     uri=
         safe_text
 )
-Janus::emof::MultiplicityElement_strategy = st.builds(
-    Janus::emof::MultiplicityElement,
-    upper=
-        safe_text,
+Janus_emof_MultiplicityElement_strategy = st.builds(
+    Janus_emof_MultiplicityElement,
+    lower=
+        st.integers(),
     isOrdered=
         safe_text,
     isUnique=
         safe_text,
-    lower=
-        st.integers()
+    upper=
+        safe_text
 )
 Parameter_strategy = st.builds(
     Parameter,
 )
-emof::TypedElement_strategy = st.builds(
-    emof::TypedElement,
+emof_TypedElement_strategy = st.builds(
+    emof_TypedElement,
 )
-emof::MultiplicityElement_strategy = st.builds(
-    emof::MultiplicityElement,
+emof_MultiplicityElement_strategy = st.builds(
+    emof_MultiplicityElement,
 )
-Janus::emof::Operation_strategy = st.builds(
-    Janus::emof::Operation,
+Janus_emof_Operation_strategy = st.builds(
+    Janus_emof_Operation,
 )
-Janus::emof::Object_strategy = st.builds(
-    Janus::emof::Object,
+Janus_emof_Object_strategy = st.builds(
+    Janus_emof_Object,
 )
-Janus::emof::Property_strategy = st.builds(
-    Janus::emof::Property,
-    isId=
+Janus_emof_Property_strategy = st.builds(
+    Janus_emof_Property,
+    default=
+        safe_text,
+    isReadOnly=
+        st.booleans(),
+    isComposite=
         st.booleans(),
     isDerived=
         st.booleans(),
-    isReadOnly=
-        st.booleans(),
-    default=
-        safe_text,
-    isComposite=
+    isId=
         st.booleans()
 )
 Enumeration_strategy = st.builds(
     Enumeration,
 )
-Janus::emof::EnumerationLiteral_strategy = st.builds(
-    Janus::emof::EnumerationLiteral,
+Janus_emof_EnumerationLiteral_strategy = st.builds(
+    Janus_emof_EnumerationLiteral,
 )
-Janus::emof::Parameter_strategy = st.builds(
-    Janus::emof::Parameter,
+Janus_emof_Parameter_strategy = st.builds(
+    Janus_emof_Parameter,
 )
-Janus::emof::Type_strategy = st.builds(
-    Janus::emof::Type,
+Janus_emof_Type_strategy = st.builds(
+    Janus_emof_Type,
 )
 EnumerationLiteral_strategy = st.builds(
     EnumerationLiteral,
@@ -3019,40 +3217,43 @@ EnumerationLiteral_strategy = st.builds(
 DataType_strategy = st.builds(
     DataType,
 )
-Janus::emof::PrimitiveType_strategy = st.builds(
-    Janus::emof::PrimitiveType,
+Janus_emof_PrimitiveType_strategy = st.builds(
+    Janus_emof_PrimitiveType,
 )
-Janus::emof::Enumeration_strategy = st.builds(
-    Janus::emof::Enumeration,
+Janus_essentialocl_CollectionType_strategy = st.builds(
+    Janus_essentialocl_CollectionType,
+)
+Janus_emof_Enumeration_strategy = st.builds(
+    Janus_emof_Enumeration,
 )
 Element_strategy = st.builds(
     Element,
 )
-Janus::JTL::Pattern_strategy = st.builds(
-    Janus::JTL::Pattern,
+Janus_imperativeocl_DictLiteralPart_strategy = st.builds(
+    Janus_imperativeocl_DictLiteralPart,
 )
-Janus::emof::Comment_strategy = st.builds(
-    Janus::emof::Comment,
+Janus_imperativeocl_AnonymousTupleLiteralPart_strategy = st.builds(
+    Janus_imperativeocl_AnonymousTupleLiteralPart,
 )
-Janus::imperativeocl::DictLiteralPart_strategy = st.builds(
-    Janus::imperativeocl::DictLiteralPart,
-)
-Janus::imperativeocl::AnonymousTupleLiteralPart_strategy = st.builds(
-    Janus::imperativeocl::AnonymousTupleLiteralPart,
-)
-Janus::JTL::Predicate_strategy = st.builds(
-    Janus::JTL::Predicate,
-)
-Janus::emof::NamedElement_strategy = st.builds(
-    Janus::emof::NamedElement,
+Janus_emof_NamedElement_strategy = st.builds(
+    Janus_emof_NamedElement,
     name=
         safe_text
 )
-Janus::template::PropertyTemplateItem_strategy = st.builds(
-    Janus::template::PropertyTemplateItem,
+Janus_JTL_Predicate_strategy = st.builds(
+    Janus_JTL_Predicate,
 )
-Janus::emof::Tag_strategy = st.builds(
-    Janus::emof::Tag,
+Janus_template_PropertyTemplateItem_strategy = st.builds(
+    Janus_template_PropertyTemplateItem,
+)
+Janus_emof_Comment_strategy = st.builds(
+    Janus_emof_Comment,
+)
+Janus_JTL_Pattern_strategy = st.builds(
+    Janus_JTL_Pattern,
+)
+Janus_emof_Tag_strategy = st.builds(
+    Janus_emof_Tag,
     name=
         safe_text,
     value=
@@ -3067,224 +3268,23 @@ Tag_strategy = st.builds(
 Object_strategy = st.builds(
     Object,
 )
-Janus::emof::Extent_strategy = st.builds(
-    Janus::emof::Extent,
+Janus_emof_Extent_strategy = st.builds(
+    Janus_emof_Extent,
 )
-Janus::emof::Element_strategy = st.builds(
-    Janus::emof::Element,
+Janus_emof_Element_strategy = st.builds(
+    Janus_emof_Element,
 )
 Class_strategy = st.builds(
     Class,
 )
-Janus::imperativeocl::Typedef_strategy = st.builds(
-    Janus::imperativeocl::Typedef,
+Janus_imperativeocl_AnonymousTupleType_strategy = st.builds(
+    Janus_imperativeocl_AnonymousTupleType,
 )
-Janus::imperativeocl::AnonymousTupleType_strategy = st.builds(
-    Janus::imperativeocl::AnonymousTupleType,
+Janus_imperativeocl_Typedef_strategy = st.builds(
+    Janus_imperativeocl_Typedef,
 )
 Operation_strategy = st.builds(
     Operation,
-)
-ImperativeExpression_strategy = st.builds(
-    ImperativeExpression,
-)
-Janus::imperativeocl::UnlinkExp_strategy = st.builds(
-    Janus::imperativeocl::UnlinkExp,
-)
-Janus::imperativeocl::UnpackExp_strategy = st.builds(
-    Janus::imperativeocl::UnpackExp,
-)
-Janus::imperativeocl::ReturnExp_strategy = st.builds(
-    Janus::imperativeocl::ReturnExp,
-)
-Janus::imperativeocl::AltExp_strategy = st.builds(
-    Janus::imperativeocl::AltExp,
-)
-Janus::imperativeocl::RaiseExp_strategy = st.builds(
-    Janus::imperativeocl::RaiseExp,
-)
-Janus::imperativeocl::ContinueExp_strategy = st.builds(
-    Janus::imperativeocl::ContinueExp,
-)
-Janus::imperativeocl::VariableInitExp_strategy = st.builds(
-    Janus::imperativeocl::VariableInitExp,
-    withResult=
-        st.booleans()
-)
-Janus::imperativeocl::TupleExp_strategy = st.builds(
-    Janus::imperativeocl::TupleExp,
-)
-Janus::imperativeocl::InstantiationExp_strategy = st.builds(
-    Janus::imperativeocl::InstantiationExp,
-)
-Janus::imperativeocl::BreakExp_strategy = st.builds(
-    Janus::imperativeocl::BreakExp,
-)
-Janus::imperativeocl::ComputeExp_strategy = st.builds(
-    Janus::imperativeocl::ComputeExp,
-)
-Janus::imperativeocl::WhileExp_strategy = st.builds(
-    Janus::imperativeocl::WhileExp,
-)
-Janus::imperativeocl::LogExp_strategy = st.builds(
-    Janus::imperativeocl::LogExp,
-    level=
-        st.integers(),
-    text=
-        safe_text
-)
-Janus::imperativeocl::TryExp_strategy = st.builds(
-    Janus::imperativeocl::TryExp,
-)
-Janus::imperativeocl::AssertExp_strategy = st.builds(
-    Janus::imperativeocl::AssertExp,
-    severity=
-        safe_text
-)
-Janus::imperativeocl::BlockExp_strategy = st.builds(
-    Janus::imperativeocl::BlockExp,
-)
-Janus::imperativeocl::AssignExp_strategy = st.builds(
-    Janus::imperativeocl::AssignExp,
-    isReset=
-        st.booleans()
-)
-ImperativeLoopExp_strategy = st.builds(
-    ImperativeLoopExp,
-)
-Janus::imperativeocl::ForExp_strategy = st.builds(
-    Janus::imperativeocl::ForExp,
-)
-Janus::imperativeocl::CollectorExp_strategy = st.builds(
-    Janus::imperativeocl::CollectorExp,
-)
-Janus::imperativeocl::ImperativeIterateExp_strategy = st.builds(
-    Janus::imperativeocl::ImperativeIterateExp,
-)
-Janus::essentialocl::CollectionType_strategy = st.builds(
-    Janus::essentialocl::CollectionType,
-)
-CollectionType_strategy = st.builds(
-    CollectionType,
-)
-Janus::imperativeocl::ListType_strategy = st.builds(
-    Janus::imperativeocl::ListType,
-)
-Janus::imperativeocl::DictionaryType_strategy = st.builds(
-    Janus::imperativeocl::DictionaryType,
-)
-Janus::essentialocl::BagType_strategy = st.builds(
-    Janus::essentialocl::BagType,
-)
-TupleLiteralExp_strategy = st.builds(
-    TupleLiteralExp,
-)
-Janus::essentialocl::TupleLiteralPart_strategy = st.builds(
-    Janus::essentialocl::TupleLiteralPart,
-)
-CallExp_strategy = st.builds(
-    CallExp,
-)
-Janus::essentialocl::FeaturePropertyCall_strategy = st.builds(
-    Janus::essentialocl::FeaturePropertyCall,
-)
-Janus::essentialocl::OpaqueExpression_strategy = st.builds(
-    Janus::essentialocl::OpaqueExpression,
-)
-OpaqueExpression_strategy = st.builds(
-    OpaqueExpression,
-)
-Janus::essentialocl::ExpressionInOcl_strategy = st.builds(
-    Janus::essentialocl::ExpressionInOcl,
-)
-TupleLiteralPart_strategy = st.builds(
-    TupleLiteralPart,
-)
-emof::Type_strategy = st.builds(
-    emof::Type,
-)
-Janus::essentialocl::AnyType_strategy = st.builds(
-    Janus::essentialocl::AnyType,
-)
-emof::DataType_strategy = st.builds(
-    emof::DataType,
-)
-Janus::essentialocl::TupleType_strategy = st.builds(
-    Janus::essentialocl::TupleType,
-)
-Janus::essentialocl::SetType_strategy = st.builds(
-    Janus::essentialocl::SetType,
-)
-Janus::essentialocl::SequenceType_strategy = st.builds(
-    Janus::essentialocl::SequenceType,
-)
-Janus::essentialocl::OrderedSetType_strategy = st.builds(
-    Janus::essentialocl::OrderedSetType,
-)
-Janus::essentialocl::NumericLiteralExp_strategy = st.builds(
-    Janus::essentialocl::NumericLiteralExp,
-)
-LiteralExp_strategy = st.builds(
-    LiteralExp,
-)
-Janus::imperativeocl::AnonymousTupleLiteralExp_strategy = st.builds(
-    Janus::imperativeocl::AnonymousTupleLiteralExp,
-)
-Janus::essentialocl::TupleLiteralExp_strategy = st.builds(
-    Janus::essentialocl::TupleLiteralExp,
-)
-Janus::template::TemplateExp_strategy = st.builds(
-    Janus::template::TemplateExp,
-)
-Janus::essentialocl::EnumLiteralExp_strategy = st.builds(
-    Janus::essentialocl::EnumLiteralExp,
-)
-Janus::essentialocl::InvalidLiteralExp_strategy = st.builds(
-    Janus::essentialocl::InvalidLiteralExp,
-)
-Janus::essentialocl::CollectionLiteralExp_strategy = st.builds(
-    Janus::essentialocl::CollectionLiteralExp,
-    kind=
-        safe_text
-)
-Janus::essentialocl::NullLiteralExp_strategy = st.builds(
-    Janus::essentialocl::NullLiteralExp,
-)
-Janus::imperativeocl::DictLiteralExp_strategy = st.builds(
-    Janus::imperativeocl::DictLiteralExp,
-)
-Janus::essentialocl::PrimitiveLiteralExp_strategy = st.builds(
-    Janus::essentialocl::PrimitiveLiteralExp,
-)
-Janus::essentialocl::LiteralExp_strategy = st.builds(
-    Janus::essentialocl::LiteralExp,
-)
-Janus::essentialocl::RealLiteralExp_strategy = st.builds(
-    Janus::essentialocl::RealLiteralExp,
-    realSymbol=
-        st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False)
-)
-Janus::essentialocl::OperationCallExp_strategy = st.builds(
-    Janus::essentialocl::OperationCallExp,
-)
-Janus::essentialocl::IntegerLiteralExp_strategy = st.builds(
-    Janus::essentialocl::IntegerLiteralExp,
-    integerSymbol=
-        st.integers()
-)
-Janus::essentialocl::StringLiteralExp_strategy = st.builds(
-    Janus::essentialocl::StringLiteralExp,
-    stringSymbol=
-        safe_text
-)
-LoopExp_strategy = st.builds(
-    LoopExp,
-)
-Janus::essentialocl::IteratorExp_strategy = st.builds(
-    Janus::essentialocl::IteratorExp,
-)
-Janus::essentialocl::IterateExp_strategy = st.builds(
-    Janus::essentialocl::IterateExp,
 )
 Property_strategy = st.builds(
     Property,
@@ -3292,45 +3292,25 @@ Property_strategy = st.builds(
 Type_strategy = st.builds(
     Type,
 )
-Janus::essentialocl::VoidType_strategy = st.builds(
-    Janus::essentialocl::VoidType,
+Janus_essentialocl_VoidType_strategy = st.builds(
+    Janus_essentialocl_VoidType,
 )
-Janus::essentialocl::InvalidType_strategy = st.builds(
-    Janus::essentialocl::InvalidType,
-)
-Janus::emof::DataType_strategy = st.builds(
-    Janus::emof::DataType,
-)
-Janus::imperativeocl::TemplateParameterType_strategy = st.builds(
-    Janus::imperativeocl::TemplateParameterType,
+Janus_imperativeocl_TemplateParameterType_strategy = st.builds(
+    Janus_imperativeocl_TemplateParameterType,
     specification=
         safe_text
 )
-Janus::emof::Class_strategy = st.builds(
-    Janus::emof::Class,
+Janus_essentialocl_InvalidType_strategy = st.builds(
+    Janus_essentialocl_InvalidType,
+)
+Janus_emof_DataType_strategy = st.builds(
+    Janus_emof_DataType,
+)
+Janus_emof_Class_strategy = st.builds(
+    Janus_emof_Class,
     isAbstract=
         st.booleans()
 )
-
-@given(instance=AltExp_strategy)
-@settings(max_examples=50)
-def test_altexp_instantiation(instance):
-    assert isinstance(instance, AltExp)
-
-@given(instance=imperativeocl::ImperativeExpression_strategy)
-@settings(max_examples=50)
-def test_imperativeocl::imperativeexpression_instantiation(instance):
-    assert isinstance(instance, imperativeocl::ImperativeExpression)
-
-@given(instance=ObjectTemplateExp_strategy)
-@settings(max_examples=50)
-def test_objecttemplateexp_instantiation(instance):
-    assert isinstance(instance, ObjectTemplateExp)
-
-@given(instance=PropertyTemplateItem_strategy)
-@settings(max_examples=50)
-def test_propertytemplateitem_instantiation(instance):
-    assert isinstance(instance, PropertyTemplateItem)
 
 @given(instance=AnonymousTupleLiteralPart_strategy)
 @settings(max_examples=50)
@@ -3342,20 +3322,343 @@ def test_anonymoustupleliteralpart_instantiation(instance):
 def test_dictliteralpart_instantiation(instance):
     assert isinstance(instance, DictLiteralPart)
 
-@given(instance=essentialocl::LoopExp_strategy)
+@given(instance=essentialocl_LoopExp_strategy)
 @settings(max_examples=50)
-def test_essentialocl::loopexp_instantiation(instance):
-    assert isinstance(instance, essentialocl::LoopExp)
-
-@given(instance=Janus::imperativeocl::ImperativeLoopExp_strategy)
-@settings(max_examples=50)
-def test_janus::imperativeocl::imperativeloopexp_instantiation(instance):
-    assert isinstance(instance, Janus::imperativeocl::ImperativeLoopExp)
+def test_essentialocl_loopexp_instantiation(instance):
+    assert isinstance(instance, essentialocl_LoopExp)
 
 @given(instance=LogExp_strategy)
 @settings(max_examples=50)
 def test_logexp_instantiation(instance):
     assert isinstance(instance, LogExp)
+
+@given(instance=AltExp_strategy)
+@settings(max_examples=50)
+def test_altexp_instantiation(instance):
+    assert isinstance(instance, AltExp)
+
+@given(instance=imperativeocl_ImperativeExpression_strategy)
+@settings(max_examples=50)
+def test_imperativeocl_imperativeexpression_instantiation(instance):
+    assert isinstance(instance, imperativeocl_ImperativeExpression)
+
+@given(instance=Janus_imperativeocl_ImperativeLoopExp_strategy)
+@settings(max_examples=50)
+def test_janus_imperativeocl_imperativeloopexp_instantiation(instance):
+    assert isinstance(instance, Janus_imperativeocl_ImperativeLoopExp)
+
+@given(instance=ObjectTemplateExp_strategy)
+@settings(max_examples=50)
+def test_objecttemplateexp_instantiation(instance):
+    assert isinstance(instance, ObjectTemplateExp)
+
+@given(instance=PropertyTemplateItem_strategy)
+@settings(max_examples=50)
+def test_propertytemplateitem_instantiation(instance):
+    assert isinstance(instance, PropertyTemplateItem)
+
+@given(instance=ImperativeExpression_strategy)
+@settings(max_examples=50)
+def test_imperativeexpression_instantiation(instance):
+    assert isinstance(instance, ImperativeExpression)
+
+@given(instance=Janus_imperativeocl_TupleExp_strategy)
+@settings(max_examples=50)
+def test_janus_imperativeocl_tupleexp_instantiation(instance):
+    assert isinstance(instance, Janus_imperativeocl_TupleExp)
+
+@given(instance=Janus_imperativeocl_ReturnExp_strategy)
+@settings(max_examples=50)
+def test_janus_imperativeocl_returnexp_instantiation(instance):
+    assert isinstance(instance, Janus_imperativeocl_ReturnExp)
+
+@given(instance=Janus_imperativeocl_BreakExp_strategy)
+@settings(max_examples=50)
+def test_janus_imperativeocl_breakexp_instantiation(instance):
+    assert isinstance(instance, Janus_imperativeocl_BreakExp)
+
+@given(instance=Janus_imperativeocl_LogExp_strategy)
+@settings(max_examples=50)
+def test_janus_imperativeocl_logexp_instantiation(instance):
+    assert isinstance(instance, Janus_imperativeocl_LogExp)
+
+
+
+@given(instance=Janus_imperativeocl_LogExp_strategy)
+def test_janus_imperativeocl_logexp_level_setter(instance):
+    original = instance.level
+    instance.level = original
+    assert instance.level == original
+
+
+
+@given(instance=Janus_imperativeocl_LogExp_strategy)
+def test_janus_imperativeocl_logexp_text_setter(instance):
+    original = instance.text
+    instance.text = original
+    assert instance.text == original
+
+@given(instance=Janus_imperativeocl_UnpackExp_strategy)
+@settings(max_examples=50)
+def test_janus_imperativeocl_unpackexp_instantiation(instance):
+    assert isinstance(instance, Janus_imperativeocl_UnpackExp)
+
+@given(instance=Janus_imperativeocl_WhileExp_strategy)
+@settings(max_examples=50)
+def test_janus_imperativeocl_whileexp_instantiation(instance):
+    assert isinstance(instance, Janus_imperativeocl_WhileExp)
+
+@given(instance=Janus_imperativeocl_AltExp_strategy)
+@settings(max_examples=50)
+def test_janus_imperativeocl_altexp_instantiation(instance):
+    assert isinstance(instance, Janus_imperativeocl_AltExp)
+
+@given(instance=Janus_imperativeocl_AssertExp_strategy)
+@settings(max_examples=50)
+def test_janus_imperativeocl_assertexp_instantiation(instance):
+    assert isinstance(instance, Janus_imperativeocl_AssertExp)
+
+
+
+@given(instance=Janus_imperativeocl_AssertExp_strategy)
+def test_janus_imperativeocl_assertexp_severity_setter(instance):
+    original = instance.severity
+    instance.severity = original
+    assert instance.severity == original
+
+@given(instance=Janus_imperativeocl_ContinueExp_strategy)
+@settings(max_examples=50)
+def test_janus_imperativeocl_continueexp_instantiation(instance):
+    assert isinstance(instance, Janus_imperativeocl_ContinueExp)
+
+@given(instance=Janus_imperativeocl_RaiseExp_strategy)
+@settings(max_examples=50)
+def test_janus_imperativeocl_raiseexp_instantiation(instance):
+    assert isinstance(instance, Janus_imperativeocl_RaiseExp)
+
+@given(instance=Janus_imperativeocl_BlockExp_strategy)
+@settings(max_examples=50)
+def test_janus_imperativeocl_blockexp_instantiation(instance):
+    assert isinstance(instance, Janus_imperativeocl_BlockExp)
+
+@given(instance=Janus_imperativeocl_TryExp_strategy)
+@settings(max_examples=50)
+def test_janus_imperativeocl_tryexp_instantiation(instance):
+    assert isinstance(instance, Janus_imperativeocl_TryExp)
+
+@given(instance=Janus_imperativeocl_UnlinkExp_strategy)
+@settings(max_examples=50)
+def test_janus_imperativeocl_unlinkexp_instantiation(instance):
+    assert isinstance(instance, Janus_imperativeocl_UnlinkExp)
+
+@given(instance=Janus_imperativeocl_ComputeExp_strategy)
+@settings(max_examples=50)
+def test_janus_imperativeocl_computeexp_instantiation(instance):
+    assert isinstance(instance, Janus_imperativeocl_ComputeExp)
+
+@given(instance=Janus_imperativeocl_InstantiationExp_strategy)
+@settings(max_examples=50)
+def test_janus_imperativeocl_instantiationexp_instantiation(instance):
+    assert isinstance(instance, Janus_imperativeocl_InstantiationExp)
+
+@given(instance=Janus_imperativeocl_VariableInitExp_strategy)
+@settings(max_examples=50)
+def test_janus_imperativeocl_variableinitexp_instantiation(instance):
+    assert isinstance(instance, Janus_imperativeocl_VariableInitExp)
+
+
+
+@given(instance=Janus_imperativeocl_VariableInitExp_strategy)
+def test_janus_imperativeocl_variableinitexp_withResult_setter(instance):
+    original = instance.withResult
+    instance.withResult = original
+    assert instance.withResult == original
+
+@given(instance=Janus_imperativeocl_AssignExp_strategy)
+@settings(max_examples=50)
+def test_janus_imperativeocl_assignexp_instantiation(instance):
+    assert isinstance(instance, Janus_imperativeocl_AssignExp)
+
+
+
+@given(instance=Janus_imperativeocl_AssignExp_strategy)
+def test_janus_imperativeocl_assignexp_isReset_setter(instance):
+    original = instance.isReset
+    instance.isReset = original
+    assert instance.isReset == original
+
+@given(instance=ImperativeLoopExp_strategy)
+@settings(max_examples=50)
+def test_imperativeloopexp_instantiation(instance):
+    assert isinstance(instance, ImperativeLoopExp)
+
+@given(instance=Janus_imperativeocl_CollectorExp_strategy)
+@settings(max_examples=50)
+def test_janus_imperativeocl_collectorexp_instantiation(instance):
+    assert isinstance(instance, Janus_imperativeocl_CollectorExp)
+
+@given(instance=Janus_imperativeocl_ForExp_strategy)
+@settings(max_examples=50)
+def test_janus_imperativeocl_forexp_instantiation(instance):
+    assert isinstance(instance, Janus_imperativeocl_ForExp)
+
+@given(instance=Janus_imperativeocl_ImperativeIterateExp_strategy)
+@settings(max_examples=50)
+def test_janus_imperativeocl_imperativeiterateexp_instantiation(instance):
+    assert isinstance(instance, Janus_imperativeocl_ImperativeIterateExp)
+
+@given(instance=CollectionType_strategy)
+@settings(max_examples=50)
+def test_collectiontype_instantiation(instance):
+    assert isinstance(instance, CollectionType)
+
+@given(instance=Janus_imperativeocl_DictionaryType_strategy)
+@settings(max_examples=50)
+def test_janus_imperativeocl_dictionarytype_instantiation(instance):
+    assert isinstance(instance, Janus_imperativeocl_DictionaryType)
+
+@given(instance=Janus_imperativeocl_ListType_strategy)
+@settings(max_examples=50)
+def test_janus_imperativeocl_listtype_instantiation(instance):
+    assert isinstance(instance, Janus_imperativeocl_ListType)
+
+@given(instance=Janus_essentialocl_BagType_strategy)
+@settings(max_examples=50)
+def test_janus_essentialocl_bagtype_instantiation(instance):
+    assert isinstance(instance, Janus_essentialocl_BagType)
+
+@given(instance=TupleLiteralExp_strategy)
+@settings(max_examples=50)
+def test_tupleliteralexp_instantiation(instance):
+    assert isinstance(instance, TupleLiteralExp)
+
+@given(instance=CallExp_strategy)
+@settings(max_examples=50)
+def test_callexp_instantiation(instance):
+    assert isinstance(instance, CallExp)
+
+@given(instance=Janus_essentialocl_FeaturePropertyCall_strategy)
+@settings(max_examples=50)
+def test_janus_essentialocl_featurepropertycall_instantiation(instance):
+    assert isinstance(instance, Janus_essentialocl_FeaturePropertyCall)
+
+@given(instance=Janus_essentialocl_OpaqueExpression_strategy)
+@settings(max_examples=50)
+def test_janus_essentialocl_opaqueexpression_instantiation(instance):
+    assert isinstance(instance, Janus_essentialocl_OpaqueExpression)
+
+@given(instance=OpaqueExpression_strategy)
+@settings(max_examples=50)
+def test_opaqueexpression_instantiation(instance):
+    assert isinstance(instance, OpaqueExpression)
+
+@given(instance=Janus_essentialocl_ExpressionInOcl_strategy)
+@settings(max_examples=50)
+def test_janus_essentialocl_expressioninocl_instantiation(instance):
+    assert isinstance(instance, Janus_essentialocl_ExpressionInOcl)
+
+@given(instance=TupleLiteralPart_strategy)
+@settings(max_examples=50)
+def test_tupleliteralpart_instantiation(instance):
+    assert isinstance(instance, TupleLiteralPart)
+
+@given(instance=emof_Type_strategy)
+@settings(max_examples=50)
+def test_emof_type_instantiation(instance):
+    assert isinstance(instance, emof_Type)
+
+@given(instance=emof_DataType_strategy)
+@settings(max_examples=50)
+def test_emof_datatype_instantiation(instance):
+    assert isinstance(instance, emof_DataType)
+
+@given(instance=Janus_essentialocl_SetType_strategy)
+@settings(max_examples=50)
+def test_janus_essentialocl_settype_instantiation(instance):
+    assert isinstance(instance, Janus_essentialocl_SetType)
+
+@given(instance=Janus_essentialocl_SequenceType_strategy)
+@settings(max_examples=50)
+def test_janus_essentialocl_sequencetype_instantiation(instance):
+    assert isinstance(instance, Janus_essentialocl_SequenceType)
+
+@given(instance=Janus_essentialocl_OrderedSetType_strategy)
+@settings(max_examples=50)
+def test_janus_essentialocl_orderedsettype_instantiation(instance):
+    assert isinstance(instance, Janus_essentialocl_OrderedSetType)
+
+@given(instance=LiteralExp_strategy)
+@settings(max_examples=50)
+def test_literalexp_instantiation(instance):
+    assert isinstance(instance, LiteralExp)
+
+@given(instance=Janus_essentialocl_NullLiteralExp_strategy)
+@settings(max_examples=50)
+def test_janus_essentialocl_nullliteralexp_instantiation(instance):
+    assert isinstance(instance, Janus_essentialocl_NullLiteralExp)
+
+@given(instance=Janus_imperativeocl_DictLiteralExp_strategy)
+@settings(max_examples=50)
+def test_janus_imperativeocl_dictliteralexp_instantiation(instance):
+    assert isinstance(instance, Janus_imperativeocl_DictLiteralExp)
+
+@given(instance=Janus_essentialocl_InvalidLiteralExp_strategy)
+@settings(max_examples=50)
+def test_janus_essentialocl_invalidliteralexp_instantiation(instance):
+    assert isinstance(instance, Janus_essentialocl_InvalidLiteralExp)
+
+@given(instance=Janus_imperativeocl_AnonymousTupleLiteralExp_strategy)
+@settings(max_examples=50)
+def test_janus_imperativeocl_anonymoustupleliteralexp_instantiation(instance):
+    assert isinstance(instance, Janus_imperativeocl_AnonymousTupleLiteralExp)
+
+@given(instance=Janus_essentialocl_EnumLiteralExp_strategy)
+@settings(max_examples=50)
+def test_janus_essentialocl_enumliteralexp_instantiation(instance):
+    assert isinstance(instance, Janus_essentialocl_EnumLiteralExp)
+
+@given(instance=Janus_template_TemplateExp_strategy)
+@settings(max_examples=50)
+def test_janus_template_templateexp_instantiation(instance):
+    assert isinstance(instance, Janus_template_TemplateExp)
+
+@given(instance=Janus_essentialocl_CollectionLiteralExp_strategy)
+@settings(max_examples=50)
+def test_janus_essentialocl_collectionliteralexp_instantiation(instance):
+    assert isinstance(instance, Janus_essentialocl_CollectionLiteralExp)
+
+
+
+@given(instance=Janus_essentialocl_CollectionLiteralExp_strategy)
+def test_janus_essentialocl_collectionliteralexp_kind_setter(instance):
+    original = instance.kind
+    instance.kind = original
+    assert instance.kind == original
+
+@given(instance=Janus_essentialocl_PrimitiveLiteralExp_strategy)
+@settings(max_examples=50)
+def test_janus_essentialocl_primitiveliteralexp_instantiation(instance):
+    assert isinstance(instance, Janus_essentialocl_PrimitiveLiteralExp)
+
+@given(instance=LoopExp_strategy)
+@settings(max_examples=50)
+def test_loopexp_instantiation(instance):
+    assert isinstance(instance, LoopExp)
+
+@given(instance=Janus_essentialocl_IterateExp_strategy)
+@settings(max_examples=50)
+def test_janus_essentialocl_iterateexp_instantiation(instance):
+    assert isinstance(instance, Janus_essentialocl_IterateExp)
+
+@given(instance=Janus_essentialocl_IteratorExp_strategy)
+@settings(max_examples=50)
+def test_janus_essentialocl_iteratorexp_instantiation(instance):
+    assert isinstance(instance, Janus_essentialocl_IteratorExp)
+
+@given(instance=Janus_essentialocl_TupleLiteralExp_strategy)
+@settings(max_examples=50)
+def test_janus_essentialocl_tupleliteralexp_instantiation(instance):
+    assert isinstance(instance, Janus_essentialocl_TupleLiteralExp)
 
 @given(instance=CollectionLiteralExp_strategy)
 @settings(max_examples=50)
@@ -3367,15 +3670,15 @@ def test_collectionliteralexp_instantiation(instance):
 def test_collectionliteralpart_instantiation(instance):
     assert isinstance(instance, CollectionLiteralPart)
 
-@given(instance=Janus::essentialocl::CollectionRange_strategy)
+@given(instance=Janus_essentialocl_CollectionItem_strategy)
 @settings(max_examples=50)
-def test_janus::essentialocl::collectionrange_instantiation(instance):
-    assert isinstance(instance, Janus::essentialocl::CollectionRange)
+def test_janus_essentialocl_collectionitem_instantiation(instance):
+    assert isinstance(instance, Janus_essentialocl_CollectionItem)
 
-@given(instance=Janus::essentialocl::CollectionItem_strategy)
+@given(instance=Janus_essentialocl_CollectionRange_strategy)
 @settings(max_examples=50)
-def test_janus::essentialocl::collectionitem_instantiation(instance):
-    assert isinstance(instance, Janus::essentialocl::CollectionItem)
+def test_janus_essentialocl_collectionrange_instantiation(instance):
+    assert isinstance(instance, Janus_essentialocl_CollectionRange)
 
 @given(instance=ComputeExp_strategy)
 @settings(max_examples=50)
@@ -3387,69 +3690,68 @@ def test_computeexp_instantiation(instance):
 def test_letexp_instantiation(instance):
     assert isinstance(instance, LetExp)
 
-@given(instance=essentialocl::OclExpression_strategy)
+@given(instance=essentialocl_OclExpression_strategy)
 @settings(max_examples=50)
-def test_essentialocl::oclexpression_instantiation(instance):
-    assert isinstance(instance, essentialocl::OclExpression)
+def test_essentialocl_oclexpression_instantiation(instance):
+    assert isinstance(instance, essentialocl_OclExpression)
 
-@given(instance=essentialocl::CallExp_strategy)
+@given(instance=essentialocl_CallExp_strategy)
 @settings(max_examples=50)
-def test_essentialocl::callexp_instantiation(instance):
-    assert isinstance(instance, essentialocl::CallExp)
+def test_essentialocl_callexp_instantiation(instance):
+    assert isinstance(instance, essentialocl_CallExp)
 
-@given(instance=Janus::imperativeocl::SwitchExp_strategy)
+@given(instance=Janus_imperativeocl_SwitchExp_strategy)
 @settings(max_examples=50)
-def test_janus::imperativeocl::switchexp_instantiation(instance):
-    assert isinstance(instance, Janus::imperativeocl::SwitchExp)
+def test_janus_imperativeocl_switchexp_instantiation(instance):
+    assert isinstance(instance, Janus_imperativeocl_SwitchExp)
 
-@given(instance=Janus::essentialocl::LoopExp_strategy)
+@given(instance=Janus_essentialocl_LoopExp_strategy)
 @settings(max_examples=50)
-def test_janus::essentialocl::loopexp_instantiation(instance):
-    assert isinstance(instance, Janus::essentialocl::LoopExp)
+def test_janus_essentialocl_loopexp_instantiation(instance):
+    assert isinstance(instance, Janus_essentialocl_LoopExp)
 
 @given(instance=FeaturePropertyCall_strategy)
 @settings(max_examples=50)
 def test_featurepropertycall_instantiation(instance):
     assert isinstance(instance, FeaturePropertyCall)
 
-@given(instance=Janus::essentialocl::PropertyCallExp_strategy)
+@given(instance=Janus_essentialocl_OperationCallExp_strategy)
 @settings(max_examples=50)
-def test_janus::essentialocl::propertycallexp_instantiation(instance):
-    assert isinstance(instance, Janus::essentialocl::PropertyCallExp)
+def test_janus_essentialocl_operationcallexp_instantiation(instance):
+    assert isinstance(instance, Janus_essentialocl_OperationCallExp)
+
+@given(instance=Janus_essentialocl_PropertyCallExp_strategy)
+@settings(max_examples=50)
+def test_janus_essentialocl_propertycallexp_instantiation(instance):
+    assert isinstance(instance, Janus_essentialocl_PropertyCallExp)
 
 @given(instance=TemplateExp_strategy)
 @settings(max_examples=50)
 def test_templateexp_instantiation(instance):
     assert isinstance(instance, TemplateExp)
 
-@given(instance=Janus::template::ObjectTemplateExp_strategy)
+@given(instance=Janus_template_ObjectTemplateExp_strategy)
 @settings(max_examples=50)
-def test_janus::template::objecttemplateexp_instantiation(instance):
-    assert isinstance(instance, Janus::template::ObjectTemplateExp)
-
-@given(instance=Janus::template::ObjectTemplateExp_strategy)
-def test_janus::template::objecttemplateexp_referredClass_type(instance):
-    assert isinstance(instance.referredClass, str)
+def test_janus_template_objecttemplateexp_instantiation(instance):
+    assert isinstance(instance, Janus_template_ObjectTemplateExp)
 
 
-@given(instance=Janus::template::ObjectTemplateExp_strategy)
-def test_janus::template::objecttemplateexp_referredClass_setter(instance):
+
+@given(instance=Janus_template_ObjectTemplateExp_strategy)
+def test_janus_template_objecttemplateexp_referredClass_setter(instance):
     original = instance.referredClass
     instance.referredClass = original
     assert instance.referredClass == original
 
-@given(instance=Janus::template::CollectionTemplateExp_strategy)
+@given(instance=Janus_template_CollectionTemplateExp_strategy)
 @settings(max_examples=50)
-def test_janus::template::collectiontemplateexp_instantiation(instance):
-    assert isinstance(instance, Janus::template::CollectionTemplateExp)
-
-@given(instance=Janus::template::CollectionTemplateExp_strategy)
-def test_janus::template::collectiontemplateexp_kind_type(instance):
-    assert isinstance(instance.kind, str)
+def test_janus_template_collectiontemplateexp_instantiation(instance):
+    assert isinstance(instance, Janus_template_CollectionTemplateExp)
 
 
-@given(instance=Janus::template::CollectionTemplateExp_strategy)
-def test_janus::template::collectiontemplateexp_kind_setter(instance):
+
+@given(instance=Janus_template_CollectionTemplateExp_strategy)
+def test_janus_template_collectiontemplateexp_kind_setter(instance):
     original = instance.kind
     instance.kind = original
     assert instance.kind == original
@@ -3464,18 +3766,41 @@ def test_predicate_instantiation(instance):
 def test_numericliteralexp_instantiation(instance):
     assert isinstance(instance, NumericLiteralExp)
 
-@given(instance=Janus::essentialocl::UnlimitedNaturalExp_strategy)
+@given(instance=Janus_essentialocl_IntegerLiteralExp_strategy)
 @settings(max_examples=50)
-def test_janus::essentialocl::unlimitednaturalexp_instantiation(instance):
-    assert isinstance(instance, Janus::essentialocl::UnlimitedNaturalExp)
-
-@given(instance=Janus::essentialocl::UnlimitedNaturalExp_strategy)
-def test_janus::essentialocl::unlimitednaturalexp_symbol_type(instance):
-    assert isinstance(instance.symbol, str)
+def test_janus_essentialocl_integerliteralexp_instantiation(instance):
+    assert isinstance(instance, Janus_essentialocl_IntegerLiteralExp)
 
 
-@given(instance=Janus::essentialocl::UnlimitedNaturalExp_strategy)
-def test_janus::essentialocl::unlimitednaturalexp_symbol_setter(instance):
+
+@given(instance=Janus_essentialocl_IntegerLiteralExp_strategy)
+def test_janus_essentialocl_integerliteralexp_integerSymbol_setter(instance):
+    original = instance.integerSymbol
+    instance.integerSymbol = original
+    assert instance.integerSymbol == original
+
+@given(instance=Janus_essentialocl_RealLiteralExp_strategy)
+@settings(max_examples=50)
+def test_janus_essentialocl_realliteralexp_instantiation(instance):
+    assert isinstance(instance, Janus_essentialocl_RealLiteralExp)
+
+
+
+@given(instance=Janus_essentialocl_RealLiteralExp_strategy)
+def test_janus_essentialocl_realliteralexp_realSymbol_setter(instance):
+    original = instance.realSymbol
+    instance.realSymbol = original
+    assert instance.realSymbol == original
+
+@given(instance=Janus_essentialocl_UnlimitedNaturalExp_strategy)
+@settings(max_examples=50)
+def test_janus_essentialocl_unlimitednaturalexp_instantiation(instance):
+    assert isinstance(instance, Janus_essentialocl_UnlimitedNaturalExp)
+
+
+
+@given(instance=Janus_essentialocl_UnlimitedNaturalExp_strategy)
+def test_janus_essentialocl_unlimitednaturalexp_symbol_setter(instance):
     original = instance.symbol
     instance.symbol = original
     assert instance.symbol == original
@@ -3490,38 +3815,58 @@ def test_tryexp_instantiation(instance):
 def test_typedelement_instantiation(instance):
     assert isinstance(instance, TypedElement)
 
-@given(instance=Janus::essentialocl::CollectionLiteralPart_strategy)
+@given(instance=Janus_essentialocl_CollectionLiteralPart_strategy)
 @settings(max_examples=50)
-def test_janus::essentialocl::collectionliteralpart_instantiation(instance):
-    assert isinstance(instance, Janus::essentialocl::CollectionLiteralPart)
+def test_janus_essentialocl_collectionliteralpart_instantiation(instance):
+    assert isinstance(instance, Janus_essentialocl_CollectionLiteralPart)
 
-@given(instance=Janus::essentialocl::Variable_strategy)
+@given(instance=Janus_essentialocl_Variable_strategy)
 @settings(max_examples=50)
-def test_janus::essentialocl::variable_instantiation(instance):
-    assert isinstance(instance, Janus::essentialocl::Variable)
+def test_janus_essentialocl_variable_instantiation(instance):
+    assert isinstance(instance, Janus_essentialocl_Variable)
 
-@given(instance=Janus::essentialocl::OclExpression_strategy)
+@given(instance=Janus_essentialocl_TupleLiteralPart_strategy)
 @settings(max_examples=50)
-def test_janus::essentialocl::oclexpression_instantiation(instance):
-    assert isinstance(instance, Janus::essentialocl::OclExpression)
+def test_janus_essentialocl_tupleliteralpart_instantiation(instance):
+    assert isinstance(instance, Janus_essentialocl_TupleLiteralPart)
+
+@given(instance=Janus_essentialocl_OclExpression_strategy)
+@settings(max_examples=50)
+def test_janus_essentialocl_oclexpression_instantiation(instance):
+    assert isinstance(instance, Janus_essentialocl_OclExpression)
 
 @given(instance=PrimitiveLiteralExp_strategy)
 @settings(max_examples=50)
 def test_primitiveliteralexp_instantiation(instance):
     assert isinstance(instance, PrimitiveLiteralExp)
 
-@given(instance=Janus::essentialocl::BooleanLiteralExp_strategy)
+@given(instance=Janus_essentialocl_StringLiteralExp_strategy)
 @settings(max_examples=50)
-def test_janus::essentialocl::booleanliteralexp_instantiation(instance):
-    assert isinstance(instance, Janus::essentialocl::BooleanLiteralExp)
-
-@given(instance=Janus::essentialocl::BooleanLiteralExp_strategy)
-def test_janus::essentialocl::booleanliteralexp_booleanSymbol_type(instance):
-    assert isinstance(instance.booleanSymbol, bool)
+def test_janus_essentialocl_stringliteralexp_instantiation(instance):
+    assert isinstance(instance, Janus_essentialocl_StringLiteralExp)
 
 
-@given(instance=Janus::essentialocl::BooleanLiteralExp_strategy)
-def test_janus::essentialocl::booleanliteralexp_booleanSymbol_setter(instance):
+
+@given(instance=Janus_essentialocl_StringLiteralExp_strategy)
+def test_janus_essentialocl_stringliteralexp_stringSymbol_setter(instance):
+    original = instance.stringSymbol
+    instance.stringSymbol = original
+    assert instance.stringSymbol == original
+
+@given(instance=Janus_essentialocl_NumericLiteralExp_strategy)
+@settings(max_examples=50)
+def test_janus_essentialocl_numericliteralexp_instantiation(instance):
+    assert isinstance(instance, Janus_essentialocl_NumericLiteralExp)
+
+@given(instance=Janus_essentialocl_BooleanLiteralExp_strategy)
+@settings(max_examples=50)
+def test_janus_essentialocl_booleanliteralexp_instantiation(instance):
+    assert isinstance(instance, Janus_essentialocl_BooleanLiteralExp)
+
+
+
+@given(instance=Janus_essentialocl_BooleanLiteralExp_strategy)
+def test_janus_essentialocl_booleanliteralexp_booleanSymbol_setter(instance):
     original = instance.booleanSymbol
     instance.booleanSymbol = original
     assert instance.booleanSymbol == original
@@ -3531,35 +3876,40 @@ def test_janus::essentialocl::booleanliteralexp_booleanSymbol_setter(instance):
 def test_oclexpression_instantiation(instance):
     assert isinstance(instance, OclExpression)
 
-@given(instance=Janus::essentialocl::CallExp_strategy)
+@given(instance=Janus_essentialocl_TypeExp_strategy)
 @settings(max_examples=50)
-def test_janus::essentialocl::callexp_instantiation(instance):
-    assert isinstance(instance, Janus::essentialocl::CallExp)
+def test_janus_essentialocl_typeexp_instantiation(instance):
+    assert isinstance(instance, Janus_essentialocl_TypeExp)
 
-@given(instance=Janus::essentialocl::VariableExp_strategy)
+@given(instance=Janus_essentialocl_LetExp_strategy)
 @settings(max_examples=50)
-def test_janus::essentialocl::variableexp_instantiation(instance):
-    assert isinstance(instance, Janus::essentialocl::VariableExp)
+def test_janus_essentialocl_letexp_instantiation(instance):
+    assert isinstance(instance, Janus_essentialocl_LetExp)
 
-@given(instance=Janus::essentialocl::LetExp_strategy)
+@given(instance=Janus_imperativeocl_ImperativeExpression_strategy)
 @settings(max_examples=50)
-def test_janus::essentialocl::letexp_instantiation(instance):
-    assert isinstance(instance, Janus::essentialocl::LetExp)
+def test_janus_imperativeocl_imperativeexpression_instantiation(instance):
+    assert isinstance(instance, Janus_imperativeocl_ImperativeExpression)
 
-@given(instance=Janus::imperativeocl::ImperativeExpression_strategy)
+@given(instance=Janus_essentialocl_VariableExp_strategy)
 @settings(max_examples=50)
-def test_janus::imperativeocl::imperativeexpression_instantiation(instance):
-    assert isinstance(instance, Janus::imperativeocl::ImperativeExpression)
+def test_janus_essentialocl_variableexp_instantiation(instance):
+    assert isinstance(instance, Janus_essentialocl_VariableExp)
 
-@given(instance=Janus::essentialocl::IfExp_strategy)
+@given(instance=Janus_essentialocl_LiteralExp_strategy)
 @settings(max_examples=50)
-def test_janus::essentialocl::ifexp_instantiation(instance):
-    assert isinstance(instance, Janus::essentialocl::IfExp)
+def test_janus_essentialocl_literalexp_instantiation(instance):
+    assert isinstance(instance, Janus_essentialocl_LiteralExp)
 
-@given(instance=Janus::essentialocl::TypeExp_strategy)
+@given(instance=Janus_essentialocl_IfExp_strategy)
 @settings(max_examples=50)
-def test_janus::essentialocl::typeexp_instantiation(instance):
-    assert isinstance(instance, Janus::essentialocl::TypeExp)
+def test_janus_essentialocl_ifexp_instantiation(instance):
+    assert isinstance(instance, Janus_essentialocl_IfExp)
+
+@given(instance=Janus_essentialocl_CallExp_strategy)
+@settings(max_examples=50)
+def test_janus_essentialocl_callexp_instantiation(instance):
+    assert isinstance(instance, Janus_essentialocl_CallExp)
 
 @given(instance=Transformation_strategy)
 @settings(max_examples=50)
@@ -3576,30 +3926,40 @@ def test_relation_instantiation(instance):
 def test_model_instantiation(instance):
     assert isinstance(instance, Model)
 
-@given(instance=emof::Package_strategy)
+@given(instance=emof_Package_strategy)
 @settings(max_examples=50)
-def test_emof::package_instantiation(instance):
-    assert isinstance(instance, emof::Package)
+def test_emof_package_instantiation(instance):
+    assert isinstance(instance, emof_Package)
 
-@given(instance=emof::Class_strategy)
+@given(instance=emof_Class_strategy)
 @settings(max_examples=50)
-def test_emof::class_instantiation(instance):
-    assert isinstance(instance, emof::Class)
+def test_emof_class_instantiation(instance):
+    assert isinstance(instance, emof_Class)
 
-@given(instance=Janus::JTL::Transformation_strategy)
+@given(instance=Janus_essentialocl_TupleType_strategy)
 @settings(max_examples=50)
-def test_janus::jtl::transformation_instantiation(instance):
-    assert isinstance(instance, Janus::JTL::Transformation)
+def test_janus_essentialocl_tupletype_instantiation(instance):
+    assert isinstance(instance, Janus_essentialocl_TupleType)
+
+@given(instance=Janus_essentialocl_AnyType_strategy)
+@settings(max_examples=50)
+def test_janus_essentialocl_anytype_instantiation(instance):
+    assert isinstance(instance, Janus_essentialocl_AnyType)
+
+@given(instance=Janus_JTL_Transformation_strategy)
+@settings(max_examples=50)
+def test_janus_jtl_transformation_instantiation(instance):
+    assert isinstance(instance, Janus_JTL_Transformation)
 
 @given(instance=Extent_strategy)
 @settings(max_examples=50)
 def test_extent_instantiation(instance):
     assert isinstance(instance, Extent)
 
-@given(instance=Janus::emof::URIExtent_strategy)
+@given(instance=Janus_emof_URIExtent_strategy)
 @settings(max_examples=50)
-def test_janus::emof::uriextent_instantiation(instance):
-    assert isinstance(instance, Janus::emof::URIExtent)
+def test_janus_emof_uriextent_instantiation(instance):
+    assert isinstance(instance, Janus_emof_URIExtent)
 
 @given(instance=Variable_strategy)
 @settings(max_examples=50)
@@ -3626,228 +3986,189 @@ def test_package_instantiation(instance):
 def test_namedelement_instantiation(instance):
     assert isinstance(instance, NamedElement)
 
-@given(instance=Janus::JTL::Domain_strategy)
+@given(instance=Janus_JTL_Relation_strategy)
 @settings(max_examples=50)
-def test_janus::jtl::domain_instantiation(instance):
-    assert isinstance(instance, Janus::JTL::Domain)
-
-@given(instance=Janus::JTL::Domain_strategy)
-def test_janus::jtl::domain_isEnforceable_type(instance):
-    assert isinstance(instance.isEnforceable, bool)
+def test_janus_jtl_relation_instantiation(instance):
+    assert isinstance(instance, Janus_JTL_Relation)
 
 
-@given(instance=Janus::JTL::Domain_strategy)
-def test_janus::jtl::domain_isEnforceable_setter(instance):
-    original = instance.isEnforceable
-    instance.isEnforceable = original
-    assert instance.isEnforceable == original
 
-@given(instance=Janus::JTL::Domain_strategy)
-def test_janus::jtl::domain_isCheckable_type(instance):
-    assert isinstance(instance.isCheckable, bool)
-
-
-@given(instance=Janus::JTL::Domain_strategy)
-def test_janus::jtl::domain_isCheckable_setter(instance):
-    original = instance.isCheckable
-    instance.isCheckable = original
-    assert instance.isCheckable == original
-
-@given(instance=Janus::JTL::Model_strategy)
-@settings(max_examples=50)
-def test_janus::jtl::model_instantiation(instance):
-    assert isinstance(instance, Janus::JTL::Model)
-
-@given(instance=Janus::JTL::Relation_strategy)
-@settings(max_examples=50)
-def test_janus::jtl::relation_instantiation(instance):
-    assert isinstance(instance, Janus::JTL::Relation)
-
-@given(instance=Janus::JTL::Relation_strategy)
-def test_janus::jtl::relation_isTopLevel_type(instance):
-    assert isinstance(instance.isTopLevel, bool)
-
-
-@given(instance=Janus::JTL::Relation_strategy)
-def test_janus::jtl::relation_isTopLevel_setter(instance):
+@given(instance=Janus_JTL_Relation_strategy)
+def test_janus_jtl_relation_isTopLevel_setter(instance):
     original = instance.isTopLevel
     instance.isTopLevel = original
     assert instance.isTopLevel == original
 
-@given(instance=Janus::emof::TypedElement_strategy)
+@given(instance=Janus_emof_TypedElement_strategy)
 @settings(max_examples=50)
-def test_janus::emof::typedelement_instantiation(instance):
-    assert isinstance(instance, Janus::emof::TypedElement)
+def test_janus_emof_typedelement_instantiation(instance):
+    assert isinstance(instance, Janus_emof_TypedElement)
 
-@given(instance=Janus::emof::Package_strategy)
+@given(instance=Janus_JTL_Domain_strategy)
 @settings(max_examples=50)
-def test_janus::emof::package_instantiation(instance):
-    assert isinstance(instance, Janus::emof::Package)
-
-@given(instance=Janus::emof::Package_strategy)
-def test_janus::emof::package_uri_type(instance):
-    assert isinstance(instance.uri, str)
+def test_janus_jtl_domain_instantiation(instance):
+    assert isinstance(instance, Janus_JTL_Domain)
 
 
-@given(instance=Janus::emof::Package_strategy)
-def test_janus::emof::package_uri_setter(instance):
+
+@given(instance=Janus_JTL_Domain_strategy)
+def test_janus_jtl_domain_isCheckable_setter(instance):
+    original = instance.isCheckable
+    instance.isCheckable = original
+    assert instance.isCheckable == original
+
+
+
+@given(instance=Janus_JTL_Domain_strategy)
+def test_janus_jtl_domain_isEnforceable_setter(instance):
+    original = instance.isEnforceable
+    instance.isEnforceable = original
+    assert instance.isEnforceable == original
+
+@given(instance=Janus_JTL_Model_strategy)
+@settings(max_examples=50)
+def test_janus_jtl_model_instantiation(instance):
+    assert isinstance(instance, Janus_JTL_Model)
+
+@given(instance=Janus_emof_Package_strategy)
+@settings(max_examples=50)
+def test_janus_emof_package_instantiation(instance):
+    assert isinstance(instance, Janus_emof_Package)
+
+
+
+@given(instance=Janus_emof_Package_strategy)
+def test_janus_emof_package_uri_setter(instance):
     original = instance.uri
     instance.uri = original
     assert instance.uri == original
 
-@given(instance=Janus::emof::MultiplicityElement_strategy)
+@given(instance=Janus_emof_MultiplicityElement_strategy)
 @settings(max_examples=50)
-def test_janus::emof::multiplicityelement_instantiation(instance):
-    assert isinstance(instance, Janus::emof::MultiplicityElement)
-
-@given(instance=Janus::emof::MultiplicityElement_strategy)
-def test_janus::emof::multiplicityelement_upper_type(instance):
-    assert isinstance(instance.upper, str)
+def test_janus_emof_multiplicityelement_instantiation(instance):
+    assert isinstance(instance, Janus_emof_MultiplicityElement)
 
 
-@given(instance=Janus::emof::MultiplicityElement_strategy)
-def test_janus::emof::multiplicityelement_upper_setter(instance):
-    original = instance.upper
-    instance.upper = original
-    assert instance.upper == original
 
-@given(instance=Janus::emof::MultiplicityElement_strategy)
-def test_janus::emof::multiplicityelement_isOrdered_type(instance):
-    assert isinstance(instance.isOrdered, str)
+@given(instance=Janus_emof_MultiplicityElement_strategy)
+def test_janus_emof_multiplicityelement_lower_setter(instance):
+    original = instance.lower
+    instance.lower = original
+    assert instance.lower == original
 
 
-@given(instance=Janus::emof::MultiplicityElement_strategy)
-def test_janus::emof::multiplicityelement_isOrdered_setter(instance):
+
+@given(instance=Janus_emof_MultiplicityElement_strategy)
+def test_janus_emof_multiplicityelement_isOrdered_setter(instance):
     original = instance.isOrdered
     instance.isOrdered = original
     assert instance.isOrdered == original
 
-@given(instance=Janus::emof::MultiplicityElement_strategy)
-def test_janus::emof::multiplicityelement_isUnique_type(instance):
-    assert isinstance(instance.isUnique, str)
 
 
-@given(instance=Janus::emof::MultiplicityElement_strategy)
-def test_janus::emof::multiplicityelement_isUnique_setter(instance):
+@given(instance=Janus_emof_MultiplicityElement_strategy)
+def test_janus_emof_multiplicityelement_isUnique_setter(instance):
     original = instance.isUnique
     instance.isUnique = original
     assert instance.isUnique == original
 
-@given(instance=Janus::emof::MultiplicityElement_strategy)
-def test_janus::emof::multiplicityelement_lower_type(instance):
-    assert isinstance(instance.lower, int)
 
 
-@given(instance=Janus::emof::MultiplicityElement_strategy)
-def test_janus::emof::multiplicityelement_lower_setter(instance):
-    original = instance.lower
-    instance.lower = original
-    assert instance.lower == original
+@given(instance=Janus_emof_MultiplicityElement_strategy)
+def test_janus_emof_multiplicityelement_upper_setter(instance):
+    original = instance.upper
+    instance.upper = original
+    assert instance.upper == original
 
 @given(instance=Parameter_strategy)
 @settings(max_examples=50)
 def test_parameter_instantiation(instance):
     assert isinstance(instance, Parameter)
 
-@given(instance=emof::TypedElement_strategy)
+@given(instance=emof_TypedElement_strategy)
 @settings(max_examples=50)
-def test_emof::typedelement_instantiation(instance):
-    assert isinstance(instance, emof::TypedElement)
+def test_emof_typedelement_instantiation(instance):
+    assert isinstance(instance, emof_TypedElement)
 
-@given(instance=emof::MultiplicityElement_strategy)
+@given(instance=emof_MultiplicityElement_strategy)
 @settings(max_examples=50)
-def test_emof::multiplicityelement_instantiation(instance):
-    assert isinstance(instance, emof::MultiplicityElement)
+def test_emof_multiplicityelement_instantiation(instance):
+    assert isinstance(instance, emof_MultiplicityElement)
 
-@given(instance=Janus::emof::Operation_strategy)
+@given(instance=Janus_emof_Operation_strategy)
 @settings(max_examples=50)
-def test_janus::emof::operation_instantiation(instance):
-    assert isinstance(instance, Janus::emof::Operation)
+def test_janus_emof_operation_instantiation(instance):
+    assert isinstance(instance, Janus_emof_Operation)
 
-@given(instance=Janus::emof::Object_strategy)
+@given(instance=Janus_emof_Object_strategy)
 @settings(max_examples=50)
-def test_janus::emof::object_instantiation(instance):
-    assert isinstance(instance, Janus::emof::Object)
+def test_janus_emof_object_instantiation(instance):
+    assert isinstance(instance, Janus_emof_Object)
 
-@given(instance=Janus::emof::Property_strategy)
+@given(instance=Janus_emof_Property_strategy)
 @settings(max_examples=50)
-def test_janus::emof::property_instantiation(instance):
-    assert isinstance(instance, Janus::emof::Property)
-
-@given(instance=Janus::emof::Property_strategy)
-def test_janus::emof::property_isId_type(instance):
-    assert isinstance(instance.isId, bool)
+def test_janus_emof_property_instantiation(instance):
+    assert isinstance(instance, Janus_emof_Property)
 
 
-@given(instance=Janus::emof::Property_strategy)
-def test_janus::emof::property_isId_setter(instance):
-    original = instance.isId
-    instance.isId = original
-    assert instance.isId == original
 
-@given(instance=Janus::emof::Property_strategy)
-def test_janus::emof::property_isDerived_type(instance):
-    assert isinstance(instance.isDerived, bool)
-
-
-@given(instance=Janus::emof::Property_strategy)
-def test_janus::emof::property_isDerived_setter(instance):
-    original = instance.isDerived
-    instance.isDerived = original
-    assert instance.isDerived == original
-
-@given(instance=Janus::emof::Property_strategy)
-def test_janus::emof::property_isReadOnly_type(instance):
-    assert isinstance(instance.isReadOnly, bool)
-
-
-@given(instance=Janus::emof::Property_strategy)
-def test_janus::emof::property_isReadOnly_setter(instance):
-    original = instance.isReadOnly
-    instance.isReadOnly = original
-    assert instance.isReadOnly == original
-
-@given(instance=Janus::emof::Property_strategy)
-def test_janus::emof::property_default_type(instance):
-    assert isinstance(instance.default, str)
-
-
-@given(instance=Janus::emof::Property_strategy)
-def test_janus::emof::property_default_setter(instance):
+@given(instance=Janus_emof_Property_strategy)
+def test_janus_emof_property_default_setter(instance):
     original = instance.default
     instance.default = original
     assert instance.default == original
 
-@given(instance=Janus::emof::Property_strategy)
-def test_janus::emof::property_isComposite_type(instance):
-    assert isinstance(instance.isComposite, bool)
 
 
-@given(instance=Janus::emof::Property_strategy)
-def test_janus::emof::property_isComposite_setter(instance):
+@given(instance=Janus_emof_Property_strategy)
+def test_janus_emof_property_isReadOnly_setter(instance):
+    original = instance.isReadOnly
+    instance.isReadOnly = original
+    assert instance.isReadOnly == original
+
+
+
+@given(instance=Janus_emof_Property_strategy)
+def test_janus_emof_property_isComposite_setter(instance):
     original = instance.isComposite
     instance.isComposite = original
     assert instance.isComposite == original
+
+
+
+@given(instance=Janus_emof_Property_strategy)
+def test_janus_emof_property_isDerived_setter(instance):
+    original = instance.isDerived
+    instance.isDerived = original
+    assert instance.isDerived == original
+
+
+
+@given(instance=Janus_emof_Property_strategy)
+def test_janus_emof_property_isId_setter(instance):
+    original = instance.isId
+    instance.isId = original
+    assert instance.isId == original
 
 @given(instance=Enumeration_strategy)
 @settings(max_examples=50)
 def test_enumeration_instantiation(instance):
     assert isinstance(instance, Enumeration)
 
-@given(instance=Janus::emof::EnumerationLiteral_strategy)
+@given(instance=Janus_emof_EnumerationLiteral_strategy)
 @settings(max_examples=50)
-def test_janus::emof::enumerationliteral_instantiation(instance):
-    assert isinstance(instance, Janus::emof::EnumerationLiteral)
+def test_janus_emof_enumerationliteral_instantiation(instance):
+    assert isinstance(instance, Janus_emof_EnumerationLiteral)
 
-@given(instance=Janus::emof::Parameter_strategy)
+@given(instance=Janus_emof_Parameter_strategy)
 @settings(max_examples=50)
-def test_janus::emof::parameter_instantiation(instance):
-    assert isinstance(instance, Janus::emof::Parameter)
+def test_janus_emof_parameter_instantiation(instance):
+    assert isinstance(instance, Janus_emof_Parameter)
 
-@given(instance=Janus::emof::Type_strategy)
+@given(instance=Janus_emof_Type_strategy)
 @settings(max_examples=50)
-def test_janus::emof::type_instantiation(instance):
-    assert isinstance(instance, Janus::emof::Type)
+def test_janus_emof_type_instantiation(instance):
+    assert isinstance(instance, Janus_emof_Type)
 
 @given(instance=EnumerationLiteral_strategy)
 @settings(max_examples=50)
@@ -3859,90 +4180,86 @@ def test_enumerationliteral_instantiation(instance):
 def test_datatype_instantiation(instance):
     assert isinstance(instance, DataType)
 
-@given(instance=Janus::emof::PrimitiveType_strategy)
+@given(instance=Janus_emof_PrimitiveType_strategy)
 @settings(max_examples=50)
-def test_janus::emof::primitivetype_instantiation(instance):
-    assert isinstance(instance, Janus::emof::PrimitiveType)
+def test_janus_emof_primitivetype_instantiation(instance):
+    assert isinstance(instance, Janus_emof_PrimitiveType)
 
-@given(instance=Janus::emof::Enumeration_strategy)
+@given(instance=Janus_essentialocl_CollectionType_strategy)
 @settings(max_examples=50)
-def test_janus::emof::enumeration_instantiation(instance):
-    assert isinstance(instance, Janus::emof::Enumeration)
+def test_janus_essentialocl_collectiontype_instantiation(instance):
+    assert isinstance(instance, Janus_essentialocl_CollectionType)
+
+@given(instance=Janus_emof_Enumeration_strategy)
+@settings(max_examples=50)
+def test_janus_emof_enumeration_instantiation(instance):
+    assert isinstance(instance, Janus_emof_Enumeration)
 
 @given(instance=Element_strategy)
 @settings(max_examples=50)
 def test_element_instantiation(instance):
     assert isinstance(instance, Element)
 
-@given(instance=Janus::JTL::Pattern_strategy)
+@given(instance=Janus_imperativeocl_DictLiteralPart_strategy)
 @settings(max_examples=50)
-def test_janus::jtl::pattern_instantiation(instance):
-    assert isinstance(instance, Janus::JTL::Pattern)
+def test_janus_imperativeocl_dictliteralpart_instantiation(instance):
+    assert isinstance(instance, Janus_imperativeocl_DictLiteralPart)
 
-@given(instance=Janus::emof::Comment_strategy)
+@given(instance=Janus_imperativeocl_AnonymousTupleLiteralPart_strategy)
 @settings(max_examples=50)
-def test_janus::emof::comment_instantiation(instance):
-    assert isinstance(instance, Janus::emof::Comment)
+def test_janus_imperativeocl_anonymoustupleliteralpart_instantiation(instance):
+    assert isinstance(instance, Janus_imperativeocl_AnonymousTupleLiteralPart)
 
-@given(instance=Janus::imperativeocl::DictLiteralPart_strategy)
+@given(instance=Janus_emof_NamedElement_strategy)
 @settings(max_examples=50)
-def test_janus::imperativeocl::dictliteralpart_instantiation(instance):
-    assert isinstance(instance, Janus::imperativeocl::DictLiteralPart)
-
-@given(instance=Janus::imperativeocl::AnonymousTupleLiteralPart_strategy)
-@settings(max_examples=50)
-def test_janus::imperativeocl::anonymoustupleliteralpart_instantiation(instance):
-    assert isinstance(instance, Janus::imperativeocl::AnonymousTupleLiteralPart)
-
-@given(instance=Janus::JTL::Predicate_strategy)
-@settings(max_examples=50)
-def test_janus::jtl::predicate_instantiation(instance):
-    assert isinstance(instance, Janus::JTL::Predicate)
-
-@given(instance=Janus::emof::NamedElement_strategy)
-@settings(max_examples=50)
-def test_janus::emof::namedelement_instantiation(instance):
-    assert isinstance(instance, Janus::emof::NamedElement)
-
-@given(instance=Janus::emof::NamedElement_strategy)
-def test_janus::emof::namedelement_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_janus_emof_namedelement_instantiation(instance):
+    assert isinstance(instance, Janus_emof_NamedElement)
 
 
-@given(instance=Janus::emof::NamedElement_strategy)
-def test_janus::emof::namedelement_name_setter(instance):
+
+@given(instance=Janus_emof_NamedElement_strategy)
+def test_janus_emof_namedelement_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=Janus::template::PropertyTemplateItem_strategy)
+@given(instance=Janus_JTL_Predicate_strategy)
 @settings(max_examples=50)
-def test_janus::template::propertytemplateitem_instantiation(instance):
-    assert isinstance(instance, Janus::template::PropertyTemplateItem)
+def test_janus_jtl_predicate_instantiation(instance):
+    assert isinstance(instance, Janus_JTL_Predicate)
 
-@given(instance=Janus::emof::Tag_strategy)
+@given(instance=Janus_template_PropertyTemplateItem_strategy)
 @settings(max_examples=50)
-def test_janus::emof::tag_instantiation(instance):
-    assert isinstance(instance, Janus::emof::Tag)
+def test_janus_template_propertytemplateitem_instantiation(instance):
+    assert isinstance(instance, Janus_template_PropertyTemplateItem)
 
-@given(instance=Janus::emof::Tag_strategy)
-def test_janus::emof::tag_name_type(instance):
-    assert isinstance(instance.name, str)
+@given(instance=Janus_emof_Comment_strategy)
+@settings(max_examples=50)
+def test_janus_emof_comment_instantiation(instance):
+    assert isinstance(instance, Janus_emof_Comment)
+
+@given(instance=Janus_JTL_Pattern_strategy)
+@settings(max_examples=50)
+def test_janus_jtl_pattern_instantiation(instance):
+    assert isinstance(instance, Janus_JTL_Pattern)
+
+@given(instance=Janus_emof_Tag_strategy)
+@settings(max_examples=50)
+def test_janus_emof_tag_instantiation(instance):
+    assert isinstance(instance, Janus_emof_Tag)
 
 
-@given(instance=Janus::emof::Tag_strategy)
-def test_janus::emof::tag_name_setter(instance):
+
+@given(instance=Janus_emof_Tag_strategy)
+def test_janus_emof_tag_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=Janus::emof::Tag_strategy)
-def test_janus::emof::tag_value_type(instance):
-    assert isinstance(instance.value, str)
 
 
-@given(instance=Janus::emof::Tag_strategy)
-def test_janus::emof::tag_value_setter(instance):
+@given(instance=Janus_emof_Tag_strategy)
+def test_janus_emof_tag_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
@@ -3962,439 +4279,35 @@ def test_tag_instantiation(instance):
 def test_object_instantiation(instance):
     assert isinstance(instance, Object)
 
-@given(instance=Janus::emof::Extent_strategy)
+@given(instance=Janus_emof_Extent_strategy)
 @settings(max_examples=50)
-def test_janus::emof::extent_instantiation(instance):
-    assert isinstance(instance, Janus::emof::Extent)
+def test_janus_emof_extent_instantiation(instance):
+    assert isinstance(instance, Janus_emof_Extent)
 
-@given(instance=Janus::emof::Element_strategy)
+@given(instance=Janus_emof_Element_strategy)
 @settings(max_examples=50)
-def test_janus::emof::element_instantiation(instance):
-    assert isinstance(instance, Janus::emof::Element)
+def test_janus_emof_element_instantiation(instance):
+    assert isinstance(instance, Janus_emof_Element)
 
 @given(instance=Class_strategy)
 @settings(max_examples=50)
 def test_class_instantiation(instance):
     assert isinstance(instance, Class)
 
-@given(instance=Janus::imperativeocl::Typedef_strategy)
+@given(instance=Janus_imperativeocl_AnonymousTupleType_strategy)
 @settings(max_examples=50)
-def test_janus::imperativeocl::typedef_instantiation(instance):
-    assert isinstance(instance, Janus::imperativeocl::Typedef)
+def test_janus_imperativeocl_anonymoustupletype_instantiation(instance):
+    assert isinstance(instance, Janus_imperativeocl_AnonymousTupleType)
 
-@given(instance=Janus::imperativeocl::AnonymousTupleType_strategy)
+@given(instance=Janus_imperativeocl_Typedef_strategy)
 @settings(max_examples=50)
-def test_janus::imperativeocl::anonymoustupletype_instantiation(instance):
-    assert isinstance(instance, Janus::imperativeocl::AnonymousTupleType)
+def test_janus_imperativeocl_typedef_instantiation(instance):
+    assert isinstance(instance, Janus_imperativeocl_Typedef)
 
 @given(instance=Operation_strategy)
 @settings(max_examples=50)
 def test_operation_instantiation(instance):
     assert isinstance(instance, Operation)
-
-@given(instance=ImperativeExpression_strategy)
-@settings(max_examples=50)
-def test_imperativeexpression_instantiation(instance):
-    assert isinstance(instance, ImperativeExpression)
-
-@given(instance=Janus::imperativeocl::UnlinkExp_strategy)
-@settings(max_examples=50)
-def test_janus::imperativeocl::unlinkexp_instantiation(instance):
-    assert isinstance(instance, Janus::imperativeocl::UnlinkExp)
-
-@given(instance=Janus::imperativeocl::UnpackExp_strategy)
-@settings(max_examples=50)
-def test_janus::imperativeocl::unpackexp_instantiation(instance):
-    assert isinstance(instance, Janus::imperativeocl::UnpackExp)
-
-@given(instance=Janus::imperativeocl::ReturnExp_strategy)
-@settings(max_examples=50)
-def test_janus::imperativeocl::returnexp_instantiation(instance):
-    assert isinstance(instance, Janus::imperativeocl::ReturnExp)
-
-@given(instance=Janus::imperativeocl::AltExp_strategy)
-@settings(max_examples=50)
-def test_janus::imperativeocl::altexp_instantiation(instance):
-    assert isinstance(instance, Janus::imperativeocl::AltExp)
-
-@given(instance=Janus::imperativeocl::RaiseExp_strategy)
-@settings(max_examples=50)
-def test_janus::imperativeocl::raiseexp_instantiation(instance):
-    assert isinstance(instance, Janus::imperativeocl::RaiseExp)
-
-@given(instance=Janus::imperativeocl::ContinueExp_strategy)
-@settings(max_examples=50)
-def test_janus::imperativeocl::continueexp_instantiation(instance):
-    assert isinstance(instance, Janus::imperativeocl::ContinueExp)
-
-@given(instance=Janus::imperativeocl::VariableInitExp_strategy)
-@settings(max_examples=50)
-def test_janus::imperativeocl::variableinitexp_instantiation(instance):
-    assert isinstance(instance, Janus::imperativeocl::VariableInitExp)
-
-@given(instance=Janus::imperativeocl::VariableInitExp_strategy)
-def test_janus::imperativeocl::variableinitexp_withResult_type(instance):
-    assert isinstance(instance.withResult, bool)
-
-
-@given(instance=Janus::imperativeocl::VariableInitExp_strategy)
-def test_janus::imperativeocl::variableinitexp_withResult_setter(instance):
-    original = instance.withResult
-    instance.withResult = original
-    assert instance.withResult == original
-
-@given(instance=Janus::imperativeocl::TupleExp_strategy)
-@settings(max_examples=50)
-def test_janus::imperativeocl::tupleexp_instantiation(instance):
-    assert isinstance(instance, Janus::imperativeocl::TupleExp)
-
-@given(instance=Janus::imperativeocl::InstantiationExp_strategy)
-@settings(max_examples=50)
-def test_janus::imperativeocl::instantiationexp_instantiation(instance):
-    assert isinstance(instance, Janus::imperativeocl::InstantiationExp)
-
-@given(instance=Janus::imperativeocl::BreakExp_strategy)
-@settings(max_examples=50)
-def test_janus::imperativeocl::breakexp_instantiation(instance):
-    assert isinstance(instance, Janus::imperativeocl::BreakExp)
-
-@given(instance=Janus::imperativeocl::ComputeExp_strategy)
-@settings(max_examples=50)
-def test_janus::imperativeocl::computeexp_instantiation(instance):
-    assert isinstance(instance, Janus::imperativeocl::ComputeExp)
-
-@given(instance=Janus::imperativeocl::WhileExp_strategy)
-@settings(max_examples=50)
-def test_janus::imperativeocl::whileexp_instantiation(instance):
-    assert isinstance(instance, Janus::imperativeocl::WhileExp)
-
-@given(instance=Janus::imperativeocl::LogExp_strategy)
-@settings(max_examples=50)
-def test_janus::imperativeocl::logexp_instantiation(instance):
-    assert isinstance(instance, Janus::imperativeocl::LogExp)
-
-@given(instance=Janus::imperativeocl::LogExp_strategy)
-def test_janus::imperativeocl::logexp_level_type(instance):
-    assert isinstance(instance.level, int)
-
-
-@given(instance=Janus::imperativeocl::LogExp_strategy)
-def test_janus::imperativeocl::logexp_level_setter(instance):
-    original = instance.level
-    instance.level = original
-    assert instance.level == original
-
-@given(instance=Janus::imperativeocl::LogExp_strategy)
-def test_janus::imperativeocl::logexp_text_type(instance):
-    assert isinstance(instance.text, str)
-
-
-@given(instance=Janus::imperativeocl::LogExp_strategy)
-def test_janus::imperativeocl::logexp_text_setter(instance):
-    original = instance.text
-    instance.text = original
-    assert instance.text == original
-
-@given(instance=Janus::imperativeocl::TryExp_strategy)
-@settings(max_examples=50)
-def test_janus::imperativeocl::tryexp_instantiation(instance):
-    assert isinstance(instance, Janus::imperativeocl::TryExp)
-
-@given(instance=Janus::imperativeocl::AssertExp_strategy)
-@settings(max_examples=50)
-def test_janus::imperativeocl::assertexp_instantiation(instance):
-    assert isinstance(instance, Janus::imperativeocl::AssertExp)
-
-@given(instance=Janus::imperativeocl::AssertExp_strategy)
-def test_janus::imperativeocl::assertexp_severity_type(instance):
-    assert isinstance(instance.severity, str)
-
-
-@given(instance=Janus::imperativeocl::AssertExp_strategy)
-def test_janus::imperativeocl::assertexp_severity_setter(instance):
-    original = instance.severity
-    instance.severity = original
-    assert instance.severity == original
-
-@given(instance=Janus::imperativeocl::BlockExp_strategy)
-@settings(max_examples=50)
-def test_janus::imperativeocl::blockexp_instantiation(instance):
-    assert isinstance(instance, Janus::imperativeocl::BlockExp)
-
-@given(instance=Janus::imperativeocl::AssignExp_strategy)
-@settings(max_examples=50)
-def test_janus::imperativeocl::assignexp_instantiation(instance):
-    assert isinstance(instance, Janus::imperativeocl::AssignExp)
-
-@given(instance=Janus::imperativeocl::AssignExp_strategy)
-def test_janus::imperativeocl::assignexp_isReset_type(instance):
-    assert isinstance(instance.isReset, bool)
-
-
-@given(instance=Janus::imperativeocl::AssignExp_strategy)
-def test_janus::imperativeocl::assignexp_isReset_setter(instance):
-    original = instance.isReset
-    instance.isReset = original
-    assert instance.isReset == original
-
-@given(instance=ImperativeLoopExp_strategy)
-@settings(max_examples=50)
-def test_imperativeloopexp_instantiation(instance):
-    assert isinstance(instance, ImperativeLoopExp)
-
-@given(instance=Janus::imperativeocl::ForExp_strategy)
-@settings(max_examples=50)
-def test_janus::imperativeocl::forexp_instantiation(instance):
-    assert isinstance(instance, Janus::imperativeocl::ForExp)
-
-@given(instance=Janus::imperativeocl::CollectorExp_strategy)
-@settings(max_examples=50)
-def test_janus::imperativeocl::collectorexp_instantiation(instance):
-    assert isinstance(instance, Janus::imperativeocl::CollectorExp)
-
-@given(instance=Janus::imperativeocl::ImperativeIterateExp_strategy)
-@settings(max_examples=50)
-def test_janus::imperativeocl::imperativeiterateexp_instantiation(instance):
-    assert isinstance(instance, Janus::imperativeocl::ImperativeIterateExp)
-
-@given(instance=Janus::essentialocl::CollectionType_strategy)
-@settings(max_examples=50)
-def test_janus::essentialocl::collectiontype_instantiation(instance):
-    assert isinstance(instance, Janus::essentialocl::CollectionType)
-
-@given(instance=CollectionType_strategy)
-@settings(max_examples=50)
-def test_collectiontype_instantiation(instance):
-    assert isinstance(instance, CollectionType)
-
-@given(instance=Janus::imperativeocl::ListType_strategy)
-@settings(max_examples=50)
-def test_janus::imperativeocl::listtype_instantiation(instance):
-    assert isinstance(instance, Janus::imperativeocl::ListType)
-
-@given(instance=Janus::imperativeocl::DictionaryType_strategy)
-@settings(max_examples=50)
-def test_janus::imperativeocl::dictionarytype_instantiation(instance):
-    assert isinstance(instance, Janus::imperativeocl::DictionaryType)
-
-@given(instance=Janus::essentialocl::BagType_strategy)
-@settings(max_examples=50)
-def test_janus::essentialocl::bagtype_instantiation(instance):
-    assert isinstance(instance, Janus::essentialocl::BagType)
-
-@given(instance=TupleLiteralExp_strategy)
-@settings(max_examples=50)
-def test_tupleliteralexp_instantiation(instance):
-    assert isinstance(instance, TupleLiteralExp)
-
-@given(instance=Janus::essentialocl::TupleLiteralPart_strategy)
-@settings(max_examples=50)
-def test_janus::essentialocl::tupleliteralpart_instantiation(instance):
-    assert isinstance(instance, Janus::essentialocl::TupleLiteralPart)
-
-@given(instance=CallExp_strategy)
-@settings(max_examples=50)
-def test_callexp_instantiation(instance):
-    assert isinstance(instance, CallExp)
-
-@given(instance=Janus::essentialocl::FeaturePropertyCall_strategy)
-@settings(max_examples=50)
-def test_janus::essentialocl::featurepropertycall_instantiation(instance):
-    assert isinstance(instance, Janus::essentialocl::FeaturePropertyCall)
-
-@given(instance=Janus::essentialocl::OpaqueExpression_strategy)
-@settings(max_examples=50)
-def test_janus::essentialocl::opaqueexpression_instantiation(instance):
-    assert isinstance(instance, Janus::essentialocl::OpaqueExpression)
-
-@given(instance=OpaqueExpression_strategy)
-@settings(max_examples=50)
-def test_opaqueexpression_instantiation(instance):
-    assert isinstance(instance, OpaqueExpression)
-
-@given(instance=Janus::essentialocl::ExpressionInOcl_strategy)
-@settings(max_examples=50)
-def test_janus::essentialocl::expressioninocl_instantiation(instance):
-    assert isinstance(instance, Janus::essentialocl::ExpressionInOcl)
-
-@given(instance=TupleLiteralPart_strategy)
-@settings(max_examples=50)
-def test_tupleliteralpart_instantiation(instance):
-    assert isinstance(instance, TupleLiteralPart)
-
-@given(instance=emof::Type_strategy)
-@settings(max_examples=50)
-def test_emof::type_instantiation(instance):
-    assert isinstance(instance, emof::Type)
-
-@given(instance=Janus::essentialocl::AnyType_strategy)
-@settings(max_examples=50)
-def test_janus::essentialocl::anytype_instantiation(instance):
-    assert isinstance(instance, Janus::essentialocl::AnyType)
-
-@given(instance=emof::DataType_strategy)
-@settings(max_examples=50)
-def test_emof::datatype_instantiation(instance):
-    assert isinstance(instance, emof::DataType)
-
-@given(instance=Janus::essentialocl::TupleType_strategy)
-@settings(max_examples=50)
-def test_janus::essentialocl::tupletype_instantiation(instance):
-    assert isinstance(instance, Janus::essentialocl::TupleType)
-
-@given(instance=Janus::essentialocl::SetType_strategy)
-@settings(max_examples=50)
-def test_janus::essentialocl::settype_instantiation(instance):
-    assert isinstance(instance, Janus::essentialocl::SetType)
-
-@given(instance=Janus::essentialocl::SequenceType_strategy)
-@settings(max_examples=50)
-def test_janus::essentialocl::sequencetype_instantiation(instance):
-    assert isinstance(instance, Janus::essentialocl::SequenceType)
-
-@given(instance=Janus::essentialocl::OrderedSetType_strategy)
-@settings(max_examples=50)
-def test_janus::essentialocl::orderedsettype_instantiation(instance):
-    assert isinstance(instance, Janus::essentialocl::OrderedSetType)
-
-@given(instance=Janus::essentialocl::NumericLiteralExp_strategy)
-@settings(max_examples=50)
-def test_janus::essentialocl::numericliteralexp_instantiation(instance):
-    assert isinstance(instance, Janus::essentialocl::NumericLiteralExp)
-
-@given(instance=LiteralExp_strategy)
-@settings(max_examples=50)
-def test_literalexp_instantiation(instance):
-    assert isinstance(instance, LiteralExp)
-
-@given(instance=Janus::imperativeocl::AnonymousTupleLiteralExp_strategy)
-@settings(max_examples=50)
-def test_janus::imperativeocl::anonymoustupleliteralexp_instantiation(instance):
-    assert isinstance(instance, Janus::imperativeocl::AnonymousTupleLiteralExp)
-
-@given(instance=Janus::essentialocl::TupleLiteralExp_strategy)
-@settings(max_examples=50)
-def test_janus::essentialocl::tupleliteralexp_instantiation(instance):
-    assert isinstance(instance, Janus::essentialocl::TupleLiteralExp)
-
-@given(instance=Janus::template::TemplateExp_strategy)
-@settings(max_examples=50)
-def test_janus::template::templateexp_instantiation(instance):
-    assert isinstance(instance, Janus::template::TemplateExp)
-
-@given(instance=Janus::essentialocl::EnumLiteralExp_strategy)
-@settings(max_examples=50)
-def test_janus::essentialocl::enumliteralexp_instantiation(instance):
-    assert isinstance(instance, Janus::essentialocl::EnumLiteralExp)
-
-@given(instance=Janus::essentialocl::InvalidLiteralExp_strategy)
-@settings(max_examples=50)
-def test_janus::essentialocl::invalidliteralexp_instantiation(instance):
-    assert isinstance(instance, Janus::essentialocl::InvalidLiteralExp)
-
-@given(instance=Janus::essentialocl::CollectionLiteralExp_strategy)
-@settings(max_examples=50)
-def test_janus::essentialocl::collectionliteralexp_instantiation(instance):
-    assert isinstance(instance, Janus::essentialocl::CollectionLiteralExp)
-
-@given(instance=Janus::essentialocl::CollectionLiteralExp_strategy)
-def test_janus::essentialocl::collectionliteralexp_kind_type(instance):
-    assert isinstance(instance.kind, str)
-
-
-@given(instance=Janus::essentialocl::CollectionLiteralExp_strategy)
-def test_janus::essentialocl::collectionliteralexp_kind_setter(instance):
-    original = instance.kind
-    instance.kind = original
-    assert instance.kind == original
-
-@given(instance=Janus::essentialocl::NullLiteralExp_strategy)
-@settings(max_examples=50)
-def test_janus::essentialocl::nullliteralexp_instantiation(instance):
-    assert isinstance(instance, Janus::essentialocl::NullLiteralExp)
-
-@given(instance=Janus::imperativeocl::DictLiteralExp_strategy)
-@settings(max_examples=50)
-def test_janus::imperativeocl::dictliteralexp_instantiation(instance):
-    assert isinstance(instance, Janus::imperativeocl::DictLiteralExp)
-
-@given(instance=Janus::essentialocl::PrimitiveLiteralExp_strategy)
-@settings(max_examples=50)
-def test_janus::essentialocl::primitiveliteralexp_instantiation(instance):
-    assert isinstance(instance, Janus::essentialocl::PrimitiveLiteralExp)
-
-@given(instance=Janus::essentialocl::LiteralExp_strategy)
-@settings(max_examples=50)
-def test_janus::essentialocl::literalexp_instantiation(instance):
-    assert isinstance(instance, Janus::essentialocl::LiteralExp)
-
-@given(instance=Janus::essentialocl::RealLiteralExp_strategy)
-@settings(max_examples=50)
-def test_janus::essentialocl::realliteralexp_instantiation(instance):
-    assert isinstance(instance, Janus::essentialocl::RealLiteralExp)
-
-@given(instance=Janus::essentialocl::RealLiteralExp_strategy)
-def test_janus::essentialocl::realliteralexp_realSymbol_type(instance):
-    assert isinstance(instance.realSymbol, float)
-
-
-@given(instance=Janus::essentialocl::RealLiteralExp_strategy)
-def test_janus::essentialocl::realliteralexp_realSymbol_setter(instance):
-    original = instance.realSymbol
-    instance.realSymbol = original
-    assert instance.realSymbol == original
-
-@given(instance=Janus::essentialocl::OperationCallExp_strategy)
-@settings(max_examples=50)
-def test_janus::essentialocl::operationcallexp_instantiation(instance):
-    assert isinstance(instance, Janus::essentialocl::OperationCallExp)
-
-@given(instance=Janus::essentialocl::IntegerLiteralExp_strategy)
-@settings(max_examples=50)
-def test_janus::essentialocl::integerliteralexp_instantiation(instance):
-    assert isinstance(instance, Janus::essentialocl::IntegerLiteralExp)
-
-@given(instance=Janus::essentialocl::IntegerLiteralExp_strategy)
-def test_janus::essentialocl::integerliteralexp_integerSymbol_type(instance):
-    assert isinstance(instance.integerSymbol, int)
-
-
-@given(instance=Janus::essentialocl::IntegerLiteralExp_strategy)
-def test_janus::essentialocl::integerliteralexp_integerSymbol_setter(instance):
-    original = instance.integerSymbol
-    instance.integerSymbol = original
-    assert instance.integerSymbol == original
-
-@given(instance=Janus::essentialocl::StringLiteralExp_strategy)
-@settings(max_examples=50)
-def test_janus::essentialocl::stringliteralexp_instantiation(instance):
-    assert isinstance(instance, Janus::essentialocl::StringLiteralExp)
-
-@given(instance=Janus::essentialocl::StringLiteralExp_strategy)
-def test_janus::essentialocl::stringliteralexp_stringSymbol_type(instance):
-    assert isinstance(instance.stringSymbol, str)
-
-
-@given(instance=Janus::essentialocl::StringLiteralExp_strategy)
-def test_janus::essentialocl::stringliteralexp_stringSymbol_setter(instance):
-    original = instance.stringSymbol
-    instance.stringSymbol = original
-    assert instance.stringSymbol == original
-
-@given(instance=LoopExp_strategy)
-@settings(max_examples=50)
-def test_loopexp_instantiation(instance):
-    assert isinstance(instance, LoopExp)
-
-@given(instance=Janus::essentialocl::IteratorExp_strategy)
-@settings(max_examples=50)
-def test_janus::essentialocl::iteratorexp_instantiation(instance):
-    assert isinstance(instance, Janus::essentialocl::IteratorExp)
-
-@given(instance=Janus::essentialocl::IterateExp_strategy)
-@settings(max_examples=50)
-def test_janus::essentialocl::iterateexp_instantiation(instance):
-    assert isinstance(instance, Janus::essentialocl::IterateExp)
 
 @given(instance=Property_strategy)
 @settings(max_examples=50)
@@ -4406,49 +4319,43 @@ def test_property_instantiation(instance):
 def test_type_instantiation(instance):
     assert isinstance(instance, Type)
 
-@given(instance=Janus::essentialocl::VoidType_strategy)
+@given(instance=Janus_essentialocl_VoidType_strategy)
 @settings(max_examples=50)
-def test_janus::essentialocl::voidtype_instantiation(instance):
-    assert isinstance(instance, Janus::essentialocl::VoidType)
+def test_janus_essentialocl_voidtype_instantiation(instance):
+    assert isinstance(instance, Janus_essentialocl_VoidType)
 
-@given(instance=Janus::essentialocl::InvalidType_strategy)
+@given(instance=Janus_imperativeocl_TemplateParameterType_strategy)
 @settings(max_examples=50)
-def test_janus::essentialocl::invalidtype_instantiation(instance):
-    assert isinstance(instance, Janus::essentialocl::InvalidType)
-
-@given(instance=Janus::emof::DataType_strategy)
-@settings(max_examples=50)
-def test_janus::emof::datatype_instantiation(instance):
-    assert isinstance(instance, Janus::emof::DataType)
-
-@given(instance=Janus::imperativeocl::TemplateParameterType_strategy)
-@settings(max_examples=50)
-def test_janus::imperativeocl::templateparametertype_instantiation(instance):
-    assert isinstance(instance, Janus::imperativeocl::TemplateParameterType)
-
-@given(instance=Janus::imperativeocl::TemplateParameterType_strategy)
-def test_janus::imperativeocl::templateparametertype_specification_type(instance):
-    assert isinstance(instance.specification, str)
+def test_janus_imperativeocl_templateparametertype_instantiation(instance):
+    assert isinstance(instance, Janus_imperativeocl_TemplateParameterType)
 
 
-@given(instance=Janus::imperativeocl::TemplateParameterType_strategy)
-def test_janus::imperativeocl::templateparametertype_specification_setter(instance):
+
+@given(instance=Janus_imperativeocl_TemplateParameterType_strategy)
+def test_janus_imperativeocl_templateparametertype_specification_setter(instance):
     original = instance.specification
     instance.specification = original
     assert instance.specification == original
 
-@given(instance=Janus::emof::Class_strategy)
+@given(instance=Janus_essentialocl_InvalidType_strategy)
 @settings(max_examples=50)
-def test_janus::emof::class_instantiation(instance):
-    assert isinstance(instance, Janus::emof::Class)
+def test_janus_essentialocl_invalidtype_instantiation(instance):
+    assert isinstance(instance, Janus_essentialocl_InvalidType)
 
-@given(instance=Janus::emof::Class_strategy)
-def test_janus::emof::class_isAbstract_type(instance):
-    assert isinstance(instance.isAbstract, bool)
+@given(instance=Janus_emof_DataType_strategy)
+@settings(max_examples=50)
+def test_janus_emof_datatype_instantiation(instance):
+    assert isinstance(instance, Janus_emof_DataType)
+
+@given(instance=Janus_emof_Class_strategy)
+@settings(max_examples=50)
+def test_janus_emof_class_instantiation(instance):
+    assert isinstance(instance, Janus_emof_Class)
 
 
-@given(instance=Janus::emof::Class_strategy)
-def test_janus::emof::class_isAbstract_setter(instance):
+
+@given(instance=Janus_emof_Class_strategy)
+def test_janus_emof_class_isAbstract_setter(instance):
     original = instance.isAbstract
     instance.isAbstract = original
     assert instance.isAbstract == original

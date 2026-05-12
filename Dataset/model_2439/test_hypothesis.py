@@ -3,14 +3,14 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     NamedElement,
-    Sql::Column,
-    Sql::Table,
-    Sql::Database,
-    Sql::NamedElement,
+    Sql_Column,
+    Sql_Table,
+    Sql_Database,
+    Sql_NamedElement,
 )
 
 # =============================================================================
@@ -33,23 +33,23 @@ def test_namedelement_constructor_args():
 
 
 
-def test_sql::column_is_not_abstract():
-    assert not inspect.isabstract(Sql::Column)
+def test_sql_column_is_not_abstract():
+    assert not inspect.isabstract(Sql_Column)
 
 
-def test_sql::column_constructor_exists():
-    assert callable(Sql::Column.__init__)
+def test_sql_column_constructor_exists():
+    assert callable(Sql_Column.__init__)
 
 
-def test_sql::column_constructor_args():
-    sig = inspect.signature(Sql::Column.__init__)
+def test_sql_column_constructor_args():
+    sig = inspect.signature(Sql_Column.__init__)
     params = list(sig.parameters.keys())
     assert "type" in params, "Missing parameter 'type'"
 
-def test_sql::column_has_type():
-    assert hasattr(Sql::Column, "type")
+def test_sql_column_has_type():
+    assert hasattr(Sql_Column, "type")
     descriptor = None
-    for klass in Sql::Column.__mro__:
+    for klass in Sql_Column.__mro__:
         if "type" in klass.__dict__:
             descriptor = klass.__dict__["type"]
             break
@@ -57,51 +57,51 @@ def test_sql::column_has_type():
 
 
 
-def test_sql::table_is_not_abstract():
-    assert not inspect.isabstract(Sql::Table)
+def test_sql_table_is_not_abstract():
+    assert not inspect.isabstract(Sql_Table)
 
 
-def test_sql::table_constructor_exists():
-    assert callable(Sql::Table.__init__)
+def test_sql_table_constructor_exists():
+    assert callable(Sql_Table.__init__)
 
 
-def test_sql::table_constructor_args():
-    sig = inspect.signature(Sql::Table.__init__)
+def test_sql_table_constructor_args():
+    sig = inspect.signature(Sql_Table.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sql::database_is_not_abstract():
-    assert not inspect.isabstract(Sql::Database)
+def test_sql_database_is_not_abstract():
+    assert not inspect.isabstract(Sql_Database)
 
 
-def test_sql::database_constructor_exists():
-    assert callable(Sql::Database.__init__)
+def test_sql_database_constructor_exists():
+    assert callable(Sql_Database.__init__)
 
 
-def test_sql::database_constructor_args():
-    sig = inspect.signature(Sql::Database.__init__)
+def test_sql_database_constructor_args():
+    sig = inspect.signature(Sql_Database.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sql::namedelement_is_not_abstract():
-    assert not inspect.isabstract(Sql::NamedElement)
+def test_sql_namedelement_is_not_abstract():
+    assert not inspect.isabstract(Sql_NamedElement)
 
 
-def test_sql::namedelement_constructor_exists():
-    assert callable(Sql::NamedElement.__init__)
+def test_sql_namedelement_constructor_exists():
+    assert callable(Sql_NamedElement.__init__)
 
 
-def test_sql::namedelement_constructor_args():
-    sig = inspect.signature(Sql::NamedElement.__init__)
+def test_sql_namedelement_constructor_args():
+    sig = inspect.signature(Sql_NamedElement.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_sql::namedelement_has_name():
-    assert hasattr(Sql::NamedElement, "name")
+def test_sql_namedelement_has_name():
+    assert hasattr(Sql_NamedElement, "name")
     descriptor = None
-    for klass in Sql::NamedElement.__mro__:
+    for klass in Sql_NamedElement.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -122,19 +122,19 @@ safe_text = st.text(
 NamedElement_strategy = st.builds(
     NamedElement,
 )
-Sql::Column_strategy = st.builds(
-    Sql::Column,
+Sql_Column_strategy = st.builds(
+    Sql_Column,
     type=
         safe_text
 )
-Sql::Table_strategy = st.builds(
-    Sql::Table,
+Sql_Table_strategy = st.builds(
+    Sql_Table,
 )
-Sql::Database_strategy = st.builds(
-    Sql::Database,
+Sql_Database_strategy = st.builds(
+    Sql_Database,
 )
-Sql::NamedElement_strategy = st.builds(
-    Sql::NamedElement,
+Sql_NamedElement_strategy = st.builds(
+    Sql_NamedElement,
     name=
         safe_text
 )
@@ -144,44 +144,38 @@ Sql::NamedElement_strategy = st.builds(
 def test_namedelement_instantiation(instance):
     assert isinstance(instance, NamedElement)
 
-@given(instance=Sql::Column_strategy)
+@given(instance=Sql_Column_strategy)
 @settings(max_examples=50)
-def test_sql::column_instantiation(instance):
-    assert isinstance(instance, Sql::Column)
-
-@given(instance=Sql::Column_strategy)
-def test_sql::column_type_type(instance):
-    assert isinstance(instance.type, str)
+def test_sql_column_instantiation(instance):
+    assert isinstance(instance, Sql_Column)
 
 
-@given(instance=Sql::Column_strategy)
-def test_sql::column_type_setter(instance):
+
+@given(instance=Sql_Column_strategy)
+def test_sql_column_type_setter(instance):
     original = instance.type
     instance.type = original
     assert instance.type == original
 
-@given(instance=Sql::Table_strategy)
+@given(instance=Sql_Table_strategy)
 @settings(max_examples=50)
-def test_sql::table_instantiation(instance):
-    assert isinstance(instance, Sql::Table)
+def test_sql_table_instantiation(instance):
+    assert isinstance(instance, Sql_Table)
 
-@given(instance=Sql::Database_strategy)
+@given(instance=Sql_Database_strategy)
 @settings(max_examples=50)
-def test_sql::database_instantiation(instance):
-    assert isinstance(instance, Sql::Database)
+def test_sql_database_instantiation(instance):
+    assert isinstance(instance, Sql_Database)
 
-@given(instance=Sql::NamedElement_strategy)
+@given(instance=Sql_NamedElement_strategy)
 @settings(max_examples=50)
-def test_sql::namedelement_instantiation(instance):
-    assert isinstance(instance, Sql::NamedElement)
-
-@given(instance=Sql::NamedElement_strategy)
-def test_sql::namedelement_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_sql_namedelement_instantiation(instance):
+    assert isinstance(instance, Sql_NamedElement)
 
 
-@given(instance=Sql::NamedElement_strategy)
-def test_sql::namedelement_name_setter(instance):
+
+@given(instance=Sql_NamedElement_strategy)
+def test_sql_namedelement_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original

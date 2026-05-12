@@ -3,18 +3,18 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     AbstractState,
-    errorstm::SimpleState,
-    errorstm::InitialState,
-    errorstm::FinalState,
-    errorstm::CompositeState,
-    errorstm::Action,
-    errorstm::AbstractState,
-    errorstm::Transition,
-    errorstm::StateMachine,
+    errorstm_InitialState,
+    errorstm_FinalState,
+    errorstm_SimpleState,
+    errorstm_CompositeState,
+    errorstm_Action,
+    errorstm_AbstractState,
+    errorstm_Transition,
+    errorstm_StateMachine,
     ActionKind,
 )
 
@@ -38,79 +38,79 @@ def test_abstractstate_constructor_args():
 
 
 
-def test_errorstm::simplestate_is_not_abstract():
-    assert not inspect.isabstract(errorstm::SimpleState)
+def test_errorstm_initialstate_is_not_abstract():
+    assert not inspect.isabstract(errorstm_InitialState)
 
 
-def test_errorstm::simplestate_constructor_exists():
-    assert callable(errorstm::SimpleState.__init__)
+def test_errorstm_initialstate_constructor_exists():
+    assert callable(errorstm_InitialState.__init__)
 
 
-def test_errorstm::simplestate_constructor_args():
-    sig = inspect.signature(errorstm::SimpleState.__init__)
+def test_errorstm_initialstate_constructor_args():
+    sig = inspect.signature(errorstm_InitialState.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_errorstm::initialstate_is_not_abstract():
-    assert not inspect.isabstract(errorstm::InitialState)
+def test_errorstm_finalstate_is_not_abstract():
+    assert not inspect.isabstract(errorstm_FinalState)
 
 
-def test_errorstm::initialstate_constructor_exists():
-    assert callable(errorstm::InitialState.__init__)
+def test_errorstm_finalstate_constructor_exists():
+    assert callable(errorstm_FinalState.__init__)
 
 
-def test_errorstm::initialstate_constructor_args():
-    sig = inspect.signature(errorstm::InitialState.__init__)
+def test_errorstm_finalstate_constructor_args():
+    sig = inspect.signature(errorstm_FinalState.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_errorstm::finalstate_is_not_abstract():
-    assert not inspect.isabstract(errorstm::FinalState)
+def test_errorstm_simplestate_is_not_abstract():
+    assert not inspect.isabstract(errorstm_SimpleState)
 
 
-def test_errorstm::finalstate_constructor_exists():
-    assert callable(errorstm::FinalState.__init__)
+def test_errorstm_simplestate_constructor_exists():
+    assert callable(errorstm_SimpleState.__init__)
 
 
-def test_errorstm::finalstate_constructor_args():
-    sig = inspect.signature(errorstm::FinalState.__init__)
+def test_errorstm_simplestate_constructor_args():
+    sig = inspect.signature(errorstm_SimpleState.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_errorstm::compositestate_is_not_abstract():
-    assert not inspect.isabstract(errorstm::CompositeState)
+def test_errorstm_compositestate_is_not_abstract():
+    assert not inspect.isabstract(errorstm_CompositeState)
 
 
-def test_errorstm::compositestate_constructor_exists():
-    assert callable(errorstm::CompositeState.__init__)
+def test_errorstm_compositestate_constructor_exists():
+    assert callable(errorstm_CompositeState.__init__)
 
 
-def test_errorstm::compositestate_constructor_args():
-    sig = inspect.signature(errorstm::CompositeState.__init__)
+def test_errorstm_compositestate_constructor_args():
+    sig = inspect.signature(errorstm_CompositeState.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_errorstm::action_is_not_abstract():
-    assert not inspect.isabstract(errorstm::Action)
+def test_errorstm_action_is_not_abstract():
+    assert not inspect.isabstract(errorstm_Action)
 
 
-def test_errorstm::action_constructor_exists():
-    assert callable(errorstm::Action.__init__)
+def test_errorstm_action_constructor_exists():
+    assert callable(errorstm_Action.__init__)
 
 
-def test_errorstm::action_constructor_args():
-    sig = inspect.signature(errorstm::Action.__init__)
+def test_errorstm_action_constructor_args():
+    sig = inspect.signature(errorstm_Action.__init__)
     params = list(sig.parameters.keys())
     assert "kind" in params, "Missing parameter 'kind'"
 
-def test_errorstm::action_has_kind():
-    assert hasattr(errorstm::Action, "kind")
+def test_errorstm_action_has_kind():
+    assert hasattr(errorstm_Action, "kind")
     descriptor = None
-    for klass in errorstm::Action.__mro__:
+    for klass in errorstm_Action.__mro__:
         if "kind" in klass.__dict__:
             descriptor = klass.__dict__["kind"]
             break
@@ -118,23 +118,23 @@ def test_errorstm::action_has_kind():
 
 
 
-def test_errorstm::abstractstate_is_not_abstract():
-    assert not inspect.isabstract(errorstm::AbstractState)
+def test_errorstm_abstractstate_is_not_abstract():
+    assert not inspect.isabstract(errorstm_AbstractState)
 
 
-def test_errorstm::abstractstate_constructor_exists():
-    assert callable(errorstm::AbstractState.__init__)
+def test_errorstm_abstractstate_constructor_exists():
+    assert callable(errorstm_AbstractState.__init__)
 
 
-def test_errorstm::abstractstate_constructor_args():
-    sig = inspect.signature(errorstm::AbstractState.__init__)
+def test_errorstm_abstractstate_constructor_args():
+    sig = inspect.signature(errorstm_AbstractState.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_errorstm::abstractstate_has_name():
-    assert hasattr(errorstm::AbstractState, "name")
+def test_errorstm_abstractstate_has_name():
+    assert hasattr(errorstm_AbstractState, "name")
     descriptor = None
-    for klass in errorstm::AbstractState.__mro__:
+    for klass in errorstm_AbstractState.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -142,43 +142,43 @@ def test_errorstm::abstractstate_has_name():
 
 
 
-def test_errorstm::transition_is_not_abstract():
-    assert not inspect.isabstract(errorstm::Transition)
+def test_errorstm_transition_is_not_abstract():
+    assert not inspect.isabstract(errorstm_Transition)
 
 
-def test_errorstm::transition_constructor_exists():
-    assert callable(errorstm::Transition.__init__)
+def test_errorstm_transition_constructor_exists():
+    assert callable(errorstm_Transition.__init__)
 
 
-def test_errorstm::transition_constructor_args():
-    sig = inspect.signature(errorstm::Transition.__init__)
+def test_errorstm_transition_constructor_args():
+    sig = inspect.signature(errorstm_Transition.__init__)
     params = list(sig.parameters.keys())
-    assert "guard" in params, "Missing parameter 'guard'"
     assert "event" in params, "Missing parameter 'event'"
+    assert "guard" in params, "Missing parameter 'guard'"
     assert "name" in params, "Missing parameter 'name'"
 
-def test_errorstm::transition_has_guard():
-    assert hasattr(errorstm::Transition, "guard")
+def test_errorstm_transition_has_event():
+    assert hasattr(errorstm_Transition, "event")
     descriptor = None
-    for klass in errorstm::Transition.__mro__:
-        if "guard" in klass.__dict__:
-            descriptor = klass.__dict__["guard"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_errorstm::transition_has_event():
-    assert hasattr(errorstm::Transition, "event")
-    descriptor = None
-    for klass in errorstm::Transition.__mro__:
+    for klass in errorstm_Transition.__mro__:
         if "event" in klass.__dict__:
             descriptor = klass.__dict__["event"]
             break
     assert isinstance(descriptor, property)
 
-def test_errorstm::transition_has_name():
-    assert hasattr(errorstm::Transition, "name")
+def test_errorstm_transition_has_guard():
+    assert hasattr(errorstm_Transition, "guard")
     descriptor = None
-    for klass in errorstm::Transition.__mro__:
+    for klass in errorstm_Transition.__mro__:
+        if "guard" in klass.__dict__:
+            descriptor = klass.__dict__["guard"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_errorstm_transition_has_name():
+    assert hasattr(errorstm_Transition, "name")
+    descriptor = None
+    for klass in errorstm_Transition.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -186,16 +186,16 @@ def test_errorstm::transition_has_name():
 
 
 
-def test_errorstm::statemachine_is_not_abstract():
-    assert not inspect.isabstract(errorstm::StateMachine)
+def test_errorstm_statemachine_is_not_abstract():
+    assert not inspect.isabstract(errorstm_StateMachine)
 
 
-def test_errorstm::statemachine_constructor_exists():
-    assert callable(errorstm::StateMachine.__init__)
+def test_errorstm_statemachine_constructor_exists():
+    assert callable(errorstm_StateMachine.__init__)
 
 
-def test_errorstm::statemachine_constructor_args():
-    sig = inspect.signature(errorstm::StateMachine.__init__)
+def test_errorstm_statemachine_constructor_args():
+    sig = inspect.signature(errorstm_StateMachine.__init__)
     params = list(sig.parameters.keys())
 
 def test_actionkind_exists():
@@ -228,39 +228,39 @@ safe_text = st.text(
 AbstractState_strategy = st.builds(
     AbstractState,
 )
-errorstm::SimpleState_strategy = st.builds(
-    errorstm::SimpleState,
+errorstm_InitialState_strategy = st.builds(
+    errorstm_InitialState,
 )
-errorstm::InitialState_strategy = st.builds(
-    errorstm::InitialState,
+errorstm_FinalState_strategy = st.builds(
+    errorstm_FinalState,
 )
-errorstm::FinalState_strategy = st.builds(
-    errorstm::FinalState,
+errorstm_SimpleState_strategy = st.builds(
+    errorstm_SimpleState,
 )
-errorstm::CompositeState_strategy = st.builds(
-    errorstm::CompositeState,
+errorstm_CompositeState_strategy = st.builds(
+    errorstm_CompositeState,
 )
-errorstm::Action_strategy = st.builds(
-    errorstm::Action,
+errorstm_Action_strategy = st.builds(
+    errorstm_Action,
     kind=
         safe_text
 )
-errorstm::AbstractState_strategy = st.builds(
-    errorstm::AbstractState,
+errorstm_AbstractState_strategy = st.builds(
+    errorstm_AbstractState,
     name=
         safe_text
 )
-errorstm::Transition_strategy = st.builds(
-    errorstm::Transition,
-    guard=
-        safe_text,
+errorstm_Transition_strategy = st.builds(
+    errorstm_Transition,
     event=
         safe_text,
+    guard=
+        safe_text,
     name=
         safe_text
 )
-errorstm::StateMachine_strategy = st.builds(
-    errorstm::StateMachine,
+errorstm_StateMachine_strategy = st.builds(
+    errorstm_StateMachine,
 )
 
 @given(instance=AbstractState_strategy)
@@ -268,97 +268,82 @@ errorstm::StateMachine_strategy = st.builds(
 def test_abstractstate_instantiation(instance):
     assert isinstance(instance, AbstractState)
 
-@given(instance=errorstm::SimpleState_strategy)
+@given(instance=errorstm_InitialState_strategy)
 @settings(max_examples=50)
-def test_errorstm::simplestate_instantiation(instance):
-    assert isinstance(instance, errorstm::SimpleState)
+def test_errorstm_initialstate_instantiation(instance):
+    assert isinstance(instance, errorstm_InitialState)
 
-@given(instance=errorstm::InitialState_strategy)
+@given(instance=errorstm_FinalState_strategy)
 @settings(max_examples=50)
-def test_errorstm::initialstate_instantiation(instance):
-    assert isinstance(instance, errorstm::InitialState)
+def test_errorstm_finalstate_instantiation(instance):
+    assert isinstance(instance, errorstm_FinalState)
 
-@given(instance=errorstm::FinalState_strategy)
+@given(instance=errorstm_SimpleState_strategy)
 @settings(max_examples=50)
-def test_errorstm::finalstate_instantiation(instance):
-    assert isinstance(instance, errorstm::FinalState)
+def test_errorstm_simplestate_instantiation(instance):
+    assert isinstance(instance, errorstm_SimpleState)
 
-@given(instance=errorstm::CompositeState_strategy)
+@given(instance=errorstm_CompositeState_strategy)
 @settings(max_examples=50)
-def test_errorstm::compositestate_instantiation(instance):
-    assert isinstance(instance, errorstm::CompositeState)
+def test_errorstm_compositestate_instantiation(instance):
+    assert isinstance(instance, errorstm_CompositeState)
 
-@given(instance=errorstm::Action_strategy)
+@given(instance=errorstm_Action_strategy)
 @settings(max_examples=50)
-def test_errorstm::action_instantiation(instance):
-    assert isinstance(instance, errorstm::Action)
-
-@given(instance=errorstm::Action_strategy)
-def test_errorstm::action_kind_type(instance):
-    assert isinstance(instance.kind, str)
+def test_errorstm_action_instantiation(instance):
+    assert isinstance(instance, errorstm_Action)
 
 
-@given(instance=errorstm::Action_strategy)
-def test_errorstm::action_kind_setter(instance):
+
+@given(instance=errorstm_Action_strategy)
+def test_errorstm_action_kind_setter(instance):
     original = instance.kind
     instance.kind = original
     assert instance.kind == original
 
-@given(instance=errorstm::AbstractState_strategy)
+@given(instance=errorstm_AbstractState_strategy)
 @settings(max_examples=50)
-def test_errorstm::abstractstate_instantiation(instance):
-    assert isinstance(instance, errorstm::AbstractState)
-
-@given(instance=errorstm::AbstractState_strategy)
-def test_errorstm::abstractstate_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_errorstm_abstractstate_instantiation(instance):
+    assert isinstance(instance, errorstm_AbstractState)
 
 
-@given(instance=errorstm::AbstractState_strategy)
-def test_errorstm::abstractstate_name_setter(instance):
+
+@given(instance=errorstm_AbstractState_strategy)
+def test_errorstm_abstractstate_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=errorstm::Transition_strategy)
+@given(instance=errorstm_Transition_strategy)
 @settings(max_examples=50)
-def test_errorstm::transition_instantiation(instance):
-    assert isinstance(instance, errorstm::Transition)
-
-@given(instance=errorstm::Transition_strategy)
-def test_errorstm::transition_guard_type(instance):
-    assert isinstance(instance.guard, str)
+def test_errorstm_transition_instantiation(instance):
+    assert isinstance(instance, errorstm_Transition)
 
 
-@given(instance=errorstm::Transition_strategy)
-def test_errorstm::transition_guard_setter(instance):
-    original = instance.guard
-    instance.guard = original
-    assert instance.guard == original
 
-@given(instance=errorstm::Transition_strategy)
-def test_errorstm::transition_event_type(instance):
-    assert isinstance(instance.event, str)
-
-
-@given(instance=errorstm::Transition_strategy)
-def test_errorstm::transition_event_setter(instance):
+@given(instance=errorstm_Transition_strategy)
+def test_errorstm_transition_event_setter(instance):
     original = instance.event
     instance.event = original
     assert instance.event == original
 
-@given(instance=errorstm::Transition_strategy)
-def test_errorstm::transition_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
-@given(instance=errorstm::Transition_strategy)
-def test_errorstm::transition_name_setter(instance):
+@given(instance=errorstm_Transition_strategy)
+def test_errorstm_transition_guard_setter(instance):
+    original = instance.guard
+    instance.guard = original
+    assert instance.guard == original
+
+
+
+@given(instance=errorstm_Transition_strategy)
+def test_errorstm_transition_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=errorstm::StateMachine_strategy)
+@given(instance=errorstm_StateMachine_strategy)
 @settings(max_examples=50)
-def test_errorstm::statemachine_instantiation(instance):
-    assert isinstance(instance, errorstm::StateMachine)
+def test_errorstm_statemachine_instantiation(instance):
+    assert isinstance(instance, errorstm_StateMachine)

@@ -3,158 +3,158 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    BehavioredEClass,
-    xmof::BasicBehaviors::Behavior,
-    Communications::xmof::EAttribute,
-    Communications::Event,
-    ENamedElement,
-    xmof::Communications::Event,
-    xmof::Communications::Trigger,
-    OpaqueBehavior,
-    Behavior,
-    xmof::BasicBehaviors::OpaqueBehavior,
-    InvocationAction,
-    xmof::BasicActions::SendSignalAction,
-    xmof::BasicActions::CallAction,
-    IntermediateActivities::ObjectNode,
-    Pin,
-    xmof::BasicActions::OutputPin,
-    xmof::BasicActions::InputPin,
-    BasicActions::xmof::EClassifier,
-    CompleteActions::xmof::EClassifier,
-    ExecutableNode,
-    xmof::BasicActions::Action,
-    Communications::Trigger,
-    CallAction,
-    xmof::BasicActions::CallBehaviorAction,
-    xmof::BasicActions::CallOperationAction,
-    xmof::CompleteActions::StartObjectBehaviorAction,
-    IntermediateActions::xmof::EClassifier,
-    LinkEndData,
-    xmof::IntermediateActions::LinkEndDestructionData,
-    xmof::IntermediateActions::LinkEndCreationData,
-    WriteLinkAction,
-    xmof::IntermediateActions::DestroyLinkAction,
-    xmof::IntermediateActions::CreateLinkAction,
-    StructuralFeatureAction,
-    xmof::IntermediateActions::ReadStructuralFeatureAction,
-    xmof::IntermediateActions::ClearStructuralFeatureAction,
-    xmof::IntermediateActions::WriteStructuralFeatureAction,
-    IntermediateActions::xmof::EReference,
-    IntermediateActions::LinkEndData,
-    LinkAction,
-    xmof::IntermediateActions::WriteLinkAction,
-    xmof::IntermediateActions::ReadLinkAction,
-    WriteStructuralFeatureAction,
-    xmof::IntermediateActions::AddStructuralFeatureValueAction,
-    xmof::IntermediateActions::RemoveStructuralFeatureValueAction,
-    IntermediateActions::xmof::EStructuralFeature,
-    ExtraStructuredActivities::ExpansionNode,
-    ExtraStructuredActivities::ExpansionRegion,
-    Action,
-    xmof::CompleteActions::ReclassifyObjectAction,
-    xmof::IntermediateActions::StructuralFeatureAction,
-    xmof::IntermediateActions::ClearAssociationAction,
-    xmof::CompleteActions::AcceptEventAction,
-    xmof::IntermediateActions::DestroyObjectAction,
-    xmof::IntermediateActions::TestIdentityAction,
-    xmof::CompleteActions::StartClassifierBehaviorAction,
-    xmof::IntermediateActions::CreateObjectAction,
-    xmof::IntermediateActions::ValueSpecificationAction,
-    xmof::IntermediateActions::LinkAction,
-    xmof::CompleteActions::ReadExtentAction,
-    xmof::BasicActions::InvocationAction,
-    xmof::CompleteActions::ReadIsClassifiedObjectAction,
-    xmof::CompleteActions::ReduceAction,
-    xmof::IntermediateActions::ReadSelfAction,
-    xmof::CompleteStructuredActivities::StructuredActivityNode,
-    CompleteStructuredActivities::Clause,
-    BasicActions::InputPin,
-    CompleteStructuredActivities::ExecutableNode,
-    BasicActions::OutputPin,
-    StructuredActivityNode,
-    xmof::ExtraStructuredActivities::ExpansionRegion,
-    xmof::CompleteStructuredActivities::ConditionalNode,
-    xmof::CompleteStructuredActivities::LoopNode,
-    ObjectNode,
-    xmof::ExtraStructuredActivities::ExpansionNode,
-    xmof::IntermediateActivities::ActivityParameterNode,
-    FinalNode,
-    xmof::IntermediateActivities::ActivityFinalNode,
-    IntermediateActivities::ObjectFlow,
-    xmof::IntermediateActivities::ActivityNode,
-    IntermediateActivities::ActivityEdge,
-    xmof::IntermediateActivities::Activity,
-    CompleteStructuredActivities::StructuredActivityNode,
+from python_code import (
+    IntermediateActivities_ActivityEdge,
+    CompleteStructuredActivities_StructuredActivityNode,
     ActivityNode,
-    xmof::CompleteStructuredActivities::ExecutableNode,
-    xmof::IntermediateActivities::ControlNode,
+    xmof_CompleteStructuredActivities_ExecutableNode,
+    xmof_IntermediateActivities_ControlNode,
     ControlNode,
-    xmof::IntermediateActivities::InitialNode,
-    xmof::IntermediateActivities::ForkNode,
-    xmof::IntermediateActivities::FinalNode,
-    xmof::IntermediateActivities::JoinNode,
-    xmof::IntermediateActivities::DecisionNode,
-    xmof::IntermediateActivities::MergeNode,
+    xmof_IntermediateActivities_FinalNode,
+    xmof_IntermediateActivities_DecisionNode,
+    xmof_IntermediateActivities_InitialNode,
+    xmof_IntermediateActivities_JoinNode,
+    xmof_IntermediateActivities_ForkNode,
+    xmof_IntermediateActivities_MergeNode,
     LiteralSpecification,
-    xmof::Kernel::LiteralInteger,
-    xmof::Kernel::LiteralNull,
-    xmof::Kernel::LiteralUnlimitedNatural,
-    xmof::Kernel::LiteralString,
-    xmof::Kernel::LiteralBoolean,
+    xmof_Kernel_LiteralInteger,
+    xmof_Kernel_LiteralUnlimitedNatural,
+    xmof_Kernel_LiteralNull,
+    xmof_Kernel_LiteralString,
+    xmof_Kernel_LiteralBoolean,
     ValueSpecification,
-    xmof::Kernel::LiteralSpecification,
-    xmof::Kernel::InstanceValue,
-    Kernel::InstanceSpecification,
-    Kernel::ValueSpecification,
-    IntermediateActivities::ActivityNode,
-    IntermediateActivities::Activity,
-    xmof::IntermediateActivities::ActivityEdge,
+    xmof_Kernel_LiteralSpecification,
+    xmof_Kernel_InstanceValue,
+    Kernel_InstanceSpecification,
+    Kernel_ValueSpecification,
+    IntermediateActivities_ActivityNode,
+    IntermediateActivities_Activity,
     ActivityEdge,
-    xmof::IntermediateActivities::ControlFlow,
-    xmof::IntermediateActivities::ObjectFlow,
+    xmof_IntermediateActivities_ControlFlow,
+    xmof_IntermediateActivities_ObjectFlow,
     EDataType,
-    xmof::Kernel::PrimitiveType,
-    Kernel::xmof::EEnumLiteral,
+    xmof_Kernel_PrimitiveType,
+    Kernel_xmof_EEnumLiteral,
     InstanceSpecification,
-    xmof::Kernel::EEnumLiteralSpecification,
+    xmof_Kernel_EEnumLiteralSpecification,
     EParameter,
-    xmof::Kernel::DirectedParameter,
-    xmof::Kernel::MainEClass,
+    xmof_Kernel_DirectedParameter,
     EClass,
     EOperation,
-    xmof::Kernel::BehavioredEOperation,
+    xmof_Kernel_BehavioredEOperation,
     BehavioredEOperation,
-    xmof::Communications::Reception,
+    xmof_Communications_Reception,
     Event,
-    xmof::Communications::MessageEvent,
-    Communications::Signal,
+    xmof_Communications_MessageEvent,
+    Communications_Signal,
     MessageEvent,
-    xmof::Communications::SignalEvent,
-    Kernel::xmof::EStructuralFeature,
+    xmof_Communications_SignalEvent,
+    Kernel_xmof_EStructuralFeature,
     EModelElement,
-    xmof::CompleteStructuredActivities::Clause,
-    xmof::IntermediateActions::LinkEndData,
-    xmof::Kernel::Slot,
-    Kernel::Slot,
-    Kernel::xmof::EClassifier,
-    xmof::Kernel::InstanceSpecification,
+    xmof_CompleteStructuredActivities_Clause,
+    xmof_Kernel_Slot,
+    Kernel_Slot,
+    Kernel_xmof_EClassifier,
     ETypedElement,
-    xmof::IntermediateActivities::ObjectNode,
-    xmof::BasicActions::Pin,
-    xmof::Kernel::ValueSpecification,
-    xmof::BasicBehaviors::FunctionBehavior,
-    BasicBehaviors::Behavior,
+    xmof_IntermediateActivities_ObjectNode,
+    xmof_Kernel_ValueSpecification,
+    BasicBehaviors_Behavior,
     EClassifier,
-    xmof::Communications::Signal,
-    xmof::BasicBehaviors::BehavioredClassifier,
-    BasicBehaviors::BehavioredClassifier,
-    xmof::Kernel::BehavioredEClass,
-    Kernel::DirectedParameter,
-    Kernel::BehavioredEOperation,
+    xmof_BasicBehaviors_BehavioredClassifier,
+    BasicBehaviors_BehavioredClassifier,
+    xmof_Kernel_BehavioredEClass,
+    Kernel_DirectedParameter,
+    Kernel_BehavioredEOperation,
+    InvocationAction,
+    xmof_BasicActions_SendSignalAction,
+    xmof_BasicActions_CallAction,
+    IntermediateActivities_ObjectNode,
+    xmof_BasicActions_Pin,
+    Pin,
+    xmof_BasicActions_OutputPin,
+    xmof_BasicActions_InputPin,
+    BasicActions_xmof_EClassifier,
+    CompleteActions_xmof_EClassifier,
+    ExecutableNode,
+    xmof_BasicActions_Action,
+    Communications_Trigger,
+    CallAction,
+    xmof_BasicActions_CallOperationAction,
+    xmof_BasicActions_CallBehaviorAction,
+    xmof_CompleteActions_StartObjectBehaviorAction,
+    IntermediateActions_xmof_EClassifier,
+    LinkEndData,
+    xmof_IntermediateActions_LinkEndDestructionData,
+    xmof_IntermediateActions_LinkEndCreationData,
+    WriteLinkAction,
+    xmof_IntermediateActions_DestroyLinkAction,
+    xmof_IntermediateActions_CreateLinkAction,
+    StructuralFeatureAction,
+    xmof_IntermediateActions_ReadStructuralFeatureAction,
+    xmof_IntermediateActions_ClearStructuralFeatureAction,
+    xmof_IntermediateActions_WriteStructuralFeatureAction,
+    IntermediateActions_xmof_EReference,
+    xmof_IntermediateActions_LinkEndData,
+    IntermediateActions_LinkEndData,
+    LinkAction,
+    xmof_IntermediateActions_WriteLinkAction,
+    xmof_IntermediateActions_ReadLinkAction,
+    WriteStructuralFeatureAction,
+    xmof_IntermediateActions_AddStructuralFeatureValueAction,
+    xmof_IntermediateActions_RemoveStructuralFeatureValueAction,
+    IntermediateActions_xmof_EStructuralFeature,
+    ExtraStructuredActivities_ExpansionNode,
+    ExtraStructuredActivities_ExpansionRegion,
+    Action,
+    xmof_IntermediateActions_DestroyObjectAction,
+    xmof_BasicActions_InvocationAction,
+    xmof_IntermediateActions_ClearAssociationAction,
+    xmof_CompleteActions_ReduceAction,
+    xmof_IntermediateActions_ReadSelfAction,
+    xmof_IntermediateActions_LinkAction,
+    xmof_IntermediateActions_ValueSpecificationAction,
+    xmof_CompleteActions_ReclassifyObjectAction,
+    xmof_CompleteActions_AcceptEventAction,
+    xmof_CompleteActions_StartClassifierBehaviorAction,
+    xmof_CompleteActions_ReadExtentAction,
+    xmof_IntermediateActions_CreateObjectAction,
+    xmof_IntermediateActions_TestIdentityAction,
+    xmof_IntermediateActions_StructuralFeatureAction,
+    xmof_CompleteActions_ReadIsClassifiedObjectAction,
+    xmof_CompleteStructuredActivities_StructuredActivityNode,
+    CompleteStructuredActivities_Clause,
+    BasicActions_InputPin,
+    CompleteStructuredActivities_ExecutableNode,
+    BasicActions_OutputPin,
+    StructuredActivityNode,
+    xmof_ExtraStructuredActivities_ExpansionRegion,
+    xmof_CompleteStructuredActivities_ConditionalNode,
+    xmof_CompleteStructuredActivities_LoopNode,
+    ObjectNode,
+    xmof_ExtraStructuredActivities_ExpansionNode,
+    xmof_IntermediateActivities_ActivityParameterNode,
+    FinalNode,
+    xmof_IntermediateActivities_ActivityFinalNode,
+    IntermediateActivities_ObjectFlow,
+    BehavioredEClass,
+    xmof_Kernel_MainEClass,
+    xmof_BasicBehaviors_Behavior,
+    Communications_xmof_EAttribute,
+    xmof_Communications_Signal,
+    Communications_Event,
+    ENamedElement,
+    xmof_Kernel_InstanceSpecification,
+    xmof_Communications_Event,
+    xmof_IntermediateActivities_ActivityNode,
+    xmof_IntermediateActivities_ActivityEdge,
+    xmof_Communications_Trigger,
+    OpaqueBehavior,
+    xmof_BasicBehaviors_FunctionBehavior,
+    Behavior,
+    xmof_IntermediateActivities_Activity,
+    xmof_BasicBehaviors_OpaqueBehavior,
     ExpansionKind,
     CallConcurrencyKind,
     ParameterDirectionKind,
@@ -166,1374 +166,30 @@ from classes import (
 
 
 
-def test_behavioredeclass_is_not_abstract():
-    assert not inspect.isabstract(BehavioredEClass)
+def test_intermediateactivities_activityedge_is_not_abstract():
+    assert not inspect.isabstract(IntermediateActivities_ActivityEdge)
 
 
-def test_behavioredeclass_constructor_exists():
-    assert callable(BehavioredEClass.__init__)
+def test_intermediateactivities_activityedge_constructor_exists():
+    assert callable(IntermediateActivities_ActivityEdge.__init__)
 
 
-def test_behavioredeclass_constructor_args():
-    sig = inspect.signature(BehavioredEClass.__init__)
+def test_intermediateactivities_activityedge_constructor_args():
+    sig = inspect.signature(IntermediateActivities_ActivityEdge.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_xmof::basicbehaviors::behavior_is_not_abstract():
-    assert not inspect.isabstract(xmof::BasicBehaviors::Behavior)
+def test_completestructuredactivities_structuredactivitynode_is_not_abstract():
+    assert not inspect.isabstract(CompleteStructuredActivities_StructuredActivityNode)
 
 
-def test_xmof::basicbehaviors::behavior_constructor_exists():
-    assert callable(xmof::BasicBehaviors::Behavior.__init__)
+def test_completestructuredactivities_structuredactivitynode_constructor_exists():
+    assert callable(CompleteStructuredActivities_StructuredActivityNode.__init__)
 
 
-def test_xmof::basicbehaviors::behavior_constructor_args():
-    sig = inspect.signature(xmof::BasicBehaviors::Behavior.__init__)
-    params = list(sig.parameters.keys())
-    assert "reentrant" in params, "Missing parameter 'reentrant'"
-
-def test_xmof::basicbehaviors::behavior_has_reentrant():
-    assert hasattr(xmof::BasicBehaviors::Behavior, "reentrant")
-    descriptor = None
-    for klass in xmof::BasicBehaviors::Behavior.__mro__:
-        if "reentrant" in klass.__dict__:
-            descriptor = klass.__dict__["reentrant"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_communications::xmof::eattribute_is_not_abstract():
-    assert not inspect.isabstract(Communications::xmof::EAttribute)
-
-
-def test_communications::xmof::eattribute_constructor_exists():
-    assert callable(Communications::xmof::EAttribute.__init__)
-
-
-def test_communications::xmof::eattribute_constructor_args():
-    sig = inspect.signature(Communications::xmof::EAttribute.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_communications::event_is_not_abstract():
-    assert not inspect.isabstract(Communications::Event)
-
-
-def test_communications::event_constructor_exists():
-    assert callable(Communications::Event.__init__)
-
-
-def test_communications::event_constructor_args():
-    sig = inspect.signature(Communications::Event.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_enamedelement_is_not_abstract():
-    assert not inspect.isabstract(ENamedElement)
-
-
-def test_enamedelement_constructor_exists():
-    assert callable(ENamedElement.__init__)
-
-
-def test_enamedelement_constructor_args():
-    sig = inspect.signature(ENamedElement.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_xmof::communications::event_is_not_abstract():
-    assert not inspect.isabstract(xmof::Communications::Event)
-
-
-def test_xmof::communications::event_constructor_exists():
-    assert callable(xmof::Communications::Event.__init__)
-
-
-def test_xmof::communications::event_constructor_args():
-    sig = inspect.signature(xmof::Communications::Event.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_xmof::communications::trigger_is_not_abstract():
-    assert not inspect.isabstract(xmof::Communications::Trigger)
-
-
-def test_xmof::communications::trigger_constructor_exists():
-    assert callable(xmof::Communications::Trigger.__init__)
-
-
-def test_xmof::communications::trigger_constructor_args():
-    sig = inspect.signature(xmof::Communications::Trigger.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_opaquebehavior_is_not_abstract():
-    assert not inspect.isabstract(OpaqueBehavior)
-
-
-def test_opaquebehavior_constructor_exists():
-    assert callable(OpaqueBehavior.__init__)
-
-
-def test_opaquebehavior_constructor_args():
-    sig = inspect.signature(OpaqueBehavior.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_behavior_is_not_abstract():
-    assert not inspect.isabstract(Behavior)
-
-
-def test_behavior_constructor_exists():
-    assert callable(Behavior.__init__)
-
-
-def test_behavior_constructor_args():
-    sig = inspect.signature(Behavior.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_xmof::basicbehaviors::opaquebehavior_is_not_abstract():
-    assert not inspect.isabstract(xmof::BasicBehaviors::OpaqueBehavior)
-
-
-def test_xmof::basicbehaviors::opaquebehavior_constructor_exists():
-    assert callable(xmof::BasicBehaviors::OpaqueBehavior.__init__)
-
-
-def test_xmof::basicbehaviors::opaquebehavior_constructor_args():
-    sig = inspect.signature(xmof::BasicBehaviors::OpaqueBehavior.__init__)
-    params = list(sig.parameters.keys())
-    assert "body" in params, "Missing parameter 'body'"
-    assert "language" in params, "Missing parameter 'language'"
-
-def test_xmof::basicbehaviors::opaquebehavior_has_body():
-    assert hasattr(xmof::BasicBehaviors::OpaqueBehavior, "body")
-    descriptor = None
-    for klass in xmof::BasicBehaviors::OpaqueBehavior.__mro__:
-        if "body" in klass.__dict__:
-            descriptor = klass.__dict__["body"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_xmof::basicbehaviors::opaquebehavior_has_language():
-    assert hasattr(xmof::BasicBehaviors::OpaqueBehavior, "language")
-    descriptor = None
-    for klass in xmof::BasicBehaviors::OpaqueBehavior.__mro__:
-        if "language" in klass.__dict__:
-            descriptor = klass.__dict__["language"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_invocationaction_is_not_abstract():
-    assert not inspect.isabstract(InvocationAction)
-
-
-def test_invocationaction_constructor_exists():
-    assert callable(InvocationAction.__init__)
-
-
-def test_invocationaction_constructor_args():
-    sig = inspect.signature(InvocationAction.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_xmof::basicactions::sendsignalaction_is_not_abstract():
-    assert not inspect.isabstract(xmof::BasicActions::SendSignalAction)
-
-
-def test_xmof::basicactions::sendsignalaction_constructor_exists():
-    assert callable(xmof::BasicActions::SendSignalAction.__init__)
-
-
-def test_xmof::basicactions::sendsignalaction_constructor_args():
-    sig = inspect.signature(xmof::BasicActions::SendSignalAction.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_xmof::basicactions::callaction_is_not_abstract():
-    assert not inspect.isabstract(xmof::BasicActions::CallAction)
-
-
-def test_xmof::basicactions::callaction_constructor_exists():
-    assert callable(xmof::BasicActions::CallAction.__init__)
-
-
-def test_xmof::basicactions::callaction_constructor_args():
-    sig = inspect.signature(xmof::BasicActions::CallAction.__init__)
-    params = list(sig.parameters.keys())
-    assert "synchronous" in params, "Missing parameter 'synchronous'"
-
-def test_xmof::basicactions::callaction_has_synchronous():
-    assert hasattr(xmof::BasicActions::CallAction, "synchronous")
-    descriptor = None
-    for klass in xmof::BasicActions::CallAction.__mro__:
-        if "synchronous" in klass.__dict__:
-            descriptor = klass.__dict__["synchronous"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_intermediateactivities::objectnode_is_not_abstract():
-    assert not inspect.isabstract(IntermediateActivities::ObjectNode)
-
-
-def test_intermediateactivities::objectnode_constructor_exists():
-    assert callable(IntermediateActivities::ObjectNode.__init__)
-
-
-def test_intermediateactivities::objectnode_constructor_args():
-    sig = inspect.signature(IntermediateActivities::ObjectNode.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_pin_is_not_abstract():
-    assert not inspect.isabstract(Pin)
-
-
-def test_pin_constructor_exists():
-    assert callable(Pin.__init__)
-
-
-def test_pin_constructor_args():
-    sig = inspect.signature(Pin.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_xmof::basicactions::outputpin_is_not_abstract():
-    assert not inspect.isabstract(xmof::BasicActions::OutputPin)
-
-
-def test_xmof::basicactions::outputpin_constructor_exists():
-    assert callable(xmof::BasicActions::OutputPin.__init__)
-
-
-def test_xmof::basicactions::outputpin_constructor_args():
-    sig = inspect.signature(xmof::BasicActions::OutputPin.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_xmof::basicactions::inputpin_is_not_abstract():
-    assert not inspect.isabstract(xmof::BasicActions::InputPin)
-
-
-def test_xmof::basicactions::inputpin_constructor_exists():
-    assert callable(xmof::BasicActions::InputPin.__init__)
-
-
-def test_xmof::basicactions::inputpin_constructor_args():
-    sig = inspect.signature(xmof::BasicActions::InputPin.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_basicactions::xmof::eclassifier_is_not_abstract():
-    assert not inspect.isabstract(BasicActions::xmof::EClassifier)
-
-
-def test_basicactions::xmof::eclassifier_constructor_exists():
-    assert callable(BasicActions::xmof::EClassifier.__init__)
-
-
-def test_basicactions::xmof::eclassifier_constructor_args():
-    sig = inspect.signature(BasicActions::xmof::EClassifier.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_completeactions::xmof::eclassifier_is_not_abstract():
-    assert not inspect.isabstract(CompleteActions::xmof::EClassifier)
-
-
-def test_completeactions::xmof::eclassifier_constructor_exists():
-    assert callable(CompleteActions::xmof::EClassifier.__init__)
-
-
-def test_completeactions::xmof::eclassifier_constructor_args():
-    sig = inspect.signature(CompleteActions::xmof::EClassifier.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_executablenode_is_not_abstract():
-    assert not inspect.isabstract(ExecutableNode)
-
-
-def test_executablenode_constructor_exists():
-    assert callable(ExecutableNode.__init__)
-
-
-def test_executablenode_constructor_args():
-    sig = inspect.signature(ExecutableNode.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_xmof::basicactions::action_is_not_abstract():
-    assert not inspect.isabstract(xmof::BasicActions::Action)
-
-
-def test_xmof::basicactions::action_constructor_exists():
-    assert callable(xmof::BasicActions::Action.__init__)
-
-
-def test_xmof::basicactions::action_constructor_args():
-    sig = inspect.signature(xmof::BasicActions::Action.__init__)
-    params = list(sig.parameters.keys())
-    assert "locallyReentrant" in params, "Missing parameter 'locallyReentrant'"
-
-def test_xmof::basicactions::action_has_locallyReentrant():
-    assert hasattr(xmof::BasicActions::Action, "locallyReentrant")
-    descriptor = None
-    for klass in xmof::BasicActions::Action.__mro__:
-        if "locallyReentrant" in klass.__dict__:
-            descriptor = klass.__dict__["locallyReentrant"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_communications::trigger_is_not_abstract():
-    assert not inspect.isabstract(Communications::Trigger)
-
-
-def test_communications::trigger_constructor_exists():
-    assert callable(Communications::Trigger.__init__)
-
-
-def test_communications::trigger_constructor_args():
-    sig = inspect.signature(Communications::Trigger.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_callaction_is_not_abstract():
-    assert not inspect.isabstract(CallAction)
-
-
-def test_callaction_constructor_exists():
-    assert callable(CallAction.__init__)
-
-
-def test_callaction_constructor_args():
-    sig = inspect.signature(CallAction.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_xmof::basicactions::callbehavioraction_is_not_abstract():
-    assert not inspect.isabstract(xmof::BasicActions::CallBehaviorAction)
-
-
-def test_xmof::basicactions::callbehavioraction_constructor_exists():
-    assert callable(xmof::BasicActions::CallBehaviorAction.__init__)
-
-
-def test_xmof::basicactions::callbehavioraction_constructor_args():
-    sig = inspect.signature(xmof::BasicActions::CallBehaviorAction.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_xmof::basicactions::calloperationaction_is_not_abstract():
-    assert not inspect.isabstract(xmof::BasicActions::CallOperationAction)
-
-
-def test_xmof::basicactions::calloperationaction_constructor_exists():
-    assert callable(xmof::BasicActions::CallOperationAction.__init__)
-
-
-def test_xmof::basicactions::calloperationaction_constructor_args():
-    sig = inspect.signature(xmof::BasicActions::CallOperationAction.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_xmof::completeactions::startobjectbehavioraction_is_not_abstract():
-    assert not inspect.isabstract(xmof::CompleteActions::StartObjectBehaviorAction)
-
-
-def test_xmof::completeactions::startobjectbehavioraction_constructor_exists():
-    assert callable(xmof::CompleteActions::StartObjectBehaviorAction.__init__)
-
-
-def test_xmof::completeactions::startobjectbehavioraction_constructor_args():
-    sig = inspect.signature(xmof::CompleteActions::StartObjectBehaviorAction.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_intermediateactions::xmof::eclassifier_is_not_abstract():
-    assert not inspect.isabstract(IntermediateActions::xmof::EClassifier)
-
-
-def test_intermediateactions::xmof::eclassifier_constructor_exists():
-    assert callable(IntermediateActions::xmof::EClassifier.__init__)
-
-
-def test_intermediateactions::xmof::eclassifier_constructor_args():
-    sig = inspect.signature(IntermediateActions::xmof::EClassifier.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_linkenddata_is_not_abstract():
-    assert not inspect.isabstract(LinkEndData)
-
-
-def test_linkenddata_constructor_exists():
-    assert callable(LinkEndData.__init__)
-
-
-def test_linkenddata_constructor_args():
-    sig = inspect.signature(LinkEndData.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_xmof::intermediateactions::linkenddestructiondata_is_not_abstract():
-    assert not inspect.isabstract(xmof::IntermediateActions::LinkEndDestructionData)
-
-
-def test_xmof::intermediateactions::linkenddestructiondata_constructor_exists():
-    assert callable(xmof::IntermediateActions::LinkEndDestructionData.__init__)
-
-
-def test_xmof::intermediateactions::linkenddestructiondata_constructor_args():
-    sig = inspect.signature(xmof::IntermediateActions::LinkEndDestructionData.__init__)
-    params = list(sig.parameters.keys())
-    assert "destroyDuplicates" in params, "Missing parameter 'destroyDuplicates'"
-
-def test_xmof::intermediateactions::linkenddestructiondata_has_destroyDuplicates():
-    assert hasattr(xmof::IntermediateActions::LinkEndDestructionData, "destroyDuplicates")
-    descriptor = None
-    for klass in xmof::IntermediateActions::LinkEndDestructionData.__mro__:
-        if "destroyDuplicates" in klass.__dict__:
-            descriptor = klass.__dict__["destroyDuplicates"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_xmof::intermediateactions::linkendcreationdata_is_not_abstract():
-    assert not inspect.isabstract(xmof::IntermediateActions::LinkEndCreationData)
-
-
-def test_xmof::intermediateactions::linkendcreationdata_constructor_exists():
-    assert callable(xmof::IntermediateActions::LinkEndCreationData.__init__)
-
-
-def test_xmof::intermediateactions::linkendcreationdata_constructor_args():
-    sig = inspect.signature(xmof::IntermediateActions::LinkEndCreationData.__init__)
-    params = list(sig.parameters.keys())
-    assert "replaceAll" in params, "Missing parameter 'replaceAll'"
-
-def test_xmof::intermediateactions::linkendcreationdata_has_replaceAll():
-    assert hasattr(xmof::IntermediateActions::LinkEndCreationData, "replaceAll")
-    descriptor = None
-    for klass in xmof::IntermediateActions::LinkEndCreationData.__mro__:
-        if "replaceAll" in klass.__dict__:
-            descriptor = klass.__dict__["replaceAll"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_writelinkaction_is_not_abstract():
-    assert not inspect.isabstract(WriteLinkAction)
-
-
-def test_writelinkaction_constructor_exists():
-    assert callable(WriteLinkAction.__init__)
-
-
-def test_writelinkaction_constructor_args():
-    sig = inspect.signature(WriteLinkAction.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_xmof::intermediateactions::destroylinkaction_is_not_abstract():
-    assert not inspect.isabstract(xmof::IntermediateActions::DestroyLinkAction)
-
-
-def test_xmof::intermediateactions::destroylinkaction_constructor_exists():
-    assert callable(xmof::IntermediateActions::DestroyLinkAction.__init__)
-
-
-def test_xmof::intermediateactions::destroylinkaction_constructor_args():
-    sig = inspect.signature(xmof::IntermediateActions::DestroyLinkAction.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_xmof::intermediateactions::createlinkaction_is_not_abstract():
-    assert not inspect.isabstract(xmof::IntermediateActions::CreateLinkAction)
-
-
-def test_xmof::intermediateactions::createlinkaction_constructor_exists():
-    assert callable(xmof::IntermediateActions::CreateLinkAction.__init__)
-
-
-def test_xmof::intermediateactions::createlinkaction_constructor_args():
-    sig = inspect.signature(xmof::IntermediateActions::CreateLinkAction.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_structuralfeatureaction_is_not_abstract():
-    assert not inspect.isabstract(StructuralFeatureAction)
-
-
-def test_structuralfeatureaction_constructor_exists():
-    assert callable(StructuralFeatureAction.__init__)
-
-
-def test_structuralfeatureaction_constructor_args():
-    sig = inspect.signature(StructuralFeatureAction.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_xmof::intermediateactions::readstructuralfeatureaction_is_not_abstract():
-    assert not inspect.isabstract(xmof::IntermediateActions::ReadStructuralFeatureAction)
-
-
-def test_xmof::intermediateactions::readstructuralfeatureaction_constructor_exists():
-    assert callable(xmof::IntermediateActions::ReadStructuralFeatureAction.__init__)
-
-
-def test_xmof::intermediateactions::readstructuralfeatureaction_constructor_args():
-    sig = inspect.signature(xmof::IntermediateActions::ReadStructuralFeatureAction.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_xmof::intermediateactions::clearstructuralfeatureaction_is_not_abstract():
-    assert not inspect.isabstract(xmof::IntermediateActions::ClearStructuralFeatureAction)
-
-
-def test_xmof::intermediateactions::clearstructuralfeatureaction_constructor_exists():
-    assert callable(xmof::IntermediateActions::ClearStructuralFeatureAction.__init__)
-
-
-def test_xmof::intermediateactions::clearstructuralfeatureaction_constructor_args():
-    sig = inspect.signature(xmof::IntermediateActions::ClearStructuralFeatureAction.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_xmof::intermediateactions::writestructuralfeatureaction_is_not_abstract():
-    assert not inspect.isabstract(xmof::IntermediateActions::WriteStructuralFeatureAction)
-
-
-def test_xmof::intermediateactions::writestructuralfeatureaction_constructor_exists():
-    assert callable(xmof::IntermediateActions::WriteStructuralFeatureAction.__init__)
-
-
-def test_xmof::intermediateactions::writestructuralfeatureaction_constructor_args():
-    sig = inspect.signature(xmof::IntermediateActions::WriteStructuralFeatureAction.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_intermediateactions::xmof::ereference_is_not_abstract():
-    assert not inspect.isabstract(IntermediateActions::xmof::EReference)
-
-
-def test_intermediateactions::xmof::ereference_constructor_exists():
-    assert callable(IntermediateActions::xmof::EReference.__init__)
-
-
-def test_intermediateactions::xmof::ereference_constructor_args():
-    sig = inspect.signature(IntermediateActions::xmof::EReference.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_intermediateactions::linkenddata_is_not_abstract():
-    assert not inspect.isabstract(IntermediateActions::LinkEndData)
-
-
-def test_intermediateactions::linkenddata_constructor_exists():
-    assert callable(IntermediateActions::LinkEndData.__init__)
-
-
-def test_intermediateactions::linkenddata_constructor_args():
-    sig = inspect.signature(IntermediateActions::LinkEndData.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_linkaction_is_not_abstract():
-    assert not inspect.isabstract(LinkAction)
-
-
-def test_linkaction_constructor_exists():
-    assert callable(LinkAction.__init__)
-
-
-def test_linkaction_constructor_args():
-    sig = inspect.signature(LinkAction.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_xmof::intermediateactions::writelinkaction_is_not_abstract():
-    assert not inspect.isabstract(xmof::IntermediateActions::WriteLinkAction)
-
-
-def test_xmof::intermediateactions::writelinkaction_constructor_exists():
-    assert callable(xmof::IntermediateActions::WriteLinkAction.__init__)
-
-
-def test_xmof::intermediateactions::writelinkaction_constructor_args():
-    sig = inspect.signature(xmof::IntermediateActions::WriteLinkAction.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_xmof::intermediateactions::readlinkaction_is_not_abstract():
-    assert not inspect.isabstract(xmof::IntermediateActions::ReadLinkAction)
-
-
-def test_xmof::intermediateactions::readlinkaction_constructor_exists():
-    assert callable(xmof::IntermediateActions::ReadLinkAction.__init__)
-
-
-def test_xmof::intermediateactions::readlinkaction_constructor_args():
-    sig = inspect.signature(xmof::IntermediateActions::ReadLinkAction.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_writestructuralfeatureaction_is_not_abstract():
-    assert not inspect.isabstract(WriteStructuralFeatureAction)
-
-
-def test_writestructuralfeatureaction_constructor_exists():
-    assert callable(WriteStructuralFeatureAction.__init__)
-
-
-def test_writestructuralfeatureaction_constructor_args():
-    sig = inspect.signature(WriteStructuralFeatureAction.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_xmof::intermediateactions::addstructuralfeaturevalueaction_is_not_abstract():
-    assert not inspect.isabstract(xmof::IntermediateActions::AddStructuralFeatureValueAction)
-
-
-def test_xmof::intermediateactions::addstructuralfeaturevalueaction_constructor_exists():
-    assert callable(xmof::IntermediateActions::AddStructuralFeatureValueAction.__init__)
-
-
-def test_xmof::intermediateactions::addstructuralfeaturevalueaction_constructor_args():
-    sig = inspect.signature(xmof::IntermediateActions::AddStructuralFeatureValueAction.__init__)
-    params = list(sig.parameters.keys())
-    assert "replaceAll" in params, "Missing parameter 'replaceAll'"
-
-def test_xmof::intermediateactions::addstructuralfeaturevalueaction_has_replaceAll():
-    assert hasattr(xmof::IntermediateActions::AddStructuralFeatureValueAction, "replaceAll")
-    descriptor = None
-    for klass in xmof::IntermediateActions::AddStructuralFeatureValueAction.__mro__:
-        if "replaceAll" in klass.__dict__:
-            descriptor = klass.__dict__["replaceAll"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_xmof::intermediateactions::removestructuralfeaturevalueaction_is_not_abstract():
-    assert not inspect.isabstract(xmof::IntermediateActions::RemoveStructuralFeatureValueAction)
-
-
-def test_xmof::intermediateactions::removestructuralfeaturevalueaction_constructor_exists():
-    assert callable(xmof::IntermediateActions::RemoveStructuralFeatureValueAction.__init__)
-
-
-def test_xmof::intermediateactions::removestructuralfeaturevalueaction_constructor_args():
-    sig = inspect.signature(xmof::IntermediateActions::RemoveStructuralFeatureValueAction.__init__)
-    params = list(sig.parameters.keys())
-    assert "removeDuplicates" in params, "Missing parameter 'removeDuplicates'"
-
-def test_xmof::intermediateactions::removestructuralfeaturevalueaction_has_removeDuplicates():
-    assert hasattr(xmof::IntermediateActions::RemoveStructuralFeatureValueAction, "removeDuplicates")
-    descriptor = None
-    for klass in xmof::IntermediateActions::RemoveStructuralFeatureValueAction.__mro__:
-        if "removeDuplicates" in klass.__dict__:
-            descriptor = klass.__dict__["removeDuplicates"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_intermediateactions::xmof::estructuralfeature_is_not_abstract():
-    assert not inspect.isabstract(IntermediateActions::xmof::EStructuralFeature)
-
-
-def test_intermediateactions::xmof::estructuralfeature_constructor_exists():
-    assert callable(IntermediateActions::xmof::EStructuralFeature.__init__)
-
-
-def test_intermediateactions::xmof::estructuralfeature_constructor_args():
-    sig = inspect.signature(IntermediateActions::xmof::EStructuralFeature.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_extrastructuredactivities::expansionnode_is_not_abstract():
-    assert not inspect.isabstract(ExtraStructuredActivities::ExpansionNode)
-
-
-def test_extrastructuredactivities::expansionnode_constructor_exists():
-    assert callable(ExtraStructuredActivities::ExpansionNode.__init__)
-
-
-def test_extrastructuredactivities::expansionnode_constructor_args():
-    sig = inspect.signature(ExtraStructuredActivities::ExpansionNode.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_extrastructuredactivities::expansionregion_is_not_abstract():
-    assert not inspect.isabstract(ExtraStructuredActivities::ExpansionRegion)
-
-
-def test_extrastructuredactivities::expansionregion_constructor_exists():
-    assert callable(ExtraStructuredActivities::ExpansionRegion.__init__)
-
-
-def test_extrastructuredactivities::expansionregion_constructor_args():
-    sig = inspect.signature(ExtraStructuredActivities::ExpansionRegion.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_action_is_not_abstract():
-    assert not inspect.isabstract(Action)
-
-
-def test_action_constructor_exists():
-    assert callable(Action.__init__)
-
-
-def test_action_constructor_args():
-    sig = inspect.signature(Action.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_xmof::completeactions::reclassifyobjectaction_is_not_abstract():
-    assert not inspect.isabstract(xmof::CompleteActions::ReclassifyObjectAction)
-
-
-def test_xmof::completeactions::reclassifyobjectaction_constructor_exists():
-    assert callable(xmof::CompleteActions::ReclassifyObjectAction.__init__)
-
-
-def test_xmof::completeactions::reclassifyobjectaction_constructor_args():
-    sig = inspect.signature(xmof::CompleteActions::ReclassifyObjectAction.__init__)
-    params = list(sig.parameters.keys())
-    assert "replaceAll" in params, "Missing parameter 'replaceAll'"
-
-def test_xmof::completeactions::reclassifyobjectaction_has_replaceAll():
-    assert hasattr(xmof::CompleteActions::ReclassifyObjectAction, "replaceAll")
-    descriptor = None
-    for klass in xmof::CompleteActions::ReclassifyObjectAction.__mro__:
-        if "replaceAll" in klass.__dict__:
-            descriptor = klass.__dict__["replaceAll"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_xmof::intermediateactions::structuralfeatureaction_is_not_abstract():
-    assert not inspect.isabstract(xmof::IntermediateActions::StructuralFeatureAction)
-
-
-def test_xmof::intermediateactions::structuralfeatureaction_constructor_exists():
-    assert callable(xmof::IntermediateActions::StructuralFeatureAction.__init__)
-
-
-def test_xmof::intermediateactions::structuralfeatureaction_constructor_args():
-    sig = inspect.signature(xmof::IntermediateActions::StructuralFeatureAction.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_xmof::intermediateactions::clearassociationaction_is_not_abstract():
-    assert not inspect.isabstract(xmof::IntermediateActions::ClearAssociationAction)
-
-
-def test_xmof::intermediateactions::clearassociationaction_constructor_exists():
-    assert callable(xmof::IntermediateActions::ClearAssociationAction.__init__)
-
-
-def test_xmof::intermediateactions::clearassociationaction_constructor_args():
-    sig = inspect.signature(xmof::IntermediateActions::ClearAssociationAction.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_xmof::completeactions::accepteventaction_is_not_abstract():
-    assert not inspect.isabstract(xmof::CompleteActions::AcceptEventAction)
-
-
-def test_xmof::completeactions::accepteventaction_constructor_exists():
-    assert callable(xmof::CompleteActions::AcceptEventAction.__init__)
-
-
-def test_xmof::completeactions::accepteventaction_constructor_args():
-    sig = inspect.signature(xmof::CompleteActions::AcceptEventAction.__init__)
-    params = list(sig.parameters.keys())
-    assert "unmarshall" in params, "Missing parameter 'unmarshall'"
-
-def test_xmof::completeactions::accepteventaction_has_unmarshall():
-    assert hasattr(xmof::CompleteActions::AcceptEventAction, "unmarshall")
-    descriptor = None
-    for klass in xmof::CompleteActions::AcceptEventAction.__mro__:
-        if "unmarshall" in klass.__dict__:
-            descriptor = klass.__dict__["unmarshall"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_xmof::intermediateactions::destroyobjectaction_is_not_abstract():
-    assert not inspect.isabstract(xmof::IntermediateActions::DestroyObjectAction)
-
-
-def test_xmof::intermediateactions::destroyobjectaction_constructor_exists():
-    assert callable(xmof::IntermediateActions::DestroyObjectAction.__init__)
-
-
-def test_xmof::intermediateactions::destroyobjectaction_constructor_args():
-    sig = inspect.signature(xmof::IntermediateActions::DestroyObjectAction.__init__)
-    params = list(sig.parameters.keys())
-    assert "destroyLinks" in params, "Missing parameter 'destroyLinks'"
-    assert "destroyOwnedObjects" in params, "Missing parameter 'destroyOwnedObjects'"
-
-def test_xmof::intermediateactions::destroyobjectaction_has_destroyLinks():
-    assert hasattr(xmof::IntermediateActions::DestroyObjectAction, "destroyLinks")
-    descriptor = None
-    for klass in xmof::IntermediateActions::DestroyObjectAction.__mro__:
-        if "destroyLinks" in klass.__dict__:
-            descriptor = klass.__dict__["destroyLinks"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_xmof::intermediateactions::destroyobjectaction_has_destroyOwnedObjects():
-    assert hasattr(xmof::IntermediateActions::DestroyObjectAction, "destroyOwnedObjects")
-    descriptor = None
-    for klass in xmof::IntermediateActions::DestroyObjectAction.__mro__:
-        if "destroyOwnedObjects" in klass.__dict__:
-            descriptor = klass.__dict__["destroyOwnedObjects"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_xmof::intermediateactions::testidentityaction_is_not_abstract():
-    assert not inspect.isabstract(xmof::IntermediateActions::TestIdentityAction)
-
-
-def test_xmof::intermediateactions::testidentityaction_constructor_exists():
-    assert callable(xmof::IntermediateActions::TestIdentityAction.__init__)
-
-
-def test_xmof::intermediateactions::testidentityaction_constructor_args():
-    sig = inspect.signature(xmof::IntermediateActions::TestIdentityAction.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_xmof::completeactions::startclassifierbehavioraction_is_not_abstract():
-    assert not inspect.isabstract(xmof::CompleteActions::StartClassifierBehaviorAction)
-
-
-def test_xmof::completeactions::startclassifierbehavioraction_constructor_exists():
-    assert callable(xmof::CompleteActions::StartClassifierBehaviorAction.__init__)
-
-
-def test_xmof::completeactions::startclassifierbehavioraction_constructor_args():
-    sig = inspect.signature(xmof::CompleteActions::StartClassifierBehaviorAction.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_xmof::intermediateactions::createobjectaction_is_not_abstract():
-    assert not inspect.isabstract(xmof::IntermediateActions::CreateObjectAction)
-
-
-def test_xmof::intermediateactions::createobjectaction_constructor_exists():
-    assert callable(xmof::IntermediateActions::CreateObjectAction.__init__)
-
-
-def test_xmof::intermediateactions::createobjectaction_constructor_args():
-    sig = inspect.signature(xmof::IntermediateActions::CreateObjectAction.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_xmof::intermediateactions::valuespecificationaction_is_not_abstract():
-    assert not inspect.isabstract(xmof::IntermediateActions::ValueSpecificationAction)
-
-
-def test_xmof::intermediateactions::valuespecificationaction_constructor_exists():
-    assert callable(xmof::IntermediateActions::ValueSpecificationAction.__init__)
-
-
-def test_xmof::intermediateactions::valuespecificationaction_constructor_args():
-    sig = inspect.signature(xmof::IntermediateActions::ValueSpecificationAction.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_xmof::intermediateactions::linkaction_is_not_abstract():
-    assert not inspect.isabstract(xmof::IntermediateActions::LinkAction)
-
-
-def test_xmof::intermediateactions::linkaction_constructor_exists():
-    assert callable(xmof::IntermediateActions::LinkAction.__init__)
-
-
-def test_xmof::intermediateactions::linkaction_constructor_args():
-    sig = inspect.signature(xmof::IntermediateActions::LinkAction.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_xmof::completeactions::readextentaction_is_not_abstract():
-    assert not inspect.isabstract(xmof::CompleteActions::ReadExtentAction)
-
-
-def test_xmof::completeactions::readextentaction_constructor_exists():
-    assert callable(xmof::CompleteActions::ReadExtentAction.__init__)
-
-
-def test_xmof::completeactions::readextentaction_constructor_args():
-    sig = inspect.signature(xmof::CompleteActions::ReadExtentAction.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_xmof::basicactions::invocationaction_is_not_abstract():
-    assert not inspect.isabstract(xmof::BasicActions::InvocationAction)
-
-
-def test_xmof::basicactions::invocationaction_constructor_exists():
-    assert callable(xmof::BasicActions::InvocationAction.__init__)
-
-
-def test_xmof::basicactions::invocationaction_constructor_args():
-    sig = inspect.signature(xmof::BasicActions::InvocationAction.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_xmof::completeactions::readisclassifiedobjectaction_is_not_abstract():
-    assert not inspect.isabstract(xmof::CompleteActions::ReadIsClassifiedObjectAction)
-
-
-def test_xmof::completeactions::readisclassifiedobjectaction_constructor_exists():
-    assert callable(xmof::CompleteActions::ReadIsClassifiedObjectAction.__init__)
-
-
-def test_xmof::completeactions::readisclassifiedobjectaction_constructor_args():
-    sig = inspect.signature(xmof::CompleteActions::ReadIsClassifiedObjectAction.__init__)
-    params = list(sig.parameters.keys())
-    assert "direct" in params, "Missing parameter 'direct'"
-
-def test_xmof::completeactions::readisclassifiedobjectaction_has_direct():
-    assert hasattr(xmof::CompleteActions::ReadIsClassifiedObjectAction, "direct")
-    descriptor = None
-    for klass in xmof::CompleteActions::ReadIsClassifiedObjectAction.__mro__:
-        if "direct" in klass.__dict__:
-            descriptor = klass.__dict__["direct"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_xmof::completeactions::reduceaction_is_not_abstract():
-    assert not inspect.isabstract(xmof::CompleteActions::ReduceAction)
-
-
-def test_xmof::completeactions::reduceaction_constructor_exists():
-    assert callable(xmof::CompleteActions::ReduceAction.__init__)
-
-
-def test_xmof::completeactions::reduceaction_constructor_args():
-    sig = inspect.signature(xmof::CompleteActions::ReduceAction.__init__)
-    params = list(sig.parameters.keys())
-    assert "ordered" in params, "Missing parameter 'ordered'"
-
-def test_xmof::completeactions::reduceaction_has_ordered():
-    assert hasattr(xmof::CompleteActions::ReduceAction, "ordered")
-    descriptor = None
-    for klass in xmof::CompleteActions::ReduceAction.__mro__:
-        if "ordered" in klass.__dict__:
-            descriptor = klass.__dict__["ordered"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_xmof::intermediateactions::readselfaction_is_not_abstract():
-    assert not inspect.isabstract(xmof::IntermediateActions::ReadSelfAction)
-
-
-def test_xmof::intermediateactions::readselfaction_constructor_exists():
-    assert callable(xmof::IntermediateActions::ReadSelfAction.__init__)
-
-
-def test_xmof::intermediateactions::readselfaction_constructor_args():
-    sig = inspect.signature(xmof::IntermediateActions::ReadSelfAction.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_xmof::completestructuredactivities::structuredactivitynode_is_not_abstract():
-    assert not inspect.isabstract(xmof::CompleteStructuredActivities::StructuredActivityNode)
-
-
-def test_xmof::completestructuredactivities::structuredactivitynode_constructor_exists():
-    assert callable(xmof::CompleteStructuredActivities::StructuredActivityNode.__init__)
-
-
-def test_xmof::completestructuredactivities::structuredactivitynode_constructor_args():
-    sig = inspect.signature(xmof::CompleteStructuredActivities::StructuredActivityNode.__init__)
-    params = list(sig.parameters.keys())
-    assert "mustIsolate" in params, "Missing parameter 'mustIsolate'"
-
-def test_xmof::completestructuredactivities::structuredactivitynode_has_mustIsolate():
-    assert hasattr(xmof::CompleteStructuredActivities::StructuredActivityNode, "mustIsolate")
-    descriptor = None
-    for klass in xmof::CompleteStructuredActivities::StructuredActivityNode.__mro__:
-        if "mustIsolate" in klass.__dict__:
-            descriptor = klass.__dict__["mustIsolate"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_completestructuredactivities::clause_is_not_abstract():
-    assert not inspect.isabstract(CompleteStructuredActivities::Clause)
-
-
-def test_completestructuredactivities::clause_constructor_exists():
-    assert callable(CompleteStructuredActivities::Clause.__init__)
-
-
-def test_completestructuredactivities::clause_constructor_args():
-    sig = inspect.signature(CompleteStructuredActivities::Clause.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_basicactions::inputpin_is_not_abstract():
-    assert not inspect.isabstract(BasicActions::InputPin)
-
-
-def test_basicactions::inputpin_constructor_exists():
-    assert callable(BasicActions::InputPin.__init__)
-
-
-def test_basicactions::inputpin_constructor_args():
-    sig = inspect.signature(BasicActions::InputPin.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_completestructuredactivities::executablenode_is_not_abstract():
-    assert not inspect.isabstract(CompleteStructuredActivities::ExecutableNode)
-
-
-def test_completestructuredactivities::executablenode_constructor_exists():
-    assert callable(CompleteStructuredActivities::ExecutableNode.__init__)
-
-
-def test_completestructuredactivities::executablenode_constructor_args():
-    sig = inspect.signature(CompleteStructuredActivities::ExecutableNode.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_basicactions::outputpin_is_not_abstract():
-    assert not inspect.isabstract(BasicActions::OutputPin)
-
-
-def test_basicactions::outputpin_constructor_exists():
-    assert callable(BasicActions::OutputPin.__init__)
-
-
-def test_basicactions::outputpin_constructor_args():
-    sig = inspect.signature(BasicActions::OutputPin.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_structuredactivitynode_is_not_abstract():
-    assert not inspect.isabstract(StructuredActivityNode)
-
-
-def test_structuredactivitynode_constructor_exists():
-    assert callable(StructuredActivityNode.__init__)
-
-
-def test_structuredactivitynode_constructor_args():
-    sig = inspect.signature(StructuredActivityNode.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_xmof::extrastructuredactivities::expansionregion_is_not_abstract():
-    assert not inspect.isabstract(xmof::ExtraStructuredActivities::ExpansionRegion)
-
-
-def test_xmof::extrastructuredactivities::expansionregion_constructor_exists():
-    assert callable(xmof::ExtraStructuredActivities::ExpansionRegion.__init__)
-
-
-def test_xmof::extrastructuredactivities::expansionregion_constructor_args():
-    sig = inspect.signature(xmof::ExtraStructuredActivities::ExpansionRegion.__init__)
-    params = list(sig.parameters.keys())
-    assert "mode" in params, "Missing parameter 'mode'"
-
-def test_xmof::extrastructuredactivities::expansionregion_has_mode():
-    assert hasattr(xmof::ExtraStructuredActivities::ExpansionRegion, "mode")
-    descriptor = None
-    for klass in xmof::ExtraStructuredActivities::ExpansionRegion.__mro__:
-        if "mode" in klass.__dict__:
-            descriptor = klass.__dict__["mode"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_xmof::completestructuredactivities::conditionalnode_is_not_abstract():
-    assert not inspect.isabstract(xmof::CompleteStructuredActivities::ConditionalNode)
-
-
-def test_xmof::completestructuredactivities::conditionalnode_constructor_exists():
-    assert callable(xmof::CompleteStructuredActivities::ConditionalNode.__init__)
-
-
-def test_xmof::completestructuredactivities::conditionalnode_constructor_args():
-    sig = inspect.signature(xmof::CompleteStructuredActivities::ConditionalNode.__init__)
-    params = list(sig.parameters.keys())
-    assert "assured" in params, "Missing parameter 'assured'"
-    assert "determinate" in params, "Missing parameter 'determinate'"
-
-def test_xmof::completestructuredactivities::conditionalnode_has_assured():
-    assert hasattr(xmof::CompleteStructuredActivities::ConditionalNode, "assured")
-    descriptor = None
-    for klass in xmof::CompleteStructuredActivities::ConditionalNode.__mro__:
-        if "assured" in klass.__dict__:
-            descriptor = klass.__dict__["assured"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_xmof::completestructuredactivities::conditionalnode_has_determinate():
-    assert hasattr(xmof::CompleteStructuredActivities::ConditionalNode, "determinate")
-    descriptor = None
-    for klass in xmof::CompleteStructuredActivities::ConditionalNode.__mro__:
-        if "determinate" in klass.__dict__:
-            descriptor = klass.__dict__["determinate"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_xmof::completestructuredactivities::loopnode_is_not_abstract():
-    assert not inspect.isabstract(xmof::CompleteStructuredActivities::LoopNode)
-
-
-def test_xmof::completestructuredactivities::loopnode_constructor_exists():
-    assert callable(xmof::CompleteStructuredActivities::LoopNode.__init__)
-
-
-def test_xmof::completestructuredactivities::loopnode_constructor_args():
-    sig = inspect.signature(xmof::CompleteStructuredActivities::LoopNode.__init__)
-    params = list(sig.parameters.keys())
-    assert "testedFirst" in params, "Missing parameter 'testedFirst'"
-
-def test_xmof::completestructuredactivities::loopnode_has_testedFirst():
-    assert hasattr(xmof::CompleteStructuredActivities::LoopNode, "testedFirst")
-    descriptor = None
-    for klass in xmof::CompleteStructuredActivities::LoopNode.__mro__:
-        if "testedFirst" in klass.__dict__:
-            descriptor = klass.__dict__["testedFirst"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_objectnode_is_not_abstract():
-    assert not inspect.isabstract(ObjectNode)
-
-
-def test_objectnode_constructor_exists():
-    assert callable(ObjectNode.__init__)
-
-
-def test_objectnode_constructor_args():
-    sig = inspect.signature(ObjectNode.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_xmof::extrastructuredactivities::expansionnode_is_not_abstract():
-    assert not inspect.isabstract(xmof::ExtraStructuredActivities::ExpansionNode)
-
-
-def test_xmof::extrastructuredactivities::expansionnode_constructor_exists():
-    assert callable(xmof::ExtraStructuredActivities::ExpansionNode.__init__)
-
-
-def test_xmof::extrastructuredactivities::expansionnode_constructor_args():
-    sig = inspect.signature(xmof::ExtraStructuredActivities::ExpansionNode.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_xmof::intermediateactivities::activityparameternode_is_not_abstract():
-    assert not inspect.isabstract(xmof::IntermediateActivities::ActivityParameterNode)
-
-
-def test_xmof::intermediateactivities::activityparameternode_constructor_exists():
-    assert callable(xmof::IntermediateActivities::ActivityParameterNode.__init__)
-
-
-def test_xmof::intermediateactivities::activityparameternode_constructor_args():
-    sig = inspect.signature(xmof::IntermediateActivities::ActivityParameterNode.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_finalnode_is_not_abstract():
-    assert not inspect.isabstract(FinalNode)
-
-
-def test_finalnode_constructor_exists():
-    assert callable(FinalNode.__init__)
-
-
-def test_finalnode_constructor_args():
-    sig = inspect.signature(FinalNode.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_xmof::intermediateactivities::activityfinalnode_is_not_abstract():
-    assert not inspect.isabstract(xmof::IntermediateActivities::ActivityFinalNode)
-
-
-def test_xmof::intermediateactivities::activityfinalnode_constructor_exists():
-    assert callable(xmof::IntermediateActivities::ActivityFinalNode.__init__)
-
-
-def test_xmof::intermediateactivities::activityfinalnode_constructor_args():
-    sig = inspect.signature(xmof::IntermediateActivities::ActivityFinalNode.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_intermediateactivities::objectflow_is_not_abstract():
-    assert not inspect.isabstract(IntermediateActivities::ObjectFlow)
-
-
-def test_intermediateactivities::objectflow_constructor_exists():
-    assert callable(IntermediateActivities::ObjectFlow.__init__)
-
-
-def test_intermediateactivities::objectflow_constructor_args():
-    sig = inspect.signature(IntermediateActivities::ObjectFlow.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_xmof::intermediateactivities::activitynode_is_not_abstract():
-    assert not inspect.isabstract(xmof::IntermediateActivities::ActivityNode)
-
-
-def test_xmof::intermediateactivities::activitynode_constructor_exists():
-    assert callable(xmof::IntermediateActivities::ActivityNode.__init__)
-
-
-def test_xmof::intermediateactivities::activitynode_constructor_args():
-    sig = inspect.signature(xmof::IntermediateActivities::ActivityNode.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_intermediateactivities::activityedge_is_not_abstract():
-    assert not inspect.isabstract(IntermediateActivities::ActivityEdge)
-
-
-def test_intermediateactivities::activityedge_constructor_exists():
-    assert callable(IntermediateActivities::ActivityEdge.__init__)
-
-
-def test_intermediateactivities::activityedge_constructor_args():
-    sig = inspect.signature(IntermediateActivities::ActivityEdge.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_xmof::intermediateactivities::activity_is_not_abstract():
-    assert not inspect.isabstract(xmof::IntermediateActivities::Activity)
-
-
-def test_xmof::intermediateactivities::activity_constructor_exists():
-    assert callable(xmof::IntermediateActivities::Activity.__init__)
-
-
-def test_xmof::intermediateactivities::activity_constructor_args():
-    sig = inspect.signature(xmof::IntermediateActivities::Activity.__init__)
-    params = list(sig.parameters.keys())
-    assert "readOnly" in params, "Missing parameter 'readOnly'"
-
-def test_xmof::intermediateactivities::activity_has_readOnly():
-    assert hasattr(xmof::IntermediateActivities::Activity, "readOnly")
-    descriptor = None
-    for klass in xmof::IntermediateActivities::Activity.__mro__:
-        if "readOnly" in klass.__dict__:
-            descriptor = klass.__dict__["readOnly"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_completestructuredactivities::structuredactivitynode_is_not_abstract():
-    assert not inspect.isabstract(CompleteStructuredActivities::StructuredActivityNode)
-
-
-def test_completestructuredactivities::structuredactivitynode_constructor_exists():
-    assert callable(CompleteStructuredActivities::StructuredActivityNode.__init__)
-
-
-def test_completestructuredactivities::structuredactivitynode_constructor_args():
-    sig = inspect.signature(CompleteStructuredActivities::StructuredActivityNode.__init__)
+def test_completestructuredactivities_structuredactivitynode_constructor_args():
+    sig = inspect.signature(CompleteStructuredActivities_StructuredActivityNode.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1552,30 +208,30 @@ def test_activitynode_constructor_args():
 
 
 
-def test_xmof::completestructuredactivities::executablenode_is_not_abstract():
-    assert not inspect.isabstract(xmof::CompleteStructuredActivities::ExecutableNode)
+def test_xmof_completestructuredactivities_executablenode_is_not_abstract():
+    assert not inspect.isabstract(xmof_CompleteStructuredActivities_ExecutableNode)
 
 
-def test_xmof::completestructuredactivities::executablenode_constructor_exists():
-    assert callable(xmof::CompleteStructuredActivities::ExecutableNode.__init__)
+def test_xmof_completestructuredactivities_executablenode_constructor_exists():
+    assert callable(xmof_CompleteStructuredActivities_ExecutableNode.__init__)
 
 
-def test_xmof::completestructuredactivities::executablenode_constructor_args():
-    sig = inspect.signature(xmof::CompleteStructuredActivities::ExecutableNode.__init__)
+def test_xmof_completestructuredactivities_executablenode_constructor_args():
+    sig = inspect.signature(xmof_CompleteStructuredActivities_ExecutableNode.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_xmof::intermediateactivities::controlnode_is_not_abstract():
-    assert not inspect.isabstract(xmof::IntermediateActivities::ControlNode)
+def test_xmof_intermediateactivities_controlnode_is_not_abstract():
+    assert not inspect.isabstract(xmof_IntermediateActivities_ControlNode)
 
 
-def test_xmof::intermediateactivities::controlnode_constructor_exists():
-    assert callable(xmof::IntermediateActivities::ControlNode.__init__)
+def test_xmof_intermediateactivities_controlnode_constructor_exists():
+    assert callable(xmof_IntermediateActivities_ControlNode.__init__)
 
 
-def test_xmof::intermediateactivities::controlnode_constructor_args():
-    sig = inspect.signature(xmof::IntermediateActivities::ControlNode.__init__)
+def test_xmof_intermediateactivities_controlnode_constructor_args():
+    sig = inspect.signature(xmof_IntermediateActivities_ControlNode.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1594,86 +250,86 @@ def test_controlnode_constructor_args():
 
 
 
-def test_xmof::intermediateactivities::initialnode_is_not_abstract():
-    assert not inspect.isabstract(xmof::IntermediateActivities::InitialNode)
+def test_xmof_intermediateactivities_finalnode_is_not_abstract():
+    assert not inspect.isabstract(xmof_IntermediateActivities_FinalNode)
 
 
-def test_xmof::intermediateactivities::initialnode_constructor_exists():
-    assert callable(xmof::IntermediateActivities::InitialNode.__init__)
+def test_xmof_intermediateactivities_finalnode_constructor_exists():
+    assert callable(xmof_IntermediateActivities_FinalNode.__init__)
 
 
-def test_xmof::intermediateactivities::initialnode_constructor_args():
-    sig = inspect.signature(xmof::IntermediateActivities::InitialNode.__init__)
+def test_xmof_intermediateactivities_finalnode_constructor_args():
+    sig = inspect.signature(xmof_IntermediateActivities_FinalNode.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_xmof::intermediateactivities::forknode_is_not_abstract():
-    assert not inspect.isabstract(xmof::IntermediateActivities::ForkNode)
+def test_xmof_intermediateactivities_decisionnode_is_not_abstract():
+    assert not inspect.isabstract(xmof_IntermediateActivities_DecisionNode)
 
 
-def test_xmof::intermediateactivities::forknode_constructor_exists():
-    assert callable(xmof::IntermediateActivities::ForkNode.__init__)
+def test_xmof_intermediateactivities_decisionnode_constructor_exists():
+    assert callable(xmof_IntermediateActivities_DecisionNode.__init__)
 
 
-def test_xmof::intermediateactivities::forknode_constructor_args():
-    sig = inspect.signature(xmof::IntermediateActivities::ForkNode.__init__)
+def test_xmof_intermediateactivities_decisionnode_constructor_args():
+    sig = inspect.signature(xmof_IntermediateActivities_DecisionNode.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_xmof::intermediateactivities::finalnode_is_not_abstract():
-    assert not inspect.isabstract(xmof::IntermediateActivities::FinalNode)
+def test_xmof_intermediateactivities_initialnode_is_not_abstract():
+    assert not inspect.isabstract(xmof_IntermediateActivities_InitialNode)
 
 
-def test_xmof::intermediateactivities::finalnode_constructor_exists():
-    assert callable(xmof::IntermediateActivities::FinalNode.__init__)
+def test_xmof_intermediateactivities_initialnode_constructor_exists():
+    assert callable(xmof_IntermediateActivities_InitialNode.__init__)
 
 
-def test_xmof::intermediateactivities::finalnode_constructor_args():
-    sig = inspect.signature(xmof::IntermediateActivities::FinalNode.__init__)
+def test_xmof_intermediateactivities_initialnode_constructor_args():
+    sig = inspect.signature(xmof_IntermediateActivities_InitialNode.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_xmof::intermediateactivities::joinnode_is_not_abstract():
-    assert not inspect.isabstract(xmof::IntermediateActivities::JoinNode)
+def test_xmof_intermediateactivities_joinnode_is_not_abstract():
+    assert not inspect.isabstract(xmof_IntermediateActivities_JoinNode)
 
 
-def test_xmof::intermediateactivities::joinnode_constructor_exists():
-    assert callable(xmof::IntermediateActivities::JoinNode.__init__)
+def test_xmof_intermediateactivities_joinnode_constructor_exists():
+    assert callable(xmof_IntermediateActivities_JoinNode.__init__)
 
 
-def test_xmof::intermediateactivities::joinnode_constructor_args():
-    sig = inspect.signature(xmof::IntermediateActivities::JoinNode.__init__)
+def test_xmof_intermediateactivities_joinnode_constructor_args():
+    sig = inspect.signature(xmof_IntermediateActivities_JoinNode.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_xmof::intermediateactivities::decisionnode_is_not_abstract():
-    assert not inspect.isabstract(xmof::IntermediateActivities::DecisionNode)
+def test_xmof_intermediateactivities_forknode_is_not_abstract():
+    assert not inspect.isabstract(xmof_IntermediateActivities_ForkNode)
 
 
-def test_xmof::intermediateactivities::decisionnode_constructor_exists():
-    assert callable(xmof::IntermediateActivities::DecisionNode.__init__)
+def test_xmof_intermediateactivities_forknode_constructor_exists():
+    assert callable(xmof_IntermediateActivities_ForkNode.__init__)
 
 
-def test_xmof::intermediateactivities::decisionnode_constructor_args():
-    sig = inspect.signature(xmof::IntermediateActivities::DecisionNode.__init__)
+def test_xmof_intermediateactivities_forknode_constructor_args():
+    sig = inspect.signature(xmof_IntermediateActivities_ForkNode.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_xmof::intermediateactivities::mergenode_is_not_abstract():
-    assert not inspect.isabstract(xmof::IntermediateActivities::MergeNode)
+def test_xmof_intermediateactivities_mergenode_is_not_abstract():
+    assert not inspect.isabstract(xmof_IntermediateActivities_MergeNode)
 
 
-def test_xmof::intermediateactivities::mergenode_constructor_exists():
-    assert callable(xmof::IntermediateActivities::MergeNode.__init__)
+def test_xmof_intermediateactivities_mergenode_constructor_exists():
+    assert callable(xmof_IntermediateActivities_MergeNode.__init__)
 
 
-def test_xmof::intermediateactivities::mergenode_constructor_args():
-    sig = inspect.signature(xmof::IntermediateActivities::MergeNode.__init__)
+def test_xmof_intermediateactivities_mergenode_constructor_args():
+    sig = inspect.signature(xmof_IntermediateActivities_MergeNode.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1692,23 +348,23 @@ def test_literalspecification_constructor_args():
 
 
 
-def test_xmof::kernel::literalinteger_is_not_abstract():
-    assert not inspect.isabstract(xmof::Kernel::LiteralInteger)
+def test_xmof_kernel_literalinteger_is_not_abstract():
+    assert not inspect.isabstract(xmof_Kernel_LiteralInteger)
 
 
-def test_xmof::kernel::literalinteger_constructor_exists():
-    assert callable(xmof::Kernel::LiteralInteger.__init__)
+def test_xmof_kernel_literalinteger_constructor_exists():
+    assert callable(xmof_Kernel_LiteralInteger.__init__)
 
 
-def test_xmof::kernel::literalinteger_constructor_args():
-    sig = inspect.signature(xmof::Kernel::LiteralInteger.__init__)
+def test_xmof_kernel_literalinteger_constructor_args():
+    sig = inspect.signature(xmof_Kernel_LiteralInteger.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
 
-def test_xmof::kernel::literalinteger_has_value():
-    assert hasattr(xmof::Kernel::LiteralInteger, "value")
+def test_xmof_kernel_literalinteger_has_value():
+    assert hasattr(xmof_Kernel_LiteralInteger, "value")
     descriptor = None
-    for klass in xmof::Kernel::LiteralInteger.__mro__:
+    for klass in xmof_Kernel_LiteralInteger.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -1716,37 +372,23 @@ def test_xmof::kernel::literalinteger_has_value():
 
 
 
-def test_xmof::kernel::literalnull_is_not_abstract():
-    assert not inspect.isabstract(xmof::Kernel::LiteralNull)
+def test_xmof_kernel_literalunlimitednatural_is_not_abstract():
+    assert not inspect.isabstract(xmof_Kernel_LiteralUnlimitedNatural)
 
 
-def test_xmof::kernel::literalnull_constructor_exists():
-    assert callable(xmof::Kernel::LiteralNull.__init__)
+def test_xmof_kernel_literalunlimitednatural_constructor_exists():
+    assert callable(xmof_Kernel_LiteralUnlimitedNatural.__init__)
 
 
-def test_xmof::kernel::literalnull_constructor_args():
-    sig = inspect.signature(xmof::Kernel::LiteralNull.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_xmof::kernel::literalunlimitednatural_is_not_abstract():
-    assert not inspect.isabstract(xmof::Kernel::LiteralUnlimitedNatural)
-
-
-def test_xmof::kernel::literalunlimitednatural_constructor_exists():
-    assert callable(xmof::Kernel::LiteralUnlimitedNatural.__init__)
-
-
-def test_xmof::kernel::literalunlimitednatural_constructor_args():
-    sig = inspect.signature(xmof::Kernel::LiteralUnlimitedNatural.__init__)
+def test_xmof_kernel_literalunlimitednatural_constructor_args():
+    sig = inspect.signature(xmof_Kernel_LiteralUnlimitedNatural.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
 
-def test_xmof::kernel::literalunlimitednatural_has_value():
-    assert hasattr(xmof::Kernel::LiteralUnlimitedNatural, "value")
+def test_xmof_kernel_literalunlimitednatural_has_value():
+    assert hasattr(xmof_Kernel_LiteralUnlimitedNatural, "value")
     descriptor = None
-    for klass in xmof::Kernel::LiteralUnlimitedNatural.__mro__:
+    for klass in xmof_Kernel_LiteralUnlimitedNatural.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -1754,23 +396,37 @@ def test_xmof::kernel::literalunlimitednatural_has_value():
 
 
 
-def test_xmof::kernel::literalstring_is_not_abstract():
-    assert not inspect.isabstract(xmof::Kernel::LiteralString)
+def test_xmof_kernel_literalnull_is_not_abstract():
+    assert not inspect.isabstract(xmof_Kernel_LiteralNull)
 
 
-def test_xmof::kernel::literalstring_constructor_exists():
-    assert callable(xmof::Kernel::LiteralString.__init__)
+def test_xmof_kernel_literalnull_constructor_exists():
+    assert callable(xmof_Kernel_LiteralNull.__init__)
 
 
-def test_xmof::kernel::literalstring_constructor_args():
-    sig = inspect.signature(xmof::Kernel::LiteralString.__init__)
+def test_xmof_kernel_literalnull_constructor_args():
+    sig = inspect.signature(xmof_Kernel_LiteralNull.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_xmof_kernel_literalstring_is_not_abstract():
+    assert not inspect.isabstract(xmof_Kernel_LiteralString)
+
+
+def test_xmof_kernel_literalstring_constructor_exists():
+    assert callable(xmof_Kernel_LiteralString.__init__)
+
+
+def test_xmof_kernel_literalstring_constructor_args():
+    sig = inspect.signature(xmof_Kernel_LiteralString.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
 
-def test_xmof::kernel::literalstring_has_value():
-    assert hasattr(xmof::Kernel::LiteralString, "value")
+def test_xmof_kernel_literalstring_has_value():
+    assert hasattr(xmof_Kernel_LiteralString, "value")
     descriptor = None
-    for klass in xmof::Kernel::LiteralString.__mro__:
+    for klass in xmof_Kernel_LiteralString.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -1778,23 +434,23 @@ def test_xmof::kernel::literalstring_has_value():
 
 
 
-def test_xmof::kernel::literalboolean_is_not_abstract():
-    assert not inspect.isabstract(xmof::Kernel::LiteralBoolean)
+def test_xmof_kernel_literalboolean_is_not_abstract():
+    assert not inspect.isabstract(xmof_Kernel_LiteralBoolean)
 
 
-def test_xmof::kernel::literalboolean_constructor_exists():
-    assert callable(xmof::Kernel::LiteralBoolean.__init__)
+def test_xmof_kernel_literalboolean_constructor_exists():
+    assert callable(xmof_Kernel_LiteralBoolean.__init__)
 
 
-def test_xmof::kernel::literalboolean_constructor_args():
-    sig = inspect.signature(xmof::Kernel::LiteralBoolean.__init__)
+def test_xmof_kernel_literalboolean_constructor_args():
+    sig = inspect.signature(xmof_Kernel_LiteralBoolean.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
 
-def test_xmof::kernel::literalboolean_has_value():
-    assert hasattr(xmof::Kernel::LiteralBoolean, "value")
+def test_xmof_kernel_literalboolean_has_value():
+    assert hasattr(xmof_Kernel_LiteralBoolean, "value")
     descriptor = None
-    for klass in xmof::Kernel::LiteralBoolean.__mro__:
+    for klass in xmof_Kernel_LiteralBoolean.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -1816,100 +472,86 @@ def test_valuespecification_constructor_args():
 
 
 
-def test_xmof::kernel::literalspecification_is_not_abstract():
-    assert not inspect.isabstract(xmof::Kernel::LiteralSpecification)
+def test_xmof_kernel_literalspecification_is_not_abstract():
+    assert not inspect.isabstract(xmof_Kernel_LiteralSpecification)
 
 
-def test_xmof::kernel::literalspecification_constructor_exists():
-    assert callable(xmof::Kernel::LiteralSpecification.__init__)
+def test_xmof_kernel_literalspecification_constructor_exists():
+    assert callable(xmof_Kernel_LiteralSpecification.__init__)
 
 
-def test_xmof::kernel::literalspecification_constructor_args():
-    sig = inspect.signature(xmof::Kernel::LiteralSpecification.__init__)
+def test_xmof_kernel_literalspecification_constructor_args():
+    sig = inspect.signature(xmof_Kernel_LiteralSpecification.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_xmof::kernel::instancevalue_is_not_abstract():
-    assert not inspect.isabstract(xmof::Kernel::InstanceValue)
+def test_xmof_kernel_instancevalue_is_not_abstract():
+    assert not inspect.isabstract(xmof_Kernel_InstanceValue)
 
 
-def test_xmof::kernel::instancevalue_constructor_exists():
-    assert callable(xmof::Kernel::InstanceValue.__init__)
+def test_xmof_kernel_instancevalue_constructor_exists():
+    assert callable(xmof_Kernel_InstanceValue.__init__)
 
 
-def test_xmof::kernel::instancevalue_constructor_args():
-    sig = inspect.signature(xmof::Kernel::InstanceValue.__init__)
+def test_xmof_kernel_instancevalue_constructor_args():
+    sig = inspect.signature(xmof_Kernel_InstanceValue.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_kernel::instancespecification_is_not_abstract():
-    assert not inspect.isabstract(Kernel::InstanceSpecification)
+def test_kernel_instancespecification_is_not_abstract():
+    assert not inspect.isabstract(Kernel_InstanceSpecification)
 
 
-def test_kernel::instancespecification_constructor_exists():
-    assert callable(Kernel::InstanceSpecification.__init__)
+def test_kernel_instancespecification_constructor_exists():
+    assert callable(Kernel_InstanceSpecification.__init__)
 
 
-def test_kernel::instancespecification_constructor_args():
-    sig = inspect.signature(Kernel::InstanceSpecification.__init__)
+def test_kernel_instancespecification_constructor_args():
+    sig = inspect.signature(Kernel_InstanceSpecification.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_kernel::valuespecification_is_not_abstract():
-    assert not inspect.isabstract(Kernel::ValueSpecification)
+def test_kernel_valuespecification_is_not_abstract():
+    assert not inspect.isabstract(Kernel_ValueSpecification)
 
 
-def test_kernel::valuespecification_constructor_exists():
-    assert callable(Kernel::ValueSpecification.__init__)
+def test_kernel_valuespecification_constructor_exists():
+    assert callable(Kernel_ValueSpecification.__init__)
 
 
-def test_kernel::valuespecification_constructor_args():
-    sig = inspect.signature(Kernel::ValueSpecification.__init__)
+def test_kernel_valuespecification_constructor_args():
+    sig = inspect.signature(Kernel_ValueSpecification.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_intermediateactivities::activitynode_is_not_abstract():
-    assert not inspect.isabstract(IntermediateActivities::ActivityNode)
+def test_intermediateactivities_activitynode_is_not_abstract():
+    assert not inspect.isabstract(IntermediateActivities_ActivityNode)
 
 
-def test_intermediateactivities::activitynode_constructor_exists():
-    assert callable(IntermediateActivities::ActivityNode.__init__)
+def test_intermediateactivities_activitynode_constructor_exists():
+    assert callable(IntermediateActivities_ActivityNode.__init__)
 
 
-def test_intermediateactivities::activitynode_constructor_args():
-    sig = inspect.signature(IntermediateActivities::ActivityNode.__init__)
+def test_intermediateactivities_activitynode_constructor_args():
+    sig = inspect.signature(IntermediateActivities_ActivityNode.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_intermediateactivities::activity_is_not_abstract():
-    assert not inspect.isabstract(IntermediateActivities::Activity)
+def test_intermediateactivities_activity_is_not_abstract():
+    assert not inspect.isabstract(IntermediateActivities_Activity)
 
 
-def test_intermediateactivities::activity_constructor_exists():
-    assert callable(IntermediateActivities::Activity.__init__)
+def test_intermediateactivities_activity_constructor_exists():
+    assert callable(IntermediateActivities_Activity.__init__)
 
 
-def test_intermediateactivities::activity_constructor_args():
-    sig = inspect.signature(IntermediateActivities::Activity.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_xmof::intermediateactivities::activityedge_is_not_abstract():
-    assert not inspect.isabstract(xmof::IntermediateActivities::ActivityEdge)
-
-
-def test_xmof::intermediateactivities::activityedge_constructor_exists():
-    assert callable(xmof::IntermediateActivities::ActivityEdge.__init__)
-
-
-def test_xmof::intermediateactivities::activityedge_constructor_args():
-    sig = inspect.signature(xmof::IntermediateActivities::ActivityEdge.__init__)
+def test_intermediateactivities_activity_constructor_args():
+    sig = inspect.signature(IntermediateActivities_Activity.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1928,30 +570,30 @@ def test_activityedge_constructor_args():
 
 
 
-def test_xmof::intermediateactivities::controlflow_is_not_abstract():
-    assert not inspect.isabstract(xmof::IntermediateActivities::ControlFlow)
+def test_xmof_intermediateactivities_controlflow_is_not_abstract():
+    assert not inspect.isabstract(xmof_IntermediateActivities_ControlFlow)
 
 
-def test_xmof::intermediateactivities::controlflow_constructor_exists():
-    assert callable(xmof::IntermediateActivities::ControlFlow.__init__)
+def test_xmof_intermediateactivities_controlflow_constructor_exists():
+    assert callable(xmof_IntermediateActivities_ControlFlow.__init__)
 
 
-def test_xmof::intermediateactivities::controlflow_constructor_args():
-    sig = inspect.signature(xmof::IntermediateActivities::ControlFlow.__init__)
+def test_xmof_intermediateactivities_controlflow_constructor_args():
+    sig = inspect.signature(xmof_IntermediateActivities_ControlFlow.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_xmof::intermediateactivities::objectflow_is_not_abstract():
-    assert not inspect.isabstract(xmof::IntermediateActivities::ObjectFlow)
+def test_xmof_intermediateactivities_objectflow_is_not_abstract():
+    assert not inspect.isabstract(xmof_IntermediateActivities_ObjectFlow)
 
 
-def test_xmof::intermediateactivities::objectflow_constructor_exists():
-    assert callable(xmof::IntermediateActivities::ObjectFlow.__init__)
+def test_xmof_intermediateactivities_objectflow_constructor_exists():
+    assert callable(xmof_IntermediateActivities_ObjectFlow.__init__)
 
 
-def test_xmof::intermediateactivities::objectflow_constructor_args():
-    sig = inspect.signature(xmof::IntermediateActivities::ObjectFlow.__init__)
+def test_xmof_intermediateactivities_objectflow_constructor_args():
+    sig = inspect.signature(xmof_IntermediateActivities_ObjectFlow.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1970,30 +612,30 @@ def test_edatatype_constructor_args():
 
 
 
-def test_xmof::kernel::primitivetype_is_not_abstract():
-    assert not inspect.isabstract(xmof::Kernel::PrimitiveType)
+def test_xmof_kernel_primitivetype_is_not_abstract():
+    assert not inspect.isabstract(xmof_Kernel_PrimitiveType)
 
 
-def test_xmof::kernel::primitivetype_constructor_exists():
-    assert callable(xmof::Kernel::PrimitiveType.__init__)
+def test_xmof_kernel_primitivetype_constructor_exists():
+    assert callable(xmof_Kernel_PrimitiveType.__init__)
 
 
-def test_xmof::kernel::primitivetype_constructor_args():
-    sig = inspect.signature(xmof::Kernel::PrimitiveType.__init__)
+def test_xmof_kernel_primitivetype_constructor_args():
+    sig = inspect.signature(xmof_Kernel_PrimitiveType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_kernel::xmof::eenumliteral_is_not_abstract():
-    assert not inspect.isabstract(Kernel::xmof::EEnumLiteral)
+def test_kernel_xmof_eenumliteral_is_not_abstract():
+    assert not inspect.isabstract(Kernel_xmof_EEnumLiteral)
 
 
-def test_kernel::xmof::eenumliteral_constructor_exists():
-    assert callable(Kernel::xmof::EEnumLiteral.__init__)
+def test_kernel_xmof_eenumliteral_constructor_exists():
+    assert callable(Kernel_xmof_EEnumLiteral.__init__)
 
 
-def test_kernel::xmof::eenumliteral_constructor_args():
-    sig = inspect.signature(Kernel::xmof::EEnumLiteral.__init__)
+def test_kernel_xmof_eenumliteral_constructor_args():
+    sig = inspect.signature(Kernel_xmof_EEnumLiteral.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -2012,16 +654,16 @@ def test_instancespecification_constructor_args():
 
 
 
-def test_xmof::kernel::eenumliteralspecification_is_not_abstract():
-    assert not inspect.isabstract(xmof::Kernel::EEnumLiteralSpecification)
+def test_xmof_kernel_eenumliteralspecification_is_not_abstract():
+    assert not inspect.isabstract(xmof_Kernel_EEnumLiteralSpecification)
 
 
-def test_xmof::kernel::eenumliteralspecification_constructor_exists():
-    assert callable(xmof::Kernel::EEnumLiteralSpecification.__init__)
+def test_xmof_kernel_eenumliteralspecification_constructor_exists():
+    assert callable(xmof_Kernel_EEnumLiteralSpecification.__init__)
 
 
-def test_xmof::kernel::eenumliteralspecification_constructor_args():
-    sig = inspect.signature(xmof::Kernel::EEnumLiteralSpecification.__init__)
+def test_xmof_kernel_eenumliteralspecification_constructor_args():
+    sig = inspect.signature(xmof_Kernel_EEnumLiteralSpecification.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -2040,41 +682,27 @@ def test_eparameter_constructor_args():
 
 
 
-def test_xmof::kernel::directedparameter_is_not_abstract():
-    assert not inspect.isabstract(xmof::Kernel::DirectedParameter)
+def test_xmof_kernel_directedparameter_is_not_abstract():
+    assert not inspect.isabstract(xmof_Kernel_DirectedParameter)
 
 
-def test_xmof::kernel::directedparameter_constructor_exists():
-    assert callable(xmof::Kernel::DirectedParameter.__init__)
+def test_xmof_kernel_directedparameter_constructor_exists():
+    assert callable(xmof_Kernel_DirectedParameter.__init__)
 
 
-def test_xmof::kernel::directedparameter_constructor_args():
-    sig = inspect.signature(xmof::Kernel::DirectedParameter.__init__)
+def test_xmof_kernel_directedparameter_constructor_args():
+    sig = inspect.signature(xmof_Kernel_DirectedParameter.__init__)
     params = list(sig.parameters.keys())
     assert "direction" in params, "Missing parameter 'direction'"
 
-def test_xmof::kernel::directedparameter_has_direction():
-    assert hasattr(xmof::Kernel::DirectedParameter, "direction")
+def test_xmof_kernel_directedparameter_has_direction():
+    assert hasattr(xmof_Kernel_DirectedParameter, "direction")
     descriptor = None
-    for klass in xmof::Kernel::DirectedParameter.__mro__:
+    for klass in xmof_Kernel_DirectedParameter.__mro__:
         if "direction" in klass.__dict__:
             descriptor = klass.__dict__["direction"]
             break
     assert isinstance(descriptor, property)
-
-
-
-def test_xmof::kernel::maineclass_is_not_abstract():
-    assert not inspect.isabstract(xmof::Kernel::MainEClass)
-
-
-def test_xmof::kernel::maineclass_constructor_exists():
-    assert callable(xmof::Kernel::MainEClass.__init__)
-
-
-def test_xmof::kernel::maineclass_constructor_args():
-    sig = inspect.signature(xmof::Kernel::MainEClass.__init__)
-    params = list(sig.parameters.keys())
 
 
 
@@ -2106,16 +734,16 @@ def test_eoperation_constructor_args():
 
 
 
-def test_xmof::kernel::behavioredeoperation_is_not_abstract():
-    assert not inspect.isabstract(xmof::Kernel::BehavioredEOperation)
+def test_xmof_kernel_behavioredeoperation_is_not_abstract():
+    assert not inspect.isabstract(xmof_Kernel_BehavioredEOperation)
 
 
-def test_xmof::kernel::behavioredeoperation_constructor_exists():
-    assert callable(xmof::Kernel::BehavioredEOperation.__init__)
+def test_xmof_kernel_behavioredeoperation_constructor_exists():
+    assert callable(xmof_Kernel_BehavioredEOperation.__init__)
 
 
-def test_xmof::kernel::behavioredeoperation_constructor_args():
-    sig = inspect.signature(xmof::Kernel::BehavioredEOperation.__init__)
+def test_xmof_kernel_behavioredeoperation_constructor_args():
+    sig = inspect.signature(xmof_Kernel_BehavioredEOperation.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -2134,16 +762,16 @@ def test_behavioredeoperation_constructor_args():
 
 
 
-def test_xmof::communications::reception_is_not_abstract():
-    assert not inspect.isabstract(xmof::Communications::Reception)
+def test_xmof_communications_reception_is_not_abstract():
+    assert not inspect.isabstract(xmof_Communications_Reception)
 
 
-def test_xmof::communications::reception_constructor_exists():
-    assert callable(xmof::Communications::Reception.__init__)
+def test_xmof_communications_reception_constructor_exists():
+    assert callable(xmof_Communications_Reception.__init__)
 
 
-def test_xmof::communications::reception_constructor_args():
-    sig = inspect.signature(xmof::Communications::Reception.__init__)
+def test_xmof_communications_reception_constructor_args():
+    sig = inspect.signature(xmof_Communications_Reception.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -2162,30 +790,30 @@ def test_event_constructor_args():
 
 
 
-def test_xmof::communications::messageevent_is_not_abstract():
-    assert not inspect.isabstract(xmof::Communications::MessageEvent)
+def test_xmof_communications_messageevent_is_not_abstract():
+    assert not inspect.isabstract(xmof_Communications_MessageEvent)
 
 
-def test_xmof::communications::messageevent_constructor_exists():
-    assert callable(xmof::Communications::MessageEvent.__init__)
+def test_xmof_communications_messageevent_constructor_exists():
+    assert callable(xmof_Communications_MessageEvent.__init__)
 
 
-def test_xmof::communications::messageevent_constructor_args():
-    sig = inspect.signature(xmof::Communications::MessageEvent.__init__)
+def test_xmof_communications_messageevent_constructor_args():
+    sig = inspect.signature(xmof_Communications_MessageEvent.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_communications::signal_is_not_abstract():
-    assert not inspect.isabstract(Communications::Signal)
+def test_communications_signal_is_not_abstract():
+    assert not inspect.isabstract(Communications_Signal)
 
 
-def test_communications::signal_constructor_exists():
-    assert callable(Communications::Signal.__init__)
+def test_communications_signal_constructor_exists():
+    assert callable(Communications_Signal.__init__)
 
 
-def test_communications::signal_constructor_args():
-    sig = inspect.signature(Communications::Signal.__init__)
+def test_communications_signal_constructor_args():
+    sig = inspect.signature(Communications_Signal.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -2204,30 +832,30 @@ def test_messageevent_constructor_args():
 
 
 
-def test_xmof::communications::signalevent_is_not_abstract():
-    assert not inspect.isabstract(xmof::Communications::SignalEvent)
+def test_xmof_communications_signalevent_is_not_abstract():
+    assert not inspect.isabstract(xmof_Communications_SignalEvent)
 
 
-def test_xmof::communications::signalevent_constructor_exists():
-    assert callable(xmof::Communications::SignalEvent.__init__)
+def test_xmof_communications_signalevent_constructor_exists():
+    assert callable(xmof_Communications_SignalEvent.__init__)
 
 
-def test_xmof::communications::signalevent_constructor_args():
-    sig = inspect.signature(xmof::Communications::SignalEvent.__init__)
+def test_xmof_communications_signalevent_constructor_args():
+    sig = inspect.signature(xmof_Communications_SignalEvent.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_kernel::xmof::estructuralfeature_is_not_abstract():
-    assert not inspect.isabstract(Kernel::xmof::EStructuralFeature)
+def test_kernel_xmof_estructuralfeature_is_not_abstract():
+    assert not inspect.isabstract(Kernel_xmof_EStructuralFeature)
 
 
-def test_kernel::xmof::estructuralfeature_constructor_exists():
-    assert callable(Kernel::xmof::EStructuralFeature.__init__)
+def test_kernel_xmof_estructuralfeature_constructor_exists():
+    assert callable(Kernel_xmof_EStructuralFeature.__init__)
 
 
-def test_kernel::xmof::estructuralfeature_constructor_args():
-    sig = inspect.signature(Kernel::xmof::EStructuralFeature.__init__)
+def test_kernel_xmof_estructuralfeature_constructor_args():
+    sig = inspect.signature(Kernel_xmof_EStructuralFeature.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -2246,86 +874,58 @@ def test_emodelelement_constructor_args():
 
 
 
-def test_xmof::completestructuredactivities::clause_is_not_abstract():
-    assert not inspect.isabstract(xmof::CompleteStructuredActivities::Clause)
+def test_xmof_completestructuredactivities_clause_is_not_abstract():
+    assert not inspect.isabstract(xmof_CompleteStructuredActivities_Clause)
 
 
-def test_xmof::completestructuredactivities::clause_constructor_exists():
-    assert callable(xmof::CompleteStructuredActivities::Clause.__init__)
+def test_xmof_completestructuredactivities_clause_constructor_exists():
+    assert callable(xmof_CompleteStructuredActivities_Clause.__init__)
 
 
-def test_xmof::completestructuredactivities::clause_constructor_args():
-    sig = inspect.signature(xmof::CompleteStructuredActivities::Clause.__init__)
+def test_xmof_completestructuredactivities_clause_constructor_args():
+    sig = inspect.signature(xmof_CompleteStructuredActivities_Clause.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_xmof::intermediateactions::linkenddata_is_not_abstract():
-    assert not inspect.isabstract(xmof::IntermediateActions::LinkEndData)
+def test_xmof_kernel_slot_is_not_abstract():
+    assert not inspect.isabstract(xmof_Kernel_Slot)
 
 
-def test_xmof::intermediateactions::linkenddata_constructor_exists():
-    assert callable(xmof::IntermediateActions::LinkEndData.__init__)
+def test_xmof_kernel_slot_constructor_exists():
+    assert callable(xmof_Kernel_Slot.__init__)
 
 
-def test_xmof::intermediateactions::linkenddata_constructor_args():
-    sig = inspect.signature(xmof::IntermediateActions::LinkEndData.__init__)
+def test_xmof_kernel_slot_constructor_args():
+    sig = inspect.signature(xmof_Kernel_Slot.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_xmof::kernel::slot_is_not_abstract():
-    assert not inspect.isabstract(xmof::Kernel::Slot)
+def test_kernel_slot_is_not_abstract():
+    assert not inspect.isabstract(Kernel_Slot)
 
 
-def test_xmof::kernel::slot_constructor_exists():
-    assert callable(xmof::Kernel::Slot.__init__)
+def test_kernel_slot_constructor_exists():
+    assert callable(Kernel_Slot.__init__)
 
 
-def test_xmof::kernel::slot_constructor_args():
-    sig = inspect.signature(xmof::Kernel::Slot.__init__)
+def test_kernel_slot_constructor_args():
+    sig = inspect.signature(Kernel_Slot.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_kernel::slot_is_not_abstract():
-    assert not inspect.isabstract(Kernel::Slot)
+def test_kernel_xmof_eclassifier_is_not_abstract():
+    assert not inspect.isabstract(Kernel_xmof_EClassifier)
 
 
-def test_kernel::slot_constructor_exists():
-    assert callable(Kernel::Slot.__init__)
+def test_kernel_xmof_eclassifier_constructor_exists():
+    assert callable(Kernel_xmof_EClassifier.__init__)
 
 
-def test_kernel::slot_constructor_args():
-    sig = inspect.signature(Kernel::Slot.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_kernel::xmof::eclassifier_is_not_abstract():
-    assert not inspect.isabstract(Kernel::xmof::EClassifier)
-
-
-def test_kernel::xmof::eclassifier_constructor_exists():
-    assert callable(Kernel::xmof::EClassifier.__init__)
-
-
-def test_kernel::xmof::eclassifier_constructor_args():
-    sig = inspect.signature(Kernel::xmof::EClassifier.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_xmof::kernel::instancespecification_is_not_abstract():
-    assert not inspect.isabstract(xmof::Kernel::InstanceSpecification)
-
-
-def test_xmof::kernel::instancespecification_constructor_exists():
-    assert callable(xmof::Kernel::InstanceSpecification.__init__)
-
-
-def test_xmof::kernel::instancespecification_constructor_args():
-    sig = inspect.signature(xmof::Kernel::InstanceSpecification.__init__)
+def test_kernel_xmof_eclassifier_constructor_args():
+    sig = inspect.signature(Kernel_xmof_EClassifier.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -2344,72 +944,44 @@ def test_etypedelement_constructor_args():
 
 
 
-def test_xmof::intermediateactivities::objectnode_is_not_abstract():
-    assert not inspect.isabstract(xmof::IntermediateActivities::ObjectNode)
+def test_xmof_intermediateactivities_objectnode_is_not_abstract():
+    assert not inspect.isabstract(xmof_IntermediateActivities_ObjectNode)
 
 
-def test_xmof::intermediateactivities::objectnode_constructor_exists():
-    assert callable(xmof::IntermediateActivities::ObjectNode.__init__)
+def test_xmof_intermediateactivities_objectnode_constructor_exists():
+    assert callable(xmof_IntermediateActivities_ObjectNode.__init__)
 
 
-def test_xmof::intermediateactivities::objectnode_constructor_args():
-    sig = inspect.signature(xmof::IntermediateActivities::ObjectNode.__init__)
+def test_xmof_intermediateactivities_objectnode_constructor_args():
+    sig = inspect.signature(xmof_IntermediateActivities_ObjectNode.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_xmof::basicactions::pin_is_not_abstract():
-    assert not inspect.isabstract(xmof::BasicActions::Pin)
+def test_xmof_kernel_valuespecification_is_not_abstract():
+    assert not inspect.isabstract(xmof_Kernel_ValueSpecification)
 
 
-def test_xmof::basicactions::pin_constructor_exists():
-    assert callable(xmof::BasicActions::Pin.__init__)
+def test_xmof_kernel_valuespecification_constructor_exists():
+    assert callable(xmof_Kernel_ValueSpecification.__init__)
 
 
-def test_xmof::basicactions::pin_constructor_args():
-    sig = inspect.signature(xmof::BasicActions::Pin.__init__)
+def test_xmof_kernel_valuespecification_constructor_args():
+    sig = inspect.signature(xmof_Kernel_ValueSpecification.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_xmof::kernel::valuespecification_is_not_abstract():
-    assert not inspect.isabstract(xmof::Kernel::ValueSpecification)
+def test_basicbehaviors_behavior_is_not_abstract():
+    assert not inspect.isabstract(BasicBehaviors_Behavior)
 
 
-def test_xmof::kernel::valuespecification_constructor_exists():
-    assert callable(xmof::Kernel::ValueSpecification.__init__)
+def test_basicbehaviors_behavior_constructor_exists():
+    assert callable(BasicBehaviors_Behavior.__init__)
 
 
-def test_xmof::kernel::valuespecification_constructor_args():
-    sig = inspect.signature(xmof::Kernel::ValueSpecification.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_xmof::basicbehaviors::functionbehavior_is_not_abstract():
-    assert not inspect.isabstract(xmof::BasicBehaviors::FunctionBehavior)
-
-
-def test_xmof::basicbehaviors::functionbehavior_constructor_exists():
-    assert callable(xmof::BasicBehaviors::FunctionBehavior.__init__)
-
-
-def test_xmof::basicbehaviors::functionbehavior_constructor_args():
-    sig = inspect.signature(xmof::BasicBehaviors::FunctionBehavior.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_basicbehaviors::behavior_is_not_abstract():
-    assert not inspect.isabstract(BasicBehaviors::Behavior)
-
-
-def test_basicbehaviors::behavior_constructor_exists():
-    assert callable(BasicBehaviors::Behavior.__init__)
-
-
-def test_basicbehaviors::behavior_constructor_args():
-    sig = inspect.signature(BasicBehaviors::Behavior.__init__)
+def test_basicbehaviors_behavior_constructor_args():
+    sig = inspect.signature(BasicBehaviors_Behavior.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -2428,87 +1000,1515 @@ def test_eclassifier_constructor_args():
 
 
 
-def test_xmof::communications::signal_is_not_abstract():
-    assert not inspect.isabstract(xmof::Communications::Signal)
+def test_xmof_basicbehaviors_behavioredclassifier_is_not_abstract():
+    assert not inspect.isabstract(xmof_BasicBehaviors_BehavioredClassifier)
 
 
-def test_xmof::communications::signal_constructor_exists():
-    assert callable(xmof::Communications::Signal.__init__)
+def test_xmof_basicbehaviors_behavioredclassifier_constructor_exists():
+    assert callable(xmof_BasicBehaviors_BehavioredClassifier.__init__)
 
 
-def test_xmof::communications::signal_constructor_args():
-    sig = inspect.signature(xmof::Communications::Signal.__init__)
+def test_xmof_basicbehaviors_behavioredclassifier_constructor_args():
+    sig = inspect.signature(xmof_BasicBehaviors_BehavioredClassifier.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_xmof::basicbehaviors::behavioredclassifier_is_not_abstract():
-    assert not inspect.isabstract(xmof::BasicBehaviors::BehavioredClassifier)
+def test_basicbehaviors_behavioredclassifier_is_not_abstract():
+    assert not inspect.isabstract(BasicBehaviors_BehavioredClassifier)
 
 
-def test_xmof::basicbehaviors::behavioredclassifier_constructor_exists():
-    assert callable(xmof::BasicBehaviors::BehavioredClassifier.__init__)
+def test_basicbehaviors_behavioredclassifier_constructor_exists():
+    assert callable(BasicBehaviors_BehavioredClassifier.__init__)
 
 
-def test_xmof::basicbehaviors::behavioredclassifier_constructor_args():
-    sig = inspect.signature(xmof::BasicBehaviors::BehavioredClassifier.__init__)
+def test_basicbehaviors_behavioredclassifier_constructor_args():
+    sig = inspect.signature(BasicBehaviors_BehavioredClassifier.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_basicbehaviors::behavioredclassifier_is_not_abstract():
-    assert not inspect.isabstract(BasicBehaviors::BehavioredClassifier)
+def test_xmof_kernel_behavioredeclass_is_not_abstract():
+    assert not inspect.isabstract(xmof_Kernel_BehavioredEClass)
 
 
-def test_basicbehaviors::behavioredclassifier_constructor_exists():
-    assert callable(BasicBehaviors::BehavioredClassifier.__init__)
+def test_xmof_kernel_behavioredeclass_constructor_exists():
+    assert callable(xmof_Kernel_BehavioredEClass.__init__)
 
 
-def test_basicbehaviors::behavioredclassifier_constructor_args():
-    sig = inspect.signature(BasicBehaviors::BehavioredClassifier.__init__)
+def test_xmof_kernel_behavioredeclass_constructor_args():
+    sig = inspect.signature(xmof_Kernel_BehavioredEClass.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_xmof::kernel::behavioredeclass_is_not_abstract():
-    assert not inspect.isabstract(xmof::Kernel::BehavioredEClass)
+def test_kernel_directedparameter_is_not_abstract():
+    assert not inspect.isabstract(Kernel_DirectedParameter)
 
 
-def test_xmof::kernel::behavioredeclass_constructor_exists():
-    assert callable(xmof::Kernel::BehavioredEClass.__init__)
+def test_kernel_directedparameter_constructor_exists():
+    assert callable(Kernel_DirectedParameter.__init__)
 
 
-def test_xmof::kernel::behavioredeclass_constructor_args():
-    sig = inspect.signature(xmof::Kernel::BehavioredEClass.__init__)
+def test_kernel_directedparameter_constructor_args():
+    sig = inspect.signature(Kernel_DirectedParameter.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_kernel::directedparameter_is_not_abstract():
-    assert not inspect.isabstract(Kernel::DirectedParameter)
+def test_kernel_behavioredeoperation_is_not_abstract():
+    assert not inspect.isabstract(Kernel_BehavioredEOperation)
 
 
-def test_kernel::directedparameter_constructor_exists():
-    assert callable(Kernel::DirectedParameter.__init__)
+def test_kernel_behavioredeoperation_constructor_exists():
+    assert callable(Kernel_BehavioredEOperation.__init__)
 
 
-def test_kernel::directedparameter_constructor_args():
-    sig = inspect.signature(Kernel::DirectedParameter.__init__)
+def test_kernel_behavioredeoperation_constructor_args():
+    sig = inspect.signature(Kernel_BehavioredEOperation.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_kernel::behavioredeoperation_is_not_abstract():
-    assert not inspect.isabstract(Kernel::BehavioredEOperation)
+def test_invocationaction_is_not_abstract():
+    assert not inspect.isabstract(InvocationAction)
 
 
-def test_kernel::behavioredeoperation_constructor_exists():
-    assert callable(Kernel::BehavioredEOperation.__init__)
+def test_invocationaction_constructor_exists():
+    assert callable(InvocationAction.__init__)
 
 
-def test_kernel::behavioredeoperation_constructor_args():
-    sig = inspect.signature(Kernel::BehavioredEOperation.__init__)
+def test_invocationaction_constructor_args():
+    sig = inspect.signature(InvocationAction.__init__)
     params = list(sig.parameters.keys())
+
+
+
+def test_xmof_basicactions_sendsignalaction_is_not_abstract():
+    assert not inspect.isabstract(xmof_BasicActions_SendSignalAction)
+
+
+def test_xmof_basicactions_sendsignalaction_constructor_exists():
+    assert callable(xmof_BasicActions_SendSignalAction.__init__)
+
+
+def test_xmof_basicactions_sendsignalaction_constructor_args():
+    sig = inspect.signature(xmof_BasicActions_SendSignalAction.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_xmof_basicactions_callaction_is_not_abstract():
+    assert not inspect.isabstract(xmof_BasicActions_CallAction)
+
+
+def test_xmof_basicactions_callaction_constructor_exists():
+    assert callable(xmof_BasicActions_CallAction.__init__)
+
+
+def test_xmof_basicactions_callaction_constructor_args():
+    sig = inspect.signature(xmof_BasicActions_CallAction.__init__)
+    params = list(sig.parameters.keys())
+    assert "synchronous" in params, "Missing parameter 'synchronous'"
+
+def test_xmof_basicactions_callaction_has_synchronous():
+    assert hasattr(xmof_BasicActions_CallAction, "synchronous")
+    descriptor = None
+    for klass in xmof_BasicActions_CallAction.__mro__:
+        if "synchronous" in klass.__dict__:
+            descriptor = klass.__dict__["synchronous"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_intermediateactivities_objectnode_is_not_abstract():
+    assert not inspect.isabstract(IntermediateActivities_ObjectNode)
+
+
+def test_intermediateactivities_objectnode_constructor_exists():
+    assert callable(IntermediateActivities_ObjectNode.__init__)
+
+
+def test_intermediateactivities_objectnode_constructor_args():
+    sig = inspect.signature(IntermediateActivities_ObjectNode.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_xmof_basicactions_pin_is_not_abstract():
+    assert not inspect.isabstract(xmof_BasicActions_Pin)
+
+
+def test_xmof_basicactions_pin_constructor_exists():
+    assert callable(xmof_BasicActions_Pin.__init__)
+
+
+def test_xmof_basicactions_pin_constructor_args():
+    sig = inspect.signature(xmof_BasicActions_Pin.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_pin_is_not_abstract():
+    assert not inspect.isabstract(Pin)
+
+
+def test_pin_constructor_exists():
+    assert callable(Pin.__init__)
+
+
+def test_pin_constructor_args():
+    sig = inspect.signature(Pin.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_xmof_basicactions_outputpin_is_not_abstract():
+    assert not inspect.isabstract(xmof_BasicActions_OutputPin)
+
+
+def test_xmof_basicactions_outputpin_constructor_exists():
+    assert callable(xmof_BasicActions_OutputPin.__init__)
+
+
+def test_xmof_basicactions_outputpin_constructor_args():
+    sig = inspect.signature(xmof_BasicActions_OutputPin.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_xmof_basicactions_inputpin_is_not_abstract():
+    assert not inspect.isabstract(xmof_BasicActions_InputPin)
+
+
+def test_xmof_basicactions_inputpin_constructor_exists():
+    assert callable(xmof_BasicActions_InputPin.__init__)
+
+
+def test_xmof_basicactions_inputpin_constructor_args():
+    sig = inspect.signature(xmof_BasicActions_InputPin.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_basicactions_xmof_eclassifier_is_not_abstract():
+    assert not inspect.isabstract(BasicActions_xmof_EClassifier)
+
+
+def test_basicactions_xmof_eclassifier_constructor_exists():
+    assert callable(BasicActions_xmof_EClassifier.__init__)
+
+
+def test_basicactions_xmof_eclassifier_constructor_args():
+    sig = inspect.signature(BasicActions_xmof_EClassifier.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_completeactions_xmof_eclassifier_is_not_abstract():
+    assert not inspect.isabstract(CompleteActions_xmof_EClassifier)
+
+
+def test_completeactions_xmof_eclassifier_constructor_exists():
+    assert callable(CompleteActions_xmof_EClassifier.__init__)
+
+
+def test_completeactions_xmof_eclassifier_constructor_args():
+    sig = inspect.signature(CompleteActions_xmof_EClassifier.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_executablenode_is_not_abstract():
+    assert not inspect.isabstract(ExecutableNode)
+
+
+def test_executablenode_constructor_exists():
+    assert callable(ExecutableNode.__init__)
+
+
+def test_executablenode_constructor_args():
+    sig = inspect.signature(ExecutableNode.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_xmof_basicactions_action_is_not_abstract():
+    assert not inspect.isabstract(xmof_BasicActions_Action)
+
+
+def test_xmof_basicactions_action_constructor_exists():
+    assert callable(xmof_BasicActions_Action.__init__)
+
+
+def test_xmof_basicactions_action_constructor_args():
+    sig = inspect.signature(xmof_BasicActions_Action.__init__)
+    params = list(sig.parameters.keys())
+    assert "locallyReentrant" in params, "Missing parameter 'locallyReentrant'"
+
+def test_xmof_basicactions_action_has_locallyReentrant():
+    assert hasattr(xmof_BasicActions_Action, "locallyReentrant")
+    descriptor = None
+    for klass in xmof_BasicActions_Action.__mro__:
+        if "locallyReentrant" in klass.__dict__:
+            descriptor = klass.__dict__["locallyReentrant"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_communications_trigger_is_not_abstract():
+    assert not inspect.isabstract(Communications_Trigger)
+
+
+def test_communications_trigger_constructor_exists():
+    assert callable(Communications_Trigger.__init__)
+
+
+def test_communications_trigger_constructor_args():
+    sig = inspect.signature(Communications_Trigger.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_callaction_is_not_abstract():
+    assert not inspect.isabstract(CallAction)
+
+
+def test_callaction_constructor_exists():
+    assert callable(CallAction.__init__)
+
+
+def test_callaction_constructor_args():
+    sig = inspect.signature(CallAction.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_xmof_basicactions_calloperationaction_is_not_abstract():
+    assert not inspect.isabstract(xmof_BasicActions_CallOperationAction)
+
+
+def test_xmof_basicactions_calloperationaction_constructor_exists():
+    assert callable(xmof_BasicActions_CallOperationAction.__init__)
+
+
+def test_xmof_basicactions_calloperationaction_constructor_args():
+    sig = inspect.signature(xmof_BasicActions_CallOperationAction.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_xmof_basicactions_callbehavioraction_is_not_abstract():
+    assert not inspect.isabstract(xmof_BasicActions_CallBehaviorAction)
+
+
+def test_xmof_basicactions_callbehavioraction_constructor_exists():
+    assert callable(xmof_BasicActions_CallBehaviorAction.__init__)
+
+
+def test_xmof_basicactions_callbehavioraction_constructor_args():
+    sig = inspect.signature(xmof_BasicActions_CallBehaviorAction.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_xmof_completeactions_startobjectbehavioraction_is_not_abstract():
+    assert not inspect.isabstract(xmof_CompleteActions_StartObjectBehaviorAction)
+
+
+def test_xmof_completeactions_startobjectbehavioraction_constructor_exists():
+    assert callable(xmof_CompleteActions_StartObjectBehaviorAction.__init__)
+
+
+def test_xmof_completeactions_startobjectbehavioraction_constructor_args():
+    sig = inspect.signature(xmof_CompleteActions_StartObjectBehaviorAction.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_intermediateactions_xmof_eclassifier_is_not_abstract():
+    assert not inspect.isabstract(IntermediateActions_xmof_EClassifier)
+
+
+def test_intermediateactions_xmof_eclassifier_constructor_exists():
+    assert callable(IntermediateActions_xmof_EClassifier.__init__)
+
+
+def test_intermediateactions_xmof_eclassifier_constructor_args():
+    sig = inspect.signature(IntermediateActions_xmof_EClassifier.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_linkenddata_is_not_abstract():
+    assert not inspect.isabstract(LinkEndData)
+
+
+def test_linkenddata_constructor_exists():
+    assert callable(LinkEndData.__init__)
+
+
+def test_linkenddata_constructor_args():
+    sig = inspect.signature(LinkEndData.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_xmof_intermediateactions_linkenddestructiondata_is_not_abstract():
+    assert not inspect.isabstract(xmof_IntermediateActions_LinkEndDestructionData)
+
+
+def test_xmof_intermediateactions_linkenddestructiondata_constructor_exists():
+    assert callable(xmof_IntermediateActions_LinkEndDestructionData.__init__)
+
+
+def test_xmof_intermediateactions_linkenddestructiondata_constructor_args():
+    sig = inspect.signature(xmof_IntermediateActions_LinkEndDestructionData.__init__)
+    params = list(sig.parameters.keys())
+    assert "destroyDuplicates" in params, "Missing parameter 'destroyDuplicates'"
+
+def test_xmof_intermediateactions_linkenddestructiondata_has_destroyDuplicates():
+    assert hasattr(xmof_IntermediateActions_LinkEndDestructionData, "destroyDuplicates")
+    descriptor = None
+    for klass in xmof_IntermediateActions_LinkEndDestructionData.__mro__:
+        if "destroyDuplicates" in klass.__dict__:
+            descriptor = klass.__dict__["destroyDuplicates"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_xmof_intermediateactions_linkendcreationdata_is_not_abstract():
+    assert not inspect.isabstract(xmof_IntermediateActions_LinkEndCreationData)
+
+
+def test_xmof_intermediateactions_linkendcreationdata_constructor_exists():
+    assert callable(xmof_IntermediateActions_LinkEndCreationData.__init__)
+
+
+def test_xmof_intermediateactions_linkendcreationdata_constructor_args():
+    sig = inspect.signature(xmof_IntermediateActions_LinkEndCreationData.__init__)
+    params = list(sig.parameters.keys())
+    assert "replaceAll" in params, "Missing parameter 'replaceAll'"
+
+def test_xmof_intermediateactions_linkendcreationdata_has_replaceAll():
+    assert hasattr(xmof_IntermediateActions_LinkEndCreationData, "replaceAll")
+    descriptor = None
+    for klass in xmof_IntermediateActions_LinkEndCreationData.__mro__:
+        if "replaceAll" in klass.__dict__:
+            descriptor = klass.__dict__["replaceAll"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_writelinkaction_is_not_abstract():
+    assert not inspect.isabstract(WriteLinkAction)
+
+
+def test_writelinkaction_constructor_exists():
+    assert callable(WriteLinkAction.__init__)
+
+
+def test_writelinkaction_constructor_args():
+    sig = inspect.signature(WriteLinkAction.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_xmof_intermediateactions_destroylinkaction_is_not_abstract():
+    assert not inspect.isabstract(xmof_IntermediateActions_DestroyLinkAction)
+
+
+def test_xmof_intermediateactions_destroylinkaction_constructor_exists():
+    assert callable(xmof_IntermediateActions_DestroyLinkAction.__init__)
+
+
+def test_xmof_intermediateactions_destroylinkaction_constructor_args():
+    sig = inspect.signature(xmof_IntermediateActions_DestroyLinkAction.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_xmof_intermediateactions_createlinkaction_is_not_abstract():
+    assert not inspect.isabstract(xmof_IntermediateActions_CreateLinkAction)
+
+
+def test_xmof_intermediateactions_createlinkaction_constructor_exists():
+    assert callable(xmof_IntermediateActions_CreateLinkAction.__init__)
+
+
+def test_xmof_intermediateactions_createlinkaction_constructor_args():
+    sig = inspect.signature(xmof_IntermediateActions_CreateLinkAction.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_structuralfeatureaction_is_not_abstract():
+    assert not inspect.isabstract(StructuralFeatureAction)
+
+
+def test_structuralfeatureaction_constructor_exists():
+    assert callable(StructuralFeatureAction.__init__)
+
+
+def test_structuralfeatureaction_constructor_args():
+    sig = inspect.signature(StructuralFeatureAction.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_xmof_intermediateactions_readstructuralfeatureaction_is_not_abstract():
+    assert not inspect.isabstract(xmof_IntermediateActions_ReadStructuralFeatureAction)
+
+
+def test_xmof_intermediateactions_readstructuralfeatureaction_constructor_exists():
+    assert callable(xmof_IntermediateActions_ReadStructuralFeatureAction.__init__)
+
+
+def test_xmof_intermediateactions_readstructuralfeatureaction_constructor_args():
+    sig = inspect.signature(xmof_IntermediateActions_ReadStructuralFeatureAction.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_xmof_intermediateactions_clearstructuralfeatureaction_is_not_abstract():
+    assert not inspect.isabstract(xmof_IntermediateActions_ClearStructuralFeatureAction)
+
+
+def test_xmof_intermediateactions_clearstructuralfeatureaction_constructor_exists():
+    assert callable(xmof_IntermediateActions_ClearStructuralFeatureAction.__init__)
+
+
+def test_xmof_intermediateactions_clearstructuralfeatureaction_constructor_args():
+    sig = inspect.signature(xmof_IntermediateActions_ClearStructuralFeatureAction.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_xmof_intermediateactions_writestructuralfeatureaction_is_not_abstract():
+    assert not inspect.isabstract(xmof_IntermediateActions_WriteStructuralFeatureAction)
+
+
+def test_xmof_intermediateactions_writestructuralfeatureaction_constructor_exists():
+    assert callable(xmof_IntermediateActions_WriteStructuralFeatureAction.__init__)
+
+
+def test_xmof_intermediateactions_writestructuralfeatureaction_constructor_args():
+    sig = inspect.signature(xmof_IntermediateActions_WriteStructuralFeatureAction.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_intermediateactions_xmof_ereference_is_not_abstract():
+    assert not inspect.isabstract(IntermediateActions_xmof_EReference)
+
+
+def test_intermediateactions_xmof_ereference_constructor_exists():
+    assert callable(IntermediateActions_xmof_EReference.__init__)
+
+
+def test_intermediateactions_xmof_ereference_constructor_args():
+    sig = inspect.signature(IntermediateActions_xmof_EReference.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_xmof_intermediateactions_linkenddata_is_not_abstract():
+    assert not inspect.isabstract(xmof_IntermediateActions_LinkEndData)
+
+
+def test_xmof_intermediateactions_linkenddata_constructor_exists():
+    assert callable(xmof_IntermediateActions_LinkEndData.__init__)
+
+
+def test_xmof_intermediateactions_linkenddata_constructor_args():
+    sig = inspect.signature(xmof_IntermediateActions_LinkEndData.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_intermediateactions_linkenddata_is_not_abstract():
+    assert not inspect.isabstract(IntermediateActions_LinkEndData)
+
+
+def test_intermediateactions_linkenddata_constructor_exists():
+    assert callable(IntermediateActions_LinkEndData.__init__)
+
+
+def test_intermediateactions_linkenddata_constructor_args():
+    sig = inspect.signature(IntermediateActions_LinkEndData.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_linkaction_is_not_abstract():
+    assert not inspect.isabstract(LinkAction)
+
+
+def test_linkaction_constructor_exists():
+    assert callable(LinkAction.__init__)
+
+
+def test_linkaction_constructor_args():
+    sig = inspect.signature(LinkAction.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_xmof_intermediateactions_writelinkaction_is_not_abstract():
+    assert not inspect.isabstract(xmof_IntermediateActions_WriteLinkAction)
+
+
+def test_xmof_intermediateactions_writelinkaction_constructor_exists():
+    assert callable(xmof_IntermediateActions_WriteLinkAction.__init__)
+
+
+def test_xmof_intermediateactions_writelinkaction_constructor_args():
+    sig = inspect.signature(xmof_IntermediateActions_WriteLinkAction.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_xmof_intermediateactions_readlinkaction_is_not_abstract():
+    assert not inspect.isabstract(xmof_IntermediateActions_ReadLinkAction)
+
+
+def test_xmof_intermediateactions_readlinkaction_constructor_exists():
+    assert callable(xmof_IntermediateActions_ReadLinkAction.__init__)
+
+
+def test_xmof_intermediateactions_readlinkaction_constructor_args():
+    sig = inspect.signature(xmof_IntermediateActions_ReadLinkAction.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_writestructuralfeatureaction_is_not_abstract():
+    assert not inspect.isabstract(WriteStructuralFeatureAction)
+
+
+def test_writestructuralfeatureaction_constructor_exists():
+    assert callable(WriteStructuralFeatureAction.__init__)
+
+
+def test_writestructuralfeatureaction_constructor_args():
+    sig = inspect.signature(WriteStructuralFeatureAction.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_xmof_intermediateactions_addstructuralfeaturevalueaction_is_not_abstract():
+    assert not inspect.isabstract(xmof_IntermediateActions_AddStructuralFeatureValueAction)
+
+
+def test_xmof_intermediateactions_addstructuralfeaturevalueaction_constructor_exists():
+    assert callable(xmof_IntermediateActions_AddStructuralFeatureValueAction.__init__)
+
+
+def test_xmof_intermediateactions_addstructuralfeaturevalueaction_constructor_args():
+    sig = inspect.signature(xmof_IntermediateActions_AddStructuralFeatureValueAction.__init__)
+    params = list(sig.parameters.keys())
+    assert "replaceAll" in params, "Missing parameter 'replaceAll'"
+
+def test_xmof_intermediateactions_addstructuralfeaturevalueaction_has_replaceAll():
+    assert hasattr(xmof_IntermediateActions_AddStructuralFeatureValueAction, "replaceAll")
+    descriptor = None
+    for klass in xmof_IntermediateActions_AddStructuralFeatureValueAction.__mro__:
+        if "replaceAll" in klass.__dict__:
+            descriptor = klass.__dict__["replaceAll"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_xmof_intermediateactions_removestructuralfeaturevalueaction_is_not_abstract():
+    assert not inspect.isabstract(xmof_IntermediateActions_RemoveStructuralFeatureValueAction)
+
+
+def test_xmof_intermediateactions_removestructuralfeaturevalueaction_constructor_exists():
+    assert callable(xmof_IntermediateActions_RemoveStructuralFeatureValueAction.__init__)
+
+
+def test_xmof_intermediateactions_removestructuralfeaturevalueaction_constructor_args():
+    sig = inspect.signature(xmof_IntermediateActions_RemoveStructuralFeatureValueAction.__init__)
+    params = list(sig.parameters.keys())
+    assert "removeDuplicates" in params, "Missing parameter 'removeDuplicates'"
+
+def test_xmof_intermediateactions_removestructuralfeaturevalueaction_has_removeDuplicates():
+    assert hasattr(xmof_IntermediateActions_RemoveStructuralFeatureValueAction, "removeDuplicates")
+    descriptor = None
+    for klass in xmof_IntermediateActions_RemoveStructuralFeatureValueAction.__mro__:
+        if "removeDuplicates" in klass.__dict__:
+            descriptor = klass.__dict__["removeDuplicates"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_intermediateactions_xmof_estructuralfeature_is_not_abstract():
+    assert not inspect.isabstract(IntermediateActions_xmof_EStructuralFeature)
+
+
+def test_intermediateactions_xmof_estructuralfeature_constructor_exists():
+    assert callable(IntermediateActions_xmof_EStructuralFeature.__init__)
+
+
+def test_intermediateactions_xmof_estructuralfeature_constructor_args():
+    sig = inspect.signature(IntermediateActions_xmof_EStructuralFeature.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_extrastructuredactivities_expansionnode_is_not_abstract():
+    assert not inspect.isabstract(ExtraStructuredActivities_ExpansionNode)
+
+
+def test_extrastructuredactivities_expansionnode_constructor_exists():
+    assert callable(ExtraStructuredActivities_ExpansionNode.__init__)
+
+
+def test_extrastructuredactivities_expansionnode_constructor_args():
+    sig = inspect.signature(ExtraStructuredActivities_ExpansionNode.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_extrastructuredactivities_expansionregion_is_not_abstract():
+    assert not inspect.isabstract(ExtraStructuredActivities_ExpansionRegion)
+
+
+def test_extrastructuredactivities_expansionregion_constructor_exists():
+    assert callable(ExtraStructuredActivities_ExpansionRegion.__init__)
+
+
+def test_extrastructuredactivities_expansionregion_constructor_args():
+    sig = inspect.signature(ExtraStructuredActivities_ExpansionRegion.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_action_is_not_abstract():
+    assert not inspect.isabstract(Action)
+
+
+def test_action_constructor_exists():
+    assert callable(Action.__init__)
+
+
+def test_action_constructor_args():
+    sig = inspect.signature(Action.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_xmof_intermediateactions_destroyobjectaction_is_not_abstract():
+    assert not inspect.isabstract(xmof_IntermediateActions_DestroyObjectAction)
+
+
+def test_xmof_intermediateactions_destroyobjectaction_constructor_exists():
+    assert callable(xmof_IntermediateActions_DestroyObjectAction.__init__)
+
+
+def test_xmof_intermediateactions_destroyobjectaction_constructor_args():
+    sig = inspect.signature(xmof_IntermediateActions_DestroyObjectAction.__init__)
+    params = list(sig.parameters.keys())
+    assert "destroyOwnedObjects" in params, "Missing parameter 'destroyOwnedObjects'"
+    assert "destroyLinks" in params, "Missing parameter 'destroyLinks'"
+
+def test_xmof_intermediateactions_destroyobjectaction_has_destroyOwnedObjects():
+    assert hasattr(xmof_IntermediateActions_DestroyObjectAction, "destroyOwnedObjects")
+    descriptor = None
+    for klass in xmof_IntermediateActions_DestroyObjectAction.__mro__:
+        if "destroyOwnedObjects" in klass.__dict__:
+            descriptor = klass.__dict__["destroyOwnedObjects"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_xmof_intermediateactions_destroyobjectaction_has_destroyLinks():
+    assert hasattr(xmof_IntermediateActions_DestroyObjectAction, "destroyLinks")
+    descriptor = None
+    for klass in xmof_IntermediateActions_DestroyObjectAction.__mro__:
+        if "destroyLinks" in klass.__dict__:
+            descriptor = klass.__dict__["destroyLinks"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_xmof_basicactions_invocationaction_is_not_abstract():
+    assert not inspect.isabstract(xmof_BasicActions_InvocationAction)
+
+
+def test_xmof_basicactions_invocationaction_constructor_exists():
+    assert callable(xmof_BasicActions_InvocationAction.__init__)
+
+
+def test_xmof_basicactions_invocationaction_constructor_args():
+    sig = inspect.signature(xmof_BasicActions_InvocationAction.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_xmof_intermediateactions_clearassociationaction_is_not_abstract():
+    assert not inspect.isabstract(xmof_IntermediateActions_ClearAssociationAction)
+
+
+def test_xmof_intermediateactions_clearassociationaction_constructor_exists():
+    assert callable(xmof_IntermediateActions_ClearAssociationAction.__init__)
+
+
+def test_xmof_intermediateactions_clearassociationaction_constructor_args():
+    sig = inspect.signature(xmof_IntermediateActions_ClearAssociationAction.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_xmof_completeactions_reduceaction_is_not_abstract():
+    assert not inspect.isabstract(xmof_CompleteActions_ReduceAction)
+
+
+def test_xmof_completeactions_reduceaction_constructor_exists():
+    assert callable(xmof_CompleteActions_ReduceAction.__init__)
+
+
+def test_xmof_completeactions_reduceaction_constructor_args():
+    sig = inspect.signature(xmof_CompleteActions_ReduceAction.__init__)
+    params = list(sig.parameters.keys())
+    assert "ordered" in params, "Missing parameter 'ordered'"
+
+def test_xmof_completeactions_reduceaction_has_ordered():
+    assert hasattr(xmof_CompleteActions_ReduceAction, "ordered")
+    descriptor = None
+    for klass in xmof_CompleteActions_ReduceAction.__mro__:
+        if "ordered" in klass.__dict__:
+            descriptor = klass.__dict__["ordered"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_xmof_intermediateactions_readselfaction_is_not_abstract():
+    assert not inspect.isabstract(xmof_IntermediateActions_ReadSelfAction)
+
+
+def test_xmof_intermediateactions_readselfaction_constructor_exists():
+    assert callable(xmof_IntermediateActions_ReadSelfAction.__init__)
+
+
+def test_xmof_intermediateactions_readselfaction_constructor_args():
+    sig = inspect.signature(xmof_IntermediateActions_ReadSelfAction.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_xmof_intermediateactions_linkaction_is_not_abstract():
+    assert not inspect.isabstract(xmof_IntermediateActions_LinkAction)
+
+
+def test_xmof_intermediateactions_linkaction_constructor_exists():
+    assert callable(xmof_IntermediateActions_LinkAction.__init__)
+
+
+def test_xmof_intermediateactions_linkaction_constructor_args():
+    sig = inspect.signature(xmof_IntermediateActions_LinkAction.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_xmof_intermediateactions_valuespecificationaction_is_not_abstract():
+    assert not inspect.isabstract(xmof_IntermediateActions_ValueSpecificationAction)
+
+
+def test_xmof_intermediateactions_valuespecificationaction_constructor_exists():
+    assert callable(xmof_IntermediateActions_ValueSpecificationAction.__init__)
+
+
+def test_xmof_intermediateactions_valuespecificationaction_constructor_args():
+    sig = inspect.signature(xmof_IntermediateActions_ValueSpecificationAction.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_xmof_completeactions_reclassifyobjectaction_is_not_abstract():
+    assert not inspect.isabstract(xmof_CompleteActions_ReclassifyObjectAction)
+
+
+def test_xmof_completeactions_reclassifyobjectaction_constructor_exists():
+    assert callable(xmof_CompleteActions_ReclassifyObjectAction.__init__)
+
+
+def test_xmof_completeactions_reclassifyobjectaction_constructor_args():
+    sig = inspect.signature(xmof_CompleteActions_ReclassifyObjectAction.__init__)
+    params = list(sig.parameters.keys())
+    assert "replaceAll" in params, "Missing parameter 'replaceAll'"
+
+def test_xmof_completeactions_reclassifyobjectaction_has_replaceAll():
+    assert hasattr(xmof_CompleteActions_ReclassifyObjectAction, "replaceAll")
+    descriptor = None
+    for klass in xmof_CompleteActions_ReclassifyObjectAction.__mro__:
+        if "replaceAll" in klass.__dict__:
+            descriptor = klass.__dict__["replaceAll"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_xmof_completeactions_accepteventaction_is_not_abstract():
+    assert not inspect.isabstract(xmof_CompleteActions_AcceptEventAction)
+
+
+def test_xmof_completeactions_accepteventaction_constructor_exists():
+    assert callable(xmof_CompleteActions_AcceptEventAction.__init__)
+
+
+def test_xmof_completeactions_accepteventaction_constructor_args():
+    sig = inspect.signature(xmof_CompleteActions_AcceptEventAction.__init__)
+    params = list(sig.parameters.keys())
+    assert "unmarshall" in params, "Missing parameter 'unmarshall'"
+
+def test_xmof_completeactions_accepteventaction_has_unmarshall():
+    assert hasattr(xmof_CompleteActions_AcceptEventAction, "unmarshall")
+    descriptor = None
+    for klass in xmof_CompleteActions_AcceptEventAction.__mro__:
+        if "unmarshall" in klass.__dict__:
+            descriptor = klass.__dict__["unmarshall"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_xmof_completeactions_startclassifierbehavioraction_is_not_abstract():
+    assert not inspect.isabstract(xmof_CompleteActions_StartClassifierBehaviorAction)
+
+
+def test_xmof_completeactions_startclassifierbehavioraction_constructor_exists():
+    assert callable(xmof_CompleteActions_StartClassifierBehaviorAction.__init__)
+
+
+def test_xmof_completeactions_startclassifierbehavioraction_constructor_args():
+    sig = inspect.signature(xmof_CompleteActions_StartClassifierBehaviorAction.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_xmof_completeactions_readextentaction_is_not_abstract():
+    assert not inspect.isabstract(xmof_CompleteActions_ReadExtentAction)
+
+
+def test_xmof_completeactions_readextentaction_constructor_exists():
+    assert callable(xmof_CompleteActions_ReadExtentAction.__init__)
+
+
+def test_xmof_completeactions_readextentaction_constructor_args():
+    sig = inspect.signature(xmof_CompleteActions_ReadExtentAction.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_xmof_intermediateactions_createobjectaction_is_not_abstract():
+    assert not inspect.isabstract(xmof_IntermediateActions_CreateObjectAction)
+
+
+def test_xmof_intermediateactions_createobjectaction_constructor_exists():
+    assert callable(xmof_IntermediateActions_CreateObjectAction.__init__)
+
+
+def test_xmof_intermediateactions_createobjectaction_constructor_args():
+    sig = inspect.signature(xmof_IntermediateActions_CreateObjectAction.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_xmof_intermediateactions_testidentityaction_is_not_abstract():
+    assert not inspect.isabstract(xmof_IntermediateActions_TestIdentityAction)
+
+
+def test_xmof_intermediateactions_testidentityaction_constructor_exists():
+    assert callable(xmof_IntermediateActions_TestIdentityAction.__init__)
+
+
+def test_xmof_intermediateactions_testidentityaction_constructor_args():
+    sig = inspect.signature(xmof_IntermediateActions_TestIdentityAction.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_xmof_intermediateactions_structuralfeatureaction_is_not_abstract():
+    assert not inspect.isabstract(xmof_IntermediateActions_StructuralFeatureAction)
+
+
+def test_xmof_intermediateactions_structuralfeatureaction_constructor_exists():
+    assert callable(xmof_IntermediateActions_StructuralFeatureAction.__init__)
+
+
+def test_xmof_intermediateactions_structuralfeatureaction_constructor_args():
+    sig = inspect.signature(xmof_IntermediateActions_StructuralFeatureAction.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_xmof_completeactions_readisclassifiedobjectaction_is_not_abstract():
+    assert not inspect.isabstract(xmof_CompleteActions_ReadIsClassifiedObjectAction)
+
+
+def test_xmof_completeactions_readisclassifiedobjectaction_constructor_exists():
+    assert callable(xmof_CompleteActions_ReadIsClassifiedObjectAction.__init__)
+
+
+def test_xmof_completeactions_readisclassifiedobjectaction_constructor_args():
+    sig = inspect.signature(xmof_CompleteActions_ReadIsClassifiedObjectAction.__init__)
+    params = list(sig.parameters.keys())
+    assert "direct" in params, "Missing parameter 'direct'"
+
+def test_xmof_completeactions_readisclassifiedobjectaction_has_direct():
+    assert hasattr(xmof_CompleteActions_ReadIsClassifiedObjectAction, "direct")
+    descriptor = None
+    for klass in xmof_CompleteActions_ReadIsClassifiedObjectAction.__mro__:
+        if "direct" in klass.__dict__:
+            descriptor = klass.__dict__["direct"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_xmof_completestructuredactivities_structuredactivitynode_is_not_abstract():
+    assert not inspect.isabstract(xmof_CompleteStructuredActivities_StructuredActivityNode)
+
+
+def test_xmof_completestructuredactivities_structuredactivitynode_constructor_exists():
+    assert callable(xmof_CompleteStructuredActivities_StructuredActivityNode.__init__)
+
+
+def test_xmof_completestructuredactivities_structuredactivitynode_constructor_args():
+    sig = inspect.signature(xmof_CompleteStructuredActivities_StructuredActivityNode.__init__)
+    params = list(sig.parameters.keys())
+    assert "mustIsolate" in params, "Missing parameter 'mustIsolate'"
+
+def test_xmof_completestructuredactivities_structuredactivitynode_has_mustIsolate():
+    assert hasattr(xmof_CompleteStructuredActivities_StructuredActivityNode, "mustIsolate")
+    descriptor = None
+    for klass in xmof_CompleteStructuredActivities_StructuredActivityNode.__mro__:
+        if "mustIsolate" in klass.__dict__:
+            descriptor = klass.__dict__["mustIsolate"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_completestructuredactivities_clause_is_not_abstract():
+    assert not inspect.isabstract(CompleteStructuredActivities_Clause)
+
+
+def test_completestructuredactivities_clause_constructor_exists():
+    assert callable(CompleteStructuredActivities_Clause.__init__)
+
+
+def test_completestructuredactivities_clause_constructor_args():
+    sig = inspect.signature(CompleteStructuredActivities_Clause.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_basicactions_inputpin_is_not_abstract():
+    assert not inspect.isabstract(BasicActions_InputPin)
+
+
+def test_basicactions_inputpin_constructor_exists():
+    assert callable(BasicActions_InputPin.__init__)
+
+
+def test_basicactions_inputpin_constructor_args():
+    sig = inspect.signature(BasicActions_InputPin.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_completestructuredactivities_executablenode_is_not_abstract():
+    assert not inspect.isabstract(CompleteStructuredActivities_ExecutableNode)
+
+
+def test_completestructuredactivities_executablenode_constructor_exists():
+    assert callable(CompleteStructuredActivities_ExecutableNode.__init__)
+
+
+def test_completestructuredactivities_executablenode_constructor_args():
+    sig = inspect.signature(CompleteStructuredActivities_ExecutableNode.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_basicactions_outputpin_is_not_abstract():
+    assert not inspect.isabstract(BasicActions_OutputPin)
+
+
+def test_basicactions_outputpin_constructor_exists():
+    assert callable(BasicActions_OutputPin.__init__)
+
+
+def test_basicactions_outputpin_constructor_args():
+    sig = inspect.signature(BasicActions_OutputPin.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_structuredactivitynode_is_not_abstract():
+    assert not inspect.isabstract(StructuredActivityNode)
+
+
+def test_structuredactivitynode_constructor_exists():
+    assert callable(StructuredActivityNode.__init__)
+
+
+def test_structuredactivitynode_constructor_args():
+    sig = inspect.signature(StructuredActivityNode.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_xmof_extrastructuredactivities_expansionregion_is_not_abstract():
+    assert not inspect.isabstract(xmof_ExtraStructuredActivities_ExpansionRegion)
+
+
+def test_xmof_extrastructuredactivities_expansionregion_constructor_exists():
+    assert callable(xmof_ExtraStructuredActivities_ExpansionRegion.__init__)
+
+
+def test_xmof_extrastructuredactivities_expansionregion_constructor_args():
+    sig = inspect.signature(xmof_ExtraStructuredActivities_ExpansionRegion.__init__)
+    params = list(sig.parameters.keys())
+    assert "mode" in params, "Missing parameter 'mode'"
+
+def test_xmof_extrastructuredactivities_expansionregion_has_mode():
+    assert hasattr(xmof_ExtraStructuredActivities_ExpansionRegion, "mode")
+    descriptor = None
+    for klass in xmof_ExtraStructuredActivities_ExpansionRegion.__mro__:
+        if "mode" in klass.__dict__:
+            descriptor = klass.__dict__["mode"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_xmof_completestructuredactivities_conditionalnode_is_not_abstract():
+    assert not inspect.isabstract(xmof_CompleteStructuredActivities_ConditionalNode)
+
+
+def test_xmof_completestructuredactivities_conditionalnode_constructor_exists():
+    assert callable(xmof_CompleteStructuredActivities_ConditionalNode.__init__)
+
+
+def test_xmof_completestructuredactivities_conditionalnode_constructor_args():
+    sig = inspect.signature(xmof_CompleteStructuredActivities_ConditionalNode.__init__)
+    params = list(sig.parameters.keys())
+    assert "assured" in params, "Missing parameter 'assured'"
+    assert "determinate" in params, "Missing parameter 'determinate'"
+
+def test_xmof_completestructuredactivities_conditionalnode_has_assured():
+    assert hasattr(xmof_CompleteStructuredActivities_ConditionalNode, "assured")
+    descriptor = None
+    for klass in xmof_CompleteStructuredActivities_ConditionalNode.__mro__:
+        if "assured" in klass.__dict__:
+            descriptor = klass.__dict__["assured"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_xmof_completestructuredactivities_conditionalnode_has_determinate():
+    assert hasattr(xmof_CompleteStructuredActivities_ConditionalNode, "determinate")
+    descriptor = None
+    for klass in xmof_CompleteStructuredActivities_ConditionalNode.__mro__:
+        if "determinate" in klass.__dict__:
+            descriptor = klass.__dict__["determinate"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_xmof_completestructuredactivities_loopnode_is_not_abstract():
+    assert not inspect.isabstract(xmof_CompleteStructuredActivities_LoopNode)
+
+
+def test_xmof_completestructuredactivities_loopnode_constructor_exists():
+    assert callable(xmof_CompleteStructuredActivities_LoopNode.__init__)
+
+
+def test_xmof_completestructuredactivities_loopnode_constructor_args():
+    sig = inspect.signature(xmof_CompleteStructuredActivities_LoopNode.__init__)
+    params = list(sig.parameters.keys())
+    assert "testedFirst" in params, "Missing parameter 'testedFirst'"
+
+def test_xmof_completestructuredactivities_loopnode_has_testedFirst():
+    assert hasattr(xmof_CompleteStructuredActivities_LoopNode, "testedFirst")
+    descriptor = None
+    for klass in xmof_CompleteStructuredActivities_LoopNode.__mro__:
+        if "testedFirst" in klass.__dict__:
+            descriptor = klass.__dict__["testedFirst"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_objectnode_is_not_abstract():
+    assert not inspect.isabstract(ObjectNode)
+
+
+def test_objectnode_constructor_exists():
+    assert callable(ObjectNode.__init__)
+
+
+def test_objectnode_constructor_args():
+    sig = inspect.signature(ObjectNode.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_xmof_extrastructuredactivities_expansionnode_is_not_abstract():
+    assert not inspect.isabstract(xmof_ExtraStructuredActivities_ExpansionNode)
+
+
+def test_xmof_extrastructuredactivities_expansionnode_constructor_exists():
+    assert callable(xmof_ExtraStructuredActivities_ExpansionNode.__init__)
+
+
+def test_xmof_extrastructuredactivities_expansionnode_constructor_args():
+    sig = inspect.signature(xmof_ExtraStructuredActivities_ExpansionNode.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_xmof_intermediateactivities_activityparameternode_is_not_abstract():
+    assert not inspect.isabstract(xmof_IntermediateActivities_ActivityParameterNode)
+
+
+def test_xmof_intermediateactivities_activityparameternode_constructor_exists():
+    assert callable(xmof_IntermediateActivities_ActivityParameterNode.__init__)
+
+
+def test_xmof_intermediateactivities_activityparameternode_constructor_args():
+    sig = inspect.signature(xmof_IntermediateActivities_ActivityParameterNode.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_finalnode_is_not_abstract():
+    assert not inspect.isabstract(FinalNode)
+
+
+def test_finalnode_constructor_exists():
+    assert callable(FinalNode.__init__)
+
+
+def test_finalnode_constructor_args():
+    sig = inspect.signature(FinalNode.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_xmof_intermediateactivities_activityfinalnode_is_not_abstract():
+    assert not inspect.isabstract(xmof_IntermediateActivities_ActivityFinalNode)
+
+
+def test_xmof_intermediateactivities_activityfinalnode_constructor_exists():
+    assert callable(xmof_IntermediateActivities_ActivityFinalNode.__init__)
+
+
+def test_xmof_intermediateactivities_activityfinalnode_constructor_args():
+    sig = inspect.signature(xmof_IntermediateActivities_ActivityFinalNode.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_intermediateactivities_objectflow_is_not_abstract():
+    assert not inspect.isabstract(IntermediateActivities_ObjectFlow)
+
+
+def test_intermediateactivities_objectflow_constructor_exists():
+    assert callable(IntermediateActivities_ObjectFlow.__init__)
+
+
+def test_intermediateactivities_objectflow_constructor_args():
+    sig = inspect.signature(IntermediateActivities_ObjectFlow.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_behavioredeclass_is_not_abstract():
+    assert not inspect.isabstract(BehavioredEClass)
+
+
+def test_behavioredeclass_constructor_exists():
+    assert callable(BehavioredEClass.__init__)
+
+
+def test_behavioredeclass_constructor_args():
+    sig = inspect.signature(BehavioredEClass.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_xmof_kernel_maineclass_is_not_abstract():
+    assert not inspect.isabstract(xmof_Kernel_MainEClass)
+
+
+def test_xmof_kernel_maineclass_constructor_exists():
+    assert callable(xmof_Kernel_MainEClass.__init__)
+
+
+def test_xmof_kernel_maineclass_constructor_args():
+    sig = inspect.signature(xmof_Kernel_MainEClass.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_xmof_basicbehaviors_behavior_is_not_abstract():
+    assert not inspect.isabstract(xmof_BasicBehaviors_Behavior)
+
+
+def test_xmof_basicbehaviors_behavior_constructor_exists():
+    assert callable(xmof_BasicBehaviors_Behavior.__init__)
+
+
+def test_xmof_basicbehaviors_behavior_constructor_args():
+    sig = inspect.signature(xmof_BasicBehaviors_Behavior.__init__)
+    params = list(sig.parameters.keys())
+    assert "reentrant" in params, "Missing parameter 'reentrant'"
+
+def test_xmof_basicbehaviors_behavior_has_reentrant():
+    assert hasattr(xmof_BasicBehaviors_Behavior, "reentrant")
+    descriptor = None
+    for klass in xmof_BasicBehaviors_Behavior.__mro__:
+        if "reentrant" in klass.__dict__:
+            descriptor = klass.__dict__["reentrant"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_communications_xmof_eattribute_is_not_abstract():
+    assert not inspect.isabstract(Communications_xmof_EAttribute)
+
+
+def test_communications_xmof_eattribute_constructor_exists():
+    assert callable(Communications_xmof_EAttribute.__init__)
+
+
+def test_communications_xmof_eattribute_constructor_args():
+    sig = inspect.signature(Communications_xmof_EAttribute.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_xmof_communications_signal_is_not_abstract():
+    assert not inspect.isabstract(xmof_Communications_Signal)
+
+
+def test_xmof_communications_signal_constructor_exists():
+    assert callable(xmof_Communications_Signal.__init__)
+
+
+def test_xmof_communications_signal_constructor_args():
+    sig = inspect.signature(xmof_Communications_Signal.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_communications_event_is_not_abstract():
+    assert not inspect.isabstract(Communications_Event)
+
+
+def test_communications_event_constructor_exists():
+    assert callable(Communications_Event.__init__)
+
+
+def test_communications_event_constructor_args():
+    sig = inspect.signature(Communications_Event.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_enamedelement_is_not_abstract():
+    assert not inspect.isabstract(ENamedElement)
+
+
+def test_enamedelement_constructor_exists():
+    assert callable(ENamedElement.__init__)
+
+
+def test_enamedelement_constructor_args():
+    sig = inspect.signature(ENamedElement.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_xmof_kernel_instancespecification_is_not_abstract():
+    assert not inspect.isabstract(xmof_Kernel_InstanceSpecification)
+
+
+def test_xmof_kernel_instancespecification_constructor_exists():
+    assert callable(xmof_Kernel_InstanceSpecification.__init__)
+
+
+def test_xmof_kernel_instancespecification_constructor_args():
+    sig = inspect.signature(xmof_Kernel_InstanceSpecification.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_xmof_communications_event_is_not_abstract():
+    assert not inspect.isabstract(xmof_Communications_Event)
+
+
+def test_xmof_communications_event_constructor_exists():
+    assert callable(xmof_Communications_Event.__init__)
+
+
+def test_xmof_communications_event_constructor_args():
+    sig = inspect.signature(xmof_Communications_Event.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_xmof_intermediateactivities_activitynode_is_not_abstract():
+    assert not inspect.isabstract(xmof_IntermediateActivities_ActivityNode)
+
+
+def test_xmof_intermediateactivities_activitynode_constructor_exists():
+    assert callable(xmof_IntermediateActivities_ActivityNode.__init__)
+
+
+def test_xmof_intermediateactivities_activitynode_constructor_args():
+    sig = inspect.signature(xmof_IntermediateActivities_ActivityNode.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_xmof_intermediateactivities_activityedge_is_not_abstract():
+    assert not inspect.isabstract(xmof_IntermediateActivities_ActivityEdge)
+
+
+def test_xmof_intermediateactivities_activityedge_constructor_exists():
+    assert callable(xmof_IntermediateActivities_ActivityEdge.__init__)
+
+
+def test_xmof_intermediateactivities_activityedge_constructor_args():
+    sig = inspect.signature(xmof_IntermediateActivities_ActivityEdge.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_xmof_communications_trigger_is_not_abstract():
+    assert not inspect.isabstract(xmof_Communications_Trigger)
+
+
+def test_xmof_communications_trigger_constructor_exists():
+    assert callable(xmof_Communications_Trigger.__init__)
+
+
+def test_xmof_communications_trigger_constructor_args():
+    sig = inspect.signature(xmof_Communications_Trigger.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_opaquebehavior_is_not_abstract():
+    assert not inspect.isabstract(OpaqueBehavior)
+
+
+def test_opaquebehavior_constructor_exists():
+    assert callable(OpaqueBehavior.__init__)
+
+
+def test_opaquebehavior_constructor_args():
+    sig = inspect.signature(OpaqueBehavior.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_xmof_basicbehaviors_functionbehavior_is_not_abstract():
+    assert not inspect.isabstract(xmof_BasicBehaviors_FunctionBehavior)
+
+
+def test_xmof_basicbehaviors_functionbehavior_constructor_exists():
+    assert callable(xmof_BasicBehaviors_FunctionBehavior.__init__)
+
+
+def test_xmof_basicbehaviors_functionbehavior_constructor_args():
+    sig = inspect.signature(xmof_BasicBehaviors_FunctionBehavior.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_behavior_is_not_abstract():
+    assert not inspect.isabstract(Behavior)
+
+
+def test_behavior_constructor_exists():
+    assert callable(Behavior.__init__)
+
+
+def test_behavior_constructor_args():
+    sig = inspect.signature(Behavior.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_xmof_intermediateactivities_activity_is_not_abstract():
+    assert not inspect.isabstract(xmof_IntermediateActivities_Activity)
+
+
+def test_xmof_intermediateactivities_activity_constructor_exists():
+    assert callable(xmof_IntermediateActivities_Activity.__init__)
+
+
+def test_xmof_intermediateactivities_activity_constructor_args():
+    sig = inspect.signature(xmof_IntermediateActivities_Activity.__init__)
+    params = list(sig.parameters.keys())
+    assert "readOnly" in params, "Missing parameter 'readOnly'"
+
+def test_xmof_intermediateactivities_activity_has_readOnly():
+    assert hasattr(xmof_IntermediateActivities_Activity, "readOnly")
+    descriptor = None
+    for klass in xmof_IntermediateActivities_Activity.__mro__:
+        if "readOnly" in klass.__dict__:
+            descriptor = klass.__dict__["readOnly"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_xmof_basicbehaviors_opaquebehavior_is_not_abstract():
+    assert not inspect.isabstract(xmof_BasicBehaviors_OpaqueBehavior)
+
+
+def test_xmof_basicbehaviors_opaquebehavior_constructor_exists():
+    assert callable(xmof_BasicBehaviors_OpaqueBehavior.__init__)
+
+
+def test_xmof_basicbehaviors_opaquebehavior_constructor_args():
+    sig = inspect.signature(xmof_BasicBehaviors_OpaqueBehavior.__init__)
+    params = list(sig.parameters.keys())
+    assert "language" in params, "Missing parameter 'language'"
+    assert "body" in params, "Missing parameter 'body'"
+
+def test_xmof_basicbehaviors_opaquebehavior_has_language():
+    assert hasattr(xmof_BasicBehaviors_OpaqueBehavior, "language")
+    descriptor = None
+    for klass in xmof_BasicBehaviors_OpaqueBehavior.__mro__:
+        if "language" in klass.__dict__:
+            descriptor = klass.__dict__["language"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_xmof_basicbehaviors_opaquebehavior_has_body():
+    assert hasattr(xmof_BasicBehaviors_OpaqueBehavior, "body")
+    descriptor = None
+    for klass in xmof_BasicBehaviors_OpaqueBehavior.__mro__:
+        if "body" in klass.__dict__:
+            descriptor = klass.__dict__["body"]
+            break
+    assert isinstance(descriptor, property)
 
 def test_expansionkind_exists():
     # Check that the Enumeration exists
@@ -2548,10 +2548,10 @@ def test_parameterdirectionkind_has_all_literals():
     # Collect the names of literals in this Enumeration
     enum_literals = [lit.name for lit in ParameterDirectionKind]
     expected_literals = [
-        "return_",
-        "out",
-        "inout",
         "in_",
+        "return_",
+        "inout",
+        "out",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
@@ -2569,411 +2569,120 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-BehavioredEClass_strategy = st.builds(
-    BehavioredEClass,
-)
-xmof::BasicBehaviors::Behavior_strategy = st.builds(
-    xmof::BasicBehaviors::Behavior,
-    reentrant=
-        st.booleans()
-)
-Communications::xmof::EAttribute_strategy = st.builds(
-    Communications::xmof::EAttribute,
-)
-Communications::Event_strategy = st.builds(
-    Communications::Event,
-)
-ENamedElement_strategy = st.builds(
-    ENamedElement,
-)
-xmof::Communications::Event_strategy = st.builds(
-    xmof::Communications::Event,
-)
-xmof::Communications::Trigger_strategy = st.builds(
-    xmof::Communications::Trigger,
-)
-OpaqueBehavior_strategy = st.builds(
-    OpaqueBehavior,
-)
-Behavior_strategy = st.builds(
-    Behavior,
-)
-xmof::BasicBehaviors::OpaqueBehavior_strategy = st.builds(
-    xmof::BasicBehaviors::OpaqueBehavior,
-    body=
-        safe_text,
-    language=
-        safe_text
-)
-InvocationAction_strategy = st.builds(
-    InvocationAction,
-)
-xmof::BasicActions::SendSignalAction_strategy = st.builds(
-    xmof::BasicActions::SendSignalAction,
-)
-xmof::BasicActions::CallAction_strategy = st.builds(
-    xmof::BasicActions::CallAction,
-    synchronous=
-        st.booleans()
-)
-IntermediateActivities::ObjectNode_strategy = st.builds(
-    IntermediateActivities::ObjectNode,
-)
-Pin_strategy = st.builds(
-    Pin,
-)
-xmof::BasicActions::OutputPin_strategy = st.builds(
-    xmof::BasicActions::OutputPin,
-)
-xmof::BasicActions::InputPin_strategy = st.builds(
-    xmof::BasicActions::InputPin,
-)
-BasicActions::xmof::EClassifier_strategy = st.builds(
-    BasicActions::xmof::EClassifier,
-)
-CompleteActions::xmof::EClassifier_strategy = st.builds(
-    CompleteActions::xmof::EClassifier,
-)
-ExecutableNode_strategy = st.builds(
-    ExecutableNode,
-)
-xmof::BasicActions::Action_strategy = st.builds(
-    xmof::BasicActions::Action,
-    locallyReentrant=
-        st.booleans()
-)
-Communications::Trigger_strategy = st.builds(
-    Communications::Trigger,
-)
-CallAction_strategy = st.builds(
-    CallAction,
-)
-xmof::BasicActions::CallBehaviorAction_strategy = st.builds(
-    xmof::BasicActions::CallBehaviorAction,
-)
-xmof::BasicActions::CallOperationAction_strategy = st.builds(
-    xmof::BasicActions::CallOperationAction,
-)
-xmof::CompleteActions::StartObjectBehaviorAction_strategy = st.builds(
-    xmof::CompleteActions::StartObjectBehaviorAction,
-)
-IntermediateActions::xmof::EClassifier_strategy = st.builds(
-    IntermediateActions::xmof::EClassifier,
-)
-LinkEndData_strategy = st.builds(
-    LinkEndData,
-)
-xmof::IntermediateActions::LinkEndDestructionData_strategy = st.builds(
-    xmof::IntermediateActions::LinkEndDestructionData,
-    destroyDuplicates=
-        st.booleans()
-)
-xmof::IntermediateActions::LinkEndCreationData_strategy = st.builds(
-    xmof::IntermediateActions::LinkEndCreationData,
-    replaceAll=
-        st.booleans()
-)
-WriteLinkAction_strategy = st.builds(
-    WriteLinkAction,
-)
-xmof::IntermediateActions::DestroyLinkAction_strategy = st.builds(
-    xmof::IntermediateActions::DestroyLinkAction,
-)
-xmof::IntermediateActions::CreateLinkAction_strategy = st.builds(
-    xmof::IntermediateActions::CreateLinkAction,
-)
-StructuralFeatureAction_strategy = st.builds(
-    StructuralFeatureAction,
-)
-xmof::IntermediateActions::ReadStructuralFeatureAction_strategy = st.builds(
-    xmof::IntermediateActions::ReadStructuralFeatureAction,
-)
-xmof::IntermediateActions::ClearStructuralFeatureAction_strategy = st.builds(
-    xmof::IntermediateActions::ClearStructuralFeatureAction,
-)
-xmof::IntermediateActions::WriteStructuralFeatureAction_strategy = st.builds(
-    xmof::IntermediateActions::WriteStructuralFeatureAction,
-)
-IntermediateActions::xmof::EReference_strategy = st.builds(
-    IntermediateActions::xmof::EReference,
-)
-IntermediateActions::LinkEndData_strategy = st.builds(
-    IntermediateActions::LinkEndData,
-)
-LinkAction_strategy = st.builds(
-    LinkAction,
-)
-xmof::IntermediateActions::WriteLinkAction_strategy = st.builds(
-    xmof::IntermediateActions::WriteLinkAction,
-)
-xmof::IntermediateActions::ReadLinkAction_strategy = st.builds(
-    xmof::IntermediateActions::ReadLinkAction,
-)
-WriteStructuralFeatureAction_strategy = st.builds(
-    WriteStructuralFeatureAction,
-)
-xmof::IntermediateActions::AddStructuralFeatureValueAction_strategy = st.builds(
-    xmof::IntermediateActions::AddStructuralFeatureValueAction,
-    replaceAll=
-        st.booleans()
-)
-xmof::IntermediateActions::RemoveStructuralFeatureValueAction_strategy = st.builds(
-    xmof::IntermediateActions::RemoveStructuralFeatureValueAction,
-    removeDuplicates=
-        st.booleans()
-)
-IntermediateActions::xmof::EStructuralFeature_strategy = st.builds(
-    IntermediateActions::xmof::EStructuralFeature,
-)
-ExtraStructuredActivities::ExpansionNode_strategy = st.builds(
-    ExtraStructuredActivities::ExpansionNode,
-)
-ExtraStructuredActivities::ExpansionRegion_strategy = st.builds(
-    ExtraStructuredActivities::ExpansionRegion,
-)
-Action_strategy = st.builds(
-    Action,
-)
-xmof::CompleteActions::ReclassifyObjectAction_strategy = st.builds(
-    xmof::CompleteActions::ReclassifyObjectAction,
-    replaceAll=
-        st.booleans()
-)
-xmof::IntermediateActions::StructuralFeatureAction_strategy = st.builds(
-    xmof::IntermediateActions::StructuralFeatureAction,
-)
-xmof::IntermediateActions::ClearAssociationAction_strategy = st.builds(
-    xmof::IntermediateActions::ClearAssociationAction,
-)
-xmof::CompleteActions::AcceptEventAction_strategy = st.builds(
-    xmof::CompleteActions::AcceptEventAction,
-    unmarshall=
-        st.booleans()
-)
-xmof::IntermediateActions::DestroyObjectAction_strategy = st.builds(
-    xmof::IntermediateActions::DestroyObjectAction,
-    destroyLinks=
-        st.booleans(),
-    destroyOwnedObjects=
-        st.booleans()
-)
-xmof::IntermediateActions::TestIdentityAction_strategy = st.builds(
-    xmof::IntermediateActions::TestIdentityAction,
-)
-xmof::CompleteActions::StartClassifierBehaviorAction_strategy = st.builds(
-    xmof::CompleteActions::StartClassifierBehaviorAction,
-)
-xmof::IntermediateActions::CreateObjectAction_strategy = st.builds(
-    xmof::IntermediateActions::CreateObjectAction,
-)
-xmof::IntermediateActions::ValueSpecificationAction_strategy = st.builds(
-    xmof::IntermediateActions::ValueSpecificationAction,
-)
-xmof::IntermediateActions::LinkAction_strategy = st.builds(
-    xmof::IntermediateActions::LinkAction,
-)
-xmof::CompleteActions::ReadExtentAction_strategy = st.builds(
-    xmof::CompleteActions::ReadExtentAction,
-)
-xmof::BasicActions::InvocationAction_strategy = st.builds(
-    xmof::BasicActions::InvocationAction,
-)
-xmof::CompleteActions::ReadIsClassifiedObjectAction_strategy = st.builds(
-    xmof::CompleteActions::ReadIsClassifiedObjectAction,
-    direct=
-        st.booleans()
-)
-xmof::CompleteActions::ReduceAction_strategy = st.builds(
-    xmof::CompleteActions::ReduceAction,
-    ordered=
-        st.booleans()
-)
-xmof::IntermediateActions::ReadSelfAction_strategy = st.builds(
-    xmof::IntermediateActions::ReadSelfAction,
-)
-xmof::CompleteStructuredActivities::StructuredActivityNode_strategy = st.builds(
-    xmof::CompleteStructuredActivities::StructuredActivityNode,
-    mustIsolate=
-        st.booleans()
-)
-CompleteStructuredActivities::Clause_strategy = st.builds(
-    CompleteStructuredActivities::Clause,
-)
-BasicActions::InputPin_strategy = st.builds(
-    BasicActions::InputPin,
-)
-CompleteStructuredActivities::ExecutableNode_strategy = st.builds(
-    CompleteStructuredActivities::ExecutableNode,
-)
-BasicActions::OutputPin_strategy = st.builds(
-    BasicActions::OutputPin,
-)
-StructuredActivityNode_strategy = st.builds(
-    StructuredActivityNode,
-)
-xmof::ExtraStructuredActivities::ExpansionRegion_strategy = st.builds(
-    xmof::ExtraStructuredActivities::ExpansionRegion,
-    mode=
-        safe_text
-)
-xmof::CompleteStructuredActivities::ConditionalNode_strategy = st.builds(
-    xmof::CompleteStructuredActivities::ConditionalNode,
-    assured=
-        st.booleans(),
-    determinate=
-        st.booleans()
-)
-xmof::CompleteStructuredActivities::LoopNode_strategy = st.builds(
-    xmof::CompleteStructuredActivities::LoopNode,
-    testedFirst=
-        st.booleans()
-)
-ObjectNode_strategy = st.builds(
-    ObjectNode,
-)
-xmof::ExtraStructuredActivities::ExpansionNode_strategy = st.builds(
-    xmof::ExtraStructuredActivities::ExpansionNode,
-)
-xmof::IntermediateActivities::ActivityParameterNode_strategy = st.builds(
-    xmof::IntermediateActivities::ActivityParameterNode,
-)
-FinalNode_strategy = st.builds(
-    FinalNode,
-)
-xmof::IntermediateActivities::ActivityFinalNode_strategy = st.builds(
-    xmof::IntermediateActivities::ActivityFinalNode,
-)
-IntermediateActivities::ObjectFlow_strategy = st.builds(
-    IntermediateActivities::ObjectFlow,
-)
-xmof::IntermediateActivities::ActivityNode_strategy = st.builds(
-    xmof::IntermediateActivities::ActivityNode,
-)
-IntermediateActivities::ActivityEdge_strategy = st.builds(
-    IntermediateActivities::ActivityEdge,
-)
-xmof::IntermediateActivities::Activity_strategy = st.builds(
-    xmof::IntermediateActivities::Activity,
-    readOnly=
-        st.booleans()
-)
-CompleteStructuredActivities::StructuredActivityNode_strategy = st.builds(
-    CompleteStructuredActivities::StructuredActivityNode,
+IntermediateActivities_ActivityEdge_strategy = st.builds(
+    IntermediateActivities_ActivityEdge,
+)
+CompleteStructuredActivities_StructuredActivityNode_strategy = st.builds(
+    CompleteStructuredActivities_StructuredActivityNode,
 )
 ActivityNode_strategy = st.builds(
     ActivityNode,
 )
-xmof::CompleteStructuredActivities::ExecutableNode_strategy = st.builds(
-    xmof::CompleteStructuredActivities::ExecutableNode,
+xmof_CompleteStructuredActivities_ExecutableNode_strategy = st.builds(
+    xmof_CompleteStructuredActivities_ExecutableNode,
 )
-xmof::IntermediateActivities::ControlNode_strategy = st.builds(
-    xmof::IntermediateActivities::ControlNode,
+xmof_IntermediateActivities_ControlNode_strategy = st.builds(
+    xmof_IntermediateActivities_ControlNode,
 )
 ControlNode_strategy = st.builds(
     ControlNode,
 )
-xmof::IntermediateActivities::InitialNode_strategy = st.builds(
-    xmof::IntermediateActivities::InitialNode,
+xmof_IntermediateActivities_FinalNode_strategy = st.builds(
+    xmof_IntermediateActivities_FinalNode,
 )
-xmof::IntermediateActivities::ForkNode_strategy = st.builds(
-    xmof::IntermediateActivities::ForkNode,
+xmof_IntermediateActivities_DecisionNode_strategy = st.builds(
+    xmof_IntermediateActivities_DecisionNode,
 )
-xmof::IntermediateActivities::FinalNode_strategy = st.builds(
-    xmof::IntermediateActivities::FinalNode,
+xmof_IntermediateActivities_InitialNode_strategy = st.builds(
+    xmof_IntermediateActivities_InitialNode,
 )
-xmof::IntermediateActivities::JoinNode_strategy = st.builds(
-    xmof::IntermediateActivities::JoinNode,
+xmof_IntermediateActivities_JoinNode_strategy = st.builds(
+    xmof_IntermediateActivities_JoinNode,
 )
-xmof::IntermediateActivities::DecisionNode_strategy = st.builds(
-    xmof::IntermediateActivities::DecisionNode,
+xmof_IntermediateActivities_ForkNode_strategy = st.builds(
+    xmof_IntermediateActivities_ForkNode,
 )
-xmof::IntermediateActivities::MergeNode_strategy = st.builds(
-    xmof::IntermediateActivities::MergeNode,
+xmof_IntermediateActivities_MergeNode_strategy = st.builds(
+    xmof_IntermediateActivities_MergeNode,
 )
 LiteralSpecification_strategy = st.builds(
     LiteralSpecification,
 )
-xmof::Kernel::LiteralInteger_strategy = st.builds(
-    xmof::Kernel::LiteralInteger,
+xmof_Kernel_LiteralInteger_strategy = st.builds(
+    xmof_Kernel_LiteralInteger,
     value=
         st.integers()
 )
-xmof::Kernel::LiteralNull_strategy = st.builds(
-    xmof::Kernel::LiteralNull,
-)
-xmof::Kernel::LiteralUnlimitedNatural_strategy = st.builds(
-    xmof::Kernel::LiteralUnlimitedNatural,
+xmof_Kernel_LiteralUnlimitedNatural_strategy = st.builds(
+    xmof_Kernel_LiteralUnlimitedNatural,
     value=
         st.integers()
 )
-xmof::Kernel::LiteralString_strategy = st.builds(
-    xmof::Kernel::LiteralString,
+xmof_Kernel_LiteralNull_strategy = st.builds(
+    xmof_Kernel_LiteralNull,
+)
+xmof_Kernel_LiteralString_strategy = st.builds(
+    xmof_Kernel_LiteralString,
     value=
         safe_text
 )
-xmof::Kernel::LiteralBoolean_strategy = st.builds(
-    xmof::Kernel::LiteralBoolean,
+xmof_Kernel_LiteralBoolean_strategy = st.builds(
+    xmof_Kernel_LiteralBoolean,
     value=
         st.booleans()
 )
 ValueSpecification_strategy = st.builds(
     ValueSpecification,
 )
-xmof::Kernel::LiteralSpecification_strategy = st.builds(
-    xmof::Kernel::LiteralSpecification,
+xmof_Kernel_LiteralSpecification_strategy = st.builds(
+    xmof_Kernel_LiteralSpecification,
 )
-xmof::Kernel::InstanceValue_strategy = st.builds(
-    xmof::Kernel::InstanceValue,
+xmof_Kernel_InstanceValue_strategy = st.builds(
+    xmof_Kernel_InstanceValue,
 )
-Kernel::InstanceSpecification_strategy = st.builds(
-    Kernel::InstanceSpecification,
+Kernel_InstanceSpecification_strategy = st.builds(
+    Kernel_InstanceSpecification,
 )
-Kernel::ValueSpecification_strategy = st.builds(
-    Kernel::ValueSpecification,
+Kernel_ValueSpecification_strategy = st.builds(
+    Kernel_ValueSpecification,
 )
-IntermediateActivities::ActivityNode_strategy = st.builds(
-    IntermediateActivities::ActivityNode,
+IntermediateActivities_ActivityNode_strategy = st.builds(
+    IntermediateActivities_ActivityNode,
 )
-IntermediateActivities::Activity_strategy = st.builds(
-    IntermediateActivities::Activity,
-)
-xmof::IntermediateActivities::ActivityEdge_strategy = st.builds(
-    xmof::IntermediateActivities::ActivityEdge,
+IntermediateActivities_Activity_strategy = st.builds(
+    IntermediateActivities_Activity,
 )
 ActivityEdge_strategy = st.builds(
     ActivityEdge,
 )
-xmof::IntermediateActivities::ControlFlow_strategy = st.builds(
-    xmof::IntermediateActivities::ControlFlow,
+xmof_IntermediateActivities_ControlFlow_strategy = st.builds(
+    xmof_IntermediateActivities_ControlFlow,
 )
-xmof::IntermediateActivities::ObjectFlow_strategy = st.builds(
-    xmof::IntermediateActivities::ObjectFlow,
+xmof_IntermediateActivities_ObjectFlow_strategy = st.builds(
+    xmof_IntermediateActivities_ObjectFlow,
 )
 EDataType_strategy = st.builds(
     EDataType,
 )
-xmof::Kernel::PrimitiveType_strategy = st.builds(
-    xmof::Kernel::PrimitiveType,
+xmof_Kernel_PrimitiveType_strategy = st.builds(
+    xmof_Kernel_PrimitiveType,
 )
-Kernel::xmof::EEnumLiteral_strategy = st.builds(
-    Kernel::xmof::EEnumLiteral,
+Kernel_xmof_EEnumLiteral_strategy = st.builds(
+    Kernel_xmof_EEnumLiteral,
 )
 InstanceSpecification_strategy = st.builds(
     InstanceSpecification,
 )
-xmof::Kernel::EEnumLiteralSpecification_strategy = st.builds(
-    xmof::Kernel::EEnumLiteralSpecification,
+xmof_Kernel_EEnumLiteralSpecification_strategy = st.builds(
+    xmof_Kernel_EEnumLiteralSpecification,
 )
 EParameter_strategy = st.builds(
     EParameter,
 )
-xmof::Kernel::DirectedParameter_strategy = st.builds(
-    xmof::Kernel::DirectedParameter,
+xmof_Kernel_DirectedParameter_strategy = st.builds(
+    xmof_Kernel_DirectedParameter,
     direction=
         safe_text
-)
-xmof::Kernel::MainEClass_strategy = st.builds(
-    xmof::Kernel::MainEClass,
 )
 EClass_strategy = st.builds(
     EClass,
@@ -2981,860 +2690,503 @@ EClass_strategy = st.builds(
 EOperation_strategy = st.builds(
     EOperation,
 )
-xmof::Kernel::BehavioredEOperation_strategy = st.builds(
-    xmof::Kernel::BehavioredEOperation,
+xmof_Kernel_BehavioredEOperation_strategy = st.builds(
+    xmof_Kernel_BehavioredEOperation,
 )
 BehavioredEOperation_strategy = st.builds(
     BehavioredEOperation,
 )
-xmof::Communications::Reception_strategy = st.builds(
-    xmof::Communications::Reception,
+xmof_Communications_Reception_strategy = st.builds(
+    xmof_Communications_Reception,
 )
 Event_strategy = st.builds(
     Event,
 )
-xmof::Communications::MessageEvent_strategy = st.builds(
-    xmof::Communications::MessageEvent,
+xmof_Communications_MessageEvent_strategy = st.builds(
+    xmof_Communications_MessageEvent,
 )
-Communications::Signal_strategy = st.builds(
-    Communications::Signal,
+Communications_Signal_strategy = st.builds(
+    Communications_Signal,
 )
 MessageEvent_strategy = st.builds(
     MessageEvent,
 )
-xmof::Communications::SignalEvent_strategy = st.builds(
-    xmof::Communications::SignalEvent,
+xmof_Communications_SignalEvent_strategy = st.builds(
+    xmof_Communications_SignalEvent,
 )
-Kernel::xmof::EStructuralFeature_strategy = st.builds(
-    Kernel::xmof::EStructuralFeature,
+Kernel_xmof_EStructuralFeature_strategy = st.builds(
+    Kernel_xmof_EStructuralFeature,
 )
 EModelElement_strategy = st.builds(
     EModelElement,
 )
-xmof::CompleteStructuredActivities::Clause_strategy = st.builds(
-    xmof::CompleteStructuredActivities::Clause,
+xmof_CompleteStructuredActivities_Clause_strategy = st.builds(
+    xmof_CompleteStructuredActivities_Clause,
 )
-xmof::IntermediateActions::LinkEndData_strategy = st.builds(
-    xmof::IntermediateActions::LinkEndData,
+xmof_Kernel_Slot_strategy = st.builds(
+    xmof_Kernel_Slot,
 )
-xmof::Kernel::Slot_strategy = st.builds(
-    xmof::Kernel::Slot,
+Kernel_Slot_strategy = st.builds(
+    Kernel_Slot,
 )
-Kernel::Slot_strategy = st.builds(
-    Kernel::Slot,
-)
-Kernel::xmof::EClassifier_strategy = st.builds(
-    Kernel::xmof::EClassifier,
-)
-xmof::Kernel::InstanceSpecification_strategy = st.builds(
-    xmof::Kernel::InstanceSpecification,
+Kernel_xmof_EClassifier_strategy = st.builds(
+    Kernel_xmof_EClassifier,
 )
 ETypedElement_strategy = st.builds(
     ETypedElement,
 )
-xmof::IntermediateActivities::ObjectNode_strategy = st.builds(
-    xmof::IntermediateActivities::ObjectNode,
+xmof_IntermediateActivities_ObjectNode_strategy = st.builds(
+    xmof_IntermediateActivities_ObjectNode,
 )
-xmof::BasicActions::Pin_strategy = st.builds(
-    xmof::BasicActions::Pin,
+xmof_Kernel_ValueSpecification_strategy = st.builds(
+    xmof_Kernel_ValueSpecification,
 )
-xmof::Kernel::ValueSpecification_strategy = st.builds(
-    xmof::Kernel::ValueSpecification,
-)
-xmof::BasicBehaviors::FunctionBehavior_strategy = st.builds(
-    xmof::BasicBehaviors::FunctionBehavior,
-)
-BasicBehaviors::Behavior_strategy = st.builds(
-    BasicBehaviors::Behavior,
+BasicBehaviors_Behavior_strategy = st.builds(
+    BasicBehaviors_Behavior,
 )
 EClassifier_strategy = st.builds(
     EClassifier,
 )
-xmof::Communications::Signal_strategy = st.builds(
-    xmof::Communications::Signal,
+xmof_BasicBehaviors_BehavioredClassifier_strategy = st.builds(
+    xmof_BasicBehaviors_BehavioredClassifier,
 )
-xmof::BasicBehaviors::BehavioredClassifier_strategy = st.builds(
-    xmof::BasicBehaviors::BehavioredClassifier,
+BasicBehaviors_BehavioredClassifier_strategy = st.builds(
+    BasicBehaviors_BehavioredClassifier,
 )
-BasicBehaviors::BehavioredClassifier_strategy = st.builds(
-    BasicBehaviors::BehavioredClassifier,
+xmof_Kernel_BehavioredEClass_strategy = st.builds(
+    xmof_Kernel_BehavioredEClass,
 )
-xmof::Kernel::BehavioredEClass_strategy = st.builds(
-    xmof::Kernel::BehavioredEClass,
+Kernel_DirectedParameter_strategy = st.builds(
+    Kernel_DirectedParameter,
 )
-Kernel::DirectedParameter_strategy = st.builds(
-    Kernel::DirectedParameter,
+Kernel_BehavioredEOperation_strategy = st.builds(
+    Kernel_BehavioredEOperation,
 )
-Kernel::BehavioredEOperation_strategy = st.builds(
-    Kernel::BehavioredEOperation,
+InvocationAction_strategy = st.builds(
+    InvocationAction,
+)
+xmof_BasicActions_SendSignalAction_strategy = st.builds(
+    xmof_BasicActions_SendSignalAction,
+)
+xmof_BasicActions_CallAction_strategy = st.builds(
+    xmof_BasicActions_CallAction,
+    synchronous=
+        st.booleans()
+)
+IntermediateActivities_ObjectNode_strategy = st.builds(
+    IntermediateActivities_ObjectNode,
+)
+xmof_BasicActions_Pin_strategy = st.builds(
+    xmof_BasicActions_Pin,
+)
+Pin_strategy = st.builds(
+    Pin,
+)
+xmof_BasicActions_OutputPin_strategy = st.builds(
+    xmof_BasicActions_OutputPin,
+)
+xmof_BasicActions_InputPin_strategy = st.builds(
+    xmof_BasicActions_InputPin,
+)
+BasicActions_xmof_EClassifier_strategy = st.builds(
+    BasicActions_xmof_EClassifier,
+)
+CompleteActions_xmof_EClassifier_strategy = st.builds(
+    CompleteActions_xmof_EClassifier,
+)
+ExecutableNode_strategy = st.builds(
+    ExecutableNode,
+)
+xmof_BasicActions_Action_strategy = st.builds(
+    xmof_BasicActions_Action,
+    locallyReentrant=
+        st.booleans()
+)
+Communications_Trigger_strategy = st.builds(
+    Communications_Trigger,
+)
+CallAction_strategy = st.builds(
+    CallAction,
+)
+xmof_BasicActions_CallOperationAction_strategy = st.builds(
+    xmof_BasicActions_CallOperationAction,
+)
+xmof_BasicActions_CallBehaviorAction_strategy = st.builds(
+    xmof_BasicActions_CallBehaviorAction,
+)
+xmof_CompleteActions_StartObjectBehaviorAction_strategy = st.builds(
+    xmof_CompleteActions_StartObjectBehaviorAction,
+)
+IntermediateActions_xmof_EClassifier_strategy = st.builds(
+    IntermediateActions_xmof_EClassifier,
+)
+LinkEndData_strategy = st.builds(
+    LinkEndData,
+)
+xmof_IntermediateActions_LinkEndDestructionData_strategy = st.builds(
+    xmof_IntermediateActions_LinkEndDestructionData,
+    destroyDuplicates=
+        st.booleans()
+)
+xmof_IntermediateActions_LinkEndCreationData_strategy = st.builds(
+    xmof_IntermediateActions_LinkEndCreationData,
+    replaceAll=
+        st.booleans()
+)
+WriteLinkAction_strategy = st.builds(
+    WriteLinkAction,
+)
+xmof_IntermediateActions_DestroyLinkAction_strategy = st.builds(
+    xmof_IntermediateActions_DestroyLinkAction,
+)
+xmof_IntermediateActions_CreateLinkAction_strategy = st.builds(
+    xmof_IntermediateActions_CreateLinkAction,
+)
+StructuralFeatureAction_strategy = st.builds(
+    StructuralFeatureAction,
+)
+xmof_IntermediateActions_ReadStructuralFeatureAction_strategy = st.builds(
+    xmof_IntermediateActions_ReadStructuralFeatureAction,
+)
+xmof_IntermediateActions_ClearStructuralFeatureAction_strategy = st.builds(
+    xmof_IntermediateActions_ClearStructuralFeatureAction,
+)
+xmof_IntermediateActions_WriteStructuralFeatureAction_strategy = st.builds(
+    xmof_IntermediateActions_WriteStructuralFeatureAction,
+)
+IntermediateActions_xmof_EReference_strategy = st.builds(
+    IntermediateActions_xmof_EReference,
+)
+xmof_IntermediateActions_LinkEndData_strategy = st.builds(
+    xmof_IntermediateActions_LinkEndData,
+)
+IntermediateActions_LinkEndData_strategy = st.builds(
+    IntermediateActions_LinkEndData,
+)
+LinkAction_strategy = st.builds(
+    LinkAction,
+)
+xmof_IntermediateActions_WriteLinkAction_strategy = st.builds(
+    xmof_IntermediateActions_WriteLinkAction,
+)
+xmof_IntermediateActions_ReadLinkAction_strategy = st.builds(
+    xmof_IntermediateActions_ReadLinkAction,
+)
+WriteStructuralFeatureAction_strategy = st.builds(
+    WriteStructuralFeatureAction,
+)
+xmof_IntermediateActions_AddStructuralFeatureValueAction_strategy = st.builds(
+    xmof_IntermediateActions_AddStructuralFeatureValueAction,
+    replaceAll=
+        st.booleans()
+)
+xmof_IntermediateActions_RemoveStructuralFeatureValueAction_strategy = st.builds(
+    xmof_IntermediateActions_RemoveStructuralFeatureValueAction,
+    removeDuplicates=
+        st.booleans()
+)
+IntermediateActions_xmof_EStructuralFeature_strategy = st.builds(
+    IntermediateActions_xmof_EStructuralFeature,
+)
+ExtraStructuredActivities_ExpansionNode_strategy = st.builds(
+    ExtraStructuredActivities_ExpansionNode,
+)
+ExtraStructuredActivities_ExpansionRegion_strategy = st.builds(
+    ExtraStructuredActivities_ExpansionRegion,
+)
+Action_strategy = st.builds(
+    Action,
+)
+xmof_IntermediateActions_DestroyObjectAction_strategy = st.builds(
+    xmof_IntermediateActions_DestroyObjectAction,
+    destroyOwnedObjects=
+        st.booleans(),
+    destroyLinks=
+        st.booleans()
+)
+xmof_BasicActions_InvocationAction_strategy = st.builds(
+    xmof_BasicActions_InvocationAction,
+)
+xmof_IntermediateActions_ClearAssociationAction_strategy = st.builds(
+    xmof_IntermediateActions_ClearAssociationAction,
+)
+xmof_CompleteActions_ReduceAction_strategy = st.builds(
+    xmof_CompleteActions_ReduceAction,
+    ordered=
+        st.booleans()
+)
+xmof_IntermediateActions_ReadSelfAction_strategy = st.builds(
+    xmof_IntermediateActions_ReadSelfAction,
+)
+xmof_IntermediateActions_LinkAction_strategy = st.builds(
+    xmof_IntermediateActions_LinkAction,
+)
+xmof_IntermediateActions_ValueSpecificationAction_strategy = st.builds(
+    xmof_IntermediateActions_ValueSpecificationAction,
+)
+xmof_CompleteActions_ReclassifyObjectAction_strategy = st.builds(
+    xmof_CompleteActions_ReclassifyObjectAction,
+    replaceAll=
+        st.booleans()
+)
+xmof_CompleteActions_AcceptEventAction_strategy = st.builds(
+    xmof_CompleteActions_AcceptEventAction,
+    unmarshall=
+        st.booleans()
+)
+xmof_CompleteActions_StartClassifierBehaviorAction_strategy = st.builds(
+    xmof_CompleteActions_StartClassifierBehaviorAction,
+)
+xmof_CompleteActions_ReadExtentAction_strategy = st.builds(
+    xmof_CompleteActions_ReadExtentAction,
+)
+xmof_IntermediateActions_CreateObjectAction_strategy = st.builds(
+    xmof_IntermediateActions_CreateObjectAction,
+)
+xmof_IntermediateActions_TestIdentityAction_strategy = st.builds(
+    xmof_IntermediateActions_TestIdentityAction,
+)
+xmof_IntermediateActions_StructuralFeatureAction_strategy = st.builds(
+    xmof_IntermediateActions_StructuralFeatureAction,
+)
+xmof_CompleteActions_ReadIsClassifiedObjectAction_strategy = st.builds(
+    xmof_CompleteActions_ReadIsClassifiedObjectAction,
+    direct=
+        st.booleans()
+)
+xmof_CompleteStructuredActivities_StructuredActivityNode_strategy = st.builds(
+    xmof_CompleteStructuredActivities_StructuredActivityNode,
+    mustIsolate=
+        st.booleans()
+)
+CompleteStructuredActivities_Clause_strategy = st.builds(
+    CompleteStructuredActivities_Clause,
+)
+BasicActions_InputPin_strategy = st.builds(
+    BasicActions_InputPin,
+)
+CompleteStructuredActivities_ExecutableNode_strategy = st.builds(
+    CompleteStructuredActivities_ExecutableNode,
+)
+BasicActions_OutputPin_strategy = st.builds(
+    BasicActions_OutputPin,
+)
+StructuredActivityNode_strategy = st.builds(
+    StructuredActivityNode,
+)
+xmof_ExtraStructuredActivities_ExpansionRegion_strategy = st.builds(
+    xmof_ExtraStructuredActivities_ExpansionRegion,
+    mode=
+        safe_text
+)
+xmof_CompleteStructuredActivities_ConditionalNode_strategy = st.builds(
+    xmof_CompleteStructuredActivities_ConditionalNode,
+    assured=
+        st.booleans(),
+    determinate=
+        st.booleans()
+)
+xmof_CompleteStructuredActivities_LoopNode_strategy = st.builds(
+    xmof_CompleteStructuredActivities_LoopNode,
+    testedFirst=
+        st.booleans()
+)
+ObjectNode_strategy = st.builds(
+    ObjectNode,
+)
+xmof_ExtraStructuredActivities_ExpansionNode_strategy = st.builds(
+    xmof_ExtraStructuredActivities_ExpansionNode,
+)
+xmof_IntermediateActivities_ActivityParameterNode_strategy = st.builds(
+    xmof_IntermediateActivities_ActivityParameterNode,
+)
+FinalNode_strategy = st.builds(
+    FinalNode,
+)
+xmof_IntermediateActivities_ActivityFinalNode_strategy = st.builds(
+    xmof_IntermediateActivities_ActivityFinalNode,
+)
+IntermediateActivities_ObjectFlow_strategy = st.builds(
+    IntermediateActivities_ObjectFlow,
+)
+BehavioredEClass_strategy = st.builds(
+    BehavioredEClass,
+)
+xmof_Kernel_MainEClass_strategy = st.builds(
+    xmof_Kernel_MainEClass,
+)
+xmof_BasicBehaviors_Behavior_strategy = st.builds(
+    xmof_BasicBehaviors_Behavior,
+    reentrant=
+        st.booleans()
+)
+Communications_xmof_EAttribute_strategy = st.builds(
+    Communications_xmof_EAttribute,
+)
+xmof_Communications_Signal_strategy = st.builds(
+    xmof_Communications_Signal,
+)
+Communications_Event_strategy = st.builds(
+    Communications_Event,
+)
+ENamedElement_strategy = st.builds(
+    ENamedElement,
+)
+xmof_Kernel_InstanceSpecification_strategy = st.builds(
+    xmof_Kernel_InstanceSpecification,
+)
+xmof_Communications_Event_strategy = st.builds(
+    xmof_Communications_Event,
+)
+xmof_IntermediateActivities_ActivityNode_strategy = st.builds(
+    xmof_IntermediateActivities_ActivityNode,
+)
+xmof_IntermediateActivities_ActivityEdge_strategy = st.builds(
+    xmof_IntermediateActivities_ActivityEdge,
+)
+xmof_Communications_Trigger_strategy = st.builds(
+    xmof_Communications_Trigger,
+)
+OpaqueBehavior_strategy = st.builds(
+    OpaqueBehavior,
+)
+xmof_BasicBehaviors_FunctionBehavior_strategy = st.builds(
+    xmof_BasicBehaviors_FunctionBehavior,
+)
+Behavior_strategy = st.builds(
+    Behavior,
+)
+xmof_IntermediateActivities_Activity_strategy = st.builds(
+    xmof_IntermediateActivities_Activity,
+    readOnly=
+        st.booleans()
+)
+xmof_BasicBehaviors_OpaqueBehavior_strategy = st.builds(
+    xmof_BasicBehaviors_OpaqueBehavior,
+    language=
+        safe_text,
+    body=
+        safe_text
 )
 
-@given(instance=BehavioredEClass_strategy)
+@given(instance=IntermediateActivities_ActivityEdge_strategy)
 @settings(max_examples=50)
-def test_behavioredeclass_instantiation(instance):
-    assert isinstance(instance, BehavioredEClass)
+def test_intermediateactivities_activityedge_instantiation(instance):
+    assert isinstance(instance, IntermediateActivities_ActivityEdge)
 
-@given(instance=xmof::BasicBehaviors::Behavior_strategy)
+@given(instance=CompleteStructuredActivities_StructuredActivityNode_strategy)
 @settings(max_examples=50)
-def test_xmof::basicbehaviors::behavior_instantiation(instance):
-    assert isinstance(instance, xmof::BasicBehaviors::Behavior)
-
-@given(instance=xmof::BasicBehaviors::Behavior_strategy)
-def test_xmof::basicbehaviors::behavior_reentrant_type(instance):
-    assert isinstance(instance.reentrant, bool)
-
-
-@given(instance=xmof::BasicBehaviors::Behavior_strategy)
-def test_xmof::basicbehaviors::behavior_reentrant_setter(instance):
-    original = instance.reentrant
-    instance.reentrant = original
-    assert instance.reentrant == original
-
-@given(instance=Communications::xmof::EAttribute_strategy)
-@settings(max_examples=50)
-def test_communications::xmof::eattribute_instantiation(instance):
-    assert isinstance(instance, Communications::xmof::EAttribute)
-
-@given(instance=Communications::Event_strategy)
-@settings(max_examples=50)
-def test_communications::event_instantiation(instance):
-    assert isinstance(instance, Communications::Event)
-
-@given(instance=ENamedElement_strategy)
-@settings(max_examples=50)
-def test_enamedelement_instantiation(instance):
-    assert isinstance(instance, ENamedElement)
-
-@given(instance=xmof::Communications::Event_strategy)
-@settings(max_examples=50)
-def test_xmof::communications::event_instantiation(instance):
-    assert isinstance(instance, xmof::Communications::Event)
-
-@given(instance=xmof::Communications::Trigger_strategy)
-@settings(max_examples=50)
-def test_xmof::communications::trigger_instantiation(instance):
-    assert isinstance(instance, xmof::Communications::Trigger)
-
-@given(instance=OpaqueBehavior_strategy)
-@settings(max_examples=50)
-def test_opaquebehavior_instantiation(instance):
-    assert isinstance(instance, OpaqueBehavior)
-
-@given(instance=Behavior_strategy)
-@settings(max_examples=50)
-def test_behavior_instantiation(instance):
-    assert isinstance(instance, Behavior)
-
-@given(instance=xmof::BasicBehaviors::OpaqueBehavior_strategy)
-@settings(max_examples=50)
-def test_xmof::basicbehaviors::opaquebehavior_instantiation(instance):
-    assert isinstance(instance, xmof::BasicBehaviors::OpaqueBehavior)
-
-@given(instance=xmof::BasicBehaviors::OpaqueBehavior_strategy)
-def test_xmof::basicbehaviors::opaquebehavior_body_type(instance):
-    assert isinstance(instance.body, str)
-
-
-@given(instance=xmof::BasicBehaviors::OpaqueBehavior_strategy)
-def test_xmof::basicbehaviors::opaquebehavior_body_setter(instance):
-    original = instance.body
-    instance.body = original
-    assert instance.body == original
-
-@given(instance=xmof::BasicBehaviors::OpaqueBehavior_strategy)
-def test_xmof::basicbehaviors::opaquebehavior_language_type(instance):
-    assert isinstance(instance.language, str)
-
-
-@given(instance=xmof::BasicBehaviors::OpaqueBehavior_strategy)
-def test_xmof::basicbehaviors::opaquebehavior_language_setter(instance):
-    original = instance.language
-    instance.language = original
-    assert instance.language == original
-
-@given(instance=InvocationAction_strategy)
-@settings(max_examples=50)
-def test_invocationaction_instantiation(instance):
-    assert isinstance(instance, InvocationAction)
-
-@given(instance=xmof::BasicActions::SendSignalAction_strategy)
-@settings(max_examples=50)
-def test_xmof::basicactions::sendsignalaction_instantiation(instance):
-    assert isinstance(instance, xmof::BasicActions::SendSignalAction)
-
-@given(instance=xmof::BasicActions::CallAction_strategy)
-@settings(max_examples=50)
-def test_xmof::basicactions::callaction_instantiation(instance):
-    assert isinstance(instance, xmof::BasicActions::CallAction)
-
-@given(instance=xmof::BasicActions::CallAction_strategy)
-def test_xmof::basicactions::callaction_synchronous_type(instance):
-    assert isinstance(instance.synchronous, bool)
-
-
-@given(instance=xmof::BasicActions::CallAction_strategy)
-def test_xmof::basicactions::callaction_synchronous_setter(instance):
-    original = instance.synchronous
-    instance.synchronous = original
-    assert instance.synchronous == original
-
-@given(instance=IntermediateActivities::ObjectNode_strategy)
-@settings(max_examples=50)
-def test_intermediateactivities::objectnode_instantiation(instance):
-    assert isinstance(instance, IntermediateActivities::ObjectNode)
-
-@given(instance=Pin_strategy)
-@settings(max_examples=50)
-def test_pin_instantiation(instance):
-    assert isinstance(instance, Pin)
-
-@given(instance=xmof::BasicActions::OutputPin_strategy)
-@settings(max_examples=50)
-def test_xmof::basicactions::outputpin_instantiation(instance):
-    assert isinstance(instance, xmof::BasicActions::OutputPin)
-
-@given(instance=xmof::BasicActions::InputPin_strategy)
-@settings(max_examples=50)
-def test_xmof::basicactions::inputpin_instantiation(instance):
-    assert isinstance(instance, xmof::BasicActions::InputPin)
-
-@given(instance=BasicActions::xmof::EClassifier_strategy)
-@settings(max_examples=50)
-def test_basicactions::xmof::eclassifier_instantiation(instance):
-    assert isinstance(instance, BasicActions::xmof::EClassifier)
-
-@given(instance=CompleteActions::xmof::EClassifier_strategy)
-@settings(max_examples=50)
-def test_completeactions::xmof::eclassifier_instantiation(instance):
-    assert isinstance(instance, CompleteActions::xmof::EClassifier)
-
-@given(instance=ExecutableNode_strategy)
-@settings(max_examples=50)
-def test_executablenode_instantiation(instance):
-    assert isinstance(instance, ExecutableNode)
-
-@given(instance=xmof::BasicActions::Action_strategy)
-@settings(max_examples=50)
-def test_xmof::basicactions::action_instantiation(instance):
-    assert isinstance(instance, xmof::BasicActions::Action)
-
-@given(instance=xmof::BasicActions::Action_strategy)
-def test_xmof::basicactions::action_locallyReentrant_type(instance):
-    assert isinstance(instance.locallyReentrant, bool)
-
-
-@given(instance=xmof::BasicActions::Action_strategy)
-def test_xmof::basicactions::action_locallyReentrant_setter(instance):
-    original = instance.locallyReentrant
-    instance.locallyReentrant = original
-    assert instance.locallyReentrant == original
-
-@given(instance=Communications::Trigger_strategy)
-@settings(max_examples=50)
-def test_communications::trigger_instantiation(instance):
-    assert isinstance(instance, Communications::Trigger)
-
-@given(instance=CallAction_strategy)
-@settings(max_examples=50)
-def test_callaction_instantiation(instance):
-    assert isinstance(instance, CallAction)
-
-@given(instance=xmof::BasicActions::CallBehaviorAction_strategy)
-@settings(max_examples=50)
-def test_xmof::basicactions::callbehavioraction_instantiation(instance):
-    assert isinstance(instance, xmof::BasicActions::CallBehaviorAction)
-
-@given(instance=xmof::BasicActions::CallOperationAction_strategy)
-@settings(max_examples=50)
-def test_xmof::basicactions::calloperationaction_instantiation(instance):
-    assert isinstance(instance, xmof::BasicActions::CallOperationAction)
-
-@given(instance=xmof::CompleteActions::StartObjectBehaviorAction_strategy)
-@settings(max_examples=50)
-def test_xmof::completeactions::startobjectbehavioraction_instantiation(instance):
-    assert isinstance(instance, xmof::CompleteActions::StartObjectBehaviorAction)
-
-@given(instance=IntermediateActions::xmof::EClassifier_strategy)
-@settings(max_examples=50)
-def test_intermediateactions::xmof::eclassifier_instantiation(instance):
-    assert isinstance(instance, IntermediateActions::xmof::EClassifier)
-
-@given(instance=LinkEndData_strategy)
-@settings(max_examples=50)
-def test_linkenddata_instantiation(instance):
-    assert isinstance(instance, LinkEndData)
-
-@given(instance=xmof::IntermediateActions::LinkEndDestructionData_strategy)
-@settings(max_examples=50)
-def test_xmof::intermediateactions::linkenddestructiondata_instantiation(instance):
-    assert isinstance(instance, xmof::IntermediateActions::LinkEndDestructionData)
-
-@given(instance=xmof::IntermediateActions::LinkEndDestructionData_strategy)
-def test_xmof::intermediateactions::linkenddestructiondata_destroyDuplicates_type(instance):
-    assert isinstance(instance.destroyDuplicates, bool)
-
-
-@given(instance=xmof::IntermediateActions::LinkEndDestructionData_strategy)
-def test_xmof::intermediateactions::linkenddestructiondata_destroyDuplicates_setter(instance):
-    original = instance.destroyDuplicates
-    instance.destroyDuplicates = original
-    assert instance.destroyDuplicates == original
-
-@given(instance=xmof::IntermediateActions::LinkEndCreationData_strategy)
-@settings(max_examples=50)
-def test_xmof::intermediateactions::linkendcreationdata_instantiation(instance):
-    assert isinstance(instance, xmof::IntermediateActions::LinkEndCreationData)
-
-@given(instance=xmof::IntermediateActions::LinkEndCreationData_strategy)
-def test_xmof::intermediateactions::linkendcreationdata_replaceAll_type(instance):
-    assert isinstance(instance.replaceAll, bool)
-
-
-@given(instance=xmof::IntermediateActions::LinkEndCreationData_strategy)
-def test_xmof::intermediateactions::linkendcreationdata_replaceAll_setter(instance):
-    original = instance.replaceAll
-    instance.replaceAll = original
-    assert instance.replaceAll == original
-
-@given(instance=WriteLinkAction_strategy)
-@settings(max_examples=50)
-def test_writelinkaction_instantiation(instance):
-    assert isinstance(instance, WriteLinkAction)
-
-@given(instance=xmof::IntermediateActions::DestroyLinkAction_strategy)
-@settings(max_examples=50)
-def test_xmof::intermediateactions::destroylinkaction_instantiation(instance):
-    assert isinstance(instance, xmof::IntermediateActions::DestroyLinkAction)
-
-@given(instance=xmof::IntermediateActions::CreateLinkAction_strategy)
-@settings(max_examples=50)
-def test_xmof::intermediateactions::createlinkaction_instantiation(instance):
-    assert isinstance(instance, xmof::IntermediateActions::CreateLinkAction)
-
-@given(instance=StructuralFeatureAction_strategy)
-@settings(max_examples=50)
-def test_structuralfeatureaction_instantiation(instance):
-    assert isinstance(instance, StructuralFeatureAction)
-
-@given(instance=xmof::IntermediateActions::ReadStructuralFeatureAction_strategy)
-@settings(max_examples=50)
-def test_xmof::intermediateactions::readstructuralfeatureaction_instantiation(instance):
-    assert isinstance(instance, xmof::IntermediateActions::ReadStructuralFeatureAction)
-
-@given(instance=xmof::IntermediateActions::ClearStructuralFeatureAction_strategy)
-@settings(max_examples=50)
-def test_xmof::intermediateactions::clearstructuralfeatureaction_instantiation(instance):
-    assert isinstance(instance, xmof::IntermediateActions::ClearStructuralFeatureAction)
-
-@given(instance=xmof::IntermediateActions::WriteStructuralFeatureAction_strategy)
-@settings(max_examples=50)
-def test_xmof::intermediateactions::writestructuralfeatureaction_instantiation(instance):
-    assert isinstance(instance, xmof::IntermediateActions::WriteStructuralFeatureAction)
-
-@given(instance=IntermediateActions::xmof::EReference_strategy)
-@settings(max_examples=50)
-def test_intermediateactions::xmof::ereference_instantiation(instance):
-    assert isinstance(instance, IntermediateActions::xmof::EReference)
-
-@given(instance=IntermediateActions::LinkEndData_strategy)
-@settings(max_examples=50)
-def test_intermediateactions::linkenddata_instantiation(instance):
-    assert isinstance(instance, IntermediateActions::LinkEndData)
-
-@given(instance=LinkAction_strategy)
-@settings(max_examples=50)
-def test_linkaction_instantiation(instance):
-    assert isinstance(instance, LinkAction)
-
-@given(instance=xmof::IntermediateActions::WriteLinkAction_strategy)
-@settings(max_examples=50)
-def test_xmof::intermediateactions::writelinkaction_instantiation(instance):
-    assert isinstance(instance, xmof::IntermediateActions::WriteLinkAction)
-
-@given(instance=xmof::IntermediateActions::ReadLinkAction_strategy)
-@settings(max_examples=50)
-def test_xmof::intermediateactions::readlinkaction_instantiation(instance):
-    assert isinstance(instance, xmof::IntermediateActions::ReadLinkAction)
-
-@given(instance=WriteStructuralFeatureAction_strategy)
-@settings(max_examples=50)
-def test_writestructuralfeatureaction_instantiation(instance):
-    assert isinstance(instance, WriteStructuralFeatureAction)
-
-@given(instance=xmof::IntermediateActions::AddStructuralFeatureValueAction_strategy)
-@settings(max_examples=50)
-def test_xmof::intermediateactions::addstructuralfeaturevalueaction_instantiation(instance):
-    assert isinstance(instance, xmof::IntermediateActions::AddStructuralFeatureValueAction)
-
-@given(instance=xmof::IntermediateActions::AddStructuralFeatureValueAction_strategy)
-def test_xmof::intermediateactions::addstructuralfeaturevalueaction_replaceAll_type(instance):
-    assert isinstance(instance.replaceAll, bool)
-
-
-@given(instance=xmof::IntermediateActions::AddStructuralFeatureValueAction_strategy)
-def test_xmof::intermediateactions::addstructuralfeaturevalueaction_replaceAll_setter(instance):
-    original = instance.replaceAll
-    instance.replaceAll = original
-    assert instance.replaceAll == original
-
-@given(instance=xmof::IntermediateActions::RemoveStructuralFeatureValueAction_strategy)
-@settings(max_examples=50)
-def test_xmof::intermediateactions::removestructuralfeaturevalueaction_instantiation(instance):
-    assert isinstance(instance, xmof::IntermediateActions::RemoveStructuralFeatureValueAction)
-
-@given(instance=xmof::IntermediateActions::RemoveStructuralFeatureValueAction_strategy)
-def test_xmof::intermediateactions::removestructuralfeaturevalueaction_removeDuplicates_type(instance):
-    assert isinstance(instance.removeDuplicates, bool)
-
-
-@given(instance=xmof::IntermediateActions::RemoveStructuralFeatureValueAction_strategy)
-def test_xmof::intermediateactions::removestructuralfeaturevalueaction_removeDuplicates_setter(instance):
-    original = instance.removeDuplicates
-    instance.removeDuplicates = original
-    assert instance.removeDuplicates == original
-
-@given(instance=IntermediateActions::xmof::EStructuralFeature_strategy)
-@settings(max_examples=50)
-def test_intermediateactions::xmof::estructuralfeature_instantiation(instance):
-    assert isinstance(instance, IntermediateActions::xmof::EStructuralFeature)
-
-@given(instance=ExtraStructuredActivities::ExpansionNode_strategy)
-@settings(max_examples=50)
-def test_extrastructuredactivities::expansionnode_instantiation(instance):
-    assert isinstance(instance, ExtraStructuredActivities::ExpansionNode)
-
-@given(instance=ExtraStructuredActivities::ExpansionRegion_strategy)
-@settings(max_examples=50)
-def test_extrastructuredactivities::expansionregion_instantiation(instance):
-    assert isinstance(instance, ExtraStructuredActivities::ExpansionRegion)
-
-@given(instance=Action_strategy)
-@settings(max_examples=50)
-def test_action_instantiation(instance):
-    assert isinstance(instance, Action)
-
-@given(instance=xmof::CompleteActions::ReclassifyObjectAction_strategy)
-@settings(max_examples=50)
-def test_xmof::completeactions::reclassifyobjectaction_instantiation(instance):
-    assert isinstance(instance, xmof::CompleteActions::ReclassifyObjectAction)
-
-@given(instance=xmof::CompleteActions::ReclassifyObjectAction_strategy)
-def test_xmof::completeactions::reclassifyobjectaction_replaceAll_type(instance):
-    assert isinstance(instance.replaceAll, bool)
-
-
-@given(instance=xmof::CompleteActions::ReclassifyObjectAction_strategy)
-def test_xmof::completeactions::reclassifyobjectaction_replaceAll_setter(instance):
-    original = instance.replaceAll
-    instance.replaceAll = original
-    assert instance.replaceAll == original
-
-@given(instance=xmof::IntermediateActions::StructuralFeatureAction_strategy)
-@settings(max_examples=50)
-def test_xmof::intermediateactions::structuralfeatureaction_instantiation(instance):
-    assert isinstance(instance, xmof::IntermediateActions::StructuralFeatureAction)
-
-@given(instance=xmof::IntermediateActions::ClearAssociationAction_strategy)
-@settings(max_examples=50)
-def test_xmof::intermediateactions::clearassociationaction_instantiation(instance):
-    assert isinstance(instance, xmof::IntermediateActions::ClearAssociationAction)
-
-@given(instance=xmof::CompleteActions::AcceptEventAction_strategy)
-@settings(max_examples=50)
-def test_xmof::completeactions::accepteventaction_instantiation(instance):
-    assert isinstance(instance, xmof::CompleteActions::AcceptEventAction)
-
-@given(instance=xmof::CompleteActions::AcceptEventAction_strategy)
-def test_xmof::completeactions::accepteventaction_unmarshall_type(instance):
-    assert isinstance(instance.unmarshall, bool)
-
-
-@given(instance=xmof::CompleteActions::AcceptEventAction_strategy)
-def test_xmof::completeactions::accepteventaction_unmarshall_setter(instance):
-    original = instance.unmarshall
-    instance.unmarshall = original
-    assert instance.unmarshall == original
-
-@given(instance=xmof::IntermediateActions::DestroyObjectAction_strategy)
-@settings(max_examples=50)
-def test_xmof::intermediateactions::destroyobjectaction_instantiation(instance):
-    assert isinstance(instance, xmof::IntermediateActions::DestroyObjectAction)
-
-@given(instance=xmof::IntermediateActions::DestroyObjectAction_strategy)
-def test_xmof::intermediateactions::destroyobjectaction_destroyLinks_type(instance):
-    assert isinstance(instance.destroyLinks, bool)
-
-
-@given(instance=xmof::IntermediateActions::DestroyObjectAction_strategy)
-def test_xmof::intermediateactions::destroyobjectaction_destroyLinks_setter(instance):
-    original = instance.destroyLinks
-    instance.destroyLinks = original
-    assert instance.destroyLinks == original
-
-@given(instance=xmof::IntermediateActions::DestroyObjectAction_strategy)
-def test_xmof::intermediateactions::destroyobjectaction_destroyOwnedObjects_type(instance):
-    assert isinstance(instance.destroyOwnedObjects, bool)
-
-
-@given(instance=xmof::IntermediateActions::DestroyObjectAction_strategy)
-def test_xmof::intermediateactions::destroyobjectaction_destroyOwnedObjects_setter(instance):
-    original = instance.destroyOwnedObjects
-    instance.destroyOwnedObjects = original
-    assert instance.destroyOwnedObjects == original
-
-@given(instance=xmof::IntermediateActions::TestIdentityAction_strategy)
-@settings(max_examples=50)
-def test_xmof::intermediateactions::testidentityaction_instantiation(instance):
-    assert isinstance(instance, xmof::IntermediateActions::TestIdentityAction)
-
-@given(instance=xmof::CompleteActions::StartClassifierBehaviorAction_strategy)
-@settings(max_examples=50)
-def test_xmof::completeactions::startclassifierbehavioraction_instantiation(instance):
-    assert isinstance(instance, xmof::CompleteActions::StartClassifierBehaviorAction)
-
-@given(instance=xmof::IntermediateActions::CreateObjectAction_strategy)
-@settings(max_examples=50)
-def test_xmof::intermediateactions::createobjectaction_instantiation(instance):
-    assert isinstance(instance, xmof::IntermediateActions::CreateObjectAction)
-
-@given(instance=xmof::IntermediateActions::ValueSpecificationAction_strategy)
-@settings(max_examples=50)
-def test_xmof::intermediateactions::valuespecificationaction_instantiation(instance):
-    assert isinstance(instance, xmof::IntermediateActions::ValueSpecificationAction)
-
-@given(instance=xmof::IntermediateActions::LinkAction_strategy)
-@settings(max_examples=50)
-def test_xmof::intermediateactions::linkaction_instantiation(instance):
-    assert isinstance(instance, xmof::IntermediateActions::LinkAction)
-
-@given(instance=xmof::CompleteActions::ReadExtentAction_strategy)
-@settings(max_examples=50)
-def test_xmof::completeactions::readextentaction_instantiation(instance):
-    assert isinstance(instance, xmof::CompleteActions::ReadExtentAction)
-
-@given(instance=xmof::BasicActions::InvocationAction_strategy)
-@settings(max_examples=50)
-def test_xmof::basicactions::invocationaction_instantiation(instance):
-    assert isinstance(instance, xmof::BasicActions::InvocationAction)
-
-@given(instance=xmof::CompleteActions::ReadIsClassifiedObjectAction_strategy)
-@settings(max_examples=50)
-def test_xmof::completeactions::readisclassifiedobjectaction_instantiation(instance):
-    assert isinstance(instance, xmof::CompleteActions::ReadIsClassifiedObjectAction)
-
-@given(instance=xmof::CompleteActions::ReadIsClassifiedObjectAction_strategy)
-def test_xmof::completeactions::readisclassifiedobjectaction_direct_type(instance):
-    assert isinstance(instance.direct, bool)
-
-
-@given(instance=xmof::CompleteActions::ReadIsClassifiedObjectAction_strategy)
-def test_xmof::completeactions::readisclassifiedobjectaction_direct_setter(instance):
-    original = instance.direct
-    instance.direct = original
-    assert instance.direct == original
-
-@given(instance=xmof::CompleteActions::ReduceAction_strategy)
-@settings(max_examples=50)
-def test_xmof::completeactions::reduceaction_instantiation(instance):
-    assert isinstance(instance, xmof::CompleteActions::ReduceAction)
-
-@given(instance=xmof::CompleteActions::ReduceAction_strategy)
-def test_xmof::completeactions::reduceaction_ordered_type(instance):
-    assert isinstance(instance.ordered, bool)
-
-
-@given(instance=xmof::CompleteActions::ReduceAction_strategy)
-def test_xmof::completeactions::reduceaction_ordered_setter(instance):
-    original = instance.ordered
-    instance.ordered = original
-    assert instance.ordered == original
-
-@given(instance=xmof::IntermediateActions::ReadSelfAction_strategy)
-@settings(max_examples=50)
-def test_xmof::intermediateactions::readselfaction_instantiation(instance):
-    assert isinstance(instance, xmof::IntermediateActions::ReadSelfAction)
-
-@given(instance=xmof::CompleteStructuredActivities::StructuredActivityNode_strategy)
-@settings(max_examples=50)
-def test_xmof::completestructuredactivities::structuredactivitynode_instantiation(instance):
-    assert isinstance(instance, xmof::CompleteStructuredActivities::StructuredActivityNode)
-
-@given(instance=xmof::CompleteStructuredActivities::StructuredActivityNode_strategy)
-def test_xmof::completestructuredactivities::structuredactivitynode_mustIsolate_type(instance):
-    assert isinstance(instance.mustIsolate, bool)
-
-
-@given(instance=xmof::CompleteStructuredActivities::StructuredActivityNode_strategy)
-def test_xmof::completestructuredactivities::structuredactivitynode_mustIsolate_setter(instance):
-    original = instance.mustIsolate
-    instance.mustIsolate = original
-    assert instance.mustIsolate == original
-
-@given(instance=CompleteStructuredActivities::Clause_strategy)
-@settings(max_examples=50)
-def test_completestructuredactivities::clause_instantiation(instance):
-    assert isinstance(instance, CompleteStructuredActivities::Clause)
-
-@given(instance=BasicActions::InputPin_strategy)
-@settings(max_examples=50)
-def test_basicactions::inputpin_instantiation(instance):
-    assert isinstance(instance, BasicActions::InputPin)
-
-@given(instance=CompleteStructuredActivities::ExecutableNode_strategy)
-@settings(max_examples=50)
-def test_completestructuredactivities::executablenode_instantiation(instance):
-    assert isinstance(instance, CompleteStructuredActivities::ExecutableNode)
-
-@given(instance=BasicActions::OutputPin_strategy)
-@settings(max_examples=50)
-def test_basicactions::outputpin_instantiation(instance):
-    assert isinstance(instance, BasicActions::OutputPin)
-
-@given(instance=StructuredActivityNode_strategy)
-@settings(max_examples=50)
-def test_structuredactivitynode_instantiation(instance):
-    assert isinstance(instance, StructuredActivityNode)
-
-@given(instance=xmof::ExtraStructuredActivities::ExpansionRegion_strategy)
-@settings(max_examples=50)
-def test_xmof::extrastructuredactivities::expansionregion_instantiation(instance):
-    assert isinstance(instance, xmof::ExtraStructuredActivities::ExpansionRegion)
-
-@given(instance=xmof::ExtraStructuredActivities::ExpansionRegion_strategy)
-def test_xmof::extrastructuredactivities::expansionregion_mode_type(instance):
-    assert isinstance(instance.mode, str)
-
-
-@given(instance=xmof::ExtraStructuredActivities::ExpansionRegion_strategy)
-def test_xmof::extrastructuredactivities::expansionregion_mode_setter(instance):
-    original = instance.mode
-    instance.mode = original
-    assert instance.mode == original
-
-@given(instance=xmof::CompleteStructuredActivities::ConditionalNode_strategy)
-@settings(max_examples=50)
-def test_xmof::completestructuredactivities::conditionalnode_instantiation(instance):
-    assert isinstance(instance, xmof::CompleteStructuredActivities::ConditionalNode)
-
-@given(instance=xmof::CompleteStructuredActivities::ConditionalNode_strategy)
-def test_xmof::completestructuredactivities::conditionalnode_assured_type(instance):
-    assert isinstance(instance.assured, bool)
-
-
-@given(instance=xmof::CompleteStructuredActivities::ConditionalNode_strategy)
-def test_xmof::completestructuredactivities::conditionalnode_assured_setter(instance):
-    original = instance.assured
-    instance.assured = original
-    assert instance.assured == original
-
-@given(instance=xmof::CompleteStructuredActivities::ConditionalNode_strategy)
-def test_xmof::completestructuredactivities::conditionalnode_determinate_type(instance):
-    assert isinstance(instance.determinate, bool)
-
-
-@given(instance=xmof::CompleteStructuredActivities::ConditionalNode_strategy)
-def test_xmof::completestructuredactivities::conditionalnode_determinate_setter(instance):
-    original = instance.determinate
-    instance.determinate = original
-    assert instance.determinate == original
-
-@given(instance=xmof::CompleteStructuredActivities::LoopNode_strategy)
-@settings(max_examples=50)
-def test_xmof::completestructuredactivities::loopnode_instantiation(instance):
-    assert isinstance(instance, xmof::CompleteStructuredActivities::LoopNode)
-
-@given(instance=xmof::CompleteStructuredActivities::LoopNode_strategy)
-def test_xmof::completestructuredactivities::loopnode_testedFirst_type(instance):
-    assert isinstance(instance.testedFirst, bool)
-
-
-@given(instance=xmof::CompleteStructuredActivities::LoopNode_strategy)
-def test_xmof::completestructuredactivities::loopnode_testedFirst_setter(instance):
-    original = instance.testedFirst
-    instance.testedFirst = original
-    assert instance.testedFirst == original
-
-@given(instance=ObjectNode_strategy)
-@settings(max_examples=50)
-def test_objectnode_instantiation(instance):
-    assert isinstance(instance, ObjectNode)
-
-@given(instance=xmof::ExtraStructuredActivities::ExpansionNode_strategy)
-@settings(max_examples=50)
-def test_xmof::extrastructuredactivities::expansionnode_instantiation(instance):
-    assert isinstance(instance, xmof::ExtraStructuredActivities::ExpansionNode)
-
-@given(instance=xmof::IntermediateActivities::ActivityParameterNode_strategy)
-@settings(max_examples=50)
-def test_xmof::intermediateactivities::activityparameternode_instantiation(instance):
-    assert isinstance(instance, xmof::IntermediateActivities::ActivityParameterNode)
-
-@given(instance=FinalNode_strategy)
-@settings(max_examples=50)
-def test_finalnode_instantiation(instance):
-    assert isinstance(instance, FinalNode)
-
-@given(instance=xmof::IntermediateActivities::ActivityFinalNode_strategy)
-@settings(max_examples=50)
-def test_xmof::intermediateactivities::activityfinalnode_instantiation(instance):
-    assert isinstance(instance, xmof::IntermediateActivities::ActivityFinalNode)
-
-@given(instance=IntermediateActivities::ObjectFlow_strategy)
-@settings(max_examples=50)
-def test_intermediateactivities::objectflow_instantiation(instance):
-    assert isinstance(instance, IntermediateActivities::ObjectFlow)
-
-@given(instance=xmof::IntermediateActivities::ActivityNode_strategy)
-@settings(max_examples=50)
-def test_xmof::intermediateactivities::activitynode_instantiation(instance):
-    assert isinstance(instance, xmof::IntermediateActivities::ActivityNode)
-
-@given(instance=IntermediateActivities::ActivityEdge_strategy)
-@settings(max_examples=50)
-def test_intermediateactivities::activityedge_instantiation(instance):
-    assert isinstance(instance, IntermediateActivities::ActivityEdge)
-
-@given(instance=xmof::IntermediateActivities::Activity_strategy)
-@settings(max_examples=50)
-def test_xmof::intermediateactivities::activity_instantiation(instance):
-    assert isinstance(instance, xmof::IntermediateActivities::Activity)
-
-@given(instance=xmof::IntermediateActivities::Activity_strategy)
-def test_xmof::intermediateactivities::activity_readOnly_type(instance):
-    assert isinstance(instance.readOnly, bool)
-
-
-@given(instance=xmof::IntermediateActivities::Activity_strategy)
-def test_xmof::intermediateactivities::activity_readOnly_setter(instance):
-    original = instance.readOnly
-    instance.readOnly = original
-    assert instance.readOnly == original
-
-@given(instance=CompleteStructuredActivities::StructuredActivityNode_strategy)
-@settings(max_examples=50)
-def test_completestructuredactivities::structuredactivitynode_instantiation(instance):
-    assert isinstance(instance, CompleteStructuredActivities::StructuredActivityNode)
+def test_completestructuredactivities_structuredactivitynode_instantiation(instance):
+    assert isinstance(instance, CompleteStructuredActivities_StructuredActivityNode)
 
 @given(instance=ActivityNode_strategy)
 @settings(max_examples=50)
 def test_activitynode_instantiation(instance):
     assert isinstance(instance, ActivityNode)
 
-@given(instance=xmof::CompleteStructuredActivities::ExecutableNode_strategy)
+@given(instance=xmof_CompleteStructuredActivities_ExecutableNode_strategy)
 @settings(max_examples=50)
-def test_xmof::completestructuredactivities::executablenode_instantiation(instance):
-    assert isinstance(instance, xmof::CompleteStructuredActivities::ExecutableNode)
+def test_xmof_completestructuredactivities_executablenode_instantiation(instance):
+    assert isinstance(instance, xmof_CompleteStructuredActivities_ExecutableNode)
 
-@given(instance=xmof::IntermediateActivities::ControlNode_strategy)
+@given(instance=xmof_IntermediateActivities_ControlNode_strategy)
 @settings(max_examples=50)
-def test_xmof::intermediateactivities::controlnode_instantiation(instance):
-    assert isinstance(instance, xmof::IntermediateActivities::ControlNode)
+def test_xmof_intermediateactivities_controlnode_instantiation(instance):
+    assert isinstance(instance, xmof_IntermediateActivities_ControlNode)
 
 @given(instance=ControlNode_strategy)
 @settings(max_examples=50)
 def test_controlnode_instantiation(instance):
     assert isinstance(instance, ControlNode)
 
-@given(instance=xmof::IntermediateActivities::InitialNode_strategy)
+@given(instance=xmof_IntermediateActivities_FinalNode_strategy)
 @settings(max_examples=50)
-def test_xmof::intermediateactivities::initialnode_instantiation(instance):
-    assert isinstance(instance, xmof::IntermediateActivities::InitialNode)
+def test_xmof_intermediateactivities_finalnode_instantiation(instance):
+    assert isinstance(instance, xmof_IntermediateActivities_FinalNode)
 
-@given(instance=xmof::IntermediateActivities::ForkNode_strategy)
+@given(instance=xmof_IntermediateActivities_DecisionNode_strategy)
 @settings(max_examples=50)
-def test_xmof::intermediateactivities::forknode_instantiation(instance):
-    assert isinstance(instance, xmof::IntermediateActivities::ForkNode)
+def test_xmof_intermediateactivities_decisionnode_instantiation(instance):
+    assert isinstance(instance, xmof_IntermediateActivities_DecisionNode)
 
-@given(instance=xmof::IntermediateActivities::FinalNode_strategy)
+@given(instance=xmof_IntermediateActivities_InitialNode_strategy)
 @settings(max_examples=50)
-def test_xmof::intermediateactivities::finalnode_instantiation(instance):
-    assert isinstance(instance, xmof::IntermediateActivities::FinalNode)
+def test_xmof_intermediateactivities_initialnode_instantiation(instance):
+    assert isinstance(instance, xmof_IntermediateActivities_InitialNode)
 
-@given(instance=xmof::IntermediateActivities::JoinNode_strategy)
+@given(instance=xmof_IntermediateActivities_JoinNode_strategy)
 @settings(max_examples=50)
-def test_xmof::intermediateactivities::joinnode_instantiation(instance):
-    assert isinstance(instance, xmof::IntermediateActivities::JoinNode)
+def test_xmof_intermediateactivities_joinnode_instantiation(instance):
+    assert isinstance(instance, xmof_IntermediateActivities_JoinNode)
 
-@given(instance=xmof::IntermediateActivities::DecisionNode_strategy)
+@given(instance=xmof_IntermediateActivities_ForkNode_strategy)
 @settings(max_examples=50)
-def test_xmof::intermediateactivities::decisionnode_instantiation(instance):
-    assert isinstance(instance, xmof::IntermediateActivities::DecisionNode)
+def test_xmof_intermediateactivities_forknode_instantiation(instance):
+    assert isinstance(instance, xmof_IntermediateActivities_ForkNode)
 
-@given(instance=xmof::IntermediateActivities::MergeNode_strategy)
+@given(instance=xmof_IntermediateActivities_MergeNode_strategy)
 @settings(max_examples=50)
-def test_xmof::intermediateactivities::mergenode_instantiation(instance):
-    assert isinstance(instance, xmof::IntermediateActivities::MergeNode)
+def test_xmof_intermediateactivities_mergenode_instantiation(instance):
+    assert isinstance(instance, xmof_IntermediateActivities_MergeNode)
 
 @given(instance=LiteralSpecification_strategy)
 @settings(max_examples=50)
 def test_literalspecification_instantiation(instance):
     assert isinstance(instance, LiteralSpecification)
 
-@given(instance=xmof::Kernel::LiteralInteger_strategy)
+@given(instance=xmof_Kernel_LiteralInteger_strategy)
 @settings(max_examples=50)
-def test_xmof::kernel::literalinteger_instantiation(instance):
-    assert isinstance(instance, xmof::Kernel::LiteralInteger)
-
-@given(instance=xmof::Kernel::LiteralInteger_strategy)
-def test_xmof::kernel::literalinteger_value_type(instance):
-    assert isinstance(instance.value, int)
+def test_xmof_kernel_literalinteger_instantiation(instance):
+    assert isinstance(instance, xmof_Kernel_LiteralInteger)
 
 
-@given(instance=xmof::Kernel::LiteralInteger_strategy)
-def test_xmof::kernel::literalinteger_value_setter(instance):
+
+@given(instance=xmof_Kernel_LiteralInteger_strategy)
+def test_xmof_kernel_literalinteger_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
 
-@given(instance=xmof::Kernel::LiteralNull_strategy)
+@given(instance=xmof_Kernel_LiteralUnlimitedNatural_strategy)
 @settings(max_examples=50)
-def test_xmof::kernel::literalnull_instantiation(instance):
-    assert isinstance(instance, xmof::Kernel::LiteralNull)
-
-@given(instance=xmof::Kernel::LiteralUnlimitedNatural_strategy)
-@settings(max_examples=50)
-def test_xmof::kernel::literalunlimitednatural_instantiation(instance):
-    assert isinstance(instance, xmof::Kernel::LiteralUnlimitedNatural)
-
-@given(instance=xmof::Kernel::LiteralUnlimitedNatural_strategy)
-def test_xmof::kernel::literalunlimitednatural_value_type(instance):
-    assert isinstance(instance.value, int)
+def test_xmof_kernel_literalunlimitednatural_instantiation(instance):
+    assert isinstance(instance, xmof_Kernel_LiteralUnlimitedNatural)
 
 
-@given(instance=xmof::Kernel::LiteralUnlimitedNatural_strategy)
-def test_xmof::kernel::literalunlimitednatural_value_setter(instance):
+
+@given(instance=xmof_Kernel_LiteralUnlimitedNatural_strategy)
+def test_xmof_kernel_literalunlimitednatural_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
 
-@given(instance=xmof::Kernel::LiteralString_strategy)
+@given(instance=xmof_Kernel_LiteralNull_strategy)
 @settings(max_examples=50)
-def test_xmof::kernel::literalstring_instantiation(instance):
-    assert isinstance(instance, xmof::Kernel::LiteralString)
+def test_xmof_kernel_literalnull_instantiation(instance):
+    assert isinstance(instance, xmof_Kernel_LiteralNull)
 
-@given(instance=xmof::Kernel::LiteralString_strategy)
-def test_xmof::kernel::literalstring_value_type(instance):
-    assert isinstance(instance.value, str)
+@given(instance=xmof_Kernel_LiteralString_strategy)
+@settings(max_examples=50)
+def test_xmof_kernel_literalstring_instantiation(instance):
+    assert isinstance(instance, xmof_Kernel_LiteralString)
 
 
-@given(instance=xmof::Kernel::LiteralString_strategy)
-def test_xmof::kernel::literalstring_value_setter(instance):
+
+@given(instance=xmof_Kernel_LiteralString_strategy)
+def test_xmof_kernel_literalstring_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
 
-@given(instance=xmof::Kernel::LiteralBoolean_strategy)
+@given(instance=xmof_Kernel_LiteralBoolean_strategy)
 @settings(max_examples=50)
-def test_xmof::kernel::literalboolean_instantiation(instance):
-    assert isinstance(instance, xmof::Kernel::LiteralBoolean)
-
-@given(instance=xmof::Kernel::LiteralBoolean_strategy)
-def test_xmof::kernel::literalboolean_value_type(instance):
-    assert isinstance(instance.value, bool)
+def test_xmof_kernel_literalboolean_instantiation(instance):
+    assert isinstance(instance, xmof_Kernel_LiteralBoolean)
 
 
-@given(instance=xmof::Kernel::LiteralBoolean_strategy)
-def test_xmof::kernel::literalboolean_value_setter(instance):
+
+@given(instance=xmof_Kernel_LiteralBoolean_strategy)
+def test_xmof_kernel_literalboolean_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
@@ -3844,106 +3196,93 @@ def test_xmof::kernel::literalboolean_value_setter(instance):
 def test_valuespecification_instantiation(instance):
     assert isinstance(instance, ValueSpecification)
 
-@given(instance=xmof::Kernel::LiteralSpecification_strategy)
+@given(instance=xmof_Kernel_LiteralSpecification_strategy)
 @settings(max_examples=50)
-def test_xmof::kernel::literalspecification_instantiation(instance):
-    assert isinstance(instance, xmof::Kernel::LiteralSpecification)
+def test_xmof_kernel_literalspecification_instantiation(instance):
+    assert isinstance(instance, xmof_Kernel_LiteralSpecification)
 
-@given(instance=xmof::Kernel::InstanceValue_strategy)
+@given(instance=xmof_Kernel_InstanceValue_strategy)
 @settings(max_examples=50)
-def test_xmof::kernel::instancevalue_instantiation(instance):
-    assert isinstance(instance, xmof::Kernel::InstanceValue)
+def test_xmof_kernel_instancevalue_instantiation(instance):
+    assert isinstance(instance, xmof_Kernel_InstanceValue)
 
-@given(instance=Kernel::InstanceSpecification_strategy)
+@given(instance=Kernel_InstanceSpecification_strategy)
 @settings(max_examples=50)
-def test_kernel::instancespecification_instantiation(instance):
-    assert isinstance(instance, Kernel::InstanceSpecification)
+def test_kernel_instancespecification_instantiation(instance):
+    assert isinstance(instance, Kernel_InstanceSpecification)
 
-@given(instance=Kernel::ValueSpecification_strategy)
+@given(instance=Kernel_ValueSpecification_strategy)
 @settings(max_examples=50)
-def test_kernel::valuespecification_instantiation(instance):
-    assert isinstance(instance, Kernel::ValueSpecification)
+def test_kernel_valuespecification_instantiation(instance):
+    assert isinstance(instance, Kernel_ValueSpecification)
 
-@given(instance=IntermediateActivities::ActivityNode_strategy)
+@given(instance=IntermediateActivities_ActivityNode_strategy)
 @settings(max_examples=50)
-def test_intermediateactivities::activitynode_instantiation(instance):
-    assert isinstance(instance, IntermediateActivities::ActivityNode)
+def test_intermediateactivities_activitynode_instantiation(instance):
+    assert isinstance(instance, IntermediateActivities_ActivityNode)
 
-@given(instance=IntermediateActivities::Activity_strategy)
+@given(instance=IntermediateActivities_Activity_strategy)
 @settings(max_examples=50)
-def test_intermediateactivities::activity_instantiation(instance):
-    assert isinstance(instance, IntermediateActivities::Activity)
-
-@given(instance=xmof::IntermediateActivities::ActivityEdge_strategy)
-@settings(max_examples=50)
-def test_xmof::intermediateactivities::activityedge_instantiation(instance):
-    assert isinstance(instance, xmof::IntermediateActivities::ActivityEdge)
+def test_intermediateactivities_activity_instantiation(instance):
+    assert isinstance(instance, IntermediateActivities_Activity)
 
 @given(instance=ActivityEdge_strategy)
 @settings(max_examples=50)
 def test_activityedge_instantiation(instance):
     assert isinstance(instance, ActivityEdge)
 
-@given(instance=xmof::IntermediateActivities::ControlFlow_strategy)
+@given(instance=xmof_IntermediateActivities_ControlFlow_strategy)
 @settings(max_examples=50)
-def test_xmof::intermediateactivities::controlflow_instantiation(instance):
-    assert isinstance(instance, xmof::IntermediateActivities::ControlFlow)
+def test_xmof_intermediateactivities_controlflow_instantiation(instance):
+    assert isinstance(instance, xmof_IntermediateActivities_ControlFlow)
 
-@given(instance=xmof::IntermediateActivities::ObjectFlow_strategy)
+@given(instance=xmof_IntermediateActivities_ObjectFlow_strategy)
 @settings(max_examples=50)
-def test_xmof::intermediateactivities::objectflow_instantiation(instance):
-    assert isinstance(instance, xmof::IntermediateActivities::ObjectFlow)
+def test_xmof_intermediateactivities_objectflow_instantiation(instance):
+    assert isinstance(instance, xmof_IntermediateActivities_ObjectFlow)
 
 @given(instance=EDataType_strategy)
 @settings(max_examples=50)
 def test_edatatype_instantiation(instance):
     assert isinstance(instance, EDataType)
 
-@given(instance=xmof::Kernel::PrimitiveType_strategy)
+@given(instance=xmof_Kernel_PrimitiveType_strategy)
 @settings(max_examples=50)
-def test_xmof::kernel::primitivetype_instantiation(instance):
-    assert isinstance(instance, xmof::Kernel::PrimitiveType)
+def test_xmof_kernel_primitivetype_instantiation(instance):
+    assert isinstance(instance, xmof_Kernel_PrimitiveType)
 
-@given(instance=Kernel::xmof::EEnumLiteral_strategy)
+@given(instance=Kernel_xmof_EEnumLiteral_strategy)
 @settings(max_examples=50)
-def test_kernel::xmof::eenumliteral_instantiation(instance):
-    assert isinstance(instance, Kernel::xmof::EEnumLiteral)
+def test_kernel_xmof_eenumliteral_instantiation(instance):
+    assert isinstance(instance, Kernel_xmof_EEnumLiteral)
 
 @given(instance=InstanceSpecification_strategy)
 @settings(max_examples=50)
 def test_instancespecification_instantiation(instance):
     assert isinstance(instance, InstanceSpecification)
 
-@given(instance=xmof::Kernel::EEnumLiteralSpecification_strategy)
+@given(instance=xmof_Kernel_EEnumLiteralSpecification_strategy)
 @settings(max_examples=50)
-def test_xmof::kernel::eenumliteralspecification_instantiation(instance):
-    assert isinstance(instance, xmof::Kernel::EEnumLiteralSpecification)
+def test_xmof_kernel_eenumliteralspecification_instantiation(instance):
+    assert isinstance(instance, xmof_Kernel_EEnumLiteralSpecification)
 
 @given(instance=EParameter_strategy)
 @settings(max_examples=50)
 def test_eparameter_instantiation(instance):
     assert isinstance(instance, EParameter)
 
-@given(instance=xmof::Kernel::DirectedParameter_strategy)
+@given(instance=xmof_Kernel_DirectedParameter_strategy)
 @settings(max_examples=50)
-def test_xmof::kernel::directedparameter_instantiation(instance):
-    assert isinstance(instance, xmof::Kernel::DirectedParameter)
-
-@given(instance=xmof::Kernel::DirectedParameter_strategy)
-def test_xmof::kernel::directedparameter_direction_type(instance):
-    assert isinstance(instance.direction, str)
+def test_xmof_kernel_directedparameter_instantiation(instance):
+    assert isinstance(instance, xmof_Kernel_DirectedParameter)
 
 
-@given(instance=xmof::Kernel::DirectedParameter_strategy)
-def test_xmof::kernel::directedparameter_direction_setter(instance):
+
+@given(instance=xmof_Kernel_DirectedParameter_strategy)
+def test_xmof_kernel_directedparameter_direction_setter(instance):
     original = instance.direction
     instance.direction = original
     assert instance.direction == original
-
-@given(instance=xmof::Kernel::MainEClass_strategy)
-@settings(max_examples=50)
-def test_xmof::kernel::maineclass_instantiation(instance):
-    assert isinstance(instance, xmof::Kernel::MainEClass)
 
 @given(instance=EClass_strategy)
 @settings(max_examples=50)
@@ -3955,147 +3294,730 @@ def test_eclass_instantiation(instance):
 def test_eoperation_instantiation(instance):
     assert isinstance(instance, EOperation)
 
-@given(instance=xmof::Kernel::BehavioredEOperation_strategy)
+@given(instance=xmof_Kernel_BehavioredEOperation_strategy)
 @settings(max_examples=50)
-def test_xmof::kernel::behavioredeoperation_instantiation(instance):
-    assert isinstance(instance, xmof::Kernel::BehavioredEOperation)
+def test_xmof_kernel_behavioredeoperation_instantiation(instance):
+    assert isinstance(instance, xmof_Kernel_BehavioredEOperation)
 
 @given(instance=BehavioredEOperation_strategy)
 @settings(max_examples=50)
 def test_behavioredeoperation_instantiation(instance):
     assert isinstance(instance, BehavioredEOperation)
 
-@given(instance=xmof::Communications::Reception_strategy)
+@given(instance=xmof_Communications_Reception_strategy)
 @settings(max_examples=50)
-def test_xmof::communications::reception_instantiation(instance):
-    assert isinstance(instance, xmof::Communications::Reception)
+def test_xmof_communications_reception_instantiation(instance):
+    assert isinstance(instance, xmof_Communications_Reception)
 
 @given(instance=Event_strategy)
 @settings(max_examples=50)
 def test_event_instantiation(instance):
     assert isinstance(instance, Event)
 
-@given(instance=xmof::Communications::MessageEvent_strategy)
+@given(instance=xmof_Communications_MessageEvent_strategy)
 @settings(max_examples=50)
-def test_xmof::communications::messageevent_instantiation(instance):
-    assert isinstance(instance, xmof::Communications::MessageEvent)
+def test_xmof_communications_messageevent_instantiation(instance):
+    assert isinstance(instance, xmof_Communications_MessageEvent)
 
-@given(instance=Communications::Signal_strategy)
+@given(instance=Communications_Signal_strategy)
 @settings(max_examples=50)
-def test_communications::signal_instantiation(instance):
-    assert isinstance(instance, Communications::Signal)
+def test_communications_signal_instantiation(instance):
+    assert isinstance(instance, Communications_Signal)
 
 @given(instance=MessageEvent_strategy)
 @settings(max_examples=50)
 def test_messageevent_instantiation(instance):
     assert isinstance(instance, MessageEvent)
 
-@given(instance=xmof::Communications::SignalEvent_strategy)
+@given(instance=xmof_Communications_SignalEvent_strategy)
 @settings(max_examples=50)
-def test_xmof::communications::signalevent_instantiation(instance):
-    assert isinstance(instance, xmof::Communications::SignalEvent)
+def test_xmof_communications_signalevent_instantiation(instance):
+    assert isinstance(instance, xmof_Communications_SignalEvent)
 
-@given(instance=Kernel::xmof::EStructuralFeature_strategy)
+@given(instance=Kernel_xmof_EStructuralFeature_strategy)
 @settings(max_examples=50)
-def test_kernel::xmof::estructuralfeature_instantiation(instance):
-    assert isinstance(instance, Kernel::xmof::EStructuralFeature)
+def test_kernel_xmof_estructuralfeature_instantiation(instance):
+    assert isinstance(instance, Kernel_xmof_EStructuralFeature)
 
 @given(instance=EModelElement_strategy)
 @settings(max_examples=50)
 def test_emodelelement_instantiation(instance):
     assert isinstance(instance, EModelElement)
 
-@given(instance=xmof::CompleteStructuredActivities::Clause_strategy)
+@given(instance=xmof_CompleteStructuredActivities_Clause_strategy)
 @settings(max_examples=50)
-def test_xmof::completestructuredactivities::clause_instantiation(instance):
-    assert isinstance(instance, xmof::CompleteStructuredActivities::Clause)
+def test_xmof_completestructuredactivities_clause_instantiation(instance):
+    assert isinstance(instance, xmof_CompleteStructuredActivities_Clause)
 
-@given(instance=xmof::IntermediateActions::LinkEndData_strategy)
+@given(instance=xmof_Kernel_Slot_strategy)
 @settings(max_examples=50)
-def test_xmof::intermediateactions::linkenddata_instantiation(instance):
-    assert isinstance(instance, xmof::IntermediateActions::LinkEndData)
+def test_xmof_kernel_slot_instantiation(instance):
+    assert isinstance(instance, xmof_Kernel_Slot)
 
-@given(instance=xmof::Kernel::Slot_strategy)
+@given(instance=Kernel_Slot_strategy)
 @settings(max_examples=50)
-def test_xmof::kernel::slot_instantiation(instance):
-    assert isinstance(instance, xmof::Kernel::Slot)
+def test_kernel_slot_instantiation(instance):
+    assert isinstance(instance, Kernel_Slot)
 
-@given(instance=Kernel::Slot_strategy)
+@given(instance=Kernel_xmof_EClassifier_strategy)
 @settings(max_examples=50)
-def test_kernel::slot_instantiation(instance):
-    assert isinstance(instance, Kernel::Slot)
-
-@given(instance=Kernel::xmof::EClassifier_strategy)
-@settings(max_examples=50)
-def test_kernel::xmof::eclassifier_instantiation(instance):
-    assert isinstance(instance, Kernel::xmof::EClassifier)
-
-@given(instance=xmof::Kernel::InstanceSpecification_strategy)
-@settings(max_examples=50)
-def test_xmof::kernel::instancespecification_instantiation(instance):
-    assert isinstance(instance, xmof::Kernel::InstanceSpecification)
+def test_kernel_xmof_eclassifier_instantiation(instance):
+    assert isinstance(instance, Kernel_xmof_EClassifier)
 
 @given(instance=ETypedElement_strategy)
 @settings(max_examples=50)
 def test_etypedelement_instantiation(instance):
     assert isinstance(instance, ETypedElement)
 
-@given(instance=xmof::IntermediateActivities::ObjectNode_strategy)
+@given(instance=xmof_IntermediateActivities_ObjectNode_strategy)
 @settings(max_examples=50)
-def test_xmof::intermediateactivities::objectnode_instantiation(instance):
-    assert isinstance(instance, xmof::IntermediateActivities::ObjectNode)
+def test_xmof_intermediateactivities_objectnode_instantiation(instance):
+    assert isinstance(instance, xmof_IntermediateActivities_ObjectNode)
 
-@given(instance=xmof::BasicActions::Pin_strategy)
+@given(instance=xmof_Kernel_ValueSpecification_strategy)
 @settings(max_examples=50)
-def test_xmof::basicactions::pin_instantiation(instance):
-    assert isinstance(instance, xmof::BasicActions::Pin)
+def test_xmof_kernel_valuespecification_instantiation(instance):
+    assert isinstance(instance, xmof_Kernel_ValueSpecification)
 
-@given(instance=xmof::Kernel::ValueSpecification_strategy)
+@given(instance=BasicBehaviors_Behavior_strategy)
 @settings(max_examples=50)
-def test_xmof::kernel::valuespecification_instantiation(instance):
-    assert isinstance(instance, xmof::Kernel::ValueSpecification)
-
-@given(instance=xmof::BasicBehaviors::FunctionBehavior_strategy)
-@settings(max_examples=50)
-def test_xmof::basicbehaviors::functionbehavior_instantiation(instance):
-    assert isinstance(instance, xmof::BasicBehaviors::FunctionBehavior)
-
-@given(instance=BasicBehaviors::Behavior_strategy)
-@settings(max_examples=50)
-def test_basicbehaviors::behavior_instantiation(instance):
-    assert isinstance(instance, BasicBehaviors::Behavior)
+def test_basicbehaviors_behavior_instantiation(instance):
+    assert isinstance(instance, BasicBehaviors_Behavior)
 
 @given(instance=EClassifier_strategy)
 @settings(max_examples=50)
 def test_eclassifier_instantiation(instance):
     assert isinstance(instance, EClassifier)
 
-@given(instance=xmof::Communications::Signal_strategy)
+@given(instance=xmof_BasicBehaviors_BehavioredClassifier_strategy)
 @settings(max_examples=50)
-def test_xmof::communications::signal_instantiation(instance):
-    assert isinstance(instance, xmof::Communications::Signal)
+def test_xmof_basicbehaviors_behavioredclassifier_instantiation(instance):
+    assert isinstance(instance, xmof_BasicBehaviors_BehavioredClassifier)
 
-@given(instance=xmof::BasicBehaviors::BehavioredClassifier_strategy)
+@given(instance=BasicBehaviors_BehavioredClassifier_strategy)
 @settings(max_examples=50)
-def test_xmof::basicbehaviors::behavioredclassifier_instantiation(instance):
-    assert isinstance(instance, xmof::BasicBehaviors::BehavioredClassifier)
+def test_basicbehaviors_behavioredclassifier_instantiation(instance):
+    assert isinstance(instance, BasicBehaviors_BehavioredClassifier)
 
-@given(instance=BasicBehaviors::BehavioredClassifier_strategy)
+@given(instance=xmof_Kernel_BehavioredEClass_strategy)
 @settings(max_examples=50)
-def test_basicbehaviors::behavioredclassifier_instantiation(instance):
-    assert isinstance(instance, BasicBehaviors::BehavioredClassifier)
+def test_xmof_kernel_behavioredeclass_instantiation(instance):
+    assert isinstance(instance, xmof_Kernel_BehavioredEClass)
 
-@given(instance=xmof::Kernel::BehavioredEClass_strategy)
+@given(instance=Kernel_DirectedParameter_strategy)
 @settings(max_examples=50)
-def test_xmof::kernel::behavioredeclass_instantiation(instance):
-    assert isinstance(instance, xmof::Kernel::BehavioredEClass)
+def test_kernel_directedparameter_instantiation(instance):
+    assert isinstance(instance, Kernel_DirectedParameter)
 
-@given(instance=Kernel::DirectedParameter_strategy)
+@given(instance=Kernel_BehavioredEOperation_strategy)
 @settings(max_examples=50)
-def test_kernel::directedparameter_instantiation(instance):
-    assert isinstance(instance, Kernel::DirectedParameter)
+def test_kernel_behavioredeoperation_instantiation(instance):
+    assert isinstance(instance, Kernel_BehavioredEOperation)
 
-@given(instance=Kernel::BehavioredEOperation_strategy)
+@given(instance=InvocationAction_strategy)
 @settings(max_examples=50)
-def test_kernel::behavioredeoperation_instantiation(instance):
-    assert isinstance(instance, Kernel::BehavioredEOperation)
+def test_invocationaction_instantiation(instance):
+    assert isinstance(instance, InvocationAction)
+
+@given(instance=xmof_BasicActions_SendSignalAction_strategy)
+@settings(max_examples=50)
+def test_xmof_basicactions_sendsignalaction_instantiation(instance):
+    assert isinstance(instance, xmof_BasicActions_SendSignalAction)
+
+@given(instance=xmof_BasicActions_CallAction_strategy)
+@settings(max_examples=50)
+def test_xmof_basicactions_callaction_instantiation(instance):
+    assert isinstance(instance, xmof_BasicActions_CallAction)
+
+
+
+@given(instance=xmof_BasicActions_CallAction_strategy)
+def test_xmof_basicactions_callaction_synchronous_setter(instance):
+    original = instance.synchronous
+    instance.synchronous = original
+    assert instance.synchronous == original
+
+@given(instance=IntermediateActivities_ObjectNode_strategy)
+@settings(max_examples=50)
+def test_intermediateactivities_objectnode_instantiation(instance):
+    assert isinstance(instance, IntermediateActivities_ObjectNode)
+
+@given(instance=xmof_BasicActions_Pin_strategy)
+@settings(max_examples=50)
+def test_xmof_basicactions_pin_instantiation(instance):
+    assert isinstance(instance, xmof_BasicActions_Pin)
+
+@given(instance=Pin_strategy)
+@settings(max_examples=50)
+def test_pin_instantiation(instance):
+    assert isinstance(instance, Pin)
+
+@given(instance=xmof_BasicActions_OutputPin_strategy)
+@settings(max_examples=50)
+def test_xmof_basicactions_outputpin_instantiation(instance):
+    assert isinstance(instance, xmof_BasicActions_OutputPin)
+
+@given(instance=xmof_BasicActions_InputPin_strategy)
+@settings(max_examples=50)
+def test_xmof_basicactions_inputpin_instantiation(instance):
+    assert isinstance(instance, xmof_BasicActions_InputPin)
+
+@given(instance=BasicActions_xmof_EClassifier_strategy)
+@settings(max_examples=50)
+def test_basicactions_xmof_eclassifier_instantiation(instance):
+    assert isinstance(instance, BasicActions_xmof_EClassifier)
+
+@given(instance=CompleteActions_xmof_EClassifier_strategy)
+@settings(max_examples=50)
+def test_completeactions_xmof_eclassifier_instantiation(instance):
+    assert isinstance(instance, CompleteActions_xmof_EClassifier)
+
+@given(instance=ExecutableNode_strategy)
+@settings(max_examples=50)
+def test_executablenode_instantiation(instance):
+    assert isinstance(instance, ExecutableNode)
+
+@given(instance=xmof_BasicActions_Action_strategy)
+@settings(max_examples=50)
+def test_xmof_basicactions_action_instantiation(instance):
+    assert isinstance(instance, xmof_BasicActions_Action)
+
+
+
+@given(instance=xmof_BasicActions_Action_strategy)
+def test_xmof_basicactions_action_locallyReentrant_setter(instance):
+    original = instance.locallyReentrant
+    instance.locallyReentrant = original
+    assert instance.locallyReentrant == original
+
+@given(instance=Communications_Trigger_strategy)
+@settings(max_examples=50)
+def test_communications_trigger_instantiation(instance):
+    assert isinstance(instance, Communications_Trigger)
+
+@given(instance=CallAction_strategy)
+@settings(max_examples=50)
+def test_callaction_instantiation(instance):
+    assert isinstance(instance, CallAction)
+
+@given(instance=xmof_BasicActions_CallOperationAction_strategy)
+@settings(max_examples=50)
+def test_xmof_basicactions_calloperationaction_instantiation(instance):
+    assert isinstance(instance, xmof_BasicActions_CallOperationAction)
+
+@given(instance=xmof_BasicActions_CallBehaviorAction_strategy)
+@settings(max_examples=50)
+def test_xmof_basicactions_callbehavioraction_instantiation(instance):
+    assert isinstance(instance, xmof_BasicActions_CallBehaviorAction)
+
+@given(instance=xmof_CompleteActions_StartObjectBehaviorAction_strategy)
+@settings(max_examples=50)
+def test_xmof_completeactions_startobjectbehavioraction_instantiation(instance):
+    assert isinstance(instance, xmof_CompleteActions_StartObjectBehaviorAction)
+
+@given(instance=IntermediateActions_xmof_EClassifier_strategy)
+@settings(max_examples=50)
+def test_intermediateactions_xmof_eclassifier_instantiation(instance):
+    assert isinstance(instance, IntermediateActions_xmof_EClassifier)
+
+@given(instance=LinkEndData_strategy)
+@settings(max_examples=50)
+def test_linkenddata_instantiation(instance):
+    assert isinstance(instance, LinkEndData)
+
+@given(instance=xmof_IntermediateActions_LinkEndDestructionData_strategy)
+@settings(max_examples=50)
+def test_xmof_intermediateactions_linkenddestructiondata_instantiation(instance):
+    assert isinstance(instance, xmof_IntermediateActions_LinkEndDestructionData)
+
+
+
+@given(instance=xmof_IntermediateActions_LinkEndDestructionData_strategy)
+def test_xmof_intermediateactions_linkenddestructiondata_destroyDuplicates_setter(instance):
+    original = instance.destroyDuplicates
+    instance.destroyDuplicates = original
+    assert instance.destroyDuplicates == original
+
+@given(instance=xmof_IntermediateActions_LinkEndCreationData_strategy)
+@settings(max_examples=50)
+def test_xmof_intermediateactions_linkendcreationdata_instantiation(instance):
+    assert isinstance(instance, xmof_IntermediateActions_LinkEndCreationData)
+
+
+
+@given(instance=xmof_IntermediateActions_LinkEndCreationData_strategy)
+def test_xmof_intermediateactions_linkendcreationdata_replaceAll_setter(instance):
+    original = instance.replaceAll
+    instance.replaceAll = original
+    assert instance.replaceAll == original
+
+@given(instance=WriteLinkAction_strategy)
+@settings(max_examples=50)
+def test_writelinkaction_instantiation(instance):
+    assert isinstance(instance, WriteLinkAction)
+
+@given(instance=xmof_IntermediateActions_DestroyLinkAction_strategy)
+@settings(max_examples=50)
+def test_xmof_intermediateactions_destroylinkaction_instantiation(instance):
+    assert isinstance(instance, xmof_IntermediateActions_DestroyLinkAction)
+
+@given(instance=xmof_IntermediateActions_CreateLinkAction_strategy)
+@settings(max_examples=50)
+def test_xmof_intermediateactions_createlinkaction_instantiation(instance):
+    assert isinstance(instance, xmof_IntermediateActions_CreateLinkAction)
+
+@given(instance=StructuralFeatureAction_strategy)
+@settings(max_examples=50)
+def test_structuralfeatureaction_instantiation(instance):
+    assert isinstance(instance, StructuralFeatureAction)
+
+@given(instance=xmof_IntermediateActions_ReadStructuralFeatureAction_strategy)
+@settings(max_examples=50)
+def test_xmof_intermediateactions_readstructuralfeatureaction_instantiation(instance):
+    assert isinstance(instance, xmof_IntermediateActions_ReadStructuralFeatureAction)
+
+@given(instance=xmof_IntermediateActions_ClearStructuralFeatureAction_strategy)
+@settings(max_examples=50)
+def test_xmof_intermediateactions_clearstructuralfeatureaction_instantiation(instance):
+    assert isinstance(instance, xmof_IntermediateActions_ClearStructuralFeatureAction)
+
+@given(instance=xmof_IntermediateActions_WriteStructuralFeatureAction_strategy)
+@settings(max_examples=50)
+def test_xmof_intermediateactions_writestructuralfeatureaction_instantiation(instance):
+    assert isinstance(instance, xmof_IntermediateActions_WriteStructuralFeatureAction)
+
+@given(instance=IntermediateActions_xmof_EReference_strategy)
+@settings(max_examples=50)
+def test_intermediateactions_xmof_ereference_instantiation(instance):
+    assert isinstance(instance, IntermediateActions_xmof_EReference)
+
+@given(instance=xmof_IntermediateActions_LinkEndData_strategy)
+@settings(max_examples=50)
+def test_xmof_intermediateactions_linkenddata_instantiation(instance):
+    assert isinstance(instance, xmof_IntermediateActions_LinkEndData)
+
+@given(instance=IntermediateActions_LinkEndData_strategy)
+@settings(max_examples=50)
+def test_intermediateactions_linkenddata_instantiation(instance):
+    assert isinstance(instance, IntermediateActions_LinkEndData)
+
+@given(instance=LinkAction_strategy)
+@settings(max_examples=50)
+def test_linkaction_instantiation(instance):
+    assert isinstance(instance, LinkAction)
+
+@given(instance=xmof_IntermediateActions_WriteLinkAction_strategy)
+@settings(max_examples=50)
+def test_xmof_intermediateactions_writelinkaction_instantiation(instance):
+    assert isinstance(instance, xmof_IntermediateActions_WriteLinkAction)
+
+@given(instance=xmof_IntermediateActions_ReadLinkAction_strategy)
+@settings(max_examples=50)
+def test_xmof_intermediateactions_readlinkaction_instantiation(instance):
+    assert isinstance(instance, xmof_IntermediateActions_ReadLinkAction)
+
+@given(instance=WriteStructuralFeatureAction_strategy)
+@settings(max_examples=50)
+def test_writestructuralfeatureaction_instantiation(instance):
+    assert isinstance(instance, WriteStructuralFeatureAction)
+
+@given(instance=xmof_IntermediateActions_AddStructuralFeatureValueAction_strategy)
+@settings(max_examples=50)
+def test_xmof_intermediateactions_addstructuralfeaturevalueaction_instantiation(instance):
+    assert isinstance(instance, xmof_IntermediateActions_AddStructuralFeatureValueAction)
+
+
+
+@given(instance=xmof_IntermediateActions_AddStructuralFeatureValueAction_strategy)
+def test_xmof_intermediateactions_addstructuralfeaturevalueaction_replaceAll_setter(instance):
+    original = instance.replaceAll
+    instance.replaceAll = original
+    assert instance.replaceAll == original
+
+@given(instance=xmof_IntermediateActions_RemoveStructuralFeatureValueAction_strategy)
+@settings(max_examples=50)
+def test_xmof_intermediateactions_removestructuralfeaturevalueaction_instantiation(instance):
+    assert isinstance(instance, xmof_IntermediateActions_RemoveStructuralFeatureValueAction)
+
+
+
+@given(instance=xmof_IntermediateActions_RemoveStructuralFeatureValueAction_strategy)
+def test_xmof_intermediateactions_removestructuralfeaturevalueaction_removeDuplicates_setter(instance):
+    original = instance.removeDuplicates
+    instance.removeDuplicates = original
+    assert instance.removeDuplicates == original
+
+@given(instance=IntermediateActions_xmof_EStructuralFeature_strategy)
+@settings(max_examples=50)
+def test_intermediateactions_xmof_estructuralfeature_instantiation(instance):
+    assert isinstance(instance, IntermediateActions_xmof_EStructuralFeature)
+
+@given(instance=ExtraStructuredActivities_ExpansionNode_strategy)
+@settings(max_examples=50)
+def test_extrastructuredactivities_expansionnode_instantiation(instance):
+    assert isinstance(instance, ExtraStructuredActivities_ExpansionNode)
+
+@given(instance=ExtraStructuredActivities_ExpansionRegion_strategy)
+@settings(max_examples=50)
+def test_extrastructuredactivities_expansionregion_instantiation(instance):
+    assert isinstance(instance, ExtraStructuredActivities_ExpansionRegion)
+
+@given(instance=Action_strategy)
+@settings(max_examples=50)
+def test_action_instantiation(instance):
+    assert isinstance(instance, Action)
+
+@given(instance=xmof_IntermediateActions_DestroyObjectAction_strategy)
+@settings(max_examples=50)
+def test_xmof_intermediateactions_destroyobjectaction_instantiation(instance):
+    assert isinstance(instance, xmof_IntermediateActions_DestroyObjectAction)
+
+
+
+@given(instance=xmof_IntermediateActions_DestroyObjectAction_strategy)
+def test_xmof_intermediateactions_destroyobjectaction_destroyOwnedObjects_setter(instance):
+    original = instance.destroyOwnedObjects
+    instance.destroyOwnedObjects = original
+    assert instance.destroyOwnedObjects == original
+
+
+
+@given(instance=xmof_IntermediateActions_DestroyObjectAction_strategy)
+def test_xmof_intermediateactions_destroyobjectaction_destroyLinks_setter(instance):
+    original = instance.destroyLinks
+    instance.destroyLinks = original
+    assert instance.destroyLinks == original
+
+@given(instance=xmof_BasicActions_InvocationAction_strategy)
+@settings(max_examples=50)
+def test_xmof_basicactions_invocationaction_instantiation(instance):
+    assert isinstance(instance, xmof_BasicActions_InvocationAction)
+
+@given(instance=xmof_IntermediateActions_ClearAssociationAction_strategy)
+@settings(max_examples=50)
+def test_xmof_intermediateactions_clearassociationaction_instantiation(instance):
+    assert isinstance(instance, xmof_IntermediateActions_ClearAssociationAction)
+
+@given(instance=xmof_CompleteActions_ReduceAction_strategy)
+@settings(max_examples=50)
+def test_xmof_completeactions_reduceaction_instantiation(instance):
+    assert isinstance(instance, xmof_CompleteActions_ReduceAction)
+
+
+
+@given(instance=xmof_CompleteActions_ReduceAction_strategy)
+def test_xmof_completeactions_reduceaction_ordered_setter(instance):
+    original = instance.ordered
+    instance.ordered = original
+    assert instance.ordered == original
+
+@given(instance=xmof_IntermediateActions_ReadSelfAction_strategy)
+@settings(max_examples=50)
+def test_xmof_intermediateactions_readselfaction_instantiation(instance):
+    assert isinstance(instance, xmof_IntermediateActions_ReadSelfAction)
+
+@given(instance=xmof_IntermediateActions_LinkAction_strategy)
+@settings(max_examples=50)
+def test_xmof_intermediateactions_linkaction_instantiation(instance):
+    assert isinstance(instance, xmof_IntermediateActions_LinkAction)
+
+@given(instance=xmof_IntermediateActions_ValueSpecificationAction_strategy)
+@settings(max_examples=50)
+def test_xmof_intermediateactions_valuespecificationaction_instantiation(instance):
+    assert isinstance(instance, xmof_IntermediateActions_ValueSpecificationAction)
+
+@given(instance=xmof_CompleteActions_ReclassifyObjectAction_strategy)
+@settings(max_examples=50)
+def test_xmof_completeactions_reclassifyobjectaction_instantiation(instance):
+    assert isinstance(instance, xmof_CompleteActions_ReclassifyObjectAction)
+
+
+
+@given(instance=xmof_CompleteActions_ReclassifyObjectAction_strategy)
+def test_xmof_completeactions_reclassifyobjectaction_replaceAll_setter(instance):
+    original = instance.replaceAll
+    instance.replaceAll = original
+    assert instance.replaceAll == original
+
+@given(instance=xmof_CompleteActions_AcceptEventAction_strategy)
+@settings(max_examples=50)
+def test_xmof_completeactions_accepteventaction_instantiation(instance):
+    assert isinstance(instance, xmof_CompleteActions_AcceptEventAction)
+
+
+
+@given(instance=xmof_CompleteActions_AcceptEventAction_strategy)
+def test_xmof_completeactions_accepteventaction_unmarshall_setter(instance):
+    original = instance.unmarshall
+    instance.unmarshall = original
+    assert instance.unmarshall == original
+
+@given(instance=xmof_CompleteActions_StartClassifierBehaviorAction_strategy)
+@settings(max_examples=50)
+def test_xmof_completeactions_startclassifierbehavioraction_instantiation(instance):
+    assert isinstance(instance, xmof_CompleteActions_StartClassifierBehaviorAction)
+
+@given(instance=xmof_CompleteActions_ReadExtentAction_strategy)
+@settings(max_examples=50)
+def test_xmof_completeactions_readextentaction_instantiation(instance):
+    assert isinstance(instance, xmof_CompleteActions_ReadExtentAction)
+
+@given(instance=xmof_IntermediateActions_CreateObjectAction_strategy)
+@settings(max_examples=50)
+def test_xmof_intermediateactions_createobjectaction_instantiation(instance):
+    assert isinstance(instance, xmof_IntermediateActions_CreateObjectAction)
+
+@given(instance=xmof_IntermediateActions_TestIdentityAction_strategy)
+@settings(max_examples=50)
+def test_xmof_intermediateactions_testidentityaction_instantiation(instance):
+    assert isinstance(instance, xmof_IntermediateActions_TestIdentityAction)
+
+@given(instance=xmof_IntermediateActions_StructuralFeatureAction_strategy)
+@settings(max_examples=50)
+def test_xmof_intermediateactions_structuralfeatureaction_instantiation(instance):
+    assert isinstance(instance, xmof_IntermediateActions_StructuralFeatureAction)
+
+@given(instance=xmof_CompleteActions_ReadIsClassifiedObjectAction_strategy)
+@settings(max_examples=50)
+def test_xmof_completeactions_readisclassifiedobjectaction_instantiation(instance):
+    assert isinstance(instance, xmof_CompleteActions_ReadIsClassifiedObjectAction)
+
+
+
+@given(instance=xmof_CompleteActions_ReadIsClassifiedObjectAction_strategy)
+def test_xmof_completeactions_readisclassifiedobjectaction_direct_setter(instance):
+    original = instance.direct
+    instance.direct = original
+    assert instance.direct == original
+
+@given(instance=xmof_CompleteStructuredActivities_StructuredActivityNode_strategy)
+@settings(max_examples=50)
+def test_xmof_completestructuredactivities_structuredactivitynode_instantiation(instance):
+    assert isinstance(instance, xmof_CompleteStructuredActivities_StructuredActivityNode)
+
+
+
+@given(instance=xmof_CompleteStructuredActivities_StructuredActivityNode_strategy)
+def test_xmof_completestructuredactivities_structuredactivitynode_mustIsolate_setter(instance):
+    original = instance.mustIsolate
+    instance.mustIsolate = original
+    assert instance.mustIsolate == original
+
+@given(instance=CompleteStructuredActivities_Clause_strategy)
+@settings(max_examples=50)
+def test_completestructuredactivities_clause_instantiation(instance):
+    assert isinstance(instance, CompleteStructuredActivities_Clause)
+
+@given(instance=BasicActions_InputPin_strategy)
+@settings(max_examples=50)
+def test_basicactions_inputpin_instantiation(instance):
+    assert isinstance(instance, BasicActions_InputPin)
+
+@given(instance=CompleteStructuredActivities_ExecutableNode_strategy)
+@settings(max_examples=50)
+def test_completestructuredactivities_executablenode_instantiation(instance):
+    assert isinstance(instance, CompleteStructuredActivities_ExecutableNode)
+
+@given(instance=BasicActions_OutputPin_strategy)
+@settings(max_examples=50)
+def test_basicactions_outputpin_instantiation(instance):
+    assert isinstance(instance, BasicActions_OutputPin)
+
+@given(instance=StructuredActivityNode_strategy)
+@settings(max_examples=50)
+def test_structuredactivitynode_instantiation(instance):
+    assert isinstance(instance, StructuredActivityNode)
+
+@given(instance=xmof_ExtraStructuredActivities_ExpansionRegion_strategy)
+@settings(max_examples=50)
+def test_xmof_extrastructuredactivities_expansionregion_instantiation(instance):
+    assert isinstance(instance, xmof_ExtraStructuredActivities_ExpansionRegion)
+
+
+
+@given(instance=xmof_ExtraStructuredActivities_ExpansionRegion_strategy)
+def test_xmof_extrastructuredactivities_expansionregion_mode_setter(instance):
+    original = instance.mode
+    instance.mode = original
+    assert instance.mode == original
+
+@given(instance=xmof_CompleteStructuredActivities_ConditionalNode_strategy)
+@settings(max_examples=50)
+def test_xmof_completestructuredactivities_conditionalnode_instantiation(instance):
+    assert isinstance(instance, xmof_CompleteStructuredActivities_ConditionalNode)
+
+
+
+@given(instance=xmof_CompleteStructuredActivities_ConditionalNode_strategy)
+def test_xmof_completestructuredactivities_conditionalnode_assured_setter(instance):
+    original = instance.assured
+    instance.assured = original
+    assert instance.assured == original
+
+
+
+@given(instance=xmof_CompleteStructuredActivities_ConditionalNode_strategy)
+def test_xmof_completestructuredactivities_conditionalnode_determinate_setter(instance):
+    original = instance.determinate
+    instance.determinate = original
+    assert instance.determinate == original
+
+@given(instance=xmof_CompleteStructuredActivities_LoopNode_strategy)
+@settings(max_examples=50)
+def test_xmof_completestructuredactivities_loopnode_instantiation(instance):
+    assert isinstance(instance, xmof_CompleteStructuredActivities_LoopNode)
+
+
+
+@given(instance=xmof_CompleteStructuredActivities_LoopNode_strategy)
+def test_xmof_completestructuredactivities_loopnode_testedFirst_setter(instance):
+    original = instance.testedFirst
+    instance.testedFirst = original
+    assert instance.testedFirst == original
+
+@given(instance=ObjectNode_strategy)
+@settings(max_examples=50)
+def test_objectnode_instantiation(instance):
+    assert isinstance(instance, ObjectNode)
+
+@given(instance=xmof_ExtraStructuredActivities_ExpansionNode_strategy)
+@settings(max_examples=50)
+def test_xmof_extrastructuredactivities_expansionnode_instantiation(instance):
+    assert isinstance(instance, xmof_ExtraStructuredActivities_ExpansionNode)
+
+@given(instance=xmof_IntermediateActivities_ActivityParameterNode_strategy)
+@settings(max_examples=50)
+def test_xmof_intermediateactivities_activityparameternode_instantiation(instance):
+    assert isinstance(instance, xmof_IntermediateActivities_ActivityParameterNode)
+
+@given(instance=FinalNode_strategy)
+@settings(max_examples=50)
+def test_finalnode_instantiation(instance):
+    assert isinstance(instance, FinalNode)
+
+@given(instance=xmof_IntermediateActivities_ActivityFinalNode_strategy)
+@settings(max_examples=50)
+def test_xmof_intermediateactivities_activityfinalnode_instantiation(instance):
+    assert isinstance(instance, xmof_IntermediateActivities_ActivityFinalNode)
+
+@given(instance=IntermediateActivities_ObjectFlow_strategy)
+@settings(max_examples=50)
+def test_intermediateactivities_objectflow_instantiation(instance):
+    assert isinstance(instance, IntermediateActivities_ObjectFlow)
+
+@given(instance=BehavioredEClass_strategy)
+@settings(max_examples=50)
+def test_behavioredeclass_instantiation(instance):
+    assert isinstance(instance, BehavioredEClass)
+
+@given(instance=xmof_Kernel_MainEClass_strategy)
+@settings(max_examples=50)
+def test_xmof_kernel_maineclass_instantiation(instance):
+    assert isinstance(instance, xmof_Kernel_MainEClass)
+
+@given(instance=xmof_BasicBehaviors_Behavior_strategy)
+@settings(max_examples=50)
+def test_xmof_basicbehaviors_behavior_instantiation(instance):
+    assert isinstance(instance, xmof_BasicBehaviors_Behavior)
+
+
+
+@given(instance=xmof_BasicBehaviors_Behavior_strategy)
+def test_xmof_basicbehaviors_behavior_reentrant_setter(instance):
+    original = instance.reentrant
+    instance.reentrant = original
+    assert instance.reentrant == original
+
+@given(instance=Communications_xmof_EAttribute_strategy)
+@settings(max_examples=50)
+def test_communications_xmof_eattribute_instantiation(instance):
+    assert isinstance(instance, Communications_xmof_EAttribute)
+
+@given(instance=xmof_Communications_Signal_strategy)
+@settings(max_examples=50)
+def test_xmof_communications_signal_instantiation(instance):
+    assert isinstance(instance, xmof_Communications_Signal)
+
+@given(instance=Communications_Event_strategy)
+@settings(max_examples=50)
+def test_communications_event_instantiation(instance):
+    assert isinstance(instance, Communications_Event)
+
+@given(instance=ENamedElement_strategy)
+@settings(max_examples=50)
+def test_enamedelement_instantiation(instance):
+    assert isinstance(instance, ENamedElement)
+
+@given(instance=xmof_Kernel_InstanceSpecification_strategy)
+@settings(max_examples=50)
+def test_xmof_kernel_instancespecification_instantiation(instance):
+    assert isinstance(instance, xmof_Kernel_InstanceSpecification)
+
+@given(instance=xmof_Communications_Event_strategy)
+@settings(max_examples=50)
+def test_xmof_communications_event_instantiation(instance):
+    assert isinstance(instance, xmof_Communications_Event)
+
+@given(instance=xmof_IntermediateActivities_ActivityNode_strategy)
+@settings(max_examples=50)
+def test_xmof_intermediateactivities_activitynode_instantiation(instance):
+    assert isinstance(instance, xmof_IntermediateActivities_ActivityNode)
+
+@given(instance=xmof_IntermediateActivities_ActivityEdge_strategy)
+@settings(max_examples=50)
+def test_xmof_intermediateactivities_activityedge_instantiation(instance):
+    assert isinstance(instance, xmof_IntermediateActivities_ActivityEdge)
+
+@given(instance=xmof_Communications_Trigger_strategy)
+@settings(max_examples=50)
+def test_xmof_communications_trigger_instantiation(instance):
+    assert isinstance(instance, xmof_Communications_Trigger)
+
+@given(instance=OpaqueBehavior_strategy)
+@settings(max_examples=50)
+def test_opaquebehavior_instantiation(instance):
+    assert isinstance(instance, OpaqueBehavior)
+
+@given(instance=xmof_BasicBehaviors_FunctionBehavior_strategy)
+@settings(max_examples=50)
+def test_xmof_basicbehaviors_functionbehavior_instantiation(instance):
+    assert isinstance(instance, xmof_BasicBehaviors_FunctionBehavior)
+
+@given(instance=Behavior_strategy)
+@settings(max_examples=50)
+def test_behavior_instantiation(instance):
+    assert isinstance(instance, Behavior)
+
+@given(instance=xmof_IntermediateActivities_Activity_strategy)
+@settings(max_examples=50)
+def test_xmof_intermediateactivities_activity_instantiation(instance):
+    assert isinstance(instance, xmof_IntermediateActivities_Activity)
+
+
+
+@given(instance=xmof_IntermediateActivities_Activity_strategy)
+def test_xmof_intermediateactivities_activity_readOnly_setter(instance):
+    original = instance.readOnly
+    instance.readOnly = original
+    assert instance.readOnly == original
+
+@given(instance=xmof_BasicBehaviors_OpaqueBehavior_strategy)
+@settings(max_examples=50)
+def test_xmof_basicbehaviors_opaquebehavior_instantiation(instance):
+    assert isinstance(instance, xmof_BasicBehaviors_OpaqueBehavior)
+
+
+
+@given(instance=xmof_BasicBehaviors_OpaqueBehavior_strategy)
+def test_xmof_basicbehaviors_opaquebehavior_language_setter(instance):
+    original = instance.language
+    instance.language = original
+    assert instance.language == original
+
+
+
+@given(instance=xmof_BasicBehaviors_OpaqueBehavior_strategy)
+def test_xmof_basicbehaviors_opaquebehavior_body_setter(instance):
+    original = instance.body
+    instance.body = original
+    assert instance.body == original

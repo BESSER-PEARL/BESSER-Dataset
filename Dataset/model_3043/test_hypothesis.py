@@ -3,130 +3,130 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     ArgListsExpression,
     ActivityGraph,
     Partition,
     ActionState,
-    behavioral::elements::activity::graphs::CallState,
+    behavioral_elements_activity_graphs_CallState,
     SimpleState,
-    behavioral::elements::activity::graphs::ObjectFlowState,
-    behavioral::elements::activity::graphs::ActionState,
+    behavioral_elements_activity_graphs_ObjectFlowState,
+    behavioral_elements_activity_graphs_ActionState,
     AssociationRole,
+    BehavioralFeature,
+    Reception,
+    Link,
+    Instance,
+    behavioral_elements_common_behavior_Object,
+    ComponentInstance,
+    LinkEnd,
+    AttributeLink,
+    Classifier,
+    behavioral_elements_activity_graphs_ClassifierInState,
+    behavioral_elements_common_behavior_Signal,
+    ObjectSetExpression,
+    IterationExpression,
+    SignalEvent,
+    SendAction,
+    ModelElement,
+    behavioral_elements_collaborations_Interaction,
+    behavioral_elements_collaborations_CollaborationInstanceSet,
+    behavioral_elements_collaborations_InteractionInstanceSet,
+    behavioral_elements_activity_graphs_Partition,
+    behavioral_elements_common_behavior_Action,
+    behavioral_elements_common_behavior_Link,
+    behavioral_elements_common_behavior_Instance,
+    behavioral_elements_collaborations_Message,
     Feature,
     ClassifierRole,
     Interaction,
-    core::Namespace,
-    core::GeneralizableElement,
-    behavioral::elements::collaborations::Collaboration,
+    core_Namespace,
+    core_GeneralizableElement,
+    behavioral_elements_collaborations_Collaboration,
     Multiplicity_,
+    behavioral_elements_collaborations_ClassifierRole,
     Collaboration,
     CollaborationInstanceSet,
     Guard,
+    behavioral_elements_state_machines_Transition,
+    behavioral_elements_state_machines_Guard,
     StateMachine,
-    behavioral::elements::activity::graphs::ActivityGraph,
+    behavioral_elements_activity_graphs_ActivityGraph,
     StateVertex,
-    behavioral::elements::state::machines::StubState,
-    behavioral::elements::state::machines::SynchState,
-    behavioral::elements::state::machines::Pseudostate,
-    behavioral::elements::state::machines::State,
+    behavioral_elements_state_machines_SynchState,
+    behavioral_elements_state_machines_Pseudostate,
+    behavioral_elements_state_machines_StubState,
+    behavioral_elements_state_machines_State,
     CompositeState,
-    behavioral::elements::state::machines::SubmachineState,
+    behavioral_elements_state_machines_SubmachineState,
+    behavioral_elements_state_machines_StateVertex,
     Parameter,
+    behavioral_elements_state_machines_Event,
     SubmachineState,
-    behavioral::elements::activity::graphs::SubactivityState,
+    behavioral_elements_activity_graphs_SubactivityState,
     TimeExpression,
     Event,
-    behavioral::elements::state::machines::SignalEvent,
-    behavioral::elements::state::machines::CallEvent,
-    behavioral::elements::state::machines::ChangeEvent,
-    behavioral::elements::state::machines::TimeEvent,
+    behavioral_elements_state_machines_SignalEvent,
+    behavioral_elements_state_machines_CallEvent,
+    behavioral_elements_state_machines_TimeEvent,
+    behavioral_elements_state_machines_ChangeEvent,
+    behavioral_elements_use_cases_ExtensionPoint,
     UseCase,
     BooleanExpression,
     Relationship,
-    behavioral::elements::use::cases::Include,
-    behavioral::elements::use::cases::Extend,
+    behavioral_elements_use_cases_Include,
+    behavioral_elements_use_cases_Extend,
+    behavioral_elements_use_cases_UseCaseInstance,
+    behavioral_elements_use_cases_Actor,
     ExtensionPoint,
     State,
-    behavioral::elements::state::machines::FinalState,
-    behavioral::elements::state::machines::CompositeState,
-    behavioral::elements::state::machines::SimpleState,
+    behavioral_elements_state_machines_CompositeState,
+    behavioral_elements_state_machines_FinalState,
+    behavioral_elements_state_machines_SimpleState,
+    behavioral_elements_state_machines_StateMachine,
+    behavioral_elements_common_behavior_NodeInstance,
     NodeInstance,
+    behavioral_elements_common_behavior_ComponentInstance,
     InteractionInstanceSet,
     Message,
     Include,
     Extend,
+    behavioral_elements_use_cases_UseCase,
+    behavioral_elements_common_behavior_SubsystemInstance,
     AssociationEnd,
-    behavioral::elements::collaborations::AssociationEndRole,
+    behavioral_elements_collaborations_AssociationEndRole,
+    behavioral_elements_common_behavior_LinkEnd,
+    behavioral_elements_common_behavior_Reception,
     Expression,
+    behavioral_elements_common_behavior_Argument,
+    behavioral_elements_common_behavior_Stimulus,
     Operation,
-    common::behavior::Link,
-    common::behavior::Object,
-    behavioral::elements::common::behavior::LinkObject,
+    behavioral_elements_common_behavior_DataValue,
+    common_behavior_Link,
+    common_behavior_Object,
+    behavioral_elements_common_behavior_LinkObject,
     Signal,
-    behavioral::elements::common::behavior::Exception,
+    behavioral_elements_common_behavior_Exception,
     Attribute,
+    behavioral_elements_common_behavior_AttributeLink,
     Action,
-    behavioral::elements::common::behavior::DestroyAction,
-    behavioral::elements::common::behavior::SendAction,
-    behavioral::elements::common::behavior::TerminateAction,
-    behavioral::elements::common::behavior::ReturnAction,
-    behavioral::elements::common::behavior::UninterpretedAction,
-    behavioral::elements::common::behavior::ActionSequence,
-    behavioral::elements::common::behavior::CallAction,
-    behavioral::elements::common::behavior::CreateAction,
+    behavioral_elements_common_behavior_SendAction,
+    behavioral_elements_common_behavior_UninterpretedAction,
+    behavioral_elements_common_behavior_ReturnAction,
+    behavioral_elements_common_behavior_ActionSequence,
+    behavioral_elements_common_behavior_DestroyAction,
+    behavioral_elements_common_behavior_CallAction,
+    behavioral_elements_common_behavior_TerminateAction,
+    behavioral_elements_common_behavior_CreateAction,
     Transition,
     Stimulus,
     ActionSequence,
     Argument,
     ActionExpression,
     Association,
-    behavioral::elements::collaborations::AssociationRole,
-    BehavioralFeature,
-    behavioral::elements::common::behavior::Reception,
-    Reception,
-    Link,
-    Instance,
-    behavioral::elements::common::behavior::SubsystemInstance,
-    behavioral::elements::common::behavior::DataValue,
-    behavioral::elements::common::behavior::NodeInstance,
-    behavioral::elements::use::cases::UseCaseInstance,
-    behavioral::elements::common::behavior::ComponentInstance,
-    behavioral::elements::common::behavior::Object,
-    ComponentInstance,
-    LinkEnd,
-    AttributeLink,
-    Classifier,
-    behavioral::elements::common::behavior::Signal,
-    behavioral::elements::collaborations::ClassifierRole,
-    behavioral::elements::use::cases::Actor,
-    behavioral::elements::activity::graphs::ClassifierInState,
-    behavioral::elements::use::cases::UseCase,
-    ObjectSetExpression,
-    IterationExpression,
-    SignalEvent,
-    SendAction,
-    ModelElement,
-    behavioral::elements::state::machines::Event,
-    behavioral::elements::common::behavior::Action,
-    behavioral::elements::common::behavior::AttributeLink,
-    behavioral::elements::use::cases::ExtensionPoint,
-    behavioral::elements::collaborations::InteractionInstanceSet,
-    behavioral::elements::collaborations::Interaction,
-    behavioral::elements::common::behavior::LinkEnd,
-    behavioral::elements::collaborations::CollaborationInstanceSet,
-    behavioral::elements::common::behavior::Argument,
-    behavioral::elements::collaborations::Message,
-    behavioral::elements::common::behavior::Stimulus,
-    behavioral::elements::state::machines::Transition,
-    behavioral::elements::state::machines::Guard,
-    behavioral::elements::common::behavior::Link,
-    behavioral::elements::activity::graphs::Partition,
-    behavioral::elements::state::machines::StateMachine,
-    behavioral::elements::state::machines::StateVertex,
-    behavioral::elements::common::behavior::Instance,
+    behavioral_elements_collaborations_AssociationRole,
 )
 
 # =============================================================================
@@ -191,16 +191,16 @@ def test_actionstate_constructor_args():
 
 
 
-def test_behavioral::elements::activity::graphs::callstate_is_not_abstract():
-    assert not inspect.isabstract(behavioral::elements::activity::graphs::CallState)
+def test_behavioral_elements_activity_graphs_callstate_is_not_abstract():
+    assert not inspect.isabstract(behavioral_elements_activity_graphs_CallState)
 
 
-def test_behavioral::elements::activity::graphs::callstate_constructor_exists():
-    assert callable(behavioral::elements::activity::graphs::CallState.__init__)
+def test_behavioral_elements_activity_graphs_callstate_constructor_exists():
+    assert callable(behavioral_elements_activity_graphs_CallState.__init__)
 
 
-def test_behavioral::elements::activity::graphs::callstate_constructor_args():
-    sig = inspect.signature(behavioral::elements::activity::graphs::CallState.__init__)
+def test_behavioral_elements_activity_graphs_callstate_constructor_args():
+    sig = inspect.signature(behavioral_elements_activity_graphs_CallState.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -219,23 +219,23 @@ def test_simplestate_constructor_args():
 
 
 
-def test_behavioral::elements::activity::graphs::objectflowstate_is_not_abstract():
-    assert not inspect.isabstract(behavioral::elements::activity::graphs::ObjectFlowState)
+def test_behavioral_elements_activity_graphs_objectflowstate_is_not_abstract():
+    assert not inspect.isabstract(behavioral_elements_activity_graphs_ObjectFlowState)
 
 
-def test_behavioral::elements::activity::graphs::objectflowstate_constructor_exists():
-    assert callable(behavioral::elements::activity::graphs::ObjectFlowState.__init__)
+def test_behavioral_elements_activity_graphs_objectflowstate_constructor_exists():
+    assert callable(behavioral_elements_activity_graphs_ObjectFlowState.__init__)
 
 
-def test_behavioral::elements::activity::graphs::objectflowstate_constructor_args():
-    sig = inspect.signature(behavioral::elements::activity::graphs::ObjectFlowState.__init__)
+def test_behavioral_elements_activity_graphs_objectflowstate_constructor_args():
+    sig = inspect.signature(behavioral_elements_activity_graphs_ObjectFlowState.__init__)
     params = list(sig.parameters.keys())
     assert "isSynch" in params, "Missing parameter 'isSynch'"
 
-def test_behavioral::elements::activity::graphs::objectflowstate_has_isSynch():
-    assert hasattr(behavioral::elements::activity::graphs::ObjectFlowState, "isSynch")
+def test_behavioral_elements_activity_graphs_objectflowstate_has_isSynch():
+    assert hasattr(behavioral_elements_activity_graphs_ObjectFlowState, "isSynch")
     descriptor = None
-    for klass in behavioral::elements::activity::graphs::ObjectFlowState.__mro__:
+    for klass in behavioral_elements_activity_graphs_ObjectFlowState.__mro__:
         if "isSynch" in klass.__dict__:
             descriptor = klass.__dict__["isSynch"]
             break
@@ -243,23 +243,23 @@ def test_behavioral::elements::activity::graphs::objectflowstate_has_isSynch():
 
 
 
-def test_behavioral::elements::activity::graphs::actionstate_is_not_abstract():
-    assert not inspect.isabstract(behavioral::elements::activity::graphs::ActionState)
+def test_behavioral_elements_activity_graphs_actionstate_is_not_abstract():
+    assert not inspect.isabstract(behavioral_elements_activity_graphs_ActionState)
 
 
-def test_behavioral::elements::activity::graphs::actionstate_constructor_exists():
-    assert callable(behavioral::elements::activity::graphs::ActionState.__init__)
+def test_behavioral_elements_activity_graphs_actionstate_constructor_exists():
+    assert callable(behavioral_elements_activity_graphs_ActionState.__init__)
 
 
-def test_behavioral::elements::activity::graphs::actionstate_constructor_args():
-    sig = inspect.signature(behavioral::elements::activity::graphs::ActionState.__init__)
+def test_behavioral_elements_activity_graphs_actionstate_constructor_args():
+    sig = inspect.signature(behavioral_elements_activity_graphs_ActionState.__init__)
     params = list(sig.parameters.keys())
     assert "isDynamic" in params, "Missing parameter 'isDynamic'"
 
-def test_behavioral::elements::activity::graphs::actionstate_has_isDynamic():
-    assert hasattr(behavioral::elements::activity::graphs::ActionState, "isDynamic")
+def test_behavioral_elements_activity_graphs_actionstate_has_isDynamic():
+    assert hasattr(behavioral_elements_activity_graphs_ActionState, "isDynamic")
     descriptor = None
-    for klass in behavioral::elements::activity::graphs::ActionState.__mro__:
+    for klass in behavioral_elements_activity_graphs_ActionState.__mro__:
         if "isDynamic" in klass.__dict__:
             descriptor = klass.__dict__["isDynamic"]
             break
@@ -277,6 +277,352 @@ def test_associationrole_constructor_exists():
 
 def test_associationrole_constructor_args():
     sig = inspect.signature(AssociationRole.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_behavioralfeature_is_not_abstract():
+    assert not inspect.isabstract(BehavioralFeature)
+
+
+def test_behavioralfeature_constructor_exists():
+    assert callable(BehavioralFeature.__init__)
+
+
+def test_behavioralfeature_constructor_args():
+    sig = inspect.signature(BehavioralFeature.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_reception_is_not_abstract():
+    assert not inspect.isabstract(Reception)
+
+
+def test_reception_constructor_exists():
+    assert callable(Reception.__init__)
+
+
+def test_reception_constructor_args():
+    sig = inspect.signature(Reception.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_link_is_not_abstract():
+    assert not inspect.isabstract(Link)
+
+
+def test_link_constructor_exists():
+    assert callable(Link.__init__)
+
+
+def test_link_constructor_args():
+    sig = inspect.signature(Link.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_instance_is_not_abstract():
+    assert not inspect.isabstract(Instance)
+
+
+def test_instance_constructor_exists():
+    assert callable(Instance.__init__)
+
+
+def test_instance_constructor_args():
+    sig = inspect.signature(Instance.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_behavioral_elements_common_behavior_object_is_not_abstract():
+    assert not inspect.isabstract(behavioral_elements_common_behavior_Object)
+
+
+def test_behavioral_elements_common_behavior_object_constructor_exists():
+    assert callable(behavioral_elements_common_behavior_Object.__init__)
+
+
+def test_behavioral_elements_common_behavior_object_constructor_args():
+    sig = inspect.signature(behavioral_elements_common_behavior_Object.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_componentinstance_is_not_abstract():
+    assert not inspect.isabstract(ComponentInstance)
+
+
+def test_componentinstance_constructor_exists():
+    assert callable(ComponentInstance.__init__)
+
+
+def test_componentinstance_constructor_args():
+    sig = inspect.signature(ComponentInstance.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_linkend_is_not_abstract():
+    assert not inspect.isabstract(LinkEnd)
+
+
+def test_linkend_constructor_exists():
+    assert callable(LinkEnd.__init__)
+
+
+def test_linkend_constructor_args():
+    sig = inspect.signature(LinkEnd.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_attributelink_is_not_abstract():
+    assert not inspect.isabstract(AttributeLink)
+
+
+def test_attributelink_constructor_exists():
+    assert callable(AttributeLink.__init__)
+
+
+def test_attributelink_constructor_args():
+    sig = inspect.signature(AttributeLink.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_classifier_is_not_abstract():
+    assert not inspect.isabstract(Classifier)
+
+
+def test_classifier_constructor_exists():
+    assert callable(Classifier.__init__)
+
+
+def test_classifier_constructor_args():
+    sig = inspect.signature(Classifier.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_behavioral_elements_activity_graphs_classifierinstate_is_not_abstract():
+    assert not inspect.isabstract(behavioral_elements_activity_graphs_ClassifierInState)
+
+
+def test_behavioral_elements_activity_graphs_classifierinstate_constructor_exists():
+    assert callable(behavioral_elements_activity_graphs_ClassifierInState.__init__)
+
+
+def test_behavioral_elements_activity_graphs_classifierinstate_constructor_args():
+    sig = inspect.signature(behavioral_elements_activity_graphs_ClassifierInState.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_behavioral_elements_common_behavior_signal_is_not_abstract():
+    assert not inspect.isabstract(behavioral_elements_common_behavior_Signal)
+
+
+def test_behavioral_elements_common_behavior_signal_constructor_exists():
+    assert callable(behavioral_elements_common_behavior_Signal.__init__)
+
+
+def test_behavioral_elements_common_behavior_signal_constructor_args():
+    sig = inspect.signature(behavioral_elements_common_behavior_Signal.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_objectsetexpression_is_not_abstract():
+    assert not inspect.isabstract(ObjectSetExpression)
+
+
+def test_objectsetexpression_constructor_exists():
+    assert callable(ObjectSetExpression.__init__)
+
+
+def test_objectsetexpression_constructor_args():
+    sig = inspect.signature(ObjectSetExpression.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_iterationexpression_is_not_abstract():
+    assert not inspect.isabstract(IterationExpression)
+
+
+def test_iterationexpression_constructor_exists():
+    assert callable(IterationExpression.__init__)
+
+
+def test_iterationexpression_constructor_args():
+    sig = inspect.signature(IterationExpression.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_signalevent_is_not_abstract():
+    assert not inspect.isabstract(SignalEvent)
+
+
+def test_signalevent_constructor_exists():
+    assert callable(SignalEvent.__init__)
+
+
+def test_signalevent_constructor_args():
+    sig = inspect.signature(SignalEvent.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_sendaction_is_not_abstract():
+    assert not inspect.isabstract(SendAction)
+
+
+def test_sendaction_constructor_exists():
+    assert callable(SendAction.__init__)
+
+
+def test_sendaction_constructor_args():
+    sig = inspect.signature(SendAction.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_modelelement_is_not_abstract():
+    assert not inspect.isabstract(ModelElement)
+
+
+def test_modelelement_constructor_exists():
+    assert callable(ModelElement.__init__)
+
+
+def test_modelelement_constructor_args():
+    sig = inspect.signature(ModelElement.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_behavioral_elements_collaborations_interaction_is_not_abstract():
+    assert not inspect.isabstract(behavioral_elements_collaborations_Interaction)
+
+
+def test_behavioral_elements_collaborations_interaction_constructor_exists():
+    assert callable(behavioral_elements_collaborations_Interaction.__init__)
+
+
+def test_behavioral_elements_collaborations_interaction_constructor_args():
+    sig = inspect.signature(behavioral_elements_collaborations_Interaction.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_behavioral_elements_collaborations_collaborationinstanceset_is_not_abstract():
+    assert not inspect.isabstract(behavioral_elements_collaborations_CollaborationInstanceSet)
+
+
+def test_behavioral_elements_collaborations_collaborationinstanceset_constructor_exists():
+    assert callable(behavioral_elements_collaborations_CollaborationInstanceSet.__init__)
+
+
+def test_behavioral_elements_collaborations_collaborationinstanceset_constructor_args():
+    sig = inspect.signature(behavioral_elements_collaborations_CollaborationInstanceSet.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_behavioral_elements_collaborations_interactioninstanceset_is_not_abstract():
+    assert not inspect.isabstract(behavioral_elements_collaborations_InteractionInstanceSet)
+
+
+def test_behavioral_elements_collaborations_interactioninstanceset_constructor_exists():
+    assert callable(behavioral_elements_collaborations_InteractionInstanceSet.__init__)
+
+
+def test_behavioral_elements_collaborations_interactioninstanceset_constructor_args():
+    sig = inspect.signature(behavioral_elements_collaborations_InteractionInstanceSet.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_behavioral_elements_activity_graphs_partition_is_not_abstract():
+    assert not inspect.isabstract(behavioral_elements_activity_graphs_Partition)
+
+
+def test_behavioral_elements_activity_graphs_partition_constructor_exists():
+    assert callable(behavioral_elements_activity_graphs_Partition.__init__)
+
+
+def test_behavioral_elements_activity_graphs_partition_constructor_args():
+    sig = inspect.signature(behavioral_elements_activity_graphs_Partition.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_behavioral_elements_common_behavior_action_is_not_abstract():
+    assert not inspect.isabstract(behavioral_elements_common_behavior_Action)
+
+
+def test_behavioral_elements_common_behavior_action_constructor_exists():
+    assert callable(behavioral_elements_common_behavior_Action.__init__)
+
+
+def test_behavioral_elements_common_behavior_action_constructor_args():
+    sig = inspect.signature(behavioral_elements_common_behavior_Action.__init__)
+    params = list(sig.parameters.keys())
+    assert "isAsynchronous" in params, "Missing parameter 'isAsynchronous'"
+
+def test_behavioral_elements_common_behavior_action_has_isAsynchronous():
+    assert hasattr(behavioral_elements_common_behavior_Action, "isAsynchronous")
+    descriptor = None
+    for klass in behavioral_elements_common_behavior_Action.__mro__:
+        if "isAsynchronous" in klass.__dict__:
+            descriptor = klass.__dict__["isAsynchronous"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_behavioral_elements_common_behavior_link_is_not_abstract():
+    assert not inspect.isabstract(behavioral_elements_common_behavior_Link)
+
+
+def test_behavioral_elements_common_behavior_link_constructor_exists():
+    assert callable(behavioral_elements_common_behavior_Link.__init__)
+
+
+def test_behavioral_elements_common_behavior_link_constructor_args():
+    sig = inspect.signature(behavioral_elements_common_behavior_Link.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_behavioral_elements_common_behavior_instance_is_not_abstract():
+    assert not inspect.isabstract(behavioral_elements_common_behavior_Instance)
+
+
+def test_behavioral_elements_common_behavior_instance_constructor_exists():
+    assert callable(behavioral_elements_common_behavior_Instance.__init__)
+
+
+def test_behavioral_elements_common_behavior_instance_constructor_args():
+    sig = inspect.signature(behavioral_elements_common_behavior_Instance.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_behavioral_elements_collaborations_message_is_not_abstract():
+    assert not inspect.isabstract(behavioral_elements_collaborations_Message)
+
+
+def test_behavioral_elements_collaborations_message_constructor_exists():
+    assert callable(behavioral_elements_collaborations_Message.__init__)
+
+
+def test_behavioral_elements_collaborations_message_constructor_args():
+    sig = inspect.signature(behavioral_elements_collaborations_Message.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -323,44 +669,44 @@ def test_interaction_constructor_args():
 
 
 
-def test_core::namespace_is_not_abstract():
-    assert not inspect.isabstract(core::Namespace)
+def test_core_namespace_is_not_abstract():
+    assert not inspect.isabstract(core_Namespace)
 
 
-def test_core::namespace_constructor_exists():
-    assert callable(core::Namespace.__init__)
+def test_core_namespace_constructor_exists():
+    assert callable(core_Namespace.__init__)
 
 
-def test_core::namespace_constructor_args():
-    sig = inspect.signature(core::Namespace.__init__)
+def test_core_namespace_constructor_args():
+    sig = inspect.signature(core_Namespace.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_core::generalizableelement_is_not_abstract():
-    assert not inspect.isabstract(core::GeneralizableElement)
+def test_core_generalizableelement_is_not_abstract():
+    assert not inspect.isabstract(core_GeneralizableElement)
 
 
-def test_core::generalizableelement_constructor_exists():
-    assert callable(core::GeneralizableElement.__init__)
+def test_core_generalizableelement_constructor_exists():
+    assert callable(core_GeneralizableElement.__init__)
 
 
-def test_core::generalizableelement_constructor_args():
-    sig = inspect.signature(core::GeneralizableElement.__init__)
+def test_core_generalizableelement_constructor_args():
+    sig = inspect.signature(core_GeneralizableElement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_behavioral::elements::collaborations::collaboration_is_not_abstract():
-    assert not inspect.isabstract(behavioral::elements::collaborations::Collaboration)
+def test_behavioral_elements_collaborations_collaboration_is_not_abstract():
+    assert not inspect.isabstract(behavioral_elements_collaborations_Collaboration)
 
 
-def test_behavioral::elements::collaborations::collaboration_constructor_exists():
-    assert callable(behavioral::elements::collaborations::Collaboration.__init__)
+def test_behavioral_elements_collaborations_collaboration_constructor_exists():
+    assert callable(behavioral_elements_collaborations_Collaboration.__init__)
 
 
-def test_behavioral::elements::collaborations::collaboration_constructor_args():
-    sig = inspect.signature(behavioral::elements::collaborations::Collaboration.__init__)
+def test_behavioral_elements_collaborations_collaboration_constructor_args():
+    sig = inspect.signature(behavioral_elements_collaborations_Collaboration.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -375,6 +721,20 @@ def test_multiplicity__constructor_exists():
 
 def test_multiplicity__constructor_args():
     sig = inspect.signature(Multiplicity_.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_behavioral_elements_collaborations_classifierrole_is_not_abstract():
+    assert not inspect.isabstract(behavioral_elements_collaborations_ClassifierRole)
+
+
+def test_behavioral_elements_collaborations_classifierrole_constructor_exists():
+    assert callable(behavioral_elements_collaborations_ClassifierRole.__init__)
+
+
+def test_behavioral_elements_collaborations_classifierrole_constructor_args():
+    sig = inspect.signature(behavioral_elements_collaborations_ClassifierRole.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -421,6 +781,34 @@ def test_guard_constructor_args():
 
 
 
+def test_behavioral_elements_state_machines_transition_is_not_abstract():
+    assert not inspect.isabstract(behavioral_elements_state_machines_Transition)
+
+
+def test_behavioral_elements_state_machines_transition_constructor_exists():
+    assert callable(behavioral_elements_state_machines_Transition.__init__)
+
+
+def test_behavioral_elements_state_machines_transition_constructor_args():
+    sig = inspect.signature(behavioral_elements_state_machines_Transition.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_behavioral_elements_state_machines_guard_is_not_abstract():
+    assert not inspect.isabstract(behavioral_elements_state_machines_Guard)
+
+
+def test_behavioral_elements_state_machines_guard_constructor_exists():
+    assert callable(behavioral_elements_state_machines_Guard.__init__)
+
+
+def test_behavioral_elements_state_machines_guard_constructor_args():
+    sig = inspect.signature(behavioral_elements_state_machines_Guard.__init__)
+    params = list(sig.parameters.keys())
+
+
+
 def test_statemachine_is_not_abstract():
     assert not inspect.isabstract(StateMachine)
 
@@ -435,16 +823,16 @@ def test_statemachine_constructor_args():
 
 
 
-def test_behavioral::elements::activity::graphs::activitygraph_is_not_abstract():
-    assert not inspect.isabstract(behavioral::elements::activity::graphs::ActivityGraph)
+def test_behavioral_elements_activity_graphs_activitygraph_is_not_abstract():
+    assert not inspect.isabstract(behavioral_elements_activity_graphs_ActivityGraph)
 
 
-def test_behavioral::elements::activity::graphs::activitygraph_constructor_exists():
-    assert callable(behavioral::elements::activity::graphs::ActivityGraph.__init__)
+def test_behavioral_elements_activity_graphs_activitygraph_constructor_exists():
+    assert callable(behavioral_elements_activity_graphs_ActivityGraph.__init__)
 
 
-def test_behavioral::elements::activity::graphs::activitygraph_constructor_args():
-    sig = inspect.signature(behavioral::elements::activity::graphs::ActivityGraph.__init__)
+def test_behavioral_elements_activity_graphs_activitygraph_constructor_args():
+    sig = inspect.signature(behavioral_elements_activity_graphs_ActivityGraph.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -463,47 +851,23 @@ def test_statevertex_constructor_args():
 
 
 
-def test_behavioral::elements::state::machines::stubstate_is_not_abstract():
-    assert not inspect.isabstract(behavioral::elements::state::machines::StubState)
+def test_behavioral_elements_state_machines_synchstate_is_not_abstract():
+    assert not inspect.isabstract(behavioral_elements_state_machines_SynchState)
 
 
-def test_behavioral::elements::state::machines::stubstate_constructor_exists():
-    assert callable(behavioral::elements::state::machines::StubState.__init__)
+def test_behavioral_elements_state_machines_synchstate_constructor_exists():
+    assert callable(behavioral_elements_state_machines_SynchState.__init__)
 
 
-def test_behavioral::elements::state::machines::stubstate_constructor_args():
-    sig = inspect.signature(behavioral::elements::state::machines::StubState.__init__)
-    params = list(sig.parameters.keys())
-    assert "referenceState" in params, "Missing parameter 'referenceState'"
-
-def test_behavioral::elements::state::machines::stubstate_has_referenceState():
-    assert hasattr(behavioral::elements::state::machines::StubState, "referenceState")
-    descriptor = None
-    for klass in behavioral::elements::state::machines::StubState.__mro__:
-        if "referenceState" in klass.__dict__:
-            descriptor = klass.__dict__["referenceState"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_behavioral::elements::state::machines::synchstate_is_not_abstract():
-    assert not inspect.isabstract(behavioral::elements::state::machines::SynchState)
-
-
-def test_behavioral::elements::state::machines::synchstate_constructor_exists():
-    assert callable(behavioral::elements::state::machines::SynchState.__init__)
-
-
-def test_behavioral::elements::state::machines::synchstate_constructor_args():
-    sig = inspect.signature(behavioral::elements::state::machines::SynchState.__init__)
+def test_behavioral_elements_state_machines_synchstate_constructor_args():
+    sig = inspect.signature(behavioral_elements_state_machines_SynchState.__init__)
     params = list(sig.parameters.keys())
     assert "bound" in params, "Missing parameter 'bound'"
 
-def test_behavioral::elements::state::machines::synchstate_has_bound():
-    assert hasattr(behavioral::elements::state::machines::SynchState, "bound")
+def test_behavioral_elements_state_machines_synchstate_has_bound():
+    assert hasattr(behavioral_elements_state_machines_SynchState, "bound")
     descriptor = None
-    for klass in behavioral::elements::state::machines::SynchState.__mro__:
+    for klass in behavioral_elements_state_machines_SynchState.__mro__:
         if "bound" in klass.__dict__:
             descriptor = klass.__dict__["bound"]
             break
@@ -511,23 +875,23 @@ def test_behavioral::elements::state::machines::synchstate_has_bound():
 
 
 
-def test_behavioral::elements::state::machines::pseudostate_is_not_abstract():
-    assert not inspect.isabstract(behavioral::elements::state::machines::Pseudostate)
+def test_behavioral_elements_state_machines_pseudostate_is_not_abstract():
+    assert not inspect.isabstract(behavioral_elements_state_machines_Pseudostate)
 
 
-def test_behavioral::elements::state::machines::pseudostate_constructor_exists():
-    assert callable(behavioral::elements::state::machines::Pseudostate.__init__)
+def test_behavioral_elements_state_machines_pseudostate_constructor_exists():
+    assert callable(behavioral_elements_state_machines_Pseudostate.__init__)
 
 
-def test_behavioral::elements::state::machines::pseudostate_constructor_args():
-    sig = inspect.signature(behavioral::elements::state::machines::Pseudostate.__init__)
+def test_behavioral_elements_state_machines_pseudostate_constructor_args():
+    sig = inspect.signature(behavioral_elements_state_machines_Pseudostate.__init__)
     params = list(sig.parameters.keys())
     assert "kind" in params, "Missing parameter 'kind'"
 
-def test_behavioral::elements::state::machines::pseudostate_has_kind():
-    assert hasattr(behavioral::elements::state::machines::Pseudostate, "kind")
+def test_behavioral_elements_state_machines_pseudostate_has_kind():
+    assert hasattr(behavioral_elements_state_machines_Pseudostate, "kind")
     descriptor = None
-    for klass in behavioral::elements::state::machines::Pseudostate.__mro__:
+    for klass in behavioral_elements_state_machines_Pseudostate.__mro__:
         if "kind" in klass.__dict__:
             descriptor = klass.__dict__["kind"]
             break
@@ -535,16 +899,40 @@ def test_behavioral::elements::state::machines::pseudostate_has_kind():
 
 
 
-def test_behavioral::elements::state::machines::state_is_not_abstract():
-    assert not inspect.isabstract(behavioral::elements::state::machines::State)
+def test_behavioral_elements_state_machines_stubstate_is_not_abstract():
+    assert not inspect.isabstract(behavioral_elements_state_machines_StubState)
 
 
-def test_behavioral::elements::state::machines::state_constructor_exists():
-    assert callable(behavioral::elements::state::machines::State.__init__)
+def test_behavioral_elements_state_machines_stubstate_constructor_exists():
+    assert callable(behavioral_elements_state_machines_StubState.__init__)
 
 
-def test_behavioral::elements::state::machines::state_constructor_args():
-    sig = inspect.signature(behavioral::elements::state::machines::State.__init__)
+def test_behavioral_elements_state_machines_stubstate_constructor_args():
+    sig = inspect.signature(behavioral_elements_state_machines_StubState.__init__)
+    params = list(sig.parameters.keys())
+    assert "referenceState" in params, "Missing parameter 'referenceState'"
+
+def test_behavioral_elements_state_machines_stubstate_has_referenceState():
+    assert hasattr(behavioral_elements_state_machines_StubState, "referenceState")
+    descriptor = None
+    for klass in behavioral_elements_state_machines_StubState.__mro__:
+        if "referenceState" in klass.__dict__:
+            descriptor = klass.__dict__["referenceState"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_behavioral_elements_state_machines_state_is_not_abstract():
+    assert not inspect.isabstract(behavioral_elements_state_machines_State)
+
+
+def test_behavioral_elements_state_machines_state_constructor_exists():
+    assert callable(behavioral_elements_state_machines_State.__init__)
+
+
+def test_behavioral_elements_state_machines_state_constructor_args():
+    sig = inspect.signature(behavioral_elements_state_machines_State.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -563,16 +951,30 @@ def test_compositestate_constructor_args():
 
 
 
-def test_behavioral::elements::state::machines::submachinestate_is_not_abstract():
-    assert not inspect.isabstract(behavioral::elements::state::machines::SubmachineState)
+def test_behavioral_elements_state_machines_submachinestate_is_not_abstract():
+    assert not inspect.isabstract(behavioral_elements_state_machines_SubmachineState)
 
 
-def test_behavioral::elements::state::machines::submachinestate_constructor_exists():
-    assert callable(behavioral::elements::state::machines::SubmachineState.__init__)
+def test_behavioral_elements_state_machines_submachinestate_constructor_exists():
+    assert callable(behavioral_elements_state_machines_SubmachineState.__init__)
 
 
-def test_behavioral::elements::state::machines::submachinestate_constructor_args():
-    sig = inspect.signature(behavioral::elements::state::machines::SubmachineState.__init__)
+def test_behavioral_elements_state_machines_submachinestate_constructor_args():
+    sig = inspect.signature(behavioral_elements_state_machines_SubmachineState.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_behavioral_elements_state_machines_statevertex_is_not_abstract():
+    assert not inspect.isabstract(behavioral_elements_state_machines_StateVertex)
+
+
+def test_behavioral_elements_state_machines_statevertex_constructor_exists():
+    assert callable(behavioral_elements_state_machines_StateVertex.__init__)
+
+
+def test_behavioral_elements_state_machines_statevertex_constructor_args():
+    sig = inspect.signature(behavioral_elements_state_machines_StateVertex.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -591,6 +993,20 @@ def test_parameter_constructor_args():
 
 
 
+def test_behavioral_elements_state_machines_event_is_not_abstract():
+    assert not inspect.isabstract(behavioral_elements_state_machines_Event)
+
+
+def test_behavioral_elements_state_machines_event_constructor_exists():
+    assert callable(behavioral_elements_state_machines_Event.__init__)
+
+
+def test_behavioral_elements_state_machines_event_constructor_args():
+    sig = inspect.signature(behavioral_elements_state_machines_Event.__init__)
+    params = list(sig.parameters.keys())
+
+
+
 def test_submachinestate_is_not_abstract():
     assert not inspect.isabstract(SubmachineState)
 
@@ -605,23 +1021,23 @@ def test_submachinestate_constructor_args():
 
 
 
-def test_behavioral::elements::activity::graphs::subactivitystate_is_not_abstract():
-    assert not inspect.isabstract(behavioral::elements::activity::graphs::SubactivityState)
+def test_behavioral_elements_activity_graphs_subactivitystate_is_not_abstract():
+    assert not inspect.isabstract(behavioral_elements_activity_graphs_SubactivityState)
 
 
-def test_behavioral::elements::activity::graphs::subactivitystate_constructor_exists():
-    assert callable(behavioral::elements::activity::graphs::SubactivityState.__init__)
+def test_behavioral_elements_activity_graphs_subactivitystate_constructor_exists():
+    assert callable(behavioral_elements_activity_graphs_SubactivityState.__init__)
 
 
-def test_behavioral::elements::activity::graphs::subactivitystate_constructor_args():
-    sig = inspect.signature(behavioral::elements::activity::graphs::SubactivityState.__init__)
+def test_behavioral_elements_activity_graphs_subactivitystate_constructor_args():
+    sig = inspect.signature(behavioral_elements_activity_graphs_SubactivityState.__init__)
     params = list(sig.parameters.keys())
     assert "isDynamic" in params, "Missing parameter 'isDynamic'"
 
-def test_behavioral::elements::activity::graphs::subactivitystate_has_isDynamic():
-    assert hasattr(behavioral::elements::activity::graphs::SubactivityState, "isDynamic")
+def test_behavioral_elements_activity_graphs_subactivitystate_has_isDynamic():
+    assert hasattr(behavioral_elements_activity_graphs_SubactivityState, "isDynamic")
     descriptor = None
-    for klass in behavioral::elements::activity::graphs::SubactivityState.__mro__:
+    for klass in behavioral_elements_activity_graphs_SubactivityState.__mro__:
         if "isDynamic" in klass.__dict__:
             descriptor = klass.__dict__["isDynamic"]
             break
@@ -657,59 +1073,83 @@ def test_event_constructor_args():
 
 
 
-def test_behavioral::elements::state::machines::signalevent_is_not_abstract():
-    assert not inspect.isabstract(behavioral::elements::state::machines::SignalEvent)
+def test_behavioral_elements_state_machines_signalevent_is_not_abstract():
+    assert not inspect.isabstract(behavioral_elements_state_machines_SignalEvent)
 
 
-def test_behavioral::elements::state::machines::signalevent_constructor_exists():
-    assert callable(behavioral::elements::state::machines::SignalEvent.__init__)
+def test_behavioral_elements_state_machines_signalevent_constructor_exists():
+    assert callable(behavioral_elements_state_machines_SignalEvent.__init__)
 
 
-def test_behavioral::elements::state::machines::signalevent_constructor_args():
-    sig = inspect.signature(behavioral::elements::state::machines::SignalEvent.__init__)
+def test_behavioral_elements_state_machines_signalevent_constructor_args():
+    sig = inspect.signature(behavioral_elements_state_machines_SignalEvent.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_behavioral::elements::state::machines::callevent_is_not_abstract():
-    assert not inspect.isabstract(behavioral::elements::state::machines::CallEvent)
+def test_behavioral_elements_state_machines_callevent_is_not_abstract():
+    assert not inspect.isabstract(behavioral_elements_state_machines_CallEvent)
 
 
-def test_behavioral::elements::state::machines::callevent_constructor_exists():
-    assert callable(behavioral::elements::state::machines::CallEvent.__init__)
+def test_behavioral_elements_state_machines_callevent_constructor_exists():
+    assert callable(behavioral_elements_state_machines_CallEvent.__init__)
 
 
-def test_behavioral::elements::state::machines::callevent_constructor_args():
-    sig = inspect.signature(behavioral::elements::state::machines::CallEvent.__init__)
+def test_behavioral_elements_state_machines_callevent_constructor_args():
+    sig = inspect.signature(behavioral_elements_state_machines_CallEvent.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_behavioral::elements::state::machines::changeevent_is_not_abstract():
-    assert not inspect.isabstract(behavioral::elements::state::machines::ChangeEvent)
+def test_behavioral_elements_state_machines_timeevent_is_not_abstract():
+    assert not inspect.isabstract(behavioral_elements_state_machines_TimeEvent)
 
 
-def test_behavioral::elements::state::machines::changeevent_constructor_exists():
-    assert callable(behavioral::elements::state::machines::ChangeEvent.__init__)
+def test_behavioral_elements_state_machines_timeevent_constructor_exists():
+    assert callable(behavioral_elements_state_machines_TimeEvent.__init__)
 
 
-def test_behavioral::elements::state::machines::changeevent_constructor_args():
-    sig = inspect.signature(behavioral::elements::state::machines::ChangeEvent.__init__)
+def test_behavioral_elements_state_machines_timeevent_constructor_args():
+    sig = inspect.signature(behavioral_elements_state_machines_TimeEvent.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_behavioral::elements::state::machines::timeevent_is_not_abstract():
-    assert not inspect.isabstract(behavioral::elements::state::machines::TimeEvent)
+def test_behavioral_elements_state_machines_changeevent_is_not_abstract():
+    assert not inspect.isabstract(behavioral_elements_state_machines_ChangeEvent)
 
 
-def test_behavioral::elements::state::machines::timeevent_constructor_exists():
-    assert callable(behavioral::elements::state::machines::TimeEvent.__init__)
+def test_behavioral_elements_state_machines_changeevent_constructor_exists():
+    assert callable(behavioral_elements_state_machines_ChangeEvent.__init__)
 
 
-def test_behavioral::elements::state::machines::timeevent_constructor_args():
-    sig = inspect.signature(behavioral::elements::state::machines::TimeEvent.__init__)
+def test_behavioral_elements_state_machines_changeevent_constructor_args():
+    sig = inspect.signature(behavioral_elements_state_machines_ChangeEvent.__init__)
     params = list(sig.parameters.keys())
+
+
+
+def test_behavioral_elements_use_cases_extensionpoint_is_not_abstract():
+    assert not inspect.isabstract(behavioral_elements_use_cases_ExtensionPoint)
+
+
+def test_behavioral_elements_use_cases_extensionpoint_constructor_exists():
+    assert callable(behavioral_elements_use_cases_ExtensionPoint.__init__)
+
+
+def test_behavioral_elements_use_cases_extensionpoint_constructor_args():
+    sig = inspect.signature(behavioral_elements_use_cases_ExtensionPoint.__init__)
+    params = list(sig.parameters.keys())
+    assert "location" in params, "Missing parameter 'location'"
+
+def test_behavioral_elements_use_cases_extensionpoint_has_location():
+    assert hasattr(behavioral_elements_use_cases_ExtensionPoint, "location")
+    descriptor = None
+    for klass in behavioral_elements_use_cases_ExtensionPoint.__mro__:
+        if "location" in klass.__dict__:
+            descriptor = klass.__dict__["location"]
+            break
+    assert isinstance(descriptor, property)
 
 
 
@@ -755,30 +1195,58 @@ def test_relationship_constructor_args():
 
 
 
-def test_behavioral::elements::use::cases::include_is_not_abstract():
-    assert not inspect.isabstract(behavioral::elements::use::cases::Include)
+def test_behavioral_elements_use_cases_include_is_not_abstract():
+    assert not inspect.isabstract(behavioral_elements_use_cases_Include)
 
 
-def test_behavioral::elements::use::cases::include_constructor_exists():
-    assert callable(behavioral::elements::use::cases::Include.__init__)
+def test_behavioral_elements_use_cases_include_constructor_exists():
+    assert callable(behavioral_elements_use_cases_Include.__init__)
 
 
-def test_behavioral::elements::use::cases::include_constructor_args():
-    sig = inspect.signature(behavioral::elements::use::cases::Include.__init__)
+def test_behavioral_elements_use_cases_include_constructor_args():
+    sig = inspect.signature(behavioral_elements_use_cases_Include.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_behavioral::elements::use::cases::extend_is_not_abstract():
-    assert not inspect.isabstract(behavioral::elements::use::cases::Extend)
+def test_behavioral_elements_use_cases_extend_is_not_abstract():
+    assert not inspect.isabstract(behavioral_elements_use_cases_Extend)
 
 
-def test_behavioral::elements::use::cases::extend_constructor_exists():
-    assert callable(behavioral::elements::use::cases::Extend.__init__)
+def test_behavioral_elements_use_cases_extend_constructor_exists():
+    assert callable(behavioral_elements_use_cases_Extend.__init__)
 
 
-def test_behavioral::elements::use::cases::extend_constructor_args():
-    sig = inspect.signature(behavioral::elements::use::cases::Extend.__init__)
+def test_behavioral_elements_use_cases_extend_constructor_args():
+    sig = inspect.signature(behavioral_elements_use_cases_Extend.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_behavioral_elements_use_cases_usecaseinstance_is_not_abstract():
+    assert not inspect.isabstract(behavioral_elements_use_cases_UseCaseInstance)
+
+
+def test_behavioral_elements_use_cases_usecaseinstance_constructor_exists():
+    assert callable(behavioral_elements_use_cases_UseCaseInstance.__init__)
+
+
+def test_behavioral_elements_use_cases_usecaseinstance_constructor_args():
+    sig = inspect.signature(behavioral_elements_use_cases_UseCaseInstance.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_behavioral_elements_use_cases_actor_is_not_abstract():
+    assert not inspect.isabstract(behavioral_elements_use_cases_Actor)
+
+
+def test_behavioral_elements_use_cases_actor_constructor_exists():
+    assert callable(behavioral_elements_use_cases_Actor.__init__)
+
+
+def test_behavioral_elements_use_cases_actor_constructor_args():
+    sig = inspect.signature(behavioral_elements_use_cases_Actor.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -811,37 +1279,23 @@ def test_state_constructor_args():
 
 
 
-def test_behavioral::elements::state::machines::finalstate_is_not_abstract():
-    assert not inspect.isabstract(behavioral::elements::state::machines::FinalState)
+def test_behavioral_elements_state_machines_compositestate_is_not_abstract():
+    assert not inspect.isabstract(behavioral_elements_state_machines_CompositeState)
 
 
-def test_behavioral::elements::state::machines::finalstate_constructor_exists():
-    assert callable(behavioral::elements::state::machines::FinalState.__init__)
+def test_behavioral_elements_state_machines_compositestate_constructor_exists():
+    assert callable(behavioral_elements_state_machines_CompositeState.__init__)
 
 
-def test_behavioral::elements::state::machines::finalstate_constructor_args():
-    sig = inspect.signature(behavioral::elements::state::machines::FinalState.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_behavioral::elements::state::machines::compositestate_is_not_abstract():
-    assert not inspect.isabstract(behavioral::elements::state::machines::CompositeState)
-
-
-def test_behavioral::elements::state::machines::compositestate_constructor_exists():
-    assert callable(behavioral::elements::state::machines::CompositeState.__init__)
-
-
-def test_behavioral::elements::state::machines::compositestate_constructor_args():
-    sig = inspect.signature(behavioral::elements::state::machines::CompositeState.__init__)
+def test_behavioral_elements_state_machines_compositestate_constructor_args():
+    sig = inspect.signature(behavioral_elements_state_machines_CompositeState.__init__)
     params = list(sig.parameters.keys())
     assert "isConcurrent" in params, "Missing parameter 'isConcurrent'"
 
-def test_behavioral::elements::state::machines::compositestate_has_isConcurrent():
-    assert hasattr(behavioral::elements::state::machines::CompositeState, "isConcurrent")
+def test_behavioral_elements_state_machines_compositestate_has_isConcurrent():
+    assert hasattr(behavioral_elements_state_machines_CompositeState, "isConcurrent")
     descriptor = None
-    for klass in behavioral::elements::state::machines::CompositeState.__mro__:
+    for klass in behavioral_elements_state_machines_CompositeState.__mro__:
         if "isConcurrent" in klass.__dict__:
             descriptor = klass.__dict__["isConcurrent"]
             break
@@ -849,16 +1303,58 @@ def test_behavioral::elements::state::machines::compositestate_has_isConcurrent(
 
 
 
-def test_behavioral::elements::state::machines::simplestate_is_not_abstract():
-    assert not inspect.isabstract(behavioral::elements::state::machines::SimpleState)
+def test_behavioral_elements_state_machines_finalstate_is_not_abstract():
+    assert not inspect.isabstract(behavioral_elements_state_machines_FinalState)
 
 
-def test_behavioral::elements::state::machines::simplestate_constructor_exists():
-    assert callable(behavioral::elements::state::machines::SimpleState.__init__)
+def test_behavioral_elements_state_machines_finalstate_constructor_exists():
+    assert callable(behavioral_elements_state_machines_FinalState.__init__)
 
 
-def test_behavioral::elements::state::machines::simplestate_constructor_args():
-    sig = inspect.signature(behavioral::elements::state::machines::SimpleState.__init__)
+def test_behavioral_elements_state_machines_finalstate_constructor_args():
+    sig = inspect.signature(behavioral_elements_state_machines_FinalState.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_behavioral_elements_state_machines_simplestate_is_not_abstract():
+    assert not inspect.isabstract(behavioral_elements_state_machines_SimpleState)
+
+
+def test_behavioral_elements_state_machines_simplestate_constructor_exists():
+    assert callable(behavioral_elements_state_machines_SimpleState.__init__)
+
+
+def test_behavioral_elements_state_machines_simplestate_constructor_args():
+    sig = inspect.signature(behavioral_elements_state_machines_SimpleState.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_behavioral_elements_state_machines_statemachine_is_not_abstract():
+    assert not inspect.isabstract(behavioral_elements_state_machines_StateMachine)
+
+
+def test_behavioral_elements_state_machines_statemachine_constructor_exists():
+    assert callable(behavioral_elements_state_machines_StateMachine.__init__)
+
+
+def test_behavioral_elements_state_machines_statemachine_constructor_args():
+    sig = inspect.signature(behavioral_elements_state_machines_StateMachine.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_behavioral_elements_common_behavior_nodeinstance_is_not_abstract():
+    assert not inspect.isabstract(behavioral_elements_common_behavior_NodeInstance)
+
+
+def test_behavioral_elements_common_behavior_nodeinstance_constructor_exists():
+    assert callable(behavioral_elements_common_behavior_NodeInstance.__init__)
+
+
+def test_behavioral_elements_common_behavior_nodeinstance_constructor_args():
+    sig = inspect.signature(behavioral_elements_common_behavior_NodeInstance.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -873,6 +1369,20 @@ def test_nodeinstance_constructor_exists():
 
 def test_nodeinstance_constructor_args():
     sig = inspect.signature(NodeInstance.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_behavioral_elements_common_behavior_componentinstance_is_not_abstract():
+    assert not inspect.isabstract(behavioral_elements_common_behavior_ComponentInstance)
+
+
+def test_behavioral_elements_common_behavior_componentinstance_constructor_exists():
+    assert callable(behavioral_elements_common_behavior_ComponentInstance.__init__)
+
+
+def test_behavioral_elements_common_behavior_componentinstance_constructor_args():
+    sig = inspect.signature(behavioral_elements_common_behavior_ComponentInstance.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -933,6 +1443,34 @@ def test_extend_constructor_args():
 
 
 
+def test_behavioral_elements_use_cases_usecase_is_not_abstract():
+    assert not inspect.isabstract(behavioral_elements_use_cases_UseCase)
+
+
+def test_behavioral_elements_use_cases_usecase_constructor_exists():
+    assert callable(behavioral_elements_use_cases_UseCase.__init__)
+
+
+def test_behavioral_elements_use_cases_usecase_constructor_args():
+    sig = inspect.signature(behavioral_elements_use_cases_UseCase.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_behavioral_elements_common_behavior_subsysteminstance_is_not_abstract():
+    assert not inspect.isabstract(behavioral_elements_common_behavior_SubsystemInstance)
+
+
+def test_behavioral_elements_common_behavior_subsysteminstance_constructor_exists():
+    assert callable(behavioral_elements_common_behavior_SubsystemInstance.__init__)
+
+
+def test_behavioral_elements_common_behavior_subsysteminstance_constructor_args():
+    sig = inspect.signature(behavioral_elements_common_behavior_SubsystemInstance.__init__)
+    params = list(sig.parameters.keys())
+
+
+
 def test_associationend_is_not_abstract():
     assert not inspect.isabstract(AssociationEnd)
 
@@ -947,17 +1485,85 @@ def test_associationend_constructor_args():
 
 
 
-def test_behavioral::elements::collaborations::associationendrole_is_not_abstract():
-    assert not inspect.isabstract(behavioral::elements::collaborations::AssociationEndRole)
+def test_behavioral_elements_collaborations_associationendrole_is_not_abstract():
+    assert not inspect.isabstract(behavioral_elements_collaborations_AssociationEndRole)
 
 
-def test_behavioral::elements::collaborations::associationendrole_constructor_exists():
-    assert callable(behavioral::elements::collaborations::AssociationEndRole.__init__)
+def test_behavioral_elements_collaborations_associationendrole_constructor_exists():
+    assert callable(behavioral_elements_collaborations_AssociationEndRole.__init__)
 
 
-def test_behavioral::elements::collaborations::associationendrole_constructor_args():
-    sig = inspect.signature(behavioral::elements::collaborations::AssociationEndRole.__init__)
+def test_behavioral_elements_collaborations_associationendrole_constructor_args():
+    sig = inspect.signature(behavioral_elements_collaborations_AssociationEndRole.__init__)
     params = list(sig.parameters.keys())
+
+
+
+def test_behavioral_elements_common_behavior_linkend_is_not_abstract():
+    assert not inspect.isabstract(behavioral_elements_common_behavior_LinkEnd)
+
+
+def test_behavioral_elements_common_behavior_linkend_constructor_exists():
+    assert callable(behavioral_elements_common_behavior_LinkEnd.__init__)
+
+
+def test_behavioral_elements_common_behavior_linkend_constructor_args():
+    sig = inspect.signature(behavioral_elements_common_behavior_LinkEnd.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_behavioral_elements_common_behavior_reception_is_not_abstract():
+    assert not inspect.isabstract(behavioral_elements_common_behavior_Reception)
+
+
+def test_behavioral_elements_common_behavior_reception_constructor_exists():
+    assert callable(behavioral_elements_common_behavior_Reception.__init__)
+
+
+def test_behavioral_elements_common_behavior_reception_constructor_args():
+    sig = inspect.signature(behavioral_elements_common_behavior_Reception.__init__)
+    params = list(sig.parameters.keys())
+    assert "specification" in params, "Missing parameter 'specification'"
+    assert "isRoot" in params, "Missing parameter 'isRoot'"
+    assert "isAbstract" in params, "Missing parameter 'isAbstract'"
+    assert "isLeaf" in params, "Missing parameter 'isLeaf'"
+
+def test_behavioral_elements_common_behavior_reception_has_specification():
+    assert hasattr(behavioral_elements_common_behavior_Reception, "specification")
+    descriptor = None
+    for klass in behavioral_elements_common_behavior_Reception.__mro__:
+        if "specification" in klass.__dict__:
+            descriptor = klass.__dict__["specification"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_behavioral_elements_common_behavior_reception_has_isRoot():
+    assert hasattr(behavioral_elements_common_behavior_Reception, "isRoot")
+    descriptor = None
+    for klass in behavioral_elements_common_behavior_Reception.__mro__:
+        if "isRoot" in klass.__dict__:
+            descriptor = klass.__dict__["isRoot"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_behavioral_elements_common_behavior_reception_has_isAbstract():
+    assert hasattr(behavioral_elements_common_behavior_Reception, "isAbstract")
+    descriptor = None
+    for klass in behavioral_elements_common_behavior_Reception.__mro__:
+        if "isAbstract" in klass.__dict__:
+            descriptor = klass.__dict__["isAbstract"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_behavioral_elements_common_behavior_reception_has_isLeaf():
+    assert hasattr(behavioral_elements_common_behavior_Reception, "isLeaf")
+    descriptor = None
+    for klass in behavioral_elements_common_behavior_Reception.__mro__:
+        if "isLeaf" in klass.__dict__:
+            descriptor = klass.__dict__["isLeaf"]
+            break
+    assert isinstance(descriptor, property)
 
 
 
@@ -971,6 +1577,34 @@ def test_expression_constructor_exists():
 
 def test_expression_constructor_args():
     sig = inspect.signature(Expression.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_behavioral_elements_common_behavior_argument_is_not_abstract():
+    assert not inspect.isabstract(behavioral_elements_common_behavior_Argument)
+
+
+def test_behavioral_elements_common_behavior_argument_constructor_exists():
+    assert callable(behavioral_elements_common_behavior_Argument.__init__)
+
+
+def test_behavioral_elements_common_behavior_argument_constructor_args():
+    sig = inspect.signature(behavioral_elements_common_behavior_Argument.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_behavioral_elements_common_behavior_stimulus_is_not_abstract():
+    assert not inspect.isabstract(behavioral_elements_common_behavior_Stimulus)
+
+
+def test_behavioral_elements_common_behavior_stimulus_constructor_exists():
+    assert callable(behavioral_elements_common_behavior_Stimulus.__init__)
+
+
+def test_behavioral_elements_common_behavior_stimulus_constructor_args():
+    sig = inspect.signature(behavioral_elements_common_behavior_Stimulus.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -989,44 +1623,58 @@ def test_operation_constructor_args():
 
 
 
-def test_common::behavior::link_is_not_abstract():
-    assert not inspect.isabstract(common::behavior::Link)
+def test_behavioral_elements_common_behavior_datavalue_is_not_abstract():
+    assert not inspect.isabstract(behavioral_elements_common_behavior_DataValue)
 
 
-def test_common::behavior::link_constructor_exists():
-    assert callable(common::behavior::Link.__init__)
+def test_behavioral_elements_common_behavior_datavalue_constructor_exists():
+    assert callable(behavioral_elements_common_behavior_DataValue.__init__)
 
 
-def test_common::behavior::link_constructor_args():
-    sig = inspect.signature(common::behavior::Link.__init__)
+def test_behavioral_elements_common_behavior_datavalue_constructor_args():
+    sig = inspect.signature(behavioral_elements_common_behavior_DataValue.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_common::behavior::object_is_not_abstract():
-    assert not inspect.isabstract(common::behavior::Object)
+def test_common_behavior_link_is_not_abstract():
+    assert not inspect.isabstract(common_behavior_Link)
 
 
-def test_common::behavior::object_constructor_exists():
-    assert callable(common::behavior::Object.__init__)
+def test_common_behavior_link_constructor_exists():
+    assert callable(common_behavior_Link.__init__)
 
 
-def test_common::behavior::object_constructor_args():
-    sig = inspect.signature(common::behavior::Object.__init__)
+def test_common_behavior_link_constructor_args():
+    sig = inspect.signature(common_behavior_Link.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_behavioral::elements::common::behavior::linkobject_is_not_abstract():
-    assert not inspect.isabstract(behavioral::elements::common::behavior::LinkObject)
+def test_common_behavior_object_is_not_abstract():
+    assert not inspect.isabstract(common_behavior_Object)
 
 
-def test_behavioral::elements::common::behavior::linkobject_constructor_exists():
-    assert callable(behavioral::elements::common::behavior::LinkObject.__init__)
+def test_common_behavior_object_constructor_exists():
+    assert callable(common_behavior_Object.__init__)
 
 
-def test_behavioral::elements::common::behavior::linkobject_constructor_args():
-    sig = inspect.signature(behavioral::elements::common::behavior::LinkObject.__init__)
+def test_common_behavior_object_constructor_args():
+    sig = inspect.signature(common_behavior_Object.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_behavioral_elements_common_behavior_linkobject_is_not_abstract():
+    assert not inspect.isabstract(behavioral_elements_common_behavior_LinkObject)
+
+
+def test_behavioral_elements_common_behavior_linkobject_constructor_exists():
+    assert callable(behavioral_elements_common_behavior_LinkObject.__init__)
+
+
+def test_behavioral_elements_common_behavior_linkobject_constructor_args():
+    sig = inspect.signature(behavioral_elements_common_behavior_LinkObject.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1045,16 +1693,16 @@ def test_signal_constructor_args():
 
 
 
-def test_behavioral::elements::common::behavior::exception_is_not_abstract():
-    assert not inspect.isabstract(behavioral::elements::common::behavior::Exception)
+def test_behavioral_elements_common_behavior_exception_is_not_abstract():
+    assert not inspect.isabstract(behavioral_elements_common_behavior_Exception)
 
 
-def test_behavioral::elements::common::behavior::exception_constructor_exists():
-    assert callable(behavioral::elements::common::behavior::Exception.__init__)
+def test_behavioral_elements_common_behavior_exception_constructor_exists():
+    assert callable(behavioral_elements_common_behavior_Exception.__init__)
 
 
-def test_behavioral::elements::common::behavior::exception_constructor_args():
-    sig = inspect.signature(behavioral::elements::common::behavior::Exception.__init__)
+def test_behavioral_elements_common_behavior_exception_constructor_args():
+    sig = inspect.signature(behavioral_elements_common_behavior_Exception.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1073,6 +1721,20 @@ def test_attribute_constructor_args():
 
 
 
+def test_behavioral_elements_common_behavior_attributelink_is_not_abstract():
+    assert not inspect.isabstract(behavioral_elements_common_behavior_AttributeLink)
+
+
+def test_behavioral_elements_common_behavior_attributelink_constructor_exists():
+    assert callable(behavioral_elements_common_behavior_AttributeLink.__init__)
+
+
+def test_behavioral_elements_common_behavior_attributelink_constructor_args():
+    sig = inspect.signature(behavioral_elements_common_behavior_AttributeLink.__init__)
+    params = list(sig.parameters.keys())
+
+
+
 def test_action_is_not_abstract():
     assert not inspect.isabstract(Action)
 
@@ -1087,114 +1749,114 @@ def test_action_constructor_args():
 
 
 
-def test_behavioral::elements::common::behavior::destroyaction_is_not_abstract():
-    assert not inspect.isabstract(behavioral::elements::common::behavior::DestroyAction)
+def test_behavioral_elements_common_behavior_sendaction_is_not_abstract():
+    assert not inspect.isabstract(behavioral_elements_common_behavior_SendAction)
 
 
-def test_behavioral::elements::common::behavior::destroyaction_constructor_exists():
-    assert callable(behavioral::elements::common::behavior::DestroyAction.__init__)
+def test_behavioral_elements_common_behavior_sendaction_constructor_exists():
+    assert callable(behavioral_elements_common_behavior_SendAction.__init__)
 
 
-def test_behavioral::elements::common::behavior::destroyaction_constructor_args():
-    sig = inspect.signature(behavioral::elements::common::behavior::DestroyAction.__init__)
+def test_behavioral_elements_common_behavior_sendaction_constructor_args():
+    sig = inspect.signature(behavioral_elements_common_behavior_SendAction.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_behavioral::elements::common::behavior::sendaction_is_not_abstract():
-    assert not inspect.isabstract(behavioral::elements::common::behavior::SendAction)
+def test_behavioral_elements_common_behavior_uninterpretedaction_is_not_abstract():
+    assert not inspect.isabstract(behavioral_elements_common_behavior_UninterpretedAction)
 
 
-def test_behavioral::elements::common::behavior::sendaction_constructor_exists():
-    assert callable(behavioral::elements::common::behavior::SendAction.__init__)
+def test_behavioral_elements_common_behavior_uninterpretedaction_constructor_exists():
+    assert callable(behavioral_elements_common_behavior_UninterpretedAction.__init__)
 
 
-def test_behavioral::elements::common::behavior::sendaction_constructor_args():
-    sig = inspect.signature(behavioral::elements::common::behavior::SendAction.__init__)
+def test_behavioral_elements_common_behavior_uninterpretedaction_constructor_args():
+    sig = inspect.signature(behavioral_elements_common_behavior_UninterpretedAction.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_behavioral::elements::common::behavior::terminateaction_is_not_abstract():
-    assert not inspect.isabstract(behavioral::elements::common::behavior::TerminateAction)
+def test_behavioral_elements_common_behavior_returnaction_is_not_abstract():
+    assert not inspect.isabstract(behavioral_elements_common_behavior_ReturnAction)
 
 
-def test_behavioral::elements::common::behavior::terminateaction_constructor_exists():
-    assert callable(behavioral::elements::common::behavior::TerminateAction.__init__)
+def test_behavioral_elements_common_behavior_returnaction_constructor_exists():
+    assert callable(behavioral_elements_common_behavior_ReturnAction.__init__)
 
 
-def test_behavioral::elements::common::behavior::terminateaction_constructor_args():
-    sig = inspect.signature(behavioral::elements::common::behavior::TerminateAction.__init__)
+def test_behavioral_elements_common_behavior_returnaction_constructor_args():
+    sig = inspect.signature(behavioral_elements_common_behavior_ReturnAction.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_behavioral::elements::common::behavior::returnaction_is_not_abstract():
-    assert not inspect.isabstract(behavioral::elements::common::behavior::ReturnAction)
+def test_behavioral_elements_common_behavior_actionsequence_is_not_abstract():
+    assert not inspect.isabstract(behavioral_elements_common_behavior_ActionSequence)
 
 
-def test_behavioral::elements::common::behavior::returnaction_constructor_exists():
-    assert callable(behavioral::elements::common::behavior::ReturnAction.__init__)
+def test_behavioral_elements_common_behavior_actionsequence_constructor_exists():
+    assert callable(behavioral_elements_common_behavior_ActionSequence.__init__)
 
 
-def test_behavioral::elements::common::behavior::returnaction_constructor_args():
-    sig = inspect.signature(behavioral::elements::common::behavior::ReturnAction.__init__)
+def test_behavioral_elements_common_behavior_actionsequence_constructor_args():
+    sig = inspect.signature(behavioral_elements_common_behavior_ActionSequence.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_behavioral::elements::common::behavior::uninterpretedaction_is_not_abstract():
-    assert not inspect.isabstract(behavioral::elements::common::behavior::UninterpretedAction)
+def test_behavioral_elements_common_behavior_destroyaction_is_not_abstract():
+    assert not inspect.isabstract(behavioral_elements_common_behavior_DestroyAction)
 
 
-def test_behavioral::elements::common::behavior::uninterpretedaction_constructor_exists():
-    assert callable(behavioral::elements::common::behavior::UninterpretedAction.__init__)
+def test_behavioral_elements_common_behavior_destroyaction_constructor_exists():
+    assert callable(behavioral_elements_common_behavior_DestroyAction.__init__)
 
 
-def test_behavioral::elements::common::behavior::uninterpretedaction_constructor_args():
-    sig = inspect.signature(behavioral::elements::common::behavior::UninterpretedAction.__init__)
+def test_behavioral_elements_common_behavior_destroyaction_constructor_args():
+    sig = inspect.signature(behavioral_elements_common_behavior_DestroyAction.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_behavioral::elements::common::behavior::actionsequence_is_not_abstract():
-    assert not inspect.isabstract(behavioral::elements::common::behavior::ActionSequence)
+def test_behavioral_elements_common_behavior_callaction_is_not_abstract():
+    assert not inspect.isabstract(behavioral_elements_common_behavior_CallAction)
 
 
-def test_behavioral::elements::common::behavior::actionsequence_constructor_exists():
-    assert callable(behavioral::elements::common::behavior::ActionSequence.__init__)
+def test_behavioral_elements_common_behavior_callaction_constructor_exists():
+    assert callable(behavioral_elements_common_behavior_CallAction.__init__)
 
 
-def test_behavioral::elements::common::behavior::actionsequence_constructor_args():
-    sig = inspect.signature(behavioral::elements::common::behavior::ActionSequence.__init__)
+def test_behavioral_elements_common_behavior_callaction_constructor_args():
+    sig = inspect.signature(behavioral_elements_common_behavior_CallAction.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_behavioral::elements::common::behavior::callaction_is_not_abstract():
-    assert not inspect.isabstract(behavioral::elements::common::behavior::CallAction)
+def test_behavioral_elements_common_behavior_terminateaction_is_not_abstract():
+    assert not inspect.isabstract(behavioral_elements_common_behavior_TerminateAction)
 
 
-def test_behavioral::elements::common::behavior::callaction_constructor_exists():
-    assert callable(behavioral::elements::common::behavior::CallAction.__init__)
+def test_behavioral_elements_common_behavior_terminateaction_constructor_exists():
+    assert callable(behavioral_elements_common_behavior_TerminateAction.__init__)
 
 
-def test_behavioral::elements::common::behavior::callaction_constructor_args():
-    sig = inspect.signature(behavioral::elements::common::behavior::CallAction.__init__)
+def test_behavioral_elements_common_behavior_terminateaction_constructor_args():
+    sig = inspect.signature(behavioral_elements_common_behavior_TerminateAction.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_behavioral::elements::common::behavior::createaction_is_not_abstract():
-    assert not inspect.isabstract(behavioral::elements::common::behavior::CreateAction)
+def test_behavioral_elements_common_behavior_createaction_is_not_abstract():
+    assert not inspect.isabstract(behavioral_elements_common_behavior_CreateAction)
 
 
-def test_behavioral::elements::common::behavior::createaction_constructor_exists():
-    assert callable(behavioral::elements::common::behavior::CreateAction.__init__)
+def test_behavioral_elements_common_behavior_createaction_constructor_exists():
+    assert callable(behavioral_elements_common_behavior_CreateAction.__init__)
 
 
-def test_behavioral::elements::common::behavior::createaction_constructor_args():
-    sig = inspect.signature(behavioral::elements::common::behavior::CreateAction.__init__)
+def test_behavioral_elements_common_behavior_createaction_constructor_args():
+    sig = inspect.signature(behavioral_elements_common_behavior_CreateAction.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1283,678 +1945,16 @@ def test_association_constructor_args():
 
 
 
-def test_behavioral::elements::collaborations::associationrole_is_not_abstract():
-    assert not inspect.isabstract(behavioral::elements::collaborations::AssociationRole)
+def test_behavioral_elements_collaborations_associationrole_is_not_abstract():
+    assert not inspect.isabstract(behavioral_elements_collaborations_AssociationRole)
 
 
-def test_behavioral::elements::collaborations::associationrole_constructor_exists():
-    assert callable(behavioral::elements::collaborations::AssociationRole.__init__)
+def test_behavioral_elements_collaborations_associationrole_constructor_exists():
+    assert callable(behavioral_elements_collaborations_AssociationRole.__init__)
 
 
-def test_behavioral::elements::collaborations::associationrole_constructor_args():
-    sig = inspect.signature(behavioral::elements::collaborations::AssociationRole.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_behavioralfeature_is_not_abstract():
-    assert not inspect.isabstract(BehavioralFeature)
-
-
-def test_behavioralfeature_constructor_exists():
-    assert callable(BehavioralFeature.__init__)
-
-
-def test_behavioralfeature_constructor_args():
-    sig = inspect.signature(BehavioralFeature.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_behavioral::elements::common::behavior::reception_is_not_abstract():
-    assert not inspect.isabstract(behavioral::elements::common::behavior::Reception)
-
-
-def test_behavioral::elements::common::behavior::reception_constructor_exists():
-    assert callable(behavioral::elements::common::behavior::Reception.__init__)
-
-
-def test_behavioral::elements::common::behavior::reception_constructor_args():
-    sig = inspect.signature(behavioral::elements::common::behavior::Reception.__init__)
-    params = list(sig.parameters.keys())
-    assert "isAbstract" in params, "Missing parameter 'isAbstract'"
-    assert "isLeaf" in params, "Missing parameter 'isLeaf'"
-    assert "isRoot" in params, "Missing parameter 'isRoot'"
-    assert "specification" in params, "Missing parameter 'specification'"
-
-def test_behavioral::elements::common::behavior::reception_has_isAbstract():
-    assert hasattr(behavioral::elements::common::behavior::Reception, "isAbstract")
-    descriptor = None
-    for klass in behavioral::elements::common::behavior::Reception.__mro__:
-        if "isAbstract" in klass.__dict__:
-            descriptor = klass.__dict__["isAbstract"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_behavioral::elements::common::behavior::reception_has_isLeaf():
-    assert hasattr(behavioral::elements::common::behavior::Reception, "isLeaf")
-    descriptor = None
-    for klass in behavioral::elements::common::behavior::Reception.__mro__:
-        if "isLeaf" in klass.__dict__:
-            descriptor = klass.__dict__["isLeaf"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_behavioral::elements::common::behavior::reception_has_isRoot():
-    assert hasattr(behavioral::elements::common::behavior::Reception, "isRoot")
-    descriptor = None
-    for klass in behavioral::elements::common::behavior::Reception.__mro__:
-        if "isRoot" in klass.__dict__:
-            descriptor = klass.__dict__["isRoot"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_behavioral::elements::common::behavior::reception_has_specification():
-    assert hasattr(behavioral::elements::common::behavior::Reception, "specification")
-    descriptor = None
-    for klass in behavioral::elements::common::behavior::Reception.__mro__:
-        if "specification" in klass.__dict__:
-            descriptor = klass.__dict__["specification"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_reception_is_not_abstract():
-    assert not inspect.isabstract(Reception)
-
-
-def test_reception_constructor_exists():
-    assert callable(Reception.__init__)
-
-
-def test_reception_constructor_args():
-    sig = inspect.signature(Reception.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_link_is_not_abstract():
-    assert not inspect.isabstract(Link)
-
-
-def test_link_constructor_exists():
-    assert callable(Link.__init__)
-
-
-def test_link_constructor_args():
-    sig = inspect.signature(Link.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_instance_is_not_abstract():
-    assert not inspect.isabstract(Instance)
-
-
-def test_instance_constructor_exists():
-    assert callable(Instance.__init__)
-
-
-def test_instance_constructor_args():
-    sig = inspect.signature(Instance.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_behavioral::elements::common::behavior::subsysteminstance_is_not_abstract():
-    assert not inspect.isabstract(behavioral::elements::common::behavior::SubsystemInstance)
-
-
-def test_behavioral::elements::common::behavior::subsysteminstance_constructor_exists():
-    assert callable(behavioral::elements::common::behavior::SubsystemInstance.__init__)
-
-
-def test_behavioral::elements::common::behavior::subsysteminstance_constructor_args():
-    sig = inspect.signature(behavioral::elements::common::behavior::SubsystemInstance.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_behavioral::elements::common::behavior::datavalue_is_not_abstract():
-    assert not inspect.isabstract(behavioral::elements::common::behavior::DataValue)
-
-
-def test_behavioral::elements::common::behavior::datavalue_constructor_exists():
-    assert callable(behavioral::elements::common::behavior::DataValue.__init__)
-
-
-def test_behavioral::elements::common::behavior::datavalue_constructor_args():
-    sig = inspect.signature(behavioral::elements::common::behavior::DataValue.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_behavioral::elements::common::behavior::nodeinstance_is_not_abstract():
-    assert not inspect.isabstract(behavioral::elements::common::behavior::NodeInstance)
-
-
-def test_behavioral::elements::common::behavior::nodeinstance_constructor_exists():
-    assert callable(behavioral::elements::common::behavior::NodeInstance.__init__)
-
-
-def test_behavioral::elements::common::behavior::nodeinstance_constructor_args():
-    sig = inspect.signature(behavioral::elements::common::behavior::NodeInstance.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_behavioral::elements::use::cases::usecaseinstance_is_not_abstract():
-    assert not inspect.isabstract(behavioral::elements::use::cases::UseCaseInstance)
-
-
-def test_behavioral::elements::use::cases::usecaseinstance_constructor_exists():
-    assert callable(behavioral::elements::use::cases::UseCaseInstance.__init__)
-
-
-def test_behavioral::elements::use::cases::usecaseinstance_constructor_args():
-    sig = inspect.signature(behavioral::elements::use::cases::UseCaseInstance.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_behavioral::elements::common::behavior::componentinstance_is_not_abstract():
-    assert not inspect.isabstract(behavioral::elements::common::behavior::ComponentInstance)
-
-
-def test_behavioral::elements::common::behavior::componentinstance_constructor_exists():
-    assert callable(behavioral::elements::common::behavior::ComponentInstance.__init__)
-
-
-def test_behavioral::elements::common::behavior::componentinstance_constructor_args():
-    sig = inspect.signature(behavioral::elements::common::behavior::ComponentInstance.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_behavioral::elements::common::behavior::object_is_not_abstract():
-    assert not inspect.isabstract(behavioral::elements::common::behavior::Object)
-
-
-def test_behavioral::elements::common::behavior::object_constructor_exists():
-    assert callable(behavioral::elements::common::behavior::Object.__init__)
-
-
-def test_behavioral::elements::common::behavior::object_constructor_args():
-    sig = inspect.signature(behavioral::elements::common::behavior::Object.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_componentinstance_is_not_abstract():
-    assert not inspect.isabstract(ComponentInstance)
-
-
-def test_componentinstance_constructor_exists():
-    assert callable(ComponentInstance.__init__)
-
-
-def test_componentinstance_constructor_args():
-    sig = inspect.signature(ComponentInstance.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_linkend_is_not_abstract():
-    assert not inspect.isabstract(LinkEnd)
-
-
-def test_linkend_constructor_exists():
-    assert callable(LinkEnd.__init__)
-
-
-def test_linkend_constructor_args():
-    sig = inspect.signature(LinkEnd.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_attributelink_is_not_abstract():
-    assert not inspect.isabstract(AttributeLink)
-
-
-def test_attributelink_constructor_exists():
-    assert callable(AttributeLink.__init__)
-
-
-def test_attributelink_constructor_args():
-    sig = inspect.signature(AttributeLink.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_classifier_is_not_abstract():
-    assert not inspect.isabstract(Classifier)
-
-
-def test_classifier_constructor_exists():
-    assert callable(Classifier.__init__)
-
-
-def test_classifier_constructor_args():
-    sig = inspect.signature(Classifier.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_behavioral::elements::common::behavior::signal_is_not_abstract():
-    assert not inspect.isabstract(behavioral::elements::common::behavior::Signal)
-
-
-def test_behavioral::elements::common::behavior::signal_constructor_exists():
-    assert callable(behavioral::elements::common::behavior::Signal.__init__)
-
-
-def test_behavioral::elements::common::behavior::signal_constructor_args():
-    sig = inspect.signature(behavioral::elements::common::behavior::Signal.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_behavioral::elements::collaborations::classifierrole_is_not_abstract():
-    assert not inspect.isabstract(behavioral::elements::collaborations::ClassifierRole)
-
-
-def test_behavioral::elements::collaborations::classifierrole_constructor_exists():
-    assert callable(behavioral::elements::collaborations::ClassifierRole.__init__)
-
-
-def test_behavioral::elements::collaborations::classifierrole_constructor_args():
-    sig = inspect.signature(behavioral::elements::collaborations::ClassifierRole.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_behavioral::elements::use::cases::actor_is_not_abstract():
-    assert not inspect.isabstract(behavioral::elements::use::cases::Actor)
-
-
-def test_behavioral::elements::use::cases::actor_constructor_exists():
-    assert callable(behavioral::elements::use::cases::Actor.__init__)
-
-
-def test_behavioral::elements::use::cases::actor_constructor_args():
-    sig = inspect.signature(behavioral::elements::use::cases::Actor.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_behavioral::elements::activity::graphs::classifierinstate_is_not_abstract():
-    assert not inspect.isabstract(behavioral::elements::activity::graphs::ClassifierInState)
-
-
-def test_behavioral::elements::activity::graphs::classifierinstate_constructor_exists():
-    assert callable(behavioral::elements::activity::graphs::ClassifierInState.__init__)
-
-
-def test_behavioral::elements::activity::graphs::classifierinstate_constructor_args():
-    sig = inspect.signature(behavioral::elements::activity::graphs::ClassifierInState.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_behavioral::elements::use::cases::usecase_is_not_abstract():
-    assert not inspect.isabstract(behavioral::elements::use::cases::UseCase)
-
-
-def test_behavioral::elements::use::cases::usecase_constructor_exists():
-    assert callable(behavioral::elements::use::cases::UseCase.__init__)
-
-
-def test_behavioral::elements::use::cases::usecase_constructor_args():
-    sig = inspect.signature(behavioral::elements::use::cases::UseCase.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_objectsetexpression_is_not_abstract():
-    assert not inspect.isabstract(ObjectSetExpression)
-
-
-def test_objectsetexpression_constructor_exists():
-    assert callable(ObjectSetExpression.__init__)
-
-
-def test_objectsetexpression_constructor_args():
-    sig = inspect.signature(ObjectSetExpression.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_iterationexpression_is_not_abstract():
-    assert not inspect.isabstract(IterationExpression)
-
-
-def test_iterationexpression_constructor_exists():
-    assert callable(IterationExpression.__init__)
-
-
-def test_iterationexpression_constructor_args():
-    sig = inspect.signature(IterationExpression.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_signalevent_is_not_abstract():
-    assert not inspect.isabstract(SignalEvent)
-
-
-def test_signalevent_constructor_exists():
-    assert callable(SignalEvent.__init__)
-
-
-def test_signalevent_constructor_args():
-    sig = inspect.signature(SignalEvent.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_sendaction_is_not_abstract():
-    assert not inspect.isabstract(SendAction)
-
-
-def test_sendaction_constructor_exists():
-    assert callable(SendAction.__init__)
-
-
-def test_sendaction_constructor_args():
-    sig = inspect.signature(SendAction.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_modelelement_is_not_abstract():
-    assert not inspect.isabstract(ModelElement)
-
-
-def test_modelelement_constructor_exists():
-    assert callable(ModelElement.__init__)
-
-
-def test_modelelement_constructor_args():
-    sig = inspect.signature(ModelElement.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_behavioral::elements::state::machines::event_is_not_abstract():
-    assert not inspect.isabstract(behavioral::elements::state::machines::Event)
-
-
-def test_behavioral::elements::state::machines::event_constructor_exists():
-    assert callable(behavioral::elements::state::machines::Event.__init__)
-
-
-def test_behavioral::elements::state::machines::event_constructor_args():
-    sig = inspect.signature(behavioral::elements::state::machines::Event.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_behavioral::elements::common::behavior::action_is_not_abstract():
-    assert not inspect.isabstract(behavioral::elements::common::behavior::Action)
-
-
-def test_behavioral::elements::common::behavior::action_constructor_exists():
-    assert callable(behavioral::elements::common::behavior::Action.__init__)
-
-
-def test_behavioral::elements::common::behavior::action_constructor_args():
-    sig = inspect.signature(behavioral::elements::common::behavior::Action.__init__)
-    params = list(sig.parameters.keys())
-    assert "isAsynchronous" in params, "Missing parameter 'isAsynchronous'"
-
-def test_behavioral::elements::common::behavior::action_has_isAsynchronous():
-    assert hasattr(behavioral::elements::common::behavior::Action, "isAsynchronous")
-    descriptor = None
-    for klass in behavioral::elements::common::behavior::Action.__mro__:
-        if "isAsynchronous" in klass.__dict__:
-            descriptor = klass.__dict__["isAsynchronous"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_behavioral::elements::common::behavior::attributelink_is_not_abstract():
-    assert not inspect.isabstract(behavioral::elements::common::behavior::AttributeLink)
-
-
-def test_behavioral::elements::common::behavior::attributelink_constructor_exists():
-    assert callable(behavioral::elements::common::behavior::AttributeLink.__init__)
-
-
-def test_behavioral::elements::common::behavior::attributelink_constructor_args():
-    sig = inspect.signature(behavioral::elements::common::behavior::AttributeLink.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_behavioral::elements::use::cases::extensionpoint_is_not_abstract():
-    assert not inspect.isabstract(behavioral::elements::use::cases::ExtensionPoint)
-
-
-def test_behavioral::elements::use::cases::extensionpoint_constructor_exists():
-    assert callable(behavioral::elements::use::cases::ExtensionPoint.__init__)
-
-
-def test_behavioral::elements::use::cases::extensionpoint_constructor_args():
-    sig = inspect.signature(behavioral::elements::use::cases::ExtensionPoint.__init__)
-    params = list(sig.parameters.keys())
-    assert "location" in params, "Missing parameter 'location'"
-
-def test_behavioral::elements::use::cases::extensionpoint_has_location():
-    assert hasattr(behavioral::elements::use::cases::ExtensionPoint, "location")
-    descriptor = None
-    for klass in behavioral::elements::use::cases::ExtensionPoint.__mro__:
-        if "location" in klass.__dict__:
-            descriptor = klass.__dict__["location"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_behavioral::elements::collaborations::interactioninstanceset_is_not_abstract():
-    assert not inspect.isabstract(behavioral::elements::collaborations::InteractionInstanceSet)
-
-
-def test_behavioral::elements::collaborations::interactioninstanceset_constructor_exists():
-    assert callable(behavioral::elements::collaborations::InteractionInstanceSet.__init__)
-
-
-def test_behavioral::elements::collaborations::interactioninstanceset_constructor_args():
-    sig = inspect.signature(behavioral::elements::collaborations::InteractionInstanceSet.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_behavioral::elements::collaborations::interaction_is_not_abstract():
-    assert not inspect.isabstract(behavioral::elements::collaborations::Interaction)
-
-
-def test_behavioral::elements::collaborations::interaction_constructor_exists():
-    assert callable(behavioral::elements::collaborations::Interaction.__init__)
-
-
-def test_behavioral::elements::collaborations::interaction_constructor_args():
-    sig = inspect.signature(behavioral::elements::collaborations::Interaction.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_behavioral::elements::common::behavior::linkend_is_not_abstract():
-    assert not inspect.isabstract(behavioral::elements::common::behavior::LinkEnd)
-
-
-def test_behavioral::elements::common::behavior::linkend_constructor_exists():
-    assert callable(behavioral::elements::common::behavior::LinkEnd.__init__)
-
-
-def test_behavioral::elements::common::behavior::linkend_constructor_args():
-    sig = inspect.signature(behavioral::elements::common::behavior::LinkEnd.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_behavioral::elements::collaborations::collaborationinstanceset_is_not_abstract():
-    assert not inspect.isabstract(behavioral::elements::collaborations::CollaborationInstanceSet)
-
-
-def test_behavioral::elements::collaborations::collaborationinstanceset_constructor_exists():
-    assert callable(behavioral::elements::collaborations::CollaborationInstanceSet.__init__)
-
-
-def test_behavioral::elements::collaborations::collaborationinstanceset_constructor_args():
-    sig = inspect.signature(behavioral::elements::collaborations::CollaborationInstanceSet.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_behavioral::elements::common::behavior::argument_is_not_abstract():
-    assert not inspect.isabstract(behavioral::elements::common::behavior::Argument)
-
-
-def test_behavioral::elements::common::behavior::argument_constructor_exists():
-    assert callable(behavioral::elements::common::behavior::Argument.__init__)
-
-
-def test_behavioral::elements::common::behavior::argument_constructor_args():
-    sig = inspect.signature(behavioral::elements::common::behavior::Argument.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_behavioral::elements::collaborations::message_is_not_abstract():
-    assert not inspect.isabstract(behavioral::elements::collaborations::Message)
-
-
-def test_behavioral::elements::collaborations::message_constructor_exists():
-    assert callable(behavioral::elements::collaborations::Message.__init__)
-
-
-def test_behavioral::elements::collaborations::message_constructor_args():
-    sig = inspect.signature(behavioral::elements::collaborations::Message.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_behavioral::elements::common::behavior::stimulus_is_not_abstract():
-    assert not inspect.isabstract(behavioral::elements::common::behavior::Stimulus)
-
-
-def test_behavioral::elements::common::behavior::stimulus_constructor_exists():
-    assert callable(behavioral::elements::common::behavior::Stimulus.__init__)
-
-
-def test_behavioral::elements::common::behavior::stimulus_constructor_args():
-    sig = inspect.signature(behavioral::elements::common::behavior::Stimulus.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_behavioral::elements::state::machines::transition_is_not_abstract():
-    assert not inspect.isabstract(behavioral::elements::state::machines::Transition)
-
-
-def test_behavioral::elements::state::machines::transition_constructor_exists():
-    assert callable(behavioral::elements::state::machines::Transition.__init__)
-
-
-def test_behavioral::elements::state::machines::transition_constructor_args():
-    sig = inspect.signature(behavioral::elements::state::machines::Transition.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_behavioral::elements::state::machines::guard_is_not_abstract():
-    assert not inspect.isabstract(behavioral::elements::state::machines::Guard)
-
-
-def test_behavioral::elements::state::machines::guard_constructor_exists():
-    assert callable(behavioral::elements::state::machines::Guard.__init__)
-
-
-def test_behavioral::elements::state::machines::guard_constructor_args():
-    sig = inspect.signature(behavioral::elements::state::machines::Guard.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_behavioral::elements::common::behavior::link_is_not_abstract():
-    assert not inspect.isabstract(behavioral::elements::common::behavior::Link)
-
-
-def test_behavioral::elements::common::behavior::link_constructor_exists():
-    assert callable(behavioral::elements::common::behavior::Link.__init__)
-
-
-def test_behavioral::elements::common::behavior::link_constructor_args():
-    sig = inspect.signature(behavioral::elements::common::behavior::Link.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_behavioral::elements::activity::graphs::partition_is_not_abstract():
-    assert not inspect.isabstract(behavioral::elements::activity::graphs::Partition)
-
-
-def test_behavioral::elements::activity::graphs::partition_constructor_exists():
-    assert callable(behavioral::elements::activity::graphs::Partition.__init__)
-
-
-def test_behavioral::elements::activity::graphs::partition_constructor_args():
-    sig = inspect.signature(behavioral::elements::activity::graphs::Partition.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_behavioral::elements::state::machines::statemachine_is_not_abstract():
-    assert not inspect.isabstract(behavioral::elements::state::machines::StateMachine)
-
-
-def test_behavioral::elements::state::machines::statemachine_constructor_exists():
-    assert callable(behavioral::elements::state::machines::StateMachine.__init__)
-
-
-def test_behavioral::elements::state::machines::statemachine_constructor_args():
-    sig = inspect.signature(behavioral::elements::state::machines::StateMachine.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_behavioral::elements::state::machines::statevertex_is_not_abstract():
-    assert not inspect.isabstract(behavioral::elements::state::machines::StateVertex)
-
-
-def test_behavioral::elements::state::machines::statevertex_constructor_exists():
-    assert callable(behavioral::elements::state::machines::StateVertex.__init__)
-
-
-def test_behavioral::elements::state::machines::statevertex_constructor_args():
-    sig = inspect.signature(behavioral::elements::state::machines::StateVertex.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_behavioral::elements::common::behavior::instance_is_not_abstract():
-    assert not inspect.isabstract(behavioral::elements::common::behavior::Instance)
-
-
-def test_behavioral::elements::common::behavior::instance_constructor_exists():
-    assert callable(behavioral::elements::common::behavior::Instance.__init__)
-
-
-def test_behavioral::elements::common::behavior::instance_constructor_args():
-    sig = inspect.signature(behavioral::elements::common::behavior::Instance.__init__)
+def test_behavioral_elements_collaborations_associationrole_constructor_args():
+    sig = inspect.signature(behavioral_elements_collaborations_AssociationRole.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1981,24 +1981,98 @@ Partition_strategy = st.builds(
 ActionState_strategy = st.builds(
     ActionState,
 )
-behavioral::elements::activity::graphs::CallState_strategy = st.builds(
-    behavioral::elements::activity::graphs::CallState,
+behavioral_elements_activity_graphs_CallState_strategy = st.builds(
+    behavioral_elements_activity_graphs_CallState,
 )
 SimpleState_strategy = st.builds(
     SimpleState,
 )
-behavioral::elements::activity::graphs::ObjectFlowState_strategy = st.builds(
-    behavioral::elements::activity::graphs::ObjectFlowState,
+behavioral_elements_activity_graphs_ObjectFlowState_strategy = st.builds(
+    behavioral_elements_activity_graphs_ObjectFlowState,
     isSynch=
         safe_text
 )
-behavioral::elements::activity::graphs::ActionState_strategy = st.builds(
-    behavioral::elements::activity::graphs::ActionState,
+behavioral_elements_activity_graphs_ActionState_strategy = st.builds(
+    behavioral_elements_activity_graphs_ActionState,
     isDynamic=
         safe_text
 )
 AssociationRole_strategy = st.builds(
     AssociationRole,
+)
+BehavioralFeature_strategy = st.builds(
+    BehavioralFeature,
+)
+Reception_strategy = st.builds(
+    Reception,
+)
+Link_strategy = st.builds(
+    Link,
+)
+Instance_strategy = st.builds(
+    Instance,
+)
+behavioral_elements_common_behavior_Object_strategy = st.builds(
+    behavioral_elements_common_behavior_Object,
+)
+ComponentInstance_strategy = st.builds(
+    ComponentInstance,
+)
+LinkEnd_strategy = st.builds(
+    LinkEnd,
+)
+AttributeLink_strategy = st.builds(
+    AttributeLink,
+)
+Classifier_strategy = st.builds(
+    Classifier,
+)
+behavioral_elements_activity_graphs_ClassifierInState_strategy = st.builds(
+    behavioral_elements_activity_graphs_ClassifierInState,
+)
+behavioral_elements_common_behavior_Signal_strategy = st.builds(
+    behavioral_elements_common_behavior_Signal,
+)
+ObjectSetExpression_strategy = st.builds(
+    ObjectSetExpression,
+)
+IterationExpression_strategy = st.builds(
+    IterationExpression,
+)
+SignalEvent_strategy = st.builds(
+    SignalEvent,
+)
+SendAction_strategy = st.builds(
+    SendAction,
+)
+ModelElement_strategy = st.builds(
+    ModelElement,
+)
+behavioral_elements_collaborations_Interaction_strategy = st.builds(
+    behavioral_elements_collaborations_Interaction,
+)
+behavioral_elements_collaborations_CollaborationInstanceSet_strategy = st.builds(
+    behavioral_elements_collaborations_CollaborationInstanceSet,
+)
+behavioral_elements_collaborations_InteractionInstanceSet_strategy = st.builds(
+    behavioral_elements_collaborations_InteractionInstanceSet,
+)
+behavioral_elements_activity_graphs_Partition_strategy = st.builds(
+    behavioral_elements_activity_graphs_Partition,
+)
+behavioral_elements_common_behavior_Action_strategy = st.builds(
+    behavioral_elements_common_behavior_Action,
+    isAsynchronous=
+        safe_text
+)
+behavioral_elements_common_behavior_Link_strategy = st.builds(
+    behavioral_elements_common_behavior_Link,
+)
+behavioral_elements_common_behavior_Instance_strategy = st.builds(
+    behavioral_elements_common_behavior_Instance,
+)
+behavioral_elements_collaborations_Message_strategy = st.builds(
+    behavioral_elements_collaborations_Message,
 )
 Feature_strategy = st.builds(
     Feature,
@@ -2009,17 +2083,20 @@ ClassifierRole_strategy = st.builds(
 Interaction_strategy = st.builds(
     Interaction,
 )
-core::Namespace_strategy = st.builds(
-    core::Namespace,
+core_Namespace_strategy = st.builds(
+    core_Namespace,
 )
-core::GeneralizableElement_strategy = st.builds(
-    core::GeneralizableElement,
+core_GeneralizableElement_strategy = st.builds(
+    core_GeneralizableElement,
 )
-behavioral::elements::collaborations::Collaboration_strategy = st.builds(
-    behavioral::elements::collaborations::Collaboration,
+behavioral_elements_collaborations_Collaboration_strategy = st.builds(
+    behavioral_elements_collaborations_Collaboration,
 )
 Multiplicity__strategy = st.builds(
     Multiplicity_,
+)
+behavioral_elements_collaborations_ClassifierRole_strategy = st.builds(
+    behavioral_elements_collaborations_ClassifierRole,
 )
 Collaboration_strategy = st.builds(
     Collaboration,
@@ -2030,47 +2107,59 @@ CollaborationInstanceSet_strategy = st.builds(
 Guard_strategy = st.builds(
     Guard,
 )
+behavioral_elements_state_machines_Transition_strategy = st.builds(
+    behavioral_elements_state_machines_Transition,
+)
+behavioral_elements_state_machines_Guard_strategy = st.builds(
+    behavioral_elements_state_machines_Guard,
+)
 StateMachine_strategy = st.builds(
     StateMachine,
 )
-behavioral::elements::activity::graphs::ActivityGraph_strategy = st.builds(
-    behavioral::elements::activity::graphs::ActivityGraph,
+behavioral_elements_activity_graphs_ActivityGraph_strategy = st.builds(
+    behavioral_elements_activity_graphs_ActivityGraph,
 )
 StateVertex_strategy = st.builds(
     StateVertex,
 )
-behavioral::elements::state::machines::StubState_strategy = st.builds(
-    behavioral::elements::state::machines::StubState,
-    referenceState=
-        safe_text
-)
-behavioral::elements::state::machines::SynchState_strategy = st.builds(
-    behavioral::elements::state::machines::SynchState,
+behavioral_elements_state_machines_SynchState_strategy = st.builds(
+    behavioral_elements_state_machines_SynchState,
     bound=
         safe_text
 )
-behavioral::elements::state::machines::Pseudostate_strategy = st.builds(
-    behavioral::elements::state::machines::Pseudostate,
+behavioral_elements_state_machines_Pseudostate_strategy = st.builds(
+    behavioral_elements_state_machines_Pseudostate,
     kind=
         safe_text
 )
-behavioral::elements::state::machines::State_strategy = st.builds(
-    behavioral::elements::state::machines::State,
+behavioral_elements_state_machines_StubState_strategy = st.builds(
+    behavioral_elements_state_machines_StubState,
+    referenceState=
+        safe_text
+)
+behavioral_elements_state_machines_State_strategy = st.builds(
+    behavioral_elements_state_machines_State,
 )
 CompositeState_strategy = st.builds(
     CompositeState,
 )
-behavioral::elements::state::machines::SubmachineState_strategy = st.builds(
-    behavioral::elements::state::machines::SubmachineState,
+behavioral_elements_state_machines_SubmachineState_strategy = st.builds(
+    behavioral_elements_state_machines_SubmachineState,
+)
+behavioral_elements_state_machines_StateVertex_strategy = st.builds(
+    behavioral_elements_state_machines_StateVertex,
 )
 Parameter_strategy = st.builds(
     Parameter,
 )
+behavioral_elements_state_machines_Event_strategy = st.builds(
+    behavioral_elements_state_machines_Event,
+)
 SubmachineState_strategy = st.builds(
     SubmachineState,
 )
-behavioral::elements::activity::graphs::SubactivityState_strategy = st.builds(
-    behavioral::elements::activity::graphs::SubactivityState,
+behavioral_elements_activity_graphs_SubactivityState_strategy = st.builds(
+    behavioral_elements_activity_graphs_SubactivityState,
     isDynamic=
         safe_text
 )
@@ -2080,17 +2169,22 @@ TimeExpression_strategy = st.builds(
 Event_strategy = st.builds(
     Event,
 )
-behavioral::elements::state::machines::SignalEvent_strategy = st.builds(
-    behavioral::elements::state::machines::SignalEvent,
+behavioral_elements_state_machines_SignalEvent_strategy = st.builds(
+    behavioral_elements_state_machines_SignalEvent,
 )
-behavioral::elements::state::machines::CallEvent_strategy = st.builds(
-    behavioral::elements::state::machines::CallEvent,
+behavioral_elements_state_machines_CallEvent_strategy = st.builds(
+    behavioral_elements_state_machines_CallEvent,
 )
-behavioral::elements::state::machines::ChangeEvent_strategy = st.builds(
-    behavioral::elements::state::machines::ChangeEvent,
+behavioral_elements_state_machines_TimeEvent_strategy = st.builds(
+    behavioral_elements_state_machines_TimeEvent,
 )
-behavioral::elements::state::machines::TimeEvent_strategy = st.builds(
-    behavioral::elements::state::machines::TimeEvent,
+behavioral_elements_state_machines_ChangeEvent_strategy = st.builds(
+    behavioral_elements_state_machines_ChangeEvent,
+)
+behavioral_elements_use_cases_ExtensionPoint_strategy = st.builds(
+    behavioral_elements_use_cases_ExtensionPoint,
+    location=
+        safe_text
 )
 UseCase_strategy = st.builds(
     UseCase,
@@ -2101,11 +2195,17 @@ BooleanExpression_strategy = st.builds(
 Relationship_strategy = st.builds(
     Relationship,
 )
-behavioral::elements::use::cases::Include_strategy = st.builds(
-    behavioral::elements::use::cases::Include,
+behavioral_elements_use_cases_Include_strategy = st.builds(
+    behavioral_elements_use_cases_Include,
 )
-behavioral::elements::use::cases::Extend_strategy = st.builds(
-    behavioral::elements::use::cases::Extend,
+behavioral_elements_use_cases_Extend_strategy = st.builds(
+    behavioral_elements_use_cases_Extend,
+)
+behavioral_elements_use_cases_UseCaseInstance_strategy = st.builds(
+    behavioral_elements_use_cases_UseCaseInstance,
+)
+behavioral_elements_use_cases_Actor_strategy = st.builds(
+    behavioral_elements_use_cases_Actor,
 )
 ExtensionPoint_strategy = st.builds(
     ExtensionPoint,
@@ -2113,19 +2213,28 @@ ExtensionPoint_strategy = st.builds(
 State_strategy = st.builds(
     State,
 )
-behavioral::elements::state::machines::FinalState_strategy = st.builds(
-    behavioral::elements::state::machines::FinalState,
-)
-behavioral::elements::state::machines::CompositeState_strategy = st.builds(
-    behavioral::elements::state::machines::CompositeState,
+behavioral_elements_state_machines_CompositeState_strategy = st.builds(
+    behavioral_elements_state_machines_CompositeState,
     isConcurrent=
         safe_text
 )
-behavioral::elements::state::machines::SimpleState_strategy = st.builds(
-    behavioral::elements::state::machines::SimpleState,
+behavioral_elements_state_machines_FinalState_strategy = st.builds(
+    behavioral_elements_state_machines_FinalState,
+)
+behavioral_elements_state_machines_SimpleState_strategy = st.builds(
+    behavioral_elements_state_machines_SimpleState,
+)
+behavioral_elements_state_machines_StateMachine_strategy = st.builds(
+    behavioral_elements_state_machines_StateMachine,
+)
+behavioral_elements_common_behavior_NodeInstance_strategy = st.builds(
+    behavioral_elements_common_behavior_NodeInstance,
 )
 NodeInstance_strategy = st.builds(
     NodeInstance,
+)
+behavioral_elements_common_behavior_ComponentInstance_strategy = st.builds(
+    behavioral_elements_common_behavior_ComponentInstance,
 )
 InteractionInstanceSet_strategy = st.builds(
     InteractionInstanceSet,
@@ -2139,62 +2248,94 @@ Include_strategy = st.builds(
 Extend_strategy = st.builds(
     Extend,
 )
+behavioral_elements_use_cases_UseCase_strategy = st.builds(
+    behavioral_elements_use_cases_UseCase,
+)
+behavioral_elements_common_behavior_SubsystemInstance_strategy = st.builds(
+    behavioral_elements_common_behavior_SubsystemInstance,
+)
 AssociationEnd_strategy = st.builds(
     AssociationEnd,
 )
-behavioral::elements::collaborations::AssociationEndRole_strategy = st.builds(
-    behavioral::elements::collaborations::AssociationEndRole,
+behavioral_elements_collaborations_AssociationEndRole_strategy = st.builds(
+    behavioral_elements_collaborations_AssociationEndRole,
+)
+behavioral_elements_common_behavior_LinkEnd_strategy = st.builds(
+    behavioral_elements_common_behavior_LinkEnd,
+)
+behavioral_elements_common_behavior_Reception_strategy = st.builds(
+    behavioral_elements_common_behavior_Reception,
+    specification=
+        safe_text,
+    isRoot=
+        safe_text,
+    isAbstract=
+        safe_text,
+    isLeaf=
+        safe_text
 )
 Expression_strategy = st.builds(
     Expression,
 )
+behavioral_elements_common_behavior_Argument_strategy = st.builds(
+    behavioral_elements_common_behavior_Argument,
+)
+behavioral_elements_common_behavior_Stimulus_strategy = st.builds(
+    behavioral_elements_common_behavior_Stimulus,
+)
 Operation_strategy = st.builds(
     Operation,
 )
-common::behavior::Link_strategy = st.builds(
-    common::behavior::Link,
+behavioral_elements_common_behavior_DataValue_strategy = st.builds(
+    behavioral_elements_common_behavior_DataValue,
 )
-common::behavior::Object_strategy = st.builds(
-    common::behavior::Object,
+common_behavior_Link_strategy = st.builds(
+    common_behavior_Link,
 )
-behavioral::elements::common::behavior::LinkObject_strategy = st.builds(
-    behavioral::elements::common::behavior::LinkObject,
+common_behavior_Object_strategy = st.builds(
+    common_behavior_Object,
+)
+behavioral_elements_common_behavior_LinkObject_strategy = st.builds(
+    behavioral_elements_common_behavior_LinkObject,
 )
 Signal_strategy = st.builds(
     Signal,
 )
-behavioral::elements::common::behavior::Exception_strategy = st.builds(
-    behavioral::elements::common::behavior::Exception,
+behavioral_elements_common_behavior_Exception_strategy = st.builds(
+    behavioral_elements_common_behavior_Exception,
 )
 Attribute_strategy = st.builds(
     Attribute,
 )
+behavioral_elements_common_behavior_AttributeLink_strategy = st.builds(
+    behavioral_elements_common_behavior_AttributeLink,
+)
 Action_strategy = st.builds(
     Action,
 )
-behavioral::elements::common::behavior::DestroyAction_strategy = st.builds(
-    behavioral::elements::common::behavior::DestroyAction,
+behavioral_elements_common_behavior_SendAction_strategy = st.builds(
+    behavioral_elements_common_behavior_SendAction,
 )
-behavioral::elements::common::behavior::SendAction_strategy = st.builds(
-    behavioral::elements::common::behavior::SendAction,
+behavioral_elements_common_behavior_UninterpretedAction_strategy = st.builds(
+    behavioral_elements_common_behavior_UninterpretedAction,
 )
-behavioral::elements::common::behavior::TerminateAction_strategy = st.builds(
-    behavioral::elements::common::behavior::TerminateAction,
+behavioral_elements_common_behavior_ReturnAction_strategy = st.builds(
+    behavioral_elements_common_behavior_ReturnAction,
 )
-behavioral::elements::common::behavior::ReturnAction_strategy = st.builds(
-    behavioral::elements::common::behavior::ReturnAction,
+behavioral_elements_common_behavior_ActionSequence_strategy = st.builds(
+    behavioral_elements_common_behavior_ActionSequence,
 )
-behavioral::elements::common::behavior::UninterpretedAction_strategy = st.builds(
-    behavioral::elements::common::behavior::UninterpretedAction,
+behavioral_elements_common_behavior_DestroyAction_strategy = st.builds(
+    behavioral_elements_common_behavior_DestroyAction,
 )
-behavioral::elements::common::behavior::ActionSequence_strategy = st.builds(
-    behavioral::elements::common::behavior::ActionSequence,
+behavioral_elements_common_behavior_CallAction_strategy = st.builds(
+    behavioral_elements_common_behavior_CallAction,
 )
-behavioral::elements::common::behavior::CallAction_strategy = st.builds(
-    behavioral::elements::common::behavior::CallAction,
+behavioral_elements_common_behavior_TerminateAction_strategy = st.builds(
+    behavioral_elements_common_behavior_TerminateAction,
 )
-behavioral::elements::common::behavior::CreateAction_strategy = st.builds(
-    behavioral::elements::common::behavior::CreateAction,
+behavioral_elements_common_behavior_CreateAction_strategy = st.builds(
+    behavioral_elements_common_behavior_CreateAction,
 )
 Transition_strategy = st.builds(
     Transition,
@@ -2214,149 +2355,8 @@ ActionExpression_strategy = st.builds(
 Association_strategy = st.builds(
     Association,
 )
-behavioral::elements::collaborations::AssociationRole_strategy = st.builds(
-    behavioral::elements::collaborations::AssociationRole,
-)
-BehavioralFeature_strategy = st.builds(
-    BehavioralFeature,
-)
-behavioral::elements::common::behavior::Reception_strategy = st.builds(
-    behavioral::elements::common::behavior::Reception,
-    isAbstract=
-        safe_text,
-    isLeaf=
-        safe_text,
-    isRoot=
-        safe_text,
-    specification=
-        safe_text
-)
-Reception_strategy = st.builds(
-    Reception,
-)
-Link_strategy = st.builds(
-    Link,
-)
-Instance_strategy = st.builds(
-    Instance,
-)
-behavioral::elements::common::behavior::SubsystemInstance_strategy = st.builds(
-    behavioral::elements::common::behavior::SubsystemInstance,
-)
-behavioral::elements::common::behavior::DataValue_strategy = st.builds(
-    behavioral::elements::common::behavior::DataValue,
-)
-behavioral::elements::common::behavior::NodeInstance_strategy = st.builds(
-    behavioral::elements::common::behavior::NodeInstance,
-)
-behavioral::elements::use::cases::UseCaseInstance_strategy = st.builds(
-    behavioral::elements::use::cases::UseCaseInstance,
-)
-behavioral::elements::common::behavior::ComponentInstance_strategy = st.builds(
-    behavioral::elements::common::behavior::ComponentInstance,
-)
-behavioral::elements::common::behavior::Object_strategy = st.builds(
-    behavioral::elements::common::behavior::Object,
-)
-ComponentInstance_strategy = st.builds(
-    ComponentInstance,
-)
-LinkEnd_strategy = st.builds(
-    LinkEnd,
-)
-AttributeLink_strategy = st.builds(
-    AttributeLink,
-)
-Classifier_strategy = st.builds(
-    Classifier,
-)
-behavioral::elements::common::behavior::Signal_strategy = st.builds(
-    behavioral::elements::common::behavior::Signal,
-)
-behavioral::elements::collaborations::ClassifierRole_strategy = st.builds(
-    behavioral::elements::collaborations::ClassifierRole,
-)
-behavioral::elements::use::cases::Actor_strategy = st.builds(
-    behavioral::elements::use::cases::Actor,
-)
-behavioral::elements::activity::graphs::ClassifierInState_strategy = st.builds(
-    behavioral::elements::activity::graphs::ClassifierInState,
-)
-behavioral::elements::use::cases::UseCase_strategy = st.builds(
-    behavioral::elements::use::cases::UseCase,
-)
-ObjectSetExpression_strategy = st.builds(
-    ObjectSetExpression,
-)
-IterationExpression_strategy = st.builds(
-    IterationExpression,
-)
-SignalEvent_strategy = st.builds(
-    SignalEvent,
-)
-SendAction_strategy = st.builds(
-    SendAction,
-)
-ModelElement_strategy = st.builds(
-    ModelElement,
-)
-behavioral::elements::state::machines::Event_strategy = st.builds(
-    behavioral::elements::state::machines::Event,
-)
-behavioral::elements::common::behavior::Action_strategy = st.builds(
-    behavioral::elements::common::behavior::Action,
-    isAsynchronous=
-        safe_text
-)
-behavioral::elements::common::behavior::AttributeLink_strategy = st.builds(
-    behavioral::elements::common::behavior::AttributeLink,
-)
-behavioral::elements::use::cases::ExtensionPoint_strategy = st.builds(
-    behavioral::elements::use::cases::ExtensionPoint,
-    location=
-        safe_text
-)
-behavioral::elements::collaborations::InteractionInstanceSet_strategy = st.builds(
-    behavioral::elements::collaborations::InteractionInstanceSet,
-)
-behavioral::elements::collaborations::Interaction_strategy = st.builds(
-    behavioral::elements::collaborations::Interaction,
-)
-behavioral::elements::common::behavior::LinkEnd_strategy = st.builds(
-    behavioral::elements::common::behavior::LinkEnd,
-)
-behavioral::elements::collaborations::CollaborationInstanceSet_strategy = st.builds(
-    behavioral::elements::collaborations::CollaborationInstanceSet,
-)
-behavioral::elements::common::behavior::Argument_strategy = st.builds(
-    behavioral::elements::common::behavior::Argument,
-)
-behavioral::elements::collaborations::Message_strategy = st.builds(
-    behavioral::elements::collaborations::Message,
-)
-behavioral::elements::common::behavior::Stimulus_strategy = st.builds(
-    behavioral::elements::common::behavior::Stimulus,
-)
-behavioral::elements::state::machines::Transition_strategy = st.builds(
-    behavioral::elements::state::machines::Transition,
-)
-behavioral::elements::state::machines::Guard_strategy = st.builds(
-    behavioral::elements::state::machines::Guard,
-)
-behavioral::elements::common::behavior::Link_strategy = st.builds(
-    behavioral::elements::common::behavior::Link,
-)
-behavioral::elements::activity::graphs::Partition_strategy = st.builds(
-    behavioral::elements::activity::graphs::Partition,
-)
-behavioral::elements::state::machines::StateMachine_strategy = st.builds(
-    behavioral::elements::state::machines::StateMachine,
-)
-behavioral::elements::state::machines::StateVertex_strategy = st.builds(
-    behavioral::elements::state::machines::StateVertex,
-)
-behavioral::elements::common::behavior::Instance_strategy = st.builds(
-    behavioral::elements::common::behavior::Instance,
+behavioral_elements_collaborations_AssociationRole_strategy = st.builds(
+    behavioral_elements_collaborations_AssociationRole,
 )
 
 @given(instance=ArgListsExpression_strategy)
@@ -2379,44 +2379,38 @@ def test_partition_instantiation(instance):
 def test_actionstate_instantiation(instance):
     assert isinstance(instance, ActionState)
 
-@given(instance=behavioral::elements::activity::graphs::CallState_strategy)
+@given(instance=behavioral_elements_activity_graphs_CallState_strategy)
 @settings(max_examples=50)
-def test_behavioral::elements::activity::graphs::callstate_instantiation(instance):
-    assert isinstance(instance, behavioral::elements::activity::graphs::CallState)
+def test_behavioral_elements_activity_graphs_callstate_instantiation(instance):
+    assert isinstance(instance, behavioral_elements_activity_graphs_CallState)
 
 @given(instance=SimpleState_strategy)
 @settings(max_examples=50)
 def test_simplestate_instantiation(instance):
     assert isinstance(instance, SimpleState)
 
-@given(instance=behavioral::elements::activity::graphs::ObjectFlowState_strategy)
+@given(instance=behavioral_elements_activity_graphs_ObjectFlowState_strategy)
 @settings(max_examples=50)
-def test_behavioral::elements::activity::graphs::objectflowstate_instantiation(instance):
-    assert isinstance(instance, behavioral::elements::activity::graphs::ObjectFlowState)
-
-@given(instance=behavioral::elements::activity::graphs::ObjectFlowState_strategy)
-def test_behavioral::elements::activity::graphs::objectflowstate_isSynch_type(instance):
-    assert isinstance(instance.isSynch, str)
+def test_behavioral_elements_activity_graphs_objectflowstate_instantiation(instance):
+    assert isinstance(instance, behavioral_elements_activity_graphs_ObjectFlowState)
 
 
-@given(instance=behavioral::elements::activity::graphs::ObjectFlowState_strategy)
-def test_behavioral::elements::activity::graphs::objectflowstate_isSynch_setter(instance):
+
+@given(instance=behavioral_elements_activity_graphs_ObjectFlowState_strategy)
+def test_behavioral_elements_activity_graphs_objectflowstate_isSynch_setter(instance):
     original = instance.isSynch
     instance.isSynch = original
     assert instance.isSynch == original
 
-@given(instance=behavioral::elements::activity::graphs::ActionState_strategy)
+@given(instance=behavioral_elements_activity_graphs_ActionState_strategy)
 @settings(max_examples=50)
-def test_behavioral::elements::activity::graphs::actionstate_instantiation(instance):
-    assert isinstance(instance, behavioral::elements::activity::graphs::ActionState)
-
-@given(instance=behavioral::elements::activity::graphs::ActionState_strategy)
-def test_behavioral::elements::activity::graphs::actionstate_isDynamic_type(instance):
-    assert isinstance(instance.isDynamic, str)
+def test_behavioral_elements_activity_graphs_actionstate_instantiation(instance):
+    assert isinstance(instance, behavioral_elements_activity_graphs_ActionState)
 
 
-@given(instance=behavioral::elements::activity::graphs::ActionState_strategy)
-def test_behavioral::elements::activity::graphs::actionstate_isDynamic_setter(instance):
+
+@given(instance=behavioral_elements_activity_graphs_ActionState_strategy)
+def test_behavioral_elements_activity_graphs_actionstate_isDynamic_setter(instance):
     original = instance.isDynamic
     instance.isDynamic = original
     assert instance.isDynamic == original
@@ -2425,6 +2419,134 @@ def test_behavioral::elements::activity::graphs::actionstate_isDynamic_setter(in
 @settings(max_examples=50)
 def test_associationrole_instantiation(instance):
     assert isinstance(instance, AssociationRole)
+
+@given(instance=BehavioralFeature_strategy)
+@settings(max_examples=50)
+def test_behavioralfeature_instantiation(instance):
+    assert isinstance(instance, BehavioralFeature)
+
+@given(instance=Reception_strategy)
+@settings(max_examples=50)
+def test_reception_instantiation(instance):
+    assert isinstance(instance, Reception)
+
+@given(instance=Link_strategy)
+@settings(max_examples=50)
+def test_link_instantiation(instance):
+    assert isinstance(instance, Link)
+
+@given(instance=Instance_strategy)
+@settings(max_examples=50)
+def test_instance_instantiation(instance):
+    assert isinstance(instance, Instance)
+
+@given(instance=behavioral_elements_common_behavior_Object_strategy)
+@settings(max_examples=50)
+def test_behavioral_elements_common_behavior_object_instantiation(instance):
+    assert isinstance(instance, behavioral_elements_common_behavior_Object)
+
+@given(instance=ComponentInstance_strategy)
+@settings(max_examples=50)
+def test_componentinstance_instantiation(instance):
+    assert isinstance(instance, ComponentInstance)
+
+@given(instance=LinkEnd_strategy)
+@settings(max_examples=50)
+def test_linkend_instantiation(instance):
+    assert isinstance(instance, LinkEnd)
+
+@given(instance=AttributeLink_strategy)
+@settings(max_examples=50)
+def test_attributelink_instantiation(instance):
+    assert isinstance(instance, AttributeLink)
+
+@given(instance=Classifier_strategy)
+@settings(max_examples=50)
+def test_classifier_instantiation(instance):
+    assert isinstance(instance, Classifier)
+
+@given(instance=behavioral_elements_activity_graphs_ClassifierInState_strategy)
+@settings(max_examples=50)
+def test_behavioral_elements_activity_graphs_classifierinstate_instantiation(instance):
+    assert isinstance(instance, behavioral_elements_activity_graphs_ClassifierInState)
+
+@given(instance=behavioral_elements_common_behavior_Signal_strategy)
+@settings(max_examples=50)
+def test_behavioral_elements_common_behavior_signal_instantiation(instance):
+    assert isinstance(instance, behavioral_elements_common_behavior_Signal)
+
+@given(instance=ObjectSetExpression_strategy)
+@settings(max_examples=50)
+def test_objectsetexpression_instantiation(instance):
+    assert isinstance(instance, ObjectSetExpression)
+
+@given(instance=IterationExpression_strategy)
+@settings(max_examples=50)
+def test_iterationexpression_instantiation(instance):
+    assert isinstance(instance, IterationExpression)
+
+@given(instance=SignalEvent_strategy)
+@settings(max_examples=50)
+def test_signalevent_instantiation(instance):
+    assert isinstance(instance, SignalEvent)
+
+@given(instance=SendAction_strategy)
+@settings(max_examples=50)
+def test_sendaction_instantiation(instance):
+    assert isinstance(instance, SendAction)
+
+@given(instance=ModelElement_strategy)
+@settings(max_examples=50)
+def test_modelelement_instantiation(instance):
+    assert isinstance(instance, ModelElement)
+
+@given(instance=behavioral_elements_collaborations_Interaction_strategy)
+@settings(max_examples=50)
+def test_behavioral_elements_collaborations_interaction_instantiation(instance):
+    assert isinstance(instance, behavioral_elements_collaborations_Interaction)
+
+@given(instance=behavioral_elements_collaborations_CollaborationInstanceSet_strategy)
+@settings(max_examples=50)
+def test_behavioral_elements_collaborations_collaborationinstanceset_instantiation(instance):
+    assert isinstance(instance, behavioral_elements_collaborations_CollaborationInstanceSet)
+
+@given(instance=behavioral_elements_collaborations_InteractionInstanceSet_strategy)
+@settings(max_examples=50)
+def test_behavioral_elements_collaborations_interactioninstanceset_instantiation(instance):
+    assert isinstance(instance, behavioral_elements_collaborations_InteractionInstanceSet)
+
+@given(instance=behavioral_elements_activity_graphs_Partition_strategy)
+@settings(max_examples=50)
+def test_behavioral_elements_activity_graphs_partition_instantiation(instance):
+    assert isinstance(instance, behavioral_elements_activity_graphs_Partition)
+
+@given(instance=behavioral_elements_common_behavior_Action_strategy)
+@settings(max_examples=50)
+def test_behavioral_elements_common_behavior_action_instantiation(instance):
+    assert isinstance(instance, behavioral_elements_common_behavior_Action)
+
+
+
+@given(instance=behavioral_elements_common_behavior_Action_strategy)
+def test_behavioral_elements_common_behavior_action_isAsynchronous_setter(instance):
+    original = instance.isAsynchronous
+    instance.isAsynchronous = original
+    assert instance.isAsynchronous == original
+
+@given(instance=behavioral_elements_common_behavior_Link_strategy)
+@settings(max_examples=50)
+def test_behavioral_elements_common_behavior_link_instantiation(instance):
+    assert isinstance(instance, behavioral_elements_common_behavior_Link)
+
+@given(instance=behavioral_elements_common_behavior_Instance_strategy)
+@settings(max_examples=50)
+def test_behavioral_elements_common_behavior_instance_instantiation(instance):
+    assert isinstance(instance, behavioral_elements_common_behavior_Instance)
+
+@given(instance=behavioral_elements_collaborations_Message_strategy)
+@settings(max_examples=50)
+def test_behavioral_elements_collaborations_message_instantiation(instance):
+    assert isinstance(instance, behavioral_elements_collaborations_Message)
 
 @given(instance=Feature_strategy)
 @settings(max_examples=50)
@@ -2441,25 +2563,30 @@ def test_classifierrole_instantiation(instance):
 def test_interaction_instantiation(instance):
     assert isinstance(instance, Interaction)
 
-@given(instance=core::Namespace_strategy)
+@given(instance=core_Namespace_strategy)
 @settings(max_examples=50)
-def test_core::namespace_instantiation(instance):
-    assert isinstance(instance, core::Namespace)
+def test_core_namespace_instantiation(instance):
+    assert isinstance(instance, core_Namespace)
 
-@given(instance=core::GeneralizableElement_strategy)
+@given(instance=core_GeneralizableElement_strategy)
 @settings(max_examples=50)
-def test_core::generalizableelement_instantiation(instance):
-    assert isinstance(instance, core::GeneralizableElement)
+def test_core_generalizableelement_instantiation(instance):
+    assert isinstance(instance, core_GeneralizableElement)
 
-@given(instance=behavioral::elements::collaborations::Collaboration_strategy)
+@given(instance=behavioral_elements_collaborations_Collaboration_strategy)
 @settings(max_examples=50)
-def test_behavioral::elements::collaborations::collaboration_instantiation(instance):
-    assert isinstance(instance, behavioral::elements::collaborations::Collaboration)
+def test_behavioral_elements_collaborations_collaboration_instantiation(instance):
+    assert isinstance(instance, behavioral_elements_collaborations_Collaboration)
 
 @given(instance=Multiplicity__strategy)
 @settings(max_examples=50)
 def test_multiplicity__instantiation(instance):
     assert isinstance(instance, Multiplicity_)
+
+@given(instance=behavioral_elements_collaborations_ClassifierRole_strategy)
+@settings(max_examples=50)
+def test_behavioral_elements_collaborations_classifierrole_instantiation(instance):
+    assert isinstance(instance, behavioral_elements_collaborations_ClassifierRole)
 
 @given(instance=Collaboration_strategy)
 @settings(max_examples=50)
@@ -2476,106 +2603,114 @@ def test_collaborationinstanceset_instantiation(instance):
 def test_guard_instantiation(instance):
     assert isinstance(instance, Guard)
 
+@given(instance=behavioral_elements_state_machines_Transition_strategy)
+@settings(max_examples=50)
+def test_behavioral_elements_state_machines_transition_instantiation(instance):
+    assert isinstance(instance, behavioral_elements_state_machines_Transition)
+
+@given(instance=behavioral_elements_state_machines_Guard_strategy)
+@settings(max_examples=50)
+def test_behavioral_elements_state_machines_guard_instantiation(instance):
+    assert isinstance(instance, behavioral_elements_state_machines_Guard)
+
 @given(instance=StateMachine_strategy)
 @settings(max_examples=50)
 def test_statemachine_instantiation(instance):
     assert isinstance(instance, StateMachine)
 
-@given(instance=behavioral::elements::activity::graphs::ActivityGraph_strategy)
+@given(instance=behavioral_elements_activity_graphs_ActivityGraph_strategy)
 @settings(max_examples=50)
-def test_behavioral::elements::activity::graphs::activitygraph_instantiation(instance):
-    assert isinstance(instance, behavioral::elements::activity::graphs::ActivityGraph)
+def test_behavioral_elements_activity_graphs_activitygraph_instantiation(instance):
+    assert isinstance(instance, behavioral_elements_activity_graphs_ActivityGraph)
 
 @given(instance=StateVertex_strategy)
 @settings(max_examples=50)
 def test_statevertex_instantiation(instance):
     assert isinstance(instance, StateVertex)
 
-@given(instance=behavioral::elements::state::machines::StubState_strategy)
+@given(instance=behavioral_elements_state_machines_SynchState_strategy)
 @settings(max_examples=50)
-def test_behavioral::elements::state::machines::stubstate_instantiation(instance):
-    assert isinstance(instance, behavioral::elements::state::machines::StubState)
-
-@given(instance=behavioral::elements::state::machines::StubState_strategy)
-def test_behavioral::elements::state::machines::stubstate_referenceState_type(instance):
-    assert isinstance(instance.referenceState, str)
+def test_behavioral_elements_state_machines_synchstate_instantiation(instance):
+    assert isinstance(instance, behavioral_elements_state_machines_SynchState)
 
 
-@given(instance=behavioral::elements::state::machines::StubState_strategy)
-def test_behavioral::elements::state::machines::stubstate_referenceState_setter(instance):
-    original = instance.referenceState
-    instance.referenceState = original
-    assert instance.referenceState == original
 
-@given(instance=behavioral::elements::state::machines::SynchState_strategy)
-@settings(max_examples=50)
-def test_behavioral::elements::state::machines::synchstate_instantiation(instance):
-    assert isinstance(instance, behavioral::elements::state::machines::SynchState)
-
-@given(instance=behavioral::elements::state::machines::SynchState_strategy)
-def test_behavioral::elements::state::machines::synchstate_bound_type(instance):
-    assert isinstance(instance.bound, str)
-
-
-@given(instance=behavioral::elements::state::machines::SynchState_strategy)
-def test_behavioral::elements::state::machines::synchstate_bound_setter(instance):
+@given(instance=behavioral_elements_state_machines_SynchState_strategy)
+def test_behavioral_elements_state_machines_synchstate_bound_setter(instance):
     original = instance.bound
     instance.bound = original
     assert instance.bound == original
 
-@given(instance=behavioral::elements::state::machines::Pseudostate_strategy)
+@given(instance=behavioral_elements_state_machines_Pseudostate_strategy)
 @settings(max_examples=50)
-def test_behavioral::elements::state::machines::pseudostate_instantiation(instance):
-    assert isinstance(instance, behavioral::elements::state::machines::Pseudostate)
-
-@given(instance=behavioral::elements::state::machines::Pseudostate_strategy)
-def test_behavioral::elements::state::machines::pseudostate_kind_type(instance):
-    assert isinstance(instance.kind, str)
+def test_behavioral_elements_state_machines_pseudostate_instantiation(instance):
+    assert isinstance(instance, behavioral_elements_state_machines_Pseudostate)
 
 
-@given(instance=behavioral::elements::state::machines::Pseudostate_strategy)
-def test_behavioral::elements::state::machines::pseudostate_kind_setter(instance):
+
+@given(instance=behavioral_elements_state_machines_Pseudostate_strategy)
+def test_behavioral_elements_state_machines_pseudostate_kind_setter(instance):
     original = instance.kind
     instance.kind = original
     assert instance.kind == original
 
-@given(instance=behavioral::elements::state::machines::State_strategy)
+@given(instance=behavioral_elements_state_machines_StubState_strategy)
 @settings(max_examples=50)
-def test_behavioral::elements::state::machines::state_instantiation(instance):
-    assert isinstance(instance, behavioral::elements::state::machines::State)
+def test_behavioral_elements_state_machines_stubstate_instantiation(instance):
+    assert isinstance(instance, behavioral_elements_state_machines_StubState)
+
+
+
+@given(instance=behavioral_elements_state_machines_StubState_strategy)
+def test_behavioral_elements_state_machines_stubstate_referenceState_setter(instance):
+    original = instance.referenceState
+    instance.referenceState = original
+    assert instance.referenceState == original
+
+@given(instance=behavioral_elements_state_machines_State_strategy)
+@settings(max_examples=50)
+def test_behavioral_elements_state_machines_state_instantiation(instance):
+    assert isinstance(instance, behavioral_elements_state_machines_State)
 
 @given(instance=CompositeState_strategy)
 @settings(max_examples=50)
 def test_compositestate_instantiation(instance):
     assert isinstance(instance, CompositeState)
 
-@given(instance=behavioral::elements::state::machines::SubmachineState_strategy)
+@given(instance=behavioral_elements_state_machines_SubmachineState_strategy)
 @settings(max_examples=50)
-def test_behavioral::elements::state::machines::submachinestate_instantiation(instance):
-    assert isinstance(instance, behavioral::elements::state::machines::SubmachineState)
+def test_behavioral_elements_state_machines_submachinestate_instantiation(instance):
+    assert isinstance(instance, behavioral_elements_state_machines_SubmachineState)
+
+@given(instance=behavioral_elements_state_machines_StateVertex_strategy)
+@settings(max_examples=50)
+def test_behavioral_elements_state_machines_statevertex_instantiation(instance):
+    assert isinstance(instance, behavioral_elements_state_machines_StateVertex)
 
 @given(instance=Parameter_strategy)
 @settings(max_examples=50)
 def test_parameter_instantiation(instance):
     assert isinstance(instance, Parameter)
 
+@given(instance=behavioral_elements_state_machines_Event_strategy)
+@settings(max_examples=50)
+def test_behavioral_elements_state_machines_event_instantiation(instance):
+    assert isinstance(instance, behavioral_elements_state_machines_Event)
+
 @given(instance=SubmachineState_strategy)
 @settings(max_examples=50)
 def test_submachinestate_instantiation(instance):
     assert isinstance(instance, SubmachineState)
 
-@given(instance=behavioral::elements::activity::graphs::SubactivityState_strategy)
+@given(instance=behavioral_elements_activity_graphs_SubactivityState_strategy)
 @settings(max_examples=50)
-def test_behavioral::elements::activity::graphs::subactivitystate_instantiation(instance):
-    assert isinstance(instance, behavioral::elements::activity::graphs::SubactivityState)
-
-@given(instance=behavioral::elements::activity::graphs::SubactivityState_strategy)
-def test_behavioral::elements::activity::graphs::subactivitystate_isDynamic_type(instance):
-    assert isinstance(instance.isDynamic, str)
+def test_behavioral_elements_activity_graphs_subactivitystate_instantiation(instance):
+    assert isinstance(instance, behavioral_elements_activity_graphs_SubactivityState)
 
 
-@given(instance=behavioral::elements::activity::graphs::SubactivityState_strategy)
-def test_behavioral::elements::activity::graphs::subactivitystate_isDynamic_setter(instance):
+
+@given(instance=behavioral_elements_activity_graphs_SubactivityState_strategy)
+def test_behavioral_elements_activity_graphs_subactivitystate_isDynamic_setter(instance):
     original = instance.isDynamic
     instance.isDynamic = original
     assert instance.isDynamic == original
@@ -2590,25 +2725,38 @@ def test_timeexpression_instantiation(instance):
 def test_event_instantiation(instance):
     assert isinstance(instance, Event)
 
-@given(instance=behavioral::elements::state::machines::SignalEvent_strategy)
+@given(instance=behavioral_elements_state_machines_SignalEvent_strategy)
 @settings(max_examples=50)
-def test_behavioral::elements::state::machines::signalevent_instantiation(instance):
-    assert isinstance(instance, behavioral::elements::state::machines::SignalEvent)
+def test_behavioral_elements_state_machines_signalevent_instantiation(instance):
+    assert isinstance(instance, behavioral_elements_state_machines_SignalEvent)
 
-@given(instance=behavioral::elements::state::machines::CallEvent_strategy)
+@given(instance=behavioral_elements_state_machines_CallEvent_strategy)
 @settings(max_examples=50)
-def test_behavioral::elements::state::machines::callevent_instantiation(instance):
-    assert isinstance(instance, behavioral::elements::state::machines::CallEvent)
+def test_behavioral_elements_state_machines_callevent_instantiation(instance):
+    assert isinstance(instance, behavioral_elements_state_machines_CallEvent)
 
-@given(instance=behavioral::elements::state::machines::ChangeEvent_strategy)
+@given(instance=behavioral_elements_state_machines_TimeEvent_strategy)
 @settings(max_examples=50)
-def test_behavioral::elements::state::machines::changeevent_instantiation(instance):
-    assert isinstance(instance, behavioral::elements::state::machines::ChangeEvent)
+def test_behavioral_elements_state_machines_timeevent_instantiation(instance):
+    assert isinstance(instance, behavioral_elements_state_machines_TimeEvent)
 
-@given(instance=behavioral::elements::state::machines::TimeEvent_strategy)
+@given(instance=behavioral_elements_state_machines_ChangeEvent_strategy)
 @settings(max_examples=50)
-def test_behavioral::elements::state::machines::timeevent_instantiation(instance):
-    assert isinstance(instance, behavioral::elements::state::machines::TimeEvent)
+def test_behavioral_elements_state_machines_changeevent_instantiation(instance):
+    assert isinstance(instance, behavioral_elements_state_machines_ChangeEvent)
+
+@given(instance=behavioral_elements_use_cases_ExtensionPoint_strategy)
+@settings(max_examples=50)
+def test_behavioral_elements_use_cases_extensionpoint_instantiation(instance):
+    assert isinstance(instance, behavioral_elements_use_cases_ExtensionPoint)
+
+
+
+@given(instance=behavioral_elements_use_cases_ExtensionPoint_strategy)
+def test_behavioral_elements_use_cases_extensionpoint_location_setter(instance):
+    original = instance.location
+    instance.location = original
+    assert instance.location == original
 
 @given(instance=UseCase_strategy)
 @settings(max_examples=50)
@@ -2625,15 +2773,25 @@ def test_booleanexpression_instantiation(instance):
 def test_relationship_instantiation(instance):
     assert isinstance(instance, Relationship)
 
-@given(instance=behavioral::elements::use::cases::Include_strategy)
+@given(instance=behavioral_elements_use_cases_Include_strategy)
 @settings(max_examples=50)
-def test_behavioral::elements::use::cases::include_instantiation(instance):
-    assert isinstance(instance, behavioral::elements::use::cases::Include)
+def test_behavioral_elements_use_cases_include_instantiation(instance):
+    assert isinstance(instance, behavioral_elements_use_cases_Include)
 
-@given(instance=behavioral::elements::use::cases::Extend_strategy)
+@given(instance=behavioral_elements_use_cases_Extend_strategy)
 @settings(max_examples=50)
-def test_behavioral::elements::use::cases::extend_instantiation(instance):
-    assert isinstance(instance, behavioral::elements::use::cases::Extend)
+def test_behavioral_elements_use_cases_extend_instantiation(instance):
+    assert isinstance(instance, behavioral_elements_use_cases_Extend)
+
+@given(instance=behavioral_elements_use_cases_UseCaseInstance_strategy)
+@settings(max_examples=50)
+def test_behavioral_elements_use_cases_usecaseinstance_instantiation(instance):
+    assert isinstance(instance, behavioral_elements_use_cases_UseCaseInstance)
+
+@given(instance=behavioral_elements_use_cases_Actor_strategy)
+@settings(max_examples=50)
+def test_behavioral_elements_use_cases_actor_instantiation(instance):
+    assert isinstance(instance, behavioral_elements_use_cases_Actor)
 
 @given(instance=ExtensionPoint_strategy)
 @settings(max_examples=50)
@@ -2645,36 +2803,48 @@ def test_extensionpoint_instantiation(instance):
 def test_state_instantiation(instance):
     assert isinstance(instance, State)
 
-@given(instance=behavioral::elements::state::machines::FinalState_strategy)
+@given(instance=behavioral_elements_state_machines_CompositeState_strategy)
 @settings(max_examples=50)
-def test_behavioral::elements::state::machines::finalstate_instantiation(instance):
-    assert isinstance(instance, behavioral::elements::state::machines::FinalState)
-
-@given(instance=behavioral::elements::state::machines::CompositeState_strategy)
-@settings(max_examples=50)
-def test_behavioral::elements::state::machines::compositestate_instantiation(instance):
-    assert isinstance(instance, behavioral::elements::state::machines::CompositeState)
-
-@given(instance=behavioral::elements::state::machines::CompositeState_strategy)
-def test_behavioral::elements::state::machines::compositestate_isConcurrent_type(instance):
-    assert isinstance(instance.isConcurrent, str)
+def test_behavioral_elements_state_machines_compositestate_instantiation(instance):
+    assert isinstance(instance, behavioral_elements_state_machines_CompositeState)
 
 
-@given(instance=behavioral::elements::state::machines::CompositeState_strategy)
-def test_behavioral::elements::state::machines::compositestate_isConcurrent_setter(instance):
+
+@given(instance=behavioral_elements_state_machines_CompositeState_strategy)
+def test_behavioral_elements_state_machines_compositestate_isConcurrent_setter(instance):
     original = instance.isConcurrent
     instance.isConcurrent = original
     assert instance.isConcurrent == original
 
-@given(instance=behavioral::elements::state::machines::SimpleState_strategy)
+@given(instance=behavioral_elements_state_machines_FinalState_strategy)
 @settings(max_examples=50)
-def test_behavioral::elements::state::machines::simplestate_instantiation(instance):
-    assert isinstance(instance, behavioral::elements::state::machines::SimpleState)
+def test_behavioral_elements_state_machines_finalstate_instantiation(instance):
+    assert isinstance(instance, behavioral_elements_state_machines_FinalState)
+
+@given(instance=behavioral_elements_state_machines_SimpleState_strategy)
+@settings(max_examples=50)
+def test_behavioral_elements_state_machines_simplestate_instantiation(instance):
+    assert isinstance(instance, behavioral_elements_state_machines_SimpleState)
+
+@given(instance=behavioral_elements_state_machines_StateMachine_strategy)
+@settings(max_examples=50)
+def test_behavioral_elements_state_machines_statemachine_instantiation(instance):
+    assert isinstance(instance, behavioral_elements_state_machines_StateMachine)
+
+@given(instance=behavioral_elements_common_behavior_NodeInstance_strategy)
+@settings(max_examples=50)
+def test_behavioral_elements_common_behavior_nodeinstance_instantiation(instance):
+    assert isinstance(instance, behavioral_elements_common_behavior_NodeInstance)
 
 @given(instance=NodeInstance_strategy)
 @settings(max_examples=50)
 def test_nodeinstance_instantiation(instance):
     assert isinstance(instance, NodeInstance)
+
+@given(instance=behavioral_elements_common_behavior_ComponentInstance_strategy)
+@settings(max_examples=50)
+def test_behavioral_elements_common_behavior_componentinstance_instantiation(instance):
+    assert isinstance(instance, behavioral_elements_common_behavior_ComponentInstance)
 
 @given(instance=InteractionInstanceSet_strategy)
 @settings(max_examples=50)
@@ -2696,100 +2866,172 @@ def test_include_instantiation(instance):
 def test_extend_instantiation(instance):
     assert isinstance(instance, Extend)
 
+@given(instance=behavioral_elements_use_cases_UseCase_strategy)
+@settings(max_examples=50)
+def test_behavioral_elements_use_cases_usecase_instantiation(instance):
+    assert isinstance(instance, behavioral_elements_use_cases_UseCase)
+
+@given(instance=behavioral_elements_common_behavior_SubsystemInstance_strategy)
+@settings(max_examples=50)
+def test_behavioral_elements_common_behavior_subsysteminstance_instantiation(instance):
+    assert isinstance(instance, behavioral_elements_common_behavior_SubsystemInstance)
+
 @given(instance=AssociationEnd_strategy)
 @settings(max_examples=50)
 def test_associationend_instantiation(instance):
     assert isinstance(instance, AssociationEnd)
 
-@given(instance=behavioral::elements::collaborations::AssociationEndRole_strategy)
+@given(instance=behavioral_elements_collaborations_AssociationEndRole_strategy)
 @settings(max_examples=50)
-def test_behavioral::elements::collaborations::associationendrole_instantiation(instance):
-    assert isinstance(instance, behavioral::elements::collaborations::AssociationEndRole)
+def test_behavioral_elements_collaborations_associationendrole_instantiation(instance):
+    assert isinstance(instance, behavioral_elements_collaborations_AssociationEndRole)
+
+@given(instance=behavioral_elements_common_behavior_LinkEnd_strategy)
+@settings(max_examples=50)
+def test_behavioral_elements_common_behavior_linkend_instantiation(instance):
+    assert isinstance(instance, behavioral_elements_common_behavior_LinkEnd)
+
+@given(instance=behavioral_elements_common_behavior_Reception_strategy)
+@settings(max_examples=50)
+def test_behavioral_elements_common_behavior_reception_instantiation(instance):
+    assert isinstance(instance, behavioral_elements_common_behavior_Reception)
+
+
+
+@given(instance=behavioral_elements_common_behavior_Reception_strategy)
+def test_behavioral_elements_common_behavior_reception_specification_setter(instance):
+    original = instance.specification
+    instance.specification = original
+    assert instance.specification == original
+
+
+
+@given(instance=behavioral_elements_common_behavior_Reception_strategy)
+def test_behavioral_elements_common_behavior_reception_isRoot_setter(instance):
+    original = instance.isRoot
+    instance.isRoot = original
+    assert instance.isRoot == original
+
+
+
+@given(instance=behavioral_elements_common_behavior_Reception_strategy)
+def test_behavioral_elements_common_behavior_reception_isAbstract_setter(instance):
+    original = instance.isAbstract
+    instance.isAbstract = original
+    assert instance.isAbstract == original
+
+
+
+@given(instance=behavioral_elements_common_behavior_Reception_strategy)
+def test_behavioral_elements_common_behavior_reception_isLeaf_setter(instance):
+    original = instance.isLeaf
+    instance.isLeaf = original
+    assert instance.isLeaf == original
 
 @given(instance=Expression_strategy)
 @settings(max_examples=50)
 def test_expression_instantiation(instance):
     assert isinstance(instance, Expression)
 
+@given(instance=behavioral_elements_common_behavior_Argument_strategy)
+@settings(max_examples=50)
+def test_behavioral_elements_common_behavior_argument_instantiation(instance):
+    assert isinstance(instance, behavioral_elements_common_behavior_Argument)
+
+@given(instance=behavioral_elements_common_behavior_Stimulus_strategy)
+@settings(max_examples=50)
+def test_behavioral_elements_common_behavior_stimulus_instantiation(instance):
+    assert isinstance(instance, behavioral_elements_common_behavior_Stimulus)
+
 @given(instance=Operation_strategy)
 @settings(max_examples=50)
 def test_operation_instantiation(instance):
     assert isinstance(instance, Operation)
 
-@given(instance=common::behavior::Link_strategy)
+@given(instance=behavioral_elements_common_behavior_DataValue_strategy)
 @settings(max_examples=50)
-def test_common::behavior::link_instantiation(instance):
-    assert isinstance(instance, common::behavior::Link)
+def test_behavioral_elements_common_behavior_datavalue_instantiation(instance):
+    assert isinstance(instance, behavioral_elements_common_behavior_DataValue)
 
-@given(instance=common::behavior::Object_strategy)
+@given(instance=common_behavior_Link_strategy)
 @settings(max_examples=50)
-def test_common::behavior::object_instantiation(instance):
-    assert isinstance(instance, common::behavior::Object)
+def test_common_behavior_link_instantiation(instance):
+    assert isinstance(instance, common_behavior_Link)
 
-@given(instance=behavioral::elements::common::behavior::LinkObject_strategy)
+@given(instance=common_behavior_Object_strategy)
 @settings(max_examples=50)
-def test_behavioral::elements::common::behavior::linkobject_instantiation(instance):
-    assert isinstance(instance, behavioral::elements::common::behavior::LinkObject)
+def test_common_behavior_object_instantiation(instance):
+    assert isinstance(instance, common_behavior_Object)
+
+@given(instance=behavioral_elements_common_behavior_LinkObject_strategy)
+@settings(max_examples=50)
+def test_behavioral_elements_common_behavior_linkobject_instantiation(instance):
+    assert isinstance(instance, behavioral_elements_common_behavior_LinkObject)
 
 @given(instance=Signal_strategy)
 @settings(max_examples=50)
 def test_signal_instantiation(instance):
     assert isinstance(instance, Signal)
 
-@given(instance=behavioral::elements::common::behavior::Exception_strategy)
+@given(instance=behavioral_elements_common_behavior_Exception_strategy)
 @settings(max_examples=50)
-def test_behavioral::elements::common::behavior::exception_instantiation(instance):
-    assert isinstance(instance, behavioral::elements::common::behavior::Exception)
+def test_behavioral_elements_common_behavior_exception_instantiation(instance):
+    assert isinstance(instance, behavioral_elements_common_behavior_Exception)
 
 @given(instance=Attribute_strategy)
 @settings(max_examples=50)
 def test_attribute_instantiation(instance):
     assert isinstance(instance, Attribute)
 
+@given(instance=behavioral_elements_common_behavior_AttributeLink_strategy)
+@settings(max_examples=50)
+def test_behavioral_elements_common_behavior_attributelink_instantiation(instance):
+    assert isinstance(instance, behavioral_elements_common_behavior_AttributeLink)
+
 @given(instance=Action_strategy)
 @settings(max_examples=50)
 def test_action_instantiation(instance):
     assert isinstance(instance, Action)
 
-@given(instance=behavioral::elements::common::behavior::DestroyAction_strategy)
+@given(instance=behavioral_elements_common_behavior_SendAction_strategy)
 @settings(max_examples=50)
-def test_behavioral::elements::common::behavior::destroyaction_instantiation(instance):
-    assert isinstance(instance, behavioral::elements::common::behavior::DestroyAction)
+def test_behavioral_elements_common_behavior_sendaction_instantiation(instance):
+    assert isinstance(instance, behavioral_elements_common_behavior_SendAction)
 
-@given(instance=behavioral::elements::common::behavior::SendAction_strategy)
+@given(instance=behavioral_elements_common_behavior_UninterpretedAction_strategy)
 @settings(max_examples=50)
-def test_behavioral::elements::common::behavior::sendaction_instantiation(instance):
-    assert isinstance(instance, behavioral::elements::common::behavior::SendAction)
+def test_behavioral_elements_common_behavior_uninterpretedaction_instantiation(instance):
+    assert isinstance(instance, behavioral_elements_common_behavior_UninterpretedAction)
 
-@given(instance=behavioral::elements::common::behavior::TerminateAction_strategy)
+@given(instance=behavioral_elements_common_behavior_ReturnAction_strategy)
 @settings(max_examples=50)
-def test_behavioral::elements::common::behavior::terminateaction_instantiation(instance):
-    assert isinstance(instance, behavioral::elements::common::behavior::TerminateAction)
+def test_behavioral_elements_common_behavior_returnaction_instantiation(instance):
+    assert isinstance(instance, behavioral_elements_common_behavior_ReturnAction)
 
-@given(instance=behavioral::elements::common::behavior::ReturnAction_strategy)
+@given(instance=behavioral_elements_common_behavior_ActionSequence_strategy)
 @settings(max_examples=50)
-def test_behavioral::elements::common::behavior::returnaction_instantiation(instance):
-    assert isinstance(instance, behavioral::elements::common::behavior::ReturnAction)
+def test_behavioral_elements_common_behavior_actionsequence_instantiation(instance):
+    assert isinstance(instance, behavioral_elements_common_behavior_ActionSequence)
 
-@given(instance=behavioral::elements::common::behavior::UninterpretedAction_strategy)
+@given(instance=behavioral_elements_common_behavior_DestroyAction_strategy)
 @settings(max_examples=50)
-def test_behavioral::elements::common::behavior::uninterpretedaction_instantiation(instance):
-    assert isinstance(instance, behavioral::elements::common::behavior::UninterpretedAction)
+def test_behavioral_elements_common_behavior_destroyaction_instantiation(instance):
+    assert isinstance(instance, behavioral_elements_common_behavior_DestroyAction)
 
-@given(instance=behavioral::elements::common::behavior::ActionSequence_strategy)
+@given(instance=behavioral_elements_common_behavior_CallAction_strategy)
 @settings(max_examples=50)
-def test_behavioral::elements::common::behavior::actionsequence_instantiation(instance):
-    assert isinstance(instance, behavioral::elements::common::behavior::ActionSequence)
+def test_behavioral_elements_common_behavior_callaction_instantiation(instance):
+    assert isinstance(instance, behavioral_elements_common_behavior_CallAction)
 
-@given(instance=behavioral::elements::common::behavior::CallAction_strategy)
+@given(instance=behavioral_elements_common_behavior_TerminateAction_strategy)
 @settings(max_examples=50)
-def test_behavioral::elements::common::behavior::callaction_instantiation(instance):
-    assert isinstance(instance, behavioral::elements::common::behavior::CallAction)
+def test_behavioral_elements_common_behavior_terminateaction_instantiation(instance):
+    assert isinstance(instance, behavioral_elements_common_behavior_TerminateAction)
 
-@given(instance=behavioral::elements::common::behavior::CreateAction_strategy)
+@given(instance=behavioral_elements_common_behavior_CreateAction_strategy)
 @settings(max_examples=50)
-def test_behavioral::elements::common::behavior::createaction_instantiation(instance):
-    assert isinstance(instance, behavioral::elements::common::behavior::CreateAction)
+def test_behavioral_elements_common_behavior_createaction_instantiation(instance):
+    assert isinstance(instance, behavioral_elements_common_behavior_CreateAction)
 
 @given(instance=Transition_strategy)
 @settings(max_examples=50)
@@ -2821,288 +3063,7 @@ def test_actionexpression_instantiation(instance):
 def test_association_instantiation(instance):
     assert isinstance(instance, Association)
 
-@given(instance=behavioral::elements::collaborations::AssociationRole_strategy)
+@given(instance=behavioral_elements_collaborations_AssociationRole_strategy)
 @settings(max_examples=50)
-def test_behavioral::elements::collaborations::associationrole_instantiation(instance):
-    assert isinstance(instance, behavioral::elements::collaborations::AssociationRole)
-
-@given(instance=BehavioralFeature_strategy)
-@settings(max_examples=50)
-def test_behavioralfeature_instantiation(instance):
-    assert isinstance(instance, BehavioralFeature)
-
-@given(instance=behavioral::elements::common::behavior::Reception_strategy)
-@settings(max_examples=50)
-def test_behavioral::elements::common::behavior::reception_instantiation(instance):
-    assert isinstance(instance, behavioral::elements::common::behavior::Reception)
-
-@given(instance=behavioral::elements::common::behavior::Reception_strategy)
-def test_behavioral::elements::common::behavior::reception_isAbstract_type(instance):
-    assert isinstance(instance.isAbstract, str)
-
-
-@given(instance=behavioral::elements::common::behavior::Reception_strategy)
-def test_behavioral::elements::common::behavior::reception_isAbstract_setter(instance):
-    original = instance.isAbstract
-    instance.isAbstract = original
-    assert instance.isAbstract == original
-
-@given(instance=behavioral::elements::common::behavior::Reception_strategy)
-def test_behavioral::elements::common::behavior::reception_isLeaf_type(instance):
-    assert isinstance(instance.isLeaf, str)
-
-
-@given(instance=behavioral::elements::common::behavior::Reception_strategy)
-def test_behavioral::elements::common::behavior::reception_isLeaf_setter(instance):
-    original = instance.isLeaf
-    instance.isLeaf = original
-    assert instance.isLeaf == original
-
-@given(instance=behavioral::elements::common::behavior::Reception_strategy)
-def test_behavioral::elements::common::behavior::reception_isRoot_type(instance):
-    assert isinstance(instance.isRoot, str)
-
-
-@given(instance=behavioral::elements::common::behavior::Reception_strategy)
-def test_behavioral::elements::common::behavior::reception_isRoot_setter(instance):
-    original = instance.isRoot
-    instance.isRoot = original
-    assert instance.isRoot == original
-
-@given(instance=behavioral::elements::common::behavior::Reception_strategy)
-def test_behavioral::elements::common::behavior::reception_specification_type(instance):
-    assert isinstance(instance.specification, str)
-
-
-@given(instance=behavioral::elements::common::behavior::Reception_strategy)
-def test_behavioral::elements::common::behavior::reception_specification_setter(instance):
-    original = instance.specification
-    instance.specification = original
-    assert instance.specification == original
-
-@given(instance=Reception_strategy)
-@settings(max_examples=50)
-def test_reception_instantiation(instance):
-    assert isinstance(instance, Reception)
-
-@given(instance=Link_strategy)
-@settings(max_examples=50)
-def test_link_instantiation(instance):
-    assert isinstance(instance, Link)
-
-@given(instance=Instance_strategy)
-@settings(max_examples=50)
-def test_instance_instantiation(instance):
-    assert isinstance(instance, Instance)
-
-@given(instance=behavioral::elements::common::behavior::SubsystemInstance_strategy)
-@settings(max_examples=50)
-def test_behavioral::elements::common::behavior::subsysteminstance_instantiation(instance):
-    assert isinstance(instance, behavioral::elements::common::behavior::SubsystemInstance)
-
-@given(instance=behavioral::elements::common::behavior::DataValue_strategy)
-@settings(max_examples=50)
-def test_behavioral::elements::common::behavior::datavalue_instantiation(instance):
-    assert isinstance(instance, behavioral::elements::common::behavior::DataValue)
-
-@given(instance=behavioral::elements::common::behavior::NodeInstance_strategy)
-@settings(max_examples=50)
-def test_behavioral::elements::common::behavior::nodeinstance_instantiation(instance):
-    assert isinstance(instance, behavioral::elements::common::behavior::NodeInstance)
-
-@given(instance=behavioral::elements::use::cases::UseCaseInstance_strategy)
-@settings(max_examples=50)
-def test_behavioral::elements::use::cases::usecaseinstance_instantiation(instance):
-    assert isinstance(instance, behavioral::elements::use::cases::UseCaseInstance)
-
-@given(instance=behavioral::elements::common::behavior::ComponentInstance_strategy)
-@settings(max_examples=50)
-def test_behavioral::elements::common::behavior::componentinstance_instantiation(instance):
-    assert isinstance(instance, behavioral::elements::common::behavior::ComponentInstance)
-
-@given(instance=behavioral::elements::common::behavior::Object_strategy)
-@settings(max_examples=50)
-def test_behavioral::elements::common::behavior::object_instantiation(instance):
-    assert isinstance(instance, behavioral::elements::common::behavior::Object)
-
-@given(instance=ComponentInstance_strategy)
-@settings(max_examples=50)
-def test_componentinstance_instantiation(instance):
-    assert isinstance(instance, ComponentInstance)
-
-@given(instance=LinkEnd_strategy)
-@settings(max_examples=50)
-def test_linkend_instantiation(instance):
-    assert isinstance(instance, LinkEnd)
-
-@given(instance=AttributeLink_strategy)
-@settings(max_examples=50)
-def test_attributelink_instantiation(instance):
-    assert isinstance(instance, AttributeLink)
-
-@given(instance=Classifier_strategy)
-@settings(max_examples=50)
-def test_classifier_instantiation(instance):
-    assert isinstance(instance, Classifier)
-
-@given(instance=behavioral::elements::common::behavior::Signal_strategy)
-@settings(max_examples=50)
-def test_behavioral::elements::common::behavior::signal_instantiation(instance):
-    assert isinstance(instance, behavioral::elements::common::behavior::Signal)
-
-@given(instance=behavioral::elements::collaborations::ClassifierRole_strategy)
-@settings(max_examples=50)
-def test_behavioral::elements::collaborations::classifierrole_instantiation(instance):
-    assert isinstance(instance, behavioral::elements::collaborations::ClassifierRole)
-
-@given(instance=behavioral::elements::use::cases::Actor_strategy)
-@settings(max_examples=50)
-def test_behavioral::elements::use::cases::actor_instantiation(instance):
-    assert isinstance(instance, behavioral::elements::use::cases::Actor)
-
-@given(instance=behavioral::elements::activity::graphs::ClassifierInState_strategy)
-@settings(max_examples=50)
-def test_behavioral::elements::activity::graphs::classifierinstate_instantiation(instance):
-    assert isinstance(instance, behavioral::elements::activity::graphs::ClassifierInState)
-
-@given(instance=behavioral::elements::use::cases::UseCase_strategy)
-@settings(max_examples=50)
-def test_behavioral::elements::use::cases::usecase_instantiation(instance):
-    assert isinstance(instance, behavioral::elements::use::cases::UseCase)
-
-@given(instance=ObjectSetExpression_strategy)
-@settings(max_examples=50)
-def test_objectsetexpression_instantiation(instance):
-    assert isinstance(instance, ObjectSetExpression)
-
-@given(instance=IterationExpression_strategy)
-@settings(max_examples=50)
-def test_iterationexpression_instantiation(instance):
-    assert isinstance(instance, IterationExpression)
-
-@given(instance=SignalEvent_strategy)
-@settings(max_examples=50)
-def test_signalevent_instantiation(instance):
-    assert isinstance(instance, SignalEvent)
-
-@given(instance=SendAction_strategy)
-@settings(max_examples=50)
-def test_sendaction_instantiation(instance):
-    assert isinstance(instance, SendAction)
-
-@given(instance=ModelElement_strategy)
-@settings(max_examples=50)
-def test_modelelement_instantiation(instance):
-    assert isinstance(instance, ModelElement)
-
-@given(instance=behavioral::elements::state::machines::Event_strategy)
-@settings(max_examples=50)
-def test_behavioral::elements::state::machines::event_instantiation(instance):
-    assert isinstance(instance, behavioral::elements::state::machines::Event)
-
-@given(instance=behavioral::elements::common::behavior::Action_strategy)
-@settings(max_examples=50)
-def test_behavioral::elements::common::behavior::action_instantiation(instance):
-    assert isinstance(instance, behavioral::elements::common::behavior::Action)
-
-@given(instance=behavioral::elements::common::behavior::Action_strategy)
-def test_behavioral::elements::common::behavior::action_isAsynchronous_type(instance):
-    assert isinstance(instance.isAsynchronous, str)
-
-
-@given(instance=behavioral::elements::common::behavior::Action_strategy)
-def test_behavioral::elements::common::behavior::action_isAsynchronous_setter(instance):
-    original = instance.isAsynchronous
-    instance.isAsynchronous = original
-    assert instance.isAsynchronous == original
-
-@given(instance=behavioral::elements::common::behavior::AttributeLink_strategy)
-@settings(max_examples=50)
-def test_behavioral::elements::common::behavior::attributelink_instantiation(instance):
-    assert isinstance(instance, behavioral::elements::common::behavior::AttributeLink)
-
-@given(instance=behavioral::elements::use::cases::ExtensionPoint_strategy)
-@settings(max_examples=50)
-def test_behavioral::elements::use::cases::extensionpoint_instantiation(instance):
-    assert isinstance(instance, behavioral::elements::use::cases::ExtensionPoint)
-
-@given(instance=behavioral::elements::use::cases::ExtensionPoint_strategy)
-def test_behavioral::elements::use::cases::extensionpoint_location_type(instance):
-    assert isinstance(instance.location, str)
-
-
-@given(instance=behavioral::elements::use::cases::ExtensionPoint_strategy)
-def test_behavioral::elements::use::cases::extensionpoint_location_setter(instance):
-    original = instance.location
-    instance.location = original
-    assert instance.location == original
-
-@given(instance=behavioral::elements::collaborations::InteractionInstanceSet_strategy)
-@settings(max_examples=50)
-def test_behavioral::elements::collaborations::interactioninstanceset_instantiation(instance):
-    assert isinstance(instance, behavioral::elements::collaborations::InteractionInstanceSet)
-
-@given(instance=behavioral::elements::collaborations::Interaction_strategy)
-@settings(max_examples=50)
-def test_behavioral::elements::collaborations::interaction_instantiation(instance):
-    assert isinstance(instance, behavioral::elements::collaborations::Interaction)
-
-@given(instance=behavioral::elements::common::behavior::LinkEnd_strategy)
-@settings(max_examples=50)
-def test_behavioral::elements::common::behavior::linkend_instantiation(instance):
-    assert isinstance(instance, behavioral::elements::common::behavior::LinkEnd)
-
-@given(instance=behavioral::elements::collaborations::CollaborationInstanceSet_strategy)
-@settings(max_examples=50)
-def test_behavioral::elements::collaborations::collaborationinstanceset_instantiation(instance):
-    assert isinstance(instance, behavioral::elements::collaborations::CollaborationInstanceSet)
-
-@given(instance=behavioral::elements::common::behavior::Argument_strategy)
-@settings(max_examples=50)
-def test_behavioral::elements::common::behavior::argument_instantiation(instance):
-    assert isinstance(instance, behavioral::elements::common::behavior::Argument)
-
-@given(instance=behavioral::elements::collaborations::Message_strategy)
-@settings(max_examples=50)
-def test_behavioral::elements::collaborations::message_instantiation(instance):
-    assert isinstance(instance, behavioral::elements::collaborations::Message)
-
-@given(instance=behavioral::elements::common::behavior::Stimulus_strategy)
-@settings(max_examples=50)
-def test_behavioral::elements::common::behavior::stimulus_instantiation(instance):
-    assert isinstance(instance, behavioral::elements::common::behavior::Stimulus)
-
-@given(instance=behavioral::elements::state::machines::Transition_strategy)
-@settings(max_examples=50)
-def test_behavioral::elements::state::machines::transition_instantiation(instance):
-    assert isinstance(instance, behavioral::elements::state::machines::Transition)
-
-@given(instance=behavioral::elements::state::machines::Guard_strategy)
-@settings(max_examples=50)
-def test_behavioral::elements::state::machines::guard_instantiation(instance):
-    assert isinstance(instance, behavioral::elements::state::machines::Guard)
-
-@given(instance=behavioral::elements::common::behavior::Link_strategy)
-@settings(max_examples=50)
-def test_behavioral::elements::common::behavior::link_instantiation(instance):
-    assert isinstance(instance, behavioral::elements::common::behavior::Link)
-
-@given(instance=behavioral::elements::activity::graphs::Partition_strategy)
-@settings(max_examples=50)
-def test_behavioral::elements::activity::graphs::partition_instantiation(instance):
-    assert isinstance(instance, behavioral::elements::activity::graphs::Partition)
-
-@given(instance=behavioral::elements::state::machines::StateMachine_strategy)
-@settings(max_examples=50)
-def test_behavioral::elements::state::machines::statemachine_instantiation(instance):
-    assert isinstance(instance, behavioral::elements::state::machines::StateMachine)
-
-@given(instance=behavioral::elements::state::machines::StateVertex_strategy)
-@settings(max_examples=50)
-def test_behavioral::elements::state::machines::statevertex_instantiation(instance):
-    assert isinstance(instance, behavioral::elements::state::machines::StateVertex)
-
-@given(instance=behavioral::elements::common::behavior::Instance_strategy)
-@settings(max_examples=50)
-def test_behavioral::elements::common::behavior::instance_instantiation(instance):
-    assert isinstance(instance, behavioral::elements::common::behavior::Instance)
+def test_behavioral_elements_collaborations_associationrole_instantiation(instance):
+    assert isinstance(instance, behavioral_elements_collaborations_AssociationRole)

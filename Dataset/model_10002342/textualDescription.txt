@@ -1,0 +1,21 @@
+The model has 18 class(es).
+The class 'ClassQ' has no attributes.
+The class 'BankAccount' has the following attributes: 'ownerName' of type str; 'balance' of type float.
+The class 'ClassG' has no attributes.
+The class 'ClassT' has no attributes.
+The class 'Exception' has no attributes.
+The class 'ErrorCode' has the following attributes: 'domain' of type int; 'subdomain' of type int; 'reason' of type int; 'tier' of type int.
+The class 'ClassS' has no attributes.
+The class 'ClassP' has no attributes.
+The class 'ClassE' has no attributes.
+The class 'ClassN' has no attributes.
+The class 'ClassR' has no attributes.
+The class 'ClassU' has no attributes.
+The class 'ClassV' has no attributes.
+The class 'ClassF' has no attributes.
+The class 'ErrorCodeException' has the following attributes: 'throwable' of type str; 'errorCodeMessage' of type str; 'errorCode' of type ErrorCode.
+The class 'ClassM' has no attributes.
+The class 'InterfaceO_Interface' has no attributes.
+The class 'ClassD' has no attributes.
+'ClassG' (role 'classF3', cardinality 0..*) is associated with 'ClassF' (role 'classG2', cardinality 0..*).
+'ClassE' (role 'classD1', cardinality 0..*) is associated with 'ClassD' (role 'classE0', cardinality 0..*).

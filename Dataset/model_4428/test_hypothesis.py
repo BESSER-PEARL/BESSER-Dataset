@@ -3,32 +3,32 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     Condition,
-    farrusco::Distancia,
+    farrusco_Distancia,
     Action,
-    farrusco::Condition,
+    farrusco_Condition,
     Actuate,
-    farrusco::LED,
-    farrusco::Servo,
-    farrusco::Motor,
-    farrusco::Actuate,
-    farrusco::Espera,
-    farrusco::BumperEsquerdo,
-    farrusco::BumperDireito,
+    farrusco_Servo,
+    farrusco_LED,
+    farrusco_Motor,
+    farrusco_Actuate,
+    farrusco_Espera,
+    farrusco_BumperEsquerdo,
+    farrusco_BumperDireito,
     Behavior,
-    farrusco::Paralelo,
-    farrusco::Prioridade,
-    farrusco::AlterarEstado,
+    farrusco_Paralelo,
+    farrusco_Prioridade,
+    farrusco_AlterarEstado,
     Node,
-    farrusco::Behavior,
-    farrusco::Action,
-    farrusco::Robot,
-    farrusco::Irmao,
-    farrusco::Filho,
-    farrusco::Node,
+    farrusco_Behavior,
+    farrusco_Action,
+    farrusco_Robot,
+    farrusco_Irmao,
+    farrusco_Filho,
+    farrusco_Node,
 )
 
 # =============================================================================
@@ -51,33 +51,33 @@ def test_condition_constructor_args():
 
 
 
-def test_farrusco::distancia_is_not_abstract():
-    assert not inspect.isabstract(farrusco::Distancia)
+def test_farrusco_distancia_is_not_abstract():
+    assert not inspect.isabstract(farrusco_Distancia)
 
 
-def test_farrusco::distancia_constructor_exists():
-    assert callable(farrusco::Distancia.__init__)
+def test_farrusco_distancia_constructor_exists():
+    assert callable(farrusco_Distancia.__init__)
 
 
-def test_farrusco::distancia_constructor_args():
-    sig = inspect.signature(farrusco::Distancia.__init__)
+def test_farrusco_distancia_constructor_args():
+    sig = inspect.signature(farrusco_Distancia.__init__)
     params = list(sig.parameters.keys())
     assert "distancia" in params, "Missing parameter 'distancia'"
     assert "how_sucess" in params, "Missing parameter 'how_sucess'"
 
-def test_farrusco::distancia_has_distancia():
-    assert hasattr(farrusco::Distancia, "distancia")
+def test_farrusco_distancia_has_distancia():
+    assert hasattr(farrusco_Distancia, "distancia")
     descriptor = None
-    for klass in farrusco::Distancia.__mro__:
+    for klass in farrusco_Distancia.__mro__:
         if "distancia" in klass.__dict__:
             descriptor = klass.__dict__["distancia"]
             break
     assert isinstance(descriptor, property)
 
-def test_farrusco::distancia_has_how_sucess():
-    assert hasattr(farrusco::Distancia, "how_sucess")
+def test_farrusco_distancia_has_how_sucess():
+    assert hasattr(farrusco_Distancia, "how_sucess")
     descriptor = None
-    for klass in farrusco::Distancia.__mro__:
+    for klass in farrusco_Distancia.__mro__:
         if "how_sucess" in klass.__dict__:
             descriptor = klass.__dict__["how_sucess"]
             break
@@ -99,16 +99,16 @@ def test_action_constructor_args():
 
 
 
-def test_farrusco::condition_is_not_abstract():
-    assert not inspect.isabstract(farrusco::Condition)
+def test_farrusco_condition_is_not_abstract():
+    assert not inspect.isabstract(farrusco_Condition)
 
 
-def test_farrusco::condition_constructor_exists():
-    assert callable(farrusco::Condition.__init__)
+def test_farrusco_condition_constructor_exists():
+    assert callable(farrusco_Condition.__init__)
 
 
-def test_farrusco::condition_constructor_args():
-    sig = inspect.signature(farrusco::Condition.__init__)
+def test_farrusco_condition_constructor_args():
+    sig = inspect.signature(farrusco_Condition.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -127,23 +127,67 @@ def test_actuate_constructor_args():
 
 
 
-def test_farrusco::led_is_not_abstract():
-    assert not inspect.isabstract(farrusco::LED)
+def test_farrusco_servo_is_not_abstract():
+    assert not inspect.isabstract(farrusco_Servo)
 
 
-def test_farrusco::led_constructor_exists():
-    assert callable(farrusco::LED.__init__)
+def test_farrusco_servo_constructor_exists():
+    assert callable(farrusco_Servo.__init__)
 
 
-def test_farrusco::led_constructor_args():
-    sig = inspect.signature(farrusco::LED.__init__)
+def test_farrusco_servo_constructor_args():
+    sig = inspect.signature(farrusco_Servo.__init__)
+    params = list(sig.parameters.keys())
+    assert "min" in params, "Missing parameter 'min'"
+    assert "max" in params, "Missing parameter 'max'"
+    assert "inc" in params, "Missing parameter 'inc'"
+
+def test_farrusco_servo_has_min():
+    assert hasattr(farrusco_Servo, "min")
+    descriptor = None
+    for klass in farrusco_Servo.__mro__:
+        if "min" in klass.__dict__:
+            descriptor = klass.__dict__["min"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_farrusco_servo_has_max():
+    assert hasattr(farrusco_Servo, "max")
+    descriptor = None
+    for klass in farrusco_Servo.__mro__:
+        if "max" in klass.__dict__:
+            descriptor = klass.__dict__["max"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_farrusco_servo_has_inc():
+    assert hasattr(farrusco_Servo, "inc")
+    descriptor = None
+    for klass in farrusco_Servo.__mro__:
+        if "inc" in klass.__dict__:
+            descriptor = klass.__dict__["inc"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_farrusco_led_is_not_abstract():
+    assert not inspect.isabstract(farrusco_LED)
+
+
+def test_farrusco_led_constructor_exists():
+    assert callable(farrusco_LED.__init__)
+
+
+def test_farrusco_led_constructor_args():
+    sig = inspect.signature(farrusco_LED.__init__)
     params = list(sig.parameters.keys())
     assert "on_off" in params, "Missing parameter 'on_off'"
 
-def test_farrusco::led_has_on_off():
-    assert hasattr(farrusco::LED, "on_off")
+def test_farrusco_led_has_on_off():
+    assert hasattr(farrusco_LED, "on_off")
     descriptor = None
-    for klass in farrusco::LED.__mro__:
+    for klass in farrusco_LED.__mro__:
         if "on_off" in klass.__dict__:
             descriptor = klass.__dict__["on_off"]
             break
@@ -151,115 +195,71 @@ def test_farrusco::led_has_on_off():
 
 
 
-def test_farrusco::servo_is_not_abstract():
-    assert not inspect.isabstract(farrusco::Servo)
+def test_farrusco_motor_is_not_abstract():
+    assert not inspect.isabstract(farrusco_Motor)
 
 
-def test_farrusco::servo_constructor_exists():
-    assert callable(farrusco::Servo.__init__)
+def test_farrusco_motor_constructor_exists():
+    assert callable(farrusco_Motor.__init__)
 
 
-def test_farrusco::servo_constructor_args():
-    sig = inspect.signature(farrusco::Servo.__init__)
+def test_farrusco_motor_constructor_args():
+    sig = inspect.signature(farrusco_Motor.__init__)
     params = list(sig.parameters.keys())
-    assert "inc" in params, "Missing parameter 'inc'"
-    assert "max" in params, "Missing parameter 'max'"
-    assert "min" in params, "Missing parameter 'min'"
-
-def test_farrusco::servo_has_inc():
-    assert hasattr(farrusco::Servo, "inc")
-    descriptor = None
-    for klass in farrusco::Servo.__mro__:
-        if "inc" in klass.__dict__:
-            descriptor = klass.__dict__["inc"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_farrusco::servo_has_max():
-    assert hasattr(farrusco::Servo, "max")
-    descriptor = None
-    for klass in farrusco::Servo.__mro__:
-        if "max" in klass.__dict__:
-            descriptor = klass.__dict__["max"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_farrusco::servo_has_min():
-    assert hasattr(farrusco::Servo, "min")
-    descriptor = None
-    for klass in farrusco::Servo.__mro__:
-        if "min" in klass.__dict__:
-            descriptor = klass.__dict__["min"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_farrusco::motor_is_not_abstract():
-    assert not inspect.isabstract(farrusco::Motor)
-
-
-def test_farrusco::motor_constructor_exists():
-    assert callable(farrusco::Motor.__init__)
-
-
-def test_farrusco::motor_constructor_args():
-    sig = inspect.signature(farrusco::Motor.__init__)
-    params = list(sig.parameters.keys())
-    assert "MotorLeft" in params, "Missing parameter 'MotorLeft'"
     assert "MotorRight" in params, "Missing parameter 'MotorRight'"
+    assert "MotorLeft" in params, "Missing parameter 'MotorLeft'"
 
-def test_farrusco::motor_has_MotorLeft():
-    assert hasattr(farrusco::Motor, "MotorLeft")
+def test_farrusco_motor_has_MotorRight():
+    assert hasattr(farrusco_Motor, "MotorRight")
     descriptor = None
-    for klass in farrusco::Motor.__mro__:
-        if "MotorLeft" in klass.__dict__:
-            descriptor = klass.__dict__["MotorLeft"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_farrusco::motor_has_MotorRight():
-    assert hasattr(farrusco::Motor, "MotorRight")
-    descriptor = None
-    for klass in farrusco::Motor.__mro__:
+    for klass in farrusco_Motor.__mro__:
         if "MotorRight" in klass.__dict__:
             descriptor = klass.__dict__["MotorRight"]
             break
     assert isinstance(descriptor, property)
 
+def test_farrusco_motor_has_MotorLeft():
+    assert hasattr(farrusco_Motor, "MotorLeft")
+    descriptor = None
+    for klass in farrusco_Motor.__mro__:
+        if "MotorLeft" in klass.__dict__:
+            descriptor = klass.__dict__["MotorLeft"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_farrusco::actuate_is_not_abstract():
-    assert not inspect.isabstract(farrusco::Actuate)
+
+def test_farrusco_actuate_is_not_abstract():
+    assert not inspect.isabstract(farrusco_Actuate)
 
 
-def test_farrusco::actuate_constructor_exists():
-    assert callable(farrusco::Actuate.__init__)
+def test_farrusco_actuate_constructor_exists():
+    assert callable(farrusco_Actuate.__init__)
 
 
-def test_farrusco::actuate_constructor_args():
-    sig = inspect.signature(farrusco::Actuate.__init__)
+def test_farrusco_actuate_constructor_args():
+    sig = inspect.signature(farrusco_Actuate.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_farrusco::espera_is_not_abstract():
-    assert not inspect.isabstract(farrusco::Espera)
+def test_farrusco_espera_is_not_abstract():
+    assert not inspect.isabstract(farrusco_Espera)
 
 
-def test_farrusco::espera_constructor_exists():
-    assert callable(farrusco::Espera.__init__)
+def test_farrusco_espera_constructor_exists():
+    assert callable(farrusco_Espera.__init__)
 
 
-def test_farrusco::espera_constructor_args():
-    sig = inspect.signature(farrusco::Espera.__init__)
+def test_farrusco_espera_constructor_args():
+    sig = inspect.signature(farrusco_Espera.__init__)
     params = list(sig.parameters.keys())
     assert "time" in params, "Missing parameter 'time'"
 
-def test_farrusco::espera_has_time():
-    assert hasattr(farrusco::Espera, "time")
+def test_farrusco_espera_has_time():
+    assert hasattr(farrusco_Espera, "time")
     descriptor = None
-    for klass in farrusco::Espera.__mro__:
+    for klass in farrusco_Espera.__mro__:
         if "time" in klass.__dict__:
             descriptor = klass.__dict__["time"]
             break
@@ -267,30 +267,30 @@ def test_farrusco::espera_has_time():
 
 
 
-def test_farrusco::bumperesquerdo_is_not_abstract():
-    assert not inspect.isabstract(farrusco::BumperEsquerdo)
+def test_farrusco_bumperesquerdo_is_not_abstract():
+    assert not inspect.isabstract(farrusco_BumperEsquerdo)
 
 
-def test_farrusco::bumperesquerdo_constructor_exists():
-    assert callable(farrusco::BumperEsquerdo.__init__)
+def test_farrusco_bumperesquerdo_constructor_exists():
+    assert callable(farrusco_BumperEsquerdo.__init__)
 
 
-def test_farrusco::bumperesquerdo_constructor_args():
-    sig = inspect.signature(farrusco::BumperEsquerdo.__init__)
+def test_farrusco_bumperesquerdo_constructor_args():
+    sig = inspect.signature(farrusco_BumperEsquerdo.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_farrusco::bumperdireito_is_not_abstract():
-    assert not inspect.isabstract(farrusco::BumperDireito)
+def test_farrusco_bumperdireito_is_not_abstract():
+    assert not inspect.isabstract(farrusco_BumperDireito)
 
 
-def test_farrusco::bumperdireito_constructor_exists():
-    assert callable(farrusco::BumperDireito.__init__)
+def test_farrusco_bumperdireito_constructor_exists():
+    assert callable(farrusco_BumperDireito.__init__)
 
 
-def test_farrusco::bumperdireito_constructor_args():
-    sig = inspect.signature(farrusco::BumperDireito.__init__)
+def test_farrusco_bumperdireito_constructor_args():
+    sig = inspect.signature(farrusco_BumperDireito.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -309,71 +309,71 @@ def test_behavior_constructor_args():
 
 
 
-def test_farrusco::paralelo_is_not_abstract():
-    assert not inspect.isabstract(farrusco::Paralelo)
+def test_farrusco_paralelo_is_not_abstract():
+    assert not inspect.isabstract(farrusco_Paralelo)
 
 
-def test_farrusco::paralelo_constructor_exists():
-    assert callable(farrusco::Paralelo.__init__)
+def test_farrusco_paralelo_constructor_exists():
+    assert callable(farrusco_Paralelo.__init__)
 
 
-def test_farrusco::paralelo_constructor_args():
-    sig = inspect.signature(farrusco::Paralelo.__init__)
+def test_farrusco_paralelo_constructor_args():
+    sig = inspect.signature(farrusco_Paralelo.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_farrusco::prioridade_is_not_abstract():
-    assert not inspect.isabstract(farrusco::Prioridade)
+def test_farrusco_prioridade_is_not_abstract():
+    assert not inspect.isabstract(farrusco_Prioridade)
 
 
-def test_farrusco::prioridade_constructor_exists():
-    assert callable(farrusco::Prioridade.__init__)
+def test_farrusco_prioridade_constructor_exists():
+    assert callable(farrusco_Prioridade.__init__)
 
 
-def test_farrusco::prioridade_constructor_args():
-    sig = inspect.signature(farrusco::Prioridade.__init__)
+def test_farrusco_prioridade_constructor_args():
+    sig = inspect.signature(farrusco_Prioridade.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_farrusco::alterarestado_is_not_abstract():
-    assert not inspect.isabstract(farrusco::AlterarEstado)
+def test_farrusco_alterarestado_is_not_abstract():
+    assert not inspect.isabstract(farrusco_AlterarEstado)
 
 
-def test_farrusco::alterarestado_constructor_exists():
-    assert callable(farrusco::AlterarEstado.__init__)
+def test_farrusco_alterarestado_constructor_exists():
+    assert callable(farrusco_AlterarEstado.__init__)
 
 
-def test_farrusco::alterarestado_constructor_args():
-    sig = inspect.signature(farrusco::AlterarEstado.__init__)
+def test_farrusco_alterarestado_constructor_args():
+    sig = inspect.signature(farrusco_AlterarEstado.__init__)
     params = list(sig.parameters.keys())
-    assert "fail_policy" in params, "Missing parameter 'fail_policy'"
     assert "runn_policy" in params, "Missing parameter 'runn_policy'"
+    assert "fail_policy" in params, "Missing parameter 'fail_policy'"
     assert "succ_policy" in params, "Missing parameter 'succ_policy'"
 
-def test_farrusco::alterarestado_has_fail_policy():
-    assert hasattr(farrusco::AlterarEstado, "fail_policy")
+def test_farrusco_alterarestado_has_runn_policy():
+    assert hasattr(farrusco_AlterarEstado, "runn_policy")
     descriptor = None
-    for klass in farrusco::AlterarEstado.__mro__:
-        if "fail_policy" in klass.__dict__:
-            descriptor = klass.__dict__["fail_policy"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_farrusco::alterarestado_has_runn_policy():
-    assert hasattr(farrusco::AlterarEstado, "runn_policy")
-    descriptor = None
-    for klass in farrusco::AlterarEstado.__mro__:
+    for klass in farrusco_AlterarEstado.__mro__:
         if "runn_policy" in klass.__dict__:
             descriptor = klass.__dict__["runn_policy"]
             break
     assert isinstance(descriptor, property)
 
-def test_farrusco::alterarestado_has_succ_policy():
-    assert hasattr(farrusco::AlterarEstado, "succ_policy")
+def test_farrusco_alterarestado_has_fail_policy():
+    assert hasattr(farrusco_AlterarEstado, "fail_policy")
     descriptor = None
-    for klass in farrusco::AlterarEstado.__mro__:
+    for klass in farrusco_AlterarEstado.__mro__:
+        if "fail_policy" in klass.__dict__:
+            descriptor = klass.__dict__["fail_policy"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_farrusco_alterarestado_has_succ_policy():
+    assert hasattr(farrusco_AlterarEstado, "succ_policy")
+    descriptor = None
+    for klass in farrusco_AlterarEstado.__mro__:
         if "succ_policy" in klass.__dict__:
             descriptor = klass.__dict__["succ_policy"]
             break
@@ -395,23 +395,23 @@ def test_node_constructor_args():
 
 
 
-def test_farrusco::behavior_is_not_abstract():
-    assert not inspect.isabstract(farrusco::Behavior)
+def test_farrusco_behavior_is_not_abstract():
+    assert not inspect.isabstract(farrusco_Behavior)
 
 
-def test_farrusco::behavior_constructor_exists():
-    assert callable(farrusco::Behavior.__init__)
+def test_farrusco_behavior_constructor_exists():
+    assert callable(farrusco_Behavior.__init__)
 
 
-def test_farrusco::behavior_constructor_args():
-    sig = inspect.signature(farrusco::Behavior.__init__)
+def test_farrusco_behavior_constructor_args():
+    sig = inspect.signature(farrusco_Behavior.__init__)
     params = list(sig.parameters.keys())
     assert "Name" in params, "Missing parameter 'Name'"
 
-def test_farrusco::behavior_has_Name():
-    assert hasattr(farrusco::Behavior, "Name")
+def test_farrusco_behavior_has_Name():
+    assert hasattr(farrusco_Behavior, "Name")
     descriptor = None
-    for klass in farrusco::Behavior.__mro__:
+    for klass in farrusco_Behavior.__mro__:
         if "Name" in klass.__dict__:
             descriptor = klass.__dict__["Name"]
             break
@@ -419,23 +419,23 @@ def test_farrusco::behavior_has_Name():
 
 
 
-def test_farrusco::action_is_not_abstract():
-    assert not inspect.isabstract(farrusco::Action)
+def test_farrusco_action_is_not_abstract():
+    assert not inspect.isabstract(farrusco_Action)
 
 
-def test_farrusco::action_constructor_exists():
-    assert callable(farrusco::Action.__init__)
+def test_farrusco_action_constructor_exists():
+    assert callable(farrusco_Action.__init__)
 
 
-def test_farrusco::action_constructor_args():
-    sig = inspect.signature(farrusco::Action.__init__)
+def test_farrusco_action_constructor_args():
+    sig = inspect.signature(farrusco_Action.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_farrusco::action_has_name():
-    assert hasattr(farrusco::Action, "name")
+def test_farrusco_action_has_name():
+    assert hasattr(farrusco_Action, "name")
     descriptor = None
-    for klass in farrusco::Action.__mro__:
+    for klass in farrusco_Action.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -443,23 +443,23 @@ def test_farrusco::action_has_name():
 
 
 
-def test_farrusco::robot_is_not_abstract():
-    assert not inspect.isabstract(farrusco::Robot)
+def test_farrusco_robot_is_not_abstract():
+    assert not inspect.isabstract(farrusco_Robot)
 
 
-def test_farrusco::robot_constructor_exists():
-    assert callable(farrusco::Robot.__init__)
+def test_farrusco_robot_constructor_exists():
+    assert callable(farrusco_Robot.__init__)
 
 
-def test_farrusco::robot_constructor_args():
-    sig = inspect.signature(farrusco::Robot.__init__)
+def test_farrusco_robot_constructor_args():
+    sig = inspect.signature(farrusco_Robot.__init__)
     params = list(sig.parameters.keys())
     assert "Name" in params, "Missing parameter 'Name'"
 
-def test_farrusco::robot_has_Name():
-    assert hasattr(farrusco::Robot, "Name")
+def test_farrusco_robot_has_Name():
+    assert hasattr(farrusco_Robot, "Name")
     descriptor = None
-    for klass in farrusco::Robot.__mro__:
+    for klass in farrusco_Robot.__mro__:
         if "Name" in klass.__dict__:
             descriptor = klass.__dict__["Name"]
             break
@@ -467,44 +467,44 @@ def test_farrusco::robot_has_Name():
 
 
 
-def test_farrusco::irmao_is_not_abstract():
-    assert not inspect.isabstract(farrusco::Irmao)
+def test_farrusco_irmao_is_not_abstract():
+    assert not inspect.isabstract(farrusco_Irmao)
 
 
-def test_farrusco::irmao_constructor_exists():
-    assert callable(farrusco::Irmao.__init__)
+def test_farrusco_irmao_constructor_exists():
+    assert callable(farrusco_Irmao.__init__)
 
 
-def test_farrusco::irmao_constructor_args():
-    sig = inspect.signature(farrusco::Irmao.__init__)
+def test_farrusco_irmao_constructor_args():
+    sig = inspect.signature(farrusco_Irmao.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_farrusco::filho_is_not_abstract():
-    assert not inspect.isabstract(farrusco::Filho)
+def test_farrusco_filho_is_not_abstract():
+    assert not inspect.isabstract(farrusco_Filho)
 
 
-def test_farrusco::filho_constructor_exists():
-    assert callable(farrusco::Filho.__init__)
+def test_farrusco_filho_constructor_exists():
+    assert callable(farrusco_Filho.__init__)
 
 
-def test_farrusco::filho_constructor_args():
-    sig = inspect.signature(farrusco::Filho.__init__)
+def test_farrusco_filho_constructor_args():
+    sig = inspect.signature(farrusco_Filho.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_farrusco::node_is_not_abstract():
-    assert not inspect.isabstract(farrusco::Node)
+def test_farrusco_node_is_not_abstract():
+    assert not inspect.isabstract(farrusco_Node)
 
 
-def test_farrusco::node_constructor_exists():
-    assert callable(farrusco::Node.__init__)
+def test_farrusco_node_constructor_exists():
+    assert callable(farrusco_Node.__init__)
 
 
-def test_farrusco::node_constructor_args():
-    sig = inspect.signature(farrusco::Node.__init__)
+def test_farrusco_node_constructor_args():
+    sig = inspect.signature(farrusco_Node.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -522,8 +522,8 @@ safe_text = st.text(
 Condition_strategy = st.builds(
     Condition,
 )
-farrusco::Distancia_strategy = st.builds(
-    farrusco::Distancia,
+farrusco_Distancia_strategy = st.builds(
+    farrusco_Distancia,
     distancia=
         st.integers(),
     how_sucess=
@@ -532,61 +532,61 @@ farrusco::Distancia_strategy = st.builds(
 Action_strategy = st.builds(
     Action,
 )
-farrusco::Condition_strategy = st.builds(
-    farrusco::Condition,
+farrusco_Condition_strategy = st.builds(
+    farrusco_Condition,
 )
 Actuate_strategy = st.builds(
     Actuate,
 )
-farrusco::LED_strategy = st.builds(
-    farrusco::LED,
-    on_off=
-        st.booleans()
-)
-farrusco::Servo_strategy = st.builds(
-    farrusco::Servo,
-    inc=
+farrusco_Servo_strategy = st.builds(
+    farrusco_Servo,
+    min=
         st.integers(),
     max=
         st.integers(),
-    min=
+    inc=
         st.integers()
 )
-farrusco::Motor_strategy = st.builds(
-    farrusco::Motor,
-    MotorLeft=
-        st.integers(),
+farrusco_LED_strategy = st.builds(
+    farrusco_LED,
+    on_off=
+        st.booleans()
+)
+farrusco_Motor_strategy = st.builds(
+    farrusco_Motor,
     MotorRight=
+        st.integers(),
+    MotorLeft=
         st.integers()
 )
-farrusco::Actuate_strategy = st.builds(
-    farrusco::Actuate,
+farrusco_Actuate_strategy = st.builds(
+    farrusco_Actuate,
 )
-farrusco::Espera_strategy = st.builds(
-    farrusco::Espera,
+farrusco_Espera_strategy = st.builds(
+    farrusco_Espera,
     time=
         st.integers()
 )
-farrusco::BumperEsquerdo_strategy = st.builds(
-    farrusco::BumperEsquerdo,
+farrusco_BumperEsquerdo_strategy = st.builds(
+    farrusco_BumperEsquerdo,
 )
-farrusco::BumperDireito_strategy = st.builds(
-    farrusco::BumperDireito,
+farrusco_BumperDireito_strategy = st.builds(
+    farrusco_BumperDireito,
 )
 Behavior_strategy = st.builds(
     Behavior,
 )
-farrusco::Paralelo_strategy = st.builds(
-    farrusco::Paralelo,
+farrusco_Paralelo_strategy = st.builds(
+    farrusco_Paralelo,
 )
-farrusco::Prioridade_strategy = st.builds(
-    farrusco::Prioridade,
+farrusco_Prioridade_strategy = st.builds(
+    farrusco_Prioridade,
 )
-farrusco::AlterarEstado_strategy = st.builds(
-    farrusco::AlterarEstado,
-    fail_policy=
-        st.integers(),
+farrusco_AlterarEstado_strategy = st.builds(
+    farrusco_AlterarEstado,
     runn_policy=
+        st.integers(),
+    fail_policy=
         st.integers(),
     succ_policy=
         st.integers()
@@ -594,29 +594,29 @@ farrusco::AlterarEstado_strategy = st.builds(
 Node_strategy = st.builds(
     Node,
 )
-farrusco::Behavior_strategy = st.builds(
-    farrusco::Behavior,
+farrusco_Behavior_strategy = st.builds(
+    farrusco_Behavior,
     Name=
         safe_text
 )
-farrusco::Action_strategy = st.builds(
-    farrusco::Action,
+farrusco_Action_strategy = st.builds(
+    farrusco_Action,
     name=
         safe_text
 )
-farrusco::Robot_strategy = st.builds(
-    farrusco::Robot,
+farrusco_Robot_strategy = st.builds(
+    farrusco_Robot,
     Name=
         safe_text
 )
-farrusco::Irmao_strategy = st.builds(
-    farrusco::Irmao,
+farrusco_Irmao_strategy = st.builds(
+    farrusco_Irmao,
 )
-farrusco::Filho_strategy = st.builds(
-    farrusco::Filho,
+farrusco_Filho_strategy = st.builds(
+    farrusco_Filho,
 )
-farrusco::Node_strategy = st.builds(
-    farrusco::Node,
+farrusco_Node_strategy = st.builds(
+    farrusco_Node,
 )
 
 @given(instance=Condition_strategy)
@@ -624,29 +624,23 @@ farrusco::Node_strategy = st.builds(
 def test_condition_instantiation(instance):
     assert isinstance(instance, Condition)
 
-@given(instance=farrusco::Distancia_strategy)
+@given(instance=farrusco_Distancia_strategy)
 @settings(max_examples=50)
-def test_farrusco::distancia_instantiation(instance):
-    assert isinstance(instance, farrusco::Distancia)
-
-@given(instance=farrusco::Distancia_strategy)
-def test_farrusco::distancia_distancia_type(instance):
-    assert isinstance(instance.distancia, int)
+def test_farrusco_distancia_instantiation(instance):
+    assert isinstance(instance, farrusco_Distancia)
 
 
-@given(instance=farrusco::Distancia_strategy)
-def test_farrusco::distancia_distancia_setter(instance):
+
+@given(instance=farrusco_Distancia_strategy)
+def test_farrusco_distancia_distancia_setter(instance):
     original = instance.distancia
     instance.distancia = original
     assert instance.distancia == original
 
-@given(instance=farrusco::Distancia_strategy)
-def test_farrusco::distancia_how_sucess_type(instance):
-    assert isinstance(instance.how_sucess, bool)
 
 
-@given(instance=farrusco::Distancia_strategy)
-def test_farrusco::distancia_how_sucess_setter(instance):
+@given(instance=farrusco_Distancia_strategy)
+def test_farrusco_distancia_how_sucess_setter(instance):
     original = instance.how_sucess
     instance.how_sucess = original
     assert instance.how_sucess == original
@@ -656,177 +650,147 @@ def test_farrusco::distancia_how_sucess_setter(instance):
 def test_action_instantiation(instance):
     assert isinstance(instance, Action)
 
-@given(instance=farrusco::Condition_strategy)
+@given(instance=farrusco_Condition_strategy)
 @settings(max_examples=50)
-def test_farrusco::condition_instantiation(instance):
-    assert isinstance(instance, farrusco::Condition)
+def test_farrusco_condition_instantiation(instance):
+    assert isinstance(instance, farrusco_Condition)
 
 @given(instance=Actuate_strategy)
 @settings(max_examples=50)
 def test_actuate_instantiation(instance):
     assert isinstance(instance, Actuate)
 
-@given(instance=farrusco::LED_strategy)
+@given(instance=farrusco_Servo_strategy)
 @settings(max_examples=50)
-def test_farrusco::led_instantiation(instance):
-    assert isinstance(instance, farrusco::LED)
-
-@given(instance=farrusco::LED_strategy)
-def test_farrusco::led_on_off_type(instance):
-    assert isinstance(instance.on_off, bool)
+def test_farrusco_servo_instantiation(instance):
+    assert isinstance(instance, farrusco_Servo)
 
 
-@given(instance=farrusco::LED_strategy)
-def test_farrusco::led_on_off_setter(instance):
-    original = instance.on_off
-    instance.on_off = original
-    assert instance.on_off == original
 
-@given(instance=farrusco::Servo_strategy)
-@settings(max_examples=50)
-def test_farrusco::servo_instantiation(instance):
-    assert isinstance(instance, farrusco::Servo)
-
-@given(instance=farrusco::Servo_strategy)
-def test_farrusco::servo_inc_type(instance):
-    assert isinstance(instance.inc, int)
-
-
-@given(instance=farrusco::Servo_strategy)
-def test_farrusco::servo_inc_setter(instance):
-    original = instance.inc
-    instance.inc = original
-    assert instance.inc == original
-
-@given(instance=farrusco::Servo_strategy)
-def test_farrusco::servo_max_type(instance):
-    assert isinstance(instance.max, int)
-
-
-@given(instance=farrusco::Servo_strategy)
-def test_farrusco::servo_max_setter(instance):
-    original = instance.max
-    instance.max = original
-    assert instance.max == original
-
-@given(instance=farrusco::Servo_strategy)
-def test_farrusco::servo_min_type(instance):
-    assert isinstance(instance.min, int)
-
-
-@given(instance=farrusco::Servo_strategy)
-def test_farrusco::servo_min_setter(instance):
+@given(instance=farrusco_Servo_strategy)
+def test_farrusco_servo_min_setter(instance):
     original = instance.min
     instance.min = original
     assert instance.min == original
 
-@given(instance=farrusco::Motor_strategy)
+
+
+@given(instance=farrusco_Servo_strategy)
+def test_farrusco_servo_max_setter(instance):
+    original = instance.max
+    instance.max = original
+    assert instance.max == original
+
+
+
+@given(instance=farrusco_Servo_strategy)
+def test_farrusco_servo_inc_setter(instance):
+    original = instance.inc
+    instance.inc = original
+    assert instance.inc == original
+
+@given(instance=farrusco_LED_strategy)
 @settings(max_examples=50)
-def test_farrusco::motor_instantiation(instance):
-    assert isinstance(instance, farrusco::Motor)
-
-@given(instance=farrusco::Motor_strategy)
-def test_farrusco::motor_MotorLeft_type(instance):
-    assert isinstance(instance.MotorLeft, int)
+def test_farrusco_led_instantiation(instance):
+    assert isinstance(instance, farrusco_LED)
 
 
-@given(instance=farrusco::Motor_strategy)
-def test_farrusco::motor_MotorLeft_setter(instance):
-    original = instance.MotorLeft
-    instance.MotorLeft = original
-    assert instance.MotorLeft == original
 
-@given(instance=farrusco::Motor_strategy)
-def test_farrusco::motor_MotorRight_type(instance):
-    assert isinstance(instance.MotorRight, int)
+@given(instance=farrusco_LED_strategy)
+def test_farrusco_led_on_off_setter(instance):
+    original = instance.on_off
+    instance.on_off = original
+    assert instance.on_off == original
+
+@given(instance=farrusco_Motor_strategy)
+@settings(max_examples=50)
+def test_farrusco_motor_instantiation(instance):
+    assert isinstance(instance, farrusco_Motor)
 
 
-@given(instance=farrusco::Motor_strategy)
-def test_farrusco::motor_MotorRight_setter(instance):
+
+@given(instance=farrusco_Motor_strategy)
+def test_farrusco_motor_MotorRight_setter(instance):
     original = instance.MotorRight
     instance.MotorRight = original
     assert instance.MotorRight == original
 
-@given(instance=farrusco::Actuate_strategy)
+
+
+@given(instance=farrusco_Motor_strategy)
+def test_farrusco_motor_MotorLeft_setter(instance):
+    original = instance.MotorLeft
+    instance.MotorLeft = original
+    assert instance.MotorLeft == original
+
+@given(instance=farrusco_Actuate_strategy)
 @settings(max_examples=50)
-def test_farrusco::actuate_instantiation(instance):
-    assert isinstance(instance, farrusco::Actuate)
+def test_farrusco_actuate_instantiation(instance):
+    assert isinstance(instance, farrusco_Actuate)
 
-@given(instance=farrusco::Espera_strategy)
+@given(instance=farrusco_Espera_strategy)
 @settings(max_examples=50)
-def test_farrusco::espera_instantiation(instance):
-    assert isinstance(instance, farrusco::Espera)
-
-@given(instance=farrusco::Espera_strategy)
-def test_farrusco::espera_time_type(instance):
-    assert isinstance(instance.time, int)
+def test_farrusco_espera_instantiation(instance):
+    assert isinstance(instance, farrusco_Espera)
 
 
-@given(instance=farrusco::Espera_strategy)
-def test_farrusco::espera_time_setter(instance):
+
+@given(instance=farrusco_Espera_strategy)
+def test_farrusco_espera_time_setter(instance):
     original = instance.time
     instance.time = original
     assert instance.time == original
 
-@given(instance=farrusco::BumperEsquerdo_strategy)
+@given(instance=farrusco_BumperEsquerdo_strategy)
 @settings(max_examples=50)
-def test_farrusco::bumperesquerdo_instantiation(instance):
-    assert isinstance(instance, farrusco::BumperEsquerdo)
+def test_farrusco_bumperesquerdo_instantiation(instance):
+    assert isinstance(instance, farrusco_BumperEsquerdo)
 
-@given(instance=farrusco::BumperDireito_strategy)
+@given(instance=farrusco_BumperDireito_strategy)
 @settings(max_examples=50)
-def test_farrusco::bumperdireito_instantiation(instance):
-    assert isinstance(instance, farrusco::BumperDireito)
+def test_farrusco_bumperdireito_instantiation(instance):
+    assert isinstance(instance, farrusco_BumperDireito)
 
 @given(instance=Behavior_strategy)
 @settings(max_examples=50)
 def test_behavior_instantiation(instance):
     assert isinstance(instance, Behavior)
 
-@given(instance=farrusco::Paralelo_strategy)
+@given(instance=farrusco_Paralelo_strategy)
 @settings(max_examples=50)
-def test_farrusco::paralelo_instantiation(instance):
-    assert isinstance(instance, farrusco::Paralelo)
+def test_farrusco_paralelo_instantiation(instance):
+    assert isinstance(instance, farrusco_Paralelo)
 
-@given(instance=farrusco::Prioridade_strategy)
+@given(instance=farrusco_Prioridade_strategy)
 @settings(max_examples=50)
-def test_farrusco::prioridade_instantiation(instance):
-    assert isinstance(instance, farrusco::Prioridade)
+def test_farrusco_prioridade_instantiation(instance):
+    assert isinstance(instance, farrusco_Prioridade)
 
-@given(instance=farrusco::AlterarEstado_strategy)
+@given(instance=farrusco_AlterarEstado_strategy)
 @settings(max_examples=50)
-def test_farrusco::alterarestado_instantiation(instance):
-    assert isinstance(instance, farrusco::AlterarEstado)
-
-@given(instance=farrusco::AlterarEstado_strategy)
-def test_farrusco::alterarestado_fail_policy_type(instance):
-    assert isinstance(instance.fail_policy, int)
+def test_farrusco_alterarestado_instantiation(instance):
+    assert isinstance(instance, farrusco_AlterarEstado)
 
 
-@given(instance=farrusco::AlterarEstado_strategy)
-def test_farrusco::alterarestado_fail_policy_setter(instance):
-    original = instance.fail_policy
-    instance.fail_policy = original
-    assert instance.fail_policy == original
 
-@given(instance=farrusco::AlterarEstado_strategy)
-def test_farrusco::alterarestado_runn_policy_type(instance):
-    assert isinstance(instance.runn_policy, int)
-
-
-@given(instance=farrusco::AlterarEstado_strategy)
-def test_farrusco::alterarestado_runn_policy_setter(instance):
+@given(instance=farrusco_AlterarEstado_strategy)
+def test_farrusco_alterarestado_runn_policy_setter(instance):
     original = instance.runn_policy
     instance.runn_policy = original
     assert instance.runn_policy == original
 
-@given(instance=farrusco::AlterarEstado_strategy)
-def test_farrusco::alterarestado_succ_policy_type(instance):
-    assert isinstance(instance.succ_policy, int)
 
 
-@given(instance=farrusco::AlterarEstado_strategy)
-def test_farrusco::alterarestado_succ_policy_setter(instance):
+@given(instance=farrusco_AlterarEstado_strategy)
+def test_farrusco_alterarestado_fail_policy_setter(instance):
+    original = instance.fail_policy
+    instance.fail_policy = original
+    assert instance.fail_policy == original
+
+
+
+@given(instance=farrusco_AlterarEstado_strategy)
+def test_farrusco_alterarestado_succ_policy_setter(instance):
     original = instance.succ_policy
     instance.succ_policy = original
     assert instance.succ_policy == original
@@ -836,65 +800,56 @@ def test_farrusco::alterarestado_succ_policy_setter(instance):
 def test_node_instantiation(instance):
     assert isinstance(instance, Node)
 
-@given(instance=farrusco::Behavior_strategy)
+@given(instance=farrusco_Behavior_strategy)
 @settings(max_examples=50)
-def test_farrusco::behavior_instantiation(instance):
-    assert isinstance(instance, farrusco::Behavior)
-
-@given(instance=farrusco::Behavior_strategy)
-def test_farrusco::behavior_Name_type(instance):
-    assert isinstance(instance.Name, str)
+def test_farrusco_behavior_instantiation(instance):
+    assert isinstance(instance, farrusco_Behavior)
 
 
-@given(instance=farrusco::Behavior_strategy)
-def test_farrusco::behavior_Name_setter(instance):
+
+@given(instance=farrusco_Behavior_strategy)
+def test_farrusco_behavior_Name_setter(instance):
     original = instance.Name
     instance.Name = original
     assert instance.Name == original
 
-@given(instance=farrusco::Action_strategy)
+@given(instance=farrusco_Action_strategy)
 @settings(max_examples=50)
-def test_farrusco::action_instantiation(instance):
-    assert isinstance(instance, farrusco::Action)
-
-@given(instance=farrusco::Action_strategy)
-def test_farrusco::action_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_farrusco_action_instantiation(instance):
+    assert isinstance(instance, farrusco_Action)
 
 
-@given(instance=farrusco::Action_strategy)
-def test_farrusco::action_name_setter(instance):
+
+@given(instance=farrusco_Action_strategy)
+def test_farrusco_action_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=farrusco::Robot_strategy)
+@given(instance=farrusco_Robot_strategy)
 @settings(max_examples=50)
-def test_farrusco::robot_instantiation(instance):
-    assert isinstance(instance, farrusco::Robot)
-
-@given(instance=farrusco::Robot_strategy)
-def test_farrusco::robot_Name_type(instance):
-    assert isinstance(instance.Name, str)
+def test_farrusco_robot_instantiation(instance):
+    assert isinstance(instance, farrusco_Robot)
 
 
-@given(instance=farrusco::Robot_strategy)
-def test_farrusco::robot_Name_setter(instance):
+
+@given(instance=farrusco_Robot_strategy)
+def test_farrusco_robot_Name_setter(instance):
     original = instance.Name
     instance.Name = original
     assert instance.Name == original
 
-@given(instance=farrusco::Irmao_strategy)
+@given(instance=farrusco_Irmao_strategy)
 @settings(max_examples=50)
-def test_farrusco::irmao_instantiation(instance):
-    assert isinstance(instance, farrusco::Irmao)
+def test_farrusco_irmao_instantiation(instance):
+    assert isinstance(instance, farrusco_Irmao)
 
-@given(instance=farrusco::Filho_strategy)
+@given(instance=farrusco_Filho_strategy)
 @settings(max_examples=50)
-def test_farrusco::filho_instantiation(instance):
-    assert isinstance(instance, farrusco::Filho)
+def test_farrusco_filho_instantiation(instance):
+    assert isinstance(instance, farrusco_Filho)
 
-@given(instance=farrusco::Node_strategy)
+@given(instance=farrusco_Node_strategy)
 @settings(max_examples=50)
-def test_farrusco::node_instantiation(instance):
-    assert isinstance(instance, farrusco::Node)
+def test_farrusco_node_instantiation(instance):
+    assert isinstance(instance, farrusco_Node)

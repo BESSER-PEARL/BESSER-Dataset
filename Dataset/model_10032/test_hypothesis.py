@@ -3,10 +3,10 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    CoachBus::Coach,
+from python_code import (
+    CoachBus_Coach,
 )
 
 # =============================================================================
@@ -15,23 +15,23 @@ from classes import (
 
 
 
-def test_coachbus::coach_is_not_abstract():
-    assert not inspect.isabstract(CoachBus::Coach)
+def test_coachbus_coach_is_not_abstract():
+    assert not inspect.isabstract(CoachBus_Coach)
 
 
-def test_coachbus::coach_constructor_exists():
-    assert callable(CoachBus::Coach.__init__)
+def test_coachbus_coach_constructor_exists():
+    assert callable(CoachBus_Coach.__init__)
 
 
-def test_coachbus::coach_constructor_args():
-    sig = inspect.signature(CoachBus::Coach.__init__)
+def test_coachbus_coach_constructor_args():
+    sig = inspect.signature(CoachBus_Coach.__init__)
     params = list(sig.parameters.keys())
     assert "noOfSeats" in params, "Missing parameter 'noOfSeats'"
 
-def test_coachbus::coach_has_noOfSeats():
-    assert hasattr(CoachBus::Coach, "noOfSeats")
+def test_coachbus_coach_has_noOfSeats():
+    assert hasattr(CoachBus_Coach, "noOfSeats")
     descriptor = None
-    for klass in CoachBus::Coach.__mro__:
+    for klass in CoachBus_Coach.__mro__:
         if "noOfSeats" in klass.__dict__:
             descriptor = klass.__dict__["noOfSeats"]
             break
@@ -49,24 +49,21 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-CoachBus::Coach_strategy = st.builds(
-    CoachBus::Coach,
+CoachBus_Coach_strategy = st.builds(
+    CoachBus_Coach,
     noOfSeats=
         st.integers()
 )
 
-@given(instance=CoachBus::Coach_strategy)
+@given(instance=CoachBus_Coach_strategy)
 @settings(max_examples=50)
-def test_coachbus::coach_instantiation(instance):
-    assert isinstance(instance, CoachBus::Coach)
-
-@given(instance=CoachBus::Coach_strategy)
-def test_coachbus::coach_noOfSeats_type(instance):
-    assert isinstance(instance.noOfSeats, int)
+def test_coachbus_coach_instantiation(instance):
+    assert isinstance(instance, CoachBus_Coach)
 
 
-@given(instance=CoachBus::Coach_strategy)
-def test_coachbus::coach_noOfSeats_setter(instance):
+
+@given(instance=CoachBus_Coach_strategy)
+def test_coachbus_coach_noOfSeats_setter(instance):
     original = instance.noOfSeats
     instance.noOfSeats = original
     assert instance.noOfSeats == original

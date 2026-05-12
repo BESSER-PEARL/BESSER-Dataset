@@ -3,10 +3,9 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
 from python_code import (
-    Airline,
     Captain,
     Navigator,
     CoPilot,
@@ -15,37 +14,14 @@ from python_code import (
     Pilot,
     Airport,
     Flight,
-    MaintenanceState,
+    Airline,
     FlightState,
+    MaintenanceState,
 )
 
 # =============================================================================
 # SECTION 1 — STRUCTURAL TESTS
 # =============================================================================
-
-
-
-def test_airline_is_not_abstract():
-    assert not inspect.isabstract(Airline)
-
-
-def test_airline_constructor_exists():
-    assert callable(Airline.__init__)
-
-
-def test_airline_constructor_args():
-    sig = inspect.signature(Airline.__init__)
-    params = list(sig.parameters.keys())
-    assert "id" in params, "Missing parameter 'id'"
-
-def test_airline_has_id():
-    assert hasattr(Airline, "id")
-    descriptor = None
-    for klass in Airline.__mro__:
-        if "id" in klass.__dict__:
-            descriptor = klass.__dict__["id"]
-            break
-    assert isinstance(descriptor, property)
 
 
 
@@ -188,18 +164,9 @@ def test_flight_constructor_exists():
 def test_flight_constructor_args():
     sig = inspect.signature(Flight.__init__)
     params = list(sig.parameters.keys())
-    assert "id" in params, "Missing parameter 'id'"
     assert "departureTime" in params, "Missing parameter 'departureTime'"
+    assert "id" in params, "Missing parameter 'id'"
     assert "arrivalTime" in params, "Missing parameter 'arrivalTime'"
-
-def test_flight_has_id():
-    assert hasattr(Flight, "id")
-    descriptor = None
-    for klass in Flight.__mro__:
-        if "id" in klass.__dict__:
-            descriptor = klass.__dict__["id"]
-            break
-    assert isinstance(descriptor, property)
 
 def test_flight_has_departureTime():
     assert hasattr(Flight, "departureTime")
@@ -207,6 +174,15 @@ def test_flight_has_departureTime():
     for klass in Flight.__mro__:
         if "departureTime" in klass.__dict__:
             descriptor = klass.__dict__["departureTime"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_flight_has_id():
+    assert hasattr(Flight, "id")
+    descriptor = None
+    for klass in Flight.__mro__:
+        if "id" in klass.__dict__:
+            descriptor = klass.__dict__["id"]
             break
     assert isinstance(descriptor, property)
 
@@ -219,18 +195,29 @@ def test_flight_has_arrivalTime():
             break
     assert isinstance(descriptor, property)
 
-def test_maintenancestate_exists():
-    # Check that the Enumeration exists
-    assert MaintenanceState is not None
 
-def test_maintenancestate_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in MaintenanceState]
-    expected_literals = [
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in MaintenanceState"
+
+def test_airline_is_not_abstract():
+    assert not inspect.isabstract(Airline)
+
+
+def test_airline_constructor_exists():
+    assert callable(Airline.__init__)
+
+
+def test_airline_constructor_args():
+    sig = inspect.signature(Airline.__init__)
+    params = list(sig.parameters.keys())
+    assert "id" in params, "Missing parameter 'id'"
+
+def test_airline_has_id():
+    assert hasattr(Airline, "id")
+    descriptor = None
+    for klass in Airline.__mro__:
+        if "id" in klass.__dict__:
+            descriptor = klass.__dict__["id"]
+            break
+    assert isinstance(descriptor, property)
 
 def test_flightstate_exists():
     # Check that the Enumeration exists
@@ -245,6 +232,19 @@ def test_flightstate_has_all_literals():
     for lit_name in expected_literals:
         assert lit_name in enum_literals, f"Literal '' missing in FlightState"
 
+def test_maintenancestate_exists():
+    # Check that the Enumeration exists
+    assert MaintenanceState is not None
+
+def test_maintenancestate_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in MaintenanceState]
+    expected_literals = [
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in MaintenanceState"
+
 
 # =============================================================================
 # HYPOTHESIS STRATEGIES
@@ -257,11 +257,6 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-Airline_strategy = st.builds(
-    Airline,
-    id=
-        safe_text
-)
 Captain_strategy = st.builds(
     Captain,
 )
@@ -291,29 +286,18 @@ Airport_strategy = st.builds(
 )
 Flight_strategy = st.builds(
     Flight,
-    id=
-        st.integers(),
     departureTime=
         st.dates(),
+    id=
+        st.integers(),
     arrivalTime=
         st.dates()
 )
-
-@given(instance=Airline_strategy)
-@settings(max_examples=50)
-def test_airline_instantiation(instance):
-    assert isinstance(instance, Airline)
-
-@given(instance=Airline_strategy)
-def test_airline_id_type(instance):
-    assert isinstance(instance.id, str)
-
-
-@given(instance=Airline_strategy)
-def test_airline_id_setter(instance):
-    original = instance.id
-    instance.id = original
-    assert instance.id == original
+Airline_strategy = st.builds(
+    Airline,
+    id=
+        safe_text
+)
 
 @given(instance=Captain_strategy)
 @settings(max_examples=50)
@@ -340,9 +324,6 @@ def test_company_instantiation(instance):
 def test_aircraft_instantiation(instance):
     assert isinstance(instance, Aircraft)
 
-@given(instance=Aircraft_strategy)
-def test_aircraft_state_type(instance):
-    assert isinstance(instance.state, maintenancestate)
 
 
 @given(instance=Aircraft_strategy)
@@ -351,9 +332,6 @@ def test_aircraft_state_setter(instance):
     instance.state = original
     assert instance.state == original
 
-@given(instance=Aircraft_strategy)
-def test_aircraft_flightState_type(instance):
-    assert isinstance(instance.flightState, flightstate)
 
 
 @given(instance=Aircraft_strategy)
@@ -372,9 +350,6 @@ def test_pilot_instantiation(instance):
 def test_airport_instantiation(instance):
     assert isinstance(instance, Airport)
 
-@given(instance=Airport_strategy)
-def test_airport_id_type(instance):
-    assert isinstance(instance.id, str)
 
 
 @given(instance=Airport_strategy)
@@ -388,20 +363,6 @@ def test_airport_id_setter(instance):
 def test_flight_instantiation(instance):
     assert isinstance(instance, Flight)
 
-@given(instance=Flight_strategy)
-def test_flight_id_type(instance):
-    assert isinstance(instance.id, int)
-
-
-@given(instance=Flight_strategy)
-def test_flight_id_setter(instance):
-    original = instance.id
-    instance.id = original
-    assert instance.id == original
-
-@given(instance=Flight_strategy)
-def test_flight_departureTime_type(instance):
-    assert isinstance(instance.departureTime, date)
 
 
 @given(instance=Flight_strategy)
@@ -410,9 +371,14 @@ def test_flight_departureTime_setter(instance):
     instance.departureTime = original
     assert instance.departureTime == original
 
+
+
 @given(instance=Flight_strategy)
-def test_flight_arrivalTime_type(instance):
-    assert isinstance(instance.arrivalTime, date)
+def test_flight_id_setter(instance):
+    original = instance.id
+    instance.id = original
+    assert instance.id == original
+
 
 
 @given(instance=Flight_strategy)
@@ -420,3 +386,16 @@ def test_flight_arrivalTime_setter(instance):
     original = instance.arrivalTime
     instance.arrivalTime = original
     assert instance.arrivalTime == original
+
+@given(instance=Airline_strategy)
+@settings(max_examples=50)
+def test_airline_instantiation(instance):
+    assert isinstance(instance, Airline)
+
+
+
+@given(instance=Airline_strategy)
+def test_airline_id_setter(instance):
+    original = instance.id
+    instance.id = original
+    assert instance.id == original

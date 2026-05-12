@@ -3,13 +3,13 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    mm2::Loan,
-    mm2::Book,
-    mm2::Member,
-    mm2::Library,
+from python_code import (
+    mm2_Loan,
+    mm2_Book,
+    mm2_Member,
+    mm2_Library,
 )
 
 # =============================================================================
@@ -18,37 +18,37 @@ from classes import (
 
 
 
-def test_mm2::loan_is_not_abstract():
-    assert not inspect.isabstract(mm2::Loan)
+def test_mm2_loan_is_not_abstract():
+    assert not inspect.isabstract(mm2_Loan)
 
 
-def test_mm2::loan_constructor_exists():
-    assert callable(mm2::Loan.__init__)
+def test_mm2_loan_constructor_exists():
+    assert callable(mm2_Loan.__init__)
 
 
-def test_mm2::loan_constructor_args():
-    sig = inspect.signature(mm2::Loan.__init__)
+def test_mm2_loan_constructor_args():
+    sig = inspect.signature(mm2_Loan.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_mm2::book_is_not_abstract():
-    assert not inspect.isabstract(mm2::Book)
+def test_mm2_book_is_not_abstract():
+    assert not inspect.isabstract(mm2_Book)
 
 
-def test_mm2::book_constructor_exists():
-    assert callable(mm2::Book.__init__)
+def test_mm2_book_constructor_exists():
+    assert callable(mm2_Book.__init__)
 
 
-def test_mm2::book_constructor_args():
-    sig = inspect.signature(mm2::Book.__init__)
+def test_mm2_book_constructor_args():
+    sig = inspect.signature(mm2_Book.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_mm2::book_has_name():
-    assert hasattr(mm2::Book, "name")
+def test_mm2_book_has_name():
+    assert hasattr(mm2_Book, "name")
     descriptor = None
-    for klass in mm2::Book.__mro__:
+    for klass in mm2_Book.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -56,23 +56,23 @@ def test_mm2::book_has_name():
 
 
 
-def test_mm2::member_is_not_abstract():
-    assert not inspect.isabstract(mm2::Member)
+def test_mm2_member_is_not_abstract():
+    assert not inspect.isabstract(mm2_Member)
 
 
-def test_mm2::member_constructor_exists():
-    assert callable(mm2::Member.__init__)
+def test_mm2_member_constructor_exists():
+    assert callable(mm2_Member.__init__)
 
 
-def test_mm2::member_constructor_args():
-    sig = inspect.signature(mm2::Member.__init__)
+def test_mm2_member_constructor_args():
+    sig = inspect.signature(mm2_Member.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_mm2::member_has_name():
-    assert hasattr(mm2::Member, "name")
+def test_mm2_member_has_name():
+    assert hasattr(mm2_Member, "name")
     descriptor = None
-    for klass in mm2::Member.__mro__:
+    for klass in mm2_Member.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -80,23 +80,23 @@ def test_mm2::member_has_name():
 
 
 
-def test_mm2::library_is_not_abstract():
-    assert not inspect.isabstract(mm2::Library)
+def test_mm2_library_is_not_abstract():
+    assert not inspect.isabstract(mm2_Library)
 
 
-def test_mm2::library_constructor_exists():
-    assert callable(mm2::Library.__init__)
+def test_mm2_library_constructor_exists():
+    assert callable(mm2_Library.__init__)
 
 
-def test_mm2::library_constructor_args():
-    sig = inspect.signature(mm2::Library.__init__)
+def test_mm2_library_constructor_args():
+    sig = inspect.signature(mm2_Library.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_mm2::library_has_name():
-    assert hasattr(mm2::Library, "name")
+def test_mm2_library_has_name():
+    assert hasattr(mm2_Library, "name")
     descriptor = None
-    for klass in mm2::Library.__mro__:
+    for klass in mm2_Library.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -114,74 +114,65 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-mm2::Loan_strategy = st.builds(
-    mm2::Loan,
+mm2_Loan_strategy = st.builds(
+    mm2_Loan,
 )
-mm2::Book_strategy = st.builds(
-    mm2::Book,
+mm2_Book_strategy = st.builds(
+    mm2_Book,
     name=
         safe_text
 )
-mm2::Member_strategy = st.builds(
-    mm2::Member,
+mm2_Member_strategy = st.builds(
+    mm2_Member,
     name=
         safe_text
 )
-mm2::Library_strategy = st.builds(
-    mm2::Library,
+mm2_Library_strategy = st.builds(
+    mm2_Library,
     name=
         safe_text
 )
 
-@given(instance=mm2::Loan_strategy)
+@given(instance=mm2_Loan_strategy)
 @settings(max_examples=50)
-def test_mm2::loan_instantiation(instance):
-    assert isinstance(instance, mm2::Loan)
+def test_mm2_loan_instantiation(instance):
+    assert isinstance(instance, mm2_Loan)
 
-@given(instance=mm2::Book_strategy)
+@given(instance=mm2_Book_strategy)
 @settings(max_examples=50)
-def test_mm2::book_instantiation(instance):
-    assert isinstance(instance, mm2::Book)
-
-@given(instance=mm2::Book_strategy)
-def test_mm2::book_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_mm2_book_instantiation(instance):
+    assert isinstance(instance, mm2_Book)
 
 
-@given(instance=mm2::Book_strategy)
-def test_mm2::book_name_setter(instance):
+
+@given(instance=mm2_Book_strategy)
+def test_mm2_book_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=mm2::Member_strategy)
+@given(instance=mm2_Member_strategy)
 @settings(max_examples=50)
-def test_mm2::member_instantiation(instance):
-    assert isinstance(instance, mm2::Member)
-
-@given(instance=mm2::Member_strategy)
-def test_mm2::member_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_mm2_member_instantiation(instance):
+    assert isinstance(instance, mm2_Member)
 
 
-@given(instance=mm2::Member_strategy)
-def test_mm2::member_name_setter(instance):
+
+@given(instance=mm2_Member_strategy)
+def test_mm2_member_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=mm2::Library_strategy)
+@given(instance=mm2_Library_strategy)
 @settings(max_examples=50)
-def test_mm2::library_instantiation(instance):
-    assert isinstance(instance, mm2::Library)
-
-@given(instance=mm2::Library_strategy)
-def test_mm2::library_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_mm2_library_instantiation(instance):
+    assert isinstance(instance, mm2_Library)
 
 
-@given(instance=mm2::Library_strategy)
-def test_mm2::library_name_setter(instance):
+
+@given(instance=mm2_Library_strategy)
+def test_mm2_library_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original

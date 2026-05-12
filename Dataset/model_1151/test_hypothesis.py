@@ -3,15 +3,15 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     State,
-    myFirstEditorCustom::EndState,
-    myFirstEditorCustom::StartState,
-    myFirstEditorCustom::Transition,
-    myFirstEditorCustom::State,
-    myFirstEditorCustom::StateMachine,
+    myFirstEditorCustom_EndState,
+    myFirstEditorCustom_StartState,
+    myFirstEditorCustom_Transition,
+    myFirstEditorCustom_State,
+    myFirstEditorCustom_StateMachine,
 )
 
 # =============================================================================
@@ -34,51 +34,51 @@ def test_state_constructor_args():
 
 
 
-def test_myfirsteditorcustom::endstate_is_not_abstract():
-    assert not inspect.isabstract(myFirstEditorCustom::EndState)
+def test_myfirsteditorcustom_endstate_is_not_abstract():
+    assert not inspect.isabstract(myFirstEditorCustom_EndState)
 
 
-def test_myfirsteditorcustom::endstate_constructor_exists():
-    assert callable(myFirstEditorCustom::EndState.__init__)
+def test_myfirsteditorcustom_endstate_constructor_exists():
+    assert callable(myFirstEditorCustom_EndState.__init__)
 
 
-def test_myfirsteditorcustom::endstate_constructor_args():
-    sig = inspect.signature(myFirstEditorCustom::EndState.__init__)
+def test_myfirsteditorcustom_endstate_constructor_args():
+    sig = inspect.signature(myFirstEditorCustom_EndState.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_myfirsteditorcustom::startstate_is_not_abstract():
-    assert not inspect.isabstract(myFirstEditorCustom::StartState)
+def test_myfirsteditorcustom_startstate_is_not_abstract():
+    assert not inspect.isabstract(myFirstEditorCustom_StartState)
 
 
-def test_myfirsteditorcustom::startstate_constructor_exists():
-    assert callable(myFirstEditorCustom::StartState.__init__)
+def test_myfirsteditorcustom_startstate_constructor_exists():
+    assert callable(myFirstEditorCustom_StartState.__init__)
 
 
-def test_myfirsteditorcustom::startstate_constructor_args():
-    sig = inspect.signature(myFirstEditorCustom::StartState.__init__)
+def test_myfirsteditorcustom_startstate_constructor_args():
+    sig = inspect.signature(myFirstEditorCustom_StartState.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_myfirsteditorcustom::transition_is_not_abstract():
-    assert not inspect.isabstract(myFirstEditorCustom::Transition)
+def test_myfirsteditorcustom_transition_is_not_abstract():
+    assert not inspect.isabstract(myFirstEditorCustom_Transition)
 
 
-def test_myfirsteditorcustom::transition_constructor_exists():
-    assert callable(myFirstEditorCustom::Transition.__init__)
+def test_myfirsteditorcustom_transition_constructor_exists():
+    assert callable(myFirstEditorCustom_Transition.__init__)
 
 
-def test_myfirsteditorcustom::transition_constructor_args():
-    sig = inspect.signature(myFirstEditorCustom::Transition.__init__)
+def test_myfirsteditorcustom_transition_constructor_args():
+    sig = inspect.signature(myFirstEditorCustom_Transition.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_myfirsteditorcustom::transition_has_name():
-    assert hasattr(myFirstEditorCustom::Transition, "name")
+def test_myfirsteditorcustom_transition_has_name():
+    assert hasattr(myFirstEditorCustom_Transition, "name")
     descriptor = None
-    for klass in myFirstEditorCustom::Transition.__mro__:
+    for klass in myFirstEditorCustom_Transition.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -86,33 +86,33 @@ def test_myfirsteditorcustom::transition_has_name():
 
 
 
-def test_myfirsteditorcustom::state_is_not_abstract():
-    assert not inspect.isabstract(myFirstEditorCustom::State)
+def test_myfirsteditorcustom_state_is_not_abstract():
+    assert not inspect.isabstract(myFirstEditorCustom_State)
 
 
-def test_myfirsteditorcustom::state_constructor_exists():
-    assert callable(myFirstEditorCustom::State.__init__)
+def test_myfirsteditorcustom_state_constructor_exists():
+    assert callable(myFirstEditorCustom_State.__init__)
 
 
-def test_myfirsteditorcustom::state_constructor_args():
-    sig = inspect.signature(myFirstEditorCustom::State.__init__)
+def test_myfirsteditorcustom_state_constructor_args():
+    sig = inspect.signature(myFirstEditorCustom_State.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
     assert "type" in params, "Missing parameter 'type'"
 
-def test_myfirsteditorcustom::state_has_name():
-    assert hasattr(myFirstEditorCustom::State, "name")
+def test_myfirsteditorcustom_state_has_name():
+    assert hasattr(myFirstEditorCustom_State, "name")
     descriptor = None
-    for klass in myFirstEditorCustom::State.__mro__:
+    for klass in myFirstEditorCustom_State.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
-def test_myfirsteditorcustom::state_has_type():
-    assert hasattr(myFirstEditorCustom::State, "type")
+def test_myfirsteditorcustom_state_has_type():
+    assert hasattr(myFirstEditorCustom_State, "type")
     descriptor = None
-    for klass in myFirstEditorCustom::State.__mro__:
+    for klass in myFirstEditorCustom_State.__mro__:
         if "type" in klass.__dict__:
             descriptor = klass.__dict__["type"]
             break
@@ -120,23 +120,23 @@ def test_myfirsteditorcustom::state_has_type():
 
 
 
-def test_myfirsteditorcustom::statemachine_is_not_abstract():
-    assert not inspect.isabstract(myFirstEditorCustom::StateMachine)
+def test_myfirsteditorcustom_statemachine_is_not_abstract():
+    assert not inspect.isabstract(myFirstEditorCustom_StateMachine)
 
 
-def test_myfirsteditorcustom::statemachine_constructor_exists():
-    assert callable(myFirstEditorCustom::StateMachine.__init__)
+def test_myfirsteditorcustom_statemachine_constructor_exists():
+    assert callable(myFirstEditorCustom_StateMachine.__init__)
 
 
-def test_myfirsteditorcustom::statemachine_constructor_args():
-    sig = inspect.signature(myFirstEditorCustom::StateMachine.__init__)
+def test_myfirsteditorcustom_statemachine_constructor_args():
+    sig = inspect.signature(myFirstEditorCustom_StateMachine.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_myfirsteditorcustom::statemachine_has_name():
-    assert hasattr(myFirstEditorCustom::StateMachine, "name")
+def test_myfirsteditorcustom_statemachine_has_name():
+    assert hasattr(myFirstEditorCustom_StateMachine, "name")
     descriptor = None
-    for klass in myFirstEditorCustom::StateMachine.__mro__:
+    for klass in myFirstEditorCustom_StateMachine.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -157,26 +157,26 @@ safe_text = st.text(
 State_strategy = st.builds(
     State,
 )
-myFirstEditorCustom::EndState_strategy = st.builds(
-    myFirstEditorCustom::EndState,
+myFirstEditorCustom_EndState_strategy = st.builds(
+    myFirstEditorCustom_EndState,
 )
-myFirstEditorCustom::StartState_strategy = st.builds(
-    myFirstEditorCustom::StartState,
+myFirstEditorCustom_StartState_strategy = st.builds(
+    myFirstEditorCustom_StartState,
 )
-myFirstEditorCustom::Transition_strategy = st.builds(
-    myFirstEditorCustom::Transition,
+myFirstEditorCustom_Transition_strategy = st.builds(
+    myFirstEditorCustom_Transition,
     name=
         safe_text
 )
-myFirstEditorCustom::State_strategy = st.builds(
-    myFirstEditorCustom::State,
+myFirstEditorCustom_State_strategy = st.builds(
+    myFirstEditorCustom_State,
     name=
         safe_text,
     type=
         safe_text
 )
-myFirstEditorCustom::StateMachine_strategy = st.builds(
-    myFirstEditorCustom::StateMachine,
+myFirstEditorCustom_StateMachine_strategy = st.builds(
+    myFirstEditorCustom_StateMachine,
     name=
         safe_text
 )
@@ -186,71 +186,59 @@ myFirstEditorCustom::StateMachine_strategy = st.builds(
 def test_state_instantiation(instance):
     assert isinstance(instance, State)
 
-@given(instance=myFirstEditorCustom::EndState_strategy)
+@given(instance=myFirstEditorCustom_EndState_strategy)
 @settings(max_examples=50)
-def test_myfirsteditorcustom::endstate_instantiation(instance):
-    assert isinstance(instance, myFirstEditorCustom::EndState)
+def test_myfirsteditorcustom_endstate_instantiation(instance):
+    assert isinstance(instance, myFirstEditorCustom_EndState)
 
-@given(instance=myFirstEditorCustom::StartState_strategy)
+@given(instance=myFirstEditorCustom_StartState_strategy)
 @settings(max_examples=50)
-def test_myfirsteditorcustom::startstate_instantiation(instance):
-    assert isinstance(instance, myFirstEditorCustom::StartState)
+def test_myfirsteditorcustom_startstate_instantiation(instance):
+    assert isinstance(instance, myFirstEditorCustom_StartState)
 
-@given(instance=myFirstEditorCustom::Transition_strategy)
+@given(instance=myFirstEditorCustom_Transition_strategy)
 @settings(max_examples=50)
-def test_myfirsteditorcustom::transition_instantiation(instance):
-    assert isinstance(instance, myFirstEditorCustom::Transition)
-
-@given(instance=myFirstEditorCustom::Transition_strategy)
-def test_myfirsteditorcustom::transition_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_myfirsteditorcustom_transition_instantiation(instance):
+    assert isinstance(instance, myFirstEditorCustom_Transition)
 
 
-@given(instance=myFirstEditorCustom::Transition_strategy)
-def test_myfirsteditorcustom::transition_name_setter(instance):
+
+@given(instance=myFirstEditorCustom_Transition_strategy)
+def test_myfirsteditorcustom_transition_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=myFirstEditorCustom::State_strategy)
+@given(instance=myFirstEditorCustom_State_strategy)
 @settings(max_examples=50)
-def test_myfirsteditorcustom::state_instantiation(instance):
-    assert isinstance(instance, myFirstEditorCustom::State)
-
-@given(instance=myFirstEditorCustom::State_strategy)
-def test_myfirsteditorcustom::state_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_myfirsteditorcustom_state_instantiation(instance):
+    assert isinstance(instance, myFirstEditorCustom_State)
 
 
-@given(instance=myFirstEditorCustom::State_strategy)
-def test_myfirsteditorcustom::state_name_setter(instance):
+
+@given(instance=myFirstEditorCustom_State_strategy)
+def test_myfirsteditorcustom_state_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=myFirstEditorCustom::State_strategy)
-def test_myfirsteditorcustom::state_type_type(instance):
-    assert isinstance(instance.type, str)
 
 
-@given(instance=myFirstEditorCustom::State_strategy)
-def test_myfirsteditorcustom::state_type_setter(instance):
+@given(instance=myFirstEditorCustom_State_strategy)
+def test_myfirsteditorcustom_state_type_setter(instance):
     original = instance.type
     instance.type = original
     assert instance.type == original
 
-@given(instance=myFirstEditorCustom::StateMachine_strategy)
+@given(instance=myFirstEditorCustom_StateMachine_strategy)
 @settings(max_examples=50)
-def test_myfirsteditorcustom::statemachine_instantiation(instance):
-    assert isinstance(instance, myFirstEditorCustom::StateMachine)
-
-@given(instance=myFirstEditorCustom::StateMachine_strategy)
-def test_myfirsteditorcustom::statemachine_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_myfirsteditorcustom_statemachine_instantiation(instance):
+    assert isinstance(instance, myFirstEditorCustom_StateMachine)
 
 
-@given(instance=myFirstEditorCustom::StateMachine_strategy)
-def test_myfirsteditorcustom::statemachine_name_setter(instance):
+
+@given(instance=myFirstEditorCustom_StateMachine_strategy)
+def test_myfirsteditorcustom_statemachine_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original

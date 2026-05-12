@@ -3,47 +3,117 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
+    completeoclcs_ParameterCS,
+    DefCS,
+    completeoclcs_DefPropertyCS,
+    completeoclcs_Property,
+    completeoclcs_PathNameCS,
     MorePivotable,
     ModelElementCS,
-    completeoclcs::PathNameDeclCS,
-    completeoclcs::Package,
-    completeoclcs::Operation,
-    completeoclcs::VariableCS,
+    completeoclcs_PathNameDeclCS,
+    completeoclcs_Package,
+    completeoclcs_Operation,
+    completeoclcs_VariableCS,
     FeatureContextDeclCS,
+    completeoclcs_PropertyContextDeclCS,
     ExpCS,
-    completeoclcs::OCLMessageArgCS,
-    completeoclcs::TypedRefCS,
-    completeoclcs::ExpSpecificationCS,
+    completeoclcs_OCLMessageArgCS,
+    completeoclcs_TypedRefCS,
+    completeoclcs_ExpSpecificationCS,
     TypedElementCS,
     PathNameDeclCS,
-    completeoclcs::PackageDeclarationCS,
-    completeoclcs::ContextDeclCS,
+    completeoclcs_PackageDeclarationCS,
+    completeoclcs_ContextDeclCS,
     RootCS,
     NamespaceCS,
-    completeoclcs::CompleteOCLDocumentCS,
-    completeoclcs::Class,
-    completeoclcs::ConstraintCS,
-    completeoclcs::DefCS,
+    completeoclcs_CompleteOCLDocumentCS,
+    completeoclcs_Class,
+    completeoclcs_ConstraintCS,
+    completeoclcs_DefCS,
     TemplateableElementCS,
-    completeoclcs::OperationContextDeclCS,
+    completeoclcs_DefOperationCS,
+    completeoclcs_OperationContextDeclCS,
     ContextDeclCS,
-    completeoclcs::FeatureContextDeclCS,
-    completeoclcs::ClassifierContextDeclCS,
-    completeoclcs::ParameterCS,
-    DefCS,
-    completeoclcs::DefPropertyCS,
-    completeoclcs::DefOperationCS,
-    completeoclcs::Property,
-    completeoclcs::PropertyContextDeclCS,
-    completeoclcs::PathNameCS,
+    completeoclcs_FeatureContextDeclCS,
+    completeoclcs_ClassifierContextDeclCS,
 )
 
 # =============================================================================
 # SECTION 1 — STRUCTURAL TESTS
 # =============================================================================
+
+
+
+def test_completeoclcs_parametercs_is_not_abstract():
+    assert not inspect.isabstract(completeoclcs_ParameterCS)
+
+
+def test_completeoclcs_parametercs_constructor_exists():
+    assert callable(completeoclcs_ParameterCS.__init__)
+
+
+def test_completeoclcs_parametercs_constructor_args():
+    sig = inspect.signature(completeoclcs_ParameterCS.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_defcs_is_not_abstract():
+    assert not inspect.isabstract(DefCS)
+
+
+def test_defcs_constructor_exists():
+    assert callable(DefCS.__init__)
+
+
+def test_defcs_constructor_args():
+    sig = inspect.signature(DefCS.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_completeoclcs_defpropertycs_is_not_abstract():
+    assert not inspect.isabstract(completeoclcs_DefPropertyCS)
+
+
+def test_completeoclcs_defpropertycs_constructor_exists():
+    assert callable(completeoclcs_DefPropertyCS.__init__)
+
+
+def test_completeoclcs_defpropertycs_constructor_args():
+    sig = inspect.signature(completeoclcs_DefPropertyCS.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_completeoclcs_property_is_not_abstract():
+    assert not inspect.isabstract(completeoclcs_Property)
+
+
+def test_completeoclcs_property_constructor_exists():
+    assert callable(completeoclcs_Property.__init__)
+
+
+def test_completeoclcs_property_constructor_args():
+    sig = inspect.signature(completeoclcs_Property.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_completeoclcs_pathnamecs_is_not_abstract():
+    assert not inspect.isabstract(completeoclcs_PathNameCS)
+
+
+def test_completeoclcs_pathnamecs_constructor_exists():
+    assert callable(completeoclcs_PathNameCS.__init__)
+
+
+def test_completeoclcs_pathnamecs_constructor_args():
+    sig = inspect.signature(completeoclcs_PathNameCS.__init__)
+    params = list(sig.parameters.keys())
 
 
 
@@ -75,58 +145,58 @@ def test_modelelementcs_constructor_args():
 
 
 
-def test_completeoclcs::pathnamedeclcs_is_not_abstract():
-    assert not inspect.isabstract(completeoclcs::PathNameDeclCS)
+def test_completeoclcs_pathnamedeclcs_is_not_abstract():
+    assert not inspect.isabstract(completeoclcs_PathNameDeclCS)
 
 
-def test_completeoclcs::pathnamedeclcs_constructor_exists():
-    assert callable(completeoclcs::PathNameDeclCS.__init__)
+def test_completeoclcs_pathnamedeclcs_constructor_exists():
+    assert callable(completeoclcs_PathNameDeclCS.__init__)
 
 
-def test_completeoclcs::pathnamedeclcs_constructor_args():
-    sig = inspect.signature(completeoclcs::PathNameDeclCS.__init__)
+def test_completeoclcs_pathnamedeclcs_constructor_args():
+    sig = inspect.signature(completeoclcs_PathNameDeclCS.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_completeoclcs::package_is_not_abstract():
-    assert not inspect.isabstract(completeoclcs::Package)
+def test_completeoclcs_package_is_not_abstract():
+    assert not inspect.isabstract(completeoclcs_Package)
 
 
-def test_completeoclcs::package_constructor_exists():
-    assert callable(completeoclcs::Package.__init__)
+def test_completeoclcs_package_constructor_exists():
+    assert callable(completeoclcs_Package.__init__)
 
 
-def test_completeoclcs::package_constructor_args():
-    sig = inspect.signature(completeoclcs::Package.__init__)
+def test_completeoclcs_package_constructor_args():
+    sig = inspect.signature(completeoclcs_Package.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_completeoclcs::operation_is_not_abstract():
-    assert not inspect.isabstract(completeoclcs::Operation)
+def test_completeoclcs_operation_is_not_abstract():
+    assert not inspect.isabstract(completeoclcs_Operation)
 
 
-def test_completeoclcs::operation_constructor_exists():
-    assert callable(completeoclcs::Operation.__init__)
+def test_completeoclcs_operation_constructor_exists():
+    assert callable(completeoclcs_Operation.__init__)
 
 
-def test_completeoclcs::operation_constructor_args():
-    sig = inspect.signature(completeoclcs::Operation.__init__)
+def test_completeoclcs_operation_constructor_args():
+    sig = inspect.signature(completeoclcs_Operation.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_completeoclcs::variablecs_is_not_abstract():
-    assert not inspect.isabstract(completeoclcs::VariableCS)
+def test_completeoclcs_variablecs_is_not_abstract():
+    assert not inspect.isabstract(completeoclcs_VariableCS)
 
 
-def test_completeoclcs::variablecs_constructor_exists():
-    assert callable(completeoclcs::VariableCS.__init__)
+def test_completeoclcs_variablecs_constructor_exists():
+    assert callable(completeoclcs_VariableCS.__init__)
 
 
-def test_completeoclcs::variablecs_constructor_args():
-    sig = inspect.signature(completeoclcs::VariableCS.__init__)
+def test_completeoclcs_variablecs_constructor_args():
+    sig = inspect.signature(completeoclcs_VariableCS.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -145,6 +215,20 @@ def test_featurecontextdeclcs_constructor_args():
 
 
 
+def test_completeoclcs_propertycontextdeclcs_is_not_abstract():
+    assert not inspect.isabstract(completeoclcs_PropertyContextDeclCS)
+
+
+def test_completeoclcs_propertycontextdeclcs_constructor_exists():
+    assert callable(completeoclcs_PropertyContextDeclCS.__init__)
+
+
+def test_completeoclcs_propertycontextdeclcs_constructor_args():
+    sig = inspect.signature(completeoclcs_PropertyContextDeclCS.__init__)
+    params = list(sig.parameters.keys())
+
+
+
 def test_expcs_is_not_abstract():
     assert not inspect.isabstract(ExpCS)
 
@@ -159,44 +243,44 @@ def test_expcs_constructor_args():
 
 
 
-def test_completeoclcs::oclmessageargcs_is_not_abstract():
-    assert not inspect.isabstract(completeoclcs::OCLMessageArgCS)
+def test_completeoclcs_oclmessageargcs_is_not_abstract():
+    assert not inspect.isabstract(completeoclcs_OCLMessageArgCS)
 
 
-def test_completeoclcs::oclmessageargcs_constructor_exists():
-    assert callable(completeoclcs::OCLMessageArgCS.__init__)
+def test_completeoclcs_oclmessageargcs_constructor_exists():
+    assert callable(completeoclcs_OCLMessageArgCS.__init__)
 
 
-def test_completeoclcs::oclmessageargcs_constructor_args():
-    sig = inspect.signature(completeoclcs::OCLMessageArgCS.__init__)
+def test_completeoclcs_oclmessageargcs_constructor_args():
+    sig = inspect.signature(completeoclcs_OCLMessageArgCS.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_completeoclcs::typedrefcs_is_not_abstract():
-    assert not inspect.isabstract(completeoclcs::TypedRefCS)
+def test_completeoclcs_typedrefcs_is_not_abstract():
+    assert not inspect.isabstract(completeoclcs_TypedRefCS)
 
 
-def test_completeoclcs::typedrefcs_constructor_exists():
-    assert callable(completeoclcs::TypedRefCS.__init__)
+def test_completeoclcs_typedrefcs_constructor_exists():
+    assert callable(completeoclcs_TypedRefCS.__init__)
 
 
-def test_completeoclcs::typedrefcs_constructor_args():
-    sig = inspect.signature(completeoclcs::TypedRefCS.__init__)
+def test_completeoclcs_typedrefcs_constructor_args():
+    sig = inspect.signature(completeoclcs_TypedRefCS.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_completeoclcs::expspecificationcs_is_not_abstract():
-    assert not inspect.isabstract(completeoclcs::ExpSpecificationCS)
+def test_completeoclcs_expspecificationcs_is_not_abstract():
+    assert not inspect.isabstract(completeoclcs_ExpSpecificationCS)
 
 
-def test_completeoclcs::expspecificationcs_constructor_exists():
-    assert callable(completeoclcs::ExpSpecificationCS.__init__)
+def test_completeoclcs_expspecificationcs_constructor_exists():
+    assert callable(completeoclcs_ExpSpecificationCS.__init__)
 
 
-def test_completeoclcs::expspecificationcs_constructor_args():
-    sig = inspect.signature(completeoclcs::ExpSpecificationCS.__init__)
+def test_completeoclcs_expspecificationcs_constructor_args():
+    sig = inspect.signature(completeoclcs_ExpSpecificationCS.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -229,30 +313,30 @@ def test_pathnamedeclcs_constructor_args():
 
 
 
-def test_completeoclcs::packagedeclarationcs_is_not_abstract():
-    assert not inspect.isabstract(completeoclcs::PackageDeclarationCS)
+def test_completeoclcs_packagedeclarationcs_is_not_abstract():
+    assert not inspect.isabstract(completeoclcs_PackageDeclarationCS)
 
 
-def test_completeoclcs::packagedeclarationcs_constructor_exists():
-    assert callable(completeoclcs::PackageDeclarationCS.__init__)
+def test_completeoclcs_packagedeclarationcs_constructor_exists():
+    assert callable(completeoclcs_PackageDeclarationCS.__init__)
 
 
-def test_completeoclcs::packagedeclarationcs_constructor_args():
-    sig = inspect.signature(completeoclcs::PackageDeclarationCS.__init__)
+def test_completeoclcs_packagedeclarationcs_constructor_args():
+    sig = inspect.signature(completeoclcs_PackageDeclarationCS.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_completeoclcs::contextdeclcs_is_not_abstract():
-    assert not inspect.isabstract(completeoclcs::ContextDeclCS)
+def test_completeoclcs_contextdeclcs_is_not_abstract():
+    assert not inspect.isabstract(completeoclcs_ContextDeclCS)
 
 
-def test_completeoclcs::contextdeclcs_constructor_exists():
-    assert callable(completeoclcs::ContextDeclCS.__init__)
+def test_completeoclcs_contextdeclcs_constructor_exists():
+    assert callable(completeoclcs_ContextDeclCS.__init__)
 
 
-def test_completeoclcs::contextdeclcs_constructor_args():
-    sig = inspect.signature(completeoclcs::ContextDeclCS.__init__)
+def test_completeoclcs_contextdeclcs_constructor_args():
+    sig = inspect.signature(completeoclcs_ContextDeclCS.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -285,65 +369,65 @@ def test_namespacecs_constructor_args():
 
 
 
-def test_completeoclcs::completeocldocumentcs_is_not_abstract():
-    assert not inspect.isabstract(completeoclcs::CompleteOCLDocumentCS)
+def test_completeoclcs_completeocldocumentcs_is_not_abstract():
+    assert not inspect.isabstract(completeoclcs_CompleteOCLDocumentCS)
 
 
-def test_completeoclcs::completeocldocumentcs_constructor_exists():
-    assert callable(completeoclcs::CompleteOCLDocumentCS.__init__)
+def test_completeoclcs_completeocldocumentcs_constructor_exists():
+    assert callable(completeoclcs_CompleteOCLDocumentCS.__init__)
 
 
-def test_completeoclcs::completeocldocumentcs_constructor_args():
-    sig = inspect.signature(completeoclcs::CompleteOCLDocumentCS.__init__)
+def test_completeoclcs_completeocldocumentcs_constructor_args():
+    sig = inspect.signature(completeoclcs_CompleteOCLDocumentCS.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_completeoclcs::class_is_not_abstract():
-    assert not inspect.isabstract(completeoclcs::Class)
+def test_completeoclcs_class_is_not_abstract():
+    assert not inspect.isabstract(completeoclcs_Class)
 
 
-def test_completeoclcs::class_constructor_exists():
-    assert callable(completeoclcs::Class.__init__)
+def test_completeoclcs_class_constructor_exists():
+    assert callable(completeoclcs_Class.__init__)
 
 
-def test_completeoclcs::class_constructor_args():
-    sig = inspect.signature(completeoclcs::Class.__init__)
+def test_completeoclcs_class_constructor_args():
+    sig = inspect.signature(completeoclcs_Class.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_completeoclcs::constraintcs_is_not_abstract():
-    assert not inspect.isabstract(completeoclcs::ConstraintCS)
+def test_completeoclcs_constraintcs_is_not_abstract():
+    assert not inspect.isabstract(completeoclcs_ConstraintCS)
 
 
-def test_completeoclcs::constraintcs_constructor_exists():
-    assert callable(completeoclcs::ConstraintCS.__init__)
+def test_completeoclcs_constraintcs_constructor_exists():
+    assert callable(completeoclcs_ConstraintCS.__init__)
 
 
-def test_completeoclcs::constraintcs_constructor_args():
-    sig = inspect.signature(completeoclcs::ConstraintCS.__init__)
+def test_completeoclcs_constraintcs_constructor_args():
+    sig = inspect.signature(completeoclcs_ConstraintCS.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_completeoclcs::defcs_is_not_abstract():
-    assert not inspect.isabstract(completeoclcs::DefCS)
+def test_completeoclcs_defcs_is_not_abstract():
+    assert not inspect.isabstract(completeoclcs_DefCS)
 
 
-def test_completeoclcs::defcs_constructor_exists():
-    assert callable(completeoclcs::DefCS.__init__)
+def test_completeoclcs_defcs_constructor_exists():
+    assert callable(completeoclcs_DefCS.__init__)
 
 
-def test_completeoclcs::defcs_constructor_args():
-    sig = inspect.signature(completeoclcs::DefCS.__init__)
+def test_completeoclcs_defcs_constructor_args():
+    sig = inspect.signature(completeoclcs_DefCS.__init__)
     params = list(sig.parameters.keys())
     assert "isStatic" in params, "Missing parameter 'isStatic'"
 
-def test_completeoclcs::defcs_has_isStatic():
-    assert hasattr(completeoclcs::DefCS, "isStatic")
+def test_completeoclcs_defcs_has_isStatic():
+    assert hasattr(completeoclcs_DefCS, "isStatic")
     descriptor = None
-    for klass in completeoclcs::DefCS.__mro__:
+    for klass in completeoclcs_DefCS.__mro__:
         if "isStatic" in klass.__dict__:
             descriptor = klass.__dict__["isStatic"]
             break
@@ -365,16 +449,30 @@ def test_templateableelementcs_constructor_args():
 
 
 
-def test_completeoclcs::operationcontextdeclcs_is_not_abstract():
-    assert not inspect.isabstract(completeoclcs::OperationContextDeclCS)
+def test_completeoclcs_defoperationcs_is_not_abstract():
+    assert not inspect.isabstract(completeoclcs_DefOperationCS)
 
 
-def test_completeoclcs::operationcontextdeclcs_constructor_exists():
-    assert callable(completeoclcs::OperationContextDeclCS.__init__)
+def test_completeoclcs_defoperationcs_constructor_exists():
+    assert callable(completeoclcs_DefOperationCS.__init__)
 
 
-def test_completeoclcs::operationcontextdeclcs_constructor_args():
-    sig = inspect.signature(completeoclcs::OperationContextDeclCS.__init__)
+def test_completeoclcs_defoperationcs_constructor_args():
+    sig = inspect.signature(completeoclcs_DefOperationCS.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_completeoclcs_operationcontextdeclcs_is_not_abstract():
+    assert not inspect.isabstract(completeoclcs_OperationContextDeclCS)
+
+
+def test_completeoclcs_operationcontextdeclcs_constructor_exists():
+    assert callable(completeoclcs_OperationContextDeclCS.__init__)
+
+
+def test_completeoclcs_operationcontextdeclcs_constructor_args():
+    sig = inspect.signature(completeoclcs_OperationContextDeclCS.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -393,139 +491,41 @@ def test_contextdeclcs_constructor_args():
 
 
 
-def test_completeoclcs::featurecontextdeclcs_is_not_abstract():
-    assert not inspect.isabstract(completeoclcs::FeatureContextDeclCS)
+def test_completeoclcs_featurecontextdeclcs_is_not_abstract():
+    assert not inspect.isabstract(completeoclcs_FeatureContextDeclCS)
 
 
-def test_completeoclcs::featurecontextdeclcs_constructor_exists():
-    assert callable(completeoclcs::FeatureContextDeclCS.__init__)
+def test_completeoclcs_featurecontextdeclcs_constructor_exists():
+    assert callable(completeoclcs_FeatureContextDeclCS.__init__)
 
 
-def test_completeoclcs::featurecontextdeclcs_constructor_args():
-    sig = inspect.signature(completeoclcs::FeatureContextDeclCS.__init__)
+def test_completeoclcs_featurecontextdeclcs_constructor_args():
+    sig = inspect.signature(completeoclcs_FeatureContextDeclCS.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_completeoclcs::classifiercontextdeclcs_is_not_abstract():
-    assert not inspect.isabstract(completeoclcs::ClassifierContextDeclCS)
+def test_completeoclcs_classifiercontextdeclcs_is_not_abstract():
+    assert not inspect.isabstract(completeoclcs_ClassifierContextDeclCS)
 
 
-def test_completeoclcs::classifiercontextdeclcs_constructor_exists():
-    assert callable(completeoclcs::ClassifierContextDeclCS.__init__)
+def test_completeoclcs_classifiercontextdeclcs_constructor_exists():
+    assert callable(completeoclcs_ClassifierContextDeclCS.__init__)
 
 
-def test_completeoclcs::classifiercontextdeclcs_constructor_args():
-    sig = inspect.signature(completeoclcs::ClassifierContextDeclCS.__init__)
+def test_completeoclcs_classifiercontextdeclcs_constructor_args():
+    sig = inspect.signature(completeoclcs_ClassifierContextDeclCS.__init__)
     params = list(sig.parameters.keys())
     assert "selfName" in params, "Missing parameter 'selfName'"
 
-def test_completeoclcs::classifiercontextdeclcs_has_selfName():
-    assert hasattr(completeoclcs::ClassifierContextDeclCS, "selfName")
+def test_completeoclcs_classifiercontextdeclcs_has_selfName():
+    assert hasattr(completeoclcs_ClassifierContextDeclCS, "selfName")
     descriptor = None
-    for klass in completeoclcs::ClassifierContextDeclCS.__mro__:
+    for klass in completeoclcs_ClassifierContextDeclCS.__mro__:
         if "selfName" in klass.__dict__:
             descriptor = klass.__dict__["selfName"]
             break
     assert isinstance(descriptor, property)
-
-
-
-def test_completeoclcs::parametercs_is_not_abstract():
-    assert not inspect.isabstract(completeoclcs::ParameterCS)
-
-
-def test_completeoclcs::parametercs_constructor_exists():
-    assert callable(completeoclcs::ParameterCS.__init__)
-
-
-def test_completeoclcs::parametercs_constructor_args():
-    sig = inspect.signature(completeoclcs::ParameterCS.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_defcs_is_not_abstract():
-    assert not inspect.isabstract(DefCS)
-
-
-def test_defcs_constructor_exists():
-    assert callable(DefCS.__init__)
-
-
-def test_defcs_constructor_args():
-    sig = inspect.signature(DefCS.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_completeoclcs::defpropertycs_is_not_abstract():
-    assert not inspect.isabstract(completeoclcs::DefPropertyCS)
-
-
-def test_completeoclcs::defpropertycs_constructor_exists():
-    assert callable(completeoclcs::DefPropertyCS.__init__)
-
-
-def test_completeoclcs::defpropertycs_constructor_args():
-    sig = inspect.signature(completeoclcs::DefPropertyCS.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_completeoclcs::defoperationcs_is_not_abstract():
-    assert not inspect.isabstract(completeoclcs::DefOperationCS)
-
-
-def test_completeoclcs::defoperationcs_constructor_exists():
-    assert callable(completeoclcs::DefOperationCS.__init__)
-
-
-def test_completeoclcs::defoperationcs_constructor_args():
-    sig = inspect.signature(completeoclcs::DefOperationCS.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_completeoclcs::property_is_not_abstract():
-    assert not inspect.isabstract(completeoclcs::Property)
-
-
-def test_completeoclcs::property_constructor_exists():
-    assert callable(completeoclcs::Property.__init__)
-
-
-def test_completeoclcs::property_constructor_args():
-    sig = inspect.signature(completeoclcs::Property.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_completeoclcs::propertycontextdeclcs_is_not_abstract():
-    assert not inspect.isabstract(completeoclcs::PropertyContextDeclCS)
-
-
-def test_completeoclcs::propertycontextdeclcs_constructor_exists():
-    assert callable(completeoclcs::PropertyContextDeclCS.__init__)
-
-
-def test_completeoclcs::propertycontextdeclcs_constructor_args():
-    sig = inspect.signature(completeoclcs::PropertyContextDeclCS.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_completeoclcs::pathnamecs_is_not_abstract():
-    assert not inspect.isabstract(completeoclcs::PathNameCS)
-
-
-def test_completeoclcs::pathnamecs_constructor_exists():
-    assert callable(completeoclcs::PathNameCS.__init__)
-
-
-def test_completeoclcs::pathnamecs_constructor_args():
-    sig = inspect.signature(completeoclcs::PathNameCS.__init__)
-    params = list(sig.parameters.keys())
 
 
 # =============================================================================
@@ -539,38 +539,56 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
+completeoclcs_ParameterCS_strategy = st.builds(
+    completeoclcs_ParameterCS,
+)
+DefCS_strategy = st.builds(
+    DefCS,
+)
+completeoclcs_DefPropertyCS_strategy = st.builds(
+    completeoclcs_DefPropertyCS,
+)
+completeoclcs_Property_strategy = st.builds(
+    completeoclcs_Property,
+)
+completeoclcs_PathNameCS_strategy = st.builds(
+    completeoclcs_PathNameCS,
+)
 MorePivotable_strategy = st.builds(
     MorePivotable,
 )
 ModelElementCS_strategy = st.builds(
     ModelElementCS,
 )
-completeoclcs::PathNameDeclCS_strategy = st.builds(
-    completeoclcs::PathNameDeclCS,
+completeoclcs_PathNameDeclCS_strategy = st.builds(
+    completeoclcs_PathNameDeclCS,
 )
-completeoclcs::Package_strategy = st.builds(
-    completeoclcs::Package,
+completeoclcs_Package_strategy = st.builds(
+    completeoclcs_Package,
 )
-completeoclcs::Operation_strategy = st.builds(
-    completeoclcs::Operation,
+completeoclcs_Operation_strategy = st.builds(
+    completeoclcs_Operation,
 )
-completeoclcs::VariableCS_strategy = st.builds(
-    completeoclcs::VariableCS,
+completeoclcs_VariableCS_strategy = st.builds(
+    completeoclcs_VariableCS,
 )
 FeatureContextDeclCS_strategy = st.builds(
     FeatureContextDeclCS,
 )
+completeoclcs_PropertyContextDeclCS_strategy = st.builds(
+    completeoclcs_PropertyContextDeclCS,
+)
 ExpCS_strategy = st.builds(
     ExpCS,
 )
-completeoclcs::OCLMessageArgCS_strategy = st.builds(
-    completeoclcs::OCLMessageArgCS,
+completeoclcs_OCLMessageArgCS_strategy = st.builds(
+    completeoclcs_OCLMessageArgCS,
 )
-completeoclcs::TypedRefCS_strategy = st.builds(
-    completeoclcs::TypedRefCS,
+completeoclcs_TypedRefCS_strategy = st.builds(
+    completeoclcs_TypedRefCS,
 )
-completeoclcs::ExpSpecificationCS_strategy = st.builds(
-    completeoclcs::ExpSpecificationCS,
+completeoclcs_ExpSpecificationCS_strategy = st.builds(
+    completeoclcs_ExpSpecificationCS,
 )
 TypedElementCS_strategy = st.builds(
     TypedElementCS,
@@ -578,11 +596,11 @@ TypedElementCS_strategy = st.builds(
 PathNameDeclCS_strategy = st.builds(
     PathNameDeclCS,
 )
-completeoclcs::PackageDeclarationCS_strategy = st.builds(
-    completeoclcs::PackageDeclarationCS,
+completeoclcs_PackageDeclarationCS_strategy = st.builds(
+    completeoclcs_PackageDeclarationCS,
 )
-completeoclcs::ContextDeclCS_strategy = st.builds(
-    completeoclcs::ContextDeclCS,
+completeoclcs_ContextDeclCS_strategy = st.builds(
+    completeoclcs_ContextDeclCS,
 )
 RootCS_strategy = st.builds(
     RootCS,
@@ -590,58 +608,65 @@ RootCS_strategy = st.builds(
 NamespaceCS_strategy = st.builds(
     NamespaceCS,
 )
-completeoclcs::CompleteOCLDocumentCS_strategy = st.builds(
-    completeoclcs::CompleteOCLDocumentCS,
+completeoclcs_CompleteOCLDocumentCS_strategy = st.builds(
+    completeoclcs_CompleteOCLDocumentCS,
 )
-completeoclcs::Class_strategy = st.builds(
-    completeoclcs::Class,
+completeoclcs_Class_strategy = st.builds(
+    completeoclcs_Class,
 )
-completeoclcs::ConstraintCS_strategy = st.builds(
-    completeoclcs::ConstraintCS,
+completeoclcs_ConstraintCS_strategy = st.builds(
+    completeoclcs_ConstraintCS,
 )
-completeoclcs::DefCS_strategy = st.builds(
-    completeoclcs::DefCS,
+completeoclcs_DefCS_strategy = st.builds(
+    completeoclcs_DefCS,
     isStatic=
         st.booleans()
 )
 TemplateableElementCS_strategy = st.builds(
     TemplateableElementCS,
 )
-completeoclcs::OperationContextDeclCS_strategy = st.builds(
-    completeoclcs::OperationContextDeclCS,
+completeoclcs_DefOperationCS_strategy = st.builds(
+    completeoclcs_DefOperationCS,
+)
+completeoclcs_OperationContextDeclCS_strategy = st.builds(
+    completeoclcs_OperationContextDeclCS,
 )
 ContextDeclCS_strategy = st.builds(
     ContextDeclCS,
 )
-completeoclcs::FeatureContextDeclCS_strategy = st.builds(
-    completeoclcs::FeatureContextDeclCS,
+completeoclcs_FeatureContextDeclCS_strategy = st.builds(
+    completeoclcs_FeatureContextDeclCS,
 )
-completeoclcs::ClassifierContextDeclCS_strategy = st.builds(
-    completeoclcs::ClassifierContextDeclCS,
+completeoclcs_ClassifierContextDeclCS_strategy = st.builds(
+    completeoclcs_ClassifierContextDeclCS,
     selfName=
         safe_text
 )
-completeoclcs::ParameterCS_strategy = st.builds(
-    completeoclcs::ParameterCS,
-)
-DefCS_strategy = st.builds(
-    DefCS,
-)
-completeoclcs::DefPropertyCS_strategy = st.builds(
-    completeoclcs::DefPropertyCS,
-)
-completeoclcs::DefOperationCS_strategy = st.builds(
-    completeoclcs::DefOperationCS,
-)
-completeoclcs::Property_strategy = st.builds(
-    completeoclcs::Property,
-)
-completeoclcs::PropertyContextDeclCS_strategy = st.builds(
-    completeoclcs::PropertyContextDeclCS,
-)
-completeoclcs::PathNameCS_strategy = st.builds(
-    completeoclcs::PathNameCS,
-)
+
+@given(instance=completeoclcs_ParameterCS_strategy)
+@settings(max_examples=50)
+def test_completeoclcs_parametercs_instantiation(instance):
+    assert isinstance(instance, completeoclcs_ParameterCS)
+
+@given(instance=DefCS_strategy)
+@settings(max_examples=50)
+def test_defcs_instantiation(instance):
+    assert isinstance(instance, DefCS)
+
+@given(instance=completeoclcs_DefPropertyCS_strategy)
+@settings(max_examples=50)
+def test_completeoclcs_defpropertycs_instantiation(instance):
+    assert isinstance(instance, completeoclcs_DefPropertyCS)
+
+@given(instance=completeoclcs_Property_strategy)
+@settings(max_examples=50)
+def test_completeoclcs_property_instantiation(instance):
+    assert isinstance(instance, completeoclcs_Property)
+
+@given(instance=completeoclcs_PathNameCS_strategy)
+@settings(max_examples=50)
+def test_completeoclcs_pathnamecs_instantiation(instance):
+    assert isinstance(instance, completeoclcs_PathNameCS)
 
 @given(instance=MorePivotable_strategy)
 @settings(max_examples=50)
@@ -653,50 +678,55 @@ def test_morepivotable_instantiation(instance):
 def test_modelelementcs_instantiation(instance):
     assert isinstance(instance, ModelElementCS)
 
-@given(instance=completeoclcs::PathNameDeclCS_strategy)
+@given(instance=completeoclcs_PathNameDeclCS_strategy)
 @settings(max_examples=50)
-def test_completeoclcs::pathnamedeclcs_instantiation(instance):
-    assert isinstance(instance, completeoclcs::PathNameDeclCS)
+def test_completeoclcs_pathnamedeclcs_instantiation(instance):
+    assert isinstance(instance, completeoclcs_PathNameDeclCS)
 
-@given(instance=completeoclcs::Package_strategy)
+@given(instance=completeoclcs_Package_strategy)
 @settings(max_examples=50)
-def test_completeoclcs::package_instantiation(instance):
-    assert isinstance(instance, completeoclcs::Package)
+def test_completeoclcs_package_instantiation(instance):
+    assert isinstance(instance, completeoclcs_Package)
 
-@given(instance=completeoclcs::Operation_strategy)
+@given(instance=completeoclcs_Operation_strategy)
 @settings(max_examples=50)
-def test_completeoclcs::operation_instantiation(instance):
-    assert isinstance(instance, completeoclcs::Operation)
+def test_completeoclcs_operation_instantiation(instance):
+    assert isinstance(instance, completeoclcs_Operation)
 
-@given(instance=completeoclcs::VariableCS_strategy)
+@given(instance=completeoclcs_VariableCS_strategy)
 @settings(max_examples=50)
-def test_completeoclcs::variablecs_instantiation(instance):
-    assert isinstance(instance, completeoclcs::VariableCS)
+def test_completeoclcs_variablecs_instantiation(instance):
+    assert isinstance(instance, completeoclcs_VariableCS)
 
 @given(instance=FeatureContextDeclCS_strategy)
 @settings(max_examples=50)
 def test_featurecontextdeclcs_instantiation(instance):
     assert isinstance(instance, FeatureContextDeclCS)
 
+@given(instance=completeoclcs_PropertyContextDeclCS_strategy)
+@settings(max_examples=50)
+def test_completeoclcs_propertycontextdeclcs_instantiation(instance):
+    assert isinstance(instance, completeoclcs_PropertyContextDeclCS)
+
 @given(instance=ExpCS_strategy)
 @settings(max_examples=50)
 def test_expcs_instantiation(instance):
     assert isinstance(instance, ExpCS)
 
-@given(instance=completeoclcs::OCLMessageArgCS_strategy)
+@given(instance=completeoclcs_OCLMessageArgCS_strategy)
 @settings(max_examples=50)
-def test_completeoclcs::oclmessageargcs_instantiation(instance):
-    assert isinstance(instance, completeoclcs::OCLMessageArgCS)
+def test_completeoclcs_oclmessageargcs_instantiation(instance):
+    assert isinstance(instance, completeoclcs_OCLMessageArgCS)
 
-@given(instance=completeoclcs::TypedRefCS_strategy)
+@given(instance=completeoclcs_TypedRefCS_strategy)
 @settings(max_examples=50)
-def test_completeoclcs::typedrefcs_instantiation(instance):
-    assert isinstance(instance, completeoclcs::TypedRefCS)
+def test_completeoclcs_typedrefcs_instantiation(instance):
+    assert isinstance(instance, completeoclcs_TypedRefCS)
 
-@given(instance=completeoclcs::ExpSpecificationCS_strategy)
+@given(instance=completeoclcs_ExpSpecificationCS_strategy)
 @settings(max_examples=50)
-def test_completeoclcs::expspecificationcs_instantiation(instance):
-    assert isinstance(instance, completeoclcs::ExpSpecificationCS)
+def test_completeoclcs_expspecificationcs_instantiation(instance):
+    assert isinstance(instance, completeoclcs_ExpSpecificationCS)
 
 @given(instance=TypedElementCS_strategy)
 @settings(max_examples=50)
@@ -708,15 +738,15 @@ def test_typedelementcs_instantiation(instance):
 def test_pathnamedeclcs_instantiation(instance):
     assert isinstance(instance, PathNameDeclCS)
 
-@given(instance=completeoclcs::PackageDeclarationCS_strategy)
+@given(instance=completeoclcs_PackageDeclarationCS_strategy)
 @settings(max_examples=50)
-def test_completeoclcs::packagedeclarationcs_instantiation(instance):
-    assert isinstance(instance, completeoclcs::PackageDeclarationCS)
+def test_completeoclcs_packagedeclarationcs_instantiation(instance):
+    assert isinstance(instance, completeoclcs_PackageDeclarationCS)
 
-@given(instance=completeoclcs::ContextDeclCS_strategy)
+@given(instance=completeoclcs_ContextDeclCS_strategy)
 @settings(max_examples=50)
-def test_completeoclcs::contextdeclcs_instantiation(instance):
-    assert isinstance(instance, completeoclcs::ContextDeclCS)
+def test_completeoclcs_contextdeclcs_instantiation(instance):
+    assert isinstance(instance, completeoclcs_ContextDeclCS)
 
 @given(instance=RootCS_strategy)
 @settings(max_examples=50)
@@ -728,33 +758,30 @@ def test_rootcs_instantiation(instance):
 def test_namespacecs_instantiation(instance):
     assert isinstance(instance, NamespaceCS)
 
-@given(instance=completeoclcs::CompleteOCLDocumentCS_strategy)
+@given(instance=completeoclcs_CompleteOCLDocumentCS_strategy)
 @settings(max_examples=50)
-def test_completeoclcs::completeocldocumentcs_instantiation(instance):
-    assert isinstance(instance, completeoclcs::CompleteOCLDocumentCS)
+def test_completeoclcs_completeocldocumentcs_instantiation(instance):
+    assert isinstance(instance, completeoclcs_CompleteOCLDocumentCS)
 
-@given(instance=completeoclcs::Class_strategy)
+@given(instance=completeoclcs_Class_strategy)
 @settings(max_examples=50)
-def test_completeoclcs::class_instantiation(instance):
-    assert isinstance(instance, completeoclcs::Class)
+def test_completeoclcs_class_instantiation(instance):
+    assert isinstance(instance, completeoclcs_Class)
 
-@given(instance=completeoclcs::ConstraintCS_strategy)
+@given(instance=completeoclcs_ConstraintCS_strategy)
 @settings(max_examples=50)
-def test_completeoclcs::constraintcs_instantiation(instance):
-    assert isinstance(instance, completeoclcs::ConstraintCS)
+def test_completeoclcs_constraintcs_instantiation(instance):
+    assert isinstance(instance, completeoclcs_ConstraintCS)
 
-@given(instance=completeoclcs::DefCS_strategy)
+@given(instance=completeoclcs_DefCS_strategy)
 @settings(max_examples=50)
-def test_completeoclcs::defcs_instantiation(instance):
-    assert isinstance(instance, completeoclcs::DefCS)
-
-@given(instance=completeoclcs::DefCS_strategy)
-def test_completeoclcs::defcs_isStatic_type(instance):
-    assert isinstance(instance.isStatic, bool)
+def test_completeoclcs_defcs_instantiation(instance):
+    assert isinstance(instance, completeoclcs_DefCS)
 
 
-@given(instance=completeoclcs::DefCS_strategy)
-def test_completeoclcs::defcs_isStatic_setter(instance):
+
+@given(instance=completeoclcs_DefCS_strategy)
+def test_completeoclcs_defcs_isStatic_setter(instance):
     original = instance.isStatic
     instance.isStatic = original
     assert instance.isStatic == original
@@ -764,68 +791,35 @@ def test_completeoclcs::defcs_isStatic_setter(instance):
 def test_templateableelementcs_instantiation(instance):
     assert isinstance(instance, TemplateableElementCS)
 
-@given(instance=completeoclcs::OperationContextDeclCS_strategy)
+@given(instance=completeoclcs_DefOperationCS_strategy)
 @settings(max_examples=50)
-def test_completeoclcs::operationcontextdeclcs_instantiation(instance):
-    assert isinstance(instance, completeoclcs::OperationContextDeclCS)
+def test_completeoclcs_defoperationcs_instantiation(instance):
+    assert isinstance(instance, completeoclcs_DefOperationCS)
+
+@given(instance=completeoclcs_OperationContextDeclCS_strategy)
+@settings(max_examples=50)
+def test_completeoclcs_operationcontextdeclcs_instantiation(instance):
+    assert isinstance(instance, completeoclcs_OperationContextDeclCS)
 
 @given(instance=ContextDeclCS_strategy)
 @settings(max_examples=50)
 def test_contextdeclcs_instantiation(instance):
     assert isinstance(instance, ContextDeclCS)
 
-@given(instance=completeoclcs::FeatureContextDeclCS_strategy)
+@given(instance=completeoclcs_FeatureContextDeclCS_strategy)
 @settings(max_examples=50)
-def test_completeoclcs::featurecontextdeclcs_instantiation(instance):
-    assert isinstance(instance, completeoclcs::FeatureContextDeclCS)
+def test_completeoclcs_featurecontextdeclcs_instantiation(instance):
+    assert isinstance(instance, completeoclcs_FeatureContextDeclCS)
 
-@given(instance=completeoclcs::ClassifierContextDeclCS_strategy)
+@given(instance=completeoclcs_ClassifierContextDeclCS_strategy)
 @settings(max_examples=50)
-def test_completeoclcs::classifiercontextdeclcs_instantiation(instance):
-    assert isinstance(instance, completeoclcs::ClassifierContextDeclCS)
-
-@given(instance=completeoclcs::ClassifierContextDeclCS_strategy)
-def test_completeoclcs::classifiercontextdeclcs_selfName_type(instance):
-    assert isinstance(instance.selfName, str)
+def test_completeoclcs_classifiercontextdeclcs_instantiation(instance):
+    assert isinstance(instance, completeoclcs_ClassifierContextDeclCS)
 
 
-@given(instance=completeoclcs::ClassifierContextDeclCS_strategy)
-def test_completeoclcs::classifiercontextdeclcs_selfName_setter(instance):
+
+@given(instance=completeoclcs_ClassifierContextDeclCS_strategy)
+def test_completeoclcs_classifiercontextdeclcs_selfName_setter(instance):
     original = instance.selfName
     instance.selfName = original
     assert instance.selfName == original
-
-@given(instance=completeoclcs::ParameterCS_strategy)
-@settings(max_examples=50)
-def test_completeoclcs::parametercs_instantiation(instance):
-    assert isinstance(instance, completeoclcs::ParameterCS)
-
-@given(instance=DefCS_strategy)
-@settings(max_examples=50)
-def test_defcs_instantiation(instance):
-    assert isinstance(instance, DefCS)
-
-@given(instance=completeoclcs::DefPropertyCS_strategy)
-@settings(max_examples=50)
-def test_completeoclcs::defpropertycs_instantiation(instance):
-    assert isinstance(instance, completeoclcs::DefPropertyCS)
-
-@given(instance=completeoclcs::DefOperationCS_strategy)
-@settings(max_examples=50)
-def test_completeoclcs::defoperationcs_instantiation(instance):
-    assert isinstance(instance, completeoclcs::DefOperationCS)
-
-@given(instance=completeoclcs::Property_strategy)
-@settings(max_examples=50)
-def test_completeoclcs::property_instantiation(instance):
-    assert isinstance(instance, completeoclcs::Property)
-
-@given(instance=completeoclcs::PropertyContextDeclCS_strategy)
-@settings(max_examples=50)
-def test_completeoclcs::propertycontextdeclcs_instantiation(instance):
-    assert isinstance(instance, completeoclcs::PropertyContextDeclCS)
-
-@given(instance=completeoclcs::PathNameCS_strategy)
-@settings(max_examples=50)
-def test_completeoclcs::pathnamecs_instantiation(instance):
-    assert isinstance(instance, completeoclcs::PathNameCS)

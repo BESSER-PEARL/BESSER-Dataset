@@ -3,71 +3,71 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    ocl::ecore::OrderedSetType,
-    ocl::ecore::CollectionItem,
-    ocl::ecore::CallExp,
-    ocl::ecore::BooleanLiteralExp,
-    ocl::ecore::AssociationClassCallExp,
-    ocl::ecore::ExpressionInOCL,
-    ecore::ocl::EClass,
-    ocl::ecore::SendSignalAction,
-    ecore::ocl::EModelElement,
-    ENamedElement,
-    ocl::ecore::Constraint,
-    ecore::ocl::EOperation,
-    ocl::ecore::CallOperationAction,
-    ocl::ecore::VoidType,
-    ocl::ecore::TypeType,
-    ocl::ecore::TupleType,
-    ocl::ecore::TemplateParameterType,
-    ocl::ecore::MessageType,
-    ocl::ecore::InvalidType,
-    types::ElementType,
-    EClass,
-    ocl::ecore::ElementType,
-    ocl::ecore::CollectionType,
-    ocl::ecore::BagType,
-    ocl::ecore::AnyType,
-    ocl::ecore::StringLiteralExp,
-    ocl::ecore::StateExp,
-    ocl::ecore::RealLiteralExp,
-    ocl::ecore::PropertyCallExp,
-    ocl::ecore::PrimitiveLiteralExp,
-    ecore::ocl::EReference,
+from python_code import (
+    ocl_ecore_StringLiteralExp,
+    ocl_ecore_StateExp,
+    ocl_ecore_RealLiteralExp,
+    ocl_ecore_PropertyCallExp,
+    ocl_ecore_PrimitiveLiteralExp,
+    ecore_ocl_EReference,
     NavigationCallExp,
-    ocl::ecore::OppositePropertyCallExp,
-    ocl::ecore::VariableExp,
-    ocl::ecore::Variable,
-    ocl::ecore::UnspecifiedValueExp,
-    ocl::ecore::TypeExp,
-    ocl::ecore::TupleLiteralPart,
-    ocl::ecore::TupleLiteralExp,
-    ocl::ecore::EnumLiteralExp,
-    ocl::ecore::CollectionRange,
-    ocl::ecore::CollectionLiteralPart,
-    ocl::ecore::CollectionLiteralExp,
-    ocl::ecore::OperationCallExp,
-    ocl::ecore::OCLExpression,
-    ocl::ecore::NumericLiteralExp,
-    ocl::ecore::NullLiteralExp,
-    ocl::ecore::NavigationCallExp,
-    ocl::ecore::MessageExp,
-    ocl::ecore::LoopExp,
-    ocl::ecore::LiteralExp,
-    ocl::ecore::LetExp,
-    ocl::ecore::IteratorExp,
-    ocl::ecore::IterateExp,
-    ocl::ecore::InvalidLiteralExp,
-    ocl::ecore::UnlimitedNaturalLiteralExp,
-    ocl::ecore::IntegerLiteralExp,
-    ocl::ecore::IfExp,
-    ocl::ecore::FeatureCallExp,
-    ocl::ecore::SetType,
-    ocl::ecore::SequenceType,
-    ocl::ecore::PrimitiveType,
+    ocl_ecore_OppositePropertyCallExp,
+    ocl_ecore_VariableExp,
+    ocl_ecore_Variable,
+    ocl_ecore_UnspecifiedValueExp,
+    ocl_ecore_TypeExp,
+    ocl_ecore_TupleLiteralPart,
+    ocl_ecore_TupleLiteralExp,
+    ocl_ecore_EnumLiteralExp,
+    ocl_ecore_CollectionRange,
+    ocl_ecore_CollectionLiteralPart,
+    ocl_ecore_CollectionLiteralExp,
+    ocl_ecore_OperationCallExp,
+    ocl_ecore_OCLExpression,
+    ocl_ecore_NumericLiteralExp,
+    ocl_ecore_NullLiteralExp,
+    ocl_ecore_NavigationCallExp,
+    ocl_ecore_MessageExp,
+    ocl_ecore_LoopExp,
+    ocl_ecore_LiteralExp,
+    ocl_ecore_LetExp,
+    ocl_ecore_IteratorExp,
+    ocl_ecore_IterateExp,
+    ocl_ecore_InvalidLiteralExp,
+    ocl_ecore_UnlimitedNaturalLiteralExp,
+    ocl_ecore_IntegerLiteralExp,
+    ocl_ecore_IfExp,
+    ocl_ecore_FeatureCallExp,
+    ocl_ecore_SetType,
+    ocl_ecore_SequenceType,
+    ocl_ecore_PrimitiveType,
+    ocl_ecore_OrderedSetType,
+    ocl_ecore_CollectionItem,
+    ocl_ecore_CallExp,
+    ocl_ecore_BooleanLiteralExp,
+    ocl_ecore_AssociationClassCallExp,
+    ocl_ecore_ExpressionInOCL,
+    ecore_ocl_EClass,
+    ocl_ecore_SendSignalAction,
+    ecore_ocl_EModelElement,
+    ENamedElement,
+    ocl_ecore_Constraint,
+    ecore_ocl_EOperation,
+    ocl_ecore_CallOperationAction,
+    ocl_ecore_VoidType,
+    ocl_ecore_TypeType,
+    ocl_ecore_TupleType,
+    ocl_ecore_TemplateParameterType,
+    ocl_ecore_MessageType,
+    ocl_ecore_InvalidType,
+    types_ElementType,
+    EClass,
+    ocl_ecore_ElementType,
+    ocl_ecore_CollectionType,
+    ocl_ecore_BagType,
+    ocl_ecore_AnyType,
 )
 
 # =============================================================================
@@ -76,446 +76,86 @@ from classes import (
 
 
 
-def test_ocl::ecore::orderedsettype_is_not_abstract():
-    assert not inspect.isabstract(ocl::ecore::OrderedSetType)
+def test_ocl_ecore_stringliteralexp_is_not_abstract():
+    assert not inspect.isabstract(ocl_ecore_StringLiteralExp)
 
 
-def test_ocl::ecore::orderedsettype_constructor_exists():
-    assert callable(ocl::ecore::OrderedSetType.__init__)
+def test_ocl_ecore_stringliteralexp_constructor_exists():
+    assert callable(ocl_ecore_StringLiteralExp.__init__)
 
 
-def test_ocl::ecore::orderedsettype_constructor_args():
-    sig = inspect.signature(ocl::ecore::OrderedSetType.__init__)
+def test_ocl_ecore_stringliteralexp_constructor_args():
+    sig = inspect.signature(ocl_ecore_StringLiteralExp.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ocl::ecore::collectionitem_is_not_abstract():
-    assert not inspect.isabstract(ocl::ecore::CollectionItem)
+def test_ocl_ecore_stateexp_is_not_abstract():
+    assert not inspect.isabstract(ocl_ecore_StateExp)
 
 
-def test_ocl::ecore::collectionitem_constructor_exists():
-    assert callable(ocl::ecore::CollectionItem.__init__)
+def test_ocl_ecore_stateexp_constructor_exists():
+    assert callable(ocl_ecore_StateExp.__init__)
 
 
-def test_ocl::ecore::collectionitem_constructor_args():
-    sig = inspect.signature(ocl::ecore::CollectionItem.__init__)
+def test_ocl_ecore_stateexp_constructor_args():
+    sig = inspect.signature(ocl_ecore_StateExp.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ocl::ecore::callexp_is_not_abstract():
-    assert not inspect.isabstract(ocl::ecore::CallExp)
+def test_ocl_ecore_realliteralexp_is_not_abstract():
+    assert not inspect.isabstract(ocl_ecore_RealLiteralExp)
 
 
-def test_ocl::ecore::callexp_constructor_exists():
-    assert callable(ocl::ecore::CallExp.__init__)
+def test_ocl_ecore_realliteralexp_constructor_exists():
+    assert callable(ocl_ecore_RealLiteralExp.__init__)
 
 
-def test_ocl::ecore::callexp_constructor_args():
-    sig = inspect.signature(ocl::ecore::CallExp.__init__)
+def test_ocl_ecore_realliteralexp_constructor_args():
+    sig = inspect.signature(ocl_ecore_RealLiteralExp.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ocl::ecore::booleanliteralexp_is_not_abstract():
-    assert not inspect.isabstract(ocl::ecore::BooleanLiteralExp)
+def test_ocl_ecore_propertycallexp_is_not_abstract():
+    assert not inspect.isabstract(ocl_ecore_PropertyCallExp)
 
 
-def test_ocl::ecore::booleanliteralexp_constructor_exists():
-    assert callable(ocl::ecore::BooleanLiteralExp.__init__)
+def test_ocl_ecore_propertycallexp_constructor_exists():
+    assert callable(ocl_ecore_PropertyCallExp.__init__)
 
 
-def test_ocl::ecore::booleanliteralexp_constructor_args():
-    sig = inspect.signature(ocl::ecore::BooleanLiteralExp.__init__)
+def test_ocl_ecore_propertycallexp_constructor_args():
+    sig = inspect.signature(ocl_ecore_PropertyCallExp.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ocl::ecore::associationclasscallexp_is_not_abstract():
-    assert not inspect.isabstract(ocl::ecore::AssociationClassCallExp)
+def test_ocl_ecore_primitiveliteralexp_is_not_abstract():
+    assert not inspect.isabstract(ocl_ecore_PrimitiveLiteralExp)
 
 
-def test_ocl::ecore::associationclasscallexp_constructor_exists():
-    assert callable(ocl::ecore::AssociationClassCallExp.__init__)
+def test_ocl_ecore_primitiveliteralexp_constructor_exists():
+    assert callable(ocl_ecore_PrimitiveLiteralExp.__init__)
 
 
-def test_ocl::ecore::associationclasscallexp_constructor_args():
-    sig = inspect.signature(ocl::ecore::AssociationClassCallExp.__init__)
+def test_ocl_ecore_primitiveliteralexp_constructor_args():
+    sig = inspect.signature(ocl_ecore_PrimitiveLiteralExp.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ocl::ecore::expressioninocl_is_not_abstract():
-    assert not inspect.isabstract(ocl::ecore::ExpressionInOCL)
+def test_ecore_ocl_ereference_is_not_abstract():
+    assert not inspect.isabstract(ecore_ocl_EReference)
 
 
-def test_ocl::ecore::expressioninocl_constructor_exists():
-    assert callable(ocl::ecore::ExpressionInOCL.__init__)
+def test_ecore_ocl_ereference_constructor_exists():
+    assert callable(ecore_ocl_EReference.__init__)
 
 
-def test_ocl::ecore::expressioninocl_constructor_args():
-    sig = inspect.signature(ocl::ecore::ExpressionInOCL.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_ecore::ocl::eclass_is_not_abstract():
-    assert not inspect.isabstract(ecore::ocl::EClass)
-
-
-def test_ecore::ocl::eclass_constructor_exists():
-    assert callable(ecore::ocl::EClass.__init__)
-
-
-def test_ecore::ocl::eclass_constructor_args():
-    sig = inspect.signature(ecore::ocl::EClass.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_ocl::ecore::sendsignalaction_is_not_abstract():
-    assert not inspect.isabstract(ocl::ecore::SendSignalAction)
-
-
-def test_ocl::ecore::sendsignalaction_constructor_exists():
-    assert callable(ocl::ecore::SendSignalAction.__init__)
-
-
-def test_ocl::ecore::sendsignalaction_constructor_args():
-    sig = inspect.signature(ocl::ecore::SendSignalAction.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_ecore::ocl::emodelelement_is_not_abstract():
-    assert not inspect.isabstract(ecore::ocl::EModelElement)
-
-
-def test_ecore::ocl::emodelelement_constructor_exists():
-    assert callable(ecore::ocl::EModelElement.__init__)
-
-
-def test_ecore::ocl::emodelelement_constructor_args():
-    sig = inspect.signature(ecore::ocl::EModelElement.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_enamedelement_is_not_abstract():
-    assert not inspect.isabstract(ENamedElement)
-
-
-def test_enamedelement_constructor_exists():
-    assert callable(ENamedElement.__init__)
-
-
-def test_enamedelement_constructor_args():
-    sig = inspect.signature(ENamedElement.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_ocl::ecore::constraint_is_not_abstract():
-    assert not inspect.isabstract(ocl::ecore::Constraint)
-
-
-def test_ocl::ecore::constraint_constructor_exists():
-    assert callable(ocl::ecore::Constraint.__init__)
-
-
-def test_ocl::ecore::constraint_constructor_args():
-    sig = inspect.signature(ocl::ecore::Constraint.__init__)
-    params = list(sig.parameters.keys())
-    assert "stereotype" in params, "Missing parameter 'stereotype'"
-
-def test_ocl::ecore::constraint_has_stereotype():
-    assert hasattr(ocl::ecore::Constraint, "stereotype")
-    descriptor = None
-    for klass in ocl::ecore::Constraint.__mro__:
-        if "stereotype" in klass.__dict__:
-            descriptor = klass.__dict__["stereotype"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_ecore::ocl::eoperation_is_not_abstract():
-    assert not inspect.isabstract(ecore::ocl::EOperation)
-
-
-def test_ecore::ocl::eoperation_constructor_exists():
-    assert callable(ecore::ocl::EOperation.__init__)
-
-
-def test_ecore::ocl::eoperation_constructor_args():
-    sig = inspect.signature(ecore::ocl::EOperation.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_ocl::ecore::calloperationaction_is_not_abstract():
-    assert not inspect.isabstract(ocl::ecore::CallOperationAction)
-
-
-def test_ocl::ecore::calloperationaction_constructor_exists():
-    assert callable(ocl::ecore::CallOperationAction.__init__)
-
-
-def test_ocl::ecore::calloperationaction_constructor_args():
-    sig = inspect.signature(ocl::ecore::CallOperationAction.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_ocl::ecore::voidtype_is_not_abstract():
-    assert not inspect.isabstract(ocl::ecore::VoidType)
-
-
-def test_ocl::ecore::voidtype_constructor_exists():
-    assert callable(ocl::ecore::VoidType.__init__)
-
-
-def test_ocl::ecore::voidtype_constructor_args():
-    sig = inspect.signature(ocl::ecore::VoidType.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_ocl::ecore::typetype_is_not_abstract():
-    assert not inspect.isabstract(ocl::ecore::TypeType)
-
-
-def test_ocl::ecore::typetype_constructor_exists():
-    assert callable(ocl::ecore::TypeType.__init__)
-
-
-def test_ocl::ecore::typetype_constructor_args():
-    sig = inspect.signature(ocl::ecore::TypeType.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_ocl::ecore::tupletype_is_not_abstract():
-    assert not inspect.isabstract(ocl::ecore::TupleType)
-
-
-def test_ocl::ecore::tupletype_constructor_exists():
-    assert callable(ocl::ecore::TupleType.__init__)
-
-
-def test_ocl::ecore::tupletype_constructor_args():
-    sig = inspect.signature(ocl::ecore::TupleType.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_ocl::ecore::templateparametertype_is_not_abstract():
-    assert not inspect.isabstract(ocl::ecore::TemplateParameterType)
-
-
-def test_ocl::ecore::templateparametertype_constructor_exists():
-    assert callable(ocl::ecore::TemplateParameterType.__init__)
-
-
-def test_ocl::ecore::templateparametertype_constructor_args():
-    sig = inspect.signature(ocl::ecore::TemplateParameterType.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_ocl::ecore::messagetype_is_not_abstract():
-    assert not inspect.isabstract(ocl::ecore::MessageType)
-
-
-def test_ocl::ecore::messagetype_constructor_exists():
-    assert callable(ocl::ecore::MessageType.__init__)
-
-
-def test_ocl::ecore::messagetype_constructor_args():
-    sig = inspect.signature(ocl::ecore::MessageType.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_ocl::ecore::invalidtype_is_not_abstract():
-    assert not inspect.isabstract(ocl::ecore::InvalidType)
-
-
-def test_ocl::ecore::invalidtype_constructor_exists():
-    assert callable(ocl::ecore::InvalidType.__init__)
-
-
-def test_ocl::ecore::invalidtype_constructor_args():
-    sig = inspect.signature(ocl::ecore::InvalidType.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_types::elementtype_is_not_abstract():
-    assert not inspect.isabstract(types::ElementType)
-
-
-def test_types::elementtype_constructor_exists():
-    assert callable(types::ElementType.__init__)
-
-
-def test_types::elementtype_constructor_args():
-    sig = inspect.signature(types::ElementType.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_eclass_is_not_abstract():
-    assert not inspect.isabstract(EClass)
-
-
-def test_eclass_constructor_exists():
-    assert callable(EClass.__init__)
-
-
-def test_eclass_constructor_args():
-    sig = inspect.signature(EClass.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_ocl::ecore::elementtype_is_not_abstract():
-    assert not inspect.isabstract(ocl::ecore::ElementType)
-
-
-def test_ocl::ecore::elementtype_constructor_exists():
-    assert callable(ocl::ecore::ElementType.__init__)
-
-
-def test_ocl::ecore::elementtype_constructor_args():
-    sig = inspect.signature(ocl::ecore::ElementType.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_ocl::ecore::collectiontype_is_not_abstract():
-    assert not inspect.isabstract(ocl::ecore::CollectionType)
-
-
-def test_ocl::ecore::collectiontype_constructor_exists():
-    assert callable(ocl::ecore::CollectionType.__init__)
-
-
-def test_ocl::ecore::collectiontype_constructor_args():
-    sig = inspect.signature(ocl::ecore::CollectionType.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_ocl::ecore::bagtype_is_not_abstract():
-    assert not inspect.isabstract(ocl::ecore::BagType)
-
-
-def test_ocl::ecore::bagtype_constructor_exists():
-    assert callable(ocl::ecore::BagType.__init__)
-
-
-def test_ocl::ecore::bagtype_constructor_args():
-    sig = inspect.signature(ocl::ecore::BagType.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_ocl::ecore::anytype_is_not_abstract():
-    assert not inspect.isabstract(ocl::ecore::AnyType)
-
-
-def test_ocl::ecore::anytype_constructor_exists():
-    assert callable(ocl::ecore::AnyType.__init__)
-
-
-def test_ocl::ecore::anytype_constructor_args():
-    sig = inspect.signature(ocl::ecore::AnyType.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_ocl::ecore::stringliteralexp_is_not_abstract():
-    assert not inspect.isabstract(ocl::ecore::StringLiteralExp)
-
-
-def test_ocl::ecore::stringliteralexp_constructor_exists():
-    assert callable(ocl::ecore::StringLiteralExp.__init__)
-
-
-def test_ocl::ecore::stringliteralexp_constructor_args():
-    sig = inspect.signature(ocl::ecore::StringLiteralExp.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_ocl::ecore::stateexp_is_not_abstract():
-    assert not inspect.isabstract(ocl::ecore::StateExp)
-
-
-def test_ocl::ecore::stateexp_constructor_exists():
-    assert callable(ocl::ecore::StateExp.__init__)
-
-
-def test_ocl::ecore::stateexp_constructor_args():
-    sig = inspect.signature(ocl::ecore::StateExp.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_ocl::ecore::realliteralexp_is_not_abstract():
-    assert not inspect.isabstract(ocl::ecore::RealLiteralExp)
-
-
-def test_ocl::ecore::realliteralexp_constructor_exists():
-    assert callable(ocl::ecore::RealLiteralExp.__init__)
-
-
-def test_ocl::ecore::realliteralexp_constructor_args():
-    sig = inspect.signature(ocl::ecore::RealLiteralExp.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_ocl::ecore::propertycallexp_is_not_abstract():
-    assert not inspect.isabstract(ocl::ecore::PropertyCallExp)
-
-
-def test_ocl::ecore::propertycallexp_constructor_exists():
-    assert callable(ocl::ecore::PropertyCallExp.__init__)
-
-
-def test_ocl::ecore::propertycallexp_constructor_args():
-    sig = inspect.signature(ocl::ecore::PropertyCallExp.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_ocl::ecore::primitiveliteralexp_is_not_abstract():
-    assert not inspect.isabstract(ocl::ecore::PrimitiveLiteralExp)
-
-
-def test_ocl::ecore::primitiveliteralexp_constructor_exists():
-    assert callable(ocl::ecore::PrimitiveLiteralExp.__init__)
-
-
-def test_ocl::ecore::primitiveliteralexp_constructor_args():
-    sig = inspect.signature(ocl::ecore::PrimitiveLiteralExp.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_ecore::ocl::ereference_is_not_abstract():
-    assert not inspect.isabstract(ecore::ocl::EReference)
-
-
-def test_ecore::ocl::ereference_constructor_exists():
-    assert callable(ecore::ocl::EReference.__init__)
-
-
-def test_ecore::ocl::ereference_constructor_args():
-    sig = inspect.signature(ecore::ocl::EReference.__init__)
+def test_ecore_ocl_ereference_constructor_args():
+    sig = inspect.signature(ecore_ocl_EReference.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -534,422 +174,782 @@ def test_navigationcallexp_constructor_args():
 
 
 
-def test_ocl::ecore::oppositepropertycallexp_is_not_abstract():
-    assert not inspect.isabstract(ocl::ecore::OppositePropertyCallExp)
+def test_ocl_ecore_oppositepropertycallexp_is_not_abstract():
+    assert not inspect.isabstract(ocl_ecore_OppositePropertyCallExp)
 
 
-def test_ocl::ecore::oppositepropertycallexp_constructor_exists():
-    assert callable(ocl::ecore::OppositePropertyCallExp.__init__)
+def test_ocl_ecore_oppositepropertycallexp_constructor_exists():
+    assert callable(ocl_ecore_OppositePropertyCallExp.__init__)
 
 
-def test_ocl::ecore::oppositepropertycallexp_constructor_args():
-    sig = inspect.signature(ocl::ecore::OppositePropertyCallExp.__init__)
+def test_ocl_ecore_oppositepropertycallexp_constructor_args():
+    sig = inspect.signature(ocl_ecore_OppositePropertyCallExp.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ocl::ecore::variableexp_is_not_abstract():
-    assert not inspect.isabstract(ocl::ecore::VariableExp)
+def test_ocl_ecore_variableexp_is_not_abstract():
+    assert not inspect.isabstract(ocl_ecore_VariableExp)
 
 
-def test_ocl::ecore::variableexp_constructor_exists():
-    assert callable(ocl::ecore::VariableExp.__init__)
+def test_ocl_ecore_variableexp_constructor_exists():
+    assert callable(ocl_ecore_VariableExp.__init__)
 
 
-def test_ocl::ecore::variableexp_constructor_args():
-    sig = inspect.signature(ocl::ecore::VariableExp.__init__)
+def test_ocl_ecore_variableexp_constructor_args():
+    sig = inspect.signature(ocl_ecore_VariableExp.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ocl::ecore::variable_is_not_abstract():
-    assert not inspect.isabstract(ocl::ecore::Variable)
+def test_ocl_ecore_variable_is_not_abstract():
+    assert not inspect.isabstract(ocl_ecore_Variable)
 
 
-def test_ocl::ecore::variable_constructor_exists():
-    assert callable(ocl::ecore::Variable.__init__)
+def test_ocl_ecore_variable_constructor_exists():
+    assert callable(ocl_ecore_Variable.__init__)
 
 
-def test_ocl::ecore::variable_constructor_args():
-    sig = inspect.signature(ocl::ecore::Variable.__init__)
+def test_ocl_ecore_variable_constructor_args():
+    sig = inspect.signature(ocl_ecore_Variable.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ocl::ecore::unspecifiedvalueexp_is_not_abstract():
-    assert not inspect.isabstract(ocl::ecore::UnspecifiedValueExp)
+def test_ocl_ecore_unspecifiedvalueexp_is_not_abstract():
+    assert not inspect.isabstract(ocl_ecore_UnspecifiedValueExp)
 
 
-def test_ocl::ecore::unspecifiedvalueexp_constructor_exists():
-    assert callable(ocl::ecore::UnspecifiedValueExp.__init__)
+def test_ocl_ecore_unspecifiedvalueexp_constructor_exists():
+    assert callable(ocl_ecore_UnspecifiedValueExp.__init__)
 
 
-def test_ocl::ecore::unspecifiedvalueexp_constructor_args():
-    sig = inspect.signature(ocl::ecore::UnspecifiedValueExp.__init__)
+def test_ocl_ecore_unspecifiedvalueexp_constructor_args():
+    sig = inspect.signature(ocl_ecore_UnspecifiedValueExp.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ocl::ecore::typeexp_is_not_abstract():
-    assert not inspect.isabstract(ocl::ecore::TypeExp)
+def test_ocl_ecore_typeexp_is_not_abstract():
+    assert not inspect.isabstract(ocl_ecore_TypeExp)
 
 
-def test_ocl::ecore::typeexp_constructor_exists():
-    assert callable(ocl::ecore::TypeExp.__init__)
+def test_ocl_ecore_typeexp_constructor_exists():
+    assert callable(ocl_ecore_TypeExp.__init__)
 
 
-def test_ocl::ecore::typeexp_constructor_args():
-    sig = inspect.signature(ocl::ecore::TypeExp.__init__)
+def test_ocl_ecore_typeexp_constructor_args():
+    sig = inspect.signature(ocl_ecore_TypeExp.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ocl::ecore::tupleliteralpart_is_not_abstract():
-    assert not inspect.isabstract(ocl::ecore::TupleLiteralPart)
+def test_ocl_ecore_tupleliteralpart_is_not_abstract():
+    assert not inspect.isabstract(ocl_ecore_TupleLiteralPart)
 
 
-def test_ocl::ecore::tupleliteralpart_constructor_exists():
-    assert callable(ocl::ecore::TupleLiteralPart.__init__)
+def test_ocl_ecore_tupleliteralpart_constructor_exists():
+    assert callable(ocl_ecore_TupleLiteralPart.__init__)
 
 
-def test_ocl::ecore::tupleliteralpart_constructor_args():
-    sig = inspect.signature(ocl::ecore::TupleLiteralPart.__init__)
+def test_ocl_ecore_tupleliteralpart_constructor_args():
+    sig = inspect.signature(ocl_ecore_TupleLiteralPart.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ocl::ecore::tupleliteralexp_is_not_abstract():
-    assert not inspect.isabstract(ocl::ecore::TupleLiteralExp)
+def test_ocl_ecore_tupleliteralexp_is_not_abstract():
+    assert not inspect.isabstract(ocl_ecore_TupleLiteralExp)
 
 
-def test_ocl::ecore::tupleliteralexp_constructor_exists():
-    assert callable(ocl::ecore::TupleLiteralExp.__init__)
+def test_ocl_ecore_tupleliteralexp_constructor_exists():
+    assert callable(ocl_ecore_TupleLiteralExp.__init__)
 
 
-def test_ocl::ecore::tupleliteralexp_constructor_args():
-    sig = inspect.signature(ocl::ecore::TupleLiteralExp.__init__)
+def test_ocl_ecore_tupleliteralexp_constructor_args():
+    sig = inspect.signature(ocl_ecore_TupleLiteralExp.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ocl::ecore::enumliteralexp_is_not_abstract():
-    assert not inspect.isabstract(ocl::ecore::EnumLiteralExp)
+def test_ocl_ecore_enumliteralexp_is_not_abstract():
+    assert not inspect.isabstract(ocl_ecore_EnumLiteralExp)
 
 
-def test_ocl::ecore::enumliteralexp_constructor_exists():
-    assert callable(ocl::ecore::EnumLiteralExp.__init__)
+def test_ocl_ecore_enumliteralexp_constructor_exists():
+    assert callable(ocl_ecore_EnumLiteralExp.__init__)
 
 
-def test_ocl::ecore::enumliteralexp_constructor_args():
-    sig = inspect.signature(ocl::ecore::EnumLiteralExp.__init__)
+def test_ocl_ecore_enumliteralexp_constructor_args():
+    sig = inspect.signature(ocl_ecore_EnumLiteralExp.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ocl::ecore::collectionrange_is_not_abstract():
-    assert not inspect.isabstract(ocl::ecore::CollectionRange)
+def test_ocl_ecore_collectionrange_is_not_abstract():
+    assert not inspect.isabstract(ocl_ecore_CollectionRange)
 
 
-def test_ocl::ecore::collectionrange_constructor_exists():
-    assert callable(ocl::ecore::CollectionRange.__init__)
+def test_ocl_ecore_collectionrange_constructor_exists():
+    assert callable(ocl_ecore_CollectionRange.__init__)
 
 
-def test_ocl::ecore::collectionrange_constructor_args():
-    sig = inspect.signature(ocl::ecore::CollectionRange.__init__)
+def test_ocl_ecore_collectionrange_constructor_args():
+    sig = inspect.signature(ocl_ecore_CollectionRange.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ocl::ecore::collectionliteralpart_is_not_abstract():
-    assert not inspect.isabstract(ocl::ecore::CollectionLiteralPart)
+def test_ocl_ecore_collectionliteralpart_is_not_abstract():
+    assert not inspect.isabstract(ocl_ecore_CollectionLiteralPart)
 
 
-def test_ocl::ecore::collectionliteralpart_constructor_exists():
-    assert callable(ocl::ecore::CollectionLiteralPart.__init__)
+def test_ocl_ecore_collectionliteralpart_constructor_exists():
+    assert callable(ocl_ecore_CollectionLiteralPart.__init__)
 
 
-def test_ocl::ecore::collectionliteralpart_constructor_args():
-    sig = inspect.signature(ocl::ecore::CollectionLiteralPart.__init__)
+def test_ocl_ecore_collectionliteralpart_constructor_args():
+    sig = inspect.signature(ocl_ecore_CollectionLiteralPart.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ocl::ecore::collectionliteralexp_is_not_abstract():
-    assert not inspect.isabstract(ocl::ecore::CollectionLiteralExp)
+def test_ocl_ecore_collectionliteralexp_is_not_abstract():
+    assert not inspect.isabstract(ocl_ecore_CollectionLiteralExp)
 
 
-def test_ocl::ecore::collectionliteralexp_constructor_exists():
-    assert callable(ocl::ecore::CollectionLiteralExp.__init__)
+def test_ocl_ecore_collectionliteralexp_constructor_exists():
+    assert callable(ocl_ecore_CollectionLiteralExp.__init__)
 
 
-def test_ocl::ecore::collectionliteralexp_constructor_args():
-    sig = inspect.signature(ocl::ecore::CollectionLiteralExp.__init__)
+def test_ocl_ecore_collectionliteralexp_constructor_args():
+    sig = inspect.signature(ocl_ecore_CollectionLiteralExp.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ocl::ecore::operationcallexp_is_not_abstract():
-    assert not inspect.isabstract(ocl::ecore::OperationCallExp)
+def test_ocl_ecore_operationcallexp_is_not_abstract():
+    assert not inspect.isabstract(ocl_ecore_OperationCallExp)
 
 
-def test_ocl::ecore::operationcallexp_constructor_exists():
-    assert callable(ocl::ecore::OperationCallExp.__init__)
+def test_ocl_ecore_operationcallexp_constructor_exists():
+    assert callable(ocl_ecore_OperationCallExp.__init__)
 
 
-def test_ocl::ecore::operationcallexp_constructor_args():
-    sig = inspect.signature(ocl::ecore::OperationCallExp.__init__)
+def test_ocl_ecore_operationcallexp_constructor_args():
+    sig = inspect.signature(ocl_ecore_OperationCallExp.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ocl::ecore::oclexpression_is_not_abstract():
-    assert not inspect.isabstract(ocl::ecore::OCLExpression)
+def test_ocl_ecore_oclexpression_is_not_abstract():
+    assert not inspect.isabstract(ocl_ecore_OCLExpression)
 
 
-def test_ocl::ecore::oclexpression_constructor_exists():
-    assert callable(ocl::ecore::OCLExpression.__init__)
+def test_ocl_ecore_oclexpression_constructor_exists():
+    assert callable(ocl_ecore_OCLExpression.__init__)
 
 
-def test_ocl::ecore::oclexpression_constructor_args():
-    sig = inspect.signature(ocl::ecore::OCLExpression.__init__)
+def test_ocl_ecore_oclexpression_constructor_args():
+    sig = inspect.signature(ocl_ecore_OCLExpression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ocl::ecore::numericliteralexp_is_not_abstract():
-    assert not inspect.isabstract(ocl::ecore::NumericLiteralExp)
+def test_ocl_ecore_numericliteralexp_is_not_abstract():
+    assert not inspect.isabstract(ocl_ecore_NumericLiteralExp)
 
 
-def test_ocl::ecore::numericliteralexp_constructor_exists():
-    assert callable(ocl::ecore::NumericLiteralExp.__init__)
+def test_ocl_ecore_numericliteralexp_constructor_exists():
+    assert callable(ocl_ecore_NumericLiteralExp.__init__)
 
 
-def test_ocl::ecore::numericliteralexp_constructor_args():
-    sig = inspect.signature(ocl::ecore::NumericLiteralExp.__init__)
+def test_ocl_ecore_numericliteralexp_constructor_args():
+    sig = inspect.signature(ocl_ecore_NumericLiteralExp.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ocl::ecore::nullliteralexp_is_not_abstract():
-    assert not inspect.isabstract(ocl::ecore::NullLiteralExp)
+def test_ocl_ecore_nullliteralexp_is_not_abstract():
+    assert not inspect.isabstract(ocl_ecore_NullLiteralExp)
 
 
-def test_ocl::ecore::nullliteralexp_constructor_exists():
-    assert callable(ocl::ecore::NullLiteralExp.__init__)
+def test_ocl_ecore_nullliteralexp_constructor_exists():
+    assert callable(ocl_ecore_NullLiteralExp.__init__)
 
 
-def test_ocl::ecore::nullliteralexp_constructor_args():
-    sig = inspect.signature(ocl::ecore::NullLiteralExp.__init__)
+def test_ocl_ecore_nullliteralexp_constructor_args():
+    sig = inspect.signature(ocl_ecore_NullLiteralExp.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ocl::ecore::navigationcallexp_is_not_abstract():
-    assert not inspect.isabstract(ocl::ecore::NavigationCallExp)
+def test_ocl_ecore_navigationcallexp_is_not_abstract():
+    assert not inspect.isabstract(ocl_ecore_NavigationCallExp)
 
 
-def test_ocl::ecore::navigationcallexp_constructor_exists():
-    assert callable(ocl::ecore::NavigationCallExp.__init__)
+def test_ocl_ecore_navigationcallexp_constructor_exists():
+    assert callable(ocl_ecore_NavigationCallExp.__init__)
 
 
-def test_ocl::ecore::navigationcallexp_constructor_args():
-    sig = inspect.signature(ocl::ecore::NavigationCallExp.__init__)
+def test_ocl_ecore_navigationcallexp_constructor_args():
+    sig = inspect.signature(ocl_ecore_NavigationCallExp.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ocl::ecore::messageexp_is_not_abstract():
-    assert not inspect.isabstract(ocl::ecore::MessageExp)
+def test_ocl_ecore_messageexp_is_not_abstract():
+    assert not inspect.isabstract(ocl_ecore_MessageExp)
 
 
-def test_ocl::ecore::messageexp_constructor_exists():
-    assert callable(ocl::ecore::MessageExp.__init__)
+def test_ocl_ecore_messageexp_constructor_exists():
+    assert callable(ocl_ecore_MessageExp.__init__)
 
 
-def test_ocl::ecore::messageexp_constructor_args():
-    sig = inspect.signature(ocl::ecore::MessageExp.__init__)
+def test_ocl_ecore_messageexp_constructor_args():
+    sig = inspect.signature(ocl_ecore_MessageExp.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ocl::ecore::loopexp_is_not_abstract():
-    assert not inspect.isabstract(ocl::ecore::LoopExp)
+def test_ocl_ecore_loopexp_is_not_abstract():
+    assert not inspect.isabstract(ocl_ecore_LoopExp)
 
 
-def test_ocl::ecore::loopexp_constructor_exists():
-    assert callable(ocl::ecore::LoopExp.__init__)
+def test_ocl_ecore_loopexp_constructor_exists():
+    assert callable(ocl_ecore_LoopExp.__init__)
 
 
-def test_ocl::ecore::loopexp_constructor_args():
-    sig = inspect.signature(ocl::ecore::LoopExp.__init__)
+def test_ocl_ecore_loopexp_constructor_args():
+    sig = inspect.signature(ocl_ecore_LoopExp.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ocl::ecore::literalexp_is_not_abstract():
-    assert not inspect.isabstract(ocl::ecore::LiteralExp)
+def test_ocl_ecore_literalexp_is_not_abstract():
+    assert not inspect.isabstract(ocl_ecore_LiteralExp)
 
 
-def test_ocl::ecore::literalexp_constructor_exists():
-    assert callable(ocl::ecore::LiteralExp.__init__)
+def test_ocl_ecore_literalexp_constructor_exists():
+    assert callable(ocl_ecore_LiteralExp.__init__)
 
 
-def test_ocl::ecore::literalexp_constructor_args():
-    sig = inspect.signature(ocl::ecore::LiteralExp.__init__)
+def test_ocl_ecore_literalexp_constructor_args():
+    sig = inspect.signature(ocl_ecore_LiteralExp.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ocl::ecore::letexp_is_not_abstract():
-    assert not inspect.isabstract(ocl::ecore::LetExp)
+def test_ocl_ecore_letexp_is_not_abstract():
+    assert not inspect.isabstract(ocl_ecore_LetExp)
 
 
-def test_ocl::ecore::letexp_constructor_exists():
-    assert callable(ocl::ecore::LetExp.__init__)
+def test_ocl_ecore_letexp_constructor_exists():
+    assert callable(ocl_ecore_LetExp.__init__)
 
 
-def test_ocl::ecore::letexp_constructor_args():
-    sig = inspect.signature(ocl::ecore::LetExp.__init__)
+def test_ocl_ecore_letexp_constructor_args():
+    sig = inspect.signature(ocl_ecore_LetExp.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ocl::ecore::iteratorexp_is_not_abstract():
-    assert not inspect.isabstract(ocl::ecore::IteratorExp)
+def test_ocl_ecore_iteratorexp_is_not_abstract():
+    assert not inspect.isabstract(ocl_ecore_IteratorExp)
 
 
-def test_ocl::ecore::iteratorexp_constructor_exists():
-    assert callable(ocl::ecore::IteratorExp.__init__)
+def test_ocl_ecore_iteratorexp_constructor_exists():
+    assert callable(ocl_ecore_IteratorExp.__init__)
 
 
-def test_ocl::ecore::iteratorexp_constructor_args():
-    sig = inspect.signature(ocl::ecore::IteratorExp.__init__)
+def test_ocl_ecore_iteratorexp_constructor_args():
+    sig = inspect.signature(ocl_ecore_IteratorExp.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ocl::ecore::iterateexp_is_not_abstract():
-    assert not inspect.isabstract(ocl::ecore::IterateExp)
+def test_ocl_ecore_iterateexp_is_not_abstract():
+    assert not inspect.isabstract(ocl_ecore_IterateExp)
 
 
-def test_ocl::ecore::iterateexp_constructor_exists():
-    assert callable(ocl::ecore::IterateExp.__init__)
+def test_ocl_ecore_iterateexp_constructor_exists():
+    assert callable(ocl_ecore_IterateExp.__init__)
 
 
-def test_ocl::ecore::iterateexp_constructor_args():
-    sig = inspect.signature(ocl::ecore::IterateExp.__init__)
+def test_ocl_ecore_iterateexp_constructor_args():
+    sig = inspect.signature(ocl_ecore_IterateExp.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ocl::ecore::invalidliteralexp_is_not_abstract():
-    assert not inspect.isabstract(ocl::ecore::InvalidLiteralExp)
+def test_ocl_ecore_invalidliteralexp_is_not_abstract():
+    assert not inspect.isabstract(ocl_ecore_InvalidLiteralExp)
 
 
-def test_ocl::ecore::invalidliteralexp_constructor_exists():
-    assert callable(ocl::ecore::InvalidLiteralExp.__init__)
+def test_ocl_ecore_invalidliteralexp_constructor_exists():
+    assert callable(ocl_ecore_InvalidLiteralExp.__init__)
 
 
-def test_ocl::ecore::invalidliteralexp_constructor_args():
-    sig = inspect.signature(ocl::ecore::InvalidLiteralExp.__init__)
+def test_ocl_ecore_invalidliteralexp_constructor_args():
+    sig = inspect.signature(ocl_ecore_InvalidLiteralExp.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ocl::ecore::unlimitednaturalliteralexp_is_not_abstract():
-    assert not inspect.isabstract(ocl::ecore::UnlimitedNaturalLiteralExp)
+def test_ocl_ecore_unlimitednaturalliteralexp_is_not_abstract():
+    assert not inspect.isabstract(ocl_ecore_UnlimitedNaturalLiteralExp)
 
 
-def test_ocl::ecore::unlimitednaturalliteralexp_constructor_exists():
-    assert callable(ocl::ecore::UnlimitedNaturalLiteralExp.__init__)
+def test_ocl_ecore_unlimitednaturalliteralexp_constructor_exists():
+    assert callable(ocl_ecore_UnlimitedNaturalLiteralExp.__init__)
 
 
-def test_ocl::ecore::unlimitednaturalliteralexp_constructor_args():
-    sig = inspect.signature(ocl::ecore::UnlimitedNaturalLiteralExp.__init__)
+def test_ocl_ecore_unlimitednaturalliteralexp_constructor_args():
+    sig = inspect.signature(ocl_ecore_UnlimitedNaturalLiteralExp.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ocl::ecore::integerliteralexp_is_not_abstract():
-    assert not inspect.isabstract(ocl::ecore::IntegerLiteralExp)
+def test_ocl_ecore_integerliteralexp_is_not_abstract():
+    assert not inspect.isabstract(ocl_ecore_IntegerLiteralExp)
 
 
-def test_ocl::ecore::integerliteralexp_constructor_exists():
-    assert callable(ocl::ecore::IntegerLiteralExp.__init__)
+def test_ocl_ecore_integerliteralexp_constructor_exists():
+    assert callable(ocl_ecore_IntegerLiteralExp.__init__)
 
 
-def test_ocl::ecore::integerliteralexp_constructor_args():
-    sig = inspect.signature(ocl::ecore::IntegerLiteralExp.__init__)
+def test_ocl_ecore_integerliteralexp_constructor_args():
+    sig = inspect.signature(ocl_ecore_IntegerLiteralExp.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ocl::ecore::ifexp_is_not_abstract():
-    assert not inspect.isabstract(ocl::ecore::IfExp)
+def test_ocl_ecore_ifexp_is_not_abstract():
+    assert not inspect.isabstract(ocl_ecore_IfExp)
 
 
-def test_ocl::ecore::ifexp_constructor_exists():
-    assert callable(ocl::ecore::IfExp.__init__)
+def test_ocl_ecore_ifexp_constructor_exists():
+    assert callable(ocl_ecore_IfExp.__init__)
 
 
-def test_ocl::ecore::ifexp_constructor_args():
-    sig = inspect.signature(ocl::ecore::IfExp.__init__)
+def test_ocl_ecore_ifexp_constructor_args():
+    sig = inspect.signature(ocl_ecore_IfExp.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ocl::ecore::featurecallexp_is_not_abstract():
-    assert not inspect.isabstract(ocl::ecore::FeatureCallExp)
+def test_ocl_ecore_featurecallexp_is_not_abstract():
+    assert not inspect.isabstract(ocl_ecore_FeatureCallExp)
 
 
-def test_ocl::ecore::featurecallexp_constructor_exists():
-    assert callable(ocl::ecore::FeatureCallExp.__init__)
+def test_ocl_ecore_featurecallexp_constructor_exists():
+    assert callable(ocl_ecore_FeatureCallExp.__init__)
 
 
-def test_ocl::ecore::featurecallexp_constructor_args():
-    sig = inspect.signature(ocl::ecore::FeatureCallExp.__init__)
+def test_ocl_ecore_featurecallexp_constructor_args():
+    sig = inspect.signature(ocl_ecore_FeatureCallExp.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ocl::ecore::settype_is_not_abstract():
-    assert not inspect.isabstract(ocl::ecore::SetType)
+def test_ocl_ecore_settype_is_not_abstract():
+    assert not inspect.isabstract(ocl_ecore_SetType)
 
 
-def test_ocl::ecore::settype_constructor_exists():
-    assert callable(ocl::ecore::SetType.__init__)
+def test_ocl_ecore_settype_constructor_exists():
+    assert callable(ocl_ecore_SetType.__init__)
 
 
-def test_ocl::ecore::settype_constructor_args():
-    sig = inspect.signature(ocl::ecore::SetType.__init__)
+def test_ocl_ecore_settype_constructor_args():
+    sig = inspect.signature(ocl_ecore_SetType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ocl::ecore::sequencetype_is_not_abstract():
-    assert not inspect.isabstract(ocl::ecore::SequenceType)
+def test_ocl_ecore_sequencetype_is_not_abstract():
+    assert not inspect.isabstract(ocl_ecore_SequenceType)
 
 
-def test_ocl::ecore::sequencetype_constructor_exists():
-    assert callable(ocl::ecore::SequenceType.__init__)
+def test_ocl_ecore_sequencetype_constructor_exists():
+    assert callable(ocl_ecore_SequenceType.__init__)
 
 
-def test_ocl::ecore::sequencetype_constructor_args():
-    sig = inspect.signature(ocl::ecore::SequenceType.__init__)
+def test_ocl_ecore_sequencetype_constructor_args():
+    sig = inspect.signature(ocl_ecore_SequenceType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ocl::ecore::primitivetype_is_not_abstract():
-    assert not inspect.isabstract(ocl::ecore::PrimitiveType)
+def test_ocl_ecore_primitivetype_is_not_abstract():
+    assert not inspect.isabstract(ocl_ecore_PrimitiveType)
 
 
-def test_ocl::ecore::primitivetype_constructor_exists():
-    assert callable(ocl::ecore::PrimitiveType.__init__)
+def test_ocl_ecore_primitivetype_constructor_exists():
+    assert callable(ocl_ecore_PrimitiveType.__init__)
 
 
-def test_ocl::ecore::primitivetype_constructor_args():
-    sig = inspect.signature(ocl::ecore::PrimitiveType.__init__)
+def test_ocl_ecore_primitivetype_constructor_args():
+    sig = inspect.signature(ocl_ecore_PrimitiveType.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_ocl_ecore_orderedsettype_is_not_abstract():
+    assert not inspect.isabstract(ocl_ecore_OrderedSetType)
+
+
+def test_ocl_ecore_orderedsettype_constructor_exists():
+    assert callable(ocl_ecore_OrderedSetType.__init__)
+
+
+def test_ocl_ecore_orderedsettype_constructor_args():
+    sig = inspect.signature(ocl_ecore_OrderedSetType.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_ocl_ecore_collectionitem_is_not_abstract():
+    assert not inspect.isabstract(ocl_ecore_CollectionItem)
+
+
+def test_ocl_ecore_collectionitem_constructor_exists():
+    assert callable(ocl_ecore_CollectionItem.__init__)
+
+
+def test_ocl_ecore_collectionitem_constructor_args():
+    sig = inspect.signature(ocl_ecore_CollectionItem.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_ocl_ecore_callexp_is_not_abstract():
+    assert not inspect.isabstract(ocl_ecore_CallExp)
+
+
+def test_ocl_ecore_callexp_constructor_exists():
+    assert callable(ocl_ecore_CallExp.__init__)
+
+
+def test_ocl_ecore_callexp_constructor_args():
+    sig = inspect.signature(ocl_ecore_CallExp.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_ocl_ecore_booleanliteralexp_is_not_abstract():
+    assert not inspect.isabstract(ocl_ecore_BooleanLiteralExp)
+
+
+def test_ocl_ecore_booleanliteralexp_constructor_exists():
+    assert callable(ocl_ecore_BooleanLiteralExp.__init__)
+
+
+def test_ocl_ecore_booleanliteralexp_constructor_args():
+    sig = inspect.signature(ocl_ecore_BooleanLiteralExp.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_ocl_ecore_associationclasscallexp_is_not_abstract():
+    assert not inspect.isabstract(ocl_ecore_AssociationClassCallExp)
+
+
+def test_ocl_ecore_associationclasscallexp_constructor_exists():
+    assert callable(ocl_ecore_AssociationClassCallExp.__init__)
+
+
+def test_ocl_ecore_associationclasscallexp_constructor_args():
+    sig = inspect.signature(ocl_ecore_AssociationClassCallExp.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_ocl_ecore_expressioninocl_is_not_abstract():
+    assert not inspect.isabstract(ocl_ecore_ExpressionInOCL)
+
+
+def test_ocl_ecore_expressioninocl_constructor_exists():
+    assert callable(ocl_ecore_ExpressionInOCL.__init__)
+
+
+def test_ocl_ecore_expressioninocl_constructor_args():
+    sig = inspect.signature(ocl_ecore_ExpressionInOCL.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_ecore_ocl_eclass_is_not_abstract():
+    assert not inspect.isabstract(ecore_ocl_EClass)
+
+
+def test_ecore_ocl_eclass_constructor_exists():
+    assert callable(ecore_ocl_EClass.__init__)
+
+
+def test_ecore_ocl_eclass_constructor_args():
+    sig = inspect.signature(ecore_ocl_EClass.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_ocl_ecore_sendsignalaction_is_not_abstract():
+    assert not inspect.isabstract(ocl_ecore_SendSignalAction)
+
+
+def test_ocl_ecore_sendsignalaction_constructor_exists():
+    assert callable(ocl_ecore_SendSignalAction.__init__)
+
+
+def test_ocl_ecore_sendsignalaction_constructor_args():
+    sig = inspect.signature(ocl_ecore_SendSignalAction.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_ecore_ocl_emodelelement_is_not_abstract():
+    assert not inspect.isabstract(ecore_ocl_EModelElement)
+
+
+def test_ecore_ocl_emodelelement_constructor_exists():
+    assert callable(ecore_ocl_EModelElement.__init__)
+
+
+def test_ecore_ocl_emodelelement_constructor_args():
+    sig = inspect.signature(ecore_ocl_EModelElement.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_enamedelement_is_not_abstract():
+    assert not inspect.isabstract(ENamedElement)
+
+
+def test_enamedelement_constructor_exists():
+    assert callable(ENamedElement.__init__)
+
+
+def test_enamedelement_constructor_args():
+    sig = inspect.signature(ENamedElement.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_ocl_ecore_constraint_is_not_abstract():
+    assert not inspect.isabstract(ocl_ecore_Constraint)
+
+
+def test_ocl_ecore_constraint_constructor_exists():
+    assert callable(ocl_ecore_Constraint.__init__)
+
+
+def test_ocl_ecore_constraint_constructor_args():
+    sig = inspect.signature(ocl_ecore_Constraint.__init__)
+    params = list(sig.parameters.keys())
+    assert "stereotype" in params, "Missing parameter 'stereotype'"
+
+def test_ocl_ecore_constraint_has_stereotype():
+    assert hasattr(ocl_ecore_Constraint, "stereotype")
+    descriptor = None
+    for klass in ocl_ecore_Constraint.__mro__:
+        if "stereotype" in klass.__dict__:
+            descriptor = klass.__dict__["stereotype"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_ecore_ocl_eoperation_is_not_abstract():
+    assert not inspect.isabstract(ecore_ocl_EOperation)
+
+
+def test_ecore_ocl_eoperation_constructor_exists():
+    assert callable(ecore_ocl_EOperation.__init__)
+
+
+def test_ecore_ocl_eoperation_constructor_args():
+    sig = inspect.signature(ecore_ocl_EOperation.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_ocl_ecore_calloperationaction_is_not_abstract():
+    assert not inspect.isabstract(ocl_ecore_CallOperationAction)
+
+
+def test_ocl_ecore_calloperationaction_constructor_exists():
+    assert callable(ocl_ecore_CallOperationAction.__init__)
+
+
+def test_ocl_ecore_calloperationaction_constructor_args():
+    sig = inspect.signature(ocl_ecore_CallOperationAction.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_ocl_ecore_voidtype_is_not_abstract():
+    assert not inspect.isabstract(ocl_ecore_VoidType)
+
+
+def test_ocl_ecore_voidtype_constructor_exists():
+    assert callable(ocl_ecore_VoidType.__init__)
+
+
+def test_ocl_ecore_voidtype_constructor_args():
+    sig = inspect.signature(ocl_ecore_VoidType.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_ocl_ecore_typetype_is_not_abstract():
+    assert not inspect.isabstract(ocl_ecore_TypeType)
+
+
+def test_ocl_ecore_typetype_constructor_exists():
+    assert callable(ocl_ecore_TypeType.__init__)
+
+
+def test_ocl_ecore_typetype_constructor_args():
+    sig = inspect.signature(ocl_ecore_TypeType.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_ocl_ecore_tupletype_is_not_abstract():
+    assert not inspect.isabstract(ocl_ecore_TupleType)
+
+
+def test_ocl_ecore_tupletype_constructor_exists():
+    assert callable(ocl_ecore_TupleType.__init__)
+
+
+def test_ocl_ecore_tupletype_constructor_args():
+    sig = inspect.signature(ocl_ecore_TupleType.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_ocl_ecore_templateparametertype_is_not_abstract():
+    assert not inspect.isabstract(ocl_ecore_TemplateParameterType)
+
+
+def test_ocl_ecore_templateparametertype_constructor_exists():
+    assert callable(ocl_ecore_TemplateParameterType.__init__)
+
+
+def test_ocl_ecore_templateparametertype_constructor_args():
+    sig = inspect.signature(ocl_ecore_TemplateParameterType.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_ocl_ecore_messagetype_is_not_abstract():
+    assert not inspect.isabstract(ocl_ecore_MessageType)
+
+
+def test_ocl_ecore_messagetype_constructor_exists():
+    assert callable(ocl_ecore_MessageType.__init__)
+
+
+def test_ocl_ecore_messagetype_constructor_args():
+    sig = inspect.signature(ocl_ecore_MessageType.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_ocl_ecore_invalidtype_is_not_abstract():
+    assert not inspect.isabstract(ocl_ecore_InvalidType)
+
+
+def test_ocl_ecore_invalidtype_constructor_exists():
+    assert callable(ocl_ecore_InvalidType.__init__)
+
+
+def test_ocl_ecore_invalidtype_constructor_args():
+    sig = inspect.signature(ocl_ecore_InvalidType.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_types_elementtype_is_not_abstract():
+    assert not inspect.isabstract(types_ElementType)
+
+
+def test_types_elementtype_constructor_exists():
+    assert callable(types_ElementType.__init__)
+
+
+def test_types_elementtype_constructor_args():
+    sig = inspect.signature(types_ElementType.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_eclass_is_not_abstract():
+    assert not inspect.isabstract(EClass)
+
+
+def test_eclass_constructor_exists():
+    assert callable(EClass.__init__)
+
+
+def test_eclass_constructor_args():
+    sig = inspect.signature(EClass.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_ocl_ecore_elementtype_is_not_abstract():
+    assert not inspect.isabstract(ocl_ecore_ElementType)
+
+
+def test_ocl_ecore_elementtype_constructor_exists():
+    assert callable(ocl_ecore_ElementType.__init__)
+
+
+def test_ocl_ecore_elementtype_constructor_args():
+    sig = inspect.signature(ocl_ecore_ElementType.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_ocl_ecore_collectiontype_is_not_abstract():
+    assert not inspect.isabstract(ocl_ecore_CollectionType)
+
+
+def test_ocl_ecore_collectiontype_constructor_exists():
+    assert callable(ocl_ecore_CollectionType.__init__)
+
+
+def test_ocl_ecore_collectiontype_constructor_args():
+    sig = inspect.signature(ocl_ecore_CollectionType.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_ocl_ecore_bagtype_is_not_abstract():
+    assert not inspect.isabstract(ocl_ecore_BagType)
+
+
+def test_ocl_ecore_bagtype_constructor_exists():
+    assert callable(ocl_ecore_BagType.__init__)
+
+
+def test_ocl_ecore_bagtype_constructor_args():
+    sig = inspect.signature(ocl_ecore_BagType.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_ocl_ecore_anytype_is_not_abstract():
+    assert not inspect.isabstract(ocl_ecore_AnyType)
+
+
+def test_ocl_ecore_anytype_constructor_exists():
+    assert callable(ocl_ecore_AnyType.__init__)
+
+
+def test_ocl_ecore_anytype_constructor_args():
+    sig = inspect.signature(ocl_ecore_AnyType.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -964,512 +964,509 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-ocl::ecore::OrderedSetType_strategy = st.builds(
-    ocl::ecore::OrderedSetType,
+ocl_ecore_StringLiteralExp_strategy = st.builds(
+    ocl_ecore_StringLiteralExp,
 )
-ocl::ecore::CollectionItem_strategy = st.builds(
-    ocl::ecore::CollectionItem,
+ocl_ecore_StateExp_strategy = st.builds(
+    ocl_ecore_StateExp,
 )
-ocl::ecore::CallExp_strategy = st.builds(
-    ocl::ecore::CallExp,
+ocl_ecore_RealLiteralExp_strategy = st.builds(
+    ocl_ecore_RealLiteralExp,
 )
-ocl::ecore::BooleanLiteralExp_strategy = st.builds(
-    ocl::ecore::BooleanLiteralExp,
+ocl_ecore_PropertyCallExp_strategy = st.builds(
+    ocl_ecore_PropertyCallExp,
 )
-ocl::ecore::AssociationClassCallExp_strategy = st.builds(
-    ocl::ecore::AssociationClassCallExp,
+ocl_ecore_PrimitiveLiteralExp_strategy = st.builds(
+    ocl_ecore_PrimitiveLiteralExp,
 )
-ocl::ecore::ExpressionInOCL_strategy = st.builds(
-    ocl::ecore::ExpressionInOCL,
-)
-ecore::ocl::EClass_strategy = st.builds(
-    ecore::ocl::EClass,
-)
-ocl::ecore::SendSignalAction_strategy = st.builds(
-    ocl::ecore::SendSignalAction,
-)
-ecore::ocl::EModelElement_strategy = st.builds(
-    ecore::ocl::EModelElement,
-)
-ENamedElement_strategy = st.builds(
-    ENamedElement,
-)
-ocl::ecore::Constraint_strategy = st.builds(
-    ocl::ecore::Constraint,
-    stereotype=
-        safe_text
-)
-ecore::ocl::EOperation_strategy = st.builds(
-    ecore::ocl::EOperation,
-)
-ocl::ecore::CallOperationAction_strategy = st.builds(
-    ocl::ecore::CallOperationAction,
-)
-ocl::ecore::VoidType_strategy = st.builds(
-    ocl::ecore::VoidType,
-)
-ocl::ecore::TypeType_strategy = st.builds(
-    ocl::ecore::TypeType,
-)
-ocl::ecore::TupleType_strategy = st.builds(
-    ocl::ecore::TupleType,
-)
-ocl::ecore::TemplateParameterType_strategy = st.builds(
-    ocl::ecore::TemplateParameterType,
-)
-ocl::ecore::MessageType_strategy = st.builds(
-    ocl::ecore::MessageType,
-)
-ocl::ecore::InvalidType_strategy = st.builds(
-    ocl::ecore::InvalidType,
-)
-types::ElementType_strategy = st.builds(
-    types::ElementType,
-)
-EClass_strategy = st.builds(
-    EClass,
-)
-ocl::ecore::ElementType_strategy = st.builds(
-    ocl::ecore::ElementType,
-)
-ocl::ecore::CollectionType_strategy = st.builds(
-    ocl::ecore::CollectionType,
-)
-ocl::ecore::BagType_strategy = st.builds(
-    ocl::ecore::BagType,
-)
-ocl::ecore::AnyType_strategy = st.builds(
-    ocl::ecore::AnyType,
-)
-ocl::ecore::StringLiteralExp_strategy = st.builds(
-    ocl::ecore::StringLiteralExp,
-)
-ocl::ecore::StateExp_strategy = st.builds(
-    ocl::ecore::StateExp,
-)
-ocl::ecore::RealLiteralExp_strategy = st.builds(
-    ocl::ecore::RealLiteralExp,
-)
-ocl::ecore::PropertyCallExp_strategy = st.builds(
-    ocl::ecore::PropertyCallExp,
-)
-ocl::ecore::PrimitiveLiteralExp_strategy = st.builds(
-    ocl::ecore::PrimitiveLiteralExp,
-)
-ecore::ocl::EReference_strategy = st.builds(
-    ecore::ocl::EReference,
+ecore_ocl_EReference_strategy = st.builds(
+    ecore_ocl_EReference,
 )
 NavigationCallExp_strategy = st.builds(
     NavigationCallExp,
 )
-ocl::ecore::OppositePropertyCallExp_strategy = st.builds(
-    ocl::ecore::OppositePropertyCallExp,
+ocl_ecore_OppositePropertyCallExp_strategy = st.builds(
+    ocl_ecore_OppositePropertyCallExp,
 )
-ocl::ecore::VariableExp_strategy = st.builds(
-    ocl::ecore::VariableExp,
+ocl_ecore_VariableExp_strategy = st.builds(
+    ocl_ecore_VariableExp,
 )
-ocl::ecore::Variable_strategy = st.builds(
-    ocl::ecore::Variable,
+ocl_ecore_Variable_strategy = st.builds(
+    ocl_ecore_Variable,
 )
-ocl::ecore::UnspecifiedValueExp_strategy = st.builds(
-    ocl::ecore::UnspecifiedValueExp,
+ocl_ecore_UnspecifiedValueExp_strategy = st.builds(
+    ocl_ecore_UnspecifiedValueExp,
 )
-ocl::ecore::TypeExp_strategy = st.builds(
-    ocl::ecore::TypeExp,
+ocl_ecore_TypeExp_strategy = st.builds(
+    ocl_ecore_TypeExp,
 )
-ocl::ecore::TupleLiteralPart_strategy = st.builds(
-    ocl::ecore::TupleLiteralPart,
+ocl_ecore_TupleLiteralPart_strategy = st.builds(
+    ocl_ecore_TupleLiteralPart,
 )
-ocl::ecore::TupleLiteralExp_strategy = st.builds(
-    ocl::ecore::TupleLiteralExp,
+ocl_ecore_TupleLiteralExp_strategy = st.builds(
+    ocl_ecore_TupleLiteralExp,
 )
-ocl::ecore::EnumLiteralExp_strategy = st.builds(
-    ocl::ecore::EnumLiteralExp,
+ocl_ecore_EnumLiteralExp_strategy = st.builds(
+    ocl_ecore_EnumLiteralExp,
 )
-ocl::ecore::CollectionRange_strategy = st.builds(
-    ocl::ecore::CollectionRange,
+ocl_ecore_CollectionRange_strategy = st.builds(
+    ocl_ecore_CollectionRange,
 )
-ocl::ecore::CollectionLiteralPart_strategy = st.builds(
-    ocl::ecore::CollectionLiteralPart,
+ocl_ecore_CollectionLiteralPart_strategy = st.builds(
+    ocl_ecore_CollectionLiteralPart,
 )
-ocl::ecore::CollectionLiteralExp_strategy = st.builds(
-    ocl::ecore::CollectionLiteralExp,
+ocl_ecore_CollectionLiteralExp_strategy = st.builds(
+    ocl_ecore_CollectionLiteralExp,
 )
-ocl::ecore::OperationCallExp_strategy = st.builds(
-    ocl::ecore::OperationCallExp,
+ocl_ecore_OperationCallExp_strategy = st.builds(
+    ocl_ecore_OperationCallExp,
 )
-ocl::ecore::OCLExpression_strategy = st.builds(
-    ocl::ecore::OCLExpression,
+ocl_ecore_OCLExpression_strategy = st.builds(
+    ocl_ecore_OCLExpression,
 )
-ocl::ecore::NumericLiteralExp_strategy = st.builds(
-    ocl::ecore::NumericLiteralExp,
+ocl_ecore_NumericLiteralExp_strategy = st.builds(
+    ocl_ecore_NumericLiteralExp,
 )
-ocl::ecore::NullLiteralExp_strategy = st.builds(
-    ocl::ecore::NullLiteralExp,
+ocl_ecore_NullLiteralExp_strategy = st.builds(
+    ocl_ecore_NullLiteralExp,
 )
-ocl::ecore::NavigationCallExp_strategy = st.builds(
-    ocl::ecore::NavigationCallExp,
+ocl_ecore_NavigationCallExp_strategy = st.builds(
+    ocl_ecore_NavigationCallExp,
 )
-ocl::ecore::MessageExp_strategy = st.builds(
-    ocl::ecore::MessageExp,
+ocl_ecore_MessageExp_strategy = st.builds(
+    ocl_ecore_MessageExp,
 )
-ocl::ecore::LoopExp_strategy = st.builds(
-    ocl::ecore::LoopExp,
+ocl_ecore_LoopExp_strategy = st.builds(
+    ocl_ecore_LoopExp,
 )
-ocl::ecore::LiteralExp_strategy = st.builds(
-    ocl::ecore::LiteralExp,
+ocl_ecore_LiteralExp_strategy = st.builds(
+    ocl_ecore_LiteralExp,
 )
-ocl::ecore::LetExp_strategy = st.builds(
-    ocl::ecore::LetExp,
+ocl_ecore_LetExp_strategy = st.builds(
+    ocl_ecore_LetExp,
 )
-ocl::ecore::IteratorExp_strategy = st.builds(
-    ocl::ecore::IteratorExp,
+ocl_ecore_IteratorExp_strategy = st.builds(
+    ocl_ecore_IteratorExp,
 )
-ocl::ecore::IterateExp_strategy = st.builds(
-    ocl::ecore::IterateExp,
+ocl_ecore_IterateExp_strategy = st.builds(
+    ocl_ecore_IterateExp,
 )
-ocl::ecore::InvalidLiteralExp_strategy = st.builds(
-    ocl::ecore::InvalidLiteralExp,
+ocl_ecore_InvalidLiteralExp_strategy = st.builds(
+    ocl_ecore_InvalidLiteralExp,
 )
-ocl::ecore::UnlimitedNaturalLiteralExp_strategy = st.builds(
-    ocl::ecore::UnlimitedNaturalLiteralExp,
+ocl_ecore_UnlimitedNaturalLiteralExp_strategy = st.builds(
+    ocl_ecore_UnlimitedNaturalLiteralExp,
 )
-ocl::ecore::IntegerLiteralExp_strategy = st.builds(
-    ocl::ecore::IntegerLiteralExp,
+ocl_ecore_IntegerLiteralExp_strategy = st.builds(
+    ocl_ecore_IntegerLiteralExp,
 )
-ocl::ecore::IfExp_strategy = st.builds(
-    ocl::ecore::IfExp,
+ocl_ecore_IfExp_strategy = st.builds(
+    ocl_ecore_IfExp,
 )
-ocl::ecore::FeatureCallExp_strategy = st.builds(
-    ocl::ecore::FeatureCallExp,
+ocl_ecore_FeatureCallExp_strategy = st.builds(
+    ocl_ecore_FeatureCallExp,
 )
-ocl::ecore::SetType_strategy = st.builds(
-    ocl::ecore::SetType,
+ocl_ecore_SetType_strategy = st.builds(
+    ocl_ecore_SetType,
 )
-ocl::ecore::SequenceType_strategy = st.builds(
-    ocl::ecore::SequenceType,
+ocl_ecore_SequenceType_strategy = st.builds(
+    ocl_ecore_SequenceType,
 )
-ocl::ecore::PrimitiveType_strategy = st.builds(
-    ocl::ecore::PrimitiveType,
+ocl_ecore_PrimitiveType_strategy = st.builds(
+    ocl_ecore_PrimitiveType,
+)
+ocl_ecore_OrderedSetType_strategy = st.builds(
+    ocl_ecore_OrderedSetType,
+)
+ocl_ecore_CollectionItem_strategy = st.builds(
+    ocl_ecore_CollectionItem,
+)
+ocl_ecore_CallExp_strategy = st.builds(
+    ocl_ecore_CallExp,
+)
+ocl_ecore_BooleanLiteralExp_strategy = st.builds(
+    ocl_ecore_BooleanLiteralExp,
+)
+ocl_ecore_AssociationClassCallExp_strategy = st.builds(
+    ocl_ecore_AssociationClassCallExp,
+)
+ocl_ecore_ExpressionInOCL_strategy = st.builds(
+    ocl_ecore_ExpressionInOCL,
+)
+ecore_ocl_EClass_strategy = st.builds(
+    ecore_ocl_EClass,
+)
+ocl_ecore_SendSignalAction_strategy = st.builds(
+    ocl_ecore_SendSignalAction,
+)
+ecore_ocl_EModelElement_strategy = st.builds(
+    ecore_ocl_EModelElement,
+)
+ENamedElement_strategy = st.builds(
+    ENamedElement,
+)
+ocl_ecore_Constraint_strategy = st.builds(
+    ocl_ecore_Constraint,
+    stereotype=
+        safe_text
+)
+ecore_ocl_EOperation_strategy = st.builds(
+    ecore_ocl_EOperation,
+)
+ocl_ecore_CallOperationAction_strategy = st.builds(
+    ocl_ecore_CallOperationAction,
+)
+ocl_ecore_VoidType_strategy = st.builds(
+    ocl_ecore_VoidType,
+)
+ocl_ecore_TypeType_strategy = st.builds(
+    ocl_ecore_TypeType,
+)
+ocl_ecore_TupleType_strategy = st.builds(
+    ocl_ecore_TupleType,
+)
+ocl_ecore_TemplateParameterType_strategy = st.builds(
+    ocl_ecore_TemplateParameterType,
+)
+ocl_ecore_MessageType_strategy = st.builds(
+    ocl_ecore_MessageType,
+)
+ocl_ecore_InvalidType_strategy = st.builds(
+    ocl_ecore_InvalidType,
+)
+types_ElementType_strategy = st.builds(
+    types_ElementType,
+)
+EClass_strategy = st.builds(
+    EClass,
+)
+ocl_ecore_ElementType_strategy = st.builds(
+    ocl_ecore_ElementType,
+)
+ocl_ecore_CollectionType_strategy = st.builds(
+    ocl_ecore_CollectionType,
+)
+ocl_ecore_BagType_strategy = st.builds(
+    ocl_ecore_BagType,
+)
+ocl_ecore_AnyType_strategy = st.builds(
+    ocl_ecore_AnyType,
 )
 
-@given(instance=ocl::ecore::OrderedSetType_strategy)
+@given(instance=ocl_ecore_StringLiteralExp_strategy)
 @settings(max_examples=50)
-def test_ocl::ecore::orderedsettype_instantiation(instance):
-    assert isinstance(instance, ocl::ecore::OrderedSetType)
+def test_ocl_ecore_stringliteralexp_instantiation(instance):
+    assert isinstance(instance, ocl_ecore_StringLiteralExp)
 
-@given(instance=ocl::ecore::CollectionItem_strategy)
+@given(instance=ocl_ecore_StateExp_strategy)
 @settings(max_examples=50)
-def test_ocl::ecore::collectionitem_instantiation(instance):
-    assert isinstance(instance, ocl::ecore::CollectionItem)
+def test_ocl_ecore_stateexp_instantiation(instance):
+    assert isinstance(instance, ocl_ecore_StateExp)
 
-@given(instance=ocl::ecore::CallExp_strategy)
+@given(instance=ocl_ecore_RealLiteralExp_strategy)
 @settings(max_examples=50)
-def test_ocl::ecore::callexp_instantiation(instance):
-    assert isinstance(instance, ocl::ecore::CallExp)
+def test_ocl_ecore_realliteralexp_instantiation(instance):
+    assert isinstance(instance, ocl_ecore_RealLiteralExp)
 
-@given(instance=ocl::ecore::BooleanLiteralExp_strategy)
+@given(instance=ocl_ecore_PropertyCallExp_strategy)
 @settings(max_examples=50)
-def test_ocl::ecore::booleanliteralexp_instantiation(instance):
-    assert isinstance(instance, ocl::ecore::BooleanLiteralExp)
+def test_ocl_ecore_propertycallexp_instantiation(instance):
+    assert isinstance(instance, ocl_ecore_PropertyCallExp)
 
-@given(instance=ocl::ecore::AssociationClassCallExp_strategy)
+@given(instance=ocl_ecore_PrimitiveLiteralExp_strategy)
 @settings(max_examples=50)
-def test_ocl::ecore::associationclasscallexp_instantiation(instance):
-    assert isinstance(instance, ocl::ecore::AssociationClassCallExp)
+def test_ocl_ecore_primitiveliteralexp_instantiation(instance):
+    assert isinstance(instance, ocl_ecore_PrimitiveLiteralExp)
 
-@given(instance=ocl::ecore::ExpressionInOCL_strategy)
+@given(instance=ecore_ocl_EReference_strategy)
 @settings(max_examples=50)
-def test_ocl::ecore::expressioninocl_instantiation(instance):
-    assert isinstance(instance, ocl::ecore::ExpressionInOCL)
-
-@given(instance=ecore::ocl::EClass_strategy)
-@settings(max_examples=50)
-def test_ecore::ocl::eclass_instantiation(instance):
-    assert isinstance(instance, ecore::ocl::EClass)
-
-@given(instance=ocl::ecore::SendSignalAction_strategy)
-@settings(max_examples=50)
-def test_ocl::ecore::sendsignalaction_instantiation(instance):
-    assert isinstance(instance, ocl::ecore::SendSignalAction)
-
-@given(instance=ecore::ocl::EModelElement_strategy)
-@settings(max_examples=50)
-def test_ecore::ocl::emodelelement_instantiation(instance):
-    assert isinstance(instance, ecore::ocl::EModelElement)
-
-@given(instance=ENamedElement_strategy)
-@settings(max_examples=50)
-def test_enamedelement_instantiation(instance):
-    assert isinstance(instance, ENamedElement)
-
-@given(instance=ocl::ecore::Constraint_strategy)
-@settings(max_examples=50)
-def test_ocl::ecore::constraint_instantiation(instance):
-    assert isinstance(instance, ocl::ecore::Constraint)
-
-@given(instance=ocl::ecore::Constraint_strategy)
-def test_ocl::ecore::constraint_stereotype_type(instance):
-    assert isinstance(instance.stereotype, str)
-
-
-@given(instance=ocl::ecore::Constraint_strategy)
-def test_ocl::ecore::constraint_stereotype_setter(instance):
-    original = instance.stereotype
-    instance.stereotype = original
-    assert instance.stereotype == original
-
-@given(instance=ecore::ocl::EOperation_strategy)
-@settings(max_examples=50)
-def test_ecore::ocl::eoperation_instantiation(instance):
-    assert isinstance(instance, ecore::ocl::EOperation)
-
-@given(instance=ocl::ecore::CallOperationAction_strategy)
-@settings(max_examples=50)
-def test_ocl::ecore::calloperationaction_instantiation(instance):
-    assert isinstance(instance, ocl::ecore::CallOperationAction)
-
-@given(instance=ocl::ecore::VoidType_strategy)
-@settings(max_examples=50)
-def test_ocl::ecore::voidtype_instantiation(instance):
-    assert isinstance(instance, ocl::ecore::VoidType)
-
-@given(instance=ocl::ecore::TypeType_strategy)
-@settings(max_examples=50)
-def test_ocl::ecore::typetype_instantiation(instance):
-    assert isinstance(instance, ocl::ecore::TypeType)
-
-@given(instance=ocl::ecore::TupleType_strategy)
-@settings(max_examples=50)
-def test_ocl::ecore::tupletype_instantiation(instance):
-    assert isinstance(instance, ocl::ecore::TupleType)
-
-@given(instance=ocl::ecore::TemplateParameterType_strategy)
-@settings(max_examples=50)
-def test_ocl::ecore::templateparametertype_instantiation(instance):
-    assert isinstance(instance, ocl::ecore::TemplateParameterType)
-
-@given(instance=ocl::ecore::MessageType_strategy)
-@settings(max_examples=50)
-def test_ocl::ecore::messagetype_instantiation(instance):
-    assert isinstance(instance, ocl::ecore::MessageType)
-
-@given(instance=ocl::ecore::InvalidType_strategy)
-@settings(max_examples=50)
-def test_ocl::ecore::invalidtype_instantiation(instance):
-    assert isinstance(instance, ocl::ecore::InvalidType)
-
-@given(instance=types::ElementType_strategy)
-@settings(max_examples=50)
-def test_types::elementtype_instantiation(instance):
-    assert isinstance(instance, types::ElementType)
-
-@given(instance=EClass_strategy)
-@settings(max_examples=50)
-def test_eclass_instantiation(instance):
-    assert isinstance(instance, EClass)
-
-@given(instance=ocl::ecore::ElementType_strategy)
-@settings(max_examples=50)
-def test_ocl::ecore::elementtype_instantiation(instance):
-    assert isinstance(instance, ocl::ecore::ElementType)
-
-@given(instance=ocl::ecore::CollectionType_strategy)
-@settings(max_examples=50)
-def test_ocl::ecore::collectiontype_instantiation(instance):
-    assert isinstance(instance, ocl::ecore::CollectionType)
-
-@given(instance=ocl::ecore::BagType_strategy)
-@settings(max_examples=50)
-def test_ocl::ecore::bagtype_instantiation(instance):
-    assert isinstance(instance, ocl::ecore::BagType)
-
-@given(instance=ocl::ecore::AnyType_strategy)
-@settings(max_examples=50)
-def test_ocl::ecore::anytype_instantiation(instance):
-    assert isinstance(instance, ocl::ecore::AnyType)
-
-@given(instance=ocl::ecore::StringLiteralExp_strategy)
-@settings(max_examples=50)
-def test_ocl::ecore::stringliteralexp_instantiation(instance):
-    assert isinstance(instance, ocl::ecore::StringLiteralExp)
-
-@given(instance=ocl::ecore::StateExp_strategy)
-@settings(max_examples=50)
-def test_ocl::ecore::stateexp_instantiation(instance):
-    assert isinstance(instance, ocl::ecore::StateExp)
-
-@given(instance=ocl::ecore::RealLiteralExp_strategy)
-@settings(max_examples=50)
-def test_ocl::ecore::realliteralexp_instantiation(instance):
-    assert isinstance(instance, ocl::ecore::RealLiteralExp)
-
-@given(instance=ocl::ecore::PropertyCallExp_strategy)
-@settings(max_examples=50)
-def test_ocl::ecore::propertycallexp_instantiation(instance):
-    assert isinstance(instance, ocl::ecore::PropertyCallExp)
-
-@given(instance=ocl::ecore::PrimitiveLiteralExp_strategy)
-@settings(max_examples=50)
-def test_ocl::ecore::primitiveliteralexp_instantiation(instance):
-    assert isinstance(instance, ocl::ecore::PrimitiveLiteralExp)
-
-@given(instance=ecore::ocl::EReference_strategy)
-@settings(max_examples=50)
-def test_ecore::ocl::ereference_instantiation(instance):
-    assert isinstance(instance, ecore::ocl::EReference)
+def test_ecore_ocl_ereference_instantiation(instance):
+    assert isinstance(instance, ecore_ocl_EReference)
 
 @given(instance=NavigationCallExp_strategy)
 @settings(max_examples=50)
 def test_navigationcallexp_instantiation(instance):
     assert isinstance(instance, NavigationCallExp)
 
-@given(instance=ocl::ecore::OppositePropertyCallExp_strategy)
+@given(instance=ocl_ecore_OppositePropertyCallExp_strategy)
 @settings(max_examples=50)
-def test_ocl::ecore::oppositepropertycallexp_instantiation(instance):
-    assert isinstance(instance, ocl::ecore::OppositePropertyCallExp)
+def test_ocl_ecore_oppositepropertycallexp_instantiation(instance):
+    assert isinstance(instance, ocl_ecore_OppositePropertyCallExp)
 
-@given(instance=ocl::ecore::VariableExp_strategy)
+@given(instance=ocl_ecore_VariableExp_strategy)
 @settings(max_examples=50)
-def test_ocl::ecore::variableexp_instantiation(instance):
-    assert isinstance(instance, ocl::ecore::VariableExp)
+def test_ocl_ecore_variableexp_instantiation(instance):
+    assert isinstance(instance, ocl_ecore_VariableExp)
 
-@given(instance=ocl::ecore::Variable_strategy)
+@given(instance=ocl_ecore_Variable_strategy)
 @settings(max_examples=50)
-def test_ocl::ecore::variable_instantiation(instance):
-    assert isinstance(instance, ocl::ecore::Variable)
+def test_ocl_ecore_variable_instantiation(instance):
+    assert isinstance(instance, ocl_ecore_Variable)
 
-@given(instance=ocl::ecore::UnspecifiedValueExp_strategy)
+@given(instance=ocl_ecore_UnspecifiedValueExp_strategy)
 @settings(max_examples=50)
-def test_ocl::ecore::unspecifiedvalueexp_instantiation(instance):
-    assert isinstance(instance, ocl::ecore::UnspecifiedValueExp)
+def test_ocl_ecore_unspecifiedvalueexp_instantiation(instance):
+    assert isinstance(instance, ocl_ecore_UnspecifiedValueExp)
 
-@given(instance=ocl::ecore::TypeExp_strategy)
+@given(instance=ocl_ecore_TypeExp_strategy)
 @settings(max_examples=50)
-def test_ocl::ecore::typeexp_instantiation(instance):
-    assert isinstance(instance, ocl::ecore::TypeExp)
+def test_ocl_ecore_typeexp_instantiation(instance):
+    assert isinstance(instance, ocl_ecore_TypeExp)
 
-@given(instance=ocl::ecore::TupleLiteralPart_strategy)
+@given(instance=ocl_ecore_TupleLiteralPart_strategy)
 @settings(max_examples=50)
-def test_ocl::ecore::tupleliteralpart_instantiation(instance):
-    assert isinstance(instance, ocl::ecore::TupleLiteralPart)
+def test_ocl_ecore_tupleliteralpart_instantiation(instance):
+    assert isinstance(instance, ocl_ecore_TupleLiteralPart)
 
-@given(instance=ocl::ecore::TupleLiteralExp_strategy)
+@given(instance=ocl_ecore_TupleLiteralExp_strategy)
 @settings(max_examples=50)
-def test_ocl::ecore::tupleliteralexp_instantiation(instance):
-    assert isinstance(instance, ocl::ecore::TupleLiteralExp)
+def test_ocl_ecore_tupleliteralexp_instantiation(instance):
+    assert isinstance(instance, ocl_ecore_TupleLiteralExp)
 
-@given(instance=ocl::ecore::EnumLiteralExp_strategy)
+@given(instance=ocl_ecore_EnumLiteralExp_strategy)
 @settings(max_examples=50)
-def test_ocl::ecore::enumliteralexp_instantiation(instance):
-    assert isinstance(instance, ocl::ecore::EnumLiteralExp)
+def test_ocl_ecore_enumliteralexp_instantiation(instance):
+    assert isinstance(instance, ocl_ecore_EnumLiteralExp)
 
-@given(instance=ocl::ecore::CollectionRange_strategy)
+@given(instance=ocl_ecore_CollectionRange_strategy)
 @settings(max_examples=50)
-def test_ocl::ecore::collectionrange_instantiation(instance):
-    assert isinstance(instance, ocl::ecore::CollectionRange)
+def test_ocl_ecore_collectionrange_instantiation(instance):
+    assert isinstance(instance, ocl_ecore_CollectionRange)
 
-@given(instance=ocl::ecore::CollectionLiteralPart_strategy)
+@given(instance=ocl_ecore_CollectionLiteralPart_strategy)
 @settings(max_examples=50)
-def test_ocl::ecore::collectionliteralpart_instantiation(instance):
-    assert isinstance(instance, ocl::ecore::CollectionLiteralPart)
+def test_ocl_ecore_collectionliteralpart_instantiation(instance):
+    assert isinstance(instance, ocl_ecore_CollectionLiteralPart)
 
-@given(instance=ocl::ecore::CollectionLiteralExp_strategy)
+@given(instance=ocl_ecore_CollectionLiteralExp_strategy)
 @settings(max_examples=50)
-def test_ocl::ecore::collectionliteralexp_instantiation(instance):
-    assert isinstance(instance, ocl::ecore::CollectionLiteralExp)
+def test_ocl_ecore_collectionliteralexp_instantiation(instance):
+    assert isinstance(instance, ocl_ecore_CollectionLiteralExp)
 
-@given(instance=ocl::ecore::OperationCallExp_strategy)
+@given(instance=ocl_ecore_OperationCallExp_strategy)
 @settings(max_examples=50)
-def test_ocl::ecore::operationcallexp_instantiation(instance):
-    assert isinstance(instance, ocl::ecore::OperationCallExp)
+def test_ocl_ecore_operationcallexp_instantiation(instance):
+    assert isinstance(instance, ocl_ecore_OperationCallExp)
 
-@given(instance=ocl::ecore::OCLExpression_strategy)
+@given(instance=ocl_ecore_OCLExpression_strategy)
 @settings(max_examples=50)
-def test_ocl::ecore::oclexpression_instantiation(instance):
-    assert isinstance(instance, ocl::ecore::OCLExpression)
+def test_ocl_ecore_oclexpression_instantiation(instance):
+    assert isinstance(instance, ocl_ecore_OCLExpression)
 
-@given(instance=ocl::ecore::NumericLiteralExp_strategy)
+@given(instance=ocl_ecore_NumericLiteralExp_strategy)
 @settings(max_examples=50)
-def test_ocl::ecore::numericliteralexp_instantiation(instance):
-    assert isinstance(instance, ocl::ecore::NumericLiteralExp)
+def test_ocl_ecore_numericliteralexp_instantiation(instance):
+    assert isinstance(instance, ocl_ecore_NumericLiteralExp)
 
-@given(instance=ocl::ecore::NullLiteralExp_strategy)
+@given(instance=ocl_ecore_NullLiteralExp_strategy)
 @settings(max_examples=50)
-def test_ocl::ecore::nullliteralexp_instantiation(instance):
-    assert isinstance(instance, ocl::ecore::NullLiteralExp)
+def test_ocl_ecore_nullliteralexp_instantiation(instance):
+    assert isinstance(instance, ocl_ecore_NullLiteralExp)
 
-@given(instance=ocl::ecore::NavigationCallExp_strategy)
+@given(instance=ocl_ecore_NavigationCallExp_strategy)
 @settings(max_examples=50)
-def test_ocl::ecore::navigationcallexp_instantiation(instance):
-    assert isinstance(instance, ocl::ecore::NavigationCallExp)
+def test_ocl_ecore_navigationcallexp_instantiation(instance):
+    assert isinstance(instance, ocl_ecore_NavigationCallExp)
 
-@given(instance=ocl::ecore::MessageExp_strategy)
+@given(instance=ocl_ecore_MessageExp_strategy)
 @settings(max_examples=50)
-def test_ocl::ecore::messageexp_instantiation(instance):
-    assert isinstance(instance, ocl::ecore::MessageExp)
+def test_ocl_ecore_messageexp_instantiation(instance):
+    assert isinstance(instance, ocl_ecore_MessageExp)
 
-@given(instance=ocl::ecore::LoopExp_strategy)
+@given(instance=ocl_ecore_LoopExp_strategy)
 @settings(max_examples=50)
-def test_ocl::ecore::loopexp_instantiation(instance):
-    assert isinstance(instance, ocl::ecore::LoopExp)
+def test_ocl_ecore_loopexp_instantiation(instance):
+    assert isinstance(instance, ocl_ecore_LoopExp)
 
-@given(instance=ocl::ecore::LiteralExp_strategy)
+@given(instance=ocl_ecore_LiteralExp_strategy)
 @settings(max_examples=50)
-def test_ocl::ecore::literalexp_instantiation(instance):
-    assert isinstance(instance, ocl::ecore::LiteralExp)
+def test_ocl_ecore_literalexp_instantiation(instance):
+    assert isinstance(instance, ocl_ecore_LiteralExp)
 
-@given(instance=ocl::ecore::LetExp_strategy)
+@given(instance=ocl_ecore_LetExp_strategy)
 @settings(max_examples=50)
-def test_ocl::ecore::letexp_instantiation(instance):
-    assert isinstance(instance, ocl::ecore::LetExp)
+def test_ocl_ecore_letexp_instantiation(instance):
+    assert isinstance(instance, ocl_ecore_LetExp)
 
-@given(instance=ocl::ecore::IteratorExp_strategy)
+@given(instance=ocl_ecore_IteratorExp_strategy)
 @settings(max_examples=50)
-def test_ocl::ecore::iteratorexp_instantiation(instance):
-    assert isinstance(instance, ocl::ecore::IteratorExp)
+def test_ocl_ecore_iteratorexp_instantiation(instance):
+    assert isinstance(instance, ocl_ecore_IteratorExp)
 
-@given(instance=ocl::ecore::IterateExp_strategy)
+@given(instance=ocl_ecore_IterateExp_strategy)
 @settings(max_examples=50)
-def test_ocl::ecore::iterateexp_instantiation(instance):
-    assert isinstance(instance, ocl::ecore::IterateExp)
+def test_ocl_ecore_iterateexp_instantiation(instance):
+    assert isinstance(instance, ocl_ecore_IterateExp)
 
-@given(instance=ocl::ecore::InvalidLiteralExp_strategy)
+@given(instance=ocl_ecore_InvalidLiteralExp_strategy)
 @settings(max_examples=50)
-def test_ocl::ecore::invalidliteralexp_instantiation(instance):
-    assert isinstance(instance, ocl::ecore::InvalidLiteralExp)
+def test_ocl_ecore_invalidliteralexp_instantiation(instance):
+    assert isinstance(instance, ocl_ecore_InvalidLiteralExp)
 
-@given(instance=ocl::ecore::UnlimitedNaturalLiteralExp_strategy)
+@given(instance=ocl_ecore_UnlimitedNaturalLiteralExp_strategy)
 @settings(max_examples=50)
-def test_ocl::ecore::unlimitednaturalliteralexp_instantiation(instance):
-    assert isinstance(instance, ocl::ecore::UnlimitedNaturalLiteralExp)
+def test_ocl_ecore_unlimitednaturalliteralexp_instantiation(instance):
+    assert isinstance(instance, ocl_ecore_UnlimitedNaturalLiteralExp)
 
-@given(instance=ocl::ecore::IntegerLiteralExp_strategy)
+@given(instance=ocl_ecore_IntegerLiteralExp_strategy)
 @settings(max_examples=50)
-def test_ocl::ecore::integerliteralexp_instantiation(instance):
-    assert isinstance(instance, ocl::ecore::IntegerLiteralExp)
+def test_ocl_ecore_integerliteralexp_instantiation(instance):
+    assert isinstance(instance, ocl_ecore_IntegerLiteralExp)
 
-@given(instance=ocl::ecore::IfExp_strategy)
+@given(instance=ocl_ecore_IfExp_strategy)
 @settings(max_examples=50)
-def test_ocl::ecore::ifexp_instantiation(instance):
-    assert isinstance(instance, ocl::ecore::IfExp)
+def test_ocl_ecore_ifexp_instantiation(instance):
+    assert isinstance(instance, ocl_ecore_IfExp)
 
-@given(instance=ocl::ecore::FeatureCallExp_strategy)
+@given(instance=ocl_ecore_FeatureCallExp_strategy)
 @settings(max_examples=50)
-def test_ocl::ecore::featurecallexp_instantiation(instance):
-    assert isinstance(instance, ocl::ecore::FeatureCallExp)
+def test_ocl_ecore_featurecallexp_instantiation(instance):
+    assert isinstance(instance, ocl_ecore_FeatureCallExp)
 
-@given(instance=ocl::ecore::SetType_strategy)
+@given(instance=ocl_ecore_SetType_strategy)
 @settings(max_examples=50)
-def test_ocl::ecore::settype_instantiation(instance):
-    assert isinstance(instance, ocl::ecore::SetType)
+def test_ocl_ecore_settype_instantiation(instance):
+    assert isinstance(instance, ocl_ecore_SetType)
 
-@given(instance=ocl::ecore::SequenceType_strategy)
+@given(instance=ocl_ecore_SequenceType_strategy)
 @settings(max_examples=50)
-def test_ocl::ecore::sequencetype_instantiation(instance):
-    assert isinstance(instance, ocl::ecore::SequenceType)
+def test_ocl_ecore_sequencetype_instantiation(instance):
+    assert isinstance(instance, ocl_ecore_SequenceType)
 
-@given(instance=ocl::ecore::PrimitiveType_strategy)
+@given(instance=ocl_ecore_PrimitiveType_strategy)
 @settings(max_examples=50)
-def test_ocl::ecore::primitivetype_instantiation(instance):
-    assert isinstance(instance, ocl::ecore::PrimitiveType)
+def test_ocl_ecore_primitivetype_instantiation(instance):
+    assert isinstance(instance, ocl_ecore_PrimitiveType)
+
+@given(instance=ocl_ecore_OrderedSetType_strategy)
+@settings(max_examples=50)
+def test_ocl_ecore_orderedsettype_instantiation(instance):
+    assert isinstance(instance, ocl_ecore_OrderedSetType)
+
+@given(instance=ocl_ecore_CollectionItem_strategy)
+@settings(max_examples=50)
+def test_ocl_ecore_collectionitem_instantiation(instance):
+    assert isinstance(instance, ocl_ecore_CollectionItem)
+
+@given(instance=ocl_ecore_CallExp_strategy)
+@settings(max_examples=50)
+def test_ocl_ecore_callexp_instantiation(instance):
+    assert isinstance(instance, ocl_ecore_CallExp)
+
+@given(instance=ocl_ecore_BooleanLiteralExp_strategy)
+@settings(max_examples=50)
+def test_ocl_ecore_booleanliteralexp_instantiation(instance):
+    assert isinstance(instance, ocl_ecore_BooleanLiteralExp)
+
+@given(instance=ocl_ecore_AssociationClassCallExp_strategy)
+@settings(max_examples=50)
+def test_ocl_ecore_associationclasscallexp_instantiation(instance):
+    assert isinstance(instance, ocl_ecore_AssociationClassCallExp)
+
+@given(instance=ocl_ecore_ExpressionInOCL_strategy)
+@settings(max_examples=50)
+def test_ocl_ecore_expressioninocl_instantiation(instance):
+    assert isinstance(instance, ocl_ecore_ExpressionInOCL)
+
+@given(instance=ecore_ocl_EClass_strategy)
+@settings(max_examples=50)
+def test_ecore_ocl_eclass_instantiation(instance):
+    assert isinstance(instance, ecore_ocl_EClass)
+
+@given(instance=ocl_ecore_SendSignalAction_strategy)
+@settings(max_examples=50)
+def test_ocl_ecore_sendsignalaction_instantiation(instance):
+    assert isinstance(instance, ocl_ecore_SendSignalAction)
+
+@given(instance=ecore_ocl_EModelElement_strategy)
+@settings(max_examples=50)
+def test_ecore_ocl_emodelelement_instantiation(instance):
+    assert isinstance(instance, ecore_ocl_EModelElement)
+
+@given(instance=ENamedElement_strategy)
+@settings(max_examples=50)
+def test_enamedelement_instantiation(instance):
+    assert isinstance(instance, ENamedElement)
+
+@given(instance=ocl_ecore_Constraint_strategy)
+@settings(max_examples=50)
+def test_ocl_ecore_constraint_instantiation(instance):
+    assert isinstance(instance, ocl_ecore_Constraint)
+
+
+
+@given(instance=ocl_ecore_Constraint_strategy)
+def test_ocl_ecore_constraint_stereotype_setter(instance):
+    original = instance.stereotype
+    instance.stereotype = original
+    assert instance.stereotype == original
+
+@given(instance=ecore_ocl_EOperation_strategy)
+@settings(max_examples=50)
+def test_ecore_ocl_eoperation_instantiation(instance):
+    assert isinstance(instance, ecore_ocl_EOperation)
+
+@given(instance=ocl_ecore_CallOperationAction_strategy)
+@settings(max_examples=50)
+def test_ocl_ecore_calloperationaction_instantiation(instance):
+    assert isinstance(instance, ocl_ecore_CallOperationAction)
+
+@given(instance=ocl_ecore_VoidType_strategy)
+@settings(max_examples=50)
+def test_ocl_ecore_voidtype_instantiation(instance):
+    assert isinstance(instance, ocl_ecore_VoidType)
+
+@given(instance=ocl_ecore_TypeType_strategy)
+@settings(max_examples=50)
+def test_ocl_ecore_typetype_instantiation(instance):
+    assert isinstance(instance, ocl_ecore_TypeType)
+
+@given(instance=ocl_ecore_TupleType_strategy)
+@settings(max_examples=50)
+def test_ocl_ecore_tupletype_instantiation(instance):
+    assert isinstance(instance, ocl_ecore_TupleType)
+
+@given(instance=ocl_ecore_TemplateParameterType_strategy)
+@settings(max_examples=50)
+def test_ocl_ecore_templateparametertype_instantiation(instance):
+    assert isinstance(instance, ocl_ecore_TemplateParameterType)
+
+@given(instance=ocl_ecore_MessageType_strategy)
+@settings(max_examples=50)
+def test_ocl_ecore_messagetype_instantiation(instance):
+    assert isinstance(instance, ocl_ecore_MessageType)
+
+@given(instance=ocl_ecore_InvalidType_strategy)
+@settings(max_examples=50)
+def test_ocl_ecore_invalidtype_instantiation(instance):
+    assert isinstance(instance, ocl_ecore_InvalidType)
+
+@given(instance=types_ElementType_strategy)
+@settings(max_examples=50)
+def test_types_elementtype_instantiation(instance):
+    assert isinstance(instance, types_ElementType)
+
+@given(instance=EClass_strategy)
+@settings(max_examples=50)
+def test_eclass_instantiation(instance):
+    assert isinstance(instance, EClass)
+
+@given(instance=ocl_ecore_ElementType_strategy)
+@settings(max_examples=50)
+def test_ocl_ecore_elementtype_instantiation(instance):
+    assert isinstance(instance, ocl_ecore_ElementType)
+
+@given(instance=ocl_ecore_CollectionType_strategy)
+@settings(max_examples=50)
+def test_ocl_ecore_collectiontype_instantiation(instance):
+    assert isinstance(instance, ocl_ecore_CollectionType)
+
+@given(instance=ocl_ecore_BagType_strategy)
+@settings(max_examples=50)
+def test_ocl_ecore_bagtype_instantiation(instance):
+    assert isinstance(instance, ocl_ecore_BagType)
+
+@given(instance=ocl_ecore_AnyType_strategy)
+@settings(max_examples=50)
+def test_ocl_ecore_anytype_instantiation(instance):
+    assert isinstance(instance, ocl_ecore_AnyType)

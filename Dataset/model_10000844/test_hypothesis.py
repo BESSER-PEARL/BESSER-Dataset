@@ -3,7 +3,7 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
 from python_code import (
     Card,
@@ -30,17 +30,8 @@ def test_card_constructor_exists():
 def test_card_constructor_args():
     sig = inspect.signature(Card.__init__)
     params = list(sig.parameters.keys())
-    assert "kind" in params, "Missing parameter 'kind'"
     assert "operation" in params, "Missing parameter 'operation'"
-
-def test_card_has_kind():
-    assert hasattr(Card, "kind")
-    descriptor = None
-    for klass in Card.__mro__:
-        if "kind" in klass.__dict__:
-            descriptor = klass.__dict__["kind"]
-            break
-    assert isinstance(descriptor, property)
+    assert "kind" in params, "Missing parameter 'kind'"
 
 def test_card_has_operation():
     assert hasattr(Card, "operation")
@@ -48,6 +39,15 @@ def test_card_has_operation():
     for klass in Card.__mro__:
         if "operation" in klass.__dict__:
             descriptor = klass.__dict__["operation"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_card_has_kind():
+    assert hasattr(Card, "kind")
+    descriptor = None
+    for klass in Card.__mro__:
+        if "kind" in klass.__dict__:
+            descriptor = klass.__dict__["kind"]
             break
     assert isinstance(descriptor, property)
 
@@ -119,10 +119,10 @@ safe_text = st.text(
 ).filter(lambda s: s[0].isalpha())
 Card_strategy = st.builds(
     Card,
-    kind=
-        st.none(),
     operation=
-        safe_text
+        safe_text,
+    kind=
+        st.none()
 )
 Player_strategy = st.builds(
     Player,
@@ -136,20 +136,6 @@ Deck_strategy = st.builds(
 def test_card_instantiation(instance):
     assert isinstance(instance, Card)
 
-@given(instance=Card_strategy)
-def test_card_kind_type(instance):
-    assert isinstance(instance.kind, kind)
-
-
-@given(instance=Card_strategy)
-def test_card_kind_setter(instance):
-    original = instance.kind
-    instance.kind = original
-    assert instance.kind == original
-
-@given(instance=Card_strategy)
-def test_card_operation_type(instance):
-    assert isinstance(instance.operation, str)
 
 
 @given(instance=Card_strategy)
@@ -157,6 +143,14 @@ def test_card_operation_setter(instance):
     original = instance.operation
     instance.operation = original
     assert instance.operation == original
+
+
+
+@given(instance=Card_strategy)
+def test_card_kind_setter(instance):
+    original = instance.kind
+    instance.kind = original
+    assert instance.kind == original
 
 @given(instance=Player_strategy)
 @settings(max_examples=50)

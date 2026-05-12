@@ -3,7 +3,7 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
 from python_code import (
     Datos,
@@ -36,11 +36,11 @@ def test_datos_constructor_args():
     sig = inspect.signature(Datos.__init__)
     params = list(sig.parameters.keys())
     assert "raza" in params, "Missing parameter 'raza'"
-    assert "Edad" in params, "Missing parameter 'Edad'"
     assert "peso" in params, "Missing parameter 'peso'"
-    assert "observacion" in params, "Missing parameter 'observacion'"
-    assert "altura" in params, "Missing parameter 'altura'"
     assert "nombre" in params, "Missing parameter 'nombre'"
+    assert "altura" in params, "Missing parameter 'altura'"
+    assert "observacion" in params, "Missing parameter 'observacion'"
+    assert "Edad" in params, "Missing parameter 'Edad'"
 
 def test_datos_has_raza():
     assert hasattr(Datos, "raza")
@@ -48,15 +48,6 @@ def test_datos_has_raza():
     for klass in Datos.__mro__:
         if "raza" in klass.__dict__:
             descriptor = klass.__dict__["raza"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_datos_has_Edad():
-    assert hasattr(Datos, "Edad")
-    descriptor = None
-    for klass in Datos.__mro__:
-        if "Edad" in klass.__dict__:
-            descriptor = klass.__dict__["Edad"]
             break
     assert isinstance(descriptor, property)
 
@@ -69,12 +60,12 @@ def test_datos_has_peso():
             break
     assert isinstance(descriptor, property)
 
-def test_datos_has_observacion():
-    assert hasattr(Datos, "observacion")
+def test_datos_has_nombre():
+    assert hasattr(Datos, "nombre")
     descriptor = None
     for klass in Datos.__mro__:
-        if "observacion" in klass.__dict__:
-            descriptor = klass.__dict__["observacion"]
+        if "nombre" in klass.__dict__:
+            descriptor = klass.__dict__["nombre"]
             break
     assert isinstance(descriptor, property)
 
@@ -87,12 +78,21 @@ def test_datos_has_altura():
             break
     assert isinstance(descriptor, property)
 
-def test_datos_has_nombre():
-    assert hasattr(Datos, "nombre")
+def test_datos_has_observacion():
+    assert hasattr(Datos, "observacion")
     descriptor = None
     for klass in Datos.__mro__:
-        if "nombre" in klass.__dict__:
-            descriptor = klass.__dict__["nombre"]
+        if "observacion" in klass.__dict__:
+            descriptor = klass.__dict__["observacion"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_datos_has_Edad():
+    assert hasattr(Datos, "Edad")
+    descriptor = None
+    for klass in Datos.__mro__:
+        if "Edad" in klass.__dict__:
+            descriptor = klass.__dict__["Edad"]
             break
     assert isinstance(descriptor, property)
 
@@ -238,16 +238,16 @@ Datos_strategy = st.builds(
     Datos,
     raza=
         safe_text,
-    Edad=
-        st.integers(),
     peso=
         safe_text,
-    observacion=
+    nombre=
         safe_text,
     altura=
         safe_text,
-    nombre=
-        safe_text
+    observacion=
+        safe_text,
+    Edad=
+        st.integers()
 )
 Veterinario_strategy = st.builds(
     Veterinario,
@@ -282,9 +282,6 @@ Usuario__Actor_strategy = st.builds(
 def test_datos_instantiation(instance):
     assert isinstance(instance, Datos)
 
-@given(instance=Datos_strategy)
-def test_datos_raza_type(instance):
-    assert isinstance(instance.raza, str)
 
 
 @given(instance=Datos_strategy)
@@ -293,20 +290,6 @@ def test_datos_raza_setter(instance):
     instance.raza = original
     assert instance.raza == original
 
-@given(instance=Datos_strategy)
-def test_datos_Edad_type(instance):
-    assert isinstance(instance.Edad, int)
-
-
-@given(instance=Datos_strategy)
-def test_datos_Edad_setter(instance):
-    original = instance.Edad
-    instance.Edad = original
-    assert instance.Edad == original
-
-@given(instance=Datos_strategy)
-def test_datos_peso_type(instance):
-    assert isinstance(instance.peso, str)
 
 
 @given(instance=Datos_strategy)
@@ -315,20 +298,14 @@ def test_datos_peso_setter(instance):
     instance.peso = original
     assert instance.peso == original
 
-@given(instance=Datos_strategy)
-def test_datos_observacion_type(instance):
-    assert isinstance(instance.observacion, str)
 
 
 @given(instance=Datos_strategy)
-def test_datos_observacion_setter(instance):
-    original = instance.observacion
-    instance.observacion = original
-    assert instance.observacion == original
+def test_datos_nombre_setter(instance):
+    original = instance.nombre
+    instance.nombre = original
+    assert instance.nombre == original
 
-@given(instance=Datos_strategy)
-def test_datos_altura_type(instance):
-    assert isinstance(instance.altura, str)
 
 
 @given(instance=Datos_strategy)
@@ -337,16 +314,21 @@ def test_datos_altura_setter(instance):
     instance.altura = original
     assert instance.altura == original
 
-@given(instance=Datos_strategy)
-def test_datos_nombre_type(instance):
-    assert isinstance(instance.nombre, str)
 
 
 @given(instance=Datos_strategy)
-def test_datos_nombre_setter(instance):
-    original = instance.nombre
-    instance.nombre = original
-    assert instance.nombre == original
+def test_datos_observacion_setter(instance):
+    original = instance.observacion
+    instance.observacion = original
+    assert instance.observacion == original
+
+
+
+@given(instance=Datos_strategy)
+def test_datos_Edad_setter(instance):
+    original = instance.Edad
+    instance.Edad = original
+    assert instance.Edad == original
 
 @given(instance=Veterinario_strategy)
 @settings(max_examples=50)

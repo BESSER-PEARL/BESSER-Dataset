@@ -3,25 +3,59 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
+    form_option,
     Editable,
-    form::SelectionList,
-    form::Input,
+    form_SelectionList,
+    form_textArea,
+    form_Input,
     Element,
-    form::Editable,
-    form::Label,
-    form::Orden,
-    form::Element,
-    form::Formulario,
-    form::textArea,
-    form::option,
+    form_Editable,
+    form_Label,
+    form_Orden,
+    form_Element,
+    form_Formulario,
 )
 
 # =============================================================================
 # SECTION 1 — STRUCTURAL TESTS
 # =============================================================================
+
+
+
+def test_form_option_is_not_abstract():
+    assert not inspect.isabstract(form_option)
+
+
+def test_form_option_constructor_exists():
+    assert callable(form_option.__init__)
+
+
+def test_form_option_constructor_args():
+    sig = inspect.signature(form_option.__init__)
+    params = list(sig.parameters.keys())
+    assert "value" in params, "Missing parameter 'value'"
+    assert "content" in params, "Missing parameter 'content'"
+
+def test_form_option_has_value():
+    assert hasattr(form_option, "value")
+    descriptor = None
+    for klass in form_option.__mro__:
+        if "value" in klass.__dict__:
+            descriptor = klass.__dict__["value"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_form_option_has_content():
+    assert hasattr(form_option, "content")
+    descriptor = None
+    for klass in form_option.__mro__:
+        if "content" in klass.__dict__:
+            descriptor = klass.__dict__["content"]
+            break
+    assert isinstance(descriptor, property)
 
 
 
@@ -39,23 +73,23 @@ def test_editable_constructor_args():
 
 
 
-def test_form::selectionlist_is_not_abstract():
-    assert not inspect.isabstract(form::SelectionList)
+def test_form_selectionlist_is_not_abstract():
+    assert not inspect.isabstract(form_SelectionList)
 
 
-def test_form::selectionlist_constructor_exists():
-    assert callable(form::SelectionList.__init__)
+def test_form_selectionlist_constructor_exists():
+    assert callable(form_SelectionList.__init__)
 
 
-def test_form::selectionlist_constructor_args():
-    sig = inspect.signature(form::SelectionList.__init__)
+def test_form_selectionlist_constructor_args():
+    sig = inspect.signature(form_SelectionList.__init__)
     params = list(sig.parameters.keys())
     assert "multiple" in params, "Missing parameter 'multiple'"
 
-def test_form::selectionlist_has_multiple():
-    assert hasattr(form::SelectionList, "multiple")
+def test_form_selectionlist_has_multiple():
+    assert hasattr(form_SelectionList, "multiple")
     descriptor = None
-    for klass in form::SelectionList.__mro__:
+    for klass in form_SelectionList.__mro__:
         if "multiple" in klass.__dict__:
             descriptor = klass.__dict__["multiple"]
             break
@@ -63,45 +97,69 @@ def test_form::selectionlist_has_multiple():
 
 
 
-def test_form::input_is_not_abstract():
-    assert not inspect.isabstract(form::Input)
+def test_form_textarea_is_not_abstract():
+    assert not inspect.isabstract(form_textArea)
 
 
-def test_form::input_constructor_exists():
-    assert callable(form::Input.__init__)
+def test_form_textarea_constructor_exists():
+    assert callable(form_textArea.__init__)
 
 
-def test_form::input_constructor_args():
-    sig = inspect.signature(form::Input.__init__)
+def test_form_textarea_constructor_args():
+    sig = inspect.signature(form_textArea.__init__)
     params = list(sig.parameters.keys())
-    assert "type" in params, "Missing parameter 'type'"
-    assert "value" in params, "Missing parameter 'value'"
-    assert "checked" in params, "Missing parameter 'checked'"
+    assert "content" in params, "Missing parameter 'content'"
 
-def test_form::input_has_type():
-    assert hasattr(form::Input, "type")
+def test_form_textarea_has_content():
+    assert hasattr(form_textArea, "content")
     descriptor = None
-    for klass in form::Input.__mro__:
-        if "type" in klass.__dict__:
-            descriptor = klass.__dict__["type"]
+    for klass in form_textArea.__mro__:
+        if "content" in klass.__dict__:
+            descriptor = klass.__dict__["content"]
             break
     assert isinstance(descriptor, property)
 
-def test_form::input_has_value():
-    assert hasattr(form::Input, "value")
+
+
+def test_form_input_is_not_abstract():
+    assert not inspect.isabstract(form_Input)
+
+
+def test_form_input_constructor_exists():
+    assert callable(form_Input.__init__)
+
+
+def test_form_input_constructor_args():
+    sig = inspect.signature(form_Input.__init__)
+    params = list(sig.parameters.keys())
+    assert "checked" in params, "Missing parameter 'checked'"
+    assert "value" in params, "Missing parameter 'value'"
+    assert "type" in params, "Missing parameter 'type'"
+
+def test_form_input_has_checked():
+    assert hasattr(form_Input, "checked")
     descriptor = None
-    for klass in form::Input.__mro__:
+    for klass in form_Input.__mro__:
+        if "checked" in klass.__dict__:
+            descriptor = klass.__dict__["checked"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_form_input_has_value():
+    assert hasattr(form_Input, "value")
+    descriptor = None
+    for klass in form_Input.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
     assert isinstance(descriptor, property)
 
-def test_form::input_has_checked():
-    assert hasattr(form::Input, "checked")
+def test_form_input_has_type():
+    assert hasattr(form_Input, "type")
     descriptor = None
-    for klass in form::Input.__mro__:
-        if "checked" in klass.__dict__:
-            descriptor = klass.__dict__["checked"]
+    for klass in form_Input.__mro__:
+        if "type" in klass.__dict__:
+            descriptor = klass.__dict__["type"]
             break
     assert isinstance(descriptor, property)
 
@@ -121,33 +179,33 @@ def test_element_constructor_args():
 
 
 
-def test_form::editable_is_not_abstract():
-    assert not inspect.isabstract(form::Editable)
+def test_form_editable_is_not_abstract():
+    assert not inspect.isabstract(form_Editable)
 
 
-def test_form::editable_constructor_exists():
-    assert callable(form::Editable.__init__)
+def test_form_editable_constructor_exists():
+    assert callable(form_Editable.__init__)
 
 
-def test_form::editable_constructor_args():
-    sig = inspect.signature(form::Editable.__init__)
+def test_form_editable_constructor_args():
+    sig = inspect.signature(form_Editable.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
     assert "disabled" in params, "Missing parameter 'disabled'"
 
-def test_form::editable_has_name():
-    assert hasattr(form::Editable, "name")
+def test_form_editable_has_name():
+    assert hasattr(form_Editable, "name")
     descriptor = None
-    for klass in form::Editable.__mro__:
+    for klass in form_Editable.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
-def test_form::editable_has_disabled():
-    assert hasattr(form::Editable, "disabled")
+def test_form_editable_has_disabled():
+    assert hasattr(form_Editable, "disabled")
     descriptor = None
-    for klass in form::Editable.__mro__:
+    for klass in form_Editable.__mro__:
         if "disabled" in klass.__dict__:
             descriptor = klass.__dict__["disabled"]
             break
@@ -155,99 +213,33 @@ def test_form::editable_has_disabled():
 
 
 
-def test_form::label_is_not_abstract():
-    assert not inspect.isabstract(form::Label)
+def test_form_label_is_not_abstract():
+    assert not inspect.isabstract(form_Label)
 
 
-def test_form::label_constructor_exists():
-    assert callable(form::Label.__init__)
+def test_form_label_constructor_exists():
+    assert callable(form_Label.__init__)
 
 
-def test_form::label_constructor_args():
-    sig = inspect.signature(form::Label.__init__)
+def test_form_label_constructor_args():
+    sig = inspect.signature(form_Label.__init__)
     params = list(sig.parameters.keys())
-    assert "content" in params, "Missing parameter 'content'"
     assert "for_" in params, "Missing parameter 'for_'"
+    assert "content" in params, "Missing parameter 'content'"
 
-def test_form::label_has_content():
-    assert hasattr(form::Label, "content")
+def test_form_label_has_for_():
+    assert hasattr(form_Label, "for_")
     descriptor = None
-    for klass in form::Label.__mro__:
-        if "content" in klass.__dict__:
-            descriptor = klass.__dict__["content"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_form::label_has_for_():
-    assert hasattr(form::Label, "for_")
-    descriptor = None
-    for klass in form::Label.__mro__:
+    for klass in form_Label.__mro__:
         if "for_" in klass.__dict__:
             descriptor = klass.__dict__["for_"]
             break
     assert isinstance(descriptor, property)
 
-
-
-def test_form::orden_is_not_abstract():
-    assert not inspect.isabstract(form::Orden)
-
-
-def test_form::orden_constructor_exists():
-    assert callable(form::Orden.__init__)
-
-
-def test_form::orden_constructor_args():
-    sig = inspect.signature(form::Orden.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_form::element_is_not_abstract():
-    assert not inspect.isabstract(form::Element)
-
-
-def test_form::element_constructor_exists():
-    assert callable(form::Element.__init__)
-
-
-def test_form::element_constructor_args():
-    sig = inspect.signature(form::Element.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_form::formulario_is_not_abstract():
-    assert not inspect.isabstract(form::Formulario)
-
-
-def test_form::formulario_constructor_exists():
-    assert callable(form::Formulario.__init__)
-
-
-def test_form::formulario_constructor_args():
-    sig = inspect.signature(form::Formulario.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_form::textarea_is_not_abstract():
-    assert not inspect.isabstract(form::textArea)
-
-
-def test_form::textarea_constructor_exists():
-    assert callable(form::textArea.__init__)
-
-
-def test_form::textarea_constructor_args():
-    sig = inspect.signature(form::textArea.__init__)
-    params = list(sig.parameters.keys())
-    assert "content" in params, "Missing parameter 'content'"
-
-def test_form::textarea_has_content():
-    assert hasattr(form::textArea, "content")
+def test_form_label_has_content():
+    assert hasattr(form_Label, "content")
     descriptor = None
-    for klass in form::textArea.__mro__:
+    for klass in form_Label.__mro__:
         if "content" in klass.__dict__:
             descriptor = klass.__dict__["content"]
             break
@@ -255,37 +247,45 @@ def test_form::textarea_has_content():
 
 
 
-def test_form::option_is_not_abstract():
-    assert not inspect.isabstract(form::option)
+def test_form_orden_is_not_abstract():
+    assert not inspect.isabstract(form_Orden)
 
 
-def test_form::option_constructor_exists():
-    assert callable(form::option.__init__)
+def test_form_orden_constructor_exists():
+    assert callable(form_Orden.__init__)
 
 
-def test_form::option_constructor_args():
-    sig = inspect.signature(form::option.__init__)
+def test_form_orden_constructor_args():
+    sig = inspect.signature(form_Orden.__init__)
     params = list(sig.parameters.keys())
-    assert "content" in params, "Missing parameter 'content'"
-    assert "value" in params, "Missing parameter 'value'"
 
-def test_form::option_has_content():
-    assert hasattr(form::option, "content")
-    descriptor = None
-    for klass in form::option.__mro__:
-        if "content" in klass.__dict__:
-            descriptor = klass.__dict__["content"]
-            break
-    assert isinstance(descriptor, property)
 
-def test_form::option_has_value():
-    assert hasattr(form::option, "value")
-    descriptor = None
-    for klass in form::option.__mro__:
-        if "value" in klass.__dict__:
-            descriptor = klass.__dict__["value"]
-            break
-    assert isinstance(descriptor, property)
+
+def test_form_element_is_not_abstract():
+    assert not inspect.isabstract(form_Element)
+
+
+def test_form_element_constructor_exists():
+    assert callable(form_Element.__init__)
+
+
+def test_form_element_constructor_args():
+    sig = inspect.signature(form_Element.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_form_formulario_is_not_abstract():
+    assert not inspect.isabstract(form_Formulario)
+
+
+def test_form_formulario_constructor_exists():
+    assert callable(form_Formulario.__init__)
+
+
+def test_form_formulario_constructor_args():
+    sig = inspect.signature(form_Formulario.__init__)
+    params = list(sig.parameters.keys())
 
 
 # =============================================================================
@@ -299,234 +299,201 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
+form_option_strategy = st.builds(
+    form_option,
+    value=
+        safe_text,
+    content=
+        safe_text
+)
 Editable_strategy = st.builds(
     Editable,
 )
-form::SelectionList_strategy = st.builds(
-    form::SelectionList,
+form_SelectionList_strategy = st.builds(
+    form_SelectionList,
     multiple=
         st.booleans()
 )
-form::Input_strategy = st.builds(
-    form::Input,
-    type=
-        safe_text,
+form_textArea_strategy = st.builds(
+    form_textArea,
+    content=
+        safe_text
+)
+form_Input_strategy = st.builds(
+    form_Input,
+    checked=
+        st.booleans(),
     value=
         safe_text,
-    checked=
-        st.booleans()
+    type=
+        safe_text
 )
 Element_strategy = st.builds(
     Element,
 )
-form::Editable_strategy = st.builds(
-    form::Editable,
+form_Editable_strategy = st.builds(
+    form_Editable,
     name=
         safe_text,
     disabled=
         st.booleans()
 )
-form::Label_strategy = st.builds(
-    form::Label,
-    content=
-        safe_text,
+form_Label_strategy = st.builds(
+    form_Label,
     for_=
-        safe_text
-)
-form::Orden_strategy = st.builds(
-    form::Orden,
-)
-form::Element_strategy = st.builds(
-    form::Element,
-)
-form::Formulario_strategy = st.builds(
-    form::Formulario,
-)
-form::textArea_strategy = st.builds(
-    form::textArea,
-    content=
-        safe_text
-)
-form::option_strategy = st.builds(
-    form::option,
-    content=
         safe_text,
-    value=
+    content=
         safe_text
 )
+form_Orden_strategy = st.builds(
+    form_Orden,
+)
+form_Element_strategy = st.builds(
+    form_Element,
+)
+form_Formulario_strategy = st.builds(
+    form_Formulario,
+)
+
+@given(instance=form_option_strategy)
+@settings(max_examples=50)
+def test_form_option_instantiation(instance):
+    assert isinstance(instance, form_option)
+
+
+
+@given(instance=form_option_strategy)
+def test_form_option_value_setter(instance):
+    original = instance.value
+    instance.value = original
+    assert instance.value == original
+
+
+
+@given(instance=form_option_strategy)
+def test_form_option_content_setter(instance):
+    original = instance.content
+    instance.content = original
+    assert instance.content == original
 
 @given(instance=Editable_strategy)
 @settings(max_examples=50)
 def test_editable_instantiation(instance):
     assert isinstance(instance, Editable)
 
-@given(instance=form::SelectionList_strategy)
+@given(instance=form_SelectionList_strategy)
 @settings(max_examples=50)
-def test_form::selectionlist_instantiation(instance):
-    assert isinstance(instance, form::SelectionList)
-
-@given(instance=form::SelectionList_strategy)
-def test_form::selectionlist_multiple_type(instance):
-    assert isinstance(instance.multiple, bool)
+def test_form_selectionlist_instantiation(instance):
+    assert isinstance(instance, form_SelectionList)
 
 
-@given(instance=form::SelectionList_strategy)
-def test_form::selectionlist_multiple_setter(instance):
+
+@given(instance=form_SelectionList_strategy)
+def test_form_selectionlist_multiple_setter(instance):
     original = instance.multiple
     instance.multiple = original
     assert instance.multiple == original
 
-@given(instance=form::Input_strategy)
+@given(instance=form_textArea_strategy)
 @settings(max_examples=50)
-def test_form::input_instantiation(instance):
-    assert isinstance(instance, form::Input)
-
-@given(instance=form::Input_strategy)
-def test_form::input_type_type(instance):
-    assert isinstance(instance.type, str)
+def test_form_textarea_instantiation(instance):
+    assert isinstance(instance, form_textArea)
 
 
-@given(instance=form::Input_strategy)
-def test_form::input_type_setter(instance):
-    original = instance.type
-    instance.type = original
-    assert instance.type == original
 
-@given(instance=form::Input_strategy)
-def test_form::input_value_type(instance):
-    assert isinstance(instance.value, str)
+@given(instance=form_textArea_strategy)
+def test_form_textarea_content_setter(instance):
+    original = instance.content
+    instance.content = original
+    assert instance.content == original
+
+@given(instance=form_Input_strategy)
+@settings(max_examples=50)
+def test_form_input_instantiation(instance):
+    assert isinstance(instance, form_Input)
 
 
-@given(instance=form::Input_strategy)
-def test_form::input_value_setter(instance):
+
+@given(instance=form_Input_strategy)
+def test_form_input_checked_setter(instance):
+    original = instance.checked
+    instance.checked = original
+    assert instance.checked == original
+
+
+
+@given(instance=form_Input_strategy)
+def test_form_input_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
 
-@given(instance=form::Input_strategy)
-def test_form::input_checked_type(instance):
-    assert isinstance(instance.checked, bool)
 
 
-@given(instance=form::Input_strategy)
-def test_form::input_checked_setter(instance):
-    original = instance.checked
-    instance.checked = original
-    assert instance.checked == original
+@given(instance=form_Input_strategy)
+def test_form_input_type_setter(instance):
+    original = instance.type
+    instance.type = original
+    assert instance.type == original
 
 @given(instance=Element_strategy)
 @settings(max_examples=50)
 def test_element_instantiation(instance):
     assert isinstance(instance, Element)
 
-@given(instance=form::Editable_strategy)
+@given(instance=form_Editable_strategy)
 @settings(max_examples=50)
-def test_form::editable_instantiation(instance):
-    assert isinstance(instance, form::Editable)
-
-@given(instance=form::Editable_strategy)
-def test_form::editable_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_form_editable_instantiation(instance):
+    assert isinstance(instance, form_Editable)
 
 
-@given(instance=form::Editable_strategy)
-def test_form::editable_name_setter(instance):
+
+@given(instance=form_Editable_strategy)
+def test_form_editable_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=form::Editable_strategy)
-def test_form::editable_disabled_type(instance):
-    assert isinstance(instance.disabled, bool)
 
 
-@given(instance=form::Editable_strategy)
-def test_form::editable_disabled_setter(instance):
+@given(instance=form_Editable_strategy)
+def test_form_editable_disabled_setter(instance):
     original = instance.disabled
     instance.disabled = original
     assert instance.disabled == original
 
-@given(instance=form::Label_strategy)
+@given(instance=form_Label_strategy)
 @settings(max_examples=50)
-def test_form::label_instantiation(instance):
-    assert isinstance(instance, form::Label)
-
-@given(instance=form::Label_strategy)
-def test_form::label_content_type(instance):
-    assert isinstance(instance.content, str)
+def test_form_label_instantiation(instance):
+    assert isinstance(instance, form_Label)
 
 
-@given(instance=form::Label_strategy)
-def test_form::label_content_setter(instance):
-    original = instance.content
-    instance.content = original
-    assert instance.content == original
 
-@given(instance=form::Label_strategy)
-def test_form::label_for__type(instance):
-    assert isinstance(instance.for_, str)
-
-
-@given(instance=form::Label_strategy)
-def test_form::label_for__setter(instance):
+@given(instance=form_Label_strategy)
+def test_form_label_for__setter(instance):
     original = instance.for_
     instance.for_ = original
     assert instance.for_ == original
 
-@given(instance=form::Orden_strategy)
-@settings(max_examples=50)
-def test_form::orden_instantiation(instance):
-    assert isinstance(instance, form::Orden)
-
-@given(instance=form::Element_strategy)
-@settings(max_examples=50)
-def test_form::element_instantiation(instance):
-    assert isinstance(instance, form::Element)
-
-@given(instance=form::Formulario_strategy)
-@settings(max_examples=50)
-def test_form::formulario_instantiation(instance):
-    assert isinstance(instance, form::Formulario)
-
-@given(instance=form::textArea_strategy)
-@settings(max_examples=50)
-def test_form::textarea_instantiation(instance):
-    assert isinstance(instance, form::textArea)
-
-@given(instance=form::textArea_strategy)
-def test_form::textarea_content_type(instance):
-    assert isinstance(instance.content, str)
 
 
-@given(instance=form::textArea_strategy)
-def test_form::textarea_content_setter(instance):
+@given(instance=form_Label_strategy)
+def test_form_label_content_setter(instance):
     original = instance.content
     instance.content = original
     assert instance.content == original
 
-@given(instance=form::option_strategy)
+@given(instance=form_Orden_strategy)
 @settings(max_examples=50)
-def test_form::option_instantiation(instance):
-    assert isinstance(instance, form::option)
+def test_form_orden_instantiation(instance):
+    assert isinstance(instance, form_Orden)
 
-@given(instance=form::option_strategy)
-def test_form::option_content_type(instance):
-    assert isinstance(instance.content, str)
+@given(instance=form_Element_strategy)
+@settings(max_examples=50)
+def test_form_element_instantiation(instance):
+    assert isinstance(instance, form_Element)
 
-
-@given(instance=form::option_strategy)
-def test_form::option_content_setter(instance):
-    original = instance.content
-    instance.content = original
-    assert instance.content == original
-
-@given(instance=form::option_strategy)
-def test_form::option_value_type(instance):
-    assert isinstance(instance.value, str)
-
-
-@given(instance=form::option_strategy)
-def test_form::option_value_setter(instance):
-    original = instance.value
-    instance.value = original
-    assert instance.value == original
+@given(instance=form_Formulario_strategy)
+@settings(max_examples=50)
+def test_form_formulario_instantiation(instance):
+    assert isinstance(instance, form_Formulario)

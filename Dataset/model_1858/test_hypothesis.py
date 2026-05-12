@@ -3,12 +3,12 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    music::MusicLibrary,
-    music::Work,
-    music::Artist,
+from python_code import (
+    music_MusicLibrary,
+    music_Work,
+    music_Artist,
     MediaType,
 )
 
@@ -18,23 +18,23 @@ from classes import (
 
 
 
-def test_music::musiclibrary_is_not_abstract():
-    assert not inspect.isabstract(music::MusicLibrary)
+def test_music_musiclibrary_is_not_abstract():
+    assert not inspect.isabstract(music_MusicLibrary)
 
 
-def test_music::musiclibrary_constructor_exists():
-    assert callable(music::MusicLibrary.__init__)
+def test_music_musiclibrary_constructor_exists():
+    assert callable(music_MusicLibrary.__init__)
 
 
-def test_music::musiclibrary_constructor_args():
-    sig = inspect.signature(music::MusicLibrary.__init__)
+def test_music_musiclibrary_constructor_args():
+    sig = inspect.signature(music_MusicLibrary.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_music::musiclibrary_has_name():
-    assert hasattr(music::MusicLibrary, "name")
+def test_music_musiclibrary_has_name():
+    assert hasattr(music_MusicLibrary, "name")
     descriptor = None
-    for klass in music::MusicLibrary.__mro__:
+    for klass in music_MusicLibrary.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -42,89 +42,89 @@ def test_music::musiclibrary_has_name():
 
 
 
-def test_music::work_is_not_abstract():
-    assert not inspect.isabstract(music::Work)
+def test_music_work_is_not_abstract():
+    assert not inspect.isabstract(music_Work)
 
 
-def test_music::work_constructor_exists():
-    assert callable(music::Work.__init__)
+def test_music_work_constructor_exists():
+    assert callable(music_Work.__init__)
 
 
-def test_music::work_constructor_args():
-    sig = inspect.signature(music::Work.__init__)
+def test_music_work_constructor_args():
+    sig = inspect.signature(music_Work.__init__)
     params = list(sig.parameters.keys())
-    assert "mediaTypes" in params, "Missing parameter 'mediaTypes'"
+    assert "whenMade" in params, "Missing parameter 'whenMade'"
     assert "name" in params, "Missing parameter 'name'"
     assert "notes" in params, "Missing parameter 'notes'"
-    assert "whenMade" in params, "Missing parameter 'whenMade'"
+    assert "mediaTypes" in params, "Missing parameter 'mediaTypes'"
 
-def test_music::work_has_mediaTypes():
-    assert hasattr(music::Work, "mediaTypes")
+def test_music_work_has_whenMade():
+    assert hasattr(music_Work, "whenMade")
     descriptor = None
-    for klass in music::Work.__mro__:
-        if "mediaTypes" in klass.__dict__:
-            descriptor = klass.__dict__["mediaTypes"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_music::work_has_name():
-    assert hasattr(music::Work, "name")
-    descriptor = None
-    for klass in music::Work.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_music::work_has_notes():
-    assert hasattr(music::Work, "notes")
-    descriptor = None
-    for klass in music::Work.__mro__:
-        if "notes" in klass.__dict__:
-            descriptor = klass.__dict__["notes"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_music::work_has_whenMade():
-    assert hasattr(music::Work, "whenMade")
-    descriptor = None
-    for klass in music::Work.__mro__:
+    for klass in music_Work.__mro__:
         if "whenMade" in klass.__dict__:
             descriptor = klass.__dict__["whenMade"]
             break
     assert isinstance(descriptor, property)
 
-
-
-def test_music::artist_is_not_abstract():
-    assert not inspect.isabstract(music::Artist)
-
-
-def test_music::artist_constructor_exists():
-    assert callable(music::Artist.__init__)
-
-
-def test_music::artist_constructor_args():
-    sig = inspect.signature(music::Artist.__init__)
-    params = list(sig.parameters.keys())
-    assert "name" in params, "Missing parameter 'name'"
-    assert "notes" in params, "Missing parameter 'notes'"
-
-def test_music::artist_has_name():
-    assert hasattr(music::Artist, "name")
+def test_music_work_has_name():
+    assert hasattr(music_Work, "name")
     descriptor = None
-    for klass in music::Artist.__mro__:
+    for klass in music_Work.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
-def test_music::artist_has_notes():
-    assert hasattr(music::Artist, "notes")
+def test_music_work_has_notes():
+    assert hasattr(music_Work, "notes")
     descriptor = None
-    for klass in music::Artist.__mro__:
+    for klass in music_Work.__mro__:
         if "notes" in klass.__dict__:
             descriptor = klass.__dict__["notes"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_music_work_has_mediaTypes():
+    assert hasattr(music_Work, "mediaTypes")
+    descriptor = None
+    for klass in music_Work.__mro__:
+        if "mediaTypes" in klass.__dict__:
+            descriptor = klass.__dict__["mediaTypes"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_music_artist_is_not_abstract():
+    assert not inspect.isabstract(music_Artist)
+
+
+def test_music_artist_constructor_exists():
+    assert callable(music_Artist.__init__)
+
+
+def test_music_artist_constructor_args():
+    sig = inspect.signature(music_Artist.__init__)
+    params = list(sig.parameters.keys())
+    assert "notes" in params, "Missing parameter 'notes'"
+    assert "name" in params, "Missing parameter 'name'"
+
+def test_music_artist_has_notes():
+    assert hasattr(music_Artist, "notes")
+    descriptor = None
+    for klass in music_Artist.__mro__:
+        if "notes" in klass.__dict__:
+            descriptor = klass.__dict__["notes"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_music_artist_has_name():
+    assert hasattr(music_Artist, "name")
+    descriptor = None
+    for klass in music_Artist.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
@@ -136,8 +136,8 @@ def test_mediatype_has_all_literals():
     # Collect the names of literals in this Enumeration
     enum_literals = [lit.name for lit in MediaType]
     expected_literals = [
-        "TAPE",
         "CD",
+        "TAPE",
         "MP3",
     ]
     # Check that all expected literals exist
@@ -156,121 +156,100 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-music::MusicLibrary_strategy = st.builds(
-    music::MusicLibrary,
+music_MusicLibrary_strategy = st.builds(
+    music_MusicLibrary,
     name=
         safe_text
 )
-music::Work_strategy = st.builds(
-    music::Work,
-    mediaTypes=
-        safe_text,
-    name=
-        safe_text,
-    notes=
-        safe_text,
+music_Work_strategy = st.builds(
+    music_Work,
     whenMade=
-        safe_text
-)
-music::Artist_strategy = st.builds(
-    music::Artist,
+        safe_text,
     name=
         safe_text,
     notes=
+        safe_text,
+    mediaTypes=
+        safe_text
+)
+music_Artist_strategy = st.builds(
+    music_Artist,
+    notes=
+        safe_text,
+    name=
         safe_text
 )
 
-@given(instance=music::MusicLibrary_strategy)
+@given(instance=music_MusicLibrary_strategy)
 @settings(max_examples=50)
-def test_music::musiclibrary_instantiation(instance):
-    assert isinstance(instance, music::MusicLibrary)
-
-@given(instance=music::MusicLibrary_strategy)
-def test_music::musiclibrary_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_music_musiclibrary_instantiation(instance):
+    assert isinstance(instance, music_MusicLibrary)
 
 
-@given(instance=music::MusicLibrary_strategy)
-def test_music::musiclibrary_name_setter(instance):
+
+@given(instance=music_MusicLibrary_strategy)
+def test_music_musiclibrary_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=music::Work_strategy)
+@given(instance=music_Work_strategy)
 @settings(max_examples=50)
-def test_music::work_instantiation(instance):
-    assert isinstance(instance, music::Work)
-
-@given(instance=music::Work_strategy)
-def test_music::work_mediaTypes_type(instance):
-    assert isinstance(instance.mediaTypes, str)
+def test_music_work_instantiation(instance):
+    assert isinstance(instance, music_Work)
 
 
-@given(instance=music::Work_strategy)
-def test_music::work_mediaTypes_setter(instance):
-    original = instance.mediaTypes
-    instance.mediaTypes = original
-    assert instance.mediaTypes == original
 
-@given(instance=music::Work_strategy)
-def test_music::work_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=music::Work_strategy)
-def test_music::work_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
-
-@given(instance=music::Work_strategy)
-def test_music::work_notes_type(instance):
-    assert isinstance(instance.notes, str)
-
-
-@given(instance=music::Work_strategy)
-def test_music::work_notes_setter(instance):
-    original = instance.notes
-    instance.notes = original
-    assert instance.notes == original
-
-@given(instance=music::Work_strategy)
-def test_music::work_whenMade_type(instance):
-    assert isinstance(instance.whenMade, str)
-
-
-@given(instance=music::Work_strategy)
-def test_music::work_whenMade_setter(instance):
+@given(instance=music_Work_strategy)
+def test_music_work_whenMade_setter(instance):
     original = instance.whenMade
     instance.whenMade = original
     assert instance.whenMade == original
 
-@given(instance=music::Artist_strategy)
-@settings(max_examples=50)
-def test_music::artist_instantiation(instance):
-    assert isinstance(instance, music::Artist)
-
-@given(instance=music::Artist_strategy)
-def test_music::artist_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
-@given(instance=music::Artist_strategy)
-def test_music::artist_name_setter(instance):
+@given(instance=music_Work_strategy)
+def test_music_work_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=music::Artist_strategy)
-def test_music::artist_notes_type(instance):
-    assert isinstance(instance.notes, str)
 
 
-@given(instance=music::Artist_strategy)
-def test_music::artist_notes_setter(instance):
+@given(instance=music_Work_strategy)
+def test_music_work_notes_setter(instance):
     original = instance.notes
     instance.notes = original
     assert instance.notes == original
+
+
+
+@given(instance=music_Work_strategy)
+def test_music_work_mediaTypes_setter(instance):
+    original = instance.mediaTypes
+    instance.mediaTypes = original
+    assert instance.mediaTypes == original
+
+@given(instance=music_Artist_strategy)
+@settings(max_examples=50)
+def test_music_artist_instantiation(instance):
+    assert isinstance(instance, music_Artist)
+
+
+
+@given(instance=music_Artist_strategy)
+def test_music_artist_notes_setter(instance):
+    original = instance.notes
+    instance.notes = original
+    assert instance.notes == original
+
+
+
+@given(instance=music_Artist_strategy)
+def test_music_artist_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
 
 import warnings
 import copy
@@ -278,9 +257,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=music::Artist_strategy)
+@given(instance=music_Artist_strategy)
 @settings(max_examples=30)
-def test_music::artist_printstate_changes_state(instance):
+def test_music_artist_printstate_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -292,11 +271,11 @@ def test_music::artist_printstate_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'printState' in music::Artist is empty"
+        assert has_statements, f"Function 'printState' in music_Artist is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'printState' in music::Artist did not change state; check implementation")
+            warnings.warn(f"Operation 'printState' in music_Artist did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'printState' in music::Artist is not implemented or raised an error")
+        warnings.warn(f"Operation 'printState' in music_Artist is not implemented or raised an error")

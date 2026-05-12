@@ -3,14 +3,14 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    Master::N,
+from python_code import (
+    Master_N,
     B,
     N,
-    Master::test2::B,
-    Master::Classe,
+    Master_test2_B,
+    Master_Classe,
 )
 
 # =============================================================================
@@ -19,23 +19,23 @@ from classes import (
 
 
 
-def test_master::n_is_not_abstract():
-    assert not inspect.isabstract(Master::N)
+def test_master_n_is_not_abstract():
+    assert not inspect.isabstract(Master_N)
 
 
-def test_master::n_constructor_exists():
-    assert callable(Master::N.__init__)
+def test_master_n_constructor_exists():
+    assert callable(Master_N.__init__)
 
 
-def test_master::n_constructor_args():
-    sig = inspect.signature(Master::N.__init__)
+def test_master_n_constructor_args():
+    sig = inspect.signature(Master_N.__init__)
     params = list(sig.parameters.keys())
     assert "n" in params, "Missing parameter 'n'"
 
-def test_master::n_has_n():
-    assert hasattr(Master::N, "n")
+def test_master_n_has_n():
+    assert hasattr(Master_N, "n")
     descriptor = None
-    for klass in Master::N.__mro__:
+    for klass in Master_N.__mro__:
         if "n" in klass.__dict__:
             descriptor = klass.__dict__["n"]
             break
@@ -71,33 +71,33 @@ def test_n_constructor_args():
 
 
 
-def test_master::test2::b_is_not_abstract():
-    assert not inspect.isabstract(Master::test2::B)
+def test_master_test2_b_is_not_abstract():
+    assert not inspect.isabstract(Master_test2_B)
 
 
-def test_master::test2::b_constructor_exists():
-    assert callable(Master::test2::B.__init__)
+def test_master_test2_b_constructor_exists():
+    assert callable(Master_test2_B.__init__)
 
 
-def test_master::test2::b_constructor_args():
-    sig = inspect.signature(Master::test2::B.__init__)
+def test_master_test2_b_constructor_args():
+    sig = inspect.signature(Master_test2_B.__init__)
     params = list(sig.parameters.keys())
     assert "nb" in params, "Missing parameter 'nb'"
     assert "nb2" in params, "Missing parameter 'nb2'"
 
-def test_master::test2::b_has_nb():
-    assert hasattr(Master::test2::B, "nb")
+def test_master_test2_b_has_nb():
+    assert hasattr(Master_test2_B, "nb")
     descriptor = None
-    for klass in Master::test2::B.__mro__:
+    for klass in Master_test2_B.__mro__:
         if "nb" in klass.__dict__:
             descriptor = klass.__dict__["nb"]
             break
     assert isinstance(descriptor, property)
 
-def test_master::test2::b_has_nb2():
-    assert hasattr(Master::test2::B, "nb2")
+def test_master_test2_b_has_nb2():
+    assert hasattr(Master_test2_B, "nb2")
     descriptor = None
-    for klass in Master::test2::B.__mro__:
+    for klass in Master_test2_B.__mro__:
         if "nb2" in klass.__dict__:
             descriptor = klass.__dict__["nb2"]
             break
@@ -105,16 +105,16 @@ def test_master::test2::b_has_nb2():
 
 
 
-def test_master::classe_is_not_abstract():
-    assert not inspect.isabstract(Master::Classe)
+def test_master_classe_is_not_abstract():
+    assert not inspect.isabstract(Master_Classe)
 
 
-def test_master::classe_constructor_exists():
-    assert callable(Master::Classe.__init__)
+def test_master_classe_constructor_exists():
+    assert callable(Master_Classe.__init__)
 
 
-def test_master::classe_constructor_args():
-    sig = inspect.signature(Master::Classe.__init__)
+def test_master_classe_constructor_args():
+    sig = inspect.signature(Master_Classe.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -129,8 +129,8 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-Master::N_strategy = st.builds(
-    Master::N,
+Master_N_strategy = st.builds(
+    Master_N,
     n=
         safe_text
 )
@@ -140,29 +140,26 @@ B_strategy = st.builds(
 N_strategy = st.builds(
     N,
 )
-Master::test2::B_strategy = st.builds(
-    Master::test2::B,
+Master_test2_B_strategy = st.builds(
+    Master_test2_B,
     nb=
         st.integers(),
     nb2=
         st.integers()
 )
-Master::Classe_strategy = st.builds(
-    Master::Classe,
+Master_Classe_strategy = st.builds(
+    Master_Classe,
 )
 
-@given(instance=Master::N_strategy)
+@given(instance=Master_N_strategy)
 @settings(max_examples=50)
-def test_master::n_instantiation(instance):
-    assert isinstance(instance, Master::N)
-
-@given(instance=Master::N_strategy)
-def test_master::n_n_type(instance):
-    assert isinstance(instance.n, str)
+def test_master_n_instantiation(instance):
+    assert isinstance(instance, Master_N)
 
 
-@given(instance=Master::N_strategy)
-def test_master::n_n_setter(instance):
+
+@given(instance=Master_N_strategy)
+def test_master_n_n_setter(instance):
     original = instance.n
     instance.n = original
     assert instance.n == original
@@ -177,34 +174,28 @@ def test_b_instantiation(instance):
 def test_n_instantiation(instance):
     assert isinstance(instance, N)
 
-@given(instance=Master::test2::B_strategy)
+@given(instance=Master_test2_B_strategy)
 @settings(max_examples=50)
-def test_master::test2::b_instantiation(instance):
-    assert isinstance(instance, Master::test2::B)
-
-@given(instance=Master::test2::B_strategy)
-def test_master::test2::b_nb_type(instance):
-    assert isinstance(instance.nb, int)
+def test_master_test2_b_instantiation(instance):
+    assert isinstance(instance, Master_test2_B)
 
 
-@given(instance=Master::test2::B_strategy)
-def test_master::test2::b_nb_setter(instance):
+
+@given(instance=Master_test2_B_strategy)
+def test_master_test2_b_nb_setter(instance):
     original = instance.nb
     instance.nb = original
     assert instance.nb == original
 
-@given(instance=Master::test2::B_strategy)
-def test_master::test2::b_nb2_type(instance):
-    assert isinstance(instance.nb2, int)
 
 
-@given(instance=Master::test2::B_strategy)
-def test_master::test2::b_nb2_setter(instance):
+@given(instance=Master_test2_B_strategy)
+def test_master_test2_b_nb2_setter(instance):
     original = instance.nb2
     instance.nb2 = original
     assert instance.nb2 == original
 
-@given(instance=Master::Classe_strategy)
+@given(instance=Master_Classe_strategy)
 @settings(max_examples=50)
-def test_master::classe_instantiation(instance):
-    assert isinstance(instance, Master::Classe)
+def test_master_classe_instantiation(instance):
+    assert isinstance(instance, Master_Classe)

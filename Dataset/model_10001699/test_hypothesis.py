@@ -3,7 +3,7 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
 from python_code import (
     domain_Reservation,
@@ -33,18 +33,9 @@ def test_domain_reservation_constructor_exists():
 def test_domain_reservation_constructor_args():
     sig = inspect.signature(domain_Reservation.__init__)
     params = list(sig.parameters.keys())
-    assert "id" in params, "Missing parameter 'id'"
     assert "dateReservation" in params, "Missing parameter 'dateReservation'"
+    assert "id" in params, "Missing parameter 'id'"
     assert "id2" in params, "Missing parameter 'id2'"
-
-def test_domain_reservation_has_id():
-    assert hasattr(domain_Reservation, "id")
-    descriptor = None
-    for klass in domain_Reservation.__mro__:
-        if "id" in klass.__dict__:
-            descriptor = klass.__dict__["id"]
-            break
-    assert isinstance(descriptor, property)
 
 def test_domain_reservation_has_dateReservation():
     assert hasattr(domain_Reservation, "dateReservation")
@@ -52,6 +43,15 @@ def test_domain_reservation_has_dateReservation():
     for klass in domain_Reservation.__mro__:
         if "dateReservation" in klass.__dict__:
             descriptor = klass.__dict__["dateReservation"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_domain_reservation_has_id():
+    assert hasattr(domain_Reservation, "id")
+    descriptor = None
+    for klass in domain_Reservation.__mro__:
+        if "id" in klass.__dict__:
+            descriptor = klass.__dict__["id"]
             break
     assert isinstance(descriptor, property)
 
@@ -77,18 +77,9 @@ def test_domain_avis_constructor_exists():
 def test_domain_avis_constructor_args():
     sig = inspect.signature(domain_Avis.__init__)
     params = list(sig.parameters.keys())
-    assert "commentaire" in params, "Missing parameter 'commentaire'"
     assert "id" in params, "Missing parameter 'id'"
+    assert "commentaire" in params, "Missing parameter 'commentaire'"
     assert "note" in params, "Missing parameter 'note'"
-
-def test_domain_avis_has_commentaire():
-    assert hasattr(domain_Avis, "commentaire")
-    descriptor = None
-    for klass in domain_Avis.__mro__:
-        if "commentaire" in klass.__dict__:
-            descriptor = klass.__dict__["commentaire"]
-            break
-    assert isinstance(descriptor, property)
 
 def test_domain_avis_has_id():
     assert hasattr(domain_Avis, "id")
@@ -96,6 +87,15 @@ def test_domain_avis_has_id():
     for klass in domain_Avis.__mro__:
         if "id" in klass.__dict__:
             descriptor = klass.__dict__["id"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_domain_avis_has_commentaire():
+    assert hasattr(domain_Avis, "commentaire")
+    descriptor = None
+    for klass in domain_Avis.__mro__:
+        if "commentaire" in klass.__dict__:
+            descriptor = klass.__dict__["commentaire"]
             break
     assert isinstance(descriptor, property)
 
@@ -121,18 +121,9 @@ def test_domain_ville_constructor_exists():
 def test_domain_ville_constructor_args():
     sig = inspect.signature(domain_Ville.__init__)
     params = list(sig.parameters.keys())
-    assert "nom" in params, "Missing parameter 'nom'"
     assert "cp" in params, "Missing parameter 'cp'"
+    assert "nom" in params, "Missing parameter 'nom'"
     assert "id" in params, "Missing parameter 'id'"
-
-def test_domain_ville_has_nom():
-    assert hasattr(domain_Ville, "nom")
-    descriptor = None
-    for klass in domain_Ville.__mro__:
-        if "nom" in klass.__dict__:
-            descriptor = klass.__dict__["nom"]
-            break
-    assert isinstance(descriptor, property)
 
 def test_domain_ville_has_cp():
     assert hasattr(domain_Ville, "cp")
@@ -140,6 +131,15 @@ def test_domain_ville_has_cp():
     for klass in domain_Ville.__mro__:
         if "cp" in klass.__dict__:
             descriptor = klass.__dict__["cp"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_domain_ville_has_nom():
+    assert hasattr(domain_Ville, "nom")
+    descriptor = None
+    for klass in domain_Ville.__mro__:
+        if "nom" in klass.__dict__:
+            descriptor = klass.__dict__["nom"]
             break
     assert isinstance(descriptor, property)
 
@@ -165,18 +165,18 @@ def test_domain_trajet_constructor_exists():
 def test_domain_trajet_constructor_args():
     sig = inspect.signature(domain_Trajet.__init__)
     params = list(sig.parameters.keys())
-    assert "id" in params, "Missing parameter 'id'"
-    assert "prix" in params, "Missing parameter 'prix'"
-    assert "destination" in params, "Missing parameter 'destination'"
-    assert "date" in params, "Missing parameter 'date'"
     assert "depart" in params, "Missing parameter 'depart'"
+    assert "prix" in params, "Missing parameter 'prix'"
+    assert "date" in params, "Missing parameter 'date'"
+    assert "destination" in params, "Missing parameter 'destination'"
+    assert "id" in params, "Missing parameter 'id'"
 
-def test_domain_trajet_has_id():
-    assert hasattr(domain_Trajet, "id")
+def test_domain_trajet_has_depart():
+    assert hasattr(domain_Trajet, "depart")
     descriptor = None
     for klass in domain_Trajet.__mro__:
-        if "id" in klass.__dict__:
-            descriptor = klass.__dict__["id"]
+        if "depart" in klass.__dict__:
+            descriptor = klass.__dict__["depart"]
             break
     assert isinstance(descriptor, property)
 
@@ -189,15 +189,6 @@ def test_domain_trajet_has_prix():
             break
     assert isinstance(descriptor, property)
 
-def test_domain_trajet_has_destination():
-    assert hasattr(domain_Trajet, "destination")
-    descriptor = None
-    for klass in domain_Trajet.__mro__:
-        if "destination" in klass.__dict__:
-            descriptor = klass.__dict__["destination"]
-            break
-    assert isinstance(descriptor, property)
-
 def test_domain_trajet_has_date():
     assert hasattr(domain_Trajet, "date")
     descriptor = None
@@ -207,12 +198,21 @@ def test_domain_trajet_has_date():
             break
     assert isinstance(descriptor, property)
 
-def test_domain_trajet_has_depart():
-    assert hasattr(domain_Trajet, "depart")
+def test_domain_trajet_has_destination():
+    assert hasattr(domain_Trajet, "destination")
     descriptor = None
     for klass in domain_Trajet.__mro__:
-        if "depart" in klass.__dict__:
-            descriptor = klass.__dict__["depart"]
+        if "destination" in klass.__dict__:
+            descriptor = klass.__dict__["destination"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_domain_trajet_has_id():
+    assert hasattr(domain_Trajet, "id")
+    descriptor = None
+    for klass in domain_Trajet.__mro__:
+        if "id" in klass.__dict__:
+            descriptor = klass.__dict__["id"]
             break
     assert isinstance(descriptor, property)
 
@@ -263,12 +263,21 @@ def test_domain_voiture_constructor_exists():
 def test_domain_voiture_constructor_args():
     sig = inspect.signature(domain_Voiture.__init__)
     params = list(sig.parameters.keys())
+    assert "id" in params, "Missing parameter 'id'"
     assert "model" in params, "Missing parameter 'model'"
-    assert "nbPlaces" in params, "Missing parameter 'nbPlaces'"
     assert "categorie" in params, "Missing parameter 'categorie'"
     assert "marque" in params, "Missing parameter 'marque'"
-    assert "id" in params, "Missing parameter 'id'"
     assert "confort" in params, "Missing parameter 'confort'"
+    assert "nbPlaces" in params, "Missing parameter 'nbPlaces'"
+
+def test_domain_voiture_has_id():
+    assert hasattr(domain_Voiture, "id")
+    descriptor = None
+    for klass in domain_Voiture.__mro__:
+        if "id" in klass.__dict__:
+            descriptor = klass.__dict__["id"]
+            break
+    assert isinstance(descriptor, property)
 
 def test_domain_voiture_has_model():
     assert hasattr(domain_Voiture, "model")
@@ -276,15 +285,6 @@ def test_domain_voiture_has_model():
     for klass in domain_Voiture.__mro__:
         if "model" in klass.__dict__:
             descriptor = klass.__dict__["model"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_domain_voiture_has_nbPlaces():
-    assert hasattr(domain_Voiture, "nbPlaces")
-    descriptor = None
-    for klass in domain_Voiture.__mro__:
-        if "nbPlaces" in klass.__dict__:
-            descriptor = klass.__dict__["nbPlaces"]
             break
     assert isinstance(descriptor, property)
 
@@ -306,21 +306,21 @@ def test_domain_voiture_has_marque():
             break
     assert isinstance(descriptor, property)
 
-def test_domain_voiture_has_id():
-    assert hasattr(domain_Voiture, "id")
-    descriptor = None
-    for klass in domain_Voiture.__mro__:
-        if "id" in klass.__dict__:
-            descriptor = klass.__dict__["id"]
-            break
-    assert isinstance(descriptor, property)
-
 def test_domain_voiture_has_confort():
     assert hasattr(domain_Voiture, "confort")
     descriptor = None
     for klass in domain_Voiture.__mro__:
         if "confort" in klass.__dict__:
             descriptor = klass.__dict__["confort"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_domain_voiture_has_nbPlaces():
+    assert hasattr(domain_Voiture, "nbPlaces")
+    descriptor = None
+    for klass in domain_Voiture.__mro__:
+        if "nbPlaces" in klass.__dict__:
+            descriptor = klass.__dict__["nbPlaces"]
             break
     assert isinstance(descriptor, property)
 
@@ -337,12 +337,21 @@ def test_domain_profil_constructor_exists():
 def test_domain_profil_constructor_args():
     sig = inspect.signature(domain_Profil.__init__)
     params = list(sig.parameters.keys())
+    assert "prenom" in params, "Missing parameter 'prenom'"
     assert "mail" in params, "Missing parameter 'mail'"
     assert "nom" in params, "Missing parameter 'nom'"
-    assert "tel" in params, "Missing parameter 'tel'"
-    assert "prenom" in params, "Missing parameter 'prenom'"
     assert "id" in params, "Missing parameter 'id'"
     assert "role" in params, "Missing parameter 'role'"
+    assert "tel" in params, "Missing parameter 'tel'"
+
+def test_domain_profil_has_prenom():
+    assert hasattr(domain_Profil, "prenom")
+    descriptor = None
+    for klass in domain_Profil.__mro__:
+        if "prenom" in klass.__dict__:
+            descriptor = klass.__dict__["prenom"]
+            break
+    assert isinstance(descriptor, property)
 
 def test_domain_profil_has_mail():
     assert hasattr(domain_Profil, "mail")
@@ -362,24 +371,6 @@ def test_domain_profil_has_nom():
             break
     assert isinstance(descriptor, property)
 
-def test_domain_profil_has_tel():
-    assert hasattr(domain_Profil, "tel")
-    descriptor = None
-    for klass in domain_Profil.__mro__:
-        if "tel" in klass.__dict__:
-            descriptor = klass.__dict__["tel"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_domain_profil_has_prenom():
-    assert hasattr(domain_Profil, "prenom")
-    descriptor = None
-    for klass in domain_Profil.__mro__:
-        if "prenom" in klass.__dict__:
-            descriptor = klass.__dict__["prenom"]
-            break
-    assert isinstance(descriptor, property)
-
 def test_domain_profil_has_id():
     assert hasattr(domain_Profil, "id")
     descriptor = None
@@ -395,6 +386,15 @@ def test_domain_profil_has_role():
     for klass in domain_Profil.__mro__:
         if "role" in klass.__dict__:
             descriptor = klass.__dict__["role"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_domain_profil_has_tel():
+    assert hasattr(domain_Profil, "tel")
+    descriptor = None
+    for klass in domain_Profil.__mro__:
+        if "tel" in klass.__dict__:
+            descriptor = klass.__dict__["tel"]
             break
     assert isinstance(descriptor, property)
 
@@ -425,43 +425,43 @@ safe_text = st.text(
 ).filter(lambda s: s[0].isalpha())
 domain_Reservation_strategy = st.builds(
     domain_Reservation,
-    id=
-        st.integers(),
     dateReservation=
         st.dates(),
+    id=
+        st.integers(),
     id2=
         st.integers()
 )
 domain_Avis_strategy = st.builds(
     domain_Avis,
-    commentaire=
-        safe_text,
     id=
         st.integers(),
+    commentaire=
+        safe_text,
     note=
         st.integers()
 )
 domain_Ville_strategy = st.builds(
     domain_Ville,
-    nom=
-        safe_text,
     cp=
         st.integers(),
+    nom=
+        safe_text,
     id=
         st.integers()
 )
 domain_Trajet_strategy = st.builds(
     domain_Trajet,
-    id=
-        st.integers(),
+    depart=
+        st.none(),
     prix=
         st.integers(),
-    destination=
-        st.none(),
     date=
         st.dates(),
-    depart=
-        st.none()
+    destination=
+        st.none(),
+    id=
+        st.integers()
 )
 domain_Authentification_strategy = st.builds(
     domain_Authentification,
@@ -472,33 +472,33 @@ domain_Authentification_strategy = st.builds(
 )
 domain_Voiture_strategy = st.builds(
     domain_Voiture,
+    id=
+        st.integers(),
     model=
         safe_text,
-    nbPlaces=
-        st.integers(),
     categorie=
         safe_text,
     marque=
         safe_text,
-    id=
-        st.integers(),
     confort=
-        safe_text
+        safe_text,
+    nbPlaces=
+        st.integers()
 )
 domain_Profil_strategy = st.builds(
     domain_Profil,
+    prenom=
+        safe_text,
     mail=
         safe_text,
     nom=
         safe_text,
-    tel=
-        safe_text,
-    prenom=
-        safe_text,
     id=
         st.integers(),
     role=
-        st.none()
+        st.none(),
+    tel=
+        safe_text
 )
 
 @given(instance=domain_Reservation_strategy)
@@ -506,20 +506,6 @@ domain_Profil_strategy = st.builds(
 def test_domain_reservation_instantiation(instance):
     assert isinstance(instance, domain_Reservation)
 
-@given(instance=domain_Reservation_strategy)
-def test_domain_reservation_id_type(instance):
-    assert isinstance(instance.id, int)
-
-
-@given(instance=domain_Reservation_strategy)
-def test_domain_reservation_id_setter(instance):
-    original = instance.id
-    instance.id = original
-    assert instance.id == original
-
-@given(instance=domain_Reservation_strategy)
-def test_domain_reservation_dateReservation_type(instance):
-    assert isinstance(instance.dateReservation, date)
 
 
 @given(instance=domain_Reservation_strategy)
@@ -528,9 +514,14 @@ def test_domain_reservation_dateReservation_setter(instance):
     instance.dateReservation = original
     assert instance.dateReservation == original
 
+
+
 @given(instance=domain_Reservation_strategy)
-def test_domain_reservation_id2_type(instance):
-    assert isinstance(instance.id2, int)
+def test_domain_reservation_id_setter(instance):
+    original = instance.id
+    instance.id = original
+    assert instance.id == original
+
 
 
 @given(instance=domain_Reservation_strategy)
@@ -544,20 +535,6 @@ def test_domain_reservation_id2_setter(instance):
 def test_domain_avis_instantiation(instance):
     assert isinstance(instance, domain_Avis)
 
-@given(instance=domain_Avis_strategy)
-def test_domain_avis_commentaire_type(instance):
-    assert isinstance(instance.commentaire, str)
-
-
-@given(instance=domain_Avis_strategy)
-def test_domain_avis_commentaire_setter(instance):
-    original = instance.commentaire
-    instance.commentaire = original
-    assert instance.commentaire == original
-
-@given(instance=domain_Avis_strategy)
-def test_domain_avis_id_type(instance):
-    assert isinstance(instance.id, int)
 
 
 @given(instance=domain_Avis_strategy)
@@ -566,9 +543,14 @@ def test_domain_avis_id_setter(instance):
     instance.id = original
     assert instance.id == original
 
+
+
 @given(instance=domain_Avis_strategy)
-def test_domain_avis_note_type(instance):
-    assert isinstance(instance.note, int)
+def test_domain_avis_commentaire_setter(instance):
+    original = instance.commentaire
+    instance.commentaire = original
+    assert instance.commentaire == original
+
 
 
 @given(instance=domain_Avis_strategy)
@@ -582,20 +564,6 @@ def test_domain_avis_note_setter(instance):
 def test_domain_ville_instantiation(instance):
     assert isinstance(instance, domain_Ville)
 
-@given(instance=domain_Ville_strategy)
-def test_domain_ville_nom_type(instance):
-    assert isinstance(instance.nom, str)
-
-
-@given(instance=domain_Ville_strategy)
-def test_domain_ville_nom_setter(instance):
-    original = instance.nom
-    instance.nom = original
-    assert instance.nom == original
-
-@given(instance=domain_Ville_strategy)
-def test_domain_ville_cp_type(instance):
-    assert isinstance(instance.cp, int)
 
 
 @given(instance=domain_Ville_strategy)
@@ -604,9 +572,14 @@ def test_domain_ville_cp_setter(instance):
     instance.cp = original
     assert instance.cp == original
 
+
+
 @given(instance=domain_Ville_strategy)
-def test_domain_ville_id_type(instance):
-    assert isinstance(instance.id, int)
+def test_domain_ville_nom_setter(instance):
+    original = instance.nom
+    instance.nom = original
+    assert instance.nom == original
+
 
 
 @given(instance=domain_Ville_strategy)
@@ -620,53 +593,6 @@ def test_domain_ville_id_setter(instance):
 def test_domain_trajet_instantiation(instance):
     assert isinstance(instance, domain_Trajet)
 
-@given(instance=domain_Trajet_strategy)
-def test_domain_trajet_id_type(instance):
-    assert isinstance(instance.id, int)
-
-
-@given(instance=domain_Trajet_strategy)
-def test_domain_trajet_id_setter(instance):
-    original = instance.id
-    instance.id = original
-    assert instance.id == original
-
-@given(instance=domain_Trajet_strategy)
-def test_domain_trajet_prix_type(instance):
-    assert isinstance(instance.prix, int)
-
-
-@given(instance=domain_Trajet_strategy)
-def test_domain_trajet_prix_setter(instance):
-    original = instance.prix
-    instance.prix = original
-    assert instance.prix == original
-
-@given(instance=domain_Trajet_strategy)
-def test_domain_trajet_destination_type(instance):
-    assert isinstance(instance.destination, domain_ville)
-
-
-@given(instance=domain_Trajet_strategy)
-def test_domain_trajet_destination_setter(instance):
-    original = instance.destination
-    instance.destination = original
-    assert instance.destination == original
-
-@given(instance=domain_Trajet_strategy)
-def test_domain_trajet_date_type(instance):
-    assert isinstance(instance.date, date)
-
-
-@given(instance=domain_Trajet_strategy)
-def test_domain_trajet_date_setter(instance):
-    original = instance.date
-    instance.date = original
-    assert instance.date == original
-
-@given(instance=domain_Trajet_strategy)
-def test_domain_trajet_depart_type(instance):
-    assert isinstance(instance.depart, domain_ville)
 
 
 @given(instance=domain_Trajet_strategy)
@@ -675,14 +601,43 @@ def test_domain_trajet_depart_setter(instance):
     instance.depart = original
     assert instance.depart == original
 
+
+
+@given(instance=domain_Trajet_strategy)
+def test_domain_trajet_prix_setter(instance):
+    original = instance.prix
+    instance.prix = original
+    assert instance.prix == original
+
+
+
+@given(instance=domain_Trajet_strategy)
+def test_domain_trajet_date_setter(instance):
+    original = instance.date
+    instance.date = original
+    assert instance.date == original
+
+
+
+@given(instance=domain_Trajet_strategy)
+def test_domain_trajet_destination_setter(instance):
+    original = instance.destination
+    instance.destination = original
+    assert instance.destination == original
+
+
+
+@given(instance=domain_Trajet_strategy)
+def test_domain_trajet_id_setter(instance):
+    original = instance.id
+    instance.id = original
+    assert instance.id == original
+
 @given(instance=domain_Authentification_strategy)
 @settings(max_examples=50)
 def test_domain_authentification_instantiation(instance):
     assert isinstance(instance, domain_Authentification)
 
-@given(instance=domain_Authentification_strategy)
-def test_domain_authentification_id_type(instance):
-    assert isinstance(instance.id, str)
 
 
 @given(instance=domain_Authentification_strategy)
@@ -691,9 +646,6 @@ def test_domain_authentification_id_setter(instance):
     instance.id = original
     assert instance.id == original
 
-@given(instance=domain_Authentification_strategy)
-def test_domain_authentification_password_type(instance):
-    assert isinstance(instance.password, str)
 
 
 @given(instance=domain_Authentification_strategy)
@@ -707,53 +659,6 @@ def test_domain_authentification_password_setter(instance):
 def test_domain_voiture_instantiation(instance):
     assert isinstance(instance, domain_Voiture)
 
-@given(instance=domain_Voiture_strategy)
-def test_domain_voiture_model_type(instance):
-    assert isinstance(instance.model, str)
-
-
-@given(instance=domain_Voiture_strategy)
-def test_domain_voiture_model_setter(instance):
-    original = instance.model
-    instance.model = original
-    assert instance.model == original
-
-@given(instance=domain_Voiture_strategy)
-def test_domain_voiture_nbPlaces_type(instance):
-    assert isinstance(instance.nbPlaces, int)
-
-
-@given(instance=domain_Voiture_strategy)
-def test_domain_voiture_nbPlaces_setter(instance):
-    original = instance.nbPlaces
-    instance.nbPlaces = original
-    assert instance.nbPlaces == original
-
-@given(instance=domain_Voiture_strategy)
-def test_domain_voiture_categorie_type(instance):
-    assert isinstance(instance.categorie, str)
-
-
-@given(instance=domain_Voiture_strategy)
-def test_domain_voiture_categorie_setter(instance):
-    original = instance.categorie
-    instance.categorie = original
-    assert instance.categorie == original
-
-@given(instance=domain_Voiture_strategy)
-def test_domain_voiture_marque_type(instance):
-    assert isinstance(instance.marque, str)
-
-
-@given(instance=domain_Voiture_strategy)
-def test_domain_voiture_marque_setter(instance):
-    original = instance.marque
-    instance.marque = original
-    assert instance.marque == original
-
-@given(instance=domain_Voiture_strategy)
-def test_domain_voiture_id_type(instance):
-    assert isinstance(instance.id, int)
 
 
 @given(instance=domain_Voiture_strategy)
@@ -762,9 +667,30 @@ def test_domain_voiture_id_setter(instance):
     instance.id = original
     assert instance.id == original
 
+
+
 @given(instance=domain_Voiture_strategy)
-def test_domain_voiture_confort_type(instance):
-    assert isinstance(instance.confort, str)
+def test_domain_voiture_model_setter(instance):
+    original = instance.model
+    instance.model = original
+    assert instance.model == original
+
+
+
+@given(instance=domain_Voiture_strategy)
+def test_domain_voiture_categorie_setter(instance):
+    original = instance.categorie
+    instance.categorie = original
+    assert instance.categorie == original
+
+
+
+@given(instance=domain_Voiture_strategy)
+def test_domain_voiture_marque_setter(instance):
+    original = instance.marque
+    instance.marque = original
+    assert instance.marque == original
+
 
 
 @given(instance=domain_Voiture_strategy)
@@ -773,47 +699,19 @@ def test_domain_voiture_confort_setter(instance):
     instance.confort = original
     assert instance.confort == original
 
+
+
+@given(instance=domain_Voiture_strategy)
+def test_domain_voiture_nbPlaces_setter(instance):
+    original = instance.nbPlaces
+    instance.nbPlaces = original
+    assert instance.nbPlaces == original
+
 @given(instance=domain_Profil_strategy)
 @settings(max_examples=50)
 def test_domain_profil_instantiation(instance):
     assert isinstance(instance, domain_Profil)
 
-@given(instance=domain_Profil_strategy)
-def test_domain_profil_mail_type(instance):
-    assert isinstance(instance.mail, str)
-
-
-@given(instance=domain_Profil_strategy)
-def test_domain_profil_mail_setter(instance):
-    original = instance.mail
-    instance.mail = original
-    assert instance.mail == original
-
-@given(instance=domain_Profil_strategy)
-def test_domain_profil_nom_type(instance):
-    assert isinstance(instance.nom, str)
-
-
-@given(instance=domain_Profil_strategy)
-def test_domain_profil_nom_setter(instance):
-    original = instance.nom
-    instance.nom = original
-    assert instance.nom == original
-
-@given(instance=domain_Profil_strategy)
-def test_domain_profil_tel_type(instance):
-    assert isinstance(instance.tel, str)
-
-
-@given(instance=domain_Profil_strategy)
-def test_domain_profil_tel_setter(instance):
-    original = instance.tel
-    instance.tel = original
-    assert instance.tel == original
-
-@given(instance=domain_Profil_strategy)
-def test_domain_profil_prenom_type(instance):
-    assert isinstance(instance.prenom, str)
 
 
 @given(instance=domain_Profil_strategy)
@@ -822,9 +720,22 @@ def test_domain_profil_prenom_setter(instance):
     instance.prenom = original
     assert instance.prenom == original
 
+
+
 @given(instance=domain_Profil_strategy)
-def test_domain_profil_id_type(instance):
-    assert isinstance(instance.id, int)
+def test_domain_profil_mail_setter(instance):
+    original = instance.mail
+    instance.mail = original
+    assert instance.mail == original
+
+
+
+@given(instance=domain_Profil_strategy)
+def test_domain_profil_nom_setter(instance):
+    original = instance.nom
+    instance.nom = original
+    assert instance.nom == original
+
 
 
 @given(instance=domain_Profil_strategy)
@@ -833,9 +744,6 @@ def test_domain_profil_id_setter(instance):
     instance.id = original
     assert instance.id == original
 
-@given(instance=domain_Profil_strategy)
-def test_domain_profil_role_type(instance):
-    assert isinstance(instance.role, domain_role)
 
 
 @given(instance=domain_Profil_strategy)
@@ -843,3 +751,11 @@ def test_domain_profil_role_setter(instance):
     original = instance.role
     instance.role = original
     assert instance.role == original
+
+
+
+@given(instance=domain_Profil_strategy)
+def test_domain_profil_tel_setter(instance):
+    original = instance.tel
+    instance.tel = original
+    assert instance.tel == original

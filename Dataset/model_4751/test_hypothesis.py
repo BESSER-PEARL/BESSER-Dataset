@@ -3,14 +3,14 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     TreeElement,
-    edd::Leaf,
-    edd::Node,
-    edd::TreeElement,
-    edd::EDD,
+    edd_Leaf,
+    edd_Node,
+    edd_TreeElement,
+    edd_EDD,
 )
 
 # =============================================================================
@@ -33,85 +33,85 @@ def test_treeelement_constructor_args():
 
 
 
-def test_edd::leaf_is_not_abstract():
-    assert not inspect.isabstract(edd::Leaf)
+def test_edd_leaf_is_not_abstract():
+    assert not inspect.isabstract(edd_Leaf)
 
 
-def test_edd::leaf_constructor_exists():
-    assert callable(edd::Leaf.__init__)
+def test_edd_leaf_constructor_exists():
+    assert callable(edd_Leaf.__init__)
 
 
-def test_edd::leaf_constructor_args():
-    sig = inspect.signature(edd::Leaf.__init__)
+def test_edd_leaf_constructor_args():
+    sig = inspect.signature(edd_Leaf.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_edd::node_is_not_abstract():
-    assert not inspect.isabstract(edd::Node)
+def test_edd_node_is_not_abstract():
+    assert not inspect.isabstract(edd_Node)
 
 
-def test_edd::node_constructor_exists():
-    assert callable(edd::Node.__init__)
+def test_edd_node_constructor_exists():
+    assert callable(edd_Node.__init__)
 
 
-def test_edd::node_constructor_args():
-    sig = inspect.signature(edd::Node.__init__)
+def test_edd_node_constructor_args():
+    sig = inspect.signature(edd_Node.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_edd::treeelement_is_not_abstract():
-    assert not inspect.isabstract(edd::TreeElement)
+def test_edd_treeelement_is_not_abstract():
+    assert not inspect.isabstract(edd_TreeElement)
 
 
-def test_edd::treeelement_constructor_exists():
-    assert callable(edd::TreeElement.__init__)
+def test_edd_treeelement_constructor_exists():
+    assert callable(edd_TreeElement.__init__)
 
 
-def test_edd::treeelement_constructor_args():
-    sig = inspect.signature(edd::TreeElement.__init__)
+def test_edd_treeelement_constructor_args():
+    sig = inspect.signature(edd_TreeElement.__init__)
     params = list(sig.parameters.keys())
-    assert "name" in params, "Missing parameter 'name'"
     assert "index" in params, "Missing parameter 'index'"
+    assert "name" in params, "Missing parameter 'name'"
 
-def test_edd::treeelement_has_name():
-    assert hasattr(edd::TreeElement, "name")
+def test_edd_treeelement_has_index():
+    assert hasattr(edd_TreeElement, "index")
     descriptor = None
-    for klass in edd::TreeElement.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_edd::treeelement_has_index():
-    assert hasattr(edd::TreeElement, "index")
-    descriptor = None
-    for klass in edd::TreeElement.__mro__:
+    for klass in edd_TreeElement.__mro__:
         if "index" in klass.__dict__:
             descriptor = klass.__dict__["index"]
             break
     assert isinstance(descriptor, property)
 
+def test_edd_treeelement_has_name():
+    assert hasattr(edd_TreeElement, "name")
+    descriptor = None
+    for klass in edd_TreeElement.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_edd::edd_is_not_abstract():
-    assert not inspect.isabstract(edd::EDD)
+
+def test_edd_edd_is_not_abstract():
+    assert not inspect.isabstract(edd_EDD)
 
 
-def test_edd::edd_constructor_exists():
-    assert callable(edd::EDD.__init__)
+def test_edd_edd_constructor_exists():
+    assert callable(edd_EDD.__init__)
 
 
-def test_edd::edd_constructor_args():
-    sig = inspect.signature(edd::EDD.__init__)
+def test_edd_edd_constructor_args():
+    sig = inspect.signature(edd_EDD.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_edd::edd_has_name():
-    assert hasattr(edd::EDD, "name")
+def test_edd_edd_has_name():
+    assert hasattr(edd_EDD, "name")
     descriptor = None
-    for klass in edd::EDD.__mro__:
+    for klass in edd_EDD.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -132,21 +132,21 @@ safe_text = st.text(
 TreeElement_strategy = st.builds(
     TreeElement,
 )
-edd::Leaf_strategy = st.builds(
-    edd::Leaf,
+edd_Leaf_strategy = st.builds(
+    edd_Leaf,
 )
-edd::Node_strategy = st.builds(
-    edd::Node,
+edd_Node_strategy = st.builds(
+    edd_Node,
 )
-edd::TreeElement_strategy = st.builds(
-    edd::TreeElement,
-    name=
-        safe_text,
+edd_TreeElement_strategy = st.builds(
+    edd_TreeElement,
     index=
+        safe_text,
+    name=
         safe_text
 )
-edd::EDD_strategy = st.builds(
-    edd::EDD,
+edd_EDD_strategy = st.builds(
+    edd_EDD,
     name=
         safe_text
 )
@@ -156,55 +156,46 @@ edd::EDD_strategy = st.builds(
 def test_treeelement_instantiation(instance):
     assert isinstance(instance, TreeElement)
 
-@given(instance=edd::Leaf_strategy)
+@given(instance=edd_Leaf_strategy)
 @settings(max_examples=50)
-def test_edd::leaf_instantiation(instance):
-    assert isinstance(instance, edd::Leaf)
+def test_edd_leaf_instantiation(instance):
+    assert isinstance(instance, edd_Leaf)
 
-@given(instance=edd::Node_strategy)
+@given(instance=edd_Node_strategy)
 @settings(max_examples=50)
-def test_edd::node_instantiation(instance):
-    assert isinstance(instance, edd::Node)
+def test_edd_node_instantiation(instance):
+    assert isinstance(instance, edd_Node)
 
-@given(instance=edd::TreeElement_strategy)
+@given(instance=edd_TreeElement_strategy)
 @settings(max_examples=50)
-def test_edd::treeelement_instantiation(instance):
-    assert isinstance(instance, edd::TreeElement)
-
-@given(instance=edd::TreeElement_strategy)
-def test_edd::treeelement_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_edd_treeelement_instantiation(instance):
+    assert isinstance(instance, edd_TreeElement)
 
 
-@given(instance=edd::TreeElement_strategy)
-def test_edd::treeelement_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
 
-@given(instance=edd::TreeElement_strategy)
-def test_edd::treeelement_index_type(instance):
-    assert isinstance(instance.index, str)
-
-
-@given(instance=edd::TreeElement_strategy)
-def test_edd::treeelement_index_setter(instance):
+@given(instance=edd_TreeElement_strategy)
+def test_edd_treeelement_index_setter(instance):
     original = instance.index
     instance.index = original
     assert instance.index == original
 
-@given(instance=edd::EDD_strategy)
+
+
+@given(instance=edd_TreeElement_strategy)
+def test_edd_treeelement_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+@given(instance=edd_EDD_strategy)
 @settings(max_examples=50)
-def test_edd::edd_instantiation(instance):
-    assert isinstance(instance, edd::EDD)
-
-@given(instance=edd::EDD_strategy)
-def test_edd::edd_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_edd_edd_instantiation(instance):
+    assert isinstance(instance, edd_EDD)
 
 
-@given(instance=edd::EDD_strategy)
-def test_edd::edd_name_setter(instance):
+
+@given(instance=edd_EDD_strategy)
+def test_edd_edd_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original

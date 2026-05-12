@@ -3,15 +3,15 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    finalStateMachine::State,
-    finalStateMachine::Transition,
-    finalStateMachine::FSM,
+from python_code import (
+    finalStateMachine_State,
+    finalStateMachine_Transition,
+    finalStateMachine_FSM,
     State,
-    finalStateMachine::InitialState,
-    finalStateMachine::FinalState,
+    finalStateMachine_InitialState,
+    finalStateMachine_FinalState,
 )
 
 # =============================================================================
@@ -20,23 +20,23 @@ from classes import (
 
 
 
-def test_finalstatemachine::state_is_not_abstract():
-    assert not inspect.isabstract(finalStateMachine::State)
+def test_finalstatemachine_state_is_not_abstract():
+    assert not inspect.isabstract(finalStateMachine_State)
 
 
-def test_finalstatemachine::state_constructor_exists():
-    assert callable(finalStateMachine::State.__init__)
+def test_finalstatemachine_state_constructor_exists():
+    assert callable(finalStateMachine_State.__init__)
 
 
-def test_finalstatemachine::state_constructor_args():
-    sig = inspect.signature(finalStateMachine::State.__init__)
+def test_finalstatemachine_state_constructor_args():
+    sig = inspect.signature(finalStateMachine_State.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_finalstatemachine::state_has_name():
-    assert hasattr(finalStateMachine::State, "name")
+def test_finalstatemachine_state_has_name():
+    assert hasattr(finalStateMachine_State, "name")
     descriptor = None
-    for klass in finalStateMachine::State.__mro__:
+    for klass in finalStateMachine_State.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -44,23 +44,23 @@ def test_finalstatemachine::state_has_name():
 
 
 
-def test_finalstatemachine::transition_is_not_abstract():
-    assert not inspect.isabstract(finalStateMachine::Transition)
+def test_finalstatemachine_transition_is_not_abstract():
+    assert not inspect.isabstract(finalStateMachine_Transition)
 
 
-def test_finalstatemachine::transition_constructor_exists():
-    assert callable(finalStateMachine::Transition.__init__)
+def test_finalstatemachine_transition_constructor_exists():
+    assert callable(finalStateMachine_Transition.__init__)
 
 
-def test_finalstatemachine::transition_constructor_args():
-    sig = inspect.signature(finalStateMachine::Transition.__init__)
+def test_finalstatemachine_transition_constructor_args():
+    sig = inspect.signature(finalStateMachine_Transition.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_finalstatemachine::transition_has_name():
-    assert hasattr(finalStateMachine::Transition, "name")
+def test_finalstatemachine_transition_has_name():
+    assert hasattr(finalStateMachine_Transition, "name")
     descriptor = None
-    for klass in finalStateMachine::Transition.__mro__:
+    for klass in finalStateMachine_Transition.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -68,23 +68,23 @@ def test_finalstatemachine::transition_has_name():
 
 
 
-def test_finalstatemachine::fsm_is_not_abstract():
-    assert not inspect.isabstract(finalStateMachine::FSM)
+def test_finalstatemachine_fsm_is_not_abstract():
+    assert not inspect.isabstract(finalStateMachine_FSM)
 
 
-def test_finalstatemachine::fsm_constructor_exists():
-    assert callable(finalStateMachine::FSM.__init__)
+def test_finalstatemachine_fsm_constructor_exists():
+    assert callable(finalStateMachine_FSM.__init__)
 
 
-def test_finalstatemachine::fsm_constructor_args():
-    sig = inspect.signature(finalStateMachine::FSM.__init__)
+def test_finalstatemachine_fsm_constructor_args():
+    sig = inspect.signature(finalStateMachine_FSM.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_finalstatemachine::fsm_has_name():
-    assert hasattr(finalStateMachine::FSM, "name")
+def test_finalstatemachine_fsm_has_name():
+    assert hasattr(finalStateMachine_FSM, "name")
     descriptor = None
-    for klass in finalStateMachine::FSM.__mro__:
+    for klass in finalStateMachine_FSM.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -106,30 +106,30 @@ def test_state_constructor_args():
 
 
 
-def test_finalstatemachine::initialstate_is_not_abstract():
-    assert not inspect.isabstract(finalStateMachine::InitialState)
+def test_finalstatemachine_initialstate_is_not_abstract():
+    assert not inspect.isabstract(finalStateMachine_InitialState)
 
 
-def test_finalstatemachine::initialstate_constructor_exists():
-    assert callable(finalStateMachine::InitialState.__init__)
+def test_finalstatemachine_initialstate_constructor_exists():
+    assert callable(finalStateMachine_InitialState.__init__)
 
 
-def test_finalstatemachine::initialstate_constructor_args():
-    sig = inspect.signature(finalStateMachine::InitialState.__init__)
+def test_finalstatemachine_initialstate_constructor_args():
+    sig = inspect.signature(finalStateMachine_InitialState.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_finalstatemachine::finalstate_is_not_abstract():
-    assert not inspect.isabstract(finalStateMachine::FinalState)
+def test_finalstatemachine_finalstate_is_not_abstract():
+    assert not inspect.isabstract(finalStateMachine_FinalState)
 
 
-def test_finalstatemachine::finalstate_constructor_exists():
-    assert callable(finalStateMachine::FinalState.__init__)
+def test_finalstatemachine_finalstate_constructor_exists():
+    assert callable(finalStateMachine_FinalState.__init__)
 
 
-def test_finalstatemachine::finalstate_constructor_args():
-    sig = inspect.signature(finalStateMachine::FinalState.__init__)
+def test_finalstatemachine_finalstate_constructor_args():
+    sig = inspect.signature(finalStateMachine_FinalState.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -144,75 +144,66 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-finalStateMachine::State_strategy = st.builds(
-    finalStateMachine::State,
+finalStateMachine_State_strategy = st.builds(
+    finalStateMachine_State,
     name=
         safe_text
 )
-finalStateMachine::Transition_strategy = st.builds(
-    finalStateMachine::Transition,
+finalStateMachine_Transition_strategy = st.builds(
+    finalStateMachine_Transition,
     name=
         safe_text
 )
-finalStateMachine::FSM_strategy = st.builds(
-    finalStateMachine::FSM,
+finalStateMachine_FSM_strategy = st.builds(
+    finalStateMachine_FSM,
     name=
         safe_text
 )
 State_strategy = st.builds(
     State,
 )
-finalStateMachine::InitialState_strategy = st.builds(
-    finalStateMachine::InitialState,
+finalStateMachine_InitialState_strategy = st.builds(
+    finalStateMachine_InitialState,
 )
-finalStateMachine::FinalState_strategy = st.builds(
-    finalStateMachine::FinalState,
+finalStateMachine_FinalState_strategy = st.builds(
+    finalStateMachine_FinalState,
 )
 
-@given(instance=finalStateMachine::State_strategy)
+@given(instance=finalStateMachine_State_strategy)
 @settings(max_examples=50)
-def test_finalstatemachine::state_instantiation(instance):
-    assert isinstance(instance, finalStateMachine::State)
-
-@given(instance=finalStateMachine::State_strategy)
-def test_finalstatemachine::state_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_finalstatemachine_state_instantiation(instance):
+    assert isinstance(instance, finalStateMachine_State)
 
 
-@given(instance=finalStateMachine::State_strategy)
-def test_finalstatemachine::state_name_setter(instance):
+
+@given(instance=finalStateMachine_State_strategy)
+def test_finalstatemachine_state_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=finalStateMachine::Transition_strategy)
+@given(instance=finalStateMachine_Transition_strategy)
 @settings(max_examples=50)
-def test_finalstatemachine::transition_instantiation(instance):
-    assert isinstance(instance, finalStateMachine::Transition)
-
-@given(instance=finalStateMachine::Transition_strategy)
-def test_finalstatemachine::transition_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_finalstatemachine_transition_instantiation(instance):
+    assert isinstance(instance, finalStateMachine_Transition)
 
 
-@given(instance=finalStateMachine::Transition_strategy)
-def test_finalstatemachine::transition_name_setter(instance):
+
+@given(instance=finalStateMachine_Transition_strategy)
+def test_finalstatemachine_transition_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=finalStateMachine::FSM_strategy)
+@given(instance=finalStateMachine_FSM_strategy)
 @settings(max_examples=50)
-def test_finalstatemachine::fsm_instantiation(instance):
-    assert isinstance(instance, finalStateMachine::FSM)
-
-@given(instance=finalStateMachine::FSM_strategy)
-def test_finalstatemachine::fsm_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_finalstatemachine_fsm_instantiation(instance):
+    assert isinstance(instance, finalStateMachine_FSM)
 
 
-@given(instance=finalStateMachine::FSM_strategy)
-def test_finalstatemachine::fsm_name_setter(instance):
+
+@given(instance=finalStateMachine_FSM_strategy)
+def test_finalstatemachine_fsm_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
@@ -222,12 +213,12 @@ def test_finalstatemachine::fsm_name_setter(instance):
 def test_state_instantiation(instance):
     assert isinstance(instance, State)
 
-@given(instance=finalStateMachine::InitialState_strategy)
+@given(instance=finalStateMachine_InitialState_strategy)
 @settings(max_examples=50)
-def test_finalstatemachine::initialstate_instantiation(instance):
-    assert isinstance(instance, finalStateMachine::InitialState)
+def test_finalstatemachine_initialstate_instantiation(instance):
+    assert isinstance(instance, finalStateMachine_InitialState)
 
-@given(instance=finalStateMachine::FinalState_strategy)
+@given(instance=finalStateMachine_FinalState_strategy)
 @settings(max_examples=50)
-def test_finalstatemachine::finalstate_instantiation(instance):
-    assert isinstance(instance, finalStateMachine::FinalState)
+def test_finalstatemachine_finalstate_instantiation(instance):
+    assert isinstance(instance, finalStateMachine_FinalState)

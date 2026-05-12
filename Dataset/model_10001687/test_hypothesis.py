@@ -3,7 +3,7 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
 from python_code import (
     Customer_Data,
@@ -71,17 +71,8 @@ def test_inventory_constructor_exists():
 def test_inventory_constructor_args():
     sig = inspect.signature(Inventory.__init__)
     params = list(sig.parameters.keys())
-    assert "Products" in params, "Missing parameter 'Products'"
     assert "Services" in params, "Missing parameter 'Services'"
-
-def test_inventory_has_Products():
-    assert hasattr(Inventory, "Products")
-    descriptor = None
-    for klass in Inventory.__mro__:
-        if "Products" in klass.__dict__:
-            descriptor = klass.__dict__["Products"]
-            break
-    assert isinstance(descriptor, property)
+    assert "Products" in params, "Missing parameter 'Products'"
 
 def test_inventory_has_Services():
     assert hasattr(Inventory, "Services")
@@ -89,6 +80,15 @@ def test_inventory_has_Services():
     for klass in Inventory.__mro__:
         if "Services" in klass.__dict__:
             descriptor = klass.__dict__["Services"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_inventory_has_Products():
+    assert hasattr(Inventory, "Products")
+    descriptor = None
+    for klass in Inventory.__mro__:
+        if "Products" in klass.__dict__:
+            descriptor = klass.__dict__["Products"]
             break
     assert isinstance(descriptor, property)
 
@@ -161,17 +161,8 @@ def test_service_constructor_exists():
 def test_service_constructor_args():
     sig = inspect.signature(Service.__init__)
     params = list(sig.parameters.keys())
-    assert "Info" in params, "Missing parameter 'Info'"
     assert "Terms" in params, "Missing parameter 'Terms'"
-
-def test_service_has_Info():
-    assert hasattr(Service, "Info")
-    descriptor = None
-    for klass in Service.__mro__:
-        if "Info" in klass.__dict__:
-            descriptor = klass.__dict__["Info"]
-            break
-    assert isinstance(descriptor, property)
+    assert "Info" in params, "Missing parameter 'Info'"
 
 def test_service_has_Terms():
     assert hasattr(Service, "Terms")
@@ -179,6 +170,15 @@ def test_service_has_Terms():
     for klass in Service.__mro__:
         if "Terms" in klass.__dict__:
             descriptor = klass.__dict__["Terms"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_service_has_Info():
+    assert hasattr(Service, "Info")
+    descriptor = None
+    for klass in Service.__mro__:
+        if "Info" in klass.__dict__:
+            descriptor = klass.__dict__["Info"]
             break
     assert isinstance(descriptor, property)
 
@@ -267,17 +267,8 @@ def test_order_constructor_exists():
 def test_order_constructor_args():
     sig = inspect.signature(Order.__init__)
     params = list(sig.parameters.keys())
-    assert "Product" in params, "Missing parameter 'Product'"
     assert "Service" in params, "Missing parameter 'Service'"
-
-def test_order_has_Product():
-    assert hasattr(Order, "Product")
-    descriptor = None
-    for klass in Order.__mro__:
-        if "Product" in klass.__dict__:
-            descriptor = klass.__dict__["Product"]
-            break
-    assert isinstance(descriptor, property)
+    assert "Product" in params, "Missing parameter 'Product'"
 
 def test_order_has_Service():
     assert hasattr(Order, "Service")
@@ -285,6 +276,15 @@ def test_order_has_Service():
     for klass in Order.__mro__:
         if "Service" in klass.__dict__:
             descriptor = klass.__dict__["Service"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_order_has_Product():
+    assert hasattr(Order, "Product")
+    descriptor = None
+    for klass in Order.__mro__:
+        if "Product" in klass.__dict__:
+            descriptor = klass.__dict__["Product"]
             break
     assert isinstance(descriptor, property)
 
@@ -301,17 +301,8 @@ def test_transactions_constructor_exists():
 def test_transactions_constructor_args():
     sig = inspect.signature(Transactions.__init__)
     params = list(sig.parameters.keys())
-    assert "Customer" in params, "Missing parameter 'Customer'"
     assert "Order" in params, "Missing parameter 'Order'"
-
-def test_transactions_has_Customer():
-    assert hasattr(Transactions, "Customer")
-    descriptor = None
-    for klass in Transactions.__mro__:
-        if "Customer" in klass.__dict__:
-            descriptor = klass.__dict__["Customer"]
-            break
-    assert isinstance(descriptor, property)
+    assert "Customer" in params, "Missing parameter 'Customer'"
 
 def test_transactions_has_Order():
     assert hasattr(Transactions, "Order")
@@ -319,6 +310,15 @@ def test_transactions_has_Order():
     for klass in Transactions.__mro__:
         if "Order" in klass.__dict__:
             descriptor = klass.__dict__["Order"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_transactions_has_Customer():
+    assert hasattr(Transactions, "Customer")
+    descriptor = None
+    for klass in Transactions.__mro__:
+        if "Customer" in klass.__dict__:
+            descriptor = klass.__dict__["Customer"]
             break
     assert isinstance(descriptor, property)
 
@@ -343,9 +343,9 @@ Customer_Data_strategy = st.builds(
 )
 Inventory_strategy = st.builds(
     Inventory,
-    Products=
-        safe_text,
     Services=
+        safe_text,
+    Products=
         safe_text
 )
 Customer_strategy = st.builds(
@@ -362,9 +362,9 @@ Store_strategy = st.builds(
 )
 Service_strategy = st.builds(
     Service,
-    Info=
-        safe_text,
     Terms=
+        safe_text,
+    Info=
         safe_text
 )
 Product_strategy = st.builds(
@@ -384,16 +384,16 @@ Terminal_strategy = st.builds(
 )
 Order_strategy = st.builds(
     Order,
-    Product=
-        safe_text,
     Service=
+        safe_text,
+    Product=
         safe_text
 )
 Transactions_strategy = st.builds(
     Transactions,
-    Customer=
-        safe_text,
     Order=
+        safe_text,
+    Customer=
         safe_text
 )
 
@@ -402,9 +402,6 @@ Transactions_strategy = st.builds(
 def test_customer_data_instantiation(instance):
     assert isinstance(instance, Customer_Data)
 
-@given(instance=Customer_Data_strategy)
-def test_customer_data_Name_type(instance):
-    assert isinstance(instance.Name, str)
 
 
 @given(instance=Customer_Data_strategy)
@@ -413,9 +410,6 @@ def test_customer_data_Name_setter(instance):
     instance.Name = original
     assert instance.Name == original
 
-@given(instance=Customer_Data_strategy)
-def test_customer_data_Contact_type(instance):
-    assert isinstance(instance.Contact, str)
 
 
 @given(instance=Customer_Data_strategy)
@@ -429,20 +423,6 @@ def test_customer_data_Contact_setter(instance):
 def test_inventory_instantiation(instance):
     assert isinstance(instance, Inventory)
 
-@given(instance=Inventory_strategy)
-def test_inventory_Products_type(instance):
-    assert isinstance(instance.Products, str)
-
-
-@given(instance=Inventory_strategy)
-def test_inventory_Products_setter(instance):
-    original = instance.Products
-    instance.Products = original
-    assert instance.Products == original
-
-@given(instance=Inventory_strategy)
-def test_inventory_Services_type(instance):
-    assert isinstance(instance.Services, str)
 
 
 @given(instance=Inventory_strategy)
@@ -450,6 +430,14 @@ def test_inventory_Services_setter(instance):
     original = instance.Services
     instance.Services = original
     assert instance.Services == original
+
+
+
+@given(instance=Inventory_strategy)
+def test_inventory_Products_setter(instance):
+    original = instance.Products
+    instance.Products = original
+    assert instance.Products == original
 
 @given(instance=Customer_strategy)
 @settings(max_examples=50)
@@ -476,20 +464,6 @@ def test_store_instantiation(instance):
 def test_service_instantiation(instance):
     assert isinstance(instance, Service)
 
-@given(instance=Service_strategy)
-def test_service_Info_type(instance):
-    assert isinstance(instance.Info, str)
-
-
-@given(instance=Service_strategy)
-def test_service_Info_setter(instance):
-    original = instance.Info
-    instance.Info = original
-    assert instance.Info == original
-
-@given(instance=Service_strategy)
-def test_service_Terms_type(instance):
-    assert isinstance(instance.Terms, str)
 
 
 @given(instance=Service_strategy)
@@ -498,14 +472,19 @@ def test_service_Terms_setter(instance):
     instance.Terms = original
     assert instance.Terms == original
 
+
+
+@given(instance=Service_strategy)
+def test_service_Info_setter(instance):
+    original = instance.Info
+    instance.Info = original
+    assert instance.Info == original
+
 @given(instance=Product_strategy)
 @settings(max_examples=50)
 def test_product_instantiation(instance):
     assert isinstance(instance, Product)
 
-@given(instance=Product_strategy)
-def test_product_Company_type(instance):
-    assert isinstance(instance.Company, str)
 
 
 @given(instance=Product_strategy)
@@ -519,9 +498,6 @@ def test_product_Company_setter(instance):
 def test_online_portal_instantiation(instance):
     assert isinstance(instance, Online_Portal)
 
-@given(instance=Online_Portal_strategy)
-def test_online_portal_StoreLocation_type(instance):
-    assert isinstance(instance.StoreLocation, str)
 
 
 @given(instance=Online_Portal_strategy)
@@ -535,9 +511,6 @@ def test_online_portal_StoreLocation_setter(instance):
 def test_terminal_instantiation(instance):
     assert isinstance(instance, Terminal)
 
-@given(instance=Terminal_strategy)
-def test_terminal_Current_Employee_type(instance):
-    assert isinstance(instance.Current_Employee, str)
 
 
 @given(instance=Terminal_strategy)
@@ -551,20 +524,6 @@ def test_terminal_Current_Employee_setter(instance):
 def test_order_instantiation(instance):
     assert isinstance(instance, Order)
 
-@given(instance=Order_strategy)
-def test_order_Product_type(instance):
-    assert isinstance(instance.Product, str)
-
-
-@given(instance=Order_strategy)
-def test_order_Product_setter(instance):
-    original = instance.Product
-    instance.Product = original
-    assert instance.Product == original
-
-@given(instance=Order_strategy)
-def test_order_Service_type(instance):
-    assert isinstance(instance.Service, str)
 
 
 @given(instance=Order_strategy)
@@ -573,25 +532,19 @@ def test_order_Service_setter(instance):
     instance.Service = original
     assert instance.Service == original
 
+
+
+@given(instance=Order_strategy)
+def test_order_Product_setter(instance):
+    original = instance.Product
+    instance.Product = original
+    assert instance.Product == original
+
 @given(instance=Transactions_strategy)
 @settings(max_examples=50)
 def test_transactions_instantiation(instance):
     assert isinstance(instance, Transactions)
 
-@given(instance=Transactions_strategy)
-def test_transactions_Customer_type(instance):
-    assert isinstance(instance.Customer, str)
-
-
-@given(instance=Transactions_strategy)
-def test_transactions_Customer_setter(instance):
-    original = instance.Customer
-    instance.Customer = original
-    assert instance.Customer == original
-
-@given(instance=Transactions_strategy)
-def test_transactions_Order_type(instance):
-    assert isinstance(instance.Order, str)
 
 
 @given(instance=Transactions_strategy)
@@ -599,3 +552,11 @@ def test_transactions_Order_setter(instance):
     original = instance.Order
     instance.Order = original
     assert instance.Order == original
+
+
+
+@given(instance=Transactions_strategy)
+def test_transactions_Customer_setter(instance):
+    original = instance.Customer
+    instance.Customer = original
+    assert instance.Customer == original

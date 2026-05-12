@@ -3,24 +3,24 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     C,
-    linkinher::T,
-    linkinher::X,
-    linkinher::K,
+    linkinher_T,
+    linkinher_X,
+    linkinher_K,
     E,
-    linkinher::M,
+    linkinher_M,
     S,
-    linkinher::C,
+    linkinher_C,
     T,
-    linkinher::L,
-    linkinher::Named,
+    linkinher_L,
+    linkinher_Named,
     Named,
-    linkinher::N,
-    linkinher::S,
-    linkinher::E,
+    linkinher_S,
+    linkinher_N,
+    linkinher_E,
 )
 
 # =============================================================================
@@ -43,44 +43,44 @@ def test_c_constructor_args():
 
 
 
-def test_linkinher::t_is_not_abstract():
-    assert not inspect.isabstract(linkinher::T)
+def test_linkinher_t_is_not_abstract():
+    assert not inspect.isabstract(linkinher_T)
 
 
-def test_linkinher::t_constructor_exists():
-    assert callable(linkinher::T.__init__)
+def test_linkinher_t_constructor_exists():
+    assert callable(linkinher_T.__init__)
 
 
-def test_linkinher::t_constructor_args():
-    sig = inspect.signature(linkinher::T.__init__)
+def test_linkinher_t_constructor_args():
+    sig = inspect.signature(linkinher_T.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_linkinher::x_is_not_abstract():
-    assert not inspect.isabstract(linkinher::X)
+def test_linkinher_x_is_not_abstract():
+    assert not inspect.isabstract(linkinher_X)
 
 
-def test_linkinher::x_constructor_exists():
-    assert callable(linkinher::X.__init__)
+def test_linkinher_x_constructor_exists():
+    assert callable(linkinher_X.__init__)
 
 
-def test_linkinher::x_constructor_args():
-    sig = inspect.signature(linkinher::X.__init__)
+def test_linkinher_x_constructor_args():
+    sig = inspect.signature(linkinher_X.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_linkinher::k_is_not_abstract():
-    assert not inspect.isabstract(linkinher::K)
+def test_linkinher_k_is_not_abstract():
+    assert not inspect.isabstract(linkinher_K)
 
 
-def test_linkinher::k_constructor_exists():
-    assert callable(linkinher::K.__init__)
+def test_linkinher_k_constructor_exists():
+    assert callable(linkinher_K.__init__)
 
 
-def test_linkinher::k_constructor_args():
-    sig = inspect.signature(linkinher::K.__init__)
+def test_linkinher_k_constructor_args():
+    sig = inspect.signature(linkinher_K.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -99,16 +99,16 @@ def test_e_constructor_args():
 
 
 
-def test_linkinher::m_is_not_abstract():
-    assert not inspect.isabstract(linkinher::M)
+def test_linkinher_m_is_not_abstract():
+    assert not inspect.isabstract(linkinher_M)
 
 
-def test_linkinher::m_constructor_exists():
-    assert callable(linkinher::M.__init__)
+def test_linkinher_m_constructor_exists():
+    assert callable(linkinher_M.__init__)
 
 
-def test_linkinher::m_constructor_args():
-    sig = inspect.signature(linkinher::M.__init__)
+def test_linkinher_m_constructor_args():
+    sig = inspect.signature(linkinher_M.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -127,16 +127,16 @@ def test_s_constructor_args():
 
 
 
-def test_linkinher::c_is_not_abstract():
-    assert not inspect.isabstract(linkinher::C)
+def test_linkinher_c_is_not_abstract():
+    assert not inspect.isabstract(linkinher_C)
 
 
-def test_linkinher::c_constructor_exists():
-    assert callable(linkinher::C.__init__)
+def test_linkinher_c_constructor_exists():
+    assert callable(linkinher_C.__init__)
 
 
-def test_linkinher::c_constructor_args():
-    sig = inspect.signature(linkinher::C.__init__)
+def test_linkinher_c_constructor_args():
+    sig = inspect.signature(linkinher_C.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -155,37 +155,37 @@ def test_t_constructor_args():
 
 
 
-def test_linkinher::l_is_not_abstract():
-    assert not inspect.isabstract(linkinher::L)
+def test_linkinher_l_is_not_abstract():
+    assert not inspect.isabstract(linkinher_L)
 
 
-def test_linkinher::l_constructor_exists():
-    assert callable(linkinher::L.__init__)
+def test_linkinher_l_constructor_exists():
+    assert callable(linkinher_L.__init__)
 
 
-def test_linkinher::l_constructor_args():
-    sig = inspect.signature(linkinher::L.__init__)
+def test_linkinher_l_constructor_args():
+    sig = inspect.signature(linkinher_L.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_linkinher::named_is_not_abstract():
-    assert not inspect.isabstract(linkinher::Named)
+def test_linkinher_named_is_not_abstract():
+    assert not inspect.isabstract(linkinher_Named)
 
 
-def test_linkinher::named_constructor_exists():
-    assert callable(linkinher::Named.__init__)
+def test_linkinher_named_constructor_exists():
+    assert callable(linkinher_Named.__init__)
 
 
-def test_linkinher::named_constructor_args():
-    sig = inspect.signature(linkinher::Named.__init__)
+def test_linkinher_named_constructor_args():
+    sig = inspect.signature(linkinher_Named.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_linkinher::named_has_name():
-    assert hasattr(linkinher::Named, "name")
+def test_linkinher_named_has_name():
+    assert hasattr(linkinher_Named, "name")
     descriptor = None
-    for klass in linkinher::Named.__mro__:
+    for klass in linkinher_Named.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -207,44 +207,44 @@ def test_named_constructor_args():
 
 
 
-def test_linkinher::n_is_not_abstract():
-    assert not inspect.isabstract(linkinher::N)
+def test_linkinher_s_is_not_abstract():
+    assert not inspect.isabstract(linkinher_S)
 
 
-def test_linkinher::n_constructor_exists():
-    assert callable(linkinher::N.__init__)
+def test_linkinher_s_constructor_exists():
+    assert callable(linkinher_S.__init__)
 
 
-def test_linkinher::n_constructor_args():
-    sig = inspect.signature(linkinher::N.__init__)
+def test_linkinher_s_constructor_args():
+    sig = inspect.signature(linkinher_S.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_linkinher::s_is_not_abstract():
-    assert not inspect.isabstract(linkinher::S)
+def test_linkinher_n_is_not_abstract():
+    assert not inspect.isabstract(linkinher_N)
 
 
-def test_linkinher::s_constructor_exists():
-    assert callable(linkinher::S.__init__)
+def test_linkinher_n_constructor_exists():
+    assert callable(linkinher_N.__init__)
 
 
-def test_linkinher::s_constructor_args():
-    sig = inspect.signature(linkinher::S.__init__)
+def test_linkinher_n_constructor_args():
+    sig = inspect.signature(linkinher_N.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_linkinher::e_is_not_abstract():
-    assert not inspect.isabstract(linkinher::E)
+def test_linkinher_e_is_not_abstract():
+    assert not inspect.isabstract(linkinher_E)
 
 
-def test_linkinher::e_constructor_exists():
-    assert callable(linkinher::E.__init__)
+def test_linkinher_e_constructor_exists():
+    assert callable(linkinher_E.__init__)
 
 
-def test_linkinher::e_constructor_args():
-    sig = inspect.signature(linkinher::E.__init__)
+def test_linkinher_e_constructor_args():
+    sig = inspect.signature(linkinher_E.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -262,49 +262,49 @@ safe_text = st.text(
 C_strategy = st.builds(
     C,
 )
-linkinher::T_strategy = st.builds(
-    linkinher::T,
+linkinher_T_strategy = st.builds(
+    linkinher_T,
 )
-linkinher::X_strategy = st.builds(
-    linkinher::X,
+linkinher_X_strategy = st.builds(
+    linkinher_X,
 )
-linkinher::K_strategy = st.builds(
-    linkinher::K,
+linkinher_K_strategy = st.builds(
+    linkinher_K,
 )
 E_strategy = st.builds(
     E,
 )
-linkinher::M_strategy = st.builds(
-    linkinher::M,
+linkinher_M_strategy = st.builds(
+    linkinher_M,
 )
 S_strategy = st.builds(
     S,
 )
-linkinher::C_strategy = st.builds(
-    linkinher::C,
+linkinher_C_strategy = st.builds(
+    linkinher_C,
 )
 T_strategy = st.builds(
     T,
 )
-linkinher::L_strategy = st.builds(
-    linkinher::L,
+linkinher_L_strategy = st.builds(
+    linkinher_L,
 )
-linkinher::Named_strategy = st.builds(
-    linkinher::Named,
+linkinher_Named_strategy = st.builds(
+    linkinher_Named,
     name=
         safe_text
 )
 Named_strategy = st.builds(
     Named,
 )
-linkinher::N_strategy = st.builds(
-    linkinher::N,
+linkinher_S_strategy = st.builds(
+    linkinher_S,
 )
-linkinher::S_strategy = st.builds(
-    linkinher::S,
+linkinher_N_strategy = st.builds(
+    linkinher_N,
 )
-linkinher::E_strategy = st.builds(
-    linkinher::E,
+linkinher_E_strategy = st.builds(
+    linkinher_E,
 )
 
 @given(instance=C_strategy)
@@ -312,63 +312,60 @@ linkinher::E_strategy = st.builds(
 def test_c_instantiation(instance):
     assert isinstance(instance, C)
 
-@given(instance=linkinher::T_strategy)
+@given(instance=linkinher_T_strategy)
 @settings(max_examples=50)
-def test_linkinher::t_instantiation(instance):
-    assert isinstance(instance, linkinher::T)
+def test_linkinher_t_instantiation(instance):
+    assert isinstance(instance, linkinher_T)
 
-@given(instance=linkinher::X_strategy)
+@given(instance=linkinher_X_strategy)
 @settings(max_examples=50)
-def test_linkinher::x_instantiation(instance):
-    assert isinstance(instance, linkinher::X)
+def test_linkinher_x_instantiation(instance):
+    assert isinstance(instance, linkinher_X)
 
-@given(instance=linkinher::K_strategy)
+@given(instance=linkinher_K_strategy)
 @settings(max_examples=50)
-def test_linkinher::k_instantiation(instance):
-    assert isinstance(instance, linkinher::K)
+def test_linkinher_k_instantiation(instance):
+    assert isinstance(instance, linkinher_K)
 
 @given(instance=E_strategy)
 @settings(max_examples=50)
 def test_e_instantiation(instance):
     assert isinstance(instance, E)
 
-@given(instance=linkinher::M_strategy)
+@given(instance=linkinher_M_strategy)
 @settings(max_examples=50)
-def test_linkinher::m_instantiation(instance):
-    assert isinstance(instance, linkinher::M)
+def test_linkinher_m_instantiation(instance):
+    assert isinstance(instance, linkinher_M)
 
 @given(instance=S_strategy)
 @settings(max_examples=50)
 def test_s_instantiation(instance):
     assert isinstance(instance, S)
 
-@given(instance=linkinher::C_strategy)
+@given(instance=linkinher_C_strategy)
 @settings(max_examples=50)
-def test_linkinher::c_instantiation(instance):
-    assert isinstance(instance, linkinher::C)
+def test_linkinher_c_instantiation(instance):
+    assert isinstance(instance, linkinher_C)
 
 @given(instance=T_strategy)
 @settings(max_examples=50)
 def test_t_instantiation(instance):
     assert isinstance(instance, T)
 
-@given(instance=linkinher::L_strategy)
+@given(instance=linkinher_L_strategy)
 @settings(max_examples=50)
-def test_linkinher::l_instantiation(instance):
-    assert isinstance(instance, linkinher::L)
+def test_linkinher_l_instantiation(instance):
+    assert isinstance(instance, linkinher_L)
 
-@given(instance=linkinher::Named_strategy)
+@given(instance=linkinher_Named_strategy)
 @settings(max_examples=50)
-def test_linkinher::named_instantiation(instance):
-    assert isinstance(instance, linkinher::Named)
-
-@given(instance=linkinher::Named_strategy)
-def test_linkinher::named_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_linkinher_named_instantiation(instance):
+    assert isinstance(instance, linkinher_Named)
 
 
-@given(instance=linkinher::Named_strategy)
-def test_linkinher::named_name_setter(instance):
+
+@given(instance=linkinher_Named_strategy)
+def test_linkinher_named_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
@@ -378,17 +375,17 @@ def test_linkinher::named_name_setter(instance):
 def test_named_instantiation(instance):
     assert isinstance(instance, Named)
 
-@given(instance=linkinher::N_strategy)
+@given(instance=linkinher_S_strategy)
 @settings(max_examples=50)
-def test_linkinher::n_instantiation(instance):
-    assert isinstance(instance, linkinher::N)
+def test_linkinher_s_instantiation(instance):
+    assert isinstance(instance, linkinher_S)
 
-@given(instance=linkinher::S_strategy)
+@given(instance=linkinher_N_strategy)
 @settings(max_examples=50)
-def test_linkinher::s_instantiation(instance):
-    assert isinstance(instance, linkinher::S)
+def test_linkinher_n_instantiation(instance):
+    assert isinstance(instance, linkinher_N)
 
-@given(instance=linkinher::E_strategy)
+@given(instance=linkinher_E_strategy)
 @settings(max_examples=50)
-def test_linkinher::e_instantiation(instance):
-    assert isinstance(instance, linkinher::E)
+def test_linkinher_e_instantiation(instance):
+    assert isinstance(instance, linkinher_E)

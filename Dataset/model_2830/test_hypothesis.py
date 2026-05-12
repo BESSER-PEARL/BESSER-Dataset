@@ -3,90 +3,90 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    mm::styles::TextStyle,
-    mm::styles::PrecisionPoint,
-    mm::styles::Color,
-    mm::styles::Point,
-    styles::TextStyle,
-    mm::styles::TextStyleRegion,
-    mm::styles::AbstractStyle,
-    styles::mm::StyleContainer,
-    mm::styles::Font,
-    styles::GradientColoredAreas,
-    mm::styles::AdaptedGradientColoredAreas,
-    styles::GradientColoredArea,
-    mm::styles::GradientColoredAreas,
-    styles::GradientColoredLocation,
-    mm::styles::GradientColoredArea,
-    mm::styles::GradientColoredLocation,
-    styles::RenderingStyle,
-    styles::TextStyleRegion,
-    styles::AdaptedGradientColoredAreas,
-    mm::styles::RenderingStyle,
-    styles::AbstractStyle,
+from python_code import (
+    mm_styles_TextStyle,
+    mm_styles_PrecisionPoint,
+    mm_styles_Color,
+    mm_styles_Point,
+    styles_TextStyle,
+    mm_styles_TextStyleRegion,
+    mm_styles_AbstractStyle,
+    styles_mm_StyleContainer,
+    mm_styles_Font,
+    styles_GradientColoredAreas,
+    mm_styles_AdaptedGradientColoredAreas,
+    styles_GradientColoredArea,
+    mm_styles_GradientColoredAreas,
+    styles_GradientColoredLocation,
+    mm_styles_GradientColoredArea,
+    mm_styles_GradientColoredLocation,
+    styles_RenderingStyle,
+    styles_TextStyleRegion,
+    styles_AdaptedGradientColoredAreas,
+    mm_styles_RenderingStyle,
+    styles_AbstractStyle,
     CurvedConnection,
-    styles::PrecisionPoint,
+    styles_PrecisionPoint,
     Polyline,
-    mm::algorithms::Polygon,
+    mm_algorithms_Polygon,
     AbstractText,
-    mm::algorithms::MultiText,
-    mm::algorithms::Text,
-    styles::Point,
+    mm_algorithms_MultiText,
+    mm_algorithms_Text,
+    styles_Point,
     AdvancedAnchor,
-    mm::pictograms::FixPointAnchor,
+    mm_pictograms_FixPointAnchor,
     PictogramElement,
-    mm::pictograms::AnchorContainer,
-    mm::pictograms::Anchor,
+    mm_pictograms_AnchorContainer,
+    mm_pictograms_Anchor,
     ConnectionDecorator,
-    pictograms::mm::EObject,
-    mm::pictograms::BoxRelativeAnchor,
-    styles::Font,
-    styles::Color,
+    pictograms_mm_EObject,
+    mm_pictograms_BoxRelativeAnchor,
+    styles_Font,
+    styles_Color,
     Connection,
-    mm::pictograms::CurvedConnection,
-    mm::pictograms::CompositeConnection,
-    mm::pictograms::ManhattanConnection,
-    mm::pictograms::FreeFormConnection,
+    mm_pictograms_CompositeConnection,
+    mm_pictograms_ManhattanConnection,
+    mm_pictograms_CurvedConnection,
+    mm_pictograms_FreeFormConnection,
     StyleContainer,
-    mm::styles::Style,
-    pictograms::ContainerShape,
-    mm::pictograms::Diagram,
+    mm_styles_Style,
+    pictograms_ContainerShape,
+    mm_pictograms_Diagram,
     Diagram,
     Anchor,
-    mm::pictograms::ChopboxAnchor,
-    mm::pictograms::AdvancedAnchor,
+    mm_pictograms_AdvancedAnchor,
+    mm_pictograms_ChopboxAnchor,
     GraphicsAlgorithm,
-    mm::algorithms::Rectangle,
-    mm::algorithms::RoundedRectangle,
-    mm::algorithms::Polyline,
-    mm::algorithms::Ellipse,
-    mm::algorithms::PlatformGraphicsAlgorithm,
-    mm::algorithms::AbstractText,
-    mm::algorithms::Image,
+    mm_algorithms_Image,
+    mm_algorithms_RoundedRectangle,
+    mm_algorithms_AbstractText,
+    mm_algorithms_Polyline,
+    mm_algorithms_PlatformGraphicsAlgorithm,
+    mm_algorithms_Ellipse,
+    mm_algorithms_Rectangle,
     GraphicsAlgorithmContainer,
-    mm::algorithms::GraphicsAlgorithm,
-    mm::pictograms::PictogramElement,
+    mm_algorithms_GraphicsAlgorithm,
+    mm_pictograms_PictogramElement,
     PictogramLink,
-    mm::Property,
+    mm_Property,
     Shape,
-    mm::pictograms::ConnectionDecorator,
-    mm::pictograms::ContainerShape,
+    mm_pictograms_ConnectionDecorator,
+    mm_pictograms_ContainerShape,
     ContainerShape,
     AnchorContainer,
-    mm::pictograms::Connection,
-    mm::pictograms::Shape,
-    styles::Style,
-    mm::StyleContainer,
+    mm_pictograms_Connection,
+    mm_pictograms_Shape,
+    styles_Style,
+    mm_StyleContainer,
     PropertyContainer,
-    mm::pictograms::PictogramLink,
-    mm::GraphicsAlgorithmContainer,
-    mm::PropertyContainer,
+    mm_pictograms_PictogramLink,
+    mm_GraphicsAlgorithmContainer,
+    mm_PropertyContainer,
+    UnderlineStyle,
     LineStyle,
     LocationType,
-    UnderlineStyle,
     Orientation,
 )
 
@@ -96,223 +96,223 @@ from classes import (
 
 
 
-def test_mm::styles::textstyle_is_not_abstract():
-    assert not inspect.isabstract(mm::styles::TextStyle)
+def test_mm_styles_textstyle_is_not_abstract():
+    assert not inspect.isabstract(mm_styles_TextStyle)
 
 
-def test_mm::styles::textstyle_constructor_exists():
-    assert callable(mm::styles::TextStyle.__init__)
+def test_mm_styles_textstyle_constructor_exists():
+    assert callable(mm_styles_TextStyle.__init__)
 
 
-def test_mm::styles::textstyle_constructor_args():
-    sig = inspect.signature(mm::styles::TextStyle.__init__)
+def test_mm_styles_textstyle_constructor_args():
+    sig = inspect.signature(mm_styles_TextStyle.__init__)
     params = list(sig.parameters.keys())
     assert "underline" in params, "Missing parameter 'underline'"
-    assert "strikeout" in params, "Missing parameter 'strikeout'"
     assert "underlineStyle" in params, "Missing parameter 'underlineStyle'"
+    assert "strikeout" in params, "Missing parameter 'strikeout'"
 
-def test_mm::styles::textstyle_has_underline():
-    assert hasattr(mm::styles::TextStyle, "underline")
+def test_mm_styles_textstyle_has_underline():
+    assert hasattr(mm_styles_TextStyle, "underline")
     descriptor = None
-    for klass in mm::styles::TextStyle.__mro__:
+    for klass in mm_styles_TextStyle.__mro__:
         if "underline" in klass.__dict__:
             descriptor = klass.__dict__["underline"]
             break
     assert isinstance(descriptor, property)
 
-def test_mm::styles::textstyle_has_strikeout():
-    assert hasattr(mm::styles::TextStyle, "strikeout")
+def test_mm_styles_textstyle_has_underlineStyle():
+    assert hasattr(mm_styles_TextStyle, "underlineStyle")
     descriptor = None
-    for klass in mm::styles::TextStyle.__mro__:
-        if "strikeout" in klass.__dict__:
-            descriptor = klass.__dict__["strikeout"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_mm::styles::textstyle_has_underlineStyle():
-    assert hasattr(mm::styles::TextStyle, "underlineStyle")
-    descriptor = None
-    for klass in mm::styles::TextStyle.__mro__:
+    for klass in mm_styles_TextStyle.__mro__:
         if "underlineStyle" in klass.__dict__:
             descriptor = klass.__dict__["underlineStyle"]
             break
     assert isinstance(descriptor, property)
 
-
-
-def test_mm::styles::precisionpoint_is_not_abstract():
-    assert not inspect.isabstract(mm::styles::PrecisionPoint)
-
-
-def test_mm::styles::precisionpoint_constructor_exists():
-    assert callable(mm::styles::PrecisionPoint.__init__)
-
-
-def test_mm::styles::precisionpoint_constructor_args():
-    sig = inspect.signature(mm::styles::PrecisionPoint.__init__)
-    params = list(sig.parameters.keys())
-    assert "x" in params, "Missing parameter 'x'"
-    assert "y" in params, "Missing parameter 'y'"
-
-def test_mm::styles::precisionpoint_has_x():
-    assert hasattr(mm::styles::PrecisionPoint, "x")
+def test_mm_styles_textstyle_has_strikeout():
+    assert hasattr(mm_styles_TextStyle, "strikeout")
     descriptor = None
-    for klass in mm::styles::PrecisionPoint.__mro__:
-        if "x" in klass.__dict__:
-            descriptor = klass.__dict__["x"]
+    for klass in mm_styles_TextStyle.__mro__:
+        if "strikeout" in klass.__dict__:
+            descriptor = klass.__dict__["strikeout"]
             break
     assert isinstance(descriptor, property)
 
-def test_mm::styles::precisionpoint_has_y():
-    assert hasattr(mm::styles::PrecisionPoint, "y")
+
+
+def test_mm_styles_precisionpoint_is_not_abstract():
+    assert not inspect.isabstract(mm_styles_PrecisionPoint)
+
+
+def test_mm_styles_precisionpoint_constructor_exists():
+    assert callable(mm_styles_PrecisionPoint.__init__)
+
+
+def test_mm_styles_precisionpoint_constructor_args():
+    sig = inspect.signature(mm_styles_PrecisionPoint.__init__)
+    params = list(sig.parameters.keys())
+    assert "y" in params, "Missing parameter 'y'"
+    assert "x" in params, "Missing parameter 'x'"
+
+def test_mm_styles_precisionpoint_has_y():
+    assert hasattr(mm_styles_PrecisionPoint, "y")
     descriptor = None
-    for klass in mm::styles::PrecisionPoint.__mro__:
+    for klass in mm_styles_PrecisionPoint.__mro__:
         if "y" in klass.__dict__:
             descriptor = klass.__dict__["y"]
             break
     assert isinstance(descriptor, property)
 
+def test_mm_styles_precisionpoint_has_x():
+    assert hasattr(mm_styles_PrecisionPoint, "x")
+    descriptor = None
+    for klass in mm_styles_PrecisionPoint.__mro__:
+        if "x" in klass.__dict__:
+            descriptor = klass.__dict__["x"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_mm::styles::color_is_not_abstract():
-    assert not inspect.isabstract(mm::styles::Color)
+
+def test_mm_styles_color_is_not_abstract():
+    assert not inspect.isabstract(mm_styles_Color)
 
 
-def test_mm::styles::color_constructor_exists():
-    assert callable(mm::styles::Color.__init__)
+def test_mm_styles_color_constructor_exists():
+    assert callable(mm_styles_Color.__init__)
 
 
-def test_mm::styles::color_constructor_args():
-    sig = inspect.signature(mm::styles::Color.__init__)
+def test_mm_styles_color_constructor_args():
+    sig = inspect.signature(mm_styles_Color.__init__)
     params = list(sig.parameters.keys())
+    assert "green" in params, "Missing parameter 'green'"
     assert "blue" in params, "Missing parameter 'blue'"
     assert "red" in params, "Missing parameter 'red'"
-    assert "green" in params, "Missing parameter 'green'"
 
-def test_mm::styles::color_has_blue():
-    assert hasattr(mm::styles::Color, "blue")
+def test_mm_styles_color_has_green():
+    assert hasattr(mm_styles_Color, "green")
     descriptor = None
-    for klass in mm::styles::Color.__mro__:
-        if "blue" in klass.__dict__:
-            descriptor = klass.__dict__["blue"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_mm::styles::color_has_red():
-    assert hasattr(mm::styles::Color, "red")
-    descriptor = None
-    for klass in mm::styles::Color.__mro__:
-        if "red" in klass.__dict__:
-            descriptor = klass.__dict__["red"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_mm::styles::color_has_green():
-    assert hasattr(mm::styles::Color, "green")
-    descriptor = None
-    for klass in mm::styles::Color.__mro__:
+    for klass in mm_styles_Color.__mro__:
         if "green" in klass.__dict__:
             descriptor = klass.__dict__["green"]
             break
     assert isinstance(descriptor, property)
 
-
-
-def test_mm::styles::point_is_not_abstract():
-    assert not inspect.isabstract(mm::styles::Point)
-
-
-def test_mm::styles::point_constructor_exists():
-    assert callable(mm::styles::Point.__init__)
-
-
-def test_mm::styles::point_constructor_args():
-    sig = inspect.signature(mm::styles::Point.__init__)
-    params = list(sig.parameters.keys())
-    assert "after" in params, "Missing parameter 'after'"
-    assert "y" in params, "Missing parameter 'y'"
-    assert "before" in params, "Missing parameter 'before'"
-    assert "x" in params, "Missing parameter 'x'"
-
-def test_mm::styles::point_has_after():
-    assert hasattr(mm::styles::Point, "after")
+def test_mm_styles_color_has_blue():
+    assert hasattr(mm_styles_Color, "blue")
     descriptor = None
-    for klass in mm::styles::Point.__mro__:
-        if "after" in klass.__dict__:
-            descriptor = klass.__dict__["after"]
+    for klass in mm_styles_Color.__mro__:
+        if "blue" in klass.__dict__:
+            descriptor = klass.__dict__["blue"]
             break
     assert isinstance(descriptor, property)
 
-def test_mm::styles::point_has_y():
-    assert hasattr(mm::styles::Point, "y")
+def test_mm_styles_color_has_red():
+    assert hasattr(mm_styles_Color, "red")
     descriptor = None
-    for klass in mm::styles::Point.__mro__:
+    for klass in mm_styles_Color.__mro__:
+        if "red" in klass.__dict__:
+            descriptor = klass.__dict__["red"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_mm_styles_point_is_not_abstract():
+    assert not inspect.isabstract(mm_styles_Point)
+
+
+def test_mm_styles_point_constructor_exists():
+    assert callable(mm_styles_Point.__init__)
+
+
+def test_mm_styles_point_constructor_args():
+    sig = inspect.signature(mm_styles_Point.__init__)
+    params = list(sig.parameters.keys())
+    assert "y" in params, "Missing parameter 'y'"
+    assert "before" in params, "Missing parameter 'before'"
+    assert "x" in params, "Missing parameter 'x'"
+    assert "after" in params, "Missing parameter 'after'"
+
+def test_mm_styles_point_has_y():
+    assert hasattr(mm_styles_Point, "y")
+    descriptor = None
+    for klass in mm_styles_Point.__mro__:
         if "y" in klass.__dict__:
             descriptor = klass.__dict__["y"]
             break
     assert isinstance(descriptor, property)
 
-def test_mm::styles::point_has_before():
-    assert hasattr(mm::styles::Point, "before")
+def test_mm_styles_point_has_before():
+    assert hasattr(mm_styles_Point, "before")
     descriptor = None
-    for klass in mm::styles::Point.__mro__:
+    for klass in mm_styles_Point.__mro__:
         if "before" in klass.__dict__:
             descriptor = klass.__dict__["before"]
             break
     assert isinstance(descriptor, property)
 
-def test_mm::styles::point_has_x():
-    assert hasattr(mm::styles::Point, "x")
+def test_mm_styles_point_has_x():
+    assert hasattr(mm_styles_Point, "x")
     descriptor = None
-    for klass in mm::styles::Point.__mro__:
+    for klass in mm_styles_Point.__mro__:
         if "x" in klass.__dict__:
             descriptor = klass.__dict__["x"]
             break
     assert isinstance(descriptor, property)
 
+def test_mm_styles_point_has_after():
+    assert hasattr(mm_styles_Point, "after")
+    descriptor = None
+    for klass in mm_styles_Point.__mro__:
+        if "after" in klass.__dict__:
+            descriptor = klass.__dict__["after"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_styles::textstyle_is_not_abstract():
-    assert not inspect.isabstract(styles::TextStyle)
+
+def test_styles_textstyle_is_not_abstract():
+    assert not inspect.isabstract(styles_TextStyle)
 
 
-def test_styles::textstyle_constructor_exists():
-    assert callable(styles::TextStyle.__init__)
+def test_styles_textstyle_constructor_exists():
+    assert callable(styles_TextStyle.__init__)
 
 
-def test_styles::textstyle_constructor_args():
-    sig = inspect.signature(styles::TextStyle.__init__)
+def test_styles_textstyle_constructor_args():
+    sig = inspect.signature(styles_TextStyle.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_mm::styles::textstyleregion_is_not_abstract():
-    assert not inspect.isabstract(mm::styles::TextStyleRegion)
+def test_mm_styles_textstyleregion_is_not_abstract():
+    assert not inspect.isabstract(mm_styles_TextStyleRegion)
 
 
-def test_mm::styles::textstyleregion_constructor_exists():
-    assert callable(mm::styles::TextStyleRegion.__init__)
+def test_mm_styles_textstyleregion_constructor_exists():
+    assert callable(mm_styles_TextStyleRegion.__init__)
 
 
-def test_mm::styles::textstyleregion_constructor_args():
-    sig = inspect.signature(mm::styles::TextStyleRegion.__init__)
+def test_mm_styles_textstyleregion_constructor_args():
+    sig = inspect.signature(mm_styles_TextStyleRegion.__init__)
     params = list(sig.parameters.keys())
     assert "end" in params, "Missing parameter 'end'"
     assert "start" in params, "Missing parameter 'start'"
 
-def test_mm::styles::textstyleregion_has_end():
-    assert hasattr(mm::styles::TextStyleRegion, "end")
+def test_mm_styles_textstyleregion_has_end():
+    assert hasattr(mm_styles_TextStyleRegion, "end")
     descriptor = None
-    for klass in mm::styles::TextStyleRegion.__mro__:
+    for klass in mm_styles_TextStyleRegion.__mro__:
         if "end" in klass.__dict__:
             descriptor = klass.__dict__["end"]
             break
     assert isinstance(descriptor, property)
 
-def test_mm::styles::textstyleregion_has_start():
-    assert hasattr(mm::styles::TextStyleRegion, "start")
+def test_mm_styles_textstyleregion_has_start():
+    assert hasattr(mm_styles_TextStyleRegion, "start")
     descriptor = None
-    for klass in mm::styles::TextStyleRegion.__mro__:
+    for klass in mm_styles_TextStyleRegion.__mro__:
         if "start" in klass.__dict__:
             descriptor = klass.__dict__["start"]
             break
@@ -320,131 +320,131 @@ def test_mm::styles::textstyleregion_has_start():
 
 
 
-def test_mm::styles::abstractstyle_is_not_abstract():
-    assert not inspect.isabstract(mm::styles::AbstractStyle)
+def test_mm_styles_abstractstyle_is_not_abstract():
+    assert not inspect.isabstract(mm_styles_AbstractStyle)
 
 
-def test_mm::styles::abstractstyle_constructor_exists():
-    assert callable(mm::styles::AbstractStyle.__init__)
+def test_mm_styles_abstractstyle_constructor_exists():
+    assert callable(mm_styles_AbstractStyle.__init__)
 
 
-def test_mm::styles::abstractstyle_constructor_args():
-    sig = inspect.signature(mm::styles::AbstractStyle.__init__)
+def test_mm_styles_abstractstyle_constructor_args():
+    sig = inspect.signature(mm_styles_AbstractStyle.__init__)
     params = list(sig.parameters.keys())
+    assert "filled" in params, "Missing parameter 'filled'"
+    assert "lineStyle" in params, "Missing parameter 'lineStyle'"
     assert "lineWidth" in params, "Missing parameter 'lineWidth'"
     assert "lineVisible" in params, "Missing parameter 'lineVisible'"
-    assert "filled" in params, "Missing parameter 'filled'"
     assert "transparency" in params, "Missing parameter 'transparency'"
-    assert "lineStyle" in params, "Missing parameter 'lineStyle'"
 
-def test_mm::styles::abstractstyle_has_lineWidth():
-    assert hasattr(mm::styles::AbstractStyle, "lineWidth")
+def test_mm_styles_abstractstyle_has_filled():
+    assert hasattr(mm_styles_AbstractStyle, "filled")
     descriptor = None
-    for klass in mm::styles::AbstractStyle.__mro__:
-        if "lineWidth" in klass.__dict__:
-            descriptor = klass.__dict__["lineWidth"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_mm::styles::abstractstyle_has_lineVisible():
-    assert hasattr(mm::styles::AbstractStyle, "lineVisible")
-    descriptor = None
-    for klass in mm::styles::AbstractStyle.__mro__:
-        if "lineVisible" in klass.__dict__:
-            descriptor = klass.__dict__["lineVisible"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_mm::styles::abstractstyle_has_filled():
-    assert hasattr(mm::styles::AbstractStyle, "filled")
-    descriptor = None
-    for klass in mm::styles::AbstractStyle.__mro__:
+    for klass in mm_styles_AbstractStyle.__mro__:
         if "filled" in klass.__dict__:
             descriptor = klass.__dict__["filled"]
             break
     assert isinstance(descriptor, property)
 
-def test_mm::styles::abstractstyle_has_transparency():
-    assert hasattr(mm::styles::AbstractStyle, "transparency")
+def test_mm_styles_abstractstyle_has_lineStyle():
+    assert hasattr(mm_styles_AbstractStyle, "lineStyle")
     descriptor = None
-    for klass in mm::styles::AbstractStyle.__mro__:
-        if "transparency" in klass.__dict__:
-            descriptor = klass.__dict__["transparency"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_mm::styles::abstractstyle_has_lineStyle():
-    assert hasattr(mm::styles::AbstractStyle, "lineStyle")
-    descriptor = None
-    for klass in mm::styles::AbstractStyle.__mro__:
+    for klass in mm_styles_AbstractStyle.__mro__:
         if "lineStyle" in klass.__dict__:
             descriptor = klass.__dict__["lineStyle"]
             break
     assert isinstance(descriptor, property)
 
-
-
-def test_styles::mm::stylecontainer_is_not_abstract():
-    assert not inspect.isabstract(styles::mm::StyleContainer)
-
-
-def test_styles::mm::stylecontainer_constructor_exists():
-    assert callable(styles::mm::StyleContainer.__init__)
-
-
-def test_styles::mm::stylecontainer_constructor_args():
-    sig = inspect.signature(styles::mm::StyleContainer.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_mm::styles::font_is_not_abstract():
-    assert not inspect.isabstract(mm::styles::Font)
-
-
-def test_mm::styles::font_constructor_exists():
-    assert callable(mm::styles::Font.__init__)
-
-
-def test_mm::styles::font_constructor_args():
-    sig = inspect.signature(mm::styles::Font.__init__)
-    params = list(sig.parameters.keys())
-    assert "bold" in params, "Missing parameter 'bold'"
-    assert "size" in params, "Missing parameter 'size'"
-    assert "italic" in params, "Missing parameter 'italic'"
-    assert "name" in params, "Missing parameter 'name'"
-
-def test_mm::styles::font_has_bold():
-    assert hasattr(mm::styles::Font, "bold")
+def test_mm_styles_abstractstyle_has_lineWidth():
+    assert hasattr(mm_styles_AbstractStyle, "lineWidth")
     descriptor = None
-    for klass in mm::styles::Font.__mro__:
-        if "bold" in klass.__dict__:
-            descriptor = klass.__dict__["bold"]
+    for klass in mm_styles_AbstractStyle.__mro__:
+        if "lineWidth" in klass.__dict__:
+            descriptor = klass.__dict__["lineWidth"]
             break
     assert isinstance(descriptor, property)
 
-def test_mm::styles::font_has_size():
-    assert hasattr(mm::styles::Font, "size")
+def test_mm_styles_abstractstyle_has_lineVisible():
+    assert hasattr(mm_styles_AbstractStyle, "lineVisible")
     descriptor = None
-    for klass in mm::styles::Font.__mro__:
+    for klass in mm_styles_AbstractStyle.__mro__:
+        if "lineVisible" in klass.__dict__:
+            descriptor = klass.__dict__["lineVisible"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_mm_styles_abstractstyle_has_transparency():
+    assert hasattr(mm_styles_AbstractStyle, "transparency")
+    descriptor = None
+    for klass in mm_styles_AbstractStyle.__mro__:
+        if "transparency" in klass.__dict__:
+            descriptor = klass.__dict__["transparency"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_styles_mm_stylecontainer_is_not_abstract():
+    assert not inspect.isabstract(styles_mm_StyleContainer)
+
+
+def test_styles_mm_stylecontainer_constructor_exists():
+    assert callable(styles_mm_StyleContainer.__init__)
+
+
+def test_styles_mm_stylecontainer_constructor_args():
+    sig = inspect.signature(styles_mm_StyleContainer.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_mm_styles_font_is_not_abstract():
+    assert not inspect.isabstract(mm_styles_Font)
+
+
+def test_mm_styles_font_constructor_exists():
+    assert callable(mm_styles_Font.__init__)
+
+
+def test_mm_styles_font_constructor_args():
+    sig = inspect.signature(mm_styles_Font.__init__)
+    params = list(sig.parameters.keys())
+    assert "size" in params, "Missing parameter 'size'"
+    assert "bold" in params, "Missing parameter 'bold'"
+    assert "italic" in params, "Missing parameter 'italic'"
+    assert "name" in params, "Missing parameter 'name'"
+
+def test_mm_styles_font_has_size():
+    assert hasattr(mm_styles_Font, "size")
+    descriptor = None
+    for klass in mm_styles_Font.__mro__:
         if "size" in klass.__dict__:
             descriptor = klass.__dict__["size"]
             break
     assert isinstance(descriptor, property)
 
-def test_mm::styles::font_has_italic():
-    assert hasattr(mm::styles::Font, "italic")
+def test_mm_styles_font_has_bold():
+    assert hasattr(mm_styles_Font, "bold")
     descriptor = None
-    for klass in mm::styles::Font.__mro__:
+    for klass in mm_styles_Font.__mro__:
+        if "bold" in klass.__dict__:
+            descriptor = klass.__dict__["bold"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_mm_styles_font_has_italic():
+    assert hasattr(mm_styles_Font, "italic")
+    descriptor = None
+    for klass in mm_styles_Font.__mro__:
         if "italic" in klass.__dict__:
             descriptor = klass.__dict__["italic"]
             break
     assert isinstance(descriptor, property)
 
-def test_mm::styles::font_has_name():
-    assert hasattr(mm::styles::Font, "name")
+def test_mm_styles_font_has_name():
+    assert hasattr(mm_styles_Font, "name")
     descriptor = None
-    for klass in mm::styles::Font.__mro__:
+    for klass in mm_styles_Font.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -452,85 +452,85 @@ def test_mm::styles::font_has_name():
 
 
 
-def test_styles::gradientcoloredareas_is_not_abstract():
-    assert not inspect.isabstract(styles::GradientColoredAreas)
+def test_styles_gradientcoloredareas_is_not_abstract():
+    assert not inspect.isabstract(styles_GradientColoredAreas)
 
 
-def test_styles::gradientcoloredareas_constructor_exists():
-    assert callable(styles::GradientColoredAreas.__init__)
+def test_styles_gradientcoloredareas_constructor_exists():
+    assert callable(styles_GradientColoredAreas.__init__)
 
 
-def test_styles::gradientcoloredareas_constructor_args():
-    sig = inspect.signature(styles::GradientColoredAreas.__init__)
+def test_styles_gradientcoloredareas_constructor_args():
+    sig = inspect.signature(styles_GradientColoredAreas.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_mm::styles::adaptedgradientcoloredareas_is_not_abstract():
-    assert not inspect.isabstract(mm::styles::AdaptedGradientColoredAreas)
+def test_mm_styles_adaptedgradientcoloredareas_is_not_abstract():
+    assert not inspect.isabstract(mm_styles_AdaptedGradientColoredAreas)
 
 
-def test_mm::styles::adaptedgradientcoloredareas_constructor_exists():
-    assert callable(mm::styles::AdaptedGradientColoredAreas.__init__)
+def test_mm_styles_adaptedgradientcoloredareas_constructor_exists():
+    assert callable(mm_styles_AdaptedGradientColoredAreas.__init__)
 
 
-def test_mm::styles::adaptedgradientcoloredareas_constructor_args():
-    sig = inspect.signature(mm::styles::AdaptedGradientColoredAreas.__init__)
+def test_mm_styles_adaptedgradientcoloredareas_constructor_args():
+    sig = inspect.signature(mm_styles_AdaptedGradientColoredAreas.__init__)
     params = list(sig.parameters.keys())
-    assert "gradientType" in params, "Missing parameter 'gradientType'"
     assert "definedStyleId" in params, "Missing parameter 'definedStyleId'"
+    assert "gradientType" in params, "Missing parameter 'gradientType'"
 
-def test_mm::styles::adaptedgradientcoloredareas_has_gradientType():
-    assert hasattr(mm::styles::AdaptedGradientColoredAreas, "gradientType")
+def test_mm_styles_adaptedgradientcoloredareas_has_definedStyleId():
+    assert hasattr(mm_styles_AdaptedGradientColoredAreas, "definedStyleId")
     descriptor = None
-    for klass in mm::styles::AdaptedGradientColoredAreas.__mro__:
-        if "gradientType" in klass.__dict__:
-            descriptor = klass.__dict__["gradientType"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_mm::styles::adaptedgradientcoloredareas_has_definedStyleId():
-    assert hasattr(mm::styles::AdaptedGradientColoredAreas, "definedStyleId")
-    descriptor = None
-    for klass in mm::styles::AdaptedGradientColoredAreas.__mro__:
+    for klass in mm_styles_AdaptedGradientColoredAreas.__mro__:
         if "definedStyleId" in klass.__dict__:
             descriptor = klass.__dict__["definedStyleId"]
             break
     assert isinstance(descriptor, property)
 
+def test_mm_styles_adaptedgradientcoloredareas_has_gradientType():
+    assert hasattr(mm_styles_AdaptedGradientColoredAreas, "gradientType")
+    descriptor = None
+    for klass in mm_styles_AdaptedGradientColoredAreas.__mro__:
+        if "gradientType" in klass.__dict__:
+            descriptor = klass.__dict__["gradientType"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_styles::gradientcoloredarea_is_not_abstract():
-    assert not inspect.isabstract(styles::GradientColoredArea)
+
+def test_styles_gradientcoloredarea_is_not_abstract():
+    assert not inspect.isabstract(styles_GradientColoredArea)
 
 
-def test_styles::gradientcoloredarea_constructor_exists():
-    assert callable(styles::GradientColoredArea.__init__)
+def test_styles_gradientcoloredarea_constructor_exists():
+    assert callable(styles_GradientColoredArea.__init__)
 
 
-def test_styles::gradientcoloredarea_constructor_args():
-    sig = inspect.signature(styles::GradientColoredArea.__init__)
+def test_styles_gradientcoloredarea_constructor_args():
+    sig = inspect.signature(styles_GradientColoredArea.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_mm::styles::gradientcoloredareas_is_not_abstract():
-    assert not inspect.isabstract(mm::styles::GradientColoredAreas)
+def test_mm_styles_gradientcoloredareas_is_not_abstract():
+    assert not inspect.isabstract(mm_styles_GradientColoredAreas)
 
 
-def test_mm::styles::gradientcoloredareas_constructor_exists():
-    assert callable(mm::styles::GradientColoredAreas.__init__)
+def test_mm_styles_gradientcoloredareas_constructor_exists():
+    assert callable(mm_styles_GradientColoredAreas.__init__)
 
 
-def test_mm::styles::gradientcoloredareas_constructor_args():
-    sig = inspect.signature(mm::styles::GradientColoredAreas.__init__)
+def test_mm_styles_gradientcoloredareas_constructor_args():
+    sig = inspect.signature(mm_styles_GradientColoredAreas.__init__)
     params = list(sig.parameters.keys())
     assert "styleAdaption" in params, "Missing parameter 'styleAdaption'"
 
-def test_mm::styles::gradientcoloredareas_has_styleAdaption():
-    assert hasattr(mm::styles::GradientColoredAreas, "styleAdaption")
+def test_mm_styles_gradientcoloredareas_has_styleAdaption():
+    assert hasattr(mm_styles_GradientColoredAreas, "styleAdaption")
     descriptor = None
-    for klass in mm::styles::GradientColoredAreas.__mro__:
+    for klass in mm_styles_GradientColoredAreas.__mro__:
         if "styleAdaption" in klass.__dict__:
             descriptor = klass.__dict__["styleAdaption"]
             break
@@ -538,61 +538,61 @@ def test_mm::styles::gradientcoloredareas_has_styleAdaption():
 
 
 
-def test_styles::gradientcoloredlocation_is_not_abstract():
-    assert not inspect.isabstract(styles::GradientColoredLocation)
+def test_styles_gradientcoloredlocation_is_not_abstract():
+    assert not inspect.isabstract(styles_GradientColoredLocation)
 
 
-def test_styles::gradientcoloredlocation_constructor_exists():
-    assert callable(styles::GradientColoredLocation.__init__)
+def test_styles_gradientcoloredlocation_constructor_exists():
+    assert callable(styles_GradientColoredLocation.__init__)
 
 
-def test_styles::gradientcoloredlocation_constructor_args():
-    sig = inspect.signature(styles::GradientColoredLocation.__init__)
+def test_styles_gradientcoloredlocation_constructor_args():
+    sig = inspect.signature(styles_GradientColoredLocation.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_mm::styles::gradientcoloredarea_is_not_abstract():
-    assert not inspect.isabstract(mm::styles::GradientColoredArea)
+def test_mm_styles_gradientcoloredarea_is_not_abstract():
+    assert not inspect.isabstract(mm_styles_GradientColoredArea)
 
 
-def test_mm::styles::gradientcoloredarea_constructor_exists():
-    assert callable(mm::styles::GradientColoredArea.__init__)
+def test_mm_styles_gradientcoloredarea_constructor_exists():
+    assert callable(mm_styles_GradientColoredArea.__init__)
 
 
-def test_mm::styles::gradientcoloredarea_constructor_args():
-    sig = inspect.signature(mm::styles::GradientColoredArea.__init__)
+def test_mm_styles_gradientcoloredarea_constructor_args():
+    sig = inspect.signature(mm_styles_GradientColoredArea.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_mm::styles::gradientcoloredlocation_is_not_abstract():
-    assert not inspect.isabstract(mm::styles::GradientColoredLocation)
+def test_mm_styles_gradientcoloredlocation_is_not_abstract():
+    assert not inspect.isabstract(mm_styles_GradientColoredLocation)
 
 
-def test_mm::styles::gradientcoloredlocation_constructor_exists():
-    assert callable(mm::styles::GradientColoredLocation.__init__)
+def test_mm_styles_gradientcoloredlocation_constructor_exists():
+    assert callable(mm_styles_GradientColoredLocation.__init__)
 
 
-def test_mm::styles::gradientcoloredlocation_constructor_args():
-    sig = inspect.signature(mm::styles::GradientColoredLocation.__init__)
+def test_mm_styles_gradientcoloredlocation_constructor_args():
+    sig = inspect.signature(mm_styles_GradientColoredLocation.__init__)
     params = list(sig.parameters.keys())
     assert "locationValue" in params, "Missing parameter 'locationValue'"
     assert "locationType" in params, "Missing parameter 'locationType'"
 
-def test_mm::styles::gradientcoloredlocation_has_locationValue():
-    assert hasattr(mm::styles::GradientColoredLocation, "locationValue")
+def test_mm_styles_gradientcoloredlocation_has_locationValue():
+    assert hasattr(mm_styles_GradientColoredLocation, "locationValue")
     descriptor = None
-    for klass in mm::styles::GradientColoredLocation.__mro__:
+    for klass in mm_styles_GradientColoredLocation.__mro__:
         if "locationValue" in klass.__dict__:
             descriptor = klass.__dict__["locationValue"]
             break
     assert isinstance(descriptor, property)
 
-def test_mm::styles::gradientcoloredlocation_has_locationType():
-    assert hasattr(mm::styles::GradientColoredLocation, "locationType")
+def test_mm_styles_gradientcoloredlocation_has_locationType():
+    assert hasattr(mm_styles_GradientColoredLocation, "locationType")
     descriptor = None
-    for klass in mm::styles::GradientColoredLocation.__mro__:
+    for klass in mm_styles_GradientColoredLocation.__mro__:
         if "locationType" in klass.__dict__:
             descriptor = klass.__dict__["locationType"]
             break
@@ -600,72 +600,72 @@ def test_mm::styles::gradientcoloredlocation_has_locationType():
 
 
 
-def test_styles::renderingstyle_is_not_abstract():
-    assert not inspect.isabstract(styles::RenderingStyle)
+def test_styles_renderingstyle_is_not_abstract():
+    assert not inspect.isabstract(styles_RenderingStyle)
 
 
-def test_styles::renderingstyle_constructor_exists():
-    assert callable(styles::RenderingStyle.__init__)
+def test_styles_renderingstyle_constructor_exists():
+    assert callable(styles_RenderingStyle.__init__)
 
 
-def test_styles::renderingstyle_constructor_args():
-    sig = inspect.signature(styles::RenderingStyle.__init__)
+def test_styles_renderingstyle_constructor_args():
+    sig = inspect.signature(styles_RenderingStyle.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_styles::textstyleregion_is_not_abstract():
-    assert not inspect.isabstract(styles::TextStyleRegion)
+def test_styles_textstyleregion_is_not_abstract():
+    assert not inspect.isabstract(styles_TextStyleRegion)
 
 
-def test_styles::textstyleregion_constructor_exists():
-    assert callable(styles::TextStyleRegion.__init__)
+def test_styles_textstyleregion_constructor_exists():
+    assert callable(styles_TextStyleRegion.__init__)
 
 
-def test_styles::textstyleregion_constructor_args():
-    sig = inspect.signature(styles::TextStyleRegion.__init__)
+def test_styles_textstyleregion_constructor_args():
+    sig = inspect.signature(styles_TextStyleRegion.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_styles::adaptedgradientcoloredareas_is_not_abstract():
-    assert not inspect.isabstract(styles::AdaptedGradientColoredAreas)
+def test_styles_adaptedgradientcoloredareas_is_not_abstract():
+    assert not inspect.isabstract(styles_AdaptedGradientColoredAreas)
 
 
-def test_styles::adaptedgradientcoloredareas_constructor_exists():
-    assert callable(styles::AdaptedGradientColoredAreas.__init__)
+def test_styles_adaptedgradientcoloredareas_constructor_exists():
+    assert callable(styles_AdaptedGradientColoredAreas.__init__)
 
 
-def test_styles::adaptedgradientcoloredareas_constructor_args():
-    sig = inspect.signature(styles::AdaptedGradientColoredAreas.__init__)
+def test_styles_adaptedgradientcoloredareas_constructor_args():
+    sig = inspect.signature(styles_AdaptedGradientColoredAreas.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_mm::styles::renderingstyle_is_not_abstract():
-    assert not inspect.isabstract(mm::styles::RenderingStyle)
+def test_mm_styles_renderingstyle_is_not_abstract():
+    assert not inspect.isabstract(mm_styles_RenderingStyle)
 
 
-def test_mm::styles::renderingstyle_constructor_exists():
-    assert callable(mm::styles::RenderingStyle.__init__)
+def test_mm_styles_renderingstyle_constructor_exists():
+    assert callable(mm_styles_RenderingStyle.__init__)
 
 
-def test_mm::styles::renderingstyle_constructor_args():
-    sig = inspect.signature(mm::styles::RenderingStyle.__init__)
+def test_mm_styles_renderingstyle_constructor_args():
+    sig = inspect.signature(mm_styles_RenderingStyle.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_styles::abstractstyle_is_not_abstract():
-    assert not inspect.isabstract(styles::AbstractStyle)
+def test_styles_abstractstyle_is_not_abstract():
+    assert not inspect.isabstract(styles_AbstractStyle)
 
 
-def test_styles::abstractstyle_constructor_exists():
-    assert callable(styles::AbstractStyle.__init__)
+def test_styles_abstractstyle_constructor_exists():
+    assert callable(styles_AbstractStyle.__init__)
 
 
-def test_styles::abstractstyle_constructor_args():
-    sig = inspect.signature(styles::AbstractStyle.__init__)
+def test_styles_abstractstyle_constructor_args():
+    sig = inspect.signature(styles_AbstractStyle.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -684,16 +684,16 @@ def test_curvedconnection_constructor_args():
 
 
 
-def test_styles::precisionpoint_is_not_abstract():
-    assert not inspect.isabstract(styles::PrecisionPoint)
+def test_styles_precisionpoint_is_not_abstract():
+    assert not inspect.isabstract(styles_PrecisionPoint)
 
 
-def test_styles::precisionpoint_constructor_exists():
-    assert callable(styles::PrecisionPoint.__init__)
+def test_styles_precisionpoint_constructor_exists():
+    assert callable(styles_PrecisionPoint.__init__)
 
 
-def test_styles::precisionpoint_constructor_args():
-    sig = inspect.signature(styles::PrecisionPoint.__init__)
+def test_styles_precisionpoint_constructor_args():
+    sig = inspect.signature(styles_PrecisionPoint.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -712,16 +712,16 @@ def test_polyline_constructor_args():
 
 
 
-def test_mm::algorithms::polygon_is_not_abstract():
-    assert not inspect.isabstract(mm::algorithms::Polygon)
+def test_mm_algorithms_polygon_is_not_abstract():
+    assert not inspect.isabstract(mm_algorithms_Polygon)
 
 
-def test_mm::algorithms::polygon_constructor_exists():
-    assert callable(mm::algorithms::Polygon.__init__)
+def test_mm_algorithms_polygon_constructor_exists():
+    assert callable(mm_algorithms_Polygon.__init__)
 
 
-def test_mm::algorithms::polygon_constructor_args():
-    sig = inspect.signature(mm::algorithms::Polygon.__init__)
+def test_mm_algorithms_polygon_constructor_args():
+    sig = inspect.signature(mm_algorithms_Polygon.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -740,44 +740,44 @@ def test_abstracttext_constructor_args():
 
 
 
-def test_mm::algorithms::multitext_is_not_abstract():
-    assert not inspect.isabstract(mm::algorithms::MultiText)
+def test_mm_algorithms_multitext_is_not_abstract():
+    assert not inspect.isabstract(mm_algorithms_MultiText)
 
 
-def test_mm::algorithms::multitext_constructor_exists():
-    assert callable(mm::algorithms::MultiText.__init__)
+def test_mm_algorithms_multitext_constructor_exists():
+    assert callable(mm_algorithms_MultiText.__init__)
 
 
-def test_mm::algorithms::multitext_constructor_args():
-    sig = inspect.signature(mm::algorithms::MultiText.__init__)
+def test_mm_algorithms_multitext_constructor_args():
+    sig = inspect.signature(mm_algorithms_MultiText.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_mm::algorithms::text_is_not_abstract():
-    assert not inspect.isabstract(mm::algorithms::Text)
+def test_mm_algorithms_text_is_not_abstract():
+    assert not inspect.isabstract(mm_algorithms_Text)
 
 
-def test_mm::algorithms::text_constructor_exists():
-    assert callable(mm::algorithms::Text.__init__)
+def test_mm_algorithms_text_constructor_exists():
+    assert callable(mm_algorithms_Text.__init__)
 
 
-def test_mm::algorithms::text_constructor_args():
-    sig = inspect.signature(mm::algorithms::Text.__init__)
+def test_mm_algorithms_text_constructor_args():
+    sig = inspect.signature(mm_algorithms_Text.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_styles::point_is_not_abstract():
-    assert not inspect.isabstract(styles::Point)
+def test_styles_point_is_not_abstract():
+    assert not inspect.isabstract(styles_Point)
 
 
-def test_styles::point_constructor_exists():
-    assert callable(styles::Point.__init__)
+def test_styles_point_constructor_exists():
+    assert callable(styles_Point.__init__)
 
 
-def test_styles::point_constructor_args():
-    sig = inspect.signature(styles::Point.__init__)
+def test_styles_point_constructor_args():
+    sig = inspect.signature(styles_Point.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -796,16 +796,16 @@ def test_advancedanchor_constructor_args():
 
 
 
-def test_mm::pictograms::fixpointanchor_is_not_abstract():
-    assert not inspect.isabstract(mm::pictograms::FixPointAnchor)
+def test_mm_pictograms_fixpointanchor_is_not_abstract():
+    assert not inspect.isabstract(mm_pictograms_FixPointAnchor)
 
 
-def test_mm::pictograms::fixpointanchor_constructor_exists():
-    assert callable(mm::pictograms::FixPointAnchor.__init__)
+def test_mm_pictograms_fixpointanchor_constructor_exists():
+    assert callable(mm_pictograms_FixPointAnchor.__init__)
 
 
-def test_mm::pictograms::fixpointanchor_constructor_args():
-    sig = inspect.signature(mm::pictograms::FixPointAnchor.__init__)
+def test_mm_pictograms_fixpointanchor_constructor_args():
+    sig = inspect.signature(mm_pictograms_FixPointAnchor.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -824,30 +824,30 @@ def test_pictogramelement_constructor_args():
 
 
 
-def test_mm::pictograms::anchorcontainer_is_not_abstract():
-    assert not inspect.isabstract(mm::pictograms::AnchorContainer)
+def test_mm_pictograms_anchorcontainer_is_not_abstract():
+    assert not inspect.isabstract(mm_pictograms_AnchorContainer)
 
 
-def test_mm::pictograms::anchorcontainer_constructor_exists():
-    assert callable(mm::pictograms::AnchorContainer.__init__)
+def test_mm_pictograms_anchorcontainer_constructor_exists():
+    assert callable(mm_pictograms_AnchorContainer.__init__)
 
 
-def test_mm::pictograms::anchorcontainer_constructor_args():
-    sig = inspect.signature(mm::pictograms::AnchorContainer.__init__)
+def test_mm_pictograms_anchorcontainer_constructor_args():
+    sig = inspect.signature(mm_pictograms_AnchorContainer.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_mm::pictograms::anchor_is_not_abstract():
-    assert not inspect.isabstract(mm::pictograms::Anchor)
+def test_mm_pictograms_anchor_is_not_abstract():
+    assert not inspect.isabstract(mm_pictograms_Anchor)
 
 
-def test_mm::pictograms::anchor_constructor_exists():
-    assert callable(mm::pictograms::Anchor.__init__)
+def test_mm_pictograms_anchor_constructor_exists():
+    assert callable(mm_pictograms_Anchor.__init__)
 
 
-def test_mm::pictograms::anchor_constructor_args():
-    sig = inspect.signature(mm::pictograms::Anchor.__init__)
+def test_mm_pictograms_anchor_constructor_args():
+    sig = inspect.signature(mm_pictograms_Anchor.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -866,47 +866,47 @@ def test_connectiondecorator_constructor_args():
 
 
 
-def test_pictograms::mm::eobject_is_not_abstract():
-    assert not inspect.isabstract(pictograms::mm::EObject)
+def test_pictograms_mm_eobject_is_not_abstract():
+    assert not inspect.isabstract(pictograms_mm_EObject)
 
 
-def test_pictograms::mm::eobject_constructor_exists():
-    assert callable(pictograms::mm::EObject.__init__)
+def test_pictograms_mm_eobject_constructor_exists():
+    assert callable(pictograms_mm_EObject.__init__)
 
 
-def test_pictograms::mm::eobject_constructor_args():
-    sig = inspect.signature(pictograms::mm::EObject.__init__)
+def test_pictograms_mm_eobject_constructor_args():
+    sig = inspect.signature(pictograms_mm_EObject.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_mm::pictograms::boxrelativeanchor_is_not_abstract():
-    assert not inspect.isabstract(mm::pictograms::BoxRelativeAnchor)
+def test_mm_pictograms_boxrelativeanchor_is_not_abstract():
+    assert not inspect.isabstract(mm_pictograms_BoxRelativeAnchor)
 
 
-def test_mm::pictograms::boxrelativeanchor_constructor_exists():
-    assert callable(mm::pictograms::BoxRelativeAnchor.__init__)
+def test_mm_pictograms_boxrelativeanchor_constructor_exists():
+    assert callable(mm_pictograms_BoxRelativeAnchor.__init__)
 
 
-def test_mm::pictograms::boxrelativeanchor_constructor_args():
-    sig = inspect.signature(mm::pictograms::BoxRelativeAnchor.__init__)
+def test_mm_pictograms_boxrelativeanchor_constructor_args():
+    sig = inspect.signature(mm_pictograms_BoxRelativeAnchor.__init__)
     params = list(sig.parameters.keys())
     assert "relativeHeight" in params, "Missing parameter 'relativeHeight'"
     assert "relativeWidth" in params, "Missing parameter 'relativeWidth'"
 
-def test_mm::pictograms::boxrelativeanchor_has_relativeHeight():
-    assert hasattr(mm::pictograms::BoxRelativeAnchor, "relativeHeight")
+def test_mm_pictograms_boxrelativeanchor_has_relativeHeight():
+    assert hasattr(mm_pictograms_BoxRelativeAnchor, "relativeHeight")
     descriptor = None
-    for klass in mm::pictograms::BoxRelativeAnchor.__mro__:
+    for klass in mm_pictograms_BoxRelativeAnchor.__mro__:
         if "relativeHeight" in klass.__dict__:
             descriptor = klass.__dict__["relativeHeight"]
             break
     assert isinstance(descriptor, property)
 
-def test_mm::pictograms::boxrelativeanchor_has_relativeWidth():
-    assert hasattr(mm::pictograms::BoxRelativeAnchor, "relativeWidth")
+def test_mm_pictograms_boxrelativeanchor_has_relativeWidth():
+    assert hasattr(mm_pictograms_BoxRelativeAnchor, "relativeWidth")
     descriptor = None
-    for klass in mm::pictograms::BoxRelativeAnchor.__mro__:
+    for klass in mm_pictograms_BoxRelativeAnchor.__mro__:
         if "relativeWidth" in klass.__dict__:
             descriptor = klass.__dict__["relativeWidth"]
             break
@@ -914,30 +914,30 @@ def test_mm::pictograms::boxrelativeanchor_has_relativeWidth():
 
 
 
-def test_styles::font_is_not_abstract():
-    assert not inspect.isabstract(styles::Font)
+def test_styles_font_is_not_abstract():
+    assert not inspect.isabstract(styles_Font)
 
 
-def test_styles::font_constructor_exists():
-    assert callable(styles::Font.__init__)
+def test_styles_font_constructor_exists():
+    assert callable(styles_Font.__init__)
 
 
-def test_styles::font_constructor_args():
-    sig = inspect.signature(styles::Font.__init__)
+def test_styles_font_constructor_args():
+    sig = inspect.signature(styles_Font.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_styles::color_is_not_abstract():
-    assert not inspect.isabstract(styles::Color)
+def test_styles_color_is_not_abstract():
+    assert not inspect.isabstract(styles_Color)
 
 
-def test_styles::color_constructor_exists():
-    assert callable(styles::Color.__init__)
+def test_styles_color_constructor_exists():
+    assert callable(styles_Color.__init__)
 
 
-def test_styles::color_constructor_args():
-    sig = inspect.signature(styles::Color.__init__)
+def test_styles_color_constructor_args():
+    sig = inspect.signature(styles_Color.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -956,58 +956,58 @@ def test_connection_constructor_args():
 
 
 
-def test_mm::pictograms::curvedconnection_is_not_abstract():
-    assert not inspect.isabstract(mm::pictograms::CurvedConnection)
+def test_mm_pictograms_compositeconnection_is_not_abstract():
+    assert not inspect.isabstract(mm_pictograms_CompositeConnection)
 
 
-def test_mm::pictograms::curvedconnection_constructor_exists():
-    assert callable(mm::pictograms::CurvedConnection.__init__)
+def test_mm_pictograms_compositeconnection_constructor_exists():
+    assert callable(mm_pictograms_CompositeConnection.__init__)
 
 
-def test_mm::pictograms::curvedconnection_constructor_args():
-    sig = inspect.signature(mm::pictograms::CurvedConnection.__init__)
+def test_mm_pictograms_compositeconnection_constructor_args():
+    sig = inspect.signature(mm_pictograms_CompositeConnection.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_mm::pictograms::compositeconnection_is_not_abstract():
-    assert not inspect.isabstract(mm::pictograms::CompositeConnection)
+def test_mm_pictograms_manhattanconnection_is_not_abstract():
+    assert not inspect.isabstract(mm_pictograms_ManhattanConnection)
 
 
-def test_mm::pictograms::compositeconnection_constructor_exists():
-    assert callable(mm::pictograms::CompositeConnection.__init__)
+def test_mm_pictograms_manhattanconnection_constructor_exists():
+    assert callable(mm_pictograms_ManhattanConnection.__init__)
 
 
-def test_mm::pictograms::compositeconnection_constructor_args():
-    sig = inspect.signature(mm::pictograms::CompositeConnection.__init__)
+def test_mm_pictograms_manhattanconnection_constructor_args():
+    sig = inspect.signature(mm_pictograms_ManhattanConnection.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_mm::pictograms::manhattanconnection_is_not_abstract():
-    assert not inspect.isabstract(mm::pictograms::ManhattanConnection)
+def test_mm_pictograms_curvedconnection_is_not_abstract():
+    assert not inspect.isabstract(mm_pictograms_CurvedConnection)
 
 
-def test_mm::pictograms::manhattanconnection_constructor_exists():
-    assert callable(mm::pictograms::ManhattanConnection.__init__)
+def test_mm_pictograms_curvedconnection_constructor_exists():
+    assert callable(mm_pictograms_CurvedConnection.__init__)
 
 
-def test_mm::pictograms::manhattanconnection_constructor_args():
-    sig = inspect.signature(mm::pictograms::ManhattanConnection.__init__)
+def test_mm_pictograms_curvedconnection_constructor_args():
+    sig = inspect.signature(mm_pictograms_CurvedConnection.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_mm::pictograms::freeformconnection_is_not_abstract():
-    assert not inspect.isabstract(mm::pictograms::FreeFormConnection)
+def test_mm_pictograms_freeformconnection_is_not_abstract():
+    assert not inspect.isabstract(mm_pictograms_FreeFormConnection)
 
 
-def test_mm::pictograms::freeformconnection_constructor_exists():
-    assert callable(mm::pictograms::FreeFormConnection.__init__)
+def test_mm_pictograms_freeformconnection_constructor_exists():
+    assert callable(mm_pictograms_FreeFormConnection.__init__)
 
 
-def test_mm::pictograms::freeformconnection_constructor_args():
-    sig = inspect.signature(mm::pictograms::FreeFormConnection.__init__)
+def test_mm_pictograms_freeformconnection_constructor_args():
+    sig = inspect.signature(mm_pictograms_FreeFormConnection.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1026,203 +1026,203 @@ def test_stylecontainer_constructor_args():
 
 
 
-def test_mm::styles::style_is_not_abstract():
-    assert not inspect.isabstract(mm::styles::Style)
+def test_mm_styles_style_is_not_abstract():
+    assert not inspect.isabstract(mm_styles_Style)
 
 
-def test_mm::styles::style_constructor_exists():
-    assert callable(mm::styles::Style.__init__)
+def test_mm_styles_style_constructor_exists():
+    assert callable(mm_styles_Style.__init__)
 
 
-def test_mm::styles::style_constructor_args():
-    sig = inspect.signature(mm::styles::Style.__init__)
+def test_mm_styles_style_constructor_args():
+    sig = inspect.signature(mm_styles_Style.__init__)
     params = list(sig.parameters.keys())
-    assert "stretchH" in params, "Missing parameter 'stretchH'"
-    assert "id" in params, "Missing parameter 'id'"
-    assert "horizontalAlignment" in params, "Missing parameter 'horizontalAlignment'"
-    assert "proportional" in params, "Missing parameter 'proportional'"
-    assert "description" in params, "Missing parameter 'description'"
-    assert "verticalAlignment" in params, "Missing parameter 'verticalAlignment'"
+    assert "angle" in params, "Missing parameter 'angle'"
     assert "stretchV" in params, "Missing parameter 'stretchV'"
     assert "rotation" in params, "Missing parameter 'rotation'"
-    assert "angle" in params, "Missing parameter 'angle'"
+    assert "proportional" in params, "Missing parameter 'proportional'"
+    assert "stretchH" in params, "Missing parameter 'stretchH'"
+    assert "id" in params, "Missing parameter 'id'"
+    assert "description" in params, "Missing parameter 'description'"
+    assert "verticalAlignment" in params, "Missing parameter 'verticalAlignment'"
+    assert "horizontalAlignment" in params, "Missing parameter 'horizontalAlignment'"
 
-def test_mm::styles::style_has_stretchH():
-    assert hasattr(mm::styles::Style, "stretchH")
+def test_mm_styles_style_has_angle():
+    assert hasattr(mm_styles_Style, "angle")
     descriptor = None
-    for klass in mm::styles::Style.__mro__:
-        if "stretchH" in klass.__dict__:
-            descriptor = klass.__dict__["stretchH"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_mm::styles::style_has_id():
-    assert hasattr(mm::styles::Style, "id")
-    descriptor = None
-    for klass in mm::styles::Style.__mro__:
-        if "id" in klass.__dict__:
-            descriptor = klass.__dict__["id"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_mm::styles::style_has_horizontalAlignment():
-    assert hasattr(mm::styles::Style, "horizontalAlignment")
-    descriptor = None
-    for klass in mm::styles::Style.__mro__:
-        if "horizontalAlignment" in klass.__dict__:
-            descriptor = klass.__dict__["horizontalAlignment"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_mm::styles::style_has_proportional():
-    assert hasattr(mm::styles::Style, "proportional")
-    descriptor = None
-    for klass in mm::styles::Style.__mro__:
-        if "proportional" in klass.__dict__:
-            descriptor = klass.__dict__["proportional"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_mm::styles::style_has_description():
-    assert hasattr(mm::styles::Style, "description")
-    descriptor = None
-    for klass in mm::styles::Style.__mro__:
-        if "description" in klass.__dict__:
-            descriptor = klass.__dict__["description"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_mm::styles::style_has_verticalAlignment():
-    assert hasattr(mm::styles::Style, "verticalAlignment")
-    descriptor = None
-    for klass in mm::styles::Style.__mro__:
-        if "verticalAlignment" in klass.__dict__:
-            descriptor = klass.__dict__["verticalAlignment"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_mm::styles::style_has_stretchV():
-    assert hasattr(mm::styles::Style, "stretchV")
-    descriptor = None
-    for klass in mm::styles::Style.__mro__:
-        if "stretchV" in klass.__dict__:
-            descriptor = klass.__dict__["stretchV"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_mm::styles::style_has_rotation():
-    assert hasattr(mm::styles::Style, "rotation")
-    descriptor = None
-    for klass in mm::styles::Style.__mro__:
-        if "rotation" in klass.__dict__:
-            descriptor = klass.__dict__["rotation"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_mm::styles::style_has_angle():
-    assert hasattr(mm::styles::Style, "angle")
-    descriptor = None
-    for klass in mm::styles::Style.__mro__:
+    for klass in mm_styles_Style.__mro__:
         if "angle" in klass.__dict__:
             descriptor = klass.__dict__["angle"]
             break
     assert isinstance(descriptor, property)
 
-
-
-def test_pictograms::containershape_is_not_abstract():
-    assert not inspect.isabstract(pictograms::ContainerShape)
-
-
-def test_pictograms::containershape_constructor_exists():
-    assert callable(pictograms::ContainerShape.__init__)
-
-
-def test_pictograms::containershape_constructor_args():
-    sig = inspect.signature(pictograms::ContainerShape.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_mm::pictograms::diagram_is_not_abstract():
-    assert not inspect.isabstract(mm::pictograms::Diagram)
-
-
-def test_mm::pictograms::diagram_constructor_exists():
-    assert callable(mm::pictograms::Diagram.__init__)
-
-
-def test_mm::pictograms::diagram_constructor_args():
-    sig = inspect.signature(mm::pictograms::Diagram.__init__)
-    params = list(sig.parameters.keys())
-    assert "snapToGrid" in params, "Missing parameter 'snapToGrid'"
-    assert "diagramTypeId" in params, "Missing parameter 'diagramTypeId'"
-    assert "name" in params, "Missing parameter 'name'"
-    assert "gridUnit" in params, "Missing parameter 'gridUnit'"
-    assert "version" in params, "Missing parameter 'version'"
-    assert "verticalGridUnit" in params, "Missing parameter 'verticalGridUnit'"
-    assert "showGuides" in params, "Missing parameter 'showGuides'"
-
-def test_mm::pictograms::diagram_has_snapToGrid():
-    assert hasattr(mm::pictograms::Diagram, "snapToGrid")
+def test_mm_styles_style_has_stretchV():
+    assert hasattr(mm_styles_Style, "stretchV")
     descriptor = None
-    for klass in mm::pictograms::Diagram.__mro__:
-        if "snapToGrid" in klass.__dict__:
-            descriptor = klass.__dict__["snapToGrid"]
+    for klass in mm_styles_Style.__mro__:
+        if "stretchV" in klass.__dict__:
+            descriptor = klass.__dict__["stretchV"]
             break
     assert isinstance(descriptor, property)
 
-def test_mm::pictograms::diagram_has_diagramTypeId():
-    assert hasattr(mm::pictograms::Diagram, "diagramTypeId")
+def test_mm_styles_style_has_rotation():
+    assert hasattr(mm_styles_Style, "rotation")
     descriptor = None
-    for klass in mm::pictograms::Diagram.__mro__:
+    for klass in mm_styles_Style.__mro__:
+        if "rotation" in klass.__dict__:
+            descriptor = klass.__dict__["rotation"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_mm_styles_style_has_proportional():
+    assert hasattr(mm_styles_Style, "proportional")
+    descriptor = None
+    for klass in mm_styles_Style.__mro__:
+        if "proportional" in klass.__dict__:
+            descriptor = klass.__dict__["proportional"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_mm_styles_style_has_stretchH():
+    assert hasattr(mm_styles_Style, "stretchH")
+    descriptor = None
+    for klass in mm_styles_Style.__mro__:
+        if "stretchH" in klass.__dict__:
+            descriptor = klass.__dict__["stretchH"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_mm_styles_style_has_id():
+    assert hasattr(mm_styles_Style, "id")
+    descriptor = None
+    for klass in mm_styles_Style.__mro__:
+        if "id" in klass.__dict__:
+            descriptor = klass.__dict__["id"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_mm_styles_style_has_description():
+    assert hasattr(mm_styles_Style, "description")
+    descriptor = None
+    for klass in mm_styles_Style.__mro__:
+        if "description" in klass.__dict__:
+            descriptor = klass.__dict__["description"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_mm_styles_style_has_verticalAlignment():
+    assert hasattr(mm_styles_Style, "verticalAlignment")
+    descriptor = None
+    for klass in mm_styles_Style.__mro__:
+        if "verticalAlignment" in klass.__dict__:
+            descriptor = klass.__dict__["verticalAlignment"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_mm_styles_style_has_horizontalAlignment():
+    assert hasattr(mm_styles_Style, "horizontalAlignment")
+    descriptor = None
+    for klass in mm_styles_Style.__mro__:
+        if "horizontalAlignment" in klass.__dict__:
+            descriptor = klass.__dict__["horizontalAlignment"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_pictograms_containershape_is_not_abstract():
+    assert not inspect.isabstract(pictograms_ContainerShape)
+
+
+def test_pictograms_containershape_constructor_exists():
+    assert callable(pictograms_ContainerShape.__init__)
+
+
+def test_pictograms_containershape_constructor_args():
+    sig = inspect.signature(pictograms_ContainerShape.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_mm_pictograms_diagram_is_not_abstract():
+    assert not inspect.isabstract(mm_pictograms_Diagram)
+
+
+def test_mm_pictograms_diagram_constructor_exists():
+    assert callable(mm_pictograms_Diagram.__init__)
+
+
+def test_mm_pictograms_diagram_constructor_args():
+    sig = inspect.signature(mm_pictograms_Diagram.__init__)
+    params = list(sig.parameters.keys())
+    assert "diagramTypeId" in params, "Missing parameter 'diagramTypeId'"
+    assert "showGuides" in params, "Missing parameter 'showGuides'"
+    assert "name" in params, "Missing parameter 'name'"
+    assert "verticalGridUnit" in params, "Missing parameter 'verticalGridUnit'"
+    assert "version" in params, "Missing parameter 'version'"
+    assert "snapToGrid" in params, "Missing parameter 'snapToGrid'"
+    assert "gridUnit" in params, "Missing parameter 'gridUnit'"
+
+def test_mm_pictograms_diagram_has_diagramTypeId():
+    assert hasattr(mm_pictograms_Diagram, "diagramTypeId")
+    descriptor = None
+    for klass in mm_pictograms_Diagram.__mro__:
         if "diagramTypeId" in klass.__dict__:
             descriptor = klass.__dict__["diagramTypeId"]
             break
     assert isinstance(descriptor, property)
 
-def test_mm::pictograms::diagram_has_name():
-    assert hasattr(mm::pictograms::Diagram, "name")
+def test_mm_pictograms_diagram_has_showGuides():
+    assert hasattr(mm_pictograms_Diagram, "showGuides")
     descriptor = None
-    for klass in mm::pictograms::Diagram.__mro__:
+    for klass in mm_pictograms_Diagram.__mro__:
+        if "showGuides" in klass.__dict__:
+            descriptor = klass.__dict__["showGuides"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_mm_pictograms_diagram_has_name():
+    assert hasattr(mm_pictograms_Diagram, "name")
+    descriptor = None
+    for klass in mm_pictograms_Diagram.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
-def test_mm::pictograms::diagram_has_gridUnit():
-    assert hasattr(mm::pictograms::Diagram, "gridUnit")
+def test_mm_pictograms_diagram_has_verticalGridUnit():
+    assert hasattr(mm_pictograms_Diagram, "verticalGridUnit")
     descriptor = None
-    for klass in mm::pictograms::Diagram.__mro__:
-        if "gridUnit" in klass.__dict__:
-            descriptor = klass.__dict__["gridUnit"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_mm::pictograms::diagram_has_version():
-    assert hasattr(mm::pictograms::Diagram, "version")
-    descriptor = None
-    for klass in mm::pictograms::Diagram.__mro__:
-        if "version" in klass.__dict__:
-            descriptor = klass.__dict__["version"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_mm::pictograms::diagram_has_verticalGridUnit():
-    assert hasattr(mm::pictograms::Diagram, "verticalGridUnit")
-    descriptor = None
-    for klass in mm::pictograms::Diagram.__mro__:
+    for klass in mm_pictograms_Diagram.__mro__:
         if "verticalGridUnit" in klass.__dict__:
             descriptor = klass.__dict__["verticalGridUnit"]
             break
     assert isinstance(descriptor, property)
 
-def test_mm::pictograms::diagram_has_showGuides():
-    assert hasattr(mm::pictograms::Diagram, "showGuides")
+def test_mm_pictograms_diagram_has_version():
+    assert hasattr(mm_pictograms_Diagram, "version")
     descriptor = None
-    for klass in mm::pictograms::Diagram.__mro__:
-        if "showGuides" in klass.__dict__:
-            descriptor = klass.__dict__["showGuides"]
+    for klass in mm_pictograms_Diagram.__mro__:
+        if "version" in klass.__dict__:
+            descriptor = klass.__dict__["version"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_mm_pictograms_diagram_has_snapToGrid():
+    assert hasattr(mm_pictograms_Diagram, "snapToGrid")
+    descriptor = None
+    for klass in mm_pictograms_Diagram.__mro__:
+        if "snapToGrid" in klass.__dict__:
+            descriptor = klass.__dict__["snapToGrid"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_mm_pictograms_diagram_has_gridUnit():
+    assert hasattr(mm_pictograms_Diagram, "gridUnit")
+    descriptor = None
+    for klass in mm_pictograms_Diagram.__mro__:
+        if "gridUnit" in klass.__dict__:
+            descriptor = klass.__dict__["gridUnit"]
             break
     assert isinstance(descriptor, property)
 
@@ -1256,41 +1256,41 @@ def test_anchor_constructor_args():
 
 
 
-def test_mm::pictograms::chopboxanchor_is_not_abstract():
-    assert not inspect.isabstract(mm::pictograms::ChopboxAnchor)
+def test_mm_pictograms_advancedanchor_is_not_abstract():
+    assert not inspect.isabstract(mm_pictograms_AdvancedAnchor)
 
 
-def test_mm::pictograms::chopboxanchor_constructor_exists():
-    assert callable(mm::pictograms::ChopboxAnchor.__init__)
+def test_mm_pictograms_advancedanchor_constructor_exists():
+    assert callable(mm_pictograms_AdvancedAnchor.__init__)
 
 
-def test_mm::pictograms::chopboxanchor_constructor_args():
-    sig = inspect.signature(mm::pictograms::ChopboxAnchor.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_mm::pictograms::advancedanchor_is_not_abstract():
-    assert not inspect.isabstract(mm::pictograms::AdvancedAnchor)
-
-
-def test_mm::pictograms::advancedanchor_constructor_exists():
-    assert callable(mm::pictograms::AdvancedAnchor.__init__)
-
-
-def test_mm::pictograms::advancedanchor_constructor_args():
-    sig = inspect.signature(mm::pictograms::AdvancedAnchor.__init__)
+def test_mm_pictograms_advancedanchor_constructor_args():
+    sig = inspect.signature(mm_pictograms_AdvancedAnchor.__init__)
     params = list(sig.parameters.keys())
     assert "useAnchorLocationAsConnectionEndpoint" in params, "Missing parameter 'useAnchorLocationAsConnectionEndpoint'"
 
-def test_mm::pictograms::advancedanchor_has_useAnchorLocationAsConnectionEndpoint():
-    assert hasattr(mm::pictograms::AdvancedAnchor, "useAnchorLocationAsConnectionEndpoint")
+def test_mm_pictograms_advancedanchor_has_useAnchorLocationAsConnectionEndpoint():
+    assert hasattr(mm_pictograms_AdvancedAnchor, "useAnchorLocationAsConnectionEndpoint")
     descriptor = None
-    for klass in mm::pictograms::AdvancedAnchor.__mro__:
+    for klass in mm_pictograms_AdvancedAnchor.__mro__:
         if "useAnchorLocationAsConnectionEndpoint" in klass.__dict__:
             descriptor = klass.__dict__["useAnchorLocationAsConnectionEndpoint"]
             break
     assert isinstance(descriptor, property)
+
+
+
+def test_mm_pictograms_chopboxanchor_is_not_abstract():
+    assert not inspect.isabstract(mm_pictograms_ChopboxAnchor)
+
+
+def test_mm_pictograms_chopboxanchor_constructor_exists():
+    assert callable(mm_pictograms_ChopboxAnchor.__init__)
+
+
+def test_mm_pictograms_chopboxanchor_constructor_args():
+    sig = inspect.signature(mm_pictograms_ChopboxAnchor.__init__)
+    params = list(sig.parameters.keys())
 
 
 
@@ -1308,47 +1308,87 @@ def test_graphicsalgorithm_constructor_args():
 
 
 
-def test_mm::algorithms::rectangle_is_not_abstract():
-    assert not inspect.isabstract(mm::algorithms::Rectangle)
+def test_mm_algorithms_image_is_not_abstract():
+    assert not inspect.isabstract(mm_algorithms_Image)
 
 
-def test_mm::algorithms::rectangle_constructor_exists():
-    assert callable(mm::algorithms::Rectangle.__init__)
+def test_mm_algorithms_image_constructor_exists():
+    assert callable(mm_algorithms_Image.__init__)
 
 
-def test_mm::algorithms::rectangle_constructor_args():
-    sig = inspect.signature(mm::algorithms::Rectangle.__init__)
+def test_mm_algorithms_image_constructor_args():
+    sig = inspect.signature(mm_algorithms_Image.__init__)
     params = list(sig.parameters.keys())
+    assert "stretchH" in params, "Missing parameter 'stretchH'"
+    assert "stretchV" in params, "Missing parameter 'stretchV'"
+    assert "id" in params, "Missing parameter 'id'"
+    assert "proportional" in params, "Missing parameter 'proportional'"
+
+def test_mm_algorithms_image_has_stretchH():
+    assert hasattr(mm_algorithms_Image, "stretchH")
+    descriptor = None
+    for klass in mm_algorithms_Image.__mro__:
+        if "stretchH" in klass.__dict__:
+            descriptor = klass.__dict__["stretchH"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_mm_algorithms_image_has_stretchV():
+    assert hasattr(mm_algorithms_Image, "stretchV")
+    descriptor = None
+    for klass in mm_algorithms_Image.__mro__:
+        if "stretchV" in klass.__dict__:
+            descriptor = klass.__dict__["stretchV"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_mm_algorithms_image_has_id():
+    assert hasattr(mm_algorithms_Image, "id")
+    descriptor = None
+    for klass in mm_algorithms_Image.__mro__:
+        if "id" in klass.__dict__:
+            descriptor = klass.__dict__["id"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_mm_algorithms_image_has_proportional():
+    assert hasattr(mm_algorithms_Image, "proportional")
+    descriptor = None
+    for klass in mm_algorithms_Image.__mro__:
+        if "proportional" in klass.__dict__:
+            descriptor = klass.__dict__["proportional"]
+            break
+    assert isinstance(descriptor, property)
 
 
 
-def test_mm::algorithms::roundedrectangle_is_not_abstract():
-    assert not inspect.isabstract(mm::algorithms::RoundedRectangle)
+def test_mm_algorithms_roundedrectangle_is_not_abstract():
+    assert not inspect.isabstract(mm_algorithms_RoundedRectangle)
 
 
-def test_mm::algorithms::roundedrectangle_constructor_exists():
-    assert callable(mm::algorithms::RoundedRectangle.__init__)
+def test_mm_algorithms_roundedrectangle_constructor_exists():
+    assert callable(mm_algorithms_RoundedRectangle.__init__)
 
 
-def test_mm::algorithms::roundedrectangle_constructor_args():
-    sig = inspect.signature(mm::algorithms::RoundedRectangle.__init__)
+def test_mm_algorithms_roundedrectangle_constructor_args():
+    sig = inspect.signature(mm_algorithms_RoundedRectangle.__init__)
     params = list(sig.parameters.keys())
     assert "cornerHeight" in params, "Missing parameter 'cornerHeight'"
     assert "cornerWidth" in params, "Missing parameter 'cornerWidth'"
 
-def test_mm::algorithms::roundedrectangle_has_cornerHeight():
-    assert hasattr(mm::algorithms::RoundedRectangle, "cornerHeight")
+def test_mm_algorithms_roundedrectangle_has_cornerHeight():
+    assert hasattr(mm_algorithms_RoundedRectangle, "cornerHeight")
     descriptor = None
-    for klass in mm::algorithms::RoundedRectangle.__mro__:
+    for klass in mm_algorithms_RoundedRectangle.__mro__:
         if "cornerHeight" in klass.__dict__:
             descriptor = klass.__dict__["cornerHeight"]
             break
     assert isinstance(descriptor, property)
 
-def test_mm::algorithms::roundedrectangle_has_cornerWidth():
-    assert hasattr(mm::algorithms::RoundedRectangle, "cornerWidth")
+def test_mm_algorithms_roundedrectangle_has_cornerWidth():
+    assert hasattr(mm_algorithms_RoundedRectangle, "cornerWidth")
     descriptor = None
-    for klass in mm::algorithms::RoundedRectangle.__mro__:
+    for klass in mm_algorithms_RoundedRectangle.__mro__:
         if "cornerWidth" in klass.__dict__:
             descriptor = klass.__dict__["cornerWidth"]
             break
@@ -1356,173 +1396,133 @@ def test_mm::algorithms::roundedrectangle_has_cornerWidth():
 
 
 
-def test_mm::algorithms::polyline_is_not_abstract():
-    assert not inspect.isabstract(mm::algorithms::Polyline)
+def test_mm_algorithms_abstracttext_is_not_abstract():
+    assert not inspect.isabstract(mm_algorithms_AbstractText)
 
 
-def test_mm::algorithms::polyline_constructor_exists():
-    assert callable(mm::algorithms::Polyline.__init__)
+def test_mm_algorithms_abstracttext_constructor_exists():
+    assert callable(mm_algorithms_AbstractText.__init__)
 
 
-def test_mm::algorithms::polyline_constructor_args():
-    sig = inspect.signature(mm::algorithms::Polyline.__init__)
+def test_mm_algorithms_abstracttext_constructor_args():
+    sig = inspect.signature(mm_algorithms_AbstractText.__init__)
     params = list(sig.parameters.keys())
-
-
-
-def test_mm::algorithms::ellipse_is_not_abstract():
-    assert not inspect.isabstract(mm::algorithms::Ellipse)
-
-
-def test_mm::algorithms::ellipse_constructor_exists():
-    assert callable(mm::algorithms::Ellipse.__init__)
-
-
-def test_mm::algorithms::ellipse_constructor_args():
-    sig = inspect.signature(mm::algorithms::Ellipse.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_mm::algorithms::platformgraphicsalgorithm_is_not_abstract():
-    assert not inspect.isabstract(mm::algorithms::PlatformGraphicsAlgorithm)
-
-
-def test_mm::algorithms::platformgraphicsalgorithm_constructor_exists():
-    assert callable(mm::algorithms::PlatformGraphicsAlgorithm.__init__)
-
-
-def test_mm::algorithms::platformgraphicsalgorithm_constructor_args():
-    sig = inspect.signature(mm::algorithms::PlatformGraphicsAlgorithm.__init__)
-    params = list(sig.parameters.keys())
-    assert "id" in params, "Missing parameter 'id'"
-
-def test_mm::algorithms::platformgraphicsalgorithm_has_id():
-    assert hasattr(mm::algorithms::PlatformGraphicsAlgorithm, "id")
-    descriptor = None
-    for klass in mm::algorithms::PlatformGraphicsAlgorithm.__mro__:
-        if "id" in klass.__dict__:
-            descriptor = klass.__dict__["id"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_mm::algorithms::abstracttext_is_not_abstract():
-    assert not inspect.isabstract(mm::algorithms::AbstractText)
-
-
-def test_mm::algorithms::abstracttext_constructor_exists():
-    assert callable(mm::algorithms::AbstractText.__init__)
-
-
-def test_mm::algorithms::abstracttext_constructor_args():
-    sig = inspect.signature(mm::algorithms::AbstractText.__init__)
-    params = list(sig.parameters.keys())
-    assert "verticalAlignment" in params, "Missing parameter 'verticalAlignment'"
     assert "horizontalAlignment" in params, "Missing parameter 'horizontalAlignment'"
-    assert "angle" in params, "Missing parameter 'angle'"
-    assert "rotation" in params, "Missing parameter 'rotation'"
     assert "value" in params, "Missing parameter 'value'"
+    assert "verticalAlignment" in params, "Missing parameter 'verticalAlignment'"
+    assert "rotation" in params, "Missing parameter 'rotation'"
+    assert "angle" in params, "Missing parameter 'angle'"
 
-def test_mm::algorithms::abstracttext_has_verticalAlignment():
-    assert hasattr(mm::algorithms::AbstractText, "verticalAlignment")
+def test_mm_algorithms_abstracttext_has_horizontalAlignment():
+    assert hasattr(mm_algorithms_AbstractText, "horizontalAlignment")
     descriptor = None
-    for klass in mm::algorithms::AbstractText.__mro__:
-        if "verticalAlignment" in klass.__dict__:
-            descriptor = klass.__dict__["verticalAlignment"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_mm::algorithms::abstracttext_has_horizontalAlignment():
-    assert hasattr(mm::algorithms::AbstractText, "horizontalAlignment")
-    descriptor = None
-    for klass in mm::algorithms::AbstractText.__mro__:
+    for klass in mm_algorithms_AbstractText.__mro__:
         if "horizontalAlignment" in klass.__dict__:
             descriptor = klass.__dict__["horizontalAlignment"]
             break
     assert isinstance(descriptor, property)
 
-def test_mm::algorithms::abstracttext_has_angle():
-    assert hasattr(mm::algorithms::AbstractText, "angle")
+def test_mm_algorithms_abstracttext_has_value():
+    assert hasattr(mm_algorithms_AbstractText, "value")
     descriptor = None
-    for klass in mm::algorithms::AbstractText.__mro__:
-        if "angle" in klass.__dict__:
-            descriptor = klass.__dict__["angle"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_mm::algorithms::abstracttext_has_rotation():
-    assert hasattr(mm::algorithms::AbstractText, "rotation")
-    descriptor = None
-    for klass in mm::algorithms::AbstractText.__mro__:
-        if "rotation" in klass.__dict__:
-            descriptor = klass.__dict__["rotation"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_mm::algorithms::abstracttext_has_value():
-    assert hasattr(mm::algorithms::AbstractText, "value")
-    descriptor = None
-    for klass in mm::algorithms::AbstractText.__mro__:
+    for klass in mm_algorithms_AbstractText.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
     assert isinstance(descriptor, property)
 
+def test_mm_algorithms_abstracttext_has_verticalAlignment():
+    assert hasattr(mm_algorithms_AbstractText, "verticalAlignment")
+    descriptor = None
+    for klass in mm_algorithms_AbstractText.__mro__:
+        if "verticalAlignment" in klass.__dict__:
+            descriptor = klass.__dict__["verticalAlignment"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_mm_algorithms_abstracttext_has_rotation():
+    assert hasattr(mm_algorithms_AbstractText, "rotation")
+    descriptor = None
+    for klass in mm_algorithms_AbstractText.__mro__:
+        if "rotation" in klass.__dict__:
+            descriptor = klass.__dict__["rotation"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_mm_algorithms_abstracttext_has_angle():
+    assert hasattr(mm_algorithms_AbstractText, "angle")
+    descriptor = None
+    for klass in mm_algorithms_AbstractText.__mro__:
+        if "angle" in klass.__dict__:
+            descriptor = klass.__dict__["angle"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_mm::algorithms::image_is_not_abstract():
-    assert not inspect.isabstract(mm::algorithms::Image)
+
+def test_mm_algorithms_polyline_is_not_abstract():
+    assert not inspect.isabstract(mm_algorithms_Polyline)
 
 
-def test_mm::algorithms::image_constructor_exists():
-    assert callable(mm::algorithms::Image.__init__)
+def test_mm_algorithms_polyline_constructor_exists():
+    assert callable(mm_algorithms_Polyline.__init__)
 
 
-def test_mm::algorithms::image_constructor_args():
-    sig = inspect.signature(mm::algorithms::Image.__init__)
+def test_mm_algorithms_polyline_constructor_args():
+    sig = inspect.signature(mm_algorithms_Polyline.__init__)
     params = list(sig.parameters.keys())
-    assert "stretchV" in params, "Missing parameter 'stretchV'"
-    assert "proportional" in params, "Missing parameter 'proportional'"
-    assert "stretchH" in params, "Missing parameter 'stretchH'"
+
+
+
+def test_mm_algorithms_platformgraphicsalgorithm_is_not_abstract():
+    assert not inspect.isabstract(mm_algorithms_PlatformGraphicsAlgorithm)
+
+
+def test_mm_algorithms_platformgraphicsalgorithm_constructor_exists():
+    assert callable(mm_algorithms_PlatformGraphicsAlgorithm.__init__)
+
+
+def test_mm_algorithms_platformgraphicsalgorithm_constructor_args():
+    sig = inspect.signature(mm_algorithms_PlatformGraphicsAlgorithm.__init__)
+    params = list(sig.parameters.keys())
     assert "id" in params, "Missing parameter 'id'"
 
-def test_mm::algorithms::image_has_stretchV():
-    assert hasattr(mm::algorithms::Image, "stretchV")
+def test_mm_algorithms_platformgraphicsalgorithm_has_id():
+    assert hasattr(mm_algorithms_PlatformGraphicsAlgorithm, "id")
     descriptor = None
-    for klass in mm::algorithms::Image.__mro__:
-        if "stretchV" in klass.__dict__:
-            descriptor = klass.__dict__["stretchV"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_mm::algorithms::image_has_proportional():
-    assert hasattr(mm::algorithms::Image, "proportional")
-    descriptor = None
-    for klass in mm::algorithms::Image.__mro__:
-        if "proportional" in klass.__dict__:
-            descriptor = klass.__dict__["proportional"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_mm::algorithms::image_has_stretchH():
-    assert hasattr(mm::algorithms::Image, "stretchH")
-    descriptor = None
-    for klass in mm::algorithms::Image.__mro__:
-        if "stretchH" in klass.__dict__:
-            descriptor = klass.__dict__["stretchH"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_mm::algorithms::image_has_id():
-    assert hasattr(mm::algorithms::Image, "id")
-    descriptor = None
-    for klass in mm::algorithms::Image.__mro__:
+    for klass in mm_algorithms_PlatformGraphicsAlgorithm.__mro__:
         if "id" in klass.__dict__:
             descriptor = klass.__dict__["id"]
             break
     assert isinstance(descriptor, property)
+
+
+
+def test_mm_algorithms_ellipse_is_not_abstract():
+    assert not inspect.isabstract(mm_algorithms_Ellipse)
+
+
+def test_mm_algorithms_ellipse_constructor_exists():
+    assert callable(mm_algorithms_Ellipse.__init__)
+
+
+def test_mm_algorithms_ellipse_constructor_args():
+    sig = inspect.signature(mm_algorithms_Ellipse.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_mm_algorithms_rectangle_is_not_abstract():
+    assert not inspect.isabstract(mm_algorithms_Rectangle)
+
+
+def test_mm_algorithms_rectangle_constructor_exists():
+    assert callable(mm_algorithms_Rectangle.__init__)
+
+
+def test_mm_algorithms_rectangle_constructor_args():
+    sig = inspect.signature(mm_algorithms_Rectangle.__init__)
+    params = list(sig.parameters.keys())
 
 
 
@@ -1540,87 +1540,87 @@ def test_graphicsalgorithmcontainer_constructor_args():
 
 
 
-def test_mm::algorithms::graphicsalgorithm_is_not_abstract():
-    assert not inspect.isabstract(mm::algorithms::GraphicsAlgorithm)
+def test_mm_algorithms_graphicsalgorithm_is_not_abstract():
+    assert not inspect.isabstract(mm_algorithms_GraphicsAlgorithm)
 
 
-def test_mm::algorithms::graphicsalgorithm_constructor_exists():
-    assert callable(mm::algorithms::GraphicsAlgorithm.__init__)
+def test_mm_algorithms_graphicsalgorithm_constructor_exists():
+    assert callable(mm_algorithms_GraphicsAlgorithm.__init__)
 
 
-def test_mm::algorithms::graphicsalgorithm_constructor_args():
-    sig = inspect.signature(mm::algorithms::GraphicsAlgorithm.__init__)
+def test_mm_algorithms_graphicsalgorithm_constructor_args():
+    sig = inspect.signature(mm_algorithms_GraphicsAlgorithm.__init__)
     params = list(sig.parameters.keys())
     assert "width" in params, "Missing parameter 'width'"
-    assert "y" in params, "Missing parameter 'y'"
-    assert "x" in params, "Missing parameter 'x'"
     assert "height" in params, "Missing parameter 'height'"
+    assert "x" in params, "Missing parameter 'x'"
+    assert "y" in params, "Missing parameter 'y'"
 
-def test_mm::algorithms::graphicsalgorithm_has_width():
-    assert hasattr(mm::algorithms::GraphicsAlgorithm, "width")
+def test_mm_algorithms_graphicsalgorithm_has_width():
+    assert hasattr(mm_algorithms_GraphicsAlgorithm, "width")
     descriptor = None
-    for klass in mm::algorithms::GraphicsAlgorithm.__mro__:
+    for klass in mm_algorithms_GraphicsAlgorithm.__mro__:
         if "width" in klass.__dict__:
             descriptor = klass.__dict__["width"]
             break
     assert isinstance(descriptor, property)
 
-def test_mm::algorithms::graphicsalgorithm_has_y():
-    assert hasattr(mm::algorithms::GraphicsAlgorithm, "y")
+def test_mm_algorithms_graphicsalgorithm_has_height():
+    assert hasattr(mm_algorithms_GraphicsAlgorithm, "height")
     descriptor = None
-    for klass in mm::algorithms::GraphicsAlgorithm.__mro__:
-        if "y" in klass.__dict__:
-            descriptor = klass.__dict__["y"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_mm::algorithms::graphicsalgorithm_has_x():
-    assert hasattr(mm::algorithms::GraphicsAlgorithm, "x")
-    descriptor = None
-    for klass in mm::algorithms::GraphicsAlgorithm.__mro__:
-        if "x" in klass.__dict__:
-            descriptor = klass.__dict__["x"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_mm::algorithms::graphicsalgorithm_has_height():
-    assert hasattr(mm::algorithms::GraphicsAlgorithm, "height")
-    descriptor = None
-    for klass in mm::algorithms::GraphicsAlgorithm.__mro__:
+    for klass in mm_algorithms_GraphicsAlgorithm.__mro__:
         if "height" in klass.__dict__:
             descriptor = klass.__dict__["height"]
             break
     assert isinstance(descriptor, property)
 
+def test_mm_algorithms_graphicsalgorithm_has_x():
+    assert hasattr(mm_algorithms_GraphicsAlgorithm, "x")
+    descriptor = None
+    for klass in mm_algorithms_GraphicsAlgorithm.__mro__:
+        if "x" in klass.__dict__:
+            descriptor = klass.__dict__["x"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_mm_algorithms_graphicsalgorithm_has_y():
+    assert hasattr(mm_algorithms_GraphicsAlgorithm, "y")
+    descriptor = None
+    for klass in mm_algorithms_GraphicsAlgorithm.__mro__:
+        if "y" in klass.__dict__:
+            descriptor = klass.__dict__["y"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_mm::pictograms::pictogramelement_is_not_abstract():
-    assert not inspect.isabstract(mm::pictograms::PictogramElement)
+
+def test_mm_pictograms_pictogramelement_is_not_abstract():
+    assert not inspect.isabstract(mm_pictograms_PictogramElement)
 
 
-def test_mm::pictograms::pictogramelement_constructor_exists():
-    assert callable(mm::pictograms::PictogramElement.__init__)
+def test_mm_pictograms_pictogramelement_constructor_exists():
+    assert callable(mm_pictograms_PictogramElement.__init__)
 
 
-def test_mm::pictograms::pictogramelement_constructor_args():
-    sig = inspect.signature(mm::pictograms::PictogramElement.__init__)
+def test_mm_pictograms_pictogramelement_constructor_args():
+    sig = inspect.signature(mm_pictograms_PictogramElement.__init__)
     params = list(sig.parameters.keys())
     assert "active" in params, "Missing parameter 'active'"
     assert "visible" in params, "Missing parameter 'visible'"
 
-def test_mm::pictograms::pictogramelement_has_active():
-    assert hasattr(mm::pictograms::PictogramElement, "active")
+def test_mm_pictograms_pictogramelement_has_active():
+    assert hasattr(mm_pictograms_PictogramElement, "active")
     descriptor = None
-    for klass in mm::pictograms::PictogramElement.__mro__:
+    for klass in mm_pictograms_PictogramElement.__mro__:
         if "active" in klass.__dict__:
             descriptor = klass.__dict__["active"]
             break
     assert isinstance(descriptor, property)
 
-def test_mm::pictograms::pictogramelement_has_visible():
-    assert hasattr(mm::pictograms::PictogramElement, "visible")
+def test_mm_pictograms_pictogramelement_has_visible():
+    assert hasattr(mm_pictograms_PictogramElement, "visible")
     descriptor = None
-    for klass in mm::pictograms::PictogramElement.__mro__:
+    for klass in mm_pictograms_PictogramElement.__mro__:
         if "visible" in klass.__dict__:
             descriptor = klass.__dict__["visible"]
             break
@@ -1642,35 +1642,35 @@ def test_pictogramlink_constructor_args():
 
 
 
-def test_mm::property_is_not_abstract():
-    assert not inspect.isabstract(mm::Property)
+def test_mm_property_is_not_abstract():
+    assert not inspect.isabstract(mm_Property)
 
 
-def test_mm::property_constructor_exists():
-    assert callable(mm::Property.__init__)
+def test_mm_property_constructor_exists():
+    assert callable(mm_Property.__init__)
 
 
-def test_mm::property_constructor_args():
-    sig = inspect.signature(mm::Property.__init__)
+def test_mm_property_constructor_args():
+    sig = inspect.signature(mm_Property.__init__)
     params = list(sig.parameters.keys())
-    assert "value" in params, "Missing parameter 'value'"
     assert "key" in params, "Missing parameter 'key'"
+    assert "value" in params, "Missing parameter 'value'"
 
-def test_mm::property_has_value():
-    assert hasattr(mm::Property, "value")
+def test_mm_property_has_key():
+    assert hasattr(mm_Property, "key")
     descriptor = None
-    for klass in mm::Property.__mro__:
-        if "value" in klass.__dict__:
-            descriptor = klass.__dict__["value"]
+    for klass in mm_Property.__mro__:
+        if "key" in klass.__dict__:
+            descriptor = klass.__dict__["key"]
             break
     assert isinstance(descriptor, property)
 
-def test_mm::property_has_key():
-    assert hasattr(mm::Property, "key")
+def test_mm_property_has_value():
+    assert hasattr(mm_Property, "value")
     descriptor = None
-    for klass in mm::Property.__mro__:
-        if "key" in klass.__dict__:
-            descriptor = klass.__dict__["key"]
+    for klass in mm_Property.__mro__:
+        if "value" in klass.__dict__:
+            descriptor = klass.__dict__["value"]
             break
     assert isinstance(descriptor, property)
 
@@ -1690,50 +1690,50 @@ def test_shape_constructor_args():
 
 
 
-def test_mm::pictograms::connectiondecorator_is_not_abstract():
-    assert not inspect.isabstract(mm::pictograms::ConnectionDecorator)
+def test_mm_pictograms_connectiondecorator_is_not_abstract():
+    assert not inspect.isabstract(mm_pictograms_ConnectionDecorator)
 
 
-def test_mm::pictograms::connectiondecorator_constructor_exists():
-    assert callable(mm::pictograms::ConnectionDecorator.__init__)
+def test_mm_pictograms_connectiondecorator_constructor_exists():
+    assert callable(mm_pictograms_ConnectionDecorator.__init__)
 
 
-def test_mm::pictograms::connectiondecorator_constructor_args():
-    sig = inspect.signature(mm::pictograms::ConnectionDecorator.__init__)
+def test_mm_pictograms_connectiondecorator_constructor_args():
+    sig = inspect.signature(mm_pictograms_ConnectionDecorator.__init__)
     params = list(sig.parameters.keys())
-    assert "locationRelative" in params, "Missing parameter 'locationRelative'"
     assert "location" in params, "Missing parameter 'location'"
+    assert "locationRelative" in params, "Missing parameter 'locationRelative'"
 
-def test_mm::pictograms::connectiondecorator_has_locationRelative():
-    assert hasattr(mm::pictograms::ConnectionDecorator, "locationRelative")
+def test_mm_pictograms_connectiondecorator_has_location():
+    assert hasattr(mm_pictograms_ConnectionDecorator, "location")
     descriptor = None
-    for klass in mm::pictograms::ConnectionDecorator.__mro__:
-        if "locationRelative" in klass.__dict__:
-            descriptor = klass.__dict__["locationRelative"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_mm::pictograms::connectiondecorator_has_location():
-    assert hasattr(mm::pictograms::ConnectionDecorator, "location")
-    descriptor = None
-    for klass in mm::pictograms::ConnectionDecorator.__mro__:
+    for klass in mm_pictograms_ConnectionDecorator.__mro__:
         if "location" in klass.__dict__:
             descriptor = klass.__dict__["location"]
             break
     assert isinstance(descriptor, property)
 
+def test_mm_pictograms_connectiondecorator_has_locationRelative():
+    assert hasattr(mm_pictograms_ConnectionDecorator, "locationRelative")
+    descriptor = None
+    for klass in mm_pictograms_ConnectionDecorator.__mro__:
+        if "locationRelative" in klass.__dict__:
+            descriptor = klass.__dict__["locationRelative"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_mm::pictograms::containershape_is_not_abstract():
-    assert not inspect.isabstract(mm::pictograms::ContainerShape)
+
+def test_mm_pictograms_containershape_is_not_abstract():
+    assert not inspect.isabstract(mm_pictograms_ContainerShape)
 
 
-def test_mm::pictograms::containershape_constructor_exists():
-    assert callable(mm::pictograms::ContainerShape.__init__)
+def test_mm_pictograms_containershape_constructor_exists():
+    assert callable(mm_pictograms_ContainerShape.__init__)
 
 
-def test_mm::pictograms::containershape_constructor_args():
-    sig = inspect.signature(mm::pictograms::ContainerShape.__init__)
+def test_mm_pictograms_containershape_constructor_args():
+    sig = inspect.signature(mm_pictograms_ContainerShape.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1766,58 +1766,58 @@ def test_anchorcontainer_constructor_args():
 
 
 
-def test_mm::pictograms::connection_is_not_abstract():
-    assert not inspect.isabstract(mm::pictograms::Connection)
+def test_mm_pictograms_connection_is_not_abstract():
+    assert not inspect.isabstract(mm_pictograms_Connection)
 
 
-def test_mm::pictograms::connection_constructor_exists():
-    assert callable(mm::pictograms::Connection.__init__)
+def test_mm_pictograms_connection_constructor_exists():
+    assert callable(mm_pictograms_Connection.__init__)
 
 
-def test_mm::pictograms::connection_constructor_args():
-    sig = inspect.signature(mm::pictograms::Connection.__init__)
+def test_mm_pictograms_connection_constructor_args():
+    sig = inspect.signature(mm_pictograms_Connection.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_mm::pictograms::shape_is_not_abstract():
-    assert not inspect.isabstract(mm::pictograms::Shape)
+def test_mm_pictograms_shape_is_not_abstract():
+    assert not inspect.isabstract(mm_pictograms_Shape)
 
 
-def test_mm::pictograms::shape_constructor_exists():
-    assert callable(mm::pictograms::Shape.__init__)
+def test_mm_pictograms_shape_constructor_exists():
+    assert callable(mm_pictograms_Shape.__init__)
 
 
-def test_mm::pictograms::shape_constructor_args():
-    sig = inspect.signature(mm::pictograms::Shape.__init__)
+def test_mm_pictograms_shape_constructor_args():
+    sig = inspect.signature(mm_pictograms_Shape.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_styles::style_is_not_abstract():
-    assert not inspect.isabstract(styles::Style)
+def test_styles_style_is_not_abstract():
+    assert not inspect.isabstract(styles_Style)
 
 
-def test_styles::style_constructor_exists():
-    assert callable(styles::Style.__init__)
+def test_styles_style_constructor_exists():
+    assert callable(styles_Style.__init__)
 
 
-def test_styles::style_constructor_args():
-    sig = inspect.signature(styles::Style.__init__)
+def test_styles_style_constructor_args():
+    sig = inspect.signature(styles_Style.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_mm::stylecontainer_is_not_abstract():
-    assert not inspect.isabstract(mm::StyleContainer)
+def test_mm_stylecontainer_is_not_abstract():
+    assert not inspect.isabstract(mm_StyleContainer)
 
 
-def test_mm::stylecontainer_constructor_exists():
-    assert callable(mm::StyleContainer.__init__)
+def test_mm_stylecontainer_constructor_exists():
+    assert callable(mm_StyleContainer.__init__)
 
 
-def test_mm::stylecontainer_constructor_args():
-    sig = inspect.signature(mm::StyleContainer.__init__)
+def test_mm_stylecontainer_constructor_args():
+    sig = inspect.signature(mm_StyleContainer.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1836,45 +1836,62 @@ def test_propertycontainer_constructor_args():
 
 
 
-def test_mm::pictograms::pictogramlink_is_not_abstract():
-    assert not inspect.isabstract(mm::pictograms::PictogramLink)
+def test_mm_pictograms_pictogramlink_is_not_abstract():
+    assert not inspect.isabstract(mm_pictograms_PictogramLink)
 
 
-def test_mm::pictograms::pictogramlink_constructor_exists():
-    assert callable(mm::pictograms::PictogramLink.__init__)
+def test_mm_pictograms_pictogramlink_constructor_exists():
+    assert callable(mm_pictograms_PictogramLink.__init__)
 
 
-def test_mm::pictograms::pictogramlink_constructor_args():
-    sig = inspect.signature(mm::pictograms::PictogramLink.__init__)
+def test_mm_pictograms_pictogramlink_constructor_args():
+    sig = inspect.signature(mm_pictograms_PictogramLink.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_mm::graphicsalgorithmcontainer_is_not_abstract():
-    assert not inspect.isabstract(mm::GraphicsAlgorithmContainer)
+def test_mm_graphicsalgorithmcontainer_is_not_abstract():
+    assert not inspect.isabstract(mm_GraphicsAlgorithmContainer)
 
 
-def test_mm::graphicsalgorithmcontainer_constructor_exists():
-    assert callable(mm::GraphicsAlgorithmContainer.__init__)
+def test_mm_graphicsalgorithmcontainer_constructor_exists():
+    assert callable(mm_GraphicsAlgorithmContainer.__init__)
 
 
-def test_mm::graphicsalgorithmcontainer_constructor_args():
-    sig = inspect.signature(mm::GraphicsAlgorithmContainer.__init__)
+def test_mm_graphicsalgorithmcontainer_constructor_args():
+    sig = inspect.signature(mm_GraphicsAlgorithmContainer.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_mm::propertycontainer_is_not_abstract():
-    assert not inspect.isabstract(mm::PropertyContainer)
+def test_mm_propertycontainer_is_not_abstract():
+    assert not inspect.isabstract(mm_PropertyContainer)
 
 
-def test_mm::propertycontainer_constructor_exists():
-    assert callable(mm::PropertyContainer.__init__)
+def test_mm_propertycontainer_constructor_exists():
+    assert callable(mm_PropertyContainer.__init__)
 
 
-def test_mm::propertycontainer_constructor_args():
-    sig = inspect.signature(mm::PropertyContainer.__init__)
+def test_mm_propertycontainer_constructor_args():
+    sig = inspect.signature(mm_PropertyContainer.__init__)
     params = list(sig.parameters.keys())
+
+def test_underlinestyle_exists():
+    # Check that the Enumeration exists
+    assert UnderlineStyle is not None
+
+def test_underlinestyle_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in UnderlineStyle]
+    expected_literals = [
+        "UNDERLINE_SINGLE",
+        "UNDERLINE_ERROR",
+        "UNDERLINE_DOUBLE",
+        "UNDERLINE_SQUIGGLE",
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in UnderlineStyle"
 
 def test_linestyle_exists():
     # Check that the Enumeration exists
@@ -1884,12 +1901,12 @@ def test_linestyle_has_all_literals():
     # Collect the names of literals in this Enumeration
     enum_literals = [lit.name for lit in LineStyle]
     expected_literals = [
-        "UNSPECIFIED",
-        "DASHDOTDOT",
         "DOT",
         "SOLID",
-        "DASH",
+        "UNSPECIFIED",
         "DASHDOT",
+        "DASH",
+        "DASHDOTDOT",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
@@ -1904,29 +1921,12 @@ def test_locationtype_has_all_literals():
     enum_literals = [lit.name for lit in LocationType]
     expected_literals = [
         "LOCATION_TYPE_ABSOLUTE_START",
-        "LOCATION_TYPE_ABSOLUTE_END",
         "LOCATION_TYPE_RELATIVE",
+        "LOCATION_TYPE_ABSOLUTE_END",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
         assert lit_name in enum_literals, f"Literal '' missing in LocationType"
-
-def test_underlinestyle_exists():
-    # Check that the Enumeration exists
-    assert UnderlineStyle is not None
-
-def test_underlinestyle_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in UnderlineStyle]
-    expected_literals = [
-        "UNDERLINE_ERROR",
-        "UNDERLINE_SQUIGGLE",
-        "UNDERLINE_DOUBLE",
-        "UNDERLINE_SINGLE",
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in UnderlineStyle"
 
 def test_orientation_exists():
     # Check that the Enumeration exists
@@ -1936,13 +1936,13 @@ def test_orientation_has_all_literals():
     # Collect the names of literals in this Enumeration
     enum_literals = [lit.name for lit in Orientation]
     expected_literals = [
-        "ALIGNMENT_CENTER",
         "ALIGNMENT_RIGHT",
+        "ALIGNMENT_CENTER",
         "ALIGNMENT_LEFT",
         "ALIGNMENT_MIDDLE",
         "ALIGNMENT_TOP",
-        "ALIGNMENT_BOTTOM",
         "UNSPECIFIED",
+        "ALIGNMENT_BOTTOM",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
@@ -1960,241 +1960,241 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-mm::styles::TextStyle_strategy = st.builds(
-    mm::styles::TextStyle,
+mm_styles_TextStyle_strategy = st.builds(
+    mm_styles_TextStyle,
     underline=
         st.booleans(),
-    strikeout=
-        st.booleans(),
     underlineStyle=
-        safe_text
+        safe_text,
+    strikeout=
+        st.booleans()
 )
-mm::styles::PrecisionPoint_strategy = st.builds(
-    mm::styles::PrecisionPoint,
-    x=
-        st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False),
+mm_styles_PrecisionPoint_strategy = st.builds(
+    mm_styles_PrecisionPoint,
     y=
+        st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False),
+    x=
         st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False)
 )
-mm::styles::Color_strategy = st.builds(
-    mm::styles::Color,
+mm_styles_Color_strategy = st.builds(
+    mm_styles_Color,
+    green=
+        st.integers(),
     blue=
         st.integers(),
     red=
-        st.integers(),
-    green=
         st.integers()
 )
-mm::styles::Point_strategy = st.builds(
-    mm::styles::Point,
-    after=
-        st.integers(),
+mm_styles_Point_strategy = st.builds(
+    mm_styles_Point,
     y=
         st.integers(),
     before=
         st.integers(),
     x=
+        st.integers(),
+    after=
         st.integers()
 )
-styles::TextStyle_strategy = st.builds(
-    styles::TextStyle,
+styles_TextStyle_strategy = st.builds(
+    styles_TextStyle,
 )
-mm::styles::TextStyleRegion_strategy = st.builds(
-    mm::styles::TextStyleRegion,
+mm_styles_TextStyleRegion_strategy = st.builds(
+    mm_styles_TextStyleRegion,
     end=
         st.integers(),
     start=
         st.integers()
 )
-mm::styles::AbstractStyle_strategy = st.builds(
-    mm::styles::AbstractStyle,
+mm_styles_AbstractStyle_strategy = st.builds(
+    mm_styles_AbstractStyle,
+    filled=
+        safe_text,
+    lineStyle=
+        safe_text,
     lineWidth=
         safe_text,
     lineVisible=
         safe_text,
-    filled=
-        safe_text,
     transparency=
-        safe_text,
-    lineStyle=
         safe_text
 )
-styles::mm::StyleContainer_strategy = st.builds(
-    styles::mm::StyleContainer,
+styles_mm_StyleContainer_strategy = st.builds(
+    styles_mm_StyleContainer,
 )
-mm::styles::Font_strategy = st.builds(
-    mm::styles::Font,
-    bold=
-        st.booleans(),
+mm_styles_Font_strategy = st.builds(
+    mm_styles_Font,
     size=
         st.integers(),
+    bold=
+        st.booleans(),
     italic=
         st.booleans(),
     name=
         safe_text
 )
-styles::GradientColoredAreas_strategy = st.builds(
-    styles::GradientColoredAreas,
+styles_GradientColoredAreas_strategy = st.builds(
+    styles_GradientColoredAreas,
 )
-mm::styles::AdaptedGradientColoredAreas_strategy = st.builds(
-    mm::styles::AdaptedGradientColoredAreas,
-    gradientType=
-        safe_text,
+mm_styles_AdaptedGradientColoredAreas_strategy = st.builds(
+    mm_styles_AdaptedGradientColoredAreas,
     definedStyleId=
+        safe_text,
+    gradientType=
         safe_text
 )
-styles::GradientColoredArea_strategy = st.builds(
-    styles::GradientColoredArea,
+styles_GradientColoredArea_strategy = st.builds(
+    styles_GradientColoredArea,
 )
-mm::styles::GradientColoredAreas_strategy = st.builds(
-    mm::styles::GradientColoredAreas,
+mm_styles_GradientColoredAreas_strategy = st.builds(
+    mm_styles_GradientColoredAreas,
     styleAdaption=
         safe_text
 )
-styles::GradientColoredLocation_strategy = st.builds(
-    styles::GradientColoredLocation,
+styles_GradientColoredLocation_strategy = st.builds(
+    styles_GradientColoredLocation,
 )
-mm::styles::GradientColoredArea_strategy = st.builds(
-    mm::styles::GradientColoredArea,
+mm_styles_GradientColoredArea_strategy = st.builds(
+    mm_styles_GradientColoredArea,
 )
-mm::styles::GradientColoredLocation_strategy = st.builds(
-    mm::styles::GradientColoredLocation,
+mm_styles_GradientColoredLocation_strategy = st.builds(
+    mm_styles_GradientColoredLocation,
     locationValue=
         safe_text,
     locationType=
         safe_text
 )
-styles::RenderingStyle_strategy = st.builds(
-    styles::RenderingStyle,
+styles_RenderingStyle_strategy = st.builds(
+    styles_RenderingStyle,
 )
-styles::TextStyleRegion_strategy = st.builds(
-    styles::TextStyleRegion,
+styles_TextStyleRegion_strategy = st.builds(
+    styles_TextStyleRegion,
 )
-styles::AdaptedGradientColoredAreas_strategy = st.builds(
-    styles::AdaptedGradientColoredAreas,
+styles_AdaptedGradientColoredAreas_strategy = st.builds(
+    styles_AdaptedGradientColoredAreas,
 )
-mm::styles::RenderingStyle_strategy = st.builds(
-    mm::styles::RenderingStyle,
+mm_styles_RenderingStyle_strategy = st.builds(
+    mm_styles_RenderingStyle,
 )
-styles::AbstractStyle_strategy = st.builds(
-    styles::AbstractStyle,
+styles_AbstractStyle_strategy = st.builds(
+    styles_AbstractStyle,
 )
 CurvedConnection_strategy = st.builds(
     CurvedConnection,
 )
-styles::PrecisionPoint_strategy = st.builds(
-    styles::PrecisionPoint,
+styles_PrecisionPoint_strategy = st.builds(
+    styles_PrecisionPoint,
 )
 Polyline_strategy = st.builds(
     Polyline,
 )
-mm::algorithms::Polygon_strategy = st.builds(
-    mm::algorithms::Polygon,
+mm_algorithms_Polygon_strategy = st.builds(
+    mm_algorithms_Polygon,
 )
 AbstractText_strategy = st.builds(
     AbstractText,
 )
-mm::algorithms::MultiText_strategy = st.builds(
-    mm::algorithms::MultiText,
+mm_algorithms_MultiText_strategy = st.builds(
+    mm_algorithms_MultiText,
 )
-mm::algorithms::Text_strategy = st.builds(
-    mm::algorithms::Text,
+mm_algorithms_Text_strategy = st.builds(
+    mm_algorithms_Text,
 )
-styles::Point_strategy = st.builds(
-    styles::Point,
+styles_Point_strategy = st.builds(
+    styles_Point,
 )
 AdvancedAnchor_strategy = st.builds(
     AdvancedAnchor,
 )
-mm::pictograms::FixPointAnchor_strategy = st.builds(
-    mm::pictograms::FixPointAnchor,
+mm_pictograms_FixPointAnchor_strategy = st.builds(
+    mm_pictograms_FixPointAnchor,
 )
 PictogramElement_strategy = st.builds(
     PictogramElement,
 )
-mm::pictograms::AnchorContainer_strategy = st.builds(
-    mm::pictograms::AnchorContainer,
+mm_pictograms_AnchorContainer_strategy = st.builds(
+    mm_pictograms_AnchorContainer,
 )
-mm::pictograms::Anchor_strategy = st.builds(
-    mm::pictograms::Anchor,
+mm_pictograms_Anchor_strategy = st.builds(
+    mm_pictograms_Anchor,
 )
 ConnectionDecorator_strategy = st.builds(
     ConnectionDecorator,
 )
-pictograms::mm::EObject_strategy = st.builds(
-    pictograms::mm::EObject,
+pictograms_mm_EObject_strategy = st.builds(
+    pictograms_mm_EObject,
 )
-mm::pictograms::BoxRelativeAnchor_strategy = st.builds(
-    mm::pictograms::BoxRelativeAnchor,
+mm_pictograms_BoxRelativeAnchor_strategy = st.builds(
+    mm_pictograms_BoxRelativeAnchor,
     relativeHeight=
         st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False),
     relativeWidth=
         st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False)
 )
-styles::Font_strategy = st.builds(
-    styles::Font,
+styles_Font_strategy = st.builds(
+    styles_Font,
 )
-styles::Color_strategy = st.builds(
-    styles::Color,
+styles_Color_strategy = st.builds(
+    styles_Color,
 )
 Connection_strategy = st.builds(
     Connection,
 )
-mm::pictograms::CurvedConnection_strategy = st.builds(
-    mm::pictograms::CurvedConnection,
+mm_pictograms_CompositeConnection_strategy = st.builds(
+    mm_pictograms_CompositeConnection,
 )
-mm::pictograms::CompositeConnection_strategy = st.builds(
-    mm::pictograms::CompositeConnection,
+mm_pictograms_ManhattanConnection_strategy = st.builds(
+    mm_pictograms_ManhattanConnection,
 )
-mm::pictograms::ManhattanConnection_strategy = st.builds(
-    mm::pictograms::ManhattanConnection,
+mm_pictograms_CurvedConnection_strategy = st.builds(
+    mm_pictograms_CurvedConnection,
 )
-mm::pictograms::FreeFormConnection_strategy = st.builds(
-    mm::pictograms::FreeFormConnection,
+mm_pictograms_FreeFormConnection_strategy = st.builds(
+    mm_pictograms_FreeFormConnection,
 )
 StyleContainer_strategy = st.builds(
     StyleContainer,
 )
-mm::styles::Style_strategy = st.builds(
-    mm::styles::Style,
-    stretchH=
-        safe_text,
-    id=
-        safe_text,
-    horizontalAlignment=
-        safe_text,
-    proportional=
-        safe_text,
-    description=
-        safe_text,
-    verticalAlignment=
+mm_styles_Style_strategy = st.builds(
+    mm_styles_Style,
+    angle=
         safe_text,
     stretchV=
         safe_text,
     rotation=
         safe_text,
-    angle=
+    proportional=
+        safe_text,
+    stretchH=
+        safe_text,
+    id=
+        safe_text,
+    description=
+        safe_text,
+    verticalAlignment=
+        safe_text,
+    horizontalAlignment=
         safe_text
 )
-pictograms::ContainerShape_strategy = st.builds(
-    pictograms::ContainerShape,
+pictograms_ContainerShape_strategy = st.builds(
+    pictograms_ContainerShape,
 )
-mm::pictograms::Diagram_strategy = st.builds(
-    mm::pictograms::Diagram,
-    snapToGrid=
-        st.booleans(),
+mm_pictograms_Diagram_strategy = st.builds(
+    mm_pictograms_Diagram,
     diagramTypeId=
         safe_text,
+    showGuides=
+        st.booleans(),
     name=
-        safe_text,
-    gridUnit=
-        st.integers(),
-    version=
         safe_text,
     verticalGridUnit=
         st.integers(),
-    showGuides=
-        st.booleans()
+    version=
+        safe_text,
+    snapToGrid=
+        st.booleans(),
+    gridUnit=
+        st.integers()
 )
 Diagram_strategy = st.builds(
     Diagram,
@@ -2202,78 +2202,78 @@ Diagram_strategy = st.builds(
 Anchor_strategy = st.builds(
     Anchor,
 )
-mm::pictograms::ChopboxAnchor_strategy = st.builds(
-    mm::pictograms::ChopboxAnchor,
-)
-mm::pictograms::AdvancedAnchor_strategy = st.builds(
-    mm::pictograms::AdvancedAnchor,
+mm_pictograms_AdvancedAnchor_strategy = st.builds(
+    mm_pictograms_AdvancedAnchor,
     useAnchorLocationAsConnectionEndpoint=
         st.booleans()
+)
+mm_pictograms_ChopboxAnchor_strategy = st.builds(
+    mm_pictograms_ChopboxAnchor,
 )
 GraphicsAlgorithm_strategy = st.builds(
     GraphicsAlgorithm,
 )
-mm::algorithms::Rectangle_strategy = st.builds(
-    mm::algorithms::Rectangle,
+mm_algorithms_Image_strategy = st.builds(
+    mm_algorithms_Image,
+    stretchH=
+        safe_text,
+    stretchV=
+        safe_text,
+    id=
+        safe_text,
+    proportional=
+        safe_text
 )
-mm::algorithms::RoundedRectangle_strategy = st.builds(
-    mm::algorithms::RoundedRectangle,
+mm_algorithms_RoundedRectangle_strategy = st.builds(
+    mm_algorithms_RoundedRectangle,
     cornerHeight=
         st.integers(),
     cornerWidth=
         st.integers()
 )
-mm::algorithms::Polyline_strategy = st.builds(
-    mm::algorithms::Polyline,
-)
-mm::algorithms::Ellipse_strategy = st.builds(
-    mm::algorithms::Ellipse,
-)
-mm::algorithms::PlatformGraphicsAlgorithm_strategy = st.builds(
-    mm::algorithms::PlatformGraphicsAlgorithm,
-    id=
-        safe_text
-)
-mm::algorithms::AbstractText_strategy = st.builds(
-    mm::algorithms::AbstractText,
-    verticalAlignment=
-        safe_text,
+mm_algorithms_AbstractText_strategy = st.builds(
+    mm_algorithms_AbstractText,
     horizontalAlignment=
         safe_text,
-    angle=
+    value=
+        safe_text,
+    verticalAlignment=
         safe_text,
     rotation=
         safe_text,
-    value=
+    angle=
         safe_text
 )
-mm::algorithms::Image_strategy = st.builds(
-    mm::algorithms::Image,
-    stretchV=
-        safe_text,
-    proportional=
-        safe_text,
-    stretchH=
-        safe_text,
+mm_algorithms_Polyline_strategy = st.builds(
+    mm_algorithms_Polyline,
+)
+mm_algorithms_PlatformGraphicsAlgorithm_strategy = st.builds(
+    mm_algorithms_PlatformGraphicsAlgorithm,
     id=
         safe_text
+)
+mm_algorithms_Ellipse_strategy = st.builds(
+    mm_algorithms_Ellipse,
+)
+mm_algorithms_Rectangle_strategy = st.builds(
+    mm_algorithms_Rectangle,
 )
 GraphicsAlgorithmContainer_strategy = st.builds(
     GraphicsAlgorithmContainer,
 )
-mm::algorithms::GraphicsAlgorithm_strategy = st.builds(
-    mm::algorithms::GraphicsAlgorithm,
+mm_algorithms_GraphicsAlgorithm_strategy = st.builds(
+    mm_algorithms_GraphicsAlgorithm,
     width=
         st.integers(),
-    y=
+    height=
         st.integers(),
     x=
         st.integers(),
-    height=
+    y=
         st.integers()
 )
-mm::pictograms::PictogramElement_strategy = st.builds(
-    mm::pictograms::PictogramElement,
+mm_pictograms_PictogramElement_strategy = st.builds(
+    mm_pictograms_PictogramElement,
     active=
         st.booleans(),
     visible=
@@ -2282,25 +2282,25 @@ mm::pictograms::PictogramElement_strategy = st.builds(
 PictogramLink_strategy = st.builds(
     PictogramLink,
 )
-mm::Property_strategy = st.builds(
-    mm::Property,
-    value=
-        safe_text,
+mm_Property_strategy = st.builds(
+    mm_Property,
     key=
+        safe_text,
+    value=
         safe_text
 )
 Shape_strategy = st.builds(
     Shape,
 )
-mm::pictograms::ConnectionDecorator_strategy = st.builds(
-    mm::pictograms::ConnectionDecorator,
-    locationRelative=
-        st.booleans(),
+mm_pictograms_ConnectionDecorator_strategy = st.builds(
+    mm_pictograms_ConnectionDecorator,
     location=
-        st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False)
+        st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False),
+    locationRelative=
+        st.booleans()
 )
-mm::pictograms::ContainerShape_strategy = st.builds(
-    mm::pictograms::ContainerShape,
+mm_pictograms_ContainerShape_strategy = st.builds(
+    mm_pictograms_ContainerShape,
 )
 ContainerShape_strategy = st.builds(
     ContainerShape,
@@ -2308,776 +2308,638 @@ ContainerShape_strategy = st.builds(
 AnchorContainer_strategy = st.builds(
     AnchorContainer,
 )
-mm::pictograms::Connection_strategy = st.builds(
-    mm::pictograms::Connection,
+mm_pictograms_Connection_strategy = st.builds(
+    mm_pictograms_Connection,
 )
-mm::pictograms::Shape_strategy = st.builds(
-    mm::pictograms::Shape,
+mm_pictograms_Shape_strategy = st.builds(
+    mm_pictograms_Shape,
 )
-styles::Style_strategy = st.builds(
-    styles::Style,
+styles_Style_strategy = st.builds(
+    styles_Style,
 )
-mm::StyleContainer_strategy = st.builds(
-    mm::StyleContainer,
+mm_StyleContainer_strategy = st.builds(
+    mm_StyleContainer,
 )
 PropertyContainer_strategy = st.builds(
     PropertyContainer,
 )
-mm::pictograms::PictogramLink_strategy = st.builds(
-    mm::pictograms::PictogramLink,
+mm_pictograms_PictogramLink_strategy = st.builds(
+    mm_pictograms_PictogramLink,
 )
-mm::GraphicsAlgorithmContainer_strategy = st.builds(
-    mm::GraphicsAlgorithmContainer,
+mm_GraphicsAlgorithmContainer_strategy = st.builds(
+    mm_GraphicsAlgorithmContainer,
 )
-mm::PropertyContainer_strategy = st.builds(
-    mm::PropertyContainer,
+mm_PropertyContainer_strategy = st.builds(
+    mm_PropertyContainer,
 )
 
-@given(instance=mm::styles::TextStyle_strategy)
+@given(instance=mm_styles_TextStyle_strategy)
 @settings(max_examples=50)
-def test_mm::styles::textstyle_instantiation(instance):
-    assert isinstance(instance, mm::styles::TextStyle)
-
-@given(instance=mm::styles::TextStyle_strategy)
-def test_mm::styles::textstyle_underline_type(instance):
-    assert isinstance(instance.underline, bool)
+def test_mm_styles_textstyle_instantiation(instance):
+    assert isinstance(instance, mm_styles_TextStyle)
 
 
-@given(instance=mm::styles::TextStyle_strategy)
-def test_mm::styles::textstyle_underline_setter(instance):
+
+@given(instance=mm_styles_TextStyle_strategy)
+def test_mm_styles_textstyle_underline_setter(instance):
     original = instance.underline
     instance.underline = original
     assert instance.underline == original
 
-@given(instance=mm::styles::TextStyle_strategy)
-def test_mm::styles::textstyle_strikeout_type(instance):
-    assert isinstance(instance.strikeout, bool)
 
 
-@given(instance=mm::styles::TextStyle_strategy)
-def test_mm::styles::textstyle_strikeout_setter(instance):
-    original = instance.strikeout
-    instance.strikeout = original
-    assert instance.strikeout == original
-
-@given(instance=mm::styles::TextStyle_strategy)
-def test_mm::styles::textstyle_underlineStyle_type(instance):
-    assert isinstance(instance.underlineStyle, str)
-
-
-@given(instance=mm::styles::TextStyle_strategy)
-def test_mm::styles::textstyle_underlineStyle_setter(instance):
+@given(instance=mm_styles_TextStyle_strategy)
+def test_mm_styles_textstyle_underlineStyle_setter(instance):
     original = instance.underlineStyle
     instance.underlineStyle = original
     assert instance.underlineStyle == original
 
-@given(instance=mm::styles::PrecisionPoint_strategy)
+
+
+@given(instance=mm_styles_TextStyle_strategy)
+def test_mm_styles_textstyle_strikeout_setter(instance):
+    original = instance.strikeout
+    instance.strikeout = original
+    assert instance.strikeout == original
+
+@given(instance=mm_styles_PrecisionPoint_strategy)
 @settings(max_examples=50)
-def test_mm::styles::precisionpoint_instantiation(instance):
-    assert isinstance(instance, mm::styles::PrecisionPoint)
-
-@given(instance=mm::styles::PrecisionPoint_strategy)
-def test_mm::styles::precisionpoint_x_type(instance):
-    assert isinstance(instance.x, float)
+def test_mm_styles_precisionpoint_instantiation(instance):
+    assert isinstance(instance, mm_styles_PrecisionPoint)
 
 
-@given(instance=mm::styles::PrecisionPoint_strategy)
-def test_mm::styles::precisionpoint_x_setter(instance):
-    original = instance.x
-    instance.x = original
-    assert instance.x == original
 
-@given(instance=mm::styles::PrecisionPoint_strategy)
-def test_mm::styles::precisionpoint_y_type(instance):
-    assert isinstance(instance.y, float)
-
-
-@given(instance=mm::styles::PrecisionPoint_strategy)
-def test_mm::styles::precisionpoint_y_setter(instance):
+@given(instance=mm_styles_PrecisionPoint_strategy)
+def test_mm_styles_precisionpoint_y_setter(instance):
     original = instance.y
     instance.y = original
     assert instance.y == original
 
-@given(instance=mm::styles::Color_strategy)
+
+
+@given(instance=mm_styles_PrecisionPoint_strategy)
+def test_mm_styles_precisionpoint_x_setter(instance):
+    original = instance.x
+    instance.x = original
+    assert instance.x == original
+
+@given(instance=mm_styles_Color_strategy)
 @settings(max_examples=50)
-def test_mm::styles::color_instantiation(instance):
-    assert isinstance(instance, mm::styles::Color)
-
-@given(instance=mm::styles::Color_strategy)
-def test_mm::styles::color_blue_type(instance):
-    assert isinstance(instance.blue, int)
+def test_mm_styles_color_instantiation(instance):
+    assert isinstance(instance, mm_styles_Color)
 
 
-@given(instance=mm::styles::Color_strategy)
-def test_mm::styles::color_blue_setter(instance):
-    original = instance.blue
-    instance.blue = original
-    assert instance.blue == original
 
-@given(instance=mm::styles::Color_strategy)
-def test_mm::styles::color_red_type(instance):
-    assert isinstance(instance.red, int)
-
-
-@given(instance=mm::styles::Color_strategy)
-def test_mm::styles::color_red_setter(instance):
-    original = instance.red
-    instance.red = original
-    assert instance.red == original
-
-@given(instance=mm::styles::Color_strategy)
-def test_mm::styles::color_green_type(instance):
-    assert isinstance(instance.green, int)
-
-
-@given(instance=mm::styles::Color_strategy)
-def test_mm::styles::color_green_setter(instance):
+@given(instance=mm_styles_Color_strategy)
+def test_mm_styles_color_green_setter(instance):
     original = instance.green
     instance.green = original
     assert instance.green == original
 
-@given(instance=mm::styles::Point_strategy)
+
+
+@given(instance=mm_styles_Color_strategy)
+def test_mm_styles_color_blue_setter(instance):
+    original = instance.blue
+    instance.blue = original
+    assert instance.blue == original
+
+
+
+@given(instance=mm_styles_Color_strategy)
+def test_mm_styles_color_red_setter(instance):
+    original = instance.red
+    instance.red = original
+    assert instance.red == original
+
+@given(instance=mm_styles_Point_strategy)
 @settings(max_examples=50)
-def test_mm::styles::point_instantiation(instance):
-    assert isinstance(instance, mm::styles::Point)
-
-@given(instance=mm::styles::Point_strategy)
-def test_mm::styles::point_after_type(instance):
-    assert isinstance(instance.after, int)
+def test_mm_styles_point_instantiation(instance):
+    assert isinstance(instance, mm_styles_Point)
 
 
-@given(instance=mm::styles::Point_strategy)
-def test_mm::styles::point_after_setter(instance):
-    original = instance.after
-    instance.after = original
-    assert instance.after == original
 
-@given(instance=mm::styles::Point_strategy)
-def test_mm::styles::point_y_type(instance):
-    assert isinstance(instance.y, int)
-
-
-@given(instance=mm::styles::Point_strategy)
-def test_mm::styles::point_y_setter(instance):
+@given(instance=mm_styles_Point_strategy)
+def test_mm_styles_point_y_setter(instance):
     original = instance.y
     instance.y = original
     assert instance.y == original
 
-@given(instance=mm::styles::Point_strategy)
-def test_mm::styles::point_before_type(instance):
-    assert isinstance(instance.before, int)
 
 
-@given(instance=mm::styles::Point_strategy)
-def test_mm::styles::point_before_setter(instance):
+@given(instance=mm_styles_Point_strategy)
+def test_mm_styles_point_before_setter(instance):
     original = instance.before
     instance.before = original
     assert instance.before == original
 
-@given(instance=mm::styles::Point_strategy)
-def test_mm::styles::point_x_type(instance):
-    assert isinstance(instance.x, int)
 
 
-@given(instance=mm::styles::Point_strategy)
-def test_mm::styles::point_x_setter(instance):
+@given(instance=mm_styles_Point_strategy)
+def test_mm_styles_point_x_setter(instance):
     original = instance.x
     instance.x = original
     assert instance.x == original
 
-@given(instance=styles::TextStyle_strategy)
+
+
+@given(instance=mm_styles_Point_strategy)
+def test_mm_styles_point_after_setter(instance):
+    original = instance.after
+    instance.after = original
+    assert instance.after == original
+
+@given(instance=styles_TextStyle_strategy)
 @settings(max_examples=50)
-def test_styles::textstyle_instantiation(instance):
-    assert isinstance(instance, styles::TextStyle)
+def test_styles_textstyle_instantiation(instance):
+    assert isinstance(instance, styles_TextStyle)
 
-@given(instance=mm::styles::TextStyleRegion_strategy)
+@given(instance=mm_styles_TextStyleRegion_strategy)
 @settings(max_examples=50)
-def test_mm::styles::textstyleregion_instantiation(instance):
-    assert isinstance(instance, mm::styles::TextStyleRegion)
-
-@given(instance=mm::styles::TextStyleRegion_strategy)
-def test_mm::styles::textstyleregion_end_type(instance):
-    assert isinstance(instance.end, int)
+def test_mm_styles_textstyleregion_instantiation(instance):
+    assert isinstance(instance, mm_styles_TextStyleRegion)
 
 
-@given(instance=mm::styles::TextStyleRegion_strategy)
-def test_mm::styles::textstyleregion_end_setter(instance):
+
+@given(instance=mm_styles_TextStyleRegion_strategy)
+def test_mm_styles_textstyleregion_end_setter(instance):
     original = instance.end
     instance.end = original
     assert instance.end == original
 
-@given(instance=mm::styles::TextStyleRegion_strategy)
-def test_mm::styles::textstyleregion_start_type(instance):
-    assert isinstance(instance.start, int)
 
 
-@given(instance=mm::styles::TextStyleRegion_strategy)
-def test_mm::styles::textstyleregion_start_setter(instance):
+@given(instance=mm_styles_TextStyleRegion_strategy)
+def test_mm_styles_textstyleregion_start_setter(instance):
     original = instance.start
     instance.start = original
     assert instance.start == original
 
-@given(instance=mm::styles::AbstractStyle_strategy)
+@given(instance=mm_styles_AbstractStyle_strategy)
 @settings(max_examples=50)
-def test_mm::styles::abstractstyle_instantiation(instance):
-    assert isinstance(instance, mm::styles::AbstractStyle)
-
-@given(instance=mm::styles::AbstractStyle_strategy)
-def test_mm::styles::abstractstyle_lineWidth_type(instance):
-    assert isinstance(instance.lineWidth, str)
+def test_mm_styles_abstractstyle_instantiation(instance):
+    assert isinstance(instance, mm_styles_AbstractStyle)
 
 
-@given(instance=mm::styles::AbstractStyle_strategy)
-def test_mm::styles::abstractstyle_lineWidth_setter(instance):
-    original = instance.lineWidth
-    instance.lineWidth = original
-    assert instance.lineWidth == original
 
-@given(instance=mm::styles::AbstractStyle_strategy)
-def test_mm::styles::abstractstyle_lineVisible_type(instance):
-    assert isinstance(instance.lineVisible, str)
-
-
-@given(instance=mm::styles::AbstractStyle_strategy)
-def test_mm::styles::abstractstyle_lineVisible_setter(instance):
-    original = instance.lineVisible
-    instance.lineVisible = original
-    assert instance.lineVisible == original
-
-@given(instance=mm::styles::AbstractStyle_strategy)
-def test_mm::styles::abstractstyle_filled_type(instance):
-    assert isinstance(instance.filled, str)
-
-
-@given(instance=mm::styles::AbstractStyle_strategy)
-def test_mm::styles::abstractstyle_filled_setter(instance):
+@given(instance=mm_styles_AbstractStyle_strategy)
+def test_mm_styles_abstractstyle_filled_setter(instance):
     original = instance.filled
     instance.filled = original
     assert instance.filled == original
 
-@given(instance=mm::styles::AbstractStyle_strategy)
-def test_mm::styles::abstractstyle_transparency_type(instance):
-    assert isinstance(instance.transparency, str)
 
 
-@given(instance=mm::styles::AbstractStyle_strategy)
-def test_mm::styles::abstractstyle_transparency_setter(instance):
-    original = instance.transparency
-    instance.transparency = original
-    assert instance.transparency == original
-
-@given(instance=mm::styles::AbstractStyle_strategy)
-def test_mm::styles::abstractstyle_lineStyle_type(instance):
-    assert isinstance(instance.lineStyle, str)
-
-
-@given(instance=mm::styles::AbstractStyle_strategy)
-def test_mm::styles::abstractstyle_lineStyle_setter(instance):
+@given(instance=mm_styles_AbstractStyle_strategy)
+def test_mm_styles_abstractstyle_lineStyle_setter(instance):
     original = instance.lineStyle
     instance.lineStyle = original
     assert instance.lineStyle == original
 
-@given(instance=styles::mm::StyleContainer_strategy)
+
+
+@given(instance=mm_styles_AbstractStyle_strategy)
+def test_mm_styles_abstractstyle_lineWidth_setter(instance):
+    original = instance.lineWidth
+    instance.lineWidth = original
+    assert instance.lineWidth == original
+
+
+
+@given(instance=mm_styles_AbstractStyle_strategy)
+def test_mm_styles_abstractstyle_lineVisible_setter(instance):
+    original = instance.lineVisible
+    instance.lineVisible = original
+    assert instance.lineVisible == original
+
+
+
+@given(instance=mm_styles_AbstractStyle_strategy)
+def test_mm_styles_abstractstyle_transparency_setter(instance):
+    original = instance.transparency
+    instance.transparency = original
+    assert instance.transparency == original
+
+@given(instance=styles_mm_StyleContainer_strategy)
 @settings(max_examples=50)
-def test_styles::mm::stylecontainer_instantiation(instance):
-    assert isinstance(instance, styles::mm::StyleContainer)
+def test_styles_mm_stylecontainer_instantiation(instance):
+    assert isinstance(instance, styles_mm_StyleContainer)
 
-@given(instance=mm::styles::Font_strategy)
+@given(instance=mm_styles_Font_strategy)
 @settings(max_examples=50)
-def test_mm::styles::font_instantiation(instance):
-    assert isinstance(instance, mm::styles::Font)
-
-@given(instance=mm::styles::Font_strategy)
-def test_mm::styles::font_bold_type(instance):
-    assert isinstance(instance.bold, bool)
+def test_mm_styles_font_instantiation(instance):
+    assert isinstance(instance, mm_styles_Font)
 
 
-@given(instance=mm::styles::Font_strategy)
-def test_mm::styles::font_bold_setter(instance):
-    original = instance.bold
-    instance.bold = original
-    assert instance.bold == original
 
-@given(instance=mm::styles::Font_strategy)
-def test_mm::styles::font_size_type(instance):
-    assert isinstance(instance.size, int)
-
-
-@given(instance=mm::styles::Font_strategy)
-def test_mm::styles::font_size_setter(instance):
+@given(instance=mm_styles_Font_strategy)
+def test_mm_styles_font_size_setter(instance):
     original = instance.size
     instance.size = original
     assert instance.size == original
 
-@given(instance=mm::styles::Font_strategy)
-def test_mm::styles::font_italic_type(instance):
-    assert isinstance(instance.italic, bool)
 
 
-@given(instance=mm::styles::Font_strategy)
-def test_mm::styles::font_italic_setter(instance):
+@given(instance=mm_styles_Font_strategy)
+def test_mm_styles_font_bold_setter(instance):
+    original = instance.bold
+    instance.bold = original
+    assert instance.bold == original
+
+
+
+@given(instance=mm_styles_Font_strategy)
+def test_mm_styles_font_italic_setter(instance):
     original = instance.italic
     instance.italic = original
     assert instance.italic == original
 
-@given(instance=mm::styles::Font_strategy)
-def test_mm::styles::font_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
-@given(instance=mm::styles::Font_strategy)
-def test_mm::styles::font_name_setter(instance):
+@given(instance=mm_styles_Font_strategy)
+def test_mm_styles_font_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=styles::GradientColoredAreas_strategy)
+@given(instance=styles_GradientColoredAreas_strategy)
 @settings(max_examples=50)
-def test_styles::gradientcoloredareas_instantiation(instance):
-    assert isinstance(instance, styles::GradientColoredAreas)
+def test_styles_gradientcoloredareas_instantiation(instance):
+    assert isinstance(instance, styles_GradientColoredAreas)
 
-@given(instance=mm::styles::AdaptedGradientColoredAreas_strategy)
+@given(instance=mm_styles_AdaptedGradientColoredAreas_strategy)
 @settings(max_examples=50)
-def test_mm::styles::adaptedgradientcoloredareas_instantiation(instance):
-    assert isinstance(instance, mm::styles::AdaptedGradientColoredAreas)
-
-@given(instance=mm::styles::AdaptedGradientColoredAreas_strategy)
-def test_mm::styles::adaptedgradientcoloredareas_gradientType_type(instance):
-    assert isinstance(instance.gradientType, str)
+def test_mm_styles_adaptedgradientcoloredareas_instantiation(instance):
+    assert isinstance(instance, mm_styles_AdaptedGradientColoredAreas)
 
 
-@given(instance=mm::styles::AdaptedGradientColoredAreas_strategy)
-def test_mm::styles::adaptedgradientcoloredareas_gradientType_setter(instance):
-    original = instance.gradientType
-    instance.gradientType = original
-    assert instance.gradientType == original
 
-@given(instance=mm::styles::AdaptedGradientColoredAreas_strategy)
-def test_mm::styles::adaptedgradientcoloredareas_definedStyleId_type(instance):
-    assert isinstance(instance.definedStyleId, str)
-
-
-@given(instance=mm::styles::AdaptedGradientColoredAreas_strategy)
-def test_mm::styles::adaptedgradientcoloredareas_definedStyleId_setter(instance):
+@given(instance=mm_styles_AdaptedGradientColoredAreas_strategy)
+def test_mm_styles_adaptedgradientcoloredareas_definedStyleId_setter(instance):
     original = instance.definedStyleId
     instance.definedStyleId = original
     assert instance.definedStyleId == original
 
-@given(instance=styles::GradientColoredArea_strategy)
+
+
+@given(instance=mm_styles_AdaptedGradientColoredAreas_strategy)
+def test_mm_styles_adaptedgradientcoloredareas_gradientType_setter(instance):
+    original = instance.gradientType
+    instance.gradientType = original
+    assert instance.gradientType == original
+
+@given(instance=styles_GradientColoredArea_strategy)
 @settings(max_examples=50)
-def test_styles::gradientcoloredarea_instantiation(instance):
-    assert isinstance(instance, styles::GradientColoredArea)
+def test_styles_gradientcoloredarea_instantiation(instance):
+    assert isinstance(instance, styles_GradientColoredArea)
 
-@given(instance=mm::styles::GradientColoredAreas_strategy)
+@given(instance=mm_styles_GradientColoredAreas_strategy)
 @settings(max_examples=50)
-def test_mm::styles::gradientcoloredareas_instantiation(instance):
-    assert isinstance(instance, mm::styles::GradientColoredAreas)
-
-@given(instance=mm::styles::GradientColoredAreas_strategy)
-def test_mm::styles::gradientcoloredareas_styleAdaption_type(instance):
-    assert isinstance(instance.styleAdaption, str)
+def test_mm_styles_gradientcoloredareas_instantiation(instance):
+    assert isinstance(instance, mm_styles_GradientColoredAreas)
 
 
-@given(instance=mm::styles::GradientColoredAreas_strategy)
-def test_mm::styles::gradientcoloredareas_styleAdaption_setter(instance):
+
+@given(instance=mm_styles_GradientColoredAreas_strategy)
+def test_mm_styles_gradientcoloredareas_styleAdaption_setter(instance):
     original = instance.styleAdaption
     instance.styleAdaption = original
     assert instance.styleAdaption == original
 
-@given(instance=styles::GradientColoredLocation_strategy)
+@given(instance=styles_GradientColoredLocation_strategy)
 @settings(max_examples=50)
-def test_styles::gradientcoloredlocation_instantiation(instance):
-    assert isinstance(instance, styles::GradientColoredLocation)
+def test_styles_gradientcoloredlocation_instantiation(instance):
+    assert isinstance(instance, styles_GradientColoredLocation)
 
-@given(instance=mm::styles::GradientColoredArea_strategy)
+@given(instance=mm_styles_GradientColoredArea_strategy)
 @settings(max_examples=50)
-def test_mm::styles::gradientcoloredarea_instantiation(instance):
-    assert isinstance(instance, mm::styles::GradientColoredArea)
+def test_mm_styles_gradientcoloredarea_instantiation(instance):
+    assert isinstance(instance, mm_styles_GradientColoredArea)
 
-@given(instance=mm::styles::GradientColoredLocation_strategy)
+@given(instance=mm_styles_GradientColoredLocation_strategy)
 @settings(max_examples=50)
-def test_mm::styles::gradientcoloredlocation_instantiation(instance):
-    assert isinstance(instance, mm::styles::GradientColoredLocation)
-
-@given(instance=mm::styles::GradientColoredLocation_strategy)
-def test_mm::styles::gradientcoloredlocation_locationValue_type(instance):
-    assert isinstance(instance.locationValue, str)
+def test_mm_styles_gradientcoloredlocation_instantiation(instance):
+    assert isinstance(instance, mm_styles_GradientColoredLocation)
 
 
-@given(instance=mm::styles::GradientColoredLocation_strategy)
-def test_mm::styles::gradientcoloredlocation_locationValue_setter(instance):
+
+@given(instance=mm_styles_GradientColoredLocation_strategy)
+def test_mm_styles_gradientcoloredlocation_locationValue_setter(instance):
     original = instance.locationValue
     instance.locationValue = original
     assert instance.locationValue == original
 
-@given(instance=mm::styles::GradientColoredLocation_strategy)
-def test_mm::styles::gradientcoloredlocation_locationType_type(instance):
-    assert isinstance(instance.locationType, str)
 
 
-@given(instance=mm::styles::GradientColoredLocation_strategy)
-def test_mm::styles::gradientcoloredlocation_locationType_setter(instance):
+@given(instance=mm_styles_GradientColoredLocation_strategy)
+def test_mm_styles_gradientcoloredlocation_locationType_setter(instance):
     original = instance.locationType
     instance.locationType = original
     assert instance.locationType == original
 
-@given(instance=styles::RenderingStyle_strategy)
+@given(instance=styles_RenderingStyle_strategy)
 @settings(max_examples=50)
-def test_styles::renderingstyle_instantiation(instance):
-    assert isinstance(instance, styles::RenderingStyle)
+def test_styles_renderingstyle_instantiation(instance):
+    assert isinstance(instance, styles_RenderingStyle)
 
-@given(instance=styles::TextStyleRegion_strategy)
+@given(instance=styles_TextStyleRegion_strategy)
 @settings(max_examples=50)
-def test_styles::textstyleregion_instantiation(instance):
-    assert isinstance(instance, styles::TextStyleRegion)
+def test_styles_textstyleregion_instantiation(instance):
+    assert isinstance(instance, styles_TextStyleRegion)
 
-@given(instance=styles::AdaptedGradientColoredAreas_strategy)
+@given(instance=styles_AdaptedGradientColoredAreas_strategy)
 @settings(max_examples=50)
-def test_styles::adaptedgradientcoloredareas_instantiation(instance):
-    assert isinstance(instance, styles::AdaptedGradientColoredAreas)
+def test_styles_adaptedgradientcoloredareas_instantiation(instance):
+    assert isinstance(instance, styles_AdaptedGradientColoredAreas)
 
-@given(instance=mm::styles::RenderingStyle_strategy)
+@given(instance=mm_styles_RenderingStyle_strategy)
 @settings(max_examples=50)
-def test_mm::styles::renderingstyle_instantiation(instance):
-    assert isinstance(instance, mm::styles::RenderingStyle)
+def test_mm_styles_renderingstyle_instantiation(instance):
+    assert isinstance(instance, mm_styles_RenderingStyle)
 
-@given(instance=styles::AbstractStyle_strategy)
+@given(instance=styles_AbstractStyle_strategy)
 @settings(max_examples=50)
-def test_styles::abstractstyle_instantiation(instance):
-    assert isinstance(instance, styles::AbstractStyle)
+def test_styles_abstractstyle_instantiation(instance):
+    assert isinstance(instance, styles_AbstractStyle)
 
 @given(instance=CurvedConnection_strategy)
 @settings(max_examples=50)
 def test_curvedconnection_instantiation(instance):
     assert isinstance(instance, CurvedConnection)
 
-@given(instance=styles::PrecisionPoint_strategy)
+@given(instance=styles_PrecisionPoint_strategy)
 @settings(max_examples=50)
-def test_styles::precisionpoint_instantiation(instance):
-    assert isinstance(instance, styles::PrecisionPoint)
+def test_styles_precisionpoint_instantiation(instance):
+    assert isinstance(instance, styles_PrecisionPoint)
 
 @given(instance=Polyline_strategy)
 @settings(max_examples=50)
 def test_polyline_instantiation(instance):
     assert isinstance(instance, Polyline)
 
-@given(instance=mm::algorithms::Polygon_strategy)
+@given(instance=mm_algorithms_Polygon_strategy)
 @settings(max_examples=50)
-def test_mm::algorithms::polygon_instantiation(instance):
-    assert isinstance(instance, mm::algorithms::Polygon)
+def test_mm_algorithms_polygon_instantiation(instance):
+    assert isinstance(instance, mm_algorithms_Polygon)
 
 @given(instance=AbstractText_strategy)
 @settings(max_examples=50)
 def test_abstracttext_instantiation(instance):
     assert isinstance(instance, AbstractText)
 
-@given(instance=mm::algorithms::MultiText_strategy)
+@given(instance=mm_algorithms_MultiText_strategy)
 @settings(max_examples=50)
-def test_mm::algorithms::multitext_instantiation(instance):
-    assert isinstance(instance, mm::algorithms::MultiText)
+def test_mm_algorithms_multitext_instantiation(instance):
+    assert isinstance(instance, mm_algorithms_MultiText)
 
-@given(instance=mm::algorithms::Text_strategy)
+@given(instance=mm_algorithms_Text_strategy)
 @settings(max_examples=50)
-def test_mm::algorithms::text_instantiation(instance):
-    assert isinstance(instance, mm::algorithms::Text)
+def test_mm_algorithms_text_instantiation(instance):
+    assert isinstance(instance, mm_algorithms_Text)
 
-@given(instance=styles::Point_strategy)
+@given(instance=styles_Point_strategy)
 @settings(max_examples=50)
-def test_styles::point_instantiation(instance):
-    assert isinstance(instance, styles::Point)
+def test_styles_point_instantiation(instance):
+    assert isinstance(instance, styles_Point)
 
 @given(instance=AdvancedAnchor_strategy)
 @settings(max_examples=50)
 def test_advancedanchor_instantiation(instance):
     assert isinstance(instance, AdvancedAnchor)
 
-@given(instance=mm::pictograms::FixPointAnchor_strategy)
+@given(instance=mm_pictograms_FixPointAnchor_strategy)
 @settings(max_examples=50)
-def test_mm::pictograms::fixpointanchor_instantiation(instance):
-    assert isinstance(instance, mm::pictograms::FixPointAnchor)
+def test_mm_pictograms_fixpointanchor_instantiation(instance):
+    assert isinstance(instance, mm_pictograms_FixPointAnchor)
 
 @given(instance=PictogramElement_strategy)
 @settings(max_examples=50)
 def test_pictogramelement_instantiation(instance):
     assert isinstance(instance, PictogramElement)
 
-@given(instance=mm::pictograms::AnchorContainer_strategy)
+@given(instance=mm_pictograms_AnchorContainer_strategy)
 @settings(max_examples=50)
-def test_mm::pictograms::anchorcontainer_instantiation(instance):
-    assert isinstance(instance, mm::pictograms::AnchorContainer)
+def test_mm_pictograms_anchorcontainer_instantiation(instance):
+    assert isinstance(instance, mm_pictograms_AnchorContainer)
 
-@given(instance=mm::pictograms::Anchor_strategy)
+@given(instance=mm_pictograms_Anchor_strategy)
 @settings(max_examples=50)
-def test_mm::pictograms::anchor_instantiation(instance):
-    assert isinstance(instance, mm::pictograms::Anchor)
+def test_mm_pictograms_anchor_instantiation(instance):
+    assert isinstance(instance, mm_pictograms_Anchor)
 
 @given(instance=ConnectionDecorator_strategy)
 @settings(max_examples=50)
 def test_connectiondecorator_instantiation(instance):
     assert isinstance(instance, ConnectionDecorator)
 
-@given(instance=pictograms::mm::EObject_strategy)
+@given(instance=pictograms_mm_EObject_strategy)
 @settings(max_examples=50)
-def test_pictograms::mm::eobject_instantiation(instance):
-    assert isinstance(instance, pictograms::mm::EObject)
+def test_pictograms_mm_eobject_instantiation(instance):
+    assert isinstance(instance, pictograms_mm_EObject)
 
-@given(instance=mm::pictograms::BoxRelativeAnchor_strategy)
+@given(instance=mm_pictograms_BoxRelativeAnchor_strategy)
 @settings(max_examples=50)
-def test_mm::pictograms::boxrelativeanchor_instantiation(instance):
-    assert isinstance(instance, mm::pictograms::BoxRelativeAnchor)
-
-@given(instance=mm::pictograms::BoxRelativeAnchor_strategy)
-def test_mm::pictograms::boxrelativeanchor_relativeHeight_type(instance):
-    assert isinstance(instance.relativeHeight, float)
+def test_mm_pictograms_boxrelativeanchor_instantiation(instance):
+    assert isinstance(instance, mm_pictograms_BoxRelativeAnchor)
 
 
-@given(instance=mm::pictograms::BoxRelativeAnchor_strategy)
-def test_mm::pictograms::boxrelativeanchor_relativeHeight_setter(instance):
+
+@given(instance=mm_pictograms_BoxRelativeAnchor_strategy)
+def test_mm_pictograms_boxrelativeanchor_relativeHeight_setter(instance):
     original = instance.relativeHeight
     instance.relativeHeight = original
     assert instance.relativeHeight == original
 
-@given(instance=mm::pictograms::BoxRelativeAnchor_strategy)
-def test_mm::pictograms::boxrelativeanchor_relativeWidth_type(instance):
-    assert isinstance(instance.relativeWidth, float)
 
 
-@given(instance=mm::pictograms::BoxRelativeAnchor_strategy)
-def test_mm::pictograms::boxrelativeanchor_relativeWidth_setter(instance):
+@given(instance=mm_pictograms_BoxRelativeAnchor_strategy)
+def test_mm_pictograms_boxrelativeanchor_relativeWidth_setter(instance):
     original = instance.relativeWidth
     instance.relativeWidth = original
     assert instance.relativeWidth == original
 
-@given(instance=styles::Font_strategy)
+@given(instance=styles_Font_strategy)
 @settings(max_examples=50)
-def test_styles::font_instantiation(instance):
-    assert isinstance(instance, styles::Font)
+def test_styles_font_instantiation(instance):
+    assert isinstance(instance, styles_Font)
 
-@given(instance=styles::Color_strategy)
+@given(instance=styles_Color_strategy)
 @settings(max_examples=50)
-def test_styles::color_instantiation(instance):
-    assert isinstance(instance, styles::Color)
+def test_styles_color_instantiation(instance):
+    assert isinstance(instance, styles_Color)
 
 @given(instance=Connection_strategy)
 @settings(max_examples=50)
 def test_connection_instantiation(instance):
     assert isinstance(instance, Connection)
 
-@given(instance=mm::pictograms::CurvedConnection_strategy)
+@given(instance=mm_pictograms_CompositeConnection_strategy)
 @settings(max_examples=50)
-def test_mm::pictograms::curvedconnection_instantiation(instance):
-    assert isinstance(instance, mm::pictograms::CurvedConnection)
+def test_mm_pictograms_compositeconnection_instantiation(instance):
+    assert isinstance(instance, mm_pictograms_CompositeConnection)
 
-@given(instance=mm::pictograms::CompositeConnection_strategy)
+@given(instance=mm_pictograms_ManhattanConnection_strategy)
 @settings(max_examples=50)
-def test_mm::pictograms::compositeconnection_instantiation(instance):
-    assert isinstance(instance, mm::pictograms::CompositeConnection)
+def test_mm_pictograms_manhattanconnection_instantiation(instance):
+    assert isinstance(instance, mm_pictograms_ManhattanConnection)
 
-@given(instance=mm::pictograms::ManhattanConnection_strategy)
+@given(instance=mm_pictograms_CurvedConnection_strategy)
 @settings(max_examples=50)
-def test_mm::pictograms::manhattanconnection_instantiation(instance):
-    assert isinstance(instance, mm::pictograms::ManhattanConnection)
+def test_mm_pictograms_curvedconnection_instantiation(instance):
+    assert isinstance(instance, mm_pictograms_CurvedConnection)
 
-@given(instance=mm::pictograms::FreeFormConnection_strategy)
+@given(instance=mm_pictograms_FreeFormConnection_strategy)
 @settings(max_examples=50)
-def test_mm::pictograms::freeformconnection_instantiation(instance):
-    assert isinstance(instance, mm::pictograms::FreeFormConnection)
+def test_mm_pictograms_freeformconnection_instantiation(instance):
+    assert isinstance(instance, mm_pictograms_FreeFormConnection)
 
 @given(instance=StyleContainer_strategy)
 @settings(max_examples=50)
 def test_stylecontainer_instantiation(instance):
     assert isinstance(instance, StyleContainer)
 
-@given(instance=mm::styles::Style_strategy)
+@given(instance=mm_styles_Style_strategy)
 @settings(max_examples=50)
-def test_mm::styles::style_instantiation(instance):
-    assert isinstance(instance, mm::styles::Style)
-
-@given(instance=mm::styles::Style_strategy)
-def test_mm::styles::style_stretchH_type(instance):
-    assert isinstance(instance.stretchH, str)
+def test_mm_styles_style_instantiation(instance):
+    assert isinstance(instance, mm_styles_Style)
 
 
-@given(instance=mm::styles::Style_strategy)
-def test_mm::styles::style_stretchH_setter(instance):
-    original = instance.stretchH
-    instance.stretchH = original
-    assert instance.stretchH == original
 
-@given(instance=mm::styles::Style_strategy)
-def test_mm::styles::style_id_type(instance):
-    assert isinstance(instance.id, str)
-
-
-@given(instance=mm::styles::Style_strategy)
-def test_mm::styles::style_id_setter(instance):
-    original = instance.id
-    instance.id = original
-    assert instance.id == original
-
-@given(instance=mm::styles::Style_strategy)
-def test_mm::styles::style_horizontalAlignment_type(instance):
-    assert isinstance(instance.horizontalAlignment, str)
-
-
-@given(instance=mm::styles::Style_strategy)
-def test_mm::styles::style_horizontalAlignment_setter(instance):
-    original = instance.horizontalAlignment
-    instance.horizontalAlignment = original
-    assert instance.horizontalAlignment == original
-
-@given(instance=mm::styles::Style_strategy)
-def test_mm::styles::style_proportional_type(instance):
-    assert isinstance(instance.proportional, str)
-
-
-@given(instance=mm::styles::Style_strategy)
-def test_mm::styles::style_proportional_setter(instance):
-    original = instance.proportional
-    instance.proportional = original
-    assert instance.proportional == original
-
-@given(instance=mm::styles::Style_strategy)
-def test_mm::styles::style_description_type(instance):
-    assert isinstance(instance.description, str)
-
-
-@given(instance=mm::styles::Style_strategy)
-def test_mm::styles::style_description_setter(instance):
-    original = instance.description
-    instance.description = original
-    assert instance.description == original
-
-@given(instance=mm::styles::Style_strategy)
-def test_mm::styles::style_verticalAlignment_type(instance):
-    assert isinstance(instance.verticalAlignment, str)
-
-
-@given(instance=mm::styles::Style_strategy)
-def test_mm::styles::style_verticalAlignment_setter(instance):
-    original = instance.verticalAlignment
-    instance.verticalAlignment = original
-    assert instance.verticalAlignment == original
-
-@given(instance=mm::styles::Style_strategy)
-def test_mm::styles::style_stretchV_type(instance):
-    assert isinstance(instance.stretchV, str)
-
-
-@given(instance=mm::styles::Style_strategy)
-def test_mm::styles::style_stretchV_setter(instance):
-    original = instance.stretchV
-    instance.stretchV = original
-    assert instance.stretchV == original
-
-@given(instance=mm::styles::Style_strategy)
-def test_mm::styles::style_rotation_type(instance):
-    assert isinstance(instance.rotation, str)
-
-
-@given(instance=mm::styles::Style_strategy)
-def test_mm::styles::style_rotation_setter(instance):
-    original = instance.rotation
-    instance.rotation = original
-    assert instance.rotation == original
-
-@given(instance=mm::styles::Style_strategy)
-def test_mm::styles::style_angle_type(instance):
-    assert isinstance(instance.angle, str)
-
-
-@given(instance=mm::styles::Style_strategy)
-def test_mm::styles::style_angle_setter(instance):
+@given(instance=mm_styles_Style_strategy)
+def test_mm_styles_style_angle_setter(instance):
     original = instance.angle
     instance.angle = original
     assert instance.angle == original
 
-@given(instance=pictograms::ContainerShape_strategy)
+
+
+@given(instance=mm_styles_Style_strategy)
+def test_mm_styles_style_stretchV_setter(instance):
+    original = instance.stretchV
+    instance.stretchV = original
+    assert instance.stretchV == original
+
+
+
+@given(instance=mm_styles_Style_strategy)
+def test_mm_styles_style_rotation_setter(instance):
+    original = instance.rotation
+    instance.rotation = original
+    assert instance.rotation == original
+
+
+
+@given(instance=mm_styles_Style_strategy)
+def test_mm_styles_style_proportional_setter(instance):
+    original = instance.proportional
+    instance.proportional = original
+    assert instance.proportional == original
+
+
+
+@given(instance=mm_styles_Style_strategy)
+def test_mm_styles_style_stretchH_setter(instance):
+    original = instance.stretchH
+    instance.stretchH = original
+    assert instance.stretchH == original
+
+
+
+@given(instance=mm_styles_Style_strategy)
+def test_mm_styles_style_id_setter(instance):
+    original = instance.id
+    instance.id = original
+    assert instance.id == original
+
+
+
+@given(instance=mm_styles_Style_strategy)
+def test_mm_styles_style_description_setter(instance):
+    original = instance.description
+    instance.description = original
+    assert instance.description == original
+
+
+
+@given(instance=mm_styles_Style_strategy)
+def test_mm_styles_style_verticalAlignment_setter(instance):
+    original = instance.verticalAlignment
+    instance.verticalAlignment = original
+    assert instance.verticalAlignment == original
+
+
+
+@given(instance=mm_styles_Style_strategy)
+def test_mm_styles_style_horizontalAlignment_setter(instance):
+    original = instance.horizontalAlignment
+    instance.horizontalAlignment = original
+    assert instance.horizontalAlignment == original
+
+@given(instance=pictograms_ContainerShape_strategy)
 @settings(max_examples=50)
-def test_pictograms::containershape_instantiation(instance):
-    assert isinstance(instance, pictograms::ContainerShape)
+def test_pictograms_containershape_instantiation(instance):
+    assert isinstance(instance, pictograms_ContainerShape)
 
-@given(instance=mm::pictograms::Diagram_strategy)
+@given(instance=mm_pictograms_Diagram_strategy)
 @settings(max_examples=50)
-def test_mm::pictograms::diagram_instantiation(instance):
-    assert isinstance(instance, mm::pictograms::Diagram)
-
-@given(instance=mm::pictograms::Diagram_strategy)
-def test_mm::pictograms::diagram_snapToGrid_type(instance):
-    assert isinstance(instance.snapToGrid, bool)
+def test_mm_pictograms_diagram_instantiation(instance):
+    assert isinstance(instance, mm_pictograms_Diagram)
 
 
-@given(instance=mm::pictograms::Diagram_strategy)
-def test_mm::pictograms::diagram_snapToGrid_setter(instance):
-    original = instance.snapToGrid
-    instance.snapToGrid = original
-    assert instance.snapToGrid == original
 
-@given(instance=mm::pictograms::Diagram_strategy)
-def test_mm::pictograms::diagram_diagramTypeId_type(instance):
-    assert isinstance(instance.diagramTypeId, str)
-
-
-@given(instance=mm::pictograms::Diagram_strategy)
-def test_mm::pictograms::diagram_diagramTypeId_setter(instance):
+@given(instance=mm_pictograms_Diagram_strategy)
+def test_mm_pictograms_diagram_diagramTypeId_setter(instance):
     original = instance.diagramTypeId
     instance.diagramTypeId = original
     assert instance.diagramTypeId == original
 
-@given(instance=mm::pictograms::Diagram_strategy)
-def test_mm::pictograms::diagram_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
-@given(instance=mm::pictograms::Diagram_strategy)
-def test_mm::pictograms::diagram_name_setter(instance):
+@given(instance=mm_pictograms_Diagram_strategy)
+def test_mm_pictograms_diagram_showGuides_setter(instance):
+    original = instance.showGuides
+    instance.showGuides = original
+    assert instance.showGuides == original
+
+
+
+@given(instance=mm_pictograms_Diagram_strategy)
+def test_mm_pictograms_diagram_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=mm::pictograms::Diagram_strategy)
-def test_mm::pictograms::diagram_gridUnit_type(instance):
-    assert isinstance(instance.gridUnit, int)
 
 
-@given(instance=mm::pictograms::Diagram_strategy)
-def test_mm::pictograms::diagram_gridUnit_setter(instance):
-    original = instance.gridUnit
-    instance.gridUnit = original
-    assert instance.gridUnit == original
-
-@given(instance=mm::pictograms::Diagram_strategy)
-def test_mm::pictograms::diagram_version_type(instance):
-    assert isinstance(instance.version, str)
-
-
-@given(instance=mm::pictograms::Diagram_strategy)
-def test_mm::pictograms::diagram_version_setter(instance):
-    original = instance.version
-    instance.version = original
-    assert instance.version == original
-
-@given(instance=mm::pictograms::Diagram_strategy)
-def test_mm::pictograms::diagram_verticalGridUnit_type(instance):
-    assert isinstance(instance.verticalGridUnit, int)
-
-
-@given(instance=mm::pictograms::Diagram_strategy)
-def test_mm::pictograms::diagram_verticalGridUnit_setter(instance):
+@given(instance=mm_pictograms_Diagram_strategy)
+def test_mm_pictograms_diagram_verticalGridUnit_setter(instance):
     original = instance.verticalGridUnit
     instance.verticalGridUnit = original
     assert instance.verticalGridUnit == original
 
-@given(instance=mm::pictograms::Diagram_strategy)
-def test_mm::pictograms::diagram_showGuides_type(instance):
-    assert isinstance(instance.showGuides, bool)
 
 
-@given(instance=mm::pictograms::Diagram_strategy)
-def test_mm::pictograms::diagram_showGuides_setter(instance):
-    original = instance.showGuides
-    instance.showGuides = original
-    assert instance.showGuides == original
+@given(instance=mm_pictograms_Diagram_strategy)
+def test_mm_pictograms_diagram_version_setter(instance):
+    original = instance.version
+    instance.version = original
+    assert instance.version == original
+
+
+
+@given(instance=mm_pictograms_Diagram_strategy)
+def test_mm_pictograms_diagram_snapToGrid_setter(instance):
+    original = instance.snapToGrid
+    instance.snapToGrid = original
+    assert instance.snapToGrid == original
+
+
+
+@given(instance=mm_pictograms_Diagram_strategy)
+def test_mm_pictograms_diagram_gridUnit_setter(instance):
+    original = instance.gridUnit
+    instance.gridUnit = original
+    assert instance.gridUnit == original
 
 @given(instance=Diagram_strategy)
 @settings(max_examples=50)
@@ -3089,276 +2951,219 @@ def test_diagram_instantiation(instance):
 def test_anchor_instantiation(instance):
     assert isinstance(instance, Anchor)
 
-@given(instance=mm::pictograms::ChopboxAnchor_strategy)
+@given(instance=mm_pictograms_AdvancedAnchor_strategy)
 @settings(max_examples=50)
-def test_mm::pictograms::chopboxanchor_instantiation(instance):
-    assert isinstance(instance, mm::pictograms::ChopboxAnchor)
-
-@given(instance=mm::pictograms::AdvancedAnchor_strategy)
-@settings(max_examples=50)
-def test_mm::pictograms::advancedanchor_instantiation(instance):
-    assert isinstance(instance, mm::pictograms::AdvancedAnchor)
-
-@given(instance=mm::pictograms::AdvancedAnchor_strategy)
-def test_mm::pictograms::advancedanchor_useAnchorLocationAsConnectionEndpoint_type(instance):
-    assert isinstance(instance.useAnchorLocationAsConnectionEndpoint, bool)
+def test_mm_pictograms_advancedanchor_instantiation(instance):
+    assert isinstance(instance, mm_pictograms_AdvancedAnchor)
 
 
-@given(instance=mm::pictograms::AdvancedAnchor_strategy)
-def test_mm::pictograms::advancedanchor_useAnchorLocationAsConnectionEndpoint_setter(instance):
+
+@given(instance=mm_pictograms_AdvancedAnchor_strategy)
+def test_mm_pictograms_advancedanchor_useAnchorLocationAsConnectionEndpoint_setter(instance):
     original = instance.useAnchorLocationAsConnectionEndpoint
     instance.useAnchorLocationAsConnectionEndpoint = original
     assert instance.useAnchorLocationAsConnectionEndpoint == original
+
+@given(instance=mm_pictograms_ChopboxAnchor_strategy)
+@settings(max_examples=50)
+def test_mm_pictograms_chopboxanchor_instantiation(instance):
+    assert isinstance(instance, mm_pictograms_ChopboxAnchor)
 
 @given(instance=GraphicsAlgorithm_strategy)
 @settings(max_examples=50)
 def test_graphicsalgorithm_instantiation(instance):
     assert isinstance(instance, GraphicsAlgorithm)
 
-@given(instance=mm::algorithms::Rectangle_strategy)
+@given(instance=mm_algorithms_Image_strategy)
 @settings(max_examples=50)
-def test_mm::algorithms::rectangle_instantiation(instance):
-    assert isinstance(instance, mm::algorithms::Rectangle)
-
-@given(instance=mm::algorithms::RoundedRectangle_strategy)
-@settings(max_examples=50)
-def test_mm::algorithms::roundedrectangle_instantiation(instance):
-    assert isinstance(instance, mm::algorithms::RoundedRectangle)
-
-@given(instance=mm::algorithms::RoundedRectangle_strategy)
-def test_mm::algorithms::roundedrectangle_cornerHeight_type(instance):
-    assert isinstance(instance.cornerHeight, int)
+def test_mm_algorithms_image_instantiation(instance):
+    assert isinstance(instance, mm_algorithms_Image)
 
 
-@given(instance=mm::algorithms::RoundedRectangle_strategy)
-def test_mm::algorithms::roundedrectangle_cornerHeight_setter(instance):
-    original = instance.cornerHeight
-    instance.cornerHeight = original
-    assert instance.cornerHeight == original
 
-@given(instance=mm::algorithms::RoundedRectangle_strategy)
-def test_mm::algorithms::roundedrectangle_cornerWidth_type(instance):
-    assert isinstance(instance.cornerWidth, int)
-
-
-@given(instance=mm::algorithms::RoundedRectangle_strategy)
-def test_mm::algorithms::roundedrectangle_cornerWidth_setter(instance):
-    original = instance.cornerWidth
-    instance.cornerWidth = original
-    assert instance.cornerWidth == original
-
-@given(instance=mm::algorithms::Polyline_strategy)
-@settings(max_examples=50)
-def test_mm::algorithms::polyline_instantiation(instance):
-    assert isinstance(instance, mm::algorithms::Polyline)
-
-@given(instance=mm::algorithms::Ellipse_strategy)
-@settings(max_examples=50)
-def test_mm::algorithms::ellipse_instantiation(instance):
-    assert isinstance(instance, mm::algorithms::Ellipse)
-
-@given(instance=mm::algorithms::PlatformGraphicsAlgorithm_strategy)
-@settings(max_examples=50)
-def test_mm::algorithms::platformgraphicsalgorithm_instantiation(instance):
-    assert isinstance(instance, mm::algorithms::PlatformGraphicsAlgorithm)
-
-@given(instance=mm::algorithms::PlatformGraphicsAlgorithm_strategy)
-def test_mm::algorithms::platformgraphicsalgorithm_id_type(instance):
-    assert isinstance(instance.id, str)
-
-
-@given(instance=mm::algorithms::PlatformGraphicsAlgorithm_strategy)
-def test_mm::algorithms::platformgraphicsalgorithm_id_setter(instance):
-    original = instance.id
-    instance.id = original
-    assert instance.id == original
-
-@given(instance=mm::algorithms::AbstractText_strategy)
-@settings(max_examples=50)
-def test_mm::algorithms::abstracttext_instantiation(instance):
-    assert isinstance(instance, mm::algorithms::AbstractText)
-
-@given(instance=mm::algorithms::AbstractText_strategy)
-def test_mm::algorithms::abstracttext_verticalAlignment_type(instance):
-    assert isinstance(instance.verticalAlignment, str)
-
-
-@given(instance=mm::algorithms::AbstractText_strategy)
-def test_mm::algorithms::abstracttext_verticalAlignment_setter(instance):
-    original = instance.verticalAlignment
-    instance.verticalAlignment = original
-    assert instance.verticalAlignment == original
-
-@given(instance=mm::algorithms::AbstractText_strategy)
-def test_mm::algorithms::abstracttext_horizontalAlignment_type(instance):
-    assert isinstance(instance.horizontalAlignment, str)
-
-
-@given(instance=mm::algorithms::AbstractText_strategy)
-def test_mm::algorithms::abstracttext_horizontalAlignment_setter(instance):
-    original = instance.horizontalAlignment
-    instance.horizontalAlignment = original
-    assert instance.horizontalAlignment == original
-
-@given(instance=mm::algorithms::AbstractText_strategy)
-def test_mm::algorithms::abstracttext_angle_type(instance):
-    assert isinstance(instance.angle, str)
-
-
-@given(instance=mm::algorithms::AbstractText_strategy)
-def test_mm::algorithms::abstracttext_angle_setter(instance):
-    original = instance.angle
-    instance.angle = original
-    assert instance.angle == original
-
-@given(instance=mm::algorithms::AbstractText_strategy)
-def test_mm::algorithms::abstracttext_rotation_type(instance):
-    assert isinstance(instance.rotation, str)
-
-
-@given(instance=mm::algorithms::AbstractText_strategy)
-def test_mm::algorithms::abstracttext_rotation_setter(instance):
-    original = instance.rotation
-    instance.rotation = original
-    assert instance.rotation == original
-
-@given(instance=mm::algorithms::AbstractText_strategy)
-def test_mm::algorithms::abstracttext_value_type(instance):
-    assert isinstance(instance.value, str)
-
-
-@given(instance=mm::algorithms::AbstractText_strategy)
-def test_mm::algorithms::abstracttext_value_setter(instance):
-    original = instance.value
-    instance.value = original
-    assert instance.value == original
-
-@given(instance=mm::algorithms::Image_strategy)
-@settings(max_examples=50)
-def test_mm::algorithms::image_instantiation(instance):
-    assert isinstance(instance, mm::algorithms::Image)
-
-@given(instance=mm::algorithms::Image_strategy)
-def test_mm::algorithms::image_stretchV_type(instance):
-    assert isinstance(instance.stretchV, str)
-
-
-@given(instance=mm::algorithms::Image_strategy)
-def test_mm::algorithms::image_stretchV_setter(instance):
-    original = instance.stretchV
-    instance.stretchV = original
-    assert instance.stretchV == original
-
-@given(instance=mm::algorithms::Image_strategy)
-def test_mm::algorithms::image_proportional_type(instance):
-    assert isinstance(instance.proportional, str)
-
-
-@given(instance=mm::algorithms::Image_strategy)
-def test_mm::algorithms::image_proportional_setter(instance):
-    original = instance.proportional
-    instance.proportional = original
-    assert instance.proportional == original
-
-@given(instance=mm::algorithms::Image_strategy)
-def test_mm::algorithms::image_stretchH_type(instance):
-    assert isinstance(instance.stretchH, str)
-
-
-@given(instance=mm::algorithms::Image_strategy)
-def test_mm::algorithms::image_stretchH_setter(instance):
+@given(instance=mm_algorithms_Image_strategy)
+def test_mm_algorithms_image_stretchH_setter(instance):
     original = instance.stretchH
     instance.stretchH = original
     assert instance.stretchH == original
 
-@given(instance=mm::algorithms::Image_strategy)
-def test_mm::algorithms::image_id_type(instance):
-    assert isinstance(instance.id, str)
 
 
-@given(instance=mm::algorithms::Image_strategy)
-def test_mm::algorithms::image_id_setter(instance):
+@given(instance=mm_algorithms_Image_strategy)
+def test_mm_algorithms_image_stretchV_setter(instance):
+    original = instance.stretchV
+    instance.stretchV = original
+    assert instance.stretchV == original
+
+
+
+@given(instance=mm_algorithms_Image_strategy)
+def test_mm_algorithms_image_id_setter(instance):
     original = instance.id
     instance.id = original
     assert instance.id == original
+
+
+
+@given(instance=mm_algorithms_Image_strategy)
+def test_mm_algorithms_image_proportional_setter(instance):
+    original = instance.proportional
+    instance.proportional = original
+    assert instance.proportional == original
+
+@given(instance=mm_algorithms_RoundedRectangle_strategy)
+@settings(max_examples=50)
+def test_mm_algorithms_roundedrectangle_instantiation(instance):
+    assert isinstance(instance, mm_algorithms_RoundedRectangle)
+
+
+
+@given(instance=mm_algorithms_RoundedRectangle_strategy)
+def test_mm_algorithms_roundedrectangle_cornerHeight_setter(instance):
+    original = instance.cornerHeight
+    instance.cornerHeight = original
+    assert instance.cornerHeight == original
+
+
+
+@given(instance=mm_algorithms_RoundedRectangle_strategy)
+def test_mm_algorithms_roundedrectangle_cornerWidth_setter(instance):
+    original = instance.cornerWidth
+    instance.cornerWidth = original
+    assert instance.cornerWidth == original
+
+@given(instance=mm_algorithms_AbstractText_strategy)
+@settings(max_examples=50)
+def test_mm_algorithms_abstracttext_instantiation(instance):
+    assert isinstance(instance, mm_algorithms_AbstractText)
+
+
+
+@given(instance=mm_algorithms_AbstractText_strategy)
+def test_mm_algorithms_abstracttext_horizontalAlignment_setter(instance):
+    original = instance.horizontalAlignment
+    instance.horizontalAlignment = original
+    assert instance.horizontalAlignment == original
+
+
+
+@given(instance=mm_algorithms_AbstractText_strategy)
+def test_mm_algorithms_abstracttext_value_setter(instance):
+    original = instance.value
+    instance.value = original
+    assert instance.value == original
+
+
+
+@given(instance=mm_algorithms_AbstractText_strategy)
+def test_mm_algorithms_abstracttext_verticalAlignment_setter(instance):
+    original = instance.verticalAlignment
+    instance.verticalAlignment = original
+    assert instance.verticalAlignment == original
+
+
+
+@given(instance=mm_algorithms_AbstractText_strategy)
+def test_mm_algorithms_abstracttext_rotation_setter(instance):
+    original = instance.rotation
+    instance.rotation = original
+    assert instance.rotation == original
+
+
+
+@given(instance=mm_algorithms_AbstractText_strategy)
+def test_mm_algorithms_abstracttext_angle_setter(instance):
+    original = instance.angle
+    instance.angle = original
+    assert instance.angle == original
+
+@given(instance=mm_algorithms_Polyline_strategy)
+@settings(max_examples=50)
+def test_mm_algorithms_polyline_instantiation(instance):
+    assert isinstance(instance, mm_algorithms_Polyline)
+
+@given(instance=mm_algorithms_PlatformGraphicsAlgorithm_strategy)
+@settings(max_examples=50)
+def test_mm_algorithms_platformgraphicsalgorithm_instantiation(instance):
+    assert isinstance(instance, mm_algorithms_PlatformGraphicsAlgorithm)
+
+
+
+@given(instance=mm_algorithms_PlatformGraphicsAlgorithm_strategy)
+def test_mm_algorithms_platformgraphicsalgorithm_id_setter(instance):
+    original = instance.id
+    instance.id = original
+    assert instance.id == original
+
+@given(instance=mm_algorithms_Ellipse_strategy)
+@settings(max_examples=50)
+def test_mm_algorithms_ellipse_instantiation(instance):
+    assert isinstance(instance, mm_algorithms_Ellipse)
+
+@given(instance=mm_algorithms_Rectangle_strategy)
+@settings(max_examples=50)
+def test_mm_algorithms_rectangle_instantiation(instance):
+    assert isinstance(instance, mm_algorithms_Rectangle)
 
 @given(instance=GraphicsAlgorithmContainer_strategy)
 @settings(max_examples=50)
 def test_graphicsalgorithmcontainer_instantiation(instance):
     assert isinstance(instance, GraphicsAlgorithmContainer)
 
-@given(instance=mm::algorithms::GraphicsAlgorithm_strategy)
+@given(instance=mm_algorithms_GraphicsAlgorithm_strategy)
 @settings(max_examples=50)
-def test_mm::algorithms::graphicsalgorithm_instantiation(instance):
-    assert isinstance(instance, mm::algorithms::GraphicsAlgorithm)
-
-@given(instance=mm::algorithms::GraphicsAlgorithm_strategy)
-def test_mm::algorithms::graphicsalgorithm_width_type(instance):
-    assert isinstance(instance.width, int)
+def test_mm_algorithms_graphicsalgorithm_instantiation(instance):
+    assert isinstance(instance, mm_algorithms_GraphicsAlgorithm)
 
 
-@given(instance=mm::algorithms::GraphicsAlgorithm_strategy)
-def test_mm::algorithms::graphicsalgorithm_width_setter(instance):
+
+@given(instance=mm_algorithms_GraphicsAlgorithm_strategy)
+def test_mm_algorithms_graphicsalgorithm_width_setter(instance):
     original = instance.width
     instance.width = original
     assert instance.width == original
 
-@given(instance=mm::algorithms::GraphicsAlgorithm_strategy)
-def test_mm::algorithms::graphicsalgorithm_y_type(instance):
-    assert isinstance(instance.y, int)
 
 
-@given(instance=mm::algorithms::GraphicsAlgorithm_strategy)
-def test_mm::algorithms::graphicsalgorithm_y_setter(instance):
-    original = instance.y
-    instance.y = original
-    assert instance.y == original
-
-@given(instance=mm::algorithms::GraphicsAlgorithm_strategy)
-def test_mm::algorithms::graphicsalgorithm_x_type(instance):
-    assert isinstance(instance.x, int)
-
-
-@given(instance=mm::algorithms::GraphicsAlgorithm_strategy)
-def test_mm::algorithms::graphicsalgorithm_x_setter(instance):
-    original = instance.x
-    instance.x = original
-    assert instance.x == original
-
-@given(instance=mm::algorithms::GraphicsAlgorithm_strategy)
-def test_mm::algorithms::graphicsalgorithm_height_type(instance):
-    assert isinstance(instance.height, int)
-
-
-@given(instance=mm::algorithms::GraphicsAlgorithm_strategy)
-def test_mm::algorithms::graphicsalgorithm_height_setter(instance):
+@given(instance=mm_algorithms_GraphicsAlgorithm_strategy)
+def test_mm_algorithms_graphicsalgorithm_height_setter(instance):
     original = instance.height
     instance.height = original
     assert instance.height == original
 
-@given(instance=mm::pictograms::PictogramElement_strategy)
+
+
+@given(instance=mm_algorithms_GraphicsAlgorithm_strategy)
+def test_mm_algorithms_graphicsalgorithm_x_setter(instance):
+    original = instance.x
+    instance.x = original
+    assert instance.x == original
+
+
+
+@given(instance=mm_algorithms_GraphicsAlgorithm_strategy)
+def test_mm_algorithms_graphicsalgorithm_y_setter(instance):
+    original = instance.y
+    instance.y = original
+    assert instance.y == original
+
+@given(instance=mm_pictograms_PictogramElement_strategy)
 @settings(max_examples=50)
-def test_mm::pictograms::pictogramelement_instantiation(instance):
-    assert isinstance(instance, mm::pictograms::PictogramElement)
-
-@given(instance=mm::pictograms::PictogramElement_strategy)
-def test_mm::pictograms::pictogramelement_active_type(instance):
-    assert isinstance(instance.active, bool)
+def test_mm_pictograms_pictogramelement_instantiation(instance):
+    assert isinstance(instance, mm_pictograms_PictogramElement)
 
 
-@given(instance=mm::pictograms::PictogramElement_strategy)
-def test_mm::pictograms::pictogramelement_active_setter(instance):
+
+@given(instance=mm_pictograms_PictogramElement_strategy)
+def test_mm_pictograms_pictogramelement_active_setter(instance):
     original = instance.active
     instance.active = original
     assert instance.active == original
 
-@given(instance=mm::pictograms::PictogramElement_strategy)
-def test_mm::pictograms::pictogramelement_visible_type(instance):
-    assert isinstance(instance.visible, bool)
 
 
-@given(instance=mm::pictograms::PictogramElement_strategy)
-def test_mm::pictograms::pictogramelement_visible_setter(instance):
+@given(instance=mm_pictograms_PictogramElement_strategy)
+def test_mm_pictograms_pictogramelement_visible_setter(instance):
     original = instance.visible
     instance.visible = original
     assert instance.visible == original
@@ -3368,69 +3173,57 @@ def test_mm::pictograms::pictogramelement_visible_setter(instance):
 def test_pictogramlink_instantiation(instance):
     assert isinstance(instance, PictogramLink)
 
-@given(instance=mm::Property_strategy)
+@given(instance=mm_Property_strategy)
 @settings(max_examples=50)
-def test_mm::property_instantiation(instance):
-    assert isinstance(instance, mm::Property)
-
-@given(instance=mm::Property_strategy)
-def test_mm::property_value_type(instance):
-    assert isinstance(instance.value, str)
+def test_mm_property_instantiation(instance):
+    assert isinstance(instance, mm_Property)
 
 
-@given(instance=mm::Property_strategy)
-def test_mm::property_value_setter(instance):
-    original = instance.value
-    instance.value = original
-    assert instance.value == original
 
-@given(instance=mm::Property_strategy)
-def test_mm::property_key_type(instance):
-    assert isinstance(instance.key, str)
-
-
-@given(instance=mm::Property_strategy)
-def test_mm::property_key_setter(instance):
+@given(instance=mm_Property_strategy)
+def test_mm_property_key_setter(instance):
     original = instance.key
     instance.key = original
     assert instance.key == original
+
+
+
+@given(instance=mm_Property_strategy)
+def test_mm_property_value_setter(instance):
+    original = instance.value
+    instance.value = original
+    assert instance.value == original
 
 @given(instance=Shape_strategy)
 @settings(max_examples=50)
 def test_shape_instantiation(instance):
     assert isinstance(instance, Shape)
 
-@given(instance=mm::pictograms::ConnectionDecorator_strategy)
+@given(instance=mm_pictograms_ConnectionDecorator_strategy)
 @settings(max_examples=50)
-def test_mm::pictograms::connectiondecorator_instantiation(instance):
-    assert isinstance(instance, mm::pictograms::ConnectionDecorator)
-
-@given(instance=mm::pictograms::ConnectionDecorator_strategy)
-def test_mm::pictograms::connectiondecorator_locationRelative_type(instance):
-    assert isinstance(instance.locationRelative, bool)
+def test_mm_pictograms_connectiondecorator_instantiation(instance):
+    assert isinstance(instance, mm_pictograms_ConnectionDecorator)
 
 
-@given(instance=mm::pictograms::ConnectionDecorator_strategy)
-def test_mm::pictograms::connectiondecorator_locationRelative_setter(instance):
-    original = instance.locationRelative
-    instance.locationRelative = original
-    assert instance.locationRelative == original
 
-@given(instance=mm::pictograms::ConnectionDecorator_strategy)
-def test_mm::pictograms::connectiondecorator_location_type(instance):
-    assert isinstance(instance.location, float)
-
-
-@given(instance=mm::pictograms::ConnectionDecorator_strategy)
-def test_mm::pictograms::connectiondecorator_location_setter(instance):
+@given(instance=mm_pictograms_ConnectionDecorator_strategy)
+def test_mm_pictograms_connectiondecorator_location_setter(instance):
     original = instance.location
     instance.location = original
     assert instance.location == original
 
-@given(instance=mm::pictograms::ContainerShape_strategy)
+
+
+@given(instance=mm_pictograms_ConnectionDecorator_strategy)
+def test_mm_pictograms_connectiondecorator_locationRelative_setter(instance):
+    original = instance.locationRelative
+    instance.locationRelative = original
+    assert instance.locationRelative == original
+
+@given(instance=mm_pictograms_ContainerShape_strategy)
 @settings(max_examples=50)
-def test_mm::pictograms::containershape_instantiation(instance):
-    assert isinstance(instance, mm::pictograms::ContainerShape)
+def test_mm_pictograms_containershape_instantiation(instance):
+    assert isinstance(instance, mm_pictograms_ContainerShape)
 
 @given(instance=ContainerShape_strategy)
 @settings(max_examples=50)
@@ -3442,42 +3235,42 @@ def test_containershape_instantiation(instance):
 def test_anchorcontainer_instantiation(instance):
     assert isinstance(instance, AnchorContainer)
 
-@given(instance=mm::pictograms::Connection_strategy)
+@given(instance=mm_pictograms_Connection_strategy)
 @settings(max_examples=50)
-def test_mm::pictograms::connection_instantiation(instance):
-    assert isinstance(instance, mm::pictograms::Connection)
+def test_mm_pictograms_connection_instantiation(instance):
+    assert isinstance(instance, mm_pictograms_Connection)
 
-@given(instance=mm::pictograms::Shape_strategy)
+@given(instance=mm_pictograms_Shape_strategy)
 @settings(max_examples=50)
-def test_mm::pictograms::shape_instantiation(instance):
-    assert isinstance(instance, mm::pictograms::Shape)
+def test_mm_pictograms_shape_instantiation(instance):
+    assert isinstance(instance, mm_pictograms_Shape)
 
-@given(instance=styles::Style_strategy)
+@given(instance=styles_Style_strategy)
 @settings(max_examples=50)
-def test_styles::style_instantiation(instance):
-    assert isinstance(instance, styles::Style)
+def test_styles_style_instantiation(instance):
+    assert isinstance(instance, styles_Style)
 
-@given(instance=mm::StyleContainer_strategy)
+@given(instance=mm_StyleContainer_strategy)
 @settings(max_examples=50)
-def test_mm::stylecontainer_instantiation(instance):
-    assert isinstance(instance, mm::StyleContainer)
+def test_mm_stylecontainer_instantiation(instance):
+    assert isinstance(instance, mm_StyleContainer)
 
 @given(instance=PropertyContainer_strategy)
 @settings(max_examples=50)
 def test_propertycontainer_instantiation(instance):
     assert isinstance(instance, PropertyContainer)
 
-@given(instance=mm::pictograms::PictogramLink_strategy)
+@given(instance=mm_pictograms_PictogramLink_strategy)
 @settings(max_examples=50)
-def test_mm::pictograms::pictogramlink_instantiation(instance):
-    assert isinstance(instance, mm::pictograms::PictogramLink)
+def test_mm_pictograms_pictogramlink_instantiation(instance):
+    assert isinstance(instance, mm_pictograms_PictogramLink)
 
-@given(instance=mm::GraphicsAlgorithmContainer_strategy)
+@given(instance=mm_GraphicsAlgorithmContainer_strategy)
 @settings(max_examples=50)
-def test_mm::graphicsalgorithmcontainer_instantiation(instance):
-    assert isinstance(instance, mm::GraphicsAlgorithmContainer)
+def test_mm_graphicsalgorithmcontainer_instantiation(instance):
+    assert isinstance(instance, mm_GraphicsAlgorithmContainer)
 
-@given(instance=mm::PropertyContainer_strategy)
+@given(instance=mm_PropertyContainer_strategy)
 @settings(max_examples=50)
-def test_mm::propertycontainer_instantiation(instance):
-    assert isinstance(instance, mm::PropertyContainer)
+def test_mm_propertycontainer_instantiation(instance):
+    assert isinstance(instance, mm_PropertyContainer)

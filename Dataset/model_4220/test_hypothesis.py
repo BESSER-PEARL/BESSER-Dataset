@@ -3,13 +3,13 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    CompanyModel::Product,
-    CompanyModel::Employee,
-    CompanyModel::Department,
-    CompanyModel::Company,
+from python_code import (
+    CompanyModel_Product,
+    CompanyModel_Employee,
+    CompanyModel_Department,
+    CompanyModel_Company,
 )
 
 # =============================================================================
@@ -18,33 +18,33 @@ from classes import (
 
 
 
-def test_companymodel::product_is_not_abstract():
-    assert not inspect.isabstract(CompanyModel::Product)
+def test_companymodel_product_is_not_abstract():
+    assert not inspect.isabstract(CompanyModel_Product)
 
 
-def test_companymodel::product_constructor_exists():
-    assert callable(CompanyModel::Product.__init__)
+def test_companymodel_product_constructor_exists():
+    assert callable(CompanyModel_Product.__init__)
 
 
-def test_companymodel::product_constructor_args():
-    sig = inspect.signature(CompanyModel::Product.__init__)
+def test_companymodel_product_constructor_args():
+    sig = inspect.signature(CompanyModel_Product.__init__)
     params = list(sig.parameters.keys())
     assert "productID" in params, "Missing parameter 'productID'"
     assert "name" in params, "Missing parameter 'name'"
 
-def test_companymodel::product_has_productID():
-    assert hasattr(CompanyModel::Product, "productID")
+def test_companymodel_product_has_productID():
+    assert hasattr(CompanyModel_Product, "productID")
     descriptor = None
-    for klass in CompanyModel::Product.__mro__:
+    for klass in CompanyModel_Product.__mro__:
         if "productID" in klass.__dict__:
             descriptor = klass.__dict__["productID"]
             break
     assert isinstance(descriptor, property)
 
-def test_companymodel::product_has_name():
-    assert hasattr(CompanyModel::Product, "name")
+def test_companymodel_product_has_name():
+    assert hasattr(CompanyModel_Product, "name")
     descriptor = None
-    for klass in CompanyModel::Product.__mro__:
+    for klass in CompanyModel_Product.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -52,33 +52,33 @@ def test_companymodel::product_has_name():
 
 
 
-def test_companymodel::employee_is_not_abstract():
-    assert not inspect.isabstract(CompanyModel::Employee)
+def test_companymodel_employee_is_not_abstract():
+    assert not inspect.isabstract(CompanyModel_Employee)
 
 
-def test_companymodel::employee_constructor_exists():
-    assert callable(CompanyModel::Employee.__init__)
+def test_companymodel_employee_constructor_exists():
+    assert callable(CompanyModel_Employee.__init__)
 
 
-def test_companymodel::employee_constructor_args():
-    sig = inspect.signature(CompanyModel::Employee.__init__)
+def test_companymodel_employee_constructor_args():
+    sig = inspect.signature(CompanyModel_Employee.__init__)
     params = list(sig.parameters.keys())
     assert "isManager" in params, "Missing parameter 'isManager'"
     assert "name" in params, "Missing parameter 'name'"
 
-def test_companymodel::employee_has_isManager():
-    assert hasattr(CompanyModel::Employee, "isManager")
+def test_companymodel_employee_has_isManager():
+    assert hasattr(CompanyModel_Employee, "isManager")
     descriptor = None
-    for klass in CompanyModel::Employee.__mro__:
+    for klass in CompanyModel_Employee.__mro__:
         if "isManager" in klass.__dict__:
             descriptor = klass.__dict__["isManager"]
             break
     assert isinstance(descriptor, property)
 
-def test_companymodel::employee_has_name():
-    assert hasattr(CompanyModel::Employee, "name")
+def test_companymodel_employee_has_name():
+    assert hasattr(CompanyModel_Employee, "name")
     descriptor = None
-    for klass in CompanyModel::Employee.__mro__:
+    for klass in CompanyModel_Employee.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -86,23 +86,23 @@ def test_companymodel::employee_has_name():
 
 
 
-def test_companymodel::department_is_not_abstract():
-    assert not inspect.isabstract(CompanyModel::Department)
+def test_companymodel_department_is_not_abstract():
+    assert not inspect.isabstract(CompanyModel_Department)
 
 
-def test_companymodel::department_constructor_exists():
-    assert callable(CompanyModel::Department.__init__)
+def test_companymodel_department_constructor_exists():
+    assert callable(CompanyModel_Department.__init__)
 
 
-def test_companymodel::department_constructor_args():
-    sig = inspect.signature(CompanyModel::Department.__init__)
+def test_companymodel_department_constructor_args():
+    sig = inspect.signature(CompanyModel_Department.__init__)
     params = list(sig.parameters.keys())
     assert "number" in params, "Missing parameter 'number'"
 
-def test_companymodel::department_has_number():
-    assert hasattr(CompanyModel::Department, "number")
+def test_companymodel_department_has_number():
+    assert hasattr(CompanyModel_Department, "number")
     descriptor = None
-    for klass in CompanyModel::Department.__mro__:
+    for klass in CompanyModel_Department.__mro__:
         if "number" in klass.__dict__:
             descriptor = klass.__dict__["number"]
             break
@@ -110,23 +110,23 @@ def test_companymodel::department_has_number():
 
 
 
-def test_companymodel::company_is_not_abstract():
-    assert not inspect.isabstract(CompanyModel::Company)
+def test_companymodel_company_is_not_abstract():
+    assert not inspect.isabstract(CompanyModel_Company)
 
 
-def test_companymodel::company_constructor_exists():
-    assert callable(CompanyModel::Company.__init__)
+def test_companymodel_company_constructor_exists():
+    assert callable(CompanyModel_Company.__init__)
 
 
-def test_companymodel::company_constructor_args():
-    sig = inspect.signature(CompanyModel::Company.__init__)
+def test_companymodel_company_constructor_args():
+    sig = inspect.signature(CompanyModel_Company.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_companymodel::company_has_name():
-    assert hasattr(CompanyModel::Company, "name")
+def test_companymodel_company_has_name():
+    assert hasattr(CompanyModel_Company, "name")
     descriptor = None
-    for klass in CompanyModel::Company.__mro__:
+    for klass in CompanyModel_Company.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -144,113 +144,95 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-CompanyModel::Product_strategy = st.builds(
-    CompanyModel::Product,
+CompanyModel_Product_strategy = st.builds(
+    CompanyModel_Product,
     productID=
         st.integers(),
     name=
         safe_text
 )
-CompanyModel::Employee_strategy = st.builds(
-    CompanyModel::Employee,
+CompanyModel_Employee_strategy = st.builds(
+    CompanyModel_Employee,
     isManager=
         st.booleans(),
     name=
         safe_text
 )
-CompanyModel::Department_strategy = st.builds(
-    CompanyModel::Department,
+CompanyModel_Department_strategy = st.builds(
+    CompanyModel_Department,
     number=
         st.integers()
 )
-CompanyModel::Company_strategy = st.builds(
-    CompanyModel::Company,
+CompanyModel_Company_strategy = st.builds(
+    CompanyModel_Company,
     name=
         safe_text
 )
 
-@given(instance=CompanyModel::Product_strategy)
+@given(instance=CompanyModel_Product_strategy)
 @settings(max_examples=50)
-def test_companymodel::product_instantiation(instance):
-    assert isinstance(instance, CompanyModel::Product)
-
-@given(instance=CompanyModel::Product_strategy)
-def test_companymodel::product_productID_type(instance):
-    assert isinstance(instance.productID, int)
+def test_companymodel_product_instantiation(instance):
+    assert isinstance(instance, CompanyModel_Product)
 
 
-@given(instance=CompanyModel::Product_strategy)
-def test_companymodel::product_productID_setter(instance):
+
+@given(instance=CompanyModel_Product_strategy)
+def test_companymodel_product_productID_setter(instance):
     original = instance.productID
     instance.productID = original
     assert instance.productID == original
 
-@given(instance=CompanyModel::Product_strategy)
-def test_companymodel::product_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
-@given(instance=CompanyModel::Product_strategy)
-def test_companymodel::product_name_setter(instance):
+@given(instance=CompanyModel_Product_strategy)
+def test_companymodel_product_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=CompanyModel::Employee_strategy)
+@given(instance=CompanyModel_Employee_strategy)
 @settings(max_examples=50)
-def test_companymodel::employee_instantiation(instance):
-    assert isinstance(instance, CompanyModel::Employee)
-
-@given(instance=CompanyModel::Employee_strategy)
-def test_companymodel::employee_isManager_type(instance):
-    assert isinstance(instance.isManager, bool)
+def test_companymodel_employee_instantiation(instance):
+    assert isinstance(instance, CompanyModel_Employee)
 
 
-@given(instance=CompanyModel::Employee_strategy)
-def test_companymodel::employee_isManager_setter(instance):
+
+@given(instance=CompanyModel_Employee_strategy)
+def test_companymodel_employee_isManager_setter(instance):
     original = instance.isManager
     instance.isManager = original
     assert instance.isManager == original
 
-@given(instance=CompanyModel::Employee_strategy)
-def test_companymodel::employee_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
-@given(instance=CompanyModel::Employee_strategy)
-def test_companymodel::employee_name_setter(instance):
+@given(instance=CompanyModel_Employee_strategy)
+def test_companymodel_employee_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=CompanyModel::Department_strategy)
+@given(instance=CompanyModel_Department_strategy)
 @settings(max_examples=50)
-def test_companymodel::department_instantiation(instance):
-    assert isinstance(instance, CompanyModel::Department)
-
-@given(instance=CompanyModel::Department_strategy)
-def test_companymodel::department_number_type(instance):
-    assert isinstance(instance.number, int)
+def test_companymodel_department_instantiation(instance):
+    assert isinstance(instance, CompanyModel_Department)
 
 
-@given(instance=CompanyModel::Department_strategy)
-def test_companymodel::department_number_setter(instance):
+
+@given(instance=CompanyModel_Department_strategy)
+def test_companymodel_department_number_setter(instance):
     original = instance.number
     instance.number = original
     assert instance.number == original
 
-@given(instance=CompanyModel::Company_strategy)
+@given(instance=CompanyModel_Company_strategy)
 @settings(max_examples=50)
-def test_companymodel::company_instantiation(instance):
-    assert isinstance(instance, CompanyModel::Company)
-
-@given(instance=CompanyModel::Company_strategy)
-def test_companymodel::company_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_companymodel_company_instantiation(instance):
+    assert isinstance(instance, CompanyModel_Company)
 
 
-@given(instance=CompanyModel::Company_strategy)
-def test_companymodel::company_name_setter(instance):
+
+@given(instance=CompanyModel_Company_strategy)
+def test_companymodel_company_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original

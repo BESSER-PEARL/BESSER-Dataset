@@ -3,30 +3,30 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     StructuralFeature,
-    KM3::Reference,
-    KM3::Attribute,
+    KM3_Reference,
+    KM3_Attribute,
     Classifier,
-    KM3::Enumeration,
-    KM3::DataType,
+    KM3_Enumeration,
+    KM3_DataType,
     ModelElement,
-    KM3::Package,
-    KM3::Classifier,
+    KM3_Package,
+    KM3_Classifier,
     LocatedElement,
-    KM3::Metamodel,
-    KM3::ModelElement,
+    KM3_Metamodel,
+    KM3_ModelElement,
     TypedElement,
-    KM3::Parameter,
-    KM3::LocatedElement,
-    KM3::TypedElement,
-    KM3::Operation,
-    KM3::StructuralFeature,
-    KM3::Class,
-    KM3::TemplateParameter,
-    KM3::EnumLiteral,
+    KM3_Parameter,
+    KM3_LocatedElement,
+    KM3_TypedElement,
+    KM3_Operation,
+    KM3_StructuralFeature,
+    KM3_Class,
+    KM3_TemplateParameter,
+    KM3_EnumLiteral,
 )
 
 # =============================================================================
@@ -49,23 +49,23 @@ def test_structuralfeature_constructor_args():
 
 
 
-def test_km3::reference_is_not_abstract():
-    assert not inspect.isabstract(KM3::Reference)
+def test_km3_reference_is_not_abstract():
+    assert not inspect.isabstract(KM3_Reference)
 
 
-def test_km3::reference_constructor_exists():
-    assert callable(KM3::Reference.__init__)
+def test_km3_reference_constructor_exists():
+    assert callable(KM3_Reference.__init__)
 
 
-def test_km3::reference_constructor_args():
-    sig = inspect.signature(KM3::Reference.__init__)
+def test_km3_reference_constructor_args():
+    sig = inspect.signature(KM3_Reference.__init__)
     params = list(sig.parameters.keys())
     assert "isContainer" in params, "Missing parameter 'isContainer'"
 
-def test_km3::reference_has_isContainer():
-    assert hasattr(KM3::Reference, "isContainer")
+def test_km3_reference_has_isContainer():
+    assert hasattr(KM3_Reference, "isContainer")
     descriptor = None
-    for klass in KM3::Reference.__mro__:
+    for klass in KM3_Reference.__mro__:
         if "isContainer" in klass.__dict__:
             descriptor = klass.__dict__["isContainer"]
             break
@@ -73,16 +73,16 @@ def test_km3::reference_has_isContainer():
 
 
 
-def test_km3::attribute_is_not_abstract():
-    assert not inspect.isabstract(KM3::Attribute)
+def test_km3_attribute_is_not_abstract():
+    assert not inspect.isabstract(KM3_Attribute)
 
 
-def test_km3::attribute_constructor_exists():
-    assert callable(KM3::Attribute.__init__)
+def test_km3_attribute_constructor_exists():
+    assert callable(KM3_Attribute.__init__)
 
 
-def test_km3::attribute_constructor_args():
-    sig = inspect.signature(KM3::Attribute.__init__)
+def test_km3_attribute_constructor_args():
+    sig = inspect.signature(KM3_Attribute.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -101,30 +101,30 @@ def test_classifier_constructor_args():
 
 
 
-def test_km3::enumeration_is_not_abstract():
-    assert not inspect.isabstract(KM3::Enumeration)
+def test_km3_enumeration_is_not_abstract():
+    assert not inspect.isabstract(KM3_Enumeration)
 
 
-def test_km3::enumeration_constructor_exists():
-    assert callable(KM3::Enumeration.__init__)
+def test_km3_enumeration_constructor_exists():
+    assert callable(KM3_Enumeration.__init__)
 
 
-def test_km3::enumeration_constructor_args():
-    sig = inspect.signature(KM3::Enumeration.__init__)
+def test_km3_enumeration_constructor_args():
+    sig = inspect.signature(KM3_Enumeration.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_km3::datatype_is_not_abstract():
-    assert not inspect.isabstract(KM3::DataType)
+def test_km3_datatype_is_not_abstract():
+    assert not inspect.isabstract(KM3_DataType)
 
 
-def test_km3::datatype_constructor_exists():
-    assert callable(KM3::DataType.__init__)
+def test_km3_datatype_constructor_exists():
+    assert callable(KM3_DataType.__init__)
 
 
-def test_km3::datatype_constructor_args():
-    sig = inspect.signature(KM3::DataType.__init__)
+def test_km3_datatype_constructor_args():
+    sig = inspect.signature(KM3_DataType.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -143,30 +143,30 @@ def test_modelelement_constructor_args():
 
 
 
-def test_km3::package_is_not_abstract():
-    assert not inspect.isabstract(KM3::Package)
+def test_km3_package_is_not_abstract():
+    assert not inspect.isabstract(KM3_Package)
 
 
-def test_km3::package_constructor_exists():
-    assert callable(KM3::Package.__init__)
+def test_km3_package_constructor_exists():
+    assert callable(KM3_Package.__init__)
 
 
-def test_km3::package_constructor_args():
-    sig = inspect.signature(KM3::Package.__init__)
+def test_km3_package_constructor_args():
+    sig = inspect.signature(KM3_Package.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_km3::classifier_is_not_abstract():
-    assert not inspect.isabstract(KM3::Classifier)
+def test_km3_classifier_is_not_abstract():
+    assert not inspect.isabstract(KM3_Classifier)
 
 
-def test_km3::classifier_constructor_exists():
-    assert callable(KM3::Classifier.__init__)
+def test_km3_classifier_constructor_exists():
+    assert callable(KM3_Classifier.__init__)
 
 
-def test_km3::classifier_constructor_args():
-    sig = inspect.signature(KM3::Classifier.__init__)
+def test_km3_classifier_constructor_args():
+    sig = inspect.signature(KM3_Classifier.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -185,37 +185,37 @@ def test_locatedelement_constructor_args():
 
 
 
-def test_km3::metamodel_is_not_abstract():
-    assert not inspect.isabstract(KM3::Metamodel)
+def test_km3_metamodel_is_not_abstract():
+    assert not inspect.isabstract(KM3_Metamodel)
 
 
-def test_km3::metamodel_constructor_exists():
-    assert callable(KM3::Metamodel.__init__)
+def test_km3_metamodel_constructor_exists():
+    assert callable(KM3_Metamodel.__init__)
 
 
-def test_km3::metamodel_constructor_args():
-    sig = inspect.signature(KM3::Metamodel.__init__)
+def test_km3_metamodel_constructor_args():
+    sig = inspect.signature(KM3_Metamodel.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_km3::modelelement_is_not_abstract():
-    assert not inspect.isabstract(KM3::ModelElement)
+def test_km3_modelelement_is_not_abstract():
+    assert not inspect.isabstract(KM3_ModelElement)
 
 
-def test_km3::modelelement_constructor_exists():
-    assert callable(KM3::ModelElement.__init__)
+def test_km3_modelelement_constructor_exists():
+    assert callable(KM3_ModelElement.__init__)
 
 
-def test_km3::modelelement_constructor_args():
-    sig = inspect.signature(KM3::ModelElement.__init__)
+def test_km3_modelelement_constructor_args():
+    sig = inspect.signature(KM3_ModelElement.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_km3::modelelement_has_name():
-    assert hasattr(KM3::ModelElement, "name")
+def test_km3_modelelement_has_name():
+    assert hasattr(KM3_ModelElement, "name")
     descriptor = None
-    for klass in KM3::ModelElement.__mro__:
+    for klass in KM3_ModelElement.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -237,37 +237,37 @@ def test_typedelement_constructor_args():
 
 
 
-def test_km3::parameter_is_not_abstract():
-    assert not inspect.isabstract(KM3::Parameter)
+def test_km3_parameter_is_not_abstract():
+    assert not inspect.isabstract(KM3_Parameter)
 
 
-def test_km3::parameter_constructor_exists():
-    assert callable(KM3::Parameter.__init__)
+def test_km3_parameter_constructor_exists():
+    assert callable(KM3_Parameter.__init__)
 
 
-def test_km3::parameter_constructor_args():
-    sig = inspect.signature(KM3::Parameter.__init__)
+def test_km3_parameter_constructor_args():
+    sig = inspect.signature(KM3_Parameter.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_km3::locatedelement_is_not_abstract():
-    assert not inspect.isabstract(KM3::LocatedElement)
+def test_km3_locatedelement_is_not_abstract():
+    assert not inspect.isabstract(KM3_LocatedElement)
 
 
-def test_km3::locatedelement_constructor_exists():
-    assert callable(KM3::LocatedElement.__init__)
+def test_km3_locatedelement_constructor_exists():
+    assert callable(KM3_LocatedElement.__init__)
 
 
-def test_km3::locatedelement_constructor_args():
-    sig = inspect.signature(KM3::LocatedElement.__init__)
+def test_km3_locatedelement_constructor_args():
+    sig = inspect.signature(KM3_LocatedElement.__init__)
     params = list(sig.parameters.keys())
     assert "location" in params, "Missing parameter 'location'"
 
-def test_km3::locatedelement_has_location():
-    assert hasattr(KM3::LocatedElement, "location")
+def test_km3_locatedelement_has_location():
+    assert hasattr(KM3_LocatedElement, "location")
     descriptor = None
-    for klass in KM3::LocatedElement.__mro__:
+    for klass in KM3_LocatedElement.__mro__:
         if "location" in klass.__dict__:
             descriptor = klass.__dict__["location"]
             break
@@ -275,105 +275,105 @@ def test_km3::locatedelement_has_location():
 
 
 
-def test_km3::typedelement_is_not_abstract():
-    assert not inspect.isabstract(KM3::TypedElement)
+def test_km3_typedelement_is_not_abstract():
+    assert not inspect.isabstract(KM3_TypedElement)
 
 
-def test_km3::typedelement_constructor_exists():
-    assert callable(KM3::TypedElement.__init__)
+def test_km3_typedelement_constructor_exists():
+    assert callable(KM3_TypedElement.__init__)
 
 
-def test_km3::typedelement_constructor_args():
-    sig = inspect.signature(KM3::TypedElement.__init__)
+def test_km3_typedelement_constructor_args():
+    sig = inspect.signature(KM3_TypedElement.__init__)
     params = list(sig.parameters.keys())
-    assert "upper" in params, "Missing parameter 'upper'"
     assert "isUnique" in params, "Missing parameter 'isUnique'"
-    assert "isOrdered" in params, "Missing parameter 'isOrdered'"
     assert "lower" in params, "Missing parameter 'lower'"
+    assert "upper" in params, "Missing parameter 'upper'"
+    assert "isOrdered" in params, "Missing parameter 'isOrdered'"
 
-def test_km3::typedelement_has_upper():
-    assert hasattr(KM3::TypedElement, "upper")
+def test_km3_typedelement_has_isUnique():
+    assert hasattr(KM3_TypedElement, "isUnique")
     descriptor = None
-    for klass in KM3::TypedElement.__mro__:
-        if "upper" in klass.__dict__:
-            descriptor = klass.__dict__["upper"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_km3::typedelement_has_isUnique():
-    assert hasattr(KM3::TypedElement, "isUnique")
-    descriptor = None
-    for klass in KM3::TypedElement.__mro__:
+    for klass in KM3_TypedElement.__mro__:
         if "isUnique" in klass.__dict__:
             descriptor = klass.__dict__["isUnique"]
             break
     assert isinstance(descriptor, property)
 
-def test_km3::typedelement_has_isOrdered():
-    assert hasattr(KM3::TypedElement, "isOrdered")
+def test_km3_typedelement_has_lower():
+    assert hasattr(KM3_TypedElement, "lower")
     descriptor = None
-    for klass in KM3::TypedElement.__mro__:
-        if "isOrdered" in klass.__dict__:
-            descriptor = klass.__dict__["isOrdered"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_km3::typedelement_has_lower():
-    assert hasattr(KM3::TypedElement, "lower")
-    descriptor = None
-    for klass in KM3::TypedElement.__mro__:
+    for klass in KM3_TypedElement.__mro__:
         if "lower" in klass.__dict__:
             descriptor = klass.__dict__["lower"]
             break
     assert isinstance(descriptor, property)
 
+def test_km3_typedelement_has_upper():
+    assert hasattr(KM3_TypedElement, "upper")
+    descriptor = None
+    for klass in KM3_TypedElement.__mro__:
+        if "upper" in klass.__dict__:
+            descriptor = klass.__dict__["upper"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_km3_typedelement_has_isOrdered():
+    assert hasattr(KM3_TypedElement, "isOrdered")
+    descriptor = None
+    for klass in KM3_TypedElement.__mro__:
+        if "isOrdered" in klass.__dict__:
+            descriptor = klass.__dict__["isOrdered"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_km3::operation_is_not_abstract():
-    assert not inspect.isabstract(KM3::Operation)
+
+def test_km3_operation_is_not_abstract():
+    assert not inspect.isabstract(KM3_Operation)
 
 
-def test_km3::operation_constructor_exists():
-    assert callable(KM3::Operation.__init__)
+def test_km3_operation_constructor_exists():
+    assert callable(KM3_Operation.__init__)
 
 
-def test_km3::operation_constructor_args():
-    sig = inspect.signature(KM3::Operation.__init__)
+def test_km3_operation_constructor_args():
+    sig = inspect.signature(KM3_Operation.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_km3::structuralfeature_is_not_abstract():
-    assert not inspect.isabstract(KM3::StructuralFeature)
+def test_km3_structuralfeature_is_not_abstract():
+    assert not inspect.isabstract(KM3_StructuralFeature)
 
 
-def test_km3::structuralfeature_constructor_exists():
-    assert callable(KM3::StructuralFeature.__init__)
+def test_km3_structuralfeature_constructor_exists():
+    assert callable(KM3_StructuralFeature.__init__)
 
 
-def test_km3::structuralfeature_constructor_args():
-    sig = inspect.signature(KM3::StructuralFeature.__init__)
+def test_km3_structuralfeature_constructor_args():
+    sig = inspect.signature(KM3_StructuralFeature.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_km3::class_is_not_abstract():
-    assert not inspect.isabstract(KM3::Class)
+def test_km3_class_is_not_abstract():
+    assert not inspect.isabstract(KM3_Class)
 
 
-def test_km3::class_constructor_exists():
-    assert callable(KM3::Class.__init__)
+def test_km3_class_constructor_exists():
+    assert callable(KM3_Class.__init__)
 
 
-def test_km3::class_constructor_args():
-    sig = inspect.signature(KM3::Class.__init__)
+def test_km3_class_constructor_args():
+    sig = inspect.signature(KM3_Class.__init__)
     params = list(sig.parameters.keys())
     assert "isAbstract" in params, "Missing parameter 'isAbstract'"
 
-def test_km3::class_has_isAbstract():
-    assert hasattr(KM3::Class, "isAbstract")
+def test_km3_class_has_isAbstract():
+    assert hasattr(KM3_Class, "isAbstract")
     descriptor = None
-    for klass in KM3::Class.__mro__:
+    for klass in KM3_Class.__mro__:
         if "isAbstract" in klass.__dict__:
             descriptor = klass.__dict__["isAbstract"]
             break
@@ -381,30 +381,30 @@ def test_km3::class_has_isAbstract():
 
 
 
-def test_km3::templateparameter_is_not_abstract():
-    assert not inspect.isabstract(KM3::TemplateParameter)
+def test_km3_templateparameter_is_not_abstract():
+    assert not inspect.isabstract(KM3_TemplateParameter)
 
 
-def test_km3::templateparameter_constructor_exists():
-    assert callable(KM3::TemplateParameter.__init__)
+def test_km3_templateparameter_constructor_exists():
+    assert callable(KM3_TemplateParameter.__init__)
 
 
-def test_km3::templateparameter_constructor_args():
-    sig = inspect.signature(KM3::TemplateParameter.__init__)
+def test_km3_templateparameter_constructor_args():
+    sig = inspect.signature(KM3_TemplateParameter.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_km3::enumliteral_is_not_abstract():
-    assert not inspect.isabstract(KM3::EnumLiteral)
+def test_km3_enumliteral_is_not_abstract():
+    assert not inspect.isabstract(KM3_EnumLiteral)
 
 
-def test_km3::enumliteral_constructor_exists():
-    assert callable(KM3::EnumLiteral.__init__)
+def test_km3_enumliteral_constructor_exists():
+    assert callable(KM3_EnumLiteral.__init__)
 
 
-def test_km3::enumliteral_constructor_args():
-    sig = inspect.signature(KM3::EnumLiteral.__init__)
+def test_km3_enumliteral_constructor_args():
+    sig = inspect.signature(KM3_EnumLiteral.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -422,81 +422,81 @@ safe_text = st.text(
 StructuralFeature_strategy = st.builds(
     StructuralFeature,
 )
-KM3::Reference_strategy = st.builds(
-    KM3::Reference,
+KM3_Reference_strategy = st.builds(
+    KM3_Reference,
     isContainer=
         safe_text
 )
-KM3::Attribute_strategy = st.builds(
-    KM3::Attribute,
+KM3_Attribute_strategy = st.builds(
+    KM3_Attribute,
 )
 Classifier_strategy = st.builds(
     Classifier,
 )
-KM3::Enumeration_strategy = st.builds(
-    KM3::Enumeration,
+KM3_Enumeration_strategy = st.builds(
+    KM3_Enumeration,
 )
-KM3::DataType_strategy = st.builds(
-    KM3::DataType,
+KM3_DataType_strategy = st.builds(
+    KM3_DataType,
 )
 ModelElement_strategy = st.builds(
     ModelElement,
 )
-KM3::Package_strategy = st.builds(
-    KM3::Package,
+KM3_Package_strategy = st.builds(
+    KM3_Package,
 )
-KM3::Classifier_strategy = st.builds(
-    KM3::Classifier,
+KM3_Classifier_strategy = st.builds(
+    KM3_Classifier,
 )
 LocatedElement_strategy = st.builds(
     LocatedElement,
 )
-KM3::Metamodel_strategy = st.builds(
-    KM3::Metamodel,
+KM3_Metamodel_strategy = st.builds(
+    KM3_Metamodel,
 )
-KM3::ModelElement_strategy = st.builds(
-    KM3::ModelElement,
+KM3_ModelElement_strategy = st.builds(
+    KM3_ModelElement,
     name=
         safe_text
 )
 TypedElement_strategy = st.builds(
     TypedElement,
 )
-KM3::Parameter_strategy = st.builds(
-    KM3::Parameter,
+KM3_Parameter_strategy = st.builds(
+    KM3_Parameter,
 )
-KM3::LocatedElement_strategy = st.builds(
-    KM3::LocatedElement,
+KM3_LocatedElement_strategy = st.builds(
+    KM3_LocatedElement,
     location=
         safe_text
 )
-KM3::TypedElement_strategy = st.builds(
-    KM3::TypedElement,
-    upper=
-        safe_text,
+KM3_TypedElement_strategy = st.builds(
+    KM3_TypedElement,
     isUnique=
         safe_text,
-    isOrdered=
-        safe_text,
     lower=
+        safe_text,
+    upper=
+        safe_text,
+    isOrdered=
         safe_text
 )
-KM3::Operation_strategy = st.builds(
-    KM3::Operation,
+KM3_Operation_strategy = st.builds(
+    KM3_Operation,
 )
-KM3::StructuralFeature_strategy = st.builds(
-    KM3::StructuralFeature,
+KM3_StructuralFeature_strategy = st.builds(
+    KM3_StructuralFeature,
 )
-KM3::Class_strategy = st.builds(
-    KM3::Class,
+KM3_Class_strategy = st.builds(
+    KM3_Class,
     isAbstract=
         safe_text
 )
-KM3::TemplateParameter_strategy = st.builds(
-    KM3::TemplateParameter,
+KM3_TemplateParameter_strategy = st.builds(
+    KM3_TemplateParameter,
 )
-KM3::EnumLiteral_strategy = st.builds(
-    KM3::EnumLiteral,
+KM3_EnumLiteral_strategy = st.builds(
+    KM3_EnumLiteral,
 )
 
 @given(instance=StructuralFeature_strategy)
@@ -504,79 +504,73 @@ KM3::EnumLiteral_strategy = st.builds(
 def test_structuralfeature_instantiation(instance):
     assert isinstance(instance, StructuralFeature)
 
-@given(instance=KM3::Reference_strategy)
+@given(instance=KM3_Reference_strategy)
 @settings(max_examples=50)
-def test_km3::reference_instantiation(instance):
-    assert isinstance(instance, KM3::Reference)
-
-@given(instance=KM3::Reference_strategy)
-def test_km3::reference_isContainer_type(instance):
-    assert isinstance(instance.isContainer, str)
+def test_km3_reference_instantiation(instance):
+    assert isinstance(instance, KM3_Reference)
 
 
-@given(instance=KM3::Reference_strategy)
-def test_km3::reference_isContainer_setter(instance):
+
+@given(instance=KM3_Reference_strategy)
+def test_km3_reference_isContainer_setter(instance):
     original = instance.isContainer
     instance.isContainer = original
     assert instance.isContainer == original
 
-@given(instance=KM3::Attribute_strategy)
+@given(instance=KM3_Attribute_strategy)
 @settings(max_examples=50)
-def test_km3::attribute_instantiation(instance):
-    assert isinstance(instance, KM3::Attribute)
+def test_km3_attribute_instantiation(instance):
+    assert isinstance(instance, KM3_Attribute)
 
 @given(instance=Classifier_strategy)
 @settings(max_examples=50)
 def test_classifier_instantiation(instance):
     assert isinstance(instance, Classifier)
 
-@given(instance=KM3::Enumeration_strategy)
+@given(instance=KM3_Enumeration_strategy)
 @settings(max_examples=50)
-def test_km3::enumeration_instantiation(instance):
-    assert isinstance(instance, KM3::Enumeration)
+def test_km3_enumeration_instantiation(instance):
+    assert isinstance(instance, KM3_Enumeration)
 
-@given(instance=KM3::DataType_strategy)
+@given(instance=KM3_DataType_strategy)
 @settings(max_examples=50)
-def test_km3::datatype_instantiation(instance):
-    assert isinstance(instance, KM3::DataType)
+def test_km3_datatype_instantiation(instance):
+    assert isinstance(instance, KM3_DataType)
 
 @given(instance=ModelElement_strategy)
 @settings(max_examples=50)
 def test_modelelement_instantiation(instance):
     assert isinstance(instance, ModelElement)
 
-@given(instance=KM3::Package_strategy)
+@given(instance=KM3_Package_strategy)
 @settings(max_examples=50)
-def test_km3::package_instantiation(instance):
-    assert isinstance(instance, KM3::Package)
+def test_km3_package_instantiation(instance):
+    assert isinstance(instance, KM3_Package)
 
-@given(instance=KM3::Classifier_strategy)
+@given(instance=KM3_Classifier_strategy)
 @settings(max_examples=50)
-def test_km3::classifier_instantiation(instance):
-    assert isinstance(instance, KM3::Classifier)
+def test_km3_classifier_instantiation(instance):
+    assert isinstance(instance, KM3_Classifier)
 
 @given(instance=LocatedElement_strategy)
 @settings(max_examples=50)
 def test_locatedelement_instantiation(instance):
     assert isinstance(instance, LocatedElement)
 
-@given(instance=KM3::Metamodel_strategy)
+@given(instance=KM3_Metamodel_strategy)
 @settings(max_examples=50)
-def test_km3::metamodel_instantiation(instance):
-    assert isinstance(instance, KM3::Metamodel)
+def test_km3_metamodel_instantiation(instance):
+    assert isinstance(instance, KM3_Metamodel)
 
-@given(instance=KM3::ModelElement_strategy)
+@given(instance=KM3_ModelElement_strategy)
 @settings(max_examples=50)
-def test_km3::modelelement_instantiation(instance):
-    assert isinstance(instance, KM3::ModelElement)
-
-@given(instance=KM3::ModelElement_strategy)
-def test_km3::modelelement_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_km3_modelelement_instantiation(instance):
+    assert isinstance(instance, KM3_ModelElement)
 
 
-@given(instance=KM3::ModelElement_strategy)
-def test_km3::modelelement_name_setter(instance):
+
+@given(instance=KM3_ModelElement_strategy)
+def test_km3_modelelement_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
@@ -586,108 +580,90 @@ def test_km3::modelelement_name_setter(instance):
 def test_typedelement_instantiation(instance):
     assert isinstance(instance, TypedElement)
 
-@given(instance=KM3::Parameter_strategy)
+@given(instance=KM3_Parameter_strategy)
 @settings(max_examples=50)
-def test_km3::parameter_instantiation(instance):
-    assert isinstance(instance, KM3::Parameter)
+def test_km3_parameter_instantiation(instance):
+    assert isinstance(instance, KM3_Parameter)
 
-@given(instance=KM3::LocatedElement_strategy)
+@given(instance=KM3_LocatedElement_strategy)
 @settings(max_examples=50)
-def test_km3::locatedelement_instantiation(instance):
-    assert isinstance(instance, KM3::LocatedElement)
-
-@given(instance=KM3::LocatedElement_strategy)
-def test_km3::locatedelement_location_type(instance):
-    assert isinstance(instance.location, str)
+def test_km3_locatedelement_instantiation(instance):
+    assert isinstance(instance, KM3_LocatedElement)
 
 
-@given(instance=KM3::LocatedElement_strategy)
-def test_km3::locatedelement_location_setter(instance):
+
+@given(instance=KM3_LocatedElement_strategy)
+def test_km3_locatedelement_location_setter(instance):
     original = instance.location
     instance.location = original
     assert instance.location == original
 
-@given(instance=KM3::TypedElement_strategy)
+@given(instance=KM3_TypedElement_strategy)
 @settings(max_examples=50)
-def test_km3::typedelement_instantiation(instance):
-    assert isinstance(instance, KM3::TypedElement)
-
-@given(instance=KM3::TypedElement_strategy)
-def test_km3::typedelement_upper_type(instance):
-    assert isinstance(instance.upper, str)
+def test_km3_typedelement_instantiation(instance):
+    assert isinstance(instance, KM3_TypedElement)
 
 
-@given(instance=KM3::TypedElement_strategy)
-def test_km3::typedelement_upper_setter(instance):
-    original = instance.upper
-    instance.upper = original
-    assert instance.upper == original
 
-@given(instance=KM3::TypedElement_strategy)
-def test_km3::typedelement_isUnique_type(instance):
-    assert isinstance(instance.isUnique, str)
-
-
-@given(instance=KM3::TypedElement_strategy)
-def test_km3::typedelement_isUnique_setter(instance):
+@given(instance=KM3_TypedElement_strategy)
+def test_km3_typedelement_isUnique_setter(instance):
     original = instance.isUnique
     instance.isUnique = original
     assert instance.isUnique == original
 
-@given(instance=KM3::TypedElement_strategy)
-def test_km3::typedelement_isOrdered_type(instance):
-    assert isinstance(instance.isOrdered, str)
 
 
-@given(instance=KM3::TypedElement_strategy)
-def test_km3::typedelement_isOrdered_setter(instance):
-    original = instance.isOrdered
-    instance.isOrdered = original
-    assert instance.isOrdered == original
-
-@given(instance=KM3::TypedElement_strategy)
-def test_km3::typedelement_lower_type(instance):
-    assert isinstance(instance.lower, str)
-
-
-@given(instance=KM3::TypedElement_strategy)
-def test_km3::typedelement_lower_setter(instance):
+@given(instance=KM3_TypedElement_strategy)
+def test_km3_typedelement_lower_setter(instance):
     original = instance.lower
     instance.lower = original
     assert instance.lower == original
 
-@given(instance=KM3::Operation_strategy)
+
+
+@given(instance=KM3_TypedElement_strategy)
+def test_km3_typedelement_upper_setter(instance):
+    original = instance.upper
+    instance.upper = original
+    assert instance.upper == original
+
+
+
+@given(instance=KM3_TypedElement_strategy)
+def test_km3_typedelement_isOrdered_setter(instance):
+    original = instance.isOrdered
+    instance.isOrdered = original
+    assert instance.isOrdered == original
+
+@given(instance=KM3_Operation_strategy)
 @settings(max_examples=50)
-def test_km3::operation_instantiation(instance):
-    assert isinstance(instance, KM3::Operation)
+def test_km3_operation_instantiation(instance):
+    assert isinstance(instance, KM3_Operation)
 
-@given(instance=KM3::StructuralFeature_strategy)
+@given(instance=KM3_StructuralFeature_strategy)
 @settings(max_examples=50)
-def test_km3::structuralfeature_instantiation(instance):
-    assert isinstance(instance, KM3::StructuralFeature)
+def test_km3_structuralfeature_instantiation(instance):
+    assert isinstance(instance, KM3_StructuralFeature)
 
-@given(instance=KM3::Class_strategy)
+@given(instance=KM3_Class_strategy)
 @settings(max_examples=50)
-def test_km3::class_instantiation(instance):
-    assert isinstance(instance, KM3::Class)
-
-@given(instance=KM3::Class_strategy)
-def test_km3::class_isAbstract_type(instance):
-    assert isinstance(instance.isAbstract, str)
+def test_km3_class_instantiation(instance):
+    assert isinstance(instance, KM3_Class)
 
 
-@given(instance=KM3::Class_strategy)
-def test_km3::class_isAbstract_setter(instance):
+
+@given(instance=KM3_Class_strategy)
+def test_km3_class_isAbstract_setter(instance):
     original = instance.isAbstract
     instance.isAbstract = original
     assert instance.isAbstract == original
 
-@given(instance=KM3::TemplateParameter_strategy)
+@given(instance=KM3_TemplateParameter_strategy)
 @settings(max_examples=50)
-def test_km3::templateparameter_instantiation(instance):
-    assert isinstance(instance, KM3::TemplateParameter)
+def test_km3_templateparameter_instantiation(instance):
+    assert isinstance(instance, KM3_TemplateParameter)
 
-@given(instance=KM3::EnumLiteral_strategy)
+@given(instance=KM3_EnumLiteral_strategy)
 @settings(max_examples=50)
-def test_km3::enumliteral_instantiation(instance):
-    assert isinstance(instance, KM3::EnumLiteral)
+def test_km3_enumliteral_instantiation(instance):
+    assert isinstance(instance, KM3_EnumLiteral)

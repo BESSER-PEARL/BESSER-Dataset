@@ -3,67 +3,67 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     Expression,
-    debugSeq::Plus,
-    debugSeq::Not,
-    debugSeq::Or,
-    debugSeq::DapSwjSequence,
-    debugSeq::DapDelay,
-    debugSeq::Read8,
-    debugSeq::BitXor,
-    debugSeq::Write16,
-    debugSeq::Read32,
-    debugSeq::And,
-    debugSeq::Mul,
-    debugSeq::WriteDP,
-    debugSeq::Query,
-    debugSeq::Write64,
-    debugSeq::Message,
-    debugSeq::SequenceCall,
-    debugSeq::DapSwjClock,
-    debugSeq::Read64,
-    debugSeq::BitNot,
-    debugSeq::WriteAP,
-    debugSeq::Shift,
-    debugSeq::Minus,
-    debugSeq::Write8,
-    debugSeq::LoadDebugInfo,
-    debugSeq::DapWriteABORT,
-    debugSeq::DapJtagSequence,
-    debugSeq::Write32,
-    debugSeq::ReadAP,
-    debugSeq::IntConstant,
-    debugSeq::Read16,
-    debugSeq::ReadDP,
-    debugSeq::Div,
-    debugSeq::BitAnd,
-    debugSeq::Equality,
-    debugSeq::Rem,
-    debugSeq::VariableRef,
-    debugSeq::QueryValue,
-    debugSeq::Ternary,
-    debugSeq::StringConstant,
-    debugSeq::Comparison,
-    debugSeq::DapSwjPins,
-    debugSeq::Assignment,
-    debugSeq::Parameter,
+    debugSeq_Comparison,
+    debugSeq_Read8,
+    debugSeq_BitXor,
+    debugSeq_Rem,
+    debugSeq_DapSwjSequence,
+    debugSeq_DapJtagSequence,
+    debugSeq_Query,
+    debugSeq_DapDelay,
+    debugSeq_Plus,
+    debugSeq_Read16,
+    debugSeq_LoadDebugInfo,
+    debugSeq_IntConstant,
+    debugSeq_And,
+    debugSeq_DapSwjPins,
+    debugSeq_Read64,
+    debugSeq_Write8,
+    debugSeq_Shift,
+    debugSeq_DapSwjClock,
+    debugSeq_WriteDP,
+    debugSeq_Minus,
+    debugSeq_Not,
+    debugSeq_Ternary,
+    debugSeq_WriteAP,
+    debugSeq_StringConstant,
+    debugSeq_ReadDP,
+    debugSeq_VariableRef,
+    debugSeq_BitAnd,
+    debugSeq_Write32,
+    debugSeq_Or,
+    debugSeq_Message,
+    debugSeq_Read32,
+    debugSeq_ReadAP,
+    debugSeq_Mul,
+    debugSeq_Div,
+    debugSeq_BitNot,
+    debugSeq_Equality,
+    debugSeq_Write16,
+    debugSeq_Write64,
+    debugSeq_DapWriteABORT,
+    debugSeq_SequenceCall,
+    debugSeq_QueryValue,
+    debugSeq_Assignment,
+    debugSeq_Parameter,
     Parameter,
     CodeBlock,
-    debugSeq::Control,
-    debugSeq::Block,
-    debugSeq::CodeBlock,
-    debugSeq::BitOr,
-    debugSeq::Sequence,
+    debugSeq_Control,
+    debugSeq_Block,
+    debugSeq_CodeBlock,
+    debugSeq_BitOr,
+    debugSeq_Sequence,
     Statement,
-    debugSeq::Expression,
-    debugSeq::VariableDeclaration,
-    debugSeq::Statement,
-    debugSeq::Sequences,
-    debugSeq::DebugVars,
-    debugSeq::DebugSeqModel,
+    debugSeq_Expression,
+    debugSeq_VariableDeclaration,
+    debugSeq_Statement,
+    debugSeq_Sequences,
+    debugSeq_DebugVars,
+    debugSeq_DebugSeqModel,
 )
 
 # =============================================================================
@@ -86,333 +86,23 @@ def test_expression_constructor_args():
 
 
 
-def test_debugseq::plus_is_not_abstract():
-    assert not inspect.isabstract(debugSeq::Plus)
+def test_debugseq_comparison_is_not_abstract():
+    assert not inspect.isabstract(debugSeq_Comparison)
 
 
-def test_debugseq::plus_constructor_exists():
-    assert callable(debugSeq::Plus.__init__)
+def test_debugseq_comparison_constructor_exists():
+    assert callable(debugSeq_Comparison.__init__)
 
 
-def test_debugseq::plus_constructor_args():
-    sig = inspect.signature(debugSeq::Plus.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_debugseq::not_is_not_abstract():
-    assert not inspect.isabstract(debugSeq::Not)
-
-
-def test_debugseq::not_constructor_exists():
-    assert callable(debugSeq::Not.__init__)
-
-
-def test_debugseq::not_constructor_args():
-    sig = inspect.signature(debugSeq::Not.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_debugseq::or_is_not_abstract():
-    assert not inspect.isabstract(debugSeq::Or)
-
-
-def test_debugseq::or_constructor_exists():
-    assert callable(debugSeq::Or.__init__)
-
-
-def test_debugseq::or_constructor_args():
-    sig = inspect.signature(debugSeq::Or.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_debugseq::dapswjsequence_is_not_abstract():
-    assert not inspect.isabstract(debugSeq::DapSwjSequence)
-
-
-def test_debugseq::dapswjsequence_constructor_exists():
-    assert callable(debugSeq::DapSwjSequence.__init__)
-
-
-def test_debugseq::dapswjsequence_constructor_args():
-    sig = inspect.signature(debugSeq::DapSwjSequence.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_debugseq::dapdelay_is_not_abstract():
-    assert not inspect.isabstract(debugSeq::DapDelay)
-
-
-def test_debugseq::dapdelay_constructor_exists():
-    assert callable(debugSeq::DapDelay.__init__)
-
-
-def test_debugseq::dapdelay_constructor_args():
-    sig = inspect.signature(debugSeq::DapDelay.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_debugseq::read8_is_not_abstract():
-    assert not inspect.isabstract(debugSeq::Read8)
-
-
-def test_debugseq::read8_constructor_exists():
-    assert callable(debugSeq::Read8.__init__)
-
-
-def test_debugseq::read8_constructor_args():
-    sig = inspect.signature(debugSeq::Read8.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_debugseq::bitxor_is_not_abstract():
-    assert not inspect.isabstract(debugSeq::BitXor)
-
-
-def test_debugseq::bitxor_constructor_exists():
-    assert callable(debugSeq::BitXor.__init__)
-
-
-def test_debugseq::bitxor_constructor_args():
-    sig = inspect.signature(debugSeq::BitXor.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_debugseq::write16_is_not_abstract():
-    assert not inspect.isabstract(debugSeq::Write16)
-
-
-def test_debugseq::write16_constructor_exists():
-    assert callable(debugSeq::Write16.__init__)
-
-
-def test_debugseq::write16_constructor_args():
-    sig = inspect.signature(debugSeq::Write16.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_debugseq::read32_is_not_abstract():
-    assert not inspect.isabstract(debugSeq::Read32)
-
-
-def test_debugseq::read32_constructor_exists():
-    assert callable(debugSeq::Read32.__init__)
-
-
-def test_debugseq::read32_constructor_args():
-    sig = inspect.signature(debugSeq::Read32.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_debugseq::and_is_not_abstract():
-    assert not inspect.isabstract(debugSeq::And)
-
-
-def test_debugseq::and_constructor_exists():
-    assert callable(debugSeq::And.__init__)
-
-
-def test_debugseq::and_constructor_args():
-    sig = inspect.signature(debugSeq::And.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_debugseq::mul_is_not_abstract():
-    assert not inspect.isabstract(debugSeq::Mul)
-
-
-def test_debugseq::mul_constructor_exists():
-    assert callable(debugSeq::Mul.__init__)
-
-
-def test_debugseq::mul_constructor_args():
-    sig = inspect.signature(debugSeq::Mul.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_debugseq::writedp_is_not_abstract():
-    assert not inspect.isabstract(debugSeq::WriteDP)
-
-
-def test_debugseq::writedp_constructor_exists():
-    assert callable(debugSeq::WriteDP.__init__)
-
-
-def test_debugseq::writedp_constructor_args():
-    sig = inspect.signature(debugSeq::WriteDP.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_debugseq::query_is_not_abstract():
-    assert not inspect.isabstract(debugSeq::Query)
-
-
-def test_debugseq::query_constructor_exists():
-    assert callable(debugSeq::Query.__init__)
-
-
-def test_debugseq::query_constructor_args():
-    sig = inspect.signature(debugSeq::Query.__init__)
-    params = list(sig.parameters.keys())
-    assert "message" in params, "Missing parameter 'message'"
-
-def test_debugseq::query_has_message():
-    assert hasattr(debugSeq::Query, "message")
-    descriptor = None
-    for klass in debugSeq::Query.__mro__:
-        if "message" in klass.__dict__:
-            descriptor = klass.__dict__["message"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_debugseq::write64_is_not_abstract():
-    assert not inspect.isabstract(debugSeq::Write64)
-
-
-def test_debugseq::write64_constructor_exists():
-    assert callable(debugSeq::Write64.__init__)
-
-
-def test_debugseq::write64_constructor_args():
-    sig = inspect.signature(debugSeq::Write64.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_debugseq::message_is_not_abstract():
-    assert not inspect.isabstract(debugSeq::Message)
-
-
-def test_debugseq::message_constructor_exists():
-    assert callable(debugSeq::Message.__init__)
-
-
-def test_debugseq::message_constructor_args():
-    sig = inspect.signature(debugSeq::Message.__init__)
-    params = list(sig.parameters.keys())
-    assert "format" in params, "Missing parameter 'format'"
-
-def test_debugseq::message_has_format():
-    assert hasattr(debugSeq::Message, "format")
-    descriptor = None
-    for klass in debugSeq::Message.__mro__:
-        if "format" in klass.__dict__:
-            descriptor = klass.__dict__["format"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_debugseq::sequencecall_is_not_abstract():
-    assert not inspect.isabstract(debugSeq::SequenceCall)
-
-
-def test_debugseq::sequencecall_constructor_exists():
-    assert callable(debugSeq::SequenceCall.__init__)
-
-
-def test_debugseq::sequencecall_constructor_args():
-    sig = inspect.signature(debugSeq::SequenceCall.__init__)
-    params = list(sig.parameters.keys())
-    assert "seqname" in params, "Missing parameter 'seqname'"
-
-def test_debugseq::sequencecall_has_seqname():
-    assert hasattr(debugSeq::SequenceCall, "seqname")
-    descriptor = None
-    for klass in debugSeq::SequenceCall.__mro__:
-        if "seqname" in klass.__dict__:
-            descriptor = klass.__dict__["seqname"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_debugseq::dapswjclock_is_not_abstract():
-    assert not inspect.isabstract(debugSeq::DapSwjClock)
-
-
-def test_debugseq::dapswjclock_constructor_exists():
-    assert callable(debugSeq::DapSwjClock.__init__)
-
-
-def test_debugseq::dapswjclock_constructor_args():
-    sig = inspect.signature(debugSeq::DapSwjClock.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_debugseq::read64_is_not_abstract():
-    assert not inspect.isabstract(debugSeq::Read64)
-
-
-def test_debugseq::read64_constructor_exists():
-    assert callable(debugSeq::Read64.__init__)
-
-
-def test_debugseq::read64_constructor_args():
-    sig = inspect.signature(debugSeq::Read64.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_debugseq::bitnot_is_not_abstract():
-    assert not inspect.isabstract(debugSeq::BitNot)
-
-
-def test_debugseq::bitnot_constructor_exists():
-    assert callable(debugSeq::BitNot.__init__)
-
-
-def test_debugseq::bitnot_constructor_args():
-    sig = inspect.signature(debugSeq::BitNot.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_debugseq::writeap_is_not_abstract():
-    assert not inspect.isabstract(debugSeq::WriteAP)
-
-
-def test_debugseq::writeap_constructor_exists():
-    assert callable(debugSeq::WriteAP.__init__)
-
-
-def test_debugseq::writeap_constructor_args():
-    sig = inspect.signature(debugSeq::WriteAP.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_debugseq::shift_is_not_abstract():
-    assert not inspect.isabstract(debugSeq::Shift)
-
-
-def test_debugseq::shift_constructor_exists():
-    assert callable(debugSeq::Shift.__init__)
-
-
-def test_debugseq::shift_constructor_args():
-    sig = inspect.signature(debugSeq::Shift.__init__)
+def test_debugseq_comparison_constructor_args():
+    sig = inspect.signature(debugSeq_Comparison.__init__)
     params = list(sig.parameters.keys())
     assert "op" in params, "Missing parameter 'op'"
 
-def test_debugseq::shift_has_op():
-    assert hasattr(debugSeq::Shift, "op")
+def test_debugseq_comparison_has_op():
+    assert hasattr(debugSeq_Comparison, "op")
     descriptor = None
-    for klass in debugSeq::Shift.__mro__:
+    for klass in debugSeq_Comparison.__mro__:
         if "op" in klass.__dict__:
             descriptor = klass.__dict__["op"]
             break
@@ -420,51 +110,159 @@ def test_debugseq::shift_has_op():
 
 
 
-def test_debugseq::minus_is_not_abstract():
-    assert not inspect.isabstract(debugSeq::Minus)
+def test_debugseq_read8_is_not_abstract():
+    assert not inspect.isabstract(debugSeq_Read8)
 
 
-def test_debugseq::minus_constructor_exists():
-    assert callable(debugSeq::Minus.__init__)
+def test_debugseq_read8_constructor_exists():
+    assert callable(debugSeq_Read8.__init__)
 
 
-def test_debugseq::minus_constructor_args():
-    sig = inspect.signature(debugSeq::Minus.__init__)
+def test_debugseq_read8_constructor_args():
+    sig = inspect.signature(debugSeq_Read8.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_debugseq::write8_is_not_abstract():
-    assert not inspect.isabstract(debugSeq::Write8)
+def test_debugseq_bitxor_is_not_abstract():
+    assert not inspect.isabstract(debugSeq_BitXor)
 
 
-def test_debugseq::write8_constructor_exists():
-    assert callable(debugSeq::Write8.__init__)
+def test_debugseq_bitxor_constructor_exists():
+    assert callable(debugSeq_BitXor.__init__)
 
 
-def test_debugseq::write8_constructor_args():
-    sig = inspect.signature(debugSeq::Write8.__init__)
+def test_debugseq_bitxor_constructor_args():
+    sig = inspect.signature(debugSeq_BitXor.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_debugseq::loaddebuginfo_is_not_abstract():
-    assert not inspect.isabstract(debugSeq::LoadDebugInfo)
+def test_debugseq_rem_is_not_abstract():
+    assert not inspect.isabstract(debugSeq_Rem)
 
 
-def test_debugseq::loaddebuginfo_constructor_exists():
-    assert callable(debugSeq::LoadDebugInfo.__init__)
+def test_debugseq_rem_constructor_exists():
+    assert callable(debugSeq_Rem.__init__)
 
 
-def test_debugseq::loaddebuginfo_constructor_args():
-    sig = inspect.signature(debugSeq::LoadDebugInfo.__init__)
+def test_debugseq_rem_constructor_args():
+    sig = inspect.signature(debugSeq_Rem.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_debugseq_dapswjsequence_is_not_abstract():
+    assert not inspect.isabstract(debugSeq_DapSwjSequence)
+
+
+def test_debugseq_dapswjsequence_constructor_exists():
+    assert callable(debugSeq_DapSwjSequence.__init__)
+
+
+def test_debugseq_dapswjsequence_constructor_args():
+    sig = inspect.signature(debugSeq_DapSwjSequence.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_debugseq_dapjtagsequence_is_not_abstract():
+    assert not inspect.isabstract(debugSeq_DapJtagSequence)
+
+
+def test_debugseq_dapjtagsequence_constructor_exists():
+    assert callable(debugSeq_DapJtagSequence.__init__)
+
+
+def test_debugseq_dapjtagsequence_constructor_args():
+    sig = inspect.signature(debugSeq_DapJtagSequence.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_debugseq_query_is_not_abstract():
+    assert not inspect.isabstract(debugSeq_Query)
+
+
+def test_debugseq_query_constructor_exists():
+    assert callable(debugSeq_Query.__init__)
+
+
+def test_debugseq_query_constructor_args():
+    sig = inspect.signature(debugSeq_Query.__init__)
+    params = list(sig.parameters.keys())
+    assert "message" in params, "Missing parameter 'message'"
+
+def test_debugseq_query_has_message():
+    assert hasattr(debugSeq_Query, "message")
+    descriptor = None
+    for klass in debugSeq_Query.__mro__:
+        if "message" in klass.__dict__:
+            descriptor = klass.__dict__["message"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_debugseq_dapdelay_is_not_abstract():
+    assert not inspect.isabstract(debugSeq_DapDelay)
+
+
+def test_debugseq_dapdelay_constructor_exists():
+    assert callable(debugSeq_DapDelay.__init__)
+
+
+def test_debugseq_dapdelay_constructor_args():
+    sig = inspect.signature(debugSeq_DapDelay.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_debugseq_plus_is_not_abstract():
+    assert not inspect.isabstract(debugSeq_Plus)
+
+
+def test_debugseq_plus_constructor_exists():
+    assert callable(debugSeq_Plus.__init__)
+
+
+def test_debugseq_plus_constructor_args():
+    sig = inspect.signature(debugSeq_Plus.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_debugseq_read16_is_not_abstract():
+    assert not inspect.isabstract(debugSeq_Read16)
+
+
+def test_debugseq_read16_constructor_exists():
+    assert callable(debugSeq_Read16.__init__)
+
+
+def test_debugseq_read16_constructor_args():
+    sig = inspect.signature(debugSeq_Read16.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_debugseq_loaddebuginfo_is_not_abstract():
+    assert not inspect.isabstract(debugSeq_LoadDebugInfo)
+
+
+def test_debugseq_loaddebuginfo_constructor_exists():
+    assert callable(debugSeq_LoadDebugInfo.__init__)
+
+
+def test_debugseq_loaddebuginfo_constructor_args():
+    sig = inspect.signature(debugSeq_LoadDebugInfo.__init__)
     params = list(sig.parameters.keys())
     assert "path" in params, "Missing parameter 'path'"
 
-def test_debugseq::loaddebuginfo_has_path():
-    assert hasattr(debugSeq::LoadDebugInfo, "path")
+def test_debugseq_loaddebuginfo_has_path():
+    assert hasattr(debugSeq_LoadDebugInfo, "path")
     descriptor = None
-    for klass in debugSeq::LoadDebugInfo.__mro__:
+    for klass in debugSeq_LoadDebugInfo.__mro__:
         if "path" in klass.__dict__:
             descriptor = klass.__dict__["path"]
             break
@@ -472,79 +270,23 @@ def test_debugseq::loaddebuginfo_has_path():
 
 
 
-def test_debugseq::dapwriteabort_is_not_abstract():
-    assert not inspect.isabstract(debugSeq::DapWriteABORT)
+def test_debugseq_intconstant_is_not_abstract():
+    assert not inspect.isabstract(debugSeq_IntConstant)
 
 
-def test_debugseq::dapwriteabort_constructor_exists():
-    assert callable(debugSeq::DapWriteABORT.__init__)
+def test_debugseq_intconstant_constructor_exists():
+    assert callable(debugSeq_IntConstant.__init__)
 
 
-def test_debugseq::dapwriteabort_constructor_args():
-    sig = inspect.signature(debugSeq::DapWriteABORT.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_debugseq::dapjtagsequence_is_not_abstract():
-    assert not inspect.isabstract(debugSeq::DapJtagSequence)
-
-
-def test_debugseq::dapjtagsequence_constructor_exists():
-    assert callable(debugSeq::DapJtagSequence.__init__)
-
-
-def test_debugseq::dapjtagsequence_constructor_args():
-    sig = inspect.signature(debugSeq::DapJtagSequence.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_debugseq::write32_is_not_abstract():
-    assert not inspect.isabstract(debugSeq::Write32)
-
-
-def test_debugseq::write32_constructor_exists():
-    assert callable(debugSeq::Write32.__init__)
-
-
-def test_debugseq::write32_constructor_args():
-    sig = inspect.signature(debugSeq::Write32.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_debugseq::readap_is_not_abstract():
-    assert not inspect.isabstract(debugSeq::ReadAP)
-
-
-def test_debugseq::readap_constructor_exists():
-    assert callable(debugSeq::ReadAP.__init__)
-
-
-def test_debugseq::readap_constructor_args():
-    sig = inspect.signature(debugSeq::ReadAP.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_debugseq::intconstant_is_not_abstract():
-    assert not inspect.isabstract(debugSeq::IntConstant)
-
-
-def test_debugseq::intconstant_constructor_exists():
-    assert callable(debugSeq::IntConstant.__init__)
-
-
-def test_debugseq::intconstant_constructor_args():
-    sig = inspect.signature(debugSeq::IntConstant.__init__)
+def test_debugseq_intconstant_constructor_args():
+    sig = inspect.signature(debugSeq_IntConstant.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
 
-def test_debugseq::intconstant_has_value():
-    assert hasattr(debugSeq::IntConstant, "value")
+def test_debugseq_intconstant_has_value():
+    assert hasattr(debugSeq_IntConstant, "value")
     descriptor = None
-    for klass in debugSeq::IntConstant.__mro__:
+    for klass in debugSeq_IntConstant.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -552,79 +294,79 @@ def test_debugseq::intconstant_has_value():
 
 
 
-def test_debugseq::read16_is_not_abstract():
-    assert not inspect.isabstract(debugSeq::Read16)
+def test_debugseq_and_is_not_abstract():
+    assert not inspect.isabstract(debugSeq_And)
 
 
-def test_debugseq::read16_constructor_exists():
-    assert callable(debugSeq::Read16.__init__)
+def test_debugseq_and_constructor_exists():
+    assert callable(debugSeq_And.__init__)
 
 
-def test_debugseq::read16_constructor_args():
-    sig = inspect.signature(debugSeq::Read16.__init__)
+def test_debugseq_and_constructor_args():
+    sig = inspect.signature(debugSeq_And.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_debugseq::readdp_is_not_abstract():
-    assert not inspect.isabstract(debugSeq::ReadDP)
+def test_debugseq_dapswjpins_is_not_abstract():
+    assert not inspect.isabstract(debugSeq_DapSwjPins)
 
 
-def test_debugseq::readdp_constructor_exists():
-    assert callable(debugSeq::ReadDP.__init__)
+def test_debugseq_dapswjpins_constructor_exists():
+    assert callable(debugSeq_DapSwjPins.__init__)
 
 
-def test_debugseq::readdp_constructor_args():
-    sig = inspect.signature(debugSeq::ReadDP.__init__)
+def test_debugseq_dapswjpins_constructor_args():
+    sig = inspect.signature(debugSeq_DapSwjPins.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_debugseq::div_is_not_abstract():
-    assert not inspect.isabstract(debugSeq::Div)
+def test_debugseq_read64_is_not_abstract():
+    assert not inspect.isabstract(debugSeq_Read64)
 
 
-def test_debugseq::div_constructor_exists():
-    assert callable(debugSeq::Div.__init__)
+def test_debugseq_read64_constructor_exists():
+    assert callable(debugSeq_Read64.__init__)
 
 
-def test_debugseq::div_constructor_args():
-    sig = inspect.signature(debugSeq::Div.__init__)
+def test_debugseq_read64_constructor_args():
+    sig = inspect.signature(debugSeq_Read64.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_debugseq::bitand_is_not_abstract():
-    assert not inspect.isabstract(debugSeq::BitAnd)
+def test_debugseq_write8_is_not_abstract():
+    assert not inspect.isabstract(debugSeq_Write8)
 
 
-def test_debugseq::bitand_constructor_exists():
-    assert callable(debugSeq::BitAnd.__init__)
+def test_debugseq_write8_constructor_exists():
+    assert callable(debugSeq_Write8.__init__)
 
 
-def test_debugseq::bitand_constructor_args():
-    sig = inspect.signature(debugSeq::BitAnd.__init__)
+def test_debugseq_write8_constructor_args():
+    sig = inspect.signature(debugSeq_Write8.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_debugseq::equality_is_not_abstract():
-    assert not inspect.isabstract(debugSeq::Equality)
+def test_debugseq_shift_is_not_abstract():
+    assert not inspect.isabstract(debugSeq_Shift)
 
 
-def test_debugseq::equality_constructor_exists():
-    assert callable(debugSeq::Equality.__init__)
+def test_debugseq_shift_constructor_exists():
+    assert callable(debugSeq_Shift.__init__)
 
 
-def test_debugseq::equality_constructor_args():
-    sig = inspect.signature(debugSeq::Equality.__init__)
+def test_debugseq_shift_constructor_args():
+    sig = inspect.signature(debugSeq_Shift.__init__)
     params = list(sig.parameters.keys())
     assert "op" in params, "Missing parameter 'op'"
 
-def test_debugseq::equality_has_op():
-    assert hasattr(debugSeq::Equality, "op")
+def test_debugseq_shift_has_op():
+    assert hasattr(debugSeq_Shift, "op")
     descriptor = None
-    for klass in debugSeq::Equality.__mro__:
+    for klass in debugSeq_Shift.__mro__:
         if "op" in klass.__dict__:
             descriptor = klass.__dict__["op"]
             break
@@ -632,51 +374,385 @@ def test_debugseq::equality_has_op():
 
 
 
-def test_debugseq::rem_is_not_abstract():
-    assert not inspect.isabstract(debugSeq::Rem)
+def test_debugseq_dapswjclock_is_not_abstract():
+    assert not inspect.isabstract(debugSeq_DapSwjClock)
 
 
-def test_debugseq::rem_constructor_exists():
-    assert callable(debugSeq::Rem.__init__)
+def test_debugseq_dapswjclock_constructor_exists():
+    assert callable(debugSeq_DapSwjClock.__init__)
 
 
-def test_debugseq::rem_constructor_args():
-    sig = inspect.signature(debugSeq::Rem.__init__)
+def test_debugseq_dapswjclock_constructor_args():
+    sig = inspect.signature(debugSeq_DapSwjClock.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_debugseq::variableref_is_not_abstract():
-    assert not inspect.isabstract(debugSeq::VariableRef)
+def test_debugseq_writedp_is_not_abstract():
+    assert not inspect.isabstract(debugSeq_WriteDP)
 
 
-def test_debugseq::variableref_constructor_exists():
-    assert callable(debugSeq::VariableRef.__init__)
+def test_debugseq_writedp_constructor_exists():
+    assert callable(debugSeq_WriteDP.__init__)
 
 
-def test_debugseq::variableref_constructor_args():
-    sig = inspect.signature(debugSeq::VariableRef.__init__)
+def test_debugseq_writedp_constructor_args():
+    sig = inspect.signature(debugSeq_WriteDP.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_debugseq::queryvalue_is_not_abstract():
-    assert not inspect.isabstract(debugSeq::QueryValue)
+def test_debugseq_minus_is_not_abstract():
+    assert not inspect.isabstract(debugSeq_Minus)
 
 
-def test_debugseq::queryvalue_constructor_exists():
-    assert callable(debugSeq::QueryValue.__init__)
+def test_debugseq_minus_constructor_exists():
+    assert callable(debugSeq_Minus.__init__)
 
 
-def test_debugseq::queryvalue_constructor_args():
-    sig = inspect.signature(debugSeq::QueryValue.__init__)
+def test_debugseq_minus_constructor_args():
+    sig = inspect.signature(debugSeq_Minus.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_debugseq_not_is_not_abstract():
+    assert not inspect.isabstract(debugSeq_Not)
+
+
+def test_debugseq_not_constructor_exists():
+    assert callable(debugSeq_Not.__init__)
+
+
+def test_debugseq_not_constructor_args():
+    sig = inspect.signature(debugSeq_Not.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_debugseq_ternary_is_not_abstract():
+    assert not inspect.isabstract(debugSeq_Ternary)
+
+
+def test_debugseq_ternary_constructor_exists():
+    assert callable(debugSeq_Ternary.__init__)
+
+
+def test_debugseq_ternary_constructor_args():
+    sig = inspect.signature(debugSeq_Ternary.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_debugseq_writeap_is_not_abstract():
+    assert not inspect.isabstract(debugSeq_WriteAP)
+
+
+def test_debugseq_writeap_constructor_exists():
+    assert callable(debugSeq_WriteAP.__init__)
+
+
+def test_debugseq_writeap_constructor_args():
+    sig = inspect.signature(debugSeq_WriteAP.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_debugseq_stringconstant_is_not_abstract():
+    assert not inspect.isabstract(debugSeq_StringConstant)
+
+
+def test_debugseq_stringconstant_constructor_exists():
+    assert callable(debugSeq_StringConstant.__init__)
+
+
+def test_debugseq_stringconstant_constructor_args():
+    sig = inspect.signature(debugSeq_StringConstant.__init__)
+    params = list(sig.parameters.keys())
+    assert "value" in params, "Missing parameter 'value'"
+
+def test_debugseq_stringconstant_has_value():
+    assert hasattr(debugSeq_StringConstant, "value")
+    descriptor = None
+    for klass in debugSeq_StringConstant.__mro__:
+        if "value" in klass.__dict__:
+            descriptor = klass.__dict__["value"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_debugseq_readdp_is_not_abstract():
+    assert not inspect.isabstract(debugSeq_ReadDP)
+
+
+def test_debugseq_readdp_constructor_exists():
+    assert callable(debugSeq_ReadDP.__init__)
+
+
+def test_debugseq_readdp_constructor_args():
+    sig = inspect.signature(debugSeq_ReadDP.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_debugseq_variableref_is_not_abstract():
+    assert not inspect.isabstract(debugSeq_VariableRef)
+
+
+def test_debugseq_variableref_constructor_exists():
+    assert callable(debugSeq_VariableRef.__init__)
+
+
+def test_debugseq_variableref_constructor_args():
+    sig = inspect.signature(debugSeq_VariableRef.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_debugseq_bitand_is_not_abstract():
+    assert not inspect.isabstract(debugSeq_BitAnd)
+
+
+def test_debugseq_bitand_constructor_exists():
+    assert callable(debugSeq_BitAnd.__init__)
+
+
+def test_debugseq_bitand_constructor_args():
+    sig = inspect.signature(debugSeq_BitAnd.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_debugseq_write32_is_not_abstract():
+    assert not inspect.isabstract(debugSeq_Write32)
+
+
+def test_debugseq_write32_constructor_exists():
+    assert callable(debugSeq_Write32.__init__)
+
+
+def test_debugseq_write32_constructor_args():
+    sig = inspect.signature(debugSeq_Write32.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_debugseq_or_is_not_abstract():
+    assert not inspect.isabstract(debugSeq_Or)
+
+
+def test_debugseq_or_constructor_exists():
+    assert callable(debugSeq_Or.__init__)
+
+
+def test_debugseq_or_constructor_args():
+    sig = inspect.signature(debugSeq_Or.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_debugseq_message_is_not_abstract():
+    assert not inspect.isabstract(debugSeq_Message)
+
+
+def test_debugseq_message_constructor_exists():
+    assert callable(debugSeq_Message.__init__)
+
+
+def test_debugseq_message_constructor_args():
+    sig = inspect.signature(debugSeq_Message.__init__)
+    params = list(sig.parameters.keys())
+    assert "format" in params, "Missing parameter 'format'"
+
+def test_debugseq_message_has_format():
+    assert hasattr(debugSeq_Message, "format")
+    descriptor = None
+    for klass in debugSeq_Message.__mro__:
+        if "format" in klass.__dict__:
+            descriptor = klass.__dict__["format"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_debugseq_read32_is_not_abstract():
+    assert not inspect.isabstract(debugSeq_Read32)
+
+
+def test_debugseq_read32_constructor_exists():
+    assert callable(debugSeq_Read32.__init__)
+
+
+def test_debugseq_read32_constructor_args():
+    sig = inspect.signature(debugSeq_Read32.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_debugseq_readap_is_not_abstract():
+    assert not inspect.isabstract(debugSeq_ReadAP)
+
+
+def test_debugseq_readap_constructor_exists():
+    assert callable(debugSeq_ReadAP.__init__)
+
+
+def test_debugseq_readap_constructor_args():
+    sig = inspect.signature(debugSeq_ReadAP.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_debugseq_mul_is_not_abstract():
+    assert not inspect.isabstract(debugSeq_Mul)
+
+
+def test_debugseq_mul_constructor_exists():
+    assert callable(debugSeq_Mul.__init__)
+
+
+def test_debugseq_mul_constructor_args():
+    sig = inspect.signature(debugSeq_Mul.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_debugseq_div_is_not_abstract():
+    assert not inspect.isabstract(debugSeq_Div)
+
+
+def test_debugseq_div_constructor_exists():
+    assert callable(debugSeq_Div.__init__)
+
+
+def test_debugseq_div_constructor_args():
+    sig = inspect.signature(debugSeq_Div.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_debugseq_bitnot_is_not_abstract():
+    assert not inspect.isabstract(debugSeq_BitNot)
+
+
+def test_debugseq_bitnot_constructor_exists():
+    assert callable(debugSeq_BitNot.__init__)
+
+
+def test_debugseq_bitnot_constructor_args():
+    sig = inspect.signature(debugSeq_BitNot.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_debugseq_equality_is_not_abstract():
+    assert not inspect.isabstract(debugSeq_Equality)
+
+
+def test_debugseq_equality_constructor_exists():
+    assert callable(debugSeq_Equality.__init__)
+
+
+def test_debugseq_equality_constructor_args():
+    sig = inspect.signature(debugSeq_Equality.__init__)
+    params = list(sig.parameters.keys())
+    assert "op" in params, "Missing parameter 'op'"
+
+def test_debugseq_equality_has_op():
+    assert hasattr(debugSeq_Equality, "op")
+    descriptor = None
+    for klass in debugSeq_Equality.__mro__:
+        if "op" in klass.__dict__:
+            descriptor = klass.__dict__["op"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_debugseq_write16_is_not_abstract():
+    assert not inspect.isabstract(debugSeq_Write16)
+
+
+def test_debugseq_write16_constructor_exists():
+    assert callable(debugSeq_Write16.__init__)
+
+
+def test_debugseq_write16_constructor_args():
+    sig = inspect.signature(debugSeq_Write16.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_debugseq_write64_is_not_abstract():
+    assert not inspect.isabstract(debugSeq_Write64)
+
+
+def test_debugseq_write64_constructor_exists():
+    assert callable(debugSeq_Write64.__init__)
+
+
+def test_debugseq_write64_constructor_args():
+    sig = inspect.signature(debugSeq_Write64.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_debugseq_dapwriteabort_is_not_abstract():
+    assert not inspect.isabstract(debugSeq_DapWriteABORT)
+
+
+def test_debugseq_dapwriteabort_constructor_exists():
+    assert callable(debugSeq_DapWriteABORT.__init__)
+
+
+def test_debugseq_dapwriteabort_constructor_args():
+    sig = inspect.signature(debugSeq_DapWriteABORT.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_debugseq_sequencecall_is_not_abstract():
+    assert not inspect.isabstract(debugSeq_SequenceCall)
+
+
+def test_debugseq_sequencecall_constructor_exists():
+    assert callable(debugSeq_SequenceCall.__init__)
+
+
+def test_debugseq_sequencecall_constructor_args():
+    sig = inspect.signature(debugSeq_SequenceCall.__init__)
+    params = list(sig.parameters.keys())
+    assert "seqname" in params, "Missing parameter 'seqname'"
+
+def test_debugseq_sequencecall_has_seqname():
+    assert hasattr(debugSeq_SequenceCall, "seqname")
+    descriptor = None
+    for klass in debugSeq_SequenceCall.__mro__:
+        if "seqname" in klass.__dict__:
+            descriptor = klass.__dict__["seqname"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_debugseq_queryvalue_is_not_abstract():
+    assert not inspect.isabstract(debugSeq_QueryValue)
+
+
+def test_debugseq_queryvalue_constructor_exists():
+    assert callable(debugSeq_QueryValue.__init__)
+
+
+def test_debugseq_queryvalue_constructor_args():
+    sig = inspect.signature(debugSeq_QueryValue.__init__)
     params = list(sig.parameters.keys())
     assert "message" in params, "Missing parameter 'message'"
 
-def test_debugseq::queryvalue_has_message():
-    assert hasattr(debugSeq::QueryValue, "message")
+def test_debugseq_queryvalue_has_message():
+    assert hasattr(debugSeq_QueryValue, "message")
     descriptor = None
-    for klass in debugSeq::QueryValue.__mro__:
+    for klass in debugSeq_QueryValue.__mro__:
         if "message" in klass.__dict__:
             descriptor = klass.__dict__["message"]
             break
@@ -684,61 +760,23 @@ def test_debugseq::queryvalue_has_message():
 
 
 
-def test_debugseq::ternary_is_not_abstract():
-    assert not inspect.isabstract(debugSeq::Ternary)
+def test_debugseq_assignment_is_not_abstract():
+    assert not inspect.isabstract(debugSeq_Assignment)
 
 
-def test_debugseq::ternary_constructor_exists():
-    assert callable(debugSeq::Ternary.__init__)
+def test_debugseq_assignment_constructor_exists():
+    assert callable(debugSeq_Assignment.__init__)
 
 
-def test_debugseq::ternary_constructor_args():
-    sig = inspect.signature(debugSeq::Ternary.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_debugseq::stringconstant_is_not_abstract():
-    assert not inspect.isabstract(debugSeq::StringConstant)
-
-
-def test_debugseq::stringconstant_constructor_exists():
-    assert callable(debugSeq::StringConstant.__init__)
-
-
-def test_debugseq::stringconstant_constructor_args():
-    sig = inspect.signature(debugSeq::StringConstant.__init__)
-    params = list(sig.parameters.keys())
-    assert "value" in params, "Missing parameter 'value'"
-
-def test_debugseq::stringconstant_has_value():
-    assert hasattr(debugSeq::StringConstant, "value")
-    descriptor = None
-    for klass in debugSeq::StringConstant.__mro__:
-        if "value" in klass.__dict__:
-            descriptor = klass.__dict__["value"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_debugseq::comparison_is_not_abstract():
-    assert not inspect.isabstract(debugSeq::Comparison)
-
-
-def test_debugseq::comparison_constructor_exists():
-    assert callable(debugSeq::Comparison.__init__)
-
-
-def test_debugseq::comparison_constructor_args():
-    sig = inspect.signature(debugSeq::Comparison.__init__)
+def test_debugseq_assignment_constructor_args():
+    sig = inspect.signature(debugSeq_Assignment.__init__)
     params = list(sig.parameters.keys())
     assert "op" in params, "Missing parameter 'op'"
 
-def test_debugseq::comparison_has_op():
-    assert hasattr(debugSeq::Comparison, "op")
+def test_debugseq_assignment_has_op():
+    assert hasattr(debugSeq_Assignment, "op")
     descriptor = None
-    for klass in debugSeq::Comparison.__mro__:
+    for klass in debugSeq_Assignment.__mro__:
         if "op" in klass.__dict__:
             descriptor = klass.__dict__["op"]
             break
@@ -746,54 +784,16 @@ def test_debugseq::comparison_has_op():
 
 
 
-def test_debugseq::dapswjpins_is_not_abstract():
-    assert not inspect.isabstract(debugSeq::DapSwjPins)
+def test_debugseq_parameter_is_not_abstract():
+    assert not inspect.isabstract(debugSeq_Parameter)
 
 
-def test_debugseq::dapswjpins_constructor_exists():
-    assert callable(debugSeq::DapSwjPins.__init__)
+def test_debugseq_parameter_constructor_exists():
+    assert callable(debugSeq_Parameter.__init__)
 
 
-def test_debugseq::dapswjpins_constructor_args():
-    sig = inspect.signature(debugSeq::DapSwjPins.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_debugseq::assignment_is_not_abstract():
-    assert not inspect.isabstract(debugSeq::Assignment)
-
-
-def test_debugseq::assignment_constructor_exists():
-    assert callable(debugSeq::Assignment.__init__)
-
-
-def test_debugseq::assignment_constructor_args():
-    sig = inspect.signature(debugSeq::Assignment.__init__)
-    params = list(sig.parameters.keys())
-    assert "op" in params, "Missing parameter 'op'"
-
-def test_debugseq::assignment_has_op():
-    assert hasattr(debugSeq::Assignment, "op")
-    descriptor = None
-    for klass in debugSeq::Assignment.__mro__:
-        if "op" in klass.__dict__:
-            descriptor = klass.__dict__["op"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_debugseq::parameter_is_not_abstract():
-    assert not inspect.isabstract(debugSeq::Parameter)
-
-
-def test_debugseq::parameter_constructor_exists():
-    assert callable(debugSeq::Parameter.__init__)
-
-
-def test_debugseq::parameter_constructor_args():
-    sig = inspect.signature(debugSeq::Parameter.__init__)
+def test_debugseq_parameter_constructor_args():
+    sig = inspect.signature(debugSeq_Parameter.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -826,23 +826,23 @@ def test_codeblock_constructor_args():
 
 
 
-def test_debugseq::control_is_not_abstract():
-    assert not inspect.isabstract(debugSeq::Control)
+def test_debugseq_control_is_not_abstract():
+    assert not inspect.isabstract(debugSeq_Control)
 
 
-def test_debugseq::control_constructor_exists():
-    assert callable(debugSeq::Control.__init__)
+def test_debugseq_control_constructor_exists():
+    assert callable(debugSeq_Control.__init__)
 
 
-def test_debugseq::control_constructor_args():
-    sig = inspect.signature(debugSeq::Control.__init__)
+def test_debugseq_control_constructor_args():
+    sig = inspect.signature(debugSeq_Control.__init__)
     params = list(sig.parameters.keys())
     assert "timeout" in params, "Missing parameter 'timeout'"
 
-def test_debugseq::control_has_timeout():
-    assert hasattr(debugSeq::Control, "timeout")
+def test_debugseq_control_has_timeout():
+    assert hasattr(debugSeq_Control, "timeout")
     descriptor = None
-    for klass in debugSeq::Control.__mro__:
+    for klass in debugSeq_Control.__mro__:
         if "timeout" in klass.__dict__:
             descriptor = klass.__dict__["timeout"]
             break
@@ -850,23 +850,23 @@ def test_debugseq::control_has_timeout():
 
 
 
-def test_debugseq::block_is_not_abstract():
-    assert not inspect.isabstract(debugSeq::Block)
+def test_debugseq_block_is_not_abstract():
+    assert not inspect.isabstract(debugSeq_Block)
 
 
-def test_debugseq::block_constructor_exists():
-    assert callable(debugSeq::Block.__init__)
+def test_debugseq_block_constructor_exists():
+    assert callable(debugSeq_Block.__init__)
 
 
-def test_debugseq::block_constructor_args():
-    sig = inspect.signature(debugSeq::Block.__init__)
+def test_debugseq_block_constructor_args():
+    sig = inspect.signature(debugSeq_Block.__init__)
     params = list(sig.parameters.keys())
     assert "atomic" in params, "Missing parameter 'atomic'"
 
-def test_debugseq::block_has_atomic():
-    assert hasattr(debugSeq::Block, "atomic")
+def test_debugseq_block_has_atomic():
+    assert hasattr(debugSeq_Block, "atomic")
     descriptor = None
-    for klass in debugSeq::Block.__mro__:
+    for klass in debugSeq_Block.__mro__:
         if "atomic" in klass.__dict__:
             descriptor = klass.__dict__["atomic"]
             break
@@ -874,23 +874,23 @@ def test_debugseq::block_has_atomic():
 
 
 
-def test_debugseq::codeblock_is_not_abstract():
-    assert not inspect.isabstract(debugSeq::CodeBlock)
+def test_debugseq_codeblock_is_not_abstract():
+    assert not inspect.isabstract(debugSeq_CodeBlock)
 
 
-def test_debugseq::codeblock_constructor_exists():
-    assert callable(debugSeq::CodeBlock.__init__)
+def test_debugseq_codeblock_constructor_exists():
+    assert callable(debugSeq_CodeBlock.__init__)
 
 
-def test_debugseq::codeblock_constructor_args():
-    sig = inspect.signature(debugSeq::CodeBlock.__init__)
+def test_debugseq_codeblock_constructor_args():
+    sig = inspect.signature(debugSeq_CodeBlock.__init__)
     params = list(sig.parameters.keys())
     assert "info" in params, "Missing parameter 'info'"
 
-def test_debugseq::codeblock_has_info():
-    assert hasattr(debugSeq::CodeBlock, "info")
+def test_debugseq_codeblock_has_info():
+    assert hasattr(debugSeq_CodeBlock, "info")
     descriptor = None
-    for klass in debugSeq::CodeBlock.__mro__:
+    for klass in debugSeq_CodeBlock.__mro__:
         if "info" in klass.__dict__:
             descriptor = klass.__dict__["info"]
             break
@@ -898,69 +898,69 @@ def test_debugseq::codeblock_has_info():
 
 
 
-def test_debugseq::bitor_is_not_abstract():
-    assert not inspect.isabstract(debugSeq::BitOr)
+def test_debugseq_bitor_is_not_abstract():
+    assert not inspect.isabstract(debugSeq_BitOr)
 
 
-def test_debugseq::bitor_constructor_exists():
-    assert callable(debugSeq::BitOr.__init__)
+def test_debugseq_bitor_constructor_exists():
+    assert callable(debugSeq_BitOr.__init__)
 
 
-def test_debugseq::bitor_constructor_args():
-    sig = inspect.signature(debugSeq::BitOr.__init__)
+def test_debugseq_bitor_constructor_args():
+    sig = inspect.signature(debugSeq_BitOr.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_debugseq::sequence_is_not_abstract():
-    assert not inspect.isabstract(debugSeq::Sequence)
+def test_debugseq_sequence_is_not_abstract():
+    assert not inspect.isabstract(debugSeq_Sequence)
 
 
-def test_debugseq::sequence_constructor_exists():
-    assert callable(debugSeq::Sequence.__init__)
+def test_debugseq_sequence_constructor_exists():
+    assert callable(debugSeq_Sequence.__init__)
 
 
-def test_debugseq::sequence_constructor_args():
-    sig = inspect.signature(debugSeq::Sequence.__init__)
+def test_debugseq_sequence_constructor_args():
+    sig = inspect.signature(debugSeq_Sequence.__init__)
     params = list(sig.parameters.keys())
+    assert "pname" in params, "Missing parameter 'pname'"
     assert "name" in params, "Missing parameter 'name'"
     assert "disable" in params, "Missing parameter 'disable'"
     assert "info" in params, "Missing parameter 'info'"
-    assert "pname" in params, "Missing parameter 'pname'"
 
-def test_debugseq::sequence_has_name():
-    assert hasattr(debugSeq::Sequence, "name")
+def test_debugseq_sequence_has_pname():
+    assert hasattr(debugSeq_Sequence, "pname")
     descriptor = None
-    for klass in debugSeq::Sequence.__mro__:
+    for klass in debugSeq_Sequence.__mro__:
+        if "pname" in klass.__dict__:
+            descriptor = klass.__dict__["pname"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_debugseq_sequence_has_name():
+    assert hasattr(debugSeq_Sequence, "name")
+    descriptor = None
+    for klass in debugSeq_Sequence.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
-def test_debugseq::sequence_has_disable():
-    assert hasattr(debugSeq::Sequence, "disable")
+def test_debugseq_sequence_has_disable():
+    assert hasattr(debugSeq_Sequence, "disable")
     descriptor = None
-    for klass in debugSeq::Sequence.__mro__:
+    for klass in debugSeq_Sequence.__mro__:
         if "disable" in klass.__dict__:
             descriptor = klass.__dict__["disable"]
             break
     assert isinstance(descriptor, property)
 
-def test_debugseq::sequence_has_info():
-    assert hasattr(debugSeq::Sequence, "info")
+def test_debugseq_sequence_has_info():
+    assert hasattr(debugSeq_Sequence, "info")
     descriptor = None
-    for klass in debugSeq::Sequence.__mro__:
+    for klass in debugSeq_Sequence.__mro__:
         if "info" in klass.__dict__:
             descriptor = klass.__dict__["info"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_debugseq::sequence_has_pname():
-    assert hasattr(debugSeq::Sequence, "pname")
-    descriptor = None
-    for klass in debugSeq::Sequence.__mro__:
-        if "pname" in klass.__dict__:
-            descriptor = klass.__dict__["pname"]
             break
     assert isinstance(descriptor, property)
 
@@ -980,37 +980,37 @@ def test_statement_constructor_args():
 
 
 
-def test_debugseq::expression_is_not_abstract():
-    assert not inspect.isabstract(debugSeq::Expression)
+def test_debugseq_expression_is_not_abstract():
+    assert not inspect.isabstract(debugSeq_Expression)
 
 
-def test_debugseq::expression_constructor_exists():
-    assert callable(debugSeq::Expression.__init__)
+def test_debugseq_expression_constructor_exists():
+    assert callable(debugSeq_Expression.__init__)
 
 
-def test_debugseq::expression_constructor_args():
-    sig = inspect.signature(debugSeq::Expression.__init__)
+def test_debugseq_expression_constructor_args():
+    sig = inspect.signature(debugSeq_Expression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_debugseq::variabledeclaration_is_not_abstract():
-    assert not inspect.isabstract(debugSeq::VariableDeclaration)
+def test_debugseq_variabledeclaration_is_not_abstract():
+    assert not inspect.isabstract(debugSeq_VariableDeclaration)
 
 
-def test_debugseq::variabledeclaration_constructor_exists():
-    assert callable(debugSeq::VariableDeclaration.__init__)
+def test_debugseq_variabledeclaration_constructor_exists():
+    assert callable(debugSeq_VariableDeclaration.__init__)
 
 
-def test_debugseq::variabledeclaration_constructor_args():
-    sig = inspect.signature(debugSeq::VariableDeclaration.__init__)
+def test_debugseq_variabledeclaration_constructor_args():
+    sig = inspect.signature(debugSeq_VariableDeclaration.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_debugseq::variabledeclaration_has_name():
-    assert hasattr(debugSeq::VariableDeclaration, "name")
+def test_debugseq_variabledeclaration_has_name():
+    assert hasattr(debugSeq_VariableDeclaration, "name")
     descriptor = None
-    for klass in debugSeq::VariableDeclaration.__mro__:
+    for klass in debugSeq_VariableDeclaration.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -1018,88 +1018,88 @@ def test_debugseq::variabledeclaration_has_name():
 
 
 
-def test_debugseq::statement_is_not_abstract():
-    assert not inspect.isabstract(debugSeq::Statement)
+def test_debugseq_statement_is_not_abstract():
+    assert not inspect.isabstract(debugSeq_Statement)
 
 
-def test_debugseq::statement_constructor_exists():
-    assert callable(debugSeq::Statement.__init__)
+def test_debugseq_statement_constructor_exists():
+    assert callable(debugSeq_Statement.__init__)
 
 
-def test_debugseq::statement_constructor_args():
-    sig = inspect.signature(debugSeq::Statement.__init__)
+def test_debugseq_statement_constructor_args():
+    sig = inspect.signature(debugSeq_Statement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_debugseq::sequences_is_not_abstract():
-    assert not inspect.isabstract(debugSeq::Sequences)
+def test_debugseq_sequences_is_not_abstract():
+    assert not inspect.isabstract(debugSeq_Sequences)
 
 
-def test_debugseq::sequences_constructor_exists():
-    assert callable(debugSeq::Sequences.__init__)
+def test_debugseq_sequences_constructor_exists():
+    assert callable(debugSeq_Sequences.__init__)
 
 
-def test_debugseq::sequences_constructor_args():
-    sig = inspect.signature(debugSeq::Sequences.__init__)
+def test_debugseq_sequences_constructor_args():
+    sig = inspect.signature(debugSeq_Sequences.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_debugseq::debugvars_is_not_abstract():
-    assert not inspect.isabstract(debugSeq::DebugVars)
+def test_debugseq_debugvars_is_not_abstract():
+    assert not inspect.isabstract(debugSeq_DebugVars)
 
 
-def test_debugseq::debugvars_constructor_exists():
-    assert callable(debugSeq::DebugVars.__init__)
+def test_debugseq_debugvars_constructor_exists():
+    assert callable(debugSeq_DebugVars.__init__)
 
 
-def test_debugseq::debugvars_constructor_args():
-    sig = inspect.signature(debugSeq::DebugVars.__init__)
+def test_debugseq_debugvars_constructor_args():
+    sig = inspect.signature(debugSeq_DebugVars.__init__)
     params = list(sig.parameters.keys())
-    assert "pname" in params, "Missing parameter 'pname'"
-    assert "configfile" in params, "Missing parameter 'configfile'"
     assert "version" in params, "Missing parameter 'version'"
+    assert "configfile" in params, "Missing parameter 'configfile'"
+    assert "pname" in params, "Missing parameter 'pname'"
 
-def test_debugseq::debugvars_has_pname():
-    assert hasattr(debugSeq::DebugVars, "pname")
+def test_debugseq_debugvars_has_version():
+    assert hasattr(debugSeq_DebugVars, "version")
     descriptor = None
-    for klass in debugSeq::DebugVars.__mro__:
-        if "pname" in klass.__dict__:
-            descriptor = klass.__dict__["pname"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_debugseq::debugvars_has_configfile():
-    assert hasattr(debugSeq::DebugVars, "configfile")
-    descriptor = None
-    for klass in debugSeq::DebugVars.__mro__:
-        if "configfile" in klass.__dict__:
-            descriptor = klass.__dict__["configfile"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_debugseq::debugvars_has_version():
-    assert hasattr(debugSeq::DebugVars, "version")
-    descriptor = None
-    for klass in debugSeq::DebugVars.__mro__:
+    for klass in debugSeq_DebugVars.__mro__:
         if "version" in klass.__dict__:
             descriptor = klass.__dict__["version"]
             break
     assert isinstance(descriptor, property)
 
+def test_debugseq_debugvars_has_configfile():
+    assert hasattr(debugSeq_DebugVars, "configfile")
+    descriptor = None
+    for klass in debugSeq_DebugVars.__mro__:
+        if "configfile" in klass.__dict__:
+            descriptor = klass.__dict__["configfile"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_debugseq_debugvars_has_pname():
+    assert hasattr(debugSeq_DebugVars, "pname")
+    descriptor = None
+    for klass in debugSeq_DebugVars.__mro__:
+        if "pname" in klass.__dict__:
+            descriptor = klass.__dict__["pname"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_debugseq::debugseqmodel_is_not_abstract():
-    assert not inspect.isabstract(debugSeq::DebugSeqModel)
+
+def test_debugseq_debugseqmodel_is_not_abstract():
+    assert not inspect.isabstract(debugSeq_DebugSeqModel)
 
 
-def test_debugseq::debugseqmodel_constructor_exists():
-    assert callable(debugSeq::DebugSeqModel.__init__)
+def test_debugseq_debugseqmodel_constructor_exists():
+    assert callable(debugSeq_DebugSeqModel.__init__)
 
 
-def test_debugseq::debugseqmodel_constructor_args():
-    sig = inspect.signature(debugSeq::DebugSeqModel.__init__)
+def test_debugseq_debugseqmodel_constructor_args():
+    sig = inspect.signature(debugSeq_DebugSeqModel.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1117,156 +1117,156 @@ safe_text = st.text(
 Expression_strategy = st.builds(
     Expression,
 )
-debugSeq::Plus_strategy = st.builds(
-    debugSeq::Plus,
-)
-debugSeq::Not_strategy = st.builds(
-    debugSeq::Not,
-)
-debugSeq::Or_strategy = st.builds(
-    debugSeq::Or,
-)
-debugSeq::DapSwjSequence_strategy = st.builds(
-    debugSeq::DapSwjSequence,
-)
-debugSeq::DapDelay_strategy = st.builds(
-    debugSeq::DapDelay,
-)
-debugSeq::Read8_strategy = st.builds(
-    debugSeq::Read8,
-)
-debugSeq::BitXor_strategy = st.builds(
-    debugSeq::BitXor,
-)
-debugSeq::Write16_strategy = st.builds(
-    debugSeq::Write16,
-)
-debugSeq::Read32_strategy = st.builds(
-    debugSeq::Read32,
-)
-debugSeq::And_strategy = st.builds(
-    debugSeq::And,
-)
-debugSeq::Mul_strategy = st.builds(
-    debugSeq::Mul,
-)
-debugSeq::WriteDP_strategy = st.builds(
-    debugSeq::WriteDP,
-)
-debugSeq::Query_strategy = st.builds(
-    debugSeq::Query,
-    message=
-        safe_text
-)
-debugSeq::Write64_strategy = st.builds(
-    debugSeq::Write64,
-)
-debugSeq::Message_strategy = st.builds(
-    debugSeq::Message,
-    format=
-        safe_text
-)
-debugSeq::SequenceCall_strategy = st.builds(
-    debugSeq::SequenceCall,
-    seqname=
-        safe_text
-)
-debugSeq::DapSwjClock_strategy = st.builds(
-    debugSeq::DapSwjClock,
-)
-debugSeq::Read64_strategy = st.builds(
-    debugSeq::Read64,
-)
-debugSeq::BitNot_strategy = st.builds(
-    debugSeq::BitNot,
-)
-debugSeq::WriteAP_strategy = st.builds(
-    debugSeq::WriteAP,
-)
-debugSeq::Shift_strategy = st.builds(
-    debugSeq::Shift,
+debugSeq_Comparison_strategy = st.builds(
+    debugSeq_Comparison,
     op=
         safe_text
 )
-debugSeq::Minus_strategy = st.builds(
-    debugSeq::Minus,
+debugSeq_Read8_strategy = st.builds(
+    debugSeq_Read8,
 )
-debugSeq::Write8_strategy = st.builds(
-    debugSeq::Write8,
+debugSeq_BitXor_strategy = st.builds(
+    debugSeq_BitXor,
 )
-debugSeq::LoadDebugInfo_strategy = st.builds(
-    debugSeq::LoadDebugInfo,
+debugSeq_Rem_strategy = st.builds(
+    debugSeq_Rem,
+)
+debugSeq_DapSwjSequence_strategy = st.builds(
+    debugSeq_DapSwjSequence,
+)
+debugSeq_DapJtagSequence_strategy = st.builds(
+    debugSeq_DapJtagSequence,
+)
+debugSeq_Query_strategy = st.builds(
+    debugSeq_Query,
+    message=
+        safe_text
+)
+debugSeq_DapDelay_strategy = st.builds(
+    debugSeq_DapDelay,
+)
+debugSeq_Plus_strategy = st.builds(
+    debugSeq_Plus,
+)
+debugSeq_Read16_strategy = st.builds(
+    debugSeq_Read16,
+)
+debugSeq_LoadDebugInfo_strategy = st.builds(
+    debugSeq_LoadDebugInfo,
     path=
         safe_text
 )
-debugSeq::DapWriteABORT_strategy = st.builds(
-    debugSeq::DapWriteABORT,
-)
-debugSeq::DapJtagSequence_strategy = st.builds(
-    debugSeq::DapJtagSequence,
-)
-debugSeq::Write32_strategy = st.builds(
-    debugSeq::Write32,
-)
-debugSeq::ReadAP_strategy = st.builds(
-    debugSeq::ReadAP,
-)
-debugSeq::IntConstant_strategy = st.builds(
-    debugSeq::IntConstant,
+debugSeq_IntConstant_strategy = st.builds(
+    debugSeq_IntConstant,
     value=
         safe_text
 )
-debugSeq::Read16_strategy = st.builds(
-    debugSeq::Read16,
+debugSeq_And_strategy = st.builds(
+    debugSeq_And,
 )
-debugSeq::ReadDP_strategy = st.builds(
-    debugSeq::ReadDP,
+debugSeq_DapSwjPins_strategy = st.builds(
+    debugSeq_DapSwjPins,
 )
-debugSeq::Div_strategy = st.builds(
-    debugSeq::Div,
+debugSeq_Read64_strategy = st.builds(
+    debugSeq_Read64,
 )
-debugSeq::BitAnd_strategy = st.builds(
-    debugSeq::BitAnd,
+debugSeq_Write8_strategy = st.builds(
+    debugSeq_Write8,
 )
-debugSeq::Equality_strategy = st.builds(
-    debugSeq::Equality,
+debugSeq_Shift_strategy = st.builds(
+    debugSeq_Shift,
     op=
         safe_text
 )
-debugSeq::Rem_strategy = st.builds(
-    debugSeq::Rem,
+debugSeq_DapSwjClock_strategy = st.builds(
+    debugSeq_DapSwjClock,
 )
-debugSeq::VariableRef_strategy = st.builds(
-    debugSeq::VariableRef,
+debugSeq_WriteDP_strategy = st.builds(
+    debugSeq_WriteDP,
 )
-debugSeq::QueryValue_strategy = st.builds(
-    debugSeq::QueryValue,
+debugSeq_Minus_strategy = st.builds(
+    debugSeq_Minus,
+)
+debugSeq_Not_strategy = st.builds(
+    debugSeq_Not,
+)
+debugSeq_Ternary_strategy = st.builds(
+    debugSeq_Ternary,
+)
+debugSeq_WriteAP_strategy = st.builds(
+    debugSeq_WriteAP,
+)
+debugSeq_StringConstant_strategy = st.builds(
+    debugSeq_StringConstant,
+    value=
+        safe_text
+)
+debugSeq_ReadDP_strategy = st.builds(
+    debugSeq_ReadDP,
+)
+debugSeq_VariableRef_strategy = st.builds(
+    debugSeq_VariableRef,
+)
+debugSeq_BitAnd_strategy = st.builds(
+    debugSeq_BitAnd,
+)
+debugSeq_Write32_strategy = st.builds(
+    debugSeq_Write32,
+)
+debugSeq_Or_strategy = st.builds(
+    debugSeq_Or,
+)
+debugSeq_Message_strategy = st.builds(
+    debugSeq_Message,
+    format=
+        safe_text
+)
+debugSeq_Read32_strategy = st.builds(
+    debugSeq_Read32,
+)
+debugSeq_ReadAP_strategy = st.builds(
+    debugSeq_ReadAP,
+)
+debugSeq_Mul_strategy = st.builds(
+    debugSeq_Mul,
+)
+debugSeq_Div_strategy = st.builds(
+    debugSeq_Div,
+)
+debugSeq_BitNot_strategy = st.builds(
+    debugSeq_BitNot,
+)
+debugSeq_Equality_strategy = st.builds(
+    debugSeq_Equality,
+    op=
+        safe_text
+)
+debugSeq_Write16_strategy = st.builds(
+    debugSeq_Write16,
+)
+debugSeq_Write64_strategy = st.builds(
+    debugSeq_Write64,
+)
+debugSeq_DapWriteABORT_strategy = st.builds(
+    debugSeq_DapWriteABORT,
+)
+debugSeq_SequenceCall_strategy = st.builds(
+    debugSeq_SequenceCall,
+    seqname=
+        safe_text
+)
+debugSeq_QueryValue_strategy = st.builds(
+    debugSeq_QueryValue,
     message=
         safe_text
 )
-debugSeq::Ternary_strategy = st.builds(
-    debugSeq::Ternary,
-)
-debugSeq::StringConstant_strategy = st.builds(
-    debugSeq::StringConstant,
-    value=
-        safe_text
-)
-debugSeq::Comparison_strategy = st.builds(
-    debugSeq::Comparison,
+debugSeq_Assignment_strategy = st.builds(
+    debugSeq_Assignment,
     op=
         safe_text
 )
-debugSeq::DapSwjPins_strategy = st.builds(
-    debugSeq::DapSwjPins,
-)
-debugSeq::Assignment_strategy = st.builds(
-    debugSeq::Assignment,
-    op=
-        safe_text
-)
-debugSeq::Parameter_strategy = st.builds(
-    debugSeq::Parameter,
+debugSeq_Parameter_strategy = st.builds(
+    debugSeq_Parameter,
 )
 Parameter_strategy = st.builds(
     Parameter,
@@ -1274,63 +1274,63 @@ Parameter_strategy = st.builds(
 CodeBlock_strategy = st.builds(
     CodeBlock,
 )
-debugSeq::Control_strategy = st.builds(
-    debugSeq::Control,
+debugSeq_Control_strategy = st.builds(
+    debugSeq_Control,
     timeout=
         safe_text
 )
-debugSeq::Block_strategy = st.builds(
-    debugSeq::Block,
+debugSeq_Block_strategy = st.builds(
+    debugSeq_Block,
     atomic=
         safe_text
 )
-debugSeq::CodeBlock_strategy = st.builds(
-    debugSeq::CodeBlock,
+debugSeq_CodeBlock_strategy = st.builds(
+    debugSeq_CodeBlock,
     info=
         safe_text
 )
-debugSeq::BitOr_strategy = st.builds(
-    debugSeq::BitOr,
+debugSeq_BitOr_strategy = st.builds(
+    debugSeq_BitOr,
 )
-debugSeq::Sequence_strategy = st.builds(
-    debugSeq::Sequence,
+debugSeq_Sequence_strategy = st.builds(
+    debugSeq_Sequence,
+    pname=
+        safe_text,
     name=
         safe_text,
     disable=
         safe_text,
     info=
-        safe_text,
-    pname=
         safe_text
 )
 Statement_strategy = st.builds(
     Statement,
 )
-debugSeq::Expression_strategy = st.builds(
-    debugSeq::Expression,
+debugSeq_Expression_strategy = st.builds(
+    debugSeq_Expression,
 )
-debugSeq::VariableDeclaration_strategy = st.builds(
-    debugSeq::VariableDeclaration,
+debugSeq_VariableDeclaration_strategy = st.builds(
+    debugSeq_VariableDeclaration,
     name=
         safe_text
 )
-debugSeq::Statement_strategy = st.builds(
-    debugSeq::Statement,
+debugSeq_Statement_strategy = st.builds(
+    debugSeq_Statement,
 )
-debugSeq::Sequences_strategy = st.builds(
-    debugSeq::Sequences,
+debugSeq_Sequences_strategy = st.builds(
+    debugSeq_Sequences,
 )
-debugSeq::DebugVars_strategy = st.builds(
-    debugSeq::DebugVars,
-    pname=
+debugSeq_DebugVars_strategy = st.builds(
+    debugSeq_DebugVars,
+    version=
         safe_text,
     configfile=
         safe_text,
-    version=
+    pname=
         safe_text
 )
-debugSeq::DebugSeqModel_strategy = st.builds(
-    debugSeq::DebugSeqModel,
+debugSeq_DebugSeqModel_strategy = st.builds(
+    debugSeq_DebugSeqModel,
 )
 
 @given(instance=Expression_strategy)
@@ -1338,341 +1338,308 @@ debugSeq::DebugSeqModel_strategy = st.builds(
 def test_expression_instantiation(instance):
     assert isinstance(instance, Expression)
 
-@given(instance=debugSeq::Plus_strategy)
+@given(instance=debugSeq_Comparison_strategy)
 @settings(max_examples=50)
-def test_debugseq::plus_instantiation(instance):
-    assert isinstance(instance, debugSeq::Plus)
-
-@given(instance=debugSeq::Not_strategy)
-@settings(max_examples=50)
-def test_debugseq::not_instantiation(instance):
-    assert isinstance(instance, debugSeq::Not)
-
-@given(instance=debugSeq::Or_strategy)
-@settings(max_examples=50)
-def test_debugseq::or_instantiation(instance):
-    assert isinstance(instance, debugSeq::Or)
-
-@given(instance=debugSeq::DapSwjSequence_strategy)
-@settings(max_examples=50)
-def test_debugseq::dapswjsequence_instantiation(instance):
-    assert isinstance(instance, debugSeq::DapSwjSequence)
-
-@given(instance=debugSeq::DapDelay_strategy)
-@settings(max_examples=50)
-def test_debugseq::dapdelay_instantiation(instance):
-    assert isinstance(instance, debugSeq::DapDelay)
-
-@given(instance=debugSeq::Read8_strategy)
-@settings(max_examples=50)
-def test_debugseq::read8_instantiation(instance):
-    assert isinstance(instance, debugSeq::Read8)
-
-@given(instance=debugSeq::BitXor_strategy)
-@settings(max_examples=50)
-def test_debugseq::bitxor_instantiation(instance):
-    assert isinstance(instance, debugSeq::BitXor)
-
-@given(instance=debugSeq::Write16_strategy)
-@settings(max_examples=50)
-def test_debugseq::write16_instantiation(instance):
-    assert isinstance(instance, debugSeq::Write16)
-
-@given(instance=debugSeq::Read32_strategy)
-@settings(max_examples=50)
-def test_debugseq::read32_instantiation(instance):
-    assert isinstance(instance, debugSeq::Read32)
-
-@given(instance=debugSeq::And_strategy)
-@settings(max_examples=50)
-def test_debugseq::and_instantiation(instance):
-    assert isinstance(instance, debugSeq::And)
-
-@given(instance=debugSeq::Mul_strategy)
-@settings(max_examples=50)
-def test_debugseq::mul_instantiation(instance):
-    assert isinstance(instance, debugSeq::Mul)
-
-@given(instance=debugSeq::WriteDP_strategy)
-@settings(max_examples=50)
-def test_debugseq::writedp_instantiation(instance):
-    assert isinstance(instance, debugSeq::WriteDP)
-
-@given(instance=debugSeq::Query_strategy)
-@settings(max_examples=50)
-def test_debugseq::query_instantiation(instance):
-    assert isinstance(instance, debugSeq::Query)
-
-@given(instance=debugSeq::Query_strategy)
-def test_debugseq::query_message_type(instance):
-    assert isinstance(instance.message, str)
+def test_debugseq_comparison_instantiation(instance):
+    assert isinstance(instance, debugSeq_Comparison)
 
 
-@given(instance=debugSeq::Query_strategy)
-def test_debugseq::query_message_setter(instance):
-    original = instance.message
-    instance.message = original
-    assert instance.message == original
 
-@given(instance=debugSeq::Write64_strategy)
-@settings(max_examples=50)
-def test_debugseq::write64_instantiation(instance):
-    assert isinstance(instance, debugSeq::Write64)
-
-@given(instance=debugSeq::Message_strategy)
-@settings(max_examples=50)
-def test_debugseq::message_instantiation(instance):
-    assert isinstance(instance, debugSeq::Message)
-
-@given(instance=debugSeq::Message_strategy)
-def test_debugseq::message_format_type(instance):
-    assert isinstance(instance.format, str)
-
-
-@given(instance=debugSeq::Message_strategy)
-def test_debugseq::message_format_setter(instance):
-    original = instance.format
-    instance.format = original
-    assert instance.format == original
-
-@given(instance=debugSeq::SequenceCall_strategy)
-@settings(max_examples=50)
-def test_debugseq::sequencecall_instantiation(instance):
-    assert isinstance(instance, debugSeq::SequenceCall)
-
-@given(instance=debugSeq::SequenceCall_strategy)
-def test_debugseq::sequencecall_seqname_type(instance):
-    assert isinstance(instance.seqname, str)
-
-
-@given(instance=debugSeq::SequenceCall_strategy)
-def test_debugseq::sequencecall_seqname_setter(instance):
-    original = instance.seqname
-    instance.seqname = original
-    assert instance.seqname == original
-
-@given(instance=debugSeq::DapSwjClock_strategy)
-@settings(max_examples=50)
-def test_debugseq::dapswjclock_instantiation(instance):
-    assert isinstance(instance, debugSeq::DapSwjClock)
-
-@given(instance=debugSeq::Read64_strategy)
-@settings(max_examples=50)
-def test_debugseq::read64_instantiation(instance):
-    assert isinstance(instance, debugSeq::Read64)
-
-@given(instance=debugSeq::BitNot_strategy)
-@settings(max_examples=50)
-def test_debugseq::bitnot_instantiation(instance):
-    assert isinstance(instance, debugSeq::BitNot)
-
-@given(instance=debugSeq::WriteAP_strategy)
-@settings(max_examples=50)
-def test_debugseq::writeap_instantiation(instance):
-    assert isinstance(instance, debugSeq::WriteAP)
-
-@given(instance=debugSeq::Shift_strategy)
-@settings(max_examples=50)
-def test_debugseq::shift_instantiation(instance):
-    assert isinstance(instance, debugSeq::Shift)
-
-@given(instance=debugSeq::Shift_strategy)
-def test_debugseq::shift_op_type(instance):
-    assert isinstance(instance.op, str)
-
-
-@given(instance=debugSeq::Shift_strategy)
-def test_debugseq::shift_op_setter(instance):
+@given(instance=debugSeq_Comparison_strategy)
+def test_debugseq_comparison_op_setter(instance):
     original = instance.op
     instance.op = original
     assert instance.op == original
 
-@given(instance=debugSeq::Minus_strategy)
+@given(instance=debugSeq_Read8_strategy)
 @settings(max_examples=50)
-def test_debugseq::minus_instantiation(instance):
-    assert isinstance(instance, debugSeq::Minus)
+def test_debugseq_read8_instantiation(instance):
+    assert isinstance(instance, debugSeq_Read8)
 
-@given(instance=debugSeq::Write8_strategy)
+@given(instance=debugSeq_BitXor_strategy)
 @settings(max_examples=50)
-def test_debugseq::write8_instantiation(instance):
-    assert isinstance(instance, debugSeq::Write8)
+def test_debugseq_bitxor_instantiation(instance):
+    assert isinstance(instance, debugSeq_BitXor)
 
-@given(instance=debugSeq::LoadDebugInfo_strategy)
+@given(instance=debugSeq_Rem_strategy)
 @settings(max_examples=50)
-def test_debugseq::loaddebuginfo_instantiation(instance):
-    assert isinstance(instance, debugSeq::LoadDebugInfo)
+def test_debugseq_rem_instantiation(instance):
+    assert isinstance(instance, debugSeq_Rem)
 
-@given(instance=debugSeq::LoadDebugInfo_strategy)
-def test_debugseq::loaddebuginfo_path_type(instance):
-    assert isinstance(instance.path, str)
+@given(instance=debugSeq_DapSwjSequence_strategy)
+@settings(max_examples=50)
+def test_debugseq_dapswjsequence_instantiation(instance):
+    assert isinstance(instance, debugSeq_DapSwjSequence)
+
+@given(instance=debugSeq_DapJtagSequence_strategy)
+@settings(max_examples=50)
+def test_debugseq_dapjtagsequence_instantiation(instance):
+    assert isinstance(instance, debugSeq_DapJtagSequence)
+
+@given(instance=debugSeq_Query_strategy)
+@settings(max_examples=50)
+def test_debugseq_query_instantiation(instance):
+    assert isinstance(instance, debugSeq_Query)
 
 
-@given(instance=debugSeq::LoadDebugInfo_strategy)
-def test_debugseq::loaddebuginfo_path_setter(instance):
+
+@given(instance=debugSeq_Query_strategy)
+def test_debugseq_query_message_setter(instance):
+    original = instance.message
+    instance.message = original
+    assert instance.message == original
+
+@given(instance=debugSeq_DapDelay_strategy)
+@settings(max_examples=50)
+def test_debugseq_dapdelay_instantiation(instance):
+    assert isinstance(instance, debugSeq_DapDelay)
+
+@given(instance=debugSeq_Plus_strategy)
+@settings(max_examples=50)
+def test_debugseq_plus_instantiation(instance):
+    assert isinstance(instance, debugSeq_Plus)
+
+@given(instance=debugSeq_Read16_strategy)
+@settings(max_examples=50)
+def test_debugseq_read16_instantiation(instance):
+    assert isinstance(instance, debugSeq_Read16)
+
+@given(instance=debugSeq_LoadDebugInfo_strategy)
+@settings(max_examples=50)
+def test_debugseq_loaddebuginfo_instantiation(instance):
+    assert isinstance(instance, debugSeq_LoadDebugInfo)
+
+
+
+@given(instance=debugSeq_LoadDebugInfo_strategy)
+def test_debugseq_loaddebuginfo_path_setter(instance):
     original = instance.path
     instance.path = original
     assert instance.path == original
 
-@given(instance=debugSeq::DapWriteABORT_strategy)
+@given(instance=debugSeq_IntConstant_strategy)
 @settings(max_examples=50)
-def test_debugseq::dapwriteabort_instantiation(instance):
-    assert isinstance(instance, debugSeq::DapWriteABORT)
-
-@given(instance=debugSeq::DapJtagSequence_strategy)
-@settings(max_examples=50)
-def test_debugseq::dapjtagsequence_instantiation(instance):
-    assert isinstance(instance, debugSeq::DapJtagSequence)
-
-@given(instance=debugSeq::Write32_strategy)
-@settings(max_examples=50)
-def test_debugseq::write32_instantiation(instance):
-    assert isinstance(instance, debugSeq::Write32)
-
-@given(instance=debugSeq::ReadAP_strategy)
-@settings(max_examples=50)
-def test_debugseq::readap_instantiation(instance):
-    assert isinstance(instance, debugSeq::ReadAP)
-
-@given(instance=debugSeq::IntConstant_strategy)
-@settings(max_examples=50)
-def test_debugseq::intconstant_instantiation(instance):
-    assert isinstance(instance, debugSeq::IntConstant)
-
-@given(instance=debugSeq::IntConstant_strategy)
-def test_debugseq::intconstant_value_type(instance):
-    assert isinstance(instance.value, str)
+def test_debugseq_intconstant_instantiation(instance):
+    assert isinstance(instance, debugSeq_IntConstant)
 
 
-@given(instance=debugSeq::IntConstant_strategy)
-def test_debugseq::intconstant_value_setter(instance):
+
+@given(instance=debugSeq_IntConstant_strategy)
+def test_debugseq_intconstant_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
 
-@given(instance=debugSeq::Read16_strategy)
+@given(instance=debugSeq_And_strategy)
 @settings(max_examples=50)
-def test_debugseq::read16_instantiation(instance):
-    assert isinstance(instance, debugSeq::Read16)
+def test_debugseq_and_instantiation(instance):
+    assert isinstance(instance, debugSeq_And)
 
-@given(instance=debugSeq::ReadDP_strategy)
+@given(instance=debugSeq_DapSwjPins_strategy)
 @settings(max_examples=50)
-def test_debugseq::readdp_instantiation(instance):
-    assert isinstance(instance, debugSeq::ReadDP)
+def test_debugseq_dapswjpins_instantiation(instance):
+    assert isinstance(instance, debugSeq_DapSwjPins)
 
-@given(instance=debugSeq::Div_strategy)
+@given(instance=debugSeq_Read64_strategy)
 @settings(max_examples=50)
-def test_debugseq::div_instantiation(instance):
-    assert isinstance(instance, debugSeq::Div)
+def test_debugseq_read64_instantiation(instance):
+    assert isinstance(instance, debugSeq_Read64)
 
-@given(instance=debugSeq::BitAnd_strategy)
+@given(instance=debugSeq_Write8_strategy)
 @settings(max_examples=50)
-def test_debugseq::bitand_instantiation(instance):
-    assert isinstance(instance, debugSeq::BitAnd)
+def test_debugseq_write8_instantiation(instance):
+    assert isinstance(instance, debugSeq_Write8)
 
-@given(instance=debugSeq::Equality_strategy)
+@given(instance=debugSeq_Shift_strategy)
 @settings(max_examples=50)
-def test_debugseq::equality_instantiation(instance):
-    assert isinstance(instance, debugSeq::Equality)
-
-@given(instance=debugSeq::Equality_strategy)
-def test_debugseq::equality_op_type(instance):
-    assert isinstance(instance.op, str)
+def test_debugseq_shift_instantiation(instance):
+    assert isinstance(instance, debugSeq_Shift)
 
 
-@given(instance=debugSeq::Equality_strategy)
-def test_debugseq::equality_op_setter(instance):
+
+@given(instance=debugSeq_Shift_strategy)
+def test_debugseq_shift_op_setter(instance):
     original = instance.op
     instance.op = original
     assert instance.op == original
 
-@given(instance=debugSeq::Rem_strategy)
+@given(instance=debugSeq_DapSwjClock_strategy)
 @settings(max_examples=50)
-def test_debugseq::rem_instantiation(instance):
-    assert isinstance(instance, debugSeq::Rem)
+def test_debugseq_dapswjclock_instantiation(instance):
+    assert isinstance(instance, debugSeq_DapSwjClock)
 
-@given(instance=debugSeq::VariableRef_strategy)
+@given(instance=debugSeq_WriteDP_strategy)
 @settings(max_examples=50)
-def test_debugseq::variableref_instantiation(instance):
-    assert isinstance(instance, debugSeq::VariableRef)
+def test_debugseq_writedp_instantiation(instance):
+    assert isinstance(instance, debugSeq_WriteDP)
 
-@given(instance=debugSeq::QueryValue_strategy)
+@given(instance=debugSeq_Minus_strategy)
 @settings(max_examples=50)
-def test_debugseq::queryvalue_instantiation(instance):
-    assert isinstance(instance, debugSeq::QueryValue)
+def test_debugseq_minus_instantiation(instance):
+    assert isinstance(instance, debugSeq_Minus)
 
-@given(instance=debugSeq::QueryValue_strategy)
-def test_debugseq::queryvalue_message_type(instance):
-    assert isinstance(instance.message, str)
+@given(instance=debugSeq_Not_strategy)
+@settings(max_examples=50)
+def test_debugseq_not_instantiation(instance):
+    assert isinstance(instance, debugSeq_Not)
+
+@given(instance=debugSeq_Ternary_strategy)
+@settings(max_examples=50)
+def test_debugseq_ternary_instantiation(instance):
+    assert isinstance(instance, debugSeq_Ternary)
+
+@given(instance=debugSeq_WriteAP_strategy)
+@settings(max_examples=50)
+def test_debugseq_writeap_instantiation(instance):
+    assert isinstance(instance, debugSeq_WriteAP)
+
+@given(instance=debugSeq_StringConstant_strategy)
+@settings(max_examples=50)
+def test_debugseq_stringconstant_instantiation(instance):
+    assert isinstance(instance, debugSeq_StringConstant)
 
 
-@given(instance=debugSeq::QueryValue_strategy)
-def test_debugseq::queryvalue_message_setter(instance):
+
+@given(instance=debugSeq_StringConstant_strategy)
+def test_debugseq_stringconstant_value_setter(instance):
+    original = instance.value
+    instance.value = original
+    assert instance.value == original
+
+@given(instance=debugSeq_ReadDP_strategy)
+@settings(max_examples=50)
+def test_debugseq_readdp_instantiation(instance):
+    assert isinstance(instance, debugSeq_ReadDP)
+
+@given(instance=debugSeq_VariableRef_strategy)
+@settings(max_examples=50)
+def test_debugseq_variableref_instantiation(instance):
+    assert isinstance(instance, debugSeq_VariableRef)
+
+@given(instance=debugSeq_BitAnd_strategy)
+@settings(max_examples=50)
+def test_debugseq_bitand_instantiation(instance):
+    assert isinstance(instance, debugSeq_BitAnd)
+
+@given(instance=debugSeq_Write32_strategy)
+@settings(max_examples=50)
+def test_debugseq_write32_instantiation(instance):
+    assert isinstance(instance, debugSeq_Write32)
+
+@given(instance=debugSeq_Or_strategy)
+@settings(max_examples=50)
+def test_debugseq_or_instantiation(instance):
+    assert isinstance(instance, debugSeq_Or)
+
+@given(instance=debugSeq_Message_strategy)
+@settings(max_examples=50)
+def test_debugseq_message_instantiation(instance):
+    assert isinstance(instance, debugSeq_Message)
+
+
+
+@given(instance=debugSeq_Message_strategy)
+def test_debugseq_message_format_setter(instance):
+    original = instance.format
+    instance.format = original
+    assert instance.format == original
+
+@given(instance=debugSeq_Read32_strategy)
+@settings(max_examples=50)
+def test_debugseq_read32_instantiation(instance):
+    assert isinstance(instance, debugSeq_Read32)
+
+@given(instance=debugSeq_ReadAP_strategy)
+@settings(max_examples=50)
+def test_debugseq_readap_instantiation(instance):
+    assert isinstance(instance, debugSeq_ReadAP)
+
+@given(instance=debugSeq_Mul_strategy)
+@settings(max_examples=50)
+def test_debugseq_mul_instantiation(instance):
+    assert isinstance(instance, debugSeq_Mul)
+
+@given(instance=debugSeq_Div_strategy)
+@settings(max_examples=50)
+def test_debugseq_div_instantiation(instance):
+    assert isinstance(instance, debugSeq_Div)
+
+@given(instance=debugSeq_BitNot_strategy)
+@settings(max_examples=50)
+def test_debugseq_bitnot_instantiation(instance):
+    assert isinstance(instance, debugSeq_BitNot)
+
+@given(instance=debugSeq_Equality_strategy)
+@settings(max_examples=50)
+def test_debugseq_equality_instantiation(instance):
+    assert isinstance(instance, debugSeq_Equality)
+
+
+
+@given(instance=debugSeq_Equality_strategy)
+def test_debugseq_equality_op_setter(instance):
+    original = instance.op
+    instance.op = original
+    assert instance.op == original
+
+@given(instance=debugSeq_Write16_strategy)
+@settings(max_examples=50)
+def test_debugseq_write16_instantiation(instance):
+    assert isinstance(instance, debugSeq_Write16)
+
+@given(instance=debugSeq_Write64_strategy)
+@settings(max_examples=50)
+def test_debugseq_write64_instantiation(instance):
+    assert isinstance(instance, debugSeq_Write64)
+
+@given(instance=debugSeq_DapWriteABORT_strategy)
+@settings(max_examples=50)
+def test_debugseq_dapwriteabort_instantiation(instance):
+    assert isinstance(instance, debugSeq_DapWriteABORT)
+
+@given(instance=debugSeq_SequenceCall_strategy)
+@settings(max_examples=50)
+def test_debugseq_sequencecall_instantiation(instance):
+    assert isinstance(instance, debugSeq_SequenceCall)
+
+
+
+@given(instance=debugSeq_SequenceCall_strategy)
+def test_debugseq_sequencecall_seqname_setter(instance):
+    original = instance.seqname
+    instance.seqname = original
+    assert instance.seqname == original
+
+@given(instance=debugSeq_QueryValue_strategy)
+@settings(max_examples=50)
+def test_debugseq_queryvalue_instantiation(instance):
+    assert isinstance(instance, debugSeq_QueryValue)
+
+
+
+@given(instance=debugSeq_QueryValue_strategy)
+def test_debugseq_queryvalue_message_setter(instance):
     original = instance.message
     instance.message = original
     assert instance.message == original
 
-@given(instance=debugSeq::Ternary_strategy)
+@given(instance=debugSeq_Assignment_strategy)
 @settings(max_examples=50)
-def test_debugseq::ternary_instantiation(instance):
-    assert isinstance(instance, debugSeq::Ternary)
-
-@given(instance=debugSeq::StringConstant_strategy)
-@settings(max_examples=50)
-def test_debugseq::stringconstant_instantiation(instance):
-    assert isinstance(instance, debugSeq::StringConstant)
-
-@given(instance=debugSeq::StringConstant_strategy)
-def test_debugseq::stringconstant_value_type(instance):
-    assert isinstance(instance.value, str)
+def test_debugseq_assignment_instantiation(instance):
+    assert isinstance(instance, debugSeq_Assignment)
 
 
-@given(instance=debugSeq::StringConstant_strategy)
-def test_debugseq::stringconstant_value_setter(instance):
-    original = instance.value
-    instance.value = original
-    assert instance.value == original
 
-@given(instance=debugSeq::Comparison_strategy)
-@settings(max_examples=50)
-def test_debugseq::comparison_instantiation(instance):
-    assert isinstance(instance, debugSeq::Comparison)
-
-@given(instance=debugSeq::Comparison_strategy)
-def test_debugseq::comparison_op_type(instance):
-    assert isinstance(instance.op, str)
-
-
-@given(instance=debugSeq::Comparison_strategy)
-def test_debugseq::comparison_op_setter(instance):
+@given(instance=debugSeq_Assignment_strategy)
+def test_debugseq_assignment_op_setter(instance):
     original = instance.op
     instance.op = original
     assert instance.op == original
 
-@given(instance=debugSeq::DapSwjPins_strategy)
+@given(instance=debugSeq_Parameter_strategy)
 @settings(max_examples=50)
-def test_debugseq::dapswjpins_instantiation(instance):
-    assert isinstance(instance, debugSeq::DapSwjPins)
-
-@given(instance=debugSeq::Assignment_strategy)
-@settings(max_examples=50)
-def test_debugseq::assignment_instantiation(instance):
-    assert isinstance(instance, debugSeq::Assignment)
-
-@given(instance=debugSeq::Assignment_strategy)
-def test_debugseq::assignment_op_type(instance):
-    assert isinstance(instance.op, str)
-
-
-@given(instance=debugSeq::Assignment_strategy)
-def test_debugseq::assignment_op_setter(instance):
-    original = instance.op
-    instance.op = original
-    assert instance.op == original
-
-@given(instance=debugSeq::Parameter_strategy)
-@settings(max_examples=50)
-def test_debugseq::parameter_instantiation(instance):
-    assert isinstance(instance, debugSeq::Parameter)
+def test_debugseq_parameter_instantiation(instance):
+    assert isinstance(instance, debugSeq_Parameter)
 
 @given(instance=Parameter_strategy)
 @settings(max_examples=50)
@@ -1684,183 +1651,150 @@ def test_parameter_instantiation(instance):
 def test_codeblock_instantiation(instance):
     assert isinstance(instance, CodeBlock)
 
-@given(instance=debugSeq::Control_strategy)
+@given(instance=debugSeq_Control_strategy)
 @settings(max_examples=50)
-def test_debugseq::control_instantiation(instance):
-    assert isinstance(instance, debugSeq::Control)
-
-@given(instance=debugSeq::Control_strategy)
-def test_debugseq::control_timeout_type(instance):
-    assert isinstance(instance.timeout, str)
+def test_debugseq_control_instantiation(instance):
+    assert isinstance(instance, debugSeq_Control)
 
 
-@given(instance=debugSeq::Control_strategy)
-def test_debugseq::control_timeout_setter(instance):
+
+@given(instance=debugSeq_Control_strategy)
+def test_debugseq_control_timeout_setter(instance):
     original = instance.timeout
     instance.timeout = original
     assert instance.timeout == original
 
-@given(instance=debugSeq::Block_strategy)
+@given(instance=debugSeq_Block_strategy)
 @settings(max_examples=50)
-def test_debugseq::block_instantiation(instance):
-    assert isinstance(instance, debugSeq::Block)
-
-@given(instance=debugSeq::Block_strategy)
-def test_debugseq::block_atomic_type(instance):
-    assert isinstance(instance.atomic, str)
+def test_debugseq_block_instantiation(instance):
+    assert isinstance(instance, debugSeq_Block)
 
 
-@given(instance=debugSeq::Block_strategy)
-def test_debugseq::block_atomic_setter(instance):
+
+@given(instance=debugSeq_Block_strategy)
+def test_debugseq_block_atomic_setter(instance):
     original = instance.atomic
     instance.atomic = original
     assert instance.atomic == original
 
-@given(instance=debugSeq::CodeBlock_strategy)
+@given(instance=debugSeq_CodeBlock_strategy)
 @settings(max_examples=50)
-def test_debugseq::codeblock_instantiation(instance):
-    assert isinstance(instance, debugSeq::CodeBlock)
-
-@given(instance=debugSeq::CodeBlock_strategy)
-def test_debugseq::codeblock_info_type(instance):
-    assert isinstance(instance.info, str)
+def test_debugseq_codeblock_instantiation(instance):
+    assert isinstance(instance, debugSeq_CodeBlock)
 
 
-@given(instance=debugSeq::CodeBlock_strategy)
-def test_debugseq::codeblock_info_setter(instance):
+
+@given(instance=debugSeq_CodeBlock_strategy)
+def test_debugseq_codeblock_info_setter(instance):
     original = instance.info
     instance.info = original
     assert instance.info == original
 
-@given(instance=debugSeq::BitOr_strategy)
+@given(instance=debugSeq_BitOr_strategy)
 @settings(max_examples=50)
-def test_debugseq::bitor_instantiation(instance):
-    assert isinstance(instance, debugSeq::BitOr)
+def test_debugseq_bitor_instantiation(instance):
+    assert isinstance(instance, debugSeq_BitOr)
 
-@given(instance=debugSeq::Sequence_strategy)
+@given(instance=debugSeq_Sequence_strategy)
 @settings(max_examples=50)
-def test_debugseq::sequence_instantiation(instance):
-    assert isinstance(instance, debugSeq::Sequence)
-
-@given(instance=debugSeq::Sequence_strategy)
-def test_debugseq::sequence_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_debugseq_sequence_instantiation(instance):
+    assert isinstance(instance, debugSeq_Sequence)
 
 
-@given(instance=debugSeq::Sequence_strategy)
-def test_debugseq::sequence_name_setter(instance):
+
+@given(instance=debugSeq_Sequence_strategy)
+def test_debugseq_sequence_pname_setter(instance):
+    original = instance.pname
+    instance.pname = original
+    assert instance.pname == original
+
+
+
+@given(instance=debugSeq_Sequence_strategy)
+def test_debugseq_sequence_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=debugSeq::Sequence_strategy)
-def test_debugseq::sequence_disable_type(instance):
-    assert isinstance(instance.disable, str)
 
 
-@given(instance=debugSeq::Sequence_strategy)
-def test_debugseq::sequence_disable_setter(instance):
+@given(instance=debugSeq_Sequence_strategy)
+def test_debugseq_sequence_disable_setter(instance):
     original = instance.disable
     instance.disable = original
     assert instance.disable == original
 
-@given(instance=debugSeq::Sequence_strategy)
-def test_debugseq::sequence_info_type(instance):
-    assert isinstance(instance.info, str)
 
 
-@given(instance=debugSeq::Sequence_strategy)
-def test_debugseq::sequence_info_setter(instance):
+@given(instance=debugSeq_Sequence_strategy)
+def test_debugseq_sequence_info_setter(instance):
     original = instance.info
     instance.info = original
     assert instance.info == original
-
-@given(instance=debugSeq::Sequence_strategy)
-def test_debugseq::sequence_pname_type(instance):
-    assert isinstance(instance.pname, str)
-
-
-@given(instance=debugSeq::Sequence_strategy)
-def test_debugseq::sequence_pname_setter(instance):
-    original = instance.pname
-    instance.pname = original
-    assert instance.pname == original
 
 @given(instance=Statement_strategy)
 @settings(max_examples=50)
 def test_statement_instantiation(instance):
     assert isinstance(instance, Statement)
 
-@given(instance=debugSeq::Expression_strategy)
+@given(instance=debugSeq_Expression_strategy)
 @settings(max_examples=50)
-def test_debugseq::expression_instantiation(instance):
-    assert isinstance(instance, debugSeq::Expression)
+def test_debugseq_expression_instantiation(instance):
+    assert isinstance(instance, debugSeq_Expression)
 
-@given(instance=debugSeq::VariableDeclaration_strategy)
+@given(instance=debugSeq_VariableDeclaration_strategy)
 @settings(max_examples=50)
-def test_debugseq::variabledeclaration_instantiation(instance):
-    assert isinstance(instance, debugSeq::VariableDeclaration)
-
-@given(instance=debugSeq::VariableDeclaration_strategy)
-def test_debugseq::variabledeclaration_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_debugseq_variabledeclaration_instantiation(instance):
+    assert isinstance(instance, debugSeq_VariableDeclaration)
 
 
-@given(instance=debugSeq::VariableDeclaration_strategy)
-def test_debugseq::variabledeclaration_name_setter(instance):
+
+@given(instance=debugSeq_VariableDeclaration_strategy)
+def test_debugseq_variabledeclaration_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=debugSeq::Statement_strategy)
+@given(instance=debugSeq_Statement_strategy)
 @settings(max_examples=50)
-def test_debugseq::statement_instantiation(instance):
-    assert isinstance(instance, debugSeq::Statement)
+def test_debugseq_statement_instantiation(instance):
+    assert isinstance(instance, debugSeq_Statement)
 
-@given(instance=debugSeq::Sequences_strategy)
+@given(instance=debugSeq_Sequences_strategy)
 @settings(max_examples=50)
-def test_debugseq::sequences_instantiation(instance):
-    assert isinstance(instance, debugSeq::Sequences)
+def test_debugseq_sequences_instantiation(instance):
+    assert isinstance(instance, debugSeq_Sequences)
 
-@given(instance=debugSeq::DebugVars_strategy)
+@given(instance=debugSeq_DebugVars_strategy)
 @settings(max_examples=50)
-def test_debugseq::debugvars_instantiation(instance):
-    assert isinstance(instance, debugSeq::DebugVars)
-
-@given(instance=debugSeq::DebugVars_strategy)
-def test_debugseq::debugvars_pname_type(instance):
-    assert isinstance(instance.pname, str)
+def test_debugseq_debugvars_instantiation(instance):
+    assert isinstance(instance, debugSeq_DebugVars)
 
 
-@given(instance=debugSeq::DebugVars_strategy)
-def test_debugseq::debugvars_pname_setter(instance):
-    original = instance.pname
-    instance.pname = original
-    assert instance.pname == original
 
-@given(instance=debugSeq::DebugVars_strategy)
-def test_debugseq::debugvars_configfile_type(instance):
-    assert isinstance(instance.configfile, str)
-
-
-@given(instance=debugSeq::DebugVars_strategy)
-def test_debugseq::debugvars_configfile_setter(instance):
-    original = instance.configfile
-    instance.configfile = original
-    assert instance.configfile == original
-
-@given(instance=debugSeq::DebugVars_strategy)
-def test_debugseq::debugvars_version_type(instance):
-    assert isinstance(instance.version, str)
-
-
-@given(instance=debugSeq::DebugVars_strategy)
-def test_debugseq::debugvars_version_setter(instance):
+@given(instance=debugSeq_DebugVars_strategy)
+def test_debugseq_debugvars_version_setter(instance):
     original = instance.version
     instance.version = original
     assert instance.version == original
 
-@given(instance=debugSeq::DebugSeqModel_strategy)
+
+
+@given(instance=debugSeq_DebugVars_strategy)
+def test_debugseq_debugvars_configfile_setter(instance):
+    original = instance.configfile
+    instance.configfile = original
+    assert instance.configfile == original
+
+
+
+@given(instance=debugSeq_DebugVars_strategy)
+def test_debugseq_debugvars_pname_setter(instance):
+    original = instance.pname
+    instance.pname = original
+    assert instance.pname == original
+
+@given(instance=debugSeq_DebugSeqModel_strategy)
 @settings(max_examples=50)
-def test_debugseq::debugseqmodel_instantiation(instance):
-    assert isinstance(instance, debugSeq::DebugSeqModel)
+def test_debugseq_debugseqmodel_instantiation(instance):
+    assert isinstance(instance, debugSeq_DebugSeqModel)

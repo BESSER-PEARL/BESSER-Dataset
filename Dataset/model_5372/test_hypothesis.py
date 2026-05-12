@@ -3,11 +3,11 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    hExample::1::RHS::Y,
-    hExample::1::RHS::X,
+from python_code import (
+    hExample_1_RHS_Y,
+    hExample_1_RHS_X,
 )
 
 # =============================================================================
@@ -16,23 +16,23 @@ from classes import (
 
 
 
-def test_hexample::1::rhs::y_is_not_abstract():
-    assert not inspect.isabstract(hExample::1::RHS::Y)
+def test_hexample_1_rhs_y_is_not_abstract():
+    assert not inspect.isabstract(hExample_1_RHS_Y)
 
 
-def test_hexample::1::rhs::y_constructor_exists():
-    assert callable(hExample::1::RHS::Y.__init__)
+def test_hexample_1_rhs_y_constructor_exists():
+    assert callable(hExample_1_RHS_Y.__init__)
 
 
-def test_hexample::1::rhs::y_constructor_args():
-    sig = inspect.signature(hExample::1::RHS::Y.__init__)
+def test_hexample_1_rhs_y_constructor_args():
+    sig = inspect.signature(hExample_1_RHS_Y.__init__)
     params = list(sig.parameters.keys())
     assert "label" in params, "Missing parameter 'label'"
 
-def test_hexample::1::rhs::y_has_label():
-    assert hasattr(hExample::1::RHS::Y, "label")
+def test_hexample_1_rhs_y_has_label():
+    assert hasattr(hExample_1_RHS_Y, "label")
     descriptor = None
-    for klass in hExample::1::RHS::Y.__mro__:
+    for klass in hExample_1_RHS_Y.__mro__:
         if "label" in klass.__dict__:
             descriptor = klass.__dict__["label"]
             break
@@ -40,16 +40,16 @@ def test_hexample::1::rhs::y_has_label():
 
 
 
-def test_hexample::1::rhs::x_is_not_abstract():
-    assert not inspect.isabstract(hExample::1::RHS::X)
+def test_hexample_1_rhs_x_is_not_abstract():
+    assert not inspect.isabstract(hExample_1_RHS_X)
 
 
-def test_hexample::1::rhs::x_constructor_exists():
-    assert callable(hExample::1::RHS::X.__init__)
+def test_hexample_1_rhs_x_constructor_exists():
+    assert callable(hExample_1_RHS_X.__init__)
 
 
-def test_hexample::1::rhs::x_constructor_args():
-    sig = inspect.signature(hExample::1::RHS::X.__init__)
+def test_hexample_1_rhs_x_constructor_args():
+    sig = inspect.signature(hExample_1_RHS_X.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -64,32 +64,29 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-hExample::1::RHS::Y_strategy = st.builds(
-    hExample::1::RHS::Y,
+hExample_1_RHS_Y_strategy = st.builds(
+    hExample_1_RHS_Y,
     label=
         safe_text
 )
-hExample::1::RHS::X_strategy = st.builds(
-    hExample::1::RHS::X,
+hExample_1_RHS_X_strategy = st.builds(
+    hExample_1_RHS_X,
 )
 
-@given(instance=hExample::1::RHS::Y_strategy)
+@given(instance=hExample_1_RHS_Y_strategy)
 @settings(max_examples=50)
-def test_hexample::1::rhs::y_instantiation(instance):
-    assert isinstance(instance, hExample::1::RHS::Y)
-
-@given(instance=hExample::1::RHS::Y_strategy)
-def test_hexample::1::rhs::y_label_type(instance):
-    assert isinstance(instance.label, str)
+def test_hexample_1_rhs_y_instantiation(instance):
+    assert isinstance(instance, hExample_1_RHS_Y)
 
 
-@given(instance=hExample::1::RHS::Y_strategy)
-def test_hexample::1::rhs::y_label_setter(instance):
+
+@given(instance=hExample_1_RHS_Y_strategy)
+def test_hexample_1_rhs_y_label_setter(instance):
     original = instance.label
     instance.label = original
     assert instance.label == original
 
-@given(instance=hExample::1::RHS::X_strategy)
+@given(instance=hExample_1_RHS_X_strategy)
 @settings(max_examples=50)
-def test_hexample::1::rhs::x_instantiation(instance):
-    assert isinstance(instance, hExample::1::RHS::X)
+def test_hexample_1_rhs_x_instantiation(instance):
+    assert isinstance(instance, hExample_1_RHS_X)

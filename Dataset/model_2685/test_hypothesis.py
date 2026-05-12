@@ -3,13 +3,13 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    simplecont::X,
-    simplecont::C,
-    simplecont::B,
-    simplecont::A,
+from python_code import (
+    simplecont_X,
+    simplecont_C,
+    simplecont_B,
+    simplecont_A,
 )
 
 # =============================================================================
@@ -18,37 +18,37 @@ from classes import (
 
 
 
-def test_simplecont::x_is_not_abstract():
-    assert not inspect.isabstract(simplecont::X)
+def test_simplecont_x_is_not_abstract():
+    assert not inspect.isabstract(simplecont_X)
 
 
-def test_simplecont::x_constructor_exists():
-    assert callable(simplecont::X.__init__)
+def test_simplecont_x_constructor_exists():
+    assert callable(simplecont_X.__init__)
 
 
-def test_simplecont::x_constructor_args():
-    sig = inspect.signature(simplecont::X.__init__)
+def test_simplecont_x_constructor_args():
+    sig = inspect.signature(simplecont_X.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_simplecont::c_is_not_abstract():
-    assert not inspect.isabstract(simplecont::C)
+def test_simplecont_c_is_not_abstract():
+    assert not inspect.isabstract(simplecont_C)
 
 
-def test_simplecont::c_constructor_exists():
-    assert callable(simplecont::C.__init__)
+def test_simplecont_c_constructor_exists():
+    assert callable(simplecont_C.__init__)
 
 
-def test_simplecont::c_constructor_args():
-    sig = inspect.signature(simplecont::C.__init__)
+def test_simplecont_c_constructor_args():
+    sig = inspect.signature(simplecont_C.__init__)
     params = list(sig.parameters.keys())
     assert "id" in params, "Missing parameter 'id'"
 
-def test_simplecont::c_has_id():
-    assert hasattr(simplecont::C, "id")
+def test_simplecont_c_has_id():
+    assert hasattr(simplecont_C, "id")
     descriptor = None
-    for klass in simplecont::C.__mro__:
+    for klass in simplecont_C.__mro__:
         if "id" in klass.__dict__:
             descriptor = klass.__dict__["id"]
             break
@@ -56,23 +56,23 @@ def test_simplecont::c_has_id():
 
 
 
-def test_simplecont::b_is_not_abstract():
-    assert not inspect.isabstract(simplecont::B)
+def test_simplecont_b_is_not_abstract():
+    assert not inspect.isabstract(simplecont_B)
 
 
-def test_simplecont::b_constructor_exists():
-    assert callable(simplecont::B.__init__)
+def test_simplecont_b_constructor_exists():
+    assert callable(simplecont_B.__init__)
 
 
-def test_simplecont::b_constructor_args():
-    sig = inspect.signature(simplecont::B.__init__)
+def test_simplecont_b_constructor_args():
+    sig = inspect.signature(simplecont_B.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_simplecont::b_has_name():
-    assert hasattr(simplecont::B, "name")
+def test_simplecont_b_has_name():
+    assert hasattr(simplecont_B, "name")
     descriptor = None
-    for klass in simplecont::B.__mro__:
+    for klass in simplecont_B.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -80,23 +80,23 @@ def test_simplecont::b_has_name():
 
 
 
-def test_simplecont::a_is_not_abstract():
-    assert not inspect.isabstract(simplecont::A)
+def test_simplecont_a_is_not_abstract():
+    assert not inspect.isabstract(simplecont_A)
 
 
-def test_simplecont::a_constructor_exists():
-    assert callable(simplecont::A.__init__)
+def test_simplecont_a_constructor_exists():
+    assert callable(simplecont_A.__init__)
 
 
-def test_simplecont::a_constructor_args():
-    sig = inspect.signature(simplecont::A.__init__)
+def test_simplecont_a_constructor_args():
+    sig = inspect.signature(simplecont_A.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_simplecont::a_has_name():
-    assert hasattr(simplecont::A, "name")
+def test_simplecont_a_has_name():
+    assert hasattr(simplecont_A, "name")
     descriptor = None
-    for klass in simplecont::A.__mro__:
+    for klass in simplecont_A.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -114,74 +114,65 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-simplecont::X_strategy = st.builds(
-    simplecont::X,
+simplecont_X_strategy = st.builds(
+    simplecont_X,
 )
-simplecont::C_strategy = st.builds(
-    simplecont::C,
+simplecont_C_strategy = st.builds(
+    simplecont_C,
     id=
         safe_text
 )
-simplecont::B_strategy = st.builds(
-    simplecont::B,
+simplecont_B_strategy = st.builds(
+    simplecont_B,
     name=
         safe_text
 )
-simplecont::A_strategy = st.builds(
-    simplecont::A,
+simplecont_A_strategy = st.builds(
+    simplecont_A,
     name=
         safe_text
 )
 
-@given(instance=simplecont::X_strategy)
+@given(instance=simplecont_X_strategy)
 @settings(max_examples=50)
-def test_simplecont::x_instantiation(instance):
-    assert isinstance(instance, simplecont::X)
+def test_simplecont_x_instantiation(instance):
+    assert isinstance(instance, simplecont_X)
 
-@given(instance=simplecont::C_strategy)
+@given(instance=simplecont_C_strategy)
 @settings(max_examples=50)
-def test_simplecont::c_instantiation(instance):
-    assert isinstance(instance, simplecont::C)
-
-@given(instance=simplecont::C_strategy)
-def test_simplecont::c_id_type(instance):
-    assert isinstance(instance.id, str)
+def test_simplecont_c_instantiation(instance):
+    assert isinstance(instance, simplecont_C)
 
 
-@given(instance=simplecont::C_strategy)
-def test_simplecont::c_id_setter(instance):
+
+@given(instance=simplecont_C_strategy)
+def test_simplecont_c_id_setter(instance):
     original = instance.id
     instance.id = original
     assert instance.id == original
 
-@given(instance=simplecont::B_strategy)
+@given(instance=simplecont_B_strategy)
 @settings(max_examples=50)
-def test_simplecont::b_instantiation(instance):
-    assert isinstance(instance, simplecont::B)
-
-@given(instance=simplecont::B_strategy)
-def test_simplecont::b_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_simplecont_b_instantiation(instance):
+    assert isinstance(instance, simplecont_B)
 
 
-@given(instance=simplecont::B_strategy)
-def test_simplecont::b_name_setter(instance):
+
+@given(instance=simplecont_B_strategy)
+def test_simplecont_b_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=simplecont::A_strategy)
+@given(instance=simplecont_A_strategy)
 @settings(max_examples=50)
-def test_simplecont::a_instantiation(instance):
-    assert isinstance(instance, simplecont::A)
-
-@given(instance=simplecont::A_strategy)
-def test_simplecont::a_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_simplecont_a_instantiation(instance):
+    assert isinstance(instance, simplecont_A)
 
 
-@given(instance=simplecont::A_strategy)
-def test_simplecont::a_name_setter(instance):
+
+@given(instance=simplecont_A_strategy)
+def test_simplecont_a_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original

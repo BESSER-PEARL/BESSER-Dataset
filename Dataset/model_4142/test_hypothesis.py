@@ -3,17 +3,17 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     Expression,
-    arithmetics::Minus,
-    arithmetics::Plus,
-    arithmetics::Expression,
-    arithmetics::Evaluation,
-    arithmetics::NumberLiteral,
-    arithmetics::Div,
-    arithmetics::Multi,
+    arithmetics_Minus,
+    arithmetics_Plus,
+    arithmetics_Expression,
+    arithmetics_Evaluation,
+    arithmetics_NumberLiteral,
+    arithmetics_Div,
+    arithmetics_Multi,
 )
 
 # =============================================================================
@@ -36,79 +36,79 @@ def test_expression_constructor_args():
 
 
 
-def test_arithmetics::minus_is_not_abstract():
-    assert not inspect.isabstract(arithmetics::Minus)
+def test_arithmetics_minus_is_not_abstract():
+    assert not inspect.isabstract(arithmetics_Minus)
 
 
-def test_arithmetics::minus_constructor_exists():
-    assert callable(arithmetics::Minus.__init__)
+def test_arithmetics_minus_constructor_exists():
+    assert callable(arithmetics_Minus.__init__)
 
 
-def test_arithmetics::minus_constructor_args():
-    sig = inspect.signature(arithmetics::Minus.__init__)
+def test_arithmetics_minus_constructor_args():
+    sig = inspect.signature(arithmetics_Minus.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_arithmetics::plus_is_not_abstract():
-    assert not inspect.isabstract(arithmetics::Plus)
+def test_arithmetics_plus_is_not_abstract():
+    assert not inspect.isabstract(arithmetics_Plus)
 
 
-def test_arithmetics::plus_constructor_exists():
-    assert callable(arithmetics::Plus.__init__)
+def test_arithmetics_plus_constructor_exists():
+    assert callable(arithmetics_Plus.__init__)
 
 
-def test_arithmetics::plus_constructor_args():
-    sig = inspect.signature(arithmetics::Plus.__init__)
+def test_arithmetics_plus_constructor_args():
+    sig = inspect.signature(arithmetics_Plus.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_arithmetics::expression_is_not_abstract():
-    assert not inspect.isabstract(arithmetics::Expression)
+def test_arithmetics_expression_is_not_abstract():
+    assert not inspect.isabstract(arithmetics_Expression)
 
 
-def test_arithmetics::expression_constructor_exists():
-    assert callable(arithmetics::Expression.__init__)
+def test_arithmetics_expression_constructor_exists():
+    assert callable(arithmetics_Expression.__init__)
 
 
-def test_arithmetics::expression_constructor_args():
-    sig = inspect.signature(arithmetics::Expression.__init__)
+def test_arithmetics_expression_constructor_args():
+    sig = inspect.signature(arithmetics_Expression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_arithmetics::evaluation_is_not_abstract():
-    assert not inspect.isabstract(arithmetics::Evaluation)
+def test_arithmetics_evaluation_is_not_abstract():
+    assert not inspect.isabstract(arithmetics_Evaluation)
 
 
-def test_arithmetics::evaluation_constructor_exists():
-    assert callable(arithmetics::Evaluation.__init__)
+def test_arithmetics_evaluation_constructor_exists():
+    assert callable(arithmetics_Evaluation.__init__)
 
 
-def test_arithmetics::evaluation_constructor_args():
-    sig = inspect.signature(arithmetics::Evaluation.__init__)
+def test_arithmetics_evaluation_constructor_args():
+    sig = inspect.signature(arithmetics_Evaluation.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_arithmetics::numberliteral_is_not_abstract():
-    assert not inspect.isabstract(arithmetics::NumberLiteral)
+def test_arithmetics_numberliteral_is_not_abstract():
+    assert not inspect.isabstract(arithmetics_NumberLiteral)
 
 
-def test_arithmetics::numberliteral_constructor_exists():
-    assert callable(arithmetics::NumberLiteral.__init__)
+def test_arithmetics_numberliteral_constructor_exists():
+    assert callable(arithmetics_NumberLiteral.__init__)
 
 
-def test_arithmetics::numberliteral_constructor_args():
-    sig = inspect.signature(arithmetics::NumberLiteral.__init__)
+def test_arithmetics_numberliteral_constructor_args():
+    sig = inspect.signature(arithmetics_NumberLiteral.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
 
-def test_arithmetics::numberliteral_has_value():
-    assert hasattr(arithmetics::NumberLiteral, "value")
+def test_arithmetics_numberliteral_has_value():
+    assert hasattr(arithmetics_NumberLiteral, "value")
     descriptor = None
-    for klass in arithmetics::NumberLiteral.__mro__:
+    for klass in arithmetics_NumberLiteral.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -116,30 +116,30 @@ def test_arithmetics::numberliteral_has_value():
 
 
 
-def test_arithmetics::div_is_not_abstract():
-    assert not inspect.isabstract(arithmetics::Div)
+def test_arithmetics_div_is_not_abstract():
+    assert not inspect.isabstract(arithmetics_Div)
 
 
-def test_arithmetics::div_constructor_exists():
-    assert callable(arithmetics::Div.__init__)
+def test_arithmetics_div_constructor_exists():
+    assert callable(arithmetics_Div.__init__)
 
 
-def test_arithmetics::div_constructor_args():
-    sig = inspect.signature(arithmetics::Div.__init__)
+def test_arithmetics_div_constructor_args():
+    sig = inspect.signature(arithmetics_Div.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_arithmetics::multi_is_not_abstract():
-    assert not inspect.isabstract(arithmetics::Multi)
+def test_arithmetics_multi_is_not_abstract():
+    assert not inspect.isabstract(arithmetics_Multi)
 
 
-def test_arithmetics::multi_constructor_exists():
-    assert callable(arithmetics::Multi.__init__)
+def test_arithmetics_multi_constructor_exists():
+    assert callable(arithmetics_Multi.__init__)
 
 
-def test_arithmetics::multi_constructor_args():
-    sig = inspect.signature(arithmetics::Multi.__init__)
+def test_arithmetics_multi_constructor_args():
+    sig = inspect.signature(arithmetics_Multi.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -157,28 +157,28 @@ safe_text = st.text(
 Expression_strategy = st.builds(
     Expression,
 )
-arithmetics::Minus_strategy = st.builds(
-    arithmetics::Minus,
+arithmetics_Minus_strategy = st.builds(
+    arithmetics_Minus,
 )
-arithmetics::Plus_strategy = st.builds(
-    arithmetics::Plus,
+arithmetics_Plus_strategy = st.builds(
+    arithmetics_Plus,
 )
-arithmetics::Expression_strategy = st.builds(
-    arithmetics::Expression,
+arithmetics_Expression_strategy = st.builds(
+    arithmetics_Expression,
 )
-arithmetics::Evaluation_strategy = st.builds(
-    arithmetics::Evaluation,
+arithmetics_Evaluation_strategy = st.builds(
+    arithmetics_Evaluation,
 )
-arithmetics::NumberLiteral_strategy = st.builds(
-    arithmetics::NumberLiteral,
+arithmetics_NumberLiteral_strategy = st.builds(
+    arithmetics_NumberLiteral,
     value=
         safe_text
 )
-arithmetics::Div_strategy = st.builds(
-    arithmetics::Div,
+arithmetics_Div_strategy = st.builds(
+    arithmetics_Div,
 )
-arithmetics::Multi_strategy = st.builds(
-    arithmetics::Multi,
+arithmetics_Multi_strategy = st.builds(
+    arithmetics_Multi,
 )
 
 @given(instance=Expression_strategy)
@@ -186,48 +186,45 @@ arithmetics::Multi_strategy = st.builds(
 def test_expression_instantiation(instance):
     assert isinstance(instance, Expression)
 
-@given(instance=arithmetics::Minus_strategy)
+@given(instance=arithmetics_Minus_strategy)
 @settings(max_examples=50)
-def test_arithmetics::minus_instantiation(instance):
-    assert isinstance(instance, arithmetics::Minus)
+def test_arithmetics_minus_instantiation(instance):
+    assert isinstance(instance, arithmetics_Minus)
 
-@given(instance=arithmetics::Plus_strategy)
+@given(instance=arithmetics_Plus_strategy)
 @settings(max_examples=50)
-def test_arithmetics::plus_instantiation(instance):
-    assert isinstance(instance, arithmetics::Plus)
+def test_arithmetics_plus_instantiation(instance):
+    assert isinstance(instance, arithmetics_Plus)
 
-@given(instance=arithmetics::Expression_strategy)
+@given(instance=arithmetics_Expression_strategy)
 @settings(max_examples=50)
-def test_arithmetics::expression_instantiation(instance):
-    assert isinstance(instance, arithmetics::Expression)
+def test_arithmetics_expression_instantiation(instance):
+    assert isinstance(instance, arithmetics_Expression)
 
-@given(instance=arithmetics::Evaluation_strategy)
+@given(instance=arithmetics_Evaluation_strategy)
 @settings(max_examples=50)
-def test_arithmetics::evaluation_instantiation(instance):
-    assert isinstance(instance, arithmetics::Evaluation)
+def test_arithmetics_evaluation_instantiation(instance):
+    assert isinstance(instance, arithmetics_Evaluation)
 
-@given(instance=arithmetics::NumberLiteral_strategy)
+@given(instance=arithmetics_NumberLiteral_strategy)
 @settings(max_examples=50)
-def test_arithmetics::numberliteral_instantiation(instance):
-    assert isinstance(instance, arithmetics::NumberLiteral)
-
-@given(instance=arithmetics::NumberLiteral_strategy)
-def test_arithmetics::numberliteral_value_type(instance):
-    assert isinstance(instance.value, str)
+def test_arithmetics_numberliteral_instantiation(instance):
+    assert isinstance(instance, arithmetics_NumberLiteral)
 
 
-@given(instance=arithmetics::NumberLiteral_strategy)
-def test_arithmetics::numberliteral_value_setter(instance):
+
+@given(instance=arithmetics_NumberLiteral_strategy)
+def test_arithmetics_numberliteral_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
 
-@given(instance=arithmetics::Div_strategy)
+@given(instance=arithmetics_Div_strategy)
 @settings(max_examples=50)
-def test_arithmetics::div_instantiation(instance):
-    assert isinstance(instance, arithmetics::Div)
+def test_arithmetics_div_instantiation(instance):
+    assert isinstance(instance, arithmetics_Div)
 
-@given(instance=arithmetics::Multi_strategy)
+@given(instance=arithmetics_Multi_strategy)
 @settings(max_examples=50)
-def test_arithmetics::multi_instantiation(instance):
-    assert isinstance(instance, arithmetics::Multi)
+def test_arithmetics_multi_instantiation(instance):
+    assert isinstance(instance, arithmetics_Multi)

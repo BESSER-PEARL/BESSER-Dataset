@@ -3,17 +3,17 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    petriNet::OutputArc,
-    petriNet::InputArc,
-    petriNet::Transition,
-    petriNet::GenericPlace,
-    petriNet::PetriNet,
+from python_code import (
+    petriNet_OutputArc,
+    petriNet_InputArc,
+    petriNet_Transition,
+    petriNet_GenericPlace,
+    petriNet_PetriNet,
     GenericPlace,
-    petriNet::Resource,
-    petriNet::Place,
+    petriNet_Resource,
+    petriNet_Place,
 )
 
 # =============================================================================
@@ -22,23 +22,23 @@ from classes import (
 
 
 
-def test_petrinet::outputarc_is_not_abstract():
-    assert not inspect.isabstract(petriNet::OutputArc)
+def test_petrinet_outputarc_is_not_abstract():
+    assert not inspect.isabstract(petriNet_OutputArc)
 
 
-def test_petrinet::outputarc_constructor_exists():
-    assert callable(petriNet::OutputArc.__init__)
+def test_petrinet_outputarc_constructor_exists():
+    assert callable(petriNet_OutputArc.__init__)
 
 
-def test_petrinet::outputarc_constructor_args():
-    sig = inspect.signature(petriNet::OutputArc.__init__)
+def test_petrinet_outputarc_constructor_args():
+    sig = inspect.signature(petriNet_OutputArc.__init__)
     params = list(sig.parameters.keys())
     assert "weight" in params, "Missing parameter 'weight'"
 
-def test_petrinet::outputarc_has_weight():
-    assert hasattr(petriNet::OutputArc, "weight")
+def test_petrinet_outputarc_has_weight():
+    assert hasattr(petriNet_OutputArc, "weight")
     descriptor = None
-    for klass in petriNet::OutputArc.__mro__:
+    for klass in petriNet_OutputArc.__mro__:
         if "weight" in klass.__dict__:
             descriptor = klass.__dict__["weight"]
             break
@@ -46,23 +46,23 @@ def test_petrinet::outputarc_has_weight():
 
 
 
-def test_petrinet::inputarc_is_not_abstract():
-    assert not inspect.isabstract(petriNet::InputArc)
+def test_petrinet_inputarc_is_not_abstract():
+    assert not inspect.isabstract(petriNet_InputArc)
 
 
-def test_petrinet::inputarc_constructor_exists():
-    assert callable(petriNet::InputArc.__init__)
+def test_petrinet_inputarc_constructor_exists():
+    assert callable(petriNet_InputArc.__init__)
 
 
-def test_petrinet::inputarc_constructor_args():
-    sig = inspect.signature(petriNet::InputArc.__init__)
+def test_petrinet_inputarc_constructor_args():
+    sig = inspect.signature(petriNet_InputArc.__init__)
     params = list(sig.parameters.keys())
     assert "weight" in params, "Missing parameter 'weight'"
 
-def test_petrinet::inputarc_has_weight():
-    assert hasattr(petriNet::InputArc, "weight")
+def test_petrinet_inputarc_has_weight():
+    assert hasattr(petriNet_InputArc, "weight")
     descriptor = None
-    for klass in petriNet::InputArc.__mro__:
+    for klass in petriNet_InputArc.__mro__:
         if "weight" in klass.__dict__:
             descriptor = klass.__dict__["weight"]
             break
@@ -70,23 +70,23 @@ def test_petrinet::inputarc_has_weight():
 
 
 
-def test_petrinet::transition_is_not_abstract():
-    assert not inspect.isabstract(petriNet::Transition)
+def test_petrinet_transition_is_not_abstract():
+    assert not inspect.isabstract(petriNet_Transition)
 
 
-def test_petrinet::transition_constructor_exists():
-    assert callable(petriNet::Transition.__init__)
+def test_petrinet_transition_constructor_exists():
+    assert callable(petriNet_Transition.__init__)
 
 
-def test_petrinet::transition_constructor_args():
-    sig = inspect.signature(petriNet::Transition.__init__)
+def test_petrinet_transition_constructor_args():
+    sig = inspect.signature(petriNet_Transition.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_petrinet::transition_has_name():
-    assert hasattr(petriNet::Transition, "name")
+def test_petrinet_transition_has_name():
+    assert hasattr(petriNet_Transition, "name")
     descriptor = None
-    for klass in petriNet::Transition.__mro__:
+    for klass in petriNet_Transition.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -94,33 +94,33 @@ def test_petrinet::transition_has_name():
 
 
 
-def test_petrinet::genericplace_is_not_abstract():
-    assert not inspect.isabstract(petriNet::GenericPlace)
+def test_petrinet_genericplace_is_not_abstract():
+    assert not inspect.isabstract(petriNet_GenericPlace)
 
 
-def test_petrinet::genericplace_constructor_exists():
-    assert callable(petriNet::GenericPlace.__init__)
+def test_petrinet_genericplace_constructor_exists():
+    assert callable(petriNet_GenericPlace.__init__)
 
 
-def test_petrinet::genericplace_constructor_args():
-    sig = inspect.signature(petriNet::GenericPlace.__init__)
+def test_petrinet_genericplace_constructor_args():
+    sig = inspect.signature(petriNet_GenericPlace.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
     assert "numberOfTokens" in params, "Missing parameter 'numberOfTokens'"
 
-def test_petrinet::genericplace_has_name():
-    assert hasattr(petriNet::GenericPlace, "name")
+def test_petrinet_genericplace_has_name():
+    assert hasattr(petriNet_GenericPlace, "name")
     descriptor = None
-    for klass in petriNet::GenericPlace.__mro__:
+    for klass in petriNet_GenericPlace.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
-def test_petrinet::genericplace_has_numberOfTokens():
-    assert hasattr(petriNet::GenericPlace, "numberOfTokens")
+def test_petrinet_genericplace_has_numberOfTokens():
+    assert hasattr(petriNet_GenericPlace, "numberOfTokens")
     descriptor = None
-    for klass in petriNet::GenericPlace.__mro__:
+    for klass in petriNet_GenericPlace.__mro__:
         if "numberOfTokens" in klass.__dict__:
             descriptor = klass.__dict__["numberOfTokens"]
             break
@@ -128,23 +128,23 @@ def test_petrinet::genericplace_has_numberOfTokens():
 
 
 
-def test_petrinet::petrinet_is_not_abstract():
-    assert not inspect.isabstract(petriNet::PetriNet)
+def test_petrinet_petrinet_is_not_abstract():
+    assert not inspect.isabstract(petriNet_PetriNet)
 
 
-def test_petrinet::petrinet_constructor_exists():
-    assert callable(petriNet::PetriNet.__init__)
+def test_petrinet_petrinet_constructor_exists():
+    assert callable(petriNet_PetriNet.__init__)
 
 
-def test_petrinet::petrinet_constructor_args():
-    sig = inspect.signature(petriNet::PetriNet.__init__)
+def test_petrinet_petrinet_constructor_args():
+    sig = inspect.signature(petriNet_PetriNet.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_petrinet::petrinet_has_name():
-    assert hasattr(petriNet::PetriNet, "name")
+def test_petrinet_petrinet_has_name():
+    assert hasattr(petriNet_PetriNet, "name")
     descriptor = None
-    for klass in petriNet::PetriNet.__mro__:
+    for klass in petriNet_PetriNet.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -166,37 +166,37 @@ def test_genericplace_constructor_args():
 
 
 
-def test_petrinet::resource_is_not_abstract():
-    assert not inspect.isabstract(petriNet::Resource)
+def test_petrinet_resource_is_not_abstract():
+    assert not inspect.isabstract(petriNet_Resource)
 
 
-def test_petrinet::resource_constructor_exists():
-    assert callable(petriNet::Resource.__init__)
+def test_petrinet_resource_constructor_exists():
+    assert callable(petriNet_Resource.__init__)
 
 
-def test_petrinet::resource_constructor_args():
-    sig = inspect.signature(petriNet::Resource.__init__)
+def test_petrinet_resource_constructor_args():
+    sig = inspect.signature(petriNet_Resource.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_petrinet::place_is_not_abstract():
-    assert not inspect.isabstract(petriNet::Place)
+def test_petrinet_place_is_not_abstract():
+    assert not inspect.isabstract(petriNet_Place)
 
 
-def test_petrinet::place_constructor_exists():
-    assert callable(petriNet::Place.__init__)
+def test_petrinet_place_constructor_exists():
+    assert callable(petriNet_Place.__init__)
 
 
-def test_petrinet::place_constructor_args():
-    sig = inspect.signature(petriNet::Place.__init__)
+def test_petrinet_place_constructor_args():
+    sig = inspect.signature(petriNet_Place.__init__)
     params = list(sig.parameters.keys())
     assert "capacity" in params, "Missing parameter 'capacity'"
 
-def test_petrinet::place_has_capacity():
-    assert hasattr(petriNet::Place, "capacity")
+def test_petrinet_place_has_capacity():
+    assert hasattr(petriNet_Place, "capacity")
     descriptor = None
-    for klass in petriNet::Place.__mro__:
+    for klass in petriNet_Place.__mro__:
         if "capacity" in klass.__dict__:
             descriptor = klass.__dict__["capacity"]
             break
@@ -214,132 +214,114 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-petriNet::OutputArc_strategy = st.builds(
-    petriNet::OutputArc,
+petriNet_OutputArc_strategy = st.builds(
+    petriNet_OutputArc,
     weight=
         st.integers()
 )
-petriNet::InputArc_strategy = st.builds(
-    petriNet::InputArc,
+petriNet_InputArc_strategy = st.builds(
+    petriNet_InputArc,
     weight=
         st.integers()
 )
-petriNet::Transition_strategy = st.builds(
-    petriNet::Transition,
+petriNet_Transition_strategy = st.builds(
+    petriNet_Transition,
     name=
         safe_text
 )
-petriNet::GenericPlace_strategy = st.builds(
-    petriNet::GenericPlace,
+petriNet_GenericPlace_strategy = st.builds(
+    petriNet_GenericPlace,
     name=
         safe_text,
     numberOfTokens=
         st.integers()
 )
-petriNet::PetriNet_strategy = st.builds(
-    petriNet::PetriNet,
+petriNet_PetriNet_strategy = st.builds(
+    petriNet_PetriNet,
     name=
         safe_text
 )
 GenericPlace_strategy = st.builds(
     GenericPlace,
 )
-petriNet::Resource_strategy = st.builds(
-    petriNet::Resource,
+petriNet_Resource_strategy = st.builds(
+    petriNet_Resource,
 )
-petriNet::Place_strategy = st.builds(
-    petriNet::Place,
+petriNet_Place_strategy = st.builds(
+    petriNet_Place,
     capacity=
         st.integers()
 )
 
-@given(instance=petriNet::OutputArc_strategy)
+@given(instance=petriNet_OutputArc_strategy)
 @settings(max_examples=50)
-def test_petrinet::outputarc_instantiation(instance):
-    assert isinstance(instance, petriNet::OutputArc)
-
-@given(instance=petriNet::OutputArc_strategy)
-def test_petrinet::outputarc_weight_type(instance):
-    assert isinstance(instance.weight, int)
+def test_petrinet_outputarc_instantiation(instance):
+    assert isinstance(instance, petriNet_OutputArc)
 
 
-@given(instance=petriNet::OutputArc_strategy)
-def test_petrinet::outputarc_weight_setter(instance):
+
+@given(instance=petriNet_OutputArc_strategy)
+def test_petrinet_outputarc_weight_setter(instance):
     original = instance.weight
     instance.weight = original
     assert instance.weight == original
 
-@given(instance=petriNet::InputArc_strategy)
+@given(instance=petriNet_InputArc_strategy)
 @settings(max_examples=50)
-def test_petrinet::inputarc_instantiation(instance):
-    assert isinstance(instance, petriNet::InputArc)
-
-@given(instance=petriNet::InputArc_strategy)
-def test_petrinet::inputarc_weight_type(instance):
-    assert isinstance(instance.weight, int)
+def test_petrinet_inputarc_instantiation(instance):
+    assert isinstance(instance, petriNet_InputArc)
 
 
-@given(instance=petriNet::InputArc_strategy)
-def test_petrinet::inputarc_weight_setter(instance):
+
+@given(instance=petriNet_InputArc_strategy)
+def test_petrinet_inputarc_weight_setter(instance):
     original = instance.weight
     instance.weight = original
     assert instance.weight == original
 
-@given(instance=petriNet::Transition_strategy)
+@given(instance=petriNet_Transition_strategy)
 @settings(max_examples=50)
-def test_petrinet::transition_instantiation(instance):
-    assert isinstance(instance, petriNet::Transition)
-
-@given(instance=petriNet::Transition_strategy)
-def test_petrinet::transition_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_petrinet_transition_instantiation(instance):
+    assert isinstance(instance, petriNet_Transition)
 
 
-@given(instance=petriNet::Transition_strategy)
-def test_petrinet::transition_name_setter(instance):
+
+@given(instance=petriNet_Transition_strategy)
+def test_petrinet_transition_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=petriNet::GenericPlace_strategy)
+@given(instance=petriNet_GenericPlace_strategy)
 @settings(max_examples=50)
-def test_petrinet::genericplace_instantiation(instance):
-    assert isinstance(instance, petriNet::GenericPlace)
-
-@given(instance=petriNet::GenericPlace_strategy)
-def test_petrinet::genericplace_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_petrinet_genericplace_instantiation(instance):
+    assert isinstance(instance, petriNet_GenericPlace)
 
 
-@given(instance=petriNet::GenericPlace_strategy)
-def test_petrinet::genericplace_name_setter(instance):
+
+@given(instance=petriNet_GenericPlace_strategy)
+def test_petrinet_genericplace_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=petriNet::GenericPlace_strategy)
-def test_petrinet::genericplace_numberOfTokens_type(instance):
-    assert isinstance(instance.numberOfTokens, int)
 
 
-@given(instance=petriNet::GenericPlace_strategy)
-def test_petrinet::genericplace_numberOfTokens_setter(instance):
+@given(instance=petriNet_GenericPlace_strategy)
+def test_petrinet_genericplace_numberOfTokens_setter(instance):
     original = instance.numberOfTokens
     instance.numberOfTokens = original
     assert instance.numberOfTokens == original
 
-@given(instance=petriNet::PetriNet_strategy)
+@given(instance=petriNet_PetriNet_strategy)
 @settings(max_examples=50)
-def test_petrinet::petrinet_instantiation(instance):
-    assert isinstance(instance, petriNet::PetriNet)
-
-@given(instance=petriNet::PetriNet_strategy)
-def test_petrinet::petrinet_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_petrinet_petrinet_instantiation(instance):
+    assert isinstance(instance, petriNet_PetriNet)
 
 
-@given(instance=petriNet::PetriNet_strategy)
-def test_petrinet::petrinet_name_setter(instance):
+
+@given(instance=petriNet_PetriNet_strategy)
+def test_petrinet_petrinet_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
@@ -349,23 +331,20 @@ def test_petrinet::petrinet_name_setter(instance):
 def test_genericplace_instantiation(instance):
     assert isinstance(instance, GenericPlace)
 
-@given(instance=petriNet::Resource_strategy)
+@given(instance=petriNet_Resource_strategy)
 @settings(max_examples=50)
-def test_petrinet::resource_instantiation(instance):
-    assert isinstance(instance, petriNet::Resource)
+def test_petrinet_resource_instantiation(instance):
+    assert isinstance(instance, petriNet_Resource)
 
-@given(instance=petriNet::Place_strategy)
+@given(instance=petriNet_Place_strategy)
 @settings(max_examples=50)
-def test_petrinet::place_instantiation(instance):
-    assert isinstance(instance, petriNet::Place)
-
-@given(instance=petriNet::Place_strategy)
-def test_petrinet::place_capacity_type(instance):
-    assert isinstance(instance.capacity, int)
+def test_petrinet_place_instantiation(instance):
+    assert isinstance(instance, petriNet_Place)
 
 
-@given(instance=petriNet::Place_strategy)
-def test_petrinet::place_capacity_setter(instance):
+
+@given(instance=petriNet_Place_strategy)
+def test_petrinet_place_capacity_setter(instance):
     original = instance.capacity
     instance.capacity = original
     assert instance.capacity == original

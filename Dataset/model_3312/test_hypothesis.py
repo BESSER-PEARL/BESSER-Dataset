@@ -3,13 +3,13 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    transform::Grammar,
-    transform::Graph,
+from python_code import (
+    transform_Grammar,
+    transform_Graph,
     Named,
-    transform::Transformation,
+    transform_Transformation,
 )
 
 # =============================================================================
@@ -18,30 +18,30 @@ from classes import (
 
 
 
-def test_transform::grammar_is_not_abstract():
-    assert not inspect.isabstract(transform::Grammar)
+def test_transform_grammar_is_not_abstract():
+    assert not inspect.isabstract(transform_Grammar)
 
 
-def test_transform::grammar_constructor_exists():
-    assert callable(transform::Grammar.__init__)
+def test_transform_grammar_constructor_exists():
+    assert callable(transform_Grammar.__init__)
 
 
-def test_transform::grammar_constructor_args():
-    sig = inspect.signature(transform::Grammar.__init__)
+def test_transform_grammar_constructor_args():
+    sig = inspect.signature(transform_Grammar.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_transform::graph_is_not_abstract():
-    assert not inspect.isabstract(transform::Graph)
+def test_transform_graph_is_not_abstract():
+    assert not inspect.isabstract(transform_Graph)
 
 
-def test_transform::graph_constructor_exists():
-    assert callable(transform::Graph.__init__)
+def test_transform_graph_constructor_exists():
+    assert callable(transform_Graph.__init__)
 
 
-def test_transform::graph_constructor_args():
-    sig = inspect.signature(transform::Graph.__init__)
+def test_transform_graph_constructor_args():
+    sig = inspect.signature(transform_Graph.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -60,16 +60,16 @@ def test_named_constructor_args():
 
 
 
-def test_transform::transformation_is_not_abstract():
-    assert not inspect.isabstract(transform::Transformation)
+def test_transform_transformation_is_not_abstract():
+    assert not inspect.isabstract(transform_Transformation)
 
 
-def test_transform::transformation_constructor_exists():
-    assert callable(transform::Transformation.__init__)
+def test_transform_transformation_constructor_exists():
+    assert callable(transform_Transformation.__init__)
 
 
-def test_transform::transformation_constructor_args():
-    sig = inspect.signature(transform::Transformation.__init__)
+def test_transform_transformation_constructor_args():
+    sig = inspect.signature(transform_Transformation.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -84,35 +84,35 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-transform::Grammar_strategy = st.builds(
-    transform::Grammar,
+transform_Grammar_strategy = st.builds(
+    transform_Grammar,
 )
-transform::Graph_strategy = st.builds(
-    transform::Graph,
+transform_Graph_strategy = st.builds(
+    transform_Graph,
 )
 Named_strategy = st.builds(
     Named,
 )
-transform::Transformation_strategy = st.builds(
-    transform::Transformation,
+transform_Transformation_strategy = st.builds(
+    transform_Transformation,
 )
 
-@given(instance=transform::Grammar_strategy)
+@given(instance=transform_Grammar_strategy)
 @settings(max_examples=50)
-def test_transform::grammar_instantiation(instance):
-    assert isinstance(instance, transform::Grammar)
+def test_transform_grammar_instantiation(instance):
+    assert isinstance(instance, transform_Grammar)
 
-@given(instance=transform::Graph_strategy)
+@given(instance=transform_Graph_strategy)
 @settings(max_examples=50)
-def test_transform::graph_instantiation(instance):
-    assert isinstance(instance, transform::Graph)
+def test_transform_graph_instantiation(instance):
+    assert isinstance(instance, transform_Graph)
 
 @given(instance=Named_strategy)
 @settings(max_examples=50)
 def test_named_instantiation(instance):
     assert isinstance(instance, Named)
 
-@given(instance=transform::Transformation_strategy)
+@given(instance=transform_Transformation_strategy)
 @settings(max_examples=50)
-def test_transform::transformation_instantiation(instance):
-    assert isinstance(instance, transform::Transformation)
+def test_transform_transformation_instantiation(instance):
+    assert isinstance(instance, transform_Transformation)

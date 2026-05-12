@@ -3,34 +3,76 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    Type,
-    smalluml::Integer,
-    smalluml::Bool,
-    smalluml::Real,
-    smalluml::UnlimitedNatural,
-    smalluml::String,
-    smalluml::Type,
-    NamedElement,
-    smalluml::Parameter,
-    smalluml::Relation,
-    smalluml::Attribute,
-    smalluml::Method,
-    smalluml::Class,
-    smalluml::NamedElement,
-    smalluml::Package,
+from python_code import (
     Relation,
-    smalluml::Reference,
-    smalluml::Composition,
-    smalluml::Enumeration,
-    smalluml::Role,
+    smalluml_Reference,
+    smalluml_Composition,
+    Type,
+    smalluml_Real,
+    smalluml_Integer,
+    smalluml_UnlimitedNatural,
+    smalluml_Bool,
+    smalluml_String,
+    smalluml_Type,
+    NamedElement,
+    smalluml_Role,
+    smalluml_Package,
+    smalluml_Relation,
+    smalluml_Attribute,
+    smalluml_Method,
+    smalluml_Parameter,
+    smalluml_Enumeration,
+    smalluml_Class,
+    smalluml_NamedElement,
 )
 
 # =============================================================================
 # SECTION 1 — STRUCTURAL TESTS
 # =============================================================================
+
+
+
+def test_relation_is_not_abstract():
+    assert not inspect.isabstract(Relation)
+
+
+def test_relation_constructor_exists():
+    assert callable(Relation.__init__)
+
+
+def test_relation_constructor_args():
+    sig = inspect.signature(Relation.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_smalluml_reference_is_not_abstract():
+    assert not inspect.isabstract(smalluml_Reference)
+
+
+def test_smalluml_reference_constructor_exists():
+    assert callable(smalluml_Reference.__init__)
+
+
+def test_smalluml_reference_constructor_args():
+    sig = inspect.signature(smalluml_Reference.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_smalluml_composition_is_not_abstract():
+    assert not inspect.isabstract(smalluml_Composition)
+
+
+def test_smalluml_composition_constructor_exists():
+    assert callable(smalluml_Composition.__init__)
+
+
+def test_smalluml_composition_constructor_args():
+    sig = inspect.signature(smalluml_Composition.__init__)
+    params = list(sig.parameters.keys())
 
 
 
@@ -48,86 +90,86 @@ def test_type_constructor_args():
 
 
 
-def test_smalluml::integer_is_not_abstract():
-    assert not inspect.isabstract(smalluml::Integer)
+def test_smalluml_real_is_not_abstract():
+    assert not inspect.isabstract(smalluml_Real)
 
 
-def test_smalluml::integer_constructor_exists():
-    assert callable(smalluml::Integer.__init__)
+def test_smalluml_real_constructor_exists():
+    assert callable(smalluml_Real.__init__)
 
 
-def test_smalluml::integer_constructor_args():
-    sig = inspect.signature(smalluml::Integer.__init__)
+def test_smalluml_real_constructor_args():
+    sig = inspect.signature(smalluml_Real.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_smalluml::bool_is_not_abstract():
-    assert not inspect.isabstract(smalluml::Bool)
+def test_smalluml_integer_is_not_abstract():
+    assert not inspect.isabstract(smalluml_Integer)
 
 
-def test_smalluml::bool_constructor_exists():
-    assert callable(smalluml::Bool.__init__)
+def test_smalluml_integer_constructor_exists():
+    assert callable(smalluml_Integer.__init__)
 
 
-def test_smalluml::bool_constructor_args():
-    sig = inspect.signature(smalluml::Bool.__init__)
+def test_smalluml_integer_constructor_args():
+    sig = inspect.signature(smalluml_Integer.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_smalluml::real_is_not_abstract():
-    assert not inspect.isabstract(smalluml::Real)
+def test_smalluml_unlimitednatural_is_not_abstract():
+    assert not inspect.isabstract(smalluml_UnlimitedNatural)
 
 
-def test_smalluml::real_constructor_exists():
-    assert callable(smalluml::Real.__init__)
+def test_smalluml_unlimitednatural_constructor_exists():
+    assert callable(smalluml_UnlimitedNatural.__init__)
 
 
-def test_smalluml::real_constructor_args():
-    sig = inspect.signature(smalluml::Real.__init__)
+def test_smalluml_unlimitednatural_constructor_args():
+    sig = inspect.signature(smalluml_UnlimitedNatural.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_smalluml::unlimitednatural_is_not_abstract():
-    assert not inspect.isabstract(smalluml::UnlimitedNatural)
+def test_smalluml_bool_is_not_abstract():
+    assert not inspect.isabstract(smalluml_Bool)
 
 
-def test_smalluml::unlimitednatural_constructor_exists():
-    assert callable(smalluml::UnlimitedNatural.__init__)
+def test_smalluml_bool_constructor_exists():
+    assert callable(smalluml_Bool.__init__)
 
 
-def test_smalluml::unlimitednatural_constructor_args():
-    sig = inspect.signature(smalluml::UnlimitedNatural.__init__)
+def test_smalluml_bool_constructor_args():
+    sig = inspect.signature(smalluml_Bool.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_smalluml::string_is_not_abstract():
-    assert not inspect.isabstract(smalluml::String)
+def test_smalluml_string_is_not_abstract():
+    assert not inspect.isabstract(smalluml_String)
 
 
-def test_smalluml::string_constructor_exists():
-    assert callable(smalluml::String.__init__)
+def test_smalluml_string_constructor_exists():
+    assert callable(smalluml_String.__init__)
 
 
-def test_smalluml::string_constructor_args():
-    sig = inspect.signature(smalluml::String.__init__)
+def test_smalluml_string_constructor_args():
+    sig = inspect.signature(smalluml_String.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_smalluml::type_is_not_abstract():
-    assert not inspect.isabstract(smalluml::Type)
+def test_smalluml_type_is_not_abstract():
+    assert not inspect.isabstract(smalluml_Type)
 
 
-def test_smalluml::type_constructor_exists():
-    assert callable(smalluml::Type.__init__)
+def test_smalluml_type_constructor_exists():
+    assert callable(smalluml_Type.__init__)
 
 
-def test_smalluml::type_constructor_args():
-    sig = inspect.signature(smalluml::Type.__init__)
+def test_smalluml_type_constructor_args():
+    sig = inspect.signature(smalluml_Type.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -146,173 +188,127 @@ def test_namedelement_constructor_args():
 
 
 
-def test_smalluml::parameter_is_not_abstract():
-    assert not inspect.isabstract(smalluml::Parameter)
+def test_smalluml_role_is_not_abstract():
+    assert not inspect.isabstract(smalluml_Role)
 
 
-def test_smalluml::parameter_constructor_exists():
-    assert callable(smalluml::Parameter.__init__)
+def test_smalluml_role_constructor_exists():
+    assert callable(smalluml_Role.__init__)
 
 
-def test_smalluml::parameter_constructor_args():
-    sig = inspect.signature(smalluml::Parameter.__init__)
+def test_smalluml_role_constructor_args():
+    sig = inspect.signature(smalluml_Role.__init__)
     params = list(sig.parameters.keys())
+    assert "lowerBound" in params, "Missing parameter 'lowerBound'"
+    assert "upperBound" in params, "Missing parameter 'upperBound'"
 
-
-
-def test_smalluml::relation_is_not_abstract():
-    assert not inspect.isabstract(smalluml::Relation)
-
-
-def test_smalluml::relation_constructor_exists():
-    assert callable(smalluml::Relation.__init__)
-
-
-def test_smalluml::relation_constructor_args():
-    sig = inspect.signature(smalluml::Relation.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_smalluml::attribute_is_not_abstract():
-    assert not inspect.isabstract(smalluml::Attribute)
-
-
-def test_smalluml::attribute_constructor_exists():
-    assert callable(smalluml::Attribute.__init__)
-
-
-def test_smalluml::attribute_constructor_args():
-    sig = inspect.signature(smalluml::Attribute.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_smalluml::method_is_not_abstract():
-    assert not inspect.isabstract(smalluml::Method)
-
-
-def test_smalluml::method_constructor_exists():
-    assert callable(smalluml::Method.__init__)
-
-
-def test_smalluml::method_constructor_args():
-    sig = inspect.signature(smalluml::Method.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_smalluml::class_is_not_abstract():
-    assert not inspect.isabstract(smalluml::Class)
-
-
-def test_smalluml::class_constructor_exists():
-    assert callable(smalluml::Class.__init__)
-
-
-def test_smalluml::class_constructor_args():
-    sig = inspect.signature(smalluml::Class.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_smalluml::namedelement_is_not_abstract():
-    assert not inspect.isabstract(smalluml::NamedElement)
-
-
-def test_smalluml::namedelement_constructor_exists():
-    assert callable(smalluml::NamedElement.__init__)
-
-
-def test_smalluml::namedelement_constructor_args():
-    sig = inspect.signature(smalluml::NamedElement.__init__)
-    params = list(sig.parameters.keys())
-    assert "name" in params, "Missing parameter 'name'"
-
-def test_smalluml::namedelement_has_name():
-    assert hasattr(smalluml::NamedElement, "name")
+def test_smalluml_role_has_lowerBound():
+    assert hasattr(smalluml_Role, "lowerBound")
     descriptor = None
-    for klass in smalluml::NamedElement.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
+    for klass in smalluml_Role.__mro__:
+        if "lowerBound" in klass.__dict__:
+            descriptor = klass.__dict__["lowerBound"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_smalluml_role_has_upperBound():
+    assert hasattr(smalluml_Role, "upperBound")
+    descriptor = None
+    for klass in smalluml_Role.__mro__:
+        if "upperBound" in klass.__dict__:
+            descriptor = klass.__dict__["upperBound"]
             break
     assert isinstance(descriptor, property)
 
 
 
-def test_smalluml::package_is_not_abstract():
-    assert not inspect.isabstract(smalluml::Package)
+def test_smalluml_package_is_not_abstract():
+    assert not inspect.isabstract(smalluml_Package)
 
 
-def test_smalluml::package_constructor_exists():
-    assert callable(smalluml::Package.__init__)
+def test_smalluml_package_constructor_exists():
+    assert callable(smalluml_Package.__init__)
 
 
-def test_smalluml::package_constructor_args():
-    sig = inspect.signature(smalluml::Package.__init__)
+def test_smalluml_package_constructor_args():
+    sig = inspect.signature(smalluml_Package.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_relation_is_not_abstract():
-    assert not inspect.isabstract(Relation)
+def test_smalluml_relation_is_not_abstract():
+    assert not inspect.isabstract(smalluml_Relation)
 
 
-def test_relation_constructor_exists():
-    assert callable(Relation.__init__)
+def test_smalluml_relation_constructor_exists():
+    assert callable(smalluml_Relation.__init__)
 
 
-def test_relation_constructor_args():
-    sig = inspect.signature(Relation.__init__)
+def test_smalluml_relation_constructor_args():
+    sig = inspect.signature(smalluml_Relation.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_smalluml::reference_is_not_abstract():
-    assert not inspect.isabstract(smalluml::Reference)
+def test_smalluml_attribute_is_not_abstract():
+    assert not inspect.isabstract(smalluml_Attribute)
 
 
-def test_smalluml::reference_constructor_exists():
-    assert callable(smalluml::Reference.__init__)
+def test_smalluml_attribute_constructor_exists():
+    assert callable(smalluml_Attribute.__init__)
 
 
-def test_smalluml::reference_constructor_args():
-    sig = inspect.signature(smalluml::Reference.__init__)
+def test_smalluml_attribute_constructor_args():
+    sig = inspect.signature(smalluml_Attribute.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_smalluml::composition_is_not_abstract():
-    assert not inspect.isabstract(smalluml::Composition)
+def test_smalluml_method_is_not_abstract():
+    assert not inspect.isabstract(smalluml_Method)
 
 
-def test_smalluml::composition_constructor_exists():
-    assert callable(smalluml::Composition.__init__)
+def test_smalluml_method_constructor_exists():
+    assert callable(smalluml_Method.__init__)
 
 
-def test_smalluml::composition_constructor_args():
-    sig = inspect.signature(smalluml::Composition.__init__)
+def test_smalluml_method_constructor_args():
+    sig = inspect.signature(smalluml_Method.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_smalluml::enumeration_is_not_abstract():
-    assert not inspect.isabstract(smalluml::Enumeration)
+def test_smalluml_parameter_is_not_abstract():
+    assert not inspect.isabstract(smalluml_Parameter)
 
 
-def test_smalluml::enumeration_constructor_exists():
-    assert callable(smalluml::Enumeration.__init__)
+def test_smalluml_parameter_constructor_exists():
+    assert callable(smalluml_Parameter.__init__)
 
 
-def test_smalluml::enumeration_constructor_args():
-    sig = inspect.signature(smalluml::Enumeration.__init__)
+def test_smalluml_parameter_constructor_args():
+    sig = inspect.signature(smalluml_Parameter.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_smalluml_enumeration_is_not_abstract():
+    assert not inspect.isabstract(smalluml_Enumeration)
+
+
+def test_smalluml_enumeration_constructor_exists():
+    assert callable(smalluml_Enumeration.__init__)
+
+
+def test_smalluml_enumeration_constructor_args():
+    sig = inspect.signature(smalluml_Enumeration.__init__)
     params = list(sig.parameters.keys())
     assert "values" in params, "Missing parameter 'values'"
 
-def test_smalluml::enumeration_has_values():
-    assert hasattr(smalluml::Enumeration, "values")
+def test_smalluml_enumeration_has_values():
+    assert hasattr(smalluml_Enumeration, "values")
     descriptor = None
-    for klass in smalluml::Enumeration.__mro__:
+    for klass in smalluml_Enumeration.__mro__:
         if "values" in klass.__dict__:
             descriptor = klass.__dict__["values"]
             break
@@ -320,35 +316,39 @@ def test_smalluml::enumeration_has_values():
 
 
 
-def test_smalluml::role_is_not_abstract():
-    assert not inspect.isabstract(smalluml::Role)
+def test_smalluml_class_is_not_abstract():
+    assert not inspect.isabstract(smalluml_Class)
 
 
-def test_smalluml::role_constructor_exists():
-    assert callable(smalluml::Role.__init__)
+def test_smalluml_class_constructor_exists():
+    assert callable(smalluml_Class.__init__)
 
 
-def test_smalluml::role_constructor_args():
-    sig = inspect.signature(smalluml::Role.__init__)
+def test_smalluml_class_constructor_args():
+    sig = inspect.signature(smalluml_Class.__init__)
     params = list(sig.parameters.keys())
-    assert "lowerBound" in params, "Missing parameter 'lowerBound'"
-    assert "upperBound" in params, "Missing parameter 'upperBound'"
 
-def test_smalluml::role_has_lowerBound():
-    assert hasattr(smalluml::Role, "lowerBound")
-    descriptor = None
-    for klass in smalluml::Role.__mro__:
-        if "lowerBound" in klass.__dict__:
-            descriptor = klass.__dict__["lowerBound"]
-            break
-    assert isinstance(descriptor, property)
 
-def test_smalluml::role_has_upperBound():
-    assert hasattr(smalluml::Role, "upperBound")
+
+def test_smalluml_namedelement_is_not_abstract():
+    assert not inspect.isabstract(smalluml_NamedElement)
+
+
+def test_smalluml_namedelement_constructor_exists():
+    assert callable(smalluml_NamedElement.__init__)
+
+
+def test_smalluml_namedelement_constructor_args():
+    sig = inspect.signature(smalluml_NamedElement.__init__)
+    params = list(sig.parameters.keys())
+    assert "name" in params, "Missing parameter 'name'"
+
+def test_smalluml_namedelement_has_name():
+    assert hasattr(smalluml_NamedElement, "name")
     descriptor = None
-    for klass in smalluml::Role.__mro__:
-        if "upperBound" in klass.__dict__:
-            descriptor = klass.__dict__["upperBound"]
+    for klass in smalluml_NamedElement.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
@@ -364,215 +364,203 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
+Relation_strategy = st.builds(
+    Relation,
+)
+smalluml_Reference_strategy = st.builds(
+    smalluml_Reference,
+)
+smalluml_Composition_strategy = st.builds(
+    smalluml_Composition,
+)
 Type_strategy = st.builds(
     Type,
 )
-smalluml::Integer_strategy = st.builds(
-    smalluml::Integer,
+smalluml_Real_strategy = st.builds(
+    smalluml_Real,
 )
-smalluml::Bool_strategy = st.builds(
-    smalluml::Bool,
+smalluml_Integer_strategy = st.builds(
+    smalluml_Integer,
 )
-smalluml::Real_strategy = st.builds(
-    smalluml::Real,
+smalluml_UnlimitedNatural_strategy = st.builds(
+    smalluml_UnlimitedNatural,
 )
-smalluml::UnlimitedNatural_strategy = st.builds(
-    smalluml::UnlimitedNatural,
+smalluml_Bool_strategy = st.builds(
+    smalluml_Bool,
 )
-smalluml::String_strategy = st.builds(
-    smalluml::String,
+smalluml_String_strategy = st.builds(
+    smalluml_String,
 )
-smalluml::Type_strategy = st.builds(
-    smalluml::Type,
+smalluml_Type_strategy = st.builds(
+    smalluml_Type,
 )
 NamedElement_strategy = st.builds(
     NamedElement,
 )
-smalluml::Parameter_strategy = st.builds(
-    smalluml::Parameter,
-)
-smalluml::Relation_strategy = st.builds(
-    smalluml::Relation,
-)
-smalluml::Attribute_strategy = st.builds(
-    smalluml::Attribute,
-)
-smalluml::Method_strategy = st.builds(
-    smalluml::Method,
-)
-smalluml::Class_strategy = st.builds(
-    smalluml::Class,
-)
-smalluml::NamedElement_strategy = st.builds(
-    smalluml::NamedElement,
-    name=
-        safe_text
-)
-smalluml::Package_strategy = st.builds(
-    smalluml::Package,
-)
-Relation_strategy = st.builds(
-    Relation,
-)
-smalluml::Reference_strategy = st.builds(
-    smalluml::Reference,
-)
-smalluml::Composition_strategy = st.builds(
-    smalluml::Composition,
-)
-smalluml::Enumeration_strategy = st.builds(
-    smalluml::Enumeration,
-    values=
-        safe_text
-)
-smalluml::Role_strategy = st.builds(
-    smalluml::Role,
+smalluml_Role_strategy = st.builds(
+    smalluml_Role,
     lowerBound=
         st.integers(),
     upperBound=
         st.integers()
 )
-
-@given(instance=Type_strategy)
-@settings(max_examples=50)
-def test_type_instantiation(instance):
-    assert isinstance(instance, Type)
-
-@given(instance=smalluml::Integer_strategy)
-@settings(max_examples=50)
-def test_smalluml::integer_instantiation(instance):
-    assert isinstance(instance, smalluml::Integer)
-
-@given(instance=smalluml::Bool_strategy)
-@settings(max_examples=50)
-def test_smalluml::bool_instantiation(instance):
-    assert isinstance(instance, smalluml::Bool)
-
-@given(instance=smalluml::Real_strategy)
-@settings(max_examples=50)
-def test_smalluml::real_instantiation(instance):
-    assert isinstance(instance, smalluml::Real)
-
-@given(instance=smalluml::UnlimitedNatural_strategy)
-@settings(max_examples=50)
-def test_smalluml::unlimitednatural_instantiation(instance):
-    assert isinstance(instance, smalluml::UnlimitedNatural)
-
-@given(instance=smalluml::String_strategy)
-@settings(max_examples=50)
-def test_smalluml::string_instantiation(instance):
-    assert isinstance(instance, smalluml::String)
-
-@given(instance=smalluml::Type_strategy)
-@settings(max_examples=50)
-def test_smalluml::type_instantiation(instance):
-    assert isinstance(instance, smalluml::Type)
-
-@given(instance=NamedElement_strategy)
-@settings(max_examples=50)
-def test_namedelement_instantiation(instance):
-    assert isinstance(instance, NamedElement)
-
-@given(instance=smalluml::Parameter_strategy)
-@settings(max_examples=50)
-def test_smalluml::parameter_instantiation(instance):
-    assert isinstance(instance, smalluml::Parameter)
-
-@given(instance=smalluml::Relation_strategy)
-@settings(max_examples=50)
-def test_smalluml::relation_instantiation(instance):
-    assert isinstance(instance, smalluml::Relation)
-
-@given(instance=smalluml::Attribute_strategy)
-@settings(max_examples=50)
-def test_smalluml::attribute_instantiation(instance):
-    assert isinstance(instance, smalluml::Attribute)
-
-@given(instance=smalluml::Method_strategy)
-@settings(max_examples=50)
-def test_smalluml::method_instantiation(instance):
-    assert isinstance(instance, smalluml::Method)
-
-@given(instance=smalluml::Class_strategy)
-@settings(max_examples=50)
-def test_smalluml::class_instantiation(instance):
-    assert isinstance(instance, smalluml::Class)
-
-@given(instance=smalluml::NamedElement_strategy)
-@settings(max_examples=50)
-def test_smalluml::namedelement_instantiation(instance):
-    assert isinstance(instance, smalluml::NamedElement)
-
-@given(instance=smalluml::NamedElement_strategy)
-def test_smalluml::namedelement_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=smalluml::NamedElement_strategy)
-def test_smalluml::namedelement_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
-
-@given(instance=smalluml::Package_strategy)
-@settings(max_examples=50)
-def test_smalluml::package_instantiation(instance):
-    assert isinstance(instance, smalluml::Package)
+smalluml_Package_strategy = st.builds(
+    smalluml_Package,
+)
+smalluml_Relation_strategy = st.builds(
+    smalluml_Relation,
+)
+smalluml_Attribute_strategy = st.builds(
+    smalluml_Attribute,
+)
+smalluml_Method_strategy = st.builds(
+    smalluml_Method,
+)
+smalluml_Parameter_strategy = st.builds(
+    smalluml_Parameter,
+)
+smalluml_Enumeration_strategy = st.builds(
+    smalluml_Enumeration,
+    values=
+        safe_text
+)
+smalluml_Class_strategy = st.builds(
+    smalluml_Class,
+)
+smalluml_NamedElement_strategy = st.builds(
+    smalluml_NamedElement,
+    name=
+        safe_text
+)
 
 @given(instance=Relation_strategy)
 @settings(max_examples=50)
 def test_relation_instantiation(instance):
     assert isinstance(instance, Relation)
 
-@given(instance=smalluml::Reference_strategy)
+@given(instance=smalluml_Reference_strategy)
 @settings(max_examples=50)
-def test_smalluml::reference_instantiation(instance):
-    assert isinstance(instance, smalluml::Reference)
+def test_smalluml_reference_instantiation(instance):
+    assert isinstance(instance, smalluml_Reference)
 
-@given(instance=smalluml::Composition_strategy)
+@given(instance=smalluml_Composition_strategy)
 @settings(max_examples=50)
-def test_smalluml::composition_instantiation(instance):
-    assert isinstance(instance, smalluml::Composition)
+def test_smalluml_composition_instantiation(instance):
+    assert isinstance(instance, smalluml_Composition)
 
-@given(instance=smalluml::Enumeration_strategy)
+@given(instance=Type_strategy)
 @settings(max_examples=50)
-def test_smalluml::enumeration_instantiation(instance):
-    assert isinstance(instance, smalluml::Enumeration)
+def test_type_instantiation(instance):
+    assert isinstance(instance, Type)
 
-@given(instance=smalluml::Enumeration_strategy)
-def test_smalluml::enumeration_values_type(instance):
-    assert isinstance(instance.values, str)
-
-
-@given(instance=smalluml::Enumeration_strategy)
-def test_smalluml::enumeration_values_setter(instance):
-    original = instance.values
-    instance.values = original
-    assert instance.values == original
-
-@given(instance=smalluml::Role_strategy)
+@given(instance=smalluml_Real_strategy)
 @settings(max_examples=50)
-def test_smalluml::role_instantiation(instance):
-    assert isinstance(instance, smalluml::Role)
+def test_smalluml_real_instantiation(instance):
+    assert isinstance(instance, smalluml_Real)
 
-@given(instance=smalluml::Role_strategy)
-def test_smalluml::role_lowerBound_type(instance):
-    assert isinstance(instance.lowerBound, int)
+@given(instance=smalluml_Integer_strategy)
+@settings(max_examples=50)
+def test_smalluml_integer_instantiation(instance):
+    assert isinstance(instance, smalluml_Integer)
+
+@given(instance=smalluml_UnlimitedNatural_strategy)
+@settings(max_examples=50)
+def test_smalluml_unlimitednatural_instantiation(instance):
+    assert isinstance(instance, smalluml_UnlimitedNatural)
+
+@given(instance=smalluml_Bool_strategy)
+@settings(max_examples=50)
+def test_smalluml_bool_instantiation(instance):
+    assert isinstance(instance, smalluml_Bool)
+
+@given(instance=smalluml_String_strategy)
+@settings(max_examples=50)
+def test_smalluml_string_instantiation(instance):
+    assert isinstance(instance, smalluml_String)
+
+@given(instance=smalluml_Type_strategy)
+@settings(max_examples=50)
+def test_smalluml_type_instantiation(instance):
+    assert isinstance(instance, smalluml_Type)
+
+@given(instance=NamedElement_strategy)
+@settings(max_examples=50)
+def test_namedelement_instantiation(instance):
+    assert isinstance(instance, NamedElement)
+
+@given(instance=smalluml_Role_strategy)
+@settings(max_examples=50)
+def test_smalluml_role_instantiation(instance):
+    assert isinstance(instance, smalluml_Role)
 
 
-@given(instance=smalluml::Role_strategy)
-def test_smalluml::role_lowerBound_setter(instance):
+
+@given(instance=smalluml_Role_strategy)
+def test_smalluml_role_lowerBound_setter(instance):
     original = instance.lowerBound
     instance.lowerBound = original
     assert instance.lowerBound == original
 
-@given(instance=smalluml::Role_strategy)
-def test_smalluml::role_upperBound_type(instance):
-    assert isinstance(instance.upperBound, int)
 
 
-@given(instance=smalluml::Role_strategy)
-def test_smalluml::role_upperBound_setter(instance):
+@given(instance=smalluml_Role_strategy)
+def test_smalluml_role_upperBound_setter(instance):
     original = instance.upperBound
     instance.upperBound = original
     assert instance.upperBound == original
+
+@given(instance=smalluml_Package_strategy)
+@settings(max_examples=50)
+def test_smalluml_package_instantiation(instance):
+    assert isinstance(instance, smalluml_Package)
+
+@given(instance=smalluml_Relation_strategy)
+@settings(max_examples=50)
+def test_smalluml_relation_instantiation(instance):
+    assert isinstance(instance, smalluml_Relation)
+
+@given(instance=smalluml_Attribute_strategy)
+@settings(max_examples=50)
+def test_smalluml_attribute_instantiation(instance):
+    assert isinstance(instance, smalluml_Attribute)
+
+@given(instance=smalluml_Method_strategy)
+@settings(max_examples=50)
+def test_smalluml_method_instantiation(instance):
+    assert isinstance(instance, smalluml_Method)
+
+@given(instance=smalluml_Parameter_strategy)
+@settings(max_examples=50)
+def test_smalluml_parameter_instantiation(instance):
+    assert isinstance(instance, smalluml_Parameter)
+
+@given(instance=smalluml_Enumeration_strategy)
+@settings(max_examples=50)
+def test_smalluml_enumeration_instantiation(instance):
+    assert isinstance(instance, smalluml_Enumeration)
+
+
+
+@given(instance=smalluml_Enumeration_strategy)
+def test_smalluml_enumeration_values_setter(instance):
+    original = instance.values
+    instance.values = original
+    assert instance.values == original
+
+@given(instance=smalluml_Class_strategy)
+@settings(max_examples=50)
+def test_smalluml_class_instantiation(instance):
+    assert isinstance(instance, smalluml_Class)
+
+@given(instance=smalluml_NamedElement_strategy)
+@settings(max_examples=50)
+def test_smalluml_namedelement_instantiation(instance):
+    assert isinstance(instance, smalluml_NamedElement)
+
+
+
+@given(instance=smalluml_NamedElement_strategy)
+def test_smalluml_namedelement_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original

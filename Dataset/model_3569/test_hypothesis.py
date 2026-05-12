@@ -3,47 +3,169 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    SomeValue,
-    CExpression,
-    expressions::SomeValue,
-    LExpression,
-    expressions::CExpression,
-    Expression,
-    expressions::AExpression,
-    expressions::LExpression,
-    expressions::Expression,
-    expressions::Or,
-    expressions::Imply,
-    expressions::Approx,
-    expressions::Unequal,
-    expressions::GreaterOrEqual,
-    expressions::Less,
-    expressions::LessOrEqual,
-    expressions::Not,
-    expressions::And,
-    expressions::Xor,
-    expressions::Equal,
-    expressions::Greater,
-    expressions::Equivalent,
-    expressions::StringValue,
-    expressions::BooleanValue,
+from python_code import (
     AExpression,
-    expressions::Plus,
-    expressions::Pow,
-    expressions::Minus,
-    expressions::Multi,
-    expressions::Mod,
-    expressions::Variable,
-    expressions::NumberValue,
-    expressions::Div,
+    expressions_Mod,
+    expressions_Div,
+    expressions_Plus,
+    expressions_Minus,
+    expressions_Multi,
+    expressions_Pow,
+    expressions_NumberValue,
+    SomeValue,
+    expressions_StringValue,
+    CExpression,
+    expressions_GreaterOrEqual,
+    expressions_Greater,
+    expressions_Equal,
+    expressions_Unequal,
+    expressions_Approx,
+    expressions_Less,
+    expressions_LessOrEqual,
+    expressions_SomeValue,
+    LExpression,
+    expressions_Equivalent,
+    expressions_Variable,
+    expressions_And,
+    expressions_Xor,
+    expressions_BooleanValue,
+    expressions_Not,
+    expressions_CExpression,
+    Expression,
+    expressions_AExpression,
+    expressions_LExpression,
+    expressions_Expression,
+    expressions_Or,
+    expressions_Imply,
 )
 
 # =============================================================================
 # SECTION 1 — STRUCTURAL TESTS
 # =============================================================================
+
+
+
+def test_aexpression_is_not_abstract():
+    assert not inspect.isabstract(AExpression)
+
+
+def test_aexpression_constructor_exists():
+    assert callable(AExpression.__init__)
+
+
+def test_aexpression_constructor_args():
+    sig = inspect.signature(AExpression.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_expressions_mod_is_not_abstract():
+    assert not inspect.isabstract(expressions_Mod)
+
+
+def test_expressions_mod_constructor_exists():
+    assert callable(expressions_Mod.__init__)
+
+
+def test_expressions_mod_constructor_args():
+    sig = inspect.signature(expressions_Mod.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_expressions_div_is_not_abstract():
+    assert not inspect.isabstract(expressions_Div)
+
+
+def test_expressions_div_constructor_exists():
+    assert callable(expressions_Div.__init__)
+
+
+def test_expressions_div_constructor_args():
+    sig = inspect.signature(expressions_Div.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_expressions_plus_is_not_abstract():
+    assert not inspect.isabstract(expressions_Plus)
+
+
+def test_expressions_plus_constructor_exists():
+    assert callable(expressions_Plus.__init__)
+
+
+def test_expressions_plus_constructor_args():
+    sig = inspect.signature(expressions_Plus.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_expressions_minus_is_not_abstract():
+    assert not inspect.isabstract(expressions_Minus)
+
+
+def test_expressions_minus_constructor_exists():
+    assert callable(expressions_Minus.__init__)
+
+
+def test_expressions_minus_constructor_args():
+    sig = inspect.signature(expressions_Minus.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_expressions_multi_is_not_abstract():
+    assert not inspect.isabstract(expressions_Multi)
+
+
+def test_expressions_multi_constructor_exists():
+    assert callable(expressions_Multi.__init__)
+
+
+def test_expressions_multi_constructor_args():
+    sig = inspect.signature(expressions_Multi.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_expressions_pow_is_not_abstract():
+    assert not inspect.isabstract(expressions_Pow)
+
+
+def test_expressions_pow_constructor_exists():
+    assert callable(expressions_Pow.__init__)
+
+
+def test_expressions_pow_constructor_args():
+    sig = inspect.signature(expressions_Pow.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_expressions_numbervalue_is_not_abstract():
+    assert not inspect.isabstract(expressions_NumberValue)
+
+
+def test_expressions_numbervalue_constructor_exists():
+    assert callable(expressions_NumberValue.__init__)
+
+
+def test_expressions_numbervalue_constructor_args():
+    sig = inspect.signature(expressions_NumberValue.__init__)
+    params = list(sig.parameters.keys())
+    assert "numValue" in params, "Missing parameter 'numValue'"
+
+def test_expressions_numbervalue_has_numValue():
+    assert hasattr(expressions_NumberValue, "numValue")
+    descriptor = None
+    for klass in expressions_NumberValue.__mro__:
+        if "numValue" in klass.__dict__:
+            descriptor = klass.__dict__["numValue"]
+            break
+    assert isinstance(descriptor, property)
 
 
 
@@ -61,6 +183,30 @@ def test_somevalue_constructor_args():
 
 
 
+def test_expressions_stringvalue_is_not_abstract():
+    assert not inspect.isabstract(expressions_StringValue)
+
+
+def test_expressions_stringvalue_constructor_exists():
+    assert callable(expressions_StringValue.__init__)
+
+
+def test_expressions_stringvalue_constructor_args():
+    sig = inspect.signature(expressions_StringValue.__init__)
+    params = list(sig.parameters.keys())
+    assert "strValue" in params, "Missing parameter 'strValue'"
+
+def test_expressions_stringvalue_has_strValue():
+    assert hasattr(expressions_StringValue, "strValue")
+    descriptor = None
+    for klass in expressions_StringValue.__mro__:
+        if "strValue" in klass.__dict__:
+            descriptor = klass.__dict__["strValue"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
 def test_cexpression_is_not_abstract():
     assert not inspect.isabstract(CExpression)
 
@@ -75,16 +221,114 @@ def test_cexpression_constructor_args():
 
 
 
-def test_expressions::somevalue_is_not_abstract():
-    assert not inspect.isabstract(expressions::SomeValue)
+def test_expressions_greaterorequal_is_not_abstract():
+    assert not inspect.isabstract(expressions_GreaterOrEqual)
 
 
-def test_expressions::somevalue_constructor_exists():
-    assert callable(expressions::SomeValue.__init__)
+def test_expressions_greaterorequal_constructor_exists():
+    assert callable(expressions_GreaterOrEqual.__init__)
 
 
-def test_expressions::somevalue_constructor_args():
-    sig = inspect.signature(expressions::SomeValue.__init__)
+def test_expressions_greaterorequal_constructor_args():
+    sig = inspect.signature(expressions_GreaterOrEqual.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_expressions_greater_is_not_abstract():
+    assert not inspect.isabstract(expressions_Greater)
+
+
+def test_expressions_greater_constructor_exists():
+    assert callable(expressions_Greater.__init__)
+
+
+def test_expressions_greater_constructor_args():
+    sig = inspect.signature(expressions_Greater.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_expressions_equal_is_not_abstract():
+    assert not inspect.isabstract(expressions_Equal)
+
+
+def test_expressions_equal_constructor_exists():
+    assert callable(expressions_Equal.__init__)
+
+
+def test_expressions_equal_constructor_args():
+    sig = inspect.signature(expressions_Equal.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_expressions_unequal_is_not_abstract():
+    assert not inspect.isabstract(expressions_Unequal)
+
+
+def test_expressions_unequal_constructor_exists():
+    assert callable(expressions_Unequal.__init__)
+
+
+def test_expressions_unequal_constructor_args():
+    sig = inspect.signature(expressions_Unequal.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_expressions_approx_is_not_abstract():
+    assert not inspect.isabstract(expressions_Approx)
+
+
+def test_expressions_approx_constructor_exists():
+    assert callable(expressions_Approx.__init__)
+
+
+def test_expressions_approx_constructor_args():
+    sig = inspect.signature(expressions_Approx.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_expressions_less_is_not_abstract():
+    assert not inspect.isabstract(expressions_Less)
+
+
+def test_expressions_less_constructor_exists():
+    assert callable(expressions_Less.__init__)
+
+
+def test_expressions_less_constructor_args():
+    sig = inspect.signature(expressions_Less.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_expressions_lessorequal_is_not_abstract():
+    assert not inspect.isabstract(expressions_LessOrEqual)
+
+
+def test_expressions_lessorequal_constructor_exists():
+    assert callable(expressions_LessOrEqual.__init__)
+
+
+def test_expressions_lessorequal_constructor_args():
+    sig = inspect.signature(expressions_LessOrEqual.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_expressions_somevalue_is_not_abstract():
+    assert not inspect.isabstract(expressions_SomeValue)
+
+
+def test_expressions_somevalue_constructor_exists():
+    assert callable(expressions_SomeValue.__init__)
+
+
+def test_expressions_somevalue_constructor_args():
+    sig = inspect.signature(expressions_SomeValue.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -103,16 +347,120 @@ def test_lexpression_constructor_args():
 
 
 
-def test_expressions::cexpression_is_not_abstract():
-    assert not inspect.isabstract(expressions::CExpression)
+def test_expressions_equivalent_is_not_abstract():
+    assert not inspect.isabstract(expressions_Equivalent)
 
 
-def test_expressions::cexpression_constructor_exists():
-    assert callable(expressions::CExpression.__init__)
+def test_expressions_equivalent_constructor_exists():
+    assert callable(expressions_Equivalent.__init__)
 
 
-def test_expressions::cexpression_constructor_args():
-    sig = inspect.signature(expressions::CExpression.__init__)
+def test_expressions_equivalent_constructor_args():
+    sig = inspect.signature(expressions_Equivalent.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_expressions_variable_is_not_abstract():
+    assert not inspect.isabstract(expressions_Variable)
+
+
+def test_expressions_variable_constructor_exists():
+    assert callable(expressions_Variable.__init__)
+
+
+def test_expressions_variable_constructor_args():
+    sig = inspect.signature(expressions_Variable.__init__)
+    params = list(sig.parameters.keys())
+    assert "varName" in params, "Missing parameter 'varName'"
+
+def test_expressions_variable_has_varName():
+    assert hasattr(expressions_Variable, "varName")
+    descriptor = None
+    for klass in expressions_Variable.__mro__:
+        if "varName" in klass.__dict__:
+            descriptor = klass.__dict__["varName"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_expressions_and_is_not_abstract():
+    assert not inspect.isabstract(expressions_And)
+
+
+def test_expressions_and_constructor_exists():
+    assert callable(expressions_And.__init__)
+
+
+def test_expressions_and_constructor_args():
+    sig = inspect.signature(expressions_And.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_expressions_xor_is_not_abstract():
+    assert not inspect.isabstract(expressions_Xor)
+
+
+def test_expressions_xor_constructor_exists():
+    assert callable(expressions_Xor.__init__)
+
+
+def test_expressions_xor_constructor_args():
+    sig = inspect.signature(expressions_Xor.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_expressions_booleanvalue_is_not_abstract():
+    assert not inspect.isabstract(expressions_BooleanValue)
+
+
+def test_expressions_booleanvalue_constructor_exists():
+    assert callable(expressions_BooleanValue.__init__)
+
+
+def test_expressions_booleanvalue_constructor_args():
+    sig = inspect.signature(expressions_BooleanValue.__init__)
+    params = list(sig.parameters.keys())
+    assert "value" in params, "Missing parameter 'value'"
+
+def test_expressions_booleanvalue_has_value():
+    assert hasattr(expressions_BooleanValue, "value")
+    descriptor = None
+    for klass in expressions_BooleanValue.__mro__:
+        if "value" in klass.__dict__:
+            descriptor = klass.__dict__["value"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_expressions_not_is_not_abstract():
+    assert not inspect.isabstract(expressions_Not)
+
+
+def test_expressions_not_constructor_exists():
+    assert callable(expressions_Not.__init__)
+
+
+def test_expressions_not_constructor_args():
+    sig = inspect.signature(expressions_Not.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_expressions_cexpression_is_not_abstract():
+    assert not inspect.isabstract(expressions_CExpression)
+
+
+def test_expressions_cexpression_constructor_exists():
+    assert callable(expressions_CExpression.__init__)
+
+
+def test_expressions_cexpression_constructor_args():
+    sig = inspect.signature(expressions_CExpression.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -131,420 +479,72 @@ def test_expression_constructor_args():
 
 
 
-def test_expressions::aexpression_is_not_abstract():
-    assert not inspect.isabstract(expressions::AExpression)
+def test_expressions_aexpression_is_not_abstract():
+    assert not inspect.isabstract(expressions_AExpression)
 
 
-def test_expressions::aexpression_constructor_exists():
-    assert callable(expressions::AExpression.__init__)
+def test_expressions_aexpression_constructor_exists():
+    assert callable(expressions_AExpression.__init__)
 
 
-def test_expressions::aexpression_constructor_args():
-    sig = inspect.signature(expressions::AExpression.__init__)
+def test_expressions_aexpression_constructor_args():
+    sig = inspect.signature(expressions_AExpression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_expressions::lexpression_is_not_abstract():
-    assert not inspect.isabstract(expressions::LExpression)
+def test_expressions_lexpression_is_not_abstract():
+    assert not inspect.isabstract(expressions_LExpression)
 
 
-def test_expressions::lexpression_constructor_exists():
-    assert callable(expressions::LExpression.__init__)
+def test_expressions_lexpression_constructor_exists():
+    assert callable(expressions_LExpression.__init__)
 
 
-def test_expressions::lexpression_constructor_args():
-    sig = inspect.signature(expressions::LExpression.__init__)
+def test_expressions_lexpression_constructor_args():
+    sig = inspect.signature(expressions_LExpression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_expressions::expression_is_not_abstract():
-    assert not inspect.isabstract(expressions::Expression)
+def test_expressions_expression_is_not_abstract():
+    assert not inspect.isabstract(expressions_Expression)
 
 
-def test_expressions::expression_constructor_exists():
-    assert callable(expressions::Expression.__init__)
+def test_expressions_expression_constructor_exists():
+    assert callable(expressions_Expression.__init__)
 
 
-def test_expressions::expression_constructor_args():
-    sig = inspect.signature(expressions::Expression.__init__)
+def test_expressions_expression_constructor_args():
+    sig = inspect.signature(expressions_Expression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_expressions::or_is_not_abstract():
-    assert not inspect.isabstract(expressions::Or)
+def test_expressions_or_is_not_abstract():
+    assert not inspect.isabstract(expressions_Or)
 
 
-def test_expressions::or_constructor_exists():
-    assert callable(expressions::Or.__init__)
+def test_expressions_or_constructor_exists():
+    assert callable(expressions_Or.__init__)
 
 
-def test_expressions::or_constructor_args():
-    sig = inspect.signature(expressions::Or.__init__)
+def test_expressions_or_constructor_args():
+    sig = inspect.signature(expressions_Or.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_expressions::imply_is_not_abstract():
-    assert not inspect.isabstract(expressions::Imply)
+def test_expressions_imply_is_not_abstract():
+    assert not inspect.isabstract(expressions_Imply)
 
 
-def test_expressions::imply_constructor_exists():
-    assert callable(expressions::Imply.__init__)
+def test_expressions_imply_constructor_exists():
+    assert callable(expressions_Imply.__init__)
 
 
-def test_expressions::imply_constructor_args():
-    sig = inspect.signature(expressions::Imply.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_expressions::approx_is_not_abstract():
-    assert not inspect.isabstract(expressions::Approx)
-
-
-def test_expressions::approx_constructor_exists():
-    assert callable(expressions::Approx.__init__)
-
-
-def test_expressions::approx_constructor_args():
-    sig = inspect.signature(expressions::Approx.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_expressions::unequal_is_not_abstract():
-    assert not inspect.isabstract(expressions::Unequal)
-
-
-def test_expressions::unequal_constructor_exists():
-    assert callable(expressions::Unequal.__init__)
-
-
-def test_expressions::unequal_constructor_args():
-    sig = inspect.signature(expressions::Unequal.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_expressions::greaterorequal_is_not_abstract():
-    assert not inspect.isabstract(expressions::GreaterOrEqual)
-
-
-def test_expressions::greaterorequal_constructor_exists():
-    assert callable(expressions::GreaterOrEqual.__init__)
-
-
-def test_expressions::greaterorequal_constructor_args():
-    sig = inspect.signature(expressions::GreaterOrEqual.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_expressions::less_is_not_abstract():
-    assert not inspect.isabstract(expressions::Less)
-
-
-def test_expressions::less_constructor_exists():
-    assert callable(expressions::Less.__init__)
-
-
-def test_expressions::less_constructor_args():
-    sig = inspect.signature(expressions::Less.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_expressions::lessorequal_is_not_abstract():
-    assert not inspect.isabstract(expressions::LessOrEqual)
-
-
-def test_expressions::lessorequal_constructor_exists():
-    assert callable(expressions::LessOrEqual.__init__)
-
-
-def test_expressions::lessorequal_constructor_args():
-    sig = inspect.signature(expressions::LessOrEqual.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_expressions::not_is_not_abstract():
-    assert not inspect.isabstract(expressions::Not)
-
-
-def test_expressions::not_constructor_exists():
-    assert callable(expressions::Not.__init__)
-
-
-def test_expressions::not_constructor_args():
-    sig = inspect.signature(expressions::Not.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_expressions::and_is_not_abstract():
-    assert not inspect.isabstract(expressions::And)
-
-
-def test_expressions::and_constructor_exists():
-    assert callable(expressions::And.__init__)
-
-
-def test_expressions::and_constructor_args():
-    sig = inspect.signature(expressions::And.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_expressions::xor_is_not_abstract():
-    assert not inspect.isabstract(expressions::Xor)
-
-
-def test_expressions::xor_constructor_exists():
-    assert callable(expressions::Xor.__init__)
-
-
-def test_expressions::xor_constructor_args():
-    sig = inspect.signature(expressions::Xor.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_expressions::equal_is_not_abstract():
-    assert not inspect.isabstract(expressions::Equal)
-
-
-def test_expressions::equal_constructor_exists():
-    assert callable(expressions::Equal.__init__)
-
-
-def test_expressions::equal_constructor_args():
-    sig = inspect.signature(expressions::Equal.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_expressions::greater_is_not_abstract():
-    assert not inspect.isabstract(expressions::Greater)
-
-
-def test_expressions::greater_constructor_exists():
-    assert callable(expressions::Greater.__init__)
-
-
-def test_expressions::greater_constructor_args():
-    sig = inspect.signature(expressions::Greater.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_expressions::equivalent_is_not_abstract():
-    assert not inspect.isabstract(expressions::Equivalent)
-
-
-def test_expressions::equivalent_constructor_exists():
-    assert callable(expressions::Equivalent.__init__)
-
-
-def test_expressions::equivalent_constructor_args():
-    sig = inspect.signature(expressions::Equivalent.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_expressions::stringvalue_is_not_abstract():
-    assert not inspect.isabstract(expressions::StringValue)
-
-
-def test_expressions::stringvalue_constructor_exists():
-    assert callable(expressions::StringValue.__init__)
-
-
-def test_expressions::stringvalue_constructor_args():
-    sig = inspect.signature(expressions::StringValue.__init__)
-    params = list(sig.parameters.keys())
-    assert "strValue" in params, "Missing parameter 'strValue'"
-
-def test_expressions::stringvalue_has_strValue():
-    assert hasattr(expressions::StringValue, "strValue")
-    descriptor = None
-    for klass in expressions::StringValue.__mro__:
-        if "strValue" in klass.__dict__:
-            descriptor = klass.__dict__["strValue"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_expressions::booleanvalue_is_not_abstract():
-    assert not inspect.isabstract(expressions::BooleanValue)
-
-
-def test_expressions::booleanvalue_constructor_exists():
-    assert callable(expressions::BooleanValue.__init__)
-
-
-def test_expressions::booleanvalue_constructor_args():
-    sig = inspect.signature(expressions::BooleanValue.__init__)
-    params = list(sig.parameters.keys())
-    assert "value" in params, "Missing parameter 'value'"
-
-def test_expressions::booleanvalue_has_value():
-    assert hasattr(expressions::BooleanValue, "value")
-    descriptor = None
-    for klass in expressions::BooleanValue.__mro__:
-        if "value" in klass.__dict__:
-            descriptor = klass.__dict__["value"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_aexpression_is_not_abstract():
-    assert not inspect.isabstract(AExpression)
-
-
-def test_aexpression_constructor_exists():
-    assert callable(AExpression.__init__)
-
-
-def test_aexpression_constructor_args():
-    sig = inspect.signature(AExpression.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_expressions::plus_is_not_abstract():
-    assert not inspect.isabstract(expressions::Plus)
-
-
-def test_expressions::plus_constructor_exists():
-    assert callable(expressions::Plus.__init__)
-
-
-def test_expressions::plus_constructor_args():
-    sig = inspect.signature(expressions::Plus.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_expressions::pow_is_not_abstract():
-    assert not inspect.isabstract(expressions::Pow)
-
-
-def test_expressions::pow_constructor_exists():
-    assert callable(expressions::Pow.__init__)
-
-
-def test_expressions::pow_constructor_args():
-    sig = inspect.signature(expressions::Pow.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_expressions::minus_is_not_abstract():
-    assert not inspect.isabstract(expressions::Minus)
-
-
-def test_expressions::minus_constructor_exists():
-    assert callable(expressions::Minus.__init__)
-
-
-def test_expressions::minus_constructor_args():
-    sig = inspect.signature(expressions::Minus.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_expressions::multi_is_not_abstract():
-    assert not inspect.isabstract(expressions::Multi)
-
-
-def test_expressions::multi_constructor_exists():
-    assert callable(expressions::Multi.__init__)
-
-
-def test_expressions::multi_constructor_args():
-    sig = inspect.signature(expressions::Multi.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_expressions::mod_is_not_abstract():
-    assert not inspect.isabstract(expressions::Mod)
-
-
-def test_expressions::mod_constructor_exists():
-    assert callable(expressions::Mod.__init__)
-
-
-def test_expressions::mod_constructor_args():
-    sig = inspect.signature(expressions::Mod.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_expressions::variable_is_not_abstract():
-    assert not inspect.isabstract(expressions::Variable)
-
-
-def test_expressions::variable_constructor_exists():
-    assert callable(expressions::Variable.__init__)
-
-
-def test_expressions::variable_constructor_args():
-    sig = inspect.signature(expressions::Variable.__init__)
-    params = list(sig.parameters.keys())
-    assert "varName" in params, "Missing parameter 'varName'"
-
-def test_expressions::variable_has_varName():
-    assert hasattr(expressions::Variable, "varName")
-    descriptor = None
-    for klass in expressions::Variable.__mro__:
-        if "varName" in klass.__dict__:
-            descriptor = klass.__dict__["varName"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_expressions::numbervalue_is_not_abstract():
-    assert not inspect.isabstract(expressions::NumberValue)
-
-
-def test_expressions::numbervalue_constructor_exists():
-    assert callable(expressions::NumberValue.__init__)
-
-
-def test_expressions::numbervalue_constructor_args():
-    sig = inspect.signature(expressions::NumberValue.__init__)
-    params = list(sig.parameters.keys())
-    assert "numValue" in params, "Missing parameter 'numValue'"
-
-def test_expressions::numbervalue_has_numValue():
-    assert hasattr(expressions::NumberValue, "numValue")
-    descriptor = None
-    for klass in expressions::NumberValue.__mro__:
-        if "numValue" in klass.__dict__:
-            descriptor = klass.__dict__["numValue"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_expressions::div_is_not_abstract():
-    assert not inspect.isabstract(expressions::Div)
-
-
-def test_expressions::div_constructor_exists():
-    assert callable(expressions::Div.__init__)
-
-
-def test_expressions::div_constructor_args():
-    sig = inspect.signature(expressions::Div.__init__)
+def test_expressions_imply_constructor_args():
+    sig = inspect.signature(expressions_Imply.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -559,319 +559,307 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
+AExpression_strategy = st.builds(
+    AExpression,
+)
+expressions_Mod_strategy = st.builds(
+    expressions_Mod,
+)
+expressions_Div_strategy = st.builds(
+    expressions_Div,
+)
+expressions_Plus_strategy = st.builds(
+    expressions_Plus,
+)
+expressions_Minus_strategy = st.builds(
+    expressions_Minus,
+)
+expressions_Multi_strategy = st.builds(
+    expressions_Multi,
+)
+expressions_Pow_strategy = st.builds(
+    expressions_Pow,
+)
+expressions_NumberValue_strategy = st.builds(
+    expressions_NumberValue,
+    numValue=
+        safe_text
+)
 SomeValue_strategy = st.builds(
     SomeValue,
+)
+expressions_StringValue_strategy = st.builds(
+    expressions_StringValue,
+    strValue=
+        safe_text
 )
 CExpression_strategy = st.builds(
     CExpression,
 )
-expressions::SomeValue_strategy = st.builds(
-    expressions::SomeValue,
+expressions_GreaterOrEqual_strategy = st.builds(
+    expressions_GreaterOrEqual,
+)
+expressions_Greater_strategy = st.builds(
+    expressions_Greater,
+)
+expressions_Equal_strategy = st.builds(
+    expressions_Equal,
+)
+expressions_Unequal_strategy = st.builds(
+    expressions_Unequal,
+)
+expressions_Approx_strategy = st.builds(
+    expressions_Approx,
+)
+expressions_Less_strategy = st.builds(
+    expressions_Less,
+)
+expressions_LessOrEqual_strategy = st.builds(
+    expressions_LessOrEqual,
+)
+expressions_SomeValue_strategy = st.builds(
+    expressions_SomeValue,
 )
 LExpression_strategy = st.builds(
     LExpression,
 )
-expressions::CExpression_strategy = st.builds(
-    expressions::CExpression,
+expressions_Equivalent_strategy = st.builds(
+    expressions_Equivalent,
+)
+expressions_Variable_strategy = st.builds(
+    expressions_Variable,
+    varName=
+        safe_text
+)
+expressions_And_strategy = st.builds(
+    expressions_And,
+)
+expressions_Xor_strategy = st.builds(
+    expressions_Xor,
+)
+expressions_BooleanValue_strategy = st.builds(
+    expressions_BooleanValue,
+    value=
+        st.booleans()
+)
+expressions_Not_strategy = st.builds(
+    expressions_Not,
+)
+expressions_CExpression_strategy = st.builds(
+    expressions_CExpression,
 )
 Expression_strategy = st.builds(
     Expression,
 )
-expressions::AExpression_strategy = st.builds(
-    expressions::AExpression,
+expressions_AExpression_strategy = st.builds(
+    expressions_AExpression,
 )
-expressions::LExpression_strategy = st.builds(
-    expressions::LExpression,
+expressions_LExpression_strategy = st.builds(
+    expressions_LExpression,
 )
-expressions::Expression_strategy = st.builds(
-    expressions::Expression,
+expressions_Expression_strategy = st.builds(
+    expressions_Expression,
 )
-expressions::Or_strategy = st.builds(
-    expressions::Or,
+expressions_Or_strategy = st.builds(
+    expressions_Or,
 )
-expressions::Imply_strategy = st.builds(
-    expressions::Imply,
+expressions_Imply_strategy = st.builds(
+    expressions_Imply,
 )
-expressions::Approx_strategy = st.builds(
-    expressions::Approx,
-)
-expressions::Unequal_strategy = st.builds(
-    expressions::Unequal,
-)
-expressions::GreaterOrEqual_strategy = st.builds(
-    expressions::GreaterOrEqual,
-)
-expressions::Less_strategy = st.builds(
-    expressions::Less,
-)
-expressions::LessOrEqual_strategy = st.builds(
-    expressions::LessOrEqual,
-)
-expressions::Not_strategy = st.builds(
-    expressions::Not,
-)
-expressions::And_strategy = st.builds(
-    expressions::And,
-)
-expressions::Xor_strategy = st.builds(
-    expressions::Xor,
-)
-expressions::Equal_strategy = st.builds(
-    expressions::Equal,
-)
-expressions::Greater_strategy = st.builds(
-    expressions::Greater,
-)
-expressions::Equivalent_strategy = st.builds(
-    expressions::Equivalent,
-)
-expressions::StringValue_strategy = st.builds(
-    expressions::StringValue,
-    strValue=
-        safe_text
-)
-expressions::BooleanValue_strategy = st.builds(
-    expressions::BooleanValue,
-    value=
-        st.booleans()
-)
-AExpression_strategy = st.builds(
-    AExpression,
-)
-expressions::Plus_strategy = st.builds(
-    expressions::Plus,
-)
-expressions::Pow_strategy = st.builds(
-    expressions::Pow,
-)
-expressions::Minus_strategy = st.builds(
-    expressions::Minus,
-)
-expressions::Multi_strategy = st.builds(
-    expressions::Multi,
-)
-expressions::Mod_strategy = st.builds(
-    expressions::Mod,
-)
-expressions::Variable_strategy = st.builds(
-    expressions::Variable,
-    varName=
-        safe_text
-)
-expressions::NumberValue_strategy = st.builds(
-    expressions::NumberValue,
-    numValue=
-        safe_text
-)
-expressions::Div_strategy = st.builds(
-    expressions::Div,
-)
-
-@given(instance=SomeValue_strategy)
-@settings(max_examples=50)
-def test_somevalue_instantiation(instance):
-    assert isinstance(instance, SomeValue)
-
-@given(instance=CExpression_strategy)
-@settings(max_examples=50)
-def test_cexpression_instantiation(instance):
-    assert isinstance(instance, CExpression)
-
-@given(instance=expressions::SomeValue_strategy)
-@settings(max_examples=50)
-def test_expressions::somevalue_instantiation(instance):
-    assert isinstance(instance, expressions::SomeValue)
-
-@given(instance=LExpression_strategy)
-@settings(max_examples=50)
-def test_lexpression_instantiation(instance):
-    assert isinstance(instance, LExpression)
-
-@given(instance=expressions::CExpression_strategy)
-@settings(max_examples=50)
-def test_expressions::cexpression_instantiation(instance):
-    assert isinstance(instance, expressions::CExpression)
-
-@given(instance=Expression_strategy)
-@settings(max_examples=50)
-def test_expression_instantiation(instance):
-    assert isinstance(instance, Expression)
-
-@given(instance=expressions::AExpression_strategy)
-@settings(max_examples=50)
-def test_expressions::aexpression_instantiation(instance):
-    assert isinstance(instance, expressions::AExpression)
-
-@given(instance=expressions::LExpression_strategy)
-@settings(max_examples=50)
-def test_expressions::lexpression_instantiation(instance):
-    assert isinstance(instance, expressions::LExpression)
-
-@given(instance=expressions::Expression_strategy)
-@settings(max_examples=50)
-def test_expressions::expression_instantiation(instance):
-    assert isinstance(instance, expressions::Expression)
-
-@given(instance=expressions::Or_strategy)
-@settings(max_examples=50)
-def test_expressions::or_instantiation(instance):
-    assert isinstance(instance, expressions::Or)
-
-@given(instance=expressions::Imply_strategy)
-@settings(max_examples=50)
-def test_expressions::imply_instantiation(instance):
-    assert isinstance(instance, expressions::Imply)
-
-@given(instance=expressions::Approx_strategy)
-@settings(max_examples=50)
-def test_expressions::approx_instantiation(instance):
-    assert isinstance(instance, expressions::Approx)
-
-@given(instance=expressions::Unequal_strategy)
-@settings(max_examples=50)
-def test_expressions::unequal_instantiation(instance):
-    assert isinstance(instance, expressions::Unequal)
-
-@given(instance=expressions::GreaterOrEqual_strategy)
-@settings(max_examples=50)
-def test_expressions::greaterorequal_instantiation(instance):
-    assert isinstance(instance, expressions::GreaterOrEqual)
-
-@given(instance=expressions::Less_strategy)
-@settings(max_examples=50)
-def test_expressions::less_instantiation(instance):
-    assert isinstance(instance, expressions::Less)
-
-@given(instance=expressions::LessOrEqual_strategy)
-@settings(max_examples=50)
-def test_expressions::lessorequal_instantiation(instance):
-    assert isinstance(instance, expressions::LessOrEqual)
-
-@given(instance=expressions::Not_strategy)
-@settings(max_examples=50)
-def test_expressions::not_instantiation(instance):
-    assert isinstance(instance, expressions::Not)
-
-@given(instance=expressions::And_strategy)
-@settings(max_examples=50)
-def test_expressions::and_instantiation(instance):
-    assert isinstance(instance, expressions::And)
-
-@given(instance=expressions::Xor_strategy)
-@settings(max_examples=50)
-def test_expressions::xor_instantiation(instance):
-    assert isinstance(instance, expressions::Xor)
-
-@given(instance=expressions::Equal_strategy)
-@settings(max_examples=50)
-def test_expressions::equal_instantiation(instance):
-    assert isinstance(instance, expressions::Equal)
-
-@given(instance=expressions::Greater_strategy)
-@settings(max_examples=50)
-def test_expressions::greater_instantiation(instance):
-    assert isinstance(instance, expressions::Greater)
-
-@given(instance=expressions::Equivalent_strategy)
-@settings(max_examples=50)
-def test_expressions::equivalent_instantiation(instance):
-    assert isinstance(instance, expressions::Equivalent)
-
-@given(instance=expressions::StringValue_strategy)
-@settings(max_examples=50)
-def test_expressions::stringvalue_instantiation(instance):
-    assert isinstance(instance, expressions::StringValue)
-
-@given(instance=expressions::StringValue_strategy)
-def test_expressions::stringvalue_strValue_type(instance):
-    assert isinstance(instance.strValue, str)
-
-
-@given(instance=expressions::StringValue_strategy)
-def test_expressions::stringvalue_strValue_setter(instance):
-    original = instance.strValue
-    instance.strValue = original
-    assert instance.strValue == original
-
-@given(instance=expressions::BooleanValue_strategy)
-@settings(max_examples=50)
-def test_expressions::booleanvalue_instantiation(instance):
-    assert isinstance(instance, expressions::BooleanValue)
-
-@given(instance=expressions::BooleanValue_strategy)
-def test_expressions::booleanvalue_value_type(instance):
-    assert isinstance(instance.value, bool)
-
-
-@given(instance=expressions::BooleanValue_strategy)
-def test_expressions::booleanvalue_value_setter(instance):
-    original = instance.value
-    instance.value = original
-    assert instance.value == original
 
 @given(instance=AExpression_strategy)
 @settings(max_examples=50)
 def test_aexpression_instantiation(instance):
     assert isinstance(instance, AExpression)
 
-@given(instance=expressions::Plus_strategy)
+@given(instance=expressions_Mod_strategy)
 @settings(max_examples=50)
-def test_expressions::plus_instantiation(instance):
-    assert isinstance(instance, expressions::Plus)
+def test_expressions_mod_instantiation(instance):
+    assert isinstance(instance, expressions_Mod)
 
-@given(instance=expressions::Pow_strategy)
+@given(instance=expressions_Div_strategy)
 @settings(max_examples=50)
-def test_expressions::pow_instantiation(instance):
-    assert isinstance(instance, expressions::Pow)
+def test_expressions_div_instantiation(instance):
+    assert isinstance(instance, expressions_Div)
 
-@given(instance=expressions::Minus_strategy)
+@given(instance=expressions_Plus_strategy)
 @settings(max_examples=50)
-def test_expressions::minus_instantiation(instance):
-    assert isinstance(instance, expressions::Minus)
+def test_expressions_plus_instantiation(instance):
+    assert isinstance(instance, expressions_Plus)
 
-@given(instance=expressions::Multi_strategy)
+@given(instance=expressions_Minus_strategy)
 @settings(max_examples=50)
-def test_expressions::multi_instantiation(instance):
-    assert isinstance(instance, expressions::Multi)
+def test_expressions_minus_instantiation(instance):
+    assert isinstance(instance, expressions_Minus)
 
-@given(instance=expressions::Mod_strategy)
+@given(instance=expressions_Multi_strategy)
 @settings(max_examples=50)
-def test_expressions::mod_instantiation(instance):
-    assert isinstance(instance, expressions::Mod)
+def test_expressions_multi_instantiation(instance):
+    assert isinstance(instance, expressions_Multi)
 
-@given(instance=expressions::Variable_strategy)
+@given(instance=expressions_Pow_strategy)
 @settings(max_examples=50)
-def test_expressions::variable_instantiation(instance):
-    assert isinstance(instance, expressions::Variable)
+def test_expressions_pow_instantiation(instance):
+    assert isinstance(instance, expressions_Pow)
 
-@given(instance=expressions::Variable_strategy)
-def test_expressions::variable_varName_type(instance):
-    assert isinstance(instance.varName, str)
-
-
-@given(instance=expressions::Variable_strategy)
-def test_expressions::variable_varName_setter(instance):
-    original = instance.varName
-    instance.varName = original
-    assert instance.varName == original
-
-@given(instance=expressions::NumberValue_strategy)
+@given(instance=expressions_NumberValue_strategy)
 @settings(max_examples=50)
-def test_expressions::numbervalue_instantiation(instance):
-    assert isinstance(instance, expressions::NumberValue)
-
-@given(instance=expressions::NumberValue_strategy)
-def test_expressions::numbervalue_numValue_type(instance):
-    assert isinstance(instance.numValue, str)
+def test_expressions_numbervalue_instantiation(instance):
+    assert isinstance(instance, expressions_NumberValue)
 
 
-@given(instance=expressions::NumberValue_strategy)
-def test_expressions::numbervalue_numValue_setter(instance):
+
+@given(instance=expressions_NumberValue_strategy)
+def test_expressions_numbervalue_numValue_setter(instance):
     original = instance.numValue
     instance.numValue = original
     assert instance.numValue == original
 
-@given(instance=expressions::Div_strategy)
+@given(instance=SomeValue_strategy)
 @settings(max_examples=50)
-def test_expressions::div_instantiation(instance):
-    assert isinstance(instance, expressions::Div)
+def test_somevalue_instantiation(instance):
+    assert isinstance(instance, SomeValue)
+
+@given(instance=expressions_StringValue_strategy)
+@settings(max_examples=50)
+def test_expressions_stringvalue_instantiation(instance):
+    assert isinstance(instance, expressions_StringValue)
+
+
+
+@given(instance=expressions_StringValue_strategy)
+def test_expressions_stringvalue_strValue_setter(instance):
+    original = instance.strValue
+    instance.strValue = original
+    assert instance.strValue == original
+
+@given(instance=CExpression_strategy)
+@settings(max_examples=50)
+def test_cexpression_instantiation(instance):
+    assert isinstance(instance, CExpression)
+
+@given(instance=expressions_GreaterOrEqual_strategy)
+@settings(max_examples=50)
+def test_expressions_greaterorequal_instantiation(instance):
+    assert isinstance(instance, expressions_GreaterOrEqual)
+
+@given(instance=expressions_Greater_strategy)
+@settings(max_examples=50)
+def test_expressions_greater_instantiation(instance):
+    assert isinstance(instance, expressions_Greater)
+
+@given(instance=expressions_Equal_strategy)
+@settings(max_examples=50)
+def test_expressions_equal_instantiation(instance):
+    assert isinstance(instance, expressions_Equal)
+
+@given(instance=expressions_Unequal_strategy)
+@settings(max_examples=50)
+def test_expressions_unequal_instantiation(instance):
+    assert isinstance(instance, expressions_Unequal)
+
+@given(instance=expressions_Approx_strategy)
+@settings(max_examples=50)
+def test_expressions_approx_instantiation(instance):
+    assert isinstance(instance, expressions_Approx)
+
+@given(instance=expressions_Less_strategy)
+@settings(max_examples=50)
+def test_expressions_less_instantiation(instance):
+    assert isinstance(instance, expressions_Less)
+
+@given(instance=expressions_LessOrEqual_strategy)
+@settings(max_examples=50)
+def test_expressions_lessorequal_instantiation(instance):
+    assert isinstance(instance, expressions_LessOrEqual)
+
+@given(instance=expressions_SomeValue_strategy)
+@settings(max_examples=50)
+def test_expressions_somevalue_instantiation(instance):
+    assert isinstance(instance, expressions_SomeValue)
+
+@given(instance=LExpression_strategy)
+@settings(max_examples=50)
+def test_lexpression_instantiation(instance):
+    assert isinstance(instance, LExpression)
+
+@given(instance=expressions_Equivalent_strategy)
+@settings(max_examples=50)
+def test_expressions_equivalent_instantiation(instance):
+    assert isinstance(instance, expressions_Equivalent)
+
+@given(instance=expressions_Variable_strategy)
+@settings(max_examples=50)
+def test_expressions_variable_instantiation(instance):
+    assert isinstance(instance, expressions_Variable)
+
+
+
+@given(instance=expressions_Variable_strategy)
+def test_expressions_variable_varName_setter(instance):
+    original = instance.varName
+    instance.varName = original
+    assert instance.varName == original
+
+@given(instance=expressions_And_strategy)
+@settings(max_examples=50)
+def test_expressions_and_instantiation(instance):
+    assert isinstance(instance, expressions_And)
+
+@given(instance=expressions_Xor_strategy)
+@settings(max_examples=50)
+def test_expressions_xor_instantiation(instance):
+    assert isinstance(instance, expressions_Xor)
+
+@given(instance=expressions_BooleanValue_strategy)
+@settings(max_examples=50)
+def test_expressions_booleanvalue_instantiation(instance):
+    assert isinstance(instance, expressions_BooleanValue)
+
+
+
+@given(instance=expressions_BooleanValue_strategy)
+def test_expressions_booleanvalue_value_setter(instance):
+    original = instance.value
+    instance.value = original
+    assert instance.value == original
+
+@given(instance=expressions_Not_strategy)
+@settings(max_examples=50)
+def test_expressions_not_instantiation(instance):
+    assert isinstance(instance, expressions_Not)
+
+@given(instance=expressions_CExpression_strategy)
+@settings(max_examples=50)
+def test_expressions_cexpression_instantiation(instance):
+    assert isinstance(instance, expressions_CExpression)
+
+@given(instance=Expression_strategy)
+@settings(max_examples=50)
+def test_expression_instantiation(instance):
+    assert isinstance(instance, Expression)
+
+@given(instance=expressions_AExpression_strategy)
+@settings(max_examples=50)
+def test_expressions_aexpression_instantiation(instance):
+    assert isinstance(instance, expressions_AExpression)
+
+@given(instance=expressions_LExpression_strategy)
+@settings(max_examples=50)
+def test_expressions_lexpression_instantiation(instance):
+    assert isinstance(instance, expressions_LExpression)
+
+@given(instance=expressions_Expression_strategy)
+@settings(max_examples=50)
+def test_expressions_expression_instantiation(instance):
+    assert isinstance(instance, expressions_Expression)
+
+@given(instance=expressions_Or_strategy)
+@settings(max_examples=50)
+def test_expressions_or_instantiation(instance):
+    assert isinstance(instance, expressions_Or)
+
+@given(instance=expressions_Imply_strategy)
+@settings(max_examples=50)
+def test_expressions_imply_instantiation(instance):
+    assert isinstance(instance, expressions_Imply)

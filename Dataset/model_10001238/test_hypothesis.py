@@ -3,9 +3,12 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
 from python_code import (
+    transaction_ExternalAccount,
+    transaction_PaybillsTransaction,
+    transaction_TransferTransaction,
     transaction_DepositTransaction,
     transaction_Transaction,
     User,
@@ -13,9 +16,6 @@ from python_code import (
     account_Account,
     account_SavingsAccount,
     transaction_Payee,
-    transaction_ExternalAccount,
-    transaction_PaybillsTransaction,
-    transaction_TransferTransaction,
     transaction_TransactionType,
     account_AccountType,
 )
@@ -23,6 +23,78 @@ from python_code import (
 # =============================================================================
 # SECTION 1 — STRUCTURAL TESTS
 # =============================================================================
+
+
+
+def test_transaction_externalaccount_is_not_abstract():
+    assert not inspect.isabstract(transaction_ExternalAccount)
+
+
+def test_transaction_externalaccount_constructor_exists():
+    assert callable(transaction_ExternalAccount.__init__)
+
+
+def test_transaction_externalaccount_constructor_args():
+    sig = inspect.signature(transaction_ExternalAccount.__init__)
+    params = list(sig.parameters.keys())
+    assert "routingNum" in params, "Missing parameter 'routingNum'"
+    assert "accountNum" in params, "Missing parameter 'accountNum'"
+    assert "associatedAccount" in params, "Missing parameter 'associatedAccount'"
+
+def test_transaction_externalaccount_has_routingNum():
+    assert hasattr(transaction_ExternalAccount, "routingNum")
+    descriptor = None
+    for klass in transaction_ExternalAccount.__mro__:
+        if "routingNum" in klass.__dict__:
+            descriptor = klass.__dict__["routingNum"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_transaction_externalaccount_has_accountNum():
+    assert hasattr(transaction_ExternalAccount, "accountNum")
+    descriptor = None
+    for klass in transaction_ExternalAccount.__mro__:
+        if "accountNum" in klass.__dict__:
+            descriptor = klass.__dict__["accountNum"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_transaction_externalaccount_has_associatedAccount():
+    assert hasattr(transaction_ExternalAccount, "associatedAccount")
+    descriptor = None
+    for klass in transaction_ExternalAccount.__mro__:
+        if "associatedAccount" in klass.__dict__:
+            descriptor = klass.__dict__["associatedAccount"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_transaction_paybillstransaction_is_not_abstract():
+    assert not inspect.isabstract(transaction_PaybillsTransaction)
+
+
+def test_transaction_paybillstransaction_constructor_exists():
+    assert callable(transaction_PaybillsTransaction.__init__)
+
+
+def test_transaction_paybillstransaction_constructor_args():
+    sig = inspect.signature(transaction_PaybillsTransaction.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_transaction_transfertransaction_is_not_abstract():
+    assert not inspect.isabstract(transaction_TransferTransaction)
+
+
+def test_transaction_transfertransaction_constructor_exists():
+    assert callable(transaction_TransferTransaction.__init__)
+
+
+def test_transaction_transfertransaction_constructor_args():
+    sig = inspect.signature(transaction_TransferTransaction.__init__)
+    params = list(sig.parameters.keys())
 
 
 
@@ -51,41 +123,14 @@ def test_transaction_transaction_constructor_exists():
 def test_transaction_transaction_constructor_args():
     sig = inspect.signature(transaction_Transaction.__init__)
     params = list(sig.parameters.keys())
-    assert "destinationAccountNum" in params, "Missing parameter 'destinationAccountNum'"
-    assert "type" in params, "Missing parameter 'type'"
-    assert "description" in params, "Missing parameter 'description'"
     assert "time" in params, "Missing parameter 'time'"
     assert "transactionID" in params, "Missing parameter 'transactionID'"
+    assert "destinationAccountNum" in params, "Missing parameter 'destinationAccountNum'"
     assert "amount" in params, "Missing parameter 'amount'"
-    assert "sourceAccountNum" in params, "Missing parameter 'sourceAccountNum'"
+    assert "description" in params, "Missing parameter 'description'"
     assert "comment" in params, "Missing parameter 'comment'"
-
-def test_transaction_transaction_has_destinationAccountNum():
-    assert hasattr(transaction_Transaction, "destinationAccountNum")
-    descriptor = None
-    for klass in transaction_Transaction.__mro__:
-        if "destinationAccountNum" in klass.__dict__:
-            descriptor = klass.__dict__["destinationAccountNum"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_transaction_transaction_has_type():
-    assert hasattr(transaction_Transaction, "type")
-    descriptor = None
-    for klass in transaction_Transaction.__mro__:
-        if "type" in klass.__dict__:
-            descriptor = klass.__dict__["type"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_transaction_transaction_has_description():
-    assert hasattr(transaction_Transaction, "description")
-    descriptor = None
-    for klass in transaction_Transaction.__mro__:
-        if "description" in klass.__dict__:
-            descriptor = klass.__dict__["description"]
-            break
-    assert isinstance(descriptor, property)
+    assert "type" in params, "Missing parameter 'type'"
+    assert "sourceAccountNum" in params, "Missing parameter 'sourceAccountNum'"
 
 def test_transaction_transaction_has_time():
     assert hasattr(transaction_Transaction, "time")
@@ -105,6 +150,15 @@ def test_transaction_transaction_has_transactionID():
             break
     assert isinstance(descriptor, property)
 
+def test_transaction_transaction_has_destinationAccountNum():
+    assert hasattr(transaction_Transaction, "destinationAccountNum")
+    descriptor = None
+    for klass in transaction_Transaction.__mro__:
+        if "destinationAccountNum" in klass.__dict__:
+            descriptor = klass.__dict__["destinationAccountNum"]
+            break
+    assert isinstance(descriptor, property)
+
 def test_transaction_transaction_has_amount():
     assert hasattr(transaction_Transaction, "amount")
     descriptor = None
@@ -114,12 +168,12 @@ def test_transaction_transaction_has_amount():
             break
     assert isinstance(descriptor, property)
 
-def test_transaction_transaction_has_sourceAccountNum():
-    assert hasattr(transaction_Transaction, "sourceAccountNum")
+def test_transaction_transaction_has_description():
+    assert hasattr(transaction_Transaction, "description")
     descriptor = None
     for klass in transaction_Transaction.__mro__:
-        if "sourceAccountNum" in klass.__dict__:
-            descriptor = klass.__dict__["sourceAccountNum"]
+        if "description" in klass.__dict__:
+            descriptor = klass.__dict__["description"]
             break
     assert isinstance(descriptor, property)
 
@@ -129,6 +183,24 @@ def test_transaction_transaction_has_comment():
     for klass in transaction_Transaction.__mro__:
         if "comment" in klass.__dict__:
             descriptor = klass.__dict__["comment"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_transaction_transaction_has_type():
+    assert hasattr(transaction_Transaction, "type")
+    descriptor = None
+    for klass in transaction_Transaction.__mro__:
+        if "type" in klass.__dict__:
+            descriptor = klass.__dict__["type"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_transaction_transaction_has_sourceAccountNum():
+    assert hasattr(transaction_Transaction, "sourceAccountNum")
+    descriptor = None
+    for klass in transaction_Transaction.__mro__:
+        if "sourceAccountNum" in klass.__dict__:
+            descriptor = klass.__dict__["sourceAccountNum"]
             break
     assert isinstance(descriptor, property)
 
@@ -145,19 +217,10 @@ def test_user_constructor_exists():
 def test_user_constructor_args():
     sig = inspect.signature(User.__init__)
     params = list(sig.parameters.keys())
-    assert "username" in params, "Missing parameter 'username'"
     assert "lastLoginTime" in params, "Missing parameter 'lastLoginTime'"
-    assert "password" in params, "Missing parameter 'password'"
     assert "userID" in params, "Missing parameter 'userID'"
-
-def test_user_has_username():
-    assert hasattr(User, "username")
-    descriptor = None
-    for klass in User.__mro__:
-        if "username" in klass.__dict__:
-            descriptor = klass.__dict__["username"]
-            break
-    assert isinstance(descriptor, property)
+    assert "username" in params, "Missing parameter 'username'"
+    assert "password" in params, "Missing parameter 'password'"
 
 def test_user_has_lastLoginTime():
     assert hasattr(User, "lastLoginTime")
@@ -168,21 +231,30 @@ def test_user_has_lastLoginTime():
             break
     assert isinstance(descriptor, property)
 
-def test_user_has_password():
-    assert hasattr(User, "password")
-    descriptor = None
-    for klass in User.__mro__:
-        if "password" in klass.__dict__:
-            descriptor = klass.__dict__["password"]
-            break
-    assert isinstance(descriptor, property)
-
 def test_user_has_userID():
     assert hasattr(User, "userID")
     descriptor = None
     for klass in User.__mro__:
         if "userID" in klass.__dict__:
             descriptor = klass.__dict__["userID"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_user_has_username():
+    assert hasattr(User, "username")
+    descriptor = None
+    for klass in User.__mro__:
+        if "username" in klass.__dict__:
+            descriptor = klass.__dict__["username"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_user_has_password():
+    assert hasattr(User, "password")
+    descriptor = None
+    for klass in User.__mro__:
+        if "password" in klass.__dict__:
+            descriptor = klass.__dict__["password"]
             break
     assert isinstance(descriptor, property)
 
@@ -199,20 +271,29 @@ def test_profile_constructor_exists():
 def test_profile_constructor_args():
     sig = inspect.signature(Profile.__init__)
     params = list(sig.parameters.keys())
+    assert "email" in params, "Missing parameter 'email'"
     assert "city" in params, "Missing parameter 'city'"
     assert "phoneNumber" in params, "Missing parameter 'phoneNumber'"
-    assert "userID" in params, "Missing parameter 'userID'"
-    assert "dateOfBirth" in params, "Missing parameter 'dateOfBirth'"
     assert "zipcode" in params, "Missing parameter 'zipcode'"
     assert "address2" in params, "Missing parameter 'address2'"
-    assert "lastname" in params, "Missing parameter 'lastname'"
-    assert "IDType" in params, "Missing parameter 'IDType'"
-    assert "state" in params, "Missing parameter 'state'"
-    assert "country" in params, "Missing parameter 'country'"
-    assert "address1" in params, "Missing parameter 'address1'"
-    assert "email" in params, "Missing parameter 'email'"
     assert "IDNum" in params, "Missing parameter 'IDNum'"
+    assert "lastname" in params, "Missing parameter 'lastname'"
+    assert "dateOfBirth" in params, "Missing parameter 'dateOfBirth'"
+    assert "address1" in params, "Missing parameter 'address1'"
+    assert "IDType" in params, "Missing parameter 'IDType'"
     assert "firstname" in params, "Missing parameter 'firstname'"
+    assert "userID" in params, "Missing parameter 'userID'"
+    assert "country" in params, "Missing parameter 'country'"
+    assert "state" in params, "Missing parameter 'state'"
+
+def test_profile_has_email():
+    assert hasattr(Profile, "email")
+    descriptor = None
+    for klass in Profile.__mro__:
+        if "email" in klass.__dict__:
+            descriptor = klass.__dict__["email"]
+            break
+    assert isinstance(descriptor, property)
 
 def test_profile_has_city():
     assert hasattr(Profile, "city")
@@ -229,24 +310,6 @@ def test_profile_has_phoneNumber():
     for klass in Profile.__mro__:
         if "phoneNumber" in klass.__dict__:
             descriptor = klass.__dict__["phoneNumber"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_profile_has_userID():
-    assert hasattr(Profile, "userID")
-    descriptor = None
-    for klass in Profile.__mro__:
-        if "userID" in klass.__dict__:
-            descriptor = klass.__dict__["userID"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_profile_has_dateOfBirth():
-    assert hasattr(Profile, "dateOfBirth")
-    descriptor = None
-    for klass in Profile.__mro__:
-        if "dateOfBirth" in klass.__dict__:
-            descriptor = klass.__dict__["dateOfBirth"]
             break
     assert isinstance(descriptor, property)
 
@@ -268,6 +331,15 @@ def test_profile_has_address2():
             break
     assert isinstance(descriptor, property)
 
+def test_profile_has_IDNum():
+    assert hasattr(Profile, "IDNum")
+    descriptor = None
+    for klass in Profile.__mro__:
+        if "IDNum" in klass.__dict__:
+            descriptor = klass.__dict__["IDNum"]
+            break
+    assert isinstance(descriptor, property)
+
 def test_profile_has_lastname():
     assert hasattr(Profile, "lastname")
     descriptor = None
@@ -277,30 +349,12 @@ def test_profile_has_lastname():
             break
     assert isinstance(descriptor, property)
 
-def test_profile_has_IDType():
-    assert hasattr(Profile, "IDType")
+def test_profile_has_dateOfBirth():
+    assert hasattr(Profile, "dateOfBirth")
     descriptor = None
     for klass in Profile.__mro__:
-        if "IDType" in klass.__dict__:
-            descriptor = klass.__dict__["IDType"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_profile_has_state():
-    assert hasattr(Profile, "state")
-    descriptor = None
-    for klass in Profile.__mro__:
-        if "state" in klass.__dict__:
-            descriptor = klass.__dict__["state"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_profile_has_country():
-    assert hasattr(Profile, "country")
-    descriptor = None
-    for klass in Profile.__mro__:
-        if "country" in klass.__dict__:
-            descriptor = klass.__dict__["country"]
+        if "dateOfBirth" in klass.__dict__:
+            descriptor = klass.__dict__["dateOfBirth"]
             break
     assert isinstance(descriptor, property)
 
@@ -313,21 +367,12 @@ def test_profile_has_address1():
             break
     assert isinstance(descriptor, property)
 
-def test_profile_has_email():
-    assert hasattr(Profile, "email")
+def test_profile_has_IDType():
+    assert hasattr(Profile, "IDType")
     descriptor = None
     for klass in Profile.__mro__:
-        if "email" in klass.__dict__:
-            descriptor = klass.__dict__["email"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_profile_has_IDNum():
-    assert hasattr(Profile, "IDNum")
-    descriptor = None
-    for klass in Profile.__mro__:
-        if "IDNum" in klass.__dict__:
-            descriptor = klass.__dict__["IDNum"]
+        if "IDType" in klass.__dict__:
+            descriptor = klass.__dict__["IDType"]
             break
     assert isinstance(descriptor, property)
 
@@ -337,6 +382,33 @@ def test_profile_has_firstname():
     for klass in Profile.__mro__:
         if "firstname" in klass.__dict__:
             descriptor = klass.__dict__["firstname"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_profile_has_userID():
+    assert hasattr(Profile, "userID")
+    descriptor = None
+    for klass in Profile.__mro__:
+        if "userID" in klass.__dict__:
+            descriptor = klass.__dict__["userID"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_profile_has_country():
+    assert hasattr(Profile, "country")
+    descriptor = None
+    for klass in Profile.__mro__:
+        if "country" in klass.__dict__:
+            descriptor = klass.__dict__["country"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_profile_has_state():
+    assert hasattr(Profile, "state")
+    descriptor = None
+    for klass in Profile.__mro__:
+        if "state" in klass.__dict__:
+            descriptor = klass.__dict__["state"]
             break
     assert isinstance(descriptor, property)
 
@@ -353,11 +425,20 @@ def test_account_account_constructor_exists():
 def test_account_account_constructor_args():
     sig = inspect.signature(account_Account.__init__)
     params = list(sig.parameters.keys())
+    assert "accountNum" in params, "Missing parameter 'accountNum'"
     assert "balance" in params, "Missing parameter 'balance'"
+    assert "pin" in params, "Missing parameter 'pin'"
     assert "type" in params, "Missing parameter 'type'"
     assert "userID" in params, "Missing parameter 'userID'"
-    assert "pin" in params, "Missing parameter 'pin'"
-    assert "accountNum" in params, "Missing parameter 'accountNum'"
+
+def test_account_account_has_accountNum():
+    assert hasattr(account_Account, "accountNum")
+    descriptor = None
+    for klass in account_Account.__mro__:
+        if "accountNum" in klass.__dict__:
+            descriptor = klass.__dict__["accountNum"]
+            break
+    assert isinstance(descriptor, property)
 
 def test_account_account_has_balance():
     assert hasattr(account_Account, "balance")
@@ -365,6 +446,15 @@ def test_account_account_has_balance():
     for klass in account_Account.__mro__:
         if "balance" in klass.__dict__:
             descriptor = klass.__dict__["balance"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_account_account_has_pin():
+    assert hasattr(account_Account, "pin")
+    descriptor = None
+    for klass in account_Account.__mro__:
+        if "pin" in klass.__dict__:
+            descriptor = klass.__dict__["pin"]
             break
     assert isinstance(descriptor, property)
 
@@ -383,24 +473,6 @@ def test_account_account_has_userID():
     for klass in account_Account.__mro__:
         if "userID" in klass.__dict__:
             descriptor = klass.__dict__["userID"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_account_account_has_pin():
-    assert hasattr(account_Account, "pin")
-    descriptor = None
-    for klass in account_Account.__mro__:
-        if "pin" in klass.__dict__:
-            descriptor = klass.__dict__["pin"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_account_account_has_accountNum():
-    assert hasattr(account_Account, "accountNum")
-    descriptor = None
-    for klass in account_Account.__mro__:
-        if "accountNum" in klass.__dict__:
-            descriptor = klass.__dict__["accountNum"]
             break
     assert isinstance(descriptor, property)
 
@@ -441,16 +513,61 @@ def test_transaction_payee_constructor_exists():
 def test_transaction_payee_constructor_args():
     sig = inspect.signature(transaction_Payee.__init__)
     params = list(sig.parameters.keys())
+    assert "address1" in params, "Missing parameter 'address1'"
+    assert "address2" in params, "Missing parameter 'address2'"
+    assert "state" in params, "Missing parameter 'state'"
+    assert "accountNum" in params, "Missing parameter 'accountNum'"
+    assert "zipcode" in params, "Missing parameter 'zipcode'"
     assert "country" in params, "Missing parameter 'country'"
+    assert "phoneNum" in params, "Missing parameter 'phoneNum'"
     assert "city" in params, "Missing parameter 'city'"
     assert "email" in params, "Missing parameter 'email'"
-    assert "phoneNum" in params, "Missing parameter 'phoneNum'"
-    assert "accountNum" in params, "Missing parameter 'accountNum'"
-    assert "address2" in params, "Missing parameter 'address2'"
     assert "name" in params, "Missing parameter 'name'"
-    assert "zipcode" in params, "Missing parameter 'zipcode'"
-    assert "state" in params, "Missing parameter 'state'"
-    assert "address1" in params, "Missing parameter 'address1'"
+
+def test_transaction_payee_has_address1():
+    assert hasattr(transaction_Payee, "address1")
+    descriptor = None
+    for klass in transaction_Payee.__mro__:
+        if "address1" in klass.__dict__:
+            descriptor = klass.__dict__["address1"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_transaction_payee_has_address2():
+    assert hasattr(transaction_Payee, "address2")
+    descriptor = None
+    for klass in transaction_Payee.__mro__:
+        if "address2" in klass.__dict__:
+            descriptor = klass.__dict__["address2"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_transaction_payee_has_state():
+    assert hasattr(transaction_Payee, "state")
+    descriptor = None
+    for klass in transaction_Payee.__mro__:
+        if "state" in klass.__dict__:
+            descriptor = klass.__dict__["state"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_transaction_payee_has_accountNum():
+    assert hasattr(transaction_Payee, "accountNum")
+    descriptor = None
+    for klass in transaction_Payee.__mro__:
+        if "accountNum" in klass.__dict__:
+            descriptor = klass.__dict__["accountNum"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_transaction_payee_has_zipcode():
+    assert hasattr(transaction_Payee, "zipcode")
+    descriptor = None
+    for klass in transaction_Payee.__mro__:
+        if "zipcode" in klass.__dict__:
+            descriptor = klass.__dict__["zipcode"]
+            break
+    assert isinstance(descriptor, property)
 
 def test_transaction_payee_has_country():
     assert hasattr(transaction_Payee, "country")
@@ -458,6 +575,15 @@ def test_transaction_payee_has_country():
     for klass in transaction_Payee.__mro__:
         if "country" in klass.__dict__:
             descriptor = klass.__dict__["country"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_transaction_payee_has_phoneNum():
+    assert hasattr(transaction_Payee, "phoneNum")
+    descriptor = None
+    for klass in transaction_Payee.__mro__:
+        if "phoneNum" in klass.__dict__:
+            descriptor = klass.__dict__["phoneNum"]
             break
     assert isinstance(descriptor, property)
 
@@ -479,33 +605,6 @@ def test_transaction_payee_has_email():
             break
     assert isinstance(descriptor, property)
 
-def test_transaction_payee_has_phoneNum():
-    assert hasattr(transaction_Payee, "phoneNum")
-    descriptor = None
-    for klass in transaction_Payee.__mro__:
-        if "phoneNum" in klass.__dict__:
-            descriptor = klass.__dict__["phoneNum"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_transaction_payee_has_accountNum():
-    assert hasattr(transaction_Payee, "accountNum")
-    descriptor = None
-    for klass in transaction_Payee.__mro__:
-        if "accountNum" in klass.__dict__:
-            descriptor = klass.__dict__["accountNum"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_transaction_payee_has_address2():
-    assert hasattr(transaction_Payee, "address2")
-    descriptor = None
-    for klass in transaction_Payee.__mro__:
-        if "address2" in klass.__dict__:
-            descriptor = klass.__dict__["address2"]
-            break
-    assert isinstance(descriptor, property)
-
 def test_transaction_payee_has_name():
     assert hasattr(transaction_Payee, "name")
     descriptor = None
@@ -514,105 +613,6 @@ def test_transaction_payee_has_name():
             descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
-
-def test_transaction_payee_has_zipcode():
-    assert hasattr(transaction_Payee, "zipcode")
-    descriptor = None
-    for klass in transaction_Payee.__mro__:
-        if "zipcode" in klass.__dict__:
-            descriptor = klass.__dict__["zipcode"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_transaction_payee_has_state():
-    assert hasattr(transaction_Payee, "state")
-    descriptor = None
-    for klass in transaction_Payee.__mro__:
-        if "state" in klass.__dict__:
-            descriptor = klass.__dict__["state"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_transaction_payee_has_address1():
-    assert hasattr(transaction_Payee, "address1")
-    descriptor = None
-    for klass in transaction_Payee.__mro__:
-        if "address1" in klass.__dict__:
-            descriptor = klass.__dict__["address1"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_transaction_externalaccount_is_not_abstract():
-    assert not inspect.isabstract(transaction_ExternalAccount)
-
-
-def test_transaction_externalaccount_constructor_exists():
-    assert callable(transaction_ExternalAccount.__init__)
-
-
-def test_transaction_externalaccount_constructor_args():
-    sig = inspect.signature(transaction_ExternalAccount.__init__)
-    params = list(sig.parameters.keys())
-    assert "associatedAccount" in params, "Missing parameter 'associatedAccount'"
-    assert "routingNum" in params, "Missing parameter 'routingNum'"
-    assert "accountNum" in params, "Missing parameter 'accountNum'"
-
-def test_transaction_externalaccount_has_associatedAccount():
-    assert hasattr(transaction_ExternalAccount, "associatedAccount")
-    descriptor = None
-    for klass in transaction_ExternalAccount.__mro__:
-        if "associatedAccount" in klass.__dict__:
-            descriptor = klass.__dict__["associatedAccount"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_transaction_externalaccount_has_routingNum():
-    assert hasattr(transaction_ExternalAccount, "routingNum")
-    descriptor = None
-    for klass in transaction_ExternalAccount.__mro__:
-        if "routingNum" in klass.__dict__:
-            descriptor = klass.__dict__["routingNum"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_transaction_externalaccount_has_accountNum():
-    assert hasattr(transaction_ExternalAccount, "accountNum")
-    descriptor = None
-    for klass in transaction_ExternalAccount.__mro__:
-        if "accountNum" in klass.__dict__:
-            descriptor = klass.__dict__["accountNum"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_transaction_paybillstransaction_is_not_abstract():
-    assert not inspect.isabstract(transaction_PaybillsTransaction)
-
-
-def test_transaction_paybillstransaction_constructor_exists():
-    assert callable(transaction_PaybillsTransaction.__init__)
-
-
-def test_transaction_paybillstransaction_constructor_args():
-    sig = inspect.signature(transaction_PaybillsTransaction.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_transaction_transfertransaction_is_not_abstract():
-    assert not inspect.isabstract(transaction_TransferTransaction)
-
-
-def test_transaction_transfertransaction_constructor_exists():
-    assert callable(transaction_TransferTransaction.__init__)
-
-
-def test_transaction_transfertransaction_constructor_args():
-    sig = inspect.signature(transaction_TransferTransaction.__init__)
-    params = list(sig.parameters.keys())
 
 def test_transaction_transactiontype_exists():
     # Check that the Enumeration exists
@@ -652,81 +652,96 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
+transaction_ExternalAccount_strategy = st.builds(
+    transaction_ExternalAccount,
+    routingNum=
+        safe_text,
+    accountNum=
+        safe_text,
+    associatedAccount=
+        safe_text
+)
+transaction_PaybillsTransaction_strategy = st.builds(
+    transaction_PaybillsTransaction,
+)
+transaction_TransferTransaction_strategy = st.builds(
+    transaction_TransferTransaction,
+)
 transaction_DepositTransaction_strategy = st.builds(
     transaction_DepositTransaction,
 )
 transaction_Transaction_strategy = st.builds(
     transaction_Transaction,
-    destinationAccountNum=
-        safe_text,
-    type=
-        st.none(),
-    description=
-        safe_text,
     time=
         safe_text,
     transactionID=
         safe_text,
+    destinationAccountNum=
+        safe_text,
     amount=
         st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False),
-    sourceAccountNum=
+    description=
         safe_text,
     comment=
+        safe_text,
+    type=
+        st.none(),
+    sourceAccountNum=
         safe_text
 )
 User_strategy = st.builds(
     User,
-    username=
-        safe_text,
     lastLoginTime=
         safe_text,
-    password=
-        safe_text,
     userID=
+        safe_text,
+    username=
+        safe_text,
+    password=
         safe_text
 )
 Profile_strategy = st.builds(
     Profile,
+    email=
+        safe_text,
     city=
         safe_text,
     phoneNumber=
         safe_text,
-    userID=
-        safe_text,
-    dateOfBirth=
-        st.dates(),
     zipcode=
         safe_text,
     address2=
         safe_text,
+    IDNum=
+        safe_text,
     lastname=
+        safe_text,
+    dateOfBirth=
+        st.dates(),
+    address1=
         safe_text,
     IDType=
         st.integers(),
-    state=
+    firstname=
+        safe_text,
+    userID=
         safe_text,
     country=
         safe_text,
-    address1=
-        safe_text,
-    email=
-        safe_text,
-    IDNum=
-        safe_text,
-    firstname=
+    state=
         safe_text
 )
 account_Account_strategy = st.builds(
     account_Account,
+    accountNum=
+        safe_text,
     balance=
         st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False),
+    pin=
+        safe_text,
     type=
         st.none(),
     userID=
-        safe_text,
-    pin=
-        safe_text,
-    accountNum=
         safe_text
 )
 account_SavingsAccount_strategy = st.builds(
@@ -736,42 +751,66 @@ account_SavingsAccount_strategy = st.builds(
 )
 transaction_Payee_strategy = st.builds(
     transaction_Payee,
+    address1=
+        safe_text,
+    address2=
+        safe_text,
+    state=
+        safe_text,
+    accountNum=
+        safe_text,
+    zipcode=
+        safe_text,
     country=
+        safe_text,
+    phoneNum=
         safe_text,
     city=
         safe_text,
     email=
         safe_text,
-    phoneNum=
-        safe_text,
-    accountNum=
-        safe_text,
-    address2=
-        safe_text,
     name=
-        safe_text,
-    zipcode=
-        safe_text,
-    state=
-        safe_text,
-    address1=
         safe_text
 )
-transaction_ExternalAccount_strategy = st.builds(
-    transaction_ExternalAccount,
-    associatedAccount=
-        safe_text,
-    routingNum=
-        safe_text,
-    accountNum=
-        safe_text
-)
-transaction_PaybillsTransaction_strategy = st.builds(
-    transaction_PaybillsTransaction,
-)
-transaction_TransferTransaction_strategy = st.builds(
-    transaction_TransferTransaction,
-)
+
+@given(instance=transaction_ExternalAccount_strategy)
+@settings(max_examples=50)
+def test_transaction_externalaccount_instantiation(instance):
+    assert isinstance(instance, transaction_ExternalAccount)
+
+
+
+@given(instance=transaction_ExternalAccount_strategy)
+def test_transaction_externalaccount_routingNum_setter(instance):
+    original = instance.routingNum
+    instance.routingNum = original
+    assert instance.routingNum == original
+
+
+
+@given(instance=transaction_ExternalAccount_strategy)
+def test_transaction_externalaccount_accountNum_setter(instance):
+    original = instance.accountNum
+    instance.accountNum = original
+    assert instance.accountNum == original
+
+
+
+@given(instance=transaction_ExternalAccount_strategy)
+def test_transaction_externalaccount_associatedAccount_setter(instance):
+    original = instance.associatedAccount
+    instance.associatedAccount = original
+    assert instance.associatedAccount == original
+
+@given(instance=transaction_PaybillsTransaction_strategy)
+@settings(max_examples=50)
+def test_transaction_paybillstransaction_instantiation(instance):
+    assert isinstance(instance, transaction_PaybillsTransaction)
+
+@given(instance=transaction_TransferTransaction_strategy)
+@settings(max_examples=50)
+def test_transaction_transfertransaction_instantiation(instance):
+    assert isinstance(instance, transaction_TransferTransaction)
 
 @given(instance=transaction_DepositTransaction_strategy)
 @settings(max_examples=50)
@@ -783,42 +822,6 @@ def test_transaction_deposittransaction_instantiation(instance):
 def test_transaction_transaction_instantiation(instance):
     assert isinstance(instance, transaction_Transaction)
 
-@given(instance=transaction_Transaction_strategy)
-def test_transaction_transaction_destinationAccountNum_type(instance):
-    assert isinstance(instance.destinationAccountNum, str)
-
-
-@given(instance=transaction_Transaction_strategy)
-def test_transaction_transaction_destinationAccountNum_setter(instance):
-    original = instance.destinationAccountNum
-    instance.destinationAccountNum = original
-    assert instance.destinationAccountNum == original
-
-@given(instance=transaction_Transaction_strategy)
-def test_transaction_transaction_type_type(instance):
-    assert isinstance(instance.type, transaction_transactiontype)
-
-
-@given(instance=transaction_Transaction_strategy)
-def test_transaction_transaction_type_setter(instance):
-    original = instance.type
-    instance.type = original
-    assert instance.type == original
-
-@given(instance=transaction_Transaction_strategy)
-def test_transaction_transaction_description_type(instance):
-    assert isinstance(instance.description, str)
-
-
-@given(instance=transaction_Transaction_strategy)
-def test_transaction_transaction_description_setter(instance):
-    original = instance.description
-    instance.description = original
-    assert instance.description == original
-
-@given(instance=transaction_Transaction_strategy)
-def test_transaction_transaction_time_type(instance):
-    assert isinstance(instance.time, str)
 
 
 @given(instance=transaction_Transaction_strategy)
@@ -827,9 +830,6 @@ def test_transaction_transaction_time_setter(instance):
     instance.time = original
     assert instance.time == original
 
-@given(instance=transaction_Transaction_strategy)
-def test_transaction_transaction_transactionID_type(instance):
-    assert isinstance(instance.transactionID, str)
 
 
 @given(instance=transaction_Transaction_strategy)
@@ -838,9 +838,14 @@ def test_transaction_transaction_transactionID_setter(instance):
     instance.transactionID = original
     assert instance.transactionID == original
 
+
+
 @given(instance=transaction_Transaction_strategy)
-def test_transaction_transaction_amount_type(instance):
-    assert isinstance(instance.amount, float)
+def test_transaction_transaction_destinationAccountNum_setter(instance):
+    original = instance.destinationAccountNum
+    instance.destinationAccountNum = original
+    assert instance.destinationAccountNum == original
+
 
 
 @given(instance=transaction_Transaction_strategy)
@@ -849,20 +854,14 @@ def test_transaction_transaction_amount_setter(instance):
     instance.amount = original
     assert instance.amount == original
 
-@given(instance=transaction_Transaction_strategy)
-def test_transaction_transaction_sourceAccountNum_type(instance):
-    assert isinstance(instance.sourceAccountNum, str)
 
 
 @given(instance=transaction_Transaction_strategy)
-def test_transaction_transaction_sourceAccountNum_setter(instance):
-    original = instance.sourceAccountNum
-    instance.sourceAccountNum = original
-    assert instance.sourceAccountNum == original
+def test_transaction_transaction_description_setter(instance):
+    original = instance.description
+    instance.description = original
+    assert instance.description == original
 
-@given(instance=transaction_Transaction_strategy)
-def test_transaction_transaction_comment_type(instance):
-    assert isinstance(instance.comment, str)
 
 
 @given(instance=transaction_Transaction_strategy)
@@ -871,25 +870,27 @@ def test_transaction_transaction_comment_setter(instance):
     instance.comment = original
     assert instance.comment == original
 
+
+
+@given(instance=transaction_Transaction_strategy)
+def test_transaction_transaction_type_setter(instance):
+    original = instance.type
+    instance.type = original
+    assert instance.type == original
+
+
+
+@given(instance=transaction_Transaction_strategy)
+def test_transaction_transaction_sourceAccountNum_setter(instance):
+    original = instance.sourceAccountNum
+    instance.sourceAccountNum = original
+    assert instance.sourceAccountNum == original
+
 @given(instance=User_strategy)
 @settings(max_examples=50)
 def test_user_instantiation(instance):
     assert isinstance(instance, User)
 
-@given(instance=User_strategy)
-def test_user_username_type(instance):
-    assert isinstance(instance.username, str)
-
-
-@given(instance=User_strategy)
-def test_user_username_setter(instance):
-    original = instance.username
-    instance.username = original
-    assert instance.username == original
-
-@given(instance=User_strategy)
-def test_user_lastLoginTime_type(instance):
-    assert isinstance(instance.lastLoginTime, str)
 
 
 @given(instance=User_strategy)
@@ -898,20 +899,6 @@ def test_user_lastLoginTime_setter(instance):
     instance.lastLoginTime = original
     assert instance.lastLoginTime == original
 
-@given(instance=User_strategy)
-def test_user_password_type(instance):
-    assert isinstance(instance.password, str)
-
-
-@given(instance=User_strategy)
-def test_user_password_setter(instance):
-    original = instance.password
-    instance.password = original
-    assert instance.password == original
-
-@given(instance=User_strategy)
-def test_user_userID_type(instance):
-    assert isinstance(instance.userID, str)
 
 
 @given(instance=User_strategy)
@@ -920,135 +907,27 @@ def test_user_userID_setter(instance):
     instance.userID = original
     assert instance.userID == original
 
+
+
+@given(instance=User_strategy)
+def test_user_username_setter(instance):
+    original = instance.username
+    instance.username = original
+    assert instance.username == original
+
+
+
+@given(instance=User_strategy)
+def test_user_password_setter(instance):
+    original = instance.password
+    instance.password = original
+    assert instance.password == original
+
 @given(instance=Profile_strategy)
 @settings(max_examples=50)
 def test_profile_instantiation(instance):
     assert isinstance(instance, Profile)
 
-@given(instance=Profile_strategy)
-def test_profile_city_type(instance):
-    assert isinstance(instance.city, str)
-
-
-@given(instance=Profile_strategy)
-def test_profile_city_setter(instance):
-    original = instance.city
-    instance.city = original
-    assert instance.city == original
-
-@given(instance=Profile_strategy)
-def test_profile_phoneNumber_type(instance):
-    assert isinstance(instance.phoneNumber, str)
-
-
-@given(instance=Profile_strategy)
-def test_profile_phoneNumber_setter(instance):
-    original = instance.phoneNumber
-    instance.phoneNumber = original
-    assert instance.phoneNumber == original
-
-@given(instance=Profile_strategy)
-def test_profile_userID_type(instance):
-    assert isinstance(instance.userID, str)
-
-
-@given(instance=Profile_strategy)
-def test_profile_userID_setter(instance):
-    original = instance.userID
-    instance.userID = original
-    assert instance.userID == original
-
-@given(instance=Profile_strategy)
-def test_profile_dateOfBirth_type(instance):
-    assert isinstance(instance.dateOfBirth, date)
-
-
-@given(instance=Profile_strategy)
-def test_profile_dateOfBirth_setter(instance):
-    original = instance.dateOfBirth
-    instance.dateOfBirth = original
-    assert instance.dateOfBirth == original
-
-@given(instance=Profile_strategy)
-def test_profile_zipcode_type(instance):
-    assert isinstance(instance.zipcode, str)
-
-
-@given(instance=Profile_strategy)
-def test_profile_zipcode_setter(instance):
-    original = instance.zipcode
-    instance.zipcode = original
-    assert instance.zipcode == original
-
-@given(instance=Profile_strategy)
-def test_profile_address2_type(instance):
-    assert isinstance(instance.address2, str)
-
-
-@given(instance=Profile_strategy)
-def test_profile_address2_setter(instance):
-    original = instance.address2
-    instance.address2 = original
-    assert instance.address2 == original
-
-@given(instance=Profile_strategy)
-def test_profile_lastname_type(instance):
-    assert isinstance(instance.lastname, str)
-
-
-@given(instance=Profile_strategy)
-def test_profile_lastname_setter(instance):
-    original = instance.lastname
-    instance.lastname = original
-    assert instance.lastname == original
-
-@given(instance=Profile_strategy)
-def test_profile_IDType_type(instance):
-    assert isinstance(instance.IDType, int)
-
-
-@given(instance=Profile_strategy)
-def test_profile_IDType_setter(instance):
-    original = instance.IDType
-    instance.IDType = original
-    assert instance.IDType == original
-
-@given(instance=Profile_strategy)
-def test_profile_state_type(instance):
-    assert isinstance(instance.state, str)
-
-
-@given(instance=Profile_strategy)
-def test_profile_state_setter(instance):
-    original = instance.state
-    instance.state = original
-    assert instance.state == original
-
-@given(instance=Profile_strategy)
-def test_profile_country_type(instance):
-    assert isinstance(instance.country, str)
-
-
-@given(instance=Profile_strategy)
-def test_profile_country_setter(instance):
-    original = instance.country
-    instance.country = original
-    assert instance.country == original
-
-@given(instance=Profile_strategy)
-def test_profile_address1_type(instance):
-    assert isinstance(instance.address1, str)
-
-
-@given(instance=Profile_strategy)
-def test_profile_address1_setter(instance):
-    original = instance.address1
-    instance.address1 = original
-    assert instance.address1 == original
-
-@given(instance=Profile_strategy)
-def test_profile_email_type(instance):
-    assert isinstance(instance.email, str)
 
 
 @given(instance=Profile_strategy)
@@ -1057,9 +936,38 @@ def test_profile_email_setter(instance):
     instance.email = original
     assert instance.email == original
 
+
+
 @given(instance=Profile_strategy)
-def test_profile_IDNum_type(instance):
-    assert isinstance(instance.IDNum, str)
+def test_profile_city_setter(instance):
+    original = instance.city
+    instance.city = original
+    assert instance.city == original
+
+
+
+@given(instance=Profile_strategy)
+def test_profile_phoneNumber_setter(instance):
+    original = instance.phoneNumber
+    instance.phoneNumber = original
+    assert instance.phoneNumber == original
+
+
+
+@given(instance=Profile_strategy)
+def test_profile_zipcode_setter(instance):
+    original = instance.zipcode
+    instance.zipcode = original
+    assert instance.zipcode == original
+
+
+
+@given(instance=Profile_strategy)
+def test_profile_address2_setter(instance):
+    original = instance.address2
+    instance.address2 = original
+    assert instance.address2 == original
+
 
 
 @given(instance=Profile_strategy)
@@ -1068,9 +976,38 @@ def test_profile_IDNum_setter(instance):
     instance.IDNum = original
     assert instance.IDNum == original
 
+
+
 @given(instance=Profile_strategy)
-def test_profile_firstname_type(instance):
-    assert isinstance(instance.firstname, str)
+def test_profile_lastname_setter(instance):
+    original = instance.lastname
+    instance.lastname = original
+    assert instance.lastname == original
+
+
+
+@given(instance=Profile_strategy)
+def test_profile_dateOfBirth_setter(instance):
+    original = instance.dateOfBirth
+    instance.dateOfBirth = original
+    assert instance.dateOfBirth == original
+
+
+
+@given(instance=Profile_strategy)
+def test_profile_address1_setter(instance):
+    original = instance.address1
+    instance.address1 = original
+    assert instance.address1 == original
+
+
+
+@given(instance=Profile_strategy)
+def test_profile_IDType_setter(instance):
+    original = instance.IDType
+    instance.IDType = original
+    assert instance.IDType == original
+
 
 
 @given(instance=Profile_strategy)
@@ -1079,58 +1016,35 @@ def test_profile_firstname_setter(instance):
     instance.firstname = original
     assert instance.firstname == original
 
+
+
+@given(instance=Profile_strategy)
+def test_profile_userID_setter(instance):
+    original = instance.userID
+    instance.userID = original
+    assert instance.userID == original
+
+
+
+@given(instance=Profile_strategy)
+def test_profile_country_setter(instance):
+    original = instance.country
+    instance.country = original
+    assert instance.country == original
+
+
+
+@given(instance=Profile_strategy)
+def test_profile_state_setter(instance):
+    original = instance.state
+    instance.state = original
+    assert instance.state == original
+
 @given(instance=account_Account_strategy)
 @settings(max_examples=50)
 def test_account_account_instantiation(instance):
     assert isinstance(instance, account_Account)
 
-@given(instance=account_Account_strategy)
-def test_account_account_balance_type(instance):
-    assert isinstance(instance.balance, float)
-
-
-@given(instance=account_Account_strategy)
-def test_account_account_balance_setter(instance):
-    original = instance.balance
-    instance.balance = original
-    assert instance.balance == original
-
-@given(instance=account_Account_strategy)
-def test_account_account_type_type(instance):
-    assert isinstance(instance.type, account_accounttype)
-
-
-@given(instance=account_Account_strategy)
-def test_account_account_type_setter(instance):
-    original = instance.type
-    instance.type = original
-    assert instance.type == original
-
-@given(instance=account_Account_strategy)
-def test_account_account_userID_type(instance):
-    assert isinstance(instance.userID, str)
-
-
-@given(instance=account_Account_strategy)
-def test_account_account_userID_setter(instance):
-    original = instance.userID
-    instance.userID = original
-    assert instance.userID == original
-
-@given(instance=account_Account_strategy)
-def test_account_account_pin_type(instance):
-    assert isinstance(instance.pin, str)
-
-
-@given(instance=account_Account_strategy)
-def test_account_account_pin_setter(instance):
-    original = instance.pin
-    instance.pin = original
-    assert instance.pin == original
-
-@given(instance=account_Account_strategy)
-def test_account_account_accountNum_type(instance):
-    assert isinstance(instance.accountNum, str)
 
 
 @given(instance=account_Account_strategy)
@@ -1139,14 +1053,43 @@ def test_account_account_accountNum_setter(instance):
     instance.accountNum = original
     assert instance.accountNum == original
 
+
+
+@given(instance=account_Account_strategy)
+def test_account_account_balance_setter(instance):
+    original = instance.balance
+    instance.balance = original
+    assert instance.balance == original
+
+
+
+@given(instance=account_Account_strategy)
+def test_account_account_pin_setter(instance):
+    original = instance.pin
+    instance.pin = original
+    assert instance.pin == original
+
+
+
+@given(instance=account_Account_strategy)
+def test_account_account_type_setter(instance):
+    original = instance.type
+    instance.type = original
+    assert instance.type == original
+
+
+
+@given(instance=account_Account_strategy)
+def test_account_account_userID_setter(instance):
+    original = instance.userID
+    instance.userID = original
+    assert instance.userID == original
+
 @given(instance=account_SavingsAccount_strategy)
 @settings(max_examples=50)
 def test_account_savingsaccount_instantiation(instance):
     assert isinstance(instance, account_SavingsAccount)
 
-@given(instance=account_SavingsAccount_strategy)
-def test_account_savingsaccount_interestRate_type(instance):
-    assert isinstance(instance.interestRate, float)
 
 
 @given(instance=account_SavingsAccount_strategy)
@@ -1160,108 +1103,6 @@ def test_account_savingsaccount_interestRate_setter(instance):
 def test_transaction_payee_instantiation(instance):
     assert isinstance(instance, transaction_Payee)
 
-@given(instance=transaction_Payee_strategy)
-def test_transaction_payee_country_type(instance):
-    assert isinstance(instance.country, str)
-
-
-@given(instance=transaction_Payee_strategy)
-def test_transaction_payee_country_setter(instance):
-    original = instance.country
-    instance.country = original
-    assert instance.country == original
-
-@given(instance=transaction_Payee_strategy)
-def test_transaction_payee_city_type(instance):
-    assert isinstance(instance.city, str)
-
-
-@given(instance=transaction_Payee_strategy)
-def test_transaction_payee_city_setter(instance):
-    original = instance.city
-    instance.city = original
-    assert instance.city == original
-
-@given(instance=transaction_Payee_strategy)
-def test_transaction_payee_email_type(instance):
-    assert isinstance(instance.email, str)
-
-
-@given(instance=transaction_Payee_strategy)
-def test_transaction_payee_email_setter(instance):
-    original = instance.email
-    instance.email = original
-    assert instance.email == original
-
-@given(instance=transaction_Payee_strategy)
-def test_transaction_payee_phoneNum_type(instance):
-    assert isinstance(instance.phoneNum, str)
-
-
-@given(instance=transaction_Payee_strategy)
-def test_transaction_payee_phoneNum_setter(instance):
-    original = instance.phoneNum
-    instance.phoneNum = original
-    assert instance.phoneNum == original
-
-@given(instance=transaction_Payee_strategy)
-def test_transaction_payee_accountNum_type(instance):
-    assert isinstance(instance.accountNum, str)
-
-
-@given(instance=transaction_Payee_strategy)
-def test_transaction_payee_accountNum_setter(instance):
-    original = instance.accountNum
-    instance.accountNum = original
-    assert instance.accountNum == original
-
-@given(instance=transaction_Payee_strategy)
-def test_transaction_payee_address2_type(instance):
-    assert isinstance(instance.address2, str)
-
-
-@given(instance=transaction_Payee_strategy)
-def test_transaction_payee_address2_setter(instance):
-    original = instance.address2
-    instance.address2 = original
-    assert instance.address2 == original
-
-@given(instance=transaction_Payee_strategy)
-def test_transaction_payee_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=transaction_Payee_strategy)
-def test_transaction_payee_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
-
-@given(instance=transaction_Payee_strategy)
-def test_transaction_payee_zipcode_type(instance):
-    assert isinstance(instance.zipcode, str)
-
-
-@given(instance=transaction_Payee_strategy)
-def test_transaction_payee_zipcode_setter(instance):
-    original = instance.zipcode
-    instance.zipcode = original
-    assert instance.zipcode == original
-
-@given(instance=transaction_Payee_strategy)
-def test_transaction_payee_state_type(instance):
-    assert isinstance(instance.state, str)
-
-
-@given(instance=transaction_Payee_strategy)
-def test_transaction_payee_state_setter(instance):
-    original = instance.state
-    instance.state = original
-    assert instance.state == original
-
-@given(instance=transaction_Payee_strategy)
-def test_transaction_payee_address1_type(instance):
-    assert isinstance(instance.address1, str)
 
 
 @given(instance=transaction_Payee_strategy)
@@ -1270,50 +1111,74 @@ def test_transaction_payee_address1_setter(instance):
     instance.address1 = original
     assert instance.address1 == original
 
-@given(instance=transaction_ExternalAccount_strategy)
-@settings(max_examples=50)
-def test_transaction_externalaccount_instantiation(instance):
-    assert isinstance(instance, transaction_ExternalAccount)
-
-@given(instance=transaction_ExternalAccount_strategy)
-def test_transaction_externalaccount_associatedAccount_type(instance):
-    assert isinstance(instance.associatedAccount, str)
 
 
-@given(instance=transaction_ExternalAccount_strategy)
-def test_transaction_externalaccount_associatedAccount_setter(instance):
-    original = instance.associatedAccount
-    instance.associatedAccount = original
-    assert instance.associatedAccount == original
-
-@given(instance=transaction_ExternalAccount_strategy)
-def test_transaction_externalaccount_routingNum_type(instance):
-    assert isinstance(instance.routingNum, str)
+@given(instance=transaction_Payee_strategy)
+def test_transaction_payee_address2_setter(instance):
+    original = instance.address2
+    instance.address2 = original
+    assert instance.address2 == original
 
 
-@given(instance=transaction_ExternalAccount_strategy)
-def test_transaction_externalaccount_routingNum_setter(instance):
-    original = instance.routingNum
-    instance.routingNum = original
-    assert instance.routingNum == original
 
-@given(instance=transaction_ExternalAccount_strategy)
-def test_transaction_externalaccount_accountNum_type(instance):
-    assert isinstance(instance.accountNum, str)
+@given(instance=transaction_Payee_strategy)
+def test_transaction_payee_state_setter(instance):
+    original = instance.state
+    instance.state = original
+    assert instance.state == original
 
 
-@given(instance=transaction_ExternalAccount_strategy)
-def test_transaction_externalaccount_accountNum_setter(instance):
+
+@given(instance=transaction_Payee_strategy)
+def test_transaction_payee_accountNum_setter(instance):
     original = instance.accountNum
     instance.accountNum = original
     assert instance.accountNum == original
 
-@given(instance=transaction_PaybillsTransaction_strategy)
-@settings(max_examples=50)
-def test_transaction_paybillstransaction_instantiation(instance):
-    assert isinstance(instance, transaction_PaybillsTransaction)
 
-@given(instance=transaction_TransferTransaction_strategy)
-@settings(max_examples=50)
-def test_transaction_transfertransaction_instantiation(instance):
-    assert isinstance(instance, transaction_TransferTransaction)
+
+@given(instance=transaction_Payee_strategy)
+def test_transaction_payee_zipcode_setter(instance):
+    original = instance.zipcode
+    instance.zipcode = original
+    assert instance.zipcode == original
+
+
+
+@given(instance=transaction_Payee_strategy)
+def test_transaction_payee_country_setter(instance):
+    original = instance.country
+    instance.country = original
+    assert instance.country == original
+
+
+
+@given(instance=transaction_Payee_strategy)
+def test_transaction_payee_phoneNum_setter(instance):
+    original = instance.phoneNum
+    instance.phoneNum = original
+    assert instance.phoneNum == original
+
+
+
+@given(instance=transaction_Payee_strategy)
+def test_transaction_payee_city_setter(instance):
+    original = instance.city
+    instance.city = original
+    assert instance.city == original
+
+
+
+@given(instance=transaction_Payee_strategy)
+def test_transaction_payee_email_setter(instance):
+    original = instance.email
+    instance.email = original
+    assert instance.email == original
+
+
+
+@given(instance=transaction_Payee_strategy)
+def test_transaction_payee_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original

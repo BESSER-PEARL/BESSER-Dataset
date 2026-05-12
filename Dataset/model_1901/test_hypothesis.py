@@ -3,69 +3,69 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     IntegerType,
-    fIDL::Int64Type,
-    fIDL::Int32Type,
-    fIDL::Int16Type,
-    fIDL::Int8Type,
+    fIDL_Int32Type,
+    fIDL_Int64Type,
+    fIDL_Int16Type,
+    fIDL_Int8Type,
     Literal,
     EnumMemberValue,
     Expression,
-    fIDL::NumberLiteral,
-    fIDL::StringLiteral,
-    fIDL::BooleanLiteral,
-    fIDL::Uint64Type,
-    fIDL::Uint32Type,
-    fIDL::Uint16Type,
-    fIDL::Uint8Type,
+    fIDL_NumberLiteral,
+    fIDL_StringLiteral,
+    fIDL_BooleanLiteral,
+    fIDL_Uint64Type,
+    fIDL_Uint32Type,
+    fIDL_Uint16Type,
+    fIDL_Uint8Type,
     Type,
-    fIDL::ArrayType,
-    fIDL::IdentifierType,
+    fIDL_ArrayType,
+    fIDL_IdentifierType,
     UnionMember,
-    fIDL::UnionField,
-    fIDL::UnionMember,
-    fIDL::StructField,
+    fIDL_UnionField,
+    fIDL_UnionMember,
+    fIDL_StructField,
     Constant,
-    fIDL::Literal,
+    fIDL_Literal,
     PrimitiveType,
-    fIDL::StatusType,
-    fIDL::Float64Type,
-    fIDL::BooleanType,
-    fIDL::Float32Type,
-    fIDL::PrimitiveType,
-    fIDL::RequestType,
-    fIDL::HandleType,
-    fIDL::StringType,
-    fIDL::VectorType,
-    fIDL::EnumMemberValue,
-    fIDL::EnumMember,
-    fIDL::IntegerType,
-    fIDL::Constant,
-    fIDL::Type,
+    fIDL_Float32Type,
+    fIDL_StatusType,
+    fIDL_Float64Type,
+    fIDL_BooleanType,
+    fIDL_PrimitiveType,
+    fIDL_RequestType,
+    fIDL_HandleType,
+    fIDL_StringType,
+    fIDL_VectorType,
+    fIDL_EnumMemberValue,
+    fIDL_EnumMember,
+    fIDL_IntegerType,
+    fIDL_Constant,
+    fIDL_Type,
     InterfaceMember,
     Declaration,
-    fIDL::InterfaceDeclaration,
-    fIDL::EnumDeclaration,
-    fIDL::UnionDeclaration,
-    fIDL::ConstDeclaration,
-    fIDL::Declaration,
-    fIDL::Attribute,
-    fIDL::StructMember,
-    fIDL::StructDeclaration,
-    fIDL::Parameter,
-    fIDL::ParameterList,
-    fIDL::InterfaceParameters,
-    fIDL::Expression,
-    fIDL::InterfaceMethod,
-    fIDL::InterfaceMember,
-    fIDL::AttributedDeclaration,
-    fIDL::Using,
+    fIDL_InterfaceDeclaration,
+    fIDL_UnionDeclaration,
+    fIDL_EnumDeclaration,
+    fIDL_ConstDeclaration,
+    fIDL_Declaration,
+    fIDL_Attribute,
+    fIDL_StructMember,
+    fIDL_StructDeclaration,
+    fIDL_Parameter,
+    fIDL_ParameterList,
+    fIDL_InterfaceParameters,
+    fIDL_Expression,
+    fIDL_InterfaceMethod,
+    fIDL_InterfaceMember,
+    fIDL_AttributedDeclaration,
+    fIDL_Using,
     File,
-    fIDL::LibraryHeader,
-    fIDL::File,
+    fIDL_LibraryHeader,
+    fIDL_File,
 )
 
 # =============================================================================
@@ -88,58 +88,58 @@ def test_integertype_constructor_args():
 
 
 
-def test_fidl::int64type_is_not_abstract():
-    assert not inspect.isabstract(fIDL::Int64Type)
+def test_fidl_int32type_is_not_abstract():
+    assert not inspect.isabstract(fIDL_Int32Type)
 
 
-def test_fidl::int64type_constructor_exists():
-    assert callable(fIDL::Int64Type.__init__)
+def test_fidl_int32type_constructor_exists():
+    assert callable(fIDL_Int32Type.__init__)
 
 
-def test_fidl::int64type_constructor_args():
-    sig = inspect.signature(fIDL::Int64Type.__init__)
+def test_fidl_int32type_constructor_args():
+    sig = inspect.signature(fIDL_Int32Type.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_fidl::int32type_is_not_abstract():
-    assert not inspect.isabstract(fIDL::Int32Type)
+def test_fidl_int64type_is_not_abstract():
+    assert not inspect.isabstract(fIDL_Int64Type)
 
 
-def test_fidl::int32type_constructor_exists():
-    assert callable(fIDL::Int32Type.__init__)
+def test_fidl_int64type_constructor_exists():
+    assert callable(fIDL_Int64Type.__init__)
 
 
-def test_fidl::int32type_constructor_args():
-    sig = inspect.signature(fIDL::Int32Type.__init__)
+def test_fidl_int64type_constructor_args():
+    sig = inspect.signature(fIDL_Int64Type.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_fidl::int16type_is_not_abstract():
-    assert not inspect.isabstract(fIDL::Int16Type)
+def test_fidl_int16type_is_not_abstract():
+    assert not inspect.isabstract(fIDL_Int16Type)
 
 
-def test_fidl::int16type_constructor_exists():
-    assert callable(fIDL::Int16Type.__init__)
+def test_fidl_int16type_constructor_exists():
+    assert callable(fIDL_Int16Type.__init__)
 
 
-def test_fidl::int16type_constructor_args():
-    sig = inspect.signature(fIDL::Int16Type.__init__)
+def test_fidl_int16type_constructor_args():
+    sig = inspect.signature(fIDL_Int16Type.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_fidl::int8type_is_not_abstract():
-    assert not inspect.isabstract(fIDL::Int8Type)
+def test_fidl_int8type_is_not_abstract():
+    assert not inspect.isabstract(fIDL_Int8Type)
 
 
-def test_fidl::int8type_constructor_exists():
-    assert callable(fIDL::Int8Type.__init__)
+def test_fidl_int8type_constructor_exists():
+    assert callable(fIDL_Int8Type.__init__)
 
 
-def test_fidl::int8type_constructor_args():
-    sig = inspect.signature(fIDL::Int8Type.__init__)
+def test_fidl_int8type_constructor_args():
+    sig = inspect.signature(fIDL_Int8Type.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -186,51 +186,51 @@ def test_expression_constructor_args():
 
 
 
-def test_fidl::numberliteral_is_not_abstract():
-    assert not inspect.isabstract(fIDL::NumberLiteral)
+def test_fidl_numberliteral_is_not_abstract():
+    assert not inspect.isabstract(fIDL_NumberLiteral)
 
 
-def test_fidl::numberliteral_constructor_exists():
-    assert callable(fIDL::NumberLiteral.__init__)
+def test_fidl_numberliteral_constructor_exists():
+    assert callable(fIDL_NumberLiteral.__init__)
 
 
-def test_fidl::numberliteral_constructor_args():
-    sig = inspect.signature(fIDL::NumberLiteral.__init__)
+def test_fidl_numberliteral_constructor_args():
+    sig = inspect.signature(fIDL_NumberLiteral.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_fidl::stringliteral_is_not_abstract():
-    assert not inspect.isabstract(fIDL::StringLiteral)
+def test_fidl_stringliteral_is_not_abstract():
+    assert not inspect.isabstract(fIDL_StringLiteral)
 
 
-def test_fidl::stringliteral_constructor_exists():
-    assert callable(fIDL::StringLiteral.__init__)
+def test_fidl_stringliteral_constructor_exists():
+    assert callable(fIDL_StringLiteral.__init__)
 
 
-def test_fidl::stringliteral_constructor_args():
-    sig = inspect.signature(fIDL::StringLiteral.__init__)
+def test_fidl_stringliteral_constructor_args():
+    sig = inspect.signature(fIDL_StringLiteral.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_fidl::booleanliteral_is_not_abstract():
-    assert not inspect.isabstract(fIDL::BooleanLiteral)
+def test_fidl_booleanliteral_is_not_abstract():
+    assert not inspect.isabstract(fIDL_BooleanLiteral)
 
 
-def test_fidl::booleanliteral_constructor_exists():
-    assert callable(fIDL::BooleanLiteral.__init__)
+def test_fidl_booleanliteral_constructor_exists():
+    assert callable(fIDL_BooleanLiteral.__init__)
 
 
-def test_fidl::booleanliteral_constructor_args():
-    sig = inspect.signature(fIDL::BooleanLiteral.__init__)
+def test_fidl_booleanliteral_constructor_args():
+    sig = inspect.signature(fIDL_BooleanLiteral.__init__)
     params = list(sig.parameters.keys())
     assert "isTrue" in params, "Missing parameter 'isTrue'"
 
-def test_fidl::booleanliteral_has_isTrue():
-    assert hasattr(fIDL::BooleanLiteral, "isTrue")
+def test_fidl_booleanliteral_has_isTrue():
+    assert hasattr(fIDL_BooleanLiteral, "isTrue")
     descriptor = None
-    for klass in fIDL::BooleanLiteral.__mro__:
+    for klass in fIDL_BooleanLiteral.__mro__:
         if "isTrue" in klass.__dict__:
             descriptor = klass.__dict__["isTrue"]
             break
@@ -238,58 +238,58 @@ def test_fidl::booleanliteral_has_isTrue():
 
 
 
-def test_fidl::uint64type_is_not_abstract():
-    assert not inspect.isabstract(fIDL::Uint64Type)
+def test_fidl_uint64type_is_not_abstract():
+    assert not inspect.isabstract(fIDL_Uint64Type)
 
 
-def test_fidl::uint64type_constructor_exists():
-    assert callable(fIDL::Uint64Type.__init__)
+def test_fidl_uint64type_constructor_exists():
+    assert callable(fIDL_Uint64Type.__init__)
 
 
-def test_fidl::uint64type_constructor_args():
-    sig = inspect.signature(fIDL::Uint64Type.__init__)
+def test_fidl_uint64type_constructor_args():
+    sig = inspect.signature(fIDL_Uint64Type.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_fidl::uint32type_is_not_abstract():
-    assert not inspect.isabstract(fIDL::Uint32Type)
+def test_fidl_uint32type_is_not_abstract():
+    assert not inspect.isabstract(fIDL_Uint32Type)
 
 
-def test_fidl::uint32type_constructor_exists():
-    assert callable(fIDL::Uint32Type.__init__)
+def test_fidl_uint32type_constructor_exists():
+    assert callable(fIDL_Uint32Type.__init__)
 
 
-def test_fidl::uint32type_constructor_args():
-    sig = inspect.signature(fIDL::Uint32Type.__init__)
+def test_fidl_uint32type_constructor_args():
+    sig = inspect.signature(fIDL_Uint32Type.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_fidl::uint16type_is_not_abstract():
-    assert not inspect.isabstract(fIDL::Uint16Type)
+def test_fidl_uint16type_is_not_abstract():
+    assert not inspect.isabstract(fIDL_Uint16Type)
 
 
-def test_fidl::uint16type_constructor_exists():
-    assert callable(fIDL::Uint16Type.__init__)
+def test_fidl_uint16type_constructor_exists():
+    assert callable(fIDL_Uint16Type.__init__)
 
 
-def test_fidl::uint16type_constructor_args():
-    sig = inspect.signature(fIDL::Uint16Type.__init__)
+def test_fidl_uint16type_constructor_args():
+    sig = inspect.signature(fIDL_Uint16Type.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_fidl::uint8type_is_not_abstract():
-    assert not inspect.isabstract(fIDL::Uint8Type)
+def test_fidl_uint8type_is_not_abstract():
+    assert not inspect.isabstract(fIDL_Uint8Type)
 
 
-def test_fidl::uint8type_constructor_exists():
-    assert callable(fIDL::Uint8Type.__init__)
+def test_fidl_uint8type_constructor_exists():
+    assert callable(fIDL_Uint8Type.__init__)
 
 
-def test_fidl::uint8type_constructor_args():
-    sig = inspect.signature(fIDL::Uint8Type.__init__)
+def test_fidl_uint8type_constructor_args():
+    sig = inspect.signature(fIDL_Uint8Type.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -308,37 +308,37 @@ def test_type_constructor_args():
 
 
 
-def test_fidl::arraytype_is_not_abstract():
-    assert not inspect.isabstract(fIDL::ArrayType)
+def test_fidl_arraytype_is_not_abstract():
+    assert not inspect.isabstract(fIDL_ArrayType)
 
 
-def test_fidl::arraytype_constructor_exists():
-    assert callable(fIDL::ArrayType.__init__)
+def test_fidl_arraytype_constructor_exists():
+    assert callable(fIDL_ArrayType.__init__)
 
 
-def test_fidl::arraytype_constructor_args():
-    sig = inspect.signature(fIDL::ArrayType.__init__)
+def test_fidl_arraytype_constructor_args():
+    sig = inspect.signature(fIDL_ArrayType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_fidl::identifiertype_is_not_abstract():
-    assert not inspect.isabstract(fIDL::IdentifierType)
+def test_fidl_identifiertype_is_not_abstract():
+    assert not inspect.isabstract(fIDL_IdentifierType)
 
 
-def test_fidl::identifiertype_constructor_exists():
-    assert callable(fIDL::IdentifierType.__init__)
+def test_fidl_identifiertype_constructor_exists():
+    assert callable(fIDL_IdentifierType.__init__)
 
 
-def test_fidl::identifiertype_constructor_args():
-    sig = inspect.signature(fIDL::IdentifierType.__init__)
+def test_fidl_identifiertype_constructor_args():
+    sig = inspect.signature(fIDL_IdentifierType.__init__)
     params = list(sig.parameters.keys())
     assert "nullable" in params, "Missing parameter 'nullable'"
 
-def test_fidl::identifiertype_has_nullable():
-    assert hasattr(fIDL::IdentifierType, "nullable")
+def test_fidl_identifiertype_has_nullable():
+    assert hasattr(fIDL_IdentifierType, "nullable")
     descriptor = None
-    for klass in fIDL::IdentifierType.__mro__:
+    for klass in fIDL_IdentifierType.__mro__:
         if "nullable" in klass.__dict__:
             descriptor = klass.__dict__["nullable"]
             break
@@ -360,23 +360,23 @@ def test_unionmember_constructor_args():
 
 
 
-def test_fidl::unionfield_is_not_abstract():
-    assert not inspect.isabstract(fIDL::UnionField)
+def test_fidl_unionfield_is_not_abstract():
+    assert not inspect.isabstract(fIDL_UnionField)
 
 
-def test_fidl::unionfield_constructor_exists():
-    assert callable(fIDL::UnionField.__init__)
+def test_fidl_unionfield_constructor_exists():
+    assert callable(fIDL_UnionField.__init__)
 
 
-def test_fidl::unionfield_constructor_args():
-    sig = inspect.signature(fIDL::UnionField.__init__)
+def test_fidl_unionfield_constructor_args():
+    sig = inspect.signature(fIDL_UnionField.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_fidl::unionfield_has_name():
-    assert hasattr(fIDL::UnionField, "name")
+def test_fidl_unionfield_has_name():
+    assert hasattr(fIDL_UnionField, "name")
     descriptor = None
-    for klass in fIDL::UnionField.__mro__:
+    for klass in fIDL_UnionField.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -384,37 +384,37 @@ def test_fidl::unionfield_has_name():
 
 
 
-def test_fidl::unionmember_is_not_abstract():
-    assert not inspect.isabstract(fIDL::UnionMember)
+def test_fidl_unionmember_is_not_abstract():
+    assert not inspect.isabstract(fIDL_UnionMember)
 
 
-def test_fidl::unionmember_constructor_exists():
-    assert callable(fIDL::UnionMember.__init__)
+def test_fidl_unionmember_constructor_exists():
+    assert callable(fIDL_UnionMember.__init__)
 
 
-def test_fidl::unionmember_constructor_args():
-    sig = inspect.signature(fIDL::UnionMember.__init__)
+def test_fidl_unionmember_constructor_args():
+    sig = inspect.signature(fIDL_UnionMember.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_fidl::structfield_is_not_abstract():
-    assert not inspect.isabstract(fIDL::StructField)
+def test_fidl_structfield_is_not_abstract():
+    assert not inspect.isabstract(fIDL_StructField)
 
 
-def test_fidl::structfield_constructor_exists():
-    assert callable(fIDL::StructField.__init__)
+def test_fidl_structfield_constructor_exists():
+    assert callable(fIDL_StructField.__init__)
 
 
-def test_fidl::structfield_constructor_args():
-    sig = inspect.signature(fIDL::StructField.__init__)
+def test_fidl_structfield_constructor_args():
+    sig = inspect.signature(fIDL_StructField.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_fidl::structfield_has_name():
-    assert hasattr(fIDL::StructField, "name")
+def test_fidl_structfield_has_name():
+    assert hasattr(fIDL_StructField, "name")
     descriptor = None
-    for klass in fIDL::StructField.__mro__:
+    for klass in fIDL_StructField.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -436,16 +436,16 @@ def test_constant_constructor_args():
 
 
 
-def test_fidl::literal_is_not_abstract():
-    assert not inspect.isabstract(fIDL::Literal)
+def test_fidl_literal_is_not_abstract():
+    assert not inspect.isabstract(fIDL_Literal)
 
 
-def test_fidl::literal_constructor_exists():
-    assert callable(fIDL::Literal.__init__)
+def test_fidl_literal_constructor_exists():
+    assert callable(fIDL_Literal.__init__)
 
 
-def test_fidl::literal_constructor_args():
-    sig = inspect.signature(fIDL::Literal.__init__)
+def test_fidl_literal_constructor_args():
+    sig = inspect.signature(fIDL_Literal.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -464,93 +464,93 @@ def test_primitivetype_constructor_args():
 
 
 
-def test_fidl::statustype_is_not_abstract():
-    assert not inspect.isabstract(fIDL::StatusType)
+def test_fidl_float32type_is_not_abstract():
+    assert not inspect.isabstract(fIDL_Float32Type)
 
 
-def test_fidl::statustype_constructor_exists():
-    assert callable(fIDL::StatusType.__init__)
+def test_fidl_float32type_constructor_exists():
+    assert callable(fIDL_Float32Type.__init__)
 
 
-def test_fidl::statustype_constructor_args():
-    sig = inspect.signature(fIDL::StatusType.__init__)
+def test_fidl_float32type_constructor_args():
+    sig = inspect.signature(fIDL_Float32Type.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_fidl::float64type_is_not_abstract():
-    assert not inspect.isabstract(fIDL::Float64Type)
+def test_fidl_statustype_is_not_abstract():
+    assert not inspect.isabstract(fIDL_StatusType)
 
 
-def test_fidl::float64type_constructor_exists():
-    assert callable(fIDL::Float64Type.__init__)
+def test_fidl_statustype_constructor_exists():
+    assert callable(fIDL_StatusType.__init__)
 
 
-def test_fidl::float64type_constructor_args():
-    sig = inspect.signature(fIDL::Float64Type.__init__)
+def test_fidl_statustype_constructor_args():
+    sig = inspect.signature(fIDL_StatusType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_fidl::booleantype_is_not_abstract():
-    assert not inspect.isabstract(fIDL::BooleanType)
+def test_fidl_float64type_is_not_abstract():
+    assert not inspect.isabstract(fIDL_Float64Type)
 
 
-def test_fidl::booleantype_constructor_exists():
-    assert callable(fIDL::BooleanType.__init__)
+def test_fidl_float64type_constructor_exists():
+    assert callable(fIDL_Float64Type.__init__)
 
 
-def test_fidl::booleantype_constructor_args():
-    sig = inspect.signature(fIDL::BooleanType.__init__)
+def test_fidl_float64type_constructor_args():
+    sig = inspect.signature(fIDL_Float64Type.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_fidl::float32type_is_not_abstract():
-    assert not inspect.isabstract(fIDL::Float32Type)
+def test_fidl_booleantype_is_not_abstract():
+    assert not inspect.isabstract(fIDL_BooleanType)
 
 
-def test_fidl::float32type_constructor_exists():
-    assert callable(fIDL::Float32Type.__init__)
+def test_fidl_booleantype_constructor_exists():
+    assert callable(fIDL_BooleanType.__init__)
 
 
-def test_fidl::float32type_constructor_args():
-    sig = inspect.signature(fIDL::Float32Type.__init__)
+def test_fidl_booleantype_constructor_args():
+    sig = inspect.signature(fIDL_BooleanType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_fidl::primitivetype_is_not_abstract():
-    assert not inspect.isabstract(fIDL::PrimitiveType)
+def test_fidl_primitivetype_is_not_abstract():
+    assert not inspect.isabstract(fIDL_PrimitiveType)
 
 
-def test_fidl::primitivetype_constructor_exists():
-    assert callable(fIDL::PrimitiveType.__init__)
+def test_fidl_primitivetype_constructor_exists():
+    assert callable(fIDL_PrimitiveType.__init__)
 
 
-def test_fidl::primitivetype_constructor_args():
-    sig = inspect.signature(fIDL::PrimitiveType.__init__)
+def test_fidl_primitivetype_constructor_args():
+    sig = inspect.signature(fIDL_PrimitiveType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_fidl::requesttype_is_not_abstract():
-    assert not inspect.isabstract(fIDL::RequestType)
+def test_fidl_requesttype_is_not_abstract():
+    assert not inspect.isabstract(fIDL_RequestType)
 
 
-def test_fidl::requesttype_constructor_exists():
-    assert callable(fIDL::RequestType.__init__)
+def test_fidl_requesttype_constructor_exists():
+    assert callable(fIDL_RequestType.__init__)
 
 
-def test_fidl::requesttype_constructor_args():
-    sig = inspect.signature(fIDL::RequestType.__init__)
+def test_fidl_requesttype_constructor_args():
+    sig = inspect.signature(fIDL_RequestType.__init__)
     params = list(sig.parameters.keys())
     assert "nullable" in params, "Missing parameter 'nullable'"
 
-def test_fidl::requesttype_has_nullable():
-    assert hasattr(fIDL::RequestType, "nullable")
+def test_fidl_requesttype_has_nullable():
+    assert hasattr(fIDL_RequestType, "nullable")
     descriptor = None
-    for klass in fIDL::RequestType.__mro__:
+    for klass in fIDL_RequestType.__mro__:
         if "nullable" in klass.__dict__:
             descriptor = klass.__dict__["nullable"]
             break
@@ -558,33 +558,33 @@ def test_fidl::requesttype_has_nullable():
 
 
 
-def test_fidl::handletype_is_not_abstract():
-    assert not inspect.isabstract(fIDL::HandleType)
+def test_fidl_handletype_is_not_abstract():
+    assert not inspect.isabstract(fIDL_HandleType)
 
 
-def test_fidl::handletype_constructor_exists():
-    assert callable(fIDL::HandleType.__init__)
+def test_fidl_handletype_constructor_exists():
+    assert callable(fIDL_HandleType.__init__)
 
 
-def test_fidl::handletype_constructor_args():
-    sig = inspect.signature(fIDL::HandleType.__init__)
+def test_fidl_handletype_constructor_args():
+    sig = inspect.signature(fIDL_HandleType.__init__)
     params = list(sig.parameters.keys())
     assert "type" in params, "Missing parameter 'type'"
     assert "nullable" in params, "Missing parameter 'nullable'"
 
-def test_fidl::handletype_has_type():
-    assert hasattr(fIDL::HandleType, "type")
+def test_fidl_handletype_has_type():
+    assert hasattr(fIDL_HandleType, "type")
     descriptor = None
-    for klass in fIDL::HandleType.__mro__:
+    for klass in fIDL_HandleType.__mro__:
         if "type" in klass.__dict__:
             descriptor = klass.__dict__["type"]
             break
     assert isinstance(descriptor, property)
 
-def test_fidl::handletype_has_nullable():
-    assert hasattr(fIDL::HandleType, "nullable")
+def test_fidl_handletype_has_nullable():
+    assert hasattr(fIDL_HandleType, "nullable")
     descriptor = None
-    for klass in fIDL::HandleType.__mro__:
+    for klass in fIDL_HandleType.__mro__:
         if "nullable" in klass.__dict__:
             descriptor = klass.__dict__["nullable"]
             break
@@ -592,23 +592,23 @@ def test_fidl::handletype_has_nullable():
 
 
 
-def test_fidl::stringtype_is_not_abstract():
-    assert not inspect.isabstract(fIDL::StringType)
+def test_fidl_stringtype_is_not_abstract():
+    assert not inspect.isabstract(fIDL_StringType)
 
 
-def test_fidl::stringtype_constructor_exists():
-    assert callable(fIDL::StringType.__init__)
+def test_fidl_stringtype_constructor_exists():
+    assert callable(fIDL_StringType.__init__)
 
 
-def test_fidl::stringtype_constructor_args():
-    sig = inspect.signature(fIDL::StringType.__init__)
+def test_fidl_stringtype_constructor_args():
+    sig = inspect.signature(fIDL_StringType.__init__)
     params = list(sig.parameters.keys())
     assert "nullable" in params, "Missing parameter 'nullable'"
 
-def test_fidl::stringtype_has_nullable():
-    assert hasattr(fIDL::StringType, "nullable")
+def test_fidl_stringtype_has_nullable():
+    assert hasattr(fIDL_StringType, "nullable")
     descriptor = None
-    for klass in fIDL::StringType.__mro__:
+    for klass in fIDL_StringType.__mro__:
         if "nullable" in klass.__dict__:
             descriptor = klass.__dict__["nullable"]
             break
@@ -616,23 +616,23 @@ def test_fidl::stringtype_has_nullable():
 
 
 
-def test_fidl::vectortype_is_not_abstract():
-    assert not inspect.isabstract(fIDL::VectorType)
+def test_fidl_vectortype_is_not_abstract():
+    assert not inspect.isabstract(fIDL_VectorType)
 
 
-def test_fidl::vectortype_constructor_exists():
-    assert callable(fIDL::VectorType.__init__)
+def test_fidl_vectortype_constructor_exists():
+    assert callable(fIDL_VectorType.__init__)
 
 
-def test_fidl::vectortype_constructor_args():
-    sig = inspect.signature(fIDL::VectorType.__init__)
+def test_fidl_vectortype_constructor_args():
+    sig = inspect.signature(fIDL_VectorType.__init__)
     params = list(sig.parameters.keys())
     assert "nullable" in params, "Missing parameter 'nullable'"
 
-def test_fidl::vectortype_has_nullable():
-    assert hasattr(fIDL::VectorType, "nullable")
+def test_fidl_vectortype_has_nullable():
+    assert hasattr(fIDL_VectorType, "nullable")
     descriptor = None
-    for klass in fIDL::VectorType.__mro__:
+    for klass in fIDL_VectorType.__mro__:
         if "nullable" in klass.__dict__:
             descriptor = klass.__dict__["nullable"]
             break
@@ -640,23 +640,23 @@ def test_fidl::vectortype_has_nullable():
 
 
 
-def test_fidl::enummembervalue_is_not_abstract():
-    assert not inspect.isabstract(fIDL::EnumMemberValue)
+def test_fidl_enummembervalue_is_not_abstract():
+    assert not inspect.isabstract(fIDL_EnumMemberValue)
 
 
-def test_fidl::enummembervalue_constructor_exists():
-    assert callable(fIDL::EnumMemberValue.__init__)
+def test_fidl_enummembervalue_constructor_exists():
+    assert callable(fIDL_EnumMemberValue.__init__)
 
 
-def test_fidl::enummembervalue_constructor_args():
-    sig = inspect.signature(fIDL::EnumMemberValue.__init__)
+def test_fidl_enummembervalue_constructor_args():
+    sig = inspect.signature(fIDL_EnumMemberValue.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
 
-def test_fidl::enummembervalue_has_value():
-    assert hasattr(fIDL::EnumMemberValue, "value")
+def test_fidl_enummembervalue_has_value():
+    assert hasattr(fIDL_EnumMemberValue, "value")
     descriptor = None
-    for klass in fIDL::EnumMemberValue.__mro__:
+    for klass in fIDL_EnumMemberValue.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -664,23 +664,23 @@ def test_fidl::enummembervalue_has_value():
 
 
 
-def test_fidl::enummember_is_not_abstract():
-    assert not inspect.isabstract(fIDL::EnumMember)
+def test_fidl_enummember_is_not_abstract():
+    assert not inspect.isabstract(fIDL_EnumMember)
 
 
-def test_fidl::enummember_constructor_exists():
-    assert callable(fIDL::EnumMember.__init__)
+def test_fidl_enummember_constructor_exists():
+    assert callable(fIDL_EnumMember.__init__)
 
 
-def test_fidl::enummember_constructor_args():
-    sig = inspect.signature(fIDL::EnumMember.__init__)
+def test_fidl_enummember_constructor_args():
+    sig = inspect.signature(fIDL_EnumMember.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_fidl::enummember_has_name():
-    assert hasattr(fIDL::EnumMember, "name")
+def test_fidl_enummember_has_name():
+    assert hasattr(fIDL_EnumMember, "name")
     descriptor = None
-    for klass in fIDL::EnumMember.__mro__:
+    for klass in fIDL_EnumMember.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -688,37 +688,37 @@ def test_fidl::enummember_has_name():
 
 
 
-def test_fidl::integertype_is_not_abstract():
-    assert not inspect.isabstract(fIDL::IntegerType)
+def test_fidl_integertype_is_not_abstract():
+    assert not inspect.isabstract(fIDL_IntegerType)
 
 
-def test_fidl::integertype_constructor_exists():
-    assert callable(fIDL::IntegerType.__init__)
+def test_fidl_integertype_constructor_exists():
+    assert callable(fIDL_IntegerType.__init__)
 
 
-def test_fidl::integertype_constructor_args():
-    sig = inspect.signature(fIDL::IntegerType.__init__)
+def test_fidl_integertype_constructor_args():
+    sig = inspect.signature(fIDL_IntegerType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_fidl::constant_is_not_abstract():
-    assert not inspect.isabstract(fIDL::Constant)
+def test_fidl_constant_is_not_abstract():
+    assert not inspect.isabstract(fIDL_Constant)
 
 
-def test_fidl::constant_constructor_exists():
-    assert callable(fIDL::Constant.__init__)
+def test_fidl_constant_constructor_exists():
+    assert callable(fIDL_Constant.__init__)
 
 
-def test_fidl::constant_constructor_args():
-    sig = inspect.signature(fIDL::Constant.__init__)
+def test_fidl_constant_constructor_args():
+    sig = inspect.signature(fIDL_Constant.__init__)
     params = list(sig.parameters.keys())
     assert "ci" in params, "Missing parameter 'ci'"
 
-def test_fidl::constant_has_ci():
-    assert hasattr(fIDL::Constant, "ci")
+def test_fidl_constant_has_ci():
+    assert hasattr(fIDL_Constant, "ci")
     descriptor = None
-    for klass in fIDL::Constant.__mro__:
+    for klass in fIDL_Constant.__mro__:
         if "ci" in klass.__dict__:
             descriptor = klass.__dict__["ci"]
             break
@@ -726,16 +726,16 @@ def test_fidl::constant_has_ci():
 
 
 
-def test_fidl::type_is_not_abstract():
-    assert not inspect.isabstract(fIDL::Type)
+def test_fidl_type_is_not_abstract():
+    assert not inspect.isabstract(fIDL_Type)
 
 
-def test_fidl::type_constructor_exists():
-    assert callable(fIDL::Type.__init__)
+def test_fidl_type_constructor_exists():
+    assert callable(fIDL_Type.__init__)
 
 
-def test_fidl::type_constructor_args():
-    sig = inspect.signature(fIDL::Type.__init__)
+def test_fidl_type_constructor_args():
+    sig = inspect.signature(fIDL_Type.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -768,79 +768,79 @@ def test_declaration_constructor_args():
 
 
 
-def test_fidl::interfacedeclaration_is_not_abstract():
-    assert not inspect.isabstract(fIDL::InterfaceDeclaration)
+def test_fidl_interfacedeclaration_is_not_abstract():
+    assert not inspect.isabstract(fIDL_InterfaceDeclaration)
 
 
-def test_fidl::interfacedeclaration_constructor_exists():
-    assert callable(fIDL::InterfaceDeclaration.__init__)
+def test_fidl_interfacedeclaration_constructor_exists():
+    assert callable(fIDL_InterfaceDeclaration.__init__)
 
 
-def test_fidl::interfacedeclaration_constructor_args():
-    sig = inspect.signature(fIDL::InterfaceDeclaration.__init__)
+def test_fidl_interfacedeclaration_constructor_args():
+    sig = inspect.signature(fIDL_InterfaceDeclaration.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_fidl::enumdeclaration_is_not_abstract():
-    assert not inspect.isabstract(fIDL::EnumDeclaration)
+def test_fidl_uniondeclaration_is_not_abstract():
+    assert not inspect.isabstract(fIDL_UnionDeclaration)
 
 
-def test_fidl::enumdeclaration_constructor_exists():
-    assert callable(fIDL::EnumDeclaration.__init__)
+def test_fidl_uniondeclaration_constructor_exists():
+    assert callable(fIDL_UnionDeclaration.__init__)
 
 
-def test_fidl::enumdeclaration_constructor_args():
-    sig = inspect.signature(fIDL::EnumDeclaration.__init__)
+def test_fidl_uniondeclaration_constructor_args():
+    sig = inspect.signature(fIDL_UnionDeclaration.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_fidl::uniondeclaration_is_not_abstract():
-    assert not inspect.isabstract(fIDL::UnionDeclaration)
+def test_fidl_enumdeclaration_is_not_abstract():
+    assert not inspect.isabstract(fIDL_EnumDeclaration)
 
 
-def test_fidl::uniondeclaration_constructor_exists():
-    assert callable(fIDL::UnionDeclaration.__init__)
+def test_fidl_enumdeclaration_constructor_exists():
+    assert callable(fIDL_EnumDeclaration.__init__)
 
 
-def test_fidl::uniondeclaration_constructor_args():
-    sig = inspect.signature(fIDL::UnionDeclaration.__init__)
+def test_fidl_enumdeclaration_constructor_args():
+    sig = inspect.signature(fIDL_EnumDeclaration.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_fidl::constdeclaration_is_not_abstract():
-    assert not inspect.isabstract(fIDL::ConstDeclaration)
+def test_fidl_constdeclaration_is_not_abstract():
+    assert not inspect.isabstract(fIDL_ConstDeclaration)
 
 
-def test_fidl::constdeclaration_constructor_exists():
-    assert callable(fIDL::ConstDeclaration.__init__)
+def test_fidl_constdeclaration_constructor_exists():
+    assert callable(fIDL_ConstDeclaration.__init__)
 
 
-def test_fidl::constdeclaration_constructor_args():
-    sig = inspect.signature(fIDL::ConstDeclaration.__init__)
+def test_fidl_constdeclaration_constructor_args():
+    sig = inspect.signature(fIDL_ConstDeclaration.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_fidl::declaration_is_not_abstract():
-    assert not inspect.isabstract(fIDL::Declaration)
+def test_fidl_declaration_is_not_abstract():
+    assert not inspect.isabstract(fIDL_Declaration)
 
 
-def test_fidl::declaration_constructor_exists():
-    assert callable(fIDL::Declaration.__init__)
+def test_fidl_declaration_constructor_exists():
+    assert callable(fIDL_Declaration.__init__)
 
 
-def test_fidl::declaration_constructor_args():
-    sig = inspect.signature(fIDL::Declaration.__init__)
+def test_fidl_declaration_constructor_args():
+    sig = inspect.signature(fIDL_Declaration.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_fidl::declaration_has_name():
-    assert hasattr(fIDL::Declaration, "name")
+def test_fidl_declaration_has_name():
+    assert hasattr(fIDL_Declaration, "name")
     descriptor = None
-    for klass in fIDL::Declaration.__mro__:
+    for klass in fIDL_Declaration.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -848,85 +848,33 @@ def test_fidl::declaration_has_name():
 
 
 
-def test_fidl::attribute_is_not_abstract():
-    assert not inspect.isabstract(fIDL::Attribute)
+def test_fidl_attribute_is_not_abstract():
+    assert not inspect.isabstract(fIDL_Attribute)
 
 
-def test_fidl::attribute_constructor_exists():
-    assert callable(fIDL::Attribute.__init__)
+def test_fidl_attribute_constructor_exists():
+    assert callable(fIDL_Attribute.__init__)
 
 
-def test_fidl::attribute_constructor_args():
-    sig = inspect.signature(fIDL::Attribute.__init__)
+def test_fidl_attribute_constructor_args():
+    sig = inspect.signature(fIDL_Attribute.__init__)
     params = list(sig.parameters.keys())
-    assert "name" in params, "Missing parameter 'name'"
     assert "value" in params, "Missing parameter 'value'"
+    assert "name" in params, "Missing parameter 'name'"
 
-def test_fidl::attribute_has_name():
-    assert hasattr(fIDL::Attribute, "name")
+def test_fidl_attribute_has_value():
+    assert hasattr(fIDL_Attribute, "value")
     descriptor = None
-    for klass in fIDL::Attribute.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_fidl::attribute_has_value():
-    assert hasattr(fIDL::Attribute, "value")
-    descriptor = None
-    for klass in fIDL::Attribute.__mro__:
+    for klass in fIDL_Attribute.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
     assert isinstance(descriptor, property)
 
-
-
-def test_fidl::structmember_is_not_abstract():
-    assert not inspect.isabstract(fIDL::StructMember)
-
-
-def test_fidl::structmember_constructor_exists():
-    assert callable(fIDL::StructMember.__init__)
-
-
-def test_fidl::structmember_constructor_args():
-    sig = inspect.signature(fIDL::StructMember.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_fidl::structdeclaration_is_not_abstract():
-    assert not inspect.isabstract(fIDL::StructDeclaration)
-
-
-def test_fidl::structdeclaration_constructor_exists():
-    assert callable(fIDL::StructDeclaration.__init__)
-
-
-def test_fidl::structdeclaration_constructor_args():
-    sig = inspect.signature(fIDL::StructDeclaration.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_fidl::parameter_is_not_abstract():
-    assert not inspect.isabstract(fIDL::Parameter)
-
-
-def test_fidl::parameter_constructor_exists():
-    assert callable(fIDL::Parameter.__init__)
-
-
-def test_fidl::parameter_constructor_args():
-    sig = inspect.signature(fIDL::Parameter.__init__)
-    params = list(sig.parameters.keys())
-    assert "name" in params, "Missing parameter 'name'"
-
-def test_fidl::parameter_has_name():
-    assert hasattr(fIDL::Parameter, "name")
+def test_fidl_attribute_has_name():
+    assert hasattr(fIDL_Attribute, "name")
     descriptor = None
-    for klass in fIDL::Parameter.__mro__:
+    for klass in fIDL_Attribute.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -934,47 +882,99 @@ def test_fidl::parameter_has_name():
 
 
 
-def test_fidl::parameterlist_is_not_abstract():
-    assert not inspect.isabstract(fIDL::ParameterList)
+def test_fidl_structmember_is_not_abstract():
+    assert not inspect.isabstract(fIDL_StructMember)
 
 
-def test_fidl::parameterlist_constructor_exists():
-    assert callable(fIDL::ParameterList.__init__)
+def test_fidl_structmember_constructor_exists():
+    assert callable(fIDL_StructMember.__init__)
 
 
-def test_fidl::parameterlist_constructor_args():
-    sig = inspect.signature(fIDL::ParameterList.__init__)
+def test_fidl_structmember_constructor_args():
+    sig = inspect.signature(fIDL_StructMember.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_fidl::interfaceparameters_is_not_abstract():
-    assert not inspect.isabstract(fIDL::InterfaceParameters)
+def test_fidl_structdeclaration_is_not_abstract():
+    assert not inspect.isabstract(fIDL_StructDeclaration)
 
 
-def test_fidl::interfaceparameters_constructor_exists():
-    assert callable(fIDL::InterfaceParameters.__init__)
+def test_fidl_structdeclaration_constructor_exists():
+    assert callable(fIDL_StructDeclaration.__init__)
 
 
-def test_fidl::interfaceparameters_constructor_args():
-    sig = inspect.signature(fIDL::InterfaceParameters.__init__)
+def test_fidl_structdeclaration_constructor_args():
+    sig = inspect.signature(fIDL_StructDeclaration.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_fidl_parameter_is_not_abstract():
+    assert not inspect.isabstract(fIDL_Parameter)
+
+
+def test_fidl_parameter_constructor_exists():
+    assert callable(fIDL_Parameter.__init__)
+
+
+def test_fidl_parameter_constructor_args():
+    sig = inspect.signature(fIDL_Parameter.__init__)
+    params = list(sig.parameters.keys())
+    assert "name" in params, "Missing parameter 'name'"
+
+def test_fidl_parameter_has_name():
+    assert hasattr(fIDL_Parameter, "name")
+    descriptor = None
+    for klass in fIDL_Parameter.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_fidl_parameterlist_is_not_abstract():
+    assert not inspect.isabstract(fIDL_ParameterList)
+
+
+def test_fidl_parameterlist_constructor_exists():
+    assert callable(fIDL_ParameterList.__init__)
+
+
+def test_fidl_parameterlist_constructor_args():
+    sig = inspect.signature(fIDL_ParameterList.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_fidl_interfaceparameters_is_not_abstract():
+    assert not inspect.isabstract(fIDL_InterfaceParameters)
+
+
+def test_fidl_interfaceparameters_constructor_exists():
+    assert callable(fIDL_InterfaceParameters.__init__)
+
+
+def test_fidl_interfaceparameters_constructor_args():
+    sig = inspect.signature(fIDL_InterfaceParameters.__init__)
     params = list(sig.parameters.keys())
     assert "resultName" in params, "Missing parameter 'resultName'"
     assert "name" in params, "Missing parameter 'name'"
 
-def test_fidl::interfaceparameters_has_resultName():
-    assert hasattr(fIDL::InterfaceParameters, "resultName")
+def test_fidl_interfaceparameters_has_resultName():
+    assert hasattr(fIDL_InterfaceParameters, "resultName")
     descriptor = None
-    for klass in fIDL::InterfaceParameters.__mro__:
+    for klass in fIDL_InterfaceParameters.__mro__:
         if "resultName" in klass.__dict__:
             descriptor = klass.__dict__["resultName"]
             break
     assert isinstance(descriptor, property)
 
-def test_fidl::interfaceparameters_has_name():
-    assert hasattr(fIDL::InterfaceParameters, "name")
+def test_fidl_interfaceparameters_has_name():
+    assert hasattr(fIDL_InterfaceParameters, "name")
     descriptor = None
-    for klass in fIDL::InterfaceParameters.__mro__:
+    for klass in fIDL_InterfaceParameters.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -982,89 +982,89 @@ def test_fidl::interfaceparameters_has_name():
 
 
 
-def test_fidl::expression_is_not_abstract():
-    assert not inspect.isabstract(fIDL::Expression)
+def test_fidl_expression_is_not_abstract():
+    assert not inspect.isabstract(fIDL_Expression)
 
 
-def test_fidl::expression_constructor_exists():
-    assert callable(fIDL::Expression.__init__)
+def test_fidl_expression_constructor_exists():
+    assert callable(fIDL_Expression.__init__)
 
 
-def test_fidl::expression_constructor_args():
-    sig = inspect.signature(fIDL::Expression.__init__)
+def test_fidl_expression_constructor_args():
+    sig = inspect.signature(fIDL_Expression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_fidl::interfacemethod_is_not_abstract():
-    assert not inspect.isabstract(fIDL::InterfaceMethod)
+def test_fidl_interfacemethod_is_not_abstract():
+    assert not inspect.isabstract(fIDL_InterfaceMethod)
 
 
-def test_fidl::interfacemethod_constructor_exists():
-    assert callable(fIDL::InterfaceMethod.__init__)
+def test_fidl_interfacemethod_constructor_exists():
+    assert callable(fIDL_InterfaceMethod.__init__)
 
 
-def test_fidl::interfacemethod_constructor_args():
-    sig = inspect.signature(fIDL::InterfaceMethod.__init__)
+def test_fidl_interfacemethod_constructor_args():
+    sig = inspect.signature(fIDL_InterfaceMethod.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_fidl::interfacemember_is_not_abstract():
-    assert not inspect.isabstract(fIDL::InterfaceMember)
+def test_fidl_interfacemember_is_not_abstract():
+    assert not inspect.isabstract(fIDL_InterfaceMember)
 
 
-def test_fidl::interfacemember_constructor_exists():
-    assert callable(fIDL::InterfaceMember.__init__)
+def test_fidl_interfacemember_constructor_exists():
+    assert callable(fIDL_InterfaceMember.__init__)
 
 
-def test_fidl::interfacemember_constructor_args():
-    sig = inspect.signature(fIDL::InterfaceMember.__init__)
+def test_fidl_interfacemember_constructor_args():
+    sig = inspect.signature(fIDL_InterfaceMember.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_fidl::attributeddeclaration_is_not_abstract():
-    assert not inspect.isabstract(fIDL::AttributedDeclaration)
+def test_fidl_attributeddeclaration_is_not_abstract():
+    assert not inspect.isabstract(fIDL_AttributedDeclaration)
 
 
-def test_fidl::attributeddeclaration_constructor_exists():
-    assert callable(fIDL::AttributedDeclaration.__init__)
+def test_fidl_attributeddeclaration_constructor_exists():
+    assert callable(fIDL_AttributedDeclaration.__init__)
 
 
-def test_fidl::attributeddeclaration_constructor_args():
-    sig = inspect.signature(fIDL::AttributedDeclaration.__init__)
+def test_fidl_attributeddeclaration_constructor_args():
+    sig = inspect.signature(fIDL_AttributedDeclaration.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_fidl::using_is_not_abstract():
-    assert not inspect.isabstract(fIDL::Using)
+def test_fidl_using_is_not_abstract():
+    assert not inspect.isabstract(fIDL_Using)
 
 
-def test_fidl::using_constructor_exists():
-    assert callable(fIDL::Using.__init__)
+def test_fidl_using_constructor_exists():
+    assert callable(fIDL_Using.__init__)
 
 
-def test_fidl::using_constructor_args():
-    sig = inspect.signature(fIDL::Using.__init__)
+def test_fidl_using_constructor_args():
+    sig = inspect.signature(fIDL_Using.__init__)
     params = list(sig.parameters.keys())
     assert "importedNamespace" in params, "Missing parameter 'importedNamespace'"
     assert "name" in params, "Missing parameter 'name'"
 
-def test_fidl::using_has_importedNamespace():
-    assert hasattr(fIDL::Using, "importedNamespace")
+def test_fidl_using_has_importedNamespace():
+    assert hasattr(fIDL_Using, "importedNamespace")
     descriptor = None
-    for klass in fIDL::Using.__mro__:
+    for klass in fIDL_Using.__mro__:
         if "importedNamespace" in klass.__dict__:
             descriptor = klass.__dict__["importedNamespace"]
             break
     assert isinstance(descriptor, property)
 
-def test_fidl::using_has_name():
-    assert hasattr(fIDL::Using, "name")
+def test_fidl_using_has_name():
+    assert hasattr(fIDL_Using, "name")
     descriptor = None
-    for klass in fIDL::Using.__mro__:
+    for klass in fIDL_Using.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -1086,23 +1086,23 @@ def test_file_constructor_args():
 
 
 
-def test_fidl::libraryheader_is_not_abstract():
-    assert not inspect.isabstract(fIDL::LibraryHeader)
+def test_fidl_libraryheader_is_not_abstract():
+    assert not inspect.isabstract(fIDL_LibraryHeader)
 
 
-def test_fidl::libraryheader_constructor_exists():
-    assert callable(fIDL::LibraryHeader.__init__)
+def test_fidl_libraryheader_constructor_exists():
+    assert callable(fIDL_LibraryHeader.__init__)
 
 
-def test_fidl::libraryheader_constructor_args():
-    sig = inspect.signature(fIDL::LibraryHeader.__init__)
+def test_fidl_libraryheader_constructor_args():
+    sig = inspect.signature(fIDL_LibraryHeader.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_fidl::libraryheader_has_name():
-    assert hasattr(fIDL::LibraryHeader, "name")
+def test_fidl_libraryheader_has_name():
+    assert hasattr(fIDL_LibraryHeader, "name")
     descriptor = None
-    for klass in fIDL::LibraryHeader.__mro__:
+    for klass in fIDL_LibraryHeader.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -1110,16 +1110,16 @@ def test_fidl::libraryheader_has_name():
 
 
 
-def test_fidl::file_is_not_abstract():
-    assert not inspect.isabstract(fIDL::File)
+def test_fidl_file_is_not_abstract():
+    assert not inspect.isabstract(fIDL_File)
 
 
-def test_fidl::file_constructor_exists():
-    assert callable(fIDL::File.__init__)
+def test_fidl_file_constructor_exists():
+    assert callable(fIDL_File.__init__)
 
 
-def test_fidl::file_constructor_args():
-    sig = inspect.signature(fIDL::File.__init__)
+def test_fidl_file_constructor_args():
+    sig = inspect.signature(fIDL_File.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1137,17 +1137,17 @@ safe_text = st.text(
 IntegerType_strategy = st.builds(
     IntegerType,
 )
-fIDL::Int64Type_strategy = st.builds(
-    fIDL::Int64Type,
+fIDL_Int32Type_strategy = st.builds(
+    fIDL_Int32Type,
 )
-fIDL::Int32Type_strategy = st.builds(
-    fIDL::Int32Type,
+fIDL_Int64Type_strategy = st.builds(
+    fIDL_Int64Type,
 )
-fIDL::Int16Type_strategy = st.builds(
-    fIDL::Int16Type,
+fIDL_Int16Type_strategy = st.builds(
+    fIDL_Int16Type,
 )
-fIDL::Int8Type_strategy = st.builds(
-    fIDL::Int8Type,
+fIDL_Int8Type_strategy = st.builds(
+    fIDL_Int8Type,
 )
 Literal_strategy = st.builds(
     Literal,
@@ -1158,122 +1158,122 @@ EnumMemberValue_strategy = st.builds(
 Expression_strategy = st.builds(
     Expression,
 )
-fIDL::NumberLiteral_strategy = st.builds(
-    fIDL::NumberLiteral,
+fIDL_NumberLiteral_strategy = st.builds(
+    fIDL_NumberLiteral,
 )
-fIDL::StringLiteral_strategy = st.builds(
-    fIDL::StringLiteral,
+fIDL_StringLiteral_strategy = st.builds(
+    fIDL_StringLiteral,
 )
-fIDL::BooleanLiteral_strategy = st.builds(
-    fIDL::BooleanLiteral,
+fIDL_BooleanLiteral_strategy = st.builds(
+    fIDL_BooleanLiteral,
     isTrue=
         st.booleans()
 )
-fIDL::Uint64Type_strategy = st.builds(
-    fIDL::Uint64Type,
+fIDL_Uint64Type_strategy = st.builds(
+    fIDL_Uint64Type,
 )
-fIDL::Uint32Type_strategy = st.builds(
-    fIDL::Uint32Type,
+fIDL_Uint32Type_strategy = st.builds(
+    fIDL_Uint32Type,
 )
-fIDL::Uint16Type_strategy = st.builds(
-    fIDL::Uint16Type,
+fIDL_Uint16Type_strategy = st.builds(
+    fIDL_Uint16Type,
 )
-fIDL::Uint8Type_strategy = st.builds(
-    fIDL::Uint8Type,
+fIDL_Uint8Type_strategy = st.builds(
+    fIDL_Uint8Type,
 )
 Type_strategy = st.builds(
     Type,
 )
-fIDL::ArrayType_strategy = st.builds(
-    fIDL::ArrayType,
+fIDL_ArrayType_strategy = st.builds(
+    fIDL_ArrayType,
 )
-fIDL::IdentifierType_strategy = st.builds(
-    fIDL::IdentifierType,
+fIDL_IdentifierType_strategy = st.builds(
+    fIDL_IdentifierType,
     nullable=
         st.booleans()
 )
 UnionMember_strategy = st.builds(
     UnionMember,
 )
-fIDL::UnionField_strategy = st.builds(
-    fIDL::UnionField,
+fIDL_UnionField_strategy = st.builds(
+    fIDL_UnionField,
     name=
         safe_text
 )
-fIDL::UnionMember_strategy = st.builds(
-    fIDL::UnionMember,
+fIDL_UnionMember_strategy = st.builds(
+    fIDL_UnionMember,
 )
-fIDL::StructField_strategy = st.builds(
-    fIDL::StructField,
+fIDL_StructField_strategy = st.builds(
+    fIDL_StructField,
     name=
         safe_text
 )
 Constant_strategy = st.builds(
     Constant,
 )
-fIDL::Literal_strategy = st.builds(
-    fIDL::Literal,
+fIDL_Literal_strategy = st.builds(
+    fIDL_Literal,
 )
 PrimitiveType_strategy = st.builds(
     PrimitiveType,
 )
-fIDL::StatusType_strategy = st.builds(
-    fIDL::StatusType,
+fIDL_Float32Type_strategy = st.builds(
+    fIDL_Float32Type,
 )
-fIDL::Float64Type_strategy = st.builds(
-    fIDL::Float64Type,
+fIDL_StatusType_strategy = st.builds(
+    fIDL_StatusType,
 )
-fIDL::BooleanType_strategy = st.builds(
-    fIDL::BooleanType,
+fIDL_Float64Type_strategy = st.builds(
+    fIDL_Float64Type,
 )
-fIDL::Float32Type_strategy = st.builds(
-    fIDL::Float32Type,
+fIDL_BooleanType_strategy = st.builds(
+    fIDL_BooleanType,
 )
-fIDL::PrimitiveType_strategy = st.builds(
-    fIDL::PrimitiveType,
+fIDL_PrimitiveType_strategy = st.builds(
+    fIDL_PrimitiveType,
 )
-fIDL::RequestType_strategy = st.builds(
-    fIDL::RequestType,
+fIDL_RequestType_strategy = st.builds(
+    fIDL_RequestType,
     nullable=
         st.booleans()
 )
-fIDL::HandleType_strategy = st.builds(
-    fIDL::HandleType,
+fIDL_HandleType_strategy = st.builds(
+    fIDL_HandleType,
     type=
         safe_text,
     nullable=
         st.booleans()
 )
-fIDL::StringType_strategy = st.builds(
-    fIDL::StringType,
+fIDL_StringType_strategy = st.builds(
+    fIDL_StringType,
     nullable=
         st.booleans()
 )
-fIDL::VectorType_strategy = st.builds(
-    fIDL::VectorType,
+fIDL_VectorType_strategy = st.builds(
+    fIDL_VectorType,
     nullable=
         st.booleans()
 )
-fIDL::EnumMemberValue_strategy = st.builds(
-    fIDL::EnumMemberValue,
+fIDL_EnumMemberValue_strategy = st.builds(
+    fIDL_EnumMemberValue,
     value=
         safe_text
 )
-fIDL::EnumMember_strategy = st.builds(
-    fIDL::EnumMember,
+fIDL_EnumMember_strategy = st.builds(
+    fIDL_EnumMember,
     name=
         safe_text
 )
-fIDL::IntegerType_strategy = st.builds(
-    fIDL::IntegerType,
+fIDL_IntegerType_strategy = st.builds(
+    fIDL_IntegerType,
 )
-fIDL::Constant_strategy = st.builds(
-    fIDL::Constant,
+fIDL_Constant_strategy = st.builds(
+    fIDL_Constant,
     ci=
         safe_text
 )
-fIDL::Type_strategy = st.builds(
-    fIDL::Type,
+fIDL_Type_strategy = st.builds(
+    fIDL_Type,
 )
 InterfaceMember_strategy = st.builds(
     InterfaceMember,
@@ -1281,65 +1281,65 @@ InterfaceMember_strategy = st.builds(
 Declaration_strategy = st.builds(
     Declaration,
 )
-fIDL::InterfaceDeclaration_strategy = st.builds(
-    fIDL::InterfaceDeclaration,
+fIDL_InterfaceDeclaration_strategy = st.builds(
+    fIDL_InterfaceDeclaration,
 )
-fIDL::EnumDeclaration_strategy = st.builds(
-    fIDL::EnumDeclaration,
+fIDL_UnionDeclaration_strategy = st.builds(
+    fIDL_UnionDeclaration,
 )
-fIDL::UnionDeclaration_strategy = st.builds(
-    fIDL::UnionDeclaration,
+fIDL_EnumDeclaration_strategy = st.builds(
+    fIDL_EnumDeclaration,
 )
-fIDL::ConstDeclaration_strategy = st.builds(
-    fIDL::ConstDeclaration,
+fIDL_ConstDeclaration_strategy = st.builds(
+    fIDL_ConstDeclaration,
 )
-fIDL::Declaration_strategy = st.builds(
-    fIDL::Declaration,
+fIDL_Declaration_strategy = st.builds(
+    fIDL_Declaration,
     name=
         safe_text
 )
-fIDL::Attribute_strategy = st.builds(
-    fIDL::Attribute,
-    name=
-        safe_text,
+fIDL_Attribute_strategy = st.builds(
+    fIDL_Attribute,
     value=
-        safe_text
-)
-fIDL::StructMember_strategy = st.builds(
-    fIDL::StructMember,
-)
-fIDL::StructDeclaration_strategy = st.builds(
-    fIDL::StructDeclaration,
-)
-fIDL::Parameter_strategy = st.builds(
-    fIDL::Parameter,
+        safe_text,
     name=
         safe_text
 )
-fIDL::ParameterList_strategy = st.builds(
-    fIDL::ParameterList,
+fIDL_StructMember_strategy = st.builds(
+    fIDL_StructMember,
 )
-fIDL::InterfaceParameters_strategy = st.builds(
-    fIDL::InterfaceParameters,
+fIDL_StructDeclaration_strategy = st.builds(
+    fIDL_StructDeclaration,
+)
+fIDL_Parameter_strategy = st.builds(
+    fIDL_Parameter,
+    name=
+        safe_text
+)
+fIDL_ParameterList_strategy = st.builds(
+    fIDL_ParameterList,
+)
+fIDL_InterfaceParameters_strategy = st.builds(
+    fIDL_InterfaceParameters,
     resultName=
         safe_text,
     name=
         safe_text
 )
-fIDL::Expression_strategy = st.builds(
-    fIDL::Expression,
+fIDL_Expression_strategy = st.builds(
+    fIDL_Expression,
 )
-fIDL::InterfaceMethod_strategy = st.builds(
-    fIDL::InterfaceMethod,
+fIDL_InterfaceMethod_strategy = st.builds(
+    fIDL_InterfaceMethod,
 )
-fIDL::InterfaceMember_strategy = st.builds(
-    fIDL::InterfaceMember,
+fIDL_InterfaceMember_strategy = st.builds(
+    fIDL_InterfaceMember,
 )
-fIDL::AttributedDeclaration_strategy = st.builds(
-    fIDL::AttributedDeclaration,
+fIDL_AttributedDeclaration_strategy = st.builds(
+    fIDL_AttributedDeclaration,
 )
-fIDL::Using_strategy = st.builds(
-    fIDL::Using,
+fIDL_Using_strategy = st.builds(
+    fIDL_Using,
     importedNamespace=
         safe_text,
     name=
@@ -1348,13 +1348,13 @@ fIDL::Using_strategy = st.builds(
 File_strategy = st.builds(
     File,
 )
-fIDL::LibraryHeader_strategy = st.builds(
-    fIDL::LibraryHeader,
+fIDL_LibraryHeader_strategy = st.builds(
+    fIDL_LibraryHeader,
     name=
         safe_text
 )
-fIDL::File_strategy = st.builds(
-    fIDL::File,
+fIDL_File_strategy = st.builds(
+    fIDL_File,
 )
 
 @given(instance=IntegerType_strategy)
@@ -1362,25 +1362,25 @@ fIDL::File_strategy = st.builds(
 def test_integertype_instantiation(instance):
     assert isinstance(instance, IntegerType)
 
-@given(instance=fIDL::Int64Type_strategy)
+@given(instance=fIDL_Int32Type_strategy)
 @settings(max_examples=50)
-def test_fidl::int64type_instantiation(instance):
-    assert isinstance(instance, fIDL::Int64Type)
+def test_fidl_int32type_instantiation(instance):
+    assert isinstance(instance, fIDL_Int32Type)
 
-@given(instance=fIDL::Int32Type_strategy)
+@given(instance=fIDL_Int64Type_strategy)
 @settings(max_examples=50)
-def test_fidl::int32type_instantiation(instance):
-    assert isinstance(instance, fIDL::Int32Type)
+def test_fidl_int64type_instantiation(instance):
+    assert isinstance(instance, fIDL_Int64Type)
 
-@given(instance=fIDL::Int16Type_strategy)
+@given(instance=fIDL_Int16Type_strategy)
 @settings(max_examples=50)
-def test_fidl::int16type_instantiation(instance):
-    assert isinstance(instance, fIDL::Int16Type)
+def test_fidl_int16type_instantiation(instance):
+    assert isinstance(instance, fIDL_Int16Type)
 
-@given(instance=fIDL::Int8Type_strategy)
+@given(instance=fIDL_Int8Type_strategy)
 @settings(max_examples=50)
-def test_fidl::int8type_instantiation(instance):
-    assert isinstance(instance, fIDL::Int8Type)
+def test_fidl_int8type_instantiation(instance):
+    assert isinstance(instance, fIDL_Int8Type)
 
 @given(instance=Literal_strategy)
 @settings(max_examples=50)
@@ -1397,74 +1397,68 @@ def test_enummembervalue_instantiation(instance):
 def test_expression_instantiation(instance):
     assert isinstance(instance, Expression)
 
-@given(instance=fIDL::NumberLiteral_strategy)
+@given(instance=fIDL_NumberLiteral_strategy)
 @settings(max_examples=50)
-def test_fidl::numberliteral_instantiation(instance):
-    assert isinstance(instance, fIDL::NumberLiteral)
+def test_fidl_numberliteral_instantiation(instance):
+    assert isinstance(instance, fIDL_NumberLiteral)
 
-@given(instance=fIDL::StringLiteral_strategy)
+@given(instance=fIDL_StringLiteral_strategy)
 @settings(max_examples=50)
-def test_fidl::stringliteral_instantiation(instance):
-    assert isinstance(instance, fIDL::StringLiteral)
+def test_fidl_stringliteral_instantiation(instance):
+    assert isinstance(instance, fIDL_StringLiteral)
 
-@given(instance=fIDL::BooleanLiteral_strategy)
+@given(instance=fIDL_BooleanLiteral_strategy)
 @settings(max_examples=50)
-def test_fidl::booleanliteral_instantiation(instance):
-    assert isinstance(instance, fIDL::BooleanLiteral)
-
-@given(instance=fIDL::BooleanLiteral_strategy)
-def test_fidl::booleanliteral_isTrue_type(instance):
-    assert isinstance(instance.isTrue, bool)
+def test_fidl_booleanliteral_instantiation(instance):
+    assert isinstance(instance, fIDL_BooleanLiteral)
 
 
-@given(instance=fIDL::BooleanLiteral_strategy)
-def test_fidl::booleanliteral_isTrue_setter(instance):
+
+@given(instance=fIDL_BooleanLiteral_strategy)
+def test_fidl_booleanliteral_isTrue_setter(instance):
     original = instance.isTrue
     instance.isTrue = original
     assert instance.isTrue == original
 
-@given(instance=fIDL::Uint64Type_strategy)
+@given(instance=fIDL_Uint64Type_strategy)
 @settings(max_examples=50)
-def test_fidl::uint64type_instantiation(instance):
-    assert isinstance(instance, fIDL::Uint64Type)
+def test_fidl_uint64type_instantiation(instance):
+    assert isinstance(instance, fIDL_Uint64Type)
 
-@given(instance=fIDL::Uint32Type_strategy)
+@given(instance=fIDL_Uint32Type_strategy)
 @settings(max_examples=50)
-def test_fidl::uint32type_instantiation(instance):
-    assert isinstance(instance, fIDL::Uint32Type)
+def test_fidl_uint32type_instantiation(instance):
+    assert isinstance(instance, fIDL_Uint32Type)
 
-@given(instance=fIDL::Uint16Type_strategy)
+@given(instance=fIDL_Uint16Type_strategy)
 @settings(max_examples=50)
-def test_fidl::uint16type_instantiation(instance):
-    assert isinstance(instance, fIDL::Uint16Type)
+def test_fidl_uint16type_instantiation(instance):
+    assert isinstance(instance, fIDL_Uint16Type)
 
-@given(instance=fIDL::Uint8Type_strategy)
+@given(instance=fIDL_Uint8Type_strategy)
 @settings(max_examples=50)
-def test_fidl::uint8type_instantiation(instance):
-    assert isinstance(instance, fIDL::Uint8Type)
+def test_fidl_uint8type_instantiation(instance):
+    assert isinstance(instance, fIDL_Uint8Type)
 
 @given(instance=Type_strategy)
 @settings(max_examples=50)
 def test_type_instantiation(instance):
     assert isinstance(instance, Type)
 
-@given(instance=fIDL::ArrayType_strategy)
+@given(instance=fIDL_ArrayType_strategy)
 @settings(max_examples=50)
-def test_fidl::arraytype_instantiation(instance):
-    assert isinstance(instance, fIDL::ArrayType)
+def test_fidl_arraytype_instantiation(instance):
+    assert isinstance(instance, fIDL_ArrayType)
 
-@given(instance=fIDL::IdentifierType_strategy)
+@given(instance=fIDL_IdentifierType_strategy)
 @settings(max_examples=50)
-def test_fidl::identifiertype_instantiation(instance):
-    assert isinstance(instance, fIDL::IdentifierType)
-
-@given(instance=fIDL::IdentifierType_strategy)
-def test_fidl::identifiertype_nullable_type(instance):
-    assert isinstance(instance.nullable, bool)
+def test_fidl_identifiertype_instantiation(instance):
+    assert isinstance(instance, fIDL_IdentifierType)
 
 
-@given(instance=fIDL::IdentifierType_strategy)
-def test_fidl::identifiertype_nullable_setter(instance):
+
+@given(instance=fIDL_IdentifierType_strategy)
+def test_fidl_identifiertype_nullable_setter(instance):
     original = instance.nullable
     instance.nullable = original
     assert instance.nullable == original
@@ -1474,39 +1468,33 @@ def test_fidl::identifiertype_nullable_setter(instance):
 def test_unionmember_instantiation(instance):
     assert isinstance(instance, UnionMember)
 
-@given(instance=fIDL::UnionField_strategy)
+@given(instance=fIDL_UnionField_strategy)
 @settings(max_examples=50)
-def test_fidl::unionfield_instantiation(instance):
-    assert isinstance(instance, fIDL::UnionField)
-
-@given(instance=fIDL::UnionField_strategy)
-def test_fidl::unionfield_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_fidl_unionfield_instantiation(instance):
+    assert isinstance(instance, fIDL_UnionField)
 
 
-@given(instance=fIDL::UnionField_strategy)
-def test_fidl::unionfield_name_setter(instance):
+
+@given(instance=fIDL_UnionField_strategy)
+def test_fidl_unionfield_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=fIDL::UnionMember_strategy)
+@given(instance=fIDL_UnionMember_strategy)
 @settings(max_examples=50)
-def test_fidl::unionmember_instantiation(instance):
-    assert isinstance(instance, fIDL::UnionMember)
+def test_fidl_unionmember_instantiation(instance):
+    assert isinstance(instance, fIDL_UnionMember)
 
-@given(instance=fIDL::StructField_strategy)
+@given(instance=fIDL_StructField_strategy)
 @settings(max_examples=50)
-def test_fidl::structfield_instantiation(instance):
-    assert isinstance(instance, fIDL::StructField)
-
-@given(instance=fIDL::StructField_strategy)
-def test_fidl::structfield_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_fidl_structfield_instantiation(instance):
+    assert isinstance(instance, fIDL_StructField)
 
 
-@given(instance=fIDL::StructField_strategy)
-def test_fidl::structfield_name_setter(instance):
+
+@given(instance=fIDL_StructField_strategy)
+def test_fidl_structfield_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
@@ -1516,173 +1504,149 @@ def test_fidl::structfield_name_setter(instance):
 def test_constant_instantiation(instance):
     assert isinstance(instance, Constant)
 
-@given(instance=fIDL::Literal_strategy)
+@given(instance=fIDL_Literal_strategy)
 @settings(max_examples=50)
-def test_fidl::literal_instantiation(instance):
-    assert isinstance(instance, fIDL::Literal)
+def test_fidl_literal_instantiation(instance):
+    assert isinstance(instance, fIDL_Literal)
 
 @given(instance=PrimitiveType_strategy)
 @settings(max_examples=50)
 def test_primitivetype_instantiation(instance):
     assert isinstance(instance, PrimitiveType)
 
-@given(instance=fIDL::StatusType_strategy)
+@given(instance=fIDL_Float32Type_strategy)
 @settings(max_examples=50)
-def test_fidl::statustype_instantiation(instance):
-    assert isinstance(instance, fIDL::StatusType)
+def test_fidl_float32type_instantiation(instance):
+    assert isinstance(instance, fIDL_Float32Type)
 
-@given(instance=fIDL::Float64Type_strategy)
+@given(instance=fIDL_StatusType_strategy)
 @settings(max_examples=50)
-def test_fidl::float64type_instantiation(instance):
-    assert isinstance(instance, fIDL::Float64Type)
+def test_fidl_statustype_instantiation(instance):
+    assert isinstance(instance, fIDL_StatusType)
 
-@given(instance=fIDL::BooleanType_strategy)
+@given(instance=fIDL_Float64Type_strategy)
 @settings(max_examples=50)
-def test_fidl::booleantype_instantiation(instance):
-    assert isinstance(instance, fIDL::BooleanType)
+def test_fidl_float64type_instantiation(instance):
+    assert isinstance(instance, fIDL_Float64Type)
 
-@given(instance=fIDL::Float32Type_strategy)
+@given(instance=fIDL_BooleanType_strategy)
 @settings(max_examples=50)
-def test_fidl::float32type_instantiation(instance):
-    assert isinstance(instance, fIDL::Float32Type)
+def test_fidl_booleantype_instantiation(instance):
+    assert isinstance(instance, fIDL_BooleanType)
 
-@given(instance=fIDL::PrimitiveType_strategy)
+@given(instance=fIDL_PrimitiveType_strategy)
 @settings(max_examples=50)
-def test_fidl::primitivetype_instantiation(instance):
-    assert isinstance(instance, fIDL::PrimitiveType)
+def test_fidl_primitivetype_instantiation(instance):
+    assert isinstance(instance, fIDL_PrimitiveType)
 
-@given(instance=fIDL::RequestType_strategy)
+@given(instance=fIDL_RequestType_strategy)
 @settings(max_examples=50)
-def test_fidl::requesttype_instantiation(instance):
-    assert isinstance(instance, fIDL::RequestType)
-
-@given(instance=fIDL::RequestType_strategy)
-def test_fidl::requesttype_nullable_type(instance):
-    assert isinstance(instance.nullable, bool)
+def test_fidl_requesttype_instantiation(instance):
+    assert isinstance(instance, fIDL_RequestType)
 
 
-@given(instance=fIDL::RequestType_strategy)
-def test_fidl::requesttype_nullable_setter(instance):
+
+@given(instance=fIDL_RequestType_strategy)
+def test_fidl_requesttype_nullable_setter(instance):
     original = instance.nullable
     instance.nullable = original
     assert instance.nullable == original
 
-@given(instance=fIDL::HandleType_strategy)
+@given(instance=fIDL_HandleType_strategy)
 @settings(max_examples=50)
-def test_fidl::handletype_instantiation(instance):
-    assert isinstance(instance, fIDL::HandleType)
-
-@given(instance=fIDL::HandleType_strategy)
-def test_fidl::handletype_type_type(instance):
-    assert isinstance(instance.type, str)
+def test_fidl_handletype_instantiation(instance):
+    assert isinstance(instance, fIDL_HandleType)
 
 
-@given(instance=fIDL::HandleType_strategy)
-def test_fidl::handletype_type_setter(instance):
+
+@given(instance=fIDL_HandleType_strategy)
+def test_fidl_handletype_type_setter(instance):
     original = instance.type
     instance.type = original
     assert instance.type == original
 
-@given(instance=fIDL::HandleType_strategy)
-def test_fidl::handletype_nullable_type(instance):
-    assert isinstance(instance.nullable, bool)
 
 
-@given(instance=fIDL::HandleType_strategy)
-def test_fidl::handletype_nullable_setter(instance):
+@given(instance=fIDL_HandleType_strategy)
+def test_fidl_handletype_nullable_setter(instance):
     original = instance.nullable
     instance.nullable = original
     assert instance.nullable == original
 
-@given(instance=fIDL::StringType_strategy)
+@given(instance=fIDL_StringType_strategy)
 @settings(max_examples=50)
-def test_fidl::stringtype_instantiation(instance):
-    assert isinstance(instance, fIDL::StringType)
-
-@given(instance=fIDL::StringType_strategy)
-def test_fidl::stringtype_nullable_type(instance):
-    assert isinstance(instance.nullable, bool)
+def test_fidl_stringtype_instantiation(instance):
+    assert isinstance(instance, fIDL_StringType)
 
 
-@given(instance=fIDL::StringType_strategy)
-def test_fidl::stringtype_nullable_setter(instance):
+
+@given(instance=fIDL_StringType_strategy)
+def test_fidl_stringtype_nullable_setter(instance):
     original = instance.nullable
     instance.nullable = original
     assert instance.nullable == original
 
-@given(instance=fIDL::VectorType_strategy)
+@given(instance=fIDL_VectorType_strategy)
 @settings(max_examples=50)
-def test_fidl::vectortype_instantiation(instance):
-    assert isinstance(instance, fIDL::VectorType)
-
-@given(instance=fIDL::VectorType_strategy)
-def test_fidl::vectortype_nullable_type(instance):
-    assert isinstance(instance.nullable, bool)
+def test_fidl_vectortype_instantiation(instance):
+    assert isinstance(instance, fIDL_VectorType)
 
 
-@given(instance=fIDL::VectorType_strategy)
-def test_fidl::vectortype_nullable_setter(instance):
+
+@given(instance=fIDL_VectorType_strategy)
+def test_fidl_vectortype_nullable_setter(instance):
     original = instance.nullable
     instance.nullable = original
     assert instance.nullable == original
 
-@given(instance=fIDL::EnumMemberValue_strategy)
+@given(instance=fIDL_EnumMemberValue_strategy)
 @settings(max_examples=50)
-def test_fidl::enummembervalue_instantiation(instance):
-    assert isinstance(instance, fIDL::EnumMemberValue)
-
-@given(instance=fIDL::EnumMemberValue_strategy)
-def test_fidl::enummembervalue_value_type(instance):
-    assert isinstance(instance.value, str)
+def test_fidl_enummembervalue_instantiation(instance):
+    assert isinstance(instance, fIDL_EnumMemberValue)
 
 
-@given(instance=fIDL::EnumMemberValue_strategy)
-def test_fidl::enummembervalue_value_setter(instance):
+
+@given(instance=fIDL_EnumMemberValue_strategy)
+def test_fidl_enummembervalue_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
 
-@given(instance=fIDL::EnumMember_strategy)
+@given(instance=fIDL_EnumMember_strategy)
 @settings(max_examples=50)
-def test_fidl::enummember_instantiation(instance):
-    assert isinstance(instance, fIDL::EnumMember)
-
-@given(instance=fIDL::EnumMember_strategy)
-def test_fidl::enummember_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_fidl_enummember_instantiation(instance):
+    assert isinstance(instance, fIDL_EnumMember)
 
 
-@given(instance=fIDL::EnumMember_strategy)
-def test_fidl::enummember_name_setter(instance):
+
+@given(instance=fIDL_EnumMember_strategy)
+def test_fidl_enummember_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=fIDL::IntegerType_strategy)
+@given(instance=fIDL_IntegerType_strategy)
 @settings(max_examples=50)
-def test_fidl::integertype_instantiation(instance):
-    assert isinstance(instance, fIDL::IntegerType)
+def test_fidl_integertype_instantiation(instance):
+    assert isinstance(instance, fIDL_IntegerType)
 
-@given(instance=fIDL::Constant_strategy)
+@given(instance=fIDL_Constant_strategy)
 @settings(max_examples=50)
-def test_fidl::constant_instantiation(instance):
-    assert isinstance(instance, fIDL::Constant)
-
-@given(instance=fIDL::Constant_strategy)
-def test_fidl::constant_ci_type(instance):
-    assert isinstance(instance.ci, str)
+def test_fidl_constant_instantiation(instance):
+    assert isinstance(instance, fIDL_Constant)
 
 
-@given(instance=fIDL::Constant_strategy)
-def test_fidl::constant_ci_setter(instance):
+
+@given(instance=fIDL_Constant_strategy)
+def test_fidl_constant_ci_setter(instance):
     original = instance.ci
     instance.ci = original
     assert instance.ci == original
 
-@given(instance=fIDL::Type_strategy)
+@given(instance=fIDL_Type_strategy)
 @settings(max_examples=50)
-def test_fidl::type_instantiation(instance):
-    assert isinstance(instance, fIDL::Type)
+def test_fidl_type_instantiation(instance):
+    assert isinstance(instance, fIDL_Type)
 
 @given(instance=InterfaceMember_strategy)
 @settings(max_examples=50)
@@ -1694,170 +1658,146 @@ def test_interfacemember_instantiation(instance):
 def test_declaration_instantiation(instance):
     assert isinstance(instance, Declaration)
 
-@given(instance=fIDL::InterfaceDeclaration_strategy)
+@given(instance=fIDL_InterfaceDeclaration_strategy)
 @settings(max_examples=50)
-def test_fidl::interfacedeclaration_instantiation(instance):
-    assert isinstance(instance, fIDL::InterfaceDeclaration)
+def test_fidl_interfacedeclaration_instantiation(instance):
+    assert isinstance(instance, fIDL_InterfaceDeclaration)
 
-@given(instance=fIDL::EnumDeclaration_strategy)
+@given(instance=fIDL_UnionDeclaration_strategy)
 @settings(max_examples=50)
-def test_fidl::enumdeclaration_instantiation(instance):
-    assert isinstance(instance, fIDL::EnumDeclaration)
+def test_fidl_uniondeclaration_instantiation(instance):
+    assert isinstance(instance, fIDL_UnionDeclaration)
 
-@given(instance=fIDL::UnionDeclaration_strategy)
+@given(instance=fIDL_EnumDeclaration_strategy)
 @settings(max_examples=50)
-def test_fidl::uniondeclaration_instantiation(instance):
-    assert isinstance(instance, fIDL::UnionDeclaration)
+def test_fidl_enumdeclaration_instantiation(instance):
+    assert isinstance(instance, fIDL_EnumDeclaration)
 
-@given(instance=fIDL::ConstDeclaration_strategy)
+@given(instance=fIDL_ConstDeclaration_strategy)
 @settings(max_examples=50)
-def test_fidl::constdeclaration_instantiation(instance):
-    assert isinstance(instance, fIDL::ConstDeclaration)
+def test_fidl_constdeclaration_instantiation(instance):
+    assert isinstance(instance, fIDL_ConstDeclaration)
 
-@given(instance=fIDL::Declaration_strategy)
+@given(instance=fIDL_Declaration_strategy)
 @settings(max_examples=50)
-def test_fidl::declaration_instantiation(instance):
-    assert isinstance(instance, fIDL::Declaration)
-
-@given(instance=fIDL::Declaration_strategy)
-def test_fidl::declaration_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_fidl_declaration_instantiation(instance):
+    assert isinstance(instance, fIDL_Declaration)
 
 
-@given(instance=fIDL::Declaration_strategy)
-def test_fidl::declaration_name_setter(instance):
+
+@given(instance=fIDL_Declaration_strategy)
+def test_fidl_declaration_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=fIDL::Attribute_strategy)
+@given(instance=fIDL_Attribute_strategy)
 @settings(max_examples=50)
-def test_fidl::attribute_instantiation(instance):
-    assert isinstance(instance, fIDL::Attribute)
-
-@given(instance=fIDL::Attribute_strategy)
-def test_fidl::attribute_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_fidl_attribute_instantiation(instance):
+    assert isinstance(instance, fIDL_Attribute)
 
 
-@given(instance=fIDL::Attribute_strategy)
-def test_fidl::attribute_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
 
-@given(instance=fIDL::Attribute_strategy)
-def test_fidl::attribute_value_type(instance):
-    assert isinstance(instance.value, str)
-
-
-@given(instance=fIDL::Attribute_strategy)
-def test_fidl::attribute_value_setter(instance):
+@given(instance=fIDL_Attribute_strategy)
+def test_fidl_attribute_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
 
-@given(instance=fIDL::StructMember_strategy)
-@settings(max_examples=50)
-def test_fidl::structmember_instantiation(instance):
-    assert isinstance(instance, fIDL::StructMember)
-
-@given(instance=fIDL::StructDeclaration_strategy)
-@settings(max_examples=50)
-def test_fidl::structdeclaration_instantiation(instance):
-    assert isinstance(instance, fIDL::StructDeclaration)
-
-@given(instance=fIDL::Parameter_strategy)
-@settings(max_examples=50)
-def test_fidl::parameter_instantiation(instance):
-    assert isinstance(instance, fIDL::Parameter)
-
-@given(instance=fIDL::Parameter_strategy)
-def test_fidl::parameter_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
-@given(instance=fIDL::Parameter_strategy)
-def test_fidl::parameter_name_setter(instance):
+@given(instance=fIDL_Attribute_strategy)
+def test_fidl_attribute_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=fIDL::ParameterList_strategy)
+@given(instance=fIDL_StructMember_strategy)
 @settings(max_examples=50)
-def test_fidl::parameterlist_instantiation(instance):
-    assert isinstance(instance, fIDL::ParameterList)
+def test_fidl_structmember_instantiation(instance):
+    assert isinstance(instance, fIDL_StructMember)
 
-@given(instance=fIDL::InterfaceParameters_strategy)
+@given(instance=fIDL_StructDeclaration_strategy)
 @settings(max_examples=50)
-def test_fidl::interfaceparameters_instantiation(instance):
-    assert isinstance(instance, fIDL::InterfaceParameters)
+def test_fidl_structdeclaration_instantiation(instance):
+    assert isinstance(instance, fIDL_StructDeclaration)
 
-@given(instance=fIDL::InterfaceParameters_strategy)
-def test_fidl::interfaceparameters_resultName_type(instance):
-    assert isinstance(instance.resultName, str)
+@given(instance=fIDL_Parameter_strategy)
+@settings(max_examples=50)
+def test_fidl_parameter_instantiation(instance):
+    assert isinstance(instance, fIDL_Parameter)
 
 
-@given(instance=fIDL::InterfaceParameters_strategy)
-def test_fidl::interfaceparameters_resultName_setter(instance):
+
+@given(instance=fIDL_Parameter_strategy)
+def test_fidl_parameter_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+@given(instance=fIDL_ParameterList_strategy)
+@settings(max_examples=50)
+def test_fidl_parameterlist_instantiation(instance):
+    assert isinstance(instance, fIDL_ParameterList)
+
+@given(instance=fIDL_InterfaceParameters_strategy)
+@settings(max_examples=50)
+def test_fidl_interfaceparameters_instantiation(instance):
+    assert isinstance(instance, fIDL_InterfaceParameters)
+
+
+
+@given(instance=fIDL_InterfaceParameters_strategy)
+def test_fidl_interfaceparameters_resultName_setter(instance):
     original = instance.resultName
     instance.resultName = original
     assert instance.resultName == original
 
-@given(instance=fIDL::InterfaceParameters_strategy)
-def test_fidl::interfaceparameters_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
-@given(instance=fIDL::InterfaceParameters_strategy)
-def test_fidl::interfaceparameters_name_setter(instance):
+@given(instance=fIDL_InterfaceParameters_strategy)
+def test_fidl_interfaceparameters_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=fIDL::Expression_strategy)
+@given(instance=fIDL_Expression_strategy)
 @settings(max_examples=50)
-def test_fidl::expression_instantiation(instance):
-    assert isinstance(instance, fIDL::Expression)
+def test_fidl_expression_instantiation(instance):
+    assert isinstance(instance, fIDL_Expression)
 
-@given(instance=fIDL::InterfaceMethod_strategy)
+@given(instance=fIDL_InterfaceMethod_strategy)
 @settings(max_examples=50)
-def test_fidl::interfacemethod_instantiation(instance):
-    assert isinstance(instance, fIDL::InterfaceMethod)
+def test_fidl_interfacemethod_instantiation(instance):
+    assert isinstance(instance, fIDL_InterfaceMethod)
 
-@given(instance=fIDL::InterfaceMember_strategy)
+@given(instance=fIDL_InterfaceMember_strategy)
 @settings(max_examples=50)
-def test_fidl::interfacemember_instantiation(instance):
-    assert isinstance(instance, fIDL::InterfaceMember)
+def test_fidl_interfacemember_instantiation(instance):
+    assert isinstance(instance, fIDL_InterfaceMember)
 
-@given(instance=fIDL::AttributedDeclaration_strategy)
+@given(instance=fIDL_AttributedDeclaration_strategy)
 @settings(max_examples=50)
-def test_fidl::attributeddeclaration_instantiation(instance):
-    assert isinstance(instance, fIDL::AttributedDeclaration)
+def test_fidl_attributeddeclaration_instantiation(instance):
+    assert isinstance(instance, fIDL_AttributedDeclaration)
 
-@given(instance=fIDL::Using_strategy)
+@given(instance=fIDL_Using_strategy)
 @settings(max_examples=50)
-def test_fidl::using_instantiation(instance):
-    assert isinstance(instance, fIDL::Using)
-
-@given(instance=fIDL::Using_strategy)
-def test_fidl::using_importedNamespace_type(instance):
-    assert isinstance(instance.importedNamespace, str)
+def test_fidl_using_instantiation(instance):
+    assert isinstance(instance, fIDL_Using)
 
 
-@given(instance=fIDL::Using_strategy)
-def test_fidl::using_importedNamespace_setter(instance):
+
+@given(instance=fIDL_Using_strategy)
+def test_fidl_using_importedNamespace_setter(instance):
     original = instance.importedNamespace
     instance.importedNamespace = original
     assert instance.importedNamespace == original
 
-@given(instance=fIDL::Using_strategy)
-def test_fidl::using_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
-@given(instance=fIDL::Using_strategy)
-def test_fidl::using_name_setter(instance):
+@given(instance=fIDL_Using_strategy)
+def test_fidl_using_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
@@ -1867,23 +1807,20 @@ def test_fidl::using_name_setter(instance):
 def test_file_instantiation(instance):
     assert isinstance(instance, File)
 
-@given(instance=fIDL::LibraryHeader_strategy)
+@given(instance=fIDL_LibraryHeader_strategy)
 @settings(max_examples=50)
-def test_fidl::libraryheader_instantiation(instance):
-    assert isinstance(instance, fIDL::LibraryHeader)
-
-@given(instance=fIDL::LibraryHeader_strategy)
-def test_fidl::libraryheader_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_fidl_libraryheader_instantiation(instance):
+    assert isinstance(instance, fIDL_LibraryHeader)
 
 
-@given(instance=fIDL::LibraryHeader_strategy)
-def test_fidl::libraryheader_name_setter(instance):
+
+@given(instance=fIDL_LibraryHeader_strategy)
+def test_fidl_libraryheader_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=fIDL::File_strategy)
+@given(instance=fIDL_File_strategy)
 @settings(max_examples=50)
-def test_fidl::file_instantiation(instance):
-    assert isinstance(instance, fIDL::File)
+def test_fidl_file_instantiation(instance):
+    assert isinstance(instance, fIDL_File)

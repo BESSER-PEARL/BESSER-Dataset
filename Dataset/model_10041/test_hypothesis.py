@@ -3,325 +3,325 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     AcceptEventAction,
-    UML2::AcceptCallAction,
+    UML2_AcceptCallAction,
     Artifact,
     CreateLinkAction,
-    UML2::CreateLinkObjectAction,
-    UML2::DeploymentSpecification,
+    UML2_CreateLinkObjectAction,
+    UML2_DeploymentSpecification,
     Transition,
-    UML2::ProtocolTransition,
+    UML2_ProtocolTransition,
     StateMachine,
     Node,
-    UML2::ExecutionEnvironment,
-    UML2::Device,
+    UML2_ExecutionEnvironment,
+    UML2_Device,
     CentralBufferNode,
-    UML2::DataStoreNode,
+    UML2_DataStoreNode,
     IntervalConstraint,
-    UML2::DurationConstraint,
-    UML2::TimeConstraint,
+    UML2_DurationConstraint,
+    UML2_TimeConstraint,
     CallAction,
-    UML2::CallBehaviorAction,
-    UML2::CallOperationAction,
+    UML2_CallBehaviorAction,
+    UML2_CallOperationAction,
     Interval,
-    UML2::TimeInterval,
-    UML2::DurationInterval,
+    UML2_TimeInterval,
+    UML2_DurationInterval,
     InvocationAction,
-    UML2::BroadcastSignalAction,
-    UML2::SendObjectAction,
-    UML2::CallAction,
+    UML2_BroadcastSignalAction,
+    UML2_SendObjectAction,
+    UML2_CallAction,
     WriteVariableAction,
-    UML2::RemoveVariableValueAction,
-    UML2::AddVariableValueAction,
-    UML2::SendSignalAction,
+    UML2_RemoveVariableValueAction,
+    UML2_AddVariableValueAction,
+    UML2_SendSignalAction,
     VariableAction,
-    UML2::ClearVariableAction,
-    UML2::WriteVariableAction,
-    UML2::ReadVariableAction,
+    UML2_WriteVariableAction,
+    UML2_ClearVariableAction,
+    UML2_ReadVariableAction,
     WriteLinkAction,
-    UML2::DestroyLinkAction,
-    UML2::CreateLinkAction,
+    UML2_DestroyLinkAction,
+    UML2_CreateLinkAction,
     LinkEndData,
-    UML2::LinkEndCreationData,
+    UML2_LinkEndCreationData,
     LinkAction,
-    UML2::WriteLinkAction,
-    UML2::ReadLinkAction,
+    UML2_WriteLinkAction,
+    UML2_ReadLinkAction,
+    WriteStructuralFeatureAction,
+    UML2_AddStructuralFeatureValueAction,
+    UML2_DurationObservationAction,
+    UML2_TimeObservationAction,
+    UML2_RemoveStructuralFeatureValueAction,
+    StructuralFeatureAction,
+    UML2_ClearStructuralFeatureAction,
+    UML2_WriteStructuralFeatureAction,
+    UML2_ReadStructuralFeatureAction,
+    State,
+    UML2_FinalState,
+    Vertex,
+    UML2_ConnectionPointReference,
+    UML2_Pseudostate,
+    Constraint,
+    UML2_IntervalConstraint,
+    UML2_InteractionConstraint,
+    InteractionOccurrence,
+    TemplateSignature,
+    TemplateParameter,
+    UML2_ConnectableElementTemplateParameter,
+    UML2_ClassifierTemplateParameter,
+    UML2_OperationTemplateParameter,
+    EventOccurrence,
+    UML2_Stop,
+    MessageEnd,
+    UML2_PartDecomposition,
+    UML2_Gate,
+    InteractionFragment,
+    UML2_Continuation,
+    UML2_InteractionOccurrence,
+    UML2_ExecutionOccurrence,
+    UML2_CombinedFragment,
+    UML2_StateInvariant,
+    UML2_EventOccurrence,
+    StructuredActivityNode,
+    UML2_ExpansionRegion,
+    UML2_LoopNode,
+    UML2_ConditionalNode,
+    ActivityGroup,
+    Action,
+    UML2_CreateObjectAction,
+    UML2_ReadIsClassifiedObjectAction,
+    UML2_ClearAssociationAction,
+    UML2_ReclassifyObjectAction,
+    UML2_InvocationAction,
+    UML2_ReadSelfAction,
+    UML2_LinkAction,
+    UML2_ReplyAction,
+    UML2_ReadLinkObjectEndAction,
+    UML2_RaiseExceptionAction,
+    UML2_TestIdentityAction,
+    UML2_DestroyObjectAction,
+    UML2_ReadExtentAction,
+    UML2_VariableAction,
+    UML2_StructuralFeatureAction,
+    UML2_ApplyFunctionAction,
+    UML2_ReadLinkObjectEndQualifierAction,
+    UML2_StartOwnedBehaviorAction,
+    UML2_AcceptEventAction,
+    Trigger,
+    UML2_TimeTrigger,
+    UML2_ChangeTrigger,
+    UML2_MessageTrigger,
+    MessageTrigger,
+    UML2_AnyTrigger,
+    UML2_SignalTrigger,
+    UML2_CallTrigger,
+    StructuredClassifier,
+    UML2_EncapsulatedClassifier,
+    UML2_ProtocolStateMachine,
+    InputPin,
+    UML2_ValuePin,
+    ObjectNode,
+    UML2_ExpansionNode,
+    UML2_CentralBufferNode,
+    UML2_ActivityParameterNode,
+    Pin,
+    FinalNode,
+    UML2_FlowFinalNode,
+    UML2_ActivityFinalNode,
+    ControlNode,
+    UML2_JoinNode,
+    UML2_FinalNode,
+    UML2_DecisionNode,
+    UML2_ForkNode,
+    UML2_MergeNode,
+    UML2_InitialNode,
+    ActivityEdge,
+    UML2_ObjectFlow,
+    UML2_ControlFlow,
+    UML2_InputPin,
+    UML2_OutputPin,
+    ActivityNode,
+    UML2_ExecutableNode,
+    UML2_ControlNode,
+    ExecutableNode,
+    UML2_InterruptibleActivityRegion,
+    Abstraction,
+    UML2_Manifestation,
+    UML2_Realization,
+    Realization,
+    Dependency,
+    UML2_Abstraction,
+    UML2_Usage,
+    UML2_Deployment,
+    UML2_Permission,
+    UML2_Action,
+    NamedElement,
+    UML2_MessageEnd,
+    UML2_Lifeline,
+    UML2_DeployedArtifact,
+    UML2_GeneralOrdering,
+    UML2_Vertex,
+    UML2_InteractionFragment,
+    UML2_ActivityPartition,
+    UML2_Message,
+    UML2_DeploymentTarget,
+    UML2_Namespace,
+    TemplateableElement,
+    UML2_StringExpression,
+    UML2_NamedElement,
+    Element,
+    UML2_TemplateParameterSubstitution,
+    UML2_QualifierValue,
+    UML2_LinkEndData,
+    UML2_TemplateSignature,
+    UML2_TemplateableElement,
+    UML2_ParameterableElement,
+    UML2_TemplateParameter,
+    UML2_Clause,
+    UML2_ExceptionHandler,
+    UML2_MultiplicityElement,
+    UML2_Comment,
+    UML2_Element,
+    UML2_ActivityGroup,
+    Behavior,
+    UML2_Interaction,
+    UML2_Activity,
+    UML2_StateMachine,
+    UML2_Trigger,
+    UML2_Implementation,
+    Property,
+    UML2_Port,
+    UML2_ExtensionEnd,
+    Association,
+    UML2_CommunicationPath,
+    PackageImport,
     Package,
-    UML2::Profile,
+    UML2_Model,
+    UML2_Profile,
     Class,
-    UML2::Stereotype,
+    UML2_Component,
+    UML2_AssociationClass,
+    UML2_Stereotype,
     DirectedRelationship,
-    UML2::ProtocolConformance,
+    UML2_ProtocolConformance,
+    UML2_TemplateBinding,
+    UML2_Extend,
+    UML2_Include,
+    UML2_PackageImport,
+    UML2_ElementImport,
+    UML2_RedefinableElement,
+    UML2_Slot,
     DeployedArtifact,
     Feature,
+    UML2_Connector,
     LiteralSpecification,
-    UML2::LiteralInteger,
-    UML2::LiteralNull,
-    UML2::LiteralUnlimitedNatural,
-    UML2::LiteralString,
-    UML2::LiteralBoolean,
-    UML2::Generalization,
+    UML2_LiteralInteger,
+    UML2_LiteralString,
+    UML2_LiteralUnlimitedNatural,
+    UML2_LiteralNull,
+    UML2_LiteralBoolean,
+    UML2_CollaborationOccurrence,
+    UML2_Substitution,
+    UML2_Generalization,
     RedefinableElement,
-    UML2::Feature,
+    UML2_Feature,
+    UML2_Transition,
+    UML2_ExtensionPoint,
+    UML2_ActivityEdge,
+    UML2_ActivityNode,
+    UML2_RedefinableTemplateSignature,
     Type,
     InstanceSpecification,
     Classifier,
-    UML2::EnumerationLiteral,
+    UML2_InformationItem,
+    UML2_StructuredClassifier,
+    UML2_ParameterableClassifier,
+    UML2_TemplateableClassifier,
+    UML2_Actor,
+    UML2_BehavioredClassifier,
+    UML2_Interface,
+    UML2_Artifact,
+    UML2_Signal,
+    UML2_EnumerationLiteral,
     DataType,
-    UML2::PrimitiveType,
-    UML2::Enumeration,
-    UML2::PackageMerge,
+    UML2_PrimitiveType,
+    UML2_Enumeration,
+    UML2_ProfileApplication,
+    UML2_PackageMerge,
     Namespace,
-    UML2::BehavioralFeature,
+    UML2_Region,
+    UML2_InteractionOperand,
+    UML2_BehavioralFeature,
+    UML2_StructuredActivityNode,
+    UML2_State,
+    UML2_ParameterSet,
+    UML2_TypedElement,
     MultiplicityElement,
+    UML2_Pin,
+    UML2_ConnectorEnd,
     BehavioralFeature,
-    UML2::DataType,
+    UML2_DataType,
     DeploymentTarget,
-    UML2::Node,
+    UML2_Node,
     ConnectableElement,
     StructuralFeature,
-    UML2::Property,
+    UML2_Property,
     PackageableElement,
-    UML2::InstanceSpecification,
-    UML2::GeneralizationSet,
-    UML2::Package,
-    UML2::PrimitiveFunction,
-    UML2::Type,
-    UML2::Reception,
-    UML2::Classifier,
+    UML2_PrimitiveFunction,
+    UML2_Package,
+    UML2_GeneralizationSet,
+    UML2_InstanceSpecification,
+    UML2_Dependency,
+    UML2_InformationFlow,
+    UML2_Constraint,
+    UML2_Type,
+    UML2_Reception,
+    UML2_Classifier,
+    UML2_Extension,
     EncapsulatedClassifier,
     BehavioredClassifier,
-    UML2::UseCase,
-    UML2::Class,
+    UML2_UseCase,
+    UML2_Collaboration,
+    UML2_Class,
+    UML2_Relationship,
     Relationship,
-    UML2::Association,
-    UML2::DirectedRelationship,
+    UML2_Association,
+    UML2_DirectedRelationship,
     OpaqueExpression,
-    UML2::Expression,
+    UML2_Expression,
     ParameterableElement,
+    UML2_PackageableElement,
+    UML2_ConnectableElement,
     TypedElement,
-    UML2::Operation,
-    UML2::StructuralFeature,
-    UML2::Behavior,
-    UML2::Parameter,
+    UML2_ValueSpecification,
+    UML2_StructuralFeature,
+    UML2_Variable,
+    UML2_Operation,
+    UML2_ObjectNode,
+    UML2_Behavior,
+    UML2_Parameter,
     ValueSpecification,
-    UML2::InstanceValue,
-    UML2::Interval,
-    UML2::TimeExpression,
-    UML2::Duration,
-    UML2::LiteralSpecification,
-    UML2::OpaqueExpression,
-    UML2::PackageImport,
-    UML2::ElementImport,
-    UML2::Constraint,
-    NamedElement,
-    UML2::RedefinableElement,
-    UML2::ParameterSet,
-    UML2::TypedElement,
-    UML2::CollaborationOccurrence,
-    UML2::PackageableElement,
-    UML2::DeployedArtifact,
-    UML2::DeploymentTarget,
-    UML2::Namespace,
-    UML2::Dependency,
-    TemplateableElement,
-    UML2::StringExpression,
-    UML2::NamedElement,
-    UML2::ValueSpecification,
-    Element,
-    UML2::QualifierValue,
-    UML2::Slot,
-    UML2::Relationship,
-    UML2::MultiplicityElement,
-    UML2::Comment,
-    UML2::Element,
-    UML2::LinkEndData,
-    WriteStructuralFeatureAction,
-    UML2::AddStructuralFeatureValueAction,
-    UML2::DurationObservationAction,
-    UML2::TimeObservationAction,
-    UML2::RemoveStructuralFeatureValueAction,
-    StructuralFeatureAction,
-    UML2::ClearStructuralFeatureAction,
-    UML2::WriteStructuralFeatureAction,
-    UML2::ReadStructuralFeatureAction,
-    State,
-    UML2::FinalState,
-    Vertex,
-    UML2::ConnectionPointReference,
-    UML2::Transition,
-    UML2::Vertex,
-    UML2::Pseudostate,
-    UML2::Region,
-    Constraint,
-    UML2::IntervalConstraint,
-    UML2::InteractionConstraint,
-    InteractionOccurrence,
-    UML2::TemplateableClassifier,
-    TemplateSignature,
-    UML2::RedefinableTemplateSignature,
-    UML2::ParameterableClassifier,
-    TemplateParameter,
-    UML2::ClassifierTemplateParameter,
-    UML2::ConnectableElementTemplateParameter,
-    UML2::OperationTemplateParameter,
-    UML2::TemplateParameterSubstitution,
-    UML2::TemplateBinding,
-    UML2::ParameterableElement,
-    UML2::TemplateableElement,
-    UML2::TemplateParameter,
-    UML2::TemplateSignature,
-    EventOccurrence,
-    UML2::Stop,
-    MessageEnd,
-    UML2::MessageEnd,
-    UML2::PartDecomposition,
-    UML2::GeneralOrdering,
-    UML2::Gate,
-    UML2::InteractionFragment,
-    UML2::Message,
-    UML2::Lifeline,
-    InteractionFragment,
-    UML2::InteractionOperand,
-    UML2::ExecutionOccurrence,
-    UML2::StateInvariant,
-    UML2::CombinedFragment,
-    UML2::Continuation,
-    UML2::InteractionOccurrence,
-    UML2::EventOccurrence,
-    StructuredActivityNode,
-    UML2::ExpansionRegion,
-    UML2::LoopNode,
-    UML2::Clause,
-    UML2::ConditionalNode,
-    ActivityGroup,
-    Action,
-    UML2::AcceptEventAction,
-    UML2::DestroyObjectAction,
-    UML2::TestIdentityAction,
-    UML2::ReadLinkObjectEndAction,
-    UML2::StructuralFeatureAction,
-    UML2::ReadSelfAction,
-    UML2::ReadLinkObjectEndQualifierAction,
-    UML2::RaiseExceptionAction,
-    UML2::CreateObjectAction,
-    UML2::ApplyFunctionAction,
-    UML2::VariableAction,
-    UML2::ReplyAction,
-    UML2::ReadExtentAction,
-    UML2::LinkAction,
-    UML2::ClearAssociationAction,
-    UML2::ReclassifyObjectAction,
-    UML2::InvocationAction,
-    UML2::StartOwnedBehaviorAction,
-    UML2::ReadIsClassifiedObjectAction,
-    UML2::Variable,
-    UML2::Signal,
-    Trigger,
-    UML2::TimeTrigger,
-    UML2::ChangeTrigger,
-    UML2::MessageTrigger,
-    MessageTrigger,
-    UML2::AnyTrigger,
-    UML2::SignalTrigger,
-    UML2::CallTrigger,
-    StructuredClassifier,
-    UML2::EncapsulatedClassifier,
-    UML2::Collaboration,
-    UML2::Include,
-    UML2::ExtensionPoint,
-    UML2::Extend,
-    UML2::Actor,
-    UML2::Artifact,
-    UML2::ProtocolStateMachine,
-    UML2::Interface,
-    InputPin,
-    UML2::ValuePin,
-    UML2::State,
-    ObjectNode,
-    UML2::ExpansionNode,
-    UML2::ActivityParameterNode,
-    UML2::CentralBufferNode,
-    UML2::Pin,
-    Pin,
-    UML2::ExceptionHandler,
-    FinalNode,
-    UML2::FlowFinalNode,
-    UML2::ActivityFinalNode,
-    ControlNode,
-    UML2::MergeNode,
-    UML2::JoinNode,
-    UML2::ForkNode,
-    UML2::FinalNode,
-    UML2::DecisionNode,
-    UML2::InitialNode,
-    ActivityEdge,
-    UML2::ObjectFlow,
-    UML2::ControlFlow,
-    UML2::InputPin,
-    UML2::OutputPin,
-    ActivityNode,
-    UML2::ExecutableNode,
-    UML2::ControlNode,
-    UML2::ObjectNode,
-    ExecutableNode,
-    UML2::InterruptibleActivityRegion,
-    UML2::ActivityPartition,
-    UML2::StructuredClassifier,
-    UML2::Connector,
-    UML2::ConnectableElement,
-    UML2::ConnectorEnd,
-    UML2::Model,
-    Abstraction,
-    UML2::Manifestation,
-    UML2::Realization,
-    UML2::InformationFlow,
-    UML2::InformationItem,
-    Realization,
-    UML2::Substitution,
-    UML2::Component,
-    Dependency,
-    UML2::Usage,
-    UML2::Deployment,
-    UML2::Abstraction,
-    UML2::Permission,
-    UML2::StructuredActivityNode,
-    UML2::Action,
-    UML2::ActivityNode,
-    UML2::ActivityGroup,
-    UML2::ActivityEdge,
-    Behavior,
-    UML2::Interaction,
-    UML2::Activity,
-    UML2::StateMachine,
-    UML2::Trigger,
-    UML2::Implementation,
-    UML2::BehavioredClassifier,
-    Property,
-    UML2::Port,
-    UML2::ExtensionEnd,
-    Association,
-    UML2::Extension,
-    UML2::CommunicationPath,
-    UML2::AssociationClass,
-    PackageImport,
-    UML2::ProfileApplication,
-    VisibilityKind,
-    ExpansionKind,
-    TransitionKind,
-    MessageSort,
-    ObjectNodeOrderingKind,
-    AggregationKind,
-    ParameterEffectKind,
+    UML2_InstanceValue,
+    UML2_TimeExpression,
+    UML2_Duration,
+    UML2_OpaqueExpression,
+    UML2_Interval,
+    UML2_LiteralSpecification,
     ConnectorKind,
-    InteractionOperator,
+    ParameterEffectKind,
+    ExpansionKind,
+    MessageSort,
     CallConcurrencyKind,
-    ParameterDirectionKind,
-    PseudostateKind,
     MessageKind,
+    PseudostateKind,
+    TransitionKind,
+    AggregationKind,
+    ParameterDirectionKind,
+    InteractionOperator,
+    ObjectNodeOrderingKind,
+    VisibilityKind,
 )
 
 # =============================================================================
@@ -344,16 +344,16 @@ def test_accepteventaction_constructor_args():
 
 
 
-def test_uml2::acceptcallaction_is_not_abstract():
-    assert not inspect.isabstract(UML2::AcceptCallAction)
+def test_uml2_acceptcallaction_is_not_abstract():
+    assert not inspect.isabstract(UML2_AcceptCallAction)
 
 
-def test_uml2::acceptcallaction_constructor_exists():
-    assert callable(UML2::AcceptCallAction.__init__)
+def test_uml2_acceptcallaction_constructor_exists():
+    assert callable(UML2_AcceptCallAction.__init__)
 
 
-def test_uml2::acceptcallaction_constructor_args():
-    sig = inspect.signature(UML2::AcceptCallAction.__init__)
+def test_uml2_acceptcallaction_constructor_args():
+    sig = inspect.signature(UML2_AcceptCallAction.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -386,49 +386,49 @@ def test_createlinkaction_constructor_args():
 
 
 
-def test_uml2::createlinkobjectaction_is_not_abstract():
-    assert not inspect.isabstract(UML2::CreateLinkObjectAction)
+def test_uml2_createlinkobjectaction_is_not_abstract():
+    assert not inspect.isabstract(UML2_CreateLinkObjectAction)
 
 
-def test_uml2::createlinkobjectaction_constructor_exists():
-    assert callable(UML2::CreateLinkObjectAction.__init__)
+def test_uml2_createlinkobjectaction_constructor_exists():
+    assert callable(UML2_CreateLinkObjectAction.__init__)
 
 
-def test_uml2::createlinkobjectaction_constructor_args():
-    sig = inspect.signature(UML2::CreateLinkObjectAction.__init__)
+def test_uml2_createlinkobjectaction_constructor_args():
+    sig = inspect.signature(UML2_CreateLinkObjectAction.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_uml2::deploymentspecification_is_not_abstract():
-    assert not inspect.isabstract(UML2::DeploymentSpecification)
+def test_uml2_deploymentspecification_is_not_abstract():
+    assert not inspect.isabstract(UML2_DeploymentSpecification)
 
 
-def test_uml2::deploymentspecification_constructor_exists():
-    assert callable(UML2::DeploymentSpecification.__init__)
+def test_uml2_deploymentspecification_constructor_exists():
+    assert callable(UML2_DeploymentSpecification.__init__)
 
 
-def test_uml2::deploymentspecification_constructor_args():
-    sig = inspect.signature(UML2::DeploymentSpecification.__init__)
+def test_uml2_deploymentspecification_constructor_args():
+    sig = inspect.signature(UML2_DeploymentSpecification.__init__)
     params = list(sig.parameters.keys())
-    assert "executionLocation" in params, "Missing parameter 'executionLocation'"
     assert "deploymentLocation" in params, "Missing parameter 'deploymentLocation'"
+    assert "executionLocation" in params, "Missing parameter 'executionLocation'"
 
-def test_uml2::deploymentspecification_has_executionLocation():
-    assert hasattr(UML2::DeploymentSpecification, "executionLocation")
+def test_uml2_deploymentspecification_has_deploymentLocation():
+    assert hasattr(UML2_DeploymentSpecification, "deploymentLocation")
     descriptor = None
-    for klass in UML2::DeploymentSpecification.__mro__:
-        if "executionLocation" in klass.__dict__:
-            descriptor = klass.__dict__["executionLocation"]
+    for klass in UML2_DeploymentSpecification.__mro__:
+        if "deploymentLocation" in klass.__dict__:
+            descriptor = klass.__dict__["deploymentLocation"]
             break
     assert isinstance(descriptor, property)
 
-def test_uml2::deploymentspecification_has_deploymentLocation():
-    assert hasattr(UML2::DeploymentSpecification, "deploymentLocation")
+def test_uml2_deploymentspecification_has_executionLocation():
+    assert hasattr(UML2_DeploymentSpecification, "executionLocation")
     descriptor = None
-    for klass in UML2::DeploymentSpecification.__mro__:
-        if "deploymentLocation" in klass.__dict__:
-            descriptor = klass.__dict__["deploymentLocation"]
+    for klass in UML2_DeploymentSpecification.__mro__:
+        if "executionLocation" in klass.__dict__:
+            descriptor = klass.__dict__["executionLocation"]
             break
     assert isinstance(descriptor, property)
 
@@ -448,16 +448,16 @@ def test_transition_constructor_args():
 
 
 
-def test_uml2::protocoltransition_is_not_abstract():
-    assert not inspect.isabstract(UML2::ProtocolTransition)
+def test_uml2_protocoltransition_is_not_abstract():
+    assert not inspect.isabstract(UML2_ProtocolTransition)
 
 
-def test_uml2::protocoltransition_constructor_exists():
-    assert callable(UML2::ProtocolTransition.__init__)
+def test_uml2_protocoltransition_constructor_exists():
+    assert callable(UML2_ProtocolTransition.__init__)
 
 
-def test_uml2::protocoltransition_constructor_args():
-    sig = inspect.signature(UML2::ProtocolTransition.__init__)
+def test_uml2_protocoltransition_constructor_args():
+    sig = inspect.signature(UML2_ProtocolTransition.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -490,30 +490,30 @@ def test_node_constructor_args():
 
 
 
-def test_uml2::executionenvironment_is_not_abstract():
-    assert not inspect.isabstract(UML2::ExecutionEnvironment)
+def test_uml2_executionenvironment_is_not_abstract():
+    assert not inspect.isabstract(UML2_ExecutionEnvironment)
 
 
-def test_uml2::executionenvironment_constructor_exists():
-    assert callable(UML2::ExecutionEnvironment.__init__)
+def test_uml2_executionenvironment_constructor_exists():
+    assert callable(UML2_ExecutionEnvironment.__init__)
 
 
-def test_uml2::executionenvironment_constructor_args():
-    sig = inspect.signature(UML2::ExecutionEnvironment.__init__)
+def test_uml2_executionenvironment_constructor_args():
+    sig = inspect.signature(UML2_ExecutionEnvironment.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_uml2::device_is_not_abstract():
-    assert not inspect.isabstract(UML2::Device)
+def test_uml2_device_is_not_abstract():
+    assert not inspect.isabstract(UML2_Device)
 
 
-def test_uml2::device_constructor_exists():
-    assert callable(UML2::Device.__init__)
+def test_uml2_device_constructor_exists():
+    assert callable(UML2_Device.__init__)
 
 
-def test_uml2::device_constructor_args():
-    sig = inspect.signature(UML2::Device.__init__)
+def test_uml2_device_constructor_args():
+    sig = inspect.signature(UML2_Device.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -532,16 +532,16 @@ def test_centralbuffernode_constructor_args():
 
 
 
-def test_uml2::datastorenode_is_not_abstract():
-    assert not inspect.isabstract(UML2::DataStoreNode)
+def test_uml2_datastorenode_is_not_abstract():
+    assert not inspect.isabstract(UML2_DataStoreNode)
 
 
-def test_uml2::datastorenode_constructor_exists():
-    assert callable(UML2::DataStoreNode.__init__)
+def test_uml2_datastorenode_constructor_exists():
+    assert callable(UML2_DataStoreNode.__init__)
 
 
-def test_uml2::datastorenode_constructor_args():
-    sig = inspect.signature(UML2::DataStoreNode.__init__)
+def test_uml2_datastorenode_constructor_args():
+    sig = inspect.signature(UML2_DataStoreNode.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -560,30 +560,30 @@ def test_intervalconstraint_constructor_args():
 
 
 
-def test_uml2::durationconstraint_is_not_abstract():
-    assert not inspect.isabstract(UML2::DurationConstraint)
+def test_uml2_durationconstraint_is_not_abstract():
+    assert not inspect.isabstract(UML2_DurationConstraint)
 
 
-def test_uml2::durationconstraint_constructor_exists():
-    assert callable(UML2::DurationConstraint.__init__)
+def test_uml2_durationconstraint_constructor_exists():
+    assert callable(UML2_DurationConstraint.__init__)
 
 
-def test_uml2::durationconstraint_constructor_args():
-    sig = inspect.signature(UML2::DurationConstraint.__init__)
+def test_uml2_durationconstraint_constructor_args():
+    sig = inspect.signature(UML2_DurationConstraint.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_uml2::timeconstraint_is_not_abstract():
-    assert not inspect.isabstract(UML2::TimeConstraint)
+def test_uml2_timeconstraint_is_not_abstract():
+    assert not inspect.isabstract(UML2_TimeConstraint)
 
 
-def test_uml2::timeconstraint_constructor_exists():
-    assert callable(UML2::TimeConstraint.__init__)
+def test_uml2_timeconstraint_constructor_exists():
+    assert callable(UML2_TimeConstraint.__init__)
 
 
-def test_uml2::timeconstraint_constructor_args():
-    sig = inspect.signature(UML2::TimeConstraint.__init__)
+def test_uml2_timeconstraint_constructor_args():
+    sig = inspect.signature(UML2_TimeConstraint.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -602,30 +602,30 @@ def test_callaction_constructor_args():
 
 
 
-def test_uml2::callbehavioraction_is_not_abstract():
-    assert not inspect.isabstract(UML2::CallBehaviorAction)
+def test_uml2_callbehavioraction_is_not_abstract():
+    assert not inspect.isabstract(UML2_CallBehaviorAction)
 
 
-def test_uml2::callbehavioraction_constructor_exists():
-    assert callable(UML2::CallBehaviorAction.__init__)
+def test_uml2_callbehavioraction_constructor_exists():
+    assert callable(UML2_CallBehaviorAction.__init__)
 
 
-def test_uml2::callbehavioraction_constructor_args():
-    sig = inspect.signature(UML2::CallBehaviorAction.__init__)
+def test_uml2_callbehavioraction_constructor_args():
+    sig = inspect.signature(UML2_CallBehaviorAction.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_uml2::calloperationaction_is_not_abstract():
-    assert not inspect.isabstract(UML2::CallOperationAction)
+def test_uml2_calloperationaction_is_not_abstract():
+    assert not inspect.isabstract(UML2_CallOperationAction)
 
 
-def test_uml2::calloperationaction_constructor_exists():
-    assert callable(UML2::CallOperationAction.__init__)
+def test_uml2_calloperationaction_constructor_exists():
+    assert callable(UML2_CallOperationAction.__init__)
 
 
-def test_uml2::calloperationaction_constructor_args():
-    sig = inspect.signature(UML2::CallOperationAction.__init__)
+def test_uml2_calloperationaction_constructor_args():
+    sig = inspect.signature(UML2_CallOperationAction.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -644,30 +644,30 @@ def test_interval_constructor_args():
 
 
 
-def test_uml2::timeinterval_is_not_abstract():
-    assert not inspect.isabstract(UML2::TimeInterval)
+def test_uml2_timeinterval_is_not_abstract():
+    assert not inspect.isabstract(UML2_TimeInterval)
 
 
-def test_uml2::timeinterval_constructor_exists():
-    assert callable(UML2::TimeInterval.__init__)
+def test_uml2_timeinterval_constructor_exists():
+    assert callable(UML2_TimeInterval.__init__)
 
 
-def test_uml2::timeinterval_constructor_args():
-    sig = inspect.signature(UML2::TimeInterval.__init__)
+def test_uml2_timeinterval_constructor_args():
+    sig = inspect.signature(UML2_TimeInterval.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_uml2::durationinterval_is_not_abstract():
-    assert not inspect.isabstract(UML2::DurationInterval)
+def test_uml2_durationinterval_is_not_abstract():
+    assert not inspect.isabstract(UML2_DurationInterval)
 
 
-def test_uml2::durationinterval_constructor_exists():
-    assert callable(UML2::DurationInterval.__init__)
+def test_uml2_durationinterval_constructor_exists():
+    assert callable(UML2_DurationInterval.__init__)
 
 
-def test_uml2::durationinterval_constructor_args():
-    sig = inspect.signature(UML2::DurationInterval.__init__)
+def test_uml2_durationinterval_constructor_args():
+    sig = inspect.signature(UML2_DurationInterval.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -686,51 +686,51 @@ def test_invocationaction_constructor_args():
 
 
 
-def test_uml2::broadcastsignalaction_is_not_abstract():
-    assert not inspect.isabstract(UML2::BroadcastSignalAction)
+def test_uml2_broadcastsignalaction_is_not_abstract():
+    assert not inspect.isabstract(UML2_BroadcastSignalAction)
 
 
-def test_uml2::broadcastsignalaction_constructor_exists():
-    assert callable(UML2::BroadcastSignalAction.__init__)
+def test_uml2_broadcastsignalaction_constructor_exists():
+    assert callable(UML2_BroadcastSignalAction.__init__)
 
 
-def test_uml2::broadcastsignalaction_constructor_args():
-    sig = inspect.signature(UML2::BroadcastSignalAction.__init__)
+def test_uml2_broadcastsignalaction_constructor_args():
+    sig = inspect.signature(UML2_BroadcastSignalAction.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_uml2::sendobjectaction_is_not_abstract():
-    assert not inspect.isabstract(UML2::SendObjectAction)
+def test_uml2_sendobjectaction_is_not_abstract():
+    assert not inspect.isabstract(UML2_SendObjectAction)
 
 
-def test_uml2::sendobjectaction_constructor_exists():
-    assert callable(UML2::SendObjectAction.__init__)
+def test_uml2_sendobjectaction_constructor_exists():
+    assert callable(UML2_SendObjectAction.__init__)
 
 
-def test_uml2::sendobjectaction_constructor_args():
-    sig = inspect.signature(UML2::SendObjectAction.__init__)
+def test_uml2_sendobjectaction_constructor_args():
+    sig = inspect.signature(UML2_SendObjectAction.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_uml2::callaction_is_not_abstract():
-    assert not inspect.isabstract(UML2::CallAction)
+def test_uml2_callaction_is_not_abstract():
+    assert not inspect.isabstract(UML2_CallAction)
 
 
-def test_uml2::callaction_constructor_exists():
-    assert callable(UML2::CallAction.__init__)
+def test_uml2_callaction_constructor_exists():
+    assert callable(UML2_CallAction.__init__)
 
 
-def test_uml2::callaction_constructor_args():
-    sig = inspect.signature(UML2::CallAction.__init__)
+def test_uml2_callaction_constructor_args():
+    sig = inspect.signature(UML2_CallAction.__init__)
     params = list(sig.parameters.keys())
     assert "isSynchronous" in params, "Missing parameter 'isSynchronous'"
 
-def test_uml2::callaction_has_isSynchronous():
-    assert hasattr(UML2::CallAction, "isSynchronous")
+def test_uml2_callaction_has_isSynchronous():
+    assert hasattr(UML2_CallAction, "isSynchronous")
     descriptor = None
-    for klass in UML2::CallAction.__mro__:
+    for klass in UML2_CallAction.__mro__:
         if "isSynchronous" in klass.__dict__:
             descriptor = klass.__dict__["isSynchronous"]
             break
@@ -752,37 +752,37 @@ def test_writevariableaction_constructor_args():
 
 
 
-def test_uml2::removevariablevalueaction_is_not_abstract():
-    assert not inspect.isabstract(UML2::RemoveVariableValueAction)
+def test_uml2_removevariablevalueaction_is_not_abstract():
+    assert not inspect.isabstract(UML2_RemoveVariableValueAction)
 
 
-def test_uml2::removevariablevalueaction_constructor_exists():
-    assert callable(UML2::RemoveVariableValueAction.__init__)
+def test_uml2_removevariablevalueaction_constructor_exists():
+    assert callable(UML2_RemoveVariableValueAction.__init__)
 
 
-def test_uml2::removevariablevalueaction_constructor_args():
-    sig = inspect.signature(UML2::RemoveVariableValueAction.__init__)
+def test_uml2_removevariablevalueaction_constructor_args():
+    sig = inspect.signature(UML2_RemoveVariableValueAction.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_uml2::addvariablevalueaction_is_not_abstract():
-    assert not inspect.isabstract(UML2::AddVariableValueAction)
+def test_uml2_addvariablevalueaction_is_not_abstract():
+    assert not inspect.isabstract(UML2_AddVariableValueAction)
 
 
-def test_uml2::addvariablevalueaction_constructor_exists():
-    assert callable(UML2::AddVariableValueAction.__init__)
+def test_uml2_addvariablevalueaction_constructor_exists():
+    assert callable(UML2_AddVariableValueAction.__init__)
 
 
-def test_uml2::addvariablevalueaction_constructor_args():
-    sig = inspect.signature(UML2::AddVariableValueAction.__init__)
+def test_uml2_addvariablevalueaction_constructor_args():
+    sig = inspect.signature(UML2_AddVariableValueAction.__init__)
     params = list(sig.parameters.keys())
     assert "isReplaceAll" in params, "Missing parameter 'isReplaceAll'"
 
-def test_uml2::addvariablevalueaction_has_isReplaceAll():
-    assert hasattr(UML2::AddVariableValueAction, "isReplaceAll")
+def test_uml2_addvariablevalueaction_has_isReplaceAll():
+    assert hasattr(UML2_AddVariableValueAction, "isReplaceAll")
     descriptor = None
-    for klass in UML2::AddVariableValueAction.__mro__:
+    for klass in UML2_AddVariableValueAction.__mro__:
         if "isReplaceAll" in klass.__dict__:
             descriptor = klass.__dict__["isReplaceAll"]
             break
@@ -790,16 +790,16 @@ def test_uml2::addvariablevalueaction_has_isReplaceAll():
 
 
 
-def test_uml2::sendsignalaction_is_not_abstract():
-    assert not inspect.isabstract(UML2::SendSignalAction)
+def test_uml2_sendsignalaction_is_not_abstract():
+    assert not inspect.isabstract(UML2_SendSignalAction)
 
 
-def test_uml2::sendsignalaction_constructor_exists():
-    assert callable(UML2::SendSignalAction.__init__)
+def test_uml2_sendsignalaction_constructor_exists():
+    assert callable(UML2_SendSignalAction.__init__)
 
 
-def test_uml2::sendsignalaction_constructor_args():
-    sig = inspect.signature(UML2::SendSignalAction.__init__)
+def test_uml2_sendsignalaction_constructor_args():
+    sig = inspect.signature(UML2_SendSignalAction.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -818,44 +818,44 @@ def test_variableaction_constructor_args():
 
 
 
-def test_uml2::clearvariableaction_is_not_abstract():
-    assert not inspect.isabstract(UML2::ClearVariableAction)
+def test_uml2_writevariableaction_is_not_abstract():
+    assert not inspect.isabstract(UML2_WriteVariableAction)
 
 
-def test_uml2::clearvariableaction_constructor_exists():
-    assert callable(UML2::ClearVariableAction.__init__)
+def test_uml2_writevariableaction_constructor_exists():
+    assert callable(UML2_WriteVariableAction.__init__)
 
 
-def test_uml2::clearvariableaction_constructor_args():
-    sig = inspect.signature(UML2::ClearVariableAction.__init__)
+def test_uml2_writevariableaction_constructor_args():
+    sig = inspect.signature(UML2_WriteVariableAction.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_uml2::writevariableaction_is_not_abstract():
-    assert not inspect.isabstract(UML2::WriteVariableAction)
+def test_uml2_clearvariableaction_is_not_abstract():
+    assert not inspect.isabstract(UML2_ClearVariableAction)
 
 
-def test_uml2::writevariableaction_constructor_exists():
-    assert callable(UML2::WriteVariableAction.__init__)
+def test_uml2_clearvariableaction_constructor_exists():
+    assert callable(UML2_ClearVariableAction.__init__)
 
 
-def test_uml2::writevariableaction_constructor_args():
-    sig = inspect.signature(UML2::WriteVariableAction.__init__)
+def test_uml2_clearvariableaction_constructor_args():
+    sig = inspect.signature(UML2_ClearVariableAction.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_uml2::readvariableaction_is_not_abstract():
-    assert not inspect.isabstract(UML2::ReadVariableAction)
+def test_uml2_readvariableaction_is_not_abstract():
+    assert not inspect.isabstract(UML2_ReadVariableAction)
 
 
-def test_uml2::readvariableaction_constructor_exists():
-    assert callable(UML2::ReadVariableAction.__init__)
+def test_uml2_readvariableaction_constructor_exists():
+    assert callable(UML2_ReadVariableAction.__init__)
 
 
-def test_uml2::readvariableaction_constructor_args():
-    sig = inspect.signature(UML2::ReadVariableAction.__init__)
+def test_uml2_readvariableaction_constructor_args():
+    sig = inspect.signature(UML2_ReadVariableAction.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -874,30 +874,30 @@ def test_writelinkaction_constructor_args():
 
 
 
-def test_uml2::destroylinkaction_is_not_abstract():
-    assert not inspect.isabstract(UML2::DestroyLinkAction)
+def test_uml2_destroylinkaction_is_not_abstract():
+    assert not inspect.isabstract(UML2_DestroyLinkAction)
 
 
-def test_uml2::destroylinkaction_constructor_exists():
-    assert callable(UML2::DestroyLinkAction.__init__)
+def test_uml2_destroylinkaction_constructor_exists():
+    assert callable(UML2_DestroyLinkAction.__init__)
 
 
-def test_uml2::destroylinkaction_constructor_args():
-    sig = inspect.signature(UML2::DestroyLinkAction.__init__)
+def test_uml2_destroylinkaction_constructor_args():
+    sig = inspect.signature(UML2_DestroyLinkAction.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_uml2::createlinkaction_is_not_abstract():
-    assert not inspect.isabstract(UML2::CreateLinkAction)
+def test_uml2_createlinkaction_is_not_abstract():
+    assert not inspect.isabstract(UML2_CreateLinkAction)
 
 
-def test_uml2::createlinkaction_constructor_exists():
-    assert callable(UML2::CreateLinkAction.__init__)
+def test_uml2_createlinkaction_constructor_exists():
+    assert callable(UML2_CreateLinkAction.__init__)
 
 
-def test_uml2::createlinkaction_constructor_args():
-    sig = inspect.signature(UML2::CreateLinkAction.__init__)
+def test_uml2_createlinkaction_constructor_args():
+    sig = inspect.signature(UML2_CreateLinkAction.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -916,23 +916,23 @@ def test_linkenddata_constructor_args():
 
 
 
-def test_uml2::linkendcreationdata_is_not_abstract():
-    assert not inspect.isabstract(UML2::LinkEndCreationData)
+def test_uml2_linkendcreationdata_is_not_abstract():
+    assert not inspect.isabstract(UML2_LinkEndCreationData)
 
 
-def test_uml2::linkendcreationdata_constructor_exists():
-    assert callable(UML2::LinkEndCreationData.__init__)
+def test_uml2_linkendcreationdata_constructor_exists():
+    assert callable(UML2_LinkEndCreationData.__init__)
 
 
-def test_uml2::linkendcreationdata_constructor_args():
-    sig = inspect.signature(UML2::LinkEndCreationData.__init__)
+def test_uml2_linkendcreationdata_constructor_args():
+    sig = inspect.signature(UML2_LinkEndCreationData.__init__)
     params = list(sig.parameters.keys())
     assert "isReplaceAll" in params, "Missing parameter 'isReplaceAll'"
 
-def test_uml2::linkendcreationdata_has_isReplaceAll():
-    assert hasattr(UML2::LinkEndCreationData, "isReplaceAll")
+def test_uml2_linkendcreationdata_has_isReplaceAll():
+    assert hasattr(UML2_LinkEndCreationData, "isReplaceAll")
     descriptor = None
-    for klass in UML2::LinkEndCreationData.__mro__:
+    for klass in UML2_LinkEndCreationData.__mro__:
         if "isReplaceAll" in klass.__dict__:
             descriptor = klass.__dict__["isReplaceAll"]
             break
@@ -954,30 +954,2462 @@ def test_linkaction_constructor_args():
 
 
 
-def test_uml2::writelinkaction_is_not_abstract():
-    assert not inspect.isabstract(UML2::WriteLinkAction)
+def test_uml2_writelinkaction_is_not_abstract():
+    assert not inspect.isabstract(UML2_WriteLinkAction)
 
 
-def test_uml2::writelinkaction_constructor_exists():
-    assert callable(UML2::WriteLinkAction.__init__)
+def test_uml2_writelinkaction_constructor_exists():
+    assert callable(UML2_WriteLinkAction.__init__)
 
 
-def test_uml2::writelinkaction_constructor_args():
-    sig = inspect.signature(UML2::WriteLinkAction.__init__)
+def test_uml2_writelinkaction_constructor_args():
+    sig = inspect.signature(UML2_WriteLinkAction.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_uml2::readlinkaction_is_not_abstract():
-    assert not inspect.isabstract(UML2::ReadLinkAction)
+def test_uml2_readlinkaction_is_not_abstract():
+    assert not inspect.isabstract(UML2_ReadLinkAction)
 
 
-def test_uml2::readlinkaction_constructor_exists():
-    assert callable(UML2::ReadLinkAction.__init__)
+def test_uml2_readlinkaction_constructor_exists():
+    assert callable(UML2_ReadLinkAction.__init__)
 
 
-def test_uml2::readlinkaction_constructor_args():
-    sig = inspect.signature(UML2::ReadLinkAction.__init__)
+def test_uml2_readlinkaction_constructor_args():
+    sig = inspect.signature(UML2_ReadLinkAction.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_writestructuralfeatureaction_is_not_abstract():
+    assert not inspect.isabstract(WriteStructuralFeatureAction)
+
+
+def test_writestructuralfeatureaction_constructor_exists():
+    assert callable(WriteStructuralFeatureAction.__init__)
+
+
+def test_writestructuralfeatureaction_constructor_args():
+    sig = inspect.signature(WriteStructuralFeatureAction.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_uml2_addstructuralfeaturevalueaction_is_not_abstract():
+    assert not inspect.isabstract(UML2_AddStructuralFeatureValueAction)
+
+
+def test_uml2_addstructuralfeaturevalueaction_constructor_exists():
+    assert callable(UML2_AddStructuralFeatureValueAction.__init__)
+
+
+def test_uml2_addstructuralfeaturevalueaction_constructor_args():
+    sig = inspect.signature(UML2_AddStructuralFeatureValueAction.__init__)
+    params = list(sig.parameters.keys())
+    assert "isReplaceAll" in params, "Missing parameter 'isReplaceAll'"
+
+def test_uml2_addstructuralfeaturevalueaction_has_isReplaceAll():
+    assert hasattr(UML2_AddStructuralFeatureValueAction, "isReplaceAll")
+    descriptor = None
+    for klass in UML2_AddStructuralFeatureValueAction.__mro__:
+        if "isReplaceAll" in klass.__dict__:
+            descriptor = klass.__dict__["isReplaceAll"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_uml2_durationobservationaction_is_not_abstract():
+    assert not inspect.isabstract(UML2_DurationObservationAction)
+
+
+def test_uml2_durationobservationaction_constructor_exists():
+    assert callable(UML2_DurationObservationAction.__init__)
+
+
+def test_uml2_durationobservationaction_constructor_args():
+    sig = inspect.signature(UML2_DurationObservationAction.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_uml2_timeobservationaction_is_not_abstract():
+    assert not inspect.isabstract(UML2_TimeObservationAction)
+
+
+def test_uml2_timeobservationaction_constructor_exists():
+    assert callable(UML2_TimeObservationAction.__init__)
+
+
+def test_uml2_timeobservationaction_constructor_args():
+    sig = inspect.signature(UML2_TimeObservationAction.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_uml2_removestructuralfeaturevalueaction_is_not_abstract():
+    assert not inspect.isabstract(UML2_RemoveStructuralFeatureValueAction)
+
+
+def test_uml2_removestructuralfeaturevalueaction_constructor_exists():
+    assert callable(UML2_RemoveStructuralFeatureValueAction.__init__)
+
+
+def test_uml2_removestructuralfeaturevalueaction_constructor_args():
+    sig = inspect.signature(UML2_RemoveStructuralFeatureValueAction.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_structuralfeatureaction_is_not_abstract():
+    assert not inspect.isabstract(StructuralFeatureAction)
+
+
+def test_structuralfeatureaction_constructor_exists():
+    assert callable(StructuralFeatureAction.__init__)
+
+
+def test_structuralfeatureaction_constructor_args():
+    sig = inspect.signature(StructuralFeatureAction.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_uml2_clearstructuralfeatureaction_is_not_abstract():
+    assert not inspect.isabstract(UML2_ClearStructuralFeatureAction)
+
+
+def test_uml2_clearstructuralfeatureaction_constructor_exists():
+    assert callable(UML2_ClearStructuralFeatureAction.__init__)
+
+
+def test_uml2_clearstructuralfeatureaction_constructor_args():
+    sig = inspect.signature(UML2_ClearStructuralFeatureAction.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_uml2_writestructuralfeatureaction_is_not_abstract():
+    assert not inspect.isabstract(UML2_WriteStructuralFeatureAction)
+
+
+def test_uml2_writestructuralfeatureaction_constructor_exists():
+    assert callable(UML2_WriteStructuralFeatureAction.__init__)
+
+
+def test_uml2_writestructuralfeatureaction_constructor_args():
+    sig = inspect.signature(UML2_WriteStructuralFeatureAction.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_uml2_readstructuralfeatureaction_is_not_abstract():
+    assert not inspect.isabstract(UML2_ReadStructuralFeatureAction)
+
+
+def test_uml2_readstructuralfeatureaction_constructor_exists():
+    assert callable(UML2_ReadStructuralFeatureAction.__init__)
+
+
+def test_uml2_readstructuralfeatureaction_constructor_args():
+    sig = inspect.signature(UML2_ReadStructuralFeatureAction.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_state_is_not_abstract():
+    assert not inspect.isabstract(State)
+
+
+def test_state_constructor_exists():
+    assert callable(State.__init__)
+
+
+def test_state_constructor_args():
+    sig = inspect.signature(State.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_uml2_finalstate_is_not_abstract():
+    assert not inspect.isabstract(UML2_FinalState)
+
+
+def test_uml2_finalstate_constructor_exists():
+    assert callable(UML2_FinalState.__init__)
+
+
+def test_uml2_finalstate_constructor_args():
+    sig = inspect.signature(UML2_FinalState.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_vertex_is_not_abstract():
+    assert not inspect.isabstract(Vertex)
+
+
+def test_vertex_constructor_exists():
+    assert callable(Vertex.__init__)
+
+
+def test_vertex_constructor_args():
+    sig = inspect.signature(Vertex.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_uml2_connectionpointreference_is_not_abstract():
+    assert not inspect.isabstract(UML2_ConnectionPointReference)
+
+
+def test_uml2_connectionpointreference_constructor_exists():
+    assert callable(UML2_ConnectionPointReference.__init__)
+
+
+def test_uml2_connectionpointreference_constructor_args():
+    sig = inspect.signature(UML2_ConnectionPointReference.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_uml2_pseudostate_is_not_abstract():
+    assert not inspect.isabstract(UML2_Pseudostate)
+
+
+def test_uml2_pseudostate_constructor_exists():
+    assert callable(UML2_Pseudostate.__init__)
+
+
+def test_uml2_pseudostate_constructor_args():
+    sig = inspect.signature(UML2_Pseudostate.__init__)
+    params = list(sig.parameters.keys())
+    assert "kind" in params, "Missing parameter 'kind'"
+
+def test_uml2_pseudostate_has_kind():
+    assert hasattr(UML2_Pseudostate, "kind")
+    descriptor = None
+    for klass in UML2_Pseudostate.__mro__:
+        if "kind" in klass.__dict__:
+            descriptor = klass.__dict__["kind"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_constraint_is_not_abstract():
+    assert not inspect.isabstract(Constraint)
+
+
+def test_constraint_constructor_exists():
+    assert callable(Constraint.__init__)
+
+
+def test_constraint_constructor_args():
+    sig = inspect.signature(Constraint.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_uml2_intervalconstraint_is_not_abstract():
+    assert not inspect.isabstract(UML2_IntervalConstraint)
+
+
+def test_uml2_intervalconstraint_constructor_exists():
+    assert callable(UML2_IntervalConstraint.__init__)
+
+
+def test_uml2_intervalconstraint_constructor_args():
+    sig = inspect.signature(UML2_IntervalConstraint.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_uml2_interactionconstraint_is_not_abstract():
+    assert not inspect.isabstract(UML2_InteractionConstraint)
+
+
+def test_uml2_interactionconstraint_constructor_exists():
+    assert callable(UML2_InteractionConstraint.__init__)
+
+
+def test_uml2_interactionconstraint_constructor_args():
+    sig = inspect.signature(UML2_InteractionConstraint.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_interactionoccurrence_is_not_abstract():
+    assert not inspect.isabstract(InteractionOccurrence)
+
+
+def test_interactionoccurrence_constructor_exists():
+    assert callable(InteractionOccurrence.__init__)
+
+
+def test_interactionoccurrence_constructor_args():
+    sig = inspect.signature(InteractionOccurrence.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_templatesignature_is_not_abstract():
+    assert not inspect.isabstract(TemplateSignature)
+
+
+def test_templatesignature_constructor_exists():
+    assert callable(TemplateSignature.__init__)
+
+
+def test_templatesignature_constructor_args():
+    sig = inspect.signature(TemplateSignature.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_templateparameter_is_not_abstract():
+    assert not inspect.isabstract(TemplateParameter)
+
+
+def test_templateparameter_constructor_exists():
+    assert callable(TemplateParameter.__init__)
+
+
+def test_templateparameter_constructor_args():
+    sig = inspect.signature(TemplateParameter.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_uml2_connectableelementtemplateparameter_is_not_abstract():
+    assert not inspect.isabstract(UML2_ConnectableElementTemplateParameter)
+
+
+def test_uml2_connectableelementtemplateparameter_constructor_exists():
+    assert callable(UML2_ConnectableElementTemplateParameter.__init__)
+
+
+def test_uml2_connectableelementtemplateparameter_constructor_args():
+    sig = inspect.signature(UML2_ConnectableElementTemplateParameter.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_uml2_classifiertemplateparameter_is_not_abstract():
+    assert not inspect.isabstract(UML2_ClassifierTemplateParameter)
+
+
+def test_uml2_classifiertemplateparameter_constructor_exists():
+    assert callable(UML2_ClassifierTemplateParameter.__init__)
+
+
+def test_uml2_classifiertemplateparameter_constructor_args():
+    sig = inspect.signature(UML2_ClassifierTemplateParameter.__init__)
+    params = list(sig.parameters.keys())
+    assert "allowSubstitutable" in params, "Missing parameter 'allowSubstitutable'"
+
+def test_uml2_classifiertemplateparameter_has_allowSubstitutable():
+    assert hasattr(UML2_ClassifierTemplateParameter, "allowSubstitutable")
+    descriptor = None
+    for klass in UML2_ClassifierTemplateParameter.__mro__:
+        if "allowSubstitutable" in klass.__dict__:
+            descriptor = klass.__dict__["allowSubstitutable"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_uml2_operationtemplateparameter_is_not_abstract():
+    assert not inspect.isabstract(UML2_OperationTemplateParameter)
+
+
+def test_uml2_operationtemplateparameter_constructor_exists():
+    assert callable(UML2_OperationTemplateParameter.__init__)
+
+
+def test_uml2_operationtemplateparameter_constructor_args():
+    sig = inspect.signature(UML2_OperationTemplateParameter.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_eventoccurrence_is_not_abstract():
+    assert not inspect.isabstract(EventOccurrence)
+
+
+def test_eventoccurrence_constructor_exists():
+    assert callable(EventOccurrence.__init__)
+
+
+def test_eventoccurrence_constructor_args():
+    sig = inspect.signature(EventOccurrence.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_uml2_stop_is_not_abstract():
+    assert not inspect.isabstract(UML2_Stop)
+
+
+def test_uml2_stop_constructor_exists():
+    assert callable(UML2_Stop.__init__)
+
+
+def test_uml2_stop_constructor_args():
+    sig = inspect.signature(UML2_Stop.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_messageend_is_not_abstract():
+    assert not inspect.isabstract(MessageEnd)
+
+
+def test_messageend_constructor_exists():
+    assert callable(MessageEnd.__init__)
+
+
+def test_messageend_constructor_args():
+    sig = inspect.signature(MessageEnd.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_uml2_partdecomposition_is_not_abstract():
+    assert not inspect.isabstract(UML2_PartDecomposition)
+
+
+def test_uml2_partdecomposition_constructor_exists():
+    assert callable(UML2_PartDecomposition.__init__)
+
+
+def test_uml2_partdecomposition_constructor_args():
+    sig = inspect.signature(UML2_PartDecomposition.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_uml2_gate_is_not_abstract():
+    assert not inspect.isabstract(UML2_Gate)
+
+
+def test_uml2_gate_constructor_exists():
+    assert callable(UML2_Gate.__init__)
+
+
+def test_uml2_gate_constructor_args():
+    sig = inspect.signature(UML2_Gate.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_interactionfragment_is_not_abstract():
+    assert not inspect.isabstract(InteractionFragment)
+
+
+def test_interactionfragment_constructor_exists():
+    assert callable(InteractionFragment.__init__)
+
+
+def test_interactionfragment_constructor_args():
+    sig = inspect.signature(InteractionFragment.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_uml2_continuation_is_not_abstract():
+    assert not inspect.isabstract(UML2_Continuation)
+
+
+def test_uml2_continuation_constructor_exists():
+    assert callable(UML2_Continuation.__init__)
+
+
+def test_uml2_continuation_constructor_args():
+    sig = inspect.signature(UML2_Continuation.__init__)
+    params = list(sig.parameters.keys())
+    assert "setting" in params, "Missing parameter 'setting'"
+
+def test_uml2_continuation_has_setting():
+    assert hasattr(UML2_Continuation, "setting")
+    descriptor = None
+    for klass in UML2_Continuation.__mro__:
+        if "setting" in klass.__dict__:
+            descriptor = klass.__dict__["setting"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_uml2_interactionoccurrence_is_not_abstract():
+    assert not inspect.isabstract(UML2_InteractionOccurrence)
+
+
+def test_uml2_interactionoccurrence_constructor_exists():
+    assert callable(UML2_InteractionOccurrence.__init__)
+
+
+def test_uml2_interactionoccurrence_constructor_args():
+    sig = inspect.signature(UML2_InteractionOccurrence.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_uml2_executionoccurrence_is_not_abstract():
+    assert not inspect.isabstract(UML2_ExecutionOccurrence)
+
+
+def test_uml2_executionoccurrence_constructor_exists():
+    assert callable(UML2_ExecutionOccurrence.__init__)
+
+
+def test_uml2_executionoccurrence_constructor_args():
+    sig = inspect.signature(UML2_ExecutionOccurrence.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_uml2_combinedfragment_is_not_abstract():
+    assert not inspect.isabstract(UML2_CombinedFragment)
+
+
+def test_uml2_combinedfragment_constructor_exists():
+    assert callable(UML2_CombinedFragment.__init__)
+
+
+def test_uml2_combinedfragment_constructor_args():
+    sig = inspect.signature(UML2_CombinedFragment.__init__)
+    params = list(sig.parameters.keys())
+    assert "interactionOperator" in params, "Missing parameter 'interactionOperator'"
+
+def test_uml2_combinedfragment_has_interactionOperator():
+    assert hasattr(UML2_CombinedFragment, "interactionOperator")
+    descriptor = None
+    for klass in UML2_CombinedFragment.__mro__:
+        if "interactionOperator" in klass.__dict__:
+            descriptor = klass.__dict__["interactionOperator"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_uml2_stateinvariant_is_not_abstract():
+    assert not inspect.isabstract(UML2_StateInvariant)
+
+
+def test_uml2_stateinvariant_constructor_exists():
+    assert callable(UML2_StateInvariant.__init__)
+
+
+def test_uml2_stateinvariant_constructor_args():
+    sig = inspect.signature(UML2_StateInvariant.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_uml2_eventoccurrence_is_not_abstract():
+    assert not inspect.isabstract(UML2_EventOccurrence)
+
+
+def test_uml2_eventoccurrence_constructor_exists():
+    assert callable(UML2_EventOccurrence.__init__)
+
+
+def test_uml2_eventoccurrence_constructor_args():
+    sig = inspect.signature(UML2_EventOccurrence.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_structuredactivitynode_is_not_abstract():
+    assert not inspect.isabstract(StructuredActivityNode)
+
+
+def test_structuredactivitynode_constructor_exists():
+    assert callable(StructuredActivityNode.__init__)
+
+
+def test_structuredactivitynode_constructor_args():
+    sig = inspect.signature(StructuredActivityNode.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_uml2_expansionregion_is_not_abstract():
+    assert not inspect.isabstract(UML2_ExpansionRegion)
+
+
+def test_uml2_expansionregion_constructor_exists():
+    assert callable(UML2_ExpansionRegion.__init__)
+
+
+def test_uml2_expansionregion_constructor_args():
+    sig = inspect.signature(UML2_ExpansionRegion.__init__)
+    params = list(sig.parameters.keys())
+    assert "mode" in params, "Missing parameter 'mode'"
+
+def test_uml2_expansionregion_has_mode():
+    assert hasattr(UML2_ExpansionRegion, "mode")
+    descriptor = None
+    for klass in UML2_ExpansionRegion.__mro__:
+        if "mode" in klass.__dict__:
+            descriptor = klass.__dict__["mode"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_uml2_loopnode_is_not_abstract():
+    assert not inspect.isabstract(UML2_LoopNode)
+
+
+def test_uml2_loopnode_constructor_exists():
+    assert callable(UML2_LoopNode.__init__)
+
+
+def test_uml2_loopnode_constructor_args():
+    sig = inspect.signature(UML2_LoopNode.__init__)
+    params = list(sig.parameters.keys())
+    assert "isTestedFirst" in params, "Missing parameter 'isTestedFirst'"
+
+def test_uml2_loopnode_has_isTestedFirst():
+    assert hasattr(UML2_LoopNode, "isTestedFirst")
+    descriptor = None
+    for klass in UML2_LoopNode.__mro__:
+        if "isTestedFirst" in klass.__dict__:
+            descriptor = klass.__dict__["isTestedFirst"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_uml2_conditionalnode_is_not_abstract():
+    assert not inspect.isabstract(UML2_ConditionalNode)
+
+
+def test_uml2_conditionalnode_constructor_exists():
+    assert callable(UML2_ConditionalNode.__init__)
+
+
+def test_uml2_conditionalnode_constructor_args():
+    sig = inspect.signature(UML2_ConditionalNode.__init__)
+    params = list(sig.parameters.keys())
+    assert "isDeterminate" in params, "Missing parameter 'isDeterminate'"
+    assert "isAssured" in params, "Missing parameter 'isAssured'"
+
+def test_uml2_conditionalnode_has_isDeterminate():
+    assert hasattr(UML2_ConditionalNode, "isDeterminate")
+    descriptor = None
+    for klass in UML2_ConditionalNode.__mro__:
+        if "isDeterminate" in klass.__dict__:
+            descriptor = klass.__dict__["isDeterminate"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_uml2_conditionalnode_has_isAssured():
+    assert hasattr(UML2_ConditionalNode, "isAssured")
+    descriptor = None
+    for klass in UML2_ConditionalNode.__mro__:
+        if "isAssured" in klass.__dict__:
+            descriptor = klass.__dict__["isAssured"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_activitygroup_is_not_abstract():
+    assert not inspect.isabstract(ActivityGroup)
+
+
+def test_activitygroup_constructor_exists():
+    assert callable(ActivityGroup.__init__)
+
+
+def test_activitygroup_constructor_args():
+    sig = inspect.signature(ActivityGroup.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_action_is_not_abstract():
+    assert not inspect.isabstract(Action)
+
+
+def test_action_constructor_exists():
+    assert callable(Action.__init__)
+
+
+def test_action_constructor_args():
+    sig = inspect.signature(Action.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_uml2_createobjectaction_is_not_abstract():
+    assert not inspect.isabstract(UML2_CreateObjectAction)
+
+
+def test_uml2_createobjectaction_constructor_exists():
+    assert callable(UML2_CreateObjectAction.__init__)
+
+
+def test_uml2_createobjectaction_constructor_args():
+    sig = inspect.signature(UML2_CreateObjectAction.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_uml2_readisclassifiedobjectaction_is_not_abstract():
+    assert not inspect.isabstract(UML2_ReadIsClassifiedObjectAction)
+
+
+def test_uml2_readisclassifiedobjectaction_constructor_exists():
+    assert callable(UML2_ReadIsClassifiedObjectAction.__init__)
+
+
+def test_uml2_readisclassifiedobjectaction_constructor_args():
+    sig = inspect.signature(UML2_ReadIsClassifiedObjectAction.__init__)
+    params = list(sig.parameters.keys())
+    assert "isDirect" in params, "Missing parameter 'isDirect'"
+
+def test_uml2_readisclassifiedobjectaction_has_isDirect():
+    assert hasattr(UML2_ReadIsClassifiedObjectAction, "isDirect")
+    descriptor = None
+    for klass in UML2_ReadIsClassifiedObjectAction.__mro__:
+        if "isDirect" in klass.__dict__:
+            descriptor = klass.__dict__["isDirect"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_uml2_clearassociationaction_is_not_abstract():
+    assert not inspect.isabstract(UML2_ClearAssociationAction)
+
+
+def test_uml2_clearassociationaction_constructor_exists():
+    assert callable(UML2_ClearAssociationAction.__init__)
+
+
+def test_uml2_clearassociationaction_constructor_args():
+    sig = inspect.signature(UML2_ClearAssociationAction.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_uml2_reclassifyobjectaction_is_not_abstract():
+    assert not inspect.isabstract(UML2_ReclassifyObjectAction)
+
+
+def test_uml2_reclassifyobjectaction_constructor_exists():
+    assert callable(UML2_ReclassifyObjectAction.__init__)
+
+
+def test_uml2_reclassifyobjectaction_constructor_args():
+    sig = inspect.signature(UML2_ReclassifyObjectAction.__init__)
+    params = list(sig.parameters.keys())
+    assert "isReplaceAll" in params, "Missing parameter 'isReplaceAll'"
+
+def test_uml2_reclassifyobjectaction_has_isReplaceAll():
+    assert hasattr(UML2_ReclassifyObjectAction, "isReplaceAll")
+    descriptor = None
+    for klass in UML2_ReclassifyObjectAction.__mro__:
+        if "isReplaceAll" in klass.__dict__:
+            descriptor = klass.__dict__["isReplaceAll"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_uml2_invocationaction_is_not_abstract():
+    assert not inspect.isabstract(UML2_InvocationAction)
+
+
+def test_uml2_invocationaction_constructor_exists():
+    assert callable(UML2_InvocationAction.__init__)
+
+
+def test_uml2_invocationaction_constructor_args():
+    sig = inspect.signature(UML2_InvocationAction.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_uml2_readselfaction_is_not_abstract():
+    assert not inspect.isabstract(UML2_ReadSelfAction)
+
+
+def test_uml2_readselfaction_constructor_exists():
+    assert callable(UML2_ReadSelfAction.__init__)
+
+
+def test_uml2_readselfaction_constructor_args():
+    sig = inspect.signature(UML2_ReadSelfAction.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_uml2_linkaction_is_not_abstract():
+    assert not inspect.isabstract(UML2_LinkAction)
+
+
+def test_uml2_linkaction_constructor_exists():
+    assert callable(UML2_LinkAction.__init__)
+
+
+def test_uml2_linkaction_constructor_args():
+    sig = inspect.signature(UML2_LinkAction.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_uml2_replyaction_is_not_abstract():
+    assert not inspect.isabstract(UML2_ReplyAction)
+
+
+def test_uml2_replyaction_constructor_exists():
+    assert callable(UML2_ReplyAction.__init__)
+
+
+def test_uml2_replyaction_constructor_args():
+    sig = inspect.signature(UML2_ReplyAction.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_uml2_readlinkobjectendaction_is_not_abstract():
+    assert not inspect.isabstract(UML2_ReadLinkObjectEndAction)
+
+
+def test_uml2_readlinkobjectendaction_constructor_exists():
+    assert callable(UML2_ReadLinkObjectEndAction.__init__)
+
+
+def test_uml2_readlinkobjectendaction_constructor_args():
+    sig = inspect.signature(UML2_ReadLinkObjectEndAction.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_uml2_raiseexceptionaction_is_not_abstract():
+    assert not inspect.isabstract(UML2_RaiseExceptionAction)
+
+
+def test_uml2_raiseexceptionaction_constructor_exists():
+    assert callable(UML2_RaiseExceptionAction.__init__)
+
+
+def test_uml2_raiseexceptionaction_constructor_args():
+    sig = inspect.signature(UML2_RaiseExceptionAction.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_uml2_testidentityaction_is_not_abstract():
+    assert not inspect.isabstract(UML2_TestIdentityAction)
+
+
+def test_uml2_testidentityaction_constructor_exists():
+    assert callable(UML2_TestIdentityAction.__init__)
+
+
+def test_uml2_testidentityaction_constructor_args():
+    sig = inspect.signature(UML2_TestIdentityAction.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_uml2_destroyobjectaction_is_not_abstract():
+    assert not inspect.isabstract(UML2_DestroyObjectAction)
+
+
+def test_uml2_destroyobjectaction_constructor_exists():
+    assert callable(UML2_DestroyObjectAction.__init__)
+
+
+def test_uml2_destroyobjectaction_constructor_args():
+    sig = inspect.signature(UML2_DestroyObjectAction.__init__)
+    params = list(sig.parameters.keys())
+    assert "isDestroyOwnedObjects" in params, "Missing parameter 'isDestroyOwnedObjects'"
+    assert "isDestroyLinks" in params, "Missing parameter 'isDestroyLinks'"
+
+def test_uml2_destroyobjectaction_has_isDestroyOwnedObjects():
+    assert hasattr(UML2_DestroyObjectAction, "isDestroyOwnedObjects")
+    descriptor = None
+    for klass in UML2_DestroyObjectAction.__mro__:
+        if "isDestroyOwnedObjects" in klass.__dict__:
+            descriptor = klass.__dict__["isDestroyOwnedObjects"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_uml2_destroyobjectaction_has_isDestroyLinks():
+    assert hasattr(UML2_DestroyObjectAction, "isDestroyLinks")
+    descriptor = None
+    for klass in UML2_DestroyObjectAction.__mro__:
+        if "isDestroyLinks" in klass.__dict__:
+            descriptor = klass.__dict__["isDestroyLinks"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_uml2_readextentaction_is_not_abstract():
+    assert not inspect.isabstract(UML2_ReadExtentAction)
+
+
+def test_uml2_readextentaction_constructor_exists():
+    assert callable(UML2_ReadExtentAction.__init__)
+
+
+def test_uml2_readextentaction_constructor_args():
+    sig = inspect.signature(UML2_ReadExtentAction.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_uml2_variableaction_is_not_abstract():
+    assert not inspect.isabstract(UML2_VariableAction)
+
+
+def test_uml2_variableaction_constructor_exists():
+    assert callable(UML2_VariableAction.__init__)
+
+
+def test_uml2_variableaction_constructor_args():
+    sig = inspect.signature(UML2_VariableAction.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_uml2_structuralfeatureaction_is_not_abstract():
+    assert not inspect.isabstract(UML2_StructuralFeatureAction)
+
+
+def test_uml2_structuralfeatureaction_constructor_exists():
+    assert callable(UML2_StructuralFeatureAction.__init__)
+
+
+def test_uml2_structuralfeatureaction_constructor_args():
+    sig = inspect.signature(UML2_StructuralFeatureAction.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_uml2_applyfunctionaction_is_not_abstract():
+    assert not inspect.isabstract(UML2_ApplyFunctionAction)
+
+
+def test_uml2_applyfunctionaction_constructor_exists():
+    assert callable(UML2_ApplyFunctionAction.__init__)
+
+
+def test_uml2_applyfunctionaction_constructor_args():
+    sig = inspect.signature(UML2_ApplyFunctionAction.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_uml2_readlinkobjectendqualifieraction_is_not_abstract():
+    assert not inspect.isabstract(UML2_ReadLinkObjectEndQualifierAction)
+
+
+def test_uml2_readlinkobjectendqualifieraction_constructor_exists():
+    assert callable(UML2_ReadLinkObjectEndQualifierAction.__init__)
+
+
+def test_uml2_readlinkobjectendqualifieraction_constructor_args():
+    sig = inspect.signature(UML2_ReadLinkObjectEndQualifierAction.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_uml2_startownedbehavioraction_is_not_abstract():
+    assert not inspect.isabstract(UML2_StartOwnedBehaviorAction)
+
+
+def test_uml2_startownedbehavioraction_constructor_exists():
+    assert callable(UML2_StartOwnedBehaviorAction.__init__)
+
+
+def test_uml2_startownedbehavioraction_constructor_args():
+    sig = inspect.signature(UML2_StartOwnedBehaviorAction.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_uml2_accepteventaction_is_not_abstract():
+    assert not inspect.isabstract(UML2_AcceptEventAction)
+
+
+def test_uml2_accepteventaction_constructor_exists():
+    assert callable(UML2_AcceptEventAction.__init__)
+
+
+def test_uml2_accepteventaction_constructor_args():
+    sig = inspect.signature(UML2_AcceptEventAction.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_trigger_is_not_abstract():
+    assert not inspect.isabstract(Trigger)
+
+
+def test_trigger_constructor_exists():
+    assert callable(Trigger.__init__)
+
+
+def test_trigger_constructor_args():
+    sig = inspect.signature(Trigger.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_uml2_timetrigger_is_not_abstract():
+    assert not inspect.isabstract(UML2_TimeTrigger)
+
+
+def test_uml2_timetrigger_constructor_exists():
+    assert callable(UML2_TimeTrigger.__init__)
+
+
+def test_uml2_timetrigger_constructor_args():
+    sig = inspect.signature(UML2_TimeTrigger.__init__)
+    params = list(sig.parameters.keys())
+    assert "isRelative" in params, "Missing parameter 'isRelative'"
+
+def test_uml2_timetrigger_has_isRelative():
+    assert hasattr(UML2_TimeTrigger, "isRelative")
+    descriptor = None
+    for klass in UML2_TimeTrigger.__mro__:
+        if "isRelative" in klass.__dict__:
+            descriptor = klass.__dict__["isRelative"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_uml2_changetrigger_is_not_abstract():
+    assert not inspect.isabstract(UML2_ChangeTrigger)
+
+
+def test_uml2_changetrigger_constructor_exists():
+    assert callable(UML2_ChangeTrigger.__init__)
+
+
+def test_uml2_changetrigger_constructor_args():
+    sig = inspect.signature(UML2_ChangeTrigger.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_uml2_messagetrigger_is_not_abstract():
+    assert not inspect.isabstract(UML2_MessageTrigger)
+
+
+def test_uml2_messagetrigger_constructor_exists():
+    assert callable(UML2_MessageTrigger.__init__)
+
+
+def test_uml2_messagetrigger_constructor_args():
+    sig = inspect.signature(UML2_MessageTrigger.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_messagetrigger_is_not_abstract():
+    assert not inspect.isabstract(MessageTrigger)
+
+
+def test_messagetrigger_constructor_exists():
+    assert callable(MessageTrigger.__init__)
+
+
+def test_messagetrigger_constructor_args():
+    sig = inspect.signature(MessageTrigger.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_uml2_anytrigger_is_not_abstract():
+    assert not inspect.isabstract(UML2_AnyTrigger)
+
+
+def test_uml2_anytrigger_constructor_exists():
+    assert callable(UML2_AnyTrigger.__init__)
+
+
+def test_uml2_anytrigger_constructor_args():
+    sig = inspect.signature(UML2_AnyTrigger.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_uml2_signaltrigger_is_not_abstract():
+    assert not inspect.isabstract(UML2_SignalTrigger)
+
+
+def test_uml2_signaltrigger_constructor_exists():
+    assert callable(UML2_SignalTrigger.__init__)
+
+
+def test_uml2_signaltrigger_constructor_args():
+    sig = inspect.signature(UML2_SignalTrigger.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_uml2_calltrigger_is_not_abstract():
+    assert not inspect.isabstract(UML2_CallTrigger)
+
+
+def test_uml2_calltrigger_constructor_exists():
+    assert callable(UML2_CallTrigger.__init__)
+
+
+def test_uml2_calltrigger_constructor_args():
+    sig = inspect.signature(UML2_CallTrigger.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_structuredclassifier_is_not_abstract():
+    assert not inspect.isabstract(StructuredClassifier)
+
+
+def test_structuredclassifier_constructor_exists():
+    assert callable(StructuredClassifier.__init__)
+
+
+def test_structuredclassifier_constructor_args():
+    sig = inspect.signature(StructuredClassifier.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_uml2_encapsulatedclassifier_is_not_abstract():
+    assert not inspect.isabstract(UML2_EncapsulatedClassifier)
+
+
+def test_uml2_encapsulatedclassifier_constructor_exists():
+    assert callable(UML2_EncapsulatedClassifier.__init__)
+
+
+def test_uml2_encapsulatedclassifier_constructor_args():
+    sig = inspect.signature(UML2_EncapsulatedClassifier.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_uml2_protocolstatemachine_is_not_abstract():
+    assert not inspect.isabstract(UML2_ProtocolStateMachine)
+
+
+def test_uml2_protocolstatemachine_constructor_exists():
+    assert callable(UML2_ProtocolStateMachine.__init__)
+
+
+def test_uml2_protocolstatemachine_constructor_args():
+    sig = inspect.signature(UML2_ProtocolStateMachine.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_inputpin_is_not_abstract():
+    assert not inspect.isabstract(InputPin)
+
+
+def test_inputpin_constructor_exists():
+    assert callable(InputPin.__init__)
+
+
+def test_inputpin_constructor_args():
+    sig = inspect.signature(InputPin.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_uml2_valuepin_is_not_abstract():
+    assert not inspect.isabstract(UML2_ValuePin)
+
+
+def test_uml2_valuepin_constructor_exists():
+    assert callable(UML2_ValuePin.__init__)
+
+
+def test_uml2_valuepin_constructor_args():
+    sig = inspect.signature(UML2_ValuePin.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_objectnode_is_not_abstract():
+    assert not inspect.isabstract(ObjectNode)
+
+
+def test_objectnode_constructor_exists():
+    assert callable(ObjectNode.__init__)
+
+
+def test_objectnode_constructor_args():
+    sig = inspect.signature(ObjectNode.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_uml2_expansionnode_is_not_abstract():
+    assert not inspect.isabstract(UML2_ExpansionNode)
+
+
+def test_uml2_expansionnode_constructor_exists():
+    assert callable(UML2_ExpansionNode.__init__)
+
+
+def test_uml2_expansionnode_constructor_args():
+    sig = inspect.signature(UML2_ExpansionNode.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_uml2_centralbuffernode_is_not_abstract():
+    assert not inspect.isabstract(UML2_CentralBufferNode)
+
+
+def test_uml2_centralbuffernode_constructor_exists():
+    assert callable(UML2_CentralBufferNode.__init__)
+
+
+def test_uml2_centralbuffernode_constructor_args():
+    sig = inspect.signature(UML2_CentralBufferNode.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_uml2_activityparameternode_is_not_abstract():
+    assert not inspect.isabstract(UML2_ActivityParameterNode)
+
+
+def test_uml2_activityparameternode_constructor_exists():
+    assert callable(UML2_ActivityParameterNode.__init__)
+
+
+def test_uml2_activityparameternode_constructor_args():
+    sig = inspect.signature(UML2_ActivityParameterNode.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_pin_is_not_abstract():
+    assert not inspect.isabstract(Pin)
+
+
+def test_pin_constructor_exists():
+    assert callable(Pin.__init__)
+
+
+def test_pin_constructor_args():
+    sig = inspect.signature(Pin.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_finalnode_is_not_abstract():
+    assert not inspect.isabstract(FinalNode)
+
+
+def test_finalnode_constructor_exists():
+    assert callable(FinalNode.__init__)
+
+
+def test_finalnode_constructor_args():
+    sig = inspect.signature(FinalNode.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_uml2_flowfinalnode_is_not_abstract():
+    assert not inspect.isabstract(UML2_FlowFinalNode)
+
+
+def test_uml2_flowfinalnode_constructor_exists():
+    assert callable(UML2_FlowFinalNode.__init__)
+
+
+def test_uml2_flowfinalnode_constructor_args():
+    sig = inspect.signature(UML2_FlowFinalNode.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_uml2_activityfinalnode_is_not_abstract():
+    assert not inspect.isabstract(UML2_ActivityFinalNode)
+
+
+def test_uml2_activityfinalnode_constructor_exists():
+    assert callable(UML2_ActivityFinalNode.__init__)
+
+
+def test_uml2_activityfinalnode_constructor_args():
+    sig = inspect.signature(UML2_ActivityFinalNode.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_controlnode_is_not_abstract():
+    assert not inspect.isabstract(ControlNode)
+
+
+def test_controlnode_constructor_exists():
+    assert callable(ControlNode.__init__)
+
+
+def test_controlnode_constructor_args():
+    sig = inspect.signature(ControlNode.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_uml2_joinnode_is_not_abstract():
+    assert not inspect.isabstract(UML2_JoinNode)
+
+
+def test_uml2_joinnode_constructor_exists():
+    assert callable(UML2_JoinNode.__init__)
+
+
+def test_uml2_joinnode_constructor_args():
+    sig = inspect.signature(UML2_JoinNode.__init__)
+    params = list(sig.parameters.keys())
+    assert "isCombineDuplicate" in params, "Missing parameter 'isCombineDuplicate'"
+
+def test_uml2_joinnode_has_isCombineDuplicate():
+    assert hasattr(UML2_JoinNode, "isCombineDuplicate")
+    descriptor = None
+    for klass in UML2_JoinNode.__mro__:
+        if "isCombineDuplicate" in klass.__dict__:
+            descriptor = klass.__dict__["isCombineDuplicate"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_uml2_finalnode_is_not_abstract():
+    assert not inspect.isabstract(UML2_FinalNode)
+
+
+def test_uml2_finalnode_constructor_exists():
+    assert callable(UML2_FinalNode.__init__)
+
+
+def test_uml2_finalnode_constructor_args():
+    sig = inspect.signature(UML2_FinalNode.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_uml2_decisionnode_is_not_abstract():
+    assert not inspect.isabstract(UML2_DecisionNode)
+
+
+def test_uml2_decisionnode_constructor_exists():
+    assert callable(UML2_DecisionNode.__init__)
+
+
+def test_uml2_decisionnode_constructor_args():
+    sig = inspect.signature(UML2_DecisionNode.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_uml2_forknode_is_not_abstract():
+    assert not inspect.isabstract(UML2_ForkNode)
+
+
+def test_uml2_forknode_constructor_exists():
+    assert callable(UML2_ForkNode.__init__)
+
+
+def test_uml2_forknode_constructor_args():
+    sig = inspect.signature(UML2_ForkNode.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_uml2_mergenode_is_not_abstract():
+    assert not inspect.isabstract(UML2_MergeNode)
+
+
+def test_uml2_mergenode_constructor_exists():
+    assert callable(UML2_MergeNode.__init__)
+
+
+def test_uml2_mergenode_constructor_args():
+    sig = inspect.signature(UML2_MergeNode.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_uml2_initialnode_is_not_abstract():
+    assert not inspect.isabstract(UML2_InitialNode)
+
+
+def test_uml2_initialnode_constructor_exists():
+    assert callable(UML2_InitialNode.__init__)
+
+
+def test_uml2_initialnode_constructor_args():
+    sig = inspect.signature(UML2_InitialNode.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_activityedge_is_not_abstract():
+    assert not inspect.isabstract(ActivityEdge)
+
+
+def test_activityedge_constructor_exists():
+    assert callable(ActivityEdge.__init__)
+
+
+def test_activityedge_constructor_args():
+    sig = inspect.signature(ActivityEdge.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_uml2_objectflow_is_not_abstract():
+    assert not inspect.isabstract(UML2_ObjectFlow)
+
+
+def test_uml2_objectflow_constructor_exists():
+    assert callable(UML2_ObjectFlow.__init__)
+
+
+def test_uml2_objectflow_constructor_args():
+    sig = inspect.signature(UML2_ObjectFlow.__init__)
+    params = list(sig.parameters.keys())
+    assert "isMultireceive" in params, "Missing parameter 'isMultireceive'"
+    assert "isMulticast" in params, "Missing parameter 'isMulticast'"
+
+def test_uml2_objectflow_has_isMultireceive():
+    assert hasattr(UML2_ObjectFlow, "isMultireceive")
+    descriptor = None
+    for klass in UML2_ObjectFlow.__mro__:
+        if "isMultireceive" in klass.__dict__:
+            descriptor = klass.__dict__["isMultireceive"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_uml2_objectflow_has_isMulticast():
+    assert hasattr(UML2_ObjectFlow, "isMulticast")
+    descriptor = None
+    for klass in UML2_ObjectFlow.__mro__:
+        if "isMulticast" in klass.__dict__:
+            descriptor = klass.__dict__["isMulticast"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_uml2_controlflow_is_not_abstract():
+    assert not inspect.isabstract(UML2_ControlFlow)
+
+
+def test_uml2_controlflow_constructor_exists():
+    assert callable(UML2_ControlFlow.__init__)
+
+
+def test_uml2_controlflow_constructor_args():
+    sig = inspect.signature(UML2_ControlFlow.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_uml2_inputpin_is_not_abstract():
+    assert not inspect.isabstract(UML2_InputPin)
+
+
+def test_uml2_inputpin_constructor_exists():
+    assert callable(UML2_InputPin.__init__)
+
+
+def test_uml2_inputpin_constructor_args():
+    sig = inspect.signature(UML2_InputPin.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_uml2_outputpin_is_not_abstract():
+    assert not inspect.isabstract(UML2_OutputPin)
+
+
+def test_uml2_outputpin_constructor_exists():
+    assert callable(UML2_OutputPin.__init__)
+
+
+def test_uml2_outputpin_constructor_args():
+    sig = inspect.signature(UML2_OutputPin.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_activitynode_is_not_abstract():
+    assert not inspect.isabstract(ActivityNode)
+
+
+def test_activitynode_constructor_exists():
+    assert callable(ActivityNode.__init__)
+
+
+def test_activitynode_constructor_args():
+    sig = inspect.signature(ActivityNode.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_uml2_executablenode_is_not_abstract():
+    assert not inspect.isabstract(UML2_ExecutableNode)
+
+
+def test_uml2_executablenode_constructor_exists():
+    assert callable(UML2_ExecutableNode.__init__)
+
+
+def test_uml2_executablenode_constructor_args():
+    sig = inspect.signature(UML2_ExecutableNode.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_uml2_controlnode_is_not_abstract():
+    assert not inspect.isabstract(UML2_ControlNode)
+
+
+def test_uml2_controlnode_constructor_exists():
+    assert callable(UML2_ControlNode.__init__)
+
+
+def test_uml2_controlnode_constructor_args():
+    sig = inspect.signature(UML2_ControlNode.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_executablenode_is_not_abstract():
+    assert not inspect.isabstract(ExecutableNode)
+
+
+def test_executablenode_constructor_exists():
+    assert callable(ExecutableNode.__init__)
+
+
+def test_executablenode_constructor_args():
+    sig = inspect.signature(ExecutableNode.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_uml2_interruptibleactivityregion_is_not_abstract():
+    assert not inspect.isabstract(UML2_InterruptibleActivityRegion)
+
+
+def test_uml2_interruptibleactivityregion_constructor_exists():
+    assert callable(UML2_InterruptibleActivityRegion.__init__)
+
+
+def test_uml2_interruptibleactivityregion_constructor_args():
+    sig = inspect.signature(UML2_InterruptibleActivityRegion.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_abstraction_is_not_abstract():
+    assert not inspect.isabstract(Abstraction)
+
+
+def test_abstraction_constructor_exists():
+    assert callable(Abstraction.__init__)
+
+
+def test_abstraction_constructor_args():
+    sig = inspect.signature(Abstraction.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_uml2_manifestation_is_not_abstract():
+    assert not inspect.isabstract(UML2_Manifestation)
+
+
+def test_uml2_manifestation_constructor_exists():
+    assert callable(UML2_Manifestation.__init__)
+
+
+def test_uml2_manifestation_constructor_args():
+    sig = inspect.signature(UML2_Manifestation.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_uml2_realization_is_not_abstract():
+    assert not inspect.isabstract(UML2_Realization)
+
+
+def test_uml2_realization_constructor_exists():
+    assert callable(UML2_Realization.__init__)
+
+
+def test_uml2_realization_constructor_args():
+    sig = inspect.signature(UML2_Realization.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_realization_is_not_abstract():
+    assert not inspect.isabstract(Realization)
+
+
+def test_realization_constructor_exists():
+    assert callable(Realization.__init__)
+
+
+def test_realization_constructor_args():
+    sig = inspect.signature(Realization.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_dependency_is_not_abstract():
+    assert not inspect.isabstract(Dependency)
+
+
+def test_dependency_constructor_exists():
+    assert callable(Dependency.__init__)
+
+
+def test_dependency_constructor_args():
+    sig = inspect.signature(Dependency.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_uml2_abstraction_is_not_abstract():
+    assert not inspect.isabstract(UML2_Abstraction)
+
+
+def test_uml2_abstraction_constructor_exists():
+    assert callable(UML2_Abstraction.__init__)
+
+
+def test_uml2_abstraction_constructor_args():
+    sig = inspect.signature(UML2_Abstraction.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_uml2_usage_is_not_abstract():
+    assert not inspect.isabstract(UML2_Usage)
+
+
+def test_uml2_usage_constructor_exists():
+    assert callable(UML2_Usage.__init__)
+
+
+def test_uml2_usage_constructor_args():
+    sig = inspect.signature(UML2_Usage.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_uml2_deployment_is_not_abstract():
+    assert not inspect.isabstract(UML2_Deployment)
+
+
+def test_uml2_deployment_constructor_exists():
+    assert callable(UML2_Deployment.__init__)
+
+
+def test_uml2_deployment_constructor_args():
+    sig = inspect.signature(UML2_Deployment.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_uml2_permission_is_not_abstract():
+    assert not inspect.isabstract(UML2_Permission)
+
+
+def test_uml2_permission_constructor_exists():
+    assert callable(UML2_Permission.__init__)
+
+
+def test_uml2_permission_constructor_args():
+    sig = inspect.signature(UML2_Permission.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_uml2_action_is_not_abstract():
+    assert not inspect.isabstract(UML2_Action)
+
+
+def test_uml2_action_constructor_exists():
+    assert callable(UML2_Action.__init__)
+
+
+def test_uml2_action_constructor_args():
+    sig = inspect.signature(UML2_Action.__init__)
+    params = list(sig.parameters.keys())
+    assert "effect" in params, "Missing parameter 'effect'"
+
+def test_uml2_action_has_effect():
+    assert hasattr(UML2_Action, "effect")
+    descriptor = None
+    for klass in UML2_Action.__mro__:
+        if "effect" in klass.__dict__:
+            descriptor = klass.__dict__["effect"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_namedelement_is_not_abstract():
+    assert not inspect.isabstract(NamedElement)
+
+
+def test_namedelement_constructor_exists():
+    assert callable(NamedElement.__init__)
+
+
+def test_namedelement_constructor_args():
+    sig = inspect.signature(NamedElement.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_uml2_messageend_is_not_abstract():
+    assert not inspect.isabstract(UML2_MessageEnd)
+
+
+def test_uml2_messageend_constructor_exists():
+    assert callable(UML2_MessageEnd.__init__)
+
+
+def test_uml2_messageend_constructor_args():
+    sig = inspect.signature(UML2_MessageEnd.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_uml2_lifeline_is_not_abstract():
+    assert not inspect.isabstract(UML2_Lifeline)
+
+
+def test_uml2_lifeline_constructor_exists():
+    assert callable(UML2_Lifeline.__init__)
+
+
+def test_uml2_lifeline_constructor_args():
+    sig = inspect.signature(UML2_Lifeline.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_uml2_deployedartifact_is_not_abstract():
+    assert not inspect.isabstract(UML2_DeployedArtifact)
+
+
+def test_uml2_deployedartifact_constructor_exists():
+    assert callable(UML2_DeployedArtifact.__init__)
+
+
+def test_uml2_deployedartifact_constructor_args():
+    sig = inspect.signature(UML2_DeployedArtifact.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_uml2_generalordering_is_not_abstract():
+    assert not inspect.isabstract(UML2_GeneralOrdering)
+
+
+def test_uml2_generalordering_constructor_exists():
+    assert callable(UML2_GeneralOrdering.__init__)
+
+
+def test_uml2_generalordering_constructor_args():
+    sig = inspect.signature(UML2_GeneralOrdering.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_uml2_vertex_is_not_abstract():
+    assert not inspect.isabstract(UML2_Vertex)
+
+
+def test_uml2_vertex_constructor_exists():
+    assert callable(UML2_Vertex.__init__)
+
+
+def test_uml2_vertex_constructor_args():
+    sig = inspect.signature(UML2_Vertex.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_uml2_interactionfragment_is_not_abstract():
+    assert not inspect.isabstract(UML2_InteractionFragment)
+
+
+def test_uml2_interactionfragment_constructor_exists():
+    assert callable(UML2_InteractionFragment.__init__)
+
+
+def test_uml2_interactionfragment_constructor_args():
+    sig = inspect.signature(UML2_InteractionFragment.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_uml2_activitypartition_is_not_abstract():
+    assert not inspect.isabstract(UML2_ActivityPartition)
+
+
+def test_uml2_activitypartition_constructor_exists():
+    assert callable(UML2_ActivityPartition.__init__)
+
+
+def test_uml2_activitypartition_constructor_args():
+    sig = inspect.signature(UML2_ActivityPartition.__init__)
+    params = list(sig.parameters.keys())
+    assert "isExternal" in params, "Missing parameter 'isExternal'"
+    assert "isDimension" in params, "Missing parameter 'isDimension'"
+
+def test_uml2_activitypartition_has_isExternal():
+    assert hasattr(UML2_ActivityPartition, "isExternal")
+    descriptor = None
+    for klass in UML2_ActivityPartition.__mro__:
+        if "isExternal" in klass.__dict__:
+            descriptor = klass.__dict__["isExternal"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_uml2_activitypartition_has_isDimension():
+    assert hasattr(UML2_ActivityPartition, "isDimension")
+    descriptor = None
+    for klass in UML2_ActivityPartition.__mro__:
+        if "isDimension" in klass.__dict__:
+            descriptor = klass.__dict__["isDimension"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_uml2_message_is_not_abstract():
+    assert not inspect.isabstract(UML2_Message)
+
+
+def test_uml2_message_constructor_exists():
+    assert callable(UML2_Message.__init__)
+
+
+def test_uml2_message_constructor_args():
+    sig = inspect.signature(UML2_Message.__init__)
+    params = list(sig.parameters.keys())
+    assert "messageKind" in params, "Missing parameter 'messageKind'"
+    assert "messageSort" in params, "Missing parameter 'messageSort'"
+
+def test_uml2_message_has_messageKind():
+    assert hasattr(UML2_Message, "messageKind")
+    descriptor = None
+    for klass in UML2_Message.__mro__:
+        if "messageKind" in klass.__dict__:
+            descriptor = klass.__dict__["messageKind"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_uml2_message_has_messageSort():
+    assert hasattr(UML2_Message, "messageSort")
+    descriptor = None
+    for klass in UML2_Message.__mro__:
+        if "messageSort" in klass.__dict__:
+            descriptor = klass.__dict__["messageSort"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_uml2_deploymenttarget_is_not_abstract():
+    assert not inspect.isabstract(UML2_DeploymentTarget)
+
+
+def test_uml2_deploymenttarget_constructor_exists():
+    assert callable(UML2_DeploymentTarget.__init__)
+
+
+def test_uml2_deploymenttarget_constructor_args():
+    sig = inspect.signature(UML2_DeploymentTarget.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_uml2_namespace_is_not_abstract():
+    assert not inspect.isabstract(UML2_Namespace)
+
+
+def test_uml2_namespace_constructor_exists():
+    assert callable(UML2_Namespace.__init__)
+
+
+def test_uml2_namespace_constructor_args():
+    sig = inspect.signature(UML2_Namespace.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_templateableelement_is_not_abstract():
+    assert not inspect.isabstract(TemplateableElement)
+
+
+def test_templateableelement_constructor_exists():
+    assert callable(TemplateableElement.__init__)
+
+
+def test_templateableelement_constructor_args():
+    sig = inspect.signature(TemplateableElement.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_uml2_stringexpression_is_not_abstract():
+    assert not inspect.isabstract(UML2_StringExpression)
+
+
+def test_uml2_stringexpression_constructor_exists():
+    assert callable(UML2_StringExpression.__init__)
+
+
+def test_uml2_stringexpression_constructor_args():
+    sig = inspect.signature(UML2_StringExpression.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_uml2_namedelement_is_not_abstract():
+    assert not inspect.isabstract(UML2_NamedElement)
+
+
+def test_uml2_namedelement_constructor_exists():
+    assert callable(UML2_NamedElement.__init__)
+
+
+def test_uml2_namedelement_constructor_args():
+    sig = inspect.signature(UML2_NamedElement.__init__)
+    params = list(sig.parameters.keys())
+    assert "name" in params, "Missing parameter 'name'"
+    assert "visibility" in params, "Missing parameter 'visibility'"
+    assert "qualifiedName" in params, "Missing parameter 'qualifiedName'"
+
+def test_uml2_namedelement_has_name():
+    assert hasattr(UML2_NamedElement, "name")
+    descriptor = None
+    for klass in UML2_NamedElement.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_uml2_namedelement_has_visibility():
+    assert hasattr(UML2_NamedElement, "visibility")
+    descriptor = None
+    for klass in UML2_NamedElement.__mro__:
+        if "visibility" in klass.__dict__:
+            descriptor = klass.__dict__["visibility"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_uml2_namedelement_has_qualifiedName():
+    assert hasattr(UML2_NamedElement, "qualifiedName")
+    descriptor = None
+    for klass in UML2_NamedElement.__mro__:
+        if "qualifiedName" in klass.__dict__:
+            descriptor = klass.__dict__["qualifiedName"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_element_is_not_abstract():
+    assert not inspect.isabstract(Element)
+
+
+def test_element_constructor_exists():
+    assert callable(Element.__init__)
+
+
+def test_element_constructor_args():
+    sig = inspect.signature(Element.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_uml2_templateparametersubstitution_is_not_abstract():
+    assert not inspect.isabstract(UML2_TemplateParameterSubstitution)
+
+
+def test_uml2_templateparametersubstitution_constructor_exists():
+    assert callable(UML2_TemplateParameterSubstitution.__init__)
+
+
+def test_uml2_templateparametersubstitution_constructor_args():
+    sig = inspect.signature(UML2_TemplateParameterSubstitution.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_uml2_qualifiervalue_is_not_abstract():
+    assert not inspect.isabstract(UML2_QualifierValue)
+
+
+def test_uml2_qualifiervalue_constructor_exists():
+    assert callable(UML2_QualifierValue.__init__)
+
+
+def test_uml2_qualifiervalue_constructor_args():
+    sig = inspect.signature(UML2_QualifierValue.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_uml2_linkenddata_is_not_abstract():
+    assert not inspect.isabstract(UML2_LinkEndData)
+
+
+def test_uml2_linkenddata_constructor_exists():
+    assert callable(UML2_LinkEndData.__init__)
+
+
+def test_uml2_linkenddata_constructor_args():
+    sig = inspect.signature(UML2_LinkEndData.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_uml2_templatesignature_is_not_abstract():
+    assert not inspect.isabstract(UML2_TemplateSignature)
+
+
+def test_uml2_templatesignature_constructor_exists():
+    assert callable(UML2_TemplateSignature.__init__)
+
+
+def test_uml2_templatesignature_constructor_args():
+    sig = inspect.signature(UML2_TemplateSignature.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_uml2_templateableelement_is_not_abstract():
+    assert not inspect.isabstract(UML2_TemplateableElement)
+
+
+def test_uml2_templateableelement_constructor_exists():
+    assert callable(UML2_TemplateableElement.__init__)
+
+
+def test_uml2_templateableelement_constructor_args():
+    sig = inspect.signature(UML2_TemplateableElement.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_uml2_parameterableelement_is_not_abstract():
+    assert not inspect.isabstract(UML2_ParameterableElement)
+
+
+def test_uml2_parameterableelement_constructor_exists():
+    assert callable(UML2_ParameterableElement.__init__)
+
+
+def test_uml2_parameterableelement_constructor_args():
+    sig = inspect.signature(UML2_ParameterableElement.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_uml2_templateparameter_is_not_abstract():
+    assert not inspect.isabstract(UML2_TemplateParameter)
+
+
+def test_uml2_templateparameter_constructor_exists():
+    assert callable(UML2_TemplateParameter.__init__)
+
+
+def test_uml2_templateparameter_constructor_args():
+    sig = inspect.signature(UML2_TemplateParameter.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_uml2_clause_is_not_abstract():
+    assert not inspect.isabstract(UML2_Clause)
+
+
+def test_uml2_clause_constructor_exists():
+    assert callable(UML2_Clause.__init__)
+
+
+def test_uml2_clause_constructor_args():
+    sig = inspect.signature(UML2_Clause.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_uml2_exceptionhandler_is_not_abstract():
+    assert not inspect.isabstract(UML2_ExceptionHandler)
+
+
+def test_uml2_exceptionhandler_constructor_exists():
+    assert callable(UML2_ExceptionHandler.__init__)
+
+
+def test_uml2_exceptionhandler_constructor_args():
+    sig = inspect.signature(UML2_ExceptionHandler.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_uml2_multiplicityelement_is_not_abstract():
+    assert not inspect.isabstract(UML2_MultiplicityElement)
+
+
+def test_uml2_multiplicityelement_constructor_exists():
+    assert callable(UML2_MultiplicityElement.__init__)
+
+
+def test_uml2_multiplicityelement_constructor_args():
+    sig = inspect.signature(UML2_MultiplicityElement.__init__)
+    params = list(sig.parameters.keys())
+    assert "lower" in params, "Missing parameter 'lower'"
+    assert "isUnique" in params, "Missing parameter 'isUnique'"
+    assert "isOrdered" in params, "Missing parameter 'isOrdered'"
+    assert "upper" in params, "Missing parameter 'upper'"
+
+def test_uml2_multiplicityelement_has_lower():
+    assert hasattr(UML2_MultiplicityElement, "lower")
+    descriptor = None
+    for klass in UML2_MultiplicityElement.__mro__:
+        if "lower" in klass.__dict__:
+            descriptor = klass.__dict__["lower"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_uml2_multiplicityelement_has_isUnique():
+    assert hasattr(UML2_MultiplicityElement, "isUnique")
+    descriptor = None
+    for klass in UML2_MultiplicityElement.__mro__:
+        if "isUnique" in klass.__dict__:
+            descriptor = klass.__dict__["isUnique"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_uml2_multiplicityelement_has_isOrdered():
+    assert hasattr(UML2_MultiplicityElement, "isOrdered")
+    descriptor = None
+    for klass in UML2_MultiplicityElement.__mro__:
+        if "isOrdered" in klass.__dict__:
+            descriptor = klass.__dict__["isOrdered"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_uml2_multiplicityelement_has_upper():
+    assert hasattr(UML2_MultiplicityElement, "upper")
+    descriptor = None
+    for klass in UML2_MultiplicityElement.__mro__:
+        if "upper" in klass.__dict__:
+            descriptor = klass.__dict__["upper"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_uml2_comment_is_not_abstract():
+    assert not inspect.isabstract(UML2_Comment)
+
+
+def test_uml2_comment_constructor_exists():
+    assert callable(UML2_Comment.__init__)
+
+
+def test_uml2_comment_constructor_args():
+    sig = inspect.signature(UML2_Comment.__init__)
+    params = list(sig.parameters.keys())
+    assert "body" in params, "Missing parameter 'body'"
+
+def test_uml2_comment_has_body():
+    assert hasattr(UML2_Comment, "body")
+    descriptor = None
+    for klass in UML2_Comment.__mro__:
+        if "body" in klass.__dict__:
+            descriptor = klass.__dict__["body"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_uml2_element_is_not_abstract():
+    assert not inspect.isabstract(UML2_Element)
+
+
+def test_uml2_element_constructor_exists():
+    assert callable(UML2_Element.__init__)
+
+
+def test_uml2_element_constructor_args():
+    sig = inspect.signature(UML2_Element.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_uml2_activitygroup_is_not_abstract():
+    assert not inspect.isabstract(UML2_ActivityGroup)
+
+
+def test_uml2_activitygroup_constructor_exists():
+    assert callable(UML2_ActivityGroup.__init__)
+
+
+def test_uml2_activitygroup_constructor_args():
+    sig = inspect.signature(UML2_ActivityGroup.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_behavior_is_not_abstract():
+    assert not inspect.isabstract(Behavior)
+
+
+def test_behavior_constructor_exists():
+    assert callable(Behavior.__init__)
+
+
+def test_behavior_constructor_args():
+    sig = inspect.signature(Behavior.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_uml2_interaction_is_not_abstract():
+    assert not inspect.isabstract(UML2_Interaction)
+
+
+def test_uml2_interaction_constructor_exists():
+    assert callable(UML2_Interaction.__init__)
+
+
+def test_uml2_interaction_constructor_args():
+    sig = inspect.signature(UML2_Interaction.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_uml2_activity_is_not_abstract():
+    assert not inspect.isabstract(UML2_Activity)
+
+
+def test_uml2_activity_constructor_exists():
+    assert callable(UML2_Activity.__init__)
+
+
+def test_uml2_activity_constructor_args():
+    sig = inspect.signature(UML2_Activity.__init__)
+    params = list(sig.parameters.keys())
+    assert "isReadOnly" in params, "Missing parameter 'isReadOnly'"
+    assert "language" in params, "Missing parameter 'language'"
+    assert "isSingleExecution" in params, "Missing parameter 'isSingleExecution'"
+    assert "body" in params, "Missing parameter 'body'"
+
+def test_uml2_activity_has_isReadOnly():
+    assert hasattr(UML2_Activity, "isReadOnly")
+    descriptor = None
+    for klass in UML2_Activity.__mro__:
+        if "isReadOnly" in klass.__dict__:
+            descriptor = klass.__dict__["isReadOnly"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_uml2_activity_has_language():
+    assert hasattr(UML2_Activity, "language")
+    descriptor = None
+    for klass in UML2_Activity.__mro__:
+        if "language" in klass.__dict__:
+            descriptor = klass.__dict__["language"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_uml2_activity_has_isSingleExecution():
+    assert hasattr(UML2_Activity, "isSingleExecution")
+    descriptor = None
+    for klass in UML2_Activity.__mro__:
+        if "isSingleExecution" in klass.__dict__:
+            descriptor = klass.__dict__["isSingleExecution"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_uml2_activity_has_body():
+    assert hasattr(UML2_Activity, "body")
+    descriptor = None
+    for klass in UML2_Activity.__mro__:
+        if "body" in klass.__dict__:
+            descriptor = klass.__dict__["body"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_uml2_statemachine_is_not_abstract():
+    assert not inspect.isabstract(UML2_StateMachine)
+
+
+def test_uml2_statemachine_constructor_exists():
+    assert callable(UML2_StateMachine.__init__)
+
+
+def test_uml2_statemachine_constructor_args():
+    sig = inspect.signature(UML2_StateMachine.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_uml2_trigger_is_not_abstract():
+    assert not inspect.isabstract(UML2_Trigger)
+
+
+def test_uml2_trigger_constructor_exists():
+    assert callable(UML2_Trigger.__init__)
+
+
+def test_uml2_trigger_constructor_args():
+    sig = inspect.signature(UML2_Trigger.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_uml2_implementation_is_not_abstract():
+    assert not inspect.isabstract(UML2_Implementation)
+
+
+def test_uml2_implementation_constructor_exists():
+    assert callable(UML2_Implementation.__init__)
+
+
+def test_uml2_implementation_constructor_args():
+    sig = inspect.signature(UML2_Implementation.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_property_is_not_abstract():
+    assert not inspect.isabstract(Property)
+
+
+def test_property_constructor_exists():
+    assert callable(Property.__init__)
+
+
+def test_property_constructor_args():
+    sig = inspect.signature(Property.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_uml2_port_is_not_abstract():
+    assert not inspect.isabstract(UML2_Port)
+
+
+def test_uml2_port_constructor_exists():
+    assert callable(UML2_Port.__init__)
+
+
+def test_uml2_port_constructor_args():
+    sig = inspect.signature(UML2_Port.__init__)
+    params = list(sig.parameters.keys())
+    assert "isBehavior" in params, "Missing parameter 'isBehavior'"
+    assert "isService" in params, "Missing parameter 'isService'"
+
+def test_uml2_port_has_isBehavior():
+    assert hasattr(UML2_Port, "isBehavior")
+    descriptor = None
+    for klass in UML2_Port.__mro__:
+        if "isBehavior" in klass.__dict__:
+            descriptor = klass.__dict__["isBehavior"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_uml2_port_has_isService():
+    assert hasattr(UML2_Port, "isService")
+    descriptor = None
+    for klass in UML2_Port.__mro__:
+        if "isService" in klass.__dict__:
+            descriptor = klass.__dict__["isService"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_uml2_extensionend_is_not_abstract():
+    assert not inspect.isabstract(UML2_ExtensionEnd)
+
+
+def test_uml2_extensionend_constructor_exists():
+    assert callable(UML2_ExtensionEnd.__init__)
+
+
+def test_uml2_extensionend_constructor_args():
+    sig = inspect.signature(UML2_ExtensionEnd.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_association_is_not_abstract():
+    assert not inspect.isabstract(Association)
+
+
+def test_association_constructor_exists():
+    assert callable(Association.__init__)
+
+
+def test_association_constructor_args():
+    sig = inspect.signature(Association.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_uml2_communicationpath_is_not_abstract():
+    assert not inspect.isabstract(UML2_CommunicationPath)
+
+
+def test_uml2_communicationpath_constructor_exists():
+    assert callable(UML2_CommunicationPath.__init__)
+
+
+def test_uml2_communicationpath_constructor_args():
+    sig = inspect.signature(UML2_CommunicationPath.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_packageimport_is_not_abstract():
+    assert not inspect.isabstract(PackageImport)
+
+
+def test_packageimport_constructor_exists():
+    assert callable(PackageImport.__init__)
+
+
+def test_packageimport_constructor_args():
+    sig = inspect.signature(PackageImport.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -996,16 +3428,40 @@ def test_package_constructor_args():
 
 
 
-def test_uml2::profile_is_not_abstract():
-    assert not inspect.isabstract(UML2::Profile)
+def test_uml2_model_is_not_abstract():
+    assert not inspect.isabstract(UML2_Model)
 
 
-def test_uml2::profile_constructor_exists():
-    assert callable(UML2::Profile.__init__)
+def test_uml2_model_constructor_exists():
+    assert callable(UML2_Model.__init__)
 
 
-def test_uml2::profile_constructor_args():
-    sig = inspect.signature(UML2::Profile.__init__)
+def test_uml2_model_constructor_args():
+    sig = inspect.signature(UML2_Model.__init__)
+    params = list(sig.parameters.keys())
+    assert "viewpoint" in params, "Missing parameter 'viewpoint'"
+
+def test_uml2_model_has_viewpoint():
+    assert hasattr(UML2_Model, "viewpoint")
+    descriptor = None
+    for klass in UML2_Model.__mro__:
+        if "viewpoint" in klass.__dict__:
+            descriptor = klass.__dict__["viewpoint"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_uml2_profile_is_not_abstract():
+    assert not inspect.isabstract(UML2_Profile)
+
+
+def test_uml2_profile_constructor_exists():
+    assert callable(UML2_Profile.__init__)
+
+
+def test_uml2_profile_constructor_args():
+    sig = inspect.signature(UML2_Profile.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1024,16 +3480,54 @@ def test_class_constructor_args():
 
 
 
-def test_uml2::stereotype_is_not_abstract():
-    assert not inspect.isabstract(UML2::Stereotype)
+def test_uml2_component_is_not_abstract():
+    assert not inspect.isabstract(UML2_Component)
 
 
-def test_uml2::stereotype_constructor_exists():
-    assert callable(UML2::Stereotype.__init__)
+def test_uml2_component_constructor_exists():
+    assert callable(UML2_Component.__init__)
 
 
-def test_uml2::stereotype_constructor_args():
-    sig = inspect.signature(UML2::Stereotype.__init__)
+def test_uml2_component_constructor_args():
+    sig = inspect.signature(UML2_Component.__init__)
+    params = list(sig.parameters.keys())
+    assert "isIndirectlyInstantiated" in params, "Missing parameter 'isIndirectlyInstantiated'"
+
+def test_uml2_component_has_isIndirectlyInstantiated():
+    assert hasattr(UML2_Component, "isIndirectlyInstantiated")
+    descriptor = None
+    for klass in UML2_Component.__mro__:
+        if "isIndirectlyInstantiated" in klass.__dict__:
+            descriptor = klass.__dict__["isIndirectlyInstantiated"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_uml2_associationclass_is_not_abstract():
+    assert not inspect.isabstract(UML2_AssociationClass)
+
+
+def test_uml2_associationclass_constructor_exists():
+    assert callable(UML2_AssociationClass.__init__)
+
+
+def test_uml2_associationclass_constructor_args():
+    sig = inspect.signature(UML2_AssociationClass.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_uml2_stereotype_is_not_abstract():
+    assert not inspect.isabstract(UML2_Stereotype)
+
+
+def test_uml2_stereotype_constructor_exists():
+    assert callable(UML2_Stereotype.__init__)
+
+
+def test_uml2_stereotype_constructor_args():
+    sig = inspect.signature(UML2_Stereotype.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1052,16 +3546,154 @@ def test_directedrelationship_constructor_args():
 
 
 
-def test_uml2::protocolconformance_is_not_abstract():
-    assert not inspect.isabstract(UML2::ProtocolConformance)
+def test_uml2_protocolconformance_is_not_abstract():
+    assert not inspect.isabstract(UML2_ProtocolConformance)
 
 
-def test_uml2::protocolconformance_constructor_exists():
-    assert callable(UML2::ProtocolConformance.__init__)
+def test_uml2_protocolconformance_constructor_exists():
+    assert callable(UML2_ProtocolConformance.__init__)
 
 
-def test_uml2::protocolconformance_constructor_args():
-    sig = inspect.signature(UML2::ProtocolConformance.__init__)
+def test_uml2_protocolconformance_constructor_args():
+    sig = inspect.signature(UML2_ProtocolConformance.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_uml2_templatebinding_is_not_abstract():
+    assert not inspect.isabstract(UML2_TemplateBinding)
+
+
+def test_uml2_templatebinding_constructor_exists():
+    assert callable(UML2_TemplateBinding.__init__)
+
+
+def test_uml2_templatebinding_constructor_args():
+    sig = inspect.signature(UML2_TemplateBinding.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_uml2_extend_is_not_abstract():
+    assert not inspect.isabstract(UML2_Extend)
+
+
+def test_uml2_extend_constructor_exists():
+    assert callable(UML2_Extend.__init__)
+
+
+def test_uml2_extend_constructor_args():
+    sig = inspect.signature(UML2_Extend.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_uml2_include_is_not_abstract():
+    assert not inspect.isabstract(UML2_Include)
+
+
+def test_uml2_include_constructor_exists():
+    assert callable(UML2_Include.__init__)
+
+
+def test_uml2_include_constructor_args():
+    sig = inspect.signature(UML2_Include.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_uml2_packageimport_is_not_abstract():
+    assert not inspect.isabstract(UML2_PackageImport)
+
+
+def test_uml2_packageimport_constructor_exists():
+    assert callable(UML2_PackageImport.__init__)
+
+
+def test_uml2_packageimport_constructor_args():
+    sig = inspect.signature(UML2_PackageImport.__init__)
+    params = list(sig.parameters.keys())
+    assert "visibility" in params, "Missing parameter 'visibility'"
+
+def test_uml2_packageimport_has_visibility():
+    assert hasattr(UML2_PackageImport, "visibility")
+    descriptor = None
+    for klass in UML2_PackageImport.__mro__:
+        if "visibility" in klass.__dict__:
+            descriptor = klass.__dict__["visibility"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_uml2_elementimport_is_not_abstract():
+    assert not inspect.isabstract(UML2_ElementImport)
+
+
+def test_uml2_elementimport_constructor_exists():
+    assert callable(UML2_ElementImport.__init__)
+
+
+def test_uml2_elementimport_constructor_args():
+    sig = inspect.signature(UML2_ElementImport.__init__)
+    params = list(sig.parameters.keys())
+    assert "alias" in params, "Missing parameter 'alias'"
+    assert "visibility" in params, "Missing parameter 'visibility'"
+
+def test_uml2_elementimport_has_alias():
+    assert hasattr(UML2_ElementImport, "alias")
+    descriptor = None
+    for klass in UML2_ElementImport.__mro__:
+        if "alias" in klass.__dict__:
+            descriptor = klass.__dict__["alias"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_uml2_elementimport_has_visibility():
+    assert hasattr(UML2_ElementImport, "visibility")
+    descriptor = None
+    for klass in UML2_ElementImport.__mro__:
+        if "visibility" in klass.__dict__:
+            descriptor = klass.__dict__["visibility"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_uml2_redefinableelement_is_not_abstract():
+    assert not inspect.isabstract(UML2_RedefinableElement)
+
+
+def test_uml2_redefinableelement_constructor_exists():
+    assert callable(UML2_RedefinableElement.__init__)
+
+
+def test_uml2_redefinableelement_constructor_args():
+    sig = inspect.signature(UML2_RedefinableElement.__init__)
+    params = list(sig.parameters.keys())
+    assert "isLeaf" in params, "Missing parameter 'isLeaf'"
+
+def test_uml2_redefinableelement_has_isLeaf():
+    assert hasattr(UML2_RedefinableElement, "isLeaf")
+    descriptor = None
+    for klass in UML2_RedefinableElement.__mro__:
+        if "isLeaf" in klass.__dict__:
+            descriptor = klass.__dict__["isLeaf"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_uml2_slot_is_not_abstract():
+    assert not inspect.isabstract(UML2_Slot)
+
+
+def test_uml2_slot_constructor_exists():
+    assert callable(UML2_Slot.__init__)
+
+
+def test_uml2_slot_constructor_args():
+    sig = inspect.signature(UML2_Slot.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1094,6 +3726,30 @@ def test_feature_constructor_args():
 
 
 
+def test_uml2_connector_is_not_abstract():
+    assert not inspect.isabstract(UML2_Connector)
+
+
+def test_uml2_connector_constructor_exists():
+    assert callable(UML2_Connector.__init__)
+
+
+def test_uml2_connector_constructor_args():
+    sig = inspect.signature(UML2_Connector.__init__)
+    params = list(sig.parameters.keys())
+    assert "kind" in params, "Missing parameter 'kind'"
+
+def test_uml2_connector_has_kind():
+    assert hasattr(UML2_Connector, "kind")
+    descriptor = None
+    for klass in UML2_Connector.__mro__:
+        if "kind" in klass.__dict__:
+            descriptor = klass.__dict__["kind"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
 def test_literalspecification_is_not_abstract():
     assert not inspect.isabstract(LiteralSpecification)
 
@@ -1108,23 +3764,23 @@ def test_literalspecification_constructor_args():
 
 
 
-def test_uml2::literalinteger_is_not_abstract():
-    assert not inspect.isabstract(UML2::LiteralInteger)
+def test_uml2_literalinteger_is_not_abstract():
+    assert not inspect.isabstract(UML2_LiteralInteger)
 
 
-def test_uml2::literalinteger_constructor_exists():
-    assert callable(UML2::LiteralInteger.__init__)
+def test_uml2_literalinteger_constructor_exists():
+    assert callable(UML2_LiteralInteger.__init__)
 
 
-def test_uml2::literalinteger_constructor_args():
-    sig = inspect.signature(UML2::LiteralInteger.__init__)
+def test_uml2_literalinteger_constructor_args():
+    sig = inspect.signature(UML2_LiteralInteger.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
 
-def test_uml2::literalinteger_has_value():
-    assert hasattr(UML2::LiteralInteger, "value")
+def test_uml2_literalinteger_has_value():
+    assert hasattr(UML2_LiteralInteger, "value")
     descriptor = None
-    for klass in UML2::LiteralInteger.__mro__:
+    for klass in UML2_LiteralInteger.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -1132,37 +3788,23 @@ def test_uml2::literalinteger_has_value():
 
 
 
-def test_uml2::literalnull_is_not_abstract():
-    assert not inspect.isabstract(UML2::LiteralNull)
+def test_uml2_literalstring_is_not_abstract():
+    assert not inspect.isabstract(UML2_LiteralString)
 
 
-def test_uml2::literalnull_constructor_exists():
-    assert callable(UML2::LiteralNull.__init__)
+def test_uml2_literalstring_constructor_exists():
+    assert callable(UML2_LiteralString.__init__)
 
 
-def test_uml2::literalnull_constructor_args():
-    sig = inspect.signature(UML2::LiteralNull.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_uml2::literalunlimitednatural_is_not_abstract():
-    assert not inspect.isabstract(UML2::LiteralUnlimitedNatural)
-
-
-def test_uml2::literalunlimitednatural_constructor_exists():
-    assert callable(UML2::LiteralUnlimitedNatural.__init__)
-
-
-def test_uml2::literalunlimitednatural_constructor_args():
-    sig = inspect.signature(UML2::LiteralUnlimitedNatural.__init__)
+def test_uml2_literalstring_constructor_args():
+    sig = inspect.signature(UML2_LiteralString.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
 
-def test_uml2::literalunlimitednatural_has_value():
-    assert hasattr(UML2::LiteralUnlimitedNatural, "value")
+def test_uml2_literalstring_has_value():
+    assert hasattr(UML2_LiteralString, "value")
     descriptor = None
-    for klass in UML2::LiteralUnlimitedNatural.__mro__:
+    for klass in UML2_LiteralString.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -1170,23 +3812,23 @@ def test_uml2::literalunlimitednatural_has_value():
 
 
 
-def test_uml2::literalstring_is_not_abstract():
-    assert not inspect.isabstract(UML2::LiteralString)
+def test_uml2_literalunlimitednatural_is_not_abstract():
+    assert not inspect.isabstract(UML2_LiteralUnlimitedNatural)
 
 
-def test_uml2::literalstring_constructor_exists():
-    assert callable(UML2::LiteralString.__init__)
+def test_uml2_literalunlimitednatural_constructor_exists():
+    assert callable(UML2_LiteralUnlimitedNatural.__init__)
 
 
-def test_uml2::literalstring_constructor_args():
-    sig = inspect.signature(UML2::LiteralString.__init__)
+def test_uml2_literalunlimitednatural_constructor_args():
+    sig = inspect.signature(UML2_LiteralUnlimitedNatural.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
 
-def test_uml2::literalstring_has_value():
-    assert hasattr(UML2::LiteralString, "value")
+def test_uml2_literalunlimitednatural_has_value():
+    assert hasattr(UML2_LiteralUnlimitedNatural, "value")
     descriptor = None
-    for klass in UML2::LiteralString.__mro__:
+    for klass in UML2_LiteralUnlimitedNatural.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -1194,23 +3836,37 @@ def test_uml2::literalstring_has_value():
 
 
 
-def test_uml2::literalboolean_is_not_abstract():
-    assert not inspect.isabstract(UML2::LiteralBoolean)
+def test_uml2_literalnull_is_not_abstract():
+    assert not inspect.isabstract(UML2_LiteralNull)
 
 
-def test_uml2::literalboolean_constructor_exists():
-    assert callable(UML2::LiteralBoolean.__init__)
+def test_uml2_literalnull_constructor_exists():
+    assert callable(UML2_LiteralNull.__init__)
 
 
-def test_uml2::literalboolean_constructor_args():
-    sig = inspect.signature(UML2::LiteralBoolean.__init__)
+def test_uml2_literalnull_constructor_args():
+    sig = inspect.signature(UML2_LiteralNull.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_uml2_literalboolean_is_not_abstract():
+    assert not inspect.isabstract(UML2_LiteralBoolean)
+
+
+def test_uml2_literalboolean_constructor_exists():
+    assert callable(UML2_LiteralBoolean.__init__)
+
+
+def test_uml2_literalboolean_constructor_args():
+    sig = inspect.signature(UML2_LiteralBoolean.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
 
-def test_uml2::literalboolean_has_value():
-    assert hasattr(UML2::LiteralBoolean, "value")
+def test_uml2_literalboolean_has_value():
+    assert hasattr(UML2_LiteralBoolean, "value")
     descriptor = None
-    for klass in UML2::LiteralBoolean.__mro__:
+    for klass in UML2_LiteralBoolean.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -1218,23 +3874,51 @@ def test_uml2::literalboolean_has_value():
 
 
 
-def test_uml2::generalization_is_not_abstract():
-    assert not inspect.isabstract(UML2::Generalization)
+def test_uml2_collaborationoccurrence_is_not_abstract():
+    assert not inspect.isabstract(UML2_CollaborationOccurrence)
 
 
-def test_uml2::generalization_constructor_exists():
-    assert callable(UML2::Generalization.__init__)
+def test_uml2_collaborationoccurrence_constructor_exists():
+    assert callable(UML2_CollaborationOccurrence.__init__)
 
 
-def test_uml2::generalization_constructor_args():
-    sig = inspect.signature(UML2::Generalization.__init__)
+def test_uml2_collaborationoccurrence_constructor_args():
+    sig = inspect.signature(UML2_CollaborationOccurrence.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_uml2_substitution_is_not_abstract():
+    assert not inspect.isabstract(UML2_Substitution)
+
+
+def test_uml2_substitution_constructor_exists():
+    assert callable(UML2_Substitution.__init__)
+
+
+def test_uml2_substitution_constructor_args():
+    sig = inspect.signature(UML2_Substitution.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_uml2_generalization_is_not_abstract():
+    assert not inspect.isabstract(UML2_Generalization)
+
+
+def test_uml2_generalization_constructor_exists():
+    assert callable(UML2_Generalization.__init__)
+
+
+def test_uml2_generalization_constructor_args():
+    sig = inspect.signature(UML2_Generalization.__init__)
     params = list(sig.parameters.keys())
     assert "isSubstitutable" in params, "Missing parameter 'isSubstitutable'"
 
-def test_uml2::generalization_has_isSubstitutable():
-    assert hasattr(UML2::Generalization, "isSubstitutable")
+def test_uml2_generalization_has_isSubstitutable():
+    assert hasattr(UML2_Generalization, "isSubstitutable")
     descriptor = None
-    for klass in UML2::Generalization.__mro__:
+    for klass in UML2_Generalization.__mro__:
         if "isSubstitutable" in klass.__dict__:
             descriptor = klass.__dict__["isSubstitutable"]
             break
@@ -1256,27 +3940,107 @@ def test_redefinableelement_constructor_args():
 
 
 
-def test_uml2::feature_is_not_abstract():
-    assert not inspect.isabstract(UML2::Feature)
+def test_uml2_feature_is_not_abstract():
+    assert not inspect.isabstract(UML2_Feature)
 
 
-def test_uml2::feature_constructor_exists():
-    assert callable(UML2::Feature.__init__)
+def test_uml2_feature_constructor_exists():
+    assert callable(UML2_Feature.__init__)
 
 
-def test_uml2::feature_constructor_args():
-    sig = inspect.signature(UML2::Feature.__init__)
+def test_uml2_feature_constructor_args():
+    sig = inspect.signature(UML2_Feature.__init__)
     params = list(sig.parameters.keys())
     assert "isStatic" in params, "Missing parameter 'isStatic'"
 
-def test_uml2::feature_has_isStatic():
-    assert hasattr(UML2::Feature, "isStatic")
+def test_uml2_feature_has_isStatic():
+    assert hasattr(UML2_Feature, "isStatic")
     descriptor = None
-    for klass in UML2::Feature.__mro__:
+    for klass in UML2_Feature.__mro__:
         if "isStatic" in klass.__dict__:
             descriptor = klass.__dict__["isStatic"]
             break
     assert isinstance(descriptor, property)
+
+
+
+def test_uml2_transition_is_not_abstract():
+    assert not inspect.isabstract(UML2_Transition)
+
+
+def test_uml2_transition_constructor_exists():
+    assert callable(UML2_Transition.__init__)
+
+
+def test_uml2_transition_constructor_args():
+    sig = inspect.signature(UML2_Transition.__init__)
+    params = list(sig.parameters.keys())
+    assert "kind" in params, "Missing parameter 'kind'"
+
+def test_uml2_transition_has_kind():
+    assert hasattr(UML2_Transition, "kind")
+    descriptor = None
+    for klass in UML2_Transition.__mro__:
+        if "kind" in klass.__dict__:
+            descriptor = klass.__dict__["kind"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_uml2_extensionpoint_is_not_abstract():
+    assert not inspect.isabstract(UML2_ExtensionPoint)
+
+
+def test_uml2_extensionpoint_constructor_exists():
+    assert callable(UML2_ExtensionPoint.__init__)
+
+
+def test_uml2_extensionpoint_constructor_args():
+    sig = inspect.signature(UML2_ExtensionPoint.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_uml2_activityedge_is_not_abstract():
+    assert not inspect.isabstract(UML2_ActivityEdge)
+
+
+def test_uml2_activityedge_constructor_exists():
+    assert callable(UML2_ActivityEdge.__init__)
+
+
+def test_uml2_activityedge_constructor_args():
+    sig = inspect.signature(UML2_ActivityEdge.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_uml2_activitynode_is_not_abstract():
+    assert not inspect.isabstract(UML2_ActivityNode)
+
+
+def test_uml2_activitynode_constructor_exists():
+    assert callable(UML2_ActivityNode.__init__)
+
+
+def test_uml2_activitynode_constructor_args():
+    sig = inspect.signature(UML2_ActivityNode.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_uml2_redefinabletemplatesignature_is_not_abstract():
+    assert not inspect.isabstract(UML2_RedefinableTemplateSignature)
+
+
+def test_uml2_redefinabletemplatesignature_constructor_exists():
+    assert callable(UML2_RedefinableTemplateSignature.__init__)
+
+
+def test_uml2_redefinabletemplatesignature_constructor_args():
+    sig = inspect.signature(UML2_RedefinableTemplateSignature.__init__)
+    params = list(sig.parameters.keys())
 
 
 
@@ -1322,16 +4086,152 @@ def test_classifier_constructor_args():
 
 
 
-def test_uml2::enumerationliteral_is_not_abstract():
-    assert not inspect.isabstract(UML2::EnumerationLiteral)
+def test_uml2_informationitem_is_not_abstract():
+    assert not inspect.isabstract(UML2_InformationItem)
 
 
-def test_uml2::enumerationliteral_constructor_exists():
-    assert callable(UML2::EnumerationLiteral.__init__)
+def test_uml2_informationitem_constructor_exists():
+    assert callable(UML2_InformationItem.__init__)
 
 
-def test_uml2::enumerationliteral_constructor_args():
-    sig = inspect.signature(UML2::EnumerationLiteral.__init__)
+def test_uml2_informationitem_constructor_args():
+    sig = inspect.signature(UML2_InformationItem.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_uml2_structuredclassifier_is_not_abstract():
+    assert not inspect.isabstract(UML2_StructuredClassifier)
+
+
+def test_uml2_structuredclassifier_constructor_exists():
+    assert callable(UML2_StructuredClassifier.__init__)
+
+
+def test_uml2_structuredclassifier_constructor_args():
+    sig = inspect.signature(UML2_StructuredClassifier.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_uml2_parameterableclassifier_is_not_abstract():
+    assert not inspect.isabstract(UML2_ParameterableClassifier)
+
+
+def test_uml2_parameterableclassifier_constructor_exists():
+    assert callable(UML2_ParameterableClassifier.__init__)
+
+
+def test_uml2_parameterableclassifier_constructor_args():
+    sig = inspect.signature(UML2_ParameterableClassifier.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_uml2_templateableclassifier_is_not_abstract():
+    assert not inspect.isabstract(UML2_TemplateableClassifier)
+
+
+def test_uml2_templateableclassifier_constructor_exists():
+    assert callable(UML2_TemplateableClassifier.__init__)
+
+
+def test_uml2_templateableclassifier_constructor_args():
+    sig = inspect.signature(UML2_TemplateableClassifier.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_uml2_actor_is_not_abstract():
+    assert not inspect.isabstract(UML2_Actor)
+
+
+def test_uml2_actor_constructor_exists():
+    assert callable(UML2_Actor.__init__)
+
+
+def test_uml2_actor_constructor_args():
+    sig = inspect.signature(UML2_Actor.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_uml2_behavioredclassifier_is_not_abstract():
+    assert not inspect.isabstract(UML2_BehavioredClassifier)
+
+
+def test_uml2_behavioredclassifier_constructor_exists():
+    assert callable(UML2_BehavioredClassifier.__init__)
+
+
+def test_uml2_behavioredclassifier_constructor_args():
+    sig = inspect.signature(UML2_BehavioredClassifier.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_uml2_interface_is_not_abstract():
+    assert not inspect.isabstract(UML2_Interface)
+
+
+def test_uml2_interface_constructor_exists():
+    assert callable(UML2_Interface.__init__)
+
+
+def test_uml2_interface_constructor_args():
+    sig = inspect.signature(UML2_Interface.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_uml2_artifact_is_not_abstract():
+    assert not inspect.isabstract(UML2_Artifact)
+
+
+def test_uml2_artifact_constructor_exists():
+    assert callable(UML2_Artifact.__init__)
+
+
+def test_uml2_artifact_constructor_args():
+    sig = inspect.signature(UML2_Artifact.__init__)
+    params = list(sig.parameters.keys())
+    assert "fileName" in params, "Missing parameter 'fileName'"
+
+def test_uml2_artifact_has_fileName():
+    assert hasattr(UML2_Artifact, "fileName")
+    descriptor = None
+    for klass in UML2_Artifact.__mro__:
+        if "fileName" in klass.__dict__:
+            descriptor = klass.__dict__["fileName"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_uml2_signal_is_not_abstract():
+    assert not inspect.isabstract(UML2_Signal)
+
+
+def test_uml2_signal_constructor_exists():
+    assert callable(UML2_Signal.__init__)
+
+
+def test_uml2_signal_constructor_args():
+    sig = inspect.signature(UML2_Signal.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_uml2_enumerationliteral_is_not_abstract():
+    assert not inspect.isabstract(UML2_EnumerationLiteral)
+
+
+def test_uml2_enumerationliteral_constructor_exists():
+    assert callable(UML2_EnumerationLiteral.__init__)
+
+
+def test_uml2_enumerationliteral_constructor_args():
+    sig = inspect.signature(UML2_EnumerationLiteral.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1350,44 +4250,58 @@ def test_datatype_constructor_args():
 
 
 
-def test_uml2::primitivetype_is_not_abstract():
-    assert not inspect.isabstract(UML2::PrimitiveType)
+def test_uml2_primitivetype_is_not_abstract():
+    assert not inspect.isabstract(UML2_PrimitiveType)
 
 
-def test_uml2::primitivetype_constructor_exists():
-    assert callable(UML2::PrimitiveType.__init__)
+def test_uml2_primitivetype_constructor_exists():
+    assert callable(UML2_PrimitiveType.__init__)
 
 
-def test_uml2::primitivetype_constructor_args():
-    sig = inspect.signature(UML2::PrimitiveType.__init__)
+def test_uml2_primitivetype_constructor_args():
+    sig = inspect.signature(UML2_PrimitiveType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_uml2::enumeration_is_not_abstract():
-    assert not inspect.isabstract(UML2::Enumeration)
+def test_uml2_enumeration_is_not_abstract():
+    assert not inspect.isabstract(UML2_Enumeration)
 
 
-def test_uml2::enumeration_constructor_exists():
-    assert callable(UML2::Enumeration.__init__)
+def test_uml2_enumeration_constructor_exists():
+    assert callable(UML2_Enumeration.__init__)
 
 
-def test_uml2::enumeration_constructor_args():
-    sig = inspect.signature(UML2::Enumeration.__init__)
+def test_uml2_enumeration_constructor_args():
+    sig = inspect.signature(UML2_Enumeration.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_uml2::packagemerge_is_not_abstract():
-    assert not inspect.isabstract(UML2::PackageMerge)
+def test_uml2_profileapplication_is_not_abstract():
+    assert not inspect.isabstract(UML2_ProfileApplication)
 
 
-def test_uml2::packagemerge_constructor_exists():
-    assert callable(UML2::PackageMerge.__init__)
+def test_uml2_profileapplication_constructor_exists():
+    assert callable(UML2_ProfileApplication.__init__)
 
 
-def test_uml2::packagemerge_constructor_args():
-    sig = inspect.signature(UML2::PackageMerge.__init__)
+def test_uml2_profileapplication_constructor_args():
+    sig = inspect.signature(UML2_ProfileApplication.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_uml2_packagemerge_is_not_abstract():
+    assert not inspect.isabstract(UML2_PackageMerge)
+
+
+def test_uml2_packagemerge_constructor_exists():
+    assert callable(UML2_PackageMerge.__init__)
+
+
+def test_uml2_packagemerge_constructor_args():
+    sig = inspect.signature(UML2_PackageMerge.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1406,37 +4320,171 @@ def test_namespace_constructor_args():
 
 
 
-def test_uml2::behavioralfeature_is_not_abstract():
-    assert not inspect.isabstract(UML2::BehavioralFeature)
+def test_uml2_region_is_not_abstract():
+    assert not inspect.isabstract(UML2_Region)
 
 
-def test_uml2::behavioralfeature_constructor_exists():
-    assert callable(UML2::BehavioralFeature.__init__)
+def test_uml2_region_constructor_exists():
+    assert callable(UML2_Region.__init__)
 
 
-def test_uml2::behavioralfeature_constructor_args():
-    sig = inspect.signature(UML2::BehavioralFeature.__init__)
+def test_uml2_region_constructor_args():
+    sig = inspect.signature(UML2_Region.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_uml2_interactionoperand_is_not_abstract():
+    assert not inspect.isabstract(UML2_InteractionOperand)
+
+
+def test_uml2_interactionoperand_constructor_exists():
+    assert callable(UML2_InteractionOperand.__init__)
+
+
+def test_uml2_interactionoperand_constructor_args():
+    sig = inspect.signature(UML2_InteractionOperand.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_uml2_behavioralfeature_is_not_abstract():
+    assert not inspect.isabstract(UML2_BehavioralFeature)
+
+
+def test_uml2_behavioralfeature_constructor_exists():
+    assert callable(UML2_BehavioralFeature.__init__)
+
+
+def test_uml2_behavioralfeature_constructor_args():
+    sig = inspect.signature(UML2_BehavioralFeature.__init__)
     params = list(sig.parameters.keys())
     assert "isAbstract" in params, "Missing parameter 'isAbstract'"
     assert "concurrency" in params, "Missing parameter 'concurrency'"
 
-def test_uml2::behavioralfeature_has_isAbstract():
-    assert hasattr(UML2::BehavioralFeature, "isAbstract")
+def test_uml2_behavioralfeature_has_isAbstract():
+    assert hasattr(UML2_BehavioralFeature, "isAbstract")
     descriptor = None
-    for klass in UML2::BehavioralFeature.__mro__:
+    for klass in UML2_BehavioralFeature.__mro__:
         if "isAbstract" in klass.__dict__:
             descriptor = klass.__dict__["isAbstract"]
             break
     assert isinstance(descriptor, property)
 
-def test_uml2::behavioralfeature_has_concurrency():
-    assert hasattr(UML2::BehavioralFeature, "concurrency")
+def test_uml2_behavioralfeature_has_concurrency():
+    assert hasattr(UML2_BehavioralFeature, "concurrency")
     descriptor = None
-    for klass in UML2::BehavioralFeature.__mro__:
+    for klass in UML2_BehavioralFeature.__mro__:
         if "concurrency" in klass.__dict__:
             descriptor = klass.__dict__["concurrency"]
             break
     assert isinstance(descriptor, property)
+
+
+
+def test_uml2_structuredactivitynode_is_not_abstract():
+    assert not inspect.isabstract(UML2_StructuredActivityNode)
+
+
+def test_uml2_structuredactivitynode_constructor_exists():
+    assert callable(UML2_StructuredActivityNode.__init__)
+
+
+def test_uml2_structuredactivitynode_constructor_args():
+    sig = inspect.signature(UML2_StructuredActivityNode.__init__)
+    params = list(sig.parameters.keys())
+    assert "mustIsolate" in params, "Missing parameter 'mustIsolate'"
+
+def test_uml2_structuredactivitynode_has_mustIsolate():
+    assert hasattr(UML2_StructuredActivityNode, "mustIsolate")
+    descriptor = None
+    for klass in UML2_StructuredActivityNode.__mro__:
+        if "mustIsolate" in klass.__dict__:
+            descriptor = klass.__dict__["mustIsolate"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_uml2_state_is_not_abstract():
+    assert not inspect.isabstract(UML2_State)
+
+
+def test_uml2_state_constructor_exists():
+    assert callable(UML2_State.__init__)
+
+
+def test_uml2_state_constructor_args():
+    sig = inspect.signature(UML2_State.__init__)
+    params = list(sig.parameters.keys())
+    assert "isComposite" in params, "Missing parameter 'isComposite'"
+    assert "isSubmachineState" in params, "Missing parameter 'isSubmachineState'"
+    assert "isSimple" in params, "Missing parameter 'isSimple'"
+    assert "isOrthogonal" in params, "Missing parameter 'isOrthogonal'"
+
+def test_uml2_state_has_isComposite():
+    assert hasattr(UML2_State, "isComposite")
+    descriptor = None
+    for klass in UML2_State.__mro__:
+        if "isComposite" in klass.__dict__:
+            descriptor = klass.__dict__["isComposite"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_uml2_state_has_isSubmachineState():
+    assert hasattr(UML2_State, "isSubmachineState")
+    descriptor = None
+    for klass in UML2_State.__mro__:
+        if "isSubmachineState" in klass.__dict__:
+            descriptor = klass.__dict__["isSubmachineState"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_uml2_state_has_isSimple():
+    assert hasattr(UML2_State, "isSimple")
+    descriptor = None
+    for klass in UML2_State.__mro__:
+        if "isSimple" in klass.__dict__:
+            descriptor = klass.__dict__["isSimple"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_uml2_state_has_isOrthogonal():
+    assert hasattr(UML2_State, "isOrthogonal")
+    descriptor = None
+    for klass in UML2_State.__mro__:
+        if "isOrthogonal" in klass.__dict__:
+            descriptor = klass.__dict__["isOrthogonal"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_uml2_parameterset_is_not_abstract():
+    assert not inspect.isabstract(UML2_ParameterSet)
+
+
+def test_uml2_parameterset_constructor_exists():
+    assert callable(UML2_ParameterSet.__init__)
+
+
+def test_uml2_parameterset_constructor_args():
+    sig = inspect.signature(UML2_ParameterSet.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_uml2_typedelement_is_not_abstract():
+    assert not inspect.isabstract(UML2_TypedElement)
+
+
+def test_uml2_typedelement_constructor_exists():
+    assert callable(UML2_TypedElement.__init__)
+
+
+def test_uml2_typedelement_constructor_args():
+    sig = inspect.signature(UML2_TypedElement.__init__)
+    params = list(sig.parameters.keys())
 
 
 
@@ -1450,6 +4498,34 @@ def test_multiplicityelement_constructor_exists():
 
 def test_multiplicityelement_constructor_args():
     sig = inspect.signature(MultiplicityElement.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_uml2_pin_is_not_abstract():
+    assert not inspect.isabstract(UML2_Pin)
+
+
+def test_uml2_pin_constructor_exists():
+    assert callable(UML2_Pin.__init__)
+
+
+def test_uml2_pin_constructor_args():
+    sig = inspect.signature(UML2_Pin.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_uml2_connectorend_is_not_abstract():
+    assert not inspect.isabstract(UML2_ConnectorEnd)
+
+
+def test_uml2_connectorend_constructor_exists():
+    assert callable(UML2_ConnectorEnd.__init__)
+
+
+def test_uml2_connectorend_constructor_args():
+    sig = inspect.signature(UML2_ConnectorEnd.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1468,16 +4544,16 @@ def test_behavioralfeature_constructor_args():
 
 
 
-def test_uml2::datatype_is_not_abstract():
-    assert not inspect.isabstract(UML2::DataType)
+def test_uml2_datatype_is_not_abstract():
+    assert not inspect.isabstract(UML2_DataType)
 
 
-def test_uml2::datatype_constructor_exists():
-    assert callable(UML2::DataType.__init__)
+def test_uml2_datatype_constructor_exists():
+    assert callable(UML2_DataType.__init__)
 
 
-def test_uml2::datatype_constructor_args():
-    sig = inspect.signature(UML2::DataType.__init__)
+def test_uml2_datatype_constructor_args():
+    sig = inspect.signature(UML2_DataType.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1496,16 +4572,16 @@ def test_deploymenttarget_constructor_args():
 
 
 
-def test_uml2::node_is_not_abstract():
-    assert not inspect.isabstract(UML2::Node)
+def test_uml2_node_is_not_abstract():
+    assert not inspect.isabstract(UML2_Node)
 
 
-def test_uml2::node_constructor_exists():
-    assert callable(UML2::Node.__init__)
+def test_uml2_node_constructor_exists():
+    assert callable(UML2_Node.__init__)
 
 
-def test_uml2::node_constructor_args():
-    sig = inspect.signature(UML2::Node.__init__)
+def test_uml2_node_constructor_args():
+    sig = inspect.signature(UML2_Node.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1538,65 +4614,65 @@ def test_structuralfeature_constructor_args():
 
 
 
-def test_uml2::property_is_not_abstract():
-    assert not inspect.isabstract(UML2::Property)
+def test_uml2_property_is_not_abstract():
+    assert not inspect.isabstract(UML2_Property)
 
 
-def test_uml2::property_constructor_exists():
-    assert callable(UML2::Property.__init__)
+def test_uml2_property_constructor_exists():
+    assert callable(UML2_Property.__init__)
 
 
-def test_uml2::property_constructor_args():
-    sig = inspect.signature(UML2::Property.__init__)
+def test_uml2_property_constructor_args():
+    sig = inspect.signature(UML2_Property.__init__)
     params = list(sig.parameters.keys())
-    assert "isComposite" in params, "Missing parameter 'isComposite'"
-    assert "isDerivedUnion" in params, "Missing parameter 'isDerivedUnion'"
+    assert "aggregation" in params, "Missing parameter 'aggregation'"
     assert "isDerived" in params, "Missing parameter 'isDerived'"
     assert "default" in params, "Missing parameter 'default'"
-    assert "aggregation" in params, "Missing parameter 'aggregation'"
+    assert "isDerivedUnion" in params, "Missing parameter 'isDerivedUnion'"
+    assert "isComposite" in params, "Missing parameter 'isComposite'"
 
-def test_uml2::property_has_isComposite():
-    assert hasattr(UML2::Property, "isComposite")
+def test_uml2_property_has_aggregation():
+    assert hasattr(UML2_Property, "aggregation")
     descriptor = None
-    for klass in UML2::Property.__mro__:
-        if "isComposite" in klass.__dict__:
-            descriptor = klass.__dict__["isComposite"]
+    for klass in UML2_Property.__mro__:
+        if "aggregation" in klass.__dict__:
+            descriptor = klass.__dict__["aggregation"]
             break
     assert isinstance(descriptor, property)
 
-def test_uml2::property_has_isDerivedUnion():
-    assert hasattr(UML2::Property, "isDerivedUnion")
+def test_uml2_property_has_isDerived():
+    assert hasattr(UML2_Property, "isDerived")
     descriptor = None
-    for klass in UML2::Property.__mro__:
-        if "isDerivedUnion" in klass.__dict__:
-            descriptor = klass.__dict__["isDerivedUnion"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_uml2::property_has_isDerived():
-    assert hasattr(UML2::Property, "isDerived")
-    descriptor = None
-    for klass in UML2::Property.__mro__:
+    for klass in UML2_Property.__mro__:
         if "isDerived" in klass.__dict__:
             descriptor = klass.__dict__["isDerived"]
             break
     assert isinstance(descriptor, property)
 
-def test_uml2::property_has_default():
-    assert hasattr(UML2::Property, "default")
+def test_uml2_property_has_default():
+    assert hasattr(UML2_Property, "default")
     descriptor = None
-    for klass in UML2::Property.__mro__:
+    for klass in UML2_Property.__mro__:
         if "default" in klass.__dict__:
             descriptor = klass.__dict__["default"]
             break
     assert isinstance(descriptor, property)
 
-def test_uml2::property_has_aggregation():
-    assert hasattr(UML2::Property, "aggregation")
+def test_uml2_property_has_isDerivedUnion():
+    assert hasattr(UML2_Property, "isDerivedUnion")
     descriptor = None
-    for klass in UML2::Property.__mro__:
-        if "aggregation" in klass.__dict__:
-            descriptor = klass.__dict__["aggregation"]
+    for klass in UML2_Property.__mro__:
+        if "isDerivedUnion" in klass.__dict__:
+            descriptor = klass.__dict__["isDerivedUnion"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_uml2_property_has_isComposite():
+    assert hasattr(UML2_Property, "isComposite")
+    descriptor = None
+    for klass in UML2_Property.__mro__:
+        if "isComposite" in klass.__dict__:
+            descriptor = klass.__dict__["isComposite"]
             break
     assert isinstance(descriptor, property)
 
@@ -1616,95 +4692,33 @@ def test_packageableelement_constructor_args():
 
 
 
-def test_uml2::instancespecification_is_not_abstract():
-    assert not inspect.isabstract(UML2::InstanceSpecification)
+def test_uml2_primitivefunction_is_not_abstract():
+    assert not inspect.isabstract(UML2_PrimitiveFunction)
 
 
-def test_uml2::instancespecification_constructor_exists():
-    assert callable(UML2::InstanceSpecification.__init__)
+def test_uml2_primitivefunction_constructor_exists():
+    assert callable(UML2_PrimitiveFunction.__init__)
 
 
-def test_uml2::instancespecification_constructor_args():
-    sig = inspect.signature(UML2::InstanceSpecification.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_uml2::generalizationset_is_not_abstract():
-    assert not inspect.isabstract(UML2::GeneralizationSet)
-
-
-def test_uml2::generalizationset_constructor_exists():
-    assert callable(UML2::GeneralizationSet.__init__)
-
-
-def test_uml2::generalizationset_constructor_args():
-    sig = inspect.signature(UML2::GeneralizationSet.__init__)
-    params = list(sig.parameters.keys())
-    assert "isDisjoint" in params, "Missing parameter 'isDisjoint'"
-    assert "isCovering" in params, "Missing parameter 'isCovering'"
-
-def test_uml2::generalizationset_has_isDisjoint():
-    assert hasattr(UML2::GeneralizationSet, "isDisjoint")
-    descriptor = None
-    for klass in UML2::GeneralizationSet.__mro__:
-        if "isDisjoint" in klass.__dict__:
-            descriptor = klass.__dict__["isDisjoint"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_uml2::generalizationset_has_isCovering():
-    assert hasattr(UML2::GeneralizationSet, "isCovering")
-    descriptor = None
-    for klass in UML2::GeneralizationSet.__mro__:
-        if "isCovering" in klass.__dict__:
-            descriptor = klass.__dict__["isCovering"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_uml2::package_is_not_abstract():
-    assert not inspect.isabstract(UML2::Package)
-
-
-def test_uml2::package_constructor_exists():
-    assert callable(UML2::Package.__init__)
-
-
-def test_uml2::package_constructor_args():
-    sig = inspect.signature(UML2::Package.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_uml2::primitivefunction_is_not_abstract():
-    assert not inspect.isabstract(UML2::PrimitiveFunction)
-
-
-def test_uml2::primitivefunction_constructor_exists():
-    assert callable(UML2::PrimitiveFunction.__init__)
-
-
-def test_uml2::primitivefunction_constructor_args():
-    sig = inspect.signature(UML2::PrimitiveFunction.__init__)
+def test_uml2_primitivefunction_constructor_args():
+    sig = inspect.signature(UML2_PrimitiveFunction.__init__)
     params = list(sig.parameters.keys())
     assert "language" in params, "Missing parameter 'language'"
     assert "body" in params, "Missing parameter 'body'"
 
-def test_uml2::primitivefunction_has_language():
-    assert hasattr(UML2::PrimitiveFunction, "language")
+def test_uml2_primitivefunction_has_language():
+    assert hasattr(UML2_PrimitiveFunction, "language")
     descriptor = None
-    for klass in UML2::PrimitiveFunction.__mro__:
+    for klass in UML2_PrimitiveFunction.__mro__:
         if "language" in klass.__dict__:
             descriptor = klass.__dict__["language"]
             break
     assert isinstance(descriptor, property)
 
-def test_uml2::primitivefunction_has_body():
-    assert hasattr(UML2::PrimitiveFunction, "body")
+def test_uml2_primitivefunction_has_body():
+    assert hasattr(UML2_PrimitiveFunction, "body")
     descriptor = None
-    for klass in UML2::PrimitiveFunction.__mro__:
+    for klass in UML2_PrimitiveFunction.__mro__:
         if "body" in klass.__dict__:
             descriptor = klass.__dict__["body"]
             break
@@ -1712,53 +4726,181 @@ def test_uml2::primitivefunction_has_body():
 
 
 
-def test_uml2::type_is_not_abstract():
-    assert not inspect.isabstract(UML2::Type)
+def test_uml2_package_is_not_abstract():
+    assert not inspect.isabstract(UML2_Package)
 
 
-def test_uml2::type_constructor_exists():
-    assert callable(UML2::Type.__init__)
+def test_uml2_package_constructor_exists():
+    assert callable(UML2_Package.__init__)
 
 
-def test_uml2::type_constructor_args():
-    sig = inspect.signature(UML2::Type.__init__)
+def test_uml2_package_constructor_args():
+    sig = inspect.signature(UML2_Package.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_uml2::reception_is_not_abstract():
-    assert not inspect.isabstract(UML2::Reception)
+def test_uml2_generalizationset_is_not_abstract():
+    assert not inspect.isabstract(UML2_GeneralizationSet)
 
 
-def test_uml2::reception_constructor_exists():
-    assert callable(UML2::Reception.__init__)
+def test_uml2_generalizationset_constructor_exists():
+    assert callable(UML2_GeneralizationSet.__init__)
 
 
-def test_uml2::reception_constructor_args():
-    sig = inspect.signature(UML2::Reception.__init__)
+def test_uml2_generalizationset_constructor_args():
+    sig = inspect.signature(UML2_GeneralizationSet.__init__)
+    params = list(sig.parameters.keys())
+    assert "isDisjoint" in params, "Missing parameter 'isDisjoint'"
+    assert "isCovering" in params, "Missing parameter 'isCovering'"
+
+def test_uml2_generalizationset_has_isDisjoint():
+    assert hasattr(UML2_GeneralizationSet, "isDisjoint")
+    descriptor = None
+    for klass in UML2_GeneralizationSet.__mro__:
+        if "isDisjoint" in klass.__dict__:
+            descriptor = klass.__dict__["isDisjoint"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_uml2_generalizationset_has_isCovering():
+    assert hasattr(UML2_GeneralizationSet, "isCovering")
+    descriptor = None
+    for klass in UML2_GeneralizationSet.__mro__:
+        if "isCovering" in klass.__dict__:
+            descriptor = klass.__dict__["isCovering"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_uml2_instancespecification_is_not_abstract():
+    assert not inspect.isabstract(UML2_InstanceSpecification)
+
+
+def test_uml2_instancespecification_constructor_exists():
+    assert callable(UML2_InstanceSpecification.__init__)
+
+
+def test_uml2_instancespecification_constructor_args():
+    sig = inspect.signature(UML2_InstanceSpecification.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_uml2::classifier_is_not_abstract():
-    assert not inspect.isabstract(UML2::Classifier)
+def test_uml2_dependency_is_not_abstract():
+    assert not inspect.isabstract(UML2_Dependency)
 
 
-def test_uml2::classifier_constructor_exists():
-    assert callable(UML2::Classifier.__init__)
+def test_uml2_dependency_constructor_exists():
+    assert callable(UML2_Dependency.__init__)
 
 
-def test_uml2::classifier_constructor_args():
-    sig = inspect.signature(UML2::Classifier.__init__)
+def test_uml2_dependency_constructor_args():
+    sig = inspect.signature(UML2_Dependency.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_uml2_informationflow_is_not_abstract():
+    assert not inspect.isabstract(UML2_InformationFlow)
+
+
+def test_uml2_informationflow_constructor_exists():
+    assert callable(UML2_InformationFlow.__init__)
+
+
+def test_uml2_informationflow_constructor_args():
+    sig = inspect.signature(UML2_InformationFlow.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_uml2_constraint_is_not_abstract():
+    assert not inspect.isabstract(UML2_Constraint)
+
+
+def test_uml2_constraint_constructor_exists():
+    assert callable(UML2_Constraint.__init__)
+
+
+def test_uml2_constraint_constructor_args():
+    sig = inspect.signature(UML2_Constraint.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_uml2_type_is_not_abstract():
+    assert not inspect.isabstract(UML2_Type)
+
+
+def test_uml2_type_constructor_exists():
+    assert callable(UML2_Type.__init__)
+
+
+def test_uml2_type_constructor_args():
+    sig = inspect.signature(UML2_Type.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_uml2_reception_is_not_abstract():
+    assert not inspect.isabstract(UML2_Reception)
+
+
+def test_uml2_reception_constructor_exists():
+    assert callable(UML2_Reception.__init__)
+
+
+def test_uml2_reception_constructor_args():
+    sig = inspect.signature(UML2_Reception.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_uml2_classifier_is_not_abstract():
+    assert not inspect.isabstract(UML2_Classifier)
+
+
+def test_uml2_classifier_constructor_exists():
+    assert callable(UML2_Classifier.__init__)
+
+
+def test_uml2_classifier_constructor_args():
+    sig = inspect.signature(UML2_Classifier.__init__)
     params = list(sig.parameters.keys())
     assert "isAbstract" in params, "Missing parameter 'isAbstract'"
 
-def test_uml2::classifier_has_isAbstract():
-    assert hasattr(UML2::Classifier, "isAbstract")
+def test_uml2_classifier_has_isAbstract():
+    assert hasattr(UML2_Classifier, "isAbstract")
     descriptor = None
-    for klass in UML2::Classifier.__mro__:
+    for klass in UML2_Classifier.__mro__:
         if "isAbstract" in klass.__dict__:
             descriptor = klass.__dict__["isAbstract"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_uml2_extension_is_not_abstract():
+    assert not inspect.isabstract(UML2_Extension)
+
+
+def test_uml2_extension_constructor_exists():
+    assert callable(UML2_Extension.__init__)
+
+
+def test_uml2_extension_constructor_args():
+    sig = inspect.signature(UML2_Extension.__init__)
+    params = list(sig.parameters.keys())
+    assert "isRequired" in params, "Missing parameter 'isRequired'"
+
+def test_uml2_extension_has_isRequired():
+    assert hasattr(UML2_Extension, "isRequired")
+    descriptor = None
+    for klass in UML2_Extension.__mro__:
+        if "isRequired" in klass.__dict__:
+            descriptor = klass.__dict__["isRequired"]
             break
     assert isinstance(descriptor, property)
 
@@ -1792,41 +4934,69 @@ def test_behavioredclassifier_constructor_args():
 
 
 
-def test_uml2::usecase_is_not_abstract():
-    assert not inspect.isabstract(UML2::UseCase)
+def test_uml2_usecase_is_not_abstract():
+    assert not inspect.isabstract(UML2_UseCase)
 
 
-def test_uml2::usecase_constructor_exists():
-    assert callable(UML2::UseCase.__init__)
+def test_uml2_usecase_constructor_exists():
+    assert callable(UML2_UseCase.__init__)
 
 
-def test_uml2::usecase_constructor_args():
-    sig = inspect.signature(UML2::UseCase.__init__)
+def test_uml2_usecase_constructor_args():
+    sig = inspect.signature(UML2_UseCase.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_uml2::class_is_not_abstract():
-    assert not inspect.isabstract(UML2::Class)
+def test_uml2_collaboration_is_not_abstract():
+    assert not inspect.isabstract(UML2_Collaboration)
 
 
-def test_uml2::class_constructor_exists():
-    assert callable(UML2::Class.__init__)
+def test_uml2_collaboration_constructor_exists():
+    assert callable(UML2_Collaboration.__init__)
 
 
-def test_uml2::class_constructor_args():
-    sig = inspect.signature(UML2::Class.__init__)
+def test_uml2_collaboration_constructor_args():
+    sig = inspect.signature(UML2_Collaboration.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_uml2_class_is_not_abstract():
+    assert not inspect.isabstract(UML2_Class)
+
+
+def test_uml2_class_constructor_exists():
+    assert callable(UML2_Class.__init__)
+
+
+def test_uml2_class_constructor_args():
+    sig = inspect.signature(UML2_Class.__init__)
     params = list(sig.parameters.keys())
     assert "isActive" in params, "Missing parameter 'isActive'"
 
-def test_uml2::class_has_isActive():
-    assert hasattr(UML2::Class, "isActive")
+def test_uml2_class_has_isActive():
+    assert hasattr(UML2_Class, "isActive")
     descriptor = None
-    for klass in UML2::Class.__mro__:
+    for klass in UML2_Class.__mro__:
         if "isActive" in klass.__dict__:
             descriptor = klass.__dict__["isActive"]
             break
     assert isinstance(descriptor, property)
+
+
+
+def test_uml2_relationship_is_not_abstract():
+    assert not inspect.isabstract(UML2_Relationship)
+
+
+def test_uml2_relationship_constructor_exists():
+    assert callable(UML2_Relationship.__init__)
+
+
+def test_uml2_relationship_constructor_args():
+    sig = inspect.signature(UML2_Relationship.__init__)
+    params = list(sig.parameters.keys())
 
 
 
@@ -1844,23 +5014,23 @@ def test_relationship_constructor_args():
 
 
 
-def test_uml2::association_is_not_abstract():
-    assert not inspect.isabstract(UML2::Association)
+def test_uml2_association_is_not_abstract():
+    assert not inspect.isabstract(UML2_Association)
 
 
-def test_uml2::association_constructor_exists():
-    assert callable(UML2::Association.__init__)
+def test_uml2_association_constructor_exists():
+    assert callable(UML2_Association.__init__)
 
 
-def test_uml2::association_constructor_args():
-    sig = inspect.signature(UML2::Association.__init__)
+def test_uml2_association_constructor_args():
+    sig = inspect.signature(UML2_Association.__init__)
     params = list(sig.parameters.keys())
     assert "isDerived" in params, "Missing parameter 'isDerived'"
 
-def test_uml2::association_has_isDerived():
-    assert hasattr(UML2::Association, "isDerived")
+def test_uml2_association_has_isDerived():
+    assert hasattr(UML2_Association, "isDerived")
     descriptor = None
-    for klass in UML2::Association.__mro__:
+    for klass in UML2_Association.__mro__:
         if "isDerived" in klass.__dict__:
             descriptor = klass.__dict__["isDerived"]
             break
@@ -1868,16 +5038,16 @@ def test_uml2::association_has_isDerived():
 
 
 
-def test_uml2::directedrelationship_is_not_abstract():
-    assert not inspect.isabstract(UML2::DirectedRelationship)
+def test_uml2_directedrelationship_is_not_abstract():
+    assert not inspect.isabstract(UML2_DirectedRelationship)
 
 
-def test_uml2::directedrelationship_constructor_exists():
-    assert callable(UML2::DirectedRelationship.__init__)
+def test_uml2_directedrelationship_constructor_exists():
+    assert callable(UML2_DirectedRelationship.__init__)
 
 
-def test_uml2::directedrelationship_constructor_args():
-    sig = inspect.signature(UML2::DirectedRelationship.__init__)
+def test_uml2_directedrelationship_constructor_args():
+    sig = inspect.signature(UML2_DirectedRelationship.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1896,23 +5066,23 @@ def test_opaqueexpression_constructor_args():
 
 
 
-def test_uml2::expression_is_not_abstract():
-    assert not inspect.isabstract(UML2::Expression)
+def test_uml2_expression_is_not_abstract():
+    assert not inspect.isabstract(UML2_Expression)
 
 
-def test_uml2::expression_constructor_exists():
-    assert callable(UML2::Expression.__init__)
+def test_uml2_expression_constructor_exists():
+    assert callable(UML2_Expression.__init__)
 
 
-def test_uml2::expression_constructor_args():
-    sig = inspect.signature(UML2::Expression.__init__)
+def test_uml2_expression_constructor_args():
+    sig = inspect.signature(UML2_Expression.__init__)
     params = list(sig.parameters.keys())
     assert "symbol" in params, "Missing parameter 'symbol'"
 
-def test_uml2::expression_has_symbol():
-    assert hasattr(UML2::Expression, "symbol")
+def test_uml2_expression_has_symbol():
+    assert hasattr(UML2_Expression, "symbol")
     descriptor = None
-    for klass in UML2::Expression.__mro__:
+    for klass in UML2_Expression.__mro__:
         if "symbol" in klass.__dict__:
             descriptor = klass.__dict__["symbol"]
             break
@@ -1934,6 +5104,44 @@ def test_parameterableelement_constructor_args():
 
 
 
+def test_uml2_packageableelement_is_not_abstract():
+    assert not inspect.isabstract(UML2_PackageableElement)
+
+
+def test_uml2_packageableelement_constructor_exists():
+    assert callable(UML2_PackageableElement.__init__)
+
+
+def test_uml2_packageableelement_constructor_args():
+    sig = inspect.signature(UML2_PackageableElement.__init__)
+    params = list(sig.parameters.keys())
+    assert "packageableElement_visibility" in params, "Missing parameter 'packageableElement_visibility'"
+
+def test_uml2_packageableelement_has_packageableElement_visibility():
+    assert hasattr(UML2_PackageableElement, "packageableElement_visibility")
+    descriptor = None
+    for klass in UML2_PackageableElement.__mro__:
+        if "packageableElement_visibility" in klass.__dict__:
+            descriptor = klass.__dict__["packageableElement_visibility"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_uml2_connectableelement_is_not_abstract():
+    assert not inspect.isabstract(UML2_ConnectableElement)
+
+
+def test_uml2_connectableelement_constructor_exists():
+    assert callable(UML2_ConnectableElement.__init__)
+
+
+def test_uml2_connectableelement_constructor_args():
+    sig = inspect.signature(UML2_ConnectableElement.__init__)
+    params = list(sig.parameters.keys())
+
+
+
 def test_typedelement_is_not_abstract():
     assert not inspect.isabstract(TypedElement)
 
@@ -1948,47 +5156,37 @@ def test_typedelement_constructor_args():
 
 
 
-def test_uml2::operation_is_not_abstract():
-    assert not inspect.isabstract(UML2::Operation)
+def test_uml2_valuespecification_is_not_abstract():
+    assert not inspect.isabstract(UML2_ValueSpecification)
 
 
-def test_uml2::operation_constructor_exists():
-    assert callable(UML2::Operation.__init__)
+def test_uml2_valuespecification_constructor_exists():
+    assert callable(UML2_ValueSpecification.__init__)
 
 
-def test_uml2::operation_constructor_args():
-    sig = inspect.signature(UML2::Operation.__init__)
+def test_uml2_valuespecification_constructor_args():
+    sig = inspect.signature(UML2_ValueSpecification.__init__)
     params = list(sig.parameters.keys())
-    assert "isQuery" in params, "Missing parameter 'isQuery'"
-
-def test_uml2::operation_has_isQuery():
-    assert hasattr(UML2::Operation, "isQuery")
-    descriptor = None
-    for klass in UML2::Operation.__mro__:
-        if "isQuery" in klass.__dict__:
-            descriptor = klass.__dict__["isQuery"]
-            break
-    assert isinstance(descriptor, property)
 
 
 
-def test_uml2::structuralfeature_is_not_abstract():
-    assert not inspect.isabstract(UML2::StructuralFeature)
+def test_uml2_structuralfeature_is_not_abstract():
+    assert not inspect.isabstract(UML2_StructuralFeature)
 
 
-def test_uml2::structuralfeature_constructor_exists():
-    assert callable(UML2::StructuralFeature.__init__)
+def test_uml2_structuralfeature_constructor_exists():
+    assert callable(UML2_StructuralFeature.__init__)
 
 
-def test_uml2::structuralfeature_constructor_args():
-    sig = inspect.signature(UML2::StructuralFeature.__init__)
+def test_uml2_structuralfeature_constructor_args():
+    sig = inspect.signature(UML2_StructuralFeature.__init__)
     params = list(sig.parameters.keys())
     assert "isReadOnly" in params, "Missing parameter 'isReadOnly'"
 
-def test_uml2::structuralfeature_has_isReadOnly():
-    assert hasattr(UML2::StructuralFeature, "isReadOnly")
+def test_uml2_structuralfeature_has_isReadOnly():
+    assert hasattr(UML2_StructuralFeature, "isReadOnly")
     descriptor = None
-    for klass in UML2::StructuralFeature.__mro__:
+    for klass in UML2_StructuralFeature.__mro__:
         if "isReadOnly" in klass.__dict__:
             descriptor = klass.__dict__["isReadOnly"]
             break
@@ -1996,23 +5194,85 @@ def test_uml2::structuralfeature_has_isReadOnly():
 
 
 
-def test_uml2::behavior_is_not_abstract():
-    assert not inspect.isabstract(UML2::Behavior)
+def test_uml2_variable_is_not_abstract():
+    assert not inspect.isabstract(UML2_Variable)
 
 
-def test_uml2::behavior_constructor_exists():
-    assert callable(UML2::Behavior.__init__)
+def test_uml2_variable_constructor_exists():
+    assert callable(UML2_Variable.__init__)
 
 
-def test_uml2::behavior_constructor_args():
-    sig = inspect.signature(UML2::Behavior.__init__)
+def test_uml2_variable_constructor_args():
+    sig = inspect.signature(UML2_Variable.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_uml2_operation_is_not_abstract():
+    assert not inspect.isabstract(UML2_Operation)
+
+
+def test_uml2_operation_constructor_exists():
+    assert callable(UML2_Operation.__init__)
+
+
+def test_uml2_operation_constructor_args():
+    sig = inspect.signature(UML2_Operation.__init__)
+    params = list(sig.parameters.keys())
+    assert "isQuery" in params, "Missing parameter 'isQuery'"
+
+def test_uml2_operation_has_isQuery():
+    assert hasattr(UML2_Operation, "isQuery")
+    descriptor = None
+    for klass in UML2_Operation.__mro__:
+        if "isQuery" in klass.__dict__:
+            descriptor = klass.__dict__["isQuery"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_uml2_objectnode_is_not_abstract():
+    assert not inspect.isabstract(UML2_ObjectNode)
+
+
+def test_uml2_objectnode_constructor_exists():
+    assert callable(UML2_ObjectNode.__init__)
+
+
+def test_uml2_objectnode_constructor_args():
+    sig = inspect.signature(UML2_ObjectNode.__init__)
+    params = list(sig.parameters.keys())
+    assert "ordering" in params, "Missing parameter 'ordering'"
+
+def test_uml2_objectnode_has_ordering():
+    assert hasattr(UML2_ObjectNode, "ordering")
+    descriptor = None
+    for klass in UML2_ObjectNode.__mro__:
+        if "ordering" in klass.__dict__:
+            descriptor = klass.__dict__["ordering"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_uml2_behavior_is_not_abstract():
+    assert not inspect.isabstract(UML2_Behavior)
+
+
+def test_uml2_behavior_constructor_exists():
+    assert callable(UML2_Behavior.__init__)
+
+
+def test_uml2_behavior_constructor_args():
+    sig = inspect.signature(UML2_Behavior.__init__)
     params = list(sig.parameters.keys())
     assert "isReentrant" in params, "Missing parameter 'isReentrant'"
 
-def test_uml2::behavior_has_isReentrant():
-    assert hasattr(UML2::Behavior, "isReentrant")
+def test_uml2_behavior_has_isReentrant():
+    assert hasattr(UML2_Behavior, "isReentrant")
     descriptor = None
-    for klass in UML2::Behavior.__mro__:
+    for klass in UML2_Behavior.__mro__:
         if "isReentrant" in klass.__dict__:
             descriptor = klass.__dict__["isReentrant"]
             break
@@ -2020,65 +5280,65 @@ def test_uml2::behavior_has_isReentrant():
 
 
 
-def test_uml2::parameter_is_not_abstract():
-    assert not inspect.isabstract(UML2::Parameter)
+def test_uml2_parameter_is_not_abstract():
+    assert not inspect.isabstract(UML2_Parameter)
 
 
-def test_uml2::parameter_constructor_exists():
-    assert callable(UML2::Parameter.__init__)
+def test_uml2_parameter_constructor_exists():
+    assert callable(UML2_Parameter.__init__)
 
 
-def test_uml2::parameter_constructor_args():
-    sig = inspect.signature(UML2::Parameter.__init__)
+def test_uml2_parameter_constructor_args():
+    sig = inspect.signature(UML2_Parameter.__init__)
     params = list(sig.parameters.keys())
-    assert "effect" in params, "Missing parameter 'effect'"
-    assert "default" in params, "Missing parameter 'default'"
-    assert "direction" in params, "Missing parameter 'direction'"
     assert "isStream" in params, "Missing parameter 'isStream'"
     assert "isException" in params, "Missing parameter 'isException'"
+    assert "direction" in params, "Missing parameter 'direction'"
+    assert "default" in params, "Missing parameter 'default'"
+    assert "effect" in params, "Missing parameter 'effect'"
 
-def test_uml2::parameter_has_effect():
-    assert hasattr(UML2::Parameter, "effect")
+def test_uml2_parameter_has_isStream():
+    assert hasattr(UML2_Parameter, "isStream")
     descriptor = None
-    for klass in UML2::Parameter.__mro__:
-        if "effect" in klass.__dict__:
-            descriptor = klass.__dict__["effect"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_uml2::parameter_has_default():
-    assert hasattr(UML2::Parameter, "default")
-    descriptor = None
-    for klass in UML2::Parameter.__mro__:
-        if "default" in klass.__dict__:
-            descriptor = klass.__dict__["default"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_uml2::parameter_has_direction():
-    assert hasattr(UML2::Parameter, "direction")
-    descriptor = None
-    for klass in UML2::Parameter.__mro__:
-        if "direction" in klass.__dict__:
-            descriptor = klass.__dict__["direction"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_uml2::parameter_has_isStream():
-    assert hasattr(UML2::Parameter, "isStream")
-    descriptor = None
-    for klass in UML2::Parameter.__mro__:
+    for klass in UML2_Parameter.__mro__:
         if "isStream" in klass.__dict__:
             descriptor = klass.__dict__["isStream"]
             break
     assert isinstance(descriptor, property)
 
-def test_uml2::parameter_has_isException():
-    assert hasattr(UML2::Parameter, "isException")
+def test_uml2_parameter_has_isException():
+    assert hasattr(UML2_Parameter, "isException")
     descriptor = None
-    for klass in UML2::Parameter.__mro__:
+    for klass in UML2_Parameter.__mro__:
         if "isException" in klass.__dict__:
             descriptor = klass.__dict__["isException"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_uml2_parameter_has_direction():
+    assert hasattr(UML2_Parameter, "direction")
+    descriptor = None
+    for klass in UML2_Parameter.__mro__:
+        if "direction" in klass.__dict__:
+            descriptor = klass.__dict__["direction"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_uml2_parameter_has_default():
+    assert hasattr(UML2_Parameter, "default")
+    descriptor = None
+    for klass in UML2_Parameter.__mro__:
+        if "default" in klass.__dict__:
+            descriptor = klass.__dict__["default"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_uml2_parameter_has_effect():
+    assert hasattr(UML2_Parameter, "effect")
+    descriptor = None
+    for klass in UML2_Parameter.__mro__:
+        if "effect" in klass.__dict__:
+            descriptor = klass.__dict__["effect"]
             break
     assert isinstance(descriptor, property)
 
@@ -2098,51 +5358,37 @@ def test_valuespecification_constructor_args():
 
 
 
-def test_uml2::instancevalue_is_not_abstract():
-    assert not inspect.isabstract(UML2::InstanceValue)
+def test_uml2_instancevalue_is_not_abstract():
+    assert not inspect.isabstract(UML2_InstanceValue)
 
 
-def test_uml2::instancevalue_constructor_exists():
-    assert callable(UML2::InstanceValue.__init__)
+def test_uml2_instancevalue_constructor_exists():
+    assert callable(UML2_InstanceValue.__init__)
 
 
-def test_uml2::instancevalue_constructor_args():
-    sig = inspect.signature(UML2::InstanceValue.__init__)
+def test_uml2_instancevalue_constructor_args():
+    sig = inspect.signature(UML2_InstanceValue.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_uml2::interval_is_not_abstract():
-    assert not inspect.isabstract(UML2::Interval)
+def test_uml2_timeexpression_is_not_abstract():
+    assert not inspect.isabstract(UML2_TimeExpression)
 
 
-def test_uml2::interval_constructor_exists():
-    assert callable(UML2::Interval.__init__)
+def test_uml2_timeexpression_constructor_exists():
+    assert callable(UML2_TimeExpression.__init__)
 
 
-def test_uml2::interval_constructor_args():
-    sig = inspect.signature(UML2::Interval.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_uml2::timeexpression_is_not_abstract():
-    assert not inspect.isabstract(UML2::TimeExpression)
-
-
-def test_uml2::timeexpression_constructor_exists():
-    assert callable(UML2::TimeExpression.__init__)
-
-
-def test_uml2::timeexpression_constructor_args():
-    sig = inspect.signature(UML2::TimeExpression.__init__)
+def test_uml2_timeexpression_constructor_args():
+    sig = inspect.signature(UML2_TimeExpression.__init__)
     params = list(sig.parameters.keys())
     assert "firstTime" in params, "Missing parameter 'firstTime'"
 
-def test_uml2::timeexpression_has_firstTime():
-    assert hasattr(UML2::TimeExpression, "firstTime")
+def test_uml2_timeexpression_has_firstTime():
+    assert hasattr(UML2_TimeExpression, "firstTime")
     descriptor = None
-    for klass in UML2::TimeExpression.__mro__:
+    for klass in UML2_TimeExpression.__mro__:
         if "firstTime" in klass.__dict__:
             descriptor = klass.__dict__["firstTime"]
             break
@@ -2150,23 +5396,23 @@ def test_uml2::timeexpression_has_firstTime():
 
 
 
-def test_uml2::duration_is_not_abstract():
-    assert not inspect.isabstract(UML2::Duration)
+def test_uml2_duration_is_not_abstract():
+    assert not inspect.isabstract(UML2_Duration)
 
 
-def test_uml2::duration_constructor_exists():
-    assert callable(UML2::Duration.__init__)
+def test_uml2_duration_constructor_exists():
+    assert callable(UML2_Duration.__init__)
 
 
-def test_uml2::duration_constructor_args():
-    sig = inspect.signature(UML2::Duration.__init__)
+def test_uml2_duration_constructor_args():
+    sig = inspect.signature(UML2_Duration.__init__)
     params = list(sig.parameters.keys())
     assert "firstTime" in params, "Missing parameter 'firstTime'"
 
-def test_uml2::duration_has_firstTime():
-    assert hasattr(UML2::Duration, "firstTime")
+def test_uml2_duration_has_firstTime():
+    assert hasattr(UML2_Duration, "firstTime")
     descriptor = None
-    for klass in UML2::Duration.__mro__:
+    for klass in UML2_Duration.__mro__:
         if "firstTime" in klass.__dict__:
             descriptor = klass.__dict__["firstTime"]
             break
@@ -2174,47 +5420,33 @@ def test_uml2::duration_has_firstTime():
 
 
 
-def test_uml2::literalspecification_is_not_abstract():
-    assert not inspect.isabstract(UML2::LiteralSpecification)
+def test_uml2_opaqueexpression_is_not_abstract():
+    assert not inspect.isabstract(UML2_OpaqueExpression)
 
 
-def test_uml2::literalspecification_constructor_exists():
-    assert callable(UML2::LiteralSpecification.__init__)
+def test_uml2_opaqueexpression_constructor_exists():
+    assert callable(UML2_OpaqueExpression.__init__)
 
 
-def test_uml2::literalspecification_constructor_args():
-    sig = inspect.signature(UML2::LiteralSpecification.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_uml2::opaqueexpression_is_not_abstract():
-    assert not inspect.isabstract(UML2::OpaqueExpression)
-
-
-def test_uml2::opaqueexpression_constructor_exists():
-    assert callable(UML2::OpaqueExpression.__init__)
-
-
-def test_uml2::opaqueexpression_constructor_args():
-    sig = inspect.signature(UML2::OpaqueExpression.__init__)
+def test_uml2_opaqueexpression_constructor_args():
+    sig = inspect.signature(UML2_OpaqueExpression.__init__)
     params = list(sig.parameters.keys())
     assert "language" in params, "Missing parameter 'language'"
     assert "bodies" in params, "Missing parameter 'bodies'"
 
-def test_uml2::opaqueexpression_has_language():
-    assert hasattr(UML2::OpaqueExpression, "language")
+def test_uml2_opaqueexpression_has_language():
+    assert hasattr(UML2_OpaqueExpression, "language")
     descriptor = None
-    for klass in UML2::OpaqueExpression.__mro__:
+    for klass in UML2_OpaqueExpression.__mro__:
         if "language" in klass.__dict__:
             descriptor = klass.__dict__["language"]
             break
     assert isinstance(descriptor, property)
 
-def test_uml2::opaqueexpression_has_bodies():
-    assert hasattr(UML2::OpaqueExpression, "bodies")
+def test_uml2_opaqueexpression_has_bodies():
+    assert hasattr(UML2_OpaqueExpression, "bodies")
     descriptor = None
-    for klass in UML2::OpaqueExpression.__mro__:
+    for klass in UML2_OpaqueExpression.__mro__:
         if "bodies" in klass.__dict__:
             descriptor = klass.__dict__["bodies"]
             break
@@ -2222,3362 +5454,46 @@ def test_uml2::opaqueexpression_has_bodies():
 
 
 
-def test_uml2::packageimport_is_not_abstract():
-    assert not inspect.isabstract(UML2::PackageImport)
+def test_uml2_interval_is_not_abstract():
+    assert not inspect.isabstract(UML2_Interval)
 
 
-def test_uml2::packageimport_constructor_exists():
-    assert callable(UML2::PackageImport.__init__)
+def test_uml2_interval_constructor_exists():
+    assert callable(UML2_Interval.__init__)
 
 
-def test_uml2::packageimport_constructor_args():
-    sig = inspect.signature(UML2::PackageImport.__init__)
+def test_uml2_interval_constructor_args():
+    sig = inspect.signature(UML2_Interval.__init__)
     params = list(sig.parameters.keys())
-    assert "visibility" in params, "Missing parameter 'visibility'"
 
-def test_uml2::packageimport_has_visibility():
-    assert hasattr(UML2::PackageImport, "visibility")
-    descriptor = None
-    for klass in UML2::PackageImport.__mro__:
-        if "visibility" in klass.__dict__:
-            descriptor = klass.__dict__["visibility"]
-            break
-    assert isinstance(descriptor, property)
 
 
+def test_uml2_literalspecification_is_not_abstract():
+    assert not inspect.isabstract(UML2_LiteralSpecification)
 
-def test_uml2::elementimport_is_not_abstract():
-    assert not inspect.isabstract(UML2::ElementImport)
 
+def test_uml2_literalspecification_constructor_exists():
+    assert callable(UML2_LiteralSpecification.__init__)
 
-def test_uml2::elementimport_constructor_exists():
-    assert callable(UML2::ElementImport.__init__)
 
-
-def test_uml2::elementimport_constructor_args():
-    sig = inspect.signature(UML2::ElementImport.__init__)
-    params = list(sig.parameters.keys())
-    assert "alias" in params, "Missing parameter 'alias'"
-    assert "visibility" in params, "Missing parameter 'visibility'"
-
-def test_uml2::elementimport_has_alias():
-    assert hasattr(UML2::ElementImport, "alias")
-    descriptor = None
-    for klass in UML2::ElementImport.__mro__:
-        if "alias" in klass.__dict__:
-            descriptor = klass.__dict__["alias"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_uml2::elementimport_has_visibility():
-    assert hasattr(UML2::ElementImport, "visibility")
-    descriptor = None
-    for klass in UML2::ElementImport.__mro__:
-        if "visibility" in klass.__dict__:
-            descriptor = klass.__dict__["visibility"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_uml2::constraint_is_not_abstract():
-    assert not inspect.isabstract(UML2::Constraint)
-
-
-def test_uml2::constraint_constructor_exists():
-    assert callable(UML2::Constraint.__init__)
-
-
-def test_uml2::constraint_constructor_args():
-    sig = inspect.signature(UML2::Constraint.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_namedelement_is_not_abstract():
-    assert not inspect.isabstract(NamedElement)
-
-
-def test_namedelement_constructor_exists():
-    assert callable(NamedElement.__init__)
-
-
-def test_namedelement_constructor_args():
-    sig = inspect.signature(NamedElement.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_uml2::redefinableelement_is_not_abstract():
-    assert not inspect.isabstract(UML2::RedefinableElement)
-
-
-def test_uml2::redefinableelement_constructor_exists():
-    assert callable(UML2::RedefinableElement.__init__)
-
-
-def test_uml2::redefinableelement_constructor_args():
-    sig = inspect.signature(UML2::RedefinableElement.__init__)
-    params = list(sig.parameters.keys())
-    assert "isLeaf" in params, "Missing parameter 'isLeaf'"
-
-def test_uml2::redefinableelement_has_isLeaf():
-    assert hasattr(UML2::RedefinableElement, "isLeaf")
-    descriptor = None
-    for klass in UML2::RedefinableElement.__mro__:
-        if "isLeaf" in klass.__dict__:
-            descriptor = klass.__dict__["isLeaf"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_uml2::parameterset_is_not_abstract():
-    assert not inspect.isabstract(UML2::ParameterSet)
-
-
-def test_uml2::parameterset_constructor_exists():
-    assert callable(UML2::ParameterSet.__init__)
-
-
-def test_uml2::parameterset_constructor_args():
-    sig = inspect.signature(UML2::ParameterSet.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_uml2::typedelement_is_not_abstract():
-    assert not inspect.isabstract(UML2::TypedElement)
-
-
-def test_uml2::typedelement_constructor_exists():
-    assert callable(UML2::TypedElement.__init__)
-
-
-def test_uml2::typedelement_constructor_args():
-    sig = inspect.signature(UML2::TypedElement.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_uml2::collaborationoccurrence_is_not_abstract():
-    assert not inspect.isabstract(UML2::CollaborationOccurrence)
-
-
-def test_uml2::collaborationoccurrence_constructor_exists():
-    assert callable(UML2::CollaborationOccurrence.__init__)
-
-
-def test_uml2::collaborationoccurrence_constructor_args():
-    sig = inspect.signature(UML2::CollaborationOccurrence.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_uml2::packageableelement_is_not_abstract():
-    assert not inspect.isabstract(UML2::PackageableElement)
-
-
-def test_uml2::packageableelement_constructor_exists():
-    assert callable(UML2::PackageableElement.__init__)
-
-
-def test_uml2::packageableelement_constructor_args():
-    sig = inspect.signature(UML2::PackageableElement.__init__)
-    params = list(sig.parameters.keys())
-    assert "packageableElement_visibility" in params, "Missing parameter 'packageableElement_visibility'"
-
-def test_uml2::packageableelement_has_packageableElement_visibility():
-    assert hasattr(UML2::PackageableElement, "packageableElement_visibility")
-    descriptor = None
-    for klass in UML2::PackageableElement.__mro__:
-        if "packageableElement_visibility" in klass.__dict__:
-            descriptor = klass.__dict__["packageableElement_visibility"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_uml2::deployedartifact_is_not_abstract():
-    assert not inspect.isabstract(UML2::DeployedArtifact)
-
-
-def test_uml2::deployedartifact_constructor_exists():
-    assert callable(UML2::DeployedArtifact.__init__)
-
-
-def test_uml2::deployedartifact_constructor_args():
-    sig = inspect.signature(UML2::DeployedArtifact.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_uml2::deploymenttarget_is_not_abstract():
-    assert not inspect.isabstract(UML2::DeploymentTarget)
-
-
-def test_uml2::deploymenttarget_constructor_exists():
-    assert callable(UML2::DeploymentTarget.__init__)
-
-
-def test_uml2::deploymenttarget_constructor_args():
-    sig = inspect.signature(UML2::DeploymentTarget.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_uml2::namespace_is_not_abstract():
-    assert not inspect.isabstract(UML2::Namespace)
-
-
-def test_uml2::namespace_constructor_exists():
-    assert callable(UML2::Namespace.__init__)
-
-
-def test_uml2::namespace_constructor_args():
-    sig = inspect.signature(UML2::Namespace.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_uml2::dependency_is_not_abstract():
-    assert not inspect.isabstract(UML2::Dependency)
-
-
-def test_uml2::dependency_constructor_exists():
-    assert callable(UML2::Dependency.__init__)
-
-
-def test_uml2::dependency_constructor_args():
-    sig = inspect.signature(UML2::Dependency.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_templateableelement_is_not_abstract():
-    assert not inspect.isabstract(TemplateableElement)
-
-
-def test_templateableelement_constructor_exists():
-    assert callable(TemplateableElement.__init__)
-
-
-def test_templateableelement_constructor_args():
-    sig = inspect.signature(TemplateableElement.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_uml2::stringexpression_is_not_abstract():
-    assert not inspect.isabstract(UML2::StringExpression)
-
-
-def test_uml2::stringexpression_constructor_exists():
-    assert callable(UML2::StringExpression.__init__)
-
-
-def test_uml2::stringexpression_constructor_args():
-    sig = inspect.signature(UML2::StringExpression.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_uml2::namedelement_is_not_abstract():
-    assert not inspect.isabstract(UML2::NamedElement)
-
-
-def test_uml2::namedelement_constructor_exists():
-    assert callable(UML2::NamedElement.__init__)
-
-
-def test_uml2::namedelement_constructor_args():
-    sig = inspect.signature(UML2::NamedElement.__init__)
-    params = list(sig.parameters.keys())
-    assert "qualifiedName" in params, "Missing parameter 'qualifiedName'"
-    assert "visibility" in params, "Missing parameter 'visibility'"
-    assert "name" in params, "Missing parameter 'name'"
-
-def test_uml2::namedelement_has_qualifiedName():
-    assert hasattr(UML2::NamedElement, "qualifiedName")
-    descriptor = None
-    for klass in UML2::NamedElement.__mro__:
-        if "qualifiedName" in klass.__dict__:
-            descriptor = klass.__dict__["qualifiedName"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_uml2::namedelement_has_visibility():
-    assert hasattr(UML2::NamedElement, "visibility")
-    descriptor = None
-    for klass in UML2::NamedElement.__mro__:
-        if "visibility" in klass.__dict__:
-            descriptor = klass.__dict__["visibility"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_uml2::namedelement_has_name():
-    assert hasattr(UML2::NamedElement, "name")
-    descriptor = None
-    for klass in UML2::NamedElement.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_uml2::valuespecification_is_not_abstract():
-    assert not inspect.isabstract(UML2::ValueSpecification)
-
-
-def test_uml2::valuespecification_constructor_exists():
-    assert callable(UML2::ValueSpecification.__init__)
-
-
-def test_uml2::valuespecification_constructor_args():
-    sig = inspect.signature(UML2::ValueSpecification.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_element_is_not_abstract():
-    assert not inspect.isabstract(Element)
-
-
-def test_element_constructor_exists():
-    assert callable(Element.__init__)
-
-
-def test_element_constructor_args():
-    sig = inspect.signature(Element.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_uml2::qualifiervalue_is_not_abstract():
-    assert not inspect.isabstract(UML2::QualifierValue)
-
-
-def test_uml2::qualifiervalue_constructor_exists():
-    assert callable(UML2::QualifierValue.__init__)
-
-
-def test_uml2::qualifiervalue_constructor_args():
-    sig = inspect.signature(UML2::QualifierValue.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_uml2::slot_is_not_abstract():
-    assert not inspect.isabstract(UML2::Slot)
-
-
-def test_uml2::slot_constructor_exists():
-    assert callable(UML2::Slot.__init__)
-
-
-def test_uml2::slot_constructor_args():
-    sig = inspect.signature(UML2::Slot.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_uml2::relationship_is_not_abstract():
-    assert not inspect.isabstract(UML2::Relationship)
-
-
-def test_uml2::relationship_constructor_exists():
-    assert callable(UML2::Relationship.__init__)
-
-
-def test_uml2::relationship_constructor_args():
-    sig = inspect.signature(UML2::Relationship.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_uml2::multiplicityelement_is_not_abstract():
-    assert not inspect.isabstract(UML2::MultiplicityElement)
-
-
-def test_uml2::multiplicityelement_constructor_exists():
-    assert callable(UML2::MultiplicityElement.__init__)
-
-
-def test_uml2::multiplicityelement_constructor_args():
-    sig = inspect.signature(UML2::MultiplicityElement.__init__)
-    params = list(sig.parameters.keys())
-    assert "upper" in params, "Missing parameter 'upper'"
-    assert "lower" in params, "Missing parameter 'lower'"
-    assert "isOrdered" in params, "Missing parameter 'isOrdered'"
-    assert "isUnique" in params, "Missing parameter 'isUnique'"
-
-def test_uml2::multiplicityelement_has_upper():
-    assert hasattr(UML2::MultiplicityElement, "upper")
-    descriptor = None
-    for klass in UML2::MultiplicityElement.__mro__:
-        if "upper" in klass.__dict__:
-            descriptor = klass.__dict__["upper"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_uml2::multiplicityelement_has_lower():
-    assert hasattr(UML2::MultiplicityElement, "lower")
-    descriptor = None
-    for klass in UML2::MultiplicityElement.__mro__:
-        if "lower" in klass.__dict__:
-            descriptor = klass.__dict__["lower"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_uml2::multiplicityelement_has_isOrdered():
-    assert hasattr(UML2::MultiplicityElement, "isOrdered")
-    descriptor = None
-    for klass in UML2::MultiplicityElement.__mro__:
-        if "isOrdered" in klass.__dict__:
-            descriptor = klass.__dict__["isOrdered"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_uml2::multiplicityelement_has_isUnique():
-    assert hasattr(UML2::MultiplicityElement, "isUnique")
-    descriptor = None
-    for klass in UML2::MultiplicityElement.__mro__:
-        if "isUnique" in klass.__dict__:
-            descriptor = klass.__dict__["isUnique"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_uml2::comment_is_not_abstract():
-    assert not inspect.isabstract(UML2::Comment)
-
-
-def test_uml2::comment_constructor_exists():
-    assert callable(UML2::Comment.__init__)
-
-
-def test_uml2::comment_constructor_args():
-    sig = inspect.signature(UML2::Comment.__init__)
-    params = list(sig.parameters.keys())
-    assert "body" in params, "Missing parameter 'body'"
-
-def test_uml2::comment_has_body():
-    assert hasattr(UML2::Comment, "body")
-    descriptor = None
-    for klass in UML2::Comment.__mro__:
-        if "body" in klass.__dict__:
-            descriptor = klass.__dict__["body"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_uml2::element_is_not_abstract():
-    assert not inspect.isabstract(UML2::Element)
-
-
-def test_uml2::element_constructor_exists():
-    assert callable(UML2::Element.__init__)
-
-
-def test_uml2::element_constructor_args():
-    sig = inspect.signature(UML2::Element.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_uml2::linkenddata_is_not_abstract():
-    assert not inspect.isabstract(UML2::LinkEndData)
-
-
-def test_uml2::linkenddata_constructor_exists():
-    assert callable(UML2::LinkEndData.__init__)
-
-
-def test_uml2::linkenddata_constructor_args():
-    sig = inspect.signature(UML2::LinkEndData.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_writestructuralfeatureaction_is_not_abstract():
-    assert not inspect.isabstract(WriteStructuralFeatureAction)
-
-
-def test_writestructuralfeatureaction_constructor_exists():
-    assert callable(WriteStructuralFeatureAction.__init__)
-
-
-def test_writestructuralfeatureaction_constructor_args():
-    sig = inspect.signature(WriteStructuralFeatureAction.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_uml2::addstructuralfeaturevalueaction_is_not_abstract():
-    assert not inspect.isabstract(UML2::AddStructuralFeatureValueAction)
-
-
-def test_uml2::addstructuralfeaturevalueaction_constructor_exists():
-    assert callable(UML2::AddStructuralFeatureValueAction.__init__)
-
-
-def test_uml2::addstructuralfeaturevalueaction_constructor_args():
-    sig = inspect.signature(UML2::AddStructuralFeatureValueAction.__init__)
-    params = list(sig.parameters.keys())
-    assert "isReplaceAll" in params, "Missing parameter 'isReplaceAll'"
-
-def test_uml2::addstructuralfeaturevalueaction_has_isReplaceAll():
-    assert hasattr(UML2::AddStructuralFeatureValueAction, "isReplaceAll")
-    descriptor = None
-    for klass in UML2::AddStructuralFeatureValueAction.__mro__:
-        if "isReplaceAll" in klass.__dict__:
-            descriptor = klass.__dict__["isReplaceAll"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_uml2::durationobservationaction_is_not_abstract():
-    assert not inspect.isabstract(UML2::DurationObservationAction)
-
-
-def test_uml2::durationobservationaction_constructor_exists():
-    assert callable(UML2::DurationObservationAction.__init__)
-
-
-def test_uml2::durationobservationaction_constructor_args():
-    sig = inspect.signature(UML2::DurationObservationAction.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_uml2::timeobservationaction_is_not_abstract():
-    assert not inspect.isabstract(UML2::TimeObservationAction)
-
-
-def test_uml2::timeobservationaction_constructor_exists():
-    assert callable(UML2::TimeObservationAction.__init__)
-
-
-def test_uml2::timeobservationaction_constructor_args():
-    sig = inspect.signature(UML2::TimeObservationAction.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_uml2::removestructuralfeaturevalueaction_is_not_abstract():
-    assert not inspect.isabstract(UML2::RemoveStructuralFeatureValueAction)
-
-
-def test_uml2::removestructuralfeaturevalueaction_constructor_exists():
-    assert callable(UML2::RemoveStructuralFeatureValueAction.__init__)
-
-
-def test_uml2::removestructuralfeaturevalueaction_constructor_args():
-    sig = inspect.signature(UML2::RemoveStructuralFeatureValueAction.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_structuralfeatureaction_is_not_abstract():
-    assert not inspect.isabstract(StructuralFeatureAction)
-
-
-def test_structuralfeatureaction_constructor_exists():
-    assert callable(StructuralFeatureAction.__init__)
-
-
-def test_structuralfeatureaction_constructor_args():
-    sig = inspect.signature(StructuralFeatureAction.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_uml2::clearstructuralfeatureaction_is_not_abstract():
-    assert not inspect.isabstract(UML2::ClearStructuralFeatureAction)
-
-
-def test_uml2::clearstructuralfeatureaction_constructor_exists():
-    assert callable(UML2::ClearStructuralFeatureAction.__init__)
-
-
-def test_uml2::clearstructuralfeatureaction_constructor_args():
-    sig = inspect.signature(UML2::ClearStructuralFeatureAction.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_uml2::writestructuralfeatureaction_is_not_abstract():
-    assert not inspect.isabstract(UML2::WriteStructuralFeatureAction)
-
-
-def test_uml2::writestructuralfeatureaction_constructor_exists():
-    assert callable(UML2::WriteStructuralFeatureAction.__init__)
-
-
-def test_uml2::writestructuralfeatureaction_constructor_args():
-    sig = inspect.signature(UML2::WriteStructuralFeatureAction.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_uml2::readstructuralfeatureaction_is_not_abstract():
-    assert not inspect.isabstract(UML2::ReadStructuralFeatureAction)
-
-
-def test_uml2::readstructuralfeatureaction_constructor_exists():
-    assert callable(UML2::ReadStructuralFeatureAction.__init__)
-
-
-def test_uml2::readstructuralfeatureaction_constructor_args():
-    sig = inspect.signature(UML2::ReadStructuralFeatureAction.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_state_is_not_abstract():
-    assert not inspect.isabstract(State)
-
-
-def test_state_constructor_exists():
-    assert callable(State.__init__)
-
-
-def test_state_constructor_args():
-    sig = inspect.signature(State.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_uml2::finalstate_is_not_abstract():
-    assert not inspect.isabstract(UML2::FinalState)
-
-
-def test_uml2::finalstate_constructor_exists():
-    assert callable(UML2::FinalState.__init__)
-
-
-def test_uml2::finalstate_constructor_args():
-    sig = inspect.signature(UML2::FinalState.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_vertex_is_not_abstract():
-    assert not inspect.isabstract(Vertex)
-
-
-def test_vertex_constructor_exists():
-    assert callable(Vertex.__init__)
-
-
-def test_vertex_constructor_args():
-    sig = inspect.signature(Vertex.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_uml2::connectionpointreference_is_not_abstract():
-    assert not inspect.isabstract(UML2::ConnectionPointReference)
-
-
-def test_uml2::connectionpointreference_constructor_exists():
-    assert callable(UML2::ConnectionPointReference.__init__)
-
-
-def test_uml2::connectionpointreference_constructor_args():
-    sig = inspect.signature(UML2::ConnectionPointReference.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_uml2::transition_is_not_abstract():
-    assert not inspect.isabstract(UML2::Transition)
-
-
-def test_uml2::transition_constructor_exists():
-    assert callable(UML2::Transition.__init__)
-
-
-def test_uml2::transition_constructor_args():
-    sig = inspect.signature(UML2::Transition.__init__)
-    params = list(sig.parameters.keys())
-    assert "kind" in params, "Missing parameter 'kind'"
-
-def test_uml2::transition_has_kind():
-    assert hasattr(UML2::Transition, "kind")
-    descriptor = None
-    for klass in UML2::Transition.__mro__:
-        if "kind" in klass.__dict__:
-            descriptor = klass.__dict__["kind"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_uml2::vertex_is_not_abstract():
-    assert not inspect.isabstract(UML2::Vertex)
-
-
-def test_uml2::vertex_constructor_exists():
-    assert callable(UML2::Vertex.__init__)
-
-
-def test_uml2::vertex_constructor_args():
-    sig = inspect.signature(UML2::Vertex.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_uml2::pseudostate_is_not_abstract():
-    assert not inspect.isabstract(UML2::Pseudostate)
-
-
-def test_uml2::pseudostate_constructor_exists():
-    assert callable(UML2::Pseudostate.__init__)
-
-
-def test_uml2::pseudostate_constructor_args():
-    sig = inspect.signature(UML2::Pseudostate.__init__)
-    params = list(sig.parameters.keys())
-    assert "kind" in params, "Missing parameter 'kind'"
-
-def test_uml2::pseudostate_has_kind():
-    assert hasattr(UML2::Pseudostate, "kind")
-    descriptor = None
-    for klass in UML2::Pseudostate.__mro__:
-        if "kind" in klass.__dict__:
-            descriptor = klass.__dict__["kind"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_uml2::region_is_not_abstract():
-    assert not inspect.isabstract(UML2::Region)
-
-
-def test_uml2::region_constructor_exists():
-    assert callable(UML2::Region.__init__)
-
-
-def test_uml2::region_constructor_args():
-    sig = inspect.signature(UML2::Region.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_constraint_is_not_abstract():
-    assert not inspect.isabstract(Constraint)
-
-
-def test_constraint_constructor_exists():
-    assert callable(Constraint.__init__)
-
-
-def test_constraint_constructor_args():
-    sig = inspect.signature(Constraint.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_uml2::intervalconstraint_is_not_abstract():
-    assert not inspect.isabstract(UML2::IntervalConstraint)
-
-
-def test_uml2::intervalconstraint_constructor_exists():
-    assert callable(UML2::IntervalConstraint.__init__)
-
-
-def test_uml2::intervalconstraint_constructor_args():
-    sig = inspect.signature(UML2::IntervalConstraint.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_uml2::interactionconstraint_is_not_abstract():
-    assert not inspect.isabstract(UML2::InteractionConstraint)
-
-
-def test_uml2::interactionconstraint_constructor_exists():
-    assert callable(UML2::InteractionConstraint.__init__)
-
-
-def test_uml2::interactionconstraint_constructor_args():
-    sig = inspect.signature(UML2::InteractionConstraint.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_interactionoccurrence_is_not_abstract():
-    assert not inspect.isabstract(InteractionOccurrence)
-
-
-def test_interactionoccurrence_constructor_exists():
-    assert callable(InteractionOccurrence.__init__)
-
-
-def test_interactionoccurrence_constructor_args():
-    sig = inspect.signature(InteractionOccurrence.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_uml2::templateableclassifier_is_not_abstract():
-    assert not inspect.isabstract(UML2::TemplateableClassifier)
-
-
-def test_uml2::templateableclassifier_constructor_exists():
-    assert callable(UML2::TemplateableClassifier.__init__)
-
-
-def test_uml2::templateableclassifier_constructor_args():
-    sig = inspect.signature(UML2::TemplateableClassifier.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_templatesignature_is_not_abstract():
-    assert not inspect.isabstract(TemplateSignature)
-
-
-def test_templatesignature_constructor_exists():
-    assert callable(TemplateSignature.__init__)
-
-
-def test_templatesignature_constructor_args():
-    sig = inspect.signature(TemplateSignature.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_uml2::redefinabletemplatesignature_is_not_abstract():
-    assert not inspect.isabstract(UML2::RedefinableTemplateSignature)
-
-
-def test_uml2::redefinabletemplatesignature_constructor_exists():
-    assert callable(UML2::RedefinableTemplateSignature.__init__)
-
-
-def test_uml2::redefinabletemplatesignature_constructor_args():
-    sig = inspect.signature(UML2::RedefinableTemplateSignature.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_uml2::parameterableclassifier_is_not_abstract():
-    assert not inspect.isabstract(UML2::ParameterableClassifier)
-
-
-def test_uml2::parameterableclassifier_constructor_exists():
-    assert callable(UML2::ParameterableClassifier.__init__)
-
-
-def test_uml2::parameterableclassifier_constructor_args():
-    sig = inspect.signature(UML2::ParameterableClassifier.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_templateparameter_is_not_abstract():
-    assert not inspect.isabstract(TemplateParameter)
-
-
-def test_templateparameter_constructor_exists():
-    assert callable(TemplateParameter.__init__)
-
-
-def test_templateparameter_constructor_args():
-    sig = inspect.signature(TemplateParameter.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_uml2::classifiertemplateparameter_is_not_abstract():
-    assert not inspect.isabstract(UML2::ClassifierTemplateParameter)
-
-
-def test_uml2::classifiertemplateparameter_constructor_exists():
-    assert callable(UML2::ClassifierTemplateParameter.__init__)
-
-
-def test_uml2::classifiertemplateparameter_constructor_args():
-    sig = inspect.signature(UML2::ClassifierTemplateParameter.__init__)
-    params = list(sig.parameters.keys())
-    assert "allowSubstitutable" in params, "Missing parameter 'allowSubstitutable'"
-
-def test_uml2::classifiertemplateparameter_has_allowSubstitutable():
-    assert hasattr(UML2::ClassifierTemplateParameter, "allowSubstitutable")
-    descriptor = None
-    for klass in UML2::ClassifierTemplateParameter.__mro__:
-        if "allowSubstitutable" in klass.__dict__:
-            descriptor = klass.__dict__["allowSubstitutable"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_uml2::connectableelementtemplateparameter_is_not_abstract():
-    assert not inspect.isabstract(UML2::ConnectableElementTemplateParameter)
-
-
-def test_uml2::connectableelementtemplateparameter_constructor_exists():
-    assert callable(UML2::ConnectableElementTemplateParameter.__init__)
-
-
-def test_uml2::connectableelementtemplateparameter_constructor_args():
-    sig = inspect.signature(UML2::ConnectableElementTemplateParameter.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_uml2::operationtemplateparameter_is_not_abstract():
-    assert not inspect.isabstract(UML2::OperationTemplateParameter)
-
-
-def test_uml2::operationtemplateparameter_constructor_exists():
-    assert callable(UML2::OperationTemplateParameter.__init__)
-
-
-def test_uml2::operationtemplateparameter_constructor_args():
-    sig = inspect.signature(UML2::OperationTemplateParameter.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_uml2::templateparametersubstitution_is_not_abstract():
-    assert not inspect.isabstract(UML2::TemplateParameterSubstitution)
-
-
-def test_uml2::templateparametersubstitution_constructor_exists():
-    assert callable(UML2::TemplateParameterSubstitution.__init__)
-
-
-def test_uml2::templateparametersubstitution_constructor_args():
-    sig = inspect.signature(UML2::TemplateParameterSubstitution.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_uml2::templatebinding_is_not_abstract():
-    assert not inspect.isabstract(UML2::TemplateBinding)
-
-
-def test_uml2::templatebinding_constructor_exists():
-    assert callable(UML2::TemplateBinding.__init__)
-
-
-def test_uml2::templatebinding_constructor_args():
-    sig = inspect.signature(UML2::TemplateBinding.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_uml2::parameterableelement_is_not_abstract():
-    assert not inspect.isabstract(UML2::ParameterableElement)
-
-
-def test_uml2::parameterableelement_constructor_exists():
-    assert callable(UML2::ParameterableElement.__init__)
-
-
-def test_uml2::parameterableelement_constructor_args():
-    sig = inspect.signature(UML2::ParameterableElement.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_uml2::templateableelement_is_not_abstract():
-    assert not inspect.isabstract(UML2::TemplateableElement)
-
-
-def test_uml2::templateableelement_constructor_exists():
-    assert callable(UML2::TemplateableElement.__init__)
-
-
-def test_uml2::templateableelement_constructor_args():
-    sig = inspect.signature(UML2::TemplateableElement.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_uml2::templateparameter_is_not_abstract():
-    assert not inspect.isabstract(UML2::TemplateParameter)
-
-
-def test_uml2::templateparameter_constructor_exists():
-    assert callable(UML2::TemplateParameter.__init__)
-
-
-def test_uml2::templateparameter_constructor_args():
-    sig = inspect.signature(UML2::TemplateParameter.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_uml2::templatesignature_is_not_abstract():
-    assert not inspect.isabstract(UML2::TemplateSignature)
-
-
-def test_uml2::templatesignature_constructor_exists():
-    assert callable(UML2::TemplateSignature.__init__)
-
-
-def test_uml2::templatesignature_constructor_args():
-    sig = inspect.signature(UML2::TemplateSignature.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_eventoccurrence_is_not_abstract():
-    assert not inspect.isabstract(EventOccurrence)
-
-
-def test_eventoccurrence_constructor_exists():
-    assert callable(EventOccurrence.__init__)
-
-
-def test_eventoccurrence_constructor_args():
-    sig = inspect.signature(EventOccurrence.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_uml2::stop_is_not_abstract():
-    assert not inspect.isabstract(UML2::Stop)
-
-
-def test_uml2::stop_constructor_exists():
-    assert callable(UML2::Stop.__init__)
-
-
-def test_uml2::stop_constructor_args():
-    sig = inspect.signature(UML2::Stop.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_messageend_is_not_abstract():
-    assert not inspect.isabstract(MessageEnd)
-
-
-def test_messageend_constructor_exists():
-    assert callable(MessageEnd.__init__)
-
-
-def test_messageend_constructor_args():
-    sig = inspect.signature(MessageEnd.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_uml2::messageend_is_not_abstract():
-    assert not inspect.isabstract(UML2::MessageEnd)
-
-
-def test_uml2::messageend_constructor_exists():
-    assert callable(UML2::MessageEnd.__init__)
-
-
-def test_uml2::messageend_constructor_args():
-    sig = inspect.signature(UML2::MessageEnd.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_uml2::partdecomposition_is_not_abstract():
-    assert not inspect.isabstract(UML2::PartDecomposition)
-
-
-def test_uml2::partdecomposition_constructor_exists():
-    assert callable(UML2::PartDecomposition.__init__)
-
-
-def test_uml2::partdecomposition_constructor_args():
-    sig = inspect.signature(UML2::PartDecomposition.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_uml2::generalordering_is_not_abstract():
-    assert not inspect.isabstract(UML2::GeneralOrdering)
-
-
-def test_uml2::generalordering_constructor_exists():
-    assert callable(UML2::GeneralOrdering.__init__)
-
-
-def test_uml2::generalordering_constructor_args():
-    sig = inspect.signature(UML2::GeneralOrdering.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_uml2::gate_is_not_abstract():
-    assert not inspect.isabstract(UML2::Gate)
-
-
-def test_uml2::gate_constructor_exists():
-    assert callable(UML2::Gate.__init__)
-
-
-def test_uml2::gate_constructor_args():
-    sig = inspect.signature(UML2::Gate.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_uml2::interactionfragment_is_not_abstract():
-    assert not inspect.isabstract(UML2::InteractionFragment)
-
-
-def test_uml2::interactionfragment_constructor_exists():
-    assert callable(UML2::InteractionFragment.__init__)
-
-
-def test_uml2::interactionfragment_constructor_args():
-    sig = inspect.signature(UML2::InteractionFragment.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_uml2::message_is_not_abstract():
-    assert not inspect.isabstract(UML2::Message)
-
-
-def test_uml2::message_constructor_exists():
-    assert callable(UML2::Message.__init__)
-
-
-def test_uml2::message_constructor_args():
-    sig = inspect.signature(UML2::Message.__init__)
-    params = list(sig.parameters.keys())
-    assert "messageSort" in params, "Missing parameter 'messageSort'"
-    assert "messageKind" in params, "Missing parameter 'messageKind'"
-
-def test_uml2::message_has_messageSort():
-    assert hasattr(UML2::Message, "messageSort")
-    descriptor = None
-    for klass in UML2::Message.__mro__:
-        if "messageSort" in klass.__dict__:
-            descriptor = klass.__dict__["messageSort"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_uml2::message_has_messageKind():
-    assert hasattr(UML2::Message, "messageKind")
-    descriptor = None
-    for klass in UML2::Message.__mro__:
-        if "messageKind" in klass.__dict__:
-            descriptor = klass.__dict__["messageKind"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_uml2::lifeline_is_not_abstract():
-    assert not inspect.isabstract(UML2::Lifeline)
-
-
-def test_uml2::lifeline_constructor_exists():
-    assert callable(UML2::Lifeline.__init__)
-
-
-def test_uml2::lifeline_constructor_args():
-    sig = inspect.signature(UML2::Lifeline.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_interactionfragment_is_not_abstract():
-    assert not inspect.isabstract(InteractionFragment)
-
-
-def test_interactionfragment_constructor_exists():
-    assert callable(InteractionFragment.__init__)
-
-
-def test_interactionfragment_constructor_args():
-    sig = inspect.signature(InteractionFragment.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_uml2::interactionoperand_is_not_abstract():
-    assert not inspect.isabstract(UML2::InteractionOperand)
-
-
-def test_uml2::interactionoperand_constructor_exists():
-    assert callable(UML2::InteractionOperand.__init__)
-
-
-def test_uml2::interactionoperand_constructor_args():
-    sig = inspect.signature(UML2::InteractionOperand.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_uml2::executionoccurrence_is_not_abstract():
-    assert not inspect.isabstract(UML2::ExecutionOccurrence)
-
-
-def test_uml2::executionoccurrence_constructor_exists():
-    assert callable(UML2::ExecutionOccurrence.__init__)
-
-
-def test_uml2::executionoccurrence_constructor_args():
-    sig = inspect.signature(UML2::ExecutionOccurrence.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_uml2::stateinvariant_is_not_abstract():
-    assert not inspect.isabstract(UML2::StateInvariant)
-
-
-def test_uml2::stateinvariant_constructor_exists():
-    assert callable(UML2::StateInvariant.__init__)
-
-
-def test_uml2::stateinvariant_constructor_args():
-    sig = inspect.signature(UML2::StateInvariant.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_uml2::combinedfragment_is_not_abstract():
-    assert not inspect.isabstract(UML2::CombinedFragment)
-
-
-def test_uml2::combinedfragment_constructor_exists():
-    assert callable(UML2::CombinedFragment.__init__)
-
-
-def test_uml2::combinedfragment_constructor_args():
-    sig = inspect.signature(UML2::CombinedFragment.__init__)
-    params = list(sig.parameters.keys())
-    assert "interactionOperator" in params, "Missing parameter 'interactionOperator'"
-
-def test_uml2::combinedfragment_has_interactionOperator():
-    assert hasattr(UML2::CombinedFragment, "interactionOperator")
-    descriptor = None
-    for klass in UML2::CombinedFragment.__mro__:
-        if "interactionOperator" in klass.__dict__:
-            descriptor = klass.__dict__["interactionOperator"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_uml2::continuation_is_not_abstract():
-    assert not inspect.isabstract(UML2::Continuation)
-
-
-def test_uml2::continuation_constructor_exists():
-    assert callable(UML2::Continuation.__init__)
-
-
-def test_uml2::continuation_constructor_args():
-    sig = inspect.signature(UML2::Continuation.__init__)
-    params = list(sig.parameters.keys())
-    assert "setting" in params, "Missing parameter 'setting'"
-
-def test_uml2::continuation_has_setting():
-    assert hasattr(UML2::Continuation, "setting")
-    descriptor = None
-    for klass in UML2::Continuation.__mro__:
-        if "setting" in klass.__dict__:
-            descriptor = klass.__dict__["setting"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_uml2::interactionoccurrence_is_not_abstract():
-    assert not inspect.isabstract(UML2::InteractionOccurrence)
-
-
-def test_uml2::interactionoccurrence_constructor_exists():
-    assert callable(UML2::InteractionOccurrence.__init__)
-
-
-def test_uml2::interactionoccurrence_constructor_args():
-    sig = inspect.signature(UML2::InteractionOccurrence.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_uml2::eventoccurrence_is_not_abstract():
-    assert not inspect.isabstract(UML2::EventOccurrence)
-
-
-def test_uml2::eventoccurrence_constructor_exists():
-    assert callable(UML2::EventOccurrence.__init__)
-
-
-def test_uml2::eventoccurrence_constructor_args():
-    sig = inspect.signature(UML2::EventOccurrence.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_structuredactivitynode_is_not_abstract():
-    assert not inspect.isabstract(StructuredActivityNode)
-
-
-def test_structuredactivitynode_constructor_exists():
-    assert callable(StructuredActivityNode.__init__)
-
-
-def test_structuredactivitynode_constructor_args():
-    sig = inspect.signature(StructuredActivityNode.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_uml2::expansionregion_is_not_abstract():
-    assert not inspect.isabstract(UML2::ExpansionRegion)
-
-
-def test_uml2::expansionregion_constructor_exists():
-    assert callable(UML2::ExpansionRegion.__init__)
-
-
-def test_uml2::expansionregion_constructor_args():
-    sig = inspect.signature(UML2::ExpansionRegion.__init__)
-    params = list(sig.parameters.keys())
-    assert "mode" in params, "Missing parameter 'mode'"
-
-def test_uml2::expansionregion_has_mode():
-    assert hasattr(UML2::ExpansionRegion, "mode")
-    descriptor = None
-    for klass in UML2::ExpansionRegion.__mro__:
-        if "mode" in klass.__dict__:
-            descriptor = klass.__dict__["mode"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_uml2::loopnode_is_not_abstract():
-    assert not inspect.isabstract(UML2::LoopNode)
-
-
-def test_uml2::loopnode_constructor_exists():
-    assert callable(UML2::LoopNode.__init__)
-
-
-def test_uml2::loopnode_constructor_args():
-    sig = inspect.signature(UML2::LoopNode.__init__)
-    params = list(sig.parameters.keys())
-    assert "isTestedFirst" in params, "Missing parameter 'isTestedFirst'"
-
-def test_uml2::loopnode_has_isTestedFirst():
-    assert hasattr(UML2::LoopNode, "isTestedFirst")
-    descriptor = None
-    for klass in UML2::LoopNode.__mro__:
-        if "isTestedFirst" in klass.__dict__:
-            descriptor = klass.__dict__["isTestedFirst"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_uml2::clause_is_not_abstract():
-    assert not inspect.isabstract(UML2::Clause)
-
-
-def test_uml2::clause_constructor_exists():
-    assert callable(UML2::Clause.__init__)
-
-
-def test_uml2::clause_constructor_args():
-    sig = inspect.signature(UML2::Clause.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_uml2::conditionalnode_is_not_abstract():
-    assert not inspect.isabstract(UML2::ConditionalNode)
-
-
-def test_uml2::conditionalnode_constructor_exists():
-    assert callable(UML2::ConditionalNode.__init__)
-
-
-def test_uml2::conditionalnode_constructor_args():
-    sig = inspect.signature(UML2::ConditionalNode.__init__)
-    params = list(sig.parameters.keys())
-    assert "isDeterminate" in params, "Missing parameter 'isDeterminate'"
-    assert "isAssured" in params, "Missing parameter 'isAssured'"
-
-def test_uml2::conditionalnode_has_isDeterminate():
-    assert hasattr(UML2::ConditionalNode, "isDeterminate")
-    descriptor = None
-    for klass in UML2::ConditionalNode.__mro__:
-        if "isDeterminate" in klass.__dict__:
-            descriptor = klass.__dict__["isDeterminate"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_uml2::conditionalnode_has_isAssured():
-    assert hasattr(UML2::ConditionalNode, "isAssured")
-    descriptor = None
-    for klass in UML2::ConditionalNode.__mro__:
-        if "isAssured" in klass.__dict__:
-            descriptor = klass.__dict__["isAssured"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_activitygroup_is_not_abstract():
-    assert not inspect.isabstract(ActivityGroup)
-
-
-def test_activitygroup_constructor_exists():
-    assert callable(ActivityGroup.__init__)
-
-
-def test_activitygroup_constructor_args():
-    sig = inspect.signature(ActivityGroup.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_action_is_not_abstract():
-    assert not inspect.isabstract(Action)
-
-
-def test_action_constructor_exists():
-    assert callable(Action.__init__)
-
-
-def test_action_constructor_args():
-    sig = inspect.signature(Action.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_uml2::accepteventaction_is_not_abstract():
-    assert not inspect.isabstract(UML2::AcceptEventAction)
-
-
-def test_uml2::accepteventaction_constructor_exists():
-    assert callable(UML2::AcceptEventAction.__init__)
-
-
-def test_uml2::accepteventaction_constructor_args():
-    sig = inspect.signature(UML2::AcceptEventAction.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_uml2::destroyobjectaction_is_not_abstract():
-    assert not inspect.isabstract(UML2::DestroyObjectAction)
-
-
-def test_uml2::destroyobjectaction_constructor_exists():
-    assert callable(UML2::DestroyObjectAction.__init__)
-
-
-def test_uml2::destroyobjectaction_constructor_args():
-    sig = inspect.signature(UML2::DestroyObjectAction.__init__)
-    params = list(sig.parameters.keys())
-    assert "isDestroyOwnedObjects" in params, "Missing parameter 'isDestroyOwnedObjects'"
-    assert "isDestroyLinks" in params, "Missing parameter 'isDestroyLinks'"
-
-def test_uml2::destroyobjectaction_has_isDestroyOwnedObjects():
-    assert hasattr(UML2::DestroyObjectAction, "isDestroyOwnedObjects")
-    descriptor = None
-    for klass in UML2::DestroyObjectAction.__mro__:
-        if "isDestroyOwnedObjects" in klass.__dict__:
-            descriptor = klass.__dict__["isDestroyOwnedObjects"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_uml2::destroyobjectaction_has_isDestroyLinks():
-    assert hasattr(UML2::DestroyObjectAction, "isDestroyLinks")
-    descriptor = None
-    for klass in UML2::DestroyObjectAction.__mro__:
-        if "isDestroyLinks" in klass.__dict__:
-            descriptor = klass.__dict__["isDestroyLinks"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_uml2::testidentityaction_is_not_abstract():
-    assert not inspect.isabstract(UML2::TestIdentityAction)
-
-
-def test_uml2::testidentityaction_constructor_exists():
-    assert callable(UML2::TestIdentityAction.__init__)
-
-
-def test_uml2::testidentityaction_constructor_args():
-    sig = inspect.signature(UML2::TestIdentityAction.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_uml2::readlinkobjectendaction_is_not_abstract():
-    assert not inspect.isabstract(UML2::ReadLinkObjectEndAction)
-
-
-def test_uml2::readlinkobjectendaction_constructor_exists():
-    assert callable(UML2::ReadLinkObjectEndAction.__init__)
-
-
-def test_uml2::readlinkobjectendaction_constructor_args():
-    sig = inspect.signature(UML2::ReadLinkObjectEndAction.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_uml2::structuralfeatureaction_is_not_abstract():
-    assert not inspect.isabstract(UML2::StructuralFeatureAction)
-
-
-def test_uml2::structuralfeatureaction_constructor_exists():
-    assert callable(UML2::StructuralFeatureAction.__init__)
-
-
-def test_uml2::structuralfeatureaction_constructor_args():
-    sig = inspect.signature(UML2::StructuralFeatureAction.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_uml2::readselfaction_is_not_abstract():
-    assert not inspect.isabstract(UML2::ReadSelfAction)
-
-
-def test_uml2::readselfaction_constructor_exists():
-    assert callable(UML2::ReadSelfAction.__init__)
-
-
-def test_uml2::readselfaction_constructor_args():
-    sig = inspect.signature(UML2::ReadSelfAction.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_uml2::readlinkobjectendqualifieraction_is_not_abstract():
-    assert not inspect.isabstract(UML2::ReadLinkObjectEndQualifierAction)
-
-
-def test_uml2::readlinkobjectendqualifieraction_constructor_exists():
-    assert callable(UML2::ReadLinkObjectEndQualifierAction.__init__)
-
-
-def test_uml2::readlinkobjectendqualifieraction_constructor_args():
-    sig = inspect.signature(UML2::ReadLinkObjectEndQualifierAction.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_uml2::raiseexceptionaction_is_not_abstract():
-    assert not inspect.isabstract(UML2::RaiseExceptionAction)
-
-
-def test_uml2::raiseexceptionaction_constructor_exists():
-    assert callable(UML2::RaiseExceptionAction.__init__)
-
-
-def test_uml2::raiseexceptionaction_constructor_args():
-    sig = inspect.signature(UML2::RaiseExceptionAction.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_uml2::createobjectaction_is_not_abstract():
-    assert not inspect.isabstract(UML2::CreateObjectAction)
-
-
-def test_uml2::createobjectaction_constructor_exists():
-    assert callable(UML2::CreateObjectAction.__init__)
-
-
-def test_uml2::createobjectaction_constructor_args():
-    sig = inspect.signature(UML2::CreateObjectAction.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_uml2::applyfunctionaction_is_not_abstract():
-    assert not inspect.isabstract(UML2::ApplyFunctionAction)
-
-
-def test_uml2::applyfunctionaction_constructor_exists():
-    assert callable(UML2::ApplyFunctionAction.__init__)
-
-
-def test_uml2::applyfunctionaction_constructor_args():
-    sig = inspect.signature(UML2::ApplyFunctionAction.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_uml2::variableaction_is_not_abstract():
-    assert not inspect.isabstract(UML2::VariableAction)
-
-
-def test_uml2::variableaction_constructor_exists():
-    assert callable(UML2::VariableAction.__init__)
-
-
-def test_uml2::variableaction_constructor_args():
-    sig = inspect.signature(UML2::VariableAction.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_uml2::replyaction_is_not_abstract():
-    assert not inspect.isabstract(UML2::ReplyAction)
-
-
-def test_uml2::replyaction_constructor_exists():
-    assert callable(UML2::ReplyAction.__init__)
-
-
-def test_uml2::replyaction_constructor_args():
-    sig = inspect.signature(UML2::ReplyAction.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_uml2::readextentaction_is_not_abstract():
-    assert not inspect.isabstract(UML2::ReadExtentAction)
-
-
-def test_uml2::readextentaction_constructor_exists():
-    assert callable(UML2::ReadExtentAction.__init__)
-
-
-def test_uml2::readextentaction_constructor_args():
-    sig = inspect.signature(UML2::ReadExtentAction.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_uml2::linkaction_is_not_abstract():
-    assert not inspect.isabstract(UML2::LinkAction)
-
-
-def test_uml2::linkaction_constructor_exists():
-    assert callable(UML2::LinkAction.__init__)
-
-
-def test_uml2::linkaction_constructor_args():
-    sig = inspect.signature(UML2::LinkAction.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_uml2::clearassociationaction_is_not_abstract():
-    assert not inspect.isabstract(UML2::ClearAssociationAction)
-
-
-def test_uml2::clearassociationaction_constructor_exists():
-    assert callable(UML2::ClearAssociationAction.__init__)
-
-
-def test_uml2::clearassociationaction_constructor_args():
-    sig = inspect.signature(UML2::ClearAssociationAction.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_uml2::reclassifyobjectaction_is_not_abstract():
-    assert not inspect.isabstract(UML2::ReclassifyObjectAction)
-
-
-def test_uml2::reclassifyobjectaction_constructor_exists():
-    assert callable(UML2::ReclassifyObjectAction.__init__)
-
-
-def test_uml2::reclassifyobjectaction_constructor_args():
-    sig = inspect.signature(UML2::ReclassifyObjectAction.__init__)
-    params = list(sig.parameters.keys())
-    assert "isReplaceAll" in params, "Missing parameter 'isReplaceAll'"
-
-def test_uml2::reclassifyobjectaction_has_isReplaceAll():
-    assert hasattr(UML2::ReclassifyObjectAction, "isReplaceAll")
-    descriptor = None
-    for klass in UML2::ReclassifyObjectAction.__mro__:
-        if "isReplaceAll" in klass.__dict__:
-            descriptor = klass.__dict__["isReplaceAll"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_uml2::invocationaction_is_not_abstract():
-    assert not inspect.isabstract(UML2::InvocationAction)
-
-
-def test_uml2::invocationaction_constructor_exists():
-    assert callable(UML2::InvocationAction.__init__)
-
-
-def test_uml2::invocationaction_constructor_args():
-    sig = inspect.signature(UML2::InvocationAction.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_uml2::startownedbehavioraction_is_not_abstract():
-    assert not inspect.isabstract(UML2::StartOwnedBehaviorAction)
-
-
-def test_uml2::startownedbehavioraction_constructor_exists():
-    assert callable(UML2::StartOwnedBehaviorAction.__init__)
-
-
-def test_uml2::startownedbehavioraction_constructor_args():
-    sig = inspect.signature(UML2::StartOwnedBehaviorAction.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_uml2::readisclassifiedobjectaction_is_not_abstract():
-    assert not inspect.isabstract(UML2::ReadIsClassifiedObjectAction)
-
-
-def test_uml2::readisclassifiedobjectaction_constructor_exists():
-    assert callable(UML2::ReadIsClassifiedObjectAction.__init__)
-
-
-def test_uml2::readisclassifiedobjectaction_constructor_args():
-    sig = inspect.signature(UML2::ReadIsClassifiedObjectAction.__init__)
-    params = list(sig.parameters.keys())
-    assert "isDirect" in params, "Missing parameter 'isDirect'"
-
-def test_uml2::readisclassifiedobjectaction_has_isDirect():
-    assert hasattr(UML2::ReadIsClassifiedObjectAction, "isDirect")
-    descriptor = None
-    for klass in UML2::ReadIsClassifiedObjectAction.__mro__:
-        if "isDirect" in klass.__dict__:
-            descriptor = klass.__dict__["isDirect"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_uml2::variable_is_not_abstract():
-    assert not inspect.isabstract(UML2::Variable)
-
-
-def test_uml2::variable_constructor_exists():
-    assert callable(UML2::Variable.__init__)
-
-
-def test_uml2::variable_constructor_args():
-    sig = inspect.signature(UML2::Variable.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_uml2::signal_is_not_abstract():
-    assert not inspect.isabstract(UML2::Signal)
-
-
-def test_uml2::signal_constructor_exists():
-    assert callable(UML2::Signal.__init__)
-
-
-def test_uml2::signal_constructor_args():
-    sig = inspect.signature(UML2::Signal.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_trigger_is_not_abstract():
-    assert not inspect.isabstract(Trigger)
-
-
-def test_trigger_constructor_exists():
-    assert callable(Trigger.__init__)
-
-
-def test_trigger_constructor_args():
-    sig = inspect.signature(Trigger.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_uml2::timetrigger_is_not_abstract():
-    assert not inspect.isabstract(UML2::TimeTrigger)
-
-
-def test_uml2::timetrigger_constructor_exists():
-    assert callable(UML2::TimeTrigger.__init__)
-
-
-def test_uml2::timetrigger_constructor_args():
-    sig = inspect.signature(UML2::TimeTrigger.__init__)
-    params = list(sig.parameters.keys())
-    assert "isRelative" in params, "Missing parameter 'isRelative'"
-
-def test_uml2::timetrigger_has_isRelative():
-    assert hasattr(UML2::TimeTrigger, "isRelative")
-    descriptor = None
-    for klass in UML2::TimeTrigger.__mro__:
-        if "isRelative" in klass.__dict__:
-            descriptor = klass.__dict__["isRelative"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_uml2::changetrigger_is_not_abstract():
-    assert not inspect.isabstract(UML2::ChangeTrigger)
-
-
-def test_uml2::changetrigger_constructor_exists():
-    assert callable(UML2::ChangeTrigger.__init__)
-
-
-def test_uml2::changetrigger_constructor_args():
-    sig = inspect.signature(UML2::ChangeTrigger.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_uml2::messagetrigger_is_not_abstract():
-    assert not inspect.isabstract(UML2::MessageTrigger)
-
-
-def test_uml2::messagetrigger_constructor_exists():
-    assert callable(UML2::MessageTrigger.__init__)
-
-
-def test_uml2::messagetrigger_constructor_args():
-    sig = inspect.signature(UML2::MessageTrigger.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_messagetrigger_is_not_abstract():
-    assert not inspect.isabstract(MessageTrigger)
-
-
-def test_messagetrigger_constructor_exists():
-    assert callable(MessageTrigger.__init__)
-
-
-def test_messagetrigger_constructor_args():
-    sig = inspect.signature(MessageTrigger.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_uml2::anytrigger_is_not_abstract():
-    assert not inspect.isabstract(UML2::AnyTrigger)
-
-
-def test_uml2::anytrigger_constructor_exists():
-    assert callable(UML2::AnyTrigger.__init__)
-
-
-def test_uml2::anytrigger_constructor_args():
-    sig = inspect.signature(UML2::AnyTrigger.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_uml2::signaltrigger_is_not_abstract():
-    assert not inspect.isabstract(UML2::SignalTrigger)
-
-
-def test_uml2::signaltrigger_constructor_exists():
-    assert callable(UML2::SignalTrigger.__init__)
-
-
-def test_uml2::signaltrigger_constructor_args():
-    sig = inspect.signature(UML2::SignalTrigger.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_uml2::calltrigger_is_not_abstract():
-    assert not inspect.isabstract(UML2::CallTrigger)
-
-
-def test_uml2::calltrigger_constructor_exists():
-    assert callable(UML2::CallTrigger.__init__)
-
-
-def test_uml2::calltrigger_constructor_args():
-    sig = inspect.signature(UML2::CallTrigger.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_structuredclassifier_is_not_abstract():
-    assert not inspect.isabstract(StructuredClassifier)
-
-
-def test_structuredclassifier_constructor_exists():
-    assert callable(StructuredClassifier.__init__)
-
-
-def test_structuredclassifier_constructor_args():
-    sig = inspect.signature(StructuredClassifier.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_uml2::encapsulatedclassifier_is_not_abstract():
-    assert not inspect.isabstract(UML2::EncapsulatedClassifier)
-
-
-def test_uml2::encapsulatedclassifier_constructor_exists():
-    assert callable(UML2::EncapsulatedClassifier.__init__)
-
-
-def test_uml2::encapsulatedclassifier_constructor_args():
-    sig = inspect.signature(UML2::EncapsulatedClassifier.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_uml2::collaboration_is_not_abstract():
-    assert not inspect.isabstract(UML2::Collaboration)
-
-
-def test_uml2::collaboration_constructor_exists():
-    assert callable(UML2::Collaboration.__init__)
-
-
-def test_uml2::collaboration_constructor_args():
-    sig = inspect.signature(UML2::Collaboration.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_uml2::include_is_not_abstract():
-    assert not inspect.isabstract(UML2::Include)
-
-
-def test_uml2::include_constructor_exists():
-    assert callable(UML2::Include.__init__)
-
-
-def test_uml2::include_constructor_args():
-    sig = inspect.signature(UML2::Include.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_uml2::extensionpoint_is_not_abstract():
-    assert not inspect.isabstract(UML2::ExtensionPoint)
-
-
-def test_uml2::extensionpoint_constructor_exists():
-    assert callable(UML2::ExtensionPoint.__init__)
-
-
-def test_uml2::extensionpoint_constructor_args():
-    sig = inspect.signature(UML2::ExtensionPoint.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_uml2::extend_is_not_abstract():
-    assert not inspect.isabstract(UML2::Extend)
-
-
-def test_uml2::extend_constructor_exists():
-    assert callable(UML2::Extend.__init__)
-
-
-def test_uml2::extend_constructor_args():
-    sig = inspect.signature(UML2::Extend.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_uml2::actor_is_not_abstract():
-    assert not inspect.isabstract(UML2::Actor)
-
-
-def test_uml2::actor_constructor_exists():
-    assert callable(UML2::Actor.__init__)
-
-
-def test_uml2::actor_constructor_args():
-    sig = inspect.signature(UML2::Actor.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_uml2::artifact_is_not_abstract():
-    assert not inspect.isabstract(UML2::Artifact)
-
-
-def test_uml2::artifact_constructor_exists():
-    assert callable(UML2::Artifact.__init__)
-
-
-def test_uml2::artifact_constructor_args():
-    sig = inspect.signature(UML2::Artifact.__init__)
-    params = list(sig.parameters.keys())
-    assert "fileName" in params, "Missing parameter 'fileName'"
-
-def test_uml2::artifact_has_fileName():
-    assert hasattr(UML2::Artifact, "fileName")
-    descriptor = None
-    for klass in UML2::Artifact.__mro__:
-        if "fileName" in klass.__dict__:
-            descriptor = klass.__dict__["fileName"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_uml2::protocolstatemachine_is_not_abstract():
-    assert not inspect.isabstract(UML2::ProtocolStateMachine)
-
-
-def test_uml2::protocolstatemachine_constructor_exists():
-    assert callable(UML2::ProtocolStateMachine.__init__)
-
-
-def test_uml2::protocolstatemachine_constructor_args():
-    sig = inspect.signature(UML2::ProtocolStateMachine.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_uml2::interface_is_not_abstract():
-    assert not inspect.isabstract(UML2::Interface)
-
-
-def test_uml2::interface_constructor_exists():
-    assert callable(UML2::Interface.__init__)
-
-
-def test_uml2::interface_constructor_args():
-    sig = inspect.signature(UML2::Interface.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_inputpin_is_not_abstract():
-    assert not inspect.isabstract(InputPin)
-
-
-def test_inputpin_constructor_exists():
-    assert callable(InputPin.__init__)
-
-
-def test_inputpin_constructor_args():
-    sig = inspect.signature(InputPin.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_uml2::valuepin_is_not_abstract():
-    assert not inspect.isabstract(UML2::ValuePin)
-
-
-def test_uml2::valuepin_constructor_exists():
-    assert callable(UML2::ValuePin.__init__)
-
-
-def test_uml2::valuepin_constructor_args():
-    sig = inspect.signature(UML2::ValuePin.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_uml2::state_is_not_abstract():
-    assert not inspect.isabstract(UML2::State)
-
-
-def test_uml2::state_constructor_exists():
-    assert callable(UML2::State.__init__)
-
-
-def test_uml2::state_constructor_args():
-    sig = inspect.signature(UML2::State.__init__)
-    params = list(sig.parameters.keys())
-    assert "isSimple" in params, "Missing parameter 'isSimple'"
-    assert "isSubmachineState" in params, "Missing parameter 'isSubmachineState'"
-    assert "isOrthogonal" in params, "Missing parameter 'isOrthogonal'"
-    assert "isComposite" in params, "Missing parameter 'isComposite'"
-
-def test_uml2::state_has_isSimple():
-    assert hasattr(UML2::State, "isSimple")
-    descriptor = None
-    for klass in UML2::State.__mro__:
-        if "isSimple" in klass.__dict__:
-            descriptor = klass.__dict__["isSimple"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_uml2::state_has_isSubmachineState():
-    assert hasattr(UML2::State, "isSubmachineState")
-    descriptor = None
-    for klass in UML2::State.__mro__:
-        if "isSubmachineState" in klass.__dict__:
-            descriptor = klass.__dict__["isSubmachineState"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_uml2::state_has_isOrthogonal():
-    assert hasattr(UML2::State, "isOrthogonal")
-    descriptor = None
-    for klass in UML2::State.__mro__:
-        if "isOrthogonal" in klass.__dict__:
-            descriptor = klass.__dict__["isOrthogonal"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_uml2::state_has_isComposite():
-    assert hasattr(UML2::State, "isComposite")
-    descriptor = None
-    for klass in UML2::State.__mro__:
-        if "isComposite" in klass.__dict__:
-            descriptor = klass.__dict__["isComposite"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_objectnode_is_not_abstract():
-    assert not inspect.isabstract(ObjectNode)
-
-
-def test_objectnode_constructor_exists():
-    assert callable(ObjectNode.__init__)
-
-
-def test_objectnode_constructor_args():
-    sig = inspect.signature(ObjectNode.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_uml2::expansionnode_is_not_abstract():
-    assert not inspect.isabstract(UML2::ExpansionNode)
-
-
-def test_uml2::expansionnode_constructor_exists():
-    assert callable(UML2::ExpansionNode.__init__)
-
-
-def test_uml2::expansionnode_constructor_args():
-    sig = inspect.signature(UML2::ExpansionNode.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_uml2::activityparameternode_is_not_abstract():
-    assert not inspect.isabstract(UML2::ActivityParameterNode)
-
-
-def test_uml2::activityparameternode_constructor_exists():
-    assert callable(UML2::ActivityParameterNode.__init__)
-
-
-def test_uml2::activityparameternode_constructor_args():
-    sig = inspect.signature(UML2::ActivityParameterNode.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_uml2::centralbuffernode_is_not_abstract():
-    assert not inspect.isabstract(UML2::CentralBufferNode)
-
-
-def test_uml2::centralbuffernode_constructor_exists():
-    assert callable(UML2::CentralBufferNode.__init__)
-
-
-def test_uml2::centralbuffernode_constructor_args():
-    sig = inspect.signature(UML2::CentralBufferNode.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_uml2::pin_is_not_abstract():
-    assert not inspect.isabstract(UML2::Pin)
-
-
-def test_uml2::pin_constructor_exists():
-    assert callable(UML2::Pin.__init__)
-
-
-def test_uml2::pin_constructor_args():
-    sig = inspect.signature(UML2::Pin.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_pin_is_not_abstract():
-    assert not inspect.isabstract(Pin)
-
-
-def test_pin_constructor_exists():
-    assert callable(Pin.__init__)
-
-
-def test_pin_constructor_args():
-    sig = inspect.signature(Pin.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_uml2::exceptionhandler_is_not_abstract():
-    assert not inspect.isabstract(UML2::ExceptionHandler)
-
-
-def test_uml2::exceptionhandler_constructor_exists():
-    assert callable(UML2::ExceptionHandler.__init__)
-
-
-def test_uml2::exceptionhandler_constructor_args():
-    sig = inspect.signature(UML2::ExceptionHandler.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_finalnode_is_not_abstract():
-    assert not inspect.isabstract(FinalNode)
-
-
-def test_finalnode_constructor_exists():
-    assert callable(FinalNode.__init__)
-
-
-def test_finalnode_constructor_args():
-    sig = inspect.signature(FinalNode.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_uml2::flowfinalnode_is_not_abstract():
-    assert not inspect.isabstract(UML2::FlowFinalNode)
-
-
-def test_uml2::flowfinalnode_constructor_exists():
-    assert callable(UML2::FlowFinalNode.__init__)
-
-
-def test_uml2::flowfinalnode_constructor_args():
-    sig = inspect.signature(UML2::FlowFinalNode.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_uml2::activityfinalnode_is_not_abstract():
-    assert not inspect.isabstract(UML2::ActivityFinalNode)
-
-
-def test_uml2::activityfinalnode_constructor_exists():
-    assert callable(UML2::ActivityFinalNode.__init__)
-
-
-def test_uml2::activityfinalnode_constructor_args():
-    sig = inspect.signature(UML2::ActivityFinalNode.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_controlnode_is_not_abstract():
-    assert not inspect.isabstract(ControlNode)
-
-
-def test_controlnode_constructor_exists():
-    assert callable(ControlNode.__init__)
-
-
-def test_controlnode_constructor_args():
-    sig = inspect.signature(ControlNode.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_uml2::mergenode_is_not_abstract():
-    assert not inspect.isabstract(UML2::MergeNode)
-
-
-def test_uml2::mergenode_constructor_exists():
-    assert callable(UML2::MergeNode.__init__)
-
-
-def test_uml2::mergenode_constructor_args():
-    sig = inspect.signature(UML2::MergeNode.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_uml2::joinnode_is_not_abstract():
-    assert not inspect.isabstract(UML2::JoinNode)
-
-
-def test_uml2::joinnode_constructor_exists():
-    assert callable(UML2::JoinNode.__init__)
-
-
-def test_uml2::joinnode_constructor_args():
-    sig = inspect.signature(UML2::JoinNode.__init__)
-    params = list(sig.parameters.keys())
-    assert "isCombineDuplicate" in params, "Missing parameter 'isCombineDuplicate'"
-
-def test_uml2::joinnode_has_isCombineDuplicate():
-    assert hasattr(UML2::JoinNode, "isCombineDuplicate")
-    descriptor = None
-    for klass in UML2::JoinNode.__mro__:
-        if "isCombineDuplicate" in klass.__dict__:
-            descriptor = klass.__dict__["isCombineDuplicate"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_uml2::forknode_is_not_abstract():
-    assert not inspect.isabstract(UML2::ForkNode)
-
-
-def test_uml2::forknode_constructor_exists():
-    assert callable(UML2::ForkNode.__init__)
-
-
-def test_uml2::forknode_constructor_args():
-    sig = inspect.signature(UML2::ForkNode.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_uml2::finalnode_is_not_abstract():
-    assert not inspect.isabstract(UML2::FinalNode)
-
-
-def test_uml2::finalnode_constructor_exists():
-    assert callable(UML2::FinalNode.__init__)
-
-
-def test_uml2::finalnode_constructor_args():
-    sig = inspect.signature(UML2::FinalNode.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_uml2::decisionnode_is_not_abstract():
-    assert not inspect.isabstract(UML2::DecisionNode)
-
-
-def test_uml2::decisionnode_constructor_exists():
-    assert callable(UML2::DecisionNode.__init__)
-
-
-def test_uml2::decisionnode_constructor_args():
-    sig = inspect.signature(UML2::DecisionNode.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_uml2::initialnode_is_not_abstract():
-    assert not inspect.isabstract(UML2::InitialNode)
-
-
-def test_uml2::initialnode_constructor_exists():
-    assert callable(UML2::InitialNode.__init__)
-
-
-def test_uml2::initialnode_constructor_args():
-    sig = inspect.signature(UML2::InitialNode.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_activityedge_is_not_abstract():
-    assert not inspect.isabstract(ActivityEdge)
-
-
-def test_activityedge_constructor_exists():
-    assert callable(ActivityEdge.__init__)
-
-
-def test_activityedge_constructor_args():
-    sig = inspect.signature(ActivityEdge.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_uml2::objectflow_is_not_abstract():
-    assert not inspect.isabstract(UML2::ObjectFlow)
-
-
-def test_uml2::objectflow_constructor_exists():
-    assert callable(UML2::ObjectFlow.__init__)
-
-
-def test_uml2::objectflow_constructor_args():
-    sig = inspect.signature(UML2::ObjectFlow.__init__)
-    params = list(sig.parameters.keys())
-    assert "isMultireceive" in params, "Missing parameter 'isMultireceive'"
-    assert "isMulticast" in params, "Missing parameter 'isMulticast'"
-
-def test_uml2::objectflow_has_isMultireceive():
-    assert hasattr(UML2::ObjectFlow, "isMultireceive")
-    descriptor = None
-    for klass in UML2::ObjectFlow.__mro__:
-        if "isMultireceive" in klass.__dict__:
-            descriptor = klass.__dict__["isMultireceive"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_uml2::objectflow_has_isMulticast():
-    assert hasattr(UML2::ObjectFlow, "isMulticast")
-    descriptor = None
-    for klass in UML2::ObjectFlow.__mro__:
-        if "isMulticast" in klass.__dict__:
-            descriptor = klass.__dict__["isMulticast"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_uml2::controlflow_is_not_abstract():
-    assert not inspect.isabstract(UML2::ControlFlow)
-
-
-def test_uml2::controlflow_constructor_exists():
-    assert callable(UML2::ControlFlow.__init__)
-
-
-def test_uml2::controlflow_constructor_args():
-    sig = inspect.signature(UML2::ControlFlow.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_uml2::inputpin_is_not_abstract():
-    assert not inspect.isabstract(UML2::InputPin)
-
-
-def test_uml2::inputpin_constructor_exists():
-    assert callable(UML2::InputPin.__init__)
-
-
-def test_uml2::inputpin_constructor_args():
-    sig = inspect.signature(UML2::InputPin.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_uml2::outputpin_is_not_abstract():
-    assert not inspect.isabstract(UML2::OutputPin)
-
-
-def test_uml2::outputpin_constructor_exists():
-    assert callable(UML2::OutputPin.__init__)
-
-
-def test_uml2::outputpin_constructor_args():
-    sig = inspect.signature(UML2::OutputPin.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_activitynode_is_not_abstract():
-    assert not inspect.isabstract(ActivityNode)
-
-
-def test_activitynode_constructor_exists():
-    assert callable(ActivityNode.__init__)
-
-
-def test_activitynode_constructor_args():
-    sig = inspect.signature(ActivityNode.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_uml2::executablenode_is_not_abstract():
-    assert not inspect.isabstract(UML2::ExecutableNode)
-
-
-def test_uml2::executablenode_constructor_exists():
-    assert callable(UML2::ExecutableNode.__init__)
-
-
-def test_uml2::executablenode_constructor_args():
-    sig = inspect.signature(UML2::ExecutableNode.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_uml2::controlnode_is_not_abstract():
-    assert not inspect.isabstract(UML2::ControlNode)
-
-
-def test_uml2::controlnode_constructor_exists():
-    assert callable(UML2::ControlNode.__init__)
-
-
-def test_uml2::controlnode_constructor_args():
-    sig = inspect.signature(UML2::ControlNode.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_uml2::objectnode_is_not_abstract():
-    assert not inspect.isabstract(UML2::ObjectNode)
-
-
-def test_uml2::objectnode_constructor_exists():
-    assert callable(UML2::ObjectNode.__init__)
-
-
-def test_uml2::objectnode_constructor_args():
-    sig = inspect.signature(UML2::ObjectNode.__init__)
-    params = list(sig.parameters.keys())
-    assert "ordering" in params, "Missing parameter 'ordering'"
-
-def test_uml2::objectnode_has_ordering():
-    assert hasattr(UML2::ObjectNode, "ordering")
-    descriptor = None
-    for klass in UML2::ObjectNode.__mro__:
-        if "ordering" in klass.__dict__:
-            descriptor = klass.__dict__["ordering"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_executablenode_is_not_abstract():
-    assert not inspect.isabstract(ExecutableNode)
-
-
-def test_executablenode_constructor_exists():
-    assert callable(ExecutableNode.__init__)
-
-
-def test_executablenode_constructor_args():
-    sig = inspect.signature(ExecutableNode.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_uml2::interruptibleactivityregion_is_not_abstract():
-    assert not inspect.isabstract(UML2::InterruptibleActivityRegion)
-
-
-def test_uml2::interruptibleactivityregion_constructor_exists():
-    assert callable(UML2::InterruptibleActivityRegion.__init__)
-
-
-def test_uml2::interruptibleactivityregion_constructor_args():
-    sig = inspect.signature(UML2::InterruptibleActivityRegion.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_uml2::activitypartition_is_not_abstract():
-    assert not inspect.isabstract(UML2::ActivityPartition)
-
-
-def test_uml2::activitypartition_constructor_exists():
-    assert callable(UML2::ActivityPartition.__init__)
-
-
-def test_uml2::activitypartition_constructor_args():
-    sig = inspect.signature(UML2::ActivityPartition.__init__)
-    params = list(sig.parameters.keys())
-    assert "isExternal" in params, "Missing parameter 'isExternal'"
-    assert "isDimension" in params, "Missing parameter 'isDimension'"
-
-def test_uml2::activitypartition_has_isExternal():
-    assert hasattr(UML2::ActivityPartition, "isExternal")
-    descriptor = None
-    for klass in UML2::ActivityPartition.__mro__:
-        if "isExternal" in klass.__dict__:
-            descriptor = klass.__dict__["isExternal"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_uml2::activitypartition_has_isDimension():
-    assert hasattr(UML2::ActivityPartition, "isDimension")
-    descriptor = None
-    for klass in UML2::ActivityPartition.__mro__:
-        if "isDimension" in klass.__dict__:
-            descriptor = klass.__dict__["isDimension"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_uml2::structuredclassifier_is_not_abstract():
-    assert not inspect.isabstract(UML2::StructuredClassifier)
-
-
-def test_uml2::structuredclassifier_constructor_exists():
-    assert callable(UML2::StructuredClassifier.__init__)
-
-
-def test_uml2::structuredclassifier_constructor_args():
-    sig = inspect.signature(UML2::StructuredClassifier.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_uml2::connector_is_not_abstract():
-    assert not inspect.isabstract(UML2::Connector)
-
-
-def test_uml2::connector_constructor_exists():
-    assert callable(UML2::Connector.__init__)
-
-
-def test_uml2::connector_constructor_args():
-    sig = inspect.signature(UML2::Connector.__init__)
-    params = list(sig.parameters.keys())
-    assert "kind" in params, "Missing parameter 'kind'"
-
-def test_uml2::connector_has_kind():
-    assert hasattr(UML2::Connector, "kind")
-    descriptor = None
-    for klass in UML2::Connector.__mro__:
-        if "kind" in klass.__dict__:
-            descriptor = klass.__dict__["kind"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_uml2::connectableelement_is_not_abstract():
-    assert not inspect.isabstract(UML2::ConnectableElement)
-
-
-def test_uml2::connectableelement_constructor_exists():
-    assert callable(UML2::ConnectableElement.__init__)
-
-
-def test_uml2::connectableelement_constructor_args():
-    sig = inspect.signature(UML2::ConnectableElement.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_uml2::connectorend_is_not_abstract():
-    assert not inspect.isabstract(UML2::ConnectorEnd)
-
-
-def test_uml2::connectorend_constructor_exists():
-    assert callable(UML2::ConnectorEnd.__init__)
-
-
-def test_uml2::connectorend_constructor_args():
-    sig = inspect.signature(UML2::ConnectorEnd.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_uml2::model_is_not_abstract():
-    assert not inspect.isabstract(UML2::Model)
-
-
-def test_uml2::model_constructor_exists():
-    assert callable(UML2::Model.__init__)
-
-
-def test_uml2::model_constructor_args():
-    sig = inspect.signature(UML2::Model.__init__)
-    params = list(sig.parameters.keys())
-    assert "viewpoint" in params, "Missing parameter 'viewpoint'"
-
-def test_uml2::model_has_viewpoint():
-    assert hasattr(UML2::Model, "viewpoint")
-    descriptor = None
-    for klass in UML2::Model.__mro__:
-        if "viewpoint" in klass.__dict__:
-            descriptor = klass.__dict__["viewpoint"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_abstraction_is_not_abstract():
-    assert not inspect.isabstract(Abstraction)
-
-
-def test_abstraction_constructor_exists():
-    assert callable(Abstraction.__init__)
-
-
-def test_abstraction_constructor_args():
-    sig = inspect.signature(Abstraction.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_uml2::manifestation_is_not_abstract():
-    assert not inspect.isabstract(UML2::Manifestation)
-
-
-def test_uml2::manifestation_constructor_exists():
-    assert callable(UML2::Manifestation.__init__)
-
-
-def test_uml2::manifestation_constructor_args():
-    sig = inspect.signature(UML2::Manifestation.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_uml2::realization_is_not_abstract():
-    assert not inspect.isabstract(UML2::Realization)
-
-
-def test_uml2::realization_constructor_exists():
-    assert callable(UML2::Realization.__init__)
-
-
-def test_uml2::realization_constructor_args():
-    sig = inspect.signature(UML2::Realization.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_uml2::informationflow_is_not_abstract():
-    assert not inspect.isabstract(UML2::InformationFlow)
-
-
-def test_uml2::informationflow_constructor_exists():
-    assert callable(UML2::InformationFlow.__init__)
-
-
-def test_uml2::informationflow_constructor_args():
-    sig = inspect.signature(UML2::InformationFlow.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_uml2::informationitem_is_not_abstract():
-    assert not inspect.isabstract(UML2::InformationItem)
-
-
-def test_uml2::informationitem_constructor_exists():
-    assert callable(UML2::InformationItem.__init__)
-
-
-def test_uml2::informationitem_constructor_args():
-    sig = inspect.signature(UML2::InformationItem.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_realization_is_not_abstract():
-    assert not inspect.isabstract(Realization)
-
-
-def test_realization_constructor_exists():
-    assert callable(Realization.__init__)
-
-
-def test_realization_constructor_args():
-    sig = inspect.signature(Realization.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_uml2::substitution_is_not_abstract():
-    assert not inspect.isabstract(UML2::Substitution)
-
-
-def test_uml2::substitution_constructor_exists():
-    assert callable(UML2::Substitution.__init__)
-
-
-def test_uml2::substitution_constructor_args():
-    sig = inspect.signature(UML2::Substitution.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_uml2::component_is_not_abstract():
-    assert not inspect.isabstract(UML2::Component)
-
-
-def test_uml2::component_constructor_exists():
-    assert callable(UML2::Component.__init__)
-
-
-def test_uml2::component_constructor_args():
-    sig = inspect.signature(UML2::Component.__init__)
-    params = list(sig.parameters.keys())
-    assert "isIndirectlyInstantiated" in params, "Missing parameter 'isIndirectlyInstantiated'"
-
-def test_uml2::component_has_isIndirectlyInstantiated():
-    assert hasattr(UML2::Component, "isIndirectlyInstantiated")
-    descriptor = None
-    for klass in UML2::Component.__mro__:
-        if "isIndirectlyInstantiated" in klass.__dict__:
-            descriptor = klass.__dict__["isIndirectlyInstantiated"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_dependency_is_not_abstract():
-    assert not inspect.isabstract(Dependency)
-
-
-def test_dependency_constructor_exists():
-    assert callable(Dependency.__init__)
-
-
-def test_dependency_constructor_args():
-    sig = inspect.signature(Dependency.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_uml2::usage_is_not_abstract():
-    assert not inspect.isabstract(UML2::Usage)
-
-
-def test_uml2::usage_constructor_exists():
-    assert callable(UML2::Usage.__init__)
-
-
-def test_uml2::usage_constructor_args():
-    sig = inspect.signature(UML2::Usage.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_uml2::deployment_is_not_abstract():
-    assert not inspect.isabstract(UML2::Deployment)
-
-
-def test_uml2::deployment_constructor_exists():
-    assert callable(UML2::Deployment.__init__)
-
-
-def test_uml2::deployment_constructor_args():
-    sig = inspect.signature(UML2::Deployment.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_uml2::abstraction_is_not_abstract():
-    assert not inspect.isabstract(UML2::Abstraction)
-
-
-def test_uml2::abstraction_constructor_exists():
-    assert callable(UML2::Abstraction.__init__)
-
-
-def test_uml2::abstraction_constructor_args():
-    sig = inspect.signature(UML2::Abstraction.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_uml2::permission_is_not_abstract():
-    assert not inspect.isabstract(UML2::Permission)
-
-
-def test_uml2::permission_constructor_exists():
-    assert callable(UML2::Permission.__init__)
-
-
-def test_uml2::permission_constructor_args():
-    sig = inspect.signature(UML2::Permission.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_uml2::structuredactivitynode_is_not_abstract():
-    assert not inspect.isabstract(UML2::StructuredActivityNode)
-
-
-def test_uml2::structuredactivitynode_constructor_exists():
-    assert callable(UML2::StructuredActivityNode.__init__)
-
-
-def test_uml2::structuredactivitynode_constructor_args():
-    sig = inspect.signature(UML2::StructuredActivityNode.__init__)
-    params = list(sig.parameters.keys())
-    assert "mustIsolate" in params, "Missing parameter 'mustIsolate'"
-
-def test_uml2::structuredactivitynode_has_mustIsolate():
-    assert hasattr(UML2::StructuredActivityNode, "mustIsolate")
-    descriptor = None
-    for klass in UML2::StructuredActivityNode.__mro__:
-        if "mustIsolate" in klass.__dict__:
-            descriptor = klass.__dict__["mustIsolate"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_uml2::action_is_not_abstract():
-    assert not inspect.isabstract(UML2::Action)
-
-
-def test_uml2::action_constructor_exists():
-    assert callable(UML2::Action.__init__)
-
-
-def test_uml2::action_constructor_args():
-    sig = inspect.signature(UML2::Action.__init__)
-    params = list(sig.parameters.keys())
-    assert "effect" in params, "Missing parameter 'effect'"
-
-def test_uml2::action_has_effect():
-    assert hasattr(UML2::Action, "effect")
-    descriptor = None
-    for klass in UML2::Action.__mro__:
-        if "effect" in klass.__dict__:
-            descriptor = klass.__dict__["effect"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_uml2::activitynode_is_not_abstract():
-    assert not inspect.isabstract(UML2::ActivityNode)
-
-
-def test_uml2::activitynode_constructor_exists():
-    assert callable(UML2::ActivityNode.__init__)
-
-
-def test_uml2::activitynode_constructor_args():
-    sig = inspect.signature(UML2::ActivityNode.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_uml2::activitygroup_is_not_abstract():
-    assert not inspect.isabstract(UML2::ActivityGroup)
-
-
-def test_uml2::activitygroup_constructor_exists():
-    assert callable(UML2::ActivityGroup.__init__)
-
-
-def test_uml2::activitygroup_constructor_args():
-    sig = inspect.signature(UML2::ActivityGroup.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_uml2::activityedge_is_not_abstract():
-    assert not inspect.isabstract(UML2::ActivityEdge)
-
-
-def test_uml2::activityedge_constructor_exists():
-    assert callable(UML2::ActivityEdge.__init__)
-
-
-def test_uml2::activityedge_constructor_args():
-    sig = inspect.signature(UML2::ActivityEdge.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_behavior_is_not_abstract():
-    assert not inspect.isabstract(Behavior)
-
-
-def test_behavior_constructor_exists():
-    assert callable(Behavior.__init__)
-
-
-def test_behavior_constructor_args():
-    sig = inspect.signature(Behavior.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_uml2::interaction_is_not_abstract():
-    assert not inspect.isabstract(UML2::Interaction)
-
-
-def test_uml2::interaction_constructor_exists():
-    assert callable(UML2::Interaction.__init__)
-
-
-def test_uml2::interaction_constructor_args():
-    sig = inspect.signature(UML2::Interaction.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_uml2::activity_is_not_abstract():
-    assert not inspect.isabstract(UML2::Activity)
-
-
-def test_uml2::activity_constructor_exists():
-    assert callable(UML2::Activity.__init__)
-
-
-def test_uml2::activity_constructor_args():
-    sig = inspect.signature(UML2::Activity.__init__)
-    params = list(sig.parameters.keys())
-    assert "body" in params, "Missing parameter 'body'"
-    assert "language" in params, "Missing parameter 'language'"
-    assert "isReadOnly" in params, "Missing parameter 'isReadOnly'"
-    assert "isSingleExecution" in params, "Missing parameter 'isSingleExecution'"
-
-def test_uml2::activity_has_body():
-    assert hasattr(UML2::Activity, "body")
-    descriptor = None
-    for klass in UML2::Activity.__mro__:
-        if "body" in klass.__dict__:
-            descriptor = klass.__dict__["body"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_uml2::activity_has_language():
-    assert hasattr(UML2::Activity, "language")
-    descriptor = None
-    for klass in UML2::Activity.__mro__:
-        if "language" in klass.__dict__:
-            descriptor = klass.__dict__["language"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_uml2::activity_has_isReadOnly():
-    assert hasattr(UML2::Activity, "isReadOnly")
-    descriptor = None
-    for klass in UML2::Activity.__mro__:
-        if "isReadOnly" in klass.__dict__:
-            descriptor = klass.__dict__["isReadOnly"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_uml2::activity_has_isSingleExecution():
-    assert hasattr(UML2::Activity, "isSingleExecution")
-    descriptor = None
-    for klass in UML2::Activity.__mro__:
-        if "isSingleExecution" in klass.__dict__:
-            descriptor = klass.__dict__["isSingleExecution"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_uml2::statemachine_is_not_abstract():
-    assert not inspect.isabstract(UML2::StateMachine)
-
-
-def test_uml2::statemachine_constructor_exists():
-    assert callable(UML2::StateMachine.__init__)
-
-
-def test_uml2::statemachine_constructor_args():
-    sig = inspect.signature(UML2::StateMachine.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_uml2::trigger_is_not_abstract():
-    assert not inspect.isabstract(UML2::Trigger)
-
-
-def test_uml2::trigger_constructor_exists():
-    assert callable(UML2::Trigger.__init__)
-
-
-def test_uml2::trigger_constructor_args():
-    sig = inspect.signature(UML2::Trigger.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_uml2::implementation_is_not_abstract():
-    assert not inspect.isabstract(UML2::Implementation)
-
-
-def test_uml2::implementation_constructor_exists():
-    assert callable(UML2::Implementation.__init__)
-
-
-def test_uml2::implementation_constructor_args():
-    sig = inspect.signature(UML2::Implementation.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_uml2::behavioredclassifier_is_not_abstract():
-    assert not inspect.isabstract(UML2::BehavioredClassifier)
-
-
-def test_uml2::behavioredclassifier_constructor_exists():
-    assert callable(UML2::BehavioredClassifier.__init__)
-
-
-def test_uml2::behavioredclassifier_constructor_args():
-    sig = inspect.signature(UML2::BehavioredClassifier.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_property_is_not_abstract():
-    assert not inspect.isabstract(Property)
-
-
-def test_property_constructor_exists():
-    assert callable(Property.__init__)
-
-
-def test_property_constructor_args():
-    sig = inspect.signature(Property.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_uml2::port_is_not_abstract():
-    assert not inspect.isabstract(UML2::Port)
-
-
-def test_uml2::port_constructor_exists():
-    assert callable(UML2::Port.__init__)
-
-
-def test_uml2::port_constructor_args():
-    sig = inspect.signature(UML2::Port.__init__)
-    params = list(sig.parameters.keys())
-    assert "isBehavior" in params, "Missing parameter 'isBehavior'"
-    assert "isService" in params, "Missing parameter 'isService'"
-
-def test_uml2::port_has_isBehavior():
-    assert hasattr(UML2::Port, "isBehavior")
-    descriptor = None
-    for klass in UML2::Port.__mro__:
-        if "isBehavior" in klass.__dict__:
-            descriptor = klass.__dict__["isBehavior"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_uml2::port_has_isService():
-    assert hasattr(UML2::Port, "isService")
-    descriptor = None
-    for klass in UML2::Port.__mro__:
-        if "isService" in klass.__dict__:
-            descriptor = klass.__dict__["isService"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_uml2::extensionend_is_not_abstract():
-    assert not inspect.isabstract(UML2::ExtensionEnd)
-
-
-def test_uml2::extensionend_constructor_exists():
-    assert callable(UML2::ExtensionEnd.__init__)
-
-
-def test_uml2::extensionend_constructor_args():
-    sig = inspect.signature(UML2::ExtensionEnd.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_association_is_not_abstract():
-    assert not inspect.isabstract(Association)
-
-
-def test_association_constructor_exists():
-    assert callable(Association.__init__)
-
-
-def test_association_constructor_args():
-    sig = inspect.signature(Association.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_uml2::extension_is_not_abstract():
-    assert not inspect.isabstract(UML2::Extension)
-
-
-def test_uml2::extension_constructor_exists():
-    assert callable(UML2::Extension.__init__)
-
-
-def test_uml2::extension_constructor_args():
-    sig = inspect.signature(UML2::Extension.__init__)
-    params = list(sig.parameters.keys())
-    assert "isRequired" in params, "Missing parameter 'isRequired'"
-
-def test_uml2::extension_has_isRequired():
-    assert hasattr(UML2::Extension, "isRequired")
-    descriptor = None
-    for klass in UML2::Extension.__mro__:
-        if "isRequired" in klass.__dict__:
-            descriptor = klass.__dict__["isRequired"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_uml2::communicationpath_is_not_abstract():
-    assert not inspect.isabstract(UML2::CommunicationPath)
-
-
-def test_uml2::communicationpath_constructor_exists():
-    assert callable(UML2::CommunicationPath.__init__)
-
-
-def test_uml2::communicationpath_constructor_args():
-    sig = inspect.signature(UML2::CommunicationPath.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_uml2::associationclass_is_not_abstract():
-    assert not inspect.isabstract(UML2::AssociationClass)
-
-
-def test_uml2::associationclass_constructor_exists():
-    assert callable(UML2::AssociationClass.__init__)
-
-
-def test_uml2::associationclass_constructor_args():
-    sig = inspect.signature(UML2::AssociationClass.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_packageimport_is_not_abstract():
-    assert not inspect.isabstract(PackageImport)
-
-
-def test_packageimport_constructor_exists():
-    assert callable(PackageImport.__init__)
-
-
-def test_packageimport_constructor_args():
-    sig = inspect.signature(PackageImport.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_uml2::profileapplication_is_not_abstract():
-    assert not inspect.isabstract(UML2::ProfileApplication)
-
-
-def test_uml2::profileapplication_constructor_exists():
-    assert callable(UML2::ProfileApplication.__init__)
-
-
-def test_uml2::profileapplication_constructor_args():
-    sig = inspect.signature(UML2::ProfileApplication.__init__)
+def test_uml2_literalspecification_constructor_args():
+    sig = inspect.signature(UML2_LiteralSpecification.__init__)
     params = list(sig.parameters.keys())
 
-def test_visibilitykind_exists():
+def test_connectorkind_exists():
     # Check that the Enumeration exists
-    assert VisibilityKind is not None
+    assert ConnectorKind is not None
 
-def test_visibilitykind_has_all_literals():
+def test_connectorkind_has_all_literals():
     # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in VisibilityKind]
+    enum_literals = [lit.name for lit in ConnectorKind]
     expected_literals = [
-        "public",
-        "package",
-        "protected",
-        "private",
+        "assembly",
+        "delegation",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in VisibilityKind"
-
-def test_expansionkind_exists():
-    # Check that the Enumeration exists
-    assert ExpansionKind is not None
-
-def test_expansionkind_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in ExpansionKind]
-    expected_literals = [
-        "parallel",
-        "stream",
-        "iterative",
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in ExpansionKind"
-
-def test_transitionkind_exists():
-    # Check that the Enumeration exists
-    assert TransitionKind is not None
-
-def test_transitionkind_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in TransitionKind]
-    expected_literals = [
-        "external",
-        "internal",
-        "local",
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in TransitionKind"
-
-def test_messagesort_exists():
-    # Check that the Enumeration exists
-    assert MessageSort is not None
-
-def test_messagesort_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in MessageSort]
-    expected_literals = [
-        "synchCall",
-        "asynchSignal",
-        "synchSignal",
-        "asynchCall",
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in MessageSort"
-
-def test_objectnodeorderingkind_exists():
-    # Check that the Enumeration exists
-    assert ObjectNodeOrderingKind is not None
-
-def test_objectnodeorderingkind_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in ObjectNodeOrderingKind]
-    expected_literals = [
-        "ordered",
-        "unordered",
-        "FIFO",
-        "LIFO",
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in ObjectNodeOrderingKind"
-
-def test_aggregationkind_exists():
-    # Check that the Enumeration exists
-    assert AggregationKind is not None
-
-def test_aggregationkind_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in AggregationKind]
-    expected_literals = [
-        "composite",
-        "shared",
-        "none",
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in AggregationKind"
+        assert lit_name in enum_literals, f"Literal '' missing in ConnectorKind"
 
 def test_parametereffectkind_exists():
     # Check that the Enumeration exists
@@ -5596,45 +5512,38 @@ def test_parametereffectkind_has_all_literals():
     for lit_name in expected_literals:
         assert lit_name in enum_literals, f"Literal '' missing in ParameterEffectKind"
 
-def test_connectorkind_exists():
+def test_expansionkind_exists():
     # Check that the Enumeration exists
-    assert ConnectorKind is not None
+    assert ExpansionKind is not None
 
-def test_connectorkind_has_all_literals():
+def test_expansionkind_has_all_literals():
     # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in ConnectorKind]
+    enum_literals = [lit.name for lit in ExpansionKind]
     expected_literals = [
-        "assembly",
-        "delegation",
+        "iterative",
+        "stream",
+        "parallel",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in ConnectorKind"
+        assert lit_name in enum_literals, f"Literal '' missing in ExpansionKind"
 
-def test_interactionoperator_exists():
+def test_messagesort_exists():
     # Check that the Enumeration exists
-    assert InteractionOperator is not None
+    assert MessageSort is not None
 
-def test_interactionoperator_has_all_literals():
+def test_messagesort_has_all_literals():
     # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in InteractionOperator]
+    enum_literals = [lit.name for lit in MessageSort]
     expected_literals = [
-        "loop",
-        "alt",
-        "opt",
-        "consider",
-        "seq",
-        "assert_",
-        "strict",
-        "critical",
-        "par",
-        "ignore",
-        "break_",
-        "neg",
+        "synchSignal",
+        "asynchSignal",
+        "synchCall",
+        "asynchCall",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in InteractionOperator"
+        assert lit_name in enum_literals, f"Literal '' missing in MessageSort"
 
 def test_callconcurrencykind_exists():
     # Check that the Enumeration exists
@@ -5644,53 +5553,13 @@ def test_callconcurrencykind_has_all_literals():
     # Collect the names of literals in this Enumeration
     enum_literals = [lit.name for lit in CallConcurrencyKind]
     expected_literals = [
+        "concurrent",
         "guarded",
         "sequential",
-        "concurrent",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
         assert lit_name in enum_literals, f"Literal '' missing in CallConcurrencyKind"
-
-def test_parameterdirectionkind_exists():
-    # Check that the Enumeration exists
-    assert ParameterDirectionKind is not None
-
-def test_parameterdirectionkind_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in ParameterDirectionKind]
-    expected_literals = [
-        "in_",
-        "out",
-        "inout",
-        "return_",
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in ParameterDirectionKind"
-
-def test_pseudostatekind_exists():
-    # Check that the Enumeration exists
-    assert PseudostateKind is not None
-
-def test_pseudostatekind_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in PseudostateKind]
-    expected_literals = [
-        "shallowHistory",
-        "join",
-        "entryPoint",
-        "deepHistory",
-        "initial",
-        "terminate",
-        "junction",
-        "fork",
-        "exitPoint",
-        "choice",
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in PseudostateKind"
 
 def test_messagekind_exists():
     # Check that the Enumeration exists
@@ -5700,14 +5569,145 @@ def test_messagekind_has_all_literals():
     # Collect the names of literals in this Enumeration
     enum_literals = [lit.name for lit in MessageKind]
     expected_literals = [
-        "complete",
+        "lost",
         "unknown",
         "found",
-        "lost",
+        "complete",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
         assert lit_name in enum_literals, f"Literal '' missing in MessageKind"
+
+def test_pseudostatekind_exists():
+    # Check that the Enumeration exists
+    assert PseudostateKind is not None
+
+def test_pseudostatekind_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in PseudostateKind]
+    expected_literals = [
+        "exitPoint",
+        "junction",
+        "entryPoint",
+        "choice",
+        "fork",
+        "initial",
+        "shallowHistory",
+        "join",
+        "deepHistory",
+        "terminate",
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in PseudostateKind"
+
+def test_transitionkind_exists():
+    # Check that the Enumeration exists
+    assert TransitionKind is not None
+
+def test_transitionkind_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in TransitionKind]
+    expected_literals = [
+        "internal",
+        "local",
+        "external",
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in TransitionKind"
+
+def test_aggregationkind_exists():
+    # Check that the Enumeration exists
+    assert AggregationKind is not None
+
+def test_aggregationkind_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in AggregationKind]
+    expected_literals = [
+        "shared",
+        "none",
+        "composite",
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in AggregationKind"
+
+def test_parameterdirectionkind_exists():
+    # Check that the Enumeration exists
+    assert ParameterDirectionKind is not None
+
+def test_parameterdirectionkind_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in ParameterDirectionKind]
+    expected_literals = [
+        "out",
+        "return_",
+        "in_",
+        "inout",
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in ParameterDirectionKind"
+
+def test_interactionoperator_exists():
+    # Check that the Enumeration exists
+    assert InteractionOperator is not None
+
+def test_interactionoperator_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in InteractionOperator]
+    expected_literals = [
+        "alt",
+        "assert_",
+        "strict",
+        "par",
+        "neg",
+        "seq",
+        "consider",
+        "opt",
+        "critical",
+        "loop",
+        "break_",
+        "ignore",
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in InteractionOperator"
+
+def test_objectnodeorderingkind_exists():
+    # Check that the Enumeration exists
+    assert ObjectNodeOrderingKind is not None
+
+def test_objectnodeorderingkind_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in ObjectNodeOrderingKind]
+    expected_literals = [
+        "LIFO",
+        "unordered",
+        "FIFO",
+        "ordered",
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in ObjectNodeOrderingKind"
+
+def test_visibilitykind_exists():
+    # Check that the Enumeration exists
+    assert VisibilityKind is not None
+
+def test_visibilitykind_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in VisibilityKind]
+    expected_literals = [
+        "public",
+        "private",
+        "package",
+        "protected",
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in VisibilityKind"
 
 
 # =============================================================================
@@ -5724,8 +5724,8 @@ safe_text = st.text(
 AcceptEventAction_strategy = st.builds(
     AcceptEventAction,
 )
-UML2::AcceptCallAction_strategy = st.builds(
-    UML2::AcceptCallAction,
+UML2_AcceptCallAction_strategy = st.builds(
+    UML2_AcceptCallAction,
 )
 Artifact_strategy = st.builds(
     Artifact,
@@ -5733,21 +5733,21 @@ Artifact_strategy = st.builds(
 CreateLinkAction_strategy = st.builds(
     CreateLinkAction,
 )
-UML2::CreateLinkObjectAction_strategy = st.builds(
-    UML2::CreateLinkObjectAction,
+UML2_CreateLinkObjectAction_strategy = st.builds(
+    UML2_CreateLinkObjectAction,
 )
-UML2::DeploymentSpecification_strategy = st.builds(
-    UML2::DeploymentSpecification,
-    executionLocation=
-        safe_text,
+UML2_DeploymentSpecification_strategy = st.builds(
+    UML2_DeploymentSpecification,
     deploymentLocation=
+        safe_text,
+    executionLocation=
         safe_text
 )
 Transition_strategy = st.builds(
     Transition,
 )
-UML2::ProtocolTransition_strategy = st.builds(
-    UML2::ProtocolTransition,
+UML2_ProtocolTransition_strategy = st.builds(
+    UML2_ProtocolTransition,
 )
 StateMachine_strategy = st.builds(
     StateMachine,
@@ -5755,666 +5755,241 @@ StateMachine_strategy = st.builds(
 Node_strategy = st.builds(
     Node,
 )
-UML2::ExecutionEnvironment_strategy = st.builds(
-    UML2::ExecutionEnvironment,
+UML2_ExecutionEnvironment_strategy = st.builds(
+    UML2_ExecutionEnvironment,
 )
-UML2::Device_strategy = st.builds(
-    UML2::Device,
+UML2_Device_strategy = st.builds(
+    UML2_Device,
 )
 CentralBufferNode_strategy = st.builds(
     CentralBufferNode,
 )
-UML2::DataStoreNode_strategy = st.builds(
-    UML2::DataStoreNode,
+UML2_DataStoreNode_strategy = st.builds(
+    UML2_DataStoreNode,
 )
 IntervalConstraint_strategy = st.builds(
     IntervalConstraint,
 )
-UML2::DurationConstraint_strategy = st.builds(
-    UML2::DurationConstraint,
+UML2_DurationConstraint_strategy = st.builds(
+    UML2_DurationConstraint,
 )
-UML2::TimeConstraint_strategy = st.builds(
-    UML2::TimeConstraint,
+UML2_TimeConstraint_strategy = st.builds(
+    UML2_TimeConstraint,
 )
 CallAction_strategy = st.builds(
     CallAction,
 )
-UML2::CallBehaviorAction_strategy = st.builds(
-    UML2::CallBehaviorAction,
+UML2_CallBehaviorAction_strategy = st.builds(
+    UML2_CallBehaviorAction,
 )
-UML2::CallOperationAction_strategy = st.builds(
-    UML2::CallOperationAction,
+UML2_CallOperationAction_strategy = st.builds(
+    UML2_CallOperationAction,
 )
 Interval_strategy = st.builds(
     Interval,
 )
-UML2::TimeInterval_strategy = st.builds(
-    UML2::TimeInterval,
+UML2_TimeInterval_strategy = st.builds(
+    UML2_TimeInterval,
 )
-UML2::DurationInterval_strategy = st.builds(
-    UML2::DurationInterval,
+UML2_DurationInterval_strategy = st.builds(
+    UML2_DurationInterval,
 )
 InvocationAction_strategy = st.builds(
     InvocationAction,
 )
-UML2::BroadcastSignalAction_strategy = st.builds(
-    UML2::BroadcastSignalAction,
+UML2_BroadcastSignalAction_strategy = st.builds(
+    UML2_BroadcastSignalAction,
 )
-UML2::SendObjectAction_strategy = st.builds(
-    UML2::SendObjectAction,
+UML2_SendObjectAction_strategy = st.builds(
+    UML2_SendObjectAction,
 )
-UML2::CallAction_strategy = st.builds(
-    UML2::CallAction,
+UML2_CallAction_strategy = st.builds(
+    UML2_CallAction,
     isSynchronous=
         st.booleans()
 )
 WriteVariableAction_strategy = st.builds(
     WriteVariableAction,
 )
-UML2::RemoveVariableValueAction_strategy = st.builds(
-    UML2::RemoveVariableValueAction,
+UML2_RemoveVariableValueAction_strategy = st.builds(
+    UML2_RemoveVariableValueAction,
 )
-UML2::AddVariableValueAction_strategy = st.builds(
-    UML2::AddVariableValueAction,
+UML2_AddVariableValueAction_strategy = st.builds(
+    UML2_AddVariableValueAction,
     isReplaceAll=
         st.booleans()
 )
-UML2::SendSignalAction_strategy = st.builds(
-    UML2::SendSignalAction,
+UML2_SendSignalAction_strategy = st.builds(
+    UML2_SendSignalAction,
 )
 VariableAction_strategy = st.builds(
     VariableAction,
 )
-UML2::ClearVariableAction_strategy = st.builds(
-    UML2::ClearVariableAction,
+UML2_WriteVariableAction_strategy = st.builds(
+    UML2_WriteVariableAction,
 )
-UML2::WriteVariableAction_strategy = st.builds(
-    UML2::WriteVariableAction,
+UML2_ClearVariableAction_strategy = st.builds(
+    UML2_ClearVariableAction,
 )
-UML2::ReadVariableAction_strategy = st.builds(
-    UML2::ReadVariableAction,
+UML2_ReadVariableAction_strategy = st.builds(
+    UML2_ReadVariableAction,
 )
 WriteLinkAction_strategy = st.builds(
     WriteLinkAction,
 )
-UML2::DestroyLinkAction_strategy = st.builds(
-    UML2::DestroyLinkAction,
+UML2_DestroyLinkAction_strategy = st.builds(
+    UML2_DestroyLinkAction,
 )
-UML2::CreateLinkAction_strategy = st.builds(
-    UML2::CreateLinkAction,
+UML2_CreateLinkAction_strategy = st.builds(
+    UML2_CreateLinkAction,
 )
 LinkEndData_strategy = st.builds(
     LinkEndData,
 )
-UML2::LinkEndCreationData_strategy = st.builds(
-    UML2::LinkEndCreationData,
+UML2_LinkEndCreationData_strategy = st.builds(
+    UML2_LinkEndCreationData,
     isReplaceAll=
         st.booleans()
 )
 LinkAction_strategy = st.builds(
     LinkAction,
 )
-UML2::WriteLinkAction_strategy = st.builds(
-    UML2::WriteLinkAction,
-)
-UML2::ReadLinkAction_strategy = st.builds(
-    UML2::ReadLinkAction,
-)
-Package_strategy = st.builds(
-    Package,
-)
-UML2::Profile_strategy = st.builds(
-    UML2::Profile,
-)
-Class_strategy = st.builds(
-    Class,
-)
-UML2::Stereotype_strategy = st.builds(
-    UML2::Stereotype,
-)
-DirectedRelationship_strategy = st.builds(
-    DirectedRelationship,
-)
-UML2::ProtocolConformance_strategy = st.builds(
-    UML2::ProtocolConformance,
-)
-DeployedArtifact_strategy = st.builds(
-    DeployedArtifact,
-)
-Feature_strategy = st.builds(
-    Feature,
-)
-LiteralSpecification_strategy = st.builds(
-    LiteralSpecification,
-)
-UML2::LiteralInteger_strategy = st.builds(
-    UML2::LiteralInteger,
-    value=
-        st.integers()
-)
-UML2::LiteralNull_strategy = st.builds(
-    UML2::LiteralNull,
-)
-UML2::LiteralUnlimitedNatural_strategy = st.builds(
-    UML2::LiteralUnlimitedNatural,
-    value=
-        safe_text
-)
-UML2::LiteralString_strategy = st.builds(
-    UML2::LiteralString,
-    value=
-        safe_text
-)
-UML2::LiteralBoolean_strategy = st.builds(
-    UML2::LiteralBoolean,
-    value=
-        st.booleans()
-)
-UML2::Generalization_strategy = st.builds(
-    UML2::Generalization,
-    isSubstitutable=
-        st.booleans()
-)
-RedefinableElement_strategy = st.builds(
-    RedefinableElement,
-)
-UML2::Feature_strategy = st.builds(
-    UML2::Feature,
-    isStatic=
-        st.booleans()
-)
-Type_strategy = st.builds(
-    Type,
-)
-InstanceSpecification_strategy = st.builds(
-    InstanceSpecification,
-)
-Classifier_strategy = st.builds(
-    Classifier,
-)
-UML2::EnumerationLiteral_strategy = st.builds(
-    UML2::EnumerationLiteral,
-)
-DataType_strategy = st.builds(
-    DataType,
-)
-UML2::PrimitiveType_strategy = st.builds(
-    UML2::PrimitiveType,
-)
-UML2::Enumeration_strategy = st.builds(
-    UML2::Enumeration,
-)
-UML2::PackageMerge_strategy = st.builds(
-    UML2::PackageMerge,
-)
-Namespace_strategy = st.builds(
-    Namespace,
-)
-UML2::BehavioralFeature_strategy = st.builds(
-    UML2::BehavioralFeature,
-    isAbstract=
-        st.booleans(),
-    concurrency=
-        safe_text
-)
-MultiplicityElement_strategy = st.builds(
-    MultiplicityElement,
-)
-BehavioralFeature_strategy = st.builds(
-    BehavioralFeature,
-)
-UML2::DataType_strategy = st.builds(
-    UML2::DataType,
-)
-DeploymentTarget_strategy = st.builds(
-    DeploymentTarget,
-)
-UML2::Node_strategy = st.builds(
-    UML2::Node,
-)
-ConnectableElement_strategy = st.builds(
-    ConnectableElement,
-)
-StructuralFeature_strategy = st.builds(
-    StructuralFeature,
-)
-UML2::Property_strategy = st.builds(
-    UML2::Property,
-    isComposite=
-        st.booleans(),
-    isDerivedUnion=
-        st.booleans(),
-    isDerived=
-        st.booleans(),
-    default=
-        safe_text,
-    aggregation=
-        safe_text
-)
-PackageableElement_strategy = st.builds(
-    PackageableElement,
-)
-UML2::InstanceSpecification_strategy = st.builds(
-    UML2::InstanceSpecification,
-)
-UML2::GeneralizationSet_strategy = st.builds(
-    UML2::GeneralizationSet,
-    isDisjoint=
-        st.booleans(),
-    isCovering=
-        st.booleans()
-)
-UML2::Package_strategy = st.builds(
-    UML2::Package,
-)
-UML2::PrimitiveFunction_strategy = st.builds(
-    UML2::PrimitiveFunction,
-    language=
-        safe_text,
-    body=
-        safe_text
-)
-UML2::Type_strategy = st.builds(
-    UML2::Type,
-)
-UML2::Reception_strategy = st.builds(
-    UML2::Reception,
-)
-UML2::Classifier_strategy = st.builds(
-    UML2::Classifier,
-    isAbstract=
-        st.booleans()
-)
-EncapsulatedClassifier_strategy = st.builds(
-    EncapsulatedClassifier,
-)
-BehavioredClassifier_strategy = st.builds(
-    BehavioredClassifier,
-)
-UML2::UseCase_strategy = st.builds(
-    UML2::UseCase,
-)
-UML2::Class_strategy = st.builds(
-    UML2::Class,
-    isActive=
-        st.booleans()
-)
-Relationship_strategy = st.builds(
-    Relationship,
-)
-UML2::Association_strategy = st.builds(
-    UML2::Association,
-    isDerived=
-        st.booleans()
-)
-UML2::DirectedRelationship_strategy = st.builds(
-    UML2::DirectedRelationship,
-)
-OpaqueExpression_strategy = st.builds(
-    OpaqueExpression,
-)
-UML2::Expression_strategy = st.builds(
-    UML2::Expression,
-    symbol=
-        safe_text
-)
-ParameterableElement_strategy = st.builds(
-    ParameterableElement,
-)
-TypedElement_strategy = st.builds(
-    TypedElement,
-)
-UML2::Operation_strategy = st.builds(
-    UML2::Operation,
-    isQuery=
-        st.booleans()
-)
-UML2::StructuralFeature_strategy = st.builds(
-    UML2::StructuralFeature,
-    isReadOnly=
-        st.booleans()
-)
-UML2::Behavior_strategy = st.builds(
-    UML2::Behavior,
-    isReentrant=
-        st.booleans()
-)
-UML2::Parameter_strategy = st.builds(
-    UML2::Parameter,
-    effect=
-        safe_text,
-    default=
-        safe_text,
-    direction=
-        safe_text,
-    isStream=
-        st.booleans(),
-    isException=
-        st.booleans()
-)
-ValueSpecification_strategy = st.builds(
-    ValueSpecification,
-)
-UML2::InstanceValue_strategy = st.builds(
-    UML2::InstanceValue,
-)
-UML2::Interval_strategy = st.builds(
-    UML2::Interval,
-)
-UML2::TimeExpression_strategy = st.builds(
-    UML2::TimeExpression,
-    firstTime=
-        st.booleans()
-)
-UML2::Duration_strategy = st.builds(
-    UML2::Duration,
-    firstTime=
-        st.booleans()
-)
-UML2::LiteralSpecification_strategy = st.builds(
-    UML2::LiteralSpecification,
-)
-UML2::OpaqueExpression_strategy = st.builds(
-    UML2::OpaqueExpression,
-    language=
-        safe_text,
-    bodies=
-        safe_text
-)
-UML2::PackageImport_strategy = st.builds(
-    UML2::PackageImport,
-    visibility=
-        safe_text
-)
-UML2::ElementImport_strategy = st.builds(
-    UML2::ElementImport,
-    alias=
-        safe_text,
-    visibility=
-        safe_text
-)
-UML2::Constraint_strategy = st.builds(
-    UML2::Constraint,
-)
-NamedElement_strategy = st.builds(
-    NamedElement,
-)
-UML2::RedefinableElement_strategy = st.builds(
-    UML2::RedefinableElement,
-    isLeaf=
-        st.booleans()
-)
-UML2::ParameterSet_strategy = st.builds(
-    UML2::ParameterSet,
-)
-UML2::TypedElement_strategy = st.builds(
-    UML2::TypedElement,
-)
-UML2::CollaborationOccurrence_strategy = st.builds(
-    UML2::CollaborationOccurrence,
-)
-UML2::PackageableElement_strategy = st.builds(
-    UML2::PackageableElement,
-    packageableElement_visibility=
-        safe_text
-)
-UML2::DeployedArtifact_strategy = st.builds(
-    UML2::DeployedArtifact,
-)
-UML2::DeploymentTarget_strategy = st.builds(
-    UML2::DeploymentTarget,
-)
-UML2::Namespace_strategy = st.builds(
-    UML2::Namespace,
-)
-UML2::Dependency_strategy = st.builds(
-    UML2::Dependency,
-)
-TemplateableElement_strategy = st.builds(
-    TemplateableElement,
-)
-UML2::StringExpression_strategy = st.builds(
-    UML2::StringExpression,
-)
-UML2::NamedElement_strategy = st.builds(
-    UML2::NamedElement,
-    qualifiedName=
-        safe_text,
-    visibility=
-        safe_text,
-    name=
-        safe_text
-)
-UML2::ValueSpecification_strategy = st.builds(
-    UML2::ValueSpecification,
-)
-Element_strategy = st.builds(
-    Element,
-)
-UML2::QualifierValue_strategy = st.builds(
-    UML2::QualifierValue,
-)
-UML2::Slot_strategy = st.builds(
-    UML2::Slot,
-)
-UML2::Relationship_strategy = st.builds(
-    UML2::Relationship,
-)
-UML2::MultiplicityElement_strategy = st.builds(
-    UML2::MultiplicityElement,
-    upper=
-        safe_text,
-    lower=
-        st.integers(),
-    isOrdered=
-        st.booleans(),
-    isUnique=
-        st.booleans()
-)
-UML2::Comment_strategy = st.builds(
-    UML2::Comment,
-    body=
-        safe_text
-)
-UML2::Element_strategy = st.builds(
-    UML2::Element,
-)
-UML2::LinkEndData_strategy = st.builds(
-    UML2::LinkEndData,
+UML2_WriteLinkAction_strategy = st.builds(
+    UML2_WriteLinkAction,
+)
+UML2_ReadLinkAction_strategy = st.builds(
+    UML2_ReadLinkAction,
 )
 WriteStructuralFeatureAction_strategy = st.builds(
     WriteStructuralFeatureAction,
 )
-UML2::AddStructuralFeatureValueAction_strategy = st.builds(
-    UML2::AddStructuralFeatureValueAction,
+UML2_AddStructuralFeatureValueAction_strategy = st.builds(
+    UML2_AddStructuralFeatureValueAction,
     isReplaceAll=
         st.booleans()
 )
-UML2::DurationObservationAction_strategy = st.builds(
-    UML2::DurationObservationAction,
+UML2_DurationObservationAction_strategy = st.builds(
+    UML2_DurationObservationAction,
 )
-UML2::TimeObservationAction_strategy = st.builds(
-    UML2::TimeObservationAction,
+UML2_TimeObservationAction_strategy = st.builds(
+    UML2_TimeObservationAction,
 )
-UML2::RemoveStructuralFeatureValueAction_strategy = st.builds(
-    UML2::RemoveStructuralFeatureValueAction,
+UML2_RemoveStructuralFeatureValueAction_strategy = st.builds(
+    UML2_RemoveStructuralFeatureValueAction,
 )
 StructuralFeatureAction_strategy = st.builds(
     StructuralFeatureAction,
 )
-UML2::ClearStructuralFeatureAction_strategy = st.builds(
-    UML2::ClearStructuralFeatureAction,
+UML2_ClearStructuralFeatureAction_strategy = st.builds(
+    UML2_ClearStructuralFeatureAction,
 )
-UML2::WriteStructuralFeatureAction_strategy = st.builds(
-    UML2::WriteStructuralFeatureAction,
+UML2_WriteStructuralFeatureAction_strategy = st.builds(
+    UML2_WriteStructuralFeatureAction,
 )
-UML2::ReadStructuralFeatureAction_strategy = st.builds(
-    UML2::ReadStructuralFeatureAction,
+UML2_ReadStructuralFeatureAction_strategy = st.builds(
+    UML2_ReadStructuralFeatureAction,
 )
 State_strategy = st.builds(
     State,
 )
-UML2::FinalState_strategy = st.builds(
-    UML2::FinalState,
+UML2_FinalState_strategy = st.builds(
+    UML2_FinalState,
 )
 Vertex_strategy = st.builds(
     Vertex,
 )
-UML2::ConnectionPointReference_strategy = st.builds(
-    UML2::ConnectionPointReference,
+UML2_ConnectionPointReference_strategy = st.builds(
+    UML2_ConnectionPointReference,
 )
-UML2::Transition_strategy = st.builds(
-    UML2::Transition,
+UML2_Pseudostate_strategy = st.builds(
+    UML2_Pseudostate,
     kind=
         safe_text
-)
-UML2::Vertex_strategy = st.builds(
-    UML2::Vertex,
-)
-UML2::Pseudostate_strategy = st.builds(
-    UML2::Pseudostate,
-    kind=
-        safe_text
-)
-UML2::Region_strategy = st.builds(
-    UML2::Region,
 )
 Constraint_strategy = st.builds(
     Constraint,
 )
-UML2::IntervalConstraint_strategy = st.builds(
-    UML2::IntervalConstraint,
+UML2_IntervalConstraint_strategy = st.builds(
+    UML2_IntervalConstraint,
 )
-UML2::InteractionConstraint_strategy = st.builds(
-    UML2::InteractionConstraint,
+UML2_InteractionConstraint_strategy = st.builds(
+    UML2_InteractionConstraint,
 )
 InteractionOccurrence_strategy = st.builds(
     InteractionOccurrence,
 )
-UML2::TemplateableClassifier_strategy = st.builds(
-    UML2::TemplateableClassifier,
-)
 TemplateSignature_strategy = st.builds(
     TemplateSignature,
-)
-UML2::RedefinableTemplateSignature_strategy = st.builds(
-    UML2::RedefinableTemplateSignature,
-)
-UML2::ParameterableClassifier_strategy = st.builds(
-    UML2::ParameterableClassifier,
 )
 TemplateParameter_strategy = st.builds(
     TemplateParameter,
 )
-UML2::ClassifierTemplateParameter_strategy = st.builds(
-    UML2::ClassifierTemplateParameter,
+UML2_ConnectableElementTemplateParameter_strategy = st.builds(
+    UML2_ConnectableElementTemplateParameter,
+)
+UML2_ClassifierTemplateParameter_strategy = st.builds(
+    UML2_ClassifierTemplateParameter,
     allowSubstitutable=
         st.booleans()
 )
-UML2::ConnectableElementTemplateParameter_strategy = st.builds(
-    UML2::ConnectableElementTemplateParameter,
-)
-UML2::OperationTemplateParameter_strategy = st.builds(
-    UML2::OperationTemplateParameter,
-)
-UML2::TemplateParameterSubstitution_strategy = st.builds(
-    UML2::TemplateParameterSubstitution,
-)
-UML2::TemplateBinding_strategy = st.builds(
-    UML2::TemplateBinding,
-)
-UML2::ParameterableElement_strategy = st.builds(
-    UML2::ParameterableElement,
-)
-UML2::TemplateableElement_strategy = st.builds(
-    UML2::TemplateableElement,
-)
-UML2::TemplateParameter_strategy = st.builds(
-    UML2::TemplateParameter,
-)
-UML2::TemplateSignature_strategy = st.builds(
-    UML2::TemplateSignature,
+UML2_OperationTemplateParameter_strategy = st.builds(
+    UML2_OperationTemplateParameter,
 )
 EventOccurrence_strategy = st.builds(
     EventOccurrence,
 )
-UML2::Stop_strategy = st.builds(
-    UML2::Stop,
+UML2_Stop_strategy = st.builds(
+    UML2_Stop,
 )
 MessageEnd_strategy = st.builds(
     MessageEnd,
 )
-UML2::MessageEnd_strategy = st.builds(
-    UML2::MessageEnd,
+UML2_PartDecomposition_strategy = st.builds(
+    UML2_PartDecomposition,
 )
-UML2::PartDecomposition_strategy = st.builds(
-    UML2::PartDecomposition,
-)
-UML2::GeneralOrdering_strategy = st.builds(
-    UML2::GeneralOrdering,
-)
-UML2::Gate_strategy = st.builds(
-    UML2::Gate,
-)
-UML2::InteractionFragment_strategy = st.builds(
-    UML2::InteractionFragment,
-)
-UML2::Message_strategy = st.builds(
-    UML2::Message,
-    messageSort=
-        safe_text,
-    messageKind=
-        safe_text
-)
-UML2::Lifeline_strategy = st.builds(
-    UML2::Lifeline,
+UML2_Gate_strategy = st.builds(
+    UML2_Gate,
 )
 InteractionFragment_strategy = st.builds(
     InteractionFragment,
 )
-UML2::InteractionOperand_strategy = st.builds(
-    UML2::InteractionOperand,
-)
-UML2::ExecutionOccurrence_strategy = st.builds(
-    UML2::ExecutionOccurrence,
-)
-UML2::StateInvariant_strategy = st.builds(
-    UML2::StateInvariant,
-)
-UML2::CombinedFragment_strategy = st.builds(
-    UML2::CombinedFragment,
-    interactionOperator=
-        safe_text
-)
-UML2::Continuation_strategy = st.builds(
-    UML2::Continuation,
+UML2_Continuation_strategy = st.builds(
+    UML2_Continuation,
     setting=
         st.booleans()
 )
-UML2::InteractionOccurrence_strategy = st.builds(
-    UML2::InteractionOccurrence,
+UML2_InteractionOccurrence_strategy = st.builds(
+    UML2_InteractionOccurrence,
 )
-UML2::EventOccurrence_strategy = st.builds(
-    UML2::EventOccurrence,
+UML2_ExecutionOccurrence_strategy = st.builds(
+    UML2_ExecutionOccurrence,
+)
+UML2_CombinedFragment_strategy = st.builds(
+    UML2_CombinedFragment,
+    interactionOperator=
+        safe_text
+)
+UML2_StateInvariant_strategy = st.builds(
+    UML2_StateInvariant,
+)
+UML2_EventOccurrence_strategy = st.builds(
+    UML2_EventOccurrence,
 )
 StructuredActivityNode_strategy = st.builds(
     StructuredActivityNode,
 )
-UML2::ExpansionRegion_strategy = st.builds(
-    UML2::ExpansionRegion,
+UML2_ExpansionRegion_strategy = st.builds(
+    UML2_ExpansionRegion,
     mode=
         safe_text
 )
-UML2::LoopNode_strategy = st.builds(
-    UML2::LoopNode,
+UML2_LoopNode_strategy = st.builds(
+    UML2_LoopNode,
     isTestedFirst=
         st.booleans()
 )
-UML2::Clause_strategy = st.builds(
-    UML2::Clause,
-)
-UML2::ConditionalNode_strategy = st.builds(
-    UML2::ConditionalNode,
+UML2_ConditionalNode_strategy = st.builds(
+    UML2_ConditionalNode,
     isDeterminate=
         st.booleans(),
     isAssured=
@@ -6426,391 +6001,816 @@ ActivityGroup_strategy = st.builds(
 Action_strategy = st.builds(
     Action,
 )
-UML2::AcceptEventAction_strategy = st.builds(
-    UML2::AcceptEventAction,
+UML2_CreateObjectAction_strategy = st.builds(
+    UML2_CreateObjectAction,
 )
-UML2::DestroyObjectAction_strategy = st.builds(
-    UML2::DestroyObjectAction,
+UML2_ReadIsClassifiedObjectAction_strategy = st.builds(
+    UML2_ReadIsClassifiedObjectAction,
+    isDirect=
+        st.booleans()
+)
+UML2_ClearAssociationAction_strategy = st.builds(
+    UML2_ClearAssociationAction,
+)
+UML2_ReclassifyObjectAction_strategy = st.builds(
+    UML2_ReclassifyObjectAction,
+    isReplaceAll=
+        st.booleans()
+)
+UML2_InvocationAction_strategy = st.builds(
+    UML2_InvocationAction,
+)
+UML2_ReadSelfAction_strategy = st.builds(
+    UML2_ReadSelfAction,
+)
+UML2_LinkAction_strategy = st.builds(
+    UML2_LinkAction,
+)
+UML2_ReplyAction_strategy = st.builds(
+    UML2_ReplyAction,
+)
+UML2_ReadLinkObjectEndAction_strategy = st.builds(
+    UML2_ReadLinkObjectEndAction,
+)
+UML2_RaiseExceptionAction_strategy = st.builds(
+    UML2_RaiseExceptionAction,
+)
+UML2_TestIdentityAction_strategy = st.builds(
+    UML2_TestIdentityAction,
+)
+UML2_DestroyObjectAction_strategy = st.builds(
+    UML2_DestroyObjectAction,
     isDestroyOwnedObjects=
         st.booleans(),
     isDestroyLinks=
         st.booleans()
 )
-UML2::TestIdentityAction_strategy = st.builds(
-    UML2::TestIdentityAction,
+UML2_ReadExtentAction_strategy = st.builds(
+    UML2_ReadExtentAction,
 )
-UML2::ReadLinkObjectEndAction_strategy = st.builds(
-    UML2::ReadLinkObjectEndAction,
+UML2_VariableAction_strategy = st.builds(
+    UML2_VariableAction,
 )
-UML2::StructuralFeatureAction_strategy = st.builds(
-    UML2::StructuralFeatureAction,
+UML2_StructuralFeatureAction_strategy = st.builds(
+    UML2_StructuralFeatureAction,
 )
-UML2::ReadSelfAction_strategy = st.builds(
-    UML2::ReadSelfAction,
+UML2_ApplyFunctionAction_strategy = st.builds(
+    UML2_ApplyFunctionAction,
 )
-UML2::ReadLinkObjectEndQualifierAction_strategy = st.builds(
-    UML2::ReadLinkObjectEndQualifierAction,
+UML2_ReadLinkObjectEndQualifierAction_strategy = st.builds(
+    UML2_ReadLinkObjectEndQualifierAction,
 )
-UML2::RaiseExceptionAction_strategy = st.builds(
-    UML2::RaiseExceptionAction,
+UML2_StartOwnedBehaviorAction_strategy = st.builds(
+    UML2_StartOwnedBehaviorAction,
 )
-UML2::CreateObjectAction_strategy = st.builds(
-    UML2::CreateObjectAction,
-)
-UML2::ApplyFunctionAction_strategy = st.builds(
-    UML2::ApplyFunctionAction,
-)
-UML2::VariableAction_strategy = st.builds(
-    UML2::VariableAction,
-)
-UML2::ReplyAction_strategy = st.builds(
-    UML2::ReplyAction,
-)
-UML2::ReadExtentAction_strategy = st.builds(
-    UML2::ReadExtentAction,
-)
-UML2::LinkAction_strategy = st.builds(
-    UML2::LinkAction,
-)
-UML2::ClearAssociationAction_strategy = st.builds(
-    UML2::ClearAssociationAction,
-)
-UML2::ReclassifyObjectAction_strategy = st.builds(
-    UML2::ReclassifyObjectAction,
-    isReplaceAll=
-        st.booleans()
-)
-UML2::InvocationAction_strategy = st.builds(
-    UML2::InvocationAction,
-)
-UML2::StartOwnedBehaviorAction_strategy = st.builds(
-    UML2::StartOwnedBehaviorAction,
-)
-UML2::ReadIsClassifiedObjectAction_strategy = st.builds(
-    UML2::ReadIsClassifiedObjectAction,
-    isDirect=
-        st.booleans()
-)
-UML2::Variable_strategy = st.builds(
-    UML2::Variable,
-)
-UML2::Signal_strategy = st.builds(
-    UML2::Signal,
+UML2_AcceptEventAction_strategy = st.builds(
+    UML2_AcceptEventAction,
 )
 Trigger_strategy = st.builds(
     Trigger,
 )
-UML2::TimeTrigger_strategy = st.builds(
-    UML2::TimeTrigger,
+UML2_TimeTrigger_strategy = st.builds(
+    UML2_TimeTrigger,
     isRelative=
         st.booleans()
 )
-UML2::ChangeTrigger_strategy = st.builds(
-    UML2::ChangeTrigger,
+UML2_ChangeTrigger_strategy = st.builds(
+    UML2_ChangeTrigger,
 )
-UML2::MessageTrigger_strategy = st.builds(
-    UML2::MessageTrigger,
+UML2_MessageTrigger_strategy = st.builds(
+    UML2_MessageTrigger,
 )
 MessageTrigger_strategy = st.builds(
     MessageTrigger,
 )
-UML2::AnyTrigger_strategy = st.builds(
-    UML2::AnyTrigger,
+UML2_AnyTrigger_strategy = st.builds(
+    UML2_AnyTrigger,
 )
-UML2::SignalTrigger_strategy = st.builds(
-    UML2::SignalTrigger,
+UML2_SignalTrigger_strategy = st.builds(
+    UML2_SignalTrigger,
 )
-UML2::CallTrigger_strategy = st.builds(
-    UML2::CallTrigger,
+UML2_CallTrigger_strategy = st.builds(
+    UML2_CallTrigger,
 )
 StructuredClassifier_strategy = st.builds(
     StructuredClassifier,
 )
-UML2::EncapsulatedClassifier_strategy = st.builds(
-    UML2::EncapsulatedClassifier,
+UML2_EncapsulatedClassifier_strategy = st.builds(
+    UML2_EncapsulatedClassifier,
 )
-UML2::Collaboration_strategy = st.builds(
-    UML2::Collaboration,
-)
-UML2::Include_strategy = st.builds(
-    UML2::Include,
-)
-UML2::ExtensionPoint_strategy = st.builds(
-    UML2::ExtensionPoint,
-)
-UML2::Extend_strategy = st.builds(
-    UML2::Extend,
-)
-UML2::Actor_strategy = st.builds(
-    UML2::Actor,
-)
-UML2::Artifact_strategy = st.builds(
-    UML2::Artifact,
-    fileName=
-        safe_text
-)
-UML2::ProtocolStateMachine_strategy = st.builds(
-    UML2::ProtocolStateMachine,
-)
-UML2::Interface_strategy = st.builds(
-    UML2::Interface,
+UML2_ProtocolStateMachine_strategy = st.builds(
+    UML2_ProtocolStateMachine,
 )
 InputPin_strategy = st.builds(
     InputPin,
 )
-UML2::ValuePin_strategy = st.builds(
-    UML2::ValuePin,
-)
-UML2::State_strategy = st.builds(
-    UML2::State,
-    isSimple=
-        st.booleans(),
-    isSubmachineState=
-        st.booleans(),
-    isOrthogonal=
-        st.booleans(),
-    isComposite=
-        st.booleans()
+UML2_ValuePin_strategy = st.builds(
+    UML2_ValuePin,
 )
 ObjectNode_strategy = st.builds(
     ObjectNode,
 )
-UML2::ExpansionNode_strategy = st.builds(
-    UML2::ExpansionNode,
+UML2_ExpansionNode_strategy = st.builds(
+    UML2_ExpansionNode,
 )
-UML2::ActivityParameterNode_strategy = st.builds(
-    UML2::ActivityParameterNode,
+UML2_CentralBufferNode_strategy = st.builds(
+    UML2_CentralBufferNode,
 )
-UML2::CentralBufferNode_strategy = st.builds(
-    UML2::CentralBufferNode,
-)
-UML2::Pin_strategy = st.builds(
-    UML2::Pin,
+UML2_ActivityParameterNode_strategy = st.builds(
+    UML2_ActivityParameterNode,
 )
 Pin_strategy = st.builds(
     Pin,
 )
-UML2::ExceptionHandler_strategy = st.builds(
-    UML2::ExceptionHandler,
-)
 FinalNode_strategy = st.builds(
     FinalNode,
 )
-UML2::FlowFinalNode_strategy = st.builds(
-    UML2::FlowFinalNode,
+UML2_FlowFinalNode_strategy = st.builds(
+    UML2_FlowFinalNode,
 )
-UML2::ActivityFinalNode_strategy = st.builds(
-    UML2::ActivityFinalNode,
+UML2_ActivityFinalNode_strategy = st.builds(
+    UML2_ActivityFinalNode,
 )
 ControlNode_strategy = st.builds(
     ControlNode,
 )
-UML2::MergeNode_strategy = st.builds(
-    UML2::MergeNode,
-)
-UML2::JoinNode_strategy = st.builds(
-    UML2::JoinNode,
+UML2_JoinNode_strategy = st.builds(
+    UML2_JoinNode,
     isCombineDuplicate=
         st.booleans()
 )
-UML2::ForkNode_strategy = st.builds(
-    UML2::ForkNode,
+UML2_FinalNode_strategy = st.builds(
+    UML2_FinalNode,
 )
-UML2::FinalNode_strategy = st.builds(
-    UML2::FinalNode,
+UML2_DecisionNode_strategy = st.builds(
+    UML2_DecisionNode,
 )
-UML2::DecisionNode_strategy = st.builds(
-    UML2::DecisionNode,
+UML2_ForkNode_strategy = st.builds(
+    UML2_ForkNode,
 )
-UML2::InitialNode_strategy = st.builds(
-    UML2::InitialNode,
+UML2_MergeNode_strategy = st.builds(
+    UML2_MergeNode,
+)
+UML2_InitialNode_strategy = st.builds(
+    UML2_InitialNode,
 )
 ActivityEdge_strategy = st.builds(
     ActivityEdge,
 )
-UML2::ObjectFlow_strategy = st.builds(
-    UML2::ObjectFlow,
+UML2_ObjectFlow_strategy = st.builds(
+    UML2_ObjectFlow,
     isMultireceive=
         st.booleans(),
     isMulticast=
         st.booleans()
 )
-UML2::ControlFlow_strategy = st.builds(
-    UML2::ControlFlow,
+UML2_ControlFlow_strategy = st.builds(
+    UML2_ControlFlow,
 )
-UML2::InputPin_strategy = st.builds(
-    UML2::InputPin,
+UML2_InputPin_strategy = st.builds(
+    UML2_InputPin,
 )
-UML2::OutputPin_strategy = st.builds(
-    UML2::OutputPin,
+UML2_OutputPin_strategy = st.builds(
+    UML2_OutputPin,
 )
 ActivityNode_strategy = st.builds(
     ActivityNode,
 )
-UML2::ExecutableNode_strategy = st.builds(
-    UML2::ExecutableNode,
+UML2_ExecutableNode_strategy = st.builds(
+    UML2_ExecutableNode,
 )
-UML2::ControlNode_strategy = st.builds(
-    UML2::ControlNode,
-)
-UML2::ObjectNode_strategy = st.builds(
-    UML2::ObjectNode,
-    ordering=
-        safe_text
+UML2_ControlNode_strategy = st.builds(
+    UML2_ControlNode,
 )
 ExecutableNode_strategy = st.builds(
     ExecutableNode,
 )
-UML2::InterruptibleActivityRegion_strategy = st.builds(
-    UML2::InterruptibleActivityRegion,
+UML2_InterruptibleActivityRegion_strategy = st.builds(
+    UML2_InterruptibleActivityRegion,
 )
-UML2::ActivityPartition_strategy = st.builds(
-    UML2::ActivityPartition,
+Abstraction_strategy = st.builds(
+    Abstraction,
+)
+UML2_Manifestation_strategy = st.builds(
+    UML2_Manifestation,
+)
+UML2_Realization_strategy = st.builds(
+    UML2_Realization,
+)
+Realization_strategy = st.builds(
+    Realization,
+)
+Dependency_strategy = st.builds(
+    Dependency,
+)
+UML2_Abstraction_strategy = st.builds(
+    UML2_Abstraction,
+)
+UML2_Usage_strategy = st.builds(
+    UML2_Usage,
+)
+UML2_Deployment_strategy = st.builds(
+    UML2_Deployment,
+)
+UML2_Permission_strategy = st.builds(
+    UML2_Permission,
+)
+UML2_Action_strategy = st.builds(
+    UML2_Action,
+    effect=
+        safe_text
+)
+NamedElement_strategy = st.builds(
+    NamedElement,
+)
+UML2_MessageEnd_strategy = st.builds(
+    UML2_MessageEnd,
+)
+UML2_Lifeline_strategy = st.builds(
+    UML2_Lifeline,
+)
+UML2_DeployedArtifact_strategy = st.builds(
+    UML2_DeployedArtifact,
+)
+UML2_GeneralOrdering_strategy = st.builds(
+    UML2_GeneralOrdering,
+)
+UML2_Vertex_strategy = st.builds(
+    UML2_Vertex,
+)
+UML2_InteractionFragment_strategy = st.builds(
+    UML2_InteractionFragment,
+)
+UML2_ActivityPartition_strategy = st.builds(
+    UML2_ActivityPartition,
     isExternal=
         st.booleans(),
     isDimension=
         st.booleans()
 )
-UML2::StructuredClassifier_strategy = st.builds(
-    UML2::StructuredClassifier,
-)
-UML2::Connector_strategy = st.builds(
-    UML2::Connector,
-    kind=
+UML2_Message_strategy = st.builds(
+    UML2_Message,
+    messageKind=
+        safe_text,
+    messageSort=
         safe_text
 )
-UML2::ConnectableElement_strategy = st.builds(
-    UML2::ConnectableElement,
+UML2_DeploymentTarget_strategy = st.builds(
+    UML2_DeploymentTarget,
 )
-UML2::ConnectorEnd_strategy = st.builds(
-    UML2::ConnectorEnd,
+UML2_Namespace_strategy = st.builds(
+    UML2_Namespace,
 )
-UML2::Model_strategy = st.builds(
-    UML2::Model,
-    viewpoint=
+TemplateableElement_strategy = st.builds(
+    TemplateableElement,
+)
+UML2_StringExpression_strategy = st.builds(
+    UML2_StringExpression,
+)
+UML2_NamedElement_strategy = st.builds(
+    UML2_NamedElement,
+    name=
+        safe_text,
+    visibility=
+        safe_text,
+    qualifiedName=
         safe_text
 )
-Abstraction_strategy = st.builds(
-    Abstraction,
+Element_strategy = st.builds(
+    Element,
 )
-UML2::Manifestation_strategy = st.builds(
-    UML2::Manifestation,
+UML2_TemplateParameterSubstitution_strategy = st.builds(
+    UML2_TemplateParameterSubstitution,
 )
-UML2::Realization_strategy = st.builds(
-    UML2::Realization,
+UML2_QualifierValue_strategy = st.builds(
+    UML2_QualifierValue,
 )
-UML2::InformationFlow_strategy = st.builds(
-    UML2::InformationFlow,
+UML2_LinkEndData_strategy = st.builds(
+    UML2_LinkEndData,
 )
-UML2::InformationItem_strategy = st.builds(
-    UML2::InformationItem,
+UML2_TemplateSignature_strategy = st.builds(
+    UML2_TemplateSignature,
 )
-Realization_strategy = st.builds(
-    Realization,
+UML2_TemplateableElement_strategy = st.builds(
+    UML2_TemplateableElement,
 )
-UML2::Substitution_strategy = st.builds(
-    UML2::Substitution,
+UML2_ParameterableElement_strategy = st.builds(
+    UML2_ParameterableElement,
 )
-UML2::Component_strategy = st.builds(
-    UML2::Component,
-    isIndirectlyInstantiated=
-        st.booleans()
+UML2_TemplateParameter_strategy = st.builds(
+    UML2_TemplateParameter,
 )
-Dependency_strategy = st.builds(
-    Dependency,
+UML2_Clause_strategy = st.builds(
+    UML2_Clause,
 )
-UML2::Usage_strategy = st.builds(
-    UML2::Usage,
+UML2_ExceptionHandler_strategy = st.builds(
+    UML2_ExceptionHandler,
 )
-UML2::Deployment_strategy = st.builds(
-    UML2::Deployment,
-)
-UML2::Abstraction_strategy = st.builds(
-    UML2::Abstraction,
-)
-UML2::Permission_strategy = st.builds(
-    UML2::Permission,
-)
-UML2::StructuredActivityNode_strategy = st.builds(
-    UML2::StructuredActivityNode,
-    mustIsolate=
-        st.booleans()
-)
-UML2::Action_strategy = st.builds(
-    UML2::Action,
-    effect=
+UML2_MultiplicityElement_strategy = st.builds(
+    UML2_MultiplicityElement,
+    lower=
+        st.integers(),
+    isUnique=
+        st.booleans(),
+    isOrdered=
+        st.booleans(),
+    upper=
         safe_text
 )
-UML2::ActivityNode_strategy = st.builds(
-    UML2::ActivityNode,
+UML2_Comment_strategy = st.builds(
+    UML2_Comment,
+    body=
+        safe_text
 )
-UML2::ActivityGroup_strategy = st.builds(
-    UML2::ActivityGroup,
+UML2_Element_strategy = st.builds(
+    UML2_Element,
 )
-UML2::ActivityEdge_strategy = st.builds(
-    UML2::ActivityEdge,
+UML2_ActivityGroup_strategy = st.builds(
+    UML2_ActivityGroup,
 )
 Behavior_strategy = st.builds(
     Behavior,
 )
-UML2::Interaction_strategy = st.builds(
-    UML2::Interaction,
+UML2_Interaction_strategy = st.builds(
+    UML2_Interaction,
 )
-UML2::Activity_strategy = st.builds(
-    UML2::Activity,
-    body=
-        safe_text,
-    language=
-        safe_text,
+UML2_Activity_strategy = st.builds(
+    UML2_Activity,
     isReadOnly=
         st.booleans(),
+    language=
+        safe_text,
     isSingleExecution=
-        st.booleans()
+        st.booleans(),
+    body=
+        safe_text
 )
-UML2::StateMachine_strategy = st.builds(
-    UML2::StateMachine,
+UML2_StateMachine_strategy = st.builds(
+    UML2_StateMachine,
 )
-UML2::Trigger_strategy = st.builds(
-    UML2::Trigger,
+UML2_Trigger_strategy = st.builds(
+    UML2_Trigger,
 )
-UML2::Implementation_strategy = st.builds(
-    UML2::Implementation,
-)
-UML2::BehavioredClassifier_strategy = st.builds(
-    UML2::BehavioredClassifier,
+UML2_Implementation_strategy = st.builds(
+    UML2_Implementation,
 )
 Property_strategy = st.builds(
     Property,
 )
-UML2::Port_strategy = st.builds(
-    UML2::Port,
+UML2_Port_strategy = st.builds(
+    UML2_Port,
     isBehavior=
         st.booleans(),
     isService=
         st.booleans()
 )
-UML2::ExtensionEnd_strategy = st.builds(
-    UML2::ExtensionEnd,
+UML2_ExtensionEnd_strategy = st.builds(
+    UML2_ExtensionEnd,
 )
 Association_strategy = st.builds(
     Association,
 )
-UML2::Extension_strategy = st.builds(
-    UML2::Extension,
-    isRequired=
-        st.booleans()
-)
-UML2::CommunicationPath_strategy = st.builds(
-    UML2::CommunicationPath,
-)
-UML2::AssociationClass_strategy = st.builds(
-    UML2::AssociationClass,
+UML2_CommunicationPath_strategy = st.builds(
+    UML2_CommunicationPath,
 )
 PackageImport_strategy = st.builds(
     PackageImport,
 )
-UML2::ProfileApplication_strategy = st.builds(
-    UML2::ProfileApplication,
+Package_strategy = st.builds(
+    Package,
+)
+UML2_Model_strategy = st.builds(
+    UML2_Model,
+    viewpoint=
+        safe_text
+)
+UML2_Profile_strategy = st.builds(
+    UML2_Profile,
+)
+Class_strategy = st.builds(
+    Class,
+)
+UML2_Component_strategy = st.builds(
+    UML2_Component,
+    isIndirectlyInstantiated=
+        st.booleans()
+)
+UML2_AssociationClass_strategy = st.builds(
+    UML2_AssociationClass,
+)
+UML2_Stereotype_strategy = st.builds(
+    UML2_Stereotype,
+)
+DirectedRelationship_strategy = st.builds(
+    DirectedRelationship,
+)
+UML2_ProtocolConformance_strategy = st.builds(
+    UML2_ProtocolConformance,
+)
+UML2_TemplateBinding_strategy = st.builds(
+    UML2_TemplateBinding,
+)
+UML2_Extend_strategy = st.builds(
+    UML2_Extend,
+)
+UML2_Include_strategy = st.builds(
+    UML2_Include,
+)
+UML2_PackageImport_strategy = st.builds(
+    UML2_PackageImport,
+    visibility=
+        safe_text
+)
+UML2_ElementImport_strategy = st.builds(
+    UML2_ElementImport,
+    alias=
+        safe_text,
+    visibility=
+        safe_text
+)
+UML2_RedefinableElement_strategy = st.builds(
+    UML2_RedefinableElement,
+    isLeaf=
+        st.booleans()
+)
+UML2_Slot_strategy = st.builds(
+    UML2_Slot,
+)
+DeployedArtifact_strategy = st.builds(
+    DeployedArtifact,
+)
+Feature_strategy = st.builds(
+    Feature,
+)
+UML2_Connector_strategy = st.builds(
+    UML2_Connector,
+    kind=
+        safe_text
+)
+LiteralSpecification_strategy = st.builds(
+    LiteralSpecification,
+)
+UML2_LiteralInteger_strategy = st.builds(
+    UML2_LiteralInteger,
+    value=
+        st.integers()
+)
+UML2_LiteralString_strategy = st.builds(
+    UML2_LiteralString,
+    value=
+        safe_text
+)
+UML2_LiteralUnlimitedNatural_strategy = st.builds(
+    UML2_LiteralUnlimitedNatural,
+    value=
+        safe_text
+)
+UML2_LiteralNull_strategy = st.builds(
+    UML2_LiteralNull,
+)
+UML2_LiteralBoolean_strategy = st.builds(
+    UML2_LiteralBoolean,
+    value=
+        st.booleans()
+)
+UML2_CollaborationOccurrence_strategy = st.builds(
+    UML2_CollaborationOccurrence,
+)
+UML2_Substitution_strategy = st.builds(
+    UML2_Substitution,
+)
+UML2_Generalization_strategy = st.builds(
+    UML2_Generalization,
+    isSubstitutable=
+        st.booleans()
+)
+RedefinableElement_strategy = st.builds(
+    RedefinableElement,
+)
+UML2_Feature_strategy = st.builds(
+    UML2_Feature,
+    isStatic=
+        st.booleans()
+)
+UML2_Transition_strategy = st.builds(
+    UML2_Transition,
+    kind=
+        safe_text
+)
+UML2_ExtensionPoint_strategy = st.builds(
+    UML2_ExtensionPoint,
+)
+UML2_ActivityEdge_strategy = st.builds(
+    UML2_ActivityEdge,
+)
+UML2_ActivityNode_strategy = st.builds(
+    UML2_ActivityNode,
+)
+UML2_RedefinableTemplateSignature_strategy = st.builds(
+    UML2_RedefinableTemplateSignature,
+)
+Type_strategy = st.builds(
+    Type,
+)
+InstanceSpecification_strategy = st.builds(
+    InstanceSpecification,
+)
+Classifier_strategy = st.builds(
+    Classifier,
+)
+UML2_InformationItem_strategy = st.builds(
+    UML2_InformationItem,
+)
+UML2_StructuredClassifier_strategy = st.builds(
+    UML2_StructuredClassifier,
+)
+UML2_ParameterableClassifier_strategy = st.builds(
+    UML2_ParameterableClassifier,
+)
+UML2_TemplateableClassifier_strategy = st.builds(
+    UML2_TemplateableClassifier,
+)
+UML2_Actor_strategy = st.builds(
+    UML2_Actor,
+)
+UML2_BehavioredClassifier_strategy = st.builds(
+    UML2_BehavioredClassifier,
+)
+UML2_Interface_strategy = st.builds(
+    UML2_Interface,
+)
+UML2_Artifact_strategy = st.builds(
+    UML2_Artifact,
+    fileName=
+        safe_text
+)
+UML2_Signal_strategy = st.builds(
+    UML2_Signal,
+)
+UML2_EnumerationLiteral_strategy = st.builds(
+    UML2_EnumerationLiteral,
+)
+DataType_strategy = st.builds(
+    DataType,
+)
+UML2_PrimitiveType_strategy = st.builds(
+    UML2_PrimitiveType,
+)
+UML2_Enumeration_strategy = st.builds(
+    UML2_Enumeration,
+)
+UML2_ProfileApplication_strategy = st.builds(
+    UML2_ProfileApplication,
+)
+UML2_PackageMerge_strategy = st.builds(
+    UML2_PackageMerge,
+)
+Namespace_strategy = st.builds(
+    Namespace,
+)
+UML2_Region_strategy = st.builds(
+    UML2_Region,
+)
+UML2_InteractionOperand_strategy = st.builds(
+    UML2_InteractionOperand,
+)
+UML2_BehavioralFeature_strategy = st.builds(
+    UML2_BehavioralFeature,
+    isAbstract=
+        st.booleans(),
+    concurrency=
+        safe_text
+)
+UML2_StructuredActivityNode_strategy = st.builds(
+    UML2_StructuredActivityNode,
+    mustIsolate=
+        st.booleans()
+)
+UML2_State_strategy = st.builds(
+    UML2_State,
+    isComposite=
+        st.booleans(),
+    isSubmachineState=
+        st.booleans(),
+    isSimple=
+        st.booleans(),
+    isOrthogonal=
+        st.booleans()
+)
+UML2_ParameterSet_strategy = st.builds(
+    UML2_ParameterSet,
+)
+UML2_TypedElement_strategy = st.builds(
+    UML2_TypedElement,
+)
+MultiplicityElement_strategy = st.builds(
+    MultiplicityElement,
+)
+UML2_Pin_strategy = st.builds(
+    UML2_Pin,
+)
+UML2_ConnectorEnd_strategy = st.builds(
+    UML2_ConnectorEnd,
+)
+BehavioralFeature_strategy = st.builds(
+    BehavioralFeature,
+)
+UML2_DataType_strategy = st.builds(
+    UML2_DataType,
+)
+DeploymentTarget_strategy = st.builds(
+    DeploymentTarget,
+)
+UML2_Node_strategy = st.builds(
+    UML2_Node,
+)
+ConnectableElement_strategy = st.builds(
+    ConnectableElement,
+)
+StructuralFeature_strategy = st.builds(
+    StructuralFeature,
+)
+UML2_Property_strategy = st.builds(
+    UML2_Property,
+    aggregation=
+        safe_text,
+    isDerived=
+        st.booleans(),
+    default=
+        safe_text,
+    isDerivedUnion=
+        st.booleans(),
+    isComposite=
+        st.booleans()
+)
+PackageableElement_strategy = st.builds(
+    PackageableElement,
+)
+UML2_PrimitiveFunction_strategy = st.builds(
+    UML2_PrimitiveFunction,
+    language=
+        safe_text,
+    body=
+        safe_text
+)
+UML2_Package_strategy = st.builds(
+    UML2_Package,
+)
+UML2_GeneralizationSet_strategy = st.builds(
+    UML2_GeneralizationSet,
+    isDisjoint=
+        st.booleans(),
+    isCovering=
+        st.booleans()
+)
+UML2_InstanceSpecification_strategy = st.builds(
+    UML2_InstanceSpecification,
+)
+UML2_Dependency_strategy = st.builds(
+    UML2_Dependency,
+)
+UML2_InformationFlow_strategy = st.builds(
+    UML2_InformationFlow,
+)
+UML2_Constraint_strategy = st.builds(
+    UML2_Constraint,
+)
+UML2_Type_strategy = st.builds(
+    UML2_Type,
+)
+UML2_Reception_strategy = st.builds(
+    UML2_Reception,
+)
+UML2_Classifier_strategy = st.builds(
+    UML2_Classifier,
+    isAbstract=
+        st.booleans()
+)
+UML2_Extension_strategy = st.builds(
+    UML2_Extension,
+    isRequired=
+        st.booleans()
+)
+EncapsulatedClassifier_strategy = st.builds(
+    EncapsulatedClassifier,
+)
+BehavioredClassifier_strategy = st.builds(
+    BehavioredClassifier,
+)
+UML2_UseCase_strategy = st.builds(
+    UML2_UseCase,
+)
+UML2_Collaboration_strategy = st.builds(
+    UML2_Collaboration,
+)
+UML2_Class_strategy = st.builds(
+    UML2_Class,
+    isActive=
+        st.booleans()
+)
+UML2_Relationship_strategy = st.builds(
+    UML2_Relationship,
+)
+Relationship_strategy = st.builds(
+    Relationship,
+)
+UML2_Association_strategy = st.builds(
+    UML2_Association,
+    isDerived=
+        st.booleans()
+)
+UML2_DirectedRelationship_strategy = st.builds(
+    UML2_DirectedRelationship,
+)
+OpaqueExpression_strategy = st.builds(
+    OpaqueExpression,
+)
+UML2_Expression_strategy = st.builds(
+    UML2_Expression,
+    symbol=
+        safe_text
+)
+ParameterableElement_strategy = st.builds(
+    ParameterableElement,
+)
+UML2_PackageableElement_strategy = st.builds(
+    UML2_PackageableElement,
+    packageableElement_visibility=
+        safe_text
+)
+UML2_ConnectableElement_strategy = st.builds(
+    UML2_ConnectableElement,
+)
+TypedElement_strategy = st.builds(
+    TypedElement,
+)
+UML2_ValueSpecification_strategy = st.builds(
+    UML2_ValueSpecification,
+)
+UML2_StructuralFeature_strategy = st.builds(
+    UML2_StructuralFeature,
+    isReadOnly=
+        st.booleans()
+)
+UML2_Variable_strategy = st.builds(
+    UML2_Variable,
+)
+UML2_Operation_strategy = st.builds(
+    UML2_Operation,
+    isQuery=
+        st.booleans()
+)
+UML2_ObjectNode_strategy = st.builds(
+    UML2_ObjectNode,
+    ordering=
+        safe_text
+)
+UML2_Behavior_strategy = st.builds(
+    UML2_Behavior,
+    isReentrant=
+        st.booleans()
+)
+UML2_Parameter_strategy = st.builds(
+    UML2_Parameter,
+    isStream=
+        st.booleans(),
+    isException=
+        st.booleans(),
+    direction=
+        safe_text,
+    default=
+        safe_text,
+    effect=
+        safe_text
+)
+ValueSpecification_strategy = st.builds(
+    ValueSpecification,
+)
+UML2_InstanceValue_strategy = st.builds(
+    UML2_InstanceValue,
+)
+UML2_TimeExpression_strategy = st.builds(
+    UML2_TimeExpression,
+    firstTime=
+        st.booleans()
+)
+UML2_Duration_strategy = st.builds(
+    UML2_Duration,
+    firstTime=
+        st.booleans()
+)
+UML2_OpaqueExpression_strategy = st.builds(
+    UML2_OpaqueExpression,
+    language=
+        safe_text,
+    bodies=
+        safe_text
+)
+UML2_Interval_strategy = st.builds(
+    UML2_Interval,
+)
+UML2_LiteralSpecification_strategy = st.builds(
+    UML2_LiteralSpecification,
 )
 
 @given(instance=AcceptEventAction_strategy)
@@ -6818,10 +6818,10 @@ UML2::ProfileApplication_strategy = st.builds(
 def test_accepteventaction_instantiation(instance):
     assert isinstance(instance, AcceptEventAction)
 
-@given(instance=UML2::AcceptCallAction_strategy)
+@given(instance=UML2_AcceptCallAction_strategy)
 @settings(max_examples=50)
-def test_uml2::acceptcallaction_instantiation(instance):
-    assert isinstance(instance, UML2::AcceptCallAction)
+def test_uml2_acceptcallaction_instantiation(instance):
+    assert isinstance(instance, UML2_AcceptCallAction)
 
 @given(instance=Artifact_strategy)
 @settings(max_examples=50)
@@ -6833,47 +6833,41 @@ def test_artifact_instantiation(instance):
 def test_createlinkaction_instantiation(instance):
     assert isinstance(instance, CreateLinkAction)
 
-@given(instance=UML2::CreateLinkObjectAction_strategy)
+@given(instance=UML2_CreateLinkObjectAction_strategy)
 @settings(max_examples=50)
-def test_uml2::createlinkobjectaction_instantiation(instance):
-    assert isinstance(instance, UML2::CreateLinkObjectAction)
+def test_uml2_createlinkobjectaction_instantiation(instance):
+    assert isinstance(instance, UML2_CreateLinkObjectAction)
 
-@given(instance=UML2::DeploymentSpecification_strategy)
+@given(instance=UML2_DeploymentSpecification_strategy)
 @settings(max_examples=50)
-def test_uml2::deploymentspecification_instantiation(instance):
-    assert isinstance(instance, UML2::DeploymentSpecification)
-
-@given(instance=UML2::DeploymentSpecification_strategy)
-def test_uml2::deploymentspecification_executionLocation_type(instance):
-    assert isinstance(instance.executionLocation, str)
+def test_uml2_deploymentspecification_instantiation(instance):
+    assert isinstance(instance, UML2_DeploymentSpecification)
 
 
-@given(instance=UML2::DeploymentSpecification_strategy)
-def test_uml2::deploymentspecification_executionLocation_setter(instance):
-    original = instance.executionLocation
-    instance.executionLocation = original
-    assert instance.executionLocation == original
 
-@given(instance=UML2::DeploymentSpecification_strategy)
-def test_uml2::deploymentspecification_deploymentLocation_type(instance):
-    assert isinstance(instance.deploymentLocation, str)
-
-
-@given(instance=UML2::DeploymentSpecification_strategy)
-def test_uml2::deploymentspecification_deploymentLocation_setter(instance):
+@given(instance=UML2_DeploymentSpecification_strategy)
+def test_uml2_deploymentspecification_deploymentLocation_setter(instance):
     original = instance.deploymentLocation
     instance.deploymentLocation = original
     assert instance.deploymentLocation == original
+
+
+
+@given(instance=UML2_DeploymentSpecification_strategy)
+def test_uml2_deploymentspecification_executionLocation_setter(instance):
+    original = instance.executionLocation
+    instance.executionLocation = original
+    assert instance.executionLocation == original
 
 @given(instance=Transition_strategy)
 @settings(max_examples=50)
 def test_transition_instantiation(instance):
     assert isinstance(instance, Transition)
 
-@given(instance=UML2::ProtocolTransition_strategy)
+@given(instance=UML2_ProtocolTransition_strategy)
 @settings(max_examples=50)
-def test_uml2::protocoltransition_instantiation(instance):
-    assert isinstance(instance, UML2::ProtocolTransition)
+def test_uml2_protocoltransition_instantiation(instance):
+    assert isinstance(instance, UML2_ProtocolTransition)
 
 @given(instance=StateMachine_strategy)
 @settings(max_examples=50)
@@ -6885,98 +6879,95 @@ def test_statemachine_instantiation(instance):
 def test_node_instantiation(instance):
     assert isinstance(instance, Node)
 
-@given(instance=UML2::ExecutionEnvironment_strategy)
+@given(instance=UML2_ExecutionEnvironment_strategy)
 @settings(max_examples=50)
-def test_uml2::executionenvironment_instantiation(instance):
-    assert isinstance(instance, UML2::ExecutionEnvironment)
+def test_uml2_executionenvironment_instantiation(instance):
+    assert isinstance(instance, UML2_ExecutionEnvironment)
 
-@given(instance=UML2::Device_strategy)
+@given(instance=UML2_Device_strategy)
 @settings(max_examples=50)
-def test_uml2::device_instantiation(instance):
-    assert isinstance(instance, UML2::Device)
+def test_uml2_device_instantiation(instance):
+    assert isinstance(instance, UML2_Device)
 
 @given(instance=CentralBufferNode_strategy)
 @settings(max_examples=50)
 def test_centralbuffernode_instantiation(instance):
     assert isinstance(instance, CentralBufferNode)
 
-@given(instance=UML2::DataStoreNode_strategy)
+@given(instance=UML2_DataStoreNode_strategy)
 @settings(max_examples=50)
-def test_uml2::datastorenode_instantiation(instance):
-    assert isinstance(instance, UML2::DataStoreNode)
+def test_uml2_datastorenode_instantiation(instance):
+    assert isinstance(instance, UML2_DataStoreNode)
 
 @given(instance=IntervalConstraint_strategy)
 @settings(max_examples=50)
 def test_intervalconstraint_instantiation(instance):
     assert isinstance(instance, IntervalConstraint)
 
-@given(instance=UML2::DurationConstraint_strategy)
+@given(instance=UML2_DurationConstraint_strategy)
 @settings(max_examples=50)
-def test_uml2::durationconstraint_instantiation(instance):
-    assert isinstance(instance, UML2::DurationConstraint)
+def test_uml2_durationconstraint_instantiation(instance):
+    assert isinstance(instance, UML2_DurationConstraint)
 
-@given(instance=UML2::TimeConstraint_strategy)
+@given(instance=UML2_TimeConstraint_strategy)
 @settings(max_examples=50)
-def test_uml2::timeconstraint_instantiation(instance):
-    assert isinstance(instance, UML2::TimeConstraint)
+def test_uml2_timeconstraint_instantiation(instance):
+    assert isinstance(instance, UML2_TimeConstraint)
 
 @given(instance=CallAction_strategy)
 @settings(max_examples=50)
 def test_callaction_instantiation(instance):
     assert isinstance(instance, CallAction)
 
-@given(instance=UML2::CallBehaviorAction_strategy)
+@given(instance=UML2_CallBehaviorAction_strategy)
 @settings(max_examples=50)
-def test_uml2::callbehavioraction_instantiation(instance):
-    assert isinstance(instance, UML2::CallBehaviorAction)
+def test_uml2_callbehavioraction_instantiation(instance):
+    assert isinstance(instance, UML2_CallBehaviorAction)
 
-@given(instance=UML2::CallOperationAction_strategy)
+@given(instance=UML2_CallOperationAction_strategy)
 @settings(max_examples=50)
-def test_uml2::calloperationaction_instantiation(instance):
-    assert isinstance(instance, UML2::CallOperationAction)
+def test_uml2_calloperationaction_instantiation(instance):
+    assert isinstance(instance, UML2_CallOperationAction)
 
 @given(instance=Interval_strategy)
 @settings(max_examples=50)
 def test_interval_instantiation(instance):
     assert isinstance(instance, Interval)
 
-@given(instance=UML2::TimeInterval_strategy)
+@given(instance=UML2_TimeInterval_strategy)
 @settings(max_examples=50)
-def test_uml2::timeinterval_instantiation(instance):
-    assert isinstance(instance, UML2::TimeInterval)
+def test_uml2_timeinterval_instantiation(instance):
+    assert isinstance(instance, UML2_TimeInterval)
 
-@given(instance=UML2::DurationInterval_strategy)
+@given(instance=UML2_DurationInterval_strategy)
 @settings(max_examples=50)
-def test_uml2::durationinterval_instantiation(instance):
-    assert isinstance(instance, UML2::DurationInterval)
+def test_uml2_durationinterval_instantiation(instance):
+    assert isinstance(instance, UML2_DurationInterval)
 
 @given(instance=InvocationAction_strategy)
 @settings(max_examples=50)
 def test_invocationaction_instantiation(instance):
     assert isinstance(instance, InvocationAction)
 
-@given(instance=UML2::BroadcastSignalAction_strategy)
+@given(instance=UML2_BroadcastSignalAction_strategy)
 @settings(max_examples=50)
-def test_uml2::broadcastsignalaction_instantiation(instance):
-    assert isinstance(instance, UML2::BroadcastSignalAction)
+def test_uml2_broadcastsignalaction_instantiation(instance):
+    assert isinstance(instance, UML2_BroadcastSignalAction)
 
-@given(instance=UML2::SendObjectAction_strategy)
+@given(instance=UML2_SendObjectAction_strategy)
 @settings(max_examples=50)
-def test_uml2::sendobjectaction_instantiation(instance):
-    assert isinstance(instance, UML2::SendObjectAction)
+def test_uml2_sendobjectaction_instantiation(instance):
+    assert isinstance(instance, UML2_SendObjectAction)
 
-@given(instance=UML2::CallAction_strategy)
+@given(instance=UML2_CallAction_strategy)
 @settings(max_examples=50)
-def test_uml2::callaction_instantiation(instance):
-    assert isinstance(instance, UML2::CallAction)
-
-@given(instance=UML2::CallAction_strategy)
-def test_uml2::callaction_isSynchronous_type(instance):
-    assert isinstance(instance.isSynchronous, bool)
+def test_uml2_callaction_instantiation(instance):
+    assert isinstance(instance, UML2_CallAction)
 
 
-@given(instance=UML2::CallAction_strategy)
-def test_uml2::callaction_isSynchronous_setter(instance):
+
+@given(instance=UML2_CallAction_strategy)
+def test_uml2_callaction_isSynchronous_setter(instance):
     original = instance.isSynchronous
     instance.isSynchronous = original
     assert instance.isSynchronous == original
@@ -6986,84 +6977,78 @@ def test_uml2::callaction_isSynchronous_setter(instance):
 def test_writevariableaction_instantiation(instance):
     assert isinstance(instance, WriteVariableAction)
 
-@given(instance=UML2::RemoveVariableValueAction_strategy)
+@given(instance=UML2_RemoveVariableValueAction_strategy)
 @settings(max_examples=50)
-def test_uml2::removevariablevalueaction_instantiation(instance):
-    assert isinstance(instance, UML2::RemoveVariableValueAction)
+def test_uml2_removevariablevalueaction_instantiation(instance):
+    assert isinstance(instance, UML2_RemoveVariableValueAction)
 
-@given(instance=UML2::AddVariableValueAction_strategy)
+@given(instance=UML2_AddVariableValueAction_strategy)
 @settings(max_examples=50)
-def test_uml2::addvariablevalueaction_instantiation(instance):
-    assert isinstance(instance, UML2::AddVariableValueAction)
-
-@given(instance=UML2::AddVariableValueAction_strategy)
-def test_uml2::addvariablevalueaction_isReplaceAll_type(instance):
-    assert isinstance(instance.isReplaceAll, bool)
+def test_uml2_addvariablevalueaction_instantiation(instance):
+    assert isinstance(instance, UML2_AddVariableValueAction)
 
 
-@given(instance=UML2::AddVariableValueAction_strategy)
-def test_uml2::addvariablevalueaction_isReplaceAll_setter(instance):
+
+@given(instance=UML2_AddVariableValueAction_strategy)
+def test_uml2_addvariablevalueaction_isReplaceAll_setter(instance):
     original = instance.isReplaceAll
     instance.isReplaceAll = original
     assert instance.isReplaceAll == original
 
-@given(instance=UML2::SendSignalAction_strategy)
+@given(instance=UML2_SendSignalAction_strategy)
 @settings(max_examples=50)
-def test_uml2::sendsignalaction_instantiation(instance):
-    assert isinstance(instance, UML2::SendSignalAction)
+def test_uml2_sendsignalaction_instantiation(instance):
+    assert isinstance(instance, UML2_SendSignalAction)
 
 @given(instance=VariableAction_strategy)
 @settings(max_examples=50)
 def test_variableaction_instantiation(instance):
     assert isinstance(instance, VariableAction)
 
-@given(instance=UML2::ClearVariableAction_strategy)
+@given(instance=UML2_WriteVariableAction_strategy)
 @settings(max_examples=50)
-def test_uml2::clearvariableaction_instantiation(instance):
-    assert isinstance(instance, UML2::ClearVariableAction)
+def test_uml2_writevariableaction_instantiation(instance):
+    assert isinstance(instance, UML2_WriteVariableAction)
 
-@given(instance=UML2::WriteVariableAction_strategy)
+@given(instance=UML2_ClearVariableAction_strategy)
 @settings(max_examples=50)
-def test_uml2::writevariableaction_instantiation(instance):
-    assert isinstance(instance, UML2::WriteVariableAction)
+def test_uml2_clearvariableaction_instantiation(instance):
+    assert isinstance(instance, UML2_ClearVariableAction)
 
-@given(instance=UML2::ReadVariableAction_strategy)
+@given(instance=UML2_ReadVariableAction_strategy)
 @settings(max_examples=50)
-def test_uml2::readvariableaction_instantiation(instance):
-    assert isinstance(instance, UML2::ReadVariableAction)
+def test_uml2_readvariableaction_instantiation(instance):
+    assert isinstance(instance, UML2_ReadVariableAction)
 
 @given(instance=WriteLinkAction_strategy)
 @settings(max_examples=50)
 def test_writelinkaction_instantiation(instance):
     assert isinstance(instance, WriteLinkAction)
 
-@given(instance=UML2::DestroyLinkAction_strategy)
+@given(instance=UML2_DestroyLinkAction_strategy)
 @settings(max_examples=50)
-def test_uml2::destroylinkaction_instantiation(instance):
-    assert isinstance(instance, UML2::DestroyLinkAction)
+def test_uml2_destroylinkaction_instantiation(instance):
+    assert isinstance(instance, UML2_DestroyLinkAction)
 
-@given(instance=UML2::CreateLinkAction_strategy)
+@given(instance=UML2_CreateLinkAction_strategy)
 @settings(max_examples=50)
-def test_uml2::createlinkaction_instantiation(instance):
-    assert isinstance(instance, UML2::CreateLinkAction)
+def test_uml2_createlinkaction_instantiation(instance):
+    assert isinstance(instance, UML2_CreateLinkAction)
 
 @given(instance=LinkEndData_strategy)
 @settings(max_examples=50)
 def test_linkenddata_instantiation(instance):
     assert isinstance(instance, LinkEndData)
 
-@given(instance=UML2::LinkEndCreationData_strategy)
+@given(instance=UML2_LinkEndCreationData_strategy)
 @settings(max_examples=50)
-def test_uml2::linkendcreationdata_instantiation(instance):
-    assert isinstance(instance, UML2::LinkEndCreationData)
-
-@given(instance=UML2::LinkEndCreationData_strategy)
-def test_uml2::linkendcreationdata_isReplaceAll_type(instance):
-    assert isinstance(instance.isReplaceAll, bool)
+def test_uml2_linkendcreationdata_instantiation(instance):
+    assert isinstance(instance, UML2_LinkEndCreationData)
 
 
-@given(instance=UML2::LinkEndCreationData_strategy)
-def test_uml2::linkendcreationdata_isReplaceAll_setter(instance):
+
+@given(instance=UML2_LinkEndCreationData_strategy)
+def test_uml2_linkendcreationdata_isReplaceAll_setter(instance):
     original = instance.isReplaceAll
     instance.isReplaceAll = original
     assert instance.isReplaceAll == original
@@ -7073,45 +7058,1171 @@ def test_uml2::linkendcreationdata_isReplaceAll_setter(instance):
 def test_linkaction_instantiation(instance):
     assert isinstance(instance, LinkAction)
 
-@given(instance=UML2::WriteLinkAction_strategy)
+@given(instance=UML2_WriteLinkAction_strategy)
 @settings(max_examples=50)
-def test_uml2::writelinkaction_instantiation(instance):
-    assert isinstance(instance, UML2::WriteLinkAction)
+def test_uml2_writelinkaction_instantiation(instance):
+    assert isinstance(instance, UML2_WriteLinkAction)
 
-@given(instance=UML2::ReadLinkAction_strategy)
+@given(instance=UML2_ReadLinkAction_strategy)
 @settings(max_examples=50)
-def test_uml2::readlinkaction_instantiation(instance):
-    assert isinstance(instance, UML2::ReadLinkAction)
+def test_uml2_readlinkaction_instantiation(instance):
+    assert isinstance(instance, UML2_ReadLinkAction)
+
+@given(instance=WriteStructuralFeatureAction_strategy)
+@settings(max_examples=50)
+def test_writestructuralfeatureaction_instantiation(instance):
+    assert isinstance(instance, WriteStructuralFeatureAction)
+
+@given(instance=UML2_AddStructuralFeatureValueAction_strategy)
+@settings(max_examples=50)
+def test_uml2_addstructuralfeaturevalueaction_instantiation(instance):
+    assert isinstance(instance, UML2_AddStructuralFeatureValueAction)
+
+
+
+@given(instance=UML2_AddStructuralFeatureValueAction_strategy)
+def test_uml2_addstructuralfeaturevalueaction_isReplaceAll_setter(instance):
+    original = instance.isReplaceAll
+    instance.isReplaceAll = original
+    assert instance.isReplaceAll == original
+
+@given(instance=UML2_DurationObservationAction_strategy)
+@settings(max_examples=50)
+def test_uml2_durationobservationaction_instantiation(instance):
+    assert isinstance(instance, UML2_DurationObservationAction)
+
+@given(instance=UML2_TimeObservationAction_strategy)
+@settings(max_examples=50)
+def test_uml2_timeobservationaction_instantiation(instance):
+    assert isinstance(instance, UML2_TimeObservationAction)
+
+@given(instance=UML2_RemoveStructuralFeatureValueAction_strategy)
+@settings(max_examples=50)
+def test_uml2_removestructuralfeaturevalueaction_instantiation(instance):
+    assert isinstance(instance, UML2_RemoveStructuralFeatureValueAction)
+
+@given(instance=StructuralFeatureAction_strategy)
+@settings(max_examples=50)
+def test_structuralfeatureaction_instantiation(instance):
+    assert isinstance(instance, StructuralFeatureAction)
+
+@given(instance=UML2_ClearStructuralFeatureAction_strategy)
+@settings(max_examples=50)
+def test_uml2_clearstructuralfeatureaction_instantiation(instance):
+    assert isinstance(instance, UML2_ClearStructuralFeatureAction)
+
+@given(instance=UML2_WriteStructuralFeatureAction_strategy)
+@settings(max_examples=50)
+def test_uml2_writestructuralfeatureaction_instantiation(instance):
+    assert isinstance(instance, UML2_WriteStructuralFeatureAction)
+
+@given(instance=UML2_ReadStructuralFeatureAction_strategy)
+@settings(max_examples=50)
+def test_uml2_readstructuralfeatureaction_instantiation(instance):
+    assert isinstance(instance, UML2_ReadStructuralFeatureAction)
+
+@given(instance=State_strategy)
+@settings(max_examples=50)
+def test_state_instantiation(instance):
+    assert isinstance(instance, State)
+
+@given(instance=UML2_FinalState_strategy)
+@settings(max_examples=50)
+def test_uml2_finalstate_instantiation(instance):
+    assert isinstance(instance, UML2_FinalState)
+
+@given(instance=Vertex_strategy)
+@settings(max_examples=50)
+def test_vertex_instantiation(instance):
+    assert isinstance(instance, Vertex)
+
+@given(instance=UML2_ConnectionPointReference_strategy)
+@settings(max_examples=50)
+def test_uml2_connectionpointreference_instantiation(instance):
+    assert isinstance(instance, UML2_ConnectionPointReference)
+
+@given(instance=UML2_Pseudostate_strategy)
+@settings(max_examples=50)
+def test_uml2_pseudostate_instantiation(instance):
+    assert isinstance(instance, UML2_Pseudostate)
+
+
+
+@given(instance=UML2_Pseudostate_strategy)
+def test_uml2_pseudostate_kind_setter(instance):
+    original = instance.kind
+    instance.kind = original
+    assert instance.kind == original
+
+@given(instance=Constraint_strategy)
+@settings(max_examples=50)
+def test_constraint_instantiation(instance):
+    assert isinstance(instance, Constraint)
+
+@given(instance=UML2_IntervalConstraint_strategy)
+@settings(max_examples=50)
+def test_uml2_intervalconstraint_instantiation(instance):
+    assert isinstance(instance, UML2_IntervalConstraint)
+
+@given(instance=UML2_InteractionConstraint_strategy)
+@settings(max_examples=50)
+def test_uml2_interactionconstraint_instantiation(instance):
+    assert isinstance(instance, UML2_InteractionConstraint)
+
+@given(instance=InteractionOccurrence_strategy)
+@settings(max_examples=50)
+def test_interactionoccurrence_instantiation(instance):
+    assert isinstance(instance, InteractionOccurrence)
+
+@given(instance=TemplateSignature_strategy)
+@settings(max_examples=50)
+def test_templatesignature_instantiation(instance):
+    assert isinstance(instance, TemplateSignature)
+
+@given(instance=TemplateParameter_strategy)
+@settings(max_examples=50)
+def test_templateparameter_instantiation(instance):
+    assert isinstance(instance, TemplateParameter)
+
+@given(instance=UML2_ConnectableElementTemplateParameter_strategy)
+@settings(max_examples=50)
+def test_uml2_connectableelementtemplateparameter_instantiation(instance):
+    assert isinstance(instance, UML2_ConnectableElementTemplateParameter)
+
+@given(instance=UML2_ClassifierTemplateParameter_strategy)
+@settings(max_examples=50)
+def test_uml2_classifiertemplateparameter_instantiation(instance):
+    assert isinstance(instance, UML2_ClassifierTemplateParameter)
+
+
+
+@given(instance=UML2_ClassifierTemplateParameter_strategy)
+def test_uml2_classifiertemplateparameter_allowSubstitutable_setter(instance):
+    original = instance.allowSubstitutable
+    instance.allowSubstitutable = original
+    assert instance.allowSubstitutable == original
+
+@given(instance=UML2_OperationTemplateParameter_strategy)
+@settings(max_examples=50)
+def test_uml2_operationtemplateparameter_instantiation(instance):
+    assert isinstance(instance, UML2_OperationTemplateParameter)
+
+@given(instance=EventOccurrence_strategy)
+@settings(max_examples=50)
+def test_eventoccurrence_instantiation(instance):
+    assert isinstance(instance, EventOccurrence)
+
+@given(instance=UML2_Stop_strategy)
+@settings(max_examples=50)
+def test_uml2_stop_instantiation(instance):
+    assert isinstance(instance, UML2_Stop)
+
+@given(instance=MessageEnd_strategy)
+@settings(max_examples=50)
+def test_messageend_instantiation(instance):
+    assert isinstance(instance, MessageEnd)
+
+@given(instance=UML2_PartDecomposition_strategy)
+@settings(max_examples=50)
+def test_uml2_partdecomposition_instantiation(instance):
+    assert isinstance(instance, UML2_PartDecomposition)
+
+@given(instance=UML2_Gate_strategy)
+@settings(max_examples=50)
+def test_uml2_gate_instantiation(instance):
+    assert isinstance(instance, UML2_Gate)
+
+@given(instance=InteractionFragment_strategy)
+@settings(max_examples=50)
+def test_interactionfragment_instantiation(instance):
+    assert isinstance(instance, InteractionFragment)
+
+@given(instance=UML2_Continuation_strategy)
+@settings(max_examples=50)
+def test_uml2_continuation_instantiation(instance):
+    assert isinstance(instance, UML2_Continuation)
+
+
+
+@given(instance=UML2_Continuation_strategy)
+def test_uml2_continuation_setting_setter(instance):
+    original = instance.setting
+    instance.setting = original
+    assert instance.setting == original
+
+@given(instance=UML2_InteractionOccurrence_strategy)
+@settings(max_examples=50)
+def test_uml2_interactionoccurrence_instantiation(instance):
+    assert isinstance(instance, UML2_InteractionOccurrence)
+
+@given(instance=UML2_ExecutionOccurrence_strategy)
+@settings(max_examples=50)
+def test_uml2_executionoccurrence_instantiation(instance):
+    assert isinstance(instance, UML2_ExecutionOccurrence)
+
+@given(instance=UML2_CombinedFragment_strategy)
+@settings(max_examples=50)
+def test_uml2_combinedfragment_instantiation(instance):
+    assert isinstance(instance, UML2_CombinedFragment)
+
+
+
+@given(instance=UML2_CombinedFragment_strategy)
+def test_uml2_combinedfragment_interactionOperator_setter(instance):
+    original = instance.interactionOperator
+    instance.interactionOperator = original
+    assert instance.interactionOperator == original
+
+@given(instance=UML2_StateInvariant_strategy)
+@settings(max_examples=50)
+def test_uml2_stateinvariant_instantiation(instance):
+    assert isinstance(instance, UML2_StateInvariant)
+
+@given(instance=UML2_EventOccurrence_strategy)
+@settings(max_examples=50)
+def test_uml2_eventoccurrence_instantiation(instance):
+    assert isinstance(instance, UML2_EventOccurrence)
+
+@given(instance=StructuredActivityNode_strategy)
+@settings(max_examples=50)
+def test_structuredactivitynode_instantiation(instance):
+    assert isinstance(instance, StructuredActivityNode)
+
+@given(instance=UML2_ExpansionRegion_strategy)
+@settings(max_examples=50)
+def test_uml2_expansionregion_instantiation(instance):
+    assert isinstance(instance, UML2_ExpansionRegion)
+
+
+
+@given(instance=UML2_ExpansionRegion_strategy)
+def test_uml2_expansionregion_mode_setter(instance):
+    original = instance.mode
+    instance.mode = original
+    assert instance.mode == original
+
+@given(instance=UML2_LoopNode_strategy)
+@settings(max_examples=50)
+def test_uml2_loopnode_instantiation(instance):
+    assert isinstance(instance, UML2_LoopNode)
+
+
+
+@given(instance=UML2_LoopNode_strategy)
+def test_uml2_loopnode_isTestedFirst_setter(instance):
+    original = instance.isTestedFirst
+    instance.isTestedFirst = original
+    assert instance.isTestedFirst == original
+
+@given(instance=UML2_ConditionalNode_strategy)
+@settings(max_examples=50)
+def test_uml2_conditionalnode_instantiation(instance):
+    assert isinstance(instance, UML2_ConditionalNode)
+
+
+
+@given(instance=UML2_ConditionalNode_strategy)
+def test_uml2_conditionalnode_isDeterminate_setter(instance):
+    original = instance.isDeterminate
+    instance.isDeterminate = original
+    assert instance.isDeterminate == original
+
+
+
+@given(instance=UML2_ConditionalNode_strategy)
+def test_uml2_conditionalnode_isAssured_setter(instance):
+    original = instance.isAssured
+    instance.isAssured = original
+    assert instance.isAssured == original
+
+@given(instance=ActivityGroup_strategy)
+@settings(max_examples=50)
+def test_activitygroup_instantiation(instance):
+    assert isinstance(instance, ActivityGroup)
+
+@given(instance=Action_strategy)
+@settings(max_examples=50)
+def test_action_instantiation(instance):
+    assert isinstance(instance, Action)
+
+@given(instance=UML2_CreateObjectAction_strategy)
+@settings(max_examples=50)
+def test_uml2_createobjectaction_instantiation(instance):
+    assert isinstance(instance, UML2_CreateObjectAction)
+
+@given(instance=UML2_ReadIsClassifiedObjectAction_strategy)
+@settings(max_examples=50)
+def test_uml2_readisclassifiedobjectaction_instantiation(instance):
+    assert isinstance(instance, UML2_ReadIsClassifiedObjectAction)
+
+
+
+@given(instance=UML2_ReadIsClassifiedObjectAction_strategy)
+def test_uml2_readisclassifiedobjectaction_isDirect_setter(instance):
+    original = instance.isDirect
+    instance.isDirect = original
+    assert instance.isDirect == original
+
+@given(instance=UML2_ClearAssociationAction_strategy)
+@settings(max_examples=50)
+def test_uml2_clearassociationaction_instantiation(instance):
+    assert isinstance(instance, UML2_ClearAssociationAction)
+
+@given(instance=UML2_ReclassifyObjectAction_strategy)
+@settings(max_examples=50)
+def test_uml2_reclassifyobjectaction_instantiation(instance):
+    assert isinstance(instance, UML2_ReclassifyObjectAction)
+
+
+
+@given(instance=UML2_ReclassifyObjectAction_strategy)
+def test_uml2_reclassifyobjectaction_isReplaceAll_setter(instance):
+    original = instance.isReplaceAll
+    instance.isReplaceAll = original
+    assert instance.isReplaceAll == original
+
+@given(instance=UML2_InvocationAction_strategy)
+@settings(max_examples=50)
+def test_uml2_invocationaction_instantiation(instance):
+    assert isinstance(instance, UML2_InvocationAction)
+
+@given(instance=UML2_ReadSelfAction_strategy)
+@settings(max_examples=50)
+def test_uml2_readselfaction_instantiation(instance):
+    assert isinstance(instance, UML2_ReadSelfAction)
+
+@given(instance=UML2_LinkAction_strategy)
+@settings(max_examples=50)
+def test_uml2_linkaction_instantiation(instance):
+    assert isinstance(instance, UML2_LinkAction)
+
+@given(instance=UML2_ReplyAction_strategy)
+@settings(max_examples=50)
+def test_uml2_replyaction_instantiation(instance):
+    assert isinstance(instance, UML2_ReplyAction)
+
+@given(instance=UML2_ReadLinkObjectEndAction_strategy)
+@settings(max_examples=50)
+def test_uml2_readlinkobjectendaction_instantiation(instance):
+    assert isinstance(instance, UML2_ReadLinkObjectEndAction)
+
+@given(instance=UML2_RaiseExceptionAction_strategy)
+@settings(max_examples=50)
+def test_uml2_raiseexceptionaction_instantiation(instance):
+    assert isinstance(instance, UML2_RaiseExceptionAction)
+
+@given(instance=UML2_TestIdentityAction_strategy)
+@settings(max_examples=50)
+def test_uml2_testidentityaction_instantiation(instance):
+    assert isinstance(instance, UML2_TestIdentityAction)
+
+@given(instance=UML2_DestroyObjectAction_strategy)
+@settings(max_examples=50)
+def test_uml2_destroyobjectaction_instantiation(instance):
+    assert isinstance(instance, UML2_DestroyObjectAction)
+
+
+
+@given(instance=UML2_DestroyObjectAction_strategy)
+def test_uml2_destroyobjectaction_isDestroyOwnedObjects_setter(instance):
+    original = instance.isDestroyOwnedObjects
+    instance.isDestroyOwnedObjects = original
+    assert instance.isDestroyOwnedObjects == original
+
+
+
+@given(instance=UML2_DestroyObjectAction_strategy)
+def test_uml2_destroyobjectaction_isDestroyLinks_setter(instance):
+    original = instance.isDestroyLinks
+    instance.isDestroyLinks = original
+    assert instance.isDestroyLinks == original
+
+@given(instance=UML2_ReadExtentAction_strategy)
+@settings(max_examples=50)
+def test_uml2_readextentaction_instantiation(instance):
+    assert isinstance(instance, UML2_ReadExtentAction)
+
+@given(instance=UML2_VariableAction_strategy)
+@settings(max_examples=50)
+def test_uml2_variableaction_instantiation(instance):
+    assert isinstance(instance, UML2_VariableAction)
+
+@given(instance=UML2_StructuralFeatureAction_strategy)
+@settings(max_examples=50)
+def test_uml2_structuralfeatureaction_instantiation(instance):
+    assert isinstance(instance, UML2_StructuralFeatureAction)
+
+@given(instance=UML2_ApplyFunctionAction_strategy)
+@settings(max_examples=50)
+def test_uml2_applyfunctionaction_instantiation(instance):
+    assert isinstance(instance, UML2_ApplyFunctionAction)
+
+@given(instance=UML2_ReadLinkObjectEndQualifierAction_strategy)
+@settings(max_examples=50)
+def test_uml2_readlinkobjectendqualifieraction_instantiation(instance):
+    assert isinstance(instance, UML2_ReadLinkObjectEndQualifierAction)
+
+@given(instance=UML2_StartOwnedBehaviorAction_strategy)
+@settings(max_examples=50)
+def test_uml2_startownedbehavioraction_instantiation(instance):
+    assert isinstance(instance, UML2_StartOwnedBehaviorAction)
+
+@given(instance=UML2_AcceptEventAction_strategy)
+@settings(max_examples=50)
+def test_uml2_accepteventaction_instantiation(instance):
+    assert isinstance(instance, UML2_AcceptEventAction)
+
+@given(instance=Trigger_strategy)
+@settings(max_examples=50)
+def test_trigger_instantiation(instance):
+    assert isinstance(instance, Trigger)
+
+@given(instance=UML2_TimeTrigger_strategy)
+@settings(max_examples=50)
+def test_uml2_timetrigger_instantiation(instance):
+    assert isinstance(instance, UML2_TimeTrigger)
+
+
+
+@given(instance=UML2_TimeTrigger_strategy)
+def test_uml2_timetrigger_isRelative_setter(instance):
+    original = instance.isRelative
+    instance.isRelative = original
+    assert instance.isRelative == original
+
+@given(instance=UML2_ChangeTrigger_strategy)
+@settings(max_examples=50)
+def test_uml2_changetrigger_instantiation(instance):
+    assert isinstance(instance, UML2_ChangeTrigger)
+
+@given(instance=UML2_MessageTrigger_strategy)
+@settings(max_examples=50)
+def test_uml2_messagetrigger_instantiation(instance):
+    assert isinstance(instance, UML2_MessageTrigger)
+
+@given(instance=MessageTrigger_strategy)
+@settings(max_examples=50)
+def test_messagetrigger_instantiation(instance):
+    assert isinstance(instance, MessageTrigger)
+
+@given(instance=UML2_AnyTrigger_strategy)
+@settings(max_examples=50)
+def test_uml2_anytrigger_instantiation(instance):
+    assert isinstance(instance, UML2_AnyTrigger)
+
+@given(instance=UML2_SignalTrigger_strategy)
+@settings(max_examples=50)
+def test_uml2_signaltrigger_instantiation(instance):
+    assert isinstance(instance, UML2_SignalTrigger)
+
+@given(instance=UML2_CallTrigger_strategy)
+@settings(max_examples=50)
+def test_uml2_calltrigger_instantiation(instance):
+    assert isinstance(instance, UML2_CallTrigger)
+
+@given(instance=StructuredClassifier_strategy)
+@settings(max_examples=50)
+def test_structuredclassifier_instantiation(instance):
+    assert isinstance(instance, StructuredClassifier)
+
+@given(instance=UML2_EncapsulatedClassifier_strategy)
+@settings(max_examples=50)
+def test_uml2_encapsulatedclassifier_instantiation(instance):
+    assert isinstance(instance, UML2_EncapsulatedClassifier)
+
+@given(instance=UML2_ProtocolStateMachine_strategy)
+@settings(max_examples=50)
+def test_uml2_protocolstatemachine_instantiation(instance):
+    assert isinstance(instance, UML2_ProtocolStateMachine)
+
+@given(instance=InputPin_strategy)
+@settings(max_examples=50)
+def test_inputpin_instantiation(instance):
+    assert isinstance(instance, InputPin)
+
+@given(instance=UML2_ValuePin_strategy)
+@settings(max_examples=50)
+def test_uml2_valuepin_instantiation(instance):
+    assert isinstance(instance, UML2_ValuePin)
+
+@given(instance=ObjectNode_strategy)
+@settings(max_examples=50)
+def test_objectnode_instantiation(instance):
+    assert isinstance(instance, ObjectNode)
+
+@given(instance=UML2_ExpansionNode_strategy)
+@settings(max_examples=50)
+def test_uml2_expansionnode_instantiation(instance):
+    assert isinstance(instance, UML2_ExpansionNode)
+
+@given(instance=UML2_CentralBufferNode_strategy)
+@settings(max_examples=50)
+def test_uml2_centralbuffernode_instantiation(instance):
+    assert isinstance(instance, UML2_CentralBufferNode)
+
+@given(instance=UML2_ActivityParameterNode_strategy)
+@settings(max_examples=50)
+def test_uml2_activityparameternode_instantiation(instance):
+    assert isinstance(instance, UML2_ActivityParameterNode)
+
+@given(instance=Pin_strategy)
+@settings(max_examples=50)
+def test_pin_instantiation(instance):
+    assert isinstance(instance, Pin)
+
+@given(instance=FinalNode_strategy)
+@settings(max_examples=50)
+def test_finalnode_instantiation(instance):
+    assert isinstance(instance, FinalNode)
+
+@given(instance=UML2_FlowFinalNode_strategy)
+@settings(max_examples=50)
+def test_uml2_flowfinalnode_instantiation(instance):
+    assert isinstance(instance, UML2_FlowFinalNode)
+
+@given(instance=UML2_ActivityFinalNode_strategy)
+@settings(max_examples=50)
+def test_uml2_activityfinalnode_instantiation(instance):
+    assert isinstance(instance, UML2_ActivityFinalNode)
+
+@given(instance=ControlNode_strategy)
+@settings(max_examples=50)
+def test_controlnode_instantiation(instance):
+    assert isinstance(instance, ControlNode)
+
+@given(instance=UML2_JoinNode_strategy)
+@settings(max_examples=50)
+def test_uml2_joinnode_instantiation(instance):
+    assert isinstance(instance, UML2_JoinNode)
+
+
+
+@given(instance=UML2_JoinNode_strategy)
+def test_uml2_joinnode_isCombineDuplicate_setter(instance):
+    original = instance.isCombineDuplicate
+    instance.isCombineDuplicate = original
+    assert instance.isCombineDuplicate == original
+
+@given(instance=UML2_FinalNode_strategy)
+@settings(max_examples=50)
+def test_uml2_finalnode_instantiation(instance):
+    assert isinstance(instance, UML2_FinalNode)
+
+@given(instance=UML2_DecisionNode_strategy)
+@settings(max_examples=50)
+def test_uml2_decisionnode_instantiation(instance):
+    assert isinstance(instance, UML2_DecisionNode)
+
+@given(instance=UML2_ForkNode_strategy)
+@settings(max_examples=50)
+def test_uml2_forknode_instantiation(instance):
+    assert isinstance(instance, UML2_ForkNode)
+
+@given(instance=UML2_MergeNode_strategy)
+@settings(max_examples=50)
+def test_uml2_mergenode_instantiation(instance):
+    assert isinstance(instance, UML2_MergeNode)
+
+@given(instance=UML2_InitialNode_strategy)
+@settings(max_examples=50)
+def test_uml2_initialnode_instantiation(instance):
+    assert isinstance(instance, UML2_InitialNode)
+
+@given(instance=ActivityEdge_strategy)
+@settings(max_examples=50)
+def test_activityedge_instantiation(instance):
+    assert isinstance(instance, ActivityEdge)
+
+@given(instance=UML2_ObjectFlow_strategy)
+@settings(max_examples=50)
+def test_uml2_objectflow_instantiation(instance):
+    assert isinstance(instance, UML2_ObjectFlow)
+
+
+
+@given(instance=UML2_ObjectFlow_strategy)
+def test_uml2_objectflow_isMultireceive_setter(instance):
+    original = instance.isMultireceive
+    instance.isMultireceive = original
+    assert instance.isMultireceive == original
+
+
+
+@given(instance=UML2_ObjectFlow_strategy)
+def test_uml2_objectflow_isMulticast_setter(instance):
+    original = instance.isMulticast
+    instance.isMulticast = original
+    assert instance.isMulticast == original
+
+@given(instance=UML2_ControlFlow_strategy)
+@settings(max_examples=50)
+def test_uml2_controlflow_instantiation(instance):
+    assert isinstance(instance, UML2_ControlFlow)
+
+@given(instance=UML2_InputPin_strategy)
+@settings(max_examples=50)
+def test_uml2_inputpin_instantiation(instance):
+    assert isinstance(instance, UML2_InputPin)
+
+@given(instance=UML2_OutputPin_strategy)
+@settings(max_examples=50)
+def test_uml2_outputpin_instantiation(instance):
+    assert isinstance(instance, UML2_OutputPin)
+
+@given(instance=ActivityNode_strategy)
+@settings(max_examples=50)
+def test_activitynode_instantiation(instance):
+    assert isinstance(instance, ActivityNode)
+
+@given(instance=UML2_ExecutableNode_strategy)
+@settings(max_examples=50)
+def test_uml2_executablenode_instantiation(instance):
+    assert isinstance(instance, UML2_ExecutableNode)
+
+@given(instance=UML2_ControlNode_strategy)
+@settings(max_examples=50)
+def test_uml2_controlnode_instantiation(instance):
+    assert isinstance(instance, UML2_ControlNode)
+
+@given(instance=ExecutableNode_strategy)
+@settings(max_examples=50)
+def test_executablenode_instantiation(instance):
+    assert isinstance(instance, ExecutableNode)
+
+@given(instance=UML2_InterruptibleActivityRegion_strategy)
+@settings(max_examples=50)
+def test_uml2_interruptibleactivityregion_instantiation(instance):
+    assert isinstance(instance, UML2_InterruptibleActivityRegion)
+
+@given(instance=Abstraction_strategy)
+@settings(max_examples=50)
+def test_abstraction_instantiation(instance):
+    assert isinstance(instance, Abstraction)
+
+@given(instance=UML2_Manifestation_strategy)
+@settings(max_examples=50)
+def test_uml2_manifestation_instantiation(instance):
+    assert isinstance(instance, UML2_Manifestation)
+
+@given(instance=UML2_Realization_strategy)
+@settings(max_examples=50)
+def test_uml2_realization_instantiation(instance):
+    assert isinstance(instance, UML2_Realization)
+
+@given(instance=Realization_strategy)
+@settings(max_examples=50)
+def test_realization_instantiation(instance):
+    assert isinstance(instance, Realization)
+
+@given(instance=Dependency_strategy)
+@settings(max_examples=50)
+def test_dependency_instantiation(instance):
+    assert isinstance(instance, Dependency)
+
+@given(instance=UML2_Abstraction_strategy)
+@settings(max_examples=50)
+def test_uml2_abstraction_instantiation(instance):
+    assert isinstance(instance, UML2_Abstraction)
+
+@given(instance=UML2_Usage_strategy)
+@settings(max_examples=50)
+def test_uml2_usage_instantiation(instance):
+    assert isinstance(instance, UML2_Usage)
+
+@given(instance=UML2_Deployment_strategy)
+@settings(max_examples=50)
+def test_uml2_deployment_instantiation(instance):
+    assert isinstance(instance, UML2_Deployment)
+
+@given(instance=UML2_Permission_strategy)
+@settings(max_examples=50)
+def test_uml2_permission_instantiation(instance):
+    assert isinstance(instance, UML2_Permission)
+
+@given(instance=UML2_Action_strategy)
+@settings(max_examples=50)
+def test_uml2_action_instantiation(instance):
+    assert isinstance(instance, UML2_Action)
+
+
+
+@given(instance=UML2_Action_strategy)
+def test_uml2_action_effect_setter(instance):
+    original = instance.effect
+    instance.effect = original
+    assert instance.effect == original
+
+@given(instance=NamedElement_strategy)
+@settings(max_examples=50)
+def test_namedelement_instantiation(instance):
+    assert isinstance(instance, NamedElement)
+
+@given(instance=UML2_MessageEnd_strategy)
+@settings(max_examples=50)
+def test_uml2_messageend_instantiation(instance):
+    assert isinstance(instance, UML2_MessageEnd)
+
+@given(instance=UML2_Lifeline_strategy)
+@settings(max_examples=50)
+def test_uml2_lifeline_instantiation(instance):
+    assert isinstance(instance, UML2_Lifeline)
+
+@given(instance=UML2_DeployedArtifact_strategy)
+@settings(max_examples=50)
+def test_uml2_deployedartifact_instantiation(instance):
+    assert isinstance(instance, UML2_DeployedArtifact)
+
+@given(instance=UML2_GeneralOrdering_strategy)
+@settings(max_examples=50)
+def test_uml2_generalordering_instantiation(instance):
+    assert isinstance(instance, UML2_GeneralOrdering)
+
+@given(instance=UML2_Vertex_strategy)
+@settings(max_examples=50)
+def test_uml2_vertex_instantiation(instance):
+    assert isinstance(instance, UML2_Vertex)
+
+@given(instance=UML2_InteractionFragment_strategy)
+@settings(max_examples=50)
+def test_uml2_interactionfragment_instantiation(instance):
+    assert isinstance(instance, UML2_InteractionFragment)
+
+@given(instance=UML2_ActivityPartition_strategy)
+@settings(max_examples=50)
+def test_uml2_activitypartition_instantiation(instance):
+    assert isinstance(instance, UML2_ActivityPartition)
+
+
+
+@given(instance=UML2_ActivityPartition_strategy)
+def test_uml2_activitypartition_isExternal_setter(instance):
+    original = instance.isExternal
+    instance.isExternal = original
+    assert instance.isExternal == original
+
+
+
+@given(instance=UML2_ActivityPartition_strategy)
+def test_uml2_activitypartition_isDimension_setter(instance):
+    original = instance.isDimension
+    instance.isDimension = original
+    assert instance.isDimension == original
+
+@given(instance=UML2_Message_strategy)
+@settings(max_examples=50)
+def test_uml2_message_instantiation(instance):
+    assert isinstance(instance, UML2_Message)
+
+
+
+@given(instance=UML2_Message_strategy)
+def test_uml2_message_messageKind_setter(instance):
+    original = instance.messageKind
+    instance.messageKind = original
+    assert instance.messageKind == original
+
+
+
+@given(instance=UML2_Message_strategy)
+def test_uml2_message_messageSort_setter(instance):
+    original = instance.messageSort
+    instance.messageSort = original
+    assert instance.messageSort == original
+
+@given(instance=UML2_DeploymentTarget_strategy)
+@settings(max_examples=50)
+def test_uml2_deploymenttarget_instantiation(instance):
+    assert isinstance(instance, UML2_DeploymentTarget)
+
+@given(instance=UML2_Namespace_strategy)
+@settings(max_examples=50)
+def test_uml2_namespace_instantiation(instance):
+    assert isinstance(instance, UML2_Namespace)
+
+@given(instance=TemplateableElement_strategy)
+@settings(max_examples=50)
+def test_templateableelement_instantiation(instance):
+    assert isinstance(instance, TemplateableElement)
+
+@given(instance=UML2_StringExpression_strategy)
+@settings(max_examples=50)
+def test_uml2_stringexpression_instantiation(instance):
+    assert isinstance(instance, UML2_StringExpression)
+
+@given(instance=UML2_NamedElement_strategy)
+@settings(max_examples=50)
+def test_uml2_namedelement_instantiation(instance):
+    assert isinstance(instance, UML2_NamedElement)
+
+
+
+@given(instance=UML2_NamedElement_strategy)
+def test_uml2_namedelement_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+
+
+@given(instance=UML2_NamedElement_strategy)
+def test_uml2_namedelement_visibility_setter(instance):
+    original = instance.visibility
+    instance.visibility = original
+    assert instance.visibility == original
+
+
+
+@given(instance=UML2_NamedElement_strategy)
+def test_uml2_namedelement_qualifiedName_setter(instance):
+    original = instance.qualifiedName
+    instance.qualifiedName = original
+    assert instance.qualifiedName == original
+
+@given(instance=Element_strategy)
+@settings(max_examples=50)
+def test_element_instantiation(instance):
+    assert isinstance(instance, Element)
+
+@given(instance=UML2_TemplateParameterSubstitution_strategy)
+@settings(max_examples=50)
+def test_uml2_templateparametersubstitution_instantiation(instance):
+    assert isinstance(instance, UML2_TemplateParameterSubstitution)
+
+@given(instance=UML2_QualifierValue_strategy)
+@settings(max_examples=50)
+def test_uml2_qualifiervalue_instantiation(instance):
+    assert isinstance(instance, UML2_QualifierValue)
+
+@given(instance=UML2_LinkEndData_strategy)
+@settings(max_examples=50)
+def test_uml2_linkenddata_instantiation(instance):
+    assert isinstance(instance, UML2_LinkEndData)
+
+@given(instance=UML2_TemplateSignature_strategy)
+@settings(max_examples=50)
+def test_uml2_templatesignature_instantiation(instance):
+    assert isinstance(instance, UML2_TemplateSignature)
+
+@given(instance=UML2_TemplateableElement_strategy)
+@settings(max_examples=50)
+def test_uml2_templateableelement_instantiation(instance):
+    assert isinstance(instance, UML2_TemplateableElement)
+
+@given(instance=UML2_ParameterableElement_strategy)
+@settings(max_examples=50)
+def test_uml2_parameterableelement_instantiation(instance):
+    assert isinstance(instance, UML2_ParameterableElement)
+
+@given(instance=UML2_TemplateParameter_strategy)
+@settings(max_examples=50)
+def test_uml2_templateparameter_instantiation(instance):
+    assert isinstance(instance, UML2_TemplateParameter)
+
+@given(instance=UML2_Clause_strategy)
+@settings(max_examples=50)
+def test_uml2_clause_instantiation(instance):
+    assert isinstance(instance, UML2_Clause)
+
+@given(instance=UML2_ExceptionHandler_strategy)
+@settings(max_examples=50)
+def test_uml2_exceptionhandler_instantiation(instance):
+    assert isinstance(instance, UML2_ExceptionHandler)
+
+@given(instance=UML2_MultiplicityElement_strategy)
+@settings(max_examples=50)
+def test_uml2_multiplicityelement_instantiation(instance):
+    assert isinstance(instance, UML2_MultiplicityElement)
+
+
+
+@given(instance=UML2_MultiplicityElement_strategy)
+def test_uml2_multiplicityelement_lower_setter(instance):
+    original = instance.lower
+    instance.lower = original
+    assert instance.lower == original
+
+
+
+@given(instance=UML2_MultiplicityElement_strategy)
+def test_uml2_multiplicityelement_isUnique_setter(instance):
+    original = instance.isUnique
+    instance.isUnique = original
+    assert instance.isUnique == original
+
+
+
+@given(instance=UML2_MultiplicityElement_strategy)
+def test_uml2_multiplicityelement_isOrdered_setter(instance):
+    original = instance.isOrdered
+    instance.isOrdered = original
+    assert instance.isOrdered == original
+
+
+
+@given(instance=UML2_MultiplicityElement_strategy)
+def test_uml2_multiplicityelement_upper_setter(instance):
+    original = instance.upper
+    instance.upper = original
+    assert instance.upper == original
+
+@given(instance=UML2_Comment_strategy)
+@settings(max_examples=50)
+def test_uml2_comment_instantiation(instance):
+    assert isinstance(instance, UML2_Comment)
+
+
+
+@given(instance=UML2_Comment_strategy)
+def test_uml2_comment_body_setter(instance):
+    original = instance.body
+    instance.body = original
+    assert instance.body == original
+
+@given(instance=UML2_Element_strategy)
+@settings(max_examples=50)
+def test_uml2_element_instantiation(instance):
+    assert isinstance(instance, UML2_Element)
+
+@given(instance=UML2_ActivityGroup_strategy)
+@settings(max_examples=50)
+def test_uml2_activitygroup_instantiation(instance):
+    assert isinstance(instance, UML2_ActivityGroup)
+
+@given(instance=Behavior_strategy)
+@settings(max_examples=50)
+def test_behavior_instantiation(instance):
+    assert isinstance(instance, Behavior)
+
+@given(instance=UML2_Interaction_strategy)
+@settings(max_examples=50)
+def test_uml2_interaction_instantiation(instance):
+    assert isinstance(instance, UML2_Interaction)
+
+@given(instance=UML2_Activity_strategy)
+@settings(max_examples=50)
+def test_uml2_activity_instantiation(instance):
+    assert isinstance(instance, UML2_Activity)
+
+
+
+@given(instance=UML2_Activity_strategy)
+def test_uml2_activity_isReadOnly_setter(instance):
+    original = instance.isReadOnly
+    instance.isReadOnly = original
+    assert instance.isReadOnly == original
+
+
+
+@given(instance=UML2_Activity_strategy)
+def test_uml2_activity_language_setter(instance):
+    original = instance.language
+    instance.language = original
+    assert instance.language == original
+
+
+
+@given(instance=UML2_Activity_strategy)
+def test_uml2_activity_isSingleExecution_setter(instance):
+    original = instance.isSingleExecution
+    instance.isSingleExecution = original
+    assert instance.isSingleExecution == original
+
+
+
+@given(instance=UML2_Activity_strategy)
+def test_uml2_activity_body_setter(instance):
+    original = instance.body
+    instance.body = original
+    assert instance.body == original
+
+@given(instance=UML2_StateMachine_strategy)
+@settings(max_examples=50)
+def test_uml2_statemachine_instantiation(instance):
+    assert isinstance(instance, UML2_StateMachine)
+
+@given(instance=UML2_Trigger_strategy)
+@settings(max_examples=50)
+def test_uml2_trigger_instantiation(instance):
+    assert isinstance(instance, UML2_Trigger)
+
+@given(instance=UML2_Implementation_strategy)
+@settings(max_examples=50)
+def test_uml2_implementation_instantiation(instance):
+    assert isinstance(instance, UML2_Implementation)
+
+@given(instance=Property_strategy)
+@settings(max_examples=50)
+def test_property_instantiation(instance):
+    assert isinstance(instance, Property)
+
+@given(instance=UML2_Port_strategy)
+@settings(max_examples=50)
+def test_uml2_port_instantiation(instance):
+    assert isinstance(instance, UML2_Port)
+
+
+
+@given(instance=UML2_Port_strategy)
+def test_uml2_port_isBehavior_setter(instance):
+    original = instance.isBehavior
+    instance.isBehavior = original
+    assert instance.isBehavior == original
+
+
+
+@given(instance=UML2_Port_strategy)
+def test_uml2_port_isService_setter(instance):
+    original = instance.isService
+    instance.isService = original
+    assert instance.isService == original
+
+@given(instance=UML2_ExtensionEnd_strategy)
+@settings(max_examples=50)
+def test_uml2_extensionend_instantiation(instance):
+    assert isinstance(instance, UML2_ExtensionEnd)
+
+@given(instance=Association_strategy)
+@settings(max_examples=50)
+def test_association_instantiation(instance):
+    assert isinstance(instance, Association)
+
+@given(instance=UML2_CommunicationPath_strategy)
+@settings(max_examples=50)
+def test_uml2_communicationpath_instantiation(instance):
+    assert isinstance(instance, UML2_CommunicationPath)
+
+@given(instance=PackageImport_strategy)
+@settings(max_examples=50)
+def test_packageimport_instantiation(instance):
+    assert isinstance(instance, PackageImport)
 
 @given(instance=Package_strategy)
 @settings(max_examples=50)
 def test_package_instantiation(instance):
     assert isinstance(instance, Package)
 
-@given(instance=UML2::Profile_strategy)
+@given(instance=UML2_Model_strategy)
 @settings(max_examples=50)
-def test_uml2::profile_instantiation(instance):
-    assert isinstance(instance, UML2::Profile)
+def test_uml2_model_instantiation(instance):
+    assert isinstance(instance, UML2_Model)
+
+
+
+@given(instance=UML2_Model_strategy)
+def test_uml2_model_viewpoint_setter(instance):
+    original = instance.viewpoint
+    instance.viewpoint = original
+    assert instance.viewpoint == original
+
+@given(instance=UML2_Profile_strategy)
+@settings(max_examples=50)
+def test_uml2_profile_instantiation(instance):
+    assert isinstance(instance, UML2_Profile)
 
 @given(instance=Class_strategy)
 @settings(max_examples=50)
 def test_class_instantiation(instance):
     assert isinstance(instance, Class)
 
-@given(instance=UML2::Stereotype_strategy)
+@given(instance=UML2_Component_strategy)
 @settings(max_examples=50)
-def test_uml2::stereotype_instantiation(instance):
-    assert isinstance(instance, UML2::Stereotype)
+def test_uml2_component_instantiation(instance):
+    assert isinstance(instance, UML2_Component)
+
+
+
+@given(instance=UML2_Component_strategy)
+def test_uml2_component_isIndirectlyInstantiated_setter(instance):
+    original = instance.isIndirectlyInstantiated
+    instance.isIndirectlyInstantiated = original
+    assert instance.isIndirectlyInstantiated == original
+
+@given(instance=UML2_AssociationClass_strategy)
+@settings(max_examples=50)
+def test_uml2_associationclass_instantiation(instance):
+    assert isinstance(instance, UML2_AssociationClass)
+
+@given(instance=UML2_Stereotype_strategy)
+@settings(max_examples=50)
+def test_uml2_stereotype_instantiation(instance):
+    assert isinstance(instance, UML2_Stereotype)
 
 @given(instance=DirectedRelationship_strategy)
 @settings(max_examples=50)
 def test_directedrelationship_instantiation(instance):
     assert isinstance(instance, DirectedRelationship)
 
-@given(instance=UML2::ProtocolConformance_strategy)
+@given(instance=UML2_ProtocolConformance_strategy)
 @settings(max_examples=50)
-def test_uml2::protocolconformance_instantiation(instance):
-    assert isinstance(instance, UML2::ProtocolConformance)
+def test_uml2_protocolconformance_instantiation(instance):
+    assert isinstance(instance, UML2_ProtocolConformance)
+
+@given(instance=UML2_TemplateBinding_strategy)
+@settings(max_examples=50)
+def test_uml2_templatebinding_instantiation(instance):
+    assert isinstance(instance, UML2_TemplateBinding)
+
+@given(instance=UML2_Extend_strategy)
+@settings(max_examples=50)
+def test_uml2_extend_instantiation(instance):
+    assert isinstance(instance, UML2_Extend)
+
+@given(instance=UML2_Include_strategy)
+@settings(max_examples=50)
+def test_uml2_include_instantiation(instance):
+    assert isinstance(instance, UML2_Include)
+
+@given(instance=UML2_PackageImport_strategy)
+@settings(max_examples=50)
+def test_uml2_packageimport_instantiation(instance):
+    assert isinstance(instance, UML2_PackageImport)
+
+
+
+@given(instance=UML2_PackageImport_strategy)
+def test_uml2_packageimport_visibility_setter(instance):
+    original = instance.visibility
+    instance.visibility = original
+    assert instance.visibility == original
+
+@given(instance=UML2_ElementImport_strategy)
+@settings(max_examples=50)
+def test_uml2_elementimport_instantiation(instance):
+    assert isinstance(instance, UML2_ElementImport)
+
+
+
+@given(instance=UML2_ElementImport_strategy)
+def test_uml2_elementimport_alias_setter(instance):
+    original = instance.alias
+    instance.alias = original
+    assert instance.alias == original
+
+
+
+@given(instance=UML2_ElementImport_strategy)
+def test_uml2_elementimport_visibility_setter(instance):
+    original = instance.visibility
+    instance.visibility = original
+    assert instance.visibility == original
+
+@given(instance=UML2_RedefinableElement_strategy)
+@settings(max_examples=50)
+def test_uml2_redefinableelement_instantiation(instance):
+    assert isinstance(instance, UML2_RedefinableElement)
+
+
+
+@given(instance=UML2_RedefinableElement_strategy)
+def test_uml2_redefinableelement_isLeaf_setter(instance):
+    original = instance.isLeaf
+    instance.isLeaf = original
+    assert instance.isLeaf == original
+
+@given(instance=UML2_Slot_strategy)
+@settings(max_examples=50)
+def test_uml2_slot_instantiation(instance):
+    assert isinstance(instance, UML2_Slot)
 
 @given(instance=DeployedArtifact_strategy)
 @settings(max_examples=50)
@@ -7123,92 +8234,100 @@ def test_deployedartifact_instantiation(instance):
 def test_feature_instantiation(instance):
     assert isinstance(instance, Feature)
 
+@given(instance=UML2_Connector_strategy)
+@settings(max_examples=50)
+def test_uml2_connector_instantiation(instance):
+    assert isinstance(instance, UML2_Connector)
+
+
+
+@given(instance=UML2_Connector_strategy)
+def test_uml2_connector_kind_setter(instance):
+    original = instance.kind
+    instance.kind = original
+    assert instance.kind == original
+
 @given(instance=LiteralSpecification_strategy)
 @settings(max_examples=50)
 def test_literalspecification_instantiation(instance):
     assert isinstance(instance, LiteralSpecification)
 
-@given(instance=UML2::LiteralInteger_strategy)
+@given(instance=UML2_LiteralInteger_strategy)
 @settings(max_examples=50)
-def test_uml2::literalinteger_instantiation(instance):
-    assert isinstance(instance, UML2::LiteralInteger)
-
-@given(instance=UML2::LiteralInteger_strategy)
-def test_uml2::literalinteger_value_type(instance):
-    assert isinstance(instance.value, int)
+def test_uml2_literalinteger_instantiation(instance):
+    assert isinstance(instance, UML2_LiteralInteger)
 
 
-@given(instance=UML2::LiteralInteger_strategy)
-def test_uml2::literalinteger_value_setter(instance):
+
+@given(instance=UML2_LiteralInteger_strategy)
+def test_uml2_literalinteger_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
 
-@given(instance=UML2::LiteralNull_strategy)
+@given(instance=UML2_LiteralString_strategy)
 @settings(max_examples=50)
-def test_uml2::literalnull_instantiation(instance):
-    assert isinstance(instance, UML2::LiteralNull)
-
-@given(instance=UML2::LiteralUnlimitedNatural_strategy)
-@settings(max_examples=50)
-def test_uml2::literalunlimitednatural_instantiation(instance):
-    assert isinstance(instance, UML2::LiteralUnlimitedNatural)
-
-@given(instance=UML2::LiteralUnlimitedNatural_strategy)
-def test_uml2::literalunlimitednatural_value_type(instance):
-    assert isinstance(instance.value, str)
+def test_uml2_literalstring_instantiation(instance):
+    assert isinstance(instance, UML2_LiteralString)
 
 
-@given(instance=UML2::LiteralUnlimitedNatural_strategy)
-def test_uml2::literalunlimitednatural_value_setter(instance):
+
+@given(instance=UML2_LiteralString_strategy)
+def test_uml2_literalstring_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
 
-@given(instance=UML2::LiteralString_strategy)
+@given(instance=UML2_LiteralUnlimitedNatural_strategy)
 @settings(max_examples=50)
-def test_uml2::literalstring_instantiation(instance):
-    assert isinstance(instance, UML2::LiteralString)
-
-@given(instance=UML2::LiteralString_strategy)
-def test_uml2::literalstring_value_type(instance):
-    assert isinstance(instance.value, str)
+def test_uml2_literalunlimitednatural_instantiation(instance):
+    assert isinstance(instance, UML2_LiteralUnlimitedNatural)
 
 
-@given(instance=UML2::LiteralString_strategy)
-def test_uml2::literalstring_value_setter(instance):
+
+@given(instance=UML2_LiteralUnlimitedNatural_strategy)
+def test_uml2_literalunlimitednatural_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
 
-@given(instance=UML2::LiteralBoolean_strategy)
+@given(instance=UML2_LiteralNull_strategy)
 @settings(max_examples=50)
-def test_uml2::literalboolean_instantiation(instance):
-    assert isinstance(instance, UML2::LiteralBoolean)
+def test_uml2_literalnull_instantiation(instance):
+    assert isinstance(instance, UML2_LiteralNull)
 
-@given(instance=UML2::LiteralBoolean_strategy)
-def test_uml2::literalboolean_value_type(instance):
-    assert isinstance(instance.value, bool)
+@given(instance=UML2_LiteralBoolean_strategy)
+@settings(max_examples=50)
+def test_uml2_literalboolean_instantiation(instance):
+    assert isinstance(instance, UML2_LiteralBoolean)
 
 
-@given(instance=UML2::LiteralBoolean_strategy)
-def test_uml2::literalboolean_value_setter(instance):
+
+@given(instance=UML2_LiteralBoolean_strategy)
+def test_uml2_literalboolean_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
 
-@given(instance=UML2::Generalization_strategy)
+@given(instance=UML2_CollaborationOccurrence_strategy)
 @settings(max_examples=50)
-def test_uml2::generalization_instantiation(instance):
-    assert isinstance(instance, UML2::Generalization)
+def test_uml2_collaborationoccurrence_instantiation(instance):
+    assert isinstance(instance, UML2_CollaborationOccurrence)
 
-@given(instance=UML2::Generalization_strategy)
-def test_uml2::generalization_isSubstitutable_type(instance):
-    assert isinstance(instance.isSubstitutable, bool)
+@given(instance=UML2_Substitution_strategy)
+@settings(max_examples=50)
+def test_uml2_substitution_instantiation(instance):
+    assert isinstance(instance, UML2_Substitution)
+
+@given(instance=UML2_Generalization_strategy)
+@settings(max_examples=50)
+def test_uml2_generalization_instantiation(instance):
+    assert isinstance(instance, UML2_Generalization)
 
 
-@given(instance=UML2::Generalization_strategy)
-def test_uml2::generalization_isSubstitutable_setter(instance):
+
+@given(instance=UML2_Generalization_strategy)
+def test_uml2_generalization_isSubstitutable_setter(instance):
     original = instance.isSubstitutable
     instance.isSubstitutable = original
     assert instance.isSubstitutable == original
@@ -7218,21 +8337,51 @@ def test_uml2::generalization_isSubstitutable_setter(instance):
 def test_redefinableelement_instantiation(instance):
     assert isinstance(instance, RedefinableElement)
 
-@given(instance=UML2::Feature_strategy)
+@given(instance=UML2_Feature_strategy)
 @settings(max_examples=50)
-def test_uml2::feature_instantiation(instance):
-    assert isinstance(instance, UML2::Feature)
-
-@given(instance=UML2::Feature_strategy)
-def test_uml2::feature_isStatic_type(instance):
-    assert isinstance(instance.isStatic, bool)
+def test_uml2_feature_instantiation(instance):
+    assert isinstance(instance, UML2_Feature)
 
 
-@given(instance=UML2::Feature_strategy)
-def test_uml2::feature_isStatic_setter(instance):
+
+@given(instance=UML2_Feature_strategy)
+def test_uml2_feature_isStatic_setter(instance):
     original = instance.isStatic
     instance.isStatic = original
     assert instance.isStatic == original
+
+@given(instance=UML2_Transition_strategy)
+@settings(max_examples=50)
+def test_uml2_transition_instantiation(instance):
+    assert isinstance(instance, UML2_Transition)
+
+
+
+@given(instance=UML2_Transition_strategy)
+def test_uml2_transition_kind_setter(instance):
+    original = instance.kind
+    instance.kind = original
+    assert instance.kind == original
+
+@given(instance=UML2_ExtensionPoint_strategy)
+@settings(max_examples=50)
+def test_uml2_extensionpoint_instantiation(instance):
+    assert isinstance(instance, UML2_ExtensionPoint)
+
+@given(instance=UML2_ActivityEdge_strategy)
+@settings(max_examples=50)
+def test_uml2_activityedge_instantiation(instance):
+    assert isinstance(instance, UML2_ActivityEdge)
+
+@given(instance=UML2_ActivityNode_strategy)
+@settings(max_examples=50)
+def test_uml2_activitynode_instantiation(instance):
+    assert isinstance(instance, UML2_ActivityNode)
+
+@given(instance=UML2_RedefinableTemplateSignature_strategy)
+@settings(max_examples=50)
+def test_uml2_redefinabletemplatesignature_instantiation(instance):
+    assert isinstance(instance, UML2_RedefinableTemplateSignature)
 
 @given(instance=Type_strategy)
 @settings(max_examples=50)
@@ -7249,87 +8398,219 @@ def test_instancespecification_instantiation(instance):
 def test_classifier_instantiation(instance):
     assert isinstance(instance, Classifier)
 
-@given(instance=UML2::EnumerationLiteral_strategy)
+@given(instance=UML2_InformationItem_strategy)
 @settings(max_examples=50)
-def test_uml2::enumerationliteral_instantiation(instance):
-    assert isinstance(instance, UML2::EnumerationLiteral)
+def test_uml2_informationitem_instantiation(instance):
+    assert isinstance(instance, UML2_InformationItem)
+
+@given(instance=UML2_StructuredClassifier_strategy)
+@settings(max_examples=50)
+def test_uml2_structuredclassifier_instantiation(instance):
+    assert isinstance(instance, UML2_StructuredClassifier)
+
+@given(instance=UML2_ParameterableClassifier_strategy)
+@settings(max_examples=50)
+def test_uml2_parameterableclassifier_instantiation(instance):
+    assert isinstance(instance, UML2_ParameterableClassifier)
+
+@given(instance=UML2_TemplateableClassifier_strategy)
+@settings(max_examples=50)
+def test_uml2_templateableclassifier_instantiation(instance):
+    assert isinstance(instance, UML2_TemplateableClassifier)
+
+@given(instance=UML2_Actor_strategy)
+@settings(max_examples=50)
+def test_uml2_actor_instantiation(instance):
+    assert isinstance(instance, UML2_Actor)
+
+@given(instance=UML2_BehavioredClassifier_strategy)
+@settings(max_examples=50)
+def test_uml2_behavioredclassifier_instantiation(instance):
+    assert isinstance(instance, UML2_BehavioredClassifier)
+
+@given(instance=UML2_Interface_strategy)
+@settings(max_examples=50)
+def test_uml2_interface_instantiation(instance):
+    assert isinstance(instance, UML2_Interface)
+
+@given(instance=UML2_Artifact_strategy)
+@settings(max_examples=50)
+def test_uml2_artifact_instantiation(instance):
+    assert isinstance(instance, UML2_Artifact)
+
+
+
+@given(instance=UML2_Artifact_strategy)
+def test_uml2_artifact_fileName_setter(instance):
+    original = instance.fileName
+    instance.fileName = original
+    assert instance.fileName == original
+
+@given(instance=UML2_Signal_strategy)
+@settings(max_examples=50)
+def test_uml2_signal_instantiation(instance):
+    assert isinstance(instance, UML2_Signal)
+
+@given(instance=UML2_EnumerationLiteral_strategy)
+@settings(max_examples=50)
+def test_uml2_enumerationliteral_instantiation(instance):
+    assert isinstance(instance, UML2_EnumerationLiteral)
 
 @given(instance=DataType_strategy)
 @settings(max_examples=50)
 def test_datatype_instantiation(instance):
     assert isinstance(instance, DataType)
 
-@given(instance=UML2::PrimitiveType_strategy)
+@given(instance=UML2_PrimitiveType_strategy)
 @settings(max_examples=50)
-def test_uml2::primitivetype_instantiation(instance):
-    assert isinstance(instance, UML2::PrimitiveType)
+def test_uml2_primitivetype_instantiation(instance):
+    assert isinstance(instance, UML2_PrimitiveType)
 
-@given(instance=UML2::Enumeration_strategy)
+@given(instance=UML2_Enumeration_strategy)
 @settings(max_examples=50)
-def test_uml2::enumeration_instantiation(instance):
-    assert isinstance(instance, UML2::Enumeration)
+def test_uml2_enumeration_instantiation(instance):
+    assert isinstance(instance, UML2_Enumeration)
 
-@given(instance=UML2::PackageMerge_strategy)
+@given(instance=UML2_ProfileApplication_strategy)
 @settings(max_examples=50)
-def test_uml2::packagemerge_instantiation(instance):
-    assert isinstance(instance, UML2::PackageMerge)
+def test_uml2_profileapplication_instantiation(instance):
+    assert isinstance(instance, UML2_ProfileApplication)
+
+@given(instance=UML2_PackageMerge_strategy)
+@settings(max_examples=50)
+def test_uml2_packagemerge_instantiation(instance):
+    assert isinstance(instance, UML2_PackageMerge)
 
 @given(instance=Namespace_strategy)
 @settings(max_examples=50)
 def test_namespace_instantiation(instance):
     assert isinstance(instance, Namespace)
 
-@given(instance=UML2::BehavioralFeature_strategy)
+@given(instance=UML2_Region_strategy)
 @settings(max_examples=50)
-def test_uml2::behavioralfeature_instantiation(instance):
-    assert isinstance(instance, UML2::BehavioralFeature)
+def test_uml2_region_instantiation(instance):
+    assert isinstance(instance, UML2_Region)
 
-@given(instance=UML2::BehavioralFeature_strategy)
-def test_uml2::behavioralfeature_isAbstract_type(instance):
-    assert isinstance(instance.isAbstract, bool)
+@given(instance=UML2_InteractionOperand_strategy)
+@settings(max_examples=50)
+def test_uml2_interactionoperand_instantiation(instance):
+    assert isinstance(instance, UML2_InteractionOperand)
+
+@given(instance=UML2_BehavioralFeature_strategy)
+@settings(max_examples=50)
+def test_uml2_behavioralfeature_instantiation(instance):
+    assert isinstance(instance, UML2_BehavioralFeature)
 
 
-@given(instance=UML2::BehavioralFeature_strategy)
-def test_uml2::behavioralfeature_isAbstract_setter(instance):
+
+@given(instance=UML2_BehavioralFeature_strategy)
+def test_uml2_behavioralfeature_isAbstract_setter(instance):
     original = instance.isAbstract
     instance.isAbstract = original
     assert instance.isAbstract == original
 
-@given(instance=UML2::BehavioralFeature_strategy)
-def test_uml2::behavioralfeature_concurrency_type(instance):
-    assert isinstance(instance.concurrency, str)
 
 
-@given(instance=UML2::BehavioralFeature_strategy)
-def test_uml2::behavioralfeature_concurrency_setter(instance):
+@given(instance=UML2_BehavioralFeature_strategy)
+def test_uml2_behavioralfeature_concurrency_setter(instance):
     original = instance.concurrency
     instance.concurrency = original
     assert instance.concurrency == original
+
+@given(instance=UML2_StructuredActivityNode_strategy)
+@settings(max_examples=50)
+def test_uml2_structuredactivitynode_instantiation(instance):
+    assert isinstance(instance, UML2_StructuredActivityNode)
+
+
+
+@given(instance=UML2_StructuredActivityNode_strategy)
+def test_uml2_structuredactivitynode_mustIsolate_setter(instance):
+    original = instance.mustIsolate
+    instance.mustIsolate = original
+    assert instance.mustIsolate == original
+
+@given(instance=UML2_State_strategy)
+@settings(max_examples=50)
+def test_uml2_state_instantiation(instance):
+    assert isinstance(instance, UML2_State)
+
+
+
+@given(instance=UML2_State_strategy)
+def test_uml2_state_isComposite_setter(instance):
+    original = instance.isComposite
+    instance.isComposite = original
+    assert instance.isComposite == original
+
+
+
+@given(instance=UML2_State_strategy)
+def test_uml2_state_isSubmachineState_setter(instance):
+    original = instance.isSubmachineState
+    instance.isSubmachineState = original
+    assert instance.isSubmachineState == original
+
+
+
+@given(instance=UML2_State_strategy)
+def test_uml2_state_isSimple_setter(instance):
+    original = instance.isSimple
+    instance.isSimple = original
+    assert instance.isSimple == original
+
+
+
+@given(instance=UML2_State_strategy)
+def test_uml2_state_isOrthogonal_setter(instance):
+    original = instance.isOrthogonal
+    instance.isOrthogonal = original
+    assert instance.isOrthogonal == original
+
+@given(instance=UML2_ParameterSet_strategy)
+@settings(max_examples=50)
+def test_uml2_parameterset_instantiation(instance):
+    assert isinstance(instance, UML2_ParameterSet)
+
+@given(instance=UML2_TypedElement_strategy)
+@settings(max_examples=50)
+def test_uml2_typedelement_instantiation(instance):
+    assert isinstance(instance, UML2_TypedElement)
 
 @given(instance=MultiplicityElement_strategy)
 @settings(max_examples=50)
 def test_multiplicityelement_instantiation(instance):
     assert isinstance(instance, MultiplicityElement)
 
+@given(instance=UML2_Pin_strategy)
+@settings(max_examples=50)
+def test_uml2_pin_instantiation(instance):
+    assert isinstance(instance, UML2_Pin)
+
+@given(instance=UML2_ConnectorEnd_strategy)
+@settings(max_examples=50)
+def test_uml2_connectorend_instantiation(instance):
+    assert isinstance(instance, UML2_ConnectorEnd)
+
 @given(instance=BehavioralFeature_strategy)
 @settings(max_examples=50)
 def test_behavioralfeature_instantiation(instance):
     assert isinstance(instance, BehavioralFeature)
 
-@given(instance=UML2::DataType_strategy)
+@given(instance=UML2_DataType_strategy)
 @settings(max_examples=50)
-def test_uml2::datatype_instantiation(instance):
-    assert isinstance(instance, UML2::DataType)
+def test_uml2_datatype_instantiation(instance):
+    assert isinstance(instance, UML2_DataType)
 
 @given(instance=DeploymentTarget_strategy)
 @settings(max_examples=50)
 def test_deploymenttarget_instantiation(instance):
     assert isinstance(instance, DeploymentTarget)
 
-@given(instance=UML2::Node_strategy)
+@given(instance=UML2_Node_strategy)
 @settings(max_examples=50)
-def test_uml2::node_instantiation(instance):
-    assert isinstance(instance, UML2::Node)
+def test_uml2_node_instantiation(instance):
+    assert isinstance(instance, UML2_Node)
 
 @given(instance=ConnectableElement_strategy)
 @settings(max_examples=50)
@@ -7341,160 +8622,158 @@ def test_connectableelement_instantiation(instance):
 def test_structuralfeature_instantiation(instance):
     assert isinstance(instance, StructuralFeature)
 
-@given(instance=UML2::Property_strategy)
+@given(instance=UML2_Property_strategy)
 @settings(max_examples=50)
-def test_uml2::property_instantiation(instance):
-    assert isinstance(instance, UML2::Property)
-
-@given(instance=UML2::Property_strategy)
-def test_uml2::property_isComposite_type(instance):
-    assert isinstance(instance.isComposite, bool)
+def test_uml2_property_instantiation(instance):
+    assert isinstance(instance, UML2_Property)
 
 
-@given(instance=UML2::Property_strategy)
-def test_uml2::property_isComposite_setter(instance):
-    original = instance.isComposite
-    instance.isComposite = original
-    assert instance.isComposite == original
 
-@given(instance=UML2::Property_strategy)
-def test_uml2::property_isDerivedUnion_type(instance):
-    assert isinstance(instance.isDerivedUnion, bool)
+@given(instance=UML2_Property_strategy)
+def test_uml2_property_aggregation_setter(instance):
+    original = instance.aggregation
+    instance.aggregation = original
+    assert instance.aggregation == original
 
 
-@given(instance=UML2::Property_strategy)
-def test_uml2::property_isDerivedUnion_setter(instance):
-    original = instance.isDerivedUnion
-    instance.isDerivedUnion = original
-    assert instance.isDerivedUnion == original
 
-@given(instance=UML2::Property_strategy)
-def test_uml2::property_isDerived_type(instance):
-    assert isinstance(instance.isDerived, bool)
-
-
-@given(instance=UML2::Property_strategy)
-def test_uml2::property_isDerived_setter(instance):
+@given(instance=UML2_Property_strategy)
+def test_uml2_property_isDerived_setter(instance):
     original = instance.isDerived
     instance.isDerived = original
     assert instance.isDerived == original
 
-@given(instance=UML2::Property_strategy)
-def test_uml2::property_default_type(instance):
-    assert isinstance(instance.default, str)
 
 
-@given(instance=UML2::Property_strategy)
-def test_uml2::property_default_setter(instance):
+@given(instance=UML2_Property_strategy)
+def test_uml2_property_default_setter(instance):
     original = instance.default
     instance.default = original
     assert instance.default == original
 
-@given(instance=UML2::Property_strategy)
-def test_uml2::property_aggregation_type(instance):
-    assert isinstance(instance.aggregation, str)
 
 
-@given(instance=UML2::Property_strategy)
-def test_uml2::property_aggregation_setter(instance):
-    original = instance.aggregation
-    instance.aggregation = original
-    assert instance.aggregation == original
+@given(instance=UML2_Property_strategy)
+def test_uml2_property_isDerivedUnion_setter(instance):
+    original = instance.isDerivedUnion
+    instance.isDerivedUnion = original
+    assert instance.isDerivedUnion == original
+
+
+
+@given(instance=UML2_Property_strategy)
+def test_uml2_property_isComposite_setter(instance):
+    original = instance.isComposite
+    instance.isComposite = original
+    assert instance.isComposite == original
 
 @given(instance=PackageableElement_strategy)
 @settings(max_examples=50)
 def test_packageableelement_instantiation(instance):
     assert isinstance(instance, PackageableElement)
 
-@given(instance=UML2::InstanceSpecification_strategy)
+@given(instance=UML2_PrimitiveFunction_strategy)
 @settings(max_examples=50)
-def test_uml2::instancespecification_instantiation(instance):
-    assert isinstance(instance, UML2::InstanceSpecification)
-
-@given(instance=UML2::GeneralizationSet_strategy)
-@settings(max_examples=50)
-def test_uml2::generalizationset_instantiation(instance):
-    assert isinstance(instance, UML2::GeneralizationSet)
-
-@given(instance=UML2::GeneralizationSet_strategy)
-def test_uml2::generalizationset_isDisjoint_type(instance):
-    assert isinstance(instance.isDisjoint, bool)
+def test_uml2_primitivefunction_instantiation(instance):
+    assert isinstance(instance, UML2_PrimitiveFunction)
 
 
-@given(instance=UML2::GeneralizationSet_strategy)
-def test_uml2::generalizationset_isDisjoint_setter(instance):
-    original = instance.isDisjoint
-    instance.isDisjoint = original
-    assert instance.isDisjoint == original
 
-@given(instance=UML2::GeneralizationSet_strategy)
-def test_uml2::generalizationset_isCovering_type(instance):
-    assert isinstance(instance.isCovering, bool)
-
-
-@given(instance=UML2::GeneralizationSet_strategy)
-def test_uml2::generalizationset_isCovering_setter(instance):
-    original = instance.isCovering
-    instance.isCovering = original
-    assert instance.isCovering == original
-
-@given(instance=UML2::Package_strategy)
-@settings(max_examples=50)
-def test_uml2::package_instantiation(instance):
-    assert isinstance(instance, UML2::Package)
-
-@given(instance=UML2::PrimitiveFunction_strategy)
-@settings(max_examples=50)
-def test_uml2::primitivefunction_instantiation(instance):
-    assert isinstance(instance, UML2::PrimitiveFunction)
-
-@given(instance=UML2::PrimitiveFunction_strategy)
-def test_uml2::primitivefunction_language_type(instance):
-    assert isinstance(instance.language, str)
-
-
-@given(instance=UML2::PrimitiveFunction_strategy)
-def test_uml2::primitivefunction_language_setter(instance):
+@given(instance=UML2_PrimitiveFunction_strategy)
+def test_uml2_primitivefunction_language_setter(instance):
     original = instance.language
     instance.language = original
     assert instance.language == original
 
-@given(instance=UML2::PrimitiveFunction_strategy)
-def test_uml2::primitivefunction_body_type(instance):
-    assert isinstance(instance.body, str)
 
 
-@given(instance=UML2::PrimitiveFunction_strategy)
-def test_uml2::primitivefunction_body_setter(instance):
+@given(instance=UML2_PrimitiveFunction_strategy)
+def test_uml2_primitivefunction_body_setter(instance):
     original = instance.body
     instance.body = original
     assert instance.body == original
 
-@given(instance=UML2::Type_strategy)
+@given(instance=UML2_Package_strategy)
 @settings(max_examples=50)
-def test_uml2::type_instantiation(instance):
-    assert isinstance(instance, UML2::Type)
+def test_uml2_package_instantiation(instance):
+    assert isinstance(instance, UML2_Package)
 
-@given(instance=UML2::Reception_strategy)
+@given(instance=UML2_GeneralizationSet_strategy)
 @settings(max_examples=50)
-def test_uml2::reception_instantiation(instance):
-    assert isinstance(instance, UML2::Reception)
+def test_uml2_generalizationset_instantiation(instance):
+    assert isinstance(instance, UML2_GeneralizationSet)
 
-@given(instance=UML2::Classifier_strategy)
+
+
+@given(instance=UML2_GeneralizationSet_strategy)
+def test_uml2_generalizationset_isDisjoint_setter(instance):
+    original = instance.isDisjoint
+    instance.isDisjoint = original
+    assert instance.isDisjoint == original
+
+
+
+@given(instance=UML2_GeneralizationSet_strategy)
+def test_uml2_generalizationset_isCovering_setter(instance):
+    original = instance.isCovering
+    instance.isCovering = original
+    assert instance.isCovering == original
+
+@given(instance=UML2_InstanceSpecification_strategy)
 @settings(max_examples=50)
-def test_uml2::classifier_instantiation(instance):
-    assert isinstance(instance, UML2::Classifier)
+def test_uml2_instancespecification_instantiation(instance):
+    assert isinstance(instance, UML2_InstanceSpecification)
 
-@given(instance=UML2::Classifier_strategy)
-def test_uml2::classifier_isAbstract_type(instance):
-    assert isinstance(instance.isAbstract, bool)
+@given(instance=UML2_Dependency_strategy)
+@settings(max_examples=50)
+def test_uml2_dependency_instantiation(instance):
+    assert isinstance(instance, UML2_Dependency)
+
+@given(instance=UML2_InformationFlow_strategy)
+@settings(max_examples=50)
+def test_uml2_informationflow_instantiation(instance):
+    assert isinstance(instance, UML2_InformationFlow)
+
+@given(instance=UML2_Constraint_strategy)
+@settings(max_examples=50)
+def test_uml2_constraint_instantiation(instance):
+    assert isinstance(instance, UML2_Constraint)
+
+@given(instance=UML2_Type_strategy)
+@settings(max_examples=50)
+def test_uml2_type_instantiation(instance):
+    assert isinstance(instance, UML2_Type)
+
+@given(instance=UML2_Reception_strategy)
+@settings(max_examples=50)
+def test_uml2_reception_instantiation(instance):
+    assert isinstance(instance, UML2_Reception)
+
+@given(instance=UML2_Classifier_strategy)
+@settings(max_examples=50)
+def test_uml2_classifier_instantiation(instance):
+    assert isinstance(instance, UML2_Classifier)
 
 
-@given(instance=UML2::Classifier_strategy)
-def test_uml2::classifier_isAbstract_setter(instance):
+
+@given(instance=UML2_Classifier_strategy)
+def test_uml2_classifier_isAbstract_setter(instance):
     original = instance.isAbstract
     instance.isAbstract = original
     assert instance.isAbstract == original
+
+@given(instance=UML2_Extension_strategy)
+@settings(max_examples=50)
+def test_uml2_extension_instantiation(instance):
+    assert isinstance(instance, UML2_Extension)
+
+
+
+@given(instance=UML2_Extension_strategy)
+def test_uml2_extension_isRequired_setter(instance):
+    original = instance.isRequired
+    instance.isRequired = original
+    assert instance.isRequired == original
 
 @given(instance=EncapsulatedClassifier_strategy)
 @settings(max_examples=50)
@@ -7506,70 +8785,71 @@ def test_encapsulatedclassifier_instantiation(instance):
 def test_behavioredclassifier_instantiation(instance):
     assert isinstance(instance, BehavioredClassifier)
 
-@given(instance=UML2::UseCase_strategy)
+@given(instance=UML2_UseCase_strategy)
 @settings(max_examples=50)
-def test_uml2::usecase_instantiation(instance):
-    assert isinstance(instance, UML2::UseCase)
+def test_uml2_usecase_instantiation(instance):
+    assert isinstance(instance, UML2_UseCase)
 
-@given(instance=UML2::Class_strategy)
+@given(instance=UML2_Collaboration_strategy)
 @settings(max_examples=50)
-def test_uml2::class_instantiation(instance):
-    assert isinstance(instance, UML2::Class)
+def test_uml2_collaboration_instantiation(instance):
+    assert isinstance(instance, UML2_Collaboration)
 
-@given(instance=UML2::Class_strategy)
-def test_uml2::class_isActive_type(instance):
-    assert isinstance(instance.isActive, bool)
+@given(instance=UML2_Class_strategy)
+@settings(max_examples=50)
+def test_uml2_class_instantiation(instance):
+    assert isinstance(instance, UML2_Class)
 
 
-@given(instance=UML2::Class_strategy)
-def test_uml2::class_isActive_setter(instance):
+
+@given(instance=UML2_Class_strategy)
+def test_uml2_class_isActive_setter(instance):
     original = instance.isActive
     instance.isActive = original
     assert instance.isActive == original
+
+@given(instance=UML2_Relationship_strategy)
+@settings(max_examples=50)
+def test_uml2_relationship_instantiation(instance):
+    assert isinstance(instance, UML2_Relationship)
 
 @given(instance=Relationship_strategy)
 @settings(max_examples=50)
 def test_relationship_instantiation(instance):
     assert isinstance(instance, Relationship)
 
-@given(instance=UML2::Association_strategy)
+@given(instance=UML2_Association_strategy)
 @settings(max_examples=50)
-def test_uml2::association_instantiation(instance):
-    assert isinstance(instance, UML2::Association)
-
-@given(instance=UML2::Association_strategy)
-def test_uml2::association_isDerived_type(instance):
-    assert isinstance(instance.isDerived, bool)
+def test_uml2_association_instantiation(instance):
+    assert isinstance(instance, UML2_Association)
 
 
-@given(instance=UML2::Association_strategy)
-def test_uml2::association_isDerived_setter(instance):
+
+@given(instance=UML2_Association_strategy)
+def test_uml2_association_isDerived_setter(instance):
     original = instance.isDerived
     instance.isDerived = original
     assert instance.isDerived == original
 
-@given(instance=UML2::DirectedRelationship_strategy)
+@given(instance=UML2_DirectedRelationship_strategy)
 @settings(max_examples=50)
-def test_uml2::directedrelationship_instantiation(instance):
-    assert isinstance(instance, UML2::DirectedRelationship)
+def test_uml2_directedrelationship_instantiation(instance):
+    assert isinstance(instance, UML2_DirectedRelationship)
 
 @given(instance=OpaqueExpression_strategy)
 @settings(max_examples=50)
 def test_opaqueexpression_instantiation(instance):
     assert isinstance(instance, OpaqueExpression)
 
-@given(instance=UML2::Expression_strategy)
+@given(instance=UML2_Expression_strategy)
 @settings(max_examples=50)
-def test_uml2::expression_instantiation(instance):
-    assert isinstance(instance, UML2::Expression)
-
-@given(instance=UML2::Expression_strategy)
-def test_uml2::expression_symbol_type(instance):
-    assert isinstance(instance.symbol, str)
+def test_uml2_expression_instantiation(instance):
+    assert isinstance(instance, UML2_Expression)
 
 
-@given(instance=UML2::Expression_strategy)
-def test_uml2::expression_symbol_setter(instance):
+
+@given(instance=UML2_Expression_strategy)
+def test_uml2_expression_symbol_setter(instance):
     original = instance.symbol
     instance.symbol = original
     assert instance.symbol == original
@@ -7579,1752 +8859,199 @@ def test_uml2::expression_symbol_setter(instance):
 def test_parameterableelement_instantiation(instance):
     assert isinstance(instance, ParameterableElement)
 
+@given(instance=UML2_PackageableElement_strategy)
+@settings(max_examples=50)
+def test_uml2_packageableelement_instantiation(instance):
+    assert isinstance(instance, UML2_PackageableElement)
+
+
+
+@given(instance=UML2_PackageableElement_strategy)
+def test_uml2_packageableelement_packageableElement_visibility_setter(instance):
+    original = instance.packageableElement_visibility
+    instance.packageableElement_visibility = original
+    assert instance.packageableElement_visibility == original
+
+@given(instance=UML2_ConnectableElement_strategy)
+@settings(max_examples=50)
+def test_uml2_connectableelement_instantiation(instance):
+    assert isinstance(instance, UML2_ConnectableElement)
+
 @given(instance=TypedElement_strategy)
 @settings(max_examples=50)
 def test_typedelement_instantiation(instance):
     assert isinstance(instance, TypedElement)
 
-@given(instance=UML2::Operation_strategy)
+@given(instance=UML2_ValueSpecification_strategy)
 @settings(max_examples=50)
-def test_uml2::operation_instantiation(instance):
-    assert isinstance(instance, UML2::Operation)
+def test_uml2_valuespecification_instantiation(instance):
+    assert isinstance(instance, UML2_ValueSpecification)
 
-@given(instance=UML2::Operation_strategy)
-def test_uml2::operation_isQuery_type(instance):
-    assert isinstance(instance.isQuery, bool)
-
-
-@given(instance=UML2::Operation_strategy)
-def test_uml2::operation_isQuery_setter(instance):
-    original = instance.isQuery
-    instance.isQuery = original
-    assert instance.isQuery == original
-
-@given(instance=UML2::StructuralFeature_strategy)
+@given(instance=UML2_StructuralFeature_strategy)
 @settings(max_examples=50)
-def test_uml2::structuralfeature_instantiation(instance):
-    assert isinstance(instance, UML2::StructuralFeature)
-
-@given(instance=UML2::StructuralFeature_strategy)
-def test_uml2::structuralfeature_isReadOnly_type(instance):
-    assert isinstance(instance.isReadOnly, bool)
+def test_uml2_structuralfeature_instantiation(instance):
+    assert isinstance(instance, UML2_StructuralFeature)
 
 
-@given(instance=UML2::StructuralFeature_strategy)
-def test_uml2::structuralfeature_isReadOnly_setter(instance):
+
+@given(instance=UML2_StructuralFeature_strategy)
+def test_uml2_structuralfeature_isReadOnly_setter(instance):
     original = instance.isReadOnly
     instance.isReadOnly = original
     assert instance.isReadOnly == original
 
-@given(instance=UML2::Behavior_strategy)
+@given(instance=UML2_Variable_strategy)
 @settings(max_examples=50)
-def test_uml2::behavior_instantiation(instance):
-    assert isinstance(instance, UML2::Behavior)
+def test_uml2_variable_instantiation(instance):
+    assert isinstance(instance, UML2_Variable)
 
-@given(instance=UML2::Behavior_strategy)
-def test_uml2::behavior_isReentrant_type(instance):
-    assert isinstance(instance.isReentrant, bool)
+@given(instance=UML2_Operation_strategy)
+@settings(max_examples=50)
+def test_uml2_operation_instantiation(instance):
+    assert isinstance(instance, UML2_Operation)
 
 
-@given(instance=UML2::Behavior_strategy)
-def test_uml2::behavior_isReentrant_setter(instance):
+
+@given(instance=UML2_Operation_strategy)
+def test_uml2_operation_isQuery_setter(instance):
+    original = instance.isQuery
+    instance.isQuery = original
+    assert instance.isQuery == original
+
+@given(instance=UML2_ObjectNode_strategy)
+@settings(max_examples=50)
+def test_uml2_objectnode_instantiation(instance):
+    assert isinstance(instance, UML2_ObjectNode)
+
+
+
+@given(instance=UML2_ObjectNode_strategy)
+def test_uml2_objectnode_ordering_setter(instance):
+    original = instance.ordering
+    instance.ordering = original
+    assert instance.ordering == original
+
+@given(instance=UML2_Behavior_strategy)
+@settings(max_examples=50)
+def test_uml2_behavior_instantiation(instance):
+    assert isinstance(instance, UML2_Behavior)
+
+
+
+@given(instance=UML2_Behavior_strategy)
+def test_uml2_behavior_isReentrant_setter(instance):
     original = instance.isReentrant
     instance.isReentrant = original
     assert instance.isReentrant == original
 
-@given(instance=UML2::Parameter_strategy)
+@given(instance=UML2_Parameter_strategy)
 @settings(max_examples=50)
-def test_uml2::parameter_instantiation(instance):
-    assert isinstance(instance, UML2::Parameter)
-
-@given(instance=UML2::Parameter_strategy)
-def test_uml2::parameter_effect_type(instance):
-    assert isinstance(instance.effect, str)
+def test_uml2_parameter_instantiation(instance):
+    assert isinstance(instance, UML2_Parameter)
 
 
-@given(instance=UML2::Parameter_strategy)
-def test_uml2::parameter_effect_setter(instance):
-    original = instance.effect
-    instance.effect = original
-    assert instance.effect == original
 
-@given(instance=UML2::Parameter_strategy)
-def test_uml2::parameter_default_type(instance):
-    assert isinstance(instance.default, str)
-
-
-@given(instance=UML2::Parameter_strategy)
-def test_uml2::parameter_default_setter(instance):
-    original = instance.default
-    instance.default = original
-    assert instance.default == original
-
-@given(instance=UML2::Parameter_strategy)
-def test_uml2::parameter_direction_type(instance):
-    assert isinstance(instance.direction, str)
-
-
-@given(instance=UML2::Parameter_strategy)
-def test_uml2::parameter_direction_setter(instance):
-    original = instance.direction
-    instance.direction = original
-    assert instance.direction == original
-
-@given(instance=UML2::Parameter_strategy)
-def test_uml2::parameter_isStream_type(instance):
-    assert isinstance(instance.isStream, bool)
-
-
-@given(instance=UML2::Parameter_strategy)
-def test_uml2::parameter_isStream_setter(instance):
+@given(instance=UML2_Parameter_strategy)
+def test_uml2_parameter_isStream_setter(instance):
     original = instance.isStream
     instance.isStream = original
     assert instance.isStream == original
 
-@given(instance=UML2::Parameter_strategy)
-def test_uml2::parameter_isException_type(instance):
-    assert isinstance(instance.isException, bool)
 
 
-@given(instance=UML2::Parameter_strategy)
-def test_uml2::parameter_isException_setter(instance):
+@given(instance=UML2_Parameter_strategy)
+def test_uml2_parameter_isException_setter(instance):
     original = instance.isException
     instance.isException = original
     assert instance.isException == original
+
+
+
+@given(instance=UML2_Parameter_strategy)
+def test_uml2_parameter_direction_setter(instance):
+    original = instance.direction
+    instance.direction = original
+    assert instance.direction == original
+
+
+
+@given(instance=UML2_Parameter_strategy)
+def test_uml2_parameter_default_setter(instance):
+    original = instance.default
+    instance.default = original
+    assert instance.default == original
+
+
+
+@given(instance=UML2_Parameter_strategy)
+def test_uml2_parameter_effect_setter(instance):
+    original = instance.effect
+    instance.effect = original
+    assert instance.effect == original
 
 @given(instance=ValueSpecification_strategy)
 @settings(max_examples=50)
 def test_valuespecification_instantiation(instance):
     assert isinstance(instance, ValueSpecification)
 
-@given(instance=UML2::InstanceValue_strategy)
+@given(instance=UML2_InstanceValue_strategy)
 @settings(max_examples=50)
-def test_uml2::instancevalue_instantiation(instance):
-    assert isinstance(instance, UML2::InstanceValue)
+def test_uml2_instancevalue_instantiation(instance):
+    assert isinstance(instance, UML2_InstanceValue)
 
-@given(instance=UML2::Interval_strategy)
+@given(instance=UML2_TimeExpression_strategy)
 @settings(max_examples=50)
-def test_uml2::interval_instantiation(instance):
-    assert isinstance(instance, UML2::Interval)
-
-@given(instance=UML2::TimeExpression_strategy)
-@settings(max_examples=50)
-def test_uml2::timeexpression_instantiation(instance):
-    assert isinstance(instance, UML2::TimeExpression)
-
-@given(instance=UML2::TimeExpression_strategy)
-def test_uml2::timeexpression_firstTime_type(instance):
-    assert isinstance(instance.firstTime, bool)
+def test_uml2_timeexpression_instantiation(instance):
+    assert isinstance(instance, UML2_TimeExpression)
 
 
-@given(instance=UML2::TimeExpression_strategy)
-def test_uml2::timeexpression_firstTime_setter(instance):
+
+@given(instance=UML2_TimeExpression_strategy)
+def test_uml2_timeexpression_firstTime_setter(instance):
     original = instance.firstTime
     instance.firstTime = original
     assert instance.firstTime == original
 
-@given(instance=UML2::Duration_strategy)
+@given(instance=UML2_Duration_strategy)
 @settings(max_examples=50)
-def test_uml2::duration_instantiation(instance):
-    assert isinstance(instance, UML2::Duration)
-
-@given(instance=UML2::Duration_strategy)
-def test_uml2::duration_firstTime_type(instance):
-    assert isinstance(instance.firstTime, bool)
+def test_uml2_duration_instantiation(instance):
+    assert isinstance(instance, UML2_Duration)
 
 
-@given(instance=UML2::Duration_strategy)
-def test_uml2::duration_firstTime_setter(instance):
+
+@given(instance=UML2_Duration_strategy)
+def test_uml2_duration_firstTime_setter(instance):
     original = instance.firstTime
     instance.firstTime = original
     assert instance.firstTime == original
 
-@given(instance=UML2::LiteralSpecification_strategy)
+@given(instance=UML2_OpaqueExpression_strategy)
 @settings(max_examples=50)
-def test_uml2::literalspecification_instantiation(instance):
-    assert isinstance(instance, UML2::LiteralSpecification)
-
-@given(instance=UML2::OpaqueExpression_strategy)
-@settings(max_examples=50)
-def test_uml2::opaqueexpression_instantiation(instance):
-    assert isinstance(instance, UML2::OpaqueExpression)
-
-@given(instance=UML2::OpaqueExpression_strategy)
-def test_uml2::opaqueexpression_language_type(instance):
-    assert isinstance(instance.language, str)
+def test_uml2_opaqueexpression_instantiation(instance):
+    assert isinstance(instance, UML2_OpaqueExpression)
 
 
-@given(instance=UML2::OpaqueExpression_strategy)
-def test_uml2::opaqueexpression_language_setter(instance):
+
+@given(instance=UML2_OpaqueExpression_strategy)
+def test_uml2_opaqueexpression_language_setter(instance):
     original = instance.language
     instance.language = original
     assert instance.language == original
 
-@given(instance=UML2::OpaqueExpression_strategy)
-def test_uml2::opaqueexpression_bodies_type(instance):
-    assert isinstance(instance.bodies, str)
 
 
-@given(instance=UML2::OpaqueExpression_strategy)
-def test_uml2::opaqueexpression_bodies_setter(instance):
+@given(instance=UML2_OpaqueExpression_strategy)
+def test_uml2_opaqueexpression_bodies_setter(instance):
     original = instance.bodies
     instance.bodies = original
     assert instance.bodies == original
 
-@given(instance=UML2::PackageImport_strategy)
+@given(instance=UML2_Interval_strategy)
 @settings(max_examples=50)
-def test_uml2::packageimport_instantiation(instance):
-    assert isinstance(instance, UML2::PackageImport)
+def test_uml2_interval_instantiation(instance):
+    assert isinstance(instance, UML2_Interval)
 
-@given(instance=UML2::PackageImport_strategy)
-def test_uml2::packageimport_visibility_type(instance):
-    assert isinstance(instance.visibility, str)
-
-
-@given(instance=UML2::PackageImport_strategy)
-def test_uml2::packageimport_visibility_setter(instance):
-    original = instance.visibility
-    instance.visibility = original
-    assert instance.visibility == original
-
-@given(instance=UML2::ElementImport_strategy)
-@settings(max_examples=50)
-def test_uml2::elementimport_instantiation(instance):
-    assert isinstance(instance, UML2::ElementImport)
-
-@given(instance=UML2::ElementImport_strategy)
-def test_uml2::elementimport_alias_type(instance):
-    assert isinstance(instance.alias, str)
-
-
-@given(instance=UML2::ElementImport_strategy)
-def test_uml2::elementimport_alias_setter(instance):
-    original = instance.alias
-    instance.alias = original
-    assert instance.alias == original
-
-@given(instance=UML2::ElementImport_strategy)
-def test_uml2::elementimport_visibility_type(instance):
-    assert isinstance(instance.visibility, str)
-
-
-@given(instance=UML2::ElementImport_strategy)
-def test_uml2::elementimport_visibility_setter(instance):
-    original = instance.visibility
-    instance.visibility = original
-    assert instance.visibility == original
-
-@given(instance=UML2::Constraint_strategy)
-@settings(max_examples=50)
-def test_uml2::constraint_instantiation(instance):
-    assert isinstance(instance, UML2::Constraint)
-
-@given(instance=NamedElement_strategy)
-@settings(max_examples=50)
-def test_namedelement_instantiation(instance):
-    assert isinstance(instance, NamedElement)
-
-@given(instance=UML2::RedefinableElement_strategy)
-@settings(max_examples=50)
-def test_uml2::redefinableelement_instantiation(instance):
-    assert isinstance(instance, UML2::RedefinableElement)
-
-@given(instance=UML2::RedefinableElement_strategy)
-def test_uml2::redefinableelement_isLeaf_type(instance):
-    assert isinstance(instance.isLeaf, bool)
-
-
-@given(instance=UML2::RedefinableElement_strategy)
-def test_uml2::redefinableelement_isLeaf_setter(instance):
-    original = instance.isLeaf
-    instance.isLeaf = original
-    assert instance.isLeaf == original
-
-@given(instance=UML2::ParameterSet_strategy)
-@settings(max_examples=50)
-def test_uml2::parameterset_instantiation(instance):
-    assert isinstance(instance, UML2::ParameterSet)
-
-@given(instance=UML2::TypedElement_strategy)
-@settings(max_examples=50)
-def test_uml2::typedelement_instantiation(instance):
-    assert isinstance(instance, UML2::TypedElement)
-
-@given(instance=UML2::CollaborationOccurrence_strategy)
-@settings(max_examples=50)
-def test_uml2::collaborationoccurrence_instantiation(instance):
-    assert isinstance(instance, UML2::CollaborationOccurrence)
-
-@given(instance=UML2::PackageableElement_strategy)
-@settings(max_examples=50)
-def test_uml2::packageableelement_instantiation(instance):
-    assert isinstance(instance, UML2::PackageableElement)
-
-@given(instance=UML2::PackageableElement_strategy)
-def test_uml2::packageableelement_packageableElement_visibility_type(instance):
-    assert isinstance(instance.packageableElement_visibility, str)
-
-
-@given(instance=UML2::PackageableElement_strategy)
-def test_uml2::packageableelement_packageableElement_visibility_setter(instance):
-    original = instance.packageableElement_visibility
-    instance.packageableElement_visibility = original
-    assert instance.packageableElement_visibility == original
-
-@given(instance=UML2::DeployedArtifact_strategy)
-@settings(max_examples=50)
-def test_uml2::deployedartifact_instantiation(instance):
-    assert isinstance(instance, UML2::DeployedArtifact)
-
-@given(instance=UML2::DeploymentTarget_strategy)
-@settings(max_examples=50)
-def test_uml2::deploymenttarget_instantiation(instance):
-    assert isinstance(instance, UML2::DeploymentTarget)
-
-@given(instance=UML2::Namespace_strategy)
-@settings(max_examples=50)
-def test_uml2::namespace_instantiation(instance):
-    assert isinstance(instance, UML2::Namespace)
-
-@given(instance=UML2::Dependency_strategy)
-@settings(max_examples=50)
-def test_uml2::dependency_instantiation(instance):
-    assert isinstance(instance, UML2::Dependency)
-
-@given(instance=TemplateableElement_strategy)
-@settings(max_examples=50)
-def test_templateableelement_instantiation(instance):
-    assert isinstance(instance, TemplateableElement)
-
-@given(instance=UML2::StringExpression_strategy)
-@settings(max_examples=50)
-def test_uml2::stringexpression_instantiation(instance):
-    assert isinstance(instance, UML2::StringExpression)
-
-@given(instance=UML2::NamedElement_strategy)
-@settings(max_examples=50)
-def test_uml2::namedelement_instantiation(instance):
-    assert isinstance(instance, UML2::NamedElement)
-
-@given(instance=UML2::NamedElement_strategy)
-def test_uml2::namedelement_qualifiedName_type(instance):
-    assert isinstance(instance.qualifiedName, str)
-
-
-@given(instance=UML2::NamedElement_strategy)
-def test_uml2::namedelement_qualifiedName_setter(instance):
-    original = instance.qualifiedName
-    instance.qualifiedName = original
-    assert instance.qualifiedName == original
-
-@given(instance=UML2::NamedElement_strategy)
-def test_uml2::namedelement_visibility_type(instance):
-    assert isinstance(instance.visibility, str)
-
-
-@given(instance=UML2::NamedElement_strategy)
-def test_uml2::namedelement_visibility_setter(instance):
-    original = instance.visibility
-    instance.visibility = original
-    assert instance.visibility == original
-
-@given(instance=UML2::NamedElement_strategy)
-def test_uml2::namedelement_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=UML2::NamedElement_strategy)
-def test_uml2::namedelement_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
-
-@given(instance=UML2::ValueSpecification_strategy)
-@settings(max_examples=50)
-def test_uml2::valuespecification_instantiation(instance):
-    assert isinstance(instance, UML2::ValueSpecification)
-
-@given(instance=Element_strategy)
-@settings(max_examples=50)
-def test_element_instantiation(instance):
-    assert isinstance(instance, Element)
-
-@given(instance=UML2::QualifierValue_strategy)
-@settings(max_examples=50)
-def test_uml2::qualifiervalue_instantiation(instance):
-    assert isinstance(instance, UML2::QualifierValue)
-
-@given(instance=UML2::Slot_strategy)
-@settings(max_examples=50)
-def test_uml2::slot_instantiation(instance):
-    assert isinstance(instance, UML2::Slot)
-
-@given(instance=UML2::Relationship_strategy)
-@settings(max_examples=50)
-def test_uml2::relationship_instantiation(instance):
-    assert isinstance(instance, UML2::Relationship)
-
-@given(instance=UML2::MultiplicityElement_strategy)
-@settings(max_examples=50)
-def test_uml2::multiplicityelement_instantiation(instance):
-    assert isinstance(instance, UML2::MultiplicityElement)
-
-@given(instance=UML2::MultiplicityElement_strategy)
-def test_uml2::multiplicityelement_upper_type(instance):
-    assert isinstance(instance.upper, str)
-
-
-@given(instance=UML2::MultiplicityElement_strategy)
-def test_uml2::multiplicityelement_upper_setter(instance):
-    original = instance.upper
-    instance.upper = original
-    assert instance.upper == original
-
-@given(instance=UML2::MultiplicityElement_strategy)
-def test_uml2::multiplicityelement_lower_type(instance):
-    assert isinstance(instance.lower, int)
-
-
-@given(instance=UML2::MultiplicityElement_strategy)
-def test_uml2::multiplicityelement_lower_setter(instance):
-    original = instance.lower
-    instance.lower = original
-    assert instance.lower == original
-
-@given(instance=UML2::MultiplicityElement_strategy)
-def test_uml2::multiplicityelement_isOrdered_type(instance):
-    assert isinstance(instance.isOrdered, bool)
-
-
-@given(instance=UML2::MultiplicityElement_strategy)
-def test_uml2::multiplicityelement_isOrdered_setter(instance):
-    original = instance.isOrdered
-    instance.isOrdered = original
-    assert instance.isOrdered == original
-
-@given(instance=UML2::MultiplicityElement_strategy)
-def test_uml2::multiplicityelement_isUnique_type(instance):
-    assert isinstance(instance.isUnique, bool)
-
-
-@given(instance=UML2::MultiplicityElement_strategy)
-def test_uml2::multiplicityelement_isUnique_setter(instance):
-    original = instance.isUnique
-    instance.isUnique = original
-    assert instance.isUnique == original
-
-@given(instance=UML2::Comment_strategy)
-@settings(max_examples=50)
-def test_uml2::comment_instantiation(instance):
-    assert isinstance(instance, UML2::Comment)
-
-@given(instance=UML2::Comment_strategy)
-def test_uml2::comment_body_type(instance):
-    assert isinstance(instance.body, str)
-
-
-@given(instance=UML2::Comment_strategy)
-def test_uml2::comment_body_setter(instance):
-    original = instance.body
-    instance.body = original
-    assert instance.body == original
-
-@given(instance=UML2::Element_strategy)
-@settings(max_examples=50)
-def test_uml2::element_instantiation(instance):
-    assert isinstance(instance, UML2::Element)
-
-@given(instance=UML2::LinkEndData_strategy)
-@settings(max_examples=50)
-def test_uml2::linkenddata_instantiation(instance):
-    assert isinstance(instance, UML2::LinkEndData)
-
-@given(instance=WriteStructuralFeatureAction_strategy)
-@settings(max_examples=50)
-def test_writestructuralfeatureaction_instantiation(instance):
-    assert isinstance(instance, WriteStructuralFeatureAction)
-
-@given(instance=UML2::AddStructuralFeatureValueAction_strategy)
-@settings(max_examples=50)
-def test_uml2::addstructuralfeaturevalueaction_instantiation(instance):
-    assert isinstance(instance, UML2::AddStructuralFeatureValueAction)
-
-@given(instance=UML2::AddStructuralFeatureValueAction_strategy)
-def test_uml2::addstructuralfeaturevalueaction_isReplaceAll_type(instance):
-    assert isinstance(instance.isReplaceAll, bool)
-
-
-@given(instance=UML2::AddStructuralFeatureValueAction_strategy)
-def test_uml2::addstructuralfeaturevalueaction_isReplaceAll_setter(instance):
-    original = instance.isReplaceAll
-    instance.isReplaceAll = original
-    assert instance.isReplaceAll == original
-
-@given(instance=UML2::DurationObservationAction_strategy)
-@settings(max_examples=50)
-def test_uml2::durationobservationaction_instantiation(instance):
-    assert isinstance(instance, UML2::DurationObservationAction)
-
-@given(instance=UML2::TimeObservationAction_strategy)
-@settings(max_examples=50)
-def test_uml2::timeobservationaction_instantiation(instance):
-    assert isinstance(instance, UML2::TimeObservationAction)
-
-@given(instance=UML2::RemoveStructuralFeatureValueAction_strategy)
-@settings(max_examples=50)
-def test_uml2::removestructuralfeaturevalueaction_instantiation(instance):
-    assert isinstance(instance, UML2::RemoveStructuralFeatureValueAction)
-
-@given(instance=StructuralFeatureAction_strategy)
-@settings(max_examples=50)
-def test_structuralfeatureaction_instantiation(instance):
-    assert isinstance(instance, StructuralFeatureAction)
-
-@given(instance=UML2::ClearStructuralFeatureAction_strategy)
-@settings(max_examples=50)
-def test_uml2::clearstructuralfeatureaction_instantiation(instance):
-    assert isinstance(instance, UML2::ClearStructuralFeatureAction)
-
-@given(instance=UML2::WriteStructuralFeatureAction_strategy)
-@settings(max_examples=50)
-def test_uml2::writestructuralfeatureaction_instantiation(instance):
-    assert isinstance(instance, UML2::WriteStructuralFeatureAction)
-
-@given(instance=UML2::ReadStructuralFeatureAction_strategy)
-@settings(max_examples=50)
-def test_uml2::readstructuralfeatureaction_instantiation(instance):
-    assert isinstance(instance, UML2::ReadStructuralFeatureAction)
-
-@given(instance=State_strategy)
-@settings(max_examples=50)
-def test_state_instantiation(instance):
-    assert isinstance(instance, State)
-
-@given(instance=UML2::FinalState_strategy)
-@settings(max_examples=50)
-def test_uml2::finalstate_instantiation(instance):
-    assert isinstance(instance, UML2::FinalState)
-
-@given(instance=Vertex_strategy)
-@settings(max_examples=50)
-def test_vertex_instantiation(instance):
-    assert isinstance(instance, Vertex)
-
-@given(instance=UML2::ConnectionPointReference_strategy)
-@settings(max_examples=50)
-def test_uml2::connectionpointreference_instantiation(instance):
-    assert isinstance(instance, UML2::ConnectionPointReference)
-
-@given(instance=UML2::Transition_strategy)
-@settings(max_examples=50)
-def test_uml2::transition_instantiation(instance):
-    assert isinstance(instance, UML2::Transition)
-
-@given(instance=UML2::Transition_strategy)
-def test_uml2::transition_kind_type(instance):
-    assert isinstance(instance.kind, str)
-
-
-@given(instance=UML2::Transition_strategy)
-def test_uml2::transition_kind_setter(instance):
-    original = instance.kind
-    instance.kind = original
-    assert instance.kind == original
-
-@given(instance=UML2::Vertex_strategy)
-@settings(max_examples=50)
-def test_uml2::vertex_instantiation(instance):
-    assert isinstance(instance, UML2::Vertex)
-
-@given(instance=UML2::Pseudostate_strategy)
-@settings(max_examples=50)
-def test_uml2::pseudostate_instantiation(instance):
-    assert isinstance(instance, UML2::Pseudostate)
-
-@given(instance=UML2::Pseudostate_strategy)
-def test_uml2::pseudostate_kind_type(instance):
-    assert isinstance(instance.kind, str)
-
-
-@given(instance=UML2::Pseudostate_strategy)
-def test_uml2::pseudostate_kind_setter(instance):
-    original = instance.kind
-    instance.kind = original
-    assert instance.kind == original
-
-@given(instance=UML2::Region_strategy)
-@settings(max_examples=50)
-def test_uml2::region_instantiation(instance):
-    assert isinstance(instance, UML2::Region)
-
-@given(instance=Constraint_strategy)
-@settings(max_examples=50)
-def test_constraint_instantiation(instance):
-    assert isinstance(instance, Constraint)
-
-@given(instance=UML2::IntervalConstraint_strategy)
-@settings(max_examples=50)
-def test_uml2::intervalconstraint_instantiation(instance):
-    assert isinstance(instance, UML2::IntervalConstraint)
-
-@given(instance=UML2::InteractionConstraint_strategy)
-@settings(max_examples=50)
-def test_uml2::interactionconstraint_instantiation(instance):
-    assert isinstance(instance, UML2::InteractionConstraint)
-
-@given(instance=InteractionOccurrence_strategy)
-@settings(max_examples=50)
-def test_interactionoccurrence_instantiation(instance):
-    assert isinstance(instance, InteractionOccurrence)
-
-@given(instance=UML2::TemplateableClassifier_strategy)
-@settings(max_examples=50)
-def test_uml2::templateableclassifier_instantiation(instance):
-    assert isinstance(instance, UML2::TemplateableClassifier)
-
-@given(instance=TemplateSignature_strategy)
-@settings(max_examples=50)
-def test_templatesignature_instantiation(instance):
-    assert isinstance(instance, TemplateSignature)
-
-@given(instance=UML2::RedefinableTemplateSignature_strategy)
-@settings(max_examples=50)
-def test_uml2::redefinabletemplatesignature_instantiation(instance):
-    assert isinstance(instance, UML2::RedefinableTemplateSignature)
-
-@given(instance=UML2::ParameterableClassifier_strategy)
-@settings(max_examples=50)
-def test_uml2::parameterableclassifier_instantiation(instance):
-    assert isinstance(instance, UML2::ParameterableClassifier)
-
-@given(instance=TemplateParameter_strategy)
-@settings(max_examples=50)
-def test_templateparameter_instantiation(instance):
-    assert isinstance(instance, TemplateParameter)
-
-@given(instance=UML2::ClassifierTemplateParameter_strategy)
-@settings(max_examples=50)
-def test_uml2::classifiertemplateparameter_instantiation(instance):
-    assert isinstance(instance, UML2::ClassifierTemplateParameter)
-
-@given(instance=UML2::ClassifierTemplateParameter_strategy)
-def test_uml2::classifiertemplateparameter_allowSubstitutable_type(instance):
-    assert isinstance(instance.allowSubstitutable, bool)
-
-
-@given(instance=UML2::ClassifierTemplateParameter_strategy)
-def test_uml2::classifiertemplateparameter_allowSubstitutable_setter(instance):
-    original = instance.allowSubstitutable
-    instance.allowSubstitutable = original
-    assert instance.allowSubstitutable == original
-
-@given(instance=UML2::ConnectableElementTemplateParameter_strategy)
-@settings(max_examples=50)
-def test_uml2::connectableelementtemplateparameter_instantiation(instance):
-    assert isinstance(instance, UML2::ConnectableElementTemplateParameter)
-
-@given(instance=UML2::OperationTemplateParameter_strategy)
-@settings(max_examples=50)
-def test_uml2::operationtemplateparameter_instantiation(instance):
-    assert isinstance(instance, UML2::OperationTemplateParameter)
-
-@given(instance=UML2::TemplateParameterSubstitution_strategy)
-@settings(max_examples=50)
-def test_uml2::templateparametersubstitution_instantiation(instance):
-    assert isinstance(instance, UML2::TemplateParameterSubstitution)
-
-@given(instance=UML2::TemplateBinding_strategy)
-@settings(max_examples=50)
-def test_uml2::templatebinding_instantiation(instance):
-    assert isinstance(instance, UML2::TemplateBinding)
-
-@given(instance=UML2::ParameterableElement_strategy)
-@settings(max_examples=50)
-def test_uml2::parameterableelement_instantiation(instance):
-    assert isinstance(instance, UML2::ParameterableElement)
-
-@given(instance=UML2::TemplateableElement_strategy)
-@settings(max_examples=50)
-def test_uml2::templateableelement_instantiation(instance):
-    assert isinstance(instance, UML2::TemplateableElement)
-
-@given(instance=UML2::TemplateParameter_strategy)
-@settings(max_examples=50)
-def test_uml2::templateparameter_instantiation(instance):
-    assert isinstance(instance, UML2::TemplateParameter)
-
-@given(instance=UML2::TemplateSignature_strategy)
-@settings(max_examples=50)
-def test_uml2::templatesignature_instantiation(instance):
-    assert isinstance(instance, UML2::TemplateSignature)
-
-@given(instance=EventOccurrence_strategy)
-@settings(max_examples=50)
-def test_eventoccurrence_instantiation(instance):
-    assert isinstance(instance, EventOccurrence)
-
-@given(instance=UML2::Stop_strategy)
-@settings(max_examples=50)
-def test_uml2::stop_instantiation(instance):
-    assert isinstance(instance, UML2::Stop)
-
-@given(instance=MessageEnd_strategy)
-@settings(max_examples=50)
-def test_messageend_instantiation(instance):
-    assert isinstance(instance, MessageEnd)
-
-@given(instance=UML2::MessageEnd_strategy)
-@settings(max_examples=50)
-def test_uml2::messageend_instantiation(instance):
-    assert isinstance(instance, UML2::MessageEnd)
-
-@given(instance=UML2::PartDecomposition_strategy)
-@settings(max_examples=50)
-def test_uml2::partdecomposition_instantiation(instance):
-    assert isinstance(instance, UML2::PartDecomposition)
-
-@given(instance=UML2::GeneralOrdering_strategy)
-@settings(max_examples=50)
-def test_uml2::generalordering_instantiation(instance):
-    assert isinstance(instance, UML2::GeneralOrdering)
-
-@given(instance=UML2::Gate_strategy)
-@settings(max_examples=50)
-def test_uml2::gate_instantiation(instance):
-    assert isinstance(instance, UML2::Gate)
-
-@given(instance=UML2::InteractionFragment_strategy)
-@settings(max_examples=50)
-def test_uml2::interactionfragment_instantiation(instance):
-    assert isinstance(instance, UML2::InteractionFragment)
-
-@given(instance=UML2::Message_strategy)
-@settings(max_examples=50)
-def test_uml2::message_instantiation(instance):
-    assert isinstance(instance, UML2::Message)
-
-@given(instance=UML2::Message_strategy)
-def test_uml2::message_messageSort_type(instance):
-    assert isinstance(instance.messageSort, str)
-
-
-@given(instance=UML2::Message_strategy)
-def test_uml2::message_messageSort_setter(instance):
-    original = instance.messageSort
-    instance.messageSort = original
-    assert instance.messageSort == original
-
-@given(instance=UML2::Message_strategy)
-def test_uml2::message_messageKind_type(instance):
-    assert isinstance(instance.messageKind, str)
-
-
-@given(instance=UML2::Message_strategy)
-def test_uml2::message_messageKind_setter(instance):
-    original = instance.messageKind
-    instance.messageKind = original
-    assert instance.messageKind == original
-
-@given(instance=UML2::Lifeline_strategy)
-@settings(max_examples=50)
-def test_uml2::lifeline_instantiation(instance):
-    assert isinstance(instance, UML2::Lifeline)
-
-@given(instance=InteractionFragment_strategy)
-@settings(max_examples=50)
-def test_interactionfragment_instantiation(instance):
-    assert isinstance(instance, InteractionFragment)
-
-@given(instance=UML2::InteractionOperand_strategy)
-@settings(max_examples=50)
-def test_uml2::interactionoperand_instantiation(instance):
-    assert isinstance(instance, UML2::InteractionOperand)
-
-@given(instance=UML2::ExecutionOccurrence_strategy)
-@settings(max_examples=50)
-def test_uml2::executionoccurrence_instantiation(instance):
-    assert isinstance(instance, UML2::ExecutionOccurrence)
-
-@given(instance=UML2::StateInvariant_strategy)
-@settings(max_examples=50)
-def test_uml2::stateinvariant_instantiation(instance):
-    assert isinstance(instance, UML2::StateInvariant)
-
-@given(instance=UML2::CombinedFragment_strategy)
-@settings(max_examples=50)
-def test_uml2::combinedfragment_instantiation(instance):
-    assert isinstance(instance, UML2::CombinedFragment)
-
-@given(instance=UML2::CombinedFragment_strategy)
-def test_uml2::combinedfragment_interactionOperator_type(instance):
-    assert isinstance(instance.interactionOperator, str)
-
-
-@given(instance=UML2::CombinedFragment_strategy)
-def test_uml2::combinedfragment_interactionOperator_setter(instance):
-    original = instance.interactionOperator
-    instance.interactionOperator = original
-    assert instance.interactionOperator == original
-
-@given(instance=UML2::Continuation_strategy)
-@settings(max_examples=50)
-def test_uml2::continuation_instantiation(instance):
-    assert isinstance(instance, UML2::Continuation)
-
-@given(instance=UML2::Continuation_strategy)
-def test_uml2::continuation_setting_type(instance):
-    assert isinstance(instance.setting, bool)
-
-
-@given(instance=UML2::Continuation_strategy)
-def test_uml2::continuation_setting_setter(instance):
-    original = instance.setting
-    instance.setting = original
-    assert instance.setting == original
-
-@given(instance=UML2::InteractionOccurrence_strategy)
-@settings(max_examples=50)
-def test_uml2::interactionoccurrence_instantiation(instance):
-    assert isinstance(instance, UML2::InteractionOccurrence)
-
-@given(instance=UML2::EventOccurrence_strategy)
-@settings(max_examples=50)
-def test_uml2::eventoccurrence_instantiation(instance):
-    assert isinstance(instance, UML2::EventOccurrence)
-
-@given(instance=StructuredActivityNode_strategy)
-@settings(max_examples=50)
-def test_structuredactivitynode_instantiation(instance):
-    assert isinstance(instance, StructuredActivityNode)
-
-@given(instance=UML2::ExpansionRegion_strategy)
-@settings(max_examples=50)
-def test_uml2::expansionregion_instantiation(instance):
-    assert isinstance(instance, UML2::ExpansionRegion)
-
-@given(instance=UML2::ExpansionRegion_strategy)
-def test_uml2::expansionregion_mode_type(instance):
-    assert isinstance(instance.mode, str)
-
-
-@given(instance=UML2::ExpansionRegion_strategy)
-def test_uml2::expansionregion_mode_setter(instance):
-    original = instance.mode
-    instance.mode = original
-    assert instance.mode == original
-
-@given(instance=UML2::LoopNode_strategy)
-@settings(max_examples=50)
-def test_uml2::loopnode_instantiation(instance):
-    assert isinstance(instance, UML2::LoopNode)
-
-@given(instance=UML2::LoopNode_strategy)
-def test_uml2::loopnode_isTestedFirst_type(instance):
-    assert isinstance(instance.isTestedFirst, bool)
-
-
-@given(instance=UML2::LoopNode_strategy)
-def test_uml2::loopnode_isTestedFirst_setter(instance):
-    original = instance.isTestedFirst
-    instance.isTestedFirst = original
-    assert instance.isTestedFirst == original
-
-@given(instance=UML2::Clause_strategy)
-@settings(max_examples=50)
-def test_uml2::clause_instantiation(instance):
-    assert isinstance(instance, UML2::Clause)
-
-@given(instance=UML2::ConditionalNode_strategy)
-@settings(max_examples=50)
-def test_uml2::conditionalnode_instantiation(instance):
-    assert isinstance(instance, UML2::ConditionalNode)
-
-@given(instance=UML2::ConditionalNode_strategy)
-def test_uml2::conditionalnode_isDeterminate_type(instance):
-    assert isinstance(instance.isDeterminate, bool)
-
-
-@given(instance=UML2::ConditionalNode_strategy)
-def test_uml2::conditionalnode_isDeterminate_setter(instance):
-    original = instance.isDeterminate
-    instance.isDeterminate = original
-    assert instance.isDeterminate == original
-
-@given(instance=UML2::ConditionalNode_strategy)
-def test_uml2::conditionalnode_isAssured_type(instance):
-    assert isinstance(instance.isAssured, bool)
-
-
-@given(instance=UML2::ConditionalNode_strategy)
-def test_uml2::conditionalnode_isAssured_setter(instance):
-    original = instance.isAssured
-    instance.isAssured = original
-    assert instance.isAssured == original
-
-@given(instance=ActivityGroup_strategy)
-@settings(max_examples=50)
-def test_activitygroup_instantiation(instance):
-    assert isinstance(instance, ActivityGroup)
-
-@given(instance=Action_strategy)
-@settings(max_examples=50)
-def test_action_instantiation(instance):
-    assert isinstance(instance, Action)
-
-@given(instance=UML2::AcceptEventAction_strategy)
-@settings(max_examples=50)
-def test_uml2::accepteventaction_instantiation(instance):
-    assert isinstance(instance, UML2::AcceptEventAction)
-
-@given(instance=UML2::DestroyObjectAction_strategy)
-@settings(max_examples=50)
-def test_uml2::destroyobjectaction_instantiation(instance):
-    assert isinstance(instance, UML2::DestroyObjectAction)
-
-@given(instance=UML2::DestroyObjectAction_strategy)
-def test_uml2::destroyobjectaction_isDestroyOwnedObjects_type(instance):
-    assert isinstance(instance.isDestroyOwnedObjects, bool)
-
-
-@given(instance=UML2::DestroyObjectAction_strategy)
-def test_uml2::destroyobjectaction_isDestroyOwnedObjects_setter(instance):
-    original = instance.isDestroyOwnedObjects
-    instance.isDestroyOwnedObjects = original
-    assert instance.isDestroyOwnedObjects == original
-
-@given(instance=UML2::DestroyObjectAction_strategy)
-def test_uml2::destroyobjectaction_isDestroyLinks_type(instance):
-    assert isinstance(instance.isDestroyLinks, bool)
-
-
-@given(instance=UML2::DestroyObjectAction_strategy)
-def test_uml2::destroyobjectaction_isDestroyLinks_setter(instance):
-    original = instance.isDestroyLinks
-    instance.isDestroyLinks = original
-    assert instance.isDestroyLinks == original
-
-@given(instance=UML2::TestIdentityAction_strategy)
-@settings(max_examples=50)
-def test_uml2::testidentityaction_instantiation(instance):
-    assert isinstance(instance, UML2::TestIdentityAction)
-
-@given(instance=UML2::ReadLinkObjectEndAction_strategy)
-@settings(max_examples=50)
-def test_uml2::readlinkobjectendaction_instantiation(instance):
-    assert isinstance(instance, UML2::ReadLinkObjectEndAction)
-
-@given(instance=UML2::StructuralFeatureAction_strategy)
-@settings(max_examples=50)
-def test_uml2::structuralfeatureaction_instantiation(instance):
-    assert isinstance(instance, UML2::StructuralFeatureAction)
-
-@given(instance=UML2::ReadSelfAction_strategy)
-@settings(max_examples=50)
-def test_uml2::readselfaction_instantiation(instance):
-    assert isinstance(instance, UML2::ReadSelfAction)
-
-@given(instance=UML2::ReadLinkObjectEndQualifierAction_strategy)
-@settings(max_examples=50)
-def test_uml2::readlinkobjectendqualifieraction_instantiation(instance):
-    assert isinstance(instance, UML2::ReadLinkObjectEndQualifierAction)
-
-@given(instance=UML2::RaiseExceptionAction_strategy)
-@settings(max_examples=50)
-def test_uml2::raiseexceptionaction_instantiation(instance):
-    assert isinstance(instance, UML2::RaiseExceptionAction)
-
-@given(instance=UML2::CreateObjectAction_strategy)
-@settings(max_examples=50)
-def test_uml2::createobjectaction_instantiation(instance):
-    assert isinstance(instance, UML2::CreateObjectAction)
-
-@given(instance=UML2::ApplyFunctionAction_strategy)
-@settings(max_examples=50)
-def test_uml2::applyfunctionaction_instantiation(instance):
-    assert isinstance(instance, UML2::ApplyFunctionAction)
-
-@given(instance=UML2::VariableAction_strategy)
-@settings(max_examples=50)
-def test_uml2::variableaction_instantiation(instance):
-    assert isinstance(instance, UML2::VariableAction)
-
-@given(instance=UML2::ReplyAction_strategy)
-@settings(max_examples=50)
-def test_uml2::replyaction_instantiation(instance):
-    assert isinstance(instance, UML2::ReplyAction)
-
-@given(instance=UML2::ReadExtentAction_strategy)
-@settings(max_examples=50)
-def test_uml2::readextentaction_instantiation(instance):
-    assert isinstance(instance, UML2::ReadExtentAction)
-
-@given(instance=UML2::LinkAction_strategy)
-@settings(max_examples=50)
-def test_uml2::linkaction_instantiation(instance):
-    assert isinstance(instance, UML2::LinkAction)
-
-@given(instance=UML2::ClearAssociationAction_strategy)
-@settings(max_examples=50)
-def test_uml2::clearassociationaction_instantiation(instance):
-    assert isinstance(instance, UML2::ClearAssociationAction)
-
-@given(instance=UML2::ReclassifyObjectAction_strategy)
-@settings(max_examples=50)
-def test_uml2::reclassifyobjectaction_instantiation(instance):
-    assert isinstance(instance, UML2::ReclassifyObjectAction)
-
-@given(instance=UML2::ReclassifyObjectAction_strategy)
-def test_uml2::reclassifyobjectaction_isReplaceAll_type(instance):
-    assert isinstance(instance.isReplaceAll, bool)
-
-
-@given(instance=UML2::ReclassifyObjectAction_strategy)
-def test_uml2::reclassifyobjectaction_isReplaceAll_setter(instance):
-    original = instance.isReplaceAll
-    instance.isReplaceAll = original
-    assert instance.isReplaceAll == original
-
-@given(instance=UML2::InvocationAction_strategy)
-@settings(max_examples=50)
-def test_uml2::invocationaction_instantiation(instance):
-    assert isinstance(instance, UML2::InvocationAction)
-
-@given(instance=UML2::StartOwnedBehaviorAction_strategy)
-@settings(max_examples=50)
-def test_uml2::startownedbehavioraction_instantiation(instance):
-    assert isinstance(instance, UML2::StartOwnedBehaviorAction)
-
-@given(instance=UML2::ReadIsClassifiedObjectAction_strategy)
-@settings(max_examples=50)
-def test_uml2::readisclassifiedobjectaction_instantiation(instance):
-    assert isinstance(instance, UML2::ReadIsClassifiedObjectAction)
-
-@given(instance=UML2::ReadIsClassifiedObjectAction_strategy)
-def test_uml2::readisclassifiedobjectaction_isDirect_type(instance):
-    assert isinstance(instance.isDirect, bool)
-
-
-@given(instance=UML2::ReadIsClassifiedObjectAction_strategy)
-def test_uml2::readisclassifiedobjectaction_isDirect_setter(instance):
-    original = instance.isDirect
-    instance.isDirect = original
-    assert instance.isDirect == original
-
-@given(instance=UML2::Variable_strategy)
-@settings(max_examples=50)
-def test_uml2::variable_instantiation(instance):
-    assert isinstance(instance, UML2::Variable)
-
-@given(instance=UML2::Signal_strategy)
-@settings(max_examples=50)
-def test_uml2::signal_instantiation(instance):
-    assert isinstance(instance, UML2::Signal)
-
-@given(instance=Trigger_strategy)
-@settings(max_examples=50)
-def test_trigger_instantiation(instance):
-    assert isinstance(instance, Trigger)
-
-@given(instance=UML2::TimeTrigger_strategy)
-@settings(max_examples=50)
-def test_uml2::timetrigger_instantiation(instance):
-    assert isinstance(instance, UML2::TimeTrigger)
-
-@given(instance=UML2::TimeTrigger_strategy)
-def test_uml2::timetrigger_isRelative_type(instance):
-    assert isinstance(instance.isRelative, bool)
-
-
-@given(instance=UML2::TimeTrigger_strategy)
-def test_uml2::timetrigger_isRelative_setter(instance):
-    original = instance.isRelative
-    instance.isRelative = original
-    assert instance.isRelative == original
-
-@given(instance=UML2::ChangeTrigger_strategy)
-@settings(max_examples=50)
-def test_uml2::changetrigger_instantiation(instance):
-    assert isinstance(instance, UML2::ChangeTrigger)
-
-@given(instance=UML2::MessageTrigger_strategy)
-@settings(max_examples=50)
-def test_uml2::messagetrigger_instantiation(instance):
-    assert isinstance(instance, UML2::MessageTrigger)
-
-@given(instance=MessageTrigger_strategy)
-@settings(max_examples=50)
-def test_messagetrigger_instantiation(instance):
-    assert isinstance(instance, MessageTrigger)
-
-@given(instance=UML2::AnyTrigger_strategy)
-@settings(max_examples=50)
-def test_uml2::anytrigger_instantiation(instance):
-    assert isinstance(instance, UML2::AnyTrigger)
-
-@given(instance=UML2::SignalTrigger_strategy)
-@settings(max_examples=50)
-def test_uml2::signaltrigger_instantiation(instance):
-    assert isinstance(instance, UML2::SignalTrigger)
-
-@given(instance=UML2::CallTrigger_strategy)
-@settings(max_examples=50)
-def test_uml2::calltrigger_instantiation(instance):
-    assert isinstance(instance, UML2::CallTrigger)
-
-@given(instance=StructuredClassifier_strategy)
-@settings(max_examples=50)
-def test_structuredclassifier_instantiation(instance):
-    assert isinstance(instance, StructuredClassifier)
-
-@given(instance=UML2::EncapsulatedClassifier_strategy)
-@settings(max_examples=50)
-def test_uml2::encapsulatedclassifier_instantiation(instance):
-    assert isinstance(instance, UML2::EncapsulatedClassifier)
-
-@given(instance=UML2::Collaboration_strategy)
-@settings(max_examples=50)
-def test_uml2::collaboration_instantiation(instance):
-    assert isinstance(instance, UML2::Collaboration)
-
-@given(instance=UML2::Include_strategy)
-@settings(max_examples=50)
-def test_uml2::include_instantiation(instance):
-    assert isinstance(instance, UML2::Include)
-
-@given(instance=UML2::ExtensionPoint_strategy)
-@settings(max_examples=50)
-def test_uml2::extensionpoint_instantiation(instance):
-    assert isinstance(instance, UML2::ExtensionPoint)
-
-@given(instance=UML2::Extend_strategy)
-@settings(max_examples=50)
-def test_uml2::extend_instantiation(instance):
-    assert isinstance(instance, UML2::Extend)
-
-@given(instance=UML2::Actor_strategy)
-@settings(max_examples=50)
-def test_uml2::actor_instantiation(instance):
-    assert isinstance(instance, UML2::Actor)
-
-@given(instance=UML2::Artifact_strategy)
-@settings(max_examples=50)
-def test_uml2::artifact_instantiation(instance):
-    assert isinstance(instance, UML2::Artifact)
-
-@given(instance=UML2::Artifact_strategy)
-def test_uml2::artifact_fileName_type(instance):
-    assert isinstance(instance.fileName, str)
-
-
-@given(instance=UML2::Artifact_strategy)
-def test_uml2::artifact_fileName_setter(instance):
-    original = instance.fileName
-    instance.fileName = original
-    assert instance.fileName == original
-
-@given(instance=UML2::ProtocolStateMachine_strategy)
-@settings(max_examples=50)
-def test_uml2::protocolstatemachine_instantiation(instance):
-    assert isinstance(instance, UML2::ProtocolStateMachine)
-
-@given(instance=UML2::Interface_strategy)
-@settings(max_examples=50)
-def test_uml2::interface_instantiation(instance):
-    assert isinstance(instance, UML2::Interface)
-
-@given(instance=InputPin_strategy)
-@settings(max_examples=50)
-def test_inputpin_instantiation(instance):
-    assert isinstance(instance, InputPin)
-
-@given(instance=UML2::ValuePin_strategy)
-@settings(max_examples=50)
-def test_uml2::valuepin_instantiation(instance):
-    assert isinstance(instance, UML2::ValuePin)
-
-@given(instance=UML2::State_strategy)
-@settings(max_examples=50)
-def test_uml2::state_instantiation(instance):
-    assert isinstance(instance, UML2::State)
-
-@given(instance=UML2::State_strategy)
-def test_uml2::state_isSimple_type(instance):
-    assert isinstance(instance.isSimple, bool)
-
-
-@given(instance=UML2::State_strategy)
-def test_uml2::state_isSimple_setter(instance):
-    original = instance.isSimple
-    instance.isSimple = original
-    assert instance.isSimple == original
-
-@given(instance=UML2::State_strategy)
-def test_uml2::state_isSubmachineState_type(instance):
-    assert isinstance(instance.isSubmachineState, bool)
-
-
-@given(instance=UML2::State_strategy)
-def test_uml2::state_isSubmachineState_setter(instance):
-    original = instance.isSubmachineState
-    instance.isSubmachineState = original
-    assert instance.isSubmachineState == original
-
-@given(instance=UML2::State_strategy)
-def test_uml2::state_isOrthogonal_type(instance):
-    assert isinstance(instance.isOrthogonal, bool)
-
-
-@given(instance=UML2::State_strategy)
-def test_uml2::state_isOrthogonal_setter(instance):
-    original = instance.isOrthogonal
-    instance.isOrthogonal = original
-    assert instance.isOrthogonal == original
-
-@given(instance=UML2::State_strategy)
-def test_uml2::state_isComposite_type(instance):
-    assert isinstance(instance.isComposite, bool)
-
-
-@given(instance=UML2::State_strategy)
-def test_uml2::state_isComposite_setter(instance):
-    original = instance.isComposite
-    instance.isComposite = original
-    assert instance.isComposite == original
-
-@given(instance=ObjectNode_strategy)
-@settings(max_examples=50)
-def test_objectnode_instantiation(instance):
-    assert isinstance(instance, ObjectNode)
-
-@given(instance=UML2::ExpansionNode_strategy)
-@settings(max_examples=50)
-def test_uml2::expansionnode_instantiation(instance):
-    assert isinstance(instance, UML2::ExpansionNode)
-
-@given(instance=UML2::ActivityParameterNode_strategy)
-@settings(max_examples=50)
-def test_uml2::activityparameternode_instantiation(instance):
-    assert isinstance(instance, UML2::ActivityParameterNode)
-
-@given(instance=UML2::CentralBufferNode_strategy)
-@settings(max_examples=50)
-def test_uml2::centralbuffernode_instantiation(instance):
-    assert isinstance(instance, UML2::CentralBufferNode)
-
-@given(instance=UML2::Pin_strategy)
-@settings(max_examples=50)
-def test_uml2::pin_instantiation(instance):
-    assert isinstance(instance, UML2::Pin)
-
-@given(instance=Pin_strategy)
-@settings(max_examples=50)
-def test_pin_instantiation(instance):
-    assert isinstance(instance, Pin)
-
-@given(instance=UML2::ExceptionHandler_strategy)
-@settings(max_examples=50)
-def test_uml2::exceptionhandler_instantiation(instance):
-    assert isinstance(instance, UML2::ExceptionHandler)
-
-@given(instance=FinalNode_strategy)
-@settings(max_examples=50)
-def test_finalnode_instantiation(instance):
-    assert isinstance(instance, FinalNode)
-
-@given(instance=UML2::FlowFinalNode_strategy)
-@settings(max_examples=50)
-def test_uml2::flowfinalnode_instantiation(instance):
-    assert isinstance(instance, UML2::FlowFinalNode)
-
-@given(instance=UML2::ActivityFinalNode_strategy)
-@settings(max_examples=50)
-def test_uml2::activityfinalnode_instantiation(instance):
-    assert isinstance(instance, UML2::ActivityFinalNode)
-
-@given(instance=ControlNode_strategy)
-@settings(max_examples=50)
-def test_controlnode_instantiation(instance):
-    assert isinstance(instance, ControlNode)
-
-@given(instance=UML2::MergeNode_strategy)
-@settings(max_examples=50)
-def test_uml2::mergenode_instantiation(instance):
-    assert isinstance(instance, UML2::MergeNode)
-
-@given(instance=UML2::JoinNode_strategy)
-@settings(max_examples=50)
-def test_uml2::joinnode_instantiation(instance):
-    assert isinstance(instance, UML2::JoinNode)
-
-@given(instance=UML2::JoinNode_strategy)
-def test_uml2::joinnode_isCombineDuplicate_type(instance):
-    assert isinstance(instance.isCombineDuplicate, bool)
-
-
-@given(instance=UML2::JoinNode_strategy)
-def test_uml2::joinnode_isCombineDuplicate_setter(instance):
-    original = instance.isCombineDuplicate
-    instance.isCombineDuplicate = original
-    assert instance.isCombineDuplicate == original
-
-@given(instance=UML2::ForkNode_strategy)
-@settings(max_examples=50)
-def test_uml2::forknode_instantiation(instance):
-    assert isinstance(instance, UML2::ForkNode)
-
-@given(instance=UML2::FinalNode_strategy)
-@settings(max_examples=50)
-def test_uml2::finalnode_instantiation(instance):
-    assert isinstance(instance, UML2::FinalNode)
-
-@given(instance=UML2::DecisionNode_strategy)
-@settings(max_examples=50)
-def test_uml2::decisionnode_instantiation(instance):
-    assert isinstance(instance, UML2::DecisionNode)
-
-@given(instance=UML2::InitialNode_strategy)
-@settings(max_examples=50)
-def test_uml2::initialnode_instantiation(instance):
-    assert isinstance(instance, UML2::InitialNode)
-
-@given(instance=ActivityEdge_strategy)
-@settings(max_examples=50)
-def test_activityedge_instantiation(instance):
-    assert isinstance(instance, ActivityEdge)
-
-@given(instance=UML2::ObjectFlow_strategy)
-@settings(max_examples=50)
-def test_uml2::objectflow_instantiation(instance):
-    assert isinstance(instance, UML2::ObjectFlow)
-
-@given(instance=UML2::ObjectFlow_strategy)
-def test_uml2::objectflow_isMultireceive_type(instance):
-    assert isinstance(instance.isMultireceive, bool)
-
-
-@given(instance=UML2::ObjectFlow_strategy)
-def test_uml2::objectflow_isMultireceive_setter(instance):
-    original = instance.isMultireceive
-    instance.isMultireceive = original
-    assert instance.isMultireceive == original
-
-@given(instance=UML2::ObjectFlow_strategy)
-def test_uml2::objectflow_isMulticast_type(instance):
-    assert isinstance(instance.isMulticast, bool)
-
-
-@given(instance=UML2::ObjectFlow_strategy)
-def test_uml2::objectflow_isMulticast_setter(instance):
-    original = instance.isMulticast
-    instance.isMulticast = original
-    assert instance.isMulticast == original
-
-@given(instance=UML2::ControlFlow_strategy)
-@settings(max_examples=50)
-def test_uml2::controlflow_instantiation(instance):
-    assert isinstance(instance, UML2::ControlFlow)
-
-@given(instance=UML2::InputPin_strategy)
-@settings(max_examples=50)
-def test_uml2::inputpin_instantiation(instance):
-    assert isinstance(instance, UML2::InputPin)
-
-@given(instance=UML2::OutputPin_strategy)
-@settings(max_examples=50)
-def test_uml2::outputpin_instantiation(instance):
-    assert isinstance(instance, UML2::OutputPin)
-
-@given(instance=ActivityNode_strategy)
-@settings(max_examples=50)
-def test_activitynode_instantiation(instance):
-    assert isinstance(instance, ActivityNode)
-
-@given(instance=UML2::ExecutableNode_strategy)
-@settings(max_examples=50)
-def test_uml2::executablenode_instantiation(instance):
-    assert isinstance(instance, UML2::ExecutableNode)
-
-@given(instance=UML2::ControlNode_strategy)
-@settings(max_examples=50)
-def test_uml2::controlnode_instantiation(instance):
-    assert isinstance(instance, UML2::ControlNode)
-
-@given(instance=UML2::ObjectNode_strategy)
-@settings(max_examples=50)
-def test_uml2::objectnode_instantiation(instance):
-    assert isinstance(instance, UML2::ObjectNode)
-
-@given(instance=UML2::ObjectNode_strategy)
-def test_uml2::objectnode_ordering_type(instance):
-    assert isinstance(instance.ordering, str)
-
-
-@given(instance=UML2::ObjectNode_strategy)
-def test_uml2::objectnode_ordering_setter(instance):
-    original = instance.ordering
-    instance.ordering = original
-    assert instance.ordering == original
-
-@given(instance=ExecutableNode_strategy)
-@settings(max_examples=50)
-def test_executablenode_instantiation(instance):
-    assert isinstance(instance, ExecutableNode)
-
-@given(instance=UML2::InterruptibleActivityRegion_strategy)
-@settings(max_examples=50)
-def test_uml2::interruptibleactivityregion_instantiation(instance):
-    assert isinstance(instance, UML2::InterruptibleActivityRegion)
-
-@given(instance=UML2::ActivityPartition_strategy)
-@settings(max_examples=50)
-def test_uml2::activitypartition_instantiation(instance):
-    assert isinstance(instance, UML2::ActivityPartition)
-
-@given(instance=UML2::ActivityPartition_strategy)
-def test_uml2::activitypartition_isExternal_type(instance):
-    assert isinstance(instance.isExternal, bool)
-
-
-@given(instance=UML2::ActivityPartition_strategy)
-def test_uml2::activitypartition_isExternal_setter(instance):
-    original = instance.isExternal
-    instance.isExternal = original
-    assert instance.isExternal == original
-
-@given(instance=UML2::ActivityPartition_strategy)
-def test_uml2::activitypartition_isDimension_type(instance):
-    assert isinstance(instance.isDimension, bool)
-
-
-@given(instance=UML2::ActivityPartition_strategy)
-def test_uml2::activitypartition_isDimension_setter(instance):
-    original = instance.isDimension
-    instance.isDimension = original
-    assert instance.isDimension == original
-
-@given(instance=UML2::StructuredClassifier_strategy)
-@settings(max_examples=50)
-def test_uml2::structuredclassifier_instantiation(instance):
-    assert isinstance(instance, UML2::StructuredClassifier)
-
-@given(instance=UML2::Connector_strategy)
-@settings(max_examples=50)
-def test_uml2::connector_instantiation(instance):
-    assert isinstance(instance, UML2::Connector)
-
-@given(instance=UML2::Connector_strategy)
-def test_uml2::connector_kind_type(instance):
-    assert isinstance(instance.kind, str)
-
-
-@given(instance=UML2::Connector_strategy)
-def test_uml2::connector_kind_setter(instance):
-    original = instance.kind
-    instance.kind = original
-    assert instance.kind == original
-
-@given(instance=UML2::ConnectableElement_strategy)
-@settings(max_examples=50)
-def test_uml2::connectableelement_instantiation(instance):
-    assert isinstance(instance, UML2::ConnectableElement)
-
-@given(instance=UML2::ConnectorEnd_strategy)
-@settings(max_examples=50)
-def test_uml2::connectorend_instantiation(instance):
-    assert isinstance(instance, UML2::ConnectorEnd)
-
-@given(instance=UML2::Model_strategy)
-@settings(max_examples=50)
-def test_uml2::model_instantiation(instance):
-    assert isinstance(instance, UML2::Model)
-
-@given(instance=UML2::Model_strategy)
-def test_uml2::model_viewpoint_type(instance):
-    assert isinstance(instance.viewpoint, str)
-
-
-@given(instance=UML2::Model_strategy)
-def test_uml2::model_viewpoint_setter(instance):
-    original = instance.viewpoint
-    instance.viewpoint = original
-    assert instance.viewpoint == original
-
-@given(instance=Abstraction_strategy)
-@settings(max_examples=50)
-def test_abstraction_instantiation(instance):
-    assert isinstance(instance, Abstraction)
-
-@given(instance=UML2::Manifestation_strategy)
-@settings(max_examples=50)
-def test_uml2::manifestation_instantiation(instance):
-    assert isinstance(instance, UML2::Manifestation)
-
-@given(instance=UML2::Realization_strategy)
-@settings(max_examples=50)
-def test_uml2::realization_instantiation(instance):
-    assert isinstance(instance, UML2::Realization)
-
-@given(instance=UML2::InformationFlow_strategy)
-@settings(max_examples=50)
-def test_uml2::informationflow_instantiation(instance):
-    assert isinstance(instance, UML2::InformationFlow)
-
-@given(instance=UML2::InformationItem_strategy)
-@settings(max_examples=50)
-def test_uml2::informationitem_instantiation(instance):
-    assert isinstance(instance, UML2::InformationItem)
-
-@given(instance=Realization_strategy)
-@settings(max_examples=50)
-def test_realization_instantiation(instance):
-    assert isinstance(instance, Realization)
-
-@given(instance=UML2::Substitution_strategy)
-@settings(max_examples=50)
-def test_uml2::substitution_instantiation(instance):
-    assert isinstance(instance, UML2::Substitution)
-
-@given(instance=UML2::Component_strategy)
-@settings(max_examples=50)
-def test_uml2::component_instantiation(instance):
-    assert isinstance(instance, UML2::Component)
-
-@given(instance=UML2::Component_strategy)
-def test_uml2::component_isIndirectlyInstantiated_type(instance):
-    assert isinstance(instance.isIndirectlyInstantiated, bool)
-
-
-@given(instance=UML2::Component_strategy)
-def test_uml2::component_isIndirectlyInstantiated_setter(instance):
-    original = instance.isIndirectlyInstantiated
-    instance.isIndirectlyInstantiated = original
-    assert instance.isIndirectlyInstantiated == original
-
-@given(instance=Dependency_strategy)
-@settings(max_examples=50)
-def test_dependency_instantiation(instance):
-    assert isinstance(instance, Dependency)
-
-@given(instance=UML2::Usage_strategy)
-@settings(max_examples=50)
-def test_uml2::usage_instantiation(instance):
-    assert isinstance(instance, UML2::Usage)
-
-@given(instance=UML2::Deployment_strategy)
-@settings(max_examples=50)
-def test_uml2::deployment_instantiation(instance):
-    assert isinstance(instance, UML2::Deployment)
-
-@given(instance=UML2::Abstraction_strategy)
-@settings(max_examples=50)
-def test_uml2::abstraction_instantiation(instance):
-    assert isinstance(instance, UML2::Abstraction)
-
-@given(instance=UML2::Permission_strategy)
-@settings(max_examples=50)
-def test_uml2::permission_instantiation(instance):
-    assert isinstance(instance, UML2::Permission)
-
-@given(instance=UML2::StructuredActivityNode_strategy)
-@settings(max_examples=50)
-def test_uml2::structuredactivitynode_instantiation(instance):
-    assert isinstance(instance, UML2::StructuredActivityNode)
-
-@given(instance=UML2::StructuredActivityNode_strategy)
-def test_uml2::structuredactivitynode_mustIsolate_type(instance):
-    assert isinstance(instance.mustIsolate, bool)
-
-
-@given(instance=UML2::StructuredActivityNode_strategy)
-def test_uml2::structuredactivitynode_mustIsolate_setter(instance):
-    original = instance.mustIsolate
-    instance.mustIsolate = original
-    assert instance.mustIsolate == original
-
-@given(instance=UML2::Action_strategy)
-@settings(max_examples=50)
-def test_uml2::action_instantiation(instance):
-    assert isinstance(instance, UML2::Action)
-
-@given(instance=UML2::Action_strategy)
-def test_uml2::action_effect_type(instance):
-    assert isinstance(instance.effect, str)
-
-
-@given(instance=UML2::Action_strategy)
-def test_uml2::action_effect_setter(instance):
-    original = instance.effect
-    instance.effect = original
-    assert instance.effect == original
-
-@given(instance=UML2::ActivityNode_strategy)
-@settings(max_examples=50)
-def test_uml2::activitynode_instantiation(instance):
-    assert isinstance(instance, UML2::ActivityNode)
-
-@given(instance=UML2::ActivityGroup_strategy)
-@settings(max_examples=50)
-def test_uml2::activitygroup_instantiation(instance):
-    assert isinstance(instance, UML2::ActivityGroup)
-
-@given(instance=UML2::ActivityEdge_strategy)
-@settings(max_examples=50)
-def test_uml2::activityedge_instantiation(instance):
-    assert isinstance(instance, UML2::ActivityEdge)
-
-@given(instance=Behavior_strategy)
-@settings(max_examples=50)
-def test_behavior_instantiation(instance):
-    assert isinstance(instance, Behavior)
-
-@given(instance=UML2::Interaction_strategy)
-@settings(max_examples=50)
-def test_uml2::interaction_instantiation(instance):
-    assert isinstance(instance, UML2::Interaction)
-
-@given(instance=UML2::Activity_strategy)
-@settings(max_examples=50)
-def test_uml2::activity_instantiation(instance):
-    assert isinstance(instance, UML2::Activity)
-
-@given(instance=UML2::Activity_strategy)
-def test_uml2::activity_body_type(instance):
-    assert isinstance(instance.body, str)
-
-
-@given(instance=UML2::Activity_strategy)
-def test_uml2::activity_body_setter(instance):
-    original = instance.body
-    instance.body = original
-    assert instance.body == original
-
-@given(instance=UML2::Activity_strategy)
-def test_uml2::activity_language_type(instance):
-    assert isinstance(instance.language, str)
-
-
-@given(instance=UML2::Activity_strategy)
-def test_uml2::activity_language_setter(instance):
-    original = instance.language
-    instance.language = original
-    assert instance.language == original
-
-@given(instance=UML2::Activity_strategy)
-def test_uml2::activity_isReadOnly_type(instance):
-    assert isinstance(instance.isReadOnly, bool)
-
-
-@given(instance=UML2::Activity_strategy)
-def test_uml2::activity_isReadOnly_setter(instance):
-    original = instance.isReadOnly
-    instance.isReadOnly = original
-    assert instance.isReadOnly == original
-
-@given(instance=UML2::Activity_strategy)
-def test_uml2::activity_isSingleExecution_type(instance):
-    assert isinstance(instance.isSingleExecution, bool)
-
-
-@given(instance=UML2::Activity_strategy)
-def test_uml2::activity_isSingleExecution_setter(instance):
-    original = instance.isSingleExecution
-    instance.isSingleExecution = original
-    assert instance.isSingleExecution == original
-
-@given(instance=UML2::StateMachine_strategy)
-@settings(max_examples=50)
-def test_uml2::statemachine_instantiation(instance):
-    assert isinstance(instance, UML2::StateMachine)
-
-@given(instance=UML2::Trigger_strategy)
-@settings(max_examples=50)
-def test_uml2::trigger_instantiation(instance):
-    assert isinstance(instance, UML2::Trigger)
-
-@given(instance=UML2::Implementation_strategy)
-@settings(max_examples=50)
-def test_uml2::implementation_instantiation(instance):
-    assert isinstance(instance, UML2::Implementation)
-
-@given(instance=UML2::BehavioredClassifier_strategy)
-@settings(max_examples=50)
-def test_uml2::behavioredclassifier_instantiation(instance):
-    assert isinstance(instance, UML2::BehavioredClassifier)
-
-@given(instance=Property_strategy)
-@settings(max_examples=50)
-def test_property_instantiation(instance):
-    assert isinstance(instance, Property)
-
-@given(instance=UML2::Port_strategy)
-@settings(max_examples=50)
-def test_uml2::port_instantiation(instance):
-    assert isinstance(instance, UML2::Port)
-
-@given(instance=UML2::Port_strategy)
-def test_uml2::port_isBehavior_type(instance):
-    assert isinstance(instance.isBehavior, bool)
-
-
-@given(instance=UML2::Port_strategy)
-def test_uml2::port_isBehavior_setter(instance):
-    original = instance.isBehavior
-    instance.isBehavior = original
-    assert instance.isBehavior == original
-
-@given(instance=UML2::Port_strategy)
-def test_uml2::port_isService_type(instance):
-    assert isinstance(instance.isService, bool)
-
-
-@given(instance=UML2::Port_strategy)
-def test_uml2::port_isService_setter(instance):
-    original = instance.isService
-    instance.isService = original
-    assert instance.isService == original
-
-@given(instance=UML2::ExtensionEnd_strategy)
-@settings(max_examples=50)
-def test_uml2::extensionend_instantiation(instance):
-    assert isinstance(instance, UML2::ExtensionEnd)
-
-@given(instance=Association_strategy)
-@settings(max_examples=50)
-def test_association_instantiation(instance):
-    assert isinstance(instance, Association)
-
-@given(instance=UML2::Extension_strategy)
-@settings(max_examples=50)
-def test_uml2::extension_instantiation(instance):
-    assert isinstance(instance, UML2::Extension)
-
-@given(instance=UML2::Extension_strategy)
-def test_uml2::extension_isRequired_type(instance):
-    assert isinstance(instance.isRequired, bool)
-
-
-@given(instance=UML2::Extension_strategy)
-def test_uml2::extension_isRequired_setter(instance):
-    original = instance.isRequired
-    instance.isRequired = original
-    assert instance.isRequired == original
-
-@given(instance=UML2::CommunicationPath_strategy)
-@settings(max_examples=50)
-def test_uml2::communicationpath_instantiation(instance):
-    assert isinstance(instance, UML2::CommunicationPath)
-
-@given(instance=UML2::AssociationClass_strategy)
-@settings(max_examples=50)
-def test_uml2::associationclass_instantiation(instance):
-    assert isinstance(instance, UML2::AssociationClass)
-
-@given(instance=PackageImport_strategy)
-@settings(max_examples=50)
-def test_packageimport_instantiation(instance):
-    assert isinstance(instance, PackageImport)
-
-@given(instance=UML2::ProfileApplication_strategy)
+@given(instance=UML2_LiteralSpecification_strategy)
 @settings(max_examples=50)
-def test_uml2::profileapplication_instantiation(instance):
-    assert isinstance(instance, UML2::ProfileApplication)
+def test_uml2_literalspecification_instantiation(instance):
+    assert isinstance(instance, UML2_LiteralSpecification)

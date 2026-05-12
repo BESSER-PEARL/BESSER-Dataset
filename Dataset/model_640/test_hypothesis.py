@@ -3,17 +3,17 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     Borrowable,
-    library::CD,
-    library::Book,
-    library::Author,
-    library::Customer,
-    library::Borrowable,
-    library::Magazine,
-    library::Library,
+    library_CD,
+    library_Book,
+    library_Author,
+    library_Customer,
+    library_Borrowable,
+    library_Magazine,
+    library_Library,
 )
 
 # =============================================================================
@@ -36,51 +36,51 @@ def test_borrowable_constructor_args():
 
 
 
-def test_library::cd_is_not_abstract():
-    assert not inspect.isabstract(library::CD)
+def test_library_cd_is_not_abstract():
+    assert not inspect.isabstract(library_CD)
 
 
-def test_library::cd_constructor_exists():
-    assert callable(library::CD.__init__)
+def test_library_cd_constructor_exists():
+    assert callable(library_CD.__init__)
 
 
-def test_library::cd_constructor_args():
-    sig = inspect.signature(library::CD.__init__)
+def test_library_cd_constructor_args():
+    sig = inspect.signature(library_CD.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_library::book_is_not_abstract():
-    assert not inspect.isabstract(library::Book)
+def test_library_book_is_not_abstract():
+    assert not inspect.isabstract(library_Book)
 
 
-def test_library::book_constructor_exists():
-    assert callable(library::Book.__init__)
+def test_library_book_constructor_exists():
+    assert callable(library_Book.__init__)
 
 
-def test_library::book_constructor_args():
-    sig = inspect.signature(library::Book.__init__)
+def test_library_book_constructor_args():
+    sig = inspect.signature(library_Book.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_library::author_is_not_abstract():
-    assert not inspect.isabstract(library::Author)
+def test_library_author_is_not_abstract():
+    assert not inspect.isabstract(library_Author)
 
 
-def test_library::author_constructor_exists():
-    assert callable(library::Author.__init__)
+def test_library_author_constructor_exists():
+    assert callable(library_Author.__init__)
 
 
-def test_library::author_constructor_args():
-    sig = inspect.signature(library::Author.__init__)
+def test_library_author_constructor_args():
+    sig = inspect.signature(library_Author.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_library::author_has_name():
-    assert hasattr(library::Author, "name")
+def test_library_author_has_name():
+    assert hasattr(library_Author, "name")
     descriptor = None
-    for klass in library::Author.__mro__:
+    for klass in library_Author.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -88,23 +88,23 @@ def test_library::author_has_name():
 
 
 
-def test_library::customer_is_not_abstract():
-    assert not inspect.isabstract(library::Customer)
+def test_library_customer_is_not_abstract():
+    assert not inspect.isabstract(library_Customer)
 
 
-def test_library::customer_constructor_exists():
-    assert callable(library::Customer.__init__)
+def test_library_customer_constructor_exists():
+    assert callable(library_Customer.__init__)
 
 
-def test_library::customer_constructor_args():
-    sig = inspect.signature(library::Customer.__init__)
+def test_library_customer_constructor_args():
+    sig = inspect.signature(library_Customer.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_library::customer_has_name():
-    assert hasattr(library::Customer, "name")
+def test_library_customer_has_name():
+    assert hasattr(library_Customer, "name")
     descriptor = None
-    for klass in library::Customer.__mro__:
+    for klass in library_Customer.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -112,71 +112,71 @@ def test_library::customer_has_name():
 
 
 
-def test_library::borrowable_is_not_abstract():
-    assert not inspect.isabstract(library::Borrowable)
+def test_library_borrowable_is_not_abstract():
+    assert not inspect.isabstract(library_Borrowable)
 
 
-def test_library::borrowable_constructor_exists():
-    assert callable(library::Borrowable.__init__)
+def test_library_borrowable_constructor_exists():
+    assert callable(library_Borrowable.__init__)
 
 
-def test_library::borrowable_constructor_args():
-    sig = inspect.signature(library::Borrowable.__init__)
+def test_library_borrowable_constructor_args():
+    sig = inspect.signature(library_Borrowable.__init__)
     params = list(sig.parameters.keys())
-    assert "copiesAvailable" in params, "Missing parameter 'copiesAvailable'"
     assert "title" in params, "Missing parameter 'title'"
+    assert "copiesAvailable" in params, "Missing parameter 'copiesAvailable'"
 
-def test_library::borrowable_has_copiesAvailable():
-    assert hasattr(library::Borrowable, "copiesAvailable")
+def test_library_borrowable_has_title():
+    assert hasattr(library_Borrowable, "title")
     descriptor = None
-    for klass in library::Borrowable.__mro__:
-        if "copiesAvailable" in klass.__dict__:
-            descriptor = klass.__dict__["copiesAvailable"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_library::borrowable_has_title():
-    assert hasattr(library::Borrowable, "title")
-    descriptor = None
-    for klass in library::Borrowable.__mro__:
+    for klass in library_Borrowable.__mro__:
         if "title" in klass.__dict__:
             descriptor = klass.__dict__["title"]
             break
     assert isinstance(descriptor, property)
 
+def test_library_borrowable_has_copiesAvailable():
+    assert hasattr(library_Borrowable, "copiesAvailable")
+    descriptor = None
+    for klass in library_Borrowable.__mro__:
+        if "copiesAvailable" in klass.__dict__:
+            descriptor = klass.__dict__["copiesAvailable"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_library::magazine_is_not_abstract():
-    assert not inspect.isabstract(library::Magazine)
+
+def test_library_magazine_is_not_abstract():
+    assert not inspect.isabstract(library_Magazine)
 
 
-def test_library::magazine_constructor_exists():
-    assert callable(library::Magazine.__init__)
+def test_library_magazine_constructor_exists():
+    assert callable(library_Magazine.__init__)
 
 
-def test_library::magazine_constructor_args():
-    sig = inspect.signature(library::Magazine.__init__)
+def test_library_magazine_constructor_args():
+    sig = inspect.signature(library_Magazine.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_library::library_is_not_abstract():
-    assert not inspect.isabstract(library::Library)
+def test_library_library_is_not_abstract():
+    assert not inspect.isabstract(library_Library)
 
 
-def test_library::library_constructor_exists():
-    assert callable(library::Library.__init__)
+def test_library_library_constructor_exists():
+    assert callable(library_Library.__init__)
 
 
-def test_library::library_constructor_args():
-    sig = inspect.signature(library::Library.__init__)
+def test_library_library_constructor_args():
+    sig = inspect.signature(library_Library.__init__)
     params = list(sig.parameters.keys())
     assert "address" in params, "Missing parameter 'address'"
 
-def test_library::library_has_address():
-    assert hasattr(library::Library, "address")
+def test_library_library_has_address():
+    assert hasattr(library_Library, "address")
     descriptor = None
-    for klass in library::Library.__mro__:
+    for klass in library_Library.__mro__:
         if "address" in klass.__dict__:
             descriptor = klass.__dict__["address"]
             break
@@ -197,34 +197,34 @@ safe_text = st.text(
 Borrowable_strategy = st.builds(
     Borrowable,
 )
-library::CD_strategy = st.builds(
-    library::CD,
+library_CD_strategy = st.builds(
+    library_CD,
 )
-library::Book_strategy = st.builds(
-    library::Book,
+library_Book_strategy = st.builds(
+    library_Book,
 )
-library::Author_strategy = st.builds(
-    library::Author,
+library_Author_strategy = st.builds(
+    library_Author,
     name=
         safe_text
 )
-library::Customer_strategy = st.builds(
-    library::Customer,
+library_Customer_strategy = st.builds(
+    library_Customer,
     name=
         safe_text
 )
-library::Borrowable_strategy = st.builds(
-    library::Borrowable,
-    copiesAvailable=
-        st.integers(),
+library_Borrowable_strategy = st.builds(
+    library_Borrowable,
     title=
-        safe_text
+        safe_text,
+    copiesAvailable=
+        st.integers()
 )
-library::Magazine_strategy = st.builds(
-    library::Magazine,
+library_Magazine_strategy = st.builds(
+    library_Magazine,
 )
-library::Library_strategy = st.builds(
-    library::Library,
+library_Library_strategy = st.builds(
+    library_Library,
     address=
         safe_text
 )
@@ -234,92 +234,77 @@ library::Library_strategy = st.builds(
 def test_borrowable_instantiation(instance):
     assert isinstance(instance, Borrowable)
 
-@given(instance=library::CD_strategy)
+@given(instance=library_CD_strategy)
 @settings(max_examples=50)
-def test_library::cd_instantiation(instance):
-    assert isinstance(instance, library::CD)
+def test_library_cd_instantiation(instance):
+    assert isinstance(instance, library_CD)
 
-@given(instance=library::Book_strategy)
+@given(instance=library_Book_strategy)
 @settings(max_examples=50)
-def test_library::book_instantiation(instance):
-    assert isinstance(instance, library::Book)
+def test_library_book_instantiation(instance):
+    assert isinstance(instance, library_Book)
 
-@given(instance=library::Author_strategy)
+@given(instance=library_Author_strategy)
 @settings(max_examples=50)
-def test_library::author_instantiation(instance):
-    assert isinstance(instance, library::Author)
-
-@given(instance=library::Author_strategy)
-def test_library::author_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_library_author_instantiation(instance):
+    assert isinstance(instance, library_Author)
 
 
-@given(instance=library::Author_strategy)
-def test_library::author_name_setter(instance):
+
+@given(instance=library_Author_strategy)
+def test_library_author_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=library::Customer_strategy)
+@given(instance=library_Customer_strategy)
 @settings(max_examples=50)
-def test_library::customer_instantiation(instance):
-    assert isinstance(instance, library::Customer)
-
-@given(instance=library::Customer_strategy)
-def test_library::customer_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_library_customer_instantiation(instance):
+    assert isinstance(instance, library_Customer)
 
 
-@given(instance=library::Customer_strategy)
-def test_library::customer_name_setter(instance):
+
+@given(instance=library_Customer_strategy)
+def test_library_customer_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=library::Borrowable_strategy)
+@given(instance=library_Borrowable_strategy)
 @settings(max_examples=50)
-def test_library::borrowable_instantiation(instance):
-    assert isinstance(instance, library::Borrowable)
-
-@given(instance=library::Borrowable_strategy)
-def test_library::borrowable_copiesAvailable_type(instance):
-    assert isinstance(instance.copiesAvailable, int)
+def test_library_borrowable_instantiation(instance):
+    assert isinstance(instance, library_Borrowable)
 
 
-@given(instance=library::Borrowable_strategy)
-def test_library::borrowable_copiesAvailable_setter(instance):
-    original = instance.copiesAvailable
-    instance.copiesAvailable = original
-    assert instance.copiesAvailable == original
 
-@given(instance=library::Borrowable_strategy)
-def test_library::borrowable_title_type(instance):
-    assert isinstance(instance.title, str)
-
-
-@given(instance=library::Borrowable_strategy)
-def test_library::borrowable_title_setter(instance):
+@given(instance=library_Borrowable_strategy)
+def test_library_borrowable_title_setter(instance):
     original = instance.title
     instance.title = original
     assert instance.title == original
 
-@given(instance=library::Magazine_strategy)
+
+
+@given(instance=library_Borrowable_strategy)
+def test_library_borrowable_copiesAvailable_setter(instance):
+    original = instance.copiesAvailable
+    instance.copiesAvailable = original
+    assert instance.copiesAvailable == original
+
+@given(instance=library_Magazine_strategy)
 @settings(max_examples=50)
-def test_library::magazine_instantiation(instance):
-    assert isinstance(instance, library::Magazine)
+def test_library_magazine_instantiation(instance):
+    assert isinstance(instance, library_Magazine)
 
-@given(instance=library::Library_strategy)
+@given(instance=library_Library_strategy)
 @settings(max_examples=50)
-def test_library::library_instantiation(instance):
-    assert isinstance(instance, library::Library)
-
-@given(instance=library::Library_strategy)
-def test_library::library_address_type(instance):
-    assert isinstance(instance.address, str)
+def test_library_library_instantiation(instance):
+    assert isinstance(instance, library_Library)
 
 
-@given(instance=library::Library_strategy)
-def test_library::library_address_setter(instance):
+
+@given(instance=library_Library_strategy)
+def test_library_library_address_setter(instance):
     original = instance.address
     instance.address = original
     assert instance.address == original

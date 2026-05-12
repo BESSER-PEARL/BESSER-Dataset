@@ -3,7 +3,7 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
 from python_code import (
     GUI,
@@ -44,17 +44,8 @@ def test_player_constructor_exists():
 def test_player_constructor_args():
     sig = inspect.signature(Player.__init__)
     params = list(sig.parameters.keys())
-    assert "hand" in params, "Missing parameter 'hand'"
     assert "points" in params, "Missing parameter 'points'"
-
-def test_player_has_hand():
-    assert hasattr(Player, "hand")
-    descriptor = None
-    for klass in Player.__mro__:
-        if "hand" in klass.__dict__:
-            descriptor = klass.__dict__["hand"]
-            break
-    assert isinstance(descriptor, property)
+    assert "hand" in params, "Missing parameter 'hand'"
 
 def test_player_has_points():
     assert hasattr(Player, "points")
@@ -62,6 +53,15 @@ def test_player_has_points():
     for klass in Player.__mro__:
         if "points" in klass.__dict__:
             descriptor = klass.__dict__["points"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_player_has_hand():
+    assert hasattr(Player, "hand")
+    descriptor = None
+    for klass in Player.__mro__:
+        if "hand" in klass.__dict__:
+            descriptor = klass.__dict__["hand"]
             break
     assert isinstance(descriptor, property)
 
@@ -79,8 +79,8 @@ def test_gameboard_constructor_args():
     sig = inspect.signature(GameBoard.__init__)
     params = list(sig.parameters.keys())
     assert "garbagePile" in params, "Missing parameter 'garbagePile'"
-    assert "discardPile" in params, "Missing parameter 'discardPile'"
     assert "shelf" in params, "Missing parameter 'shelf'"
+    assert "discardPile" in params, "Missing parameter 'discardPile'"
 
 def test_gameboard_has_garbagePile():
     assert hasattr(GameBoard, "garbagePile")
@@ -91,21 +91,21 @@ def test_gameboard_has_garbagePile():
             break
     assert isinstance(descriptor, property)
 
-def test_gameboard_has_discardPile():
-    assert hasattr(GameBoard, "discardPile")
-    descriptor = None
-    for klass in GameBoard.__mro__:
-        if "discardPile" in klass.__dict__:
-            descriptor = klass.__dict__["discardPile"]
-            break
-    assert isinstance(descriptor, property)
-
 def test_gameboard_has_shelf():
     assert hasattr(GameBoard, "shelf")
     descriptor = None
     for klass in GameBoard.__mro__:
         if "shelf" in klass.__dict__:
             descriptor = klass.__dict__["shelf"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_gameboard_has_discardPile():
+    assert hasattr(GameBoard, "discardPile")
+    descriptor = None
+    for klass in GameBoard.__mro__:
+        if "discardPile" in klass.__dict__:
+            descriptor = klass.__dict__["discardPile"]
             break
     assert isinstance(descriptor, property)
 
@@ -174,18 +174,18 @@ GUI_strategy = st.builds(
 )
 Player_strategy = st.builds(
     Player,
-    hand=
-        st.none(),
     points=
-        st.integers()
+        st.integers(),
+    hand=
+        st.none()
 )
 GameBoard_strategy = st.builds(
     GameBoard,
     garbagePile=
         safe_text,
-    discardPile=
-        safe_text,
     shelf=
+        safe_text,
+    discardPile=
         safe_text
 )
 Deck_strategy = st.builds(
@@ -209,20 +209,6 @@ def test_gui_instantiation(instance):
 def test_player_instantiation(instance):
     assert isinstance(instance, Player)
 
-@given(instance=Player_strategy)
-def test_player_hand_type(instance):
-    assert isinstance(instance.hand, deck)
-
-
-@given(instance=Player_strategy)
-def test_player_hand_setter(instance):
-    original = instance.hand
-    instance.hand = original
-    assert instance.hand == original
-
-@given(instance=Player_strategy)
-def test_player_points_type(instance):
-    assert isinstance(instance.points, int)
 
 
 @given(instance=Player_strategy)
@@ -231,14 +217,19 @@ def test_player_points_setter(instance):
     instance.points = original
     assert instance.points == original
 
+
+
+@given(instance=Player_strategy)
+def test_player_hand_setter(instance):
+    original = instance.hand
+    instance.hand = original
+    assert instance.hand == original
+
 @given(instance=GameBoard_strategy)
 @settings(max_examples=50)
 def test_gameboard_instantiation(instance):
     assert isinstance(instance, GameBoard)
 
-@given(instance=GameBoard_strategy)
-def test_gameboard_garbagePile_type(instance):
-    assert isinstance(instance.garbagePile, str)
 
 
 @given(instance=GameBoard_strategy)
@@ -247,20 +238,6 @@ def test_gameboard_garbagePile_setter(instance):
     instance.garbagePile = original
     assert instance.garbagePile == original
 
-@given(instance=GameBoard_strategy)
-def test_gameboard_discardPile_type(instance):
-    assert isinstance(instance.discardPile, str)
-
-
-@given(instance=GameBoard_strategy)
-def test_gameboard_discardPile_setter(instance):
-    original = instance.discardPile
-    instance.discardPile = original
-    assert instance.discardPile == original
-
-@given(instance=GameBoard_strategy)
-def test_gameboard_shelf_type(instance):
-    assert isinstance(instance.shelf, str)
 
 
 @given(instance=GameBoard_strategy)
@@ -268,6 +245,14 @@ def test_gameboard_shelf_setter(instance):
     original = instance.shelf
     instance.shelf = original
     assert instance.shelf == original
+
+
+
+@given(instance=GameBoard_strategy)
+def test_gameboard_discardPile_setter(instance):
+    original = instance.discardPile
+    instance.discardPile = original
+    assert instance.discardPile == original
 
 @given(instance=Deck_strategy)
 @settings(max_examples=50)
@@ -279,9 +264,6 @@ def test_deck_instantiation(instance):
 def test_card_instantiation(instance):
     assert isinstance(instance, Card)
 
-@given(instance=Card_strategy)
-def test_card_value_type(instance):
-    assert isinstance(instance.value, int)
 
 
 @given(instance=Card_strategy)
@@ -290,9 +272,6 @@ def test_card_value_setter(instance):
     instance.value = original
     assert instance.value == original
 
-@given(instance=Card_strategy)
-def test_card_suit_type(instance):
-    assert isinstance(instance.suit, int)
 
 
 @given(instance=Card_strategy)

@@ -1,0 +1,4 @@
+The model has 3 class(es).
+The class 'Reviews' has the following attributes: 'text' of type str; 'user_id' of type int; 'business_id' of type int; 'date' of type date; 'ID' of type int; 'rating' of type int.
+The class 'Places' has the following attributes: 'music' of type str; 'wifi' of type str; 'plugs' of type str; 'address' of type str; 'review_count' of type int; 'place_id' of type str; 'ID' of type int; 'opening_times' of type date.
+The class 'Users' has the following attributes: 'review_count' of type int; 'ID' of type int; 'name' of type str; 'date_joined' of type date; 'average_star' of type int.

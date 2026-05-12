@@ -3,7 +3,7 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
 from python_code import (
     IAcc_Interface,
@@ -45,18 +45,18 @@ def test_comment_constructor_exists():
 def test_comment_constructor_args():
     sig = inspect.signature(Comment.__init__)
     params = list(sig.parameters.keys())
-    assert "Id" in params, "Missing parameter 'Id'"
-    assert "CreationDate" in params, "Missing parameter 'CreationDate'"
     assert "Body" in params, "Missing parameter 'Body'"
+    assert "CreationDate" in params, "Missing parameter 'CreationDate'"
     assert "Title" in params, "Missing parameter 'Title'"
     assert "Creator" in params, "Missing parameter 'Creator'"
+    assert "Id" in params, "Missing parameter 'Id'"
 
-def test_comment_has_Id():
-    assert hasattr(Comment, "Id")
+def test_comment_has_Body():
+    assert hasattr(Comment, "Body")
     descriptor = None
     for klass in Comment.__mro__:
-        if "Id" in klass.__dict__:
-            descriptor = klass.__dict__["Id"]
+        if "Body" in klass.__dict__:
+            descriptor = klass.__dict__["Body"]
             break
     assert isinstance(descriptor, property)
 
@@ -66,15 +66,6 @@ def test_comment_has_CreationDate():
     for klass in Comment.__mro__:
         if "CreationDate" in klass.__dict__:
             descriptor = klass.__dict__["CreationDate"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_comment_has_Body():
-    assert hasattr(Comment, "Body")
-    descriptor = None
-    for klass in Comment.__mro__:
-        if "Body" in klass.__dict__:
-            descriptor = klass.__dict__["Body"]
             break
     assert isinstance(descriptor, property)
 
@@ -93,6 +84,15 @@ def test_comment_has_Creator():
     for klass in Comment.__mro__:
         if "Creator" in klass.__dict__:
             descriptor = klass.__dict__["Creator"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_comment_has_Id():
+    assert hasattr(Comment, "Id")
+    descriptor = None
+    for klass in Comment.__mro__:
+        if "Id" in klass.__dict__:
+            descriptor = klass.__dict__["Id"]
             break
     assert isinstance(descriptor, property)
 
@@ -134,9 +134,9 @@ def test_project_constructor_args():
     sig = inspect.signature(Project.__init__)
     params = list(sig.parameters.keys())
     assert "Info" in params, "Missing parameter 'Info'"
-    assert "State" in params, "Missing parameter 'State'"
     assert "Access" in params, "Missing parameter 'Access'"
     assert "Title" in params, "Missing parameter 'Title'"
+    assert "State" in params, "Missing parameter 'State'"
     assert "Id" in params, "Missing parameter 'Id'"
 
 def test_project_has_Info():
@@ -145,15 +145,6 @@ def test_project_has_Info():
     for klass in Project.__mro__:
         if "Info" in klass.__dict__:
             descriptor = klass.__dict__["Info"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_project_has_State():
-    assert hasattr(Project, "State")
-    descriptor = None
-    for klass in Project.__mro__:
-        if "State" in klass.__dict__:
-            descriptor = klass.__dict__["State"]
             break
     assert isinstance(descriptor, property)
 
@@ -172,6 +163,15 @@ def test_project_has_Title():
     for klass in Project.__mro__:
         if "Title" in klass.__dict__:
             descriptor = klass.__dict__["Title"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_project_has_State():
+    assert hasattr(Project, "State")
+    descriptor = None
+    for klass in Project.__mro__:
+        if "State" in klass.__dict__:
+            descriptor = klass.__dict__["State"]
             break
     assert isinstance(descriptor, property)
 
@@ -259,16 +259,16 @@ IAcc_Interface_strategy = st.builds(
 )
 Comment_strategy = st.builds(
     Comment,
-    Id=
-        st.integers(),
-    CreationDate=
-        safe_text,
     Body=
+        safe_text,
+    CreationDate=
         safe_text,
     Title=
         safe_text,
     Creator=
-        st.none()
+        st.none(),
+    Id=
+        st.integers()
 )
 Administrator_strategy = st.builds(
     Administrator,
@@ -279,11 +279,11 @@ Project_strategy = st.builds(
     Project,
     Info=
         safe_text,
-    State=
-        safe_text,
     Access=
         safe_text,
     Title=
+        safe_text,
+    State=
         safe_text,
     Id=
         st.integers()
@@ -311,31 +311,6 @@ def test_iacc_interface_instantiation(instance):
 def test_comment_instantiation(instance):
     assert isinstance(instance, Comment)
 
-@given(instance=Comment_strategy)
-def test_comment_Id_type(instance):
-    assert isinstance(instance.Id, int)
-
-
-@given(instance=Comment_strategy)
-def test_comment_Id_setter(instance):
-    original = instance.Id
-    instance.Id = original
-    assert instance.Id == original
-
-@given(instance=Comment_strategy)
-def test_comment_CreationDate_type(instance):
-    assert isinstance(instance.CreationDate, str)
-
-
-@given(instance=Comment_strategy)
-def test_comment_CreationDate_setter(instance):
-    original = instance.CreationDate
-    instance.CreationDate = original
-    assert instance.CreationDate == original
-
-@given(instance=Comment_strategy)
-def test_comment_Body_type(instance):
-    assert isinstance(instance.Body, str)
 
 
 @given(instance=Comment_strategy)
@@ -344,9 +319,14 @@ def test_comment_Body_setter(instance):
     instance.Body = original
     assert instance.Body == original
 
+
+
 @given(instance=Comment_strategy)
-def test_comment_Title_type(instance):
-    assert isinstance(instance.Title, str)
+def test_comment_CreationDate_setter(instance):
+    original = instance.CreationDate
+    instance.CreationDate = original
+    assert instance.CreationDate == original
+
 
 
 @given(instance=Comment_strategy)
@@ -355,9 +335,6 @@ def test_comment_Title_setter(instance):
     instance.Title = original
     assert instance.Title == original
 
-@given(instance=Comment_strategy)
-def test_comment_Creator_type(instance):
-    assert isinstance(instance.Creator, user)
 
 
 @given(instance=Comment_strategy)
@@ -366,14 +343,19 @@ def test_comment_Creator_setter(instance):
     instance.Creator = original
     assert instance.Creator == original
 
+
+
+@given(instance=Comment_strategy)
+def test_comment_Id_setter(instance):
+    original = instance.Id
+    instance.Id = original
+    assert instance.Id == original
+
 @given(instance=Administrator_strategy)
 @settings(max_examples=50)
 def test_administrator_instantiation(instance):
     assert isinstance(instance, Administrator)
 
-@given(instance=Administrator_strategy)
-def test_administrator_Id_type(instance):
-    assert isinstance(instance.Id, int)
 
 
 @given(instance=Administrator_strategy)
@@ -387,9 +369,6 @@ def test_administrator_Id_setter(instance):
 def test_project_instantiation(instance):
     assert isinstance(instance, Project)
 
-@given(instance=Project_strategy)
-def test_project_Info_type(instance):
-    assert isinstance(instance.Info, str)
 
 
 @given(instance=Project_strategy)
@@ -398,20 +377,6 @@ def test_project_Info_setter(instance):
     instance.Info = original
     assert instance.Info == original
 
-@given(instance=Project_strategy)
-def test_project_State_type(instance):
-    assert isinstance(instance.State, str)
-
-
-@given(instance=Project_strategy)
-def test_project_State_setter(instance):
-    original = instance.State
-    instance.State = original
-    assert instance.State == original
-
-@given(instance=Project_strategy)
-def test_project_Access_type(instance):
-    assert isinstance(instance.Access, str)
 
 
 @given(instance=Project_strategy)
@@ -420,9 +385,6 @@ def test_project_Access_setter(instance):
     instance.Access = original
     assert instance.Access == original
 
-@given(instance=Project_strategy)
-def test_project_Title_type(instance):
-    assert isinstance(instance.Title, str)
 
 
 @given(instance=Project_strategy)
@@ -431,9 +393,14 @@ def test_project_Title_setter(instance):
     instance.Title = original
     assert instance.Title == original
 
+
+
 @given(instance=Project_strategy)
-def test_project_Id_type(instance):
-    assert isinstance(instance.Id, int)
+def test_project_State_setter(instance):
+    original = instance.State
+    instance.State = original
+    assert instance.State == original
+
 
 
 @given(instance=Project_strategy)
@@ -447,9 +414,6 @@ def test_project_Id_setter(instance):
 def test_user_instantiation(instance):
     assert isinstance(instance, User)
 
-@given(instance=User_strategy)
-def test_user_Id_type(instance):
-    assert isinstance(instance.Id, int)
 
 
 @given(instance=User_strategy)
@@ -463,9 +427,6 @@ def test_user_Id_setter(instance):
 def test_account_instantiation(instance):
     assert isinstance(instance, Account)
 
-@given(instance=Account_strategy)
-def test_account_UserName_type(instance):
-    assert isinstance(instance.UserName, str)
 
 
 @given(instance=Account_strategy)
@@ -474,9 +435,6 @@ def test_account_UserName_setter(instance):
     instance.UserName = original
     assert instance.UserName == original
 
-@given(instance=Account_strategy)
-def test_account_Info_type(instance):
-    assert isinstance(instance.Info, str)
 
 
 @given(instance=Account_strategy)

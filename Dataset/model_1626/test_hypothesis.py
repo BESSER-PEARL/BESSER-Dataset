@@ -3,13 +3,13 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    petrinetv3::Token,
-    petrinetv3::Transition,
-    petrinetv3::Place,
-    petrinetv3::Net,
+from python_code import (
+    petrinetv3_Token,
+    petrinetv3_Transition,
+    petrinetv3_Place,
+    petrinetv3_Net,
 )
 
 # =============================================================================
@@ -18,118 +18,118 @@ from classes import (
 
 
 
-def test_petrinetv3::token_is_not_abstract():
-    assert not inspect.isabstract(petrinetv3::Token)
+def test_petrinetv3_token_is_not_abstract():
+    assert not inspect.isabstract(petrinetv3_Token)
 
 
-def test_petrinetv3::token_constructor_exists():
-    assert callable(petrinetv3::Token.__init__)
+def test_petrinetv3_token_constructor_exists():
+    assert callable(petrinetv3_Token.__init__)
 
 
-def test_petrinetv3::token_constructor_args():
-    sig = inspect.signature(petrinetv3::Token.__init__)
+def test_petrinetv3_token_constructor_args():
+    sig = inspect.signature(petrinetv3_Token.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_petrinetv3::transition_is_not_abstract():
-    assert not inspect.isabstract(petrinetv3::Transition)
+def test_petrinetv3_transition_is_not_abstract():
+    assert not inspect.isabstract(petrinetv3_Transition)
 
 
-def test_petrinetv3::transition_constructor_exists():
-    assert callable(petrinetv3::Transition.__init__)
+def test_petrinetv3_transition_constructor_exists():
+    assert callable(petrinetv3_Transition.__init__)
 
 
-def test_petrinetv3::transition_constructor_args():
-    sig = inspect.signature(petrinetv3::Transition.__init__)
+def test_petrinetv3_transition_constructor_args():
+    sig = inspect.signature(petrinetv3_Transition.__init__)
     params = list(sig.parameters.keys())
-    assert "clock" in params, "Missing parameter 'clock'"
-    assert "tmax" in params, "Missing parameter 'tmax'"
-    assert "name" in params, "Missing parameter 'name'"
     assert "tmin" in params, "Missing parameter 'tmin'"
+    assert "name" in params, "Missing parameter 'name'"
+    assert "tmax" in params, "Missing parameter 'tmax'"
+    assert "clock" in params, "Missing parameter 'clock'"
 
-def test_petrinetv3::transition_has_clock():
-    assert hasattr(petrinetv3::Transition, "clock")
+def test_petrinetv3_transition_has_tmin():
+    assert hasattr(petrinetv3_Transition, "tmin")
     descriptor = None
-    for klass in petrinetv3::Transition.__mro__:
-        if "clock" in klass.__dict__:
-            descriptor = klass.__dict__["clock"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_petrinetv3::transition_has_tmax():
-    assert hasattr(petrinetv3::Transition, "tmax")
-    descriptor = None
-    for klass in petrinetv3::Transition.__mro__:
-        if "tmax" in klass.__dict__:
-            descriptor = klass.__dict__["tmax"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_petrinetv3::transition_has_name():
-    assert hasattr(petrinetv3::Transition, "name")
-    descriptor = None
-    for klass in petrinetv3::Transition.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_petrinetv3::transition_has_tmin():
-    assert hasattr(petrinetv3::Transition, "tmin")
-    descriptor = None
-    for klass in petrinetv3::Transition.__mro__:
+    for klass in petrinetv3_Transition.__mro__:
         if "tmin" in klass.__dict__:
             descriptor = klass.__dict__["tmin"]
             break
     assert isinstance(descriptor, property)
 
-
-
-def test_petrinetv3::place_is_not_abstract():
-    assert not inspect.isabstract(petrinetv3::Place)
-
-
-def test_petrinetv3::place_constructor_exists():
-    assert callable(petrinetv3::Place.__init__)
-
-
-def test_petrinetv3::place_constructor_args():
-    sig = inspect.signature(petrinetv3::Place.__init__)
-    params = list(sig.parameters.keys())
-    assert "name" in params, "Missing parameter 'name'"
-    assert "initialTokens" in params, "Missing parameter 'initialTokens'"
-
-def test_petrinetv3::place_has_name():
-    assert hasattr(petrinetv3::Place, "name")
+def test_petrinetv3_transition_has_name():
+    assert hasattr(petrinetv3_Transition, "name")
     descriptor = None
-    for klass in petrinetv3::Place.__mro__:
+    for klass in petrinetv3_Transition.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
-def test_petrinetv3::place_has_initialTokens():
-    assert hasattr(petrinetv3::Place, "initialTokens")
+def test_petrinetv3_transition_has_tmax():
+    assert hasattr(petrinetv3_Transition, "tmax")
     descriptor = None
-    for klass in petrinetv3::Place.__mro__:
-        if "initialTokens" in klass.__dict__:
-            descriptor = klass.__dict__["initialTokens"]
+    for klass in petrinetv3_Transition.__mro__:
+        if "tmax" in klass.__dict__:
+            descriptor = klass.__dict__["tmax"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_petrinetv3_transition_has_clock():
+    assert hasattr(petrinetv3_Transition, "clock")
+    descriptor = None
+    for klass in petrinetv3_Transition.__mro__:
+        if "clock" in klass.__dict__:
+            descriptor = klass.__dict__["clock"]
             break
     assert isinstance(descriptor, property)
 
 
 
-def test_petrinetv3::net_is_not_abstract():
-    assert not inspect.isabstract(petrinetv3::Net)
+def test_petrinetv3_place_is_not_abstract():
+    assert not inspect.isabstract(petrinetv3_Place)
 
 
-def test_petrinetv3::net_constructor_exists():
-    assert callable(petrinetv3::Net.__init__)
+def test_petrinetv3_place_constructor_exists():
+    assert callable(petrinetv3_Place.__init__)
 
 
-def test_petrinetv3::net_constructor_args():
-    sig = inspect.signature(petrinetv3::Net.__init__)
+def test_petrinetv3_place_constructor_args():
+    sig = inspect.signature(petrinetv3_Place.__init__)
+    params = list(sig.parameters.keys())
+    assert "initialTokens" in params, "Missing parameter 'initialTokens'"
+    assert "name" in params, "Missing parameter 'name'"
+
+def test_petrinetv3_place_has_initialTokens():
+    assert hasattr(petrinetv3_Place, "initialTokens")
+    descriptor = None
+    for klass in petrinetv3_Place.__mro__:
+        if "initialTokens" in klass.__dict__:
+            descriptor = klass.__dict__["initialTokens"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_petrinetv3_place_has_name():
+    assert hasattr(petrinetv3_Place, "name")
+    descriptor = None
+    for klass in petrinetv3_Place.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_petrinetv3_net_is_not_abstract():
+    assert not inspect.isabstract(petrinetv3_Net)
+
+
+def test_petrinetv3_net_constructor_exists():
+    assert callable(petrinetv3_Net.__init__)
+
+
+def test_petrinetv3_net_constructor_args():
+    sig = inspect.signature(petrinetv3_Net.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -144,113 +144,95 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-petrinetv3::Token_strategy = st.builds(
-    petrinetv3::Token,
+petrinetv3_Token_strategy = st.builds(
+    petrinetv3_Token,
 )
-petrinetv3::Transition_strategy = st.builds(
-    petrinetv3::Transition,
-    clock=
+petrinetv3_Transition_strategy = st.builds(
+    petrinetv3_Transition,
+    tmin=
         st.integers(),
+    name=
+        safe_text,
     tmax=
         st.integers(),
-    name=
-        safe_text,
-    tmin=
+    clock=
         st.integers()
 )
-petrinetv3::Place_strategy = st.builds(
-    petrinetv3::Place,
-    name=
-        safe_text,
+petrinetv3_Place_strategy = st.builds(
+    petrinetv3_Place,
     initialTokens=
-        st.integers()
+        st.integers(),
+    name=
+        safe_text
 )
-petrinetv3::Net_strategy = st.builds(
-    petrinetv3::Net,
+petrinetv3_Net_strategy = st.builds(
+    petrinetv3_Net,
 )
 
-@given(instance=petrinetv3::Token_strategy)
+@given(instance=petrinetv3_Token_strategy)
 @settings(max_examples=50)
-def test_petrinetv3::token_instantiation(instance):
-    assert isinstance(instance, petrinetv3::Token)
+def test_petrinetv3_token_instantiation(instance):
+    assert isinstance(instance, petrinetv3_Token)
 
-@given(instance=petrinetv3::Transition_strategy)
+@given(instance=petrinetv3_Transition_strategy)
 @settings(max_examples=50)
-def test_petrinetv3::transition_instantiation(instance):
-    assert isinstance(instance, petrinetv3::Transition)
-
-@given(instance=petrinetv3::Transition_strategy)
-def test_petrinetv3::transition_clock_type(instance):
-    assert isinstance(instance.clock, int)
+def test_petrinetv3_transition_instantiation(instance):
+    assert isinstance(instance, petrinetv3_Transition)
 
 
-@given(instance=petrinetv3::Transition_strategy)
-def test_petrinetv3::transition_clock_setter(instance):
-    original = instance.clock
-    instance.clock = original
-    assert instance.clock == original
 
-@given(instance=petrinetv3::Transition_strategy)
-def test_petrinetv3::transition_tmax_type(instance):
-    assert isinstance(instance.tmax, int)
-
-
-@given(instance=petrinetv3::Transition_strategy)
-def test_petrinetv3::transition_tmax_setter(instance):
-    original = instance.tmax
-    instance.tmax = original
-    assert instance.tmax == original
-
-@given(instance=petrinetv3::Transition_strategy)
-def test_petrinetv3::transition_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=petrinetv3::Transition_strategy)
-def test_petrinetv3::transition_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
-
-@given(instance=petrinetv3::Transition_strategy)
-def test_petrinetv3::transition_tmin_type(instance):
-    assert isinstance(instance.tmin, int)
-
-
-@given(instance=petrinetv3::Transition_strategy)
-def test_petrinetv3::transition_tmin_setter(instance):
+@given(instance=petrinetv3_Transition_strategy)
+def test_petrinetv3_transition_tmin_setter(instance):
     original = instance.tmin
     instance.tmin = original
     assert instance.tmin == original
 
-@given(instance=petrinetv3::Place_strategy)
-@settings(max_examples=50)
-def test_petrinetv3::place_instantiation(instance):
-    assert isinstance(instance, petrinetv3::Place)
-
-@given(instance=petrinetv3::Place_strategy)
-def test_petrinetv3::place_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
-@given(instance=petrinetv3::Place_strategy)
-def test_petrinetv3::place_name_setter(instance):
+@given(instance=petrinetv3_Transition_strategy)
+def test_petrinetv3_transition_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=petrinetv3::Place_strategy)
-def test_petrinetv3::place_initialTokens_type(instance):
-    assert isinstance(instance.initialTokens, int)
 
 
-@given(instance=petrinetv3::Place_strategy)
-def test_petrinetv3::place_initialTokens_setter(instance):
+@given(instance=petrinetv3_Transition_strategy)
+def test_petrinetv3_transition_tmax_setter(instance):
+    original = instance.tmax
+    instance.tmax = original
+    assert instance.tmax == original
+
+
+
+@given(instance=petrinetv3_Transition_strategy)
+def test_petrinetv3_transition_clock_setter(instance):
+    original = instance.clock
+    instance.clock = original
+    assert instance.clock == original
+
+@given(instance=petrinetv3_Place_strategy)
+@settings(max_examples=50)
+def test_petrinetv3_place_instantiation(instance):
+    assert isinstance(instance, petrinetv3_Place)
+
+
+
+@given(instance=petrinetv3_Place_strategy)
+def test_petrinetv3_place_initialTokens_setter(instance):
     original = instance.initialTokens
     instance.initialTokens = original
     assert instance.initialTokens == original
 
-@given(instance=petrinetv3::Net_strategy)
+
+
+@given(instance=petrinetv3_Place_strategy)
+def test_petrinetv3_place_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+@given(instance=petrinetv3_Net_strategy)
 @settings(max_examples=50)
-def test_petrinetv3::net_instantiation(instance):
-    assert isinstance(instance, petrinetv3::Net)
+def test_petrinetv3_net_instantiation(instance):
+    assert isinstance(instance, petrinetv3_Net)

@@ -3,14 +3,14 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    ER::RelshipEnd,
-    ER::ERAttribute,
-    ER::Relship,
-    ER::Entity,
-    ER::ERSchema,
+from python_code import (
+    ER_RelshipEnd,
+    ER_ERAttribute,
+    ER_Relship,
+    ER_Entity,
+    ER_ERSchema,
 )
 
 # =============================================================================
@@ -19,23 +19,23 @@ from classes import (
 
 
 
-def test_er::relshipend_is_not_abstract():
-    assert not inspect.isabstract(ER::RelshipEnd)
+def test_er_relshipend_is_not_abstract():
+    assert not inspect.isabstract(ER_RelshipEnd)
 
 
-def test_er::relshipend_constructor_exists():
-    assert callable(ER::RelshipEnd.__init__)
+def test_er_relshipend_constructor_exists():
+    assert callable(ER_RelshipEnd.__init__)
 
 
-def test_er::relshipend_constructor_args():
-    sig = inspect.signature(ER::RelshipEnd.__init__)
+def test_er_relshipend_constructor_args():
+    sig = inspect.signature(ER_RelshipEnd.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_er::relshipend_has_name():
-    assert hasattr(ER::RelshipEnd, "name")
+def test_er_relshipend_has_name():
+    assert hasattr(ER_RelshipEnd, "name")
     descriptor = None
-    for klass in ER::RelshipEnd.__mro__:
+    for klass in ER_RelshipEnd.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -43,33 +43,33 @@ def test_er::relshipend_has_name():
 
 
 
-def test_er::erattribute_is_not_abstract():
-    assert not inspect.isabstract(ER::ERAttribute)
+def test_er_erattribute_is_not_abstract():
+    assert not inspect.isabstract(ER_ERAttribute)
 
 
-def test_er::erattribute_constructor_exists():
-    assert callable(ER::ERAttribute.__init__)
+def test_er_erattribute_constructor_exists():
+    assert callable(ER_ERAttribute.__init__)
 
 
-def test_er::erattribute_constructor_args():
-    sig = inspect.signature(ER::ERAttribute.__init__)
+def test_er_erattribute_constructor_args():
+    sig = inspect.signature(ER_ERAttribute.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
     assert "isKey" in params, "Missing parameter 'isKey'"
 
-def test_er::erattribute_has_name():
-    assert hasattr(ER::ERAttribute, "name")
+def test_er_erattribute_has_name():
+    assert hasattr(ER_ERAttribute, "name")
     descriptor = None
-    for klass in ER::ERAttribute.__mro__:
+    for klass in ER_ERAttribute.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
-def test_er::erattribute_has_isKey():
-    assert hasattr(ER::ERAttribute, "isKey")
+def test_er_erattribute_has_isKey():
+    assert hasattr(ER_ERAttribute, "isKey")
     descriptor = None
-    for klass in ER::ERAttribute.__mro__:
+    for klass in ER_ERAttribute.__mro__:
         if "isKey" in klass.__dict__:
             descriptor = klass.__dict__["isKey"]
             break
@@ -77,23 +77,23 @@ def test_er::erattribute_has_isKey():
 
 
 
-def test_er::relship_is_not_abstract():
-    assert not inspect.isabstract(ER::Relship)
+def test_er_relship_is_not_abstract():
+    assert not inspect.isabstract(ER_Relship)
 
 
-def test_er::relship_constructor_exists():
-    assert callable(ER::Relship.__init__)
+def test_er_relship_constructor_exists():
+    assert callable(ER_Relship.__init__)
 
 
-def test_er::relship_constructor_args():
-    sig = inspect.signature(ER::Relship.__init__)
+def test_er_relship_constructor_args():
+    sig = inspect.signature(ER_Relship.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_er::relship_has_name():
-    assert hasattr(ER::Relship, "name")
+def test_er_relship_has_name():
+    assert hasattr(ER_Relship, "name")
     descriptor = None
-    for klass in ER::Relship.__mro__:
+    for klass in ER_Relship.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -101,23 +101,23 @@ def test_er::relship_has_name():
 
 
 
-def test_er::entity_is_not_abstract():
-    assert not inspect.isabstract(ER::Entity)
+def test_er_entity_is_not_abstract():
+    assert not inspect.isabstract(ER_Entity)
 
 
-def test_er::entity_constructor_exists():
-    assert callable(ER::Entity.__init__)
+def test_er_entity_constructor_exists():
+    assert callable(ER_Entity.__init__)
 
 
-def test_er::entity_constructor_args():
-    sig = inspect.signature(ER::Entity.__init__)
+def test_er_entity_constructor_args():
+    sig = inspect.signature(ER_Entity.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_er::entity_has_name():
-    assert hasattr(ER::Entity, "name")
+def test_er_entity_has_name():
+    assert hasattr(ER_Entity, "name")
     descriptor = None
-    for klass in ER::Entity.__mro__:
+    for klass in ER_Entity.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -125,23 +125,23 @@ def test_er::entity_has_name():
 
 
 
-def test_er::erschema_is_not_abstract():
-    assert not inspect.isabstract(ER::ERSchema)
+def test_er_erschema_is_not_abstract():
+    assert not inspect.isabstract(ER_ERSchema)
 
 
-def test_er::erschema_constructor_exists():
-    assert callable(ER::ERSchema.__init__)
+def test_er_erschema_constructor_exists():
+    assert callable(ER_ERSchema.__init__)
 
 
-def test_er::erschema_constructor_args():
-    sig = inspect.signature(ER::ERSchema.__init__)
+def test_er_erschema_constructor_args():
+    sig = inspect.signature(ER_ERSchema.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_er::erschema_has_name():
-    assert hasattr(ER::ERSchema, "name")
+def test_er_erschema_has_name():
+    assert hasattr(ER_ERSchema, "name")
     descriptor = None
-    for klass in ER::ERSchema.__mro__:
+    for klass in ER_ERSchema.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -159,121 +159,103 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-ER::RelshipEnd_strategy = st.builds(
-    ER::RelshipEnd,
+ER_RelshipEnd_strategy = st.builds(
+    ER_RelshipEnd,
     name=
         safe_text
 )
-ER::ERAttribute_strategy = st.builds(
-    ER::ERAttribute,
+ER_ERAttribute_strategy = st.builds(
+    ER_ERAttribute,
     name=
         safe_text,
     isKey=
         st.booleans()
 )
-ER::Relship_strategy = st.builds(
-    ER::Relship,
+ER_Relship_strategy = st.builds(
+    ER_Relship,
     name=
         safe_text
 )
-ER::Entity_strategy = st.builds(
-    ER::Entity,
+ER_Entity_strategy = st.builds(
+    ER_Entity,
     name=
         safe_text
 )
-ER::ERSchema_strategy = st.builds(
-    ER::ERSchema,
+ER_ERSchema_strategy = st.builds(
+    ER_ERSchema,
     name=
         safe_text
 )
 
-@given(instance=ER::RelshipEnd_strategy)
+@given(instance=ER_RelshipEnd_strategy)
 @settings(max_examples=50)
-def test_er::relshipend_instantiation(instance):
-    assert isinstance(instance, ER::RelshipEnd)
-
-@given(instance=ER::RelshipEnd_strategy)
-def test_er::relshipend_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_er_relshipend_instantiation(instance):
+    assert isinstance(instance, ER_RelshipEnd)
 
 
-@given(instance=ER::RelshipEnd_strategy)
-def test_er::relshipend_name_setter(instance):
+
+@given(instance=ER_RelshipEnd_strategy)
+def test_er_relshipend_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=ER::ERAttribute_strategy)
+@given(instance=ER_ERAttribute_strategy)
 @settings(max_examples=50)
-def test_er::erattribute_instantiation(instance):
-    assert isinstance(instance, ER::ERAttribute)
-
-@given(instance=ER::ERAttribute_strategy)
-def test_er::erattribute_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_er_erattribute_instantiation(instance):
+    assert isinstance(instance, ER_ERAttribute)
 
 
-@given(instance=ER::ERAttribute_strategy)
-def test_er::erattribute_name_setter(instance):
+
+@given(instance=ER_ERAttribute_strategy)
+def test_er_erattribute_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=ER::ERAttribute_strategy)
-def test_er::erattribute_isKey_type(instance):
-    assert isinstance(instance.isKey, bool)
 
 
-@given(instance=ER::ERAttribute_strategy)
-def test_er::erattribute_isKey_setter(instance):
+@given(instance=ER_ERAttribute_strategy)
+def test_er_erattribute_isKey_setter(instance):
     original = instance.isKey
     instance.isKey = original
     assert instance.isKey == original
 
-@given(instance=ER::Relship_strategy)
+@given(instance=ER_Relship_strategy)
 @settings(max_examples=50)
-def test_er::relship_instantiation(instance):
-    assert isinstance(instance, ER::Relship)
-
-@given(instance=ER::Relship_strategy)
-def test_er::relship_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_er_relship_instantiation(instance):
+    assert isinstance(instance, ER_Relship)
 
 
-@given(instance=ER::Relship_strategy)
-def test_er::relship_name_setter(instance):
+
+@given(instance=ER_Relship_strategy)
+def test_er_relship_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=ER::Entity_strategy)
+@given(instance=ER_Entity_strategy)
 @settings(max_examples=50)
-def test_er::entity_instantiation(instance):
-    assert isinstance(instance, ER::Entity)
-
-@given(instance=ER::Entity_strategy)
-def test_er::entity_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_er_entity_instantiation(instance):
+    assert isinstance(instance, ER_Entity)
 
 
-@given(instance=ER::Entity_strategy)
-def test_er::entity_name_setter(instance):
+
+@given(instance=ER_Entity_strategy)
+def test_er_entity_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=ER::ERSchema_strategy)
+@given(instance=ER_ERSchema_strategy)
 @settings(max_examples=50)
-def test_er::erschema_instantiation(instance):
-    assert isinstance(instance, ER::ERSchema)
-
-@given(instance=ER::ERSchema_strategy)
-def test_er::erschema_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_er_erschema_instantiation(instance):
+    assert isinstance(instance, ER_ERSchema)
 
 
-@given(instance=ER::ERSchema_strategy)
-def test_er::erschema_name_setter(instance):
+
+@given(instance=ER_ERSchema_strategy)
+def test_er_erschema_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original

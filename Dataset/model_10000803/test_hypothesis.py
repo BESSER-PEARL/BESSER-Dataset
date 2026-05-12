@@ -3,7 +3,7 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
 from python_code import (
     Staff,
@@ -31,17 +31,8 @@ def test_staff_constructor_exists():
 def test_staff_constructor_args():
     sig = inspect.signature(Staff.__init__)
     params = list(sig.parameters.keys())
-    assert "id" in params, "Missing parameter 'id'"
     assert "name" in params, "Missing parameter 'name'"
-
-def test_staff_has_id():
-    assert hasattr(Staff, "id")
-    descriptor = None
-    for klass in Staff.__mro__:
-        if "id" in klass.__dict__:
-            descriptor = klass.__dict__["id"]
-            break
-    assert isinstance(descriptor, property)
+    assert "id" in params, "Missing parameter 'id'"
 
 def test_staff_has_name():
     assert hasattr(Staff, "name")
@@ -49,6 +40,15 @@ def test_staff_has_name():
     for klass in Staff.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_staff_has_id():
+    assert hasattr(Staff, "id")
+    descriptor = None
+    for klass in Staff.__mro__:
+        if "id" in klass.__dict__:
+            descriptor = klass.__dict__["id"]
             break
     assert isinstance(descriptor, property)
 
@@ -168,8 +168,8 @@ def test_magazine_constructor_args():
     sig = inspect.signature(Magazine.__init__)
     params = list(sig.parameters.keys())
     assert "location" in params, "Missing parameter 'location'"
-    assert "issueNum" in params, "Missing parameter 'issueNum'"
     assert "name" in params, "Missing parameter 'name'"
+    assert "issueNum" in params, "Missing parameter 'issueNum'"
 
 def test_magazine_has_location():
     assert hasattr(Magazine, "location")
@@ -180,21 +180,21 @@ def test_magazine_has_location():
             break
     assert isinstance(descriptor, property)
 
-def test_magazine_has_issueNum():
-    assert hasattr(Magazine, "issueNum")
-    descriptor = None
-    for klass in Magazine.__mro__:
-        if "issueNum" in klass.__dict__:
-            descriptor = klass.__dict__["issueNum"]
-            break
-    assert isinstance(descriptor, property)
-
 def test_magazine_has_name():
     assert hasattr(Magazine, "name")
     descriptor = None
     for klass in Magazine.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_magazine_has_issueNum():
+    assert hasattr(Magazine, "issueNum")
+    descriptor = None
+    for klass in Magazine.__mro__:
+        if "issueNum" in klass.__dict__:
+            descriptor = klass.__dict__["issueNum"]
             break
     assert isinstance(descriptor, property)
 
@@ -211,17 +211,17 @@ def test_book_constructor_exists():
 def test_book_constructor_args():
     sig = inspect.signature(Book.__init__)
     params = list(sig.parameters.keys())
-    assert "title" in params, "Missing parameter 'title'"
-    assert "author" in params, "Missing parameter 'author'"
-    assert "dueDate" in params, "Missing parameter 'dueDate'"
     assert "refNum" in params, "Missing parameter 'refNum'"
+    assert "author" in params, "Missing parameter 'author'"
+    assert "title" in params, "Missing parameter 'title'"
+    assert "dueDate" in params, "Missing parameter 'dueDate'"
 
-def test_book_has_title():
-    assert hasattr(Book, "title")
+def test_book_has_refNum():
+    assert hasattr(Book, "refNum")
     descriptor = None
     for klass in Book.__mro__:
-        if "title" in klass.__dict__:
-            descriptor = klass.__dict__["title"]
+        if "refNum" in klass.__dict__:
+            descriptor = klass.__dict__["refNum"]
             break
     assert isinstance(descriptor, property)
 
@@ -234,21 +234,21 @@ def test_book_has_author():
             break
     assert isinstance(descriptor, property)
 
+def test_book_has_title():
+    assert hasattr(Book, "title")
+    descriptor = None
+    for klass in Book.__mro__:
+        if "title" in klass.__dict__:
+            descriptor = klass.__dict__["title"]
+            break
+    assert isinstance(descriptor, property)
+
 def test_book_has_dueDate():
     assert hasattr(Book, "dueDate")
     descriptor = None
     for klass in Book.__mro__:
         if "dueDate" in klass.__dict__:
             descriptor = klass.__dict__["dueDate"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_book_has_refNum():
-    assert hasattr(Book, "refNum")
-    descriptor = None
-    for klass in Book.__mro__:
-        if "refNum" in klass.__dict__:
-            descriptor = klass.__dict__["refNum"]
             break
     assert isinstance(descriptor, property)
 
@@ -266,10 +266,10 @@ safe_text = st.text(
 ).filter(lambda s: s[0].isalpha())
 Staff_strategy = st.builds(
     Staff,
-    id=
-        st.integers(),
     name=
-        safe_text
+        safe_text,
+    id=
+        st.integers()
 )
 Media_strategy = st.builds(
     Media,
@@ -296,21 +296,21 @@ Magazine_strategy = st.builds(
     Magazine,
     location=
         safe_text,
-    issueNum=
-        st.integers(),
     name=
-        safe_text
+        safe_text,
+    issueNum=
+        st.integers()
 )
 Book_strategy = st.builds(
     Book,
-    title=
-        safe_text,
+    refNum=
+        st.integers(),
     author=
         safe_text,
-    dueDate=
+    title=
         safe_text,
-    refNum=
-        st.integers()
+    dueDate=
+        safe_text
 )
 
 @given(instance=Staff_strategy)
@@ -318,20 +318,6 @@ Book_strategy = st.builds(
 def test_staff_instantiation(instance):
     assert isinstance(instance, Staff)
 
-@given(instance=Staff_strategy)
-def test_staff_id_type(instance):
-    assert isinstance(instance.id, int)
-
-
-@given(instance=Staff_strategy)
-def test_staff_id_setter(instance):
-    original = instance.id
-    instance.id = original
-    assert instance.id == original
-
-@given(instance=Staff_strategy)
-def test_staff_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
 @given(instance=Staff_strategy)
@@ -340,14 +326,19 @@ def test_staff_name_setter(instance):
     instance.name = original
     assert instance.name == original
 
+
+
+@given(instance=Staff_strategy)
+def test_staff_id_setter(instance):
+    original = instance.id
+    instance.id = original
+    assert instance.id == original
+
 @given(instance=Media_strategy)
 @settings(max_examples=50)
 def test_media_instantiation(instance):
     assert isinstance(instance, Media)
 
-@given(instance=Media_strategy)
-def test_media_refNum_type(instance):
-    assert isinstance(instance.refNum, int)
 
 
 @given(instance=Media_strategy)
@@ -356,9 +347,6 @@ def test_media_refNum_setter(instance):
     instance.refNum = original
     assert instance.refNum == original
 
-@given(instance=Media_strategy)
-def test_media_type_type(instance):
-    assert isinstance(instance.type, int)
 
 
 @given(instance=Media_strategy)
@@ -372,9 +360,6 @@ def test_media_type_setter(instance):
 def test_computer_instantiation(instance):
     assert isinstance(instance, Computer)
 
-@given(instance=Computer_strategy)
-def test_computer_compID_type(instance):
-    assert isinstance(instance.compID, int)
 
 
 @given(instance=Computer_strategy)
@@ -388,9 +373,6 @@ def test_computer_compID_setter(instance):
 def test_patron_instantiation(instance):
     assert isinstance(instance, Patron)
 
-@given(instance=Patron_strategy)
-def test_patron_position_type(instance):
-    assert isinstance(instance.position, str)
 
 
 @given(instance=Patron_strategy)
@@ -399,9 +381,6 @@ def test_patron_position_setter(instance):
     instance.position = original
     assert instance.position == original
 
-@given(instance=Patron_strategy)
-def test_patron_id_type(instance):
-    assert isinstance(instance.id, int)
 
 
 @given(instance=Patron_strategy)
@@ -410,9 +389,6 @@ def test_patron_id_setter(instance):
     instance.id = original
     assert instance.id == original
 
-@given(instance=Patron_strategy)
-def test_patron_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
 @given(instance=Patron_strategy)
@@ -426,9 +402,6 @@ def test_patron_name_setter(instance):
 def test_magazine_instantiation(instance):
     assert isinstance(instance, Magazine)
 
-@given(instance=Magazine_strategy)
-def test_magazine_location_type(instance):
-    assert isinstance(instance.location, str)
 
 
 @given(instance=Magazine_strategy)
@@ -437,20 +410,6 @@ def test_magazine_location_setter(instance):
     instance.location = original
     assert instance.location == original
 
-@given(instance=Magazine_strategy)
-def test_magazine_issueNum_type(instance):
-    assert isinstance(instance.issueNum, int)
-
-
-@given(instance=Magazine_strategy)
-def test_magazine_issueNum_setter(instance):
-    original = instance.issueNum
-    instance.issueNum = original
-    assert instance.issueNum == original
-
-@given(instance=Magazine_strategy)
-def test_magazine_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
 @given(instance=Magazine_strategy)
@@ -459,25 +418,27 @@ def test_magazine_name_setter(instance):
     instance.name = original
     assert instance.name == original
 
+
+
+@given(instance=Magazine_strategy)
+def test_magazine_issueNum_setter(instance):
+    original = instance.issueNum
+    instance.issueNum = original
+    assert instance.issueNum == original
+
 @given(instance=Book_strategy)
 @settings(max_examples=50)
 def test_book_instantiation(instance):
     assert isinstance(instance, Book)
 
-@given(instance=Book_strategy)
-def test_book_title_type(instance):
-    assert isinstance(instance.title, str)
 
 
 @given(instance=Book_strategy)
-def test_book_title_setter(instance):
-    original = instance.title
-    instance.title = original
-    assert instance.title == original
+def test_book_refNum_setter(instance):
+    original = instance.refNum
+    instance.refNum = original
+    assert instance.refNum == original
 
-@given(instance=Book_strategy)
-def test_book_author_type(instance):
-    assert isinstance(instance.author, str)
 
 
 @given(instance=Book_strategy)
@@ -486,9 +447,14 @@ def test_book_author_setter(instance):
     instance.author = original
     assert instance.author == original
 
+
+
 @given(instance=Book_strategy)
-def test_book_dueDate_type(instance):
-    assert isinstance(instance.dueDate, str)
+def test_book_title_setter(instance):
+    original = instance.title
+    instance.title = original
+    assert instance.title == original
+
 
 
 @given(instance=Book_strategy)
@@ -496,14 +462,3 @@ def test_book_dueDate_setter(instance):
     original = instance.dueDate
     instance.dueDate = original
     assert instance.dueDate == original
-
-@given(instance=Book_strategy)
-def test_book_refNum_type(instance):
-    assert isinstance(instance.refNum, int)
-
-
-@given(instance=Book_strategy)
-def test_book_refNum_setter(instance):
-    original = instance.refNum
-    instance.refNum = original
-    assert instance.refNum == original

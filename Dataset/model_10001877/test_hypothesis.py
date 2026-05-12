@@ -3,7 +3,7 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
 from python_code import (
     Checked_Out_UseCase,
@@ -146,18 +146,27 @@ def test_book_constructor_exists():
 def test_book_constructor_args():
     sig = inspect.signature(Book.__init__)
     params = list(sig.parameters.keys())
-    assert "status" in params, "Missing parameter 'status'"
-    assert "title" in params, "Missing parameter 'title'"
-    assert "id" in params, "Missing parameter 'id'"
     assert "creation_date" in params, "Missing parameter 'creation_date'"
     assert "author" in params, "Missing parameter 'author'"
+    assert "title" in params, "Missing parameter 'title'"
+    assert "id" in params, "Missing parameter 'id'"
+    assert "status" in params, "Missing parameter 'status'"
 
-def test_book_has_status():
-    assert hasattr(Book, "status")
+def test_book_has_creation_date():
+    assert hasattr(Book, "creation_date")
     descriptor = None
     for klass in Book.__mro__:
-        if "status" in klass.__dict__:
-            descriptor = klass.__dict__["status"]
+        if "creation_date" in klass.__dict__:
+            descriptor = klass.__dict__["creation_date"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_book_has_author():
+    assert hasattr(Book, "author")
+    descriptor = None
+    for klass in Book.__mro__:
+        if "author" in klass.__dict__:
+            descriptor = klass.__dict__["author"]
             break
     assert isinstance(descriptor, property)
 
@@ -179,21 +188,12 @@ def test_book_has_id():
             break
     assert isinstance(descriptor, property)
 
-def test_book_has_creation_date():
-    assert hasattr(Book, "creation_date")
+def test_book_has_status():
+    assert hasattr(Book, "status")
     descriptor = None
     for klass in Book.__mro__:
-        if "creation_date" in klass.__dict__:
-            descriptor = klass.__dict__["creation_date"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_book_has_author():
-    assert hasattr(Book, "author")
-    descriptor = None
-    for klass in Book.__mro__:
-        if "author" in klass.__dict__:
-            descriptor = klass.__dict__["author"]
+        if "status" in klass.__dict__:
+            descriptor = klass.__dict__["status"]
             break
     assert isinstance(descriptor, property)
 
@@ -244,18 +244,18 @@ def test_patron_constructor_exists():
 def test_patron_constructor_args():
     sig = inspect.signature(Patron.__init__)
     params = list(sig.parameters.keys())
-    assert "num_books_checked_out" in params, "Missing parameter 'num_books_checked_out'"
+    assert "status" in params, "Missing parameter 'status'"
     assert "address" in params, "Missing parameter 'address'"
     assert "id" in params, "Missing parameter 'id'"
+    assert "num_books_checked_out" in params, "Missing parameter 'num_books_checked_out'"
     assert "name" in params, "Missing parameter 'name'"
-    assert "status" in params, "Missing parameter 'status'"
 
-def test_patron_has_num_books_checked_out():
-    assert hasattr(Patron, "num_books_checked_out")
+def test_patron_has_status():
+    assert hasattr(Patron, "status")
     descriptor = None
     for klass in Patron.__mro__:
-        if "num_books_checked_out" in klass.__dict__:
-            descriptor = klass.__dict__["num_books_checked_out"]
+        if "status" in klass.__dict__:
+            descriptor = klass.__dict__["status"]
             break
     assert isinstance(descriptor, property)
 
@@ -277,21 +277,21 @@ def test_patron_has_id():
             break
     assert isinstance(descriptor, property)
 
+def test_patron_has_num_books_checked_out():
+    assert hasattr(Patron, "num_books_checked_out")
+    descriptor = None
+    for klass in Patron.__mro__:
+        if "num_books_checked_out" in klass.__dict__:
+            descriptor = klass.__dict__["num_books_checked_out"]
+            break
+    assert isinstance(descriptor, property)
+
 def test_patron_has_name():
     assert hasattr(Patron, "name")
     descriptor = None
     for klass in Patron.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_patron_has_status():
-    assert hasattr(Patron, "status")
-    descriptor = None
-    for klass in Patron.__mro__:
-        if "status" in klass.__dict__:
-            descriptor = klass.__dict__["status"]
             break
     assert isinstance(descriptor, property)
 
@@ -443,15 +443,15 @@ Library_strategy = st.builds(
 )
 Book_strategy = st.builds(
     Book,
-    status=
+    creation_date=
+        safe_text,
+    author=
         safe_text,
     title=
         safe_text,
     id=
         st.integers(),
-    creation_date=
-        safe_text,
-    author=
+    status=
         safe_text
 )
 Librarian_strategy = st.builds(
@@ -463,15 +463,15 @@ Librarian_strategy = st.builds(
 )
 Patron_strategy = st.builds(
     Patron,
-    num_books_checked_out=
-        st.integers(),
+    status=
+        safe_text,
     address=
         safe_text,
     id=
         st.integers(),
+    num_books_checked_out=
+        st.integers(),
     name=
-        safe_text,
-    status=
         safe_text
 )
 Retirement_of_Books_UseCase_strategy = st.builds(
@@ -529,9 +529,6 @@ def test_book_actor_instantiation(instance):
 def test_library_instantiation(instance):
     assert isinstance(instance, Library)
 
-@given(instance=Library_strategy)
-def test_library_librarian_id_type(instance):
-    assert isinstance(instance.librarian_id, int)
 
 
 @given(instance=Library_strategy)
@@ -540,9 +537,6 @@ def test_library_librarian_id_setter(instance):
     instance.librarian_id = original
     assert instance.librarian_id == original
 
-@given(instance=Library_strategy)
-def test_library_id_type(instance):
-    assert isinstance(instance.id, int)
 
 
 @given(instance=Library_strategy)
@@ -556,42 +550,6 @@ def test_library_id_setter(instance):
 def test_book_instantiation(instance):
     assert isinstance(instance, Book)
 
-@given(instance=Book_strategy)
-def test_book_status_type(instance):
-    assert isinstance(instance.status, str)
-
-
-@given(instance=Book_strategy)
-def test_book_status_setter(instance):
-    original = instance.status
-    instance.status = original
-    assert instance.status == original
-
-@given(instance=Book_strategy)
-def test_book_title_type(instance):
-    assert isinstance(instance.title, str)
-
-
-@given(instance=Book_strategy)
-def test_book_title_setter(instance):
-    original = instance.title
-    instance.title = original
-    assert instance.title == original
-
-@given(instance=Book_strategy)
-def test_book_id_type(instance):
-    assert isinstance(instance.id, int)
-
-
-@given(instance=Book_strategy)
-def test_book_id_setter(instance):
-    original = instance.id
-    instance.id = original
-    assert instance.id == original
-
-@given(instance=Book_strategy)
-def test_book_creation_date_type(instance):
-    assert isinstance(instance.creation_date, str)
 
 
 @given(instance=Book_strategy)
@@ -600,9 +558,6 @@ def test_book_creation_date_setter(instance):
     instance.creation_date = original
     assert instance.creation_date == original
 
-@given(instance=Book_strategy)
-def test_book_author_type(instance):
-    assert isinstance(instance.author, str)
 
 
 @given(instance=Book_strategy)
@@ -611,14 +566,35 @@ def test_book_author_setter(instance):
     instance.author = original
     assert instance.author == original
 
+
+
+@given(instance=Book_strategy)
+def test_book_title_setter(instance):
+    original = instance.title
+    instance.title = original
+    assert instance.title == original
+
+
+
+@given(instance=Book_strategy)
+def test_book_id_setter(instance):
+    original = instance.id
+    instance.id = original
+    assert instance.id == original
+
+
+
+@given(instance=Book_strategy)
+def test_book_status_setter(instance):
+    original = instance.status
+    instance.status = original
+    assert instance.status == original
+
 @given(instance=Librarian_strategy)
 @settings(max_examples=50)
 def test_librarian_instantiation(instance):
     assert isinstance(instance, Librarian)
 
-@given(instance=Librarian_strategy)
-def test_librarian_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
 @given(instance=Librarian_strategy)
@@ -627,9 +603,6 @@ def test_librarian_name_setter(instance):
     instance.name = original
     assert instance.name == original
 
-@given(instance=Librarian_strategy)
-def test_librarian_id_type(instance):
-    assert isinstance(instance.id, int)
 
 
 @given(instance=Librarian_strategy)
@@ -643,20 +616,14 @@ def test_librarian_id_setter(instance):
 def test_patron_instantiation(instance):
     assert isinstance(instance, Patron)
 
-@given(instance=Patron_strategy)
-def test_patron_num_books_checked_out_type(instance):
-    assert isinstance(instance.num_books_checked_out, int)
 
 
 @given(instance=Patron_strategy)
-def test_patron_num_books_checked_out_setter(instance):
-    original = instance.num_books_checked_out
-    instance.num_books_checked_out = original
-    assert instance.num_books_checked_out == original
+def test_patron_status_setter(instance):
+    original = instance.status
+    instance.status = original
+    assert instance.status == original
 
-@given(instance=Patron_strategy)
-def test_patron_address_type(instance):
-    assert isinstance(instance.address, str)
 
 
 @given(instance=Patron_strategy)
@@ -665,9 +632,6 @@ def test_patron_address_setter(instance):
     instance.address = original
     assert instance.address == original
 
-@given(instance=Patron_strategy)
-def test_patron_id_type(instance):
-    assert isinstance(instance.id, int)
 
 
 @given(instance=Patron_strategy)
@@ -676,9 +640,14 @@ def test_patron_id_setter(instance):
     instance.id = original
     assert instance.id == original
 
+
+
 @given(instance=Patron_strategy)
-def test_patron_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_patron_num_books_checked_out_setter(instance):
+    original = instance.num_books_checked_out
+    instance.num_books_checked_out = original
+    assert instance.num_books_checked_out == original
+
 
 
 @given(instance=Patron_strategy)
@@ -686,17 +655,6 @@ def test_patron_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
-
-@given(instance=Patron_strategy)
-def test_patron_status_type(instance):
-    assert isinstance(instance.status, str)
-
-
-@given(instance=Patron_strategy)
-def test_patron_status_setter(instance):
-    original = instance.status
-    instance.status = original
-    assert instance.status == original
 
 @given(instance=Retirement_of_Books_UseCase_strategy)
 @settings(max_examples=50)

@@ -3,7 +3,7 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
 from python_code import (
     Card_Interface,
@@ -169,9 +169,6 @@ def test_card_interface_instantiation(instance):
 def test_elevensgame_instantiation(instance):
     assert isinstance(instance, ElevensGame)
 
-@given(instance=ElevensGame_strategy)
-def test_elevensgame_Board_9__type(instance):
-    assert isinstance(instance.Board_9_, int)
 
 
 @given(instance=ElevensGame_strategy)
@@ -180,9 +177,6 @@ def test_elevensgame_Board_9__setter(instance):
     instance.Board_9_ = original
     assert instance.Board_9_ == original
 
-@given(instance=ElevensGame_strategy)
-def test_elevensgame_win_type(instance):
-    assert isinstance(instance.win, bool)
 
 
 @given(instance=ElevensGame_strategy)
@@ -201,9 +195,6 @@ def test_player_instantiation(instance):
 def test_deck_instantiation(instance):
     assert isinstance(instance, Deck)
 
-@given(instance=Deck_strategy)
-def test_deck_Deck_ArrayList__type(instance):
-    assert isinstance(instance.Deck_ArrayList_, int)
 
 
 @given(instance=Deck_strategy)
@@ -212,9 +203,6 @@ def test_deck_Deck_ArrayList__setter(instance):
     instance.Deck_ArrayList_ = original
     assert instance.Deck_ArrayList_ == original
 
-@given(instance=Deck_strategy)
-def test_deck_Topcard_type(instance):
-    assert isinstance(instance.Topcard, int)
 
 
 @given(instance=Deck_strategy)

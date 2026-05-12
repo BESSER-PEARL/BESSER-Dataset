@@ -1,0 +1,4 @@
+The model has 2 class(es).
+The class 'Web_User' has no attributes.
+The class 'Memory_Interface' has no attributes.
+'Web_User' (role 'memory1', cardinality 0..*) is associated with 'Memory_Interface' (role 'processor0', cardinality 0..*).

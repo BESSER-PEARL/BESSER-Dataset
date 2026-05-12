@@ -3,12 +3,12 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    mm4::Medium,
-    mm4::Member,
-    mm4::Library,
+from python_code import (
+    mm4_Medium,
+    mm4_Member,
+    mm4_Library,
 )
 
 # =============================================================================
@@ -17,57 +17,33 @@ from classes import (
 
 
 
-def test_mm4::medium_is_not_abstract():
-    assert not inspect.isabstract(mm4::Medium)
+def test_mm4_medium_is_not_abstract():
+    assert not inspect.isabstract(mm4_Medium)
 
 
-def test_mm4::medium_constructor_exists():
-    assert callable(mm4::Medium.__init__)
+def test_mm4_medium_constructor_exists():
+    assert callable(mm4_Medium.__init__)
 
 
-def test_mm4::medium_constructor_args():
-    sig = inspect.signature(mm4::Medium.__init__)
+def test_mm4_medium_constructor_args():
+    sig = inspect.signature(mm4_Medium.__init__)
     params = list(sig.parameters.keys())
-    assert "name" in params, "Missing parameter 'name'"
     assert "type" in params, "Missing parameter 'type'"
+    assert "name" in params, "Missing parameter 'name'"
 
-def test_mm4::medium_has_name():
-    assert hasattr(mm4::Medium, "name")
+def test_mm4_medium_has_type():
+    assert hasattr(mm4_Medium, "type")
     descriptor = None
-    for klass in mm4::Medium.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_mm4::medium_has_type():
-    assert hasattr(mm4::Medium, "type")
-    descriptor = None
-    for klass in mm4::Medium.__mro__:
+    for klass in mm4_Medium.__mro__:
         if "type" in klass.__dict__:
             descriptor = klass.__dict__["type"]
             break
     assert isinstance(descriptor, property)
 
-
-
-def test_mm4::member_is_not_abstract():
-    assert not inspect.isabstract(mm4::Member)
-
-
-def test_mm4::member_constructor_exists():
-    assert callable(mm4::Member.__init__)
-
-
-def test_mm4::member_constructor_args():
-    sig = inspect.signature(mm4::Member.__init__)
-    params = list(sig.parameters.keys())
-    assert "name" in params, "Missing parameter 'name'"
-
-def test_mm4::member_has_name():
-    assert hasattr(mm4::Member, "name")
+def test_mm4_medium_has_name():
+    assert hasattr(mm4_Medium, "name")
     descriptor = None
-    for klass in mm4::Member.__mro__:
+    for klass in mm4_Medium.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -75,23 +51,47 @@ def test_mm4::member_has_name():
 
 
 
-def test_mm4::library_is_not_abstract():
-    assert not inspect.isabstract(mm4::Library)
+def test_mm4_member_is_not_abstract():
+    assert not inspect.isabstract(mm4_Member)
 
 
-def test_mm4::library_constructor_exists():
-    assert callable(mm4::Library.__init__)
+def test_mm4_member_constructor_exists():
+    assert callable(mm4_Member.__init__)
 
 
-def test_mm4::library_constructor_args():
-    sig = inspect.signature(mm4::Library.__init__)
+def test_mm4_member_constructor_args():
+    sig = inspect.signature(mm4_Member.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_mm4::library_has_name():
-    assert hasattr(mm4::Library, "name")
+def test_mm4_member_has_name():
+    assert hasattr(mm4_Member, "name")
     descriptor = None
-    for klass in mm4::Library.__mro__:
+    for klass in mm4_Member.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_mm4_library_is_not_abstract():
+    assert not inspect.isabstract(mm4_Library)
+
+
+def test_mm4_library_constructor_exists():
+    assert callable(mm4_Library.__init__)
+
+
+def test_mm4_library_constructor_args():
+    sig = inspect.signature(mm4_Library.__init__)
+    params = list(sig.parameters.keys())
+    assert "name" in params, "Missing parameter 'name'"
+
+def test_mm4_library_has_name():
+    assert hasattr(mm4_Library, "name")
+    descriptor = None
+    for klass in mm4_Library.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -109,79 +109,67 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-mm4::Medium_strategy = st.builds(
-    mm4::Medium,
-    name=
-        safe_text,
+mm4_Medium_strategy = st.builds(
+    mm4_Medium,
     type=
-        safe_text
-)
-mm4::Member_strategy = st.builds(
-    mm4::Member,
+        safe_text,
     name=
         safe_text
 )
-mm4::Library_strategy = st.builds(
-    mm4::Library,
+mm4_Member_strategy = st.builds(
+    mm4_Member,
+    name=
+        safe_text
+)
+mm4_Library_strategy = st.builds(
+    mm4_Library,
     name=
         safe_text
 )
 
-@given(instance=mm4::Medium_strategy)
+@given(instance=mm4_Medium_strategy)
 @settings(max_examples=50)
-def test_mm4::medium_instantiation(instance):
-    assert isinstance(instance, mm4::Medium)
-
-@given(instance=mm4::Medium_strategy)
-def test_mm4::medium_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_mm4_medium_instantiation(instance):
+    assert isinstance(instance, mm4_Medium)
 
 
-@given(instance=mm4::Medium_strategy)
-def test_mm4::medium_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
 
-@given(instance=mm4::Medium_strategy)
-def test_mm4::medium_type_type(instance):
-    assert isinstance(instance.type, str)
-
-
-@given(instance=mm4::Medium_strategy)
-def test_mm4::medium_type_setter(instance):
+@given(instance=mm4_Medium_strategy)
+def test_mm4_medium_type_setter(instance):
     original = instance.type
     instance.type = original
     assert instance.type == original
 
-@given(instance=mm4::Member_strategy)
-@settings(max_examples=50)
-def test_mm4::member_instantiation(instance):
-    assert isinstance(instance, mm4::Member)
-
-@given(instance=mm4::Member_strategy)
-def test_mm4::member_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
-@given(instance=mm4::Member_strategy)
-def test_mm4::member_name_setter(instance):
+@given(instance=mm4_Medium_strategy)
+def test_mm4_medium_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=mm4::Library_strategy)
+@given(instance=mm4_Member_strategy)
 @settings(max_examples=50)
-def test_mm4::library_instantiation(instance):
-    assert isinstance(instance, mm4::Library)
-
-@given(instance=mm4::Library_strategy)
-def test_mm4::library_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_mm4_member_instantiation(instance):
+    assert isinstance(instance, mm4_Member)
 
 
-@given(instance=mm4::Library_strategy)
-def test_mm4::library_name_setter(instance):
+
+@given(instance=mm4_Member_strategy)
+def test_mm4_member_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+@given(instance=mm4_Library_strategy)
+@settings(max_examples=50)
+def test_mm4_library_instantiation(instance):
+    assert isinstance(instance, mm4_Library)
+
+
+
+@given(instance=mm4_Library_strategy)
+def test_mm4_library_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original

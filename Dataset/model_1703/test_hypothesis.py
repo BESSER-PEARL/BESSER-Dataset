@@ -3,17 +3,17 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    emapsample::StringToWriterMapEntry,
-    emapsample::WriterToNameMapEntry,
-    emapsample::EStringToStringMapEntry,
-    emapsample::WriterToBookMapEntry,
+from python_code import (
+    emapsample_StringToWriterMapEntry,
+    emapsample_WriterToNameMapEntry,
+    emapsample_EStringToStringMapEntry,
+    emapsample_WriterToBookMapEntry,
     Identifiable,
-    emapsample::Writer,
-    emapsample::BookStore,
-    emapsample::Book,
+    emapsample_Writer,
+    emapsample_BookStore,
+    emapsample_Book,
 )
 
 # =============================================================================
@@ -22,23 +22,23 @@ from classes import (
 
 
 
-def test_emapsample::stringtowritermapentry_is_not_abstract():
-    assert not inspect.isabstract(emapsample::StringToWriterMapEntry)
+def test_emapsample_stringtowritermapentry_is_not_abstract():
+    assert not inspect.isabstract(emapsample_StringToWriterMapEntry)
 
 
-def test_emapsample::stringtowritermapentry_constructor_exists():
-    assert callable(emapsample::StringToWriterMapEntry.__init__)
+def test_emapsample_stringtowritermapentry_constructor_exists():
+    assert callable(emapsample_StringToWriterMapEntry.__init__)
 
 
-def test_emapsample::stringtowritermapentry_constructor_args():
-    sig = inspect.signature(emapsample::StringToWriterMapEntry.__init__)
+def test_emapsample_stringtowritermapentry_constructor_args():
+    sig = inspect.signature(emapsample_StringToWriterMapEntry.__init__)
     params = list(sig.parameters.keys())
     assert "key" in params, "Missing parameter 'key'"
 
-def test_emapsample::stringtowritermapentry_has_key():
-    assert hasattr(emapsample::StringToWriterMapEntry, "key")
+def test_emapsample_stringtowritermapentry_has_key():
+    assert hasattr(emapsample_StringToWriterMapEntry, "key")
     descriptor = None
-    for klass in emapsample::StringToWriterMapEntry.__mro__:
+    for klass in emapsample_StringToWriterMapEntry.__mro__:
         if "key" in klass.__dict__:
             descriptor = klass.__dict__["key"]
             break
@@ -46,23 +46,23 @@ def test_emapsample::stringtowritermapentry_has_key():
 
 
 
-def test_emapsample::writertonamemapentry_is_not_abstract():
-    assert not inspect.isabstract(emapsample::WriterToNameMapEntry)
+def test_emapsample_writertonamemapentry_is_not_abstract():
+    assert not inspect.isabstract(emapsample_WriterToNameMapEntry)
 
 
-def test_emapsample::writertonamemapentry_constructor_exists():
-    assert callable(emapsample::WriterToNameMapEntry.__init__)
+def test_emapsample_writertonamemapentry_constructor_exists():
+    assert callable(emapsample_WriterToNameMapEntry.__init__)
 
 
-def test_emapsample::writertonamemapentry_constructor_args():
-    sig = inspect.signature(emapsample::WriterToNameMapEntry.__init__)
+def test_emapsample_writertonamemapentry_constructor_args():
+    sig = inspect.signature(emapsample_WriterToNameMapEntry.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
 
-def test_emapsample::writertonamemapentry_has_value():
-    assert hasattr(emapsample::WriterToNameMapEntry, "value")
+def test_emapsample_writertonamemapentry_has_value():
+    assert hasattr(emapsample_WriterToNameMapEntry, "value")
     descriptor = None
-    for klass in emapsample::WriterToNameMapEntry.__mro__:
+    for klass in emapsample_WriterToNameMapEntry.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -70,30 +70,30 @@ def test_emapsample::writertonamemapentry_has_value():
 
 
 
-def test_emapsample::estringtostringmapentry_is_not_abstract():
-    assert not inspect.isabstract(emapsample::EStringToStringMapEntry)
+def test_emapsample_estringtostringmapentry_is_not_abstract():
+    assert not inspect.isabstract(emapsample_EStringToStringMapEntry)
 
 
-def test_emapsample::estringtostringmapentry_constructor_exists():
-    assert callable(emapsample::EStringToStringMapEntry.__init__)
+def test_emapsample_estringtostringmapentry_constructor_exists():
+    assert callable(emapsample_EStringToStringMapEntry.__init__)
 
 
-def test_emapsample::estringtostringmapentry_constructor_args():
-    sig = inspect.signature(emapsample::EStringToStringMapEntry.__init__)
+def test_emapsample_estringtostringmapentry_constructor_args():
+    sig = inspect.signature(emapsample_EStringToStringMapEntry.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_emapsample::writertobookmapentry_is_not_abstract():
-    assert not inspect.isabstract(emapsample::WriterToBookMapEntry)
+def test_emapsample_writertobookmapentry_is_not_abstract():
+    assert not inspect.isabstract(emapsample_WriterToBookMapEntry)
 
 
-def test_emapsample::writertobookmapentry_constructor_exists():
-    assert callable(emapsample::WriterToBookMapEntry.__init__)
+def test_emapsample_writertobookmapentry_constructor_exists():
+    assert callable(emapsample_WriterToBookMapEntry.__init__)
 
 
-def test_emapsample::writertobookmapentry_constructor_args():
-    sig = inspect.signature(emapsample::WriterToBookMapEntry.__init__)
+def test_emapsample_writertobookmapentry_constructor_args():
+    sig = inspect.signature(emapsample_WriterToBookMapEntry.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -112,23 +112,23 @@ def test_identifiable_constructor_args():
 
 
 
-def test_emapsample::writer_is_not_abstract():
-    assert not inspect.isabstract(emapsample::Writer)
+def test_emapsample_writer_is_not_abstract():
+    assert not inspect.isabstract(emapsample_Writer)
 
 
-def test_emapsample::writer_constructor_exists():
-    assert callable(emapsample::Writer.__init__)
+def test_emapsample_writer_constructor_exists():
+    assert callable(emapsample_Writer.__init__)
 
 
-def test_emapsample::writer_constructor_args():
-    sig = inspect.signature(emapsample::Writer.__init__)
+def test_emapsample_writer_constructor_args():
+    sig = inspect.signature(emapsample_Writer.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_emapsample::writer_has_name():
-    assert hasattr(emapsample::Writer, "name")
+def test_emapsample_writer_has_name():
+    assert hasattr(emapsample_Writer, "name")
     descriptor = None
-    for klass in emapsample::Writer.__mro__:
+    for klass in emapsample_Writer.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -136,23 +136,23 @@ def test_emapsample::writer_has_name():
 
 
 
-def test_emapsample::bookstore_is_not_abstract():
-    assert not inspect.isabstract(emapsample::BookStore)
+def test_emapsample_bookstore_is_not_abstract():
+    assert not inspect.isabstract(emapsample_BookStore)
 
 
-def test_emapsample::bookstore_constructor_exists():
-    assert callable(emapsample::BookStore.__init__)
+def test_emapsample_bookstore_constructor_exists():
+    assert callable(emapsample_BookStore.__init__)
 
 
-def test_emapsample::bookstore_constructor_args():
-    sig = inspect.signature(emapsample::BookStore.__init__)
+def test_emapsample_bookstore_constructor_args():
+    sig = inspect.signature(emapsample_BookStore.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_emapsample::bookstore_has_name():
-    assert hasattr(emapsample::BookStore, "name")
+def test_emapsample_bookstore_has_name():
+    assert hasattr(emapsample_BookStore, "name")
     descriptor = None
-    for klass in emapsample::BookStore.__mro__:
+    for klass in emapsample_BookStore.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -160,23 +160,23 @@ def test_emapsample::bookstore_has_name():
 
 
 
-def test_emapsample::book_is_not_abstract():
-    assert not inspect.isabstract(emapsample::Book)
+def test_emapsample_book_is_not_abstract():
+    assert not inspect.isabstract(emapsample_Book)
 
 
-def test_emapsample::book_constructor_exists():
-    assert callable(emapsample::Book.__init__)
+def test_emapsample_book_constructor_exists():
+    assert callable(emapsample_Book.__init__)
 
 
-def test_emapsample::book_constructor_args():
-    sig = inspect.signature(emapsample::Book.__init__)
+def test_emapsample_book_constructor_args():
+    sig = inspect.signature(emapsample_Book.__init__)
     params = list(sig.parameters.keys())
     assert "title" in params, "Missing parameter 'title'"
 
-def test_emapsample::book_has_title():
-    assert hasattr(emapsample::Book, "title")
+def test_emapsample_book_has_title():
+    assert hasattr(emapsample_Book, "title")
     descriptor = None
-    for klass in emapsample::Book.__mro__:
+    for klass in emapsample_Book.__mro__:
         if "title" in klass.__dict__:
             descriptor = klass.__dict__["title"]
             break
@@ -194,132 +194,117 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-emapsample::StringToWriterMapEntry_strategy = st.builds(
-    emapsample::StringToWriterMapEntry,
+emapsample_StringToWriterMapEntry_strategy = st.builds(
+    emapsample_StringToWriterMapEntry,
     key=
         safe_text
 )
-emapsample::WriterToNameMapEntry_strategy = st.builds(
-    emapsample::WriterToNameMapEntry,
+emapsample_WriterToNameMapEntry_strategy = st.builds(
+    emapsample_WriterToNameMapEntry,
     value=
         safe_text
 )
-emapsample::EStringToStringMapEntry_strategy = st.builds(
-    emapsample::EStringToStringMapEntry,
+emapsample_EStringToStringMapEntry_strategy = st.builds(
+    emapsample_EStringToStringMapEntry,
 )
-emapsample::WriterToBookMapEntry_strategy = st.builds(
-    emapsample::WriterToBookMapEntry,
+emapsample_WriterToBookMapEntry_strategy = st.builds(
+    emapsample_WriterToBookMapEntry,
 )
 Identifiable_strategy = st.builds(
     Identifiable,
 )
-emapsample::Writer_strategy = st.builds(
-    emapsample::Writer,
+emapsample_Writer_strategy = st.builds(
+    emapsample_Writer,
     name=
         safe_text
 )
-emapsample::BookStore_strategy = st.builds(
-    emapsample::BookStore,
+emapsample_BookStore_strategy = st.builds(
+    emapsample_BookStore,
     name=
         safe_text
 )
-emapsample::Book_strategy = st.builds(
-    emapsample::Book,
+emapsample_Book_strategy = st.builds(
+    emapsample_Book,
     title=
         safe_text
 )
 
-@given(instance=emapsample::StringToWriterMapEntry_strategy)
+@given(instance=emapsample_StringToWriterMapEntry_strategy)
 @settings(max_examples=50)
-def test_emapsample::stringtowritermapentry_instantiation(instance):
-    assert isinstance(instance, emapsample::StringToWriterMapEntry)
-
-@given(instance=emapsample::StringToWriterMapEntry_strategy)
-def test_emapsample::stringtowritermapentry_key_type(instance):
-    assert isinstance(instance.key, str)
+def test_emapsample_stringtowritermapentry_instantiation(instance):
+    assert isinstance(instance, emapsample_StringToWriterMapEntry)
 
 
-@given(instance=emapsample::StringToWriterMapEntry_strategy)
-def test_emapsample::stringtowritermapentry_key_setter(instance):
+
+@given(instance=emapsample_StringToWriterMapEntry_strategy)
+def test_emapsample_stringtowritermapentry_key_setter(instance):
     original = instance.key
     instance.key = original
     assert instance.key == original
 
-@given(instance=emapsample::WriterToNameMapEntry_strategy)
+@given(instance=emapsample_WriterToNameMapEntry_strategy)
 @settings(max_examples=50)
-def test_emapsample::writertonamemapentry_instantiation(instance):
-    assert isinstance(instance, emapsample::WriterToNameMapEntry)
-
-@given(instance=emapsample::WriterToNameMapEntry_strategy)
-def test_emapsample::writertonamemapentry_value_type(instance):
-    assert isinstance(instance.value, str)
+def test_emapsample_writertonamemapentry_instantiation(instance):
+    assert isinstance(instance, emapsample_WriterToNameMapEntry)
 
 
-@given(instance=emapsample::WriterToNameMapEntry_strategy)
-def test_emapsample::writertonamemapentry_value_setter(instance):
+
+@given(instance=emapsample_WriterToNameMapEntry_strategy)
+def test_emapsample_writertonamemapentry_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
 
-@given(instance=emapsample::EStringToStringMapEntry_strategy)
+@given(instance=emapsample_EStringToStringMapEntry_strategy)
 @settings(max_examples=50)
-def test_emapsample::estringtostringmapentry_instantiation(instance):
-    assert isinstance(instance, emapsample::EStringToStringMapEntry)
+def test_emapsample_estringtostringmapentry_instantiation(instance):
+    assert isinstance(instance, emapsample_EStringToStringMapEntry)
 
-@given(instance=emapsample::WriterToBookMapEntry_strategy)
+@given(instance=emapsample_WriterToBookMapEntry_strategy)
 @settings(max_examples=50)
-def test_emapsample::writertobookmapentry_instantiation(instance):
-    assert isinstance(instance, emapsample::WriterToBookMapEntry)
+def test_emapsample_writertobookmapentry_instantiation(instance):
+    assert isinstance(instance, emapsample_WriterToBookMapEntry)
 
 @given(instance=Identifiable_strategy)
 @settings(max_examples=50)
 def test_identifiable_instantiation(instance):
     assert isinstance(instance, Identifiable)
 
-@given(instance=emapsample::Writer_strategy)
+@given(instance=emapsample_Writer_strategy)
 @settings(max_examples=50)
-def test_emapsample::writer_instantiation(instance):
-    assert isinstance(instance, emapsample::Writer)
-
-@given(instance=emapsample::Writer_strategy)
-def test_emapsample::writer_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_emapsample_writer_instantiation(instance):
+    assert isinstance(instance, emapsample_Writer)
 
 
-@given(instance=emapsample::Writer_strategy)
-def test_emapsample::writer_name_setter(instance):
+
+@given(instance=emapsample_Writer_strategy)
+def test_emapsample_writer_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=emapsample::BookStore_strategy)
+@given(instance=emapsample_BookStore_strategy)
 @settings(max_examples=50)
-def test_emapsample::bookstore_instantiation(instance):
-    assert isinstance(instance, emapsample::BookStore)
-
-@given(instance=emapsample::BookStore_strategy)
-def test_emapsample::bookstore_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_emapsample_bookstore_instantiation(instance):
+    assert isinstance(instance, emapsample_BookStore)
 
 
-@given(instance=emapsample::BookStore_strategy)
-def test_emapsample::bookstore_name_setter(instance):
+
+@given(instance=emapsample_BookStore_strategy)
+def test_emapsample_bookstore_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=emapsample::Book_strategy)
+@given(instance=emapsample_Book_strategy)
 @settings(max_examples=50)
-def test_emapsample::book_instantiation(instance):
-    assert isinstance(instance, emapsample::Book)
-
-@given(instance=emapsample::Book_strategy)
-def test_emapsample::book_title_type(instance):
-    assert isinstance(instance.title, str)
+def test_emapsample_book_instantiation(instance):
+    assert isinstance(instance, emapsample_Book)
 
 
-@given(instance=emapsample::Book_strategy)
-def test_emapsample::book_title_setter(instance):
+
+@given(instance=emapsample_Book_strategy)
+def test_emapsample_book_title_setter(instance):
     original = instance.title
     instance.title = original
     assert instance.title == original

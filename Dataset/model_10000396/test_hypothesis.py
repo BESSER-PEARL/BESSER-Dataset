@@ -3,20 +3,9 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
 from python_code import (
-    ClassK,
-    ClassH,
-    ClassJ,
-    ClassG,
-    ClassF,
-    ClassE,
-    ClassD,
-    ClassC,
-    Point3D,
-    MeshGeometry3D,
-    BankAccount,
     ClassV,
     ClassU,
     ClassT,
@@ -28,295 +17,22 @@ from python_code import (
     ClassN,
     ClassM,
     ClassL,
+    ClassK,
+    ClassH,
+    ClassJ,
+    ClassG,
+    ClassF,
+    ClassE,
+    ClassD,
+    ClassC,
+    Point3D,
+    MeshGeometry3D,
+    BankAccount,
 )
 
 # =============================================================================
 # SECTION 1 — STRUCTURAL TESTS
 # =============================================================================
-
-
-
-def test_classk_is_not_abstract():
-    assert not inspect.isabstract(ClassK)
-
-
-def test_classk_constructor_exists():
-    assert callable(ClassK.__init__)
-
-
-def test_classk_constructor_args():
-    sig = inspect.signature(ClassK.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_classh_is_not_abstract():
-    assert not inspect.isabstract(ClassH)
-
-
-def test_classh_constructor_exists():
-    assert callable(ClassH.__init__)
-
-
-def test_classh_constructor_args():
-    sig = inspect.signature(ClassH.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_classj_is_not_abstract():
-    assert not inspect.isabstract(ClassJ)
-
-
-def test_classj_constructor_exists():
-    assert callable(ClassJ.__init__)
-
-
-def test_classj_constructor_args():
-    sig = inspect.signature(ClassJ.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_classg_is_not_abstract():
-    assert not inspect.isabstract(ClassG)
-
-
-def test_classg_constructor_exists():
-    assert callable(ClassG.__init__)
-
-
-def test_classg_constructor_args():
-    sig = inspect.signature(ClassG.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_classf_is_not_abstract():
-    assert not inspect.isabstract(ClassF)
-
-
-def test_classf_constructor_exists():
-    assert callable(ClassF.__init__)
-
-
-def test_classf_constructor_args():
-    sig = inspect.signature(ClassF.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_classe_is_not_abstract():
-    assert not inspect.isabstract(ClassE)
-
-
-def test_classe_constructor_exists():
-    assert callable(ClassE.__init__)
-
-
-def test_classe_constructor_args():
-    sig = inspect.signature(ClassE.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_classd_is_not_abstract():
-    assert not inspect.isabstract(ClassD)
-
-
-def test_classd_constructor_exists():
-    assert callable(ClassD.__init__)
-
-
-def test_classd_constructor_args():
-    sig = inspect.signature(ClassD.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_classc_is_not_abstract():
-    assert not inspect.isabstract(ClassC)
-
-
-def test_classc_constructor_exists():
-    assert callable(ClassC.__init__)
-
-
-def test_classc_constructor_args():
-    sig = inspect.signature(ClassC.__init__)
-    params = list(sig.parameters.keys())
-    assert "publicAttribute" in params, "Missing parameter 'publicAttribute'"
-    assert "privateAttribute" in params, "Missing parameter 'privateAttribute'"
-    assert "packageAttribute" in params, "Missing parameter 'packageAttribute'"
-    assert "protectedAttribute" in params, "Missing parameter 'protectedAttribute'"
-
-def test_classc_has_publicAttribute():
-    assert hasattr(ClassC, "publicAttribute")
-    descriptor = None
-    for klass in ClassC.__mro__:
-        if "publicAttribute" in klass.__dict__:
-            descriptor = klass.__dict__["publicAttribute"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_classc_has_privateAttribute():
-    assert hasattr(ClassC, "privateAttribute")
-    descriptor = None
-    for klass in ClassC.__mro__:
-        if "privateAttribute" in klass.__dict__:
-            descriptor = klass.__dict__["privateAttribute"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_classc_has_packageAttribute():
-    assert hasattr(ClassC, "packageAttribute")
-    descriptor = None
-    for klass in ClassC.__mro__:
-        if "packageAttribute" in klass.__dict__:
-            descriptor = klass.__dict__["packageAttribute"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_classc_has_protectedAttribute():
-    assert hasattr(ClassC, "protectedAttribute")
-    descriptor = None
-    for klass in ClassC.__mro__:
-        if "protectedAttribute" in klass.__dict__:
-            descriptor = klass.__dict__["protectedAttribute"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_point3d_is_not_abstract():
-    assert not inspect.isabstract(Point3D)
-
-
-def test_point3d_constructor_exists():
-    assert callable(Point3D.__init__)
-
-
-def test_point3d_constructor_args():
-    sig = inspect.signature(Point3D.__init__)
-    params = list(sig.parameters.keys())
-    assert "Y" in params, "Missing parameter 'Y'"
-    assert "X" in params, "Missing parameter 'X'"
-    assert "Z" in params, "Missing parameter 'Z'"
-
-def test_point3d_has_Y():
-    assert hasattr(Point3D, "Y")
-    descriptor = None
-    for klass in Point3D.__mro__:
-        if "Y" in klass.__dict__:
-            descriptor = klass.__dict__["Y"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_point3d_has_X():
-    assert hasattr(Point3D, "X")
-    descriptor = None
-    for klass in Point3D.__mro__:
-        if "X" in klass.__dict__:
-            descriptor = klass.__dict__["X"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_point3d_has_Z():
-    assert hasattr(Point3D, "Z")
-    descriptor = None
-    for klass in Point3D.__mro__:
-        if "Z" in klass.__dict__:
-            descriptor = klass.__dict__["Z"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_meshgeometry3d_is_not_abstract():
-    assert not inspect.isabstract(MeshGeometry3D)
-
-
-def test_meshgeometry3d_constructor_exists():
-    assert callable(MeshGeometry3D.__init__)
-
-
-def test_meshgeometry3d_constructor_args():
-    sig = inspect.signature(MeshGeometry3D.__init__)
-    params = list(sig.parameters.keys())
-    assert "protectedAttribute" in params, "Missing parameter 'protectedAttribute'"
-    assert "publicAttribute" in params, "Missing parameter 'publicAttribute'"
-    assert "packageAttribute" in params, "Missing parameter 'packageAttribute'"
-    assert "privateAttribute" in params, "Missing parameter 'privateAttribute'"
-
-def test_meshgeometry3d_has_protectedAttribute():
-    assert hasattr(MeshGeometry3D, "protectedAttribute")
-    descriptor = None
-    for klass in MeshGeometry3D.__mro__:
-        if "protectedAttribute" in klass.__dict__:
-            descriptor = klass.__dict__["protectedAttribute"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_meshgeometry3d_has_publicAttribute():
-    assert hasattr(MeshGeometry3D, "publicAttribute")
-    descriptor = None
-    for klass in MeshGeometry3D.__mro__:
-        if "publicAttribute" in klass.__dict__:
-            descriptor = klass.__dict__["publicAttribute"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_meshgeometry3d_has_packageAttribute():
-    assert hasattr(MeshGeometry3D, "packageAttribute")
-    descriptor = None
-    for klass in MeshGeometry3D.__mro__:
-        if "packageAttribute" in klass.__dict__:
-            descriptor = klass.__dict__["packageAttribute"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_meshgeometry3d_has_privateAttribute():
-    assert hasattr(MeshGeometry3D, "privateAttribute")
-    descriptor = None
-    for klass in MeshGeometry3D.__mro__:
-        if "privateAttribute" in klass.__dict__:
-            descriptor = klass.__dict__["privateAttribute"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_bankaccount_is_not_abstract():
-    assert not inspect.isabstract(BankAccount)
-
-
-def test_bankaccount_constructor_exists():
-    assert callable(BankAccount.__init__)
-
-
-def test_bankaccount_constructor_args():
-    sig = inspect.signature(BankAccount.__init__)
-    params = list(sig.parameters.keys())
-    assert "balance" in params, "Missing parameter 'balance'"
-    assert "ownerName" in params, "Missing parameter 'ownerName'"
-
-def test_bankaccount_has_balance():
-    assert hasattr(BankAccount, "balance")
-    descriptor = None
-    for klass in BankAccount.__mro__:
-        if "balance" in klass.__dict__:
-            descriptor = klass.__dict__["balance"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_bankaccount_has_ownerName():
-    assert hasattr(BankAccount, "ownerName")
-    descriptor = None
-    for klass in BankAccount.__mro__:
-        if "ownerName" in klass.__dict__:
-            descriptor = klass.__dict__["ownerName"]
-            break
-    assert isinstance(descriptor, property)
 
 
 
@@ -473,6 +189,290 @@ def test_classl_constructor_args():
     params = list(sig.parameters.keys())
 
 
+
+def test_classk_is_not_abstract():
+    assert not inspect.isabstract(ClassK)
+
+
+def test_classk_constructor_exists():
+    assert callable(ClassK.__init__)
+
+
+def test_classk_constructor_args():
+    sig = inspect.signature(ClassK.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_classh_is_not_abstract():
+    assert not inspect.isabstract(ClassH)
+
+
+def test_classh_constructor_exists():
+    assert callable(ClassH.__init__)
+
+
+def test_classh_constructor_args():
+    sig = inspect.signature(ClassH.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_classj_is_not_abstract():
+    assert not inspect.isabstract(ClassJ)
+
+
+def test_classj_constructor_exists():
+    assert callable(ClassJ.__init__)
+
+
+def test_classj_constructor_args():
+    sig = inspect.signature(ClassJ.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_classg_is_not_abstract():
+    assert not inspect.isabstract(ClassG)
+
+
+def test_classg_constructor_exists():
+    assert callable(ClassG.__init__)
+
+
+def test_classg_constructor_args():
+    sig = inspect.signature(ClassG.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_classf_is_not_abstract():
+    assert not inspect.isabstract(ClassF)
+
+
+def test_classf_constructor_exists():
+    assert callable(ClassF.__init__)
+
+
+def test_classf_constructor_args():
+    sig = inspect.signature(ClassF.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_classe_is_not_abstract():
+    assert not inspect.isabstract(ClassE)
+
+
+def test_classe_constructor_exists():
+    assert callable(ClassE.__init__)
+
+
+def test_classe_constructor_args():
+    sig = inspect.signature(ClassE.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_classd_is_not_abstract():
+    assert not inspect.isabstract(ClassD)
+
+
+def test_classd_constructor_exists():
+    assert callable(ClassD.__init__)
+
+
+def test_classd_constructor_args():
+    sig = inspect.signature(ClassD.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_classc_is_not_abstract():
+    assert not inspect.isabstract(ClassC)
+
+
+def test_classc_constructor_exists():
+    assert callable(ClassC.__init__)
+
+
+def test_classc_constructor_args():
+    sig = inspect.signature(ClassC.__init__)
+    params = list(sig.parameters.keys())
+    assert "packageAttribute" in params, "Missing parameter 'packageAttribute'"
+    assert "privateAttribute" in params, "Missing parameter 'privateAttribute'"
+    assert "protectedAttribute" in params, "Missing parameter 'protectedAttribute'"
+    assert "publicAttribute" in params, "Missing parameter 'publicAttribute'"
+
+def test_classc_has_packageAttribute():
+    assert hasattr(ClassC, "packageAttribute")
+    descriptor = None
+    for klass in ClassC.__mro__:
+        if "packageAttribute" in klass.__dict__:
+            descriptor = klass.__dict__["packageAttribute"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_classc_has_privateAttribute():
+    assert hasattr(ClassC, "privateAttribute")
+    descriptor = None
+    for klass in ClassC.__mro__:
+        if "privateAttribute" in klass.__dict__:
+            descriptor = klass.__dict__["privateAttribute"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_classc_has_protectedAttribute():
+    assert hasattr(ClassC, "protectedAttribute")
+    descriptor = None
+    for klass in ClassC.__mro__:
+        if "protectedAttribute" in klass.__dict__:
+            descriptor = klass.__dict__["protectedAttribute"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_classc_has_publicAttribute():
+    assert hasattr(ClassC, "publicAttribute")
+    descriptor = None
+    for klass in ClassC.__mro__:
+        if "publicAttribute" in klass.__dict__:
+            descriptor = klass.__dict__["publicAttribute"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_point3d_is_not_abstract():
+    assert not inspect.isabstract(Point3D)
+
+
+def test_point3d_constructor_exists():
+    assert callable(Point3D.__init__)
+
+
+def test_point3d_constructor_args():
+    sig = inspect.signature(Point3D.__init__)
+    params = list(sig.parameters.keys())
+    assert "Z" in params, "Missing parameter 'Z'"
+    assert "Y" in params, "Missing parameter 'Y'"
+    assert "X" in params, "Missing parameter 'X'"
+
+def test_point3d_has_Z():
+    assert hasattr(Point3D, "Z")
+    descriptor = None
+    for klass in Point3D.__mro__:
+        if "Z" in klass.__dict__:
+            descriptor = klass.__dict__["Z"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_point3d_has_Y():
+    assert hasattr(Point3D, "Y")
+    descriptor = None
+    for klass in Point3D.__mro__:
+        if "Y" in klass.__dict__:
+            descriptor = klass.__dict__["Y"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_point3d_has_X():
+    assert hasattr(Point3D, "X")
+    descriptor = None
+    for klass in Point3D.__mro__:
+        if "X" in klass.__dict__:
+            descriptor = klass.__dict__["X"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_meshgeometry3d_is_not_abstract():
+    assert not inspect.isabstract(MeshGeometry3D)
+
+
+def test_meshgeometry3d_constructor_exists():
+    assert callable(MeshGeometry3D.__init__)
+
+
+def test_meshgeometry3d_constructor_args():
+    sig = inspect.signature(MeshGeometry3D.__init__)
+    params = list(sig.parameters.keys())
+    assert "privateAttribute" in params, "Missing parameter 'privateAttribute'"
+    assert "packageAttribute" in params, "Missing parameter 'packageAttribute'"
+    assert "publicAttribute" in params, "Missing parameter 'publicAttribute'"
+    assert "protectedAttribute" in params, "Missing parameter 'protectedAttribute'"
+
+def test_meshgeometry3d_has_privateAttribute():
+    assert hasattr(MeshGeometry3D, "privateAttribute")
+    descriptor = None
+    for klass in MeshGeometry3D.__mro__:
+        if "privateAttribute" in klass.__dict__:
+            descriptor = klass.__dict__["privateAttribute"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_meshgeometry3d_has_packageAttribute():
+    assert hasattr(MeshGeometry3D, "packageAttribute")
+    descriptor = None
+    for klass in MeshGeometry3D.__mro__:
+        if "packageAttribute" in klass.__dict__:
+            descriptor = klass.__dict__["packageAttribute"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_meshgeometry3d_has_publicAttribute():
+    assert hasattr(MeshGeometry3D, "publicAttribute")
+    descriptor = None
+    for klass in MeshGeometry3D.__mro__:
+        if "publicAttribute" in klass.__dict__:
+            descriptor = klass.__dict__["publicAttribute"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_meshgeometry3d_has_protectedAttribute():
+    assert hasattr(MeshGeometry3D, "protectedAttribute")
+    descriptor = None
+    for klass in MeshGeometry3D.__mro__:
+        if "protectedAttribute" in klass.__dict__:
+            descriptor = klass.__dict__["protectedAttribute"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_bankaccount_is_not_abstract():
+    assert not inspect.isabstract(BankAccount)
+
+
+def test_bankaccount_constructor_exists():
+    assert callable(BankAccount.__init__)
+
+
+def test_bankaccount_constructor_args():
+    sig = inspect.signature(BankAccount.__init__)
+    params = list(sig.parameters.keys())
+    assert "ownerName" in params, "Missing parameter 'ownerName'"
+    assert "balance" in params, "Missing parameter 'balance'"
+
+def test_bankaccount_has_ownerName():
+    assert hasattr(BankAccount, "ownerName")
+    descriptor = None
+    for klass in BankAccount.__mro__:
+        if "ownerName" in klass.__dict__:
+            descriptor = klass.__dict__["ownerName"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_bankaccount_has_balance():
+    assert hasattr(BankAccount, "balance")
+    descriptor = None
+    for klass in BankAccount.__mro__:
+        if "balance" in klass.__dict__:
+            descriptor = klass.__dict__["balance"]
+            break
+    assert isinstance(descriptor, property)
+
+
 # =============================================================================
 # HYPOTHESIS STRATEGIES
 # =============================================================================
@@ -484,65 +484,6 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-ClassK_strategy = st.builds(
-    ClassK,
-)
-ClassH_strategy = st.builds(
-    ClassH,
-)
-ClassJ_strategy = st.builds(
-    ClassJ,
-)
-ClassG_strategy = st.builds(
-    ClassG,
-)
-ClassF_strategy = st.builds(
-    ClassF,
-)
-ClassE_strategy = st.builds(
-    ClassE,
-)
-ClassD_strategy = st.builds(
-    ClassD,
-)
-ClassC_strategy = st.builds(
-    ClassC,
-    publicAttribute=
-        st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False),
-    privateAttribute=
-        st.integers(),
-    packageAttribute=
-        safe_text,
-    protectedAttribute=
-        safe_text
-)
-Point3D_strategy = st.builds(
-    Point3D,
-    Y=
-        st.integers(),
-    X=
-        st.integers(),
-    Z=
-        st.integers()
-)
-MeshGeometry3D_strategy = st.builds(
-    MeshGeometry3D,
-    protectedAttribute=
-        safe_text,
-    publicAttribute=
-        st.none(),
-    packageAttribute=
-        safe_text,
-    privateAttribute=
-        st.integers()
-)
-BankAccount_strategy = st.builds(
-    BankAccount,
-    balance=
-        st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False),
-    ownerName=
-        safe_text
-)
 ClassV_strategy = st.builds(
     ClassV,
 )
@@ -576,204 +517,65 @@ ClassM_strategy = st.builds(
 ClassL_strategy = st.builds(
     ClassL,
 )
-
-@given(instance=ClassK_strategy)
-@settings(max_examples=50)
-def test_classk_instantiation(instance):
-    assert isinstance(instance, ClassK)
-
-@given(instance=ClassH_strategy)
-@settings(max_examples=50)
-def test_classh_instantiation(instance):
-    assert isinstance(instance, ClassH)
-
-@given(instance=ClassJ_strategy)
-@settings(max_examples=50)
-def test_classj_instantiation(instance):
-    assert isinstance(instance, ClassJ)
-
-@given(instance=ClassG_strategy)
-@settings(max_examples=50)
-def test_classg_instantiation(instance):
-    assert isinstance(instance, ClassG)
-
-@given(instance=ClassF_strategy)
-@settings(max_examples=50)
-def test_classf_instantiation(instance):
-    assert isinstance(instance, ClassF)
-
-@given(instance=ClassE_strategy)
-@settings(max_examples=50)
-def test_classe_instantiation(instance):
-    assert isinstance(instance, ClassE)
-
-@given(instance=ClassD_strategy)
-@settings(max_examples=50)
-def test_classd_instantiation(instance):
-    assert isinstance(instance, ClassD)
-
-@given(instance=ClassC_strategy)
-@settings(max_examples=50)
-def test_classc_instantiation(instance):
-    assert isinstance(instance, ClassC)
-
-@given(instance=ClassC_strategy)
-def test_classc_publicAttribute_type(instance):
-    assert isinstance(instance.publicAttribute, float)
-
-
-@given(instance=ClassC_strategy)
-def test_classc_publicAttribute_setter(instance):
-    original = instance.publicAttribute
-    instance.publicAttribute = original
-    assert instance.publicAttribute == original
-
-@given(instance=ClassC_strategy)
-def test_classc_privateAttribute_type(instance):
-    assert isinstance(instance.privateAttribute, int)
-
-
-@given(instance=ClassC_strategy)
-def test_classc_privateAttribute_setter(instance):
-    original = instance.privateAttribute
-    instance.privateAttribute = original
-    assert instance.privateAttribute == original
-
-@given(instance=ClassC_strategy)
-def test_classc_packageAttribute_type(instance):
-    assert isinstance(instance.packageAttribute, str)
-
-
-@given(instance=ClassC_strategy)
-def test_classc_packageAttribute_setter(instance):
-    original = instance.packageAttribute
-    instance.packageAttribute = original
-    assert instance.packageAttribute == original
-
-@given(instance=ClassC_strategy)
-def test_classc_protectedAttribute_type(instance):
-    assert isinstance(instance.protectedAttribute, str)
-
-
-@given(instance=ClassC_strategy)
-def test_classc_protectedAttribute_setter(instance):
-    original = instance.protectedAttribute
-    instance.protectedAttribute = original
-    assert instance.protectedAttribute == original
-
-@given(instance=Point3D_strategy)
-@settings(max_examples=50)
-def test_point3d_instantiation(instance):
-    assert isinstance(instance, Point3D)
-
-@given(instance=Point3D_strategy)
-def test_point3d_Y_type(instance):
-    assert isinstance(instance.Y, int)
-
-
-@given(instance=Point3D_strategy)
-def test_point3d_Y_setter(instance):
-    original = instance.Y
-    instance.Y = original
-    assert instance.Y == original
-
-@given(instance=Point3D_strategy)
-def test_point3d_X_type(instance):
-    assert isinstance(instance.X, int)
-
-
-@given(instance=Point3D_strategy)
-def test_point3d_X_setter(instance):
-    original = instance.X
-    instance.X = original
-    assert instance.X == original
-
-@given(instance=Point3D_strategy)
-def test_point3d_Z_type(instance):
-    assert isinstance(instance.Z, int)
-
-
-@given(instance=Point3D_strategy)
-def test_point3d_Z_setter(instance):
-    original = instance.Z
-    instance.Z = original
-    assert instance.Z == original
-
-@given(instance=MeshGeometry3D_strategy)
-@settings(max_examples=50)
-def test_meshgeometry3d_instantiation(instance):
-    assert isinstance(instance, MeshGeometry3D)
-
-@given(instance=MeshGeometry3D_strategy)
-def test_meshgeometry3d_protectedAttribute_type(instance):
-    assert isinstance(instance.protectedAttribute, str)
-
-
-@given(instance=MeshGeometry3D_strategy)
-def test_meshgeometry3d_protectedAttribute_setter(instance):
-    original = instance.protectedAttribute
-    instance.protectedAttribute = original
-    assert instance.protectedAttribute == original
-
-@given(instance=MeshGeometry3D_strategy)
-def test_meshgeometry3d_publicAttribute_type(instance):
-    assert isinstance(instance.publicAttribute, point3d)
-
-
-@given(instance=MeshGeometry3D_strategy)
-def test_meshgeometry3d_publicAttribute_setter(instance):
-    original = instance.publicAttribute
-    instance.publicAttribute = original
-    assert instance.publicAttribute == original
-
-@given(instance=MeshGeometry3D_strategy)
-def test_meshgeometry3d_packageAttribute_type(instance):
-    assert isinstance(instance.packageAttribute, str)
-
-
-@given(instance=MeshGeometry3D_strategy)
-def test_meshgeometry3d_packageAttribute_setter(instance):
-    original = instance.packageAttribute
-    instance.packageAttribute = original
-    assert instance.packageAttribute == original
-
-@given(instance=MeshGeometry3D_strategy)
-def test_meshgeometry3d_privateAttribute_type(instance):
-    assert isinstance(instance.privateAttribute, int)
-
-
-@given(instance=MeshGeometry3D_strategy)
-def test_meshgeometry3d_privateAttribute_setter(instance):
-    original = instance.privateAttribute
-    instance.privateAttribute = original
-    assert instance.privateAttribute == original
-
-@given(instance=BankAccount_strategy)
-@settings(max_examples=50)
-def test_bankaccount_instantiation(instance):
-    assert isinstance(instance, BankAccount)
-
-@given(instance=BankAccount_strategy)
-def test_bankaccount_balance_type(instance):
-    assert isinstance(instance.balance, float)
-
-
-@given(instance=BankAccount_strategy)
-def test_bankaccount_balance_setter(instance):
-    original = instance.balance
-    instance.balance = original
-    assert instance.balance == original
-
-@given(instance=BankAccount_strategy)
-def test_bankaccount_ownerName_type(instance):
-    assert isinstance(instance.ownerName, str)
-
-
-@given(instance=BankAccount_strategy)
-def test_bankaccount_ownerName_setter(instance):
-    original = instance.ownerName
-    instance.ownerName = original
-    assert instance.ownerName == original
+ClassK_strategy = st.builds(
+    ClassK,
+)
+ClassH_strategy = st.builds(
+    ClassH,
+)
+ClassJ_strategy = st.builds(
+    ClassJ,
+)
+ClassG_strategy = st.builds(
+    ClassG,
+)
+ClassF_strategy = st.builds(
+    ClassF,
+)
+ClassE_strategy = st.builds(
+    ClassE,
+)
+ClassD_strategy = st.builds(
+    ClassD,
+)
+ClassC_strategy = st.builds(
+    ClassC,
+    packageAttribute=
+        safe_text,
+    privateAttribute=
+        st.integers(),
+    protectedAttribute=
+        safe_text,
+    publicAttribute=
+        st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False)
+)
+Point3D_strategy = st.builds(
+    Point3D,
+    Z=
+        st.integers(),
+    Y=
+        st.integers(),
+    X=
+        st.integers()
+)
+MeshGeometry3D_strategy = st.builds(
+    MeshGeometry3D,
+    privateAttribute=
+        st.integers(),
+    packageAttribute=
+        safe_text,
+    publicAttribute=
+        st.none(),
+    protectedAttribute=
+        safe_text
+)
+BankAccount_strategy = st.builds(
+    BankAccount,
+    ownerName=
+        safe_text,
+    balance=
+        st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False)
+)
 
 @given(instance=ClassV_strategy)
 @settings(max_examples=50)
@@ -829,3 +631,162 @@ def test_classm_instantiation(instance):
 @settings(max_examples=50)
 def test_classl_instantiation(instance):
     assert isinstance(instance, ClassL)
+
+@given(instance=ClassK_strategy)
+@settings(max_examples=50)
+def test_classk_instantiation(instance):
+    assert isinstance(instance, ClassK)
+
+@given(instance=ClassH_strategy)
+@settings(max_examples=50)
+def test_classh_instantiation(instance):
+    assert isinstance(instance, ClassH)
+
+@given(instance=ClassJ_strategy)
+@settings(max_examples=50)
+def test_classj_instantiation(instance):
+    assert isinstance(instance, ClassJ)
+
+@given(instance=ClassG_strategy)
+@settings(max_examples=50)
+def test_classg_instantiation(instance):
+    assert isinstance(instance, ClassG)
+
+@given(instance=ClassF_strategy)
+@settings(max_examples=50)
+def test_classf_instantiation(instance):
+    assert isinstance(instance, ClassF)
+
+@given(instance=ClassE_strategy)
+@settings(max_examples=50)
+def test_classe_instantiation(instance):
+    assert isinstance(instance, ClassE)
+
+@given(instance=ClassD_strategy)
+@settings(max_examples=50)
+def test_classd_instantiation(instance):
+    assert isinstance(instance, ClassD)
+
+@given(instance=ClassC_strategy)
+@settings(max_examples=50)
+def test_classc_instantiation(instance):
+    assert isinstance(instance, ClassC)
+
+
+
+@given(instance=ClassC_strategy)
+def test_classc_packageAttribute_setter(instance):
+    original = instance.packageAttribute
+    instance.packageAttribute = original
+    assert instance.packageAttribute == original
+
+
+
+@given(instance=ClassC_strategy)
+def test_classc_privateAttribute_setter(instance):
+    original = instance.privateAttribute
+    instance.privateAttribute = original
+    assert instance.privateAttribute == original
+
+
+
+@given(instance=ClassC_strategy)
+def test_classc_protectedAttribute_setter(instance):
+    original = instance.protectedAttribute
+    instance.protectedAttribute = original
+    assert instance.protectedAttribute == original
+
+
+
+@given(instance=ClassC_strategy)
+def test_classc_publicAttribute_setter(instance):
+    original = instance.publicAttribute
+    instance.publicAttribute = original
+    assert instance.publicAttribute == original
+
+@given(instance=Point3D_strategy)
+@settings(max_examples=50)
+def test_point3d_instantiation(instance):
+    assert isinstance(instance, Point3D)
+
+
+
+@given(instance=Point3D_strategy)
+def test_point3d_Z_setter(instance):
+    original = instance.Z
+    instance.Z = original
+    assert instance.Z == original
+
+
+
+@given(instance=Point3D_strategy)
+def test_point3d_Y_setter(instance):
+    original = instance.Y
+    instance.Y = original
+    assert instance.Y == original
+
+
+
+@given(instance=Point3D_strategy)
+def test_point3d_X_setter(instance):
+    original = instance.X
+    instance.X = original
+    assert instance.X == original
+
+@given(instance=MeshGeometry3D_strategy)
+@settings(max_examples=50)
+def test_meshgeometry3d_instantiation(instance):
+    assert isinstance(instance, MeshGeometry3D)
+
+
+
+@given(instance=MeshGeometry3D_strategy)
+def test_meshgeometry3d_privateAttribute_setter(instance):
+    original = instance.privateAttribute
+    instance.privateAttribute = original
+    assert instance.privateAttribute == original
+
+
+
+@given(instance=MeshGeometry3D_strategy)
+def test_meshgeometry3d_packageAttribute_setter(instance):
+    original = instance.packageAttribute
+    instance.packageAttribute = original
+    assert instance.packageAttribute == original
+
+
+
+@given(instance=MeshGeometry3D_strategy)
+def test_meshgeometry3d_publicAttribute_setter(instance):
+    original = instance.publicAttribute
+    instance.publicAttribute = original
+    assert instance.publicAttribute == original
+
+
+
+@given(instance=MeshGeometry3D_strategy)
+def test_meshgeometry3d_protectedAttribute_setter(instance):
+    original = instance.protectedAttribute
+    instance.protectedAttribute = original
+    assert instance.protectedAttribute == original
+
+@given(instance=BankAccount_strategy)
+@settings(max_examples=50)
+def test_bankaccount_instantiation(instance):
+    assert isinstance(instance, BankAccount)
+
+
+
+@given(instance=BankAccount_strategy)
+def test_bankaccount_ownerName_setter(instance):
+    original = instance.ownerName
+    instance.ownerName = original
+    assert instance.ownerName == original
+
+
+
+@given(instance=BankAccount_strategy)
+def test_bankaccount_balance_setter(instance):
+    original = instance.balance
+    instance.balance = original
+    assert instance.balance == original

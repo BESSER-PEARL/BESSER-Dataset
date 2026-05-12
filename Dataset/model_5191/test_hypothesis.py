@@ -3,13 +3,13 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     B,
-    oo::remove::empty::C,
-    oo::remove::empty::B,
-    oo::remove::empty::A,
+    oo_remove_empty_C,
+    oo_remove_empty_B,
+    oo_remove_empty_A,
 )
 
 # =============================================================================
@@ -32,44 +32,44 @@ def test_b_constructor_args():
 
 
 
-def test_oo::remove::empty::c_is_not_abstract():
-    assert not inspect.isabstract(oo::remove::empty::C)
+def test_oo_remove_empty_c_is_not_abstract():
+    assert not inspect.isabstract(oo_remove_empty_C)
 
 
-def test_oo::remove::empty::c_constructor_exists():
-    assert callable(oo::remove::empty::C.__init__)
+def test_oo_remove_empty_c_constructor_exists():
+    assert callable(oo_remove_empty_C.__init__)
 
 
-def test_oo::remove::empty::c_constructor_args():
-    sig = inspect.signature(oo::remove::empty::C.__init__)
+def test_oo_remove_empty_c_constructor_args():
+    sig = inspect.signature(oo_remove_empty_C.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_oo::remove::empty::b_is_not_abstract():
-    assert not inspect.isabstract(oo::remove::empty::B)
+def test_oo_remove_empty_b_is_not_abstract():
+    assert not inspect.isabstract(oo_remove_empty_B)
 
 
-def test_oo::remove::empty::b_constructor_exists():
-    assert callable(oo::remove::empty::B.__init__)
+def test_oo_remove_empty_b_constructor_exists():
+    assert callable(oo_remove_empty_B.__init__)
 
 
-def test_oo::remove::empty::b_constructor_args():
-    sig = inspect.signature(oo::remove::empty::B.__init__)
+def test_oo_remove_empty_b_constructor_args():
+    sig = inspect.signature(oo_remove_empty_B.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_oo::remove::empty::a_is_not_abstract():
-    assert not inspect.isabstract(oo::remove::empty::A)
+def test_oo_remove_empty_a_is_not_abstract():
+    assert not inspect.isabstract(oo_remove_empty_A)
 
 
-def test_oo::remove::empty::a_constructor_exists():
-    assert callable(oo::remove::empty::A.__init__)
+def test_oo_remove_empty_a_constructor_exists():
+    assert callable(oo_remove_empty_A.__init__)
 
 
-def test_oo::remove::empty::a_constructor_args():
-    sig = inspect.signature(oo::remove::empty::A.__init__)
+def test_oo_remove_empty_a_constructor_args():
+    sig = inspect.signature(oo_remove_empty_A.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -87,14 +87,14 @@ safe_text = st.text(
 B_strategy = st.builds(
     B,
 )
-oo::remove::empty::C_strategy = st.builds(
-    oo::remove::empty::C,
+oo_remove_empty_C_strategy = st.builds(
+    oo_remove_empty_C,
 )
-oo::remove::empty::B_strategy = st.builds(
-    oo::remove::empty::B,
+oo_remove_empty_B_strategy = st.builds(
+    oo_remove_empty_B,
 )
-oo::remove::empty::A_strategy = st.builds(
-    oo::remove::empty::A,
+oo_remove_empty_A_strategy = st.builds(
+    oo_remove_empty_A,
 )
 
 @given(instance=B_strategy)
@@ -102,17 +102,17 @@ oo::remove::empty::A_strategy = st.builds(
 def test_b_instantiation(instance):
     assert isinstance(instance, B)
 
-@given(instance=oo::remove::empty::C_strategy)
+@given(instance=oo_remove_empty_C_strategy)
 @settings(max_examples=50)
-def test_oo::remove::empty::c_instantiation(instance):
-    assert isinstance(instance, oo::remove::empty::C)
+def test_oo_remove_empty_c_instantiation(instance):
+    assert isinstance(instance, oo_remove_empty_C)
 
-@given(instance=oo::remove::empty::B_strategy)
+@given(instance=oo_remove_empty_B_strategy)
 @settings(max_examples=50)
-def test_oo::remove::empty::b_instantiation(instance):
-    assert isinstance(instance, oo::remove::empty::B)
+def test_oo_remove_empty_b_instantiation(instance):
+    assert isinstance(instance, oo_remove_empty_B)
 
-@given(instance=oo::remove::empty::A_strategy)
+@given(instance=oo_remove_empty_A_strategy)
 @settings(max_examples=50)
-def test_oo::remove::empty::a_instantiation(instance):
-    assert isinstance(instance, oo::remove::empty::A)
+def test_oo_remove_empty_a_instantiation(instance):
+    assert isinstance(instance, oo_remove_empty_A)

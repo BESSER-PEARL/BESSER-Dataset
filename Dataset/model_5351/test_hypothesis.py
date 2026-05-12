@@ -3,10 +3,10 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    p::p1::myEClass,
+from python_code import (
+    p_p1_myEClass,
 )
 
 # =============================================================================
@@ -15,16 +15,16 @@ from classes import (
 
 
 
-def test_p::p1::myeclass_is_not_abstract():
-    assert not inspect.isabstract(p::p1::myEClass)
+def test_p_p1_myeclass_is_not_abstract():
+    assert not inspect.isabstract(p_p1_myEClass)
 
 
-def test_p::p1::myeclass_constructor_exists():
-    assert callable(p::p1::myEClass.__init__)
+def test_p_p1_myeclass_constructor_exists():
+    assert callable(p_p1_myEClass.__init__)
 
 
-def test_p::p1::myeclass_constructor_args():
-    sig = inspect.signature(p::p1::myEClass.__init__)
+def test_p_p1_myeclass_constructor_args():
+    sig = inspect.signature(p_p1_myEClass.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -39,11 +39,11 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-p::p1::myEClass_strategy = st.builds(
-    p::p1::myEClass,
+p_p1_myEClass_strategy = st.builds(
+    p_p1_myEClass,
 )
 
-@given(instance=p::p1::myEClass_strategy)
+@given(instance=p_p1_myEClass_strategy)
 @settings(max_examples=50)
-def test_p::p1::myeclass_instantiation(instance):
-    assert isinstance(instance, p::p1::myEClass)
+def test_p_p1_myeclass_instantiation(instance):
+    assert isinstance(instance, p_p1_myEClass)

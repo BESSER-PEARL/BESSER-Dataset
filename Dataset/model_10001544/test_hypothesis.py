@@ -3,7 +3,7 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
 from python_code import (
     Integer_external,
@@ -177,17 +177,8 @@ def test_deck_constructor_exists():
 def test_deck_constructor_args():
     sig = inspect.signature(Deck.__init__)
     params = list(sig.parameters.keys())
-    assert "deckArray" in params, "Missing parameter 'deckArray'"
     assert "size" in params, "Missing parameter 'size'"
-
-def test_deck_has_deckArray():
-    assert hasattr(Deck, "deckArray")
-    descriptor = None
-    for klass in Deck.__mro__:
-        if "deckArray" in klass.__dict__:
-            descriptor = klass.__dict__["deckArray"]
-            break
-    assert isinstance(descriptor, property)
+    assert "deckArray" in params, "Missing parameter 'deckArray'"
 
 def test_deck_has_size():
     assert hasattr(Deck, "size")
@@ -195,6 +186,15 @@ def test_deck_has_size():
     for klass in Deck.__mro__:
         if "size" in klass.__dict__:
             descriptor = klass.__dict__["size"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_deck_has_deckArray():
+    assert hasattr(Deck, "deckArray")
+    descriptor = None
+    for klass in Deck.__mro__:
+        if "deckArray" in klass.__dict__:
+            descriptor = klass.__dict__["deckArray"]
             break
     assert isinstance(descriptor, property)
 
@@ -256,9 +256,9 @@ Cards_strategy = st.builds(
 )
 Deck_strategy = st.builds(
     Deck,
-    deckArray=
-        st.integers(),
     size=
+        st.integers(),
+    deckArray=
         st.integers()
 )
 _Interface_strategy = st.builds(
@@ -280,9 +280,6 @@ def test_blackjackgame_instantiation(instance):
 def test_player_instantiation(instance):
     assert isinstance(instance, Player)
 
-@given(instance=Player_strategy)
-def test_player_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
 @given(instance=Player_strategy)
@@ -296,9 +293,6 @@ def test_player_name_setter(instance):
 def test_hand_instantiation(instance):
     assert isinstance(instance, Hand)
 
-@given(instance=Hand_strategy)
-def test_hand_handValue_type(instance):
-    assert isinstance(instance.handValue, int)
 
 
 @given(instance=Hand_strategy)
@@ -312,9 +306,6 @@ def test_hand_handValue_setter(instance):
 def test_dealer_instantiation(instance):
     assert isinstance(instance, Dealer)
 
-@given(instance=Dealer_strategy)
-def test_dealer_handValue_type(instance):
-    assert isinstance(instance.handValue, int)
 
 
 @given(instance=Dealer_strategy)
@@ -323,9 +314,6 @@ def test_dealer_handValue_setter(instance):
     instance.handValue = original
     assert instance.handValue == original
 
-@given(instance=Dealer_strategy)
-def test_dealer_handLimit_type(instance):
-    assert isinstance(instance.handLimit, int)
 
 
 @given(instance=Dealer_strategy)
@@ -339,9 +327,6 @@ def test_dealer_handLimit_setter(instance):
 def test_cards_instantiation(instance):
     assert isinstance(instance, Cards)
 
-@given(instance=Cards_strategy)
-def test_cards_cardValue_type(instance):
-    assert isinstance(instance.cardValue, int)
 
 
 @given(instance=Cards_strategy)
@@ -350,9 +335,6 @@ def test_cards_cardValue_setter(instance):
     instance.cardValue = original
     assert instance.cardValue == original
 
-@given(instance=Cards_strategy)
-def test_cards_cardName_type(instance):
-    assert isinstance(instance.cardName, str)
 
 
 @given(instance=Cards_strategy)
@@ -366,20 +348,6 @@ def test_cards_cardName_setter(instance):
 def test_deck_instantiation(instance):
     assert isinstance(instance, Deck)
 
-@given(instance=Deck_strategy)
-def test_deck_deckArray_type(instance):
-    assert isinstance(instance.deckArray, int)
-
-
-@given(instance=Deck_strategy)
-def test_deck_deckArray_setter(instance):
-    original = instance.deckArray
-    instance.deckArray = original
-    assert instance.deckArray == original
-
-@given(instance=Deck_strategy)
-def test_deck_size_type(instance):
-    assert isinstance(instance.size, int)
 
 
 @given(instance=Deck_strategy)
@@ -387,6 +355,14 @@ def test_deck_size_setter(instance):
     original = instance.size
     instance.size = original
     assert instance.size == original
+
+
+
+@given(instance=Deck_strategy)
+def test_deck_deckArray_setter(instance):
+    original = instance.deckArray
+    instance.deckArray = original
+    assert instance.deckArray == original
 
 @given(instance=_Interface_strategy)
 @settings(max_examples=50)

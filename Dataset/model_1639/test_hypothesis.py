@@ -3,17 +3,17 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     NodeCS,
-    kiamacs::CompositeCS,
-    kiamacs::EObject,
-    kiamacs::BaseCS,
-    kiamacs::LeafCS,
+    kiamacs_CompositeCS,
+    kiamacs_EObject,
+    kiamacs_BaseCS,
+    kiamacs_LeafCS,
     BaseCS,
-    kiamacs::NodeCS,
-    kiamacs::TopCS,
+    kiamacs_NodeCS,
+    kiamacs_TopCS,
 )
 
 # =============================================================================
@@ -36,58 +36,58 @@ def test_nodecs_constructor_args():
 
 
 
-def test_kiamacs::compositecs_is_not_abstract():
-    assert not inspect.isabstract(kiamacs::CompositeCS)
+def test_kiamacs_compositecs_is_not_abstract():
+    assert not inspect.isabstract(kiamacs_CompositeCS)
 
 
-def test_kiamacs::compositecs_constructor_exists():
-    assert callable(kiamacs::CompositeCS.__init__)
+def test_kiamacs_compositecs_constructor_exists():
+    assert callable(kiamacs_CompositeCS.__init__)
 
 
-def test_kiamacs::compositecs_constructor_args():
-    sig = inspect.signature(kiamacs::CompositeCS.__init__)
+def test_kiamacs_compositecs_constructor_args():
+    sig = inspect.signature(kiamacs_CompositeCS.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_kiamacs::eobject_is_not_abstract():
-    assert not inspect.isabstract(kiamacs::EObject)
+def test_kiamacs_eobject_is_not_abstract():
+    assert not inspect.isabstract(kiamacs_EObject)
 
 
-def test_kiamacs::eobject_constructor_exists():
-    assert callable(kiamacs::EObject.__init__)
+def test_kiamacs_eobject_constructor_exists():
+    assert callable(kiamacs_EObject.__init__)
 
 
-def test_kiamacs::eobject_constructor_args():
-    sig = inspect.signature(kiamacs::EObject.__init__)
+def test_kiamacs_eobject_constructor_args():
+    sig = inspect.signature(kiamacs_EObject.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_kiamacs::basecs_is_not_abstract():
-    assert not inspect.isabstract(kiamacs::BaseCS)
+def test_kiamacs_basecs_is_not_abstract():
+    assert not inspect.isabstract(kiamacs_BaseCS)
 
 
-def test_kiamacs::basecs_constructor_exists():
-    assert callable(kiamacs::BaseCS.__init__)
+def test_kiamacs_basecs_constructor_exists():
+    assert callable(kiamacs_BaseCS.__init__)
 
 
-def test_kiamacs::basecs_constructor_args():
-    sig = inspect.signature(kiamacs::BaseCS.__init__)
+def test_kiamacs_basecs_constructor_args():
+    sig = inspect.signature(kiamacs_BaseCS.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_kiamacs::leafcs_is_not_abstract():
-    assert not inspect.isabstract(kiamacs::LeafCS)
+def test_kiamacs_leafcs_is_not_abstract():
+    assert not inspect.isabstract(kiamacs_LeafCS)
 
 
-def test_kiamacs::leafcs_constructor_exists():
-    assert callable(kiamacs::LeafCS.__init__)
+def test_kiamacs_leafcs_constructor_exists():
+    assert callable(kiamacs_LeafCS.__init__)
 
 
-def test_kiamacs::leafcs_constructor_args():
-    sig = inspect.signature(kiamacs::LeafCS.__init__)
+def test_kiamacs_leafcs_constructor_args():
+    sig = inspect.signature(kiamacs_LeafCS.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -106,30 +106,30 @@ def test_basecs_constructor_args():
 
 
 
-def test_kiamacs::nodecs_is_not_abstract():
-    assert not inspect.isabstract(kiamacs::NodeCS)
+def test_kiamacs_nodecs_is_not_abstract():
+    assert not inspect.isabstract(kiamacs_NodeCS)
 
 
-def test_kiamacs::nodecs_constructor_exists():
-    assert callable(kiamacs::NodeCS.__init__)
+def test_kiamacs_nodecs_constructor_exists():
+    assert callable(kiamacs_NodeCS.__init__)
 
 
-def test_kiamacs::nodecs_constructor_args():
-    sig = inspect.signature(kiamacs::NodeCS.__init__)
+def test_kiamacs_nodecs_constructor_args():
+    sig = inspect.signature(kiamacs_NodeCS.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_kiamacs::topcs_is_not_abstract():
-    assert not inspect.isabstract(kiamacs::TopCS)
+def test_kiamacs_topcs_is_not_abstract():
+    assert not inspect.isabstract(kiamacs_TopCS)
 
 
-def test_kiamacs::topcs_constructor_exists():
-    assert callable(kiamacs::TopCS.__init__)
+def test_kiamacs_topcs_constructor_exists():
+    assert callable(kiamacs_TopCS.__init__)
 
 
-def test_kiamacs::topcs_constructor_args():
-    sig = inspect.signature(kiamacs::TopCS.__init__)
+def test_kiamacs_topcs_constructor_args():
+    sig = inspect.signature(kiamacs_TopCS.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -147,26 +147,26 @@ safe_text = st.text(
 NodeCS_strategy = st.builds(
     NodeCS,
 )
-kiamacs::CompositeCS_strategy = st.builds(
-    kiamacs::CompositeCS,
+kiamacs_CompositeCS_strategy = st.builds(
+    kiamacs_CompositeCS,
 )
-kiamacs::EObject_strategy = st.builds(
-    kiamacs::EObject,
+kiamacs_EObject_strategy = st.builds(
+    kiamacs_EObject,
 )
-kiamacs::BaseCS_strategy = st.builds(
-    kiamacs::BaseCS,
+kiamacs_BaseCS_strategy = st.builds(
+    kiamacs_BaseCS,
 )
-kiamacs::LeafCS_strategy = st.builds(
-    kiamacs::LeafCS,
+kiamacs_LeafCS_strategy = st.builds(
+    kiamacs_LeafCS,
 )
 BaseCS_strategy = st.builds(
     BaseCS,
 )
-kiamacs::NodeCS_strategy = st.builds(
-    kiamacs::NodeCS,
+kiamacs_NodeCS_strategy = st.builds(
+    kiamacs_NodeCS,
 )
-kiamacs::TopCS_strategy = st.builds(
-    kiamacs::TopCS,
+kiamacs_TopCS_strategy = st.builds(
+    kiamacs_TopCS,
 )
 
 @given(instance=NodeCS_strategy)
@@ -174,37 +174,37 @@ kiamacs::TopCS_strategy = st.builds(
 def test_nodecs_instantiation(instance):
     assert isinstance(instance, NodeCS)
 
-@given(instance=kiamacs::CompositeCS_strategy)
+@given(instance=kiamacs_CompositeCS_strategy)
 @settings(max_examples=50)
-def test_kiamacs::compositecs_instantiation(instance):
-    assert isinstance(instance, kiamacs::CompositeCS)
+def test_kiamacs_compositecs_instantiation(instance):
+    assert isinstance(instance, kiamacs_CompositeCS)
 
-@given(instance=kiamacs::EObject_strategy)
+@given(instance=kiamacs_EObject_strategy)
 @settings(max_examples=50)
-def test_kiamacs::eobject_instantiation(instance):
-    assert isinstance(instance, kiamacs::EObject)
+def test_kiamacs_eobject_instantiation(instance):
+    assert isinstance(instance, kiamacs_EObject)
 
-@given(instance=kiamacs::BaseCS_strategy)
+@given(instance=kiamacs_BaseCS_strategy)
 @settings(max_examples=50)
-def test_kiamacs::basecs_instantiation(instance):
-    assert isinstance(instance, kiamacs::BaseCS)
+def test_kiamacs_basecs_instantiation(instance):
+    assert isinstance(instance, kiamacs_BaseCS)
 
-@given(instance=kiamacs::LeafCS_strategy)
+@given(instance=kiamacs_LeafCS_strategy)
 @settings(max_examples=50)
-def test_kiamacs::leafcs_instantiation(instance):
-    assert isinstance(instance, kiamacs::LeafCS)
+def test_kiamacs_leafcs_instantiation(instance):
+    assert isinstance(instance, kiamacs_LeafCS)
 
 @given(instance=BaseCS_strategy)
 @settings(max_examples=50)
 def test_basecs_instantiation(instance):
     assert isinstance(instance, BaseCS)
 
-@given(instance=kiamacs::NodeCS_strategy)
+@given(instance=kiamacs_NodeCS_strategy)
 @settings(max_examples=50)
-def test_kiamacs::nodecs_instantiation(instance):
-    assert isinstance(instance, kiamacs::NodeCS)
+def test_kiamacs_nodecs_instantiation(instance):
+    assert isinstance(instance, kiamacs_NodeCS)
 
-@given(instance=kiamacs::TopCS_strategy)
+@given(instance=kiamacs_TopCS_strategy)
 @settings(max_examples=50)
-def test_kiamacs::topcs_instantiation(instance):
-    assert isinstance(instance, kiamacs::TopCS)
+def test_kiamacs_topcs_instantiation(instance):
+    assert isinstance(instance, kiamacs_TopCS)

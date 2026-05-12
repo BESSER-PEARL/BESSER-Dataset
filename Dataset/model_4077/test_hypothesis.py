@@ -3,14 +3,14 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    SimpleUML::NamedElement,
+from python_code import (
+    SimpleUML_NamedElement,
     NamedElement,
-    SimpleUML::Feature,
-    SimpleUML::Class,
-    SimpleUML::Package,
+    SimpleUML_Feature,
+    SimpleUML_Class,
+    SimpleUML_Package,
 )
 
 # =============================================================================
@@ -19,23 +19,23 @@ from classes import (
 
 
 
-def test_simpleuml::namedelement_is_not_abstract():
-    assert not inspect.isabstract(SimpleUML::NamedElement)
+def test_simpleuml_namedelement_is_not_abstract():
+    assert not inspect.isabstract(SimpleUML_NamedElement)
 
 
-def test_simpleuml::namedelement_constructor_exists():
-    assert callable(SimpleUML::NamedElement.__init__)
+def test_simpleuml_namedelement_constructor_exists():
+    assert callable(SimpleUML_NamedElement.__init__)
 
 
-def test_simpleuml::namedelement_constructor_args():
-    sig = inspect.signature(SimpleUML::NamedElement.__init__)
+def test_simpleuml_namedelement_constructor_args():
+    sig = inspect.signature(SimpleUML_NamedElement.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_simpleuml::namedelement_has_name():
-    assert hasattr(SimpleUML::NamedElement, "name")
+def test_simpleuml_namedelement_has_name():
+    assert hasattr(SimpleUML_NamedElement, "name")
     descriptor = None
-    for klass in SimpleUML::NamedElement.__mro__:
+    for klass in SimpleUML_NamedElement.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -57,23 +57,23 @@ def test_namedelement_constructor_args():
 
 
 
-def test_simpleuml::feature_is_not_abstract():
-    assert not inspect.isabstract(SimpleUML::Feature)
+def test_simpleuml_feature_is_not_abstract():
+    assert not inspect.isabstract(SimpleUML_Feature)
 
 
-def test_simpleuml::feature_constructor_exists():
-    assert callable(SimpleUML::Feature.__init__)
+def test_simpleuml_feature_constructor_exists():
+    assert callable(SimpleUML_Feature.__init__)
 
 
-def test_simpleuml::feature_constructor_args():
-    sig = inspect.signature(SimpleUML::Feature.__init__)
+def test_simpleuml_feature_constructor_args():
+    sig = inspect.signature(SimpleUML_Feature.__init__)
     params = list(sig.parameters.keys())
     assert "isMultivalued" in params, "Missing parameter 'isMultivalued'"
 
-def test_simpleuml::feature_has_isMultivalued():
-    assert hasattr(SimpleUML::Feature, "isMultivalued")
+def test_simpleuml_feature_has_isMultivalued():
+    assert hasattr(SimpleUML_Feature, "isMultivalued")
     descriptor = None
-    for klass in SimpleUML::Feature.__mro__:
+    for klass in SimpleUML_Feature.__mro__:
         if "isMultivalued" in klass.__dict__:
             descriptor = klass.__dict__["isMultivalued"]
             break
@@ -81,30 +81,30 @@ def test_simpleuml::feature_has_isMultivalued():
 
 
 
-def test_simpleuml::class_is_not_abstract():
-    assert not inspect.isabstract(SimpleUML::Class)
+def test_simpleuml_class_is_not_abstract():
+    assert not inspect.isabstract(SimpleUML_Class)
 
 
-def test_simpleuml::class_constructor_exists():
-    assert callable(SimpleUML::Class.__init__)
+def test_simpleuml_class_constructor_exists():
+    assert callable(SimpleUML_Class.__init__)
 
 
-def test_simpleuml::class_constructor_args():
-    sig = inspect.signature(SimpleUML::Class.__init__)
+def test_simpleuml_class_constructor_args():
+    sig = inspect.signature(SimpleUML_Class.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_simpleuml::package_is_not_abstract():
-    assert not inspect.isabstract(SimpleUML::Package)
+def test_simpleuml_package_is_not_abstract():
+    assert not inspect.isabstract(SimpleUML_Package)
 
 
-def test_simpleuml::package_constructor_exists():
-    assert callable(SimpleUML::Package.__init__)
+def test_simpleuml_package_constructor_exists():
+    assert callable(SimpleUML_Package.__init__)
 
 
-def test_simpleuml::package_constructor_args():
-    sig = inspect.signature(SimpleUML::Package.__init__)
+def test_simpleuml_package_constructor_args():
+    sig = inspect.signature(SimpleUML_Package.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -119,38 +119,35 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-SimpleUML::NamedElement_strategy = st.builds(
-    SimpleUML::NamedElement,
+SimpleUML_NamedElement_strategy = st.builds(
+    SimpleUML_NamedElement,
     name=
         safe_text
 )
 NamedElement_strategy = st.builds(
     NamedElement,
 )
-SimpleUML::Feature_strategy = st.builds(
-    SimpleUML::Feature,
+SimpleUML_Feature_strategy = st.builds(
+    SimpleUML_Feature,
     isMultivalued=
         st.booleans()
 )
-SimpleUML::Class_strategy = st.builds(
-    SimpleUML::Class,
+SimpleUML_Class_strategy = st.builds(
+    SimpleUML_Class,
 )
-SimpleUML::Package_strategy = st.builds(
-    SimpleUML::Package,
+SimpleUML_Package_strategy = st.builds(
+    SimpleUML_Package,
 )
 
-@given(instance=SimpleUML::NamedElement_strategy)
+@given(instance=SimpleUML_NamedElement_strategy)
 @settings(max_examples=50)
-def test_simpleuml::namedelement_instantiation(instance):
-    assert isinstance(instance, SimpleUML::NamedElement)
-
-@given(instance=SimpleUML::NamedElement_strategy)
-def test_simpleuml::namedelement_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_simpleuml_namedelement_instantiation(instance):
+    assert isinstance(instance, SimpleUML_NamedElement)
 
 
-@given(instance=SimpleUML::NamedElement_strategy)
-def test_simpleuml::namedelement_name_setter(instance):
+
+@given(instance=SimpleUML_NamedElement_strategy)
+def test_simpleuml_namedelement_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
@@ -160,28 +157,25 @@ def test_simpleuml::namedelement_name_setter(instance):
 def test_namedelement_instantiation(instance):
     assert isinstance(instance, NamedElement)
 
-@given(instance=SimpleUML::Feature_strategy)
+@given(instance=SimpleUML_Feature_strategy)
 @settings(max_examples=50)
-def test_simpleuml::feature_instantiation(instance):
-    assert isinstance(instance, SimpleUML::Feature)
-
-@given(instance=SimpleUML::Feature_strategy)
-def test_simpleuml::feature_isMultivalued_type(instance):
-    assert isinstance(instance.isMultivalued, bool)
+def test_simpleuml_feature_instantiation(instance):
+    assert isinstance(instance, SimpleUML_Feature)
 
 
-@given(instance=SimpleUML::Feature_strategy)
-def test_simpleuml::feature_isMultivalued_setter(instance):
+
+@given(instance=SimpleUML_Feature_strategy)
+def test_simpleuml_feature_isMultivalued_setter(instance):
     original = instance.isMultivalued
     instance.isMultivalued = original
     assert instance.isMultivalued == original
 
-@given(instance=SimpleUML::Class_strategy)
+@given(instance=SimpleUML_Class_strategy)
 @settings(max_examples=50)
-def test_simpleuml::class_instantiation(instance):
-    assert isinstance(instance, SimpleUML::Class)
+def test_simpleuml_class_instantiation(instance):
+    assert isinstance(instance, SimpleUML_Class)
 
-@given(instance=SimpleUML::Package_strategy)
+@given(instance=SimpleUML_Package_strategy)
 @settings(max_examples=50)
-def test_simpleuml::package_instantiation(instance):
-    assert isinstance(instance, SimpleUML::Package)
+def test_simpleuml_package_instantiation(instance):
+    assert isinstance(instance, SimpleUML_Package)

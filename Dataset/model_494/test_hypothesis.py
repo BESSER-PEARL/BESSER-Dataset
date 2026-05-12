@@ -3,15 +3,15 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     Family,
-    Families::Member,
-    Families::Test,
-    Families::Sample,
+    Families_Member,
+    Families_Test,
+    Families_Sample,
     Member,
-    Families::Family,
+    Families_Family,
 )
 
 # =============================================================================
@@ -34,23 +34,23 @@ def test_family_constructor_args():
 
 
 
-def test_families::member_is_not_abstract():
-    assert not inspect.isabstract(Families::Member)
+def test_families_member_is_not_abstract():
+    assert not inspect.isabstract(Families_Member)
 
 
-def test_families::member_constructor_exists():
-    assert callable(Families::Member.__init__)
+def test_families_member_constructor_exists():
+    assert callable(Families_Member.__init__)
 
 
-def test_families::member_constructor_args():
-    sig = inspect.signature(Families::Member.__init__)
+def test_families_member_constructor_args():
+    sig = inspect.signature(Families_Member.__init__)
     params = list(sig.parameters.keys())
     assert "firstName" in params, "Missing parameter 'firstName'"
 
-def test_families::member_has_firstName():
-    assert hasattr(Families::Member, "firstName")
+def test_families_member_has_firstName():
+    assert hasattr(Families_Member, "firstName")
     descriptor = None
-    for klass in Families::Member.__mro__:
+    for klass in Families_Member.__mro__:
         if "firstName" in klass.__dict__:
             descriptor = klass.__dict__["firstName"]
             break
@@ -58,30 +58,30 @@ def test_families::member_has_firstName():
 
 
 
-def test_families::test_is_not_abstract():
-    assert not inspect.isabstract(Families::Test)
+def test_families_test_is_not_abstract():
+    assert not inspect.isabstract(Families_Test)
 
 
-def test_families::test_constructor_exists():
-    assert callable(Families::Test.__init__)
+def test_families_test_constructor_exists():
+    assert callable(Families_Test.__init__)
 
 
-def test_families::test_constructor_args():
-    sig = inspect.signature(Families::Test.__init__)
+def test_families_test_constructor_args():
+    sig = inspect.signature(Families_Test.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_families::sample_is_not_abstract():
-    assert not inspect.isabstract(Families::Sample)
+def test_families_sample_is_not_abstract():
+    assert not inspect.isabstract(Families_Sample)
 
 
-def test_families::sample_constructor_exists():
-    assert callable(Families::Sample.__init__)
+def test_families_sample_constructor_exists():
+    assert callable(Families_Sample.__init__)
 
 
-def test_families::sample_constructor_args():
-    sig = inspect.signature(Families::Sample.__init__)
+def test_families_sample_constructor_args():
+    sig = inspect.signature(Families_Sample.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -100,23 +100,23 @@ def test_member_constructor_args():
 
 
 
-def test_families::family_is_not_abstract():
-    assert not inspect.isabstract(Families::Family)
+def test_families_family_is_not_abstract():
+    assert not inspect.isabstract(Families_Family)
 
 
-def test_families::family_constructor_exists():
-    assert callable(Families::Family.__init__)
+def test_families_family_constructor_exists():
+    assert callable(Families_Family.__init__)
 
 
-def test_families::family_constructor_args():
-    sig = inspect.signature(Families::Family.__init__)
+def test_families_family_constructor_args():
+    sig = inspect.signature(Families_Family.__init__)
     params = list(sig.parameters.keys())
     assert "lastName" in params, "Missing parameter 'lastName'"
 
-def test_families::family_has_lastName():
-    assert hasattr(Families::Family, "lastName")
+def test_families_family_has_lastName():
+    assert hasattr(Families_Family, "lastName")
     descriptor = None
-    for klass in Families::Family.__mro__:
+    for klass in Families_Family.__mro__:
         if "lastName" in klass.__dict__:
             descriptor = klass.__dict__["lastName"]
             break
@@ -137,22 +137,22 @@ safe_text = st.text(
 Family_strategy = st.builds(
     Family,
 )
-Families::Member_strategy = st.builds(
-    Families::Member,
+Families_Member_strategy = st.builds(
+    Families_Member,
     firstName=
         safe_text
 )
-Families::Test_strategy = st.builds(
-    Families::Test,
+Families_Test_strategy = st.builds(
+    Families_Test,
 )
-Families::Sample_strategy = st.builds(
-    Families::Sample,
+Families_Sample_strategy = st.builds(
+    Families_Sample,
 )
 Member_strategy = st.builds(
     Member,
 )
-Families::Family_strategy = st.builds(
-    Families::Family,
+Families_Family_strategy = st.builds(
+    Families_Family,
     lastName=
         safe_text
 )
@@ -162,49 +162,43 @@ Families::Family_strategy = st.builds(
 def test_family_instantiation(instance):
     assert isinstance(instance, Family)
 
-@given(instance=Families::Member_strategy)
+@given(instance=Families_Member_strategy)
 @settings(max_examples=50)
-def test_families::member_instantiation(instance):
-    assert isinstance(instance, Families::Member)
-
-@given(instance=Families::Member_strategy)
-def test_families::member_firstName_type(instance):
-    assert isinstance(instance.firstName, str)
+def test_families_member_instantiation(instance):
+    assert isinstance(instance, Families_Member)
 
 
-@given(instance=Families::Member_strategy)
-def test_families::member_firstName_setter(instance):
+
+@given(instance=Families_Member_strategy)
+def test_families_member_firstName_setter(instance):
     original = instance.firstName
     instance.firstName = original
     assert instance.firstName == original
 
-@given(instance=Families::Test_strategy)
+@given(instance=Families_Test_strategy)
 @settings(max_examples=50)
-def test_families::test_instantiation(instance):
-    assert isinstance(instance, Families::Test)
+def test_families_test_instantiation(instance):
+    assert isinstance(instance, Families_Test)
 
-@given(instance=Families::Sample_strategy)
+@given(instance=Families_Sample_strategy)
 @settings(max_examples=50)
-def test_families::sample_instantiation(instance):
-    assert isinstance(instance, Families::Sample)
+def test_families_sample_instantiation(instance):
+    assert isinstance(instance, Families_Sample)
 
 @given(instance=Member_strategy)
 @settings(max_examples=50)
 def test_member_instantiation(instance):
     assert isinstance(instance, Member)
 
-@given(instance=Families::Family_strategy)
+@given(instance=Families_Family_strategy)
 @settings(max_examples=50)
-def test_families::family_instantiation(instance):
-    assert isinstance(instance, Families::Family)
-
-@given(instance=Families::Family_strategy)
-def test_families::family_lastName_type(instance):
-    assert isinstance(instance.lastName, str)
+def test_families_family_instantiation(instance):
+    assert isinstance(instance, Families_Family)
 
 
-@given(instance=Families::Family_strategy)
-def test_families::family_lastName_setter(instance):
+
+@given(instance=Families_Family_strategy)
+def test_families_family_lastName_setter(instance):
     original = instance.lastName
     instance.lastName = original
     assert instance.lastName == original

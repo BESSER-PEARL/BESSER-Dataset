@@ -3,35 +3,35 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    dsml::DModelElementBridge,
-    dsml::EClass,
-    dsml::DClassElement,
-    dsml::DGraph,
-    dsml::DSemanticBridge,
-    dsml::Diagraph,
+from python_code import (
+    dsml_DModelElementBridge,
+    dsml_EClass,
+    dsml_DClassElement,
+    dsml_DGraph,
+    dsml_DSemanticBridge,
+    dsml_Diagraph,
     DModelElementBridge,
-    dsml::DAttributeBridge,
-    dsml::DClassBridge,
-    dsml::EAttribute,
+    dsml_DAttributeBridge,
+    dsml_DClassBridge,
+    dsml_EAttribute,
     DContainedElement,
     DClassElement,
-    dsml::DGraphElement,
-    dsml::DReferenceBridge,
-    dsml::EReference,
+    dsml_DGraphElement,
+    dsml_DReferenceBridge,
+    dsml_EReference,
     DEdge,
-    dsml::DContainedEdge,
-    dsml::DReference,
+    dsml_DContainedEdge,
+    dsml_DReference,
     DContainedEdge,
-    dsml::DContainment,
-    dsml::DLink,
-    dsml::DLabel,
+    dsml_DContainment,
+    dsml_DLink,
+    dsml_DLabel,
     DGraphElement,
-    dsml::DContainedElement,
-    dsml::DNode,
-    dsml::DEdge,
+    dsml_DContainedElement,
+    dsml_DNode,
+    dsml_DEdge,
 )
 
 # =============================================================================
@@ -40,106 +40,106 @@ from classes import (
 
 
 
-def test_dsml::dmodelelementbridge_is_not_abstract():
-    assert not inspect.isabstract(dsml::DModelElementBridge)
+def test_dsml_dmodelelementbridge_is_not_abstract():
+    assert not inspect.isabstract(dsml_DModelElementBridge)
 
 
-def test_dsml::dmodelelementbridge_constructor_exists():
-    assert callable(dsml::DModelElementBridge.__init__)
+def test_dsml_dmodelelementbridge_constructor_exists():
+    assert callable(dsml_DModelElementBridge.__init__)
 
 
-def test_dsml::dmodelelementbridge_constructor_args():
-    sig = inspect.signature(dsml::DModelElementBridge.__init__)
+def test_dsml_dmodelelementbridge_constructor_args():
+    sig = inspect.signature(dsml_DModelElementBridge.__init__)
     params = list(sig.parameters.keys())
-    assert "ecorePath" in params, "Missing parameter 'ecorePath'"
     assert "ecoreName" in params, "Missing parameter 'ecoreName'"
+    assert "ecorePath" in params, "Missing parameter 'ecorePath'"
 
-def test_dsml::dmodelelementbridge_has_ecorePath():
-    assert hasattr(dsml::DModelElementBridge, "ecorePath")
+def test_dsml_dmodelelementbridge_has_ecoreName():
+    assert hasattr(dsml_DModelElementBridge, "ecoreName")
     descriptor = None
-    for klass in dsml::DModelElementBridge.__mro__:
-        if "ecorePath" in klass.__dict__:
-            descriptor = klass.__dict__["ecorePath"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_dsml::dmodelelementbridge_has_ecoreName():
-    assert hasattr(dsml::DModelElementBridge, "ecoreName")
-    descriptor = None
-    for klass in dsml::DModelElementBridge.__mro__:
+    for klass in dsml_DModelElementBridge.__mro__:
         if "ecoreName" in klass.__dict__:
             descriptor = klass.__dict__["ecoreName"]
             break
     assert isinstance(descriptor, property)
 
+def test_dsml_dmodelelementbridge_has_ecorePath():
+    assert hasattr(dsml_DModelElementBridge, "ecorePath")
+    descriptor = None
+    for klass in dsml_DModelElementBridge.__mro__:
+        if "ecorePath" in klass.__dict__:
+            descriptor = klass.__dict__["ecorePath"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_dsml::eclass_is_not_abstract():
-    assert not inspect.isabstract(dsml::EClass)
+
+def test_dsml_eclass_is_not_abstract():
+    assert not inspect.isabstract(dsml_EClass)
 
 
-def test_dsml::eclass_constructor_exists():
-    assert callable(dsml::EClass.__init__)
+def test_dsml_eclass_constructor_exists():
+    assert callable(dsml_EClass.__init__)
 
 
-def test_dsml::eclass_constructor_args():
-    sig = inspect.signature(dsml::EClass.__init__)
+def test_dsml_eclass_constructor_args():
+    sig = inspect.signature(dsml_EClass.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_dsml::dclasselement_is_not_abstract():
-    assert not inspect.isabstract(dsml::DClassElement)
+def test_dsml_dclasselement_is_not_abstract():
+    assert not inspect.isabstract(dsml_DClassElement)
 
 
-def test_dsml::dclasselement_constructor_exists():
-    assert callable(dsml::DClassElement.__init__)
+def test_dsml_dclasselement_constructor_exists():
+    assert callable(dsml_DClassElement.__init__)
 
 
-def test_dsml::dclasselement_constructor_args():
-    sig = inspect.signature(dsml::DClassElement.__init__)
+def test_dsml_dclasselement_constructor_args():
+    sig = inspect.signature(dsml_DClassElement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_dsml::dgraph_is_not_abstract():
-    assert not inspect.isabstract(dsml::DGraph)
+def test_dsml_dgraph_is_not_abstract():
+    assert not inspect.isabstract(dsml_DGraph)
 
 
-def test_dsml::dgraph_constructor_exists():
-    assert callable(dsml::DGraph.__init__)
+def test_dsml_dgraph_constructor_exists():
+    assert callable(dsml_DGraph.__init__)
 
 
-def test_dsml::dgraph_constructor_args():
-    sig = inspect.signature(dsml::DGraph.__init__)
+def test_dsml_dgraph_constructor_args():
+    sig = inspect.signature(dsml_DGraph.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_dsml::dsemanticbridge_is_not_abstract():
-    assert not inspect.isabstract(dsml::DSemanticBridge)
+def test_dsml_dsemanticbridge_is_not_abstract():
+    assert not inspect.isabstract(dsml_DSemanticBridge)
 
 
-def test_dsml::dsemanticbridge_constructor_exists():
-    assert callable(dsml::DSemanticBridge.__init__)
+def test_dsml_dsemanticbridge_constructor_exists():
+    assert callable(dsml_DSemanticBridge.__init__)
 
 
-def test_dsml::dsemanticbridge_constructor_args():
-    sig = inspect.signature(dsml::DSemanticBridge.__init__)
+def test_dsml_dsemanticbridge_constructor_args():
+    sig = inspect.signature(dsml_DSemanticBridge.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_dsml::diagraph_is_not_abstract():
-    assert not inspect.isabstract(dsml::Diagraph)
+def test_dsml_diagraph_is_not_abstract():
+    assert not inspect.isabstract(dsml_Diagraph)
 
 
-def test_dsml::diagraph_constructor_exists():
-    assert callable(dsml::Diagraph.__init__)
+def test_dsml_diagraph_constructor_exists():
+    assert callable(dsml_Diagraph.__init__)
 
 
-def test_dsml::diagraph_constructor_args():
-    sig = inspect.signature(dsml::Diagraph.__init__)
+def test_dsml_diagraph_constructor_args():
+    sig = inspect.signature(dsml_Diagraph.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -158,44 +158,44 @@ def test_dmodelelementbridge_constructor_args():
 
 
 
-def test_dsml::dattributebridge_is_not_abstract():
-    assert not inspect.isabstract(dsml::DAttributeBridge)
+def test_dsml_dattributebridge_is_not_abstract():
+    assert not inspect.isabstract(dsml_DAttributeBridge)
 
 
-def test_dsml::dattributebridge_constructor_exists():
-    assert callable(dsml::DAttributeBridge.__init__)
+def test_dsml_dattributebridge_constructor_exists():
+    assert callable(dsml_DAttributeBridge.__init__)
 
 
-def test_dsml::dattributebridge_constructor_args():
-    sig = inspect.signature(dsml::DAttributeBridge.__init__)
+def test_dsml_dattributebridge_constructor_args():
+    sig = inspect.signature(dsml_DAttributeBridge.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_dsml::dclassbridge_is_not_abstract():
-    assert not inspect.isabstract(dsml::DClassBridge)
+def test_dsml_dclassbridge_is_not_abstract():
+    assert not inspect.isabstract(dsml_DClassBridge)
 
 
-def test_dsml::dclassbridge_constructor_exists():
-    assert callable(dsml::DClassBridge.__init__)
+def test_dsml_dclassbridge_constructor_exists():
+    assert callable(dsml_DClassBridge.__init__)
 
 
-def test_dsml::dclassbridge_constructor_args():
-    sig = inspect.signature(dsml::DClassBridge.__init__)
+def test_dsml_dclassbridge_constructor_args():
+    sig = inspect.signature(dsml_DClassBridge.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_dsml::eattribute_is_not_abstract():
-    assert not inspect.isabstract(dsml::EAttribute)
+def test_dsml_eattribute_is_not_abstract():
+    assert not inspect.isabstract(dsml_EAttribute)
 
 
-def test_dsml::eattribute_constructor_exists():
-    assert callable(dsml::EAttribute.__init__)
+def test_dsml_eattribute_constructor_exists():
+    assert callable(dsml_EAttribute.__init__)
 
 
-def test_dsml::eattribute_constructor_args():
-    sig = inspect.signature(dsml::EAttribute.__init__)
+def test_dsml_eattribute_constructor_args():
+    sig = inspect.signature(dsml_EAttribute.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -228,23 +228,23 @@ def test_dclasselement_constructor_args():
 
 
 
-def test_dsml::dgraphelement_is_not_abstract():
-    assert not inspect.isabstract(dsml::DGraphElement)
+def test_dsml_dgraphelement_is_not_abstract():
+    assert not inspect.isabstract(dsml_DGraphElement)
 
 
-def test_dsml::dgraphelement_constructor_exists():
-    assert callable(dsml::DGraphElement.__init__)
+def test_dsml_dgraphelement_constructor_exists():
+    assert callable(dsml_DGraphElement.__init__)
 
 
-def test_dsml::dgraphelement_constructor_args():
-    sig = inspect.signature(dsml::DGraphElement.__init__)
+def test_dsml_dgraphelement_constructor_args():
+    sig = inspect.signature(dsml_DGraphElement.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_dsml::dgraphelement_has_name():
-    assert hasattr(dsml::DGraphElement, "name")
+def test_dsml_dgraphelement_has_name():
+    assert hasattr(dsml_DGraphElement, "name")
     descriptor = None
-    for klass in dsml::DGraphElement.__mro__:
+    for klass in dsml_DGraphElement.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -252,30 +252,30 @@ def test_dsml::dgraphelement_has_name():
 
 
 
-def test_dsml::dreferencebridge_is_not_abstract():
-    assert not inspect.isabstract(dsml::DReferenceBridge)
+def test_dsml_dreferencebridge_is_not_abstract():
+    assert not inspect.isabstract(dsml_DReferenceBridge)
 
 
-def test_dsml::dreferencebridge_constructor_exists():
-    assert callable(dsml::DReferenceBridge.__init__)
+def test_dsml_dreferencebridge_constructor_exists():
+    assert callable(dsml_DReferenceBridge.__init__)
 
 
-def test_dsml::dreferencebridge_constructor_args():
-    sig = inspect.signature(dsml::DReferenceBridge.__init__)
+def test_dsml_dreferencebridge_constructor_args():
+    sig = inspect.signature(dsml_DReferenceBridge.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_dsml::ereference_is_not_abstract():
-    assert not inspect.isabstract(dsml::EReference)
+def test_dsml_ereference_is_not_abstract():
+    assert not inspect.isabstract(dsml_EReference)
 
 
-def test_dsml::ereference_constructor_exists():
-    assert callable(dsml::EReference.__init__)
+def test_dsml_ereference_constructor_exists():
+    assert callable(dsml_EReference.__init__)
 
 
-def test_dsml::ereference_constructor_args():
-    sig = inspect.signature(dsml::EReference.__init__)
+def test_dsml_ereference_constructor_args():
+    sig = inspect.signature(dsml_EReference.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -294,37 +294,37 @@ def test_dedge_constructor_args():
 
 
 
-def test_dsml::dcontainededge_is_not_abstract():
-    assert not inspect.isabstract(dsml::DContainedEdge)
+def test_dsml_dcontainededge_is_not_abstract():
+    assert not inspect.isabstract(dsml_DContainedEdge)
 
 
-def test_dsml::dcontainededge_constructor_exists():
-    assert callable(dsml::DContainedEdge.__init__)
+def test_dsml_dcontainededge_constructor_exists():
+    assert callable(dsml_DContainedEdge.__init__)
 
 
-def test_dsml::dcontainededge_constructor_args():
-    sig = inspect.signature(dsml::DContainedEdge.__init__)
+def test_dsml_dcontainededge_constructor_args():
+    sig = inspect.signature(dsml_DContainedEdge.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_dsml::dreference_is_not_abstract():
-    assert not inspect.isabstract(dsml::DReference)
+def test_dsml_dreference_is_not_abstract():
+    assert not inspect.isabstract(dsml_DReference)
 
 
-def test_dsml::dreference_constructor_exists():
-    assert callable(dsml::DReference.__init__)
+def test_dsml_dreference_constructor_exists():
+    assert callable(dsml_DReference.__init__)
 
 
-def test_dsml::dreference_constructor_args():
-    sig = inspect.signature(dsml::DReference.__init__)
+def test_dsml_dreference_constructor_args():
+    sig = inspect.signature(dsml_DReference.__init__)
     params = list(sig.parameters.keys())
     assert "nonGraphicalProperty" in params, "Missing parameter 'nonGraphicalProperty'"
 
-def test_dsml::dreference_has_nonGraphicalProperty():
-    assert hasattr(dsml::DReference, "nonGraphicalProperty")
+def test_dsml_dreference_has_nonGraphicalProperty():
+    assert hasattr(dsml_DReference, "nonGraphicalProperty")
     descriptor = None
-    for klass in dsml::DReference.__mro__:
+    for klass in dsml_DReference.__mro__:
         if "nonGraphicalProperty" in klass.__dict__:
             descriptor = klass.__dict__["nonGraphicalProperty"]
             break
@@ -346,23 +346,23 @@ def test_dcontainededge_constructor_args():
 
 
 
-def test_dsml::dcontainment_is_not_abstract():
-    assert not inspect.isabstract(dsml::DContainment)
+def test_dsml_dcontainment_is_not_abstract():
+    assert not inspect.isabstract(dsml_DContainment)
 
 
-def test_dsml::dcontainment_constructor_exists():
-    assert callable(dsml::DContainment.__init__)
+def test_dsml_dcontainment_constructor_exists():
+    assert callable(dsml_DContainment.__init__)
 
 
-def test_dsml::dcontainment_constructor_args():
-    sig = inspect.signature(dsml::DContainment.__init__)
+def test_dsml_dcontainment_constructor_args():
+    sig = inspect.signature(dsml_DContainment.__init__)
     params = list(sig.parameters.keys())
     assert "compartment" in params, "Missing parameter 'compartment'"
 
-def test_dsml::dcontainment_has_compartment():
-    assert hasattr(dsml::DContainment, "compartment")
+def test_dsml_dcontainment_has_compartment():
+    assert hasattr(dsml_DContainment, "compartment")
     descriptor = None
-    for klass in dsml::DContainment.__mro__:
+    for klass in dsml_DContainment.__mro__:
         if "compartment" in klass.__dict__:
             descriptor = klass.__dict__["compartment"]
             break
@@ -370,37 +370,37 @@ def test_dsml::dcontainment_has_compartment():
 
 
 
-def test_dsml::dlink_is_not_abstract():
-    assert not inspect.isabstract(dsml::DLink)
+def test_dsml_dlink_is_not_abstract():
+    assert not inspect.isabstract(dsml_DLink)
 
 
-def test_dsml::dlink_constructor_exists():
-    assert callable(dsml::DLink.__init__)
+def test_dsml_dlink_constructor_exists():
+    assert callable(dsml_DLink.__init__)
 
 
-def test_dsml::dlink_constructor_args():
-    sig = inspect.signature(dsml::DLink.__init__)
+def test_dsml_dlink_constructor_args():
+    sig = inspect.signature(dsml_DLink.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_dsml::dlabel_is_not_abstract():
-    assert not inspect.isabstract(dsml::DLabel)
+def test_dsml_dlabel_is_not_abstract():
+    assert not inspect.isabstract(dsml_DLabel)
 
 
-def test_dsml::dlabel_constructor_exists():
-    assert callable(dsml::DLabel.__init__)
+def test_dsml_dlabel_constructor_exists():
+    assert callable(dsml_DLabel.__init__)
 
 
-def test_dsml::dlabel_constructor_args():
-    sig = inspect.signature(dsml::DLabel.__init__)
+def test_dsml_dlabel_constructor_args():
+    sig = inspect.signature(dsml_DLabel.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_dsml::dlabel_has_name():
-    assert hasattr(dsml::DLabel, "name")
+def test_dsml_dlabel_has_name():
+    assert hasattr(dsml_DLabel, "name")
     descriptor = None
-    for klass in dsml::DLabel.__mro__:
+    for klass in dsml_DLabel.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -422,47 +422,47 @@ def test_dgraphelement_constructor_args():
 
 
 
-def test_dsml::dcontainedelement_is_not_abstract():
-    assert not inspect.isabstract(dsml::DContainedElement)
+def test_dsml_dcontainedelement_is_not_abstract():
+    assert not inspect.isabstract(dsml_DContainedElement)
 
 
-def test_dsml::dcontainedelement_constructor_exists():
-    assert callable(dsml::DContainedElement.__init__)
+def test_dsml_dcontainedelement_constructor_exists():
+    assert callable(dsml_DContainedElement.__init__)
 
 
-def test_dsml::dcontainedelement_constructor_args():
-    sig = inspect.signature(dsml::DContainedElement.__init__)
+def test_dsml_dcontainedelement_constructor_args():
+    sig = inspect.signature(dsml_DContainedElement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_dsml::dnode_is_not_abstract():
-    assert not inspect.isabstract(dsml::DNode)
+def test_dsml_dnode_is_not_abstract():
+    assert not inspect.isabstract(dsml_DNode)
 
 
-def test_dsml::dnode_constructor_exists():
-    assert callable(dsml::DNode.__init__)
+def test_dsml_dnode_constructor_exists():
+    assert callable(dsml_DNode.__init__)
 
 
-def test_dsml::dnode_constructor_args():
-    sig = inspect.signature(dsml::DNode.__init__)
+def test_dsml_dnode_constructor_args():
+    sig = inspect.signature(dsml_DNode.__init__)
     params = list(sig.parameters.keys())
     assert "pointOfViewName" in params, "Missing parameter 'pointOfViewName'"
     assert "pointOfView" in params, "Missing parameter 'pointOfView'"
 
-def test_dsml::dnode_has_pointOfViewName():
-    assert hasattr(dsml::DNode, "pointOfViewName")
+def test_dsml_dnode_has_pointOfViewName():
+    assert hasattr(dsml_DNode, "pointOfViewName")
     descriptor = None
-    for klass in dsml::DNode.__mro__:
+    for klass in dsml_DNode.__mro__:
         if "pointOfViewName" in klass.__dict__:
             descriptor = klass.__dict__["pointOfViewName"]
             break
     assert isinstance(descriptor, property)
 
-def test_dsml::dnode_has_pointOfView():
-    assert hasattr(dsml::DNode, "pointOfView")
+def test_dsml_dnode_has_pointOfView():
+    assert hasattr(dsml_DNode, "pointOfView")
     descriptor = None
-    for klass in dsml::DNode.__mro__:
+    for klass in dsml_DNode.__mro__:
         if "pointOfView" in klass.__dict__:
             descriptor = klass.__dict__["pointOfView"]
             break
@@ -470,16 +470,16 @@ def test_dsml::dnode_has_pointOfView():
 
 
 
-def test_dsml::dedge_is_not_abstract():
-    assert not inspect.isabstract(dsml::DEdge)
+def test_dsml_dedge_is_not_abstract():
+    assert not inspect.isabstract(dsml_DEdge)
 
 
-def test_dsml::dedge_constructor_exists():
-    assert callable(dsml::DEdge.__init__)
+def test_dsml_dedge_constructor_exists():
+    assert callable(dsml_DEdge.__init__)
 
 
-def test_dsml::dedge_constructor_args():
-    sig = inspect.signature(dsml::DEdge.__init__)
+def test_dsml_dedge_constructor_args():
+    sig = inspect.signature(dsml_DEdge.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -494,39 +494,39 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-dsml::DModelElementBridge_strategy = st.builds(
-    dsml::DModelElementBridge,
-    ecorePath=
-        safe_text,
+dsml_DModelElementBridge_strategy = st.builds(
+    dsml_DModelElementBridge,
     ecoreName=
+        safe_text,
+    ecorePath=
         safe_text
 )
-dsml::EClass_strategy = st.builds(
-    dsml::EClass,
+dsml_EClass_strategy = st.builds(
+    dsml_EClass,
 )
-dsml::DClassElement_strategy = st.builds(
-    dsml::DClassElement,
+dsml_DClassElement_strategy = st.builds(
+    dsml_DClassElement,
 )
-dsml::DGraph_strategy = st.builds(
-    dsml::DGraph,
+dsml_DGraph_strategy = st.builds(
+    dsml_DGraph,
 )
-dsml::DSemanticBridge_strategy = st.builds(
-    dsml::DSemanticBridge,
+dsml_DSemanticBridge_strategy = st.builds(
+    dsml_DSemanticBridge,
 )
-dsml::Diagraph_strategy = st.builds(
-    dsml::Diagraph,
+dsml_Diagraph_strategy = st.builds(
+    dsml_Diagraph,
 )
 DModelElementBridge_strategy = st.builds(
     DModelElementBridge,
 )
-dsml::DAttributeBridge_strategy = st.builds(
-    dsml::DAttributeBridge,
+dsml_DAttributeBridge_strategy = st.builds(
+    dsml_DAttributeBridge,
 )
-dsml::DClassBridge_strategy = st.builds(
-    dsml::DClassBridge,
+dsml_DClassBridge_strategy = st.builds(
+    dsml_DClassBridge,
 )
-dsml::EAttribute_strategy = st.builds(
-    dsml::EAttribute,
+dsml_EAttribute_strategy = st.builds(
+    dsml_EAttribute,
 )
 DContainedElement_strategy = st.builds(
     DContainedElement,
@@ -534,132 +534,126 @@ DContainedElement_strategy = st.builds(
 DClassElement_strategy = st.builds(
     DClassElement,
 )
-dsml::DGraphElement_strategy = st.builds(
-    dsml::DGraphElement,
+dsml_DGraphElement_strategy = st.builds(
+    dsml_DGraphElement,
     name=
         safe_text
 )
-dsml::DReferenceBridge_strategy = st.builds(
-    dsml::DReferenceBridge,
+dsml_DReferenceBridge_strategy = st.builds(
+    dsml_DReferenceBridge,
 )
-dsml::EReference_strategy = st.builds(
-    dsml::EReference,
+dsml_EReference_strategy = st.builds(
+    dsml_EReference,
 )
 DEdge_strategy = st.builds(
     DEdge,
 )
-dsml::DContainedEdge_strategy = st.builds(
-    dsml::DContainedEdge,
+dsml_DContainedEdge_strategy = st.builds(
+    dsml_DContainedEdge,
 )
-dsml::DReference_strategy = st.builds(
-    dsml::DReference,
+dsml_DReference_strategy = st.builds(
+    dsml_DReference,
     nonGraphicalProperty=
         st.booleans()
 )
 DContainedEdge_strategy = st.builds(
     DContainedEdge,
 )
-dsml::DContainment_strategy = st.builds(
-    dsml::DContainment,
+dsml_DContainment_strategy = st.builds(
+    dsml_DContainment,
     compartment=
         st.booleans()
 )
-dsml::DLink_strategy = st.builds(
-    dsml::DLink,
+dsml_DLink_strategy = st.builds(
+    dsml_DLink,
 )
-dsml::DLabel_strategy = st.builds(
-    dsml::DLabel,
+dsml_DLabel_strategy = st.builds(
+    dsml_DLabel,
     name=
         safe_text
 )
 DGraphElement_strategy = st.builds(
     DGraphElement,
 )
-dsml::DContainedElement_strategy = st.builds(
-    dsml::DContainedElement,
+dsml_DContainedElement_strategy = st.builds(
+    dsml_DContainedElement,
 )
-dsml::DNode_strategy = st.builds(
-    dsml::DNode,
+dsml_DNode_strategy = st.builds(
+    dsml_DNode,
     pointOfViewName=
         safe_text,
     pointOfView=
         st.booleans()
 )
-dsml::DEdge_strategy = st.builds(
-    dsml::DEdge,
+dsml_DEdge_strategy = st.builds(
+    dsml_DEdge,
 )
 
-@given(instance=dsml::DModelElementBridge_strategy)
+@given(instance=dsml_DModelElementBridge_strategy)
 @settings(max_examples=50)
-def test_dsml::dmodelelementbridge_instantiation(instance):
-    assert isinstance(instance, dsml::DModelElementBridge)
-
-@given(instance=dsml::DModelElementBridge_strategy)
-def test_dsml::dmodelelementbridge_ecorePath_type(instance):
-    assert isinstance(instance.ecorePath, str)
+def test_dsml_dmodelelementbridge_instantiation(instance):
+    assert isinstance(instance, dsml_DModelElementBridge)
 
 
-@given(instance=dsml::DModelElementBridge_strategy)
-def test_dsml::dmodelelementbridge_ecorePath_setter(instance):
-    original = instance.ecorePath
-    instance.ecorePath = original
-    assert instance.ecorePath == original
 
-@given(instance=dsml::DModelElementBridge_strategy)
-def test_dsml::dmodelelementbridge_ecoreName_type(instance):
-    assert isinstance(instance.ecoreName, str)
-
-
-@given(instance=dsml::DModelElementBridge_strategy)
-def test_dsml::dmodelelementbridge_ecoreName_setter(instance):
+@given(instance=dsml_DModelElementBridge_strategy)
+def test_dsml_dmodelelementbridge_ecoreName_setter(instance):
     original = instance.ecoreName
     instance.ecoreName = original
     assert instance.ecoreName == original
 
-@given(instance=dsml::EClass_strategy)
-@settings(max_examples=50)
-def test_dsml::eclass_instantiation(instance):
-    assert isinstance(instance, dsml::EClass)
 
-@given(instance=dsml::DClassElement_strategy)
-@settings(max_examples=50)
-def test_dsml::dclasselement_instantiation(instance):
-    assert isinstance(instance, dsml::DClassElement)
 
-@given(instance=dsml::DGraph_strategy)
-@settings(max_examples=50)
-def test_dsml::dgraph_instantiation(instance):
-    assert isinstance(instance, dsml::DGraph)
+@given(instance=dsml_DModelElementBridge_strategy)
+def test_dsml_dmodelelementbridge_ecorePath_setter(instance):
+    original = instance.ecorePath
+    instance.ecorePath = original
+    assert instance.ecorePath == original
 
-@given(instance=dsml::DSemanticBridge_strategy)
+@given(instance=dsml_EClass_strategy)
 @settings(max_examples=50)
-def test_dsml::dsemanticbridge_instantiation(instance):
-    assert isinstance(instance, dsml::DSemanticBridge)
+def test_dsml_eclass_instantiation(instance):
+    assert isinstance(instance, dsml_EClass)
 
-@given(instance=dsml::Diagraph_strategy)
+@given(instance=dsml_DClassElement_strategy)
 @settings(max_examples=50)
-def test_dsml::diagraph_instantiation(instance):
-    assert isinstance(instance, dsml::Diagraph)
+def test_dsml_dclasselement_instantiation(instance):
+    assert isinstance(instance, dsml_DClassElement)
+
+@given(instance=dsml_DGraph_strategy)
+@settings(max_examples=50)
+def test_dsml_dgraph_instantiation(instance):
+    assert isinstance(instance, dsml_DGraph)
+
+@given(instance=dsml_DSemanticBridge_strategy)
+@settings(max_examples=50)
+def test_dsml_dsemanticbridge_instantiation(instance):
+    assert isinstance(instance, dsml_DSemanticBridge)
+
+@given(instance=dsml_Diagraph_strategy)
+@settings(max_examples=50)
+def test_dsml_diagraph_instantiation(instance):
+    assert isinstance(instance, dsml_Diagraph)
 
 @given(instance=DModelElementBridge_strategy)
 @settings(max_examples=50)
 def test_dmodelelementbridge_instantiation(instance):
     assert isinstance(instance, DModelElementBridge)
 
-@given(instance=dsml::DAttributeBridge_strategy)
+@given(instance=dsml_DAttributeBridge_strategy)
 @settings(max_examples=50)
-def test_dsml::dattributebridge_instantiation(instance):
-    assert isinstance(instance, dsml::DAttributeBridge)
+def test_dsml_dattributebridge_instantiation(instance):
+    assert isinstance(instance, dsml_DAttributeBridge)
 
-@given(instance=dsml::DClassBridge_strategy)
+@given(instance=dsml_DClassBridge_strategy)
 @settings(max_examples=50)
-def test_dsml::dclassbridge_instantiation(instance):
-    assert isinstance(instance, dsml::DClassBridge)
+def test_dsml_dclassbridge_instantiation(instance):
+    assert isinstance(instance, dsml_DClassBridge)
 
-@given(instance=dsml::EAttribute_strategy)
+@given(instance=dsml_EAttribute_strategy)
 @settings(max_examples=50)
-def test_dsml::eattribute_instantiation(instance):
-    assert isinstance(instance, dsml::EAttribute)
+def test_dsml_eattribute_instantiation(instance):
+    assert isinstance(instance, dsml_EAttribute)
 
 @given(instance=DContainedElement_strategy)
 @settings(max_examples=50)
@@ -671,54 +665,48 @@ def test_dcontainedelement_instantiation(instance):
 def test_dclasselement_instantiation(instance):
     assert isinstance(instance, DClassElement)
 
-@given(instance=dsml::DGraphElement_strategy)
+@given(instance=dsml_DGraphElement_strategy)
 @settings(max_examples=50)
-def test_dsml::dgraphelement_instantiation(instance):
-    assert isinstance(instance, dsml::DGraphElement)
-
-@given(instance=dsml::DGraphElement_strategy)
-def test_dsml::dgraphelement_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_dsml_dgraphelement_instantiation(instance):
+    assert isinstance(instance, dsml_DGraphElement)
 
 
-@given(instance=dsml::DGraphElement_strategy)
-def test_dsml::dgraphelement_name_setter(instance):
+
+@given(instance=dsml_DGraphElement_strategy)
+def test_dsml_dgraphelement_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=dsml::DReferenceBridge_strategy)
+@given(instance=dsml_DReferenceBridge_strategy)
 @settings(max_examples=50)
-def test_dsml::dreferencebridge_instantiation(instance):
-    assert isinstance(instance, dsml::DReferenceBridge)
+def test_dsml_dreferencebridge_instantiation(instance):
+    assert isinstance(instance, dsml_DReferenceBridge)
 
-@given(instance=dsml::EReference_strategy)
+@given(instance=dsml_EReference_strategy)
 @settings(max_examples=50)
-def test_dsml::ereference_instantiation(instance):
-    assert isinstance(instance, dsml::EReference)
+def test_dsml_ereference_instantiation(instance):
+    assert isinstance(instance, dsml_EReference)
 
 @given(instance=DEdge_strategy)
 @settings(max_examples=50)
 def test_dedge_instantiation(instance):
     assert isinstance(instance, DEdge)
 
-@given(instance=dsml::DContainedEdge_strategy)
+@given(instance=dsml_DContainedEdge_strategy)
 @settings(max_examples=50)
-def test_dsml::dcontainededge_instantiation(instance):
-    assert isinstance(instance, dsml::DContainedEdge)
+def test_dsml_dcontainededge_instantiation(instance):
+    assert isinstance(instance, dsml_DContainedEdge)
 
-@given(instance=dsml::DReference_strategy)
+@given(instance=dsml_DReference_strategy)
 @settings(max_examples=50)
-def test_dsml::dreference_instantiation(instance):
-    assert isinstance(instance, dsml::DReference)
-
-@given(instance=dsml::DReference_strategy)
-def test_dsml::dreference_nonGraphicalProperty_type(instance):
-    assert isinstance(instance.nonGraphicalProperty, bool)
+def test_dsml_dreference_instantiation(instance):
+    assert isinstance(instance, dsml_DReference)
 
 
-@given(instance=dsml::DReference_strategy)
-def test_dsml::dreference_nonGraphicalProperty_setter(instance):
+
+@given(instance=dsml_DReference_strategy)
+def test_dsml_dreference_nonGraphicalProperty_setter(instance):
     original = instance.nonGraphicalProperty
     instance.nonGraphicalProperty = original
     assert instance.nonGraphicalProperty == original
@@ -728,39 +716,33 @@ def test_dsml::dreference_nonGraphicalProperty_setter(instance):
 def test_dcontainededge_instantiation(instance):
     assert isinstance(instance, DContainedEdge)
 
-@given(instance=dsml::DContainment_strategy)
+@given(instance=dsml_DContainment_strategy)
 @settings(max_examples=50)
-def test_dsml::dcontainment_instantiation(instance):
-    assert isinstance(instance, dsml::DContainment)
-
-@given(instance=dsml::DContainment_strategy)
-def test_dsml::dcontainment_compartment_type(instance):
-    assert isinstance(instance.compartment, bool)
+def test_dsml_dcontainment_instantiation(instance):
+    assert isinstance(instance, dsml_DContainment)
 
 
-@given(instance=dsml::DContainment_strategy)
-def test_dsml::dcontainment_compartment_setter(instance):
+
+@given(instance=dsml_DContainment_strategy)
+def test_dsml_dcontainment_compartment_setter(instance):
     original = instance.compartment
     instance.compartment = original
     assert instance.compartment == original
 
-@given(instance=dsml::DLink_strategy)
+@given(instance=dsml_DLink_strategy)
 @settings(max_examples=50)
-def test_dsml::dlink_instantiation(instance):
-    assert isinstance(instance, dsml::DLink)
+def test_dsml_dlink_instantiation(instance):
+    assert isinstance(instance, dsml_DLink)
 
-@given(instance=dsml::DLabel_strategy)
+@given(instance=dsml_DLabel_strategy)
 @settings(max_examples=50)
-def test_dsml::dlabel_instantiation(instance):
-    assert isinstance(instance, dsml::DLabel)
-
-@given(instance=dsml::DLabel_strategy)
-def test_dsml::dlabel_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_dsml_dlabel_instantiation(instance):
+    assert isinstance(instance, dsml_DLabel)
 
 
-@given(instance=dsml::DLabel_strategy)
-def test_dsml::dlabel_name_setter(instance):
+
+@given(instance=dsml_DLabel_strategy)
+def test_dsml_dlabel_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
@@ -770,39 +752,33 @@ def test_dsml::dlabel_name_setter(instance):
 def test_dgraphelement_instantiation(instance):
     assert isinstance(instance, DGraphElement)
 
-@given(instance=dsml::DContainedElement_strategy)
+@given(instance=dsml_DContainedElement_strategy)
 @settings(max_examples=50)
-def test_dsml::dcontainedelement_instantiation(instance):
-    assert isinstance(instance, dsml::DContainedElement)
+def test_dsml_dcontainedelement_instantiation(instance):
+    assert isinstance(instance, dsml_DContainedElement)
 
-@given(instance=dsml::DNode_strategy)
+@given(instance=dsml_DNode_strategy)
 @settings(max_examples=50)
-def test_dsml::dnode_instantiation(instance):
-    assert isinstance(instance, dsml::DNode)
-
-@given(instance=dsml::DNode_strategy)
-def test_dsml::dnode_pointOfViewName_type(instance):
-    assert isinstance(instance.pointOfViewName, str)
+def test_dsml_dnode_instantiation(instance):
+    assert isinstance(instance, dsml_DNode)
 
 
-@given(instance=dsml::DNode_strategy)
-def test_dsml::dnode_pointOfViewName_setter(instance):
+
+@given(instance=dsml_DNode_strategy)
+def test_dsml_dnode_pointOfViewName_setter(instance):
     original = instance.pointOfViewName
     instance.pointOfViewName = original
     assert instance.pointOfViewName == original
 
-@given(instance=dsml::DNode_strategy)
-def test_dsml::dnode_pointOfView_type(instance):
-    assert isinstance(instance.pointOfView, bool)
 
 
-@given(instance=dsml::DNode_strategy)
-def test_dsml::dnode_pointOfView_setter(instance):
+@given(instance=dsml_DNode_strategy)
+def test_dsml_dnode_pointOfView_setter(instance):
     original = instance.pointOfView
     instance.pointOfView = original
     assert instance.pointOfView == original
 
-@given(instance=dsml::DEdge_strategy)
+@given(instance=dsml_DEdge_strategy)
 @settings(max_examples=50)
-def test_dsml::dedge_instantiation(instance):
-    assert isinstance(instance, dsml::DEdge)
+def test_dsml_dedge_instantiation(instance):
+    assert isinstance(instance, dsml_DEdge)

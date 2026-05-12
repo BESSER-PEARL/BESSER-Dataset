@@ -3,16 +3,16 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    hfsm::NamedElement,
+from python_code import (
+    hfsm_NamedElement,
     NamedElement,
-    hfsm::AbstractState,
-    hfsm::Region,
+    hfsm_AbstractState,
+    hfsm_Region,
     AbstractState,
-    hfsm::State,
-    hfsm::Transition,
+    hfsm_State,
+    hfsm_Transition,
 )
 
 # =============================================================================
@@ -21,23 +21,23 @@ from classes import (
 
 
 
-def test_hfsm::namedelement_is_not_abstract():
-    assert not inspect.isabstract(hfsm::NamedElement)
+def test_hfsm_namedelement_is_not_abstract():
+    assert not inspect.isabstract(hfsm_NamedElement)
 
 
-def test_hfsm::namedelement_constructor_exists():
-    assert callable(hfsm::NamedElement.__init__)
+def test_hfsm_namedelement_constructor_exists():
+    assert callable(hfsm_NamedElement.__init__)
 
 
-def test_hfsm::namedelement_constructor_args():
-    sig = inspect.signature(hfsm::NamedElement.__init__)
+def test_hfsm_namedelement_constructor_args():
+    sig = inspect.signature(hfsm_NamedElement.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_hfsm::namedelement_has_name():
-    assert hasattr(hfsm::NamedElement, "name")
+def test_hfsm_namedelement_has_name():
+    assert hasattr(hfsm_NamedElement, "name")
     descriptor = None
-    for klass in hfsm::NamedElement.__mro__:
+    for klass in hfsm_NamedElement.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -59,30 +59,30 @@ def test_namedelement_constructor_args():
 
 
 
-def test_hfsm::abstractstate_is_not_abstract():
-    assert not inspect.isabstract(hfsm::AbstractState)
+def test_hfsm_abstractstate_is_not_abstract():
+    assert not inspect.isabstract(hfsm_AbstractState)
 
 
-def test_hfsm::abstractstate_constructor_exists():
-    assert callable(hfsm::AbstractState.__init__)
+def test_hfsm_abstractstate_constructor_exists():
+    assert callable(hfsm_AbstractState.__init__)
 
 
-def test_hfsm::abstractstate_constructor_args():
-    sig = inspect.signature(hfsm::AbstractState.__init__)
+def test_hfsm_abstractstate_constructor_args():
+    sig = inspect.signature(hfsm_AbstractState.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_hfsm::region_is_not_abstract():
-    assert not inspect.isabstract(hfsm::Region)
+def test_hfsm_region_is_not_abstract():
+    assert not inspect.isabstract(hfsm_Region)
 
 
-def test_hfsm::region_constructor_exists():
-    assert callable(hfsm::Region.__init__)
+def test_hfsm_region_constructor_exists():
+    assert callable(hfsm_Region.__init__)
 
 
-def test_hfsm::region_constructor_args():
-    sig = inspect.signature(hfsm::Region.__init__)
+def test_hfsm_region_constructor_args():
+    sig = inspect.signature(hfsm_Region.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -101,30 +101,30 @@ def test_abstractstate_constructor_args():
 
 
 
-def test_hfsm::state_is_not_abstract():
-    assert not inspect.isabstract(hfsm::State)
+def test_hfsm_state_is_not_abstract():
+    assert not inspect.isabstract(hfsm_State)
 
 
-def test_hfsm::state_constructor_exists():
-    assert callable(hfsm::State.__init__)
+def test_hfsm_state_constructor_exists():
+    assert callable(hfsm_State.__init__)
 
 
-def test_hfsm::state_constructor_args():
-    sig = inspect.signature(hfsm::State.__init__)
+def test_hfsm_state_constructor_args():
+    sig = inspect.signature(hfsm_State.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_hfsm::transition_is_not_abstract():
-    assert not inspect.isabstract(hfsm::Transition)
+def test_hfsm_transition_is_not_abstract():
+    assert not inspect.isabstract(hfsm_Transition)
 
 
-def test_hfsm::transition_constructor_exists():
-    assert callable(hfsm::Transition.__init__)
+def test_hfsm_transition_constructor_exists():
+    assert callable(hfsm_Transition.__init__)
 
 
-def test_hfsm::transition_constructor_args():
-    sig = inspect.signature(hfsm::Transition.__init__)
+def test_hfsm_transition_constructor_args():
+    sig = inspect.signature(hfsm_Transition.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -139,42 +139,39 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-hfsm::NamedElement_strategy = st.builds(
-    hfsm::NamedElement,
+hfsm_NamedElement_strategy = st.builds(
+    hfsm_NamedElement,
     name=
         safe_text
 )
 NamedElement_strategy = st.builds(
     NamedElement,
 )
-hfsm::AbstractState_strategy = st.builds(
-    hfsm::AbstractState,
+hfsm_AbstractState_strategy = st.builds(
+    hfsm_AbstractState,
 )
-hfsm::Region_strategy = st.builds(
-    hfsm::Region,
+hfsm_Region_strategy = st.builds(
+    hfsm_Region,
 )
 AbstractState_strategy = st.builds(
     AbstractState,
 )
-hfsm::State_strategy = st.builds(
-    hfsm::State,
+hfsm_State_strategy = st.builds(
+    hfsm_State,
 )
-hfsm::Transition_strategy = st.builds(
-    hfsm::Transition,
+hfsm_Transition_strategy = st.builds(
+    hfsm_Transition,
 )
 
-@given(instance=hfsm::NamedElement_strategy)
+@given(instance=hfsm_NamedElement_strategy)
 @settings(max_examples=50)
-def test_hfsm::namedelement_instantiation(instance):
-    assert isinstance(instance, hfsm::NamedElement)
-
-@given(instance=hfsm::NamedElement_strategy)
-def test_hfsm::namedelement_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_hfsm_namedelement_instantiation(instance):
+    assert isinstance(instance, hfsm_NamedElement)
 
 
-@given(instance=hfsm::NamedElement_strategy)
-def test_hfsm::namedelement_name_setter(instance):
+
+@given(instance=hfsm_NamedElement_strategy)
+def test_hfsm_namedelement_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
@@ -184,27 +181,27 @@ def test_hfsm::namedelement_name_setter(instance):
 def test_namedelement_instantiation(instance):
     assert isinstance(instance, NamedElement)
 
-@given(instance=hfsm::AbstractState_strategy)
+@given(instance=hfsm_AbstractState_strategy)
 @settings(max_examples=50)
-def test_hfsm::abstractstate_instantiation(instance):
-    assert isinstance(instance, hfsm::AbstractState)
+def test_hfsm_abstractstate_instantiation(instance):
+    assert isinstance(instance, hfsm_AbstractState)
 
-@given(instance=hfsm::Region_strategy)
+@given(instance=hfsm_Region_strategy)
 @settings(max_examples=50)
-def test_hfsm::region_instantiation(instance):
-    assert isinstance(instance, hfsm::Region)
+def test_hfsm_region_instantiation(instance):
+    assert isinstance(instance, hfsm_Region)
 
 @given(instance=AbstractState_strategy)
 @settings(max_examples=50)
 def test_abstractstate_instantiation(instance):
     assert isinstance(instance, AbstractState)
 
-@given(instance=hfsm::State_strategy)
+@given(instance=hfsm_State_strategy)
 @settings(max_examples=50)
-def test_hfsm::state_instantiation(instance):
-    assert isinstance(instance, hfsm::State)
+def test_hfsm_state_instantiation(instance):
+    assert isinstance(instance, hfsm_State)
 
-@given(instance=hfsm::Transition_strategy)
+@given(instance=hfsm_Transition_strategy)
 @settings(max_examples=50)
-def test_hfsm::transition_instantiation(instance):
-    assert isinstance(instance, hfsm::Transition)
+def test_hfsm_transition_instantiation(instance):
+    assert isinstance(instance, hfsm_Transition)

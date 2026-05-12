@@ -3,139 +3,139 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    WordprocessingMLStyles::TabElt,
-    WordprocessingMLStyles::PictureType,
-    WordprocessingMLStyles::SectPrElt,
-    WordprocessingMLStyles::ListsElt,
-    WordprocessingMLStyles::StyleElt,
-    WordprocessingMLStyles::StylesElt,
-    WordprocessingMLStyles::FontElt,
-    WordprocessingMLStyles::FontsElt,
+from python_code import (
+    WordprocessingMLStyles_TabElt,
+    WordprocessingMLStyles_PictureType,
+    WordprocessingMLStyles_SectPrElt,
+    WordprocessingMLStyles_ListsElt,
+    WordprocessingMLStyles_StyleElt,
+    WordprocessingMLStyles_StylesElt,
+    WordprocessingMLStyles_FontElt,
+    WordprocessingMLStyles_FontsElt,
     FontElt,
-    WordprocessingMLStyles::FontsListElt,
-    WordprocessingMLStyles::TableCellPrElt,
+    WordprocessingMLStyles_FontsListElt,
+    WordprocessingMLStyles_TableCellPrElt,
     TableCellPrElt,
-    WordprocessingMLStyles::TableCellElt,
-    WordprocessingMLStyles::RowContentElt,
-    WordprocessingMLStyles::TableRowPrElt,
+    WordprocessingMLStyles_TableCellElt,
+    WordprocessingMLStyles_RowContentElt,
+    WordprocessingMLStyles_TableRowPrElt,
     RowContentElt,
     TableRowPrElt,
     TablePrExElt,
-    WordprocessingMLStyles::RowElt,
+    WordprocessingMLStyles_RowElt,
     RunLevelElt,
     RowElt,
-    WordprocessingMLStyles::TableContentElt,
-    WordprocessingMLStyles::TablePrExElt,
+    WordprocessingMLStyles_TableContentElt,
+    WordprocessingMLStyles_TablePrExElt,
     TableElt,
-    WordprocessingMLStyles::TablePrElt,
+    WordprocessingMLStyles_TablePrElt,
     TableContentElt,
     TableGridElt,
     TablePrElt,
-    WordprocessingMLStyles::FldCharElt,
-    WordprocessingMLStyles::TableGridElt,
+    WordprocessingMLStyles_FldCharElt,
+    WordprocessingMLStyles_TableGridElt,
     TabElt,
-    WordprocessingMLStyles::SymElt,
+    WordprocessingMLStyles_SymElt,
     SymElt,
     PictureType,
-    WordprocessingMLStyles::NoteElt,
+    WordprocessingMLStyles_NoteElt,
     FldCharElt,
-    WordprocessingMLStyles::RunContentElt,
-    WordprocessingMLStyles::LangElt,
+    WordprocessingMLStyles_RunContentElt,
+    WordprocessingMLStyles_LangElt,
     LangElt,
     UnderlineProperty,
     FontsElt,
     RunElt,
-    WordprocessingMLStyles::RunPrElt,
+    WordprocessingMLStyles_RunPrElt,
     RunContentElt,
-    WordprocessingMLStyles::AnnotationRef,
-    WordprocessingMLStyles::BreakElt,
-    WordprocessingMLStyles::FldChar,
-    WordprocessingMLStyles::SoftHyphen,
-    WordprocessingMLStyles::Cr,
-    WordprocessingMLStyles::Picture,
-    WordprocessingMLStyles::NoBreakHyphen,
-    WordprocessingMLStyles::PgNum,
-    WordprocessingMLStyles::Symbol,
-    WordprocessingMLStyles::ContinuationSeparator,
-    WordprocessingMLStyles::EndnoteRef,
-    WordprocessingMLStyles::Separator,
-    WordprocessingMLStyles::FootnoteRef,
-    WordprocessingMLStyles::Tab,
+    WordprocessingMLStyles_PgNum,
+    WordprocessingMLStyles_Symbol,
+    WordprocessingMLStyles_Separator,
+    WordprocessingMLStyles_ContinuationSeparator,
+    WordprocessingMLStyles_FootnoteRef,
+    WordprocessingMLStyles_EndnoteRef,
+    WordprocessingMLStyles_SoftHyphen,
+    WordprocessingMLStyles_FldChar,
+    WordprocessingMLStyles_Picture,
+    WordprocessingMLStyles_AnnotationRef,
+    WordprocessingMLStyles_Tab,
+    WordprocessingMLStyles_Cr,
+    WordprocessingMLStyles_NoBreakHyphen,
+    WordprocessingMLStyles_BreakElt,
     RunPrElt,
-    WordprocessingMLStyles::ParaContentElt,
+    WordprocessingMLStyles_ParaContentElt,
     StyleElt,
     ParaElt,
-    WordprocessingMLStyles::ParaPrElt,
+    WordprocessingMLStyles_ParaPrElt,
     ParaContentElt,
-    WordprocessingMLStyles::RunElt,
-    WordprocessingMLStyles::SimpleFieldElt,
-    WordprocessingMLStyles::SubDocElt,
-    WordprocessingMLStyles::HLinkElt,
+    WordprocessingMLStyles_SimpleFieldElt,
+    WordprocessingMLStyles_HLinkElt,
+    WordprocessingMLStyles_SubDocElt,
+    WordprocessingMLStyles_RunElt,
     ParaPrElt,
     BlockLevelChunkElt,
-    WordprocessingMLStyles::RunLevelElt,
-    WordprocessingMLStyles::TableElt,
-    WordprocessingMLStyles::ParaElt,
+    WordprocessingMLStyles_RunLevelElt,
+    WordprocessingMLStyles_TableElt,
+    WordprocessingMLStyles_ParaElt,
     DocPrElt,
     StylesElt,
     TableCellElt,
     NoteElt,
-    WordprocessingMLStyles::Endnote,
-    WordprocessingMLStyles::Footnote,
-    WordprocessingMLStyles::BlockLevelElt,
+    WordprocessingMLStyles_Endnote,
+    WordprocessingMLStyles_Footnote,
+    WordprocessingMLStyles_BlockLevelElt,
     SectPrElt,
     BlockLevelElt,
-    WordprocessingMLStyles::CfChunk,
-    WordprocessingMLStyles::BlockLevelChunkElt,
-    WordprocessingMLStyles::BodyElt,
-    WordprocessingMLStyles::DocPrElt,
+    WordprocessingMLStyles_CfChunk,
+    WordprocessingMLStyles_BlockLevelChunkElt,
+    WordprocessingMLStyles_BodyElt,
+    WordprocessingMLStyles_DocPrElt,
     BodyElt,
-    WordprocessingMLStyles::WordDocument,
+    WordprocessingMLStyles_WordDocument,
     ListsElt,
     FontsListElt,
     StringProperty,
     DocumentPropertiesCollection,
-    WordprocessingMLStyles::UnderlineProperty,
-    WordprocessingMLStyles::StringType,
+    WordprocessingMLStyles_UnderlineProperty,
+    WordprocessingMLStyles_StringType,
     StringType,
-    WordprocessingMLStyles::InstrText,
-    WordprocessingMLStyles::Text,
-    WordprocessingMLStyles::DelInstrText,
-    WordprocessingMLStyles::DelText,
-    WordprocessingMLStyles::StringProperty,
+    WordprocessingMLStyles_DelText,
+    WordprocessingMLStyles_Text,
+    WordprocessingMLStyles_InstrText,
+    WordprocessingMLStyles_DelInstrText,
+    WordprocessingMLStyles_StringProperty,
     SmartTagType,
-    WordprocessingMLStyles::SmartTagsCollection,
+    WordprocessingMLStyles_SmartTagsCollection,
     SmartTagsCollection,
-    WordprocessingMLStyles::SmartTagType,
+    WordprocessingMLStyles_SmartTagType,
     VersionType,
     CustomDocumentPropertiesCollection,
-    WordprocessingMLStyles::CustomDocumentProperty,
+    WordprocessingMLStyles_CustomDocumentProperty,
     CustomDocumentProperty,
-    WordprocessingMLStyles::CustomDocumentPropertiesCollection,
+    WordprocessingMLStyles_CustomDocumentPropertiesCollection,
     DateTimeType,
     ValueType,
-    WordprocessingMLStyles::DateTimeTypeValue,
-    WordprocessingMLStyles::FloatValue,
-    WordprocessingMLStyles::StringValue,
-    WordprocessingMLStyles::ValueType,
+    WordprocessingMLStyles_DateTimeTypeValue,
+    WordprocessingMLStyles_FloatValue,
+    WordprocessingMLStyles_StringValue,
+    WordprocessingMLStyles_ValueType,
     WordDocument,
-    WordprocessingMLStyles::DocumentPropertiesCollection,
-    WordprocessingMLStyles::BooleanValue,
-    WordprocessingMLStyles::VersionType,
-    WordprocessingMLStyles::DateTimeType,
-    FldCharTypeProperty,
+    WordprocessingMLStyles_DocumentPropertiesCollection,
+    WordprocessingMLStyles_BooleanValue,
+    WordprocessingMLStyles_VersionType,
+    WordprocessingMLStyles_DateTimeType,
     HighlightColorValues,
+    NoteValue,
+    UnderlineValues,
+    FldCharTypeProperty,
     OnOffType,
     VerticalAlignRunType,
-    UnderlineValues,
-    HintType,
-    NoteValue,
-    StyleKindValue,
     JustificationValue,
+    HintType,
     BreakType,
+    StyleKindValue,
 )
 
 # =============================================================================
@@ -144,193 +144,193 @@ from classes import (
 
 
 
-def test_wordprocessingmlstyles::tabelt_is_not_abstract():
-    assert not inspect.isabstract(WordprocessingMLStyles::TabElt)
+def test_wordprocessingmlstyles_tabelt_is_not_abstract():
+    assert not inspect.isabstract(WordprocessingMLStyles_TabElt)
 
 
-def test_wordprocessingmlstyles::tabelt_constructor_exists():
-    assert callable(WordprocessingMLStyles::TabElt.__init__)
+def test_wordprocessingmlstyles_tabelt_constructor_exists():
+    assert callable(WordprocessingMLStyles_TabElt.__init__)
 
 
-def test_wordprocessingmlstyles::tabelt_constructor_args():
-    sig = inspect.signature(WordprocessingMLStyles::TabElt.__init__)
+def test_wordprocessingmlstyles_tabelt_constructor_args():
+    sig = inspect.signature(WordprocessingMLStyles_TabElt.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_wordprocessingmlstyles::picturetype_is_not_abstract():
-    assert not inspect.isabstract(WordprocessingMLStyles::PictureType)
+def test_wordprocessingmlstyles_picturetype_is_not_abstract():
+    assert not inspect.isabstract(WordprocessingMLStyles_PictureType)
 
 
-def test_wordprocessingmlstyles::picturetype_constructor_exists():
-    assert callable(WordprocessingMLStyles::PictureType.__init__)
+def test_wordprocessingmlstyles_picturetype_constructor_exists():
+    assert callable(WordprocessingMLStyles_PictureType.__init__)
 
 
-def test_wordprocessingmlstyles::picturetype_constructor_args():
-    sig = inspect.signature(WordprocessingMLStyles::PictureType.__init__)
+def test_wordprocessingmlstyles_picturetype_constructor_args():
+    sig = inspect.signature(WordprocessingMLStyles_PictureType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_wordprocessingmlstyles::sectprelt_is_not_abstract():
-    assert not inspect.isabstract(WordprocessingMLStyles::SectPrElt)
+def test_wordprocessingmlstyles_sectprelt_is_not_abstract():
+    assert not inspect.isabstract(WordprocessingMLStyles_SectPrElt)
 
 
-def test_wordprocessingmlstyles::sectprelt_constructor_exists():
-    assert callable(WordprocessingMLStyles::SectPrElt.__init__)
+def test_wordprocessingmlstyles_sectprelt_constructor_exists():
+    assert callable(WordprocessingMLStyles_SectPrElt.__init__)
 
 
-def test_wordprocessingmlstyles::sectprelt_constructor_args():
-    sig = inspect.signature(WordprocessingMLStyles::SectPrElt.__init__)
+def test_wordprocessingmlstyles_sectprelt_constructor_args():
+    sig = inspect.signature(WordprocessingMLStyles_SectPrElt.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_wordprocessingmlstyles::listselt_is_not_abstract():
-    assert not inspect.isabstract(WordprocessingMLStyles::ListsElt)
+def test_wordprocessingmlstyles_listselt_is_not_abstract():
+    assert not inspect.isabstract(WordprocessingMLStyles_ListsElt)
 
 
-def test_wordprocessingmlstyles::listselt_constructor_exists():
-    assert callable(WordprocessingMLStyles::ListsElt.__init__)
+def test_wordprocessingmlstyles_listselt_constructor_exists():
+    assert callable(WordprocessingMLStyles_ListsElt.__init__)
 
 
-def test_wordprocessingmlstyles::listselt_constructor_args():
-    sig = inspect.signature(WordprocessingMLStyles::ListsElt.__init__)
+def test_wordprocessingmlstyles_listselt_constructor_args():
+    sig = inspect.signature(WordprocessingMLStyles_ListsElt.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_wordprocessingmlstyles::styleelt_is_not_abstract():
-    assert not inspect.isabstract(WordprocessingMLStyles::StyleElt)
+def test_wordprocessingmlstyles_styleelt_is_not_abstract():
+    assert not inspect.isabstract(WordprocessingMLStyles_StyleElt)
 
 
-def test_wordprocessingmlstyles::styleelt_constructor_exists():
-    assert callable(WordprocessingMLStyles::StyleElt.__init__)
+def test_wordprocessingmlstyles_styleelt_constructor_exists():
+    assert callable(WordprocessingMLStyles_StyleElt.__init__)
 
 
-def test_wordprocessingmlstyles::styleelt_constructor_args():
-    sig = inspect.signature(WordprocessingMLStyles::StyleElt.__init__)
+def test_wordprocessingmlstyles_styleelt_constructor_args():
+    sig = inspect.signature(WordprocessingMLStyles_StyleElt.__init__)
     params = list(sig.parameters.keys())
+    assert "sti" in params, "Missing parameter 'sti'"
+    assert "locked" in params, "Missing parameter 'locked'"
+    assert "hidden" in params, "Missing parameter 'hidden'"
+    assert "semiHidden" in params, "Missing parameter 'semiHidden'"
+    assert "default" in params, "Missing parameter 'default'"
+    assert "autoRedefine" in params, "Missing parameter 'autoRedefine'"
+    assert "type" in params, "Missing parameter 'type'"
     assert "personalReply" in params, "Missing parameter 'personalReply'"
     assert "personal" in params, "Missing parameter 'personal'"
     assert "personalCompose" in params, "Missing parameter 'personalCompose'"
-    assert "sti" in params, "Missing parameter 'sti'"
-    assert "default" in params, "Missing parameter 'default'"
-    assert "semiHidden" in params, "Missing parameter 'semiHidden'"
-    assert "hidden" in params, "Missing parameter 'hidden'"
-    assert "locked" in params, "Missing parameter 'locked'"
-    assert "type" in params, "Missing parameter 'type'"
-    assert "autoRedefine" in params, "Missing parameter 'autoRedefine'"
 
-def test_wordprocessingmlstyles::styleelt_has_personalReply():
-    assert hasattr(WordprocessingMLStyles::StyleElt, "personalReply")
+def test_wordprocessingmlstyles_styleelt_has_sti():
+    assert hasattr(WordprocessingMLStyles_StyleElt, "sti")
     descriptor = None
-    for klass in WordprocessingMLStyles::StyleElt.__mro__:
-        if "personalReply" in klass.__dict__:
-            descriptor = klass.__dict__["personalReply"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_wordprocessingmlstyles::styleelt_has_personal():
-    assert hasattr(WordprocessingMLStyles::StyleElt, "personal")
-    descriptor = None
-    for klass in WordprocessingMLStyles::StyleElt.__mro__:
-        if "personal" in klass.__dict__:
-            descriptor = klass.__dict__["personal"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_wordprocessingmlstyles::styleelt_has_personalCompose():
-    assert hasattr(WordprocessingMLStyles::StyleElt, "personalCompose")
-    descriptor = None
-    for klass in WordprocessingMLStyles::StyleElt.__mro__:
-        if "personalCompose" in klass.__dict__:
-            descriptor = klass.__dict__["personalCompose"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_wordprocessingmlstyles::styleelt_has_sti():
-    assert hasattr(WordprocessingMLStyles::StyleElt, "sti")
-    descriptor = None
-    for klass in WordprocessingMLStyles::StyleElt.__mro__:
+    for klass in WordprocessingMLStyles_StyleElt.__mro__:
         if "sti" in klass.__dict__:
             descriptor = klass.__dict__["sti"]
             break
     assert isinstance(descriptor, property)
 
-def test_wordprocessingmlstyles::styleelt_has_default():
-    assert hasattr(WordprocessingMLStyles::StyleElt, "default")
+def test_wordprocessingmlstyles_styleelt_has_locked():
+    assert hasattr(WordprocessingMLStyles_StyleElt, "locked")
     descriptor = None
-    for klass in WordprocessingMLStyles::StyleElt.__mro__:
-        if "default" in klass.__dict__:
-            descriptor = klass.__dict__["default"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_wordprocessingmlstyles::styleelt_has_semiHidden():
-    assert hasattr(WordprocessingMLStyles::StyleElt, "semiHidden")
-    descriptor = None
-    for klass in WordprocessingMLStyles::StyleElt.__mro__:
-        if "semiHidden" in klass.__dict__:
-            descriptor = klass.__dict__["semiHidden"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_wordprocessingmlstyles::styleelt_has_hidden():
-    assert hasattr(WordprocessingMLStyles::StyleElt, "hidden")
-    descriptor = None
-    for klass in WordprocessingMLStyles::StyleElt.__mro__:
-        if "hidden" in klass.__dict__:
-            descriptor = klass.__dict__["hidden"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_wordprocessingmlstyles::styleelt_has_locked():
-    assert hasattr(WordprocessingMLStyles::StyleElt, "locked")
-    descriptor = None
-    for klass in WordprocessingMLStyles::StyleElt.__mro__:
+    for klass in WordprocessingMLStyles_StyleElt.__mro__:
         if "locked" in klass.__dict__:
             descriptor = klass.__dict__["locked"]
             break
     assert isinstance(descriptor, property)
 
-def test_wordprocessingmlstyles::styleelt_has_type():
-    assert hasattr(WordprocessingMLStyles::StyleElt, "type")
+def test_wordprocessingmlstyles_styleelt_has_hidden():
+    assert hasattr(WordprocessingMLStyles_StyleElt, "hidden")
     descriptor = None
-    for klass in WordprocessingMLStyles::StyleElt.__mro__:
-        if "type" in klass.__dict__:
-            descriptor = klass.__dict__["type"]
+    for klass in WordprocessingMLStyles_StyleElt.__mro__:
+        if "hidden" in klass.__dict__:
+            descriptor = klass.__dict__["hidden"]
             break
     assert isinstance(descriptor, property)
 
-def test_wordprocessingmlstyles::styleelt_has_autoRedefine():
-    assert hasattr(WordprocessingMLStyles::StyleElt, "autoRedefine")
+def test_wordprocessingmlstyles_styleelt_has_semiHidden():
+    assert hasattr(WordprocessingMLStyles_StyleElt, "semiHidden")
     descriptor = None
-    for klass in WordprocessingMLStyles::StyleElt.__mro__:
+    for klass in WordprocessingMLStyles_StyleElt.__mro__:
+        if "semiHidden" in klass.__dict__:
+            descriptor = klass.__dict__["semiHidden"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_wordprocessingmlstyles_styleelt_has_default():
+    assert hasattr(WordprocessingMLStyles_StyleElt, "default")
+    descriptor = None
+    for klass in WordprocessingMLStyles_StyleElt.__mro__:
+        if "default" in klass.__dict__:
+            descriptor = klass.__dict__["default"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_wordprocessingmlstyles_styleelt_has_autoRedefine():
+    assert hasattr(WordprocessingMLStyles_StyleElt, "autoRedefine")
+    descriptor = None
+    for klass in WordprocessingMLStyles_StyleElt.__mro__:
         if "autoRedefine" in klass.__dict__:
             descriptor = klass.__dict__["autoRedefine"]
             break
     assert isinstance(descriptor, property)
 
+def test_wordprocessingmlstyles_styleelt_has_type():
+    assert hasattr(WordprocessingMLStyles_StyleElt, "type")
+    descriptor = None
+    for klass in WordprocessingMLStyles_StyleElt.__mro__:
+        if "type" in klass.__dict__:
+            descriptor = klass.__dict__["type"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_wordprocessingmlstyles_styleelt_has_personalReply():
+    assert hasattr(WordprocessingMLStyles_StyleElt, "personalReply")
+    descriptor = None
+    for klass in WordprocessingMLStyles_StyleElt.__mro__:
+        if "personalReply" in klass.__dict__:
+            descriptor = klass.__dict__["personalReply"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_wordprocessingmlstyles_styleelt_has_personal():
+    assert hasattr(WordprocessingMLStyles_StyleElt, "personal")
+    descriptor = None
+    for klass in WordprocessingMLStyles_StyleElt.__mro__:
+        if "personal" in klass.__dict__:
+            descriptor = klass.__dict__["personal"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_wordprocessingmlstyles_styleelt_has_personalCompose():
+    assert hasattr(WordprocessingMLStyles_StyleElt, "personalCompose")
+    descriptor = None
+    for klass in WordprocessingMLStyles_StyleElt.__mro__:
+        if "personalCompose" in klass.__dict__:
+            descriptor = klass.__dict__["personalCompose"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_wordprocessingmlstyles::styleselt_is_not_abstract():
-    assert not inspect.isabstract(WordprocessingMLStyles::StylesElt)
+
+def test_wordprocessingmlstyles_styleselt_is_not_abstract():
+    assert not inspect.isabstract(WordprocessingMLStyles_StylesElt)
 
 
-def test_wordprocessingmlstyles::styleselt_constructor_exists():
-    assert callable(WordprocessingMLStyles::StylesElt.__init__)
+def test_wordprocessingmlstyles_styleselt_constructor_exists():
+    assert callable(WordprocessingMLStyles_StylesElt.__init__)
 
 
-def test_wordprocessingmlstyles::styleselt_constructor_args():
-    sig = inspect.signature(WordprocessingMLStyles::StylesElt.__init__)
+def test_wordprocessingmlstyles_styleselt_constructor_args():
+    sig = inspect.signature(WordprocessingMLStyles_StylesElt.__init__)
     params = list(sig.parameters.keys())
     assert "versionOfBuiltInStylenames" in params, "Missing parameter 'versionOfBuiltInStylenames'"
 
-def test_wordprocessingmlstyles::styleselt_has_versionOfBuiltInStylenames():
-    assert hasattr(WordprocessingMLStyles::StylesElt, "versionOfBuiltInStylenames")
+def test_wordprocessingmlstyles_styleselt_has_versionOfBuiltInStylenames():
+    assert hasattr(WordprocessingMLStyles_StylesElt, "versionOfBuiltInStylenames")
     descriptor = None
-    for klass in WordprocessingMLStyles::StylesElt.__mro__:
+    for klass in WordprocessingMLStyles_StylesElt.__mro__:
         if "versionOfBuiltInStylenames" in klass.__dict__:
             descriptor = klass.__dict__["versionOfBuiltInStylenames"]
             break
@@ -338,37 +338,37 @@ def test_wordprocessingmlstyles::styleselt_has_versionOfBuiltInStylenames():
 
 
 
-def test_wordprocessingmlstyles::fontelt_is_not_abstract():
-    assert not inspect.isabstract(WordprocessingMLStyles::FontElt)
+def test_wordprocessingmlstyles_fontelt_is_not_abstract():
+    assert not inspect.isabstract(WordprocessingMLStyles_FontElt)
 
 
-def test_wordprocessingmlstyles::fontelt_constructor_exists():
-    assert callable(WordprocessingMLStyles::FontElt.__init__)
+def test_wordprocessingmlstyles_fontelt_constructor_exists():
+    assert callable(WordprocessingMLStyles_FontElt.__init__)
 
 
-def test_wordprocessingmlstyles::fontelt_constructor_args():
-    sig = inspect.signature(WordprocessingMLStyles::FontElt.__init__)
+def test_wordprocessingmlstyles_fontelt_constructor_args():
+    sig = inspect.signature(WordprocessingMLStyles_FontElt.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_wordprocessingmlstyles::fontselt_is_not_abstract():
-    assert not inspect.isabstract(WordprocessingMLStyles::FontsElt)
+def test_wordprocessingmlstyles_fontselt_is_not_abstract():
+    assert not inspect.isabstract(WordprocessingMLStyles_FontsElt)
 
 
-def test_wordprocessingmlstyles::fontselt_constructor_exists():
-    assert callable(WordprocessingMLStyles::FontsElt.__init__)
+def test_wordprocessingmlstyles_fontselt_constructor_exists():
+    assert callable(WordprocessingMLStyles_FontsElt.__init__)
 
 
-def test_wordprocessingmlstyles::fontselt_constructor_args():
-    sig = inspect.signature(WordprocessingMLStyles::FontsElt.__init__)
+def test_wordprocessingmlstyles_fontselt_constructor_args():
+    sig = inspect.signature(WordprocessingMLStyles_FontsElt.__init__)
     params = list(sig.parameters.keys())
     assert "hint" in params, "Missing parameter 'hint'"
 
-def test_wordprocessingmlstyles::fontselt_has_hint():
-    assert hasattr(WordprocessingMLStyles::FontsElt, "hint")
+def test_wordprocessingmlstyles_fontselt_has_hint():
+    assert hasattr(WordprocessingMLStyles_FontsElt, "hint")
     descriptor = None
-    for klass in WordprocessingMLStyles::FontsElt.__mro__:
+    for klass in WordprocessingMLStyles_FontsElt.__mro__:
         if "hint" in klass.__dict__:
             descriptor = klass.__dict__["hint"]
             break
@@ -390,30 +390,30 @@ def test_fontelt_constructor_args():
 
 
 
-def test_wordprocessingmlstyles::fontslistelt_is_not_abstract():
-    assert not inspect.isabstract(WordprocessingMLStyles::FontsListElt)
+def test_wordprocessingmlstyles_fontslistelt_is_not_abstract():
+    assert not inspect.isabstract(WordprocessingMLStyles_FontsListElt)
 
 
-def test_wordprocessingmlstyles::fontslistelt_constructor_exists():
-    assert callable(WordprocessingMLStyles::FontsListElt.__init__)
+def test_wordprocessingmlstyles_fontslistelt_constructor_exists():
+    assert callable(WordprocessingMLStyles_FontsListElt.__init__)
 
 
-def test_wordprocessingmlstyles::fontslistelt_constructor_args():
-    sig = inspect.signature(WordprocessingMLStyles::FontsListElt.__init__)
+def test_wordprocessingmlstyles_fontslistelt_constructor_args():
+    sig = inspect.signature(WordprocessingMLStyles_FontsListElt.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_wordprocessingmlstyles::tablecellprelt_is_not_abstract():
-    assert not inspect.isabstract(WordprocessingMLStyles::TableCellPrElt)
+def test_wordprocessingmlstyles_tablecellprelt_is_not_abstract():
+    assert not inspect.isabstract(WordprocessingMLStyles_TableCellPrElt)
 
 
-def test_wordprocessingmlstyles::tablecellprelt_constructor_exists():
-    assert callable(WordprocessingMLStyles::TableCellPrElt.__init__)
+def test_wordprocessingmlstyles_tablecellprelt_constructor_exists():
+    assert callable(WordprocessingMLStyles_TableCellPrElt.__init__)
 
 
-def test_wordprocessingmlstyles::tablecellprelt_constructor_args():
-    sig = inspect.signature(WordprocessingMLStyles::TableCellPrElt.__init__)
+def test_wordprocessingmlstyles_tablecellprelt_constructor_args():
+    sig = inspect.signature(WordprocessingMLStyles_TableCellPrElt.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -432,44 +432,44 @@ def test_tablecellprelt_constructor_args():
 
 
 
-def test_wordprocessingmlstyles::tablecellelt_is_not_abstract():
-    assert not inspect.isabstract(WordprocessingMLStyles::TableCellElt)
+def test_wordprocessingmlstyles_tablecellelt_is_not_abstract():
+    assert not inspect.isabstract(WordprocessingMLStyles_TableCellElt)
 
 
-def test_wordprocessingmlstyles::tablecellelt_constructor_exists():
-    assert callable(WordprocessingMLStyles::TableCellElt.__init__)
+def test_wordprocessingmlstyles_tablecellelt_constructor_exists():
+    assert callable(WordprocessingMLStyles_TableCellElt.__init__)
 
 
-def test_wordprocessingmlstyles::tablecellelt_constructor_args():
-    sig = inspect.signature(WordprocessingMLStyles::TableCellElt.__init__)
+def test_wordprocessingmlstyles_tablecellelt_constructor_args():
+    sig = inspect.signature(WordprocessingMLStyles_TableCellElt.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_wordprocessingmlstyles::rowcontentelt_is_not_abstract():
-    assert not inspect.isabstract(WordprocessingMLStyles::RowContentElt)
+def test_wordprocessingmlstyles_rowcontentelt_is_not_abstract():
+    assert not inspect.isabstract(WordprocessingMLStyles_RowContentElt)
 
 
-def test_wordprocessingmlstyles::rowcontentelt_constructor_exists():
-    assert callable(WordprocessingMLStyles::RowContentElt.__init__)
+def test_wordprocessingmlstyles_rowcontentelt_constructor_exists():
+    assert callable(WordprocessingMLStyles_RowContentElt.__init__)
 
 
-def test_wordprocessingmlstyles::rowcontentelt_constructor_args():
-    sig = inspect.signature(WordprocessingMLStyles::RowContentElt.__init__)
+def test_wordprocessingmlstyles_rowcontentelt_constructor_args():
+    sig = inspect.signature(WordprocessingMLStyles_RowContentElt.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_wordprocessingmlstyles::tablerowprelt_is_not_abstract():
-    assert not inspect.isabstract(WordprocessingMLStyles::TableRowPrElt)
+def test_wordprocessingmlstyles_tablerowprelt_is_not_abstract():
+    assert not inspect.isabstract(WordprocessingMLStyles_TableRowPrElt)
 
 
-def test_wordprocessingmlstyles::tablerowprelt_constructor_exists():
-    assert callable(WordprocessingMLStyles::TableRowPrElt.__init__)
+def test_wordprocessingmlstyles_tablerowprelt_constructor_exists():
+    assert callable(WordprocessingMLStyles_TableRowPrElt.__init__)
 
 
-def test_wordprocessingmlstyles::tablerowprelt_constructor_args():
-    sig = inspect.signature(WordprocessingMLStyles::TableRowPrElt.__init__)
+def test_wordprocessingmlstyles_tablerowprelt_constructor_args():
+    sig = inspect.signature(WordprocessingMLStyles_TableRowPrElt.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -516,16 +516,16 @@ def test_tableprexelt_constructor_args():
 
 
 
-def test_wordprocessingmlstyles::rowelt_is_not_abstract():
-    assert not inspect.isabstract(WordprocessingMLStyles::RowElt)
+def test_wordprocessingmlstyles_rowelt_is_not_abstract():
+    assert not inspect.isabstract(WordprocessingMLStyles_RowElt)
 
 
-def test_wordprocessingmlstyles::rowelt_constructor_exists():
-    assert callable(WordprocessingMLStyles::RowElt.__init__)
+def test_wordprocessingmlstyles_rowelt_constructor_exists():
+    assert callable(WordprocessingMLStyles_RowElt.__init__)
 
 
-def test_wordprocessingmlstyles::rowelt_constructor_args():
-    sig = inspect.signature(WordprocessingMLStyles::RowElt.__init__)
+def test_wordprocessingmlstyles_rowelt_constructor_args():
+    sig = inspect.signature(WordprocessingMLStyles_RowElt.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -558,30 +558,30 @@ def test_rowelt_constructor_args():
 
 
 
-def test_wordprocessingmlstyles::tablecontentelt_is_not_abstract():
-    assert not inspect.isabstract(WordprocessingMLStyles::TableContentElt)
+def test_wordprocessingmlstyles_tablecontentelt_is_not_abstract():
+    assert not inspect.isabstract(WordprocessingMLStyles_TableContentElt)
 
 
-def test_wordprocessingmlstyles::tablecontentelt_constructor_exists():
-    assert callable(WordprocessingMLStyles::TableContentElt.__init__)
+def test_wordprocessingmlstyles_tablecontentelt_constructor_exists():
+    assert callable(WordprocessingMLStyles_TableContentElt.__init__)
 
 
-def test_wordprocessingmlstyles::tablecontentelt_constructor_args():
-    sig = inspect.signature(WordprocessingMLStyles::TableContentElt.__init__)
+def test_wordprocessingmlstyles_tablecontentelt_constructor_args():
+    sig = inspect.signature(WordprocessingMLStyles_TableContentElt.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_wordprocessingmlstyles::tableprexelt_is_not_abstract():
-    assert not inspect.isabstract(WordprocessingMLStyles::TablePrExElt)
+def test_wordprocessingmlstyles_tableprexelt_is_not_abstract():
+    assert not inspect.isabstract(WordprocessingMLStyles_TablePrExElt)
 
 
-def test_wordprocessingmlstyles::tableprexelt_constructor_exists():
-    assert callable(WordprocessingMLStyles::TablePrExElt.__init__)
+def test_wordprocessingmlstyles_tableprexelt_constructor_exists():
+    assert callable(WordprocessingMLStyles_TablePrExElt.__init__)
 
 
-def test_wordprocessingmlstyles::tableprexelt_constructor_args():
-    sig = inspect.signature(WordprocessingMLStyles::TablePrExElt.__init__)
+def test_wordprocessingmlstyles_tableprexelt_constructor_args():
+    sig = inspect.signature(WordprocessingMLStyles_TablePrExElt.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -600,16 +600,16 @@ def test_tableelt_constructor_args():
 
 
 
-def test_wordprocessingmlstyles::tableprelt_is_not_abstract():
-    assert not inspect.isabstract(WordprocessingMLStyles::TablePrElt)
+def test_wordprocessingmlstyles_tableprelt_is_not_abstract():
+    assert not inspect.isabstract(WordprocessingMLStyles_TablePrElt)
 
 
-def test_wordprocessingmlstyles::tableprelt_constructor_exists():
-    assert callable(WordprocessingMLStyles::TablePrElt.__init__)
+def test_wordprocessingmlstyles_tableprelt_constructor_exists():
+    assert callable(WordprocessingMLStyles_TablePrElt.__init__)
 
 
-def test_wordprocessingmlstyles::tableprelt_constructor_args():
-    sig = inspect.signature(WordprocessingMLStyles::TablePrElt.__init__)
+def test_wordprocessingmlstyles_tableprelt_constructor_args():
+    sig = inspect.signature(WordprocessingMLStyles_TablePrElt.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -656,50 +656,50 @@ def test_tableprelt_constructor_args():
 
 
 
-def test_wordprocessingmlstyles::fldcharelt_is_not_abstract():
-    assert not inspect.isabstract(WordprocessingMLStyles::FldCharElt)
+def test_wordprocessingmlstyles_fldcharelt_is_not_abstract():
+    assert not inspect.isabstract(WordprocessingMLStyles_FldCharElt)
 
 
-def test_wordprocessingmlstyles::fldcharelt_constructor_exists():
-    assert callable(WordprocessingMLStyles::FldCharElt.__init__)
+def test_wordprocessingmlstyles_fldcharelt_constructor_exists():
+    assert callable(WordprocessingMLStyles_FldCharElt.__init__)
 
 
-def test_wordprocessingmlstyles::fldcharelt_constructor_args():
-    sig = inspect.signature(WordprocessingMLStyles::FldCharElt.__init__)
+def test_wordprocessingmlstyles_fldcharelt_constructor_args():
+    sig = inspect.signature(WordprocessingMLStyles_FldCharElt.__init__)
     params = list(sig.parameters.keys())
-    assert "fldCharType" in params, "Missing parameter 'fldCharType'"
     assert "fldLock" in params, "Missing parameter 'fldLock'"
+    assert "fldCharType" in params, "Missing parameter 'fldCharType'"
 
-def test_wordprocessingmlstyles::fldcharelt_has_fldCharType():
-    assert hasattr(WordprocessingMLStyles::FldCharElt, "fldCharType")
+def test_wordprocessingmlstyles_fldcharelt_has_fldLock():
+    assert hasattr(WordprocessingMLStyles_FldCharElt, "fldLock")
     descriptor = None
-    for klass in WordprocessingMLStyles::FldCharElt.__mro__:
-        if "fldCharType" in klass.__dict__:
-            descriptor = klass.__dict__["fldCharType"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_wordprocessingmlstyles::fldcharelt_has_fldLock():
-    assert hasattr(WordprocessingMLStyles::FldCharElt, "fldLock")
-    descriptor = None
-    for klass in WordprocessingMLStyles::FldCharElt.__mro__:
+    for klass in WordprocessingMLStyles_FldCharElt.__mro__:
         if "fldLock" in klass.__dict__:
             descriptor = klass.__dict__["fldLock"]
             break
     assert isinstance(descriptor, property)
 
+def test_wordprocessingmlstyles_fldcharelt_has_fldCharType():
+    assert hasattr(WordprocessingMLStyles_FldCharElt, "fldCharType")
+    descriptor = None
+    for klass in WordprocessingMLStyles_FldCharElt.__mro__:
+        if "fldCharType" in klass.__dict__:
+            descriptor = klass.__dict__["fldCharType"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_wordprocessingmlstyles::tablegridelt_is_not_abstract():
-    assert not inspect.isabstract(WordprocessingMLStyles::TableGridElt)
+
+def test_wordprocessingmlstyles_tablegridelt_is_not_abstract():
+    assert not inspect.isabstract(WordprocessingMLStyles_TableGridElt)
 
 
-def test_wordprocessingmlstyles::tablegridelt_constructor_exists():
-    assert callable(WordprocessingMLStyles::TableGridElt.__init__)
+def test_wordprocessingmlstyles_tablegridelt_constructor_exists():
+    assert callable(WordprocessingMLStyles_TableGridElt.__init__)
 
 
-def test_wordprocessingmlstyles::tablegridelt_constructor_args():
-    sig = inspect.signature(WordprocessingMLStyles::TableGridElt.__init__)
+def test_wordprocessingmlstyles_tablegridelt_constructor_args():
+    sig = inspect.signature(WordprocessingMLStyles_TableGridElt.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -718,16 +718,16 @@ def test_tabelt_constructor_args():
 
 
 
-def test_wordprocessingmlstyles::symelt_is_not_abstract():
-    assert not inspect.isabstract(WordprocessingMLStyles::SymElt)
+def test_wordprocessingmlstyles_symelt_is_not_abstract():
+    assert not inspect.isabstract(WordprocessingMLStyles_SymElt)
 
 
-def test_wordprocessingmlstyles::symelt_constructor_exists():
-    assert callable(WordprocessingMLStyles::SymElt.__init__)
+def test_wordprocessingmlstyles_symelt_constructor_exists():
+    assert callable(WordprocessingMLStyles_SymElt.__init__)
 
 
-def test_wordprocessingmlstyles::symelt_constructor_args():
-    sig = inspect.signature(WordprocessingMLStyles::SymElt.__init__)
+def test_wordprocessingmlstyles_symelt_constructor_args():
+    sig = inspect.signature(WordprocessingMLStyles_SymElt.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -760,33 +760,33 @@ def test_picturetype_constructor_args():
 
 
 
-def test_wordprocessingmlstyles::noteelt_is_not_abstract():
-    assert not inspect.isabstract(WordprocessingMLStyles::NoteElt)
+def test_wordprocessingmlstyles_noteelt_is_not_abstract():
+    assert not inspect.isabstract(WordprocessingMLStyles_NoteElt)
 
 
-def test_wordprocessingmlstyles::noteelt_constructor_exists():
-    assert callable(WordprocessingMLStyles::NoteElt.__init__)
+def test_wordprocessingmlstyles_noteelt_constructor_exists():
+    assert callable(WordprocessingMLStyles_NoteElt.__init__)
 
 
-def test_wordprocessingmlstyles::noteelt_constructor_args():
-    sig = inspect.signature(WordprocessingMLStyles::NoteElt.__init__)
+def test_wordprocessingmlstyles_noteelt_constructor_args():
+    sig = inspect.signature(WordprocessingMLStyles_NoteElt.__init__)
     params = list(sig.parameters.keys())
     assert "type" in params, "Missing parameter 'type'"
     assert "suppressRef" in params, "Missing parameter 'suppressRef'"
 
-def test_wordprocessingmlstyles::noteelt_has_type():
-    assert hasattr(WordprocessingMLStyles::NoteElt, "type")
+def test_wordprocessingmlstyles_noteelt_has_type():
+    assert hasattr(WordprocessingMLStyles_NoteElt, "type")
     descriptor = None
-    for klass in WordprocessingMLStyles::NoteElt.__mro__:
+    for klass in WordprocessingMLStyles_NoteElt.__mro__:
         if "type" in klass.__dict__:
             descriptor = klass.__dict__["type"]
             break
     assert isinstance(descriptor, property)
 
-def test_wordprocessingmlstyles::noteelt_has_suppressRef():
-    assert hasattr(WordprocessingMLStyles::NoteElt, "suppressRef")
+def test_wordprocessingmlstyles_noteelt_has_suppressRef():
+    assert hasattr(WordprocessingMLStyles_NoteElt, "suppressRef")
     descriptor = None
-    for klass in WordprocessingMLStyles::NoteElt.__mro__:
+    for klass in WordprocessingMLStyles_NoteElt.__mro__:
         if "suppressRef" in klass.__dict__:
             descriptor = klass.__dict__["suppressRef"]
             break
@@ -808,49 +808,49 @@ def test_fldcharelt_constructor_args():
 
 
 
-def test_wordprocessingmlstyles::runcontentelt_is_not_abstract():
-    assert not inspect.isabstract(WordprocessingMLStyles::RunContentElt)
+def test_wordprocessingmlstyles_runcontentelt_is_not_abstract():
+    assert not inspect.isabstract(WordprocessingMLStyles_RunContentElt)
 
 
-def test_wordprocessingmlstyles::runcontentelt_constructor_exists():
-    assert callable(WordprocessingMLStyles::RunContentElt.__init__)
+def test_wordprocessingmlstyles_runcontentelt_constructor_exists():
+    assert callable(WordprocessingMLStyles_RunContentElt.__init__)
 
 
-def test_wordprocessingmlstyles::runcontentelt_constructor_args():
-    sig = inspect.signature(WordprocessingMLStyles::RunContentElt.__init__)
+def test_wordprocessingmlstyles_runcontentelt_constructor_args():
+    sig = inspect.signature(WordprocessingMLStyles_RunContentElt.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_wordprocessingmlstyles::langelt_is_not_abstract():
-    assert not inspect.isabstract(WordprocessingMLStyles::LangElt)
+def test_wordprocessingmlstyles_langelt_is_not_abstract():
+    assert not inspect.isabstract(WordprocessingMLStyles_LangElt)
 
 
-def test_wordprocessingmlstyles::langelt_constructor_exists():
-    assert callable(WordprocessingMLStyles::LangElt.__init__)
+def test_wordprocessingmlstyles_langelt_constructor_exists():
+    assert callable(WordprocessingMLStyles_LangElt.__init__)
 
 
-def test_wordprocessingmlstyles::langelt_constructor_args():
-    sig = inspect.signature(WordprocessingMLStyles::LangElt.__init__)
+def test_wordprocessingmlstyles_langelt_constructor_args():
+    sig = inspect.signature(WordprocessingMLStyles_LangElt.__init__)
     params = list(sig.parameters.keys())
-    assert "bidi" in params, "Missing parameter 'bidi'"
     assert "val" in params, "Missing parameter 'val'"
+    assert "bidi" in params, "Missing parameter 'bidi'"
 
-def test_wordprocessingmlstyles::langelt_has_bidi():
-    assert hasattr(WordprocessingMLStyles::LangElt, "bidi")
+def test_wordprocessingmlstyles_langelt_has_val():
+    assert hasattr(WordprocessingMLStyles_LangElt, "val")
     descriptor = None
-    for klass in WordprocessingMLStyles::LangElt.__mro__:
-        if "bidi" in klass.__dict__:
-            descriptor = klass.__dict__["bidi"]
+    for klass in WordprocessingMLStyles_LangElt.__mro__:
+        if "val" in klass.__dict__:
+            descriptor = klass.__dict__["val"]
             break
     assert isinstance(descriptor, property)
 
-def test_wordprocessingmlstyles::langelt_has_val():
-    assert hasattr(WordprocessingMLStyles::LangElt, "val")
+def test_wordprocessingmlstyles_langelt_has_bidi():
+    assert hasattr(WordprocessingMLStyles_LangElt, "bidi")
     descriptor = None
-    for klass in WordprocessingMLStyles::LangElt.__mro__:
-        if "val" in klass.__dict__:
-            descriptor = klass.__dict__["val"]
+    for klass in WordprocessingMLStyles_LangElt.__mro__:
+        if "bidi" in klass.__dict__:
+            descriptor = klass.__dict__["bidi"]
             break
     assert isinstance(descriptor, property)
 
@@ -912,213 +912,213 @@ def test_runelt_constructor_args():
 
 
 
-def test_wordprocessingmlstyles::runprelt_is_not_abstract():
-    assert not inspect.isabstract(WordprocessingMLStyles::RunPrElt)
+def test_wordprocessingmlstyles_runprelt_is_not_abstract():
+    assert not inspect.isabstract(WordprocessingMLStyles_RunPrElt)
 
 
-def test_wordprocessingmlstyles::runprelt_constructor_exists():
-    assert callable(WordprocessingMLStyles::RunPrElt.__init__)
+def test_wordprocessingmlstyles_runprelt_constructor_exists():
+    assert callable(WordprocessingMLStyles_RunPrElt.__init__)
 
 
-def test_wordprocessingmlstyles::runprelt_constructor_args():
-    sig = inspect.signature(WordprocessingMLStyles::RunPrElt.__init__)
+def test_wordprocessingmlstyles_runprelt_constructor_args():
+    sig = inspect.signature(WordprocessingMLStyles_RunPrElt.__init__)
     params = list(sig.parameters.keys())
+    assert "imprint" in params, "Missing parameter 'imprint'"
+    assert "bold" in params, "Missing parameter 'bold'"
+    assert "capitals" in params, "Missing parameter 'capitals'"
+    assert "italic_cs" in params, "Missing parameter 'italic_cs'"
+    assert "bold_cs" in params, "Missing parameter 'bold_cs'"
+    assert "italic" in params, "Missing parameter 'italic'"
+    assert "cs" in params, "Missing parameter 'cs'"
+    assert "emboss" in params, "Missing parameter 'emboss'"
     assert "verticalAlign" in params, "Missing parameter 'verticalAlign'"
+    assert "outline" in params, "Missing parameter 'outline'"
     assert "color" in params, "Missing parameter 'color'"
     assert "smallCapitals" in params, "Missing parameter 'smallCapitals'"
-    assert "strike" in params, "Missing parameter 'strike'"
-    assert "vanish" in params, "Missing parameter 'vanish'"
-    assert "bold" in params, "Missing parameter 'bold'"
     assert "doubleStrike" in params, "Missing parameter 'doubleStrike'"
-    assert "imprint" in params, "Missing parameter 'imprint'"
-    assert "italic" in params, "Missing parameter 'italic'"
-    assert "highlight" in params, "Missing parameter 'highlight'"
-    assert "cs" in params, "Missing parameter 'cs'"
-    assert "rtl" in params, "Missing parameter 'rtl'"
-    assert "bold_cs" in params, "Missing parameter 'bold_cs'"
-    assert "capitals" in params, "Missing parameter 'capitals'"
     assert "specVanish" in params, "Missing parameter 'specVanish'"
-    assert "outline" in params, "Missing parameter 'outline'"
-    assert "emboss" in params, "Missing parameter 'emboss'"
-    assert "italic_cs" in params, "Missing parameter 'italic_cs'"
+    assert "vanish" in params, "Missing parameter 'vanish'"
     assert "noProof" in params, "Missing parameter 'noProof'"
+    assert "strike" in params, "Missing parameter 'strike'"
+    assert "rtl" in params, "Missing parameter 'rtl'"
+    assert "highlight" in params, "Missing parameter 'highlight'"
     assert "shadow" in params, "Missing parameter 'shadow'"
 
-def test_wordprocessingmlstyles::runprelt_has_verticalAlign():
-    assert hasattr(WordprocessingMLStyles::RunPrElt, "verticalAlign")
+def test_wordprocessingmlstyles_runprelt_has_imprint():
+    assert hasattr(WordprocessingMLStyles_RunPrElt, "imprint")
     descriptor = None
-    for klass in WordprocessingMLStyles::RunPrElt.__mro__:
-        if "verticalAlign" in klass.__dict__:
-            descriptor = klass.__dict__["verticalAlign"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_wordprocessingmlstyles::runprelt_has_color():
-    assert hasattr(WordprocessingMLStyles::RunPrElt, "color")
-    descriptor = None
-    for klass in WordprocessingMLStyles::RunPrElt.__mro__:
-        if "color" in klass.__dict__:
-            descriptor = klass.__dict__["color"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_wordprocessingmlstyles::runprelt_has_smallCapitals():
-    assert hasattr(WordprocessingMLStyles::RunPrElt, "smallCapitals")
-    descriptor = None
-    for klass in WordprocessingMLStyles::RunPrElt.__mro__:
-        if "smallCapitals" in klass.__dict__:
-            descriptor = klass.__dict__["smallCapitals"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_wordprocessingmlstyles::runprelt_has_strike():
-    assert hasattr(WordprocessingMLStyles::RunPrElt, "strike")
-    descriptor = None
-    for klass in WordprocessingMLStyles::RunPrElt.__mro__:
-        if "strike" in klass.__dict__:
-            descriptor = klass.__dict__["strike"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_wordprocessingmlstyles::runprelt_has_vanish():
-    assert hasattr(WordprocessingMLStyles::RunPrElt, "vanish")
-    descriptor = None
-    for klass in WordprocessingMLStyles::RunPrElt.__mro__:
-        if "vanish" in klass.__dict__:
-            descriptor = klass.__dict__["vanish"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_wordprocessingmlstyles::runprelt_has_bold():
-    assert hasattr(WordprocessingMLStyles::RunPrElt, "bold")
-    descriptor = None
-    for klass in WordprocessingMLStyles::RunPrElt.__mro__:
-        if "bold" in klass.__dict__:
-            descriptor = klass.__dict__["bold"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_wordprocessingmlstyles::runprelt_has_doubleStrike():
-    assert hasattr(WordprocessingMLStyles::RunPrElt, "doubleStrike")
-    descriptor = None
-    for klass in WordprocessingMLStyles::RunPrElt.__mro__:
-        if "doubleStrike" in klass.__dict__:
-            descriptor = klass.__dict__["doubleStrike"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_wordprocessingmlstyles::runprelt_has_imprint():
-    assert hasattr(WordprocessingMLStyles::RunPrElt, "imprint")
-    descriptor = None
-    for klass in WordprocessingMLStyles::RunPrElt.__mro__:
+    for klass in WordprocessingMLStyles_RunPrElt.__mro__:
         if "imprint" in klass.__dict__:
             descriptor = klass.__dict__["imprint"]
             break
     assert isinstance(descriptor, property)
 
-def test_wordprocessingmlstyles::runprelt_has_italic():
-    assert hasattr(WordprocessingMLStyles::RunPrElt, "italic")
+def test_wordprocessingmlstyles_runprelt_has_bold():
+    assert hasattr(WordprocessingMLStyles_RunPrElt, "bold")
     descriptor = None
-    for klass in WordprocessingMLStyles::RunPrElt.__mro__:
-        if "italic" in klass.__dict__:
-            descriptor = klass.__dict__["italic"]
+    for klass in WordprocessingMLStyles_RunPrElt.__mro__:
+        if "bold" in klass.__dict__:
+            descriptor = klass.__dict__["bold"]
             break
     assert isinstance(descriptor, property)
 
-def test_wordprocessingmlstyles::runprelt_has_highlight():
-    assert hasattr(WordprocessingMLStyles::RunPrElt, "highlight")
+def test_wordprocessingmlstyles_runprelt_has_capitals():
+    assert hasattr(WordprocessingMLStyles_RunPrElt, "capitals")
     descriptor = None
-    for klass in WordprocessingMLStyles::RunPrElt.__mro__:
-        if "highlight" in klass.__dict__:
-            descriptor = klass.__dict__["highlight"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_wordprocessingmlstyles::runprelt_has_cs():
-    assert hasattr(WordprocessingMLStyles::RunPrElt, "cs")
-    descriptor = None
-    for klass in WordprocessingMLStyles::RunPrElt.__mro__:
-        if "cs" in klass.__dict__:
-            descriptor = klass.__dict__["cs"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_wordprocessingmlstyles::runprelt_has_rtl():
-    assert hasattr(WordprocessingMLStyles::RunPrElt, "rtl")
-    descriptor = None
-    for klass in WordprocessingMLStyles::RunPrElt.__mro__:
-        if "rtl" in klass.__dict__:
-            descriptor = klass.__dict__["rtl"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_wordprocessingmlstyles::runprelt_has_bold_cs():
-    assert hasattr(WordprocessingMLStyles::RunPrElt, "bold_cs")
-    descriptor = None
-    for klass in WordprocessingMLStyles::RunPrElt.__mro__:
-        if "bold_cs" in klass.__dict__:
-            descriptor = klass.__dict__["bold_cs"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_wordprocessingmlstyles::runprelt_has_capitals():
-    assert hasattr(WordprocessingMLStyles::RunPrElt, "capitals")
-    descriptor = None
-    for klass in WordprocessingMLStyles::RunPrElt.__mro__:
+    for klass in WordprocessingMLStyles_RunPrElt.__mro__:
         if "capitals" in klass.__dict__:
             descriptor = klass.__dict__["capitals"]
             break
     assert isinstance(descriptor, property)
 
-def test_wordprocessingmlstyles::runprelt_has_specVanish():
-    assert hasattr(WordprocessingMLStyles::RunPrElt, "specVanish")
+def test_wordprocessingmlstyles_runprelt_has_italic_cs():
+    assert hasattr(WordprocessingMLStyles_RunPrElt, "italic_cs")
     descriptor = None
-    for klass in WordprocessingMLStyles::RunPrElt.__mro__:
-        if "specVanish" in klass.__dict__:
-            descriptor = klass.__dict__["specVanish"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_wordprocessingmlstyles::runprelt_has_outline():
-    assert hasattr(WordprocessingMLStyles::RunPrElt, "outline")
-    descriptor = None
-    for klass in WordprocessingMLStyles::RunPrElt.__mro__:
-        if "outline" in klass.__dict__:
-            descriptor = klass.__dict__["outline"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_wordprocessingmlstyles::runprelt_has_emboss():
-    assert hasattr(WordprocessingMLStyles::RunPrElt, "emboss")
-    descriptor = None
-    for klass in WordprocessingMLStyles::RunPrElt.__mro__:
-        if "emboss" in klass.__dict__:
-            descriptor = klass.__dict__["emboss"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_wordprocessingmlstyles::runprelt_has_italic_cs():
-    assert hasattr(WordprocessingMLStyles::RunPrElt, "italic_cs")
-    descriptor = None
-    for klass in WordprocessingMLStyles::RunPrElt.__mro__:
+    for klass in WordprocessingMLStyles_RunPrElt.__mro__:
         if "italic_cs" in klass.__dict__:
             descriptor = klass.__dict__["italic_cs"]
             break
     assert isinstance(descriptor, property)
 
-def test_wordprocessingmlstyles::runprelt_has_noProof():
-    assert hasattr(WordprocessingMLStyles::RunPrElt, "noProof")
+def test_wordprocessingmlstyles_runprelt_has_bold_cs():
+    assert hasattr(WordprocessingMLStyles_RunPrElt, "bold_cs")
     descriptor = None
-    for klass in WordprocessingMLStyles::RunPrElt.__mro__:
+    for klass in WordprocessingMLStyles_RunPrElt.__mro__:
+        if "bold_cs" in klass.__dict__:
+            descriptor = klass.__dict__["bold_cs"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_wordprocessingmlstyles_runprelt_has_italic():
+    assert hasattr(WordprocessingMLStyles_RunPrElt, "italic")
+    descriptor = None
+    for klass in WordprocessingMLStyles_RunPrElt.__mro__:
+        if "italic" in klass.__dict__:
+            descriptor = klass.__dict__["italic"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_wordprocessingmlstyles_runprelt_has_cs():
+    assert hasattr(WordprocessingMLStyles_RunPrElt, "cs")
+    descriptor = None
+    for klass in WordprocessingMLStyles_RunPrElt.__mro__:
+        if "cs" in klass.__dict__:
+            descriptor = klass.__dict__["cs"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_wordprocessingmlstyles_runprelt_has_emboss():
+    assert hasattr(WordprocessingMLStyles_RunPrElt, "emboss")
+    descriptor = None
+    for klass in WordprocessingMLStyles_RunPrElt.__mro__:
+        if "emboss" in klass.__dict__:
+            descriptor = klass.__dict__["emboss"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_wordprocessingmlstyles_runprelt_has_verticalAlign():
+    assert hasattr(WordprocessingMLStyles_RunPrElt, "verticalAlign")
+    descriptor = None
+    for klass in WordprocessingMLStyles_RunPrElt.__mro__:
+        if "verticalAlign" in klass.__dict__:
+            descriptor = klass.__dict__["verticalAlign"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_wordprocessingmlstyles_runprelt_has_outline():
+    assert hasattr(WordprocessingMLStyles_RunPrElt, "outline")
+    descriptor = None
+    for klass in WordprocessingMLStyles_RunPrElt.__mro__:
+        if "outline" in klass.__dict__:
+            descriptor = klass.__dict__["outline"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_wordprocessingmlstyles_runprelt_has_color():
+    assert hasattr(WordprocessingMLStyles_RunPrElt, "color")
+    descriptor = None
+    for klass in WordprocessingMLStyles_RunPrElt.__mro__:
+        if "color" in klass.__dict__:
+            descriptor = klass.__dict__["color"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_wordprocessingmlstyles_runprelt_has_smallCapitals():
+    assert hasattr(WordprocessingMLStyles_RunPrElt, "smallCapitals")
+    descriptor = None
+    for klass in WordprocessingMLStyles_RunPrElt.__mro__:
+        if "smallCapitals" in klass.__dict__:
+            descriptor = klass.__dict__["smallCapitals"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_wordprocessingmlstyles_runprelt_has_doubleStrike():
+    assert hasattr(WordprocessingMLStyles_RunPrElt, "doubleStrike")
+    descriptor = None
+    for klass in WordprocessingMLStyles_RunPrElt.__mro__:
+        if "doubleStrike" in klass.__dict__:
+            descriptor = klass.__dict__["doubleStrike"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_wordprocessingmlstyles_runprelt_has_specVanish():
+    assert hasattr(WordprocessingMLStyles_RunPrElt, "specVanish")
+    descriptor = None
+    for klass in WordprocessingMLStyles_RunPrElt.__mro__:
+        if "specVanish" in klass.__dict__:
+            descriptor = klass.__dict__["specVanish"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_wordprocessingmlstyles_runprelt_has_vanish():
+    assert hasattr(WordprocessingMLStyles_RunPrElt, "vanish")
+    descriptor = None
+    for klass in WordprocessingMLStyles_RunPrElt.__mro__:
+        if "vanish" in klass.__dict__:
+            descriptor = klass.__dict__["vanish"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_wordprocessingmlstyles_runprelt_has_noProof():
+    assert hasattr(WordprocessingMLStyles_RunPrElt, "noProof")
+    descriptor = None
+    for klass in WordprocessingMLStyles_RunPrElt.__mro__:
         if "noProof" in klass.__dict__:
             descriptor = klass.__dict__["noProof"]
             break
     assert isinstance(descriptor, property)
 
-def test_wordprocessingmlstyles::runprelt_has_shadow():
-    assert hasattr(WordprocessingMLStyles::RunPrElt, "shadow")
+def test_wordprocessingmlstyles_runprelt_has_strike():
+    assert hasattr(WordprocessingMLStyles_RunPrElt, "strike")
     descriptor = None
-    for klass in WordprocessingMLStyles::RunPrElt.__mro__:
+    for klass in WordprocessingMLStyles_RunPrElt.__mro__:
+        if "strike" in klass.__dict__:
+            descriptor = klass.__dict__["strike"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_wordprocessingmlstyles_runprelt_has_rtl():
+    assert hasattr(WordprocessingMLStyles_RunPrElt, "rtl")
+    descriptor = None
+    for klass in WordprocessingMLStyles_RunPrElt.__mro__:
+        if "rtl" in klass.__dict__:
+            descriptor = klass.__dict__["rtl"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_wordprocessingmlstyles_runprelt_has_highlight():
+    assert hasattr(WordprocessingMLStyles_RunPrElt, "highlight")
+    descriptor = None
+    for klass in WordprocessingMLStyles_RunPrElt.__mro__:
+        if "highlight" in klass.__dict__:
+            descriptor = klass.__dict__["highlight"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_wordprocessingmlstyles_runprelt_has_shadow():
+    assert hasattr(WordprocessingMLStyles_RunPrElt, "shadow")
+    descriptor = None
+    for klass in WordprocessingMLStyles_RunPrElt.__mro__:
         if "shadow" in klass.__dict__:
             descriptor = klass.__dict__["shadow"]
             break
@@ -1140,209 +1140,209 @@ def test_runcontentelt_constructor_args():
 
 
 
-def test_wordprocessingmlstyles::annotationref_is_not_abstract():
-    assert not inspect.isabstract(WordprocessingMLStyles::AnnotationRef)
+def test_wordprocessingmlstyles_pgnum_is_not_abstract():
+    assert not inspect.isabstract(WordprocessingMLStyles_PgNum)
 
 
-def test_wordprocessingmlstyles::annotationref_constructor_exists():
-    assert callable(WordprocessingMLStyles::AnnotationRef.__init__)
+def test_wordprocessingmlstyles_pgnum_constructor_exists():
+    assert callable(WordprocessingMLStyles_PgNum.__init__)
 
 
-def test_wordprocessingmlstyles::annotationref_constructor_args():
-    sig = inspect.signature(WordprocessingMLStyles::AnnotationRef.__init__)
+def test_wordprocessingmlstyles_pgnum_constructor_args():
+    sig = inspect.signature(WordprocessingMLStyles_PgNum.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_wordprocessingmlstyles::breakelt_is_not_abstract():
-    assert not inspect.isabstract(WordprocessingMLStyles::BreakElt)
+def test_wordprocessingmlstyles_symbol_is_not_abstract():
+    assert not inspect.isabstract(WordprocessingMLStyles_Symbol)
 
 
-def test_wordprocessingmlstyles::breakelt_constructor_exists():
-    assert callable(WordprocessingMLStyles::BreakElt.__init__)
+def test_wordprocessingmlstyles_symbol_constructor_exists():
+    assert callable(WordprocessingMLStyles_Symbol.__init__)
 
 
-def test_wordprocessingmlstyles::breakelt_constructor_args():
-    sig = inspect.signature(WordprocessingMLStyles::BreakElt.__init__)
+def test_wordprocessingmlstyles_symbol_constructor_args():
+    sig = inspect.signature(WordprocessingMLStyles_Symbol.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_wordprocessingmlstyles_separator_is_not_abstract():
+    assert not inspect.isabstract(WordprocessingMLStyles_Separator)
+
+
+def test_wordprocessingmlstyles_separator_constructor_exists():
+    assert callable(WordprocessingMLStyles_Separator.__init__)
+
+
+def test_wordprocessingmlstyles_separator_constructor_args():
+    sig = inspect.signature(WordprocessingMLStyles_Separator.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_wordprocessingmlstyles_continuationseparator_is_not_abstract():
+    assert not inspect.isabstract(WordprocessingMLStyles_ContinuationSeparator)
+
+
+def test_wordprocessingmlstyles_continuationseparator_constructor_exists():
+    assert callable(WordprocessingMLStyles_ContinuationSeparator.__init__)
+
+
+def test_wordprocessingmlstyles_continuationseparator_constructor_args():
+    sig = inspect.signature(WordprocessingMLStyles_ContinuationSeparator.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_wordprocessingmlstyles_footnoteref_is_not_abstract():
+    assert not inspect.isabstract(WordprocessingMLStyles_FootnoteRef)
+
+
+def test_wordprocessingmlstyles_footnoteref_constructor_exists():
+    assert callable(WordprocessingMLStyles_FootnoteRef.__init__)
+
+
+def test_wordprocessingmlstyles_footnoteref_constructor_args():
+    sig = inspect.signature(WordprocessingMLStyles_FootnoteRef.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_wordprocessingmlstyles_endnoteref_is_not_abstract():
+    assert not inspect.isabstract(WordprocessingMLStyles_EndnoteRef)
+
+
+def test_wordprocessingmlstyles_endnoteref_constructor_exists():
+    assert callable(WordprocessingMLStyles_EndnoteRef.__init__)
+
+
+def test_wordprocessingmlstyles_endnoteref_constructor_args():
+    sig = inspect.signature(WordprocessingMLStyles_EndnoteRef.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_wordprocessingmlstyles_softhyphen_is_not_abstract():
+    assert not inspect.isabstract(WordprocessingMLStyles_SoftHyphen)
+
+
+def test_wordprocessingmlstyles_softhyphen_constructor_exists():
+    assert callable(WordprocessingMLStyles_SoftHyphen.__init__)
+
+
+def test_wordprocessingmlstyles_softhyphen_constructor_args():
+    sig = inspect.signature(WordprocessingMLStyles_SoftHyphen.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_wordprocessingmlstyles_fldchar_is_not_abstract():
+    assert not inspect.isabstract(WordprocessingMLStyles_FldChar)
+
+
+def test_wordprocessingmlstyles_fldchar_constructor_exists():
+    assert callable(WordprocessingMLStyles_FldChar.__init__)
+
+
+def test_wordprocessingmlstyles_fldchar_constructor_args():
+    sig = inspect.signature(WordprocessingMLStyles_FldChar.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_wordprocessingmlstyles_picture_is_not_abstract():
+    assert not inspect.isabstract(WordprocessingMLStyles_Picture)
+
+
+def test_wordprocessingmlstyles_picture_constructor_exists():
+    assert callable(WordprocessingMLStyles_Picture.__init__)
+
+
+def test_wordprocessingmlstyles_picture_constructor_args():
+    sig = inspect.signature(WordprocessingMLStyles_Picture.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_wordprocessingmlstyles_annotationref_is_not_abstract():
+    assert not inspect.isabstract(WordprocessingMLStyles_AnnotationRef)
+
+
+def test_wordprocessingmlstyles_annotationref_constructor_exists():
+    assert callable(WordprocessingMLStyles_AnnotationRef.__init__)
+
+
+def test_wordprocessingmlstyles_annotationref_constructor_args():
+    sig = inspect.signature(WordprocessingMLStyles_AnnotationRef.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_wordprocessingmlstyles_tab_is_not_abstract():
+    assert not inspect.isabstract(WordprocessingMLStyles_Tab)
+
+
+def test_wordprocessingmlstyles_tab_constructor_exists():
+    assert callable(WordprocessingMLStyles_Tab.__init__)
+
+
+def test_wordprocessingmlstyles_tab_constructor_args():
+    sig = inspect.signature(WordprocessingMLStyles_Tab.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_wordprocessingmlstyles_cr_is_not_abstract():
+    assert not inspect.isabstract(WordprocessingMLStyles_Cr)
+
+
+def test_wordprocessingmlstyles_cr_constructor_exists():
+    assert callable(WordprocessingMLStyles_Cr.__init__)
+
+
+def test_wordprocessingmlstyles_cr_constructor_args():
+    sig = inspect.signature(WordprocessingMLStyles_Cr.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_wordprocessingmlstyles_nobreakhyphen_is_not_abstract():
+    assert not inspect.isabstract(WordprocessingMLStyles_NoBreakHyphen)
+
+
+def test_wordprocessingmlstyles_nobreakhyphen_constructor_exists():
+    assert callable(WordprocessingMLStyles_NoBreakHyphen.__init__)
+
+
+def test_wordprocessingmlstyles_nobreakhyphen_constructor_args():
+    sig = inspect.signature(WordprocessingMLStyles_NoBreakHyphen.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_wordprocessingmlstyles_breakelt_is_not_abstract():
+    assert not inspect.isabstract(WordprocessingMLStyles_BreakElt)
+
+
+def test_wordprocessingmlstyles_breakelt_constructor_exists():
+    assert callable(WordprocessingMLStyles_BreakElt.__init__)
+
+
+def test_wordprocessingmlstyles_breakelt_constructor_args():
+    sig = inspect.signature(WordprocessingMLStyles_BreakElt.__init__)
     params = list(sig.parameters.keys())
     assert "type" in params, "Missing parameter 'type'"
 
-def test_wordprocessingmlstyles::breakelt_has_type():
-    assert hasattr(WordprocessingMLStyles::BreakElt, "type")
+def test_wordprocessingmlstyles_breakelt_has_type():
+    assert hasattr(WordprocessingMLStyles_BreakElt, "type")
     descriptor = None
-    for klass in WordprocessingMLStyles::BreakElt.__mro__:
+    for klass in WordprocessingMLStyles_BreakElt.__mro__:
         if "type" in klass.__dict__:
             descriptor = klass.__dict__["type"]
             break
     assert isinstance(descriptor, property)
-
-
-
-def test_wordprocessingmlstyles::fldchar_is_not_abstract():
-    assert not inspect.isabstract(WordprocessingMLStyles::FldChar)
-
-
-def test_wordprocessingmlstyles::fldchar_constructor_exists():
-    assert callable(WordprocessingMLStyles::FldChar.__init__)
-
-
-def test_wordprocessingmlstyles::fldchar_constructor_args():
-    sig = inspect.signature(WordprocessingMLStyles::FldChar.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_wordprocessingmlstyles::softhyphen_is_not_abstract():
-    assert not inspect.isabstract(WordprocessingMLStyles::SoftHyphen)
-
-
-def test_wordprocessingmlstyles::softhyphen_constructor_exists():
-    assert callable(WordprocessingMLStyles::SoftHyphen.__init__)
-
-
-def test_wordprocessingmlstyles::softhyphen_constructor_args():
-    sig = inspect.signature(WordprocessingMLStyles::SoftHyphen.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_wordprocessingmlstyles::cr_is_not_abstract():
-    assert not inspect.isabstract(WordprocessingMLStyles::Cr)
-
-
-def test_wordprocessingmlstyles::cr_constructor_exists():
-    assert callable(WordprocessingMLStyles::Cr.__init__)
-
-
-def test_wordprocessingmlstyles::cr_constructor_args():
-    sig = inspect.signature(WordprocessingMLStyles::Cr.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_wordprocessingmlstyles::picture_is_not_abstract():
-    assert not inspect.isabstract(WordprocessingMLStyles::Picture)
-
-
-def test_wordprocessingmlstyles::picture_constructor_exists():
-    assert callable(WordprocessingMLStyles::Picture.__init__)
-
-
-def test_wordprocessingmlstyles::picture_constructor_args():
-    sig = inspect.signature(WordprocessingMLStyles::Picture.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_wordprocessingmlstyles::nobreakhyphen_is_not_abstract():
-    assert not inspect.isabstract(WordprocessingMLStyles::NoBreakHyphen)
-
-
-def test_wordprocessingmlstyles::nobreakhyphen_constructor_exists():
-    assert callable(WordprocessingMLStyles::NoBreakHyphen.__init__)
-
-
-def test_wordprocessingmlstyles::nobreakhyphen_constructor_args():
-    sig = inspect.signature(WordprocessingMLStyles::NoBreakHyphen.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_wordprocessingmlstyles::pgnum_is_not_abstract():
-    assert not inspect.isabstract(WordprocessingMLStyles::PgNum)
-
-
-def test_wordprocessingmlstyles::pgnum_constructor_exists():
-    assert callable(WordprocessingMLStyles::PgNum.__init__)
-
-
-def test_wordprocessingmlstyles::pgnum_constructor_args():
-    sig = inspect.signature(WordprocessingMLStyles::PgNum.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_wordprocessingmlstyles::symbol_is_not_abstract():
-    assert not inspect.isabstract(WordprocessingMLStyles::Symbol)
-
-
-def test_wordprocessingmlstyles::symbol_constructor_exists():
-    assert callable(WordprocessingMLStyles::Symbol.__init__)
-
-
-def test_wordprocessingmlstyles::symbol_constructor_args():
-    sig = inspect.signature(WordprocessingMLStyles::Symbol.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_wordprocessingmlstyles::continuationseparator_is_not_abstract():
-    assert not inspect.isabstract(WordprocessingMLStyles::ContinuationSeparator)
-
-
-def test_wordprocessingmlstyles::continuationseparator_constructor_exists():
-    assert callable(WordprocessingMLStyles::ContinuationSeparator.__init__)
-
-
-def test_wordprocessingmlstyles::continuationseparator_constructor_args():
-    sig = inspect.signature(WordprocessingMLStyles::ContinuationSeparator.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_wordprocessingmlstyles::endnoteref_is_not_abstract():
-    assert not inspect.isabstract(WordprocessingMLStyles::EndnoteRef)
-
-
-def test_wordprocessingmlstyles::endnoteref_constructor_exists():
-    assert callable(WordprocessingMLStyles::EndnoteRef.__init__)
-
-
-def test_wordprocessingmlstyles::endnoteref_constructor_args():
-    sig = inspect.signature(WordprocessingMLStyles::EndnoteRef.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_wordprocessingmlstyles::separator_is_not_abstract():
-    assert not inspect.isabstract(WordprocessingMLStyles::Separator)
-
-
-def test_wordprocessingmlstyles::separator_constructor_exists():
-    assert callable(WordprocessingMLStyles::Separator.__init__)
-
-
-def test_wordprocessingmlstyles::separator_constructor_args():
-    sig = inspect.signature(WordprocessingMLStyles::Separator.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_wordprocessingmlstyles::footnoteref_is_not_abstract():
-    assert not inspect.isabstract(WordprocessingMLStyles::FootnoteRef)
-
-
-def test_wordprocessingmlstyles::footnoteref_constructor_exists():
-    assert callable(WordprocessingMLStyles::FootnoteRef.__init__)
-
-
-def test_wordprocessingmlstyles::footnoteref_constructor_args():
-    sig = inspect.signature(WordprocessingMLStyles::FootnoteRef.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_wordprocessingmlstyles::tab_is_not_abstract():
-    assert not inspect.isabstract(WordprocessingMLStyles::Tab)
-
-
-def test_wordprocessingmlstyles::tab_constructor_exists():
-    assert callable(WordprocessingMLStyles::Tab.__init__)
-
-
-def test_wordprocessingmlstyles::tab_constructor_args():
-    sig = inspect.signature(WordprocessingMLStyles::Tab.__init__)
-    params = list(sig.parameters.keys())
 
 
 
@@ -1360,16 +1360,16 @@ def test_runprelt_constructor_args():
 
 
 
-def test_wordprocessingmlstyles::paracontentelt_is_not_abstract():
-    assert not inspect.isabstract(WordprocessingMLStyles::ParaContentElt)
+def test_wordprocessingmlstyles_paracontentelt_is_not_abstract():
+    assert not inspect.isabstract(WordprocessingMLStyles_ParaContentElt)
 
 
-def test_wordprocessingmlstyles::paracontentelt_constructor_exists():
-    assert callable(WordprocessingMLStyles::ParaContentElt.__init__)
+def test_wordprocessingmlstyles_paracontentelt_constructor_exists():
+    assert callable(WordprocessingMLStyles_ParaContentElt.__init__)
 
 
-def test_wordprocessingmlstyles::paracontentelt_constructor_args():
-    sig = inspect.signature(WordprocessingMLStyles::ParaContentElt.__init__)
+def test_wordprocessingmlstyles_paracontentelt_constructor_args():
+    sig = inspect.signature(WordprocessingMLStyles_ParaContentElt.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1402,93 +1402,93 @@ def test_paraelt_constructor_args():
 
 
 
-def test_wordprocessingmlstyles::paraprelt_is_not_abstract():
-    assert not inspect.isabstract(WordprocessingMLStyles::ParaPrElt)
+def test_wordprocessingmlstyles_paraprelt_is_not_abstract():
+    assert not inspect.isabstract(WordprocessingMLStyles_ParaPrElt)
 
 
-def test_wordprocessingmlstyles::paraprelt_constructor_exists():
-    assert callable(WordprocessingMLStyles::ParaPrElt.__init__)
+def test_wordprocessingmlstyles_paraprelt_constructor_exists():
+    assert callable(WordprocessingMLStyles_ParaPrElt.__init__)
 
 
-def test_wordprocessingmlstyles::paraprelt_constructor_args():
-    sig = inspect.signature(WordprocessingMLStyles::ParaPrElt.__init__)
+def test_wordprocessingmlstyles_paraprelt_constructor_args():
+    sig = inspect.signature(WordprocessingMLStyles_ParaPrElt.__init__)
     params = list(sig.parameters.keys())
-    assert "suppressAutoHyphens" in params, "Missing parameter 'suppressAutoHyphens'"
-    assert "supressLineNumbers" in params, "Missing parameter 'supressLineNumbers'"
-    assert "bidi" in params, "Missing parameter 'bidi'"
     assert "pageBreakBefore" in params, "Missing parameter 'pageBreakBefore'"
     assert "keepLines" in params, "Missing parameter 'keepLines'"
-    assert "justification" in params, "Missing parameter 'justification'"
+    assert "bidi" in params, "Missing parameter 'bidi'"
+    assert "suppressAutoHyphens" in params, "Missing parameter 'suppressAutoHyphens'"
     assert "contextualSpacing" in params, "Missing parameter 'contextualSpacing'"
+    assert "justification" in params, "Missing parameter 'justification'"
+    assert "supressLineNumbers" in params, "Missing parameter 'supressLineNumbers'"
     assert "keepNext" in params, "Missing parameter 'keepNext'"
 
-def test_wordprocessingmlstyles::paraprelt_has_suppressAutoHyphens():
-    assert hasattr(WordprocessingMLStyles::ParaPrElt, "suppressAutoHyphens")
+def test_wordprocessingmlstyles_paraprelt_has_pageBreakBefore():
+    assert hasattr(WordprocessingMLStyles_ParaPrElt, "pageBreakBefore")
     descriptor = None
-    for klass in WordprocessingMLStyles::ParaPrElt.__mro__:
-        if "suppressAutoHyphens" in klass.__dict__:
-            descriptor = klass.__dict__["suppressAutoHyphens"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_wordprocessingmlstyles::paraprelt_has_supressLineNumbers():
-    assert hasattr(WordprocessingMLStyles::ParaPrElt, "supressLineNumbers")
-    descriptor = None
-    for klass in WordprocessingMLStyles::ParaPrElt.__mro__:
-        if "supressLineNumbers" in klass.__dict__:
-            descriptor = klass.__dict__["supressLineNumbers"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_wordprocessingmlstyles::paraprelt_has_bidi():
-    assert hasattr(WordprocessingMLStyles::ParaPrElt, "bidi")
-    descriptor = None
-    for klass in WordprocessingMLStyles::ParaPrElt.__mro__:
-        if "bidi" in klass.__dict__:
-            descriptor = klass.__dict__["bidi"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_wordprocessingmlstyles::paraprelt_has_pageBreakBefore():
-    assert hasattr(WordprocessingMLStyles::ParaPrElt, "pageBreakBefore")
-    descriptor = None
-    for klass in WordprocessingMLStyles::ParaPrElt.__mro__:
+    for klass in WordprocessingMLStyles_ParaPrElt.__mro__:
         if "pageBreakBefore" in klass.__dict__:
             descriptor = klass.__dict__["pageBreakBefore"]
             break
     assert isinstance(descriptor, property)
 
-def test_wordprocessingmlstyles::paraprelt_has_keepLines():
-    assert hasattr(WordprocessingMLStyles::ParaPrElt, "keepLines")
+def test_wordprocessingmlstyles_paraprelt_has_keepLines():
+    assert hasattr(WordprocessingMLStyles_ParaPrElt, "keepLines")
     descriptor = None
-    for klass in WordprocessingMLStyles::ParaPrElt.__mro__:
+    for klass in WordprocessingMLStyles_ParaPrElt.__mro__:
         if "keepLines" in klass.__dict__:
             descriptor = klass.__dict__["keepLines"]
             break
     assert isinstance(descriptor, property)
 
-def test_wordprocessingmlstyles::paraprelt_has_justification():
-    assert hasattr(WordprocessingMLStyles::ParaPrElt, "justification")
+def test_wordprocessingmlstyles_paraprelt_has_bidi():
+    assert hasattr(WordprocessingMLStyles_ParaPrElt, "bidi")
     descriptor = None
-    for klass in WordprocessingMLStyles::ParaPrElt.__mro__:
-        if "justification" in klass.__dict__:
-            descriptor = klass.__dict__["justification"]
+    for klass in WordprocessingMLStyles_ParaPrElt.__mro__:
+        if "bidi" in klass.__dict__:
+            descriptor = klass.__dict__["bidi"]
             break
     assert isinstance(descriptor, property)
 
-def test_wordprocessingmlstyles::paraprelt_has_contextualSpacing():
-    assert hasattr(WordprocessingMLStyles::ParaPrElt, "contextualSpacing")
+def test_wordprocessingmlstyles_paraprelt_has_suppressAutoHyphens():
+    assert hasattr(WordprocessingMLStyles_ParaPrElt, "suppressAutoHyphens")
     descriptor = None
-    for klass in WordprocessingMLStyles::ParaPrElt.__mro__:
+    for klass in WordprocessingMLStyles_ParaPrElt.__mro__:
+        if "suppressAutoHyphens" in klass.__dict__:
+            descriptor = klass.__dict__["suppressAutoHyphens"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_wordprocessingmlstyles_paraprelt_has_contextualSpacing():
+    assert hasattr(WordprocessingMLStyles_ParaPrElt, "contextualSpacing")
+    descriptor = None
+    for klass in WordprocessingMLStyles_ParaPrElt.__mro__:
         if "contextualSpacing" in klass.__dict__:
             descriptor = klass.__dict__["contextualSpacing"]
             break
     assert isinstance(descriptor, property)
 
-def test_wordprocessingmlstyles::paraprelt_has_keepNext():
-    assert hasattr(WordprocessingMLStyles::ParaPrElt, "keepNext")
+def test_wordprocessingmlstyles_paraprelt_has_justification():
+    assert hasattr(WordprocessingMLStyles_ParaPrElt, "justification")
     descriptor = None
-    for klass in WordprocessingMLStyles::ParaPrElt.__mro__:
+    for klass in WordprocessingMLStyles_ParaPrElt.__mro__:
+        if "justification" in klass.__dict__:
+            descriptor = klass.__dict__["justification"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_wordprocessingmlstyles_paraprelt_has_supressLineNumbers():
+    assert hasattr(WordprocessingMLStyles_ParaPrElt, "supressLineNumbers")
+    descriptor = None
+    for klass in WordprocessingMLStyles_ParaPrElt.__mro__:
+        if "supressLineNumbers" in klass.__dict__:
+            descriptor = klass.__dict__["supressLineNumbers"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_wordprocessingmlstyles_paraprelt_has_keepNext():
+    assert hasattr(WordprocessingMLStyles_ParaPrElt, "keepNext")
+    descriptor = None
+    for klass in WordprocessingMLStyles_ParaPrElt.__mro__:
         if "keepNext" in klass.__dict__:
             descriptor = klass.__dict__["keepNext"]
             break
@@ -1510,58 +1510,58 @@ def test_paracontentelt_constructor_args():
 
 
 
-def test_wordprocessingmlstyles::runelt_is_not_abstract():
-    assert not inspect.isabstract(WordprocessingMLStyles::RunElt)
+def test_wordprocessingmlstyles_simplefieldelt_is_not_abstract():
+    assert not inspect.isabstract(WordprocessingMLStyles_SimpleFieldElt)
 
 
-def test_wordprocessingmlstyles::runelt_constructor_exists():
-    assert callable(WordprocessingMLStyles::RunElt.__init__)
+def test_wordprocessingmlstyles_simplefieldelt_constructor_exists():
+    assert callable(WordprocessingMLStyles_SimpleFieldElt.__init__)
 
 
-def test_wordprocessingmlstyles::runelt_constructor_args():
-    sig = inspect.signature(WordprocessingMLStyles::RunElt.__init__)
+def test_wordprocessingmlstyles_simplefieldelt_constructor_args():
+    sig = inspect.signature(WordprocessingMLStyles_SimpleFieldElt.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_wordprocessingmlstyles::simplefieldelt_is_not_abstract():
-    assert not inspect.isabstract(WordprocessingMLStyles::SimpleFieldElt)
+def test_wordprocessingmlstyles_hlinkelt_is_not_abstract():
+    assert not inspect.isabstract(WordprocessingMLStyles_HLinkElt)
 
 
-def test_wordprocessingmlstyles::simplefieldelt_constructor_exists():
-    assert callable(WordprocessingMLStyles::SimpleFieldElt.__init__)
+def test_wordprocessingmlstyles_hlinkelt_constructor_exists():
+    assert callable(WordprocessingMLStyles_HLinkElt.__init__)
 
 
-def test_wordprocessingmlstyles::simplefieldelt_constructor_args():
-    sig = inspect.signature(WordprocessingMLStyles::SimpleFieldElt.__init__)
+def test_wordprocessingmlstyles_hlinkelt_constructor_args():
+    sig = inspect.signature(WordprocessingMLStyles_HLinkElt.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_wordprocessingmlstyles::subdocelt_is_not_abstract():
-    assert not inspect.isabstract(WordprocessingMLStyles::SubDocElt)
+def test_wordprocessingmlstyles_subdocelt_is_not_abstract():
+    assert not inspect.isabstract(WordprocessingMLStyles_SubDocElt)
 
 
-def test_wordprocessingmlstyles::subdocelt_constructor_exists():
-    assert callable(WordprocessingMLStyles::SubDocElt.__init__)
+def test_wordprocessingmlstyles_subdocelt_constructor_exists():
+    assert callable(WordprocessingMLStyles_SubDocElt.__init__)
 
 
-def test_wordprocessingmlstyles::subdocelt_constructor_args():
-    sig = inspect.signature(WordprocessingMLStyles::SubDocElt.__init__)
+def test_wordprocessingmlstyles_subdocelt_constructor_args():
+    sig = inspect.signature(WordprocessingMLStyles_SubDocElt.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_wordprocessingmlstyles::hlinkelt_is_not_abstract():
-    assert not inspect.isabstract(WordprocessingMLStyles::HLinkElt)
+def test_wordprocessingmlstyles_runelt_is_not_abstract():
+    assert not inspect.isabstract(WordprocessingMLStyles_RunElt)
 
 
-def test_wordprocessingmlstyles::hlinkelt_constructor_exists():
-    assert callable(WordprocessingMLStyles::HLinkElt.__init__)
+def test_wordprocessingmlstyles_runelt_constructor_exists():
+    assert callable(WordprocessingMLStyles_RunElt.__init__)
 
 
-def test_wordprocessingmlstyles::hlinkelt_constructor_args():
-    sig = inspect.signature(WordprocessingMLStyles::HLinkElt.__init__)
+def test_wordprocessingmlstyles_runelt_constructor_args():
+    sig = inspect.signature(WordprocessingMLStyles_RunElt.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1594,44 +1594,44 @@ def test_blocklevelchunkelt_constructor_args():
 
 
 
-def test_wordprocessingmlstyles::runlevelelt_is_not_abstract():
-    assert not inspect.isabstract(WordprocessingMLStyles::RunLevelElt)
+def test_wordprocessingmlstyles_runlevelelt_is_not_abstract():
+    assert not inspect.isabstract(WordprocessingMLStyles_RunLevelElt)
 
 
-def test_wordprocessingmlstyles::runlevelelt_constructor_exists():
-    assert callable(WordprocessingMLStyles::RunLevelElt.__init__)
+def test_wordprocessingmlstyles_runlevelelt_constructor_exists():
+    assert callable(WordprocessingMLStyles_RunLevelElt.__init__)
 
 
-def test_wordprocessingmlstyles::runlevelelt_constructor_args():
-    sig = inspect.signature(WordprocessingMLStyles::RunLevelElt.__init__)
+def test_wordprocessingmlstyles_runlevelelt_constructor_args():
+    sig = inspect.signature(WordprocessingMLStyles_RunLevelElt.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_wordprocessingmlstyles::tableelt_is_not_abstract():
-    assert not inspect.isabstract(WordprocessingMLStyles::TableElt)
+def test_wordprocessingmlstyles_tableelt_is_not_abstract():
+    assert not inspect.isabstract(WordprocessingMLStyles_TableElt)
 
 
-def test_wordprocessingmlstyles::tableelt_constructor_exists():
-    assert callable(WordprocessingMLStyles::TableElt.__init__)
+def test_wordprocessingmlstyles_tableelt_constructor_exists():
+    assert callable(WordprocessingMLStyles_TableElt.__init__)
 
 
-def test_wordprocessingmlstyles::tableelt_constructor_args():
-    sig = inspect.signature(WordprocessingMLStyles::TableElt.__init__)
+def test_wordprocessingmlstyles_tableelt_constructor_args():
+    sig = inspect.signature(WordprocessingMLStyles_TableElt.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_wordprocessingmlstyles::paraelt_is_not_abstract():
-    assert not inspect.isabstract(WordprocessingMLStyles::ParaElt)
+def test_wordprocessingmlstyles_paraelt_is_not_abstract():
+    assert not inspect.isabstract(WordprocessingMLStyles_ParaElt)
 
 
-def test_wordprocessingmlstyles::paraelt_constructor_exists():
-    assert callable(WordprocessingMLStyles::ParaElt.__init__)
+def test_wordprocessingmlstyles_paraelt_constructor_exists():
+    assert callable(WordprocessingMLStyles_ParaElt.__init__)
 
 
-def test_wordprocessingmlstyles::paraelt_constructor_args():
-    sig = inspect.signature(WordprocessingMLStyles::ParaElt.__init__)
+def test_wordprocessingmlstyles_paraelt_constructor_args():
+    sig = inspect.signature(WordprocessingMLStyles_ParaElt.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1692,44 +1692,44 @@ def test_noteelt_constructor_args():
 
 
 
-def test_wordprocessingmlstyles::endnote_is_not_abstract():
-    assert not inspect.isabstract(WordprocessingMLStyles::Endnote)
+def test_wordprocessingmlstyles_endnote_is_not_abstract():
+    assert not inspect.isabstract(WordprocessingMLStyles_Endnote)
 
 
-def test_wordprocessingmlstyles::endnote_constructor_exists():
-    assert callable(WordprocessingMLStyles::Endnote.__init__)
+def test_wordprocessingmlstyles_endnote_constructor_exists():
+    assert callable(WordprocessingMLStyles_Endnote.__init__)
 
 
-def test_wordprocessingmlstyles::endnote_constructor_args():
-    sig = inspect.signature(WordprocessingMLStyles::Endnote.__init__)
+def test_wordprocessingmlstyles_endnote_constructor_args():
+    sig = inspect.signature(WordprocessingMLStyles_Endnote.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_wordprocessingmlstyles::footnote_is_not_abstract():
-    assert not inspect.isabstract(WordprocessingMLStyles::Footnote)
+def test_wordprocessingmlstyles_footnote_is_not_abstract():
+    assert not inspect.isabstract(WordprocessingMLStyles_Footnote)
 
 
-def test_wordprocessingmlstyles::footnote_constructor_exists():
-    assert callable(WordprocessingMLStyles::Footnote.__init__)
+def test_wordprocessingmlstyles_footnote_constructor_exists():
+    assert callable(WordprocessingMLStyles_Footnote.__init__)
 
 
-def test_wordprocessingmlstyles::footnote_constructor_args():
-    sig = inspect.signature(WordprocessingMLStyles::Footnote.__init__)
+def test_wordprocessingmlstyles_footnote_constructor_args():
+    sig = inspect.signature(WordprocessingMLStyles_Footnote.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_wordprocessingmlstyles::blocklevelelt_is_not_abstract():
-    assert not inspect.isabstract(WordprocessingMLStyles::BlockLevelElt)
+def test_wordprocessingmlstyles_blocklevelelt_is_not_abstract():
+    assert not inspect.isabstract(WordprocessingMLStyles_BlockLevelElt)
 
 
-def test_wordprocessingmlstyles::blocklevelelt_constructor_exists():
-    assert callable(WordprocessingMLStyles::BlockLevelElt.__init__)
+def test_wordprocessingmlstyles_blocklevelelt_constructor_exists():
+    assert callable(WordprocessingMLStyles_BlockLevelElt.__init__)
 
 
-def test_wordprocessingmlstyles::blocklevelelt_constructor_args():
-    sig = inspect.signature(WordprocessingMLStyles::BlockLevelElt.__init__)
+def test_wordprocessingmlstyles_blocklevelelt_constructor_args():
+    sig = inspect.signature(WordprocessingMLStyles_BlockLevelElt.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1762,58 +1762,58 @@ def test_blocklevelelt_constructor_args():
 
 
 
-def test_wordprocessingmlstyles::cfchunk_is_not_abstract():
-    assert not inspect.isabstract(WordprocessingMLStyles::CfChunk)
+def test_wordprocessingmlstyles_cfchunk_is_not_abstract():
+    assert not inspect.isabstract(WordprocessingMLStyles_CfChunk)
 
 
-def test_wordprocessingmlstyles::cfchunk_constructor_exists():
-    assert callable(WordprocessingMLStyles::CfChunk.__init__)
+def test_wordprocessingmlstyles_cfchunk_constructor_exists():
+    assert callable(WordprocessingMLStyles_CfChunk.__init__)
 
 
-def test_wordprocessingmlstyles::cfchunk_constructor_args():
-    sig = inspect.signature(WordprocessingMLStyles::CfChunk.__init__)
+def test_wordprocessingmlstyles_cfchunk_constructor_args():
+    sig = inspect.signature(WordprocessingMLStyles_CfChunk.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_wordprocessingmlstyles::blocklevelchunkelt_is_not_abstract():
-    assert not inspect.isabstract(WordprocessingMLStyles::BlockLevelChunkElt)
+def test_wordprocessingmlstyles_blocklevelchunkelt_is_not_abstract():
+    assert not inspect.isabstract(WordprocessingMLStyles_BlockLevelChunkElt)
 
 
-def test_wordprocessingmlstyles::blocklevelchunkelt_constructor_exists():
-    assert callable(WordprocessingMLStyles::BlockLevelChunkElt.__init__)
+def test_wordprocessingmlstyles_blocklevelchunkelt_constructor_exists():
+    assert callable(WordprocessingMLStyles_BlockLevelChunkElt.__init__)
 
 
-def test_wordprocessingmlstyles::blocklevelchunkelt_constructor_args():
-    sig = inspect.signature(WordprocessingMLStyles::BlockLevelChunkElt.__init__)
+def test_wordprocessingmlstyles_blocklevelchunkelt_constructor_args():
+    sig = inspect.signature(WordprocessingMLStyles_BlockLevelChunkElt.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_wordprocessingmlstyles::bodyelt_is_not_abstract():
-    assert not inspect.isabstract(WordprocessingMLStyles::BodyElt)
+def test_wordprocessingmlstyles_bodyelt_is_not_abstract():
+    assert not inspect.isabstract(WordprocessingMLStyles_BodyElt)
 
 
-def test_wordprocessingmlstyles::bodyelt_constructor_exists():
-    assert callable(WordprocessingMLStyles::BodyElt.__init__)
+def test_wordprocessingmlstyles_bodyelt_constructor_exists():
+    assert callable(WordprocessingMLStyles_BodyElt.__init__)
 
 
-def test_wordprocessingmlstyles::bodyelt_constructor_args():
-    sig = inspect.signature(WordprocessingMLStyles::BodyElt.__init__)
+def test_wordprocessingmlstyles_bodyelt_constructor_args():
+    sig = inspect.signature(WordprocessingMLStyles_BodyElt.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_wordprocessingmlstyles::docprelt_is_not_abstract():
-    assert not inspect.isabstract(WordprocessingMLStyles::DocPrElt)
+def test_wordprocessingmlstyles_docprelt_is_not_abstract():
+    assert not inspect.isabstract(WordprocessingMLStyles_DocPrElt)
 
 
-def test_wordprocessingmlstyles::docprelt_constructor_exists():
-    assert callable(WordprocessingMLStyles::DocPrElt.__init__)
+def test_wordprocessingmlstyles_docprelt_constructor_exists():
+    assert callable(WordprocessingMLStyles_DocPrElt.__init__)
 
 
-def test_wordprocessingmlstyles::docprelt_constructor_args():
-    sig = inspect.signature(WordprocessingMLStyles::DocPrElt.__init__)
+def test_wordprocessingmlstyles_docprelt_constructor_args():
+    sig = inspect.signature(WordprocessingMLStyles_DocPrElt.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1832,16 +1832,16 @@ def test_bodyelt_constructor_args():
 
 
 
-def test_wordprocessingmlstyles::worddocument_is_not_abstract():
-    assert not inspect.isabstract(WordprocessingMLStyles::WordDocument)
+def test_wordprocessingmlstyles_worddocument_is_not_abstract():
+    assert not inspect.isabstract(WordprocessingMLStyles_WordDocument)
 
 
-def test_wordprocessingmlstyles::worddocument_constructor_exists():
-    assert callable(WordprocessingMLStyles::WordDocument.__init__)
+def test_wordprocessingmlstyles_worddocument_constructor_exists():
+    assert callable(WordprocessingMLStyles_WordDocument.__init__)
 
 
-def test_wordprocessingmlstyles::worddocument_constructor_args():
-    sig = inspect.signature(WordprocessingMLStyles::WordDocument.__init__)
+def test_wordprocessingmlstyles_worddocument_constructor_args():
+    sig = inspect.signature(WordprocessingMLStyles_WordDocument.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1902,57 +1902,57 @@ def test_documentpropertiescollection_constructor_args():
 
 
 
-def test_wordprocessingmlstyles::underlineproperty_is_not_abstract():
-    assert not inspect.isabstract(WordprocessingMLStyles::UnderlineProperty)
+def test_wordprocessingmlstyles_underlineproperty_is_not_abstract():
+    assert not inspect.isabstract(WordprocessingMLStyles_UnderlineProperty)
 
 
-def test_wordprocessingmlstyles::underlineproperty_constructor_exists():
-    assert callable(WordprocessingMLStyles::UnderlineProperty.__init__)
+def test_wordprocessingmlstyles_underlineproperty_constructor_exists():
+    assert callable(WordprocessingMLStyles_UnderlineProperty.__init__)
 
 
-def test_wordprocessingmlstyles::underlineproperty_constructor_args():
-    sig = inspect.signature(WordprocessingMLStyles::UnderlineProperty.__init__)
+def test_wordprocessingmlstyles_underlineproperty_constructor_args():
+    sig = inspect.signature(WordprocessingMLStyles_UnderlineProperty.__init__)
     params = list(sig.parameters.keys())
-    assert "color" in params, "Missing parameter 'color'"
     assert "val" in params, "Missing parameter 'val'"
+    assert "color" in params, "Missing parameter 'color'"
 
-def test_wordprocessingmlstyles::underlineproperty_has_color():
-    assert hasattr(WordprocessingMLStyles::UnderlineProperty, "color")
+def test_wordprocessingmlstyles_underlineproperty_has_val():
+    assert hasattr(WordprocessingMLStyles_UnderlineProperty, "val")
     descriptor = None
-    for klass in WordprocessingMLStyles::UnderlineProperty.__mro__:
-        if "color" in klass.__dict__:
-            descriptor = klass.__dict__["color"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_wordprocessingmlstyles::underlineproperty_has_val():
-    assert hasattr(WordprocessingMLStyles::UnderlineProperty, "val")
-    descriptor = None
-    for klass in WordprocessingMLStyles::UnderlineProperty.__mro__:
+    for klass in WordprocessingMLStyles_UnderlineProperty.__mro__:
         if "val" in klass.__dict__:
             descriptor = klass.__dict__["val"]
             break
     assert isinstance(descriptor, property)
 
+def test_wordprocessingmlstyles_underlineproperty_has_color():
+    assert hasattr(WordprocessingMLStyles_UnderlineProperty, "color")
+    descriptor = None
+    for klass in WordprocessingMLStyles_UnderlineProperty.__mro__:
+        if "color" in klass.__dict__:
+            descriptor = klass.__dict__["color"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_wordprocessingmlstyles::stringtype_is_not_abstract():
-    assert not inspect.isabstract(WordprocessingMLStyles::StringType)
+
+def test_wordprocessingmlstyles_stringtype_is_not_abstract():
+    assert not inspect.isabstract(WordprocessingMLStyles_StringType)
 
 
-def test_wordprocessingmlstyles::stringtype_constructor_exists():
-    assert callable(WordprocessingMLStyles::StringType.__init__)
+def test_wordprocessingmlstyles_stringtype_constructor_exists():
+    assert callable(WordprocessingMLStyles_StringType.__init__)
 
 
-def test_wordprocessingmlstyles::stringtype_constructor_args():
-    sig = inspect.signature(WordprocessingMLStyles::StringType.__init__)
+def test_wordprocessingmlstyles_stringtype_constructor_args():
+    sig = inspect.signature(WordprocessingMLStyles_StringType.__init__)
     params = list(sig.parameters.keys())
     assert "val" in params, "Missing parameter 'val'"
 
-def test_wordprocessingmlstyles::stringtype_has_val():
-    assert hasattr(WordprocessingMLStyles::StringType, "val")
+def test_wordprocessingmlstyles_stringtype_has_val():
+    assert hasattr(WordprocessingMLStyles_StringType, "val")
     descriptor = None
-    for klass in WordprocessingMLStyles::StringType.__mro__:
+    for klass in WordprocessingMLStyles_StringType.__mro__:
         if "val" in klass.__dict__:
             descriptor = klass.__dict__["val"]
             break
@@ -1974,72 +1974,72 @@ def test_stringtype_constructor_args():
 
 
 
-def test_wordprocessingmlstyles::instrtext_is_not_abstract():
-    assert not inspect.isabstract(WordprocessingMLStyles::InstrText)
+def test_wordprocessingmlstyles_deltext_is_not_abstract():
+    assert not inspect.isabstract(WordprocessingMLStyles_DelText)
 
 
-def test_wordprocessingmlstyles::instrtext_constructor_exists():
-    assert callable(WordprocessingMLStyles::InstrText.__init__)
+def test_wordprocessingmlstyles_deltext_constructor_exists():
+    assert callable(WordprocessingMLStyles_DelText.__init__)
 
 
-def test_wordprocessingmlstyles::instrtext_constructor_args():
-    sig = inspect.signature(WordprocessingMLStyles::InstrText.__init__)
+def test_wordprocessingmlstyles_deltext_constructor_args():
+    sig = inspect.signature(WordprocessingMLStyles_DelText.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_wordprocessingmlstyles::text_is_not_abstract():
-    assert not inspect.isabstract(WordprocessingMLStyles::Text)
+def test_wordprocessingmlstyles_text_is_not_abstract():
+    assert not inspect.isabstract(WordprocessingMLStyles_Text)
 
 
-def test_wordprocessingmlstyles::text_constructor_exists():
-    assert callable(WordprocessingMLStyles::Text.__init__)
+def test_wordprocessingmlstyles_text_constructor_exists():
+    assert callable(WordprocessingMLStyles_Text.__init__)
 
 
-def test_wordprocessingmlstyles::text_constructor_args():
-    sig = inspect.signature(WordprocessingMLStyles::Text.__init__)
+def test_wordprocessingmlstyles_text_constructor_args():
+    sig = inspect.signature(WordprocessingMLStyles_Text.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_wordprocessingmlstyles::delinstrtext_is_not_abstract():
-    assert not inspect.isabstract(WordprocessingMLStyles::DelInstrText)
+def test_wordprocessingmlstyles_instrtext_is_not_abstract():
+    assert not inspect.isabstract(WordprocessingMLStyles_InstrText)
 
 
-def test_wordprocessingmlstyles::delinstrtext_constructor_exists():
-    assert callable(WordprocessingMLStyles::DelInstrText.__init__)
+def test_wordprocessingmlstyles_instrtext_constructor_exists():
+    assert callable(WordprocessingMLStyles_InstrText.__init__)
 
 
-def test_wordprocessingmlstyles::delinstrtext_constructor_args():
-    sig = inspect.signature(WordprocessingMLStyles::DelInstrText.__init__)
+def test_wordprocessingmlstyles_instrtext_constructor_args():
+    sig = inspect.signature(WordprocessingMLStyles_InstrText.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_wordprocessingmlstyles::deltext_is_not_abstract():
-    assert not inspect.isabstract(WordprocessingMLStyles::DelText)
+def test_wordprocessingmlstyles_delinstrtext_is_not_abstract():
+    assert not inspect.isabstract(WordprocessingMLStyles_DelInstrText)
 
 
-def test_wordprocessingmlstyles::deltext_constructor_exists():
-    assert callable(WordprocessingMLStyles::DelText.__init__)
+def test_wordprocessingmlstyles_delinstrtext_constructor_exists():
+    assert callable(WordprocessingMLStyles_DelInstrText.__init__)
 
 
-def test_wordprocessingmlstyles::deltext_constructor_args():
-    sig = inspect.signature(WordprocessingMLStyles::DelText.__init__)
+def test_wordprocessingmlstyles_delinstrtext_constructor_args():
+    sig = inspect.signature(WordprocessingMLStyles_DelInstrText.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_wordprocessingmlstyles::stringproperty_is_not_abstract():
-    assert not inspect.isabstract(WordprocessingMLStyles::StringProperty)
+def test_wordprocessingmlstyles_stringproperty_is_not_abstract():
+    assert not inspect.isabstract(WordprocessingMLStyles_StringProperty)
 
 
-def test_wordprocessingmlstyles::stringproperty_constructor_exists():
-    assert callable(WordprocessingMLStyles::StringProperty.__init__)
+def test_wordprocessingmlstyles_stringproperty_constructor_exists():
+    assert callable(WordprocessingMLStyles_StringProperty.__init__)
 
 
-def test_wordprocessingmlstyles::stringproperty_constructor_args():
-    sig = inspect.signature(WordprocessingMLStyles::StringProperty.__init__)
+def test_wordprocessingmlstyles_stringproperty_constructor_args():
+    sig = inspect.signature(WordprocessingMLStyles_StringProperty.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -2058,16 +2058,16 @@ def test_smarttagtype_constructor_args():
 
 
 
-def test_wordprocessingmlstyles::smarttagscollection_is_not_abstract():
-    assert not inspect.isabstract(WordprocessingMLStyles::SmartTagsCollection)
+def test_wordprocessingmlstyles_smarttagscollection_is_not_abstract():
+    assert not inspect.isabstract(WordprocessingMLStyles_SmartTagsCollection)
 
 
-def test_wordprocessingmlstyles::smarttagscollection_constructor_exists():
-    assert callable(WordprocessingMLStyles::SmartTagsCollection.__init__)
+def test_wordprocessingmlstyles_smarttagscollection_constructor_exists():
+    assert callable(WordprocessingMLStyles_SmartTagsCollection.__init__)
 
 
-def test_wordprocessingmlstyles::smarttagscollection_constructor_args():
-    sig = inspect.signature(WordprocessingMLStyles::SmartTagsCollection.__init__)
+def test_wordprocessingmlstyles_smarttagscollection_constructor_args():
+    sig = inspect.signature(WordprocessingMLStyles_SmartTagsCollection.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -2086,43 +2086,43 @@ def test_smarttagscollection_constructor_args():
 
 
 
-def test_wordprocessingmlstyles::smarttagtype_is_not_abstract():
-    assert not inspect.isabstract(WordprocessingMLStyles::SmartTagType)
+def test_wordprocessingmlstyles_smarttagtype_is_not_abstract():
+    assert not inspect.isabstract(WordprocessingMLStyles_SmartTagType)
 
 
-def test_wordprocessingmlstyles::smarttagtype_constructor_exists():
-    assert callable(WordprocessingMLStyles::SmartTagType.__init__)
+def test_wordprocessingmlstyles_smarttagtype_constructor_exists():
+    assert callable(WordprocessingMLStyles_SmartTagType.__init__)
 
 
-def test_wordprocessingmlstyles::smarttagtype_constructor_args():
-    sig = inspect.signature(WordprocessingMLStyles::SmartTagType.__init__)
+def test_wordprocessingmlstyles_smarttagtype_constructor_args():
+    sig = inspect.signature(WordprocessingMLStyles_SmartTagType.__init__)
     params = list(sig.parameters.keys())
-    assert "url" in params, "Missing parameter 'url'"
     assert "namespaceuri" in params, "Missing parameter 'namespaceuri'"
+    assert "url" in params, "Missing parameter 'url'"
     assert "name" in params, "Missing parameter 'name'"
 
-def test_wordprocessingmlstyles::smarttagtype_has_url():
-    assert hasattr(WordprocessingMLStyles::SmartTagType, "url")
+def test_wordprocessingmlstyles_smarttagtype_has_namespaceuri():
+    assert hasattr(WordprocessingMLStyles_SmartTagType, "namespaceuri")
     descriptor = None
-    for klass in WordprocessingMLStyles::SmartTagType.__mro__:
-        if "url" in klass.__dict__:
-            descriptor = klass.__dict__["url"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_wordprocessingmlstyles::smarttagtype_has_namespaceuri():
-    assert hasattr(WordprocessingMLStyles::SmartTagType, "namespaceuri")
-    descriptor = None
-    for klass in WordprocessingMLStyles::SmartTagType.__mro__:
+    for klass in WordprocessingMLStyles_SmartTagType.__mro__:
         if "namespaceuri" in klass.__dict__:
             descriptor = klass.__dict__["namespaceuri"]
             break
     assert isinstance(descriptor, property)
 
-def test_wordprocessingmlstyles::smarttagtype_has_name():
-    assert hasattr(WordprocessingMLStyles::SmartTagType, "name")
+def test_wordprocessingmlstyles_smarttagtype_has_url():
+    assert hasattr(WordprocessingMLStyles_SmartTagType, "url")
     descriptor = None
-    for klass in WordprocessingMLStyles::SmartTagType.__mro__:
+    for klass in WordprocessingMLStyles_SmartTagType.__mro__:
+        if "url" in klass.__dict__:
+            descriptor = klass.__dict__["url"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_wordprocessingmlstyles_smarttagtype_has_name():
+    assert hasattr(WordprocessingMLStyles_SmartTagType, "name")
+    descriptor = None
+    for klass in WordprocessingMLStyles_SmartTagType.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -2158,23 +2158,23 @@ def test_customdocumentpropertiescollection_constructor_args():
 
 
 
-def test_wordprocessingmlstyles::customdocumentproperty_is_not_abstract():
-    assert not inspect.isabstract(WordprocessingMLStyles::CustomDocumentProperty)
+def test_wordprocessingmlstyles_customdocumentproperty_is_not_abstract():
+    assert not inspect.isabstract(WordprocessingMLStyles_CustomDocumentProperty)
 
 
-def test_wordprocessingmlstyles::customdocumentproperty_constructor_exists():
-    assert callable(WordprocessingMLStyles::CustomDocumentProperty.__init__)
+def test_wordprocessingmlstyles_customdocumentproperty_constructor_exists():
+    assert callable(WordprocessingMLStyles_CustomDocumentProperty.__init__)
 
 
-def test_wordprocessingmlstyles::customdocumentproperty_constructor_args():
-    sig = inspect.signature(WordprocessingMLStyles::CustomDocumentProperty.__init__)
+def test_wordprocessingmlstyles_customdocumentproperty_constructor_args():
+    sig = inspect.signature(WordprocessingMLStyles_CustomDocumentProperty.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_wordprocessingmlstyles::customdocumentproperty_has_name():
-    assert hasattr(WordprocessingMLStyles::CustomDocumentProperty, "name")
+def test_wordprocessingmlstyles_customdocumentproperty_has_name():
+    assert hasattr(WordprocessingMLStyles_CustomDocumentProperty, "name")
     descriptor = None
-    for klass in WordprocessingMLStyles::CustomDocumentProperty.__mro__:
+    for klass in WordprocessingMLStyles_CustomDocumentProperty.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -2196,16 +2196,16 @@ def test_customdocumentproperty_constructor_args():
 
 
 
-def test_wordprocessingmlstyles::customdocumentpropertiescollection_is_not_abstract():
-    assert not inspect.isabstract(WordprocessingMLStyles::CustomDocumentPropertiesCollection)
+def test_wordprocessingmlstyles_customdocumentpropertiescollection_is_not_abstract():
+    assert not inspect.isabstract(WordprocessingMLStyles_CustomDocumentPropertiesCollection)
 
 
-def test_wordprocessingmlstyles::customdocumentpropertiescollection_constructor_exists():
-    assert callable(WordprocessingMLStyles::CustomDocumentPropertiesCollection.__init__)
+def test_wordprocessingmlstyles_customdocumentpropertiescollection_constructor_exists():
+    assert callable(WordprocessingMLStyles_CustomDocumentPropertiesCollection.__init__)
 
 
-def test_wordprocessingmlstyles::customdocumentpropertiescollection_constructor_args():
-    sig = inspect.signature(WordprocessingMLStyles::CustomDocumentPropertiesCollection.__init__)
+def test_wordprocessingmlstyles_customdocumentpropertiescollection_constructor_args():
+    sig = inspect.signature(WordprocessingMLStyles_CustomDocumentPropertiesCollection.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -2238,37 +2238,37 @@ def test_valuetype_constructor_args():
 
 
 
-def test_wordprocessingmlstyles::datetimetypevalue_is_not_abstract():
-    assert not inspect.isabstract(WordprocessingMLStyles::DateTimeTypeValue)
+def test_wordprocessingmlstyles_datetimetypevalue_is_not_abstract():
+    assert not inspect.isabstract(WordprocessingMLStyles_DateTimeTypeValue)
 
 
-def test_wordprocessingmlstyles::datetimetypevalue_constructor_exists():
-    assert callable(WordprocessingMLStyles::DateTimeTypeValue.__init__)
+def test_wordprocessingmlstyles_datetimetypevalue_constructor_exists():
+    assert callable(WordprocessingMLStyles_DateTimeTypeValue.__init__)
 
 
-def test_wordprocessingmlstyles::datetimetypevalue_constructor_args():
-    sig = inspect.signature(WordprocessingMLStyles::DateTimeTypeValue.__init__)
+def test_wordprocessingmlstyles_datetimetypevalue_constructor_args():
+    sig = inspect.signature(WordprocessingMLStyles_DateTimeTypeValue.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_wordprocessingmlstyles::floatvalue_is_not_abstract():
-    assert not inspect.isabstract(WordprocessingMLStyles::FloatValue)
+def test_wordprocessingmlstyles_floatvalue_is_not_abstract():
+    assert not inspect.isabstract(WordprocessingMLStyles_FloatValue)
 
 
-def test_wordprocessingmlstyles::floatvalue_constructor_exists():
-    assert callable(WordprocessingMLStyles::FloatValue.__init__)
+def test_wordprocessingmlstyles_floatvalue_constructor_exists():
+    assert callable(WordprocessingMLStyles_FloatValue.__init__)
 
 
-def test_wordprocessingmlstyles::floatvalue_constructor_args():
-    sig = inspect.signature(WordprocessingMLStyles::FloatValue.__init__)
+def test_wordprocessingmlstyles_floatvalue_constructor_args():
+    sig = inspect.signature(WordprocessingMLStyles_FloatValue.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
 
-def test_wordprocessingmlstyles::floatvalue_has_value():
-    assert hasattr(WordprocessingMLStyles::FloatValue, "value")
+def test_wordprocessingmlstyles_floatvalue_has_value():
+    assert hasattr(WordprocessingMLStyles_FloatValue, "value")
     descriptor = None
-    for klass in WordprocessingMLStyles::FloatValue.__mro__:
+    for klass in WordprocessingMLStyles_FloatValue.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -2276,23 +2276,23 @@ def test_wordprocessingmlstyles::floatvalue_has_value():
 
 
 
-def test_wordprocessingmlstyles::stringvalue_is_not_abstract():
-    assert not inspect.isabstract(WordprocessingMLStyles::StringValue)
+def test_wordprocessingmlstyles_stringvalue_is_not_abstract():
+    assert not inspect.isabstract(WordprocessingMLStyles_StringValue)
 
 
-def test_wordprocessingmlstyles::stringvalue_constructor_exists():
-    assert callable(WordprocessingMLStyles::StringValue.__init__)
+def test_wordprocessingmlstyles_stringvalue_constructor_exists():
+    assert callable(WordprocessingMLStyles_StringValue.__init__)
 
 
-def test_wordprocessingmlstyles::stringvalue_constructor_args():
-    sig = inspect.signature(WordprocessingMLStyles::StringValue.__init__)
+def test_wordprocessingmlstyles_stringvalue_constructor_args():
+    sig = inspect.signature(WordprocessingMLStyles_StringValue.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
 
-def test_wordprocessingmlstyles::stringvalue_has_value():
-    assert hasattr(WordprocessingMLStyles::StringValue, "value")
+def test_wordprocessingmlstyles_stringvalue_has_value():
+    assert hasattr(WordprocessingMLStyles_StringValue, "value")
     descriptor = None
-    for klass in WordprocessingMLStyles::StringValue.__mro__:
+    for klass in WordprocessingMLStyles_StringValue.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -2300,16 +2300,16 @@ def test_wordprocessingmlstyles::stringvalue_has_value():
 
 
 
-def test_wordprocessingmlstyles::valuetype_is_not_abstract():
-    assert not inspect.isabstract(WordprocessingMLStyles::ValueType)
+def test_wordprocessingmlstyles_valuetype_is_not_abstract():
+    assert not inspect.isabstract(WordprocessingMLStyles_ValueType)
 
 
-def test_wordprocessingmlstyles::valuetype_constructor_exists():
-    assert callable(WordprocessingMLStyles::ValueType.__init__)
+def test_wordprocessingmlstyles_valuetype_constructor_exists():
+    assert callable(WordprocessingMLStyles_ValueType.__init__)
 
 
-def test_wordprocessingmlstyles::valuetype_constructor_args():
-    sig = inspect.signature(WordprocessingMLStyles::ValueType.__init__)
+def test_wordprocessingmlstyles_valuetype_constructor_args():
+    sig = inspect.signature(WordprocessingMLStyles_ValueType.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -2328,257 +2328,257 @@ def test_worddocument_constructor_args():
 
 
 
-def test_wordprocessingmlstyles::documentpropertiescollection_is_not_abstract():
-    assert not inspect.isabstract(WordprocessingMLStyles::DocumentPropertiesCollection)
+def test_wordprocessingmlstyles_documentpropertiescollection_is_not_abstract():
+    assert not inspect.isabstract(WordprocessingMLStyles_DocumentPropertiesCollection)
 
 
-def test_wordprocessingmlstyles::documentpropertiescollection_constructor_exists():
-    assert callable(WordprocessingMLStyles::DocumentPropertiesCollection.__init__)
+def test_wordprocessingmlstyles_documentpropertiescollection_constructor_exists():
+    assert callable(WordprocessingMLStyles_DocumentPropertiesCollection.__init__)
 
 
-def test_wordprocessingmlstyles::documentpropertiescollection_constructor_args():
-    sig = inspect.signature(WordprocessingMLStyles::DocumentPropertiesCollection.__init__)
+def test_wordprocessingmlstyles_documentpropertiescollection_constructor_args():
+    sig = inspect.signature(WordprocessingMLStyles_DocumentPropertiesCollection.__init__)
     params = list(sig.parameters.keys())
-    assert "paragraphs" in params, "Missing parameter 'paragraphs'"
-    assert "keywords" in params, "Missing parameter 'keywords'"
-    assert "guid" in params, "Missing parameter 'guid'"
-    assert "lines" in params, "Missing parameter 'lines'"
-    assert "title" in params, "Missing parameter 'title'"
-    assert "totalTime" in params, "Missing parameter 'totalTime'"
-    assert "pages" in params, "Missing parameter 'pages'"
-    assert "hyperlinkBase" in params, "Missing parameter 'hyperlinkBase'"
-    assert "revision" in params, "Missing parameter 'revision'"
-    assert "characters" in params, "Missing parameter 'characters'"
-    assert "description" in params, "Missing parameter 'description'"
-    assert "author" in params, "Missing parameter 'author'"
-    assert "bytes" in params, "Missing parameter 'bytes'"
     assert "lastAuthor" in params, "Missing parameter 'lastAuthor'"
-    assert "category" in params, "Missing parameter 'category'"
-    assert "manager" in params, "Missing parameter 'manager'"
-    assert "charactersWithSpaces" in params, "Missing parameter 'charactersWithSpaces'"
     assert "company" in params, "Missing parameter 'company'"
+    assert "paragraphs" in params, "Missing parameter 'paragraphs'"
+    assert "category" in params, "Missing parameter 'category'"
+    assert "hyperlinkBase" in params, "Missing parameter 'hyperlinkBase'"
+    assert "author" in params, "Missing parameter 'author'"
+    assert "totalTime" in params, "Missing parameter 'totalTime'"
     assert "appName" in params, "Missing parameter 'appName'"
-    assert "presentationFormat" in params, "Missing parameter 'presentationFormat'"
-    assert "words" in params, "Missing parameter 'words'"
+    assert "description" in params, "Missing parameter 'description'"
+    assert "lines" in params, "Missing parameter 'lines'"
+    assert "charactersWithSpaces" in params, "Missing parameter 'charactersWithSpaces'"
+    assert "bytes" in params, "Missing parameter 'bytes'"
+    assert "characters" in params, "Missing parameter 'characters'"
+    assert "guid" in params, "Missing parameter 'guid'"
+    assert "pages" in params, "Missing parameter 'pages'"
     assert "subject" in params, "Missing parameter 'subject'"
+    assert "manager" in params, "Missing parameter 'manager'"
+    assert "keywords" in params, "Missing parameter 'keywords'"
+    assert "presentationFormat" in params, "Missing parameter 'presentationFormat'"
+    assert "revision" in params, "Missing parameter 'revision'"
+    assert "words" in params, "Missing parameter 'words'"
+    assert "title" in params, "Missing parameter 'title'"
 
-def test_wordprocessingmlstyles::documentpropertiescollection_has_paragraphs():
-    assert hasattr(WordprocessingMLStyles::DocumentPropertiesCollection, "paragraphs")
+def test_wordprocessingmlstyles_documentpropertiescollection_has_lastAuthor():
+    assert hasattr(WordprocessingMLStyles_DocumentPropertiesCollection, "lastAuthor")
     descriptor = None
-    for klass in WordprocessingMLStyles::DocumentPropertiesCollection.__mro__:
-        if "paragraphs" in klass.__dict__:
-            descriptor = klass.__dict__["paragraphs"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_wordprocessingmlstyles::documentpropertiescollection_has_keywords():
-    assert hasattr(WordprocessingMLStyles::DocumentPropertiesCollection, "keywords")
-    descriptor = None
-    for klass in WordprocessingMLStyles::DocumentPropertiesCollection.__mro__:
-        if "keywords" in klass.__dict__:
-            descriptor = klass.__dict__["keywords"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_wordprocessingmlstyles::documentpropertiescollection_has_guid():
-    assert hasattr(WordprocessingMLStyles::DocumentPropertiesCollection, "guid")
-    descriptor = None
-    for klass in WordprocessingMLStyles::DocumentPropertiesCollection.__mro__:
-        if "guid" in klass.__dict__:
-            descriptor = klass.__dict__["guid"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_wordprocessingmlstyles::documentpropertiescollection_has_lines():
-    assert hasattr(WordprocessingMLStyles::DocumentPropertiesCollection, "lines")
-    descriptor = None
-    for klass in WordprocessingMLStyles::DocumentPropertiesCollection.__mro__:
-        if "lines" in klass.__dict__:
-            descriptor = klass.__dict__["lines"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_wordprocessingmlstyles::documentpropertiescollection_has_title():
-    assert hasattr(WordprocessingMLStyles::DocumentPropertiesCollection, "title")
-    descriptor = None
-    for klass in WordprocessingMLStyles::DocumentPropertiesCollection.__mro__:
-        if "title" in klass.__dict__:
-            descriptor = klass.__dict__["title"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_wordprocessingmlstyles::documentpropertiescollection_has_totalTime():
-    assert hasattr(WordprocessingMLStyles::DocumentPropertiesCollection, "totalTime")
-    descriptor = None
-    for klass in WordprocessingMLStyles::DocumentPropertiesCollection.__mro__:
-        if "totalTime" in klass.__dict__:
-            descriptor = klass.__dict__["totalTime"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_wordprocessingmlstyles::documentpropertiescollection_has_pages():
-    assert hasattr(WordprocessingMLStyles::DocumentPropertiesCollection, "pages")
-    descriptor = None
-    for klass in WordprocessingMLStyles::DocumentPropertiesCollection.__mro__:
-        if "pages" in klass.__dict__:
-            descriptor = klass.__dict__["pages"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_wordprocessingmlstyles::documentpropertiescollection_has_hyperlinkBase():
-    assert hasattr(WordprocessingMLStyles::DocumentPropertiesCollection, "hyperlinkBase")
-    descriptor = None
-    for klass in WordprocessingMLStyles::DocumentPropertiesCollection.__mro__:
-        if "hyperlinkBase" in klass.__dict__:
-            descriptor = klass.__dict__["hyperlinkBase"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_wordprocessingmlstyles::documentpropertiescollection_has_revision():
-    assert hasattr(WordprocessingMLStyles::DocumentPropertiesCollection, "revision")
-    descriptor = None
-    for klass in WordprocessingMLStyles::DocumentPropertiesCollection.__mro__:
-        if "revision" in klass.__dict__:
-            descriptor = klass.__dict__["revision"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_wordprocessingmlstyles::documentpropertiescollection_has_characters():
-    assert hasattr(WordprocessingMLStyles::DocumentPropertiesCollection, "characters")
-    descriptor = None
-    for klass in WordprocessingMLStyles::DocumentPropertiesCollection.__mro__:
-        if "characters" in klass.__dict__:
-            descriptor = klass.__dict__["characters"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_wordprocessingmlstyles::documentpropertiescollection_has_description():
-    assert hasattr(WordprocessingMLStyles::DocumentPropertiesCollection, "description")
-    descriptor = None
-    for klass in WordprocessingMLStyles::DocumentPropertiesCollection.__mro__:
-        if "description" in klass.__dict__:
-            descriptor = klass.__dict__["description"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_wordprocessingmlstyles::documentpropertiescollection_has_author():
-    assert hasattr(WordprocessingMLStyles::DocumentPropertiesCollection, "author")
-    descriptor = None
-    for klass in WordprocessingMLStyles::DocumentPropertiesCollection.__mro__:
-        if "author" in klass.__dict__:
-            descriptor = klass.__dict__["author"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_wordprocessingmlstyles::documentpropertiescollection_has_bytes():
-    assert hasattr(WordprocessingMLStyles::DocumentPropertiesCollection, "bytes")
-    descriptor = None
-    for klass in WordprocessingMLStyles::DocumentPropertiesCollection.__mro__:
-        if "bytes" in klass.__dict__:
-            descriptor = klass.__dict__["bytes"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_wordprocessingmlstyles::documentpropertiescollection_has_lastAuthor():
-    assert hasattr(WordprocessingMLStyles::DocumentPropertiesCollection, "lastAuthor")
-    descriptor = None
-    for klass in WordprocessingMLStyles::DocumentPropertiesCollection.__mro__:
+    for klass in WordprocessingMLStyles_DocumentPropertiesCollection.__mro__:
         if "lastAuthor" in klass.__dict__:
             descriptor = klass.__dict__["lastAuthor"]
             break
     assert isinstance(descriptor, property)
 
-def test_wordprocessingmlstyles::documentpropertiescollection_has_category():
-    assert hasattr(WordprocessingMLStyles::DocumentPropertiesCollection, "category")
+def test_wordprocessingmlstyles_documentpropertiescollection_has_company():
+    assert hasattr(WordprocessingMLStyles_DocumentPropertiesCollection, "company")
     descriptor = None
-    for klass in WordprocessingMLStyles::DocumentPropertiesCollection.__mro__:
-        if "category" in klass.__dict__:
-            descriptor = klass.__dict__["category"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_wordprocessingmlstyles::documentpropertiescollection_has_manager():
-    assert hasattr(WordprocessingMLStyles::DocumentPropertiesCollection, "manager")
-    descriptor = None
-    for klass in WordprocessingMLStyles::DocumentPropertiesCollection.__mro__:
-        if "manager" in klass.__dict__:
-            descriptor = klass.__dict__["manager"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_wordprocessingmlstyles::documentpropertiescollection_has_charactersWithSpaces():
-    assert hasattr(WordprocessingMLStyles::DocumentPropertiesCollection, "charactersWithSpaces")
-    descriptor = None
-    for klass in WordprocessingMLStyles::DocumentPropertiesCollection.__mro__:
-        if "charactersWithSpaces" in klass.__dict__:
-            descriptor = klass.__dict__["charactersWithSpaces"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_wordprocessingmlstyles::documentpropertiescollection_has_company():
-    assert hasattr(WordprocessingMLStyles::DocumentPropertiesCollection, "company")
-    descriptor = None
-    for klass in WordprocessingMLStyles::DocumentPropertiesCollection.__mro__:
+    for klass in WordprocessingMLStyles_DocumentPropertiesCollection.__mro__:
         if "company" in klass.__dict__:
             descriptor = klass.__dict__["company"]
             break
     assert isinstance(descriptor, property)
 
-def test_wordprocessingmlstyles::documentpropertiescollection_has_appName():
-    assert hasattr(WordprocessingMLStyles::DocumentPropertiesCollection, "appName")
+def test_wordprocessingmlstyles_documentpropertiescollection_has_paragraphs():
+    assert hasattr(WordprocessingMLStyles_DocumentPropertiesCollection, "paragraphs")
     descriptor = None
-    for klass in WordprocessingMLStyles::DocumentPropertiesCollection.__mro__:
+    for klass in WordprocessingMLStyles_DocumentPropertiesCollection.__mro__:
+        if "paragraphs" in klass.__dict__:
+            descriptor = klass.__dict__["paragraphs"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_wordprocessingmlstyles_documentpropertiescollection_has_category():
+    assert hasattr(WordprocessingMLStyles_DocumentPropertiesCollection, "category")
+    descriptor = None
+    for klass in WordprocessingMLStyles_DocumentPropertiesCollection.__mro__:
+        if "category" in klass.__dict__:
+            descriptor = klass.__dict__["category"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_wordprocessingmlstyles_documentpropertiescollection_has_hyperlinkBase():
+    assert hasattr(WordprocessingMLStyles_DocumentPropertiesCollection, "hyperlinkBase")
+    descriptor = None
+    for klass in WordprocessingMLStyles_DocumentPropertiesCollection.__mro__:
+        if "hyperlinkBase" in klass.__dict__:
+            descriptor = klass.__dict__["hyperlinkBase"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_wordprocessingmlstyles_documentpropertiescollection_has_author():
+    assert hasattr(WordprocessingMLStyles_DocumentPropertiesCollection, "author")
+    descriptor = None
+    for klass in WordprocessingMLStyles_DocumentPropertiesCollection.__mro__:
+        if "author" in klass.__dict__:
+            descriptor = klass.__dict__["author"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_wordprocessingmlstyles_documentpropertiescollection_has_totalTime():
+    assert hasattr(WordprocessingMLStyles_DocumentPropertiesCollection, "totalTime")
+    descriptor = None
+    for klass in WordprocessingMLStyles_DocumentPropertiesCollection.__mro__:
+        if "totalTime" in klass.__dict__:
+            descriptor = klass.__dict__["totalTime"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_wordprocessingmlstyles_documentpropertiescollection_has_appName():
+    assert hasattr(WordprocessingMLStyles_DocumentPropertiesCollection, "appName")
+    descriptor = None
+    for klass in WordprocessingMLStyles_DocumentPropertiesCollection.__mro__:
         if "appName" in klass.__dict__:
             descriptor = klass.__dict__["appName"]
             break
     assert isinstance(descriptor, property)
 
-def test_wordprocessingmlstyles::documentpropertiescollection_has_presentationFormat():
-    assert hasattr(WordprocessingMLStyles::DocumentPropertiesCollection, "presentationFormat")
+def test_wordprocessingmlstyles_documentpropertiescollection_has_description():
+    assert hasattr(WordprocessingMLStyles_DocumentPropertiesCollection, "description")
     descriptor = None
-    for klass in WordprocessingMLStyles::DocumentPropertiesCollection.__mro__:
-        if "presentationFormat" in klass.__dict__:
-            descriptor = klass.__dict__["presentationFormat"]
+    for klass in WordprocessingMLStyles_DocumentPropertiesCollection.__mro__:
+        if "description" in klass.__dict__:
+            descriptor = klass.__dict__["description"]
             break
     assert isinstance(descriptor, property)
 
-def test_wordprocessingmlstyles::documentpropertiescollection_has_words():
-    assert hasattr(WordprocessingMLStyles::DocumentPropertiesCollection, "words")
+def test_wordprocessingmlstyles_documentpropertiescollection_has_lines():
+    assert hasattr(WordprocessingMLStyles_DocumentPropertiesCollection, "lines")
     descriptor = None
-    for klass in WordprocessingMLStyles::DocumentPropertiesCollection.__mro__:
-        if "words" in klass.__dict__:
-            descriptor = klass.__dict__["words"]
+    for klass in WordprocessingMLStyles_DocumentPropertiesCollection.__mro__:
+        if "lines" in klass.__dict__:
+            descriptor = klass.__dict__["lines"]
             break
     assert isinstance(descriptor, property)
 
-def test_wordprocessingmlstyles::documentpropertiescollection_has_subject():
-    assert hasattr(WordprocessingMLStyles::DocumentPropertiesCollection, "subject")
+def test_wordprocessingmlstyles_documentpropertiescollection_has_charactersWithSpaces():
+    assert hasattr(WordprocessingMLStyles_DocumentPropertiesCollection, "charactersWithSpaces")
     descriptor = None
-    for klass in WordprocessingMLStyles::DocumentPropertiesCollection.__mro__:
+    for klass in WordprocessingMLStyles_DocumentPropertiesCollection.__mro__:
+        if "charactersWithSpaces" in klass.__dict__:
+            descriptor = klass.__dict__["charactersWithSpaces"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_wordprocessingmlstyles_documentpropertiescollection_has_bytes():
+    assert hasattr(WordprocessingMLStyles_DocumentPropertiesCollection, "bytes")
+    descriptor = None
+    for klass in WordprocessingMLStyles_DocumentPropertiesCollection.__mro__:
+        if "bytes" in klass.__dict__:
+            descriptor = klass.__dict__["bytes"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_wordprocessingmlstyles_documentpropertiescollection_has_characters():
+    assert hasattr(WordprocessingMLStyles_DocumentPropertiesCollection, "characters")
+    descriptor = None
+    for klass in WordprocessingMLStyles_DocumentPropertiesCollection.__mro__:
+        if "characters" in klass.__dict__:
+            descriptor = klass.__dict__["characters"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_wordprocessingmlstyles_documentpropertiescollection_has_guid():
+    assert hasattr(WordprocessingMLStyles_DocumentPropertiesCollection, "guid")
+    descriptor = None
+    for klass in WordprocessingMLStyles_DocumentPropertiesCollection.__mro__:
+        if "guid" in klass.__dict__:
+            descriptor = klass.__dict__["guid"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_wordprocessingmlstyles_documentpropertiescollection_has_pages():
+    assert hasattr(WordprocessingMLStyles_DocumentPropertiesCollection, "pages")
+    descriptor = None
+    for klass in WordprocessingMLStyles_DocumentPropertiesCollection.__mro__:
+        if "pages" in klass.__dict__:
+            descriptor = klass.__dict__["pages"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_wordprocessingmlstyles_documentpropertiescollection_has_subject():
+    assert hasattr(WordprocessingMLStyles_DocumentPropertiesCollection, "subject")
+    descriptor = None
+    for klass in WordprocessingMLStyles_DocumentPropertiesCollection.__mro__:
         if "subject" in klass.__dict__:
             descriptor = klass.__dict__["subject"]
             break
     assert isinstance(descriptor, property)
 
+def test_wordprocessingmlstyles_documentpropertiescollection_has_manager():
+    assert hasattr(WordprocessingMLStyles_DocumentPropertiesCollection, "manager")
+    descriptor = None
+    for klass in WordprocessingMLStyles_DocumentPropertiesCollection.__mro__:
+        if "manager" in klass.__dict__:
+            descriptor = klass.__dict__["manager"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_wordprocessingmlstyles_documentpropertiescollection_has_keywords():
+    assert hasattr(WordprocessingMLStyles_DocumentPropertiesCollection, "keywords")
+    descriptor = None
+    for klass in WordprocessingMLStyles_DocumentPropertiesCollection.__mro__:
+        if "keywords" in klass.__dict__:
+            descriptor = klass.__dict__["keywords"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_wordprocessingmlstyles_documentpropertiescollection_has_presentationFormat():
+    assert hasattr(WordprocessingMLStyles_DocumentPropertiesCollection, "presentationFormat")
+    descriptor = None
+    for klass in WordprocessingMLStyles_DocumentPropertiesCollection.__mro__:
+        if "presentationFormat" in klass.__dict__:
+            descriptor = klass.__dict__["presentationFormat"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_wordprocessingmlstyles_documentpropertiescollection_has_revision():
+    assert hasattr(WordprocessingMLStyles_DocumentPropertiesCollection, "revision")
+    descriptor = None
+    for klass in WordprocessingMLStyles_DocumentPropertiesCollection.__mro__:
+        if "revision" in klass.__dict__:
+            descriptor = klass.__dict__["revision"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_wordprocessingmlstyles_documentpropertiescollection_has_words():
+    assert hasattr(WordprocessingMLStyles_DocumentPropertiesCollection, "words")
+    descriptor = None
+    for klass in WordprocessingMLStyles_DocumentPropertiesCollection.__mro__:
+        if "words" in klass.__dict__:
+            descriptor = klass.__dict__["words"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_wordprocessingmlstyles_documentpropertiescollection_has_title():
+    assert hasattr(WordprocessingMLStyles_DocumentPropertiesCollection, "title")
+    descriptor = None
+    for klass in WordprocessingMLStyles_DocumentPropertiesCollection.__mro__:
+        if "title" in klass.__dict__:
+            descriptor = klass.__dict__["title"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_wordprocessingmlstyles::booleanvalue_is_not_abstract():
-    assert not inspect.isabstract(WordprocessingMLStyles::BooleanValue)
+
+def test_wordprocessingmlstyles_booleanvalue_is_not_abstract():
+    assert not inspect.isabstract(WordprocessingMLStyles_BooleanValue)
 
 
-def test_wordprocessingmlstyles::booleanvalue_constructor_exists():
-    assert callable(WordprocessingMLStyles::BooleanValue.__init__)
+def test_wordprocessingmlstyles_booleanvalue_constructor_exists():
+    assert callable(WordprocessingMLStyles_BooleanValue.__init__)
 
 
-def test_wordprocessingmlstyles::booleanvalue_constructor_args():
-    sig = inspect.signature(WordprocessingMLStyles::BooleanValue.__init__)
+def test_wordprocessingmlstyles_booleanvalue_constructor_args():
+    sig = inspect.signature(WordprocessingMLStyles_BooleanValue.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
 
-def test_wordprocessingmlstyles::booleanvalue_has_value():
-    assert hasattr(WordprocessingMLStyles::BooleanValue, "value")
+def test_wordprocessingmlstyles_booleanvalue_has_value():
+    assert hasattr(WordprocessingMLStyles_BooleanValue, "value")
     descriptor = None
-    for klass in WordprocessingMLStyles::BooleanValue.__mro__:
+    for klass in WordprocessingMLStyles_BooleanValue.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -2586,33 +2586,33 @@ def test_wordprocessingmlstyles::booleanvalue_has_value():
 
 
 
-def test_wordprocessingmlstyles::versiontype_is_not_abstract():
-    assert not inspect.isabstract(WordprocessingMLStyles::VersionType)
+def test_wordprocessingmlstyles_versiontype_is_not_abstract():
+    assert not inspect.isabstract(WordprocessingMLStyles_VersionType)
 
 
-def test_wordprocessingmlstyles::versiontype_constructor_exists():
-    assert callable(WordprocessingMLStyles::VersionType.__init__)
+def test_wordprocessingmlstyles_versiontype_constructor_exists():
+    assert callable(WordprocessingMLStyles_VersionType.__init__)
 
 
-def test_wordprocessingmlstyles::versiontype_constructor_args():
-    sig = inspect.signature(WordprocessingMLStyles::VersionType.__init__)
+def test_wordprocessingmlstyles_versiontype_constructor_args():
+    sig = inspect.signature(WordprocessingMLStyles_VersionType.__init__)
     params = list(sig.parameters.keys())
     assert "n" in params, "Missing parameter 'n'"
     assert "nn" in params, "Missing parameter 'nn'"
 
-def test_wordprocessingmlstyles::versiontype_has_n():
-    assert hasattr(WordprocessingMLStyles::VersionType, "n")
+def test_wordprocessingmlstyles_versiontype_has_n():
+    assert hasattr(WordprocessingMLStyles_VersionType, "n")
     descriptor = None
-    for klass in WordprocessingMLStyles::VersionType.__mro__:
+    for klass in WordprocessingMLStyles_VersionType.__mro__:
         if "n" in klass.__dict__:
             descriptor = klass.__dict__["n"]
             break
     assert isinstance(descriptor, property)
 
-def test_wordprocessingmlstyles::versiontype_has_nn():
-    assert hasattr(WordprocessingMLStyles::VersionType, "nn")
+def test_wordprocessingmlstyles_versiontype_has_nn():
+    assert hasattr(WordprocessingMLStyles_VersionType, "nn")
     descriptor = None
-    for klass in WordprocessingMLStyles::VersionType.__mro__:
+    for klass in WordprocessingMLStyles_VersionType.__mro__:
         if "nn" in klass.__dict__:
             descriptor = klass.__dict__["nn"]
             break
@@ -2620,93 +2620,77 @@ def test_wordprocessingmlstyles::versiontype_has_nn():
 
 
 
-def test_wordprocessingmlstyles::datetimetype_is_not_abstract():
-    assert not inspect.isabstract(WordprocessingMLStyles::DateTimeType)
+def test_wordprocessingmlstyles_datetimetype_is_not_abstract():
+    assert not inspect.isabstract(WordprocessingMLStyles_DateTimeType)
 
 
-def test_wordprocessingmlstyles::datetimetype_constructor_exists():
-    assert callable(WordprocessingMLStyles::DateTimeType.__init__)
+def test_wordprocessingmlstyles_datetimetype_constructor_exists():
+    assert callable(WordprocessingMLStyles_DateTimeType.__init__)
 
 
-def test_wordprocessingmlstyles::datetimetype_constructor_args():
-    sig = inspect.signature(WordprocessingMLStyles::DateTimeType.__init__)
+def test_wordprocessingmlstyles_datetimetype_constructor_args():
+    sig = inspect.signature(WordprocessingMLStyles_DateTimeType.__init__)
     params = list(sig.parameters.keys())
-    assert "second" in params, "Missing parameter 'second'"
-    assert "month" in params, "Missing parameter 'month'"
-    assert "year" in params, "Missing parameter 'year'"
-    assert "day" in params, "Missing parameter 'day'"
-    assert "minute" in params, "Missing parameter 'minute'"
     assert "hour" in params, "Missing parameter 'hour'"
+    assert "day" in params, "Missing parameter 'day'"
+    assert "month" in params, "Missing parameter 'month'"
+    assert "minute" in params, "Missing parameter 'minute'"
+    assert "year" in params, "Missing parameter 'year'"
+    assert "second" in params, "Missing parameter 'second'"
 
-def test_wordprocessingmlstyles::datetimetype_has_second():
-    assert hasattr(WordprocessingMLStyles::DateTimeType, "second")
+def test_wordprocessingmlstyles_datetimetype_has_hour():
+    assert hasattr(WordprocessingMLStyles_DateTimeType, "hour")
     descriptor = None
-    for klass in WordprocessingMLStyles::DateTimeType.__mro__:
-        if "second" in klass.__dict__:
-            descriptor = klass.__dict__["second"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_wordprocessingmlstyles::datetimetype_has_month():
-    assert hasattr(WordprocessingMLStyles::DateTimeType, "month")
-    descriptor = None
-    for klass in WordprocessingMLStyles::DateTimeType.__mro__:
-        if "month" in klass.__dict__:
-            descriptor = klass.__dict__["month"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_wordprocessingmlstyles::datetimetype_has_year():
-    assert hasattr(WordprocessingMLStyles::DateTimeType, "year")
-    descriptor = None
-    for klass in WordprocessingMLStyles::DateTimeType.__mro__:
-        if "year" in klass.__dict__:
-            descriptor = klass.__dict__["year"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_wordprocessingmlstyles::datetimetype_has_day():
-    assert hasattr(WordprocessingMLStyles::DateTimeType, "day")
-    descriptor = None
-    for klass in WordprocessingMLStyles::DateTimeType.__mro__:
-        if "day" in klass.__dict__:
-            descriptor = klass.__dict__["day"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_wordprocessingmlstyles::datetimetype_has_minute():
-    assert hasattr(WordprocessingMLStyles::DateTimeType, "minute")
-    descriptor = None
-    for klass in WordprocessingMLStyles::DateTimeType.__mro__:
-        if "minute" in klass.__dict__:
-            descriptor = klass.__dict__["minute"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_wordprocessingmlstyles::datetimetype_has_hour():
-    assert hasattr(WordprocessingMLStyles::DateTimeType, "hour")
-    descriptor = None
-    for klass in WordprocessingMLStyles::DateTimeType.__mro__:
+    for klass in WordprocessingMLStyles_DateTimeType.__mro__:
         if "hour" in klass.__dict__:
             descriptor = klass.__dict__["hour"]
             break
     assert isinstance(descriptor, property)
 
-def test_fldchartypeproperty_exists():
-    # Check that the Enumeration exists
-    assert FldCharTypeProperty is not None
+def test_wordprocessingmlstyles_datetimetype_has_day():
+    assert hasattr(WordprocessingMLStyles_DateTimeType, "day")
+    descriptor = None
+    for klass in WordprocessingMLStyles_DateTimeType.__mro__:
+        if "day" in klass.__dict__:
+            descriptor = klass.__dict__["day"]
+            break
+    assert isinstance(descriptor, property)
 
-def test_fldchartypeproperty_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in FldCharTypeProperty]
-    expected_literals = [
-        "fctp_end",
-        "fctp_separate",
-        "fctp_begin",
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in FldCharTypeProperty"
+def test_wordprocessingmlstyles_datetimetype_has_month():
+    assert hasattr(WordprocessingMLStyles_DateTimeType, "month")
+    descriptor = None
+    for klass in WordprocessingMLStyles_DateTimeType.__mro__:
+        if "month" in klass.__dict__:
+            descriptor = klass.__dict__["month"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_wordprocessingmlstyles_datetimetype_has_minute():
+    assert hasattr(WordprocessingMLStyles_DateTimeType, "minute")
+    descriptor = None
+    for klass in WordprocessingMLStyles_DateTimeType.__mro__:
+        if "minute" in klass.__dict__:
+            descriptor = klass.__dict__["minute"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_wordprocessingmlstyles_datetimetype_has_year():
+    assert hasattr(WordprocessingMLStyles_DateTimeType, "year")
+    descriptor = None
+    for klass in WordprocessingMLStyles_DateTimeType.__mro__:
+        if "year" in klass.__dict__:
+            descriptor = klass.__dict__["year"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_wordprocessingmlstyles_datetimetype_has_second():
+    assert hasattr(WordprocessingMLStyles_DateTimeType, "second")
+    descriptor = None
+    for klass in WordprocessingMLStyles_DateTimeType.__mro__:
+        if "second" in klass.__dict__:
+            descriptor = klass.__dict__["second"]
+            break
+    assert isinstance(descriptor, property)
 
 def test_highlightcolorvalues_exists():
     # Check that the Enumeration exists
@@ -2716,27 +2700,91 @@ def test_highlightcolorvalues_has_all_literals():
     # Collect the names of literals in this Enumeration
     enum_literals = [lit.name for lit in HighlightColorValues]
     expected_literals = [
-        "hcv_blue",
-        "hcv_none",
-        "hcv_red",
-        "hcv_dark_gray",
-        "hcv_dark_green",
-        "hcv_white",
-        "hcv_yellow",
-        "hcv_dark_yellow",
-        "hcv_dark_blue",
-        "hcv_magenta",
+        "hcv_dark_red",
         "hcv_dark_cyan",
-        "hcv_cyan",
+        "hcv_black",
+        "hcv_white",
+        "hcv_dark_gray",
+        "hcv_magenta",
+        "hcv_red",
+        "hcv_none",
+        "hcv_blue",
+        "hcv_dark_blue",
         "hcv_dark_magenta",
         "hcv_green",
+        "hcv_dark_yellow",
+        "hcv_yellow",
+        "hcv_cyan",
         "hcv_light_gray",
-        "hcv_dark_red",
-        "hcv_black",
+        "hcv_dark_green",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
         assert lit_name in enum_literals, f"Literal '' missing in HighlightColorValues"
+
+def test_notevalue_exists():
+    # Check that the Enumeration exists
+    assert NoteValue is not None
+
+def test_notevalue_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in NoteValue]
+    expected_literals = [
+        "ftn_continuation_separator",
+        "ftn_normal",
+        "ftn_continuation_notice",
+        "ftn_separator",
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in NoteValue"
+
+def test_underlinevalues_exists():
+    # Check that the Enumeration exists
+    assert UnderlineValues is not None
+
+def test_underlinevalues_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in UnderlineValues]
+    expected_literals = [
+        "uv_dot_dot_dash",
+        "uv_dash_long",
+        "uv_dotted",
+        "uv_double",
+        "uv_dash_dot_heavy",
+        "uv_single",
+        "uv_wave",
+        "uv_wavy_double",
+        "uv_wavy_heavy",
+        "uv_dash",
+        "uv_dot_dash",
+        "uv_dotted_heavy",
+        "uv_thick",
+        "uv_dash_long_heavy",
+        "uv_words",
+        "uv_none",
+        "uv_dashed_heavy",
+        "uv_dash_dot_dot_heavy",
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in UnderlineValues"
+
+def test_fldchartypeproperty_exists():
+    # Check that the Enumeration exists
+    assert FldCharTypeProperty is not None
+
+def test_fldchartypeproperty_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in FldCharTypeProperty]
+    expected_literals = [
+        "fctp_begin",
+        "fctp_end",
+        "fctp_separate",
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in FldCharTypeProperty"
 
 def test_onofftype_exists():
     # Check that the Enumeration exists
@@ -2769,36 +2817,22 @@ def test_verticalalignruntype_has_all_literals():
     for lit_name in expected_literals:
         assert lit_name in enum_literals, f"Literal '' missing in VerticalAlignRunType"
 
-def test_underlinevalues_exists():
+def test_justificationvalue_exists():
     # Check that the Enumeration exists
-    assert UnderlineValues is not None
+    assert JustificationValue is not None
 
-def test_underlinevalues_has_all_literals():
+def test_justificationvalue_has_all_literals():
     # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in UnderlineValues]
+    enum_literals = [lit.name for lit in JustificationValue]
     expected_literals = [
-        "uv_dash_dot_heavy",
-        "uv_words",
-        "uv_none",
-        "uv_dot_dash",
-        "uv_dotted",
-        "uv_wave",
-        "uv_wavy_double",
-        "uv_double",
-        "uv_dash",
-        "uv_thick",
-        "uv_single",
-        "uv_dotted_heavy",
-        "uv_dash_long",
-        "uv_dot_dot_dash",
-        "uv_dash_dot_dot_heavy",
-        "uv_dashed_heavy",
-        "uv_dash_long_heavy",
-        "uv_wavy_heavy",
+        "jv_both",
+        "jv_right",
+        "jv_center",
+        "jv_left",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in UnderlineValues"
+        assert lit_name in enum_literals, f"Literal '' missing in JustificationValue"
 
 def test_hinttype_exists():
     # Check that the Enumeration exists
@@ -2816,22 +2850,21 @@ def test_hinttype_has_all_literals():
     for lit_name in expected_literals:
         assert lit_name in enum_literals, f"Literal '' missing in HintType"
 
-def test_notevalue_exists():
+def test_breaktype_exists():
     # Check that the Enumeration exists
-    assert NoteValue is not None
+    assert BreakType is not None
 
-def test_notevalue_has_all_literals():
+def test_breaktype_has_all_literals():
     # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in NoteValue]
+    enum_literals = [lit.name for lit in BreakType]
     expected_literals = [
-        "ftn_normal",
-        "ftn_continuation_separator",
-        "ftn_continuation_notice",
-        "ftn_separator",
+        "bt_text_wrapping",
+        "bt_page",
+        "bt_column",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in NoteValue"
+        assert lit_name in enum_literals, f"Literal '' missing in BreakType"
 
 def test_stylekindvalue_exists():
     # Check that the Enumeration exists
@@ -2841,47 +2874,14 @@ def test_stylekindvalue_has_all_literals():
     # Collect the names of literals in this Enumeration
     enum_literals = [lit.name for lit in StyleKindValue]
     expected_literals = [
+        "skv_character",
         "skv_table",
         "skv_paragraph",
-        "skv_character",
         "skv_list",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
         assert lit_name in enum_literals, f"Literal '' missing in StyleKindValue"
-
-def test_justificationvalue_exists():
-    # Check that the Enumeration exists
-    assert JustificationValue is not None
-
-def test_justificationvalue_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in JustificationValue]
-    expected_literals = [
-        "jv_center",
-        "jv_right",
-        "jv_left",
-        "jv_both",
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in JustificationValue"
-
-def test_breaktype_exists():
-    # Check that the Enumeration exists
-    assert BreakType is not None
-
-def test_breaktype_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in BreakType]
-    expected_literals = [
-        "bt_column",
-        "bt_text_wrapping",
-        "bt_page",
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in BreakType"
 
 
 # =============================================================================
@@ -2895,74 +2895,74 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-WordprocessingMLStyles::TabElt_strategy = st.builds(
-    WordprocessingMLStyles::TabElt,
+WordprocessingMLStyles_TabElt_strategy = st.builds(
+    WordprocessingMLStyles_TabElt,
 )
-WordprocessingMLStyles::PictureType_strategy = st.builds(
-    WordprocessingMLStyles::PictureType,
+WordprocessingMLStyles_PictureType_strategy = st.builds(
+    WordprocessingMLStyles_PictureType,
 )
-WordprocessingMLStyles::SectPrElt_strategy = st.builds(
-    WordprocessingMLStyles::SectPrElt,
+WordprocessingMLStyles_SectPrElt_strategy = st.builds(
+    WordprocessingMLStyles_SectPrElt,
 )
-WordprocessingMLStyles::ListsElt_strategy = st.builds(
-    WordprocessingMLStyles::ListsElt,
+WordprocessingMLStyles_ListsElt_strategy = st.builds(
+    WordprocessingMLStyles_ListsElt,
 )
-WordprocessingMLStyles::StyleElt_strategy = st.builds(
-    WordprocessingMLStyles::StyleElt,
+WordprocessingMLStyles_StyleElt_strategy = st.builds(
+    WordprocessingMLStyles_StyleElt,
+    sti=
+        st.none(),
+    locked=
+        st.none(),
+    hidden=
+        st.none(),
+    semiHidden=
+        st.none(),
+    default=
+        st.none(),
+    autoRedefine=
+        st.none(),
+    type=
+        st.none(),
     personalReply=
         st.none(),
     personal=
         st.none(),
     personalCompose=
-        st.none(),
-    sti=
-        st.none(),
-    default=
-        st.none(),
-    semiHidden=
-        st.none(),
-    hidden=
-        st.none(),
-    locked=
-        st.none(),
-    type=
-        st.none(),
-    autoRedefine=
         st.none()
 )
-WordprocessingMLStyles::StylesElt_strategy = st.builds(
-    WordprocessingMLStyles::StylesElt,
+WordprocessingMLStyles_StylesElt_strategy = st.builds(
+    WordprocessingMLStyles_StylesElt,
     versionOfBuiltInStylenames=
         st.none()
 )
-WordprocessingMLStyles::FontElt_strategy = st.builds(
-    WordprocessingMLStyles::FontElt,
+WordprocessingMLStyles_FontElt_strategy = st.builds(
+    WordprocessingMLStyles_FontElt,
 )
-WordprocessingMLStyles::FontsElt_strategy = st.builds(
-    WordprocessingMLStyles::FontsElt,
+WordprocessingMLStyles_FontsElt_strategy = st.builds(
+    WordprocessingMLStyles_FontsElt,
     hint=
         st.none()
 )
 FontElt_strategy = st.builds(
     FontElt,
 )
-WordprocessingMLStyles::FontsListElt_strategy = st.builds(
-    WordprocessingMLStyles::FontsListElt,
+WordprocessingMLStyles_FontsListElt_strategy = st.builds(
+    WordprocessingMLStyles_FontsListElt,
 )
-WordprocessingMLStyles::TableCellPrElt_strategy = st.builds(
-    WordprocessingMLStyles::TableCellPrElt,
+WordprocessingMLStyles_TableCellPrElt_strategy = st.builds(
+    WordprocessingMLStyles_TableCellPrElt,
 )
 TableCellPrElt_strategy = st.builds(
     TableCellPrElt,
 )
-WordprocessingMLStyles::TableCellElt_strategy = st.builds(
-    WordprocessingMLStyles::TableCellElt,
+WordprocessingMLStyles_TableCellElt_strategy = st.builds(
+    WordprocessingMLStyles_TableCellElt,
 )
-WordprocessingMLStyles::RowContentElt_strategy = st.builds(
-    WordprocessingMLStyles::RowContentElt,
+WordprocessingMLStyles_RowContentElt_strategy = st.builds(
+    WordprocessingMLStyles_RowContentElt,
 )
-WordprocessingMLStyles::TableRowPrElt_strategy = st.builds(
-    WordprocessingMLStyles::TableRowPrElt,
+WordprocessingMLStyles_TableRowPrElt_strategy = st.builds(
+    WordprocessingMLStyles_TableRowPrElt,
 )
 RowContentElt_strategy = st.builds(
     RowContentElt,
@@ -2973,8 +2973,8 @@ TableRowPrElt_strategy = st.builds(
 TablePrExElt_strategy = st.builds(
     TablePrExElt,
 )
-WordprocessingMLStyles::RowElt_strategy = st.builds(
-    WordprocessingMLStyles::RowElt,
+WordprocessingMLStyles_RowElt_strategy = st.builds(
+    WordprocessingMLStyles_RowElt,
 )
 RunLevelElt_strategy = st.builds(
     RunLevelElt,
@@ -2982,17 +2982,17 @@ RunLevelElt_strategy = st.builds(
 RowElt_strategy = st.builds(
     RowElt,
 )
-WordprocessingMLStyles::TableContentElt_strategy = st.builds(
-    WordprocessingMLStyles::TableContentElt,
+WordprocessingMLStyles_TableContentElt_strategy = st.builds(
+    WordprocessingMLStyles_TableContentElt,
 )
-WordprocessingMLStyles::TablePrExElt_strategy = st.builds(
-    WordprocessingMLStyles::TablePrExElt,
+WordprocessingMLStyles_TablePrExElt_strategy = st.builds(
+    WordprocessingMLStyles_TablePrExElt,
 )
 TableElt_strategy = st.builds(
     TableElt,
 )
-WordprocessingMLStyles::TablePrElt_strategy = st.builds(
-    WordprocessingMLStyles::TablePrElt,
+WordprocessingMLStyles_TablePrElt_strategy = st.builds(
+    WordprocessingMLStyles_TablePrElt,
 )
 TableContentElt_strategy = st.builds(
     TableContentElt,
@@ -3003,21 +3003,21 @@ TableGridElt_strategy = st.builds(
 TablePrElt_strategy = st.builds(
     TablePrElt,
 )
-WordprocessingMLStyles::FldCharElt_strategy = st.builds(
-    WordprocessingMLStyles::FldCharElt,
-    fldCharType=
-        st.none(),
+WordprocessingMLStyles_FldCharElt_strategy = st.builds(
+    WordprocessingMLStyles_FldCharElt,
     fldLock=
+        st.none(),
+    fldCharType=
         st.none()
 )
-WordprocessingMLStyles::TableGridElt_strategy = st.builds(
-    WordprocessingMLStyles::TableGridElt,
+WordprocessingMLStyles_TableGridElt_strategy = st.builds(
+    WordprocessingMLStyles_TableGridElt,
 )
 TabElt_strategy = st.builds(
     TabElt,
 )
-WordprocessingMLStyles::SymElt_strategy = st.builds(
-    WordprocessingMLStyles::SymElt,
+WordprocessingMLStyles_SymElt_strategy = st.builds(
+    WordprocessingMLStyles_SymElt,
 )
 SymElt_strategy = st.builds(
     SymElt,
@@ -3025,8 +3025,8 @@ SymElt_strategy = st.builds(
 PictureType_strategy = st.builds(
     PictureType,
 )
-WordprocessingMLStyles::NoteElt_strategy = st.builds(
-    WordprocessingMLStyles::NoteElt,
+WordprocessingMLStyles_NoteElt_strategy = st.builds(
+    WordprocessingMLStyles_NoteElt,
     type=
         st.none(),
     suppressRef=
@@ -3035,14 +3035,14 @@ WordprocessingMLStyles::NoteElt_strategy = st.builds(
 FldCharElt_strategy = st.builds(
     FldCharElt,
 )
-WordprocessingMLStyles::RunContentElt_strategy = st.builds(
-    WordprocessingMLStyles::RunContentElt,
+WordprocessingMLStyles_RunContentElt_strategy = st.builds(
+    WordprocessingMLStyles_RunContentElt,
 )
-WordprocessingMLStyles::LangElt_strategy = st.builds(
-    WordprocessingMLStyles::LangElt,
-    bidi=
-        st.none(),
+WordprocessingMLStyles_LangElt_strategy = st.builds(
+    WordprocessingMLStyles_LangElt,
     val=
+        st.none(),
+    bidi=
         st.none()
 )
 LangElt_strategy = st.builds(
@@ -3057,45 +3057,45 @@ FontsElt_strategy = st.builds(
 RunElt_strategy = st.builds(
     RunElt,
 )
-WordprocessingMLStyles::RunPrElt_strategy = st.builds(
-    WordprocessingMLStyles::RunPrElt,
+WordprocessingMLStyles_RunPrElt_strategy = st.builds(
+    WordprocessingMLStyles_RunPrElt,
+    imprint=
+        st.none(),
+    bold=
+        st.none(),
+    capitals=
+        st.none(),
+    italic_cs=
+        st.none(),
+    bold_cs=
+        st.none(),
+    italic=
+        st.none(),
+    cs=
+        st.none(),
+    emboss=
+        st.none(),
     verticalAlign=
+        st.none(),
+    outline=
         st.none(),
     color=
         st.none(),
     smallCapitals=
         st.none(),
-    strike=
-        st.none(),
-    vanish=
-        st.none(),
-    bold=
-        st.none(),
     doubleStrike=
-        st.none(),
-    imprint=
-        st.none(),
-    italic=
-        st.none(),
-    highlight=
-        st.none(),
-    cs=
-        st.none(),
-    rtl=
-        st.none(),
-    bold_cs=
-        st.none(),
-    capitals=
         st.none(),
     specVanish=
         st.none(),
-    outline=
-        st.none(),
-    emboss=
-        st.none(),
-    italic_cs=
+    vanish=
         st.none(),
     noProof=
+        st.none(),
+    strike=
+        st.none(),
+    rtl=
+        st.none(),
+    highlight=
         st.none(),
     shadow=
         st.none()
@@ -3103,55 +3103,55 @@ WordprocessingMLStyles::RunPrElt_strategy = st.builds(
 RunContentElt_strategy = st.builds(
     RunContentElt,
 )
-WordprocessingMLStyles::AnnotationRef_strategy = st.builds(
-    WordprocessingMLStyles::AnnotationRef,
+WordprocessingMLStyles_PgNum_strategy = st.builds(
+    WordprocessingMLStyles_PgNum,
 )
-WordprocessingMLStyles::BreakElt_strategy = st.builds(
-    WordprocessingMLStyles::BreakElt,
+WordprocessingMLStyles_Symbol_strategy = st.builds(
+    WordprocessingMLStyles_Symbol,
+)
+WordprocessingMLStyles_Separator_strategy = st.builds(
+    WordprocessingMLStyles_Separator,
+)
+WordprocessingMLStyles_ContinuationSeparator_strategy = st.builds(
+    WordprocessingMLStyles_ContinuationSeparator,
+)
+WordprocessingMLStyles_FootnoteRef_strategy = st.builds(
+    WordprocessingMLStyles_FootnoteRef,
+)
+WordprocessingMLStyles_EndnoteRef_strategy = st.builds(
+    WordprocessingMLStyles_EndnoteRef,
+)
+WordprocessingMLStyles_SoftHyphen_strategy = st.builds(
+    WordprocessingMLStyles_SoftHyphen,
+)
+WordprocessingMLStyles_FldChar_strategy = st.builds(
+    WordprocessingMLStyles_FldChar,
+)
+WordprocessingMLStyles_Picture_strategy = st.builds(
+    WordprocessingMLStyles_Picture,
+)
+WordprocessingMLStyles_AnnotationRef_strategy = st.builds(
+    WordprocessingMLStyles_AnnotationRef,
+)
+WordprocessingMLStyles_Tab_strategy = st.builds(
+    WordprocessingMLStyles_Tab,
+)
+WordprocessingMLStyles_Cr_strategy = st.builds(
+    WordprocessingMLStyles_Cr,
+)
+WordprocessingMLStyles_NoBreakHyphen_strategy = st.builds(
+    WordprocessingMLStyles_NoBreakHyphen,
+)
+WordprocessingMLStyles_BreakElt_strategy = st.builds(
+    WordprocessingMLStyles_BreakElt,
     type=
         st.none()
-)
-WordprocessingMLStyles::FldChar_strategy = st.builds(
-    WordprocessingMLStyles::FldChar,
-)
-WordprocessingMLStyles::SoftHyphen_strategy = st.builds(
-    WordprocessingMLStyles::SoftHyphen,
-)
-WordprocessingMLStyles::Cr_strategy = st.builds(
-    WordprocessingMLStyles::Cr,
-)
-WordprocessingMLStyles::Picture_strategy = st.builds(
-    WordprocessingMLStyles::Picture,
-)
-WordprocessingMLStyles::NoBreakHyphen_strategy = st.builds(
-    WordprocessingMLStyles::NoBreakHyphen,
-)
-WordprocessingMLStyles::PgNum_strategy = st.builds(
-    WordprocessingMLStyles::PgNum,
-)
-WordprocessingMLStyles::Symbol_strategy = st.builds(
-    WordprocessingMLStyles::Symbol,
-)
-WordprocessingMLStyles::ContinuationSeparator_strategy = st.builds(
-    WordprocessingMLStyles::ContinuationSeparator,
-)
-WordprocessingMLStyles::EndnoteRef_strategy = st.builds(
-    WordprocessingMLStyles::EndnoteRef,
-)
-WordprocessingMLStyles::Separator_strategy = st.builds(
-    WordprocessingMLStyles::Separator,
-)
-WordprocessingMLStyles::FootnoteRef_strategy = st.builds(
-    WordprocessingMLStyles::FootnoteRef,
-)
-WordprocessingMLStyles::Tab_strategy = st.builds(
-    WordprocessingMLStyles::Tab,
 )
 RunPrElt_strategy = st.builds(
     RunPrElt,
 )
-WordprocessingMLStyles::ParaContentElt_strategy = st.builds(
-    WordprocessingMLStyles::ParaContentElt,
+WordprocessingMLStyles_ParaContentElt_strategy = st.builds(
+    WordprocessingMLStyles_ParaContentElt,
 )
 StyleElt_strategy = st.builds(
     StyleElt,
@@ -3159,21 +3159,21 @@ StyleElt_strategy = st.builds(
 ParaElt_strategy = st.builds(
     ParaElt,
 )
-WordprocessingMLStyles::ParaPrElt_strategy = st.builds(
-    WordprocessingMLStyles::ParaPrElt,
-    suppressAutoHyphens=
-        st.none(),
-    supressLineNumbers=
-        st.none(),
-    bidi=
-        st.none(),
+WordprocessingMLStyles_ParaPrElt_strategy = st.builds(
+    WordprocessingMLStyles_ParaPrElt,
     pageBreakBefore=
         st.none(),
     keepLines=
         st.none(),
-    justification=
+    bidi=
+        st.none(),
+    suppressAutoHyphens=
         st.none(),
     contextualSpacing=
+        st.none(),
+    justification=
+        st.none(),
+    supressLineNumbers=
         st.none(),
     keepNext=
         st.none()
@@ -3181,17 +3181,17 @@ WordprocessingMLStyles::ParaPrElt_strategy = st.builds(
 ParaContentElt_strategy = st.builds(
     ParaContentElt,
 )
-WordprocessingMLStyles::RunElt_strategy = st.builds(
-    WordprocessingMLStyles::RunElt,
+WordprocessingMLStyles_SimpleFieldElt_strategy = st.builds(
+    WordprocessingMLStyles_SimpleFieldElt,
 )
-WordprocessingMLStyles::SimpleFieldElt_strategy = st.builds(
-    WordprocessingMLStyles::SimpleFieldElt,
+WordprocessingMLStyles_HLinkElt_strategy = st.builds(
+    WordprocessingMLStyles_HLinkElt,
 )
-WordprocessingMLStyles::SubDocElt_strategy = st.builds(
-    WordprocessingMLStyles::SubDocElt,
+WordprocessingMLStyles_SubDocElt_strategy = st.builds(
+    WordprocessingMLStyles_SubDocElt,
 )
-WordprocessingMLStyles::HLinkElt_strategy = st.builds(
-    WordprocessingMLStyles::HLinkElt,
+WordprocessingMLStyles_RunElt_strategy = st.builds(
+    WordprocessingMLStyles_RunElt,
 )
 ParaPrElt_strategy = st.builds(
     ParaPrElt,
@@ -3199,14 +3199,14 @@ ParaPrElt_strategy = st.builds(
 BlockLevelChunkElt_strategy = st.builds(
     BlockLevelChunkElt,
 )
-WordprocessingMLStyles::RunLevelElt_strategy = st.builds(
-    WordprocessingMLStyles::RunLevelElt,
+WordprocessingMLStyles_RunLevelElt_strategy = st.builds(
+    WordprocessingMLStyles_RunLevelElt,
 )
-WordprocessingMLStyles::TableElt_strategy = st.builds(
-    WordprocessingMLStyles::TableElt,
+WordprocessingMLStyles_TableElt_strategy = st.builds(
+    WordprocessingMLStyles_TableElt,
 )
-WordprocessingMLStyles::ParaElt_strategy = st.builds(
-    WordprocessingMLStyles::ParaElt,
+WordprocessingMLStyles_ParaElt_strategy = st.builds(
+    WordprocessingMLStyles_ParaElt,
 )
 DocPrElt_strategy = st.builds(
     DocPrElt,
@@ -3220,14 +3220,14 @@ TableCellElt_strategy = st.builds(
 NoteElt_strategy = st.builds(
     NoteElt,
 )
-WordprocessingMLStyles::Endnote_strategy = st.builds(
-    WordprocessingMLStyles::Endnote,
+WordprocessingMLStyles_Endnote_strategy = st.builds(
+    WordprocessingMLStyles_Endnote,
 )
-WordprocessingMLStyles::Footnote_strategy = st.builds(
-    WordprocessingMLStyles::Footnote,
+WordprocessingMLStyles_Footnote_strategy = st.builds(
+    WordprocessingMLStyles_Footnote,
 )
-WordprocessingMLStyles::BlockLevelElt_strategy = st.builds(
-    WordprocessingMLStyles::BlockLevelElt,
+WordprocessingMLStyles_BlockLevelElt_strategy = st.builds(
+    WordprocessingMLStyles_BlockLevelElt,
 )
 SectPrElt_strategy = st.builds(
     SectPrElt,
@@ -3235,23 +3235,23 @@ SectPrElt_strategy = st.builds(
 BlockLevelElt_strategy = st.builds(
     BlockLevelElt,
 )
-WordprocessingMLStyles::CfChunk_strategy = st.builds(
-    WordprocessingMLStyles::CfChunk,
+WordprocessingMLStyles_CfChunk_strategy = st.builds(
+    WordprocessingMLStyles_CfChunk,
 )
-WordprocessingMLStyles::BlockLevelChunkElt_strategy = st.builds(
-    WordprocessingMLStyles::BlockLevelChunkElt,
+WordprocessingMLStyles_BlockLevelChunkElt_strategy = st.builds(
+    WordprocessingMLStyles_BlockLevelChunkElt,
 )
-WordprocessingMLStyles::BodyElt_strategy = st.builds(
-    WordprocessingMLStyles::BodyElt,
+WordprocessingMLStyles_BodyElt_strategy = st.builds(
+    WordprocessingMLStyles_BodyElt,
 )
-WordprocessingMLStyles::DocPrElt_strategy = st.builds(
-    WordprocessingMLStyles::DocPrElt,
+WordprocessingMLStyles_DocPrElt_strategy = st.builds(
+    WordprocessingMLStyles_DocPrElt,
 )
 BodyElt_strategy = st.builds(
     BodyElt,
 )
-WordprocessingMLStyles::WordDocument_strategy = st.builds(
-    WordprocessingMLStyles::WordDocument,
+WordprocessingMLStyles_WordDocument_strategy = st.builds(
+    WordprocessingMLStyles_WordDocument,
 )
 ListsElt_strategy = st.builds(
     ListsElt,
@@ -3265,50 +3265,50 @@ StringProperty_strategy = st.builds(
 DocumentPropertiesCollection_strategy = st.builds(
     DocumentPropertiesCollection,
 )
-WordprocessingMLStyles::UnderlineProperty_strategy = st.builds(
-    WordprocessingMLStyles::UnderlineProperty,
-    color=
-        st.none(),
+WordprocessingMLStyles_UnderlineProperty_strategy = st.builds(
+    WordprocessingMLStyles_UnderlineProperty,
     val=
+        st.none(),
+    color=
         st.none()
 )
-WordprocessingMLStyles::StringType_strategy = st.builds(
-    WordprocessingMLStyles::StringType,
+WordprocessingMLStyles_StringType_strategy = st.builds(
+    WordprocessingMLStyles_StringType,
     val=
         st.none()
 )
 StringType_strategy = st.builds(
     StringType,
 )
-WordprocessingMLStyles::InstrText_strategy = st.builds(
-    WordprocessingMLStyles::InstrText,
+WordprocessingMLStyles_DelText_strategy = st.builds(
+    WordprocessingMLStyles_DelText,
 )
-WordprocessingMLStyles::Text_strategy = st.builds(
-    WordprocessingMLStyles::Text,
+WordprocessingMLStyles_Text_strategy = st.builds(
+    WordprocessingMLStyles_Text,
 )
-WordprocessingMLStyles::DelInstrText_strategy = st.builds(
-    WordprocessingMLStyles::DelInstrText,
+WordprocessingMLStyles_InstrText_strategy = st.builds(
+    WordprocessingMLStyles_InstrText,
 )
-WordprocessingMLStyles::DelText_strategy = st.builds(
-    WordprocessingMLStyles::DelText,
+WordprocessingMLStyles_DelInstrText_strategy = st.builds(
+    WordprocessingMLStyles_DelInstrText,
 )
-WordprocessingMLStyles::StringProperty_strategy = st.builds(
-    WordprocessingMLStyles::StringProperty,
+WordprocessingMLStyles_StringProperty_strategy = st.builds(
+    WordprocessingMLStyles_StringProperty,
 )
 SmartTagType_strategy = st.builds(
     SmartTagType,
 )
-WordprocessingMLStyles::SmartTagsCollection_strategy = st.builds(
-    WordprocessingMLStyles::SmartTagsCollection,
+WordprocessingMLStyles_SmartTagsCollection_strategy = st.builds(
+    WordprocessingMLStyles_SmartTagsCollection,
 )
 SmartTagsCollection_strategy = st.builds(
     SmartTagsCollection,
 )
-WordprocessingMLStyles::SmartTagType_strategy = st.builds(
-    WordprocessingMLStyles::SmartTagType,
-    url=
-        st.none(),
+WordprocessingMLStyles_SmartTagType_strategy = st.builds(
+    WordprocessingMLStyles_SmartTagType,
     namespaceuri=
+        st.none(),
+    url=
         st.none(),
     name=
         st.none()
@@ -3319,16 +3319,16 @@ VersionType_strategy = st.builds(
 CustomDocumentPropertiesCollection_strategy = st.builds(
     CustomDocumentPropertiesCollection,
 )
-WordprocessingMLStyles::CustomDocumentProperty_strategy = st.builds(
-    WordprocessingMLStyles::CustomDocumentProperty,
+WordprocessingMLStyles_CustomDocumentProperty_strategy = st.builds(
+    WordprocessingMLStyles_CustomDocumentProperty,
     name=
         st.none()
 )
 CustomDocumentProperty_strategy = st.builds(
     CustomDocumentProperty,
 )
-WordprocessingMLStyles::CustomDocumentPropertiesCollection_strategy = st.builds(
-    WordprocessingMLStyles::CustomDocumentPropertiesCollection,
+WordprocessingMLStyles_CustomDocumentPropertiesCollection_strategy = st.builds(
+    WordprocessingMLStyles_CustomDocumentPropertiesCollection,
 )
 DateTimeType_strategy = st.builds(
     DateTimeType,
@@ -3336,268 +3336,232 @@ DateTimeType_strategy = st.builds(
 ValueType_strategy = st.builds(
     ValueType,
 )
-WordprocessingMLStyles::DateTimeTypeValue_strategy = st.builds(
-    WordprocessingMLStyles::DateTimeTypeValue,
+WordprocessingMLStyles_DateTimeTypeValue_strategy = st.builds(
+    WordprocessingMLStyles_DateTimeTypeValue,
 )
-WordprocessingMLStyles::FloatValue_strategy = st.builds(
-    WordprocessingMLStyles::FloatValue,
+WordprocessingMLStyles_FloatValue_strategy = st.builds(
+    WordprocessingMLStyles_FloatValue,
     value=
         st.none()
 )
-WordprocessingMLStyles::StringValue_strategy = st.builds(
-    WordprocessingMLStyles::StringValue,
+WordprocessingMLStyles_StringValue_strategy = st.builds(
+    WordprocessingMLStyles_StringValue,
     value=
         st.none()
 )
-WordprocessingMLStyles::ValueType_strategy = st.builds(
-    WordprocessingMLStyles::ValueType,
+WordprocessingMLStyles_ValueType_strategy = st.builds(
+    WordprocessingMLStyles_ValueType,
 )
 WordDocument_strategy = st.builds(
     WordDocument,
 )
-WordprocessingMLStyles::DocumentPropertiesCollection_strategy = st.builds(
-    WordprocessingMLStyles::DocumentPropertiesCollection,
-    paragraphs=
-        st.none(),
-    keywords=
-        st.none(),
-    guid=
-        st.none(),
-    lines=
-        st.none(),
-    title=
-        st.none(),
-    totalTime=
-        st.none(),
-    pages=
-        st.none(),
-    hyperlinkBase=
-        st.none(),
-    revision=
-        st.none(),
-    characters=
-        st.none(),
-    description=
-        st.none(),
-    author=
-        st.none(),
-    bytes=
-        st.none(),
+WordprocessingMLStyles_DocumentPropertiesCollection_strategy = st.builds(
+    WordprocessingMLStyles_DocumentPropertiesCollection,
     lastAuthor=
-        st.none(),
-    category=
-        st.none(),
-    manager=
-        st.none(),
-    charactersWithSpaces=
         st.none(),
     company=
         st.none(),
+    paragraphs=
+        st.none(),
+    category=
+        st.none(),
+    hyperlinkBase=
+        st.none(),
+    author=
+        st.none(),
+    totalTime=
+        st.none(),
     appName=
+        st.none(),
+    description=
+        st.none(),
+    lines=
+        st.none(),
+    charactersWithSpaces=
+        st.none(),
+    bytes=
+        st.none(),
+    characters=
+        st.none(),
+    guid=
+        st.none(),
+    pages=
+        st.none(),
+    subject=
+        st.none(),
+    manager=
+        st.none(),
+    keywords=
         st.none(),
     presentationFormat=
         st.none(),
+    revision=
+        st.none(),
     words=
         st.none(),
-    subject=
+    title=
         st.none()
 )
-WordprocessingMLStyles::BooleanValue_strategy = st.builds(
-    WordprocessingMLStyles::BooleanValue,
+WordprocessingMLStyles_BooleanValue_strategy = st.builds(
+    WordprocessingMLStyles_BooleanValue,
     value=
         st.none()
 )
-WordprocessingMLStyles::VersionType_strategy = st.builds(
-    WordprocessingMLStyles::VersionType,
+WordprocessingMLStyles_VersionType_strategy = st.builds(
+    WordprocessingMLStyles_VersionType,
     n=
         st.none(),
     nn=
         st.none()
 )
-WordprocessingMLStyles::DateTimeType_strategy = st.builds(
-    WordprocessingMLStyles::DateTimeType,
-    second=
-        st.none(),
-    month=
-        st.none(),
-    year=
+WordprocessingMLStyles_DateTimeType_strategy = st.builds(
+    WordprocessingMLStyles_DateTimeType,
+    hour=
         st.none(),
     day=
         st.none(),
+    month=
+        st.none(),
     minute=
         st.none(),
-    hour=
+    year=
+        st.none(),
+    second=
         st.none()
 )
 
-@given(instance=WordprocessingMLStyles::TabElt_strategy)
+@given(instance=WordprocessingMLStyles_TabElt_strategy)
 @settings(max_examples=50)
-def test_wordprocessingmlstyles::tabelt_instantiation(instance):
-    assert isinstance(instance, WordprocessingMLStyles::TabElt)
+def test_wordprocessingmlstyles_tabelt_instantiation(instance):
+    assert isinstance(instance, WordprocessingMLStyles_TabElt)
 
-@given(instance=WordprocessingMLStyles::PictureType_strategy)
+@given(instance=WordprocessingMLStyles_PictureType_strategy)
 @settings(max_examples=50)
-def test_wordprocessingmlstyles::picturetype_instantiation(instance):
-    assert isinstance(instance, WordprocessingMLStyles::PictureType)
+def test_wordprocessingmlstyles_picturetype_instantiation(instance):
+    assert isinstance(instance, WordprocessingMLStyles_PictureType)
 
-@given(instance=WordprocessingMLStyles::SectPrElt_strategy)
+@given(instance=WordprocessingMLStyles_SectPrElt_strategy)
 @settings(max_examples=50)
-def test_wordprocessingmlstyles::sectprelt_instantiation(instance):
-    assert isinstance(instance, WordprocessingMLStyles::SectPrElt)
+def test_wordprocessingmlstyles_sectprelt_instantiation(instance):
+    assert isinstance(instance, WordprocessingMLStyles_SectPrElt)
 
-@given(instance=WordprocessingMLStyles::ListsElt_strategy)
+@given(instance=WordprocessingMLStyles_ListsElt_strategy)
 @settings(max_examples=50)
-def test_wordprocessingmlstyles::listselt_instantiation(instance):
-    assert isinstance(instance, WordprocessingMLStyles::ListsElt)
+def test_wordprocessingmlstyles_listselt_instantiation(instance):
+    assert isinstance(instance, WordprocessingMLStyles_ListsElt)
 
-@given(instance=WordprocessingMLStyles::StyleElt_strategy)
+@given(instance=WordprocessingMLStyles_StyleElt_strategy)
 @settings(max_examples=50)
-def test_wordprocessingmlstyles::styleelt_instantiation(instance):
-    assert isinstance(instance, WordprocessingMLStyles::StyleElt)
-
-@given(instance=WordprocessingMLStyles::StyleElt_strategy)
-def test_wordprocessingmlstyles::styleelt_personalReply_type(instance):
-    assert isinstance(instance.personalReply, stringtype)
+def test_wordprocessingmlstyles_styleelt_instantiation(instance):
+    assert isinstance(instance, WordprocessingMLStyles_StyleElt)
 
 
-@given(instance=WordprocessingMLStyles::StyleElt_strategy)
-def test_wordprocessingmlstyles::styleelt_personalReply_setter(instance):
-    original = instance.personalReply
-    instance.personalReply = original
-    assert instance.personalReply == original
 
-@given(instance=WordprocessingMLStyles::StyleElt_strategy)
-def test_wordprocessingmlstyles::styleelt_personal_type(instance):
-    assert isinstance(instance.personal, stringtype)
-
-
-@given(instance=WordprocessingMLStyles::StyleElt_strategy)
-def test_wordprocessingmlstyles::styleelt_personal_setter(instance):
-    original = instance.personal
-    instance.personal = original
-    assert instance.personal == original
-
-@given(instance=WordprocessingMLStyles::StyleElt_strategy)
-def test_wordprocessingmlstyles::styleelt_personalCompose_type(instance):
-    assert isinstance(instance.personalCompose, stringtype)
-
-
-@given(instance=WordprocessingMLStyles::StyleElt_strategy)
-def test_wordprocessingmlstyles::styleelt_personalCompose_setter(instance):
-    original = instance.personalCompose
-    instance.personalCompose = original
-    assert instance.personalCompose == original
-
-@given(instance=WordprocessingMLStyles::StyleElt_strategy)
-def test_wordprocessingmlstyles::styleelt_sti_type(instance):
-    assert isinstance(instance.sti, stringtype)
-
-
-@given(instance=WordprocessingMLStyles::StyleElt_strategy)
-def test_wordprocessingmlstyles::styleelt_sti_setter(instance):
+@given(instance=WordprocessingMLStyles_StyleElt_strategy)
+def test_wordprocessingmlstyles_styleelt_sti_setter(instance):
     original = instance.sti
     instance.sti = original
     assert instance.sti == original
 
-@given(instance=WordprocessingMLStyles::StyleElt_strategy)
-def test_wordprocessingmlstyles::styleelt_default_type(instance):
-    assert isinstance(instance.default, stringtype)
 
 
-@given(instance=WordprocessingMLStyles::StyleElt_strategy)
-def test_wordprocessingmlstyles::styleelt_default_setter(instance):
-    original = instance.default
-    instance.default = original
-    assert instance.default == original
-
-@given(instance=WordprocessingMLStyles::StyleElt_strategy)
-def test_wordprocessingmlstyles::styleelt_semiHidden_type(instance):
-    assert isinstance(instance.semiHidden, stringtype)
-
-
-@given(instance=WordprocessingMLStyles::StyleElt_strategy)
-def test_wordprocessingmlstyles::styleelt_semiHidden_setter(instance):
-    original = instance.semiHidden
-    instance.semiHidden = original
-    assert instance.semiHidden == original
-
-@given(instance=WordprocessingMLStyles::StyleElt_strategy)
-def test_wordprocessingmlstyles::styleelt_hidden_type(instance):
-    assert isinstance(instance.hidden, stringtype)
-
-
-@given(instance=WordprocessingMLStyles::StyleElt_strategy)
-def test_wordprocessingmlstyles::styleelt_hidden_setter(instance):
-    original = instance.hidden
-    instance.hidden = original
-    assert instance.hidden == original
-
-@given(instance=WordprocessingMLStyles::StyleElt_strategy)
-def test_wordprocessingmlstyles::styleelt_locked_type(instance):
-    assert isinstance(instance.locked, stringtype)
-
-
-@given(instance=WordprocessingMLStyles::StyleElt_strategy)
-def test_wordprocessingmlstyles::styleelt_locked_setter(instance):
+@given(instance=WordprocessingMLStyles_StyleElt_strategy)
+def test_wordprocessingmlstyles_styleelt_locked_setter(instance):
     original = instance.locked
     instance.locked = original
     assert instance.locked == original
 
-@given(instance=WordprocessingMLStyles::StyleElt_strategy)
-def test_wordprocessingmlstyles::styleelt_type_type(instance):
-    assert isinstance(instance.type, stringtype)
 
 
-@given(instance=WordprocessingMLStyles::StyleElt_strategy)
-def test_wordprocessingmlstyles::styleelt_type_setter(instance):
-    original = instance.type
-    instance.type = original
-    assert instance.type == original
-
-@given(instance=WordprocessingMLStyles::StyleElt_strategy)
-def test_wordprocessingmlstyles::styleelt_autoRedefine_type(instance):
-    assert isinstance(instance.autoRedefine, stringtype)
+@given(instance=WordprocessingMLStyles_StyleElt_strategy)
+def test_wordprocessingmlstyles_styleelt_hidden_setter(instance):
+    original = instance.hidden
+    instance.hidden = original
+    assert instance.hidden == original
 
 
-@given(instance=WordprocessingMLStyles::StyleElt_strategy)
-def test_wordprocessingmlstyles::styleelt_autoRedefine_setter(instance):
+
+@given(instance=WordprocessingMLStyles_StyleElt_strategy)
+def test_wordprocessingmlstyles_styleelt_semiHidden_setter(instance):
+    original = instance.semiHidden
+    instance.semiHidden = original
+    assert instance.semiHidden == original
+
+
+
+@given(instance=WordprocessingMLStyles_StyleElt_strategy)
+def test_wordprocessingmlstyles_styleelt_default_setter(instance):
+    original = instance.default
+    instance.default = original
+    assert instance.default == original
+
+
+
+@given(instance=WordprocessingMLStyles_StyleElt_strategy)
+def test_wordprocessingmlstyles_styleelt_autoRedefine_setter(instance):
     original = instance.autoRedefine
     instance.autoRedefine = original
     assert instance.autoRedefine == original
 
-@given(instance=WordprocessingMLStyles::StylesElt_strategy)
+
+
+@given(instance=WordprocessingMLStyles_StyleElt_strategy)
+def test_wordprocessingmlstyles_styleelt_type_setter(instance):
+    original = instance.type
+    instance.type = original
+    assert instance.type == original
+
+
+
+@given(instance=WordprocessingMLStyles_StyleElt_strategy)
+def test_wordprocessingmlstyles_styleelt_personalReply_setter(instance):
+    original = instance.personalReply
+    instance.personalReply = original
+    assert instance.personalReply == original
+
+
+
+@given(instance=WordprocessingMLStyles_StyleElt_strategy)
+def test_wordprocessingmlstyles_styleelt_personal_setter(instance):
+    original = instance.personal
+    instance.personal = original
+    assert instance.personal == original
+
+
+
+@given(instance=WordprocessingMLStyles_StyleElt_strategy)
+def test_wordprocessingmlstyles_styleelt_personalCompose_setter(instance):
+    original = instance.personalCompose
+    instance.personalCompose = original
+    assert instance.personalCompose == original
+
+@given(instance=WordprocessingMLStyles_StylesElt_strategy)
 @settings(max_examples=50)
-def test_wordprocessingmlstyles::styleselt_instantiation(instance):
-    assert isinstance(instance, WordprocessingMLStyles::StylesElt)
-
-@given(instance=WordprocessingMLStyles::StylesElt_strategy)
-def test_wordprocessingmlstyles::styleselt_versionOfBuiltInStylenames_type(instance):
-    assert isinstance(instance.versionOfBuiltInStylenames, stringtype)
+def test_wordprocessingmlstyles_styleselt_instantiation(instance):
+    assert isinstance(instance, WordprocessingMLStyles_StylesElt)
 
 
-@given(instance=WordprocessingMLStyles::StylesElt_strategy)
-def test_wordprocessingmlstyles::styleselt_versionOfBuiltInStylenames_setter(instance):
+
+@given(instance=WordprocessingMLStyles_StylesElt_strategy)
+def test_wordprocessingmlstyles_styleselt_versionOfBuiltInStylenames_setter(instance):
     original = instance.versionOfBuiltInStylenames
     instance.versionOfBuiltInStylenames = original
     assert instance.versionOfBuiltInStylenames == original
 
-@given(instance=WordprocessingMLStyles::FontElt_strategy)
+@given(instance=WordprocessingMLStyles_FontElt_strategy)
 @settings(max_examples=50)
-def test_wordprocessingmlstyles::fontelt_instantiation(instance):
-    assert isinstance(instance, WordprocessingMLStyles::FontElt)
+def test_wordprocessingmlstyles_fontelt_instantiation(instance):
+    assert isinstance(instance, WordprocessingMLStyles_FontElt)
 
-@given(instance=WordprocessingMLStyles::FontsElt_strategy)
+@given(instance=WordprocessingMLStyles_FontsElt_strategy)
 @settings(max_examples=50)
-def test_wordprocessingmlstyles::fontselt_instantiation(instance):
-    assert isinstance(instance, WordprocessingMLStyles::FontsElt)
-
-@given(instance=WordprocessingMLStyles::FontsElt_strategy)
-def test_wordprocessingmlstyles::fontselt_hint_type(instance):
-    assert isinstance(instance.hint, stringtype)
+def test_wordprocessingmlstyles_fontselt_instantiation(instance):
+    assert isinstance(instance, WordprocessingMLStyles_FontsElt)
 
 
-@given(instance=WordprocessingMLStyles::FontsElt_strategy)
-def test_wordprocessingmlstyles::fontselt_hint_setter(instance):
+
+@given(instance=WordprocessingMLStyles_FontsElt_strategy)
+def test_wordprocessingmlstyles_fontselt_hint_setter(instance):
     original = instance.hint
     instance.hint = original
     assert instance.hint == original
@@ -3607,35 +3571,35 @@ def test_wordprocessingmlstyles::fontselt_hint_setter(instance):
 def test_fontelt_instantiation(instance):
     assert isinstance(instance, FontElt)
 
-@given(instance=WordprocessingMLStyles::FontsListElt_strategy)
+@given(instance=WordprocessingMLStyles_FontsListElt_strategy)
 @settings(max_examples=50)
-def test_wordprocessingmlstyles::fontslistelt_instantiation(instance):
-    assert isinstance(instance, WordprocessingMLStyles::FontsListElt)
+def test_wordprocessingmlstyles_fontslistelt_instantiation(instance):
+    assert isinstance(instance, WordprocessingMLStyles_FontsListElt)
 
-@given(instance=WordprocessingMLStyles::TableCellPrElt_strategy)
+@given(instance=WordprocessingMLStyles_TableCellPrElt_strategy)
 @settings(max_examples=50)
-def test_wordprocessingmlstyles::tablecellprelt_instantiation(instance):
-    assert isinstance(instance, WordprocessingMLStyles::TableCellPrElt)
+def test_wordprocessingmlstyles_tablecellprelt_instantiation(instance):
+    assert isinstance(instance, WordprocessingMLStyles_TableCellPrElt)
 
 @given(instance=TableCellPrElt_strategy)
 @settings(max_examples=50)
 def test_tablecellprelt_instantiation(instance):
     assert isinstance(instance, TableCellPrElt)
 
-@given(instance=WordprocessingMLStyles::TableCellElt_strategy)
+@given(instance=WordprocessingMLStyles_TableCellElt_strategy)
 @settings(max_examples=50)
-def test_wordprocessingmlstyles::tablecellelt_instantiation(instance):
-    assert isinstance(instance, WordprocessingMLStyles::TableCellElt)
+def test_wordprocessingmlstyles_tablecellelt_instantiation(instance):
+    assert isinstance(instance, WordprocessingMLStyles_TableCellElt)
 
-@given(instance=WordprocessingMLStyles::RowContentElt_strategy)
+@given(instance=WordprocessingMLStyles_RowContentElt_strategy)
 @settings(max_examples=50)
-def test_wordprocessingmlstyles::rowcontentelt_instantiation(instance):
-    assert isinstance(instance, WordprocessingMLStyles::RowContentElt)
+def test_wordprocessingmlstyles_rowcontentelt_instantiation(instance):
+    assert isinstance(instance, WordprocessingMLStyles_RowContentElt)
 
-@given(instance=WordprocessingMLStyles::TableRowPrElt_strategy)
+@given(instance=WordprocessingMLStyles_TableRowPrElt_strategy)
 @settings(max_examples=50)
-def test_wordprocessingmlstyles::tablerowprelt_instantiation(instance):
-    assert isinstance(instance, WordprocessingMLStyles::TableRowPrElt)
+def test_wordprocessingmlstyles_tablerowprelt_instantiation(instance):
+    assert isinstance(instance, WordprocessingMLStyles_TableRowPrElt)
 
 @given(instance=RowContentElt_strategy)
 @settings(max_examples=50)
@@ -3652,10 +3616,10 @@ def test_tablerowprelt_instantiation(instance):
 def test_tableprexelt_instantiation(instance):
     assert isinstance(instance, TablePrExElt)
 
-@given(instance=WordprocessingMLStyles::RowElt_strategy)
+@given(instance=WordprocessingMLStyles_RowElt_strategy)
 @settings(max_examples=50)
-def test_wordprocessingmlstyles::rowelt_instantiation(instance):
-    assert isinstance(instance, WordprocessingMLStyles::RowElt)
+def test_wordprocessingmlstyles_rowelt_instantiation(instance):
+    assert isinstance(instance, WordprocessingMLStyles_RowElt)
 
 @given(instance=RunLevelElt_strategy)
 @settings(max_examples=50)
@@ -3667,25 +3631,25 @@ def test_runlevelelt_instantiation(instance):
 def test_rowelt_instantiation(instance):
     assert isinstance(instance, RowElt)
 
-@given(instance=WordprocessingMLStyles::TableContentElt_strategy)
+@given(instance=WordprocessingMLStyles_TableContentElt_strategy)
 @settings(max_examples=50)
-def test_wordprocessingmlstyles::tablecontentelt_instantiation(instance):
-    assert isinstance(instance, WordprocessingMLStyles::TableContentElt)
+def test_wordprocessingmlstyles_tablecontentelt_instantiation(instance):
+    assert isinstance(instance, WordprocessingMLStyles_TableContentElt)
 
-@given(instance=WordprocessingMLStyles::TablePrExElt_strategy)
+@given(instance=WordprocessingMLStyles_TablePrExElt_strategy)
 @settings(max_examples=50)
-def test_wordprocessingmlstyles::tableprexelt_instantiation(instance):
-    assert isinstance(instance, WordprocessingMLStyles::TablePrExElt)
+def test_wordprocessingmlstyles_tableprexelt_instantiation(instance):
+    assert isinstance(instance, WordprocessingMLStyles_TablePrExElt)
 
 @given(instance=TableElt_strategy)
 @settings(max_examples=50)
 def test_tableelt_instantiation(instance):
     assert isinstance(instance, TableElt)
 
-@given(instance=WordprocessingMLStyles::TablePrElt_strategy)
+@given(instance=WordprocessingMLStyles_TablePrElt_strategy)
 @settings(max_examples=50)
-def test_wordprocessingmlstyles::tableprelt_instantiation(instance):
-    assert isinstance(instance, WordprocessingMLStyles::TablePrElt)
+def test_wordprocessingmlstyles_tableprelt_instantiation(instance):
+    assert isinstance(instance, WordprocessingMLStyles_TablePrElt)
 
 @given(instance=TableContentElt_strategy)
 @settings(max_examples=50)
@@ -3702,47 +3666,41 @@ def test_tablegridelt_instantiation(instance):
 def test_tableprelt_instantiation(instance):
     assert isinstance(instance, TablePrElt)
 
-@given(instance=WordprocessingMLStyles::FldCharElt_strategy)
+@given(instance=WordprocessingMLStyles_FldCharElt_strategy)
 @settings(max_examples=50)
-def test_wordprocessingmlstyles::fldcharelt_instantiation(instance):
-    assert isinstance(instance, WordprocessingMLStyles::FldCharElt)
-
-@given(instance=WordprocessingMLStyles::FldCharElt_strategy)
-def test_wordprocessingmlstyles::fldcharelt_fldCharType_type(instance):
-    assert isinstance(instance.fldCharType, stringtype)
+def test_wordprocessingmlstyles_fldcharelt_instantiation(instance):
+    assert isinstance(instance, WordprocessingMLStyles_FldCharElt)
 
 
-@given(instance=WordprocessingMLStyles::FldCharElt_strategy)
-def test_wordprocessingmlstyles::fldcharelt_fldCharType_setter(instance):
-    original = instance.fldCharType
-    instance.fldCharType = original
-    assert instance.fldCharType == original
 
-@given(instance=WordprocessingMLStyles::FldCharElt_strategy)
-def test_wordprocessingmlstyles::fldcharelt_fldLock_type(instance):
-    assert isinstance(instance.fldLock, stringtype)
-
-
-@given(instance=WordprocessingMLStyles::FldCharElt_strategy)
-def test_wordprocessingmlstyles::fldcharelt_fldLock_setter(instance):
+@given(instance=WordprocessingMLStyles_FldCharElt_strategy)
+def test_wordprocessingmlstyles_fldcharelt_fldLock_setter(instance):
     original = instance.fldLock
     instance.fldLock = original
     assert instance.fldLock == original
 
-@given(instance=WordprocessingMLStyles::TableGridElt_strategy)
+
+
+@given(instance=WordprocessingMLStyles_FldCharElt_strategy)
+def test_wordprocessingmlstyles_fldcharelt_fldCharType_setter(instance):
+    original = instance.fldCharType
+    instance.fldCharType = original
+    assert instance.fldCharType == original
+
+@given(instance=WordprocessingMLStyles_TableGridElt_strategy)
 @settings(max_examples=50)
-def test_wordprocessingmlstyles::tablegridelt_instantiation(instance):
-    assert isinstance(instance, WordprocessingMLStyles::TableGridElt)
+def test_wordprocessingmlstyles_tablegridelt_instantiation(instance):
+    assert isinstance(instance, WordprocessingMLStyles_TableGridElt)
 
 @given(instance=TabElt_strategy)
 @settings(max_examples=50)
 def test_tabelt_instantiation(instance):
     assert isinstance(instance, TabElt)
 
-@given(instance=WordprocessingMLStyles::SymElt_strategy)
+@given(instance=WordprocessingMLStyles_SymElt_strategy)
 @settings(max_examples=50)
-def test_wordprocessingmlstyles::symelt_instantiation(instance):
-    assert isinstance(instance, WordprocessingMLStyles::SymElt)
+def test_wordprocessingmlstyles_symelt_instantiation(instance):
+    assert isinstance(instance, WordprocessingMLStyles_SymElt)
 
 @given(instance=SymElt_strategy)
 @settings(max_examples=50)
@@ -3754,29 +3712,23 @@ def test_symelt_instantiation(instance):
 def test_picturetype_instantiation(instance):
     assert isinstance(instance, PictureType)
 
-@given(instance=WordprocessingMLStyles::NoteElt_strategy)
+@given(instance=WordprocessingMLStyles_NoteElt_strategy)
 @settings(max_examples=50)
-def test_wordprocessingmlstyles::noteelt_instantiation(instance):
-    assert isinstance(instance, WordprocessingMLStyles::NoteElt)
-
-@given(instance=WordprocessingMLStyles::NoteElt_strategy)
-def test_wordprocessingmlstyles::noteelt_type_type(instance):
-    assert isinstance(instance.type, stringtype)
+def test_wordprocessingmlstyles_noteelt_instantiation(instance):
+    assert isinstance(instance, WordprocessingMLStyles_NoteElt)
 
 
-@given(instance=WordprocessingMLStyles::NoteElt_strategy)
-def test_wordprocessingmlstyles::noteelt_type_setter(instance):
+
+@given(instance=WordprocessingMLStyles_NoteElt_strategy)
+def test_wordprocessingmlstyles_noteelt_type_setter(instance):
     original = instance.type
     instance.type = original
     assert instance.type == original
 
-@given(instance=WordprocessingMLStyles::NoteElt_strategy)
-def test_wordprocessingmlstyles::noteelt_suppressRef_type(instance):
-    assert isinstance(instance.suppressRef, stringtype)
 
 
-@given(instance=WordprocessingMLStyles::NoteElt_strategy)
-def test_wordprocessingmlstyles::noteelt_suppressRef_setter(instance):
+@given(instance=WordprocessingMLStyles_NoteElt_strategy)
+def test_wordprocessingmlstyles_noteelt_suppressRef_setter(instance):
     original = instance.suppressRef
     instance.suppressRef = original
     assert instance.suppressRef == original
@@ -3786,37 +3738,31 @@ def test_wordprocessingmlstyles::noteelt_suppressRef_setter(instance):
 def test_fldcharelt_instantiation(instance):
     assert isinstance(instance, FldCharElt)
 
-@given(instance=WordprocessingMLStyles::RunContentElt_strategy)
+@given(instance=WordprocessingMLStyles_RunContentElt_strategy)
 @settings(max_examples=50)
-def test_wordprocessingmlstyles::runcontentelt_instantiation(instance):
-    assert isinstance(instance, WordprocessingMLStyles::RunContentElt)
+def test_wordprocessingmlstyles_runcontentelt_instantiation(instance):
+    assert isinstance(instance, WordprocessingMLStyles_RunContentElt)
 
-@given(instance=WordprocessingMLStyles::LangElt_strategy)
+@given(instance=WordprocessingMLStyles_LangElt_strategy)
 @settings(max_examples=50)
-def test_wordprocessingmlstyles::langelt_instantiation(instance):
-    assert isinstance(instance, WordprocessingMLStyles::LangElt)
-
-@given(instance=WordprocessingMLStyles::LangElt_strategy)
-def test_wordprocessingmlstyles::langelt_bidi_type(instance):
-    assert isinstance(instance.bidi, stringtype)
+def test_wordprocessingmlstyles_langelt_instantiation(instance):
+    assert isinstance(instance, WordprocessingMLStyles_LangElt)
 
 
-@given(instance=WordprocessingMLStyles::LangElt_strategy)
-def test_wordprocessingmlstyles::langelt_bidi_setter(instance):
-    original = instance.bidi
-    instance.bidi = original
-    assert instance.bidi == original
 
-@given(instance=WordprocessingMLStyles::LangElt_strategy)
-def test_wordprocessingmlstyles::langelt_val_type(instance):
-    assert isinstance(instance.val, stringtype)
-
-
-@given(instance=WordprocessingMLStyles::LangElt_strategy)
-def test_wordprocessingmlstyles::langelt_val_setter(instance):
+@given(instance=WordprocessingMLStyles_LangElt_strategy)
+def test_wordprocessingmlstyles_langelt_val_setter(instance):
     original = instance.val
     instance.val = original
     assert instance.val == original
+
+
+
+@given(instance=WordprocessingMLStyles_LangElt_strategy)
+def test_wordprocessingmlstyles_langelt_bidi_setter(instance):
+    original = instance.bidi
+    instance.bidi = original
+    assert instance.bidi == original
 
 @given(instance=LangElt_strategy)
 @settings(max_examples=50)
@@ -3838,227 +3784,167 @@ def test_fontselt_instantiation(instance):
 def test_runelt_instantiation(instance):
     assert isinstance(instance, RunElt)
 
-@given(instance=WordprocessingMLStyles::RunPrElt_strategy)
+@given(instance=WordprocessingMLStyles_RunPrElt_strategy)
 @settings(max_examples=50)
-def test_wordprocessingmlstyles::runprelt_instantiation(instance):
-    assert isinstance(instance, WordprocessingMLStyles::RunPrElt)
-
-@given(instance=WordprocessingMLStyles::RunPrElt_strategy)
-def test_wordprocessingmlstyles::runprelt_verticalAlign_type(instance):
-    assert isinstance(instance.verticalAlign, stringtype)
+def test_wordprocessingmlstyles_runprelt_instantiation(instance):
+    assert isinstance(instance, WordprocessingMLStyles_RunPrElt)
 
 
-@given(instance=WordprocessingMLStyles::RunPrElt_strategy)
-def test_wordprocessingmlstyles::runprelt_verticalAlign_setter(instance):
-    original = instance.verticalAlign
-    instance.verticalAlign = original
-    assert instance.verticalAlign == original
 
-@given(instance=WordprocessingMLStyles::RunPrElt_strategy)
-def test_wordprocessingmlstyles::runprelt_color_type(instance):
-    assert isinstance(instance.color, stringtype)
-
-
-@given(instance=WordprocessingMLStyles::RunPrElt_strategy)
-def test_wordprocessingmlstyles::runprelt_color_setter(instance):
-    original = instance.color
-    instance.color = original
-    assert instance.color == original
-
-@given(instance=WordprocessingMLStyles::RunPrElt_strategy)
-def test_wordprocessingmlstyles::runprelt_smallCapitals_type(instance):
-    assert isinstance(instance.smallCapitals, stringtype)
-
-
-@given(instance=WordprocessingMLStyles::RunPrElt_strategy)
-def test_wordprocessingmlstyles::runprelt_smallCapitals_setter(instance):
-    original = instance.smallCapitals
-    instance.smallCapitals = original
-    assert instance.smallCapitals == original
-
-@given(instance=WordprocessingMLStyles::RunPrElt_strategy)
-def test_wordprocessingmlstyles::runprelt_strike_type(instance):
-    assert isinstance(instance.strike, stringtype)
-
-
-@given(instance=WordprocessingMLStyles::RunPrElt_strategy)
-def test_wordprocessingmlstyles::runprelt_strike_setter(instance):
-    original = instance.strike
-    instance.strike = original
-    assert instance.strike == original
-
-@given(instance=WordprocessingMLStyles::RunPrElt_strategy)
-def test_wordprocessingmlstyles::runprelt_vanish_type(instance):
-    assert isinstance(instance.vanish, stringtype)
-
-
-@given(instance=WordprocessingMLStyles::RunPrElt_strategy)
-def test_wordprocessingmlstyles::runprelt_vanish_setter(instance):
-    original = instance.vanish
-    instance.vanish = original
-    assert instance.vanish == original
-
-@given(instance=WordprocessingMLStyles::RunPrElt_strategy)
-def test_wordprocessingmlstyles::runprelt_bold_type(instance):
-    assert isinstance(instance.bold, stringtype)
-
-
-@given(instance=WordprocessingMLStyles::RunPrElt_strategy)
-def test_wordprocessingmlstyles::runprelt_bold_setter(instance):
-    original = instance.bold
-    instance.bold = original
-    assert instance.bold == original
-
-@given(instance=WordprocessingMLStyles::RunPrElt_strategy)
-def test_wordprocessingmlstyles::runprelt_doubleStrike_type(instance):
-    assert isinstance(instance.doubleStrike, stringtype)
-
-
-@given(instance=WordprocessingMLStyles::RunPrElt_strategy)
-def test_wordprocessingmlstyles::runprelt_doubleStrike_setter(instance):
-    original = instance.doubleStrike
-    instance.doubleStrike = original
-    assert instance.doubleStrike == original
-
-@given(instance=WordprocessingMLStyles::RunPrElt_strategy)
-def test_wordprocessingmlstyles::runprelt_imprint_type(instance):
-    assert isinstance(instance.imprint, stringtype)
-
-
-@given(instance=WordprocessingMLStyles::RunPrElt_strategy)
-def test_wordprocessingmlstyles::runprelt_imprint_setter(instance):
+@given(instance=WordprocessingMLStyles_RunPrElt_strategy)
+def test_wordprocessingmlstyles_runprelt_imprint_setter(instance):
     original = instance.imprint
     instance.imprint = original
     assert instance.imprint == original
 
-@given(instance=WordprocessingMLStyles::RunPrElt_strategy)
-def test_wordprocessingmlstyles::runprelt_italic_type(instance):
-    assert isinstance(instance.italic, stringtype)
 
 
-@given(instance=WordprocessingMLStyles::RunPrElt_strategy)
-def test_wordprocessingmlstyles::runprelt_italic_setter(instance):
-    original = instance.italic
-    instance.italic = original
-    assert instance.italic == original
-
-@given(instance=WordprocessingMLStyles::RunPrElt_strategy)
-def test_wordprocessingmlstyles::runprelt_highlight_type(instance):
-    assert isinstance(instance.highlight, stringtype)
+@given(instance=WordprocessingMLStyles_RunPrElt_strategy)
+def test_wordprocessingmlstyles_runprelt_bold_setter(instance):
+    original = instance.bold
+    instance.bold = original
+    assert instance.bold == original
 
 
-@given(instance=WordprocessingMLStyles::RunPrElt_strategy)
-def test_wordprocessingmlstyles::runprelt_highlight_setter(instance):
-    original = instance.highlight
-    instance.highlight = original
-    assert instance.highlight == original
 
-@given(instance=WordprocessingMLStyles::RunPrElt_strategy)
-def test_wordprocessingmlstyles::runprelt_cs_type(instance):
-    assert isinstance(instance.cs, stringtype)
-
-
-@given(instance=WordprocessingMLStyles::RunPrElt_strategy)
-def test_wordprocessingmlstyles::runprelt_cs_setter(instance):
-    original = instance.cs
-    instance.cs = original
-    assert instance.cs == original
-
-@given(instance=WordprocessingMLStyles::RunPrElt_strategy)
-def test_wordprocessingmlstyles::runprelt_rtl_type(instance):
-    assert isinstance(instance.rtl, stringtype)
-
-
-@given(instance=WordprocessingMLStyles::RunPrElt_strategy)
-def test_wordprocessingmlstyles::runprelt_rtl_setter(instance):
-    original = instance.rtl
-    instance.rtl = original
-    assert instance.rtl == original
-
-@given(instance=WordprocessingMLStyles::RunPrElt_strategy)
-def test_wordprocessingmlstyles::runprelt_bold_cs_type(instance):
-    assert isinstance(instance.bold_cs, stringtype)
-
-
-@given(instance=WordprocessingMLStyles::RunPrElt_strategy)
-def test_wordprocessingmlstyles::runprelt_bold_cs_setter(instance):
-    original = instance.bold_cs
-    instance.bold_cs = original
-    assert instance.bold_cs == original
-
-@given(instance=WordprocessingMLStyles::RunPrElt_strategy)
-def test_wordprocessingmlstyles::runprelt_capitals_type(instance):
-    assert isinstance(instance.capitals, stringtype)
-
-
-@given(instance=WordprocessingMLStyles::RunPrElt_strategy)
-def test_wordprocessingmlstyles::runprelt_capitals_setter(instance):
+@given(instance=WordprocessingMLStyles_RunPrElt_strategy)
+def test_wordprocessingmlstyles_runprelt_capitals_setter(instance):
     original = instance.capitals
     instance.capitals = original
     assert instance.capitals == original
 
-@given(instance=WordprocessingMLStyles::RunPrElt_strategy)
-def test_wordprocessingmlstyles::runprelt_specVanish_type(instance):
-    assert isinstance(instance.specVanish, stringtype)
 
 
-@given(instance=WordprocessingMLStyles::RunPrElt_strategy)
-def test_wordprocessingmlstyles::runprelt_specVanish_setter(instance):
-    original = instance.specVanish
-    instance.specVanish = original
-    assert instance.specVanish == original
-
-@given(instance=WordprocessingMLStyles::RunPrElt_strategy)
-def test_wordprocessingmlstyles::runprelt_outline_type(instance):
-    assert isinstance(instance.outline, stringtype)
-
-
-@given(instance=WordprocessingMLStyles::RunPrElt_strategy)
-def test_wordprocessingmlstyles::runprelt_outline_setter(instance):
-    original = instance.outline
-    instance.outline = original
-    assert instance.outline == original
-
-@given(instance=WordprocessingMLStyles::RunPrElt_strategy)
-def test_wordprocessingmlstyles::runprelt_emboss_type(instance):
-    assert isinstance(instance.emboss, stringtype)
-
-
-@given(instance=WordprocessingMLStyles::RunPrElt_strategy)
-def test_wordprocessingmlstyles::runprelt_emboss_setter(instance):
-    original = instance.emboss
-    instance.emboss = original
-    assert instance.emboss == original
-
-@given(instance=WordprocessingMLStyles::RunPrElt_strategy)
-def test_wordprocessingmlstyles::runprelt_italic_cs_type(instance):
-    assert isinstance(instance.italic_cs, stringtype)
-
-
-@given(instance=WordprocessingMLStyles::RunPrElt_strategy)
-def test_wordprocessingmlstyles::runprelt_italic_cs_setter(instance):
+@given(instance=WordprocessingMLStyles_RunPrElt_strategy)
+def test_wordprocessingmlstyles_runprelt_italic_cs_setter(instance):
     original = instance.italic_cs
     instance.italic_cs = original
     assert instance.italic_cs == original
 
-@given(instance=WordprocessingMLStyles::RunPrElt_strategy)
-def test_wordprocessingmlstyles::runprelt_noProof_type(instance):
-    assert isinstance(instance.noProof, stringtype)
 
 
-@given(instance=WordprocessingMLStyles::RunPrElt_strategy)
-def test_wordprocessingmlstyles::runprelt_noProof_setter(instance):
+@given(instance=WordprocessingMLStyles_RunPrElt_strategy)
+def test_wordprocessingmlstyles_runprelt_bold_cs_setter(instance):
+    original = instance.bold_cs
+    instance.bold_cs = original
+    assert instance.bold_cs == original
+
+
+
+@given(instance=WordprocessingMLStyles_RunPrElt_strategy)
+def test_wordprocessingmlstyles_runprelt_italic_setter(instance):
+    original = instance.italic
+    instance.italic = original
+    assert instance.italic == original
+
+
+
+@given(instance=WordprocessingMLStyles_RunPrElt_strategy)
+def test_wordprocessingmlstyles_runprelt_cs_setter(instance):
+    original = instance.cs
+    instance.cs = original
+    assert instance.cs == original
+
+
+
+@given(instance=WordprocessingMLStyles_RunPrElt_strategy)
+def test_wordprocessingmlstyles_runprelt_emboss_setter(instance):
+    original = instance.emboss
+    instance.emboss = original
+    assert instance.emboss == original
+
+
+
+@given(instance=WordprocessingMLStyles_RunPrElt_strategy)
+def test_wordprocessingmlstyles_runprelt_verticalAlign_setter(instance):
+    original = instance.verticalAlign
+    instance.verticalAlign = original
+    assert instance.verticalAlign == original
+
+
+
+@given(instance=WordprocessingMLStyles_RunPrElt_strategy)
+def test_wordprocessingmlstyles_runprelt_outline_setter(instance):
+    original = instance.outline
+    instance.outline = original
+    assert instance.outline == original
+
+
+
+@given(instance=WordprocessingMLStyles_RunPrElt_strategy)
+def test_wordprocessingmlstyles_runprelt_color_setter(instance):
+    original = instance.color
+    instance.color = original
+    assert instance.color == original
+
+
+
+@given(instance=WordprocessingMLStyles_RunPrElt_strategy)
+def test_wordprocessingmlstyles_runprelt_smallCapitals_setter(instance):
+    original = instance.smallCapitals
+    instance.smallCapitals = original
+    assert instance.smallCapitals == original
+
+
+
+@given(instance=WordprocessingMLStyles_RunPrElt_strategy)
+def test_wordprocessingmlstyles_runprelt_doubleStrike_setter(instance):
+    original = instance.doubleStrike
+    instance.doubleStrike = original
+    assert instance.doubleStrike == original
+
+
+
+@given(instance=WordprocessingMLStyles_RunPrElt_strategy)
+def test_wordprocessingmlstyles_runprelt_specVanish_setter(instance):
+    original = instance.specVanish
+    instance.specVanish = original
+    assert instance.specVanish == original
+
+
+
+@given(instance=WordprocessingMLStyles_RunPrElt_strategy)
+def test_wordprocessingmlstyles_runprelt_vanish_setter(instance):
+    original = instance.vanish
+    instance.vanish = original
+    assert instance.vanish == original
+
+
+
+@given(instance=WordprocessingMLStyles_RunPrElt_strategy)
+def test_wordprocessingmlstyles_runprelt_noProof_setter(instance):
     original = instance.noProof
     instance.noProof = original
     assert instance.noProof == original
 
-@given(instance=WordprocessingMLStyles::RunPrElt_strategy)
-def test_wordprocessingmlstyles::runprelt_shadow_type(instance):
-    assert isinstance(instance.shadow, stringtype)
 
 
-@given(instance=WordprocessingMLStyles::RunPrElt_strategy)
-def test_wordprocessingmlstyles::runprelt_shadow_setter(instance):
+@given(instance=WordprocessingMLStyles_RunPrElt_strategy)
+def test_wordprocessingmlstyles_runprelt_strike_setter(instance):
+    original = instance.strike
+    instance.strike = original
+    assert instance.strike == original
+
+
+
+@given(instance=WordprocessingMLStyles_RunPrElt_strategy)
+def test_wordprocessingmlstyles_runprelt_rtl_setter(instance):
+    original = instance.rtl
+    instance.rtl = original
+    assert instance.rtl == original
+
+
+
+@given(instance=WordprocessingMLStyles_RunPrElt_strategy)
+def test_wordprocessingmlstyles_runprelt_highlight_setter(instance):
+    original = instance.highlight
+    instance.highlight = original
+    assert instance.highlight == original
+
+
+
+@given(instance=WordprocessingMLStyles_RunPrElt_strategy)
+def test_wordprocessingmlstyles_runprelt_shadow_setter(instance):
     original = instance.shadow
     instance.shadow = original
     assert instance.shadow == original
@@ -4068,96 +3954,93 @@ def test_wordprocessingmlstyles::runprelt_shadow_setter(instance):
 def test_runcontentelt_instantiation(instance):
     assert isinstance(instance, RunContentElt)
 
-@given(instance=WordprocessingMLStyles::AnnotationRef_strategy)
+@given(instance=WordprocessingMLStyles_PgNum_strategy)
 @settings(max_examples=50)
-def test_wordprocessingmlstyles::annotationref_instantiation(instance):
-    assert isinstance(instance, WordprocessingMLStyles::AnnotationRef)
+def test_wordprocessingmlstyles_pgnum_instantiation(instance):
+    assert isinstance(instance, WordprocessingMLStyles_PgNum)
 
-@given(instance=WordprocessingMLStyles::BreakElt_strategy)
+@given(instance=WordprocessingMLStyles_Symbol_strategy)
 @settings(max_examples=50)
-def test_wordprocessingmlstyles::breakelt_instantiation(instance):
-    assert isinstance(instance, WordprocessingMLStyles::BreakElt)
+def test_wordprocessingmlstyles_symbol_instantiation(instance):
+    assert isinstance(instance, WordprocessingMLStyles_Symbol)
 
-@given(instance=WordprocessingMLStyles::BreakElt_strategy)
-def test_wordprocessingmlstyles::breakelt_type_type(instance):
-    assert isinstance(instance.type, stringtype)
+@given(instance=WordprocessingMLStyles_Separator_strategy)
+@settings(max_examples=50)
+def test_wordprocessingmlstyles_separator_instantiation(instance):
+    assert isinstance(instance, WordprocessingMLStyles_Separator)
+
+@given(instance=WordprocessingMLStyles_ContinuationSeparator_strategy)
+@settings(max_examples=50)
+def test_wordprocessingmlstyles_continuationseparator_instantiation(instance):
+    assert isinstance(instance, WordprocessingMLStyles_ContinuationSeparator)
+
+@given(instance=WordprocessingMLStyles_FootnoteRef_strategy)
+@settings(max_examples=50)
+def test_wordprocessingmlstyles_footnoteref_instantiation(instance):
+    assert isinstance(instance, WordprocessingMLStyles_FootnoteRef)
+
+@given(instance=WordprocessingMLStyles_EndnoteRef_strategy)
+@settings(max_examples=50)
+def test_wordprocessingmlstyles_endnoteref_instantiation(instance):
+    assert isinstance(instance, WordprocessingMLStyles_EndnoteRef)
+
+@given(instance=WordprocessingMLStyles_SoftHyphen_strategy)
+@settings(max_examples=50)
+def test_wordprocessingmlstyles_softhyphen_instantiation(instance):
+    assert isinstance(instance, WordprocessingMLStyles_SoftHyphen)
+
+@given(instance=WordprocessingMLStyles_FldChar_strategy)
+@settings(max_examples=50)
+def test_wordprocessingmlstyles_fldchar_instantiation(instance):
+    assert isinstance(instance, WordprocessingMLStyles_FldChar)
+
+@given(instance=WordprocessingMLStyles_Picture_strategy)
+@settings(max_examples=50)
+def test_wordprocessingmlstyles_picture_instantiation(instance):
+    assert isinstance(instance, WordprocessingMLStyles_Picture)
+
+@given(instance=WordprocessingMLStyles_AnnotationRef_strategy)
+@settings(max_examples=50)
+def test_wordprocessingmlstyles_annotationref_instantiation(instance):
+    assert isinstance(instance, WordprocessingMLStyles_AnnotationRef)
+
+@given(instance=WordprocessingMLStyles_Tab_strategy)
+@settings(max_examples=50)
+def test_wordprocessingmlstyles_tab_instantiation(instance):
+    assert isinstance(instance, WordprocessingMLStyles_Tab)
+
+@given(instance=WordprocessingMLStyles_Cr_strategy)
+@settings(max_examples=50)
+def test_wordprocessingmlstyles_cr_instantiation(instance):
+    assert isinstance(instance, WordprocessingMLStyles_Cr)
+
+@given(instance=WordprocessingMLStyles_NoBreakHyphen_strategy)
+@settings(max_examples=50)
+def test_wordprocessingmlstyles_nobreakhyphen_instantiation(instance):
+    assert isinstance(instance, WordprocessingMLStyles_NoBreakHyphen)
+
+@given(instance=WordprocessingMLStyles_BreakElt_strategy)
+@settings(max_examples=50)
+def test_wordprocessingmlstyles_breakelt_instantiation(instance):
+    assert isinstance(instance, WordprocessingMLStyles_BreakElt)
 
 
-@given(instance=WordprocessingMLStyles::BreakElt_strategy)
-def test_wordprocessingmlstyles::breakelt_type_setter(instance):
+
+@given(instance=WordprocessingMLStyles_BreakElt_strategy)
+def test_wordprocessingmlstyles_breakelt_type_setter(instance):
     original = instance.type
     instance.type = original
     assert instance.type == original
-
-@given(instance=WordprocessingMLStyles::FldChar_strategy)
-@settings(max_examples=50)
-def test_wordprocessingmlstyles::fldchar_instantiation(instance):
-    assert isinstance(instance, WordprocessingMLStyles::FldChar)
-
-@given(instance=WordprocessingMLStyles::SoftHyphen_strategy)
-@settings(max_examples=50)
-def test_wordprocessingmlstyles::softhyphen_instantiation(instance):
-    assert isinstance(instance, WordprocessingMLStyles::SoftHyphen)
-
-@given(instance=WordprocessingMLStyles::Cr_strategy)
-@settings(max_examples=50)
-def test_wordprocessingmlstyles::cr_instantiation(instance):
-    assert isinstance(instance, WordprocessingMLStyles::Cr)
-
-@given(instance=WordprocessingMLStyles::Picture_strategy)
-@settings(max_examples=50)
-def test_wordprocessingmlstyles::picture_instantiation(instance):
-    assert isinstance(instance, WordprocessingMLStyles::Picture)
-
-@given(instance=WordprocessingMLStyles::NoBreakHyphen_strategy)
-@settings(max_examples=50)
-def test_wordprocessingmlstyles::nobreakhyphen_instantiation(instance):
-    assert isinstance(instance, WordprocessingMLStyles::NoBreakHyphen)
-
-@given(instance=WordprocessingMLStyles::PgNum_strategy)
-@settings(max_examples=50)
-def test_wordprocessingmlstyles::pgnum_instantiation(instance):
-    assert isinstance(instance, WordprocessingMLStyles::PgNum)
-
-@given(instance=WordprocessingMLStyles::Symbol_strategy)
-@settings(max_examples=50)
-def test_wordprocessingmlstyles::symbol_instantiation(instance):
-    assert isinstance(instance, WordprocessingMLStyles::Symbol)
-
-@given(instance=WordprocessingMLStyles::ContinuationSeparator_strategy)
-@settings(max_examples=50)
-def test_wordprocessingmlstyles::continuationseparator_instantiation(instance):
-    assert isinstance(instance, WordprocessingMLStyles::ContinuationSeparator)
-
-@given(instance=WordprocessingMLStyles::EndnoteRef_strategy)
-@settings(max_examples=50)
-def test_wordprocessingmlstyles::endnoteref_instantiation(instance):
-    assert isinstance(instance, WordprocessingMLStyles::EndnoteRef)
-
-@given(instance=WordprocessingMLStyles::Separator_strategy)
-@settings(max_examples=50)
-def test_wordprocessingmlstyles::separator_instantiation(instance):
-    assert isinstance(instance, WordprocessingMLStyles::Separator)
-
-@given(instance=WordprocessingMLStyles::FootnoteRef_strategy)
-@settings(max_examples=50)
-def test_wordprocessingmlstyles::footnoteref_instantiation(instance):
-    assert isinstance(instance, WordprocessingMLStyles::FootnoteRef)
-
-@given(instance=WordprocessingMLStyles::Tab_strategy)
-@settings(max_examples=50)
-def test_wordprocessingmlstyles::tab_instantiation(instance):
-    assert isinstance(instance, WordprocessingMLStyles::Tab)
 
 @given(instance=RunPrElt_strategy)
 @settings(max_examples=50)
 def test_runprelt_instantiation(instance):
     assert isinstance(instance, RunPrElt)
 
-@given(instance=WordprocessingMLStyles::ParaContentElt_strategy)
+@given(instance=WordprocessingMLStyles_ParaContentElt_strategy)
 @settings(max_examples=50)
-def test_wordprocessingmlstyles::paracontentelt_instantiation(instance):
-    assert isinstance(instance, WordprocessingMLStyles::ParaContentElt)
+def test_wordprocessingmlstyles_paracontentelt_instantiation(instance):
+    assert isinstance(instance, WordprocessingMLStyles_ParaContentElt)
 
 @given(instance=StyleElt_strategy)
 @settings(max_examples=50)
@@ -4169,95 +4052,71 @@ def test_styleelt_instantiation(instance):
 def test_paraelt_instantiation(instance):
     assert isinstance(instance, ParaElt)
 
-@given(instance=WordprocessingMLStyles::ParaPrElt_strategy)
+@given(instance=WordprocessingMLStyles_ParaPrElt_strategy)
 @settings(max_examples=50)
-def test_wordprocessingmlstyles::paraprelt_instantiation(instance):
-    assert isinstance(instance, WordprocessingMLStyles::ParaPrElt)
-
-@given(instance=WordprocessingMLStyles::ParaPrElt_strategy)
-def test_wordprocessingmlstyles::paraprelt_suppressAutoHyphens_type(instance):
-    assert isinstance(instance.suppressAutoHyphens, stringtype)
+def test_wordprocessingmlstyles_paraprelt_instantiation(instance):
+    assert isinstance(instance, WordprocessingMLStyles_ParaPrElt)
 
 
-@given(instance=WordprocessingMLStyles::ParaPrElt_strategy)
-def test_wordprocessingmlstyles::paraprelt_suppressAutoHyphens_setter(instance):
-    original = instance.suppressAutoHyphens
-    instance.suppressAutoHyphens = original
-    assert instance.suppressAutoHyphens == original
 
-@given(instance=WordprocessingMLStyles::ParaPrElt_strategy)
-def test_wordprocessingmlstyles::paraprelt_supressLineNumbers_type(instance):
-    assert isinstance(instance.supressLineNumbers, stringtype)
-
-
-@given(instance=WordprocessingMLStyles::ParaPrElt_strategy)
-def test_wordprocessingmlstyles::paraprelt_supressLineNumbers_setter(instance):
-    original = instance.supressLineNumbers
-    instance.supressLineNumbers = original
-    assert instance.supressLineNumbers == original
-
-@given(instance=WordprocessingMLStyles::ParaPrElt_strategy)
-def test_wordprocessingmlstyles::paraprelt_bidi_type(instance):
-    assert isinstance(instance.bidi, stringtype)
-
-
-@given(instance=WordprocessingMLStyles::ParaPrElt_strategy)
-def test_wordprocessingmlstyles::paraprelt_bidi_setter(instance):
-    original = instance.bidi
-    instance.bidi = original
-    assert instance.bidi == original
-
-@given(instance=WordprocessingMLStyles::ParaPrElt_strategy)
-def test_wordprocessingmlstyles::paraprelt_pageBreakBefore_type(instance):
-    assert isinstance(instance.pageBreakBefore, stringtype)
-
-
-@given(instance=WordprocessingMLStyles::ParaPrElt_strategy)
-def test_wordprocessingmlstyles::paraprelt_pageBreakBefore_setter(instance):
+@given(instance=WordprocessingMLStyles_ParaPrElt_strategy)
+def test_wordprocessingmlstyles_paraprelt_pageBreakBefore_setter(instance):
     original = instance.pageBreakBefore
     instance.pageBreakBefore = original
     assert instance.pageBreakBefore == original
 
-@given(instance=WordprocessingMLStyles::ParaPrElt_strategy)
-def test_wordprocessingmlstyles::paraprelt_keepLines_type(instance):
-    assert isinstance(instance.keepLines, stringtype)
 
 
-@given(instance=WordprocessingMLStyles::ParaPrElt_strategy)
-def test_wordprocessingmlstyles::paraprelt_keepLines_setter(instance):
+@given(instance=WordprocessingMLStyles_ParaPrElt_strategy)
+def test_wordprocessingmlstyles_paraprelt_keepLines_setter(instance):
     original = instance.keepLines
     instance.keepLines = original
     assert instance.keepLines == original
 
-@given(instance=WordprocessingMLStyles::ParaPrElt_strategy)
-def test_wordprocessingmlstyles::paraprelt_justification_type(instance):
-    assert isinstance(instance.justification, stringtype)
 
 
-@given(instance=WordprocessingMLStyles::ParaPrElt_strategy)
-def test_wordprocessingmlstyles::paraprelt_justification_setter(instance):
-    original = instance.justification
-    instance.justification = original
-    assert instance.justification == original
-
-@given(instance=WordprocessingMLStyles::ParaPrElt_strategy)
-def test_wordprocessingmlstyles::paraprelt_contextualSpacing_type(instance):
-    assert isinstance(instance.contextualSpacing, stringtype)
+@given(instance=WordprocessingMLStyles_ParaPrElt_strategy)
+def test_wordprocessingmlstyles_paraprelt_bidi_setter(instance):
+    original = instance.bidi
+    instance.bidi = original
+    assert instance.bidi == original
 
 
-@given(instance=WordprocessingMLStyles::ParaPrElt_strategy)
-def test_wordprocessingmlstyles::paraprelt_contextualSpacing_setter(instance):
+
+@given(instance=WordprocessingMLStyles_ParaPrElt_strategy)
+def test_wordprocessingmlstyles_paraprelt_suppressAutoHyphens_setter(instance):
+    original = instance.suppressAutoHyphens
+    instance.suppressAutoHyphens = original
+    assert instance.suppressAutoHyphens == original
+
+
+
+@given(instance=WordprocessingMLStyles_ParaPrElt_strategy)
+def test_wordprocessingmlstyles_paraprelt_contextualSpacing_setter(instance):
     original = instance.contextualSpacing
     instance.contextualSpacing = original
     assert instance.contextualSpacing == original
 
-@given(instance=WordprocessingMLStyles::ParaPrElt_strategy)
-def test_wordprocessingmlstyles::paraprelt_keepNext_type(instance):
-    assert isinstance(instance.keepNext, stringtype)
 
 
-@given(instance=WordprocessingMLStyles::ParaPrElt_strategy)
-def test_wordprocessingmlstyles::paraprelt_keepNext_setter(instance):
+@given(instance=WordprocessingMLStyles_ParaPrElt_strategy)
+def test_wordprocessingmlstyles_paraprelt_justification_setter(instance):
+    original = instance.justification
+    instance.justification = original
+    assert instance.justification == original
+
+
+
+@given(instance=WordprocessingMLStyles_ParaPrElt_strategy)
+def test_wordprocessingmlstyles_paraprelt_supressLineNumbers_setter(instance):
+    original = instance.supressLineNumbers
+    instance.supressLineNumbers = original
+    assert instance.supressLineNumbers == original
+
+
+
+@given(instance=WordprocessingMLStyles_ParaPrElt_strategy)
+def test_wordprocessingmlstyles_paraprelt_keepNext_setter(instance):
     original = instance.keepNext
     instance.keepNext = original
     assert instance.keepNext == original
@@ -4267,25 +4126,25 @@ def test_wordprocessingmlstyles::paraprelt_keepNext_setter(instance):
 def test_paracontentelt_instantiation(instance):
     assert isinstance(instance, ParaContentElt)
 
-@given(instance=WordprocessingMLStyles::RunElt_strategy)
+@given(instance=WordprocessingMLStyles_SimpleFieldElt_strategy)
 @settings(max_examples=50)
-def test_wordprocessingmlstyles::runelt_instantiation(instance):
-    assert isinstance(instance, WordprocessingMLStyles::RunElt)
+def test_wordprocessingmlstyles_simplefieldelt_instantiation(instance):
+    assert isinstance(instance, WordprocessingMLStyles_SimpleFieldElt)
 
-@given(instance=WordprocessingMLStyles::SimpleFieldElt_strategy)
+@given(instance=WordprocessingMLStyles_HLinkElt_strategy)
 @settings(max_examples=50)
-def test_wordprocessingmlstyles::simplefieldelt_instantiation(instance):
-    assert isinstance(instance, WordprocessingMLStyles::SimpleFieldElt)
+def test_wordprocessingmlstyles_hlinkelt_instantiation(instance):
+    assert isinstance(instance, WordprocessingMLStyles_HLinkElt)
 
-@given(instance=WordprocessingMLStyles::SubDocElt_strategy)
+@given(instance=WordprocessingMLStyles_SubDocElt_strategy)
 @settings(max_examples=50)
-def test_wordprocessingmlstyles::subdocelt_instantiation(instance):
-    assert isinstance(instance, WordprocessingMLStyles::SubDocElt)
+def test_wordprocessingmlstyles_subdocelt_instantiation(instance):
+    assert isinstance(instance, WordprocessingMLStyles_SubDocElt)
 
-@given(instance=WordprocessingMLStyles::HLinkElt_strategy)
+@given(instance=WordprocessingMLStyles_RunElt_strategy)
 @settings(max_examples=50)
-def test_wordprocessingmlstyles::hlinkelt_instantiation(instance):
-    assert isinstance(instance, WordprocessingMLStyles::HLinkElt)
+def test_wordprocessingmlstyles_runelt_instantiation(instance):
+    assert isinstance(instance, WordprocessingMLStyles_RunElt)
 
 @given(instance=ParaPrElt_strategy)
 @settings(max_examples=50)
@@ -4297,20 +4156,20 @@ def test_paraprelt_instantiation(instance):
 def test_blocklevelchunkelt_instantiation(instance):
     assert isinstance(instance, BlockLevelChunkElt)
 
-@given(instance=WordprocessingMLStyles::RunLevelElt_strategy)
+@given(instance=WordprocessingMLStyles_RunLevelElt_strategy)
 @settings(max_examples=50)
-def test_wordprocessingmlstyles::runlevelelt_instantiation(instance):
-    assert isinstance(instance, WordprocessingMLStyles::RunLevelElt)
+def test_wordprocessingmlstyles_runlevelelt_instantiation(instance):
+    assert isinstance(instance, WordprocessingMLStyles_RunLevelElt)
 
-@given(instance=WordprocessingMLStyles::TableElt_strategy)
+@given(instance=WordprocessingMLStyles_TableElt_strategy)
 @settings(max_examples=50)
-def test_wordprocessingmlstyles::tableelt_instantiation(instance):
-    assert isinstance(instance, WordprocessingMLStyles::TableElt)
+def test_wordprocessingmlstyles_tableelt_instantiation(instance):
+    assert isinstance(instance, WordprocessingMLStyles_TableElt)
 
-@given(instance=WordprocessingMLStyles::ParaElt_strategy)
+@given(instance=WordprocessingMLStyles_ParaElt_strategy)
 @settings(max_examples=50)
-def test_wordprocessingmlstyles::paraelt_instantiation(instance):
-    assert isinstance(instance, WordprocessingMLStyles::ParaElt)
+def test_wordprocessingmlstyles_paraelt_instantiation(instance):
+    assert isinstance(instance, WordprocessingMLStyles_ParaElt)
 
 @given(instance=DocPrElt_strategy)
 @settings(max_examples=50)
@@ -4332,20 +4191,20 @@ def test_tablecellelt_instantiation(instance):
 def test_noteelt_instantiation(instance):
     assert isinstance(instance, NoteElt)
 
-@given(instance=WordprocessingMLStyles::Endnote_strategy)
+@given(instance=WordprocessingMLStyles_Endnote_strategy)
 @settings(max_examples=50)
-def test_wordprocessingmlstyles::endnote_instantiation(instance):
-    assert isinstance(instance, WordprocessingMLStyles::Endnote)
+def test_wordprocessingmlstyles_endnote_instantiation(instance):
+    assert isinstance(instance, WordprocessingMLStyles_Endnote)
 
-@given(instance=WordprocessingMLStyles::Footnote_strategy)
+@given(instance=WordprocessingMLStyles_Footnote_strategy)
 @settings(max_examples=50)
-def test_wordprocessingmlstyles::footnote_instantiation(instance):
-    assert isinstance(instance, WordprocessingMLStyles::Footnote)
+def test_wordprocessingmlstyles_footnote_instantiation(instance):
+    assert isinstance(instance, WordprocessingMLStyles_Footnote)
 
-@given(instance=WordprocessingMLStyles::BlockLevelElt_strategy)
+@given(instance=WordprocessingMLStyles_BlockLevelElt_strategy)
 @settings(max_examples=50)
-def test_wordprocessingmlstyles::blocklevelelt_instantiation(instance):
-    assert isinstance(instance, WordprocessingMLStyles::BlockLevelElt)
+def test_wordprocessingmlstyles_blocklevelelt_instantiation(instance):
+    assert isinstance(instance, WordprocessingMLStyles_BlockLevelElt)
 
 @given(instance=SectPrElt_strategy)
 @settings(max_examples=50)
@@ -4357,35 +4216,35 @@ def test_sectprelt_instantiation(instance):
 def test_blocklevelelt_instantiation(instance):
     assert isinstance(instance, BlockLevelElt)
 
-@given(instance=WordprocessingMLStyles::CfChunk_strategy)
+@given(instance=WordprocessingMLStyles_CfChunk_strategy)
 @settings(max_examples=50)
-def test_wordprocessingmlstyles::cfchunk_instantiation(instance):
-    assert isinstance(instance, WordprocessingMLStyles::CfChunk)
+def test_wordprocessingmlstyles_cfchunk_instantiation(instance):
+    assert isinstance(instance, WordprocessingMLStyles_CfChunk)
 
-@given(instance=WordprocessingMLStyles::BlockLevelChunkElt_strategy)
+@given(instance=WordprocessingMLStyles_BlockLevelChunkElt_strategy)
 @settings(max_examples=50)
-def test_wordprocessingmlstyles::blocklevelchunkelt_instantiation(instance):
-    assert isinstance(instance, WordprocessingMLStyles::BlockLevelChunkElt)
+def test_wordprocessingmlstyles_blocklevelchunkelt_instantiation(instance):
+    assert isinstance(instance, WordprocessingMLStyles_BlockLevelChunkElt)
 
-@given(instance=WordprocessingMLStyles::BodyElt_strategy)
+@given(instance=WordprocessingMLStyles_BodyElt_strategy)
 @settings(max_examples=50)
-def test_wordprocessingmlstyles::bodyelt_instantiation(instance):
-    assert isinstance(instance, WordprocessingMLStyles::BodyElt)
+def test_wordprocessingmlstyles_bodyelt_instantiation(instance):
+    assert isinstance(instance, WordprocessingMLStyles_BodyElt)
 
-@given(instance=WordprocessingMLStyles::DocPrElt_strategy)
+@given(instance=WordprocessingMLStyles_DocPrElt_strategy)
 @settings(max_examples=50)
-def test_wordprocessingmlstyles::docprelt_instantiation(instance):
-    assert isinstance(instance, WordprocessingMLStyles::DocPrElt)
+def test_wordprocessingmlstyles_docprelt_instantiation(instance):
+    assert isinstance(instance, WordprocessingMLStyles_DocPrElt)
 
 @given(instance=BodyElt_strategy)
 @settings(max_examples=50)
 def test_bodyelt_instantiation(instance):
     assert isinstance(instance, BodyElt)
 
-@given(instance=WordprocessingMLStyles::WordDocument_strategy)
+@given(instance=WordprocessingMLStyles_WordDocument_strategy)
 @settings(max_examples=50)
-def test_wordprocessingmlstyles::worddocument_instantiation(instance):
-    assert isinstance(instance, WordprocessingMLStyles::WordDocument)
+def test_wordprocessingmlstyles_worddocument_instantiation(instance):
+    assert isinstance(instance, WordprocessingMLStyles_WordDocument)
 
 @given(instance=ListsElt_strategy)
 @settings(max_examples=50)
@@ -4407,45 +4266,36 @@ def test_stringproperty_instantiation(instance):
 def test_documentpropertiescollection_instantiation(instance):
     assert isinstance(instance, DocumentPropertiesCollection)
 
-@given(instance=WordprocessingMLStyles::UnderlineProperty_strategy)
+@given(instance=WordprocessingMLStyles_UnderlineProperty_strategy)
 @settings(max_examples=50)
-def test_wordprocessingmlstyles::underlineproperty_instantiation(instance):
-    assert isinstance(instance, WordprocessingMLStyles::UnderlineProperty)
-
-@given(instance=WordprocessingMLStyles::UnderlineProperty_strategy)
-def test_wordprocessingmlstyles::underlineproperty_color_type(instance):
-    assert isinstance(instance.color, stringtype)
+def test_wordprocessingmlstyles_underlineproperty_instantiation(instance):
+    assert isinstance(instance, WordprocessingMLStyles_UnderlineProperty)
 
 
-@given(instance=WordprocessingMLStyles::UnderlineProperty_strategy)
-def test_wordprocessingmlstyles::underlineproperty_color_setter(instance):
-    original = instance.color
-    instance.color = original
-    assert instance.color == original
 
-@given(instance=WordprocessingMLStyles::UnderlineProperty_strategy)
-def test_wordprocessingmlstyles::underlineproperty_val_type(instance):
-    assert isinstance(instance.val, stringtype)
-
-
-@given(instance=WordprocessingMLStyles::UnderlineProperty_strategy)
-def test_wordprocessingmlstyles::underlineproperty_val_setter(instance):
+@given(instance=WordprocessingMLStyles_UnderlineProperty_strategy)
+def test_wordprocessingmlstyles_underlineproperty_val_setter(instance):
     original = instance.val
     instance.val = original
     assert instance.val == original
 
-@given(instance=WordprocessingMLStyles::StringType_strategy)
+
+
+@given(instance=WordprocessingMLStyles_UnderlineProperty_strategy)
+def test_wordprocessingmlstyles_underlineproperty_color_setter(instance):
+    original = instance.color
+    instance.color = original
+    assert instance.color == original
+
+@given(instance=WordprocessingMLStyles_StringType_strategy)
 @settings(max_examples=50)
-def test_wordprocessingmlstyles::stringtype_instantiation(instance):
-    assert isinstance(instance, WordprocessingMLStyles::StringType)
-
-@given(instance=WordprocessingMLStyles::StringType_strategy)
-def test_wordprocessingmlstyles::stringtype_val_type(instance):
-    assert isinstance(instance.val, stringtype)
+def test_wordprocessingmlstyles_stringtype_instantiation(instance):
+    assert isinstance(instance, WordprocessingMLStyles_StringType)
 
 
-@given(instance=WordprocessingMLStyles::StringType_strategy)
-def test_wordprocessingmlstyles::stringtype_val_setter(instance):
+
+@given(instance=WordprocessingMLStyles_StringType_strategy)
+def test_wordprocessingmlstyles_stringtype_val_setter(instance):
     original = instance.val
     instance.val = original
     assert instance.val == original
@@ -4455,80 +4305,71 @@ def test_wordprocessingmlstyles::stringtype_val_setter(instance):
 def test_stringtype_instantiation(instance):
     assert isinstance(instance, StringType)
 
-@given(instance=WordprocessingMLStyles::InstrText_strategy)
+@given(instance=WordprocessingMLStyles_DelText_strategy)
 @settings(max_examples=50)
-def test_wordprocessingmlstyles::instrtext_instantiation(instance):
-    assert isinstance(instance, WordprocessingMLStyles::InstrText)
+def test_wordprocessingmlstyles_deltext_instantiation(instance):
+    assert isinstance(instance, WordprocessingMLStyles_DelText)
 
-@given(instance=WordprocessingMLStyles::Text_strategy)
+@given(instance=WordprocessingMLStyles_Text_strategy)
 @settings(max_examples=50)
-def test_wordprocessingmlstyles::text_instantiation(instance):
-    assert isinstance(instance, WordprocessingMLStyles::Text)
+def test_wordprocessingmlstyles_text_instantiation(instance):
+    assert isinstance(instance, WordprocessingMLStyles_Text)
 
-@given(instance=WordprocessingMLStyles::DelInstrText_strategy)
+@given(instance=WordprocessingMLStyles_InstrText_strategy)
 @settings(max_examples=50)
-def test_wordprocessingmlstyles::delinstrtext_instantiation(instance):
-    assert isinstance(instance, WordprocessingMLStyles::DelInstrText)
+def test_wordprocessingmlstyles_instrtext_instantiation(instance):
+    assert isinstance(instance, WordprocessingMLStyles_InstrText)
 
-@given(instance=WordprocessingMLStyles::DelText_strategy)
+@given(instance=WordprocessingMLStyles_DelInstrText_strategy)
 @settings(max_examples=50)
-def test_wordprocessingmlstyles::deltext_instantiation(instance):
-    assert isinstance(instance, WordprocessingMLStyles::DelText)
+def test_wordprocessingmlstyles_delinstrtext_instantiation(instance):
+    assert isinstance(instance, WordprocessingMLStyles_DelInstrText)
 
-@given(instance=WordprocessingMLStyles::StringProperty_strategy)
+@given(instance=WordprocessingMLStyles_StringProperty_strategy)
 @settings(max_examples=50)
-def test_wordprocessingmlstyles::stringproperty_instantiation(instance):
-    assert isinstance(instance, WordprocessingMLStyles::StringProperty)
+def test_wordprocessingmlstyles_stringproperty_instantiation(instance):
+    assert isinstance(instance, WordprocessingMLStyles_StringProperty)
 
 @given(instance=SmartTagType_strategy)
 @settings(max_examples=50)
 def test_smarttagtype_instantiation(instance):
     assert isinstance(instance, SmartTagType)
 
-@given(instance=WordprocessingMLStyles::SmartTagsCollection_strategy)
+@given(instance=WordprocessingMLStyles_SmartTagsCollection_strategy)
 @settings(max_examples=50)
-def test_wordprocessingmlstyles::smarttagscollection_instantiation(instance):
-    assert isinstance(instance, WordprocessingMLStyles::SmartTagsCollection)
+def test_wordprocessingmlstyles_smarttagscollection_instantiation(instance):
+    assert isinstance(instance, WordprocessingMLStyles_SmartTagsCollection)
 
 @given(instance=SmartTagsCollection_strategy)
 @settings(max_examples=50)
 def test_smarttagscollection_instantiation(instance):
     assert isinstance(instance, SmartTagsCollection)
 
-@given(instance=WordprocessingMLStyles::SmartTagType_strategy)
+@given(instance=WordprocessingMLStyles_SmartTagType_strategy)
 @settings(max_examples=50)
-def test_wordprocessingmlstyles::smarttagtype_instantiation(instance):
-    assert isinstance(instance, WordprocessingMLStyles::SmartTagType)
-
-@given(instance=WordprocessingMLStyles::SmartTagType_strategy)
-def test_wordprocessingmlstyles::smarttagtype_url_type(instance):
-    assert isinstance(instance.url, stringtype)
+def test_wordprocessingmlstyles_smarttagtype_instantiation(instance):
+    assert isinstance(instance, WordprocessingMLStyles_SmartTagType)
 
 
-@given(instance=WordprocessingMLStyles::SmartTagType_strategy)
-def test_wordprocessingmlstyles::smarttagtype_url_setter(instance):
-    original = instance.url
-    instance.url = original
-    assert instance.url == original
 
-@given(instance=WordprocessingMLStyles::SmartTagType_strategy)
-def test_wordprocessingmlstyles::smarttagtype_namespaceuri_type(instance):
-    assert isinstance(instance.namespaceuri, stringtype)
-
-
-@given(instance=WordprocessingMLStyles::SmartTagType_strategy)
-def test_wordprocessingmlstyles::smarttagtype_namespaceuri_setter(instance):
+@given(instance=WordprocessingMLStyles_SmartTagType_strategy)
+def test_wordprocessingmlstyles_smarttagtype_namespaceuri_setter(instance):
     original = instance.namespaceuri
     instance.namespaceuri = original
     assert instance.namespaceuri == original
 
-@given(instance=WordprocessingMLStyles::SmartTagType_strategy)
-def test_wordprocessingmlstyles::smarttagtype_name_type(instance):
-    assert isinstance(instance.name, stringtype)
 
 
-@given(instance=WordprocessingMLStyles::SmartTagType_strategy)
-def test_wordprocessingmlstyles::smarttagtype_name_setter(instance):
+@given(instance=WordprocessingMLStyles_SmartTagType_strategy)
+def test_wordprocessingmlstyles_smarttagtype_url_setter(instance):
+    original = instance.url
+    instance.url = original
+    assert instance.url == original
+
+
+
+@given(instance=WordprocessingMLStyles_SmartTagType_strategy)
+def test_wordprocessingmlstyles_smarttagtype_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
@@ -4543,18 +4384,15 @@ def test_versiontype_instantiation(instance):
 def test_customdocumentpropertiescollection_instantiation(instance):
     assert isinstance(instance, CustomDocumentPropertiesCollection)
 
-@given(instance=WordprocessingMLStyles::CustomDocumentProperty_strategy)
+@given(instance=WordprocessingMLStyles_CustomDocumentProperty_strategy)
 @settings(max_examples=50)
-def test_wordprocessingmlstyles::customdocumentproperty_instantiation(instance):
-    assert isinstance(instance, WordprocessingMLStyles::CustomDocumentProperty)
-
-@given(instance=WordprocessingMLStyles::CustomDocumentProperty_strategy)
-def test_wordprocessingmlstyles::customdocumentproperty_name_type(instance):
-    assert isinstance(instance.name, stringtype)
+def test_wordprocessingmlstyles_customdocumentproperty_instantiation(instance):
+    assert isinstance(instance, WordprocessingMLStyles_CustomDocumentProperty)
 
 
-@given(instance=WordprocessingMLStyles::CustomDocumentProperty_strategy)
-def test_wordprocessingmlstyles::customdocumentproperty_name_setter(instance):
+
+@given(instance=WordprocessingMLStyles_CustomDocumentProperty_strategy)
+def test_wordprocessingmlstyles_customdocumentproperty_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
@@ -4564,10 +4402,10 @@ def test_wordprocessingmlstyles::customdocumentproperty_name_setter(instance):
 def test_customdocumentproperty_instantiation(instance):
     assert isinstance(instance, CustomDocumentProperty)
 
-@given(instance=WordprocessingMLStyles::CustomDocumentPropertiesCollection_strategy)
+@given(instance=WordprocessingMLStyles_CustomDocumentPropertiesCollection_strategy)
 @settings(max_examples=50)
-def test_wordprocessingmlstyles::customdocumentpropertiescollection_instantiation(instance):
-    assert isinstance(instance, WordprocessingMLStyles::CustomDocumentPropertiesCollection)
+def test_wordprocessingmlstyles_customdocumentpropertiescollection_instantiation(instance):
+    assert isinstance(instance, WordprocessingMLStyles_CustomDocumentPropertiesCollection)
 
 @given(instance=DateTimeType_strategy)
 @settings(max_examples=50)
@@ -4579,410 +4417,311 @@ def test_datetimetype_instantiation(instance):
 def test_valuetype_instantiation(instance):
     assert isinstance(instance, ValueType)
 
-@given(instance=WordprocessingMLStyles::DateTimeTypeValue_strategy)
+@given(instance=WordprocessingMLStyles_DateTimeTypeValue_strategy)
 @settings(max_examples=50)
-def test_wordprocessingmlstyles::datetimetypevalue_instantiation(instance):
-    assert isinstance(instance, WordprocessingMLStyles::DateTimeTypeValue)
+def test_wordprocessingmlstyles_datetimetypevalue_instantiation(instance):
+    assert isinstance(instance, WordprocessingMLStyles_DateTimeTypeValue)
 
-@given(instance=WordprocessingMLStyles::FloatValue_strategy)
+@given(instance=WordprocessingMLStyles_FloatValue_strategy)
 @settings(max_examples=50)
-def test_wordprocessingmlstyles::floatvalue_instantiation(instance):
-    assert isinstance(instance, WordprocessingMLStyles::FloatValue)
-
-@given(instance=WordprocessingMLStyles::FloatValue_strategy)
-def test_wordprocessingmlstyles::floatvalue_value_type(instance):
-    assert isinstance(instance.value, stringtype)
+def test_wordprocessingmlstyles_floatvalue_instantiation(instance):
+    assert isinstance(instance, WordprocessingMLStyles_FloatValue)
 
 
-@given(instance=WordprocessingMLStyles::FloatValue_strategy)
-def test_wordprocessingmlstyles::floatvalue_value_setter(instance):
+
+@given(instance=WordprocessingMLStyles_FloatValue_strategy)
+def test_wordprocessingmlstyles_floatvalue_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
 
-@given(instance=WordprocessingMLStyles::StringValue_strategy)
+@given(instance=WordprocessingMLStyles_StringValue_strategy)
 @settings(max_examples=50)
-def test_wordprocessingmlstyles::stringvalue_instantiation(instance):
-    assert isinstance(instance, WordprocessingMLStyles::StringValue)
-
-@given(instance=WordprocessingMLStyles::StringValue_strategy)
-def test_wordprocessingmlstyles::stringvalue_value_type(instance):
-    assert isinstance(instance.value, stringtype)
+def test_wordprocessingmlstyles_stringvalue_instantiation(instance):
+    assert isinstance(instance, WordprocessingMLStyles_StringValue)
 
 
-@given(instance=WordprocessingMLStyles::StringValue_strategy)
-def test_wordprocessingmlstyles::stringvalue_value_setter(instance):
+
+@given(instance=WordprocessingMLStyles_StringValue_strategy)
+def test_wordprocessingmlstyles_stringvalue_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
 
-@given(instance=WordprocessingMLStyles::ValueType_strategy)
+@given(instance=WordprocessingMLStyles_ValueType_strategy)
 @settings(max_examples=50)
-def test_wordprocessingmlstyles::valuetype_instantiation(instance):
-    assert isinstance(instance, WordprocessingMLStyles::ValueType)
+def test_wordprocessingmlstyles_valuetype_instantiation(instance):
+    assert isinstance(instance, WordprocessingMLStyles_ValueType)
 
 @given(instance=WordDocument_strategy)
 @settings(max_examples=50)
 def test_worddocument_instantiation(instance):
     assert isinstance(instance, WordDocument)
 
-@given(instance=WordprocessingMLStyles::DocumentPropertiesCollection_strategy)
+@given(instance=WordprocessingMLStyles_DocumentPropertiesCollection_strategy)
 @settings(max_examples=50)
-def test_wordprocessingmlstyles::documentpropertiescollection_instantiation(instance):
-    assert isinstance(instance, WordprocessingMLStyles::DocumentPropertiesCollection)
-
-@given(instance=WordprocessingMLStyles::DocumentPropertiesCollection_strategy)
-def test_wordprocessingmlstyles::documentpropertiescollection_paragraphs_type(instance):
-    assert isinstance(instance.paragraphs, stringtype)
+def test_wordprocessingmlstyles_documentpropertiescollection_instantiation(instance):
+    assert isinstance(instance, WordprocessingMLStyles_DocumentPropertiesCollection)
 
 
-@given(instance=WordprocessingMLStyles::DocumentPropertiesCollection_strategy)
-def test_wordprocessingmlstyles::documentpropertiescollection_paragraphs_setter(instance):
-    original = instance.paragraphs
-    instance.paragraphs = original
-    assert instance.paragraphs == original
 
-@given(instance=WordprocessingMLStyles::DocumentPropertiesCollection_strategy)
-def test_wordprocessingmlstyles::documentpropertiescollection_keywords_type(instance):
-    assert isinstance(instance.keywords, stringtype)
-
-
-@given(instance=WordprocessingMLStyles::DocumentPropertiesCollection_strategy)
-def test_wordprocessingmlstyles::documentpropertiescollection_keywords_setter(instance):
-    original = instance.keywords
-    instance.keywords = original
-    assert instance.keywords == original
-
-@given(instance=WordprocessingMLStyles::DocumentPropertiesCollection_strategy)
-def test_wordprocessingmlstyles::documentpropertiescollection_guid_type(instance):
-    assert isinstance(instance.guid, stringtype)
-
-
-@given(instance=WordprocessingMLStyles::DocumentPropertiesCollection_strategy)
-def test_wordprocessingmlstyles::documentpropertiescollection_guid_setter(instance):
-    original = instance.guid
-    instance.guid = original
-    assert instance.guid == original
-
-@given(instance=WordprocessingMLStyles::DocumentPropertiesCollection_strategy)
-def test_wordprocessingmlstyles::documentpropertiescollection_lines_type(instance):
-    assert isinstance(instance.lines, stringtype)
-
-
-@given(instance=WordprocessingMLStyles::DocumentPropertiesCollection_strategy)
-def test_wordprocessingmlstyles::documentpropertiescollection_lines_setter(instance):
-    original = instance.lines
-    instance.lines = original
-    assert instance.lines == original
-
-@given(instance=WordprocessingMLStyles::DocumentPropertiesCollection_strategy)
-def test_wordprocessingmlstyles::documentpropertiescollection_title_type(instance):
-    assert isinstance(instance.title, stringtype)
-
-
-@given(instance=WordprocessingMLStyles::DocumentPropertiesCollection_strategy)
-def test_wordprocessingmlstyles::documentpropertiescollection_title_setter(instance):
-    original = instance.title
-    instance.title = original
-    assert instance.title == original
-
-@given(instance=WordprocessingMLStyles::DocumentPropertiesCollection_strategy)
-def test_wordprocessingmlstyles::documentpropertiescollection_totalTime_type(instance):
-    assert isinstance(instance.totalTime, stringtype)
-
-
-@given(instance=WordprocessingMLStyles::DocumentPropertiesCollection_strategy)
-def test_wordprocessingmlstyles::documentpropertiescollection_totalTime_setter(instance):
-    original = instance.totalTime
-    instance.totalTime = original
-    assert instance.totalTime == original
-
-@given(instance=WordprocessingMLStyles::DocumentPropertiesCollection_strategy)
-def test_wordprocessingmlstyles::documentpropertiescollection_pages_type(instance):
-    assert isinstance(instance.pages, stringtype)
-
-
-@given(instance=WordprocessingMLStyles::DocumentPropertiesCollection_strategy)
-def test_wordprocessingmlstyles::documentpropertiescollection_pages_setter(instance):
-    original = instance.pages
-    instance.pages = original
-    assert instance.pages == original
-
-@given(instance=WordprocessingMLStyles::DocumentPropertiesCollection_strategy)
-def test_wordprocessingmlstyles::documentpropertiescollection_hyperlinkBase_type(instance):
-    assert isinstance(instance.hyperlinkBase, stringtype)
-
-
-@given(instance=WordprocessingMLStyles::DocumentPropertiesCollection_strategy)
-def test_wordprocessingmlstyles::documentpropertiescollection_hyperlinkBase_setter(instance):
-    original = instance.hyperlinkBase
-    instance.hyperlinkBase = original
-    assert instance.hyperlinkBase == original
-
-@given(instance=WordprocessingMLStyles::DocumentPropertiesCollection_strategy)
-def test_wordprocessingmlstyles::documentpropertiescollection_revision_type(instance):
-    assert isinstance(instance.revision, stringtype)
-
-
-@given(instance=WordprocessingMLStyles::DocumentPropertiesCollection_strategy)
-def test_wordprocessingmlstyles::documentpropertiescollection_revision_setter(instance):
-    original = instance.revision
-    instance.revision = original
-    assert instance.revision == original
-
-@given(instance=WordprocessingMLStyles::DocumentPropertiesCollection_strategy)
-def test_wordprocessingmlstyles::documentpropertiescollection_characters_type(instance):
-    assert isinstance(instance.characters, stringtype)
-
-
-@given(instance=WordprocessingMLStyles::DocumentPropertiesCollection_strategy)
-def test_wordprocessingmlstyles::documentpropertiescollection_characters_setter(instance):
-    original = instance.characters
-    instance.characters = original
-    assert instance.characters == original
-
-@given(instance=WordprocessingMLStyles::DocumentPropertiesCollection_strategy)
-def test_wordprocessingmlstyles::documentpropertiescollection_description_type(instance):
-    assert isinstance(instance.description, stringtype)
-
-
-@given(instance=WordprocessingMLStyles::DocumentPropertiesCollection_strategy)
-def test_wordprocessingmlstyles::documentpropertiescollection_description_setter(instance):
-    original = instance.description
-    instance.description = original
-    assert instance.description == original
-
-@given(instance=WordprocessingMLStyles::DocumentPropertiesCollection_strategy)
-def test_wordprocessingmlstyles::documentpropertiescollection_author_type(instance):
-    assert isinstance(instance.author, stringtype)
-
-
-@given(instance=WordprocessingMLStyles::DocumentPropertiesCollection_strategy)
-def test_wordprocessingmlstyles::documentpropertiescollection_author_setter(instance):
-    original = instance.author
-    instance.author = original
-    assert instance.author == original
-
-@given(instance=WordprocessingMLStyles::DocumentPropertiesCollection_strategy)
-def test_wordprocessingmlstyles::documentpropertiescollection_bytes_type(instance):
-    assert isinstance(instance.bytes, stringtype)
-
-
-@given(instance=WordprocessingMLStyles::DocumentPropertiesCollection_strategy)
-def test_wordprocessingmlstyles::documentpropertiescollection_bytes_setter(instance):
-    original = instance.bytes
-    instance.bytes = original
-    assert instance.bytes == original
-
-@given(instance=WordprocessingMLStyles::DocumentPropertiesCollection_strategy)
-def test_wordprocessingmlstyles::documentpropertiescollection_lastAuthor_type(instance):
-    assert isinstance(instance.lastAuthor, stringtype)
-
-
-@given(instance=WordprocessingMLStyles::DocumentPropertiesCollection_strategy)
-def test_wordprocessingmlstyles::documentpropertiescollection_lastAuthor_setter(instance):
+@given(instance=WordprocessingMLStyles_DocumentPropertiesCollection_strategy)
+def test_wordprocessingmlstyles_documentpropertiescollection_lastAuthor_setter(instance):
     original = instance.lastAuthor
     instance.lastAuthor = original
     assert instance.lastAuthor == original
 
-@given(instance=WordprocessingMLStyles::DocumentPropertiesCollection_strategy)
-def test_wordprocessingmlstyles::documentpropertiescollection_category_type(instance):
-    assert isinstance(instance.category, stringtype)
 
 
-@given(instance=WordprocessingMLStyles::DocumentPropertiesCollection_strategy)
-def test_wordprocessingmlstyles::documentpropertiescollection_category_setter(instance):
-    original = instance.category
-    instance.category = original
-    assert instance.category == original
-
-@given(instance=WordprocessingMLStyles::DocumentPropertiesCollection_strategy)
-def test_wordprocessingmlstyles::documentpropertiescollection_manager_type(instance):
-    assert isinstance(instance.manager, stringtype)
-
-
-@given(instance=WordprocessingMLStyles::DocumentPropertiesCollection_strategy)
-def test_wordprocessingmlstyles::documentpropertiescollection_manager_setter(instance):
-    original = instance.manager
-    instance.manager = original
-    assert instance.manager == original
-
-@given(instance=WordprocessingMLStyles::DocumentPropertiesCollection_strategy)
-def test_wordprocessingmlstyles::documentpropertiescollection_charactersWithSpaces_type(instance):
-    assert isinstance(instance.charactersWithSpaces, stringtype)
-
-
-@given(instance=WordprocessingMLStyles::DocumentPropertiesCollection_strategy)
-def test_wordprocessingmlstyles::documentpropertiescollection_charactersWithSpaces_setter(instance):
-    original = instance.charactersWithSpaces
-    instance.charactersWithSpaces = original
-    assert instance.charactersWithSpaces == original
-
-@given(instance=WordprocessingMLStyles::DocumentPropertiesCollection_strategy)
-def test_wordprocessingmlstyles::documentpropertiescollection_company_type(instance):
-    assert isinstance(instance.company, stringtype)
-
-
-@given(instance=WordprocessingMLStyles::DocumentPropertiesCollection_strategy)
-def test_wordprocessingmlstyles::documentpropertiescollection_company_setter(instance):
+@given(instance=WordprocessingMLStyles_DocumentPropertiesCollection_strategy)
+def test_wordprocessingmlstyles_documentpropertiescollection_company_setter(instance):
     original = instance.company
     instance.company = original
     assert instance.company == original
 
-@given(instance=WordprocessingMLStyles::DocumentPropertiesCollection_strategy)
-def test_wordprocessingmlstyles::documentpropertiescollection_appName_type(instance):
-    assert isinstance(instance.appName, stringtype)
 
 
-@given(instance=WordprocessingMLStyles::DocumentPropertiesCollection_strategy)
-def test_wordprocessingmlstyles::documentpropertiescollection_appName_setter(instance):
+@given(instance=WordprocessingMLStyles_DocumentPropertiesCollection_strategy)
+def test_wordprocessingmlstyles_documentpropertiescollection_paragraphs_setter(instance):
+    original = instance.paragraphs
+    instance.paragraphs = original
+    assert instance.paragraphs == original
+
+
+
+@given(instance=WordprocessingMLStyles_DocumentPropertiesCollection_strategy)
+def test_wordprocessingmlstyles_documentpropertiescollection_category_setter(instance):
+    original = instance.category
+    instance.category = original
+    assert instance.category == original
+
+
+
+@given(instance=WordprocessingMLStyles_DocumentPropertiesCollection_strategy)
+def test_wordprocessingmlstyles_documentpropertiescollection_hyperlinkBase_setter(instance):
+    original = instance.hyperlinkBase
+    instance.hyperlinkBase = original
+    assert instance.hyperlinkBase == original
+
+
+
+@given(instance=WordprocessingMLStyles_DocumentPropertiesCollection_strategy)
+def test_wordprocessingmlstyles_documentpropertiescollection_author_setter(instance):
+    original = instance.author
+    instance.author = original
+    assert instance.author == original
+
+
+
+@given(instance=WordprocessingMLStyles_DocumentPropertiesCollection_strategy)
+def test_wordprocessingmlstyles_documentpropertiescollection_totalTime_setter(instance):
+    original = instance.totalTime
+    instance.totalTime = original
+    assert instance.totalTime == original
+
+
+
+@given(instance=WordprocessingMLStyles_DocumentPropertiesCollection_strategy)
+def test_wordprocessingmlstyles_documentpropertiescollection_appName_setter(instance):
     original = instance.appName
     instance.appName = original
     assert instance.appName == original
 
-@given(instance=WordprocessingMLStyles::DocumentPropertiesCollection_strategy)
-def test_wordprocessingmlstyles::documentpropertiescollection_presentationFormat_type(instance):
-    assert isinstance(instance.presentationFormat, stringtype)
 
 
-@given(instance=WordprocessingMLStyles::DocumentPropertiesCollection_strategy)
-def test_wordprocessingmlstyles::documentpropertiescollection_presentationFormat_setter(instance):
-    original = instance.presentationFormat
-    instance.presentationFormat = original
-    assert instance.presentationFormat == original
-
-@given(instance=WordprocessingMLStyles::DocumentPropertiesCollection_strategy)
-def test_wordprocessingmlstyles::documentpropertiescollection_words_type(instance):
-    assert isinstance(instance.words, stringtype)
+@given(instance=WordprocessingMLStyles_DocumentPropertiesCollection_strategy)
+def test_wordprocessingmlstyles_documentpropertiescollection_description_setter(instance):
+    original = instance.description
+    instance.description = original
+    assert instance.description == original
 
 
-@given(instance=WordprocessingMLStyles::DocumentPropertiesCollection_strategy)
-def test_wordprocessingmlstyles::documentpropertiescollection_words_setter(instance):
-    original = instance.words
-    instance.words = original
-    assert instance.words == original
 
-@given(instance=WordprocessingMLStyles::DocumentPropertiesCollection_strategy)
-def test_wordprocessingmlstyles::documentpropertiescollection_subject_type(instance):
-    assert isinstance(instance.subject, stringtype)
+@given(instance=WordprocessingMLStyles_DocumentPropertiesCollection_strategy)
+def test_wordprocessingmlstyles_documentpropertiescollection_lines_setter(instance):
+    original = instance.lines
+    instance.lines = original
+    assert instance.lines == original
 
 
-@given(instance=WordprocessingMLStyles::DocumentPropertiesCollection_strategy)
-def test_wordprocessingmlstyles::documentpropertiescollection_subject_setter(instance):
+
+@given(instance=WordprocessingMLStyles_DocumentPropertiesCollection_strategy)
+def test_wordprocessingmlstyles_documentpropertiescollection_charactersWithSpaces_setter(instance):
+    original = instance.charactersWithSpaces
+    instance.charactersWithSpaces = original
+    assert instance.charactersWithSpaces == original
+
+
+
+@given(instance=WordprocessingMLStyles_DocumentPropertiesCollection_strategy)
+def test_wordprocessingmlstyles_documentpropertiescollection_bytes_setter(instance):
+    original = instance.bytes
+    instance.bytes = original
+    assert instance.bytes == original
+
+
+
+@given(instance=WordprocessingMLStyles_DocumentPropertiesCollection_strategy)
+def test_wordprocessingmlstyles_documentpropertiescollection_characters_setter(instance):
+    original = instance.characters
+    instance.characters = original
+    assert instance.characters == original
+
+
+
+@given(instance=WordprocessingMLStyles_DocumentPropertiesCollection_strategy)
+def test_wordprocessingmlstyles_documentpropertiescollection_guid_setter(instance):
+    original = instance.guid
+    instance.guid = original
+    assert instance.guid == original
+
+
+
+@given(instance=WordprocessingMLStyles_DocumentPropertiesCollection_strategy)
+def test_wordprocessingmlstyles_documentpropertiescollection_pages_setter(instance):
+    original = instance.pages
+    instance.pages = original
+    assert instance.pages == original
+
+
+
+@given(instance=WordprocessingMLStyles_DocumentPropertiesCollection_strategy)
+def test_wordprocessingmlstyles_documentpropertiescollection_subject_setter(instance):
     original = instance.subject
     instance.subject = original
     assert instance.subject == original
 
-@given(instance=WordprocessingMLStyles::BooleanValue_strategy)
+
+
+@given(instance=WordprocessingMLStyles_DocumentPropertiesCollection_strategy)
+def test_wordprocessingmlstyles_documentpropertiescollection_manager_setter(instance):
+    original = instance.manager
+    instance.manager = original
+    assert instance.manager == original
+
+
+
+@given(instance=WordprocessingMLStyles_DocumentPropertiesCollection_strategy)
+def test_wordprocessingmlstyles_documentpropertiescollection_keywords_setter(instance):
+    original = instance.keywords
+    instance.keywords = original
+    assert instance.keywords == original
+
+
+
+@given(instance=WordprocessingMLStyles_DocumentPropertiesCollection_strategy)
+def test_wordprocessingmlstyles_documentpropertiescollection_presentationFormat_setter(instance):
+    original = instance.presentationFormat
+    instance.presentationFormat = original
+    assert instance.presentationFormat == original
+
+
+
+@given(instance=WordprocessingMLStyles_DocumentPropertiesCollection_strategy)
+def test_wordprocessingmlstyles_documentpropertiescollection_revision_setter(instance):
+    original = instance.revision
+    instance.revision = original
+    assert instance.revision == original
+
+
+
+@given(instance=WordprocessingMLStyles_DocumentPropertiesCollection_strategy)
+def test_wordprocessingmlstyles_documentpropertiescollection_words_setter(instance):
+    original = instance.words
+    instance.words = original
+    assert instance.words == original
+
+
+
+@given(instance=WordprocessingMLStyles_DocumentPropertiesCollection_strategy)
+def test_wordprocessingmlstyles_documentpropertiescollection_title_setter(instance):
+    original = instance.title
+    instance.title = original
+    assert instance.title == original
+
+@given(instance=WordprocessingMLStyles_BooleanValue_strategy)
 @settings(max_examples=50)
-def test_wordprocessingmlstyles::booleanvalue_instantiation(instance):
-    assert isinstance(instance, WordprocessingMLStyles::BooleanValue)
-
-@given(instance=WordprocessingMLStyles::BooleanValue_strategy)
-def test_wordprocessingmlstyles::booleanvalue_value_type(instance):
-    assert isinstance(instance.value, stringtype)
+def test_wordprocessingmlstyles_booleanvalue_instantiation(instance):
+    assert isinstance(instance, WordprocessingMLStyles_BooleanValue)
 
 
-@given(instance=WordprocessingMLStyles::BooleanValue_strategy)
-def test_wordprocessingmlstyles::booleanvalue_value_setter(instance):
+
+@given(instance=WordprocessingMLStyles_BooleanValue_strategy)
+def test_wordprocessingmlstyles_booleanvalue_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
 
-@given(instance=WordprocessingMLStyles::VersionType_strategy)
+@given(instance=WordprocessingMLStyles_VersionType_strategy)
 @settings(max_examples=50)
-def test_wordprocessingmlstyles::versiontype_instantiation(instance):
-    assert isinstance(instance, WordprocessingMLStyles::VersionType)
-
-@given(instance=WordprocessingMLStyles::VersionType_strategy)
-def test_wordprocessingmlstyles::versiontype_n_type(instance):
-    assert isinstance(instance.n, stringtype)
+def test_wordprocessingmlstyles_versiontype_instantiation(instance):
+    assert isinstance(instance, WordprocessingMLStyles_VersionType)
 
 
-@given(instance=WordprocessingMLStyles::VersionType_strategy)
-def test_wordprocessingmlstyles::versiontype_n_setter(instance):
+
+@given(instance=WordprocessingMLStyles_VersionType_strategy)
+def test_wordprocessingmlstyles_versiontype_n_setter(instance):
     original = instance.n
     instance.n = original
     assert instance.n == original
 
-@given(instance=WordprocessingMLStyles::VersionType_strategy)
-def test_wordprocessingmlstyles::versiontype_nn_type(instance):
-    assert isinstance(instance.nn, stringtype)
 
 
-@given(instance=WordprocessingMLStyles::VersionType_strategy)
-def test_wordprocessingmlstyles::versiontype_nn_setter(instance):
+@given(instance=WordprocessingMLStyles_VersionType_strategy)
+def test_wordprocessingmlstyles_versiontype_nn_setter(instance):
     original = instance.nn
     instance.nn = original
     assert instance.nn == original
 
-@given(instance=WordprocessingMLStyles::DateTimeType_strategy)
+@given(instance=WordprocessingMLStyles_DateTimeType_strategy)
 @settings(max_examples=50)
-def test_wordprocessingmlstyles::datetimetype_instantiation(instance):
-    assert isinstance(instance, WordprocessingMLStyles::DateTimeType)
-
-@given(instance=WordprocessingMLStyles::DateTimeType_strategy)
-def test_wordprocessingmlstyles::datetimetype_second_type(instance):
-    assert isinstance(instance.second, stringtype)
+def test_wordprocessingmlstyles_datetimetype_instantiation(instance):
+    assert isinstance(instance, WordprocessingMLStyles_DateTimeType)
 
 
-@given(instance=WordprocessingMLStyles::DateTimeType_strategy)
-def test_wordprocessingmlstyles::datetimetype_second_setter(instance):
-    original = instance.second
-    instance.second = original
-    assert instance.second == original
 
-@given(instance=WordprocessingMLStyles::DateTimeType_strategy)
-def test_wordprocessingmlstyles::datetimetype_month_type(instance):
-    assert isinstance(instance.month, stringtype)
+@given(instance=WordprocessingMLStyles_DateTimeType_strategy)
+def test_wordprocessingmlstyles_datetimetype_hour_setter(instance):
+    original = instance.hour
+    instance.hour = original
+    assert instance.hour == original
 
 
-@given(instance=WordprocessingMLStyles::DateTimeType_strategy)
-def test_wordprocessingmlstyles::datetimetype_month_setter(instance):
-    original = instance.month
-    instance.month = original
-    assert instance.month == original
 
-@given(instance=WordprocessingMLStyles::DateTimeType_strategy)
-def test_wordprocessingmlstyles::datetimetype_year_type(instance):
-    assert isinstance(instance.year, stringtype)
-
-
-@given(instance=WordprocessingMLStyles::DateTimeType_strategy)
-def test_wordprocessingmlstyles::datetimetype_year_setter(instance):
-    original = instance.year
-    instance.year = original
-    assert instance.year == original
-
-@given(instance=WordprocessingMLStyles::DateTimeType_strategy)
-def test_wordprocessingmlstyles::datetimetype_day_type(instance):
-    assert isinstance(instance.day, stringtype)
-
-
-@given(instance=WordprocessingMLStyles::DateTimeType_strategy)
-def test_wordprocessingmlstyles::datetimetype_day_setter(instance):
+@given(instance=WordprocessingMLStyles_DateTimeType_strategy)
+def test_wordprocessingmlstyles_datetimetype_day_setter(instance):
     original = instance.day
     instance.day = original
     assert instance.day == original
 
-@given(instance=WordprocessingMLStyles::DateTimeType_strategy)
-def test_wordprocessingmlstyles::datetimetype_minute_type(instance):
-    assert isinstance(instance.minute, stringtype)
 
 
-@given(instance=WordprocessingMLStyles::DateTimeType_strategy)
-def test_wordprocessingmlstyles::datetimetype_minute_setter(instance):
+@given(instance=WordprocessingMLStyles_DateTimeType_strategy)
+def test_wordprocessingmlstyles_datetimetype_month_setter(instance):
+    original = instance.month
+    instance.month = original
+    assert instance.month == original
+
+
+
+@given(instance=WordprocessingMLStyles_DateTimeType_strategy)
+def test_wordprocessingmlstyles_datetimetype_minute_setter(instance):
     original = instance.minute
     instance.minute = original
     assert instance.minute == original
 
-@given(instance=WordprocessingMLStyles::DateTimeType_strategy)
-def test_wordprocessingmlstyles::datetimetype_hour_type(instance):
-    assert isinstance(instance.hour, stringtype)
 
 
-@given(instance=WordprocessingMLStyles::DateTimeType_strategy)
-def test_wordprocessingmlstyles::datetimetype_hour_setter(instance):
-    original = instance.hour
-    instance.hour = original
-    assert instance.hour == original
+@given(instance=WordprocessingMLStyles_DateTimeType_strategy)
+def test_wordprocessingmlstyles_datetimetype_year_setter(instance):
+    original = instance.year
+    instance.year = original
+    assert instance.year == original
+
+
+
+@given(instance=WordprocessingMLStyles_DateTimeType_strategy)
+def test_wordprocessingmlstyles_datetimetype_second_setter(instance):
+    original = instance.second
+    instance.second = original
+    assert instance.second == original

@@ -3,20 +3,20 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     Feature,
-    hermes::DataType,
-    hermes::Reference,
-    hermes::NamedElement,
+    hermes_DataType,
+    hermes_Reference,
+    hermes_NamedElement,
     NamedElement,
-    hermes::Feature,
-    hermes::Package,
-    hermes::Entity,
-    hermes::Module,
-    DataTypes,
+    hermes_Entity,
+    hermes_Package,
+    hermes_Feature,
+    hermes_Module,
     FetureAnnotation,
+    DataTypes,
     EntityAnnotation,
 )
 
@@ -40,23 +40,23 @@ def test_feature_constructor_args():
 
 
 
-def test_hermes::datatype_is_not_abstract():
-    assert not inspect.isabstract(hermes::DataType)
+def test_hermes_datatype_is_not_abstract():
+    assert not inspect.isabstract(hermes_DataType)
 
 
-def test_hermes::datatype_constructor_exists():
-    assert callable(hermes::DataType.__init__)
+def test_hermes_datatype_constructor_exists():
+    assert callable(hermes_DataType.__init__)
 
 
-def test_hermes::datatype_constructor_args():
-    sig = inspect.signature(hermes::DataType.__init__)
+def test_hermes_datatype_constructor_args():
+    sig = inspect.signature(hermes_DataType.__init__)
     params = list(sig.parameters.keys())
     assert "type" in params, "Missing parameter 'type'"
 
-def test_hermes::datatype_has_type():
-    assert hasattr(hermes::DataType, "type")
+def test_hermes_datatype_has_type():
+    assert hasattr(hermes_DataType, "type")
     descriptor = None
-    for klass in hermes::DataType.__mro__:
+    for klass in hermes_DataType.__mro__:
         if "type" in klass.__dict__:
             descriptor = klass.__dict__["type"]
             break
@@ -64,37 +64,37 @@ def test_hermes::datatype_has_type():
 
 
 
-def test_hermes::reference_is_not_abstract():
-    assert not inspect.isabstract(hermes::Reference)
+def test_hermes_reference_is_not_abstract():
+    assert not inspect.isabstract(hermes_Reference)
 
 
-def test_hermes::reference_constructor_exists():
-    assert callable(hermes::Reference.__init__)
+def test_hermes_reference_constructor_exists():
+    assert callable(hermes_Reference.__init__)
 
 
-def test_hermes::reference_constructor_args():
-    sig = inspect.signature(hermes::Reference.__init__)
+def test_hermes_reference_constructor_args():
+    sig = inspect.signature(hermes_Reference.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_hermes::namedelement_is_not_abstract():
-    assert not inspect.isabstract(hermes::NamedElement)
+def test_hermes_namedelement_is_not_abstract():
+    assert not inspect.isabstract(hermes_NamedElement)
 
 
-def test_hermes::namedelement_constructor_exists():
-    assert callable(hermes::NamedElement.__init__)
+def test_hermes_namedelement_constructor_exists():
+    assert callable(hermes_NamedElement.__init__)
 
 
-def test_hermes::namedelement_constructor_args():
-    sig = inspect.signature(hermes::NamedElement.__init__)
+def test_hermes_namedelement_constructor_args():
+    sig = inspect.signature(hermes_NamedElement.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_hermes::namedelement_has_name():
-    assert hasattr(hermes::NamedElement, "name")
+def test_hermes_namedelement_has_name():
+    assert hasattr(hermes_NamedElement, "name")
     descriptor = None
-    for klass in hermes::NamedElement.__mro__:
+    for klass in hermes_NamedElement.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -116,71 +116,71 @@ def test_namedelement_constructor_args():
 
 
 
-def test_hermes::feature_is_not_abstract():
-    assert not inspect.isabstract(hermes::Feature)
+def test_hermes_entity_is_not_abstract():
+    assert not inspect.isabstract(hermes_Entity)
 
 
-def test_hermes::feature_constructor_exists():
-    assert callable(hermes::Feature.__init__)
+def test_hermes_entity_constructor_exists():
+    assert callable(hermes_Entity.__init__)
 
 
-def test_hermes::feature_constructor_args():
-    sig = inspect.signature(hermes::Feature.__init__)
+def test_hermes_entity_constructor_args():
+    sig = inspect.signature(hermes_Entity.__init__)
     params = list(sig.parameters.keys())
     assert "annotations" in params, "Missing parameter 'annotations'"
-    assert "many" in params, "Missing parameter 'many'"
 
-def test_hermes::feature_has_annotations():
-    assert hasattr(hermes::Feature, "annotations")
+def test_hermes_entity_has_annotations():
+    assert hasattr(hermes_Entity, "annotations")
     descriptor = None
-    for klass in hermes::Feature.__mro__:
+    for klass in hermes_Entity.__mro__:
         if "annotations" in klass.__dict__:
             descriptor = klass.__dict__["annotations"]
             break
     assert isinstance(descriptor, property)
 
-def test_hermes::feature_has_many():
-    assert hasattr(hermes::Feature, "many")
+
+
+def test_hermes_package_is_not_abstract():
+    assert not inspect.isabstract(hermes_Package)
+
+
+def test_hermes_package_constructor_exists():
+    assert callable(hermes_Package.__init__)
+
+
+def test_hermes_package_constructor_args():
+    sig = inspect.signature(hermes_Package.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_hermes_feature_is_not_abstract():
+    assert not inspect.isabstract(hermes_Feature)
+
+
+def test_hermes_feature_constructor_exists():
+    assert callable(hermes_Feature.__init__)
+
+
+def test_hermes_feature_constructor_args():
+    sig = inspect.signature(hermes_Feature.__init__)
+    params = list(sig.parameters.keys())
+    assert "many" in params, "Missing parameter 'many'"
+    assert "annotations" in params, "Missing parameter 'annotations'"
+
+def test_hermes_feature_has_many():
+    assert hasattr(hermes_Feature, "many")
     descriptor = None
-    for klass in hermes::Feature.__mro__:
+    for klass in hermes_Feature.__mro__:
         if "many" in klass.__dict__:
             descriptor = klass.__dict__["many"]
             break
     assert isinstance(descriptor, property)
 
-
-
-def test_hermes::package_is_not_abstract():
-    assert not inspect.isabstract(hermes::Package)
-
-
-def test_hermes::package_constructor_exists():
-    assert callable(hermes::Package.__init__)
-
-
-def test_hermes::package_constructor_args():
-    sig = inspect.signature(hermes::Package.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_hermes::entity_is_not_abstract():
-    assert not inspect.isabstract(hermes::Entity)
-
-
-def test_hermes::entity_constructor_exists():
-    assert callable(hermes::Entity.__init__)
-
-
-def test_hermes::entity_constructor_args():
-    sig = inspect.signature(hermes::Entity.__init__)
-    params = list(sig.parameters.keys())
-    assert "annotations" in params, "Missing parameter 'annotations'"
-
-def test_hermes::entity_has_annotations():
-    assert hasattr(hermes::Entity, "annotations")
+def test_hermes_feature_has_annotations():
+    assert hasattr(hermes_Feature, "annotations")
     descriptor = None
-    for klass in hermes::Entity.__mro__:
+    for klass in hermes_Feature.__mro__:
         if "annotations" in klass.__dict__:
             descriptor = klass.__dict__["annotations"]
             break
@@ -188,36 +188,17 @@ def test_hermes::entity_has_annotations():
 
 
 
-def test_hermes::module_is_not_abstract():
-    assert not inspect.isabstract(hermes::Module)
+def test_hermes_module_is_not_abstract():
+    assert not inspect.isabstract(hermes_Module)
 
 
-def test_hermes::module_constructor_exists():
-    assert callable(hermes::Module.__init__)
+def test_hermes_module_constructor_exists():
+    assert callable(hermes_Module.__init__)
 
 
-def test_hermes::module_constructor_args():
-    sig = inspect.signature(hermes::Module.__init__)
+def test_hermes_module_constructor_args():
+    sig = inspect.signature(hermes_Module.__init__)
     params = list(sig.parameters.keys())
-
-def test_datatypes_exists():
-    # Check that the Enumeration exists
-    assert DataTypes is not None
-
-def test_datatypes_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in DataTypes]
-    expected_literals = [
-        "Boolean",
-        "Long",
-        "Integer",
-        "Double",
-        "Object",
-        "String",
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in DataTypes"
 
 def test_fetureannotation_exists():
     # Check that the Enumeration exists
@@ -227,14 +208,33 @@ def test_fetureannotation_has_all_literals():
     # Collect the names of literals in this Enumeration
     enum_literals = [lit.name for lit in FetureAnnotation]
     expected_literals = [
-        "Ignore",
         "Id",
         "Index",
         "Load",
+        "Ignore",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
         assert lit_name in enum_literals, f"Literal '' missing in FetureAnnotation"
+
+def test_datatypes_exists():
+    # Check that the Enumeration exists
+    assert DataTypes is not None
+
+def test_datatypes_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in DataTypes]
+    expected_literals = [
+        "Long",
+        "Integer",
+        "Boolean",
+        "String",
+        "Object",
+        "Double",
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in DataTypes"
 
 def test_entityannotation_exists():
     # Check that the Enumeration exists
@@ -265,39 +265,39 @@ safe_text = st.text(
 Feature_strategy = st.builds(
     Feature,
 )
-hermes::DataType_strategy = st.builds(
-    hermes::DataType,
+hermes_DataType_strategy = st.builds(
+    hermes_DataType,
     type=
         safe_text
 )
-hermes::Reference_strategy = st.builds(
-    hermes::Reference,
+hermes_Reference_strategy = st.builds(
+    hermes_Reference,
 )
-hermes::NamedElement_strategy = st.builds(
-    hermes::NamedElement,
+hermes_NamedElement_strategy = st.builds(
+    hermes_NamedElement,
     name=
         safe_text
 )
 NamedElement_strategy = st.builds(
     NamedElement,
 )
-hermes::Feature_strategy = st.builds(
-    hermes::Feature,
-    annotations=
-        safe_text,
-    many=
-        st.booleans()
-)
-hermes::Package_strategy = st.builds(
-    hermes::Package,
-)
-hermes::Entity_strategy = st.builds(
-    hermes::Entity,
+hermes_Entity_strategy = st.builds(
+    hermes_Entity,
     annotations=
         safe_text
 )
-hermes::Module_strategy = st.builds(
-    hermes::Module,
+hermes_Package_strategy = st.builds(
+    hermes_Package,
+)
+hermes_Feature_strategy = st.builds(
+    hermes_Feature,
+    many=
+        st.booleans(),
+    annotations=
+        safe_text
+)
+hermes_Module_strategy = st.builds(
+    hermes_Module,
 )
 
 @given(instance=Feature_strategy)
@@ -305,39 +305,33 @@ hermes::Module_strategy = st.builds(
 def test_feature_instantiation(instance):
     assert isinstance(instance, Feature)
 
-@given(instance=hermes::DataType_strategy)
+@given(instance=hermes_DataType_strategy)
 @settings(max_examples=50)
-def test_hermes::datatype_instantiation(instance):
-    assert isinstance(instance, hermes::DataType)
-
-@given(instance=hermes::DataType_strategy)
-def test_hermes::datatype_type_type(instance):
-    assert isinstance(instance.type, str)
+def test_hermes_datatype_instantiation(instance):
+    assert isinstance(instance, hermes_DataType)
 
 
-@given(instance=hermes::DataType_strategy)
-def test_hermes::datatype_type_setter(instance):
+
+@given(instance=hermes_DataType_strategy)
+def test_hermes_datatype_type_setter(instance):
     original = instance.type
     instance.type = original
     assert instance.type == original
 
-@given(instance=hermes::Reference_strategy)
+@given(instance=hermes_Reference_strategy)
 @settings(max_examples=50)
-def test_hermes::reference_instantiation(instance):
-    assert isinstance(instance, hermes::Reference)
+def test_hermes_reference_instantiation(instance):
+    assert isinstance(instance, hermes_Reference)
 
-@given(instance=hermes::NamedElement_strategy)
+@given(instance=hermes_NamedElement_strategy)
 @settings(max_examples=50)
-def test_hermes::namedelement_instantiation(instance):
-    assert isinstance(instance, hermes::NamedElement)
-
-@given(instance=hermes::NamedElement_strategy)
-def test_hermes::namedelement_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_hermes_namedelement_instantiation(instance):
+    assert isinstance(instance, hermes_NamedElement)
 
 
-@given(instance=hermes::NamedElement_strategy)
-def test_hermes::namedelement_name_setter(instance):
+
+@given(instance=hermes_NamedElement_strategy)
+def test_hermes_namedelement_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
@@ -347,55 +341,46 @@ def test_hermes::namedelement_name_setter(instance):
 def test_namedelement_instantiation(instance):
     assert isinstance(instance, NamedElement)
 
-@given(instance=hermes::Feature_strategy)
+@given(instance=hermes_Entity_strategy)
 @settings(max_examples=50)
-def test_hermes::feature_instantiation(instance):
-    assert isinstance(instance, hermes::Feature)
-
-@given(instance=hermes::Feature_strategy)
-def test_hermes::feature_annotations_type(instance):
-    assert isinstance(instance.annotations, str)
+def test_hermes_entity_instantiation(instance):
+    assert isinstance(instance, hermes_Entity)
 
 
-@given(instance=hermes::Feature_strategy)
-def test_hermes::feature_annotations_setter(instance):
+
+@given(instance=hermes_Entity_strategy)
+def test_hermes_entity_annotations_setter(instance):
     original = instance.annotations
     instance.annotations = original
     assert instance.annotations == original
 
-@given(instance=hermes::Feature_strategy)
-def test_hermes::feature_many_type(instance):
-    assert isinstance(instance.many, bool)
+@given(instance=hermes_Package_strategy)
+@settings(max_examples=50)
+def test_hermes_package_instantiation(instance):
+    assert isinstance(instance, hermes_Package)
+
+@given(instance=hermes_Feature_strategy)
+@settings(max_examples=50)
+def test_hermes_feature_instantiation(instance):
+    assert isinstance(instance, hermes_Feature)
 
 
-@given(instance=hermes::Feature_strategy)
-def test_hermes::feature_many_setter(instance):
+
+@given(instance=hermes_Feature_strategy)
+def test_hermes_feature_many_setter(instance):
     original = instance.many
     instance.many = original
     assert instance.many == original
 
-@given(instance=hermes::Package_strategy)
-@settings(max_examples=50)
-def test_hermes::package_instantiation(instance):
-    assert isinstance(instance, hermes::Package)
-
-@given(instance=hermes::Entity_strategy)
-@settings(max_examples=50)
-def test_hermes::entity_instantiation(instance):
-    assert isinstance(instance, hermes::Entity)
-
-@given(instance=hermes::Entity_strategy)
-def test_hermes::entity_annotations_type(instance):
-    assert isinstance(instance.annotations, str)
 
 
-@given(instance=hermes::Entity_strategy)
-def test_hermes::entity_annotations_setter(instance):
+@given(instance=hermes_Feature_strategy)
+def test_hermes_feature_annotations_setter(instance):
     original = instance.annotations
     instance.annotations = original
     assert instance.annotations == original
 
-@given(instance=hermes::Module_strategy)
+@given(instance=hermes_Module_strategy)
 @settings(max_examples=50)
-def test_hermes::module_instantiation(instance):
-    assert isinstance(instance, hermes::Module)
+def test_hermes_module_instantiation(instance):
+    assert isinstance(instance, hermes_Module)

@@ -3,13 +3,13 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     Person,
-    Persons::Female,
-    Persons::Male,
-    Persons::Person,
+    Persons_Female,
+    Persons_Male,
+    Persons_Person,
 )
 
 # =============================================================================
@@ -32,63 +32,63 @@ def test_person_constructor_args():
 
 
 
-def test_persons::female_is_not_abstract():
-    assert not inspect.isabstract(Persons::Female)
+def test_persons_female_is_not_abstract():
+    assert not inspect.isabstract(Persons_Female)
 
 
-def test_persons::female_constructor_exists():
-    assert callable(Persons::Female.__init__)
+def test_persons_female_constructor_exists():
+    assert callable(Persons_Female.__init__)
 
 
-def test_persons::female_constructor_args():
-    sig = inspect.signature(Persons::Female.__init__)
+def test_persons_female_constructor_args():
+    sig = inspect.signature(Persons_Female.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_persons::male_is_not_abstract():
-    assert not inspect.isabstract(Persons::Male)
+def test_persons_male_is_not_abstract():
+    assert not inspect.isabstract(Persons_Male)
 
 
-def test_persons::male_constructor_exists():
-    assert callable(Persons::Male.__init__)
+def test_persons_male_constructor_exists():
+    assert callable(Persons_Male.__init__)
 
 
-def test_persons::male_constructor_args():
-    sig = inspect.signature(Persons::Male.__init__)
+def test_persons_male_constructor_args():
+    sig = inspect.signature(Persons_Male.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_persons::person_is_not_abstract():
-    assert not inspect.isabstract(Persons::Person)
+def test_persons_person_is_not_abstract():
+    assert not inspect.isabstract(Persons_Person)
 
 
-def test_persons::person_constructor_exists():
-    assert callable(Persons::Person.__init__)
+def test_persons_person_constructor_exists():
+    assert callable(Persons_Person.__init__)
 
 
-def test_persons::person_constructor_args():
-    sig = inspect.signature(Persons::Person.__init__)
+def test_persons_person_constructor_args():
+    sig = inspect.signature(Persons_Person.__init__)
     params = list(sig.parameters.keys())
-    assert "age" in params, "Missing parameter 'age'"
     assert "name" in params, "Missing parameter 'name'"
+    assert "age" in params, "Missing parameter 'age'"
 
-def test_persons::person_has_age():
-    assert hasattr(Persons::Person, "age")
+def test_persons_person_has_name():
+    assert hasattr(Persons_Person, "name")
     descriptor = None
-    for klass in Persons::Person.__mro__:
-        if "age" in klass.__dict__:
-            descriptor = klass.__dict__["age"]
+    for klass in Persons_Person.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
-def test_persons::person_has_name():
-    assert hasattr(Persons::Person, "name")
+def test_persons_person_has_age():
+    assert hasattr(Persons_Person, "age")
     descriptor = None
-    for klass in Persons::Person.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
+    for klass in Persons_Person.__mro__:
+        if "age" in klass.__dict__:
+            descriptor = klass.__dict__["age"]
             break
     assert isinstance(descriptor, property)
 
@@ -107,18 +107,18 @@ safe_text = st.text(
 Person_strategy = st.builds(
     Person,
 )
-Persons::Female_strategy = st.builds(
-    Persons::Female,
+Persons_Female_strategy = st.builds(
+    Persons_Female,
 )
-Persons::Male_strategy = st.builds(
-    Persons::Male,
+Persons_Male_strategy = st.builds(
+    Persons_Male,
 )
-Persons::Person_strategy = st.builds(
-    Persons::Person,
-    age=
-        st.integers(),
+Persons_Person_strategy = st.builds(
+    Persons_Person,
     name=
-        safe_text
+        safe_text,
+    age=
+        st.integers()
 )
 
 @given(instance=Person_strategy)
@@ -126,39 +126,33 @@ Persons::Person_strategy = st.builds(
 def test_person_instantiation(instance):
     assert isinstance(instance, Person)
 
-@given(instance=Persons::Female_strategy)
+@given(instance=Persons_Female_strategy)
 @settings(max_examples=50)
-def test_persons::female_instantiation(instance):
-    assert isinstance(instance, Persons::Female)
+def test_persons_female_instantiation(instance):
+    assert isinstance(instance, Persons_Female)
 
-@given(instance=Persons::Male_strategy)
+@given(instance=Persons_Male_strategy)
 @settings(max_examples=50)
-def test_persons::male_instantiation(instance):
-    assert isinstance(instance, Persons::Male)
+def test_persons_male_instantiation(instance):
+    assert isinstance(instance, Persons_Male)
 
-@given(instance=Persons::Person_strategy)
+@given(instance=Persons_Person_strategy)
 @settings(max_examples=50)
-def test_persons::person_instantiation(instance):
-    assert isinstance(instance, Persons::Person)
-
-@given(instance=Persons::Person_strategy)
-def test_persons::person_age_type(instance):
-    assert isinstance(instance.age, int)
+def test_persons_person_instantiation(instance):
+    assert isinstance(instance, Persons_Person)
 
 
-@given(instance=Persons::Person_strategy)
-def test_persons::person_age_setter(instance):
-    original = instance.age
-    instance.age = original
-    assert instance.age == original
 
-@given(instance=Persons::Person_strategy)
-def test_persons::person_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=Persons::Person_strategy)
-def test_persons::person_name_setter(instance):
+@given(instance=Persons_Person_strategy)
+def test_persons_person_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
+
+
+
+@given(instance=Persons_Person_strategy)
+def test_persons_person_age_setter(instance):
+    original = instance.age
+    instance.age = original
+    assert instance.age == original

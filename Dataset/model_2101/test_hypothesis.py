@@ -3,28 +3,28 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    afmmm::EClass0,
-    afmmm::AttributedFeatureModel,
+from python_code import (
+    afmmm_EClass0,
+    afmmm_AttributedFeatureModel,
     Domain,
-    afmmm::Real,
-    afmmm::Integer,
-    afmmm::Enum,
-    afmmm::Boolean,
-    afmmm::Domain,
+    afmmm_Real,
+    afmmm_Enum,
+    afmmm_Integer,
+    afmmm_Boolean,
+    afmmm_Domain,
     Relation,
-    afmmm::Optional,
-    afmmm::XOr,
-    afmmm::Mutex,
-    afmmm::Or,
-    afmmm::Mandatory,
-    afmmm::Attribute,
-    afmmm::Relation,
-    afmmm::CrossTreeConstraint,
-    afmmm::Feature,
-    afmmm::AttributedFeatureDiagram,
+    afmmm_Or,
+    afmmm_Mutex,
+    afmmm_XOr,
+    afmmm_Optional,
+    afmmm_Mandatory,
+    afmmm_Attribute,
+    afmmm_Relation,
+    afmmm_CrossTreeConstraint,
+    afmmm_Feature,
+    afmmm_AttributedFeatureDiagram,
 )
 
 # =============================================================================
@@ -33,30 +33,30 @@ from classes import (
 
 
 
-def test_afmmm::eclass0_is_not_abstract():
-    assert not inspect.isabstract(afmmm::EClass0)
+def test_afmmm_eclass0_is_not_abstract():
+    assert not inspect.isabstract(afmmm_EClass0)
 
 
-def test_afmmm::eclass0_constructor_exists():
-    assert callable(afmmm::EClass0.__init__)
+def test_afmmm_eclass0_constructor_exists():
+    assert callable(afmmm_EClass0.__init__)
 
 
-def test_afmmm::eclass0_constructor_args():
-    sig = inspect.signature(afmmm::EClass0.__init__)
+def test_afmmm_eclass0_constructor_args():
+    sig = inspect.signature(afmmm_EClass0.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_afmmm::attributedfeaturemodel_is_not_abstract():
-    assert not inspect.isabstract(afmmm::AttributedFeatureModel)
+def test_afmmm_attributedfeaturemodel_is_not_abstract():
+    assert not inspect.isabstract(afmmm_AttributedFeatureModel)
 
 
-def test_afmmm::attributedfeaturemodel_constructor_exists():
-    assert callable(afmmm::AttributedFeatureModel.__init__)
+def test_afmmm_attributedfeaturemodel_constructor_exists():
+    assert callable(afmmm_AttributedFeatureModel.__init__)
 
 
-def test_afmmm::attributedfeaturemodel_constructor_args():
-    sig = inspect.signature(afmmm::AttributedFeatureModel.__init__)
+def test_afmmm_attributedfeaturemodel_constructor_args():
+    sig = inspect.signature(afmmm_AttributedFeatureModel.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -75,51 +75,37 @@ def test_domain_constructor_args():
 
 
 
-def test_afmmm::real_is_not_abstract():
-    assert not inspect.isabstract(afmmm::Real)
+def test_afmmm_real_is_not_abstract():
+    assert not inspect.isabstract(afmmm_Real)
 
 
-def test_afmmm::real_constructor_exists():
-    assert callable(afmmm::Real.__init__)
+def test_afmmm_real_constructor_exists():
+    assert callable(afmmm_Real.__init__)
 
 
-def test_afmmm::real_constructor_args():
-    sig = inspect.signature(afmmm::Real.__init__)
+def test_afmmm_real_constructor_args():
+    sig = inspect.signature(afmmm_Real.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_afmmm::integer_is_not_abstract():
-    assert not inspect.isabstract(afmmm::Integer)
+def test_afmmm_enum_is_not_abstract():
+    assert not inspect.isabstract(afmmm_Enum)
 
 
-def test_afmmm::integer_constructor_exists():
-    assert callable(afmmm::Integer.__init__)
+def test_afmmm_enum_constructor_exists():
+    assert callable(afmmm_Enum.__init__)
 
 
-def test_afmmm::integer_constructor_args():
-    sig = inspect.signature(afmmm::Integer.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_afmmm::enum_is_not_abstract():
-    assert not inspect.isabstract(afmmm::Enum)
-
-
-def test_afmmm::enum_constructor_exists():
-    assert callable(afmmm::Enum.__init__)
-
-
-def test_afmmm::enum_constructor_args():
-    sig = inspect.signature(afmmm::Enum.__init__)
+def test_afmmm_enum_constructor_args():
+    sig = inspect.signature(afmmm_Enum.__init__)
     params = list(sig.parameters.keys())
     assert "literals" in params, "Missing parameter 'literals'"
 
-def test_afmmm::enum_has_literals():
-    assert hasattr(afmmm::Enum, "literals")
+def test_afmmm_enum_has_literals():
+    assert hasattr(afmmm_Enum, "literals")
     descriptor = None
-    for klass in afmmm::Enum.__mro__:
+    for klass in afmmm_Enum.__mro__:
         if "literals" in klass.__dict__:
             descriptor = klass.__dict__["literals"]
             break
@@ -127,30 +113,44 @@ def test_afmmm::enum_has_literals():
 
 
 
-def test_afmmm::boolean_is_not_abstract():
-    assert not inspect.isabstract(afmmm::Boolean)
+def test_afmmm_integer_is_not_abstract():
+    assert not inspect.isabstract(afmmm_Integer)
 
 
-def test_afmmm::boolean_constructor_exists():
-    assert callable(afmmm::Boolean.__init__)
+def test_afmmm_integer_constructor_exists():
+    assert callable(afmmm_Integer.__init__)
 
 
-def test_afmmm::boolean_constructor_args():
-    sig = inspect.signature(afmmm::Boolean.__init__)
+def test_afmmm_integer_constructor_args():
+    sig = inspect.signature(afmmm_Integer.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_afmmm::domain_is_not_abstract():
-    assert not inspect.isabstract(afmmm::Domain)
+def test_afmmm_boolean_is_not_abstract():
+    assert not inspect.isabstract(afmmm_Boolean)
 
 
-def test_afmmm::domain_constructor_exists():
-    assert callable(afmmm::Domain.__init__)
+def test_afmmm_boolean_constructor_exists():
+    assert callable(afmmm_Boolean.__init__)
 
 
-def test_afmmm::domain_constructor_args():
-    sig = inspect.signature(afmmm::Domain.__init__)
+def test_afmmm_boolean_constructor_args():
+    sig = inspect.signature(afmmm_Boolean.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_afmmm_domain_is_not_abstract():
+    assert not inspect.isabstract(afmmm_Domain)
+
+
+def test_afmmm_domain_constructor_exists():
+    assert callable(afmmm_Domain.__init__)
+
+
+def test_afmmm_domain_constructor_args():
+    sig = inspect.signature(afmmm_Domain.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -169,93 +169,93 @@ def test_relation_constructor_args():
 
 
 
-def test_afmmm::optional_is_not_abstract():
-    assert not inspect.isabstract(afmmm::Optional)
+def test_afmmm_or_is_not_abstract():
+    assert not inspect.isabstract(afmmm_Or)
 
 
-def test_afmmm::optional_constructor_exists():
-    assert callable(afmmm::Optional.__init__)
+def test_afmmm_or_constructor_exists():
+    assert callable(afmmm_Or.__init__)
 
 
-def test_afmmm::optional_constructor_args():
-    sig = inspect.signature(afmmm::Optional.__init__)
+def test_afmmm_or_constructor_args():
+    sig = inspect.signature(afmmm_Or.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_afmmm::xor_is_not_abstract():
-    assert not inspect.isabstract(afmmm::XOr)
+def test_afmmm_mutex_is_not_abstract():
+    assert not inspect.isabstract(afmmm_Mutex)
 
 
-def test_afmmm::xor_constructor_exists():
-    assert callable(afmmm::XOr.__init__)
+def test_afmmm_mutex_constructor_exists():
+    assert callable(afmmm_Mutex.__init__)
 
 
-def test_afmmm::xor_constructor_args():
-    sig = inspect.signature(afmmm::XOr.__init__)
+def test_afmmm_mutex_constructor_args():
+    sig = inspect.signature(afmmm_Mutex.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_afmmm::mutex_is_not_abstract():
-    assert not inspect.isabstract(afmmm::Mutex)
+def test_afmmm_xor_is_not_abstract():
+    assert not inspect.isabstract(afmmm_XOr)
 
 
-def test_afmmm::mutex_constructor_exists():
-    assert callable(afmmm::Mutex.__init__)
+def test_afmmm_xor_constructor_exists():
+    assert callable(afmmm_XOr.__init__)
 
 
-def test_afmmm::mutex_constructor_args():
-    sig = inspect.signature(afmmm::Mutex.__init__)
+def test_afmmm_xor_constructor_args():
+    sig = inspect.signature(afmmm_XOr.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_afmmm::or_is_not_abstract():
-    assert not inspect.isabstract(afmmm::Or)
+def test_afmmm_optional_is_not_abstract():
+    assert not inspect.isabstract(afmmm_Optional)
 
 
-def test_afmmm::or_constructor_exists():
-    assert callable(afmmm::Or.__init__)
+def test_afmmm_optional_constructor_exists():
+    assert callable(afmmm_Optional.__init__)
 
 
-def test_afmmm::or_constructor_args():
-    sig = inspect.signature(afmmm::Or.__init__)
+def test_afmmm_optional_constructor_args():
+    sig = inspect.signature(afmmm_Optional.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_afmmm::mandatory_is_not_abstract():
-    assert not inspect.isabstract(afmmm::Mandatory)
+def test_afmmm_mandatory_is_not_abstract():
+    assert not inspect.isabstract(afmmm_Mandatory)
 
 
-def test_afmmm::mandatory_constructor_exists():
-    assert callable(afmmm::Mandatory.__init__)
+def test_afmmm_mandatory_constructor_exists():
+    assert callable(afmmm_Mandatory.__init__)
 
 
-def test_afmmm::mandatory_constructor_args():
-    sig = inspect.signature(afmmm::Mandatory.__init__)
+def test_afmmm_mandatory_constructor_args():
+    sig = inspect.signature(afmmm_Mandatory.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_afmmm::attribute_is_not_abstract():
-    assert not inspect.isabstract(afmmm::Attribute)
+def test_afmmm_attribute_is_not_abstract():
+    assert not inspect.isabstract(afmmm_Attribute)
 
 
-def test_afmmm::attribute_constructor_exists():
-    assert callable(afmmm::Attribute.__init__)
+def test_afmmm_attribute_constructor_exists():
+    assert callable(afmmm_Attribute.__init__)
 
 
-def test_afmmm::attribute_constructor_args():
-    sig = inspect.signature(afmmm::Attribute.__init__)
+def test_afmmm_attribute_constructor_args():
+    sig = inspect.signature(afmmm_Attribute.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_afmmm::attribute_has_name():
-    assert hasattr(afmmm::Attribute, "name")
+def test_afmmm_attribute_has_name():
+    assert hasattr(afmmm_Attribute, "name")
     descriptor = None
-    for klass in afmmm::Attribute.__mro__:
+    for klass in afmmm_Attribute.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -263,51 +263,51 @@ def test_afmmm::attribute_has_name():
 
 
 
-def test_afmmm::relation_is_not_abstract():
-    assert not inspect.isabstract(afmmm::Relation)
+def test_afmmm_relation_is_not_abstract():
+    assert not inspect.isabstract(afmmm_Relation)
 
 
-def test_afmmm::relation_constructor_exists():
-    assert callable(afmmm::Relation.__init__)
+def test_afmmm_relation_constructor_exists():
+    assert callable(afmmm_Relation.__init__)
 
 
-def test_afmmm::relation_constructor_args():
-    sig = inspect.signature(afmmm::Relation.__init__)
+def test_afmmm_relation_constructor_args():
+    sig = inspect.signature(afmmm_Relation.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_afmmm::crosstreeconstraint_is_not_abstract():
-    assert not inspect.isabstract(afmmm::CrossTreeConstraint)
+def test_afmmm_crosstreeconstraint_is_not_abstract():
+    assert not inspect.isabstract(afmmm_CrossTreeConstraint)
 
 
-def test_afmmm::crosstreeconstraint_constructor_exists():
-    assert callable(afmmm::CrossTreeConstraint.__init__)
+def test_afmmm_crosstreeconstraint_constructor_exists():
+    assert callable(afmmm_CrossTreeConstraint.__init__)
 
 
-def test_afmmm::crosstreeconstraint_constructor_args():
-    sig = inspect.signature(afmmm::CrossTreeConstraint.__init__)
+def test_afmmm_crosstreeconstraint_constructor_args():
+    sig = inspect.signature(afmmm_CrossTreeConstraint.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_afmmm::feature_is_not_abstract():
-    assert not inspect.isabstract(afmmm::Feature)
+def test_afmmm_feature_is_not_abstract():
+    assert not inspect.isabstract(afmmm_Feature)
 
 
-def test_afmmm::feature_constructor_exists():
-    assert callable(afmmm::Feature.__init__)
+def test_afmmm_feature_constructor_exists():
+    assert callable(afmmm_Feature.__init__)
 
 
-def test_afmmm::feature_constructor_args():
-    sig = inspect.signature(afmmm::Feature.__init__)
+def test_afmmm_feature_constructor_args():
+    sig = inspect.signature(afmmm_Feature.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_afmmm::feature_has_name():
-    assert hasattr(afmmm::Feature, "name")
+def test_afmmm_feature_has_name():
+    assert hasattr(afmmm_Feature, "name")
     descriptor = None
-    for klass in afmmm::Feature.__mro__:
+    for klass in afmmm_Feature.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -315,16 +315,16 @@ def test_afmmm::feature_has_name():
 
 
 
-def test_afmmm::attributedfeaturediagram_is_not_abstract():
-    assert not inspect.isabstract(afmmm::AttributedFeatureDiagram)
+def test_afmmm_attributedfeaturediagram_is_not_abstract():
+    assert not inspect.isabstract(afmmm_AttributedFeatureDiagram)
 
 
-def test_afmmm::attributedfeaturediagram_constructor_exists():
-    assert callable(afmmm::AttributedFeatureDiagram.__init__)
+def test_afmmm_attributedfeaturediagram_constructor_exists():
+    assert callable(afmmm_AttributedFeatureDiagram.__init__)
 
 
-def test_afmmm::attributedfeaturediagram_constructor_args():
-    sig = inspect.signature(afmmm::AttributedFeatureDiagram.__init__)
+def test_afmmm_attributedfeaturediagram_constructor_args():
+    sig = inspect.signature(afmmm_AttributedFeatureDiagram.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -339,194 +339,185 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-afmmm::EClass0_strategy = st.builds(
-    afmmm::EClass0,
+afmmm_EClass0_strategy = st.builds(
+    afmmm_EClass0,
 )
-afmmm::AttributedFeatureModel_strategy = st.builds(
-    afmmm::AttributedFeatureModel,
+afmmm_AttributedFeatureModel_strategy = st.builds(
+    afmmm_AttributedFeatureModel,
 )
 Domain_strategy = st.builds(
     Domain,
 )
-afmmm::Real_strategy = st.builds(
-    afmmm::Real,
+afmmm_Real_strategy = st.builds(
+    afmmm_Real,
 )
-afmmm::Integer_strategy = st.builds(
-    afmmm::Integer,
-)
-afmmm::Enum_strategy = st.builds(
-    afmmm::Enum,
+afmmm_Enum_strategy = st.builds(
+    afmmm_Enum,
     literals=
         safe_text
 )
-afmmm::Boolean_strategy = st.builds(
-    afmmm::Boolean,
+afmmm_Integer_strategy = st.builds(
+    afmmm_Integer,
 )
-afmmm::Domain_strategy = st.builds(
-    afmmm::Domain,
+afmmm_Boolean_strategy = st.builds(
+    afmmm_Boolean,
+)
+afmmm_Domain_strategy = st.builds(
+    afmmm_Domain,
 )
 Relation_strategy = st.builds(
     Relation,
 )
-afmmm::Optional_strategy = st.builds(
-    afmmm::Optional,
+afmmm_Or_strategy = st.builds(
+    afmmm_Or,
 )
-afmmm::XOr_strategy = st.builds(
-    afmmm::XOr,
+afmmm_Mutex_strategy = st.builds(
+    afmmm_Mutex,
 )
-afmmm::Mutex_strategy = st.builds(
-    afmmm::Mutex,
+afmmm_XOr_strategy = st.builds(
+    afmmm_XOr,
 )
-afmmm::Or_strategy = st.builds(
-    afmmm::Or,
+afmmm_Optional_strategy = st.builds(
+    afmmm_Optional,
 )
-afmmm::Mandatory_strategy = st.builds(
-    afmmm::Mandatory,
+afmmm_Mandatory_strategy = st.builds(
+    afmmm_Mandatory,
 )
-afmmm::Attribute_strategy = st.builds(
-    afmmm::Attribute,
+afmmm_Attribute_strategy = st.builds(
+    afmmm_Attribute,
     name=
         safe_text
 )
-afmmm::Relation_strategy = st.builds(
-    afmmm::Relation,
+afmmm_Relation_strategy = st.builds(
+    afmmm_Relation,
 )
-afmmm::CrossTreeConstraint_strategy = st.builds(
-    afmmm::CrossTreeConstraint,
+afmmm_CrossTreeConstraint_strategy = st.builds(
+    afmmm_CrossTreeConstraint,
 )
-afmmm::Feature_strategy = st.builds(
-    afmmm::Feature,
+afmmm_Feature_strategy = st.builds(
+    afmmm_Feature,
     name=
         safe_text
 )
-afmmm::AttributedFeatureDiagram_strategy = st.builds(
-    afmmm::AttributedFeatureDiagram,
+afmmm_AttributedFeatureDiagram_strategy = st.builds(
+    afmmm_AttributedFeatureDiagram,
 )
 
-@given(instance=afmmm::EClass0_strategy)
+@given(instance=afmmm_EClass0_strategy)
 @settings(max_examples=50)
-def test_afmmm::eclass0_instantiation(instance):
-    assert isinstance(instance, afmmm::EClass0)
+def test_afmmm_eclass0_instantiation(instance):
+    assert isinstance(instance, afmmm_EClass0)
 
-@given(instance=afmmm::AttributedFeatureModel_strategy)
+@given(instance=afmmm_AttributedFeatureModel_strategy)
 @settings(max_examples=50)
-def test_afmmm::attributedfeaturemodel_instantiation(instance):
-    assert isinstance(instance, afmmm::AttributedFeatureModel)
+def test_afmmm_attributedfeaturemodel_instantiation(instance):
+    assert isinstance(instance, afmmm_AttributedFeatureModel)
 
 @given(instance=Domain_strategy)
 @settings(max_examples=50)
 def test_domain_instantiation(instance):
     assert isinstance(instance, Domain)
 
-@given(instance=afmmm::Real_strategy)
+@given(instance=afmmm_Real_strategy)
 @settings(max_examples=50)
-def test_afmmm::real_instantiation(instance):
-    assert isinstance(instance, afmmm::Real)
+def test_afmmm_real_instantiation(instance):
+    assert isinstance(instance, afmmm_Real)
 
-@given(instance=afmmm::Integer_strategy)
+@given(instance=afmmm_Enum_strategy)
 @settings(max_examples=50)
-def test_afmmm::integer_instantiation(instance):
-    assert isinstance(instance, afmmm::Integer)
-
-@given(instance=afmmm::Enum_strategy)
-@settings(max_examples=50)
-def test_afmmm::enum_instantiation(instance):
-    assert isinstance(instance, afmmm::Enum)
-
-@given(instance=afmmm::Enum_strategy)
-def test_afmmm::enum_literals_type(instance):
-    assert isinstance(instance.literals, str)
+def test_afmmm_enum_instantiation(instance):
+    assert isinstance(instance, afmmm_Enum)
 
 
-@given(instance=afmmm::Enum_strategy)
-def test_afmmm::enum_literals_setter(instance):
+
+@given(instance=afmmm_Enum_strategy)
+def test_afmmm_enum_literals_setter(instance):
     original = instance.literals
     instance.literals = original
     assert instance.literals == original
 
-@given(instance=afmmm::Boolean_strategy)
+@given(instance=afmmm_Integer_strategy)
 @settings(max_examples=50)
-def test_afmmm::boolean_instantiation(instance):
-    assert isinstance(instance, afmmm::Boolean)
+def test_afmmm_integer_instantiation(instance):
+    assert isinstance(instance, afmmm_Integer)
 
-@given(instance=afmmm::Domain_strategy)
+@given(instance=afmmm_Boolean_strategy)
 @settings(max_examples=50)
-def test_afmmm::domain_instantiation(instance):
-    assert isinstance(instance, afmmm::Domain)
+def test_afmmm_boolean_instantiation(instance):
+    assert isinstance(instance, afmmm_Boolean)
+
+@given(instance=afmmm_Domain_strategy)
+@settings(max_examples=50)
+def test_afmmm_domain_instantiation(instance):
+    assert isinstance(instance, afmmm_Domain)
 
 @given(instance=Relation_strategy)
 @settings(max_examples=50)
 def test_relation_instantiation(instance):
     assert isinstance(instance, Relation)
 
-@given(instance=afmmm::Optional_strategy)
+@given(instance=afmmm_Or_strategy)
 @settings(max_examples=50)
-def test_afmmm::optional_instantiation(instance):
-    assert isinstance(instance, afmmm::Optional)
+def test_afmmm_or_instantiation(instance):
+    assert isinstance(instance, afmmm_Or)
 
-@given(instance=afmmm::XOr_strategy)
+@given(instance=afmmm_Mutex_strategy)
 @settings(max_examples=50)
-def test_afmmm::xor_instantiation(instance):
-    assert isinstance(instance, afmmm::XOr)
+def test_afmmm_mutex_instantiation(instance):
+    assert isinstance(instance, afmmm_Mutex)
 
-@given(instance=afmmm::Mutex_strategy)
+@given(instance=afmmm_XOr_strategy)
 @settings(max_examples=50)
-def test_afmmm::mutex_instantiation(instance):
-    assert isinstance(instance, afmmm::Mutex)
+def test_afmmm_xor_instantiation(instance):
+    assert isinstance(instance, afmmm_XOr)
 
-@given(instance=afmmm::Or_strategy)
+@given(instance=afmmm_Optional_strategy)
 @settings(max_examples=50)
-def test_afmmm::or_instantiation(instance):
-    assert isinstance(instance, afmmm::Or)
+def test_afmmm_optional_instantiation(instance):
+    assert isinstance(instance, afmmm_Optional)
 
-@given(instance=afmmm::Mandatory_strategy)
+@given(instance=afmmm_Mandatory_strategy)
 @settings(max_examples=50)
-def test_afmmm::mandatory_instantiation(instance):
-    assert isinstance(instance, afmmm::Mandatory)
+def test_afmmm_mandatory_instantiation(instance):
+    assert isinstance(instance, afmmm_Mandatory)
 
-@given(instance=afmmm::Attribute_strategy)
+@given(instance=afmmm_Attribute_strategy)
 @settings(max_examples=50)
-def test_afmmm::attribute_instantiation(instance):
-    assert isinstance(instance, afmmm::Attribute)
-
-@given(instance=afmmm::Attribute_strategy)
-def test_afmmm::attribute_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_afmmm_attribute_instantiation(instance):
+    assert isinstance(instance, afmmm_Attribute)
 
 
-@given(instance=afmmm::Attribute_strategy)
-def test_afmmm::attribute_name_setter(instance):
+
+@given(instance=afmmm_Attribute_strategy)
+def test_afmmm_attribute_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=afmmm::Relation_strategy)
+@given(instance=afmmm_Relation_strategy)
 @settings(max_examples=50)
-def test_afmmm::relation_instantiation(instance):
-    assert isinstance(instance, afmmm::Relation)
+def test_afmmm_relation_instantiation(instance):
+    assert isinstance(instance, afmmm_Relation)
 
-@given(instance=afmmm::CrossTreeConstraint_strategy)
+@given(instance=afmmm_CrossTreeConstraint_strategy)
 @settings(max_examples=50)
-def test_afmmm::crosstreeconstraint_instantiation(instance):
-    assert isinstance(instance, afmmm::CrossTreeConstraint)
+def test_afmmm_crosstreeconstraint_instantiation(instance):
+    assert isinstance(instance, afmmm_CrossTreeConstraint)
 
-@given(instance=afmmm::Feature_strategy)
+@given(instance=afmmm_Feature_strategy)
 @settings(max_examples=50)
-def test_afmmm::feature_instantiation(instance):
-    assert isinstance(instance, afmmm::Feature)
-
-@given(instance=afmmm::Feature_strategy)
-def test_afmmm::feature_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_afmmm_feature_instantiation(instance):
+    assert isinstance(instance, afmmm_Feature)
 
 
-@given(instance=afmmm::Feature_strategy)
-def test_afmmm::feature_name_setter(instance):
+
+@given(instance=afmmm_Feature_strategy)
+def test_afmmm_feature_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=afmmm::AttributedFeatureDiagram_strategy)
+@given(instance=afmmm_AttributedFeatureDiagram_strategy)
 @settings(max_examples=50)
-def test_afmmm::attributedfeaturediagram_instantiation(instance):
-    assert isinstance(instance, afmmm::AttributedFeatureDiagram)
+def test_afmmm_attributedfeaturediagram_instantiation(instance):
+    assert isinstance(instance, afmmm_AttributedFeatureDiagram)

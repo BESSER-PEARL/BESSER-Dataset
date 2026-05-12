@@ -3,50 +3,50 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    imperativeoclcs::CollectionLiteralPartCS,
+from python_code import (
+    imperativeoclcs_CollectionLiteralPartCS,
     ImperativeLoopExpCS,
-    imperativeoclcs::ImperativeIterateExpCS,
-    imperativeoclcs::VariableCS,
+    imperativeoclcs_ImperativeIterateExpCS,
+    imperativeoclcs_VariableCS,
     ExpressionBlockCS,
-    imperativeoclcs::WhileExpCS,
-    imperativeoclcs::TryExpCS,
-    imperativeoclcs::ComputeExpCS,
-    imperativeoclcs::TypedRefCS,
+    imperativeoclcs_TryExpCS,
+    imperativeoclcs_WhileExpCS,
+    imperativeoclcs_ComputeExpCS,
+    imperativeoclcs_TypedRefCS,
     TypedRefCS,
-    imperativeoclcs::DictTypeCS,
-    imperativeoclcs::PrimitiveLiteralExpCS,
+    imperativeoclcs_DictTypeCS,
+    imperativeoclcs_PrimitiveLiteralExpCS,
     ElementCS,
-    imperativeoclcs::DictLiteralPartCS,
+    imperativeoclcs_DictLiteralPartCS,
     ExpCS,
-    imperativeoclcs::StatementCS,
-    imperativeoclcs::ListLiteralExpCS,
-    imperativeoclcs::ReturnExpCS,
-    imperativeoclcs::DictLiteralExpCS,
-    imperativeoclcs::ListTypeCS,
-    imperativeoclcs::ForExpCS,
-    imperativeoclcs::ExpressionBlockCS,
-    imperativeoclcs::Type,
-    imperativeoclcs::ExceptCS,
-    imperativeoclcs::DoExpCS,
-    imperativeoclcs::TypeCS,
+    imperativeoclcs_StatementCS,
+    imperativeoclcs_ListLiteralExpCS,
+    imperativeoclcs_ReturnExpCS,
+    imperativeoclcs_DictLiteralExpCS,
+    imperativeoclcs_ListTypeCS,
+    imperativeoclcs_ForExpCS,
+    imperativeoclcs_ExpressionBlockCS,
+    imperativeoclcs_Type,
+    imperativeoclcs_ExceptCS,
+    imperativeoclcs_DoExpCS,
+    imperativeoclcs_TypeCS,
     CallExpCS,
-    imperativeoclcs::LogExpCS,
-    imperativeoclcs::ExpCS,
+    imperativeoclcs_LogExpCS,
+    imperativeoclcs_ExpCS,
     StatementCS,
-    imperativeoclcs::AssignStatementCS,
-    imperativeoclcs::ImperativeLoopExpCS,
-    imperativeoclcs::QuitExpCS,
-    imperativeoclcs::InstantiationExpCS,
-    imperativeoclcs::RaiseExpCS,
-    imperativeoclcs::BlockExpCS,
-    imperativeoclcs::VariableInitializationCS,
-    imperativeoclcs::SwitchExpCS,
-    imperativeoclcs::ExpressionStatementCS,
-    imperativeoclcs::SwitchAltCS,
-    imperativeoclcs::AssertExpCS,
+    imperativeoclcs_InstantiationExpCS,
+    imperativeoclcs_AssignStatementCS,
+    imperativeoclcs_ExpressionStatementCS,
+    imperativeoclcs_VariableInitializationCS,
+    imperativeoclcs_QuitExpCS,
+    imperativeoclcs_BlockExpCS,
+    imperativeoclcs_SwitchAltCS,
+    imperativeoclcs_RaiseExpCS,
+    imperativeoclcs_SwitchExpCS,
+    imperativeoclcs_ImperativeLoopExpCS,
+    imperativeoclcs_AssertExpCS,
 )
 
 # =============================================================================
@@ -55,16 +55,16 @@ from classes import (
 
 
 
-def test_imperativeoclcs::collectionliteralpartcs_is_not_abstract():
-    assert not inspect.isabstract(imperativeoclcs::CollectionLiteralPartCS)
+def test_imperativeoclcs_collectionliteralpartcs_is_not_abstract():
+    assert not inspect.isabstract(imperativeoclcs_CollectionLiteralPartCS)
 
 
-def test_imperativeoclcs::collectionliteralpartcs_constructor_exists():
-    assert callable(imperativeoclcs::CollectionLiteralPartCS.__init__)
+def test_imperativeoclcs_collectionliteralpartcs_constructor_exists():
+    assert callable(imperativeoclcs_CollectionLiteralPartCS.__init__)
 
 
-def test_imperativeoclcs::collectionliteralpartcs_constructor_args():
-    sig = inspect.signature(imperativeoclcs::CollectionLiteralPartCS.__init__)
+def test_imperativeoclcs_collectionliteralpartcs_constructor_args():
+    sig = inspect.signature(imperativeoclcs_CollectionLiteralPartCS.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -83,30 +83,30 @@ def test_imperativeloopexpcs_constructor_args():
 
 
 
-def test_imperativeoclcs::imperativeiterateexpcs_is_not_abstract():
-    assert not inspect.isabstract(imperativeoclcs::ImperativeIterateExpCS)
+def test_imperativeoclcs_imperativeiterateexpcs_is_not_abstract():
+    assert not inspect.isabstract(imperativeoclcs_ImperativeIterateExpCS)
 
 
-def test_imperativeoclcs::imperativeiterateexpcs_constructor_exists():
-    assert callable(imperativeoclcs::ImperativeIterateExpCS.__init__)
+def test_imperativeoclcs_imperativeiterateexpcs_constructor_exists():
+    assert callable(imperativeoclcs_ImperativeIterateExpCS.__init__)
 
 
-def test_imperativeoclcs::imperativeiterateexpcs_constructor_args():
-    sig = inspect.signature(imperativeoclcs::ImperativeIterateExpCS.__init__)
+def test_imperativeoclcs_imperativeiterateexpcs_constructor_args():
+    sig = inspect.signature(imperativeoclcs_ImperativeIterateExpCS.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_imperativeoclcs::variablecs_is_not_abstract():
-    assert not inspect.isabstract(imperativeoclcs::VariableCS)
+def test_imperativeoclcs_variablecs_is_not_abstract():
+    assert not inspect.isabstract(imperativeoclcs_VariableCS)
 
 
-def test_imperativeoclcs::variablecs_constructor_exists():
-    assert callable(imperativeoclcs::VariableCS.__init__)
+def test_imperativeoclcs_variablecs_constructor_exists():
+    assert callable(imperativeoclcs_VariableCS.__init__)
 
 
-def test_imperativeoclcs::variablecs_constructor_args():
-    sig = inspect.signature(imperativeoclcs::VariableCS.__init__)
+def test_imperativeoclcs_variablecs_constructor_args():
+    sig = inspect.signature(imperativeoclcs_VariableCS.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -125,58 +125,58 @@ def test_expressionblockcs_constructor_args():
 
 
 
-def test_imperativeoclcs::whileexpcs_is_not_abstract():
-    assert not inspect.isabstract(imperativeoclcs::WhileExpCS)
+def test_imperativeoclcs_tryexpcs_is_not_abstract():
+    assert not inspect.isabstract(imperativeoclcs_TryExpCS)
 
 
-def test_imperativeoclcs::whileexpcs_constructor_exists():
-    assert callable(imperativeoclcs::WhileExpCS.__init__)
+def test_imperativeoclcs_tryexpcs_constructor_exists():
+    assert callable(imperativeoclcs_TryExpCS.__init__)
 
 
-def test_imperativeoclcs::whileexpcs_constructor_args():
-    sig = inspect.signature(imperativeoclcs::WhileExpCS.__init__)
+def test_imperativeoclcs_tryexpcs_constructor_args():
+    sig = inspect.signature(imperativeoclcs_TryExpCS.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_imperativeoclcs::tryexpcs_is_not_abstract():
-    assert not inspect.isabstract(imperativeoclcs::TryExpCS)
+def test_imperativeoclcs_whileexpcs_is_not_abstract():
+    assert not inspect.isabstract(imperativeoclcs_WhileExpCS)
 
 
-def test_imperativeoclcs::tryexpcs_constructor_exists():
-    assert callable(imperativeoclcs::TryExpCS.__init__)
+def test_imperativeoclcs_whileexpcs_constructor_exists():
+    assert callable(imperativeoclcs_WhileExpCS.__init__)
 
 
-def test_imperativeoclcs::tryexpcs_constructor_args():
-    sig = inspect.signature(imperativeoclcs::TryExpCS.__init__)
+def test_imperativeoclcs_whileexpcs_constructor_args():
+    sig = inspect.signature(imperativeoclcs_WhileExpCS.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_imperativeoclcs::computeexpcs_is_not_abstract():
-    assert not inspect.isabstract(imperativeoclcs::ComputeExpCS)
+def test_imperativeoclcs_computeexpcs_is_not_abstract():
+    assert not inspect.isabstract(imperativeoclcs_ComputeExpCS)
 
 
-def test_imperativeoclcs::computeexpcs_constructor_exists():
-    assert callable(imperativeoclcs::ComputeExpCS.__init__)
+def test_imperativeoclcs_computeexpcs_constructor_exists():
+    assert callable(imperativeoclcs_ComputeExpCS.__init__)
 
 
-def test_imperativeoclcs::computeexpcs_constructor_args():
-    sig = inspect.signature(imperativeoclcs::ComputeExpCS.__init__)
+def test_imperativeoclcs_computeexpcs_constructor_args():
+    sig = inspect.signature(imperativeoclcs_ComputeExpCS.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_imperativeoclcs::typedrefcs_is_not_abstract():
-    assert not inspect.isabstract(imperativeoclcs::TypedRefCS)
+def test_imperativeoclcs_typedrefcs_is_not_abstract():
+    assert not inspect.isabstract(imperativeoclcs_TypedRefCS)
 
 
-def test_imperativeoclcs::typedrefcs_constructor_exists():
-    assert callable(imperativeoclcs::TypedRefCS.__init__)
+def test_imperativeoclcs_typedrefcs_constructor_exists():
+    assert callable(imperativeoclcs_TypedRefCS.__init__)
 
 
-def test_imperativeoclcs::typedrefcs_constructor_args():
-    sig = inspect.signature(imperativeoclcs::TypedRefCS.__init__)
+def test_imperativeoclcs_typedrefcs_constructor_args():
+    sig = inspect.signature(imperativeoclcs_TypedRefCS.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -195,30 +195,30 @@ def test_typedrefcs_constructor_args():
 
 
 
-def test_imperativeoclcs::dicttypecs_is_not_abstract():
-    assert not inspect.isabstract(imperativeoclcs::DictTypeCS)
+def test_imperativeoclcs_dicttypecs_is_not_abstract():
+    assert not inspect.isabstract(imperativeoclcs_DictTypeCS)
 
 
-def test_imperativeoclcs::dicttypecs_constructor_exists():
-    assert callable(imperativeoclcs::DictTypeCS.__init__)
+def test_imperativeoclcs_dicttypecs_constructor_exists():
+    assert callable(imperativeoclcs_DictTypeCS.__init__)
 
 
-def test_imperativeoclcs::dicttypecs_constructor_args():
-    sig = inspect.signature(imperativeoclcs::DictTypeCS.__init__)
+def test_imperativeoclcs_dicttypecs_constructor_args():
+    sig = inspect.signature(imperativeoclcs_DictTypeCS.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_imperativeoclcs::primitiveliteralexpcs_is_not_abstract():
-    assert not inspect.isabstract(imperativeoclcs::PrimitiveLiteralExpCS)
+def test_imperativeoclcs_primitiveliteralexpcs_is_not_abstract():
+    assert not inspect.isabstract(imperativeoclcs_PrimitiveLiteralExpCS)
 
 
-def test_imperativeoclcs::primitiveliteralexpcs_constructor_exists():
-    assert callable(imperativeoclcs::PrimitiveLiteralExpCS.__init__)
+def test_imperativeoclcs_primitiveliteralexpcs_constructor_exists():
+    assert callable(imperativeoclcs_PrimitiveLiteralExpCS.__init__)
 
 
-def test_imperativeoclcs::primitiveliteralexpcs_constructor_args():
-    sig = inspect.signature(imperativeoclcs::PrimitiveLiteralExpCS.__init__)
+def test_imperativeoclcs_primitiveliteralexpcs_constructor_args():
+    sig = inspect.signature(imperativeoclcs_PrimitiveLiteralExpCS.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -237,16 +237,16 @@ def test_elementcs_constructor_args():
 
 
 
-def test_imperativeoclcs::dictliteralpartcs_is_not_abstract():
-    assert not inspect.isabstract(imperativeoclcs::DictLiteralPartCS)
+def test_imperativeoclcs_dictliteralpartcs_is_not_abstract():
+    assert not inspect.isabstract(imperativeoclcs_DictLiteralPartCS)
 
 
-def test_imperativeoclcs::dictliteralpartcs_constructor_exists():
-    assert callable(imperativeoclcs::DictLiteralPartCS.__init__)
+def test_imperativeoclcs_dictliteralpartcs_constructor_exists():
+    assert callable(imperativeoclcs_DictLiteralPartCS.__init__)
 
 
-def test_imperativeoclcs::dictliteralpartcs_constructor_args():
-    sig = inspect.signature(imperativeoclcs::DictLiteralPartCS.__init__)
+def test_imperativeoclcs_dictliteralpartcs_constructor_args():
+    sig = inspect.signature(imperativeoclcs_DictLiteralPartCS.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -265,156 +265,156 @@ def test_expcs_constructor_args():
 
 
 
-def test_imperativeoclcs::statementcs_is_not_abstract():
-    assert not inspect.isabstract(imperativeoclcs::StatementCS)
+def test_imperativeoclcs_statementcs_is_not_abstract():
+    assert not inspect.isabstract(imperativeoclcs_StatementCS)
 
 
-def test_imperativeoclcs::statementcs_constructor_exists():
-    assert callable(imperativeoclcs::StatementCS.__init__)
+def test_imperativeoclcs_statementcs_constructor_exists():
+    assert callable(imperativeoclcs_StatementCS.__init__)
 
 
-def test_imperativeoclcs::statementcs_constructor_args():
-    sig = inspect.signature(imperativeoclcs::StatementCS.__init__)
+def test_imperativeoclcs_statementcs_constructor_args():
+    sig = inspect.signature(imperativeoclcs_StatementCS.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_imperativeoclcs::listliteralexpcs_is_not_abstract():
-    assert not inspect.isabstract(imperativeoclcs::ListLiteralExpCS)
+def test_imperativeoclcs_listliteralexpcs_is_not_abstract():
+    assert not inspect.isabstract(imperativeoclcs_ListLiteralExpCS)
 
 
-def test_imperativeoclcs::listliteralexpcs_constructor_exists():
-    assert callable(imperativeoclcs::ListLiteralExpCS.__init__)
+def test_imperativeoclcs_listliteralexpcs_constructor_exists():
+    assert callable(imperativeoclcs_ListLiteralExpCS.__init__)
 
 
-def test_imperativeoclcs::listliteralexpcs_constructor_args():
-    sig = inspect.signature(imperativeoclcs::ListLiteralExpCS.__init__)
+def test_imperativeoclcs_listliteralexpcs_constructor_args():
+    sig = inspect.signature(imperativeoclcs_ListLiteralExpCS.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_imperativeoclcs::returnexpcs_is_not_abstract():
-    assert not inspect.isabstract(imperativeoclcs::ReturnExpCS)
+def test_imperativeoclcs_returnexpcs_is_not_abstract():
+    assert not inspect.isabstract(imperativeoclcs_ReturnExpCS)
 
 
-def test_imperativeoclcs::returnexpcs_constructor_exists():
-    assert callable(imperativeoclcs::ReturnExpCS.__init__)
+def test_imperativeoclcs_returnexpcs_constructor_exists():
+    assert callable(imperativeoclcs_ReturnExpCS.__init__)
 
 
-def test_imperativeoclcs::returnexpcs_constructor_args():
-    sig = inspect.signature(imperativeoclcs::ReturnExpCS.__init__)
+def test_imperativeoclcs_returnexpcs_constructor_args():
+    sig = inspect.signature(imperativeoclcs_ReturnExpCS.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_imperativeoclcs::dictliteralexpcs_is_not_abstract():
-    assert not inspect.isabstract(imperativeoclcs::DictLiteralExpCS)
+def test_imperativeoclcs_dictliteralexpcs_is_not_abstract():
+    assert not inspect.isabstract(imperativeoclcs_DictLiteralExpCS)
 
 
-def test_imperativeoclcs::dictliteralexpcs_constructor_exists():
-    assert callable(imperativeoclcs::DictLiteralExpCS.__init__)
+def test_imperativeoclcs_dictliteralexpcs_constructor_exists():
+    assert callable(imperativeoclcs_DictLiteralExpCS.__init__)
 
 
-def test_imperativeoclcs::dictliteralexpcs_constructor_args():
-    sig = inspect.signature(imperativeoclcs::DictLiteralExpCS.__init__)
+def test_imperativeoclcs_dictliteralexpcs_constructor_args():
+    sig = inspect.signature(imperativeoclcs_DictLiteralExpCS.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_imperativeoclcs::listtypecs_is_not_abstract():
-    assert not inspect.isabstract(imperativeoclcs::ListTypeCS)
+def test_imperativeoclcs_listtypecs_is_not_abstract():
+    assert not inspect.isabstract(imperativeoclcs_ListTypeCS)
 
 
-def test_imperativeoclcs::listtypecs_constructor_exists():
-    assert callable(imperativeoclcs::ListTypeCS.__init__)
+def test_imperativeoclcs_listtypecs_constructor_exists():
+    assert callable(imperativeoclcs_ListTypeCS.__init__)
 
 
-def test_imperativeoclcs::listtypecs_constructor_args():
-    sig = inspect.signature(imperativeoclcs::ListTypeCS.__init__)
+def test_imperativeoclcs_listtypecs_constructor_args():
+    sig = inspect.signature(imperativeoclcs_ListTypeCS.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_imperativeoclcs::forexpcs_is_not_abstract():
-    assert not inspect.isabstract(imperativeoclcs::ForExpCS)
+def test_imperativeoclcs_forexpcs_is_not_abstract():
+    assert not inspect.isabstract(imperativeoclcs_ForExpCS)
 
 
-def test_imperativeoclcs::forexpcs_constructor_exists():
-    assert callable(imperativeoclcs::ForExpCS.__init__)
+def test_imperativeoclcs_forexpcs_constructor_exists():
+    assert callable(imperativeoclcs_ForExpCS.__init__)
 
 
-def test_imperativeoclcs::forexpcs_constructor_args():
-    sig = inspect.signature(imperativeoclcs::ForExpCS.__init__)
+def test_imperativeoclcs_forexpcs_constructor_args():
+    sig = inspect.signature(imperativeoclcs_ForExpCS.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_imperativeoclcs::expressionblockcs_is_not_abstract():
-    assert not inspect.isabstract(imperativeoclcs::ExpressionBlockCS)
+def test_imperativeoclcs_expressionblockcs_is_not_abstract():
+    assert not inspect.isabstract(imperativeoclcs_ExpressionBlockCS)
 
 
-def test_imperativeoclcs::expressionblockcs_constructor_exists():
-    assert callable(imperativeoclcs::ExpressionBlockCS.__init__)
+def test_imperativeoclcs_expressionblockcs_constructor_exists():
+    assert callable(imperativeoclcs_ExpressionBlockCS.__init__)
 
 
-def test_imperativeoclcs::expressionblockcs_constructor_args():
-    sig = inspect.signature(imperativeoclcs::ExpressionBlockCS.__init__)
+def test_imperativeoclcs_expressionblockcs_constructor_args():
+    sig = inspect.signature(imperativeoclcs_ExpressionBlockCS.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_imperativeoclcs::type_is_not_abstract():
-    assert not inspect.isabstract(imperativeoclcs::Type)
+def test_imperativeoclcs_type_is_not_abstract():
+    assert not inspect.isabstract(imperativeoclcs_Type)
 
 
-def test_imperativeoclcs::type_constructor_exists():
-    assert callable(imperativeoclcs::Type.__init__)
+def test_imperativeoclcs_type_constructor_exists():
+    assert callable(imperativeoclcs_Type.__init__)
 
 
-def test_imperativeoclcs::type_constructor_args():
-    sig = inspect.signature(imperativeoclcs::Type.__init__)
+def test_imperativeoclcs_type_constructor_args():
+    sig = inspect.signature(imperativeoclcs_Type.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_imperativeoclcs::exceptcs_is_not_abstract():
-    assert not inspect.isabstract(imperativeoclcs::ExceptCS)
+def test_imperativeoclcs_exceptcs_is_not_abstract():
+    assert not inspect.isabstract(imperativeoclcs_ExceptCS)
 
 
-def test_imperativeoclcs::exceptcs_constructor_exists():
-    assert callable(imperativeoclcs::ExceptCS.__init__)
+def test_imperativeoclcs_exceptcs_constructor_exists():
+    assert callable(imperativeoclcs_ExceptCS.__init__)
 
 
-def test_imperativeoclcs::exceptcs_constructor_args():
-    sig = inspect.signature(imperativeoclcs::ExceptCS.__init__)
+def test_imperativeoclcs_exceptcs_constructor_args():
+    sig = inspect.signature(imperativeoclcs_ExceptCS.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_imperativeoclcs::doexpcs_is_not_abstract():
-    assert not inspect.isabstract(imperativeoclcs::DoExpCS)
+def test_imperativeoclcs_doexpcs_is_not_abstract():
+    assert not inspect.isabstract(imperativeoclcs_DoExpCS)
 
 
-def test_imperativeoclcs::doexpcs_constructor_exists():
-    assert callable(imperativeoclcs::DoExpCS.__init__)
+def test_imperativeoclcs_doexpcs_constructor_exists():
+    assert callable(imperativeoclcs_DoExpCS.__init__)
 
 
-def test_imperativeoclcs::doexpcs_constructor_args():
-    sig = inspect.signature(imperativeoclcs::DoExpCS.__init__)
+def test_imperativeoclcs_doexpcs_constructor_args():
+    sig = inspect.signature(imperativeoclcs_DoExpCS.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_imperativeoclcs::typecs_is_not_abstract():
-    assert not inspect.isabstract(imperativeoclcs::TypeCS)
+def test_imperativeoclcs_typecs_is_not_abstract():
+    assert not inspect.isabstract(imperativeoclcs_TypeCS)
 
 
-def test_imperativeoclcs::typecs_constructor_exists():
-    assert callable(imperativeoclcs::TypeCS.__init__)
+def test_imperativeoclcs_typecs_constructor_exists():
+    assert callable(imperativeoclcs_TypeCS.__init__)
 
 
-def test_imperativeoclcs::typecs_constructor_args():
-    sig = inspect.signature(imperativeoclcs::TypeCS.__init__)
+def test_imperativeoclcs_typecs_constructor_args():
+    sig = inspect.signature(imperativeoclcs_TypeCS.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -433,30 +433,30 @@ def test_callexpcs_constructor_args():
 
 
 
-def test_imperativeoclcs::logexpcs_is_not_abstract():
-    assert not inspect.isabstract(imperativeoclcs::LogExpCS)
+def test_imperativeoclcs_logexpcs_is_not_abstract():
+    assert not inspect.isabstract(imperativeoclcs_LogExpCS)
 
 
-def test_imperativeoclcs::logexpcs_constructor_exists():
-    assert callable(imperativeoclcs::LogExpCS.__init__)
+def test_imperativeoclcs_logexpcs_constructor_exists():
+    assert callable(imperativeoclcs_LogExpCS.__init__)
 
 
-def test_imperativeoclcs::logexpcs_constructor_args():
-    sig = inspect.signature(imperativeoclcs::LogExpCS.__init__)
+def test_imperativeoclcs_logexpcs_constructor_args():
+    sig = inspect.signature(imperativeoclcs_LogExpCS.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_imperativeoclcs::expcs_is_not_abstract():
-    assert not inspect.isabstract(imperativeoclcs::ExpCS)
+def test_imperativeoclcs_expcs_is_not_abstract():
+    assert not inspect.isabstract(imperativeoclcs_ExpCS)
 
 
-def test_imperativeoclcs::expcs_constructor_exists():
-    assert callable(imperativeoclcs::ExpCS.__init__)
+def test_imperativeoclcs_expcs_constructor_exists():
+    assert callable(imperativeoclcs_ExpCS.__init__)
 
 
-def test_imperativeoclcs::expcs_constructor_args():
-    sig = inspect.signature(imperativeoclcs::ExpCS.__init__)
+def test_imperativeoclcs_expcs_constructor_args():
+    sig = inspect.signature(imperativeoclcs_ExpCS.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -475,23 +475,37 @@ def test_statementcs_constructor_args():
 
 
 
-def test_imperativeoclcs::assignstatementcs_is_not_abstract():
-    assert not inspect.isabstract(imperativeoclcs::AssignStatementCS)
+def test_imperativeoclcs_instantiationexpcs_is_not_abstract():
+    assert not inspect.isabstract(imperativeoclcs_InstantiationExpCS)
 
 
-def test_imperativeoclcs::assignstatementcs_constructor_exists():
-    assert callable(imperativeoclcs::AssignStatementCS.__init__)
+def test_imperativeoclcs_instantiationexpcs_constructor_exists():
+    assert callable(imperativeoclcs_InstantiationExpCS.__init__)
 
 
-def test_imperativeoclcs::assignstatementcs_constructor_args():
-    sig = inspect.signature(imperativeoclcs::AssignStatementCS.__init__)
+def test_imperativeoclcs_instantiationexpcs_constructor_args():
+    sig = inspect.signature(imperativeoclcs_InstantiationExpCS.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_imperativeoclcs_assignstatementcs_is_not_abstract():
+    assert not inspect.isabstract(imperativeoclcs_AssignStatementCS)
+
+
+def test_imperativeoclcs_assignstatementcs_constructor_exists():
+    assert callable(imperativeoclcs_AssignStatementCS.__init__)
+
+
+def test_imperativeoclcs_assignstatementcs_constructor_args():
+    sig = inspect.signature(imperativeoclcs_AssignStatementCS.__init__)
     params = list(sig.parameters.keys())
     assert "incremental" in params, "Missing parameter 'incremental'"
 
-def test_imperativeoclcs::assignstatementcs_has_incremental():
-    assert hasattr(imperativeoclcs::AssignStatementCS, "incremental")
+def test_imperativeoclcs_assignstatementcs_has_incremental():
+    assert hasattr(imperativeoclcs_AssignStatementCS, "incremental")
     descriptor = None
-    for klass in imperativeoclcs::AssignStatementCS.__mro__:
+    for klass in imperativeoclcs_AssignStatementCS.__mro__:
         if "incremental" in klass.__dict__:
             descriptor = klass.__dict__["incremental"]
             break
@@ -499,113 +513,47 @@ def test_imperativeoclcs::assignstatementcs_has_incremental():
 
 
 
-def test_imperativeoclcs::imperativeloopexpcs_is_not_abstract():
-    assert not inspect.isabstract(imperativeoclcs::ImperativeLoopExpCS)
+def test_imperativeoclcs_expressionstatementcs_is_not_abstract():
+    assert not inspect.isabstract(imperativeoclcs_ExpressionStatementCS)
 
 
-def test_imperativeoclcs::imperativeloopexpcs_constructor_exists():
-    assert callable(imperativeoclcs::ImperativeLoopExpCS.__init__)
+def test_imperativeoclcs_expressionstatementcs_constructor_exists():
+    assert callable(imperativeoclcs_ExpressionStatementCS.__init__)
 
 
-def test_imperativeoclcs::imperativeloopexpcs_constructor_args():
-    sig = inspect.signature(imperativeoclcs::ImperativeLoopExpCS.__init__)
+def test_imperativeoclcs_expressionstatementcs_constructor_args():
+    sig = inspect.signature(imperativeoclcs_ExpressionStatementCS.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_imperativeoclcs::quitexpcs_is_not_abstract():
-    assert not inspect.isabstract(imperativeoclcs::QuitExpCS)
+def test_imperativeoclcs_variableinitializationcs_is_not_abstract():
+    assert not inspect.isabstract(imperativeoclcs_VariableInitializationCS)
 
 
-def test_imperativeoclcs::quitexpcs_constructor_exists():
-    assert callable(imperativeoclcs::QuitExpCS.__init__)
+def test_imperativeoclcs_variableinitializationcs_constructor_exists():
+    assert callable(imperativeoclcs_VariableInitializationCS.__init__)
 
 
-def test_imperativeoclcs::quitexpcs_constructor_args():
-    sig = inspect.signature(imperativeoclcs::QuitExpCS.__init__)
-    params = list(sig.parameters.keys())
-    assert "keyword" in params, "Missing parameter 'keyword'"
-
-def test_imperativeoclcs::quitexpcs_has_keyword():
-    assert hasattr(imperativeoclcs::QuitExpCS, "keyword")
-    descriptor = None
-    for klass in imperativeoclcs::QuitExpCS.__mro__:
-        if "keyword" in klass.__dict__:
-            descriptor = klass.__dict__["keyword"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_imperativeoclcs::instantiationexpcs_is_not_abstract():
-    assert not inspect.isabstract(imperativeoclcs::InstantiationExpCS)
-
-
-def test_imperativeoclcs::instantiationexpcs_constructor_exists():
-    assert callable(imperativeoclcs::InstantiationExpCS.__init__)
-
-
-def test_imperativeoclcs::instantiationexpcs_constructor_args():
-    sig = inspect.signature(imperativeoclcs::InstantiationExpCS.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_imperativeoclcs::raiseexpcs_is_not_abstract():
-    assert not inspect.isabstract(imperativeoclcs::RaiseExpCS)
-
-
-def test_imperativeoclcs::raiseexpcs_constructor_exists():
-    assert callable(imperativeoclcs::RaiseExpCS.__init__)
-
-
-def test_imperativeoclcs::raiseexpcs_constructor_args():
-    sig = inspect.signature(imperativeoclcs::RaiseExpCS.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_imperativeoclcs::blockexpcs_is_not_abstract():
-    assert not inspect.isabstract(imperativeoclcs::BlockExpCS)
-
-
-def test_imperativeoclcs::blockexpcs_constructor_exists():
-    assert callable(imperativeoclcs::BlockExpCS.__init__)
-
-
-def test_imperativeoclcs::blockexpcs_constructor_args():
-    sig = inspect.signature(imperativeoclcs::BlockExpCS.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_imperativeoclcs::variableinitializationcs_is_not_abstract():
-    assert not inspect.isabstract(imperativeoclcs::VariableInitializationCS)
-
-
-def test_imperativeoclcs::variableinitializationcs_constructor_exists():
-    assert callable(imperativeoclcs::VariableInitializationCS.__init__)
-
-
-def test_imperativeoclcs::variableinitializationcs_constructor_args():
-    sig = inspect.signature(imperativeoclcs::VariableInitializationCS.__init__)
+def test_imperativeoclcs_variableinitializationcs_constructor_args():
+    sig = inspect.signature(imperativeoclcs_VariableInitializationCS.__init__)
     params = list(sig.parameters.keys())
     assert "simpleNameCS" in params, "Missing parameter 'simpleNameCS'"
     assert "withResult" in params, "Missing parameter 'withResult'"
 
-def test_imperativeoclcs::variableinitializationcs_has_simpleNameCS():
-    assert hasattr(imperativeoclcs::VariableInitializationCS, "simpleNameCS")
+def test_imperativeoclcs_variableinitializationcs_has_simpleNameCS():
+    assert hasattr(imperativeoclcs_VariableInitializationCS, "simpleNameCS")
     descriptor = None
-    for klass in imperativeoclcs::VariableInitializationCS.__mro__:
+    for klass in imperativeoclcs_VariableInitializationCS.__mro__:
         if "simpleNameCS" in klass.__dict__:
             descriptor = klass.__dict__["simpleNameCS"]
             break
     assert isinstance(descriptor, property)
 
-def test_imperativeoclcs::variableinitializationcs_has_withResult():
-    assert hasattr(imperativeoclcs::VariableInitializationCS, "withResult")
+def test_imperativeoclcs_variableinitializationcs_has_withResult():
+    assert hasattr(imperativeoclcs_VariableInitializationCS, "withResult")
     descriptor = None
-    for klass in imperativeoclcs::VariableInitializationCS.__mro__:
+    for klass in imperativeoclcs_VariableInitializationCS.__mro__:
         if "withResult" in klass.__dict__:
             descriptor = klass.__dict__["withResult"]
             break
@@ -613,51 +561,23 @@ def test_imperativeoclcs::variableinitializationcs_has_withResult():
 
 
 
-def test_imperativeoclcs::switchexpcs_is_not_abstract():
-    assert not inspect.isabstract(imperativeoclcs::SwitchExpCS)
+def test_imperativeoclcs_quitexpcs_is_not_abstract():
+    assert not inspect.isabstract(imperativeoclcs_QuitExpCS)
 
 
-def test_imperativeoclcs::switchexpcs_constructor_exists():
-    assert callable(imperativeoclcs::SwitchExpCS.__init__)
+def test_imperativeoclcs_quitexpcs_constructor_exists():
+    assert callable(imperativeoclcs_QuitExpCS.__init__)
 
 
-def test_imperativeoclcs::switchexpcs_constructor_args():
-    sig = inspect.signature(imperativeoclcs::SwitchExpCS.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_imperativeoclcs::expressionstatementcs_is_not_abstract():
-    assert not inspect.isabstract(imperativeoclcs::ExpressionStatementCS)
-
-
-def test_imperativeoclcs::expressionstatementcs_constructor_exists():
-    assert callable(imperativeoclcs::ExpressionStatementCS.__init__)
-
-
-def test_imperativeoclcs::expressionstatementcs_constructor_args():
-    sig = inspect.signature(imperativeoclcs::ExpressionStatementCS.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_imperativeoclcs::switchaltcs_is_not_abstract():
-    assert not inspect.isabstract(imperativeoclcs::SwitchAltCS)
-
-
-def test_imperativeoclcs::switchaltcs_constructor_exists():
-    assert callable(imperativeoclcs::SwitchAltCS.__init__)
-
-
-def test_imperativeoclcs::switchaltcs_constructor_args():
-    sig = inspect.signature(imperativeoclcs::SwitchAltCS.__init__)
+def test_imperativeoclcs_quitexpcs_constructor_args():
+    sig = inspect.signature(imperativeoclcs_QuitExpCS.__init__)
     params = list(sig.parameters.keys())
     assert "keyword" in params, "Missing parameter 'keyword'"
 
-def test_imperativeoclcs::switchaltcs_has_keyword():
-    assert hasattr(imperativeoclcs::SwitchAltCS, "keyword")
+def test_imperativeoclcs_quitexpcs_has_keyword():
+    assert hasattr(imperativeoclcs_QuitExpCS, "keyword")
     descriptor = None
-    for klass in imperativeoclcs::SwitchAltCS.__mro__:
+    for klass in imperativeoclcs_QuitExpCS.__mro__:
         if "keyword" in klass.__dict__:
             descriptor = klass.__dict__["keyword"]
             break
@@ -665,23 +585,103 @@ def test_imperativeoclcs::switchaltcs_has_keyword():
 
 
 
-def test_imperativeoclcs::assertexpcs_is_not_abstract():
-    assert not inspect.isabstract(imperativeoclcs::AssertExpCS)
+def test_imperativeoclcs_blockexpcs_is_not_abstract():
+    assert not inspect.isabstract(imperativeoclcs_BlockExpCS)
 
 
-def test_imperativeoclcs::assertexpcs_constructor_exists():
-    assert callable(imperativeoclcs::AssertExpCS.__init__)
+def test_imperativeoclcs_blockexpcs_constructor_exists():
+    assert callable(imperativeoclcs_BlockExpCS.__init__)
 
 
-def test_imperativeoclcs::assertexpcs_constructor_args():
-    sig = inspect.signature(imperativeoclcs::AssertExpCS.__init__)
+def test_imperativeoclcs_blockexpcs_constructor_args():
+    sig = inspect.signature(imperativeoclcs_BlockExpCS.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_imperativeoclcs_switchaltcs_is_not_abstract():
+    assert not inspect.isabstract(imperativeoclcs_SwitchAltCS)
+
+
+def test_imperativeoclcs_switchaltcs_constructor_exists():
+    assert callable(imperativeoclcs_SwitchAltCS.__init__)
+
+
+def test_imperativeoclcs_switchaltcs_constructor_args():
+    sig = inspect.signature(imperativeoclcs_SwitchAltCS.__init__)
+    params = list(sig.parameters.keys())
+    assert "keyword" in params, "Missing parameter 'keyword'"
+
+def test_imperativeoclcs_switchaltcs_has_keyword():
+    assert hasattr(imperativeoclcs_SwitchAltCS, "keyword")
+    descriptor = None
+    for klass in imperativeoclcs_SwitchAltCS.__mro__:
+        if "keyword" in klass.__dict__:
+            descriptor = klass.__dict__["keyword"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_imperativeoclcs_raiseexpcs_is_not_abstract():
+    assert not inspect.isabstract(imperativeoclcs_RaiseExpCS)
+
+
+def test_imperativeoclcs_raiseexpcs_constructor_exists():
+    assert callable(imperativeoclcs_RaiseExpCS.__init__)
+
+
+def test_imperativeoclcs_raiseexpcs_constructor_args():
+    sig = inspect.signature(imperativeoclcs_RaiseExpCS.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_imperativeoclcs_switchexpcs_is_not_abstract():
+    assert not inspect.isabstract(imperativeoclcs_SwitchExpCS)
+
+
+def test_imperativeoclcs_switchexpcs_constructor_exists():
+    assert callable(imperativeoclcs_SwitchExpCS.__init__)
+
+
+def test_imperativeoclcs_switchexpcs_constructor_args():
+    sig = inspect.signature(imperativeoclcs_SwitchExpCS.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_imperativeoclcs_imperativeloopexpcs_is_not_abstract():
+    assert not inspect.isabstract(imperativeoclcs_ImperativeLoopExpCS)
+
+
+def test_imperativeoclcs_imperativeloopexpcs_constructor_exists():
+    assert callable(imperativeoclcs_ImperativeLoopExpCS.__init__)
+
+
+def test_imperativeoclcs_imperativeloopexpcs_constructor_args():
+    sig = inspect.signature(imperativeoclcs_ImperativeLoopExpCS.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_imperativeoclcs_assertexpcs_is_not_abstract():
+    assert not inspect.isabstract(imperativeoclcs_AssertExpCS)
+
+
+def test_imperativeoclcs_assertexpcs_constructor_exists():
+    assert callable(imperativeoclcs_AssertExpCS.__init__)
+
+
+def test_imperativeoclcs_assertexpcs_constructor_args():
+    sig = inspect.signature(imperativeoclcs_AssertExpCS.__init__)
     params = list(sig.parameters.keys())
     assert "severity" in params, "Missing parameter 'severity'"
 
-def test_imperativeoclcs::assertexpcs_has_severity():
-    assert hasattr(imperativeoclcs::AssertExpCS, "severity")
+def test_imperativeoclcs_assertexpcs_has_severity():
+    assert hasattr(imperativeoclcs_AssertExpCS, "severity")
     descriptor = None
-    for klass in imperativeoclcs::AssertExpCS.__mro__:
+    for klass in imperativeoclcs_AssertExpCS.__mro__:
         if "severity" in klass.__dict__:
             descriptor = klass.__dict__["severity"]
             break
@@ -699,409 +699,391 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-imperativeoclcs::CollectionLiteralPartCS_strategy = st.builds(
-    imperativeoclcs::CollectionLiteralPartCS,
+imperativeoclcs_CollectionLiteralPartCS_strategy = st.builds(
+    imperativeoclcs_CollectionLiteralPartCS,
 )
 ImperativeLoopExpCS_strategy = st.builds(
     ImperativeLoopExpCS,
 )
-imperativeoclcs::ImperativeIterateExpCS_strategy = st.builds(
-    imperativeoclcs::ImperativeIterateExpCS,
+imperativeoclcs_ImperativeIterateExpCS_strategy = st.builds(
+    imperativeoclcs_ImperativeIterateExpCS,
 )
-imperativeoclcs::VariableCS_strategy = st.builds(
-    imperativeoclcs::VariableCS,
+imperativeoclcs_VariableCS_strategy = st.builds(
+    imperativeoclcs_VariableCS,
 )
 ExpressionBlockCS_strategy = st.builds(
     ExpressionBlockCS,
 )
-imperativeoclcs::WhileExpCS_strategy = st.builds(
-    imperativeoclcs::WhileExpCS,
+imperativeoclcs_TryExpCS_strategy = st.builds(
+    imperativeoclcs_TryExpCS,
 )
-imperativeoclcs::TryExpCS_strategy = st.builds(
-    imperativeoclcs::TryExpCS,
+imperativeoclcs_WhileExpCS_strategy = st.builds(
+    imperativeoclcs_WhileExpCS,
 )
-imperativeoclcs::ComputeExpCS_strategy = st.builds(
-    imperativeoclcs::ComputeExpCS,
+imperativeoclcs_ComputeExpCS_strategy = st.builds(
+    imperativeoclcs_ComputeExpCS,
 )
-imperativeoclcs::TypedRefCS_strategy = st.builds(
-    imperativeoclcs::TypedRefCS,
+imperativeoclcs_TypedRefCS_strategy = st.builds(
+    imperativeoclcs_TypedRefCS,
 )
 TypedRefCS_strategy = st.builds(
     TypedRefCS,
 )
-imperativeoclcs::DictTypeCS_strategy = st.builds(
-    imperativeoclcs::DictTypeCS,
+imperativeoclcs_DictTypeCS_strategy = st.builds(
+    imperativeoclcs_DictTypeCS,
 )
-imperativeoclcs::PrimitiveLiteralExpCS_strategy = st.builds(
-    imperativeoclcs::PrimitiveLiteralExpCS,
+imperativeoclcs_PrimitiveLiteralExpCS_strategy = st.builds(
+    imperativeoclcs_PrimitiveLiteralExpCS,
 )
 ElementCS_strategy = st.builds(
     ElementCS,
 )
-imperativeoclcs::DictLiteralPartCS_strategy = st.builds(
-    imperativeoclcs::DictLiteralPartCS,
+imperativeoclcs_DictLiteralPartCS_strategy = st.builds(
+    imperativeoclcs_DictLiteralPartCS,
 )
 ExpCS_strategy = st.builds(
     ExpCS,
 )
-imperativeoclcs::StatementCS_strategy = st.builds(
-    imperativeoclcs::StatementCS,
+imperativeoclcs_StatementCS_strategy = st.builds(
+    imperativeoclcs_StatementCS,
 )
-imperativeoclcs::ListLiteralExpCS_strategy = st.builds(
-    imperativeoclcs::ListLiteralExpCS,
+imperativeoclcs_ListLiteralExpCS_strategy = st.builds(
+    imperativeoclcs_ListLiteralExpCS,
 )
-imperativeoclcs::ReturnExpCS_strategy = st.builds(
-    imperativeoclcs::ReturnExpCS,
+imperativeoclcs_ReturnExpCS_strategy = st.builds(
+    imperativeoclcs_ReturnExpCS,
 )
-imperativeoclcs::DictLiteralExpCS_strategy = st.builds(
-    imperativeoclcs::DictLiteralExpCS,
+imperativeoclcs_DictLiteralExpCS_strategy = st.builds(
+    imperativeoclcs_DictLiteralExpCS,
 )
-imperativeoclcs::ListTypeCS_strategy = st.builds(
-    imperativeoclcs::ListTypeCS,
+imperativeoclcs_ListTypeCS_strategy = st.builds(
+    imperativeoclcs_ListTypeCS,
 )
-imperativeoclcs::ForExpCS_strategy = st.builds(
-    imperativeoclcs::ForExpCS,
+imperativeoclcs_ForExpCS_strategy = st.builds(
+    imperativeoclcs_ForExpCS,
 )
-imperativeoclcs::ExpressionBlockCS_strategy = st.builds(
-    imperativeoclcs::ExpressionBlockCS,
+imperativeoclcs_ExpressionBlockCS_strategy = st.builds(
+    imperativeoclcs_ExpressionBlockCS,
 )
-imperativeoclcs::Type_strategy = st.builds(
-    imperativeoclcs::Type,
+imperativeoclcs_Type_strategy = st.builds(
+    imperativeoclcs_Type,
 )
-imperativeoclcs::ExceptCS_strategy = st.builds(
-    imperativeoclcs::ExceptCS,
+imperativeoclcs_ExceptCS_strategy = st.builds(
+    imperativeoclcs_ExceptCS,
 )
-imperativeoclcs::DoExpCS_strategy = st.builds(
-    imperativeoclcs::DoExpCS,
+imperativeoclcs_DoExpCS_strategy = st.builds(
+    imperativeoclcs_DoExpCS,
 )
-imperativeoclcs::TypeCS_strategy = st.builds(
-    imperativeoclcs::TypeCS,
+imperativeoclcs_TypeCS_strategy = st.builds(
+    imperativeoclcs_TypeCS,
 )
 CallExpCS_strategy = st.builds(
     CallExpCS,
 )
-imperativeoclcs::LogExpCS_strategy = st.builds(
-    imperativeoclcs::LogExpCS,
+imperativeoclcs_LogExpCS_strategy = st.builds(
+    imperativeoclcs_LogExpCS,
 )
-imperativeoclcs::ExpCS_strategy = st.builds(
-    imperativeoclcs::ExpCS,
+imperativeoclcs_ExpCS_strategy = st.builds(
+    imperativeoclcs_ExpCS,
 )
 StatementCS_strategy = st.builds(
     StatementCS,
 )
-imperativeoclcs::AssignStatementCS_strategy = st.builds(
-    imperativeoclcs::AssignStatementCS,
+imperativeoclcs_InstantiationExpCS_strategy = st.builds(
+    imperativeoclcs_InstantiationExpCS,
+)
+imperativeoclcs_AssignStatementCS_strategy = st.builds(
+    imperativeoclcs_AssignStatementCS,
     incremental=
         st.booleans()
 )
-imperativeoclcs::ImperativeLoopExpCS_strategy = st.builds(
-    imperativeoclcs::ImperativeLoopExpCS,
+imperativeoclcs_ExpressionStatementCS_strategy = st.builds(
+    imperativeoclcs_ExpressionStatementCS,
 )
-imperativeoclcs::QuitExpCS_strategy = st.builds(
-    imperativeoclcs::QuitExpCS,
-    keyword=
-        safe_text
-)
-imperativeoclcs::InstantiationExpCS_strategy = st.builds(
-    imperativeoclcs::InstantiationExpCS,
-)
-imperativeoclcs::RaiseExpCS_strategy = st.builds(
-    imperativeoclcs::RaiseExpCS,
-)
-imperativeoclcs::BlockExpCS_strategy = st.builds(
-    imperativeoclcs::BlockExpCS,
-)
-imperativeoclcs::VariableInitializationCS_strategy = st.builds(
-    imperativeoclcs::VariableInitializationCS,
+imperativeoclcs_VariableInitializationCS_strategy = st.builds(
+    imperativeoclcs_VariableInitializationCS,
     simpleNameCS=
         safe_text,
     withResult=
         st.booleans()
 )
-imperativeoclcs::SwitchExpCS_strategy = st.builds(
-    imperativeoclcs::SwitchExpCS,
-)
-imperativeoclcs::ExpressionStatementCS_strategy = st.builds(
-    imperativeoclcs::ExpressionStatementCS,
-)
-imperativeoclcs::SwitchAltCS_strategy = st.builds(
-    imperativeoclcs::SwitchAltCS,
+imperativeoclcs_QuitExpCS_strategy = st.builds(
+    imperativeoclcs_QuitExpCS,
     keyword=
         safe_text
 )
-imperativeoclcs::AssertExpCS_strategy = st.builds(
-    imperativeoclcs::AssertExpCS,
+imperativeoclcs_BlockExpCS_strategy = st.builds(
+    imperativeoclcs_BlockExpCS,
+)
+imperativeoclcs_SwitchAltCS_strategy = st.builds(
+    imperativeoclcs_SwitchAltCS,
+    keyword=
+        safe_text
+)
+imperativeoclcs_RaiseExpCS_strategy = st.builds(
+    imperativeoclcs_RaiseExpCS,
+)
+imperativeoclcs_SwitchExpCS_strategy = st.builds(
+    imperativeoclcs_SwitchExpCS,
+)
+imperativeoclcs_ImperativeLoopExpCS_strategy = st.builds(
+    imperativeoclcs_ImperativeLoopExpCS,
+)
+imperativeoclcs_AssertExpCS_strategy = st.builds(
+    imperativeoclcs_AssertExpCS,
     severity=
         safe_text
 )
 
-@given(instance=imperativeoclcs::CollectionLiteralPartCS_strategy)
+@given(instance=imperativeoclcs_CollectionLiteralPartCS_strategy)
 @settings(max_examples=50)
-def test_imperativeoclcs::collectionliteralpartcs_instantiation(instance):
-    assert isinstance(instance, imperativeoclcs::CollectionLiteralPartCS)
+def test_imperativeoclcs_collectionliteralpartcs_instantiation(instance):
+    assert isinstance(instance, imperativeoclcs_CollectionLiteralPartCS)
 
 @given(instance=ImperativeLoopExpCS_strategy)
 @settings(max_examples=50)
 def test_imperativeloopexpcs_instantiation(instance):
     assert isinstance(instance, ImperativeLoopExpCS)
 
-@given(instance=imperativeoclcs::ImperativeIterateExpCS_strategy)
+@given(instance=imperativeoclcs_ImperativeIterateExpCS_strategy)
 @settings(max_examples=50)
-def test_imperativeoclcs::imperativeiterateexpcs_instantiation(instance):
-    assert isinstance(instance, imperativeoclcs::ImperativeIterateExpCS)
+def test_imperativeoclcs_imperativeiterateexpcs_instantiation(instance):
+    assert isinstance(instance, imperativeoclcs_ImperativeIterateExpCS)
 
-@given(instance=imperativeoclcs::VariableCS_strategy)
+@given(instance=imperativeoclcs_VariableCS_strategy)
 @settings(max_examples=50)
-def test_imperativeoclcs::variablecs_instantiation(instance):
-    assert isinstance(instance, imperativeoclcs::VariableCS)
+def test_imperativeoclcs_variablecs_instantiation(instance):
+    assert isinstance(instance, imperativeoclcs_VariableCS)
 
 @given(instance=ExpressionBlockCS_strategy)
 @settings(max_examples=50)
 def test_expressionblockcs_instantiation(instance):
     assert isinstance(instance, ExpressionBlockCS)
 
-@given(instance=imperativeoclcs::WhileExpCS_strategy)
+@given(instance=imperativeoclcs_TryExpCS_strategy)
 @settings(max_examples=50)
-def test_imperativeoclcs::whileexpcs_instantiation(instance):
-    assert isinstance(instance, imperativeoclcs::WhileExpCS)
+def test_imperativeoclcs_tryexpcs_instantiation(instance):
+    assert isinstance(instance, imperativeoclcs_TryExpCS)
 
-@given(instance=imperativeoclcs::TryExpCS_strategy)
+@given(instance=imperativeoclcs_WhileExpCS_strategy)
 @settings(max_examples=50)
-def test_imperativeoclcs::tryexpcs_instantiation(instance):
-    assert isinstance(instance, imperativeoclcs::TryExpCS)
+def test_imperativeoclcs_whileexpcs_instantiation(instance):
+    assert isinstance(instance, imperativeoclcs_WhileExpCS)
 
-@given(instance=imperativeoclcs::ComputeExpCS_strategy)
+@given(instance=imperativeoclcs_ComputeExpCS_strategy)
 @settings(max_examples=50)
-def test_imperativeoclcs::computeexpcs_instantiation(instance):
-    assert isinstance(instance, imperativeoclcs::ComputeExpCS)
+def test_imperativeoclcs_computeexpcs_instantiation(instance):
+    assert isinstance(instance, imperativeoclcs_ComputeExpCS)
 
-@given(instance=imperativeoclcs::TypedRefCS_strategy)
+@given(instance=imperativeoclcs_TypedRefCS_strategy)
 @settings(max_examples=50)
-def test_imperativeoclcs::typedrefcs_instantiation(instance):
-    assert isinstance(instance, imperativeoclcs::TypedRefCS)
+def test_imperativeoclcs_typedrefcs_instantiation(instance):
+    assert isinstance(instance, imperativeoclcs_TypedRefCS)
 
 @given(instance=TypedRefCS_strategy)
 @settings(max_examples=50)
 def test_typedrefcs_instantiation(instance):
     assert isinstance(instance, TypedRefCS)
 
-@given(instance=imperativeoclcs::DictTypeCS_strategy)
+@given(instance=imperativeoclcs_DictTypeCS_strategy)
 @settings(max_examples=50)
-def test_imperativeoclcs::dicttypecs_instantiation(instance):
-    assert isinstance(instance, imperativeoclcs::DictTypeCS)
+def test_imperativeoclcs_dicttypecs_instantiation(instance):
+    assert isinstance(instance, imperativeoclcs_DictTypeCS)
 
-@given(instance=imperativeoclcs::PrimitiveLiteralExpCS_strategy)
+@given(instance=imperativeoclcs_PrimitiveLiteralExpCS_strategy)
 @settings(max_examples=50)
-def test_imperativeoclcs::primitiveliteralexpcs_instantiation(instance):
-    assert isinstance(instance, imperativeoclcs::PrimitiveLiteralExpCS)
+def test_imperativeoclcs_primitiveliteralexpcs_instantiation(instance):
+    assert isinstance(instance, imperativeoclcs_PrimitiveLiteralExpCS)
 
 @given(instance=ElementCS_strategy)
 @settings(max_examples=50)
 def test_elementcs_instantiation(instance):
     assert isinstance(instance, ElementCS)
 
-@given(instance=imperativeoclcs::DictLiteralPartCS_strategy)
+@given(instance=imperativeoclcs_DictLiteralPartCS_strategy)
 @settings(max_examples=50)
-def test_imperativeoclcs::dictliteralpartcs_instantiation(instance):
-    assert isinstance(instance, imperativeoclcs::DictLiteralPartCS)
+def test_imperativeoclcs_dictliteralpartcs_instantiation(instance):
+    assert isinstance(instance, imperativeoclcs_DictLiteralPartCS)
 
 @given(instance=ExpCS_strategy)
 @settings(max_examples=50)
 def test_expcs_instantiation(instance):
     assert isinstance(instance, ExpCS)
 
-@given(instance=imperativeoclcs::StatementCS_strategy)
+@given(instance=imperativeoclcs_StatementCS_strategy)
 @settings(max_examples=50)
-def test_imperativeoclcs::statementcs_instantiation(instance):
-    assert isinstance(instance, imperativeoclcs::StatementCS)
+def test_imperativeoclcs_statementcs_instantiation(instance):
+    assert isinstance(instance, imperativeoclcs_StatementCS)
 
-@given(instance=imperativeoclcs::ListLiteralExpCS_strategy)
+@given(instance=imperativeoclcs_ListLiteralExpCS_strategy)
 @settings(max_examples=50)
-def test_imperativeoclcs::listliteralexpcs_instantiation(instance):
-    assert isinstance(instance, imperativeoclcs::ListLiteralExpCS)
+def test_imperativeoclcs_listliteralexpcs_instantiation(instance):
+    assert isinstance(instance, imperativeoclcs_ListLiteralExpCS)
 
-@given(instance=imperativeoclcs::ReturnExpCS_strategy)
+@given(instance=imperativeoclcs_ReturnExpCS_strategy)
 @settings(max_examples=50)
-def test_imperativeoclcs::returnexpcs_instantiation(instance):
-    assert isinstance(instance, imperativeoclcs::ReturnExpCS)
+def test_imperativeoclcs_returnexpcs_instantiation(instance):
+    assert isinstance(instance, imperativeoclcs_ReturnExpCS)
 
-@given(instance=imperativeoclcs::DictLiteralExpCS_strategy)
+@given(instance=imperativeoclcs_DictLiteralExpCS_strategy)
 @settings(max_examples=50)
-def test_imperativeoclcs::dictliteralexpcs_instantiation(instance):
-    assert isinstance(instance, imperativeoclcs::DictLiteralExpCS)
+def test_imperativeoclcs_dictliteralexpcs_instantiation(instance):
+    assert isinstance(instance, imperativeoclcs_DictLiteralExpCS)
 
-@given(instance=imperativeoclcs::ListTypeCS_strategy)
+@given(instance=imperativeoclcs_ListTypeCS_strategy)
 @settings(max_examples=50)
-def test_imperativeoclcs::listtypecs_instantiation(instance):
-    assert isinstance(instance, imperativeoclcs::ListTypeCS)
+def test_imperativeoclcs_listtypecs_instantiation(instance):
+    assert isinstance(instance, imperativeoclcs_ListTypeCS)
 
-@given(instance=imperativeoclcs::ForExpCS_strategy)
+@given(instance=imperativeoclcs_ForExpCS_strategy)
 @settings(max_examples=50)
-def test_imperativeoclcs::forexpcs_instantiation(instance):
-    assert isinstance(instance, imperativeoclcs::ForExpCS)
+def test_imperativeoclcs_forexpcs_instantiation(instance):
+    assert isinstance(instance, imperativeoclcs_ForExpCS)
 
-@given(instance=imperativeoclcs::ExpressionBlockCS_strategy)
+@given(instance=imperativeoclcs_ExpressionBlockCS_strategy)
 @settings(max_examples=50)
-def test_imperativeoclcs::expressionblockcs_instantiation(instance):
-    assert isinstance(instance, imperativeoclcs::ExpressionBlockCS)
+def test_imperativeoclcs_expressionblockcs_instantiation(instance):
+    assert isinstance(instance, imperativeoclcs_ExpressionBlockCS)
 
-@given(instance=imperativeoclcs::Type_strategy)
+@given(instance=imperativeoclcs_Type_strategy)
 @settings(max_examples=50)
-def test_imperativeoclcs::type_instantiation(instance):
-    assert isinstance(instance, imperativeoclcs::Type)
+def test_imperativeoclcs_type_instantiation(instance):
+    assert isinstance(instance, imperativeoclcs_Type)
 
-@given(instance=imperativeoclcs::ExceptCS_strategy)
+@given(instance=imperativeoclcs_ExceptCS_strategy)
 @settings(max_examples=50)
-def test_imperativeoclcs::exceptcs_instantiation(instance):
-    assert isinstance(instance, imperativeoclcs::ExceptCS)
+def test_imperativeoclcs_exceptcs_instantiation(instance):
+    assert isinstance(instance, imperativeoclcs_ExceptCS)
 
-@given(instance=imperativeoclcs::DoExpCS_strategy)
+@given(instance=imperativeoclcs_DoExpCS_strategy)
 @settings(max_examples=50)
-def test_imperativeoclcs::doexpcs_instantiation(instance):
-    assert isinstance(instance, imperativeoclcs::DoExpCS)
+def test_imperativeoclcs_doexpcs_instantiation(instance):
+    assert isinstance(instance, imperativeoclcs_DoExpCS)
 
-@given(instance=imperativeoclcs::TypeCS_strategy)
+@given(instance=imperativeoclcs_TypeCS_strategy)
 @settings(max_examples=50)
-def test_imperativeoclcs::typecs_instantiation(instance):
-    assert isinstance(instance, imperativeoclcs::TypeCS)
+def test_imperativeoclcs_typecs_instantiation(instance):
+    assert isinstance(instance, imperativeoclcs_TypeCS)
 
 @given(instance=CallExpCS_strategy)
 @settings(max_examples=50)
 def test_callexpcs_instantiation(instance):
     assert isinstance(instance, CallExpCS)
 
-@given(instance=imperativeoclcs::LogExpCS_strategy)
+@given(instance=imperativeoclcs_LogExpCS_strategy)
 @settings(max_examples=50)
-def test_imperativeoclcs::logexpcs_instantiation(instance):
-    assert isinstance(instance, imperativeoclcs::LogExpCS)
+def test_imperativeoclcs_logexpcs_instantiation(instance):
+    assert isinstance(instance, imperativeoclcs_LogExpCS)
 
-@given(instance=imperativeoclcs::ExpCS_strategy)
+@given(instance=imperativeoclcs_ExpCS_strategy)
 @settings(max_examples=50)
-def test_imperativeoclcs::expcs_instantiation(instance):
-    assert isinstance(instance, imperativeoclcs::ExpCS)
+def test_imperativeoclcs_expcs_instantiation(instance):
+    assert isinstance(instance, imperativeoclcs_ExpCS)
 
 @given(instance=StatementCS_strategy)
 @settings(max_examples=50)
 def test_statementcs_instantiation(instance):
     assert isinstance(instance, StatementCS)
 
-@given(instance=imperativeoclcs::AssignStatementCS_strategy)
+@given(instance=imperativeoclcs_InstantiationExpCS_strategy)
 @settings(max_examples=50)
-def test_imperativeoclcs::assignstatementcs_instantiation(instance):
-    assert isinstance(instance, imperativeoclcs::AssignStatementCS)
+def test_imperativeoclcs_instantiationexpcs_instantiation(instance):
+    assert isinstance(instance, imperativeoclcs_InstantiationExpCS)
 
-@given(instance=imperativeoclcs::AssignStatementCS_strategy)
-def test_imperativeoclcs::assignstatementcs_incremental_type(instance):
-    assert isinstance(instance.incremental, bool)
+@given(instance=imperativeoclcs_AssignStatementCS_strategy)
+@settings(max_examples=50)
+def test_imperativeoclcs_assignstatementcs_instantiation(instance):
+    assert isinstance(instance, imperativeoclcs_AssignStatementCS)
 
 
-@given(instance=imperativeoclcs::AssignStatementCS_strategy)
-def test_imperativeoclcs::assignstatementcs_incremental_setter(instance):
+
+@given(instance=imperativeoclcs_AssignStatementCS_strategy)
+def test_imperativeoclcs_assignstatementcs_incremental_setter(instance):
     original = instance.incremental
     instance.incremental = original
     assert instance.incremental == original
 
-@given(instance=imperativeoclcs::ImperativeLoopExpCS_strategy)
+@given(instance=imperativeoclcs_ExpressionStatementCS_strategy)
 @settings(max_examples=50)
-def test_imperativeoclcs::imperativeloopexpcs_instantiation(instance):
-    assert isinstance(instance, imperativeoclcs::ImperativeLoopExpCS)
+def test_imperativeoclcs_expressionstatementcs_instantiation(instance):
+    assert isinstance(instance, imperativeoclcs_ExpressionStatementCS)
 
-@given(instance=imperativeoclcs::QuitExpCS_strategy)
+@given(instance=imperativeoclcs_VariableInitializationCS_strategy)
 @settings(max_examples=50)
-def test_imperativeoclcs::quitexpcs_instantiation(instance):
-    assert isinstance(instance, imperativeoclcs::QuitExpCS)
-
-@given(instance=imperativeoclcs::QuitExpCS_strategy)
-def test_imperativeoclcs::quitexpcs_keyword_type(instance):
-    assert isinstance(instance.keyword, str)
+def test_imperativeoclcs_variableinitializationcs_instantiation(instance):
+    assert isinstance(instance, imperativeoclcs_VariableInitializationCS)
 
 
-@given(instance=imperativeoclcs::QuitExpCS_strategy)
-def test_imperativeoclcs::quitexpcs_keyword_setter(instance):
-    original = instance.keyword
-    instance.keyword = original
-    assert instance.keyword == original
 
-@given(instance=imperativeoclcs::InstantiationExpCS_strategy)
-@settings(max_examples=50)
-def test_imperativeoclcs::instantiationexpcs_instantiation(instance):
-    assert isinstance(instance, imperativeoclcs::InstantiationExpCS)
-
-@given(instance=imperativeoclcs::RaiseExpCS_strategy)
-@settings(max_examples=50)
-def test_imperativeoclcs::raiseexpcs_instantiation(instance):
-    assert isinstance(instance, imperativeoclcs::RaiseExpCS)
-
-@given(instance=imperativeoclcs::BlockExpCS_strategy)
-@settings(max_examples=50)
-def test_imperativeoclcs::blockexpcs_instantiation(instance):
-    assert isinstance(instance, imperativeoclcs::BlockExpCS)
-
-@given(instance=imperativeoclcs::VariableInitializationCS_strategy)
-@settings(max_examples=50)
-def test_imperativeoclcs::variableinitializationcs_instantiation(instance):
-    assert isinstance(instance, imperativeoclcs::VariableInitializationCS)
-
-@given(instance=imperativeoclcs::VariableInitializationCS_strategy)
-def test_imperativeoclcs::variableinitializationcs_simpleNameCS_type(instance):
-    assert isinstance(instance.simpleNameCS, str)
-
-
-@given(instance=imperativeoclcs::VariableInitializationCS_strategy)
-def test_imperativeoclcs::variableinitializationcs_simpleNameCS_setter(instance):
+@given(instance=imperativeoclcs_VariableInitializationCS_strategy)
+def test_imperativeoclcs_variableinitializationcs_simpleNameCS_setter(instance):
     original = instance.simpleNameCS
     instance.simpleNameCS = original
     assert instance.simpleNameCS == original
 
-@given(instance=imperativeoclcs::VariableInitializationCS_strategy)
-def test_imperativeoclcs::variableinitializationcs_withResult_type(instance):
-    assert isinstance(instance.withResult, bool)
 
 
-@given(instance=imperativeoclcs::VariableInitializationCS_strategy)
-def test_imperativeoclcs::variableinitializationcs_withResult_setter(instance):
+@given(instance=imperativeoclcs_VariableInitializationCS_strategy)
+def test_imperativeoclcs_variableinitializationcs_withResult_setter(instance):
     original = instance.withResult
     instance.withResult = original
     assert instance.withResult == original
 
-@given(instance=imperativeoclcs::SwitchExpCS_strategy)
+@given(instance=imperativeoclcs_QuitExpCS_strategy)
 @settings(max_examples=50)
-def test_imperativeoclcs::switchexpcs_instantiation(instance):
-    assert isinstance(instance, imperativeoclcs::SwitchExpCS)
-
-@given(instance=imperativeoclcs::ExpressionStatementCS_strategy)
-@settings(max_examples=50)
-def test_imperativeoclcs::expressionstatementcs_instantiation(instance):
-    assert isinstance(instance, imperativeoclcs::ExpressionStatementCS)
-
-@given(instance=imperativeoclcs::SwitchAltCS_strategy)
-@settings(max_examples=50)
-def test_imperativeoclcs::switchaltcs_instantiation(instance):
-    assert isinstance(instance, imperativeoclcs::SwitchAltCS)
-
-@given(instance=imperativeoclcs::SwitchAltCS_strategy)
-def test_imperativeoclcs::switchaltcs_keyword_type(instance):
-    assert isinstance(instance.keyword, str)
+def test_imperativeoclcs_quitexpcs_instantiation(instance):
+    assert isinstance(instance, imperativeoclcs_QuitExpCS)
 
 
-@given(instance=imperativeoclcs::SwitchAltCS_strategy)
-def test_imperativeoclcs::switchaltcs_keyword_setter(instance):
+
+@given(instance=imperativeoclcs_QuitExpCS_strategy)
+def test_imperativeoclcs_quitexpcs_keyword_setter(instance):
     original = instance.keyword
     instance.keyword = original
     assert instance.keyword == original
 
-@given(instance=imperativeoclcs::AssertExpCS_strategy)
+@given(instance=imperativeoclcs_BlockExpCS_strategy)
 @settings(max_examples=50)
-def test_imperativeoclcs::assertexpcs_instantiation(instance):
-    assert isinstance(instance, imperativeoclcs::AssertExpCS)
+def test_imperativeoclcs_blockexpcs_instantiation(instance):
+    assert isinstance(instance, imperativeoclcs_BlockExpCS)
 
-@given(instance=imperativeoclcs::AssertExpCS_strategy)
-def test_imperativeoclcs::assertexpcs_severity_type(instance):
-    assert isinstance(instance.severity, str)
+@given(instance=imperativeoclcs_SwitchAltCS_strategy)
+@settings(max_examples=50)
+def test_imperativeoclcs_switchaltcs_instantiation(instance):
+    assert isinstance(instance, imperativeoclcs_SwitchAltCS)
 
 
-@given(instance=imperativeoclcs::AssertExpCS_strategy)
-def test_imperativeoclcs::assertexpcs_severity_setter(instance):
+
+@given(instance=imperativeoclcs_SwitchAltCS_strategy)
+def test_imperativeoclcs_switchaltcs_keyword_setter(instance):
+    original = instance.keyword
+    instance.keyword = original
+    assert instance.keyword == original
+
+@given(instance=imperativeoclcs_RaiseExpCS_strategy)
+@settings(max_examples=50)
+def test_imperativeoclcs_raiseexpcs_instantiation(instance):
+    assert isinstance(instance, imperativeoclcs_RaiseExpCS)
+
+@given(instance=imperativeoclcs_SwitchExpCS_strategy)
+@settings(max_examples=50)
+def test_imperativeoclcs_switchexpcs_instantiation(instance):
+    assert isinstance(instance, imperativeoclcs_SwitchExpCS)
+
+@given(instance=imperativeoclcs_ImperativeLoopExpCS_strategy)
+@settings(max_examples=50)
+def test_imperativeoclcs_imperativeloopexpcs_instantiation(instance):
+    assert isinstance(instance, imperativeoclcs_ImperativeLoopExpCS)
+
+@given(instance=imperativeoclcs_AssertExpCS_strategy)
+@settings(max_examples=50)
+def test_imperativeoclcs_assertexpcs_instantiation(instance):
+    assert isinstance(instance, imperativeoclcs_AssertExpCS)
+
+
+
+@given(instance=imperativeoclcs_AssertExpCS_strategy)
+def test_imperativeoclcs_assertexpcs_severity_setter(instance):
     original = instance.severity
     instance.severity = original
     assert instance.severity == original

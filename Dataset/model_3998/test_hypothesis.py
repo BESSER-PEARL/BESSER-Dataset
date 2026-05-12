@@ -3,11 +3,11 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    Class::Attribute,
-    Class::Class,
+from python_code import (
+    Class_Attribute,
+    Class_Class,
 )
 
 # =============================================================================
@@ -16,43 +16,43 @@ from classes import (
 
 
 
-def test_class::attribute_is_not_abstract():
-    assert not inspect.isabstract(Class::Attribute)
+def test_class_attribute_is_not_abstract():
+    assert not inspect.isabstract(Class_Attribute)
 
 
-def test_class::attribute_constructor_exists():
-    assert callable(Class::Attribute.__init__)
+def test_class_attribute_constructor_exists():
+    assert callable(Class_Attribute.__init__)
 
 
-def test_class::attribute_constructor_args():
-    sig = inspect.signature(Class::Attribute.__init__)
+def test_class_attribute_constructor_args():
+    sig = inspect.signature(Class_Attribute.__init__)
     params = list(sig.parameters.keys())
-    assert "derive" in params, "Missing parameter 'derive'"
     assert "name" in params, "Missing parameter 'name'"
+    assert "derive" in params, "Missing parameter 'derive'"
     assert "id" in params, "Missing parameter 'id'"
 
-def test_class::attribute_has_derive():
-    assert hasattr(Class::Attribute, "derive")
+def test_class_attribute_has_name():
+    assert hasattr(Class_Attribute, "name")
     descriptor = None
-    for klass in Class::Attribute.__mro__:
+    for klass in Class_Attribute.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_class_attribute_has_derive():
+    assert hasattr(Class_Attribute, "derive")
+    descriptor = None
+    for klass in Class_Attribute.__mro__:
         if "derive" in klass.__dict__:
             descriptor = klass.__dict__["derive"]
             break
     assert isinstance(descriptor, property)
 
-def test_class::attribute_has_name():
-    assert hasattr(Class::Attribute, "name")
+def test_class_attribute_has_id():
+    assert hasattr(Class_Attribute, "id")
     descriptor = None
-    for klass in Class::Attribute.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_class::attribute_has_id():
-    assert hasattr(Class::Attribute, "id")
-    descriptor = None
-    for klass in Class::Attribute.__mro__:
+    for klass in Class_Attribute.__mro__:
         if "id" in klass.__dict__:
             descriptor = klass.__dict__["id"]
             break
@@ -60,35 +60,35 @@ def test_class::attribute_has_id():
 
 
 
-def test_class::class_is_not_abstract():
-    assert not inspect.isabstract(Class::Class)
+def test_class_class_is_not_abstract():
+    assert not inspect.isabstract(Class_Class)
 
 
-def test_class::class_constructor_exists():
-    assert callable(Class::Class.__init__)
+def test_class_class_constructor_exists():
+    assert callable(Class_Class.__init__)
 
 
-def test_class::class_constructor_args():
-    sig = inspect.signature(Class::Class.__init__)
+def test_class_class_constructor_args():
+    sig = inspect.signature(Class_Class.__init__)
     params = list(sig.parameters.keys())
-    assert "name" in params, "Missing parameter 'name'"
     assert "id" in params, "Missing parameter 'id'"
+    assert "name" in params, "Missing parameter 'name'"
 
-def test_class::class_has_name():
-    assert hasattr(Class::Class, "name")
+def test_class_class_has_id():
+    assert hasattr(Class_Class, "id")
     descriptor = None
-    for klass in Class::Class.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
+    for klass in Class_Class.__mro__:
+        if "id" in klass.__dict__:
+            descriptor = klass.__dict__["id"]
             break
     assert isinstance(descriptor, property)
 
-def test_class::class_has_id():
-    assert hasattr(Class::Class, "id")
+def test_class_class_has_name():
+    assert hasattr(Class_Class, "name")
     descriptor = None
-    for klass in Class::Class.__mro__:
-        if "id" in klass.__dict__:
-            descriptor = klass.__dict__["id"]
+    for klass in Class_Class.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
@@ -104,84 +104,69 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-Class::Attribute_strategy = st.builds(
-    Class::Attribute,
+Class_Attribute_strategy = st.builds(
+    Class_Attribute,
+    name=
+        safe_text,
     derive=
         st.booleans(),
-    name=
-        safe_text,
     id=
         safe_text
 )
-Class::Class_strategy = st.builds(
-    Class::Class,
-    name=
-        safe_text,
+Class_Class_strategy = st.builds(
+    Class_Class,
     id=
+        safe_text,
+    name=
         safe_text
 )
 
-@given(instance=Class::Attribute_strategy)
+@given(instance=Class_Attribute_strategy)
 @settings(max_examples=50)
-def test_class::attribute_instantiation(instance):
-    assert isinstance(instance, Class::Attribute)
-
-@given(instance=Class::Attribute_strategy)
-def test_class::attribute_derive_type(instance):
-    assert isinstance(instance.derive, bool)
+def test_class_attribute_instantiation(instance):
+    assert isinstance(instance, Class_Attribute)
 
 
-@given(instance=Class::Attribute_strategy)
-def test_class::attribute_derive_setter(instance):
+
+@given(instance=Class_Attribute_strategy)
+def test_class_attribute_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+
+
+@given(instance=Class_Attribute_strategy)
+def test_class_attribute_derive_setter(instance):
     original = instance.derive
     instance.derive = original
     assert instance.derive == original
 
-@given(instance=Class::Attribute_strategy)
-def test_class::attribute_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
-@given(instance=Class::Attribute_strategy)
-def test_class::attribute_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
-
-@given(instance=Class::Attribute_strategy)
-def test_class::attribute_id_type(instance):
-    assert isinstance(instance.id, str)
-
-
-@given(instance=Class::Attribute_strategy)
-def test_class::attribute_id_setter(instance):
+@given(instance=Class_Attribute_strategy)
+def test_class_attribute_id_setter(instance):
     original = instance.id
     instance.id = original
     assert instance.id == original
 
-@given(instance=Class::Class_strategy)
+@given(instance=Class_Class_strategy)
 @settings(max_examples=50)
-def test_class::class_instantiation(instance):
-    assert isinstance(instance, Class::Class)
-
-@given(instance=Class::Class_strategy)
-def test_class::class_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_class_class_instantiation(instance):
+    assert isinstance(instance, Class_Class)
 
 
-@given(instance=Class::Class_strategy)
-def test_class::class_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
 
-@given(instance=Class::Class_strategy)
-def test_class::class_id_type(instance):
-    assert isinstance(instance.id, str)
-
-
-@given(instance=Class::Class_strategy)
-def test_class::class_id_setter(instance):
+@given(instance=Class_Class_strategy)
+def test_class_class_id_setter(instance):
     original = instance.id
     instance.id = original
     assert instance.id == original
+
+
+
+@given(instance=Class_Class_strategy)
+def test_class_class_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original

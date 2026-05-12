@@ -3,29 +3,29 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    Model::PhaseTransition,
+from python_code import (
+    Model_PhaseTransition,
     PhaseTransition,
-    Model::EClassifier,
-    Model::Port,
+    Model_EClassifier,
+    Model_Port,
     Port,
-    Model::EOC,
-    Model::IC,
-    Model::EIC,
-    Model::Event,
-    Model::Phase,
-    Model::ExtTrans,
-    Model::ConfTrans,
-    Model::IntTransition,
+    Model_EOC,
+    Model_IC,
+    Model_EIC,
+    Model_Event,
+    Model_Phase,
+    Model_ExtTrans,
+    Model_ConfTrans,
+    Model_IntTransition,
     DEVS,
-    Model::CoupledDEVS,
-    Model::AtomicDEVS,
-    Model::OPort,
-    Model::IPort,
-    Model::DEVS,
-    Model::Variable,
+    Model_CoupledDEVS,
+    Model_AtomicDEVS,
+    Model_OPort,
+    Model_IPort,
+    Model_DEVS,
+    Model_Variable,
 )
 
 # =============================================================================
@@ -34,16 +34,16 @@ from classes import (
 
 
 
-def test_model::phasetransition_is_not_abstract():
-    assert not inspect.isabstract(Model::PhaseTransition)
+def test_model_phasetransition_is_not_abstract():
+    assert not inspect.isabstract(Model_PhaseTransition)
 
 
-def test_model::phasetransition_constructor_exists():
-    assert callable(Model::PhaseTransition.__init__)
+def test_model_phasetransition_constructor_exists():
+    assert callable(Model_PhaseTransition.__init__)
 
 
-def test_model::phasetransition_constructor_args():
-    sig = inspect.signature(Model::PhaseTransition.__init__)
+def test_model_phasetransition_constructor_args():
+    sig = inspect.signature(Model_PhaseTransition.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -62,37 +62,37 @@ def test_phasetransition_constructor_args():
 
 
 
-def test_model::eclassifier_is_not_abstract():
-    assert not inspect.isabstract(Model::EClassifier)
+def test_model_eclassifier_is_not_abstract():
+    assert not inspect.isabstract(Model_EClassifier)
 
 
-def test_model::eclassifier_constructor_exists():
-    assert callable(Model::EClassifier.__init__)
+def test_model_eclassifier_constructor_exists():
+    assert callable(Model_EClassifier.__init__)
 
 
-def test_model::eclassifier_constructor_args():
-    sig = inspect.signature(Model::EClassifier.__init__)
+def test_model_eclassifier_constructor_args():
+    sig = inspect.signature(Model_EClassifier.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_model::port_is_not_abstract():
-    assert not inspect.isabstract(Model::Port)
+def test_model_port_is_not_abstract():
+    assert not inspect.isabstract(Model_Port)
 
 
-def test_model::port_constructor_exists():
-    assert callable(Model::Port.__init__)
+def test_model_port_constructor_exists():
+    assert callable(Model_Port.__init__)
 
 
-def test_model::port_constructor_args():
-    sig = inspect.signature(Model::Port.__init__)
+def test_model_port_constructor_args():
+    sig = inspect.signature(Model_Port.__init__)
     params = list(sig.parameters.keys())
     assert "portId" in params, "Missing parameter 'portId'"
 
-def test_model::port_has_portId():
-    assert hasattr(Model::Port, "portId")
+def test_model_port_has_portId():
+    assert hasattr(Model_Port, "portId")
     descriptor = None
-    for klass in Model::Port.__mro__:
+    for klass in Model_Port.__mro__:
         if "portId" in klass.__dict__:
             descriptor = klass.__dict__["portId"]
             break
@@ -114,134 +114,134 @@ def test_port_constructor_args():
 
 
 
-def test_model::eoc_is_not_abstract():
-    assert not inspect.isabstract(Model::EOC)
+def test_model_eoc_is_not_abstract():
+    assert not inspect.isabstract(Model_EOC)
 
 
-def test_model::eoc_constructor_exists():
-    assert callable(Model::EOC.__init__)
+def test_model_eoc_constructor_exists():
+    assert callable(Model_EOC.__init__)
 
 
-def test_model::eoc_constructor_args():
-    sig = inspect.signature(Model::EOC.__init__)
+def test_model_eoc_constructor_args():
+    sig = inspect.signature(Model_EOC.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_model::ic_is_not_abstract():
-    assert not inspect.isabstract(Model::IC)
+def test_model_ic_is_not_abstract():
+    assert not inspect.isabstract(Model_IC)
 
 
-def test_model::ic_constructor_exists():
-    assert callable(Model::IC.__init__)
+def test_model_ic_constructor_exists():
+    assert callable(Model_IC.__init__)
 
 
-def test_model::ic_constructor_args():
-    sig = inspect.signature(Model::IC.__init__)
+def test_model_ic_constructor_args():
+    sig = inspect.signature(Model_IC.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_model::eic_is_not_abstract():
-    assert not inspect.isabstract(Model::EIC)
+def test_model_eic_is_not_abstract():
+    assert not inspect.isabstract(Model_EIC)
 
 
-def test_model::eic_constructor_exists():
-    assert callable(Model::EIC.__init__)
+def test_model_eic_constructor_exists():
+    assert callable(Model_EIC.__init__)
 
 
-def test_model::eic_constructor_args():
-    sig = inspect.signature(Model::EIC.__init__)
+def test_model_eic_constructor_args():
+    sig = inspect.signature(Model_EIC.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_model::event_is_not_abstract():
-    assert not inspect.isabstract(Model::Event)
+def test_model_event_is_not_abstract():
+    assert not inspect.isabstract(Model_Event)
 
 
-def test_model::event_constructor_exists():
-    assert callable(Model::Event.__init__)
+def test_model_event_constructor_exists():
+    assert callable(Model_Event.__init__)
 
 
-def test_model::event_constructor_args():
-    sig = inspect.signature(Model::Event.__init__)
+def test_model_event_constructor_args():
+    sig = inspect.signature(Model_Event.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_model::phase_is_not_abstract():
-    assert not inspect.isabstract(Model::Phase)
+def test_model_phase_is_not_abstract():
+    assert not inspect.isabstract(Model_Phase)
 
 
-def test_model::phase_constructor_exists():
-    assert callable(Model::Phase.__init__)
+def test_model_phase_constructor_exists():
+    assert callable(Model_Phase.__init__)
 
 
-def test_model::phase_constructor_args():
-    sig = inspect.signature(Model::Phase.__init__)
+def test_model_phase_constructor_args():
+    sig = inspect.signature(Model_Phase.__init__)
     params = list(sig.parameters.keys())
-    assert "phaseID" in params, "Missing parameter 'phaseID'"
     assert "timeAdvance" in params, "Missing parameter 'timeAdvance'"
+    assert "phaseID" in params, "Missing parameter 'phaseID'"
 
-def test_model::phase_has_phaseID():
-    assert hasattr(Model::Phase, "phaseID")
+def test_model_phase_has_timeAdvance():
+    assert hasattr(Model_Phase, "timeAdvance")
     descriptor = None
-    for klass in Model::Phase.__mro__:
-        if "phaseID" in klass.__dict__:
-            descriptor = klass.__dict__["phaseID"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_model::phase_has_timeAdvance():
-    assert hasattr(Model::Phase, "timeAdvance")
-    descriptor = None
-    for klass in Model::Phase.__mro__:
+    for klass in Model_Phase.__mro__:
         if "timeAdvance" in klass.__dict__:
             descriptor = klass.__dict__["timeAdvance"]
             break
     assert isinstance(descriptor, property)
 
+def test_model_phase_has_phaseID():
+    assert hasattr(Model_Phase, "phaseID")
+    descriptor = None
+    for klass in Model_Phase.__mro__:
+        if "phaseID" in klass.__dict__:
+            descriptor = klass.__dict__["phaseID"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_model::exttrans_is_not_abstract():
-    assert not inspect.isabstract(Model::ExtTrans)
+
+def test_model_exttrans_is_not_abstract():
+    assert not inspect.isabstract(Model_ExtTrans)
 
 
-def test_model::exttrans_constructor_exists():
-    assert callable(Model::ExtTrans.__init__)
+def test_model_exttrans_constructor_exists():
+    assert callable(Model_ExtTrans.__init__)
 
 
-def test_model::exttrans_constructor_args():
-    sig = inspect.signature(Model::ExtTrans.__init__)
+def test_model_exttrans_constructor_args():
+    sig = inspect.signature(Model_ExtTrans.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_model::conftrans_is_not_abstract():
-    assert not inspect.isabstract(Model::ConfTrans)
+def test_model_conftrans_is_not_abstract():
+    assert not inspect.isabstract(Model_ConfTrans)
 
 
-def test_model::conftrans_constructor_exists():
-    assert callable(Model::ConfTrans.__init__)
+def test_model_conftrans_constructor_exists():
+    assert callable(Model_ConfTrans.__init__)
 
 
-def test_model::conftrans_constructor_args():
-    sig = inspect.signature(Model::ConfTrans.__init__)
+def test_model_conftrans_constructor_args():
+    sig = inspect.signature(Model_ConfTrans.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_model::inttransition_is_not_abstract():
-    assert not inspect.isabstract(Model::IntTransition)
+def test_model_inttransition_is_not_abstract():
+    assert not inspect.isabstract(Model_IntTransition)
 
 
-def test_model::inttransition_constructor_exists():
-    assert callable(Model::IntTransition.__init__)
+def test_model_inttransition_constructor_exists():
+    assert callable(Model_IntTransition.__init__)
 
 
-def test_model::inttransition_constructor_args():
-    sig = inspect.signature(Model::IntTransition.__init__)
+def test_model_inttransition_constructor_args():
+    sig = inspect.signature(Model_IntTransition.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -260,79 +260,79 @@ def test_devs_constructor_args():
 
 
 
-def test_model::coupleddevs_is_not_abstract():
-    assert not inspect.isabstract(Model::CoupledDEVS)
+def test_model_coupleddevs_is_not_abstract():
+    assert not inspect.isabstract(Model_CoupledDEVS)
 
 
-def test_model::coupleddevs_constructor_exists():
-    assert callable(Model::CoupledDEVS.__init__)
+def test_model_coupleddevs_constructor_exists():
+    assert callable(Model_CoupledDEVS.__init__)
 
 
-def test_model::coupleddevs_constructor_args():
-    sig = inspect.signature(Model::CoupledDEVS.__init__)
+def test_model_coupleddevs_constructor_args():
+    sig = inspect.signature(Model_CoupledDEVS.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_model::atomicdevs_is_not_abstract():
-    assert not inspect.isabstract(Model::AtomicDEVS)
+def test_model_atomicdevs_is_not_abstract():
+    assert not inspect.isabstract(Model_AtomicDEVS)
 
 
-def test_model::atomicdevs_constructor_exists():
-    assert callable(Model::AtomicDEVS.__init__)
+def test_model_atomicdevs_constructor_exists():
+    assert callable(Model_AtomicDEVS.__init__)
 
 
-def test_model::atomicdevs_constructor_args():
-    sig = inspect.signature(Model::AtomicDEVS.__init__)
+def test_model_atomicdevs_constructor_args():
+    sig = inspect.signature(Model_AtomicDEVS.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_model::oport_is_not_abstract():
-    assert not inspect.isabstract(Model::OPort)
+def test_model_oport_is_not_abstract():
+    assert not inspect.isabstract(Model_OPort)
 
 
-def test_model::oport_constructor_exists():
-    assert callable(Model::OPort.__init__)
+def test_model_oport_constructor_exists():
+    assert callable(Model_OPort.__init__)
 
 
-def test_model::oport_constructor_args():
-    sig = inspect.signature(Model::OPort.__init__)
+def test_model_oport_constructor_args():
+    sig = inspect.signature(Model_OPort.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_model::iport_is_not_abstract():
-    assert not inspect.isabstract(Model::IPort)
+def test_model_iport_is_not_abstract():
+    assert not inspect.isabstract(Model_IPort)
 
 
-def test_model::iport_constructor_exists():
-    assert callable(Model::IPort.__init__)
+def test_model_iport_constructor_exists():
+    assert callable(Model_IPort.__init__)
 
 
-def test_model::iport_constructor_args():
-    sig = inspect.signature(Model::IPort.__init__)
+def test_model_iport_constructor_args():
+    sig = inspect.signature(Model_IPort.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_model::devs_is_not_abstract():
-    assert not inspect.isabstract(Model::DEVS)
+def test_model_devs_is_not_abstract():
+    assert not inspect.isabstract(Model_DEVS)
 
 
-def test_model::devs_constructor_exists():
-    assert callable(Model::DEVS.__init__)
+def test_model_devs_constructor_exists():
+    assert callable(Model_DEVS.__init__)
 
 
-def test_model::devs_constructor_args():
-    sig = inspect.signature(Model::DEVS.__init__)
+def test_model_devs_constructor_args():
+    sig = inspect.signature(Model_DEVS.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_model::devs_has_name():
-    assert hasattr(Model::DEVS, "name")
+def test_model_devs_has_name():
+    assert hasattr(Model_DEVS, "name")
     descriptor = None
-    for klass in Model::DEVS.__mro__:
+    for klass in Model_DEVS.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -340,23 +340,23 @@ def test_model::devs_has_name():
 
 
 
-def test_model::variable_is_not_abstract():
-    assert not inspect.isabstract(Model::Variable)
+def test_model_variable_is_not_abstract():
+    assert not inspect.isabstract(Model_Variable)
 
 
-def test_model::variable_constructor_exists():
-    assert callable(Model::Variable.__init__)
+def test_model_variable_constructor_exists():
+    assert callable(Model_Variable.__init__)
 
 
-def test_model::variable_constructor_args():
-    sig = inspect.signature(Model::Variable.__init__)
+def test_model_variable_constructor_args():
+    sig = inspect.signature(Model_Variable.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_model::variable_has_name():
-    assert hasattr(Model::Variable, "name")
+def test_model_variable_has_name():
+    assert hasattr(Model_Variable, "name")
     descriptor = None
-    for klass in Model::Variable.__mro__:
+    for klass in Model_Variable.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -374,104 +374,101 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-Model::PhaseTransition_strategy = st.builds(
-    Model::PhaseTransition,
+Model_PhaseTransition_strategy = st.builds(
+    Model_PhaseTransition,
 )
 PhaseTransition_strategy = st.builds(
     PhaseTransition,
 )
-Model::EClassifier_strategy = st.builds(
-    Model::EClassifier,
+Model_EClassifier_strategy = st.builds(
+    Model_EClassifier,
 )
-Model::Port_strategy = st.builds(
-    Model::Port,
+Model_Port_strategy = st.builds(
+    Model_Port,
     portId=
         safe_text
 )
 Port_strategy = st.builds(
     Port,
 )
-Model::EOC_strategy = st.builds(
-    Model::EOC,
+Model_EOC_strategy = st.builds(
+    Model_EOC,
 )
-Model::IC_strategy = st.builds(
-    Model::IC,
+Model_IC_strategy = st.builds(
+    Model_IC,
 )
-Model::EIC_strategy = st.builds(
-    Model::EIC,
+Model_EIC_strategy = st.builds(
+    Model_EIC,
 )
-Model::Event_strategy = st.builds(
-    Model::Event,
+Model_Event_strategy = st.builds(
+    Model_Event,
 )
-Model::Phase_strategy = st.builds(
-    Model::Phase,
-    phaseID=
-        safe_text,
+Model_Phase_strategy = st.builds(
+    Model_Phase,
     timeAdvance=
-        st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False)
+        st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False),
+    phaseID=
+        safe_text
 )
-Model::ExtTrans_strategy = st.builds(
-    Model::ExtTrans,
+Model_ExtTrans_strategy = st.builds(
+    Model_ExtTrans,
 )
-Model::ConfTrans_strategy = st.builds(
-    Model::ConfTrans,
+Model_ConfTrans_strategy = st.builds(
+    Model_ConfTrans,
 )
-Model::IntTransition_strategy = st.builds(
-    Model::IntTransition,
+Model_IntTransition_strategy = st.builds(
+    Model_IntTransition,
 )
 DEVS_strategy = st.builds(
     DEVS,
 )
-Model::CoupledDEVS_strategy = st.builds(
-    Model::CoupledDEVS,
+Model_CoupledDEVS_strategy = st.builds(
+    Model_CoupledDEVS,
 )
-Model::AtomicDEVS_strategy = st.builds(
-    Model::AtomicDEVS,
+Model_AtomicDEVS_strategy = st.builds(
+    Model_AtomicDEVS,
 )
-Model::OPort_strategy = st.builds(
-    Model::OPort,
+Model_OPort_strategy = st.builds(
+    Model_OPort,
 )
-Model::IPort_strategy = st.builds(
-    Model::IPort,
+Model_IPort_strategy = st.builds(
+    Model_IPort,
 )
-Model::DEVS_strategy = st.builds(
-    Model::DEVS,
+Model_DEVS_strategy = st.builds(
+    Model_DEVS,
     name=
         safe_text
 )
-Model::Variable_strategy = st.builds(
-    Model::Variable,
+Model_Variable_strategy = st.builds(
+    Model_Variable,
     name=
         safe_text
 )
 
-@given(instance=Model::PhaseTransition_strategy)
+@given(instance=Model_PhaseTransition_strategy)
 @settings(max_examples=50)
-def test_model::phasetransition_instantiation(instance):
-    assert isinstance(instance, Model::PhaseTransition)
+def test_model_phasetransition_instantiation(instance):
+    assert isinstance(instance, Model_PhaseTransition)
 
 @given(instance=PhaseTransition_strategy)
 @settings(max_examples=50)
 def test_phasetransition_instantiation(instance):
     assert isinstance(instance, PhaseTransition)
 
-@given(instance=Model::EClassifier_strategy)
+@given(instance=Model_EClassifier_strategy)
 @settings(max_examples=50)
-def test_model::eclassifier_instantiation(instance):
-    assert isinstance(instance, Model::EClassifier)
+def test_model_eclassifier_instantiation(instance):
+    assert isinstance(instance, Model_EClassifier)
 
-@given(instance=Model::Port_strategy)
+@given(instance=Model_Port_strategy)
 @settings(max_examples=50)
-def test_model::port_instantiation(instance):
-    assert isinstance(instance, Model::Port)
-
-@given(instance=Model::Port_strategy)
-def test_model::port_portId_type(instance):
-    assert isinstance(instance.portId, str)
+def test_model_port_instantiation(instance):
+    assert isinstance(instance, Model_Port)
 
 
-@given(instance=Model::Port_strategy)
-def test_model::port_portId_setter(instance):
+
+@given(instance=Model_Port_strategy)
+def test_model_port_portId_setter(instance):
     original = instance.portId
     instance.portId = original
     assert instance.portId == original
@@ -481,121 +478,109 @@ def test_model::port_portId_setter(instance):
 def test_port_instantiation(instance):
     assert isinstance(instance, Port)
 
-@given(instance=Model::EOC_strategy)
+@given(instance=Model_EOC_strategy)
 @settings(max_examples=50)
-def test_model::eoc_instantiation(instance):
-    assert isinstance(instance, Model::EOC)
+def test_model_eoc_instantiation(instance):
+    assert isinstance(instance, Model_EOC)
 
-@given(instance=Model::IC_strategy)
+@given(instance=Model_IC_strategy)
 @settings(max_examples=50)
-def test_model::ic_instantiation(instance):
-    assert isinstance(instance, Model::IC)
+def test_model_ic_instantiation(instance):
+    assert isinstance(instance, Model_IC)
 
-@given(instance=Model::EIC_strategy)
+@given(instance=Model_EIC_strategy)
 @settings(max_examples=50)
-def test_model::eic_instantiation(instance):
-    assert isinstance(instance, Model::EIC)
+def test_model_eic_instantiation(instance):
+    assert isinstance(instance, Model_EIC)
 
-@given(instance=Model::Event_strategy)
+@given(instance=Model_Event_strategy)
 @settings(max_examples=50)
-def test_model::event_instantiation(instance):
-    assert isinstance(instance, Model::Event)
+def test_model_event_instantiation(instance):
+    assert isinstance(instance, Model_Event)
 
-@given(instance=Model::Phase_strategy)
+@given(instance=Model_Phase_strategy)
 @settings(max_examples=50)
-def test_model::phase_instantiation(instance):
-    assert isinstance(instance, Model::Phase)
-
-@given(instance=Model::Phase_strategy)
-def test_model::phase_phaseID_type(instance):
-    assert isinstance(instance.phaseID, str)
+def test_model_phase_instantiation(instance):
+    assert isinstance(instance, Model_Phase)
 
 
-@given(instance=Model::Phase_strategy)
-def test_model::phase_phaseID_setter(instance):
-    original = instance.phaseID
-    instance.phaseID = original
-    assert instance.phaseID == original
 
-@given(instance=Model::Phase_strategy)
-def test_model::phase_timeAdvance_type(instance):
-    assert isinstance(instance.timeAdvance, float)
-
-
-@given(instance=Model::Phase_strategy)
-def test_model::phase_timeAdvance_setter(instance):
+@given(instance=Model_Phase_strategy)
+def test_model_phase_timeAdvance_setter(instance):
     original = instance.timeAdvance
     instance.timeAdvance = original
     assert instance.timeAdvance == original
 
-@given(instance=Model::ExtTrans_strategy)
-@settings(max_examples=50)
-def test_model::exttrans_instantiation(instance):
-    assert isinstance(instance, Model::ExtTrans)
 
-@given(instance=Model::ConfTrans_strategy)
-@settings(max_examples=50)
-def test_model::conftrans_instantiation(instance):
-    assert isinstance(instance, Model::ConfTrans)
 
-@given(instance=Model::IntTransition_strategy)
+@given(instance=Model_Phase_strategy)
+def test_model_phase_phaseID_setter(instance):
+    original = instance.phaseID
+    instance.phaseID = original
+    assert instance.phaseID == original
+
+@given(instance=Model_ExtTrans_strategy)
 @settings(max_examples=50)
-def test_model::inttransition_instantiation(instance):
-    assert isinstance(instance, Model::IntTransition)
+def test_model_exttrans_instantiation(instance):
+    assert isinstance(instance, Model_ExtTrans)
+
+@given(instance=Model_ConfTrans_strategy)
+@settings(max_examples=50)
+def test_model_conftrans_instantiation(instance):
+    assert isinstance(instance, Model_ConfTrans)
+
+@given(instance=Model_IntTransition_strategy)
+@settings(max_examples=50)
+def test_model_inttransition_instantiation(instance):
+    assert isinstance(instance, Model_IntTransition)
 
 @given(instance=DEVS_strategy)
 @settings(max_examples=50)
 def test_devs_instantiation(instance):
     assert isinstance(instance, DEVS)
 
-@given(instance=Model::CoupledDEVS_strategy)
+@given(instance=Model_CoupledDEVS_strategy)
 @settings(max_examples=50)
-def test_model::coupleddevs_instantiation(instance):
-    assert isinstance(instance, Model::CoupledDEVS)
+def test_model_coupleddevs_instantiation(instance):
+    assert isinstance(instance, Model_CoupledDEVS)
 
-@given(instance=Model::AtomicDEVS_strategy)
+@given(instance=Model_AtomicDEVS_strategy)
 @settings(max_examples=50)
-def test_model::atomicdevs_instantiation(instance):
-    assert isinstance(instance, Model::AtomicDEVS)
+def test_model_atomicdevs_instantiation(instance):
+    assert isinstance(instance, Model_AtomicDEVS)
 
-@given(instance=Model::OPort_strategy)
+@given(instance=Model_OPort_strategy)
 @settings(max_examples=50)
-def test_model::oport_instantiation(instance):
-    assert isinstance(instance, Model::OPort)
+def test_model_oport_instantiation(instance):
+    assert isinstance(instance, Model_OPort)
 
-@given(instance=Model::IPort_strategy)
+@given(instance=Model_IPort_strategy)
 @settings(max_examples=50)
-def test_model::iport_instantiation(instance):
-    assert isinstance(instance, Model::IPort)
+def test_model_iport_instantiation(instance):
+    assert isinstance(instance, Model_IPort)
 
-@given(instance=Model::DEVS_strategy)
+@given(instance=Model_DEVS_strategy)
 @settings(max_examples=50)
-def test_model::devs_instantiation(instance):
-    assert isinstance(instance, Model::DEVS)
-
-@given(instance=Model::DEVS_strategy)
-def test_model::devs_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_model_devs_instantiation(instance):
+    assert isinstance(instance, Model_DEVS)
 
 
-@given(instance=Model::DEVS_strategy)
-def test_model::devs_name_setter(instance):
+
+@given(instance=Model_DEVS_strategy)
+def test_model_devs_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=Model::Variable_strategy)
+@given(instance=Model_Variable_strategy)
 @settings(max_examples=50)
-def test_model::variable_instantiation(instance):
-    assert isinstance(instance, Model::Variable)
-
-@given(instance=Model::Variable_strategy)
-def test_model::variable_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_model_variable_instantiation(instance):
+    assert isinstance(instance, Model_Variable)
 
 
-@given(instance=Model::Variable_strategy)
-def test_model::variable_name_setter(instance):
+
+@given(instance=Model_Variable_strategy)
+def test_model_variable_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original

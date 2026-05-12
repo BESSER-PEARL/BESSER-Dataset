@@ -3,20 +3,20 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    accounting::Employees,
-    accounting::Invoice,
-    accounting::Deliverable,
-    accounting::Clients,
-    accounting::WorkPackage,
-    accounting::Order,
+from python_code import (
+    accounting_Employees,
+    accounting_Invoice,
+    accounting_Deliverable,
+    accounting_Clients,
+    accounting_WorkPackage,
+    accounting_Order,
     NamedElement,
-    accounting::Employee,
-    accounting::Project,
-    accounting::Client,
-    accounting::NamedElement,
+    accounting_Project,
+    accounting_Employee,
+    accounting_Client,
+    accounting_NamedElement,
     InvoiceState,
 )
 
@@ -26,225 +26,225 @@ from classes import (
 
 
 
-def test_accounting::employees_is_not_abstract():
-    assert not inspect.isabstract(accounting::Employees)
+def test_accounting_employees_is_not_abstract():
+    assert not inspect.isabstract(accounting_Employees)
 
 
-def test_accounting::employees_constructor_exists():
-    assert callable(accounting::Employees.__init__)
+def test_accounting_employees_constructor_exists():
+    assert callable(accounting_Employees.__init__)
 
 
-def test_accounting::employees_constructor_args():
-    sig = inspect.signature(accounting::Employees.__init__)
+def test_accounting_employees_constructor_args():
+    sig = inspect.signature(accounting_Employees.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_accounting::invoice_is_not_abstract():
-    assert not inspect.isabstract(accounting::Invoice)
+def test_accounting_invoice_is_not_abstract():
+    assert not inspect.isabstract(accounting_Invoice)
 
 
-def test_accounting::invoice_constructor_exists():
-    assert callable(accounting::Invoice.__init__)
+def test_accounting_invoice_constructor_exists():
+    assert callable(accounting_Invoice.__init__)
 
 
-def test_accounting::invoice_constructor_args():
-    sig = inspect.signature(accounting::Invoice.__init__)
+def test_accounting_invoice_constructor_args():
+    sig = inspect.signature(accounting_Invoice.__init__)
     params = list(sig.parameters.keys())
-    assert "dueDate" in params, "Missing parameter 'dueDate'"
-    assert "unitAmount" in params, "Missing parameter 'unitAmount'"
     assert "state" in params, "Missing parameter 'state'"
-    assert "invoiceDate" in params, "Missing parameter 'invoiceDate'"
+    assert "unitAmount" in params, "Missing parameter 'unitAmount'"
     assert "id" in params, "Missing parameter 'id'"
+    assert "dueDate" in params, "Missing parameter 'dueDate'"
+    assert "invoiceDate" in params, "Missing parameter 'invoiceDate'"
 
-def test_accounting::invoice_has_dueDate():
-    assert hasattr(accounting::Invoice, "dueDate")
+def test_accounting_invoice_has_state():
+    assert hasattr(accounting_Invoice, "state")
     descriptor = None
-    for klass in accounting::Invoice.__mro__:
-        if "dueDate" in klass.__dict__:
-            descriptor = klass.__dict__["dueDate"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_accounting::invoice_has_unitAmount():
-    assert hasattr(accounting::Invoice, "unitAmount")
-    descriptor = None
-    for klass in accounting::Invoice.__mro__:
-        if "unitAmount" in klass.__dict__:
-            descriptor = klass.__dict__["unitAmount"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_accounting::invoice_has_state():
-    assert hasattr(accounting::Invoice, "state")
-    descriptor = None
-    for klass in accounting::Invoice.__mro__:
+    for klass in accounting_Invoice.__mro__:
         if "state" in klass.__dict__:
             descriptor = klass.__dict__["state"]
             break
     assert isinstance(descriptor, property)
 
-def test_accounting::invoice_has_invoiceDate():
-    assert hasattr(accounting::Invoice, "invoiceDate")
+def test_accounting_invoice_has_unitAmount():
+    assert hasattr(accounting_Invoice, "unitAmount")
     descriptor = None
-    for klass in accounting::Invoice.__mro__:
-        if "invoiceDate" in klass.__dict__:
-            descriptor = klass.__dict__["invoiceDate"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_accounting::invoice_has_id():
-    assert hasattr(accounting::Invoice, "id")
-    descriptor = None
-    for klass in accounting::Invoice.__mro__:
-        if "id" in klass.__dict__:
-            descriptor = klass.__dict__["id"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_accounting::deliverable_is_not_abstract():
-    assert not inspect.isabstract(accounting::Deliverable)
-
-
-def test_accounting::deliverable_constructor_exists():
-    assert callable(accounting::Deliverable.__init__)
-
-
-def test_accounting::deliverable_constructor_args():
-    sig = inspect.signature(accounting::Deliverable.__init__)
-    params = list(sig.parameters.keys())
-    assert "dueDate" in params, "Missing parameter 'dueDate'"
-    assert "unitAmount" in params, "Missing parameter 'unitAmount'"
-
-def test_accounting::deliverable_has_dueDate():
-    assert hasattr(accounting::Deliverable, "dueDate")
-    descriptor = None
-    for klass in accounting::Deliverable.__mro__:
-        if "dueDate" in klass.__dict__:
-            descriptor = klass.__dict__["dueDate"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_accounting::deliverable_has_unitAmount():
-    assert hasattr(accounting::Deliverable, "unitAmount")
-    descriptor = None
-    for klass in accounting::Deliverable.__mro__:
+    for klass in accounting_Invoice.__mro__:
         if "unitAmount" in klass.__dict__:
             descriptor = klass.__dict__["unitAmount"]
             break
     assert isinstance(descriptor, property)
 
+def test_accounting_invoice_has_id():
+    assert hasattr(accounting_Invoice, "id")
+    descriptor = None
+    for klass in accounting_Invoice.__mro__:
+        if "id" in klass.__dict__:
+            descriptor = klass.__dict__["id"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_accounting_invoice_has_dueDate():
+    assert hasattr(accounting_Invoice, "dueDate")
+    descriptor = None
+    for klass in accounting_Invoice.__mro__:
+        if "dueDate" in klass.__dict__:
+            descriptor = klass.__dict__["dueDate"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_accounting_invoice_has_invoiceDate():
+    assert hasattr(accounting_Invoice, "invoiceDate")
+    descriptor = None
+    for klass in accounting_Invoice.__mro__:
+        if "invoiceDate" in klass.__dict__:
+            descriptor = klass.__dict__["invoiceDate"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_accounting::clients_is_not_abstract():
-    assert not inspect.isabstract(accounting::Clients)
+
+def test_accounting_deliverable_is_not_abstract():
+    assert not inspect.isabstract(accounting_Deliverable)
 
 
-def test_accounting::clients_constructor_exists():
-    assert callable(accounting::Clients.__init__)
+def test_accounting_deliverable_constructor_exists():
+    assert callable(accounting_Deliverable.__init__)
 
 
-def test_accounting::clients_constructor_args():
-    sig = inspect.signature(accounting::Clients.__init__)
+def test_accounting_deliverable_constructor_args():
+    sig = inspect.signature(accounting_Deliverable.__init__)
+    params = list(sig.parameters.keys())
+    assert "unitAmount" in params, "Missing parameter 'unitAmount'"
+    assert "dueDate" in params, "Missing parameter 'dueDate'"
+
+def test_accounting_deliverable_has_unitAmount():
+    assert hasattr(accounting_Deliverable, "unitAmount")
+    descriptor = None
+    for klass in accounting_Deliverable.__mro__:
+        if "unitAmount" in klass.__dict__:
+            descriptor = klass.__dict__["unitAmount"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_accounting_deliverable_has_dueDate():
+    assert hasattr(accounting_Deliverable, "dueDate")
+    descriptor = None
+    for klass in accounting_Deliverable.__mro__:
+        if "dueDate" in klass.__dict__:
+            descriptor = klass.__dict__["dueDate"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_accounting_clients_is_not_abstract():
+    assert not inspect.isabstract(accounting_Clients)
+
+
+def test_accounting_clients_constructor_exists():
+    assert callable(accounting_Clients.__init__)
+
+
+def test_accounting_clients_constructor_args():
+    sig = inspect.signature(accounting_Clients.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_accounting::workpackage_is_not_abstract():
-    assert not inspect.isabstract(accounting::WorkPackage)
+def test_accounting_workpackage_is_not_abstract():
+    assert not inspect.isabstract(accounting_WorkPackage)
 
 
-def test_accounting::workpackage_constructor_exists():
-    assert callable(accounting::WorkPackage.__init__)
+def test_accounting_workpackage_constructor_exists():
+    assert callable(accounting_WorkPackage.__init__)
 
 
-def test_accounting::workpackage_constructor_args():
-    sig = inspect.signature(accounting::WorkPackage.__init__)
+def test_accounting_workpackage_constructor_args():
+    sig = inspect.signature(accounting_WorkPackage.__init__)
     params = list(sig.parameters.keys())
     assert "comment" in params, "Missing parameter 'comment'"
-    assert "task" in params, "Missing parameter 'task'"
-    assert "hours" in params, "Missing parameter 'hours'"
     assert "date" in params, "Missing parameter 'date'"
+    assert "hours" in params, "Missing parameter 'hours'"
+    assert "task" in params, "Missing parameter 'task'"
 
-def test_accounting::workpackage_has_comment():
-    assert hasattr(accounting::WorkPackage, "comment")
+def test_accounting_workpackage_has_comment():
+    assert hasattr(accounting_WorkPackage, "comment")
     descriptor = None
-    for klass in accounting::WorkPackage.__mro__:
+    for klass in accounting_WorkPackage.__mro__:
         if "comment" in klass.__dict__:
             descriptor = klass.__dict__["comment"]
             break
     assert isinstance(descriptor, property)
 
-def test_accounting::workpackage_has_task():
-    assert hasattr(accounting::WorkPackage, "task")
+def test_accounting_workpackage_has_date():
+    assert hasattr(accounting_WorkPackage, "date")
     descriptor = None
-    for klass in accounting::WorkPackage.__mro__:
-        if "task" in klass.__dict__:
-            descriptor = klass.__dict__["task"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_accounting::workpackage_has_hours():
-    assert hasattr(accounting::WorkPackage, "hours")
-    descriptor = None
-    for klass in accounting::WorkPackage.__mro__:
-        if "hours" in klass.__dict__:
-            descriptor = klass.__dict__["hours"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_accounting::workpackage_has_date():
-    assert hasattr(accounting::WorkPackage, "date")
-    descriptor = None
-    for klass in accounting::WorkPackage.__mro__:
+    for klass in accounting_WorkPackage.__mro__:
         if "date" in klass.__dict__:
             descriptor = klass.__dict__["date"]
             break
     assert isinstance(descriptor, property)
 
+def test_accounting_workpackage_has_hours():
+    assert hasattr(accounting_WorkPackage, "hours")
+    descriptor = None
+    for klass in accounting_WorkPackage.__mro__:
+        if "hours" in klass.__dict__:
+            descriptor = klass.__dict__["hours"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_accounting_workpackage_has_task():
+    assert hasattr(accounting_WorkPackage, "task")
+    descriptor = None
+    for klass in accounting_WorkPackage.__mro__:
+        if "task" in klass.__dict__:
+            descriptor = klass.__dict__["task"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_accounting::order_is_not_abstract():
-    assert not inspect.isabstract(accounting::Order)
+
+def test_accounting_order_is_not_abstract():
+    assert not inspect.isabstract(accounting_Order)
 
 
-def test_accounting::order_constructor_exists():
-    assert callable(accounting::Order.__init__)
+def test_accounting_order_constructor_exists():
+    assert callable(accounting_Order.__init__)
 
 
-def test_accounting::order_constructor_args():
-    sig = inspect.signature(accounting::Order.__init__)
+def test_accounting_order_constructor_args():
+    sig = inspect.signature(accounting_Order.__init__)
     params = list(sig.parameters.keys())
     assert "paymentOffset" in params, "Missing parameter 'paymentOffset'"
-    assert "pricePerUnit" in params, "Missing parameter 'pricePerUnit'"
     assert "id" in params, "Missing parameter 'id'"
+    assert "pricePerUnit" in params, "Missing parameter 'pricePerUnit'"
 
-def test_accounting::order_has_paymentOffset():
-    assert hasattr(accounting::Order, "paymentOffset")
+def test_accounting_order_has_paymentOffset():
+    assert hasattr(accounting_Order, "paymentOffset")
     descriptor = None
-    for klass in accounting::Order.__mro__:
+    for klass in accounting_Order.__mro__:
         if "paymentOffset" in klass.__dict__:
             descriptor = klass.__dict__["paymentOffset"]
             break
     assert isinstance(descriptor, property)
 
-def test_accounting::order_has_pricePerUnit():
-    assert hasattr(accounting::Order, "pricePerUnit")
+def test_accounting_order_has_id():
+    assert hasattr(accounting_Order, "id")
     descriptor = None
-    for klass in accounting::Order.__mro__:
-        if "pricePerUnit" in klass.__dict__:
-            descriptor = klass.__dict__["pricePerUnit"]
+    for klass in accounting_Order.__mro__:
+        if "id" in klass.__dict__:
+            descriptor = klass.__dict__["id"]
             break
     assert isinstance(descriptor, property)
 
-def test_accounting::order_has_id():
-    assert hasattr(accounting::Order, "id")
+def test_accounting_order_has_pricePerUnit():
+    assert hasattr(accounting_Order, "pricePerUnit")
     descriptor = None
-    for klass in accounting::Order.__mro__:
-        if "id" in klass.__dict__:
-            descriptor = klass.__dict__["id"]
+    for klass in accounting_Order.__mro__:
+        if "pricePerUnit" in klass.__dict__:
+            descriptor = klass.__dict__["pricePerUnit"]
             break
     assert isinstance(descriptor, property)
 
@@ -264,23 +264,37 @@ def test_namedelement_constructor_args():
 
 
 
-def test_accounting::employee_is_not_abstract():
-    assert not inspect.isabstract(accounting::Employee)
+def test_accounting_project_is_not_abstract():
+    assert not inspect.isabstract(accounting_Project)
 
 
-def test_accounting::employee_constructor_exists():
-    assert callable(accounting::Employee.__init__)
+def test_accounting_project_constructor_exists():
+    assert callable(accounting_Project.__init__)
 
 
-def test_accounting::employee_constructor_args():
-    sig = inspect.signature(accounting::Employee.__init__)
+def test_accounting_project_constructor_args():
+    sig = inspect.signature(accounting_Project.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_accounting_employee_is_not_abstract():
+    assert not inspect.isabstract(accounting_Employee)
+
+
+def test_accounting_employee_constructor_exists():
+    assert callable(accounting_Employee.__init__)
+
+
+def test_accounting_employee_constructor_args():
+    sig = inspect.signature(accounting_Employee.__init__)
     params = list(sig.parameters.keys())
     assert "emails" in params, "Missing parameter 'emails'"
 
-def test_accounting::employee_has_emails():
-    assert hasattr(accounting::Employee, "emails")
+def test_accounting_employee_has_emails():
+    assert hasattr(accounting_Employee, "emails")
     descriptor = None
-    for klass in accounting::Employee.__mro__:
+    for klass in accounting_Employee.__mro__:
         if "emails" in klass.__dict__:
             descriptor = klass.__dict__["emails"]
             break
@@ -288,51 +302,37 @@ def test_accounting::employee_has_emails():
 
 
 
-def test_accounting::project_is_not_abstract():
-    assert not inspect.isabstract(accounting::Project)
+def test_accounting_client_is_not_abstract():
+    assert not inspect.isabstract(accounting_Client)
 
 
-def test_accounting::project_constructor_exists():
-    assert callable(accounting::Project.__init__)
+def test_accounting_client_constructor_exists():
+    assert callable(accounting_Client.__init__)
 
 
-def test_accounting::project_constructor_args():
-    sig = inspect.signature(accounting::Project.__init__)
+def test_accounting_client_constructor_args():
+    sig = inspect.signature(accounting_Client.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_accounting::client_is_not_abstract():
-    assert not inspect.isabstract(accounting::Client)
+def test_accounting_namedelement_is_not_abstract():
+    assert not inspect.isabstract(accounting_NamedElement)
 
 
-def test_accounting::client_constructor_exists():
-    assert callable(accounting::Client.__init__)
+def test_accounting_namedelement_constructor_exists():
+    assert callable(accounting_NamedElement.__init__)
 
 
-def test_accounting::client_constructor_args():
-    sig = inspect.signature(accounting::Client.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_accounting::namedelement_is_not_abstract():
-    assert not inspect.isabstract(accounting::NamedElement)
-
-
-def test_accounting::namedelement_constructor_exists():
-    assert callable(accounting::NamedElement.__init__)
-
-
-def test_accounting::namedelement_constructor_args():
-    sig = inspect.signature(accounting::NamedElement.__init__)
+def test_accounting_namedelement_constructor_args():
+    sig = inspect.signature(accounting_NamedElement.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_accounting::namedelement_has_name():
-    assert hasattr(accounting::NamedElement, "name")
+def test_accounting_namedelement_has_name():
+    assert hasattr(accounting_NamedElement, "name")
     descriptor = None
-    for klass in accounting::NamedElement.__mro__:
+    for klass in accounting_NamedElement.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -346,8 +346,8 @@ def test_invoicestate_has_all_literals():
     # Collect the names of literals in this Enumeration
     enum_literals = [lit.name for lit in InvoiceState]
     expected_literals = [
-        "Invoiced",
         "Paid",
+        "Invoiced",
         "New",
     ]
     # Check that all expected literals exist
@@ -366,255 +366,213 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-accounting::Employees_strategy = st.builds(
-    accounting::Employees,
+accounting_Employees_strategy = st.builds(
+    accounting_Employees,
 )
-accounting::Invoice_strategy = st.builds(
-    accounting::Invoice,
-    dueDate=
-        st.dates(),
-    unitAmount=
-        st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False),
+accounting_Invoice_strategy = st.builds(
+    accounting_Invoice,
     state=
         safe_text,
-    invoiceDate=
-        st.dates(),
+    unitAmount=
+        st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False),
     id=
-        safe_text
-)
-accounting::Deliverable_strategy = st.builds(
-    accounting::Deliverable,
+        safe_text,
     dueDate=
         st.dates(),
-    unitAmount=
-        st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False)
-)
-accounting::Clients_strategy = st.builds(
-    accounting::Clients,
-)
-accounting::WorkPackage_strategy = st.builds(
-    accounting::WorkPackage,
-    comment=
-        safe_text,
-    task=
-        safe_text,
-    hours=
-        st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False),
-    date=
+    invoiceDate=
         st.dates()
 )
-accounting::Order_strategy = st.builds(
-    accounting::Order,
+accounting_Deliverable_strategy = st.builds(
+    accounting_Deliverable,
+    unitAmount=
+        st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False),
+    dueDate=
+        st.dates()
+)
+accounting_Clients_strategy = st.builds(
+    accounting_Clients,
+)
+accounting_WorkPackage_strategy = st.builds(
+    accounting_WorkPackage,
+    comment=
+        safe_text,
+    date=
+        st.dates(),
+    hours=
+        st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False),
+    task=
+        safe_text
+)
+accounting_Order_strategy = st.builds(
+    accounting_Order,
     paymentOffset=
         st.integers(),
-    pricePerUnit=
-        st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False),
     id=
-        safe_text
+        safe_text,
+    pricePerUnit=
+        st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False)
 )
 NamedElement_strategy = st.builds(
     NamedElement,
 )
-accounting::Employee_strategy = st.builds(
-    accounting::Employee,
+accounting_Project_strategy = st.builds(
+    accounting_Project,
+)
+accounting_Employee_strategy = st.builds(
+    accounting_Employee,
     emails=
         safe_text
 )
-accounting::Project_strategy = st.builds(
-    accounting::Project,
+accounting_Client_strategy = st.builds(
+    accounting_Client,
 )
-accounting::Client_strategy = st.builds(
-    accounting::Client,
-)
-accounting::NamedElement_strategy = st.builds(
-    accounting::NamedElement,
+accounting_NamedElement_strategy = st.builds(
+    accounting_NamedElement,
     name=
         safe_text
 )
 
-@given(instance=accounting::Employees_strategy)
+@given(instance=accounting_Employees_strategy)
 @settings(max_examples=50)
-def test_accounting::employees_instantiation(instance):
-    assert isinstance(instance, accounting::Employees)
+def test_accounting_employees_instantiation(instance):
+    assert isinstance(instance, accounting_Employees)
 
-@given(instance=accounting::Invoice_strategy)
+@given(instance=accounting_Invoice_strategy)
 @settings(max_examples=50)
-def test_accounting::invoice_instantiation(instance):
-    assert isinstance(instance, accounting::Invoice)
-
-@given(instance=accounting::Invoice_strategy)
-def test_accounting::invoice_dueDate_type(instance):
-    assert isinstance(instance.dueDate, date)
+def test_accounting_invoice_instantiation(instance):
+    assert isinstance(instance, accounting_Invoice)
 
 
-@given(instance=accounting::Invoice_strategy)
-def test_accounting::invoice_dueDate_setter(instance):
-    original = instance.dueDate
-    instance.dueDate = original
-    assert instance.dueDate == original
 
-@given(instance=accounting::Invoice_strategy)
-def test_accounting::invoice_unitAmount_type(instance):
-    assert isinstance(instance.unitAmount, float)
-
-
-@given(instance=accounting::Invoice_strategy)
-def test_accounting::invoice_unitAmount_setter(instance):
-    original = instance.unitAmount
-    instance.unitAmount = original
-    assert instance.unitAmount == original
-
-@given(instance=accounting::Invoice_strategy)
-def test_accounting::invoice_state_type(instance):
-    assert isinstance(instance.state, str)
-
-
-@given(instance=accounting::Invoice_strategy)
-def test_accounting::invoice_state_setter(instance):
+@given(instance=accounting_Invoice_strategy)
+def test_accounting_invoice_state_setter(instance):
     original = instance.state
     instance.state = original
     assert instance.state == original
 
-@given(instance=accounting::Invoice_strategy)
-def test_accounting::invoice_invoiceDate_type(instance):
-    assert isinstance(instance.invoiceDate, date)
 
 
-@given(instance=accounting::Invoice_strategy)
-def test_accounting::invoice_invoiceDate_setter(instance):
-    original = instance.invoiceDate
-    instance.invoiceDate = original
-    assert instance.invoiceDate == original
-
-@given(instance=accounting::Invoice_strategy)
-def test_accounting::invoice_id_type(instance):
-    assert isinstance(instance.id, str)
-
-
-@given(instance=accounting::Invoice_strategy)
-def test_accounting::invoice_id_setter(instance):
-    original = instance.id
-    instance.id = original
-    assert instance.id == original
-
-@given(instance=accounting::Deliverable_strategy)
-@settings(max_examples=50)
-def test_accounting::deliverable_instantiation(instance):
-    assert isinstance(instance, accounting::Deliverable)
-
-@given(instance=accounting::Deliverable_strategy)
-def test_accounting::deliverable_dueDate_type(instance):
-    assert isinstance(instance.dueDate, date)
-
-
-@given(instance=accounting::Deliverable_strategy)
-def test_accounting::deliverable_dueDate_setter(instance):
-    original = instance.dueDate
-    instance.dueDate = original
-    assert instance.dueDate == original
-
-@given(instance=accounting::Deliverable_strategy)
-def test_accounting::deliverable_unitAmount_type(instance):
-    assert isinstance(instance.unitAmount, float)
-
-
-@given(instance=accounting::Deliverable_strategy)
-def test_accounting::deliverable_unitAmount_setter(instance):
+@given(instance=accounting_Invoice_strategy)
+def test_accounting_invoice_unitAmount_setter(instance):
     original = instance.unitAmount
     instance.unitAmount = original
     assert instance.unitAmount == original
 
-@given(instance=accounting::Clients_strategy)
+
+
+@given(instance=accounting_Invoice_strategy)
+def test_accounting_invoice_id_setter(instance):
+    original = instance.id
+    instance.id = original
+    assert instance.id == original
+
+
+
+@given(instance=accounting_Invoice_strategy)
+def test_accounting_invoice_dueDate_setter(instance):
+    original = instance.dueDate
+    instance.dueDate = original
+    assert instance.dueDate == original
+
+
+
+@given(instance=accounting_Invoice_strategy)
+def test_accounting_invoice_invoiceDate_setter(instance):
+    original = instance.invoiceDate
+    instance.invoiceDate = original
+    assert instance.invoiceDate == original
+
+@given(instance=accounting_Deliverable_strategy)
 @settings(max_examples=50)
-def test_accounting::clients_instantiation(instance):
-    assert isinstance(instance, accounting::Clients)
+def test_accounting_deliverable_instantiation(instance):
+    assert isinstance(instance, accounting_Deliverable)
 
-@given(instance=accounting::WorkPackage_strategy)
+
+
+@given(instance=accounting_Deliverable_strategy)
+def test_accounting_deliverable_unitAmount_setter(instance):
+    original = instance.unitAmount
+    instance.unitAmount = original
+    assert instance.unitAmount == original
+
+
+
+@given(instance=accounting_Deliverable_strategy)
+def test_accounting_deliverable_dueDate_setter(instance):
+    original = instance.dueDate
+    instance.dueDate = original
+    assert instance.dueDate == original
+
+@given(instance=accounting_Clients_strategy)
 @settings(max_examples=50)
-def test_accounting::workpackage_instantiation(instance):
-    assert isinstance(instance, accounting::WorkPackage)
+def test_accounting_clients_instantiation(instance):
+    assert isinstance(instance, accounting_Clients)
 
-@given(instance=accounting::WorkPackage_strategy)
-def test_accounting::workpackage_comment_type(instance):
-    assert isinstance(instance.comment, str)
+@given(instance=accounting_WorkPackage_strategy)
+@settings(max_examples=50)
+def test_accounting_workpackage_instantiation(instance):
+    assert isinstance(instance, accounting_WorkPackage)
 
 
-@given(instance=accounting::WorkPackage_strategy)
-def test_accounting::workpackage_comment_setter(instance):
+
+@given(instance=accounting_WorkPackage_strategy)
+def test_accounting_workpackage_comment_setter(instance):
     original = instance.comment
     instance.comment = original
     assert instance.comment == original
 
-@given(instance=accounting::WorkPackage_strategy)
-def test_accounting::workpackage_task_type(instance):
-    assert isinstance(instance.task, str)
 
 
-@given(instance=accounting::WorkPackage_strategy)
-def test_accounting::workpackage_task_setter(instance):
-    original = instance.task
-    instance.task = original
-    assert instance.task == original
-
-@given(instance=accounting::WorkPackage_strategy)
-def test_accounting::workpackage_hours_type(instance):
-    assert isinstance(instance.hours, float)
-
-
-@given(instance=accounting::WorkPackage_strategy)
-def test_accounting::workpackage_hours_setter(instance):
-    original = instance.hours
-    instance.hours = original
-    assert instance.hours == original
-
-@given(instance=accounting::WorkPackage_strategy)
-def test_accounting::workpackage_date_type(instance):
-    assert isinstance(instance.date, date)
-
-
-@given(instance=accounting::WorkPackage_strategy)
-def test_accounting::workpackage_date_setter(instance):
+@given(instance=accounting_WorkPackage_strategy)
+def test_accounting_workpackage_date_setter(instance):
     original = instance.date
     instance.date = original
     assert instance.date == original
 
-@given(instance=accounting::Order_strategy)
+
+
+@given(instance=accounting_WorkPackage_strategy)
+def test_accounting_workpackage_hours_setter(instance):
+    original = instance.hours
+    instance.hours = original
+    assert instance.hours == original
+
+
+
+@given(instance=accounting_WorkPackage_strategy)
+def test_accounting_workpackage_task_setter(instance):
+    original = instance.task
+    instance.task = original
+    assert instance.task == original
+
+@given(instance=accounting_Order_strategy)
 @settings(max_examples=50)
-def test_accounting::order_instantiation(instance):
-    assert isinstance(instance, accounting::Order)
-
-@given(instance=accounting::Order_strategy)
-def test_accounting::order_paymentOffset_type(instance):
-    assert isinstance(instance.paymentOffset, int)
+def test_accounting_order_instantiation(instance):
+    assert isinstance(instance, accounting_Order)
 
 
-@given(instance=accounting::Order_strategy)
-def test_accounting::order_paymentOffset_setter(instance):
+
+@given(instance=accounting_Order_strategy)
+def test_accounting_order_paymentOffset_setter(instance):
     original = instance.paymentOffset
     instance.paymentOffset = original
     assert instance.paymentOffset == original
 
-@given(instance=accounting::Order_strategy)
-def test_accounting::order_pricePerUnit_type(instance):
-    assert isinstance(instance.pricePerUnit, float)
 
 
-@given(instance=accounting::Order_strategy)
-def test_accounting::order_pricePerUnit_setter(instance):
-    original = instance.pricePerUnit
-    instance.pricePerUnit = original
-    assert instance.pricePerUnit == original
-
-@given(instance=accounting::Order_strategy)
-def test_accounting::order_id_type(instance):
-    assert isinstance(instance.id, str)
-
-
-@given(instance=accounting::Order_strategy)
-def test_accounting::order_id_setter(instance):
+@given(instance=accounting_Order_strategy)
+def test_accounting_order_id_setter(instance):
     original = instance.id
     instance.id = original
     assert instance.id == original
+
+
+
+@given(instance=accounting_Order_strategy)
+def test_accounting_order_pricePerUnit_setter(instance):
+    original = instance.pricePerUnit
+    instance.pricePerUnit = original
+    assert instance.pricePerUnit == original
 
 import warnings
 import copy
@@ -622,9 +580,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=accounting::Order_strategy)
+@given(instance=accounting_Order_strategy)
 @settings(max_examples=30)
-def test_accounting::order_validateunitamount_changes_state(instance):
+def test_accounting_order_validateunitamount_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -639,58 +597,52 @@ def test_accounting::order_validateunitamount_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'validateUnitAmount' in accounting::Order is empty"
+        assert has_statements, f"Function 'validateUnitAmount' in accounting_Order is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'validateUnitAmount' in accounting::Order did not change state; check implementation")
+            warnings.warn(f"Operation 'validateUnitAmount' in accounting_Order did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'validateUnitAmount' in accounting::Order is not implemented or raised an error")
+        warnings.warn(f"Operation 'validateUnitAmount' in accounting_Order is not implemented or raised an error")
 
 @given(instance=NamedElement_strategy)
 @settings(max_examples=50)
 def test_namedelement_instantiation(instance):
     assert isinstance(instance, NamedElement)
 
-@given(instance=accounting::Employee_strategy)
+@given(instance=accounting_Project_strategy)
 @settings(max_examples=50)
-def test_accounting::employee_instantiation(instance):
-    assert isinstance(instance, accounting::Employee)
+def test_accounting_project_instantiation(instance):
+    assert isinstance(instance, accounting_Project)
 
-@given(instance=accounting::Employee_strategy)
-def test_accounting::employee_emails_type(instance):
-    assert isinstance(instance.emails, str)
+@given(instance=accounting_Employee_strategy)
+@settings(max_examples=50)
+def test_accounting_employee_instantiation(instance):
+    assert isinstance(instance, accounting_Employee)
 
 
-@given(instance=accounting::Employee_strategy)
-def test_accounting::employee_emails_setter(instance):
+
+@given(instance=accounting_Employee_strategy)
+def test_accounting_employee_emails_setter(instance):
     original = instance.emails
     instance.emails = original
     assert instance.emails == original
 
-@given(instance=accounting::Project_strategy)
+@given(instance=accounting_Client_strategy)
 @settings(max_examples=50)
-def test_accounting::project_instantiation(instance):
-    assert isinstance(instance, accounting::Project)
+def test_accounting_client_instantiation(instance):
+    assert isinstance(instance, accounting_Client)
 
-@given(instance=accounting::Client_strategy)
+@given(instance=accounting_NamedElement_strategy)
 @settings(max_examples=50)
-def test_accounting::client_instantiation(instance):
-    assert isinstance(instance, accounting::Client)
-
-@given(instance=accounting::NamedElement_strategy)
-@settings(max_examples=50)
-def test_accounting::namedelement_instantiation(instance):
-    assert isinstance(instance, accounting::NamedElement)
-
-@given(instance=accounting::NamedElement_strategy)
-def test_accounting::namedelement_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_accounting_namedelement_instantiation(instance):
+    assert isinstance(instance, accounting_NamedElement)
 
 
-@given(instance=accounting::NamedElement_strategy)
-def test_accounting::namedelement_name_setter(instance):
+
+@given(instance=accounting_NamedElement_strategy)
+def test_accounting_namedelement_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original

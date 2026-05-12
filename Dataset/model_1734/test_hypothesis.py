@@ -3,11 +3,11 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    transientotm::TWriter,
-    transientotm::TBook,
+from python_code import (
+    transientotm_TWriter,
+    transientotm_TBook,
 )
 
 # =============================================================================
@@ -16,23 +16,23 @@ from classes import (
 
 
 
-def test_transientotm::twriter_is_not_abstract():
-    assert not inspect.isabstract(transientotm::TWriter)
+def test_transientotm_twriter_is_not_abstract():
+    assert not inspect.isabstract(transientotm_TWriter)
 
 
-def test_transientotm::twriter_constructor_exists():
-    assert callable(transientotm::TWriter.__init__)
+def test_transientotm_twriter_constructor_exists():
+    assert callable(transientotm_TWriter.__init__)
 
 
-def test_transientotm::twriter_constructor_args():
-    sig = inspect.signature(transientotm::TWriter.__init__)
+def test_transientotm_twriter_constructor_args():
+    sig = inspect.signature(transientotm_TWriter.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_transientotm::twriter_has_name():
-    assert hasattr(transientotm::TWriter, "name")
+def test_transientotm_twriter_has_name():
+    assert hasattr(transientotm_TWriter, "name")
     descriptor = None
-    for klass in transientotm::TWriter.__mro__:
+    for klass in transientotm_TWriter.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -40,23 +40,23 @@ def test_transientotm::twriter_has_name():
 
 
 
-def test_transientotm::tbook_is_not_abstract():
-    assert not inspect.isabstract(transientotm::TBook)
+def test_transientotm_tbook_is_not_abstract():
+    assert not inspect.isabstract(transientotm_TBook)
 
 
-def test_transientotm::tbook_constructor_exists():
-    assert callable(transientotm::TBook.__init__)
+def test_transientotm_tbook_constructor_exists():
+    assert callable(transientotm_TBook.__init__)
 
 
-def test_transientotm::tbook_constructor_args():
-    sig = inspect.signature(transientotm::TBook.__init__)
+def test_transientotm_tbook_constructor_args():
+    sig = inspect.signature(transientotm_TBook.__init__)
     params = list(sig.parameters.keys())
     assert "title" in params, "Missing parameter 'title'"
 
-def test_transientotm::tbook_has_title():
-    assert hasattr(transientotm::TBook, "title")
+def test_transientotm_tbook_has_title():
+    assert hasattr(transientotm_TBook, "title")
     descriptor = None
-    for klass in transientotm::TBook.__mro__:
+    for klass in transientotm_TBook.__mro__:
         if "title" in klass.__dict__:
             descriptor = klass.__dict__["title"]
             break
@@ -74,45 +74,39 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-transientotm::TWriter_strategy = st.builds(
-    transientotm::TWriter,
+transientotm_TWriter_strategy = st.builds(
+    transientotm_TWriter,
     name=
         safe_text
 )
-transientotm::TBook_strategy = st.builds(
-    transientotm::TBook,
+transientotm_TBook_strategy = st.builds(
+    transientotm_TBook,
     title=
         safe_text
 )
 
-@given(instance=transientotm::TWriter_strategy)
+@given(instance=transientotm_TWriter_strategy)
 @settings(max_examples=50)
-def test_transientotm::twriter_instantiation(instance):
-    assert isinstance(instance, transientotm::TWriter)
-
-@given(instance=transientotm::TWriter_strategy)
-def test_transientotm::twriter_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_transientotm_twriter_instantiation(instance):
+    assert isinstance(instance, transientotm_TWriter)
 
 
-@given(instance=transientotm::TWriter_strategy)
-def test_transientotm::twriter_name_setter(instance):
+
+@given(instance=transientotm_TWriter_strategy)
+def test_transientotm_twriter_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=transientotm::TBook_strategy)
+@given(instance=transientotm_TBook_strategy)
 @settings(max_examples=50)
-def test_transientotm::tbook_instantiation(instance):
-    assert isinstance(instance, transientotm::TBook)
-
-@given(instance=transientotm::TBook_strategy)
-def test_transientotm::tbook_title_type(instance):
-    assert isinstance(instance.title, str)
+def test_transientotm_tbook_instantiation(instance):
+    assert isinstance(instance, transientotm_TBook)
 
 
-@given(instance=transientotm::TBook_strategy)
-def test_transientotm::tbook_title_setter(instance):
+
+@given(instance=transientotm_TBook_strategy)
+def test_transientotm_tbook_title_setter(instance):
     original = instance.title
     instance.title = original
     assert instance.title == original

@@ -3,7 +3,7 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
 from python_code import (
     The_20member_external,
@@ -458,18 +458,9 @@ def test_vacation_constructor_exists():
 def test_vacation_constructor_args():
     sig = inspect.signature(Vacation.__init__)
     params = list(sig.parameters.keys())
-    assert "Employee_ID" in params, "Missing parameter 'Employee_ID'"
     assert "Expiry_date" in params, "Missing parameter 'Expiry_date'"
     assert "Beginning_date" in params, "Missing parameter 'Beginning_date'"
-
-def test_vacation_has_Employee_ID():
-    assert hasattr(Vacation, "Employee_ID")
-    descriptor = None
-    for klass in Vacation.__mro__:
-        if "Employee_ID" in klass.__dict__:
-            descriptor = klass.__dict__["Employee_ID"]
-            break
-    assert isinstance(descriptor, property)
+    assert "Employee_ID" in params, "Missing parameter 'Employee_ID'"
 
 def test_vacation_has_Expiry_date():
     assert hasattr(Vacation, "Expiry_date")
@@ -489,6 +480,15 @@ def test_vacation_has_Beginning_date():
             break
     assert isinstance(descriptor, property)
 
+def test_vacation_has_Employee_ID():
+    assert hasattr(Vacation, "Employee_ID")
+    descriptor = None
+    for klass in Vacation.__mro__:
+        if "Employee_ID" in klass.__dict__:
+            descriptor = klass.__dict__["Employee_ID"]
+            break
+    assert isinstance(descriptor, property)
+
 
 
 def test_employee_is_not_abstract():
@@ -503,12 +503,12 @@ def test_employee_constructor_args():
     sig = inspect.signature(Employee.__init__)
     params = list(sig.parameters.keys())
     assert "Functional_number" in params, "Missing parameter 'Functional_number'"
-    assert "Email_address" in params, "Missing parameter 'Email_address'"
-    assert "Last_name" in params, "Missing parameter 'Last_name'"
-    assert "Mobile_number" in params, "Missing parameter 'Mobile_number'"
-    assert "Remaining_days" in params, "Missing parameter 'Remaining_days'"
     assert "First_name" in params, "Missing parameter 'First_name'"
+    assert "Mobile_number" in params, "Missing parameter 'Mobile_number'"
+    assert "Last_name" in params, "Missing parameter 'Last_name'"
+    assert "Email_address" in params, "Missing parameter 'Email_address'"
     assert "ID" in params, "Missing parameter 'ID'"
+    assert "Remaining_days" in params, "Missing parameter 'Remaining_days'"
 
 def test_employee_has_Functional_number():
     assert hasattr(Employee, "Functional_number")
@@ -516,42 +516,6 @@ def test_employee_has_Functional_number():
     for klass in Employee.__mro__:
         if "Functional_number" in klass.__dict__:
             descriptor = klass.__dict__["Functional_number"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_employee_has_Email_address():
-    assert hasattr(Employee, "Email_address")
-    descriptor = None
-    for klass in Employee.__mro__:
-        if "Email_address" in klass.__dict__:
-            descriptor = klass.__dict__["Email_address"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_employee_has_Last_name():
-    assert hasattr(Employee, "Last_name")
-    descriptor = None
-    for klass in Employee.__mro__:
-        if "Last_name" in klass.__dict__:
-            descriptor = klass.__dict__["Last_name"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_employee_has_Mobile_number():
-    assert hasattr(Employee, "Mobile_number")
-    descriptor = None
-    for klass in Employee.__mro__:
-        if "Mobile_number" in klass.__dict__:
-            descriptor = klass.__dict__["Mobile_number"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_employee_has_Remaining_days():
-    assert hasattr(Employee, "Remaining_days")
-    descriptor = None
-    for klass in Employee.__mro__:
-        if "Remaining_days" in klass.__dict__:
-            descriptor = klass.__dict__["Remaining_days"]
             break
     assert isinstance(descriptor, property)
 
@@ -564,12 +528,48 @@ def test_employee_has_First_name():
             break
     assert isinstance(descriptor, property)
 
+def test_employee_has_Mobile_number():
+    assert hasattr(Employee, "Mobile_number")
+    descriptor = None
+    for klass in Employee.__mro__:
+        if "Mobile_number" in klass.__dict__:
+            descriptor = klass.__dict__["Mobile_number"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_employee_has_Last_name():
+    assert hasattr(Employee, "Last_name")
+    descriptor = None
+    for klass in Employee.__mro__:
+        if "Last_name" in klass.__dict__:
+            descriptor = klass.__dict__["Last_name"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_employee_has_Email_address():
+    assert hasattr(Employee, "Email_address")
+    descriptor = None
+    for klass in Employee.__mro__:
+        if "Email_address" in klass.__dict__:
+            descriptor = klass.__dict__["Email_address"]
+            break
+    assert isinstance(descriptor, property)
+
 def test_employee_has_ID():
     assert hasattr(Employee, "ID")
     descriptor = None
     for klass in Employee.__mro__:
         if "ID" in klass.__dict__:
             descriptor = klass.__dict__["ID"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_employee_has_Remaining_days():
+    assert hasattr(Employee, "Remaining_days")
+    descriptor = None
+    for klass in Employee.__mro__:
+        if "Remaining_days" in klass.__dict__:
+            descriptor = klass.__dict__["Remaining_days"]
             break
     assert isinstance(descriptor, property)
 
@@ -586,62 +586,26 @@ def test_care_constructor_exists():
 def test_care_constructor_args():
     sig = inspect.signature(Care.__init__)
     params = list(sig.parameters.keys())
-    assert "Profession_of_the_guardian" in params, "Missing parameter 'Profession_of_the_guardian'"
-    assert "Relation_of_the_guardian" in params, "Missing parameter 'Relation_of_the_guardian'"
-    assert "Monthly_income" in params, "Missing parameter 'Monthly_income'"
-    assert "Care_sort" in params, "Missing parameter 'Care_sort'"
     assert "Street" in params, "Missing parameter 'Street'"
-    assert "Workplace" in params, "Missing parameter 'Workplace'"
-    assert "Interaction_degree" in params, "Missing parameter 'Interaction_degree'"
-    assert "Health_status" in params, "Missing parameter 'Health_status'"
     assert "Income_sources" in params, "Missing parameter 'Income_sources'"
-    assert "Family_members__The_number" in params, "Missing parameter 'Family_members__The_number'"
-    assert "Housing_description" in params, "Missing parameter 'Housing_description'"
-    assert "Adopting_degree" in params, "Missing parameter 'Adopting_degree'"
-    assert "Workplace_the_guardian" in params, "Missing parameter 'Workplace_the_guardian'"
+    assert "Workplace" in params, "Missing parameter 'Workplace'"
+    assert "Care_sort" in params, "Missing parameter 'Care_sort'"
     assert "Housing_kind" in params, "Missing parameter 'Housing_kind'"
-    assert "Family_bonding" in params, "Missing parameter 'Family_bonding'"
     assert "Number_of_children" in params, "Missing parameter 'Number_of_children'"
     assert "Income_amount" in params, "Missing parameter 'Income_amount'"
-    assert "Civil_Registry" in params, "Missing parameter 'Civil_Registry'"
-    assert "Guardian" in params, "Missing parameter 'Guardian'"
+    assert "Monthly_income" in params, "Missing parameter 'Monthly_income'"
+    assert "Family_members__The_number" in params, "Missing parameter 'Family_members__The_number'"
     assert "Children_health_status" in params, "Missing parameter 'Children_health_status'"
-
-def test_care_has_Profession_of_the_guardian():
-    assert hasattr(Care, "Profession_of_the_guardian")
-    descriptor = None
-    for klass in Care.__mro__:
-        if "Profession_of_the_guardian" in klass.__dict__:
-            descriptor = klass.__dict__["Profession_of_the_guardian"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_care_has_Relation_of_the_guardian():
-    assert hasattr(Care, "Relation_of_the_guardian")
-    descriptor = None
-    for klass in Care.__mro__:
-        if "Relation_of_the_guardian" in klass.__dict__:
-            descriptor = klass.__dict__["Relation_of_the_guardian"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_care_has_Monthly_income():
-    assert hasattr(Care, "Monthly_income")
-    descriptor = None
-    for klass in Care.__mro__:
-        if "Monthly_income" in klass.__dict__:
-            descriptor = klass.__dict__["Monthly_income"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_care_has_Care_sort():
-    assert hasattr(Care, "Care_sort")
-    descriptor = None
-    for klass in Care.__mro__:
-        if "Care_sort" in klass.__dict__:
-            descriptor = klass.__dict__["Care_sort"]
-            break
-    assert isinstance(descriptor, property)
+    assert "Relation_of_the_guardian" in params, "Missing parameter 'Relation_of_the_guardian'"
+    assert "Profession_of_the_guardian" in params, "Missing parameter 'Profession_of_the_guardian'"
+    assert "Housing_description" in params, "Missing parameter 'Housing_description'"
+    assert "Interaction_degree" in params, "Missing parameter 'Interaction_degree'"
+    assert "Workplace_the_guardian" in params, "Missing parameter 'Workplace_the_guardian'"
+    assert "Health_status" in params, "Missing parameter 'Health_status'"
+    assert "Family_bonding" in params, "Missing parameter 'Family_bonding'"
+    assert "Guardian" in params, "Missing parameter 'Guardian'"
+    assert "Civil_Registry" in params, "Missing parameter 'Civil_Registry'"
+    assert "Adopting_degree" in params, "Missing parameter 'Adopting_degree'"
 
 def test_care_has_Street():
     assert hasattr(Care, "Street")
@@ -649,33 +613,6 @@ def test_care_has_Street():
     for klass in Care.__mro__:
         if "Street" in klass.__dict__:
             descriptor = klass.__dict__["Street"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_care_has_Workplace():
-    assert hasattr(Care, "Workplace")
-    descriptor = None
-    for klass in Care.__mro__:
-        if "Workplace" in klass.__dict__:
-            descriptor = klass.__dict__["Workplace"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_care_has_Interaction_degree():
-    assert hasattr(Care, "Interaction_degree")
-    descriptor = None
-    for klass in Care.__mro__:
-        if "Interaction_degree" in klass.__dict__:
-            descriptor = klass.__dict__["Interaction_degree"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_care_has_Health_status():
-    assert hasattr(Care, "Health_status")
-    descriptor = None
-    for klass in Care.__mro__:
-        if "Health_status" in klass.__dict__:
-            descriptor = klass.__dict__["Health_status"]
             break
     assert isinstance(descriptor, property)
 
@@ -688,39 +625,21 @@ def test_care_has_Income_sources():
             break
     assert isinstance(descriptor, property)
 
-def test_care_has_Family_members__The_number():
-    assert hasattr(Care, "Family_members__The_number")
+def test_care_has_Workplace():
+    assert hasattr(Care, "Workplace")
     descriptor = None
     for klass in Care.__mro__:
-        if "Family_members__The_number" in klass.__dict__:
-            descriptor = klass.__dict__["Family_members__The_number"]
+        if "Workplace" in klass.__dict__:
+            descriptor = klass.__dict__["Workplace"]
             break
     assert isinstance(descriptor, property)
 
-def test_care_has_Housing_description():
-    assert hasattr(Care, "Housing_description")
+def test_care_has_Care_sort():
+    assert hasattr(Care, "Care_sort")
     descriptor = None
     for klass in Care.__mro__:
-        if "Housing_description" in klass.__dict__:
-            descriptor = klass.__dict__["Housing_description"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_care_has_Adopting_degree():
-    assert hasattr(Care, "Adopting_degree")
-    descriptor = None
-    for klass in Care.__mro__:
-        if "Adopting_degree" in klass.__dict__:
-            descriptor = klass.__dict__["Adopting_degree"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_care_has_Workplace_the_guardian():
-    assert hasattr(Care, "Workplace_the_guardian")
-    descriptor = None
-    for klass in Care.__mro__:
-        if "Workplace_the_guardian" in klass.__dict__:
-            descriptor = klass.__dict__["Workplace_the_guardian"]
+        if "Care_sort" in klass.__dict__:
+            descriptor = klass.__dict__["Care_sort"]
             break
     assert isinstance(descriptor, property)
 
@@ -730,15 +649,6 @@ def test_care_has_Housing_kind():
     for klass in Care.__mro__:
         if "Housing_kind" in klass.__dict__:
             descriptor = klass.__dict__["Housing_kind"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_care_has_Family_bonding():
-    assert hasattr(Care, "Family_bonding")
-    descriptor = None
-    for klass in Care.__mro__:
-        if "Family_bonding" in klass.__dict__:
-            descriptor = klass.__dict__["Family_bonding"]
             break
     assert isinstance(descriptor, property)
 
@@ -760,12 +670,93 @@ def test_care_has_Income_amount():
             break
     assert isinstance(descriptor, property)
 
-def test_care_has_Civil_Registry():
-    assert hasattr(Care, "Civil_Registry")
+def test_care_has_Monthly_income():
+    assert hasattr(Care, "Monthly_income")
     descriptor = None
     for klass in Care.__mro__:
-        if "Civil_Registry" in klass.__dict__:
-            descriptor = klass.__dict__["Civil_Registry"]
+        if "Monthly_income" in klass.__dict__:
+            descriptor = klass.__dict__["Monthly_income"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_care_has_Family_members__The_number():
+    assert hasattr(Care, "Family_members__The_number")
+    descriptor = None
+    for klass in Care.__mro__:
+        if "Family_members__The_number" in klass.__dict__:
+            descriptor = klass.__dict__["Family_members__The_number"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_care_has_Children_health_status():
+    assert hasattr(Care, "Children_health_status")
+    descriptor = None
+    for klass in Care.__mro__:
+        if "Children_health_status" in klass.__dict__:
+            descriptor = klass.__dict__["Children_health_status"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_care_has_Relation_of_the_guardian():
+    assert hasattr(Care, "Relation_of_the_guardian")
+    descriptor = None
+    for klass in Care.__mro__:
+        if "Relation_of_the_guardian" in klass.__dict__:
+            descriptor = klass.__dict__["Relation_of_the_guardian"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_care_has_Profession_of_the_guardian():
+    assert hasattr(Care, "Profession_of_the_guardian")
+    descriptor = None
+    for klass in Care.__mro__:
+        if "Profession_of_the_guardian" in klass.__dict__:
+            descriptor = klass.__dict__["Profession_of_the_guardian"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_care_has_Housing_description():
+    assert hasattr(Care, "Housing_description")
+    descriptor = None
+    for klass in Care.__mro__:
+        if "Housing_description" in klass.__dict__:
+            descriptor = klass.__dict__["Housing_description"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_care_has_Interaction_degree():
+    assert hasattr(Care, "Interaction_degree")
+    descriptor = None
+    for klass in Care.__mro__:
+        if "Interaction_degree" in klass.__dict__:
+            descriptor = klass.__dict__["Interaction_degree"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_care_has_Workplace_the_guardian():
+    assert hasattr(Care, "Workplace_the_guardian")
+    descriptor = None
+    for klass in Care.__mro__:
+        if "Workplace_the_guardian" in klass.__dict__:
+            descriptor = klass.__dict__["Workplace_the_guardian"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_care_has_Health_status():
+    assert hasattr(Care, "Health_status")
+    descriptor = None
+    for klass in Care.__mro__:
+        if "Health_status" in klass.__dict__:
+            descriptor = klass.__dict__["Health_status"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_care_has_Family_bonding():
+    assert hasattr(Care, "Family_bonding")
+    descriptor = None
+    for klass in Care.__mro__:
+        if "Family_bonding" in klass.__dict__:
+            descriptor = klass.__dict__["Family_bonding"]
             break
     assert isinstance(descriptor, property)
 
@@ -778,12 +769,21 @@ def test_care_has_Guardian():
             break
     assert isinstance(descriptor, property)
 
-def test_care_has_Children_health_status():
-    assert hasattr(Care, "Children_health_status")
+def test_care_has_Civil_Registry():
+    assert hasattr(Care, "Civil_Registry")
     descriptor = None
     for klass in Care.__mro__:
-        if "Children_health_status" in klass.__dict__:
-            descriptor = klass.__dict__["Children_health_status"]
+        if "Civil_Registry" in klass.__dict__:
+            descriptor = klass.__dict__["Civil_Registry"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_care_has_Adopting_degree():
+    assert hasattr(Care, "Adopting_degree")
+    descriptor = None
+    for klass in Care.__mro__:
+        if "Adopting_degree" in klass.__dict__:
+            descriptor = klass.__dict__["Adopting_degree"]
             break
     assert isinstance(descriptor, property)
 
@@ -801,15 +801,15 @@ def test_marriage_demand_constructor_args():
     sig = inspect.signature(Marriage_Demand.__init__)
     params = list(sig.parameters.keys())
     assert "Educational_status" in params, "Missing parameter 'Educational_status'"
-    assert "Salary" in params, "Missing parameter 'Salary'"
-    assert "Relation_with_proposal" in params, "Missing parameter 'Relation_with_proposal'"
-    assert "Legitimate_vision" in params, "Missing parameter 'Legitimate_vision'"
+    assert "Other_district" in params, "Missing parameter 'Other_district'"
     assert "Nationality_of_the_mother" in params, "Missing parameter 'Nationality_of_the_mother'"
     assert "Tribe" in params, "Missing parameter 'Tribe'"
-    assert "Other_district" in params, "Missing parameter 'Other_district'"
     assert "Nationality" in params, "Missing parameter 'Nationality'"
-    assert "Marital_status_of_the_proposer" in params, "Missing parameter 'Marital_status_of_the_proposer'"
     assert "Accept_multi_marriage" in params, "Missing parameter 'Accept_multi_marriage'"
+    assert "Salary" in params, "Missing parameter 'Salary'"
+    assert "Legitimate_vision" in params, "Missing parameter 'Legitimate_vision'"
+    assert "Relation_with_proposal" in params, "Missing parameter 'Relation_with_proposal'"
+    assert "Marital_status_of_the_proposer" in params, "Missing parameter 'Marital_status_of_the_proposer'"
 
 def test_marriage_demand_has_Educational_status():
     assert hasattr(Marriage_Demand, "Educational_status")
@@ -820,30 +820,12 @@ def test_marriage_demand_has_Educational_status():
             break
     assert isinstance(descriptor, property)
 
-def test_marriage_demand_has_Salary():
-    assert hasattr(Marriage_Demand, "Salary")
+def test_marriage_demand_has_Other_district():
+    assert hasattr(Marriage_Demand, "Other_district")
     descriptor = None
     for klass in Marriage_Demand.__mro__:
-        if "Salary" in klass.__dict__:
-            descriptor = klass.__dict__["Salary"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_marriage_demand_has_Relation_with_proposal():
-    assert hasattr(Marriage_Demand, "Relation_with_proposal")
-    descriptor = None
-    for klass in Marriage_Demand.__mro__:
-        if "Relation_with_proposal" in klass.__dict__:
-            descriptor = klass.__dict__["Relation_with_proposal"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_marriage_demand_has_Legitimate_vision():
-    assert hasattr(Marriage_Demand, "Legitimate_vision")
-    descriptor = None
-    for klass in Marriage_Demand.__mro__:
-        if "Legitimate_vision" in klass.__dict__:
-            descriptor = klass.__dict__["Legitimate_vision"]
+        if "Other_district" in klass.__dict__:
+            descriptor = klass.__dict__["Other_district"]
             break
     assert isinstance(descriptor, property)
 
@@ -865,15 +847,6 @@ def test_marriage_demand_has_Tribe():
             break
     assert isinstance(descriptor, property)
 
-def test_marriage_demand_has_Other_district():
-    assert hasattr(Marriage_Demand, "Other_district")
-    descriptor = None
-    for klass in Marriage_Demand.__mro__:
-        if "Other_district" in klass.__dict__:
-            descriptor = klass.__dict__["Other_district"]
-            break
-    assert isinstance(descriptor, property)
-
 def test_marriage_demand_has_Nationality():
     assert hasattr(Marriage_Demand, "Nationality")
     descriptor = None
@@ -883,21 +856,48 @@ def test_marriage_demand_has_Nationality():
             break
     assert isinstance(descriptor, property)
 
-def test_marriage_demand_has_Marital_status_of_the_proposer():
-    assert hasattr(Marriage_Demand, "Marital_status_of_the_proposer")
-    descriptor = None
-    for klass in Marriage_Demand.__mro__:
-        if "Marital_status_of_the_proposer" in klass.__dict__:
-            descriptor = klass.__dict__["Marital_status_of_the_proposer"]
-            break
-    assert isinstance(descriptor, property)
-
 def test_marriage_demand_has_Accept_multi_marriage():
     assert hasattr(Marriage_Demand, "Accept_multi_marriage")
     descriptor = None
     for klass in Marriage_Demand.__mro__:
         if "Accept_multi_marriage" in klass.__dict__:
             descriptor = klass.__dict__["Accept_multi_marriage"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_marriage_demand_has_Salary():
+    assert hasattr(Marriage_Demand, "Salary")
+    descriptor = None
+    for klass in Marriage_Demand.__mro__:
+        if "Salary" in klass.__dict__:
+            descriptor = klass.__dict__["Salary"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_marriage_demand_has_Legitimate_vision():
+    assert hasattr(Marriage_Demand, "Legitimate_vision")
+    descriptor = None
+    for klass in Marriage_Demand.__mro__:
+        if "Legitimate_vision" in klass.__dict__:
+            descriptor = klass.__dict__["Legitimate_vision"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_marriage_demand_has_Relation_with_proposal():
+    assert hasattr(Marriage_Demand, "Relation_with_proposal")
+    descriptor = None
+    for klass in Marriage_Demand.__mro__:
+        if "Relation_with_proposal" in klass.__dict__:
+            descriptor = klass.__dict__["Relation_with_proposal"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_marriage_demand_has_Marital_status_of_the_proposer():
+    assert hasattr(Marriage_Demand, "Marital_status_of_the_proposer")
+    descriptor = None
+    for klass in Marriage_Demand.__mro__:
+        if "Marital_status_of_the_proposer" in klass.__dict__:
+            descriptor = klass.__dict__["Marital_status_of_the_proposer"]
             break
     assert isinstance(descriptor, property)
 
@@ -914,16 +914,16 @@ def test_amount_constructor_exists():
 def test_amount_constructor_args():
     sig = inspect.signature(Amount.__init__)
     params = list(sig.parameters.keys())
-    assert "Subvention_date" in params, "Missing parameter 'Subvention_date'"
-    assert "Month" in params, "Missing parameter 'Month'"
     assert "Amount" in params, "Missing parameter 'Amount'"
+    assert "Month" in params, "Missing parameter 'Month'"
+    assert "Subvention_date" in params, "Missing parameter 'Subvention_date'"
 
-def test_amount_has_Subvention_date():
-    assert hasattr(Amount, "Subvention_date")
+def test_amount_has_Amount():
+    assert hasattr(Amount, "Amount")
     descriptor = None
     for klass in Amount.__mro__:
-        if "Subvention_date" in klass.__dict__:
-            descriptor = klass.__dict__["Subvention_date"]
+        if "Amount" in klass.__dict__:
+            descriptor = klass.__dict__["Amount"]
             break
     assert isinstance(descriptor, property)
 
@@ -936,12 +936,12 @@ def test_amount_has_Month():
             break
     assert isinstance(descriptor, property)
 
-def test_amount_has_Amount():
-    assert hasattr(Amount, "Amount")
+def test_amount_has_Subvention_date():
+    assert hasattr(Amount, "Subvention_date")
     descriptor = None
     for klass in Amount.__mro__:
-        if "Amount" in klass.__dict__:
-            descriptor = klass.__dict__["Amount"]
+        if "Subvention_date" in klass.__dict__:
+            descriptor = klass.__dict__["Subvention_date"]
             break
     assert isinstance(descriptor, property)
 
@@ -958,17 +958,44 @@ def test_beneficiary_constructor_exists():
 def test_beneficiary_constructor_args():
     sig = inspect.signature(Beneficiary.__init__)
     params = list(sig.parameters.keys())
+    assert "L_name" in params, "Missing parameter 'L_name'"
+    assert "District" in params, "Missing parameter 'District'"
+    assert "Address" in params, "Missing parameter 'Address'"
     assert "Marital_status" in params, "Missing parameter 'Marital_status'"
-    assert "Job" in params, "Missing parameter 'Job'"
+    assert "F_name" in params, "Missing parameter 'F_name'"
+    assert "Date_of_birth" in params, "Missing parameter 'Date_of_birth'"
+    assert "Phone" in params, "Missing parameter 'Phone'"
+    assert "Scientific_qualification" in params, "Missing parameter 'Scientific_qualification'"
     assert "Beneficiary__ID" in params, "Missing parameter 'Beneficiary__ID'"
     assert "House_number" in params, "Missing parameter 'House_number'"
-    assert "L_name" in params, "Missing parameter 'L_name'"
-    assert "Date_of_birth" in params, "Missing parameter 'Date_of_birth'"
-    assert "Address" in params, "Missing parameter 'Address'"
-    assert "Phone" in params, "Missing parameter 'Phone'"
-    assert "F_name" in params, "Missing parameter 'F_name'"
-    assert "Scientific_qualification" in params, "Missing parameter 'Scientific_qualification'"
-    assert "District" in params, "Missing parameter 'District'"
+    assert "Job" in params, "Missing parameter 'Job'"
+
+def test_beneficiary_has_L_name():
+    assert hasattr(Beneficiary, "L_name")
+    descriptor = None
+    for klass in Beneficiary.__mro__:
+        if "L_name" in klass.__dict__:
+            descriptor = klass.__dict__["L_name"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_beneficiary_has_District():
+    assert hasattr(Beneficiary, "District")
+    descriptor = None
+    for klass in Beneficiary.__mro__:
+        if "District" in klass.__dict__:
+            descriptor = klass.__dict__["District"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_beneficiary_has_Address():
+    assert hasattr(Beneficiary, "Address")
+    descriptor = None
+    for klass in Beneficiary.__mro__:
+        if "Address" in klass.__dict__:
+            descriptor = klass.__dict__["Address"]
+            break
+    assert isinstance(descriptor, property)
 
 def test_beneficiary_has_Marital_status():
     assert hasattr(Beneficiary, "Marital_status")
@@ -979,12 +1006,39 @@ def test_beneficiary_has_Marital_status():
             break
     assert isinstance(descriptor, property)
 
-def test_beneficiary_has_Job():
-    assert hasattr(Beneficiary, "Job")
+def test_beneficiary_has_F_name():
+    assert hasattr(Beneficiary, "F_name")
     descriptor = None
     for klass in Beneficiary.__mro__:
-        if "Job" in klass.__dict__:
-            descriptor = klass.__dict__["Job"]
+        if "F_name" in klass.__dict__:
+            descriptor = klass.__dict__["F_name"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_beneficiary_has_Date_of_birth():
+    assert hasattr(Beneficiary, "Date_of_birth")
+    descriptor = None
+    for klass in Beneficiary.__mro__:
+        if "Date_of_birth" in klass.__dict__:
+            descriptor = klass.__dict__["Date_of_birth"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_beneficiary_has_Phone():
+    assert hasattr(Beneficiary, "Phone")
+    descriptor = None
+    for klass in Beneficiary.__mro__:
+        if "Phone" in klass.__dict__:
+            descriptor = klass.__dict__["Phone"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_beneficiary_has_Scientific_qualification():
+    assert hasattr(Beneficiary, "Scientific_qualification")
+    descriptor = None
+    for klass in Beneficiary.__mro__:
+        if "Scientific_qualification" in klass.__dict__:
+            descriptor = klass.__dict__["Scientific_qualification"]
             break
     assert isinstance(descriptor, property)
 
@@ -1006,66 +1060,12 @@ def test_beneficiary_has_House_number():
             break
     assert isinstance(descriptor, property)
 
-def test_beneficiary_has_L_name():
-    assert hasattr(Beneficiary, "L_name")
+def test_beneficiary_has_Job():
+    assert hasattr(Beneficiary, "Job")
     descriptor = None
     for klass in Beneficiary.__mro__:
-        if "L_name" in klass.__dict__:
-            descriptor = klass.__dict__["L_name"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_beneficiary_has_Date_of_birth():
-    assert hasattr(Beneficiary, "Date_of_birth")
-    descriptor = None
-    for klass in Beneficiary.__mro__:
-        if "Date_of_birth" in klass.__dict__:
-            descriptor = klass.__dict__["Date_of_birth"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_beneficiary_has_Address():
-    assert hasattr(Beneficiary, "Address")
-    descriptor = None
-    for klass in Beneficiary.__mro__:
-        if "Address" in klass.__dict__:
-            descriptor = klass.__dict__["Address"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_beneficiary_has_Phone():
-    assert hasattr(Beneficiary, "Phone")
-    descriptor = None
-    for klass in Beneficiary.__mro__:
-        if "Phone" in klass.__dict__:
-            descriptor = klass.__dict__["Phone"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_beneficiary_has_F_name():
-    assert hasattr(Beneficiary, "F_name")
-    descriptor = None
-    for klass in Beneficiary.__mro__:
-        if "F_name" in klass.__dict__:
-            descriptor = klass.__dict__["F_name"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_beneficiary_has_Scientific_qualification():
-    assert hasattr(Beneficiary, "Scientific_qualification")
-    descriptor = None
-    for klass in Beneficiary.__mro__:
-        if "Scientific_qualification" in klass.__dict__:
-            descriptor = klass.__dict__["Scientific_qualification"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_beneficiary_has_District():
-    assert hasattr(Beneficiary, "District")
-    descriptor = None
-    for klass in Beneficiary.__mro__:
-        if "District" in klass.__dict__:
-            descriptor = klass.__dict__["District"]
+        if "Job" in klass.__dict__:
+            descriptor = klass.__dict__["Job"]
             break
     assert isinstance(descriptor, property)
 
@@ -1082,40 +1082,22 @@ def test_volunteer_constructor_exists():
 def test_volunteer_constructor_args():
     sig = inspect.signature(Volunteer.__init__)
     params = list(sig.parameters.keys())
-    assert "Age" in params, "Missing parameter 'Age'"
-    assert "Preparing_event" in params, "Missing parameter 'Preparing_event'"
-    assert "Public_relations" in params, "Missing parameter 'Public_relations'"
+    assert "Organization" in params, "Missing parameter 'Organization'"
     assert "Time_of_volunteering" in params, "Missing parameter 'Time_of_volunteering'"
-    assert "Decor__and_aesthetic_touches" in params, "Missing parameter 'Decor__and_aesthetic_touches'"
     assert "Professional_status" in params, "Missing parameter 'Professional_status'"
     assert "Volunteer_ID" in params, "Missing parameter 'Volunteer_ID'"
-    assert "Organization" in params, "Missing parameter 'Organization'"
+    assert "Age" in params, "Missing parameter 'Age'"
+    assert "Preparing_event" in params, "Missing parameter 'Preparing_event'"
     assert "Design_and_montag" in params, "Missing parameter 'Design_and_montag'"
+    assert "Decor__and_aesthetic_touches" in params, "Missing parameter 'Decor__and_aesthetic_touches'"
+    assert "Public_relations" in params, "Missing parameter 'Public_relations'"
 
-def test_volunteer_has_Age():
-    assert hasattr(Volunteer, "Age")
+def test_volunteer_has_Organization():
+    assert hasattr(Volunteer, "Organization")
     descriptor = None
     for klass in Volunteer.__mro__:
-        if "Age" in klass.__dict__:
-            descriptor = klass.__dict__["Age"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_volunteer_has_Preparing_event():
-    assert hasattr(Volunteer, "Preparing_event")
-    descriptor = None
-    for klass in Volunteer.__mro__:
-        if "Preparing_event" in klass.__dict__:
-            descriptor = klass.__dict__["Preparing_event"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_volunteer_has_Public_relations():
-    assert hasattr(Volunteer, "Public_relations")
-    descriptor = None
-    for klass in Volunteer.__mro__:
-        if "Public_relations" in klass.__dict__:
-            descriptor = klass.__dict__["Public_relations"]
+        if "Organization" in klass.__dict__:
+            descriptor = klass.__dict__["Organization"]
             break
     assert isinstance(descriptor, property)
 
@@ -1125,15 +1107,6 @@ def test_volunteer_has_Time_of_volunteering():
     for klass in Volunteer.__mro__:
         if "Time_of_volunteering" in klass.__dict__:
             descriptor = klass.__dict__["Time_of_volunteering"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_volunteer_has_Decor__and_aesthetic_touches():
-    assert hasattr(Volunteer, "Decor__and_aesthetic_touches")
-    descriptor = None
-    for klass in Volunteer.__mro__:
-        if "Decor__and_aesthetic_touches" in klass.__dict__:
-            descriptor = klass.__dict__["Decor__and_aesthetic_touches"]
             break
     assert isinstance(descriptor, property)
 
@@ -1155,12 +1128,21 @@ def test_volunteer_has_Volunteer_ID():
             break
     assert isinstance(descriptor, property)
 
-def test_volunteer_has_Organization():
-    assert hasattr(Volunteer, "Organization")
+def test_volunteer_has_Age():
+    assert hasattr(Volunteer, "Age")
     descriptor = None
     for klass in Volunteer.__mro__:
-        if "Organization" in klass.__dict__:
-            descriptor = klass.__dict__["Organization"]
+        if "Age" in klass.__dict__:
+            descriptor = klass.__dict__["Age"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_volunteer_has_Preparing_event():
+    assert hasattr(Volunteer, "Preparing_event")
+    descriptor = None
+    for klass in Volunteer.__mro__:
+        if "Preparing_event" in klass.__dict__:
+            descriptor = klass.__dict__["Preparing_event"]
             break
     assert isinstance(descriptor, property)
 
@@ -1170,6 +1152,24 @@ def test_volunteer_has_Design_and_montag():
     for klass in Volunteer.__mro__:
         if "Design_and_montag" in klass.__dict__:
             descriptor = klass.__dict__["Design_and_montag"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_volunteer_has_Decor__and_aesthetic_touches():
+    assert hasattr(Volunteer, "Decor__and_aesthetic_touches")
+    descriptor = None
+    for klass in Volunteer.__mro__:
+        if "Decor__and_aesthetic_touches" in klass.__dict__:
+            descriptor = klass.__dict__["Decor__and_aesthetic_touches"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_volunteer_has_Public_relations():
+    assert hasattr(Volunteer, "Public_relations")
+    descriptor = None
+    for klass in Volunteer.__mro__:
+        if "Public_relations" in klass.__dict__:
+            descriptor = klass.__dict__["Public_relations"]
             break
     assert isinstance(descriptor, property)
 
@@ -1186,17 +1186,8 @@ def test_honor_member_constructor_exists():
 def test_honor_member_constructor_args():
     sig = inspect.signature(Honor_member.__init__)
     params = list(sig.parameters.keys())
-    assert "Member_start_date" in params, "Missing parameter 'Member_start_date'"
     assert "Amount_of_partnership" in params, "Missing parameter 'Amount_of_partnership'"
-
-def test_honor_member_has_Member_start_date():
-    assert hasattr(Honor_member, "Member_start_date")
-    descriptor = None
-    for klass in Honor_member.__mro__:
-        if "Member_start_date" in klass.__dict__:
-            descriptor = klass.__dict__["Member_start_date"]
-            break
-    assert isinstance(descriptor, property)
+    assert "Member_start_date" in params, "Missing parameter 'Member_start_date'"
 
 def test_honor_member_has_Amount_of_partnership():
     assert hasattr(Honor_member, "Amount_of_partnership")
@@ -1204,6 +1195,15 @@ def test_honor_member_has_Amount_of_partnership():
     for klass in Honor_member.__mro__:
         if "Amount_of_partnership" in klass.__dict__:
             descriptor = klass.__dict__["Amount_of_partnership"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_honor_member_has_Member_start_date():
+    assert hasattr(Honor_member, "Member_start_date")
+    descriptor = None
+    for klass in Honor_member.__mro__:
+        if "Member_start_date" in klass.__dict__:
+            descriptor = klass.__dict__["Member_start_date"]
             break
     assert isinstance(descriptor, property)
 
@@ -1220,22 +1220,13 @@ def test_member_constructor_exists():
 def test_member_constructor_args():
     sig = inspect.signature(Member.__init__)
     params = list(sig.parameters.keys())
-    assert "Mobile_number" in params, "Missing parameter 'Mobile_number'"
     assert "Email_address" in params, "Missing parameter 'Email_address'"
-    assert "L_name" in params, "Missing parameter 'L_name'"
+    assert "Mobile_number" in params, "Missing parameter 'Mobile_number'"
     assert "Scientific_qualifications" in params, "Missing parameter 'Scientific_qualifications'"
-    assert "Job" in params, "Missing parameter 'Job'"
-    assert "F_name" in params, "Missing parameter 'F_name'"
     assert "Vacation_type" in params, "Missing parameter 'Vacation_type'"
-
-def test_member_has_Mobile_number():
-    assert hasattr(Member, "Mobile_number")
-    descriptor = None
-    for klass in Member.__mro__:
-        if "Mobile_number" in klass.__dict__:
-            descriptor = klass.__dict__["Mobile_number"]
-            break
-    assert isinstance(descriptor, property)
+    assert "F_name" in params, "Missing parameter 'F_name'"
+    assert "L_name" in params, "Missing parameter 'L_name'"
+    assert "Job" in params, "Missing parameter 'Job'"
 
 def test_member_has_Email_address():
     assert hasattr(Member, "Email_address")
@@ -1246,12 +1237,12 @@ def test_member_has_Email_address():
             break
     assert isinstance(descriptor, property)
 
-def test_member_has_L_name():
-    assert hasattr(Member, "L_name")
+def test_member_has_Mobile_number():
+    assert hasattr(Member, "Mobile_number")
     descriptor = None
     for klass in Member.__mro__:
-        if "L_name" in klass.__dict__:
-            descriptor = klass.__dict__["L_name"]
+        if "Mobile_number" in klass.__dict__:
+            descriptor = klass.__dict__["Mobile_number"]
             break
     assert isinstance(descriptor, property)
 
@@ -1264,12 +1255,12 @@ def test_member_has_Scientific_qualifications():
             break
     assert isinstance(descriptor, property)
 
-def test_member_has_Job():
-    assert hasattr(Member, "Job")
+def test_member_has_Vacation_type():
+    assert hasattr(Member, "Vacation_type")
     descriptor = None
     for klass in Member.__mro__:
-        if "Job" in klass.__dict__:
-            descriptor = klass.__dict__["Job"]
+        if "Vacation_type" in klass.__dict__:
+            descriptor = klass.__dict__["Vacation_type"]
             break
     assert isinstance(descriptor, property)
 
@@ -1282,12 +1273,21 @@ def test_member_has_F_name():
             break
     assert isinstance(descriptor, property)
 
-def test_member_has_Vacation_type():
-    assert hasattr(Member, "Vacation_type")
+def test_member_has_L_name():
+    assert hasattr(Member, "L_name")
     descriptor = None
     for klass in Member.__mro__:
-        if "Vacation_type" in klass.__dict__:
-            descriptor = klass.__dict__["Vacation_type"]
+        if "L_name" in klass.__dict__:
+            descriptor = klass.__dict__["L_name"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_member_has_Job():
+    assert hasattr(Member, "Job")
+    descriptor = None
+    for klass in Member.__mro__:
+        if "Job" in klass.__dict__:
+            descriptor = klass.__dict__["Job"]
             break
     assert isinstance(descriptor, property)
 
@@ -1340,8 +1340,8 @@ def test_origination_constructor_args():
     params = list(sig.parameters.keys())
     assert "Logo" in params, "Missing parameter 'Logo'"
     assert "Executive_manager" in params, "Missing parameter 'Executive_manager'"
-    assert "Full_name" in params, "Missing parameter 'Full_name'"
     assert "General_supervisor" in params, "Missing parameter 'General_supervisor'"
+    assert "Full_name" in params, "Missing parameter 'Full_name'"
 
 def test_origination_has_Logo():
     assert hasattr(Origination, "Logo")
@@ -1361,21 +1361,21 @@ def test_origination_has_Executive_manager():
             break
     assert isinstance(descriptor, property)
 
-def test_origination_has_Full_name():
-    assert hasattr(Origination, "Full_name")
-    descriptor = None
-    for klass in Origination.__mro__:
-        if "Full_name" in klass.__dict__:
-            descriptor = klass.__dict__["Full_name"]
-            break
-    assert isinstance(descriptor, property)
-
 def test_origination_has_General_supervisor():
     assert hasattr(Origination, "General_supervisor")
     descriptor = None
     for klass in Origination.__mro__:
         if "General_supervisor" in klass.__dict__:
             descriptor = klass.__dict__["General_supervisor"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_origination_has_Full_name():
+    assert hasattr(Origination, "Full_name")
+    descriptor = None
+    for klass in Origination.__mro__:
+        if "Full_name" in klass.__dict__:
+            descriptor = klass.__dict__["Full_name"]
             break
     assert isinstance(descriptor, property)
 
@@ -1742,173 +1742,173 @@ Administrator__Actor_strategy = st.builds(
 )
 Vacation_strategy = st.builds(
     Vacation,
-    Employee_ID=
-        st.integers(),
     Expiry_date=
         safe_text,
     Beginning_date=
-        safe_text
+        safe_text,
+    Employee_ID=
+        st.integers()
 )
 Employee_strategy = st.builds(
     Employee,
     Functional_number=
         st.integers(),
-    Email_address=
-        safe_text,
-    Last_name=
+    First_name=
         safe_text,
     Mobile_number=
         st.integers(),
-    Remaining_days=
-        st.integers(),
-    First_name=
+    Last_name=
+        safe_text,
+    Email_address=
         safe_text,
     ID=
+        st.integers(),
+    Remaining_days=
         st.integers()
 )
 Care_strategy = st.builds(
     Care,
-    Profession_of_the_guardian=
-        safe_text,
-    Relation_of_the_guardian=
-        safe_text,
-    Monthly_income=
-        st.integers(),
-    Care_sort=
-        safe_text,
     Street=
-        safe_text,
-    Workplace=
-        safe_text,
-    Interaction_degree=
-        safe_text,
-    Health_status=
         safe_text,
     Income_sources=
         safe_text,
-    Family_members__The_number=
-        st.integers(),
-    Housing_description=
+    Workplace=
         safe_text,
-    Adopting_degree=
-        safe_text,
-    Workplace_the_guardian=
+    Care_sort=
         safe_text,
     Housing_kind=
-        safe_text,
-    Family_bonding=
         safe_text,
     Number_of_children=
         safe_text,
     Income_amount=
         safe_text,
-    Civil_Registry=
+    Monthly_income=
+        st.integers(),
+    Family_members__The_number=
+        st.integers(),
+    Children_health_status=
+        safe_text,
+    Relation_of_the_guardian=
+        safe_text,
+    Profession_of_the_guardian=
+        safe_text,
+    Housing_description=
+        safe_text,
+    Interaction_degree=
+        safe_text,
+    Workplace_the_guardian=
+        safe_text,
+    Health_status=
+        safe_text,
+    Family_bonding=
         safe_text,
     Guardian=
         safe_text,
-    Children_health_status=
+    Civil_Registry=
+        safe_text,
+    Adopting_degree=
         safe_text
 )
 Marriage_Demand_strategy = st.builds(
     Marriage_Demand,
     Educational_status=
         safe_text,
-    Salary=
-        safe_text,
-    Relation_with_proposal=
-        safe_text,
-    Legitimate_vision=
+    Other_district=
         safe_text,
     Nationality_of_the_mother=
         safe_text,
     Tribe=
         safe_text,
-    Other_district=
-        safe_text,
     Nationality=
         safe_text,
-    Marital_status_of_the_proposer=
-        safe_text,
     Accept_multi_marriage=
+        safe_text,
+    Salary=
+        safe_text,
+    Legitimate_vision=
+        safe_text,
+    Relation_with_proposal=
+        safe_text,
+    Marital_status_of_the_proposer=
         safe_text
 )
 Amount_strategy = st.builds(
     Amount,
-    Subvention_date=
-        safe_text,
+    Amount=
+        st.integers(),
     Month=
         st.integers(),
-    Amount=
-        st.integers()
+    Subvention_date=
+        safe_text
 )
 Beneficiary_strategy = st.builds(
     Beneficiary,
+    L_name=
+        safe_text,
+    District=
+        safe_text,
+    Address=
+        safe_text,
     Marital_status=
         safe_text,
-    Job=
+    F_name=
+        safe_text,
+    Date_of_birth=
+        safe_text,
+    Phone=
+        st.integers(),
+    Scientific_qualification=
         safe_text,
     Beneficiary__ID=
         st.integers(),
     House_number=
         st.integers(),
-    L_name=
-        safe_text,
-    Date_of_birth=
-        safe_text,
-    Address=
-        safe_text,
-    Phone=
-        st.integers(),
-    F_name=
-        safe_text,
-    Scientific_qualification=
-        safe_text,
-    District=
+    Job=
         safe_text
 )
 Volunteer_strategy = st.builds(
     Volunteer,
-    Age=
-        st.integers(),
-    Preparing_event=
-        safe_text,
-    Public_relations=
+    Organization=
         safe_text,
     Time_of_volunteering=
-        safe_text,
-    Decor__and_aesthetic_touches=
         safe_text,
     Professional_status=
         safe_text,
     Volunteer_ID=
         st.integers(),
-    Organization=
+    Age=
+        st.integers(),
+    Preparing_event=
         safe_text,
     Design_and_montag=
+        safe_text,
+    Decor__and_aesthetic_touches=
+        safe_text,
+    Public_relations=
         safe_text
 )
 Honor_member_strategy = st.builds(
     Honor_member,
-    Member_start_date=
-        safe_text,
     Amount_of_partnership=
-        st.integers()
+        st.integers(),
+    Member_start_date=
+        safe_text
 )
 Member_strategy = st.builds(
     Member,
-    Mobile_number=
-        st.integers(),
     Email_address=
         safe_text,
-    L_name=
-        safe_text,
+    Mobile_number=
+        st.integers(),
     Scientific_qualifications=
         safe_text,
-    Job=
+    Vacation_type=
         safe_text,
     F_name=
         safe_text,
-    Vacation_type=
+    L_name=
+        safe_text,
+    Job=
         safe_text
 )
 Data_entry_strategy = st.builds(
@@ -1924,9 +1924,9 @@ Origination_strategy = st.builds(
         safe_text,
     Executive_manager=
         safe_text,
-    Full_name=
-        safe_text,
     General_supervisor=
+        safe_text,
+    Full_name=
         safe_text
 )
 Admin_strategy = st.builds(
@@ -2127,20 +2127,6 @@ def test_administrator__actor_instantiation(instance):
 def test_vacation_instantiation(instance):
     assert isinstance(instance, Vacation)
 
-@given(instance=Vacation_strategy)
-def test_vacation_Employee_ID_type(instance):
-    assert isinstance(instance.Employee_ID, int)
-
-
-@given(instance=Vacation_strategy)
-def test_vacation_Employee_ID_setter(instance):
-    original = instance.Employee_ID
-    instance.Employee_ID = original
-    assert instance.Employee_ID == original
-
-@given(instance=Vacation_strategy)
-def test_vacation_Expiry_date_type(instance):
-    assert isinstance(instance.Expiry_date, str)
 
 
 @given(instance=Vacation_strategy)
@@ -2149,9 +2135,6 @@ def test_vacation_Expiry_date_setter(instance):
     instance.Expiry_date = original
     assert instance.Expiry_date == original
 
-@given(instance=Vacation_strategy)
-def test_vacation_Beginning_date_type(instance):
-    assert isinstance(instance.Beginning_date, str)
 
 
 @given(instance=Vacation_strategy)
@@ -2160,14 +2143,19 @@ def test_vacation_Beginning_date_setter(instance):
     instance.Beginning_date = original
     assert instance.Beginning_date == original
 
+
+
+@given(instance=Vacation_strategy)
+def test_vacation_Employee_ID_setter(instance):
+    original = instance.Employee_ID
+    instance.Employee_ID = original
+    assert instance.Employee_ID == original
+
 @given(instance=Employee_strategy)
 @settings(max_examples=50)
 def test_employee_instantiation(instance):
     assert isinstance(instance, Employee)
 
-@given(instance=Employee_strategy)
-def test_employee_Functional_number_type(instance):
-    assert isinstance(instance.Functional_number, int)
 
 
 @given(instance=Employee_strategy)
@@ -2176,53 +2164,6 @@ def test_employee_Functional_number_setter(instance):
     instance.Functional_number = original
     assert instance.Functional_number == original
 
-@given(instance=Employee_strategy)
-def test_employee_Email_address_type(instance):
-    assert isinstance(instance.Email_address, str)
-
-
-@given(instance=Employee_strategy)
-def test_employee_Email_address_setter(instance):
-    original = instance.Email_address
-    instance.Email_address = original
-    assert instance.Email_address == original
-
-@given(instance=Employee_strategy)
-def test_employee_Last_name_type(instance):
-    assert isinstance(instance.Last_name, str)
-
-
-@given(instance=Employee_strategy)
-def test_employee_Last_name_setter(instance):
-    original = instance.Last_name
-    instance.Last_name = original
-    assert instance.Last_name == original
-
-@given(instance=Employee_strategy)
-def test_employee_Mobile_number_type(instance):
-    assert isinstance(instance.Mobile_number, int)
-
-
-@given(instance=Employee_strategy)
-def test_employee_Mobile_number_setter(instance):
-    original = instance.Mobile_number
-    instance.Mobile_number = original
-    assert instance.Mobile_number == original
-
-@given(instance=Employee_strategy)
-def test_employee_Remaining_days_type(instance):
-    assert isinstance(instance.Remaining_days, int)
-
-
-@given(instance=Employee_strategy)
-def test_employee_Remaining_days_setter(instance):
-    original = instance.Remaining_days
-    instance.Remaining_days = original
-    assert instance.Remaining_days == original
-
-@given(instance=Employee_strategy)
-def test_employee_First_name_type(instance):
-    assert isinstance(instance.First_name, str)
 
 
 @given(instance=Employee_strategy)
@@ -2231,9 +2172,30 @@ def test_employee_First_name_setter(instance):
     instance.First_name = original
     assert instance.First_name == original
 
+
+
 @given(instance=Employee_strategy)
-def test_employee_ID_type(instance):
-    assert isinstance(instance.ID, int)
+def test_employee_Mobile_number_setter(instance):
+    original = instance.Mobile_number
+    instance.Mobile_number = original
+    assert instance.Mobile_number == original
+
+
+
+@given(instance=Employee_strategy)
+def test_employee_Last_name_setter(instance):
+    original = instance.Last_name
+    instance.Last_name = original
+    assert instance.Last_name == original
+
+
+
+@given(instance=Employee_strategy)
+def test_employee_Email_address_setter(instance):
+    original = instance.Email_address
+    instance.Email_address = original
+    assert instance.Email_address == original
+
 
 
 @given(instance=Employee_strategy)
@@ -2242,58 +2204,19 @@ def test_employee_ID_setter(instance):
     instance.ID = original
     assert instance.ID == original
 
+
+
+@given(instance=Employee_strategy)
+def test_employee_Remaining_days_setter(instance):
+    original = instance.Remaining_days
+    instance.Remaining_days = original
+    assert instance.Remaining_days == original
+
 @given(instance=Care_strategy)
 @settings(max_examples=50)
 def test_care_instantiation(instance):
     assert isinstance(instance, Care)
 
-@given(instance=Care_strategy)
-def test_care_Profession_of_the_guardian_type(instance):
-    assert isinstance(instance.Profession_of_the_guardian, str)
-
-
-@given(instance=Care_strategy)
-def test_care_Profession_of_the_guardian_setter(instance):
-    original = instance.Profession_of_the_guardian
-    instance.Profession_of_the_guardian = original
-    assert instance.Profession_of_the_guardian == original
-
-@given(instance=Care_strategy)
-def test_care_Relation_of_the_guardian_type(instance):
-    assert isinstance(instance.Relation_of_the_guardian, str)
-
-
-@given(instance=Care_strategy)
-def test_care_Relation_of_the_guardian_setter(instance):
-    original = instance.Relation_of_the_guardian
-    instance.Relation_of_the_guardian = original
-    assert instance.Relation_of_the_guardian == original
-
-@given(instance=Care_strategy)
-def test_care_Monthly_income_type(instance):
-    assert isinstance(instance.Monthly_income, int)
-
-
-@given(instance=Care_strategy)
-def test_care_Monthly_income_setter(instance):
-    original = instance.Monthly_income
-    instance.Monthly_income = original
-    assert instance.Monthly_income == original
-
-@given(instance=Care_strategy)
-def test_care_Care_sort_type(instance):
-    assert isinstance(instance.Care_sort, str)
-
-
-@given(instance=Care_strategy)
-def test_care_Care_sort_setter(instance):
-    original = instance.Care_sort
-    instance.Care_sort = original
-    assert instance.Care_sort == original
-
-@given(instance=Care_strategy)
-def test_care_Street_type(instance):
-    assert isinstance(instance.Street, str)
 
 
 @given(instance=Care_strategy)
@@ -2302,42 +2225,6 @@ def test_care_Street_setter(instance):
     instance.Street = original
     assert instance.Street == original
 
-@given(instance=Care_strategy)
-def test_care_Workplace_type(instance):
-    assert isinstance(instance.Workplace, str)
-
-
-@given(instance=Care_strategy)
-def test_care_Workplace_setter(instance):
-    original = instance.Workplace
-    instance.Workplace = original
-    assert instance.Workplace == original
-
-@given(instance=Care_strategy)
-def test_care_Interaction_degree_type(instance):
-    assert isinstance(instance.Interaction_degree, str)
-
-
-@given(instance=Care_strategy)
-def test_care_Interaction_degree_setter(instance):
-    original = instance.Interaction_degree
-    instance.Interaction_degree = original
-    assert instance.Interaction_degree == original
-
-@given(instance=Care_strategy)
-def test_care_Health_status_type(instance):
-    assert isinstance(instance.Health_status, str)
-
-
-@given(instance=Care_strategy)
-def test_care_Health_status_setter(instance):
-    original = instance.Health_status
-    instance.Health_status = original
-    assert instance.Health_status == original
-
-@given(instance=Care_strategy)
-def test_care_Income_sources_type(instance):
-    assert isinstance(instance.Income_sources, str)
 
 
 @given(instance=Care_strategy)
@@ -2346,53 +2233,22 @@ def test_care_Income_sources_setter(instance):
     instance.Income_sources = original
     assert instance.Income_sources == original
 
-@given(instance=Care_strategy)
-def test_care_Family_members__The_number_type(instance):
-    assert isinstance(instance.Family_members__The_number, int)
 
 
 @given(instance=Care_strategy)
-def test_care_Family_members__The_number_setter(instance):
-    original = instance.Family_members__The_number
-    instance.Family_members__The_number = original
-    assert instance.Family_members__The_number == original
+def test_care_Workplace_setter(instance):
+    original = instance.Workplace
+    instance.Workplace = original
+    assert instance.Workplace == original
 
-@given(instance=Care_strategy)
-def test_care_Housing_description_type(instance):
-    assert isinstance(instance.Housing_description, str)
 
 
 @given(instance=Care_strategy)
-def test_care_Housing_description_setter(instance):
-    original = instance.Housing_description
-    instance.Housing_description = original
-    assert instance.Housing_description == original
+def test_care_Care_sort_setter(instance):
+    original = instance.Care_sort
+    instance.Care_sort = original
+    assert instance.Care_sort == original
 
-@given(instance=Care_strategy)
-def test_care_Adopting_degree_type(instance):
-    assert isinstance(instance.Adopting_degree, str)
-
-
-@given(instance=Care_strategy)
-def test_care_Adopting_degree_setter(instance):
-    original = instance.Adopting_degree
-    instance.Adopting_degree = original
-    assert instance.Adopting_degree == original
-
-@given(instance=Care_strategy)
-def test_care_Workplace_the_guardian_type(instance):
-    assert isinstance(instance.Workplace_the_guardian, str)
-
-
-@given(instance=Care_strategy)
-def test_care_Workplace_the_guardian_setter(instance):
-    original = instance.Workplace_the_guardian
-    instance.Workplace_the_guardian = original
-    assert instance.Workplace_the_guardian == original
-
-@given(instance=Care_strategy)
-def test_care_Housing_kind_type(instance):
-    assert isinstance(instance.Housing_kind, str)
 
 
 @given(instance=Care_strategy)
@@ -2401,20 +2257,6 @@ def test_care_Housing_kind_setter(instance):
     instance.Housing_kind = original
     assert instance.Housing_kind == original
 
-@given(instance=Care_strategy)
-def test_care_Family_bonding_type(instance):
-    assert isinstance(instance.Family_bonding, str)
-
-
-@given(instance=Care_strategy)
-def test_care_Family_bonding_setter(instance):
-    original = instance.Family_bonding
-    instance.Family_bonding = original
-    assert instance.Family_bonding == original
-
-@given(instance=Care_strategy)
-def test_care_Number_of_children_type(instance):
-    assert isinstance(instance.Number_of_children, str)
 
 
 @given(instance=Care_strategy)
@@ -2423,9 +2265,6 @@ def test_care_Number_of_children_setter(instance):
     instance.Number_of_children = original
     assert instance.Number_of_children == original
 
-@given(instance=Care_strategy)
-def test_care_Income_amount_type(instance):
-    assert isinstance(instance.Income_amount, str)
 
 
 @given(instance=Care_strategy)
@@ -2434,31 +2273,22 @@ def test_care_Income_amount_setter(instance):
     instance.Income_amount = original
     assert instance.Income_amount == original
 
-@given(instance=Care_strategy)
-def test_care_Civil_Registry_type(instance):
-    assert isinstance(instance.Civil_Registry, str)
 
 
 @given(instance=Care_strategy)
-def test_care_Civil_Registry_setter(instance):
-    original = instance.Civil_Registry
-    instance.Civil_Registry = original
-    assert instance.Civil_Registry == original
+def test_care_Monthly_income_setter(instance):
+    original = instance.Monthly_income
+    instance.Monthly_income = original
+    assert instance.Monthly_income == original
 
-@given(instance=Care_strategy)
-def test_care_Guardian_type(instance):
-    assert isinstance(instance.Guardian, str)
 
 
 @given(instance=Care_strategy)
-def test_care_Guardian_setter(instance):
-    original = instance.Guardian
-    instance.Guardian = original
-    assert instance.Guardian == original
+def test_care_Family_members__The_number_setter(instance):
+    original = instance.Family_members__The_number
+    instance.Family_members__The_number = original
+    assert instance.Family_members__The_number == original
 
-@given(instance=Care_strategy)
-def test_care_Children_health_status_type(instance):
-    assert isinstance(instance.Children_health_status, str)
 
 
 @given(instance=Care_strategy)
@@ -2467,14 +2297,91 @@ def test_care_Children_health_status_setter(instance):
     instance.Children_health_status = original
     assert instance.Children_health_status == original
 
+
+
+@given(instance=Care_strategy)
+def test_care_Relation_of_the_guardian_setter(instance):
+    original = instance.Relation_of_the_guardian
+    instance.Relation_of_the_guardian = original
+    assert instance.Relation_of_the_guardian == original
+
+
+
+@given(instance=Care_strategy)
+def test_care_Profession_of_the_guardian_setter(instance):
+    original = instance.Profession_of_the_guardian
+    instance.Profession_of_the_guardian = original
+    assert instance.Profession_of_the_guardian == original
+
+
+
+@given(instance=Care_strategy)
+def test_care_Housing_description_setter(instance):
+    original = instance.Housing_description
+    instance.Housing_description = original
+    assert instance.Housing_description == original
+
+
+
+@given(instance=Care_strategy)
+def test_care_Interaction_degree_setter(instance):
+    original = instance.Interaction_degree
+    instance.Interaction_degree = original
+    assert instance.Interaction_degree == original
+
+
+
+@given(instance=Care_strategy)
+def test_care_Workplace_the_guardian_setter(instance):
+    original = instance.Workplace_the_guardian
+    instance.Workplace_the_guardian = original
+    assert instance.Workplace_the_guardian == original
+
+
+
+@given(instance=Care_strategy)
+def test_care_Health_status_setter(instance):
+    original = instance.Health_status
+    instance.Health_status = original
+    assert instance.Health_status == original
+
+
+
+@given(instance=Care_strategy)
+def test_care_Family_bonding_setter(instance):
+    original = instance.Family_bonding
+    instance.Family_bonding = original
+    assert instance.Family_bonding == original
+
+
+
+@given(instance=Care_strategy)
+def test_care_Guardian_setter(instance):
+    original = instance.Guardian
+    instance.Guardian = original
+    assert instance.Guardian == original
+
+
+
+@given(instance=Care_strategy)
+def test_care_Civil_Registry_setter(instance):
+    original = instance.Civil_Registry
+    instance.Civil_Registry = original
+    assert instance.Civil_Registry == original
+
+
+
+@given(instance=Care_strategy)
+def test_care_Adopting_degree_setter(instance):
+    original = instance.Adopting_degree
+    instance.Adopting_degree = original
+    assert instance.Adopting_degree == original
+
 @given(instance=Marriage_Demand_strategy)
 @settings(max_examples=50)
 def test_marriage_demand_instantiation(instance):
     assert isinstance(instance, Marriage_Demand)
 
-@given(instance=Marriage_Demand_strategy)
-def test_marriage_demand_Educational_status_type(instance):
-    assert isinstance(instance.Educational_status, str)
 
 
 @given(instance=Marriage_Demand_strategy)
@@ -2483,64 +2390,6 @@ def test_marriage_demand_Educational_status_setter(instance):
     instance.Educational_status = original
     assert instance.Educational_status == original
 
-@given(instance=Marriage_Demand_strategy)
-def test_marriage_demand_Salary_type(instance):
-    assert isinstance(instance.Salary, str)
-
-
-@given(instance=Marriage_Demand_strategy)
-def test_marriage_demand_Salary_setter(instance):
-    original = instance.Salary
-    instance.Salary = original
-    assert instance.Salary == original
-
-@given(instance=Marriage_Demand_strategy)
-def test_marriage_demand_Relation_with_proposal_type(instance):
-    assert isinstance(instance.Relation_with_proposal, str)
-
-
-@given(instance=Marriage_Demand_strategy)
-def test_marriage_demand_Relation_with_proposal_setter(instance):
-    original = instance.Relation_with_proposal
-    instance.Relation_with_proposal = original
-    assert instance.Relation_with_proposal == original
-
-@given(instance=Marriage_Demand_strategy)
-def test_marriage_demand_Legitimate_vision_type(instance):
-    assert isinstance(instance.Legitimate_vision, str)
-
-
-@given(instance=Marriage_Demand_strategy)
-def test_marriage_demand_Legitimate_vision_setter(instance):
-    original = instance.Legitimate_vision
-    instance.Legitimate_vision = original
-    assert instance.Legitimate_vision == original
-
-@given(instance=Marriage_Demand_strategy)
-def test_marriage_demand_Nationality_of_the_mother_type(instance):
-    assert isinstance(instance.Nationality_of_the_mother, str)
-
-
-@given(instance=Marriage_Demand_strategy)
-def test_marriage_demand_Nationality_of_the_mother_setter(instance):
-    original = instance.Nationality_of_the_mother
-    instance.Nationality_of_the_mother = original
-    assert instance.Nationality_of_the_mother == original
-
-@given(instance=Marriage_Demand_strategy)
-def test_marriage_demand_Tribe_type(instance):
-    assert isinstance(instance.Tribe, str)
-
-
-@given(instance=Marriage_Demand_strategy)
-def test_marriage_demand_Tribe_setter(instance):
-    original = instance.Tribe
-    instance.Tribe = original
-    assert instance.Tribe == original
-
-@given(instance=Marriage_Demand_strategy)
-def test_marriage_demand_Other_district_type(instance):
-    assert isinstance(instance.Other_district, str)
 
 
 @given(instance=Marriage_Demand_strategy)
@@ -2549,9 +2398,22 @@ def test_marriage_demand_Other_district_setter(instance):
     instance.Other_district = original
     assert instance.Other_district == original
 
+
+
 @given(instance=Marriage_Demand_strategy)
-def test_marriage_demand_Nationality_type(instance):
-    assert isinstance(instance.Nationality, str)
+def test_marriage_demand_Nationality_of_the_mother_setter(instance):
+    original = instance.Nationality_of_the_mother
+    instance.Nationality_of_the_mother = original
+    assert instance.Nationality_of_the_mother == original
+
+
+
+@given(instance=Marriage_Demand_strategy)
+def test_marriage_demand_Tribe_setter(instance):
+    original = instance.Tribe
+    instance.Tribe = original
+    assert instance.Tribe == original
+
 
 
 @given(instance=Marriage_Demand_strategy)
@@ -2560,20 +2422,6 @@ def test_marriage_demand_Nationality_setter(instance):
     instance.Nationality = original
     assert instance.Nationality == original
 
-@given(instance=Marriage_Demand_strategy)
-def test_marriage_demand_Marital_status_of_the_proposer_type(instance):
-    assert isinstance(instance.Marital_status_of_the_proposer, str)
-
-
-@given(instance=Marriage_Demand_strategy)
-def test_marriage_demand_Marital_status_of_the_proposer_setter(instance):
-    original = instance.Marital_status_of_the_proposer
-    instance.Marital_status_of_the_proposer = original
-    assert instance.Marital_status_of_the_proposer == original
-
-@given(instance=Marriage_Demand_strategy)
-def test_marriage_demand_Accept_multi_marriage_type(instance):
-    assert isinstance(instance.Accept_multi_marriage, str)
 
 
 @given(instance=Marriage_Demand_strategy)
@@ -2582,36 +2430,43 @@ def test_marriage_demand_Accept_multi_marriage_setter(instance):
     instance.Accept_multi_marriage = original
     assert instance.Accept_multi_marriage == original
 
+
+
+@given(instance=Marriage_Demand_strategy)
+def test_marriage_demand_Salary_setter(instance):
+    original = instance.Salary
+    instance.Salary = original
+    assert instance.Salary == original
+
+
+
+@given(instance=Marriage_Demand_strategy)
+def test_marriage_demand_Legitimate_vision_setter(instance):
+    original = instance.Legitimate_vision
+    instance.Legitimate_vision = original
+    assert instance.Legitimate_vision == original
+
+
+
+@given(instance=Marriage_Demand_strategy)
+def test_marriage_demand_Relation_with_proposal_setter(instance):
+    original = instance.Relation_with_proposal
+    instance.Relation_with_proposal = original
+    assert instance.Relation_with_proposal == original
+
+
+
+@given(instance=Marriage_Demand_strategy)
+def test_marriage_demand_Marital_status_of_the_proposer_setter(instance):
+    original = instance.Marital_status_of_the_proposer
+    instance.Marital_status_of_the_proposer = original
+    assert instance.Marital_status_of_the_proposer == original
+
 @given(instance=Amount_strategy)
 @settings(max_examples=50)
 def test_amount_instantiation(instance):
     assert isinstance(instance, Amount)
 
-@given(instance=Amount_strategy)
-def test_amount_Subvention_date_type(instance):
-    assert isinstance(instance.Subvention_date, str)
-
-
-@given(instance=Amount_strategy)
-def test_amount_Subvention_date_setter(instance):
-    original = instance.Subvention_date
-    instance.Subvention_date = original
-    assert instance.Subvention_date == original
-
-@given(instance=Amount_strategy)
-def test_amount_Month_type(instance):
-    assert isinstance(instance.Month, int)
-
-
-@given(instance=Amount_strategy)
-def test_amount_Month_setter(instance):
-    original = instance.Month
-    instance.Month = original
-    assert instance.Month == original
-
-@given(instance=Amount_strategy)
-def test_amount_Amount_type(instance):
-    assert isinstance(instance.Amount, int)
 
 
 @given(instance=Amount_strategy)
@@ -2620,58 +2475,27 @@ def test_amount_Amount_setter(instance):
     instance.Amount = original
     assert instance.Amount == original
 
+
+
+@given(instance=Amount_strategy)
+def test_amount_Month_setter(instance):
+    original = instance.Month
+    instance.Month = original
+    assert instance.Month == original
+
+
+
+@given(instance=Amount_strategy)
+def test_amount_Subvention_date_setter(instance):
+    original = instance.Subvention_date
+    instance.Subvention_date = original
+    assert instance.Subvention_date == original
+
 @given(instance=Beneficiary_strategy)
 @settings(max_examples=50)
 def test_beneficiary_instantiation(instance):
     assert isinstance(instance, Beneficiary)
 
-@given(instance=Beneficiary_strategy)
-def test_beneficiary_Marital_status_type(instance):
-    assert isinstance(instance.Marital_status, str)
-
-
-@given(instance=Beneficiary_strategy)
-def test_beneficiary_Marital_status_setter(instance):
-    original = instance.Marital_status
-    instance.Marital_status = original
-    assert instance.Marital_status == original
-
-@given(instance=Beneficiary_strategy)
-def test_beneficiary_Job_type(instance):
-    assert isinstance(instance.Job, str)
-
-
-@given(instance=Beneficiary_strategy)
-def test_beneficiary_Job_setter(instance):
-    original = instance.Job
-    instance.Job = original
-    assert instance.Job == original
-
-@given(instance=Beneficiary_strategy)
-def test_beneficiary_Beneficiary__ID_type(instance):
-    assert isinstance(instance.Beneficiary__ID, int)
-
-
-@given(instance=Beneficiary_strategy)
-def test_beneficiary_Beneficiary__ID_setter(instance):
-    original = instance.Beneficiary__ID
-    instance.Beneficiary__ID = original
-    assert instance.Beneficiary__ID == original
-
-@given(instance=Beneficiary_strategy)
-def test_beneficiary_House_number_type(instance):
-    assert isinstance(instance.House_number, int)
-
-
-@given(instance=Beneficiary_strategy)
-def test_beneficiary_House_number_setter(instance):
-    original = instance.House_number
-    instance.House_number = original
-    assert instance.House_number == original
-
-@given(instance=Beneficiary_strategy)
-def test_beneficiary_L_name_type(instance):
-    assert isinstance(instance.L_name, str)
 
 
 @given(instance=Beneficiary_strategy)
@@ -2680,64 +2504,6 @@ def test_beneficiary_L_name_setter(instance):
     instance.L_name = original
     assert instance.L_name == original
 
-@given(instance=Beneficiary_strategy)
-def test_beneficiary_Date_of_birth_type(instance):
-    assert isinstance(instance.Date_of_birth, str)
-
-
-@given(instance=Beneficiary_strategy)
-def test_beneficiary_Date_of_birth_setter(instance):
-    original = instance.Date_of_birth
-    instance.Date_of_birth = original
-    assert instance.Date_of_birth == original
-
-@given(instance=Beneficiary_strategy)
-def test_beneficiary_Address_type(instance):
-    assert isinstance(instance.Address, str)
-
-
-@given(instance=Beneficiary_strategy)
-def test_beneficiary_Address_setter(instance):
-    original = instance.Address
-    instance.Address = original
-    assert instance.Address == original
-
-@given(instance=Beneficiary_strategy)
-def test_beneficiary_Phone_type(instance):
-    assert isinstance(instance.Phone, int)
-
-
-@given(instance=Beneficiary_strategy)
-def test_beneficiary_Phone_setter(instance):
-    original = instance.Phone
-    instance.Phone = original
-    assert instance.Phone == original
-
-@given(instance=Beneficiary_strategy)
-def test_beneficiary_F_name_type(instance):
-    assert isinstance(instance.F_name, str)
-
-
-@given(instance=Beneficiary_strategy)
-def test_beneficiary_F_name_setter(instance):
-    original = instance.F_name
-    instance.F_name = original
-    assert instance.F_name == original
-
-@given(instance=Beneficiary_strategy)
-def test_beneficiary_Scientific_qualification_type(instance):
-    assert isinstance(instance.Scientific_qualification, str)
-
-
-@given(instance=Beneficiary_strategy)
-def test_beneficiary_Scientific_qualification_setter(instance):
-    original = instance.Scientific_qualification
-    instance.Scientific_qualification = original
-    assert instance.Scientific_qualification == original
-
-@given(instance=Beneficiary_strategy)
-def test_beneficiary_District_type(instance):
-    assert isinstance(instance.District, str)
 
 
 @given(instance=Beneficiary_strategy)
@@ -2746,91 +2512,83 @@ def test_beneficiary_District_setter(instance):
     instance.District = original
     assert instance.District == original
 
+
+
+@given(instance=Beneficiary_strategy)
+def test_beneficiary_Address_setter(instance):
+    original = instance.Address
+    instance.Address = original
+    assert instance.Address == original
+
+
+
+@given(instance=Beneficiary_strategy)
+def test_beneficiary_Marital_status_setter(instance):
+    original = instance.Marital_status
+    instance.Marital_status = original
+    assert instance.Marital_status == original
+
+
+
+@given(instance=Beneficiary_strategy)
+def test_beneficiary_F_name_setter(instance):
+    original = instance.F_name
+    instance.F_name = original
+    assert instance.F_name == original
+
+
+
+@given(instance=Beneficiary_strategy)
+def test_beneficiary_Date_of_birth_setter(instance):
+    original = instance.Date_of_birth
+    instance.Date_of_birth = original
+    assert instance.Date_of_birth == original
+
+
+
+@given(instance=Beneficiary_strategy)
+def test_beneficiary_Phone_setter(instance):
+    original = instance.Phone
+    instance.Phone = original
+    assert instance.Phone == original
+
+
+
+@given(instance=Beneficiary_strategy)
+def test_beneficiary_Scientific_qualification_setter(instance):
+    original = instance.Scientific_qualification
+    instance.Scientific_qualification = original
+    assert instance.Scientific_qualification == original
+
+
+
+@given(instance=Beneficiary_strategy)
+def test_beneficiary_Beneficiary__ID_setter(instance):
+    original = instance.Beneficiary__ID
+    instance.Beneficiary__ID = original
+    assert instance.Beneficiary__ID == original
+
+
+
+@given(instance=Beneficiary_strategy)
+def test_beneficiary_House_number_setter(instance):
+    original = instance.House_number
+    instance.House_number = original
+    assert instance.House_number == original
+
+
+
+@given(instance=Beneficiary_strategy)
+def test_beneficiary_Job_setter(instance):
+    original = instance.Job
+    instance.Job = original
+    assert instance.Job == original
+
 @given(instance=Volunteer_strategy)
 @settings(max_examples=50)
 def test_volunteer_instantiation(instance):
     assert isinstance(instance, Volunteer)
 
-@given(instance=Volunteer_strategy)
-def test_volunteer_Age_type(instance):
-    assert isinstance(instance.Age, int)
-
-
-@given(instance=Volunteer_strategy)
-def test_volunteer_Age_setter(instance):
-    original = instance.Age
-    instance.Age = original
-    assert instance.Age == original
-
-@given(instance=Volunteer_strategy)
-def test_volunteer_Preparing_event_type(instance):
-    assert isinstance(instance.Preparing_event, str)
-
-
-@given(instance=Volunteer_strategy)
-def test_volunteer_Preparing_event_setter(instance):
-    original = instance.Preparing_event
-    instance.Preparing_event = original
-    assert instance.Preparing_event == original
-
-@given(instance=Volunteer_strategy)
-def test_volunteer_Public_relations_type(instance):
-    assert isinstance(instance.Public_relations, str)
-
-
-@given(instance=Volunteer_strategy)
-def test_volunteer_Public_relations_setter(instance):
-    original = instance.Public_relations
-    instance.Public_relations = original
-    assert instance.Public_relations == original
-
-@given(instance=Volunteer_strategy)
-def test_volunteer_Time_of_volunteering_type(instance):
-    assert isinstance(instance.Time_of_volunteering, str)
-
-
-@given(instance=Volunteer_strategy)
-def test_volunteer_Time_of_volunteering_setter(instance):
-    original = instance.Time_of_volunteering
-    instance.Time_of_volunteering = original
-    assert instance.Time_of_volunteering == original
-
-@given(instance=Volunteer_strategy)
-def test_volunteer_Decor__and_aesthetic_touches_type(instance):
-    assert isinstance(instance.Decor__and_aesthetic_touches, str)
-
-
-@given(instance=Volunteer_strategy)
-def test_volunteer_Decor__and_aesthetic_touches_setter(instance):
-    original = instance.Decor__and_aesthetic_touches
-    instance.Decor__and_aesthetic_touches = original
-    assert instance.Decor__and_aesthetic_touches == original
-
-@given(instance=Volunteer_strategy)
-def test_volunteer_Professional_status_type(instance):
-    assert isinstance(instance.Professional_status, str)
-
-
-@given(instance=Volunteer_strategy)
-def test_volunteer_Professional_status_setter(instance):
-    original = instance.Professional_status
-    instance.Professional_status = original
-    assert instance.Professional_status == original
-
-@given(instance=Volunteer_strategy)
-def test_volunteer_Volunteer_ID_type(instance):
-    assert isinstance(instance.Volunteer_ID, int)
-
-
-@given(instance=Volunteer_strategy)
-def test_volunteer_Volunteer_ID_setter(instance):
-    original = instance.Volunteer_ID
-    instance.Volunteer_ID = original
-    assert instance.Volunteer_ID == original
-
-@given(instance=Volunteer_strategy)
-def test_volunteer_Organization_type(instance):
-    assert isinstance(instance.Organization, str)
 
 
 @given(instance=Volunteer_strategy)
@@ -2839,9 +2597,46 @@ def test_volunteer_Organization_setter(instance):
     instance.Organization = original
     assert instance.Organization == original
 
+
+
 @given(instance=Volunteer_strategy)
-def test_volunteer_Design_and_montag_type(instance):
-    assert isinstance(instance.Design_and_montag, str)
+def test_volunteer_Time_of_volunteering_setter(instance):
+    original = instance.Time_of_volunteering
+    instance.Time_of_volunteering = original
+    assert instance.Time_of_volunteering == original
+
+
+
+@given(instance=Volunteer_strategy)
+def test_volunteer_Professional_status_setter(instance):
+    original = instance.Professional_status
+    instance.Professional_status = original
+    assert instance.Professional_status == original
+
+
+
+@given(instance=Volunteer_strategy)
+def test_volunteer_Volunteer_ID_setter(instance):
+    original = instance.Volunteer_ID
+    instance.Volunteer_ID = original
+    assert instance.Volunteer_ID == original
+
+
+
+@given(instance=Volunteer_strategy)
+def test_volunteer_Age_setter(instance):
+    original = instance.Age
+    instance.Age = original
+    assert instance.Age == original
+
+
+
+@given(instance=Volunteer_strategy)
+def test_volunteer_Preparing_event_setter(instance):
+    original = instance.Preparing_event
+    instance.Preparing_event = original
+    assert instance.Preparing_event == original
+
 
 
 @given(instance=Volunteer_strategy)
@@ -2850,25 +2645,27 @@ def test_volunteer_Design_and_montag_setter(instance):
     instance.Design_and_montag = original
     assert instance.Design_and_montag == original
 
+
+
+@given(instance=Volunteer_strategy)
+def test_volunteer_Decor__and_aesthetic_touches_setter(instance):
+    original = instance.Decor__and_aesthetic_touches
+    instance.Decor__and_aesthetic_touches = original
+    assert instance.Decor__and_aesthetic_touches == original
+
+
+
+@given(instance=Volunteer_strategy)
+def test_volunteer_Public_relations_setter(instance):
+    original = instance.Public_relations
+    instance.Public_relations = original
+    assert instance.Public_relations == original
+
 @given(instance=Honor_member_strategy)
 @settings(max_examples=50)
 def test_honor_member_instantiation(instance):
     assert isinstance(instance, Honor_member)
 
-@given(instance=Honor_member_strategy)
-def test_honor_member_Member_start_date_type(instance):
-    assert isinstance(instance.Member_start_date, str)
-
-
-@given(instance=Honor_member_strategy)
-def test_honor_member_Member_start_date_setter(instance):
-    original = instance.Member_start_date
-    instance.Member_start_date = original
-    assert instance.Member_start_date == original
-
-@given(instance=Honor_member_strategy)
-def test_honor_member_Amount_of_partnership_type(instance):
-    assert isinstance(instance.Amount_of_partnership, int)
 
 
 @given(instance=Honor_member_strategy)
@@ -2877,25 +2674,19 @@ def test_honor_member_Amount_of_partnership_setter(instance):
     instance.Amount_of_partnership = original
     assert instance.Amount_of_partnership == original
 
+
+
+@given(instance=Honor_member_strategy)
+def test_honor_member_Member_start_date_setter(instance):
+    original = instance.Member_start_date
+    instance.Member_start_date = original
+    assert instance.Member_start_date == original
+
 @given(instance=Member_strategy)
 @settings(max_examples=50)
 def test_member_instantiation(instance):
     assert isinstance(instance, Member)
 
-@given(instance=Member_strategy)
-def test_member_Mobile_number_type(instance):
-    assert isinstance(instance.Mobile_number, int)
-
-
-@given(instance=Member_strategy)
-def test_member_Mobile_number_setter(instance):
-    original = instance.Mobile_number
-    instance.Mobile_number = original
-    assert instance.Mobile_number == original
-
-@given(instance=Member_strategy)
-def test_member_Email_address_type(instance):
-    assert isinstance(instance.Email_address, str)
 
 
 @given(instance=Member_strategy)
@@ -2904,20 +2695,14 @@ def test_member_Email_address_setter(instance):
     instance.Email_address = original
     assert instance.Email_address == original
 
-@given(instance=Member_strategy)
-def test_member_L_name_type(instance):
-    assert isinstance(instance.L_name, str)
 
 
 @given(instance=Member_strategy)
-def test_member_L_name_setter(instance):
-    original = instance.L_name
-    instance.L_name = original
-    assert instance.L_name == original
+def test_member_Mobile_number_setter(instance):
+    original = instance.Mobile_number
+    instance.Mobile_number = original
+    assert instance.Mobile_number == original
 
-@given(instance=Member_strategy)
-def test_member_Scientific_qualifications_type(instance):
-    assert isinstance(instance.Scientific_qualifications, str)
 
 
 @given(instance=Member_strategy)
@@ -2926,31 +2711,6 @@ def test_member_Scientific_qualifications_setter(instance):
     instance.Scientific_qualifications = original
     assert instance.Scientific_qualifications == original
 
-@given(instance=Member_strategy)
-def test_member_Job_type(instance):
-    assert isinstance(instance.Job, str)
-
-
-@given(instance=Member_strategy)
-def test_member_Job_setter(instance):
-    original = instance.Job
-    instance.Job = original
-    assert instance.Job == original
-
-@given(instance=Member_strategy)
-def test_member_F_name_type(instance):
-    assert isinstance(instance.F_name, str)
-
-
-@given(instance=Member_strategy)
-def test_member_F_name_setter(instance):
-    original = instance.F_name
-    instance.F_name = original
-    assert instance.F_name == original
-
-@given(instance=Member_strategy)
-def test_member_Vacation_type_type(instance):
-    assert isinstance(instance.Vacation_type, str)
 
 
 @given(instance=Member_strategy)
@@ -2959,14 +2719,35 @@ def test_member_Vacation_type_setter(instance):
     instance.Vacation_type = original
     assert instance.Vacation_type == original
 
+
+
+@given(instance=Member_strategy)
+def test_member_F_name_setter(instance):
+    original = instance.F_name
+    instance.F_name = original
+    assert instance.F_name == original
+
+
+
+@given(instance=Member_strategy)
+def test_member_L_name_setter(instance):
+    original = instance.L_name
+    instance.L_name = original
+    assert instance.L_name == original
+
+
+
+@given(instance=Member_strategy)
+def test_member_Job_setter(instance):
+    original = instance.Job
+    instance.Job = original
+    assert instance.Job == original
+
 @given(instance=Data_entry_strategy)
 @settings(max_examples=50)
 def test_data_entry_instantiation(instance):
     assert isinstance(instance, Data_entry)
 
-@given(instance=Data_entry_strategy)
-def test_data_entry_attribute2_type(instance):
-    assert isinstance(instance.attribute2, str)
 
 
 @given(instance=Data_entry_strategy)
@@ -2975,9 +2756,6 @@ def test_data_entry_attribute2_setter(instance):
     instance.attribute2 = original
     assert instance.attribute2 == original
 
-@given(instance=Data_entry_strategy)
-def test_data_entry_attribute_type(instance):
-    assert isinstance(instance.attribute, str)
 
 
 @given(instance=Data_entry_strategy)
@@ -2991,9 +2769,6 @@ def test_data_entry_attribute_setter(instance):
 def test_origination_instantiation(instance):
     assert isinstance(instance, Origination)
 
-@given(instance=Origination_strategy)
-def test_origination_Logo_type(instance):
-    assert isinstance(instance.Logo, str)
 
 
 @given(instance=Origination_strategy)
@@ -3002,9 +2777,6 @@ def test_origination_Logo_setter(instance):
     instance.Logo = original
     assert instance.Logo == original
 
-@given(instance=Origination_strategy)
-def test_origination_Executive_manager_type(instance):
-    assert isinstance(instance.Executive_manager, str)
 
 
 @given(instance=Origination_strategy)
@@ -3013,20 +2785,6 @@ def test_origination_Executive_manager_setter(instance):
     instance.Executive_manager = original
     assert instance.Executive_manager == original
 
-@given(instance=Origination_strategy)
-def test_origination_Full_name_type(instance):
-    assert isinstance(instance.Full_name, str)
-
-
-@given(instance=Origination_strategy)
-def test_origination_Full_name_setter(instance):
-    original = instance.Full_name
-    instance.Full_name = original
-    assert instance.Full_name == original
-
-@given(instance=Origination_strategy)
-def test_origination_General_supervisor_type(instance):
-    assert isinstance(instance.General_supervisor, str)
 
 
 @given(instance=Origination_strategy)
@@ -3035,14 +2793,19 @@ def test_origination_General_supervisor_setter(instance):
     instance.General_supervisor = original
     assert instance.General_supervisor == original
 
+
+
+@given(instance=Origination_strategy)
+def test_origination_Full_name_setter(instance):
+    original = instance.Full_name
+    instance.Full_name = original
+    assert instance.Full_name == original
+
 @given(instance=Admin_strategy)
 @settings(max_examples=50)
 def test_admin_instantiation(instance):
     assert isinstance(instance, Admin)
 
-@given(instance=Admin_strategy)
-def test_admin_User_name_type(instance):
-    assert isinstance(instance.User_name, str)
 
 
 @given(instance=Admin_strategy)
@@ -3051,9 +2814,6 @@ def test_admin_User_name_setter(instance):
     instance.User_name = original
     assert instance.User_name == original
 
-@given(instance=Admin_strategy)
-def test_admin_Password_type(instance):
-    assert isinstance(instance.Password, int)
 
 
 @given(instance=Admin_strategy)
@@ -3062,9 +2822,6 @@ def test_admin_Password_setter(instance):
     instance.Password = original
     assert instance.Password == original
 
-@given(instance=Admin_strategy)
-def test_admin_ID_type(instance):
-    assert isinstance(instance.ID, int)
 
 
 @given(instance=Admin_strategy)

@@ -3,42 +3,42 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     NPNSymbolArcTPSN,
     NPNSymbolArcPTSN,
     NPNSymbolArcSN,
     NPNSymbolNodeSN,
-    highlevelnets::npndiagrams::NPNSymbolPlaceSN,
-    highlevelnets::npndiagrams::NPNSymbolTransitionSN,
-    highlevelnets::npndiagrams::NPNSymbolArcTPSN,
+    highlevelnets_npndiagrams_NPNSymbolTransitionSN,
+    highlevelnets_npndiagrams_NPNSymbolPlaceSN,
+    highlevelnets_npndiagrams_NPNSymbolArcTPSN,
     NPNSymbolPlaceSN,
     NPNSymbolTransitionSN,
-    highlevelnets::npndiagrams::NPNSymbolArcPTSN,
+    highlevelnets_npndiagrams_NPNSymbolArcPTSN,
     TransitionSynchronized,
     NPnet,
     NPnetMarked,
     Synchronization,
     NetConstant,
     NPNDiagramNetSystem,
-    highlevelnets::common::IEntityIdentifiable,
+    highlevelnets_common_IEntityIdentifiable,
     Transition,
-    highlevelnets::npnets::TransitionSynchronized,
+    highlevelnets_npnets_TransitionSynchronized,
     IDiagramHolder,
-    highlevelnets::npnets::NPnet,
+    highlevelnets_npnets_NPnet,
     Node,
-    hlpn::ContextVariable,
-    common::INetElement,
-    highlevelnets::hlpn::HighLevelPetriNet,
-    hlpn::Node,
-    highlevelnets::hlpn::Transition,
+    hlpn_ContextVariable,
+    common_INetElement,
+    highlevelnets_hlpn_HighLevelPetriNet,
+    hlpn_Node,
+    highlevelnets_hlpn_Transition,
     ArcTP,
     ArcPT,
-    highlevelnets::hlpn::Place,
+    highlevelnets_hlpn_Place,
     Arc,
-    highlevelnets::hlpn::ArcPT,
-    highlevelnets::hlpn::ArcTP,
+    highlevelnets_hlpn_ArcTP,
+    highlevelnets_hlpn_ArcPT,
     ContextVariable,
     TokenWeight,
     TokenBinding,
@@ -52,50 +52,50 @@ from classes import (
     TokenTypeElementNet,
     TokenTypeAtomic,
     Token,
-    highlevelnets::tokentypes::TokenNet,
-    highlevelnets::tokentypes::TokenAtomic,
+    highlevelnets_tokentypes_TokenNet,
+    highlevelnets_tokentypes_TokenAtomic,
     PlaceMarking,
     INetElement,
-    highlevelnets::tokentypes::Atom,
-    highlevelnets::tokentypes::Token,
-    highlevelnets::tokentypes::ElementNetMarked,
-    highlevelnets::hlpn::Arc,
-    highlevelnets::tokenexpressions::NetConstant,
-    highlevelnets::common::IDiagramHolder,
-    highlevelnets::npnets::Synchronization,
-    highlevelnets::tokenexpressions::TokenVariadicExpression,
-    highlevelnets::npnets::NPnetMarked,
-    highlevelnets::hlpn::Node,
-    highlevelnets::marking::Marking,
-    common::IDiagramHolder,
-    tokentypes::TokenType,
-    highlevelnets::tokentypes::TokenTypeElementNet,
+    highlevelnets_npnets_NPnetMarked,
+    highlevelnets_hlpn_Node,
+    highlevelnets_tokenexpressions_TokenVariadicExpression,
+    highlevelnets_tokentypes_Atom,
+    highlevelnets_tokenexpressions_NetConstant,
+    highlevelnets_hlpn_Arc,
+    highlevelnets_tokentypes_ElementNetMarked,
+    highlevelnets_common_IDiagramHolder,
+    highlevelnets_tokentypes_Token,
+    highlevelnets_npnets_Synchronization,
+    highlevelnets_marking_Marking,
+    common_IDiagramHolder,
+    tokentypes_TokenType,
+    highlevelnets_tokentypes_TokenTypeElementNet,
     TokenAtomic,
     Atom,
     TokenType,
-    highlevelnets::tokentypes::TokenTypeAtomic,
-    highlevelnets::tokentypes::TokenType,
+    highlevelnets_tokentypes_TokenTypeAtomic,
+    highlevelnets_tokentypes_TokenType,
     Marking,
     HighLevelPetriNet,
-    highlevelnets::marking::HighLevelPetriNetMarked,
+    highlevelnets_marking_HighLevelPetriNetMarked,
     TokenMultiSet,
     Place,
     IEntityIdentifiable,
-    highlevelnets::tokenexpressions::Variable,
-    highlevelnets::tokenexpressions::TokenWeight,
-    highlevelnets::tokentypes::TokenAttribute,
-    highlevelnets::npndiagrams::NPNDiagramNetSystem,
-    highlevelnets::tokenexpressions::TokenBinding,
-    highlevelnets::tokenexpressions::Monom,
-    highlevelnets::tokenexpressions::MonomConstant,
-    highlevelnets::common::INetElement,
-    highlevelnets::npndiagrams::NPNSymbolArcSN,
-    highlevelnets::npndiagrams::NPNSymbolNodeSN,
-    highlevelnets::tokenexpressions::TokenMultiSet,
-    highlevelnets::tokenexpressions::TokenExpressionBinding,
-    highlevelnets::tokenexpressions::TokenMultisetExpression,
-    highlevelnets::hlpn::ContextVariable,
-    highlevelnets::marking::PlaceMarking,
+    highlevelnets_tokenexpressions_TokenExpressionBinding,
+    highlevelnets_npndiagrams_NPNDiagramNetSystem,
+    highlevelnets_hlpn_ContextVariable,
+    highlevelnets_npndiagrams_NPNSymbolNodeSN,
+    highlevelnets_common_INetElement,
+    highlevelnets_tokenexpressions_Monom,
+    highlevelnets_tokentypes_TokenAttribute,
+    highlevelnets_tokenexpressions_TokenMultisetExpression,
+    highlevelnets_tokenexpressions_TokenWeight,
+    highlevelnets_tokenexpressions_MonomConstant,
+    highlevelnets_tokenexpressions_TokenBinding,
+    highlevelnets_tokenexpressions_TokenMultiSet,
+    highlevelnets_npndiagrams_NPNSymbolArcSN,
+    highlevelnets_tokenexpressions_Variable,
+    highlevelnets_marking_PlaceMarking,
     ESynchronizationKind,
 )
 
@@ -161,44 +161,44 @@ def test_npnsymbolnodesn_constructor_args():
 
 
 
-def test_highlevelnets::npndiagrams::npnsymbolplacesn_is_not_abstract():
-    assert not inspect.isabstract(highlevelnets::npndiagrams::NPNSymbolPlaceSN)
+def test_highlevelnets_npndiagrams_npnsymboltransitionsn_is_not_abstract():
+    assert not inspect.isabstract(highlevelnets_npndiagrams_NPNSymbolTransitionSN)
 
 
-def test_highlevelnets::npndiagrams::npnsymbolplacesn_constructor_exists():
-    assert callable(highlevelnets::npndiagrams::NPNSymbolPlaceSN.__init__)
+def test_highlevelnets_npndiagrams_npnsymboltransitionsn_constructor_exists():
+    assert callable(highlevelnets_npndiagrams_NPNSymbolTransitionSN.__init__)
 
 
-def test_highlevelnets::npndiagrams::npnsymbolplacesn_constructor_args():
-    sig = inspect.signature(highlevelnets::npndiagrams::NPNSymbolPlaceSN.__init__)
+def test_highlevelnets_npndiagrams_npnsymboltransitionsn_constructor_args():
+    sig = inspect.signature(highlevelnets_npndiagrams_NPNSymbolTransitionSN.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_highlevelnets::npndiagrams::npnsymboltransitionsn_is_not_abstract():
-    assert not inspect.isabstract(highlevelnets::npndiagrams::NPNSymbolTransitionSN)
+def test_highlevelnets_npndiagrams_npnsymbolplacesn_is_not_abstract():
+    assert not inspect.isabstract(highlevelnets_npndiagrams_NPNSymbolPlaceSN)
 
 
-def test_highlevelnets::npndiagrams::npnsymboltransitionsn_constructor_exists():
-    assert callable(highlevelnets::npndiagrams::NPNSymbolTransitionSN.__init__)
+def test_highlevelnets_npndiagrams_npnsymbolplacesn_constructor_exists():
+    assert callable(highlevelnets_npndiagrams_NPNSymbolPlaceSN.__init__)
 
 
-def test_highlevelnets::npndiagrams::npnsymboltransitionsn_constructor_args():
-    sig = inspect.signature(highlevelnets::npndiagrams::NPNSymbolTransitionSN.__init__)
+def test_highlevelnets_npndiagrams_npnsymbolplacesn_constructor_args():
+    sig = inspect.signature(highlevelnets_npndiagrams_NPNSymbolPlaceSN.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_highlevelnets::npndiagrams::npnsymbolarctpsn_is_not_abstract():
-    assert not inspect.isabstract(highlevelnets::npndiagrams::NPNSymbolArcTPSN)
+def test_highlevelnets_npndiagrams_npnsymbolarctpsn_is_not_abstract():
+    assert not inspect.isabstract(highlevelnets_npndiagrams_NPNSymbolArcTPSN)
 
 
-def test_highlevelnets::npndiagrams::npnsymbolarctpsn_constructor_exists():
-    assert callable(highlevelnets::npndiagrams::NPNSymbolArcTPSN.__init__)
+def test_highlevelnets_npndiagrams_npnsymbolarctpsn_constructor_exists():
+    assert callable(highlevelnets_npndiagrams_NPNSymbolArcTPSN.__init__)
 
 
-def test_highlevelnets::npndiagrams::npnsymbolarctpsn_constructor_args():
-    sig = inspect.signature(highlevelnets::npndiagrams::NPNSymbolArcTPSN.__init__)
+def test_highlevelnets_npndiagrams_npnsymbolarctpsn_constructor_args():
+    sig = inspect.signature(highlevelnets_npndiagrams_NPNSymbolArcTPSN.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -231,16 +231,16 @@ def test_npnsymboltransitionsn_constructor_args():
 
 
 
-def test_highlevelnets::npndiagrams::npnsymbolarcptsn_is_not_abstract():
-    assert not inspect.isabstract(highlevelnets::npndiagrams::NPNSymbolArcPTSN)
+def test_highlevelnets_npndiagrams_npnsymbolarcptsn_is_not_abstract():
+    assert not inspect.isabstract(highlevelnets_npndiagrams_NPNSymbolArcPTSN)
 
 
-def test_highlevelnets::npndiagrams::npnsymbolarcptsn_constructor_exists():
-    assert callable(highlevelnets::npndiagrams::NPNSymbolArcPTSN.__init__)
+def test_highlevelnets_npndiagrams_npnsymbolarcptsn_constructor_exists():
+    assert callable(highlevelnets_npndiagrams_NPNSymbolArcPTSN.__init__)
 
 
-def test_highlevelnets::npndiagrams::npnsymbolarcptsn_constructor_args():
-    sig = inspect.signature(highlevelnets::npndiagrams::NPNSymbolArcPTSN.__init__)
+def test_highlevelnets_npndiagrams_npnsymbolarcptsn_constructor_args():
+    sig = inspect.signature(highlevelnets_npndiagrams_NPNSymbolArcPTSN.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -329,23 +329,23 @@ def test_npndiagramnetsystem_constructor_args():
 
 
 
-def test_highlevelnets::common::ientityidentifiable_is_not_abstract():
-    assert not inspect.isabstract(highlevelnets::common::IEntityIdentifiable)
+def test_highlevelnets_common_ientityidentifiable_is_not_abstract():
+    assert not inspect.isabstract(highlevelnets_common_IEntityIdentifiable)
 
 
-def test_highlevelnets::common::ientityidentifiable_constructor_exists():
-    assert callable(highlevelnets::common::IEntityIdentifiable.__init__)
+def test_highlevelnets_common_ientityidentifiable_constructor_exists():
+    assert callable(highlevelnets_common_IEntityIdentifiable.__init__)
 
 
-def test_highlevelnets::common::ientityidentifiable_constructor_args():
-    sig = inspect.signature(highlevelnets::common::IEntityIdentifiable.__init__)
+def test_highlevelnets_common_ientityidentifiable_constructor_args():
+    sig = inspect.signature(highlevelnets_common_IEntityIdentifiable.__init__)
     params = list(sig.parameters.keys())
     assert "id" in params, "Missing parameter 'id'"
 
-def test_highlevelnets::common::ientityidentifiable_has_id():
-    assert hasattr(highlevelnets::common::IEntityIdentifiable, "id")
+def test_highlevelnets_common_ientityidentifiable_has_id():
+    assert hasattr(highlevelnets_common_IEntityIdentifiable, "id")
     descriptor = None
-    for klass in highlevelnets::common::IEntityIdentifiable.__mro__:
+    for klass in highlevelnets_common_IEntityIdentifiable.__mro__:
         if "id" in klass.__dict__:
             descriptor = klass.__dict__["id"]
             break
@@ -367,16 +367,16 @@ def test_transition_constructor_args():
 
 
 
-def test_highlevelnets::npnets::transitionsynchronized_is_not_abstract():
-    assert not inspect.isabstract(highlevelnets::npnets::TransitionSynchronized)
+def test_highlevelnets_npnets_transitionsynchronized_is_not_abstract():
+    assert not inspect.isabstract(highlevelnets_npnets_TransitionSynchronized)
 
 
-def test_highlevelnets::npnets::transitionsynchronized_constructor_exists():
-    assert callable(highlevelnets::npnets::TransitionSynchronized.__init__)
+def test_highlevelnets_npnets_transitionsynchronized_constructor_exists():
+    assert callable(highlevelnets_npnets_TransitionSynchronized.__init__)
 
 
-def test_highlevelnets::npnets::transitionsynchronized_constructor_args():
-    sig = inspect.signature(highlevelnets::npnets::TransitionSynchronized.__init__)
+def test_highlevelnets_npnets_transitionsynchronized_constructor_args():
+    sig = inspect.signature(highlevelnets_npnets_TransitionSynchronized.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -395,16 +395,16 @@ def test_idiagramholder_constructor_args():
 
 
 
-def test_highlevelnets::npnets::npnet_is_not_abstract():
-    assert not inspect.isabstract(highlevelnets::npnets::NPnet)
+def test_highlevelnets_npnets_npnet_is_not_abstract():
+    assert not inspect.isabstract(highlevelnets_npnets_NPnet)
 
 
-def test_highlevelnets::npnets::npnet_constructor_exists():
-    assert callable(highlevelnets::npnets::NPnet.__init__)
+def test_highlevelnets_npnets_npnet_constructor_exists():
+    assert callable(highlevelnets_npnets_NPnet.__init__)
 
 
-def test_highlevelnets::npnets::npnet_constructor_args():
-    sig = inspect.signature(highlevelnets::npnets::NPnet.__init__)
+def test_highlevelnets_npnets_npnet_constructor_args():
+    sig = inspect.signature(highlevelnets_npnets_NPnet.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -423,72 +423,72 @@ def test_node_constructor_args():
 
 
 
-def test_hlpn::contextvariable_is_not_abstract():
-    assert not inspect.isabstract(hlpn::ContextVariable)
+def test_hlpn_contextvariable_is_not_abstract():
+    assert not inspect.isabstract(hlpn_ContextVariable)
 
 
-def test_hlpn::contextvariable_constructor_exists():
-    assert callable(hlpn::ContextVariable.__init__)
+def test_hlpn_contextvariable_constructor_exists():
+    assert callable(hlpn_ContextVariable.__init__)
 
 
-def test_hlpn::contextvariable_constructor_args():
-    sig = inspect.signature(hlpn::ContextVariable.__init__)
+def test_hlpn_contextvariable_constructor_args():
+    sig = inspect.signature(hlpn_ContextVariable.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_common::inetelement_is_not_abstract():
-    assert not inspect.isabstract(common::INetElement)
+def test_common_inetelement_is_not_abstract():
+    assert not inspect.isabstract(common_INetElement)
 
 
-def test_common::inetelement_constructor_exists():
-    assert callable(common::INetElement.__init__)
+def test_common_inetelement_constructor_exists():
+    assert callable(common_INetElement.__init__)
 
 
-def test_common::inetelement_constructor_args():
-    sig = inspect.signature(common::INetElement.__init__)
+def test_common_inetelement_constructor_args():
+    sig = inspect.signature(common_INetElement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_highlevelnets::hlpn::highlevelpetrinet_is_not_abstract():
-    assert not inspect.isabstract(highlevelnets::hlpn::HighLevelPetriNet)
+def test_highlevelnets_hlpn_highlevelpetrinet_is_not_abstract():
+    assert not inspect.isabstract(highlevelnets_hlpn_HighLevelPetriNet)
 
 
-def test_highlevelnets::hlpn::highlevelpetrinet_constructor_exists():
-    assert callable(highlevelnets::hlpn::HighLevelPetriNet.__init__)
+def test_highlevelnets_hlpn_highlevelpetrinet_constructor_exists():
+    assert callable(highlevelnets_hlpn_HighLevelPetriNet.__init__)
 
 
-def test_highlevelnets::hlpn::highlevelpetrinet_constructor_args():
-    sig = inspect.signature(highlevelnets::hlpn::HighLevelPetriNet.__init__)
+def test_highlevelnets_hlpn_highlevelpetrinet_constructor_args():
+    sig = inspect.signature(highlevelnets_hlpn_HighLevelPetriNet.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_hlpn::node_is_not_abstract():
-    assert not inspect.isabstract(hlpn::Node)
+def test_hlpn_node_is_not_abstract():
+    assert not inspect.isabstract(hlpn_Node)
 
 
-def test_hlpn::node_constructor_exists():
-    assert callable(hlpn::Node.__init__)
+def test_hlpn_node_constructor_exists():
+    assert callable(hlpn_Node.__init__)
 
 
-def test_hlpn::node_constructor_args():
-    sig = inspect.signature(hlpn::Node.__init__)
+def test_hlpn_node_constructor_args():
+    sig = inspect.signature(hlpn_Node.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_highlevelnets::hlpn::transition_is_not_abstract():
-    assert not inspect.isabstract(highlevelnets::hlpn::Transition)
+def test_highlevelnets_hlpn_transition_is_not_abstract():
+    assert not inspect.isabstract(highlevelnets_hlpn_Transition)
 
 
-def test_highlevelnets::hlpn::transition_constructor_exists():
-    assert callable(highlevelnets::hlpn::Transition.__init__)
+def test_highlevelnets_hlpn_transition_constructor_exists():
+    assert callable(highlevelnets_hlpn_Transition.__init__)
 
 
-def test_highlevelnets::hlpn::transition_constructor_args():
-    sig = inspect.signature(highlevelnets::hlpn::Transition.__init__)
+def test_highlevelnets_hlpn_transition_constructor_args():
+    sig = inspect.signature(highlevelnets_hlpn_Transition.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -521,16 +521,16 @@ def test_arcpt_constructor_args():
 
 
 
-def test_highlevelnets::hlpn::place_is_not_abstract():
-    assert not inspect.isabstract(highlevelnets::hlpn::Place)
+def test_highlevelnets_hlpn_place_is_not_abstract():
+    assert not inspect.isabstract(highlevelnets_hlpn_Place)
 
 
-def test_highlevelnets::hlpn::place_constructor_exists():
-    assert callable(highlevelnets::hlpn::Place.__init__)
+def test_highlevelnets_hlpn_place_constructor_exists():
+    assert callable(highlevelnets_hlpn_Place.__init__)
 
 
-def test_highlevelnets::hlpn::place_constructor_args():
-    sig = inspect.signature(highlevelnets::hlpn::Place.__init__)
+def test_highlevelnets_hlpn_place_constructor_args():
+    sig = inspect.signature(highlevelnets_hlpn_Place.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -549,30 +549,30 @@ def test_arc_constructor_args():
 
 
 
-def test_highlevelnets::hlpn::arcpt_is_not_abstract():
-    assert not inspect.isabstract(highlevelnets::hlpn::ArcPT)
+def test_highlevelnets_hlpn_arctp_is_not_abstract():
+    assert not inspect.isabstract(highlevelnets_hlpn_ArcTP)
 
 
-def test_highlevelnets::hlpn::arcpt_constructor_exists():
-    assert callable(highlevelnets::hlpn::ArcPT.__init__)
+def test_highlevelnets_hlpn_arctp_constructor_exists():
+    assert callable(highlevelnets_hlpn_ArcTP.__init__)
 
 
-def test_highlevelnets::hlpn::arcpt_constructor_args():
-    sig = inspect.signature(highlevelnets::hlpn::ArcPT.__init__)
+def test_highlevelnets_hlpn_arctp_constructor_args():
+    sig = inspect.signature(highlevelnets_hlpn_ArcTP.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_highlevelnets::hlpn::arctp_is_not_abstract():
-    assert not inspect.isabstract(highlevelnets::hlpn::ArcTP)
+def test_highlevelnets_hlpn_arcpt_is_not_abstract():
+    assert not inspect.isabstract(highlevelnets_hlpn_ArcPT)
 
 
-def test_highlevelnets::hlpn::arctp_constructor_exists():
-    assert callable(highlevelnets::hlpn::ArcTP.__init__)
+def test_highlevelnets_hlpn_arcpt_constructor_exists():
+    assert callable(highlevelnets_hlpn_ArcPT.__init__)
 
 
-def test_highlevelnets::hlpn::arctp_constructor_args():
-    sig = inspect.signature(highlevelnets::hlpn::ArcTP.__init__)
+def test_highlevelnets_hlpn_arcpt_constructor_args():
+    sig = inspect.signature(highlevelnets_hlpn_ArcPT.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -759,30 +759,30 @@ def test_token_constructor_args():
 
 
 
-def test_highlevelnets::tokentypes::tokennet_is_not_abstract():
-    assert not inspect.isabstract(highlevelnets::tokentypes::TokenNet)
+def test_highlevelnets_tokentypes_tokennet_is_not_abstract():
+    assert not inspect.isabstract(highlevelnets_tokentypes_TokenNet)
 
 
-def test_highlevelnets::tokentypes::tokennet_constructor_exists():
-    assert callable(highlevelnets::tokentypes::TokenNet.__init__)
+def test_highlevelnets_tokentypes_tokennet_constructor_exists():
+    assert callable(highlevelnets_tokentypes_TokenNet.__init__)
 
 
-def test_highlevelnets::tokentypes::tokennet_constructor_args():
-    sig = inspect.signature(highlevelnets::tokentypes::TokenNet.__init__)
+def test_highlevelnets_tokentypes_tokennet_constructor_args():
+    sig = inspect.signature(highlevelnets_tokentypes_TokenNet.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_highlevelnets::tokentypes::tokenatomic_is_not_abstract():
-    assert not inspect.isabstract(highlevelnets::tokentypes::TokenAtomic)
+def test_highlevelnets_tokentypes_tokenatomic_is_not_abstract():
+    assert not inspect.isabstract(highlevelnets_tokentypes_TokenAtomic)
 
 
-def test_highlevelnets::tokentypes::tokenatomic_constructor_exists():
-    assert callable(highlevelnets::tokentypes::TokenAtomic.__init__)
+def test_highlevelnets_tokentypes_tokenatomic_constructor_exists():
+    assert callable(highlevelnets_tokentypes_TokenAtomic.__init__)
 
 
-def test_highlevelnets::tokentypes::tokenatomic_constructor_args():
-    sig = inspect.signature(highlevelnets::tokentypes::TokenAtomic.__init__)
+def test_highlevelnets_tokentypes_tokenatomic_constructor_args():
+    sig = inspect.signature(highlevelnets_tokentypes_TokenAtomic.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -815,117 +815,159 @@ def test_inetelement_constructor_args():
 
 
 
-def test_highlevelnets::tokentypes::atom_is_not_abstract():
-    assert not inspect.isabstract(highlevelnets::tokentypes::Atom)
+def test_highlevelnets_npnets_npnetmarked_is_not_abstract():
+    assert not inspect.isabstract(highlevelnets_npnets_NPnetMarked)
 
 
-def test_highlevelnets::tokentypes::atom_constructor_exists():
-    assert callable(highlevelnets::tokentypes::Atom.__init__)
+def test_highlevelnets_npnets_npnetmarked_constructor_exists():
+    assert callable(highlevelnets_npnets_NPnetMarked.__init__)
 
 
-def test_highlevelnets::tokentypes::atom_constructor_args():
-    sig = inspect.signature(highlevelnets::tokentypes::Atom.__init__)
+def test_highlevelnets_npnets_npnetmarked_constructor_args():
+    sig = inspect.signature(highlevelnets_npnets_NPnetMarked.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_highlevelnets::tokentypes::token_is_not_abstract():
-    assert not inspect.isabstract(highlevelnets::tokentypes::Token)
+def test_highlevelnets_hlpn_node_is_not_abstract():
+    assert not inspect.isabstract(highlevelnets_hlpn_Node)
 
 
-def test_highlevelnets::tokentypes::token_constructor_exists():
-    assert callable(highlevelnets::tokentypes::Token.__init__)
+def test_highlevelnets_hlpn_node_constructor_exists():
+    assert callable(highlevelnets_hlpn_Node.__init__)
 
 
-def test_highlevelnets::tokentypes::token_constructor_args():
-    sig = inspect.signature(highlevelnets::tokentypes::Token.__init__)
+def test_highlevelnets_hlpn_node_constructor_args():
+    sig = inspect.signature(highlevelnets_hlpn_Node.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_highlevelnets::tokentypes::elementnetmarked_is_not_abstract():
-    assert not inspect.isabstract(highlevelnets::tokentypes::ElementNetMarked)
+def test_highlevelnets_tokenexpressions_tokenvariadicexpression_is_not_abstract():
+    assert not inspect.isabstract(highlevelnets_tokenexpressions_TokenVariadicExpression)
 
 
-def test_highlevelnets::tokentypes::elementnetmarked_constructor_exists():
-    assert callable(highlevelnets::tokentypes::ElementNetMarked.__init__)
+def test_highlevelnets_tokenexpressions_tokenvariadicexpression_constructor_exists():
+    assert callable(highlevelnets_tokenexpressions_TokenVariadicExpression.__init__)
 
 
-def test_highlevelnets::tokentypes::elementnetmarked_constructor_args():
-    sig = inspect.signature(highlevelnets::tokentypes::ElementNetMarked.__init__)
+def test_highlevelnets_tokenexpressions_tokenvariadicexpression_constructor_args():
+    sig = inspect.signature(highlevelnets_tokenexpressions_TokenVariadicExpression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_highlevelnets::hlpn::arc_is_not_abstract():
-    assert not inspect.isabstract(highlevelnets::hlpn::Arc)
+def test_highlevelnets_tokentypes_atom_is_not_abstract():
+    assert not inspect.isabstract(highlevelnets_tokentypes_Atom)
 
 
-def test_highlevelnets::hlpn::arc_constructor_exists():
-    assert callable(highlevelnets::hlpn::Arc.__init__)
+def test_highlevelnets_tokentypes_atom_constructor_exists():
+    assert callable(highlevelnets_tokentypes_Atom.__init__)
 
 
-def test_highlevelnets::hlpn::arc_constructor_args():
-    sig = inspect.signature(highlevelnets::hlpn::Arc.__init__)
+def test_highlevelnets_tokentypes_atom_constructor_args():
+    sig = inspect.signature(highlevelnets_tokentypes_Atom.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_highlevelnets::tokenexpressions::netconstant_is_not_abstract():
-    assert not inspect.isabstract(highlevelnets::tokenexpressions::NetConstant)
+def test_highlevelnets_tokenexpressions_netconstant_is_not_abstract():
+    assert not inspect.isabstract(highlevelnets_tokenexpressions_NetConstant)
 
 
-def test_highlevelnets::tokenexpressions::netconstant_constructor_exists():
-    assert callable(highlevelnets::tokenexpressions::NetConstant.__init__)
+def test_highlevelnets_tokenexpressions_netconstant_constructor_exists():
+    assert callable(highlevelnets_tokenexpressions_NetConstant.__init__)
 
 
-def test_highlevelnets::tokenexpressions::netconstant_constructor_args():
-    sig = inspect.signature(highlevelnets::tokenexpressions::NetConstant.__init__)
+def test_highlevelnets_tokenexpressions_netconstant_constructor_args():
+    sig = inspect.signature(highlevelnets_tokenexpressions_NetConstant.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_highlevelnets::common::idiagramholder_is_not_abstract():
-    assert not inspect.isabstract(highlevelnets::common::IDiagramHolder)
+def test_highlevelnets_hlpn_arc_is_not_abstract():
+    assert not inspect.isabstract(highlevelnets_hlpn_Arc)
 
 
-def test_highlevelnets::common::idiagramholder_constructor_exists():
-    assert callable(highlevelnets::common::IDiagramHolder.__init__)
+def test_highlevelnets_hlpn_arc_constructor_exists():
+    assert callable(highlevelnets_hlpn_Arc.__init__)
 
 
-def test_highlevelnets::common::idiagramholder_constructor_args():
-    sig = inspect.signature(highlevelnets::common::IDiagramHolder.__init__)
+def test_highlevelnets_hlpn_arc_constructor_args():
+    sig = inspect.signature(highlevelnets_hlpn_Arc.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_highlevelnets::npnets::synchronization_is_not_abstract():
-    assert not inspect.isabstract(highlevelnets::npnets::Synchronization)
+def test_highlevelnets_tokentypes_elementnetmarked_is_not_abstract():
+    assert not inspect.isabstract(highlevelnets_tokentypes_ElementNetMarked)
 
 
-def test_highlevelnets::npnets::synchronization_constructor_exists():
-    assert callable(highlevelnets::npnets::Synchronization.__init__)
+def test_highlevelnets_tokentypes_elementnetmarked_constructor_exists():
+    assert callable(highlevelnets_tokentypes_ElementNetMarked.__init__)
 
 
-def test_highlevelnets::npnets::synchronization_constructor_args():
-    sig = inspect.signature(highlevelnets::npnets::Synchronization.__init__)
+def test_highlevelnets_tokentypes_elementnetmarked_constructor_args():
+    sig = inspect.signature(highlevelnets_tokentypes_ElementNetMarked.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_highlevelnets_common_idiagramholder_is_not_abstract():
+    assert not inspect.isabstract(highlevelnets_common_IDiagramHolder)
+
+
+def test_highlevelnets_common_idiagramholder_constructor_exists():
+    assert callable(highlevelnets_common_IDiagramHolder.__init__)
+
+
+def test_highlevelnets_common_idiagramholder_constructor_args():
+    sig = inspect.signature(highlevelnets_common_IDiagramHolder.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_highlevelnets_tokentypes_token_is_not_abstract():
+    assert not inspect.isabstract(highlevelnets_tokentypes_Token)
+
+
+def test_highlevelnets_tokentypes_token_constructor_exists():
+    assert callable(highlevelnets_tokentypes_Token.__init__)
+
+
+def test_highlevelnets_tokentypes_token_constructor_args():
+    sig = inspect.signature(highlevelnets_tokentypes_Token.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_highlevelnets_npnets_synchronization_is_not_abstract():
+    assert not inspect.isabstract(highlevelnets_npnets_Synchronization)
+
+
+def test_highlevelnets_npnets_synchronization_constructor_exists():
+    assert callable(highlevelnets_npnets_Synchronization.__init__)
+
+
+def test_highlevelnets_npnets_synchronization_constructor_args():
+    sig = inspect.signature(highlevelnets_npnets_Synchronization.__init__)
     params = list(sig.parameters.keys())
     assert "key" in params, "Missing parameter 'key'"
     assert "kind" in params, "Missing parameter 'kind'"
 
-def test_highlevelnets::npnets::synchronization_has_key():
-    assert hasattr(highlevelnets::npnets::Synchronization, "key")
+def test_highlevelnets_npnets_synchronization_has_key():
+    assert hasattr(highlevelnets_npnets_Synchronization, "key")
     descriptor = None
-    for klass in highlevelnets::npnets::Synchronization.__mro__:
+    for klass in highlevelnets_npnets_Synchronization.__mro__:
         if "key" in klass.__dict__:
             descriptor = klass.__dict__["key"]
             break
     assert isinstance(descriptor, property)
 
-def test_highlevelnets::npnets::synchronization_has_kind():
-    assert hasattr(highlevelnets::npnets::Synchronization, "kind")
+def test_highlevelnets_npnets_synchronization_has_kind():
+    assert hasattr(highlevelnets_npnets_Synchronization, "kind")
     descriptor = None
-    for klass in highlevelnets::npnets::Synchronization.__mro__:
+    for klass in highlevelnets_npnets_Synchronization.__mro__:
         if "kind" in klass.__dict__:
             descriptor = klass.__dict__["kind"]
             break
@@ -933,100 +975,58 @@ def test_highlevelnets::npnets::synchronization_has_kind():
 
 
 
-def test_highlevelnets::tokenexpressions::tokenvariadicexpression_is_not_abstract():
-    assert not inspect.isabstract(highlevelnets::tokenexpressions::TokenVariadicExpression)
+def test_highlevelnets_marking_marking_is_not_abstract():
+    assert not inspect.isabstract(highlevelnets_marking_Marking)
 
 
-def test_highlevelnets::tokenexpressions::tokenvariadicexpression_constructor_exists():
-    assert callable(highlevelnets::tokenexpressions::TokenVariadicExpression.__init__)
+def test_highlevelnets_marking_marking_constructor_exists():
+    assert callable(highlevelnets_marking_Marking.__init__)
 
 
-def test_highlevelnets::tokenexpressions::tokenvariadicexpression_constructor_args():
-    sig = inspect.signature(highlevelnets::tokenexpressions::TokenVariadicExpression.__init__)
+def test_highlevelnets_marking_marking_constructor_args():
+    sig = inspect.signature(highlevelnets_marking_Marking.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_highlevelnets::npnets::npnetmarked_is_not_abstract():
-    assert not inspect.isabstract(highlevelnets::npnets::NPnetMarked)
+def test_common_idiagramholder_is_not_abstract():
+    assert not inspect.isabstract(common_IDiagramHolder)
 
 
-def test_highlevelnets::npnets::npnetmarked_constructor_exists():
-    assert callable(highlevelnets::npnets::NPnetMarked.__init__)
+def test_common_idiagramholder_constructor_exists():
+    assert callable(common_IDiagramHolder.__init__)
 
 
-def test_highlevelnets::npnets::npnetmarked_constructor_args():
-    sig = inspect.signature(highlevelnets::npnets::NPnetMarked.__init__)
+def test_common_idiagramholder_constructor_args():
+    sig = inspect.signature(common_IDiagramHolder.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_highlevelnets::hlpn::node_is_not_abstract():
-    assert not inspect.isabstract(highlevelnets::hlpn::Node)
+def test_tokentypes_tokentype_is_not_abstract():
+    assert not inspect.isabstract(tokentypes_TokenType)
 
 
-def test_highlevelnets::hlpn::node_constructor_exists():
-    assert callable(highlevelnets::hlpn::Node.__init__)
+def test_tokentypes_tokentype_constructor_exists():
+    assert callable(tokentypes_TokenType.__init__)
 
 
-def test_highlevelnets::hlpn::node_constructor_args():
-    sig = inspect.signature(highlevelnets::hlpn::Node.__init__)
+def test_tokentypes_tokentype_constructor_args():
+    sig = inspect.signature(tokentypes_TokenType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_highlevelnets::marking::marking_is_not_abstract():
-    assert not inspect.isabstract(highlevelnets::marking::Marking)
+def test_highlevelnets_tokentypes_tokentypeelementnet_is_not_abstract():
+    assert not inspect.isabstract(highlevelnets_tokentypes_TokenTypeElementNet)
 
 
-def test_highlevelnets::marking::marking_constructor_exists():
-    assert callable(highlevelnets::marking::Marking.__init__)
+def test_highlevelnets_tokentypes_tokentypeelementnet_constructor_exists():
+    assert callable(highlevelnets_tokentypes_TokenTypeElementNet.__init__)
 
 
-def test_highlevelnets::marking::marking_constructor_args():
-    sig = inspect.signature(highlevelnets::marking::Marking.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_common::idiagramholder_is_not_abstract():
-    assert not inspect.isabstract(common::IDiagramHolder)
-
-
-def test_common::idiagramholder_constructor_exists():
-    assert callable(common::IDiagramHolder.__init__)
-
-
-def test_common::idiagramholder_constructor_args():
-    sig = inspect.signature(common::IDiagramHolder.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_tokentypes::tokentype_is_not_abstract():
-    assert not inspect.isabstract(tokentypes::TokenType)
-
-
-def test_tokentypes::tokentype_constructor_exists():
-    assert callable(tokentypes::TokenType.__init__)
-
-
-def test_tokentypes::tokentype_constructor_args():
-    sig = inspect.signature(tokentypes::TokenType.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_highlevelnets::tokentypes::tokentypeelementnet_is_not_abstract():
-    assert not inspect.isabstract(highlevelnets::tokentypes::TokenTypeElementNet)
-
-
-def test_highlevelnets::tokentypes::tokentypeelementnet_constructor_exists():
-    assert callable(highlevelnets::tokentypes::TokenTypeElementNet.__init__)
-
-
-def test_highlevelnets::tokentypes::tokentypeelementnet_constructor_args():
-    sig = inspect.signature(highlevelnets::tokentypes::TokenTypeElementNet.__init__)
+def test_highlevelnets_tokentypes_tokentypeelementnet_constructor_args():
+    sig = inspect.signature(highlevelnets_tokentypes_TokenTypeElementNet.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1073,30 +1073,30 @@ def test_tokentype_constructor_args():
 
 
 
-def test_highlevelnets::tokentypes::tokentypeatomic_is_not_abstract():
-    assert not inspect.isabstract(highlevelnets::tokentypes::TokenTypeAtomic)
+def test_highlevelnets_tokentypes_tokentypeatomic_is_not_abstract():
+    assert not inspect.isabstract(highlevelnets_tokentypes_TokenTypeAtomic)
 
 
-def test_highlevelnets::tokentypes::tokentypeatomic_constructor_exists():
-    assert callable(highlevelnets::tokentypes::TokenTypeAtomic.__init__)
+def test_highlevelnets_tokentypes_tokentypeatomic_constructor_exists():
+    assert callable(highlevelnets_tokentypes_TokenTypeAtomic.__init__)
 
 
-def test_highlevelnets::tokentypes::tokentypeatomic_constructor_args():
-    sig = inspect.signature(highlevelnets::tokentypes::TokenTypeAtomic.__init__)
+def test_highlevelnets_tokentypes_tokentypeatomic_constructor_args():
+    sig = inspect.signature(highlevelnets_tokentypes_TokenTypeAtomic.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_highlevelnets::tokentypes::tokentype_is_not_abstract():
-    assert not inspect.isabstract(highlevelnets::tokentypes::TokenType)
+def test_highlevelnets_tokentypes_tokentype_is_not_abstract():
+    assert not inspect.isabstract(highlevelnets_tokentypes_TokenType)
 
 
-def test_highlevelnets::tokentypes::tokentype_constructor_exists():
-    assert callable(highlevelnets::tokentypes::TokenType.__init__)
+def test_highlevelnets_tokentypes_tokentype_constructor_exists():
+    assert callable(highlevelnets_tokentypes_TokenType.__init__)
 
 
-def test_highlevelnets::tokentypes::tokentype_constructor_args():
-    sig = inspect.signature(highlevelnets::tokentypes::TokenType.__init__)
+def test_highlevelnets_tokentypes_tokentype_constructor_args():
+    sig = inspect.signature(highlevelnets_tokentypes_TokenType.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1129,16 +1129,16 @@ def test_highlevelpetrinet_constructor_args():
 
 
 
-def test_highlevelnets::marking::highlevelpetrinetmarked_is_not_abstract():
-    assert not inspect.isabstract(highlevelnets::marking::HighLevelPetriNetMarked)
+def test_highlevelnets_marking_highlevelpetrinetmarked_is_not_abstract():
+    assert not inspect.isabstract(highlevelnets_marking_HighLevelPetriNetMarked)
 
 
-def test_highlevelnets::marking::highlevelpetrinetmarked_constructor_exists():
-    assert callable(highlevelnets::marking::HighLevelPetriNetMarked.__init__)
+def test_highlevelnets_marking_highlevelpetrinetmarked_constructor_exists():
+    assert callable(highlevelnets_marking_HighLevelPetriNetMarked.__init__)
 
 
-def test_highlevelnets::marking::highlevelpetrinetmarked_constructor_args():
-    sig = inspect.signature(highlevelnets::marking::HighLevelPetriNetMarked.__init__)
+def test_highlevelnets_marking_highlevelpetrinetmarked_constructor_args():
+    sig = inspect.signature(highlevelnets_marking_HighLevelPetriNetMarked.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1185,249 +1185,65 @@ def test_ientityidentifiable_constructor_args():
 
 
 
-def test_highlevelnets::tokenexpressions::variable_is_not_abstract():
-    assert not inspect.isabstract(highlevelnets::tokenexpressions::Variable)
+def test_highlevelnets_tokenexpressions_tokenexpressionbinding_is_not_abstract():
+    assert not inspect.isabstract(highlevelnets_tokenexpressions_TokenExpressionBinding)
 
 
-def test_highlevelnets::tokenexpressions::variable_constructor_exists():
-    assert callable(highlevelnets::tokenexpressions::Variable.__init__)
+def test_highlevelnets_tokenexpressions_tokenexpressionbinding_constructor_exists():
+    assert callable(highlevelnets_tokenexpressions_TokenExpressionBinding.__init__)
 
 
-def test_highlevelnets::tokenexpressions::variable_constructor_args():
-    sig = inspect.signature(highlevelnets::tokenexpressions::Variable.__init__)
-    params = list(sig.parameters.keys())
-    assert "name" in params, "Missing parameter 'name'"
-
-def test_highlevelnets::tokenexpressions::variable_has_name():
-    assert hasattr(highlevelnets::tokenexpressions::Variable, "name")
-    descriptor = None
-    for klass in highlevelnets::tokenexpressions::Variable.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_highlevelnets::tokenexpressions::tokenweight_is_not_abstract():
-    assert not inspect.isabstract(highlevelnets::tokenexpressions::TokenWeight)
-
-
-def test_highlevelnets::tokenexpressions::tokenweight_constructor_exists():
-    assert callable(highlevelnets::tokenexpressions::TokenWeight.__init__)
-
-
-def test_highlevelnets::tokenexpressions::tokenweight_constructor_args():
-    sig = inspect.signature(highlevelnets::tokenexpressions::TokenWeight.__init__)
-    params = list(sig.parameters.keys())
-    assert "weight" in params, "Missing parameter 'weight'"
-
-def test_highlevelnets::tokenexpressions::tokenweight_has_weight():
-    assert hasattr(highlevelnets::tokenexpressions::TokenWeight, "weight")
-    descriptor = None
-    for klass in highlevelnets::tokenexpressions::TokenWeight.__mro__:
-        if "weight" in klass.__dict__:
-            descriptor = klass.__dict__["weight"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_highlevelnets::tokentypes::tokenattribute_is_not_abstract():
-    assert not inspect.isabstract(highlevelnets::tokentypes::TokenAttribute)
-
-
-def test_highlevelnets::tokentypes::tokenattribute_constructor_exists():
-    assert callable(highlevelnets::tokentypes::TokenAttribute.__init__)
-
-
-def test_highlevelnets::tokentypes::tokenattribute_constructor_args():
-    sig = inspect.signature(highlevelnets::tokentypes::TokenAttribute.__init__)
-    params = list(sig.parameters.keys())
-    assert "name" in params, "Missing parameter 'name'"
-    assert "type" in params, "Missing parameter 'type'"
-    assert "value" in params, "Missing parameter 'value'"
-
-def test_highlevelnets::tokentypes::tokenattribute_has_name():
-    assert hasattr(highlevelnets::tokentypes::TokenAttribute, "name")
-    descriptor = None
-    for klass in highlevelnets::tokentypes::TokenAttribute.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_highlevelnets::tokentypes::tokenattribute_has_type():
-    assert hasattr(highlevelnets::tokentypes::TokenAttribute, "type")
-    descriptor = None
-    for klass in highlevelnets::tokentypes::TokenAttribute.__mro__:
-        if "type" in klass.__dict__:
-            descriptor = klass.__dict__["type"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_highlevelnets::tokentypes::tokenattribute_has_value():
-    assert hasattr(highlevelnets::tokentypes::TokenAttribute, "value")
-    descriptor = None
-    for klass in highlevelnets::tokentypes::TokenAttribute.__mro__:
-        if "value" in klass.__dict__:
-            descriptor = klass.__dict__["value"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_highlevelnets::npndiagrams::npndiagramnetsystem_is_not_abstract():
-    assert not inspect.isabstract(highlevelnets::npndiagrams::NPNDiagramNetSystem)
-
-
-def test_highlevelnets::npndiagrams::npndiagramnetsystem_constructor_exists():
-    assert callable(highlevelnets::npndiagrams::NPNDiagramNetSystem.__init__)
-
-
-def test_highlevelnets::npndiagrams::npndiagramnetsystem_constructor_args():
-    sig = inspect.signature(highlevelnets::npndiagrams::NPNDiagramNetSystem.__init__)
+def test_highlevelnets_tokenexpressions_tokenexpressionbinding_constructor_args():
+    sig = inspect.signature(highlevelnets_tokenexpressions_TokenExpressionBinding.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_highlevelnets::tokenexpressions::tokenbinding_is_not_abstract():
-    assert not inspect.isabstract(highlevelnets::tokenexpressions::TokenBinding)
+def test_highlevelnets_npndiagrams_npndiagramnetsystem_is_not_abstract():
+    assert not inspect.isabstract(highlevelnets_npndiagrams_NPNDiagramNetSystem)
 
 
-def test_highlevelnets::tokenexpressions::tokenbinding_constructor_exists():
-    assert callable(highlevelnets::tokenexpressions::TokenBinding.__init__)
+def test_highlevelnets_npndiagrams_npndiagramnetsystem_constructor_exists():
+    assert callable(highlevelnets_npndiagrams_NPNDiagramNetSystem.__init__)
 
 
-def test_highlevelnets::tokenexpressions::tokenbinding_constructor_args():
-    sig = inspect.signature(highlevelnets::tokenexpressions::TokenBinding.__init__)
+def test_highlevelnets_npndiagrams_npndiagramnetsystem_constructor_args():
+    sig = inspect.signature(highlevelnets_npndiagrams_NPNDiagramNetSystem.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_highlevelnets::tokenexpressions::monom_is_not_abstract():
-    assert not inspect.isabstract(highlevelnets::tokenexpressions::Monom)
+def test_highlevelnets_hlpn_contextvariable_is_not_abstract():
+    assert not inspect.isabstract(highlevelnets_hlpn_ContextVariable)
 
 
-def test_highlevelnets::tokenexpressions::monom_constructor_exists():
-    assert callable(highlevelnets::tokenexpressions::Monom.__init__)
+def test_highlevelnets_hlpn_contextvariable_constructor_exists():
+    assert callable(highlevelnets_hlpn_ContextVariable.__init__)
 
 
-def test_highlevelnets::tokenexpressions::monom_constructor_args():
-    sig = inspect.signature(highlevelnets::tokenexpressions::Monom.__init__)
+def test_highlevelnets_hlpn_contextvariable_constructor_args():
+    sig = inspect.signature(highlevelnets_hlpn_ContextVariable.__init__)
     params = list(sig.parameters.keys())
-    assert "power" in params, "Missing parameter 'power'"
-
-def test_highlevelnets::tokenexpressions::monom_has_power():
-    assert hasattr(highlevelnets::tokenexpressions::Monom, "power")
-    descriptor = None
-    for klass in highlevelnets::tokenexpressions::Monom.__mro__:
-        if "power" in klass.__dict__:
-            descriptor = klass.__dict__["power"]
-            break
-    assert isinstance(descriptor, property)
 
 
 
-def test_highlevelnets::tokenexpressions::monomconstant_is_not_abstract():
-    assert not inspect.isabstract(highlevelnets::tokenexpressions::MonomConstant)
+def test_highlevelnets_npndiagrams_npnsymbolnodesn_is_not_abstract():
+    assert not inspect.isabstract(highlevelnets_npndiagrams_NPNSymbolNodeSN)
 
 
-def test_highlevelnets::tokenexpressions::monomconstant_constructor_exists():
-    assert callable(highlevelnets::tokenexpressions::MonomConstant.__init__)
+def test_highlevelnets_npndiagrams_npnsymbolnodesn_constructor_exists():
+    assert callable(highlevelnets_npndiagrams_NPNSymbolNodeSN.__init__)
 
 
-def test_highlevelnets::tokenexpressions::monomconstant_constructor_args():
-    sig = inspect.signature(highlevelnets::tokenexpressions::MonomConstant.__init__)
-    params = list(sig.parameters.keys())
-    assert "power" in params, "Missing parameter 'power'"
-
-def test_highlevelnets::tokenexpressions::monomconstant_has_power():
-    assert hasattr(highlevelnets::tokenexpressions::MonomConstant, "power")
-    descriptor = None
-    for klass in highlevelnets::tokenexpressions::MonomConstant.__mro__:
-        if "power" in klass.__dict__:
-            descriptor = klass.__dict__["power"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_highlevelnets::common::inetelement_is_not_abstract():
-    assert not inspect.isabstract(highlevelnets::common::INetElement)
-
-
-def test_highlevelnets::common::inetelement_constructor_exists():
-    assert callable(highlevelnets::common::INetElement.__init__)
-
-
-def test_highlevelnets::common::inetelement_constructor_args():
-    sig = inspect.signature(highlevelnets::common::INetElement.__init__)
-    params = list(sig.parameters.keys())
-    assert "comment" in params, "Missing parameter 'comment'"
-    assert "name" in params, "Missing parameter 'name'"
-
-def test_highlevelnets::common::inetelement_has_comment():
-    assert hasattr(highlevelnets::common::INetElement, "comment")
-    descriptor = None
-    for klass in highlevelnets::common::INetElement.__mro__:
-        if "comment" in klass.__dict__:
-            descriptor = klass.__dict__["comment"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_highlevelnets::common::inetelement_has_name():
-    assert hasattr(highlevelnets::common::INetElement, "name")
-    descriptor = None
-    for klass in highlevelnets::common::INetElement.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_highlevelnets::npndiagrams::npnsymbolarcsn_is_not_abstract():
-    assert not inspect.isabstract(highlevelnets::npndiagrams::NPNSymbolArcSN)
-
-
-def test_highlevelnets::npndiagrams::npnsymbolarcsn_constructor_exists():
-    assert callable(highlevelnets::npndiagrams::NPNSymbolArcSN.__init__)
-
-
-def test_highlevelnets::npndiagrams::npnsymbolarcsn_constructor_args():
-    sig = inspect.signature(highlevelnets::npndiagrams::NPNSymbolArcSN.__init__)
-    params = list(sig.parameters.keys())
-    assert "bendpoints" in params, "Missing parameter 'bendpoints'"
-
-def test_highlevelnets::npndiagrams::npnsymbolarcsn_has_bendpoints():
-    assert hasattr(highlevelnets::npndiagrams::NPNSymbolArcSN, "bendpoints")
-    descriptor = None
-    for klass in highlevelnets::npndiagrams::NPNSymbolArcSN.__mro__:
-        if "bendpoints" in klass.__dict__:
-            descriptor = klass.__dict__["bendpoints"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_highlevelnets::npndiagrams::npnsymbolnodesn_is_not_abstract():
-    assert not inspect.isabstract(highlevelnets::npndiagrams::NPNSymbolNodeSN)
-
-
-def test_highlevelnets::npndiagrams::npnsymbolnodesn_constructor_exists():
-    assert callable(highlevelnets::npndiagrams::NPNSymbolNodeSN.__init__)
-
-
-def test_highlevelnets::npndiagrams::npnsymbolnodesn_constructor_args():
-    sig = inspect.signature(highlevelnets::npndiagrams::NPNSymbolNodeSN.__init__)
+def test_highlevelnets_npndiagrams_npnsymbolnodesn_constructor_args():
+    sig = inspect.signature(highlevelnets_npndiagrams_NPNSymbolNodeSN.__init__)
     params = list(sig.parameters.keys())
     assert "constraints" in params, "Missing parameter 'constraints'"
 
-def test_highlevelnets::npndiagrams::npnsymbolnodesn_has_constraints():
-    assert hasattr(highlevelnets::npndiagrams::NPNSymbolNodeSN, "constraints")
+def test_highlevelnets_npndiagrams_npnsymbolnodesn_has_constraints():
+    assert hasattr(highlevelnets_npndiagrams_NPNSymbolNodeSN, "constraints")
     descriptor = None
-    for klass in highlevelnets::npndiagrams::NPNSymbolNodeSN.__mro__:
+    for klass in highlevelnets_npndiagrams_NPNSymbolNodeSN.__mro__:
         if "constraints" in klass.__dict__:
             descriptor = klass.__dict__["constraints"]
             break
@@ -1435,72 +1251,256 @@ def test_highlevelnets::npndiagrams::npnsymbolnodesn_has_constraints():
 
 
 
-def test_highlevelnets::tokenexpressions::tokenmultiset_is_not_abstract():
-    assert not inspect.isabstract(highlevelnets::tokenexpressions::TokenMultiSet)
+def test_highlevelnets_common_inetelement_is_not_abstract():
+    assert not inspect.isabstract(highlevelnets_common_INetElement)
 
 
-def test_highlevelnets::tokenexpressions::tokenmultiset_constructor_exists():
-    assert callable(highlevelnets::tokenexpressions::TokenMultiSet.__init__)
+def test_highlevelnets_common_inetelement_constructor_exists():
+    assert callable(highlevelnets_common_INetElement.__init__)
 
 
-def test_highlevelnets::tokenexpressions::tokenmultiset_constructor_args():
-    sig = inspect.signature(highlevelnets::tokenexpressions::TokenMultiSet.__init__)
+def test_highlevelnets_common_inetelement_constructor_args():
+    sig = inspect.signature(highlevelnets_common_INetElement.__init__)
+    params = list(sig.parameters.keys())
+    assert "name" in params, "Missing parameter 'name'"
+    assert "comment" in params, "Missing parameter 'comment'"
+
+def test_highlevelnets_common_inetelement_has_name():
+    assert hasattr(highlevelnets_common_INetElement, "name")
+    descriptor = None
+    for klass in highlevelnets_common_INetElement.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_highlevelnets_common_inetelement_has_comment():
+    assert hasattr(highlevelnets_common_INetElement, "comment")
+    descriptor = None
+    for klass in highlevelnets_common_INetElement.__mro__:
+        if "comment" in klass.__dict__:
+            descriptor = klass.__dict__["comment"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_highlevelnets_tokenexpressions_monom_is_not_abstract():
+    assert not inspect.isabstract(highlevelnets_tokenexpressions_Monom)
+
+
+def test_highlevelnets_tokenexpressions_monom_constructor_exists():
+    assert callable(highlevelnets_tokenexpressions_Monom.__init__)
+
+
+def test_highlevelnets_tokenexpressions_monom_constructor_args():
+    sig = inspect.signature(highlevelnets_tokenexpressions_Monom.__init__)
+    params = list(sig.parameters.keys())
+    assert "power" in params, "Missing parameter 'power'"
+
+def test_highlevelnets_tokenexpressions_monom_has_power():
+    assert hasattr(highlevelnets_tokenexpressions_Monom, "power")
+    descriptor = None
+    for klass in highlevelnets_tokenexpressions_Monom.__mro__:
+        if "power" in klass.__dict__:
+            descriptor = klass.__dict__["power"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_highlevelnets_tokentypes_tokenattribute_is_not_abstract():
+    assert not inspect.isabstract(highlevelnets_tokentypes_TokenAttribute)
+
+
+def test_highlevelnets_tokentypes_tokenattribute_constructor_exists():
+    assert callable(highlevelnets_tokentypes_TokenAttribute.__init__)
+
+
+def test_highlevelnets_tokentypes_tokenattribute_constructor_args():
+    sig = inspect.signature(highlevelnets_tokentypes_TokenAttribute.__init__)
+    params = list(sig.parameters.keys())
+    assert "value" in params, "Missing parameter 'value'"
+    assert "name" in params, "Missing parameter 'name'"
+    assert "type" in params, "Missing parameter 'type'"
+
+def test_highlevelnets_tokentypes_tokenattribute_has_value():
+    assert hasattr(highlevelnets_tokentypes_TokenAttribute, "value")
+    descriptor = None
+    for klass in highlevelnets_tokentypes_TokenAttribute.__mro__:
+        if "value" in klass.__dict__:
+            descriptor = klass.__dict__["value"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_highlevelnets_tokentypes_tokenattribute_has_name():
+    assert hasattr(highlevelnets_tokentypes_TokenAttribute, "name")
+    descriptor = None
+    for klass in highlevelnets_tokentypes_TokenAttribute.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_highlevelnets_tokentypes_tokenattribute_has_type():
+    assert hasattr(highlevelnets_tokentypes_TokenAttribute, "type")
+    descriptor = None
+    for klass in highlevelnets_tokentypes_TokenAttribute.__mro__:
+        if "type" in klass.__dict__:
+            descriptor = klass.__dict__["type"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_highlevelnets_tokenexpressions_tokenmultisetexpression_is_not_abstract():
+    assert not inspect.isabstract(highlevelnets_tokenexpressions_TokenMultisetExpression)
+
+
+def test_highlevelnets_tokenexpressions_tokenmultisetexpression_constructor_exists():
+    assert callable(highlevelnets_tokenexpressions_TokenMultisetExpression.__init__)
+
+
+def test_highlevelnets_tokenexpressions_tokenmultisetexpression_constructor_args():
+    sig = inspect.signature(highlevelnets_tokenexpressions_TokenMultisetExpression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_highlevelnets::tokenexpressions::tokenexpressionbinding_is_not_abstract():
-    assert not inspect.isabstract(highlevelnets::tokenexpressions::TokenExpressionBinding)
+def test_highlevelnets_tokenexpressions_tokenweight_is_not_abstract():
+    assert not inspect.isabstract(highlevelnets_tokenexpressions_TokenWeight)
 
 
-def test_highlevelnets::tokenexpressions::tokenexpressionbinding_constructor_exists():
-    assert callable(highlevelnets::tokenexpressions::TokenExpressionBinding.__init__)
+def test_highlevelnets_tokenexpressions_tokenweight_constructor_exists():
+    assert callable(highlevelnets_tokenexpressions_TokenWeight.__init__)
 
 
-def test_highlevelnets::tokenexpressions::tokenexpressionbinding_constructor_args():
-    sig = inspect.signature(highlevelnets::tokenexpressions::TokenExpressionBinding.__init__)
+def test_highlevelnets_tokenexpressions_tokenweight_constructor_args():
+    sig = inspect.signature(highlevelnets_tokenexpressions_TokenWeight.__init__)
+    params = list(sig.parameters.keys())
+    assert "weight" in params, "Missing parameter 'weight'"
+
+def test_highlevelnets_tokenexpressions_tokenweight_has_weight():
+    assert hasattr(highlevelnets_tokenexpressions_TokenWeight, "weight")
+    descriptor = None
+    for klass in highlevelnets_tokenexpressions_TokenWeight.__mro__:
+        if "weight" in klass.__dict__:
+            descriptor = klass.__dict__["weight"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_highlevelnets_tokenexpressions_monomconstant_is_not_abstract():
+    assert not inspect.isabstract(highlevelnets_tokenexpressions_MonomConstant)
+
+
+def test_highlevelnets_tokenexpressions_monomconstant_constructor_exists():
+    assert callable(highlevelnets_tokenexpressions_MonomConstant.__init__)
+
+
+def test_highlevelnets_tokenexpressions_monomconstant_constructor_args():
+    sig = inspect.signature(highlevelnets_tokenexpressions_MonomConstant.__init__)
+    params = list(sig.parameters.keys())
+    assert "power" in params, "Missing parameter 'power'"
+
+def test_highlevelnets_tokenexpressions_monomconstant_has_power():
+    assert hasattr(highlevelnets_tokenexpressions_MonomConstant, "power")
+    descriptor = None
+    for klass in highlevelnets_tokenexpressions_MonomConstant.__mro__:
+        if "power" in klass.__dict__:
+            descriptor = klass.__dict__["power"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_highlevelnets_tokenexpressions_tokenbinding_is_not_abstract():
+    assert not inspect.isabstract(highlevelnets_tokenexpressions_TokenBinding)
+
+
+def test_highlevelnets_tokenexpressions_tokenbinding_constructor_exists():
+    assert callable(highlevelnets_tokenexpressions_TokenBinding.__init__)
+
+
+def test_highlevelnets_tokenexpressions_tokenbinding_constructor_args():
+    sig = inspect.signature(highlevelnets_tokenexpressions_TokenBinding.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_highlevelnets::tokenexpressions::tokenmultisetexpression_is_not_abstract():
-    assert not inspect.isabstract(highlevelnets::tokenexpressions::TokenMultisetExpression)
+def test_highlevelnets_tokenexpressions_tokenmultiset_is_not_abstract():
+    assert not inspect.isabstract(highlevelnets_tokenexpressions_TokenMultiSet)
 
 
-def test_highlevelnets::tokenexpressions::tokenmultisetexpression_constructor_exists():
-    assert callable(highlevelnets::tokenexpressions::TokenMultisetExpression.__init__)
+def test_highlevelnets_tokenexpressions_tokenmultiset_constructor_exists():
+    assert callable(highlevelnets_tokenexpressions_TokenMultiSet.__init__)
 
 
-def test_highlevelnets::tokenexpressions::tokenmultisetexpression_constructor_args():
-    sig = inspect.signature(highlevelnets::tokenexpressions::TokenMultisetExpression.__init__)
+def test_highlevelnets_tokenexpressions_tokenmultiset_constructor_args():
+    sig = inspect.signature(highlevelnets_tokenexpressions_TokenMultiSet.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_highlevelnets::hlpn::contextvariable_is_not_abstract():
-    assert not inspect.isabstract(highlevelnets::hlpn::ContextVariable)
+def test_highlevelnets_npndiagrams_npnsymbolarcsn_is_not_abstract():
+    assert not inspect.isabstract(highlevelnets_npndiagrams_NPNSymbolArcSN)
 
 
-def test_highlevelnets::hlpn::contextvariable_constructor_exists():
-    assert callable(highlevelnets::hlpn::ContextVariable.__init__)
+def test_highlevelnets_npndiagrams_npnsymbolarcsn_constructor_exists():
+    assert callable(highlevelnets_npndiagrams_NPNSymbolArcSN.__init__)
 
 
-def test_highlevelnets::hlpn::contextvariable_constructor_args():
-    sig = inspect.signature(highlevelnets::hlpn::ContextVariable.__init__)
+def test_highlevelnets_npndiagrams_npnsymbolarcsn_constructor_args():
+    sig = inspect.signature(highlevelnets_npndiagrams_NPNSymbolArcSN.__init__)
     params = list(sig.parameters.keys())
+    assert "bendpoints" in params, "Missing parameter 'bendpoints'"
+
+def test_highlevelnets_npndiagrams_npnsymbolarcsn_has_bendpoints():
+    assert hasattr(highlevelnets_npndiagrams_NPNSymbolArcSN, "bendpoints")
+    descriptor = None
+    for klass in highlevelnets_npndiagrams_NPNSymbolArcSN.__mro__:
+        if "bendpoints" in klass.__dict__:
+            descriptor = klass.__dict__["bendpoints"]
+            break
+    assert isinstance(descriptor, property)
 
 
 
-def test_highlevelnets::marking::placemarking_is_not_abstract():
-    assert not inspect.isabstract(highlevelnets::marking::PlaceMarking)
+def test_highlevelnets_tokenexpressions_variable_is_not_abstract():
+    assert not inspect.isabstract(highlevelnets_tokenexpressions_Variable)
 
 
-def test_highlevelnets::marking::placemarking_constructor_exists():
-    assert callable(highlevelnets::marking::PlaceMarking.__init__)
+def test_highlevelnets_tokenexpressions_variable_constructor_exists():
+    assert callable(highlevelnets_tokenexpressions_Variable.__init__)
 
 
-def test_highlevelnets::marking::placemarking_constructor_args():
-    sig = inspect.signature(highlevelnets::marking::PlaceMarking.__init__)
+def test_highlevelnets_tokenexpressions_variable_constructor_args():
+    sig = inspect.signature(highlevelnets_tokenexpressions_Variable.__init__)
+    params = list(sig.parameters.keys())
+    assert "name" in params, "Missing parameter 'name'"
+
+def test_highlevelnets_tokenexpressions_variable_has_name():
+    assert hasattr(highlevelnets_tokenexpressions_Variable, "name")
+    descriptor = None
+    for klass in highlevelnets_tokenexpressions_Variable.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_highlevelnets_marking_placemarking_is_not_abstract():
+    assert not inspect.isabstract(highlevelnets_marking_PlaceMarking)
+
+
+def test_highlevelnets_marking_placemarking_constructor_exists():
+    assert callable(highlevelnets_marking_PlaceMarking.__init__)
+
+
+def test_highlevelnets_marking_placemarking_constructor_args():
+    sig = inspect.signature(highlevelnets_marking_PlaceMarking.__init__)
     params = list(sig.parameters.keys())
 
 def test_esynchronizationkind_exists():
@@ -1542,14 +1542,14 @@ NPNSymbolArcSN_strategy = st.builds(
 NPNSymbolNodeSN_strategy = st.builds(
     NPNSymbolNodeSN,
 )
-highlevelnets::npndiagrams::NPNSymbolPlaceSN_strategy = st.builds(
-    highlevelnets::npndiagrams::NPNSymbolPlaceSN,
+highlevelnets_npndiagrams_NPNSymbolTransitionSN_strategy = st.builds(
+    highlevelnets_npndiagrams_NPNSymbolTransitionSN,
 )
-highlevelnets::npndiagrams::NPNSymbolTransitionSN_strategy = st.builds(
-    highlevelnets::npndiagrams::NPNSymbolTransitionSN,
+highlevelnets_npndiagrams_NPNSymbolPlaceSN_strategy = st.builds(
+    highlevelnets_npndiagrams_NPNSymbolPlaceSN,
 )
-highlevelnets::npndiagrams::NPNSymbolArcTPSN_strategy = st.builds(
-    highlevelnets::npndiagrams::NPNSymbolArcTPSN,
+highlevelnets_npndiagrams_NPNSymbolArcTPSN_strategy = st.builds(
+    highlevelnets_npndiagrams_NPNSymbolArcTPSN,
 )
 NPNSymbolPlaceSN_strategy = st.builds(
     NPNSymbolPlaceSN,
@@ -1557,8 +1557,8 @@ NPNSymbolPlaceSN_strategy = st.builds(
 NPNSymbolTransitionSN_strategy = st.builds(
     NPNSymbolTransitionSN,
 )
-highlevelnets::npndiagrams::NPNSymbolArcPTSN_strategy = st.builds(
-    highlevelnets::npndiagrams::NPNSymbolArcPTSN,
+highlevelnets_npndiagrams_NPNSymbolArcPTSN_strategy = st.builds(
+    highlevelnets_npndiagrams_NPNSymbolArcPTSN,
 )
 TransitionSynchronized_strategy = st.builds(
     TransitionSynchronized,
@@ -1578,40 +1578,40 @@ NetConstant_strategy = st.builds(
 NPNDiagramNetSystem_strategy = st.builds(
     NPNDiagramNetSystem,
 )
-highlevelnets::common::IEntityIdentifiable_strategy = st.builds(
-    highlevelnets::common::IEntityIdentifiable,
+highlevelnets_common_IEntityIdentifiable_strategy = st.builds(
+    highlevelnets_common_IEntityIdentifiable,
     id=
         safe_text
 )
 Transition_strategy = st.builds(
     Transition,
 )
-highlevelnets::npnets::TransitionSynchronized_strategy = st.builds(
-    highlevelnets::npnets::TransitionSynchronized,
+highlevelnets_npnets_TransitionSynchronized_strategy = st.builds(
+    highlevelnets_npnets_TransitionSynchronized,
 )
 IDiagramHolder_strategy = st.builds(
     IDiagramHolder,
 )
-highlevelnets::npnets::NPnet_strategy = st.builds(
-    highlevelnets::npnets::NPnet,
+highlevelnets_npnets_NPnet_strategy = st.builds(
+    highlevelnets_npnets_NPnet,
 )
 Node_strategy = st.builds(
     Node,
 )
-hlpn::ContextVariable_strategy = st.builds(
-    hlpn::ContextVariable,
+hlpn_ContextVariable_strategy = st.builds(
+    hlpn_ContextVariable,
 )
-common::INetElement_strategy = st.builds(
-    common::INetElement,
+common_INetElement_strategy = st.builds(
+    common_INetElement,
 )
-highlevelnets::hlpn::HighLevelPetriNet_strategy = st.builds(
-    highlevelnets::hlpn::HighLevelPetriNet,
+highlevelnets_hlpn_HighLevelPetriNet_strategy = st.builds(
+    highlevelnets_hlpn_HighLevelPetriNet,
 )
-hlpn::Node_strategy = st.builds(
-    hlpn::Node,
+hlpn_Node_strategy = st.builds(
+    hlpn_Node,
 )
-highlevelnets::hlpn::Transition_strategy = st.builds(
-    highlevelnets::hlpn::Transition,
+highlevelnets_hlpn_Transition_strategy = st.builds(
+    highlevelnets_hlpn_Transition,
 )
 ArcTP_strategy = st.builds(
     ArcTP,
@@ -1619,17 +1619,17 @@ ArcTP_strategy = st.builds(
 ArcPT_strategy = st.builds(
     ArcPT,
 )
-highlevelnets::hlpn::Place_strategy = st.builds(
-    highlevelnets::hlpn::Place,
+highlevelnets_hlpn_Place_strategy = st.builds(
+    highlevelnets_hlpn_Place,
 )
 Arc_strategy = st.builds(
     Arc,
 )
-highlevelnets::hlpn::ArcPT_strategy = st.builds(
-    highlevelnets::hlpn::ArcPT,
+highlevelnets_hlpn_ArcTP_strategy = st.builds(
+    highlevelnets_hlpn_ArcTP,
 )
-highlevelnets::hlpn::ArcTP_strategy = st.builds(
-    highlevelnets::hlpn::ArcTP,
+highlevelnets_hlpn_ArcPT_strategy = st.builds(
+    highlevelnets_hlpn_ArcPT,
 )
 ContextVariable_strategy = st.builds(
     ContextVariable,
@@ -1670,11 +1670,11 @@ TokenTypeAtomic_strategy = st.builds(
 Token_strategy = st.builds(
     Token,
 )
-highlevelnets::tokentypes::TokenNet_strategy = st.builds(
-    highlevelnets::tokentypes::TokenNet,
+highlevelnets_tokentypes_TokenNet_strategy = st.builds(
+    highlevelnets_tokentypes_TokenNet,
 )
-highlevelnets::tokentypes::TokenAtomic_strategy = st.builds(
-    highlevelnets::tokentypes::TokenAtomic,
+highlevelnets_tokentypes_TokenAtomic_strategy = st.builds(
+    highlevelnets_tokentypes_TokenAtomic,
 )
 PlaceMarking_strategy = st.builds(
     PlaceMarking,
@@ -1682,51 +1682,51 @@ PlaceMarking_strategy = st.builds(
 INetElement_strategy = st.builds(
     INetElement,
 )
-highlevelnets::tokentypes::Atom_strategy = st.builds(
-    highlevelnets::tokentypes::Atom,
+highlevelnets_npnets_NPnetMarked_strategy = st.builds(
+    highlevelnets_npnets_NPnetMarked,
 )
-highlevelnets::tokentypes::Token_strategy = st.builds(
-    highlevelnets::tokentypes::Token,
+highlevelnets_hlpn_Node_strategy = st.builds(
+    highlevelnets_hlpn_Node,
 )
-highlevelnets::tokentypes::ElementNetMarked_strategy = st.builds(
-    highlevelnets::tokentypes::ElementNetMarked,
+highlevelnets_tokenexpressions_TokenVariadicExpression_strategy = st.builds(
+    highlevelnets_tokenexpressions_TokenVariadicExpression,
 )
-highlevelnets::hlpn::Arc_strategy = st.builds(
-    highlevelnets::hlpn::Arc,
+highlevelnets_tokentypes_Atom_strategy = st.builds(
+    highlevelnets_tokentypes_Atom,
 )
-highlevelnets::tokenexpressions::NetConstant_strategy = st.builds(
-    highlevelnets::tokenexpressions::NetConstant,
+highlevelnets_tokenexpressions_NetConstant_strategy = st.builds(
+    highlevelnets_tokenexpressions_NetConstant,
 )
-highlevelnets::common::IDiagramHolder_strategy = st.builds(
-    highlevelnets::common::IDiagramHolder,
+highlevelnets_hlpn_Arc_strategy = st.builds(
+    highlevelnets_hlpn_Arc,
 )
-highlevelnets::npnets::Synchronization_strategy = st.builds(
-    highlevelnets::npnets::Synchronization,
+highlevelnets_tokentypes_ElementNetMarked_strategy = st.builds(
+    highlevelnets_tokentypes_ElementNetMarked,
+)
+highlevelnets_common_IDiagramHolder_strategy = st.builds(
+    highlevelnets_common_IDiagramHolder,
+)
+highlevelnets_tokentypes_Token_strategy = st.builds(
+    highlevelnets_tokentypes_Token,
+)
+highlevelnets_npnets_Synchronization_strategy = st.builds(
+    highlevelnets_npnets_Synchronization,
     key=
         safe_text,
     kind=
         safe_text
 )
-highlevelnets::tokenexpressions::TokenVariadicExpression_strategy = st.builds(
-    highlevelnets::tokenexpressions::TokenVariadicExpression,
+highlevelnets_marking_Marking_strategy = st.builds(
+    highlevelnets_marking_Marking,
 )
-highlevelnets::npnets::NPnetMarked_strategy = st.builds(
-    highlevelnets::npnets::NPnetMarked,
+common_IDiagramHolder_strategy = st.builds(
+    common_IDiagramHolder,
 )
-highlevelnets::hlpn::Node_strategy = st.builds(
-    highlevelnets::hlpn::Node,
+tokentypes_TokenType_strategy = st.builds(
+    tokentypes_TokenType,
 )
-highlevelnets::marking::Marking_strategy = st.builds(
-    highlevelnets::marking::Marking,
-)
-common::IDiagramHolder_strategy = st.builds(
-    common::IDiagramHolder,
-)
-tokentypes::TokenType_strategy = st.builds(
-    tokentypes::TokenType,
-)
-highlevelnets::tokentypes::TokenTypeElementNet_strategy = st.builds(
-    highlevelnets::tokentypes::TokenTypeElementNet,
+highlevelnets_tokentypes_TokenTypeElementNet_strategy = st.builds(
+    highlevelnets_tokentypes_TokenTypeElementNet,
 )
 TokenAtomic_strategy = st.builds(
     TokenAtomic,
@@ -1737,11 +1737,11 @@ Atom_strategy = st.builds(
 TokenType_strategy = st.builds(
     TokenType,
 )
-highlevelnets::tokentypes::TokenTypeAtomic_strategy = st.builds(
-    highlevelnets::tokentypes::TokenTypeAtomic,
+highlevelnets_tokentypes_TokenTypeAtomic_strategy = st.builds(
+    highlevelnets_tokentypes_TokenTypeAtomic,
 )
-highlevelnets::tokentypes::TokenType_strategy = st.builds(
-    highlevelnets::tokentypes::TokenType,
+highlevelnets_tokentypes_TokenType_strategy = st.builds(
+    highlevelnets_tokentypes_TokenType,
 )
 Marking_strategy = st.builds(
     Marking,
@@ -1749,8 +1749,8 @@ Marking_strategy = st.builds(
 HighLevelPetriNet_strategy = st.builds(
     HighLevelPetriNet,
 )
-highlevelnets::marking::HighLevelPetriNetMarked_strategy = st.builds(
-    highlevelnets::marking::HighLevelPetriNetMarked,
+highlevelnets_marking_HighLevelPetriNetMarked_strategy = st.builds(
+    highlevelnets_marking_HighLevelPetriNetMarked,
 )
 TokenMultiSet_strategy = st.builds(
     TokenMultiSet,
@@ -1761,72 +1761,72 @@ Place_strategy = st.builds(
 IEntityIdentifiable_strategy = st.builds(
     IEntityIdentifiable,
 )
-highlevelnets::tokenexpressions::Variable_strategy = st.builds(
-    highlevelnets::tokenexpressions::Variable,
-    name=
-        safe_text
+highlevelnets_tokenexpressions_TokenExpressionBinding_strategy = st.builds(
+    highlevelnets_tokenexpressions_TokenExpressionBinding,
 )
-highlevelnets::tokenexpressions::TokenWeight_strategy = st.builds(
-    highlevelnets::tokenexpressions::TokenWeight,
-    weight=
-        safe_text
+highlevelnets_npndiagrams_NPNDiagramNetSystem_strategy = st.builds(
+    highlevelnets_npndiagrams_NPNDiagramNetSystem,
 )
-highlevelnets::tokentypes::TokenAttribute_strategy = st.builds(
-    highlevelnets::tokentypes::TokenAttribute,
-    name=
-        safe_text,
-    type=
-        safe_text,
-    value=
-        safe_text
+highlevelnets_hlpn_ContextVariable_strategy = st.builds(
+    highlevelnets_hlpn_ContextVariable,
 )
-highlevelnets::npndiagrams::NPNDiagramNetSystem_strategy = st.builds(
-    highlevelnets::npndiagrams::NPNDiagramNetSystem,
-)
-highlevelnets::tokenexpressions::TokenBinding_strategy = st.builds(
-    highlevelnets::tokenexpressions::TokenBinding,
-)
-highlevelnets::tokenexpressions::Monom_strategy = st.builds(
-    highlevelnets::tokenexpressions::Monom,
-    power=
-        safe_text
-)
-highlevelnets::tokenexpressions::MonomConstant_strategy = st.builds(
-    highlevelnets::tokenexpressions::MonomConstant,
-    power=
-        safe_text
-)
-highlevelnets::common::INetElement_strategy = st.builds(
-    highlevelnets::common::INetElement,
-    comment=
-        safe_text,
-    name=
-        safe_text
-)
-highlevelnets::npndiagrams::NPNSymbolArcSN_strategy = st.builds(
-    highlevelnets::npndiagrams::NPNSymbolArcSN,
-    bendpoints=
-        safe_text
-)
-highlevelnets::npndiagrams::NPNSymbolNodeSN_strategy = st.builds(
-    highlevelnets::npndiagrams::NPNSymbolNodeSN,
+highlevelnets_npndiagrams_NPNSymbolNodeSN_strategy = st.builds(
+    highlevelnets_npndiagrams_NPNSymbolNodeSN,
     constraints=
         safe_text
 )
-highlevelnets::tokenexpressions::TokenMultiSet_strategy = st.builds(
-    highlevelnets::tokenexpressions::TokenMultiSet,
+highlevelnets_common_INetElement_strategy = st.builds(
+    highlevelnets_common_INetElement,
+    name=
+        safe_text,
+    comment=
+        safe_text
 )
-highlevelnets::tokenexpressions::TokenExpressionBinding_strategy = st.builds(
-    highlevelnets::tokenexpressions::TokenExpressionBinding,
+highlevelnets_tokenexpressions_Monom_strategy = st.builds(
+    highlevelnets_tokenexpressions_Monom,
+    power=
+        safe_text
 )
-highlevelnets::tokenexpressions::TokenMultisetExpression_strategy = st.builds(
-    highlevelnets::tokenexpressions::TokenMultisetExpression,
+highlevelnets_tokentypes_TokenAttribute_strategy = st.builds(
+    highlevelnets_tokentypes_TokenAttribute,
+    value=
+        safe_text,
+    name=
+        safe_text,
+    type=
+        safe_text
 )
-highlevelnets::hlpn::ContextVariable_strategy = st.builds(
-    highlevelnets::hlpn::ContextVariable,
+highlevelnets_tokenexpressions_TokenMultisetExpression_strategy = st.builds(
+    highlevelnets_tokenexpressions_TokenMultisetExpression,
 )
-highlevelnets::marking::PlaceMarking_strategy = st.builds(
-    highlevelnets::marking::PlaceMarking,
+highlevelnets_tokenexpressions_TokenWeight_strategy = st.builds(
+    highlevelnets_tokenexpressions_TokenWeight,
+    weight=
+        safe_text
+)
+highlevelnets_tokenexpressions_MonomConstant_strategy = st.builds(
+    highlevelnets_tokenexpressions_MonomConstant,
+    power=
+        safe_text
+)
+highlevelnets_tokenexpressions_TokenBinding_strategy = st.builds(
+    highlevelnets_tokenexpressions_TokenBinding,
+)
+highlevelnets_tokenexpressions_TokenMultiSet_strategy = st.builds(
+    highlevelnets_tokenexpressions_TokenMultiSet,
+)
+highlevelnets_npndiagrams_NPNSymbolArcSN_strategy = st.builds(
+    highlevelnets_npndiagrams_NPNSymbolArcSN,
+    bendpoints=
+        safe_text
+)
+highlevelnets_tokenexpressions_Variable_strategy = st.builds(
+    highlevelnets_tokenexpressions_Variable,
+    name=
+        safe_text
+)
+highlevelnets_marking_PlaceMarking_strategy = st.builds(
+    highlevelnets_marking_PlaceMarking,
 )
 
 @given(instance=NPNSymbolArcTPSN_strategy)
@@ -1849,20 +1849,20 @@ def test_npnsymbolarcsn_instantiation(instance):
 def test_npnsymbolnodesn_instantiation(instance):
     assert isinstance(instance, NPNSymbolNodeSN)
 
-@given(instance=highlevelnets::npndiagrams::NPNSymbolPlaceSN_strategy)
+@given(instance=highlevelnets_npndiagrams_NPNSymbolTransitionSN_strategy)
 @settings(max_examples=50)
-def test_highlevelnets::npndiagrams::npnsymbolplacesn_instantiation(instance):
-    assert isinstance(instance, highlevelnets::npndiagrams::NPNSymbolPlaceSN)
+def test_highlevelnets_npndiagrams_npnsymboltransitionsn_instantiation(instance):
+    assert isinstance(instance, highlevelnets_npndiagrams_NPNSymbolTransitionSN)
 
-@given(instance=highlevelnets::npndiagrams::NPNSymbolTransitionSN_strategy)
+@given(instance=highlevelnets_npndiagrams_NPNSymbolPlaceSN_strategy)
 @settings(max_examples=50)
-def test_highlevelnets::npndiagrams::npnsymboltransitionsn_instantiation(instance):
-    assert isinstance(instance, highlevelnets::npndiagrams::NPNSymbolTransitionSN)
+def test_highlevelnets_npndiagrams_npnsymbolplacesn_instantiation(instance):
+    assert isinstance(instance, highlevelnets_npndiagrams_NPNSymbolPlaceSN)
 
-@given(instance=highlevelnets::npndiagrams::NPNSymbolArcTPSN_strategy)
+@given(instance=highlevelnets_npndiagrams_NPNSymbolArcTPSN_strategy)
 @settings(max_examples=50)
-def test_highlevelnets::npndiagrams::npnsymbolarctpsn_instantiation(instance):
-    assert isinstance(instance, highlevelnets::npndiagrams::NPNSymbolArcTPSN)
+def test_highlevelnets_npndiagrams_npnsymbolarctpsn_instantiation(instance):
+    assert isinstance(instance, highlevelnets_npndiagrams_NPNSymbolArcTPSN)
 
 @given(instance=NPNSymbolPlaceSN_strategy)
 @settings(max_examples=50)
@@ -1874,10 +1874,10 @@ def test_npnsymbolplacesn_instantiation(instance):
 def test_npnsymboltransitionsn_instantiation(instance):
     assert isinstance(instance, NPNSymbolTransitionSN)
 
-@given(instance=highlevelnets::npndiagrams::NPNSymbolArcPTSN_strategy)
+@given(instance=highlevelnets_npndiagrams_NPNSymbolArcPTSN_strategy)
 @settings(max_examples=50)
-def test_highlevelnets::npndiagrams::npnsymbolarcptsn_instantiation(instance):
-    assert isinstance(instance, highlevelnets::npndiagrams::NPNSymbolArcPTSN)
+def test_highlevelnets_npndiagrams_npnsymbolarcptsn_instantiation(instance):
+    assert isinstance(instance, highlevelnets_npndiagrams_NPNSymbolArcPTSN)
 
 @given(instance=TransitionSynchronized_strategy)
 @settings(max_examples=50)
@@ -1909,18 +1909,15 @@ def test_netconstant_instantiation(instance):
 def test_npndiagramnetsystem_instantiation(instance):
     assert isinstance(instance, NPNDiagramNetSystem)
 
-@given(instance=highlevelnets::common::IEntityIdentifiable_strategy)
+@given(instance=highlevelnets_common_IEntityIdentifiable_strategy)
 @settings(max_examples=50)
-def test_highlevelnets::common::ientityidentifiable_instantiation(instance):
-    assert isinstance(instance, highlevelnets::common::IEntityIdentifiable)
-
-@given(instance=highlevelnets::common::IEntityIdentifiable_strategy)
-def test_highlevelnets::common::ientityidentifiable_id_type(instance):
-    assert isinstance(instance.id, str)
+def test_highlevelnets_common_ientityidentifiable_instantiation(instance):
+    assert isinstance(instance, highlevelnets_common_IEntityIdentifiable)
 
 
-@given(instance=highlevelnets::common::IEntityIdentifiable_strategy)
-def test_highlevelnets::common::ientityidentifiable_id_setter(instance):
+
+@given(instance=highlevelnets_common_IEntityIdentifiable_strategy)
+def test_highlevelnets_common_ientityidentifiable_id_setter(instance):
     original = instance.id
     instance.id = original
     assert instance.id == original
@@ -1930,50 +1927,50 @@ def test_highlevelnets::common::ientityidentifiable_id_setter(instance):
 def test_transition_instantiation(instance):
     assert isinstance(instance, Transition)
 
-@given(instance=highlevelnets::npnets::TransitionSynchronized_strategy)
+@given(instance=highlevelnets_npnets_TransitionSynchronized_strategy)
 @settings(max_examples=50)
-def test_highlevelnets::npnets::transitionsynchronized_instantiation(instance):
-    assert isinstance(instance, highlevelnets::npnets::TransitionSynchronized)
+def test_highlevelnets_npnets_transitionsynchronized_instantiation(instance):
+    assert isinstance(instance, highlevelnets_npnets_TransitionSynchronized)
 
 @given(instance=IDiagramHolder_strategy)
 @settings(max_examples=50)
 def test_idiagramholder_instantiation(instance):
     assert isinstance(instance, IDiagramHolder)
 
-@given(instance=highlevelnets::npnets::NPnet_strategy)
+@given(instance=highlevelnets_npnets_NPnet_strategy)
 @settings(max_examples=50)
-def test_highlevelnets::npnets::npnet_instantiation(instance):
-    assert isinstance(instance, highlevelnets::npnets::NPnet)
+def test_highlevelnets_npnets_npnet_instantiation(instance):
+    assert isinstance(instance, highlevelnets_npnets_NPnet)
 
 @given(instance=Node_strategy)
 @settings(max_examples=50)
 def test_node_instantiation(instance):
     assert isinstance(instance, Node)
 
-@given(instance=hlpn::ContextVariable_strategy)
+@given(instance=hlpn_ContextVariable_strategy)
 @settings(max_examples=50)
-def test_hlpn::contextvariable_instantiation(instance):
-    assert isinstance(instance, hlpn::ContextVariable)
+def test_hlpn_contextvariable_instantiation(instance):
+    assert isinstance(instance, hlpn_ContextVariable)
 
-@given(instance=common::INetElement_strategy)
+@given(instance=common_INetElement_strategy)
 @settings(max_examples=50)
-def test_common::inetelement_instantiation(instance):
-    assert isinstance(instance, common::INetElement)
+def test_common_inetelement_instantiation(instance):
+    assert isinstance(instance, common_INetElement)
 
-@given(instance=highlevelnets::hlpn::HighLevelPetriNet_strategy)
+@given(instance=highlevelnets_hlpn_HighLevelPetriNet_strategy)
 @settings(max_examples=50)
-def test_highlevelnets::hlpn::highlevelpetrinet_instantiation(instance):
-    assert isinstance(instance, highlevelnets::hlpn::HighLevelPetriNet)
+def test_highlevelnets_hlpn_highlevelpetrinet_instantiation(instance):
+    assert isinstance(instance, highlevelnets_hlpn_HighLevelPetriNet)
 
-@given(instance=hlpn::Node_strategy)
+@given(instance=hlpn_Node_strategy)
 @settings(max_examples=50)
-def test_hlpn::node_instantiation(instance):
-    assert isinstance(instance, hlpn::Node)
+def test_hlpn_node_instantiation(instance):
+    assert isinstance(instance, hlpn_Node)
 
-@given(instance=highlevelnets::hlpn::Transition_strategy)
+@given(instance=highlevelnets_hlpn_Transition_strategy)
 @settings(max_examples=50)
-def test_highlevelnets::hlpn::transition_instantiation(instance):
-    assert isinstance(instance, highlevelnets::hlpn::Transition)
+def test_highlevelnets_hlpn_transition_instantiation(instance):
+    assert isinstance(instance, highlevelnets_hlpn_Transition)
 
 @given(instance=ArcTP_strategy)
 @settings(max_examples=50)
@@ -1985,25 +1982,25 @@ def test_arctp_instantiation(instance):
 def test_arcpt_instantiation(instance):
     assert isinstance(instance, ArcPT)
 
-@given(instance=highlevelnets::hlpn::Place_strategy)
+@given(instance=highlevelnets_hlpn_Place_strategy)
 @settings(max_examples=50)
-def test_highlevelnets::hlpn::place_instantiation(instance):
-    assert isinstance(instance, highlevelnets::hlpn::Place)
+def test_highlevelnets_hlpn_place_instantiation(instance):
+    assert isinstance(instance, highlevelnets_hlpn_Place)
 
 @given(instance=Arc_strategy)
 @settings(max_examples=50)
 def test_arc_instantiation(instance):
     assert isinstance(instance, Arc)
 
-@given(instance=highlevelnets::hlpn::ArcPT_strategy)
+@given(instance=highlevelnets_hlpn_ArcTP_strategy)
 @settings(max_examples=50)
-def test_highlevelnets::hlpn::arcpt_instantiation(instance):
-    assert isinstance(instance, highlevelnets::hlpn::ArcPT)
+def test_highlevelnets_hlpn_arctp_instantiation(instance):
+    assert isinstance(instance, highlevelnets_hlpn_ArcTP)
 
-@given(instance=highlevelnets::hlpn::ArcTP_strategy)
+@given(instance=highlevelnets_hlpn_ArcPT_strategy)
 @settings(max_examples=50)
-def test_highlevelnets::hlpn::arctp_instantiation(instance):
-    assert isinstance(instance, highlevelnets::hlpn::ArcTP)
+def test_highlevelnets_hlpn_arcpt_instantiation(instance):
+    assert isinstance(instance, highlevelnets_hlpn_ArcPT)
 
 @given(instance=ContextVariable_strategy)
 @settings(max_examples=50)
@@ -2070,15 +2067,15 @@ def test_tokentypeatomic_instantiation(instance):
 def test_token_instantiation(instance):
     assert isinstance(instance, Token)
 
-@given(instance=highlevelnets::tokentypes::TokenNet_strategy)
+@given(instance=highlevelnets_tokentypes_TokenNet_strategy)
 @settings(max_examples=50)
-def test_highlevelnets::tokentypes::tokennet_instantiation(instance):
-    assert isinstance(instance, highlevelnets::tokentypes::TokenNet)
+def test_highlevelnets_tokentypes_tokennet_instantiation(instance):
+    assert isinstance(instance, highlevelnets_tokentypes_TokenNet)
 
-@given(instance=highlevelnets::tokentypes::TokenAtomic_strategy)
+@given(instance=highlevelnets_tokentypes_TokenAtomic_strategy)
 @settings(max_examples=50)
-def test_highlevelnets::tokentypes::tokenatomic_instantiation(instance):
-    assert isinstance(instance, highlevelnets::tokentypes::TokenAtomic)
+def test_highlevelnets_tokentypes_tokenatomic_instantiation(instance):
+    assert isinstance(instance, highlevelnets_tokentypes_TokenAtomic)
 
 @given(instance=PlaceMarking_strategy)
 @settings(max_examples=50)
@@ -2090,97 +2087,91 @@ def test_placemarking_instantiation(instance):
 def test_inetelement_instantiation(instance):
     assert isinstance(instance, INetElement)
 
-@given(instance=highlevelnets::tokentypes::Atom_strategy)
+@given(instance=highlevelnets_npnets_NPnetMarked_strategy)
 @settings(max_examples=50)
-def test_highlevelnets::tokentypes::atom_instantiation(instance):
-    assert isinstance(instance, highlevelnets::tokentypes::Atom)
+def test_highlevelnets_npnets_npnetmarked_instantiation(instance):
+    assert isinstance(instance, highlevelnets_npnets_NPnetMarked)
 
-@given(instance=highlevelnets::tokentypes::Token_strategy)
+@given(instance=highlevelnets_hlpn_Node_strategy)
 @settings(max_examples=50)
-def test_highlevelnets::tokentypes::token_instantiation(instance):
-    assert isinstance(instance, highlevelnets::tokentypes::Token)
+def test_highlevelnets_hlpn_node_instantiation(instance):
+    assert isinstance(instance, highlevelnets_hlpn_Node)
 
-@given(instance=highlevelnets::tokentypes::ElementNetMarked_strategy)
+@given(instance=highlevelnets_tokenexpressions_TokenVariadicExpression_strategy)
 @settings(max_examples=50)
-def test_highlevelnets::tokentypes::elementnetmarked_instantiation(instance):
-    assert isinstance(instance, highlevelnets::tokentypes::ElementNetMarked)
+def test_highlevelnets_tokenexpressions_tokenvariadicexpression_instantiation(instance):
+    assert isinstance(instance, highlevelnets_tokenexpressions_TokenVariadicExpression)
 
-@given(instance=highlevelnets::hlpn::Arc_strategy)
+@given(instance=highlevelnets_tokentypes_Atom_strategy)
 @settings(max_examples=50)
-def test_highlevelnets::hlpn::arc_instantiation(instance):
-    assert isinstance(instance, highlevelnets::hlpn::Arc)
+def test_highlevelnets_tokentypes_atom_instantiation(instance):
+    assert isinstance(instance, highlevelnets_tokentypes_Atom)
 
-@given(instance=highlevelnets::tokenexpressions::NetConstant_strategy)
+@given(instance=highlevelnets_tokenexpressions_NetConstant_strategy)
 @settings(max_examples=50)
-def test_highlevelnets::tokenexpressions::netconstant_instantiation(instance):
-    assert isinstance(instance, highlevelnets::tokenexpressions::NetConstant)
+def test_highlevelnets_tokenexpressions_netconstant_instantiation(instance):
+    assert isinstance(instance, highlevelnets_tokenexpressions_NetConstant)
 
-@given(instance=highlevelnets::common::IDiagramHolder_strategy)
+@given(instance=highlevelnets_hlpn_Arc_strategy)
 @settings(max_examples=50)
-def test_highlevelnets::common::idiagramholder_instantiation(instance):
-    assert isinstance(instance, highlevelnets::common::IDiagramHolder)
+def test_highlevelnets_hlpn_arc_instantiation(instance):
+    assert isinstance(instance, highlevelnets_hlpn_Arc)
 
-@given(instance=highlevelnets::npnets::Synchronization_strategy)
+@given(instance=highlevelnets_tokentypes_ElementNetMarked_strategy)
 @settings(max_examples=50)
-def test_highlevelnets::npnets::synchronization_instantiation(instance):
-    assert isinstance(instance, highlevelnets::npnets::Synchronization)
+def test_highlevelnets_tokentypes_elementnetmarked_instantiation(instance):
+    assert isinstance(instance, highlevelnets_tokentypes_ElementNetMarked)
 
-@given(instance=highlevelnets::npnets::Synchronization_strategy)
-def test_highlevelnets::npnets::synchronization_key_type(instance):
-    assert isinstance(instance.key, str)
+@given(instance=highlevelnets_common_IDiagramHolder_strategy)
+@settings(max_examples=50)
+def test_highlevelnets_common_idiagramholder_instantiation(instance):
+    assert isinstance(instance, highlevelnets_common_IDiagramHolder)
+
+@given(instance=highlevelnets_tokentypes_Token_strategy)
+@settings(max_examples=50)
+def test_highlevelnets_tokentypes_token_instantiation(instance):
+    assert isinstance(instance, highlevelnets_tokentypes_Token)
+
+@given(instance=highlevelnets_npnets_Synchronization_strategy)
+@settings(max_examples=50)
+def test_highlevelnets_npnets_synchronization_instantiation(instance):
+    assert isinstance(instance, highlevelnets_npnets_Synchronization)
 
 
-@given(instance=highlevelnets::npnets::Synchronization_strategy)
-def test_highlevelnets::npnets::synchronization_key_setter(instance):
+
+@given(instance=highlevelnets_npnets_Synchronization_strategy)
+def test_highlevelnets_npnets_synchronization_key_setter(instance):
     original = instance.key
     instance.key = original
     assert instance.key == original
 
-@given(instance=highlevelnets::npnets::Synchronization_strategy)
-def test_highlevelnets::npnets::synchronization_kind_type(instance):
-    assert isinstance(instance.kind, str)
 
 
-@given(instance=highlevelnets::npnets::Synchronization_strategy)
-def test_highlevelnets::npnets::synchronization_kind_setter(instance):
+@given(instance=highlevelnets_npnets_Synchronization_strategy)
+def test_highlevelnets_npnets_synchronization_kind_setter(instance):
     original = instance.kind
     instance.kind = original
     assert instance.kind == original
 
-@given(instance=highlevelnets::tokenexpressions::TokenVariadicExpression_strategy)
+@given(instance=highlevelnets_marking_Marking_strategy)
 @settings(max_examples=50)
-def test_highlevelnets::tokenexpressions::tokenvariadicexpression_instantiation(instance):
-    assert isinstance(instance, highlevelnets::tokenexpressions::TokenVariadicExpression)
+def test_highlevelnets_marking_marking_instantiation(instance):
+    assert isinstance(instance, highlevelnets_marking_Marking)
 
-@given(instance=highlevelnets::npnets::NPnetMarked_strategy)
+@given(instance=common_IDiagramHolder_strategy)
 @settings(max_examples=50)
-def test_highlevelnets::npnets::npnetmarked_instantiation(instance):
-    assert isinstance(instance, highlevelnets::npnets::NPnetMarked)
+def test_common_idiagramholder_instantiation(instance):
+    assert isinstance(instance, common_IDiagramHolder)
 
-@given(instance=highlevelnets::hlpn::Node_strategy)
+@given(instance=tokentypes_TokenType_strategy)
 @settings(max_examples=50)
-def test_highlevelnets::hlpn::node_instantiation(instance):
-    assert isinstance(instance, highlevelnets::hlpn::Node)
+def test_tokentypes_tokentype_instantiation(instance):
+    assert isinstance(instance, tokentypes_TokenType)
 
-@given(instance=highlevelnets::marking::Marking_strategy)
+@given(instance=highlevelnets_tokentypes_TokenTypeElementNet_strategy)
 @settings(max_examples=50)
-def test_highlevelnets::marking::marking_instantiation(instance):
-    assert isinstance(instance, highlevelnets::marking::Marking)
-
-@given(instance=common::IDiagramHolder_strategy)
-@settings(max_examples=50)
-def test_common::idiagramholder_instantiation(instance):
-    assert isinstance(instance, common::IDiagramHolder)
-
-@given(instance=tokentypes::TokenType_strategy)
-@settings(max_examples=50)
-def test_tokentypes::tokentype_instantiation(instance):
-    assert isinstance(instance, tokentypes::TokenType)
-
-@given(instance=highlevelnets::tokentypes::TokenTypeElementNet_strategy)
-@settings(max_examples=50)
-def test_highlevelnets::tokentypes::tokentypeelementnet_instantiation(instance):
-    assert isinstance(instance, highlevelnets::tokentypes::TokenTypeElementNet)
+def test_highlevelnets_tokentypes_tokentypeelementnet_instantiation(instance):
+    assert isinstance(instance, highlevelnets_tokentypes_TokenTypeElementNet)
 
 import warnings
 import copy
@@ -2188,9 +2179,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=highlevelnets::tokentypes::TokenTypeElementNet_strategy)
+@given(instance=highlevelnets_tokentypes_TokenTypeElementNet_strategy)
 @settings(max_examples=30)
-def test_highlevelnets::tokentypes::tokentypeelementnet_createinstance_changes_state(instance):
+def test_highlevelnets_tokentypes_tokentypeelementnet_createinstance_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -2202,14 +2193,14 @@ def test_highlevelnets::tokentypes::tokentypeelementnet_createinstance_changes_s
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'createInstance' in highlevelnets::tokentypes::TokenTypeElementNet is empty"
+        assert has_statements, f"Function 'createInstance' in highlevelnets_tokentypes_TokenTypeElementNet is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'createInstance' in highlevelnets::tokentypes::TokenTypeElementNet did not change state; check implementation")
+            warnings.warn(f"Operation 'createInstance' in highlevelnets_tokentypes_TokenTypeElementNet did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'createInstance' in highlevelnets::tokentypes::TokenTypeElementNet is not implemented or raised an error")
+        warnings.warn(f"Operation 'createInstance' in highlevelnets_tokentypes_TokenTypeElementNet is not implemented or raised an error")
 
 @given(instance=TokenAtomic_strategy)
 @settings(max_examples=50)
@@ -2226,15 +2217,15 @@ def test_atom_instantiation(instance):
 def test_tokentype_instantiation(instance):
     assert isinstance(instance, TokenType)
 
-@given(instance=highlevelnets::tokentypes::TokenTypeAtomic_strategy)
+@given(instance=highlevelnets_tokentypes_TokenTypeAtomic_strategy)
 @settings(max_examples=50)
-def test_highlevelnets::tokentypes::tokentypeatomic_instantiation(instance):
-    assert isinstance(instance, highlevelnets::tokentypes::TokenTypeAtomic)
+def test_highlevelnets_tokentypes_tokentypeatomic_instantiation(instance):
+    assert isinstance(instance, highlevelnets_tokentypes_TokenTypeAtomic)
 
-@given(instance=highlevelnets::tokentypes::TokenType_strategy)
+@given(instance=highlevelnets_tokentypes_TokenType_strategy)
 @settings(max_examples=50)
-def test_highlevelnets::tokentypes::tokentype_instantiation(instance):
-    assert isinstance(instance, highlevelnets::tokentypes::TokenType)
+def test_highlevelnets_tokentypes_tokentype_instantiation(instance):
+    assert isinstance(instance, highlevelnets_tokentypes_TokenType)
 
 @given(instance=Marking_strategy)
 @settings(max_examples=50)
@@ -2246,10 +2237,10 @@ def test_marking_instantiation(instance):
 def test_highlevelpetrinet_instantiation(instance):
     assert isinstance(instance, HighLevelPetriNet)
 
-@given(instance=highlevelnets::marking::HighLevelPetriNetMarked_strategy)
+@given(instance=highlevelnets_marking_HighLevelPetriNetMarked_strategy)
 @settings(max_examples=50)
-def test_highlevelnets::marking::highlevelpetrinetmarked_instantiation(instance):
-    assert isinstance(instance, highlevelnets::marking::HighLevelPetriNetMarked)
+def test_highlevelnets_marking_highlevelpetrinetmarked_instantiation(instance):
+    assert isinstance(instance, highlevelnets_marking_HighLevelPetriNetMarked)
 
 @given(instance=TokenMultiSet_strategy)
 @settings(max_examples=50)
@@ -2266,198 +2257,165 @@ def test_place_instantiation(instance):
 def test_ientityidentifiable_instantiation(instance):
     assert isinstance(instance, IEntityIdentifiable)
 
-@given(instance=highlevelnets::tokenexpressions::Variable_strategy)
+@given(instance=highlevelnets_tokenexpressions_TokenExpressionBinding_strategy)
 @settings(max_examples=50)
-def test_highlevelnets::tokenexpressions::variable_instantiation(instance):
-    assert isinstance(instance, highlevelnets::tokenexpressions::Variable)
+def test_highlevelnets_tokenexpressions_tokenexpressionbinding_instantiation(instance):
+    assert isinstance(instance, highlevelnets_tokenexpressions_TokenExpressionBinding)
 
-@given(instance=highlevelnets::tokenexpressions::Variable_strategy)
-def test_highlevelnets::tokenexpressions::variable_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=highlevelnets::tokenexpressions::Variable_strategy)
-def test_highlevelnets::tokenexpressions::variable_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
-
-@given(instance=highlevelnets::tokenexpressions::TokenWeight_strategy)
+@given(instance=highlevelnets_npndiagrams_NPNDiagramNetSystem_strategy)
 @settings(max_examples=50)
-def test_highlevelnets::tokenexpressions::tokenweight_instantiation(instance):
-    assert isinstance(instance, highlevelnets::tokenexpressions::TokenWeight)
+def test_highlevelnets_npndiagrams_npndiagramnetsystem_instantiation(instance):
+    assert isinstance(instance, highlevelnets_npndiagrams_NPNDiagramNetSystem)
 
-@given(instance=highlevelnets::tokenexpressions::TokenWeight_strategy)
-def test_highlevelnets::tokenexpressions::tokenweight_weight_type(instance):
-    assert isinstance(instance.weight, str)
-
-
-@given(instance=highlevelnets::tokenexpressions::TokenWeight_strategy)
-def test_highlevelnets::tokenexpressions::tokenweight_weight_setter(instance):
-    original = instance.weight
-    instance.weight = original
-    assert instance.weight == original
-
-@given(instance=highlevelnets::tokentypes::TokenAttribute_strategy)
+@given(instance=highlevelnets_hlpn_ContextVariable_strategy)
 @settings(max_examples=50)
-def test_highlevelnets::tokentypes::tokenattribute_instantiation(instance):
-    assert isinstance(instance, highlevelnets::tokentypes::TokenAttribute)
+def test_highlevelnets_hlpn_contextvariable_instantiation(instance):
+    assert isinstance(instance, highlevelnets_hlpn_ContextVariable)
 
-@given(instance=highlevelnets::tokentypes::TokenAttribute_strategy)
-def test_highlevelnets::tokentypes::tokenattribute_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=highlevelnets::tokentypes::TokenAttribute_strategy)
-def test_highlevelnets::tokentypes::tokenattribute_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
-
-@given(instance=highlevelnets::tokentypes::TokenAttribute_strategy)
-def test_highlevelnets::tokentypes::tokenattribute_type_type(instance):
-    assert isinstance(instance.type, str)
-
-
-@given(instance=highlevelnets::tokentypes::TokenAttribute_strategy)
-def test_highlevelnets::tokentypes::tokenattribute_type_setter(instance):
-    original = instance.type
-    instance.type = original
-    assert instance.type == original
-
-@given(instance=highlevelnets::tokentypes::TokenAttribute_strategy)
-def test_highlevelnets::tokentypes::tokenattribute_value_type(instance):
-    assert isinstance(instance.value, str)
-
-
-@given(instance=highlevelnets::tokentypes::TokenAttribute_strategy)
-def test_highlevelnets::tokentypes::tokenattribute_value_setter(instance):
-    original = instance.value
-    instance.value = original
-    assert instance.value == original
-
-@given(instance=highlevelnets::npndiagrams::NPNDiagramNetSystem_strategy)
+@given(instance=highlevelnets_npndiagrams_NPNSymbolNodeSN_strategy)
 @settings(max_examples=50)
-def test_highlevelnets::npndiagrams::npndiagramnetsystem_instantiation(instance):
-    assert isinstance(instance, highlevelnets::npndiagrams::NPNDiagramNetSystem)
-
-@given(instance=highlevelnets::tokenexpressions::TokenBinding_strategy)
-@settings(max_examples=50)
-def test_highlevelnets::tokenexpressions::tokenbinding_instantiation(instance):
-    assert isinstance(instance, highlevelnets::tokenexpressions::TokenBinding)
-
-@given(instance=highlevelnets::tokenexpressions::Monom_strategy)
-@settings(max_examples=50)
-def test_highlevelnets::tokenexpressions::monom_instantiation(instance):
-    assert isinstance(instance, highlevelnets::tokenexpressions::Monom)
-
-@given(instance=highlevelnets::tokenexpressions::Monom_strategy)
-def test_highlevelnets::tokenexpressions::monom_power_type(instance):
-    assert isinstance(instance.power, str)
+def test_highlevelnets_npndiagrams_npnsymbolnodesn_instantiation(instance):
+    assert isinstance(instance, highlevelnets_npndiagrams_NPNSymbolNodeSN)
 
 
-@given(instance=highlevelnets::tokenexpressions::Monom_strategy)
-def test_highlevelnets::tokenexpressions::monom_power_setter(instance):
-    original = instance.power
-    instance.power = original
-    assert instance.power == original
 
-@given(instance=highlevelnets::tokenexpressions::MonomConstant_strategy)
-@settings(max_examples=50)
-def test_highlevelnets::tokenexpressions::monomconstant_instantiation(instance):
-    assert isinstance(instance, highlevelnets::tokenexpressions::MonomConstant)
-
-@given(instance=highlevelnets::tokenexpressions::MonomConstant_strategy)
-def test_highlevelnets::tokenexpressions::monomconstant_power_type(instance):
-    assert isinstance(instance.power, str)
-
-
-@given(instance=highlevelnets::tokenexpressions::MonomConstant_strategy)
-def test_highlevelnets::tokenexpressions::monomconstant_power_setter(instance):
-    original = instance.power
-    instance.power = original
-    assert instance.power == original
-
-@given(instance=highlevelnets::common::INetElement_strategy)
-@settings(max_examples=50)
-def test_highlevelnets::common::inetelement_instantiation(instance):
-    assert isinstance(instance, highlevelnets::common::INetElement)
-
-@given(instance=highlevelnets::common::INetElement_strategy)
-def test_highlevelnets::common::inetelement_comment_type(instance):
-    assert isinstance(instance.comment, str)
-
-
-@given(instance=highlevelnets::common::INetElement_strategy)
-def test_highlevelnets::common::inetelement_comment_setter(instance):
-    original = instance.comment
-    instance.comment = original
-    assert instance.comment == original
-
-@given(instance=highlevelnets::common::INetElement_strategy)
-def test_highlevelnets::common::inetelement_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=highlevelnets::common::INetElement_strategy)
-def test_highlevelnets::common::inetelement_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
-
-@given(instance=highlevelnets::npndiagrams::NPNSymbolArcSN_strategy)
-@settings(max_examples=50)
-def test_highlevelnets::npndiagrams::npnsymbolarcsn_instantiation(instance):
-    assert isinstance(instance, highlevelnets::npndiagrams::NPNSymbolArcSN)
-
-@given(instance=highlevelnets::npndiagrams::NPNSymbolArcSN_strategy)
-def test_highlevelnets::npndiagrams::npnsymbolarcsn_bendpoints_type(instance):
-    assert isinstance(instance.bendpoints, str)
-
-
-@given(instance=highlevelnets::npndiagrams::NPNSymbolArcSN_strategy)
-def test_highlevelnets::npndiagrams::npnsymbolarcsn_bendpoints_setter(instance):
-    original = instance.bendpoints
-    instance.bendpoints = original
-    assert instance.bendpoints == original
-
-@given(instance=highlevelnets::npndiagrams::NPNSymbolNodeSN_strategy)
-@settings(max_examples=50)
-def test_highlevelnets::npndiagrams::npnsymbolnodesn_instantiation(instance):
-    assert isinstance(instance, highlevelnets::npndiagrams::NPNSymbolNodeSN)
-
-@given(instance=highlevelnets::npndiagrams::NPNSymbolNodeSN_strategy)
-def test_highlevelnets::npndiagrams::npnsymbolnodesn_constraints_type(instance):
-    assert isinstance(instance.constraints, str)
-
-
-@given(instance=highlevelnets::npndiagrams::NPNSymbolNodeSN_strategy)
-def test_highlevelnets::npndiagrams::npnsymbolnodesn_constraints_setter(instance):
+@given(instance=highlevelnets_npndiagrams_NPNSymbolNodeSN_strategy)
+def test_highlevelnets_npndiagrams_npnsymbolnodesn_constraints_setter(instance):
     original = instance.constraints
     instance.constraints = original
     assert instance.constraints == original
 
-@given(instance=highlevelnets::tokenexpressions::TokenMultiSet_strategy)
+@given(instance=highlevelnets_common_INetElement_strategy)
 @settings(max_examples=50)
-def test_highlevelnets::tokenexpressions::tokenmultiset_instantiation(instance):
-    assert isinstance(instance, highlevelnets::tokenexpressions::TokenMultiSet)
+def test_highlevelnets_common_inetelement_instantiation(instance):
+    assert isinstance(instance, highlevelnets_common_INetElement)
 
-@given(instance=highlevelnets::tokenexpressions::TokenExpressionBinding_strategy)
-@settings(max_examples=50)
-def test_highlevelnets::tokenexpressions::tokenexpressionbinding_instantiation(instance):
-    assert isinstance(instance, highlevelnets::tokenexpressions::TokenExpressionBinding)
 
-@given(instance=highlevelnets::tokenexpressions::TokenMultisetExpression_strategy)
-@settings(max_examples=50)
-def test_highlevelnets::tokenexpressions::tokenmultisetexpression_instantiation(instance):
-    assert isinstance(instance, highlevelnets::tokenexpressions::TokenMultisetExpression)
 
-@given(instance=highlevelnets::hlpn::ContextVariable_strategy)
-@settings(max_examples=50)
-def test_highlevelnets::hlpn::contextvariable_instantiation(instance):
-    assert isinstance(instance, highlevelnets::hlpn::ContextVariable)
+@given(instance=highlevelnets_common_INetElement_strategy)
+def test_highlevelnets_common_inetelement_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
 
-@given(instance=highlevelnets::marking::PlaceMarking_strategy)
+
+
+@given(instance=highlevelnets_common_INetElement_strategy)
+def test_highlevelnets_common_inetelement_comment_setter(instance):
+    original = instance.comment
+    instance.comment = original
+    assert instance.comment == original
+
+@given(instance=highlevelnets_tokenexpressions_Monom_strategy)
 @settings(max_examples=50)
-def test_highlevelnets::marking::placemarking_instantiation(instance):
-    assert isinstance(instance, highlevelnets::marking::PlaceMarking)
+def test_highlevelnets_tokenexpressions_monom_instantiation(instance):
+    assert isinstance(instance, highlevelnets_tokenexpressions_Monom)
+
+
+
+@given(instance=highlevelnets_tokenexpressions_Monom_strategy)
+def test_highlevelnets_tokenexpressions_monom_power_setter(instance):
+    original = instance.power
+    instance.power = original
+    assert instance.power == original
+
+@given(instance=highlevelnets_tokentypes_TokenAttribute_strategy)
+@settings(max_examples=50)
+def test_highlevelnets_tokentypes_tokenattribute_instantiation(instance):
+    assert isinstance(instance, highlevelnets_tokentypes_TokenAttribute)
+
+
+
+@given(instance=highlevelnets_tokentypes_TokenAttribute_strategy)
+def test_highlevelnets_tokentypes_tokenattribute_value_setter(instance):
+    original = instance.value
+    instance.value = original
+    assert instance.value == original
+
+
+
+@given(instance=highlevelnets_tokentypes_TokenAttribute_strategy)
+def test_highlevelnets_tokentypes_tokenattribute_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+
+
+@given(instance=highlevelnets_tokentypes_TokenAttribute_strategy)
+def test_highlevelnets_tokentypes_tokenattribute_type_setter(instance):
+    original = instance.type
+    instance.type = original
+    assert instance.type == original
+
+@given(instance=highlevelnets_tokenexpressions_TokenMultisetExpression_strategy)
+@settings(max_examples=50)
+def test_highlevelnets_tokenexpressions_tokenmultisetexpression_instantiation(instance):
+    assert isinstance(instance, highlevelnets_tokenexpressions_TokenMultisetExpression)
+
+@given(instance=highlevelnets_tokenexpressions_TokenWeight_strategy)
+@settings(max_examples=50)
+def test_highlevelnets_tokenexpressions_tokenweight_instantiation(instance):
+    assert isinstance(instance, highlevelnets_tokenexpressions_TokenWeight)
+
+
+
+@given(instance=highlevelnets_tokenexpressions_TokenWeight_strategy)
+def test_highlevelnets_tokenexpressions_tokenweight_weight_setter(instance):
+    original = instance.weight
+    instance.weight = original
+    assert instance.weight == original
+
+@given(instance=highlevelnets_tokenexpressions_MonomConstant_strategy)
+@settings(max_examples=50)
+def test_highlevelnets_tokenexpressions_monomconstant_instantiation(instance):
+    assert isinstance(instance, highlevelnets_tokenexpressions_MonomConstant)
+
+
+
+@given(instance=highlevelnets_tokenexpressions_MonomConstant_strategy)
+def test_highlevelnets_tokenexpressions_monomconstant_power_setter(instance):
+    original = instance.power
+    instance.power = original
+    assert instance.power == original
+
+@given(instance=highlevelnets_tokenexpressions_TokenBinding_strategy)
+@settings(max_examples=50)
+def test_highlevelnets_tokenexpressions_tokenbinding_instantiation(instance):
+    assert isinstance(instance, highlevelnets_tokenexpressions_TokenBinding)
+
+@given(instance=highlevelnets_tokenexpressions_TokenMultiSet_strategy)
+@settings(max_examples=50)
+def test_highlevelnets_tokenexpressions_tokenmultiset_instantiation(instance):
+    assert isinstance(instance, highlevelnets_tokenexpressions_TokenMultiSet)
+
+@given(instance=highlevelnets_npndiagrams_NPNSymbolArcSN_strategy)
+@settings(max_examples=50)
+def test_highlevelnets_npndiagrams_npnsymbolarcsn_instantiation(instance):
+    assert isinstance(instance, highlevelnets_npndiagrams_NPNSymbolArcSN)
+
+
+
+@given(instance=highlevelnets_npndiagrams_NPNSymbolArcSN_strategy)
+def test_highlevelnets_npndiagrams_npnsymbolarcsn_bendpoints_setter(instance):
+    original = instance.bendpoints
+    instance.bendpoints = original
+    assert instance.bendpoints == original
+
+@given(instance=highlevelnets_tokenexpressions_Variable_strategy)
+@settings(max_examples=50)
+def test_highlevelnets_tokenexpressions_variable_instantiation(instance):
+    assert isinstance(instance, highlevelnets_tokenexpressions_Variable)
+
+
+
+@given(instance=highlevelnets_tokenexpressions_Variable_strategy)
+def test_highlevelnets_tokenexpressions_variable_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+@given(instance=highlevelnets_marking_PlaceMarking_strategy)
+@settings(max_examples=50)
+def test_highlevelnets_marking_placemarking_instantiation(instance):
+    assert isinstance(instance, highlevelnets_marking_PlaceMarking)

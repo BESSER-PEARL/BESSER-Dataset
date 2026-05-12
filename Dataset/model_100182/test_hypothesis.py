@@ -3,187 +3,187 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     BlankNode,
-    sparql::ANON,
-    sparql::BLANK::NODE::LABEL,
+    sparql_ANON,
+    sparql_BLANK_NODE_LABEL,
     AscOrDecs,
-    sparql::DescendingLiteral,
-    sparql::AscendingLiteral,
+    sparql_DescendingLiteral,
+    sparql_AscendingLiteral,
     StringLiteral,
-    sparql::STRING::LITERAL2,
-    sparql::STRING::LITERAL::LONG2,
-    sparql::STRING::LITERAL::LONG1,
-    sparql::STRING::LITERAL1,
-    sparql::VAR2,
-    sparql::VAR1,
+    sparql_STRING_LITERAL_LONG1,
+    sparql_STRING_LITERAL_LONG2,
+    sparql_STRING_LITERAL2,
+    sparql_STRING_LITERAL1,
+    sparql_VAR2,
+    sparql_VAR1,
     BooleanLiteral,
-    sparql::FalseBooleanLiteralNE,
-    sparql::TrueBooleanLiteralNE,
+    sparql_FalseBooleanLiteralNE,
+    sparql_TrueBooleanLiteralNE,
     PrefixedName,
-    sparql::StringLiteral,
+    sparql_StringLiteral,
     LANGTAGOrIRIrefNE,
-    sparql::LANGTAG,
-    sparql::UpIRIrefNE,
+    sparql_LANGTAG,
+    sparql_UpIRIrefNE,
     AdditionalUnaryExpressionNE,
-    sparql::TimesAdditionalUnaryExpressionNE,
+    sparql_TimesAdditionalUnaryExpressionNE,
     NumericLiteral,
-    sparql::NumericLiteralUnsigned,
-    sparql::DOUBLE,
-    sparql::DECIMAL,
+    sparql_DOUBLE,
+    sparql_DECIMAL,
+    sparql_NumericLiteralUnsigned,
     AdditionalMultiplicativeExpressionNE,
-    sparql::NumericLiteralNegative,
-    sparql::NumericLiteralPositive,
-    sparql::MinusMultiplicativeExpressionNE,
-    sparql::PlusMultiplicativeExpressionNE,
+    sparql_MinusMultiplicativeExpressionNE,
+    sparql_NumericLiteralNegative,
+    sparql_NumericLiteralPositive,
+    sparql_PlusMultiplicativeExpressionNE,
     UnaryExpression,
-    sparql::PlusPrimaryExpressionNE,
-    sparql::PrimaryExpression,
-    sparql::MinusPrimaryExpressionNE,
-    sparql::NotPrimaryExpressionNE,
-    sparql::DividedByAdditionalUnaryExpressionNE,
+    sparql_PrimaryExpression,
+    sparql_MinusPrimaryExpressionNE,
+    sparql_PlusPrimaryExpressionNE,
+    sparql_NotPrimaryExpressionNE,
+    sparql_DividedByAdditionalUnaryExpressionNE,
     AdditionalNumericExpressionNE,
-    sparql::BiggerOrEqualNumericExpressionNE,
-    sparql::NotEqualNumericExpressionNE,
-    sparql::BiggerNumericExpressionNE,
-    sparql::SmallerOrEqualNumericExpressionNE,
-    sparql::SmallerNumericExpressionNE,
-    sparql::EqualsNumericExpressionNE,
+    sparql_SmallerOrEqualNumericExpressionNE,
+    sparql_BiggerNumericExpressionNE,
+    sparql_SmallerNumericExpressionNE,
+    sparql_BiggerOrEqualNumericExpressionNE,
+    sparql_NotEqualNumericExpressionNE,
+    sparql_EqualsNumericExpressionNE,
     ArgList,
-    sparql::ArgListExpressionNE,
-    sparql::ArgListNILNE,
-    sparql::AscOrDecs,
-    OrderCondition,
-    sparql::OrderConditionLeftNE,
-    Query,
-    sparql::DescribeQuery,
-    sparql::ConstructQuery,
-    sparql::AskQuery,
-    sparql::SelectQuery,
-    sparql::LocatedElement,
-    LocatedElement,
-    sparql::UnaryExpression,
-    sparql::WS,
-    sparql::AdditiveExpression,
-    sparql::AdditionalUnaryExpressionNE,
-    sparql::Prologue,
-    sparql::AdditionalValueLogicalNE,
-    sparql::LimitOffsetClauses,
-    sparql::MultiplicativeExpression,
-    sparql::WhereClause,
-    sparql::RelationalExpression,
-    sparql::SolutionsDisplayNE,
-    sparql::AdditionalNumericExpressionNE,
-    sparql::Query,
-    sparql::ConstructTemplate,
-    sparql::NumericExpression,
-    sparql::PN::PREFIX,
-    sparql::OrderCondition,
-    sparql::SolutionModifier,
-    sparql::AdditionalConditionalAndExpressionNE,
-    sparql::DatasetClause,
-    sparql::BaseDecl,
-    sparql::VARNAME,
-    sparql::AdditionalMultiplicativeExpressionNE,
-    sparql::PN::LOCAL,
-    sparql::ValueLogical,
-    sparql::LANGTAGOrIRIrefNE,
-    sparql::ConditionalAndExpression,
-    sparql::PrefixDecl,
-    sparql::SparqlQueries,
-    sparql::ConditionalOrExpression,
-    sparql::ArgList,
-    sparql::AdditionalExpressionNE,
+    sparql_ArgListExpressionNE,
+    sparql_ArgListNILNE,
     BuiltInCall,
-    sparql::IsURIBuiltInCallNE,
-    sparql::IsLiteralBuiltInCallNE,
-    sparql::RegexExpression,
-    sparql::DatatypeBuiltInCallNE,
-    sparql::LangmatchesBuiltInCallNE,
-    sparql::IsIRIBuiltInCallNE,
-    sparql::IsBlankBuiltInCallNE,
-    sparql::LangBuiltInCallNE,
-    sparql::StrBuiltInCallNE,
-    sparql::Expression,
+    sparql_IsBlankBuiltInCallNE,
+    sparql_RegexExpression,
+    sparql_LangmatchesBuiltInCallNE,
+    sparql_IsURIBuiltInCallNE,
+    sparql_LangBuiltInCallNE,
+    sparql_DatatypeBuiltInCallNE,
+    sparql_IsLiteralBuiltInCallNE,
+    sparql_IsIRIBuiltInCallNE,
+    sparql_StrBuiltInCallNE,
     Constraint,
-    sparql::FunctionCall,
-    sparql::SameTermBuiltInCallNE,
-    sparql::BoundBuiltInCallNE,
+    sparql_FunctionCall,
+    sparql_SameTermBuiltInCallNE,
+    sparql_BoundBuiltInCallNE,
     TriplesNode,
-    sparql::BlankNodePropertyList,
-    sparql::Collection,
-    sparql::GraphNode,
-    sparql::Object,
-    sparql::ObjectList,
-    sparql::Verb,
+    sparql_BlankNodePropertyList,
+    sparql_Collection,
     GraphNode,
-    sparql::PropertyListNotEmpty,
-    sparql::PatternOrFilterNE,
-    sparql::VarOrTerm,
+    sparql_PatternOrFilterNE,
+    sparql_VarOrTerm,
     TriplesSameSubject,
-    sparql::TriplesSameSubjectLeftNE,
-    sparql::AdditionalGGPElement,
-    sparql::TriplesBlock,
+    sparql_TriplesSameSubjectLeftNE,
+    sparql_TriplesBlock,
     GraphPatternNotTriples,
-    sparql::GraphGraphPattern,
-    sparql::GroupOrUnionGraphPattern,
-    sparql::OptionalGraphPattern,
+    sparql_GraphGraphPattern,
+    sparql_GroupOrUnionGraphPattern,
+    sparql_OptionalGraphPattern,
     PatternOrFilterNE,
-    sparql::Filter,
-    sparql::GraphPatternNotTriples,
-    sparql::TriplesNode,
-    sparql::TriplesSameSubjectRightNE,
+    sparql_Filter,
+    sparql_GraphPatternNotTriples,
+    sparql_TriplesNode,
+    sparql_TriplesSameSubjectRightNE,
     IRIreference,
-    sparql::PrefixedName,
+    sparql_PrefixedName,
     SourceSelector,
     GraphTerm,
-    sparql::BlankNode,
-    sparql::NotInList,
-    sparql::GroupGraphPattern,
-    sparql::WhereLiteral,
-    sparql::SourceSelector,
+    sparql_BlankNode,
+    sparql_NotInList,
+    sparql_WhereLiteral,
     GraphClauseNE,
-    sparql::NamedGraphClause,
-    sparql::DefaultGraphClause,
-    sparql::GraphClauseNE,
+    sparql_NamedGraphClause,
+    sparql_DefaultGraphClause,
     OrderConditionRightNE,
-    sparql::Constraint,
+    sparql_Constraint,
     VarOrTerm,
-    sparql::GraphTerm,
+    sparql_GraphTerm,
     PrimaryExpression,
-    sparql::RDFLiteral,
-    sparql::BuiltInCall,
-    sparql::BrackettedExpression,
-    sparql::NumericLiteral,
-    sparql::BooleanLiteral,
-    sparql::IRIrefOrFunction,
+    sparql_RDFLiteral,
+    sparql_BuiltInCall,
+    sparql_IRIrefOrFunction,
+    sparql_NumericLiteral,
+    sparql_BooleanLiteral,
     VarOrIRIref,
-    sparql::PNAME::LN,
-    sparql::IRIreference,
-    sparql::IRI::REF,
-    sparql::Var,
-    sparql::PNAME::NS,
+    sparql_PNAME_LN,
+    sparql_IRIreference,
     Verb,
-    sparql::VerbANE,
-    sparql::VarOrIRIref,
+    sparql_VerbANE,
     VariablesNE,
-    sparql::SomeVariablesNE,
-    sparql::AllVariablesNE,
-    sparql::VariablesNE,
+    sparql_SomeVariablesNE,
+    sparql_AllVariablesNE,
     SolutionsDisplayNE,
-    sparql::ReducedNE,
-    sparql::DistinctNE,
-    sparql::INTEGER,
-    sparql::OrderClause,
-    sparql::TriplesSameSubject,
-    sparql::OffsetClause,
-    sparql::LimitClause,
+    sparql_ReducedNE,
+    sparql_DistinctNE,
+    sparql_INTEGER,
     LimitOffsetClauses,
-    sparql::LimitOffsetClausesRightNE,
-    sparql::LimitOffsetClausesLeftNE,
-    sparql::OrderConditionRightNE,
+    sparql_LimitOffsetClausesRightNE,
+    sparql_LimitOffsetClausesLeftNE,
+    sparql_BrackettedExpression,
+    sparql_AscOrDecs,
+    OrderCondition,
+    sparql_OrderConditionRightNE,
+    sparql_OrderConditionLeftNE,
+    sparql_VarOrIRIref,
+    Query,
+    sparql_AskQuery,
+    sparql_DescribeQuery,
+    sparql_ConstructQuery,
+    sparql_SelectQuery,
+    sparql_PNAME_NS,
+    sparql_Var,
+    sparql_LocatedElement,
+    sparql_IRI_REF,
+    LocatedElement,
+    sparql_OffsetClause,
+    sparql_TriplesSameSubject,
+    sparql_PropertyListNotEmpty,
+    sparql_OrderCondition,
+    sparql_WS,
+    sparql_AdditionalNumericExpressionNE,
+    sparql_Object,
+    sparql_AdditionalExpressionNE,
+    sparql_AdditiveExpression,
+    sparql_VariablesNE,
+    sparql_Prologue,
+    sparql_PrefixDecl,
+    sparql_AdditionalConditionalAndExpressionNE,
+    sparql_ArgList,
+    sparql_Query,
+    sparql_LANGTAGOrIRIrefNE,
+    sparql_WhereClause,
+    sparql_OrderClause,
+    sparql_VARNAME,
+    sparql_NumericExpression,
+    sparql_DatasetClause,
+    sparql_PN_LOCAL,
+    sparql_AdditionalMultiplicativeExpressionNE,
+    sparql_LimitOffsetClauses,
+    sparql_PN_PREFIX,
+    sparql_AdditionalUnaryExpressionNE,
+    sparql_UnaryExpression,
+    sparql_SolutionsDisplayNE,
+    sparql_LimitClause,
+    sparql_BaseDecl,
+    sparql_ValueLogical,
+    sparql_ObjectList,
+    sparql_GraphClauseNE,
+    sparql_Expression,
+    sparql_SolutionModifier,
+    sparql_GraphNode,
+    sparql_AdditionalGGPElement,
+    sparql_RelationalExpression,
+    sparql_ConditionalAndExpression,
+    sparql_ConstructTemplate,
+    sparql_MultiplicativeExpression,
+    sparql_SourceSelector,
+    sparql_AdditionalValueLogicalNE,
+    sparql_GroupGraphPattern,
+    sparql_ConditionalOrExpression,
+    sparql_Verb,
+    sparql_SparqlQueries,
 )
 
 # =============================================================================
@@ -206,37 +206,37 @@ def test_blanknode_constructor_args():
 
 
 
-def test_sparql::anon_is_not_abstract():
-    assert not inspect.isabstract(sparql::ANON)
+def test_sparql_anon_is_not_abstract():
+    assert not inspect.isabstract(sparql_ANON)
 
 
-def test_sparql::anon_constructor_exists():
-    assert callable(sparql::ANON.__init__)
+def test_sparql_anon_constructor_exists():
+    assert callable(sparql_ANON.__init__)
 
 
-def test_sparql::anon_constructor_args():
-    sig = inspect.signature(sparql::ANON.__init__)
+def test_sparql_anon_constructor_args():
+    sig = inspect.signature(sparql_ANON.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sparql::blank::node::label_is_not_abstract():
-    assert not inspect.isabstract(sparql::BLANK::NODE::LABEL)
+def test_sparql_blank_node_label_is_not_abstract():
+    assert not inspect.isabstract(sparql_BLANK_NODE_LABEL)
 
 
-def test_sparql::blank::node::label_constructor_exists():
-    assert callable(sparql::BLANK::NODE::LABEL.__init__)
+def test_sparql_blank_node_label_constructor_exists():
+    assert callable(sparql_BLANK_NODE_LABEL.__init__)
 
 
-def test_sparql::blank::node::label_constructor_args():
-    sig = inspect.signature(sparql::BLANK::NODE::LABEL.__init__)
+def test_sparql_blank_node_label_constructor_args():
+    sig = inspect.signature(sparql_BLANK_NODE_LABEL.__init__)
     params = list(sig.parameters.keys())
     assert "pn_local" in params, "Missing parameter 'pn_local'"
 
-def test_sparql::blank::node::label_has_pn_local():
-    assert hasattr(sparql::BLANK::NODE::LABEL, "pn_local")
+def test_sparql_blank_node_label_has_pn_local():
+    assert hasattr(sparql_BLANK_NODE_LABEL, "pn_local")
     descriptor = None
-    for klass in sparql::BLANK::NODE::LABEL.__mro__:
+    for klass in sparql_BLANK_NODE_LABEL.__mro__:
         if "pn_local" in klass.__dict__:
             descriptor = klass.__dict__["pn_local"]
             break
@@ -258,30 +258,30 @@ def test_ascordecs_constructor_args():
 
 
 
-def test_sparql::descendingliteral_is_not_abstract():
-    assert not inspect.isabstract(sparql::DescendingLiteral)
+def test_sparql_descendingliteral_is_not_abstract():
+    assert not inspect.isabstract(sparql_DescendingLiteral)
 
 
-def test_sparql::descendingliteral_constructor_exists():
-    assert callable(sparql::DescendingLiteral.__init__)
+def test_sparql_descendingliteral_constructor_exists():
+    assert callable(sparql_DescendingLiteral.__init__)
 
 
-def test_sparql::descendingliteral_constructor_args():
-    sig = inspect.signature(sparql::DescendingLiteral.__init__)
+def test_sparql_descendingliteral_constructor_args():
+    sig = inspect.signature(sparql_DescendingLiteral.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sparql::ascendingliteral_is_not_abstract():
-    assert not inspect.isabstract(sparql::AscendingLiteral)
+def test_sparql_ascendingliteral_is_not_abstract():
+    assert not inspect.isabstract(sparql_AscendingLiteral)
 
 
-def test_sparql::ascendingliteral_constructor_exists():
-    assert callable(sparql::AscendingLiteral.__init__)
+def test_sparql_ascendingliteral_constructor_exists():
+    assert callable(sparql_AscendingLiteral.__init__)
 
 
-def test_sparql::ascendingliteral_constructor_args():
-    sig = inspect.signature(sparql::AscendingLiteral.__init__)
+def test_sparql_ascendingliteral_constructor_args():
+    sig = inspect.signature(sparql_AscendingLiteral.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -300,23 +300,23 @@ def test_stringliteral_constructor_args():
 
 
 
-def test_sparql::string::literal2_is_not_abstract():
-    assert not inspect.isabstract(sparql::STRING::LITERAL2)
+def test_sparql_string_literal_long1_is_not_abstract():
+    assert not inspect.isabstract(sparql_STRING_LITERAL_LONG1)
 
 
-def test_sparql::string::literal2_constructor_exists():
-    assert callable(sparql::STRING::LITERAL2.__init__)
+def test_sparql_string_literal_long1_constructor_exists():
+    assert callable(sparql_STRING_LITERAL_LONG1.__init__)
 
 
-def test_sparql::string::literal2_constructor_args():
-    sig = inspect.signature(sparql::STRING::LITERAL2.__init__)
+def test_sparql_string_literal_long1_constructor_args():
+    sig = inspect.signature(sparql_STRING_LITERAL_LONG1.__init__)
     params = list(sig.parameters.keys())
     assert "string" in params, "Missing parameter 'string'"
 
-def test_sparql::string::literal2_has_string():
-    assert hasattr(sparql::STRING::LITERAL2, "string")
+def test_sparql_string_literal_long1_has_string():
+    assert hasattr(sparql_STRING_LITERAL_LONG1, "string")
     descriptor = None
-    for klass in sparql::STRING::LITERAL2.__mro__:
+    for klass in sparql_STRING_LITERAL_LONG1.__mro__:
         if "string" in klass.__dict__:
             descriptor = klass.__dict__["string"]
             break
@@ -324,23 +324,23 @@ def test_sparql::string::literal2_has_string():
 
 
 
-def test_sparql::string::literal::long2_is_not_abstract():
-    assert not inspect.isabstract(sparql::STRING::LITERAL::LONG2)
+def test_sparql_string_literal_long2_is_not_abstract():
+    assert not inspect.isabstract(sparql_STRING_LITERAL_LONG2)
 
 
-def test_sparql::string::literal::long2_constructor_exists():
-    assert callable(sparql::STRING::LITERAL::LONG2.__init__)
+def test_sparql_string_literal_long2_constructor_exists():
+    assert callable(sparql_STRING_LITERAL_LONG2.__init__)
 
 
-def test_sparql::string::literal::long2_constructor_args():
-    sig = inspect.signature(sparql::STRING::LITERAL::LONG2.__init__)
+def test_sparql_string_literal_long2_constructor_args():
+    sig = inspect.signature(sparql_STRING_LITERAL_LONG2.__init__)
     params = list(sig.parameters.keys())
     assert "string" in params, "Missing parameter 'string'"
 
-def test_sparql::string::literal::long2_has_string():
-    assert hasattr(sparql::STRING::LITERAL::LONG2, "string")
+def test_sparql_string_literal_long2_has_string():
+    assert hasattr(sparql_STRING_LITERAL_LONG2, "string")
     descriptor = None
-    for klass in sparql::STRING::LITERAL::LONG2.__mro__:
+    for klass in sparql_STRING_LITERAL_LONG2.__mro__:
         if "string" in klass.__dict__:
             descriptor = klass.__dict__["string"]
             break
@@ -348,23 +348,23 @@ def test_sparql::string::literal::long2_has_string():
 
 
 
-def test_sparql::string::literal::long1_is_not_abstract():
-    assert not inspect.isabstract(sparql::STRING::LITERAL::LONG1)
+def test_sparql_string_literal2_is_not_abstract():
+    assert not inspect.isabstract(sparql_STRING_LITERAL2)
 
 
-def test_sparql::string::literal::long1_constructor_exists():
-    assert callable(sparql::STRING::LITERAL::LONG1.__init__)
+def test_sparql_string_literal2_constructor_exists():
+    assert callable(sparql_STRING_LITERAL2.__init__)
 
 
-def test_sparql::string::literal::long1_constructor_args():
-    sig = inspect.signature(sparql::STRING::LITERAL::LONG1.__init__)
+def test_sparql_string_literal2_constructor_args():
+    sig = inspect.signature(sparql_STRING_LITERAL2.__init__)
     params = list(sig.parameters.keys())
     assert "string" in params, "Missing parameter 'string'"
 
-def test_sparql::string::literal::long1_has_string():
-    assert hasattr(sparql::STRING::LITERAL::LONG1, "string")
+def test_sparql_string_literal2_has_string():
+    assert hasattr(sparql_STRING_LITERAL2, "string")
     descriptor = None
-    for klass in sparql::STRING::LITERAL::LONG1.__mro__:
+    for klass in sparql_STRING_LITERAL2.__mro__:
         if "string" in klass.__dict__:
             descriptor = klass.__dict__["string"]
             break
@@ -372,23 +372,23 @@ def test_sparql::string::literal::long1_has_string():
 
 
 
-def test_sparql::string::literal1_is_not_abstract():
-    assert not inspect.isabstract(sparql::STRING::LITERAL1)
+def test_sparql_string_literal1_is_not_abstract():
+    assert not inspect.isabstract(sparql_STRING_LITERAL1)
 
 
-def test_sparql::string::literal1_constructor_exists():
-    assert callable(sparql::STRING::LITERAL1.__init__)
+def test_sparql_string_literal1_constructor_exists():
+    assert callable(sparql_STRING_LITERAL1.__init__)
 
 
-def test_sparql::string::literal1_constructor_args():
-    sig = inspect.signature(sparql::STRING::LITERAL1.__init__)
+def test_sparql_string_literal1_constructor_args():
+    sig = inspect.signature(sparql_STRING_LITERAL1.__init__)
     params = list(sig.parameters.keys())
     assert "string" in params, "Missing parameter 'string'"
 
-def test_sparql::string::literal1_has_string():
-    assert hasattr(sparql::STRING::LITERAL1, "string")
+def test_sparql_string_literal1_has_string():
+    assert hasattr(sparql_STRING_LITERAL1, "string")
     descriptor = None
-    for klass in sparql::STRING::LITERAL1.__mro__:
+    for klass in sparql_STRING_LITERAL1.__mro__:
         if "string" in klass.__dict__:
             descriptor = klass.__dict__["string"]
             break
@@ -396,30 +396,30 @@ def test_sparql::string::literal1_has_string():
 
 
 
-def test_sparql::var2_is_not_abstract():
-    assert not inspect.isabstract(sparql::VAR2)
+def test_sparql_var2_is_not_abstract():
+    assert not inspect.isabstract(sparql_VAR2)
 
 
-def test_sparql::var2_constructor_exists():
-    assert callable(sparql::VAR2.__init__)
+def test_sparql_var2_constructor_exists():
+    assert callable(sparql_VAR2.__init__)
 
 
-def test_sparql::var2_constructor_args():
-    sig = inspect.signature(sparql::VAR2.__init__)
+def test_sparql_var2_constructor_args():
+    sig = inspect.signature(sparql_VAR2.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sparql::var1_is_not_abstract():
-    assert not inspect.isabstract(sparql::VAR1)
+def test_sparql_var1_is_not_abstract():
+    assert not inspect.isabstract(sparql_VAR1)
 
 
-def test_sparql::var1_constructor_exists():
-    assert callable(sparql::VAR1.__init__)
+def test_sparql_var1_constructor_exists():
+    assert callable(sparql_VAR1.__init__)
 
 
-def test_sparql::var1_constructor_args():
-    sig = inspect.signature(sparql::VAR1.__init__)
+def test_sparql_var1_constructor_args():
+    sig = inspect.signature(sparql_VAR1.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -438,30 +438,30 @@ def test_booleanliteral_constructor_args():
 
 
 
-def test_sparql::falsebooleanliteralne_is_not_abstract():
-    assert not inspect.isabstract(sparql::FalseBooleanLiteralNE)
+def test_sparql_falsebooleanliteralne_is_not_abstract():
+    assert not inspect.isabstract(sparql_FalseBooleanLiteralNE)
 
 
-def test_sparql::falsebooleanliteralne_constructor_exists():
-    assert callable(sparql::FalseBooleanLiteralNE.__init__)
+def test_sparql_falsebooleanliteralne_constructor_exists():
+    assert callable(sparql_FalseBooleanLiteralNE.__init__)
 
 
-def test_sparql::falsebooleanliteralne_constructor_args():
-    sig = inspect.signature(sparql::FalseBooleanLiteralNE.__init__)
+def test_sparql_falsebooleanliteralne_constructor_args():
+    sig = inspect.signature(sparql_FalseBooleanLiteralNE.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sparql::truebooleanliteralne_is_not_abstract():
-    assert not inspect.isabstract(sparql::TrueBooleanLiteralNE)
+def test_sparql_truebooleanliteralne_is_not_abstract():
+    assert not inspect.isabstract(sparql_TrueBooleanLiteralNE)
 
 
-def test_sparql::truebooleanliteralne_constructor_exists():
-    assert callable(sparql::TrueBooleanLiteralNE.__init__)
+def test_sparql_truebooleanliteralne_constructor_exists():
+    assert callable(sparql_TrueBooleanLiteralNE.__init__)
 
 
-def test_sparql::truebooleanliteralne_constructor_args():
-    sig = inspect.signature(sparql::TrueBooleanLiteralNE.__init__)
+def test_sparql_truebooleanliteralne_constructor_args():
+    sig = inspect.signature(sparql_TrueBooleanLiteralNE.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -480,16 +480,16 @@ def test_prefixedname_constructor_args():
 
 
 
-def test_sparql::stringliteral_is_not_abstract():
-    assert not inspect.isabstract(sparql::StringLiteral)
+def test_sparql_stringliteral_is_not_abstract():
+    assert not inspect.isabstract(sparql_StringLiteral)
 
 
-def test_sparql::stringliteral_constructor_exists():
-    assert callable(sparql::StringLiteral.__init__)
+def test_sparql_stringliteral_constructor_exists():
+    assert callable(sparql_StringLiteral.__init__)
 
 
-def test_sparql::stringliteral_constructor_args():
-    sig = inspect.signature(sparql::StringLiteral.__init__)
+def test_sparql_stringliteral_constructor_args():
+    sig = inspect.signature(sparql_StringLiteral.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -508,23 +508,23 @@ def test_langtagoririrefne_constructor_args():
 
 
 
-def test_sparql::langtag_is_not_abstract():
-    assert not inspect.isabstract(sparql::LANGTAG)
+def test_sparql_langtag_is_not_abstract():
+    assert not inspect.isabstract(sparql_LANGTAG)
 
 
-def test_sparql::langtag_constructor_exists():
-    assert callable(sparql::LANGTAG.__init__)
+def test_sparql_langtag_constructor_exists():
+    assert callable(sparql_LANGTAG.__init__)
 
 
-def test_sparql::langtag_constructor_args():
-    sig = inspect.signature(sparql::LANGTAG.__init__)
+def test_sparql_langtag_constructor_args():
+    sig = inspect.signature(sparql_LANGTAG.__init__)
     params = list(sig.parameters.keys())
     assert "langtag" in params, "Missing parameter 'langtag'"
 
-def test_sparql::langtag_has_langtag():
-    assert hasattr(sparql::LANGTAG, "langtag")
+def test_sparql_langtag_has_langtag():
+    assert hasattr(sparql_LANGTAG, "langtag")
     descriptor = None
-    for klass in sparql::LANGTAG.__mro__:
+    for klass in sparql_LANGTAG.__mro__:
         if "langtag" in klass.__dict__:
             descriptor = klass.__dict__["langtag"]
             break
@@ -532,16 +532,16 @@ def test_sparql::langtag_has_langtag():
 
 
 
-def test_sparql::upirirefne_is_not_abstract():
-    assert not inspect.isabstract(sparql::UpIRIrefNE)
+def test_sparql_upirirefne_is_not_abstract():
+    assert not inspect.isabstract(sparql_UpIRIrefNE)
 
 
-def test_sparql::upirirefne_constructor_exists():
-    assert callable(sparql::UpIRIrefNE.__init__)
+def test_sparql_upirirefne_constructor_exists():
+    assert callable(sparql_UpIRIrefNE.__init__)
 
 
-def test_sparql::upirirefne_constructor_args():
-    sig = inspect.signature(sparql::UpIRIrefNE.__init__)
+def test_sparql_upirirefne_constructor_args():
+    sig = inspect.signature(sparql_UpIRIrefNE.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -560,16 +560,16 @@ def test_additionalunaryexpressionne_constructor_args():
 
 
 
-def test_sparql::timesadditionalunaryexpressionne_is_not_abstract():
-    assert not inspect.isabstract(sparql::TimesAdditionalUnaryExpressionNE)
+def test_sparql_timesadditionalunaryexpressionne_is_not_abstract():
+    assert not inspect.isabstract(sparql_TimesAdditionalUnaryExpressionNE)
 
 
-def test_sparql::timesadditionalunaryexpressionne_constructor_exists():
-    assert callable(sparql::TimesAdditionalUnaryExpressionNE.__init__)
+def test_sparql_timesadditionalunaryexpressionne_constructor_exists():
+    assert callable(sparql_TimesAdditionalUnaryExpressionNE.__init__)
 
 
-def test_sparql::timesadditionalunaryexpressionne_constructor_args():
-    sig = inspect.signature(sparql::TimesAdditionalUnaryExpressionNE.__init__)
+def test_sparql_timesadditionalunaryexpressionne_constructor_args():
+    sig = inspect.signature(sparql_TimesAdditionalUnaryExpressionNE.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -588,37 +588,23 @@ def test_numericliteral_constructor_args():
 
 
 
-def test_sparql::numericliteralunsigned_is_not_abstract():
-    assert not inspect.isabstract(sparql::NumericLiteralUnsigned)
+def test_sparql_double_is_not_abstract():
+    assert not inspect.isabstract(sparql_DOUBLE)
 
 
-def test_sparql::numericliteralunsigned_constructor_exists():
-    assert callable(sparql::NumericLiteralUnsigned.__init__)
+def test_sparql_double_constructor_exists():
+    assert callable(sparql_DOUBLE.__init__)
 
 
-def test_sparql::numericliteralunsigned_constructor_args():
-    sig = inspect.signature(sparql::NumericLiteralUnsigned.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_sparql::double_is_not_abstract():
-    assert not inspect.isabstract(sparql::DOUBLE)
-
-
-def test_sparql::double_constructor_exists():
-    assert callable(sparql::DOUBLE.__init__)
-
-
-def test_sparql::double_constructor_args():
-    sig = inspect.signature(sparql::DOUBLE.__init__)
+def test_sparql_double_constructor_args():
+    sig = inspect.signature(sparql_DOUBLE.__init__)
     params = list(sig.parameters.keys())
     assert "double" in params, "Missing parameter 'double'"
 
-def test_sparql::double_has_double():
-    assert hasattr(sparql::DOUBLE, "double")
+def test_sparql_double_has_double():
+    assert hasattr(sparql_DOUBLE, "double")
     descriptor = None
-    for klass in sparql::DOUBLE.__mro__:
+    for klass in sparql_DOUBLE.__mro__:
         if "double" in klass.__dict__:
             descriptor = klass.__dict__["double"]
             break
@@ -626,27 +612,41 @@ def test_sparql::double_has_double():
 
 
 
-def test_sparql::decimal_is_not_abstract():
-    assert not inspect.isabstract(sparql::DECIMAL)
+def test_sparql_decimal_is_not_abstract():
+    assert not inspect.isabstract(sparql_DECIMAL)
 
 
-def test_sparql::decimal_constructor_exists():
-    assert callable(sparql::DECIMAL.__init__)
+def test_sparql_decimal_constructor_exists():
+    assert callable(sparql_DECIMAL.__init__)
 
 
-def test_sparql::decimal_constructor_args():
-    sig = inspect.signature(sparql::DECIMAL.__init__)
+def test_sparql_decimal_constructor_args():
+    sig = inspect.signature(sparql_DECIMAL.__init__)
     params = list(sig.parameters.keys())
     assert "decimal" in params, "Missing parameter 'decimal'"
 
-def test_sparql::decimal_has_decimal():
-    assert hasattr(sparql::DECIMAL, "decimal")
+def test_sparql_decimal_has_decimal():
+    assert hasattr(sparql_DECIMAL, "decimal")
     descriptor = None
-    for klass in sparql::DECIMAL.__mro__:
+    for klass in sparql_DECIMAL.__mro__:
         if "decimal" in klass.__dict__:
             descriptor = klass.__dict__["decimal"]
             break
     assert isinstance(descriptor, property)
+
+
+
+def test_sparql_numericliteralunsigned_is_not_abstract():
+    assert not inspect.isabstract(sparql_NumericLiteralUnsigned)
+
+
+def test_sparql_numericliteralunsigned_constructor_exists():
+    assert callable(sparql_NumericLiteralUnsigned.__init__)
+
+
+def test_sparql_numericliteralunsigned_constructor_args():
+    sig = inspect.signature(sparql_NumericLiteralUnsigned.__init__)
+    params = list(sig.parameters.keys())
 
 
 
@@ -664,58 +664,58 @@ def test_additionalmultiplicativeexpressionne_constructor_args():
 
 
 
-def test_sparql::numericliteralnegative_is_not_abstract():
-    assert not inspect.isabstract(sparql::NumericLiteralNegative)
+def test_sparql_minusmultiplicativeexpressionne_is_not_abstract():
+    assert not inspect.isabstract(sparql_MinusMultiplicativeExpressionNE)
 
 
-def test_sparql::numericliteralnegative_constructor_exists():
-    assert callable(sparql::NumericLiteralNegative.__init__)
+def test_sparql_minusmultiplicativeexpressionne_constructor_exists():
+    assert callable(sparql_MinusMultiplicativeExpressionNE.__init__)
 
 
-def test_sparql::numericliteralnegative_constructor_args():
-    sig = inspect.signature(sparql::NumericLiteralNegative.__init__)
+def test_sparql_minusmultiplicativeexpressionne_constructor_args():
+    sig = inspect.signature(sparql_MinusMultiplicativeExpressionNE.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sparql::numericliteralpositive_is_not_abstract():
-    assert not inspect.isabstract(sparql::NumericLiteralPositive)
+def test_sparql_numericliteralnegative_is_not_abstract():
+    assert not inspect.isabstract(sparql_NumericLiteralNegative)
 
 
-def test_sparql::numericliteralpositive_constructor_exists():
-    assert callable(sparql::NumericLiteralPositive.__init__)
+def test_sparql_numericliteralnegative_constructor_exists():
+    assert callable(sparql_NumericLiteralNegative.__init__)
 
 
-def test_sparql::numericliteralpositive_constructor_args():
-    sig = inspect.signature(sparql::NumericLiteralPositive.__init__)
+def test_sparql_numericliteralnegative_constructor_args():
+    sig = inspect.signature(sparql_NumericLiteralNegative.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sparql::minusmultiplicativeexpressionne_is_not_abstract():
-    assert not inspect.isabstract(sparql::MinusMultiplicativeExpressionNE)
+def test_sparql_numericliteralpositive_is_not_abstract():
+    assert not inspect.isabstract(sparql_NumericLiteralPositive)
 
 
-def test_sparql::minusmultiplicativeexpressionne_constructor_exists():
-    assert callable(sparql::MinusMultiplicativeExpressionNE.__init__)
+def test_sparql_numericliteralpositive_constructor_exists():
+    assert callable(sparql_NumericLiteralPositive.__init__)
 
 
-def test_sparql::minusmultiplicativeexpressionne_constructor_args():
-    sig = inspect.signature(sparql::MinusMultiplicativeExpressionNE.__init__)
+def test_sparql_numericliteralpositive_constructor_args():
+    sig = inspect.signature(sparql_NumericLiteralPositive.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sparql::plusmultiplicativeexpressionne_is_not_abstract():
-    assert not inspect.isabstract(sparql::PlusMultiplicativeExpressionNE)
+def test_sparql_plusmultiplicativeexpressionne_is_not_abstract():
+    assert not inspect.isabstract(sparql_PlusMultiplicativeExpressionNE)
 
 
-def test_sparql::plusmultiplicativeexpressionne_constructor_exists():
-    assert callable(sparql::PlusMultiplicativeExpressionNE.__init__)
+def test_sparql_plusmultiplicativeexpressionne_constructor_exists():
+    assert callable(sparql_PlusMultiplicativeExpressionNE.__init__)
 
 
-def test_sparql::plusmultiplicativeexpressionne_constructor_args():
-    sig = inspect.signature(sparql::PlusMultiplicativeExpressionNE.__init__)
+def test_sparql_plusmultiplicativeexpressionne_constructor_args():
+    sig = inspect.signature(sparql_PlusMultiplicativeExpressionNE.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -734,72 +734,72 @@ def test_unaryexpression_constructor_args():
 
 
 
-def test_sparql::plusprimaryexpressionne_is_not_abstract():
-    assert not inspect.isabstract(sparql::PlusPrimaryExpressionNE)
+def test_sparql_primaryexpression_is_not_abstract():
+    assert not inspect.isabstract(sparql_PrimaryExpression)
 
 
-def test_sparql::plusprimaryexpressionne_constructor_exists():
-    assert callable(sparql::PlusPrimaryExpressionNE.__init__)
+def test_sparql_primaryexpression_constructor_exists():
+    assert callable(sparql_PrimaryExpression.__init__)
 
 
-def test_sparql::plusprimaryexpressionne_constructor_args():
-    sig = inspect.signature(sparql::PlusPrimaryExpressionNE.__init__)
+def test_sparql_primaryexpression_constructor_args():
+    sig = inspect.signature(sparql_PrimaryExpression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sparql::primaryexpression_is_not_abstract():
-    assert not inspect.isabstract(sparql::PrimaryExpression)
+def test_sparql_minusprimaryexpressionne_is_not_abstract():
+    assert not inspect.isabstract(sparql_MinusPrimaryExpressionNE)
 
 
-def test_sparql::primaryexpression_constructor_exists():
-    assert callable(sparql::PrimaryExpression.__init__)
+def test_sparql_minusprimaryexpressionne_constructor_exists():
+    assert callable(sparql_MinusPrimaryExpressionNE.__init__)
 
 
-def test_sparql::primaryexpression_constructor_args():
-    sig = inspect.signature(sparql::PrimaryExpression.__init__)
+def test_sparql_minusprimaryexpressionne_constructor_args():
+    sig = inspect.signature(sparql_MinusPrimaryExpressionNE.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sparql::minusprimaryexpressionne_is_not_abstract():
-    assert not inspect.isabstract(sparql::MinusPrimaryExpressionNE)
+def test_sparql_plusprimaryexpressionne_is_not_abstract():
+    assert not inspect.isabstract(sparql_PlusPrimaryExpressionNE)
 
 
-def test_sparql::minusprimaryexpressionne_constructor_exists():
-    assert callable(sparql::MinusPrimaryExpressionNE.__init__)
+def test_sparql_plusprimaryexpressionne_constructor_exists():
+    assert callable(sparql_PlusPrimaryExpressionNE.__init__)
 
 
-def test_sparql::minusprimaryexpressionne_constructor_args():
-    sig = inspect.signature(sparql::MinusPrimaryExpressionNE.__init__)
+def test_sparql_plusprimaryexpressionne_constructor_args():
+    sig = inspect.signature(sparql_PlusPrimaryExpressionNE.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sparql::notprimaryexpressionne_is_not_abstract():
-    assert not inspect.isabstract(sparql::NotPrimaryExpressionNE)
+def test_sparql_notprimaryexpressionne_is_not_abstract():
+    assert not inspect.isabstract(sparql_NotPrimaryExpressionNE)
 
 
-def test_sparql::notprimaryexpressionne_constructor_exists():
-    assert callable(sparql::NotPrimaryExpressionNE.__init__)
+def test_sparql_notprimaryexpressionne_constructor_exists():
+    assert callable(sparql_NotPrimaryExpressionNE.__init__)
 
 
-def test_sparql::notprimaryexpressionne_constructor_args():
-    sig = inspect.signature(sparql::NotPrimaryExpressionNE.__init__)
+def test_sparql_notprimaryexpressionne_constructor_args():
+    sig = inspect.signature(sparql_NotPrimaryExpressionNE.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sparql::dividedbyadditionalunaryexpressionne_is_not_abstract():
-    assert not inspect.isabstract(sparql::DividedByAdditionalUnaryExpressionNE)
+def test_sparql_dividedbyadditionalunaryexpressionne_is_not_abstract():
+    assert not inspect.isabstract(sparql_DividedByAdditionalUnaryExpressionNE)
 
 
-def test_sparql::dividedbyadditionalunaryexpressionne_constructor_exists():
-    assert callable(sparql::DividedByAdditionalUnaryExpressionNE.__init__)
+def test_sparql_dividedbyadditionalunaryexpressionne_constructor_exists():
+    assert callable(sparql_DividedByAdditionalUnaryExpressionNE.__init__)
 
 
-def test_sparql::dividedbyadditionalunaryexpressionne_constructor_args():
-    sig = inspect.signature(sparql::DividedByAdditionalUnaryExpressionNE.__init__)
+def test_sparql_dividedbyadditionalunaryexpressionne_constructor_args():
+    sig = inspect.signature(sparql_DividedByAdditionalUnaryExpressionNE.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -818,86 +818,86 @@ def test_additionalnumericexpressionne_constructor_args():
 
 
 
-def test_sparql::biggerorequalnumericexpressionne_is_not_abstract():
-    assert not inspect.isabstract(sparql::BiggerOrEqualNumericExpressionNE)
+def test_sparql_smallerorequalnumericexpressionne_is_not_abstract():
+    assert not inspect.isabstract(sparql_SmallerOrEqualNumericExpressionNE)
 
 
-def test_sparql::biggerorequalnumericexpressionne_constructor_exists():
-    assert callable(sparql::BiggerOrEqualNumericExpressionNE.__init__)
+def test_sparql_smallerorequalnumericexpressionne_constructor_exists():
+    assert callable(sparql_SmallerOrEqualNumericExpressionNE.__init__)
 
 
-def test_sparql::biggerorequalnumericexpressionne_constructor_args():
-    sig = inspect.signature(sparql::BiggerOrEqualNumericExpressionNE.__init__)
+def test_sparql_smallerorequalnumericexpressionne_constructor_args():
+    sig = inspect.signature(sparql_SmallerOrEqualNumericExpressionNE.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sparql::notequalnumericexpressionne_is_not_abstract():
-    assert not inspect.isabstract(sparql::NotEqualNumericExpressionNE)
+def test_sparql_biggernumericexpressionne_is_not_abstract():
+    assert not inspect.isabstract(sparql_BiggerNumericExpressionNE)
 
 
-def test_sparql::notequalnumericexpressionne_constructor_exists():
-    assert callable(sparql::NotEqualNumericExpressionNE.__init__)
+def test_sparql_biggernumericexpressionne_constructor_exists():
+    assert callable(sparql_BiggerNumericExpressionNE.__init__)
 
 
-def test_sparql::notequalnumericexpressionne_constructor_args():
-    sig = inspect.signature(sparql::NotEqualNumericExpressionNE.__init__)
+def test_sparql_biggernumericexpressionne_constructor_args():
+    sig = inspect.signature(sparql_BiggerNumericExpressionNE.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sparql::biggernumericexpressionne_is_not_abstract():
-    assert not inspect.isabstract(sparql::BiggerNumericExpressionNE)
+def test_sparql_smallernumericexpressionne_is_not_abstract():
+    assert not inspect.isabstract(sparql_SmallerNumericExpressionNE)
 
 
-def test_sparql::biggernumericexpressionne_constructor_exists():
-    assert callable(sparql::BiggerNumericExpressionNE.__init__)
+def test_sparql_smallernumericexpressionne_constructor_exists():
+    assert callable(sparql_SmallerNumericExpressionNE.__init__)
 
 
-def test_sparql::biggernumericexpressionne_constructor_args():
-    sig = inspect.signature(sparql::BiggerNumericExpressionNE.__init__)
+def test_sparql_smallernumericexpressionne_constructor_args():
+    sig = inspect.signature(sparql_SmallerNumericExpressionNE.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sparql::smallerorequalnumericexpressionne_is_not_abstract():
-    assert not inspect.isabstract(sparql::SmallerOrEqualNumericExpressionNE)
+def test_sparql_biggerorequalnumericexpressionne_is_not_abstract():
+    assert not inspect.isabstract(sparql_BiggerOrEqualNumericExpressionNE)
 
 
-def test_sparql::smallerorequalnumericexpressionne_constructor_exists():
-    assert callable(sparql::SmallerOrEqualNumericExpressionNE.__init__)
+def test_sparql_biggerorequalnumericexpressionne_constructor_exists():
+    assert callable(sparql_BiggerOrEqualNumericExpressionNE.__init__)
 
 
-def test_sparql::smallerorequalnumericexpressionne_constructor_args():
-    sig = inspect.signature(sparql::SmallerOrEqualNumericExpressionNE.__init__)
+def test_sparql_biggerorequalnumericexpressionne_constructor_args():
+    sig = inspect.signature(sparql_BiggerOrEqualNumericExpressionNE.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sparql::smallernumericexpressionne_is_not_abstract():
-    assert not inspect.isabstract(sparql::SmallerNumericExpressionNE)
+def test_sparql_notequalnumericexpressionne_is_not_abstract():
+    assert not inspect.isabstract(sparql_NotEqualNumericExpressionNE)
 
 
-def test_sparql::smallernumericexpressionne_constructor_exists():
-    assert callable(sparql::SmallerNumericExpressionNE.__init__)
+def test_sparql_notequalnumericexpressionne_constructor_exists():
+    assert callable(sparql_NotEqualNumericExpressionNE.__init__)
 
 
-def test_sparql::smallernumericexpressionne_constructor_args():
-    sig = inspect.signature(sparql::SmallerNumericExpressionNE.__init__)
+def test_sparql_notequalnumericexpressionne_constructor_args():
+    sig = inspect.signature(sparql_NotEqualNumericExpressionNE.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sparql::equalsnumericexpressionne_is_not_abstract():
-    assert not inspect.isabstract(sparql::EqualsNumericExpressionNE)
+def test_sparql_equalsnumericexpressionne_is_not_abstract():
+    assert not inspect.isabstract(sparql_EqualsNumericExpressionNE)
 
 
-def test_sparql::equalsnumericexpressionne_constructor_exists():
-    assert callable(sparql::EqualsNumericExpressionNE.__init__)
+def test_sparql_equalsnumericexpressionne_constructor_exists():
+    assert callable(sparql_EqualsNumericExpressionNE.__init__)
 
 
-def test_sparql::equalsnumericexpressionne_constructor_args():
-    sig = inspect.signature(sparql::EqualsNumericExpressionNE.__init__)
+def test_sparql_equalsnumericexpressionne_constructor_args():
+    sig = inspect.signature(sparql_EqualsNumericExpressionNE.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -916,688 +916,30 @@ def test_arglist_constructor_args():
 
 
 
-def test_sparql::arglistexpressionne_is_not_abstract():
-    assert not inspect.isabstract(sparql::ArgListExpressionNE)
+def test_sparql_arglistexpressionne_is_not_abstract():
+    assert not inspect.isabstract(sparql_ArgListExpressionNE)
 
 
-def test_sparql::arglistexpressionne_constructor_exists():
-    assert callable(sparql::ArgListExpressionNE.__init__)
+def test_sparql_arglistexpressionne_constructor_exists():
+    assert callable(sparql_ArgListExpressionNE.__init__)
 
 
-def test_sparql::arglistexpressionne_constructor_args():
-    sig = inspect.signature(sparql::ArgListExpressionNE.__init__)
+def test_sparql_arglistexpressionne_constructor_args():
+    sig = inspect.signature(sparql_ArgListExpressionNE.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sparql::arglistnilne_is_not_abstract():
-    assert not inspect.isabstract(sparql::ArgListNILNE)
+def test_sparql_arglistnilne_is_not_abstract():
+    assert not inspect.isabstract(sparql_ArgListNILNE)
 
 
-def test_sparql::arglistnilne_constructor_exists():
-    assert callable(sparql::ArgListNILNE.__init__)
+def test_sparql_arglistnilne_constructor_exists():
+    assert callable(sparql_ArgListNILNE.__init__)
 
 
-def test_sparql::arglistnilne_constructor_args():
-    sig = inspect.signature(sparql::ArgListNILNE.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_sparql::ascordecs_is_not_abstract():
-    assert not inspect.isabstract(sparql::AscOrDecs)
-
-
-def test_sparql::ascordecs_constructor_exists():
-    assert callable(sparql::AscOrDecs.__init__)
-
-
-def test_sparql::ascordecs_constructor_args():
-    sig = inspect.signature(sparql::AscOrDecs.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_ordercondition_is_not_abstract():
-    assert not inspect.isabstract(OrderCondition)
-
-
-def test_ordercondition_constructor_exists():
-    assert callable(OrderCondition.__init__)
-
-
-def test_ordercondition_constructor_args():
-    sig = inspect.signature(OrderCondition.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_sparql::orderconditionleftne_is_not_abstract():
-    assert not inspect.isabstract(sparql::OrderConditionLeftNE)
-
-
-def test_sparql::orderconditionleftne_constructor_exists():
-    assert callable(sparql::OrderConditionLeftNE.__init__)
-
-
-def test_sparql::orderconditionleftne_constructor_args():
-    sig = inspect.signature(sparql::OrderConditionLeftNE.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_query_is_not_abstract():
-    assert not inspect.isabstract(Query)
-
-
-def test_query_constructor_exists():
-    assert callable(Query.__init__)
-
-
-def test_query_constructor_args():
-    sig = inspect.signature(Query.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_sparql::describequery_is_not_abstract():
-    assert not inspect.isabstract(sparql::DescribeQuery)
-
-
-def test_sparql::describequery_constructor_exists():
-    assert callable(sparql::DescribeQuery.__init__)
-
-
-def test_sparql::describequery_constructor_args():
-    sig = inspect.signature(sparql::DescribeQuery.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_sparql::constructquery_is_not_abstract():
-    assert not inspect.isabstract(sparql::ConstructQuery)
-
-
-def test_sparql::constructquery_constructor_exists():
-    assert callable(sparql::ConstructQuery.__init__)
-
-
-def test_sparql::constructquery_constructor_args():
-    sig = inspect.signature(sparql::ConstructQuery.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_sparql::askquery_is_not_abstract():
-    assert not inspect.isabstract(sparql::AskQuery)
-
-
-def test_sparql::askquery_constructor_exists():
-    assert callable(sparql::AskQuery.__init__)
-
-
-def test_sparql::askquery_constructor_args():
-    sig = inspect.signature(sparql::AskQuery.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_sparql::selectquery_is_not_abstract():
-    assert not inspect.isabstract(sparql::SelectQuery)
-
-
-def test_sparql::selectquery_constructor_exists():
-    assert callable(sparql::SelectQuery.__init__)
-
-
-def test_sparql::selectquery_constructor_args():
-    sig = inspect.signature(sparql::SelectQuery.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_sparql::locatedelement_is_not_abstract():
-    assert not inspect.isabstract(sparql::LocatedElement)
-
-
-def test_sparql::locatedelement_constructor_exists():
-    assert callable(sparql::LocatedElement.__init__)
-
-
-def test_sparql::locatedelement_constructor_args():
-    sig = inspect.signature(sparql::LocatedElement.__init__)
-    params = list(sig.parameters.keys())
-    assert "commentsAfter" in params, "Missing parameter 'commentsAfter'"
-    assert "location" in params, "Missing parameter 'location'"
-    assert "commentsBefore" in params, "Missing parameter 'commentsBefore'"
-
-def test_sparql::locatedelement_has_commentsAfter():
-    assert hasattr(sparql::LocatedElement, "commentsAfter")
-    descriptor = None
-    for klass in sparql::LocatedElement.__mro__:
-        if "commentsAfter" in klass.__dict__:
-            descriptor = klass.__dict__["commentsAfter"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_sparql::locatedelement_has_location():
-    assert hasattr(sparql::LocatedElement, "location")
-    descriptor = None
-    for klass in sparql::LocatedElement.__mro__:
-        if "location" in klass.__dict__:
-            descriptor = klass.__dict__["location"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_sparql::locatedelement_has_commentsBefore():
-    assert hasattr(sparql::LocatedElement, "commentsBefore")
-    descriptor = None
-    for klass in sparql::LocatedElement.__mro__:
-        if "commentsBefore" in klass.__dict__:
-            descriptor = klass.__dict__["commentsBefore"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_locatedelement_is_not_abstract():
-    assert not inspect.isabstract(LocatedElement)
-
-
-def test_locatedelement_constructor_exists():
-    assert callable(LocatedElement.__init__)
-
-
-def test_locatedelement_constructor_args():
-    sig = inspect.signature(LocatedElement.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_sparql::unaryexpression_is_not_abstract():
-    assert not inspect.isabstract(sparql::UnaryExpression)
-
-
-def test_sparql::unaryexpression_constructor_exists():
-    assert callable(sparql::UnaryExpression.__init__)
-
-
-def test_sparql::unaryexpression_constructor_args():
-    sig = inspect.signature(sparql::UnaryExpression.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_sparql::ws_is_not_abstract():
-    assert not inspect.isabstract(sparql::WS)
-
-
-def test_sparql::ws_constructor_exists():
-    assert callable(sparql::WS.__init__)
-
-
-def test_sparql::ws_constructor_args():
-    sig = inspect.signature(sparql::WS.__init__)
-    params = list(sig.parameters.keys())
-    assert "ws" in params, "Missing parameter 'ws'"
-
-def test_sparql::ws_has_ws():
-    assert hasattr(sparql::WS, "ws")
-    descriptor = None
-    for klass in sparql::WS.__mro__:
-        if "ws" in klass.__dict__:
-            descriptor = klass.__dict__["ws"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_sparql::additiveexpression_is_not_abstract():
-    assert not inspect.isabstract(sparql::AdditiveExpression)
-
-
-def test_sparql::additiveexpression_constructor_exists():
-    assert callable(sparql::AdditiveExpression.__init__)
-
-
-def test_sparql::additiveexpression_constructor_args():
-    sig = inspect.signature(sparql::AdditiveExpression.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_sparql::additionalunaryexpressionne_is_not_abstract():
-    assert not inspect.isabstract(sparql::AdditionalUnaryExpressionNE)
-
-
-def test_sparql::additionalunaryexpressionne_constructor_exists():
-    assert callable(sparql::AdditionalUnaryExpressionNE.__init__)
-
-
-def test_sparql::additionalunaryexpressionne_constructor_args():
-    sig = inspect.signature(sparql::AdditionalUnaryExpressionNE.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_sparql::prologue_is_not_abstract():
-    assert not inspect.isabstract(sparql::Prologue)
-
-
-def test_sparql::prologue_constructor_exists():
-    assert callable(sparql::Prologue.__init__)
-
-
-def test_sparql::prologue_constructor_args():
-    sig = inspect.signature(sparql::Prologue.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_sparql::additionalvaluelogicalne_is_not_abstract():
-    assert not inspect.isabstract(sparql::AdditionalValueLogicalNE)
-
-
-def test_sparql::additionalvaluelogicalne_constructor_exists():
-    assert callable(sparql::AdditionalValueLogicalNE.__init__)
-
-
-def test_sparql::additionalvaluelogicalne_constructor_args():
-    sig = inspect.signature(sparql::AdditionalValueLogicalNE.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_sparql::limitoffsetclauses_is_not_abstract():
-    assert not inspect.isabstract(sparql::LimitOffsetClauses)
-
-
-def test_sparql::limitoffsetclauses_constructor_exists():
-    assert callable(sparql::LimitOffsetClauses.__init__)
-
-
-def test_sparql::limitoffsetclauses_constructor_args():
-    sig = inspect.signature(sparql::LimitOffsetClauses.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_sparql::multiplicativeexpression_is_not_abstract():
-    assert not inspect.isabstract(sparql::MultiplicativeExpression)
-
-
-def test_sparql::multiplicativeexpression_constructor_exists():
-    assert callable(sparql::MultiplicativeExpression.__init__)
-
-
-def test_sparql::multiplicativeexpression_constructor_args():
-    sig = inspect.signature(sparql::MultiplicativeExpression.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_sparql::whereclause_is_not_abstract():
-    assert not inspect.isabstract(sparql::WhereClause)
-
-
-def test_sparql::whereclause_constructor_exists():
-    assert callable(sparql::WhereClause.__init__)
-
-
-def test_sparql::whereclause_constructor_args():
-    sig = inspect.signature(sparql::WhereClause.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_sparql::relationalexpression_is_not_abstract():
-    assert not inspect.isabstract(sparql::RelationalExpression)
-
-
-def test_sparql::relationalexpression_constructor_exists():
-    assert callable(sparql::RelationalExpression.__init__)
-
-
-def test_sparql::relationalexpression_constructor_args():
-    sig = inspect.signature(sparql::RelationalExpression.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_sparql::solutionsdisplayne_is_not_abstract():
-    assert not inspect.isabstract(sparql::SolutionsDisplayNE)
-
-
-def test_sparql::solutionsdisplayne_constructor_exists():
-    assert callable(sparql::SolutionsDisplayNE.__init__)
-
-
-def test_sparql::solutionsdisplayne_constructor_args():
-    sig = inspect.signature(sparql::SolutionsDisplayNE.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_sparql::additionalnumericexpressionne_is_not_abstract():
-    assert not inspect.isabstract(sparql::AdditionalNumericExpressionNE)
-
-
-def test_sparql::additionalnumericexpressionne_constructor_exists():
-    assert callable(sparql::AdditionalNumericExpressionNE.__init__)
-
-
-def test_sparql::additionalnumericexpressionne_constructor_args():
-    sig = inspect.signature(sparql::AdditionalNumericExpressionNE.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_sparql::query_is_not_abstract():
-    assert not inspect.isabstract(sparql::Query)
-
-
-def test_sparql::query_constructor_exists():
-    assert callable(sparql::Query.__init__)
-
-
-def test_sparql::query_constructor_args():
-    sig = inspect.signature(sparql::Query.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_sparql::constructtemplate_is_not_abstract():
-    assert not inspect.isabstract(sparql::ConstructTemplate)
-
-
-def test_sparql::constructtemplate_constructor_exists():
-    assert callable(sparql::ConstructTemplate.__init__)
-
-
-def test_sparql::constructtemplate_constructor_args():
-    sig = inspect.signature(sparql::ConstructTemplate.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_sparql::numericexpression_is_not_abstract():
-    assert not inspect.isabstract(sparql::NumericExpression)
-
-
-def test_sparql::numericexpression_constructor_exists():
-    assert callable(sparql::NumericExpression.__init__)
-
-
-def test_sparql::numericexpression_constructor_args():
-    sig = inspect.signature(sparql::NumericExpression.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_sparql::pn::prefix_is_not_abstract():
-    assert not inspect.isabstract(sparql::PN::PREFIX)
-
-
-def test_sparql::pn::prefix_constructor_exists():
-    assert callable(sparql::PN::PREFIX.__init__)
-
-
-def test_sparql::pn::prefix_constructor_args():
-    sig = inspect.signature(sparql::PN::PREFIX.__init__)
-    params = list(sig.parameters.keys())
-    assert "pn_prefix" in params, "Missing parameter 'pn_prefix'"
-
-def test_sparql::pn::prefix_has_pn_prefix():
-    assert hasattr(sparql::PN::PREFIX, "pn_prefix")
-    descriptor = None
-    for klass in sparql::PN::PREFIX.__mro__:
-        if "pn_prefix" in klass.__dict__:
-            descriptor = klass.__dict__["pn_prefix"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_sparql::ordercondition_is_not_abstract():
-    assert not inspect.isabstract(sparql::OrderCondition)
-
-
-def test_sparql::ordercondition_constructor_exists():
-    assert callable(sparql::OrderCondition.__init__)
-
-
-def test_sparql::ordercondition_constructor_args():
-    sig = inspect.signature(sparql::OrderCondition.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_sparql::solutionmodifier_is_not_abstract():
-    assert not inspect.isabstract(sparql::SolutionModifier)
-
-
-def test_sparql::solutionmodifier_constructor_exists():
-    assert callable(sparql::SolutionModifier.__init__)
-
-
-def test_sparql::solutionmodifier_constructor_args():
-    sig = inspect.signature(sparql::SolutionModifier.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_sparql::additionalconditionalandexpressionne_is_not_abstract():
-    assert not inspect.isabstract(sparql::AdditionalConditionalAndExpressionNE)
-
-
-def test_sparql::additionalconditionalandexpressionne_constructor_exists():
-    assert callable(sparql::AdditionalConditionalAndExpressionNE.__init__)
-
-
-def test_sparql::additionalconditionalandexpressionne_constructor_args():
-    sig = inspect.signature(sparql::AdditionalConditionalAndExpressionNE.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_sparql::datasetclause_is_not_abstract():
-    assert not inspect.isabstract(sparql::DatasetClause)
-
-
-def test_sparql::datasetclause_constructor_exists():
-    assert callable(sparql::DatasetClause.__init__)
-
-
-def test_sparql::datasetclause_constructor_args():
-    sig = inspect.signature(sparql::DatasetClause.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_sparql::basedecl_is_not_abstract():
-    assert not inspect.isabstract(sparql::BaseDecl)
-
-
-def test_sparql::basedecl_constructor_exists():
-    assert callable(sparql::BaseDecl.__init__)
-
-
-def test_sparql::basedecl_constructor_args():
-    sig = inspect.signature(sparql::BaseDecl.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_sparql::varname_is_not_abstract():
-    assert not inspect.isabstract(sparql::VARNAME)
-
-
-def test_sparql::varname_constructor_exists():
-    assert callable(sparql::VARNAME.__init__)
-
-
-def test_sparql::varname_constructor_args():
-    sig = inspect.signature(sparql::VARNAME.__init__)
-    params = list(sig.parameters.keys())
-    assert "varname" in params, "Missing parameter 'varname'"
-
-def test_sparql::varname_has_varname():
-    assert hasattr(sparql::VARNAME, "varname")
-    descriptor = None
-    for klass in sparql::VARNAME.__mro__:
-        if "varname" in klass.__dict__:
-            descriptor = klass.__dict__["varname"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_sparql::additionalmultiplicativeexpressionne_is_not_abstract():
-    assert not inspect.isabstract(sparql::AdditionalMultiplicativeExpressionNE)
-
-
-def test_sparql::additionalmultiplicativeexpressionne_constructor_exists():
-    assert callable(sparql::AdditionalMultiplicativeExpressionNE.__init__)
-
-
-def test_sparql::additionalmultiplicativeexpressionne_constructor_args():
-    sig = inspect.signature(sparql::AdditionalMultiplicativeExpressionNE.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_sparql::pn::local_is_not_abstract():
-    assert not inspect.isabstract(sparql::PN::LOCAL)
-
-
-def test_sparql::pn::local_constructor_exists():
-    assert callable(sparql::PN::LOCAL.__init__)
-
-
-def test_sparql::pn::local_constructor_args():
-    sig = inspect.signature(sparql::PN::LOCAL.__init__)
-    params = list(sig.parameters.keys())
-    assert "pn_local" in params, "Missing parameter 'pn_local'"
-
-def test_sparql::pn::local_has_pn_local():
-    assert hasattr(sparql::PN::LOCAL, "pn_local")
-    descriptor = None
-    for klass in sparql::PN::LOCAL.__mro__:
-        if "pn_local" in klass.__dict__:
-            descriptor = klass.__dict__["pn_local"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_sparql::valuelogical_is_not_abstract():
-    assert not inspect.isabstract(sparql::ValueLogical)
-
-
-def test_sparql::valuelogical_constructor_exists():
-    assert callable(sparql::ValueLogical.__init__)
-
-
-def test_sparql::valuelogical_constructor_args():
-    sig = inspect.signature(sparql::ValueLogical.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_sparql::langtagoririrefne_is_not_abstract():
-    assert not inspect.isabstract(sparql::LANGTAGOrIRIrefNE)
-
-
-def test_sparql::langtagoririrefne_constructor_exists():
-    assert callable(sparql::LANGTAGOrIRIrefNE.__init__)
-
-
-def test_sparql::langtagoririrefne_constructor_args():
-    sig = inspect.signature(sparql::LANGTAGOrIRIrefNE.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_sparql::conditionalandexpression_is_not_abstract():
-    assert not inspect.isabstract(sparql::ConditionalAndExpression)
-
-
-def test_sparql::conditionalandexpression_constructor_exists():
-    assert callable(sparql::ConditionalAndExpression.__init__)
-
-
-def test_sparql::conditionalandexpression_constructor_args():
-    sig = inspect.signature(sparql::ConditionalAndExpression.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_sparql::prefixdecl_is_not_abstract():
-    assert not inspect.isabstract(sparql::PrefixDecl)
-
-
-def test_sparql::prefixdecl_constructor_exists():
-    assert callable(sparql::PrefixDecl.__init__)
-
-
-def test_sparql::prefixdecl_constructor_args():
-    sig = inspect.signature(sparql::PrefixDecl.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_sparql::sparqlqueries_is_not_abstract():
-    assert not inspect.isabstract(sparql::SparqlQueries)
-
-
-def test_sparql::sparqlqueries_constructor_exists():
-    assert callable(sparql::SparqlQueries.__init__)
-
-
-def test_sparql::sparqlqueries_constructor_args():
-    sig = inspect.signature(sparql::SparqlQueries.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_sparql::conditionalorexpression_is_not_abstract():
-    assert not inspect.isabstract(sparql::ConditionalOrExpression)
-
-
-def test_sparql::conditionalorexpression_constructor_exists():
-    assert callable(sparql::ConditionalOrExpression.__init__)
-
-
-def test_sparql::conditionalorexpression_constructor_args():
-    sig = inspect.signature(sparql::ConditionalOrExpression.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_sparql::arglist_is_not_abstract():
-    assert not inspect.isabstract(sparql::ArgList)
-
-
-def test_sparql::arglist_constructor_exists():
-    assert callable(sparql::ArgList.__init__)
-
-
-def test_sparql::arglist_constructor_args():
-    sig = inspect.signature(sparql::ArgList.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_sparql::additionalexpressionne_is_not_abstract():
-    assert not inspect.isabstract(sparql::AdditionalExpressionNE)
-
-
-def test_sparql::additionalexpressionne_constructor_exists():
-    assert callable(sparql::AdditionalExpressionNE.__init__)
-
-
-def test_sparql::additionalexpressionne_constructor_args():
-    sig = inspect.signature(sparql::AdditionalExpressionNE.__init__)
+def test_sparql_arglistnilne_constructor_args():
+    sig = inspect.signature(sparql_ArgListNILNE.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1616,142 +958,128 @@ def test_builtincall_constructor_args():
 
 
 
-def test_sparql::isuribuiltincallne_is_not_abstract():
-    assert not inspect.isabstract(sparql::IsURIBuiltInCallNE)
+def test_sparql_isblankbuiltincallne_is_not_abstract():
+    assert not inspect.isabstract(sparql_IsBlankBuiltInCallNE)
 
 
-def test_sparql::isuribuiltincallne_constructor_exists():
-    assert callable(sparql::IsURIBuiltInCallNE.__init__)
+def test_sparql_isblankbuiltincallne_constructor_exists():
+    assert callable(sparql_IsBlankBuiltInCallNE.__init__)
 
 
-def test_sparql::isuribuiltincallne_constructor_args():
-    sig = inspect.signature(sparql::IsURIBuiltInCallNE.__init__)
+def test_sparql_isblankbuiltincallne_constructor_args():
+    sig = inspect.signature(sparql_IsBlankBuiltInCallNE.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sparql::isliteralbuiltincallne_is_not_abstract():
-    assert not inspect.isabstract(sparql::IsLiteralBuiltInCallNE)
+def test_sparql_regexexpression_is_not_abstract():
+    assert not inspect.isabstract(sparql_RegexExpression)
 
 
-def test_sparql::isliteralbuiltincallne_constructor_exists():
-    assert callable(sparql::IsLiteralBuiltInCallNE.__init__)
+def test_sparql_regexexpression_constructor_exists():
+    assert callable(sparql_RegexExpression.__init__)
 
 
-def test_sparql::isliteralbuiltincallne_constructor_args():
-    sig = inspect.signature(sparql::IsLiteralBuiltInCallNE.__init__)
+def test_sparql_regexexpression_constructor_args():
+    sig = inspect.signature(sparql_RegexExpression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sparql::regexexpression_is_not_abstract():
-    assert not inspect.isabstract(sparql::RegexExpression)
+def test_sparql_langmatchesbuiltincallne_is_not_abstract():
+    assert not inspect.isabstract(sparql_LangmatchesBuiltInCallNE)
 
 
-def test_sparql::regexexpression_constructor_exists():
-    assert callable(sparql::RegexExpression.__init__)
+def test_sparql_langmatchesbuiltincallne_constructor_exists():
+    assert callable(sparql_LangmatchesBuiltInCallNE.__init__)
 
 
-def test_sparql::regexexpression_constructor_args():
-    sig = inspect.signature(sparql::RegexExpression.__init__)
+def test_sparql_langmatchesbuiltincallne_constructor_args():
+    sig = inspect.signature(sparql_LangmatchesBuiltInCallNE.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sparql::datatypebuiltincallne_is_not_abstract():
-    assert not inspect.isabstract(sparql::DatatypeBuiltInCallNE)
+def test_sparql_isuribuiltincallne_is_not_abstract():
+    assert not inspect.isabstract(sparql_IsURIBuiltInCallNE)
 
 
-def test_sparql::datatypebuiltincallne_constructor_exists():
-    assert callable(sparql::DatatypeBuiltInCallNE.__init__)
+def test_sparql_isuribuiltincallne_constructor_exists():
+    assert callable(sparql_IsURIBuiltInCallNE.__init__)
 
 
-def test_sparql::datatypebuiltincallne_constructor_args():
-    sig = inspect.signature(sparql::DatatypeBuiltInCallNE.__init__)
+def test_sparql_isuribuiltincallne_constructor_args():
+    sig = inspect.signature(sparql_IsURIBuiltInCallNE.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sparql::langmatchesbuiltincallne_is_not_abstract():
-    assert not inspect.isabstract(sparql::LangmatchesBuiltInCallNE)
+def test_sparql_langbuiltincallne_is_not_abstract():
+    assert not inspect.isabstract(sparql_LangBuiltInCallNE)
 
 
-def test_sparql::langmatchesbuiltincallne_constructor_exists():
-    assert callable(sparql::LangmatchesBuiltInCallNE.__init__)
+def test_sparql_langbuiltincallne_constructor_exists():
+    assert callable(sparql_LangBuiltInCallNE.__init__)
 
 
-def test_sparql::langmatchesbuiltincallne_constructor_args():
-    sig = inspect.signature(sparql::LangmatchesBuiltInCallNE.__init__)
+def test_sparql_langbuiltincallne_constructor_args():
+    sig = inspect.signature(sparql_LangBuiltInCallNE.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sparql::isiribuiltincallne_is_not_abstract():
-    assert not inspect.isabstract(sparql::IsIRIBuiltInCallNE)
+def test_sparql_datatypebuiltincallne_is_not_abstract():
+    assert not inspect.isabstract(sparql_DatatypeBuiltInCallNE)
 
 
-def test_sparql::isiribuiltincallne_constructor_exists():
-    assert callable(sparql::IsIRIBuiltInCallNE.__init__)
+def test_sparql_datatypebuiltincallne_constructor_exists():
+    assert callable(sparql_DatatypeBuiltInCallNE.__init__)
 
 
-def test_sparql::isiribuiltincallne_constructor_args():
-    sig = inspect.signature(sparql::IsIRIBuiltInCallNE.__init__)
+def test_sparql_datatypebuiltincallne_constructor_args():
+    sig = inspect.signature(sparql_DatatypeBuiltInCallNE.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sparql::isblankbuiltincallne_is_not_abstract():
-    assert not inspect.isabstract(sparql::IsBlankBuiltInCallNE)
+def test_sparql_isliteralbuiltincallne_is_not_abstract():
+    assert not inspect.isabstract(sparql_IsLiteralBuiltInCallNE)
 
 
-def test_sparql::isblankbuiltincallne_constructor_exists():
-    assert callable(sparql::IsBlankBuiltInCallNE.__init__)
+def test_sparql_isliteralbuiltincallne_constructor_exists():
+    assert callable(sparql_IsLiteralBuiltInCallNE.__init__)
 
 
-def test_sparql::isblankbuiltincallne_constructor_args():
-    sig = inspect.signature(sparql::IsBlankBuiltInCallNE.__init__)
+def test_sparql_isliteralbuiltincallne_constructor_args():
+    sig = inspect.signature(sparql_IsLiteralBuiltInCallNE.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sparql::langbuiltincallne_is_not_abstract():
-    assert not inspect.isabstract(sparql::LangBuiltInCallNE)
+def test_sparql_isiribuiltincallne_is_not_abstract():
+    assert not inspect.isabstract(sparql_IsIRIBuiltInCallNE)
 
 
-def test_sparql::langbuiltincallne_constructor_exists():
-    assert callable(sparql::LangBuiltInCallNE.__init__)
+def test_sparql_isiribuiltincallne_constructor_exists():
+    assert callable(sparql_IsIRIBuiltInCallNE.__init__)
 
 
-def test_sparql::langbuiltincallne_constructor_args():
-    sig = inspect.signature(sparql::LangBuiltInCallNE.__init__)
+def test_sparql_isiribuiltincallne_constructor_args():
+    sig = inspect.signature(sparql_IsIRIBuiltInCallNE.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sparql::strbuiltincallne_is_not_abstract():
-    assert not inspect.isabstract(sparql::StrBuiltInCallNE)
+def test_sparql_strbuiltincallne_is_not_abstract():
+    assert not inspect.isabstract(sparql_StrBuiltInCallNE)
 
 
-def test_sparql::strbuiltincallne_constructor_exists():
-    assert callable(sparql::StrBuiltInCallNE.__init__)
+def test_sparql_strbuiltincallne_constructor_exists():
+    assert callable(sparql_StrBuiltInCallNE.__init__)
 
 
-def test_sparql::strbuiltincallne_constructor_args():
-    sig = inspect.signature(sparql::StrBuiltInCallNE.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_sparql::expression_is_not_abstract():
-    assert not inspect.isabstract(sparql::Expression)
-
-
-def test_sparql::expression_constructor_exists():
-    assert callable(sparql::Expression.__init__)
-
-
-def test_sparql::expression_constructor_args():
-    sig = inspect.signature(sparql::Expression.__init__)
+def test_sparql_strbuiltincallne_constructor_args():
+    sig = inspect.signature(sparql_StrBuiltInCallNE.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1770,44 +1098,44 @@ def test_constraint_constructor_args():
 
 
 
-def test_sparql::functioncall_is_not_abstract():
-    assert not inspect.isabstract(sparql::FunctionCall)
+def test_sparql_functioncall_is_not_abstract():
+    assert not inspect.isabstract(sparql_FunctionCall)
 
 
-def test_sparql::functioncall_constructor_exists():
-    assert callable(sparql::FunctionCall.__init__)
+def test_sparql_functioncall_constructor_exists():
+    assert callable(sparql_FunctionCall.__init__)
 
 
-def test_sparql::functioncall_constructor_args():
-    sig = inspect.signature(sparql::FunctionCall.__init__)
+def test_sparql_functioncall_constructor_args():
+    sig = inspect.signature(sparql_FunctionCall.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sparql::sametermbuiltincallne_is_not_abstract():
-    assert not inspect.isabstract(sparql::SameTermBuiltInCallNE)
+def test_sparql_sametermbuiltincallne_is_not_abstract():
+    assert not inspect.isabstract(sparql_SameTermBuiltInCallNE)
 
 
-def test_sparql::sametermbuiltincallne_constructor_exists():
-    assert callable(sparql::SameTermBuiltInCallNE.__init__)
+def test_sparql_sametermbuiltincallne_constructor_exists():
+    assert callable(sparql_SameTermBuiltInCallNE.__init__)
 
 
-def test_sparql::sametermbuiltincallne_constructor_args():
-    sig = inspect.signature(sparql::SameTermBuiltInCallNE.__init__)
+def test_sparql_sametermbuiltincallne_constructor_args():
+    sig = inspect.signature(sparql_SameTermBuiltInCallNE.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sparql::boundbuiltincallne_is_not_abstract():
-    assert not inspect.isabstract(sparql::BoundBuiltInCallNE)
+def test_sparql_boundbuiltincallne_is_not_abstract():
+    assert not inspect.isabstract(sparql_BoundBuiltInCallNE)
 
 
-def test_sparql::boundbuiltincallne_constructor_exists():
-    assert callable(sparql::BoundBuiltInCallNE.__init__)
+def test_sparql_boundbuiltincallne_constructor_exists():
+    assert callable(sparql_BoundBuiltInCallNE.__init__)
 
 
-def test_sparql::boundbuiltincallne_constructor_args():
-    sig = inspect.signature(sparql::BoundBuiltInCallNE.__init__)
+def test_sparql_boundbuiltincallne_constructor_args():
+    sig = inspect.signature(sparql_BoundBuiltInCallNE.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1826,86 +1154,30 @@ def test_triplesnode_constructor_args():
 
 
 
-def test_sparql::blanknodepropertylist_is_not_abstract():
-    assert not inspect.isabstract(sparql::BlankNodePropertyList)
+def test_sparql_blanknodepropertylist_is_not_abstract():
+    assert not inspect.isabstract(sparql_BlankNodePropertyList)
 
 
-def test_sparql::blanknodepropertylist_constructor_exists():
-    assert callable(sparql::BlankNodePropertyList.__init__)
+def test_sparql_blanknodepropertylist_constructor_exists():
+    assert callable(sparql_BlankNodePropertyList.__init__)
 
 
-def test_sparql::blanknodepropertylist_constructor_args():
-    sig = inspect.signature(sparql::BlankNodePropertyList.__init__)
+def test_sparql_blanknodepropertylist_constructor_args():
+    sig = inspect.signature(sparql_BlankNodePropertyList.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sparql::collection_is_not_abstract():
-    assert not inspect.isabstract(sparql::Collection)
+def test_sparql_collection_is_not_abstract():
+    assert not inspect.isabstract(sparql_Collection)
 
 
-def test_sparql::collection_constructor_exists():
-    assert callable(sparql::Collection.__init__)
+def test_sparql_collection_constructor_exists():
+    assert callable(sparql_Collection.__init__)
 
 
-def test_sparql::collection_constructor_args():
-    sig = inspect.signature(sparql::Collection.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_sparql::graphnode_is_not_abstract():
-    assert not inspect.isabstract(sparql::GraphNode)
-
-
-def test_sparql::graphnode_constructor_exists():
-    assert callable(sparql::GraphNode.__init__)
-
-
-def test_sparql::graphnode_constructor_args():
-    sig = inspect.signature(sparql::GraphNode.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_sparql::object_is_not_abstract():
-    assert not inspect.isabstract(sparql::Object)
-
-
-def test_sparql::object_constructor_exists():
-    assert callable(sparql::Object.__init__)
-
-
-def test_sparql::object_constructor_args():
-    sig = inspect.signature(sparql::Object.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_sparql::objectlist_is_not_abstract():
-    assert not inspect.isabstract(sparql::ObjectList)
-
-
-def test_sparql::objectlist_constructor_exists():
-    assert callable(sparql::ObjectList.__init__)
-
-
-def test_sparql::objectlist_constructor_args():
-    sig = inspect.signature(sparql::ObjectList.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_sparql::verb_is_not_abstract():
-    assert not inspect.isabstract(sparql::Verb)
-
-
-def test_sparql::verb_constructor_exists():
-    assert callable(sparql::Verb.__init__)
-
-
-def test_sparql::verb_constructor_args():
-    sig = inspect.signature(sparql::Verb.__init__)
+def test_sparql_collection_constructor_args():
+    sig = inspect.signature(sparql_Collection.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1924,44 +1196,30 @@ def test_graphnode_constructor_args():
 
 
 
-def test_sparql::propertylistnotempty_is_not_abstract():
-    assert not inspect.isabstract(sparql::PropertyListNotEmpty)
+def test_sparql_patternorfilterne_is_not_abstract():
+    assert not inspect.isabstract(sparql_PatternOrFilterNE)
 
 
-def test_sparql::propertylistnotempty_constructor_exists():
-    assert callable(sparql::PropertyListNotEmpty.__init__)
+def test_sparql_patternorfilterne_constructor_exists():
+    assert callable(sparql_PatternOrFilterNE.__init__)
 
 
-def test_sparql::propertylistnotempty_constructor_args():
-    sig = inspect.signature(sparql::PropertyListNotEmpty.__init__)
+def test_sparql_patternorfilterne_constructor_args():
+    sig = inspect.signature(sparql_PatternOrFilterNE.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sparql::patternorfilterne_is_not_abstract():
-    assert not inspect.isabstract(sparql::PatternOrFilterNE)
+def test_sparql_varorterm_is_not_abstract():
+    assert not inspect.isabstract(sparql_VarOrTerm)
 
 
-def test_sparql::patternorfilterne_constructor_exists():
-    assert callable(sparql::PatternOrFilterNE.__init__)
+def test_sparql_varorterm_constructor_exists():
+    assert callable(sparql_VarOrTerm.__init__)
 
 
-def test_sparql::patternorfilterne_constructor_args():
-    sig = inspect.signature(sparql::PatternOrFilterNE.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_sparql::varorterm_is_not_abstract():
-    assert not inspect.isabstract(sparql::VarOrTerm)
-
-
-def test_sparql::varorterm_constructor_exists():
-    assert callable(sparql::VarOrTerm.__init__)
-
-
-def test_sparql::varorterm_constructor_args():
-    sig = inspect.signature(sparql::VarOrTerm.__init__)
+def test_sparql_varorterm_constructor_args():
+    sig = inspect.signature(sparql_VarOrTerm.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1980,44 +1238,30 @@ def test_triplessamesubject_constructor_args():
 
 
 
-def test_sparql::triplessamesubjectleftne_is_not_abstract():
-    assert not inspect.isabstract(sparql::TriplesSameSubjectLeftNE)
+def test_sparql_triplessamesubjectleftne_is_not_abstract():
+    assert not inspect.isabstract(sparql_TriplesSameSubjectLeftNE)
 
 
-def test_sparql::triplessamesubjectleftne_constructor_exists():
-    assert callable(sparql::TriplesSameSubjectLeftNE.__init__)
+def test_sparql_triplessamesubjectleftne_constructor_exists():
+    assert callable(sparql_TriplesSameSubjectLeftNE.__init__)
 
 
-def test_sparql::triplessamesubjectleftne_constructor_args():
-    sig = inspect.signature(sparql::TriplesSameSubjectLeftNE.__init__)
+def test_sparql_triplessamesubjectleftne_constructor_args():
+    sig = inspect.signature(sparql_TriplesSameSubjectLeftNE.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sparql::additionalggpelement_is_not_abstract():
-    assert not inspect.isabstract(sparql::AdditionalGGPElement)
+def test_sparql_triplesblock_is_not_abstract():
+    assert not inspect.isabstract(sparql_TriplesBlock)
 
 
-def test_sparql::additionalggpelement_constructor_exists():
-    assert callable(sparql::AdditionalGGPElement.__init__)
+def test_sparql_triplesblock_constructor_exists():
+    assert callable(sparql_TriplesBlock.__init__)
 
 
-def test_sparql::additionalggpelement_constructor_args():
-    sig = inspect.signature(sparql::AdditionalGGPElement.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_sparql::triplesblock_is_not_abstract():
-    assert not inspect.isabstract(sparql::TriplesBlock)
-
-
-def test_sparql::triplesblock_constructor_exists():
-    assert callable(sparql::TriplesBlock.__init__)
-
-
-def test_sparql::triplesblock_constructor_args():
-    sig = inspect.signature(sparql::TriplesBlock.__init__)
+def test_sparql_triplesblock_constructor_args():
+    sig = inspect.signature(sparql_TriplesBlock.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -2036,44 +1280,44 @@ def test_graphpatternnottriples_constructor_args():
 
 
 
-def test_sparql::graphgraphpattern_is_not_abstract():
-    assert not inspect.isabstract(sparql::GraphGraphPattern)
+def test_sparql_graphgraphpattern_is_not_abstract():
+    assert not inspect.isabstract(sparql_GraphGraphPattern)
 
 
-def test_sparql::graphgraphpattern_constructor_exists():
-    assert callable(sparql::GraphGraphPattern.__init__)
+def test_sparql_graphgraphpattern_constructor_exists():
+    assert callable(sparql_GraphGraphPattern.__init__)
 
 
-def test_sparql::graphgraphpattern_constructor_args():
-    sig = inspect.signature(sparql::GraphGraphPattern.__init__)
+def test_sparql_graphgraphpattern_constructor_args():
+    sig = inspect.signature(sparql_GraphGraphPattern.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sparql::grouporuniongraphpattern_is_not_abstract():
-    assert not inspect.isabstract(sparql::GroupOrUnionGraphPattern)
+def test_sparql_grouporuniongraphpattern_is_not_abstract():
+    assert not inspect.isabstract(sparql_GroupOrUnionGraphPattern)
 
 
-def test_sparql::grouporuniongraphpattern_constructor_exists():
-    assert callable(sparql::GroupOrUnionGraphPattern.__init__)
+def test_sparql_grouporuniongraphpattern_constructor_exists():
+    assert callable(sparql_GroupOrUnionGraphPattern.__init__)
 
 
-def test_sparql::grouporuniongraphpattern_constructor_args():
-    sig = inspect.signature(sparql::GroupOrUnionGraphPattern.__init__)
+def test_sparql_grouporuniongraphpattern_constructor_args():
+    sig = inspect.signature(sparql_GroupOrUnionGraphPattern.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sparql::optionalgraphpattern_is_not_abstract():
-    assert not inspect.isabstract(sparql::OptionalGraphPattern)
+def test_sparql_optionalgraphpattern_is_not_abstract():
+    assert not inspect.isabstract(sparql_OptionalGraphPattern)
 
 
-def test_sparql::optionalgraphpattern_constructor_exists():
-    assert callable(sparql::OptionalGraphPattern.__init__)
+def test_sparql_optionalgraphpattern_constructor_exists():
+    assert callable(sparql_OptionalGraphPattern.__init__)
 
 
-def test_sparql::optionalgraphpattern_constructor_args():
-    sig = inspect.signature(sparql::OptionalGraphPattern.__init__)
+def test_sparql_optionalgraphpattern_constructor_args():
+    sig = inspect.signature(sparql_OptionalGraphPattern.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -2092,58 +1336,58 @@ def test_patternorfilterne_constructor_args():
 
 
 
-def test_sparql::filter_is_not_abstract():
-    assert not inspect.isabstract(sparql::Filter)
+def test_sparql_filter_is_not_abstract():
+    assert not inspect.isabstract(sparql_Filter)
 
 
-def test_sparql::filter_constructor_exists():
-    assert callable(sparql::Filter.__init__)
+def test_sparql_filter_constructor_exists():
+    assert callable(sparql_Filter.__init__)
 
 
-def test_sparql::filter_constructor_args():
-    sig = inspect.signature(sparql::Filter.__init__)
+def test_sparql_filter_constructor_args():
+    sig = inspect.signature(sparql_Filter.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sparql::graphpatternnottriples_is_not_abstract():
-    assert not inspect.isabstract(sparql::GraphPatternNotTriples)
+def test_sparql_graphpatternnottriples_is_not_abstract():
+    assert not inspect.isabstract(sparql_GraphPatternNotTriples)
 
 
-def test_sparql::graphpatternnottriples_constructor_exists():
-    assert callable(sparql::GraphPatternNotTriples.__init__)
+def test_sparql_graphpatternnottriples_constructor_exists():
+    assert callable(sparql_GraphPatternNotTriples.__init__)
 
 
-def test_sparql::graphpatternnottriples_constructor_args():
-    sig = inspect.signature(sparql::GraphPatternNotTriples.__init__)
+def test_sparql_graphpatternnottriples_constructor_args():
+    sig = inspect.signature(sparql_GraphPatternNotTriples.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sparql::triplesnode_is_not_abstract():
-    assert not inspect.isabstract(sparql::TriplesNode)
+def test_sparql_triplesnode_is_not_abstract():
+    assert not inspect.isabstract(sparql_TriplesNode)
 
 
-def test_sparql::triplesnode_constructor_exists():
-    assert callable(sparql::TriplesNode.__init__)
+def test_sparql_triplesnode_constructor_exists():
+    assert callable(sparql_TriplesNode.__init__)
 
 
-def test_sparql::triplesnode_constructor_args():
-    sig = inspect.signature(sparql::TriplesNode.__init__)
+def test_sparql_triplesnode_constructor_args():
+    sig = inspect.signature(sparql_TriplesNode.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sparql::triplessamesubjectrightne_is_not_abstract():
-    assert not inspect.isabstract(sparql::TriplesSameSubjectRightNE)
+def test_sparql_triplessamesubjectrightne_is_not_abstract():
+    assert not inspect.isabstract(sparql_TriplesSameSubjectRightNE)
 
 
-def test_sparql::triplessamesubjectrightne_constructor_exists():
-    assert callable(sparql::TriplesSameSubjectRightNE.__init__)
+def test_sparql_triplessamesubjectrightne_constructor_exists():
+    assert callable(sparql_TriplesSameSubjectRightNE.__init__)
 
 
-def test_sparql::triplessamesubjectrightne_constructor_args():
-    sig = inspect.signature(sparql::TriplesSameSubjectRightNE.__init__)
+def test_sparql_triplessamesubjectrightne_constructor_args():
+    sig = inspect.signature(sparql_TriplesSameSubjectRightNE.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -2162,16 +1406,16 @@ def test_irireference_constructor_args():
 
 
 
-def test_sparql::prefixedname_is_not_abstract():
-    assert not inspect.isabstract(sparql::PrefixedName)
+def test_sparql_prefixedname_is_not_abstract():
+    assert not inspect.isabstract(sparql_PrefixedName)
 
 
-def test_sparql::prefixedname_constructor_exists():
-    assert callable(sparql::PrefixedName.__init__)
+def test_sparql_prefixedname_constructor_exists():
+    assert callable(sparql_PrefixedName.__init__)
 
 
-def test_sparql::prefixedname_constructor_args():
-    sig = inspect.signature(sparql::PrefixedName.__init__)
+def test_sparql_prefixedname_constructor_args():
+    sig = inspect.signature(sparql_PrefixedName.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -2204,72 +1448,44 @@ def test_graphterm_constructor_args():
 
 
 
-def test_sparql::blanknode_is_not_abstract():
-    assert not inspect.isabstract(sparql::BlankNode)
+def test_sparql_blanknode_is_not_abstract():
+    assert not inspect.isabstract(sparql_BlankNode)
 
 
-def test_sparql::blanknode_constructor_exists():
-    assert callable(sparql::BlankNode.__init__)
+def test_sparql_blanknode_constructor_exists():
+    assert callable(sparql_BlankNode.__init__)
 
 
-def test_sparql::blanknode_constructor_args():
-    sig = inspect.signature(sparql::BlankNode.__init__)
+def test_sparql_blanknode_constructor_args():
+    sig = inspect.signature(sparql_BlankNode.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sparql::notinlist_is_not_abstract():
-    assert not inspect.isabstract(sparql::NotInList)
+def test_sparql_notinlist_is_not_abstract():
+    assert not inspect.isabstract(sparql_NotInList)
 
 
-def test_sparql::notinlist_constructor_exists():
-    assert callable(sparql::NotInList.__init__)
+def test_sparql_notinlist_constructor_exists():
+    assert callable(sparql_NotInList.__init__)
 
 
-def test_sparql::notinlist_constructor_args():
-    sig = inspect.signature(sparql::NotInList.__init__)
+def test_sparql_notinlist_constructor_args():
+    sig = inspect.signature(sparql_NotInList.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sparql::groupgraphpattern_is_not_abstract():
-    assert not inspect.isabstract(sparql::GroupGraphPattern)
+def test_sparql_whereliteral_is_not_abstract():
+    assert not inspect.isabstract(sparql_WhereLiteral)
 
 
-def test_sparql::groupgraphpattern_constructor_exists():
-    assert callable(sparql::GroupGraphPattern.__init__)
+def test_sparql_whereliteral_constructor_exists():
+    assert callable(sparql_WhereLiteral.__init__)
 
 
-def test_sparql::groupgraphpattern_constructor_args():
-    sig = inspect.signature(sparql::GroupGraphPattern.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_sparql::whereliteral_is_not_abstract():
-    assert not inspect.isabstract(sparql::WhereLiteral)
-
-
-def test_sparql::whereliteral_constructor_exists():
-    assert callable(sparql::WhereLiteral.__init__)
-
-
-def test_sparql::whereliteral_constructor_args():
-    sig = inspect.signature(sparql::WhereLiteral.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_sparql::sourceselector_is_not_abstract():
-    assert not inspect.isabstract(sparql::SourceSelector)
-
-
-def test_sparql::sourceselector_constructor_exists():
-    assert callable(sparql::SourceSelector.__init__)
-
-
-def test_sparql::sourceselector_constructor_args():
-    sig = inspect.signature(sparql::SourceSelector.__init__)
+def test_sparql_whereliteral_constructor_args():
+    sig = inspect.signature(sparql_WhereLiteral.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -2288,44 +1504,30 @@ def test_graphclausene_constructor_args():
 
 
 
-def test_sparql::namedgraphclause_is_not_abstract():
-    assert not inspect.isabstract(sparql::NamedGraphClause)
+def test_sparql_namedgraphclause_is_not_abstract():
+    assert not inspect.isabstract(sparql_NamedGraphClause)
 
 
-def test_sparql::namedgraphclause_constructor_exists():
-    assert callable(sparql::NamedGraphClause.__init__)
+def test_sparql_namedgraphclause_constructor_exists():
+    assert callable(sparql_NamedGraphClause.__init__)
 
 
-def test_sparql::namedgraphclause_constructor_args():
-    sig = inspect.signature(sparql::NamedGraphClause.__init__)
+def test_sparql_namedgraphclause_constructor_args():
+    sig = inspect.signature(sparql_NamedGraphClause.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sparql::defaultgraphclause_is_not_abstract():
-    assert not inspect.isabstract(sparql::DefaultGraphClause)
+def test_sparql_defaultgraphclause_is_not_abstract():
+    assert not inspect.isabstract(sparql_DefaultGraphClause)
 
 
-def test_sparql::defaultgraphclause_constructor_exists():
-    assert callable(sparql::DefaultGraphClause.__init__)
+def test_sparql_defaultgraphclause_constructor_exists():
+    assert callable(sparql_DefaultGraphClause.__init__)
 
 
-def test_sparql::defaultgraphclause_constructor_args():
-    sig = inspect.signature(sparql::DefaultGraphClause.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_sparql::graphclausene_is_not_abstract():
-    assert not inspect.isabstract(sparql::GraphClauseNE)
-
-
-def test_sparql::graphclausene_constructor_exists():
-    assert callable(sparql::GraphClauseNE.__init__)
-
-
-def test_sparql::graphclausene_constructor_args():
-    sig = inspect.signature(sparql::GraphClauseNE.__init__)
+def test_sparql_defaultgraphclause_constructor_args():
+    sig = inspect.signature(sparql_DefaultGraphClause.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -2344,16 +1546,16 @@ def test_orderconditionrightne_constructor_args():
 
 
 
-def test_sparql::constraint_is_not_abstract():
-    assert not inspect.isabstract(sparql::Constraint)
+def test_sparql_constraint_is_not_abstract():
+    assert not inspect.isabstract(sparql_Constraint)
 
 
-def test_sparql::constraint_constructor_exists():
-    assert callable(sparql::Constraint.__init__)
+def test_sparql_constraint_constructor_exists():
+    assert callable(sparql_Constraint.__init__)
 
 
-def test_sparql::constraint_constructor_args():
-    sig = inspect.signature(sparql::Constraint.__init__)
+def test_sparql_constraint_constructor_args():
+    sig = inspect.signature(sparql_Constraint.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -2372,16 +1574,16 @@ def test_varorterm_constructor_args():
 
 
 
-def test_sparql::graphterm_is_not_abstract():
-    assert not inspect.isabstract(sparql::GraphTerm)
+def test_sparql_graphterm_is_not_abstract():
+    assert not inspect.isabstract(sparql_GraphTerm)
 
 
-def test_sparql::graphterm_constructor_exists():
-    assert callable(sparql::GraphTerm.__init__)
+def test_sparql_graphterm_constructor_exists():
+    assert callable(sparql_GraphTerm.__init__)
 
 
-def test_sparql::graphterm_constructor_args():
-    sig = inspect.signature(sparql::GraphTerm.__init__)
+def test_sparql_graphterm_constructor_args():
+    sig = inspect.signature(sparql_GraphTerm.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -2400,86 +1602,72 @@ def test_primaryexpression_constructor_args():
 
 
 
-def test_sparql::rdfliteral_is_not_abstract():
-    assert not inspect.isabstract(sparql::RDFLiteral)
+def test_sparql_rdfliteral_is_not_abstract():
+    assert not inspect.isabstract(sparql_RDFLiteral)
 
 
-def test_sparql::rdfliteral_constructor_exists():
-    assert callable(sparql::RDFLiteral.__init__)
+def test_sparql_rdfliteral_constructor_exists():
+    assert callable(sparql_RDFLiteral.__init__)
 
 
-def test_sparql::rdfliteral_constructor_args():
-    sig = inspect.signature(sparql::RDFLiteral.__init__)
+def test_sparql_rdfliteral_constructor_args():
+    sig = inspect.signature(sparql_RDFLiteral.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sparql::builtincall_is_not_abstract():
-    assert not inspect.isabstract(sparql::BuiltInCall)
+def test_sparql_builtincall_is_not_abstract():
+    assert not inspect.isabstract(sparql_BuiltInCall)
 
 
-def test_sparql::builtincall_constructor_exists():
-    assert callable(sparql::BuiltInCall.__init__)
+def test_sparql_builtincall_constructor_exists():
+    assert callable(sparql_BuiltInCall.__init__)
 
 
-def test_sparql::builtincall_constructor_args():
-    sig = inspect.signature(sparql::BuiltInCall.__init__)
+def test_sparql_builtincall_constructor_args():
+    sig = inspect.signature(sparql_BuiltInCall.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sparql::brackettedexpression_is_not_abstract():
-    assert not inspect.isabstract(sparql::BrackettedExpression)
+def test_sparql_irireforfunction_is_not_abstract():
+    assert not inspect.isabstract(sparql_IRIrefOrFunction)
 
 
-def test_sparql::brackettedexpression_constructor_exists():
-    assert callable(sparql::BrackettedExpression.__init__)
+def test_sparql_irireforfunction_constructor_exists():
+    assert callable(sparql_IRIrefOrFunction.__init__)
 
 
-def test_sparql::brackettedexpression_constructor_args():
-    sig = inspect.signature(sparql::BrackettedExpression.__init__)
+def test_sparql_irireforfunction_constructor_args():
+    sig = inspect.signature(sparql_IRIrefOrFunction.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sparql::numericliteral_is_not_abstract():
-    assert not inspect.isabstract(sparql::NumericLiteral)
+def test_sparql_numericliteral_is_not_abstract():
+    assert not inspect.isabstract(sparql_NumericLiteral)
 
 
-def test_sparql::numericliteral_constructor_exists():
-    assert callable(sparql::NumericLiteral.__init__)
+def test_sparql_numericliteral_constructor_exists():
+    assert callable(sparql_NumericLiteral.__init__)
 
 
-def test_sparql::numericliteral_constructor_args():
-    sig = inspect.signature(sparql::NumericLiteral.__init__)
+def test_sparql_numericliteral_constructor_args():
+    sig = inspect.signature(sparql_NumericLiteral.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sparql::booleanliteral_is_not_abstract():
-    assert not inspect.isabstract(sparql::BooleanLiteral)
+def test_sparql_booleanliteral_is_not_abstract():
+    assert not inspect.isabstract(sparql_BooleanLiteral)
 
 
-def test_sparql::booleanliteral_constructor_exists():
-    assert callable(sparql::BooleanLiteral.__init__)
+def test_sparql_booleanliteral_constructor_exists():
+    assert callable(sparql_BooleanLiteral.__init__)
 
 
-def test_sparql::booleanliteral_constructor_args():
-    sig = inspect.signature(sparql::BooleanLiteral.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_sparql::irireforfunction_is_not_abstract():
-    assert not inspect.isabstract(sparql::IRIrefOrFunction)
-
-
-def test_sparql::irireforfunction_constructor_exists():
-    assert callable(sparql::IRIrefOrFunction.__init__)
-
-
-def test_sparql::irireforfunction_constructor_args():
-    sig = inspect.signature(sparql::IRIrefOrFunction.__init__)
+def test_sparql_booleanliteral_constructor_args():
+    sig = inspect.signature(sparql_BooleanLiteral.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -2498,103 +1686,31 @@ def test_varoririref_constructor_args():
 
 
 
-def test_sparql::pname::ln_is_not_abstract():
-    assert not inspect.isabstract(sparql::PNAME::LN)
+def test_sparql_pname_ln_is_not_abstract():
+    assert not inspect.isabstract(sparql_PNAME_LN)
 
 
-def test_sparql::pname::ln_constructor_exists():
-    assert callable(sparql::PNAME::LN.__init__)
+def test_sparql_pname_ln_constructor_exists():
+    assert callable(sparql_PNAME_LN.__init__)
 
 
-def test_sparql::pname::ln_constructor_args():
-    sig = inspect.signature(sparql::PNAME::LN.__init__)
+def test_sparql_pname_ln_constructor_args():
+    sig = inspect.signature(sparql_PNAME_LN.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sparql::irireference_is_not_abstract():
-    assert not inspect.isabstract(sparql::IRIreference)
+def test_sparql_irireference_is_not_abstract():
+    assert not inspect.isabstract(sparql_IRIreference)
 
 
-def test_sparql::irireference_constructor_exists():
-    assert callable(sparql::IRIreference.__init__)
+def test_sparql_irireference_constructor_exists():
+    assert callable(sparql_IRIreference.__init__)
 
 
-def test_sparql::irireference_constructor_args():
-    sig = inspect.signature(sparql::IRIreference.__init__)
+def test_sparql_irireference_constructor_args():
+    sig = inspect.signature(sparql_IRIreference.__init__)
     params = list(sig.parameters.keys())
-
-
-
-def test_sparql::iri::ref_is_not_abstract():
-    assert not inspect.isabstract(sparql::IRI::REF)
-
-
-def test_sparql::iri::ref_constructor_exists():
-    assert callable(sparql::IRI::REF.__init__)
-
-
-def test_sparql::iri::ref_constructor_args():
-    sig = inspect.signature(sparql::IRI::REF.__init__)
-    params = list(sig.parameters.keys())
-    assert "iri_ref" in params, "Missing parameter 'iri_ref'"
-
-def test_sparql::iri::ref_has_iri_ref():
-    assert hasattr(sparql::IRI::REF, "iri_ref")
-    descriptor = None
-    for klass in sparql::IRI::REF.__mro__:
-        if "iri_ref" in klass.__dict__:
-            descriptor = klass.__dict__["iri_ref"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_sparql::var_is_not_abstract():
-    assert not inspect.isabstract(sparql::Var)
-
-
-def test_sparql::var_constructor_exists():
-    assert callable(sparql::Var.__init__)
-
-
-def test_sparql::var_constructor_args():
-    sig = inspect.signature(sparql::Var.__init__)
-    params = list(sig.parameters.keys())
-    assert "varname" in params, "Missing parameter 'varname'"
-
-def test_sparql::var_has_varname():
-    assert hasattr(sparql::Var, "varname")
-    descriptor = None
-    for klass in sparql::Var.__mro__:
-        if "varname" in klass.__dict__:
-            descriptor = klass.__dict__["varname"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_sparql::pname::ns_is_not_abstract():
-    assert not inspect.isabstract(sparql::PNAME::NS)
-
-
-def test_sparql::pname::ns_constructor_exists():
-    assert callable(sparql::PNAME::NS.__init__)
-
-
-def test_sparql::pname::ns_constructor_args():
-    sig = inspect.signature(sparql::PNAME::NS.__init__)
-    params = list(sig.parameters.keys())
-    assert "pn_prefix" in params, "Missing parameter 'pn_prefix'"
-
-def test_sparql::pname::ns_has_pn_prefix():
-    assert hasattr(sparql::PNAME::NS, "pn_prefix")
-    descriptor = None
-    for klass in sparql::PNAME::NS.__mro__:
-        if "pn_prefix" in klass.__dict__:
-            descriptor = klass.__dict__["pn_prefix"]
-            break
-    assert isinstance(descriptor, property)
 
 
 
@@ -2612,41 +1728,27 @@ def test_verb_constructor_args():
 
 
 
-def test_sparql::verbane_is_not_abstract():
-    assert not inspect.isabstract(sparql::VerbANE)
+def test_sparql_verbane_is_not_abstract():
+    assert not inspect.isabstract(sparql_VerbANE)
 
 
-def test_sparql::verbane_constructor_exists():
-    assert callable(sparql::VerbANE.__init__)
+def test_sparql_verbane_constructor_exists():
+    assert callable(sparql_VerbANE.__init__)
 
 
-def test_sparql::verbane_constructor_args():
-    sig = inspect.signature(sparql::VerbANE.__init__)
+def test_sparql_verbane_constructor_args():
+    sig = inspect.signature(sparql_VerbANE.__init__)
     params = list(sig.parameters.keys())
     assert "theA" in params, "Missing parameter 'theA'"
 
-def test_sparql::verbane_has_theA():
-    assert hasattr(sparql::VerbANE, "theA")
+def test_sparql_verbane_has_theA():
+    assert hasattr(sparql_VerbANE, "theA")
     descriptor = None
-    for klass in sparql::VerbANE.__mro__:
+    for klass in sparql_VerbANE.__mro__:
         if "theA" in klass.__dict__:
             descriptor = klass.__dict__["theA"]
             break
     assert isinstance(descriptor, property)
-
-
-
-def test_sparql::varoririref_is_not_abstract():
-    assert not inspect.isabstract(sparql::VarOrIRIref)
-
-
-def test_sparql::varoririref_constructor_exists():
-    assert callable(sparql::VarOrIRIref.__init__)
-
-
-def test_sparql::varoririref_constructor_args():
-    sig = inspect.signature(sparql::VarOrIRIref.__init__)
-    params = list(sig.parameters.keys())
 
 
 
@@ -2664,44 +1766,30 @@ def test_variablesne_constructor_args():
 
 
 
-def test_sparql::somevariablesne_is_not_abstract():
-    assert not inspect.isabstract(sparql::SomeVariablesNE)
+def test_sparql_somevariablesne_is_not_abstract():
+    assert not inspect.isabstract(sparql_SomeVariablesNE)
 
 
-def test_sparql::somevariablesne_constructor_exists():
-    assert callable(sparql::SomeVariablesNE.__init__)
+def test_sparql_somevariablesne_constructor_exists():
+    assert callable(sparql_SomeVariablesNE.__init__)
 
 
-def test_sparql::somevariablesne_constructor_args():
-    sig = inspect.signature(sparql::SomeVariablesNE.__init__)
+def test_sparql_somevariablesne_constructor_args():
+    sig = inspect.signature(sparql_SomeVariablesNE.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sparql::allvariablesne_is_not_abstract():
-    assert not inspect.isabstract(sparql::AllVariablesNE)
+def test_sparql_allvariablesne_is_not_abstract():
+    assert not inspect.isabstract(sparql_AllVariablesNE)
 
 
-def test_sparql::allvariablesne_constructor_exists():
-    assert callable(sparql::AllVariablesNE.__init__)
+def test_sparql_allvariablesne_constructor_exists():
+    assert callable(sparql_AllVariablesNE.__init__)
 
 
-def test_sparql::allvariablesne_constructor_args():
-    sig = inspect.signature(sparql::AllVariablesNE.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_sparql::variablesne_is_not_abstract():
-    assert not inspect.isabstract(sparql::VariablesNE)
-
-
-def test_sparql::variablesne_constructor_exists():
-    assert callable(sparql::VariablesNE.__init__)
-
-
-def test_sparql::variablesne_constructor_args():
-    sig = inspect.signature(sparql::VariablesNE.__init__)
+def test_sparql_allvariablesne_constructor_args():
+    sig = inspect.signature(sparql_AllVariablesNE.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -2720,111 +1808,55 @@ def test_solutionsdisplayne_constructor_args():
 
 
 
-def test_sparql::reducedne_is_not_abstract():
-    assert not inspect.isabstract(sparql::ReducedNE)
+def test_sparql_reducedne_is_not_abstract():
+    assert not inspect.isabstract(sparql_ReducedNE)
 
 
-def test_sparql::reducedne_constructor_exists():
-    assert callable(sparql::ReducedNE.__init__)
+def test_sparql_reducedne_constructor_exists():
+    assert callable(sparql_ReducedNE.__init__)
 
 
-def test_sparql::reducedne_constructor_args():
-    sig = inspect.signature(sparql::ReducedNE.__init__)
+def test_sparql_reducedne_constructor_args():
+    sig = inspect.signature(sparql_ReducedNE.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sparql::distinctne_is_not_abstract():
-    assert not inspect.isabstract(sparql::DistinctNE)
+def test_sparql_distinctne_is_not_abstract():
+    assert not inspect.isabstract(sparql_DistinctNE)
 
 
-def test_sparql::distinctne_constructor_exists():
-    assert callable(sparql::DistinctNE.__init__)
+def test_sparql_distinctne_constructor_exists():
+    assert callable(sparql_DistinctNE.__init__)
 
 
-def test_sparql::distinctne_constructor_args():
-    sig = inspect.signature(sparql::DistinctNE.__init__)
+def test_sparql_distinctne_constructor_args():
+    sig = inspect.signature(sparql_DistinctNE.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sparql::integer_is_not_abstract():
-    assert not inspect.isabstract(sparql::INTEGER)
+def test_sparql_integer_is_not_abstract():
+    assert not inspect.isabstract(sparql_INTEGER)
 
 
-def test_sparql::integer_constructor_exists():
-    assert callable(sparql::INTEGER.__init__)
+def test_sparql_integer_constructor_exists():
+    assert callable(sparql_INTEGER.__init__)
 
 
-def test_sparql::integer_constructor_args():
-    sig = inspect.signature(sparql::INTEGER.__init__)
+def test_sparql_integer_constructor_args():
+    sig = inspect.signature(sparql_INTEGER.__init__)
     params = list(sig.parameters.keys())
     assert "integer" in params, "Missing parameter 'integer'"
 
-def test_sparql::integer_has_integer():
-    assert hasattr(sparql::INTEGER, "integer")
+def test_sparql_integer_has_integer():
+    assert hasattr(sparql_INTEGER, "integer")
     descriptor = None
-    for klass in sparql::INTEGER.__mro__:
+    for klass in sparql_INTEGER.__mro__:
         if "integer" in klass.__dict__:
             descriptor = klass.__dict__["integer"]
             break
     assert isinstance(descriptor, property)
-
-
-
-def test_sparql::orderclause_is_not_abstract():
-    assert not inspect.isabstract(sparql::OrderClause)
-
-
-def test_sparql::orderclause_constructor_exists():
-    assert callable(sparql::OrderClause.__init__)
-
-
-def test_sparql::orderclause_constructor_args():
-    sig = inspect.signature(sparql::OrderClause.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_sparql::triplessamesubject_is_not_abstract():
-    assert not inspect.isabstract(sparql::TriplesSameSubject)
-
-
-def test_sparql::triplessamesubject_constructor_exists():
-    assert callable(sparql::TriplesSameSubject.__init__)
-
-
-def test_sparql::triplessamesubject_constructor_args():
-    sig = inspect.signature(sparql::TriplesSameSubject.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_sparql::offsetclause_is_not_abstract():
-    assert not inspect.isabstract(sparql::OffsetClause)
-
-
-def test_sparql::offsetclause_constructor_exists():
-    assert callable(sparql::OffsetClause.__init__)
-
-
-def test_sparql::offsetclause_constructor_args():
-    sig = inspect.signature(sparql::OffsetClause.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_sparql::limitclause_is_not_abstract():
-    assert not inspect.isabstract(sparql::LimitClause)
-
-
-def test_sparql::limitclause_constructor_exists():
-    assert callable(sparql::LimitClause.__init__)
-
-
-def test_sparql::limitclause_constructor_args():
-    sig = inspect.signature(sparql::LimitClause.__init__)
-    params = list(sig.parameters.keys())
 
 
 
@@ -2842,44 +1874,1012 @@ def test_limitoffsetclauses_constructor_args():
 
 
 
-def test_sparql::limitoffsetclausesrightne_is_not_abstract():
-    assert not inspect.isabstract(sparql::LimitOffsetClausesRightNE)
+def test_sparql_limitoffsetclausesrightne_is_not_abstract():
+    assert not inspect.isabstract(sparql_LimitOffsetClausesRightNE)
 
 
-def test_sparql::limitoffsetclausesrightne_constructor_exists():
-    assert callable(sparql::LimitOffsetClausesRightNE.__init__)
+def test_sparql_limitoffsetclausesrightne_constructor_exists():
+    assert callable(sparql_LimitOffsetClausesRightNE.__init__)
 
 
-def test_sparql::limitoffsetclausesrightne_constructor_args():
-    sig = inspect.signature(sparql::LimitOffsetClausesRightNE.__init__)
+def test_sparql_limitoffsetclausesrightne_constructor_args():
+    sig = inspect.signature(sparql_LimitOffsetClausesRightNE.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sparql::limitoffsetclausesleftne_is_not_abstract():
-    assert not inspect.isabstract(sparql::LimitOffsetClausesLeftNE)
+def test_sparql_limitoffsetclausesleftne_is_not_abstract():
+    assert not inspect.isabstract(sparql_LimitOffsetClausesLeftNE)
 
 
-def test_sparql::limitoffsetclausesleftne_constructor_exists():
-    assert callable(sparql::LimitOffsetClausesLeftNE.__init__)
+def test_sparql_limitoffsetclausesleftne_constructor_exists():
+    assert callable(sparql_LimitOffsetClausesLeftNE.__init__)
 
 
-def test_sparql::limitoffsetclausesleftne_constructor_args():
-    sig = inspect.signature(sparql::LimitOffsetClausesLeftNE.__init__)
+def test_sparql_limitoffsetclausesleftne_constructor_args():
+    sig = inspect.signature(sparql_LimitOffsetClausesLeftNE.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sparql::orderconditionrightne_is_not_abstract():
-    assert not inspect.isabstract(sparql::OrderConditionRightNE)
+def test_sparql_brackettedexpression_is_not_abstract():
+    assert not inspect.isabstract(sparql_BrackettedExpression)
 
 
-def test_sparql::orderconditionrightne_constructor_exists():
-    assert callable(sparql::OrderConditionRightNE.__init__)
+def test_sparql_brackettedexpression_constructor_exists():
+    assert callable(sparql_BrackettedExpression.__init__)
 
 
-def test_sparql::orderconditionrightne_constructor_args():
-    sig = inspect.signature(sparql::OrderConditionRightNE.__init__)
+def test_sparql_brackettedexpression_constructor_args():
+    sig = inspect.signature(sparql_BrackettedExpression.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_sparql_ascordecs_is_not_abstract():
+    assert not inspect.isabstract(sparql_AscOrDecs)
+
+
+def test_sparql_ascordecs_constructor_exists():
+    assert callable(sparql_AscOrDecs.__init__)
+
+
+def test_sparql_ascordecs_constructor_args():
+    sig = inspect.signature(sparql_AscOrDecs.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_ordercondition_is_not_abstract():
+    assert not inspect.isabstract(OrderCondition)
+
+
+def test_ordercondition_constructor_exists():
+    assert callable(OrderCondition.__init__)
+
+
+def test_ordercondition_constructor_args():
+    sig = inspect.signature(OrderCondition.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_sparql_orderconditionrightne_is_not_abstract():
+    assert not inspect.isabstract(sparql_OrderConditionRightNE)
+
+
+def test_sparql_orderconditionrightne_constructor_exists():
+    assert callable(sparql_OrderConditionRightNE.__init__)
+
+
+def test_sparql_orderconditionrightne_constructor_args():
+    sig = inspect.signature(sparql_OrderConditionRightNE.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_sparql_orderconditionleftne_is_not_abstract():
+    assert not inspect.isabstract(sparql_OrderConditionLeftNE)
+
+
+def test_sparql_orderconditionleftne_constructor_exists():
+    assert callable(sparql_OrderConditionLeftNE.__init__)
+
+
+def test_sparql_orderconditionleftne_constructor_args():
+    sig = inspect.signature(sparql_OrderConditionLeftNE.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_sparql_varoririref_is_not_abstract():
+    assert not inspect.isabstract(sparql_VarOrIRIref)
+
+
+def test_sparql_varoririref_constructor_exists():
+    assert callable(sparql_VarOrIRIref.__init__)
+
+
+def test_sparql_varoririref_constructor_args():
+    sig = inspect.signature(sparql_VarOrIRIref.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_query_is_not_abstract():
+    assert not inspect.isabstract(Query)
+
+
+def test_query_constructor_exists():
+    assert callable(Query.__init__)
+
+
+def test_query_constructor_args():
+    sig = inspect.signature(Query.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_sparql_askquery_is_not_abstract():
+    assert not inspect.isabstract(sparql_AskQuery)
+
+
+def test_sparql_askquery_constructor_exists():
+    assert callable(sparql_AskQuery.__init__)
+
+
+def test_sparql_askquery_constructor_args():
+    sig = inspect.signature(sparql_AskQuery.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_sparql_describequery_is_not_abstract():
+    assert not inspect.isabstract(sparql_DescribeQuery)
+
+
+def test_sparql_describequery_constructor_exists():
+    assert callable(sparql_DescribeQuery.__init__)
+
+
+def test_sparql_describequery_constructor_args():
+    sig = inspect.signature(sparql_DescribeQuery.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_sparql_constructquery_is_not_abstract():
+    assert not inspect.isabstract(sparql_ConstructQuery)
+
+
+def test_sparql_constructquery_constructor_exists():
+    assert callable(sparql_ConstructQuery.__init__)
+
+
+def test_sparql_constructquery_constructor_args():
+    sig = inspect.signature(sparql_ConstructQuery.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_sparql_selectquery_is_not_abstract():
+    assert not inspect.isabstract(sparql_SelectQuery)
+
+
+def test_sparql_selectquery_constructor_exists():
+    assert callable(sparql_SelectQuery.__init__)
+
+
+def test_sparql_selectquery_constructor_args():
+    sig = inspect.signature(sparql_SelectQuery.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_sparql_pname_ns_is_not_abstract():
+    assert not inspect.isabstract(sparql_PNAME_NS)
+
+
+def test_sparql_pname_ns_constructor_exists():
+    assert callable(sparql_PNAME_NS.__init__)
+
+
+def test_sparql_pname_ns_constructor_args():
+    sig = inspect.signature(sparql_PNAME_NS.__init__)
+    params = list(sig.parameters.keys())
+    assert "pn_prefix" in params, "Missing parameter 'pn_prefix'"
+
+def test_sparql_pname_ns_has_pn_prefix():
+    assert hasattr(sparql_PNAME_NS, "pn_prefix")
+    descriptor = None
+    for klass in sparql_PNAME_NS.__mro__:
+        if "pn_prefix" in klass.__dict__:
+            descriptor = klass.__dict__["pn_prefix"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_sparql_var_is_not_abstract():
+    assert not inspect.isabstract(sparql_Var)
+
+
+def test_sparql_var_constructor_exists():
+    assert callable(sparql_Var.__init__)
+
+
+def test_sparql_var_constructor_args():
+    sig = inspect.signature(sparql_Var.__init__)
+    params = list(sig.parameters.keys())
+    assert "varname" in params, "Missing parameter 'varname'"
+
+def test_sparql_var_has_varname():
+    assert hasattr(sparql_Var, "varname")
+    descriptor = None
+    for klass in sparql_Var.__mro__:
+        if "varname" in klass.__dict__:
+            descriptor = klass.__dict__["varname"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_sparql_locatedelement_is_not_abstract():
+    assert not inspect.isabstract(sparql_LocatedElement)
+
+
+def test_sparql_locatedelement_constructor_exists():
+    assert callable(sparql_LocatedElement.__init__)
+
+
+def test_sparql_locatedelement_constructor_args():
+    sig = inspect.signature(sparql_LocatedElement.__init__)
+    params = list(sig.parameters.keys())
+    assert "location" in params, "Missing parameter 'location'"
+    assert "commentsAfter" in params, "Missing parameter 'commentsAfter'"
+    assert "commentsBefore" in params, "Missing parameter 'commentsBefore'"
+
+def test_sparql_locatedelement_has_location():
+    assert hasattr(sparql_LocatedElement, "location")
+    descriptor = None
+    for klass in sparql_LocatedElement.__mro__:
+        if "location" in klass.__dict__:
+            descriptor = klass.__dict__["location"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_sparql_locatedelement_has_commentsAfter():
+    assert hasattr(sparql_LocatedElement, "commentsAfter")
+    descriptor = None
+    for klass in sparql_LocatedElement.__mro__:
+        if "commentsAfter" in klass.__dict__:
+            descriptor = klass.__dict__["commentsAfter"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_sparql_locatedelement_has_commentsBefore():
+    assert hasattr(sparql_LocatedElement, "commentsBefore")
+    descriptor = None
+    for klass in sparql_LocatedElement.__mro__:
+        if "commentsBefore" in klass.__dict__:
+            descriptor = klass.__dict__["commentsBefore"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_sparql_iri_ref_is_not_abstract():
+    assert not inspect.isabstract(sparql_IRI_REF)
+
+
+def test_sparql_iri_ref_constructor_exists():
+    assert callable(sparql_IRI_REF.__init__)
+
+
+def test_sparql_iri_ref_constructor_args():
+    sig = inspect.signature(sparql_IRI_REF.__init__)
+    params = list(sig.parameters.keys())
+    assert "iri_ref" in params, "Missing parameter 'iri_ref'"
+
+def test_sparql_iri_ref_has_iri_ref():
+    assert hasattr(sparql_IRI_REF, "iri_ref")
+    descriptor = None
+    for klass in sparql_IRI_REF.__mro__:
+        if "iri_ref" in klass.__dict__:
+            descriptor = klass.__dict__["iri_ref"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_locatedelement_is_not_abstract():
+    assert not inspect.isabstract(LocatedElement)
+
+
+def test_locatedelement_constructor_exists():
+    assert callable(LocatedElement.__init__)
+
+
+def test_locatedelement_constructor_args():
+    sig = inspect.signature(LocatedElement.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_sparql_offsetclause_is_not_abstract():
+    assert not inspect.isabstract(sparql_OffsetClause)
+
+
+def test_sparql_offsetclause_constructor_exists():
+    assert callable(sparql_OffsetClause.__init__)
+
+
+def test_sparql_offsetclause_constructor_args():
+    sig = inspect.signature(sparql_OffsetClause.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_sparql_triplessamesubject_is_not_abstract():
+    assert not inspect.isabstract(sparql_TriplesSameSubject)
+
+
+def test_sparql_triplessamesubject_constructor_exists():
+    assert callable(sparql_TriplesSameSubject.__init__)
+
+
+def test_sparql_triplessamesubject_constructor_args():
+    sig = inspect.signature(sparql_TriplesSameSubject.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_sparql_propertylistnotempty_is_not_abstract():
+    assert not inspect.isabstract(sparql_PropertyListNotEmpty)
+
+
+def test_sparql_propertylistnotempty_constructor_exists():
+    assert callable(sparql_PropertyListNotEmpty.__init__)
+
+
+def test_sparql_propertylistnotempty_constructor_args():
+    sig = inspect.signature(sparql_PropertyListNotEmpty.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_sparql_ordercondition_is_not_abstract():
+    assert not inspect.isabstract(sparql_OrderCondition)
+
+
+def test_sparql_ordercondition_constructor_exists():
+    assert callable(sparql_OrderCondition.__init__)
+
+
+def test_sparql_ordercondition_constructor_args():
+    sig = inspect.signature(sparql_OrderCondition.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_sparql_ws_is_not_abstract():
+    assert not inspect.isabstract(sparql_WS)
+
+
+def test_sparql_ws_constructor_exists():
+    assert callable(sparql_WS.__init__)
+
+
+def test_sparql_ws_constructor_args():
+    sig = inspect.signature(sparql_WS.__init__)
+    params = list(sig.parameters.keys())
+    assert "ws" in params, "Missing parameter 'ws'"
+
+def test_sparql_ws_has_ws():
+    assert hasattr(sparql_WS, "ws")
+    descriptor = None
+    for klass in sparql_WS.__mro__:
+        if "ws" in klass.__dict__:
+            descriptor = klass.__dict__["ws"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_sparql_additionalnumericexpressionne_is_not_abstract():
+    assert not inspect.isabstract(sparql_AdditionalNumericExpressionNE)
+
+
+def test_sparql_additionalnumericexpressionne_constructor_exists():
+    assert callable(sparql_AdditionalNumericExpressionNE.__init__)
+
+
+def test_sparql_additionalnumericexpressionne_constructor_args():
+    sig = inspect.signature(sparql_AdditionalNumericExpressionNE.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_sparql_object_is_not_abstract():
+    assert not inspect.isabstract(sparql_Object)
+
+
+def test_sparql_object_constructor_exists():
+    assert callable(sparql_Object.__init__)
+
+
+def test_sparql_object_constructor_args():
+    sig = inspect.signature(sparql_Object.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_sparql_additionalexpressionne_is_not_abstract():
+    assert not inspect.isabstract(sparql_AdditionalExpressionNE)
+
+
+def test_sparql_additionalexpressionne_constructor_exists():
+    assert callable(sparql_AdditionalExpressionNE.__init__)
+
+
+def test_sparql_additionalexpressionne_constructor_args():
+    sig = inspect.signature(sparql_AdditionalExpressionNE.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_sparql_additiveexpression_is_not_abstract():
+    assert not inspect.isabstract(sparql_AdditiveExpression)
+
+
+def test_sparql_additiveexpression_constructor_exists():
+    assert callable(sparql_AdditiveExpression.__init__)
+
+
+def test_sparql_additiveexpression_constructor_args():
+    sig = inspect.signature(sparql_AdditiveExpression.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_sparql_variablesne_is_not_abstract():
+    assert not inspect.isabstract(sparql_VariablesNE)
+
+
+def test_sparql_variablesne_constructor_exists():
+    assert callable(sparql_VariablesNE.__init__)
+
+
+def test_sparql_variablesne_constructor_args():
+    sig = inspect.signature(sparql_VariablesNE.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_sparql_prologue_is_not_abstract():
+    assert not inspect.isabstract(sparql_Prologue)
+
+
+def test_sparql_prologue_constructor_exists():
+    assert callable(sparql_Prologue.__init__)
+
+
+def test_sparql_prologue_constructor_args():
+    sig = inspect.signature(sparql_Prologue.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_sparql_prefixdecl_is_not_abstract():
+    assert not inspect.isabstract(sparql_PrefixDecl)
+
+
+def test_sparql_prefixdecl_constructor_exists():
+    assert callable(sparql_PrefixDecl.__init__)
+
+
+def test_sparql_prefixdecl_constructor_args():
+    sig = inspect.signature(sparql_PrefixDecl.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_sparql_additionalconditionalandexpressionne_is_not_abstract():
+    assert not inspect.isabstract(sparql_AdditionalConditionalAndExpressionNE)
+
+
+def test_sparql_additionalconditionalandexpressionne_constructor_exists():
+    assert callable(sparql_AdditionalConditionalAndExpressionNE.__init__)
+
+
+def test_sparql_additionalconditionalandexpressionne_constructor_args():
+    sig = inspect.signature(sparql_AdditionalConditionalAndExpressionNE.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_sparql_arglist_is_not_abstract():
+    assert not inspect.isabstract(sparql_ArgList)
+
+
+def test_sparql_arglist_constructor_exists():
+    assert callable(sparql_ArgList.__init__)
+
+
+def test_sparql_arglist_constructor_args():
+    sig = inspect.signature(sparql_ArgList.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_sparql_query_is_not_abstract():
+    assert not inspect.isabstract(sparql_Query)
+
+
+def test_sparql_query_constructor_exists():
+    assert callable(sparql_Query.__init__)
+
+
+def test_sparql_query_constructor_args():
+    sig = inspect.signature(sparql_Query.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_sparql_langtagoririrefne_is_not_abstract():
+    assert not inspect.isabstract(sparql_LANGTAGOrIRIrefNE)
+
+
+def test_sparql_langtagoririrefne_constructor_exists():
+    assert callable(sparql_LANGTAGOrIRIrefNE.__init__)
+
+
+def test_sparql_langtagoririrefne_constructor_args():
+    sig = inspect.signature(sparql_LANGTAGOrIRIrefNE.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_sparql_whereclause_is_not_abstract():
+    assert not inspect.isabstract(sparql_WhereClause)
+
+
+def test_sparql_whereclause_constructor_exists():
+    assert callable(sparql_WhereClause.__init__)
+
+
+def test_sparql_whereclause_constructor_args():
+    sig = inspect.signature(sparql_WhereClause.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_sparql_orderclause_is_not_abstract():
+    assert not inspect.isabstract(sparql_OrderClause)
+
+
+def test_sparql_orderclause_constructor_exists():
+    assert callable(sparql_OrderClause.__init__)
+
+
+def test_sparql_orderclause_constructor_args():
+    sig = inspect.signature(sparql_OrderClause.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_sparql_varname_is_not_abstract():
+    assert not inspect.isabstract(sparql_VARNAME)
+
+
+def test_sparql_varname_constructor_exists():
+    assert callable(sparql_VARNAME.__init__)
+
+
+def test_sparql_varname_constructor_args():
+    sig = inspect.signature(sparql_VARNAME.__init__)
+    params = list(sig.parameters.keys())
+    assert "varname" in params, "Missing parameter 'varname'"
+
+def test_sparql_varname_has_varname():
+    assert hasattr(sparql_VARNAME, "varname")
+    descriptor = None
+    for klass in sparql_VARNAME.__mro__:
+        if "varname" in klass.__dict__:
+            descriptor = klass.__dict__["varname"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_sparql_numericexpression_is_not_abstract():
+    assert not inspect.isabstract(sparql_NumericExpression)
+
+
+def test_sparql_numericexpression_constructor_exists():
+    assert callable(sparql_NumericExpression.__init__)
+
+
+def test_sparql_numericexpression_constructor_args():
+    sig = inspect.signature(sparql_NumericExpression.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_sparql_datasetclause_is_not_abstract():
+    assert not inspect.isabstract(sparql_DatasetClause)
+
+
+def test_sparql_datasetclause_constructor_exists():
+    assert callable(sparql_DatasetClause.__init__)
+
+
+def test_sparql_datasetclause_constructor_args():
+    sig = inspect.signature(sparql_DatasetClause.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_sparql_pn_local_is_not_abstract():
+    assert not inspect.isabstract(sparql_PN_LOCAL)
+
+
+def test_sparql_pn_local_constructor_exists():
+    assert callable(sparql_PN_LOCAL.__init__)
+
+
+def test_sparql_pn_local_constructor_args():
+    sig = inspect.signature(sparql_PN_LOCAL.__init__)
+    params = list(sig.parameters.keys())
+    assert "pn_local" in params, "Missing parameter 'pn_local'"
+
+def test_sparql_pn_local_has_pn_local():
+    assert hasattr(sparql_PN_LOCAL, "pn_local")
+    descriptor = None
+    for klass in sparql_PN_LOCAL.__mro__:
+        if "pn_local" in klass.__dict__:
+            descriptor = klass.__dict__["pn_local"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_sparql_additionalmultiplicativeexpressionne_is_not_abstract():
+    assert not inspect.isabstract(sparql_AdditionalMultiplicativeExpressionNE)
+
+
+def test_sparql_additionalmultiplicativeexpressionne_constructor_exists():
+    assert callable(sparql_AdditionalMultiplicativeExpressionNE.__init__)
+
+
+def test_sparql_additionalmultiplicativeexpressionne_constructor_args():
+    sig = inspect.signature(sparql_AdditionalMultiplicativeExpressionNE.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_sparql_limitoffsetclauses_is_not_abstract():
+    assert not inspect.isabstract(sparql_LimitOffsetClauses)
+
+
+def test_sparql_limitoffsetclauses_constructor_exists():
+    assert callable(sparql_LimitOffsetClauses.__init__)
+
+
+def test_sparql_limitoffsetclauses_constructor_args():
+    sig = inspect.signature(sparql_LimitOffsetClauses.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_sparql_pn_prefix_is_not_abstract():
+    assert not inspect.isabstract(sparql_PN_PREFIX)
+
+
+def test_sparql_pn_prefix_constructor_exists():
+    assert callable(sparql_PN_PREFIX.__init__)
+
+
+def test_sparql_pn_prefix_constructor_args():
+    sig = inspect.signature(sparql_PN_PREFIX.__init__)
+    params = list(sig.parameters.keys())
+    assert "pn_prefix" in params, "Missing parameter 'pn_prefix'"
+
+def test_sparql_pn_prefix_has_pn_prefix():
+    assert hasattr(sparql_PN_PREFIX, "pn_prefix")
+    descriptor = None
+    for klass in sparql_PN_PREFIX.__mro__:
+        if "pn_prefix" in klass.__dict__:
+            descriptor = klass.__dict__["pn_prefix"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_sparql_additionalunaryexpressionne_is_not_abstract():
+    assert not inspect.isabstract(sparql_AdditionalUnaryExpressionNE)
+
+
+def test_sparql_additionalunaryexpressionne_constructor_exists():
+    assert callable(sparql_AdditionalUnaryExpressionNE.__init__)
+
+
+def test_sparql_additionalunaryexpressionne_constructor_args():
+    sig = inspect.signature(sparql_AdditionalUnaryExpressionNE.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_sparql_unaryexpression_is_not_abstract():
+    assert not inspect.isabstract(sparql_UnaryExpression)
+
+
+def test_sparql_unaryexpression_constructor_exists():
+    assert callable(sparql_UnaryExpression.__init__)
+
+
+def test_sparql_unaryexpression_constructor_args():
+    sig = inspect.signature(sparql_UnaryExpression.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_sparql_solutionsdisplayne_is_not_abstract():
+    assert not inspect.isabstract(sparql_SolutionsDisplayNE)
+
+
+def test_sparql_solutionsdisplayne_constructor_exists():
+    assert callable(sparql_SolutionsDisplayNE.__init__)
+
+
+def test_sparql_solutionsdisplayne_constructor_args():
+    sig = inspect.signature(sparql_SolutionsDisplayNE.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_sparql_limitclause_is_not_abstract():
+    assert not inspect.isabstract(sparql_LimitClause)
+
+
+def test_sparql_limitclause_constructor_exists():
+    assert callable(sparql_LimitClause.__init__)
+
+
+def test_sparql_limitclause_constructor_args():
+    sig = inspect.signature(sparql_LimitClause.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_sparql_basedecl_is_not_abstract():
+    assert not inspect.isabstract(sparql_BaseDecl)
+
+
+def test_sparql_basedecl_constructor_exists():
+    assert callable(sparql_BaseDecl.__init__)
+
+
+def test_sparql_basedecl_constructor_args():
+    sig = inspect.signature(sparql_BaseDecl.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_sparql_valuelogical_is_not_abstract():
+    assert not inspect.isabstract(sparql_ValueLogical)
+
+
+def test_sparql_valuelogical_constructor_exists():
+    assert callable(sparql_ValueLogical.__init__)
+
+
+def test_sparql_valuelogical_constructor_args():
+    sig = inspect.signature(sparql_ValueLogical.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_sparql_objectlist_is_not_abstract():
+    assert not inspect.isabstract(sparql_ObjectList)
+
+
+def test_sparql_objectlist_constructor_exists():
+    assert callable(sparql_ObjectList.__init__)
+
+
+def test_sparql_objectlist_constructor_args():
+    sig = inspect.signature(sparql_ObjectList.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_sparql_graphclausene_is_not_abstract():
+    assert not inspect.isabstract(sparql_GraphClauseNE)
+
+
+def test_sparql_graphclausene_constructor_exists():
+    assert callable(sparql_GraphClauseNE.__init__)
+
+
+def test_sparql_graphclausene_constructor_args():
+    sig = inspect.signature(sparql_GraphClauseNE.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_sparql_expression_is_not_abstract():
+    assert not inspect.isabstract(sparql_Expression)
+
+
+def test_sparql_expression_constructor_exists():
+    assert callable(sparql_Expression.__init__)
+
+
+def test_sparql_expression_constructor_args():
+    sig = inspect.signature(sparql_Expression.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_sparql_solutionmodifier_is_not_abstract():
+    assert not inspect.isabstract(sparql_SolutionModifier)
+
+
+def test_sparql_solutionmodifier_constructor_exists():
+    assert callable(sparql_SolutionModifier.__init__)
+
+
+def test_sparql_solutionmodifier_constructor_args():
+    sig = inspect.signature(sparql_SolutionModifier.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_sparql_graphnode_is_not_abstract():
+    assert not inspect.isabstract(sparql_GraphNode)
+
+
+def test_sparql_graphnode_constructor_exists():
+    assert callable(sparql_GraphNode.__init__)
+
+
+def test_sparql_graphnode_constructor_args():
+    sig = inspect.signature(sparql_GraphNode.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_sparql_additionalggpelement_is_not_abstract():
+    assert not inspect.isabstract(sparql_AdditionalGGPElement)
+
+
+def test_sparql_additionalggpelement_constructor_exists():
+    assert callable(sparql_AdditionalGGPElement.__init__)
+
+
+def test_sparql_additionalggpelement_constructor_args():
+    sig = inspect.signature(sparql_AdditionalGGPElement.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_sparql_relationalexpression_is_not_abstract():
+    assert not inspect.isabstract(sparql_RelationalExpression)
+
+
+def test_sparql_relationalexpression_constructor_exists():
+    assert callable(sparql_RelationalExpression.__init__)
+
+
+def test_sparql_relationalexpression_constructor_args():
+    sig = inspect.signature(sparql_RelationalExpression.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_sparql_conditionalandexpression_is_not_abstract():
+    assert not inspect.isabstract(sparql_ConditionalAndExpression)
+
+
+def test_sparql_conditionalandexpression_constructor_exists():
+    assert callable(sparql_ConditionalAndExpression.__init__)
+
+
+def test_sparql_conditionalandexpression_constructor_args():
+    sig = inspect.signature(sparql_ConditionalAndExpression.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_sparql_constructtemplate_is_not_abstract():
+    assert not inspect.isabstract(sparql_ConstructTemplate)
+
+
+def test_sparql_constructtemplate_constructor_exists():
+    assert callable(sparql_ConstructTemplate.__init__)
+
+
+def test_sparql_constructtemplate_constructor_args():
+    sig = inspect.signature(sparql_ConstructTemplate.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_sparql_multiplicativeexpression_is_not_abstract():
+    assert not inspect.isabstract(sparql_MultiplicativeExpression)
+
+
+def test_sparql_multiplicativeexpression_constructor_exists():
+    assert callable(sparql_MultiplicativeExpression.__init__)
+
+
+def test_sparql_multiplicativeexpression_constructor_args():
+    sig = inspect.signature(sparql_MultiplicativeExpression.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_sparql_sourceselector_is_not_abstract():
+    assert not inspect.isabstract(sparql_SourceSelector)
+
+
+def test_sparql_sourceselector_constructor_exists():
+    assert callable(sparql_SourceSelector.__init__)
+
+
+def test_sparql_sourceselector_constructor_args():
+    sig = inspect.signature(sparql_SourceSelector.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_sparql_additionalvaluelogicalne_is_not_abstract():
+    assert not inspect.isabstract(sparql_AdditionalValueLogicalNE)
+
+
+def test_sparql_additionalvaluelogicalne_constructor_exists():
+    assert callable(sparql_AdditionalValueLogicalNE.__init__)
+
+
+def test_sparql_additionalvaluelogicalne_constructor_args():
+    sig = inspect.signature(sparql_AdditionalValueLogicalNE.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_sparql_groupgraphpattern_is_not_abstract():
+    assert not inspect.isabstract(sparql_GroupGraphPattern)
+
+
+def test_sparql_groupgraphpattern_constructor_exists():
+    assert callable(sparql_GroupGraphPattern.__init__)
+
+
+def test_sparql_groupgraphpattern_constructor_args():
+    sig = inspect.signature(sparql_GroupGraphPattern.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_sparql_conditionalorexpression_is_not_abstract():
+    assert not inspect.isabstract(sparql_ConditionalOrExpression)
+
+
+def test_sparql_conditionalorexpression_constructor_exists():
+    assert callable(sparql_ConditionalOrExpression.__init__)
+
+
+def test_sparql_conditionalorexpression_constructor_args():
+    sig = inspect.signature(sparql_ConditionalOrExpression.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_sparql_verb_is_not_abstract():
+    assert not inspect.isabstract(sparql_Verb)
+
+
+def test_sparql_verb_constructor_exists():
+    assert callable(sparql_Verb.__init__)
+
+
+def test_sparql_verb_constructor_args():
+    sig = inspect.signature(sparql_Verb.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_sparql_sparqlqueries_is_not_abstract():
+    assert not inspect.isabstract(sparql_SparqlQueries)
+
+
+def test_sparql_sparqlqueries_constructor_exists():
+    assert callable(sparql_SparqlQueries.__init__)
+
+
+def test_sparql_sparqlqueries_constructor_args():
+    sig = inspect.signature(sparql_SparqlQueries.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -2897,425 +2897,264 @@ safe_text = st.text(
 BlankNode_strategy = st.builds(
     BlankNode,
 )
-sparql::ANON_strategy = st.builds(
-    sparql::ANON,
+sparql_ANON_strategy = st.builds(
+    sparql_ANON,
 )
-sparql::BLANK::NODE::LABEL_strategy = st.builds(
-    sparql::BLANK::NODE::LABEL,
+sparql_BLANK_NODE_LABEL_strategy = st.builds(
+    sparql_BLANK_NODE_LABEL,
     pn_local=
         safe_text
 )
 AscOrDecs_strategy = st.builds(
     AscOrDecs,
 )
-sparql::DescendingLiteral_strategy = st.builds(
-    sparql::DescendingLiteral,
+sparql_DescendingLiteral_strategy = st.builds(
+    sparql_DescendingLiteral,
 )
-sparql::AscendingLiteral_strategy = st.builds(
-    sparql::AscendingLiteral,
+sparql_AscendingLiteral_strategy = st.builds(
+    sparql_AscendingLiteral,
 )
 StringLiteral_strategy = st.builds(
     StringLiteral,
 )
-sparql::STRING::LITERAL2_strategy = st.builds(
-    sparql::STRING::LITERAL2,
+sparql_STRING_LITERAL_LONG1_strategy = st.builds(
+    sparql_STRING_LITERAL_LONG1,
     string=
         safe_text
 )
-sparql::STRING::LITERAL::LONG2_strategy = st.builds(
-    sparql::STRING::LITERAL::LONG2,
+sparql_STRING_LITERAL_LONG2_strategy = st.builds(
+    sparql_STRING_LITERAL_LONG2,
     string=
         safe_text
 )
-sparql::STRING::LITERAL::LONG1_strategy = st.builds(
-    sparql::STRING::LITERAL::LONG1,
+sparql_STRING_LITERAL2_strategy = st.builds(
+    sparql_STRING_LITERAL2,
     string=
         safe_text
 )
-sparql::STRING::LITERAL1_strategy = st.builds(
-    sparql::STRING::LITERAL1,
+sparql_STRING_LITERAL1_strategy = st.builds(
+    sparql_STRING_LITERAL1,
     string=
         safe_text
 )
-sparql::VAR2_strategy = st.builds(
-    sparql::VAR2,
+sparql_VAR2_strategy = st.builds(
+    sparql_VAR2,
 )
-sparql::VAR1_strategy = st.builds(
-    sparql::VAR1,
+sparql_VAR1_strategy = st.builds(
+    sparql_VAR1,
 )
 BooleanLiteral_strategy = st.builds(
     BooleanLiteral,
 )
-sparql::FalseBooleanLiteralNE_strategy = st.builds(
-    sparql::FalseBooleanLiteralNE,
+sparql_FalseBooleanLiteralNE_strategy = st.builds(
+    sparql_FalseBooleanLiteralNE,
 )
-sparql::TrueBooleanLiteralNE_strategy = st.builds(
-    sparql::TrueBooleanLiteralNE,
+sparql_TrueBooleanLiteralNE_strategy = st.builds(
+    sparql_TrueBooleanLiteralNE,
 )
 PrefixedName_strategy = st.builds(
     PrefixedName,
 )
-sparql::StringLiteral_strategy = st.builds(
-    sparql::StringLiteral,
+sparql_StringLiteral_strategy = st.builds(
+    sparql_StringLiteral,
 )
 LANGTAGOrIRIrefNE_strategy = st.builds(
     LANGTAGOrIRIrefNE,
 )
-sparql::LANGTAG_strategy = st.builds(
-    sparql::LANGTAG,
+sparql_LANGTAG_strategy = st.builds(
+    sparql_LANGTAG,
     langtag=
         safe_text
 )
-sparql::UpIRIrefNE_strategy = st.builds(
-    sparql::UpIRIrefNE,
+sparql_UpIRIrefNE_strategy = st.builds(
+    sparql_UpIRIrefNE,
 )
 AdditionalUnaryExpressionNE_strategy = st.builds(
     AdditionalUnaryExpressionNE,
 )
-sparql::TimesAdditionalUnaryExpressionNE_strategy = st.builds(
-    sparql::TimesAdditionalUnaryExpressionNE,
+sparql_TimesAdditionalUnaryExpressionNE_strategy = st.builds(
+    sparql_TimesAdditionalUnaryExpressionNE,
 )
 NumericLiteral_strategy = st.builds(
     NumericLiteral,
 )
-sparql::NumericLiteralUnsigned_strategy = st.builds(
-    sparql::NumericLiteralUnsigned,
-)
-sparql::DOUBLE_strategy = st.builds(
-    sparql::DOUBLE,
+sparql_DOUBLE_strategy = st.builds(
+    sparql_DOUBLE,
     double=
         safe_text
 )
-sparql::DECIMAL_strategy = st.builds(
-    sparql::DECIMAL,
+sparql_DECIMAL_strategy = st.builds(
+    sparql_DECIMAL,
     decimal=
         safe_text
+)
+sparql_NumericLiteralUnsigned_strategy = st.builds(
+    sparql_NumericLiteralUnsigned,
 )
 AdditionalMultiplicativeExpressionNE_strategy = st.builds(
     AdditionalMultiplicativeExpressionNE,
 )
-sparql::NumericLiteralNegative_strategy = st.builds(
-    sparql::NumericLiteralNegative,
+sparql_MinusMultiplicativeExpressionNE_strategy = st.builds(
+    sparql_MinusMultiplicativeExpressionNE,
 )
-sparql::NumericLiteralPositive_strategy = st.builds(
-    sparql::NumericLiteralPositive,
+sparql_NumericLiteralNegative_strategy = st.builds(
+    sparql_NumericLiteralNegative,
 )
-sparql::MinusMultiplicativeExpressionNE_strategy = st.builds(
-    sparql::MinusMultiplicativeExpressionNE,
+sparql_NumericLiteralPositive_strategy = st.builds(
+    sparql_NumericLiteralPositive,
 )
-sparql::PlusMultiplicativeExpressionNE_strategy = st.builds(
-    sparql::PlusMultiplicativeExpressionNE,
+sparql_PlusMultiplicativeExpressionNE_strategy = st.builds(
+    sparql_PlusMultiplicativeExpressionNE,
 )
 UnaryExpression_strategy = st.builds(
     UnaryExpression,
 )
-sparql::PlusPrimaryExpressionNE_strategy = st.builds(
-    sparql::PlusPrimaryExpressionNE,
+sparql_PrimaryExpression_strategy = st.builds(
+    sparql_PrimaryExpression,
 )
-sparql::PrimaryExpression_strategy = st.builds(
-    sparql::PrimaryExpression,
+sparql_MinusPrimaryExpressionNE_strategy = st.builds(
+    sparql_MinusPrimaryExpressionNE,
 )
-sparql::MinusPrimaryExpressionNE_strategy = st.builds(
-    sparql::MinusPrimaryExpressionNE,
+sparql_PlusPrimaryExpressionNE_strategy = st.builds(
+    sparql_PlusPrimaryExpressionNE,
 )
-sparql::NotPrimaryExpressionNE_strategy = st.builds(
-    sparql::NotPrimaryExpressionNE,
+sparql_NotPrimaryExpressionNE_strategy = st.builds(
+    sparql_NotPrimaryExpressionNE,
 )
-sparql::DividedByAdditionalUnaryExpressionNE_strategy = st.builds(
-    sparql::DividedByAdditionalUnaryExpressionNE,
+sparql_DividedByAdditionalUnaryExpressionNE_strategy = st.builds(
+    sparql_DividedByAdditionalUnaryExpressionNE,
 )
 AdditionalNumericExpressionNE_strategy = st.builds(
     AdditionalNumericExpressionNE,
 )
-sparql::BiggerOrEqualNumericExpressionNE_strategy = st.builds(
-    sparql::BiggerOrEqualNumericExpressionNE,
+sparql_SmallerOrEqualNumericExpressionNE_strategy = st.builds(
+    sparql_SmallerOrEqualNumericExpressionNE,
 )
-sparql::NotEqualNumericExpressionNE_strategy = st.builds(
-    sparql::NotEqualNumericExpressionNE,
+sparql_BiggerNumericExpressionNE_strategy = st.builds(
+    sparql_BiggerNumericExpressionNE,
 )
-sparql::BiggerNumericExpressionNE_strategy = st.builds(
-    sparql::BiggerNumericExpressionNE,
+sparql_SmallerNumericExpressionNE_strategy = st.builds(
+    sparql_SmallerNumericExpressionNE,
 )
-sparql::SmallerOrEqualNumericExpressionNE_strategy = st.builds(
-    sparql::SmallerOrEqualNumericExpressionNE,
+sparql_BiggerOrEqualNumericExpressionNE_strategy = st.builds(
+    sparql_BiggerOrEqualNumericExpressionNE,
 )
-sparql::SmallerNumericExpressionNE_strategy = st.builds(
-    sparql::SmallerNumericExpressionNE,
+sparql_NotEqualNumericExpressionNE_strategy = st.builds(
+    sparql_NotEqualNumericExpressionNE,
 )
-sparql::EqualsNumericExpressionNE_strategy = st.builds(
-    sparql::EqualsNumericExpressionNE,
+sparql_EqualsNumericExpressionNE_strategy = st.builds(
+    sparql_EqualsNumericExpressionNE,
 )
 ArgList_strategy = st.builds(
     ArgList,
 )
-sparql::ArgListExpressionNE_strategy = st.builds(
-    sparql::ArgListExpressionNE,
+sparql_ArgListExpressionNE_strategy = st.builds(
+    sparql_ArgListExpressionNE,
 )
-sparql::ArgListNILNE_strategy = st.builds(
-    sparql::ArgListNILNE,
-)
-sparql::AscOrDecs_strategy = st.builds(
-    sparql::AscOrDecs,
-)
-OrderCondition_strategy = st.builds(
-    OrderCondition,
-)
-sparql::OrderConditionLeftNE_strategy = st.builds(
-    sparql::OrderConditionLeftNE,
-)
-Query_strategy = st.builds(
-    Query,
-)
-sparql::DescribeQuery_strategy = st.builds(
-    sparql::DescribeQuery,
-)
-sparql::ConstructQuery_strategy = st.builds(
-    sparql::ConstructQuery,
-)
-sparql::AskQuery_strategy = st.builds(
-    sparql::AskQuery,
-)
-sparql::SelectQuery_strategy = st.builds(
-    sparql::SelectQuery,
-)
-sparql::LocatedElement_strategy = st.builds(
-    sparql::LocatedElement,
-    commentsAfter=
-        safe_text,
-    location=
-        safe_text,
-    commentsBefore=
-        safe_text
-)
-LocatedElement_strategy = st.builds(
-    LocatedElement,
-)
-sparql::UnaryExpression_strategy = st.builds(
-    sparql::UnaryExpression,
-)
-sparql::WS_strategy = st.builds(
-    sparql::WS,
-    ws=
-        safe_text
-)
-sparql::AdditiveExpression_strategy = st.builds(
-    sparql::AdditiveExpression,
-)
-sparql::AdditionalUnaryExpressionNE_strategy = st.builds(
-    sparql::AdditionalUnaryExpressionNE,
-)
-sparql::Prologue_strategy = st.builds(
-    sparql::Prologue,
-)
-sparql::AdditionalValueLogicalNE_strategy = st.builds(
-    sparql::AdditionalValueLogicalNE,
-)
-sparql::LimitOffsetClauses_strategy = st.builds(
-    sparql::LimitOffsetClauses,
-)
-sparql::MultiplicativeExpression_strategy = st.builds(
-    sparql::MultiplicativeExpression,
-)
-sparql::WhereClause_strategy = st.builds(
-    sparql::WhereClause,
-)
-sparql::RelationalExpression_strategy = st.builds(
-    sparql::RelationalExpression,
-)
-sparql::SolutionsDisplayNE_strategy = st.builds(
-    sparql::SolutionsDisplayNE,
-)
-sparql::AdditionalNumericExpressionNE_strategy = st.builds(
-    sparql::AdditionalNumericExpressionNE,
-)
-sparql::Query_strategy = st.builds(
-    sparql::Query,
-)
-sparql::ConstructTemplate_strategy = st.builds(
-    sparql::ConstructTemplate,
-)
-sparql::NumericExpression_strategy = st.builds(
-    sparql::NumericExpression,
-)
-sparql::PN::PREFIX_strategy = st.builds(
-    sparql::PN::PREFIX,
-    pn_prefix=
-        safe_text
-)
-sparql::OrderCondition_strategy = st.builds(
-    sparql::OrderCondition,
-)
-sparql::SolutionModifier_strategy = st.builds(
-    sparql::SolutionModifier,
-)
-sparql::AdditionalConditionalAndExpressionNE_strategy = st.builds(
-    sparql::AdditionalConditionalAndExpressionNE,
-)
-sparql::DatasetClause_strategy = st.builds(
-    sparql::DatasetClause,
-)
-sparql::BaseDecl_strategy = st.builds(
-    sparql::BaseDecl,
-)
-sparql::VARNAME_strategy = st.builds(
-    sparql::VARNAME,
-    varname=
-        safe_text
-)
-sparql::AdditionalMultiplicativeExpressionNE_strategy = st.builds(
-    sparql::AdditionalMultiplicativeExpressionNE,
-)
-sparql::PN::LOCAL_strategy = st.builds(
-    sparql::PN::LOCAL,
-    pn_local=
-        safe_text
-)
-sparql::ValueLogical_strategy = st.builds(
-    sparql::ValueLogical,
-)
-sparql::LANGTAGOrIRIrefNE_strategy = st.builds(
-    sparql::LANGTAGOrIRIrefNE,
-)
-sparql::ConditionalAndExpression_strategy = st.builds(
-    sparql::ConditionalAndExpression,
-)
-sparql::PrefixDecl_strategy = st.builds(
-    sparql::PrefixDecl,
-)
-sparql::SparqlQueries_strategy = st.builds(
-    sparql::SparqlQueries,
-)
-sparql::ConditionalOrExpression_strategy = st.builds(
-    sparql::ConditionalOrExpression,
-)
-sparql::ArgList_strategy = st.builds(
-    sparql::ArgList,
-)
-sparql::AdditionalExpressionNE_strategy = st.builds(
-    sparql::AdditionalExpressionNE,
+sparql_ArgListNILNE_strategy = st.builds(
+    sparql_ArgListNILNE,
 )
 BuiltInCall_strategy = st.builds(
     BuiltInCall,
 )
-sparql::IsURIBuiltInCallNE_strategy = st.builds(
-    sparql::IsURIBuiltInCallNE,
+sparql_IsBlankBuiltInCallNE_strategy = st.builds(
+    sparql_IsBlankBuiltInCallNE,
 )
-sparql::IsLiteralBuiltInCallNE_strategy = st.builds(
-    sparql::IsLiteralBuiltInCallNE,
+sparql_RegexExpression_strategy = st.builds(
+    sparql_RegexExpression,
 )
-sparql::RegexExpression_strategy = st.builds(
-    sparql::RegexExpression,
+sparql_LangmatchesBuiltInCallNE_strategy = st.builds(
+    sparql_LangmatchesBuiltInCallNE,
 )
-sparql::DatatypeBuiltInCallNE_strategy = st.builds(
-    sparql::DatatypeBuiltInCallNE,
+sparql_IsURIBuiltInCallNE_strategy = st.builds(
+    sparql_IsURIBuiltInCallNE,
 )
-sparql::LangmatchesBuiltInCallNE_strategy = st.builds(
-    sparql::LangmatchesBuiltInCallNE,
+sparql_LangBuiltInCallNE_strategy = st.builds(
+    sparql_LangBuiltInCallNE,
 )
-sparql::IsIRIBuiltInCallNE_strategy = st.builds(
-    sparql::IsIRIBuiltInCallNE,
+sparql_DatatypeBuiltInCallNE_strategy = st.builds(
+    sparql_DatatypeBuiltInCallNE,
 )
-sparql::IsBlankBuiltInCallNE_strategy = st.builds(
-    sparql::IsBlankBuiltInCallNE,
+sparql_IsLiteralBuiltInCallNE_strategy = st.builds(
+    sparql_IsLiteralBuiltInCallNE,
 )
-sparql::LangBuiltInCallNE_strategy = st.builds(
-    sparql::LangBuiltInCallNE,
+sparql_IsIRIBuiltInCallNE_strategy = st.builds(
+    sparql_IsIRIBuiltInCallNE,
 )
-sparql::StrBuiltInCallNE_strategy = st.builds(
-    sparql::StrBuiltInCallNE,
-)
-sparql::Expression_strategy = st.builds(
-    sparql::Expression,
+sparql_StrBuiltInCallNE_strategy = st.builds(
+    sparql_StrBuiltInCallNE,
 )
 Constraint_strategy = st.builds(
     Constraint,
 )
-sparql::FunctionCall_strategy = st.builds(
-    sparql::FunctionCall,
+sparql_FunctionCall_strategy = st.builds(
+    sparql_FunctionCall,
 )
-sparql::SameTermBuiltInCallNE_strategy = st.builds(
-    sparql::SameTermBuiltInCallNE,
+sparql_SameTermBuiltInCallNE_strategy = st.builds(
+    sparql_SameTermBuiltInCallNE,
 )
-sparql::BoundBuiltInCallNE_strategy = st.builds(
-    sparql::BoundBuiltInCallNE,
+sparql_BoundBuiltInCallNE_strategy = st.builds(
+    sparql_BoundBuiltInCallNE,
 )
 TriplesNode_strategy = st.builds(
     TriplesNode,
 )
-sparql::BlankNodePropertyList_strategy = st.builds(
-    sparql::BlankNodePropertyList,
+sparql_BlankNodePropertyList_strategy = st.builds(
+    sparql_BlankNodePropertyList,
 )
-sparql::Collection_strategy = st.builds(
-    sparql::Collection,
-)
-sparql::GraphNode_strategy = st.builds(
-    sparql::GraphNode,
-)
-sparql::Object_strategy = st.builds(
-    sparql::Object,
-)
-sparql::ObjectList_strategy = st.builds(
-    sparql::ObjectList,
-)
-sparql::Verb_strategy = st.builds(
-    sparql::Verb,
+sparql_Collection_strategy = st.builds(
+    sparql_Collection,
 )
 GraphNode_strategy = st.builds(
     GraphNode,
 )
-sparql::PropertyListNotEmpty_strategy = st.builds(
-    sparql::PropertyListNotEmpty,
+sparql_PatternOrFilterNE_strategy = st.builds(
+    sparql_PatternOrFilterNE,
 )
-sparql::PatternOrFilterNE_strategy = st.builds(
-    sparql::PatternOrFilterNE,
-)
-sparql::VarOrTerm_strategy = st.builds(
-    sparql::VarOrTerm,
+sparql_VarOrTerm_strategy = st.builds(
+    sparql_VarOrTerm,
 )
 TriplesSameSubject_strategy = st.builds(
     TriplesSameSubject,
 )
-sparql::TriplesSameSubjectLeftNE_strategy = st.builds(
-    sparql::TriplesSameSubjectLeftNE,
+sparql_TriplesSameSubjectLeftNE_strategy = st.builds(
+    sparql_TriplesSameSubjectLeftNE,
 )
-sparql::AdditionalGGPElement_strategy = st.builds(
-    sparql::AdditionalGGPElement,
-)
-sparql::TriplesBlock_strategy = st.builds(
-    sparql::TriplesBlock,
+sparql_TriplesBlock_strategy = st.builds(
+    sparql_TriplesBlock,
 )
 GraphPatternNotTriples_strategy = st.builds(
     GraphPatternNotTriples,
 )
-sparql::GraphGraphPattern_strategy = st.builds(
-    sparql::GraphGraphPattern,
+sparql_GraphGraphPattern_strategy = st.builds(
+    sparql_GraphGraphPattern,
 )
-sparql::GroupOrUnionGraphPattern_strategy = st.builds(
-    sparql::GroupOrUnionGraphPattern,
+sparql_GroupOrUnionGraphPattern_strategy = st.builds(
+    sparql_GroupOrUnionGraphPattern,
 )
-sparql::OptionalGraphPattern_strategy = st.builds(
-    sparql::OptionalGraphPattern,
+sparql_OptionalGraphPattern_strategy = st.builds(
+    sparql_OptionalGraphPattern,
 )
 PatternOrFilterNE_strategy = st.builds(
     PatternOrFilterNE,
 )
-sparql::Filter_strategy = st.builds(
-    sparql::Filter,
+sparql_Filter_strategy = st.builds(
+    sparql_Filter,
 )
-sparql::GraphPatternNotTriples_strategy = st.builds(
-    sparql::GraphPatternNotTriples,
+sparql_GraphPatternNotTriples_strategy = st.builds(
+    sparql_GraphPatternNotTriples,
 )
-sparql::TriplesNode_strategy = st.builds(
-    sparql::TriplesNode,
+sparql_TriplesNode_strategy = st.builds(
+    sparql_TriplesNode,
 )
-sparql::TriplesSameSubjectRightNE_strategy = st.builds(
-    sparql::TriplesSameSubjectRightNE,
+sparql_TriplesSameSubjectRightNE_strategy = st.builds(
+    sparql_TriplesSameSubjectRightNE,
 )
 IRIreference_strategy = st.builds(
     IRIreference,
 )
-sparql::PrefixedName_strategy = st.builds(
-    sparql::PrefixedName,
+sparql_PrefixedName_strategy = st.builds(
+    sparql_PrefixedName,
 )
 SourceSelector_strategy = st.builds(
     SourceSelector,
@@ -3323,150 +3162,311 @@ SourceSelector_strategy = st.builds(
 GraphTerm_strategy = st.builds(
     GraphTerm,
 )
-sparql::BlankNode_strategy = st.builds(
-    sparql::BlankNode,
+sparql_BlankNode_strategy = st.builds(
+    sparql_BlankNode,
 )
-sparql::NotInList_strategy = st.builds(
-    sparql::NotInList,
+sparql_NotInList_strategy = st.builds(
+    sparql_NotInList,
 )
-sparql::GroupGraphPattern_strategy = st.builds(
-    sparql::GroupGraphPattern,
-)
-sparql::WhereLiteral_strategy = st.builds(
-    sparql::WhereLiteral,
-)
-sparql::SourceSelector_strategy = st.builds(
-    sparql::SourceSelector,
+sparql_WhereLiteral_strategy = st.builds(
+    sparql_WhereLiteral,
 )
 GraphClauseNE_strategy = st.builds(
     GraphClauseNE,
 )
-sparql::NamedGraphClause_strategy = st.builds(
-    sparql::NamedGraphClause,
+sparql_NamedGraphClause_strategy = st.builds(
+    sparql_NamedGraphClause,
 )
-sparql::DefaultGraphClause_strategy = st.builds(
-    sparql::DefaultGraphClause,
-)
-sparql::GraphClauseNE_strategy = st.builds(
-    sparql::GraphClauseNE,
+sparql_DefaultGraphClause_strategy = st.builds(
+    sparql_DefaultGraphClause,
 )
 OrderConditionRightNE_strategy = st.builds(
     OrderConditionRightNE,
 )
-sparql::Constraint_strategy = st.builds(
-    sparql::Constraint,
+sparql_Constraint_strategy = st.builds(
+    sparql_Constraint,
 )
 VarOrTerm_strategy = st.builds(
     VarOrTerm,
 )
-sparql::GraphTerm_strategy = st.builds(
-    sparql::GraphTerm,
+sparql_GraphTerm_strategy = st.builds(
+    sparql_GraphTerm,
 )
 PrimaryExpression_strategy = st.builds(
     PrimaryExpression,
 )
-sparql::RDFLiteral_strategy = st.builds(
-    sparql::RDFLiteral,
+sparql_RDFLiteral_strategy = st.builds(
+    sparql_RDFLiteral,
 )
-sparql::BuiltInCall_strategy = st.builds(
-    sparql::BuiltInCall,
+sparql_BuiltInCall_strategy = st.builds(
+    sparql_BuiltInCall,
 )
-sparql::BrackettedExpression_strategy = st.builds(
-    sparql::BrackettedExpression,
+sparql_IRIrefOrFunction_strategy = st.builds(
+    sparql_IRIrefOrFunction,
 )
-sparql::NumericLiteral_strategy = st.builds(
-    sparql::NumericLiteral,
+sparql_NumericLiteral_strategy = st.builds(
+    sparql_NumericLiteral,
 )
-sparql::BooleanLiteral_strategy = st.builds(
-    sparql::BooleanLiteral,
-)
-sparql::IRIrefOrFunction_strategy = st.builds(
-    sparql::IRIrefOrFunction,
+sparql_BooleanLiteral_strategy = st.builds(
+    sparql_BooleanLiteral,
 )
 VarOrIRIref_strategy = st.builds(
     VarOrIRIref,
 )
-sparql::PNAME::LN_strategy = st.builds(
-    sparql::PNAME::LN,
+sparql_PNAME_LN_strategy = st.builds(
+    sparql_PNAME_LN,
 )
-sparql::IRIreference_strategy = st.builds(
-    sparql::IRIreference,
-)
-sparql::IRI::REF_strategy = st.builds(
-    sparql::IRI::REF,
-    iri_ref=
-        safe_text
-)
-sparql::Var_strategy = st.builds(
-    sparql::Var,
-    varname=
-        safe_text
-)
-sparql::PNAME::NS_strategy = st.builds(
-    sparql::PNAME::NS,
-    pn_prefix=
-        safe_text
+sparql_IRIreference_strategy = st.builds(
+    sparql_IRIreference,
 )
 Verb_strategy = st.builds(
     Verb,
 )
-sparql::VerbANE_strategy = st.builds(
-    sparql::VerbANE,
+sparql_VerbANE_strategy = st.builds(
+    sparql_VerbANE,
     theA=
         safe_text
-)
-sparql::VarOrIRIref_strategy = st.builds(
-    sparql::VarOrIRIref,
 )
 VariablesNE_strategy = st.builds(
     VariablesNE,
 )
-sparql::SomeVariablesNE_strategy = st.builds(
-    sparql::SomeVariablesNE,
+sparql_SomeVariablesNE_strategy = st.builds(
+    sparql_SomeVariablesNE,
 )
-sparql::AllVariablesNE_strategy = st.builds(
-    sparql::AllVariablesNE,
-)
-sparql::VariablesNE_strategy = st.builds(
-    sparql::VariablesNE,
+sparql_AllVariablesNE_strategy = st.builds(
+    sparql_AllVariablesNE,
 )
 SolutionsDisplayNE_strategy = st.builds(
     SolutionsDisplayNE,
 )
-sparql::ReducedNE_strategy = st.builds(
-    sparql::ReducedNE,
+sparql_ReducedNE_strategy = st.builds(
+    sparql_ReducedNE,
 )
-sparql::DistinctNE_strategy = st.builds(
-    sparql::DistinctNE,
+sparql_DistinctNE_strategy = st.builds(
+    sparql_DistinctNE,
 )
-sparql::INTEGER_strategy = st.builds(
-    sparql::INTEGER,
+sparql_INTEGER_strategy = st.builds(
+    sparql_INTEGER,
     integer=
         safe_text
-)
-sparql::OrderClause_strategy = st.builds(
-    sparql::OrderClause,
-)
-sparql::TriplesSameSubject_strategy = st.builds(
-    sparql::TriplesSameSubject,
-)
-sparql::OffsetClause_strategy = st.builds(
-    sparql::OffsetClause,
-)
-sparql::LimitClause_strategy = st.builds(
-    sparql::LimitClause,
 )
 LimitOffsetClauses_strategy = st.builds(
     LimitOffsetClauses,
 )
-sparql::LimitOffsetClausesRightNE_strategy = st.builds(
-    sparql::LimitOffsetClausesRightNE,
+sparql_LimitOffsetClausesRightNE_strategy = st.builds(
+    sparql_LimitOffsetClausesRightNE,
 )
-sparql::LimitOffsetClausesLeftNE_strategy = st.builds(
-    sparql::LimitOffsetClausesLeftNE,
+sparql_LimitOffsetClausesLeftNE_strategy = st.builds(
+    sparql_LimitOffsetClausesLeftNE,
 )
-sparql::OrderConditionRightNE_strategy = st.builds(
-    sparql::OrderConditionRightNE,
+sparql_BrackettedExpression_strategy = st.builds(
+    sparql_BrackettedExpression,
+)
+sparql_AscOrDecs_strategy = st.builds(
+    sparql_AscOrDecs,
+)
+OrderCondition_strategy = st.builds(
+    OrderCondition,
+)
+sparql_OrderConditionRightNE_strategy = st.builds(
+    sparql_OrderConditionRightNE,
+)
+sparql_OrderConditionLeftNE_strategy = st.builds(
+    sparql_OrderConditionLeftNE,
+)
+sparql_VarOrIRIref_strategy = st.builds(
+    sparql_VarOrIRIref,
+)
+Query_strategy = st.builds(
+    Query,
+)
+sparql_AskQuery_strategy = st.builds(
+    sparql_AskQuery,
+)
+sparql_DescribeQuery_strategy = st.builds(
+    sparql_DescribeQuery,
+)
+sparql_ConstructQuery_strategy = st.builds(
+    sparql_ConstructQuery,
+)
+sparql_SelectQuery_strategy = st.builds(
+    sparql_SelectQuery,
+)
+sparql_PNAME_NS_strategy = st.builds(
+    sparql_PNAME_NS,
+    pn_prefix=
+        safe_text
+)
+sparql_Var_strategy = st.builds(
+    sparql_Var,
+    varname=
+        safe_text
+)
+sparql_LocatedElement_strategy = st.builds(
+    sparql_LocatedElement,
+    location=
+        safe_text,
+    commentsAfter=
+        safe_text,
+    commentsBefore=
+        safe_text
+)
+sparql_IRI_REF_strategy = st.builds(
+    sparql_IRI_REF,
+    iri_ref=
+        safe_text
+)
+LocatedElement_strategy = st.builds(
+    LocatedElement,
+)
+sparql_OffsetClause_strategy = st.builds(
+    sparql_OffsetClause,
+)
+sparql_TriplesSameSubject_strategy = st.builds(
+    sparql_TriplesSameSubject,
+)
+sparql_PropertyListNotEmpty_strategy = st.builds(
+    sparql_PropertyListNotEmpty,
+)
+sparql_OrderCondition_strategy = st.builds(
+    sparql_OrderCondition,
+)
+sparql_WS_strategy = st.builds(
+    sparql_WS,
+    ws=
+        safe_text
+)
+sparql_AdditionalNumericExpressionNE_strategy = st.builds(
+    sparql_AdditionalNumericExpressionNE,
+)
+sparql_Object_strategy = st.builds(
+    sparql_Object,
+)
+sparql_AdditionalExpressionNE_strategy = st.builds(
+    sparql_AdditionalExpressionNE,
+)
+sparql_AdditiveExpression_strategy = st.builds(
+    sparql_AdditiveExpression,
+)
+sparql_VariablesNE_strategy = st.builds(
+    sparql_VariablesNE,
+)
+sparql_Prologue_strategy = st.builds(
+    sparql_Prologue,
+)
+sparql_PrefixDecl_strategy = st.builds(
+    sparql_PrefixDecl,
+)
+sparql_AdditionalConditionalAndExpressionNE_strategy = st.builds(
+    sparql_AdditionalConditionalAndExpressionNE,
+)
+sparql_ArgList_strategy = st.builds(
+    sparql_ArgList,
+)
+sparql_Query_strategy = st.builds(
+    sparql_Query,
+)
+sparql_LANGTAGOrIRIrefNE_strategy = st.builds(
+    sparql_LANGTAGOrIRIrefNE,
+)
+sparql_WhereClause_strategy = st.builds(
+    sparql_WhereClause,
+)
+sparql_OrderClause_strategy = st.builds(
+    sparql_OrderClause,
+)
+sparql_VARNAME_strategy = st.builds(
+    sparql_VARNAME,
+    varname=
+        safe_text
+)
+sparql_NumericExpression_strategy = st.builds(
+    sparql_NumericExpression,
+)
+sparql_DatasetClause_strategy = st.builds(
+    sparql_DatasetClause,
+)
+sparql_PN_LOCAL_strategy = st.builds(
+    sparql_PN_LOCAL,
+    pn_local=
+        safe_text
+)
+sparql_AdditionalMultiplicativeExpressionNE_strategy = st.builds(
+    sparql_AdditionalMultiplicativeExpressionNE,
+)
+sparql_LimitOffsetClauses_strategy = st.builds(
+    sparql_LimitOffsetClauses,
+)
+sparql_PN_PREFIX_strategy = st.builds(
+    sparql_PN_PREFIX,
+    pn_prefix=
+        safe_text
+)
+sparql_AdditionalUnaryExpressionNE_strategy = st.builds(
+    sparql_AdditionalUnaryExpressionNE,
+)
+sparql_UnaryExpression_strategy = st.builds(
+    sparql_UnaryExpression,
+)
+sparql_SolutionsDisplayNE_strategy = st.builds(
+    sparql_SolutionsDisplayNE,
+)
+sparql_LimitClause_strategy = st.builds(
+    sparql_LimitClause,
+)
+sparql_BaseDecl_strategy = st.builds(
+    sparql_BaseDecl,
+)
+sparql_ValueLogical_strategy = st.builds(
+    sparql_ValueLogical,
+)
+sparql_ObjectList_strategy = st.builds(
+    sparql_ObjectList,
+)
+sparql_GraphClauseNE_strategy = st.builds(
+    sparql_GraphClauseNE,
+)
+sparql_Expression_strategy = st.builds(
+    sparql_Expression,
+)
+sparql_SolutionModifier_strategy = st.builds(
+    sparql_SolutionModifier,
+)
+sparql_GraphNode_strategy = st.builds(
+    sparql_GraphNode,
+)
+sparql_AdditionalGGPElement_strategy = st.builds(
+    sparql_AdditionalGGPElement,
+)
+sparql_RelationalExpression_strategy = st.builds(
+    sparql_RelationalExpression,
+)
+sparql_ConditionalAndExpression_strategy = st.builds(
+    sparql_ConditionalAndExpression,
+)
+sparql_ConstructTemplate_strategy = st.builds(
+    sparql_ConstructTemplate,
+)
+sparql_MultiplicativeExpression_strategy = st.builds(
+    sparql_MultiplicativeExpression,
+)
+sparql_SourceSelector_strategy = st.builds(
+    sparql_SourceSelector,
+)
+sparql_AdditionalValueLogicalNE_strategy = st.builds(
+    sparql_AdditionalValueLogicalNE,
+)
+sparql_GroupGraphPattern_strategy = st.builds(
+    sparql_GroupGraphPattern,
+)
+sparql_ConditionalOrExpression_strategy = st.builds(
+    sparql_ConditionalOrExpression,
+)
+sparql_Verb_strategy = st.builds(
+    sparql_Verb,
+)
+sparql_SparqlQueries_strategy = st.builds(
+    sparql_SparqlQueries,
 )
 
 @given(instance=BlankNode_strategy)
@@ -3474,23 +3474,20 @@ sparql::OrderConditionRightNE_strategy = st.builds(
 def test_blanknode_instantiation(instance):
     assert isinstance(instance, BlankNode)
 
-@given(instance=sparql::ANON_strategy)
+@given(instance=sparql_ANON_strategy)
 @settings(max_examples=50)
-def test_sparql::anon_instantiation(instance):
-    assert isinstance(instance, sparql::ANON)
+def test_sparql_anon_instantiation(instance):
+    assert isinstance(instance, sparql_ANON)
 
-@given(instance=sparql::BLANK::NODE::LABEL_strategy)
+@given(instance=sparql_BLANK_NODE_LABEL_strategy)
 @settings(max_examples=50)
-def test_sparql::blank::node::label_instantiation(instance):
-    assert isinstance(instance, sparql::BLANK::NODE::LABEL)
-
-@given(instance=sparql::BLANK::NODE::LABEL_strategy)
-def test_sparql::blank::node::label_pn_local_type(instance):
-    assert isinstance(instance.pn_local, str)
+def test_sparql_blank_node_label_instantiation(instance):
+    assert isinstance(instance, sparql_BLANK_NODE_LABEL)
 
 
-@given(instance=sparql::BLANK::NODE::LABEL_strategy)
-def test_sparql::blank::node::label_pn_local_setter(instance):
+
+@given(instance=sparql_BLANK_NODE_LABEL_strategy)
+def test_sparql_blank_node_label_pn_local_setter(instance):
     original = instance.pn_local
     instance.pn_local = original
     assert instance.pn_local == original
@@ -3500,794 +3497,451 @@ def test_sparql::blank::node::label_pn_local_setter(instance):
 def test_ascordecs_instantiation(instance):
     assert isinstance(instance, AscOrDecs)
 
-@given(instance=sparql::DescendingLiteral_strategy)
+@given(instance=sparql_DescendingLiteral_strategy)
 @settings(max_examples=50)
-def test_sparql::descendingliteral_instantiation(instance):
-    assert isinstance(instance, sparql::DescendingLiteral)
+def test_sparql_descendingliteral_instantiation(instance):
+    assert isinstance(instance, sparql_DescendingLiteral)
 
-@given(instance=sparql::AscendingLiteral_strategy)
+@given(instance=sparql_AscendingLiteral_strategy)
 @settings(max_examples=50)
-def test_sparql::ascendingliteral_instantiation(instance):
-    assert isinstance(instance, sparql::AscendingLiteral)
+def test_sparql_ascendingliteral_instantiation(instance):
+    assert isinstance(instance, sparql_AscendingLiteral)
 
 @given(instance=StringLiteral_strategy)
 @settings(max_examples=50)
 def test_stringliteral_instantiation(instance):
     assert isinstance(instance, StringLiteral)
 
-@given(instance=sparql::STRING::LITERAL2_strategy)
+@given(instance=sparql_STRING_LITERAL_LONG1_strategy)
 @settings(max_examples=50)
-def test_sparql::string::literal2_instantiation(instance):
-    assert isinstance(instance, sparql::STRING::LITERAL2)
-
-@given(instance=sparql::STRING::LITERAL2_strategy)
-def test_sparql::string::literal2_string_type(instance):
-    assert isinstance(instance.string, str)
+def test_sparql_string_literal_long1_instantiation(instance):
+    assert isinstance(instance, sparql_STRING_LITERAL_LONG1)
 
 
-@given(instance=sparql::STRING::LITERAL2_strategy)
-def test_sparql::string::literal2_string_setter(instance):
+
+@given(instance=sparql_STRING_LITERAL_LONG1_strategy)
+def test_sparql_string_literal_long1_string_setter(instance):
     original = instance.string
     instance.string = original
     assert instance.string == original
 
-@given(instance=sparql::STRING::LITERAL::LONG2_strategy)
+@given(instance=sparql_STRING_LITERAL_LONG2_strategy)
 @settings(max_examples=50)
-def test_sparql::string::literal::long2_instantiation(instance):
-    assert isinstance(instance, sparql::STRING::LITERAL::LONG2)
-
-@given(instance=sparql::STRING::LITERAL::LONG2_strategy)
-def test_sparql::string::literal::long2_string_type(instance):
-    assert isinstance(instance.string, str)
+def test_sparql_string_literal_long2_instantiation(instance):
+    assert isinstance(instance, sparql_STRING_LITERAL_LONG2)
 
 
-@given(instance=sparql::STRING::LITERAL::LONG2_strategy)
-def test_sparql::string::literal::long2_string_setter(instance):
+
+@given(instance=sparql_STRING_LITERAL_LONG2_strategy)
+def test_sparql_string_literal_long2_string_setter(instance):
     original = instance.string
     instance.string = original
     assert instance.string == original
 
-@given(instance=sparql::STRING::LITERAL::LONG1_strategy)
+@given(instance=sparql_STRING_LITERAL2_strategy)
 @settings(max_examples=50)
-def test_sparql::string::literal::long1_instantiation(instance):
-    assert isinstance(instance, sparql::STRING::LITERAL::LONG1)
-
-@given(instance=sparql::STRING::LITERAL::LONG1_strategy)
-def test_sparql::string::literal::long1_string_type(instance):
-    assert isinstance(instance.string, str)
+def test_sparql_string_literal2_instantiation(instance):
+    assert isinstance(instance, sparql_STRING_LITERAL2)
 
 
-@given(instance=sparql::STRING::LITERAL::LONG1_strategy)
-def test_sparql::string::literal::long1_string_setter(instance):
+
+@given(instance=sparql_STRING_LITERAL2_strategy)
+def test_sparql_string_literal2_string_setter(instance):
     original = instance.string
     instance.string = original
     assert instance.string == original
 
-@given(instance=sparql::STRING::LITERAL1_strategy)
+@given(instance=sparql_STRING_LITERAL1_strategy)
 @settings(max_examples=50)
-def test_sparql::string::literal1_instantiation(instance):
-    assert isinstance(instance, sparql::STRING::LITERAL1)
-
-@given(instance=sparql::STRING::LITERAL1_strategy)
-def test_sparql::string::literal1_string_type(instance):
-    assert isinstance(instance.string, str)
+def test_sparql_string_literal1_instantiation(instance):
+    assert isinstance(instance, sparql_STRING_LITERAL1)
 
 
-@given(instance=sparql::STRING::LITERAL1_strategy)
-def test_sparql::string::literal1_string_setter(instance):
+
+@given(instance=sparql_STRING_LITERAL1_strategy)
+def test_sparql_string_literal1_string_setter(instance):
     original = instance.string
     instance.string = original
     assert instance.string == original
 
-@given(instance=sparql::VAR2_strategy)
+@given(instance=sparql_VAR2_strategy)
 @settings(max_examples=50)
-def test_sparql::var2_instantiation(instance):
-    assert isinstance(instance, sparql::VAR2)
+def test_sparql_var2_instantiation(instance):
+    assert isinstance(instance, sparql_VAR2)
 
-@given(instance=sparql::VAR1_strategy)
+@given(instance=sparql_VAR1_strategy)
 @settings(max_examples=50)
-def test_sparql::var1_instantiation(instance):
-    assert isinstance(instance, sparql::VAR1)
+def test_sparql_var1_instantiation(instance):
+    assert isinstance(instance, sparql_VAR1)
 
 @given(instance=BooleanLiteral_strategy)
 @settings(max_examples=50)
 def test_booleanliteral_instantiation(instance):
     assert isinstance(instance, BooleanLiteral)
 
-@given(instance=sparql::FalseBooleanLiteralNE_strategy)
+@given(instance=sparql_FalseBooleanLiteralNE_strategy)
 @settings(max_examples=50)
-def test_sparql::falsebooleanliteralne_instantiation(instance):
-    assert isinstance(instance, sparql::FalseBooleanLiteralNE)
+def test_sparql_falsebooleanliteralne_instantiation(instance):
+    assert isinstance(instance, sparql_FalseBooleanLiteralNE)
 
-@given(instance=sparql::TrueBooleanLiteralNE_strategy)
+@given(instance=sparql_TrueBooleanLiteralNE_strategy)
 @settings(max_examples=50)
-def test_sparql::truebooleanliteralne_instantiation(instance):
-    assert isinstance(instance, sparql::TrueBooleanLiteralNE)
+def test_sparql_truebooleanliteralne_instantiation(instance):
+    assert isinstance(instance, sparql_TrueBooleanLiteralNE)
 
 @given(instance=PrefixedName_strategy)
 @settings(max_examples=50)
 def test_prefixedname_instantiation(instance):
     assert isinstance(instance, PrefixedName)
 
-@given(instance=sparql::StringLiteral_strategy)
+@given(instance=sparql_StringLiteral_strategy)
 @settings(max_examples=50)
-def test_sparql::stringliteral_instantiation(instance):
-    assert isinstance(instance, sparql::StringLiteral)
+def test_sparql_stringliteral_instantiation(instance):
+    assert isinstance(instance, sparql_StringLiteral)
 
 @given(instance=LANGTAGOrIRIrefNE_strategy)
 @settings(max_examples=50)
 def test_langtagoririrefne_instantiation(instance):
     assert isinstance(instance, LANGTAGOrIRIrefNE)
 
-@given(instance=sparql::LANGTAG_strategy)
+@given(instance=sparql_LANGTAG_strategy)
 @settings(max_examples=50)
-def test_sparql::langtag_instantiation(instance):
-    assert isinstance(instance, sparql::LANGTAG)
-
-@given(instance=sparql::LANGTAG_strategy)
-def test_sparql::langtag_langtag_type(instance):
-    assert isinstance(instance.langtag, str)
+def test_sparql_langtag_instantiation(instance):
+    assert isinstance(instance, sparql_LANGTAG)
 
 
-@given(instance=sparql::LANGTAG_strategy)
-def test_sparql::langtag_langtag_setter(instance):
+
+@given(instance=sparql_LANGTAG_strategy)
+def test_sparql_langtag_langtag_setter(instance):
     original = instance.langtag
     instance.langtag = original
     assert instance.langtag == original
 
-@given(instance=sparql::UpIRIrefNE_strategy)
+@given(instance=sparql_UpIRIrefNE_strategy)
 @settings(max_examples=50)
-def test_sparql::upirirefne_instantiation(instance):
-    assert isinstance(instance, sparql::UpIRIrefNE)
+def test_sparql_upirirefne_instantiation(instance):
+    assert isinstance(instance, sparql_UpIRIrefNE)
 
 @given(instance=AdditionalUnaryExpressionNE_strategy)
 @settings(max_examples=50)
 def test_additionalunaryexpressionne_instantiation(instance):
     assert isinstance(instance, AdditionalUnaryExpressionNE)
 
-@given(instance=sparql::TimesAdditionalUnaryExpressionNE_strategy)
+@given(instance=sparql_TimesAdditionalUnaryExpressionNE_strategy)
 @settings(max_examples=50)
-def test_sparql::timesadditionalunaryexpressionne_instantiation(instance):
-    assert isinstance(instance, sparql::TimesAdditionalUnaryExpressionNE)
+def test_sparql_timesadditionalunaryexpressionne_instantiation(instance):
+    assert isinstance(instance, sparql_TimesAdditionalUnaryExpressionNE)
 
 @given(instance=NumericLiteral_strategy)
 @settings(max_examples=50)
 def test_numericliteral_instantiation(instance):
     assert isinstance(instance, NumericLiteral)
 
-@given(instance=sparql::NumericLiteralUnsigned_strategy)
+@given(instance=sparql_DOUBLE_strategy)
 @settings(max_examples=50)
-def test_sparql::numericliteralunsigned_instantiation(instance):
-    assert isinstance(instance, sparql::NumericLiteralUnsigned)
-
-@given(instance=sparql::DOUBLE_strategy)
-@settings(max_examples=50)
-def test_sparql::double_instantiation(instance):
-    assert isinstance(instance, sparql::DOUBLE)
-
-@given(instance=sparql::DOUBLE_strategy)
-def test_sparql::double_double_type(instance):
-    assert isinstance(instance.double, str)
+def test_sparql_double_instantiation(instance):
+    assert isinstance(instance, sparql_DOUBLE)
 
 
-@given(instance=sparql::DOUBLE_strategy)
-def test_sparql::double_double_setter(instance):
+
+@given(instance=sparql_DOUBLE_strategy)
+def test_sparql_double_double_setter(instance):
     original = instance.double
     instance.double = original
     assert instance.double == original
 
-@given(instance=sparql::DECIMAL_strategy)
+@given(instance=sparql_DECIMAL_strategy)
 @settings(max_examples=50)
-def test_sparql::decimal_instantiation(instance):
-    assert isinstance(instance, sparql::DECIMAL)
-
-@given(instance=sparql::DECIMAL_strategy)
-def test_sparql::decimal_decimal_type(instance):
-    assert isinstance(instance.decimal, str)
+def test_sparql_decimal_instantiation(instance):
+    assert isinstance(instance, sparql_DECIMAL)
 
 
-@given(instance=sparql::DECIMAL_strategy)
-def test_sparql::decimal_decimal_setter(instance):
+
+@given(instance=sparql_DECIMAL_strategy)
+def test_sparql_decimal_decimal_setter(instance):
     original = instance.decimal
     instance.decimal = original
     assert instance.decimal == original
+
+@given(instance=sparql_NumericLiteralUnsigned_strategy)
+@settings(max_examples=50)
+def test_sparql_numericliteralunsigned_instantiation(instance):
+    assert isinstance(instance, sparql_NumericLiteralUnsigned)
 
 @given(instance=AdditionalMultiplicativeExpressionNE_strategy)
 @settings(max_examples=50)
 def test_additionalmultiplicativeexpressionne_instantiation(instance):
     assert isinstance(instance, AdditionalMultiplicativeExpressionNE)
 
-@given(instance=sparql::NumericLiteralNegative_strategy)
+@given(instance=sparql_MinusMultiplicativeExpressionNE_strategy)
 @settings(max_examples=50)
-def test_sparql::numericliteralnegative_instantiation(instance):
-    assert isinstance(instance, sparql::NumericLiteralNegative)
+def test_sparql_minusmultiplicativeexpressionne_instantiation(instance):
+    assert isinstance(instance, sparql_MinusMultiplicativeExpressionNE)
 
-@given(instance=sparql::NumericLiteralPositive_strategy)
+@given(instance=sparql_NumericLiteralNegative_strategy)
 @settings(max_examples=50)
-def test_sparql::numericliteralpositive_instantiation(instance):
-    assert isinstance(instance, sparql::NumericLiteralPositive)
+def test_sparql_numericliteralnegative_instantiation(instance):
+    assert isinstance(instance, sparql_NumericLiteralNegative)
 
-@given(instance=sparql::MinusMultiplicativeExpressionNE_strategy)
+@given(instance=sparql_NumericLiteralPositive_strategy)
 @settings(max_examples=50)
-def test_sparql::minusmultiplicativeexpressionne_instantiation(instance):
-    assert isinstance(instance, sparql::MinusMultiplicativeExpressionNE)
+def test_sparql_numericliteralpositive_instantiation(instance):
+    assert isinstance(instance, sparql_NumericLiteralPositive)
 
-@given(instance=sparql::PlusMultiplicativeExpressionNE_strategy)
+@given(instance=sparql_PlusMultiplicativeExpressionNE_strategy)
 @settings(max_examples=50)
-def test_sparql::plusmultiplicativeexpressionne_instantiation(instance):
-    assert isinstance(instance, sparql::PlusMultiplicativeExpressionNE)
+def test_sparql_plusmultiplicativeexpressionne_instantiation(instance):
+    assert isinstance(instance, sparql_PlusMultiplicativeExpressionNE)
 
 @given(instance=UnaryExpression_strategy)
 @settings(max_examples=50)
 def test_unaryexpression_instantiation(instance):
     assert isinstance(instance, UnaryExpression)
 
-@given(instance=sparql::PlusPrimaryExpressionNE_strategy)
+@given(instance=sparql_PrimaryExpression_strategy)
 @settings(max_examples=50)
-def test_sparql::plusprimaryexpressionne_instantiation(instance):
-    assert isinstance(instance, sparql::PlusPrimaryExpressionNE)
+def test_sparql_primaryexpression_instantiation(instance):
+    assert isinstance(instance, sparql_PrimaryExpression)
 
-@given(instance=sparql::PrimaryExpression_strategy)
+@given(instance=sparql_MinusPrimaryExpressionNE_strategy)
 @settings(max_examples=50)
-def test_sparql::primaryexpression_instantiation(instance):
-    assert isinstance(instance, sparql::PrimaryExpression)
+def test_sparql_minusprimaryexpressionne_instantiation(instance):
+    assert isinstance(instance, sparql_MinusPrimaryExpressionNE)
 
-@given(instance=sparql::MinusPrimaryExpressionNE_strategy)
+@given(instance=sparql_PlusPrimaryExpressionNE_strategy)
 @settings(max_examples=50)
-def test_sparql::minusprimaryexpressionne_instantiation(instance):
-    assert isinstance(instance, sparql::MinusPrimaryExpressionNE)
+def test_sparql_plusprimaryexpressionne_instantiation(instance):
+    assert isinstance(instance, sparql_PlusPrimaryExpressionNE)
 
-@given(instance=sparql::NotPrimaryExpressionNE_strategy)
+@given(instance=sparql_NotPrimaryExpressionNE_strategy)
 @settings(max_examples=50)
-def test_sparql::notprimaryexpressionne_instantiation(instance):
-    assert isinstance(instance, sparql::NotPrimaryExpressionNE)
+def test_sparql_notprimaryexpressionne_instantiation(instance):
+    assert isinstance(instance, sparql_NotPrimaryExpressionNE)
 
-@given(instance=sparql::DividedByAdditionalUnaryExpressionNE_strategy)
+@given(instance=sparql_DividedByAdditionalUnaryExpressionNE_strategy)
 @settings(max_examples=50)
-def test_sparql::dividedbyadditionalunaryexpressionne_instantiation(instance):
-    assert isinstance(instance, sparql::DividedByAdditionalUnaryExpressionNE)
+def test_sparql_dividedbyadditionalunaryexpressionne_instantiation(instance):
+    assert isinstance(instance, sparql_DividedByAdditionalUnaryExpressionNE)
 
 @given(instance=AdditionalNumericExpressionNE_strategy)
 @settings(max_examples=50)
 def test_additionalnumericexpressionne_instantiation(instance):
     assert isinstance(instance, AdditionalNumericExpressionNE)
 
-@given(instance=sparql::BiggerOrEqualNumericExpressionNE_strategy)
+@given(instance=sparql_SmallerOrEqualNumericExpressionNE_strategy)
 @settings(max_examples=50)
-def test_sparql::biggerorequalnumericexpressionne_instantiation(instance):
-    assert isinstance(instance, sparql::BiggerOrEqualNumericExpressionNE)
+def test_sparql_smallerorequalnumericexpressionne_instantiation(instance):
+    assert isinstance(instance, sparql_SmallerOrEqualNumericExpressionNE)
 
-@given(instance=sparql::NotEqualNumericExpressionNE_strategy)
+@given(instance=sparql_BiggerNumericExpressionNE_strategy)
 @settings(max_examples=50)
-def test_sparql::notequalnumericexpressionne_instantiation(instance):
-    assert isinstance(instance, sparql::NotEqualNumericExpressionNE)
+def test_sparql_biggernumericexpressionne_instantiation(instance):
+    assert isinstance(instance, sparql_BiggerNumericExpressionNE)
 
-@given(instance=sparql::BiggerNumericExpressionNE_strategy)
+@given(instance=sparql_SmallerNumericExpressionNE_strategy)
 @settings(max_examples=50)
-def test_sparql::biggernumericexpressionne_instantiation(instance):
-    assert isinstance(instance, sparql::BiggerNumericExpressionNE)
+def test_sparql_smallernumericexpressionne_instantiation(instance):
+    assert isinstance(instance, sparql_SmallerNumericExpressionNE)
 
-@given(instance=sparql::SmallerOrEqualNumericExpressionNE_strategy)
+@given(instance=sparql_BiggerOrEqualNumericExpressionNE_strategy)
 @settings(max_examples=50)
-def test_sparql::smallerorequalnumericexpressionne_instantiation(instance):
-    assert isinstance(instance, sparql::SmallerOrEqualNumericExpressionNE)
+def test_sparql_biggerorequalnumericexpressionne_instantiation(instance):
+    assert isinstance(instance, sparql_BiggerOrEqualNumericExpressionNE)
 
-@given(instance=sparql::SmallerNumericExpressionNE_strategy)
+@given(instance=sparql_NotEqualNumericExpressionNE_strategy)
 @settings(max_examples=50)
-def test_sparql::smallernumericexpressionne_instantiation(instance):
-    assert isinstance(instance, sparql::SmallerNumericExpressionNE)
+def test_sparql_notequalnumericexpressionne_instantiation(instance):
+    assert isinstance(instance, sparql_NotEqualNumericExpressionNE)
 
-@given(instance=sparql::EqualsNumericExpressionNE_strategy)
+@given(instance=sparql_EqualsNumericExpressionNE_strategy)
 @settings(max_examples=50)
-def test_sparql::equalsnumericexpressionne_instantiation(instance):
-    assert isinstance(instance, sparql::EqualsNumericExpressionNE)
+def test_sparql_equalsnumericexpressionne_instantiation(instance):
+    assert isinstance(instance, sparql_EqualsNumericExpressionNE)
 
 @given(instance=ArgList_strategy)
 @settings(max_examples=50)
 def test_arglist_instantiation(instance):
     assert isinstance(instance, ArgList)
 
-@given(instance=sparql::ArgListExpressionNE_strategy)
+@given(instance=sparql_ArgListExpressionNE_strategy)
 @settings(max_examples=50)
-def test_sparql::arglistexpressionne_instantiation(instance):
-    assert isinstance(instance, sparql::ArgListExpressionNE)
+def test_sparql_arglistexpressionne_instantiation(instance):
+    assert isinstance(instance, sparql_ArgListExpressionNE)
 
-@given(instance=sparql::ArgListNILNE_strategy)
+@given(instance=sparql_ArgListNILNE_strategy)
 @settings(max_examples=50)
-def test_sparql::arglistnilne_instantiation(instance):
-    assert isinstance(instance, sparql::ArgListNILNE)
-
-@given(instance=sparql::AscOrDecs_strategy)
-@settings(max_examples=50)
-def test_sparql::ascordecs_instantiation(instance):
-    assert isinstance(instance, sparql::AscOrDecs)
-
-@given(instance=OrderCondition_strategy)
-@settings(max_examples=50)
-def test_ordercondition_instantiation(instance):
-    assert isinstance(instance, OrderCondition)
-
-@given(instance=sparql::OrderConditionLeftNE_strategy)
-@settings(max_examples=50)
-def test_sparql::orderconditionleftne_instantiation(instance):
-    assert isinstance(instance, sparql::OrderConditionLeftNE)
-
-@given(instance=Query_strategy)
-@settings(max_examples=50)
-def test_query_instantiation(instance):
-    assert isinstance(instance, Query)
-
-@given(instance=sparql::DescribeQuery_strategy)
-@settings(max_examples=50)
-def test_sparql::describequery_instantiation(instance):
-    assert isinstance(instance, sparql::DescribeQuery)
-
-@given(instance=sparql::ConstructQuery_strategy)
-@settings(max_examples=50)
-def test_sparql::constructquery_instantiation(instance):
-    assert isinstance(instance, sparql::ConstructQuery)
-
-@given(instance=sparql::AskQuery_strategy)
-@settings(max_examples=50)
-def test_sparql::askquery_instantiation(instance):
-    assert isinstance(instance, sparql::AskQuery)
-
-@given(instance=sparql::SelectQuery_strategy)
-@settings(max_examples=50)
-def test_sparql::selectquery_instantiation(instance):
-    assert isinstance(instance, sparql::SelectQuery)
-
-@given(instance=sparql::LocatedElement_strategy)
-@settings(max_examples=50)
-def test_sparql::locatedelement_instantiation(instance):
-    assert isinstance(instance, sparql::LocatedElement)
-
-@given(instance=sparql::LocatedElement_strategy)
-def test_sparql::locatedelement_commentsAfter_type(instance):
-    assert isinstance(instance.commentsAfter, str)
-
-
-@given(instance=sparql::LocatedElement_strategy)
-def test_sparql::locatedelement_commentsAfter_setter(instance):
-    original = instance.commentsAfter
-    instance.commentsAfter = original
-    assert instance.commentsAfter == original
-
-@given(instance=sparql::LocatedElement_strategy)
-def test_sparql::locatedelement_location_type(instance):
-    assert isinstance(instance.location, str)
-
-
-@given(instance=sparql::LocatedElement_strategy)
-def test_sparql::locatedelement_location_setter(instance):
-    original = instance.location
-    instance.location = original
-    assert instance.location == original
-
-@given(instance=sparql::LocatedElement_strategy)
-def test_sparql::locatedelement_commentsBefore_type(instance):
-    assert isinstance(instance.commentsBefore, str)
-
-
-@given(instance=sparql::LocatedElement_strategy)
-def test_sparql::locatedelement_commentsBefore_setter(instance):
-    original = instance.commentsBefore
-    instance.commentsBefore = original
-    assert instance.commentsBefore == original
-
-@given(instance=LocatedElement_strategy)
-@settings(max_examples=50)
-def test_locatedelement_instantiation(instance):
-    assert isinstance(instance, LocatedElement)
-
-@given(instance=sparql::UnaryExpression_strategy)
-@settings(max_examples=50)
-def test_sparql::unaryexpression_instantiation(instance):
-    assert isinstance(instance, sparql::UnaryExpression)
-
-@given(instance=sparql::WS_strategy)
-@settings(max_examples=50)
-def test_sparql::ws_instantiation(instance):
-    assert isinstance(instance, sparql::WS)
-
-@given(instance=sparql::WS_strategy)
-def test_sparql::ws_ws_type(instance):
-    assert isinstance(instance.ws, str)
-
-
-@given(instance=sparql::WS_strategy)
-def test_sparql::ws_ws_setter(instance):
-    original = instance.ws
-    instance.ws = original
-    assert instance.ws == original
-
-@given(instance=sparql::AdditiveExpression_strategy)
-@settings(max_examples=50)
-def test_sparql::additiveexpression_instantiation(instance):
-    assert isinstance(instance, sparql::AdditiveExpression)
-
-@given(instance=sparql::AdditionalUnaryExpressionNE_strategy)
-@settings(max_examples=50)
-def test_sparql::additionalunaryexpressionne_instantiation(instance):
-    assert isinstance(instance, sparql::AdditionalUnaryExpressionNE)
-
-@given(instance=sparql::Prologue_strategy)
-@settings(max_examples=50)
-def test_sparql::prologue_instantiation(instance):
-    assert isinstance(instance, sparql::Prologue)
-
-@given(instance=sparql::AdditionalValueLogicalNE_strategy)
-@settings(max_examples=50)
-def test_sparql::additionalvaluelogicalne_instantiation(instance):
-    assert isinstance(instance, sparql::AdditionalValueLogicalNE)
-
-@given(instance=sparql::LimitOffsetClauses_strategy)
-@settings(max_examples=50)
-def test_sparql::limitoffsetclauses_instantiation(instance):
-    assert isinstance(instance, sparql::LimitOffsetClauses)
-
-@given(instance=sparql::MultiplicativeExpression_strategy)
-@settings(max_examples=50)
-def test_sparql::multiplicativeexpression_instantiation(instance):
-    assert isinstance(instance, sparql::MultiplicativeExpression)
-
-@given(instance=sparql::WhereClause_strategy)
-@settings(max_examples=50)
-def test_sparql::whereclause_instantiation(instance):
-    assert isinstance(instance, sparql::WhereClause)
-
-@given(instance=sparql::RelationalExpression_strategy)
-@settings(max_examples=50)
-def test_sparql::relationalexpression_instantiation(instance):
-    assert isinstance(instance, sparql::RelationalExpression)
-
-@given(instance=sparql::SolutionsDisplayNE_strategy)
-@settings(max_examples=50)
-def test_sparql::solutionsdisplayne_instantiation(instance):
-    assert isinstance(instance, sparql::SolutionsDisplayNE)
-
-@given(instance=sparql::AdditionalNumericExpressionNE_strategy)
-@settings(max_examples=50)
-def test_sparql::additionalnumericexpressionne_instantiation(instance):
-    assert isinstance(instance, sparql::AdditionalNumericExpressionNE)
-
-@given(instance=sparql::Query_strategy)
-@settings(max_examples=50)
-def test_sparql::query_instantiation(instance):
-    assert isinstance(instance, sparql::Query)
-
-@given(instance=sparql::ConstructTemplate_strategy)
-@settings(max_examples=50)
-def test_sparql::constructtemplate_instantiation(instance):
-    assert isinstance(instance, sparql::ConstructTemplate)
-
-@given(instance=sparql::NumericExpression_strategy)
-@settings(max_examples=50)
-def test_sparql::numericexpression_instantiation(instance):
-    assert isinstance(instance, sparql::NumericExpression)
-
-@given(instance=sparql::PN::PREFIX_strategy)
-@settings(max_examples=50)
-def test_sparql::pn::prefix_instantiation(instance):
-    assert isinstance(instance, sparql::PN::PREFIX)
-
-@given(instance=sparql::PN::PREFIX_strategy)
-def test_sparql::pn::prefix_pn_prefix_type(instance):
-    assert isinstance(instance.pn_prefix, str)
-
-
-@given(instance=sparql::PN::PREFIX_strategy)
-def test_sparql::pn::prefix_pn_prefix_setter(instance):
-    original = instance.pn_prefix
-    instance.pn_prefix = original
-    assert instance.pn_prefix == original
-
-@given(instance=sparql::OrderCondition_strategy)
-@settings(max_examples=50)
-def test_sparql::ordercondition_instantiation(instance):
-    assert isinstance(instance, sparql::OrderCondition)
-
-@given(instance=sparql::SolutionModifier_strategy)
-@settings(max_examples=50)
-def test_sparql::solutionmodifier_instantiation(instance):
-    assert isinstance(instance, sparql::SolutionModifier)
-
-@given(instance=sparql::AdditionalConditionalAndExpressionNE_strategy)
-@settings(max_examples=50)
-def test_sparql::additionalconditionalandexpressionne_instantiation(instance):
-    assert isinstance(instance, sparql::AdditionalConditionalAndExpressionNE)
-
-@given(instance=sparql::DatasetClause_strategy)
-@settings(max_examples=50)
-def test_sparql::datasetclause_instantiation(instance):
-    assert isinstance(instance, sparql::DatasetClause)
-
-@given(instance=sparql::BaseDecl_strategy)
-@settings(max_examples=50)
-def test_sparql::basedecl_instantiation(instance):
-    assert isinstance(instance, sparql::BaseDecl)
-
-@given(instance=sparql::VARNAME_strategy)
-@settings(max_examples=50)
-def test_sparql::varname_instantiation(instance):
-    assert isinstance(instance, sparql::VARNAME)
-
-@given(instance=sparql::VARNAME_strategy)
-def test_sparql::varname_varname_type(instance):
-    assert isinstance(instance.varname, str)
-
-
-@given(instance=sparql::VARNAME_strategy)
-def test_sparql::varname_varname_setter(instance):
-    original = instance.varname
-    instance.varname = original
-    assert instance.varname == original
-
-@given(instance=sparql::AdditionalMultiplicativeExpressionNE_strategy)
-@settings(max_examples=50)
-def test_sparql::additionalmultiplicativeexpressionne_instantiation(instance):
-    assert isinstance(instance, sparql::AdditionalMultiplicativeExpressionNE)
-
-@given(instance=sparql::PN::LOCAL_strategy)
-@settings(max_examples=50)
-def test_sparql::pn::local_instantiation(instance):
-    assert isinstance(instance, sparql::PN::LOCAL)
-
-@given(instance=sparql::PN::LOCAL_strategy)
-def test_sparql::pn::local_pn_local_type(instance):
-    assert isinstance(instance.pn_local, str)
-
-
-@given(instance=sparql::PN::LOCAL_strategy)
-def test_sparql::pn::local_pn_local_setter(instance):
-    original = instance.pn_local
-    instance.pn_local = original
-    assert instance.pn_local == original
-
-@given(instance=sparql::ValueLogical_strategy)
-@settings(max_examples=50)
-def test_sparql::valuelogical_instantiation(instance):
-    assert isinstance(instance, sparql::ValueLogical)
-
-@given(instance=sparql::LANGTAGOrIRIrefNE_strategy)
-@settings(max_examples=50)
-def test_sparql::langtagoririrefne_instantiation(instance):
-    assert isinstance(instance, sparql::LANGTAGOrIRIrefNE)
-
-@given(instance=sparql::ConditionalAndExpression_strategy)
-@settings(max_examples=50)
-def test_sparql::conditionalandexpression_instantiation(instance):
-    assert isinstance(instance, sparql::ConditionalAndExpression)
-
-@given(instance=sparql::PrefixDecl_strategy)
-@settings(max_examples=50)
-def test_sparql::prefixdecl_instantiation(instance):
-    assert isinstance(instance, sparql::PrefixDecl)
-
-@given(instance=sparql::SparqlQueries_strategy)
-@settings(max_examples=50)
-def test_sparql::sparqlqueries_instantiation(instance):
-    assert isinstance(instance, sparql::SparqlQueries)
-
-@given(instance=sparql::ConditionalOrExpression_strategy)
-@settings(max_examples=50)
-def test_sparql::conditionalorexpression_instantiation(instance):
-    assert isinstance(instance, sparql::ConditionalOrExpression)
-
-@given(instance=sparql::ArgList_strategy)
-@settings(max_examples=50)
-def test_sparql::arglist_instantiation(instance):
-    assert isinstance(instance, sparql::ArgList)
-
-@given(instance=sparql::AdditionalExpressionNE_strategy)
-@settings(max_examples=50)
-def test_sparql::additionalexpressionne_instantiation(instance):
-    assert isinstance(instance, sparql::AdditionalExpressionNE)
+def test_sparql_arglistnilne_instantiation(instance):
+    assert isinstance(instance, sparql_ArgListNILNE)
 
 @given(instance=BuiltInCall_strategy)
 @settings(max_examples=50)
 def test_builtincall_instantiation(instance):
     assert isinstance(instance, BuiltInCall)
 
-@given(instance=sparql::IsURIBuiltInCallNE_strategy)
+@given(instance=sparql_IsBlankBuiltInCallNE_strategy)
 @settings(max_examples=50)
-def test_sparql::isuribuiltincallne_instantiation(instance):
-    assert isinstance(instance, sparql::IsURIBuiltInCallNE)
+def test_sparql_isblankbuiltincallne_instantiation(instance):
+    assert isinstance(instance, sparql_IsBlankBuiltInCallNE)
 
-@given(instance=sparql::IsLiteralBuiltInCallNE_strategy)
+@given(instance=sparql_RegexExpression_strategy)
 @settings(max_examples=50)
-def test_sparql::isliteralbuiltincallne_instantiation(instance):
-    assert isinstance(instance, sparql::IsLiteralBuiltInCallNE)
+def test_sparql_regexexpression_instantiation(instance):
+    assert isinstance(instance, sparql_RegexExpression)
 
-@given(instance=sparql::RegexExpression_strategy)
+@given(instance=sparql_LangmatchesBuiltInCallNE_strategy)
 @settings(max_examples=50)
-def test_sparql::regexexpression_instantiation(instance):
-    assert isinstance(instance, sparql::RegexExpression)
+def test_sparql_langmatchesbuiltincallne_instantiation(instance):
+    assert isinstance(instance, sparql_LangmatchesBuiltInCallNE)
 
-@given(instance=sparql::DatatypeBuiltInCallNE_strategy)
+@given(instance=sparql_IsURIBuiltInCallNE_strategy)
 @settings(max_examples=50)
-def test_sparql::datatypebuiltincallne_instantiation(instance):
-    assert isinstance(instance, sparql::DatatypeBuiltInCallNE)
+def test_sparql_isuribuiltincallne_instantiation(instance):
+    assert isinstance(instance, sparql_IsURIBuiltInCallNE)
 
-@given(instance=sparql::LangmatchesBuiltInCallNE_strategy)
+@given(instance=sparql_LangBuiltInCallNE_strategy)
 @settings(max_examples=50)
-def test_sparql::langmatchesbuiltincallne_instantiation(instance):
-    assert isinstance(instance, sparql::LangmatchesBuiltInCallNE)
+def test_sparql_langbuiltincallne_instantiation(instance):
+    assert isinstance(instance, sparql_LangBuiltInCallNE)
 
-@given(instance=sparql::IsIRIBuiltInCallNE_strategy)
+@given(instance=sparql_DatatypeBuiltInCallNE_strategy)
 @settings(max_examples=50)
-def test_sparql::isiribuiltincallne_instantiation(instance):
-    assert isinstance(instance, sparql::IsIRIBuiltInCallNE)
+def test_sparql_datatypebuiltincallne_instantiation(instance):
+    assert isinstance(instance, sparql_DatatypeBuiltInCallNE)
 
-@given(instance=sparql::IsBlankBuiltInCallNE_strategy)
+@given(instance=sparql_IsLiteralBuiltInCallNE_strategy)
 @settings(max_examples=50)
-def test_sparql::isblankbuiltincallne_instantiation(instance):
-    assert isinstance(instance, sparql::IsBlankBuiltInCallNE)
+def test_sparql_isliteralbuiltincallne_instantiation(instance):
+    assert isinstance(instance, sparql_IsLiteralBuiltInCallNE)
 
-@given(instance=sparql::LangBuiltInCallNE_strategy)
+@given(instance=sparql_IsIRIBuiltInCallNE_strategy)
 @settings(max_examples=50)
-def test_sparql::langbuiltincallne_instantiation(instance):
-    assert isinstance(instance, sparql::LangBuiltInCallNE)
+def test_sparql_isiribuiltincallne_instantiation(instance):
+    assert isinstance(instance, sparql_IsIRIBuiltInCallNE)
 
-@given(instance=sparql::StrBuiltInCallNE_strategy)
+@given(instance=sparql_StrBuiltInCallNE_strategy)
 @settings(max_examples=50)
-def test_sparql::strbuiltincallne_instantiation(instance):
-    assert isinstance(instance, sparql::StrBuiltInCallNE)
-
-@given(instance=sparql::Expression_strategy)
-@settings(max_examples=50)
-def test_sparql::expression_instantiation(instance):
-    assert isinstance(instance, sparql::Expression)
+def test_sparql_strbuiltincallne_instantiation(instance):
+    assert isinstance(instance, sparql_StrBuiltInCallNE)
 
 @given(instance=Constraint_strategy)
 @settings(max_examples=50)
 def test_constraint_instantiation(instance):
     assert isinstance(instance, Constraint)
 
-@given(instance=sparql::FunctionCall_strategy)
+@given(instance=sparql_FunctionCall_strategy)
 @settings(max_examples=50)
-def test_sparql::functioncall_instantiation(instance):
-    assert isinstance(instance, sparql::FunctionCall)
+def test_sparql_functioncall_instantiation(instance):
+    assert isinstance(instance, sparql_FunctionCall)
 
-@given(instance=sparql::SameTermBuiltInCallNE_strategy)
+@given(instance=sparql_SameTermBuiltInCallNE_strategy)
 @settings(max_examples=50)
-def test_sparql::sametermbuiltincallne_instantiation(instance):
-    assert isinstance(instance, sparql::SameTermBuiltInCallNE)
+def test_sparql_sametermbuiltincallne_instantiation(instance):
+    assert isinstance(instance, sparql_SameTermBuiltInCallNE)
 
-@given(instance=sparql::BoundBuiltInCallNE_strategy)
+@given(instance=sparql_BoundBuiltInCallNE_strategy)
 @settings(max_examples=50)
-def test_sparql::boundbuiltincallne_instantiation(instance):
-    assert isinstance(instance, sparql::BoundBuiltInCallNE)
+def test_sparql_boundbuiltincallne_instantiation(instance):
+    assert isinstance(instance, sparql_BoundBuiltInCallNE)
 
 @given(instance=TriplesNode_strategy)
 @settings(max_examples=50)
 def test_triplesnode_instantiation(instance):
     assert isinstance(instance, TriplesNode)
 
-@given(instance=sparql::BlankNodePropertyList_strategy)
+@given(instance=sparql_BlankNodePropertyList_strategy)
 @settings(max_examples=50)
-def test_sparql::blanknodepropertylist_instantiation(instance):
-    assert isinstance(instance, sparql::BlankNodePropertyList)
+def test_sparql_blanknodepropertylist_instantiation(instance):
+    assert isinstance(instance, sparql_BlankNodePropertyList)
 
-@given(instance=sparql::Collection_strategy)
+@given(instance=sparql_Collection_strategy)
 @settings(max_examples=50)
-def test_sparql::collection_instantiation(instance):
-    assert isinstance(instance, sparql::Collection)
-
-@given(instance=sparql::GraphNode_strategy)
-@settings(max_examples=50)
-def test_sparql::graphnode_instantiation(instance):
-    assert isinstance(instance, sparql::GraphNode)
-
-@given(instance=sparql::Object_strategy)
-@settings(max_examples=50)
-def test_sparql::object_instantiation(instance):
-    assert isinstance(instance, sparql::Object)
-
-@given(instance=sparql::ObjectList_strategy)
-@settings(max_examples=50)
-def test_sparql::objectlist_instantiation(instance):
-    assert isinstance(instance, sparql::ObjectList)
-
-@given(instance=sparql::Verb_strategy)
-@settings(max_examples=50)
-def test_sparql::verb_instantiation(instance):
-    assert isinstance(instance, sparql::Verb)
+def test_sparql_collection_instantiation(instance):
+    assert isinstance(instance, sparql_Collection)
 
 @given(instance=GraphNode_strategy)
 @settings(max_examples=50)
 def test_graphnode_instantiation(instance):
     assert isinstance(instance, GraphNode)
 
-@given(instance=sparql::PropertyListNotEmpty_strategy)
+@given(instance=sparql_PatternOrFilterNE_strategy)
 @settings(max_examples=50)
-def test_sparql::propertylistnotempty_instantiation(instance):
-    assert isinstance(instance, sparql::PropertyListNotEmpty)
+def test_sparql_patternorfilterne_instantiation(instance):
+    assert isinstance(instance, sparql_PatternOrFilterNE)
 
-@given(instance=sparql::PatternOrFilterNE_strategy)
+@given(instance=sparql_VarOrTerm_strategy)
 @settings(max_examples=50)
-def test_sparql::patternorfilterne_instantiation(instance):
-    assert isinstance(instance, sparql::PatternOrFilterNE)
-
-@given(instance=sparql::VarOrTerm_strategy)
-@settings(max_examples=50)
-def test_sparql::varorterm_instantiation(instance):
-    assert isinstance(instance, sparql::VarOrTerm)
+def test_sparql_varorterm_instantiation(instance):
+    assert isinstance(instance, sparql_VarOrTerm)
 
 @given(instance=TriplesSameSubject_strategy)
 @settings(max_examples=50)
 def test_triplessamesubject_instantiation(instance):
     assert isinstance(instance, TriplesSameSubject)
 
-@given(instance=sparql::TriplesSameSubjectLeftNE_strategy)
+@given(instance=sparql_TriplesSameSubjectLeftNE_strategy)
 @settings(max_examples=50)
-def test_sparql::triplessamesubjectleftne_instantiation(instance):
-    assert isinstance(instance, sparql::TriplesSameSubjectLeftNE)
+def test_sparql_triplessamesubjectleftne_instantiation(instance):
+    assert isinstance(instance, sparql_TriplesSameSubjectLeftNE)
 
-@given(instance=sparql::AdditionalGGPElement_strategy)
+@given(instance=sparql_TriplesBlock_strategy)
 @settings(max_examples=50)
-def test_sparql::additionalggpelement_instantiation(instance):
-    assert isinstance(instance, sparql::AdditionalGGPElement)
-
-@given(instance=sparql::TriplesBlock_strategy)
-@settings(max_examples=50)
-def test_sparql::triplesblock_instantiation(instance):
-    assert isinstance(instance, sparql::TriplesBlock)
+def test_sparql_triplesblock_instantiation(instance):
+    assert isinstance(instance, sparql_TriplesBlock)
 
 @given(instance=GraphPatternNotTriples_strategy)
 @settings(max_examples=50)
 def test_graphpatternnottriples_instantiation(instance):
     assert isinstance(instance, GraphPatternNotTriples)
 
-@given(instance=sparql::GraphGraphPattern_strategy)
+@given(instance=sparql_GraphGraphPattern_strategy)
 @settings(max_examples=50)
-def test_sparql::graphgraphpattern_instantiation(instance):
-    assert isinstance(instance, sparql::GraphGraphPattern)
+def test_sparql_graphgraphpattern_instantiation(instance):
+    assert isinstance(instance, sparql_GraphGraphPattern)
 
-@given(instance=sparql::GroupOrUnionGraphPattern_strategy)
+@given(instance=sparql_GroupOrUnionGraphPattern_strategy)
 @settings(max_examples=50)
-def test_sparql::grouporuniongraphpattern_instantiation(instance):
-    assert isinstance(instance, sparql::GroupOrUnionGraphPattern)
+def test_sparql_grouporuniongraphpattern_instantiation(instance):
+    assert isinstance(instance, sparql_GroupOrUnionGraphPattern)
 
-@given(instance=sparql::OptionalGraphPattern_strategy)
+@given(instance=sparql_OptionalGraphPattern_strategy)
 @settings(max_examples=50)
-def test_sparql::optionalgraphpattern_instantiation(instance):
-    assert isinstance(instance, sparql::OptionalGraphPattern)
+def test_sparql_optionalgraphpattern_instantiation(instance):
+    assert isinstance(instance, sparql_OptionalGraphPattern)
 
 @given(instance=PatternOrFilterNE_strategy)
 @settings(max_examples=50)
 def test_patternorfilterne_instantiation(instance):
     assert isinstance(instance, PatternOrFilterNE)
 
-@given(instance=sparql::Filter_strategy)
+@given(instance=sparql_Filter_strategy)
 @settings(max_examples=50)
-def test_sparql::filter_instantiation(instance):
-    assert isinstance(instance, sparql::Filter)
+def test_sparql_filter_instantiation(instance):
+    assert isinstance(instance, sparql_Filter)
 
-@given(instance=sparql::GraphPatternNotTriples_strategy)
+@given(instance=sparql_GraphPatternNotTriples_strategy)
 @settings(max_examples=50)
-def test_sparql::graphpatternnottriples_instantiation(instance):
-    assert isinstance(instance, sparql::GraphPatternNotTriples)
+def test_sparql_graphpatternnottriples_instantiation(instance):
+    assert isinstance(instance, sparql_GraphPatternNotTriples)
 
-@given(instance=sparql::TriplesNode_strategy)
+@given(instance=sparql_TriplesNode_strategy)
 @settings(max_examples=50)
-def test_sparql::triplesnode_instantiation(instance):
-    assert isinstance(instance, sparql::TriplesNode)
+def test_sparql_triplesnode_instantiation(instance):
+    assert isinstance(instance, sparql_TriplesNode)
 
-@given(instance=sparql::TriplesSameSubjectRightNE_strategy)
+@given(instance=sparql_TriplesSameSubjectRightNE_strategy)
 @settings(max_examples=50)
-def test_sparql::triplessamesubjectrightne_instantiation(instance):
-    assert isinstance(instance, sparql::TriplesSameSubjectRightNE)
+def test_sparql_triplessamesubjectrightne_instantiation(instance):
+    assert isinstance(instance, sparql_TriplesSameSubjectRightNE)
 
 @given(instance=IRIreference_strategy)
 @settings(max_examples=50)
 def test_irireference_instantiation(instance):
     assert isinstance(instance, IRIreference)
 
-@given(instance=sparql::PrefixedName_strategy)
+@given(instance=sparql_PrefixedName_strategy)
 @settings(max_examples=50)
-def test_sparql::prefixedname_instantiation(instance):
-    assert isinstance(instance, sparql::PrefixedName)
+def test_sparql_prefixedname_instantiation(instance):
+    assert isinstance(instance, sparql_PrefixedName)
 
 @given(instance=SourceSelector_strategy)
 @settings(max_examples=50)
@@ -4299,282 +3953,568 @@ def test_sourceselector_instantiation(instance):
 def test_graphterm_instantiation(instance):
     assert isinstance(instance, GraphTerm)
 
-@given(instance=sparql::BlankNode_strategy)
+@given(instance=sparql_BlankNode_strategy)
 @settings(max_examples=50)
-def test_sparql::blanknode_instantiation(instance):
-    assert isinstance(instance, sparql::BlankNode)
+def test_sparql_blanknode_instantiation(instance):
+    assert isinstance(instance, sparql_BlankNode)
 
-@given(instance=sparql::NotInList_strategy)
+@given(instance=sparql_NotInList_strategy)
 @settings(max_examples=50)
-def test_sparql::notinlist_instantiation(instance):
-    assert isinstance(instance, sparql::NotInList)
+def test_sparql_notinlist_instantiation(instance):
+    assert isinstance(instance, sparql_NotInList)
 
-@given(instance=sparql::GroupGraphPattern_strategy)
+@given(instance=sparql_WhereLiteral_strategy)
 @settings(max_examples=50)
-def test_sparql::groupgraphpattern_instantiation(instance):
-    assert isinstance(instance, sparql::GroupGraphPattern)
-
-@given(instance=sparql::WhereLiteral_strategy)
-@settings(max_examples=50)
-def test_sparql::whereliteral_instantiation(instance):
-    assert isinstance(instance, sparql::WhereLiteral)
-
-@given(instance=sparql::SourceSelector_strategy)
-@settings(max_examples=50)
-def test_sparql::sourceselector_instantiation(instance):
-    assert isinstance(instance, sparql::SourceSelector)
+def test_sparql_whereliteral_instantiation(instance):
+    assert isinstance(instance, sparql_WhereLiteral)
 
 @given(instance=GraphClauseNE_strategy)
 @settings(max_examples=50)
 def test_graphclausene_instantiation(instance):
     assert isinstance(instance, GraphClauseNE)
 
-@given(instance=sparql::NamedGraphClause_strategy)
+@given(instance=sparql_NamedGraphClause_strategy)
 @settings(max_examples=50)
-def test_sparql::namedgraphclause_instantiation(instance):
-    assert isinstance(instance, sparql::NamedGraphClause)
+def test_sparql_namedgraphclause_instantiation(instance):
+    assert isinstance(instance, sparql_NamedGraphClause)
 
-@given(instance=sparql::DefaultGraphClause_strategy)
+@given(instance=sparql_DefaultGraphClause_strategy)
 @settings(max_examples=50)
-def test_sparql::defaultgraphclause_instantiation(instance):
-    assert isinstance(instance, sparql::DefaultGraphClause)
-
-@given(instance=sparql::GraphClauseNE_strategy)
-@settings(max_examples=50)
-def test_sparql::graphclausene_instantiation(instance):
-    assert isinstance(instance, sparql::GraphClauseNE)
+def test_sparql_defaultgraphclause_instantiation(instance):
+    assert isinstance(instance, sparql_DefaultGraphClause)
 
 @given(instance=OrderConditionRightNE_strategy)
 @settings(max_examples=50)
 def test_orderconditionrightne_instantiation(instance):
     assert isinstance(instance, OrderConditionRightNE)
 
-@given(instance=sparql::Constraint_strategy)
+@given(instance=sparql_Constraint_strategy)
 @settings(max_examples=50)
-def test_sparql::constraint_instantiation(instance):
-    assert isinstance(instance, sparql::Constraint)
+def test_sparql_constraint_instantiation(instance):
+    assert isinstance(instance, sparql_Constraint)
 
 @given(instance=VarOrTerm_strategy)
 @settings(max_examples=50)
 def test_varorterm_instantiation(instance):
     assert isinstance(instance, VarOrTerm)
 
-@given(instance=sparql::GraphTerm_strategy)
+@given(instance=sparql_GraphTerm_strategy)
 @settings(max_examples=50)
-def test_sparql::graphterm_instantiation(instance):
-    assert isinstance(instance, sparql::GraphTerm)
+def test_sparql_graphterm_instantiation(instance):
+    assert isinstance(instance, sparql_GraphTerm)
 
 @given(instance=PrimaryExpression_strategy)
 @settings(max_examples=50)
 def test_primaryexpression_instantiation(instance):
     assert isinstance(instance, PrimaryExpression)
 
-@given(instance=sparql::RDFLiteral_strategy)
+@given(instance=sparql_RDFLiteral_strategy)
 @settings(max_examples=50)
-def test_sparql::rdfliteral_instantiation(instance):
-    assert isinstance(instance, sparql::RDFLiteral)
+def test_sparql_rdfliteral_instantiation(instance):
+    assert isinstance(instance, sparql_RDFLiteral)
 
-@given(instance=sparql::BuiltInCall_strategy)
+@given(instance=sparql_BuiltInCall_strategy)
 @settings(max_examples=50)
-def test_sparql::builtincall_instantiation(instance):
-    assert isinstance(instance, sparql::BuiltInCall)
+def test_sparql_builtincall_instantiation(instance):
+    assert isinstance(instance, sparql_BuiltInCall)
 
-@given(instance=sparql::BrackettedExpression_strategy)
+@given(instance=sparql_IRIrefOrFunction_strategy)
 @settings(max_examples=50)
-def test_sparql::brackettedexpression_instantiation(instance):
-    assert isinstance(instance, sparql::BrackettedExpression)
+def test_sparql_irireforfunction_instantiation(instance):
+    assert isinstance(instance, sparql_IRIrefOrFunction)
 
-@given(instance=sparql::NumericLiteral_strategy)
+@given(instance=sparql_NumericLiteral_strategy)
 @settings(max_examples=50)
-def test_sparql::numericliteral_instantiation(instance):
-    assert isinstance(instance, sparql::NumericLiteral)
+def test_sparql_numericliteral_instantiation(instance):
+    assert isinstance(instance, sparql_NumericLiteral)
 
-@given(instance=sparql::BooleanLiteral_strategy)
+@given(instance=sparql_BooleanLiteral_strategy)
 @settings(max_examples=50)
-def test_sparql::booleanliteral_instantiation(instance):
-    assert isinstance(instance, sparql::BooleanLiteral)
-
-@given(instance=sparql::IRIrefOrFunction_strategy)
-@settings(max_examples=50)
-def test_sparql::irireforfunction_instantiation(instance):
-    assert isinstance(instance, sparql::IRIrefOrFunction)
+def test_sparql_booleanliteral_instantiation(instance):
+    assert isinstance(instance, sparql_BooleanLiteral)
 
 @given(instance=VarOrIRIref_strategy)
 @settings(max_examples=50)
 def test_varoririref_instantiation(instance):
     assert isinstance(instance, VarOrIRIref)
 
-@given(instance=sparql::PNAME::LN_strategy)
+@given(instance=sparql_PNAME_LN_strategy)
 @settings(max_examples=50)
-def test_sparql::pname::ln_instantiation(instance):
-    assert isinstance(instance, sparql::PNAME::LN)
+def test_sparql_pname_ln_instantiation(instance):
+    assert isinstance(instance, sparql_PNAME_LN)
 
-@given(instance=sparql::IRIreference_strategy)
+@given(instance=sparql_IRIreference_strategy)
 @settings(max_examples=50)
-def test_sparql::irireference_instantiation(instance):
-    assert isinstance(instance, sparql::IRIreference)
-
-@given(instance=sparql::IRI::REF_strategy)
-@settings(max_examples=50)
-def test_sparql::iri::ref_instantiation(instance):
-    assert isinstance(instance, sparql::IRI::REF)
-
-@given(instance=sparql::IRI::REF_strategy)
-def test_sparql::iri::ref_iri_ref_type(instance):
-    assert isinstance(instance.iri_ref, str)
-
-
-@given(instance=sparql::IRI::REF_strategy)
-def test_sparql::iri::ref_iri_ref_setter(instance):
-    original = instance.iri_ref
-    instance.iri_ref = original
-    assert instance.iri_ref == original
-
-@given(instance=sparql::Var_strategy)
-@settings(max_examples=50)
-def test_sparql::var_instantiation(instance):
-    assert isinstance(instance, sparql::Var)
-
-@given(instance=sparql::Var_strategy)
-def test_sparql::var_varname_type(instance):
-    assert isinstance(instance.varname, str)
-
-
-@given(instance=sparql::Var_strategy)
-def test_sparql::var_varname_setter(instance):
-    original = instance.varname
-    instance.varname = original
-    assert instance.varname == original
-
-@given(instance=sparql::PNAME::NS_strategy)
-@settings(max_examples=50)
-def test_sparql::pname::ns_instantiation(instance):
-    assert isinstance(instance, sparql::PNAME::NS)
-
-@given(instance=sparql::PNAME::NS_strategy)
-def test_sparql::pname::ns_pn_prefix_type(instance):
-    assert isinstance(instance.pn_prefix, str)
-
-
-@given(instance=sparql::PNAME::NS_strategy)
-def test_sparql::pname::ns_pn_prefix_setter(instance):
-    original = instance.pn_prefix
-    instance.pn_prefix = original
-    assert instance.pn_prefix == original
+def test_sparql_irireference_instantiation(instance):
+    assert isinstance(instance, sparql_IRIreference)
 
 @given(instance=Verb_strategy)
 @settings(max_examples=50)
 def test_verb_instantiation(instance):
     assert isinstance(instance, Verb)
 
-@given(instance=sparql::VerbANE_strategy)
+@given(instance=sparql_VerbANE_strategy)
 @settings(max_examples=50)
-def test_sparql::verbane_instantiation(instance):
-    assert isinstance(instance, sparql::VerbANE)
-
-@given(instance=sparql::VerbANE_strategy)
-def test_sparql::verbane_theA_type(instance):
-    assert isinstance(instance.theA, str)
+def test_sparql_verbane_instantiation(instance):
+    assert isinstance(instance, sparql_VerbANE)
 
 
-@given(instance=sparql::VerbANE_strategy)
-def test_sparql::verbane_theA_setter(instance):
+
+@given(instance=sparql_VerbANE_strategy)
+def test_sparql_verbane_theA_setter(instance):
     original = instance.theA
     instance.theA = original
     assert instance.theA == original
-
-@given(instance=sparql::VarOrIRIref_strategy)
-@settings(max_examples=50)
-def test_sparql::varoririref_instantiation(instance):
-    assert isinstance(instance, sparql::VarOrIRIref)
 
 @given(instance=VariablesNE_strategy)
 @settings(max_examples=50)
 def test_variablesne_instantiation(instance):
     assert isinstance(instance, VariablesNE)
 
-@given(instance=sparql::SomeVariablesNE_strategy)
+@given(instance=sparql_SomeVariablesNE_strategy)
 @settings(max_examples=50)
-def test_sparql::somevariablesne_instantiation(instance):
-    assert isinstance(instance, sparql::SomeVariablesNE)
+def test_sparql_somevariablesne_instantiation(instance):
+    assert isinstance(instance, sparql_SomeVariablesNE)
 
-@given(instance=sparql::AllVariablesNE_strategy)
+@given(instance=sparql_AllVariablesNE_strategy)
 @settings(max_examples=50)
-def test_sparql::allvariablesne_instantiation(instance):
-    assert isinstance(instance, sparql::AllVariablesNE)
-
-@given(instance=sparql::VariablesNE_strategy)
-@settings(max_examples=50)
-def test_sparql::variablesne_instantiation(instance):
-    assert isinstance(instance, sparql::VariablesNE)
+def test_sparql_allvariablesne_instantiation(instance):
+    assert isinstance(instance, sparql_AllVariablesNE)
 
 @given(instance=SolutionsDisplayNE_strategy)
 @settings(max_examples=50)
 def test_solutionsdisplayne_instantiation(instance):
     assert isinstance(instance, SolutionsDisplayNE)
 
-@given(instance=sparql::ReducedNE_strategy)
+@given(instance=sparql_ReducedNE_strategy)
 @settings(max_examples=50)
-def test_sparql::reducedne_instantiation(instance):
-    assert isinstance(instance, sparql::ReducedNE)
+def test_sparql_reducedne_instantiation(instance):
+    assert isinstance(instance, sparql_ReducedNE)
 
-@given(instance=sparql::DistinctNE_strategy)
+@given(instance=sparql_DistinctNE_strategy)
 @settings(max_examples=50)
-def test_sparql::distinctne_instantiation(instance):
-    assert isinstance(instance, sparql::DistinctNE)
+def test_sparql_distinctne_instantiation(instance):
+    assert isinstance(instance, sparql_DistinctNE)
 
-@given(instance=sparql::INTEGER_strategy)
+@given(instance=sparql_INTEGER_strategy)
 @settings(max_examples=50)
-def test_sparql::integer_instantiation(instance):
-    assert isinstance(instance, sparql::INTEGER)
-
-@given(instance=sparql::INTEGER_strategy)
-def test_sparql::integer_integer_type(instance):
-    assert isinstance(instance.integer, str)
+def test_sparql_integer_instantiation(instance):
+    assert isinstance(instance, sparql_INTEGER)
 
 
-@given(instance=sparql::INTEGER_strategy)
-def test_sparql::integer_integer_setter(instance):
+
+@given(instance=sparql_INTEGER_strategy)
+def test_sparql_integer_integer_setter(instance):
     original = instance.integer
     instance.integer = original
     assert instance.integer == original
-
-@given(instance=sparql::OrderClause_strategy)
-@settings(max_examples=50)
-def test_sparql::orderclause_instantiation(instance):
-    assert isinstance(instance, sparql::OrderClause)
-
-@given(instance=sparql::TriplesSameSubject_strategy)
-@settings(max_examples=50)
-def test_sparql::triplessamesubject_instantiation(instance):
-    assert isinstance(instance, sparql::TriplesSameSubject)
-
-@given(instance=sparql::OffsetClause_strategy)
-@settings(max_examples=50)
-def test_sparql::offsetclause_instantiation(instance):
-    assert isinstance(instance, sparql::OffsetClause)
-
-@given(instance=sparql::LimitClause_strategy)
-@settings(max_examples=50)
-def test_sparql::limitclause_instantiation(instance):
-    assert isinstance(instance, sparql::LimitClause)
 
 @given(instance=LimitOffsetClauses_strategy)
 @settings(max_examples=50)
 def test_limitoffsetclauses_instantiation(instance):
     assert isinstance(instance, LimitOffsetClauses)
 
-@given(instance=sparql::LimitOffsetClausesRightNE_strategy)
+@given(instance=sparql_LimitOffsetClausesRightNE_strategy)
 @settings(max_examples=50)
-def test_sparql::limitoffsetclausesrightne_instantiation(instance):
-    assert isinstance(instance, sparql::LimitOffsetClausesRightNE)
+def test_sparql_limitoffsetclausesrightne_instantiation(instance):
+    assert isinstance(instance, sparql_LimitOffsetClausesRightNE)
 
-@given(instance=sparql::LimitOffsetClausesLeftNE_strategy)
+@given(instance=sparql_LimitOffsetClausesLeftNE_strategy)
 @settings(max_examples=50)
-def test_sparql::limitoffsetclausesleftne_instantiation(instance):
-    assert isinstance(instance, sparql::LimitOffsetClausesLeftNE)
+def test_sparql_limitoffsetclausesleftne_instantiation(instance):
+    assert isinstance(instance, sparql_LimitOffsetClausesLeftNE)
 
-@given(instance=sparql::OrderConditionRightNE_strategy)
+@given(instance=sparql_BrackettedExpression_strategy)
 @settings(max_examples=50)
-def test_sparql::orderconditionrightne_instantiation(instance):
-    assert isinstance(instance, sparql::OrderConditionRightNE)
+def test_sparql_brackettedexpression_instantiation(instance):
+    assert isinstance(instance, sparql_BrackettedExpression)
+
+@given(instance=sparql_AscOrDecs_strategy)
+@settings(max_examples=50)
+def test_sparql_ascordecs_instantiation(instance):
+    assert isinstance(instance, sparql_AscOrDecs)
+
+@given(instance=OrderCondition_strategy)
+@settings(max_examples=50)
+def test_ordercondition_instantiation(instance):
+    assert isinstance(instance, OrderCondition)
+
+@given(instance=sparql_OrderConditionRightNE_strategy)
+@settings(max_examples=50)
+def test_sparql_orderconditionrightne_instantiation(instance):
+    assert isinstance(instance, sparql_OrderConditionRightNE)
+
+@given(instance=sparql_OrderConditionLeftNE_strategy)
+@settings(max_examples=50)
+def test_sparql_orderconditionleftne_instantiation(instance):
+    assert isinstance(instance, sparql_OrderConditionLeftNE)
+
+@given(instance=sparql_VarOrIRIref_strategy)
+@settings(max_examples=50)
+def test_sparql_varoririref_instantiation(instance):
+    assert isinstance(instance, sparql_VarOrIRIref)
+
+@given(instance=Query_strategy)
+@settings(max_examples=50)
+def test_query_instantiation(instance):
+    assert isinstance(instance, Query)
+
+@given(instance=sparql_AskQuery_strategy)
+@settings(max_examples=50)
+def test_sparql_askquery_instantiation(instance):
+    assert isinstance(instance, sparql_AskQuery)
+
+@given(instance=sparql_DescribeQuery_strategy)
+@settings(max_examples=50)
+def test_sparql_describequery_instantiation(instance):
+    assert isinstance(instance, sparql_DescribeQuery)
+
+@given(instance=sparql_ConstructQuery_strategy)
+@settings(max_examples=50)
+def test_sparql_constructquery_instantiation(instance):
+    assert isinstance(instance, sparql_ConstructQuery)
+
+@given(instance=sparql_SelectQuery_strategy)
+@settings(max_examples=50)
+def test_sparql_selectquery_instantiation(instance):
+    assert isinstance(instance, sparql_SelectQuery)
+
+@given(instance=sparql_PNAME_NS_strategy)
+@settings(max_examples=50)
+def test_sparql_pname_ns_instantiation(instance):
+    assert isinstance(instance, sparql_PNAME_NS)
+
+
+
+@given(instance=sparql_PNAME_NS_strategy)
+def test_sparql_pname_ns_pn_prefix_setter(instance):
+    original = instance.pn_prefix
+    instance.pn_prefix = original
+    assert instance.pn_prefix == original
+
+@given(instance=sparql_Var_strategy)
+@settings(max_examples=50)
+def test_sparql_var_instantiation(instance):
+    assert isinstance(instance, sparql_Var)
+
+
+
+@given(instance=sparql_Var_strategy)
+def test_sparql_var_varname_setter(instance):
+    original = instance.varname
+    instance.varname = original
+    assert instance.varname == original
+
+@given(instance=sparql_LocatedElement_strategy)
+@settings(max_examples=50)
+def test_sparql_locatedelement_instantiation(instance):
+    assert isinstance(instance, sparql_LocatedElement)
+
+
+
+@given(instance=sparql_LocatedElement_strategy)
+def test_sparql_locatedelement_location_setter(instance):
+    original = instance.location
+    instance.location = original
+    assert instance.location == original
+
+
+
+@given(instance=sparql_LocatedElement_strategy)
+def test_sparql_locatedelement_commentsAfter_setter(instance):
+    original = instance.commentsAfter
+    instance.commentsAfter = original
+    assert instance.commentsAfter == original
+
+
+
+@given(instance=sparql_LocatedElement_strategy)
+def test_sparql_locatedelement_commentsBefore_setter(instance):
+    original = instance.commentsBefore
+    instance.commentsBefore = original
+    assert instance.commentsBefore == original
+
+@given(instance=sparql_IRI_REF_strategy)
+@settings(max_examples=50)
+def test_sparql_iri_ref_instantiation(instance):
+    assert isinstance(instance, sparql_IRI_REF)
+
+
+
+@given(instance=sparql_IRI_REF_strategy)
+def test_sparql_iri_ref_iri_ref_setter(instance):
+    original = instance.iri_ref
+    instance.iri_ref = original
+    assert instance.iri_ref == original
+
+@given(instance=LocatedElement_strategy)
+@settings(max_examples=50)
+def test_locatedelement_instantiation(instance):
+    assert isinstance(instance, LocatedElement)
+
+@given(instance=sparql_OffsetClause_strategy)
+@settings(max_examples=50)
+def test_sparql_offsetclause_instantiation(instance):
+    assert isinstance(instance, sparql_OffsetClause)
+
+@given(instance=sparql_TriplesSameSubject_strategy)
+@settings(max_examples=50)
+def test_sparql_triplessamesubject_instantiation(instance):
+    assert isinstance(instance, sparql_TriplesSameSubject)
+
+@given(instance=sparql_PropertyListNotEmpty_strategy)
+@settings(max_examples=50)
+def test_sparql_propertylistnotempty_instantiation(instance):
+    assert isinstance(instance, sparql_PropertyListNotEmpty)
+
+@given(instance=sparql_OrderCondition_strategy)
+@settings(max_examples=50)
+def test_sparql_ordercondition_instantiation(instance):
+    assert isinstance(instance, sparql_OrderCondition)
+
+@given(instance=sparql_WS_strategy)
+@settings(max_examples=50)
+def test_sparql_ws_instantiation(instance):
+    assert isinstance(instance, sparql_WS)
+
+
+
+@given(instance=sparql_WS_strategy)
+def test_sparql_ws_ws_setter(instance):
+    original = instance.ws
+    instance.ws = original
+    assert instance.ws == original
+
+@given(instance=sparql_AdditionalNumericExpressionNE_strategy)
+@settings(max_examples=50)
+def test_sparql_additionalnumericexpressionne_instantiation(instance):
+    assert isinstance(instance, sparql_AdditionalNumericExpressionNE)
+
+@given(instance=sparql_Object_strategy)
+@settings(max_examples=50)
+def test_sparql_object_instantiation(instance):
+    assert isinstance(instance, sparql_Object)
+
+@given(instance=sparql_AdditionalExpressionNE_strategy)
+@settings(max_examples=50)
+def test_sparql_additionalexpressionne_instantiation(instance):
+    assert isinstance(instance, sparql_AdditionalExpressionNE)
+
+@given(instance=sparql_AdditiveExpression_strategy)
+@settings(max_examples=50)
+def test_sparql_additiveexpression_instantiation(instance):
+    assert isinstance(instance, sparql_AdditiveExpression)
+
+@given(instance=sparql_VariablesNE_strategy)
+@settings(max_examples=50)
+def test_sparql_variablesne_instantiation(instance):
+    assert isinstance(instance, sparql_VariablesNE)
+
+@given(instance=sparql_Prologue_strategy)
+@settings(max_examples=50)
+def test_sparql_prologue_instantiation(instance):
+    assert isinstance(instance, sparql_Prologue)
+
+@given(instance=sparql_PrefixDecl_strategy)
+@settings(max_examples=50)
+def test_sparql_prefixdecl_instantiation(instance):
+    assert isinstance(instance, sparql_PrefixDecl)
+
+@given(instance=sparql_AdditionalConditionalAndExpressionNE_strategy)
+@settings(max_examples=50)
+def test_sparql_additionalconditionalandexpressionne_instantiation(instance):
+    assert isinstance(instance, sparql_AdditionalConditionalAndExpressionNE)
+
+@given(instance=sparql_ArgList_strategy)
+@settings(max_examples=50)
+def test_sparql_arglist_instantiation(instance):
+    assert isinstance(instance, sparql_ArgList)
+
+@given(instance=sparql_Query_strategy)
+@settings(max_examples=50)
+def test_sparql_query_instantiation(instance):
+    assert isinstance(instance, sparql_Query)
+
+@given(instance=sparql_LANGTAGOrIRIrefNE_strategy)
+@settings(max_examples=50)
+def test_sparql_langtagoririrefne_instantiation(instance):
+    assert isinstance(instance, sparql_LANGTAGOrIRIrefNE)
+
+@given(instance=sparql_WhereClause_strategy)
+@settings(max_examples=50)
+def test_sparql_whereclause_instantiation(instance):
+    assert isinstance(instance, sparql_WhereClause)
+
+@given(instance=sparql_OrderClause_strategy)
+@settings(max_examples=50)
+def test_sparql_orderclause_instantiation(instance):
+    assert isinstance(instance, sparql_OrderClause)
+
+@given(instance=sparql_VARNAME_strategy)
+@settings(max_examples=50)
+def test_sparql_varname_instantiation(instance):
+    assert isinstance(instance, sparql_VARNAME)
+
+
+
+@given(instance=sparql_VARNAME_strategy)
+def test_sparql_varname_varname_setter(instance):
+    original = instance.varname
+    instance.varname = original
+    assert instance.varname == original
+
+@given(instance=sparql_NumericExpression_strategy)
+@settings(max_examples=50)
+def test_sparql_numericexpression_instantiation(instance):
+    assert isinstance(instance, sparql_NumericExpression)
+
+@given(instance=sparql_DatasetClause_strategy)
+@settings(max_examples=50)
+def test_sparql_datasetclause_instantiation(instance):
+    assert isinstance(instance, sparql_DatasetClause)
+
+@given(instance=sparql_PN_LOCAL_strategy)
+@settings(max_examples=50)
+def test_sparql_pn_local_instantiation(instance):
+    assert isinstance(instance, sparql_PN_LOCAL)
+
+
+
+@given(instance=sparql_PN_LOCAL_strategy)
+def test_sparql_pn_local_pn_local_setter(instance):
+    original = instance.pn_local
+    instance.pn_local = original
+    assert instance.pn_local == original
+
+@given(instance=sparql_AdditionalMultiplicativeExpressionNE_strategy)
+@settings(max_examples=50)
+def test_sparql_additionalmultiplicativeexpressionne_instantiation(instance):
+    assert isinstance(instance, sparql_AdditionalMultiplicativeExpressionNE)
+
+@given(instance=sparql_LimitOffsetClauses_strategy)
+@settings(max_examples=50)
+def test_sparql_limitoffsetclauses_instantiation(instance):
+    assert isinstance(instance, sparql_LimitOffsetClauses)
+
+@given(instance=sparql_PN_PREFIX_strategy)
+@settings(max_examples=50)
+def test_sparql_pn_prefix_instantiation(instance):
+    assert isinstance(instance, sparql_PN_PREFIX)
+
+
+
+@given(instance=sparql_PN_PREFIX_strategy)
+def test_sparql_pn_prefix_pn_prefix_setter(instance):
+    original = instance.pn_prefix
+    instance.pn_prefix = original
+    assert instance.pn_prefix == original
+
+@given(instance=sparql_AdditionalUnaryExpressionNE_strategy)
+@settings(max_examples=50)
+def test_sparql_additionalunaryexpressionne_instantiation(instance):
+    assert isinstance(instance, sparql_AdditionalUnaryExpressionNE)
+
+@given(instance=sparql_UnaryExpression_strategy)
+@settings(max_examples=50)
+def test_sparql_unaryexpression_instantiation(instance):
+    assert isinstance(instance, sparql_UnaryExpression)
+
+@given(instance=sparql_SolutionsDisplayNE_strategy)
+@settings(max_examples=50)
+def test_sparql_solutionsdisplayne_instantiation(instance):
+    assert isinstance(instance, sparql_SolutionsDisplayNE)
+
+@given(instance=sparql_LimitClause_strategy)
+@settings(max_examples=50)
+def test_sparql_limitclause_instantiation(instance):
+    assert isinstance(instance, sparql_LimitClause)
+
+@given(instance=sparql_BaseDecl_strategy)
+@settings(max_examples=50)
+def test_sparql_basedecl_instantiation(instance):
+    assert isinstance(instance, sparql_BaseDecl)
+
+@given(instance=sparql_ValueLogical_strategy)
+@settings(max_examples=50)
+def test_sparql_valuelogical_instantiation(instance):
+    assert isinstance(instance, sparql_ValueLogical)
+
+@given(instance=sparql_ObjectList_strategy)
+@settings(max_examples=50)
+def test_sparql_objectlist_instantiation(instance):
+    assert isinstance(instance, sparql_ObjectList)
+
+@given(instance=sparql_GraphClauseNE_strategy)
+@settings(max_examples=50)
+def test_sparql_graphclausene_instantiation(instance):
+    assert isinstance(instance, sparql_GraphClauseNE)
+
+@given(instance=sparql_Expression_strategy)
+@settings(max_examples=50)
+def test_sparql_expression_instantiation(instance):
+    assert isinstance(instance, sparql_Expression)
+
+@given(instance=sparql_SolutionModifier_strategy)
+@settings(max_examples=50)
+def test_sparql_solutionmodifier_instantiation(instance):
+    assert isinstance(instance, sparql_SolutionModifier)
+
+@given(instance=sparql_GraphNode_strategy)
+@settings(max_examples=50)
+def test_sparql_graphnode_instantiation(instance):
+    assert isinstance(instance, sparql_GraphNode)
+
+@given(instance=sparql_AdditionalGGPElement_strategy)
+@settings(max_examples=50)
+def test_sparql_additionalggpelement_instantiation(instance):
+    assert isinstance(instance, sparql_AdditionalGGPElement)
+
+@given(instance=sparql_RelationalExpression_strategy)
+@settings(max_examples=50)
+def test_sparql_relationalexpression_instantiation(instance):
+    assert isinstance(instance, sparql_RelationalExpression)
+
+@given(instance=sparql_ConditionalAndExpression_strategy)
+@settings(max_examples=50)
+def test_sparql_conditionalandexpression_instantiation(instance):
+    assert isinstance(instance, sparql_ConditionalAndExpression)
+
+@given(instance=sparql_ConstructTemplate_strategy)
+@settings(max_examples=50)
+def test_sparql_constructtemplate_instantiation(instance):
+    assert isinstance(instance, sparql_ConstructTemplate)
+
+@given(instance=sparql_MultiplicativeExpression_strategy)
+@settings(max_examples=50)
+def test_sparql_multiplicativeexpression_instantiation(instance):
+    assert isinstance(instance, sparql_MultiplicativeExpression)
+
+@given(instance=sparql_SourceSelector_strategy)
+@settings(max_examples=50)
+def test_sparql_sourceselector_instantiation(instance):
+    assert isinstance(instance, sparql_SourceSelector)
+
+@given(instance=sparql_AdditionalValueLogicalNE_strategy)
+@settings(max_examples=50)
+def test_sparql_additionalvaluelogicalne_instantiation(instance):
+    assert isinstance(instance, sparql_AdditionalValueLogicalNE)
+
+@given(instance=sparql_GroupGraphPattern_strategy)
+@settings(max_examples=50)
+def test_sparql_groupgraphpattern_instantiation(instance):
+    assert isinstance(instance, sparql_GroupGraphPattern)
+
+@given(instance=sparql_ConditionalOrExpression_strategy)
+@settings(max_examples=50)
+def test_sparql_conditionalorexpression_instantiation(instance):
+    assert isinstance(instance, sparql_ConditionalOrExpression)
+
+@given(instance=sparql_Verb_strategy)
+@settings(max_examples=50)
+def test_sparql_verb_instantiation(instance):
+    assert isinstance(instance, sparql_Verb)
+
+@given(instance=sparql_SparqlQueries_strategy)
+@settings(max_examples=50)
+def test_sparql_sparqlqueries_instantiation(instance):
+    assert isinstance(instance, sparql_SparqlQueries)

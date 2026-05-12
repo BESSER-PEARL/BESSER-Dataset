@@ -3,12 +3,12 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    a::C2,
-    a::Zug,
-    a::C,
+from python_code import (
+    a_C2,
+    a_Zug,
+    a_C,
     E,
 )
 
@@ -18,51 +18,51 @@ from classes import (
 
 
 
-def test_a::c2_is_not_abstract():
-    assert not inspect.isabstract(a::C2)
+def test_a_c2_is_not_abstract():
+    assert not inspect.isabstract(a_C2)
 
 
-def test_a::c2_constructor_exists():
-    assert callable(a::C2.__init__)
+def test_a_c2_constructor_exists():
+    assert callable(a_C2.__init__)
 
 
-def test_a::c2_constructor_args():
-    sig = inspect.signature(a::C2.__init__)
+def test_a_c2_constructor_args():
+    sig = inspect.signature(a_C2.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_a::zug_is_not_abstract():
-    assert not inspect.isabstract(a::Zug)
+def test_a_zug_is_not_abstract():
+    assert not inspect.isabstract(a_Zug)
 
 
-def test_a::zug_constructor_exists():
-    assert callable(a::Zug.__init__)
+def test_a_zug_constructor_exists():
+    assert callable(a_Zug.__init__)
 
 
-def test_a::zug_constructor_args():
-    sig = inspect.signature(a::Zug.__init__)
+def test_a_zug_constructor_args():
+    sig = inspect.signature(a_Zug.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_a::c_is_not_abstract():
-    assert not inspect.isabstract(a::C)
+def test_a_c_is_not_abstract():
+    assert not inspect.isabstract(a_C)
 
 
-def test_a::c_constructor_exists():
-    assert callable(a::C.__init__)
+def test_a_c_constructor_exists():
+    assert callable(a_C.__init__)
 
 
-def test_a::c_constructor_args():
-    sig = inspect.signature(a::C.__init__)
+def test_a_c_constructor_args():
+    sig = inspect.signature(a_C.__init__)
     params = list(sig.parameters.keys())
     assert "a" in params, "Missing parameter 'a'"
 
-def test_a::c_has_a():
-    assert hasattr(a::C, "a")
+def test_a_c_has_a():
+    assert hasattr(a_C, "a")
     descriptor = None
-    for klass in a::C.__mro__:
+    for klass in a_C.__mro__:
         if "a" in klass.__dict__:
             descriptor = klass.__dict__["a"]
             break
@@ -93,40 +93,37 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-a::C2_strategy = st.builds(
-    a::C2,
+a_C2_strategy = st.builds(
+    a_C2,
 )
-a::Zug_strategy = st.builds(
-    a::Zug,
+a_Zug_strategy = st.builds(
+    a_Zug,
 )
-a::C_strategy = st.builds(
-    a::C,
+a_C_strategy = st.builds(
+    a_C,
     a=
         safe_text
 )
 
-@given(instance=a::C2_strategy)
+@given(instance=a_C2_strategy)
 @settings(max_examples=50)
-def test_a::c2_instantiation(instance):
-    assert isinstance(instance, a::C2)
+def test_a_c2_instantiation(instance):
+    assert isinstance(instance, a_C2)
 
-@given(instance=a::Zug_strategy)
+@given(instance=a_Zug_strategy)
 @settings(max_examples=50)
-def test_a::zug_instantiation(instance):
-    assert isinstance(instance, a::Zug)
+def test_a_zug_instantiation(instance):
+    assert isinstance(instance, a_Zug)
 
-@given(instance=a::C_strategy)
+@given(instance=a_C_strategy)
 @settings(max_examples=50)
-def test_a::c_instantiation(instance):
-    assert isinstance(instance, a::C)
-
-@given(instance=a::C_strategy)
-def test_a::c_a_type(instance):
-    assert isinstance(instance.a, str)
+def test_a_c_instantiation(instance):
+    assert isinstance(instance, a_C)
 
 
-@given(instance=a::C_strategy)
-def test_a::c_a_setter(instance):
+
+@given(instance=a_C_strategy)
+def test_a_c_a_setter(instance):
     original = instance.a
     instance.a = original
     assert instance.a == original
@@ -137,9 +134,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=a::C_strategy)
+@given(instance=a_C_strategy)
 @settings(max_examples=30)
-def test_a::c_o_changes_state(instance):
+def test_a_c_o_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -153,11 +150,11 @@ def test_a::c_o_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'o' in a::C is empty"
+        assert has_statements, f"Function 'o' in a_C is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'o' in a::C did not change state; check implementation")
+            warnings.warn(f"Operation 'o' in a_C did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'o' in a::C is not implemented or raised an error")
+        warnings.warn(f"Operation 'o' in a_C is not implemented or raised an error")

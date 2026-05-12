@@ -3,72 +3,72 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     State,
-    SecCon::ProtectedState,
-    SecCon::AttackedState,
-    SecCon::VulnerableState,
-    SecCon::ThreatenedState,
-    SecCon::Action,
-    SecCon::Condition,
-    SecCon::ContextInformation,
-    SecCon::Rule,
-    SecCon::ContextScenario,
+    SecCon_AttackedState,
+    SecCon_ProtectedState,
+    SecCon_VulnerableState,
+    SecCon_ThreatenedState,
+    SecCon_Action,
+    SecCon_Condition,
+    SecCon_ContextInformation,
+    SecCon_Rule,
+    SecCon_ContextScenario,
     Event,
-    SecCon::ThreatEvent,
-    SecCon::AttackEvent,
-    SecCon::CountermeasureEvent,
+    SecCon_ThreatEvent,
+    SecCon_AttackEvent,
+    SecCon_CountermeasureEvent,
     StateVertex,
-    SecCon::FinalState,
-    SecCon::InitialState,
-    SecCon::State,
-    SecCon::Extend,
-    SecCon::Include,
+    SecCon_InitialState,
+    SecCon_FinalState,
+    SecCon_State,
+    SecCon_Extend,
+    SecCon_Include,
     UseCase,
-    SecCon::AttackUseCase,
-    SecCon::VulnerabilityUseCase,
-    SecCon::DetectionUseCase,
-    SecCon::RecoverUseCase,
-    SecCon::CountermeasureUseCase,
-    SecCon::PrevenctionUseCase,
-    SecCon::ThreatUseCase,
+    SecCon_RecoverUseCase,
+    SecCon_PrevenctionUseCase,
+    SecCon_VulnerabilityUseCase,
+    SecCon_AttackUseCase,
+    SecCon_DetectionUseCase,
+    SecCon_CountermeasureUseCase,
+    SecCon_ThreatUseCase,
     DataType,
-    SecCon::PrimitiveType,
-    SecCon::Enumeration,
+    SecCon_PrimitiveType,
+    SecCon_Enumeration,
     MultiplicityElement,
     TypedElement,
-    SecCon::Attribute,
+    SecCon_Attribute,
     Type,
-    SecCon::DataType,
-    SecCon::Class,
-    SecCon::Parameter,
-    SecCon::Operation,
+    SecCon_DataType,
+    SecCon_Class,
+    SecCon_Parameter,
+    SecCon_Operation,
     Element,
-    SecCon::NamedElement,
-    SecCon::MultiplicityElement,
+    SecCon_NamedElement,
+    SecCon_MultiplicityElement,
     NamedElement,
-    SecCon::StateOperation,
-    SecCon::Actor,
-    SecCon::Transition,
-    SecCon::StateVertex,
-    SecCon::UseCase,
-    SecCon::Package,
-    SecCon::EnumerationLiteral,
-    SecCon::Event,
-    SecCon::UseCaseScenario,
-    SecCon::StateMachineScenario,
-    SecCon::Project,
-    SecCon::Type,
-    SecCon::TypedElement,
-    SecCon::Comment,
-    SecCon::Element,
-    PseudostateKind,
-    Operator,
-    TypeOfContext,
-    TypeOfCondition,
+    SecCon_Event,
+    SecCon_StateVertex,
+    SecCon_UseCaseScenario,
+    SecCon_Package,
+    SecCon_Type,
+    SecCon_UseCase,
+    SecCon_Project,
+    SecCon_StateMachineScenario,
+    SecCon_StateOperation,
+    SecCon_EnumerationLiteral,
+    SecCon_Actor,
+    SecCon_Transition,
+    SecCon_TypedElement,
+    SecCon_Comment,
+    SecCon_Element,
     ParameterDirectionKind,
+    TypeOfCondition,
+    TypeOfContext,
+    Operator,
+    PseudostateKind,
 )
 
 # =============================================================================
@@ -91,89 +91,89 @@ def test_state_constructor_args():
 
 
 
-def test_seccon::protectedstate_is_not_abstract():
-    assert not inspect.isabstract(SecCon::ProtectedState)
+def test_seccon_attackedstate_is_not_abstract():
+    assert not inspect.isabstract(SecCon_AttackedState)
 
 
-def test_seccon::protectedstate_constructor_exists():
-    assert callable(SecCon::ProtectedState.__init__)
+def test_seccon_attackedstate_constructor_exists():
+    assert callable(SecCon_AttackedState.__init__)
 
 
-def test_seccon::protectedstate_constructor_args():
-    sig = inspect.signature(SecCon::ProtectedState.__init__)
+def test_seccon_attackedstate_constructor_args():
+    sig = inspect.signature(SecCon_AttackedState.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_seccon::attackedstate_is_not_abstract():
-    assert not inspect.isabstract(SecCon::AttackedState)
+def test_seccon_protectedstate_is_not_abstract():
+    assert not inspect.isabstract(SecCon_ProtectedState)
 
 
-def test_seccon::attackedstate_constructor_exists():
-    assert callable(SecCon::AttackedState.__init__)
+def test_seccon_protectedstate_constructor_exists():
+    assert callable(SecCon_ProtectedState.__init__)
 
 
-def test_seccon::attackedstate_constructor_args():
-    sig = inspect.signature(SecCon::AttackedState.__init__)
+def test_seccon_protectedstate_constructor_args():
+    sig = inspect.signature(SecCon_ProtectedState.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_seccon::vulnerablestate_is_not_abstract():
-    assert not inspect.isabstract(SecCon::VulnerableState)
+def test_seccon_vulnerablestate_is_not_abstract():
+    assert not inspect.isabstract(SecCon_VulnerableState)
 
 
-def test_seccon::vulnerablestate_constructor_exists():
-    assert callable(SecCon::VulnerableState.__init__)
+def test_seccon_vulnerablestate_constructor_exists():
+    assert callable(SecCon_VulnerableState.__init__)
 
 
-def test_seccon::vulnerablestate_constructor_args():
-    sig = inspect.signature(SecCon::VulnerableState.__init__)
+def test_seccon_vulnerablestate_constructor_args():
+    sig = inspect.signature(SecCon_VulnerableState.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_seccon::threatenedstate_is_not_abstract():
-    assert not inspect.isabstract(SecCon::ThreatenedState)
+def test_seccon_threatenedstate_is_not_abstract():
+    assert not inspect.isabstract(SecCon_ThreatenedState)
 
 
-def test_seccon::threatenedstate_constructor_exists():
-    assert callable(SecCon::ThreatenedState.__init__)
+def test_seccon_threatenedstate_constructor_exists():
+    assert callable(SecCon_ThreatenedState.__init__)
 
 
-def test_seccon::threatenedstate_constructor_args():
-    sig = inspect.signature(SecCon::ThreatenedState.__init__)
+def test_seccon_threatenedstate_constructor_args():
+    sig = inspect.signature(SecCon_ThreatenedState.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_seccon::action_is_not_abstract():
-    assert not inspect.isabstract(SecCon::Action)
+def test_seccon_action_is_not_abstract():
+    assert not inspect.isabstract(SecCon_Action)
 
 
-def test_seccon::action_constructor_exists():
-    assert callable(SecCon::Action.__init__)
+def test_seccon_action_constructor_exists():
+    assert callable(SecCon_Action.__init__)
 
 
-def test_seccon::action_constructor_args():
-    sig = inspect.signature(SecCon::Action.__init__)
+def test_seccon_action_constructor_args():
+    sig = inspect.signature(SecCon_Action.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
     assert "parameter" in params, "Missing parameter 'parameter'"
 
-def test_seccon::action_has_name():
-    assert hasattr(SecCon::Action, "name")
+def test_seccon_action_has_name():
+    assert hasattr(SecCon_Action, "name")
     descriptor = None
-    for klass in SecCon::Action.__mro__:
+    for klass in SecCon_Action.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
-def test_seccon::action_has_parameter():
-    assert hasattr(SecCon::Action, "parameter")
+def test_seccon_action_has_parameter():
+    assert hasattr(SecCon_Action, "parameter")
     descriptor = None
-    for klass in SecCon::Action.__mro__:
+    for klass in SecCon_Action.__mro__:
         if "parameter" in klass.__dict__:
             descriptor = klass.__dict__["parameter"]
             break
@@ -181,145 +181,145 @@ def test_seccon::action_has_parameter():
 
 
 
-def test_seccon::condition_is_not_abstract():
-    assert not inspect.isabstract(SecCon::Condition)
+def test_seccon_condition_is_not_abstract():
+    assert not inspect.isabstract(SecCon_Condition)
 
 
-def test_seccon::condition_constructor_exists():
-    assert callable(SecCon::Condition.__init__)
+def test_seccon_condition_constructor_exists():
+    assert callable(SecCon_Condition.__init__)
 
 
-def test_seccon::condition_constructor_args():
-    sig = inspect.signature(SecCon::Condition.__init__)
+def test_seccon_condition_constructor_args():
+    sig = inspect.signature(SecCon_Condition.__init__)
     params = list(sig.parameters.keys())
-    assert "value" in params, "Missing parameter 'value'"
-    assert "logicValue" in params, "Missing parameter 'logicValue'"
     assert "condition" in params, "Missing parameter 'condition'"
+    assert "logicValue" in params, "Missing parameter 'logicValue'"
+    assert "value" in params, "Missing parameter 'value'"
 
-def test_seccon::condition_has_value():
-    assert hasattr(SecCon::Condition, "value")
+def test_seccon_condition_has_condition():
+    assert hasattr(SecCon_Condition, "condition")
     descriptor = None
-    for klass in SecCon::Condition.__mro__:
-        if "value" in klass.__dict__:
-            descriptor = klass.__dict__["value"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_seccon::condition_has_logicValue():
-    assert hasattr(SecCon::Condition, "logicValue")
-    descriptor = None
-    for klass in SecCon::Condition.__mro__:
-        if "logicValue" in klass.__dict__:
-            descriptor = klass.__dict__["logicValue"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_seccon::condition_has_condition():
-    assert hasattr(SecCon::Condition, "condition")
-    descriptor = None
-    for klass in SecCon::Condition.__mro__:
+    for klass in SecCon_Condition.__mro__:
         if "condition" in klass.__dict__:
             descriptor = klass.__dict__["condition"]
             break
     assert isinstance(descriptor, property)
 
-
-
-def test_seccon::contextinformation_is_not_abstract():
-    assert not inspect.isabstract(SecCon::ContextInformation)
-
-
-def test_seccon::contextinformation_constructor_exists():
-    assert callable(SecCon::ContextInformation.__init__)
-
-
-def test_seccon::contextinformation_constructor_args():
-    sig = inspect.signature(SecCon::ContextInformation.__init__)
-    params = list(sig.parameters.keys())
-    assert "type" in params, "Missing parameter 'type'"
-    assert "name" in params, "Missing parameter 'name'"
-
-def test_seccon::contextinformation_has_type():
-    assert hasattr(SecCon::ContextInformation, "type")
+def test_seccon_condition_has_logicValue():
+    assert hasattr(SecCon_Condition, "logicValue")
     descriptor = None
-    for klass in SecCon::ContextInformation.__mro__:
-        if "type" in klass.__dict__:
-            descriptor = klass.__dict__["type"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_seccon::contextinformation_has_name():
-    assert hasattr(SecCon::ContextInformation, "name")
-    descriptor = None
-    for klass in SecCon::ContextInformation.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_seccon::rule_is_not_abstract():
-    assert not inspect.isabstract(SecCon::Rule)
-
-
-def test_seccon::rule_constructor_exists():
-    assert callable(SecCon::Rule.__init__)
-
-
-def test_seccon::rule_constructor_args():
-    sig = inspect.signature(SecCon::Rule.__init__)
-    params = list(sig.parameters.keys())
-    assert "name" in params, "Missing parameter 'name'"
-    assert "operator" in params, "Missing parameter 'operator'"
-    assert "logicValue" in params, "Missing parameter 'logicValue'"
-
-def test_seccon::rule_has_name():
-    assert hasattr(SecCon::Rule, "name")
-    descriptor = None
-    for klass in SecCon::Rule.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_seccon::rule_has_operator():
-    assert hasattr(SecCon::Rule, "operator")
-    descriptor = None
-    for klass in SecCon::Rule.__mro__:
-        if "operator" in klass.__dict__:
-            descriptor = klass.__dict__["operator"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_seccon::rule_has_logicValue():
-    assert hasattr(SecCon::Rule, "logicValue")
-    descriptor = None
-    for klass in SecCon::Rule.__mro__:
+    for klass in SecCon_Condition.__mro__:
         if "logicValue" in klass.__dict__:
             descriptor = klass.__dict__["logicValue"]
             break
     assert isinstance(descriptor, property)
 
+def test_seccon_condition_has_value():
+    assert hasattr(SecCon_Condition, "value")
+    descriptor = None
+    for klass in SecCon_Condition.__mro__:
+        if "value" in klass.__dict__:
+            descriptor = klass.__dict__["value"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_seccon::contextscenario_is_not_abstract():
-    assert not inspect.isabstract(SecCon::ContextScenario)
+
+def test_seccon_contextinformation_is_not_abstract():
+    assert not inspect.isabstract(SecCon_ContextInformation)
 
 
-def test_seccon::contextscenario_constructor_exists():
-    assert callable(SecCon::ContextScenario.__init__)
+def test_seccon_contextinformation_constructor_exists():
+    assert callable(SecCon_ContextInformation.__init__)
 
 
-def test_seccon::contextscenario_constructor_args():
-    sig = inspect.signature(SecCon::ContextScenario.__init__)
+def test_seccon_contextinformation_constructor_args():
+    sig = inspect.signature(SecCon_ContextInformation.__init__)
+    params = list(sig.parameters.keys())
+    assert "name" in params, "Missing parameter 'name'"
+    assert "type" in params, "Missing parameter 'type'"
+
+def test_seccon_contextinformation_has_name():
+    assert hasattr(SecCon_ContextInformation, "name")
+    descriptor = None
+    for klass in SecCon_ContextInformation.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_seccon_contextinformation_has_type():
+    assert hasattr(SecCon_ContextInformation, "type")
+    descriptor = None
+    for klass in SecCon_ContextInformation.__mro__:
+        if "type" in klass.__dict__:
+            descriptor = klass.__dict__["type"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_seccon_rule_is_not_abstract():
+    assert not inspect.isabstract(SecCon_Rule)
+
+
+def test_seccon_rule_constructor_exists():
+    assert callable(SecCon_Rule.__init__)
+
+
+def test_seccon_rule_constructor_args():
+    sig = inspect.signature(SecCon_Rule.__init__)
+    params = list(sig.parameters.keys())
+    assert "name" in params, "Missing parameter 'name'"
+    assert "logicValue" in params, "Missing parameter 'logicValue'"
+    assert "operator" in params, "Missing parameter 'operator'"
+
+def test_seccon_rule_has_name():
+    assert hasattr(SecCon_Rule, "name")
+    descriptor = None
+    for klass in SecCon_Rule.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_seccon_rule_has_logicValue():
+    assert hasattr(SecCon_Rule, "logicValue")
+    descriptor = None
+    for klass in SecCon_Rule.__mro__:
+        if "logicValue" in klass.__dict__:
+            descriptor = klass.__dict__["logicValue"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_seccon_rule_has_operator():
+    assert hasattr(SecCon_Rule, "operator")
+    descriptor = None
+    for klass in SecCon_Rule.__mro__:
+        if "operator" in klass.__dict__:
+            descriptor = klass.__dict__["operator"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_seccon_contextscenario_is_not_abstract():
+    assert not inspect.isabstract(SecCon_ContextScenario)
+
+
+def test_seccon_contextscenario_constructor_exists():
+    assert callable(SecCon_ContextScenario.__init__)
+
+
+def test_seccon_contextscenario_constructor_args():
+    sig = inspect.signature(SecCon_ContextScenario.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_seccon::contextscenario_has_name():
-    assert hasattr(SecCon::ContextScenario, "name")
+def test_seccon_contextscenario_has_name():
+    assert hasattr(SecCon_ContextScenario, "name")
     descriptor = None
-    for klass in SecCon::ContextScenario.__mro__:
+    for klass in SecCon_ContextScenario.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -341,44 +341,44 @@ def test_event_constructor_args():
 
 
 
-def test_seccon::threatevent_is_not_abstract():
-    assert not inspect.isabstract(SecCon::ThreatEvent)
+def test_seccon_threatevent_is_not_abstract():
+    assert not inspect.isabstract(SecCon_ThreatEvent)
 
 
-def test_seccon::threatevent_constructor_exists():
-    assert callable(SecCon::ThreatEvent.__init__)
+def test_seccon_threatevent_constructor_exists():
+    assert callable(SecCon_ThreatEvent.__init__)
 
 
-def test_seccon::threatevent_constructor_args():
-    sig = inspect.signature(SecCon::ThreatEvent.__init__)
+def test_seccon_threatevent_constructor_args():
+    sig = inspect.signature(SecCon_ThreatEvent.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_seccon::attackevent_is_not_abstract():
-    assert not inspect.isabstract(SecCon::AttackEvent)
+def test_seccon_attackevent_is_not_abstract():
+    assert not inspect.isabstract(SecCon_AttackEvent)
 
 
-def test_seccon::attackevent_constructor_exists():
-    assert callable(SecCon::AttackEvent.__init__)
+def test_seccon_attackevent_constructor_exists():
+    assert callable(SecCon_AttackEvent.__init__)
 
 
-def test_seccon::attackevent_constructor_args():
-    sig = inspect.signature(SecCon::AttackEvent.__init__)
+def test_seccon_attackevent_constructor_args():
+    sig = inspect.signature(SecCon_AttackEvent.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_seccon::countermeasureevent_is_not_abstract():
-    assert not inspect.isabstract(SecCon::CountermeasureEvent)
+def test_seccon_countermeasureevent_is_not_abstract():
+    assert not inspect.isabstract(SecCon_CountermeasureEvent)
 
 
-def test_seccon::countermeasureevent_constructor_exists():
-    assert callable(SecCon::CountermeasureEvent.__init__)
+def test_seccon_countermeasureevent_constructor_exists():
+    assert callable(SecCon_CountermeasureEvent.__init__)
 
 
-def test_seccon::countermeasureevent_constructor_args():
-    sig = inspect.signature(SecCon::CountermeasureEvent.__init__)
+def test_seccon_countermeasureevent_constructor_args():
+    sig = inspect.signature(SecCon_CountermeasureEvent.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -397,99 +397,99 @@ def test_statevertex_constructor_args():
 
 
 
-def test_seccon::finalstate_is_not_abstract():
-    assert not inspect.isabstract(SecCon::FinalState)
+def test_seccon_initialstate_is_not_abstract():
+    assert not inspect.isabstract(SecCon_InitialState)
 
 
-def test_seccon::finalstate_constructor_exists():
-    assert callable(SecCon::FinalState.__init__)
+def test_seccon_initialstate_constructor_exists():
+    assert callable(SecCon_InitialState.__init__)
 
 
-def test_seccon::finalstate_constructor_args():
-    sig = inspect.signature(SecCon::FinalState.__init__)
+def test_seccon_initialstate_constructor_args():
+    sig = inspect.signature(SecCon_InitialState.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_seccon::initialstate_is_not_abstract():
-    assert not inspect.isabstract(SecCon::InitialState)
+def test_seccon_finalstate_is_not_abstract():
+    assert not inspect.isabstract(SecCon_FinalState)
 
 
-def test_seccon::initialstate_constructor_exists():
-    assert callable(SecCon::InitialState.__init__)
+def test_seccon_finalstate_constructor_exists():
+    assert callable(SecCon_FinalState.__init__)
 
 
-def test_seccon::initialstate_constructor_args():
-    sig = inspect.signature(SecCon::InitialState.__init__)
+def test_seccon_finalstate_constructor_args():
+    sig = inspect.signature(SecCon_FinalState.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_seccon::state_is_not_abstract():
-    assert not inspect.isabstract(SecCon::State)
+def test_seccon_state_is_not_abstract():
+    assert not inspect.isabstract(SecCon_State)
 
 
-def test_seccon::state_constructor_exists():
-    assert callable(SecCon::State.__init__)
+def test_seccon_state_constructor_exists():
+    assert callable(SecCon_State.__init__)
 
 
-def test_seccon::state_constructor_args():
-    sig = inspect.signature(SecCon::State.__init__)
+def test_seccon_state_constructor_args():
+    sig = inspect.signature(SecCon_State.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_seccon::extend_is_not_abstract():
-    assert not inspect.isabstract(SecCon::Extend)
+def test_seccon_extend_is_not_abstract():
+    assert not inspect.isabstract(SecCon_Extend)
 
 
-def test_seccon::extend_constructor_exists():
-    assert callable(SecCon::Extend.__init__)
+def test_seccon_extend_constructor_exists():
+    assert callable(SecCon_Extend.__init__)
 
 
-def test_seccon::extend_constructor_args():
-    sig = inspect.signature(SecCon::Extend.__init__)
+def test_seccon_extend_constructor_args():
+    sig = inspect.signature(SecCon_Extend.__init__)
     params = list(sig.parameters.keys())
-    assert "condition" in params, "Missing parameter 'condition'"
     assert "name" in params, "Missing parameter 'name'"
+    assert "condition" in params, "Missing parameter 'condition'"
 
-def test_seccon::extend_has_condition():
-    assert hasattr(SecCon::Extend, "condition")
+def test_seccon_extend_has_name():
+    assert hasattr(SecCon_Extend, "name")
     descriptor = None
-    for klass in SecCon::Extend.__mro__:
-        if "condition" in klass.__dict__:
-            descriptor = klass.__dict__["condition"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_seccon::extend_has_name():
-    assert hasattr(SecCon::Extend, "name")
-    descriptor = None
-    for klass in SecCon::Extend.__mro__:
+    for klass in SecCon_Extend.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
+def test_seccon_extend_has_condition():
+    assert hasattr(SecCon_Extend, "condition")
+    descriptor = None
+    for klass in SecCon_Extend.__mro__:
+        if "condition" in klass.__dict__:
+            descriptor = klass.__dict__["condition"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_seccon::include_is_not_abstract():
-    assert not inspect.isabstract(SecCon::Include)
+
+def test_seccon_include_is_not_abstract():
+    assert not inspect.isabstract(SecCon_Include)
 
 
-def test_seccon::include_constructor_exists():
-    assert callable(SecCon::Include.__init__)
+def test_seccon_include_constructor_exists():
+    assert callable(SecCon_Include.__init__)
 
 
-def test_seccon::include_constructor_args():
-    sig = inspect.signature(SecCon::Include.__init__)
+def test_seccon_include_constructor_args():
+    sig = inspect.signature(SecCon_Include.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_seccon::include_has_name():
-    assert hasattr(SecCon::Include, "name")
+def test_seccon_include_has_name():
+    assert hasattr(SecCon_Include, "name")
     descriptor = None
-    for klass in SecCon::Include.__mro__:
+    for klass in SecCon_Include.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -511,100 +511,100 @@ def test_usecase_constructor_args():
 
 
 
-def test_seccon::attackusecase_is_not_abstract():
-    assert not inspect.isabstract(SecCon::AttackUseCase)
+def test_seccon_recoverusecase_is_not_abstract():
+    assert not inspect.isabstract(SecCon_RecoverUseCase)
 
 
-def test_seccon::attackusecase_constructor_exists():
-    assert callable(SecCon::AttackUseCase.__init__)
+def test_seccon_recoverusecase_constructor_exists():
+    assert callable(SecCon_RecoverUseCase.__init__)
 
 
-def test_seccon::attackusecase_constructor_args():
-    sig = inspect.signature(SecCon::AttackUseCase.__init__)
+def test_seccon_recoverusecase_constructor_args():
+    sig = inspect.signature(SecCon_RecoverUseCase.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_seccon::vulnerabilityusecase_is_not_abstract():
-    assert not inspect.isabstract(SecCon::VulnerabilityUseCase)
+def test_seccon_prevenctionusecase_is_not_abstract():
+    assert not inspect.isabstract(SecCon_PrevenctionUseCase)
 
 
-def test_seccon::vulnerabilityusecase_constructor_exists():
-    assert callable(SecCon::VulnerabilityUseCase.__init__)
+def test_seccon_prevenctionusecase_constructor_exists():
+    assert callable(SecCon_PrevenctionUseCase.__init__)
 
 
-def test_seccon::vulnerabilityusecase_constructor_args():
-    sig = inspect.signature(SecCon::VulnerabilityUseCase.__init__)
+def test_seccon_prevenctionusecase_constructor_args():
+    sig = inspect.signature(SecCon_PrevenctionUseCase.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_seccon::detectionusecase_is_not_abstract():
-    assert not inspect.isabstract(SecCon::DetectionUseCase)
+def test_seccon_vulnerabilityusecase_is_not_abstract():
+    assert not inspect.isabstract(SecCon_VulnerabilityUseCase)
 
 
-def test_seccon::detectionusecase_constructor_exists():
-    assert callable(SecCon::DetectionUseCase.__init__)
+def test_seccon_vulnerabilityusecase_constructor_exists():
+    assert callable(SecCon_VulnerabilityUseCase.__init__)
 
 
-def test_seccon::detectionusecase_constructor_args():
-    sig = inspect.signature(SecCon::DetectionUseCase.__init__)
+def test_seccon_vulnerabilityusecase_constructor_args():
+    sig = inspect.signature(SecCon_VulnerabilityUseCase.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_seccon::recoverusecase_is_not_abstract():
-    assert not inspect.isabstract(SecCon::RecoverUseCase)
+def test_seccon_attackusecase_is_not_abstract():
+    assert not inspect.isabstract(SecCon_AttackUseCase)
 
 
-def test_seccon::recoverusecase_constructor_exists():
-    assert callable(SecCon::RecoverUseCase.__init__)
+def test_seccon_attackusecase_constructor_exists():
+    assert callable(SecCon_AttackUseCase.__init__)
 
 
-def test_seccon::recoverusecase_constructor_args():
-    sig = inspect.signature(SecCon::RecoverUseCase.__init__)
+def test_seccon_attackusecase_constructor_args():
+    sig = inspect.signature(SecCon_AttackUseCase.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_seccon::countermeasureusecase_is_not_abstract():
-    assert not inspect.isabstract(SecCon::CountermeasureUseCase)
+def test_seccon_detectionusecase_is_not_abstract():
+    assert not inspect.isabstract(SecCon_DetectionUseCase)
 
 
-def test_seccon::countermeasureusecase_constructor_exists():
-    assert callable(SecCon::CountermeasureUseCase.__init__)
+def test_seccon_detectionusecase_constructor_exists():
+    assert callable(SecCon_DetectionUseCase.__init__)
 
 
-def test_seccon::countermeasureusecase_constructor_args():
-    sig = inspect.signature(SecCon::CountermeasureUseCase.__init__)
+def test_seccon_detectionusecase_constructor_args():
+    sig = inspect.signature(SecCon_DetectionUseCase.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_seccon::prevenctionusecase_is_not_abstract():
-    assert not inspect.isabstract(SecCon::PrevenctionUseCase)
+def test_seccon_countermeasureusecase_is_not_abstract():
+    assert not inspect.isabstract(SecCon_CountermeasureUseCase)
 
 
-def test_seccon::prevenctionusecase_constructor_exists():
-    assert callable(SecCon::PrevenctionUseCase.__init__)
+def test_seccon_countermeasureusecase_constructor_exists():
+    assert callable(SecCon_CountermeasureUseCase.__init__)
 
 
-def test_seccon::prevenctionusecase_constructor_args():
-    sig = inspect.signature(SecCon::PrevenctionUseCase.__init__)
+def test_seccon_countermeasureusecase_constructor_args():
+    sig = inspect.signature(SecCon_CountermeasureUseCase.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_seccon::threatusecase_is_not_abstract():
-    assert not inspect.isabstract(SecCon::ThreatUseCase)
+def test_seccon_threatusecase_is_not_abstract():
+    assert not inspect.isabstract(SecCon_ThreatUseCase)
 
 
-def test_seccon::threatusecase_constructor_exists():
-    assert callable(SecCon::ThreatUseCase.__init__)
+def test_seccon_threatusecase_constructor_exists():
+    assert callable(SecCon_ThreatUseCase.__init__)
 
 
-def test_seccon::threatusecase_constructor_args():
-    sig = inspect.signature(SecCon::ThreatUseCase.__init__)
+def test_seccon_threatusecase_constructor_args():
+    sig = inspect.signature(SecCon_ThreatUseCase.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -623,30 +623,30 @@ def test_datatype_constructor_args():
 
 
 
-def test_seccon::primitivetype_is_not_abstract():
-    assert not inspect.isabstract(SecCon::PrimitiveType)
+def test_seccon_primitivetype_is_not_abstract():
+    assert not inspect.isabstract(SecCon_PrimitiveType)
 
 
-def test_seccon::primitivetype_constructor_exists():
-    assert callable(SecCon::PrimitiveType.__init__)
+def test_seccon_primitivetype_constructor_exists():
+    assert callable(SecCon_PrimitiveType.__init__)
 
 
-def test_seccon::primitivetype_constructor_args():
-    sig = inspect.signature(SecCon::PrimitiveType.__init__)
+def test_seccon_primitivetype_constructor_args():
+    sig = inspect.signature(SecCon_PrimitiveType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_seccon::enumeration_is_not_abstract():
-    assert not inspect.isabstract(SecCon::Enumeration)
+def test_seccon_enumeration_is_not_abstract():
+    assert not inspect.isabstract(SecCon_Enumeration)
 
 
-def test_seccon::enumeration_constructor_exists():
-    assert callable(SecCon::Enumeration.__init__)
+def test_seccon_enumeration_constructor_exists():
+    assert callable(SecCon_Enumeration.__init__)
 
 
-def test_seccon::enumeration_constructor_args():
-    sig = inspect.signature(SecCon::Enumeration.__init__)
+def test_seccon_enumeration_constructor_args():
+    sig = inspect.signature(SecCon_Enumeration.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -679,63 +679,63 @@ def test_typedelement_constructor_args():
 
 
 
-def test_seccon::attribute_is_not_abstract():
-    assert not inspect.isabstract(SecCon::Attribute)
+def test_seccon_attribute_is_not_abstract():
+    assert not inspect.isabstract(SecCon_Attribute)
 
 
-def test_seccon::attribute_constructor_exists():
-    assert callable(SecCon::Attribute.__init__)
+def test_seccon_attribute_constructor_exists():
+    assert callable(SecCon_Attribute.__init__)
 
 
-def test_seccon::attribute_constructor_args():
-    sig = inspect.signature(SecCon::Attribute.__init__)
+def test_seccon_attribute_constructor_args():
+    sig = inspect.signature(SecCon_Attribute.__init__)
     params = list(sig.parameters.keys())
-    assert "isReadOnly" in params, "Missing parameter 'isReadOnly'"
-    assert "default" in params, "Missing parameter 'default'"
-    assert "isComposite" in params, "Missing parameter 'isComposite'"
     assert "isDerived" in params, "Missing parameter 'isDerived'"
+    assert "isReadOnly" in params, "Missing parameter 'isReadOnly'"
+    assert "isComposite" in params, "Missing parameter 'isComposite'"
+    assert "default" in params, "Missing parameter 'default'"
     assert "isID" in params, "Missing parameter 'isID'"
 
-def test_seccon::attribute_has_isReadOnly():
-    assert hasattr(SecCon::Attribute, "isReadOnly")
+def test_seccon_attribute_has_isDerived():
+    assert hasattr(SecCon_Attribute, "isDerived")
     descriptor = None
-    for klass in SecCon::Attribute.__mro__:
-        if "isReadOnly" in klass.__dict__:
-            descriptor = klass.__dict__["isReadOnly"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_seccon::attribute_has_default():
-    assert hasattr(SecCon::Attribute, "default")
-    descriptor = None
-    for klass in SecCon::Attribute.__mro__:
-        if "default" in klass.__dict__:
-            descriptor = klass.__dict__["default"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_seccon::attribute_has_isComposite():
-    assert hasattr(SecCon::Attribute, "isComposite")
-    descriptor = None
-    for klass in SecCon::Attribute.__mro__:
-        if "isComposite" in klass.__dict__:
-            descriptor = klass.__dict__["isComposite"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_seccon::attribute_has_isDerived():
-    assert hasattr(SecCon::Attribute, "isDerived")
-    descriptor = None
-    for klass in SecCon::Attribute.__mro__:
+    for klass in SecCon_Attribute.__mro__:
         if "isDerived" in klass.__dict__:
             descriptor = klass.__dict__["isDerived"]
             break
     assert isinstance(descriptor, property)
 
-def test_seccon::attribute_has_isID():
-    assert hasattr(SecCon::Attribute, "isID")
+def test_seccon_attribute_has_isReadOnly():
+    assert hasattr(SecCon_Attribute, "isReadOnly")
     descriptor = None
-    for klass in SecCon::Attribute.__mro__:
+    for klass in SecCon_Attribute.__mro__:
+        if "isReadOnly" in klass.__dict__:
+            descriptor = klass.__dict__["isReadOnly"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_seccon_attribute_has_isComposite():
+    assert hasattr(SecCon_Attribute, "isComposite")
+    descriptor = None
+    for klass in SecCon_Attribute.__mro__:
+        if "isComposite" in klass.__dict__:
+            descriptor = klass.__dict__["isComposite"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_seccon_attribute_has_default():
+    assert hasattr(SecCon_Attribute, "default")
+    descriptor = None
+    for klass in SecCon_Attribute.__mro__:
+        if "default" in klass.__dict__:
+            descriptor = klass.__dict__["default"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_seccon_attribute_has_isID():
+    assert hasattr(SecCon_Attribute, "isID")
+    descriptor = None
+    for klass in SecCon_Attribute.__mro__:
         if "isID" in klass.__dict__:
             descriptor = klass.__dict__["isID"]
             break
@@ -757,37 +757,37 @@ def test_type_constructor_args():
 
 
 
-def test_seccon::datatype_is_not_abstract():
-    assert not inspect.isabstract(SecCon::DataType)
+def test_seccon_datatype_is_not_abstract():
+    assert not inspect.isabstract(SecCon_DataType)
 
 
-def test_seccon::datatype_constructor_exists():
-    assert callable(SecCon::DataType.__init__)
+def test_seccon_datatype_constructor_exists():
+    assert callable(SecCon_DataType.__init__)
 
 
-def test_seccon::datatype_constructor_args():
-    sig = inspect.signature(SecCon::DataType.__init__)
+def test_seccon_datatype_constructor_args():
+    sig = inspect.signature(SecCon_DataType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_seccon::class_is_not_abstract():
-    assert not inspect.isabstract(SecCon::Class)
+def test_seccon_class_is_not_abstract():
+    assert not inspect.isabstract(SecCon_Class)
 
 
-def test_seccon::class_constructor_exists():
-    assert callable(SecCon::Class.__init__)
+def test_seccon_class_constructor_exists():
+    assert callable(SecCon_Class.__init__)
 
 
-def test_seccon::class_constructor_args():
-    sig = inspect.signature(SecCon::Class.__init__)
+def test_seccon_class_constructor_args():
+    sig = inspect.signature(SecCon_Class.__init__)
     params = list(sig.parameters.keys())
     assert "isAbstract" in params, "Missing parameter 'isAbstract'"
 
-def test_seccon::class_has_isAbstract():
-    assert hasattr(SecCon::Class, "isAbstract")
+def test_seccon_class_has_isAbstract():
+    assert hasattr(SecCon_Class, "isAbstract")
     descriptor = None
-    for klass in SecCon::Class.__mro__:
+    for klass in SecCon_Class.__mro__:
         if "isAbstract" in klass.__dict__:
             descriptor = klass.__dict__["isAbstract"]
             break
@@ -795,57 +795,57 @@ def test_seccon::class_has_isAbstract():
 
 
 
-def test_seccon::parameter_is_not_abstract():
-    assert not inspect.isabstract(SecCon::Parameter)
+def test_seccon_parameter_is_not_abstract():
+    assert not inspect.isabstract(SecCon_Parameter)
 
 
-def test_seccon::parameter_constructor_exists():
-    assert callable(SecCon::Parameter.__init__)
+def test_seccon_parameter_constructor_exists():
+    assert callable(SecCon_Parameter.__init__)
 
 
-def test_seccon::parameter_constructor_args():
-    sig = inspect.signature(SecCon::Parameter.__init__)
+def test_seccon_parameter_constructor_args():
+    sig = inspect.signature(SecCon_Parameter.__init__)
     params = list(sig.parameters.keys())
-    assert "direction" in params, "Missing parameter 'direction'"
     assert "default" in params, "Missing parameter 'default'"
+    assert "direction" in params, "Missing parameter 'direction'"
 
-def test_seccon::parameter_has_direction():
-    assert hasattr(SecCon::Parameter, "direction")
+def test_seccon_parameter_has_default():
+    assert hasattr(SecCon_Parameter, "default")
     descriptor = None
-    for klass in SecCon::Parameter.__mro__:
-        if "direction" in klass.__dict__:
-            descriptor = klass.__dict__["direction"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_seccon::parameter_has_default():
-    assert hasattr(SecCon::Parameter, "default")
-    descriptor = None
-    for klass in SecCon::Parameter.__mro__:
+    for klass in SecCon_Parameter.__mro__:
         if "default" in klass.__dict__:
             descriptor = klass.__dict__["default"]
             break
     assert isinstance(descriptor, property)
 
+def test_seccon_parameter_has_direction():
+    assert hasattr(SecCon_Parameter, "direction")
+    descriptor = None
+    for klass in SecCon_Parameter.__mro__:
+        if "direction" in klass.__dict__:
+            descriptor = klass.__dict__["direction"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_seccon::operation_is_not_abstract():
-    assert not inspect.isabstract(SecCon::Operation)
+
+def test_seccon_operation_is_not_abstract():
+    assert not inspect.isabstract(SecCon_Operation)
 
 
-def test_seccon::operation_constructor_exists():
-    assert callable(SecCon::Operation.__init__)
+def test_seccon_operation_constructor_exists():
+    assert callable(SecCon_Operation.__init__)
 
 
-def test_seccon::operation_constructor_args():
-    sig = inspect.signature(SecCon::Operation.__init__)
+def test_seccon_operation_constructor_args():
+    sig = inspect.signature(SecCon_Operation.__init__)
     params = list(sig.parameters.keys())
     assert "body" in params, "Missing parameter 'body'"
 
-def test_seccon::operation_has_body():
-    assert hasattr(SecCon::Operation, "body")
+def test_seccon_operation_has_body():
+    assert hasattr(SecCon_Operation, "body")
     descriptor = None
-    for klass in SecCon::Operation.__mro__:
+    for klass in SecCon_Operation.__mro__:
         if "body" in klass.__dict__:
             descriptor = klass.__dict__["body"]
             break
@@ -867,23 +867,23 @@ def test_element_constructor_args():
 
 
 
-def test_seccon::namedelement_is_not_abstract():
-    assert not inspect.isabstract(SecCon::NamedElement)
+def test_seccon_namedelement_is_not_abstract():
+    assert not inspect.isabstract(SecCon_NamedElement)
 
 
-def test_seccon::namedelement_constructor_exists():
-    assert callable(SecCon::NamedElement.__init__)
+def test_seccon_namedelement_constructor_exists():
+    assert callable(SecCon_NamedElement.__init__)
 
 
-def test_seccon::namedelement_constructor_args():
-    sig = inspect.signature(SecCon::NamedElement.__init__)
+def test_seccon_namedelement_constructor_args():
+    sig = inspect.signature(SecCon_NamedElement.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_seccon::namedelement_has_name():
-    assert hasattr(SecCon::NamedElement, "name")
+def test_seccon_namedelement_has_name():
+    assert hasattr(SecCon_NamedElement, "name")
     descriptor = None
-    for klass in SecCon::NamedElement.__mro__:
+    for klass in SecCon_NamedElement.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -891,55 +891,55 @@ def test_seccon::namedelement_has_name():
 
 
 
-def test_seccon::multiplicityelement_is_not_abstract():
-    assert not inspect.isabstract(SecCon::MultiplicityElement)
+def test_seccon_multiplicityelement_is_not_abstract():
+    assert not inspect.isabstract(SecCon_MultiplicityElement)
 
 
-def test_seccon::multiplicityelement_constructor_exists():
-    assert callable(SecCon::MultiplicityElement.__init__)
+def test_seccon_multiplicityelement_constructor_exists():
+    assert callable(SecCon_MultiplicityElement.__init__)
 
 
-def test_seccon::multiplicityelement_constructor_args():
-    sig = inspect.signature(SecCon::MultiplicityElement.__init__)
+def test_seccon_multiplicityelement_constructor_args():
+    sig = inspect.signature(SecCon_MultiplicityElement.__init__)
     params = list(sig.parameters.keys())
+    assert "upper" in params, "Missing parameter 'upper'"
+    assert "isOrdered" in params, "Missing parameter 'isOrdered'"
     assert "lower" in params, "Missing parameter 'lower'"
     assert "isUnique" in params, "Missing parameter 'isUnique'"
-    assert "isOrdered" in params, "Missing parameter 'isOrdered'"
-    assert "upper" in params, "Missing parameter 'upper'"
 
-def test_seccon::multiplicityelement_has_lower():
-    assert hasattr(SecCon::MultiplicityElement, "lower")
+def test_seccon_multiplicityelement_has_upper():
+    assert hasattr(SecCon_MultiplicityElement, "upper")
     descriptor = None
-    for klass in SecCon::MultiplicityElement.__mro__:
-        if "lower" in klass.__dict__:
-            descriptor = klass.__dict__["lower"]
+    for klass in SecCon_MultiplicityElement.__mro__:
+        if "upper" in klass.__dict__:
+            descriptor = klass.__dict__["upper"]
             break
     assert isinstance(descriptor, property)
 
-def test_seccon::multiplicityelement_has_isUnique():
-    assert hasattr(SecCon::MultiplicityElement, "isUnique")
+def test_seccon_multiplicityelement_has_isOrdered():
+    assert hasattr(SecCon_MultiplicityElement, "isOrdered")
     descriptor = None
-    for klass in SecCon::MultiplicityElement.__mro__:
-        if "isUnique" in klass.__dict__:
-            descriptor = klass.__dict__["isUnique"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_seccon::multiplicityelement_has_isOrdered():
-    assert hasattr(SecCon::MultiplicityElement, "isOrdered")
-    descriptor = None
-    for klass in SecCon::MultiplicityElement.__mro__:
+    for klass in SecCon_MultiplicityElement.__mro__:
         if "isOrdered" in klass.__dict__:
             descriptor = klass.__dict__["isOrdered"]
             break
     assert isinstance(descriptor, property)
 
-def test_seccon::multiplicityelement_has_upper():
-    assert hasattr(SecCon::MultiplicityElement, "upper")
+def test_seccon_multiplicityelement_has_lower():
+    assert hasattr(SecCon_MultiplicityElement, "lower")
     descriptor = None
-    for klass in SecCon::MultiplicityElement.__mro__:
-        if "upper" in klass.__dict__:
-            descriptor = klass.__dict__["upper"]
+    for klass in SecCon_MultiplicityElement.__mro__:
+        if "lower" in klass.__dict__:
+            descriptor = klass.__dict__["lower"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_seccon_multiplicityelement_has_isUnique():
+    assert hasattr(SecCon_MultiplicityElement, "isUnique")
+    descriptor = None
+    for klass in SecCon_MultiplicityElement.__mro__:
+        if "isUnique" in klass.__dict__:
+            descriptor = klass.__dict__["isUnique"]
             break
     assert isinstance(descriptor, property)
 
@@ -959,199 +959,171 @@ def test_namedelement_constructor_args():
 
 
 
-def test_seccon::stateoperation_is_not_abstract():
-    assert not inspect.isabstract(SecCon::StateOperation)
+def test_seccon_event_is_not_abstract():
+    assert not inspect.isabstract(SecCon_Event)
 
 
-def test_seccon::stateoperation_constructor_exists():
-    assert callable(SecCon::StateOperation.__init__)
+def test_seccon_event_constructor_exists():
+    assert callable(SecCon_Event.__init__)
 
 
-def test_seccon::stateoperation_constructor_args():
-    sig = inspect.signature(SecCon::StateOperation.__init__)
+def test_seccon_event_constructor_args():
+    sig = inspect.signature(SecCon_Event.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_seccon::actor_is_not_abstract():
-    assert not inspect.isabstract(SecCon::Actor)
+def test_seccon_statevertex_is_not_abstract():
+    assert not inspect.isabstract(SecCon_StateVertex)
 
 
-def test_seccon::actor_constructor_exists():
-    assert callable(SecCon::Actor.__init__)
+def test_seccon_statevertex_constructor_exists():
+    assert callable(SecCon_StateVertex.__init__)
 
 
-def test_seccon::actor_constructor_args():
-    sig = inspect.signature(SecCon::Actor.__init__)
+def test_seccon_statevertex_constructor_args():
+    sig = inspect.signature(SecCon_StateVertex.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_seccon::transition_is_not_abstract():
-    assert not inspect.isabstract(SecCon::Transition)
+def test_seccon_usecasescenario_is_not_abstract():
+    assert not inspect.isabstract(SecCon_UseCaseScenario)
 
 
-def test_seccon::transition_constructor_exists():
-    assert callable(SecCon::Transition.__init__)
+def test_seccon_usecasescenario_constructor_exists():
+    assert callable(SecCon_UseCaseScenario.__init__)
 
 
-def test_seccon::transition_constructor_args():
-    sig = inspect.signature(SecCon::Transition.__init__)
+def test_seccon_usecasescenario_constructor_args():
+    sig = inspect.signature(SecCon_UseCaseScenario.__init__)
     params = list(sig.parameters.keys())
+    assert "version" in params, "Missing parameter 'version'"
+    assert "author" in params, "Missing parameter 'author'"
 
-
-
-def test_seccon::statevertex_is_not_abstract():
-    assert not inspect.isabstract(SecCon::StateVertex)
-
-
-def test_seccon::statevertex_constructor_exists():
-    assert callable(SecCon::StateVertex.__init__)
-
-
-def test_seccon::statevertex_constructor_args():
-    sig = inspect.signature(SecCon::StateVertex.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_seccon::usecase_is_not_abstract():
-    assert not inspect.isabstract(SecCon::UseCase)
-
-
-def test_seccon::usecase_constructor_exists():
-    assert callable(SecCon::UseCase.__init__)
-
-
-def test_seccon::usecase_constructor_args():
-    sig = inspect.signature(SecCon::UseCase.__init__)
-    params = list(sig.parameters.keys())
-    assert "preCondition" in params, "Missing parameter 'preCondition'"
-    assert "description" in params, "Missing parameter 'description'"
-
-def test_seccon::usecase_has_preCondition():
-    assert hasattr(SecCon::UseCase, "preCondition")
+def test_seccon_usecasescenario_has_version():
+    assert hasattr(SecCon_UseCaseScenario, "version")
     descriptor = None
-    for klass in SecCon::UseCase.__mro__:
-        if "preCondition" in klass.__dict__:
-            descriptor = klass.__dict__["preCondition"]
+    for klass in SecCon_UseCaseScenario.__mro__:
+        if "version" in klass.__dict__:
+            descriptor = klass.__dict__["version"]
             break
     assert isinstance(descriptor, property)
 
-def test_seccon::usecase_has_description():
-    assert hasattr(SecCon::UseCase, "description")
+def test_seccon_usecasescenario_has_author():
+    assert hasattr(SecCon_UseCaseScenario, "author")
     descriptor = None
-    for klass in SecCon::UseCase.__mro__:
+    for klass in SecCon_UseCaseScenario.__mro__:
+        if "author" in klass.__dict__:
+            descriptor = klass.__dict__["author"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_seccon_package_is_not_abstract():
+    assert not inspect.isabstract(SecCon_Package)
+
+
+def test_seccon_package_constructor_exists():
+    assert callable(SecCon_Package.__init__)
+
+
+def test_seccon_package_constructor_args():
+    sig = inspect.signature(SecCon_Package.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_seccon_type_is_not_abstract():
+    assert not inspect.isabstract(SecCon_Type)
+
+
+def test_seccon_type_constructor_exists():
+    assert callable(SecCon_Type.__init__)
+
+
+def test_seccon_type_constructor_args():
+    sig = inspect.signature(SecCon_Type.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_seccon_usecase_is_not_abstract():
+    assert not inspect.isabstract(SecCon_UseCase)
+
+
+def test_seccon_usecase_constructor_exists():
+    assert callable(SecCon_UseCase.__init__)
+
+
+def test_seccon_usecase_constructor_args():
+    sig = inspect.signature(SecCon_UseCase.__init__)
+    params = list(sig.parameters.keys())
+    assert "description" in params, "Missing parameter 'description'"
+    assert "preCondition" in params, "Missing parameter 'preCondition'"
+
+def test_seccon_usecase_has_description():
+    assert hasattr(SecCon_UseCase, "description")
+    descriptor = None
+    for klass in SecCon_UseCase.__mro__:
         if "description" in klass.__dict__:
             descriptor = klass.__dict__["description"]
             break
     assert isinstance(descriptor, property)
 
-
-
-def test_seccon::package_is_not_abstract():
-    assert not inspect.isabstract(SecCon::Package)
-
-
-def test_seccon::package_constructor_exists():
-    assert callable(SecCon::Package.__init__)
-
-
-def test_seccon::package_constructor_args():
-    sig = inspect.signature(SecCon::Package.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_seccon::enumerationliteral_is_not_abstract():
-    assert not inspect.isabstract(SecCon::EnumerationLiteral)
-
-
-def test_seccon::enumerationliteral_constructor_exists():
-    assert callable(SecCon::EnumerationLiteral.__init__)
-
-
-def test_seccon::enumerationliteral_constructor_args():
-    sig = inspect.signature(SecCon::EnumerationLiteral.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_seccon::event_is_not_abstract():
-    assert not inspect.isabstract(SecCon::Event)
-
-
-def test_seccon::event_constructor_exists():
-    assert callable(SecCon::Event.__init__)
-
-
-def test_seccon::event_constructor_args():
-    sig = inspect.signature(SecCon::Event.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_seccon::usecasescenario_is_not_abstract():
-    assert not inspect.isabstract(SecCon::UseCaseScenario)
-
-
-def test_seccon::usecasescenario_constructor_exists():
-    assert callable(SecCon::UseCaseScenario.__init__)
-
-
-def test_seccon::usecasescenario_constructor_args():
-    sig = inspect.signature(SecCon::UseCaseScenario.__init__)
-    params = list(sig.parameters.keys())
-    assert "version" in params, "Missing parameter 'version'"
-    assert "author" in params, "Missing parameter 'author'"
-
-def test_seccon::usecasescenario_has_version():
-    assert hasattr(SecCon::UseCaseScenario, "version")
+def test_seccon_usecase_has_preCondition():
+    assert hasattr(SecCon_UseCase, "preCondition")
     descriptor = None
-    for klass in SecCon::UseCaseScenario.__mro__:
-        if "version" in klass.__dict__:
-            descriptor = klass.__dict__["version"]
+    for klass in SecCon_UseCase.__mro__:
+        if "preCondition" in klass.__dict__:
+            descriptor = klass.__dict__["preCondition"]
             break
     assert isinstance(descriptor, property)
 
-def test_seccon::usecasescenario_has_author():
-    assert hasattr(SecCon::UseCaseScenario, "author")
+
+
+def test_seccon_project_is_not_abstract():
+    assert not inspect.isabstract(SecCon_Project)
+
+
+def test_seccon_project_constructor_exists():
+    assert callable(SecCon_Project.__init__)
+
+
+def test_seccon_project_constructor_args():
+    sig = inspect.signature(SecCon_Project.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_seccon_statemachinescenario_is_not_abstract():
+    assert not inspect.isabstract(SecCon_StateMachineScenario)
+
+
+def test_seccon_statemachinescenario_constructor_exists():
+    assert callable(SecCon_StateMachineScenario.__init__)
+
+
+def test_seccon_statemachinescenario_constructor_args():
+    sig = inspect.signature(SecCon_StateMachineScenario.__init__)
+    params = list(sig.parameters.keys())
+    assert "author" in params, "Missing parameter 'author'"
+    assert "version" in params, "Missing parameter 'version'"
+
+def test_seccon_statemachinescenario_has_author():
+    assert hasattr(SecCon_StateMachineScenario, "author")
     descriptor = None
-    for klass in SecCon::UseCaseScenario.__mro__:
+    for klass in SecCon_StateMachineScenario.__mro__:
         if "author" in klass.__dict__:
             descriptor = klass.__dict__["author"]
             break
     assert isinstance(descriptor, property)
 
-
-
-def test_seccon::statemachinescenario_is_not_abstract():
-    assert not inspect.isabstract(SecCon::StateMachineScenario)
-
-
-def test_seccon::statemachinescenario_constructor_exists():
-    assert callable(SecCon::StateMachineScenario.__init__)
-
-
-def test_seccon::statemachinescenario_constructor_args():
-    sig = inspect.signature(SecCon::StateMachineScenario.__init__)
-    params = list(sig.parameters.keys())
-    assert "author" in params, "Missing parameter 'author'"
-    assert "version" in params, "Missing parameter 'version'"
-
-def test_seccon::statemachinescenario_has_author():
-    assert hasattr(SecCon::StateMachineScenario, "author")
+def test_seccon_statemachinescenario_has_version():
+    assert hasattr(SecCon_StateMachineScenario, "version")
     descriptor = None
-    for klass in SecCon::StateMachineScenario.__mro__:
-        if "author" in klass.__dict__:
-            descriptor = klass.__dict__["author"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_seccon::statemachinescenario_has_version():
-    assert hasattr(SecCon::StateMachineScenario, "version")
-    descriptor = None
-    for klass in SecCon::StateMachineScenario.__mro__:
+    for klass in SecCon_StateMachineScenario.__mro__:
         if "version" in klass.__dict__:
             descriptor = klass.__dict__["version"]
             break
@@ -1159,65 +1131,93 @@ def test_seccon::statemachinescenario_has_version():
 
 
 
-def test_seccon::project_is_not_abstract():
-    assert not inspect.isabstract(SecCon::Project)
+def test_seccon_stateoperation_is_not_abstract():
+    assert not inspect.isabstract(SecCon_StateOperation)
 
 
-def test_seccon::project_constructor_exists():
-    assert callable(SecCon::Project.__init__)
+def test_seccon_stateoperation_constructor_exists():
+    assert callable(SecCon_StateOperation.__init__)
 
 
-def test_seccon::project_constructor_args():
-    sig = inspect.signature(SecCon::Project.__init__)
+def test_seccon_stateoperation_constructor_args():
+    sig = inspect.signature(SecCon_StateOperation.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_seccon::type_is_not_abstract():
-    assert not inspect.isabstract(SecCon::Type)
+def test_seccon_enumerationliteral_is_not_abstract():
+    assert not inspect.isabstract(SecCon_EnumerationLiteral)
 
 
-def test_seccon::type_constructor_exists():
-    assert callable(SecCon::Type.__init__)
+def test_seccon_enumerationliteral_constructor_exists():
+    assert callable(SecCon_EnumerationLiteral.__init__)
 
 
-def test_seccon::type_constructor_args():
-    sig = inspect.signature(SecCon::Type.__init__)
+def test_seccon_enumerationliteral_constructor_args():
+    sig = inspect.signature(SecCon_EnumerationLiteral.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_seccon::typedelement_is_not_abstract():
-    assert not inspect.isabstract(SecCon::TypedElement)
+def test_seccon_actor_is_not_abstract():
+    assert not inspect.isabstract(SecCon_Actor)
 
 
-def test_seccon::typedelement_constructor_exists():
-    assert callable(SecCon::TypedElement.__init__)
+def test_seccon_actor_constructor_exists():
+    assert callable(SecCon_Actor.__init__)
 
 
-def test_seccon::typedelement_constructor_args():
-    sig = inspect.signature(SecCon::TypedElement.__init__)
+def test_seccon_actor_constructor_args():
+    sig = inspect.signature(SecCon_Actor.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_seccon::comment_is_not_abstract():
-    assert not inspect.isabstract(SecCon::Comment)
+def test_seccon_transition_is_not_abstract():
+    assert not inspect.isabstract(SecCon_Transition)
 
 
-def test_seccon::comment_constructor_exists():
-    assert callable(SecCon::Comment.__init__)
+def test_seccon_transition_constructor_exists():
+    assert callable(SecCon_Transition.__init__)
 
 
-def test_seccon::comment_constructor_args():
-    sig = inspect.signature(SecCon::Comment.__init__)
+def test_seccon_transition_constructor_args():
+    sig = inspect.signature(SecCon_Transition.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_seccon_typedelement_is_not_abstract():
+    assert not inspect.isabstract(SecCon_TypedElement)
+
+
+def test_seccon_typedelement_constructor_exists():
+    assert callable(SecCon_TypedElement.__init__)
+
+
+def test_seccon_typedelement_constructor_args():
+    sig = inspect.signature(SecCon_TypedElement.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_seccon_comment_is_not_abstract():
+    assert not inspect.isabstract(SecCon_Comment)
+
+
+def test_seccon_comment_constructor_exists():
+    assert callable(SecCon_Comment.__init__)
+
+
+def test_seccon_comment_constructor_args():
+    sig = inspect.signature(SecCon_Comment.__init__)
     params = list(sig.parameters.keys())
     assert "body" in params, "Missing parameter 'body'"
 
-def test_seccon::comment_has_body():
-    assert hasattr(SecCon::Comment, "body")
+def test_seccon_comment_has_body():
+    assert hasattr(SecCon_Comment, "body")
     descriptor = None
-    for klass in SecCon::Comment.__mro__:
+    for klass in SecCon_Comment.__mro__:
         if "body" in klass.__dict__:
             descriptor = klass.__dict__["body"]
             break
@@ -1225,37 +1225,78 @@ def test_seccon::comment_has_body():
 
 
 
-def test_seccon::element_is_not_abstract():
-    assert not inspect.isabstract(SecCon::Element)
+def test_seccon_element_is_not_abstract():
+    assert not inspect.isabstract(SecCon_Element)
 
 
-def test_seccon::element_constructor_exists():
-    assert callable(SecCon::Element.__init__)
+def test_seccon_element_constructor_exists():
+    assert callable(SecCon_Element.__init__)
 
 
-def test_seccon::element_constructor_args():
-    sig = inspect.signature(SecCon::Element.__init__)
+def test_seccon_element_constructor_args():
+    sig = inspect.signature(SecCon_Element.__init__)
     params = list(sig.parameters.keys())
 
-def test_pseudostatekind_exists():
+def test_parameterdirectionkind_exists():
     # Check that the Enumeration exists
-    assert PseudostateKind is not None
+    assert ParameterDirectionKind is not None
 
-def test_pseudostatekind_has_all_literals():
+def test_parameterdirectionkind_has_all_literals():
     # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in PseudostateKind]
+    enum_literals = [lit.name for lit in ParameterDirectionKind]
     expected_literals = [
-        "shallowHistory",
-        "initial",
-        "join",
-        "fork",
-        "choice",
-        "junction",
-        "deepHistory",
+        "out",
+        "return_",
+        "in_",
+        "inout",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in PseudostateKind"
+        assert lit_name in enum_literals, f"Literal '' missing in ParameterDirectionKind"
+
+def test_typeofcondition_exists():
+    # Check that the Enumeration exists
+    assert TypeOfCondition is not None
+
+def test_typeofcondition_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in TypeOfCondition]
+    expected_literals = [
+        "IS_ON",
+        "IS_OFF",
+        "WHILE_EQUALS",
+        "WHEN_HIGHER",
+        "WHEN_EQUALS",
+        "WHEN_LOWER",
+        "WHILE_HIGHER",
+        "IS_DIFFERENT",
+        "IS_EQUAL",
+        "WHILE_LOWER",
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in TypeOfCondition"
+
+def test_typeofcontext_exists():
+    # Check that the Enumeration exists
+    assert TypeOfContext is not None
+
+def test_typeofcontext_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in TypeOfContext]
+    expected_literals = [
+        "WIFI_STATUS",
+        "GPS_STATUS",
+        "BATTERY_LEVEL",
+        "MEMORY_LOAD",
+        "BLUETOOTH_STATUS",
+        "AIRPLANE_MODE",
+        "NETWORK_STATUS",
+        "CPU_LOAD",
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in TypeOfContext"
 
 def test_operator_exists():
     # Check that the Enumeration exists
@@ -1272,66 +1313,25 @@ def test_operator_has_all_literals():
     for lit_name in expected_literals:
         assert lit_name in enum_literals, f"Literal '' missing in Operator"
 
-def test_typeofcontext_exists():
+def test_pseudostatekind_exists():
     # Check that the Enumeration exists
-    assert TypeOfContext is not None
+    assert PseudostateKind is not None
 
-def test_typeofcontext_has_all_literals():
+def test_pseudostatekind_has_all_literals():
     # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in TypeOfContext]
+    enum_literals = [lit.name for lit in PseudostateKind]
     expected_literals = [
-        "AIRPLANE_MODE",
-        "BATTERY_LEVEL",
-        "GPS_STATUS",
-        "NETWORK_STATUS",
-        "CPU_LOAD",
-        "WIFI_STATUS",
-        "BLUETOOTH_STATUS",
-        "MEMORY_LOAD",
+        "join",
+        "junction",
+        "initial",
+        "shallowHistory",
+        "deepHistory",
+        "fork",
+        "choice",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in TypeOfContext"
-
-def test_typeofcondition_exists():
-    # Check that the Enumeration exists
-    assert TypeOfCondition is not None
-
-def test_typeofcondition_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in TypeOfCondition]
-    expected_literals = [
-        "IS_EQUAL",
-        "WHEN_HIGHER",
-        "WHILE_LOWER",
-        "WHILE_EQUALS",
-        "IS_ON",
-        "WHILE_HIGHER",
-        "WHEN_LOWER",
-        "WHEN_EQUALS",
-        "IS_OFF",
-        "IS_DIFFERENT",
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in TypeOfCondition"
-
-def test_parameterdirectionkind_exists():
-    # Check that the Enumeration exists
-    assert ParameterDirectionKind is not None
-
-def test_parameterdirectionkind_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in ParameterDirectionKind]
-    expected_literals = [
-        "inout",
-        "return_",
-        "in_",
-        "out",
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in ParameterDirectionKind"
+        assert lit_name in enum_literals, f"Literal '' missing in PseudostateKind"
 
 
 # =============================================================================
@@ -1348,123 +1348,123 @@ safe_text = st.text(
 State_strategy = st.builds(
     State,
 )
-SecCon::ProtectedState_strategy = st.builds(
-    SecCon::ProtectedState,
+SecCon_AttackedState_strategy = st.builds(
+    SecCon_AttackedState,
 )
-SecCon::AttackedState_strategy = st.builds(
-    SecCon::AttackedState,
+SecCon_ProtectedState_strategy = st.builds(
+    SecCon_ProtectedState,
 )
-SecCon::VulnerableState_strategy = st.builds(
-    SecCon::VulnerableState,
+SecCon_VulnerableState_strategy = st.builds(
+    SecCon_VulnerableState,
 )
-SecCon::ThreatenedState_strategy = st.builds(
-    SecCon::ThreatenedState,
+SecCon_ThreatenedState_strategy = st.builds(
+    SecCon_ThreatenedState,
 )
-SecCon::Action_strategy = st.builds(
-    SecCon::Action,
+SecCon_Action_strategy = st.builds(
+    SecCon_Action,
     name=
         safe_text,
     parameter=
         safe_text
 )
-SecCon::Condition_strategy = st.builds(
-    SecCon::Condition,
-    value=
+SecCon_Condition_strategy = st.builds(
+    SecCon_Condition,
+    condition=
         safe_text,
     logicValue=
         st.booleans(),
-    condition=
+    value=
         safe_text
 )
-SecCon::ContextInformation_strategy = st.builds(
-    SecCon::ContextInformation,
+SecCon_ContextInformation_strategy = st.builds(
+    SecCon_ContextInformation,
+    name=
+        safe_text,
     type=
-        safe_text,
-    name=
         safe_text
 )
-SecCon::Rule_strategy = st.builds(
-    SecCon::Rule,
+SecCon_Rule_strategy = st.builds(
+    SecCon_Rule,
     name=
-        safe_text,
-    operator=
         safe_text,
     logicValue=
-        st.booleans()
+        st.booleans(),
+    operator=
+        safe_text
 )
-SecCon::ContextScenario_strategy = st.builds(
-    SecCon::ContextScenario,
+SecCon_ContextScenario_strategy = st.builds(
+    SecCon_ContextScenario,
     name=
         safe_text
 )
 Event_strategy = st.builds(
     Event,
 )
-SecCon::ThreatEvent_strategy = st.builds(
-    SecCon::ThreatEvent,
+SecCon_ThreatEvent_strategy = st.builds(
+    SecCon_ThreatEvent,
 )
-SecCon::AttackEvent_strategy = st.builds(
-    SecCon::AttackEvent,
+SecCon_AttackEvent_strategy = st.builds(
+    SecCon_AttackEvent,
 )
-SecCon::CountermeasureEvent_strategy = st.builds(
-    SecCon::CountermeasureEvent,
+SecCon_CountermeasureEvent_strategy = st.builds(
+    SecCon_CountermeasureEvent,
 )
 StateVertex_strategy = st.builds(
     StateVertex,
 )
-SecCon::FinalState_strategy = st.builds(
-    SecCon::FinalState,
+SecCon_InitialState_strategy = st.builds(
+    SecCon_InitialState,
 )
-SecCon::InitialState_strategy = st.builds(
-    SecCon::InitialState,
+SecCon_FinalState_strategy = st.builds(
+    SecCon_FinalState,
 )
-SecCon::State_strategy = st.builds(
-    SecCon::State,
+SecCon_State_strategy = st.builds(
+    SecCon_State,
 )
-SecCon::Extend_strategy = st.builds(
-    SecCon::Extend,
-    condition=
-        safe_text,
+SecCon_Extend_strategy = st.builds(
+    SecCon_Extend,
     name=
+        safe_text,
+    condition=
         safe_text
 )
-SecCon::Include_strategy = st.builds(
-    SecCon::Include,
+SecCon_Include_strategy = st.builds(
+    SecCon_Include,
     name=
         safe_text
 )
 UseCase_strategy = st.builds(
     UseCase,
 )
-SecCon::AttackUseCase_strategy = st.builds(
-    SecCon::AttackUseCase,
+SecCon_RecoverUseCase_strategy = st.builds(
+    SecCon_RecoverUseCase,
 )
-SecCon::VulnerabilityUseCase_strategy = st.builds(
-    SecCon::VulnerabilityUseCase,
+SecCon_PrevenctionUseCase_strategy = st.builds(
+    SecCon_PrevenctionUseCase,
 )
-SecCon::DetectionUseCase_strategy = st.builds(
-    SecCon::DetectionUseCase,
+SecCon_VulnerabilityUseCase_strategy = st.builds(
+    SecCon_VulnerabilityUseCase,
 )
-SecCon::RecoverUseCase_strategy = st.builds(
-    SecCon::RecoverUseCase,
+SecCon_AttackUseCase_strategy = st.builds(
+    SecCon_AttackUseCase,
 )
-SecCon::CountermeasureUseCase_strategy = st.builds(
-    SecCon::CountermeasureUseCase,
+SecCon_DetectionUseCase_strategy = st.builds(
+    SecCon_DetectionUseCase,
 )
-SecCon::PrevenctionUseCase_strategy = st.builds(
-    SecCon::PrevenctionUseCase,
+SecCon_CountermeasureUseCase_strategy = st.builds(
+    SecCon_CountermeasureUseCase,
 )
-SecCon::ThreatUseCase_strategy = st.builds(
-    SecCon::ThreatUseCase,
+SecCon_ThreatUseCase_strategy = st.builds(
+    SecCon_ThreatUseCase,
 )
 DataType_strategy = st.builds(
     DataType,
 )
-SecCon::PrimitiveType_strategy = st.builds(
-    SecCon::PrimitiveType,
+SecCon_PrimitiveType_strategy = st.builds(
+    SecCon_PrimitiveType,
 )
-SecCon::Enumeration_strategy = st.builds(
-    SecCon::Enumeration,
+SecCon_Enumeration_strategy = st.builds(
+    SecCon_Enumeration,
 )
 MultiplicityElement_strategy = st.builds(
     MultiplicityElement,
@@ -1472,122 +1472,122 @@ MultiplicityElement_strategy = st.builds(
 TypedElement_strategy = st.builds(
     TypedElement,
 )
-SecCon::Attribute_strategy = st.builds(
-    SecCon::Attribute,
+SecCon_Attribute_strategy = st.builds(
+    SecCon_Attribute,
+    isDerived=
+        st.booleans(),
     isReadOnly=
+        st.booleans(),
+    isComposite=
         st.booleans(),
     default=
         safe_text,
-    isComposite=
-        st.booleans(),
-    isDerived=
-        st.booleans(),
     isID=
         st.booleans()
 )
 Type_strategy = st.builds(
     Type,
 )
-SecCon::DataType_strategy = st.builds(
-    SecCon::DataType,
+SecCon_DataType_strategy = st.builds(
+    SecCon_DataType,
 )
-SecCon::Class_strategy = st.builds(
-    SecCon::Class,
+SecCon_Class_strategy = st.builds(
+    SecCon_Class,
     isAbstract=
         st.booleans()
 )
-SecCon::Parameter_strategy = st.builds(
-    SecCon::Parameter,
-    direction=
-        safe_text,
+SecCon_Parameter_strategy = st.builds(
+    SecCon_Parameter,
     default=
+        safe_text,
+    direction=
         safe_text
 )
-SecCon::Operation_strategy = st.builds(
-    SecCon::Operation,
+SecCon_Operation_strategy = st.builds(
+    SecCon_Operation,
     body=
         safe_text
 )
 Element_strategy = st.builds(
     Element,
 )
-SecCon::NamedElement_strategy = st.builds(
-    SecCon::NamedElement,
+SecCon_NamedElement_strategy = st.builds(
+    SecCon_NamedElement,
     name=
         safe_text
 )
-SecCon::MultiplicityElement_strategy = st.builds(
-    SecCon::MultiplicityElement,
+SecCon_MultiplicityElement_strategy = st.builds(
+    SecCon_MultiplicityElement,
+    upper=
+        safe_text,
+    isOrdered=
+        st.booleans(),
     lower=
         st.integers(),
     isUnique=
-        st.booleans(),
-    isOrdered=
-        st.booleans(),
-    upper=
-        safe_text
+        st.booleans()
 )
 NamedElement_strategy = st.builds(
     NamedElement,
 )
-SecCon::StateOperation_strategy = st.builds(
-    SecCon::StateOperation,
+SecCon_Event_strategy = st.builds(
+    SecCon_Event,
 )
-SecCon::Actor_strategy = st.builds(
-    SecCon::Actor,
+SecCon_StateVertex_strategy = st.builds(
+    SecCon_StateVertex,
 )
-SecCon::Transition_strategy = st.builds(
-    SecCon::Transition,
-)
-SecCon::StateVertex_strategy = st.builds(
-    SecCon::StateVertex,
-)
-SecCon::UseCase_strategy = st.builds(
-    SecCon::UseCase,
-    preCondition=
+SecCon_UseCaseScenario_strategy = st.builds(
+    SecCon_UseCaseScenario,
+    version=
         safe_text,
+    author=
+        safe_text
+)
+SecCon_Package_strategy = st.builds(
+    SecCon_Package,
+)
+SecCon_Type_strategy = st.builds(
+    SecCon_Type,
+)
+SecCon_UseCase_strategy = st.builds(
+    SecCon_UseCase,
     description=
-        safe_text
-)
-SecCon::Package_strategy = st.builds(
-    SecCon::Package,
-)
-SecCon::EnumerationLiteral_strategy = st.builds(
-    SecCon::EnumerationLiteral,
-)
-SecCon::Event_strategy = st.builds(
-    SecCon::Event,
-)
-SecCon::UseCaseScenario_strategy = st.builds(
-    SecCon::UseCaseScenario,
-    version=
         safe_text,
-    author=
+    preCondition=
         safe_text
 )
-SecCon::StateMachineScenario_strategy = st.builds(
-    SecCon::StateMachineScenario,
+SecCon_Project_strategy = st.builds(
+    SecCon_Project,
+)
+SecCon_StateMachineScenario_strategy = st.builds(
+    SecCon_StateMachineScenario,
     author=
         safe_text,
     version=
         safe_text
 )
-SecCon::Project_strategy = st.builds(
-    SecCon::Project,
+SecCon_StateOperation_strategy = st.builds(
+    SecCon_StateOperation,
 )
-SecCon::Type_strategy = st.builds(
-    SecCon::Type,
+SecCon_EnumerationLiteral_strategy = st.builds(
+    SecCon_EnumerationLiteral,
 )
-SecCon::TypedElement_strategy = st.builds(
-    SecCon::TypedElement,
+SecCon_Actor_strategy = st.builds(
+    SecCon_Actor,
 )
-SecCon::Comment_strategy = st.builds(
-    SecCon::Comment,
+SecCon_Transition_strategy = st.builds(
+    SecCon_Transition,
+)
+SecCon_TypedElement_strategy = st.builds(
+    SecCon_TypedElement,
+)
+SecCon_Comment_strategy = st.builds(
+    SecCon_Comment,
     body=
         safe_text
 )
-SecCon::Element_strategy = st.builds(
-    SecCon::Element,
+SecCon_Element_strategy = st.builds(
+    SecCon_Element,
 )
 
 @given(instance=State_strategy)
@@ -1595,168 +1595,135 @@ SecCon::Element_strategy = st.builds(
 def test_state_instantiation(instance):
     assert isinstance(instance, State)
 
-@given(instance=SecCon::ProtectedState_strategy)
+@given(instance=SecCon_AttackedState_strategy)
 @settings(max_examples=50)
-def test_seccon::protectedstate_instantiation(instance):
-    assert isinstance(instance, SecCon::ProtectedState)
+def test_seccon_attackedstate_instantiation(instance):
+    assert isinstance(instance, SecCon_AttackedState)
 
-@given(instance=SecCon::AttackedState_strategy)
+@given(instance=SecCon_ProtectedState_strategy)
 @settings(max_examples=50)
-def test_seccon::attackedstate_instantiation(instance):
-    assert isinstance(instance, SecCon::AttackedState)
+def test_seccon_protectedstate_instantiation(instance):
+    assert isinstance(instance, SecCon_ProtectedState)
 
-@given(instance=SecCon::VulnerableState_strategy)
+@given(instance=SecCon_VulnerableState_strategy)
 @settings(max_examples=50)
-def test_seccon::vulnerablestate_instantiation(instance):
-    assert isinstance(instance, SecCon::VulnerableState)
+def test_seccon_vulnerablestate_instantiation(instance):
+    assert isinstance(instance, SecCon_VulnerableState)
 
-@given(instance=SecCon::ThreatenedState_strategy)
+@given(instance=SecCon_ThreatenedState_strategy)
 @settings(max_examples=50)
-def test_seccon::threatenedstate_instantiation(instance):
-    assert isinstance(instance, SecCon::ThreatenedState)
+def test_seccon_threatenedstate_instantiation(instance):
+    assert isinstance(instance, SecCon_ThreatenedState)
 
-@given(instance=SecCon::Action_strategy)
+@given(instance=SecCon_Action_strategy)
 @settings(max_examples=50)
-def test_seccon::action_instantiation(instance):
-    assert isinstance(instance, SecCon::Action)
-
-@given(instance=SecCon::Action_strategy)
-def test_seccon::action_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_seccon_action_instantiation(instance):
+    assert isinstance(instance, SecCon_Action)
 
 
-@given(instance=SecCon::Action_strategy)
-def test_seccon::action_name_setter(instance):
+
+@given(instance=SecCon_Action_strategy)
+def test_seccon_action_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=SecCon::Action_strategy)
-def test_seccon::action_parameter_type(instance):
-    assert isinstance(instance.parameter, str)
 
 
-@given(instance=SecCon::Action_strategy)
-def test_seccon::action_parameter_setter(instance):
+@given(instance=SecCon_Action_strategy)
+def test_seccon_action_parameter_setter(instance):
     original = instance.parameter
     instance.parameter = original
     assert instance.parameter == original
 
-@given(instance=SecCon::Condition_strategy)
+@given(instance=SecCon_Condition_strategy)
 @settings(max_examples=50)
-def test_seccon::condition_instantiation(instance):
-    assert isinstance(instance, SecCon::Condition)
-
-@given(instance=SecCon::Condition_strategy)
-def test_seccon::condition_value_type(instance):
-    assert isinstance(instance.value, str)
+def test_seccon_condition_instantiation(instance):
+    assert isinstance(instance, SecCon_Condition)
 
 
-@given(instance=SecCon::Condition_strategy)
-def test_seccon::condition_value_setter(instance):
-    original = instance.value
-    instance.value = original
-    assert instance.value == original
 
-@given(instance=SecCon::Condition_strategy)
-def test_seccon::condition_logicValue_type(instance):
-    assert isinstance(instance.logicValue, bool)
-
-
-@given(instance=SecCon::Condition_strategy)
-def test_seccon::condition_logicValue_setter(instance):
-    original = instance.logicValue
-    instance.logicValue = original
-    assert instance.logicValue == original
-
-@given(instance=SecCon::Condition_strategy)
-def test_seccon::condition_condition_type(instance):
-    assert isinstance(instance.condition, str)
-
-
-@given(instance=SecCon::Condition_strategy)
-def test_seccon::condition_condition_setter(instance):
+@given(instance=SecCon_Condition_strategy)
+def test_seccon_condition_condition_setter(instance):
     original = instance.condition
     instance.condition = original
     assert instance.condition == original
 
-@given(instance=SecCon::ContextInformation_strategy)
-@settings(max_examples=50)
-def test_seccon::contextinformation_instantiation(instance):
-    assert isinstance(instance, SecCon::ContextInformation)
-
-@given(instance=SecCon::ContextInformation_strategy)
-def test_seccon::contextinformation_type_type(instance):
-    assert isinstance(instance.type, str)
 
 
-@given(instance=SecCon::ContextInformation_strategy)
-def test_seccon::contextinformation_type_setter(instance):
-    original = instance.type
-    instance.type = original
-    assert instance.type == original
-
-@given(instance=SecCon::ContextInformation_strategy)
-def test_seccon::contextinformation_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=SecCon::ContextInformation_strategy)
-def test_seccon::contextinformation_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
-
-@given(instance=SecCon::Rule_strategy)
-@settings(max_examples=50)
-def test_seccon::rule_instantiation(instance):
-    assert isinstance(instance, SecCon::Rule)
-
-@given(instance=SecCon::Rule_strategy)
-def test_seccon::rule_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=SecCon::Rule_strategy)
-def test_seccon::rule_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
-
-@given(instance=SecCon::Rule_strategy)
-def test_seccon::rule_operator_type(instance):
-    assert isinstance(instance.operator, str)
-
-
-@given(instance=SecCon::Rule_strategy)
-def test_seccon::rule_operator_setter(instance):
-    original = instance.operator
-    instance.operator = original
-    assert instance.operator == original
-
-@given(instance=SecCon::Rule_strategy)
-def test_seccon::rule_logicValue_type(instance):
-    assert isinstance(instance.logicValue, bool)
-
-
-@given(instance=SecCon::Rule_strategy)
-def test_seccon::rule_logicValue_setter(instance):
+@given(instance=SecCon_Condition_strategy)
+def test_seccon_condition_logicValue_setter(instance):
     original = instance.logicValue
     instance.logicValue = original
     assert instance.logicValue == original
 
-@given(instance=SecCon::ContextScenario_strategy)
+
+
+@given(instance=SecCon_Condition_strategy)
+def test_seccon_condition_value_setter(instance):
+    original = instance.value
+    instance.value = original
+    assert instance.value == original
+
+@given(instance=SecCon_ContextInformation_strategy)
 @settings(max_examples=50)
-def test_seccon::contextscenario_instantiation(instance):
-    assert isinstance(instance, SecCon::ContextScenario)
-
-@given(instance=SecCon::ContextScenario_strategy)
-def test_seccon::contextscenario_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_seccon_contextinformation_instantiation(instance):
+    assert isinstance(instance, SecCon_ContextInformation)
 
 
-@given(instance=SecCon::ContextScenario_strategy)
-def test_seccon::contextscenario_name_setter(instance):
+
+@given(instance=SecCon_ContextInformation_strategy)
+def test_seccon_contextinformation_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+
+
+@given(instance=SecCon_ContextInformation_strategy)
+def test_seccon_contextinformation_type_setter(instance):
+    original = instance.type
+    instance.type = original
+    assert instance.type == original
+
+@given(instance=SecCon_Rule_strategy)
+@settings(max_examples=50)
+def test_seccon_rule_instantiation(instance):
+    assert isinstance(instance, SecCon_Rule)
+
+
+
+@given(instance=SecCon_Rule_strategy)
+def test_seccon_rule_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+
+
+@given(instance=SecCon_Rule_strategy)
+def test_seccon_rule_logicValue_setter(instance):
+    original = instance.logicValue
+    instance.logicValue = original
+    assert instance.logicValue == original
+
+
+
+@given(instance=SecCon_Rule_strategy)
+def test_seccon_rule_operator_setter(instance):
+    original = instance.operator
+    instance.operator = original
+    assert instance.operator == original
+
+@given(instance=SecCon_ContextScenario_strategy)
+@settings(max_examples=50)
+def test_seccon_contextscenario_instantiation(instance):
+    assert isinstance(instance, SecCon_ContextScenario)
+
+
+
+@given(instance=SecCon_ContextScenario_strategy)
+def test_seccon_contextscenario_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
@@ -1766,80 +1733,71 @@ def test_seccon::contextscenario_name_setter(instance):
 def test_event_instantiation(instance):
     assert isinstance(instance, Event)
 
-@given(instance=SecCon::ThreatEvent_strategy)
+@given(instance=SecCon_ThreatEvent_strategy)
 @settings(max_examples=50)
-def test_seccon::threatevent_instantiation(instance):
-    assert isinstance(instance, SecCon::ThreatEvent)
+def test_seccon_threatevent_instantiation(instance):
+    assert isinstance(instance, SecCon_ThreatEvent)
 
-@given(instance=SecCon::AttackEvent_strategy)
+@given(instance=SecCon_AttackEvent_strategy)
 @settings(max_examples=50)
-def test_seccon::attackevent_instantiation(instance):
-    assert isinstance(instance, SecCon::AttackEvent)
+def test_seccon_attackevent_instantiation(instance):
+    assert isinstance(instance, SecCon_AttackEvent)
 
-@given(instance=SecCon::CountermeasureEvent_strategy)
+@given(instance=SecCon_CountermeasureEvent_strategy)
 @settings(max_examples=50)
-def test_seccon::countermeasureevent_instantiation(instance):
-    assert isinstance(instance, SecCon::CountermeasureEvent)
+def test_seccon_countermeasureevent_instantiation(instance):
+    assert isinstance(instance, SecCon_CountermeasureEvent)
 
 @given(instance=StateVertex_strategy)
 @settings(max_examples=50)
 def test_statevertex_instantiation(instance):
     assert isinstance(instance, StateVertex)
 
-@given(instance=SecCon::FinalState_strategy)
+@given(instance=SecCon_InitialState_strategy)
 @settings(max_examples=50)
-def test_seccon::finalstate_instantiation(instance):
-    assert isinstance(instance, SecCon::FinalState)
+def test_seccon_initialstate_instantiation(instance):
+    assert isinstance(instance, SecCon_InitialState)
 
-@given(instance=SecCon::InitialState_strategy)
+@given(instance=SecCon_FinalState_strategy)
 @settings(max_examples=50)
-def test_seccon::initialstate_instantiation(instance):
-    assert isinstance(instance, SecCon::InitialState)
+def test_seccon_finalstate_instantiation(instance):
+    assert isinstance(instance, SecCon_FinalState)
 
-@given(instance=SecCon::State_strategy)
+@given(instance=SecCon_State_strategy)
 @settings(max_examples=50)
-def test_seccon::state_instantiation(instance):
-    assert isinstance(instance, SecCon::State)
+def test_seccon_state_instantiation(instance):
+    assert isinstance(instance, SecCon_State)
 
-@given(instance=SecCon::Extend_strategy)
+@given(instance=SecCon_Extend_strategy)
 @settings(max_examples=50)
-def test_seccon::extend_instantiation(instance):
-    assert isinstance(instance, SecCon::Extend)
-
-@given(instance=SecCon::Extend_strategy)
-def test_seccon::extend_condition_type(instance):
-    assert isinstance(instance.condition, str)
+def test_seccon_extend_instantiation(instance):
+    assert isinstance(instance, SecCon_Extend)
 
 
-@given(instance=SecCon::Extend_strategy)
-def test_seccon::extend_condition_setter(instance):
-    original = instance.condition
-    instance.condition = original
-    assert instance.condition == original
 
-@given(instance=SecCon::Extend_strategy)
-def test_seccon::extend_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=SecCon::Extend_strategy)
-def test_seccon::extend_name_setter(instance):
+@given(instance=SecCon_Extend_strategy)
+def test_seccon_extend_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=SecCon::Include_strategy)
+
+
+@given(instance=SecCon_Extend_strategy)
+def test_seccon_extend_condition_setter(instance):
+    original = instance.condition
+    instance.condition = original
+    assert instance.condition == original
+
+@given(instance=SecCon_Include_strategy)
 @settings(max_examples=50)
-def test_seccon::include_instantiation(instance):
-    assert isinstance(instance, SecCon::Include)
-
-@given(instance=SecCon::Include_strategy)
-def test_seccon::include_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_seccon_include_instantiation(instance):
+    assert isinstance(instance, SecCon_Include)
 
 
-@given(instance=SecCon::Include_strategy)
-def test_seccon::include_name_setter(instance):
+
+@given(instance=SecCon_Include_strategy)
+def test_seccon_include_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
@@ -1849,55 +1807,55 @@ def test_seccon::include_name_setter(instance):
 def test_usecase_instantiation(instance):
     assert isinstance(instance, UseCase)
 
-@given(instance=SecCon::AttackUseCase_strategy)
+@given(instance=SecCon_RecoverUseCase_strategy)
 @settings(max_examples=50)
-def test_seccon::attackusecase_instantiation(instance):
-    assert isinstance(instance, SecCon::AttackUseCase)
+def test_seccon_recoverusecase_instantiation(instance):
+    assert isinstance(instance, SecCon_RecoverUseCase)
 
-@given(instance=SecCon::VulnerabilityUseCase_strategy)
+@given(instance=SecCon_PrevenctionUseCase_strategy)
 @settings(max_examples=50)
-def test_seccon::vulnerabilityusecase_instantiation(instance):
-    assert isinstance(instance, SecCon::VulnerabilityUseCase)
+def test_seccon_prevenctionusecase_instantiation(instance):
+    assert isinstance(instance, SecCon_PrevenctionUseCase)
 
-@given(instance=SecCon::DetectionUseCase_strategy)
+@given(instance=SecCon_VulnerabilityUseCase_strategy)
 @settings(max_examples=50)
-def test_seccon::detectionusecase_instantiation(instance):
-    assert isinstance(instance, SecCon::DetectionUseCase)
+def test_seccon_vulnerabilityusecase_instantiation(instance):
+    assert isinstance(instance, SecCon_VulnerabilityUseCase)
 
-@given(instance=SecCon::RecoverUseCase_strategy)
+@given(instance=SecCon_AttackUseCase_strategy)
 @settings(max_examples=50)
-def test_seccon::recoverusecase_instantiation(instance):
-    assert isinstance(instance, SecCon::RecoverUseCase)
+def test_seccon_attackusecase_instantiation(instance):
+    assert isinstance(instance, SecCon_AttackUseCase)
 
-@given(instance=SecCon::CountermeasureUseCase_strategy)
+@given(instance=SecCon_DetectionUseCase_strategy)
 @settings(max_examples=50)
-def test_seccon::countermeasureusecase_instantiation(instance):
-    assert isinstance(instance, SecCon::CountermeasureUseCase)
+def test_seccon_detectionusecase_instantiation(instance):
+    assert isinstance(instance, SecCon_DetectionUseCase)
 
-@given(instance=SecCon::PrevenctionUseCase_strategy)
+@given(instance=SecCon_CountermeasureUseCase_strategy)
 @settings(max_examples=50)
-def test_seccon::prevenctionusecase_instantiation(instance):
-    assert isinstance(instance, SecCon::PrevenctionUseCase)
+def test_seccon_countermeasureusecase_instantiation(instance):
+    assert isinstance(instance, SecCon_CountermeasureUseCase)
 
-@given(instance=SecCon::ThreatUseCase_strategy)
+@given(instance=SecCon_ThreatUseCase_strategy)
 @settings(max_examples=50)
-def test_seccon::threatusecase_instantiation(instance):
-    assert isinstance(instance, SecCon::ThreatUseCase)
+def test_seccon_threatusecase_instantiation(instance):
+    assert isinstance(instance, SecCon_ThreatUseCase)
 
 @given(instance=DataType_strategy)
 @settings(max_examples=50)
 def test_datatype_instantiation(instance):
     assert isinstance(instance, DataType)
 
-@given(instance=SecCon::PrimitiveType_strategy)
+@given(instance=SecCon_PrimitiveType_strategy)
 @settings(max_examples=50)
-def test_seccon::primitivetype_instantiation(instance):
-    assert isinstance(instance, SecCon::PrimitiveType)
+def test_seccon_primitivetype_instantiation(instance):
+    assert isinstance(instance, SecCon_PrimitiveType)
 
-@given(instance=SecCon::Enumeration_strategy)
+@given(instance=SecCon_Enumeration_strategy)
 @settings(max_examples=50)
-def test_seccon::enumeration_instantiation(instance):
-    assert isinstance(instance, SecCon::Enumeration)
+def test_seccon_enumeration_instantiation(instance):
+    assert isinstance(instance, SecCon_Enumeration)
 
 @given(instance=MultiplicityElement_strategy)
 @settings(max_examples=50)
@@ -1909,62 +1867,47 @@ def test_multiplicityelement_instantiation(instance):
 def test_typedelement_instantiation(instance):
     assert isinstance(instance, TypedElement)
 
-@given(instance=SecCon::Attribute_strategy)
+@given(instance=SecCon_Attribute_strategy)
 @settings(max_examples=50)
-def test_seccon::attribute_instantiation(instance):
-    assert isinstance(instance, SecCon::Attribute)
-
-@given(instance=SecCon::Attribute_strategy)
-def test_seccon::attribute_isReadOnly_type(instance):
-    assert isinstance(instance.isReadOnly, bool)
+def test_seccon_attribute_instantiation(instance):
+    assert isinstance(instance, SecCon_Attribute)
 
 
-@given(instance=SecCon::Attribute_strategy)
-def test_seccon::attribute_isReadOnly_setter(instance):
-    original = instance.isReadOnly
-    instance.isReadOnly = original
-    assert instance.isReadOnly == original
 
-@given(instance=SecCon::Attribute_strategy)
-def test_seccon::attribute_default_type(instance):
-    assert isinstance(instance.default, str)
-
-
-@given(instance=SecCon::Attribute_strategy)
-def test_seccon::attribute_default_setter(instance):
-    original = instance.default
-    instance.default = original
-    assert instance.default == original
-
-@given(instance=SecCon::Attribute_strategy)
-def test_seccon::attribute_isComposite_type(instance):
-    assert isinstance(instance.isComposite, bool)
-
-
-@given(instance=SecCon::Attribute_strategy)
-def test_seccon::attribute_isComposite_setter(instance):
-    original = instance.isComposite
-    instance.isComposite = original
-    assert instance.isComposite == original
-
-@given(instance=SecCon::Attribute_strategy)
-def test_seccon::attribute_isDerived_type(instance):
-    assert isinstance(instance.isDerived, bool)
-
-
-@given(instance=SecCon::Attribute_strategy)
-def test_seccon::attribute_isDerived_setter(instance):
+@given(instance=SecCon_Attribute_strategy)
+def test_seccon_attribute_isDerived_setter(instance):
     original = instance.isDerived
     instance.isDerived = original
     assert instance.isDerived == original
 
-@given(instance=SecCon::Attribute_strategy)
-def test_seccon::attribute_isID_type(instance):
-    assert isinstance(instance.isID, bool)
 
 
-@given(instance=SecCon::Attribute_strategy)
-def test_seccon::attribute_isID_setter(instance):
+@given(instance=SecCon_Attribute_strategy)
+def test_seccon_attribute_isReadOnly_setter(instance):
+    original = instance.isReadOnly
+    instance.isReadOnly = original
+    assert instance.isReadOnly == original
+
+
+
+@given(instance=SecCon_Attribute_strategy)
+def test_seccon_attribute_isComposite_setter(instance):
+    original = instance.isComposite
+    instance.isComposite = original
+    assert instance.isComposite == original
+
+
+
+@given(instance=SecCon_Attribute_strategy)
+def test_seccon_attribute_default_setter(instance):
+    original = instance.default
+    instance.default = original
+    assert instance.default == original
+
+
+
+@given(instance=SecCon_Attribute_strategy)
+def test_seccon_attribute_isID_setter(instance):
     original = instance.isID
     instance.isID = original
     assert instance.isID == original
@@ -1974,66 +1917,54 @@ def test_seccon::attribute_isID_setter(instance):
 def test_type_instantiation(instance):
     assert isinstance(instance, Type)
 
-@given(instance=SecCon::DataType_strategy)
+@given(instance=SecCon_DataType_strategy)
 @settings(max_examples=50)
-def test_seccon::datatype_instantiation(instance):
-    assert isinstance(instance, SecCon::DataType)
+def test_seccon_datatype_instantiation(instance):
+    assert isinstance(instance, SecCon_DataType)
 
-@given(instance=SecCon::Class_strategy)
+@given(instance=SecCon_Class_strategy)
 @settings(max_examples=50)
-def test_seccon::class_instantiation(instance):
-    assert isinstance(instance, SecCon::Class)
-
-@given(instance=SecCon::Class_strategy)
-def test_seccon::class_isAbstract_type(instance):
-    assert isinstance(instance.isAbstract, bool)
+def test_seccon_class_instantiation(instance):
+    assert isinstance(instance, SecCon_Class)
 
 
-@given(instance=SecCon::Class_strategy)
-def test_seccon::class_isAbstract_setter(instance):
+
+@given(instance=SecCon_Class_strategy)
+def test_seccon_class_isAbstract_setter(instance):
     original = instance.isAbstract
     instance.isAbstract = original
     assert instance.isAbstract == original
 
-@given(instance=SecCon::Parameter_strategy)
+@given(instance=SecCon_Parameter_strategy)
 @settings(max_examples=50)
-def test_seccon::parameter_instantiation(instance):
-    assert isinstance(instance, SecCon::Parameter)
-
-@given(instance=SecCon::Parameter_strategy)
-def test_seccon::parameter_direction_type(instance):
-    assert isinstance(instance.direction, str)
+def test_seccon_parameter_instantiation(instance):
+    assert isinstance(instance, SecCon_Parameter)
 
 
-@given(instance=SecCon::Parameter_strategy)
-def test_seccon::parameter_direction_setter(instance):
-    original = instance.direction
-    instance.direction = original
-    assert instance.direction == original
 
-@given(instance=SecCon::Parameter_strategy)
-def test_seccon::parameter_default_type(instance):
-    assert isinstance(instance.default, str)
-
-
-@given(instance=SecCon::Parameter_strategy)
-def test_seccon::parameter_default_setter(instance):
+@given(instance=SecCon_Parameter_strategy)
+def test_seccon_parameter_default_setter(instance):
     original = instance.default
     instance.default = original
     assert instance.default == original
 
-@given(instance=SecCon::Operation_strategy)
+
+
+@given(instance=SecCon_Parameter_strategy)
+def test_seccon_parameter_direction_setter(instance):
+    original = instance.direction
+    instance.direction = original
+    assert instance.direction == original
+
+@given(instance=SecCon_Operation_strategy)
 @settings(max_examples=50)
-def test_seccon::operation_instantiation(instance):
-    assert isinstance(instance, SecCon::Operation)
-
-@given(instance=SecCon::Operation_strategy)
-def test_seccon::operation_body_type(instance):
-    assert isinstance(instance.body, str)
+def test_seccon_operation_instantiation(instance):
+    assert isinstance(instance, SecCon_Operation)
 
 
-@given(instance=SecCon::Operation_strategy)
-def test_seccon::operation_body_setter(instance):
+
+@given(instance=SecCon_Operation_strategy)
+def test_seccon_operation_body_setter(instance):
     original = instance.body
     instance.body = original
     assert instance.body == original
@@ -2043,224 +1974,188 @@ def test_seccon::operation_body_setter(instance):
 def test_element_instantiation(instance):
     assert isinstance(instance, Element)
 
-@given(instance=SecCon::NamedElement_strategy)
+@given(instance=SecCon_NamedElement_strategy)
 @settings(max_examples=50)
-def test_seccon::namedelement_instantiation(instance):
-    assert isinstance(instance, SecCon::NamedElement)
-
-@given(instance=SecCon::NamedElement_strategy)
-def test_seccon::namedelement_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_seccon_namedelement_instantiation(instance):
+    assert isinstance(instance, SecCon_NamedElement)
 
 
-@given(instance=SecCon::NamedElement_strategy)
-def test_seccon::namedelement_name_setter(instance):
+
+@given(instance=SecCon_NamedElement_strategy)
+def test_seccon_namedelement_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=SecCon::MultiplicityElement_strategy)
+@given(instance=SecCon_MultiplicityElement_strategy)
 @settings(max_examples=50)
-def test_seccon::multiplicityelement_instantiation(instance):
-    assert isinstance(instance, SecCon::MultiplicityElement)
-
-@given(instance=SecCon::MultiplicityElement_strategy)
-def test_seccon::multiplicityelement_lower_type(instance):
-    assert isinstance(instance.lower, int)
+def test_seccon_multiplicityelement_instantiation(instance):
+    assert isinstance(instance, SecCon_MultiplicityElement)
 
 
-@given(instance=SecCon::MultiplicityElement_strategy)
-def test_seccon::multiplicityelement_lower_setter(instance):
-    original = instance.lower
-    instance.lower = original
-    assert instance.lower == original
 
-@given(instance=SecCon::MultiplicityElement_strategy)
-def test_seccon::multiplicityelement_isUnique_type(instance):
-    assert isinstance(instance.isUnique, bool)
+@given(instance=SecCon_MultiplicityElement_strategy)
+def test_seccon_multiplicityelement_upper_setter(instance):
+    original = instance.upper
+    instance.upper = original
+    assert instance.upper == original
 
 
-@given(instance=SecCon::MultiplicityElement_strategy)
-def test_seccon::multiplicityelement_isUnique_setter(instance):
-    original = instance.isUnique
-    instance.isUnique = original
-    assert instance.isUnique == original
 
-@given(instance=SecCon::MultiplicityElement_strategy)
-def test_seccon::multiplicityelement_isOrdered_type(instance):
-    assert isinstance(instance.isOrdered, bool)
-
-
-@given(instance=SecCon::MultiplicityElement_strategy)
-def test_seccon::multiplicityelement_isOrdered_setter(instance):
+@given(instance=SecCon_MultiplicityElement_strategy)
+def test_seccon_multiplicityelement_isOrdered_setter(instance):
     original = instance.isOrdered
     instance.isOrdered = original
     assert instance.isOrdered == original
 
-@given(instance=SecCon::MultiplicityElement_strategy)
-def test_seccon::multiplicityelement_upper_type(instance):
-    assert isinstance(instance.upper, str)
 
 
-@given(instance=SecCon::MultiplicityElement_strategy)
-def test_seccon::multiplicityelement_upper_setter(instance):
-    original = instance.upper
-    instance.upper = original
-    assert instance.upper == original
+@given(instance=SecCon_MultiplicityElement_strategy)
+def test_seccon_multiplicityelement_lower_setter(instance):
+    original = instance.lower
+    instance.lower = original
+    assert instance.lower == original
+
+
+
+@given(instance=SecCon_MultiplicityElement_strategy)
+def test_seccon_multiplicityelement_isUnique_setter(instance):
+    original = instance.isUnique
+    instance.isUnique = original
+    assert instance.isUnique == original
 
 @given(instance=NamedElement_strategy)
 @settings(max_examples=50)
 def test_namedelement_instantiation(instance):
     assert isinstance(instance, NamedElement)
 
-@given(instance=SecCon::StateOperation_strategy)
+@given(instance=SecCon_Event_strategy)
 @settings(max_examples=50)
-def test_seccon::stateoperation_instantiation(instance):
-    assert isinstance(instance, SecCon::StateOperation)
+def test_seccon_event_instantiation(instance):
+    assert isinstance(instance, SecCon_Event)
 
-@given(instance=SecCon::Actor_strategy)
+@given(instance=SecCon_StateVertex_strategy)
 @settings(max_examples=50)
-def test_seccon::actor_instantiation(instance):
-    assert isinstance(instance, SecCon::Actor)
+def test_seccon_statevertex_instantiation(instance):
+    assert isinstance(instance, SecCon_StateVertex)
 
-@given(instance=SecCon::Transition_strategy)
+@given(instance=SecCon_UseCaseScenario_strategy)
 @settings(max_examples=50)
-def test_seccon::transition_instantiation(instance):
-    assert isinstance(instance, SecCon::Transition)
+def test_seccon_usecasescenario_instantiation(instance):
+    assert isinstance(instance, SecCon_UseCaseScenario)
 
-@given(instance=SecCon::StateVertex_strategy)
+
+
+@given(instance=SecCon_UseCaseScenario_strategy)
+def test_seccon_usecasescenario_version_setter(instance):
+    original = instance.version
+    instance.version = original
+    assert instance.version == original
+
+
+
+@given(instance=SecCon_UseCaseScenario_strategy)
+def test_seccon_usecasescenario_author_setter(instance):
+    original = instance.author
+    instance.author = original
+    assert instance.author == original
+
+@given(instance=SecCon_Package_strategy)
 @settings(max_examples=50)
-def test_seccon::statevertex_instantiation(instance):
-    assert isinstance(instance, SecCon::StateVertex)
+def test_seccon_package_instantiation(instance):
+    assert isinstance(instance, SecCon_Package)
 
-@given(instance=SecCon::UseCase_strategy)
+@given(instance=SecCon_Type_strategy)
 @settings(max_examples=50)
-def test_seccon::usecase_instantiation(instance):
-    assert isinstance(instance, SecCon::UseCase)
+def test_seccon_type_instantiation(instance):
+    assert isinstance(instance, SecCon_Type)
 
-@given(instance=SecCon::UseCase_strategy)
-def test_seccon::usecase_preCondition_type(instance):
-    assert isinstance(instance.preCondition, str)
-
-
-@given(instance=SecCon::UseCase_strategy)
-def test_seccon::usecase_preCondition_setter(instance):
-    original = instance.preCondition
-    instance.preCondition = original
-    assert instance.preCondition == original
-
-@given(instance=SecCon::UseCase_strategy)
-def test_seccon::usecase_description_type(instance):
-    assert isinstance(instance.description, str)
+@given(instance=SecCon_UseCase_strategy)
+@settings(max_examples=50)
+def test_seccon_usecase_instantiation(instance):
+    assert isinstance(instance, SecCon_UseCase)
 
 
-@given(instance=SecCon::UseCase_strategy)
-def test_seccon::usecase_description_setter(instance):
+
+@given(instance=SecCon_UseCase_strategy)
+def test_seccon_usecase_description_setter(instance):
     original = instance.description
     instance.description = original
     assert instance.description == original
 
-@given(instance=SecCon::Package_strategy)
+
+
+@given(instance=SecCon_UseCase_strategy)
+def test_seccon_usecase_preCondition_setter(instance):
+    original = instance.preCondition
+    instance.preCondition = original
+    assert instance.preCondition == original
+
+@given(instance=SecCon_Project_strategy)
 @settings(max_examples=50)
-def test_seccon::package_instantiation(instance):
-    assert isinstance(instance, SecCon::Package)
+def test_seccon_project_instantiation(instance):
+    assert isinstance(instance, SecCon_Project)
 
-@given(instance=SecCon::EnumerationLiteral_strategy)
+@given(instance=SecCon_StateMachineScenario_strategy)
 @settings(max_examples=50)
-def test_seccon::enumerationliteral_instantiation(instance):
-    assert isinstance(instance, SecCon::EnumerationLiteral)
-
-@given(instance=SecCon::Event_strategy)
-@settings(max_examples=50)
-def test_seccon::event_instantiation(instance):
-    assert isinstance(instance, SecCon::Event)
-
-@given(instance=SecCon::UseCaseScenario_strategy)
-@settings(max_examples=50)
-def test_seccon::usecasescenario_instantiation(instance):
-    assert isinstance(instance, SecCon::UseCaseScenario)
-
-@given(instance=SecCon::UseCaseScenario_strategy)
-def test_seccon::usecasescenario_version_type(instance):
-    assert isinstance(instance.version, str)
+def test_seccon_statemachinescenario_instantiation(instance):
+    assert isinstance(instance, SecCon_StateMachineScenario)
 
 
-@given(instance=SecCon::UseCaseScenario_strategy)
-def test_seccon::usecasescenario_version_setter(instance):
-    original = instance.version
-    instance.version = original
-    assert instance.version == original
 
-@given(instance=SecCon::UseCaseScenario_strategy)
-def test_seccon::usecasescenario_author_type(instance):
-    assert isinstance(instance.author, str)
-
-
-@given(instance=SecCon::UseCaseScenario_strategy)
-def test_seccon::usecasescenario_author_setter(instance):
+@given(instance=SecCon_StateMachineScenario_strategy)
+def test_seccon_statemachinescenario_author_setter(instance):
     original = instance.author
     instance.author = original
     assert instance.author == original
 
-@given(instance=SecCon::StateMachineScenario_strategy)
-@settings(max_examples=50)
-def test_seccon::statemachinescenario_instantiation(instance):
-    assert isinstance(instance, SecCon::StateMachineScenario)
-
-@given(instance=SecCon::StateMachineScenario_strategy)
-def test_seccon::statemachinescenario_author_type(instance):
-    assert isinstance(instance.author, str)
 
 
-@given(instance=SecCon::StateMachineScenario_strategy)
-def test_seccon::statemachinescenario_author_setter(instance):
-    original = instance.author
-    instance.author = original
-    assert instance.author == original
-
-@given(instance=SecCon::StateMachineScenario_strategy)
-def test_seccon::statemachinescenario_version_type(instance):
-    assert isinstance(instance.version, str)
-
-
-@given(instance=SecCon::StateMachineScenario_strategy)
-def test_seccon::statemachinescenario_version_setter(instance):
+@given(instance=SecCon_StateMachineScenario_strategy)
+def test_seccon_statemachinescenario_version_setter(instance):
     original = instance.version
     instance.version = original
     assert instance.version == original
 
-@given(instance=SecCon::Project_strategy)
+@given(instance=SecCon_StateOperation_strategy)
 @settings(max_examples=50)
-def test_seccon::project_instantiation(instance):
-    assert isinstance(instance, SecCon::Project)
+def test_seccon_stateoperation_instantiation(instance):
+    assert isinstance(instance, SecCon_StateOperation)
 
-@given(instance=SecCon::Type_strategy)
+@given(instance=SecCon_EnumerationLiteral_strategy)
 @settings(max_examples=50)
-def test_seccon::type_instantiation(instance):
-    assert isinstance(instance, SecCon::Type)
+def test_seccon_enumerationliteral_instantiation(instance):
+    assert isinstance(instance, SecCon_EnumerationLiteral)
 
-@given(instance=SecCon::TypedElement_strategy)
+@given(instance=SecCon_Actor_strategy)
 @settings(max_examples=50)
-def test_seccon::typedelement_instantiation(instance):
-    assert isinstance(instance, SecCon::TypedElement)
+def test_seccon_actor_instantiation(instance):
+    assert isinstance(instance, SecCon_Actor)
 
-@given(instance=SecCon::Comment_strategy)
+@given(instance=SecCon_Transition_strategy)
 @settings(max_examples=50)
-def test_seccon::comment_instantiation(instance):
-    assert isinstance(instance, SecCon::Comment)
+def test_seccon_transition_instantiation(instance):
+    assert isinstance(instance, SecCon_Transition)
 
-@given(instance=SecCon::Comment_strategy)
-def test_seccon::comment_body_type(instance):
-    assert isinstance(instance.body, str)
+@given(instance=SecCon_TypedElement_strategy)
+@settings(max_examples=50)
+def test_seccon_typedelement_instantiation(instance):
+    assert isinstance(instance, SecCon_TypedElement)
+
+@given(instance=SecCon_Comment_strategy)
+@settings(max_examples=50)
+def test_seccon_comment_instantiation(instance):
+    assert isinstance(instance, SecCon_Comment)
 
 
-@given(instance=SecCon::Comment_strategy)
-def test_seccon::comment_body_setter(instance):
+
+@given(instance=SecCon_Comment_strategy)
+def test_seccon_comment_body_setter(instance):
     original = instance.body
     instance.body = original
     assert instance.body == original
 
-@given(instance=SecCon::Element_strategy)
+@given(instance=SecCon_Element_strategy)
 @settings(max_examples=50)
-def test_seccon::element_instantiation(instance):
-    assert isinstance(instance, SecCon::Element)
+def test_seccon_element_instantiation(instance):
+    assert isinstance(instance, SecCon_Element)

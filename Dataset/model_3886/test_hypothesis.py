@@ -3,22 +3,22 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     Expression,
-    B::If,
-    B::Begin,
-    B::Skip,
-    B::VariableList,
-    B::Expression,
-    B::Action,
-    B::Variable,
-    B::Predicate,
-    B::Operation,
-    B::SET,
-    B::Any,
-    B::Machine,
+    B_Begin,
+    B_If,
+    B_Skip,
+    B_VariableList,
+    B_Expression,
+    B_Action,
+    B_Variable,
+    B_Predicate,
+    B_Operation,
+    B_SET,
+    B_Any,
+    B_Machine,
 )
 
 # =============================================================================
@@ -41,65 +41,65 @@ def test_expression_constructor_args():
 
 
 
-def test_b::if_is_not_abstract():
-    assert not inspect.isabstract(B::If)
+def test_b_begin_is_not_abstract():
+    assert not inspect.isabstract(B_Begin)
 
 
-def test_b::if_constructor_exists():
-    assert callable(B::If.__init__)
+def test_b_begin_constructor_exists():
+    assert callable(B_Begin.__init__)
 
 
-def test_b::if_constructor_args():
-    sig = inspect.signature(B::If.__init__)
+def test_b_begin_constructor_args():
+    sig = inspect.signature(B_Begin.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_b::begin_is_not_abstract():
-    assert not inspect.isabstract(B::Begin)
+def test_b_if_is_not_abstract():
+    assert not inspect.isabstract(B_If)
 
 
-def test_b::begin_constructor_exists():
-    assert callable(B::Begin.__init__)
+def test_b_if_constructor_exists():
+    assert callable(B_If.__init__)
 
 
-def test_b::begin_constructor_args():
-    sig = inspect.signature(B::Begin.__init__)
+def test_b_if_constructor_args():
+    sig = inspect.signature(B_If.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_b::skip_is_not_abstract():
-    assert not inspect.isabstract(B::Skip)
+def test_b_skip_is_not_abstract():
+    assert not inspect.isabstract(B_Skip)
 
 
-def test_b::skip_constructor_exists():
-    assert callable(B::Skip.__init__)
+def test_b_skip_constructor_exists():
+    assert callable(B_Skip.__init__)
 
 
-def test_b::skip_constructor_args():
-    sig = inspect.signature(B::Skip.__init__)
+def test_b_skip_constructor_args():
+    sig = inspect.signature(B_Skip.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_b::variablelist_is_not_abstract():
-    assert not inspect.isabstract(B::VariableList)
+def test_b_variablelist_is_not_abstract():
+    assert not inspect.isabstract(B_VariableList)
 
 
-def test_b::variablelist_constructor_exists():
-    assert callable(B::VariableList.__init__)
+def test_b_variablelist_constructor_exists():
+    assert callable(B_VariableList.__init__)
 
 
-def test_b::variablelist_constructor_args():
-    sig = inspect.signature(B::VariableList.__init__)
+def test_b_variablelist_constructor_args():
+    sig = inspect.signature(B_VariableList.__init__)
     params = list(sig.parameters.keys())
     assert "size" in params, "Missing parameter 'size'"
 
-def test_b::variablelist_has_size():
-    assert hasattr(B::VariableList, "size")
+def test_b_variablelist_has_size():
+    assert hasattr(B_VariableList, "size")
     descriptor = None
-    for klass in B::VariableList.__mro__:
+    for klass in B_VariableList.__mro__:
         if "size" in klass.__dict__:
             descriptor = klass.__dict__["size"]
             break
@@ -107,23 +107,23 @@ def test_b::variablelist_has_size():
 
 
 
-def test_b::expression_is_not_abstract():
-    assert not inspect.isabstract(B::Expression)
+def test_b_expression_is_not_abstract():
+    assert not inspect.isabstract(B_Expression)
 
 
-def test_b::expression_constructor_exists():
-    assert callable(B::Expression.__init__)
+def test_b_expression_constructor_exists():
+    assert callable(B_Expression.__init__)
 
 
-def test_b::expression_constructor_args():
-    sig = inspect.signature(B::Expression.__init__)
+def test_b_expression_constructor_args():
+    sig = inspect.signature(B_Expression.__init__)
     params = list(sig.parameters.keys())
     assert "expression" in params, "Missing parameter 'expression'"
 
-def test_b::expression_has_expression():
-    assert hasattr(B::Expression, "expression")
+def test_b_expression_has_expression():
+    assert hasattr(B_Expression, "expression")
     descriptor = None
-    for klass in B::Expression.__mro__:
+    for klass in B_Expression.__mro__:
         if "expression" in klass.__dict__:
             descriptor = klass.__dict__["expression"]
             break
@@ -131,37 +131,37 @@ def test_b::expression_has_expression():
 
 
 
-def test_b::action_is_not_abstract():
-    assert not inspect.isabstract(B::Action)
+def test_b_action_is_not_abstract():
+    assert not inspect.isabstract(B_Action)
 
 
-def test_b::action_constructor_exists():
-    assert callable(B::Action.__init__)
+def test_b_action_constructor_exists():
+    assert callable(B_Action.__init__)
 
 
-def test_b::action_constructor_args():
-    sig = inspect.signature(B::Action.__init__)
+def test_b_action_constructor_args():
+    sig = inspect.signature(B_Action.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_b::variable_is_not_abstract():
-    assert not inspect.isabstract(B::Variable)
+def test_b_variable_is_not_abstract():
+    assert not inspect.isabstract(B_Variable)
 
 
-def test_b::variable_constructor_exists():
-    assert callable(B::Variable.__init__)
+def test_b_variable_constructor_exists():
+    assert callable(B_Variable.__init__)
 
 
-def test_b::variable_constructor_args():
-    sig = inspect.signature(B::Variable.__init__)
+def test_b_variable_constructor_args():
+    sig = inspect.signature(B_Variable.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_b::variable_has_name():
-    assert hasattr(B::Variable, "name")
+def test_b_variable_has_name():
+    assert hasattr(B_Variable, "name")
     descriptor = None
-    for klass in B::Variable.__mro__:
+    for klass in B_Variable.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -169,37 +169,37 @@ def test_b::variable_has_name():
 
 
 
-def test_b::predicate_is_not_abstract():
-    assert not inspect.isabstract(B::Predicate)
+def test_b_predicate_is_not_abstract():
+    assert not inspect.isabstract(B_Predicate)
 
 
-def test_b::predicate_constructor_exists():
-    assert callable(B::Predicate.__init__)
+def test_b_predicate_constructor_exists():
+    assert callable(B_Predicate.__init__)
 
 
-def test_b::predicate_constructor_args():
-    sig = inspect.signature(B::Predicate.__init__)
+def test_b_predicate_constructor_args():
+    sig = inspect.signature(B_Predicate.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_b::operation_is_not_abstract():
-    assert not inspect.isabstract(B::Operation)
+def test_b_operation_is_not_abstract():
+    assert not inspect.isabstract(B_Operation)
 
 
-def test_b::operation_constructor_exists():
-    assert callable(B::Operation.__init__)
+def test_b_operation_constructor_exists():
+    assert callable(B_Operation.__init__)
 
 
-def test_b::operation_constructor_args():
-    sig = inspect.signature(B::Operation.__init__)
+def test_b_operation_constructor_args():
+    sig = inspect.signature(B_Operation.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_b::operation_has_name():
-    assert hasattr(B::Operation, "name")
+def test_b_operation_has_name():
+    assert hasattr(B_Operation, "name")
     descriptor = None
-    for klass in B::Operation.__mro__:
+    for klass in B_Operation.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -207,23 +207,23 @@ def test_b::operation_has_name():
 
 
 
-def test_b::set_is_not_abstract():
-    assert not inspect.isabstract(B::SET)
+def test_b_set_is_not_abstract():
+    assert not inspect.isabstract(B_SET)
 
 
-def test_b::set_constructor_exists():
-    assert callable(B::SET.__init__)
+def test_b_set_constructor_exists():
+    assert callable(B_SET.__init__)
 
 
-def test_b::set_constructor_args():
-    sig = inspect.signature(B::SET.__init__)
+def test_b_set_constructor_args():
+    sig = inspect.signature(B_SET.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_b::set_has_name():
-    assert hasattr(B::SET, "name")
+def test_b_set_has_name():
+    assert hasattr(B_SET, "name")
     descriptor = None
-    for klass in B::SET.__mro__:
+    for klass in B_SET.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -231,37 +231,37 @@ def test_b::set_has_name():
 
 
 
-def test_b::any_is_not_abstract():
-    assert not inspect.isabstract(B::Any)
+def test_b_any_is_not_abstract():
+    assert not inspect.isabstract(B_Any)
 
 
-def test_b::any_constructor_exists():
-    assert callable(B::Any.__init__)
+def test_b_any_constructor_exists():
+    assert callable(B_Any.__init__)
 
 
-def test_b::any_constructor_args():
-    sig = inspect.signature(B::Any.__init__)
+def test_b_any_constructor_args():
+    sig = inspect.signature(B_Any.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_b::machine_is_not_abstract():
-    assert not inspect.isabstract(B::Machine)
+def test_b_machine_is_not_abstract():
+    assert not inspect.isabstract(B_Machine)
 
 
-def test_b::machine_constructor_exists():
-    assert callable(B::Machine.__init__)
+def test_b_machine_constructor_exists():
+    assert callable(B_Machine.__init__)
 
 
-def test_b::machine_constructor_args():
-    sig = inspect.signature(B::Machine.__init__)
+def test_b_machine_constructor_args():
+    sig = inspect.signature(B_Machine.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_b::machine_has_name():
-    assert hasattr(B::Machine, "name")
+def test_b_machine_has_name():
+    assert hasattr(B_Machine, "name")
     descriptor = None
-    for klass in B::Machine.__mro__:
+    for klass in B_Machine.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -282,51 +282,51 @@ safe_text = st.text(
 Expression_strategy = st.builds(
     Expression,
 )
-B::If_strategy = st.builds(
-    B::If,
+B_Begin_strategy = st.builds(
+    B_Begin,
 )
-B::Begin_strategy = st.builds(
-    B::Begin,
+B_If_strategy = st.builds(
+    B_If,
 )
-B::Skip_strategy = st.builds(
-    B::Skip,
+B_Skip_strategy = st.builds(
+    B_Skip,
 )
-B::VariableList_strategy = st.builds(
-    B::VariableList,
+B_VariableList_strategy = st.builds(
+    B_VariableList,
     size=
         safe_text
 )
-B::Expression_strategy = st.builds(
-    B::Expression,
+B_Expression_strategy = st.builds(
+    B_Expression,
     expression=
         safe_text
 )
-B::Action_strategy = st.builds(
-    B::Action,
+B_Action_strategy = st.builds(
+    B_Action,
 )
-B::Variable_strategy = st.builds(
-    B::Variable,
+B_Variable_strategy = st.builds(
+    B_Variable,
     name=
         safe_text
 )
-B::Predicate_strategy = st.builds(
-    B::Predicate,
+B_Predicate_strategy = st.builds(
+    B_Predicate,
 )
-B::Operation_strategy = st.builds(
-    B::Operation,
+B_Operation_strategy = st.builds(
+    B_Operation,
     name=
         safe_text
 )
-B::SET_strategy = st.builds(
-    B::SET,
+B_SET_strategy = st.builds(
+    B_SET,
     name=
         safe_text
 )
-B::Any_strategy = st.builds(
-    B::Any,
+B_Any_strategy = st.builds(
+    B_Any,
 )
-B::Machine_strategy = st.builds(
-    B::Machine,
+B_Machine_strategy = st.builds(
+    B_Machine,
     name=
         safe_text
 )
@@ -336,128 +336,110 @@ B::Machine_strategy = st.builds(
 def test_expression_instantiation(instance):
     assert isinstance(instance, Expression)
 
-@given(instance=B::If_strategy)
+@given(instance=B_Begin_strategy)
 @settings(max_examples=50)
-def test_b::if_instantiation(instance):
-    assert isinstance(instance, B::If)
+def test_b_begin_instantiation(instance):
+    assert isinstance(instance, B_Begin)
 
-@given(instance=B::Begin_strategy)
+@given(instance=B_If_strategy)
 @settings(max_examples=50)
-def test_b::begin_instantiation(instance):
-    assert isinstance(instance, B::Begin)
+def test_b_if_instantiation(instance):
+    assert isinstance(instance, B_If)
 
-@given(instance=B::Skip_strategy)
+@given(instance=B_Skip_strategy)
 @settings(max_examples=50)
-def test_b::skip_instantiation(instance):
-    assert isinstance(instance, B::Skip)
+def test_b_skip_instantiation(instance):
+    assert isinstance(instance, B_Skip)
 
-@given(instance=B::VariableList_strategy)
+@given(instance=B_VariableList_strategy)
 @settings(max_examples=50)
-def test_b::variablelist_instantiation(instance):
-    assert isinstance(instance, B::VariableList)
-
-@given(instance=B::VariableList_strategy)
-def test_b::variablelist_size_type(instance):
-    assert isinstance(instance.size, str)
+def test_b_variablelist_instantiation(instance):
+    assert isinstance(instance, B_VariableList)
 
 
-@given(instance=B::VariableList_strategy)
-def test_b::variablelist_size_setter(instance):
+
+@given(instance=B_VariableList_strategy)
+def test_b_variablelist_size_setter(instance):
     original = instance.size
     instance.size = original
     assert instance.size == original
 
-@given(instance=B::Expression_strategy)
+@given(instance=B_Expression_strategy)
 @settings(max_examples=50)
-def test_b::expression_instantiation(instance):
-    assert isinstance(instance, B::Expression)
-
-@given(instance=B::Expression_strategy)
-def test_b::expression_expression_type(instance):
-    assert isinstance(instance.expression, str)
+def test_b_expression_instantiation(instance):
+    assert isinstance(instance, B_Expression)
 
 
-@given(instance=B::Expression_strategy)
-def test_b::expression_expression_setter(instance):
+
+@given(instance=B_Expression_strategy)
+def test_b_expression_expression_setter(instance):
     original = instance.expression
     instance.expression = original
     assert instance.expression == original
 
-@given(instance=B::Action_strategy)
+@given(instance=B_Action_strategy)
 @settings(max_examples=50)
-def test_b::action_instantiation(instance):
-    assert isinstance(instance, B::Action)
+def test_b_action_instantiation(instance):
+    assert isinstance(instance, B_Action)
 
-@given(instance=B::Variable_strategy)
+@given(instance=B_Variable_strategy)
 @settings(max_examples=50)
-def test_b::variable_instantiation(instance):
-    assert isinstance(instance, B::Variable)
-
-@given(instance=B::Variable_strategy)
-def test_b::variable_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_b_variable_instantiation(instance):
+    assert isinstance(instance, B_Variable)
 
 
-@given(instance=B::Variable_strategy)
-def test_b::variable_name_setter(instance):
+
+@given(instance=B_Variable_strategy)
+def test_b_variable_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=B::Predicate_strategy)
+@given(instance=B_Predicate_strategy)
 @settings(max_examples=50)
-def test_b::predicate_instantiation(instance):
-    assert isinstance(instance, B::Predicate)
+def test_b_predicate_instantiation(instance):
+    assert isinstance(instance, B_Predicate)
 
-@given(instance=B::Operation_strategy)
+@given(instance=B_Operation_strategy)
 @settings(max_examples=50)
-def test_b::operation_instantiation(instance):
-    assert isinstance(instance, B::Operation)
-
-@given(instance=B::Operation_strategy)
-def test_b::operation_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_b_operation_instantiation(instance):
+    assert isinstance(instance, B_Operation)
 
 
-@given(instance=B::Operation_strategy)
-def test_b::operation_name_setter(instance):
+
+@given(instance=B_Operation_strategy)
+def test_b_operation_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=B::SET_strategy)
+@given(instance=B_SET_strategy)
 @settings(max_examples=50)
-def test_b::set_instantiation(instance):
-    assert isinstance(instance, B::SET)
-
-@given(instance=B::SET_strategy)
-def test_b::set_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_b_set_instantiation(instance):
+    assert isinstance(instance, B_SET)
 
 
-@given(instance=B::SET_strategy)
-def test_b::set_name_setter(instance):
+
+@given(instance=B_SET_strategy)
+def test_b_set_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=B::Any_strategy)
+@given(instance=B_Any_strategy)
 @settings(max_examples=50)
-def test_b::any_instantiation(instance):
-    assert isinstance(instance, B::Any)
+def test_b_any_instantiation(instance):
+    assert isinstance(instance, B_Any)
 
-@given(instance=B::Machine_strategy)
+@given(instance=B_Machine_strategy)
 @settings(max_examples=50)
-def test_b::machine_instantiation(instance):
-    assert isinstance(instance, B::Machine)
-
-@given(instance=B::Machine_strategy)
-def test_b::machine_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_b_machine_instantiation(instance):
+    assert isinstance(instance, B_Machine)
 
 
-@given(instance=B::Machine_strategy)
-def test_b::machine_name_setter(instance):
+
+@given(instance=B_Machine_strategy)
+def test_b_machine_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original

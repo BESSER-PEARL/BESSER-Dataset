@@ -3,29 +3,29 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    AbstractCondition,
-    statemachine::AttributeCondition,
-    statemachine::FieldCondition,
-    statemachine::AbstractCondition,
-    statemachine::StateAttribute,
-    statemachine::StateValue,
-    AbstractTransition,
-    statemachine::Transition,
+from python_code import (
     AbstractState,
-    statemachine::FinalState,
-    statemachine::State,
-    statemachine::ConditionalState,
-    statemachine::InitialState,
-    statemachine::StateChange,
-    statemachine::Named,
+    statemachine_State,
+    statemachine_FinalState,
+    statemachine_InitialState,
+    statemachine_StateChange,
+    statemachine_Named,
     Named,
-    statemachine::AbstractTransition,
-    statemachine::AbstractState,
-    statemachine::Statemachine,
-    statemachine::ConditionalTransition,
+    statemachine_AbstractState,
+    statemachine_AbstractTransition,
+    statemachine_Statemachine,
+    AbstractCondition,
+    statemachine_AttributeCondition,
+    statemachine_FieldCondition,
+    statemachine_AbstractCondition,
+    statemachine_ConditionalState,
+    statemachine_StateAttribute,
+    statemachine_StateValue,
+    AbstractTransition,
+    statemachine_Transition,
+    statemachine_ConditionalTransition,
     StateAttributeType,
     StateValueType,
 )
@@ -33,178 +33,6 @@ from classes import (
 # =============================================================================
 # SECTION 1 — STRUCTURAL TESTS
 # =============================================================================
-
-
-
-def test_abstractcondition_is_not_abstract():
-    assert not inspect.isabstract(AbstractCondition)
-
-
-def test_abstractcondition_constructor_exists():
-    assert callable(AbstractCondition.__init__)
-
-
-def test_abstractcondition_constructor_args():
-    sig = inspect.signature(AbstractCondition.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_statemachine::attributecondition_is_not_abstract():
-    assert not inspect.isabstract(statemachine::AttributeCondition)
-
-
-def test_statemachine::attributecondition_constructor_exists():
-    assert callable(statemachine::AttributeCondition.__init__)
-
-
-def test_statemachine::attributecondition_constructor_args():
-    sig = inspect.signature(statemachine::AttributeCondition.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_statemachine::fieldcondition_is_not_abstract():
-    assert not inspect.isabstract(statemachine::FieldCondition)
-
-
-def test_statemachine::fieldcondition_constructor_exists():
-    assert callable(statemachine::FieldCondition.__init__)
-
-
-def test_statemachine::fieldcondition_constructor_args():
-    sig = inspect.signature(statemachine::FieldCondition.__init__)
-    params = list(sig.parameters.keys())
-    assert "fieldName" in params, "Missing parameter 'fieldName'"
-
-def test_statemachine::fieldcondition_has_fieldName():
-    assert hasattr(statemachine::FieldCondition, "fieldName")
-    descriptor = None
-    for klass in statemachine::FieldCondition.__mro__:
-        if "fieldName" in klass.__dict__:
-            descriptor = klass.__dict__["fieldName"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_statemachine::abstractcondition_is_not_abstract():
-    assert not inspect.isabstract(statemachine::AbstractCondition)
-
-
-def test_statemachine::abstractcondition_constructor_exists():
-    assert callable(statemachine::AbstractCondition.__init__)
-
-
-def test_statemachine::abstractcondition_constructor_args():
-    sig = inspect.signature(statemachine::AbstractCondition.__init__)
-    params = list(sig.parameters.keys())
-    assert "isNotCondition" in params, "Missing parameter 'isNotCondition'"
-
-def test_statemachine::abstractcondition_has_isNotCondition():
-    assert hasattr(statemachine::AbstractCondition, "isNotCondition")
-    descriptor = None
-    for klass in statemachine::AbstractCondition.__mro__:
-        if "isNotCondition" in klass.__dict__:
-            descriptor = klass.__dict__["isNotCondition"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_statemachine::stateattribute_is_not_abstract():
-    assert not inspect.isabstract(statemachine::StateAttribute)
-
-
-def test_statemachine::stateattribute_constructor_exists():
-    assert callable(statemachine::StateAttribute.__init__)
-
-
-def test_statemachine::stateattribute_constructor_args():
-    sig = inspect.signature(statemachine::StateAttribute.__init__)
-    params = list(sig.parameters.keys())
-    assert "type" in params, "Missing parameter 'type'"
-    assert "value" in params, "Missing parameter 'value'"
-
-def test_statemachine::stateattribute_has_type():
-    assert hasattr(statemachine::StateAttribute, "type")
-    descriptor = None
-    for klass in statemachine::StateAttribute.__mro__:
-        if "type" in klass.__dict__:
-            descriptor = klass.__dict__["type"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_statemachine::stateattribute_has_value():
-    assert hasattr(statemachine::StateAttribute, "value")
-    descriptor = None
-    for klass in statemachine::StateAttribute.__mro__:
-        if "value" in klass.__dict__:
-            descriptor = klass.__dict__["value"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_statemachine::statevalue_is_not_abstract():
-    assert not inspect.isabstract(statemachine::StateValue)
-
-
-def test_statemachine::statevalue_constructor_exists():
-    assert callable(statemachine::StateValue.__init__)
-
-
-def test_statemachine::statevalue_constructor_args():
-    sig = inspect.signature(statemachine::StateValue.__init__)
-    params = list(sig.parameters.keys())
-    assert "type" in params, "Missing parameter 'type'"
-    assert "value" in params, "Missing parameter 'value'"
-
-def test_statemachine::statevalue_has_type():
-    assert hasattr(statemachine::StateValue, "type")
-    descriptor = None
-    for klass in statemachine::StateValue.__mro__:
-        if "type" in klass.__dict__:
-            descriptor = klass.__dict__["type"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_statemachine::statevalue_has_value():
-    assert hasattr(statemachine::StateValue, "value")
-    descriptor = None
-    for klass in statemachine::StateValue.__mro__:
-        if "value" in klass.__dict__:
-            descriptor = klass.__dict__["value"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_abstracttransition_is_not_abstract():
-    assert not inspect.isabstract(AbstractTransition)
-
-
-def test_abstracttransition_constructor_exists():
-    assert callable(AbstractTransition.__init__)
-
-
-def test_abstracttransition_constructor_args():
-    sig = inspect.signature(AbstractTransition.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_statemachine::transition_is_not_abstract():
-    assert not inspect.isabstract(statemachine::Transition)
-
-
-def test_statemachine::transition_constructor_exists():
-    assert callable(statemachine::Transition.__init__)
-
-
-def test_statemachine::transition_constructor_args():
-    sig = inspect.signature(statemachine::Transition.__init__)
-    params = list(sig.parameters.keys())
 
 
 
@@ -222,37 +50,23 @@ def test_abstractstate_constructor_args():
 
 
 
-def test_statemachine::finalstate_is_not_abstract():
-    assert not inspect.isabstract(statemachine::FinalState)
+def test_statemachine_state_is_not_abstract():
+    assert not inspect.isabstract(statemachine_State)
 
 
-def test_statemachine::finalstate_constructor_exists():
-    assert callable(statemachine::FinalState.__init__)
+def test_statemachine_state_constructor_exists():
+    assert callable(statemachine_State.__init__)
 
 
-def test_statemachine::finalstate_constructor_args():
-    sig = inspect.signature(statemachine::FinalState.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_statemachine::state_is_not_abstract():
-    assert not inspect.isabstract(statemachine::State)
-
-
-def test_statemachine::state_constructor_exists():
-    assert callable(statemachine::State.__init__)
-
-
-def test_statemachine::state_constructor_args():
-    sig = inspect.signature(statemachine::State.__init__)
+def test_statemachine_state_constructor_args():
+    sig = inspect.signature(statemachine_State.__init__)
     params = list(sig.parameters.keys())
     assert "stateColor" in params, "Missing parameter 'stateColor'"
 
-def test_statemachine::state_has_stateColor():
-    assert hasattr(statemachine::State, "stateColor")
+def test_statemachine_state_has_stateColor():
+    assert hasattr(statemachine_State, "stateColor")
     descriptor = None
-    for klass in statemachine::State.__mro__:
+    for klass in statemachine_State.__mro__:
         if "stateColor" in klass.__dict__:
             descriptor = klass.__dict__["stateColor"]
             break
@@ -260,85 +74,65 @@ def test_statemachine::state_has_stateColor():
 
 
 
-def test_statemachine::conditionalstate_is_not_abstract():
-    assert not inspect.isabstract(statemachine::ConditionalState)
+def test_statemachine_finalstate_is_not_abstract():
+    assert not inspect.isabstract(statemachine_FinalState)
 
 
-def test_statemachine::conditionalstate_constructor_exists():
-    assert callable(statemachine::ConditionalState.__init__)
+def test_statemachine_finalstate_constructor_exists():
+    assert callable(statemachine_FinalState.__init__)
 
 
-def test_statemachine::conditionalstate_constructor_args():
-    sig = inspect.signature(statemachine::ConditionalState.__init__)
-    params = list(sig.parameters.keys())
-    assert "andExpression" in params, "Missing parameter 'andExpression'"
-    assert "conditionsOrganization" in params, "Missing parameter 'conditionsOrganization'"
-
-def test_statemachine::conditionalstate_has_andExpression():
-    assert hasattr(statemachine::ConditionalState, "andExpression")
-    descriptor = None
-    for klass in statemachine::ConditionalState.__mro__:
-        if "andExpression" in klass.__dict__:
-            descriptor = klass.__dict__["andExpression"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_statemachine::conditionalstate_has_conditionsOrganization():
-    assert hasattr(statemachine::ConditionalState, "conditionsOrganization")
-    descriptor = None
-    for klass in statemachine::ConditionalState.__mro__:
-        if "conditionsOrganization" in klass.__dict__:
-            descriptor = klass.__dict__["conditionsOrganization"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_statemachine::initialstate_is_not_abstract():
-    assert not inspect.isabstract(statemachine::InitialState)
-
-
-def test_statemachine::initialstate_constructor_exists():
-    assert callable(statemachine::InitialState.__init__)
-
-
-def test_statemachine::initialstate_constructor_args():
-    sig = inspect.signature(statemachine::InitialState.__init__)
+def test_statemachine_finalstate_constructor_args():
+    sig = inspect.signature(statemachine_FinalState.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_statemachine::statechange_is_not_abstract():
-    assert not inspect.isabstract(statemachine::StateChange)
+def test_statemachine_initialstate_is_not_abstract():
+    assert not inspect.isabstract(statemachine_InitialState)
 
 
-def test_statemachine::statechange_constructor_exists():
-    assert callable(statemachine::StateChange.__init__)
+def test_statemachine_initialstate_constructor_exists():
+    assert callable(statemachine_InitialState.__init__)
 
 
-def test_statemachine::statechange_constructor_args():
-    sig = inspect.signature(statemachine::StateChange.__init__)
+def test_statemachine_initialstate_constructor_args():
+    sig = inspect.signature(statemachine_InitialState.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_statemachine::named_is_not_abstract():
-    assert not inspect.isabstract(statemachine::Named)
+def test_statemachine_statechange_is_not_abstract():
+    assert not inspect.isabstract(statemachine_StateChange)
 
 
-def test_statemachine::named_constructor_exists():
-    assert callable(statemachine::Named.__init__)
+def test_statemachine_statechange_constructor_exists():
+    assert callable(statemachine_StateChange.__init__)
 
 
-def test_statemachine::named_constructor_args():
-    sig = inspect.signature(statemachine::Named.__init__)
+def test_statemachine_statechange_constructor_args():
+    sig = inspect.signature(statemachine_StateChange.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_statemachine_named_is_not_abstract():
+    assert not inspect.isabstract(statemachine_Named)
+
+
+def test_statemachine_named_constructor_exists():
+    assert callable(statemachine_Named.__init__)
+
+
+def test_statemachine_named_constructor_args():
+    sig = inspect.signature(statemachine_Named.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_statemachine::named_has_name():
-    assert hasattr(statemachine::Named, "name")
+def test_statemachine_named_has_name():
+    assert hasattr(statemachine_Named, "name")
     descriptor = None
-    for klass in statemachine::Named.__mro__:
+    for klass in statemachine_Named.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -360,61 +154,61 @@ def test_named_constructor_args():
 
 
 
-def test_statemachine::abstracttransition_is_not_abstract():
-    assert not inspect.isabstract(statemachine::AbstractTransition)
+def test_statemachine_abstractstate_is_not_abstract():
+    assert not inspect.isabstract(statemachine_AbstractState)
 
 
-def test_statemachine::abstracttransition_constructor_exists():
-    assert callable(statemachine::AbstractTransition.__init__)
+def test_statemachine_abstractstate_constructor_exists():
+    assert callable(statemachine_AbstractState.__init__)
 
 
-def test_statemachine::abstracttransition_constructor_args():
-    sig = inspect.signature(statemachine::AbstractTransition.__init__)
+def test_statemachine_abstractstate_constructor_args():
+    sig = inspect.signature(statemachine_AbstractState.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_statemachine::abstractstate_is_not_abstract():
-    assert not inspect.isabstract(statemachine::AbstractState)
+def test_statemachine_abstracttransition_is_not_abstract():
+    assert not inspect.isabstract(statemachine_AbstractTransition)
 
 
-def test_statemachine::abstractstate_constructor_exists():
-    assert callable(statemachine::AbstractState.__init__)
+def test_statemachine_abstracttransition_constructor_exists():
+    assert callable(statemachine_AbstractTransition.__init__)
 
 
-def test_statemachine::abstractstate_constructor_args():
-    sig = inspect.signature(statemachine::AbstractState.__init__)
+def test_statemachine_abstracttransition_constructor_args():
+    sig = inspect.signature(statemachine_AbstractTransition.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_statemachine::statemachine_is_not_abstract():
-    assert not inspect.isabstract(statemachine::Statemachine)
+def test_statemachine_statemachine_is_not_abstract():
+    assert not inspect.isabstract(statemachine_Statemachine)
 
 
-def test_statemachine::statemachine_constructor_exists():
-    assert callable(statemachine::Statemachine.__init__)
+def test_statemachine_statemachine_constructor_exists():
+    assert callable(statemachine_Statemachine.__init__)
 
 
-def test_statemachine::statemachine_constructor_args():
-    sig = inspect.signature(statemachine::Statemachine.__init__)
+def test_statemachine_statemachine_constructor_args():
+    sig = inspect.signature(statemachine_Statemachine.__init__)
     params = list(sig.parameters.keys())
     assert "associatedTree" in params, "Missing parameter 'associatedTree'"
     assert "associatedAttribute" in params, "Missing parameter 'associatedAttribute'"
 
-def test_statemachine::statemachine_has_associatedTree():
-    assert hasattr(statemachine::Statemachine, "associatedTree")
+def test_statemachine_statemachine_has_associatedTree():
+    assert hasattr(statemachine_Statemachine, "associatedTree")
     descriptor = None
-    for klass in statemachine::Statemachine.__mro__:
+    for klass in statemachine_Statemachine.__mro__:
         if "associatedTree" in klass.__dict__:
             descriptor = klass.__dict__["associatedTree"]
             break
     assert isinstance(descriptor, property)
 
-def test_statemachine::statemachine_has_associatedAttribute():
-    assert hasattr(statemachine::Statemachine, "associatedAttribute")
+def test_statemachine_statemachine_has_associatedAttribute():
+    assert hasattr(statemachine_Statemachine, "associatedAttribute")
     descriptor = None
-    for klass in statemachine::Statemachine.__mro__:
+    for klass in statemachine_Statemachine.__mro__:
         if "associatedAttribute" in klass.__dict__:
             descriptor = klass.__dict__["associatedAttribute"]
             break
@@ -422,16 +216,222 @@ def test_statemachine::statemachine_has_associatedAttribute():
 
 
 
-def test_statemachine::conditionaltransition_is_not_abstract():
-    assert not inspect.isabstract(statemachine::ConditionalTransition)
+def test_abstractcondition_is_not_abstract():
+    assert not inspect.isabstract(AbstractCondition)
 
 
-def test_statemachine::conditionaltransition_constructor_exists():
-    assert callable(statemachine::ConditionalTransition.__init__)
+def test_abstractcondition_constructor_exists():
+    assert callable(AbstractCondition.__init__)
 
 
-def test_statemachine::conditionaltransition_constructor_args():
-    sig = inspect.signature(statemachine::ConditionalTransition.__init__)
+def test_abstractcondition_constructor_args():
+    sig = inspect.signature(AbstractCondition.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_statemachine_attributecondition_is_not_abstract():
+    assert not inspect.isabstract(statemachine_AttributeCondition)
+
+
+def test_statemachine_attributecondition_constructor_exists():
+    assert callable(statemachine_AttributeCondition.__init__)
+
+
+def test_statemachine_attributecondition_constructor_args():
+    sig = inspect.signature(statemachine_AttributeCondition.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_statemachine_fieldcondition_is_not_abstract():
+    assert not inspect.isabstract(statemachine_FieldCondition)
+
+
+def test_statemachine_fieldcondition_constructor_exists():
+    assert callable(statemachine_FieldCondition.__init__)
+
+
+def test_statemachine_fieldcondition_constructor_args():
+    sig = inspect.signature(statemachine_FieldCondition.__init__)
+    params = list(sig.parameters.keys())
+    assert "fieldName" in params, "Missing parameter 'fieldName'"
+
+def test_statemachine_fieldcondition_has_fieldName():
+    assert hasattr(statemachine_FieldCondition, "fieldName")
+    descriptor = None
+    for klass in statemachine_FieldCondition.__mro__:
+        if "fieldName" in klass.__dict__:
+            descriptor = klass.__dict__["fieldName"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_statemachine_abstractcondition_is_not_abstract():
+    assert not inspect.isabstract(statemachine_AbstractCondition)
+
+
+def test_statemachine_abstractcondition_constructor_exists():
+    assert callable(statemachine_AbstractCondition.__init__)
+
+
+def test_statemachine_abstractcondition_constructor_args():
+    sig = inspect.signature(statemachine_AbstractCondition.__init__)
+    params = list(sig.parameters.keys())
+    assert "isNotCondition" in params, "Missing parameter 'isNotCondition'"
+
+def test_statemachine_abstractcondition_has_isNotCondition():
+    assert hasattr(statemachine_AbstractCondition, "isNotCondition")
+    descriptor = None
+    for klass in statemachine_AbstractCondition.__mro__:
+        if "isNotCondition" in klass.__dict__:
+            descriptor = klass.__dict__["isNotCondition"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_statemachine_conditionalstate_is_not_abstract():
+    assert not inspect.isabstract(statemachine_ConditionalState)
+
+
+def test_statemachine_conditionalstate_constructor_exists():
+    assert callable(statemachine_ConditionalState.__init__)
+
+
+def test_statemachine_conditionalstate_constructor_args():
+    sig = inspect.signature(statemachine_ConditionalState.__init__)
+    params = list(sig.parameters.keys())
+    assert "conditionsOrganization" in params, "Missing parameter 'conditionsOrganization'"
+    assert "andExpression" in params, "Missing parameter 'andExpression'"
+
+def test_statemachine_conditionalstate_has_conditionsOrganization():
+    assert hasattr(statemachine_ConditionalState, "conditionsOrganization")
+    descriptor = None
+    for klass in statemachine_ConditionalState.__mro__:
+        if "conditionsOrganization" in klass.__dict__:
+            descriptor = klass.__dict__["conditionsOrganization"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_statemachine_conditionalstate_has_andExpression():
+    assert hasattr(statemachine_ConditionalState, "andExpression")
+    descriptor = None
+    for klass in statemachine_ConditionalState.__mro__:
+        if "andExpression" in klass.__dict__:
+            descriptor = klass.__dict__["andExpression"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_statemachine_stateattribute_is_not_abstract():
+    assert not inspect.isabstract(statemachine_StateAttribute)
+
+
+def test_statemachine_stateattribute_constructor_exists():
+    assert callable(statemachine_StateAttribute.__init__)
+
+
+def test_statemachine_stateattribute_constructor_args():
+    sig = inspect.signature(statemachine_StateAttribute.__init__)
+    params = list(sig.parameters.keys())
+    assert "value" in params, "Missing parameter 'value'"
+    assert "type" in params, "Missing parameter 'type'"
+
+def test_statemachine_stateattribute_has_value():
+    assert hasattr(statemachine_StateAttribute, "value")
+    descriptor = None
+    for klass in statemachine_StateAttribute.__mro__:
+        if "value" in klass.__dict__:
+            descriptor = klass.__dict__["value"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_statemachine_stateattribute_has_type():
+    assert hasattr(statemachine_StateAttribute, "type")
+    descriptor = None
+    for klass in statemachine_StateAttribute.__mro__:
+        if "type" in klass.__dict__:
+            descriptor = klass.__dict__["type"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_statemachine_statevalue_is_not_abstract():
+    assert not inspect.isabstract(statemachine_StateValue)
+
+
+def test_statemachine_statevalue_constructor_exists():
+    assert callable(statemachine_StateValue.__init__)
+
+
+def test_statemachine_statevalue_constructor_args():
+    sig = inspect.signature(statemachine_StateValue.__init__)
+    params = list(sig.parameters.keys())
+    assert "type" in params, "Missing parameter 'type'"
+    assert "value" in params, "Missing parameter 'value'"
+
+def test_statemachine_statevalue_has_type():
+    assert hasattr(statemachine_StateValue, "type")
+    descriptor = None
+    for klass in statemachine_StateValue.__mro__:
+        if "type" in klass.__dict__:
+            descriptor = klass.__dict__["type"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_statemachine_statevalue_has_value():
+    assert hasattr(statemachine_StateValue, "value")
+    descriptor = None
+    for klass in statemachine_StateValue.__mro__:
+        if "value" in klass.__dict__:
+            descriptor = klass.__dict__["value"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_abstracttransition_is_not_abstract():
+    assert not inspect.isabstract(AbstractTransition)
+
+
+def test_abstracttransition_constructor_exists():
+    assert callable(AbstractTransition.__init__)
+
+
+def test_abstracttransition_constructor_args():
+    sig = inspect.signature(AbstractTransition.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_statemachine_transition_is_not_abstract():
+    assert not inspect.isabstract(statemachine_Transition)
+
+
+def test_statemachine_transition_constructor_exists():
+    assert callable(statemachine_Transition.__init__)
+
+
+def test_statemachine_transition_constructor_args():
+    sig = inspect.signature(statemachine_Transition.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_statemachine_conditionaltransition_is_not_abstract():
+    assert not inspect.isabstract(statemachine_ConditionalTransition)
+
+
+def test_statemachine_conditionaltransition_constructor_exists():
+    assert callable(statemachine_ConditionalTransition.__init__)
+
+
+def test_statemachine_conditionaltransition_constructor_args():
+    sig = inspect.signature(statemachine_ConditionalTransition.__init__)
     params = list(sig.parameters.keys())
 
 def test_stateattributetype_exists():
@@ -442,11 +442,11 @@ def test_stateattributetype_has_all_literals():
     # Collect the names of literals in this Enumeration
     enum_literals = [lit.name for lit in StateAttributeType]
     expected_literals = [
-        "null",
-        "constant",
         "query",
+        "constant",
         "eventField",
         "location",
+        "null",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
@@ -460,15 +460,15 @@ def test_statevaluetype_has_all_literals():
     # Collect the names of literals in this Enumeration
     enum_literals = [lit.name for lit in StateValueType]
     expected_literals = [
-        "definedState",
+        "string",
+        "eventField",
         "long",
         "query",
-        "int",
-        "delete",
         "null",
-        "eventField",
-        "string",
+        "int",
+        "definedState",
         "eventName",
+        "delete",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
@@ -486,31 +486,76 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
+AbstractState_strategy = st.builds(
+    AbstractState,
+)
+statemachine_State_strategy = st.builds(
+    statemachine_State,
+    stateColor=
+        safe_text
+)
+statemachine_FinalState_strategy = st.builds(
+    statemachine_FinalState,
+)
+statemachine_InitialState_strategy = st.builds(
+    statemachine_InitialState,
+)
+statemachine_StateChange_strategy = st.builds(
+    statemachine_StateChange,
+)
+statemachine_Named_strategy = st.builds(
+    statemachine_Named,
+    name=
+        safe_text
+)
+Named_strategy = st.builds(
+    Named,
+)
+statemachine_AbstractState_strategy = st.builds(
+    statemachine_AbstractState,
+)
+statemachine_AbstractTransition_strategy = st.builds(
+    statemachine_AbstractTransition,
+)
+statemachine_Statemachine_strategy = st.builds(
+    statemachine_Statemachine,
+    associatedTree=
+        safe_text,
+    associatedAttribute=
+        safe_text
+)
 AbstractCondition_strategy = st.builds(
     AbstractCondition,
 )
-statemachine::AttributeCondition_strategy = st.builds(
-    statemachine::AttributeCondition,
+statemachine_AttributeCondition_strategy = st.builds(
+    statemachine_AttributeCondition,
 )
-statemachine::FieldCondition_strategy = st.builds(
-    statemachine::FieldCondition,
+statemachine_FieldCondition_strategy = st.builds(
+    statemachine_FieldCondition,
     fieldName=
         safe_text
 )
-statemachine::AbstractCondition_strategy = st.builds(
-    statemachine::AbstractCondition,
+statemachine_AbstractCondition_strategy = st.builds(
+    statemachine_AbstractCondition,
     isNotCondition=
         st.booleans()
 )
-statemachine::StateAttribute_strategy = st.builds(
-    statemachine::StateAttribute,
-    type=
+statemachine_ConditionalState_strategy = st.builds(
+    statemachine_ConditionalState,
+    conditionsOrganization=
         safe_text,
+    andExpression=
+        st.booleans()
+)
+statemachine_StateAttribute_strategy = st.builds(
+    statemachine_StateAttribute,
     value=
+        safe_text,
+    type=
         safe_text
 )
-statemachine::StateValue_strategy = st.builds(
-    statemachine::StateValue,
+statemachine_StateValue_strategy = st.builds(
+    statemachine_StateValue,
     type=
         safe_text,
     value=
@@ -519,239 +564,55 @@ statemachine::StateValue_strategy = st.builds(
 AbstractTransition_strategy = st.builds(
     AbstractTransition,
 )
-statemachine::Transition_strategy = st.builds(
-    statemachine::Transition,
+statemachine_Transition_strategy = st.builds(
+    statemachine_Transition,
 )
-AbstractState_strategy = st.builds(
-    AbstractState,
+statemachine_ConditionalTransition_strategy = st.builds(
+    statemachine_ConditionalTransition,
 )
-statemachine::FinalState_strategy = st.builds(
-    statemachine::FinalState,
-)
-statemachine::State_strategy = st.builds(
-    statemachine::State,
-    stateColor=
-        safe_text
-)
-statemachine::ConditionalState_strategy = st.builds(
-    statemachine::ConditionalState,
-    andExpression=
-        st.booleans(),
-    conditionsOrganization=
-        safe_text
-)
-statemachine::InitialState_strategy = st.builds(
-    statemachine::InitialState,
-)
-statemachine::StateChange_strategy = st.builds(
-    statemachine::StateChange,
-)
-statemachine::Named_strategy = st.builds(
-    statemachine::Named,
-    name=
-        safe_text
-)
-Named_strategy = st.builds(
-    Named,
-)
-statemachine::AbstractTransition_strategy = st.builds(
-    statemachine::AbstractTransition,
-)
-statemachine::AbstractState_strategy = st.builds(
-    statemachine::AbstractState,
-)
-statemachine::Statemachine_strategy = st.builds(
-    statemachine::Statemachine,
-    associatedTree=
-        safe_text,
-    associatedAttribute=
-        safe_text
-)
-statemachine::ConditionalTransition_strategy = st.builds(
-    statemachine::ConditionalTransition,
-)
-
-@given(instance=AbstractCondition_strategy)
-@settings(max_examples=50)
-def test_abstractcondition_instantiation(instance):
-    assert isinstance(instance, AbstractCondition)
-
-@given(instance=statemachine::AttributeCondition_strategy)
-@settings(max_examples=50)
-def test_statemachine::attributecondition_instantiation(instance):
-    assert isinstance(instance, statemachine::AttributeCondition)
-
-@given(instance=statemachine::FieldCondition_strategy)
-@settings(max_examples=50)
-def test_statemachine::fieldcondition_instantiation(instance):
-    assert isinstance(instance, statemachine::FieldCondition)
-
-@given(instance=statemachine::FieldCondition_strategy)
-def test_statemachine::fieldcondition_fieldName_type(instance):
-    assert isinstance(instance.fieldName, str)
-
-
-@given(instance=statemachine::FieldCondition_strategy)
-def test_statemachine::fieldcondition_fieldName_setter(instance):
-    original = instance.fieldName
-    instance.fieldName = original
-    assert instance.fieldName == original
-
-@given(instance=statemachine::AbstractCondition_strategy)
-@settings(max_examples=50)
-def test_statemachine::abstractcondition_instantiation(instance):
-    assert isinstance(instance, statemachine::AbstractCondition)
-
-@given(instance=statemachine::AbstractCondition_strategy)
-def test_statemachine::abstractcondition_isNotCondition_type(instance):
-    assert isinstance(instance.isNotCondition, bool)
-
-
-@given(instance=statemachine::AbstractCondition_strategy)
-def test_statemachine::abstractcondition_isNotCondition_setter(instance):
-    original = instance.isNotCondition
-    instance.isNotCondition = original
-    assert instance.isNotCondition == original
-
-@given(instance=statemachine::StateAttribute_strategy)
-@settings(max_examples=50)
-def test_statemachine::stateattribute_instantiation(instance):
-    assert isinstance(instance, statemachine::StateAttribute)
-
-@given(instance=statemachine::StateAttribute_strategy)
-def test_statemachine::stateattribute_type_type(instance):
-    assert isinstance(instance.type, str)
-
-
-@given(instance=statemachine::StateAttribute_strategy)
-def test_statemachine::stateattribute_type_setter(instance):
-    original = instance.type
-    instance.type = original
-    assert instance.type == original
-
-@given(instance=statemachine::StateAttribute_strategy)
-def test_statemachine::stateattribute_value_type(instance):
-    assert isinstance(instance.value, str)
-
-
-@given(instance=statemachine::StateAttribute_strategy)
-def test_statemachine::stateattribute_value_setter(instance):
-    original = instance.value
-    instance.value = original
-    assert instance.value == original
-
-@given(instance=statemachine::StateValue_strategy)
-@settings(max_examples=50)
-def test_statemachine::statevalue_instantiation(instance):
-    assert isinstance(instance, statemachine::StateValue)
-
-@given(instance=statemachine::StateValue_strategy)
-def test_statemachine::statevalue_type_type(instance):
-    assert isinstance(instance.type, str)
-
-
-@given(instance=statemachine::StateValue_strategy)
-def test_statemachine::statevalue_type_setter(instance):
-    original = instance.type
-    instance.type = original
-    assert instance.type == original
-
-@given(instance=statemachine::StateValue_strategy)
-def test_statemachine::statevalue_value_type(instance):
-    assert isinstance(instance.value, str)
-
-
-@given(instance=statemachine::StateValue_strategy)
-def test_statemachine::statevalue_value_setter(instance):
-    original = instance.value
-    instance.value = original
-    assert instance.value == original
-
-@given(instance=AbstractTransition_strategy)
-@settings(max_examples=50)
-def test_abstracttransition_instantiation(instance):
-    assert isinstance(instance, AbstractTransition)
-
-@given(instance=statemachine::Transition_strategy)
-@settings(max_examples=50)
-def test_statemachine::transition_instantiation(instance):
-    assert isinstance(instance, statemachine::Transition)
 
 @given(instance=AbstractState_strategy)
 @settings(max_examples=50)
 def test_abstractstate_instantiation(instance):
     assert isinstance(instance, AbstractState)
 
-@given(instance=statemachine::FinalState_strategy)
+@given(instance=statemachine_State_strategy)
 @settings(max_examples=50)
-def test_statemachine::finalstate_instantiation(instance):
-    assert isinstance(instance, statemachine::FinalState)
-
-@given(instance=statemachine::State_strategy)
-@settings(max_examples=50)
-def test_statemachine::state_instantiation(instance):
-    assert isinstance(instance, statemachine::State)
-
-@given(instance=statemachine::State_strategy)
-def test_statemachine::state_stateColor_type(instance):
-    assert isinstance(instance.stateColor, str)
+def test_statemachine_state_instantiation(instance):
+    assert isinstance(instance, statemachine_State)
 
 
-@given(instance=statemachine::State_strategy)
-def test_statemachine::state_stateColor_setter(instance):
+
+@given(instance=statemachine_State_strategy)
+def test_statemachine_state_stateColor_setter(instance):
     original = instance.stateColor
     instance.stateColor = original
     assert instance.stateColor == original
 
-@given(instance=statemachine::ConditionalState_strategy)
+@given(instance=statemachine_FinalState_strategy)
 @settings(max_examples=50)
-def test_statemachine::conditionalstate_instantiation(instance):
-    assert isinstance(instance, statemachine::ConditionalState)
+def test_statemachine_finalstate_instantiation(instance):
+    assert isinstance(instance, statemachine_FinalState)
 
-@given(instance=statemachine::ConditionalState_strategy)
-def test_statemachine::conditionalstate_andExpression_type(instance):
-    assert isinstance(instance.andExpression, bool)
-
-
-@given(instance=statemachine::ConditionalState_strategy)
-def test_statemachine::conditionalstate_andExpression_setter(instance):
-    original = instance.andExpression
-    instance.andExpression = original
-    assert instance.andExpression == original
-
-@given(instance=statemachine::ConditionalState_strategy)
-def test_statemachine::conditionalstate_conditionsOrganization_type(instance):
-    assert isinstance(instance.conditionsOrganization, str)
-
-
-@given(instance=statemachine::ConditionalState_strategy)
-def test_statemachine::conditionalstate_conditionsOrganization_setter(instance):
-    original = instance.conditionsOrganization
-    instance.conditionsOrganization = original
-    assert instance.conditionsOrganization == original
-
-@given(instance=statemachine::InitialState_strategy)
+@given(instance=statemachine_InitialState_strategy)
 @settings(max_examples=50)
-def test_statemachine::initialstate_instantiation(instance):
-    assert isinstance(instance, statemachine::InitialState)
+def test_statemachine_initialstate_instantiation(instance):
+    assert isinstance(instance, statemachine_InitialState)
 
-@given(instance=statemachine::StateChange_strategy)
+@given(instance=statemachine_StateChange_strategy)
 @settings(max_examples=50)
-def test_statemachine::statechange_instantiation(instance):
-    assert isinstance(instance, statemachine::StateChange)
+def test_statemachine_statechange_instantiation(instance):
+    assert isinstance(instance, statemachine_StateChange)
 
-@given(instance=statemachine::Named_strategy)
+@given(instance=statemachine_Named_strategy)
 @settings(max_examples=50)
-def test_statemachine::named_instantiation(instance):
-    assert isinstance(instance, statemachine::Named)
-
-@given(instance=statemachine::Named_strategy)
-def test_statemachine::named_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_statemachine_named_instantiation(instance):
+    assert isinstance(instance, statemachine_Named)
 
 
-@given(instance=statemachine::Named_strategy)
-def test_statemachine::named_name_setter(instance):
+
+@given(instance=statemachine_Named_strategy)
+def test_statemachine_named_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
@@ -761,44 +622,147 @@ def test_statemachine::named_name_setter(instance):
 def test_named_instantiation(instance):
     assert isinstance(instance, Named)
 
-@given(instance=statemachine::AbstractTransition_strategy)
+@given(instance=statemachine_AbstractState_strategy)
 @settings(max_examples=50)
-def test_statemachine::abstracttransition_instantiation(instance):
-    assert isinstance(instance, statemachine::AbstractTransition)
+def test_statemachine_abstractstate_instantiation(instance):
+    assert isinstance(instance, statemachine_AbstractState)
 
-@given(instance=statemachine::AbstractState_strategy)
+@given(instance=statemachine_AbstractTransition_strategy)
 @settings(max_examples=50)
-def test_statemachine::abstractstate_instantiation(instance):
-    assert isinstance(instance, statemachine::AbstractState)
+def test_statemachine_abstracttransition_instantiation(instance):
+    assert isinstance(instance, statemachine_AbstractTransition)
 
-@given(instance=statemachine::Statemachine_strategy)
+@given(instance=statemachine_Statemachine_strategy)
 @settings(max_examples=50)
-def test_statemachine::statemachine_instantiation(instance):
-    assert isinstance(instance, statemachine::Statemachine)
-
-@given(instance=statemachine::Statemachine_strategy)
-def test_statemachine::statemachine_associatedTree_type(instance):
-    assert isinstance(instance.associatedTree, str)
+def test_statemachine_statemachine_instantiation(instance):
+    assert isinstance(instance, statemachine_Statemachine)
 
 
-@given(instance=statemachine::Statemachine_strategy)
-def test_statemachine::statemachine_associatedTree_setter(instance):
+
+@given(instance=statemachine_Statemachine_strategy)
+def test_statemachine_statemachine_associatedTree_setter(instance):
     original = instance.associatedTree
     instance.associatedTree = original
     assert instance.associatedTree == original
 
-@given(instance=statemachine::Statemachine_strategy)
-def test_statemachine::statemachine_associatedAttribute_type(instance):
-    assert isinstance(instance.associatedAttribute, str)
 
 
-@given(instance=statemachine::Statemachine_strategy)
-def test_statemachine::statemachine_associatedAttribute_setter(instance):
+@given(instance=statemachine_Statemachine_strategy)
+def test_statemachine_statemachine_associatedAttribute_setter(instance):
     original = instance.associatedAttribute
     instance.associatedAttribute = original
     assert instance.associatedAttribute == original
 
-@given(instance=statemachine::ConditionalTransition_strategy)
+@given(instance=AbstractCondition_strategy)
 @settings(max_examples=50)
-def test_statemachine::conditionaltransition_instantiation(instance):
-    assert isinstance(instance, statemachine::ConditionalTransition)
+def test_abstractcondition_instantiation(instance):
+    assert isinstance(instance, AbstractCondition)
+
+@given(instance=statemachine_AttributeCondition_strategy)
+@settings(max_examples=50)
+def test_statemachine_attributecondition_instantiation(instance):
+    assert isinstance(instance, statemachine_AttributeCondition)
+
+@given(instance=statemachine_FieldCondition_strategy)
+@settings(max_examples=50)
+def test_statemachine_fieldcondition_instantiation(instance):
+    assert isinstance(instance, statemachine_FieldCondition)
+
+
+
+@given(instance=statemachine_FieldCondition_strategy)
+def test_statemachine_fieldcondition_fieldName_setter(instance):
+    original = instance.fieldName
+    instance.fieldName = original
+    assert instance.fieldName == original
+
+@given(instance=statemachine_AbstractCondition_strategy)
+@settings(max_examples=50)
+def test_statemachine_abstractcondition_instantiation(instance):
+    assert isinstance(instance, statemachine_AbstractCondition)
+
+
+
+@given(instance=statemachine_AbstractCondition_strategy)
+def test_statemachine_abstractcondition_isNotCondition_setter(instance):
+    original = instance.isNotCondition
+    instance.isNotCondition = original
+    assert instance.isNotCondition == original
+
+@given(instance=statemachine_ConditionalState_strategy)
+@settings(max_examples=50)
+def test_statemachine_conditionalstate_instantiation(instance):
+    assert isinstance(instance, statemachine_ConditionalState)
+
+
+
+@given(instance=statemachine_ConditionalState_strategy)
+def test_statemachine_conditionalstate_conditionsOrganization_setter(instance):
+    original = instance.conditionsOrganization
+    instance.conditionsOrganization = original
+    assert instance.conditionsOrganization == original
+
+
+
+@given(instance=statemachine_ConditionalState_strategy)
+def test_statemachine_conditionalstate_andExpression_setter(instance):
+    original = instance.andExpression
+    instance.andExpression = original
+    assert instance.andExpression == original
+
+@given(instance=statemachine_StateAttribute_strategy)
+@settings(max_examples=50)
+def test_statemachine_stateattribute_instantiation(instance):
+    assert isinstance(instance, statemachine_StateAttribute)
+
+
+
+@given(instance=statemachine_StateAttribute_strategy)
+def test_statemachine_stateattribute_value_setter(instance):
+    original = instance.value
+    instance.value = original
+    assert instance.value == original
+
+
+
+@given(instance=statemachine_StateAttribute_strategy)
+def test_statemachine_stateattribute_type_setter(instance):
+    original = instance.type
+    instance.type = original
+    assert instance.type == original
+
+@given(instance=statemachine_StateValue_strategy)
+@settings(max_examples=50)
+def test_statemachine_statevalue_instantiation(instance):
+    assert isinstance(instance, statemachine_StateValue)
+
+
+
+@given(instance=statemachine_StateValue_strategy)
+def test_statemachine_statevalue_type_setter(instance):
+    original = instance.type
+    instance.type = original
+    assert instance.type == original
+
+
+
+@given(instance=statemachine_StateValue_strategy)
+def test_statemachine_statevalue_value_setter(instance):
+    original = instance.value
+    instance.value = original
+    assert instance.value == original
+
+@given(instance=AbstractTransition_strategy)
+@settings(max_examples=50)
+def test_abstracttransition_instantiation(instance):
+    assert isinstance(instance, AbstractTransition)
+
+@given(instance=statemachine_Transition_strategy)
+@settings(max_examples=50)
+def test_statemachine_transition_instantiation(instance):
+    assert isinstance(instance, statemachine_Transition)
+
+@given(instance=statemachine_ConditionalTransition_strategy)
+@settings(max_examples=50)
+def test_statemachine_conditionaltransition_instantiation(instance):
+    assert isinstance(instance, statemachine_ConditionalTransition)

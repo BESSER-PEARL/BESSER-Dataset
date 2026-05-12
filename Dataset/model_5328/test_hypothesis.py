@@ -3,10 +3,10 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    sub::B,
+from python_code import (
+    sub_B,
 )
 
 # =============================================================================
@@ -15,16 +15,16 @@ from classes import (
 
 
 
-def test_sub::b_is_not_abstract():
-    assert not inspect.isabstract(sub::B)
+def test_sub_b_is_not_abstract():
+    assert not inspect.isabstract(sub_B)
 
 
-def test_sub::b_constructor_exists():
-    assert callable(sub::B.__init__)
+def test_sub_b_constructor_exists():
+    assert callable(sub_B.__init__)
 
 
-def test_sub::b_constructor_args():
-    sig = inspect.signature(sub::B.__init__)
+def test_sub_b_constructor_args():
+    sig = inspect.signature(sub_B.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -39,11 +39,11 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-sub::B_strategy = st.builds(
-    sub::B,
+sub_B_strategy = st.builds(
+    sub_B,
 )
 
-@given(instance=sub::B_strategy)
+@given(instance=sub_B_strategy)
 @settings(max_examples=50)
-def test_sub::b_instantiation(instance):
-    assert isinstance(instance, sub::B)
+def test_sub_b_instantiation(instance):
+    assert isinstance(instance, sub_B)

@@ -3,10 +3,10 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    bintree::BinTreeNode,
+from python_code import (
+    bintree_BinTreeNode,
 )
 
 # =============================================================================
@@ -15,23 +15,23 @@ from classes import (
 
 
 
-def test_bintree::bintreenode_is_not_abstract():
-    assert not inspect.isabstract(bintree::BinTreeNode)
+def test_bintree_bintreenode_is_not_abstract():
+    assert not inspect.isabstract(bintree_BinTreeNode)
 
 
-def test_bintree::bintreenode_constructor_exists():
-    assert callable(bintree::BinTreeNode.__init__)
+def test_bintree_bintreenode_constructor_exists():
+    assert callable(bintree_BinTreeNode.__init__)
 
 
-def test_bintree::bintreenode_constructor_args():
-    sig = inspect.signature(bintree::BinTreeNode.__init__)
+def test_bintree_bintreenode_constructor_args():
+    sig = inspect.signature(bintree_BinTreeNode.__init__)
     params = list(sig.parameters.keys())
     assert "data" in params, "Missing parameter 'data'"
 
-def test_bintree::bintreenode_has_data():
-    assert hasattr(bintree::BinTreeNode, "data")
+def test_bintree_bintreenode_has_data():
+    assert hasattr(bintree_BinTreeNode, "data")
     descriptor = None
-    for klass in bintree::BinTreeNode.__mro__:
+    for klass in bintree_BinTreeNode.__mro__:
         if "data" in klass.__dict__:
             descriptor = klass.__dict__["data"]
             break
@@ -49,24 +49,21 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-bintree::BinTreeNode_strategy = st.builds(
-    bintree::BinTreeNode,
+bintree_BinTreeNode_strategy = st.builds(
+    bintree_BinTreeNode,
     data=
         safe_text
 )
 
-@given(instance=bintree::BinTreeNode_strategy)
+@given(instance=bintree_BinTreeNode_strategy)
 @settings(max_examples=50)
-def test_bintree::bintreenode_instantiation(instance):
-    assert isinstance(instance, bintree::BinTreeNode)
-
-@given(instance=bintree::BinTreeNode_strategy)
-def test_bintree::bintreenode_data_type(instance):
-    assert isinstance(instance.data, str)
+def test_bintree_bintreenode_instantiation(instance):
+    assert isinstance(instance, bintree_BinTreeNode)
 
 
-@given(instance=bintree::BinTreeNode_strategy)
-def test_bintree::bintreenode_data_setter(instance):
+
+@given(instance=bintree_BinTreeNode_strategy)
+def test_bintree_bintreenode_data_setter(instance):
     original = instance.data
     instance.data = original
     assert instance.data == original

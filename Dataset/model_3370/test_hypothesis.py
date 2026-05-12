@@ -3,22 +3,22 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     DataDefinition,
-    DDL::CreateDatabase,
-    DDL::CreateColumn,
-    DDL::CreateCk,
-    DDL::DDLDefinition,
-    DDL::CreateCommentColumn,
-    DDL::CreateCommentTable,
-    DDL::CreateTable,
-    DDL::CreateFk,
-    DDL::CreatePk,
+    DDL_CreateDatabase,
+    DDL_CreateColumn,
+    DDL_CreateCk,
+    DDL_DDLDefinition,
+    DDL_CreateCommentColumn,
+    DDL_CreateCommentTable,
+    DDL_CreateTable,
+    DDL_CreateFk,
+    DDL_CreatePk,
     Statement,
-    DDL::DataDefinition,
-    DDL::Statement,
+    DDL_DataDefinition,
+    DDL_Statement,
 )
 
 # =============================================================================
@@ -41,23 +41,23 @@ def test_datadefinition_constructor_args():
 
 
 
-def test_ddl::createdatabase_is_not_abstract():
-    assert not inspect.isabstract(DDL::CreateDatabase)
+def test_ddl_createdatabase_is_not_abstract():
+    assert not inspect.isabstract(DDL_CreateDatabase)
 
 
-def test_ddl::createdatabase_constructor_exists():
-    assert callable(DDL::CreateDatabase.__init__)
+def test_ddl_createdatabase_constructor_exists():
+    assert callable(DDL_CreateDatabase.__init__)
 
 
-def test_ddl::createdatabase_constructor_args():
-    sig = inspect.signature(DDL::CreateDatabase.__init__)
+def test_ddl_createdatabase_constructor_args():
+    sig = inspect.signature(DDL_CreateDatabase.__init__)
     params = list(sig.parameters.keys())
     assert "databaseName" in params, "Missing parameter 'databaseName'"
 
-def test_ddl::createdatabase_has_databaseName():
-    assert hasattr(DDL::CreateDatabase, "databaseName")
+def test_ddl_createdatabase_has_databaseName():
+    assert hasattr(DDL_CreateDatabase, "databaseName")
     descriptor = None
-    for klass in DDL::CreateDatabase.__mro__:
+    for klass in DDL_CreateDatabase.__mro__:
         if "databaseName" in klass.__dict__:
             descriptor = klass.__dict__["databaseName"]
             break
@@ -65,97 +65,97 @@ def test_ddl::createdatabase_has_databaseName():
 
 
 
-def test_ddl::createcolumn_is_not_abstract():
-    assert not inspect.isabstract(DDL::CreateColumn)
+def test_ddl_createcolumn_is_not_abstract():
+    assert not inspect.isabstract(DDL_CreateColumn)
 
 
-def test_ddl::createcolumn_constructor_exists():
-    assert callable(DDL::CreateColumn.__init__)
+def test_ddl_createcolumn_constructor_exists():
+    assert callable(DDL_CreateColumn.__init__)
 
 
-def test_ddl::createcolumn_constructor_args():
-    sig = inspect.signature(DDL::CreateColumn.__init__)
+def test_ddl_createcolumn_constructor_args():
+    sig = inspect.signature(DDL_CreateColumn.__init__)
     params = list(sig.parameters.keys())
     assert "columnNull" in params, "Missing parameter 'columnNull'"
     assert "columnType" in params, "Missing parameter 'columnType'"
-    assert "commentColumn" in params, "Missing parameter 'commentColumn'"
     assert "columnName" in params, "Missing parameter 'columnName'"
+    assert "commentColumn" in params, "Missing parameter 'commentColumn'"
 
-def test_ddl::createcolumn_has_columnNull():
-    assert hasattr(DDL::CreateColumn, "columnNull")
+def test_ddl_createcolumn_has_columnNull():
+    assert hasattr(DDL_CreateColumn, "columnNull")
     descriptor = None
-    for klass in DDL::CreateColumn.__mro__:
+    for klass in DDL_CreateColumn.__mro__:
         if "columnNull" in klass.__dict__:
             descriptor = klass.__dict__["columnNull"]
             break
     assert isinstance(descriptor, property)
 
-def test_ddl::createcolumn_has_columnType():
-    assert hasattr(DDL::CreateColumn, "columnType")
+def test_ddl_createcolumn_has_columnType():
+    assert hasattr(DDL_CreateColumn, "columnType")
     descriptor = None
-    for klass in DDL::CreateColumn.__mro__:
+    for klass in DDL_CreateColumn.__mro__:
         if "columnType" in klass.__dict__:
             descriptor = klass.__dict__["columnType"]
             break
     assert isinstance(descriptor, property)
 
-def test_ddl::createcolumn_has_commentColumn():
-    assert hasattr(DDL::CreateColumn, "commentColumn")
+def test_ddl_createcolumn_has_columnName():
+    assert hasattr(DDL_CreateColumn, "columnName")
     descriptor = None
-    for klass in DDL::CreateColumn.__mro__:
-        if "commentColumn" in klass.__dict__:
-            descriptor = klass.__dict__["commentColumn"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_ddl::createcolumn_has_columnName():
-    assert hasattr(DDL::CreateColumn, "columnName")
-    descriptor = None
-    for klass in DDL::CreateColumn.__mro__:
+    for klass in DDL_CreateColumn.__mro__:
         if "columnName" in klass.__dict__:
             descriptor = klass.__dict__["columnName"]
             break
     assert isinstance(descriptor, property)
 
-
-
-def test_ddl::createck_is_not_abstract():
-    assert not inspect.isabstract(DDL::CreateCk)
-
-
-def test_ddl::createck_constructor_exists():
-    assert callable(DDL::CreateCk.__init__)
-
-
-def test_ddl::createck_constructor_args():
-    sig = inspect.signature(DDL::CreateCk.__init__)
-    params = list(sig.parameters.keys())
-    assert "nameCk" in params, "Missing parameter 'nameCk'"
-    assert "nameColumn" in params, "Missing parameter 'nameColumn'"
-    assert "valuesCk" in params, "Missing parameter 'valuesCk'"
-
-def test_ddl::createck_has_nameCk():
-    assert hasattr(DDL::CreateCk, "nameCk")
+def test_ddl_createcolumn_has_commentColumn():
+    assert hasattr(DDL_CreateColumn, "commentColumn")
     descriptor = None
-    for klass in DDL::CreateCk.__mro__:
-        if "nameCk" in klass.__dict__:
-            descriptor = klass.__dict__["nameCk"]
+    for klass in DDL_CreateColumn.__mro__:
+        if "commentColumn" in klass.__dict__:
+            descriptor = klass.__dict__["commentColumn"]
             break
     assert isinstance(descriptor, property)
 
-def test_ddl::createck_has_nameColumn():
-    assert hasattr(DDL::CreateCk, "nameColumn")
+
+
+def test_ddl_createck_is_not_abstract():
+    assert not inspect.isabstract(DDL_CreateCk)
+
+
+def test_ddl_createck_constructor_exists():
+    assert callable(DDL_CreateCk.__init__)
+
+
+def test_ddl_createck_constructor_args():
+    sig = inspect.signature(DDL_CreateCk.__init__)
+    params = list(sig.parameters.keys())
+    assert "nameColumn" in params, "Missing parameter 'nameColumn'"
+    assert "nameCk" in params, "Missing parameter 'nameCk'"
+    assert "valuesCk" in params, "Missing parameter 'valuesCk'"
+
+def test_ddl_createck_has_nameColumn():
+    assert hasattr(DDL_CreateCk, "nameColumn")
     descriptor = None
-    for klass in DDL::CreateCk.__mro__:
+    for klass in DDL_CreateCk.__mro__:
         if "nameColumn" in klass.__dict__:
             descriptor = klass.__dict__["nameColumn"]
             break
     assert isinstance(descriptor, property)
 
-def test_ddl::createck_has_valuesCk():
-    assert hasattr(DDL::CreateCk, "valuesCk")
+def test_ddl_createck_has_nameCk():
+    assert hasattr(DDL_CreateCk, "nameCk")
     descriptor = None
-    for klass in DDL::CreateCk.__mro__:
+    for klass in DDL_CreateCk.__mro__:
+        if "nameCk" in klass.__dict__:
+            descriptor = klass.__dict__["nameCk"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_ddl_createck_has_valuesCk():
+    assert hasattr(DDL_CreateCk, "valuesCk")
+    descriptor = None
+    for klass in DDL_CreateCk.__mro__:
         if "valuesCk" in klass.__dict__:
             descriptor = klass.__dict__["valuesCk"]
             break
@@ -163,91 +163,91 @@ def test_ddl::createck_has_valuesCk():
 
 
 
-def test_ddl::ddldefinition_is_not_abstract():
-    assert not inspect.isabstract(DDL::DDLDefinition)
+def test_ddl_ddldefinition_is_not_abstract():
+    assert not inspect.isabstract(DDL_DDLDefinition)
 
 
-def test_ddl::ddldefinition_constructor_exists():
-    assert callable(DDL::DDLDefinition.__init__)
+def test_ddl_ddldefinition_constructor_exists():
+    assert callable(DDL_DDLDefinition.__init__)
 
 
-def test_ddl::ddldefinition_constructor_args():
-    sig = inspect.signature(DDL::DDLDefinition.__init__)
+def test_ddl_ddldefinition_constructor_args():
+    sig = inspect.signature(DDL_DDLDefinition.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ddl::createcommentcolumn_is_not_abstract():
-    assert not inspect.isabstract(DDL::CreateCommentColumn)
+def test_ddl_createcommentcolumn_is_not_abstract():
+    assert not inspect.isabstract(DDL_CreateCommentColumn)
 
 
-def test_ddl::createcommentcolumn_constructor_exists():
-    assert callable(DDL::CreateCommentColumn.__init__)
+def test_ddl_createcommentcolumn_constructor_exists():
+    assert callable(DDL_CreateCommentColumn.__init__)
 
 
-def test_ddl::createcommentcolumn_constructor_args():
-    sig = inspect.signature(DDL::CreateCommentColumn.__init__)
+def test_ddl_createcommentcolumn_constructor_args():
+    sig = inspect.signature(DDL_CreateCommentColumn.__init__)
     params = list(sig.parameters.keys())
-    assert "columnName" in params, "Missing parameter 'columnName'"
-    assert "columnComment" in params, "Missing parameter 'columnComment'"
     assert "tableName" in params, "Missing parameter 'tableName'"
+    assert "columnComment" in params, "Missing parameter 'columnComment'"
+    assert "columnName" in params, "Missing parameter 'columnName'"
 
-def test_ddl::createcommentcolumn_has_columnName():
-    assert hasattr(DDL::CreateCommentColumn, "columnName")
+def test_ddl_createcommentcolumn_has_tableName():
+    assert hasattr(DDL_CreateCommentColumn, "tableName")
     descriptor = None
-    for klass in DDL::CreateCommentColumn.__mro__:
-        if "columnName" in klass.__dict__:
-            descriptor = klass.__dict__["columnName"]
+    for klass in DDL_CreateCommentColumn.__mro__:
+        if "tableName" in klass.__dict__:
+            descriptor = klass.__dict__["tableName"]
             break
     assert isinstance(descriptor, property)
 
-def test_ddl::createcommentcolumn_has_columnComment():
-    assert hasattr(DDL::CreateCommentColumn, "columnComment")
+def test_ddl_createcommentcolumn_has_columnComment():
+    assert hasattr(DDL_CreateCommentColumn, "columnComment")
     descriptor = None
-    for klass in DDL::CreateCommentColumn.__mro__:
+    for klass in DDL_CreateCommentColumn.__mro__:
         if "columnComment" in klass.__dict__:
             descriptor = klass.__dict__["columnComment"]
             break
     assert isinstance(descriptor, property)
 
-def test_ddl::createcommentcolumn_has_tableName():
-    assert hasattr(DDL::CreateCommentColumn, "tableName")
+def test_ddl_createcommentcolumn_has_columnName():
+    assert hasattr(DDL_CreateCommentColumn, "columnName")
     descriptor = None
-    for klass in DDL::CreateCommentColumn.__mro__:
-        if "tableName" in klass.__dict__:
-            descriptor = klass.__dict__["tableName"]
+    for klass in DDL_CreateCommentColumn.__mro__:
+        if "columnName" in klass.__dict__:
+            descriptor = klass.__dict__["columnName"]
             break
     assert isinstance(descriptor, property)
 
 
 
-def test_ddl::createcommenttable_is_not_abstract():
-    assert not inspect.isabstract(DDL::CreateCommentTable)
+def test_ddl_createcommenttable_is_not_abstract():
+    assert not inspect.isabstract(DDL_CreateCommentTable)
 
 
-def test_ddl::createcommenttable_constructor_exists():
-    assert callable(DDL::CreateCommentTable.__init__)
+def test_ddl_createcommenttable_constructor_exists():
+    assert callable(DDL_CreateCommentTable.__init__)
 
 
-def test_ddl::createcommenttable_constructor_args():
-    sig = inspect.signature(DDL::CreateCommentTable.__init__)
+def test_ddl_createcommenttable_constructor_args():
+    sig = inspect.signature(DDL_CreateCommentTable.__init__)
     params = list(sig.parameters.keys())
     assert "tableName" in params, "Missing parameter 'tableName'"
     assert "tableComment" in params, "Missing parameter 'tableComment'"
 
-def test_ddl::createcommenttable_has_tableName():
-    assert hasattr(DDL::CreateCommentTable, "tableName")
+def test_ddl_createcommenttable_has_tableName():
+    assert hasattr(DDL_CreateCommentTable, "tableName")
     descriptor = None
-    for klass in DDL::CreateCommentTable.__mro__:
+    for klass in DDL_CreateCommentTable.__mro__:
         if "tableName" in klass.__dict__:
             descriptor = klass.__dict__["tableName"]
             break
     assert isinstance(descriptor, property)
 
-def test_ddl::createcommenttable_has_tableComment():
-    assert hasattr(DDL::CreateCommentTable, "tableComment")
+def test_ddl_createcommenttable_has_tableComment():
+    assert hasattr(DDL_CreateCommentTable, "tableComment")
     descriptor = None
-    for klass in DDL::CreateCommentTable.__mro__:
+    for klass in DDL_CreateCommentTable.__mro__:
         if "tableComment" in klass.__dict__:
             descriptor = klass.__dict__["tableComment"]
             break
@@ -255,113 +255,113 @@ def test_ddl::createcommenttable_has_tableComment():
 
 
 
-def test_ddl::createtable_is_not_abstract():
-    assert not inspect.isabstract(DDL::CreateTable)
+def test_ddl_createtable_is_not_abstract():
+    assert not inspect.isabstract(DDL_CreateTable)
 
 
-def test_ddl::createtable_constructor_exists():
-    assert callable(DDL::CreateTable.__init__)
+def test_ddl_createtable_constructor_exists():
+    assert callable(DDL_CreateTable.__init__)
 
 
-def test_ddl::createtable_constructor_args():
-    sig = inspect.signature(DDL::CreateTable.__init__)
+def test_ddl_createtable_constructor_args():
+    sig = inspect.signature(DDL_CreateTable.__init__)
     params = list(sig.parameters.keys())
-    assert "tableName" in params, "Missing parameter 'tableName'"
     assert "commentTable" in params, "Missing parameter 'commentTable'"
+    assert "tableName" in params, "Missing parameter 'tableName'"
 
-def test_ddl::createtable_has_tableName():
-    assert hasattr(DDL::CreateTable, "tableName")
+def test_ddl_createtable_has_commentTable():
+    assert hasattr(DDL_CreateTable, "commentTable")
     descriptor = None
-    for klass in DDL::CreateTable.__mro__:
-        if "tableName" in klass.__dict__:
-            descriptor = klass.__dict__["tableName"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_ddl::createtable_has_commentTable():
-    assert hasattr(DDL::CreateTable, "commentTable")
-    descriptor = None
-    for klass in DDL::CreateTable.__mro__:
+    for klass in DDL_CreateTable.__mro__:
         if "commentTable" in klass.__dict__:
             descriptor = klass.__dict__["commentTable"]
             break
     assert isinstance(descriptor, property)
 
+def test_ddl_createtable_has_tableName():
+    assert hasattr(DDL_CreateTable, "tableName")
+    descriptor = None
+    for klass in DDL_CreateTable.__mro__:
+        if "tableName" in klass.__dict__:
+            descriptor = klass.__dict__["tableName"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_ddl::createfk_is_not_abstract():
-    assert not inspect.isabstract(DDL::CreateFk)
+
+def test_ddl_createfk_is_not_abstract():
+    assert not inspect.isabstract(DDL_CreateFk)
 
 
-def test_ddl::createfk_constructor_exists():
-    assert callable(DDL::CreateFk.__init__)
+def test_ddl_createfk_constructor_exists():
+    assert callable(DDL_CreateFk.__init__)
 
 
-def test_ddl::createfk_constructor_args():
-    sig = inspect.signature(DDL::CreateFk.__init__)
+def test_ddl_createfk_constructor_args():
+    sig = inspect.signature(DDL_CreateFk.__init__)
     params = list(sig.parameters.keys())
+    assert "columnName" in params, "Missing parameter 'columnName'"
     assert "columnReference" in params, "Missing parameter 'columnReference'"
     assert "nameFk" in params, "Missing parameter 'nameFk'"
-    assert "columnName" in params, "Missing parameter 'columnName'"
 
-def test_ddl::createfk_has_columnReference():
-    assert hasattr(DDL::CreateFk, "columnReference")
+def test_ddl_createfk_has_columnName():
+    assert hasattr(DDL_CreateFk, "columnName")
     descriptor = None
-    for klass in DDL::CreateFk.__mro__:
+    for klass in DDL_CreateFk.__mro__:
+        if "columnName" in klass.__dict__:
+            descriptor = klass.__dict__["columnName"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_ddl_createfk_has_columnReference():
+    assert hasattr(DDL_CreateFk, "columnReference")
+    descriptor = None
+    for klass in DDL_CreateFk.__mro__:
         if "columnReference" in klass.__dict__:
             descriptor = klass.__dict__["columnReference"]
             break
     assert isinstance(descriptor, property)
 
-def test_ddl::createfk_has_nameFk():
-    assert hasattr(DDL::CreateFk, "nameFk")
+def test_ddl_createfk_has_nameFk():
+    assert hasattr(DDL_CreateFk, "nameFk")
     descriptor = None
-    for klass in DDL::CreateFk.__mro__:
+    for klass in DDL_CreateFk.__mro__:
         if "nameFk" in klass.__dict__:
             descriptor = klass.__dict__["nameFk"]
             break
     assert isinstance(descriptor, property)
 
-def test_ddl::createfk_has_columnName():
-    assert hasattr(DDL::CreateFk, "columnName")
+
+
+def test_ddl_createpk_is_not_abstract():
+    assert not inspect.isabstract(DDL_CreatePk)
+
+
+def test_ddl_createpk_constructor_exists():
+    assert callable(DDL_CreatePk.__init__)
+
+
+def test_ddl_createpk_constructor_args():
+    sig = inspect.signature(DDL_CreatePk.__init__)
+    params = list(sig.parameters.keys())
+    assert "columnName" in params, "Missing parameter 'columnName'"
+    assert "namePk" in params, "Missing parameter 'namePk'"
+
+def test_ddl_createpk_has_columnName():
+    assert hasattr(DDL_CreatePk, "columnName")
     descriptor = None
-    for klass in DDL::CreateFk.__mro__:
+    for klass in DDL_CreatePk.__mro__:
         if "columnName" in klass.__dict__:
             descriptor = klass.__dict__["columnName"]
             break
     assert isinstance(descriptor, property)
 
-
-
-def test_ddl::createpk_is_not_abstract():
-    assert not inspect.isabstract(DDL::CreatePk)
-
-
-def test_ddl::createpk_constructor_exists():
-    assert callable(DDL::CreatePk.__init__)
-
-
-def test_ddl::createpk_constructor_args():
-    sig = inspect.signature(DDL::CreatePk.__init__)
-    params = list(sig.parameters.keys())
-    assert "namePk" in params, "Missing parameter 'namePk'"
-    assert "columnName" in params, "Missing parameter 'columnName'"
-
-def test_ddl::createpk_has_namePk():
-    assert hasattr(DDL::CreatePk, "namePk")
+def test_ddl_createpk_has_namePk():
+    assert hasattr(DDL_CreatePk, "namePk")
     descriptor = None
-    for klass in DDL::CreatePk.__mro__:
+    for klass in DDL_CreatePk.__mro__:
         if "namePk" in klass.__dict__:
             descriptor = klass.__dict__["namePk"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_ddl::createpk_has_columnName():
-    assert hasattr(DDL::CreatePk, "columnName")
-    descriptor = None
-    for klass in DDL::CreatePk.__mro__:
-        if "columnName" in klass.__dict__:
-            descriptor = klass.__dict__["columnName"]
             break
     assert isinstance(descriptor, property)
 
@@ -381,30 +381,30 @@ def test_statement_constructor_args():
 
 
 
-def test_ddl::datadefinition_is_not_abstract():
-    assert not inspect.isabstract(DDL::DataDefinition)
+def test_ddl_datadefinition_is_not_abstract():
+    assert not inspect.isabstract(DDL_DataDefinition)
 
 
-def test_ddl::datadefinition_constructor_exists():
-    assert callable(DDL::DataDefinition.__init__)
+def test_ddl_datadefinition_constructor_exists():
+    assert callable(DDL_DataDefinition.__init__)
 
 
-def test_ddl::datadefinition_constructor_args():
-    sig = inspect.signature(DDL::DataDefinition.__init__)
+def test_ddl_datadefinition_constructor_args():
+    sig = inspect.signature(DDL_DataDefinition.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ddl::statement_is_not_abstract():
-    assert not inspect.isabstract(DDL::Statement)
+def test_ddl_statement_is_not_abstract():
+    assert not inspect.isabstract(DDL_Statement)
 
 
-def test_ddl::statement_constructor_exists():
-    assert callable(DDL::Statement.__init__)
+def test_ddl_statement_constructor_exists():
+    assert callable(DDL_Statement.__init__)
 
 
-def test_ddl::statement_constructor_args():
-    sig = inspect.signature(DDL::Statement.__init__)
+def test_ddl_statement_constructor_args():
+    sig = inspect.signature(DDL_Statement.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -422,81 +422,81 @@ safe_text = st.text(
 DataDefinition_strategy = st.builds(
     DataDefinition,
 )
-DDL::CreateDatabase_strategy = st.builds(
-    DDL::CreateDatabase,
+DDL_CreateDatabase_strategy = st.builds(
+    DDL_CreateDatabase,
     databaseName=
         safe_text
 )
-DDL::CreateColumn_strategy = st.builds(
-    DDL::CreateColumn,
+DDL_CreateColumn_strategy = st.builds(
+    DDL_CreateColumn,
     columnNull=
         st.booleans(),
     columnType=
         safe_text,
-    commentColumn=
-        safe_text,
     columnName=
+        safe_text,
+    commentColumn=
         safe_text
 )
-DDL::CreateCk_strategy = st.builds(
-    DDL::CreateCk,
-    nameCk=
-        safe_text,
+DDL_CreateCk_strategy = st.builds(
+    DDL_CreateCk,
     nameColumn=
+        safe_text,
+    nameCk=
         safe_text,
     valuesCk=
         safe_text
 )
-DDL::DDLDefinition_strategy = st.builds(
-    DDL::DDLDefinition,
+DDL_DDLDefinition_strategy = st.builds(
+    DDL_DDLDefinition,
 )
-DDL::CreateCommentColumn_strategy = st.builds(
-    DDL::CreateCommentColumn,
-    columnName=
+DDL_CreateCommentColumn_strategy = st.builds(
+    DDL_CreateCommentColumn,
+    tableName=
         safe_text,
     columnComment=
         safe_text,
-    tableName=
+    columnName=
         safe_text
 )
-DDL::CreateCommentTable_strategy = st.builds(
-    DDL::CreateCommentTable,
+DDL_CreateCommentTable_strategy = st.builds(
+    DDL_CreateCommentTable,
     tableName=
         safe_text,
     tableComment=
         safe_text
 )
-DDL::CreateTable_strategy = st.builds(
-    DDL::CreateTable,
-    tableName=
-        safe_text,
+DDL_CreateTable_strategy = st.builds(
+    DDL_CreateTable,
     commentTable=
+        safe_text,
+    tableName=
         safe_text
 )
-DDL::CreateFk_strategy = st.builds(
-    DDL::CreateFk,
+DDL_CreateFk_strategy = st.builds(
+    DDL_CreateFk,
+    columnName=
+        safe_text,
     columnReference=
         safe_text,
     nameFk=
-        safe_text,
-    columnName=
         safe_text
 )
-DDL::CreatePk_strategy = st.builds(
-    DDL::CreatePk,
-    namePk=
-        safe_text,
+DDL_CreatePk_strategy = st.builds(
+    DDL_CreatePk,
     columnName=
+        safe_text,
+    namePk=
         safe_text
 )
 Statement_strategy = st.builds(
     Statement,
 )
-DDL::DataDefinition_strategy = st.builds(
-    DDL::DataDefinition,
+DDL_DataDefinition_strategy = st.builds(
+    DDL_DataDefinition,
 )
-DDL::Statement_strategy = st.builds(
-    DDL::Statement,
+DDL_Statement_strategy = st.builds(
+    DDL_Statement,
 )
 
 @given(instance=DataDefinition_strategy)
@@ -504,282 +504,222 @@ DDL::Statement_strategy = st.builds(
 def test_datadefinition_instantiation(instance):
     assert isinstance(instance, DataDefinition)
 
-@given(instance=DDL::CreateDatabase_strategy)
+@given(instance=DDL_CreateDatabase_strategy)
 @settings(max_examples=50)
-def test_ddl::createdatabase_instantiation(instance):
-    assert isinstance(instance, DDL::CreateDatabase)
-
-@given(instance=DDL::CreateDatabase_strategy)
-def test_ddl::createdatabase_databaseName_type(instance):
-    assert isinstance(instance.databaseName, str)
+def test_ddl_createdatabase_instantiation(instance):
+    assert isinstance(instance, DDL_CreateDatabase)
 
 
-@given(instance=DDL::CreateDatabase_strategy)
-def test_ddl::createdatabase_databaseName_setter(instance):
+
+@given(instance=DDL_CreateDatabase_strategy)
+def test_ddl_createdatabase_databaseName_setter(instance):
     original = instance.databaseName
     instance.databaseName = original
     assert instance.databaseName == original
 
-@given(instance=DDL::CreateColumn_strategy)
+@given(instance=DDL_CreateColumn_strategy)
 @settings(max_examples=50)
-def test_ddl::createcolumn_instantiation(instance):
-    assert isinstance(instance, DDL::CreateColumn)
-
-@given(instance=DDL::CreateColumn_strategy)
-def test_ddl::createcolumn_columnNull_type(instance):
-    assert isinstance(instance.columnNull, bool)
+def test_ddl_createcolumn_instantiation(instance):
+    assert isinstance(instance, DDL_CreateColumn)
 
 
-@given(instance=DDL::CreateColumn_strategy)
-def test_ddl::createcolumn_columnNull_setter(instance):
+
+@given(instance=DDL_CreateColumn_strategy)
+def test_ddl_createcolumn_columnNull_setter(instance):
     original = instance.columnNull
     instance.columnNull = original
     assert instance.columnNull == original
 
-@given(instance=DDL::CreateColumn_strategy)
-def test_ddl::createcolumn_columnType_type(instance):
-    assert isinstance(instance.columnType, str)
 
 
-@given(instance=DDL::CreateColumn_strategy)
-def test_ddl::createcolumn_columnType_setter(instance):
+@given(instance=DDL_CreateColumn_strategy)
+def test_ddl_createcolumn_columnType_setter(instance):
     original = instance.columnType
     instance.columnType = original
     assert instance.columnType == original
 
-@given(instance=DDL::CreateColumn_strategy)
-def test_ddl::createcolumn_commentColumn_type(instance):
-    assert isinstance(instance.commentColumn, str)
 
 
-@given(instance=DDL::CreateColumn_strategy)
-def test_ddl::createcolumn_commentColumn_setter(instance):
+@given(instance=DDL_CreateColumn_strategy)
+def test_ddl_createcolumn_columnName_setter(instance):
+    original = instance.columnName
+    instance.columnName = original
+    assert instance.columnName == original
+
+
+
+@given(instance=DDL_CreateColumn_strategy)
+def test_ddl_createcolumn_commentColumn_setter(instance):
     original = instance.commentColumn
     instance.commentColumn = original
     assert instance.commentColumn == original
 
-@given(instance=DDL::CreateColumn_strategy)
-def test_ddl::createcolumn_columnName_type(instance):
-    assert isinstance(instance.columnName, str)
-
-
-@given(instance=DDL::CreateColumn_strategy)
-def test_ddl::createcolumn_columnName_setter(instance):
-    original = instance.columnName
-    instance.columnName = original
-    assert instance.columnName == original
-
-@given(instance=DDL::CreateCk_strategy)
+@given(instance=DDL_CreateCk_strategy)
 @settings(max_examples=50)
-def test_ddl::createck_instantiation(instance):
-    assert isinstance(instance, DDL::CreateCk)
-
-@given(instance=DDL::CreateCk_strategy)
-def test_ddl::createck_nameCk_type(instance):
-    assert isinstance(instance.nameCk, str)
+def test_ddl_createck_instantiation(instance):
+    assert isinstance(instance, DDL_CreateCk)
 
 
-@given(instance=DDL::CreateCk_strategy)
-def test_ddl::createck_nameCk_setter(instance):
-    original = instance.nameCk
-    instance.nameCk = original
-    assert instance.nameCk == original
 
-@given(instance=DDL::CreateCk_strategy)
-def test_ddl::createck_nameColumn_type(instance):
-    assert isinstance(instance.nameColumn, str)
-
-
-@given(instance=DDL::CreateCk_strategy)
-def test_ddl::createck_nameColumn_setter(instance):
+@given(instance=DDL_CreateCk_strategy)
+def test_ddl_createck_nameColumn_setter(instance):
     original = instance.nameColumn
     instance.nameColumn = original
     assert instance.nameColumn == original
 
-@given(instance=DDL::CreateCk_strategy)
-def test_ddl::createck_valuesCk_type(instance):
-    assert isinstance(instance.valuesCk, str)
 
 
-@given(instance=DDL::CreateCk_strategy)
-def test_ddl::createck_valuesCk_setter(instance):
+@given(instance=DDL_CreateCk_strategy)
+def test_ddl_createck_nameCk_setter(instance):
+    original = instance.nameCk
+    instance.nameCk = original
+    assert instance.nameCk == original
+
+
+
+@given(instance=DDL_CreateCk_strategy)
+def test_ddl_createck_valuesCk_setter(instance):
     original = instance.valuesCk
     instance.valuesCk = original
     assert instance.valuesCk == original
 
-@given(instance=DDL::DDLDefinition_strategy)
+@given(instance=DDL_DDLDefinition_strategy)
 @settings(max_examples=50)
-def test_ddl::ddldefinition_instantiation(instance):
-    assert isinstance(instance, DDL::DDLDefinition)
+def test_ddl_ddldefinition_instantiation(instance):
+    assert isinstance(instance, DDL_DDLDefinition)
 
-@given(instance=DDL::CreateCommentColumn_strategy)
+@given(instance=DDL_CreateCommentColumn_strategy)
 @settings(max_examples=50)
-def test_ddl::createcommentcolumn_instantiation(instance):
-    assert isinstance(instance, DDL::CreateCommentColumn)
-
-@given(instance=DDL::CreateCommentColumn_strategy)
-def test_ddl::createcommentcolumn_columnName_type(instance):
-    assert isinstance(instance.columnName, str)
+def test_ddl_createcommentcolumn_instantiation(instance):
+    assert isinstance(instance, DDL_CreateCommentColumn)
 
 
-@given(instance=DDL::CreateCommentColumn_strategy)
-def test_ddl::createcommentcolumn_columnName_setter(instance):
-    original = instance.columnName
-    instance.columnName = original
-    assert instance.columnName == original
 
-@given(instance=DDL::CreateCommentColumn_strategy)
-def test_ddl::createcommentcolumn_columnComment_type(instance):
-    assert isinstance(instance.columnComment, str)
+@given(instance=DDL_CreateCommentColumn_strategy)
+def test_ddl_createcommentcolumn_tableName_setter(instance):
+    original = instance.tableName
+    instance.tableName = original
+    assert instance.tableName == original
 
 
-@given(instance=DDL::CreateCommentColumn_strategy)
-def test_ddl::createcommentcolumn_columnComment_setter(instance):
+
+@given(instance=DDL_CreateCommentColumn_strategy)
+def test_ddl_createcommentcolumn_columnComment_setter(instance):
     original = instance.columnComment
     instance.columnComment = original
     assert instance.columnComment == original
 
-@given(instance=DDL::CreateCommentColumn_strategy)
-def test_ddl::createcommentcolumn_tableName_type(instance):
-    assert isinstance(instance.tableName, str)
 
 
-@given(instance=DDL::CreateCommentColumn_strategy)
-def test_ddl::createcommentcolumn_tableName_setter(instance):
-    original = instance.tableName
-    instance.tableName = original
-    assert instance.tableName == original
+@given(instance=DDL_CreateCommentColumn_strategy)
+def test_ddl_createcommentcolumn_columnName_setter(instance):
+    original = instance.columnName
+    instance.columnName = original
+    assert instance.columnName == original
 
-@given(instance=DDL::CreateCommentTable_strategy)
+@given(instance=DDL_CreateCommentTable_strategy)
 @settings(max_examples=50)
-def test_ddl::createcommenttable_instantiation(instance):
-    assert isinstance(instance, DDL::CreateCommentTable)
-
-@given(instance=DDL::CreateCommentTable_strategy)
-def test_ddl::createcommenttable_tableName_type(instance):
-    assert isinstance(instance.tableName, str)
+def test_ddl_createcommenttable_instantiation(instance):
+    assert isinstance(instance, DDL_CreateCommentTable)
 
 
-@given(instance=DDL::CreateCommentTable_strategy)
-def test_ddl::createcommenttable_tableName_setter(instance):
+
+@given(instance=DDL_CreateCommentTable_strategy)
+def test_ddl_createcommenttable_tableName_setter(instance):
     original = instance.tableName
     instance.tableName = original
     assert instance.tableName == original
 
-@given(instance=DDL::CreateCommentTable_strategy)
-def test_ddl::createcommenttable_tableComment_type(instance):
-    assert isinstance(instance.tableComment, str)
 
 
-@given(instance=DDL::CreateCommentTable_strategy)
-def test_ddl::createcommenttable_tableComment_setter(instance):
+@given(instance=DDL_CreateCommentTable_strategy)
+def test_ddl_createcommenttable_tableComment_setter(instance):
     original = instance.tableComment
     instance.tableComment = original
     assert instance.tableComment == original
 
-@given(instance=DDL::CreateTable_strategy)
+@given(instance=DDL_CreateTable_strategy)
 @settings(max_examples=50)
-def test_ddl::createtable_instantiation(instance):
-    assert isinstance(instance, DDL::CreateTable)
-
-@given(instance=DDL::CreateTable_strategy)
-def test_ddl::createtable_tableName_type(instance):
-    assert isinstance(instance.tableName, str)
+def test_ddl_createtable_instantiation(instance):
+    assert isinstance(instance, DDL_CreateTable)
 
 
-@given(instance=DDL::CreateTable_strategy)
-def test_ddl::createtable_tableName_setter(instance):
-    original = instance.tableName
-    instance.tableName = original
-    assert instance.tableName == original
 
-@given(instance=DDL::CreateTable_strategy)
-def test_ddl::createtable_commentTable_type(instance):
-    assert isinstance(instance.commentTable, str)
-
-
-@given(instance=DDL::CreateTable_strategy)
-def test_ddl::createtable_commentTable_setter(instance):
+@given(instance=DDL_CreateTable_strategy)
+def test_ddl_createtable_commentTable_setter(instance):
     original = instance.commentTable
     instance.commentTable = original
     assert instance.commentTable == original
 
-@given(instance=DDL::CreateFk_strategy)
+
+
+@given(instance=DDL_CreateTable_strategy)
+def test_ddl_createtable_tableName_setter(instance):
+    original = instance.tableName
+    instance.tableName = original
+    assert instance.tableName == original
+
+@given(instance=DDL_CreateFk_strategy)
 @settings(max_examples=50)
-def test_ddl::createfk_instantiation(instance):
-    assert isinstance(instance, DDL::CreateFk)
-
-@given(instance=DDL::CreateFk_strategy)
-def test_ddl::createfk_columnReference_type(instance):
-    assert isinstance(instance.columnReference, str)
+def test_ddl_createfk_instantiation(instance):
+    assert isinstance(instance, DDL_CreateFk)
 
 
-@given(instance=DDL::CreateFk_strategy)
-def test_ddl::createfk_columnReference_setter(instance):
+
+@given(instance=DDL_CreateFk_strategy)
+def test_ddl_createfk_columnName_setter(instance):
+    original = instance.columnName
+    instance.columnName = original
+    assert instance.columnName == original
+
+
+
+@given(instance=DDL_CreateFk_strategy)
+def test_ddl_createfk_columnReference_setter(instance):
     original = instance.columnReference
     instance.columnReference = original
     assert instance.columnReference == original
 
-@given(instance=DDL::CreateFk_strategy)
-def test_ddl::createfk_nameFk_type(instance):
-    assert isinstance(instance.nameFk, str)
 
 
-@given(instance=DDL::CreateFk_strategy)
-def test_ddl::createfk_nameFk_setter(instance):
+@given(instance=DDL_CreateFk_strategy)
+def test_ddl_createfk_nameFk_setter(instance):
     original = instance.nameFk
     instance.nameFk = original
     assert instance.nameFk == original
 
-@given(instance=DDL::CreateFk_strategy)
-def test_ddl::createfk_columnName_type(instance):
-    assert isinstance(instance.columnName, str)
+@given(instance=DDL_CreatePk_strategy)
+@settings(max_examples=50)
+def test_ddl_createpk_instantiation(instance):
+    assert isinstance(instance, DDL_CreatePk)
 
 
-@given(instance=DDL::CreateFk_strategy)
-def test_ddl::createfk_columnName_setter(instance):
+
+@given(instance=DDL_CreatePk_strategy)
+def test_ddl_createpk_columnName_setter(instance):
     original = instance.columnName
     instance.columnName = original
     assert instance.columnName == original
 
-@given(instance=DDL::CreatePk_strategy)
-@settings(max_examples=50)
-def test_ddl::createpk_instantiation(instance):
-    assert isinstance(instance, DDL::CreatePk)
-
-@given(instance=DDL::CreatePk_strategy)
-def test_ddl::createpk_namePk_type(instance):
-    assert isinstance(instance.namePk, str)
 
 
-@given(instance=DDL::CreatePk_strategy)
-def test_ddl::createpk_namePk_setter(instance):
+@given(instance=DDL_CreatePk_strategy)
+def test_ddl_createpk_namePk_setter(instance):
     original = instance.namePk
     instance.namePk = original
     assert instance.namePk == original
-
-@given(instance=DDL::CreatePk_strategy)
-def test_ddl::createpk_columnName_type(instance):
-    assert isinstance(instance.columnName, str)
-
-
-@given(instance=DDL::CreatePk_strategy)
-def test_ddl::createpk_columnName_setter(instance):
-    original = instance.columnName
-    instance.columnName = original
-    assert instance.columnName == original
 
 @given(instance=Statement_strategy)
 @settings(max_examples=50)
 def test_statement_instantiation(instance):
     assert isinstance(instance, Statement)
 
-@given(instance=DDL::DataDefinition_strategy)
+@given(instance=DDL_DataDefinition_strategy)
 @settings(max_examples=50)
-def test_ddl::datadefinition_instantiation(instance):
-    assert isinstance(instance, DDL::DataDefinition)
+def test_ddl_datadefinition_instantiation(instance):
+    assert isinstance(instance, DDL_DataDefinition)
 
-@given(instance=DDL::Statement_strategy)
+@given(instance=DDL_Statement_strategy)
 @settings(max_examples=50)
-def test_ddl::statement_instantiation(instance):
-    assert isinstance(instance, DDL::Statement)
+def test_ddl_statement_instantiation(instance):
+    assert isinstance(instance, DDL_Statement)

@@ -3,21 +3,21 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    dfa::Symbol,
-    dfa::Transition,
+from python_code import (
+    dfa_Symbol,
+    dfa_Transition,
     State,
-    dfa::NamedElement,
-    dfa::FinalState,
-    dfa::RegularState,
+    dfa_NamedElement,
+    dfa_FinalState,
+    dfa_RegularState,
     RegularState,
-    dfa::InitialState,
+    dfa_InitialState,
     NamedElement,
-    dfa::Language,
-    dfa::State,
-    dfa::Dfa,
+    dfa_Language,
+    dfa_State,
+    dfa_Dfa,
 )
 
 # =============================================================================
@@ -26,60 +26,60 @@ from classes import (
 
 
 
-def test_dfa::symbol_is_not_abstract():
-    assert not inspect.isabstract(dfa::Symbol)
+def test_dfa_symbol_is_not_abstract():
+    assert not inspect.isabstract(dfa_Symbol)
 
 
-def test_dfa::symbol_constructor_exists():
-    assert callable(dfa::Symbol.__init__)
+def test_dfa_symbol_constructor_exists():
+    assert callable(dfa_Symbol.__init__)
 
 
-def test_dfa::symbol_constructor_args():
-    sig = inspect.signature(dfa::Symbol.__init__)
+def test_dfa_symbol_constructor_args():
+    sig = inspect.signature(dfa_Symbol.__init__)
     params = list(sig.parameters.keys())
-    assert "direction" in params, "Missing parameter 'direction'"
     assert "literal" in params, "Missing parameter 'literal'"
     assert "description" in params, "Missing parameter 'description'"
+    assert "direction" in params, "Missing parameter 'direction'"
 
-def test_dfa::symbol_has_direction():
-    assert hasattr(dfa::Symbol, "direction")
+def test_dfa_symbol_has_literal():
+    assert hasattr(dfa_Symbol, "literal")
     descriptor = None
-    for klass in dfa::Symbol.__mro__:
-        if "direction" in klass.__dict__:
-            descriptor = klass.__dict__["direction"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_dfa::symbol_has_literal():
-    assert hasattr(dfa::Symbol, "literal")
-    descriptor = None
-    for klass in dfa::Symbol.__mro__:
+    for klass in dfa_Symbol.__mro__:
         if "literal" in klass.__dict__:
             descriptor = klass.__dict__["literal"]
             break
     assert isinstance(descriptor, property)
 
-def test_dfa::symbol_has_description():
-    assert hasattr(dfa::Symbol, "description")
+def test_dfa_symbol_has_description():
+    assert hasattr(dfa_Symbol, "description")
     descriptor = None
-    for klass in dfa::Symbol.__mro__:
+    for klass in dfa_Symbol.__mro__:
         if "description" in klass.__dict__:
             descriptor = klass.__dict__["description"]
             break
     assert isinstance(descriptor, property)
 
+def test_dfa_symbol_has_direction():
+    assert hasattr(dfa_Symbol, "direction")
+    descriptor = None
+    for klass in dfa_Symbol.__mro__:
+        if "direction" in klass.__dict__:
+            descriptor = klass.__dict__["direction"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_dfa::transition_is_not_abstract():
-    assert not inspect.isabstract(dfa::Transition)
+
+def test_dfa_transition_is_not_abstract():
+    assert not inspect.isabstract(dfa_Transition)
 
 
-def test_dfa::transition_constructor_exists():
-    assert callable(dfa::Transition.__init__)
+def test_dfa_transition_constructor_exists():
+    assert callable(dfa_Transition.__init__)
 
 
-def test_dfa::transition_constructor_args():
-    sig = inspect.signature(dfa::Transition.__init__)
+def test_dfa_transition_constructor_args():
+    sig = inspect.signature(dfa_Transition.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -98,23 +98,23 @@ def test_state_constructor_args():
 
 
 
-def test_dfa::namedelement_is_not_abstract():
-    assert not inspect.isabstract(dfa::NamedElement)
+def test_dfa_namedelement_is_not_abstract():
+    assert not inspect.isabstract(dfa_NamedElement)
 
 
-def test_dfa::namedelement_constructor_exists():
-    assert callable(dfa::NamedElement.__init__)
+def test_dfa_namedelement_constructor_exists():
+    assert callable(dfa_NamedElement.__init__)
 
 
-def test_dfa::namedelement_constructor_args():
-    sig = inspect.signature(dfa::NamedElement.__init__)
+def test_dfa_namedelement_constructor_args():
+    sig = inspect.signature(dfa_NamedElement.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_dfa::namedelement_has_name():
-    assert hasattr(dfa::NamedElement, "name")
+def test_dfa_namedelement_has_name():
+    assert hasattr(dfa_NamedElement, "name")
     descriptor = None
-    for klass in dfa::NamedElement.__mro__:
+    for klass in dfa_NamedElement.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -122,30 +122,30 @@ def test_dfa::namedelement_has_name():
 
 
 
-def test_dfa::finalstate_is_not_abstract():
-    assert not inspect.isabstract(dfa::FinalState)
+def test_dfa_finalstate_is_not_abstract():
+    assert not inspect.isabstract(dfa_FinalState)
 
 
-def test_dfa::finalstate_constructor_exists():
-    assert callable(dfa::FinalState.__init__)
+def test_dfa_finalstate_constructor_exists():
+    assert callable(dfa_FinalState.__init__)
 
 
-def test_dfa::finalstate_constructor_args():
-    sig = inspect.signature(dfa::FinalState.__init__)
+def test_dfa_finalstate_constructor_args():
+    sig = inspect.signature(dfa_FinalState.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_dfa::regularstate_is_not_abstract():
-    assert not inspect.isabstract(dfa::RegularState)
+def test_dfa_regularstate_is_not_abstract():
+    assert not inspect.isabstract(dfa_RegularState)
 
 
-def test_dfa::regularstate_constructor_exists():
-    assert callable(dfa::RegularState.__init__)
+def test_dfa_regularstate_constructor_exists():
+    assert callable(dfa_RegularState.__init__)
 
 
-def test_dfa::regularstate_constructor_args():
-    sig = inspect.signature(dfa::RegularState.__init__)
+def test_dfa_regularstate_constructor_args():
+    sig = inspect.signature(dfa_RegularState.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -164,16 +164,16 @@ def test_regularstate_constructor_args():
 
 
 
-def test_dfa::initialstate_is_not_abstract():
-    assert not inspect.isabstract(dfa::InitialState)
+def test_dfa_initialstate_is_not_abstract():
+    assert not inspect.isabstract(dfa_InitialState)
 
 
-def test_dfa::initialstate_constructor_exists():
-    assert callable(dfa::InitialState.__init__)
+def test_dfa_initialstate_constructor_exists():
+    assert callable(dfa_InitialState.__init__)
 
 
-def test_dfa::initialstate_constructor_args():
-    sig = inspect.signature(dfa::InitialState.__init__)
+def test_dfa_initialstate_constructor_args():
+    sig = inspect.signature(dfa_InitialState.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -192,37 +192,37 @@ def test_namedelement_constructor_args():
 
 
 
-def test_dfa::language_is_not_abstract():
-    assert not inspect.isabstract(dfa::Language)
+def test_dfa_language_is_not_abstract():
+    assert not inspect.isabstract(dfa_Language)
 
 
-def test_dfa::language_constructor_exists():
-    assert callable(dfa::Language.__init__)
+def test_dfa_language_constructor_exists():
+    assert callable(dfa_Language.__init__)
 
 
-def test_dfa::language_constructor_args():
-    sig = inspect.signature(dfa::Language.__init__)
+def test_dfa_language_constructor_args():
+    sig = inspect.signature(dfa_Language.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_dfa::state_is_not_abstract():
-    assert not inspect.isabstract(dfa::State)
+def test_dfa_state_is_not_abstract():
+    assert not inspect.isabstract(dfa_State)
 
 
-def test_dfa::state_constructor_exists():
-    assert callable(dfa::State.__init__)
+def test_dfa_state_constructor_exists():
+    assert callable(dfa_State.__init__)
 
 
-def test_dfa::state_constructor_args():
-    sig = inspect.signature(dfa::State.__init__)
+def test_dfa_state_constructor_args():
+    sig = inspect.signature(dfa_State.__init__)
     params = list(sig.parameters.keys())
     assert "description" in params, "Missing parameter 'description'"
 
-def test_dfa::state_has_description():
-    assert hasattr(dfa::State, "description")
+def test_dfa_state_has_description():
+    assert hasattr(dfa_State, "description")
     descriptor = None
-    for klass in dfa::State.__mro__:
+    for klass in dfa_State.__mro__:
         if "description" in klass.__dict__:
             descriptor = klass.__dict__["description"]
             break
@@ -230,16 +230,16 @@ def test_dfa::state_has_description():
 
 
 
-def test_dfa::dfa_is_not_abstract():
-    assert not inspect.isabstract(dfa::Dfa)
+def test_dfa_dfa_is_not_abstract():
+    assert not inspect.isabstract(dfa_Dfa)
 
 
-def test_dfa::dfa_constructor_exists():
-    assert callable(dfa::Dfa.__init__)
+def test_dfa_dfa_constructor_exists():
+    assert callable(dfa_Dfa.__init__)
 
 
-def test_dfa::dfa_constructor_args():
-    sig = inspect.signature(dfa::Dfa.__init__)
+def test_dfa_dfa_constructor_args():
+    sig = inspect.signature(dfa_Dfa.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -254,164 +254,149 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-dfa::Symbol_strategy = st.builds(
-    dfa::Symbol,
-    direction=
-        safe_text,
+dfa_Symbol_strategy = st.builds(
+    dfa_Symbol,
     literal=
         safe_text,
     description=
+        safe_text,
+    direction=
         safe_text
 )
-dfa::Transition_strategy = st.builds(
-    dfa::Transition,
+dfa_Transition_strategy = st.builds(
+    dfa_Transition,
 )
 State_strategy = st.builds(
     State,
 )
-dfa::NamedElement_strategy = st.builds(
-    dfa::NamedElement,
+dfa_NamedElement_strategy = st.builds(
+    dfa_NamedElement,
     name=
         safe_text
 )
-dfa::FinalState_strategy = st.builds(
-    dfa::FinalState,
+dfa_FinalState_strategy = st.builds(
+    dfa_FinalState,
 )
-dfa::RegularState_strategy = st.builds(
-    dfa::RegularState,
+dfa_RegularState_strategy = st.builds(
+    dfa_RegularState,
 )
 RegularState_strategy = st.builds(
     RegularState,
 )
-dfa::InitialState_strategy = st.builds(
-    dfa::InitialState,
+dfa_InitialState_strategy = st.builds(
+    dfa_InitialState,
 )
 NamedElement_strategy = st.builds(
     NamedElement,
 )
-dfa::Language_strategy = st.builds(
-    dfa::Language,
+dfa_Language_strategy = st.builds(
+    dfa_Language,
 )
-dfa::State_strategy = st.builds(
-    dfa::State,
+dfa_State_strategy = st.builds(
+    dfa_State,
     description=
         safe_text
 )
-dfa::Dfa_strategy = st.builds(
-    dfa::Dfa,
+dfa_Dfa_strategy = st.builds(
+    dfa_Dfa,
 )
 
-@given(instance=dfa::Symbol_strategy)
+@given(instance=dfa_Symbol_strategy)
 @settings(max_examples=50)
-def test_dfa::symbol_instantiation(instance):
-    assert isinstance(instance, dfa::Symbol)
-
-@given(instance=dfa::Symbol_strategy)
-def test_dfa::symbol_direction_type(instance):
-    assert isinstance(instance.direction, str)
+def test_dfa_symbol_instantiation(instance):
+    assert isinstance(instance, dfa_Symbol)
 
 
-@given(instance=dfa::Symbol_strategy)
-def test_dfa::symbol_direction_setter(instance):
-    original = instance.direction
-    instance.direction = original
-    assert instance.direction == original
 
-@given(instance=dfa::Symbol_strategy)
-def test_dfa::symbol_literal_type(instance):
-    assert isinstance(instance.literal, str)
-
-
-@given(instance=dfa::Symbol_strategy)
-def test_dfa::symbol_literal_setter(instance):
+@given(instance=dfa_Symbol_strategy)
+def test_dfa_symbol_literal_setter(instance):
     original = instance.literal
     instance.literal = original
     assert instance.literal == original
 
-@given(instance=dfa::Symbol_strategy)
-def test_dfa::symbol_description_type(instance):
-    assert isinstance(instance.description, str)
 
 
-@given(instance=dfa::Symbol_strategy)
-def test_dfa::symbol_description_setter(instance):
+@given(instance=dfa_Symbol_strategy)
+def test_dfa_symbol_description_setter(instance):
     original = instance.description
     instance.description = original
     assert instance.description == original
 
-@given(instance=dfa::Transition_strategy)
+
+
+@given(instance=dfa_Symbol_strategy)
+def test_dfa_symbol_direction_setter(instance):
+    original = instance.direction
+    instance.direction = original
+    assert instance.direction == original
+
+@given(instance=dfa_Transition_strategy)
 @settings(max_examples=50)
-def test_dfa::transition_instantiation(instance):
-    assert isinstance(instance, dfa::Transition)
+def test_dfa_transition_instantiation(instance):
+    assert isinstance(instance, dfa_Transition)
 
 @given(instance=State_strategy)
 @settings(max_examples=50)
 def test_state_instantiation(instance):
     assert isinstance(instance, State)
 
-@given(instance=dfa::NamedElement_strategy)
+@given(instance=dfa_NamedElement_strategy)
 @settings(max_examples=50)
-def test_dfa::namedelement_instantiation(instance):
-    assert isinstance(instance, dfa::NamedElement)
-
-@given(instance=dfa::NamedElement_strategy)
-def test_dfa::namedelement_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_dfa_namedelement_instantiation(instance):
+    assert isinstance(instance, dfa_NamedElement)
 
 
-@given(instance=dfa::NamedElement_strategy)
-def test_dfa::namedelement_name_setter(instance):
+
+@given(instance=dfa_NamedElement_strategy)
+def test_dfa_namedelement_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=dfa::FinalState_strategy)
+@given(instance=dfa_FinalState_strategy)
 @settings(max_examples=50)
-def test_dfa::finalstate_instantiation(instance):
-    assert isinstance(instance, dfa::FinalState)
+def test_dfa_finalstate_instantiation(instance):
+    assert isinstance(instance, dfa_FinalState)
 
-@given(instance=dfa::RegularState_strategy)
+@given(instance=dfa_RegularState_strategy)
 @settings(max_examples=50)
-def test_dfa::regularstate_instantiation(instance):
-    assert isinstance(instance, dfa::RegularState)
+def test_dfa_regularstate_instantiation(instance):
+    assert isinstance(instance, dfa_RegularState)
 
 @given(instance=RegularState_strategy)
 @settings(max_examples=50)
 def test_regularstate_instantiation(instance):
     assert isinstance(instance, RegularState)
 
-@given(instance=dfa::InitialState_strategy)
+@given(instance=dfa_InitialState_strategy)
 @settings(max_examples=50)
-def test_dfa::initialstate_instantiation(instance):
-    assert isinstance(instance, dfa::InitialState)
+def test_dfa_initialstate_instantiation(instance):
+    assert isinstance(instance, dfa_InitialState)
 
 @given(instance=NamedElement_strategy)
 @settings(max_examples=50)
 def test_namedelement_instantiation(instance):
     assert isinstance(instance, NamedElement)
 
-@given(instance=dfa::Language_strategy)
+@given(instance=dfa_Language_strategy)
 @settings(max_examples=50)
-def test_dfa::language_instantiation(instance):
-    assert isinstance(instance, dfa::Language)
+def test_dfa_language_instantiation(instance):
+    assert isinstance(instance, dfa_Language)
 
-@given(instance=dfa::State_strategy)
+@given(instance=dfa_State_strategy)
 @settings(max_examples=50)
-def test_dfa::state_instantiation(instance):
-    assert isinstance(instance, dfa::State)
-
-@given(instance=dfa::State_strategy)
-def test_dfa::state_description_type(instance):
-    assert isinstance(instance.description, str)
+def test_dfa_state_instantiation(instance):
+    assert isinstance(instance, dfa_State)
 
 
-@given(instance=dfa::State_strategy)
-def test_dfa::state_description_setter(instance):
+
+@given(instance=dfa_State_strategy)
+def test_dfa_state_description_setter(instance):
     original = instance.description
     instance.description = original
     assert instance.description == original
 
-@given(instance=dfa::Dfa_strategy)
+@given(instance=dfa_Dfa_strategy)
 @settings(max_examples=50)
-def test_dfa::dfa_instantiation(instance):
-    assert isinstance(instance, dfa::Dfa)
+def test_dfa_dfa_instantiation(instance):
+    assert isinstance(instance, dfa_Dfa)

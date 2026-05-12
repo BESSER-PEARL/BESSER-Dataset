@@ -3,676 +3,104 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    swt::Viewer,
-    swt::TreeViewer,
-    swt::LineAttributes,
-    swt::FormLayout,
-    swt::FormAttachment,
-    swt::RowLayout,
-    swt::FillLayout,
-    swt::GridLayout,
+from python_code import (
     LayoutData,
-    swt::FormData,
-    swt::GridData,
-    swt::RowData,
+    swt_RowData,
     AbstractList,
-    swt::List,
+    swt_List,
     Color,
-    swt::RGBColor,
-    swt::SystemColor,
-    swt::Combo,
-    swt::CoolBar,
+    swt_RGBColor,
+    swt_SystemColor,
+    swt_Combo,
+    swt_CoolBar,
     IntervalSelector,
-    swt::Spinner,
-    swt::Slider,
+    swt_Spinner,
+    swt_Slider,
     IntervalControl,
-    swt::ProgressBar,
-    swt::IntervalSelector,
+    swt_ProgressBar,
+    swt_IntervalSelector,
     Text,
-    swt::SearchText,
-    swt::PasswordText,
+    swt_SearchText,
+    swt_PasswordText,
     Item,
-    swt::TabItem,
-    swt::TreeColumn,
-    swt::CoolItem,
-    swt::ToolItem,
+    swt_CoolItem,
+    swt_ToolItem,
+    swt_TabItem,
     Labeled,
-    swt::Labeled,
+    swt_Labeled,
     AbstractMenu,
-    swt::Menu,
-    swt::MenuItem,
+    swt_Menu,
+    swt_MenuItem,
     Widget,
-    swt::Item,
-    swt::AbstractMenu,
-    swt::Control,
-    swt::LayoutData,
+    swt_AbstractMenu,
+    swt_Item,
+    swt_Control,
+    swt_LayoutData,
     Decorations,
-    swt::Shell,
-    swt::MenuBar,
+    swt_Shell,
+    swt_MenuBar,
     Canvas,
-    swt::Decorations,
+    swt_Decorations,
     Composite,
-    swt::Canvas,
-    swt::Group,
-    swt::Composite,
+    swt_Canvas,
+    swt_Group,
+    swt_Composite,
     Control,
-    swt::Label,
-    swt::DateTime,
-    swt::Text,
-    swt::TabFolder,
-    swt::Separator,
-    swt::Browser,
-    swt::Button,
-    swt::AbstractList,
-    swt::Tree,
-    swt::IntervalControl,
-    swt::ToolBar,
-    swt::AbstractComposite,
-    swt::Font,
-    swt::Color,
-    swt::Layout,
-    swt::Widget,
-    FormAttachmentAlignment,
-    SortDirection,
-    TrimStyle,
-    TextOrientationStyle,
-    ArrowStyle,
-    SystemColors,
-    BorderStyle,
-    MenuStyle,
-    LineStyle,
-    ProgressState,
-    MenuItemStyle,
-    ModalStyle,
-    OrientationStyle,
-    JoinStyle,
-    ButtonStyle,
-    ComboStyle,
-    VerticalAlignmentStyle,
-    MultiplicityStyle,
+    swt_Separator,
+    swt_Text,
+    swt_DateTime,
+    swt_TabFolder,
+    swt_Label,
+    swt_Browser,
+    swt_Button,
+    swt_IntervalControl,
+    swt_ToolBar,
+    swt_AbstractList,
+    swt_AbstractComposite,
+    swt_Font,
+    swt_Color,
+    swt_Layout,
+    swt_Widget,
+    swt_Viewer,
+    swt_TreeViewer,
+    swt_Tree,
+    swt_TreeColumn,
+    swt_LineAttributes,
+    swt_FormLayout,
+    swt_GridData,
+    swt_FormAttachment,
+    swt_FormData,
+    swt_RowLayout,
+    swt_FillLayout,
+    swt_GridLayout,
     HorizontalAlignmentStyle,
-    CapStyle,
+    ButtonStyle,
+    SortDirection,
+    ModalStyle,
+    FormAttachmentAlignment,
+    JoinStyle,
+    OrientationStyle,
+    ArrowStyle,
+    TrimStyle,
+    VerticalAlignmentStyle,
+    ProgressState,
+    SystemColors,
+    ComboStyle,
+    TextOrientationStyle,
+    MenuStyle,
+    MultiplicityStyle,
+    BorderStyle,
     FontStyle,
+    LineStyle,
+    CapStyle,
+    MenuItemStyle,
 )
 
 # =============================================================================
 # SECTION 1 — STRUCTURAL TESTS
 # =============================================================================
-
-
-
-def test_swt::viewer_is_not_abstract():
-    assert not inspect.isabstract(swt::Viewer)
-
-
-def test_swt::viewer_constructor_exists():
-    assert callable(swt::Viewer.__init__)
-
-
-def test_swt::viewer_constructor_args():
-    sig = inspect.signature(swt::Viewer.__init__)
-    params = list(sig.parameters.keys())
-    assert "input" in params, "Missing parameter 'input'"
-
-def test_swt::viewer_has_input():
-    assert hasattr(swt::Viewer, "input")
-    descriptor = None
-    for klass in swt::Viewer.__mro__:
-        if "input" in klass.__dict__:
-            descriptor = klass.__dict__["input"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_swt::treeviewer_is_not_abstract():
-    assert not inspect.isabstract(swt::TreeViewer)
-
-
-def test_swt::treeviewer_constructor_exists():
-    assert callable(swt::TreeViewer.__init__)
-
-
-def test_swt::treeviewer_constructor_args():
-    sig = inspect.signature(swt::TreeViewer.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_swt::lineattributes_is_not_abstract():
-    assert not inspect.isabstract(swt::LineAttributes)
-
-
-def test_swt::lineattributes_constructor_exists():
-    assert callable(swt::LineAttributes.__init__)
-
-
-def test_swt::lineattributes_constructor_args():
-    sig = inspect.signature(swt::LineAttributes.__init__)
-    params = list(sig.parameters.keys())
-    assert "dash" in params, "Missing parameter 'dash'"
-    assert "miterLimit" in params, "Missing parameter 'miterLimit'"
-    assert "style" in params, "Missing parameter 'style'"
-    assert "cap" in params, "Missing parameter 'cap'"
-    assert "width" in params, "Missing parameter 'width'"
-    assert "dashOffset" in params, "Missing parameter 'dashOffset'"
-    assert "join" in params, "Missing parameter 'join'"
-
-def test_swt::lineattributes_has_dash():
-    assert hasattr(swt::LineAttributes, "dash")
-    descriptor = None
-    for klass in swt::LineAttributes.__mro__:
-        if "dash" in klass.__dict__:
-            descriptor = klass.__dict__["dash"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_swt::lineattributes_has_miterLimit():
-    assert hasattr(swt::LineAttributes, "miterLimit")
-    descriptor = None
-    for klass in swt::LineAttributes.__mro__:
-        if "miterLimit" in klass.__dict__:
-            descriptor = klass.__dict__["miterLimit"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_swt::lineattributes_has_style():
-    assert hasattr(swt::LineAttributes, "style")
-    descriptor = None
-    for klass in swt::LineAttributes.__mro__:
-        if "style" in klass.__dict__:
-            descriptor = klass.__dict__["style"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_swt::lineattributes_has_cap():
-    assert hasattr(swt::LineAttributes, "cap")
-    descriptor = None
-    for klass in swt::LineAttributes.__mro__:
-        if "cap" in klass.__dict__:
-            descriptor = klass.__dict__["cap"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_swt::lineattributes_has_width():
-    assert hasattr(swt::LineAttributes, "width")
-    descriptor = None
-    for klass in swt::LineAttributes.__mro__:
-        if "width" in klass.__dict__:
-            descriptor = klass.__dict__["width"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_swt::lineattributes_has_dashOffset():
-    assert hasattr(swt::LineAttributes, "dashOffset")
-    descriptor = None
-    for klass in swt::LineAttributes.__mro__:
-        if "dashOffset" in klass.__dict__:
-            descriptor = klass.__dict__["dashOffset"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_swt::lineattributes_has_join():
-    assert hasattr(swt::LineAttributes, "join")
-    descriptor = None
-    for klass in swt::LineAttributes.__mro__:
-        if "join" in klass.__dict__:
-            descriptor = klass.__dict__["join"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_swt::formlayout_is_not_abstract():
-    assert not inspect.isabstract(swt::FormLayout)
-
-
-def test_swt::formlayout_constructor_exists():
-    assert callable(swt::FormLayout.__init__)
-
-
-def test_swt::formlayout_constructor_args():
-    sig = inspect.signature(swt::FormLayout.__init__)
-    params = list(sig.parameters.keys())
-    assert "marginBottom" in params, "Missing parameter 'marginBottom'"
-    assert "marginHeight" in params, "Missing parameter 'marginHeight'"
-    assert "marginWidth" in params, "Missing parameter 'marginWidth'"
-    assert "spacing" in params, "Missing parameter 'spacing'"
-    assert "marginRight" in params, "Missing parameter 'marginRight'"
-    assert "marginTop" in params, "Missing parameter 'marginTop'"
-    assert "marginLeft" in params, "Missing parameter 'marginLeft'"
-
-def test_swt::formlayout_has_marginBottom():
-    assert hasattr(swt::FormLayout, "marginBottom")
-    descriptor = None
-    for klass in swt::FormLayout.__mro__:
-        if "marginBottom" in klass.__dict__:
-            descriptor = klass.__dict__["marginBottom"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_swt::formlayout_has_marginHeight():
-    assert hasattr(swt::FormLayout, "marginHeight")
-    descriptor = None
-    for klass in swt::FormLayout.__mro__:
-        if "marginHeight" in klass.__dict__:
-            descriptor = klass.__dict__["marginHeight"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_swt::formlayout_has_marginWidth():
-    assert hasattr(swt::FormLayout, "marginWidth")
-    descriptor = None
-    for klass in swt::FormLayout.__mro__:
-        if "marginWidth" in klass.__dict__:
-            descriptor = klass.__dict__["marginWidth"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_swt::formlayout_has_spacing():
-    assert hasattr(swt::FormLayout, "spacing")
-    descriptor = None
-    for klass in swt::FormLayout.__mro__:
-        if "spacing" in klass.__dict__:
-            descriptor = klass.__dict__["spacing"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_swt::formlayout_has_marginRight():
-    assert hasattr(swt::FormLayout, "marginRight")
-    descriptor = None
-    for klass in swt::FormLayout.__mro__:
-        if "marginRight" in klass.__dict__:
-            descriptor = klass.__dict__["marginRight"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_swt::formlayout_has_marginTop():
-    assert hasattr(swt::FormLayout, "marginTop")
-    descriptor = None
-    for klass in swt::FormLayout.__mro__:
-        if "marginTop" in klass.__dict__:
-            descriptor = klass.__dict__["marginTop"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_swt::formlayout_has_marginLeft():
-    assert hasattr(swt::FormLayout, "marginLeft")
-    descriptor = None
-    for klass in swt::FormLayout.__mro__:
-        if "marginLeft" in klass.__dict__:
-            descriptor = klass.__dict__["marginLeft"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_swt::formattachment_is_not_abstract():
-    assert not inspect.isabstract(swt::FormAttachment)
-
-
-def test_swt::formattachment_constructor_exists():
-    assert callable(swt::FormAttachment.__init__)
-
-
-def test_swt::formattachment_constructor_args():
-    sig = inspect.signature(swt::FormAttachment.__init__)
-    params = list(sig.parameters.keys())
-    assert "numerator" in params, "Missing parameter 'numerator'"
-    assert "offset" in params, "Missing parameter 'offset'"
-    assert "alignment" in params, "Missing parameter 'alignment'"
-    assert "denominator" in params, "Missing parameter 'denominator'"
-
-def test_swt::formattachment_has_numerator():
-    assert hasattr(swt::FormAttachment, "numerator")
-    descriptor = None
-    for klass in swt::FormAttachment.__mro__:
-        if "numerator" in klass.__dict__:
-            descriptor = klass.__dict__["numerator"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_swt::formattachment_has_offset():
-    assert hasattr(swt::FormAttachment, "offset")
-    descriptor = None
-    for klass in swt::FormAttachment.__mro__:
-        if "offset" in klass.__dict__:
-            descriptor = klass.__dict__["offset"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_swt::formattachment_has_alignment():
-    assert hasattr(swt::FormAttachment, "alignment")
-    descriptor = None
-    for klass in swt::FormAttachment.__mro__:
-        if "alignment" in klass.__dict__:
-            descriptor = klass.__dict__["alignment"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_swt::formattachment_has_denominator():
-    assert hasattr(swt::FormAttachment, "denominator")
-    descriptor = None
-    for klass in swt::FormAttachment.__mro__:
-        if "denominator" in klass.__dict__:
-            descriptor = klass.__dict__["denominator"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_swt::rowlayout_is_not_abstract():
-    assert not inspect.isabstract(swt::RowLayout)
-
-
-def test_swt::rowlayout_constructor_exists():
-    assert callable(swt::RowLayout.__init__)
-
-
-def test_swt::rowlayout_constructor_args():
-    sig = inspect.signature(swt::RowLayout.__init__)
-    params = list(sig.parameters.keys())
-    assert "fill" in params, "Missing parameter 'fill'"
-    assert "marginTop" in params, "Missing parameter 'marginTop'"
-    assert "marginBottom" in params, "Missing parameter 'marginBottom'"
-    assert "justify" in params, "Missing parameter 'justify'"
-    assert "marginWidth" in params, "Missing parameter 'marginWidth'"
-    assert "spacing" in params, "Missing parameter 'spacing'"
-    assert "pack" in params, "Missing parameter 'pack'"
-    assert "center" in params, "Missing parameter 'center'"
-    assert "marginRight" in params, "Missing parameter 'marginRight'"
-    assert "wrap" in params, "Missing parameter 'wrap'"
-    assert "orientationStyle" in params, "Missing parameter 'orientationStyle'"
-    assert "marginLeft" in params, "Missing parameter 'marginLeft'"
-    assert "marginHeight" in params, "Missing parameter 'marginHeight'"
-
-def test_swt::rowlayout_has_fill():
-    assert hasattr(swt::RowLayout, "fill")
-    descriptor = None
-    for klass in swt::RowLayout.__mro__:
-        if "fill" in klass.__dict__:
-            descriptor = klass.__dict__["fill"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_swt::rowlayout_has_marginTop():
-    assert hasattr(swt::RowLayout, "marginTop")
-    descriptor = None
-    for klass in swt::RowLayout.__mro__:
-        if "marginTop" in klass.__dict__:
-            descriptor = klass.__dict__["marginTop"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_swt::rowlayout_has_marginBottom():
-    assert hasattr(swt::RowLayout, "marginBottom")
-    descriptor = None
-    for klass in swt::RowLayout.__mro__:
-        if "marginBottom" in klass.__dict__:
-            descriptor = klass.__dict__["marginBottom"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_swt::rowlayout_has_justify():
-    assert hasattr(swt::RowLayout, "justify")
-    descriptor = None
-    for klass in swt::RowLayout.__mro__:
-        if "justify" in klass.__dict__:
-            descriptor = klass.__dict__["justify"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_swt::rowlayout_has_marginWidth():
-    assert hasattr(swt::RowLayout, "marginWidth")
-    descriptor = None
-    for klass in swt::RowLayout.__mro__:
-        if "marginWidth" in klass.__dict__:
-            descriptor = klass.__dict__["marginWidth"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_swt::rowlayout_has_spacing():
-    assert hasattr(swt::RowLayout, "spacing")
-    descriptor = None
-    for klass in swt::RowLayout.__mro__:
-        if "spacing" in klass.__dict__:
-            descriptor = klass.__dict__["spacing"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_swt::rowlayout_has_pack():
-    assert hasattr(swt::RowLayout, "pack")
-    descriptor = None
-    for klass in swt::RowLayout.__mro__:
-        if "pack" in klass.__dict__:
-            descriptor = klass.__dict__["pack"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_swt::rowlayout_has_center():
-    assert hasattr(swt::RowLayout, "center")
-    descriptor = None
-    for klass in swt::RowLayout.__mro__:
-        if "center" in klass.__dict__:
-            descriptor = klass.__dict__["center"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_swt::rowlayout_has_marginRight():
-    assert hasattr(swt::RowLayout, "marginRight")
-    descriptor = None
-    for klass in swt::RowLayout.__mro__:
-        if "marginRight" in klass.__dict__:
-            descriptor = klass.__dict__["marginRight"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_swt::rowlayout_has_wrap():
-    assert hasattr(swt::RowLayout, "wrap")
-    descriptor = None
-    for klass in swt::RowLayout.__mro__:
-        if "wrap" in klass.__dict__:
-            descriptor = klass.__dict__["wrap"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_swt::rowlayout_has_orientationStyle():
-    assert hasattr(swt::RowLayout, "orientationStyle")
-    descriptor = None
-    for klass in swt::RowLayout.__mro__:
-        if "orientationStyle" in klass.__dict__:
-            descriptor = klass.__dict__["orientationStyle"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_swt::rowlayout_has_marginLeft():
-    assert hasattr(swt::RowLayout, "marginLeft")
-    descriptor = None
-    for klass in swt::RowLayout.__mro__:
-        if "marginLeft" in klass.__dict__:
-            descriptor = klass.__dict__["marginLeft"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_swt::rowlayout_has_marginHeight():
-    assert hasattr(swt::RowLayout, "marginHeight")
-    descriptor = None
-    for klass in swt::RowLayout.__mro__:
-        if "marginHeight" in klass.__dict__:
-            descriptor = klass.__dict__["marginHeight"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_swt::filllayout_is_not_abstract():
-    assert not inspect.isabstract(swt::FillLayout)
-
-
-def test_swt::filllayout_constructor_exists():
-    assert callable(swt::FillLayout.__init__)
-
-
-def test_swt::filllayout_constructor_args():
-    sig = inspect.signature(swt::FillLayout.__init__)
-    params = list(sig.parameters.keys())
-    assert "marginWidth" in params, "Missing parameter 'marginWidth'"
-    assert "spacing" in params, "Missing parameter 'spacing'"
-    assert "marginHeight" in params, "Missing parameter 'marginHeight'"
-    assert "orientationStyle" in params, "Missing parameter 'orientationStyle'"
-
-def test_swt::filllayout_has_marginWidth():
-    assert hasattr(swt::FillLayout, "marginWidth")
-    descriptor = None
-    for klass in swt::FillLayout.__mro__:
-        if "marginWidth" in klass.__dict__:
-            descriptor = klass.__dict__["marginWidth"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_swt::filllayout_has_spacing():
-    assert hasattr(swt::FillLayout, "spacing")
-    descriptor = None
-    for klass in swt::FillLayout.__mro__:
-        if "spacing" in klass.__dict__:
-            descriptor = klass.__dict__["spacing"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_swt::filllayout_has_marginHeight():
-    assert hasattr(swt::FillLayout, "marginHeight")
-    descriptor = None
-    for klass in swt::FillLayout.__mro__:
-        if "marginHeight" in klass.__dict__:
-            descriptor = klass.__dict__["marginHeight"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_swt::filllayout_has_orientationStyle():
-    assert hasattr(swt::FillLayout, "orientationStyle")
-    descriptor = None
-    for klass in swt::FillLayout.__mro__:
-        if "orientationStyle" in klass.__dict__:
-            descriptor = klass.__dict__["orientationStyle"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_swt::gridlayout_is_not_abstract():
-    assert not inspect.isabstract(swt::GridLayout)
-
-
-def test_swt::gridlayout_constructor_exists():
-    assert callable(swt::GridLayout.__init__)
-
-
-def test_swt::gridlayout_constructor_args():
-    sig = inspect.signature(swt::GridLayout.__init__)
-    params = list(sig.parameters.keys())
-    assert "verticalSpacing" in params, "Missing parameter 'verticalSpacing'"
-    assert "marginHeight" in params, "Missing parameter 'marginHeight'"
-    assert "horizontalSpacing" in params, "Missing parameter 'horizontalSpacing'"
-    assert "marginRight" in params, "Missing parameter 'marginRight'"
-    assert "makeColumnsEqualWidth" in params, "Missing parameter 'makeColumnsEqualWidth'"
-    assert "marginBottom" in params, "Missing parameter 'marginBottom'"
-    assert "numColumns" in params, "Missing parameter 'numColumns'"
-    assert "marginLeft" in params, "Missing parameter 'marginLeft'"
-    assert "marginTop" in params, "Missing parameter 'marginTop'"
-    assert "marginWidth" in params, "Missing parameter 'marginWidth'"
-
-def test_swt::gridlayout_has_verticalSpacing():
-    assert hasattr(swt::GridLayout, "verticalSpacing")
-    descriptor = None
-    for klass in swt::GridLayout.__mro__:
-        if "verticalSpacing" in klass.__dict__:
-            descriptor = klass.__dict__["verticalSpacing"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_swt::gridlayout_has_marginHeight():
-    assert hasattr(swt::GridLayout, "marginHeight")
-    descriptor = None
-    for klass in swt::GridLayout.__mro__:
-        if "marginHeight" in klass.__dict__:
-            descriptor = klass.__dict__["marginHeight"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_swt::gridlayout_has_horizontalSpacing():
-    assert hasattr(swt::GridLayout, "horizontalSpacing")
-    descriptor = None
-    for klass in swt::GridLayout.__mro__:
-        if "horizontalSpacing" in klass.__dict__:
-            descriptor = klass.__dict__["horizontalSpacing"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_swt::gridlayout_has_marginRight():
-    assert hasattr(swt::GridLayout, "marginRight")
-    descriptor = None
-    for klass in swt::GridLayout.__mro__:
-        if "marginRight" in klass.__dict__:
-            descriptor = klass.__dict__["marginRight"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_swt::gridlayout_has_makeColumnsEqualWidth():
-    assert hasattr(swt::GridLayout, "makeColumnsEqualWidth")
-    descriptor = None
-    for klass in swt::GridLayout.__mro__:
-        if "makeColumnsEqualWidth" in klass.__dict__:
-            descriptor = klass.__dict__["makeColumnsEqualWidth"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_swt::gridlayout_has_marginBottom():
-    assert hasattr(swt::GridLayout, "marginBottom")
-    descriptor = None
-    for klass in swt::GridLayout.__mro__:
-        if "marginBottom" in klass.__dict__:
-            descriptor = klass.__dict__["marginBottom"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_swt::gridlayout_has_numColumns():
-    assert hasattr(swt::GridLayout, "numColumns")
-    descriptor = None
-    for klass in swt::GridLayout.__mro__:
-        if "numColumns" in klass.__dict__:
-            descriptor = klass.__dict__["numColumns"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_swt::gridlayout_has_marginLeft():
-    assert hasattr(swt::GridLayout, "marginLeft")
-    descriptor = None
-    for klass in swt::GridLayout.__mro__:
-        if "marginLeft" in klass.__dict__:
-            descriptor = klass.__dict__["marginLeft"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_swt::gridlayout_has_marginTop():
-    assert hasattr(swt::GridLayout, "marginTop")
-    descriptor = None
-    for klass in swt::GridLayout.__mro__:
-        if "marginTop" in klass.__dict__:
-            descriptor = klass.__dict__["marginTop"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_swt::gridlayout_has_marginWidth():
-    assert hasattr(swt::GridLayout, "marginWidth")
-    descriptor = None
-    for klass in swt::GridLayout.__mro__:
-        if "marginWidth" in klass.__dict__:
-            descriptor = klass.__dict__["marginWidth"]
-            break
-    assert isinstance(descriptor, property)
 
 
 
@@ -690,223 +118,45 @@ def test_layoutdata_constructor_args():
 
 
 
-def test_swt::formdata_is_not_abstract():
-    assert not inspect.isabstract(swt::FormData)
+def test_swt_rowdata_is_not_abstract():
+    assert not inspect.isabstract(swt_RowData)
 
 
-def test_swt::formdata_constructor_exists():
-    assert callable(swt::FormData.__init__)
+def test_swt_rowdata_constructor_exists():
+    assert callable(swt_RowData.__init__)
 
 
-def test_swt::formdata_constructor_args():
-    sig = inspect.signature(swt::FormData.__init__)
+def test_swt_rowdata_constructor_args():
+    sig = inspect.signature(swt_RowData.__init__)
     params = list(sig.parameters.keys())
-    assert "height" in params, "Missing parameter 'height'"
-    assert "width" in params, "Missing parameter 'width'"
-
-def test_swt::formdata_has_height():
-    assert hasattr(swt::FormData, "height")
-    descriptor = None
-    for klass in swt::FormData.__mro__:
-        if "height" in klass.__dict__:
-            descriptor = klass.__dict__["height"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_swt::formdata_has_width():
-    assert hasattr(swt::FormData, "width")
-    descriptor = None
-    for klass in swt::FormData.__mro__:
-        if "width" in klass.__dict__:
-            descriptor = klass.__dict__["width"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_swt::griddata_is_not_abstract():
-    assert not inspect.isabstract(swt::GridData)
-
-
-def test_swt::griddata_constructor_exists():
-    assert callable(swt::GridData.__init__)
-
-
-def test_swt::griddata_constructor_args():
-    sig = inspect.signature(swt::GridData.__init__)
-    params = list(sig.parameters.keys())
-    assert "horizontalIndent" in params, "Missing parameter 'horizontalIndent'"
-    assert "verticalIndent" in params, "Missing parameter 'verticalIndent'"
-    assert "widthHint" in params, "Missing parameter 'widthHint'"
-    assert "grabExcessVerticalSpace" in params, "Missing parameter 'grabExcessVerticalSpace'"
-    assert "verticalSpan" in params, "Missing parameter 'verticalSpan'"
-    assert "horizontalAlignment" in params, "Missing parameter 'horizontalAlignment'"
-    assert "heightHint" in params, "Missing parameter 'heightHint'"
-    assert "grabExcessHorizontalSpace" in params, "Missing parameter 'grabExcessHorizontalSpace'"
     assert "exclude" in params, "Missing parameter 'exclude'"
-    assert "verticalAlignment" in params, "Missing parameter 'verticalAlignment'"
-    assert "horizontalSpan" in params, "Missing parameter 'horizontalSpan'"
-    assert "minimumWidth" in params, "Missing parameter 'minimumWidth'"
-    assert "minimumHeight" in params, "Missing parameter 'minimumHeight'"
+    assert "width" in params, "Missing parameter 'width'"
+    assert "height" in params, "Missing parameter 'height'"
 
-def test_swt::griddata_has_horizontalIndent():
-    assert hasattr(swt::GridData, "horizontalIndent")
+def test_swt_rowdata_has_exclude():
+    assert hasattr(swt_RowData, "exclude")
     descriptor = None
-    for klass in swt::GridData.__mro__:
-        if "horizontalIndent" in klass.__dict__:
-            descriptor = klass.__dict__["horizontalIndent"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_swt::griddata_has_verticalIndent():
-    assert hasattr(swt::GridData, "verticalIndent")
-    descriptor = None
-    for klass in swt::GridData.__mro__:
-        if "verticalIndent" in klass.__dict__:
-            descriptor = klass.__dict__["verticalIndent"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_swt::griddata_has_widthHint():
-    assert hasattr(swt::GridData, "widthHint")
-    descriptor = None
-    for klass in swt::GridData.__mro__:
-        if "widthHint" in klass.__dict__:
-            descriptor = klass.__dict__["widthHint"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_swt::griddata_has_grabExcessVerticalSpace():
-    assert hasattr(swt::GridData, "grabExcessVerticalSpace")
-    descriptor = None
-    for klass in swt::GridData.__mro__:
-        if "grabExcessVerticalSpace" in klass.__dict__:
-            descriptor = klass.__dict__["grabExcessVerticalSpace"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_swt::griddata_has_verticalSpan():
-    assert hasattr(swt::GridData, "verticalSpan")
-    descriptor = None
-    for klass in swt::GridData.__mro__:
-        if "verticalSpan" in klass.__dict__:
-            descriptor = klass.__dict__["verticalSpan"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_swt::griddata_has_horizontalAlignment():
-    assert hasattr(swt::GridData, "horizontalAlignment")
-    descriptor = None
-    for klass in swt::GridData.__mro__:
-        if "horizontalAlignment" in klass.__dict__:
-            descriptor = klass.__dict__["horizontalAlignment"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_swt::griddata_has_heightHint():
-    assert hasattr(swt::GridData, "heightHint")
-    descriptor = None
-    for klass in swt::GridData.__mro__:
-        if "heightHint" in klass.__dict__:
-            descriptor = klass.__dict__["heightHint"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_swt::griddata_has_grabExcessHorizontalSpace():
-    assert hasattr(swt::GridData, "grabExcessHorizontalSpace")
-    descriptor = None
-    for klass in swt::GridData.__mro__:
-        if "grabExcessHorizontalSpace" in klass.__dict__:
-            descriptor = klass.__dict__["grabExcessHorizontalSpace"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_swt::griddata_has_exclude():
-    assert hasattr(swt::GridData, "exclude")
-    descriptor = None
-    for klass in swt::GridData.__mro__:
+    for klass in swt_RowData.__mro__:
         if "exclude" in klass.__dict__:
             descriptor = klass.__dict__["exclude"]
             break
     assert isinstance(descriptor, property)
 
-def test_swt::griddata_has_verticalAlignment():
-    assert hasattr(swt::GridData, "verticalAlignment")
+def test_swt_rowdata_has_width():
+    assert hasattr(swt_RowData, "width")
     descriptor = None
-    for klass in swt::GridData.__mro__:
-        if "verticalAlignment" in klass.__dict__:
-            descriptor = klass.__dict__["verticalAlignment"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_swt::griddata_has_horizontalSpan():
-    assert hasattr(swt::GridData, "horizontalSpan")
-    descriptor = None
-    for klass in swt::GridData.__mro__:
-        if "horizontalSpan" in klass.__dict__:
-            descriptor = klass.__dict__["horizontalSpan"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_swt::griddata_has_minimumWidth():
-    assert hasattr(swt::GridData, "minimumWidth")
-    descriptor = None
-    for klass in swt::GridData.__mro__:
-        if "minimumWidth" in klass.__dict__:
-            descriptor = klass.__dict__["minimumWidth"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_swt::griddata_has_minimumHeight():
-    assert hasattr(swt::GridData, "minimumHeight")
-    descriptor = None
-    for klass in swt::GridData.__mro__:
-        if "minimumHeight" in klass.__dict__:
-            descriptor = klass.__dict__["minimumHeight"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_swt::rowdata_is_not_abstract():
-    assert not inspect.isabstract(swt::RowData)
-
-
-def test_swt::rowdata_constructor_exists():
-    assert callable(swt::RowData.__init__)
-
-
-def test_swt::rowdata_constructor_args():
-    sig = inspect.signature(swt::RowData.__init__)
-    params = list(sig.parameters.keys())
-    assert "height" in params, "Missing parameter 'height'"
-    assert "exclude" in params, "Missing parameter 'exclude'"
-    assert "width" in params, "Missing parameter 'width'"
-
-def test_swt::rowdata_has_height():
-    assert hasattr(swt::RowData, "height")
-    descriptor = None
-    for klass in swt::RowData.__mro__:
-        if "height" in klass.__dict__:
-            descriptor = klass.__dict__["height"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_swt::rowdata_has_exclude():
-    assert hasattr(swt::RowData, "exclude")
-    descriptor = None
-    for klass in swt::RowData.__mro__:
-        if "exclude" in klass.__dict__:
-            descriptor = klass.__dict__["exclude"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_swt::rowdata_has_width():
-    assert hasattr(swt::RowData, "width")
-    descriptor = None
-    for klass in swt::RowData.__mro__:
+    for klass in swt_RowData.__mro__:
         if "width" in klass.__dict__:
             descriptor = klass.__dict__["width"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_swt_rowdata_has_height():
+    assert hasattr(swt_RowData, "height")
+    descriptor = None
+    for klass in swt_RowData.__mro__:
+        if "height" in klass.__dict__:
+            descriptor = klass.__dict__["height"]
             break
     assert isinstance(descriptor, property)
 
@@ -926,45 +176,45 @@ def test_abstractlist_constructor_args():
 
 
 
-def test_swt::list_is_not_abstract():
-    assert not inspect.isabstract(swt::List)
+def test_swt_list_is_not_abstract():
+    assert not inspect.isabstract(swt_List)
 
 
-def test_swt::list_constructor_exists():
-    assert callable(swt::List.__init__)
+def test_swt_list_constructor_exists():
+    assert callable(swt_List.__init__)
 
 
-def test_swt::list_constructor_args():
-    sig = inspect.signature(swt::List.__init__)
+def test_swt_list_constructor_args():
+    sig = inspect.signature(swt_List.__init__)
     params = list(sig.parameters.keys())
-    assert "multiplicityStyle" in params, "Missing parameter 'multiplicityStyle'"
     assert "selection" in params, "Missing parameter 'selection'"
     assert "selectionIndices" in params, "Missing parameter 'selectionIndices'"
+    assert "multiplicityStyle" in params, "Missing parameter 'multiplicityStyle'"
 
-def test_swt::list_has_multiplicityStyle():
-    assert hasattr(swt::List, "multiplicityStyle")
+def test_swt_list_has_selection():
+    assert hasattr(swt_List, "selection")
     descriptor = None
-    for klass in swt::List.__mro__:
-        if "multiplicityStyle" in klass.__dict__:
-            descriptor = klass.__dict__["multiplicityStyle"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_swt::list_has_selection():
-    assert hasattr(swt::List, "selection")
-    descriptor = None
-    for klass in swt::List.__mro__:
+    for klass in swt_List.__mro__:
         if "selection" in klass.__dict__:
             descriptor = klass.__dict__["selection"]
             break
     assert isinstance(descriptor, property)
 
-def test_swt::list_has_selectionIndices():
-    assert hasattr(swt::List, "selectionIndices")
+def test_swt_list_has_selectionIndices():
+    assert hasattr(swt_List, "selectionIndices")
     descriptor = None
-    for klass in swt::List.__mro__:
+    for klass in swt_List.__mro__:
         if "selectionIndices" in klass.__dict__:
             descriptor = klass.__dict__["selectionIndices"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_swt_list_has_multiplicityStyle():
+    assert hasattr(swt_List, "multiplicityStyle")
+    descriptor = None
+    for klass in swt_List.__mro__:
+        if "multiplicityStyle" in klass.__dict__:
+            descriptor = klass.__dict__["multiplicityStyle"]
             break
     assert isinstance(descriptor, property)
 
@@ -984,67 +234,67 @@ def test_color_constructor_args():
 
 
 
-def test_swt::rgbcolor_is_not_abstract():
-    assert not inspect.isabstract(swt::RGBColor)
+def test_swt_rgbcolor_is_not_abstract():
+    assert not inspect.isabstract(swt_RGBColor)
 
 
-def test_swt::rgbcolor_constructor_exists():
-    assert callable(swt::RGBColor.__init__)
+def test_swt_rgbcolor_constructor_exists():
+    assert callable(swt_RGBColor.__init__)
 
 
-def test_swt::rgbcolor_constructor_args():
-    sig = inspect.signature(swt::RGBColor.__init__)
+def test_swt_rgbcolor_constructor_args():
+    sig = inspect.signature(swt_RGBColor.__init__)
     params = list(sig.parameters.keys())
+    assert "red" in params, "Missing parameter 'red'"
     assert "green" in params, "Missing parameter 'green'"
     assert "blue" in params, "Missing parameter 'blue'"
-    assert "red" in params, "Missing parameter 'red'"
 
-def test_swt::rgbcolor_has_green():
-    assert hasattr(swt::RGBColor, "green")
+def test_swt_rgbcolor_has_red():
+    assert hasattr(swt_RGBColor, "red")
     descriptor = None
-    for klass in swt::RGBColor.__mro__:
-        if "green" in klass.__dict__:
-            descriptor = klass.__dict__["green"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_swt::rgbcolor_has_blue():
-    assert hasattr(swt::RGBColor, "blue")
-    descriptor = None
-    for klass in swt::RGBColor.__mro__:
-        if "blue" in klass.__dict__:
-            descriptor = klass.__dict__["blue"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_swt::rgbcolor_has_red():
-    assert hasattr(swt::RGBColor, "red")
-    descriptor = None
-    for klass in swt::RGBColor.__mro__:
+    for klass in swt_RGBColor.__mro__:
         if "red" in klass.__dict__:
             descriptor = klass.__dict__["red"]
             break
     assert isinstance(descriptor, property)
 
+def test_swt_rgbcolor_has_green():
+    assert hasattr(swt_RGBColor, "green")
+    descriptor = None
+    for klass in swt_RGBColor.__mro__:
+        if "green" in klass.__dict__:
+            descriptor = klass.__dict__["green"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_swt_rgbcolor_has_blue():
+    assert hasattr(swt_RGBColor, "blue")
+    descriptor = None
+    for klass in swt_RGBColor.__mro__:
+        if "blue" in klass.__dict__:
+            descriptor = klass.__dict__["blue"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_swt::systemcolor_is_not_abstract():
-    assert not inspect.isabstract(swt::SystemColor)
+
+def test_swt_systemcolor_is_not_abstract():
+    assert not inspect.isabstract(swt_SystemColor)
 
 
-def test_swt::systemcolor_constructor_exists():
-    assert callable(swt::SystemColor.__init__)
+def test_swt_systemcolor_constructor_exists():
+    assert callable(swt_SystemColor.__init__)
 
 
-def test_swt::systemcolor_constructor_args():
-    sig = inspect.signature(swt::SystemColor.__init__)
+def test_swt_systemcolor_constructor_args():
+    sig = inspect.signature(swt_SystemColor.__init__)
     params = list(sig.parameters.keys())
     assert "color" in params, "Missing parameter 'color'"
 
-def test_swt::systemcolor_has_color():
-    assert hasattr(swt::SystemColor, "color")
+def test_swt_systemcolor_has_color():
+    assert hasattr(swt_SystemColor, "color")
     descriptor = None
-    for klass in swt::SystemColor.__mro__:
+    for klass in swt_SystemColor.__mro__:
         if "color" in klass.__dict__:
             descriptor = klass.__dict__["color"]
             break
@@ -1052,33 +302,33 @@ def test_swt::systemcolor_has_color():
 
 
 
-def test_swt::combo_is_not_abstract():
-    assert not inspect.isabstract(swt::Combo)
+def test_swt_combo_is_not_abstract():
+    assert not inspect.isabstract(swt_Combo)
 
 
-def test_swt::combo_constructor_exists():
-    assert callable(swt::Combo.__init__)
+def test_swt_combo_constructor_exists():
+    assert callable(swt_Combo.__init__)
 
 
-def test_swt::combo_constructor_args():
-    sig = inspect.signature(swt::Combo.__init__)
+def test_swt_combo_constructor_args():
+    sig = inspect.signature(swt_Combo.__init__)
     params = list(sig.parameters.keys())
     assert "text" in params, "Missing parameter 'text'"
     assert "textLimit" in params, "Missing parameter 'textLimit'"
 
-def test_swt::combo_has_text():
-    assert hasattr(swt::Combo, "text")
+def test_swt_combo_has_text():
+    assert hasattr(swt_Combo, "text")
     descriptor = None
-    for klass in swt::Combo.__mro__:
+    for klass in swt_Combo.__mro__:
         if "text" in klass.__dict__:
             descriptor = klass.__dict__["text"]
             break
     assert isinstance(descriptor, property)
 
-def test_swt::combo_has_textLimit():
-    assert hasattr(swt::Combo, "textLimit")
+def test_swt_combo_has_textLimit():
+    assert hasattr(swt_Combo, "textLimit")
     descriptor = None
-    for klass in swt::Combo.__mro__:
+    for klass in swt_Combo.__mro__:
         if "textLimit" in klass.__dict__:
             descriptor = klass.__dict__["textLimit"]
             break
@@ -1086,23 +336,23 @@ def test_swt::combo_has_textLimit():
 
 
 
-def test_swt::coolbar_is_not_abstract():
-    assert not inspect.isabstract(swt::CoolBar)
+def test_swt_coolbar_is_not_abstract():
+    assert not inspect.isabstract(swt_CoolBar)
 
 
-def test_swt::coolbar_constructor_exists():
-    assert callable(swt::CoolBar.__init__)
+def test_swt_coolbar_constructor_exists():
+    assert callable(swt_CoolBar.__init__)
 
 
-def test_swt::coolbar_constructor_args():
-    sig = inspect.signature(swt::CoolBar.__init__)
+def test_swt_coolbar_constructor_args():
+    sig = inspect.signature(swt_CoolBar.__init__)
     params = list(sig.parameters.keys())
     assert "orientationStyle" in params, "Missing parameter 'orientationStyle'"
 
-def test_swt::coolbar_has_orientationStyle():
-    assert hasattr(swt::CoolBar, "orientationStyle")
+def test_swt_coolbar_has_orientationStyle():
+    assert hasattr(swt_CoolBar, "orientationStyle")
     descriptor = None
-    for klass in swt::CoolBar.__mro__:
+    for klass in swt_CoolBar.__mro__:
         if "orientationStyle" in klass.__dict__:
             descriptor = klass.__dict__["orientationStyle"]
             break
@@ -1124,33 +374,33 @@ def test_intervalselector_constructor_args():
 
 
 
-def test_swt::spinner_is_not_abstract():
-    assert not inspect.isabstract(swt::Spinner)
+def test_swt_spinner_is_not_abstract():
+    assert not inspect.isabstract(swt_Spinner)
 
 
-def test_swt::spinner_constructor_exists():
-    assert callable(swt::Spinner.__init__)
+def test_swt_spinner_constructor_exists():
+    assert callable(swt_Spinner.__init__)
 
 
-def test_swt::spinner_constructor_args():
-    sig = inspect.signature(swt::Spinner.__init__)
+def test_swt_spinner_constructor_args():
+    sig = inspect.signature(swt_Spinner.__init__)
     params = list(sig.parameters.keys())
     assert "digits" in params, "Missing parameter 'digits'"
     assert "textLimit" in params, "Missing parameter 'textLimit'"
 
-def test_swt::spinner_has_digits():
-    assert hasattr(swt::Spinner, "digits")
+def test_swt_spinner_has_digits():
+    assert hasattr(swt_Spinner, "digits")
     descriptor = None
-    for klass in swt::Spinner.__mro__:
+    for klass in swt_Spinner.__mro__:
         if "digits" in klass.__dict__:
             descriptor = klass.__dict__["digits"]
             break
     assert isinstance(descriptor, property)
 
-def test_swt::spinner_has_textLimit():
-    assert hasattr(swt::Spinner, "textLimit")
+def test_swt_spinner_has_textLimit():
+    assert hasattr(swt_Spinner, "textLimit")
     descriptor = None
-    for klass in swt::Spinner.__mro__:
+    for klass in swt_Spinner.__mro__:
         if "textLimit" in klass.__dict__:
             descriptor = klass.__dict__["textLimit"]
             break
@@ -1158,23 +408,23 @@ def test_swt::spinner_has_textLimit():
 
 
 
-def test_swt::slider_is_not_abstract():
-    assert not inspect.isabstract(swt::Slider)
+def test_swt_slider_is_not_abstract():
+    assert not inspect.isabstract(swt_Slider)
 
 
-def test_swt::slider_constructor_exists():
-    assert callable(swt::Slider.__init__)
+def test_swt_slider_constructor_exists():
+    assert callable(swt_Slider.__init__)
 
 
-def test_swt::slider_constructor_args():
-    sig = inspect.signature(swt::Slider.__init__)
+def test_swt_slider_constructor_args():
+    sig = inspect.signature(swt_Slider.__init__)
     params = list(sig.parameters.keys())
     assert "thumb" in params, "Missing parameter 'thumb'"
 
-def test_swt::slider_has_thumb():
-    assert hasattr(swt::Slider, "thumb")
+def test_swt_slider_has_thumb():
+    assert hasattr(swt_Slider, "thumb")
     descriptor = None
-    for klass in swt::Slider.__mro__:
+    for klass in swt_Slider.__mro__:
         if "thumb" in klass.__dict__:
             descriptor = klass.__dict__["thumb"]
             break
@@ -1196,23 +446,23 @@ def test_intervalcontrol_constructor_args():
 
 
 
-def test_swt::progressbar_is_not_abstract():
-    assert not inspect.isabstract(swt::ProgressBar)
+def test_swt_progressbar_is_not_abstract():
+    assert not inspect.isabstract(swt_ProgressBar)
 
 
-def test_swt::progressbar_constructor_exists():
-    assert callable(swt::ProgressBar.__init__)
+def test_swt_progressbar_constructor_exists():
+    assert callable(swt_ProgressBar.__init__)
 
 
-def test_swt::progressbar_constructor_args():
-    sig = inspect.signature(swt::ProgressBar.__init__)
+def test_swt_progressbar_constructor_args():
+    sig = inspect.signature(swt_ProgressBar.__init__)
     params = list(sig.parameters.keys())
     assert "state" in params, "Missing parameter 'state'"
 
-def test_swt::progressbar_has_state():
-    assert hasattr(swt::ProgressBar, "state")
+def test_swt_progressbar_has_state():
+    assert hasattr(swt_ProgressBar, "state")
     descriptor = None
-    for klass in swt::ProgressBar.__mro__:
+    for klass in swt_ProgressBar.__mro__:
         if "state" in klass.__dict__:
             descriptor = klass.__dict__["state"]
             break
@@ -1220,45 +470,45 @@ def test_swt::progressbar_has_state():
 
 
 
-def test_swt::intervalselector_is_not_abstract():
-    assert not inspect.isabstract(swt::IntervalSelector)
+def test_swt_intervalselector_is_not_abstract():
+    assert not inspect.isabstract(swt_IntervalSelector)
 
 
-def test_swt::intervalselector_constructor_exists():
-    assert callable(swt::IntervalSelector.__init__)
+def test_swt_intervalselector_constructor_exists():
+    assert callable(swt_IntervalSelector.__init__)
 
 
-def test_swt::intervalselector_constructor_args():
-    sig = inspect.signature(swt::IntervalSelector.__init__)
+def test_swt_intervalselector_constructor_args():
+    sig = inspect.signature(swt_IntervalSelector.__init__)
     params = list(sig.parameters.keys())
     assert "pageIncrement" in params, "Missing parameter 'pageIncrement'"
-    assert "orientationStyle" in params, "Missing parameter 'orientationStyle'"
     assert "increment" in params, "Missing parameter 'increment'"
+    assert "orientationStyle" in params, "Missing parameter 'orientationStyle'"
 
-def test_swt::intervalselector_has_pageIncrement():
-    assert hasattr(swt::IntervalSelector, "pageIncrement")
+def test_swt_intervalselector_has_pageIncrement():
+    assert hasattr(swt_IntervalSelector, "pageIncrement")
     descriptor = None
-    for klass in swt::IntervalSelector.__mro__:
+    for klass in swt_IntervalSelector.__mro__:
         if "pageIncrement" in klass.__dict__:
             descriptor = klass.__dict__["pageIncrement"]
             break
     assert isinstance(descriptor, property)
 
-def test_swt::intervalselector_has_orientationStyle():
-    assert hasattr(swt::IntervalSelector, "orientationStyle")
+def test_swt_intervalselector_has_increment():
+    assert hasattr(swt_IntervalSelector, "increment")
     descriptor = None
-    for klass in swt::IntervalSelector.__mro__:
-        if "orientationStyle" in klass.__dict__:
-            descriptor = klass.__dict__["orientationStyle"]
+    for klass in swt_IntervalSelector.__mro__:
+        if "increment" in klass.__dict__:
+            descriptor = klass.__dict__["increment"]
             break
     assert isinstance(descriptor, property)
 
-def test_swt::intervalselector_has_increment():
-    assert hasattr(swt::IntervalSelector, "increment")
+def test_swt_intervalselector_has_orientationStyle():
+    assert hasattr(swt_IntervalSelector, "orientationStyle")
     descriptor = None
-    for klass in swt::IntervalSelector.__mro__:
-        if "increment" in klass.__dict__:
-            descriptor = klass.__dict__["increment"]
+    for klass in swt_IntervalSelector.__mro__:
+        if "orientationStyle" in klass.__dict__:
+            descriptor = klass.__dict__["orientationStyle"]
             break
     assert isinstance(descriptor, property)
 
@@ -1278,30 +528,30 @@ def test_text_constructor_args():
 
 
 
-def test_swt::searchtext_is_not_abstract():
-    assert not inspect.isabstract(swt::SearchText)
+def test_swt_searchtext_is_not_abstract():
+    assert not inspect.isabstract(swt_SearchText)
 
 
-def test_swt::searchtext_constructor_exists():
-    assert callable(swt::SearchText.__init__)
+def test_swt_searchtext_constructor_exists():
+    assert callable(swt_SearchText.__init__)
 
 
-def test_swt::searchtext_constructor_args():
-    sig = inspect.signature(swt::SearchText.__init__)
+def test_swt_searchtext_constructor_args():
+    sig = inspect.signature(swt_SearchText.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_swt::passwordtext_is_not_abstract():
-    assert not inspect.isabstract(swt::PasswordText)
+def test_swt_passwordtext_is_not_abstract():
+    assert not inspect.isabstract(swt_PasswordText)
 
 
-def test_swt::passwordtext_constructor_exists():
-    assert callable(swt::PasswordText.__init__)
+def test_swt_passwordtext_constructor_exists():
+    assert callable(swt_PasswordText.__init__)
 
 
-def test_swt::passwordtext_constructor_args():
-    sig = inspect.signature(swt::PasswordText.__init__)
+def test_swt_passwordtext_constructor_args():
+    sig = inspect.signature(swt_PasswordText.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1320,157 +570,123 @@ def test_item_constructor_args():
 
 
 
-def test_swt::tabitem_is_not_abstract():
-    assert not inspect.isabstract(swt::TabItem)
+def test_swt_coolitem_is_not_abstract():
+    assert not inspect.isabstract(swt_CoolItem)
 
 
-def test_swt::tabitem_constructor_exists():
-    assert callable(swt::TabItem.__init__)
+def test_swt_coolitem_constructor_exists():
+    assert callable(swt_CoolItem.__init__)
 
 
-def test_swt::tabitem_constructor_args():
-    sig = inspect.signature(swt::TabItem.__init__)
+def test_swt_coolitem_constructor_args():
+    sig = inspect.signature(swt_CoolItem.__init__)
     params = list(sig.parameters.keys())
-    assert "toolTipText" in params, "Missing parameter 'toolTipText'"
-
-def test_swt::tabitem_has_toolTipText():
-    assert hasattr(swt::TabItem, "toolTipText")
-    descriptor = None
-    for klass in swt::TabItem.__mro__:
-        if "toolTipText" in klass.__dict__:
-            descriptor = klass.__dict__["toolTipText"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_swt::treecolumn_is_not_abstract():
-    assert not inspect.isabstract(swt::TreeColumn)
-
-
-def test_swt::treecolumn_constructor_exists():
-    assert callable(swt::TreeColumn.__init__)
-
-
-def test_swt::treecolumn_constructor_args():
-    sig = inspect.signature(swt::TreeColumn.__init__)
-    params = list(sig.parameters.keys())
-    assert "displayText" in params, "Missing parameter 'displayText'"
-    assert "toolTipText" in params, "Missing parameter 'toolTipText'"
-
-def test_swt::treecolumn_has_displayText():
-    assert hasattr(swt::TreeColumn, "displayText")
-    descriptor = None
-    for klass in swt::TreeColumn.__mro__:
-        if "displayText" in klass.__dict__:
-            descriptor = klass.__dict__["displayText"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_swt::treecolumn_has_toolTipText():
-    assert hasattr(swt::TreeColumn, "toolTipText")
-    descriptor = None
-    for klass in swt::TreeColumn.__mro__:
-        if "toolTipText" in klass.__dict__:
-            descriptor = klass.__dict__["toolTipText"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_swt::coolitem_is_not_abstract():
-    assert not inspect.isabstract(swt::CoolItem)
-
-
-def test_swt::coolitem_constructor_exists():
-    assert callable(swt::CoolItem.__init__)
-
-
-def test_swt::coolitem_constructor_args():
-    sig = inspect.signature(swt::CoolItem.__init__)
-    params = list(sig.parameters.keys())
-    assert "size" in params, "Missing parameter 'size'"
     assert "preferredSize" in params, "Missing parameter 'preferredSize'"
     assert "minimumSize" in params, "Missing parameter 'minimumSize'"
+    assert "size" in params, "Missing parameter 'size'"
 
-def test_swt::coolitem_has_size():
-    assert hasattr(swt::CoolItem, "size")
+def test_swt_coolitem_has_preferredSize():
+    assert hasattr(swt_CoolItem, "preferredSize")
     descriptor = None
-    for klass in swt::CoolItem.__mro__:
-        if "size" in klass.__dict__:
-            descriptor = klass.__dict__["size"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_swt::coolitem_has_preferredSize():
-    assert hasattr(swt::CoolItem, "preferredSize")
-    descriptor = None
-    for klass in swt::CoolItem.__mro__:
+    for klass in swt_CoolItem.__mro__:
         if "preferredSize" in klass.__dict__:
             descriptor = klass.__dict__["preferredSize"]
             break
     assert isinstance(descriptor, property)
 
-def test_swt::coolitem_has_minimumSize():
-    assert hasattr(swt::CoolItem, "minimumSize")
+def test_swt_coolitem_has_minimumSize():
+    assert hasattr(swt_CoolItem, "minimumSize")
     descriptor = None
-    for klass in swt::CoolItem.__mro__:
+    for klass in swt_CoolItem.__mro__:
         if "minimumSize" in klass.__dict__:
             descriptor = klass.__dict__["minimumSize"]
             break
     assert isinstance(descriptor, property)
 
+def test_swt_coolitem_has_size():
+    assert hasattr(swt_CoolItem, "size")
+    descriptor = None
+    for klass in swt_CoolItem.__mro__:
+        if "size" in klass.__dict__:
+            descriptor = klass.__dict__["size"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_swt::toolitem_is_not_abstract():
-    assert not inspect.isabstract(swt::ToolItem)
+
+def test_swt_toolitem_is_not_abstract():
+    assert not inspect.isabstract(swt_ToolItem)
 
 
-def test_swt::toolitem_constructor_exists():
-    assert callable(swt::ToolItem.__init__)
+def test_swt_toolitem_constructor_exists():
+    assert callable(swt_ToolItem.__init__)
 
 
-def test_swt::toolitem_constructor_args():
-    sig = inspect.signature(swt::ToolItem.__init__)
+def test_swt_toolitem_constructor_args():
+    sig = inspect.signature(swt_ToolItem.__init__)
     params = list(sig.parameters.keys())
     assert "toolTipText" in params, "Missing parameter 'toolTipText'"
     assert "enabled" in params, "Missing parameter 'enabled'"
-    assert "selection" in params, "Missing parameter 'selection'"
     assert "hotImage" in params, "Missing parameter 'hotImage'"
+    assert "selection" in params, "Missing parameter 'selection'"
 
-def test_swt::toolitem_has_toolTipText():
-    assert hasattr(swt::ToolItem, "toolTipText")
+def test_swt_toolitem_has_toolTipText():
+    assert hasattr(swt_ToolItem, "toolTipText")
     descriptor = None
-    for klass in swt::ToolItem.__mro__:
+    for klass in swt_ToolItem.__mro__:
         if "toolTipText" in klass.__dict__:
             descriptor = klass.__dict__["toolTipText"]
             break
     assert isinstance(descriptor, property)
 
-def test_swt::toolitem_has_enabled():
-    assert hasattr(swt::ToolItem, "enabled")
+def test_swt_toolitem_has_enabled():
+    assert hasattr(swt_ToolItem, "enabled")
     descriptor = None
-    for klass in swt::ToolItem.__mro__:
+    for klass in swt_ToolItem.__mro__:
         if "enabled" in klass.__dict__:
             descriptor = klass.__dict__["enabled"]
             break
     assert isinstance(descriptor, property)
 
-def test_swt::toolitem_has_selection():
-    assert hasattr(swt::ToolItem, "selection")
+def test_swt_toolitem_has_hotImage():
+    assert hasattr(swt_ToolItem, "hotImage")
     descriptor = None
-    for klass in swt::ToolItem.__mro__:
+    for klass in swt_ToolItem.__mro__:
+        if "hotImage" in klass.__dict__:
+            descriptor = klass.__dict__["hotImage"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_swt_toolitem_has_selection():
+    assert hasattr(swt_ToolItem, "selection")
+    descriptor = None
+    for klass in swt_ToolItem.__mro__:
         if "selection" in klass.__dict__:
             descriptor = klass.__dict__["selection"]
             break
     assert isinstance(descriptor, property)
 
-def test_swt::toolitem_has_hotImage():
-    assert hasattr(swt::ToolItem, "hotImage")
+
+
+def test_swt_tabitem_is_not_abstract():
+    assert not inspect.isabstract(swt_TabItem)
+
+
+def test_swt_tabitem_constructor_exists():
+    assert callable(swt_TabItem.__init__)
+
+
+def test_swt_tabitem_constructor_args():
+    sig = inspect.signature(swt_TabItem.__init__)
+    params = list(sig.parameters.keys())
+    assert "toolTipText" in params, "Missing parameter 'toolTipText'"
+
+def test_swt_tabitem_has_toolTipText():
+    assert hasattr(swt_TabItem, "toolTipText")
     descriptor = None
-    for klass in swt::ToolItem.__mro__:
-        if "hotImage" in klass.__dict__:
-            descriptor = klass.__dict__["hotImage"]
+    for klass in swt_TabItem.__mro__:
+        if "toolTipText" in klass.__dict__:
+            descriptor = klass.__dict__["toolTipText"]
             break
     assert isinstance(descriptor, property)
 
@@ -1490,35 +706,35 @@ def test_labeled_constructor_args():
 
 
 
-def test_swt::labeled_is_not_abstract():
-    assert not inspect.isabstract(swt::Labeled)
+def test_swt_labeled_is_not_abstract():
+    assert not inspect.isabstract(swt_Labeled)
 
 
-def test_swt::labeled_constructor_exists():
-    assert callable(swt::Labeled.__init__)
+def test_swt_labeled_constructor_exists():
+    assert callable(swt_Labeled.__init__)
 
 
-def test_swt::labeled_constructor_args():
-    sig = inspect.signature(swt::Labeled.__init__)
+def test_swt_labeled_constructor_args():
+    sig = inspect.signature(swt_Labeled.__init__)
     params = list(sig.parameters.keys())
-    assert "image" in params, "Missing parameter 'image'"
     assert "text" in params, "Missing parameter 'text'"
+    assert "image" in params, "Missing parameter 'image'"
 
-def test_swt::labeled_has_image():
-    assert hasattr(swt::Labeled, "image")
+def test_swt_labeled_has_text():
+    assert hasattr(swt_Labeled, "text")
     descriptor = None
-    for klass in swt::Labeled.__mro__:
-        if "image" in klass.__dict__:
-            descriptor = klass.__dict__["image"]
+    for klass in swt_Labeled.__mro__:
+        if "text" in klass.__dict__:
+            descriptor = klass.__dict__["text"]
             break
     assert isinstance(descriptor, property)
 
-def test_swt::labeled_has_text():
-    assert hasattr(swt::Labeled, "text")
+def test_swt_labeled_has_image():
+    assert hasattr(swt_Labeled, "image")
     descriptor = None
-    for klass in swt::Labeled.__mro__:
-        if "text" in klass.__dict__:
-            descriptor = klass.__dict__["text"]
+    for klass in swt_Labeled.__mro__:
+        if "image" in klass.__dict__:
+            descriptor = klass.__dict__["image"]
             break
     assert isinstance(descriptor, property)
 
@@ -1538,23 +754,23 @@ def test_abstractmenu_constructor_args():
 
 
 
-def test_swt::menu_is_not_abstract():
-    assert not inspect.isabstract(swt::Menu)
+def test_swt_menu_is_not_abstract():
+    assert not inspect.isabstract(swt_Menu)
 
 
-def test_swt::menu_constructor_exists():
-    assert callable(swt::Menu.__init__)
+def test_swt_menu_constructor_exists():
+    assert callable(swt_Menu.__init__)
 
 
-def test_swt::menu_constructor_args():
-    sig = inspect.signature(swt::Menu.__init__)
+def test_swt_menu_constructor_args():
+    sig = inspect.signature(swt_Menu.__init__)
     params = list(sig.parameters.keys())
     assert "menuStyle" in params, "Missing parameter 'menuStyle'"
 
-def test_swt::menu_has_menuStyle():
-    assert hasattr(swt::Menu, "menuStyle")
+def test_swt_menu_has_menuStyle():
+    assert hasattr(swt_Menu, "menuStyle")
     descriptor = None
-    for klass in swt::Menu.__mro__:
+    for klass in swt_Menu.__mro__:
         if "menuStyle" in klass.__dict__:
             descriptor = klass.__dict__["menuStyle"]
             break
@@ -1562,63 +778,63 @@ def test_swt::menu_has_menuStyle():
 
 
 
-def test_swt::menuitem_is_not_abstract():
-    assert not inspect.isabstract(swt::MenuItem)
+def test_swt_menuitem_is_not_abstract():
+    assert not inspect.isabstract(swt_MenuItem)
 
 
-def test_swt::menuitem_constructor_exists():
-    assert callable(swt::MenuItem.__init__)
+def test_swt_menuitem_constructor_exists():
+    assert callable(swt_MenuItem.__init__)
 
 
-def test_swt::menuitem_constructor_args():
-    sig = inspect.signature(swt::MenuItem.__init__)
+def test_swt_menuitem_constructor_args():
+    sig = inspect.signature(swt_MenuItem.__init__)
     params = list(sig.parameters.keys())
-    assert "enabled" in params, "Missing parameter 'enabled'"
-    assert "ID" in params, "Missing parameter 'ID'"
     assert "selection" in params, "Missing parameter 'selection'"
     assert "accelerator" in params, "Missing parameter 'accelerator'"
+    assert "ID" in params, "Missing parameter 'ID'"
+    assert "enabled" in params, "Missing parameter 'enabled'"
     assert "menuItemStyle" in params, "Missing parameter 'menuItemStyle'"
 
-def test_swt::menuitem_has_enabled():
-    assert hasattr(swt::MenuItem, "enabled")
+def test_swt_menuitem_has_selection():
+    assert hasattr(swt_MenuItem, "selection")
     descriptor = None
-    for klass in swt::MenuItem.__mro__:
-        if "enabled" in klass.__dict__:
-            descriptor = klass.__dict__["enabled"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_swt::menuitem_has_ID():
-    assert hasattr(swt::MenuItem, "ID")
-    descriptor = None
-    for klass in swt::MenuItem.__mro__:
-        if "ID" in klass.__dict__:
-            descriptor = klass.__dict__["ID"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_swt::menuitem_has_selection():
-    assert hasattr(swt::MenuItem, "selection")
-    descriptor = None
-    for klass in swt::MenuItem.__mro__:
+    for klass in swt_MenuItem.__mro__:
         if "selection" in klass.__dict__:
             descriptor = klass.__dict__["selection"]
             break
     assert isinstance(descriptor, property)
 
-def test_swt::menuitem_has_accelerator():
-    assert hasattr(swt::MenuItem, "accelerator")
+def test_swt_menuitem_has_accelerator():
+    assert hasattr(swt_MenuItem, "accelerator")
     descriptor = None
-    for klass in swt::MenuItem.__mro__:
+    for klass in swt_MenuItem.__mro__:
         if "accelerator" in klass.__dict__:
             descriptor = klass.__dict__["accelerator"]
             break
     assert isinstance(descriptor, property)
 
-def test_swt::menuitem_has_menuItemStyle():
-    assert hasattr(swt::MenuItem, "menuItemStyle")
+def test_swt_menuitem_has_ID():
+    assert hasattr(swt_MenuItem, "ID")
     descriptor = None
-    for klass in swt::MenuItem.__mro__:
+    for klass in swt_MenuItem.__mro__:
+        if "ID" in klass.__dict__:
+            descriptor = klass.__dict__["ID"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_swt_menuitem_has_enabled():
+    assert hasattr(swt_MenuItem, "enabled")
+    descriptor = None
+    for klass in swt_MenuItem.__mro__:
+        if "enabled" in klass.__dict__:
+            descriptor = klass.__dict__["enabled"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_swt_menuitem_has_menuItemStyle():
+    assert hasattr(swt_MenuItem, "menuItemStyle")
+    descriptor = None
+    for klass in swt_MenuItem.__mro__:
         if "menuItemStyle" in klass.__dict__:
             descriptor = klass.__dict__["menuItemStyle"]
             break
@@ -1640,158 +856,158 @@ def test_widget_constructor_args():
 
 
 
-def test_swt::item_is_not_abstract():
-    assert not inspect.isabstract(swt::Item)
+def test_swt_abstractmenu_is_not_abstract():
+    assert not inspect.isabstract(swt_AbstractMenu)
 
 
-def test_swt::item_constructor_exists():
-    assert callable(swt::Item.__init__)
+def test_swt_abstractmenu_constructor_exists():
+    assert callable(swt_AbstractMenu.__init__)
 
 
-def test_swt::item_constructor_args():
-    sig = inspect.signature(swt::Item.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_swt::abstractmenu_is_not_abstract():
-    assert not inspect.isabstract(swt::AbstractMenu)
-
-
-def test_swt::abstractmenu_constructor_exists():
-    assert callable(swt::AbstractMenu.__init__)
-
-
-def test_swt::abstractmenu_constructor_args():
-    sig = inspect.signature(swt::AbstractMenu.__init__)
+def test_swt_abstractmenu_constructor_args():
+    sig = inspect.signature(swt_AbstractMenu.__init__)
     params = list(sig.parameters.keys())
     assert "enabled" in params, "Missing parameter 'enabled'"
-    assert "visible" in params, "Missing parameter 'visible'"
     assert "textOrientationStyle" in params, "Missing parameter 'textOrientationStyle'"
+    assert "visible" in params, "Missing parameter 'visible'"
 
-def test_swt::abstractmenu_has_enabled():
-    assert hasattr(swt::AbstractMenu, "enabled")
+def test_swt_abstractmenu_has_enabled():
+    assert hasattr(swt_AbstractMenu, "enabled")
     descriptor = None
-    for klass in swt::AbstractMenu.__mro__:
+    for klass in swt_AbstractMenu.__mro__:
         if "enabled" in klass.__dict__:
             descriptor = klass.__dict__["enabled"]
             break
     assert isinstance(descriptor, property)
 
-def test_swt::abstractmenu_has_visible():
-    assert hasattr(swt::AbstractMenu, "visible")
+def test_swt_abstractmenu_has_textOrientationStyle():
+    assert hasattr(swt_AbstractMenu, "textOrientationStyle")
     descriptor = None
-    for klass in swt::AbstractMenu.__mro__:
-        if "visible" in klass.__dict__:
-            descriptor = klass.__dict__["visible"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_swt::abstractmenu_has_textOrientationStyle():
-    assert hasattr(swt::AbstractMenu, "textOrientationStyle")
-    descriptor = None
-    for klass in swt::AbstractMenu.__mro__:
+    for klass in swt_AbstractMenu.__mro__:
         if "textOrientationStyle" in klass.__dict__:
             descriptor = klass.__dict__["textOrientationStyle"]
             break
     assert isinstance(descriptor, property)
 
+def test_swt_abstractmenu_has_visible():
+    assert hasattr(swt_AbstractMenu, "visible")
+    descriptor = None
+    for klass in swt_AbstractMenu.__mro__:
+        if "visible" in klass.__dict__:
+            descriptor = klass.__dict__["visible"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_swt::control_is_not_abstract():
-    assert not inspect.isabstract(swt::Control)
+
+def test_swt_item_is_not_abstract():
+    assert not inspect.isabstract(swt_Item)
 
 
-def test_swt::control_constructor_exists():
-    assert callable(swt::Control.__init__)
+def test_swt_item_constructor_exists():
+    assert callable(swt_Item.__init__)
 
 
-def test_swt::control_constructor_args():
-    sig = inspect.signature(swt::Control.__init__)
+def test_swt_item_constructor_args():
+    sig = inspect.signature(swt_Item.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_swt_control_is_not_abstract():
+    assert not inspect.isabstract(swt_Control)
+
+
+def test_swt_control_constructor_exists():
+    assert callable(swt_Control.__init__)
+
+
+def test_swt_control_constructor_args():
+    sig = inspect.signature(swt_Control.__init__)
     params = list(sig.parameters.keys())
     assert "size" in params, "Missing parameter 'size'"
-    assert "enabled" in params, "Missing parameter 'enabled'"
-    assert "touchEnabled" in params, "Missing parameter 'touchEnabled'"
     assert "visible" in params, "Missing parameter 'visible'"
-    assert "textOrientationStyle" in params, "Missing parameter 'textOrientationStyle'"
     assert "toolTipText" in params, "Missing parameter 'toolTipText'"
+    assert "enabled" in params, "Missing parameter 'enabled'"
     assert "borderStyle" in params, "Missing parameter 'borderStyle'"
+    assert "textOrientationStyle" in params, "Missing parameter 'textOrientationStyle'"
+    assert "touchEnabled" in params, "Missing parameter 'touchEnabled'"
 
-def test_swt::control_has_size():
-    assert hasattr(swt::Control, "size")
+def test_swt_control_has_size():
+    assert hasattr(swt_Control, "size")
     descriptor = None
-    for klass in swt::Control.__mro__:
+    for klass in swt_Control.__mro__:
         if "size" in klass.__dict__:
             descriptor = klass.__dict__["size"]
             break
     assert isinstance(descriptor, property)
 
-def test_swt::control_has_enabled():
-    assert hasattr(swt::Control, "enabled")
+def test_swt_control_has_visible():
+    assert hasattr(swt_Control, "visible")
     descriptor = None
-    for klass in swt::Control.__mro__:
-        if "enabled" in klass.__dict__:
-            descriptor = klass.__dict__["enabled"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_swt::control_has_touchEnabled():
-    assert hasattr(swt::Control, "touchEnabled")
-    descriptor = None
-    for klass in swt::Control.__mro__:
-        if "touchEnabled" in klass.__dict__:
-            descriptor = klass.__dict__["touchEnabled"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_swt::control_has_visible():
-    assert hasattr(swt::Control, "visible")
-    descriptor = None
-    for klass in swt::Control.__mro__:
+    for klass in swt_Control.__mro__:
         if "visible" in klass.__dict__:
             descriptor = klass.__dict__["visible"]
             break
     assert isinstance(descriptor, property)
 
-def test_swt::control_has_textOrientationStyle():
-    assert hasattr(swt::Control, "textOrientationStyle")
+def test_swt_control_has_toolTipText():
+    assert hasattr(swt_Control, "toolTipText")
     descriptor = None
-    for klass in swt::Control.__mro__:
-        if "textOrientationStyle" in klass.__dict__:
-            descriptor = klass.__dict__["textOrientationStyle"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_swt::control_has_toolTipText():
-    assert hasattr(swt::Control, "toolTipText")
-    descriptor = None
-    for klass in swt::Control.__mro__:
+    for klass in swt_Control.__mro__:
         if "toolTipText" in klass.__dict__:
             descriptor = klass.__dict__["toolTipText"]
             break
     assert isinstance(descriptor, property)
 
-def test_swt::control_has_borderStyle():
-    assert hasattr(swt::Control, "borderStyle")
+def test_swt_control_has_enabled():
+    assert hasattr(swt_Control, "enabled")
     descriptor = None
-    for klass in swt::Control.__mro__:
+    for klass in swt_Control.__mro__:
+        if "enabled" in klass.__dict__:
+            descriptor = klass.__dict__["enabled"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_swt_control_has_borderStyle():
+    assert hasattr(swt_Control, "borderStyle")
+    descriptor = None
+    for klass in swt_Control.__mro__:
         if "borderStyle" in klass.__dict__:
             descriptor = klass.__dict__["borderStyle"]
             break
     assert isinstance(descriptor, property)
 
+def test_swt_control_has_textOrientationStyle():
+    assert hasattr(swt_Control, "textOrientationStyle")
+    descriptor = None
+    for klass in swt_Control.__mro__:
+        if "textOrientationStyle" in klass.__dict__:
+            descriptor = klass.__dict__["textOrientationStyle"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_swt_control_has_touchEnabled():
+    assert hasattr(swt_Control, "touchEnabled")
+    descriptor = None
+    for klass in swt_Control.__mro__:
+        if "touchEnabled" in klass.__dict__:
+            descriptor = klass.__dict__["touchEnabled"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_swt::layoutdata_is_not_abstract():
-    assert not inspect.isabstract(swt::LayoutData)
+
+def test_swt_layoutdata_is_not_abstract():
+    assert not inspect.isabstract(swt_LayoutData)
 
 
-def test_swt::layoutdata_constructor_exists():
-    assert callable(swt::LayoutData.__init__)
+def test_swt_layoutdata_constructor_exists():
+    assert callable(swt_LayoutData.__init__)
 
 
-def test_swt::layoutdata_constructor_args():
-    sig = inspect.signature(swt::LayoutData.__init__)
+def test_swt_layoutdata_constructor_args():
+    sig = inspect.signature(swt_LayoutData.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1810,70 +1026,70 @@ def test_decorations_constructor_args():
 
 
 
-def test_swt::shell_is_not_abstract():
-    assert not inspect.isabstract(swt::Shell)
+def test_swt_shell_is_not_abstract():
+    assert not inspect.isabstract(swt_Shell)
 
 
-def test_swt::shell_constructor_exists():
-    assert callable(swt::Shell.__init__)
+def test_swt_shell_constructor_exists():
+    assert callable(swt_Shell.__init__)
 
 
-def test_swt::shell_constructor_args():
-    sig = inspect.signature(swt::Shell.__init__)
+def test_swt_shell_constructor_args():
+    sig = inspect.signature(swt_Shell.__init__)
     params = list(sig.parameters.keys())
-    assert "fullScreen" in params, "Missing parameter 'fullScreen'"
-    assert "trimStyle" in params, "Missing parameter 'trimStyle'"
     assert "alpha" in params, "Missing parameter 'alpha'"
+    assert "fullScreen" in params, "Missing parameter 'fullScreen'"
     assert "modalStyle" in params, "Missing parameter 'modalStyle'"
+    assert "trimStyle" in params, "Missing parameter 'trimStyle'"
 
-def test_swt::shell_has_fullScreen():
-    assert hasattr(swt::Shell, "fullScreen")
+def test_swt_shell_has_alpha():
+    assert hasattr(swt_Shell, "alpha")
     descriptor = None
-    for klass in swt::Shell.__mro__:
-        if "fullScreen" in klass.__dict__:
-            descriptor = klass.__dict__["fullScreen"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_swt::shell_has_trimStyle():
-    assert hasattr(swt::Shell, "trimStyle")
-    descriptor = None
-    for klass in swt::Shell.__mro__:
-        if "trimStyle" in klass.__dict__:
-            descriptor = klass.__dict__["trimStyle"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_swt::shell_has_alpha():
-    assert hasattr(swt::Shell, "alpha")
-    descriptor = None
-    for klass in swt::Shell.__mro__:
+    for klass in swt_Shell.__mro__:
         if "alpha" in klass.__dict__:
             descriptor = klass.__dict__["alpha"]
             break
     assert isinstance(descriptor, property)
 
-def test_swt::shell_has_modalStyle():
-    assert hasattr(swt::Shell, "modalStyle")
+def test_swt_shell_has_fullScreen():
+    assert hasattr(swt_Shell, "fullScreen")
     descriptor = None
-    for klass in swt::Shell.__mro__:
+    for klass in swt_Shell.__mro__:
+        if "fullScreen" in klass.__dict__:
+            descriptor = klass.__dict__["fullScreen"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_swt_shell_has_modalStyle():
+    assert hasattr(swt_Shell, "modalStyle")
+    descriptor = None
+    for klass in swt_Shell.__mro__:
         if "modalStyle" in klass.__dict__:
             descriptor = klass.__dict__["modalStyle"]
             break
     assert isinstance(descriptor, property)
 
+def test_swt_shell_has_trimStyle():
+    assert hasattr(swt_Shell, "trimStyle")
+    descriptor = None
+    for klass in swt_Shell.__mro__:
+        if "trimStyle" in klass.__dict__:
+            descriptor = klass.__dict__["trimStyle"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_swt::menubar_is_not_abstract():
-    assert not inspect.isabstract(swt::MenuBar)
+
+def test_swt_menubar_is_not_abstract():
+    assert not inspect.isabstract(swt_MenuBar)
 
 
-def test_swt::menubar_constructor_exists():
-    assert callable(swt::MenuBar.__init__)
+def test_swt_menubar_constructor_exists():
+    assert callable(swt_MenuBar.__init__)
 
 
-def test_swt::menubar_constructor_args():
-    sig = inspect.signature(swt::MenuBar.__init__)
+def test_swt_menubar_constructor_args():
+    sig = inspect.signature(swt_MenuBar.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1892,33 +1108,33 @@ def test_canvas_constructor_args():
 
 
 
-def test_swt::decorations_is_not_abstract():
-    assert not inspect.isabstract(swt::Decorations)
+def test_swt_decorations_is_not_abstract():
+    assert not inspect.isabstract(swt_Decorations)
 
 
-def test_swt::decorations_constructor_exists():
-    assert callable(swt::Decorations.__init__)
+def test_swt_decorations_constructor_exists():
+    assert callable(swt_Decorations.__init__)
 
 
-def test_swt::decorations_constructor_args():
-    sig = inspect.signature(swt::Decorations.__init__)
+def test_swt_decorations_constructor_args():
+    sig = inspect.signature(swt_Decorations.__init__)
     params = list(sig.parameters.keys())
     assert "maximized" in params, "Missing parameter 'maximized'"
     assert "minimized" in params, "Missing parameter 'minimized'"
 
-def test_swt::decorations_has_maximized():
-    assert hasattr(swt::Decorations, "maximized")
+def test_swt_decorations_has_maximized():
+    assert hasattr(swt_Decorations, "maximized")
     descriptor = None
-    for klass in swt::Decorations.__mro__:
+    for klass in swt_Decorations.__mro__:
         if "maximized" in klass.__dict__:
             descriptor = klass.__dict__["maximized"]
             break
     assert isinstance(descriptor, property)
 
-def test_swt::decorations_has_minimized():
-    assert hasattr(swt::Decorations, "minimized")
+def test_swt_decorations_has_minimized():
+    assert hasattr(swt_Decorations, "minimized")
     descriptor = None
-    for klass in swt::Decorations.__mro__:
+    for klass in swt_Decorations.__mro__:
         if "minimized" in klass.__dict__:
             descriptor = klass.__dict__["minimized"]
             break
@@ -1940,37 +1156,37 @@ def test_composite_constructor_args():
 
 
 
-def test_swt::canvas_is_not_abstract():
-    assert not inspect.isabstract(swt::Canvas)
+def test_swt_canvas_is_not_abstract():
+    assert not inspect.isabstract(swt_Canvas)
 
 
-def test_swt::canvas_constructor_exists():
-    assert callable(swt::Canvas.__init__)
+def test_swt_canvas_constructor_exists():
+    assert callable(swt_Canvas.__init__)
 
 
-def test_swt::canvas_constructor_args():
-    sig = inspect.signature(swt::Canvas.__init__)
+def test_swt_canvas_constructor_args():
+    sig = inspect.signature(swt_Canvas.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_swt::group_is_not_abstract():
-    assert not inspect.isabstract(swt::Group)
+def test_swt_group_is_not_abstract():
+    assert not inspect.isabstract(swt_Group)
 
 
-def test_swt::group_constructor_exists():
-    assert callable(swt::Group.__init__)
+def test_swt_group_constructor_exists():
+    assert callable(swt_Group.__init__)
 
 
-def test_swt::group_constructor_args():
-    sig = inspect.signature(swt::Group.__init__)
+def test_swt_group_constructor_args():
+    sig = inspect.signature(swt_Group.__init__)
     params = list(sig.parameters.keys())
     assert "text" in params, "Missing parameter 'text'"
 
-def test_swt::group_has_text():
-    assert hasattr(swt::Group, "text")
+def test_swt_group_has_text():
+    assert hasattr(swt_Group, "text")
     descriptor = None
-    for klass in swt::Group.__mro__:
+    for klass in swt_Group.__mro__:
         if "text" in klass.__dict__:
             descriptor = klass.__dict__["text"]
             break
@@ -1978,16 +1194,16 @@ def test_swt::group_has_text():
 
 
 
-def test_swt::composite_is_not_abstract():
-    assert not inspect.isabstract(swt::Composite)
+def test_swt_composite_is_not_abstract():
+    assert not inspect.isabstract(swt_Composite)
 
 
-def test_swt::composite_constructor_exists():
-    assert callable(swt::Composite.__init__)
+def test_swt_composite_constructor_exists():
+    assert callable(swt_Composite.__init__)
 
 
-def test_swt::composite_constructor_args():
-    sig = inspect.signature(swt::Composite.__init__)
+def test_swt_composite_constructor_args():
+    sig = inspect.signature(swt_Composite.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -2006,229 +1222,23 @@ def test_control_constructor_args():
 
 
 
-def test_swt::label_is_not_abstract():
-    assert not inspect.isabstract(swt::Label)
+def test_swt_separator_is_not_abstract():
+    assert not inspect.isabstract(swt_Separator)
 
 
-def test_swt::label_constructor_exists():
-    assert callable(swt::Label.__init__)
+def test_swt_separator_constructor_exists():
+    assert callable(swt_Separator.__init__)
 
 
-def test_swt::label_constructor_args():
-    sig = inspect.signature(swt::Label.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_swt::datetime_is_not_abstract():
-    assert not inspect.isabstract(swt::DateTime)
-
-
-def test_swt::datetime_constructor_exists():
-    assert callable(swt::DateTime.__init__)
-
-
-def test_swt::datetime_constructor_args():
-    sig = inspect.signature(swt::DateTime.__init__)
-    params = list(sig.parameters.keys())
-    assert "minutes" in params, "Missing parameter 'minutes'"
-    assert "year" in params, "Missing parameter 'year'"
-    assert "month" in params, "Missing parameter 'month'"
-    assert "hours" in params, "Missing parameter 'hours'"
-    assert "day" in params, "Missing parameter 'day'"
-    assert "seconds" in params, "Missing parameter 'seconds'"
-
-def test_swt::datetime_has_minutes():
-    assert hasattr(swt::DateTime, "minutes")
-    descriptor = None
-    for klass in swt::DateTime.__mro__:
-        if "minutes" in klass.__dict__:
-            descriptor = klass.__dict__["minutes"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_swt::datetime_has_year():
-    assert hasattr(swt::DateTime, "year")
-    descriptor = None
-    for klass in swt::DateTime.__mro__:
-        if "year" in klass.__dict__:
-            descriptor = klass.__dict__["year"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_swt::datetime_has_month():
-    assert hasattr(swt::DateTime, "month")
-    descriptor = None
-    for klass in swt::DateTime.__mro__:
-        if "month" in klass.__dict__:
-            descriptor = klass.__dict__["month"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_swt::datetime_has_hours():
-    assert hasattr(swt::DateTime, "hours")
-    descriptor = None
-    for klass in swt::DateTime.__mro__:
-        if "hours" in klass.__dict__:
-            descriptor = klass.__dict__["hours"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_swt::datetime_has_day():
-    assert hasattr(swt::DateTime, "day")
-    descriptor = None
-    for klass in swt::DateTime.__mro__:
-        if "day" in klass.__dict__:
-            descriptor = klass.__dict__["day"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_swt::datetime_has_seconds():
-    assert hasattr(swt::DateTime, "seconds")
-    descriptor = None
-    for klass in swt::DateTime.__mro__:
-        if "seconds" in klass.__dict__:
-            descriptor = klass.__dict__["seconds"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_swt::text_is_not_abstract():
-    assert not inspect.isabstract(swt::Text)
-
-
-def test_swt::text_constructor_exists():
-    assert callable(swt::Text.__init__)
-
-
-def test_swt::text_constructor_args():
-    sig = inspect.signature(swt::Text.__init__)
-    params = list(sig.parameters.keys())
-    assert "message" in params, "Missing parameter 'message'"
-    assert "echoChar" in params, "Missing parameter 'echoChar'"
-    assert "text" in params, "Missing parameter 'text'"
-    assert "textLimit" in params, "Missing parameter 'textLimit'"
-    assert "editable" in params, "Missing parameter 'editable'"
-    assert "tabs" in params, "Missing parameter 'tabs'"
-    assert "selection" in params, "Missing parameter 'selection'"
-    assert "topIndex" in params, "Missing parameter 'topIndex'"
-    assert "multiplicityStyle" in params, "Missing parameter 'multiplicityStyle'"
-
-def test_swt::text_has_message():
-    assert hasattr(swt::Text, "message")
-    descriptor = None
-    for klass in swt::Text.__mro__:
-        if "message" in klass.__dict__:
-            descriptor = klass.__dict__["message"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_swt::text_has_echoChar():
-    assert hasattr(swt::Text, "echoChar")
-    descriptor = None
-    for klass in swt::Text.__mro__:
-        if "echoChar" in klass.__dict__:
-            descriptor = klass.__dict__["echoChar"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_swt::text_has_text():
-    assert hasattr(swt::Text, "text")
-    descriptor = None
-    for klass in swt::Text.__mro__:
-        if "text" in klass.__dict__:
-            descriptor = klass.__dict__["text"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_swt::text_has_textLimit():
-    assert hasattr(swt::Text, "textLimit")
-    descriptor = None
-    for klass in swt::Text.__mro__:
-        if "textLimit" in klass.__dict__:
-            descriptor = klass.__dict__["textLimit"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_swt::text_has_editable():
-    assert hasattr(swt::Text, "editable")
-    descriptor = None
-    for klass in swt::Text.__mro__:
-        if "editable" in klass.__dict__:
-            descriptor = klass.__dict__["editable"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_swt::text_has_tabs():
-    assert hasattr(swt::Text, "tabs")
-    descriptor = None
-    for klass in swt::Text.__mro__:
-        if "tabs" in klass.__dict__:
-            descriptor = klass.__dict__["tabs"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_swt::text_has_selection():
-    assert hasattr(swt::Text, "selection")
-    descriptor = None
-    for klass in swt::Text.__mro__:
-        if "selection" in klass.__dict__:
-            descriptor = klass.__dict__["selection"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_swt::text_has_topIndex():
-    assert hasattr(swt::Text, "topIndex")
-    descriptor = None
-    for klass in swt::Text.__mro__:
-        if "topIndex" in klass.__dict__:
-            descriptor = klass.__dict__["topIndex"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_swt::text_has_multiplicityStyle():
-    assert hasattr(swt::Text, "multiplicityStyle")
-    descriptor = None
-    for klass in swt::Text.__mro__:
-        if "multiplicityStyle" in klass.__dict__:
-            descriptor = klass.__dict__["multiplicityStyle"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_swt::tabfolder_is_not_abstract():
-    assert not inspect.isabstract(swt::TabFolder)
-
-
-def test_swt::tabfolder_constructor_exists():
-    assert callable(swt::TabFolder.__init__)
-
-
-def test_swt::tabfolder_constructor_args():
-    sig = inspect.signature(swt::TabFolder.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_swt::separator_is_not_abstract():
-    assert not inspect.isabstract(swt::Separator)
-
-
-def test_swt::separator_constructor_exists():
-    assert callable(swt::Separator.__init__)
-
-
-def test_swt::separator_constructor_args():
-    sig = inspect.signature(swt::Separator.__init__)
+def test_swt_separator_constructor_args():
+    sig = inspect.signature(swt_Separator.__init__)
     params = list(sig.parameters.keys())
     assert "orientationStyle" in params, "Missing parameter 'orientationStyle'"
 
-def test_swt::separator_has_orientationStyle():
-    assert hasattr(swt::Separator, "orientationStyle")
+def test_swt_separator_has_orientationStyle():
+    assert hasattr(swt_Separator, "orientationStyle")
     descriptor = None
-    for klass in swt::Separator.__mro__:
+    for klass in swt_Separator.__mro__:
         if "orientationStyle" in klass.__dict__:
             descriptor = klass.__dict__["orientationStyle"]
             break
@@ -2236,165 +1246,587 @@ def test_swt::separator_has_orientationStyle():
 
 
 
-def test_swt::browser_is_not_abstract():
-    assert not inspect.isabstract(swt::Browser)
+def test_swt_text_is_not_abstract():
+    assert not inspect.isabstract(swt_Text)
 
 
-def test_swt::browser_constructor_exists():
-    assert callable(swt::Browser.__init__)
+def test_swt_text_constructor_exists():
+    assert callable(swt_Text.__init__)
 
 
-def test_swt::browser_constructor_args():
-    sig = inspect.signature(swt::Browser.__init__)
+def test_swt_text_constructor_args():
+    sig = inspect.signature(swt_Text.__init__)
     params = list(sig.parameters.keys())
+    assert "message" in params, "Missing parameter 'message'"
+    assert "multiplicityStyle" in params, "Missing parameter 'multiplicityStyle'"
     assert "text" in params, "Missing parameter 'text'"
-    assert "javascriptEnabled" in params, "Missing parameter 'javascriptEnabled'"
-    assert "url" in params, "Missing parameter 'url'"
+    assert "echoChar" in params, "Missing parameter 'echoChar'"
+    assert "tabs" in params, "Missing parameter 'tabs'"
+    assert "textLimit" in params, "Missing parameter 'textLimit'"
+    assert "selection" in params, "Missing parameter 'selection'"
+    assert "editable" in params, "Missing parameter 'editable'"
+    assert "topIndex" in params, "Missing parameter 'topIndex'"
 
-def test_swt::browser_has_text():
-    assert hasattr(swt::Browser, "text")
+def test_swt_text_has_message():
+    assert hasattr(swt_Text, "message")
     descriptor = None
-    for klass in swt::Browser.__mro__:
+    for klass in swt_Text.__mro__:
+        if "message" in klass.__dict__:
+            descriptor = klass.__dict__["message"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_swt_text_has_multiplicityStyle():
+    assert hasattr(swt_Text, "multiplicityStyle")
+    descriptor = None
+    for klass in swt_Text.__mro__:
+        if "multiplicityStyle" in klass.__dict__:
+            descriptor = klass.__dict__["multiplicityStyle"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_swt_text_has_text():
+    assert hasattr(swt_Text, "text")
+    descriptor = None
+    for klass in swt_Text.__mro__:
         if "text" in klass.__dict__:
             descriptor = klass.__dict__["text"]
             break
     assert isinstance(descriptor, property)
 
-def test_swt::browser_has_javascriptEnabled():
-    assert hasattr(swt::Browser, "javascriptEnabled")
+def test_swt_text_has_echoChar():
+    assert hasattr(swt_Text, "echoChar")
     descriptor = None
-    for klass in swt::Browser.__mro__:
-        if "javascriptEnabled" in klass.__dict__:
-            descriptor = klass.__dict__["javascriptEnabled"]
+    for klass in swt_Text.__mro__:
+        if "echoChar" in klass.__dict__:
+            descriptor = klass.__dict__["echoChar"]
             break
     assert isinstance(descriptor, property)
 
-def test_swt::browser_has_url():
-    assert hasattr(swt::Browser, "url")
+def test_swt_text_has_tabs():
+    assert hasattr(swt_Text, "tabs")
     descriptor = None
-    for klass in swt::Browser.__mro__:
-        if "url" in klass.__dict__:
-            descriptor = klass.__dict__["url"]
+    for klass in swt_Text.__mro__:
+        if "tabs" in klass.__dict__:
+            descriptor = klass.__dict__["tabs"]
             break
     assert isinstance(descriptor, property)
 
-
-
-def test_swt::button_is_not_abstract():
-    assert not inspect.isabstract(swt::Button)
-
-
-def test_swt::button_constructor_exists():
-    assert callable(swt::Button.__init__)
-
-
-def test_swt::button_constructor_args():
-    sig = inspect.signature(swt::Button.__init__)
-    params = list(sig.parameters.keys())
-    assert "selection" in params, "Missing parameter 'selection'"
-    assert "arrowStyle" in params, "Missing parameter 'arrowStyle'"
-    assert "buttonStyle" in params, "Missing parameter 'buttonStyle'"
-
-def test_swt::button_has_selection():
-    assert hasattr(swt::Button, "selection")
+def test_swt_text_has_textLimit():
+    assert hasattr(swt_Text, "textLimit")
     descriptor = None
-    for klass in swt::Button.__mro__:
+    for klass in swt_Text.__mro__:
+        if "textLimit" in klass.__dict__:
+            descriptor = klass.__dict__["textLimit"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_swt_text_has_selection():
+    assert hasattr(swt_Text, "selection")
+    descriptor = None
+    for klass in swt_Text.__mro__:
         if "selection" in klass.__dict__:
             descriptor = klass.__dict__["selection"]
             break
     assert isinstance(descriptor, property)
 
-def test_swt::button_has_arrowStyle():
-    assert hasattr(swt::Button, "arrowStyle")
+def test_swt_text_has_editable():
+    assert hasattr(swt_Text, "editable")
     descriptor = None
-    for klass in swt::Button.__mro__:
-        if "arrowStyle" in klass.__dict__:
-            descriptor = klass.__dict__["arrowStyle"]
+    for klass in swt_Text.__mro__:
+        if "editable" in klass.__dict__:
+            descriptor = klass.__dict__["editable"]
             break
     assert isinstance(descriptor, property)
 
-def test_swt::button_has_buttonStyle():
-    assert hasattr(swt::Button, "buttonStyle")
+def test_swt_text_has_topIndex():
+    assert hasattr(swt_Text, "topIndex")
     descriptor = None
-    for klass in swt::Button.__mro__:
+    for klass in swt_Text.__mro__:
+        if "topIndex" in klass.__dict__:
+            descriptor = klass.__dict__["topIndex"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_swt_datetime_is_not_abstract():
+    assert not inspect.isabstract(swt_DateTime)
+
+
+def test_swt_datetime_constructor_exists():
+    assert callable(swt_DateTime.__init__)
+
+
+def test_swt_datetime_constructor_args():
+    sig = inspect.signature(swt_DateTime.__init__)
+    params = list(sig.parameters.keys())
+    assert "seconds" in params, "Missing parameter 'seconds'"
+    assert "day" in params, "Missing parameter 'day'"
+    assert "year" in params, "Missing parameter 'year'"
+    assert "hours" in params, "Missing parameter 'hours'"
+    assert "month" in params, "Missing parameter 'month'"
+    assert "minutes" in params, "Missing parameter 'minutes'"
+
+def test_swt_datetime_has_seconds():
+    assert hasattr(swt_DateTime, "seconds")
+    descriptor = None
+    for klass in swt_DateTime.__mro__:
+        if "seconds" in klass.__dict__:
+            descriptor = klass.__dict__["seconds"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_swt_datetime_has_day():
+    assert hasattr(swt_DateTime, "day")
+    descriptor = None
+    for klass in swt_DateTime.__mro__:
+        if "day" in klass.__dict__:
+            descriptor = klass.__dict__["day"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_swt_datetime_has_year():
+    assert hasattr(swt_DateTime, "year")
+    descriptor = None
+    for klass in swt_DateTime.__mro__:
+        if "year" in klass.__dict__:
+            descriptor = klass.__dict__["year"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_swt_datetime_has_hours():
+    assert hasattr(swt_DateTime, "hours")
+    descriptor = None
+    for klass in swt_DateTime.__mro__:
+        if "hours" in klass.__dict__:
+            descriptor = klass.__dict__["hours"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_swt_datetime_has_month():
+    assert hasattr(swt_DateTime, "month")
+    descriptor = None
+    for klass in swt_DateTime.__mro__:
+        if "month" in klass.__dict__:
+            descriptor = klass.__dict__["month"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_swt_datetime_has_minutes():
+    assert hasattr(swt_DateTime, "minutes")
+    descriptor = None
+    for klass in swt_DateTime.__mro__:
+        if "minutes" in klass.__dict__:
+            descriptor = klass.__dict__["minutes"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_swt_tabfolder_is_not_abstract():
+    assert not inspect.isabstract(swt_TabFolder)
+
+
+def test_swt_tabfolder_constructor_exists():
+    assert callable(swt_TabFolder.__init__)
+
+
+def test_swt_tabfolder_constructor_args():
+    sig = inspect.signature(swt_TabFolder.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_swt_label_is_not_abstract():
+    assert not inspect.isabstract(swt_Label)
+
+
+def test_swt_label_constructor_exists():
+    assert callable(swt_Label.__init__)
+
+
+def test_swt_label_constructor_args():
+    sig = inspect.signature(swt_Label.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_swt_browser_is_not_abstract():
+    assert not inspect.isabstract(swt_Browser)
+
+
+def test_swt_browser_constructor_exists():
+    assert callable(swt_Browser.__init__)
+
+
+def test_swt_browser_constructor_args():
+    sig = inspect.signature(swt_Browser.__init__)
+    params = list(sig.parameters.keys())
+    assert "url" in params, "Missing parameter 'url'"
+    assert "text" in params, "Missing parameter 'text'"
+    assert "javascriptEnabled" in params, "Missing parameter 'javascriptEnabled'"
+
+def test_swt_browser_has_url():
+    assert hasattr(swt_Browser, "url")
+    descriptor = None
+    for klass in swt_Browser.__mro__:
+        if "url" in klass.__dict__:
+            descriptor = klass.__dict__["url"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_swt_browser_has_text():
+    assert hasattr(swt_Browser, "text")
+    descriptor = None
+    for klass in swt_Browser.__mro__:
+        if "text" in klass.__dict__:
+            descriptor = klass.__dict__["text"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_swt_browser_has_javascriptEnabled():
+    assert hasattr(swt_Browser, "javascriptEnabled")
+    descriptor = None
+    for klass in swt_Browser.__mro__:
+        if "javascriptEnabled" in klass.__dict__:
+            descriptor = klass.__dict__["javascriptEnabled"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_swt_button_is_not_abstract():
+    assert not inspect.isabstract(swt_Button)
+
+
+def test_swt_button_constructor_exists():
+    assert callable(swt_Button.__init__)
+
+
+def test_swt_button_constructor_args():
+    sig = inspect.signature(swt_Button.__init__)
+    params = list(sig.parameters.keys())
+    assert "selection" in params, "Missing parameter 'selection'"
+    assert "buttonStyle" in params, "Missing parameter 'buttonStyle'"
+    assert "arrowStyle" in params, "Missing parameter 'arrowStyle'"
+
+def test_swt_button_has_selection():
+    assert hasattr(swt_Button, "selection")
+    descriptor = None
+    for klass in swt_Button.__mro__:
+        if "selection" in klass.__dict__:
+            descriptor = klass.__dict__["selection"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_swt_button_has_buttonStyle():
+    assert hasattr(swt_Button, "buttonStyle")
+    descriptor = None
+    for klass in swt_Button.__mro__:
         if "buttonStyle" in klass.__dict__:
             descriptor = klass.__dict__["buttonStyle"]
             break
     assert isinstance(descriptor, property)
 
-
-
-def test_swt::abstractlist_is_not_abstract():
-    assert not inspect.isabstract(swt::AbstractList)
-
-
-def test_swt::abstractlist_constructor_exists():
-    assert callable(swt::AbstractList.__init__)
-
-
-def test_swt::abstractlist_constructor_args():
-    sig = inspect.signature(swt::AbstractList.__init__)
-    params = list(sig.parameters.keys())
-    assert "items" in params, "Missing parameter 'items'"
-    assert "selectionIndex" in params, "Missing parameter 'selectionIndex'"
-
-def test_swt::abstractlist_has_items():
-    assert hasattr(swt::AbstractList, "items")
+def test_swt_button_has_arrowStyle():
+    assert hasattr(swt_Button, "arrowStyle")
     descriptor = None
-    for klass in swt::AbstractList.__mro__:
-        if "items" in klass.__dict__:
-            descriptor = klass.__dict__["items"]
+    for klass in swt_Button.__mro__:
+        if "arrowStyle" in klass.__dict__:
+            descriptor = klass.__dict__["arrowStyle"]
             break
     assert isinstance(descriptor, property)
 
-def test_swt::abstractlist_has_selectionIndex():
-    assert hasattr(swt::AbstractList, "selectionIndex")
+
+
+def test_swt_intervalcontrol_is_not_abstract():
+    assert not inspect.isabstract(swt_IntervalControl)
+
+
+def test_swt_intervalcontrol_constructor_exists():
+    assert callable(swt_IntervalControl.__init__)
+
+
+def test_swt_intervalcontrol_constructor_args():
+    sig = inspect.signature(swt_IntervalControl.__init__)
+    params = list(sig.parameters.keys())
+    assert "minimum" in params, "Missing parameter 'minimum'"
+    assert "maximum" in params, "Missing parameter 'maximum'"
+    assert "selection" in params, "Missing parameter 'selection'"
+
+def test_swt_intervalcontrol_has_minimum():
+    assert hasattr(swt_IntervalControl, "minimum")
     descriptor = None
-    for klass in swt::AbstractList.__mro__:
+    for klass in swt_IntervalControl.__mro__:
+        if "minimum" in klass.__dict__:
+            descriptor = klass.__dict__["minimum"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_swt_intervalcontrol_has_maximum():
+    assert hasattr(swt_IntervalControl, "maximum")
+    descriptor = None
+    for klass in swt_IntervalControl.__mro__:
+        if "maximum" in klass.__dict__:
+            descriptor = klass.__dict__["maximum"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_swt_intervalcontrol_has_selection():
+    assert hasattr(swt_IntervalControl, "selection")
+    descriptor = None
+    for klass in swt_IntervalControl.__mro__:
+        if "selection" in klass.__dict__:
+            descriptor = klass.__dict__["selection"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_swt_toolbar_is_not_abstract():
+    assert not inspect.isabstract(swt_ToolBar)
+
+
+def test_swt_toolbar_constructor_exists():
+    assert callable(swt_ToolBar.__init__)
+
+
+def test_swt_toolbar_constructor_args():
+    sig = inspect.signature(swt_ToolBar.__init__)
+    params = list(sig.parameters.keys())
+    assert "orientationStyle" in params, "Missing parameter 'orientationStyle'"
+
+def test_swt_toolbar_has_orientationStyle():
+    assert hasattr(swt_ToolBar, "orientationStyle")
+    descriptor = None
+    for klass in swt_ToolBar.__mro__:
+        if "orientationStyle" in klass.__dict__:
+            descriptor = klass.__dict__["orientationStyle"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_swt_abstractlist_is_not_abstract():
+    assert not inspect.isabstract(swt_AbstractList)
+
+
+def test_swt_abstractlist_constructor_exists():
+    assert callable(swt_AbstractList.__init__)
+
+
+def test_swt_abstractlist_constructor_args():
+    sig = inspect.signature(swt_AbstractList.__init__)
+    params = list(sig.parameters.keys())
+    assert "selectionIndex" in params, "Missing parameter 'selectionIndex'"
+    assert "items" in params, "Missing parameter 'items'"
+
+def test_swt_abstractlist_has_selectionIndex():
+    assert hasattr(swt_AbstractList, "selectionIndex")
+    descriptor = None
+    for klass in swt_AbstractList.__mro__:
         if "selectionIndex" in klass.__dict__:
             descriptor = klass.__dict__["selectionIndex"]
             break
     assert isinstance(descriptor, property)
 
-
-
-def test_swt::tree_is_not_abstract():
-    assert not inspect.isabstract(swt::Tree)
-
-
-def test_swt::tree_constructor_exists():
-    assert callable(swt::Tree.__init__)
-
-
-def test_swt::tree_constructor_args():
-    sig = inspect.signature(swt::Tree.__init__)
-    params = list(sig.parameters.keys())
-    assert "sortDirection" in params, "Missing parameter 'sortDirection'"
-    assert "headerVisible" in params, "Missing parameter 'headerVisible'"
-    assert "linesVisible" in params, "Missing parameter 'linesVisible'"
-
-def test_swt::tree_has_sortDirection():
-    assert hasattr(swt::Tree, "sortDirection")
+def test_swt_abstractlist_has_items():
+    assert hasattr(swt_AbstractList, "items")
     descriptor = None
-    for klass in swt::Tree.__mro__:
-        if "sortDirection" in klass.__dict__:
-            descriptor = klass.__dict__["sortDirection"]
+    for klass in swt_AbstractList.__mro__:
+        if "items" in klass.__dict__:
+            descriptor = klass.__dict__["items"]
             break
     assert isinstance(descriptor, property)
 
-def test_swt::tree_has_headerVisible():
-    assert hasattr(swt::Tree, "headerVisible")
+
+
+def test_swt_abstractcomposite_is_not_abstract():
+    assert not inspect.isabstract(swt_AbstractComposite)
+
+
+def test_swt_abstractcomposite_constructor_exists():
+    assert callable(swt_AbstractComposite.__init__)
+
+
+def test_swt_abstractcomposite_constructor_args():
+    sig = inspect.signature(swt_AbstractComposite.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_swt_font_is_not_abstract():
+    assert not inspect.isabstract(swt_Font)
+
+
+def test_swt_font_constructor_exists():
+    assert callable(swt_Font.__init__)
+
+
+def test_swt_font_constructor_args():
+    sig = inspect.signature(swt_Font.__init__)
+    params = list(sig.parameters.keys())
+    assert "style" in params, "Missing parameter 'style'"
+    assert "height" in params, "Missing parameter 'height'"
+    assert "name" in params, "Missing parameter 'name'"
+
+def test_swt_font_has_style():
+    assert hasattr(swt_Font, "style")
     descriptor = None
-    for klass in swt::Tree.__mro__:
+    for klass in swt_Font.__mro__:
+        if "style" in klass.__dict__:
+            descriptor = klass.__dict__["style"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_swt_font_has_height():
+    assert hasattr(swt_Font, "height")
+    descriptor = None
+    for klass in swt_Font.__mro__:
+        if "height" in klass.__dict__:
+            descriptor = klass.__dict__["height"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_swt_font_has_name():
+    assert hasattr(swt_Font, "name")
+    descriptor = None
+    for klass in swt_Font.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_swt_color_is_not_abstract():
+    assert not inspect.isabstract(swt_Color)
+
+
+def test_swt_color_constructor_exists():
+    assert callable(swt_Color.__init__)
+
+
+def test_swt_color_constructor_args():
+    sig = inspect.signature(swt_Color.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_swt_layout_is_not_abstract():
+    assert not inspect.isabstract(swt_Layout)
+
+
+def test_swt_layout_constructor_exists():
+    assert callable(swt_Layout.__init__)
+
+
+def test_swt_layout_constructor_args():
+    sig = inspect.signature(swt_Layout.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_swt_widget_is_not_abstract():
+    assert not inspect.isabstract(swt_Widget)
+
+
+def test_swt_widget_constructor_exists():
+    assert callable(swt_Widget.__init__)
+
+
+def test_swt_widget_constructor_args():
+    sig = inspect.signature(swt_Widget.__init__)
+    params = list(sig.parameters.keys())
+    assert "style" in params, "Missing parameter 'style'"
+
+def test_swt_widget_has_style():
+    assert hasattr(swt_Widget, "style")
+    descriptor = None
+    for klass in swt_Widget.__mro__:
+        if "style" in klass.__dict__:
+            descriptor = klass.__dict__["style"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_swt_viewer_is_not_abstract():
+    assert not inspect.isabstract(swt_Viewer)
+
+
+def test_swt_viewer_constructor_exists():
+    assert callable(swt_Viewer.__init__)
+
+
+def test_swt_viewer_constructor_args():
+    sig = inspect.signature(swt_Viewer.__init__)
+    params = list(sig.parameters.keys())
+    assert "input" in params, "Missing parameter 'input'"
+
+def test_swt_viewer_has_input():
+    assert hasattr(swt_Viewer, "input")
+    descriptor = None
+    for klass in swt_Viewer.__mro__:
+        if "input" in klass.__dict__:
+            descriptor = klass.__dict__["input"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_swt_treeviewer_is_not_abstract():
+    assert not inspect.isabstract(swt_TreeViewer)
+
+
+def test_swt_treeviewer_constructor_exists():
+    assert callable(swt_TreeViewer.__init__)
+
+
+def test_swt_treeviewer_constructor_args():
+    sig = inspect.signature(swt_TreeViewer.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_swt_tree_is_not_abstract():
+    assert not inspect.isabstract(swt_Tree)
+
+
+def test_swt_tree_constructor_exists():
+    assert callable(swt_Tree.__init__)
+
+
+def test_swt_tree_constructor_args():
+    sig = inspect.signature(swt_Tree.__init__)
+    params = list(sig.parameters.keys())
+    assert "headerVisible" in params, "Missing parameter 'headerVisible'"
+    assert "sortDirection" in params, "Missing parameter 'sortDirection'"
+    assert "linesVisible" in params, "Missing parameter 'linesVisible'"
+
+def test_swt_tree_has_headerVisible():
+    assert hasattr(swt_Tree, "headerVisible")
+    descriptor = None
+    for klass in swt_Tree.__mro__:
         if "headerVisible" in klass.__dict__:
             descriptor = klass.__dict__["headerVisible"]
             break
     assert isinstance(descriptor, property)
 
-def test_swt::tree_has_linesVisible():
-    assert hasattr(swt::Tree, "linesVisible")
+def test_swt_tree_has_sortDirection():
+    assert hasattr(swt_Tree, "sortDirection")
     descriptor = None
-    for klass in swt::Tree.__mro__:
+    for klass in swt_Tree.__mro__:
+        if "sortDirection" in klass.__dict__:
+            descriptor = klass.__dict__["sortDirection"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_swt_tree_has_linesVisible():
+    assert hasattr(swt_Tree, "linesVisible")
+    descriptor = None
+    for klass in swt_Tree.__mro__:
         if "linesVisible" in klass.__dict__:
             descriptor = klass.__dict__["linesVisible"]
             break
@@ -2402,200 +1834,784 @@ def test_swt::tree_has_linesVisible():
 
 
 
-def test_swt::intervalcontrol_is_not_abstract():
-    assert not inspect.isabstract(swt::IntervalControl)
+def test_swt_treecolumn_is_not_abstract():
+    assert not inspect.isabstract(swt_TreeColumn)
 
 
-def test_swt::intervalcontrol_constructor_exists():
-    assert callable(swt::IntervalControl.__init__)
+def test_swt_treecolumn_constructor_exists():
+    assert callable(swt_TreeColumn.__init__)
 
 
-def test_swt::intervalcontrol_constructor_args():
-    sig = inspect.signature(swt::IntervalControl.__init__)
+def test_swt_treecolumn_constructor_args():
+    sig = inspect.signature(swt_TreeColumn.__init__)
     params = list(sig.parameters.keys())
-    assert "selection" in params, "Missing parameter 'selection'"
-    assert "minimum" in params, "Missing parameter 'minimum'"
-    assert "maximum" in params, "Missing parameter 'maximum'"
+    assert "displayText" in params, "Missing parameter 'displayText'"
+    assert "toolTipText" in params, "Missing parameter 'toolTipText'"
 
-def test_swt::intervalcontrol_has_selection():
-    assert hasattr(swt::IntervalControl, "selection")
+def test_swt_treecolumn_has_displayText():
+    assert hasattr(swt_TreeColumn, "displayText")
     descriptor = None
-    for klass in swt::IntervalControl.__mro__:
-        if "selection" in klass.__dict__:
-            descriptor = klass.__dict__["selection"]
+    for klass in swt_TreeColumn.__mro__:
+        if "displayText" in klass.__dict__:
+            descriptor = klass.__dict__["displayText"]
             break
     assert isinstance(descriptor, property)
 
-def test_swt::intervalcontrol_has_minimum():
-    assert hasattr(swt::IntervalControl, "minimum")
+def test_swt_treecolumn_has_toolTipText():
+    assert hasattr(swt_TreeColumn, "toolTipText")
     descriptor = None
-    for klass in swt::IntervalControl.__mro__:
-        if "minimum" in klass.__dict__:
-            descriptor = klass.__dict__["minimum"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_swt::intervalcontrol_has_maximum():
-    assert hasattr(swt::IntervalControl, "maximum")
-    descriptor = None
-    for klass in swt::IntervalControl.__mro__:
-        if "maximum" in klass.__dict__:
-            descriptor = klass.__dict__["maximum"]
+    for klass in swt_TreeColumn.__mro__:
+        if "toolTipText" in klass.__dict__:
+            descriptor = klass.__dict__["toolTipText"]
             break
     assert isinstance(descriptor, property)
 
 
 
-def test_swt::toolbar_is_not_abstract():
-    assert not inspect.isabstract(swt::ToolBar)
+def test_swt_lineattributes_is_not_abstract():
+    assert not inspect.isabstract(swt_LineAttributes)
 
 
-def test_swt::toolbar_constructor_exists():
-    assert callable(swt::ToolBar.__init__)
+def test_swt_lineattributes_constructor_exists():
+    assert callable(swt_LineAttributes.__init__)
 
 
-def test_swt::toolbar_constructor_args():
-    sig = inspect.signature(swt::ToolBar.__init__)
+def test_swt_lineattributes_constructor_args():
+    sig = inspect.signature(swt_LineAttributes.__init__)
     params = list(sig.parameters.keys())
-    assert "orientationStyle" in params, "Missing parameter 'orientationStyle'"
-
-def test_swt::toolbar_has_orientationStyle():
-    assert hasattr(swt::ToolBar, "orientationStyle")
-    descriptor = None
-    for klass in swt::ToolBar.__mro__:
-        if "orientationStyle" in klass.__dict__:
-            descriptor = klass.__dict__["orientationStyle"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_swt::abstractcomposite_is_not_abstract():
-    assert not inspect.isabstract(swt::AbstractComposite)
-
-
-def test_swt::abstractcomposite_constructor_exists():
-    assert callable(swt::AbstractComposite.__init__)
-
-
-def test_swt::abstractcomposite_constructor_args():
-    sig = inspect.signature(swt::AbstractComposite.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_swt::font_is_not_abstract():
-    assert not inspect.isabstract(swt::Font)
-
-
-def test_swt::font_constructor_exists():
-    assert callable(swt::Font.__init__)
-
-
-def test_swt::font_constructor_args():
-    sig = inspect.signature(swt::Font.__init__)
-    params = list(sig.parameters.keys())
-    assert "name" in params, "Missing parameter 'name'"
+    assert "dash" in params, "Missing parameter 'dash'"
+    assert "cap" in params, "Missing parameter 'cap'"
+    assert "miterLimit" in params, "Missing parameter 'miterLimit'"
+    assert "join" in params, "Missing parameter 'join'"
+    assert "dashOffset" in params, "Missing parameter 'dashOffset'"
+    assert "width" in params, "Missing parameter 'width'"
     assert "style" in params, "Missing parameter 'style'"
-    assert "height" in params, "Missing parameter 'height'"
 
-def test_swt::font_has_name():
-    assert hasattr(swt::Font, "name")
+def test_swt_lineattributes_has_dash():
+    assert hasattr(swt_LineAttributes, "dash")
     descriptor = None
-    for klass in swt::Font.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
+    for klass in swt_LineAttributes.__mro__:
+        if "dash" in klass.__dict__:
+            descriptor = klass.__dict__["dash"]
             break
     assert isinstance(descriptor, property)
 
-def test_swt::font_has_style():
-    assert hasattr(swt::Font, "style")
+def test_swt_lineattributes_has_cap():
+    assert hasattr(swt_LineAttributes, "cap")
     descriptor = None
-    for klass in swt::Font.__mro__:
+    for klass in swt_LineAttributes.__mro__:
+        if "cap" in klass.__dict__:
+            descriptor = klass.__dict__["cap"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_swt_lineattributes_has_miterLimit():
+    assert hasattr(swt_LineAttributes, "miterLimit")
+    descriptor = None
+    for klass in swt_LineAttributes.__mro__:
+        if "miterLimit" in klass.__dict__:
+            descriptor = klass.__dict__["miterLimit"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_swt_lineattributes_has_join():
+    assert hasattr(swt_LineAttributes, "join")
+    descriptor = None
+    for klass in swt_LineAttributes.__mro__:
+        if "join" in klass.__dict__:
+            descriptor = klass.__dict__["join"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_swt_lineattributes_has_dashOffset():
+    assert hasattr(swt_LineAttributes, "dashOffset")
+    descriptor = None
+    for klass in swt_LineAttributes.__mro__:
+        if "dashOffset" in klass.__dict__:
+            descriptor = klass.__dict__["dashOffset"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_swt_lineattributes_has_width():
+    assert hasattr(swt_LineAttributes, "width")
+    descriptor = None
+    for klass in swt_LineAttributes.__mro__:
+        if "width" in klass.__dict__:
+            descriptor = klass.__dict__["width"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_swt_lineattributes_has_style():
+    assert hasattr(swt_LineAttributes, "style")
+    descriptor = None
+    for klass in swt_LineAttributes.__mro__:
         if "style" in klass.__dict__:
             descriptor = klass.__dict__["style"]
             break
     assert isinstance(descriptor, property)
 
-def test_swt::font_has_height():
-    assert hasattr(swt::Font, "height")
+
+
+def test_swt_formlayout_is_not_abstract():
+    assert not inspect.isabstract(swt_FormLayout)
+
+
+def test_swt_formlayout_constructor_exists():
+    assert callable(swt_FormLayout.__init__)
+
+
+def test_swt_formlayout_constructor_args():
+    sig = inspect.signature(swt_FormLayout.__init__)
+    params = list(sig.parameters.keys())
+    assert "marginHeight" in params, "Missing parameter 'marginHeight'"
+    assert "marginTop" in params, "Missing parameter 'marginTop'"
+    assert "marginBottom" in params, "Missing parameter 'marginBottom'"
+    assert "marginWidth" in params, "Missing parameter 'marginWidth'"
+    assert "spacing" in params, "Missing parameter 'spacing'"
+    assert "marginLeft" in params, "Missing parameter 'marginLeft'"
+    assert "marginRight" in params, "Missing parameter 'marginRight'"
+
+def test_swt_formlayout_has_marginHeight():
+    assert hasattr(swt_FormLayout, "marginHeight")
     descriptor = None
-    for klass in swt::Font.__mro__:
+    for klass in swt_FormLayout.__mro__:
+        if "marginHeight" in klass.__dict__:
+            descriptor = klass.__dict__["marginHeight"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_swt_formlayout_has_marginTop():
+    assert hasattr(swt_FormLayout, "marginTop")
+    descriptor = None
+    for klass in swt_FormLayout.__mro__:
+        if "marginTop" in klass.__dict__:
+            descriptor = klass.__dict__["marginTop"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_swt_formlayout_has_marginBottom():
+    assert hasattr(swt_FormLayout, "marginBottom")
+    descriptor = None
+    for klass in swt_FormLayout.__mro__:
+        if "marginBottom" in klass.__dict__:
+            descriptor = klass.__dict__["marginBottom"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_swt_formlayout_has_marginWidth():
+    assert hasattr(swt_FormLayout, "marginWidth")
+    descriptor = None
+    for klass in swt_FormLayout.__mro__:
+        if "marginWidth" in klass.__dict__:
+            descriptor = klass.__dict__["marginWidth"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_swt_formlayout_has_spacing():
+    assert hasattr(swt_FormLayout, "spacing")
+    descriptor = None
+    for klass in swt_FormLayout.__mro__:
+        if "spacing" in klass.__dict__:
+            descriptor = klass.__dict__["spacing"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_swt_formlayout_has_marginLeft():
+    assert hasattr(swt_FormLayout, "marginLeft")
+    descriptor = None
+    for klass in swt_FormLayout.__mro__:
+        if "marginLeft" in klass.__dict__:
+            descriptor = klass.__dict__["marginLeft"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_swt_formlayout_has_marginRight():
+    assert hasattr(swt_FormLayout, "marginRight")
+    descriptor = None
+    for klass in swt_FormLayout.__mro__:
+        if "marginRight" in klass.__dict__:
+            descriptor = klass.__dict__["marginRight"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_swt_griddata_is_not_abstract():
+    assert not inspect.isabstract(swt_GridData)
+
+
+def test_swt_griddata_constructor_exists():
+    assert callable(swt_GridData.__init__)
+
+
+def test_swt_griddata_constructor_args():
+    sig = inspect.signature(swt_GridData.__init__)
+    params = list(sig.parameters.keys())
+    assert "heightHint" in params, "Missing parameter 'heightHint'"
+    assert "widthHint" in params, "Missing parameter 'widthHint'"
+    assert "horizontalSpan" in params, "Missing parameter 'horizontalSpan'"
+    assert "grabExcessVerticalSpace" in params, "Missing parameter 'grabExcessVerticalSpace'"
+    assert "horizontalAlignment" in params, "Missing parameter 'horizontalAlignment'"
+    assert "verticalAlignment" in params, "Missing parameter 'verticalAlignment'"
+    assert "grabExcessHorizontalSpace" in params, "Missing parameter 'grabExcessHorizontalSpace'"
+    assert "horizontalIndent" in params, "Missing parameter 'horizontalIndent'"
+    assert "minimumWidth" in params, "Missing parameter 'minimumWidth'"
+    assert "verticalSpan" in params, "Missing parameter 'verticalSpan'"
+    assert "exclude" in params, "Missing parameter 'exclude'"
+    assert "minimumHeight" in params, "Missing parameter 'minimumHeight'"
+    assert "verticalIndent" in params, "Missing parameter 'verticalIndent'"
+
+def test_swt_griddata_has_heightHint():
+    assert hasattr(swt_GridData, "heightHint")
+    descriptor = None
+    for klass in swt_GridData.__mro__:
+        if "heightHint" in klass.__dict__:
+            descriptor = klass.__dict__["heightHint"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_swt_griddata_has_widthHint():
+    assert hasattr(swt_GridData, "widthHint")
+    descriptor = None
+    for klass in swt_GridData.__mro__:
+        if "widthHint" in klass.__dict__:
+            descriptor = klass.__dict__["widthHint"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_swt_griddata_has_horizontalSpan():
+    assert hasattr(swt_GridData, "horizontalSpan")
+    descriptor = None
+    for klass in swt_GridData.__mro__:
+        if "horizontalSpan" in klass.__dict__:
+            descriptor = klass.__dict__["horizontalSpan"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_swt_griddata_has_grabExcessVerticalSpace():
+    assert hasattr(swt_GridData, "grabExcessVerticalSpace")
+    descriptor = None
+    for klass in swt_GridData.__mro__:
+        if "grabExcessVerticalSpace" in klass.__dict__:
+            descriptor = klass.__dict__["grabExcessVerticalSpace"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_swt_griddata_has_horizontalAlignment():
+    assert hasattr(swt_GridData, "horizontalAlignment")
+    descriptor = None
+    for klass in swt_GridData.__mro__:
+        if "horizontalAlignment" in klass.__dict__:
+            descriptor = klass.__dict__["horizontalAlignment"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_swt_griddata_has_verticalAlignment():
+    assert hasattr(swt_GridData, "verticalAlignment")
+    descriptor = None
+    for klass in swt_GridData.__mro__:
+        if "verticalAlignment" in klass.__dict__:
+            descriptor = klass.__dict__["verticalAlignment"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_swt_griddata_has_grabExcessHorizontalSpace():
+    assert hasattr(swt_GridData, "grabExcessHorizontalSpace")
+    descriptor = None
+    for klass in swt_GridData.__mro__:
+        if "grabExcessHorizontalSpace" in klass.__dict__:
+            descriptor = klass.__dict__["grabExcessHorizontalSpace"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_swt_griddata_has_horizontalIndent():
+    assert hasattr(swt_GridData, "horizontalIndent")
+    descriptor = None
+    for klass in swt_GridData.__mro__:
+        if "horizontalIndent" in klass.__dict__:
+            descriptor = klass.__dict__["horizontalIndent"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_swt_griddata_has_minimumWidth():
+    assert hasattr(swt_GridData, "minimumWidth")
+    descriptor = None
+    for klass in swt_GridData.__mro__:
+        if "minimumWidth" in klass.__dict__:
+            descriptor = klass.__dict__["minimumWidth"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_swt_griddata_has_verticalSpan():
+    assert hasattr(swt_GridData, "verticalSpan")
+    descriptor = None
+    for klass in swt_GridData.__mro__:
+        if "verticalSpan" in klass.__dict__:
+            descriptor = klass.__dict__["verticalSpan"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_swt_griddata_has_exclude():
+    assert hasattr(swt_GridData, "exclude")
+    descriptor = None
+    for klass in swt_GridData.__mro__:
+        if "exclude" in klass.__dict__:
+            descriptor = klass.__dict__["exclude"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_swt_griddata_has_minimumHeight():
+    assert hasattr(swt_GridData, "minimumHeight")
+    descriptor = None
+    for klass in swt_GridData.__mro__:
+        if "minimumHeight" in klass.__dict__:
+            descriptor = klass.__dict__["minimumHeight"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_swt_griddata_has_verticalIndent():
+    assert hasattr(swt_GridData, "verticalIndent")
+    descriptor = None
+    for klass in swt_GridData.__mro__:
+        if "verticalIndent" in klass.__dict__:
+            descriptor = klass.__dict__["verticalIndent"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_swt_formattachment_is_not_abstract():
+    assert not inspect.isabstract(swt_FormAttachment)
+
+
+def test_swt_formattachment_constructor_exists():
+    assert callable(swt_FormAttachment.__init__)
+
+
+def test_swt_formattachment_constructor_args():
+    sig = inspect.signature(swt_FormAttachment.__init__)
+    params = list(sig.parameters.keys())
+    assert "alignment" in params, "Missing parameter 'alignment'"
+    assert "denominator" in params, "Missing parameter 'denominator'"
+    assert "offset" in params, "Missing parameter 'offset'"
+    assert "numerator" in params, "Missing parameter 'numerator'"
+
+def test_swt_formattachment_has_alignment():
+    assert hasattr(swt_FormAttachment, "alignment")
+    descriptor = None
+    for klass in swt_FormAttachment.__mro__:
+        if "alignment" in klass.__dict__:
+            descriptor = klass.__dict__["alignment"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_swt_formattachment_has_denominator():
+    assert hasattr(swt_FormAttachment, "denominator")
+    descriptor = None
+    for klass in swt_FormAttachment.__mro__:
+        if "denominator" in klass.__dict__:
+            descriptor = klass.__dict__["denominator"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_swt_formattachment_has_offset():
+    assert hasattr(swt_FormAttachment, "offset")
+    descriptor = None
+    for klass in swt_FormAttachment.__mro__:
+        if "offset" in klass.__dict__:
+            descriptor = klass.__dict__["offset"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_swt_formattachment_has_numerator():
+    assert hasattr(swt_FormAttachment, "numerator")
+    descriptor = None
+    for klass in swt_FormAttachment.__mro__:
+        if "numerator" in klass.__dict__:
+            descriptor = klass.__dict__["numerator"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_swt_formdata_is_not_abstract():
+    assert not inspect.isabstract(swt_FormData)
+
+
+def test_swt_formdata_constructor_exists():
+    assert callable(swt_FormData.__init__)
+
+
+def test_swt_formdata_constructor_args():
+    sig = inspect.signature(swt_FormData.__init__)
+    params = list(sig.parameters.keys())
+    assert "height" in params, "Missing parameter 'height'"
+    assert "width" in params, "Missing parameter 'width'"
+
+def test_swt_formdata_has_height():
+    assert hasattr(swt_FormData, "height")
+    descriptor = None
+    for klass in swt_FormData.__mro__:
         if "height" in klass.__dict__:
             descriptor = klass.__dict__["height"]
             break
     assert isinstance(descriptor, property)
 
-
-
-def test_swt::color_is_not_abstract():
-    assert not inspect.isabstract(swt::Color)
-
-
-def test_swt::color_constructor_exists():
-    assert callable(swt::Color.__init__)
-
-
-def test_swt::color_constructor_args():
-    sig = inspect.signature(swt::Color.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_swt::layout_is_not_abstract():
-    assert not inspect.isabstract(swt::Layout)
-
-
-def test_swt::layout_constructor_exists():
-    assert callable(swt::Layout.__init__)
-
-
-def test_swt::layout_constructor_args():
-    sig = inspect.signature(swt::Layout.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_swt::widget_is_not_abstract():
-    assert not inspect.isabstract(swt::Widget)
-
-
-def test_swt::widget_constructor_exists():
-    assert callable(swt::Widget.__init__)
-
-
-def test_swt::widget_constructor_args():
-    sig = inspect.signature(swt::Widget.__init__)
-    params = list(sig.parameters.keys())
-    assert "style" in params, "Missing parameter 'style'"
-
-def test_swt::widget_has_style():
-    assert hasattr(swt::Widget, "style")
+def test_swt_formdata_has_width():
+    assert hasattr(swt_FormData, "width")
     descriptor = None
-    for klass in swt::Widget.__mro__:
-        if "style" in klass.__dict__:
-            descriptor = klass.__dict__["style"]
+    for klass in swt_FormData.__mro__:
+        if "width" in klass.__dict__:
+            descriptor = klass.__dict__["width"]
             break
     assert isinstance(descriptor, property)
 
-def test_formattachmentalignment_exists():
-    # Check that the Enumeration exists
-    assert FormAttachmentAlignment is not None
 
-def test_formattachmentalignment_has_all_literals():
+
+def test_swt_rowlayout_is_not_abstract():
+    assert not inspect.isabstract(swt_RowLayout)
+
+
+def test_swt_rowlayout_constructor_exists():
+    assert callable(swt_RowLayout.__init__)
+
+
+def test_swt_rowlayout_constructor_args():
+    sig = inspect.signature(swt_RowLayout.__init__)
+    params = list(sig.parameters.keys())
+    assert "marginRight" in params, "Missing parameter 'marginRight'"
+    assert "fill" in params, "Missing parameter 'fill'"
+    assert "marginWidth" in params, "Missing parameter 'marginWidth'"
+    assert "marginTop" in params, "Missing parameter 'marginTop'"
+    assert "marginHeight" in params, "Missing parameter 'marginHeight'"
+    assert "justify" in params, "Missing parameter 'justify'"
+    assert "marginBottom" in params, "Missing parameter 'marginBottom'"
+    assert "spacing" in params, "Missing parameter 'spacing'"
+    assert "center" in params, "Missing parameter 'center'"
+    assert "pack" in params, "Missing parameter 'pack'"
+    assert "orientationStyle" in params, "Missing parameter 'orientationStyle'"
+    assert "marginLeft" in params, "Missing parameter 'marginLeft'"
+    assert "wrap" in params, "Missing parameter 'wrap'"
+
+def test_swt_rowlayout_has_marginRight():
+    assert hasattr(swt_RowLayout, "marginRight")
+    descriptor = None
+    for klass in swt_RowLayout.__mro__:
+        if "marginRight" in klass.__dict__:
+            descriptor = klass.__dict__["marginRight"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_swt_rowlayout_has_fill():
+    assert hasattr(swt_RowLayout, "fill")
+    descriptor = None
+    for klass in swt_RowLayout.__mro__:
+        if "fill" in klass.__dict__:
+            descriptor = klass.__dict__["fill"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_swt_rowlayout_has_marginWidth():
+    assert hasattr(swt_RowLayout, "marginWidth")
+    descriptor = None
+    for klass in swt_RowLayout.__mro__:
+        if "marginWidth" in klass.__dict__:
+            descriptor = klass.__dict__["marginWidth"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_swt_rowlayout_has_marginTop():
+    assert hasattr(swt_RowLayout, "marginTop")
+    descriptor = None
+    for klass in swt_RowLayout.__mro__:
+        if "marginTop" in klass.__dict__:
+            descriptor = klass.__dict__["marginTop"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_swt_rowlayout_has_marginHeight():
+    assert hasattr(swt_RowLayout, "marginHeight")
+    descriptor = None
+    for klass in swt_RowLayout.__mro__:
+        if "marginHeight" in klass.__dict__:
+            descriptor = klass.__dict__["marginHeight"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_swt_rowlayout_has_justify():
+    assert hasattr(swt_RowLayout, "justify")
+    descriptor = None
+    for klass in swt_RowLayout.__mro__:
+        if "justify" in klass.__dict__:
+            descriptor = klass.__dict__["justify"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_swt_rowlayout_has_marginBottom():
+    assert hasattr(swt_RowLayout, "marginBottom")
+    descriptor = None
+    for klass in swt_RowLayout.__mro__:
+        if "marginBottom" in klass.__dict__:
+            descriptor = klass.__dict__["marginBottom"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_swt_rowlayout_has_spacing():
+    assert hasattr(swt_RowLayout, "spacing")
+    descriptor = None
+    for klass in swt_RowLayout.__mro__:
+        if "spacing" in klass.__dict__:
+            descriptor = klass.__dict__["spacing"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_swt_rowlayout_has_center():
+    assert hasattr(swt_RowLayout, "center")
+    descriptor = None
+    for klass in swt_RowLayout.__mro__:
+        if "center" in klass.__dict__:
+            descriptor = klass.__dict__["center"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_swt_rowlayout_has_pack():
+    assert hasattr(swt_RowLayout, "pack")
+    descriptor = None
+    for klass in swt_RowLayout.__mro__:
+        if "pack" in klass.__dict__:
+            descriptor = klass.__dict__["pack"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_swt_rowlayout_has_orientationStyle():
+    assert hasattr(swt_RowLayout, "orientationStyle")
+    descriptor = None
+    for klass in swt_RowLayout.__mro__:
+        if "orientationStyle" in klass.__dict__:
+            descriptor = klass.__dict__["orientationStyle"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_swt_rowlayout_has_marginLeft():
+    assert hasattr(swt_RowLayout, "marginLeft")
+    descriptor = None
+    for klass in swt_RowLayout.__mro__:
+        if "marginLeft" in klass.__dict__:
+            descriptor = klass.__dict__["marginLeft"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_swt_rowlayout_has_wrap():
+    assert hasattr(swt_RowLayout, "wrap")
+    descriptor = None
+    for klass in swt_RowLayout.__mro__:
+        if "wrap" in klass.__dict__:
+            descriptor = klass.__dict__["wrap"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_swt_filllayout_is_not_abstract():
+    assert not inspect.isabstract(swt_FillLayout)
+
+
+def test_swt_filllayout_constructor_exists():
+    assert callable(swt_FillLayout.__init__)
+
+
+def test_swt_filllayout_constructor_args():
+    sig = inspect.signature(swt_FillLayout.__init__)
+    params = list(sig.parameters.keys())
+    assert "orientationStyle" in params, "Missing parameter 'orientationStyle'"
+    assert "marginWidth" in params, "Missing parameter 'marginWidth'"
+    assert "spacing" in params, "Missing parameter 'spacing'"
+    assert "marginHeight" in params, "Missing parameter 'marginHeight'"
+
+def test_swt_filllayout_has_orientationStyle():
+    assert hasattr(swt_FillLayout, "orientationStyle")
+    descriptor = None
+    for klass in swt_FillLayout.__mro__:
+        if "orientationStyle" in klass.__dict__:
+            descriptor = klass.__dict__["orientationStyle"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_swt_filllayout_has_marginWidth():
+    assert hasattr(swt_FillLayout, "marginWidth")
+    descriptor = None
+    for klass in swt_FillLayout.__mro__:
+        if "marginWidth" in klass.__dict__:
+            descriptor = klass.__dict__["marginWidth"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_swt_filllayout_has_spacing():
+    assert hasattr(swt_FillLayout, "spacing")
+    descriptor = None
+    for klass in swt_FillLayout.__mro__:
+        if "spacing" in klass.__dict__:
+            descriptor = klass.__dict__["spacing"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_swt_filllayout_has_marginHeight():
+    assert hasattr(swt_FillLayout, "marginHeight")
+    descriptor = None
+    for klass in swt_FillLayout.__mro__:
+        if "marginHeight" in klass.__dict__:
+            descriptor = klass.__dict__["marginHeight"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_swt_gridlayout_is_not_abstract():
+    assert not inspect.isabstract(swt_GridLayout)
+
+
+def test_swt_gridlayout_constructor_exists():
+    assert callable(swt_GridLayout.__init__)
+
+
+def test_swt_gridlayout_constructor_args():
+    sig = inspect.signature(swt_GridLayout.__init__)
+    params = list(sig.parameters.keys())
+    assert "makeColumnsEqualWidth" in params, "Missing parameter 'makeColumnsEqualWidth'"
+    assert "verticalSpacing" in params, "Missing parameter 'verticalSpacing'"
+    assert "marginRight" in params, "Missing parameter 'marginRight'"
+    assert "marginBottom" in params, "Missing parameter 'marginBottom'"
+    assert "marginWidth" in params, "Missing parameter 'marginWidth'"
+    assert "numColumns" in params, "Missing parameter 'numColumns'"
+    assert "horizontalSpacing" in params, "Missing parameter 'horizontalSpacing'"
+    assert "marginTop" in params, "Missing parameter 'marginTop'"
+    assert "marginLeft" in params, "Missing parameter 'marginLeft'"
+    assert "marginHeight" in params, "Missing parameter 'marginHeight'"
+
+def test_swt_gridlayout_has_makeColumnsEqualWidth():
+    assert hasattr(swt_GridLayout, "makeColumnsEqualWidth")
+    descriptor = None
+    for klass in swt_GridLayout.__mro__:
+        if "makeColumnsEqualWidth" in klass.__dict__:
+            descriptor = klass.__dict__["makeColumnsEqualWidth"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_swt_gridlayout_has_verticalSpacing():
+    assert hasattr(swt_GridLayout, "verticalSpacing")
+    descriptor = None
+    for klass in swt_GridLayout.__mro__:
+        if "verticalSpacing" in klass.__dict__:
+            descriptor = klass.__dict__["verticalSpacing"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_swt_gridlayout_has_marginRight():
+    assert hasattr(swt_GridLayout, "marginRight")
+    descriptor = None
+    for klass in swt_GridLayout.__mro__:
+        if "marginRight" in klass.__dict__:
+            descriptor = klass.__dict__["marginRight"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_swt_gridlayout_has_marginBottom():
+    assert hasattr(swt_GridLayout, "marginBottom")
+    descriptor = None
+    for klass in swt_GridLayout.__mro__:
+        if "marginBottom" in klass.__dict__:
+            descriptor = klass.__dict__["marginBottom"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_swt_gridlayout_has_marginWidth():
+    assert hasattr(swt_GridLayout, "marginWidth")
+    descriptor = None
+    for klass in swt_GridLayout.__mro__:
+        if "marginWidth" in klass.__dict__:
+            descriptor = klass.__dict__["marginWidth"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_swt_gridlayout_has_numColumns():
+    assert hasattr(swt_GridLayout, "numColumns")
+    descriptor = None
+    for klass in swt_GridLayout.__mro__:
+        if "numColumns" in klass.__dict__:
+            descriptor = klass.__dict__["numColumns"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_swt_gridlayout_has_horizontalSpacing():
+    assert hasattr(swt_GridLayout, "horizontalSpacing")
+    descriptor = None
+    for klass in swt_GridLayout.__mro__:
+        if "horizontalSpacing" in klass.__dict__:
+            descriptor = klass.__dict__["horizontalSpacing"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_swt_gridlayout_has_marginTop():
+    assert hasattr(swt_GridLayout, "marginTop")
+    descriptor = None
+    for klass in swt_GridLayout.__mro__:
+        if "marginTop" in klass.__dict__:
+            descriptor = klass.__dict__["marginTop"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_swt_gridlayout_has_marginLeft():
+    assert hasattr(swt_GridLayout, "marginLeft")
+    descriptor = None
+    for klass in swt_GridLayout.__mro__:
+        if "marginLeft" in klass.__dict__:
+            descriptor = klass.__dict__["marginLeft"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_swt_gridlayout_has_marginHeight():
+    assert hasattr(swt_GridLayout, "marginHeight")
+    descriptor = None
+    for klass in swt_GridLayout.__mro__:
+        if "marginHeight" in klass.__dict__:
+            descriptor = klass.__dict__["marginHeight"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_horizontalalignmentstyle_exists():
+    # Check that the Enumeration exists
+    assert HorizontalAlignmentStyle is not None
+
+def test_horizontalalignmentstyle_has_all_literals():
     # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in FormAttachmentAlignment]
+    enum_literals = [lit.name for lit in HorizontalAlignmentStyle]
     expected_literals = [
-        "TOP",
-        "RIGHT",
-        "BOTTOM",
-        "DEFAULT",
         "CENTER",
+        "RIGHT",
         "LEFT",
+        "FILL",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in FormAttachmentAlignment"
+        assert lit_name in enum_literals, f"Literal '' missing in HorizontalAlignmentStyle"
+
+def test_buttonstyle_exists():
+    # Check that the Enumeration exists
+    assert ButtonStyle is not None
+
+def test_buttonstyle_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in ButtonStyle]
+    expected_literals = [
+        "PUSH",
+        "TOGGLE",
+        "CHECK",
+        "ARROW",
+        "RADIO",
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in ButtonStyle"
 
 def test_sortdirection_exists():
     # Check that the Enumeration exists
@@ -2605,161 +2621,13 @@ def test_sortdirection_has_all_literals():
     # Collect the names of literals in this Enumeration
     enum_literals = [lit.name for lit in SortDirection]
     expected_literals = [
+        "NONE",
         "UP",
         "DOWN",
-        "NONE",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
         assert lit_name in enum_literals, f"Literal '' missing in SortDirection"
-
-def test_trimstyle_exists():
-    # Check that the Enumeration exists
-    assert TrimStyle is not None
-
-def test_trimstyle_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in TrimStyle]
-    expected_literals = [
-        "NOT_TRIM",
-        "DIALOG_TRIM",
-        "SHELL_TRIM",
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in TrimStyle"
-
-def test_textorientationstyle_exists():
-    # Check that the Enumeration exists
-    assert TextOrientationStyle is not None
-
-def test_textorientationstyle_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in TextOrientationStyle]
-    expected_literals = [
-        "LEFT_TO_RIGHT",
-        "RIGHT_TO_LEFT",
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in TextOrientationStyle"
-
-def test_arrowstyle_exists():
-    # Check that the Enumeration exists
-    assert ArrowStyle is not None
-
-def test_arrowstyle_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in ArrowStyle]
-    expected_literals = [
-        "UP",
-        "RIGHT",
-        "NONE",
-        "LEFT",
-        "DOWN",
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in ArrowStyle"
-
-def test_systemcolors_exists():
-    # Check that the Enumeration exists
-    assert SystemColors is not None
-
-def test_systemcolors_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in SystemColors]
-    expected_literals = [
-        "RED",
-        "BLUE",
-        "GREEN",
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in SystemColors"
-
-def test_borderstyle_exists():
-    # Check that the Enumeration exists
-    assert BorderStyle is not None
-
-def test_borderstyle_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in BorderStyle]
-    expected_literals = [
-        "BORDER",
-        "NONE",
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in BorderStyle"
-
-def test_menustyle_exists():
-    # Check that the Enumeration exists
-    assert MenuStyle is not None
-
-def test_menustyle_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in MenuStyle]
-    expected_literals = [
-        "DROP_DOWN",
-        "POP_UP",
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in MenuStyle"
-
-def test_linestyle_exists():
-    # Check that the Enumeration exists
-    assert LineStyle is not None
-
-def test_linestyle_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in LineStyle]
-    expected_literals = [
-        "CUSTOM",
-        "DASHDOTDOT",
-        "DOT",
-        "SOLID",
-        "DASHDOT",
-        "DASH",
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in LineStyle"
-
-def test_progressstate_exists():
-    # Check that the Enumeration exists
-    assert ProgressState is not None
-
-def test_progressstate_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in ProgressState]
-    expected_literals = [
-        "ERROR",
-        "NORMAL",
-        "PAUSED",
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in ProgressState"
-
-def test_menuitemstyle_exists():
-    # Check that the Enumeration exists
-    assert MenuItemStyle is not None
-
-def test_menuitemstyle_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in MenuItemStyle]
-    expected_literals = [
-        "PUSH",
-        "SEPARATOR",
-        "CHECK",
-        "RADIO",
-        "CASCADE",
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in MenuItemStyle"
 
 def test_modalstyle_exists():
     # Check that the Enumeration exists
@@ -2770,27 +2638,31 @@ def test_modalstyle_has_all_literals():
     enum_literals = [lit.name for lit in ModalStyle]
     expected_literals = [
         "APPLICATION_MODAL",
-        "PRIMARY_MODAL",
         "SYSTEM_MODAL",
+        "PRIMARY_MODAL",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
         assert lit_name in enum_literals, f"Literal '' missing in ModalStyle"
 
-def test_orientationstyle_exists():
+def test_formattachmentalignment_exists():
     # Check that the Enumeration exists
-    assert OrientationStyle is not None
+    assert FormAttachmentAlignment is not None
 
-def test_orientationstyle_has_all_literals():
+def test_formattachmentalignment_has_all_literals():
     # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in OrientationStyle]
+    enum_literals = [lit.name for lit in FormAttachmentAlignment]
     expected_literals = [
-        "VERTICAL",
-        "HORIZONTAL",
+        "LEFT",
+        "RIGHT",
+        "CENTER",
+        "BOTTOM",
+        "TOP",
+        "DEFAULT",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in OrientationStyle"
+        assert lit_name in enum_literals, f"Literal '' missing in FormAttachmentAlignment"
 
 def test_joinstyle_exists():
     # Check that the Enumeration exists
@@ -2808,39 +2680,54 @@ def test_joinstyle_has_all_literals():
     for lit_name in expected_literals:
         assert lit_name in enum_literals, f"Literal '' missing in JoinStyle"
 
-def test_buttonstyle_exists():
+def test_orientationstyle_exists():
     # Check that the Enumeration exists
-    assert ButtonStyle is not None
+    assert OrientationStyle is not None
 
-def test_buttonstyle_has_all_literals():
+def test_orientationstyle_has_all_literals():
     # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in ButtonStyle]
+    enum_literals = [lit.name for lit in OrientationStyle]
     expected_literals = [
-        "ARROW",
-        "TOGGLE",
-        "PUSH",
-        "CHECK",
-        "RADIO",
+        "HORIZONTAL",
+        "VERTICAL",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in ButtonStyle"
+        assert lit_name in enum_literals, f"Literal '' missing in OrientationStyle"
 
-def test_combostyle_exists():
+def test_arrowstyle_exists():
     # Check that the Enumeration exists
-    assert ComboStyle is not None
+    assert ArrowStyle is not None
 
-def test_combostyle_has_all_literals():
+def test_arrowstyle_has_all_literals():
     # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in ComboStyle]
+    enum_literals = [lit.name for lit in ArrowStyle]
     expected_literals = [
-        "READ_ONLY",
-        "SIMPLE",
-        "DROP_DOWN",
+        "NONE",
+        "DOWN",
+        "UP",
+        "RIGHT",
+        "LEFT",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in ComboStyle"
+        assert lit_name in enum_literals, f"Literal '' missing in ArrowStyle"
+
+def test_trimstyle_exists():
+    # Check that the Enumeration exists
+    assert TrimStyle is not None
+
+def test_trimstyle_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in TrimStyle]
+    expected_literals = [
+        "DIALOG_TRIM",
+        "NOT_TRIM",
+        "SHELL_TRIM",
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in TrimStyle"
 
 def test_verticalalignmentstyle_exists():
     # Check that the Enumeration exists
@@ -2850,14 +2737,92 @@ def test_verticalalignmentstyle_has_all_literals():
     # Collect the names of literals in this Enumeration
     enum_literals = [lit.name for lit in VerticalAlignmentStyle]
     expected_literals = [
+        "CENTER",
+        "TOP",
         "BOTTOM",
         "FILL",
-        "TOP",
-        "CENTER",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
         assert lit_name in enum_literals, f"Literal '' missing in VerticalAlignmentStyle"
+
+def test_progressstate_exists():
+    # Check that the Enumeration exists
+    assert ProgressState is not None
+
+def test_progressstate_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in ProgressState]
+    expected_literals = [
+        "NORMAL",
+        "ERROR",
+        "PAUSED",
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in ProgressState"
+
+def test_systemcolors_exists():
+    # Check that the Enumeration exists
+    assert SystemColors is not None
+
+def test_systemcolors_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in SystemColors]
+    expected_literals = [
+        "RED",
+        "BLUE",
+        "GREEN",
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in SystemColors"
+
+def test_combostyle_exists():
+    # Check that the Enumeration exists
+    assert ComboStyle is not None
+
+def test_combostyle_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in ComboStyle]
+    expected_literals = [
+        "DROP_DOWN",
+        "READ_ONLY",
+        "SIMPLE",
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in ComboStyle"
+
+def test_textorientationstyle_exists():
+    # Check that the Enumeration exists
+    assert TextOrientationStyle is not None
+
+def test_textorientationstyle_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in TextOrientationStyle]
+    expected_literals = [
+        "LEFT_TO_RIGHT",
+        "RIGHT_TO_LEFT",
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in TextOrientationStyle"
+
+def test_menustyle_exists():
+    # Check that the Enumeration exists
+    assert MenuStyle is not None
+
+def test_menustyle_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in MenuStyle]
+    expected_literals = [
+        "DROP_DOWN",
+        "POP_UP",
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in MenuStyle"
 
 def test_multiplicitystyle_exists():
     # Check that the Enumeration exists
@@ -2867,45 +2832,27 @@ def test_multiplicitystyle_has_all_literals():
     # Collect the names of literals in this Enumeration
     enum_literals = [lit.name for lit in MultiplicityStyle]
     expected_literals = [
-        "SINGLE",
         "MULTI",
+        "SINGLE",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
         assert lit_name in enum_literals, f"Literal '' missing in MultiplicityStyle"
 
-def test_horizontalalignmentstyle_exists():
+def test_borderstyle_exists():
     # Check that the Enumeration exists
-    assert HorizontalAlignmentStyle is not None
+    assert BorderStyle is not None
 
-def test_horizontalalignmentstyle_has_all_literals():
+def test_borderstyle_has_all_literals():
     # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in HorizontalAlignmentStyle]
+    enum_literals = [lit.name for lit in BorderStyle]
     expected_literals = [
-        "LEFT",
-        "RIGHT",
-        "CENTER",
-        "FILL",
+        "NONE",
+        "BORDER",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in HorizontalAlignmentStyle"
-
-def test_capstyle_exists():
-    # Check that the Enumeration exists
-    assert CapStyle is not None
-
-def test_capstyle_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in CapStyle]
-    expected_literals = [
-        "SQUARE",
-        "ROUND",
-        "FLAT",
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in CapStyle"
+        assert lit_name in enum_literals, f"Literal '' missing in BorderStyle"
 
 def test_fontstyle_exists():
     # Check that the Enumeration exists
@@ -2916,12 +2863,65 @@ def test_fontstyle_has_all_literals():
     enum_literals = [lit.name for lit in FontStyle]
     expected_literals = [
         "ITALIC",
-        "BOLD",
         "NORMAL",
+        "BOLD",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
         assert lit_name in enum_literals, f"Literal '' missing in FontStyle"
+
+def test_linestyle_exists():
+    # Check that the Enumeration exists
+    assert LineStyle is not None
+
+def test_linestyle_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in LineStyle]
+    expected_literals = [
+        "DASHDOTDOT",
+        "DASHDOT",
+        "CUSTOM",
+        "SOLID",
+        "DASH",
+        "DOT",
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in LineStyle"
+
+def test_capstyle_exists():
+    # Check that the Enumeration exists
+    assert CapStyle is not None
+
+def test_capstyle_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in CapStyle]
+    expected_literals = [
+        "SQUARE",
+        "FLAT",
+        "ROUND",
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in CapStyle"
+
+def test_menuitemstyle_exists():
+    # Check that the Enumeration exists
+    assert MenuItemStyle is not None
+
+def test_menuitemstyle_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in MenuItemStyle]
+    expected_literals = [
+        "CHECK",
+        "SEPARATOR",
+        "PUSH",
+        "CASCADE",
+        "RADIO",
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in MenuItemStyle"
 
 
 # =============================================================================
@@ -2935,375 +2935,216 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-swt::Viewer_strategy = st.builds(
-    swt::Viewer,
-    input=
-        safe_text
-)
-swt::TreeViewer_strategy = st.builds(
-    swt::TreeViewer,
-)
-swt::LineAttributes_strategy = st.builds(
-    swt::LineAttributes,
-    dash=
-        st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False),
-    miterLimit=
-        st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False),
-    style=
-        safe_text,
-    cap=
-        safe_text,
-    width=
-        st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False),
-    dashOffset=
-        st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False),
-    join=
-        safe_text
-)
-swt::FormLayout_strategy = st.builds(
-    swt::FormLayout,
-    marginBottom=
-        st.integers(),
-    marginHeight=
-        st.integers(),
-    marginWidth=
-        st.integers(),
-    spacing=
-        st.integers(),
-    marginRight=
-        st.integers(),
-    marginTop=
-        st.integers(),
-    marginLeft=
-        st.integers()
-)
-swt::FormAttachment_strategy = st.builds(
-    swt::FormAttachment,
-    numerator=
-        st.integers(),
-    offset=
-        st.integers(),
-    alignment=
-        safe_text,
-    denominator=
-        st.integers()
-)
-swt::RowLayout_strategy = st.builds(
-    swt::RowLayout,
-    fill=
-        st.booleans(),
-    marginTop=
-        st.integers(),
-    marginBottom=
-        st.integers(),
-    justify=
-        st.booleans(),
-    marginWidth=
-        st.integers(),
-    spacing=
-        st.integers(),
-    pack=
-        st.booleans(),
-    center=
-        st.booleans(),
-    marginRight=
-        st.integers(),
-    wrap=
-        st.booleans(),
-    orientationStyle=
-        safe_text,
-    marginLeft=
-        st.integers(),
-    marginHeight=
-        st.integers()
-)
-swt::FillLayout_strategy = st.builds(
-    swt::FillLayout,
-    marginWidth=
-        st.integers(),
-    spacing=
-        st.integers(),
-    marginHeight=
-        st.integers(),
-    orientationStyle=
-        safe_text
-)
-swt::GridLayout_strategy = st.builds(
-    swt::GridLayout,
-    verticalSpacing=
-        st.integers(),
-    marginHeight=
-        st.integers(),
-    horizontalSpacing=
-        st.integers(),
-    marginRight=
-        st.integers(),
-    makeColumnsEqualWidth=
-        st.booleans(),
-    marginBottom=
-        st.integers(),
-    numColumns=
-        st.integers(),
-    marginLeft=
-        st.integers(),
-    marginTop=
-        st.integers(),
-    marginWidth=
-        st.integers()
-)
 LayoutData_strategy = st.builds(
     LayoutData,
 )
-swt::FormData_strategy = st.builds(
-    swt::FormData,
-    height=
-        st.integers(),
-    width=
-        st.integers()
-)
-swt::GridData_strategy = st.builds(
-    swt::GridData,
-    horizontalIndent=
-        st.integers(),
-    verticalIndent=
-        st.integers(),
-    widthHint=
-        st.integers(),
-    grabExcessVerticalSpace=
-        st.booleans(),
-    verticalSpan=
-        st.integers(),
-    horizontalAlignment=
-        safe_text,
-    heightHint=
-        st.integers(),
-    grabExcessHorizontalSpace=
-        st.booleans(),
-    exclude=
-        st.booleans(),
-    verticalAlignment=
-        safe_text,
-    horizontalSpan=
-        st.integers(),
-    minimumWidth=
-        st.integers(),
-    minimumHeight=
-        st.integers()
-)
-swt::RowData_strategy = st.builds(
-    swt::RowData,
-    height=
-        st.integers(),
+swt_RowData_strategy = st.builds(
+    swt_RowData,
     exclude=
         st.booleans(),
     width=
+        st.integers(),
+    height=
         st.integers()
 )
 AbstractList_strategy = st.builds(
     AbstractList,
 )
-swt::List_strategy = st.builds(
-    swt::List,
-    multiplicityStyle=
-        safe_text,
+swt_List_strategy = st.builds(
+    swt_List,
     selection=
         safe_text,
     selectionIndices=
-        st.integers()
+        st.integers(),
+    multiplicityStyle=
+        safe_text
 )
 Color_strategy = st.builds(
     Color,
 )
-swt::RGBColor_strategy = st.builds(
-    swt::RGBColor,
+swt_RGBColor_strategy = st.builds(
+    swt_RGBColor,
+    red=
+        st.integers(),
     green=
         st.integers(),
     blue=
-        st.integers(),
-    red=
         st.integers()
 )
-swt::SystemColor_strategy = st.builds(
-    swt::SystemColor,
+swt_SystemColor_strategy = st.builds(
+    swt_SystemColor,
     color=
         safe_text
 )
-swt::Combo_strategy = st.builds(
-    swt::Combo,
+swt_Combo_strategy = st.builds(
+    swt_Combo,
     text=
         safe_text,
     textLimit=
         st.integers()
 )
-swt::CoolBar_strategy = st.builds(
-    swt::CoolBar,
+swt_CoolBar_strategy = st.builds(
+    swt_CoolBar,
     orientationStyle=
         safe_text
 )
 IntervalSelector_strategy = st.builds(
     IntervalSelector,
 )
-swt::Spinner_strategy = st.builds(
-    swt::Spinner,
+swt_Spinner_strategy = st.builds(
+    swt_Spinner,
     digits=
         st.integers(),
     textLimit=
         st.integers()
 )
-swt::Slider_strategy = st.builds(
-    swt::Slider,
+swt_Slider_strategy = st.builds(
+    swt_Slider,
     thumb=
         st.integers()
 )
 IntervalControl_strategy = st.builds(
     IntervalControl,
 )
-swt::ProgressBar_strategy = st.builds(
-    swt::ProgressBar,
+swt_ProgressBar_strategy = st.builds(
+    swt_ProgressBar,
     state=
         safe_text
 )
-swt::IntervalSelector_strategy = st.builds(
-    swt::IntervalSelector,
+swt_IntervalSelector_strategy = st.builds(
+    swt_IntervalSelector,
     pageIncrement=
         st.integers(),
-    orientationStyle=
-        safe_text,
     increment=
-        st.integers()
+        st.integers(),
+    orientationStyle=
+        safe_text
 )
 Text_strategy = st.builds(
     Text,
 )
-swt::SearchText_strategy = st.builds(
-    swt::SearchText,
+swt_SearchText_strategy = st.builds(
+    swt_SearchText,
 )
-swt::PasswordText_strategy = st.builds(
-    swt::PasswordText,
+swt_PasswordText_strategy = st.builds(
+    swt_PasswordText,
 )
 Item_strategy = st.builds(
     Item,
 )
-swt::TabItem_strategy = st.builds(
-    swt::TabItem,
-    toolTipText=
-        safe_text
-)
-swt::TreeColumn_strategy = st.builds(
-    swt::TreeColumn,
-    displayText=
-        safe_text,
-    toolTipText=
-        safe_text
-)
-swt::CoolItem_strategy = st.builds(
-    swt::CoolItem,
-    size=
-        safe_text,
+swt_CoolItem_strategy = st.builds(
+    swt_CoolItem,
     preferredSize=
         safe_text,
     minimumSize=
+        safe_text,
+    size=
         safe_text
 )
-swt::ToolItem_strategy = st.builds(
-    swt::ToolItem,
+swt_ToolItem_strategy = st.builds(
+    swt_ToolItem,
     toolTipText=
         safe_text,
     enabled=
         st.booleans(),
-    selection=
-        st.booleans(),
     hotImage=
+        safe_text,
+    selection=
+        st.booleans()
+)
+swt_TabItem_strategy = st.builds(
+    swt_TabItem,
+    toolTipText=
         safe_text
 )
 Labeled_strategy = st.builds(
     Labeled,
 )
-swt::Labeled_strategy = st.builds(
-    swt::Labeled,
-    image=
-        safe_text,
+swt_Labeled_strategy = st.builds(
+    swt_Labeled,
     text=
+        safe_text,
+    image=
         safe_text
 )
 AbstractMenu_strategy = st.builds(
     AbstractMenu,
 )
-swt::Menu_strategy = st.builds(
-    swt::Menu,
+swt_Menu_strategy = st.builds(
+    swt_Menu,
     menuStyle=
         safe_text
 )
-swt::MenuItem_strategy = st.builds(
-    swt::MenuItem,
-    enabled=
-        st.booleans(),
-    ID=
-        st.integers(),
+swt_MenuItem_strategy = st.builds(
+    swt_MenuItem,
     selection=
         st.booleans(),
     accelerator=
         st.integers(),
+    ID=
+        st.integers(),
+    enabled=
+        st.booleans(),
     menuItemStyle=
         safe_text
 )
 Widget_strategy = st.builds(
     Widget,
 )
-swt::Item_strategy = st.builds(
-    swt::Item,
-)
-swt::AbstractMenu_strategy = st.builds(
-    swt::AbstractMenu,
+swt_AbstractMenu_strategy = st.builds(
+    swt_AbstractMenu,
     enabled=
         st.booleans(),
-    visible=
-        st.booleans(),
     textOrientationStyle=
-        safe_text
+        safe_text,
+    visible=
+        st.booleans()
 )
-swt::Control_strategy = st.builds(
-    swt::Control,
+swt_Item_strategy = st.builds(
+    swt_Item,
+)
+swt_Control_strategy = st.builds(
+    swt_Control,
     size=
         safe_text,
-    enabled=
-        st.booleans(),
-    touchEnabled=
-        st.booleans(),
     visible=
         st.booleans(),
-    textOrientationStyle=
-        safe_text,
     toolTipText=
         safe_text,
+    enabled=
+        st.booleans(),
     borderStyle=
-        safe_text
+        safe_text,
+    textOrientationStyle=
+        safe_text,
+    touchEnabled=
+        st.booleans()
 )
-swt::LayoutData_strategy = st.builds(
-    swt::LayoutData,
+swt_LayoutData_strategy = st.builds(
+    swt_LayoutData,
 )
 Decorations_strategy = st.builds(
     Decorations,
 )
-swt::Shell_strategy = st.builds(
-    swt::Shell,
-    fullScreen=
-        st.booleans(),
-    trimStyle=
-        safe_text,
+swt_Shell_strategy = st.builds(
+    swt_Shell,
     alpha=
         st.integers(),
+    fullScreen=
+        st.booleans(),
     modalStyle=
+        safe_text,
+    trimStyle=
         safe_text
 )
-swt::MenuBar_strategy = st.builds(
-    swt::MenuBar,
+swt_MenuBar_strategy = st.builds(
+    swt_MenuBar,
 )
 Canvas_strategy = st.builds(
     Canvas,
 )
-swt::Decorations_strategy = st.builds(
-    swt::Decorations,
+swt_Decorations_strategy = st.builds(
+    swt_Decorations,
     maximized=
         st.booleans(),
     minimized=
@@ -3312,1044 +3153,443 @@ swt::Decorations_strategy = st.builds(
 Composite_strategy = st.builds(
     Composite,
 )
-swt::Canvas_strategy = st.builds(
-    swt::Canvas,
+swt_Canvas_strategy = st.builds(
+    swt_Canvas,
 )
-swt::Group_strategy = st.builds(
-    swt::Group,
+swt_Group_strategy = st.builds(
+    swt_Group,
     text=
         safe_text
 )
-swt::Composite_strategy = st.builds(
-    swt::Composite,
+swt_Composite_strategy = st.builds(
+    swt_Composite,
 )
 Control_strategy = st.builds(
     Control,
 )
-swt::Label_strategy = st.builds(
-    swt::Label,
+swt_Separator_strategy = st.builds(
+    swt_Separator,
+    orientationStyle=
+        safe_text
 )
-swt::DateTime_strategy = st.builds(
-    swt::DateTime,
-    minutes=
-        st.integers(),
-    year=
-        st.integers(),
-    month=
-        st.integers(),
-    hours=
-        st.integers(),
-    day=
-        st.integers(),
-    seconds=
-        st.integers()
-)
-swt::Text_strategy = st.builds(
-    swt::Text,
+swt_Text_strategy = st.builds(
+    swt_Text,
     message=
+        safe_text,
+    multiplicityStyle=
+        safe_text,
+    text=
         safe_text,
     echoChar=
         safe_text,
-    text=
-        safe_text,
-    textLimit=
-        st.integers(),
-    editable=
-        st.booleans(),
     tabs=
+        st.integers(),
+    textLimit=
         st.integers(),
     selection=
         safe_text,
+    editable=
+        st.booleans(),
     topIndex=
+        st.integers()
+)
+swt_DateTime_strategy = st.builds(
+    swt_DateTime,
+    seconds=
         st.integers(),
-    multiplicityStyle=
-        safe_text
+    day=
+        st.integers(),
+    year=
+        st.integers(),
+    hours=
+        st.integers(),
+    month=
+        st.integers(),
+    minutes=
+        st.integers()
 )
-swt::TabFolder_strategy = st.builds(
-    swt::TabFolder,
+swt_TabFolder_strategy = st.builds(
+    swt_TabFolder,
 )
-swt::Separator_strategy = st.builds(
-    swt::Separator,
-    orientationStyle=
-        safe_text
+swt_Label_strategy = st.builds(
+    swt_Label,
 )
-swt::Browser_strategy = st.builds(
-    swt::Browser,
+swt_Browser_strategy = st.builds(
+    swt_Browser,
+    url=
+        safe_text,
     text=
         safe_text,
     javascriptEnabled=
-        st.booleans(),
-    url=
-        safe_text
-)
-swt::Button_strategy = st.builds(
-    swt::Button,
-    selection=
-        st.booleans(),
-    arrowStyle=
-        safe_text,
-    buttonStyle=
-        safe_text
-)
-swt::AbstractList_strategy = st.builds(
-    swt::AbstractList,
-    items=
-        safe_text,
-    selectionIndex=
-        st.integers()
-)
-swt::Tree_strategy = st.builds(
-    swt::Tree,
-    sortDirection=
-        safe_text,
-    headerVisible=
-        st.booleans(),
-    linesVisible=
         st.booleans()
 )
-swt::IntervalControl_strategy = st.builds(
-    swt::IntervalControl,
+swt_Button_strategy = st.builds(
+    swt_Button,
     selection=
-        st.integers(),
+        st.booleans(),
+    buttonStyle=
+        safe_text,
+    arrowStyle=
+        safe_text
+)
+swt_IntervalControl_strategy = st.builds(
+    swt_IntervalControl,
     minimum=
         st.integers(),
     maximum=
+        st.integers(),
+    selection=
         st.integers()
 )
-swt::ToolBar_strategy = st.builds(
-    swt::ToolBar,
+swt_ToolBar_strategy = st.builds(
+    swt_ToolBar,
     orientationStyle=
         safe_text
 )
-swt::AbstractComposite_strategy = st.builds(
-    swt::AbstractComposite,
+swt_AbstractList_strategy = st.builds(
+    swt_AbstractList,
+    selectionIndex=
+        st.integers(),
+    items=
+        safe_text
 )
-swt::Font_strategy = st.builds(
-    swt::Font,
-    name=
-        safe_text,
+swt_AbstractComposite_strategy = st.builds(
+    swt_AbstractComposite,
+)
+swt_Font_strategy = st.builds(
+    swt_Font,
     style=
         st.integers(),
     height=
-        st.integers()
+        st.integers(),
+    name=
+        safe_text
 )
-swt::Color_strategy = st.builds(
-    swt::Color,
+swt_Color_strategy = st.builds(
+    swt_Color,
 )
-swt::Layout_strategy = st.builds(
-    swt::Layout,
+swt_Layout_strategy = st.builds(
+    swt_Layout,
 )
-swt::Widget_strategy = st.builds(
-    swt::Widget,
+swt_Widget_strategy = st.builds(
+    swt_Widget,
     style=
         st.integers()
 )
-
-@given(instance=swt::Viewer_strategy)
-@settings(max_examples=50)
-def test_swt::viewer_instantiation(instance):
-    assert isinstance(instance, swt::Viewer)
-
-@given(instance=swt::Viewer_strategy)
-def test_swt::viewer_input_type(instance):
-    assert isinstance(instance.input, str)
-
-
-@given(instance=swt::Viewer_strategy)
-def test_swt::viewer_input_setter(instance):
-    original = instance.input
-    instance.input = original
-    assert instance.input == original
-
-@given(instance=swt::TreeViewer_strategy)
-@settings(max_examples=50)
-def test_swt::treeviewer_instantiation(instance):
-    assert isinstance(instance, swt::TreeViewer)
-
-@given(instance=swt::LineAttributes_strategy)
-@settings(max_examples=50)
-def test_swt::lineattributes_instantiation(instance):
-    assert isinstance(instance, swt::LineAttributes)
-
-@given(instance=swt::LineAttributes_strategy)
-def test_swt::lineattributes_dash_type(instance):
-    assert isinstance(instance.dash, float)
-
-
-@given(instance=swt::LineAttributes_strategy)
-def test_swt::lineattributes_dash_setter(instance):
-    original = instance.dash
-    instance.dash = original
-    assert instance.dash == original
-
-@given(instance=swt::LineAttributes_strategy)
-def test_swt::lineattributes_miterLimit_type(instance):
-    assert isinstance(instance.miterLimit, float)
-
-
-@given(instance=swt::LineAttributes_strategy)
-def test_swt::lineattributes_miterLimit_setter(instance):
-    original = instance.miterLimit
-    instance.miterLimit = original
-    assert instance.miterLimit == original
-
-@given(instance=swt::LineAttributes_strategy)
-def test_swt::lineattributes_style_type(instance):
-    assert isinstance(instance.style, str)
-
-
-@given(instance=swt::LineAttributes_strategy)
-def test_swt::lineattributes_style_setter(instance):
-    original = instance.style
-    instance.style = original
-    assert instance.style == original
-
-@given(instance=swt::LineAttributes_strategy)
-def test_swt::lineattributes_cap_type(instance):
-    assert isinstance(instance.cap, str)
-
-
-@given(instance=swt::LineAttributes_strategy)
-def test_swt::lineattributes_cap_setter(instance):
-    original = instance.cap
-    instance.cap = original
-    assert instance.cap == original
-
-@given(instance=swt::LineAttributes_strategy)
-def test_swt::lineattributes_width_type(instance):
-    assert isinstance(instance.width, float)
-
-
-@given(instance=swt::LineAttributes_strategy)
-def test_swt::lineattributes_width_setter(instance):
-    original = instance.width
-    instance.width = original
-    assert instance.width == original
-
-@given(instance=swt::LineAttributes_strategy)
-def test_swt::lineattributes_dashOffset_type(instance):
-    assert isinstance(instance.dashOffset, float)
-
-
-@given(instance=swt::LineAttributes_strategy)
-def test_swt::lineattributes_dashOffset_setter(instance):
-    original = instance.dashOffset
-    instance.dashOffset = original
-    assert instance.dashOffset == original
-
-@given(instance=swt::LineAttributes_strategy)
-def test_swt::lineattributes_join_type(instance):
-    assert isinstance(instance.join, str)
-
-
-@given(instance=swt::LineAttributes_strategy)
-def test_swt::lineattributes_join_setter(instance):
-    original = instance.join
-    instance.join = original
-    assert instance.join == original
-
-@given(instance=swt::FormLayout_strategy)
-@settings(max_examples=50)
-def test_swt::formlayout_instantiation(instance):
-    assert isinstance(instance, swt::FormLayout)
-
-@given(instance=swt::FormLayout_strategy)
-def test_swt::formlayout_marginBottom_type(instance):
-    assert isinstance(instance.marginBottom, int)
-
-
-@given(instance=swt::FormLayout_strategy)
-def test_swt::formlayout_marginBottom_setter(instance):
-    original = instance.marginBottom
-    instance.marginBottom = original
-    assert instance.marginBottom == original
-
-@given(instance=swt::FormLayout_strategy)
-def test_swt::formlayout_marginHeight_type(instance):
-    assert isinstance(instance.marginHeight, int)
-
-
-@given(instance=swt::FormLayout_strategy)
-def test_swt::formlayout_marginHeight_setter(instance):
-    original = instance.marginHeight
-    instance.marginHeight = original
-    assert instance.marginHeight == original
-
-@given(instance=swt::FormLayout_strategy)
-def test_swt::formlayout_marginWidth_type(instance):
-    assert isinstance(instance.marginWidth, int)
-
-
-@given(instance=swt::FormLayout_strategy)
-def test_swt::formlayout_marginWidth_setter(instance):
-    original = instance.marginWidth
-    instance.marginWidth = original
-    assert instance.marginWidth == original
-
-@given(instance=swt::FormLayout_strategy)
-def test_swt::formlayout_spacing_type(instance):
-    assert isinstance(instance.spacing, int)
-
-
-@given(instance=swt::FormLayout_strategy)
-def test_swt::formlayout_spacing_setter(instance):
-    original = instance.spacing
-    instance.spacing = original
-    assert instance.spacing == original
-
-@given(instance=swt::FormLayout_strategy)
-def test_swt::formlayout_marginRight_type(instance):
-    assert isinstance(instance.marginRight, int)
-
-
-@given(instance=swt::FormLayout_strategy)
-def test_swt::formlayout_marginRight_setter(instance):
-    original = instance.marginRight
-    instance.marginRight = original
-    assert instance.marginRight == original
-
-@given(instance=swt::FormLayout_strategy)
-def test_swt::formlayout_marginTop_type(instance):
-    assert isinstance(instance.marginTop, int)
-
-
-@given(instance=swt::FormLayout_strategy)
-def test_swt::formlayout_marginTop_setter(instance):
-    original = instance.marginTop
-    instance.marginTop = original
-    assert instance.marginTop == original
-
-@given(instance=swt::FormLayout_strategy)
-def test_swt::formlayout_marginLeft_type(instance):
-    assert isinstance(instance.marginLeft, int)
-
-
-@given(instance=swt::FormLayout_strategy)
-def test_swt::formlayout_marginLeft_setter(instance):
-    original = instance.marginLeft
-    instance.marginLeft = original
-    assert instance.marginLeft == original
-
-@given(instance=swt::FormAttachment_strategy)
-@settings(max_examples=50)
-def test_swt::formattachment_instantiation(instance):
-    assert isinstance(instance, swt::FormAttachment)
-
-@given(instance=swt::FormAttachment_strategy)
-def test_swt::formattachment_numerator_type(instance):
-    assert isinstance(instance.numerator, int)
-
-
-@given(instance=swt::FormAttachment_strategy)
-def test_swt::formattachment_numerator_setter(instance):
-    original = instance.numerator
-    instance.numerator = original
-    assert instance.numerator == original
-
-@given(instance=swt::FormAttachment_strategy)
-def test_swt::formattachment_offset_type(instance):
-    assert isinstance(instance.offset, int)
-
-
-@given(instance=swt::FormAttachment_strategy)
-def test_swt::formattachment_offset_setter(instance):
-    original = instance.offset
-    instance.offset = original
-    assert instance.offset == original
-
-@given(instance=swt::FormAttachment_strategy)
-def test_swt::formattachment_alignment_type(instance):
-    assert isinstance(instance.alignment, str)
-
-
-@given(instance=swt::FormAttachment_strategy)
-def test_swt::formattachment_alignment_setter(instance):
-    original = instance.alignment
-    instance.alignment = original
-    assert instance.alignment == original
-
-@given(instance=swt::FormAttachment_strategy)
-def test_swt::formattachment_denominator_type(instance):
-    assert isinstance(instance.denominator, int)
-
-
-@given(instance=swt::FormAttachment_strategy)
-def test_swt::formattachment_denominator_setter(instance):
-    original = instance.denominator
-    instance.denominator = original
-    assert instance.denominator == original
-
-@given(instance=swt::RowLayout_strategy)
-@settings(max_examples=50)
-def test_swt::rowlayout_instantiation(instance):
-    assert isinstance(instance, swt::RowLayout)
-
-@given(instance=swt::RowLayout_strategy)
-def test_swt::rowlayout_fill_type(instance):
-    assert isinstance(instance.fill, bool)
-
-
-@given(instance=swt::RowLayout_strategy)
-def test_swt::rowlayout_fill_setter(instance):
-    original = instance.fill
-    instance.fill = original
-    assert instance.fill == original
-
-@given(instance=swt::RowLayout_strategy)
-def test_swt::rowlayout_marginTop_type(instance):
-    assert isinstance(instance.marginTop, int)
-
-
-@given(instance=swt::RowLayout_strategy)
-def test_swt::rowlayout_marginTop_setter(instance):
-    original = instance.marginTop
-    instance.marginTop = original
-    assert instance.marginTop == original
-
-@given(instance=swt::RowLayout_strategy)
-def test_swt::rowlayout_marginBottom_type(instance):
-    assert isinstance(instance.marginBottom, int)
-
-
-@given(instance=swt::RowLayout_strategy)
-def test_swt::rowlayout_marginBottom_setter(instance):
-    original = instance.marginBottom
-    instance.marginBottom = original
-    assert instance.marginBottom == original
-
-@given(instance=swt::RowLayout_strategy)
-def test_swt::rowlayout_justify_type(instance):
-    assert isinstance(instance.justify, bool)
-
-
-@given(instance=swt::RowLayout_strategy)
-def test_swt::rowlayout_justify_setter(instance):
-    original = instance.justify
-    instance.justify = original
-    assert instance.justify == original
-
-@given(instance=swt::RowLayout_strategy)
-def test_swt::rowlayout_marginWidth_type(instance):
-    assert isinstance(instance.marginWidth, int)
-
-
-@given(instance=swt::RowLayout_strategy)
-def test_swt::rowlayout_marginWidth_setter(instance):
-    original = instance.marginWidth
-    instance.marginWidth = original
-    assert instance.marginWidth == original
-
-@given(instance=swt::RowLayout_strategy)
-def test_swt::rowlayout_spacing_type(instance):
-    assert isinstance(instance.spacing, int)
-
-
-@given(instance=swt::RowLayout_strategy)
-def test_swt::rowlayout_spacing_setter(instance):
-    original = instance.spacing
-    instance.spacing = original
-    assert instance.spacing == original
-
-@given(instance=swt::RowLayout_strategy)
-def test_swt::rowlayout_pack_type(instance):
-    assert isinstance(instance.pack, bool)
-
-
-@given(instance=swt::RowLayout_strategy)
-def test_swt::rowlayout_pack_setter(instance):
-    original = instance.pack
-    instance.pack = original
-    assert instance.pack == original
-
-@given(instance=swt::RowLayout_strategy)
-def test_swt::rowlayout_center_type(instance):
-    assert isinstance(instance.center, bool)
-
-
-@given(instance=swt::RowLayout_strategy)
-def test_swt::rowlayout_center_setter(instance):
-    original = instance.center
-    instance.center = original
-    assert instance.center == original
-
-@given(instance=swt::RowLayout_strategy)
-def test_swt::rowlayout_marginRight_type(instance):
-    assert isinstance(instance.marginRight, int)
-
-
-@given(instance=swt::RowLayout_strategy)
-def test_swt::rowlayout_marginRight_setter(instance):
-    original = instance.marginRight
-    instance.marginRight = original
-    assert instance.marginRight == original
-
-@given(instance=swt::RowLayout_strategy)
-def test_swt::rowlayout_wrap_type(instance):
-    assert isinstance(instance.wrap, bool)
-
-
-@given(instance=swt::RowLayout_strategy)
-def test_swt::rowlayout_wrap_setter(instance):
-    original = instance.wrap
-    instance.wrap = original
-    assert instance.wrap == original
-
-@given(instance=swt::RowLayout_strategy)
-def test_swt::rowlayout_orientationStyle_type(instance):
-    assert isinstance(instance.orientationStyle, str)
-
-
-@given(instance=swt::RowLayout_strategy)
-def test_swt::rowlayout_orientationStyle_setter(instance):
-    original = instance.orientationStyle
-    instance.orientationStyle = original
-    assert instance.orientationStyle == original
-
-@given(instance=swt::RowLayout_strategy)
-def test_swt::rowlayout_marginLeft_type(instance):
-    assert isinstance(instance.marginLeft, int)
-
-
-@given(instance=swt::RowLayout_strategy)
-def test_swt::rowlayout_marginLeft_setter(instance):
-    original = instance.marginLeft
-    instance.marginLeft = original
-    assert instance.marginLeft == original
-
-@given(instance=swt::RowLayout_strategy)
-def test_swt::rowlayout_marginHeight_type(instance):
-    assert isinstance(instance.marginHeight, int)
-
-
-@given(instance=swt::RowLayout_strategy)
-def test_swt::rowlayout_marginHeight_setter(instance):
-    original = instance.marginHeight
-    instance.marginHeight = original
-    assert instance.marginHeight == original
-
-@given(instance=swt::FillLayout_strategy)
-@settings(max_examples=50)
-def test_swt::filllayout_instantiation(instance):
-    assert isinstance(instance, swt::FillLayout)
-
-@given(instance=swt::FillLayout_strategy)
-def test_swt::filllayout_marginWidth_type(instance):
-    assert isinstance(instance.marginWidth, int)
-
-
-@given(instance=swt::FillLayout_strategy)
-def test_swt::filllayout_marginWidth_setter(instance):
-    original = instance.marginWidth
-    instance.marginWidth = original
-    assert instance.marginWidth == original
-
-@given(instance=swt::FillLayout_strategy)
-def test_swt::filllayout_spacing_type(instance):
-    assert isinstance(instance.spacing, int)
-
-
-@given(instance=swt::FillLayout_strategy)
-def test_swt::filllayout_spacing_setter(instance):
-    original = instance.spacing
-    instance.spacing = original
-    assert instance.spacing == original
-
-@given(instance=swt::FillLayout_strategy)
-def test_swt::filllayout_marginHeight_type(instance):
-    assert isinstance(instance.marginHeight, int)
-
-
-@given(instance=swt::FillLayout_strategy)
-def test_swt::filllayout_marginHeight_setter(instance):
-    original = instance.marginHeight
-    instance.marginHeight = original
-    assert instance.marginHeight == original
-
-@given(instance=swt::FillLayout_strategy)
-def test_swt::filllayout_orientationStyle_type(instance):
-    assert isinstance(instance.orientationStyle, str)
-
-
-@given(instance=swt::FillLayout_strategy)
-def test_swt::filllayout_orientationStyle_setter(instance):
-    original = instance.orientationStyle
-    instance.orientationStyle = original
-    assert instance.orientationStyle == original
-
-@given(instance=swt::GridLayout_strategy)
-@settings(max_examples=50)
-def test_swt::gridlayout_instantiation(instance):
-    assert isinstance(instance, swt::GridLayout)
-
-@given(instance=swt::GridLayout_strategy)
-def test_swt::gridlayout_verticalSpacing_type(instance):
-    assert isinstance(instance.verticalSpacing, int)
-
-
-@given(instance=swt::GridLayout_strategy)
-def test_swt::gridlayout_verticalSpacing_setter(instance):
-    original = instance.verticalSpacing
-    instance.verticalSpacing = original
-    assert instance.verticalSpacing == original
-
-@given(instance=swt::GridLayout_strategy)
-def test_swt::gridlayout_marginHeight_type(instance):
-    assert isinstance(instance.marginHeight, int)
-
-
-@given(instance=swt::GridLayout_strategy)
-def test_swt::gridlayout_marginHeight_setter(instance):
-    original = instance.marginHeight
-    instance.marginHeight = original
-    assert instance.marginHeight == original
-
-@given(instance=swt::GridLayout_strategy)
-def test_swt::gridlayout_horizontalSpacing_type(instance):
-    assert isinstance(instance.horizontalSpacing, int)
-
-
-@given(instance=swt::GridLayout_strategy)
-def test_swt::gridlayout_horizontalSpacing_setter(instance):
-    original = instance.horizontalSpacing
-    instance.horizontalSpacing = original
-    assert instance.horizontalSpacing == original
-
-@given(instance=swt::GridLayout_strategy)
-def test_swt::gridlayout_marginRight_type(instance):
-    assert isinstance(instance.marginRight, int)
-
-
-@given(instance=swt::GridLayout_strategy)
-def test_swt::gridlayout_marginRight_setter(instance):
-    original = instance.marginRight
-    instance.marginRight = original
-    assert instance.marginRight == original
-
-@given(instance=swt::GridLayout_strategy)
-def test_swt::gridlayout_makeColumnsEqualWidth_type(instance):
-    assert isinstance(instance.makeColumnsEqualWidth, bool)
-
-
-@given(instance=swt::GridLayout_strategy)
-def test_swt::gridlayout_makeColumnsEqualWidth_setter(instance):
-    original = instance.makeColumnsEqualWidth
-    instance.makeColumnsEqualWidth = original
-    assert instance.makeColumnsEqualWidth == original
-
-@given(instance=swt::GridLayout_strategy)
-def test_swt::gridlayout_marginBottom_type(instance):
-    assert isinstance(instance.marginBottom, int)
-
-
-@given(instance=swt::GridLayout_strategy)
-def test_swt::gridlayout_marginBottom_setter(instance):
-    original = instance.marginBottom
-    instance.marginBottom = original
-    assert instance.marginBottom == original
-
-@given(instance=swt::GridLayout_strategy)
-def test_swt::gridlayout_numColumns_type(instance):
-    assert isinstance(instance.numColumns, int)
-
-
-@given(instance=swt::GridLayout_strategy)
-def test_swt::gridlayout_numColumns_setter(instance):
-    original = instance.numColumns
-    instance.numColumns = original
-    assert instance.numColumns == original
-
-@given(instance=swt::GridLayout_strategy)
-def test_swt::gridlayout_marginLeft_type(instance):
-    assert isinstance(instance.marginLeft, int)
-
-
-@given(instance=swt::GridLayout_strategy)
-def test_swt::gridlayout_marginLeft_setter(instance):
-    original = instance.marginLeft
-    instance.marginLeft = original
-    assert instance.marginLeft == original
-
-@given(instance=swt::GridLayout_strategy)
-def test_swt::gridlayout_marginTop_type(instance):
-    assert isinstance(instance.marginTop, int)
-
-
-@given(instance=swt::GridLayout_strategy)
-def test_swt::gridlayout_marginTop_setter(instance):
-    original = instance.marginTop
-    instance.marginTop = original
-    assert instance.marginTop == original
-
-@given(instance=swt::GridLayout_strategy)
-def test_swt::gridlayout_marginWidth_type(instance):
-    assert isinstance(instance.marginWidth, int)
-
-
-@given(instance=swt::GridLayout_strategy)
-def test_swt::gridlayout_marginWidth_setter(instance):
-    original = instance.marginWidth
-    instance.marginWidth = original
-    assert instance.marginWidth == original
+swt_Viewer_strategy = st.builds(
+    swt_Viewer,
+    input=
+        safe_text
+)
+swt_TreeViewer_strategy = st.builds(
+    swt_TreeViewer,
+)
+swt_Tree_strategy = st.builds(
+    swt_Tree,
+    headerVisible=
+        st.booleans(),
+    sortDirection=
+        safe_text,
+    linesVisible=
+        st.booleans()
+)
+swt_TreeColumn_strategy = st.builds(
+    swt_TreeColumn,
+    displayText=
+        safe_text,
+    toolTipText=
+        safe_text
+)
+swt_LineAttributes_strategy = st.builds(
+    swt_LineAttributes,
+    dash=
+        st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False),
+    cap=
+        safe_text,
+    miterLimit=
+        st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False),
+    join=
+        safe_text,
+    dashOffset=
+        st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False),
+    width=
+        st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False),
+    style=
+        safe_text
+)
+swt_FormLayout_strategy = st.builds(
+    swt_FormLayout,
+    marginHeight=
+        st.integers(),
+    marginTop=
+        st.integers(),
+    marginBottom=
+        st.integers(),
+    marginWidth=
+        st.integers(),
+    spacing=
+        st.integers(),
+    marginLeft=
+        st.integers(),
+    marginRight=
+        st.integers()
+)
+swt_GridData_strategy = st.builds(
+    swt_GridData,
+    heightHint=
+        st.integers(),
+    widthHint=
+        st.integers(),
+    horizontalSpan=
+        st.integers(),
+    grabExcessVerticalSpace=
+        st.booleans(),
+    horizontalAlignment=
+        safe_text,
+    verticalAlignment=
+        safe_text,
+    grabExcessHorizontalSpace=
+        st.booleans(),
+    horizontalIndent=
+        st.integers(),
+    minimumWidth=
+        st.integers(),
+    verticalSpan=
+        st.integers(),
+    exclude=
+        st.booleans(),
+    minimumHeight=
+        st.integers(),
+    verticalIndent=
+        st.integers()
+)
+swt_FormAttachment_strategy = st.builds(
+    swt_FormAttachment,
+    alignment=
+        safe_text,
+    denominator=
+        st.integers(),
+    offset=
+        st.integers(),
+    numerator=
+        st.integers()
+)
+swt_FormData_strategy = st.builds(
+    swt_FormData,
+    height=
+        st.integers(),
+    width=
+        st.integers()
+)
+swt_RowLayout_strategy = st.builds(
+    swt_RowLayout,
+    marginRight=
+        st.integers(),
+    fill=
+        st.booleans(),
+    marginWidth=
+        st.integers(),
+    marginTop=
+        st.integers(),
+    marginHeight=
+        st.integers(),
+    justify=
+        st.booleans(),
+    marginBottom=
+        st.integers(),
+    spacing=
+        st.integers(),
+    center=
+        st.booleans(),
+    pack=
+        st.booleans(),
+    orientationStyle=
+        safe_text,
+    marginLeft=
+        st.integers(),
+    wrap=
+        st.booleans()
+)
+swt_FillLayout_strategy = st.builds(
+    swt_FillLayout,
+    orientationStyle=
+        safe_text,
+    marginWidth=
+        st.integers(),
+    spacing=
+        st.integers(),
+    marginHeight=
+        st.integers()
+)
+swt_GridLayout_strategy = st.builds(
+    swt_GridLayout,
+    makeColumnsEqualWidth=
+        st.booleans(),
+    verticalSpacing=
+        st.integers(),
+    marginRight=
+        st.integers(),
+    marginBottom=
+        st.integers(),
+    marginWidth=
+        st.integers(),
+    numColumns=
+        st.integers(),
+    horizontalSpacing=
+        st.integers(),
+    marginTop=
+        st.integers(),
+    marginLeft=
+        st.integers(),
+    marginHeight=
+        st.integers()
+)
 
 @given(instance=LayoutData_strategy)
 @settings(max_examples=50)
 def test_layoutdata_instantiation(instance):
     assert isinstance(instance, LayoutData)
 
-@given(instance=swt::FormData_strategy)
+@given(instance=swt_RowData_strategy)
 @settings(max_examples=50)
-def test_swt::formdata_instantiation(instance):
-    assert isinstance(instance, swt::FormData)
-
-@given(instance=swt::FormData_strategy)
-def test_swt::formdata_height_type(instance):
-    assert isinstance(instance.height, int)
+def test_swt_rowdata_instantiation(instance):
+    assert isinstance(instance, swt_RowData)
 
 
-@given(instance=swt::FormData_strategy)
-def test_swt::formdata_height_setter(instance):
-    original = instance.height
-    instance.height = original
-    assert instance.height == original
 
-@given(instance=swt::FormData_strategy)
-def test_swt::formdata_width_type(instance):
-    assert isinstance(instance.width, int)
-
-
-@given(instance=swt::FormData_strategy)
-def test_swt::formdata_width_setter(instance):
-    original = instance.width
-    instance.width = original
-    assert instance.width == original
-
-@given(instance=swt::GridData_strategy)
-@settings(max_examples=50)
-def test_swt::griddata_instantiation(instance):
-    assert isinstance(instance, swt::GridData)
-
-@given(instance=swt::GridData_strategy)
-def test_swt::griddata_horizontalIndent_type(instance):
-    assert isinstance(instance.horizontalIndent, int)
-
-
-@given(instance=swt::GridData_strategy)
-def test_swt::griddata_horizontalIndent_setter(instance):
-    original = instance.horizontalIndent
-    instance.horizontalIndent = original
-    assert instance.horizontalIndent == original
-
-@given(instance=swt::GridData_strategy)
-def test_swt::griddata_verticalIndent_type(instance):
-    assert isinstance(instance.verticalIndent, int)
-
-
-@given(instance=swt::GridData_strategy)
-def test_swt::griddata_verticalIndent_setter(instance):
-    original = instance.verticalIndent
-    instance.verticalIndent = original
-    assert instance.verticalIndent == original
-
-@given(instance=swt::GridData_strategy)
-def test_swt::griddata_widthHint_type(instance):
-    assert isinstance(instance.widthHint, int)
-
-
-@given(instance=swt::GridData_strategy)
-def test_swt::griddata_widthHint_setter(instance):
-    original = instance.widthHint
-    instance.widthHint = original
-    assert instance.widthHint == original
-
-@given(instance=swt::GridData_strategy)
-def test_swt::griddata_grabExcessVerticalSpace_type(instance):
-    assert isinstance(instance.grabExcessVerticalSpace, bool)
-
-
-@given(instance=swt::GridData_strategy)
-def test_swt::griddata_grabExcessVerticalSpace_setter(instance):
-    original = instance.grabExcessVerticalSpace
-    instance.grabExcessVerticalSpace = original
-    assert instance.grabExcessVerticalSpace == original
-
-@given(instance=swt::GridData_strategy)
-def test_swt::griddata_verticalSpan_type(instance):
-    assert isinstance(instance.verticalSpan, int)
-
-
-@given(instance=swt::GridData_strategy)
-def test_swt::griddata_verticalSpan_setter(instance):
-    original = instance.verticalSpan
-    instance.verticalSpan = original
-    assert instance.verticalSpan == original
-
-@given(instance=swt::GridData_strategy)
-def test_swt::griddata_horizontalAlignment_type(instance):
-    assert isinstance(instance.horizontalAlignment, str)
-
-
-@given(instance=swt::GridData_strategy)
-def test_swt::griddata_horizontalAlignment_setter(instance):
-    original = instance.horizontalAlignment
-    instance.horizontalAlignment = original
-    assert instance.horizontalAlignment == original
-
-@given(instance=swt::GridData_strategy)
-def test_swt::griddata_heightHint_type(instance):
-    assert isinstance(instance.heightHint, int)
-
-
-@given(instance=swt::GridData_strategy)
-def test_swt::griddata_heightHint_setter(instance):
-    original = instance.heightHint
-    instance.heightHint = original
-    assert instance.heightHint == original
-
-@given(instance=swt::GridData_strategy)
-def test_swt::griddata_grabExcessHorizontalSpace_type(instance):
-    assert isinstance(instance.grabExcessHorizontalSpace, bool)
-
-
-@given(instance=swt::GridData_strategy)
-def test_swt::griddata_grabExcessHorizontalSpace_setter(instance):
-    original = instance.grabExcessHorizontalSpace
-    instance.grabExcessHorizontalSpace = original
-    assert instance.grabExcessHorizontalSpace == original
-
-@given(instance=swt::GridData_strategy)
-def test_swt::griddata_exclude_type(instance):
-    assert isinstance(instance.exclude, bool)
-
-
-@given(instance=swt::GridData_strategy)
-def test_swt::griddata_exclude_setter(instance):
+@given(instance=swt_RowData_strategy)
+def test_swt_rowdata_exclude_setter(instance):
     original = instance.exclude
     instance.exclude = original
     assert instance.exclude == original
 
-@given(instance=swt::GridData_strategy)
-def test_swt::griddata_verticalAlignment_type(instance):
-    assert isinstance(instance.verticalAlignment, str)
 
 
-@given(instance=swt::GridData_strategy)
-def test_swt::griddata_verticalAlignment_setter(instance):
-    original = instance.verticalAlignment
-    instance.verticalAlignment = original
-    assert instance.verticalAlignment == original
-
-@given(instance=swt::GridData_strategy)
-def test_swt::griddata_horizontalSpan_type(instance):
-    assert isinstance(instance.horizontalSpan, int)
-
-
-@given(instance=swt::GridData_strategy)
-def test_swt::griddata_horizontalSpan_setter(instance):
-    original = instance.horizontalSpan
-    instance.horizontalSpan = original
-    assert instance.horizontalSpan == original
-
-@given(instance=swt::GridData_strategy)
-def test_swt::griddata_minimumWidth_type(instance):
-    assert isinstance(instance.minimumWidth, int)
-
-
-@given(instance=swt::GridData_strategy)
-def test_swt::griddata_minimumWidth_setter(instance):
-    original = instance.minimumWidth
-    instance.minimumWidth = original
-    assert instance.minimumWidth == original
-
-@given(instance=swt::GridData_strategy)
-def test_swt::griddata_minimumHeight_type(instance):
-    assert isinstance(instance.minimumHeight, int)
-
-
-@given(instance=swt::GridData_strategy)
-def test_swt::griddata_minimumHeight_setter(instance):
-    original = instance.minimumHeight
-    instance.minimumHeight = original
-    assert instance.minimumHeight == original
-
-@given(instance=swt::RowData_strategy)
-@settings(max_examples=50)
-def test_swt::rowdata_instantiation(instance):
-    assert isinstance(instance, swt::RowData)
-
-@given(instance=swt::RowData_strategy)
-def test_swt::rowdata_height_type(instance):
-    assert isinstance(instance.height, int)
-
-
-@given(instance=swt::RowData_strategy)
-def test_swt::rowdata_height_setter(instance):
-    original = instance.height
-    instance.height = original
-    assert instance.height == original
-
-@given(instance=swt::RowData_strategy)
-def test_swt::rowdata_exclude_type(instance):
-    assert isinstance(instance.exclude, bool)
-
-
-@given(instance=swt::RowData_strategy)
-def test_swt::rowdata_exclude_setter(instance):
-    original = instance.exclude
-    instance.exclude = original
-    assert instance.exclude == original
-
-@given(instance=swt::RowData_strategy)
-def test_swt::rowdata_width_type(instance):
-    assert isinstance(instance.width, int)
-
-
-@given(instance=swt::RowData_strategy)
-def test_swt::rowdata_width_setter(instance):
+@given(instance=swt_RowData_strategy)
+def test_swt_rowdata_width_setter(instance):
     original = instance.width
     instance.width = original
     assert instance.width == original
+
+
+
+@given(instance=swt_RowData_strategy)
+def test_swt_rowdata_height_setter(instance):
+    original = instance.height
+    instance.height = original
+    assert instance.height == original
 
 @given(instance=AbstractList_strategy)
 @settings(max_examples=50)
 def test_abstractlist_instantiation(instance):
     assert isinstance(instance, AbstractList)
 
-@given(instance=swt::List_strategy)
+@given(instance=swt_List_strategy)
 @settings(max_examples=50)
-def test_swt::list_instantiation(instance):
-    assert isinstance(instance, swt::List)
-
-@given(instance=swt::List_strategy)
-def test_swt::list_multiplicityStyle_type(instance):
-    assert isinstance(instance.multiplicityStyle, str)
+def test_swt_list_instantiation(instance):
+    assert isinstance(instance, swt_List)
 
 
-@given(instance=swt::List_strategy)
-def test_swt::list_multiplicityStyle_setter(instance):
-    original = instance.multiplicityStyle
-    instance.multiplicityStyle = original
-    assert instance.multiplicityStyle == original
 
-@given(instance=swt::List_strategy)
-def test_swt::list_selection_type(instance):
-    assert isinstance(instance.selection, str)
-
-
-@given(instance=swt::List_strategy)
-def test_swt::list_selection_setter(instance):
+@given(instance=swt_List_strategy)
+def test_swt_list_selection_setter(instance):
     original = instance.selection
     instance.selection = original
     assert instance.selection == original
 
-@given(instance=swt::List_strategy)
-def test_swt::list_selectionIndices_type(instance):
-    assert isinstance(instance.selectionIndices, int)
 
 
-@given(instance=swt::List_strategy)
-def test_swt::list_selectionIndices_setter(instance):
+@given(instance=swt_List_strategy)
+def test_swt_list_selectionIndices_setter(instance):
     original = instance.selectionIndices
     instance.selectionIndices = original
     assert instance.selectionIndices == original
+
+
+
+@given(instance=swt_List_strategy)
+def test_swt_list_multiplicityStyle_setter(instance):
+    original = instance.multiplicityStyle
+    instance.multiplicityStyle = original
+    assert instance.multiplicityStyle == original
 
 @given(instance=Color_strategy)
 @settings(max_examples=50)
 def test_color_instantiation(instance):
     assert isinstance(instance, Color)
 
-@given(instance=swt::RGBColor_strategy)
+@given(instance=swt_RGBColor_strategy)
 @settings(max_examples=50)
-def test_swt::rgbcolor_instantiation(instance):
-    assert isinstance(instance, swt::RGBColor)
-
-@given(instance=swt::RGBColor_strategy)
-def test_swt::rgbcolor_green_type(instance):
-    assert isinstance(instance.green, int)
+def test_swt_rgbcolor_instantiation(instance):
+    assert isinstance(instance, swt_RGBColor)
 
 
-@given(instance=swt::RGBColor_strategy)
-def test_swt::rgbcolor_green_setter(instance):
-    original = instance.green
-    instance.green = original
-    assert instance.green == original
 
-@given(instance=swt::RGBColor_strategy)
-def test_swt::rgbcolor_blue_type(instance):
-    assert isinstance(instance.blue, int)
-
-
-@given(instance=swt::RGBColor_strategy)
-def test_swt::rgbcolor_blue_setter(instance):
-    original = instance.blue
-    instance.blue = original
-    assert instance.blue == original
-
-@given(instance=swt::RGBColor_strategy)
-def test_swt::rgbcolor_red_type(instance):
-    assert isinstance(instance.red, int)
-
-
-@given(instance=swt::RGBColor_strategy)
-def test_swt::rgbcolor_red_setter(instance):
+@given(instance=swt_RGBColor_strategy)
+def test_swt_rgbcolor_red_setter(instance):
     original = instance.red
     instance.red = original
     assert instance.red == original
 
-@given(instance=swt::SystemColor_strategy)
+
+
+@given(instance=swt_RGBColor_strategy)
+def test_swt_rgbcolor_green_setter(instance):
+    original = instance.green
+    instance.green = original
+    assert instance.green == original
+
+
+
+@given(instance=swt_RGBColor_strategy)
+def test_swt_rgbcolor_blue_setter(instance):
+    original = instance.blue
+    instance.blue = original
+    assert instance.blue == original
+
+@given(instance=swt_SystemColor_strategy)
 @settings(max_examples=50)
-def test_swt::systemcolor_instantiation(instance):
-    assert isinstance(instance, swt::SystemColor)
-
-@given(instance=swt::SystemColor_strategy)
-def test_swt::systemcolor_color_type(instance):
-    assert isinstance(instance.color, str)
+def test_swt_systemcolor_instantiation(instance):
+    assert isinstance(instance, swt_SystemColor)
 
 
-@given(instance=swt::SystemColor_strategy)
-def test_swt::systemcolor_color_setter(instance):
+
+@given(instance=swt_SystemColor_strategy)
+def test_swt_systemcolor_color_setter(instance):
     original = instance.color
     instance.color = original
     assert instance.color == original
 
-@given(instance=swt::Combo_strategy)
+@given(instance=swt_Combo_strategy)
 @settings(max_examples=50)
-def test_swt::combo_instantiation(instance):
-    assert isinstance(instance, swt::Combo)
-
-@given(instance=swt::Combo_strategy)
-def test_swt::combo_text_type(instance):
-    assert isinstance(instance.text, str)
+def test_swt_combo_instantiation(instance):
+    assert isinstance(instance, swt_Combo)
 
 
-@given(instance=swt::Combo_strategy)
-def test_swt::combo_text_setter(instance):
+
+@given(instance=swt_Combo_strategy)
+def test_swt_combo_text_setter(instance):
     original = instance.text
     instance.text = original
     assert instance.text == original
 
-@given(instance=swt::Combo_strategy)
-def test_swt::combo_textLimit_type(instance):
-    assert isinstance(instance.textLimit, int)
 
 
-@given(instance=swt::Combo_strategy)
-def test_swt::combo_textLimit_setter(instance):
+@given(instance=swt_Combo_strategy)
+def test_swt_combo_textLimit_setter(instance):
     original = instance.textLimit
     instance.textLimit = original
     assert instance.textLimit == original
 
-@given(instance=swt::CoolBar_strategy)
+@given(instance=swt_CoolBar_strategy)
 @settings(max_examples=50)
-def test_swt::coolbar_instantiation(instance):
-    assert isinstance(instance, swt::CoolBar)
-
-@given(instance=swt::CoolBar_strategy)
-def test_swt::coolbar_orientationStyle_type(instance):
-    assert isinstance(instance.orientationStyle, str)
+def test_swt_coolbar_instantiation(instance):
+    assert isinstance(instance, swt_CoolBar)
 
 
-@given(instance=swt::CoolBar_strategy)
-def test_swt::coolbar_orientationStyle_setter(instance):
+
+@given(instance=swt_CoolBar_strategy)
+def test_swt_coolbar_orientationStyle_setter(instance):
     original = instance.orientationStyle
     instance.orientationStyle = original
     assert instance.orientationStyle == original
@@ -4359,45 +3599,36 @@ def test_swt::coolbar_orientationStyle_setter(instance):
 def test_intervalselector_instantiation(instance):
     assert isinstance(instance, IntervalSelector)
 
-@given(instance=swt::Spinner_strategy)
+@given(instance=swt_Spinner_strategy)
 @settings(max_examples=50)
-def test_swt::spinner_instantiation(instance):
-    assert isinstance(instance, swt::Spinner)
-
-@given(instance=swt::Spinner_strategy)
-def test_swt::spinner_digits_type(instance):
-    assert isinstance(instance.digits, int)
+def test_swt_spinner_instantiation(instance):
+    assert isinstance(instance, swt_Spinner)
 
 
-@given(instance=swt::Spinner_strategy)
-def test_swt::spinner_digits_setter(instance):
+
+@given(instance=swt_Spinner_strategy)
+def test_swt_spinner_digits_setter(instance):
     original = instance.digits
     instance.digits = original
     assert instance.digits == original
 
-@given(instance=swt::Spinner_strategy)
-def test_swt::spinner_textLimit_type(instance):
-    assert isinstance(instance.textLimit, int)
 
 
-@given(instance=swt::Spinner_strategy)
-def test_swt::spinner_textLimit_setter(instance):
+@given(instance=swt_Spinner_strategy)
+def test_swt_spinner_textLimit_setter(instance):
     original = instance.textLimit
     instance.textLimit = original
     assert instance.textLimit == original
 
-@given(instance=swt::Slider_strategy)
+@given(instance=swt_Slider_strategy)
 @settings(max_examples=50)
-def test_swt::slider_instantiation(instance):
-    assert isinstance(instance, swt::Slider)
-
-@given(instance=swt::Slider_strategy)
-def test_swt::slider_thumb_type(instance):
-    assert isinstance(instance.thumb, int)
+def test_swt_slider_instantiation(instance):
+    assert isinstance(instance, swt_Slider)
 
 
-@given(instance=swt::Slider_strategy)
-def test_swt::slider_thumb_setter(instance):
+
+@given(instance=swt_Slider_strategy)
+def test_swt_slider_thumb_setter(instance):
     original = instance.thumb
     instance.thumb = original
     assert instance.thumb == original
@@ -4407,319 +3638,232 @@ def test_swt::slider_thumb_setter(instance):
 def test_intervalcontrol_instantiation(instance):
     assert isinstance(instance, IntervalControl)
 
-@given(instance=swt::ProgressBar_strategy)
+@given(instance=swt_ProgressBar_strategy)
 @settings(max_examples=50)
-def test_swt::progressbar_instantiation(instance):
-    assert isinstance(instance, swt::ProgressBar)
-
-@given(instance=swt::ProgressBar_strategy)
-def test_swt::progressbar_state_type(instance):
-    assert isinstance(instance.state, str)
+def test_swt_progressbar_instantiation(instance):
+    assert isinstance(instance, swt_ProgressBar)
 
 
-@given(instance=swt::ProgressBar_strategy)
-def test_swt::progressbar_state_setter(instance):
+
+@given(instance=swt_ProgressBar_strategy)
+def test_swt_progressbar_state_setter(instance):
     original = instance.state
     instance.state = original
     assert instance.state == original
 
-@given(instance=swt::IntervalSelector_strategy)
+@given(instance=swt_IntervalSelector_strategy)
 @settings(max_examples=50)
-def test_swt::intervalselector_instantiation(instance):
-    assert isinstance(instance, swt::IntervalSelector)
-
-@given(instance=swt::IntervalSelector_strategy)
-def test_swt::intervalselector_pageIncrement_type(instance):
-    assert isinstance(instance.pageIncrement, int)
+def test_swt_intervalselector_instantiation(instance):
+    assert isinstance(instance, swt_IntervalSelector)
 
 
-@given(instance=swt::IntervalSelector_strategy)
-def test_swt::intervalselector_pageIncrement_setter(instance):
+
+@given(instance=swt_IntervalSelector_strategy)
+def test_swt_intervalselector_pageIncrement_setter(instance):
     original = instance.pageIncrement
     instance.pageIncrement = original
     assert instance.pageIncrement == original
 
-@given(instance=swt::IntervalSelector_strategy)
-def test_swt::intervalselector_orientationStyle_type(instance):
-    assert isinstance(instance.orientationStyle, str)
 
 
-@given(instance=swt::IntervalSelector_strategy)
-def test_swt::intervalselector_orientationStyle_setter(instance):
-    original = instance.orientationStyle
-    instance.orientationStyle = original
-    assert instance.orientationStyle == original
-
-@given(instance=swt::IntervalSelector_strategy)
-def test_swt::intervalselector_increment_type(instance):
-    assert isinstance(instance.increment, int)
-
-
-@given(instance=swt::IntervalSelector_strategy)
-def test_swt::intervalselector_increment_setter(instance):
+@given(instance=swt_IntervalSelector_strategy)
+def test_swt_intervalselector_increment_setter(instance):
     original = instance.increment
     instance.increment = original
     assert instance.increment == original
+
+
+
+@given(instance=swt_IntervalSelector_strategy)
+def test_swt_intervalselector_orientationStyle_setter(instance):
+    original = instance.orientationStyle
+    instance.orientationStyle = original
+    assert instance.orientationStyle == original
 
 @given(instance=Text_strategy)
 @settings(max_examples=50)
 def test_text_instantiation(instance):
     assert isinstance(instance, Text)
 
-@given(instance=swt::SearchText_strategy)
+@given(instance=swt_SearchText_strategy)
 @settings(max_examples=50)
-def test_swt::searchtext_instantiation(instance):
-    assert isinstance(instance, swt::SearchText)
+def test_swt_searchtext_instantiation(instance):
+    assert isinstance(instance, swt_SearchText)
 
-@given(instance=swt::PasswordText_strategy)
+@given(instance=swt_PasswordText_strategy)
 @settings(max_examples=50)
-def test_swt::passwordtext_instantiation(instance):
-    assert isinstance(instance, swt::PasswordText)
+def test_swt_passwordtext_instantiation(instance):
+    assert isinstance(instance, swt_PasswordText)
 
 @given(instance=Item_strategy)
 @settings(max_examples=50)
 def test_item_instantiation(instance):
     assert isinstance(instance, Item)
 
-@given(instance=swt::TabItem_strategy)
+@given(instance=swt_CoolItem_strategy)
 @settings(max_examples=50)
-def test_swt::tabitem_instantiation(instance):
-    assert isinstance(instance, swt::TabItem)
-
-@given(instance=swt::TabItem_strategy)
-def test_swt::tabitem_toolTipText_type(instance):
-    assert isinstance(instance.toolTipText, str)
+def test_swt_coolitem_instantiation(instance):
+    assert isinstance(instance, swt_CoolItem)
 
 
-@given(instance=swt::TabItem_strategy)
-def test_swt::tabitem_toolTipText_setter(instance):
-    original = instance.toolTipText
-    instance.toolTipText = original
-    assert instance.toolTipText == original
 
-@given(instance=swt::TreeColumn_strategy)
-@settings(max_examples=50)
-def test_swt::treecolumn_instantiation(instance):
-    assert isinstance(instance, swt::TreeColumn)
-
-@given(instance=swt::TreeColumn_strategy)
-def test_swt::treecolumn_displayText_type(instance):
-    assert isinstance(instance.displayText, str)
-
-
-@given(instance=swt::TreeColumn_strategy)
-def test_swt::treecolumn_displayText_setter(instance):
-    original = instance.displayText
-    instance.displayText = original
-    assert instance.displayText == original
-
-@given(instance=swt::TreeColumn_strategy)
-def test_swt::treecolumn_toolTipText_type(instance):
-    assert isinstance(instance.toolTipText, str)
-
-
-@given(instance=swt::TreeColumn_strategy)
-def test_swt::treecolumn_toolTipText_setter(instance):
-    original = instance.toolTipText
-    instance.toolTipText = original
-    assert instance.toolTipText == original
-
-@given(instance=swt::CoolItem_strategy)
-@settings(max_examples=50)
-def test_swt::coolitem_instantiation(instance):
-    assert isinstance(instance, swt::CoolItem)
-
-@given(instance=swt::CoolItem_strategy)
-def test_swt::coolitem_size_type(instance):
-    assert isinstance(instance.size, str)
-
-
-@given(instance=swt::CoolItem_strategy)
-def test_swt::coolitem_size_setter(instance):
-    original = instance.size
-    instance.size = original
-    assert instance.size == original
-
-@given(instance=swt::CoolItem_strategy)
-def test_swt::coolitem_preferredSize_type(instance):
-    assert isinstance(instance.preferredSize, str)
-
-
-@given(instance=swt::CoolItem_strategy)
-def test_swt::coolitem_preferredSize_setter(instance):
+@given(instance=swt_CoolItem_strategy)
+def test_swt_coolitem_preferredSize_setter(instance):
     original = instance.preferredSize
     instance.preferredSize = original
     assert instance.preferredSize == original
 
-@given(instance=swt::CoolItem_strategy)
-def test_swt::coolitem_minimumSize_type(instance):
-    assert isinstance(instance.minimumSize, str)
 
 
-@given(instance=swt::CoolItem_strategy)
-def test_swt::coolitem_minimumSize_setter(instance):
+@given(instance=swt_CoolItem_strategy)
+def test_swt_coolitem_minimumSize_setter(instance):
     original = instance.minimumSize
     instance.minimumSize = original
     assert instance.minimumSize == original
 
-@given(instance=swt::ToolItem_strategy)
+
+
+@given(instance=swt_CoolItem_strategy)
+def test_swt_coolitem_size_setter(instance):
+    original = instance.size
+    instance.size = original
+    assert instance.size == original
+
+@given(instance=swt_ToolItem_strategy)
 @settings(max_examples=50)
-def test_swt::toolitem_instantiation(instance):
-    assert isinstance(instance, swt::ToolItem)
-
-@given(instance=swt::ToolItem_strategy)
-def test_swt::toolitem_toolTipText_type(instance):
-    assert isinstance(instance.toolTipText, str)
+def test_swt_toolitem_instantiation(instance):
+    assert isinstance(instance, swt_ToolItem)
 
 
-@given(instance=swt::ToolItem_strategy)
-def test_swt::toolitem_toolTipText_setter(instance):
+
+@given(instance=swt_ToolItem_strategy)
+def test_swt_toolitem_toolTipText_setter(instance):
     original = instance.toolTipText
     instance.toolTipText = original
     assert instance.toolTipText == original
 
-@given(instance=swt::ToolItem_strategy)
-def test_swt::toolitem_enabled_type(instance):
-    assert isinstance(instance.enabled, bool)
 
 
-@given(instance=swt::ToolItem_strategy)
-def test_swt::toolitem_enabled_setter(instance):
+@given(instance=swt_ToolItem_strategy)
+def test_swt_toolitem_enabled_setter(instance):
     original = instance.enabled
     instance.enabled = original
     assert instance.enabled == original
 
-@given(instance=swt::ToolItem_strategy)
-def test_swt::toolitem_selection_type(instance):
-    assert isinstance(instance.selection, bool)
 
 
-@given(instance=swt::ToolItem_strategy)
-def test_swt::toolitem_selection_setter(instance):
+@given(instance=swt_ToolItem_strategy)
+def test_swt_toolitem_hotImage_setter(instance):
+    original = instance.hotImage
+    instance.hotImage = original
+    assert instance.hotImage == original
+
+
+
+@given(instance=swt_ToolItem_strategy)
+def test_swt_toolitem_selection_setter(instance):
     original = instance.selection
     instance.selection = original
     assert instance.selection == original
 
-@given(instance=swt::ToolItem_strategy)
-def test_swt::toolitem_hotImage_type(instance):
-    assert isinstance(instance.hotImage, str)
+@given(instance=swt_TabItem_strategy)
+@settings(max_examples=50)
+def test_swt_tabitem_instantiation(instance):
+    assert isinstance(instance, swt_TabItem)
 
 
-@given(instance=swt::ToolItem_strategy)
-def test_swt::toolitem_hotImage_setter(instance):
-    original = instance.hotImage
-    instance.hotImage = original
-    assert instance.hotImage == original
+
+@given(instance=swt_TabItem_strategy)
+def test_swt_tabitem_toolTipText_setter(instance):
+    original = instance.toolTipText
+    instance.toolTipText = original
+    assert instance.toolTipText == original
 
 @given(instance=Labeled_strategy)
 @settings(max_examples=50)
 def test_labeled_instantiation(instance):
     assert isinstance(instance, Labeled)
 
-@given(instance=swt::Labeled_strategy)
+@given(instance=swt_Labeled_strategy)
 @settings(max_examples=50)
-def test_swt::labeled_instantiation(instance):
-    assert isinstance(instance, swt::Labeled)
-
-@given(instance=swt::Labeled_strategy)
-def test_swt::labeled_image_type(instance):
-    assert isinstance(instance.image, str)
+def test_swt_labeled_instantiation(instance):
+    assert isinstance(instance, swt_Labeled)
 
 
-@given(instance=swt::Labeled_strategy)
-def test_swt::labeled_image_setter(instance):
-    original = instance.image
-    instance.image = original
-    assert instance.image == original
 
-@given(instance=swt::Labeled_strategy)
-def test_swt::labeled_text_type(instance):
-    assert isinstance(instance.text, str)
-
-
-@given(instance=swt::Labeled_strategy)
-def test_swt::labeled_text_setter(instance):
+@given(instance=swt_Labeled_strategy)
+def test_swt_labeled_text_setter(instance):
     original = instance.text
     instance.text = original
     assert instance.text == original
+
+
+
+@given(instance=swt_Labeled_strategy)
+def test_swt_labeled_image_setter(instance):
+    original = instance.image
+    instance.image = original
+    assert instance.image == original
 
 @given(instance=AbstractMenu_strategy)
 @settings(max_examples=50)
 def test_abstractmenu_instantiation(instance):
     assert isinstance(instance, AbstractMenu)
 
-@given(instance=swt::Menu_strategy)
+@given(instance=swt_Menu_strategy)
 @settings(max_examples=50)
-def test_swt::menu_instantiation(instance):
-    assert isinstance(instance, swt::Menu)
-
-@given(instance=swt::Menu_strategy)
-def test_swt::menu_menuStyle_type(instance):
-    assert isinstance(instance.menuStyle, str)
+def test_swt_menu_instantiation(instance):
+    assert isinstance(instance, swt_Menu)
 
 
-@given(instance=swt::Menu_strategy)
-def test_swt::menu_menuStyle_setter(instance):
+
+@given(instance=swt_Menu_strategy)
+def test_swt_menu_menuStyle_setter(instance):
     original = instance.menuStyle
     instance.menuStyle = original
     assert instance.menuStyle == original
 
-@given(instance=swt::MenuItem_strategy)
+@given(instance=swt_MenuItem_strategy)
 @settings(max_examples=50)
-def test_swt::menuitem_instantiation(instance):
-    assert isinstance(instance, swt::MenuItem)
-
-@given(instance=swt::MenuItem_strategy)
-def test_swt::menuitem_enabled_type(instance):
-    assert isinstance(instance.enabled, bool)
+def test_swt_menuitem_instantiation(instance):
+    assert isinstance(instance, swt_MenuItem)
 
 
-@given(instance=swt::MenuItem_strategy)
-def test_swt::menuitem_enabled_setter(instance):
-    original = instance.enabled
-    instance.enabled = original
-    assert instance.enabled == original
 
-@given(instance=swt::MenuItem_strategy)
-def test_swt::menuitem_ID_type(instance):
-    assert isinstance(instance.ID, int)
-
-
-@given(instance=swt::MenuItem_strategy)
-def test_swt::menuitem_ID_setter(instance):
-    original = instance.ID
-    instance.ID = original
-    assert instance.ID == original
-
-@given(instance=swt::MenuItem_strategy)
-def test_swt::menuitem_selection_type(instance):
-    assert isinstance(instance.selection, bool)
-
-
-@given(instance=swt::MenuItem_strategy)
-def test_swt::menuitem_selection_setter(instance):
+@given(instance=swt_MenuItem_strategy)
+def test_swt_menuitem_selection_setter(instance):
     original = instance.selection
     instance.selection = original
     assert instance.selection == original
 
-@given(instance=swt::MenuItem_strategy)
-def test_swt::menuitem_accelerator_type(instance):
-    assert isinstance(instance.accelerator, int)
 
 
-@given(instance=swt::MenuItem_strategy)
-def test_swt::menuitem_accelerator_setter(instance):
+@given(instance=swt_MenuItem_strategy)
+def test_swt_menuitem_accelerator_setter(instance):
     original = instance.accelerator
     instance.accelerator = original
     assert instance.accelerator == original
 
-@given(instance=swt::MenuItem_strategy)
-def test_swt::menuitem_menuItemStyle_type(instance):
-    assert isinstance(instance.menuItemStyle, str)
 
 
-@given(instance=swt::MenuItem_strategy)
-def test_swt::menuitem_menuItemStyle_setter(instance):
+@given(instance=swt_MenuItem_strategy)
+def test_swt_menuitem_ID_setter(instance):
+    original = instance.ID
+    instance.ID = original
+    assert instance.ID == original
+
+
+
+@given(instance=swt_MenuItem_strategy)
+def test_swt_menuitem_enabled_setter(instance):
+    original = instance.enabled
+    instance.enabled = original
+    assert instance.enabled == original
+
+
+
+@given(instance=swt_MenuItem_strategy)
+def test_swt_menuitem_menuItemStyle_setter(instance):
     original = instance.menuItemStyle
     instance.menuItemStyle = original
     assert instance.menuItemStyle == original
@@ -4729,223 +3873,175 @@ def test_swt::menuitem_menuItemStyle_setter(instance):
 def test_widget_instantiation(instance):
     assert isinstance(instance, Widget)
 
-@given(instance=swt::Item_strategy)
+@given(instance=swt_AbstractMenu_strategy)
 @settings(max_examples=50)
-def test_swt::item_instantiation(instance):
-    assert isinstance(instance, swt::Item)
-
-@given(instance=swt::AbstractMenu_strategy)
-@settings(max_examples=50)
-def test_swt::abstractmenu_instantiation(instance):
-    assert isinstance(instance, swt::AbstractMenu)
-
-@given(instance=swt::AbstractMenu_strategy)
-def test_swt::abstractmenu_enabled_type(instance):
-    assert isinstance(instance.enabled, bool)
+def test_swt_abstractmenu_instantiation(instance):
+    assert isinstance(instance, swt_AbstractMenu)
 
 
-@given(instance=swt::AbstractMenu_strategy)
-def test_swt::abstractmenu_enabled_setter(instance):
+
+@given(instance=swt_AbstractMenu_strategy)
+def test_swt_abstractmenu_enabled_setter(instance):
     original = instance.enabled
     instance.enabled = original
     assert instance.enabled == original
 
-@given(instance=swt::AbstractMenu_strategy)
-def test_swt::abstractmenu_visible_type(instance):
-    assert isinstance(instance.visible, bool)
 
 
-@given(instance=swt::AbstractMenu_strategy)
-def test_swt::abstractmenu_visible_setter(instance):
-    original = instance.visible
-    instance.visible = original
-    assert instance.visible == original
-
-@given(instance=swt::AbstractMenu_strategy)
-def test_swt::abstractmenu_textOrientationStyle_type(instance):
-    assert isinstance(instance.textOrientationStyle, str)
-
-
-@given(instance=swt::AbstractMenu_strategy)
-def test_swt::abstractmenu_textOrientationStyle_setter(instance):
+@given(instance=swt_AbstractMenu_strategy)
+def test_swt_abstractmenu_textOrientationStyle_setter(instance):
     original = instance.textOrientationStyle
     instance.textOrientationStyle = original
     assert instance.textOrientationStyle == original
 
-@given(instance=swt::Control_strategy)
+
+
+@given(instance=swt_AbstractMenu_strategy)
+def test_swt_abstractmenu_visible_setter(instance):
+    original = instance.visible
+    instance.visible = original
+    assert instance.visible == original
+
+@given(instance=swt_Item_strategy)
 @settings(max_examples=50)
-def test_swt::control_instantiation(instance):
-    assert isinstance(instance, swt::Control)
+def test_swt_item_instantiation(instance):
+    assert isinstance(instance, swt_Item)
 
-@given(instance=swt::Control_strategy)
-def test_swt::control_size_type(instance):
-    assert isinstance(instance.size, str)
+@given(instance=swt_Control_strategy)
+@settings(max_examples=50)
+def test_swt_control_instantiation(instance):
+    assert isinstance(instance, swt_Control)
 
 
-@given(instance=swt::Control_strategy)
-def test_swt::control_size_setter(instance):
+
+@given(instance=swt_Control_strategy)
+def test_swt_control_size_setter(instance):
     original = instance.size
     instance.size = original
     assert instance.size == original
 
-@given(instance=swt::Control_strategy)
-def test_swt::control_enabled_type(instance):
-    assert isinstance(instance.enabled, bool)
 
 
-@given(instance=swt::Control_strategy)
-def test_swt::control_enabled_setter(instance):
-    original = instance.enabled
-    instance.enabled = original
-    assert instance.enabled == original
-
-@given(instance=swt::Control_strategy)
-def test_swt::control_touchEnabled_type(instance):
-    assert isinstance(instance.touchEnabled, bool)
-
-
-@given(instance=swt::Control_strategy)
-def test_swt::control_touchEnabled_setter(instance):
-    original = instance.touchEnabled
-    instance.touchEnabled = original
-    assert instance.touchEnabled == original
-
-@given(instance=swt::Control_strategy)
-def test_swt::control_visible_type(instance):
-    assert isinstance(instance.visible, bool)
-
-
-@given(instance=swt::Control_strategy)
-def test_swt::control_visible_setter(instance):
+@given(instance=swt_Control_strategy)
+def test_swt_control_visible_setter(instance):
     original = instance.visible
     instance.visible = original
     assert instance.visible == original
 
-@given(instance=swt::Control_strategy)
-def test_swt::control_textOrientationStyle_type(instance):
-    assert isinstance(instance.textOrientationStyle, str)
 
 
-@given(instance=swt::Control_strategy)
-def test_swt::control_textOrientationStyle_setter(instance):
-    original = instance.textOrientationStyle
-    instance.textOrientationStyle = original
-    assert instance.textOrientationStyle == original
-
-@given(instance=swt::Control_strategy)
-def test_swt::control_toolTipText_type(instance):
-    assert isinstance(instance.toolTipText, str)
-
-
-@given(instance=swt::Control_strategy)
-def test_swt::control_toolTipText_setter(instance):
+@given(instance=swt_Control_strategy)
+def test_swt_control_toolTipText_setter(instance):
     original = instance.toolTipText
     instance.toolTipText = original
     assert instance.toolTipText == original
 
-@given(instance=swt::Control_strategy)
-def test_swt::control_borderStyle_type(instance):
-    assert isinstance(instance.borderStyle, str)
 
 
-@given(instance=swt::Control_strategy)
-def test_swt::control_borderStyle_setter(instance):
+@given(instance=swt_Control_strategy)
+def test_swt_control_enabled_setter(instance):
+    original = instance.enabled
+    instance.enabled = original
+    assert instance.enabled == original
+
+
+
+@given(instance=swt_Control_strategy)
+def test_swt_control_borderStyle_setter(instance):
     original = instance.borderStyle
     instance.borderStyle = original
     assert instance.borderStyle == original
 
-@given(instance=swt::LayoutData_strategy)
+
+
+@given(instance=swt_Control_strategy)
+def test_swt_control_textOrientationStyle_setter(instance):
+    original = instance.textOrientationStyle
+    instance.textOrientationStyle = original
+    assert instance.textOrientationStyle == original
+
+
+
+@given(instance=swt_Control_strategy)
+def test_swt_control_touchEnabled_setter(instance):
+    original = instance.touchEnabled
+    instance.touchEnabled = original
+    assert instance.touchEnabled == original
+
+@given(instance=swt_LayoutData_strategy)
 @settings(max_examples=50)
-def test_swt::layoutdata_instantiation(instance):
-    assert isinstance(instance, swt::LayoutData)
+def test_swt_layoutdata_instantiation(instance):
+    assert isinstance(instance, swt_LayoutData)
 
 @given(instance=Decorations_strategy)
 @settings(max_examples=50)
 def test_decorations_instantiation(instance):
     assert isinstance(instance, Decorations)
 
-@given(instance=swt::Shell_strategy)
+@given(instance=swt_Shell_strategy)
 @settings(max_examples=50)
-def test_swt::shell_instantiation(instance):
-    assert isinstance(instance, swt::Shell)
-
-@given(instance=swt::Shell_strategy)
-def test_swt::shell_fullScreen_type(instance):
-    assert isinstance(instance.fullScreen, bool)
+def test_swt_shell_instantiation(instance):
+    assert isinstance(instance, swt_Shell)
 
 
-@given(instance=swt::Shell_strategy)
-def test_swt::shell_fullScreen_setter(instance):
-    original = instance.fullScreen
-    instance.fullScreen = original
-    assert instance.fullScreen == original
 
-@given(instance=swt::Shell_strategy)
-def test_swt::shell_trimStyle_type(instance):
-    assert isinstance(instance.trimStyle, str)
-
-
-@given(instance=swt::Shell_strategy)
-def test_swt::shell_trimStyle_setter(instance):
-    original = instance.trimStyle
-    instance.trimStyle = original
-    assert instance.trimStyle == original
-
-@given(instance=swt::Shell_strategy)
-def test_swt::shell_alpha_type(instance):
-    assert isinstance(instance.alpha, int)
-
-
-@given(instance=swt::Shell_strategy)
-def test_swt::shell_alpha_setter(instance):
+@given(instance=swt_Shell_strategy)
+def test_swt_shell_alpha_setter(instance):
     original = instance.alpha
     instance.alpha = original
     assert instance.alpha == original
 
-@given(instance=swt::Shell_strategy)
-def test_swt::shell_modalStyle_type(instance):
-    assert isinstance(instance.modalStyle, str)
 
 
-@given(instance=swt::Shell_strategy)
-def test_swt::shell_modalStyle_setter(instance):
+@given(instance=swt_Shell_strategy)
+def test_swt_shell_fullScreen_setter(instance):
+    original = instance.fullScreen
+    instance.fullScreen = original
+    assert instance.fullScreen == original
+
+
+
+@given(instance=swt_Shell_strategy)
+def test_swt_shell_modalStyle_setter(instance):
     original = instance.modalStyle
     instance.modalStyle = original
     assert instance.modalStyle == original
 
-@given(instance=swt::MenuBar_strategy)
+
+
+@given(instance=swt_Shell_strategy)
+def test_swt_shell_trimStyle_setter(instance):
+    original = instance.trimStyle
+    instance.trimStyle = original
+    assert instance.trimStyle == original
+
+@given(instance=swt_MenuBar_strategy)
 @settings(max_examples=50)
-def test_swt::menubar_instantiation(instance):
-    assert isinstance(instance, swt::MenuBar)
+def test_swt_menubar_instantiation(instance):
+    assert isinstance(instance, swt_MenuBar)
 
 @given(instance=Canvas_strategy)
 @settings(max_examples=50)
 def test_canvas_instantiation(instance):
     assert isinstance(instance, Canvas)
 
-@given(instance=swt::Decorations_strategy)
+@given(instance=swt_Decorations_strategy)
 @settings(max_examples=50)
-def test_swt::decorations_instantiation(instance):
-    assert isinstance(instance, swt::Decorations)
-
-@given(instance=swt::Decorations_strategy)
-def test_swt::decorations_maximized_type(instance):
-    assert isinstance(instance.maximized, bool)
+def test_swt_decorations_instantiation(instance):
+    assert isinstance(instance, swt_Decorations)
 
 
-@given(instance=swt::Decorations_strategy)
-def test_swt::decorations_maximized_setter(instance):
+
+@given(instance=swt_Decorations_strategy)
+def test_swt_decorations_maximized_setter(instance):
     original = instance.maximized
     instance.maximized = original
     assert instance.maximized == original
 
-@given(instance=swt::Decorations_strategy)
-def test_swt::decorations_minimized_type(instance):
-    assert isinstance(instance.minimized, bool)
 
 
-@given(instance=swt::Decorations_strategy)
-def test_swt::decorations_minimized_setter(instance):
+@given(instance=swt_Decorations_strategy)
+def test_swt_decorations_minimized_setter(instance):
     original = instance.minimized
     instance.minimized = original
     assert instance.minimized == original
@@ -4955,498 +4051,949 @@ def test_swt::decorations_minimized_setter(instance):
 def test_composite_instantiation(instance):
     assert isinstance(instance, Composite)
 
-@given(instance=swt::Canvas_strategy)
+@given(instance=swt_Canvas_strategy)
 @settings(max_examples=50)
-def test_swt::canvas_instantiation(instance):
-    assert isinstance(instance, swt::Canvas)
+def test_swt_canvas_instantiation(instance):
+    assert isinstance(instance, swt_Canvas)
 
-@given(instance=swt::Group_strategy)
+@given(instance=swt_Group_strategy)
 @settings(max_examples=50)
-def test_swt::group_instantiation(instance):
-    assert isinstance(instance, swt::Group)
-
-@given(instance=swt::Group_strategy)
-def test_swt::group_text_type(instance):
-    assert isinstance(instance.text, str)
+def test_swt_group_instantiation(instance):
+    assert isinstance(instance, swt_Group)
 
 
-@given(instance=swt::Group_strategy)
-def test_swt::group_text_setter(instance):
+
+@given(instance=swt_Group_strategy)
+def test_swt_group_text_setter(instance):
     original = instance.text
     instance.text = original
     assert instance.text == original
 
-@given(instance=swt::Composite_strategy)
+@given(instance=swt_Composite_strategy)
 @settings(max_examples=50)
-def test_swt::composite_instantiation(instance):
-    assert isinstance(instance, swt::Composite)
+def test_swt_composite_instantiation(instance):
+    assert isinstance(instance, swt_Composite)
 
 @given(instance=Control_strategy)
 @settings(max_examples=50)
 def test_control_instantiation(instance):
     assert isinstance(instance, Control)
 
-@given(instance=swt::Label_strategy)
+@given(instance=swt_Separator_strategy)
 @settings(max_examples=50)
-def test_swt::label_instantiation(instance):
-    assert isinstance(instance, swt::Label)
+def test_swt_separator_instantiation(instance):
+    assert isinstance(instance, swt_Separator)
 
-@given(instance=swt::DateTime_strategy)
+
+
+@given(instance=swt_Separator_strategy)
+def test_swt_separator_orientationStyle_setter(instance):
+    original = instance.orientationStyle
+    instance.orientationStyle = original
+    assert instance.orientationStyle == original
+
+@given(instance=swt_Text_strategy)
 @settings(max_examples=50)
-def test_swt::datetime_instantiation(instance):
-    assert isinstance(instance, swt::DateTime)
-
-@given(instance=swt::DateTime_strategy)
-def test_swt::datetime_minutes_type(instance):
-    assert isinstance(instance.minutes, int)
+def test_swt_text_instantiation(instance):
+    assert isinstance(instance, swt_Text)
 
 
-@given(instance=swt::DateTime_strategy)
-def test_swt::datetime_minutes_setter(instance):
-    original = instance.minutes
-    instance.minutes = original
-    assert instance.minutes == original
 
-@given(instance=swt::DateTime_strategy)
-def test_swt::datetime_year_type(instance):
-    assert isinstance(instance.year, int)
-
-
-@given(instance=swt::DateTime_strategy)
-def test_swt::datetime_year_setter(instance):
-    original = instance.year
-    instance.year = original
-    assert instance.year == original
-
-@given(instance=swt::DateTime_strategy)
-def test_swt::datetime_month_type(instance):
-    assert isinstance(instance.month, int)
-
-
-@given(instance=swt::DateTime_strategy)
-def test_swt::datetime_month_setter(instance):
-    original = instance.month
-    instance.month = original
-    assert instance.month == original
-
-@given(instance=swt::DateTime_strategy)
-def test_swt::datetime_hours_type(instance):
-    assert isinstance(instance.hours, int)
-
-
-@given(instance=swt::DateTime_strategy)
-def test_swt::datetime_hours_setter(instance):
-    original = instance.hours
-    instance.hours = original
-    assert instance.hours == original
-
-@given(instance=swt::DateTime_strategy)
-def test_swt::datetime_day_type(instance):
-    assert isinstance(instance.day, int)
-
-
-@given(instance=swt::DateTime_strategy)
-def test_swt::datetime_day_setter(instance):
-    original = instance.day
-    instance.day = original
-    assert instance.day == original
-
-@given(instance=swt::DateTime_strategy)
-def test_swt::datetime_seconds_type(instance):
-    assert isinstance(instance.seconds, int)
-
-
-@given(instance=swt::DateTime_strategy)
-def test_swt::datetime_seconds_setter(instance):
-    original = instance.seconds
-    instance.seconds = original
-    assert instance.seconds == original
-
-@given(instance=swt::Text_strategy)
-@settings(max_examples=50)
-def test_swt::text_instantiation(instance):
-    assert isinstance(instance, swt::Text)
-
-@given(instance=swt::Text_strategy)
-def test_swt::text_message_type(instance):
-    assert isinstance(instance.message, str)
-
-
-@given(instance=swt::Text_strategy)
-def test_swt::text_message_setter(instance):
+@given(instance=swt_Text_strategy)
+def test_swt_text_message_setter(instance):
     original = instance.message
     instance.message = original
     assert instance.message == original
 
-@given(instance=swt::Text_strategy)
-def test_swt::text_echoChar_type(instance):
-    assert isinstance(instance.echoChar, str)
 
 
-@given(instance=swt::Text_strategy)
-def test_swt::text_echoChar_setter(instance):
-    original = instance.echoChar
-    instance.echoChar = original
-    assert instance.echoChar == original
-
-@given(instance=swt::Text_strategy)
-def test_swt::text_text_type(instance):
-    assert isinstance(instance.text, str)
-
-
-@given(instance=swt::Text_strategy)
-def test_swt::text_text_setter(instance):
-    original = instance.text
-    instance.text = original
-    assert instance.text == original
-
-@given(instance=swt::Text_strategy)
-def test_swt::text_textLimit_type(instance):
-    assert isinstance(instance.textLimit, int)
-
-
-@given(instance=swt::Text_strategy)
-def test_swt::text_textLimit_setter(instance):
-    original = instance.textLimit
-    instance.textLimit = original
-    assert instance.textLimit == original
-
-@given(instance=swt::Text_strategy)
-def test_swt::text_editable_type(instance):
-    assert isinstance(instance.editable, bool)
-
-
-@given(instance=swt::Text_strategy)
-def test_swt::text_editable_setter(instance):
-    original = instance.editable
-    instance.editable = original
-    assert instance.editable == original
-
-@given(instance=swt::Text_strategy)
-def test_swt::text_tabs_type(instance):
-    assert isinstance(instance.tabs, int)
-
-
-@given(instance=swt::Text_strategy)
-def test_swt::text_tabs_setter(instance):
-    original = instance.tabs
-    instance.tabs = original
-    assert instance.tabs == original
-
-@given(instance=swt::Text_strategy)
-def test_swt::text_selection_type(instance):
-    assert isinstance(instance.selection, str)
-
-
-@given(instance=swt::Text_strategy)
-def test_swt::text_selection_setter(instance):
-    original = instance.selection
-    instance.selection = original
-    assert instance.selection == original
-
-@given(instance=swt::Text_strategy)
-def test_swt::text_topIndex_type(instance):
-    assert isinstance(instance.topIndex, int)
-
-
-@given(instance=swt::Text_strategy)
-def test_swt::text_topIndex_setter(instance):
-    original = instance.topIndex
-    instance.topIndex = original
-    assert instance.topIndex == original
-
-@given(instance=swt::Text_strategy)
-def test_swt::text_multiplicityStyle_type(instance):
-    assert isinstance(instance.multiplicityStyle, str)
-
-
-@given(instance=swt::Text_strategy)
-def test_swt::text_multiplicityStyle_setter(instance):
+@given(instance=swt_Text_strategy)
+def test_swt_text_multiplicityStyle_setter(instance):
     original = instance.multiplicityStyle
     instance.multiplicityStyle = original
     assert instance.multiplicityStyle == original
 
-@given(instance=swt::TabFolder_strategy)
-@settings(max_examples=50)
-def test_swt::tabfolder_instantiation(instance):
-    assert isinstance(instance, swt::TabFolder)
-
-@given(instance=swt::Separator_strategy)
-@settings(max_examples=50)
-def test_swt::separator_instantiation(instance):
-    assert isinstance(instance, swt::Separator)
-
-@given(instance=swt::Separator_strategy)
-def test_swt::separator_orientationStyle_type(instance):
-    assert isinstance(instance.orientationStyle, str)
 
 
-@given(instance=swt::Separator_strategy)
-def test_swt::separator_orientationStyle_setter(instance):
-    original = instance.orientationStyle
-    instance.orientationStyle = original
-    assert instance.orientationStyle == original
-
-@given(instance=swt::Browser_strategy)
-@settings(max_examples=50)
-def test_swt::browser_instantiation(instance):
-    assert isinstance(instance, swt::Browser)
-
-@given(instance=swt::Browser_strategy)
-def test_swt::browser_text_type(instance):
-    assert isinstance(instance.text, str)
-
-
-@given(instance=swt::Browser_strategy)
-def test_swt::browser_text_setter(instance):
+@given(instance=swt_Text_strategy)
+def test_swt_text_text_setter(instance):
     original = instance.text
     instance.text = original
     assert instance.text == original
 
-@given(instance=swt::Browser_strategy)
-def test_swt::browser_javascriptEnabled_type(instance):
-    assert isinstance(instance.javascriptEnabled, bool)
 
 
-@given(instance=swt::Browser_strategy)
-def test_swt::browser_javascriptEnabled_setter(instance):
-    original = instance.javascriptEnabled
-    instance.javascriptEnabled = original
-    assert instance.javascriptEnabled == original
-
-@given(instance=swt::Browser_strategy)
-def test_swt::browser_url_type(instance):
-    assert isinstance(instance.url, str)
+@given(instance=swt_Text_strategy)
+def test_swt_text_echoChar_setter(instance):
+    original = instance.echoChar
+    instance.echoChar = original
+    assert instance.echoChar == original
 
 
-@given(instance=swt::Browser_strategy)
-def test_swt::browser_url_setter(instance):
+
+@given(instance=swt_Text_strategy)
+def test_swt_text_tabs_setter(instance):
+    original = instance.tabs
+    instance.tabs = original
+    assert instance.tabs == original
+
+
+
+@given(instance=swt_Text_strategy)
+def test_swt_text_textLimit_setter(instance):
+    original = instance.textLimit
+    instance.textLimit = original
+    assert instance.textLimit == original
+
+
+
+@given(instance=swt_Text_strategy)
+def test_swt_text_selection_setter(instance):
+    original = instance.selection
+    instance.selection = original
+    assert instance.selection == original
+
+
+
+@given(instance=swt_Text_strategy)
+def test_swt_text_editable_setter(instance):
+    original = instance.editable
+    instance.editable = original
+    assert instance.editable == original
+
+
+
+@given(instance=swt_Text_strategy)
+def test_swt_text_topIndex_setter(instance):
+    original = instance.topIndex
+    instance.topIndex = original
+    assert instance.topIndex == original
+
+@given(instance=swt_DateTime_strategy)
+@settings(max_examples=50)
+def test_swt_datetime_instantiation(instance):
+    assert isinstance(instance, swt_DateTime)
+
+
+
+@given(instance=swt_DateTime_strategy)
+def test_swt_datetime_seconds_setter(instance):
+    original = instance.seconds
+    instance.seconds = original
+    assert instance.seconds == original
+
+
+
+@given(instance=swt_DateTime_strategy)
+def test_swt_datetime_day_setter(instance):
+    original = instance.day
+    instance.day = original
+    assert instance.day == original
+
+
+
+@given(instance=swt_DateTime_strategy)
+def test_swt_datetime_year_setter(instance):
+    original = instance.year
+    instance.year = original
+    assert instance.year == original
+
+
+
+@given(instance=swt_DateTime_strategy)
+def test_swt_datetime_hours_setter(instance):
+    original = instance.hours
+    instance.hours = original
+    assert instance.hours == original
+
+
+
+@given(instance=swt_DateTime_strategy)
+def test_swt_datetime_month_setter(instance):
+    original = instance.month
+    instance.month = original
+    assert instance.month == original
+
+
+
+@given(instance=swt_DateTime_strategy)
+def test_swt_datetime_minutes_setter(instance):
+    original = instance.minutes
+    instance.minutes = original
+    assert instance.minutes == original
+
+@given(instance=swt_TabFolder_strategy)
+@settings(max_examples=50)
+def test_swt_tabfolder_instantiation(instance):
+    assert isinstance(instance, swt_TabFolder)
+
+@given(instance=swt_Label_strategy)
+@settings(max_examples=50)
+def test_swt_label_instantiation(instance):
+    assert isinstance(instance, swt_Label)
+
+@given(instance=swt_Browser_strategy)
+@settings(max_examples=50)
+def test_swt_browser_instantiation(instance):
+    assert isinstance(instance, swt_Browser)
+
+
+
+@given(instance=swt_Browser_strategy)
+def test_swt_browser_url_setter(instance):
     original = instance.url
     instance.url = original
     assert instance.url == original
 
-@given(instance=swt::Button_strategy)
+
+
+@given(instance=swt_Browser_strategy)
+def test_swt_browser_text_setter(instance):
+    original = instance.text
+    instance.text = original
+    assert instance.text == original
+
+
+
+@given(instance=swt_Browser_strategy)
+def test_swt_browser_javascriptEnabled_setter(instance):
+    original = instance.javascriptEnabled
+    instance.javascriptEnabled = original
+    assert instance.javascriptEnabled == original
+
+@given(instance=swt_Button_strategy)
 @settings(max_examples=50)
-def test_swt::button_instantiation(instance):
-    assert isinstance(instance, swt::Button)
-
-@given(instance=swt::Button_strategy)
-def test_swt::button_selection_type(instance):
-    assert isinstance(instance.selection, bool)
+def test_swt_button_instantiation(instance):
+    assert isinstance(instance, swt_Button)
 
 
-@given(instance=swt::Button_strategy)
-def test_swt::button_selection_setter(instance):
+
+@given(instance=swt_Button_strategy)
+def test_swt_button_selection_setter(instance):
     original = instance.selection
     instance.selection = original
     assert instance.selection == original
 
-@given(instance=swt::Button_strategy)
-def test_swt::button_arrowStyle_type(instance):
-    assert isinstance(instance.arrowStyle, str)
 
 
-@given(instance=swt::Button_strategy)
-def test_swt::button_arrowStyle_setter(instance):
-    original = instance.arrowStyle
-    instance.arrowStyle = original
-    assert instance.arrowStyle == original
-
-@given(instance=swt::Button_strategy)
-def test_swt::button_buttonStyle_type(instance):
-    assert isinstance(instance.buttonStyle, str)
-
-
-@given(instance=swt::Button_strategy)
-def test_swt::button_buttonStyle_setter(instance):
+@given(instance=swt_Button_strategy)
+def test_swt_button_buttonStyle_setter(instance):
     original = instance.buttonStyle
     instance.buttonStyle = original
     assert instance.buttonStyle == original
 
-@given(instance=swt::AbstractList_strategy)
+
+
+@given(instance=swt_Button_strategy)
+def test_swt_button_arrowStyle_setter(instance):
+    original = instance.arrowStyle
+    instance.arrowStyle = original
+    assert instance.arrowStyle == original
+
+@given(instance=swt_IntervalControl_strategy)
 @settings(max_examples=50)
-def test_swt::abstractlist_instantiation(instance):
-    assert isinstance(instance, swt::AbstractList)
-
-@given(instance=swt::AbstractList_strategy)
-def test_swt::abstractlist_items_type(instance):
-    assert isinstance(instance.items, str)
+def test_swt_intervalcontrol_instantiation(instance):
+    assert isinstance(instance, swt_IntervalControl)
 
 
-@given(instance=swt::AbstractList_strategy)
-def test_swt::abstractlist_items_setter(instance):
-    original = instance.items
-    instance.items = original
-    assert instance.items == original
 
-@given(instance=swt::AbstractList_strategy)
-def test_swt::abstractlist_selectionIndex_type(instance):
-    assert isinstance(instance.selectionIndex, int)
-
-
-@given(instance=swt::AbstractList_strategy)
-def test_swt::abstractlist_selectionIndex_setter(instance):
-    original = instance.selectionIndex
-    instance.selectionIndex = original
-    assert instance.selectionIndex == original
-
-@given(instance=swt::Tree_strategy)
-@settings(max_examples=50)
-def test_swt::tree_instantiation(instance):
-    assert isinstance(instance, swt::Tree)
-
-@given(instance=swt::Tree_strategy)
-def test_swt::tree_sortDirection_type(instance):
-    assert isinstance(instance.sortDirection, str)
-
-
-@given(instance=swt::Tree_strategy)
-def test_swt::tree_sortDirection_setter(instance):
-    original = instance.sortDirection
-    instance.sortDirection = original
-    assert instance.sortDirection == original
-
-@given(instance=swt::Tree_strategy)
-def test_swt::tree_headerVisible_type(instance):
-    assert isinstance(instance.headerVisible, bool)
-
-
-@given(instance=swt::Tree_strategy)
-def test_swt::tree_headerVisible_setter(instance):
-    original = instance.headerVisible
-    instance.headerVisible = original
-    assert instance.headerVisible == original
-
-@given(instance=swt::Tree_strategy)
-def test_swt::tree_linesVisible_type(instance):
-    assert isinstance(instance.linesVisible, bool)
-
-
-@given(instance=swt::Tree_strategy)
-def test_swt::tree_linesVisible_setter(instance):
-    original = instance.linesVisible
-    instance.linesVisible = original
-    assert instance.linesVisible == original
-
-@given(instance=swt::IntervalControl_strategy)
-@settings(max_examples=50)
-def test_swt::intervalcontrol_instantiation(instance):
-    assert isinstance(instance, swt::IntervalControl)
-
-@given(instance=swt::IntervalControl_strategy)
-def test_swt::intervalcontrol_selection_type(instance):
-    assert isinstance(instance.selection, int)
-
-
-@given(instance=swt::IntervalControl_strategy)
-def test_swt::intervalcontrol_selection_setter(instance):
-    original = instance.selection
-    instance.selection = original
-    assert instance.selection == original
-
-@given(instance=swt::IntervalControl_strategy)
-def test_swt::intervalcontrol_minimum_type(instance):
-    assert isinstance(instance.minimum, int)
-
-
-@given(instance=swt::IntervalControl_strategy)
-def test_swt::intervalcontrol_minimum_setter(instance):
+@given(instance=swt_IntervalControl_strategy)
+def test_swt_intervalcontrol_minimum_setter(instance):
     original = instance.minimum
     instance.minimum = original
     assert instance.minimum == original
 
-@given(instance=swt::IntervalControl_strategy)
-def test_swt::intervalcontrol_maximum_type(instance):
-    assert isinstance(instance.maximum, int)
 
 
-@given(instance=swt::IntervalControl_strategy)
-def test_swt::intervalcontrol_maximum_setter(instance):
+@given(instance=swt_IntervalControl_strategy)
+def test_swt_intervalcontrol_maximum_setter(instance):
     original = instance.maximum
     instance.maximum = original
     assert instance.maximum == original
 
-@given(instance=swt::ToolBar_strategy)
+
+
+@given(instance=swt_IntervalControl_strategy)
+def test_swt_intervalcontrol_selection_setter(instance):
+    original = instance.selection
+    instance.selection = original
+    assert instance.selection == original
+
+@given(instance=swt_ToolBar_strategy)
 @settings(max_examples=50)
-def test_swt::toolbar_instantiation(instance):
-    assert isinstance(instance, swt::ToolBar)
-
-@given(instance=swt::ToolBar_strategy)
-def test_swt::toolbar_orientationStyle_type(instance):
-    assert isinstance(instance.orientationStyle, str)
+def test_swt_toolbar_instantiation(instance):
+    assert isinstance(instance, swt_ToolBar)
 
 
-@given(instance=swt::ToolBar_strategy)
-def test_swt::toolbar_orientationStyle_setter(instance):
+
+@given(instance=swt_ToolBar_strategy)
+def test_swt_toolbar_orientationStyle_setter(instance):
     original = instance.orientationStyle
     instance.orientationStyle = original
     assert instance.orientationStyle == original
 
-@given(instance=swt::AbstractComposite_strategy)
+@given(instance=swt_AbstractList_strategy)
 @settings(max_examples=50)
-def test_swt::abstractcomposite_instantiation(instance):
-    assert isinstance(instance, swt::AbstractComposite)
+def test_swt_abstractlist_instantiation(instance):
+    assert isinstance(instance, swt_AbstractList)
 
-@given(instance=swt::Font_strategy)
+
+
+@given(instance=swt_AbstractList_strategy)
+def test_swt_abstractlist_selectionIndex_setter(instance):
+    original = instance.selectionIndex
+    instance.selectionIndex = original
+    assert instance.selectionIndex == original
+
+
+
+@given(instance=swt_AbstractList_strategy)
+def test_swt_abstractlist_items_setter(instance):
+    original = instance.items
+    instance.items = original
+    assert instance.items == original
+
+@given(instance=swt_AbstractComposite_strategy)
 @settings(max_examples=50)
-def test_swt::font_instantiation(instance):
-    assert isinstance(instance, swt::Font)
+def test_swt_abstractcomposite_instantiation(instance):
+    assert isinstance(instance, swt_AbstractComposite)
 
-@given(instance=swt::Font_strategy)
-def test_swt::font_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=swt::Font_strategy)
-def test_swt::font_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
-
-@given(instance=swt::Font_strategy)
-def test_swt::font_style_type(instance):
-    assert isinstance(instance.style, int)
+@given(instance=swt_Font_strategy)
+@settings(max_examples=50)
+def test_swt_font_instantiation(instance):
+    assert isinstance(instance, swt_Font)
 
 
-@given(instance=swt::Font_strategy)
-def test_swt::font_style_setter(instance):
+
+@given(instance=swt_Font_strategy)
+def test_swt_font_style_setter(instance):
     original = instance.style
     instance.style = original
     assert instance.style == original
 
-@given(instance=swt::Font_strategy)
-def test_swt::font_height_type(instance):
-    assert isinstance(instance.height, int)
 
 
-@given(instance=swt::Font_strategy)
-def test_swt::font_height_setter(instance):
+@given(instance=swt_Font_strategy)
+def test_swt_font_height_setter(instance):
     original = instance.height
     instance.height = original
     assert instance.height == original
 
-@given(instance=swt::Color_strategy)
+
+
+@given(instance=swt_Font_strategy)
+def test_swt_font_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+@given(instance=swt_Color_strategy)
 @settings(max_examples=50)
-def test_swt::color_instantiation(instance):
-    assert isinstance(instance, swt::Color)
+def test_swt_color_instantiation(instance):
+    assert isinstance(instance, swt_Color)
 
-@given(instance=swt::Layout_strategy)
+@given(instance=swt_Layout_strategy)
 @settings(max_examples=50)
-def test_swt::layout_instantiation(instance):
-    assert isinstance(instance, swt::Layout)
+def test_swt_layout_instantiation(instance):
+    assert isinstance(instance, swt_Layout)
 
-@given(instance=swt::Widget_strategy)
+@given(instance=swt_Widget_strategy)
 @settings(max_examples=50)
-def test_swt::widget_instantiation(instance):
-    assert isinstance(instance, swt::Widget)
-
-@given(instance=swt::Widget_strategy)
-def test_swt::widget_style_type(instance):
-    assert isinstance(instance.style, int)
+def test_swt_widget_instantiation(instance):
+    assert isinstance(instance, swt_Widget)
 
 
-@given(instance=swt::Widget_strategy)
-def test_swt::widget_style_setter(instance):
+
+@given(instance=swt_Widget_strategy)
+def test_swt_widget_style_setter(instance):
     original = instance.style
     instance.style = original
     assert instance.style == original
+
+@given(instance=swt_Viewer_strategy)
+@settings(max_examples=50)
+def test_swt_viewer_instantiation(instance):
+    assert isinstance(instance, swt_Viewer)
+
+
+
+@given(instance=swt_Viewer_strategy)
+def test_swt_viewer_input_setter(instance):
+    original = instance.input
+    instance.input = original
+    assert instance.input == original
+
+@given(instance=swt_TreeViewer_strategy)
+@settings(max_examples=50)
+def test_swt_treeviewer_instantiation(instance):
+    assert isinstance(instance, swt_TreeViewer)
+
+@given(instance=swt_Tree_strategy)
+@settings(max_examples=50)
+def test_swt_tree_instantiation(instance):
+    assert isinstance(instance, swt_Tree)
+
+
+
+@given(instance=swt_Tree_strategy)
+def test_swt_tree_headerVisible_setter(instance):
+    original = instance.headerVisible
+    instance.headerVisible = original
+    assert instance.headerVisible == original
+
+
+
+@given(instance=swt_Tree_strategy)
+def test_swt_tree_sortDirection_setter(instance):
+    original = instance.sortDirection
+    instance.sortDirection = original
+    assert instance.sortDirection == original
+
+
+
+@given(instance=swt_Tree_strategy)
+def test_swt_tree_linesVisible_setter(instance):
+    original = instance.linesVisible
+    instance.linesVisible = original
+    assert instance.linesVisible == original
+
+@given(instance=swt_TreeColumn_strategy)
+@settings(max_examples=50)
+def test_swt_treecolumn_instantiation(instance):
+    assert isinstance(instance, swt_TreeColumn)
+
+
+
+@given(instance=swt_TreeColumn_strategy)
+def test_swt_treecolumn_displayText_setter(instance):
+    original = instance.displayText
+    instance.displayText = original
+    assert instance.displayText == original
+
+
+
+@given(instance=swt_TreeColumn_strategy)
+def test_swt_treecolumn_toolTipText_setter(instance):
+    original = instance.toolTipText
+    instance.toolTipText = original
+    assert instance.toolTipText == original
+
+@given(instance=swt_LineAttributes_strategy)
+@settings(max_examples=50)
+def test_swt_lineattributes_instantiation(instance):
+    assert isinstance(instance, swt_LineAttributes)
+
+
+
+@given(instance=swt_LineAttributes_strategy)
+def test_swt_lineattributes_dash_setter(instance):
+    original = instance.dash
+    instance.dash = original
+    assert instance.dash == original
+
+
+
+@given(instance=swt_LineAttributes_strategy)
+def test_swt_lineattributes_cap_setter(instance):
+    original = instance.cap
+    instance.cap = original
+    assert instance.cap == original
+
+
+
+@given(instance=swt_LineAttributes_strategy)
+def test_swt_lineattributes_miterLimit_setter(instance):
+    original = instance.miterLimit
+    instance.miterLimit = original
+    assert instance.miterLimit == original
+
+
+
+@given(instance=swt_LineAttributes_strategy)
+def test_swt_lineattributes_join_setter(instance):
+    original = instance.join
+    instance.join = original
+    assert instance.join == original
+
+
+
+@given(instance=swt_LineAttributes_strategy)
+def test_swt_lineattributes_dashOffset_setter(instance):
+    original = instance.dashOffset
+    instance.dashOffset = original
+    assert instance.dashOffset == original
+
+
+
+@given(instance=swt_LineAttributes_strategy)
+def test_swt_lineattributes_width_setter(instance):
+    original = instance.width
+    instance.width = original
+    assert instance.width == original
+
+
+
+@given(instance=swt_LineAttributes_strategy)
+def test_swt_lineattributes_style_setter(instance):
+    original = instance.style
+    instance.style = original
+    assert instance.style == original
+
+@given(instance=swt_FormLayout_strategy)
+@settings(max_examples=50)
+def test_swt_formlayout_instantiation(instance):
+    assert isinstance(instance, swt_FormLayout)
+
+
+
+@given(instance=swt_FormLayout_strategy)
+def test_swt_formlayout_marginHeight_setter(instance):
+    original = instance.marginHeight
+    instance.marginHeight = original
+    assert instance.marginHeight == original
+
+
+
+@given(instance=swt_FormLayout_strategy)
+def test_swt_formlayout_marginTop_setter(instance):
+    original = instance.marginTop
+    instance.marginTop = original
+    assert instance.marginTop == original
+
+
+
+@given(instance=swt_FormLayout_strategy)
+def test_swt_formlayout_marginBottom_setter(instance):
+    original = instance.marginBottom
+    instance.marginBottom = original
+    assert instance.marginBottom == original
+
+
+
+@given(instance=swt_FormLayout_strategy)
+def test_swt_formlayout_marginWidth_setter(instance):
+    original = instance.marginWidth
+    instance.marginWidth = original
+    assert instance.marginWidth == original
+
+
+
+@given(instance=swt_FormLayout_strategy)
+def test_swt_formlayout_spacing_setter(instance):
+    original = instance.spacing
+    instance.spacing = original
+    assert instance.spacing == original
+
+
+
+@given(instance=swt_FormLayout_strategy)
+def test_swt_formlayout_marginLeft_setter(instance):
+    original = instance.marginLeft
+    instance.marginLeft = original
+    assert instance.marginLeft == original
+
+
+
+@given(instance=swt_FormLayout_strategy)
+def test_swt_formlayout_marginRight_setter(instance):
+    original = instance.marginRight
+    instance.marginRight = original
+    assert instance.marginRight == original
+
+@given(instance=swt_GridData_strategy)
+@settings(max_examples=50)
+def test_swt_griddata_instantiation(instance):
+    assert isinstance(instance, swt_GridData)
+
+
+
+@given(instance=swt_GridData_strategy)
+def test_swt_griddata_heightHint_setter(instance):
+    original = instance.heightHint
+    instance.heightHint = original
+    assert instance.heightHint == original
+
+
+
+@given(instance=swt_GridData_strategy)
+def test_swt_griddata_widthHint_setter(instance):
+    original = instance.widthHint
+    instance.widthHint = original
+    assert instance.widthHint == original
+
+
+
+@given(instance=swt_GridData_strategy)
+def test_swt_griddata_horizontalSpan_setter(instance):
+    original = instance.horizontalSpan
+    instance.horizontalSpan = original
+    assert instance.horizontalSpan == original
+
+
+
+@given(instance=swt_GridData_strategy)
+def test_swt_griddata_grabExcessVerticalSpace_setter(instance):
+    original = instance.grabExcessVerticalSpace
+    instance.grabExcessVerticalSpace = original
+    assert instance.grabExcessVerticalSpace == original
+
+
+
+@given(instance=swt_GridData_strategy)
+def test_swt_griddata_horizontalAlignment_setter(instance):
+    original = instance.horizontalAlignment
+    instance.horizontalAlignment = original
+    assert instance.horizontalAlignment == original
+
+
+
+@given(instance=swt_GridData_strategy)
+def test_swt_griddata_verticalAlignment_setter(instance):
+    original = instance.verticalAlignment
+    instance.verticalAlignment = original
+    assert instance.verticalAlignment == original
+
+
+
+@given(instance=swt_GridData_strategy)
+def test_swt_griddata_grabExcessHorizontalSpace_setter(instance):
+    original = instance.grabExcessHorizontalSpace
+    instance.grabExcessHorizontalSpace = original
+    assert instance.grabExcessHorizontalSpace == original
+
+
+
+@given(instance=swt_GridData_strategy)
+def test_swt_griddata_horizontalIndent_setter(instance):
+    original = instance.horizontalIndent
+    instance.horizontalIndent = original
+    assert instance.horizontalIndent == original
+
+
+
+@given(instance=swt_GridData_strategy)
+def test_swt_griddata_minimumWidth_setter(instance):
+    original = instance.minimumWidth
+    instance.minimumWidth = original
+    assert instance.minimumWidth == original
+
+
+
+@given(instance=swt_GridData_strategy)
+def test_swt_griddata_verticalSpan_setter(instance):
+    original = instance.verticalSpan
+    instance.verticalSpan = original
+    assert instance.verticalSpan == original
+
+
+
+@given(instance=swt_GridData_strategy)
+def test_swt_griddata_exclude_setter(instance):
+    original = instance.exclude
+    instance.exclude = original
+    assert instance.exclude == original
+
+
+
+@given(instance=swt_GridData_strategy)
+def test_swt_griddata_minimumHeight_setter(instance):
+    original = instance.minimumHeight
+    instance.minimumHeight = original
+    assert instance.minimumHeight == original
+
+
+
+@given(instance=swt_GridData_strategy)
+def test_swt_griddata_verticalIndent_setter(instance):
+    original = instance.verticalIndent
+    instance.verticalIndent = original
+    assert instance.verticalIndent == original
+
+@given(instance=swt_FormAttachment_strategy)
+@settings(max_examples=50)
+def test_swt_formattachment_instantiation(instance):
+    assert isinstance(instance, swt_FormAttachment)
+
+
+
+@given(instance=swt_FormAttachment_strategy)
+def test_swt_formattachment_alignment_setter(instance):
+    original = instance.alignment
+    instance.alignment = original
+    assert instance.alignment == original
+
+
+
+@given(instance=swt_FormAttachment_strategy)
+def test_swt_formattachment_denominator_setter(instance):
+    original = instance.denominator
+    instance.denominator = original
+    assert instance.denominator == original
+
+
+
+@given(instance=swt_FormAttachment_strategy)
+def test_swt_formattachment_offset_setter(instance):
+    original = instance.offset
+    instance.offset = original
+    assert instance.offset == original
+
+
+
+@given(instance=swt_FormAttachment_strategy)
+def test_swt_formattachment_numerator_setter(instance):
+    original = instance.numerator
+    instance.numerator = original
+    assert instance.numerator == original
+
+@given(instance=swt_FormData_strategy)
+@settings(max_examples=50)
+def test_swt_formdata_instantiation(instance):
+    assert isinstance(instance, swt_FormData)
+
+
+
+@given(instance=swt_FormData_strategy)
+def test_swt_formdata_height_setter(instance):
+    original = instance.height
+    instance.height = original
+    assert instance.height == original
+
+
+
+@given(instance=swt_FormData_strategy)
+def test_swt_formdata_width_setter(instance):
+    original = instance.width
+    instance.width = original
+    assert instance.width == original
+
+@given(instance=swt_RowLayout_strategy)
+@settings(max_examples=50)
+def test_swt_rowlayout_instantiation(instance):
+    assert isinstance(instance, swt_RowLayout)
+
+
+
+@given(instance=swt_RowLayout_strategy)
+def test_swt_rowlayout_marginRight_setter(instance):
+    original = instance.marginRight
+    instance.marginRight = original
+    assert instance.marginRight == original
+
+
+
+@given(instance=swt_RowLayout_strategy)
+def test_swt_rowlayout_fill_setter(instance):
+    original = instance.fill
+    instance.fill = original
+    assert instance.fill == original
+
+
+
+@given(instance=swt_RowLayout_strategy)
+def test_swt_rowlayout_marginWidth_setter(instance):
+    original = instance.marginWidth
+    instance.marginWidth = original
+    assert instance.marginWidth == original
+
+
+
+@given(instance=swt_RowLayout_strategy)
+def test_swt_rowlayout_marginTop_setter(instance):
+    original = instance.marginTop
+    instance.marginTop = original
+    assert instance.marginTop == original
+
+
+
+@given(instance=swt_RowLayout_strategy)
+def test_swt_rowlayout_marginHeight_setter(instance):
+    original = instance.marginHeight
+    instance.marginHeight = original
+    assert instance.marginHeight == original
+
+
+
+@given(instance=swt_RowLayout_strategy)
+def test_swt_rowlayout_justify_setter(instance):
+    original = instance.justify
+    instance.justify = original
+    assert instance.justify == original
+
+
+
+@given(instance=swt_RowLayout_strategy)
+def test_swt_rowlayout_marginBottom_setter(instance):
+    original = instance.marginBottom
+    instance.marginBottom = original
+    assert instance.marginBottom == original
+
+
+
+@given(instance=swt_RowLayout_strategy)
+def test_swt_rowlayout_spacing_setter(instance):
+    original = instance.spacing
+    instance.spacing = original
+    assert instance.spacing == original
+
+
+
+@given(instance=swt_RowLayout_strategy)
+def test_swt_rowlayout_center_setter(instance):
+    original = instance.center
+    instance.center = original
+    assert instance.center == original
+
+
+
+@given(instance=swt_RowLayout_strategy)
+def test_swt_rowlayout_pack_setter(instance):
+    original = instance.pack
+    instance.pack = original
+    assert instance.pack == original
+
+
+
+@given(instance=swt_RowLayout_strategy)
+def test_swt_rowlayout_orientationStyle_setter(instance):
+    original = instance.orientationStyle
+    instance.orientationStyle = original
+    assert instance.orientationStyle == original
+
+
+
+@given(instance=swt_RowLayout_strategy)
+def test_swt_rowlayout_marginLeft_setter(instance):
+    original = instance.marginLeft
+    instance.marginLeft = original
+    assert instance.marginLeft == original
+
+
+
+@given(instance=swt_RowLayout_strategy)
+def test_swt_rowlayout_wrap_setter(instance):
+    original = instance.wrap
+    instance.wrap = original
+    assert instance.wrap == original
+
+@given(instance=swt_FillLayout_strategy)
+@settings(max_examples=50)
+def test_swt_filllayout_instantiation(instance):
+    assert isinstance(instance, swt_FillLayout)
+
+
+
+@given(instance=swt_FillLayout_strategy)
+def test_swt_filllayout_orientationStyle_setter(instance):
+    original = instance.orientationStyle
+    instance.orientationStyle = original
+    assert instance.orientationStyle == original
+
+
+
+@given(instance=swt_FillLayout_strategy)
+def test_swt_filllayout_marginWidth_setter(instance):
+    original = instance.marginWidth
+    instance.marginWidth = original
+    assert instance.marginWidth == original
+
+
+
+@given(instance=swt_FillLayout_strategy)
+def test_swt_filllayout_spacing_setter(instance):
+    original = instance.spacing
+    instance.spacing = original
+    assert instance.spacing == original
+
+
+
+@given(instance=swt_FillLayout_strategy)
+def test_swt_filllayout_marginHeight_setter(instance):
+    original = instance.marginHeight
+    instance.marginHeight = original
+    assert instance.marginHeight == original
+
+@given(instance=swt_GridLayout_strategy)
+@settings(max_examples=50)
+def test_swt_gridlayout_instantiation(instance):
+    assert isinstance(instance, swt_GridLayout)
+
+
+
+@given(instance=swt_GridLayout_strategy)
+def test_swt_gridlayout_makeColumnsEqualWidth_setter(instance):
+    original = instance.makeColumnsEqualWidth
+    instance.makeColumnsEqualWidth = original
+    assert instance.makeColumnsEqualWidth == original
+
+
+
+@given(instance=swt_GridLayout_strategy)
+def test_swt_gridlayout_verticalSpacing_setter(instance):
+    original = instance.verticalSpacing
+    instance.verticalSpacing = original
+    assert instance.verticalSpacing == original
+
+
+
+@given(instance=swt_GridLayout_strategy)
+def test_swt_gridlayout_marginRight_setter(instance):
+    original = instance.marginRight
+    instance.marginRight = original
+    assert instance.marginRight == original
+
+
+
+@given(instance=swt_GridLayout_strategy)
+def test_swt_gridlayout_marginBottom_setter(instance):
+    original = instance.marginBottom
+    instance.marginBottom = original
+    assert instance.marginBottom == original
+
+
+
+@given(instance=swt_GridLayout_strategy)
+def test_swt_gridlayout_marginWidth_setter(instance):
+    original = instance.marginWidth
+    instance.marginWidth = original
+    assert instance.marginWidth == original
+
+
+
+@given(instance=swt_GridLayout_strategy)
+def test_swt_gridlayout_numColumns_setter(instance):
+    original = instance.numColumns
+    instance.numColumns = original
+    assert instance.numColumns == original
+
+
+
+@given(instance=swt_GridLayout_strategy)
+def test_swt_gridlayout_horizontalSpacing_setter(instance):
+    original = instance.horizontalSpacing
+    instance.horizontalSpacing = original
+    assert instance.horizontalSpacing == original
+
+
+
+@given(instance=swt_GridLayout_strategy)
+def test_swt_gridlayout_marginTop_setter(instance):
+    original = instance.marginTop
+    instance.marginTop = original
+    assert instance.marginTop == original
+
+
+
+@given(instance=swt_GridLayout_strategy)
+def test_swt_gridlayout_marginLeft_setter(instance):
+    original = instance.marginLeft
+    instance.marginLeft = original
+    assert instance.marginLeft == original
+
+
+
+@given(instance=swt_GridLayout_strategy)
+def test_swt_gridlayout_marginHeight_setter(instance):
+    original = instance.marginHeight
+    instance.marginHeight = original
+    assert instance.marginHeight == original

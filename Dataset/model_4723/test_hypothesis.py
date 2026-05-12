@@ -3,30 +3,30 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    simpliC::Factor,
-    simpliC::TFact,
-    simpliC::EObject,
+from python_code import (
+    simpliC_Factor,
+    simpliC_TFact,
+    simpliC_EObject,
     Stmt,
-    simpliC::Typedef,
-    simpliC::Assign,
-    simpliC::Block,
-    simpliC::Args,
-    simpliC::Decl,
-    simpliC::Return,
-    simpliC::Whilestmt,
-    simpliC::Ifstmt,
+    simpliC_Typedef,
+    simpliC_Assign,
+    simpliC_Block,
+    simpliC_Args,
+    simpliC_Decl,
+    simpliC_Return,
+    simpliC_Whilestmt,
+    simpliC_Ifstmt,
     Factor,
-    simpliC::IDuse,
-    simpliC::ExprCall,
-    simpliC::Expr,
-    simpliC::Call,
-    simpliC::Stmt,
-    simpliC::Type,
-    simpliC::Function,
-    simpliC::Model,
+    simpliC_IDuse,
+    simpliC_ExprCall,
+    simpliC_Expr,
+    simpliC_Call,
+    simpliC_Stmt,
+    simpliC_Type,
+    simpliC_Function,
+    simpliC_Model,
 )
 
 # =============================================================================
@@ -35,37 +35,37 @@ from classes import (
 
 
 
-def test_simplic::factor_is_not_abstract():
-    assert not inspect.isabstract(simpliC::Factor)
+def test_simplic_factor_is_not_abstract():
+    assert not inspect.isabstract(simpliC_Factor)
 
 
-def test_simplic::factor_constructor_exists():
-    assert callable(simpliC::Factor.__init__)
+def test_simplic_factor_constructor_exists():
+    assert callable(simpliC_Factor.__init__)
 
 
-def test_simplic::factor_constructor_args():
-    sig = inspect.signature(simpliC::Factor.__init__)
+def test_simplic_factor_constructor_args():
+    sig = inspect.signature(simpliC_Factor.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_simplic::tfact_is_not_abstract():
-    assert not inspect.isabstract(simpliC::TFact)
+def test_simplic_tfact_is_not_abstract():
+    assert not inspect.isabstract(simpliC_TFact)
 
 
-def test_simplic::tfact_constructor_exists():
-    assert callable(simpliC::TFact.__init__)
+def test_simplic_tfact_constructor_exists():
+    assert callable(simpliC_TFact.__init__)
 
 
-def test_simplic::tfact_constructor_args():
-    sig = inspect.signature(simpliC::TFact.__init__)
+def test_simplic_tfact_constructor_args():
+    sig = inspect.signature(simpliC_TFact.__init__)
     params = list(sig.parameters.keys())
     assert "op" in params, "Missing parameter 'op'"
 
-def test_simplic::tfact_has_op():
-    assert hasattr(simpliC::TFact, "op")
+def test_simplic_tfact_has_op():
+    assert hasattr(simpliC_TFact, "op")
     descriptor = None
-    for klass in simpliC::TFact.__mro__:
+    for klass in simpliC_TFact.__mro__:
         if "op" in klass.__dict__:
             descriptor = klass.__dict__["op"]
             break
@@ -73,16 +73,16 @@ def test_simplic::tfact_has_op():
 
 
 
-def test_simplic::eobject_is_not_abstract():
-    assert not inspect.isabstract(simpliC::EObject)
+def test_simplic_eobject_is_not_abstract():
+    assert not inspect.isabstract(simpliC_EObject)
 
 
-def test_simplic::eobject_constructor_exists():
-    assert callable(simpliC::EObject.__init__)
+def test_simplic_eobject_constructor_exists():
+    assert callable(simpliC_EObject.__init__)
 
 
-def test_simplic::eobject_constructor_args():
-    sig = inspect.signature(simpliC::EObject.__init__)
+def test_simplic_eobject_constructor_args():
+    sig = inspect.signature(simpliC_EObject.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -101,23 +101,23 @@ def test_stmt_constructor_args():
 
 
 
-def test_simplic::typedef_is_not_abstract():
-    assert not inspect.isabstract(simpliC::Typedef)
+def test_simplic_typedef_is_not_abstract():
+    assert not inspect.isabstract(simpliC_Typedef)
 
 
-def test_simplic::typedef_constructor_exists():
-    assert callable(simpliC::Typedef.__init__)
+def test_simplic_typedef_constructor_exists():
+    assert callable(simpliC_Typedef.__init__)
 
 
-def test_simplic::typedef_constructor_args():
-    sig = inspect.signature(simpliC::Typedef.__init__)
+def test_simplic_typedef_constructor_args():
+    sig = inspect.signature(simpliC_Typedef.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_simplic::typedef_has_name():
-    assert hasattr(simpliC::Typedef, "name")
+def test_simplic_typedef_has_name():
+    assert hasattr(simpliC_Typedef, "name")
     descriptor = None
-    for klass in simpliC::Typedef.__mro__:
+    for klass in simpliC_Typedef.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -125,23 +125,23 @@ def test_simplic::typedef_has_name():
 
 
 
-def test_simplic::assign_is_not_abstract():
-    assert not inspect.isabstract(simpliC::Assign)
+def test_simplic_assign_is_not_abstract():
+    assert not inspect.isabstract(simpliC_Assign)
 
 
-def test_simplic::assign_constructor_exists():
-    assert callable(simpliC::Assign.__init__)
+def test_simplic_assign_constructor_exists():
+    assert callable(simpliC_Assign.__init__)
 
 
-def test_simplic::assign_constructor_args():
-    sig = inspect.signature(simpliC::Assign.__init__)
+def test_simplic_assign_constructor_args():
+    sig = inspect.signature(simpliC_Assign.__init__)
     params = list(sig.parameters.keys())
     assert "var" in params, "Missing parameter 'var'"
 
-def test_simplic::assign_has_var():
-    assert hasattr(simpliC::Assign, "var")
+def test_simplic_assign_has_var():
+    assert hasattr(simpliC_Assign, "var")
     descriptor = None
-    for klass in simpliC::Assign.__mro__:
+    for klass in simpliC_Assign.__mro__:
         if "var" in klass.__dict__:
             descriptor = klass.__dict__["var"]
             break
@@ -149,37 +149,37 @@ def test_simplic::assign_has_var():
 
 
 
-def test_simplic::block_is_not_abstract():
-    assert not inspect.isabstract(simpliC::Block)
+def test_simplic_block_is_not_abstract():
+    assert not inspect.isabstract(simpliC_Block)
 
 
-def test_simplic::block_constructor_exists():
-    assert callable(simpliC::Block.__init__)
+def test_simplic_block_constructor_exists():
+    assert callable(simpliC_Block.__init__)
 
 
-def test_simplic::block_constructor_args():
-    sig = inspect.signature(simpliC::Block.__init__)
+def test_simplic_block_constructor_args():
+    sig = inspect.signature(simpliC_Block.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_simplic::args_is_not_abstract():
-    assert not inspect.isabstract(simpliC::Args)
+def test_simplic_args_is_not_abstract():
+    assert not inspect.isabstract(simpliC_Args)
 
 
-def test_simplic::args_constructor_exists():
-    assert callable(simpliC::Args.__init__)
+def test_simplic_args_constructor_exists():
+    assert callable(simpliC_Args.__init__)
 
 
-def test_simplic::args_constructor_args():
-    sig = inspect.signature(simpliC::Args.__init__)
+def test_simplic_args_constructor_args():
+    sig = inspect.signature(simpliC_Args.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_simplic::args_has_name():
-    assert hasattr(simpliC::Args, "name")
+def test_simplic_args_has_name():
+    assert hasattr(simpliC_Args, "name")
     descriptor = None
-    for klass in simpliC::Args.__mro__:
+    for klass in simpliC_Args.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -187,23 +187,23 @@ def test_simplic::args_has_name():
 
 
 
-def test_simplic::decl_is_not_abstract():
-    assert not inspect.isabstract(simpliC::Decl)
+def test_simplic_decl_is_not_abstract():
+    assert not inspect.isabstract(simpliC_Decl)
 
 
-def test_simplic::decl_constructor_exists():
-    assert callable(simpliC::Decl.__init__)
+def test_simplic_decl_constructor_exists():
+    assert callable(simpliC_Decl.__init__)
 
 
-def test_simplic::decl_constructor_args():
-    sig = inspect.signature(simpliC::Decl.__init__)
+def test_simplic_decl_constructor_args():
+    sig = inspect.signature(simpliC_Decl.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_simplic::decl_has_name():
-    assert hasattr(simpliC::Decl, "name")
+def test_simplic_decl_has_name():
+    assert hasattr(simpliC_Decl, "name")
     descriptor = None
-    for klass in simpliC::Decl.__mro__:
+    for klass in simpliC_Decl.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -211,44 +211,44 @@ def test_simplic::decl_has_name():
 
 
 
-def test_simplic::return_is_not_abstract():
-    assert not inspect.isabstract(simpliC::Return)
+def test_simplic_return_is_not_abstract():
+    assert not inspect.isabstract(simpliC_Return)
 
 
-def test_simplic::return_constructor_exists():
-    assert callable(simpliC::Return.__init__)
+def test_simplic_return_constructor_exists():
+    assert callable(simpliC_Return.__init__)
 
 
-def test_simplic::return_constructor_args():
-    sig = inspect.signature(simpliC::Return.__init__)
+def test_simplic_return_constructor_args():
+    sig = inspect.signature(simpliC_Return.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_simplic::whilestmt_is_not_abstract():
-    assert not inspect.isabstract(simpliC::Whilestmt)
+def test_simplic_whilestmt_is_not_abstract():
+    assert not inspect.isabstract(simpliC_Whilestmt)
 
 
-def test_simplic::whilestmt_constructor_exists():
-    assert callable(simpliC::Whilestmt.__init__)
+def test_simplic_whilestmt_constructor_exists():
+    assert callable(simpliC_Whilestmt.__init__)
 
 
-def test_simplic::whilestmt_constructor_args():
-    sig = inspect.signature(simpliC::Whilestmt.__init__)
+def test_simplic_whilestmt_constructor_args():
+    sig = inspect.signature(simpliC_Whilestmt.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_simplic::ifstmt_is_not_abstract():
-    assert not inspect.isabstract(simpliC::Ifstmt)
+def test_simplic_ifstmt_is_not_abstract():
+    assert not inspect.isabstract(simpliC_Ifstmt)
 
 
-def test_simplic::ifstmt_constructor_exists():
-    assert callable(simpliC::Ifstmt.__init__)
+def test_simplic_ifstmt_constructor_exists():
+    assert callable(simpliC_Ifstmt.__init__)
 
 
-def test_simplic::ifstmt_constructor_args():
-    sig = inspect.signature(simpliC::Ifstmt.__init__)
+def test_simplic_ifstmt_constructor_args():
+    sig = inspect.signature(simpliC_Ifstmt.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -267,51 +267,51 @@ def test_factor_constructor_args():
 
 
 
-def test_simplic::iduse_is_not_abstract():
-    assert not inspect.isabstract(simpliC::IDuse)
+def test_simplic_iduse_is_not_abstract():
+    assert not inspect.isabstract(simpliC_IDuse)
 
 
-def test_simplic::iduse_constructor_exists():
-    assert callable(simpliC::IDuse.__init__)
+def test_simplic_iduse_constructor_exists():
+    assert callable(simpliC_IDuse.__init__)
 
 
-def test_simplic::iduse_constructor_args():
-    sig = inspect.signature(simpliC::IDuse.__init__)
+def test_simplic_iduse_constructor_args():
+    sig = inspect.signature(simpliC_IDuse.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_simplic::exprcall_is_not_abstract():
-    assert not inspect.isabstract(simpliC::ExprCall)
+def test_simplic_exprcall_is_not_abstract():
+    assert not inspect.isabstract(simpliC_ExprCall)
 
 
-def test_simplic::exprcall_constructor_exists():
-    assert callable(simpliC::ExprCall.__init__)
+def test_simplic_exprcall_constructor_exists():
+    assert callable(simpliC_ExprCall.__init__)
 
 
-def test_simplic::exprcall_constructor_args():
-    sig = inspect.signature(simpliC::ExprCall.__init__)
+def test_simplic_exprcall_constructor_args():
+    sig = inspect.signature(simpliC_ExprCall.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_simplic::expr_is_not_abstract():
-    assert not inspect.isabstract(simpliC::Expr)
+def test_simplic_expr_is_not_abstract():
+    assert not inspect.isabstract(simpliC_Expr)
 
 
-def test_simplic::expr_constructor_exists():
-    assert callable(simpliC::Expr.__init__)
+def test_simplic_expr_constructor_exists():
+    assert callable(simpliC_Expr.__init__)
 
 
-def test_simplic::expr_constructor_args():
-    sig = inspect.signature(simpliC::Expr.__init__)
+def test_simplic_expr_constructor_args():
+    sig = inspect.signature(simpliC_Expr.__init__)
     params = list(sig.parameters.keys())
     assert "op" in params, "Missing parameter 'op'"
 
-def test_simplic::expr_has_op():
-    assert hasattr(simpliC::Expr, "op")
+def test_simplic_expr_has_op():
+    assert hasattr(simpliC_Expr, "op")
     descriptor = None
-    for klass in simpliC::Expr.__mro__:
+    for klass in simpliC_Expr.__mro__:
         if "op" in klass.__dict__:
             descriptor = klass.__dict__["op"]
             break
@@ -319,51 +319,51 @@ def test_simplic::expr_has_op():
 
 
 
-def test_simplic::call_is_not_abstract():
-    assert not inspect.isabstract(simpliC::Call)
+def test_simplic_call_is_not_abstract():
+    assert not inspect.isabstract(simpliC_Call)
 
 
-def test_simplic::call_constructor_exists():
-    assert callable(simpliC::Call.__init__)
+def test_simplic_call_constructor_exists():
+    assert callable(simpliC_Call.__init__)
 
 
-def test_simplic::call_constructor_args():
-    sig = inspect.signature(simpliC::Call.__init__)
+def test_simplic_call_constructor_args():
+    sig = inspect.signature(simpliC_Call.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_simplic::stmt_is_not_abstract():
-    assert not inspect.isabstract(simpliC::Stmt)
+def test_simplic_stmt_is_not_abstract():
+    assert not inspect.isabstract(simpliC_Stmt)
 
 
-def test_simplic::stmt_constructor_exists():
-    assert callable(simpliC::Stmt.__init__)
+def test_simplic_stmt_constructor_exists():
+    assert callable(simpliC_Stmt.__init__)
 
 
-def test_simplic::stmt_constructor_args():
-    sig = inspect.signature(simpliC::Stmt.__init__)
+def test_simplic_stmt_constructor_args():
+    sig = inspect.signature(simpliC_Stmt.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_simplic::type_is_not_abstract():
-    assert not inspect.isabstract(simpliC::Type)
+def test_simplic_type_is_not_abstract():
+    assert not inspect.isabstract(simpliC_Type)
 
 
-def test_simplic::type_constructor_exists():
-    assert callable(simpliC::Type.__init__)
+def test_simplic_type_constructor_exists():
+    assert callable(simpliC_Type.__init__)
 
 
-def test_simplic::type_constructor_args():
-    sig = inspect.signature(simpliC::Type.__init__)
+def test_simplic_type_constructor_args():
+    sig = inspect.signature(simpliC_Type.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_simplic::type_has_name():
-    assert hasattr(simpliC::Type, "name")
+def test_simplic_type_has_name():
+    assert hasattr(simpliC_Type, "name")
     descriptor = None
-    for klass in simpliC::Type.__mro__:
+    for klass in simpliC_Type.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -371,23 +371,23 @@ def test_simplic::type_has_name():
 
 
 
-def test_simplic::function_is_not_abstract():
-    assert not inspect.isabstract(simpliC::Function)
+def test_simplic_function_is_not_abstract():
+    assert not inspect.isabstract(simpliC_Function)
 
 
-def test_simplic::function_constructor_exists():
-    assert callable(simpliC::Function.__init__)
+def test_simplic_function_constructor_exists():
+    assert callable(simpliC_Function.__init__)
 
 
-def test_simplic::function_constructor_args():
-    sig = inspect.signature(simpliC::Function.__init__)
+def test_simplic_function_constructor_args():
+    sig = inspect.signature(simpliC_Function.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_simplic::function_has_name():
-    assert hasattr(simpliC::Function, "name")
+def test_simplic_function_has_name():
+    assert hasattr(simpliC_Function, "name")
     descriptor = None
-    for klass in simpliC::Function.__mro__:
+    for klass in simpliC_Function.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -395,16 +395,16 @@ def test_simplic::function_has_name():
 
 
 
-def test_simplic::model_is_not_abstract():
-    assert not inspect.isabstract(simpliC::Model)
+def test_simplic_model_is_not_abstract():
+    assert not inspect.isabstract(simpliC_Model)
 
 
-def test_simplic::model_constructor_exists():
-    assert callable(simpliC::Model.__init__)
+def test_simplic_model_constructor_exists():
+    assert callable(simpliC_Model.__init__)
 
 
-def test_simplic::model_constructor_args():
-    sig = inspect.signature(simpliC::Model.__init__)
+def test_simplic_model_constructor_args():
+    sig = inspect.signature(simpliC_Model.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -419,275 +419,251 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-simpliC::Factor_strategy = st.builds(
-    simpliC::Factor,
+simpliC_Factor_strategy = st.builds(
+    simpliC_Factor,
 )
-simpliC::TFact_strategy = st.builds(
-    simpliC::TFact,
+simpliC_TFact_strategy = st.builds(
+    simpliC_TFact,
     op=
         safe_text
 )
-simpliC::EObject_strategy = st.builds(
-    simpliC::EObject,
+simpliC_EObject_strategy = st.builds(
+    simpliC_EObject,
 )
 Stmt_strategy = st.builds(
     Stmt,
 )
-simpliC::Typedef_strategy = st.builds(
-    simpliC::Typedef,
+simpliC_Typedef_strategy = st.builds(
+    simpliC_Typedef,
     name=
         safe_text
 )
-simpliC::Assign_strategy = st.builds(
-    simpliC::Assign,
+simpliC_Assign_strategy = st.builds(
+    simpliC_Assign,
     var=
         safe_text
 )
-simpliC::Block_strategy = st.builds(
-    simpliC::Block,
+simpliC_Block_strategy = st.builds(
+    simpliC_Block,
 )
-simpliC::Args_strategy = st.builds(
-    simpliC::Args,
+simpliC_Args_strategy = st.builds(
+    simpliC_Args,
     name=
         safe_text
 )
-simpliC::Decl_strategy = st.builds(
-    simpliC::Decl,
+simpliC_Decl_strategy = st.builds(
+    simpliC_Decl,
     name=
         safe_text
 )
-simpliC::Return_strategy = st.builds(
-    simpliC::Return,
+simpliC_Return_strategy = st.builds(
+    simpliC_Return,
 )
-simpliC::Whilestmt_strategy = st.builds(
-    simpliC::Whilestmt,
+simpliC_Whilestmt_strategy = st.builds(
+    simpliC_Whilestmt,
 )
-simpliC::Ifstmt_strategy = st.builds(
-    simpliC::Ifstmt,
+simpliC_Ifstmt_strategy = st.builds(
+    simpliC_Ifstmt,
 )
 Factor_strategy = st.builds(
     Factor,
 )
-simpliC::IDuse_strategy = st.builds(
-    simpliC::IDuse,
+simpliC_IDuse_strategy = st.builds(
+    simpliC_IDuse,
 )
-simpliC::ExprCall_strategy = st.builds(
-    simpliC::ExprCall,
+simpliC_ExprCall_strategy = st.builds(
+    simpliC_ExprCall,
 )
-simpliC::Expr_strategy = st.builds(
-    simpliC::Expr,
+simpliC_Expr_strategy = st.builds(
+    simpliC_Expr,
     op=
         safe_text
 )
-simpliC::Call_strategy = st.builds(
-    simpliC::Call,
+simpliC_Call_strategy = st.builds(
+    simpliC_Call,
 )
-simpliC::Stmt_strategy = st.builds(
-    simpliC::Stmt,
+simpliC_Stmt_strategy = st.builds(
+    simpliC_Stmt,
 )
-simpliC::Type_strategy = st.builds(
-    simpliC::Type,
+simpliC_Type_strategy = st.builds(
+    simpliC_Type,
     name=
         safe_text
 )
-simpliC::Function_strategy = st.builds(
-    simpliC::Function,
+simpliC_Function_strategy = st.builds(
+    simpliC_Function,
     name=
         safe_text
 )
-simpliC::Model_strategy = st.builds(
-    simpliC::Model,
+simpliC_Model_strategy = st.builds(
+    simpliC_Model,
 )
 
-@given(instance=simpliC::Factor_strategy)
+@given(instance=simpliC_Factor_strategy)
 @settings(max_examples=50)
-def test_simplic::factor_instantiation(instance):
-    assert isinstance(instance, simpliC::Factor)
+def test_simplic_factor_instantiation(instance):
+    assert isinstance(instance, simpliC_Factor)
 
-@given(instance=simpliC::TFact_strategy)
+@given(instance=simpliC_TFact_strategy)
 @settings(max_examples=50)
-def test_simplic::tfact_instantiation(instance):
-    assert isinstance(instance, simpliC::TFact)
-
-@given(instance=simpliC::TFact_strategy)
-def test_simplic::tfact_op_type(instance):
-    assert isinstance(instance.op, str)
+def test_simplic_tfact_instantiation(instance):
+    assert isinstance(instance, simpliC_TFact)
 
 
-@given(instance=simpliC::TFact_strategy)
-def test_simplic::tfact_op_setter(instance):
+
+@given(instance=simpliC_TFact_strategy)
+def test_simplic_tfact_op_setter(instance):
     original = instance.op
     instance.op = original
     assert instance.op == original
 
-@given(instance=simpliC::EObject_strategy)
+@given(instance=simpliC_EObject_strategy)
 @settings(max_examples=50)
-def test_simplic::eobject_instantiation(instance):
-    assert isinstance(instance, simpliC::EObject)
+def test_simplic_eobject_instantiation(instance):
+    assert isinstance(instance, simpliC_EObject)
 
 @given(instance=Stmt_strategy)
 @settings(max_examples=50)
 def test_stmt_instantiation(instance):
     assert isinstance(instance, Stmt)
 
-@given(instance=simpliC::Typedef_strategy)
+@given(instance=simpliC_Typedef_strategy)
 @settings(max_examples=50)
-def test_simplic::typedef_instantiation(instance):
-    assert isinstance(instance, simpliC::Typedef)
-
-@given(instance=simpliC::Typedef_strategy)
-def test_simplic::typedef_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_simplic_typedef_instantiation(instance):
+    assert isinstance(instance, simpliC_Typedef)
 
 
-@given(instance=simpliC::Typedef_strategy)
-def test_simplic::typedef_name_setter(instance):
+
+@given(instance=simpliC_Typedef_strategy)
+def test_simplic_typedef_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=simpliC::Assign_strategy)
+@given(instance=simpliC_Assign_strategy)
 @settings(max_examples=50)
-def test_simplic::assign_instantiation(instance):
-    assert isinstance(instance, simpliC::Assign)
-
-@given(instance=simpliC::Assign_strategy)
-def test_simplic::assign_var_type(instance):
-    assert isinstance(instance.var, str)
+def test_simplic_assign_instantiation(instance):
+    assert isinstance(instance, simpliC_Assign)
 
 
-@given(instance=simpliC::Assign_strategy)
-def test_simplic::assign_var_setter(instance):
+
+@given(instance=simpliC_Assign_strategy)
+def test_simplic_assign_var_setter(instance):
     original = instance.var
     instance.var = original
     assert instance.var == original
 
-@given(instance=simpliC::Block_strategy)
+@given(instance=simpliC_Block_strategy)
 @settings(max_examples=50)
-def test_simplic::block_instantiation(instance):
-    assert isinstance(instance, simpliC::Block)
+def test_simplic_block_instantiation(instance):
+    assert isinstance(instance, simpliC_Block)
 
-@given(instance=simpliC::Args_strategy)
+@given(instance=simpliC_Args_strategy)
 @settings(max_examples=50)
-def test_simplic::args_instantiation(instance):
-    assert isinstance(instance, simpliC::Args)
-
-@given(instance=simpliC::Args_strategy)
-def test_simplic::args_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_simplic_args_instantiation(instance):
+    assert isinstance(instance, simpliC_Args)
 
 
-@given(instance=simpliC::Args_strategy)
-def test_simplic::args_name_setter(instance):
+
+@given(instance=simpliC_Args_strategy)
+def test_simplic_args_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=simpliC::Decl_strategy)
+@given(instance=simpliC_Decl_strategy)
 @settings(max_examples=50)
-def test_simplic::decl_instantiation(instance):
-    assert isinstance(instance, simpliC::Decl)
-
-@given(instance=simpliC::Decl_strategy)
-def test_simplic::decl_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_simplic_decl_instantiation(instance):
+    assert isinstance(instance, simpliC_Decl)
 
 
-@given(instance=simpliC::Decl_strategy)
-def test_simplic::decl_name_setter(instance):
+
+@given(instance=simpliC_Decl_strategy)
+def test_simplic_decl_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=simpliC::Return_strategy)
+@given(instance=simpliC_Return_strategy)
 @settings(max_examples=50)
-def test_simplic::return_instantiation(instance):
-    assert isinstance(instance, simpliC::Return)
+def test_simplic_return_instantiation(instance):
+    assert isinstance(instance, simpliC_Return)
 
-@given(instance=simpliC::Whilestmt_strategy)
+@given(instance=simpliC_Whilestmt_strategy)
 @settings(max_examples=50)
-def test_simplic::whilestmt_instantiation(instance):
-    assert isinstance(instance, simpliC::Whilestmt)
+def test_simplic_whilestmt_instantiation(instance):
+    assert isinstance(instance, simpliC_Whilestmt)
 
-@given(instance=simpliC::Ifstmt_strategy)
+@given(instance=simpliC_Ifstmt_strategy)
 @settings(max_examples=50)
-def test_simplic::ifstmt_instantiation(instance):
-    assert isinstance(instance, simpliC::Ifstmt)
+def test_simplic_ifstmt_instantiation(instance):
+    assert isinstance(instance, simpliC_Ifstmt)
 
 @given(instance=Factor_strategy)
 @settings(max_examples=50)
 def test_factor_instantiation(instance):
     assert isinstance(instance, Factor)
 
-@given(instance=simpliC::IDuse_strategy)
+@given(instance=simpliC_IDuse_strategy)
 @settings(max_examples=50)
-def test_simplic::iduse_instantiation(instance):
-    assert isinstance(instance, simpliC::IDuse)
+def test_simplic_iduse_instantiation(instance):
+    assert isinstance(instance, simpliC_IDuse)
 
-@given(instance=simpliC::ExprCall_strategy)
+@given(instance=simpliC_ExprCall_strategy)
 @settings(max_examples=50)
-def test_simplic::exprcall_instantiation(instance):
-    assert isinstance(instance, simpliC::ExprCall)
+def test_simplic_exprcall_instantiation(instance):
+    assert isinstance(instance, simpliC_ExprCall)
 
-@given(instance=simpliC::Expr_strategy)
+@given(instance=simpliC_Expr_strategy)
 @settings(max_examples=50)
-def test_simplic::expr_instantiation(instance):
-    assert isinstance(instance, simpliC::Expr)
-
-@given(instance=simpliC::Expr_strategy)
-def test_simplic::expr_op_type(instance):
-    assert isinstance(instance.op, str)
+def test_simplic_expr_instantiation(instance):
+    assert isinstance(instance, simpliC_Expr)
 
 
-@given(instance=simpliC::Expr_strategy)
-def test_simplic::expr_op_setter(instance):
+
+@given(instance=simpliC_Expr_strategy)
+def test_simplic_expr_op_setter(instance):
     original = instance.op
     instance.op = original
     assert instance.op == original
 
-@given(instance=simpliC::Call_strategy)
+@given(instance=simpliC_Call_strategy)
 @settings(max_examples=50)
-def test_simplic::call_instantiation(instance):
-    assert isinstance(instance, simpliC::Call)
+def test_simplic_call_instantiation(instance):
+    assert isinstance(instance, simpliC_Call)
 
-@given(instance=simpliC::Stmt_strategy)
+@given(instance=simpliC_Stmt_strategy)
 @settings(max_examples=50)
-def test_simplic::stmt_instantiation(instance):
-    assert isinstance(instance, simpliC::Stmt)
+def test_simplic_stmt_instantiation(instance):
+    assert isinstance(instance, simpliC_Stmt)
 
-@given(instance=simpliC::Type_strategy)
+@given(instance=simpliC_Type_strategy)
 @settings(max_examples=50)
-def test_simplic::type_instantiation(instance):
-    assert isinstance(instance, simpliC::Type)
-
-@given(instance=simpliC::Type_strategy)
-def test_simplic::type_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_simplic_type_instantiation(instance):
+    assert isinstance(instance, simpliC_Type)
 
 
-@given(instance=simpliC::Type_strategy)
-def test_simplic::type_name_setter(instance):
+
+@given(instance=simpliC_Type_strategy)
+def test_simplic_type_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=simpliC::Function_strategy)
+@given(instance=simpliC_Function_strategy)
 @settings(max_examples=50)
-def test_simplic::function_instantiation(instance):
-    assert isinstance(instance, simpliC::Function)
-
-@given(instance=simpliC::Function_strategy)
-def test_simplic::function_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_simplic_function_instantiation(instance):
+    assert isinstance(instance, simpliC_Function)
 
 
-@given(instance=simpliC::Function_strategy)
-def test_simplic::function_name_setter(instance):
+
+@given(instance=simpliC_Function_strategy)
+def test_simplic_function_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=simpliC::Model_strategy)
+@given(instance=simpliC_Model_strategy)
 @settings(max_examples=50)
-def test_simplic::model_instantiation(instance):
-    assert isinstance(instance, simpliC::Model)
+def test_simplic_model_instantiation(instance):
+    assert isinstance(instance, simpliC_Model)

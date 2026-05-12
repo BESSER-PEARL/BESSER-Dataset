@@ -3,102 +3,102 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    stext::NamedElement,
-    stext::State,
-    stext::Feature,
+from python_code import (
+    stext_NamedElement,
+    stext_State,
+    stext_Feature,
     Expression,
-    stext::BitwiseOrExpression,
-    stext::NumericalAddSubtractExpression,
-    stext::EventValueReferenceExpression,
-    stext::LogicalNotExpression,
-    stext::AssignmentExpression,
-    stext::ActiveStateReferenceExpression,
-    stext::TypedElementReferenceExpression,
-    stext::LogicalOrExpression,
-    stext::BitwiseXorExpression,
-    stext::NumericalMultiplyDivideExpression,
-    stext::BitwiseAndExpression,
-    stext::LogicalAndExpression,
-    stext::PrimitiveValueExpression,
-    stext::NumericalUnaryExpression,
-    stext::FeatureCall,
-    stext::ConditionalExpression,
-    stext::LogicalRelationExpression,
-    stext::ShiftExpression,
-    stext::EventRaisingExpression,
+    stext_BitwiseAndExpression,
+    stext_LogicalRelationExpression,
+    stext_EventValueReferenceExpression,
+    stext_ShiftExpression,
+    stext_TypedElementReferenceExpression,
+    stext_AssignmentExpression,
+    stext_FeatureCall,
+    stext_LogicalNotExpression,
+    stext_BitwiseOrExpression,
+    stext_ActiveStateReferenceExpression,
+    stext_NumericalUnaryExpression,
+    stext_LogicalAndExpression,
+    stext_PrimitiveValueExpression,
+    stext_NumericalAddSubtractExpression,
+    stext_BitwiseXorExpression,
+    stext_NumericalMultiplyDivideExpression,
+    stext_LogicalOrExpression,
+    stext_ConditionalExpression,
+    stext_EventRaisingExpression,
     Effect,
-    stext::ReactionEffect,
+    stext_ReactionEffect,
     Trigger,
-    stext::ReactionTrigger,
+    stext_ReactionTrigger,
     Operation,
     Declaration,
-    stext::OperationDefinition,
+    stext_OperationDefinition,
     Property,
     Variable,
-    stext::VariableDefinition,
+    stext_VariableDefinition,
     Literal,
-    stext::RealLiteral,
-    stext::StringLiteral,
-    stext::HexLiteral,
-    stext::IntLiteral,
-    stext::BoolLiteral,
-    stext::Literal,
+    stext_StringLiteral,
+    stext_HexLiteral,
+    stext_IntLiteral,
+    stext_RealLiteral,
+    stext_BoolLiteral,
+    stext_Literal,
     Statement,
     BuiltinEventSpec,
-    stext::AlwaysEvent,
-    stext::ExitEvent,
-    stext::OnCycleEvent,
-    stext::DefaultEvent,
-    stext::EntryEvent,
+    stext_ExitEvent,
+    stext_OnCycleEvent,
+    stext_AlwaysEvent,
+    stext_DefaultEvent,
+    stext_EntryEvent,
     EventSpec,
-    stext::BuiltinEventSpec,
-    stext::TimeEventSpec,
-    stext::RegularEventSpec,
-    stext::EventSpec,
-    stext::Exitpoint,
-    stext::Entrypoint,
+    stext_BuiltinEventSpec,
+    stext_TimeEventSpec,
+    stext_RegularEventSpec,
+    stext_EventSpec,
+    stext_Exitpoint,
+    stext_Entrypoint,
     ReactionProperty,
-    stext::ExitPointSpec,
-    stext::EntryPointSpec,
-    stext::ReactionProperty,
-    stext::ReactionProperties,
+    stext_ExitPointSpec,
+    stext_EntryPointSpec,
+    stext_ReactionProperty,
+    stext_ReactionProperties,
     Reaction,
-    stext::LocalReaction,
-    stext::Type,
-    stext::DefRoot,
-    stext::Root,
-    stext::Expression,
-    stext::EventDerivation,
+    stext_LocalReaction,
+    stext_Type,
+    stext_DefRoot,
+    stext_Root,
+    stext_Expression,
+    stext_EventDerivation,
     Event,
-    stext::EventDefinition,
+    stext_EventDefinition,
     NamedElement,
     StatechartScope,
-    stext::InternalScope,
-    stext::InterfaceScope,
+    stext_InternalScope,
+    stext_InterfaceScope,
     Scope,
-    stext::SimpleScope,
-    stext::TransitionReaction,
-    stext::Scope,
-    stext::StatechartScope,
-    stext::TransitionSpecification,
-    stext::StateSpecification,
-    stext::StatechartSpecification,
+    stext_SimpleScope,
+    stext_TransitionReaction,
+    stext_Scope,
+    stext_StatechartScope,
+    stext_TransitionSpecification,
+    stext_StateSpecification,
+    stext_StatechartSpecification,
     DefRoot,
-    stext::StateRoot,
-    stext::TransitionRoot,
-    stext::StatechartRoot,
-    Direction,
-    ShiftOperator,
-    UnaryOperator,
-    TimeUnit,
-    AdditiveOperator,
-    TimeEventType,
-    MultiplicativeOperator,
+    stext_StateRoot,
+    stext_TransitionRoot,
+    stext_StatechartRoot,
     RelationalOperator,
+    TimeUnit,
+    Direction,
+    UnaryOperator,
+    AdditiveOperator,
     AssignmentOperator,
+    MultiplicativeOperator,
+    TimeEventType,
+    ShiftOperator,
 )
 
 # =============================================================================
@@ -107,44 +107,44 @@ from classes import (
 
 
 
-def test_stext::namedelement_is_not_abstract():
-    assert not inspect.isabstract(stext::NamedElement)
+def test_stext_namedelement_is_not_abstract():
+    assert not inspect.isabstract(stext_NamedElement)
 
 
-def test_stext::namedelement_constructor_exists():
-    assert callable(stext::NamedElement.__init__)
+def test_stext_namedelement_constructor_exists():
+    assert callable(stext_NamedElement.__init__)
 
 
-def test_stext::namedelement_constructor_args():
-    sig = inspect.signature(stext::NamedElement.__init__)
+def test_stext_namedelement_constructor_args():
+    sig = inspect.signature(stext_NamedElement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_stext::state_is_not_abstract():
-    assert not inspect.isabstract(stext::State)
+def test_stext_state_is_not_abstract():
+    assert not inspect.isabstract(stext_State)
 
 
-def test_stext::state_constructor_exists():
-    assert callable(stext::State.__init__)
+def test_stext_state_constructor_exists():
+    assert callable(stext_State.__init__)
 
 
-def test_stext::state_constructor_args():
-    sig = inspect.signature(stext::State.__init__)
+def test_stext_state_constructor_args():
+    sig = inspect.signature(stext_State.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_stext::feature_is_not_abstract():
-    assert not inspect.isabstract(stext::Feature)
+def test_stext_feature_is_not_abstract():
+    assert not inspect.isabstract(stext_Feature)
 
 
-def test_stext::feature_constructor_exists():
-    assert callable(stext::Feature.__init__)
+def test_stext_feature_constructor_exists():
+    assert callable(stext_Feature.__init__)
 
 
-def test_stext::feature_constructor_args():
-    sig = inspect.signature(stext::Feature.__init__)
+def test_stext_feature_constructor_args():
+    sig = inspect.signature(stext_Feature.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -163,37 +163,37 @@ def test_expression_constructor_args():
 
 
 
-def test_stext::bitwiseorexpression_is_not_abstract():
-    assert not inspect.isabstract(stext::BitwiseOrExpression)
+def test_stext_bitwiseandexpression_is_not_abstract():
+    assert not inspect.isabstract(stext_BitwiseAndExpression)
 
 
-def test_stext::bitwiseorexpression_constructor_exists():
-    assert callable(stext::BitwiseOrExpression.__init__)
+def test_stext_bitwiseandexpression_constructor_exists():
+    assert callable(stext_BitwiseAndExpression.__init__)
 
 
-def test_stext::bitwiseorexpression_constructor_args():
-    sig = inspect.signature(stext::BitwiseOrExpression.__init__)
+def test_stext_bitwiseandexpression_constructor_args():
+    sig = inspect.signature(stext_BitwiseAndExpression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_stext::numericaladdsubtractexpression_is_not_abstract():
-    assert not inspect.isabstract(stext::NumericalAddSubtractExpression)
+def test_stext_logicalrelationexpression_is_not_abstract():
+    assert not inspect.isabstract(stext_LogicalRelationExpression)
 
 
-def test_stext::numericaladdsubtractexpression_constructor_exists():
-    assert callable(stext::NumericalAddSubtractExpression.__init__)
+def test_stext_logicalrelationexpression_constructor_exists():
+    assert callable(stext_LogicalRelationExpression.__init__)
 
 
-def test_stext::numericaladdsubtractexpression_constructor_args():
-    sig = inspect.signature(stext::NumericalAddSubtractExpression.__init__)
+def test_stext_logicalrelationexpression_constructor_args():
+    sig = inspect.signature(stext_LogicalRelationExpression.__init__)
     params = list(sig.parameters.keys())
     assert "operator" in params, "Missing parameter 'operator'"
 
-def test_stext::numericaladdsubtractexpression_has_operator():
-    assert hasattr(stext::NumericalAddSubtractExpression, "operator")
+def test_stext_logicalrelationexpression_has_operator():
+    assert hasattr(stext_LogicalRelationExpression, "operator")
     descriptor = None
-    for klass in stext::NumericalAddSubtractExpression.__mro__:
+    for klass in stext_LogicalRelationExpression.__mro__:
         if "operator" in klass.__dict__:
             descriptor = klass.__dict__["operator"]
             break
@@ -201,51 +201,37 @@ def test_stext::numericaladdsubtractexpression_has_operator():
 
 
 
-def test_stext::eventvaluereferenceexpression_is_not_abstract():
-    assert not inspect.isabstract(stext::EventValueReferenceExpression)
+def test_stext_eventvaluereferenceexpression_is_not_abstract():
+    assert not inspect.isabstract(stext_EventValueReferenceExpression)
 
 
-def test_stext::eventvaluereferenceexpression_constructor_exists():
-    assert callable(stext::EventValueReferenceExpression.__init__)
+def test_stext_eventvaluereferenceexpression_constructor_exists():
+    assert callable(stext_EventValueReferenceExpression.__init__)
 
 
-def test_stext::eventvaluereferenceexpression_constructor_args():
-    sig = inspect.signature(stext::EventValueReferenceExpression.__init__)
+def test_stext_eventvaluereferenceexpression_constructor_args():
+    sig = inspect.signature(stext_EventValueReferenceExpression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_stext::logicalnotexpression_is_not_abstract():
-    assert not inspect.isabstract(stext::LogicalNotExpression)
+def test_stext_shiftexpression_is_not_abstract():
+    assert not inspect.isabstract(stext_ShiftExpression)
 
 
-def test_stext::logicalnotexpression_constructor_exists():
-    assert callable(stext::LogicalNotExpression.__init__)
+def test_stext_shiftexpression_constructor_exists():
+    assert callable(stext_ShiftExpression.__init__)
 
 
-def test_stext::logicalnotexpression_constructor_args():
-    sig = inspect.signature(stext::LogicalNotExpression.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_stext::assignmentexpression_is_not_abstract():
-    assert not inspect.isabstract(stext::AssignmentExpression)
-
-
-def test_stext::assignmentexpression_constructor_exists():
-    assert callable(stext::AssignmentExpression.__init__)
-
-
-def test_stext::assignmentexpression_constructor_args():
-    sig = inspect.signature(stext::AssignmentExpression.__init__)
+def test_stext_shiftexpression_constructor_args():
+    sig = inspect.signature(stext_ShiftExpression.__init__)
     params = list(sig.parameters.keys())
     assert "operator" in params, "Missing parameter 'operator'"
 
-def test_stext::assignmentexpression_has_operator():
-    assert hasattr(stext::AssignmentExpression, "operator")
+def test_stext_shiftexpression_has_operator():
+    assert hasattr(stext_ShiftExpression, "operator")
     descriptor = None
-    for klass in stext::AssignmentExpression.__mro__:
+    for klass in stext_ShiftExpression.__mro__:
         if "operator" in klass.__dict__:
             descriptor = klass.__dict__["operator"]
             break
@@ -253,79 +239,37 @@ def test_stext::assignmentexpression_has_operator():
 
 
 
-def test_stext::activestatereferenceexpression_is_not_abstract():
-    assert not inspect.isabstract(stext::ActiveStateReferenceExpression)
+def test_stext_typedelementreferenceexpression_is_not_abstract():
+    assert not inspect.isabstract(stext_TypedElementReferenceExpression)
 
 
-def test_stext::activestatereferenceexpression_constructor_exists():
-    assert callable(stext::ActiveStateReferenceExpression.__init__)
+def test_stext_typedelementreferenceexpression_constructor_exists():
+    assert callable(stext_TypedElementReferenceExpression.__init__)
 
 
-def test_stext::activestatereferenceexpression_constructor_args():
-    sig = inspect.signature(stext::ActiveStateReferenceExpression.__init__)
+def test_stext_typedelementreferenceexpression_constructor_args():
+    sig = inspect.signature(stext_TypedElementReferenceExpression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_stext::typedelementreferenceexpression_is_not_abstract():
-    assert not inspect.isabstract(stext::TypedElementReferenceExpression)
+def test_stext_assignmentexpression_is_not_abstract():
+    assert not inspect.isabstract(stext_AssignmentExpression)
 
 
-def test_stext::typedelementreferenceexpression_constructor_exists():
-    assert callable(stext::TypedElementReferenceExpression.__init__)
+def test_stext_assignmentexpression_constructor_exists():
+    assert callable(stext_AssignmentExpression.__init__)
 
 
-def test_stext::typedelementreferenceexpression_constructor_args():
-    sig = inspect.signature(stext::TypedElementReferenceExpression.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_stext::logicalorexpression_is_not_abstract():
-    assert not inspect.isabstract(stext::LogicalOrExpression)
-
-
-def test_stext::logicalorexpression_constructor_exists():
-    assert callable(stext::LogicalOrExpression.__init__)
-
-
-def test_stext::logicalorexpression_constructor_args():
-    sig = inspect.signature(stext::LogicalOrExpression.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_stext::bitwisexorexpression_is_not_abstract():
-    assert not inspect.isabstract(stext::BitwiseXorExpression)
-
-
-def test_stext::bitwisexorexpression_constructor_exists():
-    assert callable(stext::BitwiseXorExpression.__init__)
-
-
-def test_stext::bitwisexorexpression_constructor_args():
-    sig = inspect.signature(stext::BitwiseXorExpression.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_stext::numericalmultiplydivideexpression_is_not_abstract():
-    assert not inspect.isabstract(stext::NumericalMultiplyDivideExpression)
-
-
-def test_stext::numericalmultiplydivideexpression_constructor_exists():
-    assert callable(stext::NumericalMultiplyDivideExpression.__init__)
-
-
-def test_stext::numericalmultiplydivideexpression_constructor_args():
-    sig = inspect.signature(stext::NumericalMultiplyDivideExpression.__init__)
+def test_stext_assignmentexpression_constructor_args():
+    sig = inspect.signature(stext_AssignmentExpression.__init__)
     params = list(sig.parameters.keys())
     assert "operator" in params, "Missing parameter 'operator'"
 
-def test_stext::numericalmultiplydivideexpression_has_operator():
-    assert hasattr(stext::NumericalMultiplyDivideExpression, "operator")
+def test_stext_assignmentexpression_has_operator():
+    assert hasattr(stext_AssignmentExpression, "operator")
     descriptor = None
-    for klass in stext::NumericalMultiplyDivideExpression.__mro__:
+    for klass in stext_AssignmentExpression.__mro__:
         if "operator" in klass.__dict__:
             descriptor = klass.__dict__["operator"]
             break
@@ -333,89 +277,23 @@ def test_stext::numericalmultiplydivideexpression_has_operator():
 
 
 
-def test_stext::bitwiseandexpression_is_not_abstract():
-    assert not inspect.isabstract(stext::BitwiseAndExpression)
+def test_stext_featurecall_is_not_abstract():
+    assert not inspect.isabstract(stext_FeatureCall)
 
 
-def test_stext::bitwiseandexpression_constructor_exists():
-    assert callable(stext::BitwiseAndExpression.__init__)
+def test_stext_featurecall_constructor_exists():
+    assert callable(stext_FeatureCall.__init__)
 
 
-def test_stext::bitwiseandexpression_constructor_args():
-    sig = inspect.signature(stext::BitwiseAndExpression.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_stext::logicalandexpression_is_not_abstract():
-    assert not inspect.isabstract(stext::LogicalAndExpression)
-
-
-def test_stext::logicalandexpression_constructor_exists():
-    assert callable(stext::LogicalAndExpression.__init__)
-
-
-def test_stext::logicalandexpression_constructor_args():
-    sig = inspect.signature(stext::LogicalAndExpression.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_stext::primitivevalueexpression_is_not_abstract():
-    assert not inspect.isabstract(stext::PrimitiveValueExpression)
-
-
-def test_stext::primitivevalueexpression_constructor_exists():
-    assert callable(stext::PrimitiveValueExpression.__init__)
-
-
-def test_stext::primitivevalueexpression_constructor_args():
-    sig = inspect.signature(stext::PrimitiveValueExpression.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_stext::numericalunaryexpression_is_not_abstract():
-    assert not inspect.isabstract(stext::NumericalUnaryExpression)
-
-
-def test_stext::numericalunaryexpression_constructor_exists():
-    assert callable(stext::NumericalUnaryExpression.__init__)
-
-
-def test_stext::numericalunaryexpression_constructor_args():
-    sig = inspect.signature(stext::NumericalUnaryExpression.__init__)
-    params = list(sig.parameters.keys())
-    assert "operator" in params, "Missing parameter 'operator'"
-
-def test_stext::numericalunaryexpression_has_operator():
-    assert hasattr(stext::NumericalUnaryExpression, "operator")
-    descriptor = None
-    for klass in stext::NumericalUnaryExpression.__mro__:
-        if "operator" in klass.__dict__:
-            descriptor = klass.__dict__["operator"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_stext::featurecall_is_not_abstract():
-    assert not inspect.isabstract(stext::FeatureCall)
-
-
-def test_stext::featurecall_constructor_exists():
-    assert callable(stext::FeatureCall.__init__)
-
-
-def test_stext::featurecall_constructor_args():
-    sig = inspect.signature(stext::FeatureCall.__init__)
+def test_stext_featurecall_constructor_args():
+    sig = inspect.signature(stext_FeatureCall.__init__)
     params = list(sig.parameters.keys())
     assert "operationCall" in params, "Missing parameter 'operationCall'"
 
-def test_stext::featurecall_has_operationCall():
-    assert hasattr(stext::FeatureCall, "operationCall")
+def test_stext_featurecall_has_operationCall():
+    assert hasattr(stext_FeatureCall, "operationCall")
     descriptor = None
-    for klass in stext::FeatureCall.__mro__:
+    for klass in stext_FeatureCall.__mro__:
         if "operationCall" in klass.__dict__:
             descriptor = klass.__dict__["operationCall"]
             break
@@ -423,37 +301,65 @@ def test_stext::featurecall_has_operationCall():
 
 
 
-def test_stext::conditionalexpression_is_not_abstract():
-    assert not inspect.isabstract(stext::ConditionalExpression)
+def test_stext_logicalnotexpression_is_not_abstract():
+    assert not inspect.isabstract(stext_LogicalNotExpression)
 
 
-def test_stext::conditionalexpression_constructor_exists():
-    assert callable(stext::ConditionalExpression.__init__)
+def test_stext_logicalnotexpression_constructor_exists():
+    assert callable(stext_LogicalNotExpression.__init__)
 
 
-def test_stext::conditionalexpression_constructor_args():
-    sig = inspect.signature(stext::ConditionalExpression.__init__)
+def test_stext_logicalnotexpression_constructor_args():
+    sig = inspect.signature(stext_LogicalNotExpression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_stext::logicalrelationexpression_is_not_abstract():
-    assert not inspect.isabstract(stext::LogicalRelationExpression)
+def test_stext_bitwiseorexpression_is_not_abstract():
+    assert not inspect.isabstract(stext_BitwiseOrExpression)
 
 
-def test_stext::logicalrelationexpression_constructor_exists():
-    assert callable(stext::LogicalRelationExpression.__init__)
+def test_stext_bitwiseorexpression_constructor_exists():
+    assert callable(stext_BitwiseOrExpression.__init__)
 
 
-def test_stext::logicalrelationexpression_constructor_args():
-    sig = inspect.signature(stext::LogicalRelationExpression.__init__)
+def test_stext_bitwiseorexpression_constructor_args():
+    sig = inspect.signature(stext_BitwiseOrExpression.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_stext_activestatereferenceexpression_is_not_abstract():
+    assert not inspect.isabstract(stext_ActiveStateReferenceExpression)
+
+
+def test_stext_activestatereferenceexpression_constructor_exists():
+    assert callable(stext_ActiveStateReferenceExpression.__init__)
+
+
+def test_stext_activestatereferenceexpression_constructor_args():
+    sig = inspect.signature(stext_ActiveStateReferenceExpression.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_stext_numericalunaryexpression_is_not_abstract():
+    assert not inspect.isabstract(stext_NumericalUnaryExpression)
+
+
+def test_stext_numericalunaryexpression_constructor_exists():
+    assert callable(stext_NumericalUnaryExpression.__init__)
+
+
+def test_stext_numericalunaryexpression_constructor_args():
+    sig = inspect.signature(stext_NumericalUnaryExpression.__init__)
     params = list(sig.parameters.keys())
     assert "operator" in params, "Missing parameter 'operator'"
 
-def test_stext::logicalrelationexpression_has_operator():
-    assert hasattr(stext::LogicalRelationExpression, "operator")
+def test_stext_numericalunaryexpression_has_operator():
+    assert hasattr(stext_NumericalUnaryExpression, "operator")
     descriptor = None
-    for klass in stext::LogicalRelationExpression.__mro__:
+    for klass in stext_NumericalUnaryExpression.__mro__:
         if "operator" in klass.__dict__:
             descriptor = klass.__dict__["operator"]
             break
@@ -461,23 +367,51 @@ def test_stext::logicalrelationexpression_has_operator():
 
 
 
-def test_stext::shiftexpression_is_not_abstract():
-    assert not inspect.isabstract(stext::ShiftExpression)
+def test_stext_logicalandexpression_is_not_abstract():
+    assert not inspect.isabstract(stext_LogicalAndExpression)
 
 
-def test_stext::shiftexpression_constructor_exists():
-    assert callable(stext::ShiftExpression.__init__)
+def test_stext_logicalandexpression_constructor_exists():
+    assert callable(stext_LogicalAndExpression.__init__)
 
 
-def test_stext::shiftexpression_constructor_args():
-    sig = inspect.signature(stext::ShiftExpression.__init__)
+def test_stext_logicalandexpression_constructor_args():
+    sig = inspect.signature(stext_LogicalAndExpression.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_stext_primitivevalueexpression_is_not_abstract():
+    assert not inspect.isabstract(stext_PrimitiveValueExpression)
+
+
+def test_stext_primitivevalueexpression_constructor_exists():
+    assert callable(stext_PrimitiveValueExpression.__init__)
+
+
+def test_stext_primitivevalueexpression_constructor_args():
+    sig = inspect.signature(stext_PrimitiveValueExpression.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_stext_numericaladdsubtractexpression_is_not_abstract():
+    assert not inspect.isabstract(stext_NumericalAddSubtractExpression)
+
+
+def test_stext_numericaladdsubtractexpression_constructor_exists():
+    assert callable(stext_NumericalAddSubtractExpression.__init__)
+
+
+def test_stext_numericaladdsubtractexpression_constructor_args():
+    sig = inspect.signature(stext_NumericalAddSubtractExpression.__init__)
     params = list(sig.parameters.keys())
     assert "operator" in params, "Missing parameter 'operator'"
 
-def test_stext::shiftexpression_has_operator():
-    assert hasattr(stext::ShiftExpression, "operator")
+def test_stext_numericaladdsubtractexpression_has_operator():
+    assert hasattr(stext_NumericalAddSubtractExpression, "operator")
     descriptor = None
-    for klass in stext::ShiftExpression.__mro__:
+    for klass in stext_NumericalAddSubtractExpression.__mro__:
         if "operator" in klass.__dict__:
             descriptor = klass.__dict__["operator"]
             break
@@ -485,16 +419,82 @@ def test_stext::shiftexpression_has_operator():
 
 
 
-def test_stext::eventraisingexpression_is_not_abstract():
-    assert not inspect.isabstract(stext::EventRaisingExpression)
+def test_stext_bitwisexorexpression_is_not_abstract():
+    assert not inspect.isabstract(stext_BitwiseXorExpression)
 
 
-def test_stext::eventraisingexpression_constructor_exists():
-    assert callable(stext::EventRaisingExpression.__init__)
+def test_stext_bitwisexorexpression_constructor_exists():
+    assert callable(stext_BitwiseXorExpression.__init__)
 
 
-def test_stext::eventraisingexpression_constructor_args():
-    sig = inspect.signature(stext::EventRaisingExpression.__init__)
+def test_stext_bitwisexorexpression_constructor_args():
+    sig = inspect.signature(stext_BitwiseXorExpression.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_stext_numericalmultiplydivideexpression_is_not_abstract():
+    assert not inspect.isabstract(stext_NumericalMultiplyDivideExpression)
+
+
+def test_stext_numericalmultiplydivideexpression_constructor_exists():
+    assert callable(stext_NumericalMultiplyDivideExpression.__init__)
+
+
+def test_stext_numericalmultiplydivideexpression_constructor_args():
+    sig = inspect.signature(stext_NumericalMultiplyDivideExpression.__init__)
+    params = list(sig.parameters.keys())
+    assert "operator" in params, "Missing parameter 'operator'"
+
+def test_stext_numericalmultiplydivideexpression_has_operator():
+    assert hasattr(stext_NumericalMultiplyDivideExpression, "operator")
+    descriptor = None
+    for klass in stext_NumericalMultiplyDivideExpression.__mro__:
+        if "operator" in klass.__dict__:
+            descriptor = klass.__dict__["operator"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_stext_logicalorexpression_is_not_abstract():
+    assert not inspect.isabstract(stext_LogicalOrExpression)
+
+
+def test_stext_logicalorexpression_constructor_exists():
+    assert callable(stext_LogicalOrExpression.__init__)
+
+
+def test_stext_logicalorexpression_constructor_args():
+    sig = inspect.signature(stext_LogicalOrExpression.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_stext_conditionalexpression_is_not_abstract():
+    assert not inspect.isabstract(stext_ConditionalExpression)
+
+
+def test_stext_conditionalexpression_constructor_exists():
+    assert callable(stext_ConditionalExpression.__init__)
+
+
+def test_stext_conditionalexpression_constructor_args():
+    sig = inspect.signature(stext_ConditionalExpression.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_stext_eventraisingexpression_is_not_abstract():
+    assert not inspect.isabstract(stext_EventRaisingExpression)
+
+
+def test_stext_eventraisingexpression_constructor_exists():
+    assert callable(stext_EventRaisingExpression.__init__)
+
+
+def test_stext_eventraisingexpression_constructor_args():
+    sig = inspect.signature(stext_EventRaisingExpression.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -513,16 +513,16 @@ def test_effect_constructor_args():
 
 
 
-def test_stext::reactioneffect_is_not_abstract():
-    assert not inspect.isabstract(stext::ReactionEffect)
+def test_stext_reactioneffect_is_not_abstract():
+    assert not inspect.isabstract(stext_ReactionEffect)
 
 
-def test_stext::reactioneffect_constructor_exists():
-    assert callable(stext::ReactionEffect.__init__)
+def test_stext_reactioneffect_constructor_exists():
+    assert callable(stext_ReactionEffect.__init__)
 
 
-def test_stext::reactioneffect_constructor_args():
-    sig = inspect.signature(stext::ReactionEffect.__init__)
+def test_stext_reactioneffect_constructor_args():
+    sig = inspect.signature(stext_ReactionEffect.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -541,16 +541,16 @@ def test_trigger_constructor_args():
 
 
 
-def test_stext::reactiontrigger_is_not_abstract():
-    assert not inspect.isabstract(stext::ReactionTrigger)
+def test_stext_reactiontrigger_is_not_abstract():
+    assert not inspect.isabstract(stext_ReactionTrigger)
 
 
-def test_stext::reactiontrigger_constructor_exists():
-    assert callable(stext::ReactionTrigger.__init__)
+def test_stext_reactiontrigger_constructor_exists():
+    assert callable(stext_ReactionTrigger.__init__)
 
 
-def test_stext::reactiontrigger_constructor_args():
-    sig = inspect.signature(stext::ReactionTrigger.__init__)
+def test_stext_reactiontrigger_constructor_args():
+    sig = inspect.signature(stext_ReactionTrigger.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -583,16 +583,16 @@ def test_declaration_constructor_args():
 
 
 
-def test_stext::operationdefinition_is_not_abstract():
-    assert not inspect.isabstract(stext::OperationDefinition)
+def test_stext_operationdefinition_is_not_abstract():
+    assert not inspect.isabstract(stext_OperationDefinition)
 
 
-def test_stext::operationdefinition_constructor_exists():
-    assert callable(stext::OperationDefinition.__init__)
+def test_stext_operationdefinition_constructor_exists():
+    assert callable(stext_OperationDefinition.__init__)
 
 
-def test_stext::operationdefinition_constructor_args():
-    sig = inspect.signature(stext::OperationDefinition.__init__)
+def test_stext_operationdefinition_constructor_args():
+    sig = inspect.signature(stext_OperationDefinition.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -625,33 +625,33 @@ def test_variable_constructor_args():
 
 
 
-def test_stext::variabledefinition_is_not_abstract():
-    assert not inspect.isabstract(stext::VariableDefinition)
+def test_stext_variabledefinition_is_not_abstract():
+    assert not inspect.isabstract(stext_VariableDefinition)
 
 
-def test_stext::variabledefinition_constructor_exists():
-    assert callable(stext::VariableDefinition.__init__)
+def test_stext_variabledefinition_constructor_exists():
+    assert callable(stext_VariableDefinition.__init__)
 
 
-def test_stext::variabledefinition_constructor_args():
-    sig = inspect.signature(stext::VariableDefinition.__init__)
+def test_stext_variabledefinition_constructor_args():
+    sig = inspect.signature(stext_VariableDefinition.__init__)
     params = list(sig.parameters.keys())
     assert "external" in params, "Missing parameter 'external'"
     assert "readonly" in params, "Missing parameter 'readonly'"
 
-def test_stext::variabledefinition_has_external():
-    assert hasattr(stext::VariableDefinition, "external")
+def test_stext_variabledefinition_has_external():
+    assert hasattr(stext_VariableDefinition, "external")
     descriptor = None
-    for klass in stext::VariableDefinition.__mro__:
+    for klass in stext_VariableDefinition.__mro__:
         if "external" in klass.__dict__:
             descriptor = klass.__dict__["external"]
             break
     assert isinstance(descriptor, property)
 
-def test_stext::variabledefinition_has_readonly():
-    assert hasattr(stext::VariableDefinition, "readonly")
+def test_stext_variabledefinition_has_readonly():
+    assert hasattr(stext_VariableDefinition, "readonly")
     descriptor = None
-    for klass in stext::VariableDefinition.__mro__:
+    for klass in stext_VariableDefinition.__mro__:
         if "readonly" in klass.__dict__:
             descriptor = klass.__dict__["readonly"]
             break
@@ -673,23 +673,23 @@ def test_literal_constructor_args():
 
 
 
-def test_stext::realliteral_is_not_abstract():
-    assert not inspect.isabstract(stext::RealLiteral)
+def test_stext_stringliteral_is_not_abstract():
+    assert not inspect.isabstract(stext_StringLiteral)
 
 
-def test_stext::realliteral_constructor_exists():
-    assert callable(stext::RealLiteral.__init__)
+def test_stext_stringliteral_constructor_exists():
+    assert callable(stext_StringLiteral.__init__)
 
 
-def test_stext::realliteral_constructor_args():
-    sig = inspect.signature(stext::RealLiteral.__init__)
+def test_stext_stringliteral_constructor_args():
+    sig = inspect.signature(stext_StringLiteral.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
 
-def test_stext::realliteral_has_value():
-    assert hasattr(stext::RealLiteral, "value")
+def test_stext_stringliteral_has_value():
+    assert hasattr(stext_StringLiteral, "value")
     descriptor = None
-    for klass in stext::RealLiteral.__mro__:
+    for klass in stext_StringLiteral.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -697,23 +697,23 @@ def test_stext::realliteral_has_value():
 
 
 
-def test_stext::stringliteral_is_not_abstract():
-    assert not inspect.isabstract(stext::StringLiteral)
+def test_stext_hexliteral_is_not_abstract():
+    assert not inspect.isabstract(stext_HexLiteral)
 
 
-def test_stext::stringliteral_constructor_exists():
-    assert callable(stext::StringLiteral.__init__)
+def test_stext_hexliteral_constructor_exists():
+    assert callable(stext_HexLiteral.__init__)
 
 
-def test_stext::stringliteral_constructor_args():
-    sig = inspect.signature(stext::StringLiteral.__init__)
+def test_stext_hexliteral_constructor_args():
+    sig = inspect.signature(stext_HexLiteral.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
 
-def test_stext::stringliteral_has_value():
-    assert hasattr(stext::StringLiteral, "value")
+def test_stext_hexliteral_has_value():
+    assert hasattr(stext_HexLiteral, "value")
     descriptor = None
-    for klass in stext::StringLiteral.__mro__:
+    for klass in stext_HexLiteral.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -721,23 +721,23 @@ def test_stext::stringliteral_has_value():
 
 
 
-def test_stext::hexliteral_is_not_abstract():
-    assert not inspect.isabstract(stext::HexLiteral)
+def test_stext_intliteral_is_not_abstract():
+    assert not inspect.isabstract(stext_IntLiteral)
 
 
-def test_stext::hexliteral_constructor_exists():
-    assert callable(stext::HexLiteral.__init__)
+def test_stext_intliteral_constructor_exists():
+    assert callable(stext_IntLiteral.__init__)
 
 
-def test_stext::hexliteral_constructor_args():
-    sig = inspect.signature(stext::HexLiteral.__init__)
+def test_stext_intliteral_constructor_args():
+    sig = inspect.signature(stext_IntLiteral.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
 
-def test_stext::hexliteral_has_value():
-    assert hasattr(stext::HexLiteral, "value")
+def test_stext_intliteral_has_value():
+    assert hasattr(stext_IntLiteral, "value")
     descriptor = None
-    for klass in stext::HexLiteral.__mro__:
+    for klass in stext_IntLiteral.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -745,23 +745,23 @@ def test_stext::hexliteral_has_value():
 
 
 
-def test_stext::intliteral_is_not_abstract():
-    assert not inspect.isabstract(stext::IntLiteral)
+def test_stext_realliteral_is_not_abstract():
+    assert not inspect.isabstract(stext_RealLiteral)
 
 
-def test_stext::intliteral_constructor_exists():
-    assert callable(stext::IntLiteral.__init__)
+def test_stext_realliteral_constructor_exists():
+    assert callable(stext_RealLiteral.__init__)
 
 
-def test_stext::intliteral_constructor_args():
-    sig = inspect.signature(stext::IntLiteral.__init__)
+def test_stext_realliteral_constructor_args():
+    sig = inspect.signature(stext_RealLiteral.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
 
-def test_stext::intliteral_has_value():
-    assert hasattr(stext::IntLiteral, "value")
+def test_stext_realliteral_has_value():
+    assert hasattr(stext_RealLiteral, "value")
     descriptor = None
-    for klass in stext::IntLiteral.__mro__:
+    for klass in stext_RealLiteral.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -769,23 +769,23 @@ def test_stext::intliteral_has_value():
 
 
 
-def test_stext::boolliteral_is_not_abstract():
-    assert not inspect.isabstract(stext::BoolLiteral)
+def test_stext_boolliteral_is_not_abstract():
+    assert not inspect.isabstract(stext_BoolLiteral)
 
 
-def test_stext::boolliteral_constructor_exists():
-    assert callable(stext::BoolLiteral.__init__)
+def test_stext_boolliteral_constructor_exists():
+    assert callable(stext_BoolLiteral.__init__)
 
 
-def test_stext::boolliteral_constructor_args():
-    sig = inspect.signature(stext::BoolLiteral.__init__)
+def test_stext_boolliteral_constructor_args():
+    sig = inspect.signature(stext_BoolLiteral.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
 
-def test_stext::boolliteral_has_value():
-    assert hasattr(stext::BoolLiteral, "value")
+def test_stext_boolliteral_has_value():
+    assert hasattr(stext_BoolLiteral, "value")
     descriptor = None
-    for klass in stext::BoolLiteral.__mro__:
+    for klass in stext_BoolLiteral.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -793,16 +793,16 @@ def test_stext::boolliteral_has_value():
 
 
 
-def test_stext::literal_is_not_abstract():
-    assert not inspect.isabstract(stext::Literal)
+def test_stext_literal_is_not_abstract():
+    assert not inspect.isabstract(stext_Literal)
 
 
-def test_stext::literal_constructor_exists():
-    assert callable(stext::Literal.__init__)
+def test_stext_literal_constructor_exists():
+    assert callable(stext_Literal.__init__)
 
 
-def test_stext::literal_constructor_args():
-    sig = inspect.signature(stext::Literal.__init__)
+def test_stext_literal_constructor_args():
+    sig = inspect.signature(stext_Literal.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -835,72 +835,72 @@ def test_builtineventspec_constructor_args():
 
 
 
-def test_stext::alwaysevent_is_not_abstract():
-    assert not inspect.isabstract(stext::AlwaysEvent)
+def test_stext_exitevent_is_not_abstract():
+    assert not inspect.isabstract(stext_ExitEvent)
 
 
-def test_stext::alwaysevent_constructor_exists():
-    assert callable(stext::AlwaysEvent.__init__)
+def test_stext_exitevent_constructor_exists():
+    assert callable(stext_ExitEvent.__init__)
 
 
-def test_stext::alwaysevent_constructor_args():
-    sig = inspect.signature(stext::AlwaysEvent.__init__)
+def test_stext_exitevent_constructor_args():
+    sig = inspect.signature(stext_ExitEvent.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_stext::exitevent_is_not_abstract():
-    assert not inspect.isabstract(stext::ExitEvent)
+def test_stext_oncycleevent_is_not_abstract():
+    assert not inspect.isabstract(stext_OnCycleEvent)
 
 
-def test_stext::exitevent_constructor_exists():
-    assert callable(stext::ExitEvent.__init__)
+def test_stext_oncycleevent_constructor_exists():
+    assert callable(stext_OnCycleEvent.__init__)
 
 
-def test_stext::exitevent_constructor_args():
-    sig = inspect.signature(stext::ExitEvent.__init__)
+def test_stext_oncycleevent_constructor_args():
+    sig = inspect.signature(stext_OnCycleEvent.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_stext::oncycleevent_is_not_abstract():
-    assert not inspect.isabstract(stext::OnCycleEvent)
+def test_stext_alwaysevent_is_not_abstract():
+    assert not inspect.isabstract(stext_AlwaysEvent)
 
 
-def test_stext::oncycleevent_constructor_exists():
-    assert callable(stext::OnCycleEvent.__init__)
+def test_stext_alwaysevent_constructor_exists():
+    assert callable(stext_AlwaysEvent.__init__)
 
 
-def test_stext::oncycleevent_constructor_args():
-    sig = inspect.signature(stext::OnCycleEvent.__init__)
+def test_stext_alwaysevent_constructor_args():
+    sig = inspect.signature(stext_AlwaysEvent.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_stext::defaultevent_is_not_abstract():
-    assert not inspect.isabstract(stext::DefaultEvent)
+def test_stext_defaultevent_is_not_abstract():
+    assert not inspect.isabstract(stext_DefaultEvent)
 
 
-def test_stext::defaultevent_constructor_exists():
-    assert callable(stext::DefaultEvent.__init__)
+def test_stext_defaultevent_constructor_exists():
+    assert callable(stext_DefaultEvent.__init__)
 
 
-def test_stext::defaultevent_constructor_args():
-    sig = inspect.signature(stext::DefaultEvent.__init__)
+def test_stext_defaultevent_constructor_args():
+    sig = inspect.signature(stext_DefaultEvent.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_stext::entryevent_is_not_abstract():
-    assert not inspect.isabstract(stext::EntryEvent)
+def test_stext_entryevent_is_not_abstract():
+    assert not inspect.isabstract(stext_EntryEvent)
 
 
-def test_stext::entryevent_constructor_exists():
-    assert callable(stext::EntryEvent.__init__)
+def test_stext_entryevent_constructor_exists():
+    assert callable(stext_EntryEvent.__init__)
 
 
-def test_stext::entryevent_constructor_args():
-    sig = inspect.signature(stext::EntryEvent.__init__)
+def test_stext_entryevent_constructor_args():
+    sig = inspect.signature(stext_EntryEvent.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -919,116 +919,116 @@ def test_eventspec_constructor_args():
 
 
 
-def test_stext::builtineventspec_is_not_abstract():
-    assert not inspect.isabstract(stext::BuiltinEventSpec)
+def test_stext_builtineventspec_is_not_abstract():
+    assert not inspect.isabstract(stext_BuiltinEventSpec)
 
 
-def test_stext::builtineventspec_constructor_exists():
-    assert callable(stext::BuiltinEventSpec.__init__)
+def test_stext_builtineventspec_constructor_exists():
+    assert callable(stext_BuiltinEventSpec.__init__)
 
 
-def test_stext::builtineventspec_constructor_args():
-    sig = inspect.signature(stext::BuiltinEventSpec.__init__)
+def test_stext_builtineventspec_constructor_args():
+    sig = inspect.signature(stext_BuiltinEventSpec.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_stext::timeeventspec_is_not_abstract():
-    assert not inspect.isabstract(stext::TimeEventSpec)
+def test_stext_timeeventspec_is_not_abstract():
+    assert not inspect.isabstract(stext_TimeEventSpec)
 
 
-def test_stext::timeeventspec_constructor_exists():
-    assert callable(stext::TimeEventSpec.__init__)
+def test_stext_timeeventspec_constructor_exists():
+    assert callable(stext_TimeEventSpec.__init__)
 
 
-def test_stext::timeeventspec_constructor_args():
-    sig = inspect.signature(stext::TimeEventSpec.__init__)
+def test_stext_timeeventspec_constructor_args():
+    sig = inspect.signature(stext_TimeEventSpec.__init__)
     params = list(sig.parameters.keys())
     assert "unit" in params, "Missing parameter 'unit'"
-    assert "value" in params, "Missing parameter 'value'"
     assert "type" in params, "Missing parameter 'type'"
+    assert "value" in params, "Missing parameter 'value'"
 
-def test_stext::timeeventspec_has_unit():
-    assert hasattr(stext::TimeEventSpec, "unit")
+def test_stext_timeeventspec_has_unit():
+    assert hasattr(stext_TimeEventSpec, "unit")
     descriptor = None
-    for klass in stext::TimeEventSpec.__mro__:
+    for klass in stext_TimeEventSpec.__mro__:
         if "unit" in klass.__dict__:
             descriptor = klass.__dict__["unit"]
             break
     assert isinstance(descriptor, property)
 
-def test_stext::timeeventspec_has_value():
-    assert hasattr(stext::TimeEventSpec, "value")
+def test_stext_timeeventspec_has_type():
+    assert hasattr(stext_TimeEventSpec, "type")
     descriptor = None
-    for klass in stext::TimeEventSpec.__mro__:
-        if "value" in klass.__dict__:
-            descriptor = klass.__dict__["value"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_stext::timeeventspec_has_type():
-    assert hasattr(stext::TimeEventSpec, "type")
-    descriptor = None
-    for klass in stext::TimeEventSpec.__mro__:
+    for klass in stext_TimeEventSpec.__mro__:
         if "type" in klass.__dict__:
             descriptor = klass.__dict__["type"]
             break
     assert isinstance(descriptor, property)
 
+def test_stext_timeeventspec_has_value():
+    assert hasattr(stext_TimeEventSpec, "value")
+    descriptor = None
+    for klass in stext_TimeEventSpec.__mro__:
+        if "value" in klass.__dict__:
+            descriptor = klass.__dict__["value"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_stext::regulareventspec_is_not_abstract():
-    assert not inspect.isabstract(stext::RegularEventSpec)
+
+def test_stext_regulareventspec_is_not_abstract():
+    assert not inspect.isabstract(stext_RegularEventSpec)
 
 
-def test_stext::regulareventspec_constructor_exists():
-    assert callable(stext::RegularEventSpec.__init__)
+def test_stext_regulareventspec_constructor_exists():
+    assert callable(stext_RegularEventSpec.__init__)
 
 
-def test_stext::regulareventspec_constructor_args():
-    sig = inspect.signature(stext::RegularEventSpec.__init__)
+def test_stext_regulareventspec_constructor_args():
+    sig = inspect.signature(stext_RegularEventSpec.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_stext::eventspec_is_not_abstract():
-    assert not inspect.isabstract(stext::EventSpec)
+def test_stext_eventspec_is_not_abstract():
+    assert not inspect.isabstract(stext_EventSpec)
 
 
-def test_stext::eventspec_constructor_exists():
-    assert callable(stext::EventSpec.__init__)
+def test_stext_eventspec_constructor_exists():
+    assert callable(stext_EventSpec.__init__)
 
 
-def test_stext::eventspec_constructor_args():
-    sig = inspect.signature(stext::EventSpec.__init__)
+def test_stext_eventspec_constructor_args():
+    sig = inspect.signature(stext_EventSpec.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_stext::exitpoint_is_not_abstract():
-    assert not inspect.isabstract(stext::Exitpoint)
+def test_stext_exitpoint_is_not_abstract():
+    assert not inspect.isabstract(stext_Exitpoint)
 
 
-def test_stext::exitpoint_constructor_exists():
-    assert callable(stext::Exitpoint.__init__)
+def test_stext_exitpoint_constructor_exists():
+    assert callable(stext_Exitpoint.__init__)
 
 
-def test_stext::exitpoint_constructor_args():
-    sig = inspect.signature(stext::Exitpoint.__init__)
+def test_stext_exitpoint_constructor_args():
+    sig = inspect.signature(stext_Exitpoint.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_stext::entrypoint_is_not_abstract():
-    assert not inspect.isabstract(stext::Entrypoint)
+def test_stext_entrypoint_is_not_abstract():
+    assert not inspect.isabstract(stext_Entrypoint)
 
 
-def test_stext::entrypoint_constructor_exists():
-    assert callable(stext::Entrypoint.__init__)
+def test_stext_entrypoint_constructor_exists():
+    assert callable(stext_Entrypoint.__init__)
 
 
-def test_stext::entrypoint_constructor_args():
-    sig = inspect.signature(stext::Entrypoint.__init__)
+def test_stext_entrypoint_constructor_args():
+    sig = inspect.signature(stext_Entrypoint.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1047,58 +1047,58 @@ def test_reactionproperty_constructor_args():
 
 
 
-def test_stext::exitpointspec_is_not_abstract():
-    assert not inspect.isabstract(stext::ExitPointSpec)
+def test_stext_exitpointspec_is_not_abstract():
+    assert not inspect.isabstract(stext_ExitPointSpec)
 
 
-def test_stext::exitpointspec_constructor_exists():
-    assert callable(stext::ExitPointSpec.__init__)
+def test_stext_exitpointspec_constructor_exists():
+    assert callable(stext_ExitPointSpec.__init__)
 
 
-def test_stext::exitpointspec_constructor_args():
-    sig = inspect.signature(stext::ExitPointSpec.__init__)
+def test_stext_exitpointspec_constructor_args():
+    sig = inspect.signature(stext_ExitPointSpec.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_stext::entrypointspec_is_not_abstract():
-    assert not inspect.isabstract(stext::EntryPointSpec)
+def test_stext_entrypointspec_is_not_abstract():
+    assert not inspect.isabstract(stext_EntryPointSpec)
 
 
-def test_stext::entrypointspec_constructor_exists():
-    assert callable(stext::EntryPointSpec.__init__)
+def test_stext_entrypointspec_constructor_exists():
+    assert callable(stext_EntryPointSpec.__init__)
 
 
-def test_stext::entrypointspec_constructor_args():
-    sig = inspect.signature(stext::EntryPointSpec.__init__)
+def test_stext_entrypointspec_constructor_args():
+    sig = inspect.signature(stext_EntryPointSpec.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_stext::reactionproperty_is_not_abstract():
-    assert not inspect.isabstract(stext::ReactionProperty)
+def test_stext_reactionproperty_is_not_abstract():
+    assert not inspect.isabstract(stext_ReactionProperty)
 
 
-def test_stext::reactionproperty_constructor_exists():
-    assert callable(stext::ReactionProperty.__init__)
+def test_stext_reactionproperty_constructor_exists():
+    assert callable(stext_ReactionProperty.__init__)
 
 
-def test_stext::reactionproperty_constructor_args():
-    sig = inspect.signature(stext::ReactionProperty.__init__)
+def test_stext_reactionproperty_constructor_args():
+    sig = inspect.signature(stext_ReactionProperty.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_stext::reactionproperties_is_not_abstract():
-    assert not inspect.isabstract(stext::ReactionProperties)
+def test_stext_reactionproperties_is_not_abstract():
+    assert not inspect.isabstract(stext_ReactionProperties)
 
 
-def test_stext::reactionproperties_constructor_exists():
-    assert callable(stext::ReactionProperties.__init__)
+def test_stext_reactionproperties_constructor_exists():
+    assert callable(stext_ReactionProperties.__init__)
 
 
-def test_stext::reactionproperties_constructor_args():
-    sig = inspect.signature(stext::ReactionProperties.__init__)
+def test_stext_reactionproperties_constructor_args():
+    sig = inspect.signature(stext_ReactionProperties.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1117,86 +1117,86 @@ def test_reaction_constructor_args():
 
 
 
-def test_stext::localreaction_is_not_abstract():
-    assert not inspect.isabstract(stext::LocalReaction)
+def test_stext_localreaction_is_not_abstract():
+    assert not inspect.isabstract(stext_LocalReaction)
 
 
-def test_stext::localreaction_constructor_exists():
-    assert callable(stext::LocalReaction.__init__)
+def test_stext_localreaction_constructor_exists():
+    assert callable(stext_LocalReaction.__init__)
 
 
-def test_stext::localreaction_constructor_args():
-    sig = inspect.signature(stext::LocalReaction.__init__)
+def test_stext_localreaction_constructor_args():
+    sig = inspect.signature(stext_LocalReaction.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_stext::type_is_not_abstract():
-    assert not inspect.isabstract(stext::Type)
+def test_stext_type_is_not_abstract():
+    assert not inspect.isabstract(stext_Type)
 
 
-def test_stext::type_constructor_exists():
-    assert callable(stext::Type.__init__)
+def test_stext_type_constructor_exists():
+    assert callable(stext_Type.__init__)
 
 
-def test_stext::type_constructor_args():
-    sig = inspect.signature(stext::Type.__init__)
+def test_stext_type_constructor_args():
+    sig = inspect.signature(stext_Type.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_stext::defroot_is_not_abstract():
-    assert not inspect.isabstract(stext::DefRoot)
+def test_stext_defroot_is_not_abstract():
+    assert not inspect.isabstract(stext_DefRoot)
 
 
-def test_stext::defroot_constructor_exists():
-    assert callable(stext::DefRoot.__init__)
+def test_stext_defroot_constructor_exists():
+    assert callable(stext_DefRoot.__init__)
 
 
-def test_stext::defroot_constructor_args():
-    sig = inspect.signature(stext::DefRoot.__init__)
+def test_stext_defroot_constructor_args():
+    sig = inspect.signature(stext_DefRoot.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_stext::root_is_not_abstract():
-    assert not inspect.isabstract(stext::Root)
+def test_stext_root_is_not_abstract():
+    assert not inspect.isabstract(stext_Root)
 
 
-def test_stext::root_constructor_exists():
-    assert callable(stext::Root.__init__)
+def test_stext_root_constructor_exists():
+    assert callable(stext_Root.__init__)
 
 
-def test_stext::root_constructor_args():
-    sig = inspect.signature(stext::Root.__init__)
+def test_stext_root_constructor_args():
+    sig = inspect.signature(stext_Root.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_stext::expression_is_not_abstract():
-    assert not inspect.isabstract(stext::Expression)
+def test_stext_expression_is_not_abstract():
+    assert not inspect.isabstract(stext_Expression)
 
 
-def test_stext::expression_constructor_exists():
-    assert callable(stext::Expression.__init__)
+def test_stext_expression_constructor_exists():
+    assert callable(stext_Expression.__init__)
 
 
-def test_stext::expression_constructor_args():
-    sig = inspect.signature(stext::Expression.__init__)
+def test_stext_expression_constructor_args():
+    sig = inspect.signature(stext_Expression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_stext::eventderivation_is_not_abstract():
-    assert not inspect.isabstract(stext::EventDerivation)
+def test_stext_eventderivation_is_not_abstract():
+    assert not inspect.isabstract(stext_EventDerivation)
 
 
-def test_stext::eventderivation_constructor_exists():
-    assert callable(stext::EventDerivation.__init__)
+def test_stext_eventderivation_constructor_exists():
+    assert callable(stext_EventDerivation.__init__)
 
 
-def test_stext::eventderivation_constructor_args():
-    sig = inspect.signature(stext::EventDerivation.__init__)
+def test_stext_eventderivation_constructor_args():
+    sig = inspect.signature(stext_EventDerivation.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1215,23 +1215,23 @@ def test_event_constructor_args():
 
 
 
-def test_stext::eventdefinition_is_not_abstract():
-    assert not inspect.isabstract(stext::EventDefinition)
+def test_stext_eventdefinition_is_not_abstract():
+    assert not inspect.isabstract(stext_EventDefinition)
 
 
-def test_stext::eventdefinition_constructor_exists():
-    assert callable(stext::EventDefinition.__init__)
+def test_stext_eventdefinition_constructor_exists():
+    assert callable(stext_EventDefinition.__init__)
 
 
-def test_stext::eventdefinition_constructor_args():
-    sig = inspect.signature(stext::EventDefinition.__init__)
+def test_stext_eventdefinition_constructor_args():
+    sig = inspect.signature(stext_EventDefinition.__init__)
     params = list(sig.parameters.keys())
     assert "direction" in params, "Missing parameter 'direction'"
 
-def test_stext::eventdefinition_has_direction():
-    assert hasattr(stext::EventDefinition, "direction")
+def test_stext_eventdefinition_has_direction():
+    assert hasattr(stext_EventDefinition, "direction")
     descriptor = None
-    for klass in stext::EventDefinition.__mro__:
+    for klass in stext_EventDefinition.__mro__:
         if "direction" in klass.__dict__:
             descriptor = klass.__dict__["direction"]
             break
@@ -1267,30 +1267,30 @@ def test_statechartscope_constructor_args():
 
 
 
-def test_stext::internalscope_is_not_abstract():
-    assert not inspect.isabstract(stext::InternalScope)
+def test_stext_internalscope_is_not_abstract():
+    assert not inspect.isabstract(stext_InternalScope)
 
 
-def test_stext::internalscope_constructor_exists():
-    assert callable(stext::InternalScope.__init__)
+def test_stext_internalscope_constructor_exists():
+    assert callable(stext_InternalScope.__init__)
 
 
-def test_stext::internalscope_constructor_args():
-    sig = inspect.signature(stext::InternalScope.__init__)
+def test_stext_internalscope_constructor_args():
+    sig = inspect.signature(stext_InternalScope.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_stext::interfacescope_is_not_abstract():
-    assert not inspect.isabstract(stext::InterfaceScope)
+def test_stext_interfacescope_is_not_abstract():
+    assert not inspect.isabstract(stext_InterfaceScope)
 
 
-def test_stext::interfacescope_constructor_exists():
-    assert callable(stext::InterfaceScope.__init__)
+def test_stext_interfacescope_constructor_exists():
+    assert callable(stext_InterfaceScope.__init__)
 
 
-def test_stext::interfacescope_constructor_args():
-    sig = inspect.signature(stext::InterfaceScope.__init__)
+def test_stext_interfacescope_constructor_args():
+    sig = inspect.signature(stext_InterfaceScope.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1309,107 +1309,107 @@ def test_scope_constructor_args():
 
 
 
-def test_stext::simplescope_is_not_abstract():
-    assert not inspect.isabstract(stext::SimpleScope)
+def test_stext_simplescope_is_not_abstract():
+    assert not inspect.isabstract(stext_SimpleScope)
 
 
-def test_stext::simplescope_constructor_exists():
-    assert callable(stext::SimpleScope.__init__)
+def test_stext_simplescope_constructor_exists():
+    assert callable(stext_SimpleScope.__init__)
 
 
-def test_stext::simplescope_constructor_args():
-    sig = inspect.signature(stext::SimpleScope.__init__)
+def test_stext_simplescope_constructor_args():
+    sig = inspect.signature(stext_SimpleScope.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_stext::transitionreaction_is_not_abstract():
-    assert not inspect.isabstract(stext::TransitionReaction)
+def test_stext_transitionreaction_is_not_abstract():
+    assert not inspect.isabstract(stext_TransitionReaction)
 
 
-def test_stext::transitionreaction_constructor_exists():
-    assert callable(stext::TransitionReaction.__init__)
+def test_stext_transitionreaction_constructor_exists():
+    assert callable(stext_TransitionReaction.__init__)
 
 
-def test_stext::transitionreaction_constructor_args():
-    sig = inspect.signature(stext::TransitionReaction.__init__)
+def test_stext_transitionreaction_constructor_args():
+    sig = inspect.signature(stext_TransitionReaction.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_stext::scope_is_not_abstract():
-    assert not inspect.isabstract(stext::Scope)
+def test_stext_scope_is_not_abstract():
+    assert not inspect.isabstract(stext_Scope)
 
 
-def test_stext::scope_constructor_exists():
-    assert callable(stext::Scope.__init__)
+def test_stext_scope_constructor_exists():
+    assert callable(stext_Scope.__init__)
 
 
-def test_stext::scope_constructor_args():
-    sig = inspect.signature(stext::Scope.__init__)
+def test_stext_scope_constructor_args():
+    sig = inspect.signature(stext_Scope.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_stext::statechartscope_is_not_abstract():
-    assert not inspect.isabstract(stext::StatechartScope)
+def test_stext_statechartscope_is_not_abstract():
+    assert not inspect.isabstract(stext_StatechartScope)
 
 
-def test_stext::statechartscope_constructor_exists():
-    assert callable(stext::StatechartScope.__init__)
+def test_stext_statechartscope_constructor_exists():
+    assert callable(stext_StatechartScope.__init__)
 
 
-def test_stext::statechartscope_constructor_args():
-    sig = inspect.signature(stext::StatechartScope.__init__)
+def test_stext_statechartscope_constructor_args():
+    sig = inspect.signature(stext_StatechartScope.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_stext::transitionspecification_is_not_abstract():
-    assert not inspect.isabstract(stext::TransitionSpecification)
+def test_stext_transitionspecification_is_not_abstract():
+    assert not inspect.isabstract(stext_TransitionSpecification)
 
 
-def test_stext::transitionspecification_constructor_exists():
-    assert callable(stext::TransitionSpecification.__init__)
+def test_stext_transitionspecification_constructor_exists():
+    assert callable(stext_TransitionSpecification.__init__)
 
 
-def test_stext::transitionspecification_constructor_args():
-    sig = inspect.signature(stext::TransitionSpecification.__init__)
+def test_stext_transitionspecification_constructor_args():
+    sig = inspect.signature(stext_TransitionSpecification.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_stext::statespecification_is_not_abstract():
-    assert not inspect.isabstract(stext::StateSpecification)
+def test_stext_statespecification_is_not_abstract():
+    assert not inspect.isabstract(stext_StateSpecification)
 
 
-def test_stext::statespecification_constructor_exists():
-    assert callable(stext::StateSpecification.__init__)
+def test_stext_statespecification_constructor_exists():
+    assert callable(stext_StateSpecification.__init__)
 
 
-def test_stext::statespecification_constructor_args():
-    sig = inspect.signature(stext::StateSpecification.__init__)
+def test_stext_statespecification_constructor_args():
+    sig = inspect.signature(stext_StateSpecification.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_stext::statechartspecification_is_not_abstract():
-    assert not inspect.isabstract(stext::StatechartSpecification)
+def test_stext_statechartspecification_is_not_abstract():
+    assert not inspect.isabstract(stext_StatechartSpecification)
 
 
-def test_stext::statechartspecification_constructor_exists():
-    assert callable(stext::StatechartSpecification.__init__)
+def test_stext_statechartspecification_constructor_exists():
+    assert callable(stext_StatechartSpecification.__init__)
 
 
-def test_stext::statechartspecification_constructor_args():
-    sig = inspect.signature(stext::StatechartSpecification.__init__)
+def test_stext_statechartspecification_constructor_args():
+    sig = inspect.signature(stext_StatechartSpecification.__init__)
     params = list(sig.parameters.keys())
     assert "namespace" in params, "Missing parameter 'namespace'"
 
-def test_stext::statechartspecification_has_namespace():
-    assert hasattr(stext::StatechartSpecification, "namespace")
+def test_stext_statechartspecification_has_namespace():
+    assert hasattr(stext_StatechartSpecification, "namespace")
     descriptor = None
-    for klass in stext::StatechartSpecification.__mro__:
+    for klass in stext_StatechartSpecification.__mro__:
         if "namespace" in klass.__dict__:
             descriptor = klass.__dict__["namespace"]
             break
@@ -1431,45 +1431,81 @@ def test_defroot_constructor_args():
 
 
 
-def test_stext::stateroot_is_not_abstract():
-    assert not inspect.isabstract(stext::StateRoot)
+def test_stext_stateroot_is_not_abstract():
+    assert not inspect.isabstract(stext_StateRoot)
 
 
-def test_stext::stateroot_constructor_exists():
-    assert callable(stext::StateRoot.__init__)
+def test_stext_stateroot_constructor_exists():
+    assert callable(stext_StateRoot.__init__)
 
 
-def test_stext::stateroot_constructor_args():
-    sig = inspect.signature(stext::StateRoot.__init__)
+def test_stext_stateroot_constructor_args():
+    sig = inspect.signature(stext_StateRoot.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_stext::transitionroot_is_not_abstract():
-    assert not inspect.isabstract(stext::TransitionRoot)
+def test_stext_transitionroot_is_not_abstract():
+    assert not inspect.isabstract(stext_TransitionRoot)
 
 
-def test_stext::transitionroot_constructor_exists():
-    assert callable(stext::TransitionRoot.__init__)
+def test_stext_transitionroot_constructor_exists():
+    assert callable(stext_TransitionRoot.__init__)
 
 
-def test_stext::transitionroot_constructor_args():
-    sig = inspect.signature(stext::TransitionRoot.__init__)
+def test_stext_transitionroot_constructor_args():
+    sig = inspect.signature(stext_TransitionRoot.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_stext::statechartroot_is_not_abstract():
-    assert not inspect.isabstract(stext::StatechartRoot)
+def test_stext_statechartroot_is_not_abstract():
+    assert not inspect.isabstract(stext_StatechartRoot)
 
 
-def test_stext::statechartroot_constructor_exists():
-    assert callable(stext::StatechartRoot.__init__)
+def test_stext_statechartroot_constructor_exists():
+    assert callable(stext_StatechartRoot.__init__)
 
 
-def test_stext::statechartroot_constructor_args():
-    sig = inspect.signature(stext::StatechartRoot.__init__)
+def test_stext_statechartroot_constructor_args():
+    sig = inspect.signature(stext_StatechartRoot.__init__)
     params = list(sig.parameters.keys())
+
+def test_relationaloperator_exists():
+    # Check that the Enumeration exists
+    assert RelationalOperator is not None
+
+def test_relationaloperator_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in RelationalOperator]
+    expected_literals = [
+        "equals",
+        "greaterEqual",
+        "greater",
+        "notEquals",
+        "smaller",
+        "smallerEqual",
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in RelationalOperator"
+
+def test_timeunit_exists():
+    # Check that the Enumeration exists
+    assert TimeUnit is not None
+
+def test_timeunit_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in TimeUnit]
+    expected_literals = [
+        "nanosecond",
+        "second",
+        "microsecond",
+        "millisecond",
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in TimeUnit"
 
 def test_direction_exists():
     # Check that the Enumeration exists
@@ -1480,12 +1516,98 @@ def test_direction_has_all_literals():
     enum_literals = [lit.name for lit in Direction]
     expected_literals = [
         "OUT",
-        "IN",
         "LOCAL",
+        "IN",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
         assert lit_name in enum_literals, f"Literal '' missing in Direction"
+
+def test_unaryoperator_exists():
+    # Check that the Enumeration exists
+    assert UnaryOperator is not None
+
+def test_unaryoperator_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in UnaryOperator]
+    expected_literals = [
+        "complement",
+        "positive",
+        "negative",
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in UnaryOperator"
+
+def test_additiveoperator_exists():
+    # Check that the Enumeration exists
+    assert AdditiveOperator is not None
+
+def test_additiveoperator_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in AdditiveOperator]
+    expected_literals = [
+        "minus",
+        "plus",
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in AdditiveOperator"
+
+def test_assignmentoperator_exists():
+    # Check that the Enumeration exists
+    assert AssignmentOperator is not None
+
+def test_assignmentoperator_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in AssignmentOperator]
+    expected_literals = [
+        "leftShiftAssign",
+        "modAssign",
+        "rightShiftAssign",
+        "divAssign",
+        "orAssign",
+        "addAssign",
+        "assign",
+        "multAssign",
+        "xorAssign",
+        "andAssign",
+        "subAssign",
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in AssignmentOperator"
+
+def test_multiplicativeoperator_exists():
+    # Check that the Enumeration exists
+    assert MultiplicativeOperator is not None
+
+def test_multiplicativeoperator_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in MultiplicativeOperator]
+    expected_literals = [
+        "mod",
+        "mul",
+        "div",
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in MultiplicativeOperator"
+
+def test_timeeventtype_exists():
+    # Check that the Enumeration exists
+    assert TimeEventType is not None
+
+def test_timeeventtype_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in TimeEventType]
+    expected_literals = [
+        "every",
+        "after",
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in TimeEventType"
 
 def test_shiftoperator_exists():
     # Check that the Enumeration exists
@@ -1502,128 +1624,6 @@ def test_shiftoperator_has_all_literals():
     for lit_name in expected_literals:
         assert lit_name in enum_literals, f"Literal '' missing in ShiftOperator"
 
-def test_unaryoperator_exists():
-    # Check that the Enumeration exists
-    assert UnaryOperator is not None
-
-def test_unaryoperator_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in UnaryOperator]
-    expected_literals = [
-        "negative",
-        "complement",
-        "positive",
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in UnaryOperator"
-
-def test_timeunit_exists():
-    # Check that the Enumeration exists
-    assert TimeUnit is not None
-
-def test_timeunit_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in TimeUnit]
-    expected_literals = [
-        "millisecond",
-        "nanosecond",
-        "second",
-        "microsecond",
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in TimeUnit"
-
-def test_additiveoperator_exists():
-    # Check that the Enumeration exists
-    assert AdditiveOperator is not None
-
-def test_additiveoperator_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in AdditiveOperator]
-    expected_literals = [
-        "plus",
-        "minus",
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in AdditiveOperator"
-
-def test_timeeventtype_exists():
-    # Check that the Enumeration exists
-    assert TimeEventType is not None
-
-def test_timeeventtype_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in TimeEventType]
-    expected_literals = [
-        "after",
-        "every",
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in TimeEventType"
-
-def test_multiplicativeoperator_exists():
-    # Check that the Enumeration exists
-    assert MultiplicativeOperator is not None
-
-def test_multiplicativeoperator_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in MultiplicativeOperator]
-    expected_literals = [
-        "div",
-        "mod",
-        "mul",
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in MultiplicativeOperator"
-
-def test_relationaloperator_exists():
-    # Check that the Enumeration exists
-    assert RelationalOperator is not None
-
-def test_relationaloperator_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in RelationalOperator]
-    expected_literals = [
-        "smaller",
-        "notEquals",
-        "greater",
-        "smallerEqual",
-        "greaterEqual",
-        "equals",
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in RelationalOperator"
-
-def test_assignmentoperator_exists():
-    # Check that the Enumeration exists
-    assert AssignmentOperator is not None
-
-def test_assignmentoperator_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in AssignmentOperator]
-    expected_literals = [
-        "modAssign",
-        "divAssign",
-        "rightShiftAssign",
-        "subAssign",
-        "multAssign",
-        "addAssign",
-        "andAssign",
-        "orAssign",
-        "xorAssign",
-        "assign",
-        "leftShiftAssign",
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in AssignmentOperator"
-
 
 # =============================================================================
 # HYPOTHESIS STRATEGIES
@@ -1636,100 +1636,100 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-stext::NamedElement_strategy = st.builds(
-    stext::NamedElement,
+stext_NamedElement_strategy = st.builds(
+    stext_NamedElement,
 )
-stext::State_strategy = st.builds(
-    stext::State,
+stext_State_strategy = st.builds(
+    stext_State,
 )
-stext::Feature_strategy = st.builds(
-    stext::Feature,
+stext_Feature_strategy = st.builds(
+    stext_Feature,
 )
 Expression_strategy = st.builds(
     Expression,
 )
-stext::BitwiseOrExpression_strategy = st.builds(
-    stext::BitwiseOrExpression,
+stext_BitwiseAndExpression_strategy = st.builds(
+    stext_BitwiseAndExpression,
 )
-stext::NumericalAddSubtractExpression_strategy = st.builds(
-    stext::NumericalAddSubtractExpression,
+stext_LogicalRelationExpression_strategy = st.builds(
+    stext_LogicalRelationExpression,
     operator=
         safe_text
 )
-stext::EventValueReferenceExpression_strategy = st.builds(
-    stext::EventValueReferenceExpression,
+stext_EventValueReferenceExpression_strategy = st.builds(
+    stext_EventValueReferenceExpression,
 )
-stext::LogicalNotExpression_strategy = st.builds(
-    stext::LogicalNotExpression,
-)
-stext::AssignmentExpression_strategy = st.builds(
-    stext::AssignmentExpression,
+stext_ShiftExpression_strategy = st.builds(
+    stext_ShiftExpression,
     operator=
         safe_text
 )
-stext::ActiveStateReferenceExpression_strategy = st.builds(
-    stext::ActiveStateReferenceExpression,
+stext_TypedElementReferenceExpression_strategy = st.builds(
+    stext_TypedElementReferenceExpression,
 )
-stext::TypedElementReferenceExpression_strategy = st.builds(
-    stext::TypedElementReferenceExpression,
-)
-stext::LogicalOrExpression_strategy = st.builds(
-    stext::LogicalOrExpression,
-)
-stext::BitwiseXorExpression_strategy = st.builds(
-    stext::BitwiseXorExpression,
-)
-stext::NumericalMultiplyDivideExpression_strategy = st.builds(
-    stext::NumericalMultiplyDivideExpression,
+stext_AssignmentExpression_strategy = st.builds(
+    stext_AssignmentExpression,
     operator=
         safe_text
 )
-stext::BitwiseAndExpression_strategy = st.builds(
-    stext::BitwiseAndExpression,
-)
-stext::LogicalAndExpression_strategy = st.builds(
-    stext::LogicalAndExpression,
-)
-stext::PrimitiveValueExpression_strategy = st.builds(
-    stext::PrimitiveValueExpression,
-)
-stext::NumericalUnaryExpression_strategy = st.builds(
-    stext::NumericalUnaryExpression,
-    operator=
-        safe_text
-)
-stext::FeatureCall_strategy = st.builds(
-    stext::FeatureCall,
+stext_FeatureCall_strategy = st.builds(
+    stext_FeatureCall,
     operationCall=
         st.booleans()
 )
-stext::ConditionalExpression_strategy = st.builds(
-    stext::ConditionalExpression,
+stext_LogicalNotExpression_strategy = st.builds(
+    stext_LogicalNotExpression,
 )
-stext::LogicalRelationExpression_strategy = st.builds(
-    stext::LogicalRelationExpression,
+stext_BitwiseOrExpression_strategy = st.builds(
+    stext_BitwiseOrExpression,
+)
+stext_ActiveStateReferenceExpression_strategy = st.builds(
+    stext_ActiveStateReferenceExpression,
+)
+stext_NumericalUnaryExpression_strategy = st.builds(
+    stext_NumericalUnaryExpression,
     operator=
         safe_text
 )
-stext::ShiftExpression_strategy = st.builds(
-    stext::ShiftExpression,
+stext_LogicalAndExpression_strategy = st.builds(
+    stext_LogicalAndExpression,
+)
+stext_PrimitiveValueExpression_strategy = st.builds(
+    stext_PrimitiveValueExpression,
+)
+stext_NumericalAddSubtractExpression_strategy = st.builds(
+    stext_NumericalAddSubtractExpression,
     operator=
         safe_text
 )
-stext::EventRaisingExpression_strategy = st.builds(
-    stext::EventRaisingExpression,
+stext_BitwiseXorExpression_strategy = st.builds(
+    stext_BitwiseXorExpression,
+)
+stext_NumericalMultiplyDivideExpression_strategy = st.builds(
+    stext_NumericalMultiplyDivideExpression,
+    operator=
+        safe_text
+)
+stext_LogicalOrExpression_strategy = st.builds(
+    stext_LogicalOrExpression,
+)
+stext_ConditionalExpression_strategy = st.builds(
+    stext_ConditionalExpression,
+)
+stext_EventRaisingExpression_strategy = st.builds(
+    stext_EventRaisingExpression,
 )
 Effect_strategy = st.builds(
     Effect,
 )
-stext::ReactionEffect_strategy = st.builds(
-    stext::ReactionEffect,
+stext_ReactionEffect_strategy = st.builds(
+    stext_ReactionEffect,
 )
 Trigger_strategy = st.builds(
     Trigger,
 )
-stext::ReactionTrigger_strategy = st.builds(
-    stext::ReactionTrigger,
+stext_ReactionTrigger_strategy = st.builds(
+    stext_ReactionTrigger,
 )
 Operation_strategy = st.builds(
     Operation,
@@ -1737,8 +1737,8 @@ Operation_strategy = st.builds(
 Declaration_strategy = st.builds(
     Declaration,
 )
-stext::OperationDefinition_strategy = st.builds(
-    stext::OperationDefinition,
+stext_OperationDefinition_strategy = st.builds(
+    stext_OperationDefinition,
 )
 Property_strategy = st.builds(
     Property,
@@ -1746,8 +1746,8 @@ Property_strategy = st.builds(
 Variable_strategy = st.builds(
     Variable,
 )
-stext::VariableDefinition_strategy = st.builds(
-    stext::VariableDefinition,
+stext_VariableDefinition_strategy = st.builds(
+    stext_VariableDefinition,
     external=
         st.booleans(),
     readonly=
@@ -1756,33 +1756,33 @@ stext::VariableDefinition_strategy = st.builds(
 Literal_strategy = st.builds(
     Literal,
 )
-stext::RealLiteral_strategy = st.builds(
-    stext::RealLiteral,
-    value=
-        st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False)
-)
-stext::StringLiteral_strategy = st.builds(
-    stext::StringLiteral,
+stext_StringLiteral_strategy = st.builds(
+    stext_StringLiteral,
     value=
         safe_text
 )
-stext::HexLiteral_strategy = st.builds(
-    stext::HexLiteral,
+stext_HexLiteral_strategy = st.builds(
+    stext_HexLiteral,
     value=
         st.integers()
 )
-stext::IntLiteral_strategy = st.builds(
-    stext::IntLiteral,
+stext_IntLiteral_strategy = st.builds(
+    stext_IntLiteral,
     value=
         st.integers()
 )
-stext::BoolLiteral_strategy = st.builds(
-    stext::BoolLiteral,
+stext_RealLiteral_strategy = st.builds(
+    stext_RealLiteral,
+    value=
+        st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False)
+)
+stext_BoolLiteral_strategy = st.builds(
+    stext_BoolLiteral,
     value=
         st.booleans()
 )
-stext::Literal_strategy = st.builds(
-    stext::Literal,
+stext_Literal_strategy = st.builds(
+    stext_Literal,
 )
 Statement_strategy = st.builds(
     Statement,
@@ -1790,89 +1790,89 @@ Statement_strategy = st.builds(
 BuiltinEventSpec_strategy = st.builds(
     BuiltinEventSpec,
 )
-stext::AlwaysEvent_strategy = st.builds(
-    stext::AlwaysEvent,
+stext_ExitEvent_strategy = st.builds(
+    stext_ExitEvent,
 )
-stext::ExitEvent_strategy = st.builds(
-    stext::ExitEvent,
+stext_OnCycleEvent_strategy = st.builds(
+    stext_OnCycleEvent,
 )
-stext::OnCycleEvent_strategy = st.builds(
-    stext::OnCycleEvent,
+stext_AlwaysEvent_strategy = st.builds(
+    stext_AlwaysEvent,
 )
-stext::DefaultEvent_strategy = st.builds(
-    stext::DefaultEvent,
+stext_DefaultEvent_strategy = st.builds(
+    stext_DefaultEvent,
 )
-stext::EntryEvent_strategy = st.builds(
-    stext::EntryEvent,
+stext_EntryEvent_strategy = st.builds(
+    stext_EntryEvent,
 )
 EventSpec_strategy = st.builds(
     EventSpec,
 )
-stext::BuiltinEventSpec_strategy = st.builds(
-    stext::BuiltinEventSpec,
+stext_BuiltinEventSpec_strategy = st.builds(
+    stext_BuiltinEventSpec,
 )
-stext::TimeEventSpec_strategy = st.builds(
-    stext::TimeEventSpec,
+stext_TimeEventSpec_strategy = st.builds(
+    stext_TimeEventSpec,
     unit=
         safe_text,
-    value=
-        st.integers(),
     type=
-        safe_text
+        safe_text,
+    value=
+        st.integers()
 )
-stext::RegularEventSpec_strategy = st.builds(
-    stext::RegularEventSpec,
+stext_RegularEventSpec_strategy = st.builds(
+    stext_RegularEventSpec,
 )
-stext::EventSpec_strategy = st.builds(
-    stext::EventSpec,
+stext_EventSpec_strategy = st.builds(
+    stext_EventSpec,
 )
-stext::Exitpoint_strategy = st.builds(
-    stext::Exitpoint,
+stext_Exitpoint_strategy = st.builds(
+    stext_Exitpoint,
 )
-stext::Entrypoint_strategy = st.builds(
-    stext::Entrypoint,
+stext_Entrypoint_strategy = st.builds(
+    stext_Entrypoint,
 )
 ReactionProperty_strategy = st.builds(
     ReactionProperty,
 )
-stext::ExitPointSpec_strategy = st.builds(
-    stext::ExitPointSpec,
+stext_ExitPointSpec_strategy = st.builds(
+    stext_ExitPointSpec,
 )
-stext::EntryPointSpec_strategy = st.builds(
-    stext::EntryPointSpec,
+stext_EntryPointSpec_strategy = st.builds(
+    stext_EntryPointSpec,
 )
-stext::ReactionProperty_strategy = st.builds(
-    stext::ReactionProperty,
+stext_ReactionProperty_strategy = st.builds(
+    stext_ReactionProperty,
 )
-stext::ReactionProperties_strategy = st.builds(
-    stext::ReactionProperties,
+stext_ReactionProperties_strategy = st.builds(
+    stext_ReactionProperties,
 )
 Reaction_strategy = st.builds(
     Reaction,
 )
-stext::LocalReaction_strategy = st.builds(
-    stext::LocalReaction,
+stext_LocalReaction_strategy = st.builds(
+    stext_LocalReaction,
 )
-stext::Type_strategy = st.builds(
-    stext::Type,
+stext_Type_strategy = st.builds(
+    stext_Type,
 )
-stext::DefRoot_strategy = st.builds(
-    stext::DefRoot,
+stext_DefRoot_strategy = st.builds(
+    stext_DefRoot,
 )
-stext::Root_strategy = st.builds(
-    stext::Root,
+stext_Root_strategy = st.builds(
+    stext_Root,
 )
-stext::Expression_strategy = st.builds(
-    stext::Expression,
+stext_Expression_strategy = st.builds(
+    stext_Expression,
 )
-stext::EventDerivation_strategy = st.builds(
-    stext::EventDerivation,
+stext_EventDerivation_strategy = st.builds(
+    stext_EventDerivation,
 )
 Event_strategy = st.builds(
     Event,
 )
-stext::EventDefinition_strategy = st.builds(
-    stext::EventDefinition,
+stext_EventDefinition_strategy = st.builds(
+    stext_EventDefinition,
     direction=
         safe_text
 )
@@ -1882,262 +1882,241 @@ NamedElement_strategy = st.builds(
 StatechartScope_strategy = st.builds(
     StatechartScope,
 )
-stext::InternalScope_strategy = st.builds(
-    stext::InternalScope,
+stext_InternalScope_strategy = st.builds(
+    stext_InternalScope,
 )
-stext::InterfaceScope_strategy = st.builds(
-    stext::InterfaceScope,
+stext_InterfaceScope_strategy = st.builds(
+    stext_InterfaceScope,
 )
 Scope_strategy = st.builds(
     Scope,
 )
-stext::SimpleScope_strategy = st.builds(
-    stext::SimpleScope,
+stext_SimpleScope_strategy = st.builds(
+    stext_SimpleScope,
 )
-stext::TransitionReaction_strategy = st.builds(
-    stext::TransitionReaction,
+stext_TransitionReaction_strategy = st.builds(
+    stext_TransitionReaction,
 )
-stext::Scope_strategy = st.builds(
-    stext::Scope,
+stext_Scope_strategy = st.builds(
+    stext_Scope,
 )
-stext::StatechartScope_strategy = st.builds(
-    stext::StatechartScope,
+stext_StatechartScope_strategy = st.builds(
+    stext_StatechartScope,
 )
-stext::TransitionSpecification_strategy = st.builds(
-    stext::TransitionSpecification,
+stext_TransitionSpecification_strategy = st.builds(
+    stext_TransitionSpecification,
 )
-stext::StateSpecification_strategy = st.builds(
-    stext::StateSpecification,
+stext_StateSpecification_strategy = st.builds(
+    stext_StateSpecification,
 )
-stext::StatechartSpecification_strategy = st.builds(
-    stext::StatechartSpecification,
+stext_StatechartSpecification_strategy = st.builds(
+    stext_StatechartSpecification,
     namespace=
         safe_text
 )
 DefRoot_strategy = st.builds(
     DefRoot,
 )
-stext::StateRoot_strategy = st.builds(
-    stext::StateRoot,
+stext_StateRoot_strategy = st.builds(
+    stext_StateRoot,
 )
-stext::TransitionRoot_strategy = st.builds(
-    stext::TransitionRoot,
+stext_TransitionRoot_strategy = st.builds(
+    stext_TransitionRoot,
 )
-stext::StatechartRoot_strategy = st.builds(
-    stext::StatechartRoot,
+stext_StatechartRoot_strategy = st.builds(
+    stext_StatechartRoot,
 )
 
-@given(instance=stext::NamedElement_strategy)
+@given(instance=stext_NamedElement_strategy)
 @settings(max_examples=50)
-def test_stext::namedelement_instantiation(instance):
-    assert isinstance(instance, stext::NamedElement)
+def test_stext_namedelement_instantiation(instance):
+    assert isinstance(instance, stext_NamedElement)
 
-@given(instance=stext::State_strategy)
+@given(instance=stext_State_strategy)
 @settings(max_examples=50)
-def test_stext::state_instantiation(instance):
-    assert isinstance(instance, stext::State)
+def test_stext_state_instantiation(instance):
+    assert isinstance(instance, stext_State)
 
-@given(instance=stext::Feature_strategy)
+@given(instance=stext_Feature_strategy)
 @settings(max_examples=50)
-def test_stext::feature_instantiation(instance):
-    assert isinstance(instance, stext::Feature)
+def test_stext_feature_instantiation(instance):
+    assert isinstance(instance, stext_Feature)
 
 @given(instance=Expression_strategy)
 @settings(max_examples=50)
 def test_expression_instantiation(instance):
     assert isinstance(instance, Expression)
 
-@given(instance=stext::BitwiseOrExpression_strategy)
+@given(instance=stext_BitwiseAndExpression_strategy)
 @settings(max_examples=50)
-def test_stext::bitwiseorexpression_instantiation(instance):
-    assert isinstance(instance, stext::BitwiseOrExpression)
+def test_stext_bitwiseandexpression_instantiation(instance):
+    assert isinstance(instance, stext_BitwiseAndExpression)
 
-@given(instance=stext::NumericalAddSubtractExpression_strategy)
+@given(instance=stext_LogicalRelationExpression_strategy)
 @settings(max_examples=50)
-def test_stext::numericaladdsubtractexpression_instantiation(instance):
-    assert isinstance(instance, stext::NumericalAddSubtractExpression)
-
-@given(instance=stext::NumericalAddSubtractExpression_strategy)
-def test_stext::numericaladdsubtractexpression_operator_type(instance):
-    assert isinstance(instance.operator, str)
+def test_stext_logicalrelationexpression_instantiation(instance):
+    assert isinstance(instance, stext_LogicalRelationExpression)
 
 
-@given(instance=stext::NumericalAddSubtractExpression_strategy)
-def test_stext::numericaladdsubtractexpression_operator_setter(instance):
+
+@given(instance=stext_LogicalRelationExpression_strategy)
+def test_stext_logicalrelationexpression_operator_setter(instance):
     original = instance.operator
     instance.operator = original
     assert instance.operator == original
 
-@given(instance=stext::EventValueReferenceExpression_strategy)
+@given(instance=stext_EventValueReferenceExpression_strategy)
 @settings(max_examples=50)
-def test_stext::eventvaluereferenceexpression_instantiation(instance):
-    assert isinstance(instance, stext::EventValueReferenceExpression)
+def test_stext_eventvaluereferenceexpression_instantiation(instance):
+    assert isinstance(instance, stext_EventValueReferenceExpression)
 
-@given(instance=stext::LogicalNotExpression_strategy)
+@given(instance=stext_ShiftExpression_strategy)
 @settings(max_examples=50)
-def test_stext::logicalnotexpression_instantiation(instance):
-    assert isinstance(instance, stext::LogicalNotExpression)
-
-@given(instance=stext::AssignmentExpression_strategy)
-@settings(max_examples=50)
-def test_stext::assignmentexpression_instantiation(instance):
-    assert isinstance(instance, stext::AssignmentExpression)
-
-@given(instance=stext::AssignmentExpression_strategy)
-def test_stext::assignmentexpression_operator_type(instance):
-    assert isinstance(instance.operator, str)
+def test_stext_shiftexpression_instantiation(instance):
+    assert isinstance(instance, stext_ShiftExpression)
 
 
-@given(instance=stext::AssignmentExpression_strategy)
-def test_stext::assignmentexpression_operator_setter(instance):
+
+@given(instance=stext_ShiftExpression_strategy)
+def test_stext_shiftexpression_operator_setter(instance):
     original = instance.operator
     instance.operator = original
     assert instance.operator == original
 
-@given(instance=stext::ActiveStateReferenceExpression_strategy)
+@given(instance=stext_TypedElementReferenceExpression_strategy)
 @settings(max_examples=50)
-def test_stext::activestatereferenceexpression_instantiation(instance):
-    assert isinstance(instance, stext::ActiveStateReferenceExpression)
+def test_stext_typedelementreferenceexpression_instantiation(instance):
+    assert isinstance(instance, stext_TypedElementReferenceExpression)
 
-@given(instance=stext::TypedElementReferenceExpression_strategy)
+@given(instance=stext_AssignmentExpression_strategy)
 @settings(max_examples=50)
-def test_stext::typedelementreferenceexpression_instantiation(instance):
-    assert isinstance(instance, stext::TypedElementReferenceExpression)
-
-@given(instance=stext::LogicalOrExpression_strategy)
-@settings(max_examples=50)
-def test_stext::logicalorexpression_instantiation(instance):
-    assert isinstance(instance, stext::LogicalOrExpression)
-
-@given(instance=stext::BitwiseXorExpression_strategy)
-@settings(max_examples=50)
-def test_stext::bitwisexorexpression_instantiation(instance):
-    assert isinstance(instance, stext::BitwiseXorExpression)
-
-@given(instance=stext::NumericalMultiplyDivideExpression_strategy)
-@settings(max_examples=50)
-def test_stext::numericalmultiplydivideexpression_instantiation(instance):
-    assert isinstance(instance, stext::NumericalMultiplyDivideExpression)
-
-@given(instance=stext::NumericalMultiplyDivideExpression_strategy)
-def test_stext::numericalmultiplydivideexpression_operator_type(instance):
-    assert isinstance(instance.operator, str)
+def test_stext_assignmentexpression_instantiation(instance):
+    assert isinstance(instance, stext_AssignmentExpression)
 
 
-@given(instance=stext::NumericalMultiplyDivideExpression_strategy)
-def test_stext::numericalmultiplydivideexpression_operator_setter(instance):
+
+@given(instance=stext_AssignmentExpression_strategy)
+def test_stext_assignmentexpression_operator_setter(instance):
     original = instance.operator
     instance.operator = original
     assert instance.operator == original
 
-@given(instance=stext::BitwiseAndExpression_strategy)
+@given(instance=stext_FeatureCall_strategy)
 @settings(max_examples=50)
-def test_stext::bitwiseandexpression_instantiation(instance):
-    assert isinstance(instance, stext::BitwiseAndExpression)
-
-@given(instance=stext::LogicalAndExpression_strategy)
-@settings(max_examples=50)
-def test_stext::logicalandexpression_instantiation(instance):
-    assert isinstance(instance, stext::LogicalAndExpression)
-
-@given(instance=stext::PrimitiveValueExpression_strategy)
-@settings(max_examples=50)
-def test_stext::primitivevalueexpression_instantiation(instance):
-    assert isinstance(instance, stext::PrimitiveValueExpression)
-
-@given(instance=stext::NumericalUnaryExpression_strategy)
-@settings(max_examples=50)
-def test_stext::numericalunaryexpression_instantiation(instance):
-    assert isinstance(instance, stext::NumericalUnaryExpression)
-
-@given(instance=stext::NumericalUnaryExpression_strategy)
-def test_stext::numericalunaryexpression_operator_type(instance):
-    assert isinstance(instance.operator, str)
+def test_stext_featurecall_instantiation(instance):
+    assert isinstance(instance, stext_FeatureCall)
 
 
-@given(instance=stext::NumericalUnaryExpression_strategy)
-def test_stext::numericalunaryexpression_operator_setter(instance):
-    original = instance.operator
-    instance.operator = original
-    assert instance.operator == original
 
-@given(instance=stext::FeatureCall_strategy)
-@settings(max_examples=50)
-def test_stext::featurecall_instantiation(instance):
-    assert isinstance(instance, stext::FeatureCall)
-
-@given(instance=stext::FeatureCall_strategy)
-def test_stext::featurecall_operationCall_type(instance):
-    assert isinstance(instance.operationCall, bool)
-
-
-@given(instance=stext::FeatureCall_strategy)
-def test_stext::featurecall_operationCall_setter(instance):
+@given(instance=stext_FeatureCall_strategy)
+def test_stext_featurecall_operationCall_setter(instance):
     original = instance.operationCall
     instance.operationCall = original
     assert instance.operationCall == original
 
-@given(instance=stext::ConditionalExpression_strategy)
+@given(instance=stext_LogicalNotExpression_strategy)
 @settings(max_examples=50)
-def test_stext::conditionalexpression_instantiation(instance):
-    assert isinstance(instance, stext::ConditionalExpression)
+def test_stext_logicalnotexpression_instantiation(instance):
+    assert isinstance(instance, stext_LogicalNotExpression)
 
-@given(instance=stext::LogicalRelationExpression_strategy)
+@given(instance=stext_BitwiseOrExpression_strategy)
 @settings(max_examples=50)
-def test_stext::logicalrelationexpression_instantiation(instance):
-    assert isinstance(instance, stext::LogicalRelationExpression)
+def test_stext_bitwiseorexpression_instantiation(instance):
+    assert isinstance(instance, stext_BitwiseOrExpression)
 
-@given(instance=stext::LogicalRelationExpression_strategy)
-def test_stext::logicalrelationexpression_operator_type(instance):
-    assert isinstance(instance.operator, str)
+@given(instance=stext_ActiveStateReferenceExpression_strategy)
+@settings(max_examples=50)
+def test_stext_activestatereferenceexpression_instantiation(instance):
+    assert isinstance(instance, stext_ActiveStateReferenceExpression)
+
+@given(instance=stext_NumericalUnaryExpression_strategy)
+@settings(max_examples=50)
+def test_stext_numericalunaryexpression_instantiation(instance):
+    assert isinstance(instance, stext_NumericalUnaryExpression)
 
 
-@given(instance=stext::LogicalRelationExpression_strategy)
-def test_stext::logicalrelationexpression_operator_setter(instance):
+
+@given(instance=stext_NumericalUnaryExpression_strategy)
+def test_stext_numericalunaryexpression_operator_setter(instance):
     original = instance.operator
     instance.operator = original
     assert instance.operator == original
 
-@given(instance=stext::ShiftExpression_strategy)
+@given(instance=stext_LogicalAndExpression_strategy)
 @settings(max_examples=50)
-def test_stext::shiftexpression_instantiation(instance):
-    assert isinstance(instance, stext::ShiftExpression)
+def test_stext_logicalandexpression_instantiation(instance):
+    assert isinstance(instance, stext_LogicalAndExpression)
 
-@given(instance=stext::ShiftExpression_strategy)
-def test_stext::shiftexpression_operator_type(instance):
-    assert isinstance(instance.operator, str)
+@given(instance=stext_PrimitiveValueExpression_strategy)
+@settings(max_examples=50)
+def test_stext_primitivevalueexpression_instantiation(instance):
+    assert isinstance(instance, stext_PrimitiveValueExpression)
+
+@given(instance=stext_NumericalAddSubtractExpression_strategy)
+@settings(max_examples=50)
+def test_stext_numericaladdsubtractexpression_instantiation(instance):
+    assert isinstance(instance, stext_NumericalAddSubtractExpression)
 
 
-@given(instance=stext::ShiftExpression_strategy)
-def test_stext::shiftexpression_operator_setter(instance):
+
+@given(instance=stext_NumericalAddSubtractExpression_strategy)
+def test_stext_numericaladdsubtractexpression_operator_setter(instance):
     original = instance.operator
     instance.operator = original
     assert instance.operator == original
 
-@given(instance=stext::EventRaisingExpression_strategy)
+@given(instance=stext_BitwiseXorExpression_strategy)
 @settings(max_examples=50)
-def test_stext::eventraisingexpression_instantiation(instance):
-    assert isinstance(instance, stext::EventRaisingExpression)
+def test_stext_bitwisexorexpression_instantiation(instance):
+    assert isinstance(instance, stext_BitwiseXorExpression)
+
+@given(instance=stext_NumericalMultiplyDivideExpression_strategy)
+@settings(max_examples=50)
+def test_stext_numericalmultiplydivideexpression_instantiation(instance):
+    assert isinstance(instance, stext_NumericalMultiplyDivideExpression)
+
+
+
+@given(instance=stext_NumericalMultiplyDivideExpression_strategy)
+def test_stext_numericalmultiplydivideexpression_operator_setter(instance):
+    original = instance.operator
+    instance.operator = original
+    assert instance.operator == original
+
+@given(instance=stext_LogicalOrExpression_strategy)
+@settings(max_examples=50)
+def test_stext_logicalorexpression_instantiation(instance):
+    assert isinstance(instance, stext_LogicalOrExpression)
+
+@given(instance=stext_ConditionalExpression_strategy)
+@settings(max_examples=50)
+def test_stext_conditionalexpression_instantiation(instance):
+    assert isinstance(instance, stext_ConditionalExpression)
+
+@given(instance=stext_EventRaisingExpression_strategy)
+@settings(max_examples=50)
+def test_stext_eventraisingexpression_instantiation(instance):
+    assert isinstance(instance, stext_EventRaisingExpression)
 
 @given(instance=Effect_strategy)
 @settings(max_examples=50)
 def test_effect_instantiation(instance):
     assert isinstance(instance, Effect)
 
-@given(instance=stext::ReactionEffect_strategy)
+@given(instance=stext_ReactionEffect_strategy)
 @settings(max_examples=50)
-def test_stext::reactioneffect_instantiation(instance):
-    assert isinstance(instance, stext::ReactionEffect)
+def test_stext_reactioneffect_instantiation(instance):
+    assert isinstance(instance, stext_ReactionEffect)
 
 @given(instance=Trigger_strategy)
 @settings(max_examples=50)
 def test_trigger_instantiation(instance):
     assert isinstance(instance, Trigger)
 
-@given(instance=stext::ReactionTrigger_strategy)
+@given(instance=stext_ReactionTrigger_strategy)
 @settings(max_examples=50)
-def test_stext::reactiontrigger_instantiation(instance):
-    assert isinstance(instance, stext::ReactionTrigger)
+def test_stext_reactiontrigger_instantiation(instance):
+    assert isinstance(instance, stext_ReactionTrigger)
 
 @given(instance=Operation_strategy)
 @settings(max_examples=50)
@@ -2149,10 +2128,10 @@ def test_operation_instantiation(instance):
 def test_declaration_instantiation(instance):
     assert isinstance(instance, Declaration)
 
-@given(instance=stext::OperationDefinition_strategy)
+@given(instance=stext_OperationDefinition_strategy)
 @settings(max_examples=50)
-def test_stext::operationdefinition_instantiation(instance):
-    assert isinstance(instance, stext::OperationDefinition)
+def test_stext_operationdefinition_instantiation(instance):
+    assert isinstance(instance, stext_OperationDefinition)
 
 @given(instance=Property_strategy)
 @settings(max_examples=50)
@@ -2164,29 +2143,23 @@ def test_property_instantiation(instance):
 def test_variable_instantiation(instance):
     assert isinstance(instance, Variable)
 
-@given(instance=stext::VariableDefinition_strategy)
+@given(instance=stext_VariableDefinition_strategy)
 @settings(max_examples=50)
-def test_stext::variabledefinition_instantiation(instance):
-    assert isinstance(instance, stext::VariableDefinition)
-
-@given(instance=stext::VariableDefinition_strategy)
-def test_stext::variabledefinition_external_type(instance):
-    assert isinstance(instance.external, bool)
+def test_stext_variabledefinition_instantiation(instance):
+    assert isinstance(instance, stext_VariableDefinition)
 
 
-@given(instance=stext::VariableDefinition_strategy)
-def test_stext::variabledefinition_external_setter(instance):
+
+@given(instance=stext_VariableDefinition_strategy)
+def test_stext_variabledefinition_external_setter(instance):
     original = instance.external
     instance.external = original
     assert instance.external == original
 
-@given(instance=stext::VariableDefinition_strategy)
-def test_stext::variabledefinition_readonly_type(instance):
-    assert isinstance(instance.readonly, bool)
 
 
-@given(instance=stext::VariableDefinition_strategy)
-def test_stext::variabledefinition_readonly_setter(instance):
+@given(instance=stext_VariableDefinition_strategy)
+def test_stext_variabledefinition_readonly_setter(instance):
     original = instance.readonly
     instance.readonly = original
     assert instance.readonly == original
@@ -2196,90 +2169,75 @@ def test_stext::variabledefinition_readonly_setter(instance):
 def test_literal_instantiation(instance):
     assert isinstance(instance, Literal)
 
-@given(instance=stext::RealLiteral_strategy)
+@given(instance=stext_StringLiteral_strategy)
 @settings(max_examples=50)
-def test_stext::realliteral_instantiation(instance):
-    assert isinstance(instance, stext::RealLiteral)
-
-@given(instance=stext::RealLiteral_strategy)
-def test_stext::realliteral_value_type(instance):
-    assert isinstance(instance.value, float)
+def test_stext_stringliteral_instantiation(instance):
+    assert isinstance(instance, stext_StringLiteral)
 
 
-@given(instance=stext::RealLiteral_strategy)
-def test_stext::realliteral_value_setter(instance):
+
+@given(instance=stext_StringLiteral_strategy)
+def test_stext_stringliteral_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
 
-@given(instance=stext::StringLiteral_strategy)
+@given(instance=stext_HexLiteral_strategy)
 @settings(max_examples=50)
-def test_stext::stringliteral_instantiation(instance):
-    assert isinstance(instance, stext::StringLiteral)
-
-@given(instance=stext::StringLiteral_strategy)
-def test_stext::stringliteral_value_type(instance):
-    assert isinstance(instance.value, str)
+def test_stext_hexliteral_instantiation(instance):
+    assert isinstance(instance, stext_HexLiteral)
 
 
-@given(instance=stext::StringLiteral_strategy)
-def test_stext::stringliteral_value_setter(instance):
+
+@given(instance=stext_HexLiteral_strategy)
+def test_stext_hexliteral_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
 
-@given(instance=stext::HexLiteral_strategy)
+@given(instance=stext_IntLiteral_strategy)
 @settings(max_examples=50)
-def test_stext::hexliteral_instantiation(instance):
-    assert isinstance(instance, stext::HexLiteral)
-
-@given(instance=stext::HexLiteral_strategy)
-def test_stext::hexliteral_value_type(instance):
-    assert isinstance(instance.value, int)
+def test_stext_intliteral_instantiation(instance):
+    assert isinstance(instance, stext_IntLiteral)
 
 
-@given(instance=stext::HexLiteral_strategy)
-def test_stext::hexliteral_value_setter(instance):
+
+@given(instance=stext_IntLiteral_strategy)
+def test_stext_intliteral_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
 
-@given(instance=stext::IntLiteral_strategy)
+@given(instance=stext_RealLiteral_strategy)
 @settings(max_examples=50)
-def test_stext::intliteral_instantiation(instance):
-    assert isinstance(instance, stext::IntLiteral)
-
-@given(instance=stext::IntLiteral_strategy)
-def test_stext::intliteral_value_type(instance):
-    assert isinstance(instance.value, int)
+def test_stext_realliteral_instantiation(instance):
+    assert isinstance(instance, stext_RealLiteral)
 
 
-@given(instance=stext::IntLiteral_strategy)
-def test_stext::intliteral_value_setter(instance):
+
+@given(instance=stext_RealLiteral_strategy)
+def test_stext_realliteral_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
 
-@given(instance=stext::BoolLiteral_strategy)
+@given(instance=stext_BoolLiteral_strategy)
 @settings(max_examples=50)
-def test_stext::boolliteral_instantiation(instance):
-    assert isinstance(instance, stext::BoolLiteral)
-
-@given(instance=stext::BoolLiteral_strategy)
-def test_stext::boolliteral_value_type(instance):
-    assert isinstance(instance.value, bool)
+def test_stext_boolliteral_instantiation(instance):
+    assert isinstance(instance, stext_BoolLiteral)
 
 
-@given(instance=stext::BoolLiteral_strategy)
-def test_stext::boolliteral_value_setter(instance):
+
+@given(instance=stext_BoolLiteral_strategy)
+def test_stext_boolliteral_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
 
-@given(instance=stext::Literal_strategy)
+@given(instance=stext_Literal_strategy)
 @settings(max_examples=50)
-def test_stext::literal_instantiation(instance):
-    assert isinstance(instance, stext::Literal)
+def test_stext_literal_instantiation(instance):
+    assert isinstance(instance, stext_Literal)
 
 @given(instance=Statement_strategy)
 @settings(max_examples=50)
@@ -2291,176 +2249,164 @@ def test_statement_instantiation(instance):
 def test_builtineventspec_instantiation(instance):
     assert isinstance(instance, BuiltinEventSpec)
 
-@given(instance=stext::AlwaysEvent_strategy)
+@given(instance=stext_ExitEvent_strategy)
 @settings(max_examples=50)
-def test_stext::alwaysevent_instantiation(instance):
-    assert isinstance(instance, stext::AlwaysEvent)
+def test_stext_exitevent_instantiation(instance):
+    assert isinstance(instance, stext_ExitEvent)
 
-@given(instance=stext::ExitEvent_strategy)
+@given(instance=stext_OnCycleEvent_strategy)
 @settings(max_examples=50)
-def test_stext::exitevent_instantiation(instance):
-    assert isinstance(instance, stext::ExitEvent)
+def test_stext_oncycleevent_instantiation(instance):
+    assert isinstance(instance, stext_OnCycleEvent)
 
-@given(instance=stext::OnCycleEvent_strategy)
+@given(instance=stext_AlwaysEvent_strategy)
 @settings(max_examples=50)
-def test_stext::oncycleevent_instantiation(instance):
-    assert isinstance(instance, stext::OnCycleEvent)
+def test_stext_alwaysevent_instantiation(instance):
+    assert isinstance(instance, stext_AlwaysEvent)
 
-@given(instance=stext::DefaultEvent_strategy)
+@given(instance=stext_DefaultEvent_strategy)
 @settings(max_examples=50)
-def test_stext::defaultevent_instantiation(instance):
-    assert isinstance(instance, stext::DefaultEvent)
+def test_stext_defaultevent_instantiation(instance):
+    assert isinstance(instance, stext_DefaultEvent)
 
-@given(instance=stext::EntryEvent_strategy)
+@given(instance=stext_EntryEvent_strategy)
 @settings(max_examples=50)
-def test_stext::entryevent_instantiation(instance):
-    assert isinstance(instance, stext::EntryEvent)
+def test_stext_entryevent_instantiation(instance):
+    assert isinstance(instance, stext_EntryEvent)
 
 @given(instance=EventSpec_strategy)
 @settings(max_examples=50)
 def test_eventspec_instantiation(instance):
     assert isinstance(instance, EventSpec)
 
-@given(instance=stext::BuiltinEventSpec_strategy)
+@given(instance=stext_BuiltinEventSpec_strategy)
 @settings(max_examples=50)
-def test_stext::builtineventspec_instantiation(instance):
-    assert isinstance(instance, stext::BuiltinEventSpec)
+def test_stext_builtineventspec_instantiation(instance):
+    assert isinstance(instance, stext_BuiltinEventSpec)
 
-@given(instance=stext::TimeEventSpec_strategy)
+@given(instance=stext_TimeEventSpec_strategy)
 @settings(max_examples=50)
-def test_stext::timeeventspec_instantiation(instance):
-    assert isinstance(instance, stext::TimeEventSpec)
-
-@given(instance=stext::TimeEventSpec_strategy)
-def test_stext::timeeventspec_unit_type(instance):
-    assert isinstance(instance.unit, str)
+def test_stext_timeeventspec_instantiation(instance):
+    assert isinstance(instance, stext_TimeEventSpec)
 
 
-@given(instance=stext::TimeEventSpec_strategy)
-def test_stext::timeeventspec_unit_setter(instance):
+
+@given(instance=stext_TimeEventSpec_strategy)
+def test_stext_timeeventspec_unit_setter(instance):
     original = instance.unit
     instance.unit = original
     assert instance.unit == original
 
-@given(instance=stext::TimeEventSpec_strategy)
-def test_stext::timeeventspec_value_type(instance):
-    assert isinstance(instance.value, int)
 
 
-@given(instance=stext::TimeEventSpec_strategy)
-def test_stext::timeeventspec_value_setter(instance):
-    original = instance.value
-    instance.value = original
-    assert instance.value == original
-
-@given(instance=stext::TimeEventSpec_strategy)
-def test_stext::timeeventspec_type_type(instance):
-    assert isinstance(instance.type, str)
-
-
-@given(instance=stext::TimeEventSpec_strategy)
-def test_stext::timeeventspec_type_setter(instance):
+@given(instance=stext_TimeEventSpec_strategy)
+def test_stext_timeeventspec_type_setter(instance):
     original = instance.type
     instance.type = original
     assert instance.type == original
 
-@given(instance=stext::RegularEventSpec_strategy)
-@settings(max_examples=50)
-def test_stext::regulareventspec_instantiation(instance):
-    assert isinstance(instance, stext::RegularEventSpec)
 
-@given(instance=stext::EventSpec_strategy)
-@settings(max_examples=50)
-def test_stext::eventspec_instantiation(instance):
-    assert isinstance(instance, stext::EventSpec)
 
-@given(instance=stext::Exitpoint_strategy)
-@settings(max_examples=50)
-def test_stext::exitpoint_instantiation(instance):
-    assert isinstance(instance, stext::Exitpoint)
+@given(instance=stext_TimeEventSpec_strategy)
+def test_stext_timeeventspec_value_setter(instance):
+    original = instance.value
+    instance.value = original
+    assert instance.value == original
 
-@given(instance=stext::Entrypoint_strategy)
+@given(instance=stext_RegularEventSpec_strategy)
 @settings(max_examples=50)
-def test_stext::entrypoint_instantiation(instance):
-    assert isinstance(instance, stext::Entrypoint)
+def test_stext_regulareventspec_instantiation(instance):
+    assert isinstance(instance, stext_RegularEventSpec)
+
+@given(instance=stext_EventSpec_strategy)
+@settings(max_examples=50)
+def test_stext_eventspec_instantiation(instance):
+    assert isinstance(instance, stext_EventSpec)
+
+@given(instance=stext_Exitpoint_strategy)
+@settings(max_examples=50)
+def test_stext_exitpoint_instantiation(instance):
+    assert isinstance(instance, stext_Exitpoint)
+
+@given(instance=stext_Entrypoint_strategy)
+@settings(max_examples=50)
+def test_stext_entrypoint_instantiation(instance):
+    assert isinstance(instance, stext_Entrypoint)
 
 @given(instance=ReactionProperty_strategy)
 @settings(max_examples=50)
 def test_reactionproperty_instantiation(instance):
     assert isinstance(instance, ReactionProperty)
 
-@given(instance=stext::ExitPointSpec_strategy)
+@given(instance=stext_ExitPointSpec_strategy)
 @settings(max_examples=50)
-def test_stext::exitpointspec_instantiation(instance):
-    assert isinstance(instance, stext::ExitPointSpec)
+def test_stext_exitpointspec_instantiation(instance):
+    assert isinstance(instance, stext_ExitPointSpec)
 
-@given(instance=stext::EntryPointSpec_strategy)
+@given(instance=stext_EntryPointSpec_strategy)
 @settings(max_examples=50)
-def test_stext::entrypointspec_instantiation(instance):
-    assert isinstance(instance, stext::EntryPointSpec)
+def test_stext_entrypointspec_instantiation(instance):
+    assert isinstance(instance, stext_EntryPointSpec)
 
-@given(instance=stext::ReactionProperty_strategy)
+@given(instance=stext_ReactionProperty_strategy)
 @settings(max_examples=50)
-def test_stext::reactionproperty_instantiation(instance):
-    assert isinstance(instance, stext::ReactionProperty)
+def test_stext_reactionproperty_instantiation(instance):
+    assert isinstance(instance, stext_ReactionProperty)
 
-@given(instance=stext::ReactionProperties_strategy)
+@given(instance=stext_ReactionProperties_strategy)
 @settings(max_examples=50)
-def test_stext::reactionproperties_instantiation(instance):
-    assert isinstance(instance, stext::ReactionProperties)
+def test_stext_reactionproperties_instantiation(instance):
+    assert isinstance(instance, stext_ReactionProperties)
 
 @given(instance=Reaction_strategy)
 @settings(max_examples=50)
 def test_reaction_instantiation(instance):
     assert isinstance(instance, Reaction)
 
-@given(instance=stext::LocalReaction_strategy)
+@given(instance=stext_LocalReaction_strategy)
 @settings(max_examples=50)
-def test_stext::localreaction_instantiation(instance):
-    assert isinstance(instance, stext::LocalReaction)
+def test_stext_localreaction_instantiation(instance):
+    assert isinstance(instance, stext_LocalReaction)
 
-@given(instance=stext::Type_strategy)
+@given(instance=stext_Type_strategy)
 @settings(max_examples=50)
-def test_stext::type_instantiation(instance):
-    assert isinstance(instance, stext::Type)
+def test_stext_type_instantiation(instance):
+    assert isinstance(instance, stext_Type)
 
-@given(instance=stext::DefRoot_strategy)
+@given(instance=stext_DefRoot_strategy)
 @settings(max_examples=50)
-def test_stext::defroot_instantiation(instance):
-    assert isinstance(instance, stext::DefRoot)
+def test_stext_defroot_instantiation(instance):
+    assert isinstance(instance, stext_DefRoot)
 
-@given(instance=stext::Root_strategy)
+@given(instance=stext_Root_strategy)
 @settings(max_examples=50)
-def test_stext::root_instantiation(instance):
-    assert isinstance(instance, stext::Root)
+def test_stext_root_instantiation(instance):
+    assert isinstance(instance, stext_Root)
 
-@given(instance=stext::Expression_strategy)
+@given(instance=stext_Expression_strategy)
 @settings(max_examples=50)
-def test_stext::expression_instantiation(instance):
-    assert isinstance(instance, stext::Expression)
+def test_stext_expression_instantiation(instance):
+    assert isinstance(instance, stext_Expression)
 
-@given(instance=stext::EventDerivation_strategy)
+@given(instance=stext_EventDerivation_strategy)
 @settings(max_examples=50)
-def test_stext::eventderivation_instantiation(instance):
-    assert isinstance(instance, stext::EventDerivation)
+def test_stext_eventderivation_instantiation(instance):
+    assert isinstance(instance, stext_EventDerivation)
 
 @given(instance=Event_strategy)
 @settings(max_examples=50)
 def test_event_instantiation(instance):
     assert isinstance(instance, Event)
 
-@given(instance=stext::EventDefinition_strategy)
+@given(instance=stext_EventDefinition_strategy)
 @settings(max_examples=50)
-def test_stext::eventdefinition_instantiation(instance):
-    assert isinstance(instance, stext::EventDefinition)
-
-@given(instance=stext::EventDefinition_strategy)
-def test_stext::eventdefinition_direction_type(instance):
-    assert isinstance(instance.direction, str)
+def test_stext_eventdefinition_instantiation(instance):
+    assert isinstance(instance, stext_EventDefinition)
 
 
-@given(instance=stext::EventDefinition_strategy)
-def test_stext::eventdefinition_direction_setter(instance):
+
+@given(instance=stext_EventDefinition_strategy)
+def test_stext_eventdefinition_direction_setter(instance):
     original = instance.direction
     instance.direction = original
     assert instance.direction == original
@@ -2475,63 +2421,60 @@ def test_namedelement_instantiation(instance):
 def test_statechartscope_instantiation(instance):
     assert isinstance(instance, StatechartScope)
 
-@given(instance=stext::InternalScope_strategy)
+@given(instance=stext_InternalScope_strategy)
 @settings(max_examples=50)
-def test_stext::internalscope_instantiation(instance):
-    assert isinstance(instance, stext::InternalScope)
+def test_stext_internalscope_instantiation(instance):
+    assert isinstance(instance, stext_InternalScope)
 
-@given(instance=stext::InterfaceScope_strategy)
+@given(instance=stext_InterfaceScope_strategy)
 @settings(max_examples=50)
-def test_stext::interfacescope_instantiation(instance):
-    assert isinstance(instance, stext::InterfaceScope)
+def test_stext_interfacescope_instantiation(instance):
+    assert isinstance(instance, stext_InterfaceScope)
 
 @given(instance=Scope_strategy)
 @settings(max_examples=50)
 def test_scope_instantiation(instance):
     assert isinstance(instance, Scope)
 
-@given(instance=stext::SimpleScope_strategy)
+@given(instance=stext_SimpleScope_strategy)
 @settings(max_examples=50)
-def test_stext::simplescope_instantiation(instance):
-    assert isinstance(instance, stext::SimpleScope)
+def test_stext_simplescope_instantiation(instance):
+    assert isinstance(instance, stext_SimpleScope)
 
-@given(instance=stext::TransitionReaction_strategy)
+@given(instance=stext_TransitionReaction_strategy)
 @settings(max_examples=50)
-def test_stext::transitionreaction_instantiation(instance):
-    assert isinstance(instance, stext::TransitionReaction)
+def test_stext_transitionreaction_instantiation(instance):
+    assert isinstance(instance, stext_TransitionReaction)
 
-@given(instance=stext::Scope_strategy)
+@given(instance=stext_Scope_strategy)
 @settings(max_examples=50)
-def test_stext::scope_instantiation(instance):
-    assert isinstance(instance, stext::Scope)
+def test_stext_scope_instantiation(instance):
+    assert isinstance(instance, stext_Scope)
 
-@given(instance=stext::StatechartScope_strategy)
+@given(instance=stext_StatechartScope_strategy)
 @settings(max_examples=50)
-def test_stext::statechartscope_instantiation(instance):
-    assert isinstance(instance, stext::StatechartScope)
+def test_stext_statechartscope_instantiation(instance):
+    assert isinstance(instance, stext_StatechartScope)
 
-@given(instance=stext::TransitionSpecification_strategy)
+@given(instance=stext_TransitionSpecification_strategy)
 @settings(max_examples=50)
-def test_stext::transitionspecification_instantiation(instance):
-    assert isinstance(instance, stext::TransitionSpecification)
+def test_stext_transitionspecification_instantiation(instance):
+    assert isinstance(instance, stext_TransitionSpecification)
 
-@given(instance=stext::StateSpecification_strategy)
+@given(instance=stext_StateSpecification_strategy)
 @settings(max_examples=50)
-def test_stext::statespecification_instantiation(instance):
-    assert isinstance(instance, stext::StateSpecification)
+def test_stext_statespecification_instantiation(instance):
+    assert isinstance(instance, stext_StateSpecification)
 
-@given(instance=stext::StatechartSpecification_strategy)
+@given(instance=stext_StatechartSpecification_strategy)
 @settings(max_examples=50)
-def test_stext::statechartspecification_instantiation(instance):
-    assert isinstance(instance, stext::StatechartSpecification)
-
-@given(instance=stext::StatechartSpecification_strategy)
-def test_stext::statechartspecification_namespace_type(instance):
-    assert isinstance(instance.namespace, str)
+def test_stext_statechartspecification_instantiation(instance):
+    assert isinstance(instance, stext_StatechartSpecification)
 
 
-@given(instance=stext::StatechartSpecification_strategy)
-def test_stext::statechartspecification_namespace_setter(instance):
+
+@given(instance=stext_StatechartSpecification_strategy)
+def test_stext_statechartspecification_namespace_setter(instance):
     original = instance.namespace
     instance.namespace = original
     assert instance.namespace == original
@@ -2541,17 +2484,17 @@ def test_stext::statechartspecification_namespace_setter(instance):
 def test_defroot_instantiation(instance):
     assert isinstance(instance, DefRoot)
 
-@given(instance=stext::StateRoot_strategy)
+@given(instance=stext_StateRoot_strategy)
 @settings(max_examples=50)
-def test_stext::stateroot_instantiation(instance):
-    assert isinstance(instance, stext::StateRoot)
+def test_stext_stateroot_instantiation(instance):
+    assert isinstance(instance, stext_StateRoot)
 
-@given(instance=stext::TransitionRoot_strategy)
+@given(instance=stext_TransitionRoot_strategy)
 @settings(max_examples=50)
-def test_stext::transitionroot_instantiation(instance):
-    assert isinstance(instance, stext::TransitionRoot)
+def test_stext_transitionroot_instantiation(instance):
+    assert isinstance(instance, stext_TransitionRoot)
 
-@given(instance=stext::StatechartRoot_strategy)
+@given(instance=stext_StatechartRoot_strategy)
 @settings(max_examples=50)
-def test_stext::statechartroot_instantiation(instance):
-    assert isinstance(instance, stext::StatechartRoot)
+def test_stext_statechartroot_instantiation(instance):
+    assert isinstance(instance, stext_StatechartRoot)

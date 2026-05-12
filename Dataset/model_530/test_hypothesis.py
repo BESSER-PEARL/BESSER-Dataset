@@ -3,12 +3,12 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    FamilyRegister::Member,
-    FamilyRegister::Family,
-    FamilyRegister::FamilyRegister,
+from python_code import (
+    FamilyRegister_Member,
+    FamilyRegister_Family,
+    FamilyRegister_FamilyRegister,
 )
 
 # =============================================================================
@@ -17,23 +17,23 @@ from classes import (
 
 
 
-def test_familyregister::member_is_not_abstract():
-    assert not inspect.isabstract(FamilyRegister::Member)
+def test_familyregister_member_is_not_abstract():
+    assert not inspect.isabstract(FamilyRegister_Member)
 
 
-def test_familyregister::member_constructor_exists():
-    assert callable(FamilyRegister::Member.__init__)
+def test_familyregister_member_constructor_exists():
+    assert callable(FamilyRegister_Member.__init__)
 
 
-def test_familyregister::member_constructor_args():
-    sig = inspect.signature(FamilyRegister::Member.__init__)
+def test_familyregister_member_constructor_args():
+    sig = inspect.signature(FamilyRegister_Member.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_familyregister::member_has_name():
-    assert hasattr(FamilyRegister::Member, "name")
+def test_familyregister_member_has_name():
+    assert hasattr(FamilyRegister_Member, "name")
     descriptor = None
-    for klass in FamilyRegister::Member.__mro__:
+    for klass in FamilyRegister_Member.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -41,23 +41,23 @@ def test_familyregister::member_has_name():
 
 
 
-def test_familyregister::family_is_not_abstract():
-    assert not inspect.isabstract(FamilyRegister::Family)
+def test_familyregister_family_is_not_abstract():
+    assert not inspect.isabstract(FamilyRegister_Family)
 
 
-def test_familyregister::family_constructor_exists():
-    assert callable(FamilyRegister::Family.__init__)
+def test_familyregister_family_constructor_exists():
+    assert callable(FamilyRegister_Family.__init__)
 
 
-def test_familyregister::family_constructor_args():
-    sig = inspect.signature(FamilyRegister::Family.__init__)
+def test_familyregister_family_constructor_args():
+    sig = inspect.signature(FamilyRegister_Family.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_familyregister::family_has_name():
-    assert hasattr(FamilyRegister::Family, "name")
+def test_familyregister_family_has_name():
+    assert hasattr(FamilyRegister_Family, "name")
     descriptor = None
-    for klass in FamilyRegister::Family.__mro__:
+    for klass in FamilyRegister_Family.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -65,16 +65,16 @@ def test_familyregister::family_has_name():
 
 
 
-def test_familyregister::familyregister_is_not_abstract():
-    assert not inspect.isabstract(FamilyRegister::FamilyRegister)
+def test_familyregister_familyregister_is_not_abstract():
+    assert not inspect.isabstract(FamilyRegister_FamilyRegister)
 
 
-def test_familyregister::familyregister_constructor_exists():
-    assert callable(FamilyRegister::FamilyRegister.__init__)
+def test_familyregister_familyregister_constructor_exists():
+    assert callable(FamilyRegister_FamilyRegister.__init__)
 
 
-def test_familyregister::familyregister_constructor_args():
-    sig = inspect.signature(FamilyRegister::FamilyRegister.__init__)
+def test_familyregister_familyregister_constructor_args():
+    sig = inspect.signature(FamilyRegister_FamilyRegister.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -89,53 +89,47 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-FamilyRegister::Member_strategy = st.builds(
-    FamilyRegister::Member,
+FamilyRegister_Member_strategy = st.builds(
+    FamilyRegister_Member,
     name=
         safe_text
 )
-FamilyRegister::Family_strategy = st.builds(
-    FamilyRegister::Family,
+FamilyRegister_Family_strategy = st.builds(
+    FamilyRegister_Family,
     name=
         safe_text
 )
-FamilyRegister::FamilyRegister_strategy = st.builds(
-    FamilyRegister::FamilyRegister,
+FamilyRegister_FamilyRegister_strategy = st.builds(
+    FamilyRegister_FamilyRegister,
 )
 
-@given(instance=FamilyRegister::Member_strategy)
+@given(instance=FamilyRegister_Member_strategy)
 @settings(max_examples=50)
-def test_familyregister::member_instantiation(instance):
-    assert isinstance(instance, FamilyRegister::Member)
-
-@given(instance=FamilyRegister::Member_strategy)
-def test_familyregister::member_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_familyregister_member_instantiation(instance):
+    assert isinstance(instance, FamilyRegister_Member)
 
 
-@given(instance=FamilyRegister::Member_strategy)
-def test_familyregister::member_name_setter(instance):
+
+@given(instance=FamilyRegister_Member_strategy)
+def test_familyregister_member_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=FamilyRegister::Family_strategy)
+@given(instance=FamilyRegister_Family_strategy)
 @settings(max_examples=50)
-def test_familyregister::family_instantiation(instance):
-    assert isinstance(instance, FamilyRegister::Family)
-
-@given(instance=FamilyRegister::Family_strategy)
-def test_familyregister::family_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_familyregister_family_instantiation(instance):
+    assert isinstance(instance, FamilyRegister_Family)
 
 
-@given(instance=FamilyRegister::Family_strategy)
-def test_familyregister::family_name_setter(instance):
+
+@given(instance=FamilyRegister_Family_strategy)
+def test_familyregister_family_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=FamilyRegister::FamilyRegister_strategy)
+@given(instance=FamilyRegister_FamilyRegister_strategy)
 @settings(max_examples=50)
-def test_familyregister::familyregister_instantiation(instance):
-    assert isinstance(instance, FamilyRegister::FamilyRegister)
+def test_familyregister_familyregister_instantiation(instance):
+    assert isinstance(instance, FamilyRegister_FamilyRegister)

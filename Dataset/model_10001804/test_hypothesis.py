@@ -3,7 +3,7 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
 from python_code import (
     Cards,
@@ -88,16 +88,16 @@ def test_player_constructor_exists():
 def test_player_constructor_args():
     sig = inspect.signature(Player.__init__)
     params = list(sig.parameters.keys())
-    assert "wins" in params, "Missing parameter 'wins'"
-    assert "winRate" in params, "Missing parameter 'winRate'"
     assert "losses" in params, "Missing parameter 'losses'"
+    assert "winRate" in params, "Missing parameter 'winRate'"
+    assert "wins" in params, "Missing parameter 'wins'"
 
-def test_player_has_wins():
-    assert hasattr(Player, "wins")
+def test_player_has_losses():
+    assert hasattr(Player, "losses")
     descriptor = None
     for klass in Player.__mro__:
-        if "wins" in klass.__dict__:
-            descriptor = klass.__dict__["wins"]
+        if "losses" in klass.__dict__:
+            descriptor = klass.__dict__["losses"]
             break
     assert isinstance(descriptor, property)
 
@@ -110,12 +110,12 @@ def test_player_has_winRate():
             break
     assert isinstance(descriptor, property)
 
-def test_player_has_losses():
-    assert hasattr(Player, "losses")
+def test_player_has_wins():
+    assert hasattr(Player, "wins")
     descriptor = None
     for klass in Player.__mro__:
-        if "losses" in klass.__dict__:
-            descriptor = klass.__dict__["losses"]
+        if "wins" in klass.__dict__:
+            descriptor = klass.__dict__["wins"]
             break
     assert isinstance(descriptor, property)
 
@@ -193,11 +193,11 @@ Deck_strategy = st.builds(
 )
 Player_strategy = st.builds(
     Player,
-    wins=
+    losses=
         st.integers(),
     winRate=
         safe_text,
-    losses=
+    wins=
         st.integers()
 )
 Class_strategy = st.builds(
@@ -216,9 +216,6 @@ Elevens_strategy = st.builds(
 def test_cards_instantiation(instance):
     assert isinstance(instance, Cards)
 
-@given(instance=Cards_strategy)
-def test_cards_Character_type(instance):
-    assert isinstance(instance.Character, str)
 
 
 @given(instance=Cards_strategy)
@@ -227,9 +224,6 @@ def test_cards_Character_setter(instance):
     instance.Character = original
     assert instance.Character == original
 
-@given(instance=Cards_strategy)
-def test_cards_Suit_type(instance):
-    assert isinstance(instance.Suit, str)
 
 
 @given(instance=Cards_strategy)
@@ -243,9 +237,6 @@ def test_cards_Suit_setter(instance):
 def test_deck_instantiation(instance):
     assert isinstance(instance, Deck)
 
-@given(instance=Deck_strategy)
-def test_deck_Cards_type(instance):
-    assert isinstance(instance.Cards, cards)
 
 
 @given(instance=Deck_strategy)
@@ -259,20 +250,14 @@ def test_deck_Cards_setter(instance):
 def test_player_instantiation(instance):
     assert isinstance(instance, Player)
 
-@given(instance=Player_strategy)
-def test_player_wins_type(instance):
-    assert isinstance(instance.wins, int)
 
 
 @given(instance=Player_strategy)
-def test_player_wins_setter(instance):
-    original = instance.wins
-    instance.wins = original
-    assert instance.wins == original
+def test_player_losses_setter(instance):
+    original = instance.losses
+    instance.losses = original
+    assert instance.losses == original
 
-@given(instance=Player_strategy)
-def test_player_winRate_type(instance):
-    assert isinstance(instance.winRate, str)
 
 
 @given(instance=Player_strategy)
@@ -281,16 +266,13 @@ def test_player_winRate_setter(instance):
     instance.winRate = original
     assert instance.winRate == original
 
-@given(instance=Player_strategy)
-def test_player_losses_type(instance):
-    assert isinstance(instance.losses, int)
 
 
 @given(instance=Player_strategy)
-def test_player_losses_setter(instance):
-    original = instance.losses
-    instance.losses = original
-    assert instance.losses == original
+def test_player_wins_setter(instance):
+    original = instance.wins
+    instance.wins = original
+    assert instance.wins == original
 
 @given(instance=Class_strategy)
 @settings(max_examples=50)
@@ -302,9 +284,6 @@ def test_class_instantiation(instance):
 def test_elevens_instantiation(instance):
     assert isinstance(instance, Elevens)
 
-@given(instance=Elevens_strategy)
-def test_elevens_Deck_type(instance):
-    assert isinstance(instance.Deck, deck)
 
 
 @given(instance=Elevens_strategy)
@@ -313,9 +292,6 @@ def test_elevens_Deck_setter(instance):
     instance.Deck = original
     assert instance.Deck == original
 
-@given(instance=Elevens_strategy)
-def test_elevens_Player_type(instance):
-    assert isinstance(instance.Player, player)
 
 
 @given(instance=Elevens_strategy)

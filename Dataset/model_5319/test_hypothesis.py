@@ -3,13 +3,13 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    root::B,
+from python_code import (
+    root_B,
     B,
-    root::A2,
-    root::A,
+    root_A2,
+    root_A,
 )
 
 # =============================================================================
@@ -18,16 +18,16 @@ from classes import (
 
 
 
-def test_root::b_is_not_abstract():
-    assert not inspect.isabstract(root::B)
+def test_root_b_is_not_abstract():
+    assert not inspect.isabstract(root_B)
 
 
-def test_root::b_constructor_exists():
-    assert callable(root::B.__init__)
+def test_root_b_constructor_exists():
+    assert callable(root_B.__init__)
 
 
-def test_root::b_constructor_args():
-    sig = inspect.signature(root::B.__init__)
+def test_root_b_constructor_args():
+    sig = inspect.signature(root_B.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -46,30 +46,30 @@ def test_b_constructor_args():
 
 
 
-def test_root::a2_is_not_abstract():
-    assert not inspect.isabstract(root::A2)
+def test_root_a2_is_not_abstract():
+    assert not inspect.isabstract(root_A2)
 
 
-def test_root::a2_constructor_exists():
-    assert callable(root::A2.__init__)
+def test_root_a2_constructor_exists():
+    assert callable(root_A2.__init__)
 
 
-def test_root::a2_constructor_args():
-    sig = inspect.signature(root::A2.__init__)
+def test_root_a2_constructor_args():
+    sig = inspect.signature(root_A2.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_root::a_is_not_abstract():
-    assert not inspect.isabstract(root::A)
+def test_root_a_is_not_abstract():
+    assert not inspect.isabstract(root_A)
 
 
-def test_root::a_constructor_exists():
-    assert callable(root::A.__init__)
+def test_root_a_constructor_exists():
+    assert callable(root_A.__init__)
 
 
-def test_root::a_constructor_args():
-    sig = inspect.signature(root::A.__init__)
+def test_root_a_constructor_args():
+    sig = inspect.signature(root_A.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -84,35 +84,35 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-root::B_strategy = st.builds(
-    root::B,
+root_B_strategy = st.builds(
+    root_B,
 )
 B_strategy = st.builds(
     B,
 )
-root::A2_strategy = st.builds(
-    root::A2,
+root_A2_strategy = st.builds(
+    root_A2,
 )
-root::A_strategy = st.builds(
-    root::A,
+root_A_strategy = st.builds(
+    root_A,
 )
 
-@given(instance=root::B_strategy)
+@given(instance=root_B_strategy)
 @settings(max_examples=50)
-def test_root::b_instantiation(instance):
-    assert isinstance(instance, root::B)
+def test_root_b_instantiation(instance):
+    assert isinstance(instance, root_B)
 
 @given(instance=B_strategy)
 @settings(max_examples=50)
 def test_b_instantiation(instance):
     assert isinstance(instance, B)
 
-@given(instance=root::A2_strategy)
+@given(instance=root_A2_strategy)
 @settings(max_examples=50)
-def test_root::a2_instantiation(instance):
-    assert isinstance(instance, root::A2)
+def test_root_a2_instantiation(instance):
+    assert isinstance(instance, root_A2)
 
-@given(instance=root::A_strategy)
+@given(instance=root_A_strategy)
 @settings(max_examples=50)
-def test_root::a_instantiation(instance):
-    assert isinstance(instance, root::A)
+def test_root_a_instantiation(instance):
+    assert isinstance(instance, root_A)

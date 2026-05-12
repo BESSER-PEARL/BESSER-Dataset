@@ -3,33 +3,33 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    USECASEUML::Condition,
-    USECASEUML::ScenarioDescription,
-    USECASEUML::Resource,
+from python_code import (
+    USECASEUML_Condition,
+    USECASEUML_ScenarioDescription,
+    USECASEUML_Resource,
     Resource,
-    USECASEUML::Role,
+    USECASEUML_Role,
     NonFunctionnelRequirement,
     FunctionnelRequirement,
     Role,
-    USECASEUML::HumanRole,
-    USECASEUML::EventRole,
-    USECASEUML::SystemRole,
+    USECASEUML_SystemRole,
+    USECASEUML_HumanRole,
+    USECASEUML_EventRole,
     Condition,
-    USECASEUML::Pre,
-    USECASEUML::Post,
+    USECASEUML_Pre,
+    USECASEUML_Post,
     ScenarioDescription,
-    USECASEUML::UseCase,
-    USECASEUML::Goal,
+    USECASEUML_UseCase,
+    USECASEUML_Goal,
     Goal,
-    USECASEUML::Requirement,
+    USECASEUML_Requirement,
     UseCase,
-    USECASEUML::Manage,
+    USECASEUML_Manage,
     Requirement,
-    USECASEUML::FunctionnelRequirement,
-    USECASEUML::NonFunctionnelRequirement,
+    USECASEUML_FunctionnelRequirement,
+    USECASEUML_NonFunctionnelRequirement,
 )
 
 # =============================================================================
@@ -38,44 +38,44 @@ from classes import (
 
 
 
-def test_usecaseuml::condition_is_not_abstract():
-    assert not inspect.isabstract(USECASEUML::Condition)
+def test_usecaseuml_condition_is_not_abstract():
+    assert not inspect.isabstract(USECASEUML_Condition)
 
 
-def test_usecaseuml::condition_constructor_exists():
-    assert callable(USECASEUML::Condition.__init__)
+def test_usecaseuml_condition_constructor_exists():
+    assert callable(USECASEUML_Condition.__init__)
 
 
-def test_usecaseuml::condition_constructor_args():
-    sig = inspect.signature(USECASEUML::Condition.__init__)
+def test_usecaseuml_condition_constructor_args():
+    sig = inspect.signature(USECASEUML_Condition.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_usecaseuml::scenariodescription_is_not_abstract():
-    assert not inspect.isabstract(USECASEUML::ScenarioDescription)
+def test_usecaseuml_scenariodescription_is_not_abstract():
+    assert not inspect.isabstract(USECASEUML_ScenarioDescription)
 
 
-def test_usecaseuml::scenariodescription_constructor_exists():
-    assert callable(USECASEUML::ScenarioDescription.__init__)
+def test_usecaseuml_scenariodescription_constructor_exists():
+    assert callable(USECASEUML_ScenarioDescription.__init__)
 
 
-def test_usecaseuml::scenariodescription_constructor_args():
-    sig = inspect.signature(USECASEUML::ScenarioDescription.__init__)
+def test_usecaseuml_scenariodescription_constructor_args():
+    sig = inspect.signature(USECASEUML_ScenarioDescription.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_usecaseuml::resource_is_not_abstract():
-    assert not inspect.isabstract(USECASEUML::Resource)
+def test_usecaseuml_resource_is_not_abstract():
+    assert not inspect.isabstract(USECASEUML_Resource)
 
 
-def test_usecaseuml::resource_constructor_exists():
-    assert callable(USECASEUML::Resource.__init__)
+def test_usecaseuml_resource_constructor_exists():
+    assert callable(USECASEUML_Resource.__init__)
 
 
-def test_usecaseuml::resource_constructor_args():
-    sig = inspect.signature(USECASEUML::Resource.__init__)
+def test_usecaseuml_resource_constructor_args():
+    sig = inspect.signature(USECASEUML_Resource.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -94,16 +94,16 @@ def test_resource_constructor_args():
 
 
 
-def test_usecaseuml::role_is_not_abstract():
-    assert not inspect.isabstract(USECASEUML::Role)
+def test_usecaseuml_role_is_not_abstract():
+    assert not inspect.isabstract(USECASEUML_Role)
 
 
-def test_usecaseuml::role_constructor_exists():
-    assert callable(USECASEUML::Role.__init__)
+def test_usecaseuml_role_constructor_exists():
+    assert callable(USECASEUML_Role.__init__)
 
 
-def test_usecaseuml::role_constructor_args():
-    sig = inspect.signature(USECASEUML::Role.__init__)
+def test_usecaseuml_role_constructor_args():
+    sig = inspect.signature(USECASEUML_Role.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -150,44 +150,44 @@ def test_role_constructor_args():
 
 
 
-def test_usecaseuml::humanrole_is_not_abstract():
-    assert not inspect.isabstract(USECASEUML::HumanRole)
+def test_usecaseuml_systemrole_is_not_abstract():
+    assert not inspect.isabstract(USECASEUML_SystemRole)
 
 
-def test_usecaseuml::humanrole_constructor_exists():
-    assert callable(USECASEUML::HumanRole.__init__)
+def test_usecaseuml_systemrole_constructor_exists():
+    assert callable(USECASEUML_SystemRole.__init__)
 
 
-def test_usecaseuml::humanrole_constructor_args():
-    sig = inspect.signature(USECASEUML::HumanRole.__init__)
+def test_usecaseuml_systemrole_constructor_args():
+    sig = inspect.signature(USECASEUML_SystemRole.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_usecaseuml::eventrole_is_not_abstract():
-    assert not inspect.isabstract(USECASEUML::EventRole)
+def test_usecaseuml_humanrole_is_not_abstract():
+    assert not inspect.isabstract(USECASEUML_HumanRole)
 
 
-def test_usecaseuml::eventrole_constructor_exists():
-    assert callable(USECASEUML::EventRole.__init__)
+def test_usecaseuml_humanrole_constructor_exists():
+    assert callable(USECASEUML_HumanRole.__init__)
 
 
-def test_usecaseuml::eventrole_constructor_args():
-    sig = inspect.signature(USECASEUML::EventRole.__init__)
+def test_usecaseuml_humanrole_constructor_args():
+    sig = inspect.signature(USECASEUML_HumanRole.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_usecaseuml::systemrole_is_not_abstract():
-    assert not inspect.isabstract(USECASEUML::SystemRole)
+def test_usecaseuml_eventrole_is_not_abstract():
+    assert not inspect.isabstract(USECASEUML_EventRole)
 
 
-def test_usecaseuml::systemrole_constructor_exists():
-    assert callable(USECASEUML::SystemRole.__init__)
+def test_usecaseuml_eventrole_constructor_exists():
+    assert callable(USECASEUML_EventRole.__init__)
 
 
-def test_usecaseuml::systemrole_constructor_args():
-    sig = inspect.signature(USECASEUML::SystemRole.__init__)
+def test_usecaseuml_eventrole_constructor_args():
+    sig = inspect.signature(USECASEUML_EventRole.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -206,30 +206,30 @@ def test_condition_constructor_args():
 
 
 
-def test_usecaseuml::pre_is_not_abstract():
-    assert not inspect.isabstract(USECASEUML::Pre)
+def test_usecaseuml_pre_is_not_abstract():
+    assert not inspect.isabstract(USECASEUML_Pre)
 
 
-def test_usecaseuml::pre_constructor_exists():
-    assert callable(USECASEUML::Pre.__init__)
+def test_usecaseuml_pre_constructor_exists():
+    assert callable(USECASEUML_Pre.__init__)
 
 
-def test_usecaseuml::pre_constructor_args():
-    sig = inspect.signature(USECASEUML::Pre.__init__)
+def test_usecaseuml_pre_constructor_args():
+    sig = inspect.signature(USECASEUML_Pre.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_usecaseuml::post_is_not_abstract():
-    assert not inspect.isabstract(USECASEUML::Post)
+def test_usecaseuml_post_is_not_abstract():
+    assert not inspect.isabstract(USECASEUML_Post)
 
 
-def test_usecaseuml::post_constructor_exists():
-    assert callable(USECASEUML::Post.__init__)
+def test_usecaseuml_post_constructor_exists():
+    assert callable(USECASEUML_Post.__init__)
 
 
-def test_usecaseuml::post_constructor_args():
-    sig = inspect.signature(USECASEUML::Post.__init__)
+def test_usecaseuml_post_constructor_args():
+    sig = inspect.signature(USECASEUML_Post.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -248,30 +248,30 @@ def test_scenariodescription_constructor_args():
 
 
 
-def test_usecaseuml::usecase_is_not_abstract():
-    assert not inspect.isabstract(USECASEUML::UseCase)
+def test_usecaseuml_usecase_is_not_abstract():
+    assert not inspect.isabstract(USECASEUML_UseCase)
 
 
-def test_usecaseuml::usecase_constructor_exists():
-    assert callable(USECASEUML::UseCase.__init__)
+def test_usecaseuml_usecase_constructor_exists():
+    assert callable(USECASEUML_UseCase.__init__)
 
 
-def test_usecaseuml::usecase_constructor_args():
-    sig = inspect.signature(USECASEUML::UseCase.__init__)
+def test_usecaseuml_usecase_constructor_args():
+    sig = inspect.signature(USECASEUML_UseCase.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_usecaseuml::goal_is_not_abstract():
-    assert not inspect.isabstract(USECASEUML::Goal)
+def test_usecaseuml_goal_is_not_abstract():
+    assert not inspect.isabstract(USECASEUML_Goal)
 
 
-def test_usecaseuml::goal_constructor_exists():
-    assert callable(USECASEUML::Goal.__init__)
+def test_usecaseuml_goal_constructor_exists():
+    assert callable(USECASEUML_Goal.__init__)
 
 
-def test_usecaseuml::goal_constructor_args():
-    sig = inspect.signature(USECASEUML::Goal.__init__)
+def test_usecaseuml_goal_constructor_args():
+    sig = inspect.signature(USECASEUML_Goal.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -290,16 +290,16 @@ def test_goal_constructor_args():
 
 
 
-def test_usecaseuml::requirement_is_not_abstract():
-    assert not inspect.isabstract(USECASEUML::Requirement)
+def test_usecaseuml_requirement_is_not_abstract():
+    assert not inspect.isabstract(USECASEUML_Requirement)
 
 
-def test_usecaseuml::requirement_constructor_exists():
-    assert callable(USECASEUML::Requirement.__init__)
+def test_usecaseuml_requirement_constructor_exists():
+    assert callable(USECASEUML_Requirement.__init__)
 
 
-def test_usecaseuml::requirement_constructor_args():
-    sig = inspect.signature(USECASEUML::Requirement.__init__)
+def test_usecaseuml_requirement_constructor_args():
+    sig = inspect.signature(USECASEUML_Requirement.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -318,16 +318,16 @@ def test_usecase_constructor_args():
 
 
 
-def test_usecaseuml::manage_is_not_abstract():
-    assert not inspect.isabstract(USECASEUML::Manage)
+def test_usecaseuml_manage_is_not_abstract():
+    assert not inspect.isabstract(USECASEUML_Manage)
 
 
-def test_usecaseuml::manage_constructor_exists():
-    assert callable(USECASEUML::Manage.__init__)
+def test_usecaseuml_manage_constructor_exists():
+    assert callable(USECASEUML_Manage.__init__)
 
 
-def test_usecaseuml::manage_constructor_args():
-    sig = inspect.signature(USECASEUML::Manage.__init__)
+def test_usecaseuml_manage_constructor_args():
+    sig = inspect.signature(USECASEUML_Manage.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -346,30 +346,30 @@ def test_requirement_constructor_args():
 
 
 
-def test_usecaseuml::functionnelrequirement_is_not_abstract():
-    assert not inspect.isabstract(USECASEUML::FunctionnelRequirement)
+def test_usecaseuml_functionnelrequirement_is_not_abstract():
+    assert not inspect.isabstract(USECASEUML_FunctionnelRequirement)
 
 
-def test_usecaseuml::functionnelrequirement_constructor_exists():
-    assert callable(USECASEUML::FunctionnelRequirement.__init__)
+def test_usecaseuml_functionnelrequirement_constructor_exists():
+    assert callable(USECASEUML_FunctionnelRequirement.__init__)
 
 
-def test_usecaseuml::functionnelrequirement_constructor_args():
-    sig = inspect.signature(USECASEUML::FunctionnelRequirement.__init__)
+def test_usecaseuml_functionnelrequirement_constructor_args():
+    sig = inspect.signature(USECASEUML_FunctionnelRequirement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_usecaseuml::nonfunctionnelrequirement_is_not_abstract():
-    assert not inspect.isabstract(USECASEUML::NonFunctionnelRequirement)
+def test_usecaseuml_nonfunctionnelrequirement_is_not_abstract():
+    assert not inspect.isabstract(USECASEUML_NonFunctionnelRequirement)
 
 
-def test_usecaseuml::nonfunctionnelrequirement_constructor_exists():
-    assert callable(USECASEUML::NonFunctionnelRequirement.__init__)
+def test_usecaseuml_nonfunctionnelrequirement_constructor_exists():
+    assert callable(USECASEUML_NonFunctionnelRequirement.__init__)
 
 
-def test_usecaseuml::nonfunctionnelrequirement_constructor_args():
-    sig = inspect.signature(USECASEUML::NonFunctionnelRequirement.__init__)
+def test_usecaseuml_nonfunctionnelrequirement_constructor_args():
+    sig = inspect.signature(USECASEUML_NonFunctionnelRequirement.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -384,20 +384,20 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-USECASEUML::Condition_strategy = st.builds(
-    USECASEUML::Condition,
+USECASEUML_Condition_strategy = st.builds(
+    USECASEUML_Condition,
 )
-USECASEUML::ScenarioDescription_strategy = st.builds(
-    USECASEUML::ScenarioDescription,
+USECASEUML_ScenarioDescription_strategy = st.builds(
+    USECASEUML_ScenarioDescription,
 )
-USECASEUML::Resource_strategy = st.builds(
-    USECASEUML::Resource,
+USECASEUML_Resource_strategy = st.builds(
+    USECASEUML_Resource,
 )
 Resource_strategy = st.builds(
     Resource,
 )
-USECASEUML::Role_strategy = st.builds(
-    USECASEUML::Role,
+USECASEUML_Role_strategy = st.builds(
+    USECASEUML_Role,
 )
 NonFunctionnelRequirement_strategy = st.builds(
     NonFunctionnelRequirement,
@@ -408,79 +408,79 @@ FunctionnelRequirement_strategy = st.builds(
 Role_strategy = st.builds(
     Role,
 )
-USECASEUML::HumanRole_strategy = st.builds(
-    USECASEUML::HumanRole,
+USECASEUML_SystemRole_strategy = st.builds(
+    USECASEUML_SystemRole,
 )
-USECASEUML::EventRole_strategy = st.builds(
-    USECASEUML::EventRole,
+USECASEUML_HumanRole_strategy = st.builds(
+    USECASEUML_HumanRole,
 )
-USECASEUML::SystemRole_strategy = st.builds(
-    USECASEUML::SystemRole,
+USECASEUML_EventRole_strategy = st.builds(
+    USECASEUML_EventRole,
 )
 Condition_strategy = st.builds(
     Condition,
 )
-USECASEUML::Pre_strategy = st.builds(
-    USECASEUML::Pre,
+USECASEUML_Pre_strategy = st.builds(
+    USECASEUML_Pre,
 )
-USECASEUML::Post_strategy = st.builds(
-    USECASEUML::Post,
+USECASEUML_Post_strategy = st.builds(
+    USECASEUML_Post,
 )
 ScenarioDescription_strategy = st.builds(
     ScenarioDescription,
 )
-USECASEUML::UseCase_strategy = st.builds(
-    USECASEUML::UseCase,
+USECASEUML_UseCase_strategy = st.builds(
+    USECASEUML_UseCase,
 )
-USECASEUML::Goal_strategy = st.builds(
-    USECASEUML::Goal,
+USECASEUML_Goal_strategy = st.builds(
+    USECASEUML_Goal,
 )
 Goal_strategy = st.builds(
     Goal,
 )
-USECASEUML::Requirement_strategy = st.builds(
-    USECASEUML::Requirement,
+USECASEUML_Requirement_strategy = st.builds(
+    USECASEUML_Requirement,
 )
 UseCase_strategy = st.builds(
     UseCase,
 )
-USECASEUML::Manage_strategy = st.builds(
-    USECASEUML::Manage,
+USECASEUML_Manage_strategy = st.builds(
+    USECASEUML_Manage,
 )
 Requirement_strategy = st.builds(
     Requirement,
 )
-USECASEUML::FunctionnelRequirement_strategy = st.builds(
-    USECASEUML::FunctionnelRequirement,
+USECASEUML_FunctionnelRequirement_strategy = st.builds(
+    USECASEUML_FunctionnelRequirement,
 )
-USECASEUML::NonFunctionnelRequirement_strategy = st.builds(
-    USECASEUML::NonFunctionnelRequirement,
+USECASEUML_NonFunctionnelRequirement_strategy = st.builds(
+    USECASEUML_NonFunctionnelRequirement,
 )
 
-@given(instance=USECASEUML::Condition_strategy)
+@given(instance=USECASEUML_Condition_strategy)
 @settings(max_examples=50)
-def test_usecaseuml::condition_instantiation(instance):
-    assert isinstance(instance, USECASEUML::Condition)
+def test_usecaseuml_condition_instantiation(instance):
+    assert isinstance(instance, USECASEUML_Condition)
 
-@given(instance=USECASEUML::ScenarioDescription_strategy)
+@given(instance=USECASEUML_ScenarioDescription_strategy)
 @settings(max_examples=50)
-def test_usecaseuml::scenariodescription_instantiation(instance):
-    assert isinstance(instance, USECASEUML::ScenarioDescription)
+def test_usecaseuml_scenariodescription_instantiation(instance):
+    assert isinstance(instance, USECASEUML_ScenarioDescription)
 
-@given(instance=USECASEUML::Resource_strategy)
+@given(instance=USECASEUML_Resource_strategy)
 @settings(max_examples=50)
-def test_usecaseuml::resource_instantiation(instance):
-    assert isinstance(instance, USECASEUML::Resource)
+def test_usecaseuml_resource_instantiation(instance):
+    assert isinstance(instance, USECASEUML_Resource)
 
 @given(instance=Resource_strategy)
 @settings(max_examples=50)
 def test_resource_instantiation(instance):
     assert isinstance(instance, Resource)
 
-@given(instance=USECASEUML::Role_strategy)
+@given(instance=USECASEUML_Role_strategy)
 @settings(max_examples=50)
-def test_usecaseuml::role_instantiation(instance):
-    assert isinstance(instance, USECASEUML::Role)
+def test_usecaseuml_role_instantiation(instance):
+    assert isinstance(instance, USECASEUML_Role)
 
 @given(instance=NonFunctionnelRequirement_strategy)
 @settings(max_examples=50)
@@ -497,82 +497,82 @@ def test_functionnelrequirement_instantiation(instance):
 def test_role_instantiation(instance):
     assert isinstance(instance, Role)
 
-@given(instance=USECASEUML::HumanRole_strategy)
+@given(instance=USECASEUML_SystemRole_strategy)
 @settings(max_examples=50)
-def test_usecaseuml::humanrole_instantiation(instance):
-    assert isinstance(instance, USECASEUML::HumanRole)
+def test_usecaseuml_systemrole_instantiation(instance):
+    assert isinstance(instance, USECASEUML_SystemRole)
 
-@given(instance=USECASEUML::EventRole_strategy)
+@given(instance=USECASEUML_HumanRole_strategy)
 @settings(max_examples=50)
-def test_usecaseuml::eventrole_instantiation(instance):
-    assert isinstance(instance, USECASEUML::EventRole)
+def test_usecaseuml_humanrole_instantiation(instance):
+    assert isinstance(instance, USECASEUML_HumanRole)
 
-@given(instance=USECASEUML::SystemRole_strategy)
+@given(instance=USECASEUML_EventRole_strategy)
 @settings(max_examples=50)
-def test_usecaseuml::systemrole_instantiation(instance):
-    assert isinstance(instance, USECASEUML::SystemRole)
+def test_usecaseuml_eventrole_instantiation(instance):
+    assert isinstance(instance, USECASEUML_EventRole)
 
 @given(instance=Condition_strategy)
 @settings(max_examples=50)
 def test_condition_instantiation(instance):
     assert isinstance(instance, Condition)
 
-@given(instance=USECASEUML::Pre_strategy)
+@given(instance=USECASEUML_Pre_strategy)
 @settings(max_examples=50)
-def test_usecaseuml::pre_instantiation(instance):
-    assert isinstance(instance, USECASEUML::Pre)
+def test_usecaseuml_pre_instantiation(instance):
+    assert isinstance(instance, USECASEUML_Pre)
 
-@given(instance=USECASEUML::Post_strategy)
+@given(instance=USECASEUML_Post_strategy)
 @settings(max_examples=50)
-def test_usecaseuml::post_instantiation(instance):
-    assert isinstance(instance, USECASEUML::Post)
+def test_usecaseuml_post_instantiation(instance):
+    assert isinstance(instance, USECASEUML_Post)
 
 @given(instance=ScenarioDescription_strategy)
 @settings(max_examples=50)
 def test_scenariodescription_instantiation(instance):
     assert isinstance(instance, ScenarioDescription)
 
-@given(instance=USECASEUML::UseCase_strategy)
+@given(instance=USECASEUML_UseCase_strategy)
 @settings(max_examples=50)
-def test_usecaseuml::usecase_instantiation(instance):
-    assert isinstance(instance, USECASEUML::UseCase)
+def test_usecaseuml_usecase_instantiation(instance):
+    assert isinstance(instance, USECASEUML_UseCase)
 
-@given(instance=USECASEUML::Goal_strategy)
+@given(instance=USECASEUML_Goal_strategy)
 @settings(max_examples=50)
-def test_usecaseuml::goal_instantiation(instance):
-    assert isinstance(instance, USECASEUML::Goal)
+def test_usecaseuml_goal_instantiation(instance):
+    assert isinstance(instance, USECASEUML_Goal)
 
 @given(instance=Goal_strategy)
 @settings(max_examples=50)
 def test_goal_instantiation(instance):
     assert isinstance(instance, Goal)
 
-@given(instance=USECASEUML::Requirement_strategy)
+@given(instance=USECASEUML_Requirement_strategy)
 @settings(max_examples=50)
-def test_usecaseuml::requirement_instantiation(instance):
-    assert isinstance(instance, USECASEUML::Requirement)
+def test_usecaseuml_requirement_instantiation(instance):
+    assert isinstance(instance, USECASEUML_Requirement)
 
 @given(instance=UseCase_strategy)
 @settings(max_examples=50)
 def test_usecase_instantiation(instance):
     assert isinstance(instance, UseCase)
 
-@given(instance=USECASEUML::Manage_strategy)
+@given(instance=USECASEUML_Manage_strategy)
 @settings(max_examples=50)
-def test_usecaseuml::manage_instantiation(instance):
-    assert isinstance(instance, USECASEUML::Manage)
+def test_usecaseuml_manage_instantiation(instance):
+    assert isinstance(instance, USECASEUML_Manage)
 
 @given(instance=Requirement_strategy)
 @settings(max_examples=50)
 def test_requirement_instantiation(instance):
     assert isinstance(instance, Requirement)
 
-@given(instance=USECASEUML::FunctionnelRequirement_strategy)
+@given(instance=USECASEUML_FunctionnelRequirement_strategy)
 @settings(max_examples=50)
-def test_usecaseuml::functionnelrequirement_instantiation(instance):
-    assert isinstance(instance, USECASEUML::FunctionnelRequirement)
+def test_usecaseuml_functionnelrequirement_instantiation(instance):
+    assert isinstance(instance, USECASEUML_FunctionnelRequirement)
 
-@given(instance=USECASEUML::NonFunctionnelRequirement_strategy)
+@given(instance=USECASEUML_NonFunctionnelRequirement_strategy)
 @settings(max_examples=50)
-def test_usecaseuml::nonfunctionnelrequirement_instantiation(instance):
-    assert isinstance(instance, USECASEUML::NonFunctionnelRequirement)
+def test_usecaseuml_nonfunctionnelrequirement_instantiation(instance):
+    assert isinstance(instance, USECASEUML_NonFunctionnelRequirement)

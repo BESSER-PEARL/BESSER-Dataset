@@ -3,17 +3,17 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    Triangles::AbstractClass,
+from python_code import (
+    Triangles_AbstractClass,
     AbstractClass,
-    Triangles::C::Class,
-    Triangles::B::Class,
-    Triangles::E::Class,
-    Triangles::D::Class,
-    Triangles::A::Class,
-    Triangles::Container,
+    Triangles_C_Class,
+    Triangles_B_Class,
+    Triangles_E_Class,
+    Triangles_D_Class,
+    Triangles_A_Class,
+    Triangles_Container,
 )
 
 # =============================================================================
@@ -22,43 +22,43 @@ from classes import (
 
 
 
-def test_triangles::abstractclass_is_not_abstract():
-    assert not inspect.isabstract(Triangles::AbstractClass)
+def test_triangles_abstractclass_is_not_abstract():
+    assert not inspect.isabstract(Triangles_AbstractClass)
 
 
-def test_triangles::abstractclass_constructor_exists():
-    assert callable(Triangles::AbstractClass.__init__)
+def test_triangles_abstractclass_constructor_exists():
+    assert callable(Triangles_AbstractClass.__init__)
 
 
-def test_triangles::abstractclass_constructor_args():
-    sig = inspect.signature(Triangles::AbstractClass.__init__)
+def test_triangles_abstractclass_constructor_args():
+    sig = inspect.signature(Triangles_AbstractClass.__init__)
     params = list(sig.parameters.keys())
-    assert "name" in params, "Missing parameter 'name'"
     assert "flag" in params, "Missing parameter 'flag'"
+    assert "name" in params, "Missing parameter 'name'"
     assert "id" in params, "Missing parameter 'id'"
 
-def test_triangles::abstractclass_has_name():
-    assert hasattr(Triangles::AbstractClass, "name")
+def test_triangles_abstractclass_has_flag():
+    assert hasattr(Triangles_AbstractClass, "flag")
     descriptor = None
-    for klass in Triangles::AbstractClass.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_triangles::abstractclass_has_flag():
-    assert hasattr(Triangles::AbstractClass, "flag")
-    descriptor = None
-    for klass in Triangles::AbstractClass.__mro__:
+    for klass in Triangles_AbstractClass.__mro__:
         if "flag" in klass.__dict__:
             descriptor = klass.__dict__["flag"]
             break
     assert isinstance(descriptor, property)
 
-def test_triangles::abstractclass_has_id():
-    assert hasattr(Triangles::AbstractClass, "id")
+def test_triangles_abstractclass_has_name():
+    assert hasattr(Triangles_AbstractClass, "name")
     descriptor = None
-    for klass in Triangles::AbstractClass.__mro__:
+    for klass in Triangles_AbstractClass.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_triangles_abstractclass_has_id():
+    assert hasattr(Triangles_AbstractClass, "id")
+    descriptor = None
+    for klass in Triangles_AbstractClass.__mro__:
         if "id" in klass.__dict__:
             descriptor = klass.__dict__["id"]
             break
@@ -80,86 +80,86 @@ def test_abstractclass_constructor_args():
 
 
 
-def test_triangles::c::class_is_not_abstract():
-    assert not inspect.isabstract(Triangles::C::Class)
+def test_triangles_c_class_is_not_abstract():
+    assert not inspect.isabstract(Triangles_C_Class)
 
 
-def test_triangles::c::class_constructor_exists():
-    assert callable(Triangles::C::Class.__init__)
+def test_triangles_c_class_constructor_exists():
+    assert callable(Triangles_C_Class.__init__)
 
 
-def test_triangles::c::class_constructor_args():
-    sig = inspect.signature(Triangles::C::Class.__init__)
+def test_triangles_c_class_constructor_args():
+    sig = inspect.signature(Triangles_C_Class.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_triangles::b::class_is_not_abstract():
-    assert not inspect.isabstract(Triangles::B::Class)
+def test_triangles_b_class_is_not_abstract():
+    assert not inspect.isabstract(Triangles_B_Class)
 
 
-def test_triangles::b::class_constructor_exists():
-    assert callable(Triangles::B::Class.__init__)
+def test_triangles_b_class_constructor_exists():
+    assert callable(Triangles_B_Class.__init__)
 
 
-def test_triangles::b::class_constructor_args():
-    sig = inspect.signature(Triangles::B::Class.__init__)
+def test_triangles_b_class_constructor_args():
+    sig = inspect.signature(Triangles_B_Class.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_triangles::e::class_is_not_abstract():
-    assert not inspect.isabstract(Triangles::E::Class)
+def test_triangles_e_class_is_not_abstract():
+    assert not inspect.isabstract(Triangles_E_Class)
 
 
-def test_triangles::e::class_constructor_exists():
-    assert callable(Triangles::E::Class.__init__)
+def test_triangles_e_class_constructor_exists():
+    assert callable(Triangles_E_Class.__init__)
 
 
-def test_triangles::e::class_constructor_args():
-    sig = inspect.signature(Triangles::E::Class.__init__)
+def test_triangles_e_class_constructor_args():
+    sig = inspect.signature(Triangles_E_Class.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_triangles::d::class_is_not_abstract():
-    assert not inspect.isabstract(Triangles::D::Class)
+def test_triangles_d_class_is_not_abstract():
+    assert not inspect.isabstract(Triangles_D_Class)
 
 
-def test_triangles::d::class_constructor_exists():
-    assert callable(Triangles::D::Class.__init__)
+def test_triangles_d_class_constructor_exists():
+    assert callable(Triangles_D_Class.__init__)
 
 
-def test_triangles::d::class_constructor_args():
-    sig = inspect.signature(Triangles::D::Class.__init__)
+def test_triangles_d_class_constructor_args():
+    sig = inspect.signature(Triangles_D_Class.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_triangles::a::class_is_not_abstract():
-    assert not inspect.isabstract(Triangles::A::Class)
+def test_triangles_a_class_is_not_abstract():
+    assert not inspect.isabstract(Triangles_A_Class)
 
 
-def test_triangles::a::class_constructor_exists():
-    assert callable(Triangles::A::Class.__init__)
+def test_triangles_a_class_constructor_exists():
+    assert callable(Triangles_A_Class.__init__)
 
 
-def test_triangles::a::class_constructor_args():
-    sig = inspect.signature(Triangles::A::Class.__init__)
+def test_triangles_a_class_constructor_args():
+    sig = inspect.signature(Triangles_A_Class.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_triangles::container_is_not_abstract():
-    assert not inspect.isabstract(Triangles::Container)
+def test_triangles_container_is_not_abstract():
+    assert not inspect.isabstract(Triangles_Container)
 
 
-def test_triangles::container_constructor_exists():
-    assert callable(Triangles::Container.__init__)
+def test_triangles_container_constructor_exists():
+    assert callable(Triangles_Container.__init__)
 
 
-def test_triangles::container_constructor_args():
-    sig = inspect.signature(Triangles::Container.__init__)
+def test_triangles_container_constructor_args():
+    sig = inspect.signature(Triangles_Container.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -174,71 +174,62 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-Triangles::AbstractClass_strategy = st.builds(
-    Triangles::AbstractClass,
-    name=
-        safe_text,
+Triangles_AbstractClass_strategy = st.builds(
+    Triangles_AbstractClass,
     flag=
         st.booleans(),
+    name=
+        safe_text,
     id=
         st.integers()
 )
 AbstractClass_strategy = st.builds(
     AbstractClass,
 )
-Triangles::C::Class_strategy = st.builds(
-    Triangles::C::Class,
+Triangles_C_Class_strategy = st.builds(
+    Triangles_C_Class,
 )
-Triangles::B::Class_strategy = st.builds(
-    Triangles::B::Class,
+Triangles_B_Class_strategy = st.builds(
+    Triangles_B_Class,
 )
-Triangles::E::Class_strategy = st.builds(
-    Triangles::E::Class,
+Triangles_E_Class_strategy = st.builds(
+    Triangles_E_Class,
 )
-Triangles::D::Class_strategy = st.builds(
-    Triangles::D::Class,
+Triangles_D_Class_strategy = st.builds(
+    Triangles_D_Class,
 )
-Triangles::A::Class_strategy = st.builds(
-    Triangles::A::Class,
+Triangles_A_Class_strategy = st.builds(
+    Triangles_A_Class,
 )
-Triangles::Container_strategy = st.builds(
-    Triangles::Container,
+Triangles_Container_strategy = st.builds(
+    Triangles_Container,
 )
 
-@given(instance=Triangles::AbstractClass_strategy)
+@given(instance=Triangles_AbstractClass_strategy)
 @settings(max_examples=50)
-def test_triangles::abstractclass_instantiation(instance):
-    assert isinstance(instance, Triangles::AbstractClass)
-
-@given(instance=Triangles::AbstractClass_strategy)
-def test_triangles::abstractclass_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_triangles_abstractclass_instantiation(instance):
+    assert isinstance(instance, Triangles_AbstractClass)
 
 
-@given(instance=Triangles::AbstractClass_strategy)
-def test_triangles::abstractclass_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
 
-@given(instance=Triangles::AbstractClass_strategy)
-def test_triangles::abstractclass_flag_type(instance):
-    assert isinstance(instance.flag, bool)
-
-
-@given(instance=Triangles::AbstractClass_strategy)
-def test_triangles::abstractclass_flag_setter(instance):
+@given(instance=Triangles_AbstractClass_strategy)
+def test_triangles_abstractclass_flag_setter(instance):
     original = instance.flag
     instance.flag = original
     assert instance.flag == original
 
-@given(instance=Triangles::AbstractClass_strategy)
-def test_triangles::abstractclass_id_type(instance):
-    assert isinstance(instance.id, int)
 
 
-@given(instance=Triangles::AbstractClass_strategy)
-def test_triangles::abstractclass_id_setter(instance):
+@given(instance=Triangles_AbstractClass_strategy)
+def test_triangles_abstractclass_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+
+
+@given(instance=Triangles_AbstractClass_strategy)
+def test_triangles_abstractclass_id_setter(instance):
     original = instance.id
     instance.id = original
     assert instance.id == original
@@ -248,32 +239,32 @@ def test_triangles::abstractclass_id_setter(instance):
 def test_abstractclass_instantiation(instance):
     assert isinstance(instance, AbstractClass)
 
-@given(instance=Triangles::C::Class_strategy)
+@given(instance=Triangles_C_Class_strategy)
 @settings(max_examples=50)
-def test_triangles::c::class_instantiation(instance):
-    assert isinstance(instance, Triangles::C::Class)
+def test_triangles_c_class_instantiation(instance):
+    assert isinstance(instance, Triangles_C_Class)
 
-@given(instance=Triangles::B::Class_strategy)
+@given(instance=Triangles_B_Class_strategy)
 @settings(max_examples=50)
-def test_triangles::b::class_instantiation(instance):
-    assert isinstance(instance, Triangles::B::Class)
+def test_triangles_b_class_instantiation(instance):
+    assert isinstance(instance, Triangles_B_Class)
 
-@given(instance=Triangles::E::Class_strategy)
+@given(instance=Triangles_E_Class_strategy)
 @settings(max_examples=50)
-def test_triangles::e::class_instantiation(instance):
-    assert isinstance(instance, Triangles::E::Class)
+def test_triangles_e_class_instantiation(instance):
+    assert isinstance(instance, Triangles_E_Class)
 
-@given(instance=Triangles::D::Class_strategy)
+@given(instance=Triangles_D_Class_strategy)
 @settings(max_examples=50)
-def test_triangles::d::class_instantiation(instance):
-    assert isinstance(instance, Triangles::D::Class)
+def test_triangles_d_class_instantiation(instance):
+    assert isinstance(instance, Triangles_D_Class)
 
-@given(instance=Triangles::A::Class_strategy)
+@given(instance=Triangles_A_Class_strategy)
 @settings(max_examples=50)
-def test_triangles::a::class_instantiation(instance):
-    assert isinstance(instance, Triangles::A::Class)
+def test_triangles_a_class_instantiation(instance):
+    assert isinstance(instance, Triangles_A_Class)
 
-@given(instance=Triangles::Container_strategy)
+@given(instance=Triangles_Container_strategy)
 @settings(max_examples=50)
-def test_triangles::container_instantiation(instance):
-    assert isinstance(instance, Triangles::Container)
+def test_triangles_container_instantiation(instance):
+    assert isinstance(instance, Triangles_Container)

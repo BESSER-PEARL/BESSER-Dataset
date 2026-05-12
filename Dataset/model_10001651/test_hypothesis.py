@@ -3,7 +3,7 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
 from python_code import (
     genmymodelreverse_C1,
@@ -31,8 +31,8 @@ from python_code import (
     model_Card,
     controller_PlayGame,
     BlackJack_Program,
-    model_Color,
     model_Value,
+    model_Color,
 )
 
 # =============================================================================
@@ -389,19 +389,6 @@ def test_blackjack_program_constructor_args():
     sig = inspect.signature(BlackJack_Program.__init__)
     params = list(sig.parameters.keys())
 
-def test_model_color_exists():
-    # Check that the Enumeration exists
-    assert model_Color is not None
-
-def test_model_color_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in model_Color]
-    expected_literals = [
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in model_Color"
-
 def test_model_value_exists():
     # Check that the Enumeration exists
     assert model_Value is not None
@@ -414,6 +401,19 @@ def test_model_value_has_all_literals():
     # Check that all expected literals exist
     for lit_name in expected_literals:
         assert lit_name in enum_literals, f"Literal '' missing in model_Value"
+
+def test_model_color_exists():
+    # Check that the Enumeration exists
+    assert model_Color is not None
+
+def test_model_color_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in model_Color]
+    expected_literals = [
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in model_Color"
 
 
 # =============================================================================

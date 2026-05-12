@@ -3,49 +3,161 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    Parameter,
-    soopl::ComplexTypeParameter,
-    soopl::SimpleTypeParameter,
-    soopl::Guard,
-    soopl::Action,
-    soopl::Transition,
-    Method,
-    soopl::TransitionMethod,
-    soopl::ParameterBinding,
-    Action,
-    soopl::CallMethodAction,
-    Class,
-    soopl::StateClass,
-    soopl::StateImplementationClass,
-    soopl::StatefulClass,
-    NamedElement,
-    soopl::Method,
-    soopl::Parameter,
-    soopl::Class,
-    soopl::Property,
-    soopl::Package,
-    soopl::NamedElement,
-    Property,
-    soopl::ComplexTypeProperty,
-    soopl::SimpleTypeProperty,
-    soopl::AssignProperty,
+from python_code import (
     CallMethodAction,
-    soopl::CallMethodOfParameter,
-    soopl::CallMethodOfProperty,
+    soopl_CallMethodOfParameter,
+    soopl_CallMethodOfProperty,
     IsInStateCondition,
-    soopl::ParameterIsInState,
-    soopl::PropertyIsInState,
+    soopl_ParameterIsInState,
+    soopl_PropertyIsInState,
     Guard,
-    soopl::IsInStateCondition,
+    soopl_IsInStateCondition,
+    Parameter,
+    soopl_ComplexTypeParameter,
+    soopl_SimpleTypeParameter,
+    soopl_Guard,
+    soopl_Action,
+    soopl_Transition,
+    Method,
+    soopl_TransitionMethod,
+    soopl_ParameterBinding,
+    Action,
+    soopl_AssignProperty,
+    soopl_CallMethodAction,
+    Class,
+    soopl_StateImplementationClass,
+    soopl_StateClass,
+    soopl_StatefulClass,
+    NamedElement,
+    soopl_Method,
+    soopl_Property,
+    soopl_Parameter,
+    soopl_Class,
+    soopl_Package,
+    soopl_NamedElement,
+    Property,
+    soopl_ComplexTypeProperty,
+    soopl_SimpleTypeProperty,
     DataType,
 )
 
 # =============================================================================
 # SECTION 1 — STRUCTURAL TESTS
 # =============================================================================
+
+
+
+def test_callmethodaction_is_not_abstract():
+    assert not inspect.isabstract(CallMethodAction)
+
+
+def test_callmethodaction_constructor_exists():
+    assert callable(CallMethodAction.__init__)
+
+
+def test_callmethodaction_constructor_args():
+    sig = inspect.signature(CallMethodAction.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_soopl_callmethodofparameter_is_not_abstract():
+    assert not inspect.isabstract(soopl_CallMethodOfParameter)
+
+
+def test_soopl_callmethodofparameter_constructor_exists():
+    assert callable(soopl_CallMethodOfParameter.__init__)
+
+
+def test_soopl_callmethodofparameter_constructor_args():
+    sig = inspect.signature(soopl_CallMethodOfParameter.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_soopl_callmethodofproperty_is_not_abstract():
+    assert not inspect.isabstract(soopl_CallMethodOfProperty)
+
+
+def test_soopl_callmethodofproperty_constructor_exists():
+    assert callable(soopl_CallMethodOfProperty.__init__)
+
+
+def test_soopl_callmethodofproperty_constructor_args():
+    sig = inspect.signature(soopl_CallMethodOfProperty.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_isinstatecondition_is_not_abstract():
+    assert not inspect.isabstract(IsInStateCondition)
+
+
+def test_isinstatecondition_constructor_exists():
+    assert callable(IsInStateCondition.__init__)
+
+
+def test_isinstatecondition_constructor_args():
+    sig = inspect.signature(IsInStateCondition.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_soopl_parameterisinstate_is_not_abstract():
+    assert not inspect.isabstract(soopl_ParameterIsInState)
+
+
+def test_soopl_parameterisinstate_constructor_exists():
+    assert callable(soopl_ParameterIsInState.__init__)
+
+
+def test_soopl_parameterisinstate_constructor_args():
+    sig = inspect.signature(soopl_ParameterIsInState.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_soopl_propertyisinstate_is_not_abstract():
+    assert not inspect.isabstract(soopl_PropertyIsInState)
+
+
+def test_soopl_propertyisinstate_constructor_exists():
+    assert callable(soopl_PropertyIsInState.__init__)
+
+
+def test_soopl_propertyisinstate_constructor_args():
+    sig = inspect.signature(soopl_PropertyIsInState.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_guard_is_not_abstract():
+    assert not inspect.isabstract(Guard)
+
+
+def test_guard_constructor_exists():
+    assert callable(Guard.__init__)
+
+
+def test_guard_constructor_args():
+    sig = inspect.signature(Guard.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_soopl_isinstatecondition_is_not_abstract():
+    assert not inspect.isabstract(soopl_IsInStateCondition)
+
+
+def test_soopl_isinstatecondition_constructor_exists():
+    assert callable(soopl_IsInStateCondition.__init__)
+
+
+def test_soopl_isinstatecondition_constructor_args():
+    sig = inspect.signature(soopl_IsInStateCondition.__init__)
+    params = list(sig.parameters.keys())
 
 
 
@@ -63,37 +175,37 @@ def test_parameter_constructor_args():
 
 
 
-def test_soopl::complextypeparameter_is_not_abstract():
-    assert not inspect.isabstract(soopl::ComplexTypeParameter)
+def test_soopl_complextypeparameter_is_not_abstract():
+    assert not inspect.isabstract(soopl_ComplexTypeParameter)
 
 
-def test_soopl::complextypeparameter_constructor_exists():
-    assert callable(soopl::ComplexTypeParameter.__init__)
+def test_soopl_complextypeparameter_constructor_exists():
+    assert callable(soopl_ComplexTypeParameter.__init__)
 
 
-def test_soopl::complextypeparameter_constructor_args():
-    sig = inspect.signature(soopl::ComplexTypeParameter.__init__)
+def test_soopl_complextypeparameter_constructor_args():
+    sig = inspect.signature(soopl_ComplexTypeParameter.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_soopl::simpletypeparameter_is_not_abstract():
-    assert not inspect.isabstract(soopl::SimpleTypeParameter)
+def test_soopl_simpletypeparameter_is_not_abstract():
+    assert not inspect.isabstract(soopl_SimpleTypeParameter)
 
 
-def test_soopl::simpletypeparameter_constructor_exists():
-    assert callable(soopl::SimpleTypeParameter.__init__)
+def test_soopl_simpletypeparameter_constructor_exists():
+    assert callable(soopl_SimpleTypeParameter.__init__)
 
 
-def test_soopl::simpletypeparameter_constructor_args():
-    sig = inspect.signature(soopl::SimpleTypeParameter.__init__)
+def test_soopl_simpletypeparameter_constructor_args():
+    sig = inspect.signature(soopl_SimpleTypeParameter.__init__)
     params = list(sig.parameters.keys())
     assert "dataType" in params, "Missing parameter 'dataType'"
 
-def test_soopl::simpletypeparameter_has_dataType():
-    assert hasattr(soopl::SimpleTypeParameter, "dataType")
+def test_soopl_simpletypeparameter_has_dataType():
+    assert hasattr(soopl_SimpleTypeParameter, "dataType")
     descriptor = None
-    for klass in soopl::SimpleTypeParameter.__mro__:
+    for klass in soopl_SimpleTypeParameter.__mro__:
         if "dataType" in klass.__dict__:
             descriptor = klass.__dict__["dataType"]
             break
@@ -101,44 +213,44 @@ def test_soopl::simpletypeparameter_has_dataType():
 
 
 
-def test_soopl::guard_is_not_abstract():
-    assert not inspect.isabstract(soopl::Guard)
+def test_soopl_guard_is_not_abstract():
+    assert not inspect.isabstract(soopl_Guard)
 
 
-def test_soopl::guard_constructor_exists():
-    assert callable(soopl::Guard.__init__)
+def test_soopl_guard_constructor_exists():
+    assert callable(soopl_Guard.__init__)
 
 
-def test_soopl::guard_constructor_args():
-    sig = inspect.signature(soopl::Guard.__init__)
+def test_soopl_guard_constructor_args():
+    sig = inspect.signature(soopl_Guard.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_soopl::action_is_not_abstract():
-    assert not inspect.isabstract(soopl::Action)
+def test_soopl_action_is_not_abstract():
+    assert not inspect.isabstract(soopl_Action)
 
 
-def test_soopl::action_constructor_exists():
-    assert callable(soopl::Action.__init__)
+def test_soopl_action_constructor_exists():
+    assert callable(soopl_Action.__init__)
 
 
-def test_soopl::action_constructor_args():
-    sig = inspect.signature(soopl::Action.__init__)
+def test_soopl_action_constructor_args():
+    sig = inspect.signature(soopl_Action.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_soopl::transition_is_not_abstract():
-    assert not inspect.isabstract(soopl::Transition)
+def test_soopl_transition_is_not_abstract():
+    assert not inspect.isabstract(soopl_Transition)
 
 
-def test_soopl::transition_constructor_exists():
-    assert callable(soopl::Transition.__init__)
+def test_soopl_transition_constructor_exists():
+    assert callable(soopl_Transition.__init__)
 
 
-def test_soopl::transition_constructor_args():
-    sig = inspect.signature(soopl::Transition.__init__)
+def test_soopl_transition_constructor_args():
+    sig = inspect.signature(soopl_Transition.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -157,30 +269,30 @@ def test_method_constructor_args():
 
 
 
-def test_soopl::transitionmethod_is_not_abstract():
-    assert not inspect.isabstract(soopl::TransitionMethod)
+def test_soopl_transitionmethod_is_not_abstract():
+    assert not inspect.isabstract(soopl_TransitionMethod)
 
 
-def test_soopl::transitionmethod_constructor_exists():
-    assert callable(soopl::TransitionMethod.__init__)
+def test_soopl_transitionmethod_constructor_exists():
+    assert callable(soopl_TransitionMethod.__init__)
 
 
-def test_soopl::transitionmethod_constructor_args():
-    sig = inspect.signature(soopl::TransitionMethod.__init__)
+def test_soopl_transitionmethod_constructor_args():
+    sig = inspect.signature(soopl_TransitionMethod.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_soopl::parameterbinding_is_not_abstract():
-    assert not inspect.isabstract(soopl::ParameterBinding)
+def test_soopl_parameterbinding_is_not_abstract():
+    assert not inspect.isabstract(soopl_ParameterBinding)
 
 
-def test_soopl::parameterbinding_constructor_exists():
-    assert callable(soopl::ParameterBinding.__init__)
+def test_soopl_parameterbinding_constructor_exists():
+    assert callable(soopl_ParameterBinding.__init__)
 
 
-def test_soopl::parameterbinding_constructor_args():
-    sig = inspect.signature(soopl::ParameterBinding.__init__)
+def test_soopl_parameterbinding_constructor_args():
+    sig = inspect.signature(soopl_ParameterBinding.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -199,16 +311,30 @@ def test_action_constructor_args():
 
 
 
-def test_soopl::callmethodaction_is_not_abstract():
-    assert not inspect.isabstract(soopl::CallMethodAction)
+def test_soopl_assignproperty_is_not_abstract():
+    assert not inspect.isabstract(soopl_AssignProperty)
 
 
-def test_soopl::callmethodaction_constructor_exists():
-    assert callable(soopl::CallMethodAction.__init__)
+def test_soopl_assignproperty_constructor_exists():
+    assert callable(soopl_AssignProperty.__init__)
 
 
-def test_soopl::callmethodaction_constructor_args():
-    sig = inspect.signature(soopl::CallMethodAction.__init__)
+def test_soopl_assignproperty_constructor_args():
+    sig = inspect.signature(soopl_AssignProperty.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_soopl_callmethodaction_is_not_abstract():
+    assert not inspect.isabstract(soopl_CallMethodAction)
+
+
+def test_soopl_callmethodaction_constructor_exists():
+    assert callable(soopl_CallMethodAction.__init__)
+
+
+def test_soopl_callmethodaction_constructor_args():
+    sig = inspect.signature(soopl_CallMethodAction.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -227,44 +353,44 @@ def test_class_constructor_args():
 
 
 
-def test_soopl::stateclass_is_not_abstract():
-    assert not inspect.isabstract(soopl::StateClass)
+def test_soopl_stateimplementationclass_is_not_abstract():
+    assert not inspect.isabstract(soopl_StateImplementationClass)
 
 
-def test_soopl::stateclass_constructor_exists():
-    assert callable(soopl::StateClass.__init__)
+def test_soopl_stateimplementationclass_constructor_exists():
+    assert callable(soopl_StateImplementationClass.__init__)
 
 
-def test_soopl::stateclass_constructor_args():
-    sig = inspect.signature(soopl::StateClass.__init__)
+def test_soopl_stateimplementationclass_constructor_args():
+    sig = inspect.signature(soopl_StateImplementationClass.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_soopl::stateimplementationclass_is_not_abstract():
-    assert not inspect.isabstract(soopl::StateImplementationClass)
+def test_soopl_stateclass_is_not_abstract():
+    assert not inspect.isabstract(soopl_StateClass)
 
 
-def test_soopl::stateimplementationclass_constructor_exists():
-    assert callable(soopl::StateImplementationClass.__init__)
+def test_soopl_stateclass_constructor_exists():
+    assert callable(soopl_StateClass.__init__)
 
 
-def test_soopl::stateimplementationclass_constructor_args():
-    sig = inspect.signature(soopl::StateImplementationClass.__init__)
+def test_soopl_stateclass_constructor_args():
+    sig = inspect.signature(soopl_StateClass.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_soopl::statefulclass_is_not_abstract():
-    assert not inspect.isabstract(soopl::StatefulClass)
+def test_soopl_statefulclass_is_not_abstract():
+    assert not inspect.isabstract(soopl_StatefulClass)
 
 
-def test_soopl::statefulclass_constructor_exists():
-    assert callable(soopl::StatefulClass.__init__)
+def test_soopl_statefulclass_constructor_exists():
+    assert callable(soopl_StatefulClass.__init__)
 
 
-def test_soopl::statefulclass_constructor_args():
-    sig = inspect.signature(soopl::StatefulClass.__init__)
+def test_soopl_statefulclass_constructor_args():
+    sig = inspect.signature(soopl_StatefulClass.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -283,51 +409,95 @@ def test_namedelement_constructor_args():
 
 
 
-def test_soopl::method_is_not_abstract():
-    assert not inspect.isabstract(soopl::Method)
+def test_soopl_method_is_not_abstract():
+    assert not inspect.isabstract(soopl_Method)
 
 
-def test_soopl::method_constructor_exists():
-    assert callable(soopl::Method.__init__)
+def test_soopl_method_constructor_exists():
+    assert callable(soopl_Method.__init__)
 
 
-def test_soopl::method_constructor_args():
-    sig = inspect.signature(soopl::Method.__init__)
+def test_soopl_method_constructor_args():
+    sig = inspect.signature(soopl_Method.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_soopl::parameter_is_not_abstract():
-    assert not inspect.isabstract(soopl::Parameter)
+def test_soopl_property_is_not_abstract():
+    assert not inspect.isabstract(soopl_Property)
 
 
-def test_soopl::parameter_constructor_exists():
-    assert callable(soopl::Parameter.__init__)
+def test_soopl_property_constructor_exists():
+    assert callable(soopl_Property.__init__)
 
 
-def test_soopl::parameter_constructor_args():
-    sig = inspect.signature(soopl::Parameter.__init__)
+def test_soopl_property_constructor_args():
+    sig = inspect.signature(soopl_Property.__init__)
+    params = list(sig.parameters.keys())
+    assert "upperBound" in params, "Missing parameter 'upperBound'"
+    assert "multiValued" in params, "Missing parameter 'multiValued'"
+    assert "lowerBound" in params, "Missing parameter 'lowerBound'"
+
+def test_soopl_property_has_upperBound():
+    assert hasattr(soopl_Property, "upperBound")
+    descriptor = None
+    for klass in soopl_Property.__mro__:
+        if "upperBound" in klass.__dict__:
+            descriptor = klass.__dict__["upperBound"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_soopl_property_has_multiValued():
+    assert hasattr(soopl_Property, "multiValued")
+    descriptor = None
+    for klass in soopl_Property.__mro__:
+        if "multiValued" in klass.__dict__:
+            descriptor = klass.__dict__["multiValued"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_soopl_property_has_lowerBound():
+    assert hasattr(soopl_Property, "lowerBound")
+    descriptor = None
+    for klass in soopl_Property.__mro__:
+        if "lowerBound" in klass.__dict__:
+            descriptor = klass.__dict__["lowerBound"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_soopl_parameter_is_not_abstract():
+    assert not inspect.isabstract(soopl_Parameter)
+
+
+def test_soopl_parameter_constructor_exists():
+    assert callable(soopl_Parameter.__init__)
+
+
+def test_soopl_parameter_constructor_args():
+    sig = inspect.signature(soopl_Parameter.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_soopl::class_is_not_abstract():
-    assert not inspect.isabstract(soopl::Class)
+def test_soopl_class_is_not_abstract():
+    assert not inspect.isabstract(soopl_Class)
 
 
-def test_soopl::class_constructor_exists():
-    assert callable(soopl::Class.__init__)
+def test_soopl_class_constructor_exists():
+    assert callable(soopl_Class.__init__)
 
 
-def test_soopl::class_constructor_args():
-    sig = inspect.signature(soopl::Class.__init__)
+def test_soopl_class_constructor_args():
+    sig = inspect.signature(soopl_Class.__init__)
     params = list(sig.parameters.keys())
     assert "isAbstract" in params, "Missing parameter 'isAbstract'"
 
-def test_soopl::class_has_isAbstract():
-    assert hasattr(soopl::Class, "isAbstract")
+def test_soopl_class_has_isAbstract():
+    assert hasattr(soopl_Class, "isAbstract")
     descriptor = None
-    for klass in soopl::Class.__mro__:
+    for klass in soopl_Class.__mro__:
         if "isAbstract" in klass.__dict__:
             descriptor = klass.__dict__["isAbstract"]
             break
@@ -335,81 +505,37 @@ def test_soopl::class_has_isAbstract():
 
 
 
-def test_soopl::property_is_not_abstract():
-    assert not inspect.isabstract(soopl::Property)
+def test_soopl_package_is_not_abstract():
+    assert not inspect.isabstract(soopl_Package)
 
 
-def test_soopl::property_constructor_exists():
-    assert callable(soopl::Property.__init__)
+def test_soopl_package_constructor_exists():
+    assert callable(soopl_Package.__init__)
 
 
-def test_soopl::property_constructor_args():
-    sig = inspect.signature(soopl::Property.__init__)
-    params = list(sig.parameters.keys())
-    assert "upperBound" in params, "Missing parameter 'upperBound'"
-    assert "lowerBound" in params, "Missing parameter 'lowerBound'"
-    assert "multiValued" in params, "Missing parameter 'multiValued'"
-
-def test_soopl::property_has_upperBound():
-    assert hasattr(soopl::Property, "upperBound")
-    descriptor = None
-    for klass in soopl::Property.__mro__:
-        if "upperBound" in klass.__dict__:
-            descriptor = klass.__dict__["upperBound"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_soopl::property_has_lowerBound():
-    assert hasattr(soopl::Property, "lowerBound")
-    descriptor = None
-    for klass in soopl::Property.__mro__:
-        if "lowerBound" in klass.__dict__:
-            descriptor = klass.__dict__["lowerBound"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_soopl::property_has_multiValued():
-    assert hasattr(soopl::Property, "multiValued")
-    descriptor = None
-    for klass in soopl::Property.__mro__:
-        if "multiValued" in klass.__dict__:
-            descriptor = klass.__dict__["multiValued"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_soopl::package_is_not_abstract():
-    assert not inspect.isabstract(soopl::Package)
-
-
-def test_soopl::package_constructor_exists():
-    assert callable(soopl::Package.__init__)
-
-
-def test_soopl::package_constructor_args():
-    sig = inspect.signature(soopl::Package.__init__)
+def test_soopl_package_constructor_args():
+    sig = inspect.signature(soopl_Package.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_soopl::namedelement_is_not_abstract():
-    assert not inspect.isabstract(soopl::NamedElement)
+def test_soopl_namedelement_is_not_abstract():
+    assert not inspect.isabstract(soopl_NamedElement)
 
 
-def test_soopl::namedelement_constructor_exists():
-    assert callable(soopl::NamedElement.__init__)
+def test_soopl_namedelement_constructor_exists():
+    assert callable(soopl_NamedElement.__init__)
 
 
-def test_soopl::namedelement_constructor_args():
-    sig = inspect.signature(soopl::NamedElement.__init__)
+def test_soopl_namedelement_constructor_args():
+    sig = inspect.signature(soopl_NamedElement.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_soopl::namedelement_has_name():
-    assert hasattr(soopl::NamedElement, "name")
+def test_soopl_namedelement_has_name():
+    assert hasattr(soopl_NamedElement, "name")
     descriptor = None
-    for klass in soopl::NamedElement.__mro__:
+    for klass in soopl_NamedElement.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -431,167 +557,41 @@ def test_property_constructor_args():
 
 
 
-def test_soopl::complextypeproperty_is_not_abstract():
-    assert not inspect.isabstract(soopl::ComplexTypeProperty)
+def test_soopl_complextypeproperty_is_not_abstract():
+    assert not inspect.isabstract(soopl_ComplexTypeProperty)
 
 
-def test_soopl::complextypeproperty_constructor_exists():
-    assert callable(soopl::ComplexTypeProperty.__init__)
+def test_soopl_complextypeproperty_constructor_exists():
+    assert callable(soopl_ComplexTypeProperty.__init__)
 
 
-def test_soopl::complextypeproperty_constructor_args():
-    sig = inspect.signature(soopl::ComplexTypeProperty.__init__)
+def test_soopl_complextypeproperty_constructor_args():
+    sig = inspect.signature(soopl_ComplexTypeProperty.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_soopl::simpletypeproperty_is_not_abstract():
-    assert not inspect.isabstract(soopl::SimpleTypeProperty)
+def test_soopl_simpletypeproperty_is_not_abstract():
+    assert not inspect.isabstract(soopl_SimpleTypeProperty)
 
 
-def test_soopl::simpletypeproperty_constructor_exists():
-    assert callable(soopl::SimpleTypeProperty.__init__)
+def test_soopl_simpletypeproperty_constructor_exists():
+    assert callable(soopl_SimpleTypeProperty.__init__)
 
 
-def test_soopl::simpletypeproperty_constructor_args():
-    sig = inspect.signature(soopl::SimpleTypeProperty.__init__)
+def test_soopl_simpletypeproperty_constructor_args():
+    sig = inspect.signature(soopl_SimpleTypeProperty.__init__)
     params = list(sig.parameters.keys())
     assert "dataType" in params, "Missing parameter 'dataType'"
 
-def test_soopl::simpletypeproperty_has_dataType():
-    assert hasattr(soopl::SimpleTypeProperty, "dataType")
+def test_soopl_simpletypeproperty_has_dataType():
+    assert hasattr(soopl_SimpleTypeProperty, "dataType")
     descriptor = None
-    for klass in soopl::SimpleTypeProperty.__mro__:
+    for klass in soopl_SimpleTypeProperty.__mro__:
         if "dataType" in klass.__dict__:
             descriptor = klass.__dict__["dataType"]
             break
     assert isinstance(descriptor, property)
-
-
-
-def test_soopl::assignproperty_is_not_abstract():
-    assert not inspect.isabstract(soopl::AssignProperty)
-
-
-def test_soopl::assignproperty_constructor_exists():
-    assert callable(soopl::AssignProperty.__init__)
-
-
-def test_soopl::assignproperty_constructor_args():
-    sig = inspect.signature(soopl::AssignProperty.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_callmethodaction_is_not_abstract():
-    assert not inspect.isabstract(CallMethodAction)
-
-
-def test_callmethodaction_constructor_exists():
-    assert callable(CallMethodAction.__init__)
-
-
-def test_callmethodaction_constructor_args():
-    sig = inspect.signature(CallMethodAction.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_soopl::callmethodofparameter_is_not_abstract():
-    assert not inspect.isabstract(soopl::CallMethodOfParameter)
-
-
-def test_soopl::callmethodofparameter_constructor_exists():
-    assert callable(soopl::CallMethodOfParameter.__init__)
-
-
-def test_soopl::callmethodofparameter_constructor_args():
-    sig = inspect.signature(soopl::CallMethodOfParameter.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_soopl::callmethodofproperty_is_not_abstract():
-    assert not inspect.isabstract(soopl::CallMethodOfProperty)
-
-
-def test_soopl::callmethodofproperty_constructor_exists():
-    assert callable(soopl::CallMethodOfProperty.__init__)
-
-
-def test_soopl::callmethodofproperty_constructor_args():
-    sig = inspect.signature(soopl::CallMethodOfProperty.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_isinstatecondition_is_not_abstract():
-    assert not inspect.isabstract(IsInStateCondition)
-
-
-def test_isinstatecondition_constructor_exists():
-    assert callable(IsInStateCondition.__init__)
-
-
-def test_isinstatecondition_constructor_args():
-    sig = inspect.signature(IsInStateCondition.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_soopl::parameterisinstate_is_not_abstract():
-    assert not inspect.isabstract(soopl::ParameterIsInState)
-
-
-def test_soopl::parameterisinstate_constructor_exists():
-    assert callable(soopl::ParameterIsInState.__init__)
-
-
-def test_soopl::parameterisinstate_constructor_args():
-    sig = inspect.signature(soopl::ParameterIsInState.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_soopl::propertyisinstate_is_not_abstract():
-    assert not inspect.isabstract(soopl::PropertyIsInState)
-
-
-def test_soopl::propertyisinstate_constructor_exists():
-    assert callable(soopl::PropertyIsInState.__init__)
-
-
-def test_soopl::propertyisinstate_constructor_args():
-    sig = inspect.signature(soopl::PropertyIsInState.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_guard_is_not_abstract():
-    assert not inspect.isabstract(Guard)
-
-
-def test_guard_constructor_exists():
-    assert callable(Guard.__init__)
-
-
-def test_guard_constructor_args():
-    sig = inspect.signature(Guard.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_soopl::isinstatecondition_is_not_abstract():
-    assert not inspect.isabstract(soopl::IsInStateCondition)
-
-
-def test_soopl::isinstatecondition_constructor_exists():
-    assert callable(soopl::IsInStateCondition.__init__)
-
-
-def test_soopl::isinstatecondition_constructor_args():
-    sig = inspect.signature(soopl::IsInStateCondition.__init__)
-    params = list(sig.parameters.keys())
 
 def test_datatype_exists():
     # Check that the Enumeration exists
@@ -601,8 +601,8 @@ def test_datatype_has_all_literals():
     # Collect the names of literals in this Enumeration
     enum_literals = [lit.name for lit in DataType]
     expected_literals = [
-        "Integer",
         "Boolean",
+        "Integer",
         "String",
     ]
     # Check that all expected literals exist
@@ -621,295 +621,322 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
+CallMethodAction_strategy = st.builds(
+    CallMethodAction,
+)
+soopl_CallMethodOfParameter_strategy = st.builds(
+    soopl_CallMethodOfParameter,
+)
+soopl_CallMethodOfProperty_strategy = st.builds(
+    soopl_CallMethodOfProperty,
+)
+IsInStateCondition_strategy = st.builds(
+    IsInStateCondition,
+)
+soopl_ParameterIsInState_strategy = st.builds(
+    soopl_ParameterIsInState,
+)
+soopl_PropertyIsInState_strategy = st.builds(
+    soopl_PropertyIsInState,
+)
+Guard_strategy = st.builds(
+    Guard,
+)
+soopl_IsInStateCondition_strategy = st.builds(
+    soopl_IsInStateCondition,
+)
 Parameter_strategy = st.builds(
     Parameter,
 )
-soopl::ComplexTypeParameter_strategy = st.builds(
-    soopl::ComplexTypeParameter,
+soopl_ComplexTypeParameter_strategy = st.builds(
+    soopl_ComplexTypeParameter,
 )
-soopl::SimpleTypeParameter_strategy = st.builds(
-    soopl::SimpleTypeParameter,
+soopl_SimpleTypeParameter_strategy = st.builds(
+    soopl_SimpleTypeParameter,
     dataType=
         safe_text
 )
-soopl::Guard_strategy = st.builds(
-    soopl::Guard,
+soopl_Guard_strategy = st.builds(
+    soopl_Guard,
 )
-soopl::Action_strategy = st.builds(
-    soopl::Action,
+soopl_Action_strategy = st.builds(
+    soopl_Action,
 )
-soopl::Transition_strategy = st.builds(
-    soopl::Transition,
+soopl_Transition_strategy = st.builds(
+    soopl_Transition,
 )
 Method_strategy = st.builds(
     Method,
 )
-soopl::TransitionMethod_strategy = st.builds(
-    soopl::TransitionMethod,
+soopl_TransitionMethod_strategy = st.builds(
+    soopl_TransitionMethod,
 )
-soopl::ParameterBinding_strategy = st.builds(
-    soopl::ParameterBinding,
+soopl_ParameterBinding_strategy = st.builds(
+    soopl_ParameterBinding,
 )
 Action_strategy = st.builds(
     Action,
 )
-soopl::CallMethodAction_strategy = st.builds(
-    soopl::CallMethodAction,
+soopl_AssignProperty_strategy = st.builds(
+    soopl_AssignProperty,
+)
+soopl_CallMethodAction_strategy = st.builds(
+    soopl_CallMethodAction,
 )
 Class_strategy = st.builds(
     Class,
 )
-soopl::StateClass_strategy = st.builds(
-    soopl::StateClass,
+soopl_StateImplementationClass_strategy = st.builds(
+    soopl_StateImplementationClass,
 )
-soopl::StateImplementationClass_strategy = st.builds(
-    soopl::StateImplementationClass,
+soopl_StateClass_strategy = st.builds(
+    soopl_StateClass,
 )
-soopl::StatefulClass_strategy = st.builds(
-    soopl::StatefulClass,
+soopl_StatefulClass_strategy = st.builds(
+    soopl_StatefulClass,
 )
 NamedElement_strategy = st.builds(
     NamedElement,
 )
-soopl::Method_strategy = st.builds(
-    soopl::Method,
+soopl_Method_strategy = st.builds(
+    soopl_Method,
 )
-soopl::Parameter_strategy = st.builds(
-    soopl::Parameter,
+soopl_Property_strategy = st.builds(
+    soopl_Property,
+    upperBound=
+        st.integers(),
+    multiValued=
+        st.booleans(),
+    lowerBound=
+        st.integers()
 )
-soopl::Class_strategy = st.builds(
-    soopl::Class,
+soopl_Parameter_strategy = st.builds(
+    soopl_Parameter,
+)
+soopl_Class_strategy = st.builds(
+    soopl_Class,
     isAbstract=
         st.booleans()
 )
-soopl::Property_strategy = st.builds(
-    soopl::Property,
-    upperBound=
-        st.integers(),
-    lowerBound=
-        st.integers(),
-    multiValued=
-        st.booleans()
+soopl_Package_strategy = st.builds(
+    soopl_Package,
 )
-soopl::Package_strategy = st.builds(
-    soopl::Package,
-)
-soopl::NamedElement_strategy = st.builds(
-    soopl::NamedElement,
+soopl_NamedElement_strategy = st.builds(
+    soopl_NamedElement,
     name=
         safe_text
 )
 Property_strategy = st.builds(
     Property,
 )
-soopl::ComplexTypeProperty_strategy = st.builds(
-    soopl::ComplexTypeProperty,
+soopl_ComplexTypeProperty_strategy = st.builds(
+    soopl_ComplexTypeProperty,
 )
-soopl::SimpleTypeProperty_strategy = st.builds(
-    soopl::SimpleTypeProperty,
+soopl_SimpleTypeProperty_strategy = st.builds(
+    soopl_SimpleTypeProperty,
     dataType=
         safe_text
 )
-soopl::AssignProperty_strategy = st.builds(
-    soopl::AssignProperty,
-)
-CallMethodAction_strategy = st.builds(
-    CallMethodAction,
-)
-soopl::CallMethodOfParameter_strategy = st.builds(
-    soopl::CallMethodOfParameter,
-)
-soopl::CallMethodOfProperty_strategy = st.builds(
-    soopl::CallMethodOfProperty,
-)
-IsInStateCondition_strategy = st.builds(
-    IsInStateCondition,
-)
-soopl::ParameterIsInState_strategy = st.builds(
-    soopl::ParameterIsInState,
-)
-soopl::PropertyIsInState_strategy = st.builds(
-    soopl::PropertyIsInState,
-)
-Guard_strategy = st.builds(
-    Guard,
-)
-soopl::IsInStateCondition_strategy = st.builds(
-    soopl::IsInStateCondition,
-)
+
+@given(instance=CallMethodAction_strategy)
+@settings(max_examples=50)
+def test_callmethodaction_instantiation(instance):
+    assert isinstance(instance, CallMethodAction)
+
+@given(instance=soopl_CallMethodOfParameter_strategy)
+@settings(max_examples=50)
+def test_soopl_callmethodofparameter_instantiation(instance):
+    assert isinstance(instance, soopl_CallMethodOfParameter)
+
+@given(instance=soopl_CallMethodOfProperty_strategy)
+@settings(max_examples=50)
+def test_soopl_callmethodofproperty_instantiation(instance):
+    assert isinstance(instance, soopl_CallMethodOfProperty)
+
+@given(instance=IsInStateCondition_strategy)
+@settings(max_examples=50)
+def test_isinstatecondition_instantiation(instance):
+    assert isinstance(instance, IsInStateCondition)
+
+@given(instance=soopl_ParameterIsInState_strategy)
+@settings(max_examples=50)
+def test_soopl_parameterisinstate_instantiation(instance):
+    assert isinstance(instance, soopl_ParameterIsInState)
+
+@given(instance=soopl_PropertyIsInState_strategy)
+@settings(max_examples=50)
+def test_soopl_propertyisinstate_instantiation(instance):
+    assert isinstance(instance, soopl_PropertyIsInState)
+
+@given(instance=Guard_strategy)
+@settings(max_examples=50)
+def test_guard_instantiation(instance):
+    assert isinstance(instance, Guard)
+
+@given(instance=soopl_IsInStateCondition_strategy)
+@settings(max_examples=50)
+def test_soopl_isinstatecondition_instantiation(instance):
+    assert isinstance(instance, soopl_IsInStateCondition)
 
 @given(instance=Parameter_strategy)
 @settings(max_examples=50)
 def test_parameter_instantiation(instance):
     assert isinstance(instance, Parameter)
 
-@given(instance=soopl::ComplexTypeParameter_strategy)
+@given(instance=soopl_ComplexTypeParameter_strategy)
 @settings(max_examples=50)
-def test_soopl::complextypeparameter_instantiation(instance):
-    assert isinstance(instance, soopl::ComplexTypeParameter)
+def test_soopl_complextypeparameter_instantiation(instance):
+    assert isinstance(instance, soopl_ComplexTypeParameter)
 
-@given(instance=soopl::SimpleTypeParameter_strategy)
+@given(instance=soopl_SimpleTypeParameter_strategy)
 @settings(max_examples=50)
-def test_soopl::simpletypeparameter_instantiation(instance):
-    assert isinstance(instance, soopl::SimpleTypeParameter)
-
-@given(instance=soopl::SimpleTypeParameter_strategy)
-def test_soopl::simpletypeparameter_dataType_type(instance):
-    assert isinstance(instance.dataType, str)
+def test_soopl_simpletypeparameter_instantiation(instance):
+    assert isinstance(instance, soopl_SimpleTypeParameter)
 
 
-@given(instance=soopl::SimpleTypeParameter_strategy)
-def test_soopl::simpletypeparameter_dataType_setter(instance):
+
+@given(instance=soopl_SimpleTypeParameter_strategy)
+def test_soopl_simpletypeparameter_dataType_setter(instance):
     original = instance.dataType
     instance.dataType = original
     assert instance.dataType == original
 
-@given(instance=soopl::Guard_strategy)
+@given(instance=soopl_Guard_strategy)
 @settings(max_examples=50)
-def test_soopl::guard_instantiation(instance):
-    assert isinstance(instance, soopl::Guard)
+def test_soopl_guard_instantiation(instance):
+    assert isinstance(instance, soopl_Guard)
 
-@given(instance=soopl::Action_strategy)
+@given(instance=soopl_Action_strategy)
 @settings(max_examples=50)
-def test_soopl::action_instantiation(instance):
-    assert isinstance(instance, soopl::Action)
+def test_soopl_action_instantiation(instance):
+    assert isinstance(instance, soopl_Action)
 
-@given(instance=soopl::Transition_strategy)
+@given(instance=soopl_Transition_strategy)
 @settings(max_examples=50)
-def test_soopl::transition_instantiation(instance):
-    assert isinstance(instance, soopl::Transition)
+def test_soopl_transition_instantiation(instance):
+    assert isinstance(instance, soopl_Transition)
 
 @given(instance=Method_strategy)
 @settings(max_examples=50)
 def test_method_instantiation(instance):
     assert isinstance(instance, Method)
 
-@given(instance=soopl::TransitionMethod_strategy)
+@given(instance=soopl_TransitionMethod_strategy)
 @settings(max_examples=50)
-def test_soopl::transitionmethod_instantiation(instance):
-    assert isinstance(instance, soopl::TransitionMethod)
+def test_soopl_transitionmethod_instantiation(instance):
+    assert isinstance(instance, soopl_TransitionMethod)
 
-@given(instance=soopl::ParameterBinding_strategy)
+@given(instance=soopl_ParameterBinding_strategy)
 @settings(max_examples=50)
-def test_soopl::parameterbinding_instantiation(instance):
-    assert isinstance(instance, soopl::ParameterBinding)
+def test_soopl_parameterbinding_instantiation(instance):
+    assert isinstance(instance, soopl_ParameterBinding)
 
 @given(instance=Action_strategy)
 @settings(max_examples=50)
 def test_action_instantiation(instance):
     assert isinstance(instance, Action)
 
-@given(instance=soopl::CallMethodAction_strategy)
+@given(instance=soopl_AssignProperty_strategy)
 @settings(max_examples=50)
-def test_soopl::callmethodaction_instantiation(instance):
-    assert isinstance(instance, soopl::CallMethodAction)
+def test_soopl_assignproperty_instantiation(instance):
+    assert isinstance(instance, soopl_AssignProperty)
+
+@given(instance=soopl_CallMethodAction_strategy)
+@settings(max_examples=50)
+def test_soopl_callmethodaction_instantiation(instance):
+    assert isinstance(instance, soopl_CallMethodAction)
 
 @given(instance=Class_strategy)
 @settings(max_examples=50)
 def test_class_instantiation(instance):
     assert isinstance(instance, Class)
 
-@given(instance=soopl::StateClass_strategy)
+@given(instance=soopl_StateImplementationClass_strategy)
 @settings(max_examples=50)
-def test_soopl::stateclass_instantiation(instance):
-    assert isinstance(instance, soopl::StateClass)
+def test_soopl_stateimplementationclass_instantiation(instance):
+    assert isinstance(instance, soopl_StateImplementationClass)
 
-@given(instance=soopl::StateImplementationClass_strategy)
+@given(instance=soopl_StateClass_strategy)
 @settings(max_examples=50)
-def test_soopl::stateimplementationclass_instantiation(instance):
-    assert isinstance(instance, soopl::StateImplementationClass)
+def test_soopl_stateclass_instantiation(instance):
+    assert isinstance(instance, soopl_StateClass)
 
-@given(instance=soopl::StatefulClass_strategy)
+@given(instance=soopl_StatefulClass_strategy)
 @settings(max_examples=50)
-def test_soopl::statefulclass_instantiation(instance):
-    assert isinstance(instance, soopl::StatefulClass)
+def test_soopl_statefulclass_instantiation(instance):
+    assert isinstance(instance, soopl_StatefulClass)
 
 @given(instance=NamedElement_strategy)
 @settings(max_examples=50)
 def test_namedelement_instantiation(instance):
     assert isinstance(instance, NamedElement)
 
-@given(instance=soopl::Method_strategy)
+@given(instance=soopl_Method_strategy)
 @settings(max_examples=50)
-def test_soopl::method_instantiation(instance):
-    assert isinstance(instance, soopl::Method)
+def test_soopl_method_instantiation(instance):
+    assert isinstance(instance, soopl_Method)
 
-@given(instance=soopl::Parameter_strategy)
+@given(instance=soopl_Property_strategy)
 @settings(max_examples=50)
-def test_soopl::parameter_instantiation(instance):
-    assert isinstance(instance, soopl::Parameter)
-
-@given(instance=soopl::Class_strategy)
-@settings(max_examples=50)
-def test_soopl::class_instantiation(instance):
-    assert isinstance(instance, soopl::Class)
-
-@given(instance=soopl::Class_strategy)
-def test_soopl::class_isAbstract_type(instance):
-    assert isinstance(instance.isAbstract, bool)
+def test_soopl_property_instantiation(instance):
+    assert isinstance(instance, soopl_Property)
 
 
-@given(instance=soopl::Class_strategy)
-def test_soopl::class_isAbstract_setter(instance):
-    original = instance.isAbstract
-    instance.isAbstract = original
-    assert instance.isAbstract == original
 
-@given(instance=soopl::Property_strategy)
-@settings(max_examples=50)
-def test_soopl::property_instantiation(instance):
-    assert isinstance(instance, soopl::Property)
-
-@given(instance=soopl::Property_strategy)
-def test_soopl::property_upperBound_type(instance):
-    assert isinstance(instance.upperBound, int)
-
-
-@given(instance=soopl::Property_strategy)
-def test_soopl::property_upperBound_setter(instance):
+@given(instance=soopl_Property_strategy)
+def test_soopl_property_upperBound_setter(instance):
     original = instance.upperBound
     instance.upperBound = original
     assert instance.upperBound == original
 
-@given(instance=soopl::Property_strategy)
-def test_soopl::property_lowerBound_type(instance):
-    assert isinstance(instance.lowerBound, int)
 
 
-@given(instance=soopl::Property_strategy)
-def test_soopl::property_lowerBound_setter(instance):
-    original = instance.lowerBound
-    instance.lowerBound = original
-    assert instance.lowerBound == original
-
-@given(instance=soopl::Property_strategy)
-def test_soopl::property_multiValued_type(instance):
-    assert isinstance(instance.multiValued, bool)
-
-
-@given(instance=soopl::Property_strategy)
-def test_soopl::property_multiValued_setter(instance):
+@given(instance=soopl_Property_strategy)
+def test_soopl_property_multiValued_setter(instance):
     original = instance.multiValued
     instance.multiValued = original
     assert instance.multiValued == original
 
-@given(instance=soopl::Package_strategy)
+
+
+@given(instance=soopl_Property_strategy)
+def test_soopl_property_lowerBound_setter(instance):
+    original = instance.lowerBound
+    instance.lowerBound = original
+    assert instance.lowerBound == original
+
+@given(instance=soopl_Parameter_strategy)
 @settings(max_examples=50)
-def test_soopl::package_instantiation(instance):
-    assert isinstance(instance, soopl::Package)
+def test_soopl_parameter_instantiation(instance):
+    assert isinstance(instance, soopl_Parameter)
 
-@given(instance=soopl::NamedElement_strategy)
+@given(instance=soopl_Class_strategy)
 @settings(max_examples=50)
-def test_soopl::namedelement_instantiation(instance):
-    assert isinstance(instance, soopl::NamedElement)
-
-@given(instance=soopl::NamedElement_strategy)
-def test_soopl::namedelement_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_soopl_class_instantiation(instance):
+    assert isinstance(instance, soopl_Class)
 
 
-@given(instance=soopl::NamedElement_strategy)
-def test_soopl::namedelement_name_setter(instance):
+
+@given(instance=soopl_Class_strategy)
+def test_soopl_class_isAbstract_setter(instance):
+    original = instance.isAbstract
+    instance.isAbstract = original
+    assert instance.isAbstract == original
+
+@given(instance=soopl_Package_strategy)
+@settings(max_examples=50)
+def test_soopl_package_instantiation(instance):
+    assert isinstance(instance, soopl_Package)
+
+@given(instance=soopl_NamedElement_strategy)
+@settings(max_examples=50)
+def test_soopl_namedelement_instantiation(instance):
+    assert isinstance(instance, soopl_NamedElement)
+
+
+
+@given(instance=soopl_NamedElement_strategy)
+def test_soopl_namedelement_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
@@ -919,68 +946,20 @@ def test_soopl::namedelement_name_setter(instance):
 def test_property_instantiation(instance):
     assert isinstance(instance, Property)
 
-@given(instance=soopl::ComplexTypeProperty_strategy)
+@given(instance=soopl_ComplexTypeProperty_strategy)
 @settings(max_examples=50)
-def test_soopl::complextypeproperty_instantiation(instance):
-    assert isinstance(instance, soopl::ComplexTypeProperty)
+def test_soopl_complextypeproperty_instantiation(instance):
+    assert isinstance(instance, soopl_ComplexTypeProperty)
 
-@given(instance=soopl::SimpleTypeProperty_strategy)
+@given(instance=soopl_SimpleTypeProperty_strategy)
 @settings(max_examples=50)
-def test_soopl::simpletypeproperty_instantiation(instance):
-    assert isinstance(instance, soopl::SimpleTypeProperty)
-
-@given(instance=soopl::SimpleTypeProperty_strategy)
-def test_soopl::simpletypeproperty_dataType_type(instance):
-    assert isinstance(instance.dataType, str)
+def test_soopl_simpletypeproperty_instantiation(instance):
+    assert isinstance(instance, soopl_SimpleTypeProperty)
 
 
-@given(instance=soopl::SimpleTypeProperty_strategy)
-def test_soopl::simpletypeproperty_dataType_setter(instance):
+
+@given(instance=soopl_SimpleTypeProperty_strategy)
+def test_soopl_simpletypeproperty_dataType_setter(instance):
     original = instance.dataType
     instance.dataType = original
     assert instance.dataType == original
-
-@given(instance=soopl::AssignProperty_strategy)
-@settings(max_examples=50)
-def test_soopl::assignproperty_instantiation(instance):
-    assert isinstance(instance, soopl::AssignProperty)
-
-@given(instance=CallMethodAction_strategy)
-@settings(max_examples=50)
-def test_callmethodaction_instantiation(instance):
-    assert isinstance(instance, CallMethodAction)
-
-@given(instance=soopl::CallMethodOfParameter_strategy)
-@settings(max_examples=50)
-def test_soopl::callmethodofparameter_instantiation(instance):
-    assert isinstance(instance, soopl::CallMethodOfParameter)
-
-@given(instance=soopl::CallMethodOfProperty_strategy)
-@settings(max_examples=50)
-def test_soopl::callmethodofproperty_instantiation(instance):
-    assert isinstance(instance, soopl::CallMethodOfProperty)
-
-@given(instance=IsInStateCondition_strategy)
-@settings(max_examples=50)
-def test_isinstatecondition_instantiation(instance):
-    assert isinstance(instance, IsInStateCondition)
-
-@given(instance=soopl::ParameterIsInState_strategy)
-@settings(max_examples=50)
-def test_soopl::parameterisinstate_instantiation(instance):
-    assert isinstance(instance, soopl::ParameterIsInState)
-
-@given(instance=soopl::PropertyIsInState_strategy)
-@settings(max_examples=50)
-def test_soopl::propertyisinstate_instantiation(instance):
-    assert isinstance(instance, soopl::PropertyIsInState)
-
-@given(instance=Guard_strategy)
-@settings(max_examples=50)
-def test_guard_instantiation(instance):
-    assert isinstance(instance, Guard)
-
-@given(instance=soopl::IsInStateCondition_strategy)
-@settings(max_examples=50)
-def test_soopl::isinstatecondition_instantiation(instance):
-    assert isinstance(instance, soopl::IsInStateCondition)

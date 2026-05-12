@@ -3,19 +3,19 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     AbstractElement,
-    wh::PackageDeclaration,
-    wh::AbstractElement,
-    wh::Wh,
-    wh::Feature,
+    wh_PackageDeclaration,
+    wh_AbstractElement,
+    wh_Wh,
+    wh_Feature,
     Type,
-    wh::Entity,
-    wh::DataType,
-    wh::Type,
-    wh::Import,
+    wh_Entity,
+    wh_DataType,
+    wh_Type,
+    wh_Import,
 )
 
 # =============================================================================
@@ -38,23 +38,23 @@ def test_abstractelement_constructor_args():
 
 
 
-def test_wh::packagedeclaration_is_not_abstract():
-    assert not inspect.isabstract(wh::PackageDeclaration)
+def test_wh_packagedeclaration_is_not_abstract():
+    assert not inspect.isabstract(wh_PackageDeclaration)
 
 
-def test_wh::packagedeclaration_constructor_exists():
-    assert callable(wh::PackageDeclaration.__init__)
+def test_wh_packagedeclaration_constructor_exists():
+    assert callable(wh_PackageDeclaration.__init__)
 
 
-def test_wh::packagedeclaration_constructor_args():
-    sig = inspect.signature(wh::PackageDeclaration.__init__)
+def test_wh_packagedeclaration_constructor_args():
+    sig = inspect.signature(wh_PackageDeclaration.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_wh::packagedeclaration_has_name():
-    assert hasattr(wh::PackageDeclaration, "name")
+def test_wh_packagedeclaration_has_name():
+    assert hasattr(wh_PackageDeclaration, "name")
     descriptor = None
-    for klass in wh::PackageDeclaration.__mro__:
+    for klass in wh_PackageDeclaration.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -62,61 +62,61 @@ def test_wh::packagedeclaration_has_name():
 
 
 
-def test_wh::abstractelement_is_not_abstract():
-    assert not inspect.isabstract(wh::AbstractElement)
+def test_wh_abstractelement_is_not_abstract():
+    assert not inspect.isabstract(wh_AbstractElement)
 
 
-def test_wh::abstractelement_constructor_exists():
-    assert callable(wh::AbstractElement.__init__)
+def test_wh_abstractelement_constructor_exists():
+    assert callable(wh_AbstractElement.__init__)
 
 
-def test_wh::abstractelement_constructor_args():
-    sig = inspect.signature(wh::AbstractElement.__init__)
+def test_wh_abstractelement_constructor_args():
+    sig = inspect.signature(wh_AbstractElement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_wh::wh_is_not_abstract():
-    assert not inspect.isabstract(wh::Wh)
+def test_wh_wh_is_not_abstract():
+    assert not inspect.isabstract(wh_Wh)
 
 
-def test_wh::wh_constructor_exists():
-    assert callable(wh::Wh.__init__)
+def test_wh_wh_constructor_exists():
+    assert callable(wh_Wh.__init__)
 
 
-def test_wh::wh_constructor_args():
-    sig = inspect.signature(wh::Wh.__init__)
+def test_wh_wh_constructor_args():
+    sig = inspect.signature(wh_Wh.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_wh::feature_is_not_abstract():
-    assert not inspect.isabstract(wh::Feature)
+def test_wh_feature_is_not_abstract():
+    assert not inspect.isabstract(wh_Feature)
 
 
-def test_wh::feature_constructor_exists():
-    assert callable(wh::Feature.__init__)
+def test_wh_feature_constructor_exists():
+    assert callable(wh_Feature.__init__)
 
 
-def test_wh::feature_constructor_args():
-    sig = inspect.signature(wh::Feature.__init__)
+def test_wh_feature_constructor_args():
+    sig = inspect.signature(wh_Feature.__init__)
     params = list(sig.parameters.keys())
     assert "many" in params, "Missing parameter 'many'"
     assert "name" in params, "Missing parameter 'name'"
 
-def test_wh::feature_has_many():
-    assert hasattr(wh::Feature, "many")
+def test_wh_feature_has_many():
+    assert hasattr(wh_Feature, "many")
     descriptor = None
-    for klass in wh::Feature.__mro__:
+    for klass in wh_Feature.__mro__:
         if "many" in klass.__dict__:
             descriptor = klass.__dict__["many"]
             break
     assert isinstance(descriptor, property)
 
-def test_wh::feature_has_name():
-    assert hasattr(wh::Feature, "name")
+def test_wh_feature_has_name():
+    assert hasattr(wh_Feature, "name")
     descriptor = None
-    for klass in wh::Feature.__mro__:
+    for klass in wh_Feature.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -138,51 +138,51 @@ def test_type_constructor_args():
 
 
 
-def test_wh::entity_is_not_abstract():
-    assert not inspect.isabstract(wh::Entity)
+def test_wh_entity_is_not_abstract():
+    assert not inspect.isabstract(wh_Entity)
 
 
-def test_wh::entity_constructor_exists():
-    assert callable(wh::Entity.__init__)
+def test_wh_entity_constructor_exists():
+    assert callable(wh_Entity.__init__)
 
 
-def test_wh::entity_constructor_args():
-    sig = inspect.signature(wh::Entity.__init__)
+def test_wh_entity_constructor_args():
+    sig = inspect.signature(wh_Entity.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_wh::datatype_is_not_abstract():
-    assert not inspect.isabstract(wh::DataType)
+def test_wh_datatype_is_not_abstract():
+    assert not inspect.isabstract(wh_DataType)
 
 
-def test_wh::datatype_constructor_exists():
-    assert callable(wh::DataType.__init__)
+def test_wh_datatype_constructor_exists():
+    assert callable(wh_DataType.__init__)
 
 
-def test_wh::datatype_constructor_args():
-    sig = inspect.signature(wh::DataType.__init__)
+def test_wh_datatype_constructor_args():
+    sig = inspect.signature(wh_DataType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_wh::type_is_not_abstract():
-    assert not inspect.isabstract(wh::Type)
+def test_wh_type_is_not_abstract():
+    assert not inspect.isabstract(wh_Type)
 
 
-def test_wh::type_constructor_exists():
-    assert callable(wh::Type.__init__)
+def test_wh_type_constructor_exists():
+    assert callable(wh_Type.__init__)
 
 
-def test_wh::type_constructor_args():
-    sig = inspect.signature(wh::Type.__init__)
+def test_wh_type_constructor_args():
+    sig = inspect.signature(wh_Type.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_wh::type_has_name():
-    assert hasattr(wh::Type, "name")
+def test_wh_type_has_name():
+    assert hasattr(wh_Type, "name")
     descriptor = None
-    for klass in wh::Type.__mro__:
+    for klass in wh_Type.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -190,23 +190,23 @@ def test_wh::type_has_name():
 
 
 
-def test_wh::import_is_not_abstract():
-    assert not inspect.isabstract(wh::Import)
+def test_wh_import_is_not_abstract():
+    assert not inspect.isabstract(wh_Import)
 
 
-def test_wh::import_constructor_exists():
-    assert callable(wh::Import.__init__)
+def test_wh_import_constructor_exists():
+    assert callable(wh_Import.__init__)
 
 
-def test_wh::import_constructor_args():
-    sig = inspect.signature(wh::Import.__init__)
+def test_wh_import_constructor_args():
+    sig = inspect.signature(wh_Import.__init__)
     params = list(sig.parameters.keys())
     assert "importedNamespace" in params, "Missing parameter 'importedNamespace'"
 
-def test_wh::import_has_importedNamespace():
-    assert hasattr(wh::Import, "importedNamespace")
+def test_wh_import_has_importedNamespace():
+    assert hasattr(wh_Import, "importedNamespace")
     descriptor = None
-    for klass in wh::Import.__mro__:
+    for klass in wh_Import.__mro__:
         if "importedNamespace" in klass.__dict__:
             descriptor = klass.__dict__["importedNamespace"]
             break
@@ -227,19 +227,19 @@ safe_text = st.text(
 AbstractElement_strategy = st.builds(
     AbstractElement,
 )
-wh::PackageDeclaration_strategy = st.builds(
-    wh::PackageDeclaration,
+wh_PackageDeclaration_strategy = st.builds(
+    wh_PackageDeclaration,
     name=
         safe_text
 )
-wh::AbstractElement_strategy = st.builds(
-    wh::AbstractElement,
+wh_AbstractElement_strategy = st.builds(
+    wh_AbstractElement,
 )
-wh::Wh_strategy = st.builds(
-    wh::Wh,
+wh_Wh_strategy = st.builds(
+    wh_Wh,
 )
-wh::Feature_strategy = st.builds(
-    wh::Feature,
+wh_Feature_strategy = st.builds(
+    wh_Feature,
     many=
         st.booleans(),
     name=
@@ -248,19 +248,19 @@ wh::Feature_strategy = st.builds(
 Type_strategy = st.builds(
     Type,
 )
-wh::Entity_strategy = st.builds(
-    wh::Entity,
+wh_Entity_strategy = st.builds(
+    wh_Entity,
 )
-wh::DataType_strategy = st.builds(
-    wh::DataType,
+wh_DataType_strategy = st.builds(
+    wh_DataType,
 )
-wh::Type_strategy = st.builds(
-    wh::Type,
+wh_Type_strategy = st.builds(
+    wh_Type,
     name=
         safe_text
 )
-wh::Import_strategy = st.builds(
-    wh::Import,
+wh_Import_strategy = st.builds(
+    wh_Import,
     importedNamespace=
         safe_text
 )
@@ -270,55 +270,46 @@ wh::Import_strategy = st.builds(
 def test_abstractelement_instantiation(instance):
     assert isinstance(instance, AbstractElement)
 
-@given(instance=wh::PackageDeclaration_strategy)
+@given(instance=wh_PackageDeclaration_strategy)
 @settings(max_examples=50)
-def test_wh::packagedeclaration_instantiation(instance):
-    assert isinstance(instance, wh::PackageDeclaration)
-
-@given(instance=wh::PackageDeclaration_strategy)
-def test_wh::packagedeclaration_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_wh_packagedeclaration_instantiation(instance):
+    assert isinstance(instance, wh_PackageDeclaration)
 
 
-@given(instance=wh::PackageDeclaration_strategy)
-def test_wh::packagedeclaration_name_setter(instance):
+
+@given(instance=wh_PackageDeclaration_strategy)
+def test_wh_packagedeclaration_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=wh::AbstractElement_strategy)
+@given(instance=wh_AbstractElement_strategy)
 @settings(max_examples=50)
-def test_wh::abstractelement_instantiation(instance):
-    assert isinstance(instance, wh::AbstractElement)
+def test_wh_abstractelement_instantiation(instance):
+    assert isinstance(instance, wh_AbstractElement)
 
-@given(instance=wh::Wh_strategy)
+@given(instance=wh_Wh_strategy)
 @settings(max_examples=50)
-def test_wh::wh_instantiation(instance):
-    assert isinstance(instance, wh::Wh)
+def test_wh_wh_instantiation(instance):
+    assert isinstance(instance, wh_Wh)
 
-@given(instance=wh::Feature_strategy)
+@given(instance=wh_Feature_strategy)
 @settings(max_examples=50)
-def test_wh::feature_instantiation(instance):
-    assert isinstance(instance, wh::Feature)
-
-@given(instance=wh::Feature_strategy)
-def test_wh::feature_many_type(instance):
-    assert isinstance(instance.many, bool)
+def test_wh_feature_instantiation(instance):
+    assert isinstance(instance, wh_Feature)
 
 
-@given(instance=wh::Feature_strategy)
-def test_wh::feature_many_setter(instance):
+
+@given(instance=wh_Feature_strategy)
+def test_wh_feature_many_setter(instance):
     original = instance.many
     instance.many = original
     assert instance.many == original
 
-@given(instance=wh::Feature_strategy)
-def test_wh::feature_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
-@given(instance=wh::Feature_strategy)
-def test_wh::feature_name_setter(instance):
+@given(instance=wh_Feature_strategy)
+def test_wh_feature_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
@@ -328,44 +319,38 @@ def test_wh::feature_name_setter(instance):
 def test_type_instantiation(instance):
     assert isinstance(instance, Type)
 
-@given(instance=wh::Entity_strategy)
+@given(instance=wh_Entity_strategy)
 @settings(max_examples=50)
-def test_wh::entity_instantiation(instance):
-    assert isinstance(instance, wh::Entity)
+def test_wh_entity_instantiation(instance):
+    assert isinstance(instance, wh_Entity)
 
-@given(instance=wh::DataType_strategy)
+@given(instance=wh_DataType_strategy)
 @settings(max_examples=50)
-def test_wh::datatype_instantiation(instance):
-    assert isinstance(instance, wh::DataType)
+def test_wh_datatype_instantiation(instance):
+    assert isinstance(instance, wh_DataType)
 
-@given(instance=wh::Type_strategy)
+@given(instance=wh_Type_strategy)
 @settings(max_examples=50)
-def test_wh::type_instantiation(instance):
-    assert isinstance(instance, wh::Type)
-
-@given(instance=wh::Type_strategy)
-def test_wh::type_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_wh_type_instantiation(instance):
+    assert isinstance(instance, wh_Type)
 
 
-@given(instance=wh::Type_strategy)
-def test_wh::type_name_setter(instance):
+
+@given(instance=wh_Type_strategy)
+def test_wh_type_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=wh::Import_strategy)
+@given(instance=wh_Import_strategy)
 @settings(max_examples=50)
-def test_wh::import_instantiation(instance):
-    assert isinstance(instance, wh::Import)
-
-@given(instance=wh::Import_strategy)
-def test_wh::import_importedNamespace_type(instance):
-    assert isinstance(instance.importedNamespace, str)
+def test_wh_import_instantiation(instance):
+    assert isinstance(instance, wh_Import)
 
 
-@given(instance=wh::Import_strategy)
-def test_wh::import_importedNamespace_setter(instance):
+
+@given(instance=wh_Import_strategy)
+def test_wh_import_importedNamespace_setter(instance):
     original = instance.importedNamespace
     instance.importedNamespace = original
     assert instance.importedNamespace == original

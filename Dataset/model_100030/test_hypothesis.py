@@ -3,34 +3,34 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    publication::PublicationSystem,
-    publication::PlaceHolder,
+from python_code import (
+    publication_PublicationSystem,
+    publication_PlaceHolder,
     PlaceHolder,
-    publication::Labelled,
-    publication::Counted,
-    publication::Named,
+    publication_Labelled,
+    publication_Counted,
+    publication_Named,
     Counted,
-    publication::PlaceHolderRs,
+    publication_PlaceHolderRs,
     Labelled,
-    publication::Progress,
-    publication::PlaceHolderRn,
-    publication::PlaceHolderPP,
-    publication::Researcher,
-    publication::Review,
-    publication::Write,
-    publication::PlaceHolderRule,
-    publication::Sequence,
-    publication::Rule,
-    publication::PublicationPhase,
+    publication_Progress,
+    publication_PlaceHolderRn,
+    publication_PlaceHolderPP,
+    publication_Researcher,
+    publication_Review,
+    publication_Write,
+    publication_PlaceHolderRule,
+    publication_Sequence,
+    publication_Rule,
+    publication_PublicationPhase,
     Named,
-    publication::PublicationStructure,
-    publication::Paper,
-    publication::Paragraph,
-    publication::ReviewNote,
-    publication::PublicationProcess,
+    publication_Paragraph,
+    publication_Paper,
+    publication_ReviewNote,
+    publication_PublicationStructure,
+    publication_PublicationProcess,
     SequenceType,
 )
 
@@ -40,30 +40,30 @@ from classes import (
 
 
 
-def test_publication::publicationsystem_is_not_abstract():
-    assert not inspect.isabstract(publication::PublicationSystem)
+def test_publication_publicationsystem_is_not_abstract():
+    assert not inspect.isabstract(publication_PublicationSystem)
 
 
-def test_publication::publicationsystem_constructor_exists():
-    assert callable(publication::PublicationSystem.__init__)
+def test_publication_publicationsystem_constructor_exists():
+    assert callable(publication_PublicationSystem.__init__)
 
 
-def test_publication::publicationsystem_constructor_args():
-    sig = inspect.signature(publication::PublicationSystem.__init__)
+def test_publication_publicationsystem_constructor_args():
+    sig = inspect.signature(publication_PublicationSystem.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_publication::placeholder_is_not_abstract():
-    assert not inspect.isabstract(publication::PlaceHolder)
+def test_publication_placeholder_is_not_abstract():
+    assert not inspect.isabstract(publication_PlaceHolder)
 
 
-def test_publication::placeholder_constructor_exists():
-    assert callable(publication::PlaceHolder.__init__)
+def test_publication_placeholder_constructor_exists():
+    assert callable(publication_PlaceHolder.__init__)
 
 
-def test_publication::placeholder_constructor_args():
-    sig = inspect.signature(publication::PlaceHolder.__init__)
+def test_publication_placeholder_constructor_args():
+    sig = inspect.signature(publication_PlaceHolder.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -82,23 +82,23 @@ def test_placeholder_constructor_args():
 
 
 
-def test_publication::labelled_is_not_abstract():
-    assert not inspect.isabstract(publication::Labelled)
+def test_publication_labelled_is_not_abstract():
+    assert not inspect.isabstract(publication_Labelled)
 
 
-def test_publication::labelled_constructor_exists():
-    assert callable(publication::Labelled.__init__)
+def test_publication_labelled_constructor_exists():
+    assert callable(publication_Labelled.__init__)
 
 
-def test_publication::labelled_constructor_args():
-    sig = inspect.signature(publication::Labelled.__init__)
+def test_publication_labelled_constructor_args():
+    sig = inspect.signature(publication_Labelled.__init__)
     params = list(sig.parameters.keys())
     assert "lname" in params, "Missing parameter 'lname'"
 
-def test_publication::labelled_has_lname():
-    assert hasattr(publication::Labelled, "lname")
+def test_publication_labelled_has_lname():
+    assert hasattr(publication_Labelled, "lname")
     descriptor = None
-    for klass in publication::Labelled.__mro__:
+    for klass in publication_Labelled.__mro__:
         if "lname" in klass.__dict__:
             descriptor = klass.__dict__["lname"]
             break
@@ -106,23 +106,23 @@ def test_publication::labelled_has_lname():
 
 
 
-def test_publication::counted_is_not_abstract():
-    assert not inspect.isabstract(publication::Counted)
+def test_publication_counted_is_not_abstract():
+    assert not inspect.isabstract(publication_Counted)
 
 
-def test_publication::counted_constructor_exists():
-    assert callable(publication::Counted.__init__)
+def test_publication_counted_constructor_exists():
+    assert callable(publication_Counted.__init__)
 
 
-def test_publication::counted_constructor_args():
-    sig = inspect.signature(publication::Counted.__init__)
+def test_publication_counted_constructor_args():
+    sig = inspect.signature(publication_Counted.__init__)
     params = list(sig.parameters.keys())
     assert "id" in params, "Missing parameter 'id'"
 
-def test_publication::counted_has_id():
-    assert hasattr(publication::Counted, "id")
+def test_publication_counted_has_id():
+    assert hasattr(publication_Counted, "id")
     descriptor = None
-    for klass in publication::Counted.__mro__:
+    for klass in publication_Counted.__mro__:
         if "id" in klass.__dict__:
             descriptor = klass.__dict__["id"]
             break
@@ -130,23 +130,23 @@ def test_publication::counted_has_id():
 
 
 
-def test_publication::named_is_not_abstract():
-    assert not inspect.isabstract(publication::Named)
+def test_publication_named_is_not_abstract():
+    assert not inspect.isabstract(publication_Named)
 
 
-def test_publication::named_constructor_exists():
-    assert callable(publication::Named.__init__)
+def test_publication_named_constructor_exists():
+    assert callable(publication_Named.__init__)
 
 
-def test_publication::named_constructor_args():
-    sig = inspect.signature(publication::Named.__init__)
+def test_publication_named_constructor_args():
+    sig = inspect.signature(publication_Named.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_publication::named_has_name():
-    assert hasattr(publication::Named, "name")
+def test_publication_named_has_name():
+    assert hasattr(publication_Named, "name")
     descriptor = None
-    for klass in publication::Named.__mro__:
+    for klass in publication_Named.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -168,16 +168,16 @@ def test_counted_constructor_args():
 
 
 
-def test_publication::placeholderrs_is_not_abstract():
-    assert not inspect.isabstract(publication::PlaceHolderRs)
+def test_publication_placeholderrs_is_not_abstract():
+    assert not inspect.isabstract(publication_PlaceHolderRs)
 
 
-def test_publication::placeholderrs_constructor_exists():
-    assert callable(publication::PlaceHolderRs.__init__)
+def test_publication_placeholderrs_constructor_exists():
+    assert callable(publication_PlaceHolderRs.__init__)
 
 
-def test_publication::placeholderrs_constructor_args():
-    sig = inspect.signature(publication::PlaceHolderRs.__init__)
+def test_publication_placeholderrs_constructor_args():
+    sig = inspect.signature(publication_PlaceHolderRs.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -196,33 +196,33 @@ def test_labelled_constructor_args():
 
 
 
-def test_publication::progress_is_not_abstract():
-    assert not inspect.isabstract(publication::Progress)
+def test_publication_progress_is_not_abstract():
+    assert not inspect.isabstract(publication_Progress)
 
 
-def test_publication::progress_constructor_exists():
-    assert callable(publication::Progress.__init__)
+def test_publication_progress_constructor_exists():
+    assert callable(publication_Progress.__init__)
 
 
-def test_publication::progress_constructor_args():
-    sig = inspect.signature(publication::Progress.__init__)
+def test_publication_progress_constructor_args():
+    sig = inspect.signature(publication_Progress.__init__)
     params = list(sig.parameters.keys())
     assert "time" in params, "Missing parameter 'time'"
     assert "percent" in params, "Missing parameter 'percent'"
 
-def test_publication::progress_has_time():
-    assert hasattr(publication::Progress, "time")
+def test_publication_progress_has_time():
+    assert hasattr(publication_Progress, "time")
     descriptor = None
-    for klass in publication::Progress.__mro__:
+    for klass in publication_Progress.__mro__:
         if "time" in klass.__dict__:
             descriptor = klass.__dict__["time"]
             break
     assert isinstance(descriptor, property)
 
-def test_publication::progress_has_percent():
-    assert hasattr(publication::Progress, "percent")
+def test_publication_progress_has_percent():
+    assert hasattr(publication_Progress, "percent")
     descriptor = None
-    for klass in publication::Progress.__mro__:
+    for klass in publication_Progress.__mro__:
         if "percent" in klass.__dict__:
             descriptor = klass.__dict__["percent"]
             break
@@ -230,137 +230,137 @@ def test_publication::progress_has_percent():
 
 
 
-def test_publication::placeholderrn_is_not_abstract():
-    assert not inspect.isabstract(publication::PlaceHolderRn)
+def test_publication_placeholderrn_is_not_abstract():
+    assert not inspect.isabstract(publication_PlaceHolderRn)
 
 
-def test_publication::placeholderrn_constructor_exists():
-    assert callable(publication::PlaceHolderRn.__init__)
+def test_publication_placeholderrn_constructor_exists():
+    assert callable(publication_PlaceHolderRn.__init__)
 
 
-def test_publication::placeholderrn_constructor_args():
-    sig = inspect.signature(publication::PlaceHolderRn.__init__)
+def test_publication_placeholderrn_constructor_args():
+    sig = inspect.signature(publication_PlaceHolderRn.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_publication::placeholderpp_is_not_abstract():
-    assert not inspect.isabstract(publication::PlaceHolderPP)
+def test_publication_placeholderpp_is_not_abstract():
+    assert not inspect.isabstract(publication_PlaceHolderPP)
 
 
-def test_publication::placeholderpp_constructor_exists():
-    assert callable(publication::PlaceHolderPP.__init__)
+def test_publication_placeholderpp_constructor_exists():
+    assert callable(publication_PlaceHolderPP.__init__)
 
 
-def test_publication::placeholderpp_constructor_args():
-    sig = inspect.signature(publication::PlaceHolderPP.__init__)
+def test_publication_placeholderpp_constructor_args():
+    sig = inspect.signature(publication_PlaceHolderPP.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_publication::researcher_is_not_abstract():
-    assert not inspect.isabstract(publication::Researcher)
+def test_publication_researcher_is_not_abstract():
+    assert not inspect.isabstract(publication_Researcher)
 
 
-def test_publication::researcher_constructor_exists():
-    assert callable(publication::Researcher.__init__)
+def test_publication_researcher_constructor_exists():
+    assert callable(publication_Researcher.__init__)
 
 
-def test_publication::researcher_constructor_args():
-    sig = inspect.signature(publication::Researcher.__init__)
+def test_publication_researcher_constructor_args():
+    sig = inspect.signature(publication_Researcher.__init__)
     params = list(sig.parameters.keys())
+    assert "name" in params, "Missing parameter 'name'"
     assert "position" in params, "Missing parameter 'position'"
     assert "forName" in params, "Missing parameter 'forName'"
-    assert "name" in params, "Missing parameter 'name'"
 
-def test_publication::researcher_has_position():
-    assert hasattr(publication::Researcher, "position")
+def test_publication_researcher_has_name():
+    assert hasattr(publication_Researcher, "name")
     descriptor = None
-    for klass in publication::Researcher.__mro__:
-        if "position" in klass.__dict__:
-            descriptor = klass.__dict__["position"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_publication::researcher_has_forName():
-    assert hasattr(publication::Researcher, "forName")
-    descriptor = None
-    for klass in publication::Researcher.__mro__:
-        if "forName" in klass.__dict__:
-            descriptor = klass.__dict__["forName"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_publication::researcher_has_name():
-    assert hasattr(publication::Researcher, "name")
-    descriptor = None
-    for klass in publication::Researcher.__mro__:
+    for klass in publication_Researcher.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
+def test_publication_researcher_has_position():
+    assert hasattr(publication_Researcher, "position")
+    descriptor = None
+    for klass in publication_Researcher.__mro__:
+        if "position" in klass.__dict__:
+            descriptor = klass.__dict__["position"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_publication_researcher_has_forName():
+    assert hasattr(publication_Researcher, "forName")
+    descriptor = None
+    for klass in publication_Researcher.__mro__:
+        if "forName" in klass.__dict__:
+            descriptor = klass.__dict__["forName"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_publication::review_is_not_abstract():
-    assert not inspect.isabstract(publication::Review)
+
+def test_publication_review_is_not_abstract():
+    assert not inspect.isabstract(publication_Review)
 
 
-def test_publication::review_constructor_exists():
-    assert callable(publication::Review.__init__)
+def test_publication_review_constructor_exists():
+    assert callable(publication_Review.__init__)
 
 
-def test_publication::review_constructor_args():
-    sig = inspect.signature(publication::Review.__init__)
+def test_publication_review_constructor_args():
+    sig = inspect.signature(publication_Review.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_publication::write_is_not_abstract():
-    assert not inspect.isabstract(publication::Write)
+def test_publication_write_is_not_abstract():
+    assert not inspect.isabstract(publication_Write)
 
 
-def test_publication::write_constructor_exists():
-    assert callable(publication::Write.__init__)
+def test_publication_write_constructor_exists():
+    assert callable(publication_Write.__init__)
 
 
-def test_publication::write_constructor_args():
-    sig = inspect.signature(publication::Write.__init__)
+def test_publication_write_constructor_args():
+    sig = inspect.signature(publication_Write.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_publication::placeholderrule_is_not_abstract():
-    assert not inspect.isabstract(publication::PlaceHolderRule)
+def test_publication_placeholderrule_is_not_abstract():
+    assert not inspect.isabstract(publication_PlaceHolderRule)
 
 
-def test_publication::placeholderrule_constructor_exists():
-    assert callable(publication::PlaceHolderRule.__init__)
+def test_publication_placeholderrule_constructor_exists():
+    assert callable(publication_PlaceHolderRule.__init__)
 
 
-def test_publication::placeholderrule_constructor_args():
-    sig = inspect.signature(publication::PlaceHolderRule.__init__)
+def test_publication_placeholderrule_constructor_args():
+    sig = inspect.signature(publication_PlaceHolderRule.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_publication::sequence_is_not_abstract():
-    assert not inspect.isabstract(publication::Sequence)
+def test_publication_sequence_is_not_abstract():
+    assert not inspect.isabstract(publication_Sequence)
 
 
-def test_publication::sequence_constructor_exists():
-    assert callable(publication::Sequence.__init__)
+def test_publication_sequence_constructor_exists():
+    assert callable(publication_Sequence.__init__)
 
 
-def test_publication::sequence_constructor_args():
-    sig = inspect.signature(publication::Sequence.__init__)
+def test_publication_sequence_constructor_args():
+    sig = inspect.signature(publication_Sequence.__init__)
     params = list(sig.parameters.keys())
     assert "sequenceType" in params, "Missing parameter 'sequenceType'"
 
-def test_publication::sequence_has_sequenceType():
-    assert hasattr(publication::Sequence, "sequenceType")
+def test_publication_sequence_has_sequenceType():
+    assert hasattr(publication_Sequence, "sequenceType")
     descriptor = None
-    for klass in publication::Sequence.__mro__:
+    for klass in publication_Sequence.__mro__:
         if "sequenceType" in klass.__dict__:
             descriptor = klass.__dict__["sequenceType"]
             break
@@ -368,79 +368,79 @@ def test_publication::sequence_has_sequenceType():
 
 
 
-def test_publication::rule_is_not_abstract():
-    assert not inspect.isabstract(publication::Rule)
+def test_publication_rule_is_not_abstract():
+    assert not inspect.isabstract(publication_Rule)
 
 
-def test_publication::rule_constructor_exists():
-    assert callable(publication::Rule.__init__)
+def test_publication_rule_constructor_exists():
+    assert callable(publication_Rule.__init__)
 
 
-def test_publication::rule_constructor_args():
-    sig = inspect.signature(publication::Rule.__init__)
+def test_publication_rule_constructor_args():
+    sig = inspect.signature(publication_Rule.__init__)
     params = list(sig.parameters.keys())
-    assert "key" in params, "Missing parameter 'key'"
     assert "text" in params, "Missing parameter 'text'"
+    assert "key" in params, "Missing parameter 'key'"
 
-def test_publication::rule_has_key():
-    assert hasattr(publication::Rule, "key")
+def test_publication_rule_has_text():
+    assert hasattr(publication_Rule, "text")
     descriptor = None
-    for klass in publication::Rule.__mro__:
-        if "key" in klass.__dict__:
-            descriptor = klass.__dict__["key"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_publication::rule_has_text():
-    assert hasattr(publication::Rule, "text")
-    descriptor = None
-    for klass in publication::Rule.__mro__:
+    for klass in publication_Rule.__mro__:
         if "text" in klass.__dict__:
             descriptor = klass.__dict__["text"]
             break
     assert isinstance(descriptor, property)
 
-
-
-def test_publication::publicationphase_is_not_abstract():
-    assert not inspect.isabstract(publication::PublicationPhase)
-
-
-def test_publication::publicationphase_constructor_exists():
-    assert callable(publication::PublicationPhase.__init__)
-
-
-def test_publication::publicationphase_constructor_args():
-    sig = inspect.signature(publication::PublicationPhase.__init__)
-    params = list(sig.parameters.keys())
-    assert "name" in params, "Missing parameter 'name'"
-    assert "minTime" in params, "Missing parameter 'minTime'"
-    assert "maxTime" in params, "Missing parameter 'maxTime'"
-
-def test_publication::publicationphase_has_name():
-    assert hasattr(publication::PublicationPhase, "name")
+def test_publication_rule_has_key():
+    assert hasattr(publication_Rule, "key")
     descriptor = None
-    for klass in publication::PublicationPhase.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
+    for klass in publication_Rule.__mro__:
+        if "key" in klass.__dict__:
+            descriptor = klass.__dict__["key"]
             break
     assert isinstance(descriptor, property)
 
-def test_publication::publicationphase_has_minTime():
-    assert hasattr(publication::PublicationPhase, "minTime")
+
+
+def test_publication_publicationphase_is_not_abstract():
+    assert not inspect.isabstract(publication_PublicationPhase)
+
+
+def test_publication_publicationphase_constructor_exists():
+    assert callable(publication_PublicationPhase.__init__)
+
+
+def test_publication_publicationphase_constructor_args():
+    sig = inspect.signature(publication_PublicationPhase.__init__)
+    params = list(sig.parameters.keys())
+    assert "minTime" in params, "Missing parameter 'minTime'"
+    assert "maxTime" in params, "Missing parameter 'maxTime'"
+    assert "name" in params, "Missing parameter 'name'"
+
+def test_publication_publicationphase_has_minTime():
+    assert hasattr(publication_PublicationPhase, "minTime")
     descriptor = None
-    for klass in publication::PublicationPhase.__mro__:
+    for klass in publication_PublicationPhase.__mro__:
         if "minTime" in klass.__dict__:
             descriptor = klass.__dict__["minTime"]
             break
     assert isinstance(descriptor, property)
 
-def test_publication::publicationphase_has_maxTime():
-    assert hasattr(publication::PublicationPhase, "maxTime")
+def test_publication_publicationphase_has_maxTime():
+    assert hasattr(publication_PublicationPhase, "maxTime")
     descriptor = None
-    for klass in publication::PublicationPhase.__mro__:
+    for klass in publication_PublicationPhase.__mro__:
         if "maxTime" in klass.__dict__:
             descriptor = klass.__dict__["maxTime"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_publication_publicationphase_has_name():
+    assert hasattr(publication_PublicationPhase, "name")
+    descriptor = None
+    for klass in publication_PublicationPhase.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
@@ -460,51 +460,23 @@ def test_named_constructor_args():
 
 
 
-def test_publication::publicationstructure_is_not_abstract():
-    assert not inspect.isabstract(publication::PublicationStructure)
+def test_publication_paragraph_is_not_abstract():
+    assert not inspect.isabstract(publication_Paragraph)
 
 
-def test_publication::publicationstructure_constructor_exists():
-    assert callable(publication::PublicationStructure.__init__)
+def test_publication_paragraph_constructor_exists():
+    assert callable(publication_Paragraph.__init__)
 
 
-def test_publication::publicationstructure_constructor_args():
-    sig = inspect.signature(publication::PublicationStructure.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_publication::paper_is_not_abstract():
-    assert not inspect.isabstract(publication::Paper)
-
-
-def test_publication::paper_constructor_exists():
-    assert callable(publication::Paper.__init__)
-
-
-def test_publication::paper_constructor_args():
-    sig = inspect.signature(publication::Paper.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_publication::paragraph_is_not_abstract():
-    assert not inspect.isabstract(publication::Paragraph)
-
-
-def test_publication::paragraph_constructor_exists():
-    assert callable(publication::Paragraph.__init__)
-
-
-def test_publication::paragraph_constructor_args():
-    sig = inspect.signature(publication::Paragraph.__init__)
+def test_publication_paragraph_constructor_args():
+    sig = inspect.signature(publication_Paragraph.__init__)
     params = list(sig.parameters.keys())
     assert "content" in params, "Missing parameter 'content'"
 
-def test_publication::paragraph_has_content():
-    assert hasattr(publication::Paragraph, "content")
+def test_publication_paragraph_has_content():
+    assert hasattr(publication_Paragraph, "content")
     descriptor = None
-    for klass in publication::Paragraph.__mro__:
+    for klass in publication_Paragraph.__mro__:
         if "content" in klass.__dict__:
             descriptor = klass.__dict__["content"]
             break
@@ -512,23 +484,37 @@ def test_publication::paragraph_has_content():
 
 
 
-def test_publication::reviewnote_is_not_abstract():
-    assert not inspect.isabstract(publication::ReviewNote)
+def test_publication_paper_is_not_abstract():
+    assert not inspect.isabstract(publication_Paper)
 
 
-def test_publication::reviewnote_constructor_exists():
-    assert callable(publication::ReviewNote.__init__)
+def test_publication_paper_constructor_exists():
+    assert callable(publication_Paper.__init__)
 
 
-def test_publication::reviewnote_constructor_args():
-    sig = inspect.signature(publication::ReviewNote.__init__)
+def test_publication_paper_constructor_args():
+    sig = inspect.signature(publication_Paper.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_publication_reviewnote_is_not_abstract():
+    assert not inspect.isabstract(publication_ReviewNote)
+
+
+def test_publication_reviewnote_constructor_exists():
+    assert callable(publication_ReviewNote.__init__)
+
+
+def test_publication_reviewnote_constructor_args():
+    sig = inspect.signature(publication_ReviewNote.__init__)
     params = list(sig.parameters.keys())
     assert "content" in params, "Missing parameter 'content'"
 
-def test_publication::reviewnote_has_content():
-    assert hasattr(publication::ReviewNote, "content")
+def test_publication_reviewnote_has_content():
+    assert hasattr(publication_ReviewNote, "content")
     descriptor = None
-    for klass in publication::ReviewNote.__mro__:
+    for klass in publication_ReviewNote.__mro__:
         if "content" in klass.__dict__:
             descriptor = klass.__dict__["content"]
             break
@@ -536,35 +522,49 @@ def test_publication::reviewnote_has_content():
 
 
 
-def test_publication::publicationprocess_is_not_abstract():
-    assert not inspect.isabstract(publication::PublicationProcess)
+def test_publication_publicationstructure_is_not_abstract():
+    assert not inspect.isabstract(publication_PublicationStructure)
 
 
-def test_publication::publicationprocess_constructor_exists():
-    assert callable(publication::PublicationProcess.__init__)
+def test_publication_publicationstructure_constructor_exists():
+    assert callable(publication_PublicationStructure.__init__)
 
 
-def test_publication::publicationprocess_constructor_args():
-    sig = inspect.signature(publication::PublicationProcess.__init__)
+def test_publication_publicationstructure_constructor_args():
+    sig = inspect.signature(publication_PublicationStructure.__init__)
     params = list(sig.parameters.keys())
-    assert "maxTime" in params, "Missing parameter 'maxTime'"
+
+
+
+def test_publication_publicationprocess_is_not_abstract():
+    assert not inspect.isabstract(publication_PublicationProcess)
+
+
+def test_publication_publicationprocess_constructor_exists():
+    assert callable(publication_PublicationProcess.__init__)
+
+
+def test_publication_publicationprocess_constructor_args():
+    sig = inspect.signature(publication_PublicationProcess.__init__)
+    params = list(sig.parameters.keys())
     assert "minTime" in params, "Missing parameter 'minTime'"
+    assert "maxTime" in params, "Missing parameter 'maxTime'"
 
-def test_publication::publicationprocess_has_maxTime():
-    assert hasattr(publication::PublicationProcess, "maxTime")
+def test_publication_publicationprocess_has_minTime():
+    assert hasattr(publication_PublicationProcess, "minTime")
     descriptor = None
-    for klass in publication::PublicationProcess.__mro__:
-        if "maxTime" in klass.__dict__:
-            descriptor = klass.__dict__["maxTime"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_publication::publicationprocess_has_minTime():
-    assert hasattr(publication::PublicationProcess, "minTime")
-    descriptor = None
-    for klass in publication::PublicationProcess.__mro__:
+    for klass in publication_PublicationProcess.__mro__:
         if "minTime" in klass.__dict__:
             descriptor = klass.__dict__["minTime"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_publication_publicationprocess_has_maxTime():
+    assert hasattr(publication_PublicationProcess, "maxTime")
+    descriptor = None
+    for klass in publication_PublicationProcess.__mro__:
+        if "maxTime" in klass.__dict__:
+            descriptor = klass.__dict__["maxTime"]
             break
     assert isinstance(descriptor, property)
 
@@ -576,10 +576,10 @@ def test_sequencetype_has_all_literals():
     # Collect the names of literals in this Enumeration
     enum_literals = [lit.name for lit in SequenceType]
     expected_literals = [
-        "startToStart",
-        "startToFinish",
-        "finishToFinish",
         "finishToStart",
+        "startToStart",
+        "finishToFinish",
+        "startToFinish",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
@@ -597,177 +597,168 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-publication::PublicationSystem_strategy = st.builds(
-    publication::PublicationSystem,
+publication_PublicationSystem_strategy = st.builds(
+    publication_PublicationSystem,
 )
-publication::PlaceHolder_strategy = st.builds(
-    publication::PlaceHolder,
+publication_PlaceHolder_strategy = st.builds(
+    publication_PlaceHolder,
 )
 PlaceHolder_strategy = st.builds(
     PlaceHolder,
 )
-publication::Labelled_strategy = st.builds(
-    publication::Labelled,
+publication_Labelled_strategy = st.builds(
+    publication_Labelled,
     lname=
         safe_text
 )
-publication::Counted_strategy = st.builds(
-    publication::Counted,
+publication_Counted_strategy = st.builds(
+    publication_Counted,
     id=
         st.integers()
 )
-publication::Named_strategy = st.builds(
-    publication::Named,
+publication_Named_strategy = st.builds(
+    publication_Named,
     name=
         safe_text
 )
 Counted_strategy = st.builds(
     Counted,
 )
-publication::PlaceHolderRs_strategy = st.builds(
-    publication::PlaceHolderRs,
+publication_PlaceHolderRs_strategy = st.builds(
+    publication_PlaceHolderRs,
 )
 Labelled_strategy = st.builds(
     Labelled,
 )
-publication::Progress_strategy = st.builds(
-    publication::Progress,
+publication_Progress_strategy = st.builds(
+    publication_Progress,
     time=
         st.integers(),
     percent=
         st.integers()
 )
-publication::PlaceHolderRn_strategy = st.builds(
-    publication::PlaceHolderRn,
+publication_PlaceHolderRn_strategy = st.builds(
+    publication_PlaceHolderRn,
 )
-publication::PlaceHolderPP_strategy = st.builds(
-    publication::PlaceHolderPP,
+publication_PlaceHolderPP_strategy = st.builds(
+    publication_PlaceHolderPP,
 )
-publication::Researcher_strategy = st.builds(
-    publication::Researcher,
+publication_Researcher_strategy = st.builds(
+    publication_Researcher,
+    name=
+        safe_text,
     position=
         safe_text,
     forName=
-        safe_text,
-    name=
         safe_text
 )
-publication::Review_strategy = st.builds(
-    publication::Review,
+publication_Review_strategy = st.builds(
+    publication_Review,
 )
-publication::Write_strategy = st.builds(
-    publication::Write,
+publication_Write_strategy = st.builds(
+    publication_Write,
 )
-publication::PlaceHolderRule_strategy = st.builds(
-    publication::PlaceHolderRule,
+publication_PlaceHolderRule_strategy = st.builds(
+    publication_PlaceHolderRule,
 )
-publication::Sequence_strategy = st.builds(
-    publication::Sequence,
+publication_Sequence_strategy = st.builds(
+    publication_Sequence,
     sequenceType=
         safe_text
 )
-publication::Rule_strategy = st.builds(
-    publication::Rule,
-    key=
-        safe_text,
+publication_Rule_strategy = st.builds(
+    publication_Rule,
     text=
+        safe_text,
+    key=
         safe_text
 )
-publication::PublicationPhase_strategy = st.builds(
-    publication::PublicationPhase,
-    name=
-        safe_text,
+publication_PublicationPhase_strategy = st.builds(
+    publication_PublicationPhase,
     minTime=
         st.integers(),
     maxTime=
-        st.integers()
+        st.integers(),
+    name=
+        safe_text
 )
 Named_strategy = st.builds(
     Named,
 )
-publication::PublicationStructure_strategy = st.builds(
-    publication::PublicationStructure,
-)
-publication::Paper_strategy = st.builds(
-    publication::Paper,
-)
-publication::Paragraph_strategy = st.builds(
-    publication::Paragraph,
+publication_Paragraph_strategy = st.builds(
+    publication_Paragraph,
     content=
         safe_text
 )
-publication::ReviewNote_strategy = st.builds(
-    publication::ReviewNote,
+publication_Paper_strategy = st.builds(
+    publication_Paper,
+)
+publication_ReviewNote_strategy = st.builds(
+    publication_ReviewNote,
     content=
         safe_text
 )
-publication::PublicationProcess_strategy = st.builds(
-    publication::PublicationProcess,
-    maxTime=
-        st.integers(),
+publication_PublicationStructure_strategy = st.builds(
+    publication_PublicationStructure,
+)
+publication_PublicationProcess_strategy = st.builds(
+    publication_PublicationProcess,
     minTime=
+        st.integers(),
+    maxTime=
         st.integers()
 )
 
-@given(instance=publication::PublicationSystem_strategy)
+@given(instance=publication_PublicationSystem_strategy)
 @settings(max_examples=50)
-def test_publication::publicationsystem_instantiation(instance):
-    assert isinstance(instance, publication::PublicationSystem)
+def test_publication_publicationsystem_instantiation(instance):
+    assert isinstance(instance, publication_PublicationSystem)
 
-@given(instance=publication::PlaceHolder_strategy)
+@given(instance=publication_PlaceHolder_strategy)
 @settings(max_examples=50)
-def test_publication::placeholder_instantiation(instance):
-    assert isinstance(instance, publication::PlaceHolder)
+def test_publication_placeholder_instantiation(instance):
+    assert isinstance(instance, publication_PlaceHolder)
 
 @given(instance=PlaceHolder_strategy)
 @settings(max_examples=50)
 def test_placeholder_instantiation(instance):
     assert isinstance(instance, PlaceHolder)
 
-@given(instance=publication::Labelled_strategy)
+@given(instance=publication_Labelled_strategy)
 @settings(max_examples=50)
-def test_publication::labelled_instantiation(instance):
-    assert isinstance(instance, publication::Labelled)
-
-@given(instance=publication::Labelled_strategy)
-def test_publication::labelled_lname_type(instance):
-    assert isinstance(instance.lname, str)
+def test_publication_labelled_instantiation(instance):
+    assert isinstance(instance, publication_Labelled)
 
 
-@given(instance=publication::Labelled_strategy)
-def test_publication::labelled_lname_setter(instance):
+
+@given(instance=publication_Labelled_strategy)
+def test_publication_labelled_lname_setter(instance):
     original = instance.lname
     instance.lname = original
     assert instance.lname == original
 
-@given(instance=publication::Counted_strategy)
+@given(instance=publication_Counted_strategy)
 @settings(max_examples=50)
-def test_publication::counted_instantiation(instance):
-    assert isinstance(instance, publication::Counted)
-
-@given(instance=publication::Counted_strategy)
-def test_publication::counted_id_type(instance):
-    assert isinstance(instance.id, int)
+def test_publication_counted_instantiation(instance):
+    assert isinstance(instance, publication_Counted)
 
 
-@given(instance=publication::Counted_strategy)
-def test_publication::counted_id_setter(instance):
+
+@given(instance=publication_Counted_strategy)
+def test_publication_counted_id_setter(instance):
     original = instance.id
     instance.id = original
     assert instance.id == original
 
-@given(instance=publication::Named_strategy)
+@given(instance=publication_Named_strategy)
 @settings(max_examples=50)
-def test_publication::named_instantiation(instance):
-    assert isinstance(instance, publication::Named)
-
-@given(instance=publication::Named_strategy)
-def test_publication::named_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_publication_named_instantiation(instance):
+    assert isinstance(instance, publication_Named)
 
 
-@given(instance=publication::Named_strategy)
-def test_publication::named_name_setter(instance):
+
+@given(instance=publication_Named_strategy)
+def test_publication_named_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
@@ -777,257 +768,212 @@ def test_publication::named_name_setter(instance):
 def test_counted_instantiation(instance):
     assert isinstance(instance, Counted)
 
-@given(instance=publication::PlaceHolderRs_strategy)
+@given(instance=publication_PlaceHolderRs_strategy)
 @settings(max_examples=50)
-def test_publication::placeholderrs_instantiation(instance):
-    assert isinstance(instance, publication::PlaceHolderRs)
+def test_publication_placeholderrs_instantiation(instance):
+    assert isinstance(instance, publication_PlaceHolderRs)
 
 @given(instance=Labelled_strategy)
 @settings(max_examples=50)
 def test_labelled_instantiation(instance):
     assert isinstance(instance, Labelled)
 
-@given(instance=publication::Progress_strategy)
+@given(instance=publication_Progress_strategy)
 @settings(max_examples=50)
-def test_publication::progress_instantiation(instance):
-    assert isinstance(instance, publication::Progress)
-
-@given(instance=publication::Progress_strategy)
-def test_publication::progress_time_type(instance):
-    assert isinstance(instance.time, int)
+def test_publication_progress_instantiation(instance):
+    assert isinstance(instance, publication_Progress)
 
 
-@given(instance=publication::Progress_strategy)
-def test_publication::progress_time_setter(instance):
+
+@given(instance=publication_Progress_strategy)
+def test_publication_progress_time_setter(instance):
     original = instance.time
     instance.time = original
     assert instance.time == original
 
-@given(instance=publication::Progress_strategy)
-def test_publication::progress_percent_type(instance):
-    assert isinstance(instance.percent, int)
 
 
-@given(instance=publication::Progress_strategy)
-def test_publication::progress_percent_setter(instance):
+@given(instance=publication_Progress_strategy)
+def test_publication_progress_percent_setter(instance):
     original = instance.percent
     instance.percent = original
     assert instance.percent == original
 
-@given(instance=publication::PlaceHolderRn_strategy)
+@given(instance=publication_PlaceHolderRn_strategy)
 @settings(max_examples=50)
-def test_publication::placeholderrn_instantiation(instance):
-    assert isinstance(instance, publication::PlaceHolderRn)
+def test_publication_placeholderrn_instantiation(instance):
+    assert isinstance(instance, publication_PlaceHolderRn)
 
-@given(instance=publication::PlaceHolderPP_strategy)
+@given(instance=publication_PlaceHolderPP_strategy)
 @settings(max_examples=50)
-def test_publication::placeholderpp_instantiation(instance):
-    assert isinstance(instance, publication::PlaceHolderPP)
+def test_publication_placeholderpp_instantiation(instance):
+    assert isinstance(instance, publication_PlaceHolderPP)
 
-@given(instance=publication::Researcher_strategy)
+@given(instance=publication_Researcher_strategy)
 @settings(max_examples=50)
-def test_publication::researcher_instantiation(instance):
-    assert isinstance(instance, publication::Researcher)
-
-@given(instance=publication::Researcher_strategy)
-def test_publication::researcher_position_type(instance):
-    assert isinstance(instance.position, str)
+def test_publication_researcher_instantiation(instance):
+    assert isinstance(instance, publication_Researcher)
 
 
-@given(instance=publication::Researcher_strategy)
-def test_publication::researcher_position_setter(instance):
+
+@given(instance=publication_Researcher_strategy)
+def test_publication_researcher_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+
+
+@given(instance=publication_Researcher_strategy)
+def test_publication_researcher_position_setter(instance):
     original = instance.position
     instance.position = original
     assert instance.position == original
 
-@given(instance=publication::Researcher_strategy)
-def test_publication::researcher_forName_type(instance):
-    assert isinstance(instance.forName, str)
 
 
-@given(instance=publication::Researcher_strategy)
-def test_publication::researcher_forName_setter(instance):
+@given(instance=publication_Researcher_strategy)
+def test_publication_researcher_forName_setter(instance):
     original = instance.forName
     instance.forName = original
     assert instance.forName == original
 
-@given(instance=publication::Researcher_strategy)
-def test_publication::researcher_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=publication::Researcher_strategy)
-def test_publication::researcher_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
-
-@given(instance=publication::Review_strategy)
+@given(instance=publication_Review_strategy)
 @settings(max_examples=50)
-def test_publication::review_instantiation(instance):
-    assert isinstance(instance, publication::Review)
+def test_publication_review_instantiation(instance):
+    assert isinstance(instance, publication_Review)
 
-@given(instance=publication::Write_strategy)
+@given(instance=publication_Write_strategy)
 @settings(max_examples=50)
-def test_publication::write_instantiation(instance):
-    assert isinstance(instance, publication::Write)
+def test_publication_write_instantiation(instance):
+    assert isinstance(instance, publication_Write)
 
-@given(instance=publication::PlaceHolderRule_strategy)
+@given(instance=publication_PlaceHolderRule_strategy)
 @settings(max_examples=50)
-def test_publication::placeholderrule_instantiation(instance):
-    assert isinstance(instance, publication::PlaceHolderRule)
+def test_publication_placeholderrule_instantiation(instance):
+    assert isinstance(instance, publication_PlaceHolderRule)
 
-@given(instance=publication::Sequence_strategy)
+@given(instance=publication_Sequence_strategy)
 @settings(max_examples=50)
-def test_publication::sequence_instantiation(instance):
-    assert isinstance(instance, publication::Sequence)
-
-@given(instance=publication::Sequence_strategy)
-def test_publication::sequence_sequenceType_type(instance):
-    assert isinstance(instance.sequenceType, str)
+def test_publication_sequence_instantiation(instance):
+    assert isinstance(instance, publication_Sequence)
 
 
-@given(instance=publication::Sequence_strategy)
-def test_publication::sequence_sequenceType_setter(instance):
+
+@given(instance=publication_Sequence_strategy)
+def test_publication_sequence_sequenceType_setter(instance):
     original = instance.sequenceType
     instance.sequenceType = original
     assert instance.sequenceType == original
 
-@given(instance=publication::Rule_strategy)
+@given(instance=publication_Rule_strategy)
 @settings(max_examples=50)
-def test_publication::rule_instantiation(instance):
-    assert isinstance(instance, publication::Rule)
-
-@given(instance=publication::Rule_strategy)
-def test_publication::rule_key_type(instance):
-    assert isinstance(instance.key, str)
+def test_publication_rule_instantiation(instance):
+    assert isinstance(instance, publication_Rule)
 
 
-@given(instance=publication::Rule_strategy)
-def test_publication::rule_key_setter(instance):
-    original = instance.key
-    instance.key = original
-    assert instance.key == original
 
-@given(instance=publication::Rule_strategy)
-def test_publication::rule_text_type(instance):
-    assert isinstance(instance.text, str)
-
-
-@given(instance=publication::Rule_strategy)
-def test_publication::rule_text_setter(instance):
+@given(instance=publication_Rule_strategy)
+def test_publication_rule_text_setter(instance):
     original = instance.text
     instance.text = original
     assert instance.text == original
 
-@given(instance=publication::PublicationPhase_strategy)
+
+
+@given(instance=publication_Rule_strategy)
+def test_publication_rule_key_setter(instance):
+    original = instance.key
+    instance.key = original
+    assert instance.key == original
+
+@given(instance=publication_PublicationPhase_strategy)
 @settings(max_examples=50)
-def test_publication::publicationphase_instantiation(instance):
-    assert isinstance(instance, publication::PublicationPhase)
-
-@given(instance=publication::PublicationPhase_strategy)
-def test_publication::publicationphase_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_publication_publicationphase_instantiation(instance):
+    assert isinstance(instance, publication_PublicationPhase)
 
 
-@given(instance=publication::PublicationPhase_strategy)
-def test_publication::publicationphase_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
 
-@given(instance=publication::PublicationPhase_strategy)
-def test_publication::publicationphase_minTime_type(instance):
-    assert isinstance(instance.minTime, int)
-
-
-@given(instance=publication::PublicationPhase_strategy)
-def test_publication::publicationphase_minTime_setter(instance):
+@given(instance=publication_PublicationPhase_strategy)
+def test_publication_publicationphase_minTime_setter(instance):
     original = instance.minTime
     instance.minTime = original
     assert instance.minTime == original
 
-@given(instance=publication::PublicationPhase_strategy)
-def test_publication::publicationphase_maxTime_type(instance):
-    assert isinstance(instance.maxTime, int)
 
 
-@given(instance=publication::PublicationPhase_strategy)
-def test_publication::publicationphase_maxTime_setter(instance):
+@given(instance=publication_PublicationPhase_strategy)
+def test_publication_publicationphase_maxTime_setter(instance):
     original = instance.maxTime
     instance.maxTime = original
     assert instance.maxTime == original
+
+
+
+@given(instance=publication_PublicationPhase_strategy)
+def test_publication_publicationphase_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
 
 @given(instance=Named_strategy)
 @settings(max_examples=50)
 def test_named_instantiation(instance):
     assert isinstance(instance, Named)
 
-@given(instance=publication::PublicationStructure_strategy)
+@given(instance=publication_Paragraph_strategy)
 @settings(max_examples=50)
-def test_publication::publicationstructure_instantiation(instance):
-    assert isinstance(instance, publication::PublicationStructure)
-
-@given(instance=publication::Paper_strategy)
-@settings(max_examples=50)
-def test_publication::paper_instantiation(instance):
-    assert isinstance(instance, publication::Paper)
-
-@given(instance=publication::Paragraph_strategy)
-@settings(max_examples=50)
-def test_publication::paragraph_instantiation(instance):
-    assert isinstance(instance, publication::Paragraph)
-
-@given(instance=publication::Paragraph_strategy)
-def test_publication::paragraph_content_type(instance):
-    assert isinstance(instance.content, str)
+def test_publication_paragraph_instantiation(instance):
+    assert isinstance(instance, publication_Paragraph)
 
 
-@given(instance=publication::Paragraph_strategy)
-def test_publication::paragraph_content_setter(instance):
+
+@given(instance=publication_Paragraph_strategy)
+def test_publication_paragraph_content_setter(instance):
     original = instance.content
     instance.content = original
     assert instance.content == original
 
-@given(instance=publication::ReviewNote_strategy)
+@given(instance=publication_Paper_strategy)
 @settings(max_examples=50)
-def test_publication::reviewnote_instantiation(instance):
-    assert isinstance(instance, publication::ReviewNote)
+def test_publication_paper_instantiation(instance):
+    assert isinstance(instance, publication_Paper)
 
-@given(instance=publication::ReviewNote_strategy)
-def test_publication::reviewnote_content_type(instance):
-    assert isinstance(instance.content, str)
+@given(instance=publication_ReviewNote_strategy)
+@settings(max_examples=50)
+def test_publication_reviewnote_instantiation(instance):
+    assert isinstance(instance, publication_ReviewNote)
 
 
-@given(instance=publication::ReviewNote_strategy)
-def test_publication::reviewnote_content_setter(instance):
+
+@given(instance=publication_ReviewNote_strategy)
+def test_publication_reviewnote_content_setter(instance):
     original = instance.content
     instance.content = original
     assert instance.content == original
 
-@given(instance=publication::PublicationProcess_strategy)
+@given(instance=publication_PublicationStructure_strategy)
 @settings(max_examples=50)
-def test_publication::publicationprocess_instantiation(instance):
-    assert isinstance(instance, publication::PublicationProcess)
+def test_publication_publicationstructure_instantiation(instance):
+    assert isinstance(instance, publication_PublicationStructure)
 
-@given(instance=publication::PublicationProcess_strategy)
-def test_publication::publicationprocess_maxTime_type(instance):
-    assert isinstance(instance.maxTime, int)
-
-
-@given(instance=publication::PublicationProcess_strategy)
-def test_publication::publicationprocess_maxTime_setter(instance):
-    original = instance.maxTime
-    instance.maxTime = original
-    assert instance.maxTime == original
-
-@given(instance=publication::PublicationProcess_strategy)
-def test_publication::publicationprocess_minTime_type(instance):
-    assert isinstance(instance.minTime, int)
+@given(instance=publication_PublicationProcess_strategy)
+@settings(max_examples=50)
+def test_publication_publicationprocess_instantiation(instance):
+    assert isinstance(instance, publication_PublicationProcess)
 
 
-@given(instance=publication::PublicationProcess_strategy)
-def test_publication::publicationprocess_minTime_setter(instance):
+
+@given(instance=publication_PublicationProcess_strategy)
+def test_publication_publicationprocess_minTime_setter(instance):
     original = instance.minTime
     instance.minTime = original
     assert instance.minTime == original
+
+
+
+@given(instance=publication_PublicationProcess_strategy)
+def test_publication_publicationprocess_maxTime_setter(instance):
+    original = instance.maxTime
+    instance.maxTime = original
+    assert instance.maxTime == original

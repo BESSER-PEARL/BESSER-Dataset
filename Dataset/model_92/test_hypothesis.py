@@ -3,9 +3,9 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     VariableDeclarationFragment,
     SingleVariableDeclaration,
     MethodDeclaration,
@@ -15,155 +15,155 @@ from classes import (
     ClassDeclaration,
     AnnotationTypeMemberDeclaration,
     UnresolvedItem,
-    javaMM::UnresolvedSingleVariableDeclaration,
-    javaMM::UnresolvedEnumDeclaration,
-    javaMM::UnresolvedAnnotationTypeMemberDeclaration,
-    javaMM::UnresolvedClassDeclaration,
-    javaMM::UnresolvedInterfaceDeclaration,
-    javaMM::UnresolvedMethodDeclaration,
-    javaMM::UnresolvedVariableDeclarationFragment,
-    javaMM::UnresolvedLabeledStatement,
+    javaMM_UnresolvedLabeledStatement,
+    javaMM_UnresolvedSingleVariableDeclaration,
+    javaMM_UnresolvedMethodDeclaration,
+    javaMM_UnresolvedClassDeclaration,
+    javaMM_UnresolvedInterfaceDeclaration,
+    javaMM_UnresolvedAnnotationTypeMemberDeclaration,
+    javaMM_UnresolvedVariableDeclarationFragment,
+    javaMM_UnresolvedEnumDeclaration,
     AnnotationTypeDeclaration,
-    javaMM::UnresolvedAnnotationDeclaration,
+    javaMM_UnresolvedAnnotationDeclaration,
     AbstractTypeQualifiedExpression,
-    javaMM::ThisExpression,
-    javaMM::SuperFieldAccess,
+    javaMM_ThisExpression,
+    javaMM_SuperFieldAccess,
     PrimitiveType,
-    javaMM::PrimitiveTypeChar,
-    javaMM::PrimitiveTypeShort,
-    javaMM::PrimitiveTypeLong,
-    javaMM::PrimitiveTypeVoid,
-    javaMM::PrimitiveTypeInt,
-    javaMM::PrimitiveTypeByte,
-    javaMM::PrimitiveTypeDouble,
-    javaMM::PrimitiveTypeFloat,
-    javaMM::PrimitiveTypeBoolean,
+    javaMM_PrimitiveTypeChar,
+    javaMM_PrimitiveTypeInt,
+    javaMM_PrimitiveTypeLong,
+    javaMM_PrimitiveTypeDouble,
+    javaMM_PrimitiveTypeFloat,
+    javaMM_PrimitiveTypeByte,
+    javaMM_PrimitiveTypeVoid,
+    javaMM_PrimitiveTypeShort,
+    javaMM_PrimitiveTypeBoolean,
     NamespaceAccess,
-    javaMM::PackageAccess,
-    javaMM::Model,
-    javaMM::ManifestEntry,
-    javaMM::ManifestAttribute,
+    javaMM_PackageAccess,
+    javaMM_Model,
+    javaMM_ManifestEntry,
+    javaMM_ManifestAttribute,
     VariableDeclaration,
     AbstractVariablesContainer,
     TypeDeclaration,
-    javaMM::InterfaceDeclaration,
-    javaMM::ClassDeclaration,
+    javaMM_InterfaceDeclaration,
+    javaMM_ClassDeclaration,
     AbstractMethodDeclaration,
-    javaMM::MethodDeclaration,
-    javaMM::ConstructorDeclaration,
+    javaMM_MethodDeclaration,
+    javaMM_ConstructorDeclaration,
     AbstractMethodInvocation,
-    javaMM::SuperMethodInvocation,
+    javaMM_SuperMethodInvocation,
     Comment,
-    javaMM::LineComment,
-    javaMM::Javadoc,
-    javaMM::BlockComment,
-    javaMM::VariableDeclarationFragment,
+    javaMM_Javadoc,
+    javaMM_LineComment,
+    javaMM_BlockComment,
+    javaMM_VariableDeclarationFragment,
     Expression,
-    javaMM::Annotation,
-    javaMM::CharacterLiteral,
-    javaMM::BooleanLiteral,
-    javaMM::ArrayCreation,
-    javaMM::Assignment,
-    javaMM::ConditionalExpression,
-    javaMM::CastExpression,
-    javaMM::UnresolvedItemAccess,
-    javaMM::ArrayInitializer,
-    javaMM::MethodInvocation,
-    javaMM::SingleVariableAccess,
-    javaMM::FieldAccess,
-    javaMM::InfixExpression,
-    javaMM::ArrayLengthAccess,
-    javaMM::NumberLiteral,
-    javaMM::NullLiteral,
-    javaMM::ParenthesizedExpression,
-    javaMM::StringLiteral,
-    javaMM::PostfixExpression,
-    javaMM::ArrayAccess,
-    javaMM::PrefixExpression,
-    javaMM::VariableDeclarationExpression,
-    javaMM::InstanceofExpression,
-    javaMM::TypeLiteral,
-    javaMM::AbstractTypeQualifiedExpression,
-    javaMM::ClassInstanceCreation,
+    javaMM_ConditionalExpression,
+    javaMM_NumberLiteral,
+    javaMM_InfixExpression,
+    javaMM_VariableDeclarationExpression,
+    javaMM_FieldAccess,
+    javaMM_ArrayAccess,
+    javaMM_Assignment,
+    javaMM_TypeLiteral,
+    javaMM_CharacterLiteral,
+    javaMM_UnresolvedItemAccess,
+    javaMM_StringLiteral,
+    javaMM_Annotation,
+    javaMM_InstanceofExpression,
+    javaMM_ArrayInitializer,
+    javaMM_NullLiteral,
+    javaMM_ArrayCreation,
+    javaMM_CastExpression,
+    javaMM_SingleVariableAccess,
+    javaMM_ArrayLengthAccess,
+    javaMM_PostfixExpression,
+    javaMM_MethodInvocation,
+    javaMM_ParenthesizedExpression,
+    javaMM_BooleanLiteral,
+    javaMM_PrefixExpression,
+    javaMM_AbstractTypeQualifiedExpression,
+    javaMM_ClassInstanceCreation,
     AbstractTypeDeclaration,
-    javaMM::UnresolvedTypeDeclaration,
-    javaMM::EnumDeclaration,
-    javaMM::TypeDeclaration,
-    javaMM::AnnotationTypeDeclaration,
-    javaMM::ASTNode,
+    javaMM_TypeDeclaration,
+    javaMM_EnumDeclaration,
+    javaMM_UnresolvedTypeDeclaration,
+    javaMM_AnnotationTypeDeclaration,
+    javaMM_ASTNode,
     Statement,
-    javaMM::SynchronizedStatement,
-    javaMM::VariableDeclarationStatement,
-    javaMM::ExpressionStatement,
-    javaMM::EmptyStatement,
-    javaMM::ForStatement,
-    javaMM::IfStatement,
-    javaMM::DoStatement,
-    javaMM::CatchClause,
-    javaMM::ContinueStatement,
-    javaMM::EnhancedForStatement,
-    javaMM::WhileStatement,
-    javaMM::SwitchStatement,
-    javaMM::TypeDeclarationStatement,
-    javaMM::BreakStatement,
-    javaMM::SwitchCase,
-    javaMM::TryStatement,
-    javaMM::SuperConstructorInvocation,
-    javaMM::ThrowStatement,
-    javaMM::ConstructorInvocation,
-    javaMM::ReturnStatement,
-    javaMM::AssertStatement,
-    javaMM::Manifest,
+    javaMM_ReturnStatement,
+    javaMM_IfStatement,
+    javaMM_TypeDeclarationStatement,
+    javaMM_EnhancedForStatement,
+    javaMM_TryStatement,
+    javaMM_CatchClause,
+    javaMM_ThrowStatement,
+    javaMM_DoStatement,
+    javaMM_ConstructorInvocation,
+    javaMM_ForStatement,
+    javaMM_SynchronizedStatement,
+    javaMM_BreakStatement,
+    javaMM_SwitchStatement,
+    javaMM_ExpressionStatement,
+    javaMM_VariableDeclarationStatement,
+    javaMM_ContinueStatement,
+    javaMM_SuperConstructorInvocation,
+    javaMM_WhileStatement,
+    javaMM_EmptyStatement,
+    javaMM_SwitchCase,
+    javaMM_AssertStatement,
+    javaMM_Manifest,
     NamedElement,
-    javaMM::ClassFile,
-    javaMM::VariableDeclaration,
-    javaMM::AnnotationMemberValuePair,
-    javaMM::UnresolvedItem,
-    javaMM::CompilationUnit,
-    javaMM::Type,
-    javaMM::LabeledStatement,
-    javaMM::Archive,
-    javaMM::Block,
+    javaMM_Type,
+    javaMM_VariableDeclaration,
+    javaMM_LabeledStatement,
+    javaMM_ClassFile,
+    javaMM_CompilationUnit,
+    javaMM_UnresolvedItem,
+    javaMM_AnnotationMemberValuePair,
+    javaMM_Archive,
+    javaMM_Block,
     BodyDeclaration,
-    javaMM::FieldDeclaration,
-    javaMM::Initializer,
-    javaMM::AnnotationTypeMemberDeclaration,
-    javaMM::EnumConstantDeclaration,
-    javaMM::AbstractMethodDeclaration,
-    javaMM::Package,
-    javaMM::BodyDeclaration,
+    javaMM_FieldDeclaration,
+    javaMM_EnumConstantDeclaration,
+    javaMM_AnnotationTypeMemberDeclaration,
+    javaMM_Initializer,
+    javaMM_AbstractMethodDeclaration,
+    javaMM_Package,
+    javaMM_BodyDeclaration,
     Type,
-    javaMM::ParameterizedType,
-    javaMM::ArrayType,
-    javaMM::UnresolvedType,
-    javaMM::WildCardType,
-    javaMM::PrimitiveType,
-    javaMM::AbstractTypeDeclaration,
+    javaMM_UnresolvedType,
+    javaMM_PrimitiveType,
+    javaMM_WildCardType,
+    javaMM_ArrayType,
+    javaMM_ParameterizedType,
+    javaMM_AbstractTypeDeclaration,
     ASTNode,
-    javaMM::Comment,
-    javaMM::NamedElement,
-    javaMM::TextElement,
-    javaMM::AnonymousClassDeclaration,
-    javaMM::NamespaceAccess,
-    javaMM::MemberRef,
-    javaMM::Expression,
-    javaMM::Statement,
-    javaMM::TagElement,
-    javaMM::Modifier,
-    javaMM::MethodRefParameter,
-    javaMM::AbstractVariablesContainer,
-    javaMM::ImportDeclaration,
-    javaMM::AbstractMethodInvocation,
-    javaMM::MethodRef,
-    javaMM::TypeParameter,
-    javaMM::TypeAccess,
-    javaMM::SingleVariableDeclaration,
-    PostfixExpressionKind,
-    InheritanceKind,
+    javaMM_Modifier,
+    javaMM_Statement,
+    javaMM_ImportDeclaration,
+    javaMM_NamedElement,
+    javaMM_MethodRefParameter,
+    javaMM_Comment,
+    javaMM_AnonymousClassDeclaration,
+    javaMM_Expression,
+    javaMM_NamespaceAccess,
+    javaMM_TagElement,
+    javaMM_AbstractVariablesContainer,
+    javaMM_TextElement,
+    javaMM_MemberRef,
+    javaMM_AbstractMethodInvocation,
+    javaMM_MethodRef,
+    javaMM_TypeParameter,
+    javaMM_TypeAccess,
+    javaMM_SingleVariableDeclaration,
     AssignmentKind,
     InfixExpressionKind,
-    VisibilityKind,
+    PostfixExpressionKind,
     PrefixExpressionKind,
+    InheritanceKind,
+    VisibilityKind,
 )
 
 # =============================================================================
@@ -298,114 +298,114 @@ def test_unresolveditem_constructor_args():
 
 
 
-def test_javamm::unresolvedsinglevariabledeclaration_is_not_abstract():
-    assert not inspect.isabstract(javaMM::UnresolvedSingleVariableDeclaration)
+def test_javamm_unresolvedlabeledstatement_is_not_abstract():
+    assert not inspect.isabstract(javaMM_UnresolvedLabeledStatement)
 
 
-def test_javamm::unresolvedsinglevariabledeclaration_constructor_exists():
-    assert callable(javaMM::UnresolvedSingleVariableDeclaration.__init__)
+def test_javamm_unresolvedlabeledstatement_constructor_exists():
+    assert callable(javaMM_UnresolvedLabeledStatement.__init__)
 
 
-def test_javamm::unresolvedsinglevariabledeclaration_constructor_args():
-    sig = inspect.signature(javaMM::UnresolvedSingleVariableDeclaration.__init__)
+def test_javamm_unresolvedlabeledstatement_constructor_args():
+    sig = inspect.signature(javaMM_UnresolvedLabeledStatement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_javamm::unresolvedenumdeclaration_is_not_abstract():
-    assert not inspect.isabstract(javaMM::UnresolvedEnumDeclaration)
+def test_javamm_unresolvedsinglevariabledeclaration_is_not_abstract():
+    assert not inspect.isabstract(javaMM_UnresolvedSingleVariableDeclaration)
 
 
-def test_javamm::unresolvedenumdeclaration_constructor_exists():
-    assert callable(javaMM::UnresolvedEnumDeclaration.__init__)
+def test_javamm_unresolvedsinglevariabledeclaration_constructor_exists():
+    assert callable(javaMM_UnresolvedSingleVariableDeclaration.__init__)
 
 
-def test_javamm::unresolvedenumdeclaration_constructor_args():
-    sig = inspect.signature(javaMM::UnresolvedEnumDeclaration.__init__)
+def test_javamm_unresolvedsinglevariabledeclaration_constructor_args():
+    sig = inspect.signature(javaMM_UnresolvedSingleVariableDeclaration.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_javamm::unresolvedannotationtypememberdeclaration_is_not_abstract():
-    assert not inspect.isabstract(javaMM::UnresolvedAnnotationTypeMemberDeclaration)
+def test_javamm_unresolvedmethoddeclaration_is_not_abstract():
+    assert not inspect.isabstract(javaMM_UnresolvedMethodDeclaration)
 
 
-def test_javamm::unresolvedannotationtypememberdeclaration_constructor_exists():
-    assert callable(javaMM::UnresolvedAnnotationTypeMemberDeclaration.__init__)
+def test_javamm_unresolvedmethoddeclaration_constructor_exists():
+    assert callable(javaMM_UnresolvedMethodDeclaration.__init__)
 
 
-def test_javamm::unresolvedannotationtypememberdeclaration_constructor_args():
-    sig = inspect.signature(javaMM::UnresolvedAnnotationTypeMemberDeclaration.__init__)
+def test_javamm_unresolvedmethoddeclaration_constructor_args():
+    sig = inspect.signature(javaMM_UnresolvedMethodDeclaration.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_javamm::unresolvedclassdeclaration_is_not_abstract():
-    assert not inspect.isabstract(javaMM::UnresolvedClassDeclaration)
+def test_javamm_unresolvedclassdeclaration_is_not_abstract():
+    assert not inspect.isabstract(javaMM_UnresolvedClassDeclaration)
 
 
-def test_javamm::unresolvedclassdeclaration_constructor_exists():
-    assert callable(javaMM::UnresolvedClassDeclaration.__init__)
+def test_javamm_unresolvedclassdeclaration_constructor_exists():
+    assert callable(javaMM_UnresolvedClassDeclaration.__init__)
 
 
-def test_javamm::unresolvedclassdeclaration_constructor_args():
-    sig = inspect.signature(javaMM::UnresolvedClassDeclaration.__init__)
+def test_javamm_unresolvedclassdeclaration_constructor_args():
+    sig = inspect.signature(javaMM_UnresolvedClassDeclaration.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_javamm::unresolvedinterfacedeclaration_is_not_abstract():
-    assert not inspect.isabstract(javaMM::UnresolvedInterfaceDeclaration)
+def test_javamm_unresolvedinterfacedeclaration_is_not_abstract():
+    assert not inspect.isabstract(javaMM_UnresolvedInterfaceDeclaration)
 
 
-def test_javamm::unresolvedinterfacedeclaration_constructor_exists():
-    assert callable(javaMM::UnresolvedInterfaceDeclaration.__init__)
+def test_javamm_unresolvedinterfacedeclaration_constructor_exists():
+    assert callable(javaMM_UnresolvedInterfaceDeclaration.__init__)
 
 
-def test_javamm::unresolvedinterfacedeclaration_constructor_args():
-    sig = inspect.signature(javaMM::UnresolvedInterfaceDeclaration.__init__)
+def test_javamm_unresolvedinterfacedeclaration_constructor_args():
+    sig = inspect.signature(javaMM_UnresolvedInterfaceDeclaration.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_javamm::unresolvedmethoddeclaration_is_not_abstract():
-    assert not inspect.isabstract(javaMM::UnresolvedMethodDeclaration)
+def test_javamm_unresolvedannotationtypememberdeclaration_is_not_abstract():
+    assert not inspect.isabstract(javaMM_UnresolvedAnnotationTypeMemberDeclaration)
 
 
-def test_javamm::unresolvedmethoddeclaration_constructor_exists():
-    assert callable(javaMM::UnresolvedMethodDeclaration.__init__)
+def test_javamm_unresolvedannotationtypememberdeclaration_constructor_exists():
+    assert callable(javaMM_UnresolvedAnnotationTypeMemberDeclaration.__init__)
 
 
-def test_javamm::unresolvedmethoddeclaration_constructor_args():
-    sig = inspect.signature(javaMM::UnresolvedMethodDeclaration.__init__)
+def test_javamm_unresolvedannotationtypememberdeclaration_constructor_args():
+    sig = inspect.signature(javaMM_UnresolvedAnnotationTypeMemberDeclaration.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_javamm::unresolvedvariabledeclarationfragment_is_not_abstract():
-    assert not inspect.isabstract(javaMM::UnresolvedVariableDeclarationFragment)
+def test_javamm_unresolvedvariabledeclarationfragment_is_not_abstract():
+    assert not inspect.isabstract(javaMM_UnresolvedVariableDeclarationFragment)
 
 
-def test_javamm::unresolvedvariabledeclarationfragment_constructor_exists():
-    assert callable(javaMM::UnresolvedVariableDeclarationFragment.__init__)
+def test_javamm_unresolvedvariabledeclarationfragment_constructor_exists():
+    assert callable(javaMM_UnresolvedVariableDeclarationFragment.__init__)
 
 
-def test_javamm::unresolvedvariabledeclarationfragment_constructor_args():
-    sig = inspect.signature(javaMM::UnresolvedVariableDeclarationFragment.__init__)
+def test_javamm_unresolvedvariabledeclarationfragment_constructor_args():
+    sig = inspect.signature(javaMM_UnresolvedVariableDeclarationFragment.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_javamm::unresolvedlabeledstatement_is_not_abstract():
-    assert not inspect.isabstract(javaMM::UnresolvedLabeledStatement)
+def test_javamm_unresolvedenumdeclaration_is_not_abstract():
+    assert not inspect.isabstract(javaMM_UnresolvedEnumDeclaration)
 
 
-def test_javamm::unresolvedlabeledstatement_constructor_exists():
-    assert callable(javaMM::UnresolvedLabeledStatement.__init__)
+def test_javamm_unresolvedenumdeclaration_constructor_exists():
+    assert callable(javaMM_UnresolvedEnumDeclaration.__init__)
 
 
-def test_javamm::unresolvedlabeledstatement_constructor_args():
-    sig = inspect.signature(javaMM::UnresolvedLabeledStatement.__init__)
+def test_javamm_unresolvedenumdeclaration_constructor_args():
+    sig = inspect.signature(javaMM_UnresolvedEnumDeclaration.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -424,16 +424,16 @@ def test_annotationtypedeclaration_constructor_args():
 
 
 
-def test_javamm::unresolvedannotationdeclaration_is_not_abstract():
-    assert not inspect.isabstract(javaMM::UnresolvedAnnotationDeclaration)
+def test_javamm_unresolvedannotationdeclaration_is_not_abstract():
+    assert not inspect.isabstract(javaMM_UnresolvedAnnotationDeclaration)
 
 
-def test_javamm::unresolvedannotationdeclaration_constructor_exists():
-    assert callable(javaMM::UnresolvedAnnotationDeclaration.__init__)
+def test_javamm_unresolvedannotationdeclaration_constructor_exists():
+    assert callable(javaMM_UnresolvedAnnotationDeclaration.__init__)
 
 
-def test_javamm::unresolvedannotationdeclaration_constructor_args():
-    sig = inspect.signature(javaMM::UnresolvedAnnotationDeclaration.__init__)
+def test_javamm_unresolvedannotationdeclaration_constructor_args():
+    sig = inspect.signature(javaMM_UnresolvedAnnotationDeclaration.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -452,30 +452,30 @@ def test_abstracttypequalifiedexpression_constructor_args():
 
 
 
-def test_javamm::thisexpression_is_not_abstract():
-    assert not inspect.isabstract(javaMM::ThisExpression)
+def test_javamm_thisexpression_is_not_abstract():
+    assert not inspect.isabstract(javaMM_ThisExpression)
 
 
-def test_javamm::thisexpression_constructor_exists():
-    assert callable(javaMM::ThisExpression.__init__)
+def test_javamm_thisexpression_constructor_exists():
+    assert callable(javaMM_ThisExpression.__init__)
 
 
-def test_javamm::thisexpression_constructor_args():
-    sig = inspect.signature(javaMM::ThisExpression.__init__)
+def test_javamm_thisexpression_constructor_args():
+    sig = inspect.signature(javaMM_ThisExpression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_javamm::superfieldaccess_is_not_abstract():
-    assert not inspect.isabstract(javaMM::SuperFieldAccess)
+def test_javamm_superfieldaccess_is_not_abstract():
+    assert not inspect.isabstract(javaMM_SuperFieldAccess)
 
 
-def test_javamm::superfieldaccess_constructor_exists():
-    assert callable(javaMM::SuperFieldAccess.__init__)
+def test_javamm_superfieldaccess_constructor_exists():
+    assert callable(javaMM_SuperFieldAccess.__init__)
 
 
-def test_javamm::superfieldaccess_constructor_args():
-    sig = inspect.signature(javaMM::SuperFieldAccess.__init__)
+def test_javamm_superfieldaccess_constructor_args():
+    sig = inspect.signature(javaMM_SuperFieldAccess.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -494,128 +494,128 @@ def test_primitivetype_constructor_args():
 
 
 
-def test_javamm::primitivetypechar_is_not_abstract():
-    assert not inspect.isabstract(javaMM::PrimitiveTypeChar)
+def test_javamm_primitivetypechar_is_not_abstract():
+    assert not inspect.isabstract(javaMM_PrimitiveTypeChar)
 
 
-def test_javamm::primitivetypechar_constructor_exists():
-    assert callable(javaMM::PrimitiveTypeChar.__init__)
+def test_javamm_primitivetypechar_constructor_exists():
+    assert callable(javaMM_PrimitiveTypeChar.__init__)
 
 
-def test_javamm::primitivetypechar_constructor_args():
-    sig = inspect.signature(javaMM::PrimitiveTypeChar.__init__)
+def test_javamm_primitivetypechar_constructor_args():
+    sig = inspect.signature(javaMM_PrimitiveTypeChar.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_javamm::primitivetypeshort_is_not_abstract():
-    assert not inspect.isabstract(javaMM::PrimitiveTypeShort)
+def test_javamm_primitivetypeint_is_not_abstract():
+    assert not inspect.isabstract(javaMM_PrimitiveTypeInt)
 
 
-def test_javamm::primitivetypeshort_constructor_exists():
-    assert callable(javaMM::PrimitiveTypeShort.__init__)
+def test_javamm_primitivetypeint_constructor_exists():
+    assert callable(javaMM_PrimitiveTypeInt.__init__)
 
 
-def test_javamm::primitivetypeshort_constructor_args():
-    sig = inspect.signature(javaMM::PrimitiveTypeShort.__init__)
+def test_javamm_primitivetypeint_constructor_args():
+    sig = inspect.signature(javaMM_PrimitiveTypeInt.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_javamm::primitivetypelong_is_not_abstract():
-    assert not inspect.isabstract(javaMM::PrimitiveTypeLong)
+def test_javamm_primitivetypelong_is_not_abstract():
+    assert not inspect.isabstract(javaMM_PrimitiveTypeLong)
 
 
-def test_javamm::primitivetypelong_constructor_exists():
-    assert callable(javaMM::PrimitiveTypeLong.__init__)
+def test_javamm_primitivetypelong_constructor_exists():
+    assert callable(javaMM_PrimitiveTypeLong.__init__)
 
 
-def test_javamm::primitivetypelong_constructor_args():
-    sig = inspect.signature(javaMM::PrimitiveTypeLong.__init__)
+def test_javamm_primitivetypelong_constructor_args():
+    sig = inspect.signature(javaMM_PrimitiveTypeLong.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_javamm::primitivetypevoid_is_not_abstract():
-    assert not inspect.isabstract(javaMM::PrimitiveTypeVoid)
+def test_javamm_primitivetypedouble_is_not_abstract():
+    assert not inspect.isabstract(javaMM_PrimitiveTypeDouble)
 
 
-def test_javamm::primitivetypevoid_constructor_exists():
-    assert callable(javaMM::PrimitiveTypeVoid.__init__)
+def test_javamm_primitivetypedouble_constructor_exists():
+    assert callable(javaMM_PrimitiveTypeDouble.__init__)
 
 
-def test_javamm::primitivetypevoid_constructor_args():
-    sig = inspect.signature(javaMM::PrimitiveTypeVoid.__init__)
+def test_javamm_primitivetypedouble_constructor_args():
+    sig = inspect.signature(javaMM_PrimitiveTypeDouble.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_javamm::primitivetypeint_is_not_abstract():
-    assert not inspect.isabstract(javaMM::PrimitiveTypeInt)
+def test_javamm_primitivetypefloat_is_not_abstract():
+    assert not inspect.isabstract(javaMM_PrimitiveTypeFloat)
 
 
-def test_javamm::primitivetypeint_constructor_exists():
-    assert callable(javaMM::PrimitiveTypeInt.__init__)
+def test_javamm_primitivetypefloat_constructor_exists():
+    assert callable(javaMM_PrimitiveTypeFloat.__init__)
 
 
-def test_javamm::primitivetypeint_constructor_args():
-    sig = inspect.signature(javaMM::PrimitiveTypeInt.__init__)
+def test_javamm_primitivetypefloat_constructor_args():
+    sig = inspect.signature(javaMM_PrimitiveTypeFloat.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_javamm::primitivetypebyte_is_not_abstract():
-    assert not inspect.isabstract(javaMM::PrimitiveTypeByte)
+def test_javamm_primitivetypebyte_is_not_abstract():
+    assert not inspect.isabstract(javaMM_PrimitiveTypeByte)
 
 
-def test_javamm::primitivetypebyte_constructor_exists():
-    assert callable(javaMM::PrimitiveTypeByte.__init__)
+def test_javamm_primitivetypebyte_constructor_exists():
+    assert callable(javaMM_PrimitiveTypeByte.__init__)
 
 
-def test_javamm::primitivetypebyte_constructor_args():
-    sig = inspect.signature(javaMM::PrimitiveTypeByte.__init__)
+def test_javamm_primitivetypebyte_constructor_args():
+    sig = inspect.signature(javaMM_PrimitiveTypeByte.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_javamm::primitivetypedouble_is_not_abstract():
-    assert not inspect.isabstract(javaMM::PrimitiveTypeDouble)
+def test_javamm_primitivetypevoid_is_not_abstract():
+    assert not inspect.isabstract(javaMM_PrimitiveTypeVoid)
 
 
-def test_javamm::primitivetypedouble_constructor_exists():
-    assert callable(javaMM::PrimitiveTypeDouble.__init__)
+def test_javamm_primitivetypevoid_constructor_exists():
+    assert callable(javaMM_PrimitiveTypeVoid.__init__)
 
 
-def test_javamm::primitivetypedouble_constructor_args():
-    sig = inspect.signature(javaMM::PrimitiveTypeDouble.__init__)
+def test_javamm_primitivetypevoid_constructor_args():
+    sig = inspect.signature(javaMM_PrimitiveTypeVoid.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_javamm::primitivetypefloat_is_not_abstract():
-    assert not inspect.isabstract(javaMM::PrimitiveTypeFloat)
+def test_javamm_primitivetypeshort_is_not_abstract():
+    assert not inspect.isabstract(javaMM_PrimitiveTypeShort)
 
 
-def test_javamm::primitivetypefloat_constructor_exists():
-    assert callable(javaMM::PrimitiveTypeFloat.__init__)
+def test_javamm_primitivetypeshort_constructor_exists():
+    assert callable(javaMM_PrimitiveTypeShort.__init__)
 
 
-def test_javamm::primitivetypefloat_constructor_args():
-    sig = inspect.signature(javaMM::PrimitiveTypeFloat.__init__)
+def test_javamm_primitivetypeshort_constructor_args():
+    sig = inspect.signature(javaMM_PrimitiveTypeShort.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_javamm::primitivetypeboolean_is_not_abstract():
-    assert not inspect.isabstract(javaMM::PrimitiveTypeBoolean)
+def test_javamm_primitivetypeboolean_is_not_abstract():
+    assert not inspect.isabstract(javaMM_PrimitiveTypeBoolean)
 
 
-def test_javamm::primitivetypeboolean_constructor_exists():
-    assert callable(javaMM::PrimitiveTypeBoolean.__init__)
+def test_javamm_primitivetypeboolean_constructor_exists():
+    assert callable(javaMM_PrimitiveTypeBoolean.__init__)
 
 
-def test_javamm::primitivetypeboolean_constructor_args():
-    sig = inspect.signature(javaMM::PrimitiveTypeBoolean.__init__)
+def test_javamm_primitivetypeboolean_constructor_args():
+    sig = inspect.signature(javaMM_PrimitiveTypeBoolean.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -634,37 +634,37 @@ def test_namespaceaccess_constructor_args():
 
 
 
-def test_javamm::packageaccess_is_not_abstract():
-    assert not inspect.isabstract(javaMM::PackageAccess)
+def test_javamm_packageaccess_is_not_abstract():
+    assert not inspect.isabstract(javaMM_PackageAccess)
 
 
-def test_javamm::packageaccess_constructor_exists():
-    assert callable(javaMM::PackageAccess.__init__)
+def test_javamm_packageaccess_constructor_exists():
+    assert callable(javaMM_PackageAccess.__init__)
 
 
-def test_javamm::packageaccess_constructor_args():
-    sig = inspect.signature(javaMM::PackageAccess.__init__)
+def test_javamm_packageaccess_constructor_args():
+    sig = inspect.signature(javaMM_PackageAccess.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_javamm::model_is_not_abstract():
-    assert not inspect.isabstract(javaMM::Model)
+def test_javamm_model_is_not_abstract():
+    assert not inspect.isabstract(javaMM_Model)
 
 
-def test_javamm::model_constructor_exists():
-    assert callable(javaMM::Model.__init__)
+def test_javamm_model_constructor_exists():
+    assert callable(javaMM_Model.__init__)
 
 
-def test_javamm::model_constructor_args():
-    sig = inspect.signature(javaMM::Model.__init__)
+def test_javamm_model_constructor_args():
+    sig = inspect.signature(javaMM_Model.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_javamm::model_has_name():
-    assert hasattr(javaMM::Model, "name")
+def test_javamm_model_has_name():
+    assert hasattr(javaMM_Model, "name")
     descriptor = None
-    for klass in javaMM::Model.__mro__:
+    for klass in javaMM_Model.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -672,23 +672,23 @@ def test_javamm::model_has_name():
 
 
 
-def test_javamm::manifestentry_is_not_abstract():
-    assert not inspect.isabstract(javaMM::ManifestEntry)
+def test_javamm_manifestentry_is_not_abstract():
+    assert not inspect.isabstract(javaMM_ManifestEntry)
 
 
-def test_javamm::manifestentry_constructor_exists():
-    assert callable(javaMM::ManifestEntry.__init__)
+def test_javamm_manifestentry_constructor_exists():
+    assert callable(javaMM_ManifestEntry.__init__)
 
 
-def test_javamm::manifestentry_constructor_args():
-    sig = inspect.signature(javaMM::ManifestEntry.__init__)
+def test_javamm_manifestentry_constructor_args():
+    sig = inspect.signature(javaMM_ManifestEntry.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_javamm::manifestentry_has_name():
-    assert hasattr(javaMM::ManifestEntry, "name")
+def test_javamm_manifestentry_has_name():
+    assert hasattr(javaMM_ManifestEntry, "name")
     descriptor = None
-    for klass in javaMM::ManifestEntry.__mro__:
+    for klass in javaMM_ManifestEntry.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -696,35 +696,35 @@ def test_javamm::manifestentry_has_name():
 
 
 
-def test_javamm::manifestattribute_is_not_abstract():
-    assert not inspect.isabstract(javaMM::ManifestAttribute)
+def test_javamm_manifestattribute_is_not_abstract():
+    assert not inspect.isabstract(javaMM_ManifestAttribute)
 
 
-def test_javamm::manifestattribute_constructor_exists():
-    assert callable(javaMM::ManifestAttribute.__init__)
+def test_javamm_manifestattribute_constructor_exists():
+    assert callable(javaMM_ManifestAttribute.__init__)
 
 
-def test_javamm::manifestattribute_constructor_args():
-    sig = inspect.signature(javaMM::ManifestAttribute.__init__)
+def test_javamm_manifestattribute_constructor_args():
+    sig = inspect.signature(javaMM_ManifestAttribute.__init__)
     params = list(sig.parameters.keys())
-    assert "key" in params, "Missing parameter 'key'"
     assert "value" in params, "Missing parameter 'value'"
+    assert "key" in params, "Missing parameter 'key'"
 
-def test_javamm::manifestattribute_has_key():
-    assert hasattr(javaMM::ManifestAttribute, "key")
+def test_javamm_manifestattribute_has_value():
+    assert hasattr(javaMM_ManifestAttribute, "value")
     descriptor = None
-    for klass in javaMM::ManifestAttribute.__mro__:
-        if "key" in klass.__dict__:
-            descriptor = klass.__dict__["key"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_javamm::manifestattribute_has_value():
-    assert hasattr(javaMM::ManifestAttribute, "value")
-    descriptor = None
-    for klass in javaMM::ManifestAttribute.__mro__:
+    for klass in javaMM_ManifestAttribute.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_javamm_manifestattribute_has_key():
+    assert hasattr(javaMM_ManifestAttribute, "key")
+    descriptor = None
+    for klass in javaMM_ManifestAttribute.__mro__:
+        if "key" in klass.__dict__:
+            descriptor = klass.__dict__["key"]
             break
     assert isinstance(descriptor, property)
 
@@ -772,30 +772,30 @@ def test_typedeclaration_constructor_args():
 
 
 
-def test_javamm::interfacedeclaration_is_not_abstract():
-    assert not inspect.isabstract(javaMM::InterfaceDeclaration)
+def test_javamm_interfacedeclaration_is_not_abstract():
+    assert not inspect.isabstract(javaMM_InterfaceDeclaration)
 
 
-def test_javamm::interfacedeclaration_constructor_exists():
-    assert callable(javaMM::InterfaceDeclaration.__init__)
+def test_javamm_interfacedeclaration_constructor_exists():
+    assert callable(javaMM_InterfaceDeclaration.__init__)
 
 
-def test_javamm::interfacedeclaration_constructor_args():
-    sig = inspect.signature(javaMM::InterfaceDeclaration.__init__)
+def test_javamm_interfacedeclaration_constructor_args():
+    sig = inspect.signature(javaMM_InterfaceDeclaration.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_javamm::classdeclaration_is_not_abstract():
-    assert not inspect.isabstract(javaMM::ClassDeclaration)
+def test_javamm_classdeclaration_is_not_abstract():
+    assert not inspect.isabstract(javaMM_ClassDeclaration)
 
 
-def test_javamm::classdeclaration_constructor_exists():
-    assert callable(javaMM::ClassDeclaration.__init__)
+def test_javamm_classdeclaration_constructor_exists():
+    assert callable(javaMM_ClassDeclaration.__init__)
 
 
-def test_javamm::classdeclaration_constructor_args():
-    sig = inspect.signature(javaMM::ClassDeclaration.__init__)
+def test_javamm_classdeclaration_constructor_args():
+    sig = inspect.signature(javaMM_ClassDeclaration.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -814,23 +814,23 @@ def test_abstractmethoddeclaration_constructor_args():
 
 
 
-def test_javamm::methoddeclaration_is_not_abstract():
-    assert not inspect.isabstract(javaMM::MethodDeclaration)
+def test_javamm_methoddeclaration_is_not_abstract():
+    assert not inspect.isabstract(javaMM_MethodDeclaration)
 
 
-def test_javamm::methoddeclaration_constructor_exists():
-    assert callable(javaMM::MethodDeclaration.__init__)
+def test_javamm_methoddeclaration_constructor_exists():
+    assert callable(javaMM_MethodDeclaration.__init__)
 
 
-def test_javamm::methoddeclaration_constructor_args():
-    sig = inspect.signature(javaMM::MethodDeclaration.__init__)
+def test_javamm_methoddeclaration_constructor_args():
+    sig = inspect.signature(javaMM_MethodDeclaration.__init__)
     params = list(sig.parameters.keys())
     assert "extraArrayDimensions" in params, "Missing parameter 'extraArrayDimensions'"
 
-def test_javamm::methoddeclaration_has_extraArrayDimensions():
-    assert hasattr(javaMM::MethodDeclaration, "extraArrayDimensions")
+def test_javamm_methoddeclaration_has_extraArrayDimensions():
+    assert hasattr(javaMM_MethodDeclaration, "extraArrayDimensions")
     descriptor = None
-    for klass in javaMM::MethodDeclaration.__mro__:
+    for klass in javaMM_MethodDeclaration.__mro__:
         if "extraArrayDimensions" in klass.__dict__:
             descriptor = klass.__dict__["extraArrayDimensions"]
             break
@@ -838,16 +838,16 @@ def test_javamm::methoddeclaration_has_extraArrayDimensions():
 
 
 
-def test_javamm::constructordeclaration_is_not_abstract():
-    assert not inspect.isabstract(javaMM::ConstructorDeclaration)
+def test_javamm_constructordeclaration_is_not_abstract():
+    assert not inspect.isabstract(javaMM_ConstructorDeclaration)
 
 
-def test_javamm::constructordeclaration_constructor_exists():
-    assert callable(javaMM::ConstructorDeclaration.__init__)
+def test_javamm_constructordeclaration_constructor_exists():
+    assert callable(javaMM_ConstructorDeclaration.__init__)
 
 
-def test_javamm::constructordeclaration_constructor_args():
-    sig = inspect.signature(javaMM::ConstructorDeclaration.__init__)
+def test_javamm_constructordeclaration_constructor_args():
+    sig = inspect.signature(javaMM_ConstructorDeclaration.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -866,16 +866,16 @@ def test_abstractmethodinvocation_constructor_args():
 
 
 
-def test_javamm::supermethodinvocation_is_not_abstract():
-    assert not inspect.isabstract(javaMM::SuperMethodInvocation)
+def test_javamm_supermethodinvocation_is_not_abstract():
+    assert not inspect.isabstract(javaMM_SuperMethodInvocation)
 
 
-def test_javamm::supermethodinvocation_constructor_exists():
-    assert callable(javaMM::SuperMethodInvocation.__init__)
+def test_javamm_supermethodinvocation_constructor_exists():
+    assert callable(javaMM_SuperMethodInvocation.__init__)
 
 
-def test_javamm::supermethodinvocation_constructor_args():
-    sig = inspect.signature(javaMM::SuperMethodInvocation.__init__)
+def test_javamm_supermethodinvocation_constructor_args():
+    sig = inspect.signature(javaMM_SuperMethodInvocation.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -894,58 +894,58 @@ def test_comment_constructor_args():
 
 
 
-def test_javamm::linecomment_is_not_abstract():
-    assert not inspect.isabstract(javaMM::LineComment)
+def test_javamm_javadoc_is_not_abstract():
+    assert not inspect.isabstract(javaMM_Javadoc)
 
 
-def test_javamm::linecomment_constructor_exists():
-    assert callable(javaMM::LineComment.__init__)
+def test_javamm_javadoc_constructor_exists():
+    assert callable(javaMM_Javadoc.__init__)
 
 
-def test_javamm::linecomment_constructor_args():
-    sig = inspect.signature(javaMM::LineComment.__init__)
+def test_javamm_javadoc_constructor_args():
+    sig = inspect.signature(javaMM_Javadoc.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_javamm::javadoc_is_not_abstract():
-    assert not inspect.isabstract(javaMM::Javadoc)
+def test_javamm_linecomment_is_not_abstract():
+    assert not inspect.isabstract(javaMM_LineComment)
 
 
-def test_javamm::javadoc_constructor_exists():
-    assert callable(javaMM::Javadoc.__init__)
+def test_javamm_linecomment_constructor_exists():
+    assert callable(javaMM_LineComment.__init__)
 
 
-def test_javamm::javadoc_constructor_args():
-    sig = inspect.signature(javaMM::Javadoc.__init__)
+def test_javamm_linecomment_constructor_args():
+    sig = inspect.signature(javaMM_LineComment.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_javamm::blockcomment_is_not_abstract():
-    assert not inspect.isabstract(javaMM::BlockComment)
+def test_javamm_blockcomment_is_not_abstract():
+    assert not inspect.isabstract(javaMM_BlockComment)
 
 
-def test_javamm::blockcomment_constructor_exists():
-    assert callable(javaMM::BlockComment.__init__)
+def test_javamm_blockcomment_constructor_exists():
+    assert callable(javaMM_BlockComment.__init__)
 
 
-def test_javamm::blockcomment_constructor_args():
-    sig = inspect.signature(javaMM::BlockComment.__init__)
+def test_javamm_blockcomment_constructor_args():
+    sig = inspect.signature(javaMM_BlockComment.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_javamm::variabledeclarationfragment_is_not_abstract():
-    assert not inspect.isabstract(javaMM::VariableDeclarationFragment)
+def test_javamm_variabledeclarationfragment_is_not_abstract():
+    assert not inspect.isabstract(javaMM_VariableDeclarationFragment)
 
 
-def test_javamm::variabledeclarationfragment_constructor_exists():
-    assert callable(javaMM::VariableDeclarationFragment.__init__)
+def test_javamm_variabledeclarationfragment_constructor_exists():
+    assert callable(javaMM_VariableDeclarationFragment.__init__)
 
 
-def test_javamm::variabledeclarationfragment_constructor_args():
-    sig = inspect.signature(javaMM::VariableDeclarationFragment.__init__)
+def test_javamm_variabledeclarationfragment_constructor_args():
+    sig = inspect.signature(javaMM_VariableDeclarationFragment.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -964,259 +964,37 @@ def test_expression_constructor_args():
 
 
 
-def test_javamm::annotation_is_not_abstract():
-    assert not inspect.isabstract(javaMM::Annotation)
+def test_javamm_conditionalexpression_is_not_abstract():
+    assert not inspect.isabstract(javaMM_ConditionalExpression)
 
 
-def test_javamm::annotation_constructor_exists():
-    assert callable(javaMM::Annotation.__init__)
+def test_javamm_conditionalexpression_constructor_exists():
+    assert callable(javaMM_ConditionalExpression.__init__)
 
 
-def test_javamm::annotation_constructor_args():
-    sig = inspect.signature(javaMM::Annotation.__init__)
+def test_javamm_conditionalexpression_constructor_args():
+    sig = inspect.signature(javaMM_ConditionalExpression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_javamm::characterliteral_is_not_abstract():
-    assert not inspect.isabstract(javaMM::CharacterLiteral)
+def test_javamm_numberliteral_is_not_abstract():
+    assert not inspect.isabstract(javaMM_NumberLiteral)
 
 
-def test_javamm::characterliteral_constructor_exists():
-    assert callable(javaMM::CharacterLiteral.__init__)
+def test_javamm_numberliteral_constructor_exists():
+    assert callable(javaMM_NumberLiteral.__init__)
 
 
-def test_javamm::characterliteral_constructor_args():
-    sig = inspect.signature(javaMM::CharacterLiteral.__init__)
-    params = list(sig.parameters.keys())
-    assert "escapedValue" in params, "Missing parameter 'escapedValue'"
-
-def test_javamm::characterliteral_has_escapedValue():
-    assert hasattr(javaMM::CharacterLiteral, "escapedValue")
-    descriptor = None
-    for klass in javaMM::CharacterLiteral.__mro__:
-        if "escapedValue" in klass.__dict__:
-            descriptor = klass.__dict__["escapedValue"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_javamm::booleanliteral_is_not_abstract():
-    assert not inspect.isabstract(javaMM::BooleanLiteral)
-
-
-def test_javamm::booleanliteral_constructor_exists():
-    assert callable(javaMM::BooleanLiteral.__init__)
-
-
-def test_javamm::booleanliteral_constructor_args():
-    sig = inspect.signature(javaMM::BooleanLiteral.__init__)
-    params = list(sig.parameters.keys())
-    assert "value" in params, "Missing parameter 'value'"
-
-def test_javamm::booleanliteral_has_value():
-    assert hasattr(javaMM::BooleanLiteral, "value")
-    descriptor = None
-    for klass in javaMM::BooleanLiteral.__mro__:
-        if "value" in klass.__dict__:
-            descriptor = klass.__dict__["value"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_javamm::arraycreation_is_not_abstract():
-    assert not inspect.isabstract(javaMM::ArrayCreation)
-
-
-def test_javamm::arraycreation_constructor_exists():
-    assert callable(javaMM::ArrayCreation.__init__)
-
-
-def test_javamm::arraycreation_constructor_args():
-    sig = inspect.signature(javaMM::ArrayCreation.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_javamm::assignment_is_not_abstract():
-    assert not inspect.isabstract(javaMM::Assignment)
-
-
-def test_javamm::assignment_constructor_exists():
-    assert callable(javaMM::Assignment.__init__)
-
-
-def test_javamm::assignment_constructor_args():
-    sig = inspect.signature(javaMM::Assignment.__init__)
-    params = list(sig.parameters.keys())
-    assert "operator" in params, "Missing parameter 'operator'"
-
-def test_javamm::assignment_has_operator():
-    assert hasattr(javaMM::Assignment, "operator")
-    descriptor = None
-    for klass in javaMM::Assignment.__mro__:
-        if "operator" in klass.__dict__:
-            descriptor = klass.__dict__["operator"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_javamm::conditionalexpression_is_not_abstract():
-    assert not inspect.isabstract(javaMM::ConditionalExpression)
-
-
-def test_javamm::conditionalexpression_constructor_exists():
-    assert callable(javaMM::ConditionalExpression.__init__)
-
-
-def test_javamm::conditionalexpression_constructor_args():
-    sig = inspect.signature(javaMM::ConditionalExpression.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_javamm::castexpression_is_not_abstract():
-    assert not inspect.isabstract(javaMM::CastExpression)
-
-
-def test_javamm::castexpression_constructor_exists():
-    assert callable(javaMM::CastExpression.__init__)
-
-
-def test_javamm::castexpression_constructor_args():
-    sig = inspect.signature(javaMM::CastExpression.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_javamm::unresolveditemaccess_is_not_abstract():
-    assert not inspect.isabstract(javaMM::UnresolvedItemAccess)
-
-
-def test_javamm::unresolveditemaccess_constructor_exists():
-    assert callable(javaMM::UnresolvedItemAccess.__init__)
-
-
-def test_javamm::unresolveditemaccess_constructor_args():
-    sig = inspect.signature(javaMM::UnresolvedItemAccess.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_javamm::arrayinitializer_is_not_abstract():
-    assert not inspect.isabstract(javaMM::ArrayInitializer)
-
-
-def test_javamm::arrayinitializer_constructor_exists():
-    assert callable(javaMM::ArrayInitializer.__init__)
-
-
-def test_javamm::arrayinitializer_constructor_args():
-    sig = inspect.signature(javaMM::ArrayInitializer.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_javamm::methodinvocation_is_not_abstract():
-    assert not inspect.isabstract(javaMM::MethodInvocation)
-
-
-def test_javamm::methodinvocation_constructor_exists():
-    assert callable(javaMM::MethodInvocation.__init__)
-
-
-def test_javamm::methodinvocation_constructor_args():
-    sig = inspect.signature(javaMM::MethodInvocation.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_javamm::singlevariableaccess_is_not_abstract():
-    assert not inspect.isabstract(javaMM::SingleVariableAccess)
-
-
-def test_javamm::singlevariableaccess_constructor_exists():
-    assert callable(javaMM::SingleVariableAccess.__init__)
-
-
-def test_javamm::singlevariableaccess_constructor_args():
-    sig = inspect.signature(javaMM::SingleVariableAccess.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_javamm::fieldaccess_is_not_abstract():
-    assert not inspect.isabstract(javaMM::FieldAccess)
-
-
-def test_javamm::fieldaccess_constructor_exists():
-    assert callable(javaMM::FieldAccess.__init__)
-
-
-def test_javamm::fieldaccess_constructor_args():
-    sig = inspect.signature(javaMM::FieldAccess.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_javamm::infixexpression_is_not_abstract():
-    assert not inspect.isabstract(javaMM::InfixExpression)
-
-
-def test_javamm::infixexpression_constructor_exists():
-    assert callable(javaMM::InfixExpression.__init__)
-
-
-def test_javamm::infixexpression_constructor_args():
-    sig = inspect.signature(javaMM::InfixExpression.__init__)
-    params = list(sig.parameters.keys())
-    assert "operator" in params, "Missing parameter 'operator'"
-
-def test_javamm::infixexpression_has_operator():
-    assert hasattr(javaMM::InfixExpression, "operator")
-    descriptor = None
-    for klass in javaMM::InfixExpression.__mro__:
-        if "operator" in klass.__dict__:
-            descriptor = klass.__dict__["operator"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_javamm::arraylengthaccess_is_not_abstract():
-    assert not inspect.isabstract(javaMM::ArrayLengthAccess)
-
-
-def test_javamm::arraylengthaccess_constructor_exists():
-    assert callable(javaMM::ArrayLengthAccess.__init__)
-
-
-def test_javamm::arraylengthaccess_constructor_args():
-    sig = inspect.signature(javaMM::ArrayLengthAccess.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_javamm::numberliteral_is_not_abstract():
-    assert not inspect.isabstract(javaMM::NumberLiteral)
-
-
-def test_javamm::numberliteral_constructor_exists():
-    assert callable(javaMM::NumberLiteral.__init__)
-
-
-def test_javamm::numberliteral_constructor_args():
-    sig = inspect.signature(javaMM::NumberLiteral.__init__)
+def test_javamm_numberliteral_constructor_args():
+    sig = inspect.signature(javaMM_NumberLiteral.__init__)
     params = list(sig.parameters.keys())
     assert "tokenValue" in params, "Missing parameter 'tokenValue'"
 
-def test_javamm::numberliteral_has_tokenValue():
-    assert hasattr(javaMM::NumberLiteral, "tokenValue")
+def test_javamm_numberliteral_has_tokenValue():
+    assert hasattr(javaMM_NumberLiteral, "tokenValue")
     descriptor = None
-    for klass in javaMM::NumberLiteral.__mro__:
+    for klass in javaMM_NumberLiteral.__mro__:
         if "tokenValue" in klass.__dict__:
             descriptor = klass.__dict__["tokenValue"]
             break
@@ -1224,51 +1002,127 @@ def test_javamm::numberliteral_has_tokenValue():
 
 
 
-def test_javamm::nullliteral_is_not_abstract():
-    assert not inspect.isabstract(javaMM::NullLiteral)
+def test_javamm_infixexpression_is_not_abstract():
+    assert not inspect.isabstract(javaMM_InfixExpression)
 
 
-def test_javamm::nullliteral_constructor_exists():
-    assert callable(javaMM::NullLiteral.__init__)
+def test_javamm_infixexpression_constructor_exists():
+    assert callable(javaMM_InfixExpression.__init__)
 
 
-def test_javamm::nullliteral_constructor_args():
-    sig = inspect.signature(javaMM::NullLiteral.__init__)
+def test_javamm_infixexpression_constructor_args():
+    sig = inspect.signature(javaMM_InfixExpression.__init__)
+    params = list(sig.parameters.keys())
+    assert "operator" in params, "Missing parameter 'operator'"
+
+def test_javamm_infixexpression_has_operator():
+    assert hasattr(javaMM_InfixExpression, "operator")
+    descriptor = None
+    for klass in javaMM_InfixExpression.__mro__:
+        if "operator" in klass.__dict__:
+            descriptor = klass.__dict__["operator"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_javamm_variabledeclarationexpression_is_not_abstract():
+    assert not inspect.isabstract(javaMM_VariableDeclarationExpression)
+
+
+def test_javamm_variabledeclarationexpression_constructor_exists():
+    assert callable(javaMM_VariableDeclarationExpression.__init__)
+
+
+def test_javamm_variabledeclarationexpression_constructor_args():
+    sig = inspect.signature(javaMM_VariableDeclarationExpression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_javamm::parenthesizedexpression_is_not_abstract():
-    assert not inspect.isabstract(javaMM::ParenthesizedExpression)
+def test_javamm_fieldaccess_is_not_abstract():
+    assert not inspect.isabstract(javaMM_FieldAccess)
 
 
-def test_javamm::parenthesizedexpression_constructor_exists():
-    assert callable(javaMM::ParenthesizedExpression.__init__)
+def test_javamm_fieldaccess_constructor_exists():
+    assert callable(javaMM_FieldAccess.__init__)
 
 
-def test_javamm::parenthesizedexpression_constructor_args():
-    sig = inspect.signature(javaMM::ParenthesizedExpression.__init__)
+def test_javamm_fieldaccess_constructor_args():
+    sig = inspect.signature(javaMM_FieldAccess.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_javamm::stringliteral_is_not_abstract():
-    assert not inspect.isabstract(javaMM::StringLiteral)
+def test_javamm_arrayaccess_is_not_abstract():
+    assert not inspect.isabstract(javaMM_ArrayAccess)
 
 
-def test_javamm::stringliteral_constructor_exists():
-    assert callable(javaMM::StringLiteral.__init__)
+def test_javamm_arrayaccess_constructor_exists():
+    assert callable(javaMM_ArrayAccess.__init__)
 
 
-def test_javamm::stringliteral_constructor_args():
-    sig = inspect.signature(javaMM::StringLiteral.__init__)
+def test_javamm_arrayaccess_constructor_args():
+    sig = inspect.signature(javaMM_ArrayAccess.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_javamm_assignment_is_not_abstract():
+    assert not inspect.isabstract(javaMM_Assignment)
+
+
+def test_javamm_assignment_constructor_exists():
+    assert callable(javaMM_Assignment.__init__)
+
+
+def test_javamm_assignment_constructor_args():
+    sig = inspect.signature(javaMM_Assignment.__init__)
+    params = list(sig.parameters.keys())
+    assert "operator" in params, "Missing parameter 'operator'"
+
+def test_javamm_assignment_has_operator():
+    assert hasattr(javaMM_Assignment, "operator")
+    descriptor = None
+    for klass in javaMM_Assignment.__mro__:
+        if "operator" in klass.__dict__:
+            descriptor = klass.__dict__["operator"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_javamm_typeliteral_is_not_abstract():
+    assert not inspect.isabstract(javaMM_TypeLiteral)
+
+
+def test_javamm_typeliteral_constructor_exists():
+    assert callable(javaMM_TypeLiteral.__init__)
+
+
+def test_javamm_typeliteral_constructor_args():
+    sig = inspect.signature(javaMM_TypeLiteral.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_javamm_characterliteral_is_not_abstract():
+    assert not inspect.isabstract(javaMM_CharacterLiteral)
+
+
+def test_javamm_characterliteral_constructor_exists():
+    assert callable(javaMM_CharacterLiteral.__init__)
+
+
+def test_javamm_characterliteral_constructor_args():
+    sig = inspect.signature(javaMM_CharacterLiteral.__init__)
     params = list(sig.parameters.keys())
     assert "escapedValue" in params, "Missing parameter 'escapedValue'"
 
-def test_javamm::stringliteral_has_escapedValue():
-    assert hasattr(javaMM::StringLiteral, "escapedValue")
+def test_javamm_characterliteral_has_escapedValue():
+    assert hasattr(javaMM_CharacterLiteral, "escapedValue")
     descriptor = None
-    for klass in javaMM::StringLiteral.__mro__:
+    for klass in javaMM_CharacterLiteral.__mro__:
         if "escapedValue" in klass.__dict__:
             descriptor = klass.__dict__["escapedValue"]
             break
@@ -1276,23 +1130,173 @@ def test_javamm::stringliteral_has_escapedValue():
 
 
 
-def test_javamm::postfixexpression_is_not_abstract():
-    assert not inspect.isabstract(javaMM::PostfixExpression)
+def test_javamm_unresolveditemaccess_is_not_abstract():
+    assert not inspect.isabstract(javaMM_UnresolvedItemAccess)
 
 
-def test_javamm::postfixexpression_constructor_exists():
-    assert callable(javaMM::PostfixExpression.__init__)
+def test_javamm_unresolveditemaccess_constructor_exists():
+    assert callable(javaMM_UnresolvedItemAccess.__init__)
 
 
-def test_javamm::postfixexpression_constructor_args():
-    sig = inspect.signature(javaMM::PostfixExpression.__init__)
+def test_javamm_unresolveditemaccess_constructor_args():
+    sig = inspect.signature(javaMM_UnresolvedItemAccess.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_javamm_stringliteral_is_not_abstract():
+    assert not inspect.isabstract(javaMM_StringLiteral)
+
+
+def test_javamm_stringliteral_constructor_exists():
+    assert callable(javaMM_StringLiteral.__init__)
+
+
+def test_javamm_stringliteral_constructor_args():
+    sig = inspect.signature(javaMM_StringLiteral.__init__)
+    params = list(sig.parameters.keys())
+    assert "escapedValue" in params, "Missing parameter 'escapedValue'"
+
+def test_javamm_stringliteral_has_escapedValue():
+    assert hasattr(javaMM_StringLiteral, "escapedValue")
+    descriptor = None
+    for klass in javaMM_StringLiteral.__mro__:
+        if "escapedValue" in klass.__dict__:
+            descriptor = klass.__dict__["escapedValue"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_javamm_annotation_is_not_abstract():
+    assert not inspect.isabstract(javaMM_Annotation)
+
+
+def test_javamm_annotation_constructor_exists():
+    assert callable(javaMM_Annotation.__init__)
+
+
+def test_javamm_annotation_constructor_args():
+    sig = inspect.signature(javaMM_Annotation.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_javamm_instanceofexpression_is_not_abstract():
+    assert not inspect.isabstract(javaMM_InstanceofExpression)
+
+
+def test_javamm_instanceofexpression_constructor_exists():
+    assert callable(javaMM_InstanceofExpression.__init__)
+
+
+def test_javamm_instanceofexpression_constructor_args():
+    sig = inspect.signature(javaMM_InstanceofExpression.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_javamm_arrayinitializer_is_not_abstract():
+    assert not inspect.isabstract(javaMM_ArrayInitializer)
+
+
+def test_javamm_arrayinitializer_constructor_exists():
+    assert callable(javaMM_ArrayInitializer.__init__)
+
+
+def test_javamm_arrayinitializer_constructor_args():
+    sig = inspect.signature(javaMM_ArrayInitializer.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_javamm_nullliteral_is_not_abstract():
+    assert not inspect.isabstract(javaMM_NullLiteral)
+
+
+def test_javamm_nullliteral_constructor_exists():
+    assert callable(javaMM_NullLiteral.__init__)
+
+
+def test_javamm_nullliteral_constructor_args():
+    sig = inspect.signature(javaMM_NullLiteral.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_javamm_arraycreation_is_not_abstract():
+    assert not inspect.isabstract(javaMM_ArrayCreation)
+
+
+def test_javamm_arraycreation_constructor_exists():
+    assert callable(javaMM_ArrayCreation.__init__)
+
+
+def test_javamm_arraycreation_constructor_args():
+    sig = inspect.signature(javaMM_ArrayCreation.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_javamm_castexpression_is_not_abstract():
+    assert not inspect.isabstract(javaMM_CastExpression)
+
+
+def test_javamm_castexpression_constructor_exists():
+    assert callable(javaMM_CastExpression.__init__)
+
+
+def test_javamm_castexpression_constructor_args():
+    sig = inspect.signature(javaMM_CastExpression.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_javamm_singlevariableaccess_is_not_abstract():
+    assert not inspect.isabstract(javaMM_SingleVariableAccess)
+
+
+def test_javamm_singlevariableaccess_constructor_exists():
+    assert callable(javaMM_SingleVariableAccess.__init__)
+
+
+def test_javamm_singlevariableaccess_constructor_args():
+    sig = inspect.signature(javaMM_SingleVariableAccess.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_javamm_arraylengthaccess_is_not_abstract():
+    assert not inspect.isabstract(javaMM_ArrayLengthAccess)
+
+
+def test_javamm_arraylengthaccess_constructor_exists():
+    assert callable(javaMM_ArrayLengthAccess.__init__)
+
+
+def test_javamm_arraylengthaccess_constructor_args():
+    sig = inspect.signature(javaMM_ArrayLengthAccess.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_javamm_postfixexpression_is_not_abstract():
+    assert not inspect.isabstract(javaMM_PostfixExpression)
+
+
+def test_javamm_postfixexpression_constructor_exists():
+    assert callable(javaMM_PostfixExpression.__init__)
+
+
+def test_javamm_postfixexpression_constructor_args():
+    sig = inspect.signature(javaMM_PostfixExpression.__init__)
     params = list(sig.parameters.keys())
     assert "operator" in params, "Missing parameter 'operator'"
 
-def test_javamm::postfixexpression_has_operator():
-    assert hasattr(javaMM::PostfixExpression, "operator")
+def test_javamm_postfixexpression_has_operator():
+    assert hasattr(javaMM_PostfixExpression, "operator")
     descriptor = None
-    for klass in javaMM::PostfixExpression.__mro__:
+    for klass in javaMM_PostfixExpression.__mro__:
         if "operator" in klass.__dict__:
             descriptor = klass.__dict__["operator"]
             break
@@ -1300,37 +1304,75 @@ def test_javamm::postfixexpression_has_operator():
 
 
 
-def test_javamm::arrayaccess_is_not_abstract():
-    assert not inspect.isabstract(javaMM::ArrayAccess)
+def test_javamm_methodinvocation_is_not_abstract():
+    assert not inspect.isabstract(javaMM_MethodInvocation)
 
 
-def test_javamm::arrayaccess_constructor_exists():
-    assert callable(javaMM::ArrayAccess.__init__)
+def test_javamm_methodinvocation_constructor_exists():
+    assert callable(javaMM_MethodInvocation.__init__)
 
 
-def test_javamm::arrayaccess_constructor_args():
-    sig = inspect.signature(javaMM::ArrayAccess.__init__)
+def test_javamm_methodinvocation_constructor_args():
+    sig = inspect.signature(javaMM_MethodInvocation.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_javamm::prefixexpression_is_not_abstract():
-    assert not inspect.isabstract(javaMM::PrefixExpression)
+def test_javamm_parenthesizedexpression_is_not_abstract():
+    assert not inspect.isabstract(javaMM_ParenthesizedExpression)
 
 
-def test_javamm::prefixexpression_constructor_exists():
-    assert callable(javaMM::PrefixExpression.__init__)
+def test_javamm_parenthesizedexpression_constructor_exists():
+    assert callable(javaMM_ParenthesizedExpression.__init__)
 
 
-def test_javamm::prefixexpression_constructor_args():
-    sig = inspect.signature(javaMM::PrefixExpression.__init__)
+def test_javamm_parenthesizedexpression_constructor_args():
+    sig = inspect.signature(javaMM_ParenthesizedExpression.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_javamm_booleanliteral_is_not_abstract():
+    assert not inspect.isabstract(javaMM_BooleanLiteral)
+
+
+def test_javamm_booleanliteral_constructor_exists():
+    assert callable(javaMM_BooleanLiteral.__init__)
+
+
+def test_javamm_booleanliteral_constructor_args():
+    sig = inspect.signature(javaMM_BooleanLiteral.__init__)
+    params = list(sig.parameters.keys())
+    assert "value" in params, "Missing parameter 'value'"
+
+def test_javamm_booleanliteral_has_value():
+    assert hasattr(javaMM_BooleanLiteral, "value")
+    descriptor = None
+    for klass in javaMM_BooleanLiteral.__mro__:
+        if "value" in klass.__dict__:
+            descriptor = klass.__dict__["value"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_javamm_prefixexpression_is_not_abstract():
+    assert not inspect.isabstract(javaMM_PrefixExpression)
+
+
+def test_javamm_prefixexpression_constructor_exists():
+    assert callable(javaMM_PrefixExpression.__init__)
+
+
+def test_javamm_prefixexpression_constructor_args():
+    sig = inspect.signature(javaMM_PrefixExpression.__init__)
     params = list(sig.parameters.keys())
     assert "operator" in params, "Missing parameter 'operator'"
 
-def test_javamm::prefixexpression_has_operator():
-    assert hasattr(javaMM::PrefixExpression, "operator")
+def test_javamm_prefixexpression_has_operator():
+    assert hasattr(javaMM_PrefixExpression, "operator")
     descriptor = None
-    for klass in javaMM::PrefixExpression.__mro__:
+    for klass in javaMM_PrefixExpression.__mro__:
         if "operator" in klass.__dict__:
             descriptor = klass.__dict__["operator"]
             break
@@ -1338,72 +1380,30 @@ def test_javamm::prefixexpression_has_operator():
 
 
 
-def test_javamm::variabledeclarationexpression_is_not_abstract():
-    assert not inspect.isabstract(javaMM::VariableDeclarationExpression)
+def test_javamm_abstracttypequalifiedexpression_is_not_abstract():
+    assert not inspect.isabstract(javaMM_AbstractTypeQualifiedExpression)
 
 
-def test_javamm::variabledeclarationexpression_constructor_exists():
-    assert callable(javaMM::VariableDeclarationExpression.__init__)
+def test_javamm_abstracttypequalifiedexpression_constructor_exists():
+    assert callable(javaMM_AbstractTypeQualifiedExpression.__init__)
 
 
-def test_javamm::variabledeclarationexpression_constructor_args():
-    sig = inspect.signature(javaMM::VariableDeclarationExpression.__init__)
+def test_javamm_abstracttypequalifiedexpression_constructor_args():
+    sig = inspect.signature(javaMM_AbstractTypeQualifiedExpression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_javamm::instanceofexpression_is_not_abstract():
-    assert not inspect.isabstract(javaMM::InstanceofExpression)
+def test_javamm_classinstancecreation_is_not_abstract():
+    assert not inspect.isabstract(javaMM_ClassInstanceCreation)
 
 
-def test_javamm::instanceofexpression_constructor_exists():
-    assert callable(javaMM::InstanceofExpression.__init__)
+def test_javamm_classinstancecreation_constructor_exists():
+    assert callable(javaMM_ClassInstanceCreation.__init__)
 
 
-def test_javamm::instanceofexpression_constructor_args():
-    sig = inspect.signature(javaMM::InstanceofExpression.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_javamm::typeliteral_is_not_abstract():
-    assert not inspect.isabstract(javaMM::TypeLiteral)
-
-
-def test_javamm::typeliteral_constructor_exists():
-    assert callable(javaMM::TypeLiteral.__init__)
-
-
-def test_javamm::typeliteral_constructor_args():
-    sig = inspect.signature(javaMM::TypeLiteral.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_javamm::abstracttypequalifiedexpression_is_not_abstract():
-    assert not inspect.isabstract(javaMM::AbstractTypeQualifiedExpression)
-
-
-def test_javamm::abstracttypequalifiedexpression_constructor_exists():
-    assert callable(javaMM::AbstractTypeQualifiedExpression.__init__)
-
-
-def test_javamm::abstracttypequalifiedexpression_constructor_args():
-    sig = inspect.signature(javaMM::AbstractTypeQualifiedExpression.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_javamm::classinstancecreation_is_not_abstract():
-    assert not inspect.isabstract(javaMM::ClassInstanceCreation)
-
-
-def test_javamm::classinstancecreation_constructor_exists():
-    assert callable(javaMM::ClassInstanceCreation.__init__)
-
-
-def test_javamm::classinstancecreation_constructor_args():
-    sig = inspect.signature(javaMM::ClassInstanceCreation.__init__)
+def test_javamm_classinstancecreation_constructor_args():
+    sig = inspect.signature(javaMM_ClassInstanceCreation.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1422,72 +1422,72 @@ def test_abstracttypedeclaration_constructor_args():
 
 
 
-def test_javamm::unresolvedtypedeclaration_is_not_abstract():
-    assert not inspect.isabstract(javaMM::UnresolvedTypeDeclaration)
+def test_javamm_typedeclaration_is_not_abstract():
+    assert not inspect.isabstract(javaMM_TypeDeclaration)
 
 
-def test_javamm::unresolvedtypedeclaration_constructor_exists():
-    assert callable(javaMM::UnresolvedTypeDeclaration.__init__)
+def test_javamm_typedeclaration_constructor_exists():
+    assert callable(javaMM_TypeDeclaration.__init__)
 
 
-def test_javamm::unresolvedtypedeclaration_constructor_args():
-    sig = inspect.signature(javaMM::UnresolvedTypeDeclaration.__init__)
+def test_javamm_typedeclaration_constructor_args():
+    sig = inspect.signature(javaMM_TypeDeclaration.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_javamm::enumdeclaration_is_not_abstract():
-    assert not inspect.isabstract(javaMM::EnumDeclaration)
+def test_javamm_enumdeclaration_is_not_abstract():
+    assert not inspect.isabstract(javaMM_EnumDeclaration)
 
 
-def test_javamm::enumdeclaration_constructor_exists():
-    assert callable(javaMM::EnumDeclaration.__init__)
+def test_javamm_enumdeclaration_constructor_exists():
+    assert callable(javaMM_EnumDeclaration.__init__)
 
 
-def test_javamm::enumdeclaration_constructor_args():
-    sig = inspect.signature(javaMM::EnumDeclaration.__init__)
+def test_javamm_enumdeclaration_constructor_args():
+    sig = inspect.signature(javaMM_EnumDeclaration.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_javamm::typedeclaration_is_not_abstract():
-    assert not inspect.isabstract(javaMM::TypeDeclaration)
+def test_javamm_unresolvedtypedeclaration_is_not_abstract():
+    assert not inspect.isabstract(javaMM_UnresolvedTypeDeclaration)
 
 
-def test_javamm::typedeclaration_constructor_exists():
-    assert callable(javaMM::TypeDeclaration.__init__)
+def test_javamm_unresolvedtypedeclaration_constructor_exists():
+    assert callable(javaMM_UnresolvedTypeDeclaration.__init__)
 
 
-def test_javamm::typedeclaration_constructor_args():
-    sig = inspect.signature(javaMM::TypeDeclaration.__init__)
+def test_javamm_unresolvedtypedeclaration_constructor_args():
+    sig = inspect.signature(javaMM_UnresolvedTypeDeclaration.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_javamm::annotationtypedeclaration_is_not_abstract():
-    assert not inspect.isabstract(javaMM::AnnotationTypeDeclaration)
+def test_javamm_annotationtypedeclaration_is_not_abstract():
+    assert not inspect.isabstract(javaMM_AnnotationTypeDeclaration)
 
 
-def test_javamm::annotationtypedeclaration_constructor_exists():
-    assert callable(javaMM::AnnotationTypeDeclaration.__init__)
+def test_javamm_annotationtypedeclaration_constructor_exists():
+    assert callable(javaMM_AnnotationTypeDeclaration.__init__)
 
 
-def test_javamm::annotationtypedeclaration_constructor_args():
-    sig = inspect.signature(javaMM::AnnotationTypeDeclaration.__init__)
+def test_javamm_annotationtypedeclaration_constructor_args():
+    sig = inspect.signature(javaMM_AnnotationTypeDeclaration.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_javamm::astnode_is_not_abstract():
-    assert not inspect.isabstract(javaMM::ASTNode)
+def test_javamm_astnode_is_not_abstract():
+    assert not inspect.isabstract(javaMM_ASTNode)
 
 
-def test_javamm::astnode_constructor_exists():
-    assert callable(javaMM::ASTNode.__init__)
+def test_javamm_astnode_constructor_exists():
+    assert callable(javaMM_ASTNode.__init__)
 
 
-def test_javamm::astnode_constructor_args():
-    sig = inspect.signature(javaMM::ASTNode.__init__)
+def test_javamm_astnode_constructor_args():
+    sig = inspect.signature(javaMM_ASTNode.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1506,37 +1506,219 @@ def test_statement_constructor_args():
 
 
 
-def test_javamm::synchronizedstatement_is_not_abstract():
-    assert not inspect.isabstract(javaMM::SynchronizedStatement)
+def test_javamm_returnstatement_is_not_abstract():
+    assert not inspect.isabstract(javaMM_ReturnStatement)
 
 
-def test_javamm::synchronizedstatement_constructor_exists():
-    assert callable(javaMM::SynchronizedStatement.__init__)
+def test_javamm_returnstatement_constructor_exists():
+    assert callable(javaMM_ReturnStatement.__init__)
 
 
-def test_javamm::synchronizedstatement_constructor_args():
-    sig = inspect.signature(javaMM::SynchronizedStatement.__init__)
+def test_javamm_returnstatement_constructor_args():
+    sig = inspect.signature(javaMM_ReturnStatement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_javamm::variabledeclarationstatement_is_not_abstract():
-    assert not inspect.isabstract(javaMM::VariableDeclarationStatement)
+def test_javamm_ifstatement_is_not_abstract():
+    assert not inspect.isabstract(javaMM_IfStatement)
 
 
-def test_javamm::variabledeclarationstatement_constructor_exists():
-    assert callable(javaMM::VariableDeclarationStatement.__init__)
+def test_javamm_ifstatement_constructor_exists():
+    assert callable(javaMM_IfStatement.__init__)
 
 
-def test_javamm::variabledeclarationstatement_constructor_args():
-    sig = inspect.signature(javaMM::VariableDeclarationStatement.__init__)
+def test_javamm_ifstatement_constructor_args():
+    sig = inspect.signature(javaMM_IfStatement.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_javamm_typedeclarationstatement_is_not_abstract():
+    assert not inspect.isabstract(javaMM_TypeDeclarationStatement)
+
+
+def test_javamm_typedeclarationstatement_constructor_exists():
+    assert callable(javaMM_TypeDeclarationStatement.__init__)
+
+
+def test_javamm_typedeclarationstatement_constructor_args():
+    sig = inspect.signature(javaMM_TypeDeclarationStatement.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_javamm_enhancedforstatement_is_not_abstract():
+    assert not inspect.isabstract(javaMM_EnhancedForStatement)
+
+
+def test_javamm_enhancedforstatement_constructor_exists():
+    assert callable(javaMM_EnhancedForStatement.__init__)
+
+
+def test_javamm_enhancedforstatement_constructor_args():
+    sig = inspect.signature(javaMM_EnhancedForStatement.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_javamm_trystatement_is_not_abstract():
+    assert not inspect.isabstract(javaMM_TryStatement)
+
+
+def test_javamm_trystatement_constructor_exists():
+    assert callable(javaMM_TryStatement.__init__)
+
+
+def test_javamm_trystatement_constructor_args():
+    sig = inspect.signature(javaMM_TryStatement.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_javamm_catchclause_is_not_abstract():
+    assert not inspect.isabstract(javaMM_CatchClause)
+
+
+def test_javamm_catchclause_constructor_exists():
+    assert callable(javaMM_CatchClause.__init__)
+
+
+def test_javamm_catchclause_constructor_args():
+    sig = inspect.signature(javaMM_CatchClause.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_javamm_throwstatement_is_not_abstract():
+    assert not inspect.isabstract(javaMM_ThrowStatement)
+
+
+def test_javamm_throwstatement_constructor_exists():
+    assert callable(javaMM_ThrowStatement.__init__)
+
+
+def test_javamm_throwstatement_constructor_args():
+    sig = inspect.signature(javaMM_ThrowStatement.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_javamm_dostatement_is_not_abstract():
+    assert not inspect.isabstract(javaMM_DoStatement)
+
+
+def test_javamm_dostatement_constructor_exists():
+    assert callable(javaMM_DoStatement.__init__)
+
+
+def test_javamm_dostatement_constructor_args():
+    sig = inspect.signature(javaMM_DoStatement.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_javamm_constructorinvocation_is_not_abstract():
+    assert not inspect.isabstract(javaMM_ConstructorInvocation)
+
+
+def test_javamm_constructorinvocation_constructor_exists():
+    assert callable(javaMM_ConstructorInvocation.__init__)
+
+
+def test_javamm_constructorinvocation_constructor_args():
+    sig = inspect.signature(javaMM_ConstructorInvocation.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_javamm_forstatement_is_not_abstract():
+    assert not inspect.isabstract(javaMM_ForStatement)
+
+
+def test_javamm_forstatement_constructor_exists():
+    assert callable(javaMM_ForStatement.__init__)
+
+
+def test_javamm_forstatement_constructor_args():
+    sig = inspect.signature(javaMM_ForStatement.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_javamm_synchronizedstatement_is_not_abstract():
+    assert not inspect.isabstract(javaMM_SynchronizedStatement)
+
+
+def test_javamm_synchronizedstatement_constructor_exists():
+    assert callable(javaMM_SynchronizedStatement.__init__)
+
+
+def test_javamm_synchronizedstatement_constructor_args():
+    sig = inspect.signature(javaMM_SynchronizedStatement.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_javamm_breakstatement_is_not_abstract():
+    assert not inspect.isabstract(javaMM_BreakStatement)
+
+
+def test_javamm_breakstatement_constructor_exists():
+    assert callable(javaMM_BreakStatement.__init__)
+
+
+def test_javamm_breakstatement_constructor_args():
+    sig = inspect.signature(javaMM_BreakStatement.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_javamm_switchstatement_is_not_abstract():
+    assert not inspect.isabstract(javaMM_SwitchStatement)
+
+
+def test_javamm_switchstatement_constructor_exists():
+    assert callable(javaMM_SwitchStatement.__init__)
+
+
+def test_javamm_switchstatement_constructor_args():
+    sig = inspect.signature(javaMM_SwitchStatement.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_javamm_expressionstatement_is_not_abstract():
+    assert not inspect.isabstract(javaMM_ExpressionStatement)
+
+
+def test_javamm_expressionstatement_constructor_exists():
+    assert callable(javaMM_ExpressionStatement.__init__)
+
+
+def test_javamm_expressionstatement_constructor_args():
+    sig = inspect.signature(javaMM_ExpressionStatement.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_javamm_variabledeclarationstatement_is_not_abstract():
+    assert not inspect.isabstract(javaMM_VariableDeclarationStatement)
+
+
+def test_javamm_variabledeclarationstatement_constructor_exists():
+    assert callable(javaMM_VariableDeclarationStatement.__init__)
+
+
+def test_javamm_variabledeclarationstatement_constructor_args():
+    sig = inspect.signature(javaMM_VariableDeclarationStatement.__init__)
     params = list(sig.parameters.keys())
     assert "extraArrayDimensions" in params, "Missing parameter 'extraArrayDimensions'"
 
-def test_javamm::variabledeclarationstatement_has_extraArrayDimensions():
-    assert hasattr(javaMM::VariableDeclarationStatement, "extraArrayDimensions")
+def test_javamm_variabledeclarationstatement_has_extraArrayDimensions():
+    assert hasattr(javaMM_VariableDeclarationStatement, "extraArrayDimensions")
     descriptor = None
-    for klass in javaMM::VariableDeclarationStatement.__mro__:
+    for klass in javaMM_VariableDeclarationStatement.__mro__:
         if "extraArrayDimensions" in klass.__dict__:
             descriptor = klass.__dict__["extraArrayDimensions"]
             break
@@ -1544,191 +1726,79 @@ def test_javamm::variabledeclarationstatement_has_extraArrayDimensions():
 
 
 
-def test_javamm::expressionstatement_is_not_abstract():
-    assert not inspect.isabstract(javaMM::ExpressionStatement)
+def test_javamm_continuestatement_is_not_abstract():
+    assert not inspect.isabstract(javaMM_ContinueStatement)
 
 
-def test_javamm::expressionstatement_constructor_exists():
-    assert callable(javaMM::ExpressionStatement.__init__)
+def test_javamm_continuestatement_constructor_exists():
+    assert callable(javaMM_ContinueStatement.__init__)
 
 
-def test_javamm::expressionstatement_constructor_args():
-    sig = inspect.signature(javaMM::ExpressionStatement.__init__)
+def test_javamm_continuestatement_constructor_args():
+    sig = inspect.signature(javaMM_ContinueStatement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_javamm::emptystatement_is_not_abstract():
-    assert not inspect.isabstract(javaMM::EmptyStatement)
+def test_javamm_superconstructorinvocation_is_not_abstract():
+    assert not inspect.isabstract(javaMM_SuperConstructorInvocation)
 
 
-def test_javamm::emptystatement_constructor_exists():
-    assert callable(javaMM::EmptyStatement.__init__)
+def test_javamm_superconstructorinvocation_constructor_exists():
+    assert callable(javaMM_SuperConstructorInvocation.__init__)
 
 
-def test_javamm::emptystatement_constructor_args():
-    sig = inspect.signature(javaMM::EmptyStatement.__init__)
+def test_javamm_superconstructorinvocation_constructor_args():
+    sig = inspect.signature(javaMM_SuperConstructorInvocation.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_javamm::forstatement_is_not_abstract():
-    assert not inspect.isabstract(javaMM::ForStatement)
+def test_javamm_whilestatement_is_not_abstract():
+    assert not inspect.isabstract(javaMM_WhileStatement)
 
 
-def test_javamm::forstatement_constructor_exists():
-    assert callable(javaMM::ForStatement.__init__)
+def test_javamm_whilestatement_constructor_exists():
+    assert callable(javaMM_WhileStatement.__init__)
 
 
-def test_javamm::forstatement_constructor_args():
-    sig = inspect.signature(javaMM::ForStatement.__init__)
+def test_javamm_whilestatement_constructor_args():
+    sig = inspect.signature(javaMM_WhileStatement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_javamm::ifstatement_is_not_abstract():
-    assert not inspect.isabstract(javaMM::IfStatement)
+def test_javamm_emptystatement_is_not_abstract():
+    assert not inspect.isabstract(javaMM_EmptyStatement)
 
 
-def test_javamm::ifstatement_constructor_exists():
-    assert callable(javaMM::IfStatement.__init__)
+def test_javamm_emptystatement_constructor_exists():
+    assert callable(javaMM_EmptyStatement.__init__)
 
 
-def test_javamm::ifstatement_constructor_args():
-    sig = inspect.signature(javaMM::IfStatement.__init__)
+def test_javamm_emptystatement_constructor_args():
+    sig = inspect.signature(javaMM_EmptyStatement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_javamm::dostatement_is_not_abstract():
-    assert not inspect.isabstract(javaMM::DoStatement)
+def test_javamm_switchcase_is_not_abstract():
+    assert not inspect.isabstract(javaMM_SwitchCase)
 
 
-def test_javamm::dostatement_constructor_exists():
-    assert callable(javaMM::DoStatement.__init__)
+def test_javamm_switchcase_constructor_exists():
+    assert callable(javaMM_SwitchCase.__init__)
 
 
-def test_javamm::dostatement_constructor_args():
-    sig = inspect.signature(javaMM::DoStatement.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_javamm::catchclause_is_not_abstract():
-    assert not inspect.isabstract(javaMM::CatchClause)
-
-
-def test_javamm::catchclause_constructor_exists():
-    assert callable(javaMM::CatchClause.__init__)
-
-
-def test_javamm::catchclause_constructor_args():
-    sig = inspect.signature(javaMM::CatchClause.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_javamm::continuestatement_is_not_abstract():
-    assert not inspect.isabstract(javaMM::ContinueStatement)
-
-
-def test_javamm::continuestatement_constructor_exists():
-    assert callable(javaMM::ContinueStatement.__init__)
-
-
-def test_javamm::continuestatement_constructor_args():
-    sig = inspect.signature(javaMM::ContinueStatement.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_javamm::enhancedforstatement_is_not_abstract():
-    assert not inspect.isabstract(javaMM::EnhancedForStatement)
-
-
-def test_javamm::enhancedforstatement_constructor_exists():
-    assert callable(javaMM::EnhancedForStatement.__init__)
-
-
-def test_javamm::enhancedforstatement_constructor_args():
-    sig = inspect.signature(javaMM::EnhancedForStatement.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_javamm::whilestatement_is_not_abstract():
-    assert not inspect.isabstract(javaMM::WhileStatement)
-
-
-def test_javamm::whilestatement_constructor_exists():
-    assert callable(javaMM::WhileStatement.__init__)
-
-
-def test_javamm::whilestatement_constructor_args():
-    sig = inspect.signature(javaMM::WhileStatement.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_javamm::switchstatement_is_not_abstract():
-    assert not inspect.isabstract(javaMM::SwitchStatement)
-
-
-def test_javamm::switchstatement_constructor_exists():
-    assert callable(javaMM::SwitchStatement.__init__)
-
-
-def test_javamm::switchstatement_constructor_args():
-    sig = inspect.signature(javaMM::SwitchStatement.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_javamm::typedeclarationstatement_is_not_abstract():
-    assert not inspect.isabstract(javaMM::TypeDeclarationStatement)
-
-
-def test_javamm::typedeclarationstatement_constructor_exists():
-    assert callable(javaMM::TypeDeclarationStatement.__init__)
-
-
-def test_javamm::typedeclarationstatement_constructor_args():
-    sig = inspect.signature(javaMM::TypeDeclarationStatement.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_javamm::breakstatement_is_not_abstract():
-    assert not inspect.isabstract(javaMM::BreakStatement)
-
-
-def test_javamm::breakstatement_constructor_exists():
-    assert callable(javaMM::BreakStatement.__init__)
-
-
-def test_javamm::breakstatement_constructor_args():
-    sig = inspect.signature(javaMM::BreakStatement.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_javamm::switchcase_is_not_abstract():
-    assert not inspect.isabstract(javaMM::SwitchCase)
-
-
-def test_javamm::switchcase_constructor_exists():
-    assert callable(javaMM::SwitchCase.__init__)
-
-
-def test_javamm::switchcase_constructor_args():
-    sig = inspect.signature(javaMM::SwitchCase.__init__)
+def test_javamm_switchcase_constructor_args():
+    sig = inspect.signature(javaMM_SwitchCase.__init__)
     params = list(sig.parameters.keys())
     assert "default" in params, "Missing parameter 'default'"
 
-def test_javamm::switchcase_has_default():
-    assert hasattr(javaMM::SwitchCase, "default")
+def test_javamm_switchcase_has_default():
+    assert hasattr(javaMM_SwitchCase, "default")
     descriptor = None
-    for klass in javaMM::SwitchCase.__mro__:
+    for klass in javaMM_SwitchCase.__mro__:
         if "default" in klass.__dict__:
             descriptor = klass.__dict__["default"]
             break
@@ -1736,100 +1806,30 @@ def test_javamm::switchcase_has_default():
 
 
 
-def test_javamm::trystatement_is_not_abstract():
-    assert not inspect.isabstract(javaMM::TryStatement)
+def test_javamm_assertstatement_is_not_abstract():
+    assert not inspect.isabstract(javaMM_AssertStatement)
 
 
-def test_javamm::trystatement_constructor_exists():
-    assert callable(javaMM::TryStatement.__init__)
+def test_javamm_assertstatement_constructor_exists():
+    assert callable(javaMM_AssertStatement.__init__)
 
 
-def test_javamm::trystatement_constructor_args():
-    sig = inspect.signature(javaMM::TryStatement.__init__)
+def test_javamm_assertstatement_constructor_args():
+    sig = inspect.signature(javaMM_AssertStatement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_javamm::superconstructorinvocation_is_not_abstract():
-    assert not inspect.isabstract(javaMM::SuperConstructorInvocation)
+def test_javamm_manifest_is_not_abstract():
+    assert not inspect.isabstract(javaMM_Manifest)
 
 
-def test_javamm::superconstructorinvocation_constructor_exists():
-    assert callable(javaMM::SuperConstructorInvocation.__init__)
+def test_javamm_manifest_constructor_exists():
+    assert callable(javaMM_Manifest.__init__)
 
 
-def test_javamm::superconstructorinvocation_constructor_args():
-    sig = inspect.signature(javaMM::SuperConstructorInvocation.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_javamm::throwstatement_is_not_abstract():
-    assert not inspect.isabstract(javaMM::ThrowStatement)
-
-
-def test_javamm::throwstatement_constructor_exists():
-    assert callable(javaMM::ThrowStatement.__init__)
-
-
-def test_javamm::throwstatement_constructor_args():
-    sig = inspect.signature(javaMM::ThrowStatement.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_javamm::constructorinvocation_is_not_abstract():
-    assert not inspect.isabstract(javaMM::ConstructorInvocation)
-
-
-def test_javamm::constructorinvocation_constructor_exists():
-    assert callable(javaMM::ConstructorInvocation.__init__)
-
-
-def test_javamm::constructorinvocation_constructor_args():
-    sig = inspect.signature(javaMM::ConstructorInvocation.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_javamm::returnstatement_is_not_abstract():
-    assert not inspect.isabstract(javaMM::ReturnStatement)
-
-
-def test_javamm::returnstatement_constructor_exists():
-    assert callable(javaMM::ReturnStatement.__init__)
-
-
-def test_javamm::returnstatement_constructor_args():
-    sig = inspect.signature(javaMM::ReturnStatement.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_javamm::assertstatement_is_not_abstract():
-    assert not inspect.isabstract(javaMM::AssertStatement)
-
-
-def test_javamm::assertstatement_constructor_exists():
-    assert callable(javaMM::AssertStatement.__init__)
-
-
-def test_javamm::assertstatement_constructor_args():
-    sig = inspect.signature(javaMM::AssertStatement.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_javamm::manifest_is_not_abstract():
-    assert not inspect.isabstract(javaMM::Manifest)
-
-
-def test_javamm::manifest_constructor_exists():
-    assert callable(javaMM::Manifest.__init__)
-
-
-def test_javamm::manifest_constructor_args():
-    sig = inspect.signature(javaMM::Manifest.__init__)
+def test_javamm_manifest_constructor_args():
+    sig = inspect.signature(javaMM_Manifest.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1848,47 +1848,37 @@ def test_namedelement_constructor_args():
 
 
 
-def test_javamm::classfile_is_not_abstract():
-    assert not inspect.isabstract(javaMM::ClassFile)
+def test_javamm_type_is_not_abstract():
+    assert not inspect.isabstract(javaMM_Type)
 
 
-def test_javamm::classfile_constructor_exists():
-    assert callable(javaMM::ClassFile.__init__)
+def test_javamm_type_constructor_exists():
+    assert callable(javaMM_Type.__init__)
 
 
-def test_javamm::classfile_constructor_args():
-    sig = inspect.signature(javaMM::ClassFile.__init__)
+def test_javamm_type_constructor_args():
+    sig = inspect.signature(javaMM_Type.__init__)
     params = list(sig.parameters.keys())
-    assert "originalFilePath" in params, "Missing parameter 'originalFilePath'"
-
-def test_javamm::classfile_has_originalFilePath():
-    assert hasattr(javaMM::ClassFile, "originalFilePath")
-    descriptor = None
-    for klass in javaMM::ClassFile.__mro__:
-        if "originalFilePath" in klass.__dict__:
-            descriptor = klass.__dict__["originalFilePath"]
-            break
-    assert isinstance(descriptor, property)
 
 
 
-def test_javamm::variabledeclaration_is_not_abstract():
-    assert not inspect.isabstract(javaMM::VariableDeclaration)
+def test_javamm_variabledeclaration_is_not_abstract():
+    assert not inspect.isabstract(javaMM_VariableDeclaration)
 
 
-def test_javamm::variabledeclaration_constructor_exists():
-    assert callable(javaMM::VariableDeclaration.__init__)
+def test_javamm_variabledeclaration_constructor_exists():
+    assert callable(javaMM_VariableDeclaration.__init__)
 
 
-def test_javamm::variabledeclaration_constructor_args():
-    sig = inspect.signature(javaMM::VariableDeclaration.__init__)
+def test_javamm_variabledeclaration_constructor_args():
+    sig = inspect.signature(javaMM_VariableDeclaration.__init__)
     params = list(sig.parameters.keys())
     assert "extraArrayDimensions" in params, "Missing parameter 'extraArrayDimensions'"
 
-def test_javamm::variabledeclaration_has_extraArrayDimensions():
-    assert hasattr(javaMM::VariableDeclaration, "extraArrayDimensions")
+def test_javamm_variabledeclaration_has_extraArrayDimensions():
+    assert hasattr(javaMM_VariableDeclaration, "extraArrayDimensions")
     descriptor = None
-    for klass in javaMM::VariableDeclaration.__mro__:
+    for klass in javaMM_VariableDeclaration.__mro__:
         if "extraArrayDimensions" in klass.__dict__:
             descriptor = klass.__dict__["extraArrayDimensions"]
             break
@@ -1896,51 +1886,37 @@ def test_javamm::variabledeclaration_has_extraArrayDimensions():
 
 
 
-def test_javamm::annotationmembervaluepair_is_not_abstract():
-    assert not inspect.isabstract(javaMM::AnnotationMemberValuePair)
+def test_javamm_labeledstatement_is_not_abstract():
+    assert not inspect.isabstract(javaMM_LabeledStatement)
 
 
-def test_javamm::annotationmembervaluepair_constructor_exists():
-    assert callable(javaMM::AnnotationMemberValuePair.__init__)
+def test_javamm_labeledstatement_constructor_exists():
+    assert callable(javaMM_LabeledStatement.__init__)
 
 
-def test_javamm::annotationmembervaluepair_constructor_args():
-    sig = inspect.signature(javaMM::AnnotationMemberValuePair.__init__)
+def test_javamm_labeledstatement_constructor_args():
+    sig = inspect.signature(javaMM_LabeledStatement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_javamm::unresolveditem_is_not_abstract():
-    assert not inspect.isabstract(javaMM::UnresolvedItem)
+def test_javamm_classfile_is_not_abstract():
+    assert not inspect.isabstract(javaMM_ClassFile)
 
 
-def test_javamm::unresolveditem_constructor_exists():
-    assert callable(javaMM::UnresolvedItem.__init__)
+def test_javamm_classfile_constructor_exists():
+    assert callable(javaMM_ClassFile.__init__)
 
 
-def test_javamm::unresolveditem_constructor_args():
-    sig = inspect.signature(javaMM::UnresolvedItem.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_javamm::compilationunit_is_not_abstract():
-    assert not inspect.isabstract(javaMM::CompilationUnit)
-
-
-def test_javamm::compilationunit_constructor_exists():
-    assert callable(javaMM::CompilationUnit.__init__)
-
-
-def test_javamm::compilationunit_constructor_args():
-    sig = inspect.signature(javaMM::CompilationUnit.__init__)
+def test_javamm_classfile_constructor_args():
+    sig = inspect.signature(javaMM_ClassFile.__init__)
     params = list(sig.parameters.keys())
     assert "originalFilePath" in params, "Missing parameter 'originalFilePath'"
 
-def test_javamm::compilationunit_has_originalFilePath():
-    assert hasattr(javaMM::CompilationUnit, "originalFilePath")
+def test_javamm_classfile_has_originalFilePath():
+    assert hasattr(javaMM_ClassFile, "originalFilePath")
     descriptor = None
-    for klass in javaMM::CompilationUnit.__mro__:
+    for klass in javaMM_ClassFile.__mro__:
         if "originalFilePath" in klass.__dict__:
             descriptor = klass.__dict__["originalFilePath"]
             break
@@ -1948,51 +1924,23 @@ def test_javamm::compilationunit_has_originalFilePath():
 
 
 
-def test_javamm::type_is_not_abstract():
-    assert not inspect.isabstract(javaMM::Type)
+def test_javamm_compilationunit_is_not_abstract():
+    assert not inspect.isabstract(javaMM_CompilationUnit)
 
 
-def test_javamm::type_constructor_exists():
-    assert callable(javaMM::Type.__init__)
+def test_javamm_compilationunit_constructor_exists():
+    assert callable(javaMM_CompilationUnit.__init__)
 
 
-def test_javamm::type_constructor_args():
-    sig = inspect.signature(javaMM::Type.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_javamm::labeledstatement_is_not_abstract():
-    assert not inspect.isabstract(javaMM::LabeledStatement)
-
-
-def test_javamm::labeledstatement_constructor_exists():
-    assert callable(javaMM::LabeledStatement.__init__)
-
-
-def test_javamm::labeledstatement_constructor_args():
-    sig = inspect.signature(javaMM::LabeledStatement.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_javamm::archive_is_not_abstract():
-    assert not inspect.isabstract(javaMM::Archive)
-
-
-def test_javamm::archive_constructor_exists():
-    assert callable(javaMM::Archive.__init__)
-
-
-def test_javamm::archive_constructor_args():
-    sig = inspect.signature(javaMM::Archive.__init__)
+def test_javamm_compilationunit_constructor_args():
+    sig = inspect.signature(javaMM_CompilationUnit.__init__)
     params = list(sig.parameters.keys())
     assert "originalFilePath" in params, "Missing parameter 'originalFilePath'"
 
-def test_javamm::archive_has_originalFilePath():
-    assert hasattr(javaMM::Archive, "originalFilePath")
+def test_javamm_compilationunit_has_originalFilePath():
+    assert hasattr(javaMM_CompilationUnit, "originalFilePath")
     descriptor = None
-    for klass in javaMM::Archive.__mro__:
+    for klass in javaMM_CompilationUnit.__mro__:
         if "originalFilePath" in klass.__dict__:
             descriptor = klass.__dict__["originalFilePath"]
             break
@@ -2000,16 +1948,68 @@ def test_javamm::archive_has_originalFilePath():
 
 
 
-def test_javamm::block_is_not_abstract():
-    assert not inspect.isabstract(javaMM::Block)
+def test_javamm_unresolveditem_is_not_abstract():
+    assert not inspect.isabstract(javaMM_UnresolvedItem)
 
 
-def test_javamm::block_constructor_exists():
-    assert callable(javaMM::Block.__init__)
+def test_javamm_unresolveditem_constructor_exists():
+    assert callable(javaMM_UnresolvedItem.__init__)
 
 
-def test_javamm::block_constructor_args():
-    sig = inspect.signature(javaMM::Block.__init__)
+def test_javamm_unresolveditem_constructor_args():
+    sig = inspect.signature(javaMM_UnresolvedItem.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_javamm_annotationmembervaluepair_is_not_abstract():
+    assert not inspect.isabstract(javaMM_AnnotationMemberValuePair)
+
+
+def test_javamm_annotationmembervaluepair_constructor_exists():
+    assert callable(javaMM_AnnotationMemberValuePair.__init__)
+
+
+def test_javamm_annotationmembervaluepair_constructor_args():
+    sig = inspect.signature(javaMM_AnnotationMemberValuePair.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_javamm_archive_is_not_abstract():
+    assert not inspect.isabstract(javaMM_Archive)
+
+
+def test_javamm_archive_constructor_exists():
+    assert callable(javaMM_Archive.__init__)
+
+
+def test_javamm_archive_constructor_args():
+    sig = inspect.signature(javaMM_Archive.__init__)
+    params = list(sig.parameters.keys())
+    assert "originalFilePath" in params, "Missing parameter 'originalFilePath'"
+
+def test_javamm_archive_has_originalFilePath():
+    assert hasattr(javaMM_Archive, "originalFilePath")
+    descriptor = None
+    for klass in javaMM_Archive.__mro__:
+        if "originalFilePath" in klass.__dict__:
+            descriptor = klass.__dict__["originalFilePath"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_javamm_block_is_not_abstract():
+    assert not inspect.isabstract(javaMM_Block)
+
+
+def test_javamm_block_constructor_exists():
+    assert callable(javaMM_Block.__init__)
+
+
+def test_javamm_block_constructor_args():
+    sig = inspect.signature(javaMM_Block.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -2028,100 +2028,100 @@ def test_bodydeclaration_constructor_args():
 
 
 
-def test_javamm::fielddeclaration_is_not_abstract():
-    assert not inspect.isabstract(javaMM::FieldDeclaration)
+def test_javamm_fielddeclaration_is_not_abstract():
+    assert not inspect.isabstract(javaMM_FieldDeclaration)
 
 
-def test_javamm::fielddeclaration_constructor_exists():
-    assert callable(javaMM::FieldDeclaration.__init__)
+def test_javamm_fielddeclaration_constructor_exists():
+    assert callable(javaMM_FieldDeclaration.__init__)
 
 
-def test_javamm::fielddeclaration_constructor_args():
-    sig = inspect.signature(javaMM::FieldDeclaration.__init__)
+def test_javamm_fielddeclaration_constructor_args():
+    sig = inspect.signature(javaMM_FieldDeclaration.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_javamm::initializer_is_not_abstract():
-    assert not inspect.isabstract(javaMM::Initializer)
+def test_javamm_enumconstantdeclaration_is_not_abstract():
+    assert not inspect.isabstract(javaMM_EnumConstantDeclaration)
 
 
-def test_javamm::initializer_constructor_exists():
-    assert callable(javaMM::Initializer.__init__)
+def test_javamm_enumconstantdeclaration_constructor_exists():
+    assert callable(javaMM_EnumConstantDeclaration.__init__)
 
 
-def test_javamm::initializer_constructor_args():
-    sig = inspect.signature(javaMM::Initializer.__init__)
+def test_javamm_enumconstantdeclaration_constructor_args():
+    sig = inspect.signature(javaMM_EnumConstantDeclaration.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_javamm::annotationtypememberdeclaration_is_not_abstract():
-    assert not inspect.isabstract(javaMM::AnnotationTypeMemberDeclaration)
+def test_javamm_annotationtypememberdeclaration_is_not_abstract():
+    assert not inspect.isabstract(javaMM_AnnotationTypeMemberDeclaration)
 
 
-def test_javamm::annotationtypememberdeclaration_constructor_exists():
-    assert callable(javaMM::AnnotationTypeMemberDeclaration.__init__)
+def test_javamm_annotationtypememberdeclaration_constructor_exists():
+    assert callable(javaMM_AnnotationTypeMemberDeclaration.__init__)
 
 
-def test_javamm::annotationtypememberdeclaration_constructor_args():
-    sig = inspect.signature(javaMM::AnnotationTypeMemberDeclaration.__init__)
+def test_javamm_annotationtypememberdeclaration_constructor_args():
+    sig = inspect.signature(javaMM_AnnotationTypeMemberDeclaration.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_javamm::enumconstantdeclaration_is_not_abstract():
-    assert not inspect.isabstract(javaMM::EnumConstantDeclaration)
+def test_javamm_initializer_is_not_abstract():
+    assert not inspect.isabstract(javaMM_Initializer)
 
 
-def test_javamm::enumconstantdeclaration_constructor_exists():
-    assert callable(javaMM::EnumConstantDeclaration.__init__)
+def test_javamm_initializer_constructor_exists():
+    assert callable(javaMM_Initializer.__init__)
 
 
-def test_javamm::enumconstantdeclaration_constructor_args():
-    sig = inspect.signature(javaMM::EnumConstantDeclaration.__init__)
+def test_javamm_initializer_constructor_args():
+    sig = inspect.signature(javaMM_Initializer.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_javamm::abstractmethoddeclaration_is_not_abstract():
-    assert not inspect.isabstract(javaMM::AbstractMethodDeclaration)
+def test_javamm_abstractmethoddeclaration_is_not_abstract():
+    assert not inspect.isabstract(javaMM_AbstractMethodDeclaration)
 
 
-def test_javamm::abstractmethoddeclaration_constructor_exists():
-    assert callable(javaMM::AbstractMethodDeclaration.__init__)
+def test_javamm_abstractmethoddeclaration_constructor_exists():
+    assert callable(javaMM_AbstractMethodDeclaration.__init__)
 
 
-def test_javamm::abstractmethoddeclaration_constructor_args():
-    sig = inspect.signature(javaMM::AbstractMethodDeclaration.__init__)
+def test_javamm_abstractmethoddeclaration_constructor_args():
+    sig = inspect.signature(javaMM_AbstractMethodDeclaration.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_javamm::package_is_not_abstract():
-    assert not inspect.isabstract(javaMM::Package)
+def test_javamm_package_is_not_abstract():
+    assert not inspect.isabstract(javaMM_Package)
 
 
-def test_javamm::package_constructor_exists():
-    assert callable(javaMM::Package.__init__)
+def test_javamm_package_constructor_exists():
+    assert callable(javaMM_Package.__init__)
 
 
-def test_javamm::package_constructor_args():
-    sig = inspect.signature(javaMM::Package.__init__)
+def test_javamm_package_constructor_args():
+    sig = inspect.signature(javaMM_Package.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_javamm::bodydeclaration_is_not_abstract():
-    assert not inspect.isabstract(javaMM::BodyDeclaration)
+def test_javamm_bodydeclaration_is_not_abstract():
+    assert not inspect.isabstract(javaMM_BodyDeclaration)
 
 
-def test_javamm::bodydeclaration_constructor_exists():
-    assert callable(javaMM::BodyDeclaration.__init__)
+def test_javamm_bodydeclaration_constructor_exists():
+    assert callable(javaMM_BodyDeclaration.__init__)
 
 
-def test_javamm::bodydeclaration_constructor_args():
-    sig = inspect.signature(javaMM::BodyDeclaration.__init__)
+def test_javamm_bodydeclaration_constructor_args():
+    sig = inspect.signature(javaMM_BodyDeclaration.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -2140,75 +2140,51 @@ def test_type_constructor_args():
 
 
 
-def test_javamm::parameterizedtype_is_not_abstract():
-    assert not inspect.isabstract(javaMM::ParameterizedType)
+def test_javamm_unresolvedtype_is_not_abstract():
+    assert not inspect.isabstract(javaMM_UnresolvedType)
 
 
-def test_javamm::parameterizedtype_constructor_exists():
-    assert callable(javaMM::ParameterizedType.__init__)
+def test_javamm_unresolvedtype_constructor_exists():
+    assert callable(javaMM_UnresolvedType.__init__)
 
 
-def test_javamm::parameterizedtype_constructor_args():
-    sig = inspect.signature(javaMM::ParameterizedType.__init__)
+def test_javamm_unresolvedtype_constructor_args():
+    sig = inspect.signature(javaMM_UnresolvedType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_javamm::arraytype_is_not_abstract():
-    assert not inspect.isabstract(javaMM::ArrayType)
+def test_javamm_primitivetype_is_not_abstract():
+    assert not inspect.isabstract(javaMM_PrimitiveType)
 
 
-def test_javamm::arraytype_constructor_exists():
-    assert callable(javaMM::ArrayType.__init__)
+def test_javamm_primitivetype_constructor_exists():
+    assert callable(javaMM_PrimitiveType.__init__)
 
 
-def test_javamm::arraytype_constructor_args():
-    sig = inspect.signature(javaMM::ArrayType.__init__)
-    params = list(sig.parameters.keys())
-    assert "dimensions" in params, "Missing parameter 'dimensions'"
-
-def test_javamm::arraytype_has_dimensions():
-    assert hasattr(javaMM::ArrayType, "dimensions")
-    descriptor = None
-    for klass in javaMM::ArrayType.__mro__:
-        if "dimensions" in klass.__dict__:
-            descriptor = klass.__dict__["dimensions"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_javamm::unresolvedtype_is_not_abstract():
-    assert not inspect.isabstract(javaMM::UnresolvedType)
-
-
-def test_javamm::unresolvedtype_constructor_exists():
-    assert callable(javaMM::UnresolvedType.__init__)
-
-
-def test_javamm::unresolvedtype_constructor_args():
-    sig = inspect.signature(javaMM::UnresolvedType.__init__)
+def test_javamm_primitivetype_constructor_args():
+    sig = inspect.signature(javaMM_PrimitiveType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_javamm::wildcardtype_is_not_abstract():
-    assert not inspect.isabstract(javaMM::WildCardType)
+def test_javamm_wildcardtype_is_not_abstract():
+    assert not inspect.isabstract(javaMM_WildCardType)
 
 
-def test_javamm::wildcardtype_constructor_exists():
-    assert callable(javaMM::WildCardType.__init__)
+def test_javamm_wildcardtype_constructor_exists():
+    assert callable(javaMM_WildCardType.__init__)
 
 
-def test_javamm::wildcardtype_constructor_args():
-    sig = inspect.signature(javaMM::WildCardType.__init__)
+def test_javamm_wildcardtype_constructor_args():
+    sig = inspect.signature(javaMM_WildCardType.__init__)
     params = list(sig.parameters.keys())
     assert "upperBound" in params, "Missing parameter 'upperBound'"
 
-def test_javamm::wildcardtype_has_upperBound():
-    assert hasattr(javaMM::WildCardType, "upperBound")
+def test_javamm_wildcardtype_has_upperBound():
+    assert hasattr(javaMM_WildCardType, "upperBound")
     descriptor = None
-    for klass in javaMM::WildCardType.__mro__:
+    for klass in javaMM_WildCardType.__mro__:
         if "upperBound" in klass.__dict__:
             descriptor = klass.__dict__["upperBound"]
             break
@@ -2216,30 +2192,54 @@ def test_javamm::wildcardtype_has_upperBound():
 
 
 
-def test_javamm::primitivetype_is_not_abstract():
-    assert not inspect.isabstract(javaMM::PrimitiveType)
+def test_javamm_arraytype_is_not_abstract():
+    assert not inspect.isabstract(javaMM_ArrayType)
 
 
-def test_javamm::primitivetype_constructor_exists():
-    assert callable(javaMM::PrimitiveType.__init__)
+def test_javamm_arraytype_constructor_exists():
+    assert callable(javaMM_ArrayType.__init__)
 
 
-def test_javamm::primitivetype_constructor_args():
-    sig = inspect.signature(javaMM::PrimitiveType.__init__)
+def test_javamm_arraytype_constructor_args():
+    sig = inspect.signature(javaMM_ArrayType.__init__)
+    params = list(sig.parameters.keys())
+    assert "dimensions" in params, "Missing parameter 'dimensions'"
+
+def test_javamm_arraytype_has_dimensions():
+    assert hasattr(javaMM_ArrayType, "dimensions")
+    descriptor = None
+    for klass in javaMM_ArrayType.__mro__:
+        if "dimensions" in klass.__dict__:
+            descriptor = klass.__dict__["dimensions"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_javamm_parameterizedtype_is_not_abstract():
+    assert not inspect.isabstract(javaMM_ParameterizedType)
+
+
+def test_javamm_parameterizedtype_constructor_exists():
+    assert callable(javaMM_ParameterizedType.__init__)
+
+
+def test_javamm_parameterizedtype_constructor_args():
+    sig = inspect.signature(javaMM_ParameterizedType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_javamm::abstracttypedeclaration_is_not_abstract():
-    assert not inspect.isabstract(javaMM::AbstractTypeDeclaration)
+def test_javamm_abstracttypedeclaration_is_not_abstract():
+    assert not inspect.isabstract(javaMM_AbstractTypeDeclaration)
 
 
-def test_javamm::abstracttypedeclaration_constructor_exists():
-    assert callable(javaMM::AbstractTypeDeclaration.__init__)
+def test_javamm_abstracttypedeclaration_constructor_exists():
+    assert callable(javaMM_AbstractTypeDeclaration.__init__)
 
 
-def test_javamm::abstracttypedeclaration_constructor_args():
-    sig = inspect.signature(javaMM::AbstractTypeDeclaration.__init__)
+def test_javamm_abstracttypedeclaration_constructor_args():
+    sig = inspect.signature(javaMM_AbstractTypeDeclaration.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -2258,195 +2258,309 @@ def test_astnode_constructor_args():
 
 
 
-def test_javamm::comment_is_not_abstract():
-    assert not inspect.isabstract(javaMM::Comment)
+def test_javamm_modifier_is_not_abstract():
+    assert not inspect.isabstract(javaMM_Modifier)
 
 
-def test_javamm::comment_constructor_exists():
-    assert callable(javaMM::Comment.__init__)
+def test_javamm_modifier_constructor_exists():
+    assert callable(javaMM_Modifier.__init__)
 
 
-def test_javamm::comment_constructor_args():
-    sig = inspect.signature(javaMM::Comment.__init__)
+def test_javamm_modifier_constructor_args():
+    sig = inspect.signature(javaMM_Modifier.__init__)
     params = list(sig.parameters.keys())
-    assert "content" in params, "Missing parameter 'content'"
-    assert "enclosedByParent" in params, "Missing parameter 'enclosedByParent'"
-    assert "prefixOfParent" in params, "Missing parameter 'prefixOfParent'"
+    assert "static" in params, "Missing parameter 'static'"
+    assert "transient" in params, "Missing parameter 'transient'"
+    assert "synchronized" in params, "Missing parameter 'synchronized'"
+    assert "volatile" in params, "Missing parameter 'volatile'"
+    assert "strictfp" in params, "Missing parameter 'strictfp'"
+    assert "native" in params, "Missing parameter 'native'"
+    assert "visibility" in params, "Missing parameter 'visibility'"
+    assert "inheritance" in params, "Missing parameter 'inheritance'"
 
-def test_javamm::comment_has_content():
-    assert hasattr(javaMM::Comment, "content")
+def test_javamm_modifier_has_static():
+    assert hasattr(javaMM_Modifier, "static")
     descriptor = None
-    for klass in javaMM::Comment.__mro__:
-        if "content" in klass.__dict__:
-            descriptor = klass.__dict__["content"]
+    for klass in javaMM_Modifier.__mro__:
+        if "static" in klass.__dict__:
+            descriptor = klass.__dict__["static"]
             break
     assert isinstance(descriptor, property)
 
-def test_javamm::comment_has_enclosedByParent():
-    assert hasattr(javaMM::Comment, "enclosedByParent")
+def test_javamm_modifier_has_transient():
+    assert hasattr(javaMM_Modifier, "transient")
     descriptor = None
-    for klass in javaMM::Comment.__mro__:
-        if "enclosedByParent" in klass.__dict__:
-            descriptor = klass.__dict__["enclosedByParent"]
+    for klass in javaMM_Modifier.__mro__:
+        if "transient" in klass.__dict__:
+            descriptor = klass.__dict__["transient"]
             break
     assert isinstance(descriptor, property)
 
-def test_javamm::comment_has_prefixOfParent():
-    assert hasattr(javaMM::Comment, "prefixOfParent")
+def test_javamm_modifier_has_synchronized():
+    assert hasattr(javaMM_Modifier, "synchronized")
     descriptor = None
-    for klass in javaMM::Comment.__mro__:
-        if "prefixOfParent" in klass.__dict__:
-            descriptor = klass.__dict__["prefixOfParent"]
+    for klass in javaMM_Modifier.__mro__:
+        if "synchronized" in klass.__dict__:
+            descriptor = klass.__dict__["synchronized"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_javamm_modifier_has_volatile():
+    assert hasattr(javaMM_Modifier, "volatile")
+    descriptor = None
+    for klass in javaMM_Modifier.__mro__:
+        if "volatile" in klass.__dict__:
+            descriptor = klass.__dict__["volatile"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_javamm_modifier_has_strictfp():
+    assert hasattr(javaMM_Modifier, "strictfp")
+    descriptor = None
+    for klass in javaMM_Modifier.__mro__:
+        if "strictfp" in klass.__dict__:
+            descriptor = klass.__dict__["strictfp"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_javamm_modifier_has_native():
+    assert hasattr(javaMM_Modifier, "native")
+    descriptor = None
+    for klass in javaMM_Modifier.__mro__:
+        if "native" in klass.__dict__:
+            descriptor = klass.__dict__["native"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_javamm_modifier_has_visibility():
+    assert hasattr(javaMM_Modifier, "visibility")
+    descriptor = None
+    for klass in javaMM_Modifier.__mro__:
+        if "visibility" in klass.__dict__:
+            descriptor = klass.__dict__["visibility"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_javamm_modifier_has_inheritance():
+    assert hasattr(javaMM_Modifier, "inheritance")
+    descriptor = None
+    for klass in javaMM_Modifier.__mro__:
+        if "inheritance" in klass.__dict__:
+            descriptor = klass.__dict__["inheritance"]
             break
     assert isinstance(descriptor, property)
 
 
 
-def test_javamm::namedelement_is_not_abstract():
-    assert not inspect.isabstract(javaMM::NamedElement)
+def test_javamm_statement_is_not_abstract():
+    assert not inspect.isabstract(javaMM_Statement)
 
 
-def test_javamm::namedelement_constructor_exists():
-    assert callable(javaMM::NamedElement.__init__)
+def test_javamm_statement_constructor_exists():
+    assert callable(javaMM_Statement.__init__)
 
 
-def test_javamm::namedelement_constructor_args():
-    sig = inspect.signature(javaMM::NamedElement.__init__)
+def test_javamm_statement_constructor_args():
+    sig = inspect.signature(javaMM_Statement.__init__)
     params = list(sig.parameters.keys())
-    assert "name" in params, "Missing parameter 'name'"
+
+
+
+def test_javamm_importdeclaration_is_not_abstract():
+    assert not inspect.isabstract(javaMM_ImportDeclaration)
+
+
+def test_javamm_importdeclaration_constructor_exists():
+    assert callable(javaMM_ImportDeclaration.__init__)
+
+
+def test_javamm_importdeclaration_constructor_args():
+    sig = inspect.signature(javaMM_ImportDeclaration.__init__)
+    params = list(sig.parameters.keys())
+    assert "static" in params, "Missing parameter 'static'"
+
+def test_javamm_importdeclaration_has_static():
+    assert hasattr(javaMM_ImportDeclaration, "static")
+    descriptor = None
+    for klass in javaMM_ImportDeclaration.__mro__:
+        if "static" in klass.__dict__:
+            descriptor = klass.__dict__["static"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_javamm_namedelement_is_not_abstract():
+    assert not inspect.isabstract(javaMM_NamedElement)
+
+
+def test_javamm_namedelement_constructor_exists():
+    assert callable(javaMM_NamedElement.__init__)
+
+
+def test_javamm_namedelement_constructor_args():
+    sig = inspect.signature(javaMM_NamedElement.__init__)
+    params = list(sig.parameters.keys())
     assert "proxy" in params, "Missing parameter 'proxy'"
+    assert "name" in params, "Missing parameter 'name'"
 
-def test_javamm::namedelement_has_name():
-    assert hasattr(javaMM::NamedElement, "name")
+def test_javamm_namedelement_has_proxy():
+    assert hasattr(javaMM_NamedElement, "proxy")
     descriptor = None
-    for klass in javaMM::NamedElement.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_javamm::namedelement_has_proxy():
-    assert hasattr(javaMM::NamedElement, "proxy")
-    descriptor = None
-    for klass in javaMM::NamedElement.__mro__:
+    for klass in javaMM_NamedElement.__mro__:
         if "proxy" in klass.__dict__:
             descriptor = klass.__dict__["proxy"]
             break
     assert isinstance(descriptor, property)
 
-
-
-def test_javamm::textelement_is_not_abstract():
-    assert not inspect.isabstract(javaMM::TextElement)
-
-
-def test_javamm::textelement_constructor_exists():
-    assert callable(javaMM::TextElement.__init__)
-
-
-def test_javamm::textelement_constructor_args():
-    sig = inspect.signature(javaMM::TextElement.__init__)
-    params = list(sig.parameters.keys())
-    assert "text" in params, "Missing parameter 'text'"
-
-def test_javamm::textelement_has_text():
-    assert hasattr(javaMM::TextElement, "text")
+def test_javamm_namedelement_has_name():
+    assert hasattr(javaMM_NamedElement, "name")
     descriptor = None
-    for klass in javaMM::TextElement.__mro__:
-        if "text" in klass.__dict__:
-            descriptor = klass.__dict__["text"]
+    for klass in javaMM_NamedElement.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
 
 
-def test_javamm::anonymousclassdeclaration_is_not_abstract():
-    assert not inspect.isabstract(javaMM::AnonymousClassDeclaration)
+def test_javamm_methodrefparameter_is_not_abstract():
+    assert not inspect.isabstract(javaMM_MethodRefParameter)
 
 
-def test_javamm::anonymousclassdeclaration_constructor_exists():
-    assert callable(javaMM::AnonymousClassDeclaration.__init__)
+def test_javamm_methodrefparameter_constructor_exists():
+    assert callable(javaMM_MethodRefParameter.__init__)
 
 
-def test_javamm::anonymousclassdeclaration_constructor_args():
-    sig = inspect.signature(javaMM::AnonymousClassDeclaration.__init__)
+def test_javamm_methodrefparameter_constructor_args():
+    sig = inspect.signature(javaMM_MethodRefParameter.__init__)
+    params = list(sig.parameters.keys())
+    assert "name" in params, "Missing parameter 'name'"
+    assert "varargs" in params, "Missing parameter 'varargs'"
+
+def test_javamm_methodrefparameter_has_name():
+    assert hasattr(javaMM_MethodRefParameter, "name")
+    descriptor = None
+    for klass in javaMM_MethodRefParameter.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_javamm_methodrefparameter_has_varargs():
+    assert hasattr(javaMM_MethodRefParameter, "varargs")
+    descriptor = None
+    for klass in javaMM_MethodRefParameter.__mro__:
+        if "varargs" in klass.__dict__:
+            descriptor = klass.__dict__["varargs"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_javamm_comment_is_not_abstract():
+    assert not inspect.isabstract(javaMM_Comment)
+
+
+def test_javamm_comment_constructor_exists():
+    assert callable(javaMM_Comment.__init__)
+
+
+def test_javamm_comment_constructor_args():
+    sig = inspect.signature(javaMM_Comment.__init__)
+    params = list(sig.parameters.keys())
+    assert "content" in params, "Missing parameter 'content'"
+    assert "prefixOfParent" in params, "Missing parameter 'prefixOfParent'"
+    assert "enclosedByParent" in params, "Missing parameter 'enclosedByParent'"
+
+def test_javamm_comment_has_content():
+    assert hasattr(javaMM_Comment, "content")
+    descriptor = None
+    for klass in javaMM_Comment.__mro__:
+        if "content" in klass.__dict__:
+            descriptor = klass.__dict__["content"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_javamm_comment_has_prefixOfParent():
+    assert hasattr(javaMM_Comment, "prefixOfParent")
+    descriptor = None
+    for klass in javaMM_Comment.__mro__:
+        if "prefixOfParent" in klass.__dict__:
+            descriptor = klass.__dict__["prefixOfParent"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_javamm_comment_has_enclosedByParent():
+    assert hasattr(javaMM_Comment, "enclosedByParent")
+    descriptor = None
+    for klass in javaMM_Comment.__mro__:
+        if "enclosedByParent" in klass.__dict__:
+            descriptor = klass.__dict__["enclosedByParent"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_javamm_anonymousclassdeclaration_is_not_abstract():
+    assert not inspect.isabstract(javaMM_AnonymousClassDeclaration)
+
+
+def test_javamm_anonymousclassdeclaration_constructor_exists():
+    assert callable(javaMM_AnonymousClassDeclaration.__init__)
+
+
+def test_javamm_anonymousclassdeclaration_constructor_args():
+    sig = inspect.signature(javaMM_AnonymousClassDeclaration.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_javamm::namespaceaccess_is_not_abstract():
-    assert not inspect.isabstract(javaMM::NamespaceAccess)
+def test_javamm_expression_is_not_abstract():
+    assert not inspect.isabstract(javaMM_Expression)
 
 
-def test_javamm::namespaceaccess_constructor_exists():
-    assert callable(javaMM::NamespaceAccess.__init__)
+def test_javamm_expression_constructor_exists():
+    assert callable(javaMM_Expression.__init__)
 
 
-def test_javamm::namespaceaccess_constructor_args():
-    sig = inspect.signature(javaMM::NamespaceAccess.__init__)
+def test_javamm_expression_constructor_args():
+    sig = inspect.signature(javaMM_Expression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_javamm::memberref_is_not_abstract():
-    assert not inspect.isabstract(javaMM::MemberRef)
+def test_javamm_namespaceaccess_is_not_abstract():
+    assert not inspect.isabstract(javaMM_NamespaceAccess)
 
 
-def test_javamm::memberref_constructor_exists():
-    assert callable(javaMM::MemberRef.__init__)
+def test_javamm_namespaceaccess_constructor_exists():
+    assert callable(javaMM_NamespaceAccess.__init__)
 
 
-def test_javamm::memberref_constructor_args():
-    sig = inspect.signature(javaMM::MemberRef.__init__)
+def test_javamm_namespaceaccess_constructor_args():
+    sig = inspect.signature(javaMM_NamespaceAccess.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_javamm::expression_is_not_abstract():
-    assert not inspect.isabstract(javaMM::Expression)
+def test_javamm_tagelement_is_not_abstract():
+    assert not inspect.isabstract(javaMM_TagElement)
 
 
-def test_javamm::expression_constructor_exists():
-    assert callable(javaMM::Expression.__init__)
+def test_javamm_tagelement_constructor_exists():
+    assert callable(javaMM_TagElement.__init__)
 
 
-def test_javamm::expression_constructor_args():
-    sig = inspect.signature(javaMM::Expression.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_javamm::statement_is_not_abstract():
-    assert not inspect.isabstract(javaMM::Statement)
-
-
-def test_javamm::statement_constructor_exists():
-    assert callable(javaMM::Statement.__init__)
-
-
-def test_javamm::statement_constructor_args():
-    sig = inspect.signature(javaMM::Statement.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_javamm::tagelement_is_not_abstract():
-    assert not inspect.isabstract(javaMM::TagElement)
-
-
-def test_javamm::tagelement_constructor_exists():
-    assert callable(javaMM::TagElement.__init__)
-
-
-def test_javamm::tagelement_constructor_args():
-    sig = inspect.signature(javaMM::TagElement.__init__)
+def test_javamm_tagelement_constructor_args():
+    sig = inspect.signature(javaMM_TagElement.__init__)
     params = list(sig.parameters.keys())
     assert "tagName" in params, "Missing parameter 'tagName'"
 
-def test_javamm::tagelement_has_tagName():
-    assert hasattr(javaMM::TagElement, "tagName")
+def test_javamm_tagelement_has_tagName():
+    assert hasattr(javaMM_TagElement, "tagName")
     descriptor = None
-    for klass in javaMM::TagElement.__mro__:
+    for klass in javaMM_TagElement.__mro__:
         if "tagName" in klass.__dict__:
             descriptor = klass.__dict__["tagName"]
             break
@@ -2454,280 +2568,135 @@ def test_javamm::tagelement_has_tagName():
 
 
 
-def test_javamm::modifier_is_not_abstract():
-    assert not inspect.isabstract(javaMM::Modifier)
+def test_javamm_abstractvariablescontainer_is_not_abstract():
+    assert not inspect.isabstract(javaMM_AbstractVariablesContainer)
 
 
-def test_javamm::modifier_constructor_exists():
-    assert callable(javaMM::Modifier.__init__)
+def test_javamm_abstractvariablescontainer_constructor_exists():
+    assert callable(javaMM_AbstractVariablesContainer.__init__)
 
 
-def test_javamm::modifier_constructor_args():
-    sig = inspect.signature(javaMM::Modifier.__init__)
+def test_javamm_abstractvariablescontainer_constructor_args():
+    sig = inspect.signature(javaMM_AbstractVariablesContainer.__init__)
     params = list(sig.parameters.keys())
-    assert "static" in params, "Missing parameter 'static'"
-    assert "visibility" in params, "Missing parameter 'visibility'"
-    assert "strictfp" in params, "Missing parameter 'strictfp'"
-    assert "native" in params, "Missing parameter 'native'"
-    assert "inheritance" in params, "Missing parameter 'inheritance'"
-    assert "synchronized" in params, "Missing parameter 'synchronized'"
-    assert "volatile" in params, "Missing parameter 'volatile'"
-    assert "transient" in params, "Missing parameter 'transient'"
 
-def test_javamm::modifier_has_static():
-    assert hasattr(javaMM::Modifier, "static")
-    descriptor = None
-    for klass in javaMM::Modifier.__mro__:
-        if "static" in klass.__dict__:
-            descriptor = klass.__dict__["static"]
-            break
-    assert isinstance(descriptor, property)
 
-def test_javamm::modifier_has_visibility():
-    assert hasattr(javaMM::Modifier, "visibility")
-    descriptor = None
-    for klass in javaMM::Modifier.__mro__:
-        if "visibility" in klass.__dict__:
-            descriptor = klass.__dict__["visibility"]
-            break
-    assert isinstance(descriptor, property)
 
-def test_javamm::modifier_has_strictfp():
-    assert hasattr(javaMM::Modifier, "strictfp")
-    descriptor = None
-    for klass in javaMM::Modifier.__mro__:
-        if "strictfp" in klass.__dict__:
-            descriptor = klass.__dict__["strictfp"]
-            break
-    assert isinstance(descriptor, property)
+def test_javamm_textelement_is_not_abstract():
+    assert not inspect.isabstract(javaMM_TextElement)
 
-def test_javamm::modifier_has_native():
-    assert hasattr(javaMM::Modifier, "native")
-    descriptor = None
-    for klass in javaMM::Modifier.__mro__:
-        if "native" in klass.__dict__:
-            descriptor = klass.__dict__["native"]
-            break
-    assert isinstance(descriptor, property)
 
-def test_javamm::modifier_has_inheritance():
-    assert hasattr(javaMM::Modifier, "inheritance")
-    descriptor = None
-    for klass in javaMM::Modifier.__mro__:
-        if "inheritance" in klass.__dict__:
-            descriptor = klass.__dict__["inheritance"]
-            break
-    assert isinstance(descriptor, property)
+def test_javamm_textelement_constructor_exists():
+    assert callable(javaMM_TextElement.__init__)
 
-def test_javamm::modifier_has_synchronized():
-    assert hasattr(javaMM::Modifier, "synchronized")
-    descriptor = None
-    for klass in javaMM::Modifier.__mro__:
-        if "synchronized" in klass.__dict__:
-            descriptor = klass.__dict__["synchronized"]
-            break
-    assert isinstance(descriptor, property)
 
-def test_javamm::modifier_has_volatile():
-    assert hasattr(javaMM::Modifier, "volatile")
-    descriptor = None
-    for klass in javaMM::Modifier.__mro__:
-        if "volatile" in klass.__dict__:
-            descriptor = klass.__dict__["volatile"]
-            break
-    assert isinstance(descriptor, property)
+def test_javamm_textelement_constructor_args():
+    sig = inspect.signature(javaMM_TextElement.__init__)
+    params = list(sig.parameters.keys())
+    assert "text" in params, "Missing parameter 'text'"
 
-def test_javamm::modifier_has_transient():
-    assert hasattr(javaMM::Modifier, "transient")
+def test_javamm_textelement_has_text():
+    assert hasattr(javaMM_TextElement, "text")
     descriptor = None
-    for klass in javaMM::Modifier.__mro__:
-        if "transient" in klass.__dict__:
-            descriptor = klass.__dict__["transient"]
+    for klass in javaMM_TextElement.__mro__:
+        if "text" in klass.__dict__:
+            descriptor = klass.__dict__["text"]
             break
     assert isinstance(descriptor, property)
 
 
 
-def test_javamm::methodrefparameter_is_not_abstract():
-    assert not inspect.isabstract(javaMM::MethodRefParameter)
+def test_javamm_memberref_is_not_abstract():
+    assert not inspect.isabstract(javaMM_MemberRef)
 
 
-def test_javamm::methodrefparameter_constructor_exists():
-    assert callable(javaMM::MethodRefParameter.__init__)
+def test_javamm_memberref_constructor_exists():
+    assert callable(javaMM_MemberRef.__init__)
 
 
-def test_javamm::methodrefparameter_constructor_args():
-    sig = inspect.signature(javaMM::MethodRefParameter.__init__)
+def test_javamm_memberref_constructor_args():
+    sig = inspect.signature(javaMM_MemberRef.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_javamm_abstractmethodinvocation_is_not_abstract():
+    assert not inspect.isabstract(javaMM_AbstractMethodInvocation)
+
+
+def test_javamm_abstractmethodinvocation_constructor_exists():
+    assert callable(javaMM_AbstractMethodInvocation.__init__)
+
+
+def test_javamm_abstractmethodinvocation_constructor_args():
+    sig = inspect.signature(javaMM_AbstractMethodInvocation.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_javamm_methodref_is_not_abstract():
+    assert not inspect.isabstract(javaMM_MethodRef)
+
+
+def test_javamm_methodref_constructor_exists():
+    assert callable(javaMM_MethodRef.__init__)
+
+
+def test_javamm_methodref_constructor_args():
+    sig = inspect.signature(javaMM_MethodRef.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_javamm_typeparameter_is_not_abstract():
+    assert not inspect.isabstract(javaMM_TypeParameter)
+
+
+def test_javamm_typeparameter_constructor_exists():
+    assert callable(javaMM_TypeParameter.__init__)
+
+
+def test_javamm_typeparameter_constructor_args():
+    sig = inspect.signature(javaMM_TypeParameter.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_javamm_typeaccess_is_not_abstract():
+    assert not inspect.isabstract(javaMM_TypeAccess)
+
+
+def test_javamm_typeaccess_constructor_exists():
+    assert callable(javaMM_TypeAccess.__init__)
+
+
+def test_javamm_typeaccess_constructor_args():
+    sig = inspect.signature(javaMM_TypeAccess.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_javamm_singlevariabledeclaration_is_not_abstract():
+    assert not inspect.isabstract(javaMM_SingleVariableDeclaration)
+
+
+def test_javamm_singlevariabledeclaration_constructor_exists():
+    assert callable(javaMM_SingleVariableDeclaration.__init__)
+
+
+def test_javamm_singlevariabledeclaration_constructor_args():
+    sig = inspect.signature(javaMM_SingleVariableDeclaration.__init__)
     params = list(sig.parameters.keys())
     assert "varargs" in params, "Missing parameter 'varargs'"
-    assert "name" in params, "Missing parameter 'name'"
 
-def test_javamm::methodrefparameter_has_varargs():
-    assert hasattr(javaMM::MethodRefParameter, "varargs")
+def test_javamm_singlevariabledeclaration_has_varargs():
+    assert hasattr(javaMM_SingleVariableDeclaration, "varargs")
     descriptor = None
-    for klass in javaMM::MethodRefParameter.__mro__:
+    for klass in javaMM_SingleVariableDeclaration.__mro__:
         if "varargs" in klass.__dict__:
             descriptor = klass.__dict__["varargs"]
             break
     assert isinstance(descriptor, property)
-
-def test_javamm::methodrefparameter_has_name():
-    assert hasattr(javaMM::MethodRefParameter, "name")
-    descriptor = None
-    for klass in javaMM::MethodRefParameter.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_javamm::abstractvariablescontainer_is_not_abstract():
-    assert not inspect.isabstract(javaMM::AbstractVariablesContainer)
-
-
-def test_javamm::abstractvariablescontainer_constructor_exists():
-    assert callable(javaMM::AbstractVariablesContainer.__init__)
-
-
-def test_javamm::abstractvariablescontainer_constructor_args():
-    sig = inspect.signature(javaMM::AbstractVariablesContainer.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_javamm::importdeclaration_is_not_abstract():
-    assert not inspect.isabstract(javaMM::ImportDeclaration)
-
-
-def test_javamm::importdeclaration_constructor_exists():
-    assert callable(javaMM::ImportDeclaration.__init__)
-
-
-def test_javamm::importdeclaration_constructor_args():
-    sig = inspect.signature(javaMM::ImportDeclaration.__init__)
-    params = list(sig.parameters.keys())
-    assert "static" in params, "Missing parameter 'static'"
-
-def test_javamm::importdeclaration_has_static():
-    assert hasattr(javaMM::ImportDeclaration, "static")
-    descriptor = None
-    for klass in javaMM::ImportDeclaration.__mro__:
-        if "static" in klass.__dict__:
-            descriptor = klass.__dict__["static"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_javamm::abstractmethodinvocation_is_not_abstract():
-    assert not inspect.isabstract(javaMM::AbstractMethodInvocation)
-
-
-def test_javamm::abstractmethodinvocation_constructor_exists():
-    assert callable(javaMM::AbstractMethodInvocation.__init__)
-
-
-def test_javamm::abstractmethodinvocation_constructor_args():
-    sig = inspect.signature(javaMM::AbstractMethodInvocation.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_javamm::methodref_is_not_abstract():
-    assert not inspect.isabstract(javaMM::MethodRef)
-
-
-def test_javamm::methodref_constructor_exists():
-    assert callable(javaMM::MethodRef.__init__)
-
-
-def test_javamm::methodref_constructor_args():
-    sig = inspect.signature(javaMM::MethodRef.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_javamm::typeparameter_is_not_abstract():
-    assert not inspect.isabstract(javaMM::TypeParameter)
-
-
-def test_javamm::typeparameter_constructor_exists():
-    assert callable(javaMM::TypeParameter.__init__)
-
-
-def test_javamm::typeparameter_constructor_args():
-    sig = inspect.signature(javaMM::TypeParameter.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_javamm::typeaccess_is_not_abstract():
-    assert not inspect.isabstract(javaMM::TypeAccess)
-
-
-def test_javamm::typeaccess_constructor_exists():
-    assert callable(javaMM::TypeAccess.__init__)
-
-
-def test_javamm::typeaccess_constructor_args():
-    sig = inspect.signature(javaMM::TypeAccess.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_javamm::singlevariabledeclaration_is_not_abstract():
-    assert not inspect.isabstract(javaMM::SingleVariableDeclaration)
-
-
-def test_javamm::singlevariabledeclaration_constructor_exists():
-    assert callable(javaMM::SingleVariableDeclaration.__init__)
-
-
-def test_javamm::singlevariabledeclaration_constructor_args():
-    sig = inspect.signature(javaMM::SingleVariableDeclaration.__init__)
-    params = list(sig.parameters.keys())
-    assert "varargs" in params, "Missing parameter 'varargs'"
-
-def test_javamm::singlevariabledeclaration_has_varargs():
-    assert hasattr(javaMM::SingleVariableDeclaration, "varargs")
-    descriptor = None
-    for klass in javaMM::SingleVariableDeclaration.__mro__:
-        if "varargs" in klass.__dict__:
-            descriptor = klass.__dict__["varargs"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_postfixexpressionkind_exists():
-    # Check that the Enumeration exists
-    assert PostfixExpressionKind is not None
-
-def test_postfixexpressionkind_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in PostfixExpressionKind]
-    expected_literals = [
-        "DECREMENT",
-        "INCREMENT",
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in PostfixExpressionKind"
-
-def test_inheritancekind_exists():
-    # Check that the Enumeration exists
-    assert InheritanceKind is not None
-
-def test_inheritancekind_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in InheritanceKind]
-    expected_literals = [
-        "none",
-        "abstract",
-        "final",
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in InheritanceKind"
 
 def test_assignmentkind_exists():
     # Check that the Enumeration exists
@@ -2737,18 +2706,18 @@ def test_assignmentkind_has_all_literals():
     # Collect the names of literals in this Enumeration
     enum_literals = [lit.name for lit in AssignmentKind]
     expected_literals = [
-        "REMAINDER_ASSIGN",
-        "BIT_XOR_ASSIGN",
-        "MINUS_ASSIGN",
-        "RIGHT_SHIFT_UNSIGNED_ASSIGN",
-        "BIT_AND_ASSIGN",
         "TIMES_ASSIGN",
-        "DIVIDE_ASSIGN",
-        "RIGHT_SHIFT_SIGNED_ASSIGN",
-        "ASSIGN",
-        "PLUS_ASSIGN",
         "BIT_OR_ASSIGN",
+        "ASSIGN",
+        "BIT_AND_ASSIGN",
+        "BIT_XOR_ASSIGN",
+        "RIGHT_SHIFT_UNSIGNED_ASSIGN",
+        "MINUS_ASSIGN",
+        "DIVIDE_ASSIGN",
+        "PLUS_ASSIGN",
+        "REMAINDER_ASSIGN",
         "LEFT_SHIFT_ASSIGN",
+        "RIGHT_SHIFT_SIGNED_ASSIGN",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
@@ -2762,46 +2731,44 @@ def test_infixexpressionkind_has_all_literals():
     # Collect the names of literals in this Enumeration
     enum_literals = [lit.name for lit in InfixExpressionKind]
     expected_literals = [
-        "LESS_EQUALS",
-        "RIGHT_SHIFT_UNSIGNED",
-        "LEFT_SHIFT",
-        "RIGHT_SHIFT_SIGNED",
-        "GREATER_EQUALS",
-        "GREATER",
-        "REMAINDER",
-        "EQUALS",
-        "PLUS",
         "MINUS",
+        "LESS",
+        "RIGHT_SHIFT_UNSIGNED",
+        "GREATER_EQUALS",
+        "REMAINDER",
+        "CONDITIONAL_OR",
+        "GREATER",
+        "LEFT_SHIFT",
+        "EQUALS",
+        "NOT_EQUALS",
+        "RIGHT_SHIFT_SIGNED",
         "OR",
         "DIVIDE",
-        "CONDITIONAL_OR",
-        "NOT_EQUALS",
-        "LESS",
-        "AND",
-        "CONDITIONAL_AND",
-        "XOR",
         "TIMES",
+        "LESS_EQUALS",
+        "XOR",
+        "CONDITIONAL_AND",
+        "PLUS",
+        "AND",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
         assert lit_name in enum_literals, f"Literal '' missing in InfixExpressionKind"
 
-def test_visibilitykind_exists():
+def test_postfixexpressionkind_exists():
     # Check that the Enumeration exists
-    assert VisibilityKind is not None
+    assert PostfixExpressionKind is not None
 
-def test_visibilitykind_has_all_literals():
+def test_postfixexpressionkind_has_all_literals():
     # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in VisibilityKind]
+    enum_literals = [lit.name for lit in PostfixExpressionKind]
     expected_literals = [
-        "protected",
-        "none",
-        "private",
-        "public",
+        "INCREMENT",
+        "DECREMENT",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in VisibilityKind"
+        assert lit_name in enum_literals, f"Literal '' missing in PostfixExpressionKind"
 
 def test_prefixexpressionkind_exists():
     # Check that the Enumeration exists
@@ -2811,16 +2778,49 @@ def test_prefixexpressionkind_has_all_literals():
     # Collect the names of literals in this Enumeration
     enum_literals = [lit.name for lit in PrefixExpressionKind]
     expected_literals = [
-        "COMPLEMENT",
         "MINUS",
         "NOT",
-        "DECREMENT",
-        "INCREMENT",
         "PLUS",
+        "COMPLEMENT",
+        "INCREMENT",
+        "DECREMENT",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
         assert lit_name in enum_literals, f"Literal '' missing in PrefixExpressionKind"
+
+def test_inheritancekind_exists():
+    # Check that the Enumeration exists
+    assert InheritanceKind is not None
+
+def test_inheritancekind_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in InheritanceKind]
+    expected_literals = [
+        "final",
+        "abstract",
+        "none",
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in InheritanceKind"
+
+def test_visibilitykind_exists():
+    # Check that the Enumeration exists
+    assert VisibilityKind is not None
+
+def test_visibilitykind_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in VisibilityKind]
+    expected_literals = [
+        "none",
+        "protected",
+        "private",
+        "public",
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in VisibilityKind"
 
 
 # =============================================================================
@@ -2861,96 +2861,96 @@ AnnotationTypeMemberDeclaration_strategy = st.builds(
 UnresolvedItem_strategy = st.builds(
     UnresolvedItem,
 )
-javaMM::UnresolvedSingleVariableDeclaration_strategy = st.builds(
-    javaMM::UnresolvedSingleVariableDeclaration,
+javaMM_UnresolvedLabeledStatement_strategy = st.builds(
+    javaMM_UnresolvedLabeledStatement,
 )
-javaMM::UnresolvedEnumDeclaration_strategy = st.builds(
-    javaMM::UnresolvedEnumDeclaration,
+javaMM_UnresolvedSingleVariableDeclaration_strategy = st.builds(
+    javaMM_UnresolvedSingleVariableDeclaration,
 )
-javaMM::UnresolvedAnnotationTypeMemberDeclaration_strategy = st.builds(
-    javaMM::UnresolvedAnnotationTypeMemberDeclaration,
+javaMM_UnresolvedMethodDeclaration_strategy = st.builds(
+    javaMM_UnresolvedMethodDeclaration,
 )
-javaMM::UnresolvedClassDeclaration_strategy = st.builds(
-    javaMM::UnresolvedClassDeclaration,
+javaMM_UnresolvedClassDeclaration_strategy = st.builds(
+    javaMM_UnresolvedClassDeclaration,
 )
-javaMM::UnresolvedInterfaceDeclaration_strategy = st.builds(
-    javaMM::UnresolvedInterfaceDeclaration,
+javaMM_UnresolvedInterfaceDeclaration_strategy = st.builds(
+    javaMM_UnresolvedInterfaceDeclaration,
 )
-javaMM::UnresolvedMethodDeclaration_strategy = st.builds(
-    javaMM::UnresolvedMethodDeclaration,
+javaMM_UnresolvedAnnotationTypeMemberDeclaration_strategy = st.builds(
+    javaMM_UnresolvedAnnotationTypeMemberDeclaration,
 )
-javaMM::UnresolvedVariableDeclarationFragment_strategy = st.builds(
-    javaMM::UnresolvedVariableDeclarationFragment,
+javaMM_UnresolvedVariableDeclarationFragment_strategy = st.builds(
+    javaMM_UnresolvedVariableDeclarationFragment,
 )
-javaMM::UnresolvedLabeledStatement_strategy = st.builds(
-    javaMM::UnresolvedLabeledStatement,
+javaMM_UnresolvedEnumDeclaration_strategy = st.builds(
+    javaMM_UnresolvedEnumDeclaration,
 )
 AnnotationTypeDeclaration_strategy = st.builds(
     AnnotationTypeDeclaration,
 )
-javaMM::UnresolvedAnnotationDeclaration_strategy = st.builds(
-    javaMM::UnresolvedAnnotationDeclaration,
+javaMM_UnresolvedAnnotationDeclaration_strategy = st.builds(
+    javaMM_UnresolvedAnnotationDeclaration,
 )
 AbstractTypeQualifiedExpression_strategy = st.builds(
     AbstractTypeQualifiedExpression,
 )
-javaMM::ThisExpression_strategy = st.builds(
-    javaMM::ThisExpression,
+javaMM_ThisExpression_strategy = st.builds(
+    javaMM_ThisExpression,
 )
-javaMM::SuperFieldAccess_strategy = st.builds(
-    javaMM::SuperFieldAccess,
+javaMM_SuperFieldAccess_strategy = st.builds(
+    javaMM_SuperFieldAccess,
 )
 PrimitiveType_strategy = st.builds(
     PrimitiveType,
 )
-javaMM::PrimitiveTypeChar_strategy = st.builds(
-    javaMM::PrimitiveTypeChar,
+javaMM_PrimitiveTypeChar_strategy = st.builds(
+    javaMM_PrimitiveTypeChar,
 )
-javaMM::PrimitiveTypeShort_strategy = st.builds(
-    javaMM::PrimitiveTypeShort,
+javaMM_PrimitiveTypeInt_strategy = st.builds(
+    javaMM_PrimitiveTypeInt,
 )
-javaMM::PrimitiveTypeLong_strategy = st.builds(
-    javaMM::PrimitiveTypeLong,
+javaMM_PrimitiveTypeLong_strategy = st.builds(
+    javaMM_PrimitiveTypeLong,
 )
-javaMM::PrimitiveTypeVoid_strategy = st.builds(
-    javaMM::PrimitiveTypeVoid,
+javaMM_PrimitiveTypeDouble_strategy = st.builds(
+    javaMM_PrimitiveTypeDouble,
 )
-javaMM::PrimitiveTypeInt_strategy = st.builds(
-    javaMM::PrimitiveTypeInt,
+javaMM_PrimitiveTypeFloat_strategy = st.builds(
+    javaMM_PrimitiveTypeFloat,
 )
-javaMM::PrimitiveTypeByte_strategy = st.builds(
-    javaMM::PrimitiveTypeByte,
+javaMM_PrimitiveTypeByte_strategy = st.builds(
+    javaMM_PrimitiveTypeByte,
 )
-javaMM::PrimitiveTypeDouble_strategy = st.builds(
-    javaMM::PrimitiveTypeDouble,
+javaMM_PrimitiveTypeVoid_strategy = st.builds(
+    javaMM_PrimitiveTypeVoid,
 )
-javaMM::PrimitiveTypeFloat_strategy = st.builds(
-    javaMM::PrimitiveTypeFloat,
+javaMM_PrimitiveTypeShort_strategy = st.builds(
+    javaMM_PrimitiveTypeShort,
 )
-javaMM::PrimitiveTypeBoolean_strategy = st.builds(
-    javaMM::PrimitiveTypeBoolean,
+javaMM_PrimitiveTypeBoolean_strategy = st.builds(
+    javaMM_PrimitiveTypeBoolean,
 )
 NamespaceAccess_strategy = st.builds(
     NamespaceAccess,
 )
-javaMM::PackageAccess_strategy = st.builds(
-    javaMM::PackageAccess,
+javaMM_PackageAccess_strategy = st.builds(
+    javaMM_PackageAccess,
 )
-javaMM::Model_strategy = st.builds(
-    javaMM::Model,
+javaMM_Model_strategy = st.builds(
+    javaMM_Model,
     name=
         safe_text
 )
-javaMM::ManifestEntry_strategy = st.builds(
-    javaMM::ManifestEntry,
+javaMM_ManifestEntry_strategy = st.builds(
+    javaMM_ManifestEntry,
     name=
         safe_text
 )
-javaMM::ManifestAttribute_strategy = st.builds(
-    javaMM::ManifestAttribute,
-    key=
-        safe_text,
+javaMM_ManifestAttribute_strategy = st.builds(
+    javaMM_ManifestAttribute,
     value=
+        safe_text,
+    key=
         safe_text
 )
 VariableDeclaration_strategy = st.builds(
@@ -2962,411 +2962,411 @@ AbstractVariablesContainer_strategy = st.builds(
 TypeDeclaration_strategy = st.builds(
     TypeDeclaration,
 )
-javaMM::InterfaceDeclaration_strategy = st.builds(
-    javaMM::InterfaceDeclaration,
+javaMM_InterfaceDeclaration_strategy = st.builds(
+    javaMM_InterfaceDeclaration,
 )
-javaMM::ClassDeclaration_strategy = st.builds(
-    javaMM::ClassDeclaration,
+javaMM_ClassDeclaration_strategy = st.builds(
+    javaMM_ClassDeclaration,
 )
 AbstractMethodDeclaration_strategy = st.builds(
     AbstractMethodDeclaration,
 )
-javaMM::MethodDeclaration_strategy = st.builds(
-    javaMM::MethodDeclaration,
+javaMM_MethodDeclaration_strategy = st.builds(
+    javaMM_MethodDeclaration,
     extraArrayDimensions=
         st.integers()
 )
-javaMM::ConstructorDeclaration_strategy = st.builds(
-    javaMM::ConstructorDeclaration,
+javaMM_ConstructorDeclaration_strategy = st.builds(
+    javaMM_ConstructorDeclaration,
 )
 AbstractMethodInvocation_strategy = st.builds(
     AbstractMethodInvocation,
 )
-javaMM::SuperMethodInvocation_strategy = st.builds(
-    javaMM::SuperMethodInvocation,
+javaMM_SuperMethodInvocation_strategy = st.builds(
+    javaMM_SuperMethodInvocation,
 )
 Comment_strategy = st.builds(
     Comment,
 )
-javaMM::LineComment_strategy = st.builds(
-    javaMM::LineComment,
+javaMM_Javadoc_strategy = st.builds(
+    javaMM_Javadoc,
 )
-javaMM::Javadoc_strategy = st.builds(
-    javaMM::Javadoc,
+javaMM_LineComment_strategy = st.builds(
+    javaMM_LineComment,
 )
-javaMM::BlockComment_strategy = st.builds(
-    javaMM::BlockComment,
+javaMM_BlockComment_strategy = st.builds(
+    javaMM_BlockComment,
 )
-javaMM::VariableDeclarationFragment_strategy = st.builds(
-    javaMM::VariableDeclarationFragment,
+javaMM_VariableDeclarationFragment_strategy = st.builds(
+    javaMM_VariableDeclarationFragment,
 )
 Expression_strategy = st.builds(
     Expression,
 )
-javaMM::Annotation_strategy = st.builds(
-    javaMM::Annotation,
+javaMM_ConditionalExpression_strategy = st.builds(
+    javaMM_ConditionalExpression,
 )
-javaMM::CharacterLiteral_strategy = st.builds(
-    javaMM::CharacterLiteral,
-    escapedValue=
-        safe_text
-)
-javaMM::BooleanLiteral_strategy = st.builds(
-    javaMM::BooleanLiteral,
-    value=
-        st.booleans()
-)
-javaMM::ArrayCreation_strategy = st.builds(
-    javaMM::ArrayCreation,
-)
-javaMM::Assignment_strategy = st.builds(
-    javaMM::Assignment,
-    operator=
-        safe_text
-)
-javaMM::ConditionalExpression_strategy = st.builds(
-    javaMM::ConditionalExpression,
-)
-javaMM::CastExpression_strategy = st.builds(
-    javaMM::CastExpression,
-)
-javaMM::UnresolvedItemAccess_strategy = st.builds(
-    javaMM::UnresolvedItemAccess,
-)
-javaMM::ArrayInitializer_strategy = st.builds(
-    javaMM::ArrayInitializer,
-)
-javaMM::MethodInvocation_strategy = st.builds(
-    javaMM::MethodInvocation,
-)
-javaMM::SingleVariableAccess_strategy = st.builds(
-    javaMM::SingleVariableAccess,
-)
-javaMM::FieldAccess_strategy = st.builds(
-    javaMM::FieldAccess,
-)
-javaMM::InfixExpression_strategy = st.builds(
-    javaMM::InfixExpression,
-    operator=
-        safe_text
-)
-javaMM::ArrayLengthAccess_strategy = st.builds(
-    javaMM::ArrayLengthAccess,
-)
-javaMM::NumberLiteral_strategy = st.builds(
-    javaMM::NumberLiteral,
+javaMM_NumberLiteral_strategy = st.builds(
+    javaMM_NumberLiteral,
     tokenValue=
         safe_text
 )
-javaMM::NullLiteral_strategy = st.builds(
-    javaMM::NullLiteral,
+javaMM_InfixExpression_strategy = st.builds(
+    javaMM_InfixExpression,
+    operator=
+        safe_text
 )
-javaMM::ParenthesizedExpression_strategy = st.builds(
-    javaMM::ParenthesizedExpression,
+javaMM_VariableDeclarationExpression_strategy = st.builds(
+    javaMM_VariableDeclarationExpression,
 )
-javaMM::StringLiteral_strategy = st.builds(
-    javaMM::StringLiteral,
+javaMM_FieldAccess_strategy = st.builds(
+    javaMM_FieldAccess,
+)
+javaMM_ArrayAccess_strategy = st.builds(
+    javaMM_ArrayAccess,
+)
+javaMM_Assignment_strategy = st.builds(
+    javaMM_Assignment,
+    operator=
+        safe_text
+)
+javaMM_TypeLiteral_strategy = st.builds(
+    javaMM_TypeLiteral,
+)
+javaMM_CharacterLiteral_strategy = st.builds(
+    javaMM_CharacterLiteral,
     escapedValue=
         safe_text
 )
-javaMM::PostfixExpression_strategy = st.builds(
-    javaMM::PostfixExpression,
+javaMM_UnresolvedItemAccess_strategy = st.builds(
+    javaMM_UnresolvedItemAccess,
+)
+javaMM_StringLiteral_strategy = st.builds(
+    javaMM_StringLiteral,
+    escapedValue=
+        safe_text
+)
+javaMM_Annotation_strategy = st.builds(
+    javaMM_Annotation,
+)
+javaMM_InstanceofExpression_strategy = st.builds(
+    javaMM_InstanceofExpression,
+)
+javaMM_ArrayInitializer_strategy = st.builds(
+    javaMM_ArrayInitializer,
+)
+javaMM_NullLiteral_strategy = st.builds(
+    javaMM_NullLiteral,
+)
+javaMM_ArrayCreation_strategy = st.builds(
+    javaMM_ArrayCreation,
+)
+javaMM_CastExpression_strategy = st.builds(
+    javaMM_CastExpression,
+)
+javaMM_SingleVariableAccess_strategy = st.builds(
+    javaMM_SingleVariableAccess,
+)
+javaMM_ArrayLengthAccess_strategy = st.builds(
+    javaMM_ArrayLengthAccess,
+)
+javaMM_PostfixExpression_strategy = st.builds(
+    javaMM_PostfixExpression,
     operator=
         safe_text
 )
-javaMM::ArrayAccess_strategy = st.builds(
-    javaMM::ArrayAccess,
+javaMM_MethodInvocation_strategy = st.builds(
+    javaMM_MethodInvocation,
 )
-javaMM::PrefixExpression_strategy = st.builds(
-    javaMM::PrefixExpression,
+javaMM_ParenthesizedExpression_strategy = st.builds(
+    javaMM_ParenthesizedExpression,
+)
+javaMM_BooleanLiteral_strategy = st.builds(
+    javaMM_BooleanLiteral,
+    value=
+        st.booleans()
+)
+javaMM_PrefixExpression_strategy = st.builds(
+    javaMM_PrefixExpression,
     operator=
         safe_text
 )
-javaMM::VariableDeclarationExpression_strategy = st.builds(
-    javaMM::VariableDeclarationExpression,
+javaMM_AbstractTypeQualifiedExpression_strategy = st.builds(
+    javaMM_AbstractTypeQualifiedExpression,
 )
-javaMM::InstanceofExpression_strategy = st.builds(
-    javaMM::InstanceofExpression,
-)
-javaMM::TypeLiteral_strategy = st.builds(
-    javaMM::TypeLiteral,
-)
-javaMM::AbstractTypeQualifiedExpression_strategy = st.builds(
-    javaMM::AbstractTypeQualifiedExpression,
-)
-javaMM::ClassInstanceCreation_strategy = st.builds(
-    javaMM::ClassInstanceCreation,
+javaMM_ClassInstanceCreation_strategy = st.builds(
+    javaMM_ClassInstanceCreation,
 )
 AbstractTypeDeclaration_strategy = st.builds(
     AbstractTypeDeclaration,
 )
-javaMM::UnresolvedTypeDeclaration_strategy = st.builds(
-    javaMM::UnresolvedTypeDeclaration,
+javaMM_TypeDeclaration_strategy = st.builds(
+    javaMM_TypeDeclaration,
 )
-javaMM::EnumDeclaration_strategy = st.builds(
-    javaMM::EnumDeclaration,
+javaMM_EnumDeclaration_strategy = st.builds(
+    javaMM_EnumDeclaration,
 )
-javaMM::TypeDeclaration_strategy = st.builds(
-    javaMM::TypeDeclaration,
+javaMM_UnresolvedTypeDeclaration_strategy = st.builds(
+    javaMM_UnresolvedTypeDeclaration,
 )
-javaMM::AnnotationTypeDeclaration_strategy = st.builds(
-    javaMM::AnnotationTypeDeclaration,
+javaMM_AnnotationTypeDeclaration_strategy = st.builds(
+    javaMM_AnnotationTypeDeclaration,
 )
-javaMM::ASTNode_strategy = st.builds(
-    javaMM::ASTNode,
+javaMM_ASTNode_strategy = st.builds(
+    javaMM_ASTNode,
 )
 Statement_strategy = st.builds(
     Statement,
 )
-javaMM::SynchronizedStatement_strategy = st.builds(
-    javaMM::SynchronizedStatement,
+javaMM_ReturnStatement_strategy = st.builds(
+    javaMM_ReturnStatement,
 )
-javaMM::VariableDeclarationStatement_strategy = st.builds(
-    javaMM::VariableDeclarationStatement,
+javaMM_IfStatement_strategy = st.builds(
+    javaMM_IfStatement,
+)
+javaMM_TypeDeclarationStatement_strategy = st.builds(
+    javaMM_TypeDeclarationStatement,
+)
+javaMM_EnhancedForStatement_strategy = st.builds(
+    javaMM_EnhancedForStatement,
+)
+javaMM_TryStatement_strategy = st.builds(
+    javaMM_TryStatement,
+)
+javaMM_CatchClause_strategy = st.builds(
+    javaMM_CatchClause,
+)
+javaMM_ThrowStatement_strategy = st.builds(
+    javaMM_ThrowStatement,
+)
+javaMM_DoStatement_strategy = st.builds(
+    javaMM_DoStatement,
+)
+javaMM_ConstructorInvocation_strategy = st.builds(
+    javaMM_ConstructorInvocation,
+)
+javaMM_ForStatement_strategy = st.builds(
+    javaMM_ForStatement,
+)
+javaMM_SynchronizedStatement_strategy = st.builds(
+    javaMM_SynchronizedStatement,
+)
+javaMM_BreakStatement_strategy = st.builds(
+    javaMM_BreakStatement,
+)
+javaMM_SwitchStatement_strategy = st.builds(
+    javaMM_SwitchStatement,
+)
+javaMM_ExpressionStatement_strategy = st.builds(
+    javaMM_ExpressionStatement,
+)
+javaMM_VariableDeclarationStatement_strategy = st.builds(
+    javaMM_VariableDeclarationStatement,
     extraArrayDimensions=
         st.integers()
 )
-javaMM::ExpressionStatement_strategy = st.builds(
-    javaMM::ExpressionStatement,
+javaMM_ContinueStatement_strategy = st.builds(
+    javaMM_ContinueStatement,
 )
-javaMM::EmptyStatement_strategy = st.builds(
-    javaMM::EmptyStatement,
+javaMM_SuperConstructorInvocation_strategy = st.builds(
+    javaMM_SuperConstructorInvocation,
 )
-javaMM::ForStatement_strategy = st.builds(
-    javaMM::ForStatement,
+javaMM_WhileStatement_strategy = st.builds(
+    javaMM_WhileStatement,
 )
-javaMM::IfStatement_strategy = st.builds(
-    javaMM::IfStatement,
+javaMM_EmptyStatement_strategy = st.builds(
+    javaMM_EmptyStatement,
 )
-javaMM::DoStatement_strategy = st.builds(
-    javaMM::DoStatement,
-)
-javaMM::CatchClause_strategy = st.builds(
-    javaMM::CatchClause,
-)
-javaMM::ContinueStatement_strategy = st.builds(
-    javaMM::ContinueStatement,
-)
-javaMM::EnhancedForStatement_strategy = st.builds(
-    javaMM::EnhancedForStatement,
-)
-javaMM::WhileStatement_strategy = st.builds(
-    javaMM::WhileStatement,
-)
-javaMM::SwitchStatement_strategy = st.builds(
-    javaMM::SwitchStatement,
-)
-javaMM::TypeDeclarationStatement_strategy = st.builds(
-    javaMM::TypeDeclarationStatement,
-)
-javaMM::BreakStatement_strategy = st.builds(
-    javaMM::BreakStatement,
-)
-javaMM::SwitchCase_strategy = st.builds(
-    javaMM::SwitchCase,
+javaMM_SwitchCase_strategy = st.builds(
+    javaMM_SwitchCase,
     default=
         st.booleans()
 )
-javaMM::TryStatement_strategy = st.builds(
-    javaMM::TryStatement,
+javaMM_AssertStatement_strategy = st.builds(
+    javaMM_AssertStatement,
 )
-javaMM::SuperConstructorInvocation_strategy = st.builds(
-    javaMM::SuperConstructorInvocation,
-)
-javaMM::ThrowStatement_strategy = st.builds(
-    javaMM::ThrowStatement,
-)
-javaMM::ConstructorInvocation_strategy = st.builds(
-    javaMM::ConstructorInvocation,
-)
-javaMM::ReturnStatement_strategy = st.builds(
-    javaMM::ReturnStatement,
-)
-javaMM::AssertStatement_strategy = st.builds(
-    javaMM::AssertStatement,
-)
-javaMM::Manifest_strategy = st.builds(
-    javaMM::Manifest,
+javaMM_Manifest_strategy = st.builds(
+    javaMM_Manifest,
 )
 NamedElement_strategy = st.builds(
     NamedElement,
 )
-javaMM::ClassFile_strategy = st.builds(
-    javaMM::ClassFile,
-    originalFilePath=
-        safe_text
+javaMM_Type_strategy = st.builds(
+    javaMM_Type,
 )
-javaMM::VariableDeclaration_strategy = st.builds(
-    javaMM::VariableDeclaration,
+javaMM_VariableDeclaration_strategy = st.builds(
+    javaMM_VariableDeclaration,
     extraArrayDimensions=
         st.integers()
 )
-javaMM::AnnotationMemberValuePair_strategy = st.builds(
-    javaMM::AnnotationMemberValuePair,
+javaMM_LabeledStatement_strategy = st.builds(
+    javaMM_LabeledStatement,
 )
-javaMM::UnresolvedItem_strategy = st.builds(
-    javaMM::UnresolvedItem,
-)
-javaMM::CompilationUnit_strategy = st.builds(
-    javaMM::CompilationUnit,
+javaMM_ClassFile_strategy = st.builds(
+    javaMM_ClassFile,
     originalFilePath=
         safe_text
 )
-javaMM::Type_strategy = st.builds(
-    javaMM::Type,
-)
-javaMM::LabeledStatement_strategy = st.builds(
-    javaMM::LabeledStatement,
-)
-javaMM::Archive_strategy = st.builds(
-    javaMM::Archive,
+javaMM_CompilationUnit_strategy = st.builds(
+    javaMM_CompilationUnit,
     originalFilePath=
         safe_text
 )
-javaMM::Block_strategy = st.builds(
-    javaMM::Block,
+javaMM_UnresolvedItem_strategy = st.builds(
+    javaMM_UnresolvedItem,
+)
+javaMM_AnnotationMemberValuePair_strategy = st.builds(
+    javaMM_AnnotationMemberValuePair,
+)
+javaMM_Archive_strategy = st.builds(
+    javaMM_Archive,
+    originalFilePath=
+        safe_text
+)
+javaMM_Block_strategy = st.builds(
+    javaMM_Block,
 )
 BodyDeclaration_strategy = st.builds(
     BodyDeclaration,
 )
-javaMM::FieldDeclaration_strategy = st.builds(
-    javaMM::FieldDeclaration,
+javaMM_FieldDeclaration_strategy = st.builds(
+    javaMM_FieldDeclaration,
 )
-javaMM::Initializer_strategy = st.builds(
-    javaMM::Initializer,
+javaMM_EnumConstantDeclaration_strategy = st.builds(
+    javaMM_EnumConstantDeclaration,
 )
-javaMM::AnnotationTypeMemberDeclaration_strategy = st.builds(
-    javaMM::AnnotationTypeMemberDeclaration,
+javaMM_AnnotationTypeMemberDeclaration_strategy = st.builds(
+    javaMM_AnnotationTypeMemberDeclaration,
 )
-javaMM::EnumConstantDeclaration_strategy = st.builds(
-    javaMM::EnumConstantDeclaration,
+javaMM_Initializer_strategy = st.builds(
+    javaMM_Initializer,
 )
-javaMM::AbstractMethodDeclaration_strategy = st.builds(
-    javaMM::AbstractMethodDeclaration,
+javaMM_AbstractMethodDeclaration_strategy = st.builds(
+    javaMM_AbstractMethodDeclaration,
 )
-javaMM::Package_strategy = st.builds(
-    javaMM::Package,
+javaMM_Package_strategy = st.builds(
+    javaMM_Package,
 )
-javaMM::BodyDeclaration_strategy = st.builds(
-    javaMM::BodyDeclaration,
+javaMM_BodyDeclaration_strategy = st.builds(
+    javaMM_BodyDeclaration,
 )
 Type_strategy = st.builds(
     Type,
 )
-javaMM::ParameterizedType_strategy = st.builds(
-    javaMM::ParameterizedType,
+javaMM_UnresolvedType_strategy = st.builds(
+    javaMM_UnresolvedType,
 )
-javaMM::ArrayType_strategy = st.builds(
-    javaMM::ArrayType,
-    dimensions=
-        st.integers()
+javaMM_PrimitiveType_strategy = st.builds(
+    javaMM_PrimitiveType,
 )
-javaMM::UnresolvedType_strategy = st.builds(
-    javaMM::UnresolvedType,
-)
-javaMM::WildCardType_strategy = st.builds(
-    javaMM::WildCardType,
+javaMM_WildCardType_strategy = st.builds(
+    javaMM_WildCardType,
     upperBound=
         st.booleans()
 )
-javaMM::PrimitiveType_strategy = st.builds(
-    javaMM::PrimitiveType,
+javaMM_ArrayType_strategy = st.builds(
+    javaMM_ArrayType,
+    dimensions=
+        st.integers()
 )
-javaMM::AbstractTypeDeclaration_strategy = st.builds(
-    javaMM::AbstractTypeDeclaration,
+javaMM_ParameterizedType_strategy = st.builds(
+    javaMM_ParameterizedType,
+)
+javaMM_AbstractTypeDeclaration_strategy = st.builds(
+    javaMM_AbstractTypeDeclaration,
 )
 ASTNode_strategy = st.builds(
     ASTNode,
 )
-javaMM::Comment_strategy = st.builds(
-    javaMM::Comment,
-    content=
-        safe_text,
-    enclosedByParent=
-        st.booleans(),
-    prefixOfParent=
-        st.booleans()
-)
-javaMM::NamedElement_strategy = st.builds(
-    javaMM::NamedElement,
-    name=
-        safe_text,
-    proxy=
-        st.booleans()
-)
-javaMM::TextElement_strategy = st.builds(
-    javaMM::TextElement,
-    text=
-        safe_text
-)
-javaMM::AnonymousClassDeclaration_strategy = st.builds(
-    javaMM::AnonymousClassDeclaration,
-)
-javaMM::NamespaceAccess_strategy = st.builds(
-    javaMM::NamespaceAccess,
-)
-javaMM::MemberRef_strategy = st.builds(
-    javaMM::MemberRef,
-)
-javaMM::Expression_strategy = st.builds(
-    javaMM::Expression,
-)
-javaMM::Statement_strategy = st.builds(
-    javaMM::Statement,
-)
-javaMM::TagElement_strategy = st.builds(
-    javaMM::TagElement,
-    tagName=
-        safe_text
-)
-javaMM::Modifier_strategy = st.builds(
-    javaMM::Modifier,
+javaMM_Modifier_strategy = st.builds(
+    javaMM_Modifier,
     static=
         st.booleans(),
-    visibility=
-        safe_text,
-    strictfp=
+    transient=
         st.booleans(),
-    native=
-        st.booleans(),
-    inheritance=
-        safe_text,
     synchronized=
         st.booleans(),
     volatile=
         st.booleans(),
-    transient=
+    strictfp=
+        st.booleans(),
+    native=
+        st.booleans(),
+    visibility=
+        safe_text,
+    inheritance=
+        safe_text
+)
+javaMM_Statement_strategy = st.builds(
+    javaMM_Statement,
+)
+javaMM_ImportDeclaration_strategy = st.builds(
+    javaMM_ImportDeclaration,
+    static=
         st.booleans()
 )
-javaMM::MethodRefParameter_strategy = st.builds(
-    javaMM::MethodRefParameter,
-    varargs=
+javaMM_NamedElement_strategy = st.builds(
+    javaMM_NamedElement,
+    proxy=
         st.booleans(),
     name=
         safe_text
 )
-javaMM::AbstractVariablesContainer_strategy = st.builds(
-    javaMM::AbstractVariablesContainer,
-)
-javaMM::ImportDeclaration_strategy = st.builds(
-    javaMM::ImportDeclaration,
-    static=
+javaMM_MethodRefParameter_strategy = st.builds(
+    javaMM_MethodRefParameter,
+    name=
+        safe_text,
+    varargs=
         st.booleans()
 )
-javaMM::AbstractMethodInvocation_strategy = st.builds(
-    javaMM::AbstractMethodInvocation,
+javaMM_Comment_strategy = st.builds(
+    javaMM_Comment,
+    content=
+        safe_text,
+    prefixOfParent=
+        st.booleans(),
+    enclosedByParent=
+        st.booleans()
 )
-javaMM::MethodRef_strategy = st.builds(
-    javaMM::MethodRef,
+javaMM_AnonymousClassDeclaration_strategy = st.builds(
+    javaMM_AnonymousClassDeclaration,
 )
-javaMM::TypeParameter_strategy = st.builds(
-    javaMM::TypeParameter,
+javaMM_Expression_strategy = st.builds(
+    javaMM_Expression,
 )
-javaMM::TypeAccess_strategy = st.builds(
-    javaMM::TypeAccess,
+javaMM_NamespaceAccess_strategy = st.builds(
+    javaMM_NamespaceAccess,
 )
-javaMM::SingleVariableDeclaration_strategy = st.builds(
-    javaMM::SingleVariableDeclaration,
+javaMM_TagElement_strategy = st.builds(
+    javaMM_TagElement,
+    tagName=
+        safe_text
+)
+javaMM_AbstractVariablesContainer_strategy = st.builds(
+    javaMM_AbstractVariablesContainer,
+)
+javaMM_TextElement_strategy = st.builds(
+    javaMM_TextElement,
+    text=
+        safe_text
+)
+javaMM_MemberRef_strategy = st.builds(
+    javaMM_MemberRef,
+)
+javaMM_AbstractMethodInvocation_strategy = st.builds(
+    javaMM_AbstractMethodInvocation,
+)
+javaMM_MethodRef_strategy = st.builds(
+    javaMM_MethodRef,
+)
+javaMM_TypeParameter_strategy = st.builds(
+    javaMM_TypeParameter,
+)
+javaMM_TypeAccess_strategy = st.builds(
+    javaMM_TypeAccess,
+)
+javaMM_SingleVariableDeclaration_strategy = st.builds(
+    javaMM_SingleVariableDeclaration,
     varargs=
         st.booleans()
 )
@@ -3416,189 +3416,177 @@ def test_annotationtypememberdeclaration_instantiation(instance):
 def test_unresolveditem_instantiation(instance):
     assert isinstance(instance, UnresolvedItem)
 
-@given(instance=javaMM::UnresolvedSingleVariableDeclaration_strategy)
+@given(instance=javaMM_UnresolvedLabeledStatement_strategy)
 @settings(max_examples=50)
-def test_javamm::unresolvedsinglevariabledeclaration_instantiation(instance):
-    assert isinstance(instance, javaMM::UnresolvedSingleVariableDeclaration)
+def test_javamm_unresolvedlabeledstatement_instantiation(instance):
+    assert isinstance(instance, javaMM_UnresolvedLabeledStatement)
 
-@given(instance=javaMM::UnresolvedEnumDeclaration_strategy)
+@given(instance=javaMM_UnresolvedSingleVariableDeclaration_strategy)
 @settings(max_examples=50)
-def test_javamm::unresolvedenumdeclaration_instantiation(instance):
-    assert isinstance(instance, javaMM::UnresolvedEnumDeclaration)
+def test_javamm_unresolvedsinglevariabledeclaration_instantiation(instance):
+    assert isinstance(instance, javaMM_UnresolvedSingleVariableDeclaration)
 
-@given(instance=javaMM::UnresolvedAnnotationTypeMemberDeclaration_strategy)
+@given(instance=javaMM_UnresolvedMethodDeclaration_strategy)
 @settings(max_examples=50)
-def test_javamm::unresolvedannotationtypememberdeclaration_instantiation(instance):
-    assert isinstance(instance, javaMM::UnresolvedAnnotationTypeMemberDeclaration)
+def test_javamm_unresolvedmethoddeclaration_instantiation(instance):
+    assert isinstance(instance, javaMM_UnresolvedMethodDeclaration)
 
-@given(instance=javaMM::UnresolvedClassDeclaration_strategy)
+@given(instance=javaMM_UnresolvedClassDeclaration_strategy)
 @settings(max_examples=50)
-def test_javamm::unresolvedclassdeclaration_instantiation(instance):
-    assert isinstance(instance, javaMM::UnresolvedClassDeclaration)
+def test_javamm_unresolvedclassdeclaration_instantiation(instance):
+    assert isinstance(instance, javaMM_UnresolvedClassDeclaration)
 
-@given(instance=javaMM::UnresolvedInterfaceDeclaration_strategy)
+@given(instance=javaMM_UnresolvedInterfaceDeclaration_strategy)
 @settings(max_examples=50)
-def test_javamm::unresolvedinterfacedeclaration_instantiation(instance):
-    assert isinstance(instance, javaMM::UnresolvedInterfaceDeclaration)
+def test_javamm_unresolvedinterfacedeclaration_instantiation(instance):
+    assert isinstance(instance, javaMM_UnresolvedInterfaceDeclaration)
 
-@given(instance=javaMM::UnresolvedMethodDeclaration_strategy)
+@given(instance=javaMM_UnresolvedAnnotationTypeMemberDeclaration_strategy)
 @settings(max_examples=50)
-def test_javamm::unresolvedmethoddeclaration_instantiation(instance):
-    assert isinstance(instance, javaMM::UnresolvedMethodDeclaration)
+def test_javamm_unresolvedannotationtypememberdeclaration_instantiation(instance):
+    assert isinstance(instance, javaMM_UnresolvedAnnotationTypeMemberDeclaration)
 
-@given(instance=javaMM::UnresolvedVariableDeclarationFragment_strategy)
+@given(instance=javaMM_UnresolvedVariableDeclarationFragment_strategy)
 @settings(max_examples=50)
-def test_javamm::unresolvedvariabledeclarationfragment_instantiation(instance):
-    assert isinstance(instance, javaMM::UnresolvedVariableDeclarationFragment)
+def test_javamm_unresolvedvariabledeclarationfragment_instantiation(instance):
+    assert isinstance(instance, javaMM_UnresolvedVariableDeclarationFragment)
 
-@given(instance=javaMM::UnresolvedLabeledStatement_strategy)
+@given(instance=javaMM_UnresolvedEnumDeclaration_strategy)
 @settings(max_examples=50)
-def test_javamm::unresolvedlabeledstatement_instantiation(instance):
-    assert isinstance(instance, javaMM::UnresolvedLabeledStatement)
+def test_javamm_unresolvedenumdeclaration_instantiation(instance):
+    assert isinstance(instance, javaMM_UnresolvedEnumDeclaration)
 
 @given(instance=AnnotationTypeDeclaration_strategy)
 @settings(max_examples=50)
 def test_annotationtypedeclaration_instantiation(instance):
     assert isinstance(instance, AnnotationTypeDeclaration)
 
-@given(instance=javaMM::UnresolvedAnnotationDeclaration_strategy)
+@given(instance=javaMM_UnresolvedAnnotationDeclaration_strategy)
 @settings(max_examples=50)
-def test_javamm::unresolvedannotationdeclaration_instantiation(instance):
-    assert isinstance(instance, javaMM::UnresolvedAnnotationDeclaration)
+def test_javamm_unresolvedannotationdeclaration_instantiation(instance):
+    assert isinstance(instance, javaMM_UnresolvedAnnotationDeclaration)
 
 @given(instance=AbstractTypeQualifiedExpression_strategy)
 @settings(max_examples=50)
 def test_abstracttypequalifiedexpression_instantiation(instance):
     assert isinstance(instance, AbstractTypeQualifiedExpression)
 
-@given(instance=javaMM::ThisExpression_strategy)
+@given(instance=javaMM_ThisExpression_strategy)
 @settings(max_examples=50)
-def test_javamm::thisexpression_instantiation(instance):
-    assert isinstance(instance, javaMM::ThisExpression)
+def test_javamm_thisexpression_instantiation(instance):
+    assert isinstance(instance, javaMM_ThisExpression)
 
-@given(instance=javaMM::SuperFieldAccess_strategy)
+@given(instance=javaMM_SuperFieldAccess_strategy)
 @settings(max_examples=50)
-def test_javamm::superfieldaccess_instantiation(instance):
-    assert isinstance(instance, javaMM::SuperFieldAccess)
+def test_javamm_superfieldaccess_instantiation(instance):
+    assert isinstance(instance, javaMM_SuperFieldAccess)
 
 @given(instance=PrimitiveType_strategy)
 @settings(max_examples=50)
 def test_primitivetype_instantiation(instance):
     assert isinstance(instance, PrimitiveType)
 
-@given(instance=javaMM::PrimitiveTypeChar_strategy)
+@given(instance=javaMM_PrimitiveTypeChar_strategy)
 @settings(max_examples=50)
-def test_javamm::primitivetypechar_instantiation(instance):
-    assert isinstance(instance, javaMM::PrimitiveTypeChar)
+def test_javamm_primitivetypechar_instantiation(instance):
+    assert isinstance(instance, javaMM_PrimitiveTypeChar)
 
-@given(instance=javaMM::PrimitiveTypeShort_strategy)
+@given(instance=javaMM_PrimitiveTypeInt_strategy)
 @settings(max_examples=50)
-def test_javamm::primitivetypeshort_instantiation(instance):
-    assert isinstance(instance, javaMM::PrimitiveTypeShort)
+def test_javamm_primitivetypeint_instantiation(instance):
+    assert isinstance(instance, javaMM_PrimitiveTypeInt)
 
-@given(instance=javaMM::PrimitiveTypeLong_strategy)
+@given(instance=javaMM_PrimitiveTypeLong_strategy)
 @settings(max_examples=50)
-def test_javamm::primitivetypelong_instantiation(instance):
-    assert isinstance(instance, javaMM::PrimitiveTypeLong)
+def test_javamm_primitivetypelong_instantiation(instance):
+    assert isinstance(instance, javaMM_PrimitiveTypeLong)
 
-@given(instance=javaMM::PrimitiveTypeVoid_strategy)
+@given(instance=javaMM_PrimitiveTypeDouble_strategy)
 @settings(max_examples=50)
-def test_javamm::primitivetypevoid_instantiation(instance):
-    assert isinstance(instance, javaMM::PrimitiveTypeVoid)
+def test_javamm_primitivetypedouble_instantiation(instance):
+    assert isinstance(instance, javaMM_PrimitiveTypeDouble)
 
-@given(instance=javaMM::PrimitiveTypeInt_strategy)
+@given(instance=javaMM_PrimitiveTypeFloat_strategy)
 @settings(max_examples=50)
-def test_javamm::primitivetypeint_instantiation(instance):
-    assert isinstance(instance, javaMM::PrimitiveTypeInt)
+def test_javamm_primitivetypefloat_instantiation(instance):
+    assert isinstance(instance, javaMM_PrimitiveTypeFloat)
 
-@given(instance=javaMM::PrimitiveTypeByte_strategy)
+@given(instance=javaMM_PrimitiveTypeByte_strategy)
 @settings(max_examples=50)
-def test_javamm::primitivetypebyte_instantiation(instance):
-    assert isinstance(instance, javaMM::PrimitiveTypeByte)
+def test_javamm_primitivetypebyte_instantiation(instance):
+    assert isinstance(instance, javaMM_PrimitiveTypeByte)
 
-@given(instance=javaMM::PrimitiveTypeDouble_strategy)
+@given(instance=javaMM_PrimitiveTypeVoid_strategy)
 @settings(max_examples=50)
-def test_javamm::primitivetypedouble_instantiation(instance):
-    assert isinstance(instance, javaMM::PrimitiveTypeDouble)
+def test_javamm_primitivetypevoid_instantiation(instance):
+    assert isinstance(instance, javaMM_PrimitiveTypeVoid)
 
-@given(instance=javaMM::PrimitiveTypeFloat_strategy)
+@given(instance=javaMM_PrimitiveTypeShort_strategy)
 @settings(max_examples=50)
-def test_javamm::primitivetypefloat_instantiation(instance):
-    assert isinstance(instance, javaMM::PrimitiveTypeFloat)
+def test_javamm_primitivetypeshort_instantiation(instance):
+    assert isinstance(instance, javaMM_PrimitiveTypeShort)
 
-@given(instance=javaMM::PrimitiveTypeBoolean_strategy)
+@given(instance=javaMM_PrimitiveTypeBoolean_strategy)
 @settings(max_examples=50)
-def test_javamm::primitivetypeboolean_instantiation(instance):
-    assert isinstance(instance, javaMM::PrimitiveTypeBoolean)
+def test_javamm_primitivetypeboolean_instantiation(instance):
+    assert isinstance(instance, javaMM_PrimitiveTypeBoolean)
 
 @given(instance=NamespaceAccess_strategy)
 @settings(max_examples=50)
 def test_namespaceaccess_instantiation(instance):
     assert isinstance(instance, NamespaceAccess)
 
-@given(instance=javaMM::PackageAccess_strategy)
+@given(instance=javaMM_PackageAccess_strategy)
 @settings(max_examples=50)
-def test_javamm::packageaccess_instantiation(instance):
-    assert isinstance(instance, javaMM::PackageAccess)
+def test_javamm_packageaccess_instantiation(instance):
+    assert isinstance(instance, javaMM_PackageAccess)
 
-@given(instance=javaMM::Model_strategy)
+@given(instance=javaMM_Model_strategy)
 @settings(max_examples=50)
-def test_javamm::model_instantiation(instance):
-    assert isinstance(instance, javaMM::Model)
-
-@given(instance=javaMM::Model_strategy)
-def test_javamm::model_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_javamm_model_instantiation(instance):
+    assert isinstance(instance, javaMM_Model)
 
 
-@given(instance=javaMM::Model_strategy)
-def test_javamm::model_name_setter(instance):
+
+@given(instance=javaMM_Model_strategy)
+def test_javamm_model_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=javaMM::ManifestEntry_strategy)
+@given(instance=javaMM_ManifestEntry_strategy)
 @settings(max_examples=50)
-def test_javamm::manifestentry_instantiation(instance):
-    assert isinstance(instance, javaMM::ManifestEntry)
-
-@given(instance=javaMM::ManifestEntry_strategy)
-def test_javamm::manifestentry_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_javamm_manifestentry_instantiation(instance):
+    assert isinstance(instance, javaMM_ManifestEntry)
 
 
-@given(instance=javaMM::ManifestEntry_strategy)
-def test_javamm::manifestentry_name_setter(instance):
+
+@given(instance=javaMM_ManifestEntry_strategy)
+def test_javamm_manifestentry_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=javaMM::ManifestAttribute_strategy)
+@given(instance=javaMM_ManifestAttribute_strategy)
 @settings(max_examples=50)
-def test_javamm::manifestattribute_instantiation(instance):
-    assert isinstance(instance, javaMM::ManifestAttribute)
-
-@given(instance=javaMM::ManifestAttribute_strategy)
-def test_javamm::manifestattribute_key_type(instance):
-    assert isinstance(instance.key, str)
+def test_javamm_manifestattribute_instantiation(instance):
+    assert isinstance(instance, javaMM_ManifestAttribute)
 
 
-@given(instance=javaMM::ManifestAttribute_strategy)
-def test_javamm::manifestattribute_key_setter(instance):
-    original = instance.key
-    instance.key = original
-    assert instance.key == original
 
-@given(instance=javaMM::ManifestAttribute_strategy)
-def test_javamm::manifestattribute_value_type(instance):
-    assert isinstance(instance.value, str)
-
-
-@given(instance=javaMM::ManifestAttribute_strategy)
-def test_javamm::manifestattribute_value_setter(instance):
+@given(instance=javaMM_ManifestAttribute_strategy)
+def test_javamm_manifestattribute_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
+
+
+
+@given(instance=javaMM_ManifestAttribute_strategy)
+def test_javamm_manifestattribute_key_setter(instance):
+    original = instance.key
+    instance.key = original
+    assert instance.key == original
 
 @given(instance=VariableDeclaration_strategy)
 @settings(max_examples=50)
@@ -3615,33 +3603,30 @@ def test_abstractvariablescontainer_instantiation(instance):
 def test_typedeclaration_instantiation(instance):
     assert isinstance(instance, TypeDeclaration)
 
-@given(instance=javaMM::InterfaceDeclaration_strategy)
+@given(instance=javaMM_InterfaceDeclaration_strategy)
 @settings(max_examples=50)
-def test_javamm::interfacedeclaration_instantiation(instance):
-    assert isinstance(instance, javaMM::InterfaceDeclaration)
+def test_javamm_interfacedeclaration_instantiation(instance):
+    assert isinstance(instance, javaMM_InterfaceDeclaration)
 
-@given(instance=javaMM::ClassDeclaration_strategy)
+@given(instance=javaMM_ClassDeclaration_strategy)
 @settings(max_examples=50)
-def test_javamm::classdeclaration_instantiation(instance):
-    assert isinstance(instance, javaMM::ClassDeclaration)
+def test_javamm_classdeclaration_instantiation(instance):
+    assert isinstance(instance, javaMM_ClassDeclaration)
 
 @given(instance=AbstractMethodDeclaration_strategy)
 @settings(max_examples=50)
 def test_abstractmethoddeclaration_instantiation(instance):
     assert isinstance(instance, AbstractMethodDeclaration)
 
-@given(instance=javaMM::MethodDeclaration_strategy)
+@given(instance=javaMM_MethodDeclaration_strategy)
 @settings(max_examples=50)
-def test_javamm::methoddeclaration_instantiation(instance):
-    assert isinstance(instance, javaMM::MethodDeclaration)
-
-@given(instance=javaMM::MethodDeclaration_strategy)
-def test_javamm::methoddeclaration_extraArrayDimensions_type(instance):
-    assert isinstance(instance.extraArrayDimensions, int)
+def test_javamm_methoddeclaration_instantiation(instance):
+    assert isinstance(instance, javaMM_MethodDeclaration)
 
 
-@given(instance=javaMM::MethodDeclaration_strategy)
-def test_javamm::methoddeclaration_extraArrayDimensions_setter(instance):
+
+@given(instance=javaMM_MethodDeclaration_strategy)
+def test_javamm_methoddeclaration_extraArrayDimensions_setter(instance):
     original = instance.extraArrayDimensions
     instance.extraArrayDimensions = original
     assert instance.extraArrayDimensions == original
@@ -3652,67 +3637,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=javaMM::MethodDeclaration_strategy)
+@given(instance=javaMM_MethodDeclaration_strategy)
 @settings(max_examples=30)
-def test_javamm::methoddeclaration_isclone_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.isClone()
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.isClone).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'isClone' in javaMM::MethodDeclaration is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'isClone' in javaMM::MethodDeclaration did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'isClone' in javaMM::MethodDeclaration is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=javaMM::MethodDeclaration_strategy)
-@settings(max_examples=30)
-def test_javamm::methoddeclaration_isfinalize_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.isFinalize()
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.isFinalize).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'isFinalize' in javaMM::MethodDeclaration is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'isFinalize' in javaMM::MethodDeclaration did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'isFinalize' in javaMM::MethodDeclaration is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=javaMM::MethodDeclaration_strategy)
-@settings(max_examples=30)
-def test_javamm::methoddeclaration_ishashcode_changes_state(instance):
+def test_javamm_methoddeclaration_ishashcode_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -3724,14 +3651,14 @@ def test_javamm::methoddeclaration_ishashcode_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'isHashcode' in javaMM::MethodDeclaration is empty"
+        assert has_statements, f"Function 'isHashcode' in javaMM_MethodDeclaration is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'isHashcode' in javaMM::MethodDeclaration did not change state; check implementation")
+            warnings.warn(f"Operation 'isHashcode' in javaMM_MethodDeclaration did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'isHashcode' in javaMM::MethodDeclaration is not implemented or raised an error")
+        warnings.warn(f"Operation 'isHashcode' in javaMM_MethodDeclaration is not implemented or raised an error")
 
 import warnings
 import copy
@@ -3739,67 +3666,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=javaMM::MethodDeclaration_strategy)
+@given(instance=javaMM_MethodDeclaration_strategy)
 @settings(max_examples=30)
-def test_javamm::methoddeclaration_iscompareto_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.isCompareTo()
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.isCompareTo).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'isCompareTo' in javaMM::MethodDeclaration is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'isCompareTo' in javaMM::MethodDeclaration did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'isCompareTo' in javaMM::MethodDeclaration is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=javaMM::MethodDeclaration_strategy)
-@settings(max_examples=30)
-def test_javamm::methoddeclaration_isequals_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.isEquals()
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.isEquals).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'isEquals' in javaMM::MethodDeclaration is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'isEquals' in javaMM::MethodDeclaration did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'isEquals' in javaMM::MethodDeclaration is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=javaMM::MethodDeclaration_strategy)
-@settings(max_examples=30)
-def test_javamm::methoddeclaration_istostring_changes_state(instance):
+def test_javamm_methoddeclaration_istostring_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -3811,165 +3680,203 @@ def test_javamm::methoddeclaration_istostring_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'isToString' in javaMM::MethodDeclaration is empty"
+        assert has_statements, f"Function 'isToString' in javaMM_MethodDeclaration is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'isToString' in javaMM::MethodDeclaration did not change state; check implementation")
+            warnings.warn(f"Operation 'isToString' in javaMM_MethodDeclaration did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'isToString' in javaMM::MethodDeclaration is not implemented or raised an error")
+        warnings.warn(f"Operation 'isToString' in javaMM_MethodDeclaration is not implemented or raised an error")
 
-@given(instance=javaMM::ConstructorDeclaration_strategy)
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=javaMM_MethodDeclaration_strategy)
+@settings(max_examples=30)
+def test_javamm_methoddeclaration_isclone_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.isClone()
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.isClone).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'isClone' in javaMM_MethodDeclaration is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'isClone' in javaMM_MethodDeclaration did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'isClone' in javaMM_MethodDeclaration is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=javaMM_MethodDeclaration_strategy)
+@settings(max_examples=30)
+def test_javamm_methoddeclaration_isequals_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.isEquals()
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.isEquals).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'isEquals' in javaMM_MethodDeclaration is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'isEquals' in javaMM_MethodDeclaration did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'isEquals' in javaMM_MethodDeclaration is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=javaMM_MethodDeclaration_strategy)
+@settings(max_examples=30)
+def test_javamm_methoddeclaration_isfinalize_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.isFinalize()
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.isFinalize).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'isFinalize' in javaMM_MethodDeclaration is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'isFinalize' in javaMM_MethodDeclaration did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'isFinalize' in javaMM_MethodDeclaration is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=javaMM_MethodDeclaration_strategy)
+@settings(max_examples=30)
+def test_javamm_methoddeclaration_iscompareto_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.isCompareTo()
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.isCompareTo).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'isCompareTo' in javaMM_MethodDeclaration is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'isCompareTo' in javaMM_MethodDeclaration did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'isCompareTo' in javaMM_MethodDeclaration is not implemented or raised an error")
+
+@given(instance=javaMM_ConstructorDeclaration_strategy)
 @settings(max_examples=50)
-def test_javamm::constructordeclaration_instantiation(instance):
-    assert isinstance(instance, javaMM::ConstructorDeclaration)
+def test_javamm_constructordeclaration_instantiation(instance):
+    assert isinstance(instance, javaMM_ConstructorDeclaration)
 
 @given(instance=AbstractMethodInvocation_strategy)
 @settings(max_examples=50)
 def test_abstractmethodinvocation_instantiation(instance):
     assert isinstance(instance, AbstractMethodInvocation)
 
-@given(instance=javaMM::SuperMethodInvocation_strategy)
+@given(instance=javaMM_SuperMethodInvocation_strategy)
 @settings(max_examples=50)
-def test_javamm::supermethodinvocation_instantiation(instance):
-    assert isinstance(instance, javaMM::SuperMethodInvocation)
+def test_javamm_supermethodinvocation_instantiation(instance):
+    assert isinstance(instance, javaMM_SuperMethodInvocation)
 
 @given(instance=Comment_strategy)
 @settings(max_examples=50)
 def test_comment_instantiation(instance):
     assert isinstance(instance, Comment)
 
-@given(instance=javaMM::LineComment_strategy)
+@given(instance=javaMM_Javadoc_strategy)
 @settings(max_examples=50)
-def test_javamm::linecomment_instantiation(instance):
-    assert isinstance(instance, javaMM::LineComment)
+def test_javamm_javadoc_instantiation(instance):
+    assert isinstance(instance, javaMM_Javadoc)
 
-@given(instance=javaMM::Javadoc_strategy)
+@given(instance=javaMM_LineComment_strategy)
 @settings(max_examples=50)
-def test_javamm::javadoc_instantiation(instance):
-    assert isinstance(instance, javaMM::Javadoc)
+def test_javamm_linecomment_instantiation(instance):
+    assert isinstance(instance, javaMM_LineComment)
 
-@given(instance=javaMM::BlockComment_strategy)
+@given(instance=javaMM_BlockComment_strategy)
 @settings(max_examples=50)
-def test_javamm::blockcomment_instantiation(instance):
-    assert isinstance(instance, javaMM::BlockComment)
+def test_javamm_blockcomment_instantiation(instance):
+    assert isinstance(instance, javaMM_BlockComment)
 
-@given(instance=javaMM::VariableDeclarationFragment_strategy)
+@given(instance=javaMM_VariableDeclarationFragment_strategy)
 @settings(max_examples=50)
-def test_javamm::variabledeclarationfragment_instantiation(instance):
-    assert isinstance(instance, javaMM::VariableDeclarationFragment)
+def test_javamm_variabledeclarationfragment_instantiation(instance):
+    assert isinstance(instance, javaMM_VariableDeclarationFragment)
 
 @given(instance=Expression_strategy)
 @settings(max_examples=50)
 def test_expression_instantiation(instance):
     assert isinstance(instance, Expression)
 
-@given(instance=javaMM::Annotation_strategy)
+@given(instance=javaMM_ConditionalExpression_strategy)
 @settings(max_examples=50)
-def test_javamm::annotation_instantiation(instance):
-    assert isinstance(instance, javaMM::Annotation)
+def test_javamm_conditionalexpression_instantiation(instance):
+    assert isinstance(instance, javaMM_ConditionalExpression)
 
-@given(instance=javaMM::CharacterLiteral_strategy)
+@given(instance=javaMM_NumberLiteral_strategy)
 @settings(max_examples=50)
-def test_javamm::characterliteral_instantiation(instance):
-    assert isinstance(instance, javaMM::CharacterLiteral)
-
-@given(instance=javaMM::CharacterLiteral_strategy)
-def test_javamm::characterliteral_escapedValue_type(instance):
-    assert isinstance(instance.escapedValue, str)
+def test_javamm_numberliteral_instantiation(instance):
+    assert isinstance(instance, javaMM_NumberLiteral)
 
 
-@given(instance=javaMM::CharacterLiteral_strategy)
-def test_javamm::characterliteral_escapedValue_setter(instance):
-    original = instance.escapedValue
-    instance.escapedValue = original
-    assert instance.escapedValue == original
 
-@given(instance=javaMM::BooleanLiteral_strategy)
+@given(instance=javaMM_NumberLiteral_strategy)
+def test_javamm_numberliteral_tokenValue_setter(instance):
+    original = instance.tokenValue
+    instance.tokenValue = original
+    assert instance.tokenValue == original
+
+@given(instance=javaMM_InfixExpression_strategy)
 @settings(max_examples=50)
-def test_javamm::booleanliteral_instantiation(instance):
-    assert isinstance(instance, javaMM::BooleanLiteral)
-
-@given(instance=javaMM::BooleanLiteral_strategy)
-def test_javamm::booleanliteral_value_type(instance):
-    assert isinstance(instance.value, bool)
+def test_javamm_infixexpression_instantiation(instance):
+    assert isinstance(instance, javaMM_InfixExpression)
 
 
-@given(instance=javaMM::BooleanLiteral_strategy)
-def test_javamm::booleanliteral_value_setter(instance):
-    original = instance.value
-    instance.value = original
-    assert instance.value == original
 
-@given(instance=javaMM::ArrayCreation_strategy)
-@settings(max_examples=50)
-def test_javamm::arraycreation_instantiation(instance):
-    assert isinstance(instance, javaMM::ArrayCreation)
-
-@given(instance=javaMM::Assignment_strategy)
-@settings(max_examples=50)
-def test_javamm::assignment_instantiation(instance):
-    assert isinstance(instance, javaMM::Assignment)
-
-@given(instance=javaMM::Assignment_strategy)
-def test_javamm::assignment_operator_type(instance):
-    assert isinstance(instance.operator, str)
-
-
-@given(instance=javaMM::Assignment_strategy)
-def test_javamm::assignment_operator_setter(instance):
-    original = instance.operator
-    instance.operator = original
-    assert instance.operator == original
-
-@given(instance=javaMM::ConditionalExpression_strategy)
-@settings(max_examples=50)
-def test_javamm::conditionalexpression_instantiation(instance):
-    assert isinstance(instance, javaMM::ConditionalExpression)
-
-@given(instance=javaMM::CastExpression_strategy)
-@settings(max_examples=50)
-def test_javamm::castexpression_instantiation(instance):
-    assert isinstance(instance, javaMM::CastExpression)
-
-@given(instance=javaMM::UnresolvedItemAccess_strategy)
-@settings(max_examples=50)
-def test_javamm::unresolveditemaccess_instantiation(instance):
-    assert isinstance(instance, javaMM::UnresolvedItemAccess)
-
-@given(instance=javaMM::ArrayInitializer_strategy)
-@settings(max_examples=50)
-def test_javamm::arrayinitializer_instantiation(instance):
-    assert isinstance(instance, javaMM::ArrayInitializer)
-
-@given(instance=javaMM::MethodInvocation_strategy)
-@settings(max_examples=50)
-def test_javamm::methodinvocation_instantiation(instance):
-    assert isinstance(instance, javaMM::MethodInvocation)
-
-@given(instance=javaMM::SingleVariableAccess_strategy)
-@settings(max_examples=50)
-def test_javamm::singlevariableaccess_instantiation(instance):
-    assert isinstance(instance, javaMM::SingleVariableAccess)
-
-@given(instance=javaMM::FieldAccess_strategy)
-@settings(max_examples=50)
-def test_javamm::fieldaccess_instantiation(instance):
-    assert isinstance(instance, javaMM::FieldAccess)
-
-@given(instance=javaMM::InfixExpression_strategy)
-@settings(max_examples=50)
-def test_javamm::infixexpression_instantiation(instance):
-    assert isinstance(instance, javaMM::InfixExpression)
-
-@given(instance=javaMM::InfixExpression_strategy)
-def test_javamm::infixexpression_operator_type(instance):
-    assert isinstance(instance.operator, str)
-
-
-@given(instance=javaMM::InfixExpression_strategy)
-def test_javamm::infixexpression_operator_setter(instance):
+@given(instance=javaMM_InfixExpression_strategy)
+def test_javamm_infixexpression_operator_setter(instance):
     original = instance.operator
     instance.operator = original
     assert instance.operator == original
@@ -3980,9 +3887,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=javaMM::InfixExpression_strategy)
+@given(instance=javaMM_InfixExpression_strategy)
 @settings(max_examples=30)
-def test_javamm::infixexpression_operatorisequality_changes_state(instance):
+def test_javamm_infixexpression_operatorisequality_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -3994,481 +3901,511 @@ def test_javamm::infixexpression_operatorisequality_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'operatorIsEquality' in javaMM::InfixExpression is empty"
+        assert has_statements, f"Function 'operatorIsEquality' in javaMM_InfixExpression is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'operatorIsEquality' in javaMM::InfixExpression did not change state; check implementation")
+            warnings.warn(f"Operation 'operatorIsEquality' in javaMM_InfixExpression did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'operatorIsEquality' in javaMM::InfixExpression is not implemented or raised an error")
+        warnings.warn(f"Operation 'operatorIsEquality' in javaMM_InfixExpression is not implemented or raised an error")
 
-@given(instance=javaMM::ArrayLengthAccess_strategy)
+@given(instance=javaMM_VariableDeclarationExpression_strategy)
 @settings(max_examples=50)
-def test_javamm::arraylengthaccess_instantiation(instance):
-    assert isinstance(instance, javaMM::ArrayLengthAccess)
+def test_javamm_variabledeclarationexpression_instantiation(instance):
+    assert isinstance(instance, javaMM_VariableDeclarationExpression)
 
-@given(instance=javaMM::NumberLiteral_strategy)
+@given(instance=javaMM_FieldAccess_strategy)
 @settings(max_examples=50)
-def test_javamm::numberliteral_instantiation(instance):
-    assert isinstance(instance, javaMM::NumberLiteral)
+def test_javamm_fieldaccess_instantiation(instance):
+    assert isinstance(instance, javaMM_FieldAccess)
 
-@given(instance=javaMM::NumberLiteral_strategy)
-def test_javamm::numberliteral_tokenValue_type(instance):
-    assert isinstance(instance.tokenValue, str)
-
-
-@given(instance=javaMM::NumberLiteral_strategy)
-def test_javamm::numberliteral_tokenValue_setter(instance):
-    original = instance.tokenValue
-    instance.tokenValue = original
-    assert instance.tokenValue == original
-
-@given(instance=javaMM::NullLiteral_strategy)
+@given(instance=javaMM_ArrayAccess_strategy)
 @settings(max_examples=50)
-def test_javamm::nullliteral_instantiation(instance):
-    assert isinstance(instance, javaMM::NullLiteral)
+def test_javamm_arrayaccess_instantiation(instance):
+    assert isinstance(instance, javaMM_ArrayAccess)
 
-@given(instance=javaMM::ParenthesizedExpression_strategy)
+@given(instance=javaMM_Assignment_strategy)
 @settings(max_examples=50)
-def test_javamm::parenthesizedexpression_instantiation(instance):
-    assert isinstance(instance, javaMM::ParenthesizedExpression)
+def test_javamm_assignment_instantiation(instance):
+    assert isinstance(instance, javaMM_Assignment)
 
-@given(instance=javaMM::StringLiteral_strategy)
+
+
+@given(instance=javaMM_Assignment_strategy)
+def test_javamm_assignment_operator_setter(instance):
+    original = instance.operator
+    instance.operator = original
+    assert instance.operator == original
+
+@given(instance=javaMM_TypeLiteral_strategy)
 @settings(max_examples=50)
-def test_javamm::stringliteral_instantiation(instance):
-    assert isinstance(instance, javaMM::StringLiteral)
+def test_javamm_typeliteral_instantiation(instance):
+    assert isinstance(instance, javaMM_TypeLiteral)
 
-@given(instance=javaMM::StringLiteral_strategy)
-def test_javamm::stringliteral_escapedValue_type(instance):
-    assert isinstance(instance.escapedValue, str)
+@given(instance=javaMM_CharacterLiteral_strategy)
+@settings(max_examples=50)
+def test_javamm_characterliteral_instantiation(instance):
+    assert isinstance(instance, javaMM_CharacterLiteral)
 
 
-@given(instance=javaMM::StringLiteral_strategy)
-def test_javamm::stringliteral_escapedValue_setter(instance):
+
+@given(instance=javaMM_CharacterLiteral_strategy)
+def test_javamm_characterliteral_escapedValue_setter(instance):
     original = instance.escapedValue
     instance.escapedValue = original
     assert instance.escapedValue == original
 
-@given(instance=javaMM::PostfixExpression_strategy)
+@given(instance=javaMM_UnresolvedItemAccess_strategy)
 @settings(max_examples=50)
-def test_javamm::postfixexpression_instantiation(instance):
-    assert isinstance(instance, javaMM::PostfixExpression)
+def test_javamm_unresolveditemaccess_instantiation(instance):
+    assert isinstance(instance, javaMM_UnresolvedItemAccess)
 
-@given(instance=javaMM::PostfixExpression_strategy)
-def test_javamm::postfixexpression_operator_type(instance):
-    assert isinstance(instance.operator, str)
+@given(instance=javaMM_StringLiteral_strategy)
+@settings(max_examples=50)
+def test_javamm_stringliteral_instantiation(instance):
+    assert isinstance(instance, javaMM_StringLiteral)
 
 
-@given(instance=javaMM::PostfixExpression_strategy)
-def test_javamm::postfixexpression_operator_setter(instance):
+
+@given(instance=javaMM_StringLiteral_strategy)
+def test_javamm_stringliteral_escapedValue_setter(instance):
+    original = instance.escapedValue
+    instance.escapedValue = original
+    assert instance.escapedValue == original
+
+@given(instance=javaMM_Annotation_strategy)
+@settings(max_examples=50)
+def test_javamm_annotation_instantiation(instance):
+    assert isinstance(instance, javaMM_Annotation)
+
+@given(instance=javaMM_InstanceofExpression_strategy)
+@settings(max_examples=50)
+def test_javamm_instanceofexpression_instantiation(instance):
+    assert isinstance(instance, javaMM_InstanceofExpression)
+
+@given(instance=javaMM_ArrayInitializer_strategy)
+@settings(max_examples=50)
+def test_javamm_arrayinitializer_instantiation(instance):
+    assert isinstance(instance, javaMM_ArrayInitializer)
+
+@given(instance=javaMM_NullLiteral_strategy)
+@settings(max_examples=50)
+def test_javamm_nullliteral_instantiation(instance):
+    assert isinstance(instance, javaMM_NullLiteral)
+
+@given(instance=javaMM_ArrayCreation_strategy)
+@settings(max_examples=50)
+def test_javamm_arraycreation_instantiation(instance):
+    assert isinstance(instance, javaMM_ArrayCreation)
+
+@given(instance=javaMM_CastExpression_strategy)
+@settings(max_examples=50)
+def test_javamm_castexpression_instantiation(instance):
+    assert isinstance(instance, javaMM_CastExpression)
+
+@given(instance=javaMM_SingleVariableAccess_strategy)
+@settings(max_examples=50)
+def test_javamm_singlevariableaccess_instantiation(instance):
+    assert isinstance(instance, javaMM_SingleVariableAccess)
+
+@given(instance=javaMM_ArrayLengthAccess_strategy)
+@settings(max_examples=50)
+def test_javamm_arraylengthaccess_instantiation(instance):
+    assert isinstance(instance, javaMM_ArrayLengthAccess)
+
+@given(instance=javaMM_PostfixExpression_strategy)
+@settings(max_examples=50)
+def test_javamm_postfixexpression_instantiation(instance):
+    assert isinstance(instance, javaMM_PostfixExpression)
+
+
+
+@given(instance=javaMM_PostfixExpression_strategy)
+def test_javamm_postfixexpression_operator_setter(instance):
     original = instance.operator
     instance.operator = original
     assert instance.operator == original
 
-@given(instance=javaMM::ArrayAccess_strategy)
+@given(instance=javaMM_MethodInvocation_strategy)
 @settings(max_examples=50)
-def test_javamm::arrayaccess_instantiation(instance):
-    assert isinstance(instance, javaMM::ArrayAccess)
+def test_javamm_methodinvocation_instantiation(instance):
+    assert isinstance(instance, javaMM_MethodInvocation)
 
-@given(instance=javaMM::PrefixExpression_strategy)
+@given(instance=javaMM_ParenthesizedExpression_strategy)
 @settings(max_examples=50)
-def test_javamm::prefixexpression_instantiation(instance):
-    assert isinstance(instance, javaMM::PrefixExpression)
+def test_javamm_parenthesizedexpression_instantiation(instance):
+    assert isinstance(instance, javaMM_ParenthesizedExpression)
 
-@given(instance=javaMM::PrefixExpression_strategy)
-def test_javamm::prefixexpression_operator_type(instance):
-    assert isinstance(instance.operator, str)
+@given(instance=javaMM_BooleanLiteral_strategy)
+@settings(max_examples=50)
+def test_javamm_booleanliteral_instantiation(instance):
+    assert isinstance(instance, javaMM_BooleanLiteral)
 
 
-@given(instance=javaMM::PrefixExpression_strategy)
-def test_javamm::prefixexpression_operator_setter(instance):
+
+@given(instance=javaMM_BooleanLiteral_strategy)
+def test_javamm_booleanliteral_value_setter(instance):
+    original = instance.value
+    instance.value = original
+    assert instance.value == original
+
+@given(instance=javaMM_PrefixExpression_strategy)
+@settings(max_examples=50)
+def test_javamm_prefixexpression_instantiation(instance):
+    assert isinstance(instance, javaMM_PrefixExpression)
+
+
+
+@given(instance=javaMM_PrefixExpression_strategy)
+def test_javamm_prefixexpression_operator_setter(instance):
     original = instance.operator
     instance.operator = original
     assert instance.operator == original
 
-@given(instance=javaMM::VariableDeclarationExpression_strategy)
+@given(instance=javaMM_AbstractTypeQualifiedExpression_strategy)
 @settings(max_examples=50)
-def test_javamm::variabledeclarationexpression_instantiation(instance):
-    assert isinstance(instance, javaMM::VariableDeclarationExpression)
+def test_javamm_abstracttypequalifiedexpression_instantiation(instance):
+    assert isinstance(instance, javaMM_AbstractTypeQualifiedExpression)
 
-@given(instance=javaMM::InstanceofExpression_strategy)
+@given(instance=javaMM_ClassInstanceCreation_strategy)
 @settings(max_examples=50)
-def test_javamm::instanceofexpression_instantiation(instance):
-    assert isinstance(instance, javaMM::InstanceofExpression)
-
-@given(instance=javaMM::TypeLiteral_strategy)
-@settings(max_examples=50)
-def test_javamm::typeliteral_instantiation(instance):
-    assert isinstance(instance, javaMM::TypeLiteral)
-
-@given(instance=javaMM::AbstractTypeQualifiedExpression_strategy)
-@settings(max_examples=50)
-def test_javamm::abstracttypequalifiedexpression_instantiation(instance):
-    assert isinstance(instance, javaMM::AbstractTypeQualifiedExpression)
-
-@given(instance=javaMM::ClassInstanceCreation_strategy)
-@settings(max_examples=50)
-def test_javamm::classinstancecreation_instantiation(instance):
-    assert isinstance(instance, javaMM::ClassInstanceCreation)
+def test_javamm_classinstancecreation_instantiation(instance):
+    assert isinstance(instance, javaMM_ClassInstanceCreation)
 
 @given(instance=AbstractTypeDeclaration_strategy)
 @settings(max_examples=50)
 def test_abstracttypedeclaration_instantiation(instance):
     assert isinstance(instance, AbstractTypeDeclaration)
 
-@given(instance=javaMM::UnresolvedTypeDeclaration_strategy)
+@given(instance=javaMM_TypeDeclaration_strategy)
 @settings(max_examples=50)
-def test_javamm::unresolvedtypedeclaration_instantiation(instance):
-    assert isinstance(instance, javaMM::UnresolvedTypeDeclaration)
+def test_javamm_typedeclaration_instantiation(instance):
+    assert isinstance(instance, javaMM_TypeDeclaration)
 
-@given(instance=javaMM::EnumDeclaration_strategy)
+@given(instance=javaMM_EnumDeclaration_strategy)
 @settings(max_examples=50)
-def test_javamm::enumdeclaration_instantiation(instance):
-    assert isinstance(instance, javaMM::EnumDeclaration)
+def test_javamm_enumdeclaration_instantiation(instance):
+    assert isinstance(instance, javaMM_EnumDeclaration)
 
-@given(instance=javaMM::TypeDeclaration_strategy)
+@given(instance=javaMM_UnresolvedTypeDeclaration_strategy)
 @settings(max_examples=50)
-def test_javamm::typedeclaration_instantiation(instance):
-    assert isinstance(instance, javaMM::TypeDeclaration)
+def test_javamm_unresolvedtypedeclaration_instantiation(instance):
+    assert isinstance(instance, javaMM_UnresolvedTypeDeclaration)
 
-@given(instance=javaMM::AnnotationTypeDeclaration_strategy)
+@given(instance=javaMM_AnnotationTypeDeclaration_strategy)
 @settings(max_examples=50)
-def test_javamm::annotationtypedeclaration_instantiation(instance):
-    assert isinstance(instance, javaMM::AnnotationTypeDeclaration)
+def test_javamm_annotationtypedeclaration_instantiation(instance):
+    assert isinstance(instance, javaMM_AnnotationTypeDeclaration)
 
-@given(instance=javaMM::ASTNode_strategy)
+@given(instance=javaMM_ASTNode_strategy)
 @settings(max_examples=50)
-def test_javamm::astnode_instantiation(instance):
-    assert isinstance(instance, javaMM::ASTNode)
+def test_javamm_astnode_instantiation(instance):
+    assert isinstance(instance, javaMM_ASTNode)
 
 @given(instance=Statement_strategy)
 @settings(max_examples=50)
 def test_statement_instantiation(instance):
     assert isinstance(instance, Statement)
 
-@given(instance=javaMM::SynchronizedStatement_strategy)
+@given(instance=javaMM_ReturnStatement_strategy)
 @settings(max_examples=50)
-def test_javamm::synchronizedstatement_instantiation(instance):
-    assert isinstance(instance, javaMM::SynchronizedStatement)
+def test_javamm_returnstatement_instantiation(instance):
+    assert isinstance(instance, javaMM_ReturnStatement)
 
-@given(instance=javaMM::VariableDeclarationStatement_strategy)
+@given(instance=javaMM_IfStatement_strategy)
 @settings(max_examples=50)
-def test_javamm::variabledeclarationstatement_instantiation(instance):
-    assert isinstance(instance, javaMM::VariableDeclarationStatement)
+def test_javamm_ifstatement_instantiation(instance):
+    assert isinstance(instance, javaMM_IfStatement)
 
-@given(instance=javaMM::VariableDeclarationStatement_strategy)
-def test_javamm::variabledeclarationstatement_extraArrayDimensions_type(instance):
-    assert isinstance(instance.extraArrayDimensions, int)
+@given(instance=javaMM_TypeDeclarationStatement_strategy)
+@settings(max_examples=50)
+def test_javamm_typedeclarationstatement_instantiation(instance):
+    assert isinstance(instance, javaMM_TypeDeclarationStatement)
+
+@given(instance=javaMM_EnhancedForStatement_strategy)
+@settings(max_examples=50)
+def test_javamm_enhancedforstatement_instantiation(instance):
+    assert isinstance(instance, javaMM_EnhancedForStatement)
+
+@given(instance=javaMM_TryStatement_strategy)
+@settings(max_examples=50)
+def test_javamm_trystatement_instantiation(instance):
+    assert isinstance(instance, javaMM_TryStatement)
+
+@given(instance=javaMM_CatchClause_strategy)
+@settings(max_examples=50)
+def test_javamm_catchclause_instantiation(instance):
+    assert isinstance(instance, javaMM_CatchClause)
+
+@given(instance=javaMM_ThrowStatement_strategy)
+@settings(max_examples=50)
+def test_javamm_throwstatement_instantiation(instance):
+    assert isinstance(instance, javaMM_ThrowStatement)
+
+@given(instance=javaMM_DoStatement_strategy)
+@settings(max_examples=50)
+def test_javamm_dostatement_instantiation(instance):
+    assert isinstance(instance, javaMM_DoStatement)
+
+@given(instance=javaMM_ConstructorInvocation_strategy)
+@settings(max_examples=50)
+def test_javamm_constructorinvocation_instantiation(instance):
+    assert isinstance(instance, javaMM_ConstructorInvocation)
+
+@given(instance=javaMM_ForStatement_strategy)
+@settings(max_examples=50)
+def test_javamm_forstatement_instantiation(instance):
+    assert isinstance(instance, javaMM_ForStatement)
+
+@given(instance=javaMM_SynchronizedStatement_strategy)
+@settings(max_examples=50)
+def test_javamm_synchronizedstatement_instantiation(instance):
+    assert isinstance(instance, javaMM_SynchronizedStatement)
+
+@given(instance=javaMM_BreakStatement_strategy)
+@settings(max_examples=50)
+def test_javamm_breakstatement_instantiation(instance):
+    assert isinstance(instance, javaMM_BreakStatement)
+
+@given(instance=javaMM_SwitchStatement_strategy)
+@settings(max_examples=50)
+def test_javamm_switchstatement_instantiation(instance):
+    assert isinstance(instance, javaMM_SwitchStatement)
+
+@given(instance=javaMM_ExpressionStatement_strategy)
+@settings(max_examples=50)
+def test_javamm_expressionstatement_instantiation(instance):
+    assert isinstance(instance, javaMM_ExpressionStatement)
+
+@given(instance=javaMM_VariableDeclarationStatement_strategy)
+@settings(max_examples=50)
+def test_javamm_variabledeclarationstatement_instantiation(instance):
+    assert isinstance(instance, javaMM_VariableDeclarationStatement)
 
 
-@given(instance=javaMM::VariableDeclarationStatement_strategy)
-def test_javamm::variabledeclarationstatement_extraArrayDimensions_setter(instance):
+
+@given(instance=javaMM_VariableDeclarationStatement_strategy)
+def test_javamm_variabledeclarationstatement_extraArrayDimensions_setter(instance):
     original = instance.extraArrayDimensions
     instance.extraArrayDimensions = original
     assert instance.extraArrayDimensions == original
 
-@given(instance=javaMM::ExpressionStatement_strategy)
+@given(instance=javaMM_ContinueStatement_strategy)
 @settings(max_examples=50)
-def test_javamm::expressionstatement_instantiation(instance):
-    assert isinstance(instance, javaMM::ExpressionStatement)
+def test_javamm_continuestatement_instantiation(instance):
+    assert isinstance(instance, javaMM_ContinueStatement)
 
-@given(instance=javaMM::EmptyStatement_strategy)
+@given(instance=javaMM_SuperConstructorInvocation_strategy)
 @settings(max_examples=50)
-def test_javamm::emptystatement_instantiation(instance):
-    assert isinstance(instance, javaMM::EmptyStatement)
+def test_javamm_superconstructorinvocation_instantiation(instance):
+    assert isinstance(instance, javaMM_SuperConstructorInvocation)
 
-@given(instance=javaMM::ForStatement_strategy)
+@given(instance=javaMM_WhileStatement_strategy)
 @settings(max_examples=50)
-def test_javamm::forstatement_instantiation(instance):
-    assert isinstance(instance, javaMM::ForStatement)
+def test_javamm_whilestatement_instantiation(instance):
+    assert isinstance(instance, javaMM_WhileStatement)
 
-@given(instance=javaMM::IfStatement_strategy)
+@given(instance=javaMM_EmptyStatement_strategy)
 @settings(max_examples=50)
-def test_javamm::ifstatement_instantiation(instance):
-    assert isinstance(instance, javaMM::IfStatement)
+def test_javamm_emptystatement_instantiation(instance):
+    assert isinstance(instance, javaMM_EmptyStatement)
 
-@given(instance=javaMM::DoStatement_strategy)
+@given(instance=javaMM_SwitchCase_strategy)
 @settings(max_examples=50)
-def test_javamm::dostatement_instantiation(instance):
-    assert isinstance(instance, javaMM::DoStatement)
-
-@given(instance=javaMM::CatchClause_strategy)
-@settings(max_examples=50)
-def test_javamm::catchclause_instantiation(instance):
-    assert isinstance(instance, javaMM::CatchClause)
-
-@given(instance=javaMM::ContinueStatement_strategy)
-@settings(max_examples=50)
-def test_javamm::continuestatement_instantiation(instance):
-    assert isinstance(instance, javaMM::ContinueStatement)
-
-@given(instance=javaMM::EnhancedForStatement_strategy)
-@settings(max_examples=50)
-def test_javamm::enhancedforstatement_instantiation(instance):
-    assert isinstance(instance, javaMM::EnhancedForStatement)
-
-@given(instance=javaMM::WhileStatement_strategy)
-@settings(max_examples=50)
-def test_javamm::whilestatement_instantiation(instance):
-    assert isinstance(instance, javaMM::WhileStatement)
-
-@given(instance=javaMM::SwitchStatement_strategy)
-@settings(max_examples=50)
-def test_javamm::switchstatement_instantiation(instance):
-    assert isinstance(instance, javaMM::SwitchStatement)
-
-@given(instance=javaMM::TypeDeclarationStatement_strategy)
-@settings(max_examples=50)
-def test_javamm::typedeclarationstatement_instantiation(instance):
-    assert isinstance(instance, javaMM::TypeDeclarationStatement)
-
-@given(instance=javaMM::BreakStatement_strategy)
-@settings(max_examples=50)
-def test_javamm::breakstatement_instantiation(instance):
-    assert isinstance(instance, javaMM::BreakStatement)
-
-@given(instance=javaMM::SwitchCase_strategy)
-@settings(max_examples=50)
-def test_javamm::switchcase_instantiation(instance):
-    assert isinstance(instance, javaMM::SwitchCase)
-
-@given(instance=javaMM::SwitchCase_strategy)
-def test_javamm::switchcase_default_type(instance):
-    assert isinstance(instance.default, bool)
+def test_javamm_switchcase_instantiation(instance):
+    assert isinstance(instance, javaMM_SwitchCase)
 
 
-@given(instance=javaMM::SwitchCase_strategy)
-def test_javamm::switchcase_default_setter(instance):
+
+@given(instance=javaMM_SwitchCase_strategy)
+def test_javamm_switchcase_default_setter(instance):
     original = instance.default
     instance.default = original
     assert instance.default == original
 
-@given(instance=javaMM::TryStatement_strategy)
+@given(instance=javaMM_AssertStatement_strategy)
 @settings(max_examples=50)
-def test_javamm::trystatement_instantiation(instance):
-    assert isinstance(instance, javaMM::TryStatement)
+def test_javamm_assertstatement_instantiation(instance):
+    assert isinstance(instance, javaMM_AssertStatement)
 
-@given(instance=javaMM::SuperConstructorInvocation_strategy)
+@given(instance=javaMM_Manifest_strategy)
 @settings(max_examples=50)
-def test_javamm::superconstructorinvocation_instantiation(instance):
-    assert isinstance(instance, javaMM::SuperConstructorInvocation)
-
-@given(instance=javaMM::ThrowStatement_strategy)
-@settings(max_examples=50)
-def test_javamm::throwstatement_instantiation(instance):
-    assert isinstance(instance, javaMM::ThrowStatement)
-
-@given(instance=javaMM::ConstructorInvocation_strategy)
-@settings(max_examples=50)
-def test_javamm::constructorinvocation_instantiation(instance):
-    assert isinstance(instance, javaMM::ConstructorInvocation)
-
-@given(instance=javaMM::ReturnStatement_strategy)
-@settings(max_examples=50)
-def test_javamm::returnstatement_instantiation(instance):
-    assert isinstance(instance, javaMM::ReturnStatement)
-
-@given(instance=javaMM::AssertStatement_strategy)
-@settings(max_examples=50)
-def test_javamm::assertstatement_instantiation(instance):
-    assert isinstance(instance, javaMM::AssertStatement)
-
-@given(instance=javaMM::Manifest_strategy)
-@settings(max_examples=50)
-def test_javamm::manifest_instantiation(instance):
-    assert isinstance(instance, javaMM::Manifest)
+def test_javamm_manifest_instantiation(instance):
+    assert isinstance(instance, javaMM_Manifest)
 
 @given(instance=NamedElement_strategy)
 @settings(max_examples=50)
 def test_namedelement_instantiation(instance):
     assert isinstance(instance, NamedElement)
 
-@given(instance=javaMM::ClassFile_strategy)
+@given(instance=javaMM_Type_strategy)
 @settings(max_examples=50)
-def test_javamm::classfile_instantiation(instance):
-    assert isinstance(instance, javaMM::ClassFile)
+def test_javamm_type_instantiation(instance):
+    assert isinstance(instance, javaMM_Type)
 
-@given(instance=javaMM::ClassFile_strategy)
-def test_javamm::classfile_originalFilePath_type(instance):
-    assert isinstance(instance.originalFilePath, str)
-
-
-@given(instance=javaMM::ClassFile_strategy)
-def test_javamm::classfile_originalFilePath_setter(instance):
-    original = instance.originalFilePath
-    instance.originalFilePath = original
-    assert instance.originalFilePath == original
-
-@given(instance=javaMM::VariableDeclaration_strategy)
+@given(instance=javaMM_VariableDeclaration_strategy)
 @settings(max_examples=50)
-def test_javamm::variabledeclaration_instantiation(instance):
-    assert isinstance(instance, javaMM::VariableDeclaration)
-
-@given(instance=javaMM::VariableDeclaration_strategy)
-def test_javamm::variabledeclaration_extraArrayDimensions_type(instance):
-    assert isinstance(instance.extraArrayDimensions, int)
+def test_javamm_variabledeclaration_instantiation(instance):
+    assert isinstance(instance, javaMM_VariableDeclaration)
 
 
-@given(instance=javaMM::VariableDeclaration_strategy)
-def test_javamm::variabledeclaration_extraArrayDimensions_setter(instance):
+
+@given(instance=javaMM_VariableDeclaration_strategy)
+def test_javamm_variabledeclaration_extraArrayDimensions_setter(instance):
     original = instance.extraArrayDimensions
     instance.extraArrayDimensions = original
     assert instance.extraArrayDimensions == original
 
-@given(instance=javaMM::AnnotationMemberValuePair_strategy)
+@given(instance=javaMM_LabeledStatement_strategy)
 @settings(max_examples=50)
-def test_javamm::annotationmembervaluepair_instantiation(instance):
-    assert isinstance(instance, javaMM::AnnotationMemberValuePair)
+def test_javamm_labeledstatement_instantiation(instance):
+    assert isinstance(instance, javaMM_LabeledStatement)
 
-@given(instance=javaMM::UnresolvedItem_strategy)
+@given(instance=javaMM_ClassFile_strategy)
 @settings(max_examples=50)
-def test_javamm::unresolveditem_instantiation(instance):
-    assert isinstance(instance, javaMM::UnresolvedItem)
-
-@given(instance=javaMM::CompilationUnit_strategy)
-@settings(max_examples=50)
-def test_javamm::compilationunit_instantiation(instance):
-    assert isinstance(instance, javaMM::CompilationUnit)
-
-@given(instance=javaMM::CompilationUnit_strategy)
-def test_javamm::compilationunit_originalFilePath_type(instance):
-    assert isinstance(instance.originalFilePath, str)
+def test_javamm_classfile_instantiation(instance):
+    assert isinstance(instance, javaMM_ClassFile)
 
 
-@given(instance=javaMM::CompilationUnit_strategy)
-def test_javamm::compilationunit_originalFilePath_setter(instance):
+
+@given(instance=javaMM_ClassFile_strategy)
+def test_javamm_classfile_originalFilePath_setter(instance):
     original = instance.originalFilePath
     instance.originalFilePath = original
     assert instance.originalFilePath == original
 
-@given(instance=javaMM::Type_strategy)
+@given(instance=javaMM_CompilationUnit_strategy)
 @settings(max_examples=50)
-def test_javamm::type_instantiation(instance):
-    assert isinstance(instance, javaMM::Type)
-
-@given(instance=javaMM::LabeledStatement_strategy)
-@settings(max_examples=50)
-def test_javamm::labeledstatement_instantiation(instance):
-    assert isinstance(instance, javaMM::LabeledStatement)
-
-@given(instance=javaMM::Archive_strategy)
-@settings(max_examples=50)
-def test_javamm::archive_instantiation(instance):
-    assert isinstance(instance, javaMM::Archive)
-
-@given(instance=javaMM::Archive_strategy)
-def test_javamm::archive_originalFilePath_type(instance):
-    assert isinstance(instance.originalFilePath, str)
+def test_javamm_compilationunit_instantiation(instance):
+    assert isinstance(instance, javaMM_CompilationUnit)
 
 
-@given(instance=javaMM::Archive_strategy)
-def test_javamm::archive_originalFilePath_setter(instance):
+
+@given(instance=javaMM_CompilationUnit_strategy)
+def test_javamm_compilationunit_originalFilePath_setter(instance):
     original = instance.originalFilePath
     instance.originalFilePath = original
     assert instance.originalFilePath == original
 
-@given(instance=javaMM::Block_strategy)
+@given(instance=javaMM_UnresolvedItem_strategy)
 @settings(max_examples=50)
-def test_javamm::block_instantiation(instance):
-    assert isinstance(instance, javaMM::Block)
+def test_javamm_unresolveditem_instantiation(instance):
+    assert isinstance(instance, javaMM_UnresolvedItem)
+
+@given(instance=javaMM_AnnotationMemberValuePair_strategy)
+@settings(max_examples=50)
+def test_javamm_annotationmembervaluepair_instantiation(instance):
+    assert isinstance(instance, javaMM_AnnotationMemberValuePair)
+
+@given(instance=javaMM_Archive_strategy)
+@settings(max_examples=50)
+def test_javamm_archive_instantiation(instance):
+    assert isinstance(instance, javaMM_Archive)
+
+
+
+@given(instance=javaMM_Archive_strategy)
+def test_javamm_archive_originalFilePath_setter(instance):
+    original = instance.originalFilePath
+    instance.originalFilePath = original
+    assert instance.originalFilePath == original
+
+@given(instance=javaMM_Block_strategy)
+@settings(max_examples=50)
+def test_javamm_block_instantiation(instance):
+    assert isinstance(instance, javaMM_Block)
 
 @given(instance=BodyDeclaration_strategy)
 @settings(max_examples=50)
 def test_bodydeclaration_instantiation(instance):
     assert isinstance(instance, BodyDeclaration)
 
-@given(instance=javaMM::FieldDeclaration_strategy)
+@given(instance=javaMM_FieldDeclaration_strategy)
 @settings(max_examples=50)
-def test_javamm::fielddeclaration_instantiation(instance):
-    assert isinstance(instance, javaMM::FieldDeclaration)
+def test_javamm_fielddeclaration_instantiation(instance):
+    assert isinstance(instance, javaMM_FieldDeclaration)
 
-@given(instance=javaMM::Initializer_strategy)
+@given(instance=javaMM_EnumConstantDeclaration_strategy)
 @settings(max_examples=50)
-def test_javamm::initializer_instantiation(instance):
-    assert isinstance(instance, javaMM::Initializer)
+def test_javamm_enumconstantdeclaration_instantiation(instance):
+    assert isinstance(instance, javaMM_EnumConstantDeclaration)
 
-@given(instance=javaMM::AnnotationTypeMemberDeclaration_strategy)
+@given(instance=javaMM_AnnotationTypeMemberDeclaration_strategy)
 @settings(max_examples=50)
-def test_javamm::annotationtypememberdeclaration_instantiation(instance):
-    assert isinstance(instance, javaMM::AnnotationTypeMemberDeclaration)
+def test_javamm_annotationtypememberdeclaration_instantiation(instance):
+    assert isinstance(instance, javaMM_AnnotationTypeMemberDeclaration)
 
-@given(instance=javaMM::EnumConstantDeclaration_strategy)
+@given(instance=javaMM_Initializer_strategy)
 @settings(max_examples=50)
-def test_javamm::enumconstantdeclaration_instantiation(instance):
-    assert isinstance(instance, javaMM::EnumConstantDeclaration)
+def test_javamm_initializer_instantiation(instance):
+    assert isinstance(instance, javaMM_Initializer)
 
-@given(instance=javaMM::AbstractMethodDeclaration_strategy)
+@given(instance=javaMM_AbstractMethodDeclaration_strategy)
 @settings(max_examples=50)
-def test_javamm::abstractmethoddeclaration_instantiation(instance):
-    assert isinstance(instance, javaMM::AbstractMethodDeclaration)
+def test_javamm_abstractmethoddeclaration_instantiation(instance):
+    assert isinstance(instance, javaMM_AbstractMethodDeclaration)
 
-@given(instance=javaMM::Package_strategy)
+@given(instance=javaMM_Package_strategy)
 @settings(max_examples=50)
-def test_javamm::package_instantiation(instance):
-    assert isinstance(instance, javaMM::Package)
+def test_javamm_package_instantiation(instance):
+    assert isinstance(instance, javaMM_Package)
 
-@given(instance=javaMM::BodyDeclaration_strategy)
+@given(instance=javaMM_BodyDeclaration_strategy)
 @settings(max_examples=50)
-def test_javamm::bodydeclaration_instantiation(instance):
-    assert isinstance(instance, javaMM::BodyDeclaration)
+def test_javamm_bodydeclaration_instantiation(instance):
+    assert isinstance(instance, javaMM_BodyDeclaration)
 
 @given(instance=Type_strategy)
 @settings(max_examples=50)
 def test_type_instantiation(instance):
     assert isinstance(instance, Type)
 
-@given(instance=javaMM::ParameterizedType_strategy)
+@given(instance=javaMM_UnresolvedType_strategy)
 @settings(max_examples=50)
-def test_javamm::parameterizedtype_instantiation(instance):
-    assert isinstance(instance, javaMM::ParameterizedType)
+def test_javamm_unresolvedtype_instantiation(instance):
+    assert isinstance(instance, javaMM_UnresolvedType)
 
-@given(instance=javaMM::ArrayType_strategy)
+@given(instance=javaMM_PrimitiveType_strategy)
 @settings(max_examples=50)
-def test_javamm::arraytype_instantiation(instance):
-    assert isinstance(instance, javaMM::ArrayType)
+def test_javamm_primitivetype_instantiation(instance):
+    assert isinstance(instance, javaMM_PrimitiveType)
 
-@given(instance=javaMM::ArrayType_strategy)
-def test_javamm::arraytype_dimensions_type(instance):
-    assert isinstance(instance.dimensions, int)
-
-
-@given(instance=javaMM::ArrayType_strategy)
-def test_javamm::arraytype_dimensions_setter(instance):
-    original = instance.dimensions
-    instance.dimensions = original
-    assert instance.dimensions == original
-
-@given(instance=javaMM::UnresolvedType_strategy)
+@given(instance=javaMM_WildCardType_strategy)
 @settings(max_examples=50)
-def test_javamm::unresolvedtype_instantiation(instance):
-    assert isinstance(instance, javaMM::UnresolvedType)
-
-@given(instance=javaMM::WildCardType_strategy)
-@settings(max_examples=50)
-def test_javamm::wildcardtype_instantiation(instance):
-    assert isinstance(instance, javaMM::WildCardType)
-
-@given(instance=javaMM::WildCardType_strategy)
-def test_javamm::wildcardtype_upperBound_type(instance):
-    assert isinstance(instance.upperBound, bool)
+def test_javamm_wildcardtype_instantiation(instance):
+    assert isinstance(instance, javaMM_WildCardType)
 
 
-@given(instance=javaMM::WildCardType_strategy)
-def test_javamm::wildcardtype_upperBound_setter(instance):
+
+@given(instance=javaMM_WildCardType_strategy)
+def test_javamm_wildcardtype_upperBound_setter(instance):
     original = instance.upperBound
     instance.upperBound = original
     assert instance.upperBound == original
 
-@given(instance=javaMM::PrimitiveType_strategy)
+@given(instance=javaMM_ArrayType_strategy)
 @settings(max_examples=50)
-def test_javamm::primitivetype_instantiation(instance):
-    assert isinstance(instance, javaMM::PrimitiveType)
+def test_javamm_arraytype_instantiation(instance):
+    assert isinstance(instance, javaMM_ArrayType)
 
-@given(instance=javaMM::AbstractTypeDeclaration_strategy)
+
+
+@given(instance=javaMM_ArrayType_strategy)
+def test_javamm_arraytype_dimensions_setter(instance):
+    original = instance.dimensions
+    instance.dimensions = original
+    assert instance.dimensions == original
+
+@given(instance=javaMM_ParameterizedType_strategy)
 @settings(max_examples=50)
-def test_javamm::abstracttypedeclaration_instantiation(instance):
-    assert isinstance(instance, javaMM::AbstractTypeDeclaration)
+def test_javamm_parameterizedtype_instantiation(instance):
+    assert isinstance(instance, javaMM_ParameterizedType)
+
+@given(instance=javaMM_AbstractTypeDeclaration_strategy)
+@settings(max_examples=50)
+def test_javamm_abstracttypedeclaration_instantiation(instance):
+    assert isinstance(instance, javaMM_AbstractTypeDeclaration)
 
 import warnings
 import copy
@@ -4476,9 +4413,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=javaMM::AbstractTypeDeclaration_strategy)
+@given(instance=javaMM_AbstractTypeDeclaration_strategy)
 @settings(max_examples=30)
-def test_javamm::abstracttypedeclaration_implements_changes_state(instance):
+def test_javamm_abstracttypedeclaration_implements_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -4492,234 +4429,88 @@ def test_javamm::abstracttypedeclaration_implements_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'implements' in javaMM::AbstractTypeDeclaration is empty"
+        assert has_statements, f"Function 'implements' in javaMM_AbstractTypeDeclaration is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'implements' in javaMM::AbstractTypeDeclaration did not change state; check implementation")
+            warnings.warn(f"Operation 'implements' in javaMM_AbstractTypeDeclaration did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'implements' in javaMM::AbstractTypeDeclaration is not implemented or raised an error")
+        warnings.warn(f"Operation 'implements' in javaMM_AbstractTypeDeclaration is not implemented or raised an error")
 
 @given(instance=ASTNode_strategy)
 @settings(max_examples=50)
 def test_astnode_instantiation(instance):
     assert isinstance(instance, ASTNode)
 
-@given(instance=javaMM::Comment_strategy)
+@given(instance=javaMM_Modifier_strategy)
 @settings(max_examples=50)
-def test_javamm::comment_instantiation(instance):
-    assert isinstance(instance, javaMM::Comment)
-
-@given(instance=javaMM::Comment_strategy)
-def test_javamm::comment_content_type(instance):
-    assert isinstance(instance.content, str)
+def test_javamm_modifier_instantiation(instance):
+    assert isinstance(instance, javaMM_Modifier)
 
 
-@given(instance=javaMM::Comment_strategy)
-def test_javamm::comment_content_setter(instance):
-    original = instance.content
-    instance.content = original
-    assert instance.content == original
 
-@given(instance=javaMM::Comment_strategy)
-def test_javamm::comment_enclosedByParent_type(instance):
-    assert isinstance(instance.enclosedByParent, bool)
-
-
-@given(instance=javaMM::Comment_strategy)
-def test_javamm::comment_enclosedByParent_setter(instance):
-    original = instance.enclosedByParent
-    instance.enclosedByParent = original
-    assert instance.enclosedByParent == original
-
-@given(instance=javaMM::Comment_strategy)
-def test_javamm::comment_prefixOfParent_type(instance):
-    assert isinstance(instance.prefixOfParent, bool)
-
-
-@given(instance=javaMM::Comment_strategy)
-def test_javamm::comment_prefixOfParent_setter(instance):
-    original = instance.prefixOfParent
-    instance.prefixOfParent = original
-    assert instance.prefixOfParent == original
-
-@given(instance=javaMM::NamedElement_strategy)
-@settings(max_examples=50)
-def test_javamm::namedelement_instantiation(instance):
-    assert isinstance(instance, javaMM::NamedElement)
-
-@given(instance=javaMM::NamedElement_strategy)
-def test_javamm::namedelement_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=javaMM::NamedElement_strategy)
-def test_javamm::namedelement_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
-
-@given(instance=javaMM::NamedElement_strategy)
-def test_javamm::namedelement_proxy_type(instance):
-    assert isinstance(instance.proxy, bool)
-
-
-@given(instance=javaMM::NamedElement_strategy)
-def test_javamm::namedelement_proxy_setter(instance):
-    original = instance.proxy
-    instance.proxy = original
-    assert instance.proxy == original
-
-@given(instance=javaMM::TextElement_strategy)
-@settings(max_examples=50)
-def test_javamm::textelement_instantiation(instance):
-    assert isinstance(instance, javaMM::TextElement)
-
-@given(instance=javaMM::TextElement_strategy)
-def test_javamm::textelement_text_type(instance):
-    assert isinstance(instance.text, str)
-
-
-@given(instance=javaMM::TextElement_strategy)
-def test_javamm::textelement_text_setter(instance):
-    original = instance.text
-    instance.text = original
-    assert instance.text == original
-
-@given(instance=javaMM::AnonymousClassDeclaration_strategy)
-@settings(max_examples=50)
-def test_javamm::anonymousclassdeclaration_instantiation(instance):
-    assert isinstance(instance, javaMM::AnonymousClassDeclaration)
-
-@given(instance=javaMM::NamespaceAccess_strategy)
-@settings(max_examples=50)
-def test_javamm::namespaceaccess_instantiation(instance):
-    assert isinstance(instance, javaMM::NamespaceAccess)
-
-@given(instance=javaMM::MemberRef_strategy)
-@settings(max_examples=50)
-def test_javamm::memberref_instantiation(instance):
-    assert isinstance(instance, javaMM::MemberRef)
-
-@given(instance=javaMM::Expression_strategy)
-@settings(max_examples=50)
-def test_javamm::expression_instantiation(instance):
-    assert isinstance(instance, javaMM::Expression)
-
-@given(instance=javaMM::Statement_strategy)
-@settings(max_examples=50)
-def test_javamm::statement_instantiation(instance):
-    assert isinstance(instance, javaMM::Statement)
-
-@given(instance=javaMM::TagElement_strategy)
-@settings(max_examples=50)
-def test_javamm::tagelement_instantiation(instance):
-    assert isinstance(instance, javaMM::TagElement)
-
-@given(instance=javaMM::TagElement_strategy)
-def test_javamm::tagelement_tagName_type(instance):
-    assert isinstance(instance.tagName, str)
-
-
-@given(instance=javaMM::TagElement_strategy)
-def test_javamm::tagelement_tagName_setter(instance):
-    original = instance.tagName
-    instance.tagName = original
-    assert instance.tagName == original
-
-@given(instance=javaMM::Modifier_strategy)
-@settings(max_examples=50)
-def test_javamm::modifier_instantiation(instance):
-    assert isinstance(instance, javaMM::Modifier)
-
-@given(instance=javaMM::Modifier_strategy)
-def test_javamm::modifier_static_type(instance):
-    assert isinstance(instance.static, bool)
-
-
-@given(instance=javaMM::Modifier_strategy)
-def test_javamm::modifier_static_setter(instance):
+@given(instance=javaMM_Modifier_strategy)
+def test_javamm_modifier_static_setter(instance):
     original = instance.static
     instance.static = original
     assert instance.static == original
 
-@given(instance=javaMM::Modifier_strategy)
-def test_javamm::modifier_visibility_type(instance):
-    assert isinstance(instance.visibility, str)
 
 
-@given(instance=javaMM::Modifier_strategy)
-def test_javamm::modifier_visibility_setter(instance):
-    original = instance.visibility
-    instance.visibility = original
-    assert instance.visibility == original
-
-@given(instance=javaMM::Modifier_strategy)
-def test_javamm::modifier_strictfp_type(instance):
-    assert isinstance(instance.strictfp, bool)
+@given(instance=javaMM_Modifier_strategy)
+def test_javamm_modifier_transient_setter(instance):
+    original = instance.transient
+    instance.transient = original
+    assert instance.transient == original
 
 
-@given(instance=javaMM::Modifier_strategy)
-def test_javamm::modifier_strictfp_setter(instance):
-    original = instance.strictfp
-    instance.strictfp = original
-    assert instance.strictfp == original
 
-@given(instance=javaMM::Modifier_strategy)
-def test_javamm::modifier_native_type(instance):
-    assert isinstance(instance.native, bool)
-
-
-@given(instance=javaMM::Modifier_strategy)
-def test_javamm::modifier_native_setter(instance):
-    original = instance.native
-    instance.native = original
-    assert instance.native == original
-
-@given(instance=javaMM::Modifier_strategy)
-def test_javamm::modifier_inheritance_type(instance):
-    assert isinstance(instance.inheritance, str)
-
-
-@given(instance=javaMM::Modifier_strategy)
-def test_javamm::modifier_inheritance_setter(instance):
-    original = instance.inheritance
-    instance.inheritance = original
-    assert instance.inheritance == original
-
-@given(instance=javaMM::Modifier_strategy)
-def test_javamm::modifier_synchronized_type(instance):
-    assert isinstance(instance.synchronized, bool)
-
-
-@given(instance=javaMM::Modifier_strategy)
-def test_javamm::modifier_synchronized_setter(instance):
+@given(instance=javaMM_Modifier_strategy)
+def test_javamm_modifier_synchronized_setter(instance):
     original = instance.synchronized
     instance.synchronized = original
     assert instance.synchronized == original
 
-@given(instance=javaMM::Modifier_strategy)
-def test_javamm::modifier_volatile_type(instance):
-    assert isinstance(instance.volatile, bool)
 
 
-@given(instance=javaMM::Modifier_strategy)
-def test_javamm::modifier_volatile_setter(instance):
+@given(instance=javaMM_Modifier_strategy)
+def test_javamm_modifier_volatile_setter(instance):
     original = instance.volatile
     instance.volatile = original
     assert instance.volatile == original
 
-@given(instance=javaMM::Modifier_strategy)
-def test_javamm::modifier_transient_type(instance):
-    assert isinstance(instance.transient, bool)
 
 
-@given(instance=javaMM::Modifier_strategy)
-def test_javamm::modifier_transient_setter(instance):
-    original = instance.transient
-    instance.transient = original
-    assert instance.transient == original
+@given(instance=javaMM_Modifier_strategy)
+def test_javamm_modifier_strictfp_setter(instance):
+    original = instance.strictfp
+    instance.strictfp = original
+    assert instance.strictfp == original
+
+
+
+@given(instance=javaMM_Modifier_strategy)
+def test_javamm_modifier_native_setter(instance):
+    original = instance.native
+    instance.native = original
+    assert instance.native == original
+
+
+
+@given(instance=javaMM_Modifier_strategy)
+def test_javamm_modifier_visibility_setter(instance):
+    original = instance.visibility
+    instance.visibility = original
+    assert instance.visibility == original
+
+
+
+@given(instance=javaMM_Modifier_strategy)
+def test_javamm_modifier_inheritance_setter(instance):
+    original = instance.inheritance
+    instance.inheritance = original
+    assert instance.inheritance == original
 
 import warnings
 import copy
@@ -4727,9 +4518,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=javaMM::Modifier_strategy)
+@given(instance=javaMM_Modifier_strategy)
 @settings(max_examples=30)
-def test_javamm::modifier_islocal_changes_state(instance):
+def test_javamm_modifier_islocal_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -4741,95 +4532,184 @@ def test_javamm::modifier_islocal_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'isLocal' in javaMM::Modifier is empty"
+        assert has_statements, f"Function 'isLocal' in javaMM_Modifier is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'isLocal' in javaMM::Modifier did not change state; check implementation")
+            warnings.warn(f"Operation 'isLocal' in javaMM_Modifier did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'isLocal' in javaMM::Modifier is not implemented or raised an error")
+        warnings.warn(f"Operation 'isLocal' in javaMM_Modifier is not implemented or raised an error")
 
-@given(instance=javaMM::MethodRefParameter_strategy)
+@given(instance=javaMM_Statement_strategy)
 @settings(max_examples=50)
-def test_javamm::methodrefparameter_instantiation(instance):
-    assert isinstance(instance, javaMM::MethodRefParameter)
+def test_javamm_statement_instantiation(instance):
+    assert isinstance(instance, javaMM_Statement)
 
-@given(instance=javaMM::MethodRefParameter_strategy)
-def test_javamm::methodrefparameter_varargs_type(instance):
-    assert isinstance(instance.varargs, bool)
-
-
-@given(instance=javaMM::MethodRefParameter_strategy)
-def test_javamm::methodrefparameter_varargs_setter(instance):
-    original = instance.varargs
-    instance.varargs = original
-    assert instance.varargs == original
-
-@given(instance=javaMM::MethodRefParameter_strategy)
-def test_javamm::methodrefparameter_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=javaMM::MethodRefParameter_strategy)
-def test_javamm::methodrefparameter_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
-
-@given(instance=javaMM::AbstractVariablesContainer_strategy)
+@given(instance=javaMM_ImportDeclaration_strategy)
 @settings(max_examples=50)
-def test_javamm::abstractvariablescontainer_instantiation(instance):
-    assert isinstance(instance, javaMM::AbstractVariablesContainer)
-
-@given(instance=javaMM::ImportDeclaration_strategy)
-@settings(max_examples=50)
-def test_javamm::importdeclaration_instantiation(instance):
-    assert isinstance(instance, javaMM::ImportDeclaration)
-
-@given(instance=javaMM::ImportDeclaration_strategy)
-def test_javamm::importdeclaration_static_type(instance):
-    assert isinstance(instance.static, bool)
+def test_javamm_importdeclaration_instantiation(instance):
+    assert isinstance(instance, javaMM_ImportDeclaration)
 
 
-@given(instance=javaMM::ImportDeclaration_strategy)
-def test_javamm::importdeclaration_static_setter(instance):
+
+@given(instance=javaMM_ImportDeclaration_strategy)
+def test_javamm_importdeclaration_static_setter(instance):
     original = instance.static
     instance.static = original
     assert instance.static == original
 
-@given(instance=javaMM::AbstractMethodInvocation_strategy)
+@given(instance=javaMM_NamedElement_strategy)
 @settings(max_examples=50)
-def test_javamm::abstractmethodinvocation_instantiation(instance):
-    assert isinstance(instance, javaMM::AbstractMethodInvocation)
+def test_javamm_namedelement_instantiation(instance):
+    assert isinstance(instance, javaMM_NamedElement)
 
-@given(instance=javaMM::MethodRef_strategy)
+
+
+@given(instance=javaMM_NamedElement_strategy)
+def test_javamm_namedelement_proxy_setter(instance):
+    original = instance.proxy
+    instance.proxy = original
+    assert instance.proxy == original
+
+
+
+@given(instance=javaMM_NamedElement_strategy)
+def test_javamm_namedelement_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+@given(instance=javaMM_MethodRefParameter_strategy)
 @settings(max_examples=50)
-def test_javamm::methodref_instantiation(instance):
-    assert isinstance(instance, javaMM::MethodRef)
+def test_javamm_methodrefparameter_instantiation(instance):
+    assert isinstance(instance, javaMM_MethodRefParameter)
 
-@given(instance=javaMM::TypeParameter_strategy)
+
+
+@given(instance=javaMM_MethodRefParameter_strategy)
+def test_javamm_methodrefparameter_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+
+
+@given(instance=javaMM_MethodRefParameter_strategy)
+def test_javamm_methodrefparameter_varargs_setter(instance):
+    original = instance.varargs
+    instance.varargs = original
+    assert instance.varargs == original
+
+@given(instance=javaMM_Comment_strategy)
 @settings(max_examples=50)
-def test_javamm::typeparameter_instantiation(instance):
-    assert isinstance(instance, javaMM::TypeParameter)
+def test_javamm_comment_instantiation(instance):
+    assert isinstance(instance, javaMM_Comment)
 
-@given(instance=javaMM::TypeAccess_strategy)
+
+
+@given(instance=javaMM_Comment_strategy)
+def test_javamm_comment_content_setter(instance):
+    original = instance.content
+    instance.content = original
+    assert instance.content == original
+
+
+
+@given(instance=javaMM_Comment_strategy)
+def test_javamm_comment_prefixOfParent_setter(instance):
+    original = instance.prefixOfParent
+    instance.prefixOfParent = original
+    assert instance.prefixOfParent == original
+
+
+
+@given(instance=javaMM_Comment_strategy)
+def test_javamm_comment_enclosedByParent_setter(instance):
+    original = instance.enclosedByParent
+    instance.enclosedByParent = original
+    assert instance.enclosedByParent == original
+
+@given(instance=javaMM_AnonymousClassDeclaration_strategy)
 @settings(max_examples=50)
-def test_javamm::typeaccess_instantiation(instance):
-    assert isinstance(instance, javaMM::TypeAccess)
+def test_javamm_anonymousclassdeclaration_instantiation(instance):
+    assert isinstance(instance, javaMM_AnonymousClassDeclaration)
 
-@given(instance=javaMM::SingleVariableDeclaration_strategy)
+@given(instance=javaMM_Expression_strategy)
 @settings(max_examples=50)
-def test_javamm::singlevariabledeclaration_instantiation(instance):
-    assert isinstance(instance, javaMM::SingleVariableDeclaration)
+def test_javamm_expression_instantiation(instance):
+    assert isinstance(instance, javaMM_Expression)
 
-@given(instance=javaMM::SingleVariableDeclaration_strategy)
-def test_javamm::singlevariabledeclaration_varargs_type(instance):
-    assert isinstance(instance.varargs, bool)
+@given(instance=javaMM_NamespaceAccess_strategy)
+@settings(max_examples=50)
+def test_javamm_namespaceaccess_instantiation(instance):
+    assert isinstance(instance, javaMM_NamespaceAccess)
+
+@given(instance=javaMM_TagElement_strategy)
+@settings(max_examples=50)
+def test_javamm_tagelement_instantiation(instance):
+    assert isinstance(instance, javaMM_TagElement)
 
 
-@given(instance=javaMM::SingleVariableDeclaration_strategy)
-def test_javamm::singlevariabledeclaration_varargs_setter(instance):
+
+@given(instance=javaMM_TagElement_strategy)
+def test_javamm_tagelement_tagName_setter(instance):
+    original = instance.tagName
+    instance.tagName = original
+    assert instance.tagName == original
+
+@given(instance=javaMM_AbstractVariablesContainer_strategy)
+@settings(max_examples=50)
+def test_javamm_abstractvariablescontainer_instantiation(instance):
+    assert isinstance(instance, javaMM_AbstractVariablesContainer)
+
+@given(instance=javaMM_TextElement_strategy)
+@settings(max_examples=50)
+def test_javamm_textelement_instantiation(instance):
+    assert isinstance(instance, javaMM_TextElement)
+
+
+
+@given(instance=javaMM_TextElement_strategy)
+def test_javamm_textelement_text_setter(instance):
+    original = instance.text
+    instance.text = original
+    assert instance.text == original
+
+@given(instance=javaMM_MemberRef_strategy)
+@settings(max_examples=50)
+def test_javamm_memberref_instantiation(instance):
+    assert isinstance(instance, javaMM_MemberRef)
+
+@given(instance=javaMM_AbstractMethodInvocation_strategy)
+@settings(max_examples=50)
+def test_javamm_abstractmethodinvocation_instantiation(instance):
+    assert isinstance(instance, javaMM_AbstractMethodInvocation)
+
+@given(instance=javaMM_MethodRef_strategy)
+@settings(max_examples=50)
+def test_javamm_methodref_instantiation(instance):
+    assert isinstance(instance, javaMM_MethodRef)
+
+@given(instance=javaMM_TypeParameter_strategy)
+@settings(max_examples=50)
+def test_javamm_typeparameter_instantiation(instance):
+    assert isinstance(instance, javaMM_TypeParameter)
+
+@given(instance=javaMM_TypeAccess_strategy)
+@settings(max_examples=50)
+def test_javamm_typeaccess_instantiation(instance):
+    assert isinstance(instance, javaMM_TypeAccess)
+
+@given(instance=javaMM_SingleVariableDeclaration_strategy)
+@settings(max_examples=50)
+def test_javamm_singlevariabledeclaration_instantiation(instance):
+    assert isinstance(instance, javaMM_SingleVariableDeclaration)
+
+
+
+@given(instance=javaMM_SingleVariableDeclaration_strategy)
+def test_javamm_singlevariabledeclaration_varargs_setter(instance):
     original = instance.varargs
     instance.varargs = original
     assert instance.varargs == original

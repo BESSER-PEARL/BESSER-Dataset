@@ -3,12 +3,12 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    My::TestEnum2,
-    My::TestClass2,
-    My::TestClass,
+from python_code import (
+    My_TestEnum2,
+    My_TestClass2,
+    My_TestClass,
     TestEnum,
 )
 
@@ -18,61 +18,61 @@ from classes import (
 
 
 
-def test_my::testenum2_is_not_abstract():
-    assert not inspect.isabstract(My::TestEnum2)
+def test_my_testenum2_is_not_abstract():
+    assert not inspect.isabstract(My_TestEnum2)
 
 
-def test_my::testenum2_constructor_exists():
-    assert callable(My::TestEnum2.__init__)
+def test_my_testenum2_constructor_exists():
+    assert callable(My_TestEnum2.__init__)
 
 
-def test_my::testenum2_constructor_args():
-    sig = inspect.signature(My::TestEnum2.__init__)
+def test_my_testenum2_constructor_args():
+    sig = inspect.signature(My_TestEnum2.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_my::testclass2_is_not_abstract():
-    assert not inspect.isabstract(My::TestClass2)
+def test_my_testclass2_is_not_abstract():
+    assert not inspect.isabstract(My_TestClass2)
 
 
-def test_my::testclass2_constructor_exists():
-    assert callable(My::TestClass2.__init__)
+def test_my_testclass2_constructor_exists():
+    assert callable(My_TestClass2.__init__)
 
 
-def test_my::testclass2_constructor_args():
-    sig = inspect.signature(My::TestClass2.__init__)
+def test_my_testclass2_constructor_args():
+    sig = inspect.signature(My_TestClass2.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_my::testclass_is_not_abstract():
-    assert not inspect.isabstract(My::TestClass)
+def test_my_testclass_is_not_abstract():
+    assert not inspect.isabstract(My_TestClass)
 
 
-def test_my::testclass_constructor_exists():
-    assert callable(My::TestClass.__init__)
+def test_my_testclass_constructor_exists():
+    assert callable(My_TestClass.__init__)
 
 
-def test_my::testclass_constructor_args():
-    sig = inspect.signature(My::TestClass.__init__)
+def test_my_testclass_constructor_args():
+    sig = inspect.signature(My_TestClass.__init__)
     params = list(sig.parameters.keys())
     assert "testAtt2" in params, "Missing parameter 'testAtt2'"
     assert "testAtt" in params, "Missing parameter 'testAtt'"
 
-def test_my::testclass_has_testAtt2():
-    assert hasattr(My::TestClass, "testAtt2")
+def test_my_testclass_has_testAtt2():
+    assert hasattr(My_TestClass, "testAtt2")
     descriptor = None
-    for klass in My::TestClass.__mro__:
+    for klass in My_TestClass.__mro__:
         if "testAtt2" in klass.__dict__:
             descriptor = klass.__dict__["testAtt2"]
             break
     assert isinstance(descriptor, property)
 
-def test_my::testclass_has_testAtt():
-    assert hasattr(My::TestClass, "testAtt")
+def test_my_testclass_has_testAtt():
+    assert hasattr(My_TestClass, "testAtt")
     descriptor = None
-    for klass in My::TestClass.__mro__:
+    for klass in My_TestClass.__mro__:
         if "testAtt" in klass.__dict__:
             descriptor = klass.__dict__["testAtt"]
             break
@@ -105,53 +105,47 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-My::TestEnum2_strategy = st.builds(
-    My::TestEnum2,
+My_TestEnum2_strategy = st.builds(
+    My_TestEnum2,
 )
-My::TestClass2_strategy = st.builds(
-    My::TestClass2,
+My_TestClass2_strategy = st.builds(
+    My_TestClass2,
 )
-My::TestClass_strategy = st.builds(
-    My::TestClass,
+My_TestClass_strategy = st.builds(
+    My_TestClass,
     testAtt2=
         safe_text,
     testAtt=
         safe_text
 )
 
-@given(instance=My::TestEnum2_strategy)
+@given(instance=My_TestEnum2_strategy)
 @settings(max_examples=50)
-def test_my::testenum2_instantiation(instance):
-    assert isinstance(instance, My::TestEnum2)
+def test_my_testenum2_instantiation(instance):
+    assert isinstance(instance, My_TestEnum2)
 
-@given(instance=My::TestClass2_strategy)
+@given(instance=My_TestClass2_strategy)
 @settings(max_examples=50)
-def test_my::testclass2_instantiation(instance):
-    assert isinstance(instance, My::TestClass2)
+def test_my_testclass2_instantiation(instance):
+    assert isinstance(instance, My_TestClass2)
 
-@given(instance=My::TestClass_strategy)
+@given(instance=My_TestClass_strategy)
 @settings(max_examples=50)
-def test_my::testclass_instantiation(instance):
-    assert isinstance(instance, My::TestClass)
-
-@given(instance=My::TestClass_strategy)
-def test_my::testclass_testAtt2_type(instance):
-    assert isinstance(instance.testAtt2, str)
+def test_my_testclass_instantiation(instance):
+    assert isinstance(instance, My_TestClass)
 
 
-@given(instance=My::TestClass_strategy)
-def test_my::testclass_testAtt2_setter(instance):
+
+@given(instance=My_TestClass_strategy)
+def test_my_testclass_testAtt2_setter(instance):
     original = instance.testAtt2
     instance.testAtt2 = original
     assert instance.testAtt2 == original
 
-@given(instance=My::TestClass_strategy)
-def test_my::testclass_testAtt_type(instance):
-    assert isinstance(instance.testAtt, str)
 
 
-@given(instance=My::TestClass_strategy)
-def test_my::testclass_testAtt_setter(instance):
+@given(instance=My_TestClass_strategy)
+def test_my_testclass_testAtt_setter(instance):
     original = instance.testAtt
     instance.testAtt = original
     assert instance.testAtt == original

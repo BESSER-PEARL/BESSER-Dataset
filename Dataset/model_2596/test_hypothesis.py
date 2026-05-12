@@ -3,15 +3,15 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     ClassB,
-    root::subpackage::SubA,
-    root::subpackage::SuperB,
+    root_subpackage_SubA,
+    root_subpackage_SuperB,
     SuperB,
-    root::subpackage::ClassB,
-    root::ClassA,
+    root_subpackage_ClassB,
+    root_ClassA,
 )
 
 # =============================================================================
@@ -34,30 +34,30 @@ def test_classb_constructor_args():
 
 
 
-def test_root::subpackage::suba_is_not_abstract():
-    assert not inspect.isabstract(root::subpackage::SubA)
+def test_root_subpackage_suba_is_not_abstract():
+    assert not inspect.isabstract(root_subpackage_SubA)
 
 
-def test_root::subpackage::suba_constructor_exists():
-    assert callable(root::subpackage::SubA.__init__)
+def test_root_subpackage_suba_constructor_exists():
+    assert callable(root_subpackage_SubA.__init__)
 
 
-def test_root::subpackage::suba_constructor_args():
-    sig = inspect.signature(root::subpackage::SubA.__init__)
+def test_root_subpackage_suba_constructor_args():
+    sig = inspect.signature(root_subpackage_SubA.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_root::subpackage::superb_is_not_abstract():
-    assert not inspect.isabstract(root::subpackage::SuperB)
+def test_root_subpackage_superb_is_not_abstract():
+    assert not inspect.isabstract(root_subpackage_SuperB)
 
 
-def test_root::subpackage::superb_constructor_exists():
-    assert callable(root::subpackage::SuperB.__init__)
+def test_root_subpackage_superb_constructor_exists():
+    assert callable(root_subpackage_SuperB.__init__)
 
 
-def test_root::subpackage::superb_constructor_args():
-    sig = inspect.signature(root::subpackage::SuperB.__init__)
+def test_root_subpackage_superb_constructor_args():
+    sig = inspect.signature(root_subpackage_SuperB.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -76,30 +76,30 @@ def test_superb_constructor_args():
 
 
 
-def test_root::subpackage::classb_is_not_abstract():
-    assert not inspect.isabstract(root::subpackage::ClassB)
+def test_root_subpackage_classb_is_not_abstract():
+    assert not inspect.isabstract(root_subpackage_ClassB)
 
 
-def test_root::subpackage::classb_constructor_exists():
-    assert callable(root::subpackage::ClassB.__init__)
+def test_root_subpackage_classb_constructor_exists():
+    assert callable(root_subpackage_ClassB.__init__)
 
 
-def test_root::subpackage::classb_constructor_args():
-    sig = inspect.signature(root::subpackage::ClassB.__init__)
+def test_root_subpackage_classb_constructor_args():
+    sig = inspect.signature(root_subpackage_ClassB.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_root::classa_is_not_abstract():
-    assert not inspect.isabstract(root::ClassA)
+def test_root_classa_is_not_abstract():
+    assert not inspect.isabstract(root_ClassA)
 
 
-def test_root::classa_constructor_exists():
-    assert callable(root::ClassA.__init__)
+def test_root_classa_constructor_exists():
+    assert callable(root_ClassA.__init__)
 
 
-def test_root::classa_constructor_args():
-    sig = inspect.signature(root::ClassA.__init__)
+def test_root_classa_constructor_args():
+    sig = inspect.signature(root_ClassA.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -117,20 +117,20 @@ safe_text = st.text(
 ClassB_strategy = st.builds(
     ClassB,
 )
-root::subpackage::SubA_strategy = st.builds(
-    root::subpackage::SubA,
+root_subpackage_SubA_strategy = st.builds(
+    root_subpackage_SubA,
 )
-root::subpackage::SuperB_strategy = st.builds(
-    root::subpackage::SuperB,
+root_subpackage_SuperB_strategy = st.builds(
+    root_subpackage_SuperB,
 )
 SuperB_strategy = st.builds(
     SuperB,
 )
-root::subpackage::ClassB_strategy = st.builds(
-    root::subpackage::ClassB,
+root_subpackage_ClassB_strategy = st.builds(
+    root_subpackage_ClassB,
 )
-root::ClassA_strategy = st.builds(
-    root::ClassA,
+root_ClassA_strategy = st.builds(
+    root_ClassA,
 )
 
 @given(instance=ClassB_strategy)
@@ -138,27 +138,27 @@ root::ClassA_strategy = st.builds(
 def test_classb_instantiation(instance):
     assert isinstance(instance, ClassB)
 
-@given(instance=root::subpackage::SubA_strategy)
+@given(instance=root_subpackage_SubA_strategy)
 @settings(max_examples=50)
-def test_root::subpackage::suba_instantiation(instance):
-    assert isinstance(instance, root::subpackage::SubA)
+def test_root_subpackage_suba_instantiation(instance):
+    assert isinstance(instance, root_subpackage_SubA)
 
-@given(instance=root::subpackage::SuperB_strategy)
+@given(instance=root_subpackage_SuperB_strategy)
 @settings(max_examples=50)
-def test_root::subpackage::superb_instantiation(instance):
-    assert isinstance(instance, root::subpackage::SuperB)
+def test_root_subpackage_superb_instantiation(instance):
+    assert isinstance(instance, root_subpackage_SuperB)
 
 @given(instance=SuperB_strategy)
 @settings(max_examples=50)
 def test_superb_instantiation(instance):
     assert isinstance(instance, SuperB)
 
-@given(instance=root::subpackage::ClassB_strategy)
+@given(instance=root_subpackage_ClassB_strategy)
 @settings(max_examples=50)
-def test_root::subpackage::classb_instantiation(instance):
-    assert isinstance(instance, root::subpackage::ClassB)
+def test_root_subpackage_classb_instantiation(instance):
+    assert isinstance(instance, root_subpackage_ClassB)
 
-@given(instance=root::ClassA_strategy)
+@given(instance=root_ClassA_strategy)
 @settings(max_examples=50)
-def test_root::classa_instantiation(instance):
-    assert isinstance(instance, root::ClassA)
+def test_root_classa_instantiation(instance):
+    assert isinstance(instance, root_ClassA)

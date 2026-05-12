@@ -3,12 +3,12 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    writers::Book,
-    writers::Writer,
-    writers::Catalog,
+from python_code import (
+    writers_Catalog,
+    writers_Book,
+    writers_Writer,
 )
 
 # =============================================================================
@@ -17,55 +17,55 @@ from classes import (
 
 
 
-def test_writers::book_is_not_abstract():
-    assert not inspect.isabstract(writers::Book)
+def test_writers_catalog_is_not_abstract():
+    assert not inspect.isabstract(writers_Catalog)
 
 
-def test_writers::book_constructor_exists():
-    assert callable(writers::Book.__init__)
+def test_writers_catalog_constructor_exists():
+    assert callable(writers_Catalog.__init__)
 
 
-def test_writers::book_constructor_args():
-    sig = inspect.signature(writers::Book.__init__)
+def test_writers_catalog_constructor_args():
+    sig = inspect.signature(writers_Catalog.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_writers::writer_is_not_abstract():
-    assert not inspect.isabstract(writers::Writer)
+def test_writers_book_is_not_abstract():
+    assert not inspect.isabstract(writers_Book)
 
 
-def test_writers::writer_constructor_exists():
-    assert callable(writers::Writer.__init__)
+def test_writers_book_constructor_exists():
+    assert callable(writers_Book.__init__)
 
 
-def test_writers::writer_constructor_args():
-    sig = inspect.signature(writers::Writer.__init__)
+def test_writers_book_constructor_args():
+    sig = inspect.signature(writers_Book.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_writers_writer_is_not_abstract():
+    assert not inspect.isabstract(writers_Writer)
+
+
+def test_writers_writer_constructor_exists():
+    assert callable(writers_Writer.__init__)
+
+
+def test_writers_writer_constructor_args():
+    sig = inspect.signature(writers_Writer.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_writers::writer_has_name():
-    assert hasattr(writers::Writer, "name")
+def test_writers_writer_has_name():
+    assert hasattr(writers_Writer, "name")
     descriptor = None
-    for klass in writers::Writer.__mro__:
+    for klass in writers_Writer.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
-
-
-
-def test_writers::catalog_is_not_abstract():
-    assert not inspect.isabstract(writers::Catalog)
-
-
-def test_writers::catalog_constructor_exists():
-    assert callable(writers::Catalog.__init__)
-
-
-def test_writers::catalog_constructor_args():
-    sig = inspect.signature(writers::Catalog.__init__)
-    params = list(sig.parameters.keys())
 
 
 # =============================================================================
@@ -79,40 +79,37 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-writers::Book_strategy = st.builds(
-    writers::Book,
+writers_Catalog_strategy = st.builds(
+    writers_Catalog,
 )
-writers::Writer_strategy = st.builds(
-    writers::Writer,
+writers_Book_strategy = st.builds(
+    writers_Book,
+)
+writers_Writer_strategy = st.builds(
+    writers_Writer,
     name=
         safe_text
 )
-writers::Catalog_strategy = st.builds(
-    writers::Catalog,
-)
 
-@given(instance=writers::Book_strategy)
+@given(instance=writers_Catalog_strategy)
 @settings(max_examples=50)
-def test_writers::book_instantiation(instance):
-    assert isinstance(instance, writers::Book)
+def test_writers_catalog_instantiation(instance):
+    assert isinstance(instance, writers_Catalog)
 
-@given(instance=writers::Writer_strategy)
+@given(instance=writers_Book_strategy)
 @settings(max_examples=50)
-def test_writers::writer_instantiation(instance):
-    assert isinstance(instance, writers::Writer)
+def test_writers_book_instantiation(instance):
+    assert isinstance(instance, writers_Book)
 
-@given(instance=writers::Writer_strategy)
-def test_writers::writer_name_type(instance):
-    assert isinstance(instance.name, str)
+@given(instance=writers_Writer_strategy)
+@settings(max_examples=50)
+def test_writers_writer_instantiation(instance):
+    assert isinstance(instance, writers_Writer)
 
 
-@given(instance=writers::Writer_strategy)
-def test_writers::writer_name_setter(instance):
+
+@given(instance=writers_Writer_strategy)
+def test_writers_writer_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
-
-@given(instance=writers::Catalog_strategy)
-@settings(max_examples=50)
-def test_writers::catalog_instantiation(instance):
-    assert isinstance(instance, writers::Catalog)

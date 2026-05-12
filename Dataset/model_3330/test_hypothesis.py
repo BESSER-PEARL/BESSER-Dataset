@@ -3,25 +3,25 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     TypedElement,
-    psample::Class,
-    psample::Object,
+    psample_Class,
+    psample_Object,
     Object,
-    psample::TypedElement,
-    psample::Type,
+    psample_TypedElement,
+    psample_Type,
     Member,
-    psample::Variable,
-    psample::Function,
-    psample::Interface,
+    psample_Variable,
+    psample_Function,
+    psample_Interface,
     Type,
-    psample::PrimitiveTypeVariable,
-    psample::Member,
-    psample::Package,
-    PrimitiveTypes,
+    psample_PrimitiveTypeVariable,
+    psample_Member,
+    psample_Package,
     Visibility,
+    PrimitiveTypes,
 )
 
 # =============================================================================
@@ -44,37 +44,37 @@ def test_typedelement_constructor_args():
 
 
 
-def test_psample::class_is_not_abstract():
-    assert not inspect.isabstract(psample::Class)
+def test_psample_class_is_not_abstract():
+    assert not inspect.isabstract(psample_Class)
 
 
-def test_psample::class_constructor_exists():
-    assert callable(psample::Class.__init__)
+def test_psample_class_constructor_exists():
+    assert callable(psample_Class.__init__)
 
 
-def test_psample::class_constructor_args():
-    sig = inspect.signature(psample::Class.__init__)
+def test_psample_class_constructor_args():
+    sig = inspect.signature(psample_Class.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_psample::object_is_not_abstract():
-    assert not inspect.isabstract(psample::Object)
+def test_psample_object_is_not_abstract():
+    assert not inspect.isabstract(psample_Object)
 
 
-def test_psample::object_constructor_exists():
-    assert callable(psample::Object.__init__)
+def test_psample_object_constructor_exists():
+    assert callable(psample_Object.__init__)
 
 
-def test_psample::object_constructor_args():
-    sig = inspect.signature(psample::Object.__init__)
+def test_psample_object_constructor_args():
+    sig = inspect.signature(psample_Object.__init__)
     params = list(sig.parameters.keys())
     assert "Name" in params, "Missing parameter 'Name'"
 
-def test_psample::object_has_Name():
-    assert hasattr(psample::Object, "Name")
+def test_psample_object_has_Name():
+    assert hasattr(psample_Object, "Name")
     descriptor = None
-    for klass in psample::Object.__mro__:
+    for klass in psample_Object.__mro__:
         if "Name" in klass.__dict__:
             descriptor = klass.__dict__["Name"]
             break
@@ -96,30 +96,30 @@ def test_object_constructor_args():
 
 
 
-def test_psample::typedelement_is_not_abstract():
-    assert not inspect.isabstract(psample::TypedElement)
+def test_psample_typedelement_is_not_abstract():
+    assert not inspect.isabstract(psample_TypedElement)
 
 
-def test_psample::typedelement_constructor_exists():
-    assert callable(psample::TypedElement.__init__)
+def test_psample_typedelement_constructor_exists():
+    assert callable(psample_TypedElement.__init__)
 
 
-def test_psample::typedelement_constructor_args():
-    sig = inspect.signature(psample::TypedElement.__init__)
+def test_psample_typedelement_constructor_args():
+    sig = inspect.signature(psample_TypedElement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_psample::type_is_not_abstract():
-    assert not inspect.isabstract(psample::Type)
+def test_psample_type_is_not_abstract():
+    assert not inspect.isabstract(psample_Type)
 
 
-def test_psample::type_constructor_exists():
-    assert callable(psample::Type.__init__)
+def test_psample_type_constructor_exists():
+    assert callable(psample_Type.__init__)
 
 
-def test_psample::type_constructor_args():
-    sig = inspect.signature(psample::Type.__init__)
+def test_psample_type_constructor_args():
+    sig = inspect.signature(psample_Type.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -138,44 +138,44 @@ def test_member_constructor_args():
 
 
 
-def test_psample::variable_is_not_abstract():
-    assert not inspect.isabstract(psample::Variable)
+def test_psample_variable_is_not_abstract():
+    assert not inspect.isabstract(psample_Variable)
 
 
-def test_psample::variable_constructor_exists():
-    assert callable(psample::Variable.__init__)
+def test_psample_variable_constructor_exists():
+    assert callable(psample_Variable.__init__)
 
 
-def test_psample::variable_constructor_args():
-    sig = inspect.signature(psample::Variable.__init__)
+def test_psample_variable_constructor_args():
+    sig = inspect.signature(psample_Variable.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_psample::function_is_not_abstract():
-    assert not inspect.isabstract(psample::Function)
+def test_psample_function_is_not_abstract():
+    assert not inspect.isabstract(psample_Function)
 
 
-def test_psample::function_constructor_exists():
-    assert callable(psample::Function.__init__)
+def test_psample_function_constructor_exists():
+    assert callable(psample_Function.__init__)
 
 
-def test_psample::function_constructor_args():
-    sig = inspect.signature(psample::Function.__init__)
+def test_psample_function_constructor_args():
+    sig = inspect.signature(psample_Function.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_psample::interface_is_not_abstract():
-    assert not inspect.isabstract(psample::Interface)
+def test_psample_interface_is_not_abstract():
+    assert not inspect.isabstract(psample_Interface)
 
 
-def test_psample::interface_constructor_exists():
-    assert callable(psample::Interface.__init__)
+def test_psample_interface_constructor_exists():
+    assert callable(psample_Interface.__init__)
 
 
-def test_psample::interface_constructor_args():
-    sig = inspect.signature(psample::Interface.__init__)
+def test_psample_interface_constructor_args():
+    sig = inspect.signature(psample_Interface.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -194,55 +194,71 @@ def test_type_constructor_args():
 
 
 
-def test_psample::primitivetypevariable_is_not_abstract():
-    assert not inspect.isabstract(psample::PrimitiveTypeVariable)
+def test_psample_primitivetypevariable_is_not_abstract():
+    assert not inspect.isabstract(psample_PrimitiveTypeVariable)
 
 
-def test_psample::primitivetypevariable_constructor_exists():
-    assert callable(psample::PrimitiveTypeVariable.__init__)
+def test_psample_primitivetypevariable_constructor_exists():
+    assert callable(psample_PrimitiveTypeVariable.__init__)
 
 
-def test_psample::primitivetypevariable_constructor_args():
-    sig = inspect.signature(psample::PrimitiveTypeVariable.__init__)
+def test_psample_primitivetypevariable_constructor_args():
+    sig = inspect.signature(psample_PrimitiveTypeVariable.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_psample::member_is_not_abstract():
-    assert not inspect.isabstract(psample::Member)
+def test_psample_member_is_not_abstract():
+    assert not inspect.isabstract(psample_Member)
 
 
-def test_psample::member_constructor_exists():
-    assert callable(psample::Member.__init__)
+def test_psample_member_constructor_exists():
+    assert callable(psample_Member.__init__)
 
 
-def test_psample::member_constructor_args():
-    sig = inspect.signature(psample::Member.__init__)
+def test_psample_member_constructor_args():
+    sig = inspect.signature(psample_Member.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_psample::package_is_not_abstract():
-    assert not inspect.isabstract(psample::Package)
+def test_psample_package_is_not_abstract():
+    assert not inspect.isabstract(psample_Package)
 
 
-def test_psample::package_constructor_exists():
-    assert callable(psample::Package.__init__)
+def test_psample_package_constructor_exists():
+    assert callable(psample_Package.__init__)
 
 
-def test_psample::package_constructor_args():
-    sig = inspect.signature(psample::Package.__init__)
+def test_psample_package_constructor_args():
+    sig = inspect.signature(psample_Package.__init__)
     params = list(sig.parameters.keys())
     assert "Name" in params, "Missing parameter 'Name'"
 
-def test_psample::package_has_Name():
-    assert hasattr(psample::Package, "Name")
+def test_psample_package_has_Name():
+    assert hasattr(psample_Package, "Name")
     descriptor = None
-    for klass in psample::Package.__mro__:
+    for klass in psample_Package.__mro__:
         if "Name" in klass.__dict__:
             descriptor = klass.__dict__["Name"]
             break
     assert isinstance(descriptor, property)
+
+def test_visibility_exists():
+    # Check that the Enumeration exists
+    assert Visibility is not None
+
+def test_visibility_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in Visibility]
+    expected_literals = [
+        "protected",
+        "public",
+        "private",
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in Visibility"
 
 def test_primitivetypes_exists():
     # Check that the Enumeration exists
@@ -253,29 +269,13 @@ def test_primitivetypes_has_all_literals():
     enum_literals = [lit.name for lit in PrimitiveTypes]
     expected_literals = [
         "string",
-        "bool",
-        "double",
         "int",
+        "double",
+        "bool",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
         assert lit_name in enum_literals, f"Literal '' missing in PrimitiveTypes"
-
-def test_visibility_exists():
-    # Check that the Enumeration exists
-    assert Visibility is not None
-
-def test_visibility_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in Visibility]
-    expected_literals = [
-        "private",
-        "public",
-        "protected",
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in Visibility"
 
 
 # =============================================================================
@@ -292,46 +292,46 @@ safe_text = st.text(
 TypedElement_strategy = st.builds(
     TypedElement,
 )
-psample::Class_strategy = st.builds(
-    psample::Class,
+psample_Class_strategy = st.builds(
+    psample_Class,
 )
-psample::Object_strategy = st.builds(
-    psample::Object,
+psample_Object_strategy = st.builds(
+    psample_Object,
     Name=
         safe_text
 )
 Object_strategy = st.builds(
     Object,
 )
-psample::TypedElement_strategy = st.builds(
-    psample::TypedElement,
+psample_TypedElement_strategy = st.builds(
+    psample_TypedElement,
 )
-psample::Type_strategy = st.builds(
-    psample::Type,
+psample_Type_strategy = st.builds(
+    psample_Type,
 )
 Member_strategy = st.builds(
     Member,
 )
-psample::Variable_strategy = st.builds(
-    psample::Variable,
+psample_Variable_strategy = st.builds(
+    psample_Variable,
 )
-psample::Function_strategy = st.builds(
-    psample::Function,
+psample_Function_strategy = st.builds(
+    psample_Function,
 )
-psample::Interface_strategy = st.builds(
-    psample::Interface,
+psample_Interface_strategy = st.builds(
+    psample_Interface,
 )
 Type_strategy = st.builds(
     Type,
 )
-psample::PrimitiveTypeVariable_strategy = st.builds(
-    psample::PrimitiveTypeVariable,
+psample_PrimitiveTypeVariable_strategy = st.builds(
+    psample_PrimitiveTypeVariable,
 )
-psample::Member_strategy = st.builds(
-    psample::Member,
+psample_Member_strategy = st.builds(
+    psample_Member,
 )
-psample::Package_strategy = st.builds(
-    psample::Package,
+psample_Package_strategy = st.builds(
+    psample_Package,
     Name=
         safe_text
 )
@@ -341,23 +341,20 @@ psample::Package_strategy = st.builds(
 def test_typedelement_instantiation(instance):
     assert isinstance(instance, TypedElement)
 
-@given(instance=psample::Class_strategy)
+@given(instance=psample_Class_strategy)
 @settings(max_examples=50)
-def test_psample::class_instantiation(instance):
-    assert isinstance(instance, psample::Class)
+def test_psample_class_instantiation(instance):
+    assert isinstance(instance, psample_Class)
 
-@given(instance=psample::Object_strategy)
+@given(instance=psample_Object_strategy)
 @settings(max_examples=50)
-def test_psample::object_instantiation(instance):
-    assert isinstance(instance, psample::Object)
-
-@given(instance=psample::Object_strategy)
-def test_psample::object_Name_type(instance):
-    assert isinstance(instance.Name, str)
+def test_psample_object_instantiation(instance):
+    assert isinstance(instance, psample_Object)
 
 
-@given(instance=psample::Object_strategy)
-def test_psample::object_Name_setter(instance):
+
+@given(instance=psample_Object_strategy)
+def test_psample_object_Name_setter(instance):
     original = instance.Name
     instance.Name = original
     assert instance.Name == original
@@ -367,63 +364,60 @@ def test_psample::object_Name_setter(instance):
 def test_object_instantiation(instance):
     assert isinstance(instance, Object)
 
-@given(instance=psample::TypedElement_strategy)
+@given(instance=psample_TypedElement_strategy)
 @settings(max_examples=50)
-def test_psample::typedelement_instantiation(instance):
-    assert isinstance(instance, psample::TypedElement)
+def test_psample_typedelement_instantiation(instance):
+    assert isinstance(instance, psample_TypedElement)
 
-@given(instance=psample::Type_strategy)
+@given(instance=psample_Type_strategy)
 @settings(max_examples=50)
-def test_psample::type_instantiation(instance):
-    assert isinstance(instance, psample::Type)
+def test_psample_type_instantiation(instance):
+    assert isinstance(instance, psample_Type)
 
 @given(instance=Member_strategy)
 @settings(max_examples=50)
 def test_member_instantiation(instance):
     assert isinstance(instance, Member)
 
-@given(instance=psample::Variable_strategy)
+@given(instance=psample_Variable_strategy)
 @settings(max_examples=50)
-def test_psample::variable_instantiation(instance):
-    assert isinstance(instance, psample::Variable)
+def test_psample_variable_instantiation(instance):
+    assert isinstance(instance, psample_Variable)
 
-@given(instance=psample::Function_strategy)
+@given(instance=psample_Function_strategy)
 @settings(max_examples=50)
-def test_psample::function_instantiation(instance):
-    assert isinstance(instance, psample::Function)
+def test_psample_function_instantiation(instance):
+    assert isinstance(instance, psample_Function)
 
-@given(instance=psample::Interface_strategy)
+@given(instance=psample_Interface_strategy)
 @settings(max_examples=50)
-def test_psample::interface_instantiation(instance):
-    assert isinstance(instance, psample::Interface)
+def test_psample_interface_instantiation(instance):
+    assert isinstance(instance, psample_Interface)
 
 @given(instance=Type_strategy)
 @settings(max_examples=50)
 def test_type_instantiation(instance):
     assert isinstance(instance, Type)
 
-@given(instance=psample::PrimitiveTypeVariable_strategy)
+@given(instance=psample_PrimitiveTypeVariable_strategy)
 @settings(max_examples=50)
-def test_psample::primitivetypevariable_instantiation(instance):
-    assert isinstance(instance, psample::PrimitiveTypeVariable)
+def test_psample_primitivetypevariable_instantiation(instance):
+    assert isinstance(instance, psample_PrimitiveTypeVariable)
 
-@given(instance=psample::Member_strategy)
+@given(instance=psample_Member_strategy)
 @settings(max_examples=50)
-def test_psample::member_instantiation(instance):
-    assert isinstance(instance, psample::Member)
+def test_psample_member_instantiation(instance):
+    assert isinstance(instance, psample_Member)
 
-@given(instance=psample::Package_strategy)
+@given(instance=psample_Package_strategy)
 @settings(max_examples=50)
-def test_psample::package_instantiation(instance):
-    assert isinstance(instance, psample::Package)
-
-@given(instance=psample::Package_strategy)
-def test_psample::package_Name_type(instance):
-    assert isinstance(instance.Name, str)
+def test_psample_package_instantiation(instance):
+    assert isinstance(instance, psample_Package)
 
 
-@given(instance=psample::Package_strategy)
-def test_psample::package_Name_setter(instance):
+
+@given(instance=psample_Package_strategy)
+def test_psample_package_Name_setter(instance):
     original = instance.Name
     instance.Name = original
     assert instance.Name == original

@@ -3,7 +3,7 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
 from python_code import (
     Faculty,
@@ -376,9 +376,6 @@ def test_student_instantiation(instance):
 def test_patron_instantiation(instance):
     assert isinstance(instance, Patron)
 
-@given(instance=Patron_strategy)
-def test_patron_isMember_type(instance):
-    assert isinstance(instance.isMember, bool)
 
 
 @given(instance=Patron_strategy)

@@ -3,16 +3,16 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    sbase::EObject,
-    sbase::SElement,
+from python_code import (
+    sbase_EObject,
+    sbase_SElement,
     SElement,
-    sbase::Y,
-    sbase::SRoot,
-    sbase::X,
-    sbase::Z,
+    sbase_SRoot,
+    sbase_Y,
+    sbase_X,
+    sbase_Z,
 )
 
 # =============================================================================
@@ -21,30 +21,30 @@ from classes import (
 
 
 
-def test_sbase::eobject_is_not_abstract():
-    assert not inspect.isabstract(sbase::EObject)
+def test_sbase_eobject_is_not_abstract():
+    assert not inspect.isabstract(sbase_EObject)
 
 
-def test_sbase::eobject_constructor_exists():
-    assert callable(sbase::EObject.__init__)
+def test_sbase_eobject_constructor_exists():
+    assert callable(sbase_EObject.__init__)
 
 
-def test_sbase::eobject_constructor_args():
-    sig = inspect.signature(sbase::EObject.__init__)
+def test_sbase_eobject_constructor_args():
+    sig = inspect.signature(sbase_EObject.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sbase::selement_is_not_abstract():
-    assert not inspect.isabstract(sbase::SElement)
+def test_sbase_selement_is_not_abstract():
+    assert not inspect.isabstract(sbase_SElement)
 
 
-def test_sbase::selement_constructor_exists():
-    assert callable(sbase::SElement.__init__)
+def test_sbase_selement_constructor_exists():
+    assert callable(sbase_SElement.__init__)
 
 
-def test_sbase::selement_constructor_args():
-    sig = inspect.signature(sbase::SElement.__init__)
+def test_sbase_selement_constructor_args():
+    sig = inspect.signature(sbase_SElement.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -63,23 +63,37 @@ def test_selement_constructor_args():
 
 
 
-def test_sbase::y_is_not_abstract():
-    assert not inspect.isabstract(sbase::Y)
+def test_sbase_sroot_is_not_abstract():
+    assert not inspect.isabstract(sbase_SRoot)
 
 
-def test_sbase::y_constructor_exists():
-    assert callable(sbase::Y.__init__)
+def test_sbase_sroot_constructor_exists():
+    assert callable(sbase_SRoot.__init__)
 
 
-def test_sbase::y_constructor_args():
-    sig = inspect.signature(sbase::Y.__init__)
+def test_sbase_sroot_constructor_args():
+    sig = inspect.signature(sbase_SRoot.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_sbase_y_is_not_abstract():
+    assert not inspect.isabstract(sbase_Y)
+
+
+def test_sbase_y_constructor_exists():
+    assert callable(sbase_Y.__init__)
+
+
+def test_sbase_y_constructor_args():
+    sig = inspect.signature(sbase_Y.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_sbase::y_has_name():
-    assert hasattr(sbase::Y, "name")
+def test_sbase_y_has_name():
+    assert hasattr(sbase_Y, "name")
     descriptor = None
-    for klass in sbase::Y.__mro__:
+    for klass in sbase_Y.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -87,37 +101,23 @@ def test_sbase::y_has_name():
 
 
 
-def test_sbase::sroot_is_not_abstract():
-    assert not inspect.isabstract(sbase::SRoot)
+def test_sbase_x_is_not_abstract():
+    assert not inspect.isabstract(sbase_X)
 
 
-def test_sbase::sroot_constructor_exists():
-    assert callable(sbase::SRoot.__init__)
+def test_sbase_x_constructor_exists():
+    assert callable(sbase_X.__init__)
 
 
-def test_sbase::sroot_constructor_args():
-    sig = inspect.signature(sbase::SRoot.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_sbase::x_is_not_abstract():
-    assert not inspect.isabstract(sbase::X)
-
-
-def test_sbase::x_constructor_exists():
-    assert callable(sbase::X.__init__)
-
-
-def test_sbase::x_constructor_args():
-    sig = inspect.signature(sbase::X.__init__)
+def test_sbase_x_constructor_args():
+    sig = inspect.signature(sbase_X.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_sbase::x_has_name():
-    assert hasattr(sbase::X, "name")
+def test_sbase_x_has_name():
+    assert hasattr(sbase_X, "name")
     descriptor = None
-    for klass in sbase::X.__mro__:
+    for klass in sbase_X.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -125,16 +125,16 @@ def test_sbase::x_has_name():
 
 
 
-def test_sbase::z_is_not_abstract():
-    assert not inspect.isabstract(sbase::Z)
+def test_sbase_z_is_not_abstract():
+    assert not inspect.isabstract(sbase_Z)
 
 
-def test_sbase::z_constructor_exists():
-    assert callable(sbase::Z.__init__)
+def test_sbase_z_constructor_exists():
+    assert callable(sbase_Z.__init__)
 
 
-def test_sbase::z_constructor_args():
-    sig = inspect.signature(sbase::Z.__init__)
+def test_sbase_z_constructor_args():
+    sig = inspect.signature(sbase_Z.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -149,85 +149,79 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-sbase::EObject_strategy = st.builds(
-    sbase::EObject,
+sbase_EObject_strategy = st.builds(
+    sbase_EObject,
 )
-sbase::SElement_strategy = st.builds(
-    sbase::SElement,
+sbase_SElement_strategy = st.builds(
+    sbase_SElement,
 )
 SElement_strategy = st.builds(
     SElement,
 )
-sbase::Y_strategy = st.builds(
-    sbase::Y,
+sbase_SRoot_strategy = st.builds(
+    sbase_SRoot,
+)
+sbase_Y_strategy = st.builds(
+    sbase_Y,
     name=
         safe_text
 )
-sbase::SRoot_strategy = st.builds(
-    sbase::SRoot,
-)
-sbase::X_strategy = st.builds(
-    sbase::X,
+sbase_X_strategy = st.builds(
+    sbase_X,
     name=
         safe_text
 )
-sbase::Z_strategy = st.builds(
-    sbase::Z,
+sbase_Z_strategy = st.builds(
+    sbase_Z,
 )
 
-@given(instance=sbase::EObject_strategy)
+@given(instance=sbase_EObject_strategy)
 @settings(max_examples=50)
-def test_sbase::eobject_instantiation(instance):
-    assert isinstance(instance, sbase::EObject)
+def test_sbase_eobject_instantiation(instance):
+    assert isinstance(instance, sbase_EObject)
 
-@given(instance=sbase::SElement_strategy)
+@given(instance=sbase_SElement_strategy)
 @settings(max_examples=50)
-def test_sbase::selement_instantiation(instance):
-    assert isinstance(instance, sbase::SElement)
+def test_sbase_selement_instantiation(instance):
+    assert isinstance(instance, sbase_SElement)
 
 @given(instance=SElement_strategy)
 @settings(max_examples=50)
 def test_selement_instantiation(instance):
     assert isinstance(instance, SElement)
 
-@given(instance=sbase::Y_strategy)
+@given(instance=sbase_SRoot_strategy)
 @settings(max_examples=50)
-def test_sbase::y_instantiation(instance):
-    assert isinstance(instance, sbase::Y)
+def test_sbase_sroot_instantiation(instance):
+    assert isinstance(instance, sbase_SRoot)
 
-@given(instance=sbase::Y_strategy)
-def test_sbase::y_name_type(instance):
-    assert isinstance(instance.name, str)
+@given(instance=sbase_Y_strategy)
+@settings(max_examples=50)
+def test_sbase_y_instantiation(instance):
+    assert isinstance(instance, sbase_Y)
 
 
-@given(instance=sbase::Y_strategy)
-def test_sbase::y_name_setter(instance):
+
+@given(instance=sbase_Y_strategy)
+def test_sbase_y_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=sbase::SRoot_strategy)
+@given(instance=sbase_X_strategy)
 @settings(max_examples=50)
-def test_sbase::sroot_instantiation(instance):
-    assert isinstance(instance, sbase::SRoot)
-
-@given(instance=sbase::X_strategy)
-@settings(max_examples=50)
-def test_sbase::x_instantiation(instance):
-    assert isinstance(instance, sbase::X)
-
-@given(instance=sbase::X_strategy)
-def test_sbase::x_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_sbase_x_instantiation(instance):
+    assert isinstance(instance, sbase_X)
 
 
-@given(instance=sbase::X_strategy)
-def test_sbase::x_name_setter(instance):
+
+@given(instance=sbase_X_strategy)
+def test_sbase_x_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=sbase::Z_strategy)
+@given(instance=sbase_Z_strategy)
 @settings(max_examples=50)
-def test_sbase::z_instantiation(instance):
-    assert isinstance(instance, sbase::Z)
+def test_sbase_z_instantiation(instance):
+    assert isinstance(instance, sbase_Z)

@@ -3,27 +3,27 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     Literal,
-    d3ql::BooleanLiteral,
-    d3ql::StringLiteral,
-    d3ql::IntegerLiteral,
-    d3ql::Literal,
-    d3ql::FunctionArgument,
-    d3ql::FunctionCall,
-    d3ql::PathElement,
-    d3ql::PathExpression,
-    d3ql::EObject,
-    d3ql::SelectExpression,
+    d3ql_StringLiteral,
+    d3ql_BooleanLiteral,
+    d3ql_IntegerLiteral,
+    d3ql_Literal,
+    d3ql_FunctionArgument,
+    d3ql_FunctionCall,
+    d3ql_PathElement,
+    d3ql_PathExpression,
+    d3ql_EObject,
+    d3ql_SelectExpression,
     Named,
-    d3ql::Alias,
-    d3ql::Named,
-    d3ql::AggregateRoot,
-    d3ql::SelectStatement,
-    d3ql::FromStatement,
-    d3ql::Query,
+    d3ql_Alias,
+    d3ql_Named,
+    d3ql_AggregateRoot,
+    d3ql_SelectStatement,
+    d3ql_FromStatement,
+    d3ql_Query,
 )
 
 # =============================================================================
@@ -46,23 +46,23 @@ def test_literal_constructor_args():
 
 
 
-def test_d3ql::booleanliteral_is_not_abstract():
-    assert not inspect.isabstract(d3ql::BooleanLiteral)
+def test_d3ql_stringliteral_is_not_abstract():
+    assert not inspect.isabstract(d3ql_StringLiteral)
 
 
-def test_d3ql::booleanliteral_constructor_exists():
-    assert callable(d3ql::BooleanLiteral.__init__)
+def test_d3ql_stringliteral_constructor_exists():
+    assert callable(d3ql_StringLiteral.__init__)
 
 
-def test_d3ql::booleanliteral_constructor_args():
-    sig = inspect.signature(d3ql::BooleanLiteral.__init__)
+def test_d3ql_stringliteral_constructor_args():
+    sig = inspect.signature(d3ql_StringLiteral.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
 
-def test_d3ql::booleanliteral_has_value():
-    assert hasattr(d3ql::BooleanLiteral, "value")
+def test_d3ql_stringliteral_has_value():
+    assert hasattr(d3ql_StringLiteral, "value")
     descriptor = None
-    for klass in d3ql::BooleanLiteral.__mro__:
+    for klass in d3ql_StringLiteral.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -70,23 +70,23 @@ def test_d3ql::booleanliteral_has_value():
 
 
 
-def test_d3ql::stringliteral_is_not_abstract():
-    assert not inspect.isabstract(d3ql::StringLiteral)
+def test_d3ql_booleanliteral_is_not_abstract():
+    assert not inspect.isabstract(d3ql_BooleanLiteral)
 
 
-def test_d3ql::stringliteral_constructor_exists():
-    assert callable(d3ql::StringLiteral.__init__)
+def test_d3ql_booleanliteral_constructor_exists():
+    assert callable(d3ql_BooleanLiteral.__init__)
 
 
-def test_d3ql::stringliteral_constructor_args():
-    sig = inspect.signature(d3ql::StringLiteral.__init__)
+def test_d3ql_booleanliteral_constructor_args():
+    sig = inspect.signature(d3ql_BooleanLiteral.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
 
-def test_d3ql::stringliteral_has_value():
-    assert hasattr(d3ql::StringLiteral, "value")
+def test_d3ql_booleanliteral_has_value():
+    assert hasattr(d3ql_BooleanLiteral, "value")
     descriptor = None
-    for klass in d3ql::StringLiteral.__mro__:
+    for klass in d3ql_BooleanLiteral.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -94,23 +94,23 @@ def test_d3ql::stringliteral_has_value():
 
 
 
-def test_d3ql::integerliteral_is_not_abstract():
-    assert not inspect.isabstract(d3ql::IntegerLiteral)
+def test_d3ql_integerliteral_is_not_abstract():
+    assert not inspect.isabstract(d3ql_IntegerLiteral)
 
 
-def test_d3ql::integerliteral_constructor_exists():
-    assert callable(d3ql::IntegerLiteral.__init__)
+def test_d3ql_integerliteral_constructor_exists():
+    assert callable(d3ql_IntegerLiteral.__init__)
 
 
-def test_d3ql::integerliteral_constructor_args():
-    sig = inspect.signature(d3ql::IntegerLiteral.__init__)
+def test_d3ql_integerliteral_constructor_args():
+    sig = inspect.signature(d3ql_IntegerLiteral.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
 
-def test_d3ql::integerliteral_has_value():
-    assert hasattr(d3ql::IntegerLiteral, "value")
+def test_d3ql_integerliteral_has_value():
+    assert hasattr(d3ql_IntegerLiteral, "value")
     descriptor = None
-    for klass in d3ql::IntegerLiteral.__mro__:
+    for klass in d3ql_IntegerLiteral.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -118,51 +118,51 @@ def test_d3ql::integerliteral_has_value():
 
 
 
-def test_d3ql::literal_is_not_abstract():
-    assert not inspect.isabstract(d3ql::Literal)
+def test_d3ql_literal_is_not_abstract():
+    assert not inspect.isabstract(d3ql_Literal)
 
 
-def test_d3ql::literal_constructor_exists():
-    assert callable(d3ql::Literal.__init__)
+def test_d3ql_literal_constructor_exists():
+    assert callable(d3ql_Literal.__init__)
 
 
-def test_d3ql::literal_constructor_args():
-    sig = inspect.signature(d3ql::Literal.__init__)
+def test_d3ql_literal_constructor_args():
+    sig = inspect.signature(d3ql_Literal.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_d3ql::functionargument_is_not_abstract():
-    assert not inspect.isabstract(d3ql::FunctionArgument)
+def test_d3ql_functionargument_is_not_abstract():
+    assert not inspect.isabstract(d3ql_FunctionArgument)
 
 
-def test_d3ql::functionargument_constructor_exists():
-    assert callable(d3ql::FunctionArgument.__init__)
+def test_d3ql_functionargument_constructor_exists():
+    assert callable(d3ql_FunctionArgument.__init__)
 
 
-def test_d3ql::functionargument_constructor_args():
-    sig = inspect.signature(d3ql::FunctionArgument.__init__)
+def test_d3ql_functionargument_constructor_args():
+    sig = inspect.signature(d3ql_FunctionArgument.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_d3ql::functioncall_is_not_abstract():
-    assert not inspect.isabstract(d3ql::FunctionCall)
+def test_d3ql_functioncall_is_not_abstract():
+    assert not inspect.isabstract(d3ql_FunctionCall)
 
 
-def test_d3ql::functioncall_constructor_exists():
-    assert callable(d3ql::FunctionCall.__init__)
+def test_d3ql_functioncall_constructor_exists():
+    assert callable(d3ql_FunctionCall.__init__)
 
 
-def test_d3ql::functioncall_constructor_args():
-    sig = inspect.signature(d3ql::FunctionCall.__init__)
+def test_d3ql_functioncall_constructor_args():
+    sig = inspect.signature(d3ql_FunctionCall.__init__)
     params = list(sig.parameters.keys())
     assert "function" in params, "Missing parameter 'function'"
 
-def test_d3ql::functioncall_has_function():
-    assert hasattr(d3ql::FunctionCall, "function")
+def test_d3ql_functioncall_has_function():
+    assert hasattr(d3ql_FunctionCall, "function")
     descriptor = None
-    for klass in d3ql::FunctionCall.__mro__:
+    for klass in d3ql_FunctionCall.__mro__:
         if "function" in klass.__dict__:
             descriptor = klass.__dict__["function"]
             break
@@ -170,23 +170,23 @@ def test_d3ql::functioncall_has_function():
 
 
 
-def test_d3ql::pathelement_is_not_abstract():
-    assert not inspect.isabstract(d3ql::PathElement)
+def test_d3ql_pathelement_is_not_abstract():
+    assert not inspect.isabstract(d3ql_PathElement)
 
 
-def test_d3ql::pathelement_constructor_exists():
-    assert callable(d3ql::PathElement.__init__)
+def test_d3ql_pathelement_constructor_exists():
+    assert callable(d3ql_PathElement.__init__)
 
 
-def test_d3ql::pathelement_constructor_args():
-    sig = inspect.signature(d3ql::PathElement.__init__)
+def test_d3ql_pathelement_constructor_args():
+    sig = inspect.signature(d3ql_PathElement.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_d3ql::pathelement_has_name():
-    assert hasattr(d3ql::PathElement, "name")
+def test_d3ql_pathelement_has_name():
+    assert hasattr(d3ql_PathElement, "name")
     descriptor = None
-    for klass in d3ql::PathElement.__mro__:
+    for klass in d3ql_PathElement.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -194,44 +194,44 @@ def test_d3ql::pathelement_has_name():
 
 
 
-def test_d3ql::pathexpression_is_not_abstract():
-    assert not inspect.isabstract(d3ql::PathExpression)
+def test_d3ql_pathexpression_is_not_abstract():
+    assert not inspect.isabstract(d3ql_PathExpression)
 
 
-def test_d3ql::pathexpression_constructor_exists():
-    assert callable(d3ql::PathExpression.__init__)
+def test_d3ql_pathexpression_constructor_exists():
+    assert callable(d3ql_PathExpression.__init__)
 
 
-def test_d3ql::pathexpression_constructor_args():
-    sig = inspect.signature(d3ql::PathExpression.__init__)
+def test_d3ql_pathexpression_constructor_args():
+    sig = inspect.signature(d3ql_PathExpression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_d3ql::eobject_is_not_abstract():
-    assert not inspect.isabstract(d3ql::EObject)
+def test_d3ql_eobject_is_not_abstract():
+    assert not inspect.isabstract(d3ql_EObject)
 
 
-def test_d3ql::eobject_constructor_exists():
-    assert callable(d3ql::EObject.__init__)
+def test_d3ql_eobject_constructor_exists():
+    assert callable(d3ql_EObject.__init__)
 
 
-def test_d3ql::eobject_constructor_args():
-    sig = inspect.signature(d3ql::EObject.__init__)
+def test_d3ql_eobject_constructor_args():
+    sig = inspect.signature(d3ql_EObject.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_d3ql::selectexpression_is_not_abstract():
-    assert not inspect.isabstract(d3ql::SelectExpression)
+def test_d3ql_selectexpression_is_not_abstract():
+    assert not inspect.isabstract(d3ql_SelectExpression)
 
 
-def test_d3ql::selectexpression_constructor_exists():
-    assert callable(d3ql::SelectExpression.__init__)
+def test_d3ql_selectexpression_constructor_exists():
+    assert callable(d3ql_SelectExpression.__init__)
 
 
-def test_d3ql::selectexpression_constructor_args():
-    sig = inspect.signature(d3ql::SelectExpression.__init__)
+def test_d3ql_selectexpression_constructor_args():
+    sig = inspect.signature(d3ql_SelectExpression.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -250,37 +250,37 @@ def test_named_constructor_args():
 
 
 
-def test_d3ql::alias_is_not_abstract():
-    assert not inspect.isabstract(d3ql::Alias)
+def test_d3ql_alias_is_not_abstract():
+    assert not inspect.isabstract(d3ql_Alias)
 
 
-def test_d3ql::alias_constructor_exists():
-    assert callable(d3ql::Alias.__init__)
+def test_d3ql_alias_constructor_exists():
+    assert callable(d3ql_Alias.__init__)
 
 
-def test_d3ql::alias_constructor_args():
-    sig = inspect.signature(d3ql::Alias.__init__)
+def test_d3ql_alias_constructor_args():
+    sig = inspect.signature(d3ql_Alias.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_d3ql::named_is_not_abstract():
-    assert not inspect.isabstract(d3ql::Named)
+def test_d3ql_named_is_not_abstract():
+    assert not inspect.isabstract(d3ql_Named)
 
 
-def test_d3ql::named_constructor_exists():
-    assert callable(d3ql::Named.__init__)
+def test_d3ql_named_constructor_exists():
+    assert callable(d3ql_Named.__init__)
 
 
-def test_d3ql::named_constructor_args():
-    sig = inspect.signature(d3ql::Named.__init__)
+def test_d3ql_named_constructor_args():
+    sig = inspect.signature(d3ql_Named.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_d3ql::named_has_name():
-    assert hasattr(d3ql::Named, "name")
+def test_d3ql_named_has_name():
+    assert hasattr(d3ql_Named, "name")
     descriptor = None
-    for klass in d3ql::Named.__mro__:
+    for klass in d3ql_Named.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -288,58 +288,58 @@ def test_d3ql::named_has_name():
 
 
 
-def test_d3ql::aggregateroot_is_not_abstract():
-    assert not inspect.isabstract(d3ql::AggregateRoot)
+def test_d3ql_aggregateroot_is_not_abstract():
+    assert not inspect.isabstract(d3ql_AggregateRoot)
 
 
-def test_d3ql::aggregateroot_constructor_exists():
-    assert callable(d3ql::AggregateRoot.__init__)
+def test_d3ql_aggregateroot_constructor_exists():
+    assert callable(d3ql_AggregateRoot.__init__)
 
 
-def test_d3ql::aggregateroot_constructor_args():
-    sig = inspect.signature(d3ql::AggregateRoot.__init__)
+def test_d3ql_aggregateroot_constructor_args():
+    sig = inspect.signature(d3ql_AggregateRoot.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_d3ql::selectstatement_is_not_abstract():
-    assert not inspect.isabstract(d3ql::SelectStatement)
+def test_d3ql_selectstatement_is_not_abstract():
+    assert not inspect.isabstract(d3ql_SelectStatement)
 
 
-def test_d3ql::selectstatement_constructor_exists():
-    assert callable(d3ql::SelectStatement.__init__)
+def test_d3ql_selectstatement_constructor_exists():
+    assert callable(d3ql_SelectStatement.__init__)
 
 
-def test_d3ql::selectstatement_constructor_args():
-    sig = inspect.signature(d3ql::SelectStatement.__init__)
+def test_d3ql_selectstatement_constructor_args():
+    sig = inspect.signature(d3ql_SelectStatement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_d3ql::fromstatement_is_not_abstract():
-    assert not inspect.isabstract(d3ql::FromStatement)
+def test_d3ql_fromstatement_is_not_abstract():
+    assert not inspect.isabstract(d3ql_FromStatement)
 
 
-def test_d3ql::fromstatement_constructor_exists():
-    assert callable(d3ql::FromStatement.__init__)
+def test_d3ql_fromstatement_constructor_exists():
+    assert callable(d3ql_FromStatement.__init__)
 
 
-def test_d3ql::fromstatement_constructor_args():
-    sig = inspect.signature(d3ql::FromStatement.__init__)
+def test_d3ql_fromstatement_constructor_args():
+    sig = inspect.signature(d3ql_FromStatement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_d3ql::query_is_not_abstract():
-    assert not inspect.isabstract(d3ql::Query)
+def test_d3ql_query_is_not_abstract():
+    assert not inspect.isabstract(d3ql_Query)
 
 
-def test_d3ql::query_constructor_exists():
-    assert callable(d3ql::Query.__init__)
+def test_d3ql_query_constructor_exists():
+    assert callable(d3ql_Query.__init__)
 
 
-def test_d3ql::query_constructor_args():
-    sig = inspect.signature(d3ql::Query.__init__)
+def test_d3ql_query_constructor_args():
+    sig = inspect.signature(d3ql_Query.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -357,68 +357,68 @@ safe_text = st.text(
 Literal_strategy = st.builds(
     Literal,
 )
-d3ql::BooleanLiteral_strategy = st.builds(
-    d3ql::BooleanLiteral,
+d3ql_StringLiteral_strategy = st.builds(
+    d3ql_StringLiteral,
     value=
         safe_text
 )
-d3ql::StringLiteral_strategy = st.builds(
-    d3ql::StringLiteral,
+d3ql_BooleanLiteral_strategy = st.builds(
+    d3ql_BooleanLiteral,
     value=
         safe_text
 )
-d3ql::IntegerLiteral_strategy = st.builds(
-    d3ql::IntegerLiteral,
+d3ql_IntegerLiteral_strategy = st.builds(
+    d3ql_IntegerLiteral,
     value=
         st.integers()
 )
-d3ql::Literal_strategy = st.builds(
-    d3ql::Literal,
+d3ql_Literal_strategy = st.builds(
+    d3ql_Literal,
 )
-d3ql::FunctionArgument_strategy = st.builds(
-    d3ql::FunctionArgument,
+d3ql_FunctionArgument_strategy = st.builds(
+    d3ql_FunctionArgument,
 )
-d3ql::FunctionCall_strategy = st.builds(
-    d3ql::FunctionCall,
+d3ql_FunctionCall_strategy = st.builds(
+    d3ql_FunctionCall,
     function=
         safe_text
 )
-d3ql::PathElement_strategy = st.builds(
-    d3ql::PathElement,
+d3ql_PathElement_strategy = st.builds(
+    d3ql_PathElement,
     name=
         safe_text
 )
-d3ql::PathExpression_strategy = st.builds(
-    d3ql::PathExpression,
+d3ql_PathExpression_strategy = st.builds(
+    d3ql_PathExpression,
 )
-d3ql::EObject_strategy = st.builds(
-    d3ql::EObject,
+d3ql_EObject_strategy = st.builds(
+    d3ql_EObject,
 )
-d3ql::SelectExpression_strategy = st.builds(
-    d3ql::SelectExpression,
+d3ql_SelectExpression_strategy = st.builds(
+    d3ql_SelectExpression,
 )
 Named_strategy = st.builds(
     Named,
 )
-d3ql::Alias_strategy = st.builds(
-    d3ql::Alias,
+d3ql_Alias_strategy = st.builds(
+    d3ql_Alias,
 )
-d3ql::Named_strategy = st.builds(
-    d3ql::Named,
+d3ql_Named_strategy = st.builds(
+    d3ql_Named,
     name=
         safe_text
 )
-d3ql::AggregateRoot_strategy = st.builds(
-    d3ql::AggregateRoot,
+d3ql_AggregateRoot_strategy = st.builds(
+    d3ql_AggregateRoot,
 )
-d3ql::SelectStatement_strategy = st.builds(
-    d3ql::SelectStatement,
+d3ql_SelectStatement_strategy = st.builds(
+    d3ql_SelectStatement,
 )
-d3ql::FromStatement_strategy = st.builds(
-    d3ql::FromStatement,
+d3ql_FromStatement_strategy = st.builds(
+    d3ql_FromStatement,
 )
-d3ql::Query_strategy = st.builds(
-    d3ql::Query,
+d3ql_Query_strategy = st.builds(
+    d3ql_Query,
 )
 
 @given(instance=Literal_strategy)
@@ -426,153 +426,135 @@ d3ql::Query_strategy = st.builds(
 def test_literal_instantiation(instance):
     assert isinstance(instance, Literal)
 
-@given(instance=d3ql::BooleanLiteral_strategy)
+@given(instance=d3ql_StringLiteral_strategy)
 @settings(max_examples=50)
-def test_d3ql::booleanliteral_instantiation(instance):
-    assert isinstance(instance, d3ql::BooleanLiteral)
-
-@given(instance=d3ql::BooleanLiteral_strategy)
-def test_d3ql::booleanliteral_value_type(instance):
-    assert isinstance(instance.value, str)
+def test_d3ql_stringliteral_instantiation(instance):
+    assert isinstance(instance, d3ql_StringLiteral)
 
 
-@given(instance=d3ql::BooleanLiteral_strategy)
-def test_d3ql::booleanliteral_value_setter(instance):
+
+@given(instance=d3ql_StringLiteral_strategy)
+def test_d3ql_stringliteral_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
 
-@given(instance=d3ql::StringLiteral_strategy)
+@given(instance=d3ql_BooleanLiteral_strategy)
 @settings(max_examples=50)
-def test_d3ql::stringliteral_instantiation(instance):
-    assert isinstance(instance, d3ql::StringLiteral)
-
-@given(instance=d3ql::StringLiteral_strategy)
-def test_d3ql::stringliteral_value_type(instance):
-    assert isinstance(instance.value, str)
+def test_d3ql_booleanliteral_instantiation(instance):
+    assert isinstance(instance, d3ql_BooleanLiteral)
 
 
-@given(instance=d3ql::StringLiteral_strategy)
-def test_d3ql::stringliteral_value_setter(instance):
+
+@given(instance=d3ql_BooleanLiteral_strategy)
+def test_d3ql_booleanliteral_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
 
-@given(instance=d3ql::IntegerLiteral_strategy)
+@given(instance=d3ql_IntegerLiteral_strategy)
 @settings(max_examples=50)
-def test_d3ql::integerliteral_instantiation(instance):
-    assert isinstance(instance, d3ql::IntegerLiteral)
-
-@given(instance=d3ql::IntegerLiteral_strategy)
-def test_d3ql::integerliteral_value_type(instance):
-    assert isinstance(instance.value, int)
+def test_d3ql_integerliteral_instantiation(instance):
+    assert isinstance(instance, d3ql_IntegerLiteral)
 
 
-@given(instance=d3ql::IntegerLiteral_strategy)
-def test_d3ql::integerliteral_value_setter(instance):
+
+@given(instance=d3ql_IntegerLiteral_strategy)
+def test_d3ql_integerliteral_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
 
-@given(instance=d3ql::Literal_strategy)
+@given(instance=d3ql_Literal_strategy)
 @settings(max_examples=50)
-def test_d3ql::literal_instantiation(instance):
-    assert isinstance(instance, d3ql::Literal)
+def test_d3ql_literal_instantiation(instance):
+    assert isinstance(instance, d3ql_Literal)
 
-@given(instance=d3ql::FunctionArgument_strategy)
+@given(instance=d3ql_FunctionArgument_strategy)
 @settings(max_examples=50)
-def test_d3ql::functionargument_instantiation(instance):
-    assert isinstance(instance, d3ql::FunctionArgument)
+def test_d3ql_functionargument_instantiation(instance):
+    assert isinstance(instance, d3ql_FunctionArgument)
 
-@given(instance=d3ql::FunctionCall_strategy)
+@given(instance=d3ql_FunctionCall_strategy)
 @settings(max_examples=50)
-def test_d3ql::functioncall_instantiation(instance):
-    assert isinstance(instance, d3ql::FunctionCall)
-
-@given(instance=d3ql::FunctionCall_strategy)
-def test_d3ql::functioncall_function_type(instance):
-    assert isinstance(instance.function, str)
+def test_d3ql_functioncall_instantiation(instance):
+    assert isinstance(instance, d3ql_FunctionCall)
 
 
-@given(instance=d3ql::FunctionCall_strategy)
-def test_d3ql::functioncall_function_setter(instance):
+
+@given(instance=d3ql_FunctionCall_strategy)
+def test_d3ql_functioncall_function_setter(instance):
     original = instance.function
     instance.function = original
     assert instance.function == original
 
-@given(instance=d3ql::PathElement_strategy)
+@given(instance=d3ql_PathElement_strategy)
 @settings(max_examples=50)
-def test_d3ql::pathelement_instantiation(instance):
-    assert isinstance(instance, d3ql::PathElement)
-
-@given(instance=d3ql::PathElement_strategy)
-def test_d3ql::pathelement_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_d3ql_pathelement_instantiation(instance):
+    assert isinstance(instance, d3ql_PathElement)
 
 
-@given(instance=d3ql::PathElement_strategy)
-def test_d3ql::pathelement_name_setter(instance):
+
+@given(instance=d3ql_PathElement_strategy)
+def test_d3ql_pathelement_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=d3ql::PathExpression_strategy)
+@given(instance=d3ql_PathExpression_strategy)
 @settings(max_examples=50)
-def test_d3ql::pathexpression_instantiation(instance):
-    assert isinstance(instance, d3ql::PathExpression)
+def test_d3ql_pathexpression_instantiation(instance):
+    assert isinstance(instance, d3ql_PathExpression)
 
-@given(instance=d3ql::EObject_strategy)
+@given(instance=d3ql_EObject_strategy)
 @settings(max_examples=50)
-def test_d3ql::eobject_instantiation(instance):
-    assert isinstance(instance, d3ql::EObject)
+def test_d3ql_eobject_instantiation(instance):
+    assert isinstance(instance, d3ql_EObject)
 
-@given(instance=d3ql::SelectExpression_strategy)
+@given(instance=d3ql_SelectExpression_strategy)
 @settings(max_examples=50)
-def test_d3ql::selectexpression_instantiation(instance):
-    assert isinstance(instance, d3ql::SelectExpression)
+def test_d3ql_selectexpression_instantiation(instance):
+    assert isinstance(instance, d3ql_SelectExpression)
 
 @given(instance=Named_strategy)
 @settings(max_examples=50)
 def test_named_instantiation(instance):
     assert isinstance(instance, Named)
 
-@given(instance=d3ql::Alias_strategy)
+@given(instance=d3ql_Alias_strategy)
 @settings(max_examples=50)
-def test_d3ql::alias_instantiation(instance):
-    assert isinstance(instance, d3ql::Alias)
+def test_d3ql_alias_instantiation(instance):
+    assert isinstance(instance, d3ql_Alias)
 
-@given(instance=d3ql::Named_strategy)
+@given(instance=d3ql_Named_strategy)
 @settings(max_examples=50)
-def test_d3ql::named_instantiation(instance):
-    assert isinstance(instance, d3ql::Named)
-
-@given(instance=d3ql::Named_strategy)
-def test_d3ql::named_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_d3ql_named_instantiation(instance):
+    assert isinstance(instance, d3ql_Named)
 
 
-@given(instance=d3ql::Named_strategy)
-def test_d3ql::named_name_setter(instance):
+
+@given(instance=d3ql_Named_strategy)
+def test_d3ql_named_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=d3ql::AggregateRoot_strategy)
+@given(instance=d3ql_AggregateRoot_strategy)
 @settings(max_examples=50)
-def test_d3ql::aggregateroot_instantiation(instance):
-    assert isinstance(instance, d3ql::AggregateRoot)
+def test_d3ql_aggregateroot_instantiation(instance):
+    assert isinstance(instance, d3ql_AggregateRoot)
 
-@given(instance=d3ql::SelectStatement_strategy)
+@given(instance=d3ql_SelectStatement_strategy)
 @settings(max_examples=50)
-def test_d3ql::selectstatement_instantiation(instance):
-    assert isinstance(instance, d3ql::SelectStatement)
+def test_d3ql_selectstatement_instantiation(instance):
+    assert isinstance(instance, d3ql_SelectStatement)
 
-@given(instance=d3ql::FromStatement_strategy)
+@given(instance=d3ql_FromStatement_strategy)
 @settings(max_examples=50)
-def test_d3ql::fromstatement_instantiation(instance):
-    assert isinstance(instance, d3ql::FromStatement)
+def test_d3ql_fromstatement_instantiation(instance):
+    assert isinstance(instance, d3ql_FromStatement)
 
-@given(instance=d3ql::Query_strategy)
+@given(instance=d3ql_Query_strategy)
 @settings(max_examples=50)
-def test_d3ql::query_instantiation(instance):
-    assert isinstance(instance, d3ql::Query)
+def test_d3ql_query_instantiation(instance):
+    assert isinstance(instance, d3ql_Query)

@@ -3,25 +3,25 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    Statecharts::Event,
+from python_code import (
+    Statecharts_Event,
     BooleanExpression,
-    Statecharts::Guard,
+    Statecharts_Guard,
     CompositeState,
-    Statecharts::StateVertex,
+    Statecharts_StateVertex,
     Guard,
-    Statecharts::Transition,
+    Statecharts_Transition,
     Event,
     StateMachine,
     StateVertex,
-    Statecharts::State,
+    Statecharts_State,
     State,
-    Statecharts::CompositeState,
+    Statecharts_CompositeState,
     Transition,
-    Statecharts::StateMachine,
-    Statecharts::BooleanExpression,
+    Statecharts_StateMachine,
+    Statecharts_BooleanExpression,
 )
 
 # =============================================================================
@@ -30,16 +30,16 @@ from classes import (
 
 
 
-def test_statecharts::event_is_not_abstract():
-    assert not inspect.isabstract(Statecharts::Event)
+def test_statecharts_event_is_not_abstract():
+    assert not inspect.isabstract(Statecharts_Event)
 
 
-def test_statecharts::event_constructor_exists():
-    assert callable(Statecharts::Event.__init__)
+def test_statecharts_event_constructor_exists():
+    assert callable(Statecharts_Event.__init__)
 
 
-def test_statecharts::event_constructor_args():
-    sig = inspect.signature(Statecharts::Event.__init__)
+def test_statecharts_event_constructor_args():
+    sig = inspect.signature(Statecharts_Event.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -58,16 +58,16 @@ def test_booleanexpression_constructor_args():
 
 
 
-def test_statecharts::guard_is_not_abstract():
-    assert not inspect.isabstract(Statecharts::Guard)
+def test_statecharts_guard_is_not_abstract():
+    assert not inspect.isabstract(Statecharts_Guard)
 
 
-def test_statecharts::guard_constructor_exists():
-    assert callable(Statecharts::Guard.__init__)
+def test_statecharts_guard_constructor_exists():
+    assert callable(Statecharts_Guard.__init__)
 
 
-def test_statecharts::guard_constructor_args():
-    sig = inspect.signature(Statecharts::Guard.__init__)
+def test_statecharts_guard_constructor_args():
+    sig = inspect.signature(Statecharts_Guard.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -86,16 +86,16 @@ def test_compositestate_constructor_args():
 
 
 
-def test_statecharts::statevertex_is_not_abstract():
-    assert not inspect.isabstract(Statecharts::StateVertex)
+def test_statecharts_statevertex_is_not_abstract():
+    assert not inspect.isabstract(Statecharts_StateVertex)
 
 
-def test_statecharts::statevertex_constructor_exists():
-    assert callable(Statecharts::StateVertex.__init__)
+def test_statecharts_statevertex_constructor_exists():
+    assert callable(Statecharts_StateVertex.__init__)
 
 
-def test_statecharts::statevertex_constructor_args():
-    sig = inspect.signature(Statecharts::StateVertex.__init__)
+def test_statecharts_statevertex_constructor_args():
+    sig = inspect.signature(Statecharts_StateVertex.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -114,16 +114,16 @@ def test_guard_constructor_args():
 
 
 
-def test_statecharts::transition_is_not_abstract():
-    assert not inspect.isabstract(Statecharts::Transition)
+def test_statecharts_transition_is_not_abstract():
+    assert not inspect.isabstract(Statecharts_Transition)
 
 
-def test_statecharts::transition_constructor_exists():
-    assert callable(Statecharts::Transition.__init__)
+def test_statecharts_transition_constructor_exists():
+    assert callable(Statecharts_Transition.__init__)
 
 
-def test_statecharts::transition_constructor_args():
-    sig = inspect.signature(Statecharts::Transition.__init__)
+def test_statecharts_transition_constructor_args():
+    sig = inspect.signature(Statecharts_Transition.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -170,16 +170,16 @@ def test_statevertex_constructor_args():
 
 
 
-def test_statecharts::state_is_not_abstract():
-    assert not inspect.isabstract(Statecharts::State)
+def test_statecharts_state_is_not_abstract():
+    assert not inspect.isabstract(Statecharts_State)
 
 
-def test_statecharts::state_constructor_exists():
-    assert callable(Statecharts::State.__init__)
+def test_statecharts_state_constructor_exists():
+    assert callable(Statecharts_State.__init__)
 
 
-def test_statecharts::state_constructor_args():
-    sig = inspect.signature(Statecharts::State.__init__)
+def test_statecharts_state_constructor_args():
+    sig = inspect.signature(Statecharts_State.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -198,23 +198,23 @@ def test_state_constructor_args():
 
 
 
-def test_statecharts::compositestate_is_not_abstract():
-    assert not inspect.isabstract(Statecharts::CompositeState)
+def test_statecharts_compositestate_is_not_abstract():
+    assert not inspect.isabstract(Statecharts_CompositeState)
 
 
-def test_statecharts::compositestate_constructor_exists():
-    assert callable(Statecharts::CompositeState.__init__)
+def test_statecharts_compositestate_constructor_exists():
+    assert callable(Statecharts_CompositeState.__init__)
 
 
-def test_statecharts::compositestate_constructor_args():
-    sig = inspect.signature(Statecharts::CompositeState.__init__)
+def test_statecharts_compositestate_constructor_args():
+    sig = inspect.signature(Statecharts_CompositeState.__init__)
     params = list(sig.parameters.keys())
     assert "isConcurrent" in params, "Missing parameter 'isConcurrent'"
 
-def test_statecharts::compositestate_has_isConcurrent():
-    assert hasattr(Statecharts::CompositeState, "isConcurrent")
+def test_statecharts_compositestate_has_isConcurrent():
+    assert hasattr(Statecharts_CompositeState, "isConcurrent")
     descriptor = None
-    for klass in Statecharts::CompositeState.__mro__:
+    for klass in Statecharts_CompositeState.__mro__:
         if "isConcurrent" in klass.__dict__:
             descriptor = klass.__dict__["isConcurrent"]
             break
@@ -236,37 +236,37 @@ def test_transition_constructor_args():
 
 
 
-def test_statecharts::statemachine_is_not_abstract():
-    assert not inspect.isabstract(Statecharts::StateMachine)
+def test_statecharts_statemachine_is_not_abstract():
+    assert not inspect.isabstract(Statecharts_StateMachine)
 
 
-def test_statecharts::statemachine_constructor_exists():
-    assert callable(Statecharts::StateMachine.__init__)
+def test_statecharts_statemachine_constructor_exists():
+    assert callable(Statecharts_StateMachine.__init__)
 
 
-def test_statecharts::statemachine_constructor_args():
-    sig = inspect.signature(Statecharts::StateMachine.__init__)
+def test_statecharts_statemachine_constructor_args():
+    sig = inspect.signature(Statecharts_StateMachine.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_statecharts::booleanexpression_is_not_abstract():
-    assert not inspect.isabstract(Statecharts::BooleanExpression)
+def test_statecharts_booleanexpression_is_not_abstract():
+    assert not inspect.isabstract(Statecharts_BooleanExpression)
 
 
-def test_statecharts::booleanexpression_constructor_exists():
-    assert callable(Statecharts::BooleanExpression.__init__)
+def test_statecharts_booleanexpression_constructor_exists():
+    assert callable(Statecharts_BooleanExpression.__init__)
 
 
-def test_statecharts::booleanexpression_constructor_args():
-    sig = inspect.signature(Statecharts::BooleanExpression.__init__)
+def test_statecharts_booleanexpression_constructor_args():
+    sig = inspect.signature(Statecharts_BooleanExpression.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
 
-def test_statecharts::booleanexpression_has_value():
-    assert hasattr(Statecharts::BooleanExpression, "value")
+def test_statecharts_booleanexpression_has_value():
+    assert hasattr(Statecharts_BooleanExpression, "value")
     descriptor = None
-    for klass in Statecharts::BooleanExpression.__mro__:
+    for klass in Statecharts_BooleanExpression.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -284,26 +284,26 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-Statecharts::Event_strategy = st.builds(
-    Statecharts::Event,
+Statecharts_Event_strategy = st.builds(
+    Statecharts_Event,
 )
 BooleanExpression_strategy = st.builds(
     BooleanExpression,
 )
-Statecharts::Guard_strategy = st.builds(
-    Statecharts::Guard,
+Statecharts_Guard_strategy = st.builds(
+    Statecharts_Guard,
 )
 CompositeState_strategy = st.builds(
     CompositeState,
 )
-Statecharts::StateVertex_strategy = st.builds(
-    Statecharts::StateVertex,
+Statecharts_StateVertex_strategy = st.builds(
+    Statecharts_StateVertex,
 )
 Guard_strategy = st.builds(
     Guard,
 )
-Statecharts::Transition_strategy = st.builds(
-    Statecharts::Transition,
+Statecharts_Transition_strategy = st.builds(
+    Statecharts_Transition,
 )
 Event_strategy = st.builds(
     Event,
@@ -314,63 +314,63 @@ StateMachine_strategy = st.builds(
 StateVertex_strategy = st.builds(
     StateVertex,
 )
-Statecharts::State_strategy = st.builds(
-    Statecharts::State,
+Statecharts_State_strategy = st.builds(
+    Statecharts_State,
 )
 State_strategy = st.builds(
     State,
 )
-Statecharts::CompositeState_strategy = st.builds(
-    Statecharts::CompositeState,
+Statecharts_CompositeState_strategy = st.builds(
+    Statecharts_CompositeState,
     isConcurrent=
         safe_text
 )
 Transition_strategy = st.builds(
     Transition,
 )
-Statecharts::StateMachine_strategy = st.builds(
-    Statecharts::StateMachine,
+Statecharts_StateMachine_strategy = st.builds(
+    Statecharts_StateMachine,
 )
-Statecharts::BooleanExpression_strategy = st.builds(
-    Statecharts::BooleanExpression,
+Statecharts_BooleanExpression_strategy = st.builds(
+    Statecharts_BooleanExpression,
     value=
         safe_text
 )
 
-@given(instance=Statecharts::Event_strategy)
+@given(instance=Statecharts_Event_strategy)
 @settings(max_examples=50)
-def test_statecharts::event_instantiation(instance):
-    assert isinstance(instance, Statecharts::Event)
+def test_statecharts_event_instantiation(instance):
+    assert isinstance(instance, Statecharts_Event)
 
 @given(instance=BooleanExpression_strategy)
 @settings(max_examples=50)
 def test_booleanexpression_instantiation(instance):
     assert isinstance(instance, BooleanExpression)
 
-@given(instance=Statecharts::Guard_strategy)
+@given(instance=Statecharts_Guard_strategy)
 @settings(max_examples=50)
-def test_statecharts::guard_instantiation(instance):
-    assert isinstance(instance, Statecharts::Guard)
+def test_statecharts_guard_instantiation(instance):
+    assert isinstance(instance, Statecharts_Guard)
 
 @given(instance=CompositeState_strategy)
 @settings(max_examples=50)
 def test_compositestate_instantiation(instance):
     assert isinstance(instance, CompositeState)
 
-@given(instance=Statecharts::StateVertex_strategy)
+@given(instance=Statecharts_StateVertex_strategy)
 @settings(max_examples=50)
-def test_statecharts::statevertex_instantiation(instance):
-    assert isinstance(instance, Statecharts::StateVertex)
+def test_statecharts_statevertex_instantiation(instance):
+    assert isinstance(instance, Statecharts_StateVertex)
 
 @given(instance=Guard_strategy)
 @settings(max_examples=50)
 def test_guard_instantiation(instance):
     assert isinstance(instance, Guard)
 
-@given(instance=Statecharts::Transition_strategy)
+@given(instance=Statecharts_Transition_strategy)
 @settings(max_examples=50)
-def test_statecharts::transition_instantiation(instance):
-    assert isinstance(instance, Statecharts::Transition)
+def test_statecharts_transition_instantiation(instance):
+    assert isinstance(instance, Statecharts_Transition)
 
 @given(instance=Event_strategy)
 @settings(max_examples=50)
@@ -387,28 +387,25 @@ def test_statemachine_instantiation(instance):
 def test_statevertex_instantiation(instance):
     assert isinstance(instance, StateVertex)
 
-@given(instance=Statecharts::State_strategy)
+@given(instance=Statecharts_State_strategy)
 @settings(max_examples=50)
-def test_statecharts::state_instantiation(instance):
-    assert isinstance(instance, Statecharts::State)
+def test_statecharts_state_instantiation(instance):
+    assert isinstance(instance, Statecharts_State)
 
 @given(instance=State_strategy)
 @settings(max_examples=50)
 def test_state_instantiation(instance):
     assert isinstance(instance, State)
 
-@given(instance=Statecharts::CompositeState_strategy)
+@given(instance=Statecharts_CompositeState_strategy)
 @settings(max_examples=50)
-def test_statecharts::compositestate_instantiation(instance):
-    assert isinstance(instance, Statecharts::CompositeState)
-
-@given(instance=Statecharts::CompositeState_strategy)
-def test_statecharts::compositestate_isConcurrent_type(instance):
-    assert isinstance(instance.isConcurrent, str)
+def test_statecharts_compositestate_instantiation(instance):
+    assert isinstance(instance, Statecharts_CompositeState)
 
 
-@given(instance=Statecharts::CompositeState_strategy)
-def test_statecharts::compositestate_isConcurrent_setter(instance):
+
+@given(instance=Statecharts_CompositeState_strategy)
+def test_statecharts_compositestate_isConcurrent_setter(instance):
     original = instance.isConcurrent
     instance.isConcurrent = original
     assert instance.isConcurrent == original
@@ -418,23 +415,20 @@ def test_statecharts::compositestate_isConcurrent_setter(instance):
 def test_transition_instantiation(instance):
     assert isinstance(instance, Transition)
 
-@given(instance=Statecharts::StateMachine_strategy)
+@given(instance=Statecharts_StateMachine_strategy)
 @settings(max_examples=50)
-def test_statecharts::statemachine_instantiation(instance):
-    assert isinstance(instance, Statecharts::StateMachine)
+def test_statecharts_statemachine_instantiation(instance):
+    assert isinstance(instance, Statecharts_StateMachine)
 
-@given(instance=Statecharts::BooleanExpression_strategy)
+@given(instance=Statecharts_BooleanExpression_strategy)
 @settings(max_examples=50)
-def test_statecharts::booleanexpression_instantiation(instance):
-    assert isinstance(instance, Statecharts::BooleanExpression)
-
-@given(instance=Statecharts::BooleanExpression_strategy)
-def test_statecharts::booleanexpression_value_type(instance):
-    assert isinstance(instance.value, str)
+def test_statecharts_booleanexpression_instantiation(instance):
+    assert isinstance(instance, Statecharts_BooleanExpression)
 
 
-@given(instance=Statecharts::BooleanExpression_strategy)
-def test_statecharts::booleanexpression_value_setter(instance):
+
+@given(instance=Statecharts_BooleanExpression_strategy)
+def test_statecharts_booleanexpression_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original

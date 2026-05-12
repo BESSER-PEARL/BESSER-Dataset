@@ -3,70 +3,70 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    Implementation::DecisionSupportComponent::IDecisionSupport,
-    DecisionSupportComponent::IDecisionSupport,
-    Implementation::DecisionSupportComponent,
-    RoomComponent::Room,
-    Implementation::RoomComponent::ConferenceRoom,
-    Implementation::RoomComponent::Bedroom,
-    Implementation::RoomComponent::Room,
-    Implementation::RoomComponent::IRoomAdministration,
-    RoomComponent::IRoomAdministration,
-    RoomComponent::IRoomInformation,
-    Implementation::RoomComponent::RoomHandler,
-    Implementation::RoomComponent,
-    Implementation::StaffComponent::Employee,
-    Implementation::StaffComponent::IAccountAdministration,
-    StaffComponent::IAuthentication,
-    StaffComponent::IAccountAdministration,
-    Implementation::StaffComponent::AccountManager,
-    Implementation::StaffComponent,
-    Implementation::BookingComponent::IBookingAdministration,
-    BookingComponent::IBookingAdministration,
-    BookingComponent::IBookingDecision,
-    BookingComponent::IBookingInformation,
-    Implementation::Bank,
-    Implementation::BookingComponent::BookingHandler,
-    Implementation::BookingComponent::RoomType,
-    Implementation::BookingComponent::BookingGuest,
-    Implementation::BookingComponent::AdditionalService,
-    Implementation::BookingComponent::Booking,
-    Implementation::BookingComponent::PaymentDetails,
-    Implementation::BookingComponent,
-    Implementation::AdditionalServiceComponent::AdditionalServiceEvent,
-    Implementation::AdditionalServiceComponent::AdditionalService,
-    Implementation::StaffComponent::IAuthentication,
-    Implementation::AdditionalServiceComponent::IEventManagement,
-    Implementation::AdditionalServiceComponent::IAdditionalServiceAdministration,
-    AdditionalServiceComponent::IEventManagement,
-    AdditionalServiceComponent::IAdditionalServiceAdministration,
-    Implementation::AdditionalServiceComponent::AdditionalServiceHandler,
-    Implementation::AdditionalServiceComponent,
-    Implementation::PaymentComponent::Payment,
-    Implementation::Bank::AdministratorProvides,
-    Implementation::Bank::CustomerProvides,
-    Implementation::BookingComponent::IBookingInformation,
-    Implementation::PaymentComponent::IPayment,
-    PaymentComponent::IPayment,
-    Implementation::PaymentComponent::PaymentHandler,
-    Implementation::PaymentComponent,
-    Implementation::OccupancyComponent::IOccupancy,
-    Implementation::OccupancyComponent::Guest,
-    Implementation::RoomComponent::IRoomInformation,
-    OccupancyComponent::IOccupancy,
-    OccupancyComponent::IOccupancyDecision,
-    Implementation::OccupancyComponent::OccupancyHandler,
-    Implementation::OccupancyComponent,
-    Implementation::DecisionSupportComponent::OccupancyDSSInfo,
-    Implementation::OccupancyComponent::Occupancy,
-    Implementation::DecisionSupportComponent::DSSController,
-    Implementation::DecisionSupportComponent::AdditionalServiceDSSInfo,
-    Implementation::DecisionSupportComponent::BookingDSSInfo,
-    Implementation::BookingComponent::IBookingDecision,
-    Implementation::OccupancyComponent::IOccupancyDecision,
+from python_code import (
+    RoomComponent_Room,
+    Implementation_RoomComponent_ConferenceRoom,
+    Implementation_RoomComponent_Bedroom,
+    Implementation_RoomComponent_Room,
+    Implementation_RoomComponent_IRoomAdministration,
+    RoomComponent_IRoomAdministration,
+    RoomComponent_IRoomInformation,
+    Implementation_RoomComponent_RoomHandler,
+    Implementation_RoomComponent,
+    Implementation_StaffComponent_Employee,
+    Implementation_StaffComponent_IAccountAdministration,
+    StaffComponent_IAuthentication,
+    StaffComponent_IAccountAdministration,
+    Implementation_StaffComponent_AccountManager,
+    Implementation_StaffComponent,
+    Implementation_BookingComponent_IBookingAdministration,
+    BookingComponent_IBookingAdministration,
+    BookingComponent_IBookingDecision,
+    BookingComponent_IBookingInformation,
+    Implementation_Bank,
+    Implementation_BookingComponent_BookingHandler,
+    Implementation_BookingComponent_RoomType,
+    Implementation_BookingComponent_BookingGuest,
+    Implementation_BookingComponent_AdditionalService,
+    Implementation_BookingComponent_Booking,
+    Implementation_BookingComponent_PaymentDetails,
+    Implementation_BookingComponent,
+    Implementation_AdditionalServiceComponent_AdditionalServiceEvent,
+    Implementation_AdditionalServiceComponent_AdditionalService,
+    Implementation_StaffComponent_IAuthentication,
+    Implementation_AdditionalServiceComponent_IEventManagement,
+    Implementation_AdditionalServiceComponent_IAdditionalServiceAdministration,
+    AdditionalServiceComponent_IEventManagement,
+    AdditionalServiceComponent_IAdditionalServiceAdministration,
+    Implementation_AdditionalServiceComponent_AdditionalServiceHandler,
+    Implementation_AdditionalServiceComponent,
+    Implementation_PaymentComponent_Payment,
+    Implementation_Bank_AdministratorProvides,
+    Implementation_Bank_CustomerProvides,
+    Implementation_BookingComponent_IBookingInformation,
+    Implementation_PaymentComponent_IPayment,
+    PaymentComponent_IPayment,
+    Implementation_PaymentComponent_PaymentHandler,
+    Implementation_PaymentComponent,
+    Implementation_OccupancyComponent_IOccupancy,
+    Implementation_OccupancyComponent_Guest,
+    Implementation_RoomComponent_IRoomInformation,
+    OccupancyComponent_IOccupancy,
+    OccupancyComponent_IOccupancyDecision,
+    Implementation_OccupancyComponent_OccupancyHandler,
+    Implementation_OccupancyComponent,
+    Implementation_DecisionSupportComponent_OccupancyDSSInfo,
+    Implementation_OccupancyComponent_Occupancy,
+    Implementation_DecisionSupportComponent_AdditionalServiceDSSInfo,
+    Implementation_DecisionSupportComponent_BookingDSSInfo,
+    Implementation_BookingComponent_IBookingDecision,
+    Implementation_OccupancyComponent_IOccupancyDecision,
+    Implementation_DecisionSupportComponent_IDecisionSupport,
+    DecisionSupportComponent_IDecisionSupport,
+    Implementation_DecisionSupportComponent_DSSController,
+    Implementation_DecisionSupportComponent,
 )
 
 # =============================================================================
@@ -75,99 +75,57 @@ from classes import (
 
 
 
-def test_implementation::decisionsupportcomponent::idecisionsupport_is_not_abstract():
-    assert not inspect.isabstract(Implementation::DecisionSupportComponent::IDecisionSupport)
+def test_roomcomponent_room_is_not_abstract():
+    assert not inspect.isabstract(RoomComponent_Room)
 
 
-def test_implementation::decisionsupportcomponent::idecisionsupport_constructor_exists():
-    assert callable(Implementation::DecisionSupportComponent::IDecisionSupport.__init__)
+def test_roomcomponent_room_constructor_exists():
+    assert callable(RoomComponent_Room.__init__)
 
 
-def test_implementation::decisionsupportcomponent::idecisionsupport_constructor_args():
-    sig = inspect.signature(Implementation::DecisionSupportComponent::IDecisionSupport.__init__)
+def test_roomcomponent_room_constructor_args():
+    sig = inspect.signature(RoomComponent_Room.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_decisionsupportcomponent::idecisionsupport_is_not_abstract():
-    assert not inspect.isabstract(DecisionSupportComponent::IDecisionSupport)
+def test_implementation_roomcomponent_conferenceroom_is_not_abstract():
+    assert not inspect.isabstract(Implementation_RoomComponent_ConferenceRoom)
 
 
-def test_decisionsupportcomponent::idecisionsupport_constructor_exists():
-    assert callable(DecisionSupportComponent::IDecisionSupport.__init__)
+def test_implementation_roomcomponent_conferenceroom_constructor_exists():
+    assert callable(Implementation_RoomComponent_ConferenceRoom.__init__)
 
 
-def test_decisionsupportcomponent::idecisionsupport_constructor_args():
-    sig = inspect.signature(DecisionSupportComponent::IDecisionSupport.__init__)
+def test_implementation_roomcomponent_conferenceroom_constructor_args():
+    sig = inspect.signature(Implementation_RoomComponent_ConferenceRoom.__init__)
     params = list(sig.parameters.keys())
-
-
-
-def test_implementation::decisionsupportcomponent_is_not_abstract():
-    assert not inspect.isabstract(Implementation::DecisionSupportComponent)
-
-
-def test_implementation::decisionsupportcomponent_constructor_exists():
-    assert callable(Implementation::DecisionSupportComponent.__init__)
-
-
-def test_implementation::decisionsupportcomponent_constructor_args():
-    sig = inspect.signature(Implementation::DecisionSupportComponent.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_roomcomponent::room_is_not_abstract():
-    assert not inspect.isabstract(RoomComponent::Room)
-
-
-def test_roomcomponent::room_constructor_exists():
-    assert callable(RoomComponent::Room.__init__)
-
-
-def test_roomcomponent::room_constructor_args():
-    sig = inspect.signature(RoomComponent::Room.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_implementation::roomcomponent::conferenceroom_is_not_abstract():
-    assert not inspect.isabstract(Implementation::RoomComponent::ConferenceRoom)
-
-
-def test_implementation::roomcomponent::conferenceroom_constructor_exists():
-    assert callable(Implementation::RoomComponent::ConferenceRoom.__init__)
-
-
-def test_implementation::roomcomponent::conferenceroom_constructor_args():
-    sig = inspect.signature(Implementation::RoomComponent::ConferenceRoom.__init__)
-    params = list(sig.parameters.keys())
-    assert "projector" in params, "Missing parameter 'projector'"
     assert "conferencePhone" in params, "Missing parameter 'conferencePhone'"
+    assert "projector" in params, "Missing parameter 'projector'"
     assert "numberOfSeats" in params, "Missing parameter 'numberOfSeats'"
 
-def test_implementation::roomcomponent::conferenceroom_has_projector():
-    assert hasattr(Implementation::RoomComponent::ConferenceRoom, "projector")
+def test_implementation_roomcomponent_conferenceroom_has_conferencePhone():
+    assert hasattr(Implementation_RoomComponent_ConferenceRoom, "conferencePhone")
     descriptor = None
-    for klass in Implementation::RoomComponent::ConferenceRoom.__mro__:
-        if "projector" in klass.__dict__:
-            descriptor = klass.__dict__["projector"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_implementation::roomcomponent::conferenceroom_has_conferencePhone():
-    assert hasattr(Implementation::RoomComponent::ConferenceRoom, "conferencePhone")
-    descriptor = None
-    for klass in Implementation::RoomComponent::ConferenceRoom.__mro__:
+    for klass in Implementation_RoomComponent_ConferenceRoom.__mro__:
         if "conferencePhone" in klass.__dict__:
             descriptor = klass.__dict__["conferencePhone"]
             break
     assert isinstance(descriptor, property)
 
-def test_implementation::roomcomponent::conferenceroom_has_numberOfSeats():
-    assert hasattr(Implementation::RoomComponent::ConferenceRoom, "numberOfSeats")
+def test_implementation_roomcomponent_conferenceroom_has_projector():
+    assert hasattr(Implementation_RoomComponent_ConferenceRoom, "projector")
     descriptor = None
-    for klass in Implementation::RoomComponent::ConferenceRoom.__mro__:
+    for klass in Implementation_RoomComponent_ConferenceRoom.__mro__:
+        if "projector" in klass.__dict__:
+            descriptor = klass.__dict__["projector"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_implementation_roomcomponent_conferenceroom_has_numberOfSeats():
+    assert hasattr(Implementation_RoomComponent_ConferenceRoom, "numberOfSeats")
+    descriptor = None
+    for klass in Implementation_RoomComponent_ConferenceRoom.__mro__:
         if "numberOfSeats" in klass.__dict__:
             descriptor = klass.__dict__["numberOfSeats"]
             break
@@ -175,23 +133,23 @@ def test_implementation::roomcomponent::conferenceroom_has_numberOfSeats():
 
 
 
-def test_implementation::roomcomponent::bedroom_is_not_abstract():
-    assert not inspect.isabstract(Implementation::RoomComponent::Bedroom)
+def test_implementation_roomcomponent_bedroom_is_not_abstract():
+    assert not inspect.isabstract(Implementation_RoomComponent_Bedroom)
 
 
-def test_implementation::roomcomponent::bedroom_constructor_exists():
-    assert callable(Implementation::RoomComponent::Bedroom.__init__)
+def test_implementation_roomcomponent_bedroom_constructor_exists():
+    assert callable(Implementation_RoomComponent_Bedroom.__init__)
 
 
-def test_implementation::roomcomponent::bedroom_constructor_args():
-    sig = inspect.signature(Implementation::RoomComponent::Bedroom.__init__)
+def test_implementation_roomcomponent_bedroom_constructor_args():
+    sig = inspect.signature(Implementation_RoomComponent_Bedroom.__init__)
     params = list(sig.parameters.keys())
     assert "bedCount" in params, "Missing parameter 'bedCount'"
 
-def test_implementation::roomcomponent::bedroom_has_bedCount():
-    assert hasattr(Implementation::RoomComponent::Bedroom, "bedCount")
+def test_implementation_roomcomponent_bedroom_has_bedCount():
+    assert hasattr(Implementation_RoomComponent_Bedroom, "bedCount")
     descriptor = None
-    for klass in Implementation::RoomComponent::Bedroom.__mro__:
+    for klass in Implementation_RoomComponent_Bedroom.__mro__:
         if "bedCount" in klass.__dict__:
             descriptor = klass.__dict__["bedCount"]
             break
@@ -199,395 +157,395 @@ def test_implementation::roomcomponent::bedroom_has_bedCount():
 
 
 
-def test_implementation::roomcomponent::room_is_not_abstract():
-    assert not inspect.isabstract(Implementation::RoomComponent::Room)
+def test_implementation_roomcomponent_room_is_not_abstract():
+    assert not inspect.isabstract(Implementation_RoomComponent_Room)
 
 
-def test_implementation::roomcomponent::room_constructor_exists():
-    assert callable(Implementation::RoomComponent::Room.__init__)
+def test_implementation_roomcomponent_room_constructor_exists():
+    assert callable(Implementation_RoomComponent_Room.__init__)
 
 
-def test_implementation::roomcomponent::room_constructor_args():
-    sig = inspect.signature(Implementation::RoomComponent::Room.__init__)
+def test_implementation_roomcomponent_room_constructor_args():
+    sig = inspect.signature(Implementation_RoomComponent_Room.__init__)
     params = list(sig.parameters.keys())
+    assert "roomNumber" in params, "Missing parameter 'roomNumber'"
     assert "price" in params, "Missing parameter 'price'"
+    assert "roomTypeName" in params, "Missing parameter 'roomTypeName'"
     assert "usable" in params, "Missing parameter 'usable'"
     assert "description" in params, "Missing parameter 'description'"
-    assert "roomNumber" in params, "Missing parameter 'roomNumber'"
-    assert "roomTypeName" in params, "Missing parameter 'roomTypeName'"
 
-def test_implementation::roomcomponent::room_has_price():
-    assert hasattr(Implementation::RoomComponent::Room, "price")
+def test_implementation_roomcomponent_room_has_roomNumber():
+    assert hasattr(Implementation_RoomComponent_Room, "roomNumber")
     descriptor = None
-    for klass in Implementation::RoomComponent::Room.__mro__:
-        if "price" in klass.__dict__:
-            descriptor = klass.__dict__["price"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_implementation::roomcomponent::room_has_usable():
-    assert hasattr(Implementation::RoomComponent::Room, "usable")
-    descriptor = None
-    for klass in Implementation::RoomComponent::Room.__mro__:
-        if "usable" in klass.__dict__:
-            descriptor = klass.__dict__["usable"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_implementation::roomcomponent::room_has_description():
-    assert hasattr(Implementation::RoomComponent::Room, "description")
-    descriptor = None
-    for klass in Implementation::RoomComponent::Room.__mro__:
-        if "description" in klass.__dict__:
-            descriptor = klass.__dict__["description"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_implementation::roomcomponent::room_has_roomNumber():
-    assert hasattr(Implementation::RoomComponent::Room, "roomNumber")
-    descriptor = None
-    for klass in Implementation::RoomComponent::Room.__mro__:
+    for klass in Implementation_RoomComponent_Room.__mro__:
         if "roomNumber" in klass.__dict__:
             descriptor = klass.__dict__["roomNumber"]
             break
     assert isinstance(descriptor, property)
 
-def test_implementation::roomcomponent::room_has_roomTypeName():
-    assert hasattr(Implementation::RoomComponent::Room, "roomTypeName")
+def test_implementation_roomcomponent_room_has_price():
+    assert hasattr(Implementation_RoomComponent_Room, "price")
     descriptor = None
-    for klass in Implementation::RoomComponent::Room.__mro__:
+    for klass in Implementation_RoomComponent_Room.__mro__:
+        if "price" in klass.__dict__:
+            descriptor = klass.__dict__["price"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_implementation_roomcomponent_room_has_roomTypeName():
+    assert hasattr(Implementation_RoomComponent_Room, "roomTypeName")
+    descriptor = None
+    for klass in Implementation_RoomComponent_Room.__mro__:
         if "roomTypeName" in klass.__dict__:
             descriptor = klass.__dict__["roomTypeName"]
             break
     assert isinstance(descriptor, property)
 
+def test_implementation_roomcomponent_room_has_usable():
+    assert hasattr(Implementation_RoomComponent_Room, "usable")
+    descriptor = None
+    for klass in Implementation_RoomComponent_Room.__mro__:
+        if "usable" in klass.__dict__:
+            descriptor = klass.__dict__["usable"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_implementation_roomcomponent_room_has_description():
+    assert hasattr(Implementation_RoomComponent_Room, "description")
+    descriptor = None
+    for klass in Implementation_RoomComponent_Room.__mro__:
+        if "description" in klass.__dict__:
+            descriptor = klass.__dict__["description"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_implementation::roomcomponent::iroomadministration_is_not_abstract():
-    assert not inspect.isabstract(Implementation::RoomComponent::IRoomAdministration)
+
+def test_implementation_roomcomponent_iroomadministration_is_not_abstract():
+    assert not inspect.isabstract(Implementation_RoomComponent_IRoomAdministration)
 
 
-def test_implementation::roomcomponent::iroomadministration_constructor_exists():
-    assert callable(Implementation::RoomComponent::IRoomAdministration.__init__)
+def test_implementation_roomcomponent_iroomadministration_constructor_exists():
+    assert callable(Implementation_RoomComponent_IRoomAdministration.__init__)
 
 
-def test_implementation::roomcomponent::iroomadministration_constructor_args():
-    sig = inspect.signature(Implementation::RoomComponent::IRoomAdministration.__init__)
+def test_implementation_roomcomponent_iroomadministration_constructor_args():
+    sig = inspect.signature(Implementation_RoomComponent_IRoomAdministration.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_roomcomponent::iroomadministration_is_not_abstract():
-    assert not inspect.isabstract(RoomComponent::IRoomAdministration)
+def test_roomcomponent_iroomadministration_is_not_abstract():
+    assert not inspect.isabstract(RoomComponent_IRoomAdministration)
 
 
-def test_roomcomponent::iroomadministration_constructor_exists():
-    assert callable(RoomComponent::IRoomAdministration.__init__)
+def test_roomcomponent_iroomadministration_constructor_exists():
+    assert callable(RoomComponent_IRoomAdministration.__init__)
 
 
-def test_roomcomponent::iroomadministration_constructor_args():
-    sig = inspect.signature(RoomComponent::IRoomAdministration.__init__)
+def test_roomcomponent_iroomadministration_constructor_args():
+    sig = inspect.signature(RoomComponent_IRoomAdministration.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_roomcomponent::iroominformation_is_not_abstract():
-    assert not inspect.isabstract(RoomComponent::IRoomInformation)
+def test_roomcomponent_iroominformation_is_not_abstract():
+    assert not inspect.isabstract(RoomComponent_IRoomInformation)
 
 
-def test_roomcomponent::iroominformation_constructor_exists():
-    assert callable(RoomComponent::IRoomInformation.__init__)
+def test_roomcomponent_iroominformation_constructor_exists():
+    assert callable(RoomComponent_IRoomInformation.__init__)
 
 
-def test_roomcomponent::iroominformation_constructor_args():
-    sig = inspect.signature(RoomComponent::IRoomInformation.__init__)
+def test_roomcomponent_iroominformation_constructor_args():
+    sig = inspect.signature(RoomComponent_IRoomInformation.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_implementation::roomcomponent::roomhandler_is_not_abstract():
-    assert not inspect.isabstract(Implementation::RoomComponent::RoomHandler)
+def test_implementation_roomcomponent_roomhandler_is_not_abstract():
+    assert not inspect.isabstract(Implementation_RoomComponent_RoomHandler)
 
 
-def test_implementation::roomcomponent::roomhandler_constructor_exists():
-    assert callable(Implementation::RoomComponent::RoomHandler.__init__)
+def test_implementation_roomcomponent_roomhandler_constructor_exists():
+    assert callable(Implementation_RoomComponent_RoomHandler.__init__)
 
 
-def test_implementation::roomcomponent::roomhandler_constructor_args():
-    sig = inspect.signature(Implementation::RoomComponent::RoomHandler.__init__)
+def test_implementation_roomcomponent_roomhandler_constructor_args():
+    sig = inspect.signature(Implementation_RoomComponent_RoomHandler.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_implementation::roomcomponent_is_not_abstract():
-    assert not inspect.isabstract(Implementation::RoomComponent)
+def test_implementation_roomcomponent_is_not_abstract():
+    assert not inspect.isabstract(Implementation_RoomComponent)
 
 
-def test_implementation::roomcomponent_constructor_exists():
-    assert callable(Implementation::RoomComponent.__init__)
+def test_implementation_roomcomponent_constructor_exists():
+    assert callable(Implementation_RoomComponent.__init__)
 
 
-def test_implementation::roomcomponent_constructor_args():
-    sig = inspect.signature(Implementation::RoomComponent.__init__)
+def test_implementation_roomcomponent_constructor_args():
+    sig = inspect.signature(Implementation_RoomComponent.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_implementation::staffcomponent::employee_is_not_abstract():
-    assert not inspect.isabstract(Implementation::StaffComponent::Employee)
+def test_implementation_staffcomponent_employee_is_not_abstract():
+    assert not inspect.isabstract(Implementation_StaffComponent_Employee)
 
 
-def test_implementation::staffcomponent::employee_constructor_exists():
-    assert callable(Implementation::StaffComponent::Employee.__init__)
+def test_implementation_staffcomponent_employee_constructor_exists():
+    assert callable(Implementation_StaffComponent_Employee.__init__)
 
 
-def test_implementation::staffcomponent::employee_constructor_args():
-    sig = inspect.signature(Implementation::StaffComponent::Employee.__init__)
+def test_implementation_staffcomponent_employee_constructor_args():
+    sig = inspect.signature(Implementation_StaffComponent_Employee.__init__)
     params = list(sig.parameters.keys())
-    assert "name" in params, "Missing parameter 'name'"
-    assert "email" in params, "Missing parameter 'email'"
     assert "password" in params, "Missing parameter 'password'"
-    assert "id" in params, "Missing parameter 'id'"
-    assert "phone" in params, "Missing parameter 'phone'"
+    assert "email" in params, "Missing parameter 'email'"
     assert "ssn" in params, "Missing parameter 'ssn'"
+    assert "id" in params, "Missing parameter 'id'"
+    assert "name" in params, "Missing parameter 'name'"
+    assert "phone" in params, "Missing parameter 'phone'"
 
-def test_implementation::staffcomponent::employee_has_name():
-    assert hasattr(Implementation::StaffComponent::Employee, "name")
+def test_implementation_staffcomponent_employee_has_password():
+    assert hasattr(Implementation_StaffComponent_Employee, "password")
     descriptor = None
-    for klass in Implementation::StaffComponent::Employee.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_implementation::staffcomponent::employee_has_email():
-    assert hasattr(Implementation::StaffComponent::Employee, "email")
-    descriptor = None
-    for klass in Implementation::StaffComponent::Employee.__mro__:
-        if "email" in klass.__dict__:
-            descriptor = klass.__dict__["email"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_implementation::staffcomponent::employee_has_password():
-    assert hasattr(Implementation::StaffComponent::Employee, "password")
-    descriptor = None
-    for klass in Implementation::StaffComponent::Employee.__mro__:
+    for klass in Implementation_StaffComponent_Employee.__mro__:
         if "password" in klass.__dict__:
             descriptor = klass.__dict__["password"]
             break
     assert isinstance(descriptor, property)
 
-def test_implementation::staffcomponent::employee_has_id():
-    assert hasattr(Implementation::StaffComponent::Employee, "id")
+def test_implementation_staffcomponent_employee_has_email():
+    assert hasattr(Implementation_StaffComponent_Employee, "email")
     descriptor = None
-    for klass in Implementation::StaffComponent::Employee.__mro__:
-        if "id" in klass.__dict__:
-            descriptor = klass.__dict__["id"]
+    for klass in Implementation_StaffComponent_Employee.__mro__:
+        if "email" in klass.__dict__:
+            descriptor = klass.__dict__["email"]
             break
     assert isinstance(descriptor, property)
 
-def test_implementation::staffcomponent::employee_has_phone():
-    assert hasattr(Implementation::StaffComponent::Employee, "phone")
+def test_implementation_staffcomponent_employee_has_ssn():
+    assert hasattr(Implementation_StaffComponent_Employee, "ssn")
     descriptor = None
-    for klass in Implementation::StaffComponent::Employee.__mro__:
-        if "phone" in klass.__dict__:
-            descriptor = klass.__dict__["phone"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_implementation::staffcomponent::employee_has_ssn():
-    assert hasattr(Implementation::StaffComponent::Employee, "ssn")
-    descriptor = None
-    for klass in Implementation::StaffComponent::Employee.__mro__:
+    for klass in Implementation_StaffComponent_Employee.__mro__:
         if "ssn" in klass.__dict__:
             descriptor = klass.__dict__["ssn"]
             break
     assert isinstance(descriptor, property)
 
+def test_implementation_staffcomponent_employee_has_id():
+    assert hasattr(Implementation_StaffComponent_Employee, "id")
+    descriptor = None
+    for klass in Implementation_StaffComponent_Employee.__mro__:
+        if "id" in klass.__dict__:
+            descriptor = klass.__dict__["id"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_implementation_staffcomponent_employee_has_name():
+    assert hasattr(Implementation_StaffComponent_Employee, "name")
+    descriptor = None
+    for klass in Implementation_StaffComponent_Employee.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_implementation_staffcomponent_employee_has_phone():
+    assert hasattr(Implementation_StaffComponent_Employee, "phone")
+    descriptor = None
+    for klass in Implementation_StaffComponent_Employee.__mro__:
+        if "phone" in klass.__dict__:
+            descriptor = klass.__dict__["phone"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_implementation::staffcomponent::iaccountadministration_is_not_abstract():
-    assert not inspect.isabstract(Implementation::StaffComponent::IAccountAdministration)
+
+def test_implementation_staffcomponent_iaccountadministration_is_not_abstract():
+    assert not inspect.isabstract(Implementation_StaffComponent_IAccountAdministration)
 
 
-def test_implementation::staffcomponent::iaccountadministration_constructor_exists():
-    assert callable(Implementation::StaffComponent::IAccountAdministration.__init__)
+def test_implementation_staffcomponent_iaccountadministration_constructor_exists():
+    assert callable(Implementation_StaffComponent_IAccountAdministration.__init__)
 
 
-def test_implementation::staffcomponent::iaccountadministration_constructor_args():
-    sig = inspect.signature(Implementation::StaffComponent::IAccountAdministration.__init__)
+def test_implementation_staffcomponent_iaccountadministration_constructor_args():
+    sig = inspect.signature(Implementation_StaffComponent_IAccountAdministration.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_staffcomponent::iauthentication_is_not_abstract():
-    assert not inspect.isabstract(StaffComponent::IAuthentication)
+def test_staffcomponent_iauthentication_is_not_abstract():
+    assert not inspect.isabstract(StaffComponent_IAuthentication)
 
 
-def test_staffcomponent::iauthentication_constructor_exists():
-    assert callable(StaffComponent::IAuthentication.__init__)
+def test_staffcomponent_iauthentication_constructor_exists():
+    assert callable(StaffComponent_IAuthentication.__init__)
 
 
-def test_staffcomponent::iauthentication_constructor_args():
-    sig = inspect.signature(StaffComponent::IAuthentication.__init__)
+def test_staffcomponent_iauthentication_constructor_args():
+    sig = inspect.signature(StaffComponent_IAuthentication.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_staffcomponent::iaccountadministration_is_not_abstract():
-    assert not inspect.isabstract(StaffComponent::IAccountAdministration)
+def test_staffcomponent_iaccountadministration_is_not_abstract():
+    assert not inspect.isabstract(StaffComponent_IAccountAdministration)
 
 
-def test_staffcomponent::iaccountadministration_constructor_exists():
-    assert callable(StaffComponent::IAccountAdministration.__init__)
+def test_staffcomponent_iaccountadministration_constructor_exists():
+    assert callable(StaffComponent_IAccountAdministration.__init__)
 
 
-def test_staffcomponent::iaccountadministration_constructor_args():
-    sig = inspect.signature(StaffComponent::IAccountAdministration.__init__)
+def test_staffcomponent_iaccountadministration_constructor_args():
+    sig = inspect.signature(StaffComponent_IAccountAdministration.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_implementation::staffcomponent::accountmanager_is_not_abstract():
-    assert not inspect.isabstract(Implementation::StaffComponent::AccountManager)
+def test_implementation_staffcomponent_accountmanager_is_not_abstract():
+    assert not inspect.isabstract(Implementation_StaffComponent_AccountManager)
 
 
-def test_implementation::staffcomponent::accountmanager_constructor_exists():
-    assert callable(Implementation::StaffComponent::AccountManager.__init__)
+def test_implementation_staffcomponent_accountmanager_constructor_exists():
+    assert callable(Implementation_StaffComponent_AccountManager.__init__)
 
 
-def test_implementation::staffcomponent::accountmanager_constructor_args():
-    sig = inspect.signature(Implementation::StaffComponent::AccountManager.__init__)
+def test_implementation_staffcomponent_accountmanager_constructor_args():
+    sig = inspect.signature(Implementation_StaffComponent_AccountManager.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_implementation::staffcomponent_is_not_abstract():
-    assert not inspect.isabstract(Implementation::StaffComponent)
+def test_implementation_staffcomponent_is_not_abstract():
+    assert not inspect.isabstract(Implementation_StaffComponent)
 
 
-def test_implementation::staffcomponent_constructor_exists():
-    assert callable(Implementation::StaffComponent.__init__)
+def test_implementation_staffcomponent_constructor_exists():
+    assert callable(Implementation_StaffComponent.__init__)
 
 
-def test_implementation::staffcomponent_constructor_args():
-    sig = inspect.signature(Implementation::StaffComponent.__init__)
+def test_implementation_staffcomponent_constructor_args():
+    sig = inspect.signature(Implementation_StaffComponent.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_implementation::bookingcomponent::ibookingadministration_is_not_abstract():
-    assert not inspect.isabstract(Implementation::BookingComponent::IBookingAdministration)
+def test_implementation_bookingcomponent_ibookingadministration_is_not_abstract():
+    assert not inspect.isabstract(Implementation_BookingComponent_IBookingAdministration)
 
 
-def test_implementation::bookingcomponent::ibookingadministration_constructor_exists():
-    assert callable(Implementation::BookingComponent::IBookingAdministration.__init__)
+def test_implementation_bookingcomponent_ibookingadministration_constructor_exists():
+    assert callable(Implementation_BookingComponent_IBookingAdministration.__init__)
 
 
-def test_implementation::bookingcomponent::ibookingadministration_constructor_args():
-    sig = inspect.signature(Implementation::BookingComponent::IBookingAdministration.__init__)
+def test_implementation_bookingcomponent_ibookingadministration_constructor_args():
+    sig = inspect.signature(Implementation_BookingComponent_IBookingAdministration.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_bookingcomponent::ibookingadministration_is_not_abstract():
-    assert not inspect.isabstract(BookingComponent::IBookingAdministration)
+def test_bookingcomponent_ibookingadministration_is_not_abstract():
+    assert not inspect.isabstract(BookingComponent_IBookingAdministration)
 
 
-def test_bookingcomponent::ibookingadministration_constructor_exists():
-    assert callable(BookingComponent::IBookingAdministration.__init__)
+def test_bookingcomponent_ibookingadministration_constructor_exists():
+    assert callable(BookingComponent_IBookingAdministration.__init__)
 
 
-def test_bookingcomponent::ibookingadministration_constructor_args():
-    sig = inspect.signature(BookingComponent::IBookingAdministration.__init__)
+def test_bookingcomponent_ibookingadministration_constructor_args():
+    sig = inspect.signature(BookingComponent_IBookingAdministration.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_bookingcomponent::ibookingdecision_is_not_abstract():
-    assert not inspect.isabstract(BookingComponent::IBookingDecision)
+def test_bookingcomponent_ibookingdecision_is_not_abstract():
+    assert not inspect.isabstract(BookingComponent_IBookingDecision)
 
 
-def test_bookingcomponent::ibookingdecision_constructor_exists():
-    assert callable(BookingComponent::IBookingDecision.__init__)
+def test_bookingcomponent_ibookingdecision_constructor_exists():
+    assert callable(BookingComponent_IBookingDecision.__init__)
 
 
-def test_bookingcomponent::ibookingdecision_constructor_args():
-    sig = inspect.signature(BookingComponent::IBookingDecision.__init__)
+def test_bookingcomponent_ibookingdecision_constructor_args():
+    sig = inspect.signature(BookingComponent_IBookingDecision.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_bookingcomponent::ibookinginformation_is_not_abstract():
-    assert not inspect.isabstract(BookingComponent::IBookingInformation)
+def test_bookingcomponent_ibookinginformation_is_not_abstract():
+    assert not inspect.isabstract(BookingComponent_IBookingInformation)
 
 
-def test_bookingcomponent::ibookinginformation_constructor_exists():
-    assert callable(BookingComponent::IBookingInformation.__init__)
+def test_bookingcomponent_ibookinginformation_constructor_exists():
+    assert callable(BookingComponent_IBookingInformation.__init__)
 
 
-def test_bookingcomponent::ibookinginformation_constructor_args():
-    sig = inspect.signature(BookingComponent::IBookingInformation.__init__)
+def test_bookingcomponent_ibookinginformation_constructor_args():
+    sig = inspect.signature(BookingComponent_IBookingInformation.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_implementation::bank_is_not_abstract():
-    assert not inspect.isabstract(Implementation::Bank)
+def test_implementation_bank_is_not_abstract():
+    assert not inspect.isabstract(Implementation_Bank)
 
 
-def test_implementation::bank_constructor_exists():
-    assert callable(Implementation::Bank.__init__)
+def test_implementation_bank_constructor_exists():
+    assert callable(Implementation_Bank.__init__)
 
 
-def test_implementation::bank_constructor_args():
-    sig = inspect.signature(Implementation::Bank.__init__)
+def test_implementation_bank_constructor_args():
+    sig = inspect.signature(Implementation_Bank.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_implementation::bookingcomponent::bookinghandler_is_not_abstract():
-    assert not inspect.isabstract(Implementation::BookingComponent::BookingHandler)
+def test_implementation_bookingcomponent_bookinghandler_is_not_abstract():
+    assert not inspect.isabstract(Implementation_BookingComponent_BookingHandler)
 
 
-def test_implementation::bookingcomponent::bookinghandler_constructor_exists():
-    assert callable(Implementation::BookingComponent::BookingHandler.__init__)
+def test_implementation_bookingcomponent_bookinghandler_constructor_exists():
+    assert callable(Implementation_BookingComponent_BookingHandler.__init__)
 
 
-def test_implementation::bookingcomponent::bookinghandler_constructor_args():
-    sig = inspect.signature(Implementation::BookingComponent::BookingHandler.__init__)
+def test_implementation_bookingcomponent_bookinghandler_constructor_args():
+    sig = inspect.signature(Implementation_BookingComponent_BookingHandler.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_implementation::bookingcomponent::roomtype_is_not_abstract():
-    assert not inspect.isabstract(Implementation::BookingComponent::RoomType)
+def test_implementation_bookingcomponent_roomtype_is_not_abstract():
+    assert not inspect.isabstract(Implementation_BookingComponent_RoomType)
 
 
-def test_implementation::bookingcomponent::roomtype_constructor_exists():
-    assert callable(Implementation::BookingComponent::RoomType.__init__)
+def test_implementation_bookingcomponent_roomtype_constructor_exists():
+    assert callable(Implementation_BookingComponent_RoomType.__init__)
 
 
-def test_implementation::bookingcomponent::roomtype_constructor_args():
-    sig = inspect.signature(Implementation::BookingComponent::RoomType.__init__)
+def test_implementation_bookingcomponent_roomtype_constructor_args():
+    sig = inspect.signature(Implementation_BookingComponent_RoomType.__init__)
     params = list(sig.parameters.keys())
     assert "roomType" in params, "Missing parameter 'roomType'"
     assert "cost" in params, "Missing parameter 'cost'"
 
-def test_implementation::bookingcomponent::roomtype_has_roomType():
-    assert hasattr(Implementation::BookingComponent::RoomType, "roomType")
+def test_implementation_bookingcomponent_roomtype_has_roomType():
+    assert hasattr(Implementation_BookingComponent_RoomType, "roomType")
     descriptor = None
-    for klass in Implementation::BookingComponent::RoomType.__mro__:
+    for klass in Implementation_BookingComponent_RoomType.__mro__:
         if "roomType" in klass.__dict__:
             descriptor = klass.__dict__["roomType"]
             break
     assert isinstance(descriptor, property)
 
-def test_implementation::bookingcomponent::roomtype_has_cost():
-    assert hasattr(Implementation::BookingComponent::RoomType, "cost")
+def test_implementation_bookingcomponent_roomtype_has_cost():
+    assert hasattr(Implementation_BookingComponent_RoomType, "cost")
     descriptor = None
-    for klass in Implementation::BookingComponent::RoomType.__mro__:
+    for klass in Implementation_BookingComponent_RoomType.__mro__:
         if "cost" in klass.__dict__:
             descriptor = klass.__dict__["cost"]
             break
@@ -595,117 +553,117 @@ def test_implementation::bookingcomponent::roomtype_has_cost():
 
 
 
-def test_implementation::bookingcomponent::bookingguest_is_not_abstract():
-    assert not inspect.isabstract(Implementation::BookingComponent::BookingGuest)
+def test_implementation_bookingcomponent_bookingguest_is_not_abstract():
+    assert not inspect.isabstract(Implementation_BookingComponent_BookingGuest)
 
 
-def test_implementation::bookingcomponent::bookingguest_constructor_exists():
-    assert callable(Implementation::BookingComponent::BookingGuest.__init__)
+def test_implementation_bookingcomponent_bookingguest_constructor_exists():
+    assert callable(Implementation_BookingComponent_BookingGuest.__init__)
 
 
-def test_implementation::bookingcomponent::bookingguest_constructor_args():
-    sig = inspect.signature(Implementation::BookingComponent::BookingGuest.__init__)
+def test_implementation_bookingcomponent_bookingguest_constructor_args():
+    sig = inspect.signature(Implementation_BookingComponent_BookingGuest.__init__)
     params = list(sig.parameters.keys())
+    assert "firstName" in params, "Missing parameter 'firstName'"
+    assert "address" in params, "Missing parameter 'address'"
     assert "lastName" in params, "Missing parameter 'lastName'"
     assert "phoneNumber" in params, "Missing parameter 'phoneNumber'"
-    assert "address" in params, "Missing parameter 'address'"
-    assert "firstName" in params, "Missing parameter 'firstName'"
 
-def test_implementation::bookingcomponent::bookingguest_has_lastName():
-    assert hasattr(Implementation::BookingComponent::BookingGuest, "lastName")
+def test_implementation_bookingcomponent_bookingguest_has_firstName():
+    assert hasattr(Implementation_BookingComponent_BookingGuest, "firstName")
     descriptor = None
-    for klass in Implementation::BookingComponent::BookingGuest.__mro__:
+    for klass in Implementation_BookingComponent_BookingGuest.__mro__:
+        if "firstName" in klass.__dict__:
+            descriptor = klass.__dict__["firstName"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_implementation_bookingcomponent_bookingguest_has_address():
+    assert hasattr(Implementation_BookingComponent_BookingGuest, "address")
+    descriptor = None
+    for klass in Implementation_BookingComponent_BookingGuest.__mro__:
+        if "address" in klass.__dict__:
+            descriptor = klass.__dict__["address"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_implementation_bookingcomponent_bookingguest_has_lastName():
+    assert hasattr(Implementation_BookingComponent_BookingGuest, "lastName")
+    descriptor = None
+    for klass in Implementation_BookingComponent_BookingGuest.__mro__:
         if "lastName" in klass.__dict__:
             descriptor = klass.__dict__["lastName"]
             break
     assert isinstance(descriptor, property)
 
-def test_implementation::bookingcomponent::bookingguest_has_phoneNumber():
-    assert hasattr(Implementation::BookingComponent::BookingGuest, "phoneNumber")
+def test_implementation_bookingcomponent_bookingguest_has_phoneNumber():
+    assert hasattr(Implementation_BookingComponent_BookingGuest, "phoneNumber")
     descriptor = None
-    for klass in Implementation::BookingComponent::BookingGuest.__mro__:
+    for klass in Implementation_BookingComponent_BookingGuest.__mro__:
         if "phoneNumber" in klass.__dict__:
             descriptor = klass.__dict__["phoneNumber"]
             break
     assert isinstance(descriptor, property)
 
-def test_implementation::bookingcomponent::bookingguest_has_address():
-    assert hasattr(Implementation::BookingComponent::BookingGuest, "address")
-    descriptor = None
-    for klass in Implementation::BookingComponent::BookingGuest.__mro__:
-        if "address" in klass.__dict__:
-            descriptor = klass.__dict__["address"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_implementation::bookingcomponent::bookingguest_has_firstName():
-    assert hasattr(Implementation::BookingComponent::BookingGuest, "firstName")
-    descriptor = None
-    for klass in Implementation::BookingComponent::BookingGuest.__mro__:
-        if "firstName" in klass.__dict__:
-            descriptor = klass.__dict__["firstName"]
-            break
-    assert isinstance(descriptor, property)
 
 
-
-def test_implementation::bookingcomponent::additionalservice_is_not_abstract():
-    assert not inspect.isabstract(Implementation::BookingComponent::AdditionalService)
-
-
-def test_implementation::bookingcomponent::additionalservice_constructor_exists():
-    assert callable(Implementation::BookingComponent::AdditionalService.__init__)
+def test_implementation_bookingcomponent_additionalservice_is_not_abstract():
+    assert not inspect.isabstract(Implementation_BookingComponent_AdditionalService)
 
 
-def test_implementation::bookingcomponent::additionalservice_constructor_args():
-    sig = inspect.signature(Implementation::BookingComponent::AdditionalService.__init__)
+def test_implementation_bookingcomponent_additionalservice_constructor_exists():
+    assert callable(Implementation_BookingComponent_AdditionalService.__init__)
+
+
+def test_implementation_bookingcomponent_additionalservice_constructor_args():
+    sig = inspect.signature(Implementation_BookingComponent_AdditionalService.__init__)
     params = list(sig.parameters.keys())
-    assert "location" in params, "Missing parameter 'location'"
-    assert "guestCount" in params, "Missing parameter 'guestCount'"
-    assert "price" in params, "Missing parameter 'price'"
     assert "name" in params, "Missing parameter 'name'"
+    assert "location" in params, "Missing parameter 'location'"
+    assert "price" in params, "Missing parameter 'price'"
+    assert "guestCount" in params, "Missing parameter 'guestCount'"
     assert "dateTime" in params, "Missing parameter 'dateTime'"
 
-def test_implementation::bookingcomponent::additionalservice_has_location():
-    assert hasattr(Implementation::BookingComponent::AdditionalService, "location")
+def test_implementation_bookingcomponent_additionalservice_has_name():
+    assert hasattr(Implementation_BookingComponent_AdditionalService, "name")
     descriptor = None
-    for klass in Implementation::BookingComponent::AdditionalService.__mro__:
+    for klass in Implementation_BookingComponent_AdditionalService.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_implementation_bookingcomponent_additionalservice_has_location():
+    assert hasattr(Implementation_BookingComponent_AdditionalService, "location")
+    descriptor = None
+    for klass in Implementation_BookingComponent_AdditionalService.__mro__:
         if "location" in klass.__dict__:
             descriptor = klass.__dict__["location"]
             break
     assert isinstance(descriptor, property)
 
-def test_implementation::bookingcomponent::additionalservice_has_guestCount():
-    assert hasattr(Implementation::BookingComponent::AdditionalService, "guestCount")
+def test_implementation_bookingcomponent_additionalservice_has_price():
+    assert hasattr(Implementation_BookingComponent_AdditionalService, "price")
     descriptor = None
-    for klass in Implementation::BookingComponent::AdditionalService.__mro__:
+    for klass in Implementation_BookingComponent_AdditionalService.__mro__:
+        if "price" in klass.__dict__:
+            descriptor = klass.__dict__["price"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_implementation_bookingcomponent_additionalservice_has_guestCount():
+    assert hasattr(Implementation_BookingComponent_AdditionalService, "guestCount")
+    descriptor = None
+    for klass in Implementation_BookingComponent_AdditionalService.__mro__:
         if "guestCount" in klass.__dict__:
             descriptor = klass.__dict__["guestCount"]
             break
     assert isinstance(descriptor, property)
 
-def test_implementation::bookingcomponent::additionalservice_has_price():
-    assert hasattr(Implementation::BookingComponent::AdditionalService, "price")
+def test_implementation_bookingcomponent_additionalservice_has_dateTime():
+    assert hasattr(Implementation_BookingComponent_AdditionalService, "dateTime")
     descriptor = None
-    for klass in Implementation::BookingComponent::AdditionalService.__mro__:
-        if "price" in klass.__dict__:
-            descriptor = klass.__dict__["price"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_implementation::bookingcomponent::additionalservice_has_name():
-    assert hasattr(Implementation::BookingComponent::AdditionalService, "name")
-    descriptor = None
-    for klass in Implementation::BookingComponent::AdditionalService.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_implementation::bookingcomponent::additionalservice_has_dateTime():
-    assert hasattr(Implementation::BookingComponent::AdditionalService, "dateTime")
-    descriptor = None
-    for klass in Implementation::BookingComponent::AdditionalService.__mro__:
+    for klass in Implementation_BookingComponent_AdditionalService.__mro__:
         if "dateTime" in klass.__dict__:
             descriptor = klass.__dict__["dateTime"]
             break
@@ -713,225 +671,225 @@ def test_implementation::bookingcomponent::additionalservice_has_dateTime():
 
 
 
-def test_implementation::bookingcomponent::booking_is_not_abstract():
-    assert not inspect.isabstract(Implementation::BookingComponent::Booking)
+def test_implementation_bookingcomponent_booking_is_not_abstract():
+    assert not inspect.isabstract(Implementation_BookingComponent_Booking)
 
 
-def test_implementation::bookingcomponent::booking_constructor_exists():
-    assert callable(Implementation::BookingComponent::Booking.__init__)
+def test_implementation_bookingcomponent_booking_constructor_exists():
+    assert callable(Implementation_BookingComponent_Booking.__init__)
 
 
-def test_implementation::bookingcomponent::booking_constructor_args():
-    sig = inspect.signature(Implementation::BookingComponent::Booking.__init__)
+def test_implementation_bookingcomponent_booking_constructor_args():
+    sig = inspect.signature(Implementation_BookingComponent_Booking.__init__)
     params = list(sig.parameters.keys())
+    assert "arrivalDate" in params, "Missing parameter 'arrivalDate'"
+    assert "isActive" in params, "Missing parameter 'isActive'"
+    assert "departureDate" in params, "Missing parameter 'departureDate'"
+    assert "isPaid" in params, "Missing parameter 'isPaid'"
     assert "currentCost" in params, "Missing parameter 'currentCost'"
     assert "bookingReference" in params, "Missing parameter 'bookingReference'"
-    assert "departureDate" in params, "Missing parameter 'departureDate'"
-    assert "arrivalDate" in params, "Missing parameter 'arrivalDate'"
-    assert "isPaid" in params, "Missing parameter 'isPaid'"
-    assert "isActive" in params, "Missing parameter 'isActive'"
 
-def test_implementation::bookingcomponent::booking_has_currentCost():
-    assert hasattr(Implementation::BookingComponent::Booking, "currentCost")
+def test_implementation_bookingcomponent_booking_has_arrivalDate():
+    assert hasattr(Implementation_BookingComponent_Booking, "arrivalDate")
     descriptor = None
-    for klass in Implementation::BookingComponent::Booking.__mro__:
-        if "currentCost" in klass.__dict__:
-            descriptor = klass.__dict__["currentCost"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_implementation::bookingcomponent::booking_has_bookingReference():
-    assert hasattr(Implementation::BookingComponent::Booking, "bookingReference")
-    descriptor = None
-    for klass in Implementation::BookingComponent::Booking.__mro__:
-        if "bookingReference" in klass.__dict__:
-            descriptor = klass.__dict__["bookingReference"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_implementation::bookingcomponent::booking_has_departureDate():
-    assert hasattr(Implementation::BookingComponent::Booking, "departureDate")
-    descriptor = None
-    for klass in Implementation::BookingComponent::Booking.__mro__:
-        if "departureDate" in klass.__dict__:
-            descriptor = klass.__dict__["departureDate"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_implementation::bookingcomponent::booking_has_arrivalDate():
-    assert hasattr(Implementation::BookingComponent::Booking, "arrivalDate")
-    descriptor = None
-    for klass in Implementation::BookingComponent::Booking.__mro__:
+    for klass in Implementation_BookingComponent_Booking.__mro__:
         if "arrivalDate" in klass.__dict__:
             descriptor = klass.__dict__["arrivalDate"]
             break
     assert isinstance(descriptor, property)
 
-def test_implementation::bookingcomponent::booking_has_isPaid():
-    assert hasattr(Implementation::BookingComponent::Booking, "isPaid")
+def test_implementation_bookingcomponent_booking_has_isActive():
+    assert hasattr(Implementation_BookingComponent_Booking, "isActive")
     descriptor = None
-    for klass in Implementation::BookingComponent::Booking.__mro__:
-        if "isPaid" in klass.__dict__:
-            descriptor = klass.__dict__["isPaid"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_implementation::bookingcomponent::booking_has_isActive():
-    assert hasattr(Implementation::BookingComponent::Booking, "isActive")
-    descriptor = None
-    for klass in Implementation::BookingComponent::Booking.__mro__:
+    for klass in Implementation_BookingComponent_Booking.__mro__:
         if "isActive" in klass.__dict__:
             descriptor = klass.__dict__["isActive"]
             break
     assert isinstance(descriptor, property)
 
+def test_implementation_bookingcomponent_booking_has_departureDate():
+    assert hasattr(Implementation_BookingComponent_Booking, "departureDate")
+    descriptor = None
+    for klass in Implementation_BookingComponent_Booking.__mro__:
+        if "departureDate" in klass.__dict__:
+            descriptor = klass.__dict__["departureDate"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_implementation_bookingcomponent_booking_has_isPaid():
+    assert hasattr(Implementation_BookingComponent_Booking, "isPaid")
+    descriptor = None
+    for klass in Implementation_BookingComponent_Booking.__mro__:
+        if "isPaid" in klass.__dict__:
+            descriptor = klass.__dict__["isPaid"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_implementation_bookingcomponent_booking_has_currentCost():
+    assert hasattr(Implementation_BookingComponent_Booking, "currentCost")
+    descriptor = None
+    for klass in Implementation_BookingComponent_Booking.__mro__:
+        if "currentCost" in klass.__dict__:
+            descriptor = klass.__dict__["currentCost"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_implementation_bookingcomponent_booking_has_bookingReference():
+    assert hasattr(Implementation_BookingComponent_Booking, "bookingReference")
+    descriptor = None
+    for klass in Implementation_BookingComponent_Booking.__mro__:
+        if "bookingReference" in klass.__dict__:
+            descriptor = klass.__dict__["bookingReference"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_implementation::bookingcomponent::paymentdetails_is_not_abstract():
-    assert not inspect.isabstract(Implementation::BookingComponent::PaymentDetails)
+
+def test_implementation_bookingcomponent_paymentdetails_is_not_abstract():
+    assert not inspect.isabstract(Implementation_BookingComponent_PaymentDetails)
 
 
-def test_implementation::bookingcomponent::paymentdetails_constructor_exists():
-    assert callable(Implementation::BookingComponent::PaymentDetails.__init__)
+def test_implementation_bookingcomponent_paymentdetails_constructor_exists():
+    assert callable(Implementation_BookingComponent_PaymentDetails.__init__)
 
 
-def test_implementation::bookingcomponent::paymentdetails_constructor_args():
-    sig = inspect.signature(Implementation::BookingComponent::PaymentDetails.__init__)
+def test_implementation_bookingcomponent_paymentdetails_constructor_args():
+    sig = inspect.signature(Implementation_BookingComponent_PaymentDetails.__init__)
     params = list(sig.parameters.keys())
-    assert "firstName" in params, "Missing parameter 'firstName'"
-    assert "lastName" in params, "Missing parameter 'lastName'"
+    assert "expiryYear" in params, "Missing parameter 'expiryYear'"
     assert "ccNumber" in params, "Missing parameter 'ccNumber'"
     assert "address" in params, "Missing parameter 'address'"
-    assert "expiryMonth" in params, "Missing parameter 'expiryMonth'"
-    assert "expiryYear" in params, "Missing parameter 'expiryYear'"
     assert "ccv" in params, "Missing parameter 'ccv'"
+    assert "firstName" in params, "Missing parameter 'firstName'"
+    assert "expiryMonth" in params, "Missing parameter 'expiryMonth'"
+    assert "lastName" in params, "Missing parameter 'lastName'"
 
-def test_implementation::bookingcomponent::paymentdetails_has_firstName():
-    assert hasattr(Implementation::BookingComponent::PaymentDetails, "firstName")
+def test_implementation_bookingcomponent_paymentdetails_has_expiryYear():
+    assert hasattr(Implementation_BookingComponent_PaymentDetails, "expiryYear")
     descriptor = None
-    for klass in Implementation::BookingComponent::PaymentDetails.__mro__:
-        if "firstName" in klass.__dict__:
-            descriptor = klass.__dict__["firstName"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_implementation::bookingcomponent::paymentdetails_has_lastName():
-    assert hasattr(Implementation::BookingComponent::PaymentDetails, "lastName")
-    descriptor = None
-    for klass in Implementation::BookingComponent::PaymentDetails.__mro__:
-        if "lastName" in klass.__dict__:
-            descriptor = klass.__dict__["lastName"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_implementation::bookingcomponent::paymentdetails_has_ccNumber():
-    assert hasattr(Implementation::BookingComponent::PaymentDetails, "ccNumber")
-    descriptor = None
-    for klass in Implementation::BookingComponent::PaymentDetails.__mro__:
-        if "ccNumber" in klass.__dict__:
-            descriptor = klass.__dict__["ccNumber"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_implementation::bookingcomponent::paymentdetails_has_address():
-    assert hasattr(Implementation::BookingComponent::PaymentDetails, "address")
-    descriptor = None
-    for klass in Implementation::BookingComponent::PaymentDetails.__mro__:
-        if "address" in klass.__dict__:
-            descriptor = klass.__dict__["address"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_implementation::bookingcomponent::paymentdetails_has_expiryMonth():
-    assert hasattr(Implementation::BookingComponent::PaymentDetails, "expiryMonth")
-    descriptor = None
-    for klass in Implementation::BookingComponent::PaymentDetails.__mro__:
-        if "expiryMonth" in klass.__dict__:
-            descriptor = klass.__dict__["expiryMonth"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_implementation::bookingcomponent::paymentdetails_has_expiryYear():
-    assert hasattr(Implementation::BookingComponent::PaymentDetails, "expiryYear")
-    descriptor = None
-    for klass in Implementation::BookingComponent::PaymentDetails.__mro__:
+    for klass in Implementation_BookingComponent_PaymentDetails.__mro__:
         if "expiryYear" in klass.__dict__:
             descriptor = klass.__dict__["expiryYear"]
             break
     assert isinstance(descriptor, property)
 
-def test_implementation::bookingcomponent::paymentdetails_has_ccv():
-    assert hasattr(Implementation::BookingComponent::PaymentDetails, "ccv")
+def test_implementation_bookingcomponent_paymentdetails_has_ccNumber():
+    assert hasattr(Implementation_BookingComponent_PaymentDetails, "ccNumber")
     descriptor = None
-    for klass in Implementation::BookingComponent::PaymentDetails.__mro__:
+    for klass in Implementation_BookingComponent_PaymentDetails.__mro__:
+        if "ccNumber" in klass.__dict__:
+            descriptor = klass.__dict__["ccNumber"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_implementation_bookingcomponent_paymentdetails_has_address():
+    assert hasattr(Implementation_BookingComponent_PaymentDetails, "address")
+    descriptor = None
+    for klass in Implementation_BookingComponent_PaymentDetails.__mro__:
+        if "address" in klass.__dict__:
+            descriptor = klass.__dict__["address"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_implementation_bookingcomponent_paymentdetails_has_ccv():
+    assert hasattr(Implementation_BookingComponent_PaymentDetails, "ccv")
+    descriptor = None
+    for klass in Implementation_BookingComponent_PaymentDetails.__mro__:
         if "ccv" in klass.__dict__:
             descriptor = klass.__dict__["ccv"]
             break
     assert isinstance(descriptor, property)
 
+def test_implementation_bookingcomponent_paymentdetails_has_firstName():
+    assert hasattr(Implementation_BookingComponent_PaymentDetails, "firstName")
+    descriptor = None
+    for klass in Implementation_BookingComponent_PaymentDetails.__mro__:
+        if "firstName" in klass.__dict__:
+            descriptor = klass.__dict__["firstName"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_implementation_bookingcomponent_paymentdetails_has_expiryMonth():
+    assert hasattr(Implementation_BookingComponent_PaymentDetails, "expiryMonth")
+    descriptor = None
+    for klass in Implementation_BookingComponent_PaymentDetails.__mro__:
+        if "expiryMonth" in klass.__dict__:
+            descriptor = klass.__dict__["expiryMonth"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_implementation_bookingcomponent_paymentdetails_has_lastName():
+    assert hasattr(Implementation_BookingComponent_PaymentDetails, "lastName")
+    descriptor = None
+    for klass in Implementation_BookingComponent_PaymentDetails.__mro__:
+        if "lastName" in klass.__dict__:
+            descriptor = klass.__dict__["lastName"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_implementation::bookingcomponent_is_not_abstract():
-    assert not inspect.isabstract(Implementation::BookingComponent)
+
+def test_implementation_bookingcomponent_is_not_abstract():
+    assert not inspect.isabstract(Implementation_BookingComponent)
 
 
-def test_implementation::bookingcomponent_constructor_exists():
-    assert callable(Implementation::BookingComponent.__init__)
+def test_implementation_bookingcomponent_constructor_exists():
+    assert callable(Implementation_BookingComponent.__init__)
 
 
-def test_implementation::bookingcomponent_constructor_args():
-    sig = inspect.signature(Implementation::BookingComponent.__init__)
+def test_implementation_bookingcomponent_constructor_args():
+    sig = inspect.signature(Implementation_BookingComponent.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_implementation::additionalservicecomponent::additionalserviceevent_is_not_abstract():
-    assert not inspect.isabstract(Implementation::AdditionalServiceComponent::AdditionalServiceEvent)
+def test_implementation_additionalservicecomponent_additionalserviceevent_is_not_abstract():
+    assert not inspect.isabstract(Implementation_AdditionalServiceComponent_AdditionalServiceEvent)
 
 
-def test_implementation::additionalservicecomponent::additionalserviceevent_constructor_exists():
-    assert callable(Implementation::AdditionalServiceComponent::AdditionalServiceEvent.__init__)
+def test_implementation_additionalservicecomponent_additionalserviceevent_constructor_exists():
+    assert callable(Implementation_AdditionalServiceComponent_AdditionalServiceEvent.__init__)
 
 
-def test_implementation::additionalservicecomponent::additionalserviceevent_constructor_args():
-    sig = inspect.signature(Implementation::AdditionalServiceComponent::AdditionalServiceEvent.__init__)
+def test_implementation_additionalservicecomponent_additionalserviceevent_constructor_args():
+    sig = inspect.signature(Implementation_AdditionalServiceComponent_AdditionalServiceEvent.__init__)
     params = list(sig.parameters.keys())
     assert "currentAttendants" in params, "Missing parameter 'currentAttendants'"
-    assert "maxAttendant" in params, "Missing parameter 'maxAttendant'"
     assert "dateTime" in params, "Missing parameter 'dateTime'"
+    assert "maxAttendant" in params, "Missing parameter 'maxAttendant'"
     assert "location" in params, "Missing parameter 'location'"
 
-def test_implementation::additionalservicecomponent::additionalserviceevent_has_currentAttendants():
-    assert hasattr(Implementation::AdditionalServiceComponent::AdditionalServiceEvent, "currentAttendants")
+def test_implementation_additionalservicecomponent_additionalserviceevent_has_currentAttendants():
+    assert hasattr(Implementation_AdditionalServiceComponent_AdditionalServiceEvent, "currentAttendants")
     descriptor = None
-    for klass in Implementation::AdditionalServiceComponent::AdditionalServiceEvent.__mro__:
+    for klass in Implementation_AdditionalServiceComponent_AdditionalServiceEvent.__mro__:
         if "currentAttendants" in klass.__dict__:
             descriptor = klass.__dict__["currentAttendants"]
             break
     assert isinstance(descriptor, property)
 
-def test_implementation::additionalservicecomponent::additionalserviceevent_has_maxAttendant():
-    assert hasattr(Implementation::AdditionalServiceComponent::AdditionalServiceEvent, "maxAttendant")
+def test_implementation_additionalservicecomponent_additionalserviceevent_has_dateTime():
+    assert hasattr(Implementation_AdditionalServiceComponent_AdditionalServiceEvent, "dateTime")
     descriptor = None
-    for klass in Implementation::AdditionalServiceComponent::AdditionalServiceEvent.__mro__:
-        if "maxAttendant" in klass.__dict__:
-            descriptor = klass.__dict__["maxAttendant"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_implementation::additionalservicecomponent::additionalserviceevent_has_dateTime():
-    assert hasattr(Implementation::AdditionalServiceComponent::AdditionalServiceEvent, "dateTime")
-    descriptor = None
-    for klass in Implementation::AdditionalServiceComponent::AdditionalServiceEvent.__mro__:
+    for klass in Implementation_AdditionalServiceComponent_AdditionalServiceEvent.__mro__:
         if "dateTime" in klass.__dict__:
             descriptor = klass.__dict__["dateTime"]
             break
     assert isinstance(descriptor, property)
 
-def test_implementation::additionalservicecomponent::additionalserviceevent_has_location():
-    assert hasattr(Implementation::AdditionalServiceComponent::AdditionalServiceEvent, "location")
+def test_implementation_additionalservicecomponent_additionalserviceevent_has_maxAttendant():
+    assert hasattr(Implementation_AdditionalServiceComponent_AdditionalServiceEvent, "maxAttendant")
     descriptor = None
-    for klass in Implementation::AdditionalServiceComponent::AdditionalServiceEvent.__mro__:
+    for klass in Implementation_AdditionalServiceComponent_AdditionalServiceEvent.__mro__:
+        if "maxAttendant" in klass.__dict__:
+            descriptor = klass.__dict__["maxAttendant"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_implementation_additionalservicecomponent_additionalserviceevent_has_location():
+    assert hasattr(Implementation_AdditionalServiceComponent_AdditionalServiceEvent, "location")
+    descriptor = None
+    for klass in Implementation_AdditionalServiceComponent_AdditionalServiceEvent.__mro__:
         if "location" in klass.__dict__:
             descriptor = klass.__dict__["location"]
             break
@@ -939,381 +897,235 @@ def test_implementation::additionalservicecomponent::additionalserviceevent_has_
 
 
 
-def test_implementation::additionalservicecomponent::additionalservice_is_not_abstract():
-    assert not inspect.isabstract(Implementation::AdditionalServiceComponent::AdditionalService)
+def test_implementation_additionalservicecomponent_additionalservice_is_not_abstract():
+    assert not inspect.isabstract(Implementation_AdditionalServiceComponent_AdditionalService)
 
 
-def test_implementation::additionalservicecomponent::additionalservice_constructor_exists():
-    assert callable(Implementation::AdditionalServiceComponent::AdditionalService.__init__)
+def test_implementation_additionalservicecomponent_additionalservice_constructor_exists():
+    assert callable(Implementation_AdditionalServiceComponent_AdditionalService.__init__)
 
 
-def test_implementation::additionalservicecomponent::additionalservice_constructor_args():
-    sig = inspect.signature(Implementation::AdditionalServiceComponent::AdditionalService.__init__)
+def test_implementation_additionalservicecomponent_additionalservice_constructor_args():
+    sig = inspect.signature(Implementation_AdditionalServiceComponent_AdditionalService.__init__)
     params = list(sig.parameters.keys())
-    assert "usable" in params, "Missing parameter 'usable'"
-    assert "description" in params, "Missing parameter 'description'"
-    assert "price" in params, "Missing parameter 'price'"
     assert "name" in params, "Missing parameter 'name'"
+    assert "usable" in params, "Missing parameter 'usable'"
+    assert "price" in params, "Missing parameter 'price'"
+    assert "description" in params, "Missing parameter 'description'"
 
-def test_implementation::additionalservicecomponent::additionalservice_has_usable():
-    assert hasattr(Implementation::AdditionalServiceComponent::AdditionalService, "usable")
+def test_implementation_additionalservicecomponent_additionalservice_has_name():
+    assert hasattr(Implementation_AdditionalServiceComponent_AdditionalService, "name")
     descriptor = None
-    for klass in Implementation::AdditionalServiceComponent::AdditionalService.__mro__:
-        if "usable" in klass.__dict__:
-            descriptor = klass.__dict__["usable"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_implementation::additionalservicecomponent::additionalservice_has_description():
-    assert hasattr(Implementation::AdditionalServiceComponent::AdditionalService, "description")
-    descriptor = None
-    for klass in Implementation::AdditionalServiceComponent::AdditionalService.__mro__:
-        if "description" in klass.__dict__:
-            descriptor = klass.__dict__["description"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_implementation::additionalservicecomponent::additionalservice_has_price():
-    assert hasattr(Implementation::AdditionalServiceComponent::AdditionalService, "price")
-    descriptor = None
-    for klass in Implementation::AdditionalServiceComponent::AdditionalService.__mro__:
-        if "price" in klass.__dict__:
-            descriptor = klass.__dict__["price"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_implementation::additionalservicecomponent::additionalservice_has_name():
-    assert hasattr(Implementation::AdditionalServiceComponent::AdditionalService, "name")
-    descriptor = None
-    for klass in Implementation::AdditionalServiceComponent::AdditionalService.__mro__:
+    for klass in Implementation_AdditionalServiceComponent_AdditionalService.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
-
-
-def test_implementation::staffcomponent::iauthentication_is_not_abstract():
-    assert not inspect.isabstract(Implementation::StaffComponent::IAuthentication)
-
-
-def test_implementation::staffcomponent::iauthentication_constructor_exists():
-    assert callable(Implementation::StaffComponent::IAuthentication.__init__)
-
-
-def test_implementation::staffcomponent::iauthentication_constructor_args():
-    sig = inspect.signature(Implementation::StaffComponent::IAuthentication.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_implementation::additionalservicecomponent::ieventmanagement_is_not_abstract():
-    assert not inspect.isabstract(Implementation::AdditionalServiceComponent::IEventManagement)
-
-
-def test_implementation::additionalservicecomponent::ieventmanagement_constructor_exists():
-    assert callable(Implementation::AdditionalServiceComponent::IEventManagement.__init__)
-
-
-def test_implementation::additionalservicecomponent::ieventmanagement_constructor_args():
-    sig = inspect.signature(Implementation::AdditionalServiceComponent::IEventManagement.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_implementation::additionalservicecomponent::iadditionalserviceadministration_is_not_abstract():
-    assert not inspect.isabstract(Implementation::AdditionalServiceComponent::IAdditionalServiceAdministration)
-
-
-def test_implementation::additionalservicecomponent::iadditionalserviceadministration_constructor_exists():
-    assert callable(Implementation::AdditionalServiceComponent::IAdditionalServiceAdministration.__init__)
-
-
-def test_implementation::additionalservicecomponent::iadditionalserviceadministration_constructor_args():
-    sig = inspect.signature(Implementation::AdditionalServiceComponent::IAdditionalServiceAdministration.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_additionalservicecomponent::ieventmanagement_is_not_abstract():
-    assert not inspect.isabstract(AdditionalServiceComponent::IEventManagement)
-
-
-def test_additionalservicecomponent::ieventmanagement_constructor_exists():
-    assert callable(AdditionalServiceComponent::IEventManagement.__init__)
-
-
-def test_additionalservicecomponent::ieventmanagement_constructor_args():
-    sig = inspect.signature(AdditionalServiceComponent::IEventManagement.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_additionalservicecomponent::iadditionalserviceadministration_is_not_abstract():
-    assert not inspect.isabstract(AdditionalServiceComponent::IAdditionalServiceAdministration)
-
-
-def test_additionalservicecomponent::iadditionalserviceadministration_constructor_exists():
-    assert callable(AdditionalServiceComponent::IAdditionalServiceAdministration.__init__)
-
-
-def test_additionalservicecomponent::iadditionalserviceadministration_constructor_args():
-    sig = inspect.signature(AdditionalServiceComponent::IAdditionalServiceAdministration.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_implementation::additionalservicecomponent::additionalservicehandler_is_not_abstract():
-    assert not inspect.isabstract(Implementation::AdditionalServiceComponent::AdditionalServiceHandler)
-
-
-def test_implementation::additionalservicecomponent::additionalservicehandler_constructor_exists():
-    assert callable(Implementation::AdditionalServiceComponent::AdditionalServiceHandler.__init__)
-
-
-def test_implementation::additionalservicecomponent::additionalservicehandler_constructor_args():
-    sig = inspect.signature(Implementation::AdditionalServiceComponent::AdditionalServiceHandler.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_implementation::additionalservicecomponent_is_not_abstract():
-    assert not inspect.isabstract(Implementation::AdditionalServiceComponent)
-
-
-def test_implementation::additionalservicecomponent_constructor_exists():
-    assert callable(Implementation::AdditionalServiceComponent.__init__)
-
-
-def test_implementation::additionalservicecomponent_constructor_args():
-    sig = inspect.signature(Implementation::AdditionalServiceComponent.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_implementation::paymentcomponent::payment_is_not_abstract():
-    assert not inspect.isabstract(Implementation::PaymentComponent::Payment)
-
-
-def test_implementation::paymentcomponent::payment_constructor_exists():
-    assert callable(Implementation::PaymentComponent::Payment.__init__)
-
-
-def test_implementation::paymentcomponent::payment_constructor_args():
-    sig = inspect.signature(Implementation::PaymentComponent::Payment.__init__)
-    params = list(sig.parameters.keys())
-    assert "expiryMonth" in params, "Missing parameter 'expiryMonth'"
-    assert "ccNumber" in params, "Missing parameter 'ccNumber'"
-    assert "ccv" in params, "Missing parameter 'ccv'"
-    assert "expiryYear" in params, "Missing parameter 'expiryYear'"
-    assert "firstName" in params, "Missing parameter 'firstName'"
-    assert "amount" in params, "Missing parameter 'amount'"
-    assert "lastName" in params, "Missing parameter 'lastName'"
-
-def test_implementation::paymentcomponent::payment_has_expiryMonth():
-    assert hasattr(Implementation::PaymentComponent::Payment, "expiryMonth")
+def test_implementation_additionalservicecomponent_additionalservice_has_usable():
+    assert hasattr(Implementation_AdditionalServiceComponent_AdditionalService, "usable")
     descriptor = None
-    for klass in Implementation::PaymentComponent::Payment.__mro__:
-        if "expiryMonth" in klass.__dict__:
-            descriptor = klass.__dict__["expiryMonth"]
+    for klass in Implementation_AdditionalServiceComponent_AdditionalService.__mro__:
+        if "usable" in klass.__dict__:
+            descriptor = klass.__dict__["usable"]
             break
     assert isinstance(descriptor, property)
 
-def test_implementation::paymentcomponent::payment_has_ccNumber():
-    assert hasattr(Implementation::PaymentComponent::Payment, "ccNumber")
+def test_implementation_additionalservicecomponent_additionalservice_has_price():
+    assert hasattr(Implementation_AdditionalServiceComponent_AdditionalService, "price")
     descriptor = None
-    for klass in Implementation::PaymentComponent::Payment.__mro__:
+    for klass in Implementation_AdditionalServiceComponent_AdditionalService.__mro__:
+        if "price" in klass.__dict__:
+            descriptor = klass.__dict__["price"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_implementation_additionalservicecomponent_additionalservice_has_description():
+    assert hasattr(Implementation_AdditionalServiceComponent_AdditionalService, "description")
+    descriptor = None
+    for klass in Implementation_AdditionalServiceComponent_AdditionalService.__mro__:
+        if "description" in klass.__dict__:
+            descriptor = klass.__dict__["description"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_implementation_staffcomponent_iauthentication_is_not_abstract():
+    assert not inspect.isabstract(Implementation_StaffComponent_IAuthentication)
+
+
+def test_implementation_staffcomponent_iauthentication_constructor_exists():
+    assert callable(Implementation_StaffComponent_IAuthentication.__init__)
+
+
+def test_implementation_staffcomponent_iauthentication_constructor_args():
+    sig = inspect.signature(Implementation_StaffComponent_IAuthentication.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_implementation_additionalservicecomponent_ieventmanagement_is_not_abstract():
+    assert not inspect.isabstract(Implementation_AdditionalServiceComponent_IEventManagement)
+
+
+def test_implementation_additionalservicecomponent_ieventmanagement_constructor_exists():
+    assert callable(Implementation_AdditionalServiceComponent_IEventManagement.__init__)
+
+
+def test_implementation_additionalservicecomponent_ieventmanagement_constructor_args():
+    sig = inspect.signature(Implementation_AdditionalServiceComponent_IEventManagement.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_implementation_additionalservicecomponent_iadditionalserviceadministration_is_not_abstract():
+    assert not inspect.isabstract(Implementation_AdditionalServiceComponent_IAdditionalServiceAdministration)
+
+
+def test_implementation_additionalservicecomponent_iadditionalserviceadministration_constructor_exists():
+    assert callable(Implementation_AdditionalServiceComponent_IAdditionalServiceAdministration.__init__)
+
+
+def test_implementation_additionalservicecomponent_iadditionalserviceadministration_constructor_args():
+    sig = inspect.signature(Implementation_AdditionalServiceComponent_IAdditionalServiceAdministration.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_additionalservicecomponent_ieventmanagement_is_not_abstract():
+    assert not inspect.isabstract(AdditionalServiceComponent_IEventManagement)
+
+
+def test_additionalservicecomponent_ieventmanagement_constructor_exists():
+    assert callable(AdditionalServiceComponent_IEventManagement.__init__)
+
+
+def test_additionalservicecomponent_ieventmanagement_constructor_args():
+    sig = inspect.signature(AdditionalServiceComponent_IEventManagement.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_additionalservicecomponent_iadditionalserviceadministration_is_not_abstract():
+    assert not inspect.isabstract(AdditionalServiceComponent_IAdditionalServiceAdministration)
+
+
+def test_additionalservicecomponent_iadditionalserviceadministration_constructor_exists():
+    assert callable(AdditionalServiceComponent_IAdditionalServiceAdministration.__init__)
+
+
+def test_additionalservicecomponent_iadditionalserviceadministration_constructor_args():
+    sig = inspect.signature(AdditionalServiceComponent_IAdditionalServiceAdministration.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_implementation_additionalservicecomponent_additionalservicehandler_is_not_abstract():
+    assert not inspect.isabstract(Implementation_AdditionalServiceComponent_AdditionalServiceHandler)
+
+
+def test_implementation_additionalservicecomponent_additionalservicehandler_constructor_exists():
+    assert callable(Implementation_AdditionalServiceComponent_AdditionalServiceHandler.__init__)
+
+
+def test_implementation_additionalservicecomponent_additionalservicehandler_constructor_args():
+    sig = inspect.signature(Implementation_AdditionalServiceComponent_AdditionalServiceHandler.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_implementation_additionalservicecomponent_is_not_abstract():
+    assert not inspect.isabstract(Implementation_AdditionalServiceComponent)
+
+
+def test_implementation_additionalservicecomponent_constructor_exists():
+    assert callable(Implementation_AdditionalServiceComponent.__init__)
+
+
+def test_implementation_additionalservicecomponent_constructor_args():
+    sig = inspect.signature(Implementation_AdditionalServiceComponent.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_implementation_paymentcomponent_payment_is_not_abstract():
+    assert not inspect.isabstract(Implementation_PaymentComponent_Payment)
+
+
+def test_implementation_paymentcomponent_payment_constructor_exists():
+    assert callable(Implementation_PaymentComponent_Payment.__init__)
+
+
+def test_implementation_paymentcomponent_payment_constructor_args():
+    sig = inspect.signature(Implementation_PaymentComponent_Payment.__init__)
+    params = list(sig.parameters.keys())
+    assert "ccNumber" in params, "Missing parameter 'ccNumber'"
+    assert "amount" in params, "Missing parameter 'amount'"
+    assert "expiryMonth" in params, "Missing parameter 'expiryMonth'"
+    assert "firstName" in params, "Missing parameter 'firstName'"
+    assert "expiryYear" in params, "Missing parameter 'expiryYear'"
+    assert "ccv" in params, "Missing parameter 'ccv'"
+    assert "lastName" in params, "Missing parameter 'lastName'"
+
+def test_implementation_paymentcomponent_payment_has_ccNumber():
+    assert hasattr(Implementation_PaymentComponent_Payment, "ccNumber")
+    descriptor = None
+    for klass in Implementation_PaymentComponent_Payment.__mro__:
         if "ccNumber" in klass.__dict__:
             descriptor = klass.__dict__["ccNumber"]
             break
     assert isinstance(descriptor, property)
 
-def test_implementation::paymentcomponent::payment_has_ccv():
-    assert hasattr(Implementation::PaymentComponent::Payment, "ccv")
+def test_implementation_paymentcomponent_payment_has_amount():
+    assert hasattr(Implementation_PaymentComponent_Payment, "amount")
     descriptor = None
-    for klass in Implementation::PaymentComponent::Payment.__mro__:
-        if "ccv" in klass.__dict__:
-            descriptor = klass.__dict__["ccv"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_implementation::paymentcomponent::payment_has_expiryYear():
-    assert hasattr(Implementation::PaymentComponent::Payment, "expiryYear")
-    descriptor = None
-    for klass in Implementation::PaymentComponent::Payment.__mro__:
-        if "expiryYear" in klass.__dict__:
-            descriptor = klass.__dict__["expiryYear"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_implementation::paymentcomponent::payment_has_firstName():
-    assert hasattr(Implementation::PaymentComponent::Payment, "firstName")
-    descriptor = None
-    for klass in Implementation::PaymentComponent::Payment.__mro__:
-        if "firstName" in klass.__dict__:
-            descriptor = klass.__dict__["firstName"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_implementation::paymentcomponent::payment_has_amount():
-    assert hasattr(Implementation::PaymentComponent::Payment, "amount")
-    descriptor = None
-    for klass in Implementation::PaymentComponent::Payment.__mro__:
+    for klass in Implementation_PaymentComponent_Payment.__mro__:
         if "amount" in klass.__dict__:
             descriptor = klass.__dict__["amount"]
             break
     assert isinstance(descriptor, property)
 
-def test_implementation::paymentcomponent::payment_has_lastName():
-    assert hasattr(Implementation::PaymentComponent::Payment, "lastName")
+def test_implementation_paymentcomponent_payment_has_expiryMonth():
+    assert hasattr(Implementation_PaymentComponent_Payment, "expiryMonth")
     descriptor = None
-    for klass in Implementation::PaymentComponent::Payment.__mro__:
-        if "lastName" in klass.__dict__:
-            descriptor = klass.__dict__["lastName"]
+    for klass in Implementation_PaymentComponent_Payment.__mro__:
+        if "expiryMonth" in klass.__dict__:
+            descriptor = klass.__dict__["expiryMonth"]
             break
     assert isinstance(descriptor, property)
 
-
-
-def test_implementation::bank::administratorprovides_is_not_abstract():
-    assert not inspect.isabstract(Implementation::Bank::AdministratorProvides)
-
-
-def test_implementation::bank::administratorprovides_constructor_exists():
-    assert callable(Implementation::Bank::AdministratorProvides.__init__)
-
-
-def test_implementation::bank::administratorprovides_constructor_args():
-    sig = inspect.signature(Implementation::Bank::AdministratorProvides.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_implementation::bank::customerprovides_is_not_abstract():
-    assert not inspect.isabstract(Implementation::Bank::CustomerProvides)
-
-
-def test_implementation::bank::customerprovides_constructor_exists():
-    assert callable(Implementation::Bank::CustomerProvides.__init__)
-
-
-def test_implementation::bank::customerprovides_constructor_args():
-    sig = inspect.signature(Implementation::Bank::CustomerProvides.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_implementation::bookingcomponent::ibookinginformation_is_not_abstract():
-    assert not inspect.isabstract(Implementation::BookingComponent::IBookingInformation)
-
-
-def test_implementation::bookingcomponent::ibookinginformation_constructor_exists():
-    assert callable(Implementation::BookingComponent::IBookingInformation.__init__)
-
-
-def test_implementation::bookingcomponent::ibookinginformation_constructor_args():
-    sig = inspect.signature(Implementation::BookingComponent::IBookingInformation.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_implementation::paymentcomponent::ipayment_is_not_abstract():
-    assert not inspect.isabstract(Implementation::PaymentComponent::IPayment)
-
-
-def test_implementation::paymentcomponent::ipayment_constructor_exists():
-    assert callable(Implementation::PaymentComponent::IPayment.__init__)
-
-
-def test_implementation::paymentcomponent::ipayment_constructor_args():
-    sig = inspect.signature(Implementation::PaymentComponent::IPayment.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_paymentcomponent::ipayment_is_not_abstract():
-    assert not inspect.isabstract(PaymentComponent::IPayment)
-
-
-def test_paymentcomponent::ipayment_constructor_exists():
-    assert callable(PaymentComponent::IPayment.__init__)
-
-
-def test_paymentcomponent::ipayment_constructor_args():
-    sig = inspect.signature(PaymentComponent::IPayment.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_implementation::paymentcomponent::paymenthandler_is_not_abstract():
-    assert not inspect.isabstract(Implementation::PaymentComponent::PaymentHandler)
-
-
-def test_implementation::paymentcomponent::paymenthandler_constructor_exists():
-    assert callable(Implementation::PaymentComponent::PaymentHandler.__init__)
-
-
-def test_implementation::paymentcomponent::paymenthandler_constructor_args():
-    sig = inspect.signature(Implementation::PaymentComponent::PaymentHandler.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_implementation::paymentcomponent_is_not_abstract():
-    assert not inspect.isabstract(Implementation::PaymentComponent)
-
-
-def test_implementation::paymentcomponent_constructor_exists():
-    assert callable(Implementation::PaymentComponent.__init__)
-
-
-def test_implementation::paymentcomponent_constructor_args():
-    sig = inspect.signature(Implementation::PaymentComponent.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_implementation::occupancycomponent::ioccupancy_is_not_abstract():
-    assert not inspect.isabstract(Implementation::OccupancyComponent::IOccupancy)
-
-
-def test_implementation::occupancycomponent::ioccupancy_constructor_exists():
-    assert callable(Implementation::OccupancyComponent::IOccupancy.__init__)
-
-
-def test_implementation::occupancycomponent::ioccupancy_constructor_args():
-    sig = inspect.signature(Implementation::OccupancyComponent::IOccupancy.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_implementation::occupancycomponent::guest_is_not_abstract():
-    assert not inspect.isabstract(Implementation::OccupancyComponent::Guest)
-
-
-def test_implementation::occupancycomponent::guest_constructor_exists():
-    assert callable(Implementation::OccupancyComponent::Guest.__init__)
-
-
-def test_implementation::occupancycomponent::guest_constructor_args():
-    sig = inspect.signature(Implementation::OccupancyComponent::Guest.__init__)
-    params = list(sig.parameters.keys())
-    assert "firstName" in params, "Missing parameter 'firstName'"
-    assert "lastName" in params, "Missing parameter 'lastName'"
-
-def test_implementation::occupancycomponent::guest_has_firstName():
-    assert hasattr(Implementation::OccupancyComponent::Guest, "firstName")
+def test_implementation_paymentcomponent_payment_has_firstName():
+    assert hasattr(Implementation_PaymentComponent_Payment, "firstName")
     descriptor = None
-    for klass in Implementation::OccupancyComponent::Guest.__mro__:
+    for klass in Implementation_PaymentComponent_Payment.__mro__:
         if "firstName" in klass.__dict__:
             descriptor = klass.__dict__["firstName"]
             break
     assert isinstance(descriptor, property)
 
-def test_implementation::occupancycomponent::guest_has_lastName():
-    assert hasattr(Implementation::OccupancyComponent::Guest, "lastName")
+def test_implementation_paymentcomponent_payment_has_expiryYear():
+    assert hasattr(Implementation_PaymentComponent_Payment, "expiryYear")
     descriptor = None
-    for klass in Implementation::OccupancyComponent::Guest.__mro__:
+    for klass in Implementation_PaymentComponent_Payment.__mro__:
+        if "expiryYear" in klass.__dict__:
+            descriptor = klass.__dict__["expiryYear"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_implementation_paymentcomponent_payment_has_ccv():
+    assert hasattr(Implementation_PaymentComponent_Payment, "ccv")
+    descriptor = None
+    for klass in Implementation_PaymentComponent_Payment.__mro__:
+        if "ccv" in klass.__dict__:
+            descriptor = klass.__dict__["ccv"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_implementation_paymentcomponent_payment_has_lastName():
+    assert hasattr(Implementation_PaymentComponent_Payment, "lastName")
+    descriptor = None
+    for klass in Implementation_PaymentComponent_Payment.__mro__:
         if "lastName" in klass.__dict__:
             descriptor = klass.__dict__["lastName"]
             break
@@ -1321,225 +1133,357 @@ def test_implementation::occupancycomponent::guest_has_lastName():
 
 
 
-def test_implementation::roomcomponent::iroominformation_is_not_abstract():
-    assert not inspect.isabstract(Implementation::RoomComponent::IRoomInformation)
+def test_implementation_bank_administratorprovides_is_not_abstract():
+    assert not inspect.isabstract(Implementation_Bank_AdministratorProvides)
 
 
-def test_implementation::roomcomponent::iroominformation_constructor_exists():
-    assert callable(Implementation::RoomComponent::IRoomInformation.__init__)
+def test_implementation_bank_administratorprovides_constructor_exists():
+    assert callable(Implementation_Bank_AdministratorProvides.__init__)
 
 
-def test_implementation::roomcomponent::iroominformation_constructor_args():
-    sig = inspect.signature(Implementation::RoomComponent::IRoomInformation.__init__)
+def test_implementation_bank_administratorprovides_constructor_args():
+    sig = inspect.signature(Implementation_Bank_AdministratorProvides.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_occupancycomponent::ioccupancy_is_not_abstract():
-    assert not inspect.isabstract(OccupancyComponent::IOccupancy)
+def test_implementation_bank_customerprovides_is_not_abstract():
+    assert not inspect.isabstract(Implementation_Bank_CustomerProvides)
 
 
-def test_occupancycomponent::ioccupancy_constructor_exists():
-    assert callable(OccupancyComponent::IOccupancy.__init__)
+def test_implementation_bank_customerprovides_constructor_exists():
+    assert callable(Implementation_Bank_CustomerProvides.__init__)
 
 
-def test_occupancycomponent::ioccupancy_constructor_args():
-    sig = inspect.signature(OccupancyComponent::IOccupancy.__init__)
+def test_implementation_bank_customerprovides_constructor_args():
+    sig = inspect.signature(Implementation_Bank_CustomerProvides.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_occupancycomponent::ioccupancydecision_is_not_abstract():
-    assert not inspect.isabstract(OccupancyComponent::IOccupancyDecision)
+def test_implementation_bookingcomponent_ibookinginformation_is_not_abstract():
+    assert not inspect.isabstract(Implementation_BookingComponent_IBookingInformation)
 
 
-def test_occupancycomponent::ioccupancydecision_constructor_exists():
-    assert callable(OccupancyComponent::IOccupancyDecision.__init__)
+def test_implementation_bookingcomponent_ibookinginformation_constructor_exists():
+    assert callable(Implementation_BookingComponent_IBookingInformation.__init__)
 
 
-def test_occupancycomponent::ioccupancydecision_constructor_args():
-    sig = inspect.signature(OccupancyComponent::IOccupancyDecision.__init__)
+def test_implementation_bookingcomponent_ibookinginformation_constructor_args():
+    sig = inspect.signature(Implementation_BookingComponent_IBookingInformation.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_implementation::occupancycomponent::occupancyhandler_is_not_abstract():
-    assert not inspect.isabstract(Implementation::OccupancyComponent::OccupancyHandler)
+def test_implementation_paymentcomponent_ipayment_is_not_abstract():
+    assert not inspect.isabstract(Implementation_PaymentComponent_IPayment)
 
 
-def test_implementation::occupancycomponent::occupancyhandler_constructor_exists():
-    assert callable(Implementation::OccupancyComponent::OccupancyHandler.__init__)
+def test_implementation_paymentcomponent_ipayment_constructor_exists():
+    assert callable(Implementation_PaymentComponent_IPayment.__init__)
 
 
-def test_implementation::occupancycomponent::occupancyhandler_constructor_args():
-    sig = inspect.signature(Implementation::OccupancyComponent::OccupancyHandler.__init__)
+def test_implementation_paymentcomponent_ipayment_constructor_args():
+    sig = inspect.signature(Implementation_PaymentComponent_IPayment.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_implementation::occupancycomponent_is_not_abstract():
-    assert not inspect.isabstract(Implementation::OccupancyComponent)
+def test_paymentcomponent_ipayment_is_not_abstract():
+    assert not inspect.isabstract(PaymentComponent_IPayment)
 
 
-def test_implementation::occupancycomponent_constructor_exists():
-    assert callable(Implementation::OccupancyComponent.__init__)
+def test_paymentcomponent_ipayment_constructor_exists():
+    assert callable(PaymentComponent_IPayment.__init__)
 
 
-def test_implementation::occupancycomponent_constructor_args():
-    sig = inspect.signature(Implementation::OccupancyComponent.__init__)
+def test_paymentcomponent_ipayment_constructor_args():
+    sig = inspect.signature(PaymentComponent_IPayment.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_implementation::decisionsupportcomponent::occupancydssinfo_is_not_abstract():
-    assert not inspect.isabstract(Implementation::DecisionSupportComponent::OccupancyDSSInfo)
+def test_implementation_paymentcomponent_paymenthandler_is_not_abstract():
+    assert not inspect.isabstract(Implementation_PaymentComponent_PaymentHandler)
 
 
-def test_implementation::decisionsupportcomponent::occupancydssinfo_constructor_exists():
-    assert callable(Implementation::DecisionSupportComponent::OccupancyDSSInfo.__init__)
+def test_implementation_paymentcomponent_paymenthandler_constructor_exists():
+    assert callable(Implementation_PaymentComponent_PaymentHandler.__init__)
 
 
-def test_implementation::decisionsupportcomponent::occupancydssinfo_constructor_args():
-    sig = inspect.signature(Implementation::DecisionSupportComponent::OccupancyDSSInfo.__init__)
+def test_implementation_paymentcomponent_paymenthandler_constructor_args():
+    sig = inspect.signature(Implementation_PaymentComponent_PaymentHandler.__init__)
     params = list(sig.parameters.keys())
-    assert "roomNumber" in params, "Missing parameter 'roomNumber'"
-    assert "checkOutDateTime" in params, "Missing parameter 'checkOutDateTime'"
-    assert "checkInDateTime" in params, "Missing parameter 'checkInDateTime'"
-    assert "numberOfGuests" in params, "Missing parameter 'numberOfGuests'"
 
-def test_implementation::decisionsupportcomponent::occupancydssinfo_has_roomNumber():
-    assert hasattr(Implementation::DecisionSupportComponent::OccupancyDSSInfo, "roomNumber")
+
+
+def test_implementation_paymentcomponent_is_not_abstract():
+    assert not inspect.isabstract(Implementation_PaymentComponent)
+
+
+def test_implementation_paymentcomponent_constructor_exists():
+    assert callable(Implementation_PaymentComponent.__init__)
+
+
+def test_implementation_paymentcomponent_constructor_args():
+    sig = inspect.signature(Implementation_PaymentComponent.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_implementation_occupancycomponent_ioccupancy_is_not_abstract():
+    assert not inspect.isabstract(Implementation_OccupancyComponent_IOccupancy)
+
+
+def test_implementation_occupancycomponent_ioccupancy_constructor_exists():
+    assert callable(Implementation_OccupancyComponent_IOccupancy.__init__)
+
+
+def test_implementation_occupancycomponent_ioccupancy_constructor_args():
+    sig = inspect.signature(Implementation_OccupancyComponent_IOccupancy.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_implementation_occupancycomponent_guest_is_not_abstract():
+    assert not inspect.isabstract(Implementation_OccupancyComponent_Guest)
+
+
+def test_implementation_occupancycomponent_guest_constructor_exists():
+    assert callable(Implementation_OccupancyComponent_Guest.__init__)
+
+
+def test_implementation_occupancycomponent_guest_constructor_args():
+    sig = inspect.signature(Implementation_OccupancyComponent_Guest.__init__)
+    params = list(sig.parameters.keys())
+    assert "lastName" in params, "Missing parameter 'lastName'"
+    assert "firstName" in params, "Missing parameter 'firstName'"
+
+def test_implementation_occupancycomponent_guest_has_lastName():
+    assert hasattr(Implementation_OccupancyComponent_Guest, "lastName")
     descriptor = None
-    for klass in Implementation::DecisionSupportComponent::OccupancyDSSInfo.__mro__:
-        if "roomNumber" in klass.__dict__:
-            descriptor = klass.__dict__["roomNumber"]
+    for klass in Implementation_OccupancyComponent_Guest.__mro__:
+        if "lastName" in klass.__dict__:
+            descriptor = klass.__dict__["lastName"]
             break
     assert isinstance(descriptor, property)
 
-def test_implementation::decisionsupportcomponent::occupancydssinfo_has_checkOutDateTime():
-    assert hasattr(Implementation::DecisionSupportComponent::OccupancyDSSInfo, "checkOutDateTime")
+def test_implementation_occupancycomponent_guest_has_firstName():
+    assert hasattr(Implementation_OccupancyComponent_Guest, "firstName")
     descriptor = None
-    for klass in Implementation::DecisionSupportComponent::OccupancyDSSInfo.__mro__:
+    for klass in Implementation_OccupancyComponent_Guest.__mro__:
+        if "firstName" in klass.__dict__:
+            descriptor = klass.__dict__["firstName"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_implementation_roomcomponent_iroominformation_is_not_abstract():
+    assert not inspect.isabstract(Implementation_RoomComponent_IRoomInformation)
+
+
+def test_implementation_roomcomponent_iroominformation_constructor_exists():
+    assert callable(Implementation_RoomComponent_IRoomInformation.__init__)
+
+
+def test_implementation_roomcomponent_iroominformation_constructor_args():
+    sig = inspect.signature(Implementation_RoomComponent_IRoomInformation.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_occupancycomponent_ioccupancy_is_not_abstract():
+    assert not inspect.isabstract(OccupancyComponent_IOccupancy)
+
+
+def test_occupancycomponent_ioccupancy_constructor_exists():
+    assert callable(OccupancyComponent_IOccupancy.__init__)
+
+
+def test_occupancycomponent_ioccupancy_constructor_args():
+    sig = inspect.signature(OccupancyComponent_IOccupancy.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_occupancycomponent_ioccupancydecision_is_not_abstract():
+    assert not inspect.isabstract(OccupancyComponent_IOccupancyDecision)
+
+
+def test_occupancycomponent_ioccupancydecision_constructor_exists():
+    assert callable(OccupancyComponent_IOccupancyDecision.__init__)
+
+
+def test_occupancycomponent_ioccupancydecision_constructor_args():
+    sig = inspect.signature(OccupancyComponent_IOccupancyDecision.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_implementation_occupancycomponent_occupancyhandler_is_not_abstract():
+    assert not inspect.isabstract(Implementation_OccupancyComponent_OccupancyHandler)
+
+
+def test_implementation_occupancycomponent_occupancyhandler_constructor_exists():
+    assert callable(Implementation_OccupancyComponent_OccupancyHandler.__init__)
+
+
+def test_implementation_occupancycomponent_occupancyhandler_constructor_args():
+    sig = inspect.signature(Implementation_OccupancyComponent_OccupancyHandler.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_implementation_occupancycomponent_is_not_abstract():
+    assert not inspect.isabstract(Implementation_OccupancyComponent)
+
+
+def test_implementation_occupancycomponent_constructor_exists():
+    assert callable(Implementation_OccupancyComponent.__init__)
+
+
+def test_implementation_occupancycomponent_constructor_args():
+    sig = inspect.signature(Implementation_OccupancyComponent.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_implementation_decisionsupportcomponent_occupancydssinfo_is_not_abstract():
+    assert not inspect.isabstract(Implementation_DecisionSupportComponent_OccupancyDSSInfo)
+
+
+def test_implementation_decisionsupportcomponent_occupancydssinfo_constructor_exists():
+    assert callable(Implementation_DecisionSupportComponent_OccupancyDSSInfo.__init__)
+
+
+def test_implementation_decisionsupportcomponent_occupancydssinfo_constructor_args():
+    sig = inspect.signature(Implementation_DecisionSupportComponent_OccupancyDSSInfo.__init__)
+    params = list(sig.parameters.keys())
+    assert "checkOutDateTime" in params, "Missing parameter 'checkOutDateTime'"
+    assert "checkInDateTime" in params, "Missing parameter 'checkInDateTime'"
+    assert "numberOfGuests" in params, "Missing parameter 'numberOfGuests'"
+    assert "roomNumber" in params, "Missing parameter 'roomNumber'"
+
+def test_implementation_decisionsupportcomponent_occupancydssinfo_has_checkOutDateTime():
+    assert hasattr(Implementation_DecisionSupportComponent_OccupancyDSSInfo, "checkOutDateTime")
+    descriptor = None
+    for klass in Implementation_DecisionSupportComponent_OccupancyDSSInfo.__mro__:
         if "checkOutDateTime" in klass.__dict__:
             descriptor = klass.__dict__["checkOutDateTime"]
             break
     assert isinstance(descriptor, property)
 
-def test_implementation::decisionsupportcomponent::occupancydssinfo_has_checkInDateTime():
-    assert hasattr(Implementation::DecisionSupportComponent::OccupancyDSSInfo, "checkInDateTime")
+def test_implementation_decisionsupportcomponent_occupancydssinfo_has_checkInDateTime():
+    assert hasattr(Implementation_DecisionSupportComponent_OccupancyDSSInfo, "checkInDateTime")
     descriptor = None
-    for klass in Implementation::DecisionSupportComponent::OccupancyDSSInfo.__mro__:
+    for klass in Implementation_DecisionSupportComponent_OccupancyDSSInfo.__mro__:
         if "checkInDateTime" in klass.__dict__:
             descriptor = klass.__dict__["checkInDateTime"]
             break
     assert isinstance(descriptor, property)
 
-def test_implementation::decisionsupportcomponent::occupancydssinfo_has_numberOfGuests():
-    assert hasattr(Implementation::DecisionSupportComponent::OccupancyDSSInfo, "numberOfGuests")
+def test_implementation_decisionsupportcomponent_occupancydssinfo_has_numberOfGuests():
+    assert hasattr(Implementation_DecisionSupportComponent_OccupancyDSSInfo, "numberOfGuests")
     descriptor = None
-    for klass in Implementation::DecisionSupportComponent::OccupancyDSSInfo.__mro__:
+    for klass in Implementation_DecisionSupportComponent_OccupancyDSSInfo.__mro__:
         if "numberOfGuests" in klass.__dict__:
             descriptor = klass.__dict__["numberOfGuests"]
             break
     assert isinstance(descriptor, property)
 
-
-
-def test_implementation::occupancycomponent::occupancy_is_not_abstract():
-    assert not inspect.isabstract(Implementation::OccupancyComponent::Occupancy)
-
-
-def test_implementation::occupancycomponent::occupancy_constructor_exists():
-    assert callable(Implementation::OccupancyComponent::Occupancy.__init__)
-
-
-def test_implementation::occupancycomponent::occupancy_constructor_args():
-    sig = inspect.signature(Implementation::OccupancyComponent::Occupancy.__init__)
-    params = list(sig.parameters.keys())
-    assert "checkInDateTime" in params, "Missing parameter 'checkInDateTime'"
-    assert "roomNumber" in params, "Missing parameter 'roomNumber'"
-    assert "checkOutDateTime" in params, "Missing parameter 'checkOutDateTime'"
-    assert "bookingReference" in params, "Missing parameter 'bookingReference'"
-
-def test_implementation::occupancycomponent::occupancy_has_checkInDateTime():
-    assert hasattr(Implementation::OccupancyComponent::Occupancy, "checkInDateTime")
+def test_implementation_decisionsupportcomponent_occupancydssinfo_has_roomNumber():
+    assert hasattr(Implementation_DecisionSupportComponent_OccupancyDSSInfo, "roomNumber")
     descriptor = None
-    for klass in Implementation::OccupancyComponent::Occupancy.__mro__:
-        if "checkInDateTime" in klass.__dict__:
-            descriptor = klass.__dict__["checkInDateTime"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_implementation::occupancycomponent::occupancy_has_roomNumber():
-    assert hasattr(Implementation::OccupancyComponent::Occupancy, "roomNumber")
-    descriptor = None
-    for klass in Implementation::OccupancyComponent::Occupancy.__mro__:
+    for klass in Implementation_DecisionSupportComponent_OccupancyDSSInfo.__mro__:
         if "roomNumber" in klass.__dict__:
             descriptor = klass.__dict__["roomNumber"]
             break
     assert isinstance(descriptor, property)
 
-def test_implementation::occupancycomponent::occupancy_has_checkOutDateTime():
-    assert hasattr(Implementation::OccupancyComponent::Occupancy, "checkOutDateTime")
+
+
+def test_implementation_occupancycomponent_occupancy_is_not_abstract():
+    assert not inspect.isabstract(Implementation_OccupancyComponent_Occupancy)
+
+
+def test_implementation_occupancycomponent_occupancy_constructor_exists():
+    assert callable(Implementation_OccupancyComponent_Occupancy.__init__)
+
+
+def test_implementation_occupancycomponent_occupancy_constructor_args():
+    sig = inspect.signature(Implementation_OccupancyComponent_Occupancy.__init__)
+    params = list(sig.parameters.keys())
+    assert "checkOutDateTime" in params, "Missing parameter 'checkOutDateTime'"
+    assert "bookingReference" in params, "Missing parameter 'bookingReference'"
+    assert "checkInDateTime" in params, "Missing parameter 'checkInDateTime'"
+    assert "roomNumber" in params, "Missing parameter 'roomNumber'"
+
+def test_implementation_occupancycomponent_occupancy_has_checkOutDateTime():
+    assert hasattr(Implementation_OccupancyComponent_Occupancy, "checkOutDateTime")
     descriptor = None
-    for klass in Implementation::OccupancyComponent::Occupancy.__mro__:
+    for klass in Implementation_OccupancyComponent_Occupancy.__mro__:
         if "checkOutDateTime" in klass.__dict__:
             descriptor = klass.__dict__["checkOutDateTime"]
             break
     assert isinstance(descriptor, property)
 
-def test_implementation::occupancycomponent::occupancy_has_bookingReference():
-    assert hasattr(Implementation::OccupancyComponent::Occupancy, "bookingReference")
+def test_implementation_occupancycomponent_occupancy_has_bookingReference():
+    assert hasattr(Implementation_OccupancyComponent_Occupancy, "bookingReference")
     descriptor = None
-    for klass in Implementation::OccupancyComponent::Occupancy.__mro__:
+    for klass in Implementation_OccupancyComponent_Occupancy.__mro__:
         if "bookingReference" in klass.__dict__:
             descriptor = klass.__dict__["bookingReference"]
             break
     assert isinstance(descriptor, property)
 
+def test_implementation_occupancycomponent_occupancy_has_checkInDateTime():
+    assert hasattr(Implementation_OccupancyComponent_Occupancy, "checkInDateTime")
+    descriptor = None
+    for klass in Implementation_OccupancyComponent_Occupancy.__mro__:
+        if "checkInDateTime" in klass.__dict__:
+            descriptor = klass.__dict__["checkInDateTime"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_implementation_occupancycomponent_occupancy_has_roomNumber():
+    assert hasattr(Implementation_OccupancyComponent_Occupancy, "roomNumber")
+    descriptor = None
+    for klass in Implementation_OccupancyComponent_Occupancy.__mro__:
+        if "roomNumber" in klass.__dict__:
+            descriptor = klass.__dict__["roomNumber"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_implementation::decisionsupportcomponent::dsscontroller_is_not_abstract():
-    assert not inspect.isabstract(Implementation::DecisionSupportComponent::DSSController)
+
+def test_implementation_decisionsupportcomponent_additionalservicedssinfo_is_not_abstract():
+    assert not inspect.isabstract(Implementation_DecisionSupportComponent_AdditionalServiceDSSInfo)
 
 
-def test_implementation::decisionsupportcomponent::dsscontroller_constructor_exists():
-    assert callable(Implementation::DecisionSupportComponent::DSSController.__init__)
+def test_implementation_decisionsupportcomponent_additionalservicedssinfo_constructor_exists():
+    assert callable(Implementation_DecisionSupportComponent_AdditionalServiceDSSInfo.__init__)
 
 
-def test_implementation::decisionsupportcomponent::dsscontroller_constructor_args():
-    sig = inspect.signature(Implementation::DecisionSupportComponent::DSSController.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_implementation::decisionsupportcomponent::additionalservicedssinfo_is_not_abstract():
-    assert not inspect.isabstract(Implementation::DecisionSupportComponent::AdditionalServiceDSSInfo)
-
-
-def test_implementation::decisionsupportcomponent::additionalservicedssinfo_constructor_exists():
-    assert callable(Implementation::DecisionSupportComponent::AdditionalServiceDSSInfo.__init__)
-
-
-def test_implementation::decisionsupportcomponent::additionalservicedssinfo_constructor_args():
-    sig = inspect.signature(Implementation::DecisionSupportComponent::AdditionalServiceDSSInfo.__init__)
+def test_implementation_decisionsupportcomponent_additionalservicedssinfo_constructor_args():
+    sig = inspect.signature(Implementation_DecisionSupportComponent_AdditionalServiceDSSInfo.__init__)
     params = list(sig.parameters.keys())
     assert "additionalServiceName" in params, "Missing parameter 'additionalServiceName'"
     assert "additionalServicePrice" in params, "Missing parameter 'additionalServicePrice'"
 
-def test_implementation::decisionsupportcomponent::additionalservicedssinfo_has_additionalServiceName():
-    assert hasattr(Implementation::DecisionSupportComponent::AdditionalServiceDSSInfo, "additionalServiceName")
+def test_implementation_decisionsupportcomponent_additionalservicedssinfo_has_additionalServiceName():
+    assert hasattr(Implementation_DecisionSupportComponent_AdditionalServiceDSSInfo, "additionalServiceName")
     descriptor = None
-    for klass in Implementation::DecisionSupportComponent::AdditionalServiceDSSInfo.__mro__:
+    for klass in Implementation_DecisionSupportComponent_AdditionalServiceDSSInfo.__mro__:
         if "additionalServiceName" in klass.__dict__:
             descriptor = klass.__dict__["additionalServiceName"]
             break
     assert isinstance(descriptor, property)
 
-def test_implementation::decisionsupportcomponent::additionalservicedssinfo_has_additionalServicePrice():
-    assert hasattr(Implementation::DecisionSupportComponent::AdditionalServiceDSSInfo, "additionalServicePrice")
+def test_implementation_decisionsupportcomponent_additionalservicedssinfo_has_additionalServicePrice():
+    assert hasattr(Implementation_DecisionSupportComponent_AdditionalServiceDSSInfo, "additionalServicePrice")
     descriptor = None
-    for klass in Implementation::DecisionSupportComponent::AdditionalServiceDSSInfo.__mro__:
+    for klass in Implementation_DecisionSupportComponent_AdditionalServiceDSSInfo.__mro__:
         if "additionalServicePrice" in klass.__dict__:
             descriptor = klass.__dict__["additionalServicePrice"]
             break
@@ -1547,114 +1491,170 @@ def test_implementation::decisionsupportcomponent::additionalservicedssinfo_has_
 
 
 
-def test_implementation::decisionsupportcomponent::bookingdssinfo_is_not_abstract():
-    assert not inspect.isabstract(Implementation::DecisionSupportComponent::BookingDSSInfo)
+def test_implementation_decisionsupportcomponent_bookingdssinfo_is_not_abstract():
+    assert not inspect.isabstract(Implementation_DecisionSupportComponent_BookingDSSInfo)
 
 
-def test_implementation::decisionsupportcomponent::bookingdssinfo_constructor_exists():
-    assert callable(Implementation::DecisionSupportComponent::BookingDSSInfo.__init__)
+def test_implementation_decisionsupportcomponent_bookingdssinfo_constructor_exists():
+    assert callable(Implementation_DecisionSupportComponent_BookingDSSInfo.__init__)
 
 
-def test_implementation::decisionsupportcomponent::bookingdssinfo_constructor_args():
-    sig = inspect.signature(Implementation::DecisionSupportComponent::BookingDSSInfo.__init__)
+def test_implementation_decisionsupportcomponent_bookingdssinfo_constructor_args():
+    sig = inspect.signature(Implementation_DecisionSupportComponent_BookingDSSInfo.__init__)
     params = list(sig.parameters.keys())
-    assert "departureDate" in params, "Missing parameter 'departureDate'"
-    assert "address" in params, "Missing parameter 'address'"
+    assert "roomType" in params, "Missing parameter 'roomType'"
     assert "customerFirstName" in params, "Missing parameter 'customerFirstName'"
+    assert "arrivalDate" in params, "Missing parameter 'arrivalDate'"
     assert "numberOfGuests" in params, "Missing parameter 'numberOfGuests'"
     assert "customerLastName" in params, "Missing parameter 'customerLastName'"
-    assert "arrivalDate" in params, "Missing parameter 'arrivalDate'"
-    assert "roomType" in params, "Missing parameter 'roomType'"
+    assert "address" in params, "Missing parameter 'address'"
+    assert "departureDate" in params, "Missing parameter 'departureDate'"
 
-def test_implementation::decisionsupportcomponent::bookingdssinfo_has_departureDate():
-    assert hasattr(Implementation::DecisionSupportComponent::BookingDSSInfo, "departureDate")
+def test_implementation_decisionsupportcomponent_bookingdssinfo_has_roomType():
+    assert hasattr(Implementation_DecisionSupportComponent_BookingDSSInfo, "roomType")
     descriptor = None
-    for klass in Implementation::DecisionSupportComponent::BookingDSSInfo.__mro__:
-        if "departureDate" in klass.__dict__:
-            descriptor = klass.__dict__["departureDate"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_implementation::decisionsupportcomponent::bookingdssinfo_has_address():
-    assert hasattr(Implementation::DecisionSupportComponent::BookingDSSInfo, "address")
-    descriptor = None
-    for klass in Implementation::DecisionSupportComponent::BookingDSSInfo.__mro__:
-        if "address" in klass.__dict__:
-            descriptor = klass.__dict__["address"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_implementation::decisionsupportcomponent::bookingdssinfo_has_customerFirstName():
-    assert hasattr(Implementation::DecisionSupportComponent::BookingDSSInfo, "customerFirstName")
-    descriptor = None
-    for klass in Implementation::DecisionSupportComponent::BookingDSSInfo.__mro__:
-        if "customerFirstName" in klass.__dict__:
-            descriptor = klass.__dict__["customerFirstName"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_implementation::decisionsupportcomponent::bookingdssinfo_has_numberOfGuests():
-    assert hasattr(Implementation::DecisionSupportComponent::BookingDSSInfo, "numberOfGuests")
-    descriptor = None
-    for klass in Implementation::DecisionSupportComponent::BookingDSSInfo.__mro__:
-        if "numberOfGuests" in klass.__dict__:
-            descriptor = klass.__dict__["numberOfGuests"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_implementation::decisionsupportcomponent::bookingdssinfo_has_customerLastName():
-    assert hasattr(Implementation::DecisionSupportComponent::BookingDSSInfo, "customerLastName")
-    descriptor = None
-    for klass in Implementation::DecisionSupportComponent::BookingDSSInfo.__mro__:
-        if "customerLastName" in klass.__dict__:
-            descriptor = klass.__dict__["customerLastName"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_implementation::decisionsupportcomponent::bookingdssinfo_has_arrivalDate():
-    assert hasattr(Implementation::DecisionSupportComponent::BookingDSSInfo, "arrivalDate")
-    descriptor = None
-    for klass in Implementation::DecisionSupportComponent::BookingDSSInfo.__mro__:
-        if "arrivalDate" in klass.__dict__:
-            descriptor = klass.__dict__["arrivalDate"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_implementation::decisionsupportcomponent::bookingdssinfo_has_roomType():
-    assert hasattr(Implementation::DecisionSupportComponent::BookingDSSInfo, "roomType")
-    descriptor = None
-    for klass in Implementation::DecisionSupportComponent::BookingDSSInfo.__mro__:
+    for klass in Implementation_DecisionSupportComponent_BookingDSSInfo.__mro__:
         if "roomType" in klass.__dict__:
             descriptor = klass.__dict__["roomType"]
             break
     assert isinstance(descriptor, property)
 
+def test_implementation_decisionsupportcomponent_bookingdssinfo_has_customerFirstName():
+    assert hasattr(Implementation_DecisionSupportComponent_BookingDSSInfo, "customerFirstName")
+    descriptor = None
+    for klass in Implementation_DecisionSupportComponent_BookingDSSInfo.__mro__:
+        if "customerFirstName" in klass.__dict__:
+            descriptor = klass.__dict__["customerFirstName"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_implementation_decisionsupportcomponent_bookingdssinfo_has_arrivalDate():
+    assert hasattr(Implementation_DecisionSupportComponent_BookingDSSInfo, "arrivalDate")
+    descriptor = None
+    for klass in Implementation_DecisionSupportComponent_BookingDSSInfo.__mro__:
+        if "arrivalDate" in klass.__dict__:
+            descriptor = klass.__dict__["arrivalDate"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_implementation_decisionsupportcomponent_bookingdssinfo_has_numberOfGuests():
+    assert hasattr(Implementation_DecisionSupportComponent_BookingDSSInfo, "numberOfGuests")
+    descriptor = None
+    for klass in Implementation_DecisionSupportComponent_BookingDSSInfo.__mro__:
+        if "numberOfGuests" in klass.__dict__:
+            descriptor = klass.__dict__["numberOfGuests"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_implementation_decisionsupportcomponent_bookingdssinfo_has_customerLastName():
+    assert hasattr(Implementation_DecisionSupportComponent_BookingDSSInfo, "customerLastName")
+    descriptor = None
+    for klass in Implementation_DecisionSupportComponent_BookingDSSInfo.__mro__:
+        if "customerLastName" in klass.__dict__:
+            descriptor = klass.__dict__["customerLastName"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_implementation_decisionsupportcomponent_bookingdssinfo_has_address():
+    assert hasattr(Implementation_DecisionSupportComponent_BookingDSSInfo, "address")
+    descriptor = None
+    for klass in Implementation_DecisionSupportComponent_BookingDSSInfo.__mro__:
+        if "address" in klass.__dict__:
+            descriptor = klass.__dict__["address"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_implementation_decisionsupportcomponent_bookingdssinfo_has_departureDate():
+    assert hasattr(Implementation_DecisionSupportComponent_BookingDSSInfo, "departureDate")
+    descriptor = None
+    for klass in Implementation_DecisionSupportComponent_BookingDSSInfo.__mro__:
+        if "departureDate" in klass.__dict__:
+            descriptor = klass.__dict__["departureDate"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_implementation::bookingcomponent::ibookingdecision_is_not_abstract():
-    assert not inspect.isabstract(Implementation::BookingComponent::IBookingDecision)
+
+def test_implementation_bookingcomponent_ibookingdecision_is_not_abstract():
+    assert not inspect.isabstract(Implementation_BookingComponent_IBookingDecision)
 
 
-def test_implementation::bookingcomponent::ibookingdecision_constructor_exists():
-    assert callable(Implementation::BookingComponent::IBookingDecision.__init__)
+def test_implementation_bookingcomponent_ibookingdecision_constructor_exists():
+    assert callable(Implementation_BookingComponent_IBookingDecision.__init__)
 
 
-def test_implementation::bookingcomponent::ibookingdecision_constructor_args():
-    sig = inspect.signature(Implementation::BookingComponent::IBookingDecision.__init__)
+def test_implementation_bookingcomponent_ibookingdecision_constructor_args():
+    sig = inspect.signature(Implementation_BookingComponent_IBookingDecision.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_implementation::occupancycomponent::ioccupancydecision_is_not_abstract():
-    assert not inspect.isabstract(Implementation::OccupancyComponent::IOccupancyDecision)
+def test_implementation_occupancycomponent_ioccupancydecision_is_not_abstract():
+    assert not inspect.isabstract(Implementation_OccupancyComponent_IOccupancyDecision)
 
 
-def test_implementation::occupancycomponent::ioccupancydecision_constructor_exists():
-    assert callable(Implementation::OccupancyComponent::IOccupancyDecision.__init__)
+def test_implementation_occupancycomponent_ioccupancydecision_constructor_exists():
+    assert callable(Implementation_OccupancyComponent_IOccupancyDecision.__init__)
 
 
-def test_implementation::occupancycomponent::ioccupancydecision_constructor_args():
-    sig = inspect.signature(Implementation::OccupancyComponent::IOccupancyDecision.__init__)
+def test_implementation_occupancycomponent_ioccupancydecision_constructor_args():
+    sig = inspect.signature(Implementation_OccupancyComponent_IOccupancyDecision.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_implementation_decisionsupportcomponent_idecisionsupport_is_not_abstract():
+    assert not inspect.isabstract(Implementation_DecisionSupportComponent_IDecisionSupport)
+
+
+def test_implementation_decisionsupportcomponent_idecisionsupport_constructor_exists():
+    assert callable(Implementation_DecisionSupportComponent_IDecisionSupport.__init__)
+
+
+def test_implementation_decisionsupportcomponent_idecisionsupport_constructor_args():
+    sig = inspect.signature(Implementation_DecisionSupportComponent_IDecisionSupport.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_decisionsupportcomponent_idecisionsupport_is_not_abstract():
+    assert not inspect.isabstract(DecisionSupportComponent_IDecisionSupport)
+
+
+def test_decisionsupportcomponent_idecisionsupport_constructor_exists():
+    assert callable(DecisionSupportComponent_IDecisionSupport.__init__)
+
+
+def test_decisionsupportcomponent_idecisionsupport_constructor_args():
+    sig = inspect.signature(DecisionSupportComponent_IDecisionSupport.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_implementation_decisionsupportcomponent_dsscontroller_is_not_abstract():
+    assert not inspect.isabstract(Implementation_DecisionSupportComponent_DSSController)
+
+
+def test_implementation_decisionsupportcomponent_dsscontroller_constructor_exists():
+    assert callable(Implementation_DecisionSupportComponent_DSSController.__init__)
+
+
+def test_implementation_decisionsupportcomponent_dsscontroller_constructor_args():
+    sig = inspect.signature(Implementation_DecisionSupportComponent_DSSController.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_implementation_decisionsupportcomponent_is_not_abstract():
+    assert not inspect.isabstract(Implementation_DecisionSupportComponent)
+
+
+def test_implementation_decisionsupportcomponent_constructor_exists():
+    assert callable(Implementation_DecisionSupportComponent.__init__)
+
+
+def test_implementation_decisionsupportcomponent_constructor_args():
+    sig = inspect.signature(Implementation_DecisionSupportComponent.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1669,506 +1669,432 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-Implementation::DecisionSupportComponent::IDecisionSupport_strategy = st.builds(
-    Implementation::DecisionSupportComponent::IDecisionSupport,
+RoomComponent_Room_strategy = st.builds(
+    RoomComponent_Room,
 )
-DecisionSupportComponent::IDecisionSupport_strategy = st.builds(
-    DecisionSupportComponent::IDecisionSupport,
-)
-Implementation::DecisionSupportComponent_strategy = st.builds(
-    Implementation::DecisionSupportComponent,
-)
-RoomComponent::Room_strategy = st.builds(
-    RoomComponent::Room,
-)
-Implementation::RoomComponent::ConferenceRoom_strategy = st.builds(
-    Implementation::RoomComponent::ConferenceRoom,
-    projector=
-        st.booleans(),
+Implementation_RoomComponent_ConferenceRoom_strategy = st.builds(
+    Implementation_RoomComponent_ConferenceRoom,
     conferencePhone=
+        st.booleans(),
+    projector=
         st.booleans(),
     numberOfSeats=
         st.integers()
 )
-Implementation::RoomComponent::Bedroom_strategy = st.builds(
-    Implementation::RoomComponent::Bedroom,
+Implementation_RoomComponent_Bedroom_strategy = st.builds(
+    Implementation_RoomComponent_Bedroom,
     bedCount=
         safe_text
 )
-Implementation::RoomComponent::Room_strategy = st.builds(
-    Implementation::RoomComponent::Room,
+Implementation_RoomComponent_Room_strategy = st.builds(
+    Implementation_RoomComponent_Room,
+    roomNumber=
+        safe_text,
     price=
+        safe_text,
+    roomTypeName=
         safe_text,
     usable=
         safe_text,
     description=
-        safe_text,
-    roomNumber=
-        safe_text,
-    roomTypeName=
         safe_text
 )
-Implementation::RoomComponent::IRoomAdministration_strategy = st.builds(
-    Implementation::RoomComponent::IRoomAdministration,
+Implementation_RoomComponent_IRoomAdministration_strategy = st.builds(
+    Implementation_RoomComponent_IRoomAdministration,
 )
-RoomComponent::IRoomAdministration_strategy = st.builds(
-    RoomComponent::IRoomAdministration,
+RoomComponent_IRoomAdministration_strategy = st.builds(
+    RoomComponent_IRoomAdministration,
 )
-RoomComponent::IRoomInformation_strategy = st.builds(
-    RoomComponent::IRoomInformation,
+RoomComponent_IRoomInformation_strategy = st.builds(
+    RoomComponent_IRoomInformation,
 )
-Implementation::RoomComponent::RoomHandler_strategy = st.builds(
-    Implementation::RoomComponent::RoomHandler,
+Implementation_RoomComponent_RoomHandler_strategy = st.builds(
+    Implementation_RoomComponent_RoomHandler,
 )
-Implementation::RoomComponent_strategy = st.builds(
-    Implementation::RoomComponent,
+Implementation_RoomComponent_strategy = st.builds(
+    Implementation_RoomComponent,
 )
-Implementation::StaffComponent::Employee_strategy = st.builds(
-    Implementation::StaffComponent::Employee,
-    name=
+Implementation_StaffComponent_Employee_strategy = st.builds(
+    Implementation_StaffComponent_Employee,
+    password=
         safe_text,
     email=
         safe_text,
-    password=
+    ssn=
         safe_text,
     id=
         safe_text,
-    phone=
+    name=
         safe_text,
-    ssn=
+    phone=
         safe_text
 )
-Implementation::StaffComponent::IAccountAdministration_strategy = st.builds(
-    Implementation::StaffComponent::IAccountAdministration,
+Implementation_StaffComponent_IAccountAdministration_strategy = st.builds(
+    Implementation_StaffComponent_IAccountAdministration,
 )
-StaffComponent::IAuthentication_strategy = st.builds(
-    StaffComponent::IAuthentication,
+StaffComponent_IAuthentication_strategy = st.builds(
+    StaffComponent_IAuthentication,
 )
-StaffComponent::IAccountAdministration_strategy = st.builds(
-    StaffComponent::IAccountAdministration,
+StaffComponent_IAccountAdministration_strategy = st.builds(
+    StaffComponent_IAccountAdministration,
 )
-Implementation::StaffComponent::AccountManager_strategy = st.builds(
-    Implementation::StaffComponent::AccountManager,
+Implementation_StaffComponent_AccountManager_strategy = st.builds(
+    Implementation_StaffComponent_AccountManager,
 )
-Implementation::StaffComponent_strategy = st.builds(
-    Implementation::StaffComponent,
+Implementation_StaffComponent_strategy = st.builds(
+    Implementation_StaffComponent,
 )
-Implementation::BookingComponent::IBookingAdministration_strategy = st.builds(
-    Implementation::BookingComponent::IBookingAdministration,
+Implementation_BookingComponent_IBookingAdministration_strategy = st.builds(
+    Implementation_BookingComponent_IBookingAdministration,
 )
-BookingComponent::IBookingAdministration_strategy = st.builds(
-    BookingComponent::IBookingAdministration,
+BookingComponent_IBookingAdministration_strategy = st.builds(
+    BookingComponent_IBookingAdministration,
 )
-BookingComponent::IBookingDecision_strategy = st.builds(
-    BookingComponent::IBookingDecision,
+BookingComponent_IBookingDecision_strategy = st.builds(
+    BookingComponent_IBookingDecision,
 )
-BookingComponent::IBookingInformation_strategy = st.builds(
-    BookingComponent::IBookingInformation,
+BookingComponent_IBookingInformation_strategy = st.builds(
+    BookingComponent_IBookingInformation,
 )
-Implementation::Bank_strategy = st.builds(
-    Implementation::Bank,
+Implementation_Bank_strategy = st.builds(
+    Implementation_Bank,
 )
-Implementation::BookingComponent::BookingHandler_strategy = st.builds(
-    Implementation::BookingComponent::BookingHandler,
+Implementation_BookingComponent_BookingHandler_strategy = st.builds(
+    Implementation_BookingComponent_BookingHandler,
 )
-Implementation::BookingComponent::RoomType_strategy = st.builds(
-    Implementation::BookingComponent::RoomType,
+Implementation_BookingComponent_RoomType_strategy = st.builds(
+    Implementation_BookingComponent_RoomType,
     roomType=
         safe_text,
     cost=
         safe_text
 )
-Implementation::BookingComponent::BookingGuest_strategy = st.builds(
-    Implementation::BookingComponent::BookingGuest,
-    lastName=
-        safe_text,
-    phoneNumber=
+Implementation_BookingComponent_BookingGuest_strategy = st.builds(
+    Implementation_BookingComponent_BookingGuest,
+    firstName=
         safe_text,
     address=
         safe_text,
-    firstName=
+    lastName=
+        safe_text,
+    phoneNumber=
         safe_text
 )
-Implementation::BookingComponent::AdditionalService_strategy = st.builds(
-    Implementation::BookingComponent::AdditionalService,
-    location=
+Implementation_BookingComponent_AdditionalService_strategy = st.builds(
+    Implementation_BookingComponent_AdditionalService,
+    name=
         safe_text,
-    guestCount=
+    location=
         safe_text,
     price=
         st.integers(),
-    name=
+    guestCount=
         safe_text,
     dateTime=
         st.dates()
 )
-Implementation::BookingComponent::Booking_strategy = st.builds(
-    Implementation::BookingComponent::Booking,
-    currentCost=
-        safe_text,
-    bookingReference=
+Implementation_BookingComponent_Booking_strategy = st.builds(
+    Implementation_BookingComponent_Booking,
+    arrivalDate=
+        st.dates(),
+    isActive=
         safe_text,
     departureDate=
         st.dates(),
-    arrivalDate=
-        st.dates(),
     isPaid=
         safe_text,
-    isActive=
+    currentCost=
+        safe_text,
+    bookingReference=
         safe_text
 )
-Implementation::BookingComponent::PaymentDetails_strategy = st.builds(
-    Implementation::BookingComponent::PaymentDetails,
-    firstName=
-        safe_text,
-    lastName=
+Implementation_BookingComponent_PaymentDetails_strategy = st.builds(
+    Implementation_BookingComponent_PaymentDetails,
+    expiryYear=
         safe_text,
     ccNumber=
         safe_text,
     address=
         safe_text,
+    ccv=
+        safe_text,
+    firstName=
+        safe_text,
     expiryMonth=
         safe_text,
-    expiryYear=
-        safe_text,
-    ccv=
+    lastName=
         safe_text
 )
-Implementation::BookingComponent_strategy = st.builds(
-    Implementation::BookingComponent,
+Implementation_BookingComponent_strategy = st.builds(
+    Implementation_BookingComponent,
 )
-Implementation::AdditionalServiceComponent::AdditionalServiceEvent_strategy = st.builds(
-    Implementation::AdditionalServiceComponent::AdditionalServiceEvent,
+Implementation_AdditionalServiceComponent_AdditionalServiceEvent_strategy = st.builds(
+    Implementation_AdditionalServiceComponent_AdditionalServiceEvent,
     currentAttendants=
-        safe_text,
-    maxAttendant=
         safe_text,
     dateTime=
         st.dates(),
+    maxAttendant=
+        safe_text,
     location=
         safe_text
 )
-Implementation::AdditionalServiceComponent::AdditionalService_strategy = st.builds(
-    Implementation::AdditionalServiceComponent::AdditionalService,
-    usable=
+Implementation_AdditionalServiceComponent_AdditionalService_strategy = st.builds(
+    Implementation_AdditionalServiceComponent_AdditionalService,
+    name=
         safe_text,
-    description=
+    usable=
         safe_text,
     price=
         safe_text,
-    name=
+    description=
         safe_text
 )
-Implementation::StaffComponent::IAuthentication_strategy = st.builds(
-    Implementation::StaffComponent::IAuthentication,
+Implementation_StaffComponent_IAuthentication_strategy = st.builds(
+    Implementation_StaffComponent_IAuthentication,
 )
-Implementation::AdditionalServiceComponent::IEventManagement_strategy = st.builds(
-    Implementation::AdditionalServiceComponent::IEventManagement,
+Implementation_AdditionalServiceComponent_IEventManagement_strategy = st.builds(
+    Implementation_AdditionalServiceComponent_IEventManagement,
 )
-Implementation::AdditionalServiceComponent::IAdditionalServiceAdministration_strategy = st.builds(
-    Implementation::AdditionalServiceComponent::IAdditionalServiceAdministration,
+Implementation_AdditionalServiceComponent_IAdditionalServiceAdministration_strategy = st.builds(
+    Implementation_AdditionalServiceComponent_IAdditionalServiceAdministration,
 )
-AdditionalServiceComponent::IEventManagement_strategy = st.builds(
-    AdditionalServiceComponent::IEventManagement,
+AdditionalServiceComponent_IEventManagement_strategy = st.builds(
+    AdditionalServiceComponent_IEventManagement,
 )
-AdditionalServiceComponent::IAdditionalServiceAdministration_strategy = st.builds(
-    AdditionalServiceComponent::IAdditionalServiceAdministration,
+AdditionalServiceComponent_IAdditionalServiceAdministration_strategy = st.builds(
+    AdditionalServiceComponent_IAdditionalServiceAdministration,
 )
-Implementation::AdditionalServiceComponent::AdditionalServiceHandler_strategy = st.builds(
-    Implementation::AdditionalServiceComponent::AdditionalServiceHandler,
+Implementation_AdditionalServiceComponent_AdditionalServiceHandler_strategy = st.builds(
+    Implementation_AdditionalServiceComponent_AdditionalServiceHandler,
 )
-Implementation::AdditionalServiceComponent_strategy = st.builds(
-    Implementation::AdditionalServiceComponent,
+Implementation_AdditionalServiceComponent_strategy = st.builds(
+    Implementation_AdditionalServiceComponent,
 )
-Implementation::PaymentComponent::Payment_strategy = st.builds(
-    Implementation::PaymentComponent::Payment,
-    expiryMonth=
-        safe_text,
+Implementation_PaymentComponent_Payment_strategy = st.builds(
+    Implementation_PaymentComponent_Payment,
     ccNumber=
-        safe_text,
-    ccv=
-        safe_text,
-    expiryYear=
-        safe_text,
-    firstName=
         safe_text,
     amount=
         st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False),
-    lastName=
-        safe_text
-)
-Implementation::Bank::AdministratorProvides_strategy = st.builds(
-    Implementation::Bank::AdministratorProvides,
-)
-Implementation::Bank::CustomerProvides_strategy = st.builds(
-    Implementation::Bank::CustomerProvides,
-)
-Implementation::BookingComponent::IBookingInformation_strategy = st.builds(
-    Implementation::BookingComponent::IBookingInformation,
-)
-Implementation::PaymentComponent::IPayment_strategy = st.builds(
-    Implementation::PaymentComponent::IPayment,
-)
-PaymentComponent::IPayment_strategy = st.builds(
-    PaymentComponent::IPayment,
-)
-Implementation::PaymentComponent::PaymentHandler_strategy = st.builds(
-    Implementation::PaymentComponent::PaymentHandler,
-)
-Implementation::PaymentComponent_strategy = st.builds(
-    Implementation::PaymentComponent,
-)
-Implementation::OccupancyComponent::IOccupancy_strategy = st.builds(
-    Implementation::OccupancyComponent::IOccupancy,
-)
-Implementation::OccupancyComponent::Guest_strategy = st.builds(
-    Implementation::OccupancyComponent::Guest,
+    expiryMonth=
+        safe_text,
     firstName=
         safe_text,
+    expiryYear=
+        safe_text,
+    ccv=
+        safe_text,
     lastName=
         safe_text
 )
-Implementation::RoomComponent::IRoomInformation_strategy = st.builds(
-    Implementation::RoomComponent::IRoomInformation,
+Implementation_Bank_AdministratorProvides_strategy = st.builds(
+    Implementation_Bank_AdministratorProvides,
 )
-OccupancyComponent::IOccupancy_strategy = st.builds(
-    OccupancyComponent::IOccupancy,
+Implementation_Bank_CustomerProvides_strategy = st.builds(
+    Implementation_Bank_CustomerProvides,
 )
-OccupancyComponent::IOccupancyDecision_strategy = st.builds(
-    OccupancyComponent::IOccupancyDecision,
+Implementation_BookingComponent_IBookingInformation_strategy = st.builds(
+    Implementation_BookingComponent_IBookingInformation,
 )
-Implementation::OccupancyComponent::OccupancyHandler_strategy = st.builds(
-    Implementation::OccupancyComponent::OccupancyHandler,
+Implementation_PaymentComponent_IPayment_strategy = st.builds(
+    Implementation_PaymentComponent_IPayment,
 )
-Implementation::OccupancyComponent_strategy = st.builds(
-    Implementation::OccupancyComponent,
+PaymentComponent_IPayment_strategy = st.builds(
+    PaymentComponent_IPayment,
 )
-Implementation::DecisionSupportComponent::OccupancyDSSInfo_strategy = st.builds(
-    Implementation::DecisionSupportComponent::OccupancyDSSInfo,
-    roomNumber=
+Implementation_PaymentComponent_PaymentHandler_strategy = st.builds(
+    Implementation_PaymentComponent_PaymentHandler,
+)
+Implementation_PaymentComponent_strategy = st.builds(
+    Implementation_PaymentComponent,
+)
+Implementation_OccupancyComponent_IOccupancy_strategy = st.builds(
+    Implementation_OccupancyComponent_IOccupancy,
+)
+Implementation_OccupancyComponent_Guest_strategy = st.builds(
+    Implementation_OccupancyComponent_Guest,
+    lastName=
         safe_text,
+    firstName=
+        safe_text
+)
+Implementation_RoomComponent_IRoomInformation_strategy = st.builds(
+    Implementation_RoomComponent_IRoomInformation,
+)
+OccupancyComponent_IOccupancy_strategy = st.builds(
+    OccupancyComponent_IOccupancy,
+)
+OccupancyComponent_IOccupancyDecision_strategy = st.builds(
+    OccupancyComponent_IOccupancyDecision,
+)
+Implementation_OccupancyComponent_OccupancyHandler_strategy = st.builds(
+    Implementation_OccupancyComponent_OccupancyHandler,
+)
+Implementation_OccupancyComponent_strategy = st.builds(
+    Implementation_OccupancyComponent,
+)
+Implementation_DecisionSupportComponent_OccupancyDSSInfo_strategy = st.builds(
+    Implementation_DecisionSupportComponent_OccupancyDSSInfo,
     checkOutDateTime=
         safe_text,
     checkInDateTime=
         safe_text,
     numberOfGuests=
-        safe_text
-)
-Implementation::OccupancyComponent::Occupancy_strategy = st.builds(
-    Implementation::OccupancyComponent::Occupancy,
-    checkInDateTime=
         safe_text,
     roomNumber=
-        safe_text,
+        safe_text
+)
+Implementation_OccupancyComponent_Occupancy_strategy = st.builds(
+    Implementation_OccupancyComponent_Occupancy,
     checkOutDateTime=
         safe_text,
     bookingReference=
+        safe_text,
+    checkInDateTime=
+        safe_text,
+    roomNumber=
         safe_text
 )
-Implementation::DecisionSupportComponent::DSSController_strategy = st.builds(
-    Implementation::DecisionSupportComponent::DSSController,
-)
-Implementation::DecisionSupportComponent::AdditionalServiceDSSInfo_strategy = st.builds(
-    Implementation::DecisionSupportComponent::AdditionalServiceDSSInfo,
+Implementation_DecisionSupportComponent_AdditionalServiceDSSInfo_strategy = st.builds(
+    Implementation_DecisionSupportComponent_AdditionalServiceDSSInfo,
     additionalServiceName=
         safe_text,
     additionalServicePrice=
         safe_text
 )
-Implementation::DecisionSupportComponent::BookingDSSInfo_strategy = st.builds(
-    Implementation::DecisionSupportComponent::BookingDSSInfo,
-    departureDate=
-        safe_text,
-    address=
+Implementation_DecisionSupportComponent_BookingDSSInfo_strategy = st.builds(
+    Implementation_DecisionSupportComponent_BookingDSSInfo,
+    roomType=
         safe_text,
     customerFirstName=
+        safe_text,
+    arrivalDate=
         safe_text,
     numberOfGuests=
         safe_text,
     customerLastName=
         safe_text,
-    arrivalDate=
+    address=
         safe_text,
-    roomType=
+    departureDate=
         safe_text
 )
-Implementation::BookingComponent::IBookingDecision_strategy = st.builds(
-    Implementation::BookingComponent::IBookingDecision,
+Implementation_BookingComponent_IBookingDecision_strategy = st.builds(
+    Implementation_BookingComponent_IBookingDecision,
 )
-Implementation::OccupancyComponent::IOccupancyDecision_strategy = st.builds(
-    Implementation::OccupancyComponent::IOccupancyDecision,
+Implementation_OccupancyComponent_IOccupancyDecision_strategy = st.builds(
+    Implementation_OccupancyComponent_IOccupancyDecision,
+)
+Implementation_DecisionSupportComponent_IDecisionSupport_strategy = st.builds(
+    Implementation_DecisionSupportComponent_IDecisionSupport,
+)
+DecisionSupportComponent_IDecisionSupport_strategy = st.builds(
+    DecisionSupportComponent_IDecisionSupport,
+)
+Implementation_DecisionSupportComponent_DSSController_strategy = st.builds(
+    Implementation_DecisionSupportComponent_DSSController,
+)
+Implementation_DecisionSupportComponent_strategy = st.builds(
+    Implementation_DecisionSupportComponent,
 )
 
-@given(instance=Implementation::DecisionSupportComponent::IDecisionSupport_strategy)
+@given(instance=RoomComponent_Room_strategy)
 @settings(max_examples=50)
-def test_implementation::decisionsupportcomponent::idecisionsupport_instantiation(instance):
-    assert isinstance(instance, Implementation::DecisionSupportComponent::IDecisionSupport)
+def test_roomcomponent_room_instantiation(instance):
+    assert isinstance(instance, RoomComponent_Room)
 
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=Implementation::DecisionSupportComponent::IDecisionSupport_strategy)
-@settings(max_examples=30)
-def test_implementation::decisionsupportcomponent::idecisionsupport_countroomtype_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.countRoomType(
-            "test", 
-            "test"
-        )
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.countRoomType).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'countRoomType' in Implementation::DecisionSupportComponent::IDecisionSupport is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'countRoomType' in Implementation::DecisionSupportComponent::IDecisionSupport did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'countRoomType' in Implementation::DecisionSupportComponent::IDecisionSupport is not implemented or raised an error")
-
-@given(instance=DecisionSupportComponent::IDecisionSupport_strategy)
+@given(instance=Implementation_RoomComponent_ConferenceRoom_strategy)
 @settings(max_examples=50)
-def test_decisionsupportcomponent::idecisionsupport_instantiation(instance):
-    assert isinstance(instance, DecisionSupportComponent::IDecisionSupport)
-
-@given(instance=Implementation::DecisionSupportComponent_strategy)
-@settings(max_examples=50)
-def test_implementation::decisionsupportcomponent_instantiation(instance):
-    assert isinstance(instance, Implementation::DecisionSupportComponent)
-
-@given(instance=RoomComponent::Room_strategy)
-@settings(max_examples=50)
-def test_roomcomponent::room_instantiation(instance):
-    assert isinstance(instance, RoomComponent::Room)
-
-@given(instance=Implementation::RoomComponent::ConferenceRoom_strategy)
-@settings(max_examples=50)
-def test_implementation::roomcomponent::conferenceroom_instantiation(instance):
-    assert isinstance(instance, Implementation::RoomComponent::ConferenceRoom)
-
-@given(instance=Implementation::RoomComponent::ConferenceRoom_strategy)
-def test_implementation::roomcomponent::conferenceroom_projector_type(instance):
-    assert isinstance(instance.projector, bool)
+def test_implementation_roomcomponent_conferenceroom_instantiation(instance):
+    assert isinstance(instance, Implementation_RoomComponent_ConferenceRoom)
 
 
-@given(instance=Implementation::RoomComponent::ConferenceRoom_strategy)
-def test_implementation::roomcomponent::conferenceroom_projector_setter(instance):
-    original = instance.projector
-    instance.projector = original
-    assert instance.projector == original
 
-@given(instance=Implementation::RoomComponent::ConferenceRoom_strategy)
-def test_implementation::roomcomponent::conferenceroom_conferencePhone_type(instance):
-    assert isinstance(instance.conferencePhone, bool)
-
-
-@given(instance=Implementation::RoomComponent::ConferenceRoom_strategy)
-def test_implementation::roomcomponent::conferenceroom_conferencePhone_setter(instance):
+@given(instance=Implementation_RoomComponent_ConferenceRoom_strategy)
+def test_implementation_roomcomponent_conferenceroom_conferencePhone_setter(instance):
     original = instance.conferencePhone
     instance.conferencePhone = original
     assert instance.conferencePhone == original
 
-@given(instance=Implementation::RoomComponent::ConferenceRoom_strategy)
-def test_implementation::roomcomponent::conferenceroom_numberOfSeats_type(instance):
-    assert isinstance(instance.numberOfSeats, int)
 
 
-@given(instance=Implementation::RoomComponent::ConferenceRoom_strategy)
-def test_implementation::roomcomponent::conferenceroom_numberOfSeats_setter(instance):
+@given(instance=Implementation_RoomComponent_ConferenceRoom_strategy)
+def test_implementation_roomcomponent_conferenceroom_projector_setter(instance):
+    original = instance.projector
+    instance.projector = original
+    assert instance.projector == original
+
+
+
+@given(instance=Implementation_RoomComponent_ConferenceRoom_strategy)
+def test_implementation_roomcomponent_conferenceroom_numberOfSeats_setter(instance):
     original = instance.numberOfSeats
     instance.numberOfSeats = original
     assert instance.numberOfSeats == original
 
-@given(instance=Implementation::RoomComponent::Bedroom_strategy)
+@given(instance=Implementation_RoomComponent_Bedroom_strategy)
 @settings(max_examples=50)
-def test_implementation::roomcomponent::bedroom_instantiation(instance):
-    assert isinstance(instance, Implementation::RoomComponent::Bedroom)
-
-@given(instance=Implementation::RoomComponent::Bedroom_strategy)
-def test_implementation::roomcomponent::bedroom_bedCount_type(instance):
-    assert isinstance(instance.bedCount, str)
+def test_implementation_roomcomponent_bedroom_instantiation(instance):
+    assert isinstance(instance, Implementation_RoomComponent_Bedroom)
 
 
-@given(instance=Implementation::RoomComponent::Bedroom_strategy)
-def test_implementation::roomcomponent::bedroom_bedCount_setter(instance):
+
+@given(instance=Implementation_RoomComponent_Bedroom_strategy)
+def test_implementation_roomcomponent_bedroom_bedCount_setter(instance):
     original = instance.bedCount
     instance.bedCount = original
     assert instance.bedCount == original
 
-@given(instance=Implementation::RoomComponent::Room_strategy)
+@given(instance=Implementation_RoomComponent_Room_strategy)
 @settings(max_examples=50)
-def test_implementation::roomcomponent::room_instantiation(instance):
-    assert isinstance(instance, Implementation::RoomComponent::Room)
-
-@given(instance=Implementation::RoomComponent::Room_strategy)
-def test_implementation::roomcomponent::room_price_type(instance):
-    assert isinstance(instance.price, str)
+def test_implementation_roomcomponent_room_instantiation(instance):
+    assert isinstance(instance, Implementation_RoomComponent_Room)
 
 
-@given(instance=Implementation::RoomComponent::Room_strategy)
-def test_implementation::roomcomponent::room_price_setter(instance):
-    original = instance.price
-    instance.price = original
-    assert instance.price == original
 
-@given(instance=Implementation::RoomComponent::Room_strategy)
-def test_implementation::roomcomponent::room_usable_type(instance):
-    assert isinstance(instance.usable, str)
-
-
-@given(instance=Implementation::RoomComponent::Room_strategy)
-def test_implementation::roomcomponent::room_usable_setter(instance):
-    original = instance.usable
-    instance.usable = original
-    assert instance.usable == original
-
-@given(instance=Implementation::RoomComponent::Room_strategy)
-def test_implementation::roomcomponent::room_description_type(instance):
-    assert isinstance(instance.description, str)
-
-
-@given(instance=Implementation::RoomComponent::Room_strategy)
-def test_implementation::roomcomponent::room_description_setter(instance):
-    original = instance.description
-    instance.description = original
-    assert instance.description == original
-
-@given(instance=Implementation::RoomComponent::Room_strategy)
-def test_implementation::roomcomponent::room_roomNumber_type(instance):
-    assert isinstance(instance.roomNumber, str)
-
-
-@given(instance=Implementation::RoomComponent::Room_strategy)
-def test_implementation::roomcomponent::room_roomNumber_setter(instance):
+@given(instance=Implementation_RoomComponent_Room_strategy)
+def test_implementation_roomcomponent_room_roomNumber_setter(instance):
     original = instance.roomNumber
     instance.roomNumber = original
     assert instance.roomNumber == original
 
-@given(instance=Implementation::RoomComponent::Room_strategy)
-def test_implementation::roomcomponent::room_roomTypeName_type(instance):
-    assert isinstance(instance.roomTypeName, str)
 
 
-@given(instance=Implementation::RoomComponent::Room_strategy)
-def test_implementation::roomcomponent::room_roomTypeName_setter(instance):
+@given(instance=Implementation_RoomComponent_Room_strategy)
+def test_implementation_roomcomponent_room_price_setter(instance):
+    original = instance.price
+    instance.price = original
+    assert instance.price == original
+
+
+
+@given(instance=Implementation_RoomComponent_Room_strategy)
+def test_implementation_roomcomponent_room_roomTypeName_setter(instance):
     original = instance.roomTypeName
     instance.roomTypeName = original
     assert instance.roomTypeName == original
 
-@given(instance=Implementation::RoomComponent::IRoomAdministration_strategy)
+
+
+@given(instance=Implementation_RoomComponent_Room_strategy)
+def test_implementation_roomcomponent_room_usable_setter(instance):
+    original = instance.usable
+    instance.usable = original
+    assert instance.usable == original
+
+
+
+@given(instance=Implementation_RoomComponent_Room_strategy)
+def test_implementation_roomcomponent_room_description_setter(instance):
+    original = instance.description
+    instance.description = original
+    assert instance.description == original
+
+@given(instance=Implementation_RoomComponent_IRoomAdministration_strategy)
 @settings(max_examples=50)
-def test_implementation::roomcomponent::iroomadministration_instantiation(instance):
-    assert isinstance(instance, Implementation::RoomComponent::IRoomAdministration)
+def test_implementation_roomcomponent_iroomadministration_instantiation(instance):
+    assert isinstance(instance, Implementation_RoomComponent_IRoomAdministration)
 
 import warnings
 import copy
@@ -2176,9 +2102,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=Implementation::RoomComponent::IRoomAdministration_strategy)
+@given(instance=Implementation_RoomComponent_IRoomAdministration_strategy)
 @settings(max_examples=30)
-def test_implementation::roomcomponent::iroomadministration_editconferenceroom_changes_state(instance):
+def test_implementation_roomcomponent_iroomadministration_editconferenceroom_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -2200,14 +2126,14 @@ def test_implementation::roomcomponent::iroomadministration_editconferenceroom_c
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'editConferenceRoom' in Implementation::RoomComponent::IRoomAdministration is empty"
+        assert has_statements, f"Function 'editConferenceRoom' in Implementation_RoomComponent_IRoomAdministration is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'editConferenceRoom' in Implementation::RoomComponent::IRoomAdministration did not change state; check implementation")
+            warnings.warn(f"Operation 'editConferenceRoom' in Implementation_RoomComponent_IRoomAdministration did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'editConferenceRoom' in Implementation::RoomComponent::IRoomAdministration is not implemented or raised an error")
+        warnings.warn(f"Operation 'editConferenceRoom' in Implementation_RoomComponent_IRoomAdministration is not implemented or raised an error")
 
 import warnings
 import copy
@@ -2215,9 +2141,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=Implementation::RoomComponent::IRoomAdministration_strategy)
+@given(instance=Implementation_RoomComponent_IRoomAdministration_strategy)
 @settings(max_examples=30)
-def test_implementation::roomcomponent::iroomadministration_remove_changes_state(instance):
+def test_implementation_roomcomponent_iroomadministration_remove_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -2231,14 +2157,14 @@ def test_implementation::roomcomponent::iroomadministration_remove_changes_state
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'remove' in Implementation::RoomComponent::IRoomAdministration is empty"
+        assert has_statements, f"Function 'remove' in Implementation_RoomComponent_IRoomAdministration is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'remove' in Implementation::RoomComponent::IRoomAdministration did not change state; check implementation")
+            warnings.warn(f"Operation 'remove' in Implementation_RoomComponent_IRoomAdministration did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'remove' in Implementation::RoomComponent::IRoomAdministration is not implemented or raised an error")
+        warnings.warn(f"Operation 'remove' in Implementation_RoomComponent_IRoomAdministration is not implemented or raised an error")
 
 import warnings
 import copy
@@ -2246,45 +2172,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=Implementation::RoomComponent::IRoomAdministration_strategy)
+@given(instance=Implementation_RoomComponent_IRoomAdministration_strategy)
 @settings(max_examples=30)
-def test_implementation::roomcomponent::iroomadministration_createbedroom_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.createBedRoom(
-            "test", 
-            "test", 
-            "test", 
-            "test", 
-            "test", 
-            "test"
-        )
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.createBedRoom).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'createBedRoom' in Implementation::RoomComponent::IRoomAdministration is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'createBedRoom' in Implementation::RoomComponent::IRoomAdministration did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'createBedRoom' in Implementation::RoomComponent::IRoomAdministration is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=Implementation::RoomComponent::IRoomAdministration_strategy)
-@settings(max_examples=30)
-def test_implementation::roomcomponent::iroomadministration_editbedroom_changes_state(instance):
+def test_implementation_roomcomponent_iroomadministration_editbedroom_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -2304,14 +2194,14 @@ def test_implementation::roomcomponent::iroomadministration_editbedroom_changes_
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'editBedRoom' in Implementation::RoomComponent::IRoomAdministration is empty"
+        assert has_statements, f"Function 'editBedRoom' in Implementation_RoomComponent_IRoomAdministration is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'editBedRoom' in Implementation::RoomComponent::IRoomAdministration did not change state; check implementation")
+            warnings.warn(f"Operation 'editBedRoom' in Implementation_RoomComponent_IRoomAdministration did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'editBedRoom' in Implementation::RoomComponent::IRoomAdministration is not implemented or raised an error")
+        warnings.warn(f"Operation 'editBedRoom' in Implementation_RoomComponent_IRoomAdministration is not implemented or raised an error")
 
 import warnings
 import copy
@@ -2319,9 +2209,45 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=Implementation::RoomComponent::IRoomAdministration_strategy)
+@given(instance=Implementation_RoomComponent_IRoomAdministration_strategy)
 @settings(max_examples=30)
-def test_implementation::roomcomponent::iroomadministration_createconferenceroom_changes_state(instance):
+def test_implementation_roomcomponent_iroomadministration_createbedroom_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.createBedRoom(
+            "test", 
+            "test", 
+            "test", 
+            "test", 
+            "test", 
+            "test"
+        )
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.createBedRoom).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'createBedRoom' in Implementation_RoomComponent_IRoomAdministration is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'createBedRoom' in Implementation_RoomComponent_IRoomAdministration did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'createBedRoom' in Implementation_RoomComponent_IRoomAdministration is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=Implementation_RoomComponent_IRoomAdministration_strategy)
+@settings(max_examples=30)
+def test_implementation_roomcomponent_iroomadministration_createconferenceroom_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -2342,110 +2268,92 @@ def test_implementation::roomcomponent::iroomadministration_createconferenceroom
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'createConferenceRoom' in Implementation::RoomComponent::IRoomAdministration is empty"
+        assert has_statements, f"Function 'createConferenceRoom' in Implementation_RoomComponent_IRoomAdministration is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'createConferenceRoom' in Implementation::RoomComponent::IRoomAdministration did not change state; check implementation")
+            warnings.warn(f"Operation 'createConferenceRoom' in Implementation_RoomComponent_IRoomAdministration did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'createConferenceRoom' in Implementation::RoomComponent::IRoomAdministration is not implemented or raised an error")
+        warnings.warn(f"Operation 'createConferenceRoom' in Implementation_RoomComponent_IRoomAdministration is not implemented or raised an error")
 
-@given(instance=RoomComponent::IRoomAdministration_strategy)
+@given(instance=RoomComponent_IRoomAdministration_strategy)
 @settings(max_examples=50)
-def test_roomcomponent::iroomadministration_instantiation(instance):
-    assert isinstance(instance, RoomComponent::IRoomAdministration)
+def test_roomcomponent_iroomadministration_instantiation(instance):
+    assert isinstance(instance, RoomComponent_IRoomAdministration)
 
-@given(instance=RoomComponent::IRoomInformation_strategy)
+@given(instance=RoomComponent_IRoomInformation_strategy)
 @settings(max_examples=50)
-def test_roomcomponent::iroominformation_instantiation(instance):
-    assert isinstance(instance, RoomComponent::IRoomInformation)
+def test_roomcomponent_iroominformation_instantiation(instance):
+    assert isinstance(instance, RoomComponent_IRoomInformation)
 
-@given(instance=Implementation::RoomComponent::RoomHandler_strategy)
+@given(instance=Implementation_RoomComponent_RoomHandler_strategy)
 @settings(max_examples=50)
-def test_implementation::roomcomponent::roomhandler_instantiation(instance):
-    assert isinstance(instance, Implementation::RoomComponent::RoomHandler)
+def test_implementation_roomcomponent_roomhandler_instantiation(instance):
+    assert isinstance(instance, Implementation_RoomComponent_RoomHandler)
 
-@given(instance=Implementation::RoomComponent_strategy)
+@given(instance=Implementation_RoomComponent_strategy)
 @settings(max_examples=50)
-def test_implementation::roomcomponent_instantiation(instance):
-    assert isinstance(instance, Implementation::RoomComponent)
+def test_implementation_roomcomponent_instantiation(instance):
+    assert isinstance(instance, Implementation_RoomComponent)
 
-@given(instance=Implementation::StaffComponent::Employee_strategy)
+@given(instance=Implementation_StaffComponent_Employee_strategy)
 @settings(max_examples=50)
-def test_implementation::staffcomponent::employee_instantiation(instance):
-    assert isinstance(instance, Implementation::StaffComponent::Employee)
-
-@given(instance=Implementation::StaffComponent::Employee_strategy)
-def test_implementation::staffcomponent::employee_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_implementation_staffcomponent_employee_instantiation(instance):
+    assert isinstance(instance, Implementation_StaffComponent_Employee)
 
 
-@given(instance=Implementation::StaffComponent::Employee_strategy)
-def test_implementation::staffcomponent::employee_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
 
-@given(instance=Implementation::StaffComponent::Employee_strategy)
-def test_implementation::staffcomponent::employee_email_type(instance):
-    assert isinstance(instance.email, str)
-
-
-@given(instance=Implementation::StaffComponent::Employee_strategy)
-def test_implementation::staffcomponent::employee_email_setter(instance):
-    original = instance.email
-    instance.email = original
-    assert instance.email == original
-
-@given(instance=Implementation::StaffComponent::Employee_strategy)
-def test_implementation::staffcomponent::employee_password_type(instance):
-    assert isinstance(instance.password, str)
-
-
-@given(instance=Implementation::StaffComponent::Employee_strategy)
-def test_implementation::staffcomponent::employee_password_setter(instance):
+@given(instance=Implementation_StaffComponent_Employee_strategy)
+def test_implementation_staffcomponent_employee_password_setter(instance):
     original = instance.password
     instance.password = original
     assert instance.password == original
 
-@given(instance=Implementation::StaffComponent::Employee_strategy)
-def test_implementation::staffcomponent::employee_id_type(instance):
-    assert isinstance(instance.id, str)
 
 
-@given(instance=Implementation::StaffComponent::Employee_strategy)
-def test_implementation::staffcomponent::employee_id_setter(instance):
-    original = instance.id
-    instance.id = original
-    assert instance.id == original
-
-@given(instance=Implementation::StaffComponent::Employee_strategy)
-def test_implementation::staffcomponent::employee_phone_type(instance):
-    assert isinstance(instance.phone, str)
+@given(instance=Implementation_StaffComponent_Employee_strategy)
+def test_implementation_staffcomponent_employee_email_setter(instance):
+    original = instance.email
+    instance.email = original
+    assert instance.email == original
 
 
-@given(instance=Implementation::StaffComponent::Employee_strategy)
-def test_implementation::staffcomponent::employee_phone_setter(instance):
-    original = instance.phone
-    instance.phone = original
-    assert instance.phone == original
 
-@given(instance=Implementation::StaffComponent::Employee_strategy)
-def test_implementation::staffcomponent::employee_ssn_type(instance):
-    assert isinstance(instance.ssn, str)
-
-
-@given(instance=Implementation::StaffComponent::Employee_strategy)
-def test_implementation::staffcomponent::employee_ssn_setter(instance):
+@given(instance=Implementation_StaffComponent_Employee_strategy)
+def test_implementation_staffcomponent_employee_ssn_setter(instance):
     original = instance.ssn
     instance.ssn = original
     assert instance.ssn == original
 
-@given(instance=Implementation::StaffComponent::IAccountAdministration_strategy)
+
+
+@given(instance=Implementation_StaffComponent_Employee_strategy)
+def test_implementation_staffcomponent_employee_id_setter(instance):
+    original = instance.id
+    instance.id = original
+    assert instance.id == original
+
+
+
+@given(instance=Implementation_StaffComponent_Employee_strategy)
+def test_implementation_staffcomponent_employee_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+
+
+@given(instance=Implementation_StaffComponent_Employee_strategy)
+def test_implementation_staffcomponent_employee_phone_setter(instance):
+    original = instance.phone
+    instance.phone = original
+    assert instance.phone == original
+
+@given(instance=Implementation_StaffComponent_IAccountAdministration_strategy)
 @settings(max_examples=50)
-def test_implementation::staffcomponent::iaccountadministration_instantiation(instance):
-    assert isinstance(instance, Implementation::StaffComponent::IAccountAdministration)
+def test_implementation_staffcomponent_iaccountadministration_instantiation(instance):
+    assert isinstance(instance, Implementation_StaffComponent_IAccountAdministration)
 
 import warnings
 import copy
@@ -2453,40 +2361,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=Implementation::StaffComponent::IAccountAdministration_strategy)
+@given(instance=Implementation_StaffComponent_IAccountAdministration_strategy)
 @settings(max_examples=30)
-def test_implementation::staffcomponent::iaccountadministration_removeaccount_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.removeAccount(
-            "test"
-        )
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.removeAccount).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'removeAccount' in Implementation::StaffComponent::IAccountAdministration is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'removeAccount' in Implementation::StaffComponent::IAccountAdministration did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'removeAccount' in Implementation::StaffComponent::IAccountAdministration is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=Implementation::StaffComponent::IAccountAdministration_strategy)
-@settings(max_examples=30)
-def test_implementation::staffcomponent::iaccountadministration_createaccount_changes_state(instance):
+def test_implementation_staffcomponent_iaccountadministration_createaccount_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -2504,14 +2381,14 @@ def test_implementation::staffcomponent::iaccountadministration_createaccount_ch
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'createAccount' in Implementation::StaffComponent::IAccountAdministration is empty"
+        assert has_statements, f"Function 'createAccount' in Implementation_StaffComponent_IAccountAdministration is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'createAccount' in Implementation::StaffComponent::IAccountAdministration did not change state; check implementation")
+            warnings.warn(f"Operation 'createAccount' in Implementation_StaffComponent_IAccountAdministration did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'createAccount' in Implementation::StaffComponent::IAccountAdministration is not implemented or raised an error")
+        warnings.warn(f"Operation 'createAccount' in Implementation_StaffComponent_IAccountAdministration is not implemented or raised an error")
 
 import warnings
 import copy
@@ -2519,9 +2396,40 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=Implementation::StaffComponent::IAccountAdministration_strategy)
+@given(instance=Implementation_StaffComponent_IAccountAdministration_strategy)
 @settings(max_examples=30)
-def test_implementation::staffcomponent::iaccountadministration_editaccountdetails_changes_state(instance):
+def test_implementation_staffcomponent_iaccountadministration_removeaccount_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.removeAccount(
+            "test"
+        )
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.removeAccount).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'removeAccount' in Implementation_StaffComponent_IAccountAdministration is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'removeAccount' in Implementation_StaffComponent_IAccountAdministration did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'removeAccount' in Implementation_StaffComponent_IAccountAdministration is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=Implementation_StaffComponent_IAccountAdministration_strategy)
+@settings(max_examples=30)
+def test_implementation_staffcomponent_iaccountadministration_editaccountdetails_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -2539,29 +2447,29 @@ def test_implementation::staffcomponent::iaccountadministration_editaccountdetai
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'editAccountDetails' in Implementation::StaffComponent::IAccountAdministration is empty"
+        assert has_statements, f"Function 'editAccountDetails' in Implementation_StaffComponent_IAccountAdministration is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'editAccountDetails' in Implementation::StaffComponent::IAccountAdministration did not change state; check implementation")
+            warnings.warn(f"Operation 'editAccountDetails' in Implementation_StaffComponent_IAccountAdministration did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'editAccountDetails' in Implementation::StaffComponent::IAccountAdministration is not implemented or raised an error")
+        warnings.warn(f"Operation 'editAccountDetails' in Implementation_StaffComponent_IAccountAdministration is not implemented or raised an error")
 
-@given(instance=StaffComponent::IAuthentication_strategy)
+@given(instance=StaffComponent_IAuthentication_strategy)
 @settings(max_examples=50)
-def test_staffcomponent::iauthentication_instantiation(instance):
-    assert isinstance(instance, StaffComponent::IAuthentication)
+def test_staffcomponent_iauthentication_instantiation(instance):
+    assert isinstance(instance, StaffComponent_IAuthentication)
 
-@given(instance=StaffComponent::IAccountAdministration_strategy)
+@given(instance=StaffComponent_IAccountAdministration_strategy)
 @settings(max_examples=50)
-def test_staffcomponent::iaccountadministration_instantiation(instance):
-    assert isinstance(instance, StaffComponent::IAccountAdministration)
+def test_staffcomponent_iaccountadministration_instantiation(instance):
+    assert isinstance(instance, StaffComponent_IAccountAdministration)
 
-@given(instance=Implementation::StaffComponent::AccountManager_strategy)
+@given(instance=Implementation_StaffComponent_AccountManager_strategy)
 @settings(max_examples=50)
-def test_implementation::staffcomponent::accountmanager_instantiation(instance):
-    assert isinstance(instance, Implementation::StaffComponent::AccountManager)
+def test_implementation_staffcomponent_accountmanager_instantiation(instance):
+    assert isinstance(instance, Implementation_StaffComponent_AccountManager)
 
 import warnings
 import copy
@@ -2569,9 +2477,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=Implementation::StaffComponent::AccountManager_strategy)
+@given(instance=Implementation_StaffComponent_AccountManager_strategy)
 @settings(max_examples=30)
-def test_implementation::staffcomponent::accountmanager_findaccount_changes_state(instance):
+def test_implementation_staffcomponent_accountmanager_findaccount_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -2585,24 +2493,24 @@ def test_implementation::staffcomponent::accountmanager_findaccount_changes_stat
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'findAccount' in Implementation::StaffComponent::AccountManager is empty"
+        assert has_statements, f"Function 'findAccount' in Implementation_StaffComponent_AccountManager is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'findAccount' in Implementation::StaffComponent::AccountManager did not change state; check implementation")
+            warnings.warn(f"Operation 'findAccount' in Implementation_StaffComponent_AccountManager did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'findAccount' in Implementation::StaffComponent::AccountManager is not implemented or raised an error")
+        warnings.warn(f"Operation 'findAccount' in Implementation_StaffComponent_AccountManager is not implemented or raised an error")
 
-@given(instance=Implementation::StaffComponent_strategy)
+@given(instance=Implementation_StaffComponent_strategy)
 @settings(max_examples=50)
-def test_implementation::staffcomponent_instantiation(instance):
-    assert isinstance(instance, Implementation::StaffComponent)
+def test_implementation_staffcomponent_instantiation(instance):
+    assert isinstance(instance, Implementation_StaffComponent)
 
-@given(instance=Implementation::BookingComponent::IBookingAdministration_strategy)
+@given(instance=Implementation_BookingComponent_IBookingAdministration_strategy)
 @settings(max_examples=50)
-def test_implementation::bookingcomponent::ibookingadministration_instantiation(instance):
-    assert isinstance(instance, Implementation::BookingComponent::IBookingAdministration)
+def test_implementation_bookingcomponent_ibookingadministration_instantiation(instance):
+    assert isinstance(instance, Implementation_BookingComponent_IBookingAdministration)
 
 import warnings
 import copy
@@ -2610,142 +2518,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=Implementation::BookingComponent::IBookingAdministration_strategy)
+@given(instance=Implementation_BookingComponent_IBookingAdministration_strategy)
 @settings(max_examples=30)
-def test_implementation::bookingcomponent::ibookingadministration_removeguest_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.removeGuest(
-            "test", 
-            "test", 
-            "test", 
-            "test"
-        )
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.removeGuest).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'removeGuest' in Implementation::BookingComponent::IBookingAdministration is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'removeGuest' in Implementation::BookingComponent::IBookingAdministration did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'removeGuest' in Implementation::BookingComponent::IBookingAdministration is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=Implementation::BookingComponent::IBookingAdministration_strategy)
-@settings(max_examples=30)
-def test_implementation::bookingcomponent::ibookingadministration_addadditionalservice_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.addAdditionalService(
-            "test", 
-            "test", 
-            "test"
-        )
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.addAdditionalService).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'addAdditionalService' in Implementation::BookingComponent::IBookingAdministration is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'addAdditionalService' in Implementation::BookingComponent::IBookingAdministration did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'addAdditionalService' in Implementation::BookingComponent::IBookingAdministration is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=Implementation::BookingComponent::IBookingAdministration_strategy)
-@settings(max_examples=30)
-def test_implementation::bookingcomponent::ibookingadministration_editbooking_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.editBooking(
-            "test", 
-            "test", 
-            "test"
-        )
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.editBooking).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'editBooking' in Implementation::BookingComponent::IBookingAdministration is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'editBooking' in Implementation::BookingComponent::IBookingAdministration did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'editBooking' in Implementation::BookingComponent::IBookingAdministration is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=Implementation::BookingComponent::IBookingAdministration_strategy)
-@settings(max_examples=30)
-def test_implementation::bookingcomponent::ibookingadministration_addroom_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.addRoom(
-            "test", 
-            "test", 
-            "test"
-        )
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.addRoom).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'addRoom' in Implementation::BookingComponent::IBookingAdministration is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'addRoom' in Implementation::BookingComponent::IBookingAdministration did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'addRoom' in Implementation::BookingComponent::IBookingAdministration is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=Implementation::BookingComponent::IBookingAdministration_strategy)
-@settings(max_examples=30)
-def test_implementation::bookingcomponent::ibookingadministration_makebooking_changes_state(instance):
+def test_implementation_bookingcomponent_ibookingadministration_makebooking_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -2762,14 +2537,14 @@ def test_implementation::bookingcomponent::ibookingadministration_makebooking_ch
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'makeBooking' in Implementation::BookingComponent::IBookingAdministration is empty"
+        assert has_statements, f"Function 'makeBooking' in Implementation_BookingComponent_IBookingAdministration is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'makeBooking' in Implementation::BookingComponent::IBookingAdministration did not change state; check implementation")
+            warnings.warn(f"Operation 'makeBooking' in Implementation_BookingComponent_IBookingAdministration did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'makeBooking' in Implementation::BookingComponent::IBookingAdministration is not implemented or raised an error")
+        warnings.warn(f"Operation 'makeBooking' in Implementation_BookingComponent_IBookingAdministration is not implemented or raised an error")
 
 import warnings
 import copy
@@ -2777,31 +2552,32 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=Implementation::BookingComponent::IBookingAdministration_strategy)
+@given(instance=Implementation_BookingComponent_IBookingAdministration_strategy)
 @settings(max_examples=30)
-def test_implementation::bookingcomponent::ibookingadministration_removeadditionalservice_changes_state(instance):
+def test_implementation_bookingcomponent_ibookingadministration_addadditionalservice_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
-        instance.removeAdditionalService(
+        instance.addAdditionalService(
+            "test", 
             "test", 
             "test"
         )
         if instance.__dict__ != before.__dict__:
             return  # test passes
         # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.removeAdditionalService).strip()
+        source = inspect.getsource(instance.addAdditionalService).strip()
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'removeAdditionalService' in Implementation::BookingComponent::IBookingAdministration is empty"
+        assert has_statements, f"Function 'addAdditionalService' in Implementation_BookingComponent_IBookingAdministration is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'removeAdditionalService' in Implementation::BookingComponent::IBookingAdministration did not change state; check implementation")
+            warnings.warn(f"Operation 'addAdditionalService' in Implementation_BookingComponent_IBookingAdministration did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'removeAdditionalService' in Implementation::BookingComponent::IBookingAdministration is not implemented or raised an error")
+        warnings.warn(f"Operation 'addAdditionalService' in Implementation_BookingComponent_IBookingAdministration is not implemented or raised an error")
 
 import warnings
 import copy
@@ -2809,9 +2585,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=Implementation::BookingComponent::IBookingAdministration_strategy)
+@given(instance=Implementation_BookingComponent_IBookingAdministration_strategy)
 @settings(max_examples=30)
-def test_implementation::bookingcomponent::ibookingadministration_addpaymentdetails_changes_state(instance):
+def test_implementation_bookingcomponent_ibookingadministration_addpaymentdetails_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -2832,14 +2608,14 @@ def test_implementation::bookingcomponent::ibookingadministration_addpaymentdeta
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'addPaymentDetails' in Implementation::BookingComponent::IBookingAdministration is empty"
+        assert has_statements, f"Function 'addPaymentDetails' in Implementation_BookingComponent_IBookingAdministration is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'addPaymentDetails' in Implementation::BookingComponent::IBookingAdministration did not change state; check implementation")
+            warnings.warn(f"Operation 'addPaymentDetails' in Implementation_BookingComponent_IBookingAdministration did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'addPaymentDetails' in Implementation::BookingComponent::IBookingAdministration is not implemented or raised an error")
+        warnings.warn(f"Operation 'addPaymentDetails' in Implementation_BookingComponent_IBookingAdministration is not implemented or raised an error")
 
 import warnings
 import copy
@@ -2847,9 +2623,71 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=Implementation::BookingComponent::IBookingAdministration_strategy)
+@given(instance=Implementation_BookingComponent_IBookingAdministration_strategy)
 @settings(max_examples=30)
-def test_implementation::bookingcomponent::ibookingadministration_removeroom_changes_state(instance):
+def test_implementation_bookingcomponent_ibookingadministration_cancelbooking_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.cancelBooking(
+            "test"
+        )
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.cancelBooking).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'cancelBooking' in Implementation_BookingComponent_IBookingAdministration is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'cancelBooking' in Implementation_BookingComponent_IBookingAdministration did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'cancelBooking' in Implementation_BookingComponent_IBookingAdministration is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=Implementation_BookingComponent_IBookingAdministration_strategy)
+@settings(max_examples=30)
+def test_implementation_bookingcomponent_ibookingadministration_confirmbooking_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.confirmBooking(
+            "test"
+        )
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.confirmBooking).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'confirmBooking' in Implementation_BookingComponent_IBookingAdministration is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'confirmBooking' in Implementation_BookingComponent_IBookingAdministration did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'confirmBooking' in Implementation_BookingComponent_IBookingAdministration is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=Implementation_BookingComponent_IBookingAdministration_strategy)
+@settings(max_examples=30)
+def test_implementation_bookingcomponent_ibookingadministration_removeroom_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -2864,14 +2702,14 @@ def test_implementation::bookingcomponent::ibookingadministration_removeroom_cha
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'removeRoom' in Implementation::BookingComponent::IBookingAdministration is empty"
+        assert has_statements, f"Function 'removeRoom' in Implementation_BookingComponent_IBookingAdministration is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'removeRoom' in Implementation::BookingComponent::IBookingAdministration did not change state; check implementation")
+            warnings.warn(f"Operation 'removeRoom' in Implementation_BookingComponent_IBookingAdministration did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'removeRoom' in Implementation::BookingComponent::IBookingAdministration is not implemented or raised an error")
+        warnings.warn(f"Operation 'removeRoom' in Implementation_BookingComponent_IBookingAdministration is not implemented or raised an error")
 
 import warnings
 import copy
@@ -2879,9 +2717,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=Implementation::BookingComponent::IBookingAdministration_strategy)
+@given(instance=Implementation_BookingComponent_IBookingAdministration_strategy)
 @settings(max_examples=30)
-def test_implementation::bookingcomponent::ibookingadministration_addguesttobooking_changes_state(instance):
+def test_implementation_bookingcomponent_ibookingadministration_addguesttobooking_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -2899,14 +2737,14 @@ def test_implementation::bookingcomponent::ibookingadministration_addguesttobook
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'addGuestToBooking' in Implementation::BookingComponent::IBookingAdministration is empty"
+        assert has_statements, f"Function 'addGuestToBooking' in Implementation_BookingComponent_IBookingAdministration is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'addGuestToBooking' in Implementation::BookingComponent::IBookingAdministration did not change state; check implementation")
+            warnings.warn(f"Operation 'addGuestToBooking' in Implementation_BookingComponent_IBookingAdministration did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'addGuestToBooking' in Implementation::BookingComponent::IBookingAdministration is not implemented or raised an error")
+        warnings.warn(f"Operation 'addGuestToBooking' in Implementation_BookingComponent_IBookingAdministration is not implemented or raised an error")
 
 import warnings
 import copy
@@ -2914,118 +2752,32 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=Implementation::BookingComponent::IBookingAdministration_strategy)
+@given(instance=Implementation_BookingComponent_IBookingAdministration_strategy)
 @settings(max_examples=30)
-def test_implementation::bookingcomponent::ibookingadministration_confirmbooking_changes_state(instance):
+def test_implementation_bookingcomponent_ibookingadministration_editbooking_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
-        instance.confirmBooking(
-            "test"
-        )
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.confirmBooking).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'confirmBooking' in Implementation::BookingComponent::IBookingAdministration is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'confirmBooking' in Implementation::BookingComponent::IBookingAdministration did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'confirmBooking' in Implementation::BookingComponent::IBookingAdministration is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=Implementation::BookingComponent::IBookingAdministration_strategy)
-@settings(max_examples=30)
-def test_implementation::bookingcomponent::ibookingadministration_cancelbooking_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.cancelBooking(
-            "test"
-        )
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.cancelBooking).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'cancelBooking' in Implementation::BookingComponent::IBookingAdministration is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'cancelBooking' in Implementation::BookingComponent::IBookingAdministration did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'cancelBooking' in Implementation::BookingComponent::IBookingAdministration is not implemented or raised an error")
-
-@given(instance=BookingComponent::IBookingAdministration_strategy)
-@settings(max_examples=50)
-def test_bookingcomponent::ibookingadministration_instantiation(instance):
-    assert isinstance(instance, BookingComponent::IBookingAdministration)
-
-@given(instance=BookingComponent::IBookingDecision_strategy)
-@settings(max_examples=50)
-def test_bookingcomponent::ibookingdecision_instantiation(instance):
-    assert isinstance(instance, BookingComponent::IBookingDecision)
-
-@given(instance=BookingComponent::IBookingInformation_strategy)
-@settings(max_examples=50)
-def test_bookingcomponent::ibookinginformation_instantiation(instance):
-    assert isinstance(instance, BookingComponent::IBookingInformation)
-
-@given(instance=Implementation::Bank_strategy)
-@settings(max_examples=50)
-def test_implementation::bank_instantiation(instance):
-    assert isinstance(instance, Implementation::Bank)
-
-@given(instance=Implementation::BookingComponent::BookingHandler_strategy)
-@settings(max_examples=50)
-def test_implementation::bookingcomponent::bookinghandler_instantiation(instance):
-    assert isinstance(instance, Implementation::BookingComponent::BookingHandler)
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=Implementation::BookingComponent::BookingHandler_strategy)
-@settings(max_examples=30)
-def test_implementation::bookingcomponent::bookinghandler_findbookingsbydate_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.findBookingsByDate(
+        instance.editBooking(
+            "test", 
             "test", 
             "test"
         )
         if instance.__dict__ != before.__dict__:
             return  # test passes
         # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.findBookingsByDate).strip()
+        source = inspect.getsource(instance.editBooking).strip()
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'findBookingsByDate' in Implementation::BookingComponent::BookingHandler is empty"
+        assert has_statements, f"Function 'editBooking' in Implementation_BookingComponent_IBookingAdministration is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'findBookingsByDate' in Implementation::BookingComponent::BookingHandler did not change state; check implementation")
+            warnings.warn(f"Operation 'editBooking' in Implementation_BookingComponent_IBookingAdministration did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'findBookingsByDate' in Implementation::BookingComponent::BookingHandler is not implemented or raised an error")
+        warnings.warn(f"Operation 'editBooking' in Implementation_BookingComponent_IBookingAdministration is not implemented or raised an error")
 
 import warnings
 import copy
@@ -3033,30 +2785,31 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=Implementation::BookingComponent::BookingHandler_strategy)
+@given(instance=Implementation_BookingComponent_IBookingAdministration_strategy)
 @settings(max_examples=30)
-def test_implementation::bookingcomponent::bookinghandler_findbooking_changes_state(instance):
+def test_implementation_bookingcomponent_ibookingadministration_removeadditionalservice_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
-        instance.findBooking(
+        instance.removeAdditionalService(
+            "test", 
             "test"
         )
         if instance.__dict__ != before.__dict__:
             return  # test passes
         # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.findBooking).strip()
+        source = inspect.getsource(instance.removeAdditionalService).strip()
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'findBooking' in Implementation::BookingComponent::BookingHandler is empty"
+        assert has_statements, f"Function 'removeAdditionalService' in Implementation_BookingComponent_IBookingAdministration is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'findBooking' in Implementation::BookingComponent::BookingHandler did not change state; check implementation")
+            warnings.warn(f"Operation 'removeAdditionalService' in Implementation_BookingComponent_IBookingAdministration did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'findBooking' in Implementation::BookingComponent::BookingHandler is not implemented or raised an error")
+        warnings.warn(f"Operation 'removeAdditionalService' in Implementation_BookingComponent_IBookingAdministration is not implemented or raised an error")
 
 import warnings
 import copy
@@ -3064,9 +2817,101 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=Implementation::BookingComponent::BookingHandler_strategy)
+@given(instance=Implementation_BookingComponent_IBookingAdministration_strategy)
 @settings(max_examples=30)
-def test_implementation::bookingcomponent::bookinghandler_bookingavailable_changes_state(instance):
+def test_implementation_bookingcomponent_ibookingadministration_removeguest_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.removeGuest(
+            "test", 
+            "test", 
+            "test", 
+            "test"
+        )
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.removeGuest).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'removeGuest' in Implementation_BookingComponent_IBookingAdministration is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'removeGuest' in Implementation_BookingComponent_IBookingAdministration did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'removeGuest' in Implementation_BookingComponent_IBookingAdministration is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=Implementation_BookingComponent_IBookingAdministration_strategy)
+@settings(max_examples=30)
+def test_implementation_bookingcomponent_ibookingadministration_addroom_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.addRoom(
+            "test", 
+            "test", 
+            "test"
+        )
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.addRoom).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'addRoom' in Implementation_BookingComponent_IBookingAdministration is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'addRoom' in Implementation_BookingComponent_IBookingAdministration did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'addRoom' in Implementation_BookingComponent_IBookingAdministration is not implemented or raised an error")
+
+@given(instance=BookingComponent_IBookingAdministration_strategy)
+@settings(max_examples=50)
+def test_bookingcomponent_ibookingadministration_instantiation(instance):
+    assert isinstance(instance, BookingComponent_IBookingAdministration)
+
+@given(instance=BookingComponent_IBookingDecision_strategy)
+@settings(max_examples=50)
+def test_bookingcomponent_ibookingdecision_instantiation(instance):
+    assert isinstance(instance, BookingComponent_IBookingDecision)
+
+@given(instance=BookingComponent_IBookingInformation_strategy)
+@settings(max_examples=50)
+def test_bookingcomponent_ibookinginformation_instantiation(instance):
+    assert isinstance(instance, BookingComponent_IBookingInformation)
+
+@given(instance=Implementation_Bank_strategy)
+@settings(max_examples=50)
+def test_implementation_bank_instantiation(instance):
+    assert isinstance(instance, Implementation_Bank)
+
+@given(instance=Implementation_BookingComponent_BookingHandler_strategy)
+@settings(max_examples=50)
+def test_implementation_bookingcomponent_bookinghandler_instantiation(instance):
+    assert isinstance(instance, Implementation_BookingComponent_BookingHandler)
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=Implementation_BookingComponent_BookingHandler_strategy)
+@settings(max_examples=30)
+def test_implementation_bookingcomponent_bookinghandler_bookingavailable_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -3082,221 +2927,14 @@ def test_implementation::bookingcomponent::bookinghandler_bookingavailable_chang
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'bookingAvailable' in Implementation::BookingComponent::BookingHandler is empty"
+        assert has_statements, f"Function 'bookingAvailable' in Implementation_BookingComponent_BookingHandler is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'bookingAvailable' in Implementation::BookingComponent::BookingHandler did not change state; check implementation")
+            warnings.warn(f"Operation 'bookingAvailable' in Implementation_BookingComponent_BookingHandler did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'bookingAvailable' in Implementation::BookingComponent::BookingHandler is not implemented or raised an error")
-
-@given(instance=Implementation::BookingComponent::RoomType_strategy)
-@settings(max_examples=50)
-def test_implementation::bookingcomponent::roomtype_instantiation(instance):
-    assert isinstance(instance, Implementation::BookingComponent::RoomType)
-
-@given(instance=Implementation::BookingComponent::RoomType_strategy)
-def test_implementation::bookingcomponent::roomtype_roomType_type(instance):
-    assert isinstance(instance.roomType, str)
-
-
-@given(instance=Implementation::BookingComponent::RoomType_strategy)
-def test_implementation::bookingcomponent::roomtype_roomType_setter(instance):
-    original = instance.roomType
-    instance.roomType = original
-    assert instance.roomType == original
-
-@given(instance=Implementation::BookingComponent::RoomType_strategy)
-def test_implementation::bookingcomponent::roomtype_cost_type(instance):
-    assert isinstance(instance.cost, str)
-
-
-@given(instance=Implementation::BookingComponent::RoomType_strategy)
-def test_implementation::bookingcomponent::roomtype_cost_setter(instance):
-    original = instance.cost
-    instance.cost = original
-    assert instance.cost == original
-
-@given(instance=Implementation::BookingComponent::BookingGuest_strategy)
-@settings(max_examples=50)
-def test_implementation::bookingcomponent::bookingguest_instantiation(instance):
-    assert isinstance(instance, Implementation::BookingComponent::BookingGuest)
-
-@given(instance=Implementation::BookingComponent::BookingGuest_strategy)
-def test_implementation::bookingcomponent::bookingguest_lastName_type(instance):
-    assert isinstance(instance.lastName, str)
-
-
-@given(instance=Implementation::BookingComponent::BookingGuest_strategy)
-def test_implementation::bookingcomponent::bookingguest_lastName_setter(instance):
-    original = instance.lastName
-    instance.lastName = original
-    assert instance.lastName == original
-
-@given(instance=Implementation::BookingComponent::BookingGuest_strategy)
-def test_implementation::bookingcomponent::bookingguest_phoneNumber_type(instance):
-    assert isinstance(instance.phoneNumber, str)
-
-
-@given(instance=Implementation::BookingComponent::BookingGuest_strategy)
-def test_implementation::bookingcomponent::bookingguest_phoneNumber_setter(instance):
-    original = instance.phoneNumber
-    instance.phoneNumber = original
-    assert instance.phoneNumber == original
-
-@given(instance=Implementation::BookingComponent::BookingGuest_strategy)
-def test_implementation::bookingcomponent::bookingguest_address_type(instance):
-    assert isinstance(instance.address, str)
-
-
-@given(instance=Implementation::BookingComponent::BookingGuest_strategy)
-def test_implementation::bookingcomponent::bookingguest_address_setter(instance):
-    original = instance.address
-    instance.address = original
-    assert instance.address == original
-
-@given(instance=Implementation::BookingComponent::BookingGuest_strategy)
-def test_implementation::bookingcomponent::bookingguest_firstName_type(instance):
-    assert isinstance(instance.firstName, str)
-
-
-@given(instance=Implementation::BookingComponent::BookingGuest_strategy)
-def test_implementation::bookingcomponent::bookingguest_firstName_setter(instance):
-    original = instance.firstName
-    instance.firstName = original
-    assert instance.firstName == original
-
-@given(instance=Implementation::BookingComponent::AdditionalService_strategy)
-@settings(max_examples=50)
-def test_implementation::bookingcomponent::additionalservice_instantiation(instance):
-    assert isinstance(instance, Implementation::BookingComponent::AdditionalService)
-
-@given(instance=Implementation::BookingComponent::AdditionalService_strategy)
-def test_implementation::bookingcomponent::additionalservice_location_type(instance):
-    assert isinstance(instance.location, str)
-
-
-@given(instance=Implementation::BookingComponent::AdditionalService_strategy)
-def test_implementation::bookingcomponent::additionalservice_location_setter(instance):
-    original = instance.location
-    instance.location = original
-    assert instance.location == original
-
-@given(instance=Implementation::BookingComponent::AdditionalService_strategy)
-def test_implementation::bookingcomponent::additionalservice_guestCount_type(instance):
-    assert isinstance(instance.guestCount, str)
-
-
-@given(instance=Implementation::BookingComponent::AdditionalService_strategy)
-def test_implementation::bookingcomponent::additionalservice_guestCount_setter(instance):
-    original = instance.guestCount
-    instance.guestCount = original
-    assert instance.guestCount == original
-
-@given(instance=Implementation::BookingComponent::AdditionalService_strategy)
-def test_implementation::bookingcomponent::additionalservice_price_type(instance):
-    assert isinstance(instance.price, int)
-
-
-@given(instance=Implementation::BookingComponent::AdditionalService_strategy)
-def test_implementation::bookingcomponent::additionalservice_price_setter(instance):
-    original = instance.price
-    instance.price = original
-    assert instance.price == original
-
-@given(instance=Implementation::BookingComponent::AdditionalService_strategy)
-def test_implementation::bookingcomponent::additionalservice_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=Implementation::BookingComponent::AdditionalService_strategy)
-def test_implementation::bookingcomponent::additionalservice_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
-
-@given(instance=Implementation::BookingComponent::AdditionalService_strategy)
-def test_implementation::bookingcomponent::additionalservice_dateTime_type(instance):
-    assert isinstance(instance.dateTime, date)
-
-
-@given(instance=Implementation::BookingComponent::AdditionalService_strategy)
-def test_implementation::bookingcomponent::additionalservice_dateTime_setter(instance):
-    original = instance.dateTime
-    instance.dateTime = original
-    assert instance.dateTime == original
-
-@given(instance=Implementation::BookingComponent::Booking_strategy)
-@settings(max_examples=50)
-def test_implementation::bookingcomponent::booking_instantiation(instance):
-    assert isinstance(instance, Implementation::BookingComponent::Booking)
-
-@given(instance=Implementation::BookingComponent::Booking_strategy)
-def test_implementation::bookingcomponent::booking_currentCost_type(instance):
-    assert isinstance(instance.currentCost, str)
-
-
-@given(instance=Implementation::BookingComponent::Booking_strategy)
-def test_implementation::bookingcomponent::booking_currentCost_setter(instance):
-    original = instance.currentCost
-    instance.currentCost = original
-    assert instance.currentCost == original
-
-@given(instance=Implementation::BookingComponent::Booking_strategy)
-def test_implementation::bookingcomponent::booking_bookingReference_type(instance):
-    assert isinstance(instance.bookingReference, str)
-
-
-@given(instance=Implementation::BookingComponent::Booking_strategy)
-def test_implementation::bookingcomponent::booking_bookingReference_setter(instance):
-    original = instance.bookingReference
-    instance.bookingReference = original
-    assert instance.bookingReference == original
-
-@given(instance=Implementation::BookingComponent::Booking_strategy)
-def test_implementation::bookingcomponent::booking_departureDate_type(instance):
-    assert isinstance(instance.departureDate, date)
-
-
-@given(instance=Implementation::BookingComponent::Booking_strategy)
-def test_implementation::bookingcomponent::booking_departureDate_setter(instance):
-    original = instance.departureDate
-    instance.departureDate = original
-    assert instance.departureDate == original
-
-@given(instance=Implementation::BookingComponent::Booking_strategy)
-def test_implementation::bookingcomponent::booking_arrivalDate_type(instance):
-    assert isinstance(instance.arrivalDate, date)
-
-
-@given(instance=Implementation::BookingComponent::Booking_strategy)
-def test_implementation::bookingcomponent::booking_arrivalDate_setter(instance):
-    original = instance.arrivalDate
-    instance.arrivalDate = original
-    assert instance.arrivalDate == original
-
-@given(instance=Implementation::BookingComponent::Booking_strategy)
-def test_implementation::bookingcomponent::booking_isPaid_type(instance):
-    assert isinstance(instance.isPaid, str)
-
-
-@given(instance=Implementation::BookingComponent::Booking_strategy)
-def test_implementation::bookingcomponent::booking_isPaid_setter(instance):
-    original = instance.isPaid
-    instance.isPaid = original
-    assert instance.isPaid == original
-
-@given(instance=Implementation::BookingComponent::Booking_strategy)
-def test_implementation::bookingcomponent::booking_isActive_type(instance):
-    assert isinstance(instance.isActive, str)
-
-
-@given(instance=Implementation::BookingComponent::Booking_strategy)
-def test_implementation::bookingcomponent::booking_isActive_setter(instance):
-    original = instance.isActive
-    instance.isActive = original
-    assert instance.isActive == original
+        warnings.warn(f"Operation 'bookingAvailable' in Implementation_BookingComponent_BookingHandler is not implemented or raised an error")
 
 import warnings
 import copy
@@ -3304,30 +2942,30 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=Implementation::BookingComponent::Booking_strategy)
+@given(instance=Implementation_BookingComponent_BookingHandler_strategy)
 @settings(max_examples=30)
-def test_implementation::bookingcomponent::booking_removeroomfrombooking_changes_state(instance):
+def test_implementation_bookingcomponent_bookinghandler_findbooking_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
-        instance.removeRoomFromBooking(
+        instance.findBooking(
             "test"
         )
         if instance.__dict__ != before.__dict__:
             return  # test passes
         # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.removeRoomFromBooking).strip()
+        source = inspect.getsource(instance.findBooking).strip()
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'removeRoomFromBooking' in Implementation::BookingComponent::Booking is empty"
+        assert has_statements, f"Function 'findBooking' in Implementation_BookingComponent_BookingHandler is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'removeRoomFromBooking' in Implementation::BookingComponent::Booking did not change state; check implementation")
+            warnings.warn(f"Operation 'findBooking' in Implementation_BookingComponent_BookingHandler did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'removeRoomFromBooking' in Implementation::BookingComponent::Booking is not implemented or raised an error")
+        warnings.warn(f"Operation 'findBooking' in Implementation_BookingComponent_BookingHandler is not implemented or raised an error")
 
 import warnings
 import copy
@@ -3335,60 +2973,187 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=Implementation::BookingComponent::Booking_strategy)
+@given(instance=Implementation_BookingComponent_BookingHandler_strategy)
 @settings(max_examples=30)
-def test_implementation::bookingcomponent::booking_generatereferencenumber_changes_state(instance):
+def test_implementation_bookingcomponent_bookinghandler_findbookingsbydate_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
-        instance.generateReferenceNumber()
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.generateReferenceNumber).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'generateReferenceNumber' in Implementation::BookingComponent::Booking is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'generateReferenceNumber' in Implementation::BookingComponent::Booking did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'generateReferenceNumber' in Implementation::BookingComponent::Booking is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=Implementation::BookingComponent::Booking_strategy)
-@settings(max_examples=30)
-def test_implementation::bookingcomponent::booking_updatebooking_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.updateBooking(
+        instance.findBookingsByDate(
             "test", 
             "test"
         )
         if instance.__dict__ != before.__dict__:
             return  # test passes
         # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.updateBooking).strip()
+        source = inspect.getsource(instance.findBookingsByDate).strip()
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'updateBooking' in Implementation::BookingComponent::Booking is empty"
+        assert has_statements, f"Function 'findBookingsByDate' in Implementation_BookingComponent_BookingHandler is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'updateBooking' in Implementation::BookingComponent::Booking did not change state; check implementation")
+            warnings.warn(f"Operation 'findBookingsByDate' in Implementation_BookingComponent_BookingHandler did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'updateBooking' in Implementation::BookingComponent::Booking is not implemented or raised an error")
+        warnings.warn(f"Operation 'findBookingsByDate' in Implementation_BookingComponent_BookingHandler is not implemented or raised an error")
+
+@given(instance=Implementation_BookingComponent_RoomType_strategy)
+@settings(max_examples=50)
+def test_implementation_bookingcomponent_roomtype_instantiation(instance):
+    assert isinstance(instance, Implementation_BookingComponent_RoomType)
+
+
+
+@given(instance=Implementation_BookingComponent_RoomType_strategy)
+def test_implementation_bookingcomponent_roomtype_roomType_setter(instance):
+    original = instance.roomType
+    instance.roomType = original
+    assert instance.roomType == original
+
+
+
+@given(instance=Implementation_BookingComponent_RoomType_strategy)
+def test_implementation_bookingcomponent_roomtype_cost_setter(instance):
+    original = instance.cost
+    instance.cost = original
+    assert instance.cost == original
+
+@given(instance=Implementation_BookingComponent_BookingGuest_strategy)
+@settings(max_examples=50)
+def test_implementation_bookingcomponent_bookingguest_instantiation(instance):
+    assert isinstance(instance, Implementation_BookingComponent_BookingGuest)
+
+
+
+@given(instance=Implementation_BookingComponent_BookingGuest_strategy)
+def test_implementation_bookingcomponent_bookingguest_firstName_setter(instance):
+    original = instance.firstName
+    instance.firstName = original
+    assert instance.firstName == original
+
+
+
+@given(instance=Implementation_BookingComponent_BookingGuest_strategy)
+def test_implementation_bookingcomponent_bookingguest_address_setter(instance):
+    original = instance.address
+    instance.address = original
+    assert instance.address == original
+
+
+
+@given(instance=Implementation_BookingComponent_BookingGuest_strategy)
+def test_implementation_bookingcomponent_bookingguest_lastName_setter(instance):
+    original = instance.lastName
+    instance.lastName = original
+    assert instance.lastName == original
+
+
+
+@given(instance=Implementation_BookingComponent_BookingGuest_strategy)
+def test_implementation_bookingcomponent_bookingguest_phoneNumber_setter(instance):
+    original = instance.phoneNumber
+    instance.phoneNumber = original
+    assert instance.phoneNumber == original
+
+@given(instance=Implementation_BookingComponent_AdditionalService_strategy)
+@settings(max_examples=50)
+def test_implementation_bookingcomponent_additionalservice_instantiation(instance):
+    assert isinstance(instance, Implementation_BookingComponent_AdditionalService)
+
+
+
+@given(instance=Implementation_BookingComponent_AdditionalService_strategy)
+def test_implementation_bookingcomponent_additionalservice_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+
+
+@given(instance=Implementation_BookingComponent_AdditionalService_strategy)
+def test_implementation_bookingcomponent_additionalservice_location_setter(instance):
+    original = instance.location
+    instance.location = original
+    assert instance.location == original
+
+
+
+@given(instance=Implementation_BookingComponent_AdditionalService_strategy)
+def test_implementation_bookingcomponent_additionalservice_price_setter(instance):
+    original = instance.price
+    instance.price = original
+    assert instance.price == original
+
+
+
+@given(instance=Implementation_BookingComponent_AdditionalService_strategy)
+def test_implementation_bookingcomponent_additionalservice_guestCount_setter(instance):
+    original = instance.guestCount
+    instance.guestCount = original
+    assert instance.guestCount == original
+
+
+
+@given(instance=Implementation_BookingComponent_AdditionalService_strategy)
+def test_implementation_bookingcomponent_additionalservice_dateTime_setter(instance):
+    original = instance.dateTime
+    instance.dateTime = original
+    assert instance.dateTime == original
+
+@given(instance=Implementation_BookingComponent_Booking_strategy)
+@settings(max_examples=50)
+def test_implementation_bookingcomponent_booking_instantiation(instance):
+    assert isinstance(instance, Implementation_BookingComponent_Booking)
+
+
+
+@given(instance=Implementation_BookingComponent_Booking_strategy)
+def test_implementation_bookingcomponent_booking_arrivalDate_setter(instance):
+    original = instance.arrivalDate
+    instance.arrivalDate = original
+    assert instance.arrivalDate == original
+
+
+
+@given(instance=Implementation_BookingComponent_Booking_strategy)
+def test_implementation_bookingcomponent_booking_isActive_setter(instance):
+    original = instance.isActive
+    instance.isActive = original
+    assert instance.isActive == original
+
+
+
+@given(instance=Implementation_BookingComponent_Booking_strategy)
+def test_implementation_bookingcomponent_booking_departureDate_setter(instance):
+    original = instance.departureDate
+    instance.departureDate = original
+    assert instance.departureDate == original
+
+
+
+@given(instance=Implementation_BookingComponent_Booking_strategy)
+def test_implementation_bookingcomponent_booking_isPaid_setter(instance):
+    original = instance.isPaid
+    instance.isPaid = original
+    assert instance.isPaid == original
+
+
+
+@given(instance=Implementation_BookingComponent_Booking_strategy)
+def test_implementation_bookingcomponent_booking_currentCost_setter(instance):
+    original = instance.currentCost
+    instance.currentCost = original
+    assert instance.currentCost == original
+
+
+
+@given(instance=Implementation_BookingComponent_Booking_strategy)
+def test_implementation_bookingcomponent_booking_bookingReference_setter(instance):
+    original = instance.bookingReference
+    instance.bookingReference = original
+    assert instance.bookingReference == original
 
 import warnings
 import copy
@@ -3396,9 +3161,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=Implementation::BookingComponent::Booking_strategy)
+@given(instance=Implementation_BookingComponent_Booking_strategy)
 @settings(max_examples=30)
-def test_implementation::bookingcomponent::booking_addroomtobooking_changes_state(instance):
+def test_implementation_bookingcomponent_booking_addroomtobooking_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -3413,14 +3178,14 @@ def test_implementation::bookingcomponent::booking_addroomtobooking_changes_stat
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'addRoomToBooking' in Implementation::BookingComponent::Booking is empty"
+        assert has_statements, f"Function 'addRoomToBooking' in Implementation_BookingComponent_Booking is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'addRoomToBooking' in Implementation::BookingComponent::Booking did not change state; check implementation")
+            warnings.warn(f"Operation 'addRoomToBooking' in Implementation_BookingComponent_Booking did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'addRoomToBooking' in Implementation::BookingComponent::Booking is not implemented or raised an error")
+        warnings.warn(f"Operation 'addRoomToBooking' in Implementation_BookingComponent_Booking is not implemented or raised an error")
 
 import warnings
 import copy
@@ -3428,110 +3193,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=Implementation::BookingComponent::Booking_strategy)
+@given(instance=Implementation_BookingComponent_Booking_strategy)
 @settings(max_examples=30)
-def test_implementation::bookingcomponent::booking_removeguestfrombooking_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.removeGuestFromBooking(
-            "test", 
-            "test", 
-            "test"
-        )
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.removeGuestFromBooking).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'removeGuestFromBooking' in Implementation::BookingComponent::Booking is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'removeGuestFromBooking' in Implementation::BookingComponent::Booking did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'removeGuestFromBooking' in Implementation::BookingComponent::Booking is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=Implementation::BookingComponent::Booking_strategy)
-@settings(max_examples=30)
-def test_implementation::bookingcomponent::booking_removeadditionalservicefrombooking_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.removeAdditionalServiceFromBooking(
-            "test"
-        )
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.removeAdditionalServiceFromBooking).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'removeAdditionalServiceFromBooking' in Implementation::BookingComponent::Booking is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'removeAdditionalServiceFromBooking' in Implementation::BookingComponent::Booking did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'removeAdditionalServiceFromBooking' in Implementation::BookingComponent::Booking is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=Implementation::BookingComponent::Booking_strategy)
-@settings(max_examples=30)
-def test_implementation::bookingcomponent::booking_addpaymentdetails_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.addPaymentDetails(
-            "test", 
-            "test", 
-            "test", 
-            "test", 
-            "test", 
-            "test", 
-            "test"
-        )
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.addPaymentDetails).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'addPaymentDetails' in Implementation::BookingComponent::Booking is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'addPaymentDetails' in Implementation::BookingComponent::Booking did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'addPaymentDetails' in Implementation::BookingComponent::Booking is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=Implementation::BookingComponent::Booking_strategy)
-@settings(max_examples=30)
-def test_implementation::bookingcomponent::booking_addadditionalservicetobooking_changes_state(instance):
+def test_implementation_bookingcomponent_booking_addadditionalservicetobooking_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -3548,14 +3212,14 @@ def test_implementation::bookingcomponent::booking_addadditionalservicetobooking
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'addAdditionalServiceToBooking' in Implementation::BookingComponent::Booking is empty"
+        assert has_statements, f"Function 'addAdditionalServiceToBooking' in Implementation_BookingComponent_Booking is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'addAdditionalServiceToBooking' in Implementation::BookingComponent::Booking did not change state; check implementation")
+            warnings.warn(f"Operation 'addAdditionalServiceToBooking' in Implementation_BookingComponent_Booking did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'addAdditionalServiceToBooking' in Implementation::BookingComponent::Booking is not implemented or raised an error")
+        warnings.warn(f"Operation 'addAdditionalServiceToBooking' in Implementation_BookingComponent_Booking is not implemented or raised an error")
 
 import warnings
 import copy
@@ -3563,9 +3227,100 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=Implementation::BookingComponent::Booking_strategy)
+@given(instance=Implementation_BookingComponent_Booking_strategy)
 @settings(max_examples=30)
-def test_implementation::bookingcomponent::booking_updatepaymentdetails_changes_state(instance):
+def test_implementation_bookingcomponent_booking_generatereferencenumber_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.generateReferenceNumber()
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.generateReferenceNumber).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'generateReferenceNumber' in Implementation_BookingComponent_Booking is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'generateReferenceNumber' in Implementation_BookingComponent_Booking did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'generateReferenceNumber' in Implementation_BookingComponent_Booking is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=Implementation_BookingComponent_Booking_strategy)
+@settings(max_examples=30)
+def test_implementation_bookingcomponent_booking_currentcost_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.currentCost()
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.currentCost).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'currentCost' in Implementation_BookingComponent_Booking is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'currentCost' in Implementation_BookingComponent_Booking did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'currentCost' in Implementation_BookingComponent_Booking is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=Implementation_BookingComponent_Booking_strategy)
+@settings(max_examples=30)
+def test_implementation_bookingcomponent_booking_removeguestfrombooking_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.removeGuestFromBooking(
+            "test", 
+            "test", 
+            "test"
+        )
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.removeGuestFromBooking).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'removeGuestFromBooking' in Implementation_BookingComponent_Booking is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'removeGuestFromBooking' in Implementation_BookingComponent_Booking did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'removeGuestFromBooking' in Implementation_BookingComponent_Booking is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=Implementation_BookingComponent_Booking_strategy)
+@settings(max_examples=30)
+def test_implementation_bookingcomponent_booking_updatepaymentdetails_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -3585,14 +3340,14 @@ def test_implementation::bookingcomponent::booking_updatepaymentdetails_changes_
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'updatePaymentDetails' in Implementation::BookingComponent::Booking is empty"
+        assert has_statements, f"Function 'updatePaymentDetails' in Implementation_BookingComponent_Booking is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'updatePaymentDetails' in Implementation::BookingComponent::Booking did not change state; check implementation")
+            warnings.warn(f"Operation 'updatePaymentDetails' in Implementation_BookingComponent_Booking did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'updatePaymentDetails' in Implementation::BookingComponent::Booking is not implemented or raised an error")
+        warnings.warn(f"Operation 'updatePaymentDetails' in Implementation_BookingComponent_Booking is not implemented or raised an error")
 
 import warnings
 import copy
@@ -3600,9 +3355,46 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=Implementation::BookingComponent::Booking_strategy)
+@given(instance=Implementation_BookingComponent_Booking_strategy)
 @settings(max_examples=30)
-def test_implementation::bookingcomponent::booking_addguesttobooking_changes_state(instance):
+def test_implementation_bookingcomponent_booking_addpaymentdetails_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.addPaymentDetails(
+            "test", 
+            "test", 
+            "test", 
+            "test", 
+            "test", 
+            "test", 
+            "test"
+        )
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.addPaymentDetails).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'addPaymentDetails' in Implementation_BookingComponent_Booking is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'addPaymentDetails' in Implementation_BookingComponent_Booking did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'addPaymentDetails' in Implementation_BookingComponent_Booking is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=Implementation_BookingComponent_Booking_strategy)
+@settings(max_examples=30)
+def test_implementation_bookingcomponent_booking_addguesttobooking_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -3619,14 +3411,14 @@ def test_implementation::bookingcomponent::booking_addguesttobooking_changes_sta
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'addGuestToBooking' in Implementation::BookingComponent::Booking is empty"
+        assert has_statements, f"Function 'addGuestToBooking' in Implementation_BookingComponent_Booking is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'addGuestToBooking' in Implementation::BookingComponent::Booking did not change state; check implementation")
+            warnings.warn(f"Operation 'addGuestToBooking' in Implementation_BookingComponent_Booking did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'addGuestToBooking' in Implementation::BookingComponent::Booking is not implemented or raised an error")
+        warnings.warn(f"Operation 'addGuestToBooking' in Implementation_BookingComponent_Booking is not implemented or raised an error")
 
 import warnings
 import copy
@@ -3634,110 +3426,154 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=Implementation::BookingComponent::Booking_strategy)
+@given(instance=Implementation_BookingComponent_Booking_strategy)
 @settings(max_examples=30)
-def test_implementation::bookingcomponent::booking_currentcost_changes_state(instance):
+def test_implementation_bookingcomponent_booking_updatebooking_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
-        instance.currentCost()
+        instance.updateBooking(
+            "test", 
+            "test"
+        )
         if instance.__dict__ != before.__dict__:
             return  # test passes
         # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.currentCost).strip()
+        source = inspect.getsource(instance.updateBooking).strip()
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'currentCost' in Implementation::BookingComponent::Booking is empty"
+        assert has_statements, f"Function 'updateBooking' in Implementation_BookingComponent_Booking is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'currentCost' in Implementation::BookingComponent::Booking did not change state; check implementation")
+            warnings.warn(f"Operation 'updateBooking' in Implementation_BookingComponent_Booking did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'currentCost' in Implementation::BookingComponent::Booking is not implemented or raised an error")
+        warnings.warn(f"Operation 'updateBooking' in Implementation_BookingComponent_Booking is not implemented or raised an error")
 
-@given(instance=Implementation::BookingComponent::PaymentDetails_strategy)
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=Implementation_BookingComponent_Booking_strategy)
+@settings(max_examples=30)
+def test_implementation_bookingcomponent_booking_removeroomfrombooking_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.removeRoomFromBooking(
+            "test"
+        )
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.removeRoomFromBooking).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'removeRoomFromBooking' in Implementation_BookingComponent_Booking is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'removeRoomFromBooking' in Implementation_BookingComponent_Booking did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'removeRoomFromBooking' in Implementation_BookingComponent_Booking is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=Implementation_BookingComponent_Booking_strategy)
+@settings(max_examples=30)
+def test_implementation_bookingcomponent_booking_removeadditionalservicefrombooking_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.removeAdditionalServiceFromBooking(
+            "test"
+        )
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.removeAdditionalServiceFromBooking).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'removeAdditionalServiceFromBooking' in Implementation_BookingComponent_Booking is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'removeAdditionalServiceFromBooking' in Implementation_BookingComponent_Booking did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'removeAdditionalServiceFromBooking' in Implementation_BookingComponent_Booking is not implemented or raised an error")
+
+@given(instance=Implementation_BookingComponent_PaymentDetails_strategy)
 @settings(max_examples=50)
-def test_implementation::bookingcomponent::paymentdetails_instantiation(instance):
-    assert isinstance(instance, Implementation::BookingComponent::PaymentDetails)
-
-@given(instance=Implementation::BookingComponent::PaymentDetails_strategy)
-def test_implementation::bookingcomponent::paymentdetails_firstName_type(instance):
-    assert isinstance(instance.firstName, str)
+def test_implementation_bookingcomponent_paymentdetails_instantiation(instance):
+    assert isinstance(instance, Implementation_BookingComponent_PaymentDetails)
 
 
-@given(instance=Implementation::BookingComponent::PaymentDetails_strategy)
-def test_implementation::bookingcomponent::paymentdetails_firstName_setter(instance):
-    original = instance.firstName
-    instance.firstName = original
-    assert instance.firstName == original
 
-@given(instance=Implementation::BookingComponent::PaymentDetails_strategy)
-def test_implementation::bookingcomponent::paymentdetails_lastName_type(instance):
-    assert isinstance(instance.lastName, str)
-
-
-@given(instance=Implementation::BookingComponent::PaymentDetails_strategy)
-def test_implementation::bookingcomponent::paymentdetails_lastName_setter(instance):
-    original = instance.lastName
-    instance.lastName = original
-    assert instance.lastName == original
-
-@given(instance=Implementation::BookingComponent::PaymentDetails_strategy)
-def test_implementation::bookingcomponent::paymentdetails_ccNumber_type(instance):
-    assert isinstance(instance.ccNumber, str)
-
-
-@given(instance=Implementation::BookingComponent::PaymentDetails_strategy)
-def test_implementation::bookingcomponent::paymentdetails_ccNumber_setter(instance):
-    original = instance.ccNumber
-    instance.ccNumber = original
-    assert instance.ccNumber == original
-
-@given(instance=Implementation::BookingComponent::PaymentDetails_strategy)
-def test_implementation::bookingcomponent::paymentdetails_address_type(instance):
-    assert isinstance(instance.address, str)
-
-
-@given(instance=Implementation::BookingComponent::PaymentDetails_strategy)
-def test_implementation::bookingcomponent::paymentdetails_address_setter(instance):
-    original = instance.address
-    instance.address = original
-    assert instance.address == original
-
-@given(instance=Implementation::BookingComponent::PaymentDetails_strategy)
-def test_implementation::bookingcomponent::paymentdetails_expiryMonth_type(instance):
-    assert isinstance(instance.expiryMonth, str)
-
-
-@given(instance=Implementation::BookingComponent::PaymentDetails_strategy)
-def test_implementation::bookingcomponent::paymentdetails_expiryMonth_setter(instance):
-    original = instance.expiryMonth
-    instance.expiryMonth = original
-    assert instance.expiryMonth == original
-
-@given(instance=Implementation::BookingComponent::PaymentDetails_strategy)
-def test_implementation::bookingcomponent::paymentdetails_expiryYear_type(instance):
-    assert isinstance(instance.expiryYear, str)
-
-
-@given(instance=Implementation::BookingComponent::PaymentDetails_strategy)
-def test_implementation::bookingcomponent::paymentdetails_expiryYear_setter(instance):
+@given(instance=Implementation_BookingComponent_PaymentDetails_strategy)
+def test_implementation_bookingcomponent_paymentdetails_expiryYear_setter(instance):
     original = instance.expiryYear
     instance.expiryYear = original
     assert instance.expiryYear == original
 
-@given(instance=Implementation::BookingComponent::PaymentDetails_strategy)
-def test_implementation::bookingcomponent::paymentdetails_ccv_type(instance):
-    assert isinstance(instance.ccv, str)
 
 
-@given(instance=Implementation::BookingComponent::PaymentDetails_strategy)
-def test_implementation::bookingcomponent::paymentdetails_ccv_setter(instance):
+@given(instance=Implementation_BookingComponent_PaymentDetails_strategy)
+def test_implementation_bookingcomponent_paymentdetails_ccNumber_setter(instance):
+    original = instance.ccNumber
+    instance.ccNumber = original
+    assert instance.ccNumber == original
+
+
+
+@given(instance=Implementation_BookingComponent_PaymentDetails_strategy)
+def test_implementation_bookingcomponent_paymentdetails_address_setter(instance):
+    original = instance.address
+    instance.address = original
+    assert instance.address == original
+
+
+
+@given(instance=Implementation_BookingComponent_PaymentDetails_strategy)
+def test_implementation_bookingcomponent_paymentdetails_ccv_setter(instance):
     original = instance.ccv
     instance.ccv = original
     assert instance.ccv == original
+
+
+
+@given(instance=Implementation_BookingComponent_PaymentDetails_strategy)
+def test_implementation_bookingcomponent_paymentdetails_firstName_setter(instance):
+    original = instance.firstName
+    instance.firstName = original
+    assert instance.firstName == original
+
+
+
+@given(instance=Implementation_BookingComponent_PaymentDetails_strategy)
+def test_implementation_bookingcomponent_paymentdetails_expiryMonth_setter(instance):
+    original = instance.expiryMonth
+    instance.expiryMonth = original
+    assert instance.expiryMonth == original
+
+
+
+@given(instance=Implementation_BookingComponent_PaymentDetails_strategy)
+def test_implementation_bookingcomponent_paymentdetails_lastName_setter(instance):
+    original = instance.lastName
+    instance.lastName = original
+    assert instance.lastName == original
 
 import warnings
 import copy
@@ -3745,9 +3581,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=Implementation::BookingComponent::PaymentDetails_strategy)
+@given(instance=Implementation_BookingComponent_PaymentDetails_strategy)
 @settings(max_examples=30)
-def test_implementation::bookingcomponent::paymentdetails_generateid_changes_state(instance):
+def test_implementation_bookingcomponent_paymentdetails_generateid_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -3759,148 +3595,93 @@ def test_implementation::bookingcomponent::paymentdetails_generateid_changes_sta
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'generateID' in Implementation::BookingComponent::PaymentDetails is empty"
+        assert has_statements, f"Function 'generateID' in Implementation_BookingComponent_PaymentDetails is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'generateID' in Implementation::BookingComponent::PaymentDetails did not change state; check implementation")
+            warnings.warn(f"Operation 'generateID' in Implementation_BookingComponent_PaymentDetails did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'generateID' in Implementation::BookingComponent::PaymentDetails is not implemented or raised an error")
+        warnings.warn(f"Operation 'generateID' in Implementation_BookingComponent_PaymentDetails is not implemented or raised an error")
 
-@given(instance=Implementation::BookingComponent_strategy)
+@given(instance=Implementation_BookingComponent_strategy)
 @settings(max_examples=50)
-def test_implementation::bookingcomponent_instantiation(instance):
-    assert isinstance(instance, Implementation::BookingComponent)
+def test_implementation_bookingcomponent_instantiation(instance):
+    assert isinstance(instance, Implementation_BookingComponent)
 
-@given(instance=Implementation::AdditionalServiceComponent::AdditionalServiceEvent_strategy)
+@given(instance=Implementation_AdditionalServiceComponent_AdditionalServiceEvent_strategy)
 @settings(max_examples=50)
-def test_implementation::additionalservicecomponent::additionalserviceevent_instantiation(instance):
-    assert isinstance(instance, Implementation::AdditionalServiceComponent::AdditionalServiceEvent)
-
-@given(instance=Implementation::AdditionalServiceComponent::AdditionalServiceEvent_strategy)
-def test_implementation::additionalservicecomponent::additionalserviceevent_currentAttendants_type(instance):
-    assert isinstance(instance.currentAttendants, str)
+def test_implementation_additionalservicecomponent_additionalserviceevent_instantiation(instance):
+    assert isinstance(instance, Implementation_AdditionalServiceComponent_AdditionalServiceEvent)
 
 
-@given(instance=Implementation::AdditionalServiceComponent::AdditionalServiceEvent_strategy)
-def test_implementation::additionalservicecomponent::additionalserviceevent_currentAttendants_setter(instance):
+
+@given(instance=Implementation_AdditionalServiceComponent_AdditionalServiceEvent_strategy)
+def test_implementation_additionalservicecomponent_additionalserviceevent_currentAttendants_setter(instance):
     original = instance.currentAttendants
     instance.currentAttendants = original
     assert instance.currentAttendants == original
 
-@given(instance=Implementation::AdditionalServiceComponent::AdditionalServiceEvent_strategy)
-def test_implementation::additionalservicecomponent::additionalserviceevent_maxAttendant_type(instance):
-    assert isinstance(instance.maxAttendant, str)
 
 
-@given(instance=Implementation::AdditionalServiceComponent::AdditionalServiceEvent_strategy)
-def test_implementation::additionalservicecomponent::additionalserviceevent_maxAttendant_setter(instance):
-    original = instance.maxAttendant
-    instance.maxAttendant = original
-    assert instance.maxAttendant == original
-
-@given(instance=Implementation::AdditionalServiceComponent::AdditionalServiceEvent_strategy)
-def test_implementation::additionalservicecomponent::additionalserviceevent_dateTime_type(instance):
-    assert isinstance(instance.dateTime, date)
-
-
-@given(instance=Implementation::AdditionalServiceComponent::AdditionalServiceEvent_strategy)
-def test_implementation::additionalservicecomponent::additionalserviceevent_dateTime_setter(instance):
+@given(instance=Implementation_AdditionalServiceComponent_AdditionalServiceEvent_strategy)
+def test_implementation_additionalservicecomponent_additionalserviceevent_dateTime_setter(instance):
     original = instance.dateTime
     instance.dateTime = original
     assert instance.dateTime == original
 
-@given(instance=Implementation::AdditionalServiceComponent::AdditionalServiceEvent_strategy)
-def test_implementation::additionalservicecomponent::additionalserviceevent_location_type(instance):
-    assert isinstance(instance.location, str)
 
 
-@given(instance=Implementation::AdditionalServiceComponent::AdditionalServiceEvent_strategy)
-def test_implementation::additionalservicecomponent::additionalserviceevent_location_setter(instance):
+@given(instance=Implementation_AdditionalServiceComponent_AdditionalServiceEvent_strategy)
+def test_implementation_additionalservicecomponent_additionalserviceevent_maxAttendant_setter(instance):
+    original = instance.maxAttendant
+    instance.maxAttendant = original
+    assert instance.maxAttendant == original
+
+
+
+@given(instance=Implementation_AdditionalServiceComponent_AdditionalServiceEvent_strategy)
+def test_implementation_additionalservicecomponent_additionalserviceevent_location_setter(instance):
     original = instance.location
     instance.location = original
     assert instance.location == original
 
-@given(instance=Implementation::AdditionalServiceComponent::AdditionalService_strategy)
+@given(instance=Implementation_AdditionalServiceComponent_AdditionalService_strategy)
 @settings(max_examples=50)
-def test_implementation::additionalservicecomponent::additionalservice_instantiation(instance):
-    assert isinstance(instance, Implementation::AdditionalServiceComponent::AdditionalService)
-
-@given(instance=Implementation::AdditionalServiceComponent::AdditionalService_strategy)
-def test_implementation::additionalservicecomponent::additionalservice_usable_type(instance):
-    assert isinstance(instance.usable, str)
+def test_implementation_additionalservicecomponent_additionalservice_instantiation(instance):
+    assert isinstance(instance, Implementation_AdditionalServiceComponent_AdditionalService)
 
 
-@given(instance=Implementation::AdditionalServiceComponent::AdditionalService_strategy)
-def test_implementation::additionalservicecomponent::additionalservice_usable_setter(instance):
-    original = instance.usable
-    instance.usable = original
-    assert instance.usable == original
 
-@given(instance=Implementation::AdditionalServiceComponent::AdditionalService_strategy)
-def test_implementation::additionalservicecomponent::additionalservice_description_type(instance):
-    assert isinstance(instance.description, str)
-
-
-@given(instance=Implementation::AdditionalServiceComponent::AdditionalService_strategy)
-def test_implementation::additionalservicecomponent::additionalservice_description_setter(instance):
-    original = instance.description
-    instance.description = original
-    assert instance.description == original
-
-@given(instance=Implementation::AdditionalServiceComponent::AdditionalService_strategy)
-def test_implementation::additionalservicecomponent::additionalservice_price_type(instance):
-    assert isinstance(instance.price, str)
-
-
-@given(instance=Implementation::AdditionalServiceComponent::AdditionalService_strategy)
-def test_implementation::additionalservicecomponent::additionalservice_price_setter(instance):
-    original = instance.price
-    instance.price = original
-    assert instance.price == original
-
-@given(instance=Implementation::AdditionalServiceComponent::AdditionalService_strategy)
-def test_implementation::additionalservicecomponent::additionalservice_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=Implementation::AdditionalServiceComponent::AdditionalService_strategy)
-def test_implementation::additionalservicecomponent::additionalservice_name_setter(instance):
+@given(instance=Implementation_AdditionalServiceComponent_AdditionalService_strategy)
+def test_implementation_additionalservicecomponent_additionalservice_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
 
-@given(instance=Implementation::AdditionalServiceComponent::AdditionalService_strategy)
-@settings(max_examples=30)
-def test_implementation::additionalservicecomponent::additionalservice_removeevents_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.removeEvents(
-            "test"
-        )
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.removeEvents).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'removeEvents' in Implementation::AdditionalServiceComponent::AdditionalService is empty"
 
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'removeEvents' in Implementation::AdditionalServiceComponent::AdditionalService did not change state; check implementation")
+@given(instance=Implementation_AdditionalServiceComponent_AdditionalService_strategy)
+def test_implementation_additionalservicecomponent_additionalservice_usable_setter(instance):
+    original = instance.usable
+    instance.usable = original
+    assert instance.usable == original
 
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'removeEvents' in Implementation::AdditionalServiceComponent::AdditionalService is not implemented or raised an error")
+
+
+@given(instance=Implementation_AdditionalServiceComponent_AdditionalService_strategy)
+def test_implementation_additionalservicecomponent_additionalservice_price_setter(instance):
+    original = instance.price
+    instance.price = original
+    assert instance.price == original
+
+
+
+@given(instance=Implementation_AdditionalServiceComponent_AdditionalService_strategy)
+def test_implementation_additionalservicecomponent_additionalservice_description_setter(instance):
+    original = instance.description
+    instance.description = original
+    assert instance.description == original
 
 import warnings
 import copy
@@ -3908,73 +3689,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=Implementation::AdditionalServiceComponent::AdditionalService_strategy)
+@given(instance=Implementation_AdditionalServiceComponent_AdditionalService_strategy)
 @settings(max_examples=30)
-def test_implementation::additionalservicecomponent::additionalservice_removeevent_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.removeEvent(
-            "test", 
-            "test"
-        )
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.removeEvent).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'removeEvent' in Implementation::AdditionalServiceComponent::AdditionalService is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'removeEvent' in Implementation::AdditionalServiceComponent::AdditionalService did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'removeEvent' in Implementation::AdditionalServiceComponent::AdditionalService is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=Implementation::AdditionalServiceComponent::AdditionalService_strategy)
-@settings(max_examples=30)
-def test_implementation::additionalservicecomponent::additionalservice_findevent_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.findEvent(
-            "test", 
-            "test"
-        )
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.findEvent).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'findEvent' in Implementation::AdditionalServiceComponent::AdditionalService is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'findEvent' in Implementation::AdditionalServiceComponent::AdditionalService did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'findEvent' in Implementation::AdditionalServiceComponent::AdditionalService is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=Implementation::AdditionalServiceComponent::AdditionalService_strategy)
-@settings(max_examples=30)
-def test_implementation::additionalservicecomponent::additionalservice_editevent_changes_state(instance):
+def test_implementation_additionalservicecomponent_additionalservice_editevent_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -3991,14 +3708,14 @@ def test_implementation::additionalservicecomponent::additionalservice_editevent
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'editEvent' in Implementation::AdditionalServiceComponent::AdditionalService is empty"
+        assert has_statements, f"Function 'editEvent' in Implementation_AdditionalServiceComponent_AdditionalService is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'editEvent' in Implementation::AdditionalServiceComponent::AdditionalService did not change state; check implementation")
+            warnings.warn(f"Operation 'editEvent' in Implementation_AdditionalServiceComponent_AdditionalService did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'editEvent' in Implementation::AdditionalServiceComponent::AdditionalService is not implemented or raised an error")
+        warnings.warn(f"Operation 'editEvent' in Implementation_AdditionalServiceComponent_AdditionalService is not implemented or raised an error")
 
 import warnings
 import copy
@@ -4006,9 +3723,72 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=Implementation::AdditionalServiceComponent::AdditionalService_strategy)
+@given(instance=Implementation_AdditionalServiceComponent_AdditionalService_strategy)
 @settings(max_examples=30)
-def test_implementation::additionalservicecomponent::additionalservice_findevents_changes_state(instance):
+def test_implementation_additionalservicecomponent_additionalservice_removeevent_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.removeEvent(
+            "test", 
+            "test"
+        )
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.removeEvent).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'removeEvent' in Implementation_AdditionalServiceComponent_AdditionalService is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'removeEvent' in Implementation_AdditionalServiceComponent_AdditionalService did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'removeEvent' in Implementation_AdditionalServiceComponent_AdditionalService is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=Implementation_AdditionalServiceComponent_AdditionalService_strategy)
+@settings(max_examples=30)
+def test_implementation_additionalservicecomponent_additionalservice_removeevents_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.removeEvents(
+            "test"
+        )
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.removeEvents).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'removeEvents' in Implementation_AdditionalServiceComponent_AdditionalService is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'removeEvents' in Implementation_AdditionalServiceComponent_AdditionalService did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'removeEvents' in Implementation_AdditionalServiceComponent_AdditionalService is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=Implementation_AdditionalServiceComponent_AdditionalService_strategy)
+@settings(max_examples=30)
+def test_implementation_additionalservicecomponent_additionalservice_findevents_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -4022,14 +3802,14 @@ def test_implementation::additionalservicecomponent::additionalservice_findevent
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'findEvents' in Implementation::AdditionalServiceComponent::AdditionalService is empty"
+        assert has_statements, f"Function 'findEvents' in Implementation_AdditionalServiceComponent_AdditionalService is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'findEvents' in Implementation::AdditionalServiceComponent::AdditionalService did not change state; check implementation")
+            warnings.warn(f"Operation 'findEvents' in Implementation_AdditionalServiceComponent_AdditionalService did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'findEvents' in Implementation::AdditionalServiceComponent::AdditionalService is not implemented or raised an error")
+        warnings.warn(f"Operation 'findEvents' in Implementation_AdditionalServiceComponent_AdditionalService is not implemented or raised an error")
 
 import warnings
 import copy
@@ -4037,9 +3817,41 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=Implementation::AdditionalServiceComponent::AdditionalService_strategy)
+@given(instance=Implementation_AdditionalServiceComponent_AdditionalService_strategy)
 @settings(max_examples=30)
-def test_implementation::additionalservicecomponent::additionalservice_createevent_changes_state(instance):
+def test_implementation_additionalservicecomponent_additionalservice_findevent_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.findEvent(
+            "test", 
+            "test"
+        )
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.findEvent).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'findEvent' in Implementation_AdditionalServiceComponent_AdditionalService is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'findEvent' in Implementation_AdditionalServiceComponent_AdditionalService did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'findEvent' in Implementation_AdditionalServiceComponent_AdditionalService is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=Implementation_AdditionalServiceComponent_AdditionalService_strategy)
+@settings(max_examples=30)
+def test_implementation_additionalservicecomponent_additionalservice_createevent_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -4056,19 +3868,19 @@ def test_implementation::additionalservicecomponent::additionalservice_createeve
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'createEvent' in Implementation::AdditionalServiceComponent::AdditionalService is empty"
+        assert has_statements, f"Function 'createEvent' in Implementation_AdditionalServiceComponent_AdditionalService is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'createEvent' in Implementation::AdditionalServiceComponent::AdditionalService did not change state; check implementation")
+            warnings.warn(f"Operation 'createEvent' in Implementation_AdditionalServiceComponent_AdditionalService did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'createEvent' in Implementation::AdditionalServiceComponent::AdditionalService is not implemented or raised an error")
+        warnings.warn(f"Operation 'createEvent' in Implementation_AdditionalServiceComponent_AdditionalService is not implemented or raised an error")
 
-@given(instance=Implementation::StaffComponent::IAuthentication_strategy)
+@given(instance=Implementation_StaffComponent_IAuthentication_strategy)
 @settings(max_examples=50)
-def test_implementation::staffcomponent::iauthentication_instantiation(instance):
-    assert isinstance(instance, Implementation::StaffComponent::IAuthentication)
+def test_implementation_staffcomponent_iauthentication_instantiation(instance):
+    assert isinstance(instance, Implementation_StaffComponent_IAuthentication)
 
 import warnings
 import copy
@@ -4076,9 +3888,40 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=Implementation::StaffComponent::IAuthentication_strategy)
+@given(instance=Implementation_StaffComponent_IAuthentication_strategy)
 @settings(max_examples=30)
-def test_implementation::staffcomponent::iauthentication_login_changes_state(instance):
+def test_implementation_staffcomponent_iauthentication_isloggedin_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.isLoggedIn(
+            "test"
+        )
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.isLoggedIn).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'isLoggedIn' in Implementation_StaffComponent_IAuthentication is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'isLoggedIn' in Implementation_StaffComponent_IAuthentication did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'isLoggedIn' in Implementation_StaffComponent_IAuthentication is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=Implementation_StaffComponent_IAuthentication_strategy)
+@settings(max_examples=30)
+def test_implementation_staffcomponent_iauthentication_login_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -4093,14 +3936,14 @@ def test_implementation::staffcomponent::iauthentication_login_changes_state(ins
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'logIn' in Implementation::StaffComponent::IAuthentication is empty"
+        assert has_statements, f"Function 'logIn' in Implementation_StaffComponent_IAuthentication is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'logIn' in Implementation::StaffComponent::IAuthentication did not change state; check implementation")
+            warnings.warn(f"Operation 'logIn' in Implementation_StaffComponent_IAuthentication did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'logIn' in Implementation::StaffComponent::IAuthentication is not implemented or raised an error")
+        warnings.warn(f"Operation 'logIn' in Implementation_StaffComponent_IAuthentication is not implemented or raised an error")
 
 import warnings
 import copy
@@ -4108,9 +3951,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=Implementation::StaffComponent::IAuthentication_strategy)
+@given(instance=Implementation_StaffComponent_IAuthentication_strategy)
 @settings(max_examples=30)
-def test_implementation::staffcomponent::iauthentication_logout_changes_state(instance):
+def test_implementation_staffcomponent_iauthentication_logout_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -4124,50 +3967,19 @@ def test_implementation::staffcomponent::iauthentication_logout_changes_state(in
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'logOut' in Implementation::StaffComponent::IAuthentication is empty"
+        assert has_statements, f"Function 'logOut' in Implementation_StaffComponent_IAuthentication is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'logOut' in Implementation::StaffComponent::IAuthentication did not change state; check implementation")
+            warnings.warn(f"Operation 'logOut' in Implementation_StaffComponent_IAuthentication did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'logOut' in Implementation::StaffComponent::IAuthentication is not implemented or raised an error")
+        warnings.warn(f"Operation 'logOut' in Implementation_StaffComponent_IAuthentication is not implemented or raised an error")
 
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=Implementation::StaffComponent::IAuthentication_strategy)
-@settings(max_examples=30)
-def test_implementation::staffcomponent::iauthentication_isloggedin_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.isLoggedIn(
-            "test"
-        )
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.isLoggedIn).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'isLoggedIn' in Implementation::StaffComponent::IAuthentication is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'isLoggedIn' in Implementation::StaffComponent::IAuthentication did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'isLoggedIn' in Implementation::StaffComponent::IAuthentication is not implemented or raised an error")
-
-@given(instance=Implementation::AdditionalServiceComponent::IEventManagement_strategy)
+@given(instance=Implementation_AdditionalServiceComponent_IEventManagement_strategy)
 @settings(max_examples=50)
-def test_implementation::additionalservicecomponent::ieventmanagement_instantiation(instance):
-    assert isinstance(instance, Implementation::AdditionalServiceComponent::IEventManagement)
+def test_implementation_additionalservicecomponent_ieventmanagement_instantiation(instance):
+    assert isinstance(instance, Implementation_AdditionalServiceComponent_IEventManagement)
 
 import warnings
 import copy
@@ -4175,9 +3987,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=Implementation::AdditionalServiceComponent::IEventManagement_strategy)
+@given(instance=Implementation_AdditionalServiceComponent_IEventManagement_strategy)
 @settings(max_examples=30)
-def test_implementation::additionalservicecomponent::ieventmanagement_addguesttoevent_changes_state(instance):
+def test_implementation_additionalservicecomponent_ieventmanagement_addguesttoevent_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -4194,14 +4006,14 @@ def test_implementation::additionalservicecomponent::ieventmanagement_addguestto
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'addGuestToEvent' in Implementation::AdditionalServiceComponent::IEventManagement is empty"
+        assert has_statements, f"Function 'addGuestToEvent' in Implementation_AdditionalServiceComponent_IEventManagement is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'addGuestToEvent' in Implementation::AdditionalServiceComponent::IEventManagement did not change state; check implementation")
+            warnings.warn(f"Operation 'addGuestToEvent' in Implementation_AdditionalServiceComponent_IEventManagement did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'addGuestToEvent' in Implementation::AdditionalServiceComponent::IEventManagement is not implemented or raised an error")
+        warnings.warn(f"Operation 'addGuestToEvent' in Implementation_AdditionalServiceComponent_IEventManagement is not implemented or raised an error")
 
 import warnings
 import copy
@@ -4209,9 +4021,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=Implementation::AdditionalServiceComponent::IEventManagement_strategy)
+@given(instance=Implementation_AdditionalServiceComponent_IEventManagement_strategy)
 @settings(max_examples=30)
-def test_implementation::additionalservicecomponent::ieventmanagement_removeguestsfromevent_changes_state(instance):
+def test_implementation_additionalservicecomponent_ieventmanagement_removeguestsfromevent_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -4228,19 +4040,19 @@ def test_implementation::additionalservicecomponent::ieventmanagement_removegues
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'removeGuestsFromEvent' in Implementation::AdditionalServiceComponent::IEventManagement is empty"
+        assert has_statements, f"Function 'removeGuestsFromEvent' in Implementation_AdditionalServiceComponent_IEventManagement is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'removeGuestsFromEvent' in Implementation::AdditionalServiceComponent::IEventManagement did not change state; check implementation")
+            warnings.warn(f"Operation 'removeGuestsFromEvent' in Implementation_AdditionalServiceComponent_IEventManagement did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'removeGuestsFromEvent' in Implementation::AdditionalServiceComponent::IEventManagement is not implemented or raised an error")
+        warnings.warn(f"Operation 'removeGuestsFromEvent' in Implementation_AdditionalServiceComponent_IEventManagement is not implemented or raised an error")
 
-@given(instance=Implementation::AdditionalServiceComponent::IAdditionalServiceAdministration_strategy)
+@given(instance=Implementation_AdditionalServiceComponent_IAdditionalServiceAdministration_strategy)
 @settings(max_examples=50)
-def test_implementation::additionalservicecomponent::iadditionalserviceadministration_instantiation(instance):
-    assert isinstance(instance, Implementation::AdditionalServiceComponent::IAdditionalServiceAdministration)
+def test_implementation_additionalservicecomponent_iadditionalserviceadministration_instantiation(instance):
+    assert isinstance(instance, Implementation_AdditionalServiceComponent_IAdditionalServiceAdministration)
 
 import warnings
 import copy
@@ -4248,9 +4060,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=Implementation::AdditionalServiceComponent::IAdditionalServiceAdministration_strategy)
+@given(instance=Implementation_AdditionalServiceComponent_IAdditionalServiceAdministration_strategy)
 @settings(max_examples=30)
-def test_implementation::additionalservicecomponent::iadditionalserviceadministration_editadditionalservice_changes_state(instance):
+def test_implementation_additionalservicecomponent_iadditionalserviceadministration_editadditionalservice_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -4268,14 +4080,14 @@ def test_implementation::additionalservicecomponent::iadditionalserviceadministr
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'editAdditionalService' in Implementation::AdditionalServiceComponent::IAdditionalServiceAdministration is empty"
+        assert has_statements, f"Function 'editAdditionalService' in Implementation_AdditionalServiceComponent_IAdditionalServiceAdministration is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'editAdditionalService' in Implementation::AdditionalServiceComponent::IAdditionalServiceAdministration did not change state; check implementation")
+            warnings.warn(f"Operation 'editAdditionalService' in Implementation_AdditionalServiceComponent_IAdditionalServiceAdministration did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'editAdditionalService' in Implementation::AdditionalServiceComponent::IAdditionalServiceAdministration is not implemented or raised an error")
+        warnings.warn(f"Operation 'editAdditionalService' in Implementation_AdditionalServiceComponent_IAdditionalServiceAdministration is not implemented or raised an error")
 
 import warnings
 import copy
@@ -4283,174 +4095,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=Implementation::AdditionalServiceComponent::IAdditionalServiceAdministration_strategy)
+@given(instance=Implementation_AdditionalServiceComponent_IAdditionalServiceAdministration_strategy)
 @settings(max_examples=30)
-def test_implementation::additionalservicecomponent::iadditionalserviceadministration_removeadditionalservice_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.removeAdditionalService(
-            "test"
-        )
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.removeAdditionalService).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'removeAdditionalService' in Implementation::AdditionalServiceComponent::IAdditionalServiceAdministration is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'removeAdditionalService' in Implementation::AdditionalServiceComponent::IAdditionalServiceAdministration did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'removeAdditionalService' in Implementation::AdditionalServiceComponent::IAdditionalServiceAdministration is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=Implementation::AdditionalServiceComponent::IAdditionalServiceAdministration_strategy)
-@settings(max_examples=30)
-def test_implementation::additionalservicecomponent::iadditionalserviceadministration_createadditionalservice_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.createAdditionalService(
-            "test", 
-            "test", 
-            "test", 
-            "test"
-        )
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.createAdditionalService).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'createAdditionalService' in Implementation::AdditionalServiceComponent::IAdditionalServiceAdministration is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'createAdditionalService' in Implementation::AdditionalServiceComponent::IAdditionalServiceAdministration did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'createAdditionalService' in Implementation::AdditionalServiceComponent::IAdditionalServiceAdministration is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=Implementation::AdditionalServiceComponent::IAdditionalServiceAdministration_strategy)
-@settings(max_examples=30)
-def test_implementation::additionalservicecomponent::iadditionalserviceadministration_removeevents_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.removeEvents(
-            "test", 
-            "test"
-        )
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.removeEvents).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'removeEvents' in Implementation::AdditionalServiceComponent::IAdditionalServiceAdministration is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'removeEvents' in Implementation::AdditionalServiceComponent::IAdditionalServiceAdministration did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'removeEvents' in Implementation::AdditionalServiceComponent::IAdditionalServiceAdministration is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=Implementation::AdditionalServiceComponent::IAdditionalServiceAdministration_strategy)
-@settings(max_examples=30)
-def test_implementation::additionalservicecomponent::iadditionalserviceadministration_removeevent_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.removeEvent(
-            "test", 
-            "test", 
-            "test"
-        )
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.removeEvent).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'removeEvent' in Implementation::AdditionalServiceComponent::IAdditionalServiceAdministration is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'removeEvent' in Implementation::AdditionalServiceComponent::IAdditionalServiceAdministration did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'removeEvent' in Implementation::AdditionalServiceComponent::IAdditionalServiceAdministration is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=Implementation::AdditionalServiceComponent::IAdditionalServiceAdministration_strategy)
-@settings(max_examples=30)
-def test_implementation::additionalservicecomponent::iadditionalserviceadministration_createevent_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.createEvent(
-            "test", 
-            "test", 
-            "test", 
-            "test", 
-            "test"
-        )
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.createEvent).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'createEvent' in Implementation::AdditionalServiceComponent::IAdditionalServiceAdministration is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'createEvent' in Implementation::AdditionalServiceComponent::IAdditionalServiceAdministration did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'createEvent' in Implementation::AdditionalServiceComponent::IAdditionalServiceAdministration is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=Implementation::AdditionalServiceComponent::IAdditionalServiceAdministration_strategy)
-@settings(max_examples=30)
-def test_implementation::additionalservicecomponent::iadditionalserviceadministration_editevent_changes_state(instance):
+def test_implementation_additionalservicecomponent_iadditionalserviceadministration_editevent_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -4468,29 +4115,14 @@ def test_implementation::additionalservicecomponent::iadditionalserviceadministr
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'editEvent' in Implementation::AdditionalServiceComponent::IAdditionalServiceAdministration is empty"
+        assert has_statements, f"Function 'editEvent' in Implementation_AdditionalServiceComponent_IAdditionalServiceAdministration is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'editEvent' in Implementation::AdditionalServiceComponent::IAdditionalServiceAdministration did not change state; check implementation")
+            warnings.warn(f"Operation 'editEvent' in Implementation_AdditionalServiceComponent_IAdditionalServiceAdministration did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'editEvent' in Implementation::AdditionalServiceComponent::IAdditionalServiceAdministration is not implemented or raised an error")
-
-@given(instance=AdditionalServiceComponent::IEventManagement_strategy)
-@settings(max_examples=50)
-def test_additionalservicecomponent::ieventmanagement_instantiation(instance):
-    assert isinstance(instance, AdditionalServiceComponent::IEventManagement)
-
-@given(instance=AdditionalServiceComponent::IAdditionalServiceAdministration_strategy)
-@settings(max_examples=50)
-def test_additionalservicecomponent::iadditionalserviceadministration_instantiation(instance):
-    assert isinstance(instance, AdditionalServiceComponent::IAdditionalServiceAdministration)
-
-@given(instance=Implementation::AdditionalServiceComponent::AdditionalServiceHandler_strategy)
-@settings(max_examples=50)
-def test_implementation::additionalservicecomponent::additionalservicehandler_instantiation(instance):
-    assert isinstance(instance, Implementation::AdditionalServiceComponent::AdditionalServiceHandler)
+        warnings.warn(f"Operation 'editEvent' in Implementation_AdditionalServiceComponent_IAdditionalServiceAdministration is not implemented or raised an error")
 
 import warnings
 import copy
@@ -4498,9 +4130,189 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=Implementation::AdditionalServiceComponent::AdditionalServiceHandler_strategy)
+@given(instance=Implementation_AdditionalServiceComponent_IAdditionalServiceAdministration_strategy)
 @settings(max_examples=30)
-def test_implementation::additionalservicecomponent::additionalservicehandler_findservice_changes_state(instance):
+def test_implementation_additionalservicecomponent_iadditionalserviceadministration_removeadditionalservice_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.removeAdditionalService(
+            "test"
+        )
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.removeAdditionalService).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'removeAdditionalService' in Implementation_AdditionalServiceComponent_IAdditionalServiceAdministration is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'removeAdditionalService' in Implementation_AdditionalServiceComponent_IAdditionalServiceAdministration did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'removeAdditionalService' in Implementation_AdditionalServiceComponent_IAdditionalServiceAdministration is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=Implementation_AdditionalServiceComponent_IAdditionalServiceAdministration_strategy)
+@settings(max_examples=30)
+def test_implementation_additionalservicecomponent_iadditionalserviceadministration_removeevent_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.removeEvent(
+            "test", 
+            "test", 
+            "test"
+        )
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.removeEvent).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'removeEvent' in Implementation_AdditionalServiceComponent_IAdditionalServiceAdministration is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'removeEvent' in Implementation_AdditionalServiceComponent_IAdditionalServiceAdministration did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'removeEvent' in Implementation_AdditionalServiceComponent_IAdditionalServiceAdministration is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=Implementation_AdditionalServiceComponent_IAdditionalServiceAdministration_strategy)
+@settings(max_examples=30)
+def test_implementation_additionalservicecomponent_iadditionalserviceadministration_createevent_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.createEvent(
+            "test", 
+            "test", 
+            "test", 
+            "test", 
+            "test"
+        )
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.createEvent).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'createEvent' in Implementation_AdditionalServiceComponent_IAdditionalServiceAdministration is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'createEvent' in Implementation_AdditionalServiceComponent_IAdditionalServiceAdministration did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'createEvent' in Implementation_AdditionalServiceComponent_IAdditionalServiceAdministration is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=Implementation_AdditionalServiceComponent_IAdditionalServiceAdministration_strategy)
+@settings(max_examples=30)
+def test_implementation_additionalservicecomponent_iadditionalserviceadministration_removeevents_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.removeEvents(
+            "test", 
+            "test"
+        )
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.removeEvents).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'removeEvents' in Implementation_AdditionalServiceComponent_IAdditionalServiceAdministration is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'removeEvents' in Implementation_AdditionalServiceComponent_IAdditionalServiceAdministration did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'removeEvents' in Implementation_AdditionalServiceComponent_IAdditionalServiceAdministration is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=Implementation_AdditionalServiceComponent_IAdditionalServiceAdministration_strategy)
+@settings(max_examples=30)
+def test_implementation_additionalservicecomponent_iadditionalserviceadministration_createadditionalservice_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.createAdditionalService(
+            "test", 
+            "test", 
+            "test", 
+            "test"
+        )
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.createAdditionalService).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'createAdditionalService' in Implementation_AdditionalServiceComponent_IAdditionalServiceAdministration is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'createAdditionalService' in Implementation_AdditionalServiceComponent_IAdditionalServiceAdministration did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'createAdditionalService' in Implementation_AdditionalServiceComponent_IAdditionalServiceAdministration is not implemented or raised an error")
+
+@given(instance=AdditionalServiceComponent_IEventManagement_strategy)
+@settings(max_examples=50)
+def test_additionalservicecomponent_ieventmanagement_instantiation(instance):
+    assert isinstance(instance, AdditionalServiceComponent_IEventManagement)
+
+@given(instance=AdditionalServiceComponent_IAdditionalServiceAdministration_strategy)
+@settings(max_examples=50)
+def test_additionalservicecomponent_iadditionalserviceadministration_instantiation(instance):
+    assert isinstance(instance, AdditionalServiceComponent_IAdditionalServiceAdministration)
+
+@given(instance=Implementation_AdditionalServiceComponent_AdditionalServiceHandler_strategy)
+@settings(max_examples=50)
+def test_implementation_additionalservicecomponent_additionalservicehandler_instantiation(instance):
+    assert isinstance(instance, Implementation_AdditionalServiceComponent_AdditionalServiceHandler)
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=Implementation_AdditionalServiceComponent_AdditionalServiceHandler_strategy)
+@settings(max_examples=30)
+def test_implementation_additionalservicecomponent_additionalservicehandler_findservice_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -4514,106 +4326,85 @@ def test_implementation::additionalservicecomponent::additionalservicehandler_fi
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'findService' in Implementation::AdditionalServiceComponent::AdditionalServiceHandler is empty"
+        assert has_statements, f"Function 'findService' in Implementation_AdditionalServiceComponent_AdditionalServiceHandler is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'findService' in Implementation::AdditionalServiceComponent::AdditionalServiceHandler did not change state; check implementation")
+            warnings.warn(f"Operation 'findService' in Implementation_AdditionalServiceComponent_AdditionalServiceHandler did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'findService' in Implementation::AdditionalServiceComponent::AdditionalServiceHandler is not implemented or raised an error")
+        warnings.warn(f"Operation 'findService' in Implementation_AdditionalServiceComponent_AdditionalServiceHandler is not implemented or raised an error")
 
-@given(instance=Implementation::AdditionalServiceComponent_strategy)
+@given(instance=Implementation_AdditionalServiceComponent_strategy)
 @settings(max_examples=50)
-def test_implementation::additionalservicecomponent_instantiation(instance):
-    assert isinstance(instance, Implementation::AdditionalServiceComponent)
+def test_implementation_additionalservicecomponent_instantiation(instance):
+    assert isinstance(instance, Implementation_AdditionalServiceComponent)
 
-@given(instance=Implementation::PaymentComponent::Payment_strategy)
+@given(instance=Implementation_PaymentComponent_Payment_strategy)
 @settings(max_examples=50)
-def test_implementation::paymentcomponent::payment_instantiation(instance):
-    assert isinstance(instance, Implementation::PaymentComponent::Payment)
-
-@given(instance=Implementation::PaymentComponent::Payment_strategy)
-def test_implementation::paymentcomponent::payment_expiryMonth_type(instance):
-    assert isinstance(instance.expiryMonth, str)
+def test_implementation_paymentcomponent_payment_instantiation(instance):
+    assert isinstance(instance, Implementation_PaymentComponent_Payment)
 
 
-@given(instance=Implementation::PaymentComponent::Payment_strategy)
-def test_implementation::paymentcomponent::payment_expiryMonth_setter(instance):
-    original = instance.expiryMonth
-    instance.expiryMonth = original
-    assert instance.expiryMonth == original
 
-@given(instance=Implementation::PaymentComponent::Payment_strategy)
-def test_implementation::paymentcomponent::payment_ccNumber_type(instance):
-    assert isinstance(instance.ccNumber, str)
-
-
-@given(instance=Implementation::PaymentComponent::Payment_strategy)
-def test_implementation::paymentcomponent::payment_ccNumber_setter(instance):
+@given(instance=Implementation_PaymentComponent_Payment_strategy)
+def test_implementation_paymentcomponent_payment_ccNumber_setter(instance):
     original = instance.ccNumber
     instance.ccNumber = original
     assert instance.ccNumber == original
 
-@given(instance=Implementation::PaymentComponent::Payment_strategy)
-def test_implementation::paymentcomponent::payment_ccv_type(instance):
-    assert isinstance(instance.ccv, str)
 
 
-@given(instance=Implementation::PaymentComponent::Payment_strategy)
-def test_implementation::paymentcomponent::payment_ccv_setter(instance):
-    original = instance.ccv
-    instance.ccv = original
-    assert instance.ccv == original
-
-@given(instance=Implementation::PaymentComponent::Payment_strategy)
-def test_implementation::paymentcomponent::payment_expiryYear_type(instance):
-    assert isinstance(instance.expiryYear, str)
-
-
-@given(instance=Implementation::PaymentComponent::Payment_strategy)
-def test_implementation::paymentcomponent::payment_expiryYear_setter(instance):
-    original = instance.expiryYear
-    instance.expiryYear = original
-    assert instance.expiryYear == original
-
-@given(instance=Implementation::PaymentComponent::Payment_strategy)
-def test_implementation::paymentcomponent::payment_firstName_type(instance):
-    assert isinstance(instance.firstName, str)
-
-
-@given(instance=Implementation::PaymentComponent::Payment_strategy)
-def test_implementation::paymentcomponent::payment_firstName_setter(instance):
-    original = instance.firstName
-    instance.firstName = original
-    assert instance.firstName == original
-
-@given(instance=Implementation::PaymentComponent::Payment_strategy)
-def test_implementation::paymentcomponent::payment_amount_type(instance):
-    assert isinstance(instance.amount, float)
-
-
-@given(instance=Implementation::PaymentComponent::Payment_strategy)
-def test_implementation::paymentcomponent::payment_amount_setter(instance):
+@given(instance=Implementation_PaymentComponent_Payment_strategy)
+def test_implementation_paymentcomponent_payment_amount_setter(instance):
     original = instance.amount
     instance.amount = original
     assert instance.amount == original
 
-@given(instance=Implementation::PaymentComponent::Payment_strategy)
-def test_implementation::paymentcomponent::payment_lastName_type(instance):
-    assert isinstance(instance.lastName, str)
 
 
-@given(instance=Implementation::PaymentComponent::Payment_strategy)
-def test_implementation::paymentcomponent::payment_lastName_setter(instance):
+@given(instance=Implementation_PaymentComponent_Payment_strategy)
+def test_implementation_paymentcomponent_payment_expiryMonth_setter(instance):
+    original = instance.expiryMonth
+    instance.expiryMonth = original
+    assert instance.expiryMonth == original
+
+
+
+@given(instance=Implementation_PaymentComponent_Payment_strategy)
+def test_implementation_paymentcomponent_payment_firstName_setter(instance):
+    original = instance.firstName
+    instance.firstName = original
+    assert instance.firstName == original
+
+
+
+@given(instance=Implementation_PaymentComponent_Payment_strategy)
+def test_implementation_paymentcomponent_payment_expiryYear_setter(instance):
+    original = instance.expiryYear
+    instance.expiryYear = original
+    assert instance.expiryYear == original
+
+
+
+@given(instance=Implementation_PaymentComponent_Payment_strategy)
+def test_implementation_paymentcomponent_payment_ccv_setter(instance):
+    original = instance.ccv
+    instance.ccv = original
+    assert instance.ccv == original
+
+
+
+@given(instance=Implementation_PaymentComponent_Payment_strategy)
+def test_implementation_paymentcomponent_payment_lastName_setter(instance):
     original = instance.lastName
     instance.lastName = original
     assert instance.lastName == original
 
-@given(instance=Implementation::Bank::AdministratorProvides_strategy)
+@given(instance=Implementation_Bank_AdministratorProvides_strategy)
 @settings(max_examples=50)
-def test_implementation::bank::administratorprovides_instantiation(instance):
-    assert isinstance(instance, Implementation::Bank::AdministratorProvides)
+def test_implementation_bank_administratorprovides_instantiation(instance):
+    assert isinstance(instance, Implementation_Bank_AdministratorProvides)
 
 import warnings
 import copy
@@ -4621,82 +4412,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=Implementation::Bank::AdministratorProvides_strategy)
+@given(instance=Implementation_Bank_AdministratorProvides_strategy)
 @settings(max_examples=30)
-def test_implementation::bank::administratorprovides_makedeposit_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.makeDeposit(
-            "test", 
-            "test", 
-            "test", 
-            "test", 
-            "test", 
-            "test", 
-            "test"
-        )
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.makeDeposit).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'makeDeposit' in Implementation::Bank::AdministratorProvides is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'makeDeposit' in Implementation::Bank::AdministratorProvides did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'makeDeposit' in Implementation::Bank::AdministratorProvides is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=Implementation::Bank::AdministratorProvides_strategy)
-@settings(max_examples=30)
-def test_implementation::bank::administratorprovides_removecreditcard_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.removeCreditCard(
-            "test", 
-            "test", 
-            "test", 
-            "test", 
-            "test", 
-            "test"
-        )
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.removeCreditCard).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'removeCreditCard' in Implementation::Bank::AdministratorProvides is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'removeCreditCard' in Implementation::Bank::AdministratorProvides did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'removeCreditCard' in Implementation::Bank::AdministratorProvides is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=Implementation::Bank::AdministratorProvides_strategy)
-@settings(max_examples=30)
-def test_implementation::bank::administratorprovides_addcreditcard_changes_state(instance):
+def test_implementation_bank_administratorprovides_addcreditcard_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -4715,19 +4433,14 @@ def test_implementation::bank::administratorprovides_addcreditcard_changes_state
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'addCreditCard' in Implementation::Bank::AdministratorProvides is empty"
+        assert has_statements, f"Function 'addCreditCard' in Implementation_Bank_AdministratorProvides is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'addCreditCard' in Implementation::Bank::AdministratorProvides did not change state; check implementation")
+            warnings.warn(f"Operation 'addCreditCard' in Implementation_Bank_AdministratorProvides did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'addCreditCard' in Implementation::Bank::AdministratorProvides is not implemented or raised an error")
-
-@given(instance=Implementation::Bank::CustomerProvides_strategy)
-@settings(max_examples=50)
-def test_implementation::bank::customerprovides_instantiation(instance):
-    assert isinstance(instance, Implementation::Bank::CustomerProvides)
+        warnings.warn(f"Operation 'addCreditCard' in Implementation_Bank_AdministratorProvides is not implemented or raised an error")
 
 import warnings
 import copy
@@ -4735,359 +4448,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=Implementation::Bank::CustomerProvides_strategy)
+@given(instance=Implementation_Bank_AdministratorProvides_strategy)
 @settings(max_examples=30)
-def test_implementation::bank::customerprovides_iscreditcardvalid_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.isCreditCardValid(
-            "test", 
-            "test", 
-            "test", 
-            "test", 
-            "test", 
-            "test"
-        )
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.isCreditCardValid).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'isCreditCardValid' in Implementation::Bank::CustomerProvides is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'isCreditCardValid' in Implementation::Bank::CustomerProvides did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'isCreditCardValid' in Implementation::Bank::CustomerProvides is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=Implementation::Bank::CustomerProvides_strategy)
-@settings(max_examples=30)
-def test_implementation::bank::customerprovides_makepayment_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.makePayment(
-            "test", 
-            "test", 
-            "test", 
-            "test", 
-            "test", 
-            "test", 
-            "test"
-        )
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.makePayment).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'makePayment' in Implementation::Bank::CustomerProvides is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'makePayment' in Implementation::Bank::CustomerProvides did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'makePayment' in Implementation::Bank::CustomerProvides is not implemented or raised an error")
-
-@given(instance=Implementation::BookingComponent::IBookingInformation_strategy)
-@settings(max_examples=50)
-def test_implementation::bookingcomponent::ibookinginformation_instantiation(instance):
-    assert isinstance(instance, Implementation::BookingComponent::IBookingInformation)
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=Implementation::BookingComponent::IBookingInformation_strategy)
-@settings(max_examples=30)
-def test_implementation::bookingcomponent::ibookinginformation_makepayment_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.makePayment(
-            "test"
-        )
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.makePayment).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'makePayment' in Implementation::BookingComponent::IBookingInformation is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'makePayment' in Implementation::BookingComponent::IBookingInformation did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'makePayment' in Implementation::BookingComponent::IBookingInformation is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=Implementation::BookingComponent::IBookingInformation_strategy)
-@settings(max_examples=30)
-def test_implementation::bookingcomponent::ibookinginformation_searchavailableroomtypes_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.searchAvailableRoomTypes(
-            "test", 
-            "test"
-        )
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.searchAvailableRoomTypes).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'searchAvailableRoomTypes' in Implementation::BookingComponent::IBookingInformation is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'searchAvailableRoomTypes' in Implementation::BookingComponent::IBookingInformation did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'searchAvailableRoomTypes' in Implementation::BookingComponent::IBookingInformation is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=Implementation::BookingComponent::IBookingInformation_strategy)
-@settings(max_examples=30)
-def test_implementation::bookingcomponent::ibookinginformation_findbookingsbydateandtype_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.findBookingsByDateAndType(
-            "test", 
-            "test", 
-            "test"
-        )
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.findBookingsByDateAndType).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'findBookingsByDateAndType' in Implementation::BookingComponent::IBookingInformation is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'findBookingsByDateAndType' in Implementation::BookingComponent::IBookingInformation did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'findBookingsByDateAndType' in Implementation::BookingComponent::IBookingInformation is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=Implementation::BookingComponent::IBookingInformation_strategy)
-@settings(max_examples=30)
-def test_implementation::bookingcomponent::ibookinginformation_searchforbooking_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.searchForBooking(
-            "test"
-        )
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.searchForBooking).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'searchForBooking' in Implementation::BookingComponent::IBookingInformation is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'searchForBooking' in Implementation::BookingComponent::IBookingInformation did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'searchForBooking' in Implementation::BookingComponent::IBookingInformation is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=Implementation::BookingComponent::IBookingInformation_strategy)
-@settings(max_examples=30)
-def test_implementation::bookingcomponent::ibookinginformation_ispaidfor_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.isPaidFor(
-            "test"
-        )
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.isPaidFor).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'isPaidFor' in Implementation::BookingComponent::IBookingInformation is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'isPaidFor' in Implementation::BookingComponent::IBookingInformation did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'isPaidFor' in Implementation::BookingComponent::IBookingInformation is not implemented or raised an error")
-
-@given(instance=Implementation::PaymentComponent::IPayment_strategy)
-@settings(max_examples=50)
-def test_implementation::paymentcomponent::ipayment_instantiation(instance):
-    assert isinstance(instance, Implementation::PaymentComponent::IPayment)
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=Implementation::PaymentComponent::IPayment_strategy)
-@settings(max_examples=30)
-def test_implementation::paymentcomponent::ipayment_makepayment_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.makePayment(
-            "test", 
-            "test", 
-            "test", 
-            "test", 
-            "test", 
-            "test", 
-            "test"
-        )
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.makePayment).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'makePayment' in Implementation::PaymentComponent::IPayment is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'makePayment' in Implementation::PaymentComponent::IPayment did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'makePayment' in Implementation::PaymentComponent::IPayment is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=Implementation::PaymentComponent::IPayment_strategy)
-@settings(max_examples=30)
-def test_implementation::paymentcomponent::ipayment_addcc_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.addCC(
-            "test", 
-            "test", 
-            "test", 
-            "test", 
-            "test", 
-            "test"
-        )
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.addCC).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'addCC' in Implementation::PaymentComponent::IPayment is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'addCC' in Implementation::PaymentComponent::IPayment did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'addCC' in Implementation::PaymentComponent::IPayment is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=Implementation::PaymentComponent::IPayment_strategy)
-@settings(max_examples=30)
-def test_implementation::paymentcomponent::ipayment_checkbalance_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.checkBalance(
-            "test", 
-            "test", 
-            "test", 
-            "test", 
-            "test", 
-            "test"
-        )
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.checkBalance).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'checkBalance' in Implementation::PaymentComponent::IPayment is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'checkBalance' in Implementation::PaymentComponent::IPayment did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'checkBalance' in Implementation::PaymentComponent::IPayment is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=Implementation::PaymentComponent::IPayment_strategy)
-@settings(max_examples=30)
-def test_implementation::paymentcomponent::ipayment_makedeposit_changes_state(instance):
+def test_implementation_bank_administratorprovides_makedeposit_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -5107,14 +4470,14 @@ def test_implementation::paymentcomponent::ipayment_makedeposit_changes_state(in
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'makeDeposit' in Implementation::PaymentComponent::IPayment is empty"
+        assert has_statements, f"Function 'makeDeposit' in Implementation_Bank_AdministratorProvides is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'makeDeposit' in Implementation::PaymentComponent::IPayment did not change state; check implementation")
+            warnings.warn(f"Operation 'makeDeposit' in Implementation_Bank_AdministratorProvides did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'makeDeposit' in Implementation::PaymentComponent::IPayment is not implemented or raised an error")
+        warnings.warn(f"Operation 'makeDeposit' in Implementation_Bank_AdministratorProvides is not implemented or raised an error")
 
 import warnings
 import copy
@@ -5122,13 +4485,13 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=Implementation::PaymentComponent::IPayment_strategy)
+@given(instance=Implementation_Bank_AdministratorProvides_strategy)
 @settings(max_examples=30)
-def test_implementation::paymentcomponent::ipayment_validatecc_changes_state(instance):
+def test_implementation_bank_administratorprovides_removecreditcard_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
-        instance.validateCC(
+        instance.removeCreditCard(
             "test", 
             "test", 
             "test", 
@@ -5139,18 +4502,23 @@ def test_implementation::paymentcomponent::ipayment_validatecc_changes_state(ins
         if instance.__dict__ != before.__dict__:
             return  # test passes
         # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.validateCC).strip()
+        source = inspect.getsource(instance.removeCreditCard).strip()
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'validateCC' in Implementation::PaymentComponent::IPayment is empty"
+        assert has_statements, f"Function 'removeCreditCard' in Implementation_Bank_AdministratorProvides is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'validateCC' in Implementation::PaymentComponent::IPayment did not change state; check implementation")
+            warnings.warn(f"Operation 'removeCreditCard' in Implementation_Bank_AdministratorProvides did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'validateCC' in Implementation::PaymentComponent::IPayment is not implemented or raised an error")
+        warnings.warn(f"Operation 'removeCreditCard' in Implementation_Bank_AdministratorProvides is not implemented or raised an error")
+
+@given(instance=Implementation_Bank_CustomerProvides_strategy)
+@settings(max_examples=50)
+def test_implementation_bank_customerprovides_instantiation(instance):
+    assert isinstance(instance, Implementation_Bank_CustomerProvides)
 
 import warnings
 import copy
@@ -5158,9 +4526,359 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=Implementation::PaymentComponent::IPayment_strategy)
+@given(instance=Implementation_Bank_CustomerProvides_strategy)
 @settings(max_examples=30)
-def test_implementation::paymentcomponent::ipayment_removecc_changes_state(instance):
+def test_implementation_bank_customerprovides_iscreditcardvalid_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.isCreditCardValid(
+            "test", 
+            "test", 
+            "test", 
+            "test", 
+            "test", 
+            "test"
+        )
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.isCreditCardValid).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'isCreditCardValid' in Implementation_Bank_CustomerProvides is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'isCreditCardValid' in Implementation_Bank_CustomerProvides did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'isCreditCardValid' in Implementation_Bank_CustomerProvides is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=Implementation_Bank_CustomerProvides_strategy)
+@settings(max_examples=30)
+def test_implementation_bank_customerprovides_makepayment_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.makePayment(
+            "test", 
+            "test", 
+            "test", 
+            "test", 
+            "test", 
+            "test", 
+            "test"
+        )
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.makePayment).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'makePayment' in Implementation_Bank_CustomerProvides is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'makePayment' in Implementation_Bank_CustomerProvides did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'makePayment' in Implementation_Bank_CustomerProvides is not implemented or raised an error")
+
+@given(instance=Implementation_BookingComponent_IBookingInformation_strategy)
+@settings(max_examples=50)
+def test_implementation_bookingcomponent_ibookinginformation_instantiation(instance):
+    assert isinstance(instance, Implementation_BookingComponent_IBookingInformation)
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=Implementation_BookingComponent_IBookingInformation_strategy)
+@settings(max_examples=30)
+def test_implementation_bookingcomponent_ibookinginformation_searchforbooking_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.searchForBooking(
+            "test"
+        )
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.searchForBooking).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'searchForBooking' in Implementation_BookingComponent_IBookingInformation is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'searchForBooking' in Implementation_BookingComponent_IBookingInformation did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'searchForBooking' in Implementation_BookingComponent_IBookingInformation is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=Implementation_BookingComponent_IBookingInformation_strategy)
+@settings(max_examples=30)
+def test_implementation_bookingcomponent_ibookinginformation_searchavailableroomtypes_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.searchAvailableRoomTypes(
+            "test", 
+            "test"
+        )
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.searchAvailableRoomTypes).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'searchAvailableRoomTypes' in Implementation_BookingComponent_IBookingInformation is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'searchAvailableRoomTypes' in Implementation_BookingComponent_IBookingInformation did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'searchAvailableRoomTypes' in Implementation_BookingComponent_IBookingInformation is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=Implementation_BookingComponent_IBookingInformation_strategy)
+@settings(max_examples=30)
+def test_implementation_bookingcomponent_ibookinginformation_ispaidfor_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.isPaidFor(
+            "test"
+        )
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.isPaidFor).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'isPaidFor' in Implementation_BookingComponent_IBookingInformation is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'isPaidFor' in Implementation_BookingComponent_IBookingInformation did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'isPaidFor' in Implementation_BookingComponent_IBookingInformation is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=Implementation_BookingComponent_IBookingInformation_strategy)
+@settings(max_examples=30)
+def test_implementation_bookingcomponent_ibookinginformation_makepayment_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.makePayment(
+            "test"
+        )
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.makePayment).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'makePayment' in Implementation_BookingComponent_IBookingInformation is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'makePayment' in Implementation_BookingComponent_IBookingInformation did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'makePayment' in Implementation_BookingComponent_IBookingInformation is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=Implementation_BookingComponent_IBookingInformation_strategy)
+@settings(max_examples=30)
+def test_implementation_bookingcomponent_ibookinginformation_findbookingsbydateandtype_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.findBookingsByDateAndType(
+            "test", 
+            "test", 
+            "test"
+        )
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.findBookingsByDateAndType).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'findBookingsByDateAndType' in Implementation_BookingComponent_IBookingInformation is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'findBookingsByDateAndType' in Implementation_BookingComponent_IBookingInformation did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'findBookingsByDateAndType' in Implementation_BookingComponent_IBookingInformation is not implemented or raised an error")
+
+@given(instance=Implementation_PaymentComponent_IPayment_strategy)
+@settings(max_examples=50)
+def test_implementation_paymentcomponent_ipayment_instantiation(instance):
+    assert isinstance(instance, Implementation_PaymentComponent_IPayment)
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=Implementation_PaymentComponent_IPayment_strategy)
+@settings(max_examples=30)
+def test_implementation_paymentcomponent_ipayment_addcc_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.addCC(
+            "test", 
+            "test", 
+            "test", 
+            "test", 
+            "test", 
+            "test"
+        )
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.addCC).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'addCC' in Implementation_PaymentComponent_IPayment is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'addCC' in Implementation_PaymentComponent_IPayment did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'addCC' in Implementation_PaymentComponent_IPayment is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=Implementation_PaymentComponent_IPayment_strategy)
+@settings(max_examples=30)
+def test_implementation_paymentcomponent_ipayment_makepayment_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.makePayment(
+            "test", 
+            "test", 
+            "test", 
+            "test", 
+            "test", 
+            "test", 
+            "test"
+        )
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.makePayment).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'makePayment' in Implementation_PaymentComponent_IPayment is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'makePayment' in Implementation_PaymentComponent_IPayment did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'makePayment' in Implementation_PaymentComponent_IPayment is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=Implementation_PaymentComponent_IPayment_strategy)
+@settings(max_examples=30)
+def test_implementation_paymentcomponent_ipayment_checkbalance_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.checkBalance(
+            "test", 
+            "test", 
+            "test", 
+            "test", 
+            "test", 
+            "test"
+        )
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.checkBalance).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'checkBalance' in Implementation_PaymentComponent_IPayment is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'checkBalance' in Implementation_PaymentComponent_IPayment did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'checkBalance' in Implementation_PaymentComponent_IPayment is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=Implementation_PaymentComponent_IPayment_strategy)
+@settings(max_examples=30)
+def test_implementation_paymentcomponent_ipayment_removecc_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -5179,34 +4897,14 @@ def test_implementation::paymentcomponent::ipayment_removecc_changes_state(insta
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'removeCC' in Implementation::PaymentComponent::IPayment is empty"
+        assert has_statements, f"Function 'removeCC' in Implementation_PaymentComponent_IPayment is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'removeCC' in Implementation::PaymentComponent::IPayment did not change state; check implementation")
+            warnings.warn(f"Operation 'removeCC' in Implementation_PaymentComponent_IPayment did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'removeCC' in Implementation::PaymentComponent::IPayment is not implemented or raised an error")
-
-@given(instance=PaymentComponent::IPayment_strategy)
-@settings(max_examples=50)
-def test_paymentcomponent::ipayment_instantiation(instance):
-    assert isinstance(instance, PaymentComponent::IPayment)
-
-@given(instance=Implementation::PaymentComponent::PaymentHandler_strategy)
-@settings(max_examples=50)
-def test_implementation::paymentcomponent::paymenthandler_instantiation(instance):
-    assert isinstance(instance, Implementation::PaymentComponent::PaymentHandler)
-
-@given(instance=Implementation::PaymentComponent_strategy)
-@settings(max_examples=50)
-def test_implementation::paymentcomponent_instantiation(instance):
-    assert isinstance(instance, Implementation::PaymentComponent)
-
-@given(instance=Implementation::OccupancyComponent::IOccupancy_strategy)
-@settings(max_examples=50)
-def test_implementation::occupancycomponent::ioccupancy_instantiation(instance):
-    assert isinstance(instance, Implementation::OccupancyComponent::IOccupancy)
+        warnings.warn(f"Operation 'removeCC' in Implementation_PaymentComponent_IPayment is not implemented or raised an error")
 
 import warnings
 import copy
@@ -5214,9 +4912,131 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=Implementation::OccupancyComponent::IOccupancy_strategy)
+@given(instance=Implementation_PaymentComponent_IPayment_strategy)
 @settings(max_examples=30)
-def test_implementation::occupancycomponent::ioccupancy_checkoutguest_changes_state(instance):
+def test_implementation_paymentcomponent_ipayment_makedeposit_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.makeDeposit(
+            "test", 
+            "test", 
+            "test", 
+            "test", 
+            "test", 
+            "test", 
+            "test"
+        )
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.makeDeposit).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'makeDeposit' in Implementation_PaymentComponent_IPayment is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'makeDeposit' in Implementation_PaymentComponent_IPayment did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'makeDeposit' in Implementation_PaymentComponent_IPayment is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=Implementation_PaymentComponent_IPayment_strategy)
+@settings(max_examples=30)
+def test_implementation_paymentcomponent_ipayment_validatecc_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.validateCC(
+            "test", 
+            "test", 
+            "test", 
+            "test", 
+            "test", 
+            "test"
+        )
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.validateCC).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'validateCC' in Implementation_PaymentComponent_IPayment is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'validateCC' in Implementation_PaymentComponent_IPayment did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'validateCC' in Implementation_PaymentComponent_IPayment is not implemented or raised an error")
+
+@given(instance=PaymentComponent_IPayment_strategy)
+@settings(max_examples=50)
+def test_paymentcomponent_ipayment_instantiation(instance):
+    assert isinstance(instance, PaymentComponent_IPayment)
+
+@given(instance=Implementation_PaymentComponent_PaymentHandler_strategy)
+@settings(max_examples=50)
+def test_implementation_paymentcomponent_paymenthandler_instantiation(instance):
+    assert isinstance(instance, Implementation_PaymentComponent_PaymentHandler)
+
+@given(instance=Implementation_PaymentComponent_strategy)
+@settings(max_examples=50)
+def test_implementation_paymentcomponent_instantiation(instance):
+    assert isinstance(instance, Implementation_PaymentComponent)
+
+@given(instance=Implementation_OccupancyComponent_IOccupancy_strategy)
+@settings(max_examples=50)
+def test_implementation_occupancycomponent_ioccupancy_instantiation(instance):
+    assert isinstance(instance, Implementation_OccupancyComponent_IOccupancy)
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=Implementation_OccupancyComponent_IOccupancy_strategy)
+@settings(max_examples=30)
+def test_implementation_occupancycomponent_ioccupancy_numberofguestsinhotel_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.numberOfGuestsInHotel()
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.numberOfGuestsInHotel).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'numberOfGuestsInHotel' in Implementation_OccupancyComponent_IOccupancy is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'numberOfGuestsInHotel' in Implementation_OccupancyComponent_IOccupancy did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'numberOfGuestsInHotel' in Implementation_OccupancyComponent_IOccupancy is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=Implementation_OccupancyComponent_IOccupancy_strategy)
+@settings(max_examples=30)
+def test_implementation_occupancycomponent_ioccupancy_checkoutguest_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -5232,14 +5052,14 @@ def test_implementation::occupancycomponent::ioccupancy_checkoutguest_changes_st
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'checkOutGuest' in Implementation::OccupancyComponent::IOccupancy is empty"
+        assert has_statements, f"Function 'checkOutGuest' in Implementation_OccupancyComponent_IOccupancy is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'checkOutGuest' in Implementation::OccupancyComponent::IOccupancy did not change state; check implementation")
+            warnings.warn(f"Operation 'checkOutGuest' in Implementation_OccupancyComponent_IOccupancy did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'checkOutGuest' in Implementation::OccupancyComponent::IOccupancy is not implemented or raised an error")
+        warnings.warn(f"Operation 'checkOutGuest' in Implementation_OccupancyComponent_IOccupancy is not implemented or raised an error")
 
 import warnings
 import copy
@@ -5247,9 +5067,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=Implementation::OccupancyComponent::IOccupancy_strategy)
+@given(instance=Implementation_OccupancyComponent_IOccupancy_strategy)
 @settings(max_examples=30)
-def test_implementation::occupancycomponent::ioccupancy_checkinguest_changes_state(instance):
+def test_implementation_occupancycomponent_ioccupancy_checkinguest_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -5268,14 +5088,14 @@ def test_implementation::occupancycomponent::ioccupancy_checkinguest_changes_sta
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'checkInGuest' in Implementation::OccupancyComponent::IOccupancy is empty"
+        assert has_statements, f"Function 'checkInGuest' in Implementation_OccupancyComponent_IOccupancy is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'checkInGuest' in Implementation::OccupancyComponent::IOccupancy did not change state; check implementation")
+            warnings.warn(f"Operation 'checkInGuest' in Implementation_OccupancyComponent_IOccupancy did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'checkInGuest' in Implementation::OccupancyComponent::IOccupancy is not implemented or raised an error")
+        warnings.warn(f"Operation 'checkInGuest' in Implementation_OccupancyComponent_IOccupancy is not implemented or raised an error")
 
 import warnings
 import copy
@@ -5283,40 +5103,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=Implementation::OccupancyComponent::IOccupancy_strategy)
+@given(instance=Implementation_OccupancyComponent_IOccupancy_strategy)
 @settings(max_examples=30)
-def test_implementation::occupancycomponent::ioccupancy_listguestsinroom_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.listGuestsInRoom(
-            "test"
-        )
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.listGuestsInRoom).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'listGuestsInRoom' in Implementation::OccupancyComponent::IOccupancy is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'listGuestsInRoom' in Implementation::OccupancyComponent::IOccupancy did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'listGuestsInRoom' in Implementation::OccupancyComponent::IOccupancy is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=Implementation::OccupancyComponent::IOccupancy_strategy)
-@settings(max_examples=30)
-def test_implementation::occupancycomponent::ioccupancy_isoccupied_changes_state(instance):
+def test_implementation_occupancycomponent_ioccupancy_isoccupied_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -5330,14 +5119,14 @@ def test_implementation::occupancycomponent::ioccupancy_isoccupied_changes_state
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'isOccupied' in Implementation::OccupancyComponent::IOccupancy is empty"
+        assert has_statements, f"Function 'isOccupied' in Implementation_OccupancyComponent_IOccupancy is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'isOccupied' in Implementation::OccupancyComponent::IOccupancy did not change state; check implementation")
+            warnings.warn(f"Operation 'isOccupied' in Implementation_OccupancyComponent_IOccupancy did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'isOccupied' in Implementation::OccupancyComponent::IOccupancy is not implemented or raised an error")
+        warnings.warn(f"Operation 'isOccupied' in Implementation_OccupancyComponent_IOccupancy is not implemented or raised an error")
 
 import warnings
 import copy
@@ -5345,60 +5134,56 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=Implementation::OccupancyComponent::IOccupancy_strategy)
+@given(instance=Implementation_OccupancyComponent_IOccupancy_strategy)
 @settings(max_examples=30)
-def test_implementation::occupancycomponent::ioccupancy_numberofguestsinhotel_changes_state(instance):
+def test_implementation_occupancycomponent_ioccupancy_listguestsinroom_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
-        instance.numberOfGuestsInHotel()
+        instance.listGuestsInRoom(
+            "test"
+        )
         if instance.__dict__ != before.__dict__:
             return  # test passes
         # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.numberOfGuestsInHotel).strip()
+        source = inspect.getsource(instance.listGuestsInRoom).strip()
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'numberOfGuestsInHotel' in Implementation::OccupancyComponent::IOccupancy is empty"
+        assert has_statements, f"Function 'listGuestsInRoom' in Implementation_OccupancyComponent_IOccupancy is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'numberOfGuestsInHotel' in Implementation::OccupancyComponent::IOccupancy did not change state; check implementation")
+            warnings.warn(f"Operation 'listGuestsInRoom' in Implementation_OccupancyComponent_IOccupancy did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'numberOfGuestsInHotel' in Implementation::OccupancyComponent::IOccupancy is not implemented or raised an error")
+        warnings.warn(f"Operation 'listGuestsInRoom' in Implementation_OccupancyComponent_IOccupancy is not implemented or raised an error")
 
-@given(instance=Implementation::OccupancyComponent::Guest_strategy)
+@given(instance=Implementation_OccupancyComponent_Guest_strategy)
 @settings(max_examples=50)
-def test_implementation::occupancycomponent::guest_instantiation(instance):
-    assert isinstance(instance, Implementation::OccupancyComponent::Guest)
-
-@given(instance=Implementation::OccupancyComponent::Guest_strategy)
-def test_implementation::occupancycomponent::guest_firstName_type(instance):
-    assert isinstance(instance.firstName, str)
+def test_implementation_occupancycomponent_guest_instantiation(instance):
+    assert isinstance(instance, Implementation_OccupancyComponent_Guest)
 
 
-@given(instance=Implementation::OccupancyComponent::Guest_strategy)
-def test_implementation::occupancycomponent::guest_firstName_setter(instance):
-    original = instance.firstName
-    instance.firstName = original
-    assert instance.firstName == original
 
-@given(instance=Implementation::OccupancyComponent::Guest_strategy)
-def test_implementation::occupancycomponent::guest_lastName_type(instance):
-    assert isinstance(instance.lastName, str)
-
-
-@given(instance=Implementation::OccupancyComponent::Guest_strategy)
-def test_implementation::occupancycomponent::guest_lastName_setter(instance):
+@given(instance=Implementation_OccupancyComponent_Guest_strategy)
+def test_implementation_occupancycomponent_guest_lastName_setter(instance):
     original = instance.lastName
     instance.lastName = original
     assert instance.lastName == original
 
-@given(instance=Implementation::RoomComponent::IRoomInformation_strategy)
+
+
+@given(instance=Implementation_OccupancyComponent_Guest_strategy)
+def test_implementation_occupancycomponent_guest_firstName_setter(instance):
+    original = instance.firstName
+    instance.firstName = original
+    assert instance.firstName == original
+
+@given(instance=Implementation_RoomComponent_IRoomInformation_strategy)
 @settings(max_examples=50)
-def test_implementation::roomcomponent::iroominformation_instantiation(instance):
-    assert isinstance(instance, Implementation::RoomComponent::IRoomInformation)
+def test_implementation_roomcomponent_iroominformation_instantiation(instance):
+    assert isinstance(instance, Implementation_RoomComponent_IRoomInformation)
 
 import warnings
 import copy
@@ -5406,9 +5191,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=Implementation::RoomComponent::IRoomInformation_strategy)
+@given(instance=Implementation_RoomComponent_IRoomInformation_strategy)
 @settings(max_examples=30)
-def test_implementation::roomcomponent::iroominformation_searchroom_changes_state(instance):
+def test_implementation_roomcomponent_iroominformation_searchroom_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -5422,14 +5207,14 @@ def test_implementation::roomcomponent::iroominformation_searchroom_changes_stat
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'searchRoom' in Implementation::RoomComponent::IRoomInformation is empty"
+        assert has_statements, f"Function 'searchRoom' in Implementation_RoomComponent_IRoomInformation is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'searchRoom' in Implementation::RoomComponent::IRoomInformation did not change state; check implementation")
+            warnings.warn(f"Operation 'searchRoom' in Implementation_RoomComponent_IRoomInformation did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'searchRoom' in Implementation::RoomComponent::IRoomInformation is not implemented or raised an error")
+        warnings.warn(f"Operation 'searchRoom' in Implementation_RoomComponent_IRoomInformation is not implemented or raised an error")
 
 import warnings
 import copy
@@ -5437,9 +5222,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=Implementation::RoomComponent::IRoomInformation_strategy)
+@given(instance=Implementation_RoomComponent_IRoomInformation_strategy)
 @settings(max_examples=30)
-def test_implementation::roomcomponent::iroominformation_countnumberoftotalrooms_changes_state(instance):
+def test_implementation_roomcomponent_iroominformation_countnumberoftotalrooms_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -5451,29 +5236,29 @@ def test_implementation::roomcomponent::iroominformation_countnumberoftotalrooms
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'countNumberOfTotalRooms' in Implementation::RoomComponent::IRoomInformation is empty"
+        assert has_statements, f"Function 'countNumberOfTotalRooms' in Implementation_RoomComponent_IRoomInformation is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'countNumberOfTotalRooms' in Implementation::RoomComponent::IRoomInformation did not change state; check implementation")
+            warnings.warn(f"Operation 'countNumberOfTotalRooms' in Implementation_RoomComponent_IRoomInformation did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'countNumberOfTotalRooms' in Implementation::RoomComponent::IRoomInformation is not implemented or raised an error")
+        warnings.warn(f"Operation 'countNumberOfTotalRooms' in Implementation_RoomComponent_IRoomInformation is not implemented or raised an error")
 
-@given(instance=OccupancyComponent::IOccupancy_strategy)
+@given(instance=OccupancyComponent_IOccupancy_strategy)
 @settings(max_examples=50)
-def test_occupancycomponent::ioccupancy_instantiation(instance):
-    assert isinstance(instance, OccupancyComponent::IOccupancy)
+def test_occupancycomponent_ioccupancy_instantiation(instance):
+    assert isinstance(instance, OccupancyComponent_IOccupancy)
 
-@given(instance=OccupancyComponent::IOccupancyDecision_strategy)
+@given(instance=OccupancyComponent_IOccupancyDecision_strategy)
 @settings(max_examples=50)
-def test_occupancycomponent::ioccupancydecision_instantiation(instance):
-    assert isinstance(instance, OccupancyComponent::IOccupancyDecision)
+def test_occupancycomponent_ioccupancydecision_instantiation(instance):
+    assert isinstance(instance, OccupancyComponent_IOccupancyDecision)
 
-@given(instance=Implementation::OccupancyComponent::OccupancyHandler_strategy)
+@given(instance=Implementation_OccupancyComponent_OccupancyHandler_strategy)
 @settings(max_examples=50)
-def test_implementation::occupancycomponent::occupancyhandler_instantiation(instance):
-    assert isinstance(instance, Implementation::OccupancyComponent::OccupancyHandler)
+def test_implementation_occupancycomponent_occupancyhandler_instantiation(instance):
+    assert isinstance(instance, Implementation_OccupancyComponent_OccupancyHandler)
 
 import warnings
 import copy
@@ -5481,9 +5266,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=Implementation::OccupancyComponent::OccupancyHandler_strategy)
+@given(instance=Implementation_OccupancyComponent_OccupancyHandler_strategy)
 @settings(max_examples=30)
-def test_implementation::occupancycomponent::occupancyhandler_findoccupancy_changes_state(instance):
+def test_implementation_occupancycomponent_occupancyhandler_findoccupancy_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -5499,14 +5284,14 @@ def test_implementation::occupancycomponent::occupancyhandler_findoccupancy_chan
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'findOccupancy' in Implementation::OccupancyComponent::OccupancyHandler is empty"
+        assert has_statements, f"Function 'findOccupancy' in Implementation_OccupancyComponent_OccupancyHandler is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'findOccupancy' in Implementation::OccupancyComponent::OccupancyHandler did not change state; check implementation")
+            warnings.warn(f"Operation 'findOccupancy' in Implementation_OccupancyComponent_OccupancyHandler did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'findOccupancy' in Implementation::OccupancyComponent::OccupancyHandler is not implemented or raised an error")
+        warnings.warn(f"Operation 'findOccupancy' in Implementation_OccupancyComponent_OccupancyHandler is not implemented or raised an error")
 
 import warnings
 import copy
@@ -5514,9 +5299,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=Implementation::OccupancyComponent::OccupancyHandler_strategy)
+@given(instance=Implementation_OccupancyComponent_OccupancyHandler_strategy)
 @settings(max_examples=30)
-def test_implementation::occupancycomponent::occupancyhandler_isinroomtypes_changes_state(instance):
+def test_implementation_occupancycomponent_occupancyhandler_isinroomtypes_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -5531,117 +5316,93 @@ def test_implementation::occupancycomponent::occupancyhandler_isinroomtypes_chan
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'isInRoomTypes' in Implementation::OccupancyComponent::OccupancyHandler is empty"
+        assert has_statements, f"Function 'isInRoomTypes' in Implementation_OccupancyComponent_OccupancyHandler is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'isInRoomTypes' in Implementation::OccupancyComponent::OccupancyHandler did not change state; check implementation")
+            warnings.warn(f"Operation 'isInRoomTypes' in Implementation_OccupancyComponent_OccupancyHandler did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'isInRoomTypes' in Implementation::OccupancyComponent::OccupancyHandler is not implemented or raised an error")
+        warnings.warn(f"Operation 'isInRoomTypes' in Implementation_OccupancyComponent_OccupancyHandler is not implemented or raised an error")
 
-@given(instance=Implementation::OccupancyComponent_strategy)
+@given(instance=Implementation_OccupancyComponent_strategy)
 @settings(max_examples=50)
-def test_implementation::occupancycomponent_instantiation(instance):
-    assert isinstance(instance, Implementation::OccupancyComponent)
+def test_implementation_occupancycomponent_instantiation(instance):
+    assert isinstance(instance, Implementation_OccupancyComponent)
 
-@given(instance=Implementation::DecisionSupportComponent::OccupancyDSSInfo_strategy)
+@given(instance=Implementation_DecisionSupportComponent_OccupancyDSSInfo_strategy)
 @settings(max_examples=50)
-def test_implementation::decisionsupportcomponent::occupancydssinfo_instantiation(instance):
-    assert isinstance(instance, Implementation::DecisionSupportComponent::OccupancyDSSInfo)
-
-@given(instance=Implementation::DecisionSupportComponent::OccupancyDSSInfo_strategy)
-def test_implementation::decisionsupportcomponent::occupancydssinfo_roomNumber_type(instance):
-    assert isinstance(instance.roomNumber, str)
+def test_implementation_decisionsupportcomponent_occupancydssinfo_instantiation(instance):
+    assert isinstance(instance, Implementation_DecisionSupportComponent_OccupancyDSSInfo)
 
 
-@given(instance=Implementation::DecisionSupportComponent::OccupancyDSSInfo_strategy)
-def test_implementation::decisionsupportcomponent::occupancydssinfo_roomNumber_setter(instance):
-    original = instance.roomNumber
-    instance.roomNumber = original
-    assert instance.roomNumber == original
 
-@given(instance=Implementation::DecisionSupportComponent::OccupancyDSSInfo_strategy)
-def test_implementation::decisionsupportcomponent::occupancydssinfo_checkOutDateTime_type(instance):
-    assert isinstance(instance.checkOutDateTime, str)
-
-
-@given(instance=Implementation::DecisionSupportComponent::OccupancyDSSInfo_strategy)
-def test_implementation::decisionsupportcomponent::occupancydssinfo_checkOutDateTime_setter(instance):
+@given(instance=Implementation_DecisionSupportComponent_OccupancyDSSInfo_strategy)
+def test_implementation_decisionsupportcomponent_occupancydssinfo_checkOutDateTime_setter(instance):
     original = instance.checkOutDateTime
     instance.checkOutDateTime = original
     assert instance.checkOutDateTime == original
 
-@given(instance=Implementation::DecisionSupportComponent::OccupancyDSSInfo_strategy)
-def test_implementation::decisionsupportcomponent::occupancydssinfo_checkInDateTime_type(instance):
-    assert isinstance(instance.checkInDateTime, str)
 
 
-@given(instance=Implementation::DecisionSupportComponent::OccupancyDSSInfo_strategy)
-def test_implementation::decisionsupportcomponent::occupancydssinfo_checkInDateTime_setter(instance):
+@given(instance=Implementation_DecisionSupportComponent_OccupancyDSSInfo_strategy)
+def test_implementation_decisionsupportcomponent_occupancydssinfo_checkInDateTime_setter(instance):
     original = instance.checkInDateTime
     instance.checkInDateTime = original
     assert instance.checkInDateTime == original
 
-@given(instance=Implementation::DecisionSupportComponent::OccupancyDSSInfo_strategy)
-def test_implementation::decisionsupportcomponent::occupancydssinfo_numberOfGuests_type(instance):
-    assert isinstance(instance.numberOfGuests, str)
 
 
-@given(instance=Implementation::DecisionSupportComponent::OccupancyDSSInfo_strategy)
-def test_implementation::decisionsupportcomponent::occupancydssinfo_numberOfGuests_setter(instance):
+@given(instance=Implementation_DecisionSupportComponent_OccupancyDSSInfo_strategy)
+def test_implementation_decisionsupportcomponent_occupancydssinfo_numberOfGuests_setter(instance):
     original = instance.numberOfGuests
     instance.numberOfGuests = original
     assert instance.numberOfGuests == original
 
-@given(instance=Implementation::OccupancyComponent::Occupancy_strategy)
-@settings(max_examples=50)
-def test_implementation::occupancycomponent::occupancy_instantiation(instance):
-    assert isinstance(instance, Implementation::OccupancyComponent::Occupancy)
-
-@given(instance=Implementation::OccupancyComponent::Occupancy_strategy)
-def test_implementation::occupancycomponent::occupancy_checkInDateTime_type(instance):
-    assert isinstance(instance.checkInDateTime, str)
 
 
-@given(instance=Implementation::OccupancyComponent::Occupancy_strategy)
-def test_implementation::occupancycomponent::occupancy_checkInDateTime_setter(instance):
-    original = instance.checkInDateTime
-    instance.checkInDateTime = original
-    assert instance.checkInDateTime == original
-
-@given(instance=Implementation::OccupancyComponent::Occupancy_strategy)
-def test_implementation::occupancycomponent::occupancy_roomNumber_type(instance):
-    assert isinstance(instance.roomNumber, str)
-
-
-@given(instance=Implementation::OccupancyComponent::Occupancy_strategy)
-def test_implementation::occupancycomponent::occupancy_roomNumber_setter(instance):
+@given(instance=Implementation_DecisionSupportComponent_OccupancyDSSInfo_strategy)
+def test_implementation_decisionsupportcomponent_occupancydssinfo_roomNumber_setter(instance):
     original = instance.roomNumber
     instance.roomNumber = original
     assert instance.roomNumber == original
 
-@given(instance=Implementation::OccupancyComponent::Occupancy_strategy)
-def test_implementation::occupancycomponent::occupancy_checkOutDateTime_type(instance):
-    assert isinstance(instance.checkOutDateTime, str)
+@given(instance=Implementation_OccupancyComponent_Occupancy_strategy)
+@settings(max_examples=50)
+def test_implementation_occupancycomponent_occupancy_instantiation(instance):
+    assert isinstance(instance, Implementation_OccupancyComponent_Occupancy)
 
 
-@given(instance=Implementation::OccupancyComponent::Occupancy_strategy)
-def test_implementation::occupancycomponent::occupancy_checkOutDateTime_setter(instance):
+
+@given(instance=Implementation_OccupancyComponent_Occupancy_strategy)
+def test_implementation_occupancycomponent_occupancy_checkOutDateTime_setter(instance):
     original = instance.checkOutDateTime
     instance.checkOutDateTime = original
     assert instance.checkOutDateTime == original
 
-@given(instance=Implementation::OccupancyComponent::Occupancy_strategy)
-def test_implementation::occupancycomponent::occupancy_bookingReference_type(instance):
-    assert isinstance(instance.bookingReference, str)
 
 
-@given(instance=Implementation::OccupancyComponent::Occupancy_strategy)
-def test_implementation::occupancycomponent::occupancy_bookingReference_setter(instance):
+@given(instance=Implementation_OccupancyComponent_Occupancy_strategy)
+def test_implementation_occupancycomponent_occupancy_bookingReference_setter(instance):
     original = instance.bookingReference
     instance.bookingReference = original
     assert instance.bookingReference == original
+
+
+
+@given(instance=Implementation_OccupancyComponent_Occupancy_strategy)
+def test_implementation_occupancycomponent_occupancy_checkInDateTime_setter(instance):
+    original = instance.checkInDateTime
+    instance.checkInDateTime = original
+    assert instance.checkInDateTime == original
+
+
+
+@given(instance=Implementation_OccupancyComponent_Occupancy_strategy)
+def test_implementation_occupancycomponent_occupancy_roomNumber_setter(instance):
+    original = instance.roomNumber
+    instance.roomNumber = original
+    assert instance.roomNumber == original
 
 import warnings
 import copy
@@ -5649,9 +5410,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=Implementation::OccupancyComponent::Occupancy_strategy)
+@given(instance=Implementation_OccupancyComponent_Occupancy_strategy)
 @settings(max_examples=30)
-def test_implementation::occupancycomponent::occupancy_addguesttooccupancy_changes_state(instance):
+def test_implementation_occupancycomponent_occupancy_addguesttooccupancy_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -5666,14 +5427,14 @@ def test_implementation::occupancycomponent::occupancy_addguesttooccupancy_chang
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'addGuestToOccupancy' in Implementation::OccupancyComponent::Occupancy is empty"
+        assert has_statements, f"Function 'addGuestToOccupancy' in Implementation_OccupancyComponent_Occupancy is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'addGuestToOccupancy' in Implementation::OccupancyComponent::Occupancy did not change state; check implementation")
+            warnings.warn(f"Operation 'addGuestToOccupancy' in Implementation_OccupancyComponent_Occupancy did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'addGuestToOccupancy' in Implementation::OccupancyComponent::Occupancy is not implemented or raised an error")
+        warnings.warn(f"Operation 'addGuestToOccupancy' in Implementation_OccupancyComponent_Occupancy is not implemented or raised an error")
 
 import warnings
 import copy
@@ -5681,9 +5442,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=Implementation::OccupancyComponent::Occupancy_strategy)
+@given(instance=Implementation_OccupancyComponent_Occupancy_strategy)
 @settings(max_examples=30)
-def test_implementation::occupancycomponent::occupancy_listguests_changes_state(instance):
+def test_implementation_occupancycomponent_occupancy_listguests_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -5695,160 +5456,96 @@ def test_implementation::occupancycomponent::occupancy_listguests_changes_state(
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'listGuests' in Implementation::OccupancyComponent::Occupancy is empty"
+        assert has_statements, f"Function 'listGuests' in Implementation_OccupancyComponent_Occupancy is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'listGuests' in Implementation::OccupancyComponent::Occupancy did not change state; check implementation")
+            warnings.warn(f"Operation 'listGuests' in Implementation_OccupancyComponent_Occupancy did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'listGuests' in Implementation::OccupancyComponent::Occupancy is not implemented or raised an error")
+        warnings.warn(f"Operation 'listGuests' in Implementation_OccupancyComponent_Occupancy is not implemented or raised an error")
 
-@given(instance=Implementation::DecisionSupportComponent::DSSController_strategy)
+@given(instance=Implementation_DecisionSupportComponent_AdditionalServiceDSSInfo_strategy)
 @settings(max_examples=50)
-def test_implementation::decisionsupportcomponent::dsscontroller_instantiation(instance):
-    assert isinstance(instance, Implementation::DecisionSupportComponent::DSSController)
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=Implementation::DecisionSupportComponent::DSSController_strategy)
-@settings(max_examples=30)
-def test_implementation::decisionsupportcomponent::dsscontroller_countcustomerbooking_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.countCustomerBooking(
-            "test", 
-            "test"
-        )
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.countCustomerBooking).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'countCustomerBooking' in Implementation::DecisionSupportComponent::DSSController is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'countCustomerBooking' in Implementation::DecisionSupportComponent::DSSController did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'countCustomerBooking' in Implementation::DecisionSupportComponent::DSSController is not implemented or raised an error")
-
-@given(instance=Implementation::DecisionSupportComponent::AdditionalServiceDSSInfo_strategy)
-@settings(max_examples=50)
-def test_implementation::decisionsupportcomponent::additionalservicedssinfo_instantiation(instance):
-    assert isinstance(instance, Implementation::DecisionSupportComponent::AdditionalServiceDSSInfo)
-
-@given(instance=Implementation::DecisionSupportComponent::AdditionalServiceDSSInfo_strategy)
-def test_implementation::decisionsupportcomponent::additionalservicedssinfo_additionalServiceName_type(instance):
-    assert isinstance(instance.additionalServiceName, str)
+def test_implementation_decisionsupportcomponent_additionalservicedssinfo_instantiation(instance):
+    assert isinstance(instance, Implementation_DecisionSupportComponent_AdditionalServiceDSSInfo)
 
 
-@given(instance=Implementation::DecisionSupportComponent::AdditionalServiceDSSInfo_strategy)
-def test_implementation::decisionsupportcomponent::additionalservicedssinfo_additionalServiceName_setter(instance):
+
+@given(instance=Implementation_DecisionSupportComponent_AdditionalServiceDSSInfo_strategy)
+def test_implementation_decisionsupportcomponent_additionalservicedssinfo_additionalServiceName_setter(instance):
     original = instance.additionalServiceName
     instance.additionalServiceName = original
     assert instance.additionalServiceName == original
 
-@given(instance=Implementation::DecisionSupportComponent::AdditionalServiceDSSInfo_strategy)
-def test_implementation::decisionsupportcomponent::additionalservicedssinfo_additionalServicePrice_type(instance):
-    assert isinstance(instance.additionalServicePrice, str)
 
 
-@given(instance=Implementation::DecisionSupportComponent::AdditionalServiceDSSInfo_strategy)
-def test_implementation::decisionsupportcomponent::additionalservicedssinfo_additionalServicePrice_setter(instance):
+@given(instance=Implementation_DecisionSupportComponent_AdditionalServiceDSSInfo_strategy)
+def test_implementation_decisionsupportcomponent_additionalservicedssinfo_additionalServicePrice_setter(instance):
     original = instance.additionalServicePrice
     instance.additionalServicePrice = original
     assert instance.additionalServicePrice == original
 
-@given(instance=Implementation::DecisionSupportComponent::BookingDSSInfo_strategy)
+@given(instance=Implementation_DecisionSupportComponent_BookingDSSInfo_strategy)
 @settings(max_examples=50)
-def test_implementation::decisionsupportcomponent::bookingdssinfo_instantiation(instance):
-    assert isinstance(instance, Implementation::DecisionSupportComponent::BookingDSSInfo)
-
-@given(instance=Implementation::DecisionSupportComponent::BookingDSSInfo_strategy)
-def test_implementation::decisionsupportcomponent::bookingdssinfo_departureDate_type(instance):
-    assert isinstance(instance.departureDate, str)
+def test_implementation_decisionsupportcomponent_bookingdssinfo_instantiation(instance):
+    assert isinstance(instance, Implementation_DecisionSupportComponent_BookingDSSInfo)
 
 
-@given(instance=Implementation::DecisionSupportComponent::BookingDSSInfo_strategy)
-def test_implementation::decisionsupportcomponent::bookingdssinfo_departureDate_setter(instance):
-    original = instance.departureDate
-    instance.departureDate = original
-    assert instance.departureDate == original
 
-@given(instance=Implementation::DecisionSupportComponent::BookingDSSInfo_strategy)
-def test_implementation::decisionsupportcomponent::bookingdssinfo_address_type(instance):
-    assert isinstance(instance.address, str)
+@given(instance=Implementation_DecisionSupportComponent_BookingDSSInfo_strategy)
+def test_implementation_decisionsupportcomponent_bookingdssinfo_roomType_setter(instance):
+    original = instance.roomType
+    instance.roomType = original
+    assert instance.roomType == original
 
 
-@given(instance=Implementation::DecisionSupportComponent::BookingDSSInfo_strategy)
-def test_implementation::decisionsupportcomponent::bookingdssinfo_address_setter(instance):
-    original = instance.address
-    instance.address = original
-    assert instance.address == original
 
-@given(instance=Implementation::DecisionSupportComponent::BookingDSSInfo_strategy)
-def test_implementation::decisionsupportcomponent::bookingdssinfo_customerFirstName_type(instance):
-    assert isinstance(instance.customerFirstName, str)
-
-
-@given(instance=Implementation::DecisionSupportComponent::BookingDSSInfo_strategy)
-def test_implementation::decisionsupportcomponent::bookingdssinfo_customerFirstName_setter(instance):
+@given(instance=Implementation_DecisionSupportComponent_BookingDSSInfo_strategy)
+def test_implementation_decisionsupportcomponent_bookingdssinfo_customerFirstName_setter(instance):
     original = instance.customerFirstName
     instance.customerFirstName = original
     assert instance.customerFirstName == original
 
-@given(instance=Implementation::DecisionSupportComponent::BookingDSSInfo_strategy)
-def test_implementation::decisionsupportcomponent::bookingdssinfo_numberOfGuests_type(instance):
-    assert isinstance(instance.numberOfGuests, str)
 
 
-@given(instance=Implementation::DecisionSupportComponent::BookingDSSInfo_strategy)
-def test_implementation::decisionsupportcomponent::bookingdssinfo_numberOfGuests_setter(instance):
-    original = instance.numberOfGuests
-    instance.numberOfGuests = original
-    assert instance.numberOfGuests == original
-
-@given(instance=Implementation::DecisionSupportComponent::BookingDSSInfo_strategy)
-def test_implementation::decisionsupportcomponent::bookingdssinfo_customerLastName_type(instance):
-    assert isinstance(instance.customerLastName, str)
-
-
-@given(instance=Implementation::DecisionSupportComponent::BookingDSSInfo_strategy)
-def test_implementation::decisionsupportcomponent::bookingdssinfo_customerLastName_setter(instance):
-    original = instance.customerLastName
-    instance.customerLastName = original
-    assert instance.customerLastName == original
-
-@given(instance=Implementation::DecisionSupportComponent::BookingDSSInfo_strategy)
-def test_implementation::decisionsupportcomponent::bookingdssinfo_arrivalDate_type(instance):
-    assert isinstance(instance.arrivalDate, str)
-
-
-@given(instance=Implementation::DecisionSupportComponent::BookingDSSInfo_strategy)
-def test_implementation::decisionsupportcomponent::bookingdssinfo_arrivalDate_setter(instance):
+@given(instance=Implementation_DecisionSupportComponent_BookingDSSInfo_strategy)
+def test_implementation_decisionsupportcomponent_bookingdssinfo_arrivalDate_setter(instance):
     original = instance.arrivalDate
     instance.arrivalDate = original
     assert instance.arrivalDate == original
 
-@given(instance=Implementation::DecisionSupportComponent::BookingDSSInfo_strategy)
-def test_implementation::decisionsupportcomponent::bookingdssinfo_roomType_type(instance):
-    assert isinstance(instance.roomType, str)
 
 
-@given(instance=Implementation::DecisionSupportComponent::BookingDSSInfo_strategy)
-def test_implementation::decisionsupportcomponent::bookingdssinfo_roomType_setter(instance):
-    original = instance.roomType
-    instance.roomType = original
-    assert instance.roomType == original
+@given(instance=Implementation_DecisionSupportComponent_BookingDSSInfo_strategy)
+def test_implementation_decisionsupportcomponent_bookingdssinfo_numberOfGuests_setter(instance):
+    original = instance.numberOfGuests
+    instance.numberOfGuests = original
+    assert instance.numberOfGuests == original
+
+
+
+@given(instance=Implementation_DecisionSupportComponent_BookingDSSInfo_strategy)
+def test_implementation_decisionsupportcomponent_bookingdssinfo_customerLastName_setter(instance):
+    original = instance.customerLastName
+    instance.customerLastName = original
+    assert instance.customerLastName == original
+
+
+
+@given(instance=Implementation_DecisionSupportComponent_BookingDSSInfo_strategy)
+def test_implementation_decisionsupportcomponent_bookingdssinfo_address_setter(instance):
+    original = instance.address
+    instance.address = original
+    assert instance.address == original
+
+
+
+@given(instance=Implementation_DecisionSupportComponent_BookingDSSInfo_strategy)
+def test_implementation_decisionsupportcomponent_bookingdssinfo_departureDate_setter(instance):
+    original = instance.departureDate
+    instance.departureDate = original
+    assert instance.departureDate == original
 
 import warnings
 import copy
@@ -5856,9 +5553,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=Implementation::DecisionSupportComponent::BookingDSSInfo_strategy)
+@given(instance=Implementation_DecisionSupportComponent_BookingDSSInfo_strategy)
 @settings(max_examples=30)
-def test_implementation::decisionsupportcomponent::bookingdssinfo_addadditionalservice_changes_state(instance):
+def test_implementation_decisionsupportcomponent_bookingdssinfo_addadditionalservice_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -5873,21 +5570,105 @@ def test_implementation::decisionsupportcomponent::bookingdssinfo_addadditionals
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'addAdditionalService' in Implementation::DecisionSupportComponent::BookingDSSInfo is empty"
+        assert has_statements, f"Function 'addAdditionalService' in Implementation_DecisionSupportComponent_BookingDSSInfo is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'addAdditionalService' in Implementation::DecisionSupportComponent::BookingDSSInfo did not change state; check implementation")
+            warnings.warn(f"Operation 'addAdditionalService' in Implementation_DecisionSupportComponent_BookingDSSInfo did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'addAdditionalService' in Implementation::DecisionSupportComponent::BookingDSSInfo is not implemented or raised an error")
+        warnings.warn(f"Operation 'addAdditionalService' in Implementation_DecisionSupportComponent_BookingDSSInfo is not implemented or raised an error")
 
-@given(instance=Implementation::BookingComponent::IBookingDecision_strategy)
+@given(instance=Implementation_BookingComponent_IBookingDecision_strategy)
 @settings(max_examples=50)
-def test_implementation::bookingcomponent::ibookingdecision_instantiation(instance):
-    assert isinstance(instance, Implementation::BookingComponent::IBookingDecision)
+def test_implementation_bookingcomponent_ibookingdecision_instantiation(instance):
+    assert isinstance(instance, Implementation_BookingComponent_IBookingDecision)
 
-@given(instance=Implementation::OccupancyComponent::IOccupancyDecision_strategy)
+@given(instance=Implementation_OccupancyComponent_IOccupancyDecision_strategy)
 @settings(max_examples=50)
-def test_implementation::occupancycomponent::ioccupancydecision_instantiation(instance):
-    assert isinstance(instance, Implementation::OccupancyComponent::IOccupancyDecision)
+def test_implementation_occupancycomponent_ioccupancydecision_instantiation(instance):
+    assert isinstance(instance, Implementation_OccupancyComponent_IOccupancyDecision)
+
+@given(instance=Implementation_DecisionSupportComponent_IDecisionSupport_strategy)
+@settings(max_examples=50)
+def test_implementation_decisionsupportcomponent_idecisionsupport_instantiation(instance):
+    assert isinstance(instance, Implementation_DecisionSupportComponent_IDecisionSupport)
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=Implementation_DecisionSupportComponent_IDecisionSupport_strategy)
+@settings(max_examples=30)
+def test_implementation_decisionsupportcomponent_idecisionsupport_countroomtype_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.countRoomType(
+            "test", 
+            "test"
+        )
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.countRoomType).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'countRoomType' in Implementation_DecisionSupportComponent_IDecisionSupport is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'countRoomType' in Implementation_DecisionSupportComponent_IDecisionSupport did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'countRoomType' in Implementation_DecisionSupportComponent_IDecisionSupport is not implemented or raised an error")
+
+@given(instance=DecisionSupportComponent_IDecisionSupport_strategy)
+@settings(max_examples=50)
+def test_decisionsupportcomponent_idecisionsupport_instantiation(instance):
+    assert isinstance(instance, DecisionSupportComponent_IDecisionSupport)
+
+@given(instance=Implementation_DecisionSupportComponent_DSSController_strategy)
+@settings(max_examples=50)
+def test_implementation_decisionsupportcomponent_dsscontroller_instantiation(instance):
+    assert isinstance(instance, Implementation_DecisionSupportComponent_DSSController)
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=Implementation_DecisionSupportComponent_DSSController_strategy)
+@settings(max_examples=30)
+def test_implementation_decisionsupportcomponent_dsscontroller_countcustomerbooking_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.countCustomerBooking(
+            "test", 
+            "test"
+        )
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.countCustomerBooking).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'countCustomerBooking' in Implementation_DecisionSupportComponent_DSSController is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'countCustomerBooking' in Implementation_DecisionSupportComponent_DSSController did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'countCustomerBooking' in Implementation_DecisionSupportComponent_DSSController is not implemented or raised an error")
+
+@given(instance=Implementation_DecisionSupportComponent_strategy)
+@settings(max_examples=50)
+def test_implementation_decisionsupportcomponent_instantiation(instance):
+    assert isinstance(instance, Implementation_DecisionSupportComponent)

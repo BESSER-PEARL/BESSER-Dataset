@@ -3,16 +3,16 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    Lims::Sequencer,
-    Lims::Sequenced,
-    Lims::Laboratory,
-    Lims::Individual,
-    Lims::Family,
-    Lims::Run,
-    Lims::Sample,
+from python_code import (
+    Lims_Sequenced,
+    Lims_Laboratory,
+    Lims_Individual,
+    Lims_Family,
+    Lims_Run,
+    Lims_Sample,
+    Lims_Sequencer,
     Gender,
 )
 
@@ -22,109 +22,85 @@ from classes import (
 
 
 
-def test_lims::sequencer_is_not_abstract():
-    assert not inspect.isabstract(Lims::Sequencer)
+def test_lims_sequenced_is_not_abstract():
+    assert not inspect.isabstract(Lims_Sequenced)
 
 
-def test_lims::sequencer_constructor_exists():
-    assert callable(Lims::Sequencer.__init__)
+def test_lims_sequenced_constructor_exists():
+    assert callable(Lims_Sequenced.__init__)
 
 
-def test_lims::sequencer_constructor_args():
-    sig = inspect.signature(Lims::Sequencer.__init__)
+def test_lims_sequenced_constructor_args():
+    sig = inspect.signature(Lims_Sequenced.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_lims_laboratory_is_not_abstract():
+    assert not inspect.isabstract(Lims_Laboratory)
+
+
+def test_lims_laboratory_constructor_exists():
+    assert callable(Lims_Laboratory.__init__)
+
+
+def test_lims_laboratory_constructor_args():
+    sig = inspect.signature(Lims_Laboratory.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_lims_individual_is_not_abstract():
+    assert not inspect.isabstract(Lims_Individual)
+
+
+def test_lims_individual_constructor_exists():
+    assert callable(Lims_Individual.__init__)
+
+
+def test_lims_individual_constructor_args():
+    sig = inspect.signature(Lims_Individual.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
+    assert "gender" in params, "Missing parameter 'gender'"
 
-def test_lims::sequencer_has_name():
-    assert hasattr(Lims::Sequencer, "name")
+def test_lims_individual_has_name():
+    assert hasattr(Lims_Individual, "name")
     descriptor = None
-    for klass in Lims::Sequencer.__mro__:
+    for klass in Lims_Individual.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
-
-
-def test_lims::sequenced_is_not_abstract():
-    assert not inspect.isabstract(Lims::Sequenced)
-
-
-def test_lims::sequenced_constructor_exists():
-    assert callable(Lims::Sequenced.__init__)
-
-
-def test_lims::sequenced_constructor_args():
-    sig = inspect.signature(Lims::Sequenced.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_lims::laboratory_is_not_abstract():
-    assert not inspect.isabstract(Lims::Laboratory)
-
-
-def test_lims::laboratory_constructor_exists():
-    assert callable(Lims::Laboratory.__init__)
-
-
-def test_lims::laboratory_constructor_args():
-    sig = inspect.signature(Lims::Laboratory.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_lims::individual_is_not_abstract():
-    assert not inspect.isabstract(Lims::Individual)
-
-
-def test_lims::individual_constructor_exists():
-    assert callable(Lims::Individual.__init__)
-
-
-def test_lims::individual_constructor_args():
-    sig = inspect.signature(Lims::Individual.__init__)
-    params = list(sig.parameters.keys())
-    assert "gender" in params, "Missing parameter 'gender'"
-    assert "name" in params, "Missing parameter 'name'"
-
-def test_lims::individual_has_gender():
-    assert hasattr(Lims::Individual, "gender")
+def test_lims_individual_has_gender():
+    assert hasattr(Lims_Individual, "gender")
     descriptor = None
-    for klass in Lims::Individual.__mro__:
+    for klass in Lims_Individual.__mro__:
         if "gender" in klass.__dict__:
             descriptor = klass.__dict__["gender"]
             break
     assert isinstance(descriptor, property)
 
-def test_lims::individual_has_name():
-    assert hasattr(Lims::Individual, "name")
-    descriptor = None
-    for klass in Lims::Individual.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
 
 
-
-def test_lims::family_is_not_abstract():
-    assert not inspect.isabstract(Lims::Family)
-
-
-def test_lims::family_constructor_exists():
-    assert callable(Lims::Family.__init__)
+def test_lims_family_is_not_abstract():
+    assert not inspect.isabstract(Lims_Family)
 
 
-def test_lims::family_constructor_args():
-    sig = inspect.signature(Lims::Family.__init__)
+def test_lims_family_constructor_exists():
+    assert callable(Lims_Family.__init__)
+
+
+def test_lims_family_constructor_args():
+    sig = inspect.signature(Lims_Family.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_lims::family_has_name():
-    assert hasattr(Lims::Family, "name")
+def test_lims_family_has_name():
+    assert hasattr(Lims_Family, "name")
     descriptor = None
-    for klass in Lims::Family.__mro__:
+    for klass in Lims_Family.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -132,59 +108,83 @@ def test_lims::family_has_name():
 
 
 
-def test_lims::run_is_not_abstract():
-    assert not inspect.isabstract(Lims::Run)
+def test_lims_run_is_not_abstract():
+    assert not inspect.isabstract(Lims_Run)
 
 
-def test_lims::run_constructor_exists():
-    assert callable(Lims::Run.__init__)
+def test_lims_run_constructor_exists():
+    assert callable(Lims_Run.__init__)
 
 
-def test_lims::run_constructor_args():
-    sig = inspect.signature(Lims::Run.__init__)
+def test_lims_run_constructor_args():
+    sig = inspect.signature(Lims_Run.__init__)
     params = list(sig.parameters.keys())
+    assert "name" in params, "Missing parameter 'name'"
     assert "date" in params, "Missing parameter 'date'"
-    assert "name" in params, "Missing parameter 'name'"
 
-def test_lims::run_has_date():
-    assert hasattr(Lims::Run, "date")
+def test_lims_run_has_name():
+    assert hasattr(Lims_Run, "name")
     descriptor = None
-    for klass in Lims::Run.__mro__:
+    for klass in Lims_Run.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_lims_run_has_date():
+    assert hasattr(Lims_Run, "date")
+    descriptor = None
+    for klass in Lims_Run.__mro__:
         if "date" in klass.__dict__:
             descriptor = klass.__dict__["date"]
             break
     assert isinstance(descriptor, property)
 
-def test_lims::run_has_name():
-    assert hasattr(Lims::Run, "name")
+
+
+def test_lims_sample_is_not_abstract():
+    assert not inspect.isabstract(Lims_Sample)
+
+
+def test_lims_sample_constructor_exists():
+    assert callable(Lims_Sample.__init__)
+
+
+def test_lims_sample_constructor_args():
+    sig = inspect.signature(Lims_Sample.__init__)
+    params = list(sig.parameters.keys())
+    assert "id" in params, "Missing parameter 'id'"
+
+def test_lims_sample_has_id():
+    assert hasattr(Lims_Sample, "id")
     descriptor = None
-    for klass in Lims::Run.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
+    for klass in Lims_Sample.__mro__:
+        if "id" in klass.__dict__:
+            descriptor = klass.__dict__["id"]
             break
     assert isinstance(descriptor, property)
 
 
 
-def test_lims::sample_is_not_abstract():
-    assert not inspect.isabstract(Lims::Sample)
+def test_lims_sequencer_is_not_abstract():
+    assert not inspect.isabstract(Lims_Sequencer)
 
 
-def test_lims::sample_constructor_exists():
-    assert callable(Lims::Sample.__init__)
+def test_lims_sequencer_constructor_exists():
+    assert callable(Lims_Sequencer.__init__)
 
 
-def test_lims::sample_constructor_args():
-    sig = inspect.signature(Lims::Sample.__init__)
+def test_lims_sequencer_constructor_args():
+    sig = inspect.signature(Lims_Sequencer.__init__)
     params = list(sig.parameters.keys())
-    assert "id" in params, "Missing parameter 'id'"
+    assert "name" in params, "Missing parameter 'name'"
 
-def test_lims::sample_has_id():
-    assert hasattr(Lims::Sample, "id")
+def test_lims_sequencer_has_name():
+    assert hasattr(Lims_Sequencer, "name")
     descriptor = None
-    for klass in Lims::Sample.__mro__:
-        if "id" in klass.__dict__:
-            descriptor = klass.__dict__["id"]
+    for klass in Lims_Sequencer.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
@@ -197,8 +197,8 @@ def test_gender_has_all_literals():
     enum_literals = [lit.name for lit in Gender]
     expected_literals = [
         "FEMALE",
-        "MALE",
         "UNKNOWN",
+        "MALE",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
@@ -216,150 +216,129 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-Lims::Sequencer_strategy = st.builds(
-    Lims::Sequencer,
+Lims_Sequenced_strategy = st.builds(
+    Lims_Sequenced,
+)
+Lims_Laboratory_strategy = st.builds(
+    Lims_Laboratory,
+)
+Lims_Individual_strategy = st.builds(
+    Lims_Individual,
     name=
-        safe_text
-)
-Lims::Sequenced_strategy = st.builds(
-    Lims::Sequenced,
-)
-Lims::Laboratory_strategy = st.builds(
-    Lims::Laboratory,
-)
-Lims::Individual_strategy = st.builds(
-    Lims::Individual,
-    gender=
         safe_text,
+    gender=
+        safe_text
+)
+Lims_Family_strategy = st.builds(
+    Lims_Family,
     name=
         safe_text
 )
-Lims::Family_strategy = st.builds(
-    Lims::Family,
+Lims_Run_strategy = st.builds(
+    Lims_Run,
     name=
-        safe_text
-)
-Lims::Run_strategy = st.builds(
-    Lims::Run,
+        safe_text,
     date=
-        st.dates(),
-    name=
-        safe_text
+        st.dates()
 )
-Lims::Sample_strategy = st.builds(
-    Lims::Sample,
+Lims_Sample_strategy = st.builds(
+    Lims_Sample,
     id=
         safe_text
 )
+Lims_Sequencer_strategy = st.builds(
+    Lims_Sequencer,
+    name=
+        safe_text
+)
 
-@given(instance=Lims::Sequencer_strategy)
+@given(instance=Lims_Sequenced_strategy)
 @settings(max_examples=50)
-def test_lims::sequencer_instantiation(instance):
-    assert isinstance(instance, Lims::Sequencer)
+def test_lims_sequenced_instantiation(instance):
+    assert isinstance(instance, Lims_Sequenced)
 
-@given(instance=Lims::Sequencer_strategy)
-def test_lims::sequencer_name_type(instance):
-    assert isinstance(instance.name, str)
+@given(instance=Lims_Laboratory_strategy)
+@settings(max_examples=50)
+def test_lims_laboratory_instantiation(instance):
+    assert isinstance(instance, Lims_Laboratory)
+
+@given(instance=Lims_Individual_strategy)
+@settings(max_examples=50)
+def test_lims_individual_instantiation(instance):
+    assert isinstance(instance, Lims_Individual)
 
 
-@given(instance=Lims::Sequencer_strategy)
-def test_lims::sequencer_name_setter(instance):
+
+@given(instance=Lims_Individual_strategy)
+def test_lims_individual_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=Lims::Sequenced_strategy)
-@settings(max_examples=50)
-def test_lims::sequenced_instantiation(instance):
-    assert isinstance(instance, Lims::Sequenced)
-
-@given(instance=Lims::Laboratory_strategy)
-@settings(max_examples=50)
-def test_lims::laboratory_instantiation(instance):
-    assert isinstance(instance, Lims::Laboratory)
-
-@given(instance=Lims::Individual_strategy)
-@settings(max_examples=50)
-def test_lims::individual_instantiation(instance):
-    assert isinstance(instance, Lims::Individual)
-
-@given(instance=Lims::Individual_strategy)
-def test_lims::individual_gender_type(instance):
-    assert isinstance(instance.gender, str)
 
 
-@given(instance=Lims::Individual_strategy)
-def test_lims::individual_gender_setter(instance):
+@given(instance=Lims_Individual_strategy)
+def test_lims_individual_gender_setter(instance):
     original = instance.gender
     instance.gender = original
     assert instance.gender == original
 
-@given(instance=Lims::Individual_strategy)
-def test_lims::individual_name_type(instance):
-    assert isinstance(instance.name, str)
+@given(instance=Lims_Family_strategy)
+@settings(max_examples=50)
+def test_lims_family_instantiation(instance):
+    assert isinstance(instance, Lims_Family)
 
 
-@given(instance=Lims::Individual_strategy)
-def test_lims::individual_name_setter(instance):
+
+@given(instance=Lims_Family_strategy)
+def test_lims_family_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=Lims::Family_strategy)
+@given(instance=Lims_Run_strategy)
 @settings(max_examples=50)
-def test_lims::family_instantiation(instance):
-    assert isinstance(instance, Lims::Family)
-
-@given(instance=Lims::Family_strategy)
-def test_lims::family_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_lims_run_instantiation(instance):
+    assert isinstance(instance, Lims_Run)
 
 
-@given(instance=Lims::Family_strategy)
-def test_lims::family_name_setter(instance):
+
+@given(instance=Lims_Run_strategy)
+def test_lims_run_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=Lims::Run_strategy)
-@settings(max_examples=50)
-def test_lims::run_instantiation(instance):
-    assert isinstance(instance, Lims::Run)
-
-@given(instance=Lims::Run_strategy)
-def test_lims::run_date_type(instance):
-    assert isinstance(instance.date, date)
 
 
-@given(instance=Lims::Run_strategy)
-def test_lims::run_date_setter(instance):
+@given(instance=Lims_Run_strategy)
+def test_lims_run_date_setter(instance):
     original = instance.date
     instance.date = original
     assert instance.date == original
 
-@given(instance=Lims::Run_strategy)
-def test_lims::run_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=Lims::Run_strategy)
-def test_lims::run_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
-
-@given(instance=Lims::Sample_strategy)
+@given(instance=Lims_Sample_strategy)
 @settings(max_examples=50)
-def test_lims::sample_instantiation(instance):
-    assert isinstance(instance, Lims::Sample)
-
-@given(instance=Lims::Sample_strategy)
-def test_lims::sample_id_type(instance):
-    assert isinstance(instance.id, str)
+def test_lims_sample_instantiation(instance):
+    assert isinstance(instance, Lims_Sample)
 
 
-@given(instance=Lims::Sample_strategy)
-def test_lims::sample_id_setter(instance):
+
+@given(instance=Lims_Sample_strategy)
+def test_lims_sample_id_setter(instance):
     original = instance.id
     instance.id = original
     assert instance.id == original
+
+@given(instance=Lims_Sequencer_strategy)
+@settings(max_examples=50)
+def test_lims_sequencer_instantiation(instance):
+    assert isinstance(instance, Lims_Sequencer)
+
+
+
+@given(instance=Lims_Sequencer_strategy)
+def test_lims_sequencer_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original

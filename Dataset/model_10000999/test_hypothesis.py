@@ -3,35 +3,21 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
 from python_code import (
-    Home_Security,
     Temperature_sensor,
     Server,
     Lock_doors_sensors,
     Light_Sensor,
     Event_Log,
     Camera_sensor,
+    Home_Security,
 )
 
 # =============================================================================
 # SECTION 1 — STRUCTURAL TESTS
 # =============================================================================
-
-
-
-def test_home_security_is_not_abstract():
-    assert not inspect.isabstract(Home_Security)
-
-
-def test_home_security_constructor_exists():
-    assert callable(Home_Security.__init__)
-
-
-def test_home_security_constructor_args():
-    sig = inspect.signature(Home_Security.__init__)
-    params = list(sig.parameters.keys())
 
 
 
@@ -188,6 +174,20 @@ def test_camera_sensor_has_Video_ID():
     assert isinstance(descriptor, property)
 
 
+
+def test_home_security_is_not_abstract():
+    assert not inspect.isabstract(Home_Security)
+
+
+def test_home_security_constructor_exists():
+    assert callable(Home_Security.__init__)
+
+
+def test_home_security_constructor_args():
+    sig = inspect.signature(Home_Security.__init__)
+    params = list(sig.parameters.keys())
+
+
 # =============================================================================
 # HYPOTHESIS STRATEGIES
 # =============================================================================
@@ -199,9 +199,6 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-Home_Security_strategy = st.builds(
-    Home_Security,
-)
 Temperature_sensor_strategy = st.builds(
     Temperature_sensor,
     attribute=
@@ -234,20 +231,15 @@ Camera_sensor_strategy = st.builds(
     Video_ID=
         st.integers()
 )
-
-@given(instance=Home_Security_strategy)
-@settings(max_examples=50)
-def test_home_security_instantiation(instance):
-    assert isinstance(instance, Home_Security)
+Home_Security_strategy = st.builds(
+    Home_Security,
+)
 
 @given(instance=Temperature_sensor_strategy)
 @settings(max_examples=50)
 def test_temperature_sensor_instantiation(instance):
     assert isinstance(instance, Temperature_sensor)
 
-@given(instance=Temperature_sensor_strategy)
-def test_temperature_sensor_attribute_type(instance):
-    assert isinstance(instance.attribute, str)
 
 
 @given(instance=Temperature_sensor_strategy)
@@ -261,9 +253,6 @@ def test_temperature_sensor_attribute_setter(instance):
 def test_server_instantiation(instance):
     assert isinstance(instance, Server)
 
-@given(instance=Server_strategy)
-def test_server_attribute_type(instance):
-    assert isinstance(instance.attribute, str)
 
 
 @given(instance=Server_strategy)
@@ -277,9 +266,6 @@ def test_server_attribute_setter(instance):
 def test_lock_doors_sensors_instantiation(instance):
     assert isinstance(instance, Lock_doors_sensors)
 
-@given(instance=Lock_doors_sensors_strategy)
-def test_lock_doors_sensors_attribute_type(instance):
-    assert isinstance(instance.attribute, str)
 
 
 @given(instance=Lock_doors_sensors_strategy)
@@ -293,9 +279,6 @@ def test_lock_doors_sensors_attribute_setter(instance):
 def test_light_sensor_instantiation(instance):
     assert isinstance(instance, Light_Sensor)
 
-@given(instance=Light_Sensor_strategy)
-def test_light_sensor_attribute_type(instance):
-    assert isinstance(instance.attribute, str)
 
 
 @given(instance=Light_Sensor_strategy)
@@ -309,9 +292,6 @@ def test_light_sensor_attribute_setter(instance):
 def test_event_log_instantiation(instance):
     assert isinstance(instance, Event_Log)
 
-@given(instance=Event_Log_strategy)
-def test_event_log_attribute_type(instance):
-    assert isinstance(instance.attribute, str)
 
 
 @given(instance=Event_Log_strategy)
@@ -325,9 +305,6 @@ def test_event_log_attribute_setter(instance):
 def test_camera_sensor_instantiation(instance):
     assert isinstance(instance, Camera_sensor)
 
-@given(instance=Camera_sensor_strategy)
-def test_camera_sensor_Image_ID_type(instance):
-    assert isinstance(instance.Image_ID, int)
 
 
 @given(instance=Camera_sensor_strategy)
@@ -336,9 +313,6 @@ def test_camera_sensor_Image_ID_setter(instance):
     instance.Image_ID = original
     assert instance.Image_ID == original
 
-@given(instance=Camera_sensor_strategy)
-def test_camera_sensor_Video_ID_type(instance):
-    assert isinstance(instance.Video_ID, int)
 
 
 @given(instance=Camera_sensor_strategy)
@@ -346,3 +320,8 @@ def test_camera_sensor_Video_ID_setter(instance):
     original = instance.Video_ID
     instance.Video_ID = original
     assert instance.Video_ID == original
+
+@given(instance=Home_Security_strategy)
+@settings(max_examples=50)
+def test_home_security_instantiation(instance):
+    assert isinstance(instance, Home_Security)

@@ -3,16 +3,16 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    fsm::NamedElement,
+from python_code import (
+    fsm_NamedElement,
     NamedElement,
-    fsm::Transition,
-    fsm::FSMSystem,
-    fsm::Buffer,
-    fsm::State,
-    fsm::StateMachine,
+    fsm_State,
+    fsm_FSMSystem,
+    fsm_Transition,
+    fsm_Buffer,
+    fsm_StateMachine,
 )
 
 # =============================================================================
@@ -21,23 +21,23 @@ from classes import (
 
 
 
-def test_fsm::namedelement_is_not_abstract():
-    assert not inspect.isabstract(fsm::NamedElement)
+def test_fsm_namedelement_is_not_abstract():
+    assert not inspect.isabstract(fsm_NamedElement)
 
 
-def test_fsm::namedelement_constructor_exists():
-    assert callable(fsm::NamedElement.__init__)
+def test_fsm_namedelement_constructor_exists():
+    assert callable(fsm_NamedElement.__init__)
 
 
-def test_fsm::namedelement_constructor_args():
-    sig = inspect.signature(fsm::NamedElement.__init__)
+def test_fsm_namedelement_constructor_args():
+    sig = inspect.signature(fsm_NamedElement.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_fsm::namedelement_has_name():
-    assert hasattr(fsm::NamedElement, "name")
+def test_fsm_namedelement_has_name():
+    assert hasattr(fsm_NamedElement, "name")
     descriptor = None
-    for klass in fsm::NamedElement.__mro__:
+    for klass in fsm_NamedElement.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -59,33 +59,61 @@ def test_namedelement_constructor_args():
 
 
 
-def test_fsm::transition_is_not_abstract():
-    assert not inspect.isabstract(fsm::Transition)
+def test_fsm_state_is_not_abstract():
+    assert not inspect.isabstract(fsm_State)
 
 
-def test_fsm::transition_constructor_exists():
-    assert callable(fsm::Transition.__init__)
+def test_fsm_state_constructor_exists():
+    assert callable(fsm_State.__init__)
 
 
-def test_fsm::transition_constructor_args():
-    sig = inspect.signature(fsm::Transition.__init__)
+def test_fsm_state_constructor_args():
+    sig = inspect.signature(fsm_State.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_fsm_fsmsystem_is_not_abstract():
+    assert not inspect.isabstract(fsm_FSMSystem)
+
+
+def test_fsm_fsmsystem_constructor_exists():
+    assert callable(fsm_FSMSystem.__init__)
+
+
+def test_fsm_fsmsystem_constructor_args():
+    sig = inspect.signature(fsm_FSMSystem.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_fsm_transition_is_not_abstract():
+    assert not inspect.isabstract(fsm_Transition)
+
+
+def test_fsm_transition_constructor_exists():
+    assert callable(fsm_Transition.__init__)
+
+
+def test_fsm_transition_constructor_args():
+    sig = inspect.signature(fsm_Transition.__init__)
     params = list(sig.parameters.keys())
     assert "output" in params, "Missing parameter 'output'"
     assert "input" in params, "Missing parameter 'input'"
 
-def test_fsm::transition_has_output():
-    assert hasattr(fsm::Transition, "output")
+def test_fsm_transition_has_output():
+    assert hasattr(fsm_Transition, "output")
     descriptor = None
-    for klass in fsm::Transition.__mro__:
+    for klass in fsm_Transition.__mro__:
         if "output" in klass.__dict__:
             descriptor = klass.__dict__["output"]
             break
     assert isinstance(descriptor, property)
 
-def test_fsm::transition_has_input():
-    assert hasattr(fsm::Transition, "input")
+def test_fsm_transition_has_input():
+    assert hasattr(fsm_Transition, "input")
     descriptor = None
-    for klass in fsm::Transition.__mro__:
+    for klass in fsm_Transition.__mro__:
         if "input" in klass.__dict__:
             descriptor = klass.__dict__["input"]
             break
@@ -93,47 +121,33 @@ def test_fsm::transition_has_input():
 
 
 
-def test_fsm::fsmsystem_is_not_abstract():
-    assert not inspect.isabstract(fsm::FSMSystem)
+def test_fsm_buffer_is_not_abstract():
+    assert not inspect.isabstract(fsm_Buffer)
 
 
-def test_fsm::fsmsystem_constructor_exists():
-    assert callable(fsm::FSMSystem.__init__)
+def test_fsm_buffer_constructor_exists():
+    assert callable(fsm_Buffer.__init__)
 
 
-def test_fsm::fsmsystem_constructor_args():
-    sig = inspect.signature(fsm::FSMSystem.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_fsm::buffer_is_not_abstract():
-    assert not inspect.isabstract(fsm::Buffer)
-
-
-def test_fsm::buffer_constructor_exists():
-    assert callable(fsm::Buffer.__init__)
-
-
-def test_fsm::buffer_constructor_args():
-    sig = inspect.signature(fsm::Buffer.__init__)
+def test_fsm_buffer_constructor_args():
+    sig = inspect.signature(fsm_Buffer.__init__)
     params = list(sig.parameters.keys())
     assert "initialValue" in params, "Missing parameter 'initialValue'"
     assert "currentValues" in params, "Missing parameter 'currentValues'"
 
-def test_fsm::buffer_has_initialValue():
-    assert hasattr(fsm::Buffer, "initialValue")
+def test_fsm_buffer_has_initialValue():
+    assert hasattr(fsm_Buffer, "initialValue")
     descriptor = None
-    for klass in fsm::Buffer.__mro__:
+    for klass in fsm_Buffer.__mro__:
         if "initialValue" in klass.__dict__:
             descriptor = klass.__dict__["initialValue"]
             break
     assert isinstance(descriptor, property)
 
-def test_fsm::buffer_has_currentValues():
-    assert hasattr(fsm::Buffer, "currentValues")
+def test_fsm_buffer_has_currentValues():
+    assert hasattr(fsm_Buffer, "currentValues")
     descriptor = None
-    for klass in fsm::Buffer.__mro__:
+    for klass in fsm_Buffer.__mro__:
         if "currentValues" in klass.__dict__:
             descriptor = klass.__dict__["currentValues"]
             break
@@ -141,57 +155,43 @@ def test_fsm::buffer_has_currentValues():
 
 
 
-def test_fsm::state_is_not_abstract():
-    assert not inspect.isabstract(fsm::State)
+def test_fsm_statemachine_is_not_abstract():
+    assert not inspect.isabstract(fsm_StateMachine)
 
 
-def test_fsm::state_constructor_exists():
-    assert callable(fsm::State.__init__)
+def test_fsm_statemachine_constructor_exists():
+    assert callable(fsm_StateMachine.__init__)
 
 
-def test_fsm::state_constructor_args():
-    sig = inspect.signature(fsm::State.__init__)
+def test_fsm_statemachine_constructor_args():
+    sig = inspect.signature(fsm_StateMachine.__init__)
     params = list(sig.parameters.keys())
-
-
-
-def test_fsm::statemachine_is_not_abstract():
-    assert not inspect.isabstract(fsm::StateMachine)
-
-
-def test_fsm::statemachine_constructor_exists():
-    assert callable(fsm::StateMachine.__init__)
-
-
-def test_fsm::statemachine_constructor_args():
-    sig = inspect.signature(fsm::StateMachine.__init__)
-    params = list(sig.parameters.keys())
-    assert "producedString" in params, "Missing parameter 'producedString'"
     assert "unprocessedString" in params, "Missing parameter 'unprocessedString'"
+    assert "producedString" in params, "Missing parameter 'producedString'"
     assert "consummedString" in params, "Missing parameter 'consummedString'"
 
-def test_fsm::statemachine_has_producedString():
-    assert hasattr(fsm::StateMachine, "producedString")
+def test_fsm_statemachine_has_unprocessedString():
+    assert hasattr(fsm_StateMachine, "unprocessedString")
     descriptor = None
-    for klass in fsm::StateMachine.__mro__:
-        if "producedString" in klass.__dict__:
-            descriptor = klass.__dict__["producedString"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_fsm::statemachine_has_unprocessedString():
-    assert hasattr(fsm::StateMachine, "unprocessedString")
-    descriptor = None
-    for klass in fsm::StateMachine.__mro__:
+    for klass in fsm_StateMachine.__mro__:
         if "unprocessedString" in klass.__dict__:
             descriptor = klass.__dict__["unprocessedString"]
             break
     assert isinstance(descriptor, property)
 
-def test_fsm::statemachine_has_consummedString():
-    assert hasattr(fsm::StateMachine, "consummedString")
+def test_fsm_statemachine_has_producedString():
+    assert hasattr(fsm_StateMachine, "producedString")
     descriptor = None
-    for klass in fsm::StateMachine.__mro__:
+    for klass in fsm_StateMachine.__mro__:
+        if "producedString" in klass.__dict__:
+            descriptor = klass.__dict__["producedString"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_fsm_statemachine_has_consummedString():
+    assert hasattr(fsm_StateMachine, "consummedString")
+    descriptor = None
+    for klass in fsm_StateMachine.__mro__:
         if "consummedString" in klass.__dict__:
             descriptor = klass.__dict__["consummedString"]
             break
@@ -209,56 +209,53 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-fsm::NamedElement_strategy = st.builds(
-    fsm::NamedElement,
+fsm_NamedElement_strategy = st.builds(
+    fsm_NamedElement,
     name=
         safe_text
 )
 NamedElement_strategy = st.builds(
     NamedElement,
 )
-fsm::Transition_strategy = st.builds(
-    fsm::Transition,
+fsm_State_strategy = st.builds(
+    fsm_State,
+)
+fsm_FSMSystem_strategy = st.builds(
+    fsm_FSMSystem,
+)
+fsm_Transition_strategy = st.builds(
+    fsm_Transition,
     output=
         safe_text,
     input=
         safe_text
 )
-fsm::FSMSystem_strategy = st.builds(
-    fsm::FSMSystem,
-)
-fsm::Buffer_strategy = st.builds(
-    fsm::Buffer,
+fsm_Buffer_strategy = st.builds(
+    fsm_Buffer,
     initialValue=
         safe_text,
     currentValues=
         safe_text
 )
-fsm::State_strategy = st.builds(
-    fsm::State,
-)
-fsm::StateMachine_strategy = st.builds(
-    fsm::StateMachine,
-    producedString=
-        safe_text,
+fsm_StateMachine_strategy = st.builds(
+    fsm_StateMachine,
     unprocessedString=
+        safe_text,
+    producedString=
         safe_text,
     consummedString=
         safe_text
 )
 
-@given(instance=fsm::NamedElement_strategy)
+@given(instance=fsm_NamedElement_strategy)
 @settings(max_examples=50)
-def test_fsm::namedelement_instantiation(instance):
-    assert isinstance(instance, fsm::NamedElement)
-
-@given(instance=fsm::NamedElement_strategy)
-def test_fsm::namedelement_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_fsm_namedelement_instantiation(instance):
+    assert isinstance(instance, fsm_NamedElement)
 
 
-@given(instance=fsm::NamedElement_strategy)
-def test_fsm::namedelement_name_setter(instance):
+
+@given(instance=fsm_NamedElement_strategy)
+def test_fsm_namedelement_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
@@ -268,32 +265,10 @@ def test_fsm::namedelement_name_setter(instance):
 def test_namedelement_instantiation(instance):
     assert isinstance(instance, NamedElement)
 
-@given(instance=fsm::Transition_strategy)
+@given(instance=fsm_State_strategy)
 @settings(max_examples=50)
-def test_fsm::transition_instantiation(instance):
-    assert isinstance(instance, fsm::Transition)
-
-@given(instance=fsm::Transition_strategy)
-def test_fsm::transition_output_type(instance):
-    assert isinstance(instance.output, str)
-
-
-@given(instance=fsm::Transition_strategy)
-def test_fsm::transition_output_setter(instance):
-    original = instance.output
-    instance.output = original
-    assert instance.output == original
-
-@given(instance=fsm::Transition_strategy)
-def test_fsm::transition_input_type(instance):
-    assert isinstance(instance.input, str)
-
-
-@given(instance=fsm::Transition_strategy)
-def test_fsm::transition_input_setter(instance):
-    original = instance.input
-    instance.input = original
-    assert instance.input == original
+def test_fsm_state_instantiation(instance):
+    assert isinstance(instance, fsm_State)
 
 import warnings
 import copy
@@ -301,224 +276,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=fsm::Transition_strategy)
+@given(instance=fsm_State_strategy)
 @settings(max_examples=30)
-def test_fsm::transition_fire_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.fire()
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.fire).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'fire' in fsm::Transition is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'fire' in fsm::Transition did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'fire' in fsm::Transition is not implemented or raised an error")
-
-@given(instance=fsm::FSMSystem_strategy)
-@settings(max_examples=50)
-def test_fsm::fsmsystem_instantiation(instance):
-    assert isinstance(instance, fsm::FSMSystem)
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=fsm::FSMSystem_strategy)
-@settings(max_examples=30)
-def test_fsm::fsmsystem_initialize_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.initialize(
-            "test"
-        )
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.initialize).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'initialize' in fsm::FSMSystem is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'initialize' in fsm::FSMSystem did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'initialize' in fsm::FSMSystem is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=fsm::FSMSystem_strategy)
-@settings(max_examples=30)
-def test_fsm::fsmsystem_main_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.main()
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.main).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'main' in fsm::FSMSystem is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'main' in fsm::FSMSystem did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'main' in fsm::FSMSystem is not implemented or raised an error")
-
-@given(instance=fsm::Buffer_strategy)
-@settings(max_examples=50)
-def test_fsm::buffer_instantiation(instance):
-    assert isinstance(instance, fsm::Buffer)
-
-@given(instance=fsm::Buffer_strategy)
-def test_fsm::buffer_initialValue_type(instance):
-    assert isinstance(instance.initialValue, str)
-
-
-@given(instance=fsm::Buffer_strategy)
-def test_fsm::buffer_initialValue_setter(instance):
-    original = instance.initialValue
-    instance.initialValue = original
-    assert instance.initialValue == original
-
-@given(instance=fsm::Buffer_strategy)
-def test_fsm::buffer_currentValues_type(instance):
-    assert isinstance(instance.currentValues, str)
-
-
-@given(instance=fsm::Buffer_strategy)
-def test_fsm::buffer_currentValues_setter(instance):
-    original = instance.currentValues
-    instance.currentValues = original
-    assert instance.currentValues == original
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=fsm::Buffer_strategy)
-@settings(max_examples=30)
-def test_fsm::buffer_initialize_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.initialize()
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.initialize).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'initialize' in fsm::Buffer is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'initialize' in fsm::Buffer did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'initialize' in fsm::Buffer is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=fsm::Buffer_strategy)
-@settings(max_examples=30)
-def test_fsm::buffer_enqueue_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.enqueue(
-            "test"
-        )
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.enqueue).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'enqueue' in fsm::Buffer is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'enqueue' in fsm::Buffer did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'enqueue' in fsm::Buffer is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=fsm::Buffer_strategy)
-@settings(max_examples=30)
-def test_fsm::buffer_dequeue_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.dequeue()
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.dequeue).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'dequeue' in fsm::Buffer is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'dequeue' in fsm::Buffer did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'dequeue' in fsm::Buffer is not implemented or raised an error")
-
-@given(instance=fsm::State_strategy)
-@settings(max_examples=50)
-def test_fsm::state_instantiation(instance):
-    assert isinstance(instance, fsm::State)
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=fsm::State_strategy)
-@settings(max_examples=30)
-def test_fsm::state_step_changes_state(instance):
+def test_fsm_state_step_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -532,49 +292,265 @@ def test_fsm::state_step_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'step' in fsm::State is empty"
+        assert has_statements, f"Function 'step' in fsm_State is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'step' in fsm::State did not change state; check implementation")
+            warnings.warn(f"Operation 'step' in fsm_State did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'step' in fsm::State is not implemented or raised an error")
+        warnings.warn(f"Operation 'step' in fsm_State is not implemented or raised an error")
 
-@given(instance=fsm::StateMachine_strategy)
+@given(instance=fsm_FSMSystem_strategy)
 @settings(max_examples=50)
-def test_fsm::statemachine_instantiation(instance):
-    assert isinstance(instance, fsm::StateMachine)
+def test_fsm_fsmsystem_instantiation(instance):
+    assert isinstance(instance, fsm_FSMSystem)
 
-@given(instance=fsm::StateMachine_strategy)
-def test_fsm::statemachine_producedString_type(instance):
-    assert isinstance(instance.producedString, str)
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=fsm_FSMSystem_strategy)
+@settings(max_examples=30)
+def test_fsm_fsmsystem_main_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.main()
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.main).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'main' in fsm_FSMSystem is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'main' in fsm_FSMSystem did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'main' in fsm_FSMSystem is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=fsm_FSMSystem_strategy)
+@settings(max_examples=30)
+def test_fsm_fsmsystem_initialize_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.initialize(
+            "test"
+        )
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.initialize).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'initialize' in fsm_FSMSystem is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'initialize' in fsm_FSMSystem did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'initialize' in fsm_FSMSystem is not implemented or raised an error")
+
+@given(instance=fsm_Transition_strategy)
+@settings(max_examples=50)
+def test_fsm_transition_instantiation(instance):
+    assert isinstance(instance, fsm_Transition)
 
 
-@given(instance=fsm::StateMachine_strategy)
-def test_fsm::statemachine_producedString_setter(instance):
-    original = instance.producedString
-    instance.producedString = original
-    assert instance.producedString == original
 
-@given(instance=fsm::StateMachine_strategy)
-def test_fsm::statemachine_unprocessedString_type(instance):
-    assert isinstance(instance.unprocessedString, str)
+@given(instance=fsm_Transition_strategy)
+def test_fsm_transition_output_setter(instance):
+    original = instance.output
+    instance.output = original
+    assert instance.output == original
 
 
-@given(instance=fsm::StateMachine_strategy)
-def test_fsm::statemachine_unprocessedString_setter(instance):
+
+@given(instance=fsm_Transition_strategy)
+def test_fsm_transition_input_setter(instance):
+    original = instance.input
+    instance.input = original
+    assert instance.input == original
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=fsm_Transition_strategy)
+@settings(max_examples=30)
+def test_fsm_transition_fire_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.fire()
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.fire).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'fire' in fsm_Transition is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'fire' in fsm_Transition did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'fire' in fsm_Transition is not implemented or raised an error")
+
+@given(instance=fsm_Buffer_strategy)
+@settings(max_examples=50)
+def test_fsm_buffer_instantiation(instance):
+    assert isinstance(instance, fsm_Buffer)
+
+
+
+@given(instance=fsm_Buffer_strategy)
+def test_fsm_buffer_initialValue_setter(instance):
+    original = instance.initialValue
+    instance.initialValue = original
+    assert instance.initialValue == original
+
+
+
+@given(instance=fsm_Buffer_strategy)
+def test_fsm_buffer_currentValues_setter(instance):
+    original = instance.currentValues
+    instance.currentValues = original
+    assert instance.currentValues == original
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=fsm_Buffer_strategy)
+@settings(max_examples=30)
+def test_fsm_buffer_enqueue_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.enqueue(
+            "test"
+        )
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.enqueue).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'enqueue' in fsm_Buffer is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'enqueue' in fsm_Buffer did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'enqueue' in fsm_Buffer is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=fsm_Buffer_strategy)
+@settings(max_examples=30)
+def test_fsm_buffer_initialize_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.initialize()
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.initialize).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'initialize' in fsm_Buffer is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'initialize' in fsm_Buffer did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'initialize' in fsm_Buffer is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=fsm_Buffer_strategy)
+@settings(max_examples=30)
+def test_fsm_buffer_dequeue_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.dequeue()
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.dequeue).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'dequeue' in fsm_Buffer is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'dequeue' in fsm_Buffer did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'dequeue' in fsm_Buffer is not implemented or raised an error")
+
+@given(instance=fsm_StateMachine_strategy)
+@settings(max_examples=50)
+def test_fsm_statemachine_instantiation(instance):
+    assert isinstance(instance, fsm_StateMachine)
+
+
+
+@given(instance=fsm_StateMachine_strategy)
+def test_fsm_statemachine_unprocessedString_setter(instance):
     original = instance.unprocessedString
     instance.unprocessedString = original
     assert instance.unprocessedString == original
 
-@given(instance=fsm::StateMachine_strategy)
-def test_fsm::statemachine_consummedString_type(instance):
-    assert isinstance(instance.consummedString, str)
 
 
-@given(instance=fsm::StateMachine_strategy)
-def test_fsm::statemachine_consummedString_setter(instance):
+@given(instance=fsm_StateMachine_strategy)
+def test_fsm_statemachine_producedString_setter(instance):
+    original = instance.producedString
+    instance.producedString = original
+    assert instance.producedString == original
+
+
+
+@given(instance=fsm_StateMachine_strategy)
+def test_fsm_statemachine_consummedString_setter(instance):
     original = instance.consummedString
     instance.consummedString = original
     assert instance.consummedString == original
@@ -585,9 +561,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=fsm::StateMachine_strategy)
+@given(instance=fsm_StateMachine_strategy)
 @settings(max_examples=30)
-def test_fsm::statemachine_initializemodel_changes_state(instance):
+def test_fsm_statemachine_initializemodel_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -599,14 +575,14 @@ def test_fsm::statemachine_initializemodel_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'initializeModel' in fsm::StateMachine is empty"
+        assert has_statements, f"Function 'initializeModel' in fsm_StateMachine is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'initializeModel' in fsm::StateMachine did not change state; check implementation")
+            warnings.warn(f"Operation 'initializeModel' in fsm_StateMachine did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'initializeModel' in fsm::StateMachine is not implemented or raised an error")
+        warnings.warn(f"Operation 'initializeModel' in fsm_StateMachine is not implemented or raised an error")
 
 import warnings
 import copy
@@ -614,9 +590,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=fsm::StateMachine_strategy)
+@given(instance=fsm_StateMachine_strategy)
 @settings(max_examples=30)
-def test_fsm::statemachine_run_changes_state(instance):
+def test_fsm_statemachine_run_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -628,11 +604,11 @@ def test_fsm::statemachine_run_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'run' in fsm::StateMachine is empty"
+        assert has_statements, f"Function 'run' in fsm_StateMachine is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'run' in fsm::StateMachine did not change state; check implementation")
+            warnings.warn(f"Operation 'run' in fsm_StateMachine did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'run' in fsm::StateMachine is not implemented or raised an error")
+        warnings.warn(f"Operation 'run' in fsm_StateMachine is not implemented or raised an error")

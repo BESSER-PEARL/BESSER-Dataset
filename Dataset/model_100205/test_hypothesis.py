@@ -3,58 +3,58 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     TriggerAction,
-    sqls::TriggerDelete,
-    sqls::TriggerUpdate,
-    sqls::TriggerInsert,
+    sqls_TriggerUpdate,
+    sqls_TriggerDelete,
+    sqls_TriggerInsert,
     Type,
-    sqls::TypeDef,
-    sqls::Enum,
-    sqls::TriggerAction,
-    sqls::UpdateColumnExpression,
-    sqls::TableRef,
-    sqls::Function,
+    sqls_TypeDef,
+    sqls_Enum,
+    sqls_TriggerAction,
+    sqls_UpdateColumnExpression,
+    sqls_TableRef,
+    sqls_Function,
     SqlExpr,
-    sqls::SqlNumberLiteral,
-    sqls::ColumnRef,
-    sqls::NewColumn,
-    sqls::SqlParam,
-    sqls::SqlStringLiteral,
-    sqls::SqlNested,
-    sqls::OldColumn,
-    sqls::SqlPlaceholder,
-    sqls::SqlBinaryExpr,
-    sqls::SqlFunction,
-    sqls::SelectList,
-    sqls::ResultColumn,
-    sqls::OrderingTerm,
-    sqls::SqlSentence,
+    sqls_SqlNumberLiteral,
+    sqls_ColumnRef,
+    sqls_SqlParam,
+    sqls_SqlPlaceholder,
+    sqls_SqlBinaryExpr,
+    sqls_NewColumn,
+    sqls_OldColumn,
+    sqls_SqlNested,
+    sqls_SqlStringLiteral,
+    sqls_SqlFunction,
+    sqls_SelectList,
+    sqls_ResultColumn,
+    sqls_OrderingTerm,
+    sqls_SqlSentence,
     SqlSentence,
-    sqls::SqlMethodRef,
-    sqls::Insert,
-    sqls::DeleteTable,
-    sqls::InsertStatement,
-    sqls::Update,
-    sqls::Get,
-    sqls::Delete,
-    sqls::Select,
+    sqls_Update,
+    sqls_Insert,
+    sqls_Delete,
+    sqls_DeleteTable,
+    sqls_InsertStatement,
+    sqls_Get,
+    sqls_SqlMethodRef,
+    sqls_Select,
     TableConstraint,
-    sqls::UniqueTableConstraint,
-    sqls::TableConstraint,
-    sqls::SqlExpr,
-    sqls::SqlType,
-    sqls::EnumElement,
-    sqls::SqlMethod,
-    sqls::Trigger,
-    sqls::Column,
-    sqls::Table,
-    sqls::Type,
-    sqls::Tag,
-    sqls::Import,
-    sqls::SqlLibrary,
+    sqls_UniqueTableConstraint,
+    sqls_TableConstraint,
+    sqls_SqlExpr,
+    sqls_SqlType,
+    sqls_EnumElement,
+    sqls_SqlMethod,
+    sqls_Trigger,
+    sqls_Column,
+    sqls_Table,
+    sqls_Type,
+    sqls_Tag,
+    sqls_Import,
+    sqls_SqlLibrary,
     TriggerTime,
 )
 
@@ -78,44 +78,44 @@ def test_triggeraction_constructor_args():
 
 
 
-def test_sqls::triggerdelete_is_not_abstract():
-    assert not inspect.isabstract(sqls::TriggerDelete)
+def test_sqls_triggerupdate_is_not_abstract():
+    assert not inspect.isabstract(sqls_TriggerUpdate)
 
 
-def test_sqls::triggerdelete_constructor_exists():
-    assert callable(sqls::TriggerDelete.__init__)
+def test_sqls_triggerupdate_constructor_exists():
+    assert callable(sqls_TriggerUpdate.__init__)
 
 
-def test_sqls::triggerdelete_constructor_args():
-    sig = inspect.signature(sqls::TriggerDelete.__init__)
+def test_sqls_triggerupdate_constructor_args():
+    sig = inspect.signature(sqls_TriggerUpdate.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sqls::triggerupdate_is_not_abstract():
-    assert not inspect.isabstract(sqls::TriggerUpdate)
+def test_sqls_triggerdelete_is_not_abstract():
+    assert not inspect.isabstract(sqls_TriggerDelete)
 
 
-def test_sqls::triggerupdate_constructor_exists():
-    assert callable(sqls::TriggerUpdate.__init__)
+def test_sqls_triggerdelete_constructor_exists():
+    assert callable(sqls_TriggerDelete.__init__)
 
 
-def test_sqls::triggerupdate_constructor_args():
-    sig = inspect.signature(sqls::TriggerUpdate.__init__)
+def test_sqls_triggerdelete_constructor_args():
+    sig = inspect.signature(sqls_TriggerDelete.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sqls::triggerinsert_is_not_abstract():
-    assert not inspect.isabstract(sqls::TriggerInsert)
+def test_sqls_triggerinsert_is_not_abstract():
+    assert not inspect.isabstract(sqls_TriggerInsert)
 
 
-def test_sqls::triggerinsert_constructor_exists():
-    assert callable(sqls::TriggerInsert.__init__)
+def test_sqls_triggerinsert_constructor_exists():
+    assert callable(sqls_TriggerInsert.__init__)
 
 
-def test_sqls::triggerinsert_constructor_args():
-    sig = inspect.signature(sqls::TriggerInsert.__init__)
+def test_sqls_triggerinsert_constructor_args():
+    sig = inspect.signature(sqls_TriggerInsert.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -134,79 +134,79 @@ def test_type_constructor_args():
 
 
 
-def test_sqls::typedef_is_not_abstract():
-    assert not inspect.isabstract(sqls::TypeDef)
+def test_sqls_typedef_is_not_abstract():
+    assert not inspect.isabstract(sqls_TypeDef)
 
 
-def test_sqls::typedef_constructor_exists():
-    assert callable(sqls::TypeDef.__init__)
+def test_sqls_typedef_constructor_exists():
+    assert callable(sqls_TypeDef.__init__)
 
 
-def test_sqls::typedef_constructor_args():
-    sig = inspect.signature(sqls::TypeDef.__init__)
+def test_sqls_typedef_constructor_args():
+    sig = inspect.signature(sqls_TypeDef.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sqls::enum_is_not_abstract():
-    assert not inspect.isabstract(sqls::Enum)
+def test_sqls_enum_is_not_abstract():
+    assert not inspect.isabstract(sqls_Enum)
 
 
-def test_sqls::enum_constructor_exists():
-    assert callable(sqls::Enum.__init__)
+def test_sqls_enum_constructor_exists():
+    assert callable(sqls_Enum.__init__)
 
 
-def test_sqls::enum_constructor_args():
-    sig = inspect.signature(sqls::Enum.__init__)
+def test_sqls_enum_constructor_args():
+    sig = inspect.signature(sqls_Enum.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sqls::triggeraction_is_not_abstract():
-    assert not inspect.isabstract(sqls::TriggerAction)
+def test_sqls_triggeraction_is_not_abstract():
+    assert not inspect.isabstract(sqls_TriggerAction)
 
 
-def test_sqls::triggeraction_constructor_exists():
-    assert callable(sqls::TriggerAction.__init__)
+def test_sqls_triggeraction_constructor_exists():
+    assert callable(sqls_TriggerAction.__init__)
 
 
-def test_sqls::triggeraction_constructor_args():
-    sig = inspect.signature(sqls::TriggerAction.__init__)
+def test_sqls_triggeraction_constructor_args():
+    sig = inspect.signature(sqls_TriggerAction.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sqls::updatecolumnexpression_is_not_abstract():
-    assert not inspect.isabstract(sqls::UpdateColumnExpression)
+def test_sqls_updatecolumnexpression_is_not_abstract():
+    assert not inspect.isabstract(sqls_UpdateColumnExpression)
 
 
-def test_sqls::updatecolumnexpression_constructor_exists():
-    assert callable(sqls::UpdateColumnExpression.__init__)
+def test_sqls_updatecolumnexpression_constructor_exists():
+    assert callable(sqls_UpdateColumnExpression.__init__)
 
 
-def test_sqls::updatecolumnexpression_constructor_args():
-    sig = inspect.signature(sqls::UpdateColumnExpression.__init__)
+def test_sqls_updatecolumnexpression_constructor_args():
+    sig = inspect.signature(sqls_UpdateColumnExpression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sqls::tableref_is_not_abstract():
-    assert not inspect.isabstract(sqls::TableRef)
+def test_sqls_tableref_is_not_abstract():
+    assert not inspect.isabstract(sqls_TableRef)
 
 
-def test_sqls::tableref_constructor_exists():
-    assert callable(sqls::TableRef.__init__)
+def test_sqls_tableref_constructor_exists():
+    assert callable(sqls_TableRef.__init__)
 
 
-def test_sqls::tableref_constructor_args():
-    sig = inspect.signature(sqls::TableRef.__init__)
+def test_sqls_tableref_constructor_args():
+    sig = inspect.signature(sqls_TableRef.__init__)
     params = list(sig.parameters.keys())
     assert "alias" in params, "Missing parameter 'alias'"
 
-def test_sqls::tableref_has_alias():
-    assert hasattr(sqls::TableRef, "alias")
+def test_sqls_tableref_has_alias():
+    assert hasattr(sqls_TableRef, "alias")
     descriptor = None
-    for klass in sqls::TableRef.__mro__:
+    for klass in sqls_TableRef.__mro__:
         if "alias" in klass.__dict__:
             descriptor = klass.__dict__["alias"]
             break
@@ -214,16 +214,16 @@ def test_sqls::tableref_has_alias():
 
 
 
-def test_sqls::function_is_not_abstract():
-    assert not inspect.isabstract(sqls::Function)
+def test_sqls_function_is_not_abstract():
+    assert not inspect.isabstract(sqls_Function)
 
 
-def test_sqls::function_constructor_exists():
-    assert callable(sqls::Function.__init__)
+def test_sqls_function_constructor_exists():
+    assert callable(sqls_Function.__init__)
 
 
-def test_sqls::function_constructor_args():
-    sig = inspect.signature(sqls::Function.__init__)
+def test_sqls_function_constructor_args():
+    sig = inspect.signature(sqls_Function.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -242,23 +242,23 @@ def test_sqlexpr_constructor_args():
 
 
 
-def test_sqls::sqlnumberliteral_is_not_abstract():
-    assert not inspect.isabstract(sqls::SqlNumberLiteral)
+def test_sqls_sqlnumberliteral_is_not_abstract():
+    assert not inspect.isabstract(sqls_SqlNumberLiteral)
 
 
-def test_sqls::sqlnumberliteral_constructor_exists():
-    assert callable(sqls::SqlNumberLiteral.__init__)
+def test_sqls_sqlnumberliteral_constructor_exists():
+    assert callable(sqls_SqlNumberLiteral.__init__)
 
 
-def test_sqls::sqlnumberliteral_constructor_args():
-    sig = inspect.signature(sqls::SqlNumberLiteral.__init__)
+def test_sqls_sqlnumberliteral_constructor_args():
+    sig = inspect.signature(sqls_SqlNumberLiteral.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
 
-def test_sqls::sqlnumberliteral_has_value():
-    assert hasattr(sqls::SqlNumberLiteral, "value")
+def test_sqls_sqlnumberliteral_has_value():
+    assert hasattr(sqls_SqlNumberLiteral, "value")
     descriptor = None
-    for klass in sqls::SqlNumberLiteral.__mro__:
+    for klass in sqls_SqlNumberLiteral.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -266,51 +266,37 @@ def test_sqls::sqlnumberliteral_has_value():
 
 
 
-def test_sqls::columnref_is_not_abstract():
-    assert not inspect.isabstract(sqls::ColumnRef)
+def test_sqls_columnref_is_not_abstract():
+    assert not inspect.isabstract(sqls_ColumnRef)
 
 
-def test_sqls::columnref_constructor_exists():
-    assert callable(sqls::ColumnRef.__init__)
+def test_sqls_columnref_constructor_exists():
+    assert callable(sqls_ColumnRef.__init__)
 
 
-def test_sqls::columnref_constructor_args():
-    sig = inspect.signature(sqls::ColumnRef.__init__)
+def test_sqls_columnref_constructor_args():
+    sig = inspect.signature(sqls_ColumnRef.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sqls::newcolumn_is_not_abstract():
-    assert not inspect.isabstract(sqls::NewColumn)
+def test_sqls_sqlparam_is_not_abstract():
+    assert not inspect.isabstract(sqls_SqlParam)
 
 
-def test_sqls::newcolumn_constructor_exists():
-    assert callable(sqls::NewColumn.__init__)
+def test_sqls_sqlparam_constructor_exists():
+    assert callable(sqls_SqlParam.__init__)
 
 
-def test_sqls::newcolumn_constructor_args():
-    sig = inspect.signature(sqls::NewColumn.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_sqls::sqlparam_is_not_abstract():
-    assert not inspect.isabstract(sqls::SqlParam)
-
-
-def test_sqls::sqlparam_constructor_exists():
-    assert callable(sqls::SqlParam.__init__)
-
-
-def test_sqls::sqlparam_constructor_args():
-    sig = inspect.signature(sqls::SqlParam.__init__)
+def test_sqls_sqlparam_constructor_args():
+    sig = inspect.signature(sqls_SqlParam.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_sqls::sqlparam_has_name():
-    assert hasattr(sqls::SqlParam, "name")
+def test_sqls_sqlparam_has_name():
+    assert hasattr(sqls_SqlParam, "name")
     descriptor = None
-    for klass in sqls::SqlParam.__mro__:
+    for klass in sqls_SqlParam.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -318,89 +304,37 @@ def test_sqls::sqlparam_has_name():
 
 
 
-def test_sqls::sqlstringliteral_is_not_abstract():
-    assert not inspect.isabstract(sqls::SqlStringLiteral)
+def test_sqls_sqlplaceholder_is_not_abstract():
+    assert not inspect.isabstract(sqls_SqlPlaceholder)
 
 
-def test_sqls::sqlstringliteral_constructor_exists():
-    assert callable(sqls::SqlStringLiteral.__init__)
+def test_sqls_sqlplaceholder_constructor_exists():
+    assert callable(sqls_SqlPlaceholder.__init__)
 
 
-def test_sqls::sqlstringliteral_constructor_args():
-    sig = inspect.signature(sqls::SqlStringLiteral.__init__)
-    params = list(sig.parameters.keys())
-    assert "value" in params, "Missing parameter 'value'"
-
-def test_sqls::sqlstringliteral_has_value():
-    assert hasattr(sqls::SqlStringLiteral, "value")
-    descriptor = None
-    for klass in sqls::SqlStringLiteral.__mro__:
-        if "value" in klass.__dict__:
-            descriptor = klass.__dict__["value"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_sqls::sqlnested_is_not_abstract():
-    assert not inspect.isabstract(sqls::SqlNested)
-
-
-def test_sqls::sqlnested_constructor_exists():
-    assert callable(sqls::SqlNested.__init__)
-
-
-def test_sqls::sqlnested_constructor_args():
-    sig = inspect.signature(sqls::SqlNested.__init__)
+def test_sqls_sqlplaceholder_constructor_args():
+    sig = inspect.signature(sqls_SqlPlaceholder.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sqls::oldcolumn_is_not_abstract():
-    assert not inspect.isabstract(sqls::OldColumn)
+def test_sqls_sqlbinaryexpr_is_not_abstract():
+    assert not inspect.isabstract(sqls_SqlBinaryExpr)
 
 
-def test_sqls::oldcolumn_constructor_exists():
-    assert callable(sqls::OldColumn.__init__)
+def test_sqls_sqlbinaryexpr_constructor_exists():
+    assert callable(sqls_SqlBinaryExpr.__init__)
 
 
-def test_sqls::oldcolumn_constructor_args():
-    sig = inspect.signature(sqls::OldColumn.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_sqls::sqlplaceholder_is_not_abstract():
-    assert not inspect.isabstract(sqls::SqlPlaceholder)
-
-
-def test_sqls::sqlplaceholder_constructor_exists():
-    assert callable(sqls::SqlPlaceholder.__init__)
-
-
-def test_sqls::sqlplaceholder_constructor_args():
-    sig = inspect.signature(sqls::SqlPlaceholder.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_sqls::sqlbinaryexpr_is_not_abstract():
-    assert not inspect.isabstract(sqls::SqlBinaryExpr)
-
-
-def test_sqls::sqlbinaryexpr_constructor_exists():
-    assert callable(sqls::SqlBinaryExpr.__init__)
-
-
-def test_sqls::sqlbinaryexpr_constructor_args():
-    sig = inspect.signature(sqls::SqlBinaryExpr.__init__)
+def test_sqls_sqlbinaryexpr_constructor_args():
+    sig = inspect.signature(sqls_SqlBinaryExpr.__init__)
     params = list(sig.parameters.keys())
     assert "op" in params, "Missing parameter 'op'"
 
-def test_sqls::sqlbinaryexpr_has_op():
-    assert hasattr(sqls::SqlBinaryExpr, "op")
+def test_sqls_sqlbinaryexpr_has_op():
+    assert hasattr(sqls_SqlBinaryExpr, "op")
     descriptor = None
-    for klass in sqls::SqlBinaryExpr.__mro__:
+    for klass in sqls_SqlBinaryExpr.__mro__:
         if "op" in klass.__dict__:
             descriptor = klass.__dict__["op"]
             break
@@ -408,51 +342,117 @@ def test_sqls::sqlbinaryexpr_has_op():
 
 
 
-def test_sqls::sqlfunction_is_not_abstract():
-    assert not inspect.isabstract(sqls::SqlFunction)
+def test_sqls_newcolumn_is_not_abstract():
+    assert not inspect.isabstract(sqls_NewColumn)
 
 
-def test_sqls::sqlfunction_constructor_exists():
-    assert callable(sqls::SqlFunction.__init__)
+def test_sqls_newcolumn_constructor_exists():
+    assert callable(sqls_NewColumn.__init__)
 
 
-def test_sqls::sqlfunction_constructor_args():
-    sig = inspect.signature(sqls::SqlFunction.__init__)
+def test_sqls_newcolumn_constructor_args():
+    sig = inspect.signature(sqls_NewColumn.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sqls::selectlist_is_not_abstract():
-    assert not inspect.isabstract(sqls::SelectList)
+def test_sqls_oldcolumn_is_not_abstract():
+    assert not inspect.isabstract(sqls_OldColumn)
 
 
-def test_sqls::selectlist_constructor_exists():
-    assert callable(sqls::SelectList.__init__)
+def test_sqls_oldcolumn_constructor_exists():
+    assert callable(sqls_OldColumn.__init__)
 
 
-def test_sqls::selectlist_constructor_args():
-    sig = inspect.signature(sqls::SelectList.__init__)
+def test_sqls_oldcolumn_constructor_args():
+    sig = inspect.signature(sqls_OldColumn.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sqls::resultcolumn_is_not_abstract():
-    assert not inspect.isabstract(sqls::ResultColumn)
+def test_sqls_sqlnested_is_not_abstract():
+    assert not inspect.isabstract(sqls_SqlNested)
 
 
-def test_sqls::resultcolumn_constructor_exists():
-    assert callable(sqls::ResultColumn.__init__)
+def test_sqls_sqlnested_constructor_exists():
+    assert callable(sqls_SqlNested.__init__)
 
 
-def test_sqls::resultcolumn_constructor_args():
-    sig = inspect.signature(sqls::ResultColumn.__init__)
+def test_sqls_sqlnested_constructor_args():
+    sig = inspect.signature(sqls_SqlNested.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_sqls_sqlstringliteral_is_not_abstract():
+    assert not inspect.isabstract(sqls_SqlStringLiteral)
+
+
+def test_sqls_sqlstringliteral_constructor_exists():
+    assert callable(sqls_SqlStringLiteral.__init__)
+
+
+def test_sqls_sqlstringliteral_constructor_args():
+    sig = inspect.signature(sqls_SqlStringLiteral.__init__)
+    params = list(sig.parameters.keys())
+    assert "value" in params, "Missing parameter 'value'"
+
+def test_sqls_sqlstringliteral_has_value():
+    assert hasattr(sqls_SqlStringLiteral, "value")
+    descriptor = None
+    for klass in sqls_SqlStringLiteral.__mro__:
+        if "value" in klass.__dict__:
+            descriptor = klass.__dict__["value"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_sqls_sqlfunction_is_not_abstract():
+    assert not inspect.isabstract(sqls_SqlFunction)
+
+
+def test_sqls_sqlfunction_constructor_exists():
+    assert callable(sqls_SqlFunction.__init__)
+
+
+def test_sqls_sqlfunction_constructor_args():
+    sig = inspect.signature(sqls_SqlFunction.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_sqls_selectlist_is_not_abstract():
+    assert not inspect.isabstract(sqls_SelectList)
+
+
+def test_sqls_selectlist_constructor_exists():
+    assert callable(sqls_SelectList.__init__)
+
+
+def test_sqls_selectlist_constructor_args():
+    sig = inspect.signature(sqls_SelectList.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_sqls_resultcolumn_is_not_abstract():
+    assert not inspect.isabstract(sqls_ResultColumn)
+
+
+def test_sqls_resultcolumn_constructor_exists():
+    assert callable(sqls_ResultColumn.__init__)
+
+
+def test_sqls_resultcolumn_constructor_args():
+    sig = inspect.signature(sqls_ResultColumn.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_sqls::resultcolumn_has_name():
-    assert hasattr(sqls::ResultColumn, "name")
+def test_sqls_resultcolumn_has_name():
+    assert hasattr(sqls_ResultColumn, "name")
     descriptor = None
-    for klass in sqls::ResultColumn.__mro__:
+    for klass in sqls_ResultColumn.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -460,50 +460,50 @@ def test_sqls::resultcolumn_has_name():
 
 
 
-def test_sqls::orderingterm_is_not_abstract():
-    assert not inspect.isabstract(sqls::OrderingTerm)
+def test_sqls_orderingterm_is_not_abstract():
+    assert not inspect.isabstract(sqls_OrderingTerm)
 
 
-def test_sqls::orderingterm_constructor_exists():
-    assert callable(sqls::OrderingTerm.__init__)
+def test_sqls_orderingterm_constructor_exists():
+    assert callable(sqls_OrderingTerm.__init__)
 
 
-def test_sqls::orderingterm_constructor_args():
-    sig = inspect.signature(sqls::OrderingTerm.__init__)
+def test_sqls_orderingterm_constructor_args():
+    sig = inspect.signature(sqls_OrderingTerm.__init__)
     params = list(sig.parameters.keys())
-    assert "asc" in params, "Missing parameter 'asc'"
     assert "desc" in params, "Missing parameter 'desc'"
+    assert "asc" in params, "Missing parameter 'asc'"
 
-def test_sqls::orderingterm_has_asc():
-    assert hasattr(sqls::OrderingTerm, "asc")
+def test_sqls_orderingterm_has_desc():
+    assert hasattr(sqls_OrderingTerm, "desc")
     descriptor = None
-    for klass in sqls::OrderingTerm.__mro__:
-        if "asc" in klass.__dict__:
-            descriptor = klass.__dict__["asc"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_sqls::orderingterm_has_desc():
-    assert hasattr(sqls::OrderingTerm, "desc")
-    descriptor = None
-    for klass in sqls::OrderingTerm.__mro__:
+    for klass in sqls_OrderingTerm.__mro__:
         if "desc" in klass.__dict__:
             descriptor = klass.__dict__["desc"]
             break
     assert isinstance(descriptor, property)
 
+def test_sqls_orderingterm_has_asc():
+    assert hasattr(sqls_OrderingTerm, "asc")
+    descriptor = None
+    for klass in sqls_OrderingTerm.__mro__:
+        if "asc" in klass.__dict__:
+            descriptor = klass.__dict__["asc"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_sqls::sqlsentence_is_not_abstract():
-    assert not inspect.isabstract(sqls::SqlSentence)
+
+def test_sqls_sqlsentence_is_not_abstract():
+    assert not inspect.isabstract(sqls_SqlSentence)
 
 
-def test_sqls::sqlsentence_constructor_exists():
-    assert callable(sqls::SqlSentence.__init__)
+def test_sqls_sqlsentence_constructor_exists():
+    assert callable(sqls_SqlSentence.__init__)
 
 
-def test_sqls::sqlsentence_constructor_args():
-    sig = inspect.signature(sqls::SqlSentence.__init__)
+def test_sqls_sqlsentence_constructor_args():
+    sig = inspect.signature(sqls_SqlSentence.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -522,121 +522,121 @@ def test_sqlsentence_constructor_args():
 
 
 
-def test_sqls::sqlmethodref_is_not_abstract():
-    assert not inspect.isabstract(sqls::SqlMethodRef)
+def test_sqls_update_is_not_abstract():
+    assert not inspect.isabstract(sqls_Update)
 
 
-def test_sqls::sqlmethodref_constructor_exists():
-    assert callable(sqls::SqlMethodRef.__init__)
+def test_sqls_update_constructor_exists():
+    assert callable(sqls_Update.__init__)
 
 
-def test_sqls::sqlmethodref_constructor_args():
-    sig = inspect.signature(sqls::SqlMethodRef.__init__)
+def test_sqls_update_constructor_args():
+    sig = inspect.signature(sqls_Update.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sqls::insert_is_not_abstract():
-    assert not inspect.isabstract(sqls::Insert)
+def test_sqls_insert_is_not_abstract():
+    assert not inspect.isabstract(sqls_Insert)
 
 
-def test_sqls::insert_constructor_exists():
-    assert callable(sqls::Insert.__init__)
+def test_sqls_insert_constructor_exists():
+    assert callable(sqls_Insert.__init__)
 
 
-def test_sqls::insert_constructor_args():
-    sig = inspect.signature(sqls::Insert.__init__)
+def test_sqls_insert_constructor_args():
+    sig = inspect.signature(sqls_Insert.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sqls::deletetable_is_not_abstract():
-    assert not inspect.isabstract(sqls::DeleteTable)
+def test_sqls_delete_is_not_abstract():
+    assert not inspect.isabstract(sqls_Delete)
 
 
-def test_sqls::deletetable_constructor_exists():
-    assert callable(sqls::DeleteTable.__init__)
+def test_sqls_delete_constructor_exists():
+    assert callable(sqls_Delete.__init__)
 
 
-def test_sqls::deletetable_constructor_args():
-    sig = inspect.signature(sqls::DeleteTable.__init__)
+def test_sqls_delete_constructor_args():
+    sig = inspect.signature(sqls_Delete.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sqls::insertstatement_is_not_abstract():
-    assert not inspect.isabstract(sqls::InsertStatement)
+def test_sqls_deletetable_is_not_abstract():
+    assert not inspect.isabstract(sqls_DeleteTable)
 
 
-def test_sqls::insertstatement_constructor_exists():
-    assert callable(sqls::InsertStatement.__init__)
+def test_sqls_deletetable_constructor_exists():
+    assert callable(sqls_DeleteTable.__init__)
 
 
-def test_sqls::insertstatement_constructor_args():
-    sig = inspect.signature(sqls::InsertStatement.__init__)
+def test_sqls_deletetable_constructor_args():
+    sig = inspect.signature(sqls_DeleteTable.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sqls::update_is_not_abstract():
-    assert not inspect.isabstract(sqls::Update)
+def test_sqls_insertstatement_is_not_abstract():
+    assert not inspect.isabstract(sqls_InsertStatement)
 
 
-def test_sqls::update_constructor_exists():
-    assert callable(sqls::Update.__init__)
+def test_sqls_insertstatement_constructor_exists():
+    assert callable(sqls_InsertStatement.__init__)
 
 
-def test_sqls::update_constructor_args():
-    sig = inspect.signature(sqls::Update.__init__)
+def test_sqls_insertstatement_constructor_args():
+    sig = inspect.signature(sqls_InsertStatement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sqls::get_is_not_abstract():
-    assert not inspect.isabstract(sqls::Get)
+def test_sqls_get_is_not_abstract():
+    assert not inspect.isabstract(sqls_Get)
 
 
-def test_sqls::get_constructor_exists():
-    assert callable(sqls::Get.__init__)
+def test_sqls_get_constructor_exists():
+    assert callable(sqls_Get.__init__)
 
 
-def test_sqls::get_constructor_args():
-    sig = inspect.signature(sqls::Get.__init__)
+def test_sqls_get_constructor_args():
+    sig = inspect.signature(sqls_Get.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sqls::delete_is_not_abstract():
-    assert not inspect.isabstract(sqls::Delete)
+def test_sqls_sqlmethodref_is_not_abstract():
+    assert not inspect.isabstract(sqls_SqlMethodRef)
 
 
-def test_sqls::delete_constructor_exists():
-    assert callable(sqls::Delete.__init__)
+def test_sqls_sqlmethodref_constructor_exists():
+    assert callable(sqls_SqlMethodRef.__init__)
 
 
-def test_sqls::delete_constructor_args():
-    sig = inspect.signature(sqls::Delete.__init__)
+def test_sqls_sqlmethodref_constructor_args():
+    sig = inspect.signature(sqls_SqlMethodRef.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sqls::select_is_not_abstract():
-    assert not inspect.isabstract(sqls::Select)
+def test_sqls_select_is_not_abstract():
+    assert not inspect.isabstract(sqls_Select)
 
 
-def test_sqls::select_constructor_exists():
-    assert callable(sqls::Select.__init__)
+def test_sqls_select_constructor_exists():
+    assert callable(sqls_Select.__init__)
 
 
-def test_sqls::select_constructor_args():
-    sig = inspect.signature(sqls::Select.__init__)
+def test_sqls_select_constructor_args():
+    sig = inspect.signature(sqls_Select.__init__)
     params = list(sig.parameters.keys())
     assert "all" in params, "Missing parameter 'all'"
 
-def test_sqls::select_has_all():
-    assert hasattr(sqls::Select, "all")
+def test_sqls_select_has_all():
+    assert hasattr(sqls_Select, "all")
     descriptor = None
-    for klass in sqls::Select.__mro__:
+    for klass in sqls_Select.__mro__:
         if "all" in klass.__dict__:
             descriptor = klass.__dict__["all"]
             break
@@ -658,23 +658,23 @@ def test_tableconstraint_constructor_args():
 
 
 
-def test_sqls::uniquetableconstraint_is_not_abstract():
-    assert not inspect.isabstract(sqls::UniqueTableConstraint)
+def test_sqls_uniquetableconstraint_is_not_abstract():
+    assert not inspect.isabstract(sqls_UniqueTableConstraint)
 
 
-def test_sqls::uniquetableconstraint_constructor_exists():
-    assert callable(sqls::UniqueTableConstraint.__init__)
+def test_sqls_uniquetableconstraint_constructor_exists():
+    assert callable(sqls_UniqueTableConstraint.__init__)
 
 
-def test_sqls::uniquetableconstraint_constructor_args():
-    sig = inspect.signature(sqls::UniqueTableConstraint.__init__)
+def test_sqls_uniquetableconstraint_constructor_args():
+    sig = inspect.signature(sqls_UniqueTableConstraint.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_sqls::uniquetableconstraint_has_name():
-    assert hasattr(sqls::UniqueTableConstraint, "name")
+def test_sqls_uniquetableconstraint_has_name():
+    assert hasattr(sqls_UniqueTableConstraint, "name")
     descriptor = None
-    for klass in sqls::UniqueTableConstraint.__mro__:
+    for klass in sqls_UniqueTableConstraint.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -682,109 +682,109 @@ def test_sqls::uniquetableconstraint_has_name():
 
 
 
-def test_sqls::tableconstraint_is_not_abstract():
-    assert not inspect.isabstract(sqls::TableConstraint)
+def test_sqls_tableconstraint_is_not_abstract():
+    assert not inspect.isabstract(sqls_TableConstraint)
 
 
-def test_sqls::tableconstraint_constructor_exists():
-    assert callable(sqls::TableConstraint.__init__)
+def test_sqls_tableconstraint_constructor_exists():
+    assert callable(sqls_TableConstraint.__init__)
 
 
-def test_sqls::tableconstraint_constructor_args():
-    sig = inspect.signature(sqls::TableConstraint.__init__)
+def test_sqls_tableconstraint_constructor_args():
+    sig = inspect.signature(sqls_TableConstraint.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sqls::sqlexpr_is_not_abstract():
-    assert not inspect.isabstract(sqls::SqlExpr)
+def test_sqls_sqlexpr_is_not_abstract():
+    assert not inspect.isabstract(sqls_SqlExpr)
 
 
-def test_sqls::sqlexpr_constructor_exists():
-    assert callable(sqls::SqlExpr.__init__)
+def test_sqls_sqlexpr_constructor_exists():
+    assert callable(sqls_SqlExpr.__init__)
 
 
-def test_sqls::sqlexpr_constructor_args():
-    sig = inspect.signature(sqls::SqlExpr.__init__)
+def test_sqls_sqlexpr_constructor_args():
+    sig = inspect.signature(sqls_SqlExpr.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sqls::sqltype_is_not_abstract():
-    assert not inspect.isabstract(sqls::SqlType)
+def test_sqls_sqltype_is_not_abstract():
+    assert not inspect.isabstract(sqls_SqlType)
 
 
-def test_sqls::sqltype_constructor_exists():
-    assert callable(sqls::SqlType.__init__)
+def test_sqls_sqltype_constructor_exists():
+    assert callable(sqls_SqlType.__init__)
 
 
-def test_sqls::sqltype_constructor_args():
-    sig = inspect.signature(sqls::SqlType.__init__)
+def test_sqls_sqltype_constructor_args():
+    sig = inspect.signature(sqls_SqlType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sqls::enumelement_is_not_abstract():
-    assert not inspect.isabstract(sqls::EnumElement)
+def test_sqls_enumelement_is_not_abstract():
+    assert not inspect.isabstract(sqls_EnumElement)
 
 
-def test_sqls::enumelement_constructor_exists():
-    assert callable(sqls::EnumElement.__init__)
+def test_sqls_enumelement_constructor_exists():
+    assert callable(sqls_EnumElement.__init__)
 
 
-def test_sqls::enumelement_constructor_args():
-    sig = inspect.signature(sqls::EnumElement.__init__)
+def test_sqls_enumelement_constructor_args():
+    sig = inspect.signature(sqls_EnumElement.__init__)
     params = list(sig.parameters.keys())
-    assert "name" in params, "Missing parameter 'name'"
     assert "text" in params, "Missing parameter 'text'"
+    assert "name" in params, "Missing parameter 'name'"
 
-def test_sqls::enumelement_has_name():
-    assert hasattr(sqls::EnumElement, "name")
+def test_sqls_enumelement_has_text():
+    assert hasattr(sqls_EnumElement, "text")
     descriptor = None
-    for klass in sqls::EnumElement.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_sqls::enumelement_has_text():
-    assert hasattr(sqls::EnumElement, "text")
-    descriptor = None
-    for klass in sqls::EnumElement.__mro__:
+    for klass in sqls_EnumElement.__mro__:
         if "text" in klass.__dict__:
             descriptor = klass.__dict__["text"]
             break
     assert isinstance(descriptor, property)
 
-
-
-def test_sqls::sqlmethod_is_not_abstract():
-    assert not inspect.isabstract(sqls::SqlMethod)
-
-
-def test_sqls::sqlmethod_constructor_exists():
-    assert callable(sqls::SqlMethod.__init__)
-
-
-def test_sqls::sqlmethod_constructor_args():
-    sig = inspect.signature(sqls::SqlMethod.__init__)
-    params = list(sig.parameters.keys())
-    assert "name" in params, "Missing parameter 'name'"
-    assert "array" in params, "Missing parameter 'array'"
-
-def test_sqls::sqlmethod_has_name():
-    assert hasattr(sqls::SqlMethod, "name")
+def test_sqls_enumelement_has_name():
+    assert hasattr(sqls_EnumElement, "name")
     descriptor = None
-    for klass in sqls::SqlMethod.__mro__:
+    for klass in sqls_EnumElement.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
-def test_sqls::sqlmethod_has_array():
-    assert hasattr(sqls::SqlMethod, "array")
+
+
+def test_sqls_sqlmethod_is_not_abstract():
+    assert not inspect.isabstract(sqls_SqlMethod)
+
+
+def test_sqls_sqlmethod_constructor_exists():
+    assert callable(sqls_SqlMethod.__init__)
+
+
+def test_sqls_sqlmethod_constructor_args():
+    sig = inspect.signature(sqls_SqlMethod.__init__)
+    params = list(sig.parameters.keys())
+    assert "name" in params, "Missing parameter 'name'"
+    assert "array" in params, "Missing parameter 'array'"
+
+def test_sqls_sqlmethod_has_name():
+    assert hasattr(sqls_SqlMethod, "name")
     descriptor = None
-    for klass in sqls::SqlMethod.__mro__:
+    for klass in sqls_SqlMethod.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_sqls_sqlmethod_has_array():
+    assert hasattr(sqls_SqlMethod, "array")
+    descriptor = None
+    for klass in sqls_SqlMethod.__mro__:
         if "array" in klass.__dict__:
             descriptor = klass.__dict__["array"]
             break
@@ -792,33 +792,33 @@ def test_sqls::sqlmethod_has_array():
 
 
 
-def test_sqls::trigger_is_not_abstract():
-    assert not inspect.isabstract(sqls::Trigger)
+def test_sqls_trigger_is_not_abstract():
+    assert not inspect.isabstract(sqls_Trigger)
 
 
-def test_sqls::trigger_constructor_exists():
-    assert callable(sqls::Trigger.__init__)
+def test_sqls_trigger_constructor_exists():
+    assert callable(sqls_Trigger.__init__)
 
 
-def test_sqls::trigger_constructor_args():
-    sig = inspect.signature(sqls::Trigger.__init__)
+def test_sqls_trigger_constructor_args():
+    sig = inspect.signature(sqls_Trigger.__init__)
     params = list(sig.parameters.keys())
     assert "time" in params, "Missing parameter 'time'"
     assert "name" in params, "Missing parameter 'name'"
 
-def test_sqls::trigger_has_time():
-    assert hasattr(sqls::Trigger, "time")
+def test_sqls_trigger_has_time():
+    assert hasattr(sqls_Trigger, "time")
     descriptor = None
-    for klass in sqls::Trigger.__mro__:
+    for klass in sqls_Trigger.__mro__:
         if "time" in klass.__dict__:
             descriptor = klass.__dict__["time"]
             break
     assert isinstance(descriptor, property)
 
-def test_sqls::trigger_has_name():
-    assert hasattr(sqls::Trigger, "name")
+def test_sqls_trigger_has_name():
+    assert hasattr(sqls_Trigger, "name")
     descriptor = None
-    for klass in sqls::Trigger.__mro__:
+    for klass in sqls_Trigger.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -826,67 +826,67 @@ def test_sqls::trigger_has_name():
 
 
 
-def test_sqls::column_is_not_abstract():
-    assert not inspect.isabstract(sqls::Column)
+def test_sqls_column_is_not_abstract():
+    assert not inspect.isabstract(sqls_Column)
 
 
-def test_sqls::column_constructor_exists():
-    assert callable(sqls::Column.__init__)
+def test_sqls_column_constructor_exists():
+    assert callable(sqls_Column.__init__)
 
 
-def test_sqls::column_constructor_args():
-    sig = inspect.signature(sqls::Column.__init__)
+def test_sqls_column_constructor_args():
+    sig = inspect.signature(sqls_Column.__init__)
     params = list(sig.parameters.keys())
-    assert "primaryKey" in params, "Missing parameter 'primaryKey'"
     assert "null" in params, "Missing parameter 'null'"
     assert "name" in params, "Missing parameter 'name'"
+    assert "primaryKey" in params, "Missing parameter 'primaryKey'"
 
-def test_sqls::column_has_primaryKey():
-    assert hasattr(sqls::Column, "primaryKey")
+def test_sqls_column_has_null():
+    assert hasattr(sqls_Column, "null")
     descriptor = None
-    for klass in sqls::Column.__mro__:
-        if "primaryKey" in klass.__dict__:
-            descriptor = klass.__dict__["primaryKey"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_sqls::column_has_null():
-    assert hasattr(sqls::Column, "null")
-    descriptor = None
-    for klass in sqls::Column.__mro__:
+    for klass in sqls_Column.__mro__:
         if "null" in klass.__dict__:
             descriptor = klass.__dict__["null"]
             break
     assert isinstance(descriptor, property)
 
-def test_sqls::column_has_name():
-    assert hasattr(sqls::Column, "name")
+def test_sqls_column_has_name():
+    assert hasattr(sqls_Column, "name")
     descriptor = None
-    for klass in sqls::Column.__mro__:
+    for klass in sqls_Column.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
+def test_sqls_column_has_primaryKey():
+    assert hasattr(sqls_Column, "primaryKey")
+    descriptor = None
+    for klass in sqls_Column.__mro__:
+        if "primaryKey" in klass.__dict__:
+            descriptor = klass.__dict__["primaryKey"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_sqls::table_is_not_abstract():
-    assert not inspect.isabstract(sqls::Table)
+
+def test_sqls_table_is_not_abstract():
+    assert not inspect.isabstract(sqls_Table)
 
 
-def test_sqls::table_constructor_exists():
-    assert callable(sqls::Table.__init__)
+def test_sqls_table_constructor_exists():
+    assert callable(sqls_Table.__init__)
 
 
-def test_sqls::table_constructor_args():
-    sig = inspect.signature(sqls::Table.__init__)
+def test_sqls_table_constructor_args():
+    sig = inspect.signature(sqls_Table.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_sqls::table_has_name():
-    assert hasattr(sqls::Table, "name")
+def test_sqls_table_has_name():
+    assert hasattr(sqls_Table, "name")
     descriptor = None
-    for klass in sqls::Table.__mro__:
+    for klass in sqls_Table.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -894,37 +894,37 @@ def test_sqls::table_has_name():
 
 
 
-def test_sqls::type_is_not_abstract():
-    assert not inspect.isabstract(sqls::Type)
+def test_sqls_type_is_not_abstract():
+    assert not inspect.isabstract(sqls_Type)
 
 
-def test_sqls::type_constructor_exists():
-    assert callable(sqls::Type.__init__)
+def test_sqls_type_constructor_exists():
+    assert callable(sqls_Type.__init__)
 
 
-def test_sqls::type_constructor_args():
-    sig = inspect.signature(sqls::Type.__init__)
+def test_sqls_type_constructor_args():
+    sig = inspect.signature(sqls_Type.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sqls::tag_is_not_abstract():
-    assert not inspect.isabstract(sqls::Tag)
+def test_sqls_tag_is_not_abstract():
+    assert not inspect.isabstract(sqls_Tag)
 
 
-def test_sqls::tag_constructor_exists():
-    assert callable(sqls::Tag.__init__)
+def test_sqls_tag_constructor_exists():
+    assert callable(sqls_Tag.__init__)
 
 
-def test_sqls::tag_constructor_args():
-    sig = inspect.signature(sqls::Tag.__init__)
+def test_sqls_tag_constructor_args():
+    sig = inspect.signature(sqls_Tag.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_sqls::tag_has_name():
-    assert hasattr(sqls::Tag, "name")
+def test_sqls_tag_has_name():
+    assert hasattr(sqls_Tag, "name")
     descriptor = None
-    for klass in sqls::Tag.__mro__:
+    for klass in sqls_Tag.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -932,47 +932,47 @@ def test_sqls::tag_has_name():
 
 
 
-def test_sqls::import_is_not_abstract():
-    assert not inspect.isabstract(sqls::Import)
+def test_sqls_import_is_not_abstract():
+    assert not inspect.isabstract(sqls_Import)
 
 
-def test_sqls::import_constructor_exists():
-    assert callable(sqls::Import.__init__)
+def test_sqls_import_constructor_exists():
+    assert callable(sqls_Import.__init__)
 
 
-def test_sqls::import_constructor_args():
-    sig = inspect.signature(sqls::Import.__init__)
+def test_sqls_import_constructor_args():
+    sig = inspect.signature(sqls_Import.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sqls::sqllibrary_is_not_abstract():
-    assert not inspect.isabstract(sqls::SqlLibrary)
+def test_sqls_sqllibrary_is_not_abstract():
+    assert not inspect.isabstract(sqls_SqlLibrary)
 
 
-def test_sqls::sqllibrary_constructor_exists():
-    assert callable(sqls::SqlLibrary.__init__)
+def test_sqls_sqllibrary_constructor_exists():
+    assert callable(sqls_SqlLibrary.__init__)
 
 
-def test_sqls::sqllibrary_constructor_args():
-    sig = inspect.signature(sqls::SqlLibrary.__init__)
+def test_sqls_sqllibrary_constructor_args():
+    sig = inspect.signature(sqls_SqlLibrary.__init__)
     params = list(sig.parameters.keys())
     assert "database" in params, "Missing parameter 'database'"
     assert "version" in params, "Missing parameter 'version'"
 
-def test_sqls::sqllibrary_has_database():
-    assert hasattr(sqls::SqlLibrary, "database")
+def test_sqls_sqllibrary_has_database():
+    assert hasattr(sqls_SqlLibrary, "database")
     descriptor = None
-    for klass in sqls::SqlLibrary.__mro__:
+    for klass in sqls_SqlLibrary.__mro__:
         if "database" in klass.__dict__:
             descriptor = klass.__dict__["database"]
             break
     assert isinstance(descriptor, property)
 
-def test_sqls::sqllibrary_has_version():
-    assert hasattr(sqls::SqlLibrary, "version")
+def test_sqls_sqllibrary_has_version():
+    assert hasattr(sqls_SqlLibrary, "version")
     descriptor = None
-    for klass in sqls::SqlLibrary.__mro__:
+    for klass in sqls_SqlLibrary.__mro__:
         if "version" in klass.__dict__:
             descriptor = klass.__dict__["version"]
             break
@@ -1008,191 +1008,191 @@ safe_text = st.text(
 TriggerAction_strategy = st.builds(
     TriggerAction,
 )
-sqls::TriggerDelete_strategy = st.builds(
-    sqls::TriggerDelete,
+sqls_TriggerUpdate_strategy = st.builds(
+    sqls_TriggerUpdate,
 )
-sqls::TriggerUpdate_strategy = st.builds(
-    sqls::TriggerUpdate,
+sqls_TriggerDelete_strategy = st.builds(
+    sqls_TriggerDelete,
 )
-sqls::TriggerInsert_strategy = st.builds(
-    sqls::TriggerInsert,
+sqls_TriggerInsert_strategy = st.builds(
+    sqls_TriggerInsert,
 )
 Type_strategy = st.builds(
     Type,
 )
-sqls::TypeDef_strategy = st.builds(
-    sqls::TypeDef,
+sqls_TypeDef_strategy = st.builds(
+    sqls_TypeDef,
 )
-sqls::Enum_strategy = st.builds(
-    sqls::Enum,
+sqls_Enum_strategy = st.builds(
+    sqls_Enum,
 )
-sqls::TriggerAction_strategy = st.builds(
-    sqls::TriggerAction,
+sqls_TriggerAction_strategy = st.builds(
+    sqls_TriggerAction,
 )
-sqls::UpdateColumnExpression_strategy = st.builds(
-    sqls::UpdateColumnExpression,
+sqls_UpdateColumnExpression_strategy = st.builds(
+    sqls_UpdateColumnExpression,
 )
-sqls::TableRef_strategy = st.builds(
-    sqls::TableRef,
+sqls_TableRef_strategy = st.builds(
+    sqls_TableRef,
     alias=
         safe_text
 )
-sqls::Function_strategy = st.builds(
-    sqls::Function,
+sqls_Function_strategy = st.builds(
+    sqls_Function,
 )
 SqlExpr_strategy = st.builds(
     SqlExpr,
 )
-sqls::SqlNumberLiteral_strategy = st.builds(
-    sqls::SqlNumberLiteral,
+sqls_SqlNumberLiteral_strategy = st.builds(
+    sqls_SqlNumberLiteral,
     value=
         st.integers()
 )
-sqls::ColumnRef_strategy = st.builds(
-    sqls::ColumnRef,
+sqls_ColumnRef_strategy = st.builds(
+    sqls_ColumnRef,
 )
-sqls::NewColumn_strategy = st.builds(
-    sqls::NewColumn,
-)
-sqls::SqlParam_strategy = st.builds(
-    sqls::SqlParam,
+sqls_SqlParam_strategy = st.builds(
+    sqls_SqlParam,
     name=
         safe_text
 )
-sqls::SqlStringLiteral_strategy = st.builds(
-    sqls::SqlStringLiteral,
-    value=
-        safe_text
+sqls_SqlPlaceholder_strategy = st.builds(
+    sqls_SqlPlaceholder,
 )
-sqls::SqlNested_strategy = st.builds(
-    sqls::SqlNested,
-)
-sqls::OldColumn_strategy = st.builds(
-    sqls::OldColumn,
-)
-sqls::SqlPlaceholder_strategy = st.builds(
-    sqls::SqlPlaceholder,
-)
-sqls::SqlBinaryExpr_strategy = st.builds(
-    sqls::SqlBinaryExpr,
+sqls_SqlBinaryExpr_strategy = st.builds(
+    sqls_SqlBinaryExpr,
     op=
         safe_text
 )
-sqls::SqlFunction_strategy = st.builds(
-    sqls::SqlFunction,
+sqls_NewColumn_strategy = st.builds(
+    sqls_NewColumn,
 )
-sqls::SelectList_strategy = st.builds(
-    sqls::SelectList,
+sqls_OldColumn_strategy = st.builds(
+    sqls_OldColumn,
 )
-sqls::ResultColumn_strategy = st.builds(
-    sqls::ResultColumn,
+sqls_SqlNested_strategy = st.builds(
+    sqls_SqlNested,
+)
+sqls_SqlStringLiteral_strategy = st.builds(
+    sqls_SqlStringLiteral,
+    value=
+        safe_text
+)
+sqls_SqlFunction_strategy = st.builds(
+    sqls_SqlFunction,
+)
+sqls_SelectList_strategy = st.builds(
+    sqls_SelectList,
+)
+sqls_ResultColumn_strategy = st.builds(
+    sqls_ResultColumn,
     name=
         safe_text
 )
-sqls::OrderingTerm_strategy = st.builds(
-    sqls::OrderingTerm,
-    asc=
-        st.booleans(),
+sqls_OrderingTerm_strategy = st.builds(
+    sqls_OrderingTerm,
     desc=
+        st.booleans(),
+    asc=
         st.booleans()
 )
-sqls::SqlSentence_strategy = st.builds(
-    sqls::SqlSentence,
+sqls_SqlSentence_strategy = st.builds(
+    sqls_SqlSentence,
 )
 SqlSentence_strategy = st.builds(
     SqlSentence,
 )
-sqls::SqlMethodRef_strategy = st.builds(
-    sqls::SqlMethodRef,
+sqls_Update_strategy = st.builds(
+    sqls_Update,
 )
-sqls::Insert_strategy = st.builds(
-    sqls::Insert,
+sqls_Insert_strategy = st.builds(
+    sqls_Insert,
 )
-sqls::DeleteTable_strategy = st.builds(
-    sqls::DeleteTable,
+sqls_Delete_strategy = st.builds(
+    sqls_Delete,
 )
-sqls::InsertStatement_strategy = st.builds(
-    sqls::InsertStatement,
+sqls_DeleteTable_strategy = st.builds(
+    sqls_DeleteTable,
 )
-sqls::Update_strategy = st.builds(
-    sqls::Update,
+sqls_InsertStatement_strategy = st.builds(
+    sqls_InsertStatement,
 )
-sqls::Get_strategy = st.builds(
-    sqls::Get,
+sqls_Get_strategy = st.builds(
+    sqls_Get,
 )
-sqls::Delete_strategy = st.builds(
-    sqls::Delete,
+sqls_SqlMethodRef_strategy = st.builds(
+    sqls_SqlMethodRef,
 )
-sqls::Select_strategy = st.builds(
-    sqls::Select,
+sqls_Select_strategy = st.builds(
+    sqls_Select,
     all=
         st.booleans()
 )
 TableConstraint_strategy = st.builds(
     TableConstraint,
 )
-sqls::UniqueTableConstraint_strategy = st.builds(
-    sqls::UniqueTableConstraint,
+sqls_UniqueTableConstraint_strategy = st.builds(
+    sqls_UniqueTableConstraint,
     name=
         safe_text
 )
-sqls::TableConstraint_strategy = st.builds(
-    sqls::TableConstraint,
+sqls_TableConstraint_strategy = st.builds(
+    sqls_TableConstraint,
 )
-sqls::SqlExpr_strategy = st.builds(
-    sqls::SqlExpr,
+sqls_SqlExpr_strategy = st.builds(
+    sqls_SqlExpr,
 )
-sqls::SqlType_strategy = st.builds(
-    sqls::SqlType,
+sqls_SqlType_strategy = st.builds(
+    sqls_SqlType,
 )
-sqls::EnumElement_strategy = st.builds(
-    sqls::EnumElement,
-    name=
-        safe_text,
+sqls_EnumElement_strategy = st.builds(
+    sqls_EnumElement,
     text=
+        safe_text,
+    name=
         safe_text
 )
-sqls::SqlMethod_strategy = st.builds(
-    sqls::SqlMethod,
+sqls_SqlMethod_strategy = st.builds(
+    sqls_SqlMethod,
     name=
         safe_text,
     array=
         st.booleans()
 )
-sqls::Trigger_strategy = st.builds(
-    sqls::Trigger,
+sqls_Trigger_strategy = st.builds(
+    sqls_Trigger,
     time=
         safe_text,
     name=
         safe_text
 )
-sqls::Column_strategy = st.builds(
-    sqls::Column,
-    primaryKey=
-        st.booleans(),
+sqls_Column_strategy = st.builds(
+    sqls_Column,
     null=
         st.booleans(),
     name=
-        safe_text
+        safe_text,
+    primaryKey=
+        st.booleans()
 )
-sqls::Table_strategy = st.builds(
-    sqls::Table,
+sqls_Table_strategy = st.builds(
+    sqls_Table,
     name=
         safe_text
 )
-sqls::Type_strategy = st.builds(
-    sqls::Type,
+sqls_Type_strategy = st.builds(
+    sqls_Type,
 )
-sqls::Tag_strategy = st.builds(
-    sqls::Tag,
+sqls_Tag_strategy = st.builds(
+    sqls_Tag,
     name=
         safe_text
 )
-sqls::Import_strategy = st.builds(
-    sqls::Import,
+sqls_Import_strategy = st.builds(
+    sqls_Import,
 )
-sqls::SqlLibrary_strategy = st.builds(
-    sqls::SqlLibrary,
+sqls_SqlLibrary_strategy = st.builds(
+    sqls_SqlLibrary,
     database=
         safe_text,
     version=
@@ -1204,271 +1204,244 @@ sqls::SqlLibrary_strategy = st.builds(
 def test_triggeraction_instantiation(instance):
     assert isinstance(instance, TriggerAction)
 
-@given(instance=sqls::TriggerDelete_strategy)
+@given(instance=sqls_TriggerUpdate_strategy)
 @settings(max_examples=50)
-def test_sqls::triggerdelete_instantiation(instance):
-    assert isinstance(instance, sqls::TriggerDelete)
+def test_sqls_triggerupdate_instantiation(instance):
+    assert isinstance(instance, sqls_TriggerUpdate)
 
-@given(instance=sqls::TriggerUpdate_strategy)
+@given(instance=sqls_TriggerDelete_strategy)
 @settings(max_examples=50)
-def test_sqls::triggerupdate_instantiation(instance):
-    assert isinstance(instance, sqls::TriggerUpdate)
+def test_sqls_triggerdelete_instantiation(instance):
+    assert isinstance(instance, sqls_TriggerDelete)
 
-@given(instance=sqls::TriggerInsert_strategy)
+@given(instance=sqls_TriggerInsert_strategy)
 @settings(max_examples=50)
-def test_sqls::triggerinsert_instantiation(instance):
-    assert isinstance(instance, sqls::TriggerInsert)
+def test_sqls_triggerinsert_instantiation(instance):
+    assert isinstance(instance, sqls_TriggerInsert)
 
 @given(instance=Type_strategy)
 @settings(max_examples=50)
 def test_type_instantiation(instance):
     assert isinstance(instance, Type)
 
-@given(instance=sqls::TypeDef_strategy)
+@given(instance=sqls_TypeDef_strategy)
 @settings(max_examples=50)
-def test_sqls::typedef_instantiation(instance):
-    assert isinstance(instance, sqls::TypeDef)
+def test_sqls_typedef_instantiation(instance):
+    assert isinstance(instance, sqls_TypeDef)
 
-@given(instance=sqls::Enum_strategy)
+@given(instance=sqls_Enum_strategy)
 @settings(max_examples=50)
-def test_sqls::enum_instantiation(instance):
-    assert isinstance(instance, sqls::Enum)
+def test_sqls_enum_instantiation(instance):
+    assert isinstance(instance, sqls_Enum)
 
-@given(instance=sqls::TriggerAction_strategy)
+@given(instance=sqls_TriggerAction_strategy)
 @settings(max_examples=50)
-def test_sqls::triggeraction_instantiation(instance):
-    assert isinstance(instance, sqls::TriggerAction)
+def test_sqls_triggeraction_instantiation(instance):
+    assert isinstance(instance, sqls_TriggerAction)
 
-@given(instance=sqls::UpdateColumnExpression_strategy)
+@given(instance=sqls_UpdateColumnExpression_strategy)
 @settings(max_examples=50)
-def test_sqls::updatecolumnexpression_instantiation(instance):
-    assert isinstance(instance, sqls::UpdateColumnExpression)
+def test_sqls_updatecolumnexpression_instantiation(instance):
+    assert isinstance(instance, sqls_UpdateColumnExpression)
 
-@given(instance=sqls::TableRef_strategy)
+@given(instance=sqls_TableRef_strategy)
 @settings(max_examples=50)
-def test_sqls::tableref_instantiation(instance):
-    assert isinstance(instance, sqls::TableRef)
-
-@given(instance=sqls::TableRef_strategy)
-def test_sqls::tableref_alias_type(instance):
-    assert isinstance(instance.alias, str)
+def test_sqls_tableref_instantiation(instance):
+    assert isinstance(instance, sqls_TableRef)
 
 
-@given(instance=sqls::TableRef_strategy)
-def test_sqls::tableref_alias_setter(instance):
+
+@given(instance=sqls_TableRef_strategy)
+def test_sqls_tableref_alias_setter(instance):
     original = instance.alias
     instance.alias = original
     assert instance.alias == original
 
-@given(instance=sqls::Function_strategy)
+@given(instance=sqls_Function_strategy)
 @settings(max_examples=50)
-def test_sqls::function_instantiation(instance):
-    assert isinstance(instance, sqls::Function)
+def test_sqls_function_instantiation(instance):
+    assert isinstance(instance, sqls_Function)
 
 @given(instance=SqlExpr_strategy)
 @settings(max_examples=50)
 def test_sqlexpr_instantiation(instance):
     assert isinstance(instance, SqlExpr)
 
-@given(instance=sqls::SqlNumberLiteral_strategy)
+@given(instance=sqls_SqlNumberLiteral_strategy)
 @settings(max_examples=50)
-def test_sqls::sqlnumberliteral_instantiation(instance):
-    assert isinstance(instance, sqls::SqlNumberLiteral)
-
-@given(instance=sqls::SqlNumberLiteral_strategy)
-def test_sqls::sqlnumberliteral_value_type(instance):
-    assert isinstance(instance.value, int)
+def test_sqls_sqlnumberliteral_instantiation(instance):
+    assert isinstance(instance, sqls_SqlNumberLiteral)
 
 
-@given(instance=sqls::SqlNumberLiteral_strategy)
-def test_sqls::sqlnumberliteral_value_setter(instance):
+
+@given(instance=sqls_SqlNumberLiteral_strategy)
+def test_sqls_sqlnumberliteral_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
 
-@given(instance=sqls::ColumnRef_strategy)
+@given(instance=sqls_ColumnRef_strategy)
 @settings(max_examples=50)
-def test_sqls::columnref_instantiation(instance):
-    assert isinstance(instance, sqls::ColumnRef)
+def test_sqls_columnref_instantiation(instance):
+    assert isinstance(instance, sqls_ColumnRef)
 
-@given(instance=sqls::NewColumn_strategy)
+@given(instance=sqls_SqlParam_strategy)
 @settings(max_examples=50)
-def test_sqls::newcolumn_instantiation(instance):
-    assert isinstance(instance, sqls::NewColumn)
-
-@given(instance=sqls::SqlParam_strategy)
-@settings(max_examples=50)
-def test_sqls::sqlparam_instantiation(instance):
-    assert isinstance(instance, sqls::SqlParam)
-
-@given(instance=sqls::SqlParam_strategy)
-def test_sqls::sqlparam_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_sqls_sqlparam_instantiation(instance):
+    assert isinstance(instance, sqls_SqlParam)
 
 
-@given(instance=sqls::SqlParam_strategy)
-def test_sqls::sqlparam_name_setter(instance):
+
+@given(instance=sqls_SqlParam_strategy)
+def test_sqls_sqlparam_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=sqls::SqlStringLiteral_strategy)
+@given(instance=sqls_SqlPlaceholder_strategy)
 @settings(max_examples=50)
-def test_sqls::sqlstringliteral_instantiation(instance):
-    assert isinstance(instance, sqls::SqlStringLiteral)
+def test_sqls_sqlplaceholder_instantiation(instance):
+    assert isinstance(instance, sqls_SqlPlaceholder)
 
-@given(instance=sqls::SqlStringLiteral_strategy)
-def test_sqls::sqlstringliteral_value_type(instance):
-    assert isinstance(instance.value, str)
-
-
-@given(instance=sqls::SqlStringLiteral_strategy)
-def test_sqls::sqlstringliteral_value_setter(instance):
-    original = instance.value
-    instance.value = original
-    assert instance.value == original
-
-@given(instance=sqls::SqlNested_strategy)
+@given(instance=sqls_SqlBinaryExpr_strategy)
 @settings(max_examples=50)
-def test_sqls::sqlnested_instantiation(instance):
-    assert isinstance(instance, sqls::SqlNested)
-
-@given(instance=sqls::OldColumn_strategy)
-@settings(max_examples=50)
-def test_sqls::oldcolumn_instantiation(instance):
-    assert isinstance(instance, sqls::OldColumn)
-
-@given(instance=sqls::SqlPlaceholder_strategy)
-@settings(max_examples=50)
-def test_sqls::sqlplaceholder_instantiation(instance):
-    assert isinstance(instance, sqls::SqlPlaceholder)
-
-@given(instance=sqls::SqlBinaryExpr_strategy)
-@settings(max_examples=50)
-def test_sqls::sqlbinaryexpr_instantiation(instance):
-    assert isinstance(instance, sqls::SqlBinaryExpr)
-
-@given(instance=sqls::SqlBinaryExpr_strategy)
-def test_sqls::sqlbinaryexpr_op_type(instance):
-    assert isinstance(instance.op, str)
+def test_sqls_sqlbinaryexpr_instantiation(instance):
+    assert isinstance(instance, sqls_SqlBinaryExpr)
 
 
-@given(instance=sqls::SqlBinaryExpr_strategy)
-def test_sqls::sqlbinaryexpr_op_setter(instance):
+
+@given(instance=sqls_SqlBinaryExpr_strategy)
+def test_sqls_sqlbinaryexpr_op_setter(instance):
     original = instance.op
     instance.op = original
     assert instance.op == original
 
-@given(instance=sqls::SqlFunction_strategy)
+@given(instance=sqls_NewColumn_strategy)
 @settings(max_examples=50)
-def test_sqls::sqlfunction_instantiation(instance):
-    assert isinstance(instance, sqls::SqlFunction)
+def test_sqls_newcolumn_instantiation(instance):
+    assert isinstance(instance, sqls_NewColumn)
 
-@given(instance=sqls::SelectList_strategy)
+@given(instance=sqls_OldColumn_strategy)
 @settings(max_examples=50)
-def test_sqls::selectlist_instantiation(instance):
-    assert isinstance(instance, sqls::SelectList)
+def test_sqls_oldcolumn_instantiation(instance):
+    assert isinstance(instance, sqls_OldColumn)
 
-@given(instance=sqls::ResultColumn_strategy)
+@given(instance=sqls_SqlNested_strategy)
 @settings(max_examples=50)
-def test_sqls::resultcolumn_instantiation(instance):
-    assert isinstance(instance, sqls::ResultColumn)
+def test_sqls_sqlnested_instantiation(instance):
+    assert isinstance(instance, sqls_SqlNested)
 
-@given(instance=sqls::ResultColumn_strategy)
-def test_sqls::resultcolumn_name_type(instance):
-    assert isinstance(instance.name, str)
+@given(instance=sqls_SqlStringLiteral_strategy)
+@settings(max_examples=50)
+def test_sqls_sqlstringliteral_instantiation(instance):
+    assert isinstance(instance, sqls_SqlStringLiteral)
 
 
-@given(instance=sqls::ResultColumn_strategy)
-def test_sqls::resultcolumn_name_setter(instance):
+
+@given(instance=sqls_SqlStringLiteral_strategy)
+def test_sqls_sqlstringliteral_value_setter(instance):
+    original = instance.value
+    instance.value = original
+    assert instance.value == original
+
+@given(instance=sqls_SqlFunction_strategy)
+@settings(max_examples=50)
+def test_sqls_sqlfunction_instantiation(instance):
+    assert isinstance(instance, sqls_SqlFunction)
+
+@given(instance=sqls_SelectList_strategy)
+@settings(max_examples=50)
+def test_sqls_selectlist_instantiation(instance):
+    assert isinstance(instance, sqls_SelectList)
+
+@given(instance=sqls_ResultColumn_strategy)
+@settings(max_examples=50)
+def test_sqls_resultcolumn_instantiation(instance):
+    assert isinstance(instance, sqls_ResultColumn)
+
+
+
+@given(instance=sqls_ResultColumn_strategy)
+def test_sqls_resultcolumn_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=sqls::OrderingTerm_strategy)
+@given(instance=sqls_OrderingTerm_strategy)
 @settings(max_examples=50)
-def test_sqls::orderingterm_instantiation(instance):
-    assert isinstance(instance, sqls::OrderingTerm)
-
-@given(instance=sqls::OrderingTerm_strategy)
-def test_sqls::orderingterm_asc_type(instance):
-    assert isinstance(instance.asc, bool)
+def test_sqls_orderingterm_instantiation(instance):
+    assert isinstance(instance, sqls_OrderingTerm)
 
 
-@given(instance=sqls::OrderingTerm_strategy)
-def test_sqls::orderingterm_asc_setter(instance):
-    original = instance.asc
-    instance.asc = original
-    assert instance.asc == original
 
-@given(instance=sqls::OrderingTerm_strategy)
-def test_sqls::orderingterm_desc_type(instance):
-    assert isinstance(instance.desc, bool)
-
-
-@given(instance=sqls::OrderingTerm_strategy)
-def test_sqls::orderingterm_desc_setter(instance):
+@given(instance=sqls_OrderingTerm_strategy)
+def test_sqls_orderingterm_desc_setter(instance):
     original = instance.desc
     instance.desc = original
     assert instance.desc == original
 
-@given(instance=sqls::SqlSentence_strategy)
+
+
+@given(instance=sqls_OrderingTerm_strategy)
+def test_sqls_orderingterm_asc_setter(instance):
+    original = instance.asc
+    instance.asc = original
+    assert instance.asc == original
+
+@given(instance=sqls_SqlSentence_strategy)
 @settings(max_examples=50)
-def test_sqls::sqlsentence_instantiation(instance):
-    assert isinstance(instance, sqls::SqlSentence)
+def test_sqls_sqlsentence_instantiation(instance):
+    assert isinstance(instance, sqls_SqlSentence)
 
 @given(instance=SqlSentence_strategy)
 @settings(max_examples=50)
 def test_sqlsentence_instantiation(instance):
     assert isinstance(instance, SqlSentence)
 
-@given(instance=sqls::SqlMethodRef_strategy)
+@given(instance=sqls_Update_strategy)
 @settings(max_examples=50)
-def test_sqls::sqlmethodref_instantiation(instance):
-    assert isinstance(instance, sqls::SqlMethodRef)
+def test_sqls_update_instantiation(instance):
+    assert isinstance(instance, sqls_Update)
 
-@given(instance=sqls::Insert_strategy)
+@given(instance=sqls_Insert_strategy)
 @settings(max_examples=50)
-def test_sqls::insert_instantiation(instance):
-    assert isinstance(instance, sqls::Insert)
+def test_sqls_insert_instantiation(instance):
+    assert isinstance(instance, sqls_Insert)
 
-@given(instance=sqls::DeleteTable_strategy)
+@given(instance=sqls_Delete_strategy)
 @settings(max_examples=50)
-def test_sqls::deletetable_instantiation(instance):
-    assert isinstance(instance, sqls::DeleteTable)
+def test_sqls_delete_instantiation(instance):
+    assert isinstance(instance, sqls_Delete)
 
-@given(instance=sqls::InsertStatement_strategy)
+@given(instance=sqls_DeleteTable_strategy)
 @settings(max_examples=50)
-def test_sqls::insertstatement_instantiation(instance):
-    assert isinstance(instance, sqls::InsertStatement)
+def test_sqls_deletetable_instantiation(instance):
+    assert isinstance(instance, sqls_DeleteTable)
 
-@given(instance=sqls::Update_strategy)
+@given(instance=sqls_InsertStatement_strategy)
 @settings(max_examples=50)
-def test_sqls::update_instantiation(instance):
-    assert isinstance(instance, sqls::Update)
+def test_sqls_insertstatement_instantiation(instance):
+    assert isinstance(instance, sqls_InsertStatement)
 
-@given(instance=sqls::Get_strategy)
+@given(instance=sqls_Get_strategy)
 @settings(max_examples=50)
-def test_sqls::get_instantiation(instance):
-    assert isinstance(instance, sqls::Get)
+def test_sqls_get_instantiation(instance):
+    assert isinstance(instance, sqls_Get)
 
-@given(instance=sqls::Delete_strategy)
+@given(instance=sqls_SqlMethodRef_strategy)
 @settings(max_examples=50)
-def test_sqls::delete_instantiation(instance):
-    assert isinstance(instance, sqls::Delete)
+def test_sqls_sqlmethodref_instantiation(instance):
+    assert isinstance(instance, sqls_SqlMethodRef)
 
-@given(instance=sqls::Select_strategy)
+@given(instance=sqls_Select_strategy)
 @settings(max_examples=50)
-def test_sqls::select_instantiation(instance):
-    assert isinstance(instance, sqls::Select)
-
-@given(instance=sqls::Select_strategy)
-def test_sqls::select_all_type(instance):
-    assert isinstance(instance.all, bool)
+def test_sqls_select_instantiation(instance):
+    assert isinstance(instance, sqls_Select)
 
 
-@given(instance=sqls::Select_strategy)
-def test_sqls::select_all_setter(instance):
+
+@given(instance=sqls_Select_strategy)
+def test_sqls_select_all_setter(instance):
     original = instance.all
     instance.all = original
     assert instance.all == original
@@ -1478,221 +1451,179 @@ def test_sqls::select_all_setter(instance):
 def test_tableconstraint_instantiation(instance):
     assert isinstance(instance, TableConstraint)
 
-@given(instance=sqls::UniqueTableConstraint_strategy)
+@given(instance=sqls_UniqueTableConstraint_strategy)
 @settings(max_examples=50)
-def test_sqls::uniquetableconstraint_instantiation(instance):
-    assert isinstance(instance, sqls::UniqueTableConstraint)
-
-@given(instance=sqls::UniqueTableConstraint_strategy)
-def test_sqls::uniquetableconstraint_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_sqls_uniquetableconstraint_instantiation(instance):
+    assert isinstance(instance, sqls_UniqueTableConstraint)
 
 
-@given(instance=sqls::UniqueTableConstraint_strategy)
-def test_sqls::uniquetableconstraint_name_setter(instance):
+
+@given(instance=sqls_UniqueTableConstraint_strategy)
+def test_sqls_uniquetableconstraint_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=sqls::TableConstraint_strategy)
+@given(instance=sqls_TableConstraint_strategy)
 @settings(max_examples=50)
-def test_sqls::tableconstraint_instantiation(instance):
-    assert isinstance(instance, sqls::TableConstraint)
+def test_sqls_tableconstraint_instantiation(instance):
+    assert isinstance(instance, sqls_TableConstraint)
 
-@given(instance=sqls::SqlExpr_strategy)
+@given(instance=sqls_SqlExpr_strategy)
 @settings(max_examples=50)
-def test_sqls::sqlexpr_instantiation(instance):
-    assert isinstance(instance, sqls::SqlExpr)
+def test_sqls_sqlexpr_instantiation(instance):
+    assert isinstance(instance, sqls_SqlExpr)
 
-@given(instance=sqls::SqlType_strategy)
+@given(instance=sqls_SqlType_strategy)
 @settings(max_examples=50)
-def test_sqls::sqltype_instantiation(instance):
-    assert isinstance(instance, sqls::SqlType)
+def test_sqls_sqltype_instantiation(instance):
+    assert isinstance(instance, sqls_SqlType)
 
-@given(instance=sqls::EnumElement_strategy)
+@given(instance=sqls_EnumElement_strategy)
 @settings(max_examples=50)
-def test_sqls::enumelement_instantiation(instance):
-    assert isinstance(instance, sqls::EnumElement)
-
-@given(instance=sqls::EnumElement_strategy)
-def test_sqls::enumelement_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_sqls_enumelement_instantiation(instance):
+    assert isinstance(instance, sqls_EnumElement)
 
 
-@given(instance=sqls::EnumElement_strategy)
-def test_sqls::enumelement_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
 
-@given(instance=sqls::EnumElement_strategy)
-def test_sqls::enumelement_text_type(instance):
-    assert isinstance(instance.text, str)
-
-
-@given(instance=sqls::EnumElement_strategy)
-def test_sqls::enumelement_text_setter(instance):
+@given(instance=sqls_EnumElement_strategy)
+def test_sqls_enumelement_text_setter(instance):
     original = instance.text
     instance.text = original
     assert instance.text == original
 
-@given(instance=sqls::SqlMethod_strategy)
-@settings(max_examples=50)
-def test_sqls::sqlmethod_instantiation(instance):
-    assert isinstance(instance, sqls::SqlMethod)
-
-@given(instance=sqls::SqlMethod_strategy)
-def test_sqls::sqlmethod_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
-@given(instance=sqls::SqlMethod_strategy)
-def test_sqls::sqlmethod_name_setter(instance):
+@given(instance=sqls_EnumElement_strategy)
+def test_sqls_enumelement_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=sqls::SqlMethod_strategy)
-def test_sqls::sqlmethod_array_type(instance):
-    assert isinstance(instance.array, bool)
+@given(instance=sqls_SqlMethod_strategy)
+@settings(max_examples=50)
+def test_sqls_sqlmethod_instantiation(instance):
+    assert isinstance(instance, sqls_SqlMethod)
 
 
-@given(instance=sqls::SqlMethod_strategy)
-def test_sqls::sqlmethod_array_setter(instance):
+
+@given(instance=sqls_SqlMethod_strategy)
+def test_sqls_sqlmethod_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+
+
+@given(instance=sqls_SqlMethod_strategy)
+def test_sqls_sqlmethod_array_setter(instance):
     original = instance.array
     instance.array = original
     assert instance.array == original
 
-@given(instance=sqls::Trigger_strategy)
+@given(instance=sqls_Trigger_strategy)
 @settings(max_examples=50)
-def test_sqls::trigger_instantiation(instance):
-    assert isinstance(instance, sqls::Trigger)
-
-@given(instance=sqls::Trigger_strategy)
-def test_sqls::trigger_time_type(instance):
-    assert isinstance(instance.time, str)
+def test_sqls_trigger_instantiation(instance):
+    assert isinstance(instance, sqls_Trigger)
 
 
-@given(instance=sqls::Trigger_strategy)
-def test_sqls::trigger_time_setter(instance):
+
+@given(instance=sqls_Trigger_strategy)
+def test_sqls_trigger_time_setter(instance):
     original = instance.time
     instance.time = original
     assert instance.time == original
 
-@given(instance=sqls::Trigger_strategy)
-def test_sqls::trigger_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
-@given(instance=sqls::Trigger_strategy)
-def test_sqls::trigger_name_setter(instance):
+@given(instance=sqls_Trigger_strategy)
+def test_sqls_trigger_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=sqls::Column_strategy)
+@given(instance=sqls_Column_strategy)
 @settings(max_examples=50)
-def test_sqls::column_instantiation(instance):
-    assert isinstance(instance, sqls::Column)
-
-@given(instance=sqls::Column_strategy)
-def test_sqls::column_primaryKey_type(instance):
-    assert isinstance(instance.primaryKey, bool)
+def test_sqls_column_instantiation(instance):
+    assert isinstance(instance, sqls_Column)
 
 
-@given(instance=sqls::Column_strategy)
-def test_sqls::column_primaryKey_setter(instance):
-    original = instance.primaryKey
-    instance.primaryKey = original
-    assert instance.primaryKey == original
 
-@given(instance=sqls::Column_strategy)
-def test_sqls::column_null_type(instance):
-    assert isinstance(instance.null, bool)
-
-
-@given(instance=sqls::Column_strategy)
-def test_sqls::column_null_setter(instance):
+@given(instance=sqls_Column_strategy)
+def test_sqls_column_null_setter(instance):
     original = instance.null
     instance.null = original
     assert instance.null == original
 
-@given(instance=sqls::Column_strategy)
-def test_sqls::column_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
-@given(instance=sqls::Column_strategy)
-def test_sqls::column_name_setter(instance):
+@given(instance=sqls_Column_strategy)
+def test_sqls_column_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=sqls::Table_strategy)
+
+
+@given(instance=sqls_Column_strategy)
+def test_sqls_column_primaryKey_setter(instance):
+    original = instance.primaryKey
+    instance.primaryKey = original
+    assert instance.primaryKey == original
+
+@given(instance=sqls_Table_strategy)
 @settings(max_examples=50)
-def test_sqls::table_instantiation(instance):
-    assert isinstance(instance, sqls::Table)
-
-@given(instance=sqls::Table_strategy)
-def test_sqls::table_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_sqls_table_instantiation(instance):
+    assert isinstance(instance, sqls_Table)
 
 
-@given(instance=sqls::Table_strategy)
-def test_sqls::table_name_setter(instance):
+
+@given(instance=sqls_Table_strategy)
+def test_sqls_table_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=sqls::Type_strategy)
+@given(instance=sqls_Type_strategy)
 @settings(max_examples=50)
-def test_sqls::type_instantiation(instance):
-    assert isinstance(instance, sqls::Type)
+def test_sqls_type_instantiation(instance):
+    assert isinstance(instance, sqls_Type)
 
-@given(instance=sqls::Tag_strategy)
+@given(instance=sqls_Tag_strategy)
 @settings(max_examples=50)
-def test_sqls::tag_instantiation(instance):
-    assert isinstance(instance, sqls::Tag)
-
-@given(instance=sqls::Tag_strategy)
-def test_sqls::tag_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_sqls_tag_instantiation(instance):
+    assert isinstance(instance, sqls_Tag)
 
 
-@given(instance=sqls::Tag_strategy)
-def test_sqls::tag_name_setter(instance):
+
+@given(instance=sqls_Tag_strategy)
+def test_sqls_tag_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=sqls::Import_strategy)
+@given(instance=sqls_Import_strategy)
 @settings(max_examples=50)
-def test_sqls::import_instantiation(instance):
-    assert isinstance(instance, sqls::Import)
+def test_sqls_import_instantiation(instance):
+    assert isinstance(instance, sqls_Import)
 
-@given(instance=sqls::SqlLibrary_strategy)
+@given(instance=sqls_SqlLibrary_strategy)
 @settings(max_examples=50)
-def test_sqls::sqllibrary_instantiation(instance):
-    assert isinstance(instance, sqls::SqlLibrary)
-
-@given(instance=sqls::SqlLibrary_strategy)
-def test_sqls::sqllibrary_database_type(instance):
-    assert isinstance(instance.database, str)
+def test_sqls_sqllibrary_instantiation(instance):
+    assert isinstance(instance, sqls_SqlLibrary)
 
 
-@given(instance=sqls::SqlLibrary_strategy)
-def test_sqls::sqllibrary_database_setter(instance):
+
+@given(instance=sqls_SqlLibrary_strategy)
+def test_sqls_sqllibrary_database_setter(instance):
     original = instance.database
     instance.database = original
     assert instance.database == original
 
-@given(instance=sqls::SqlLibrary_strategy)
-def test_sqls::sqllibrary_version_type(instance):
-    assert isinstance(instance.version, int)
 
 
-@given(instance=sqls::SqlLibrary_strategy)
-def test_sqls::sqllibrary_version_setter(instance):
+@given(instance=sqls_SqlLibrary_strategy)
+def test_sqls_sqllibrary_version_setter(instance):
     original = instance.version
     instance.version = original
     assert instance.version == original

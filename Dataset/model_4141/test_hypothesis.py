@@ -3,27 +3,27 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     Expression,
-    arithmetic::Multi,
-    arithmetic::Minus,
-    arithmetic::Plus,
-    arithmetic::SumExpression,
-    arithmetic::AbstractDefinition,
-    arithmetic::Expression,
-    arithmetic::FunctionCall,
-    arithmetic::NumberLiteral,
-    arithmetic::Div,
-    arithmetic::Module,
+    arithmetic_Multi,
+    arithmetic_Plus,
+    arithmetic_Minus,
+    arithmetic_SumExpression,
+    arithmetic_AbstractDefinition,
+    arithmetic_Expression,
+    arithmetic_FunctionCall,
+    arithmetic_NumberLiteral,
+    arithmetic_Div,
+    arithmetic_Module,
     AbstractDefinition,
-    arithmetic::DeclaredParameter,
+    arithmetic_DeclaredParameter,
     Statement,
-    arithmetic::Evaluation,
-    arithmetic::Definition,
-    arithmetic::Statement,
-    arithmetic::Import,
+    arithmetic_Evaluation,
+    arithmetic_Definition,
+    arithmetic_Statement,
+    arithmetic_Import,
 )
 
 # =============================================================================
@@ -46,99 +46,99 @@ def test_expression_constructor_args():
 
 
 
-def test_arithmetic::multi_is_not_abstract():
-    assert not inspect.isabstract(arithmetic::Multi)
+def test_arithmetic_multi_is_not_abstract():
+    assert not inspect.isabstract(arithmetic_Multi)
 
 
-def test_arithmetic::multi_constructor_exists():
-    assert callable(arithmetic::Multi.__init__)
+def test_arithmetic_multi_constructor_exists():
+    assert callable(arithmetic_Multi.__init__)
 
 
-def test_arithmetic::multi_constructor_args():
-    sig = inspect.signature(arithmetic::Multi.__init__)
+def test_arithmetic_multi_constructor_args():
+    sig = inspect.signature(arithmetic_Multi.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_arithmetic::minus_is_not_abstract():
-    assert not inspect.isabstract(arithmetic::Minus)
+def test_arithmetic_plus_is_not_abstract():
+    assert not inspect.isabstract(arithmetic_Plus)
 
 
-def test_arithmetic::minus_constructor_exists():
-    assert callable(arithmetic::Minus.__init__)
+def test_arithmetic_plus_constructor_exists():
+    assert callable(arithmetic_Plus.__init__)
 
 
-def test_arithmetic::minus_constructor_args():
-    sig = inspect.signature(arithmetic::Minus.__init__)
+def test_arithmetic_plus_constructor_args():
+    sig = inspect.signature(arithmetic_Plus.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_arithmetic::plus_is_not_abstract():
-    assert not inspect.isabstract(arithmetic::Plus)
+def test_arithmetic_minus_is_not_abstract():
+    assert not inspect.isabstract(arithmetic_Minus)
 
 
-def test_arithmetic::plus_constructor_exists():
-    assert callable(arithmetic::Plus.__init__)
+def test_arithmetic_minus_constructor_exists():
+    assert callable(arithmetic_Minus.__init__)
 
 
-def test_arithmetic::plus_constructor_args():
-    sig = inspect.signature(arithmetic::Plus.__init__)
+def test_arithmetic_minus_constructor_args():
+    sig = inspect.signature(arithmetic_Minus.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_arithmetic::sumexpression_is_not_abstract():
-    assert not inspect.isabstract(arithmetic::SumExpression)
+def test_arithmetic_sumexpression_is_not_abstract():
+    assert not inspect.isabstract(arithmetic_SumExpression)
 
 
-def test_arithmetic::sumexpression_constructor_exists():
-    assert callable(arithmetic::SumExpression.__init__)
+def test_arithmetic_sumexpression_constructor_exists():
+    assert callable(arithmetic_SumExpression.__init__)
 
 
-def test_arithmetic::sumexpression_constructor_args():
-    sig = inspect.signature(arithmetic::SumExpression.__init__)
+def test_arithmetic_sumexpression_constructor_args():
+    sig = inspect.signature(arithmetic_SumExpression.__init__)
     params = list(sig.parameters.keys())
-    assert "upper" in params, "Missing parameter 'upper'"
     assert "lower" in params, "Missing parameter 'lower'"
+    assert "upper" in params, "Missing parameter 'upper'"
 
-def test_arithmetic::sumexpression_has_upper():
-    assert hasattr(arithmetic::SumExpression, "upper")
+def test_arithmetic_sumexpression_has_lower():
+    assert hasattr(arithmetic_SumExpression, "lower")
     descriptor = None
-    for klass in arithmetic::SumExpression.__mro__:
-        if "upper" in klass.__dict__:
-            descriptor = klass.__dict__["upper"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_arithmetic::sumexpression_has_lower():
-    assert hasattr(arithmetic::SumExpression, "lower")
-    descriptor = None
-    for klass in arithmetic::SumExpression.__mro__:
+    for klass in arithmetic_SumExpression.__mro__:
         if "lower" in klass.__dict__:
             descriptor = klass.__dict__["lower"]
             break
     assert isinstance(descriptor, property)
 
+def test_arithmetic_sumexpression_has_upper():
+    assert hasattr(arithmetic_SumExpression, "upper")
+    descriptor = None
+    for klass in arithmetic_SumExpression.__mro__:
+        if "upper" in klass.__dict__:
+            descriptor = klass.__dict__["upper"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_arithmetic::abstractdefinition_is_not_abstract():
-    assert not inspect.isabstract(arithmetic::AbstractDefinition)
+
+def test_arithmetic_abstractdefinition_is_not_abstract():
+    assert not inspect.isabstract(arithmetic_AbstractDefinition)
 
 
-def test_arithmetic::abstractdefinition_constructor_exists():
-    assert callable(arithmetic::AbstractDefinition.__init__)
+def test_arithmetic_abstractdefinition_constructor_exists():
+    assert callable(arithmetic_AbstractDefinition.__init__)
 
 
-def test_arithmetic::abstractdefinition_constructor_args():
-    sig = inspect.signature(arithmetic::AbstractDefinition.__init__)
+def test_arithmetic_abstractdefinition_constructor_args():
+    sig = inspect.signature(arithmetic_AbstractDefinition.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_arithmetic::abstractdefinition_has_name():
-    assert hasattr(arithmetic::AbstractDefinition, "name")
+def test_arithmetic_abstractdefinition_has_name():
+    assert hasattr(arithmetic_AbstractDefinition, "name")
     descriptor = None
-    for klass in arithmetic::AbstractDefinition.__mro__:
+    for klass in arithmetic_AbstractDefinition.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -146,51 +146,51 @@ def test_arithmetic::abstractdefinition_has_name():
 
 
 
-def test_arithmetic::expression_is_not_abstract():
-    assert not inspect.isabstract(arithmetic::Expression)
+def test_arithmetic_expression_is_not_abstract():
+    assert not inspect.isabstract(arithmetic_Expression)
 
 
-def test_arithmetic::expression_constructor_exists():
-    assert callable(arithmetic::Expression.__init__)
+def test_arithmetic_expression_constructor_exists():
+    assert callable(arithmetic_Expression.__init__)
 
 
-def test_arithmetic::expression_constructor_args():
-    sig = inspect.signature(arithmetic::Expression.__init__)
+def test_arithmetic_expression_constructor_args():
+    sig = inspect.signature(arithmetic_Expression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_arithmetic::functioncall_is_not_abstract():
-    assert not inspect.isabstract(arithmetic::FunctionCall)
+def test_arithmetic_functioncall_is_not_abstract():
+    assert not inspect.isabstract(arithmetic_FunctionCall)
 
 
-def test_arithmetic::functioncall_constructor_exists():
-    assert callable(arithmetic::FunctionCall.__init__)
+def test_arithmetic_functioncall_constructor_exists():
+    assert callable(arithmetic_FunctionCall.__init__)
 
 
-def test_arithmetic::functioncall_constructor_args():
-    sig = inspect.signature(arithmetic::FunctionCall.__init__)
+def test_arithmetic_functioncall_constructor_args():
+    sig = inspect.signature(arithmetic_FunctionCall.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_arithmetic::numberliteral_is_not_abstract():
-    assert not inspect.isabstract(arithmetic::NumberLiteral)
+def test_arithmetic_numberliteral_is_not_abstract():
+    assert not inspect.isabstract(arithmetic_NumberLiteral)
 
 
-def test_arithmetic::numberliteral_constructor_exists():
-    assert callable(arithmetic::NumberLiteral.__init__)
+def test_arithmetic_numberliteral_constructor_exists():
+    assert callable(arithmetic_NumberLiteral.__init__)
 
 
-def test_arithmetic::numberliteral_constructor_args():
-    sig = inspect.signature(arithmetic::NumberLiteral.__init__)
+def test_arithmetic_numberliteral_constructor_args():
+    sig = inspect.signature(arithmetic_NumberLiteral.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
 
-def test_arithmetic::numberliteral_has_value():
-    assert hasattr(arithmetic::NumberLiteral, "value")
+def test_arithmetic_numberliteral_has_value():
+    assert hasattr(arithmetic_NumberLiteral, "value")
     descriptor = None
-    for klass in arithmetic::NumberLiteral.__mro__:
+    for klass in arithmetic_NumberLiteral.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -198,37 +198,37 @@ def test_arithmetic::numberliteral_has_value():
 
 
 
-def test_arithmetic::div_is_not_abstract():
-    assert not inspect.isabstract(arithmetic::Div)
+def test_arithmetic_div_is_not_abstract():
+    assert not inspect.isabstract(arithmetic_Div)
 
 
-def test_arithmetic::div_constructor_exists():
-    assert callable(arithmetic::Div.__init__)
+def test_arithmetic_div_constructor_exists():
+    assert callable(arithmetic_Div.__init__)
 
 
-def test_arithmetic::div_constructor_args():
-    sig = inspect.signature(arithmetic::Div.__init__)
+def test_arithmetic_div_constructor_args():
+    sig = inspect.signature(arithmetic_Div.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_arithmetic::module_is_not_abstract():
-    assert not inspect.isabstract(arithmetic::Module)
+def test_arithmetic_module_is_not_abstract():
+    assert not inspect.isabstract(arithmetic_Module)
 
 
-def test_arithmetic::module_constructor_exists():
-    assert callable(arithmetic::Module.__init__)
+def test_arithmetic_module_constructor_exists():
+    assert callable(arithmetic_Module.__init__)
 
 
-def test_arithmetic::module_constructor_args():
-    sig = inspect.signature(arithmetic::Module.__init__)
+def test_arithmetic_module_constructor_args():
+    sig = inspect.signature(arithmetic_Module.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_arithmetic::module_has_name():
-    assert hasattr(arithmetic::Module, "name")
+def test_arithmetic_module_has_name():
+    assert hasattr(arithmetic_Module, "name")
     descriptor = None
-    for klass in arithmetic::Module.__mro__:
+    for klass in arithmetic_Module.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -250,16 +250,16 @@ def test_abstractdefinition_constructor_args():
 
 
 
-def test_arithmetic::declaredparameter_is_not_abstract():
-    assert not inspect.isabstract(arithmetic::DeclaredParameter)
+def test_arithmetic_declaredparameter_is_not_abstract():
+    assert not inspect.isabstract(arithmetic_DeclaredParameter)
 
 
-def test_arithmetic::declaredparameter_constructor_exists():
-    assert callable(arithmetic::DeclaredParameter.__init__)
+def test_arithmetic_declaredparameter_constructor_exists():
+    assert callable(arithmetic_DeclaredParameter.__init__)
 
 
-def test_arithmetic::declaredparameter_constructor_args():
-    sig = inspect.signature(arithmetic::DeclaredParameter.__init__)
+def test_arithmetic_declaredparameter_constructor_args():
+    sig = inspect.signature(arithmetic_DeclaredParameter.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -278,58 +278,58 @@ def test_statement_constructor_args():
 
 
 
-def test_arithmetic::evaluation_is_not_abstract():
-    assert not inspect.isabstract(arithmetic::Evaluation)
+def test_arithmetic_evaluation_is_not_abstract():
+    assert not inspect.isabstract(arithmetic_Evaluation)
 
 
-def test_arithmetic::evaluation_constructor_exists():
-    assert callable(arithmetic::Evaluation.__init__)
+def test_arithmetic_evaluation_constructor_exists():
+    assert callable(arithmetic_Evaluation.__init__)
 
 
-def test_arithmetic::evaluation_constructor_args():
-    sig = inspect.signature(arithmetic::Evaluation.__init__)
+def test_arithmetic_evaluation_constructor_args():
+    sig = inspect.signature(arithmetic_Evaluation.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_arithmetic::definition_is_not_abstract():
-    assert not inspect.isabstract(arithmetic::Definition)
+def test_arithmetic_definition_is_not_abstract():
+    assert not inspect.isabstract(arithmetic_Definition)
 
 
-def test_arithmetic::definition_constructor_exists():
-    assert callable(arithmetic::Definition.__init__)
+def test_arithmetic_definition_constructor_exists():
+    assert callable(arithmetic_Definition.__init__)
 
 
-def test_arithmetic::definition_constructor_args():
-    sig = inspect.signature(arithmetic::Definition.__init__)
+def test_arithmetic_definition_constructor_args():
+    sig = inspect.signature(arithmetic_Definition.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_arithmetic::statement_is_not_abstract():
-    assert not inspect.isabstract(arithmetic::Statement)
+def test_arithmetic_statement_is_not_abstract():
+    assert not inspect.isabstract(arithmetic_Statement)
 
 
-def test_arithmetic::statement_constructor_exists():
-    assert callable(arithmetic::Statement.__init__)
+def test_arithmetic_statement_constructor_exists():
+    assert callable(arithmetic_Statement.__init__)
 
 
-def test_arithmetic::statement_constructor_args():
-    sig = inspect.signature(arithmetic::Statement.__init__)
+def test_arithmetic_statement_constructor_args():
+    sig = inspect.signature(arithmetic_Statement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_arithmetic::import_is_not_abstract():
-    assert not inspect.isabstract(arithmetic::Import)
+def test_arithmetic_import_is_not_abstract():
+    assert not inspect.isabstract(arithmetic_Import)
 
 
-def test_arithmetic::import_constructor_exists():
-    assert callable(arithmetic::Import.__init__)
+def test_arithmetic_import_constructor_exists():
+    assert callable(arithmetic_Import.__init__)
 
 
-def test_arithmetic::import_constructor_args():
-    sig = inspect.signature(arithmetic::Import.__init__)
+def test_arithmetic_import_constructor_args():
+    sig = inspect.signature(arithmetic_Import.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -347,66 +347,66 @@ safe_text = st.text(
 Expression_strategy = st.builds(
     Expression,
 )
-arithmetic::Multi_strategy = st.builds(
-    arithmetic::Multi,
+arithmetic_Multi_strategy = st.builds(
+    arithmetic_Multi,
 )
-arithmetic::Minus_strategy = st.builds(
-    arithmetic::Minus,
+arithmetic_Plus_strategy = st.builds(
+    arithmetic_Plus,
 )
-arithmetic::Plus_strategy = st.builds(
-    arithmetic::Plus,
+arithmetic_Minus_strategy = st.builds(
+    arithmetic_Minus,
 )
-arithmetic::SumExpression_strategy = st.builds(
-    arithmetic::SumExpression,
-    upper=
-        st.integers(),
+arithmetic_SumExpression_strategy = st.builds(
+    arithmetic_SumExpression,
     lower=
+        st.integers(),
+    upper=
         st.integers()
 )
-arithmetic::AbstractDefinition_strategy = st.builds(
-    arithmetic::AbstractDefinition,
+arithmetic_AbstractDefinition_strategy = st.builds(
+    arithmetic_AbstractDefinition,
     name=
         safe_text
 )
-arithmetic::Expression_strategy = st.builds(
-    arithmetic::Expression,
+arithmetic_Expression_strategy = st.builds(
+    arithmetic_Expression,
 )
-arithmetic::FunctionCall_strategy = st.builds(
-    arithmetic::FunctionCall,
+arithmetic_FunctionCall_strategy = st.builds(
+    arithmetic_FunctionCall,
 )
-arithmetic::NumberLiteral_strategy = st.builds(
-    arithmetic::NumberLiteral,
+arithmetic_NumberLiteral_strategy = st.builds(
+    arithmetic_NumberLiteral,
     value=
         st.integers()
 )
-arithmetic::Div_strategy = st.builds(
-    arithmetic::Div,
+arithmetic_Div_strategy = st.builds(
+    arithmetic_Div,
 )
-arithmetic::Module_strategy = st.builds(
-    arithmetic::Module,
+arithmetic_Module_strategy = st.builds(
+    arithmetic_Module,
     name=
         safe_text
 )
 AbstractDefinition_strategy = st.builds(
     AbstractDefinition,
 )
-arithmetic::DeclaredParameter_strategy = st.builds(
-    arithmetic::DeclaredParameter,
+arithmetic_DeclaredParameter_strategy = st.builds(
+    arithmetic_DeclaredParameter,
 )
 Statement_strategy = st.builds(
     Statement,
 )
-arithmetic::Evaluation_strategy = st.builds(
-    arithmetic::Evaluation,
+arithmetic_Evaluation_strategy = st.builds(
+    arithmetic_Evaluation,
 )
-arithmetic::Definition_strategy = st.builds(
-    arithmetic::Definition,
+arithmetic_Definition_strategy = st.builds(
+    arithmetic_Definition,
 )
-arithmetic::Statement_strategy = st.builds(
-    arithmetic::Statement,
+arithmetic_Statement_strategy = st.builds(
+    arithmetic_Statement,
 )
-arithmetic::Import_strategy = st.builds(
-    arithmetic::Import,
+arithmetic_Import_strategy = st.builds(
+    arithmetic_Import,
 )
 
 @given(instance=Expression_strategy)
@@ -414,107 +414,92 @@ arithmetic::Import_strategy = st.builds(
 def test_expression_instantiation(instance):
     assert isinstance(instance, Expression)
 
-@given(instance=arithmetic::Multi_strategy)
+@given(instance=arithmetic_Multi_strategy)
 @settings(max_examples=50)
-def test_arithmetic::multi_instantiation(instance):
-    assert isinstance(instance, arithmetic::Multi)
+def test_arithmetic_multi_instantiation(instance):
+    assert isinstance(instance, arithmetic_Multi)
 
-@given(instance=arithmetic::Minus_strategy)
+@given(instance=arithmetic_Plus_strategy)
 @settings(max_examples=50)
-def test_arithmetic::minus_instantiation(instance):
-    assert isinstance(instance, arithmetic::Minus)
+def test_arithmetic_plus_instantiation(instance):
+    assert isinstance(instance, arithmetic_Plus)
 
-@given(instance=arithmetic::Plus_strategy)
+@given(instance=arithmetic_Minus_strategy)
 @settings(max_examples=50)
-def test_arithmetic::plus_instantiation(instance):
-    assert isinstance(instance, arithmetic::Plus)
+def test_arithmetic_minus_instantiation(instance):
+    assert isinstance(instance, arithmetic_Minus)
 
-@given(instance=arithmetic::SumExpression_strategy)
+@given(instance=arithmetic_SumExpression_strategy)
 @settings(max_examples=50)
-def test_arithmetic::sumexpression_instantiation(instance):
-    assert isinstance(instance, arithmetic::SumExpression)
-
-@given(instance=arithmetic::SumExpression_strategy)
-def test_arithmetic::sumexpression_upper_type(instance):
-    assert isinstance(instance.upper, int)
+def test_arithmetic_sumexpression_instantiation(instance):
+    assert isinstance(instance, arithmetic_SumExpression)
 
 
-@given(instance=arithmetic::SumExpression_strategy)
-def test_arithmetic::sumexpression_upper_setter(instance):
-    original = instance.upper
-    instance.upper = original
-    assert instance.upper == original
 
-@given(instance=arithmetic::SumExpression_strategy)
-def test_arithmetic::sumexpression_lower_type(instance):
-    assert isinstance(instance.lower, int)
-
-
-@given(instance=arithmetic::SumExpression_strategy)
-def test_arithmetic::sumexpression_lower_setter(instance):
+@given(instance=arithmetic_SumExpression_strategy)
+def test_arithmetic_sumexpression_lower_setter(instance):
     original = instance.lower
     instance.lower = original
     assert instance.lower == original
 
-@given(instance=arithmetic::AbstractDefinition_strategy)
+
+
+@given(instance=arithmetic_SumExpression_strategy)
+def test_arithmetic_sumexpression_upper_setter(instance):
+    original = instance.upper
+    instance.upper = original
+    assert instance.upper == original
+
+@given(instance=arithmetic_AbstractDefinition_strategy)
 @settings(max_examples=50)
-def test_arithmetic::abstractdefinition_instantiation(instance):
-    assert isinstance(instance, arithmetic::AbstractDefinition)
-
-@given(instance=arithmetic::AbstractDefinition_strategy)
-def test_arithmetic::abstractdefinition_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_arithmetic_abstractdefinition_instantiation(instance):
+    assert isinstance(instance, arithmetic_AbstractDefinition)
 
 
-@given(instance=arithmetic::AbstractDefinition_strategy)
-def test_arithmetic::abstractdefinition_name_setter(instance):
+
+@given(instance=arithmetic_AbstractDefinition_strategy)
+def test_arithmetic_abstractdefinition_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=arithmetic::Expression_strategy)
+@given(instance=arithmetic_Expression_strategy)
 @settings(max_examples=50)
-def test_arithmetic::expression_instantiation(instance):
-    assert isinstance(instance, arithmetic::Expression)
+def test_arithmetic_expression_instantiation(instance):
+    assert isinstance(instance, arithmetic_Expression)
 
-@given(instance=arithmetic::FunctionCall_strategy)
+@given(instance=arithmetic_FunctionCall_strategy)
 @settings(max_examples=50)
-def test_arithmetic::functioncall_instantiation(instance):
-    assert isinstance(instance, arithmetic::FunctionCall)
+def test_arithmetic_functioncall_instantiation(instance):
+    assert isinstance(instance, arithmetic_FunctionCall)
 
-@given(instance=arithmetic::NumberLiteral_strategy)
+@given(instance=arithmetic_NumberLiteral_strategy)
 @settings(max_examples=50)
-def test_arithmetic::numberliteral_instantiation(instance):
-    assert isinstance(instance, arithmetic::NumberLiteral)
-
-@given(instance=arithmetic::NumberLiteral_strategy)
-def test_arithmetic::numberliteral_value_type(instance):
-    assert isinstance(instance.value, int)
+def test_arithmetic_numberliteral_instantiation(instance):
+    assert isinstance(instance, arithmetic_NumberLiteral)
 
 
-@given(instance=arithmetic::NumberLiteral_strategy)
-def test_arithmetic::numberliteral_value_setter(instance):
+
+@given(instance=arithmetic_NumberLiteral_strategy)
+def test_arithmetic_numberliteral_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
 
-@given(instance=arithmetic::Div_strategy)
+@given(instance=arithmetic_Div_strategy)
 @settings(max_examples=50)
-def test_arithmetic::div_instantiation(instance):
-    assert isinstance(instance, arithmetic::Div)
+def test_arithmetic_div_instantiation(instance):
+    assert isinstance(instance, arithmetic_Div)
 
-@given(instance=arithmetic::Module_strategy)
+@given(instance=arithmetic_Module_strategy)
 @settings(max_examples=50)
-def test_arithmetic::module_instantiation(instance):
-    assert isinstance(instance, arithmetic::Module)
-
-@given(instance=arithmetic::Module_strategy)
-def test_arithmetic::module_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_arithmetic_module_instantiation(instance):
+    assert isinstance(instance, arithmetic_Module)
 
 
-@given(instance=arithmetic::Module_strategy)
-def test_arithmetic::module_name_setter(instance):
+
+@given(instance=arithmetic_Module_strategy)
+def test_arithmetic_module_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
@@ -524,32 +509,32 @@ def test_arithmetic::module_name_setter(instance):
 def test_abstractdefinition_instantiation(instance):
     assert isinstance(instance, AbstractDefinition)
 
-@given(instance=arithmetic::DeclaredParameter_strategy)
+@given(instance=arithmetic_DeclaredParameter_strategy)
 @settings(max_examples=50)
-def test_arithmetic::declaredparameter_instantiation(instance):
-    assert isinstance(instance, arithmetic::DeclaredParameter)
+def test_arithmetic_declaredparameter_instantiation(instance):
+    assert isinstance(instance, arithmetic_DeclaredParameter)
 
 @given(instance=Statement_strategy)
 @settings(max_examples=50)
 def test_statement_instantiation(instance):
     assert isinstance(instance, Statement)
 
-@given(instance=arithmetic::Evaluation_strategy)
+@given(instance=arithmetic_Evaluation_strategy)
 @settings(max_examples=50)
-def test_arithmetic::evaluation_instantiation(instance):
-    assert isinstance(instance, arithmetic::Evaluation)
+def test_arithmetic_evaluation_instantiation(instance):
+    assert isinstance(instance, arithmetic_Evaluation)
 
-@given(instance=arithmetic::Definition_strategy)
+@given(instance=arithmetic_Definition_strategy)
 @settings(max_examples=50)
-def test_arithmetic::definition_instantiation(instance):
-    assert isinstance(instance, arithmetic::Definition)
+def test_arithmetic_definition_instantiation(instance):
+    assert isinstance(instance, arithmetic_Definition)
 
-@given(instance=arithmetic::Statement_strategy)
+@given(instance=arithmetic_Statement_strategy)
 @settings(max_examples=50)
-def test_arithmetic::statement_instantiation(instance):
-    assert isinstance(instance, arithmetic::Statement)
+def test_arithmetic_statement_instantiation(instance):
+    assert isinstance(instance, arithmetic_Statement)
 
-@given(instance=arithmetic::Import_strategy)
+@given(instance=arithmetic_Import_strategy)
 @settings(max_examples=50)
-def test_arithmetic::import_instantiation(instance):
-    assert isinstance(instance, arithmetic::Import)
+def test_arithmetic_import_instantiation(instance):
+    assert isinstance(instance, arithmetic_Import)

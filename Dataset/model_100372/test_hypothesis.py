@@ -3,16 +3,16 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    SimpleHierarchicalStateMachine::StateMachine,
+from python_code import (
+    SimpleHierarchicalStateMachine_StateMachine,
     State,
-    SimpleHierarchicalStateMachine::FinalState,
-    SimpleHierarchicalStateMachine::InitialState,
-    SimpleHierarchicalStateMachine::CompositeState,
-    SimpleHierarchicalStateMachine::State,
-    SimpleHierarchicalStateMachine::Transition,
+    SimpleHierarchicalStateMachine_FinalState,
+    SimpleHierarchicalStateMachine_InitialState,
+    SimpleHierarchicalStateMachine_CompositeState,
+    SimpleHierarchicalStateMachine_State,
+    SimpleHierarchicalStateMachine_Transition,
 )
 
 # =============================================================================
@@ -21,23 +21,23 @@ from classes import (
 
 
 
-def test_simplehierarchicalstatemachine::statemachine_is_not_abstract():
-    assert not inspect.isabstract(SimpleHierarchicalStateMachine::StateMachine)
+def test_simplehierarchicalstatemachine_statemachine_is_not_abstract():
+    assert not inspect.isabstract(SimpleHierarchicalStateMachine_StateMachine)
 
 
-def test_simplehierarchicalstatemachine::statemachine_constructor_exists():
-    assert callable(SimpleHierarchicalStateMachine::StateMachine.__init__)
+def test_simplehierarchicalstatemachine_statemachine_constructor_exists():
+    assert callable(SimpleHierarchicalStateMachine_StateMachine.__init__)
 
 
-def test_simplehierarchicalstatemachine::statemachine_constructor_args():
-    sig = inspect.signature(SimpleHierarchicalStateMachine::StateMachine.__init__)
+def test_simplehierarchicalstatemachine_statemachine_constructor_args():
+    sig = inspect.signature(SimpleHierarchicalStateMachine_StateMachine.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_simplehierarchicalstatemachine::statemachine_has_name():
-    assert hasattr(SimpleHierarchicalStateMachine::StateMachine, "name")
+def test_simplehierarchicalstatemachine_statemachine_has_name():
+    assert hasattr(SimpleHierarchicalStateMachine_StateMachine, "name")
     descriptor = None
-    for klass in SimpleHierarchicalStateMachine::StateMachine.__mro__:
+    for klass in SimpleHierarchicalStateMachine_StateMachine.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -59,65 +59,65 @@ def test_state_constructor_args():
 
 
 
-def test_simplehierarchicalstatemachine::finalstate_is_not_abstract():
-    assert not inspect.isabstract(SimpleHierarchicalStateMachine::FinalState)
+def test_simplehierarchicalstatemachine_finalstate_is_not_abstract():
+    assert not inspect.isabstract(SimpleHierarchicalStateMachine_FinalState)
 
 
-def test_simplehierarchicalstatemachine::finalstate_constructor_exists():
-    assert callable(SimpleHierarchicalStateMachine::FinalState.__init__)
+def test_simplehierarchicalstatemachine_finalstate_constructor_exists():
+    assert callable(SimpleHierarchicalStateMachine_FinalState.__init__)
 
 
-def test_simplehierarchicalstatemachine::finalstate_constructor_args():
-    sig = inspect.signature(SimpleHierarchicalStateMachine::FinalState.__init__)
+def test_simplehierarchicalstatemachine_finalstate_constructor_args():
+    sig = inspect.signature(SimpleHierarchicalStateMachine_FinalState.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_simplehierarchicalstatemachine::initialstate_is_not_abstract():
-    assert not inspect.isabstract(SimpleHierarchicalStateMachine::InitialState)
+def test_simplehierarchicalstatemachine_initialstate_is_not_abstract():
+    assert not inspect.isabstract(SimpleHierarchicalStateMachine_InitialState)
 
 
-def test_simplehierarchicalstatemachine::initialstate_constructor_exists():
-    assert callable(SimpleHierarchicalStateMachine::InitialState.__init__)
+def test_simplehierarchicalstatemachine_initialstate_constructor_exists():
+    assert callable(SimpleHierarchicalStateMachine_InitialState.__init__)
 
 
-def test_simplehierarchicalstatemachine::initialstate_constructor_args():
-    sig = inspect.signature(SimpleHierarchicalStateMachine::InitialState.__init__)
+def test_simplehierarchicalstatemachine_initialstate_constructor_args():
+    sig = inspect.signature(SimpleHierarchicalStateMachine_InitialState.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_simplehierarchicalstatemachine::compositestate_is_not_abstract():
-    assert not inspect.isabstract(SimpleHierarchicalStateMachine::CompositeState)
+def test_simplehierarchicalstatemachine_compositestate_is_not_abstract():
+    assert not inspect.isabstract(SimpleHierarchicalStateMachine_CompositeState)
 
 
-def test_simplehierarchicalstatemachine::compositestate_constructor_exists():
-    assert callable(SimpleHierarchicalStateMachine::CompositeState.__init__)
+def test_simplehierarchicalstatemachine_compositestate_constructor_exists():
+    assert callable(SimpleHierarchicalStateMachine_CompositeState.__init__)
 
 
-def test_simplehierarchicalstatemachine::compositestate_constructor_args():
-    sig = inspect.signature(SimpleHierarchicalStateMachine::CompositeState.__init__)
+def test_simplehierarchicalstatemachine_compositestate_constructor_args():
+    sig = inspect.signature(SimpleHierarchicalStateMachine_CompositeState.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_simplehierarchicalstatemachine::state_is_not_abstract():
-    assert not inspect.isabstract(SimpleHierarchicalStateMachine::State)
+def test_simplehierarchicalstatemachine_state_is_not_abstract():
+    assert not inspect.isabstract(SimpleHierarchicalStateMachine_State)
 
 
-def test_simplehierarchicalstatemachine::state_constructor_exists():
-    assert callable(SimpleHierarchicalStateMachine::State.__init__)
+def test_simplehierarchicalstatemachine_state_constructor_exists():
+    assert callable(SimpleHierarchicalStateMachine_State.__init__)
 
 
-def test_simplehierarchicalstatemachine::state_constructor_args():
-    sig = inspect.signature(SimpleHierarchicalStateMachine::State.__init__)
+def test_simplehierarchicalstatemachine_state_constructor_args():
+    sig = inspect.signature(SimpleHierarchicalStateMachine_State.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_simplehierarchicalstatemachine::state_has_name():
-    assert hasattr(SimpleHierarchicalStateMachine::State, "name")
+def test_simplehierarchicalstatemachine_state_has_name():
+    assert hasattr(SimpleHierarchicalStateMachine_State, "name")
     descriptor = None
-    for klass in SimpleHierarchicalStateMachine::State.__mro__:
+    for klass in SimpleHierarchicalStateMachine_State.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -125,35 +125,35 @@ def test_simplehierarchicalstatemachine::state_has_name():
 
 
 
-def test_simplehierarchicalstatemachine::transition_is_not_abstract():
-    assert not inspect.isabstract(SimpleHierarchicalStateMachine::Transition)
+def test_simplehierarchicalstatemachine_transition_is_not_abstract():
+    assert not inspect.isabstract(SimpleHierarchicalStateMachine_Transition)
 
 
-def test_simplehierarchicalstatemachine::transition_constructor_exists():
-    assert callable(SimpleHierarchicalStateMachine::Transition.__init__)
+def test_simplehierarchicalstatemachine_transition_constructor_exists():
+    assert callable(SimpleHierarchicalStateMachine_Transition.__init__)
 
 
-def test_simplehierarchicalstatemachine::transition_constructor_args():
-    sig = inspect.signature(SimpleHierarchicalStateMachine::Transition.__init__)
+def test_simplehierarchicalstatemachine_transition_constructor_args():
+    sig = inspect.signature(SimpleHierarchicalStateMachine_Transition.__init__)
     params = list(sig.parameters.keys())
-    assert "effect" in params, "Missing parameter 'effect'"
     assert "trigger" in params, "Missing parameter 'trigger'"
+    assert "effect" in params, "Missing parameter 'effect'"
 
-def test_simplehierarchicalstatemachine::transition_has_effect():
-    assert hasattr(SimpleHierarchicalStateMachine::Transition, "effect")
+def test_simplehierarchicalstatemachine_transition_has_trigger():
+    assert hasattr(SimpleHierarchicalStateMachine_Transition, "trigger")
     descriptor = None
-    for klass in SimpleHierarchicalStateMachine::Transition.__mro__:
-        if "effect" in klass.__dict__:
-            descriptor = klass.__dict__["effect"]
+    for klass in SimpleHierarchicalStateMachine_Transition.__mro__:
+        if "trigger" in klass.__dict__:
+            descriptor = klass.__dict__["trigger"]
             break
     assert isinstance(descriptor, property)
 
-def test_simplehierarchicalstatemachine::transition_has_trigger():
-    assert hasattr(SimpleHierarchicalStateMachine::Transition, "trigger")
+def test_simplehierarchicalstatemachine_transition_has_effect():
+    assert hasattr(SimpleHierarchicalStateMachine_Transition, "effect")
     descriptor = None
-    for klass in SimpleHierarchicalStateMachine::Transition.__mro__:
-        if "trigger" in klass.__dict__:
-            descriptor = klass.__dict__["trigger"]
+    for klass in SimpleHierarchicalStateMachine_Transition.__mro__:
+        if "effect" in klass.__dict__:
+            descriptor = klass.__dict__["effect"]
             break
     assert isinstance(descriptor, property)
 
@@ -169,48 +169,45 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-SimpleHierarchicalStateMachine::StateMachine_strategy = st.builds(
-    SimpleHierarchicalStateMachine::StateMachine,
+SimpleHierarchicalStateMachine_StateMachine_strategy = st.builds(
+    SimpleHierarchicalStateMachine_StateMachine,
     name=
         safe_text
 )
 State_strategy = st.builds(
     State,
 )
-SimpleHierarchicalStateMachine::FinalState_strategy = st.builds(
-    SimpleHierarchicalStateMachine::FinalState,
+SimpleHierarchicalStateMachine_FinalState_strategy = st.builds(
+    SimpleHierarchicalStateMachine_FinalState,
 )
-SimpleHierarchicalStateMachine::InitialState_strategy = st.builds(
-    SimpleHierarchicalStateMachine::InitialState,
+SimpleHierarchicalStateMachine_InitialState_strategy = st.builds(
+    SimpleHierarchicalStateMachine_InitialState,
 )
-SimpleHierarchicalStateMachine::CompositeState_strategy = st.builds(
-    SimpleHierarchicalStateMachine::CompositeState,
+SimpleHierarchicalStateMachine_CompositeState_strategy = st.builds(
+    SimpleHierarchicalStateMachine_CompositeState,
 )
-SimpleHierarchicalStateMachine::State_strategy = st.builds(
-    SimpleHierarchicalStateMachine::State,
+SimpleHierarchicalStateMachine_State_strategy = st.builds(
+    SimpleHierarchicalStateMachine_State,
     name=
         safe_text
 )
-SimpleHierarchicalStateMachine::Transition_strategy = st.builds(
-    SimpleHierarchicalStateMachine::Transition,
-    effect=
-        safe_text,
+SimpleHierarchicalStateMachine_Transition_strategy = st.builds(
+    SimpleHierarchicalStateMachine_Transition,
     trigger=
+        safe_text,
+    effect=
         safe_text
 )
 
-@given(instance=SimpleHierarchicalStateMachine::StateMachine_strategy)
+@given(instance=SimpleHierarchicalStateMachine_StateMachine_strategy)
 @settings(max_examples=50)
-def test_simplehierarchicalstatemachine::statemachine_instantiation(instance):
-    assert isinstance(instance, SimpleHierarchicalStateMachine::StateMachine)
-
-@given(instance=SimpleHierarchicalStateMachine::StateMachine_strategy)
-def test_simplehierarchicalstatemachine::statemachine_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_simplehierarchicalstatemachine_statemachine_instantiation(instance):
+    assert isinstance(instance, SimpleHierarchicalStateMachine_StateMachine)
 
 
-@given(instance=SimpleHierarchicalStateMachine::StateMachine_strategy)
-def test_simplehierarchicalstatemachine::statemachine_name_setter(instance):
+
+@given(instance=SimpleHierarchicalStateMachine_StateMachine_strategy)
+def test_simplehierarchicalstatemachine_statemachine_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
@@ -220,60 +217,51 @@ def test_simplehierarchicalstatemachine::statemachine_name_setter(instance):
 def test_state_instantiation(instance):
     assert isinstance(instance, State)
 
-@given(instance=SimpleHierarchicalStateMachine::FinalState_strategy)
+@given(instance=SimpleHierarchicalStateMachine_FinalState_strategy)
 @settings(max_examples=50)
-def test_simplehierarchicalstatemachine::finalstate_instantiation(instance):
-    assert isinstance(instance, SimpleHierarchicalStateMachine::FinalState)
+def test_simplehierarchicalstatemachine_finalstate_instantiation(instance):
+    assert isinstance(instance, SimpleHierarchicalStateMachine_FinalState)
 
-@given(instance=SimpleHierarchicalStateMachine::InitialState_strategy)
+@given(instance=SimpleHierarchicalStateMachine_InitialState_strategy)
 @settings(max_examples=50)
-def test_simplehierarchicalstatemachine::initialstate_instantiation(instance):
-    assert isinstance(instance, SimpleHierarchicalStateMachine::InitialState)
+def test_simplehierarchicalstatemachine_initialstate_instantiation(instance):
+    assert isinstance(instance, SimpleHierarchicalStateMachine_InitialState)
 
-@given(instance=SimpleHierarchicalStateMachine::CompositeState_strategy)
+@given(instance=SimpleHierarchicalStateMachine_CompositeState_strategy)
 @settings(max_examples=50)
-def test_simplehierarchicalstatemachine::compositestate_instantiation(instance):
-    assert isinstance(instance, SimpleHierarchicalStateMachine::CompositeState)
+def test_simplehierarchicalstatemachine_compositestate_instantiation(instance):
+    assert isinstance(instance, SimpleHierarchicalStateMachine_CompositeState)
 
-@given(instance=SimpleHierarchicalStateMachine::State_strategy)
+@given(instance=SimpleHierarchicalStateMachine_State_strategy)
 @settings(max_examples=50)
-def test_simplehierarchicalstatemachine::state_instantiation(instance):
-    assert isinstance(instance, SimpleHierarchicalStateMachine::State)
-
-@given(instance=SimpleHierarchicalStateMachine::State_strategy)
-def test_simplehierarchicalstatemachine::state_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_simplehierarchicalstatemachine_state_instantiation(instance):
+    assert isinstance(instance, SimpleHierarchicalStateMachine_State)
 
 
-@given(instance=SimpleHierarchicalStateMachine::State_strategy)
-def test_simplehierarchicalstatemachine::state_name_setter(instance):
+
+@given(instance=SimpleHierarchicalStateMachine_State_strategy)
+def test_simplehierarchicalstatemachine_state_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=SimpleHierarchicalStateMachine::Transition_strategy)
+@given(instance=SimpleHierarchicalStateMachine_Transition_strategy)
 @settings(max_examples=50)
-def test_simplehierarchicalstatemachine::transition_instantiation(instance):
-    assert isinstance(instance, SimpleHierarchicalStateMachine::Transition)
-
-@given(instance=SimpleHierarchicalStateMachine::Transition_strategy)
-def test_simplehierarchicalstatemachine::transition_effect_type(instance):
-    assert isinstance(instance.effect, str)
+def test_simplehierarchicalstatemachine_transition_instantiation(instance):
+    assert isinstance(instance, SimpleHierarchicalStateMachine_Transition)
 
 
-@given(instance=SimpleHierarchicalStateMachine::Transition_strategy)
-def test_simplehierarchicalstatemachine::transition_effect_setter(instance):
-    original = instance.effect
-    instance.effect = original
-    assert instance.effect == original
 
-@given(instance=SimpleHierarchicalStateMachine::Transition_strategy)
-def test_simplehierarchicalstatemachine::transition_trigger_type(instance):
-    assert isinstance(instance.trigger, str)
-
-
-@given(instance=SimpleHierarchicalStateMachine::Transition_strategy)
-def test_simplehierarchicalstatemachine::transition_trigger_setter(instance):
+@given(instance=SimpleHierarchicalStateMachine_Transition_strategy)
+def test_simplehierarchicalstatemachine_transition_trigger_setter(instance):
     original = instance.trigger
     instance.trigger = original
     assert instance.trigger == original
+
+
+
+@given(instance=SimpleHierarchicalStateMachine_Transition_strategy)
+def test_simplehierarchicalstatemachine_transition_effect_setter(instance):
+    original = instance.effect
+    instance.effect = original
+    assert instance.effect == original

@@ -3,28 +3,28 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     Arc,
-    evoPetrinet::TransitionToPlace,
-    evoPetrinet::PlaceToTransition,
+    evoPetrinet_TransitionToPlace,
+    evoPetrinet_PlaceToTransition,
     PlaceToTransition,
     TransitionToPlace,
     Element,
-    evoPetrinet::Place,
-    evoPetrinet::Transition,
-    evoPetrinet::Arc,
+    evoPetrinet_Transition,
+    evoPetrinet_Arc,
+    evoPetrinet_Place,
     Transition,
     Place,
     LocatedElement,
-    evoPetrinet::NamedElement,
-    evoPetrinet::LocatedElement,
+    evoPetrinet_NamedElement,
+    evoPetrinet_LocatedElement,
     PetriNet,
-    evoPetrinet::PetriNetModel,
+    evoPetrinet_PetriNetModel,
     NamedElement,
-    evoPetrinet::Element,
-    evoPetrinet::PetriNet,
+    evoPetrinet_Element,
+    evoPetrinet_PetriNet,
 )
 
 # =============================================================================
@@ -47,30 +47,30 @@ def test_arc_constructor_args():
 
 
 
-def test_evopetrinet::transitiontoplace_is_not_abstract():
-    assert not inspect.isabstract(evoPetrinet::TransitionToPlace)
+def test_evopetrinet_transitiontoplace_is_not_abstract():
+    assert not inspect.isabstract(evoPetrinet_TransitionToPlace)
 
 
-def test_evopetrinet::transitiontoplace_constructor_exists():
-    assert callable(evoPetrinet::TransitionToPlace.__init__)
+def test_evopetrinet_transitiontoplace_constructor_exists():
+    assert callable(evoPetrinet_TransitionToPlace.__init__)
 
 
-def test_evopetrinet::transitiontoplace_constructor_args():
-    sig = inspect.signature(evoPetrinet::TransitionToPlace.__init__)
+def test_evopetrinet_transitiontoplace_constructor_args():
+    sig = inspect.signature(evoPetrinet_TransitionToPlace.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_evopetrinet::placetotransition_is_not_abstract():
-    assert not inspect.isabstract(evoPetrinet::PlaceToTransition)
+def test_evopetrinet_placetotransition_is_not_abstract():
+    assert not inspect.isabstract(evoPetrinet_PlaceToTransition)
 
 
-def test_evopetrinet::placetotransition_constructor_exists():
-    assert callable(evoPetrinet::PlaceToTransition.__init__)
+def test_evopetrinet_placetotransition_constructor_exists():
+    assert callable(evoPetrinet_PlaceToTransition.__init__)
 
 
-def test_evopetrinet::placetotransition_constructor_args():
-    sig = inspect.signature(evoPetrinet::PlaceToTransition.__init__)
+def test_evopetrinet_placetotransition_constructor_args():
+    sig = inspect.signature(evoPetrinet_PlaceToTransition.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -117,55 +117,55 @@ def test_element_constructor_args():
 
 
 
-def test_evopetrinet::place_is_not_abstract():
-    assert not inspect.isabstract(evoPetrinet::Place)
+def test_evopetrinet_transition_is_not_abstract():
+    assert not inspect.isabstract(evoPetrinet_Transition)
 
 
-def test_evopetrinet::place_constructor_exists():
-    assert callable(evoPetrinet::Place.__init__)
+def test_evopetrinet_transition_constructor_exists():
+    assert callable(evoPetrinet_Transition.__init__)
 
 
-def test_evopetrinet::place_constructor_args():
-    sig = inspect.signature(evoPetrinet::Place.__init__)
+def test_evopetrinet_transition_constructor_args():
+    sig = inspect.signature(evoPetrinet_Transition.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_evopetrinet::transition_is_not_abstract():
-    assert not inspect.isabstract(evoPetrinet::Transition)
+def test_evopetrinet_arc_is_not_abstract():
+    assert not inspect.isabstract(evoPetrinet_Arc)
 
 
-def test_evopetrinet::transition_constructor_exists():
-    assert callable(evoPetrinet::Transition.__init__)
+def test_evopetrinet_arc_constructor_exists():
+    assert callable(evoPetrinet_Arc.__init__)
 
 
-def test_evopetrinet::transition_constructor_args():
-    sig = inspect.signature(evoPetrinet::Transition.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_evopetrinet::arc_is_not_abstract():
-    assert not inspect.isabstract(evoPetrinet::Arc)
-
-
-def test_evopetrinet::arc_constructor_exists():
-    assert callable(evoPetrinet::Arc.__init__)
-
-
-def test_evopetrinet::arc_constructor_args():
-    sig = inspect.signature(evoPetrinet::Arc.__init__)
+def test_evopetrinet_arc_constructor_args():
+    sig = inspect.signature(evoPetrinet_Arc.__init__)
     params = list(sig.parameters.keys())
     assert "weight" in params, "Missing parameter 'weight'"
 
-def test_evopetrinet::arc_has_weight():
-    assert hasattr(evoPetrinet::Arc, "weight")
+def test_evopetrinet_arc_has_weight():
+    assert hasattr(evoPetrinet_Arc, "weight")
     descriptor = None
-    for klass in evoPetrinet::Arc.__mro__:
+    for klass in evoPetrinet_Arc.__mro__:
         if "weight" in klass.__dict__:
             descriptor = klass.__dict__["weight"]
             break
     assert isinstance(descriptor, property)
+
+
+
+def test_evopetrinet_place_is_not_abstract():
+    assert not inspect.isabstract(evoPetrinet_Place)
+
+
+def test_evopetrinet_place_constructor_exists():
+    assert callable(evoPetrinet_Place.__init__)
+
+
+def test_evopetrinet_place_constructor_args():
+    sig = inspect.signature(evoPetrinet_Place.__init__)
+    params = list(sig.parameters.keys())
 
 
 
@@ -211,23 +211,23 @@ def test_locatedelement_constructor_args():
 
 
 
-def test_evopetrinet::namedelement_is_not_abstract():
-    assert not inspect.isabstract(evoPetrinet::NamedElement)
+def test_evopetrinet_namedelement_is_not_abstract():
+    assert not inspect.isabstract(evoPetrinet_NamedElement)
 
 
-def test_evopetrinet::namedelement_constructor_exists():
-    assert callable(evoPetrinet::NamedElement.__init__)
+def test_evopetrinet_namedelement_constructor_exists():
+    assert callable(evoPetrinet_NamedElement.__init__)
 
 
-def test_evopetrinet::namedelement_constructor_args():
-    sig = inspect.signature(evoPetrinet::NamedElement.__init__)
+def test_evopetrinet_namedelement_constructor_args():
+    sig = inspect.signature(evoPetrinet_NamedElement.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_evopetrinet::namedelement_has_name():
-    assert hasattr(evoPetrinet::NamedElement, "name")
+def test_evopetrinet_namedelement_has_name():
+    assert hasattr(evoPetrinet_NamedElement, "name")
     descriptor = None
-    for klass in evoPetrinet::NamedElement.__mro__:
+    for klass in evoPetrinet_NamedElement.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -235,23 +235,23 @@ def test_evopetrinet::namedelement_has_name():
 
 
 
-def test_evopetrinet::locatedelement_is_not_abstract():
-    assert not inspect.isabstract(evoPetrinet::LocatedElement)
+def test_evopetrinet_locatedelement_is_not_abstract():
+    assert not inspect.isabstract(evoPetrinet_LocatedElement)
 
 
-def test_evopetrinet::locatedelement_constructor_exists():
-    assert callable(evoPetrinet::LocatedElement.__init__)
+def test_evopetrinet_locatedelement_constructor_exists():
+    assert callable(evoPetrinet_LocatedElement.__init__)
 
 
-def test_evopetrinet::locatedelement_constructor_args():
-    sig = inspect.signature(evoPetrinet::LocatedElement.__init__)
+def test_evopetrinet_locatedelement_constructor_args():
+    sig = inspect.signature(evoPetrinet_LocatedElement.__init__)
     params = list(sig.parameters.keys())
     assert "location" in params, "Missing parameter 'location'"
 
-def test_evopetrinet::locatedelement_has_location():
-    assert hasattr(evoPetrinet::LocatedElement, "location")
+def test_evopetrinet_locatedelement_has_location():
+    assert hasattr(evoPetrinet_LocatedElement, "location")
     descriptor = None
-    for klass in evoPetrinet::LocatedElement.__mro__:
+    for klass in evoPetrinet_LocatedElement.__mro__:
         if "location" in klass.__dict__:
             descriptor = klass.__dict__["location"]
             break
@@ -273,16 +273,16 @@ def test_petrinet_constructor_args():
 
 
 
-def test_evopetrinet::petrinetmodel_is_not_abstract():
-    assert not inspect.isabstract(evoPetrinet::PetriNetModel)
+def test_evopetrinet_petrinetmodel_is_not_abstract():
+    assert not inspect.isabstract(evoPetrinet_PetriNetModel)
 
 
-def test_evopetrinet::petrinetmodel_constructor_exists():
-    assert callable(evoPetrinet::PetriNetModel.__init__)
+def test_evopetrinet_petrinetmodel_constructor_exists():
+    assert callable(evoPetrinet_PetriNetModel.__init__)
 
 
-def test_evopetrinet::petrinetmodel_constructor_args():
-    sig = inspect.signature(evoPetrinet::PetriNetModel.__init__)
+def test_evopetrinet_petrinetmodel_constructor_args():
+    sig = inspect.signature(evoPetrinet_PetriNetModel.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -301,30 +301,30 @@ def test_namedelement_constructor_args():
 
 
 
-def test_evopetrinet::element_is_not_abstract():
-    assert not inspect.isabstract(evoPetrinet::Element)
+def test_evopetrinet_element_is_not_abstract():
+    assert not inspect.isabstract(evoPetrinet_Element)
 
 
-def test_evopetrinet::element_constructor_exists():
-    assert callable(evoPetrinet::Element.__init__)
+def test_evopetrinet_element_constructor_exists():
+    assert callable(evoPetrinet_Element.__init__)
 
 
-def test_evopetrinet::element_constructor_args():
-    sig = inspect.signature(evoPetrinet::Element.__init__)
+def test_evopetrinet_element_constructor_args():
+    sig = inspect.signature(evoPetrinet_Element.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_evopetrinet::petrinet_is_not_abstract():
-    assert not inspect.isabstract(evoPetrinet::PetriNet)
+def test_evopetrinet_petrinet_is_not_abstract():
+    assert not inspect.isabstract(evoPetrinet_PetriNet)
 
 
-def test_evopetrinet::petrinet_constructor_exists():
-    assert callable(evoPetrinet::PetriNet.__init__)
+def test_evopetrinet_petrinet_constructor_exists():
+    assert callable(evoPetrinet_PetriNet.__init__)
 
 
-def test_evopetrinet::petrinet_constructor_args():
-    sig = inspect.signature(evoPetrinet::PetriNet.__init__)
+def test_evopetrinet_petrinet_constructor_args():
+    sig = inspect.signature(evoPetrinet_PetriNet.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -342,11 +342,11 @@ safe_text = st.text(
 Arc_strategy = st.builds(
     Arc,
 )
-evoPetrinet::TransitionToPlace_strategy = st.builds(
-    evoPetrinet::TransitionToPlace,
+evoPetrinet_TransitionToPlace_strategy = st.builds(
+    evoPetrinet_TransitionToPlace,
 )
-evoPetrinet::PlaceToTransition_strategy = st.builds(
-    evoPetrinet::PlaceToTransition,
+evoPetrinet_PlaceToTransition_strategy = st.builds(
+    evoPetrinet_PlaceToTransition,
 )
 PlaceToTransition_strategy = st.builds(
     PlaceToTransition,
@@ -357,16 +357,16 @@ TransitionToPlace_strategy = st.builds(
 Element_strategy = st.builds(
     Element,
 )
-evoPetrinet::Place_strategy = st.builds(
-    evoPetrinet::Place,
+evoPetrinet_Transition_strategy = st.builds(
+    evoPetrinet_Transition,
 )
-evoPetrinet::Transition_strategy = st.builds(
-    evoPetrinet::Transition,
-)
-evoPetrinet::Arc_strategy = st.builds(
-    evoPetrinet::Arc,
+evoPetrinet_Arc_strategy = st.builds(
+    evoPetrinet_Arc,
     weight=
         safe_text
+)
+evoPetrinet_Place_strategy = st.builds(
+    evoPetrinet_Place,
 )
 Transition_strategy = st.builds(
     Transition,
@@ -377,30 +377,30 @@ Place_strategy = st.builds(
 LocatedElement_strategy = st.builds(
     LocatedElement,
 )
-evoPetrinet::NamedElement_strategy = st.builds(
-    evoPetrinet::NamedElement,
+evoPetrinet_NamedElement_strategy = st.builds(
+    evoPetrinet_NamedElement,
     name=
         safe_text
 )
-evoPetrinet::LocatedElement_strategy = st.builds(
-    evoPetrinet::LocatedElement,
+evoPetrinet_LocatedElement_strategy = st.builds(
+    evoPetrinet_LocatedElement,
     location=
         safe_text
 )
 PetriNet_strategy = st.builds(
     PetriNet,
 )
-evoPetrinet::PetriNetModel_strategy = st.builds(
-    evoPetrinet::PetriNetModel,
+evoPetrinet_PetriNetModel_strategy = st.builds(
+    evoPetrinet_PetriNetModel,
 )
 NamedElement_strategy = st.builds(
     NamedElement,
 )
-evoPetrinet::Element_strategy = st.builds(
-    evoPetrinet::Element,
+evoPetrinet_Element_strategy = st.builds(
+    evoPetrinet_Element,
 )
-evoPetrinet::PetriNet_strategy = st.builds(
-    evoPetrinet::PetriNet,
+evoPetrinet_PetriNet_strategy = st.builds(
+    evoPetrinet_PetriNet,
 )
 
 @given(instance=Arc_strategy)
@@ -408,15 +408,15 @@ evoPetrinet::PetriNet_strategy = st.builds(
 def test_arc_instantiation(instance):
     assert isinstance(instance, Arc)
 
-@given(instance=evoPetrinet::TransitionToPlace_strategy)
+@given(instance=evoPetrinet_TransitionToPlace_strategy)
 @settings(max_examples=50)
-def test_evopetrinet::transitiontoplace_instantiation(instance):
-    assert isinstance(instance, evoPetrinet::TransitionToPlace)
+def test_evopetrinet_transitiontoplace_instantiation(instance):
+    assert isinstance(instance, evoPetrinet_TransitionToPlace)
 
-@given(instance=evoPetrinet::PlaceToTransition_strategy)
+@given(instance=evoPetrinet_PlaceToTransition_strategy)
 @settings(max_examples=50)
-def test_evopetrinet::placetotransition_instantiation(instance):
-    assert isinstance(instance, evoPetrinet::PlaceToTransition)
+def test_evopetrinet_placetotransition_instantiation(instance):
+    assert isinstance(instance, evoPetrinet_PlaceToTransition)
 
 @given(instance=PlaceToTransition_strategy)
 @settings(max_examples=50)
@@ -433,31 +433,28 @@ def test_transitiontoplace_instantiation(instance):
 def test_element_instantiation(instance):
     assert isinstance(instance, Element)
 
-@given(instance=evoPetrinet::Place_strategy)
+@given(instance=evoPetrinet_Transition_strategy)
 @settings(max_examples=50)
-def test_evopetrinet::place_instantiation(instance):
-    assert isinstance(instance, evoPetrinet::Place)
+def test_evopetrinet_transition_instantiation(instance):
+    assert isinstance(instance, evoPetrinet_Transition)
 
-@given(instance=evoPetrinet::Transition_strategy)
+@given(instance=evoPetrinet_Arc_strategy)
 @settings(max_examples=50)
-def test_evopetrinet::transition_instantiation(instance):
-    assert isinstance(instance, evoPetrinet::Transition)
-
-@given(instance=evoPetrinet::Arc_strategy)
-@settings(max_examples=50)
-def test_evopetrinet::arc_instantiation(instance):
-    assert isinstance(instance, evoPetrinet::Arc)
-
-@given(instance=evoPetrinet::Arc_strategy)
-def test_evopetrinet::arc_weight_type(instance):
-    assert isinstance(instance.weight, str)
+def test_evopetrinet_arc_instantiation(instance):
+    assert isinstance(instance, evoPetrinet_Arc)
 
 
-@given(instance=evoPetrinet::Arc_strategy)
-def test_evopetrinet::arc_weight_setter(instance):
+
+@given(instance=evoPetrinet_Arc_strategy)
+def test_evopetrinet_arc_weight_setter(instance):
     original = instance.weight
     instance.weight = original
     assert instance.weight == original
+
+@given(instance=evoPetrinet_Place_strategy)
+@settings(max_examples=50)
+def test_evopetrinet_place_instantiation(instance):
+    assert isinstance(instance, evoPetrinet_Place)
 
 @given(instance=Transition_strategy)
 @settings(max_examples=50)
@@ -474,34 +471,28 @@ def test_place_instantiation(instance):
 def test_locatedelement_instantiation(instance):
     assert isinstance(instance, LocatedElement)
 
-@given(instance=evoPetrinet::NamedElement_strategy)
+@given(instance=evoPetrinet_NamedElement_strategy)
 @settings(max_examples=50)
-def test_evopetrinet::namedelement_instantiation(instance):
-    assert isinstance(instance, evoPetrinet::NamedElement)
-
-@given(instance=evoPetrinet::NamedElement_strategy)
-def test_evopetrinet::namedelement_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_evopetrinet_namedelement_instantiation(instance):
+    assert isinstance(instance, evoPetrinet_NamedElement)
 
 
-@given(instance=evoPetrinet::NamedElement_strategy)
-def test_evopetrinet::namedelement_name_setter(instance):
+
+@given(instance=evoPetrinet_NamedElement_strategy)
+def test_evopetrinet_namedelement_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=evoPetrinet::LocatedElement_strategy)
+@given(instance=evoPetrinet_LocatedElement_strategy)
 @settings(max_examples=50)
-def test_evopetrinet::locatedelement_instantiation(instance):
-    assert isinstance(instance, evoPetrinet::LocatedElement)
-
-@given(instance=evoPetrinet::LocatedElement_strategy)
-def test_evopetrinet::locatedelement_location_type(instance):
-    assert isinstance(instance.location, str)
+def test_evopetrinet_locatedelement_instantiation(instance):
+    assert isinstance(instance, evoPetrinet_LocatedElement)
 
 
-@given(instance=evoPetrinet::LocatedElement_strategy)
-def test_evopetrinet::locatedelement_location_setter(instance):
+
+@given(instance=evoPetrinet_LocatedElement_strategy)
+def test_evopetrinet_locatedelement_location_setter(instance):
     original = instance.location
     instance.location = original
     assert instance.location == original
@@ -511,22 +502,22 @@ def test_evopetrinet::locatedelement_location_setter(instance):
 def test_petrinet_instantiation(instance):
     assert isinstance(instance, PetriNet)
 
-@given(instance=evoPetrinet::PetriNetModel_strategy)
+@given(instance=evoPetrinet_PetriNetModel_strategy)
 @settings(max_examples=50)
-def test_evopetrinet::petrinetmodel_instantiation(instance):
-    assert isinstance(instance, evoPetrinet::PetriNetModel)
+def test_evopetrinet_petrinetmodel_instantiation(instance):
+    assert isinstance(instance, evoPetrinet_PetriNetModel)
 
 @given(instance=NamedElement_strategy)
 @settings(max_examples=50)
 def test_namedelement_instantiation(instance):
     assert isinstance(instance, NamedElement)
 
-@given(instance=evoPetrinet::Element_strategy)
+@given(instance=evoPetrinet_Element_strategy)
 @settings(max_examples=50)
-def test_evopetrinet::element_instantiation(instance):
-    assert isinstance(instance, evoPetrinet::Element)
+def test_evopetrinet_element_instantiation(instance):
+    assert isinstance(instance, evoPetrinet_Element)
 
-@given(instance=evoPetrinet::PetriNet_strategy)
+@given(instance=evoPetrinet_PetriNet_strategy)
 @settings(max_examples=50)
-def test_evopetrinet::petrinet_instantiation(instance):
-    assert isinstance(instance, evoPetrinet::PetriNet)
+def test_evopetrinet_petrinet_instantiation(instance):
+    assert isinstance(instance, evoPetrinet_PetriNet)

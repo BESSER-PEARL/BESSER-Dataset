@@ -3,133 +3,133 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     ComparisonExpression,
-    model::GreaterEqualExpression,
-    model::GreaterExpression,
+    model_GreaterEqualExpression,
+    model_GreaterExpression,
     EquivalenceExpression,
-    model::InequalityExpression,
-    model::EqualityExpression,
+    model_InequalityExpression,
+    model_EqualityExpression,
     PredicateExpression,
     QuantifierExpression,
-    model::ExistsExpression,
-    model::ForallExpression,
+    model_ExistsExpression,
+    model_ForallExpression,
     ArgumentedElement,
     AccessExpression,
-    model::RecordAccessExpression,
-    model::ArrayAccessExpression,
-    model::SelectExpression,
-    model::FunctionAccessExpression,
-    model::LessEqualExpression,
-    model::LessExpression,
+    model_SelectExpression,
+    model_RecordAccessExpression,
+    model_ArrayAccessExpression,
+    model_FunctionAccessExpression,
+    model_LessEqualExpression,
+    model_LessExpression,
     BooleanLiteralExpression,
-    model::FalseExpression,
-    model::TrueExpression,
+    model_FalseExpression,
+    model_TrueExpression,
     BooleanExpression,
     ArithmeticLiteralExpression,
-    model::RationalLiteralExpression,
-    model::DecimalLiteralExpression,
-    model::IntegerLiteralExpression,
+    model_RationalLiteralExpression,
+    model_DecimalLiteralExpression,
+    model_IntegerLiteralExpression,
     ArithmeticExpression,
     LiteralExpression,
-    model::FieldAssignment,
-    model::RecordLiteralExpression,
+    model_FieldAssignment,
+    model_RecordLiteralExpression,
     BinaryExpression,
-    model::ModExpression,
-    model::ImplyExpression,
-    model::DivExpression,
-    model::SubtractExpression,
-    model::EquivalenceExpression,
-    model::ComparisonExpression,
-    model::DivideExpression,
+    model_ImplyExpression,
+    model_SubtractExpression,
+    model_DivExpression,
+    model_ModExpression,
+    model_DivideExpression,
+    model_EquivalenceExpression,
+    model_ComparisonExpression,
     MultiaryExpression,
-    model::XorExpression,
-    model::MultiplyExpression,
-    model::OrExpression,
-    model::AndExpression,
-    model::AddExpression,
+    model_OrExpression,
+    model_XorExpression,
+    model_AndExpression,
+    model_AddExpression,
+    model_MultiplyExpression,
     EnumerableExpression,
-    model::IntegerRangeLiteralExpression,
-    model::ArrayLiteralExpression,
+    model_IntegerRangeLiteralExpression,
+    model_ArrayLiteralExpression,
     Expression,
-    model::EnumerableExpression,
-    model::UnaryExpression,
-    model::IfThenElseExpression,
-    model::LiteralExpression,
-    model::AccessExpression,
-    model::NullaryExpression,
+    model_EnumerableExpression,
+    model_UnaryExpression,
+    model_LiteralExpression,
+    model_AccessExpression,
+    model_IfThenElseExpression,
+    model_NullaryExpression,
     ConstraintDefinition,
-    model::ConstraintDefinition,
+    model_ConstraintDefinition,
     UnaryExpression,
-    model::UnaryMinusExpression,
-    model::UnaryPlusExpression,
-    model::NotExpression,
+    model_NotExpression,
+    model_UnaryMinusExpression,
+    model_UnaryPlusExpression,
     ElseExpression,
-    model::DefaultExpression,
+    model_DefaultExpression,
     NullaryExpression,
-    model::ArithmeticLiteralExpression,
-    model::EnumerationLiteralExpression,
-    model::BooleanLiteralExpression,
-    model::ReferenceExpression,
-    model::OpaqueExpression,
+    model_ArithmeticLiteralExpression,
+    model_BooleanLiteralExpression,
+    model_ReferenceExpression,
+    model_EnumerationLiteralExpression,
+    model_OpaqueExpression,
     LogicExpression,
-    model::ElseExpression,
-    model::PredicateExpression,
-    model::BooleanExpression,
-    model::LogicExpression,
-    model::ArithmeticExpression,
-    model::MultiaryExpression,
-    model::BinaryExpression,
+    model_PredicateExpression,
+    model_ElseExpression,
+    model_BooleanExpression,
+    model_LogicExpression,
+    model_ArithmeticExpression,
+    model_MultiaryExpression,
+    model_BinaryExpression,
     CompositeTypeDefinition,
-    model::FunctionTypeDefinition,
-    model::RecordTypeDefinition,
+    model_FunctionTypeDefinition,
+    model_RecordTypeDefinition,
     EnumerableTypeDefinition,
-    model::ArrayTypeDefinition,
-    model::IntegerRangeTypeDefinition,
-    model::EnumerationTypeDefinition,
-    model::EnumerableTypeDefinition,
+    model_ArrayTypeDefinition,
+    model_IntegerRangeTypeDefinition,
+    model_EnumerationTypeDefinition,
+    model_EnumerableTypeDefinition,
     Declaration,
-    model::ValueDeclaration,
-    model::Type,
-    model::BasicConstraintDefinition,
-    model::TypeDeclaration,
+    model_ValueDeclaration,
+    model_Type,
+    model_BasicConstraintDefinition,
+    model_TypeDeclaration,
     ParametricElement,
-    model::FunctionDeclaration,
-    model::QuantifierExpression,
+    model_QuantifierExpression,
+    model_FunctionDeclaration,
     NamedElement,
-    model::InitializableElement,
-    model::Declaration,
-    model::EnumerationLiteralDefinition,
-    model::ExpressionPackage,
+    model_InitializableElement,
+    model_Declaration,
+    model_EnumerationLiteralDefinition,
+    model_ExpressionPackage,
     NumericalTypeDefinition,
-    model::DecimalTypeDefinition,
-    model::RationalTypeDefinition,
-    model::SubrangeTypeDefinition,
-    model::IntegerTypeDefinition,
+    model_DecimalTypeDefinition,
+    model_SubrangeTypeDefinition,
+    model_RationalTypeDefinition,
+    model_IntegerTypeDefinition,
     TypeDefinition,
-    model::BooleanTypeDefinition,
-    model::VoidTypeDefinition,
-    model::CompositeTypeDefinition,
-    model::NumericalTypeDefinition,
+    model_BooleanTypeDefinition,
+    model_VoidTypeDefinition,
+    model_CompositeTypeDefinition,
+    model_NumericalTypeDefinition,
     Type,
-    model::TypeDefinition,
-    model::TypeReference,
+    model_TypeDefinition,
+    model_TypeReference,
     FunctionDeclaration,
     InitializableElement,
-    model::LambdaDeclaration,
+    model_LambdaDeclaration,
     ValueDeclaration,
-    model::FieldDeclaration,
-    model::ConstantDeclaration,
-    model::VariableDeclaration,
-    model::Comment,
-    model::CommentableElement,
-    model::NamedElement,
-    model::Expression,
-    model::ArgumentedElement,
-    model::ParameterDeclaration,
-    model::ParametricElement,
+    model_FieldDeclaration,
+    model_ConstantDeclaration,
+    model_VariableDeclaration,
+    model_Comment,
+    model_CommentableElement,
+    model_NamedElement,
+    model_Expression,
+    model_ArgumentedElement,
+    model_ParameterDeclaration,
+    model_ParametricElement,
 )
 
 # =============================================================================
@@ -152,30 +152,30 @@ def test_comparisonexpression_constructor_args():
 
 
 
-def test_model::greaterequalexpression_is_not_abstract():
-    assert not inspect.isabstract(model::GreaterEqualExpression)
+def test_model_greaterequalexpression_is_not_abstract():
+    assert not inspect.isabstract(model_GreaterEqualExpression)
 
 
-def test_model::greaterequalexpression_constructor_exists():
-    assert callable(model::GreaterEqualExpression.__init__)
+def test_model_greaterequalexpression_constructor_exists():
+    assert callable(model_GreaterEqualExpression.__init__)
 
 
-def test_model::greaterequalexpression_constructor_args():
-    sig = inspect.signature(model::GreaterEqualExpression.__init__)
+def test_model_greaterequalexpression_constructor_args():
+    sig = inspect.signature(model_GreaterEqualExpression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_model::greaterexpression_is_not_abstract():
-    assert not inspect.isabstract(model::GreaterExpression)
+def test_model_greaterexpression_is_not_abstract():
+    assert not inspect.isabstract(model_GreaterExpression)
 
 
-def test_model::greaterexpression_constructor_exists():
-    assert callable(model::GreaterExpression.__init__)
+def test_model_greaterexpression_constructor_exists():
+    assert callable(model_GreaterExpression.__init__)
 
 
-def test_model::greaterexpression_constructor_args():
-    sig = inspect.signature(model::GreaterExpression.__init__)
+def test_model_greaterexpression_constructor_args():
+    sig = inspect.signature(model_GreaterExpression.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -194,30 +194,30 @@ def test_equivalenceexpression_constructor_args():
 
 
 
-def test_model::inequalityexpression_is_not_abstract():
-    assert not inspect.isabstract(model::InequalityExpression)
+def test_model_inequalityexpression_is_not_abstract():
+    assert not inspect.isabstract(model_InequalityExpression)
 
 
-def test_model::inequalityexpression_constructor_exists():
-    assert callable(model::InequalityExpression.__init__)
+def test_model_inequalityexpression_constructor_exists():
+    assert callable(model_InequalityExpression.__init__)
 
 
-def test_model::inequalityexpression_constructor_args():
-    sig = inspect.signature(model::InequalityExpression.__init__)
+def test_model_inequalityexpression_constructor_args():
+    sig = inspect.signature(model_InequalityExpression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_model::equalityexpression_is_not_abstract():
-    assert not inspect.isabstract(model::EqualityExpression)
+def test_model_equalityexpression_is_not_abstract():
+    assert not inspect.isabstract(model_EqualityExpression)
 
 
-def test_model::equalityexpression_constructor_exists():
-    assert callable(model::EqualityExpression.__init__)
+def test_model_equalityexpression_constructor_exists():
+    assert callable(model_EqualityExpression.__init__)
 
 
-def test_model::equalityexpression_constructor_args():
-    sig = inspect.signature(model::EqualityExpression.__init__)
+def test_model_equalityexpression_constructor_args():
+    sig = inspect.signature(model_EqualityExpression.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -250,30 +250,30 @@ def test_quantifierexpression_constructor_args():
 
 
 
-def test_model::existsexpression_is_not_abstract():
-    assert not inspect.isabstract(model::ExistsExpression)
+def test_model_existsexpression_is_not_abstract():
+    assert not inspect.isabstract(model_ExistsExpression)
 
 
-def test_model::existsexpression_constructor_exists():
-    assert callable(model::ExistsExpression.__init__)
+def test_model_existsexpression_constructor_exists():
+    assert callable(model_ExistsExpression.__init__)
 
 
-def test_model::existsexpression_constructor_args():
-    sig = inspect.signature(model::ExistsExpression.__init__)
+def test_model_existsexpression_constructor_args():
+    sig = inspect.signature(model_ExistsExpression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_model::forallexpression_is_not_abstract():
-    assert not inspect.isabstract(model::ForallExpression)
+def test_model_forallexpression_is_not_abstract():
+    assert not inspect.isabstract(model_ForallExpression)
 
 
-def test_model::forallexpression_constructor_exists():
-    assert callable(model::ForallExpression.__init__)
+def test_model_forallexpression_constructor_exists():
+    assert callable(model_ForallExpression.__init__)
 
 
-def test_model::forallexpression_constructor_args():
-    sig = inspect.signature(model::ForallExpression.__init__)
+def test_model_forallexpression_constructor_args():
+    sig = inspect.signature(model_ForallExpression.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -306,23 +306,37 @@ def test_accessexpression_constructor_args():
 
 
 
-def test_model::recordaccessexpression_is_not_abstract():
-    assert not inspect.isabstract(model::RecordAccessExpression)
+def test_model_selectexpression_is_not_abstract():
+    assert not inspect.isabstract(model_SelectExpression)
 
 
-def test_model::recordaccessexpression_constructor_exists():
-    assert callable(model::RecordAccessExpression.__init__)
+def test_model_selectexpression_constructor_exists():
+    assert callable(model_SelectExpression.__init__)
 
 
-def test_model::recordaccessexpression_constructor_args():
-    sig = inspect.signature(model::RecordAccessExpression.__init__)
+def test_model_selectexpression_constructor_args():
+    sig = inspect.signature(model_SelectExpression.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_model_recordaccessexpression_is_not_abstract():
+    assert not inspect.isabstract(model_RecordAccessExpression)
+
+
+def test_model_recordaccessexpression_constructor_exists():
+    assert callable(model_RecordAccessExpression.__init__)
+
+
+def test_model_recordaccessexpression_constructor_args():
+    sig = inspect.signature(model_RecordAccessExpression.__init__)
     params = list(sig.parameters.keys())
     assert "field" in params, "Missing parameter 'field'"
 
-def test_model::recordaccessexpression_has_field():
-    assert hasattr(model::RecordAccessExpression, "field")
+def test_model_recordaccessexpression_has_field():
+    assert hasattr(model_RecordAccessExpression, "field")
     descriptor = None
-    for klass in model::RecordAccessExpression.__mro__:
+    for klass in model_RecordAccessExpression.__mro__:
         if "field" in klass.__dict__:
             descriptor = klass.__dict__["field"]
             break
@@ -330,72 +344,58 @@ def test_model::recordaccessexpression_has_field():
 
 
 
-def test_model::arrayaccessexpression_is_not_abstract():
-    assert not inspect.isabstract(model::ArrayAccessExpression)
+def test_model_arrayaccessexpression_is_not_abstract():
+    assert not inspect.isabstract(model_ArrayAccessExpression)
 
 
-def test_model::arrayaccessexpression_constructor_exists():
-    assert callable(model::ArrayAccessExpression.__init__)
+def test_model_arrayaccessexpression_constructor_exists():
+    assert callable(model_ArrayAccessExpression.__init__)
 
 
-def test_model::arrayaccessexpression_constructor_args():
-    sig = inspect.signature(model::ArrayAccessExpression.__init__)
+def test_model_arrayaccessexpression_constructor_args():
+    sig = inspect.signature(model_ArrayAccessExpression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_model::selectexpression_is_not_abstract():
-    assert not inspect.isabstract(model::SelectExpression)
+def test_model_functionaccessexpression_is_not_abstract():
+    assert not inspect.isabstract(model_FunctionAccessExpression)
 
 
-def test_model::selectexpression_constructor_exists():
-    assert callable(model::SelectExpression.__init__)
+def test_model_functionaccessexpression_constructor_exists():
+    assert callable(model_FunctionAccessExpression.__init__)
 
 
-def test_model::selectexpression_constructor_args():
-    sig = inspect.signature(model::SelectExpression.__init__)
+def test_model_functionaccessexpression_constructor_args():
+    sig = inspect.signature(model_FunctionAccessExpression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_model::functionaccessexpression_is_not_abstract():
-    assert not inspect.isabstract(model::FunctionAccessExpression)
+def test_model_lessequalexpression_is_not_abstract():
+    assert not inspect.isabstract(model_LessEqualExpression)
 
 
-def test_model::functionaccessexpression_constructor_exists():
-    assert callable(model::FunctionAccessExpression.__init__)
+def test_model_lessequalexpression_constructor_exists():
+    assert callable(model_LessEqualExpression.__init__)
 
 
-def test_model::functionaccessexpression_constructor_args():
-    sig = inspect.signature(model::FunctionAccessExpression.__init__)
+def test_model_lessequalexpression_constructor_args():
+    sig = inspect.signature(model_LessEqualExpression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_model::lessequalexpression_is_not_abstract():
-    assert not inspect.isabstract(model::LessEqualExpression)
+def test_model_lessexpression_is_not_abstract():
+    assert not inspect.isabstract(model_LessExpression)
 
 
-def test_model::lessequalexpression_constructor_exists():
-    assert callable(model::LessEqualExpression.__init__)
+def test_model_lessexpression_constructor_exists():
+    assert callable(model_LessExpression.__init__)
 
 
-def test_model::lessequalexpression_constructor_args():
-    sig = inspect.signature(model::LessEqualExpression.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_model::lessexpression_is_not_abstract():
-    assert not inspect.isabstract(model::LessExpression)
-
-
-def test_model::lessexpression_constructor_exists():
-    assert callable(model::LessExpression.__init__)
-
-
-def test_model::lessexpression_constructor_args():
-    sig = inspect.signature(model::LessExpression.__init__)
+def test_model_lessexpression_constructor_args():
+    sig = inspect.signature(model_LessExpression.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -414,30 +414,30 @@ def test_booleanliteralexpression_constructor_args():
 
 
 
-def test_model::falseexpression_is_not_abstract():
-    assert not inspect.isabstract(model::FalseExpression)
+def test_model_falseexpression_is_not_abstract():
+    assert not inspect.isabstract(model_FalseExpression)
 
 
-def test_model::falseexpression_constructor_exists():
-    assert callable(model::FalseExpression.__init__)
+def test_model_falseexpression_constructor_exists():
+    assert callable(model_FalseExpression.__init__)
 
 
-def test_model::falseexpression_constructor_args():
-    sig = inspect.signature(model::FalseExpression.__init__)
+def test_model_falseexpression_constructor_args():
+    sig = inspect.signature(model_FalseExpression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_model::trueexpression_is_not_abstract():
-    assert not inspect.isabstract(model::TrueExpression)
+def test_model_trueexpression_is_not_abstract():
+    assert not inspect.isabstract(model_TrueExpression)
 
 
-def test_model::trueexpression_constructor_exists():
-    assert callable(model::TrueExpression.__init__)
+def test_model_trueexpression_constructor_exists():
+    assert callable(model_TrueExpression.__init__)
 
 
-def test_model::trueexpression_constructor_args():
-    sig = inspect.signature(model::TrueExpression.__init__)
+def test_model_trueexpression_constructor_args():
+    sig = inspect.signature(model_TrueExpression.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -470,57 +470,57 @@ def test_arithmeticliteralexpression_constructor_args():
 
 
 
-def test_model::rationalliteralexpression_is_not_abstract():
-    assert not inspect.isabstract(model::RationalLiteralExpression)
+def test_model_rationalliteralexpression_is_not_abstract():
+    assert not inspect.isabstract(model_RationalLiteralExpression)
 
 
-def test_model::rationalliteralexpression_constructor_exists():
-    assert callable(model::RationalLiteralExpression.__init__)
+def test_model_rationalliteralexpression_constructor_exists():
+    assert callable(model_RationalLiteralExpression.__init__)
 
 
-def test_model::rationalliteralexpression_constructor_args():
-    sig = inspect.signature(model::RationalLiteralExpression.__init__)
+def test_model_rationalliteralexpression_constructor_args():
+    sig = inspect.signature(model_RationalLiteralExpression.__init__)
     params = list(sig.parameters.keys())
-    assert "denominator" in params, "Missing parameter 'denominator'"
     assert "numerator" in params, "Missing parameter 'numerator'"
+    assert "denominator" in params, "Missing parameter 'denominator'"
 
-def test_model::rationalliteralexpression_has_denominator():
-    assert hasattr(model::RationalLiteralExpression, "denominator")
+def test_model_rationalliteralexpression_has_numerator():
+    assert hasattr(model_RationalLiteralExpression, "numerator")
     descriptor = None
-    for klass in model::RationalLiteralExpression.__mro__:
-        if "denominator" in klass.__dict__:
-            descriptor = klass.__dict__["denominator"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_model::rationalliteralexpression_has_numerator():
-    assert hasattr(model::RationalLiteralExpression, "numerator")
-    descriptor = None
-    for klass in model::RationalLiteralExpression.__mro__:
+    for klass in model_RationalLiteralExpression.__mro__:
         if "numerator" in klass.__dict__:
             descriptor = klass.__dict__["numerator"]
             break
     assert isinstance(descriptor, property)
 
+def test_model_rationalliteralexpression_has_denominator():
+    assert hasattr(model_RationalLiteralExpression, "denominator")
+    descriptor = None
+    for klass in model_RationalLiteralExpression.__mro__:
+        if "denominator" in klass.__dict__:
+            descriptor = klass.__dict__["denominator"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_model::decimalliteralexpression_is_not_abstract():
-    assert not inspect.isabstract(model::DecimalLiteralExpression)
+
+def test_model_decimalliteralexpression_is_not_abstract():
+    assert not inspect.isabstract(model_DecimalLiteralExpression)
 
 
-def test_model::decimalliteralexpression_constructor_exists():
-    assert callable(model::DecimalLiteralExpression.__init__)
+def test_model_decimalliteralexpression_constructor_exists():
+    assert callable(model_DecimalLiteralExpression.__init__)
 
 
-def test_model::decimalliteralexpression_constructor_args():
-    sig = inspect.signature(model::DecimalLiteralExpression.__init__)
+def test_model_decimalliteralexpression_constructor_args():
+    sig = inspect.signature(model_DecimalLiteralExpression.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
 
-def test_model::decimalliteralexpression_has_value():
-    assert hasattr(model::DecimalLiteralExpression, "value")
+def test_model_decimalliteralexpression_has_value():
+    assert hasattr(model_DecimalLiteralExpression, "value")
     descriptor = None
-    for klass in model::DecimalLiteralExpression.__mro__:
+    for klass in model_DecimalLiteralExpression.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -528,23 +528,23 @@ def test_model::decimalliteralexpression_has_value():
 
 
 
-def test_model::integerliteralexpression_is_not_abstract():
-    assert not inspect.isabstract(model::IntegerLiteralExpression)
+def test_model_integerliteralexpression_is_not_abstract():
+    assert not inspect.isabstract(model_IntegerLiteralExpression)
 
 
-def test_model::integerliteralexpression_constructor_exists():
-    assert callable(model::IntegerLiteralExpression.__init__)
+def test_model_integerliteralexpression_constructor_exists():
+    assert callable(model_IntegerLiteralExpression.__init__)
 
 
-def test_model::integerliteralexpression_constructor_args():
-    sig = inspect.signature(model::IntegerLiteralExpression.__init__)
+def test_model_integerliteralexpression_constructor_args():
+    sig = inspect.signature(model_IntegerLiteralExpression.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
 
-def test_model::integerliteralexpression_has_value():
-    assert hasattr(model::IntegerLiteralExpression, "value")
+def test_model_integerliteralexpression_has_value():
+    assert hasattr(model_IntegerLiteralExpression, "value")
     descriptor = None
-    for klass in model::IntegerLiteralExpression.__mro__:
+    for klass in model_IntegerLiteralExpression.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -580,23 +580,23 @@ def test_literalexpression_constructor_args():
 
 
 
-def test_model::fieldassignment_is_not_abstract():
-    assert not inspect.isabstract(model::FieldAssignment)
+def test_model_fieldassignment_is_not_abstract():
+    assert not inspect.isabstract(model_FieldAssignment)
 
 
-def test_model::fieldassignment_constructor_exists():
-    assert callable(model::FieldAssignment.__init__)
+def test_model_fieldassignment_constructor_exists():
+    assert callable(model_FieldAssignment.__init__)
 
 
-def test_model::fieldassignment_constructor_args():
-    sig = inspect.signature(model::FieldAssignment.__init__)
+def test_model_fieldassignment_constructor_args():
+    sig = inspect.signature(model_FieldAssignment.__init__)
     params = list(sig.parameters.keys())
     assert "reference" in params, "Missing parameter 'reference'"
 
-def test_model::fieldassignment_has_reference():
-    assert hasattr(model::FieldAssignment, "reference")
+def test_model_fieldassignment_has_reference():
+    assert hasattr(model_FieldAssignment, "reference")
     descriptor = None
-    for klass in model::FieldAssignment.__mro__:
+    for klass in model_FieldAssignment.__mro__:
         if "reference" in klass.__dict__:
             descriptor = klass.__dict__["reference"]
             break
@@ -604,16 +604,16 @@ def test_model::fieldassignment_has_reference():
 
 
 
-def test_model::recordliteralexpression_is_not_abstract():
-    assert not inspect.isabstract(model::RecordLiteralExpression)
+def test_model_recordliteralexpression_is_not_abstract():
+    assert not inspect.isabstract(model_RecordLiteralExpression)
 
 
-def test_model::recordliteralexpression_constructor_exists():
-    assert callable(model::RecordLiteralExpression.__init__)
+def test_model_recordliteralexpression_constructor_exists():
+    assert callable(model_RecordLiteralExpression.__init__)
 
 
-def test_model::recordliteralexpression_constructor_args():
-    sig = inspect.signature(model::RecordLiteralExpression.__init__)
+def test_model_recordliteralexpression_constructor_args():
+    sig = inspect.signature(model_RecordLiteralExpression.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -632,100 +632,100 @@ def test_binaryexpression_constructor_args():
 
 
 
-def test_model::modexpression_is_not_abstract():
-    assert not inspect.isabstract(model::ModExpression)
+def test_model_implyexpression_is_not_abstract():
+    assert not inspect.isabstract(model_ImplyExpression)
 
 
-def test_model::modexpression_constructor_exists():
-    assert callable(model::ModExpression.__init__)
+def test_model_implyexpression_constructor_exists():
+    assert callable(model_ImplyExpression.__init__)
 
 
-def test_model::modexpression_constructor_args():
-    sig = inspect.signature(model::ModExpression.__init__)
+def test_model_implyexpression_constructor_args():
+    sig = inspect.signature(model_ImplyExpression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_model::implyexpression_is_not_abstract():
-    assert not inspect.isabstract(model::ImplyExpression)
+def test_model_subtractexpression_is_not_abstract():
+    assert not inspect.isabstract(model_SubtractExpression)
 
 
-def test_model::implyexpression_constructor_exists():
-    assert callable(model::ImplyExpression.__init__)
+def test_model_subtractexpression_constructor_exists():
+    assert callable(model_SubtractExpression.__init__)
 
 
-def test_model::implyexpression_constructor_args():
-    sig = inspect.signature(model::ImplyExpression.__init__)
+def test_model_subtractexpression_constructor_args():
+    sig = inspect.signature(model_SubtractExpression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_model::divexpression_is_not_abstract():
-    assert not inspect.isabstract(model::DivExpression)
+def test_model_divexpression_is_not_abstract():
+    assert not inspect.isabstract(model_DivExpression)
 
 
-def test_model::divexpression_constructor_exists():
-    assert callable(model::DivExpression.__init__)
+def test_model_divexpression_constructor_exists():
+    assert callable(model_DivExpression.__init__)
 
 
-def test_model::divexpression_constructor_args():
-    sig = inspect.signature(model::DivExpression.__init__)
+def test_model_divexpression_constructor_args():
+    sig = inspect.signature(model_DivExpression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_model::subtractexpression_is_not_abstract():
-    assert not inspect.isabstract(model::SubtractExpression)
+def test_model_modexpression_is_not_abstract():
+    assert not inspect.isabstract(model_ModExpression)
 
 
-def test_model::subtractexpression_constructor_exists():
-    assert callable(model::SubtractExpression.__init__)
+def test_model_modexpression_constructor_exists():
+    assert callable(model_ModExpression.__init__)
 
 
-def test_model::subtractexpression_constructor_args():
-    sig = inspect.signature(model::SubtractExpression.__init__)
+def test_model_modexpression_constructor_args():
+    sig = inspect.signature(model_ModExpression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_model::equivalenceexpression_is_not_abstract():
-    assert not inspect.isabstract(model::EquivalenceExpression)
+def test_model_divideexpression_is_not_abstract():
+    assert not inspect.isabstract(model_DivideExpression)
 
 
-def test_model::equivalenceexpression_constructor_exists():
-    assert callable(model::EquivalenceExpression.__init__)
+def test_model_divideexpression_constructor_exists():
+    assert callable(model_DivideExpression.__init__)
 
 
-def test_model::equivalenceexpression_constructor_args():
-    sig = inspect.signature(model::EquivalenceExpression.__init__)
+def test_model_divideexpression_constructor_args():
+    sig = inspect.signature(model_DivideExpression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_model::comparisonexpression_is_not_abstract():
-    assert not inspect.isabstract(model::ComparisonExpression)
+def test_model_equivalenceexpression_is_not_abstract():
+    assert not inspect.isabstract(model_EquivalenceExpression)
 
 
-def test_model::comparisonexpression_constructor_exists():
-    assert callable(model::ComparisonExpression.__init__)
+def test_model_equivalenceexpression_constructor_exists():
+    assert callable(model_EquivalenceExpression.__init__)
 
 
-def test_model::comparisonexpression_constructor_args():
-    sig = inspect.signature(model::ComparisonExpression.__init__)
+def test_model_equivalenceexpression_constructor_args():
+    sig = inspect.signature(model_EquivalenceExpression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_model::divideexpression_is_not_abstract():
-    assert not inspect.isabstract(model::DivideExpression)
+def test_model_comparisonexpression_is_not_abstract():
+    assert not inspect.isabstract(model_ComparisonExpression)
 
 
-def test_model::divideexpression_constructor_exists():
-    assert callable(model::DivideExpression.__init__)
+def test_model_comparisonexpression_constructor_exists():
+    assert callable(model_ComparisonExpression.__init__)
 
 
-def test_model::divideexpression_constructor_args():
-    sig = inspect.signature(model::DivideExpression.__init__)
+def test_model_comparisonexpression_constructor_args():
+    sig = inspect.signature(model_ComparisonExpression.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -744,72 +744,72 @@ def test_multiaryexpression_constructor_args():
 
 
 
-def test_model::xorexpression_is_not_abstract():
-    assert not inspect.isabstract(model::XorExpression)
+def test_model_orexpression_is_not_abstract():
+    assert not inspect.isabstract(model_OrExpression)
 
 
-def test_model::xorexpression_constructor_exists():
-    assert callable(model::XorExpression.__init__)
+def test_model_orexpression_constructor_exists():
+    assert callable(model_OrExpression.__init__)
 
 
-def test_model::xorexpression_constructor_args():
-    sig = inspect.signature(model::XorExpression.__init__)
+def test_model_orexpression_constructor_args():
+    sig = inspect.signature(model_OrExpression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_model::multiplyexpression_is_not_abstract():
-    assert not inspect.isabstract(model::MultiplyExpression)
+def test_model_xorexpression_is_not_abstract():
+    assert not inspect.isabstract(model_XorExpression)
 
 
-def test_model::multiplyexpression_constructor_exists():
-    assert callable(model::MultiplyExpression.__init__)
+def test_model_xorexpression_constructor_exists():
+    assert callable(model_XorExpression.__init__)
 
 
-def test_model::multiplyexpression_constructor_args():
-    sig = inspect.signature(model::MultiplyExpression.__init__)
+def test_model_xorexpression_constructor_args():
+    sig = inspect.signature(model_XorExpression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_model::orexpression_is_not_abstract():
-    assert not inspect.isabstract(model::OrExpression)
+def test_model_andexpression_is_not_abstract():
+    assert not inspect.isabstract(model_AndExpression)
 
 
-def test_model::orexpression_constructor_exists():
-    assert callable(model::OrExpression.__init__)
+def test_model_andexpression_constructor_exists():
+    assert callable(model_AndExpression.__init__)
 
 
-def test_model::orexpression_constructor_args():
-    sig = inspect.signature(model::OrExpression.__init__)
+def test_model_andexpression_constructor_args():
+    sig = inspect.signature(model_AndExpression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_model::andexpression_is_not_abstract():
-    assert not inspect.isabstract(model::AndExpression)
+def test_model_addexpression_is_not_abstract():
+    assert not inspect.isabstract(model_AddExpression)
 
 
-def test_model::andexpression_constructor_exists():
-    assert callable(model::AndExpression.__init__)
+def test_model_addexpression_constructor_exists():
+    assert callable(model_AddExpression.__init__)
 
 
-def test_model::andexpression_constructor_args():
-    sig = inspect.signature(model::AndExpression.__init__)
+def test_model_addexpression_constructor_args():
+    sig = inspect.signature(model_AddExpression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_model::addexpression_is_not_abstract():
-    assert not inspect.isabstract(model::AddExpression)
+def test_model_multiplyexpression_is_not_abstract():
+    assert not inspect.isabstract(model_MultiplyExpression)
 
 
-def test_model::addexpression_constructor_exists():
-    assert callable(model::AddExpression.__init__)
+def test_model_multiplyexpression_constructor_exists():
+    assert callable(model_MultiplyExpression.__init__)
 
 
-def test_model::addexpression_constructor_args():
-    sig = inspect.signature(model::AddExpression.__init__)
+def test_model_multiplyexpression_constructor_args():
+    sig = inspect.signature(model_MultiplyExpression.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -828,33 +828,33 @@ def test_enumerableexpression_constructor_args():
 
 
 
-def test_model::integerrangeliteralexpression_is_not_abstract():
-    assert not inspect.isabstract(model::IntegerRangeLiteralExpression)
+def test_model_integerrangeliteralexpression_is_not_abstract():
+    assert not inspect.isabstract(model_IntegerRangeLiteralExpression)
 
 
-def test_model::integerrangeliteralexpression_constructor_exists():
-    assert callable(model::IntegerRangeLiteralExpression.__init__)
+def test_model_integerrangeliteralexpression_constructor_exists():
+    assert callable(model_IntegerRangeLiteralExpression.__init__)
 
 
-def test_model::integerrangeliteralexpression_constructor_args():
-    sig = inspect.signature(model::IntegerRangeLiteralExpression.__init__)
+def test_model_integerrangeliteralexpression_constructor_args():
+    sig = inspect.signature(model_IntegerRangeLiteralExpression.__init__)
     params = list(sig.parameters.keys())
     assert "leftInclusive" in params, "Missing parameter 'leftInclusive'"
     assert "rightInclusive" in params, "Missing parameter 'rightInclusive'"
 
-def test_model::integerrangeliteralexpression_has_leftInclusive():
-    assert hasattr(model::IntegerRangeLiteralExpression, "leftInclusive")
+def test_model_integerrangeliteralexpression_has_leftInclusive():
+    assert hasattr(model_IntegerRangeLiteralExpression, "leftInclusive")
     descriptor = None
-    for klass in model::IntegerRangeLiteralExpression.__mro__:
+    for klass in model_IntegerRangeLiteralExpression.__mro__:
         if "leftInclusive" in klass.__dict__:
             descriptor = klass.__dict__["leftInclusive"]
             break
     assert isinstance(descriptor, property)
 
-def test_model::integerrangeliteralexpression_has_rightInclusive():
-    assert hasattr(model::IntegerRangeLiteralExpression, "rightInclusive")
+def test_model_integerrangeliteralexpression_has_rightInclusive():
+    assert hasattr(model_IntegerRangeLiteralExpression, "rightInclusive")
     descriptor = None
-    for klass in model::IntegerRangeLiteralExpression.__mro__:
+    for klass in model_IntegerRangeLiteralExpression.__mro__:
         if "rightInclusive" in klass.__dict__:
             descriptor = klass.__dict__["rightInclusive"]
             break
@@ -862,16 +862,16 @@ def test_model::integerrangeliteralexpression_has_rightInclusive():
 
 
 
-def test_model::arrayliteralexpression_is_not_abstract():
-    assert not inspect.isabstract(model::ArrayLiteralExpression)
+def test_model_arrayliteralexpression_is_not_abstract():
+    assert not inspect.isabstract(model_ArrayLiteralExpression)
 
 
-def test_model::arrayliteralexpression_constructor_exists():
-    assert callable(model::ArrayLiteralExpression.__init__)
+def test_model_arrayliteralexpression_constructor_exists():
+    assert callable(model_ArrayLiteralExpression.__init__)
 
 
-def test_model::arrayliteralexpression_constructor_args():
-    sig = inspect.signature(model::ArrayLiteralExpression.__init__)
+def test_model_arrayliteralexpression_constructor_args():
+    sig = inspect.signature(model_ArrayLiteralExpression.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -890,86 +890,86 @@ def test_expression_constructor_args():
 
 
 
-def test_model::enumerableexpression_is_not_abstract():
-    assert not inspect.isabstract(model::EnumerableExpression)
+def test_model_enumerableexpression_is_not_abstract():
+    assert not inspect.isabstract(model_EnumerableExpression)
 
 
-def test_model::enumerableexpression_constructor_exists():
-    assert callable(model::EnumerableExpression.__init__)
+def test_model_enumerableexpression_constructor_exists():
+    assert callable(model_EnumerableExpression.__init__)
 
 
-def test_model::enumerableexpression_constructor_args():
-    sig = inspect.signature(model::EnumerableExpression.__init__)
+def test_model_enumerableexpression_constructor_args():
+    sig = inspect.signature(model_EnumerableExpression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_model::unaryexpression_is_not_abstract():
-    assert not inspect.isabstract(model::UnaryExpression)
+def test_model_unaryexpression_is_not_abstract():
+    assert not inspect.isabstract(model_UnaryExpression)
 
 
-def test_model::unaryexpression_constructor_exists():
-    assert callable(model::UnaryExpression.__init__)
+def test_model_unaryexpression_constructor_exists():
+    assert callable(model_UnaryExpression.__init__)
 
 
-def test_model::unaryexpression_constructor_args():
-    sig = inspect.signature(model::UnaryExpression.__init__)
+def test_model_unaryexpression_constructor_args():
+    sig = inspect.signature(model_UnaryExpression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_model::ifthenelseexpression_is_not_abstract():
-    assert not inspect.isabstract(model::IfThenElseExpression)
+def test_model_literalexpression_is_not_abstract():
+    assert not inspect.isabstract(model_LiteralExpression)
 
 
-def test_model::ifthenelseexpression_constructor_exists():
-    assert callable(model::IfThenElseExpression.__init__)
+def test_model_literalexpression_constructor_exists():
+    assert callable(model_LiteralExpression.__init__)
 
 
-def test_model::ifthenelseexpression_constructor_args():
-    sig = inspect.signature(model::IfThenElseExpression.__init__)
+def test_model_literalexpression_constructor_args():
+    sig = inspect.signature(model_LiteralExpression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_model::literalexpression_is_not_abstract():
-    assert not inspect.isabstract(model::LiteralExpression)
+def test_model_accessexpression_is_not_abstract():
+    assert not inspect.isabstract(model_AccessExpression)
 
 
-def test_model::literalexpression_constructor_exists():
-    assert callable(model::LiteralExpression.__init__)
+def test_model_accessexpression_constructor_exists():
+    assert callable(model_AccessExpression.__init__)
 
 
-def test_model::literalexpression_constructor_args():
-    sig = inspect.signature(model::LiteralExpression.__init__)
+def test_model_accessexpression_constructor_args():
+    sig = inspect.signature(model_AccessExpression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_model::accessexpression_is_not_abstract():
-    assert not inspect.isabstract(model::AccessExpression)
+def test_model_ifthenelseexpression_is_not_abstract():
+    assert not inspect.isabstract(model_IfThenElseExpression)
 
 
-def test_model::accessexpression_constructor_exists():
-    assert callable(model::AccessExpression.__init__)
+def test_model_ifthenelseexpression_constructor_exists():
+    assert callable(model_IfThenElseExpression.__init__)
 
 
-def test_model::accessexpression_constructor_args():
-    sig = inspect.signature(model::AccessExpression.__init__)
+def test_model_ifthenelseexpression_constructor_args():
+    sig = inspect.signature(model_IfThenElseExpression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_model::nullaryexpression_is_not_abstract():
-    assert not inspect.isabstract(model::NullaryExpression)
+def test_model_nullaryexpression_is_not_abstract():
+    assert not inspect.isabstract(model_NullaryExpression)
 
 
-def test_model::nullaryexpression_constructor_exists():
-    assert callable(model::NullaryExpression.__init__)
+def test_model_nullaryexpression_constructor_exists():
+    assert callable(model_NullaryExpression.__init__)
 
 
-def test_model::nullaryexpression_constructor_args():
-    sig = inspect.signature(model::NullaryExpression.__init__)
+def test_model_nullaryexpression_constructor_args():
+    sig = inspect.signature(model_NullaryExpression.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -988,16 +988,16 @@ def test_constraintdefinition_constructor_args():
 
 
 
-def test_model::constraintdefinition_is_not_abstract():
-    assert not inspect.isabstract(model::ConstraintDefinition)
+def test_model_constraintdefinition_is_not_abstract():
+    assert not inspect.isabstract(model_ConstraintDefinition)
 
 
-def test_model::constraintdefinition_constructor_exists():
-    assert callable(model::ConstraintDefinition.__init__)
+def test_model_constraintdefinition_constructor_exists():
+    assert callable(model_ConstraintDefinition.__init__)
 
 
-def test_model::constraintdefinition_constructor_args():
-    sig = inspect.signature(model::ConstraintDefinition.__init__)
+def test_model_constraintdefinition_constructor_args():
+    sig = inspect.signature(model_ConstraintDefinition.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1016,44 +1016,44 @@ def test_unaryexpression_constructor_args():
 
 
 
-def test_model::unaryminusexpression_is_not_abstract():
-    assert not inspect.isabstract(model::UnaryMinusExpression)
+def test_model_notexpression_is_not_abstract():
+    assert not inspect.isabstract(model_NotExpression)
 
 
-def test_model::unaryminusexpression_constructor_exists():
-    assert callable(model::UnaryMinusExpression.__init__)
+def test_model_notexpression_constructor_exists():
+    assert callable(model_NotExpression.__init__)
 
 
-def test_model::unaryminusexpression_constructor_args():
-    sig = inspect.signature(model::UnaryMinusExpression.__init__)
+def test_model_notexpression_constructor_args():
+    sig = inspect.signature(model_NotExpression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_model::unaryplusexpression_is_not_abstract():
-    assert not inspect.isabstract(model::UnaryPlusExpression)
+def test_model_unaryminusexpression_is_not_abstract():
+    assert not inspect.isabstract(model_UnaryMinusExpression)
 
 
-def test_model::unaryplusexpression_constructor_exists():
-    assert callable(model::UnaryPlusExpression.__init__)
+def test_model_unaryminusexpression_constructor_exists():
+    assert callable(model_UnaryMinusExpression.__init__)
 
 
-def test_model::unaryplusexpression_constructor_args():
-    sig = inspect.signature(model::UnaryPlusExpression.__init__)
+def test_model_unaryminusexpression_constructor_args():
+    sig = inspect.signature(model_UnaryMinusExpression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_model::notexpression_is_not_abstract():
-    assert not inspect.isabstract(model::NotExpression)
+def test_model_unaryplusexpression_is_not_abstract():
+    assert not inspect.isabstract(model_UnaryPlusExpression)
 
 
-def test_model::notexpression_constructor_exists():
-    assert callable(model::NotExpression.__init__)
+def test_model_unaryplusexpression_constructor_exists():
+    assert callable(model_UnaryPlusExpression.__init__)
 
 
-def test_model::notexpression_constructor_args():
-    sig = inspect.signature(model::NotExpression.__init__)
+def test_model_unaryplusexpression_constructor_args():
+    sig = inspect.signature(model_UnaryPlusExpression.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1072,16 +1072,16 @@ def test_elseexpression_constructor_args():
 
 
 
-def test_model::defaultexpression_is_not_abstract():
-    assert not inspect.isabstract(model::DefaultExpression)
+def test_model_defaultexpression_is_not_abstract():
+    assert not inspect.isabstract(model_DefaultExpression)
 
 
-def test_model::defaultexpression_constructor_exists():
-    assert callable(model::DefaultExpression.__init__)
+def test_model_defaultexpression_constructor_exists():
+    assert callable(model_DefaultExpression.__init__)
 
 
-def test_model::defaultexpression_constructor_args():
-    sig = inspect.signature(model::DefaultExpression.__init__)
+def test_model_defaultexpression_constructor_args():
+    sig = inspect.signature(model_DefaultExpression.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1100,79 +1100,79 @@ def test_nullaryexpression_constructor_args():
 
 
 
-def test_model::arithmeticliteralexpression_is_not_abstract():
-    assert not inspect.isabstract(model::ArithmeticLiteralExpression)
+def test_model_arithmeticliteralexpression_is_not_abstract():
+    assert not inspect.isabstract(model_ArithmeticLiteralExpression)
 
 
-def test_model::arithmeticliteralexpression_constructor_exists():
-    assert callable(model::ArithmeticLiteralExpression.__init__)
+def test_model_arithmeticliteralexpression_constructor_exists():
+    assert callable(model_ArithmeticLiteralExpression.__init__)
 
 
-def test_model::arithmeticliteralexpression_constructor_args():
-    sig = inspect.signature(model::ArithmeticLiteralExpression.__init__)
+def test_model_arithmeticliteralexpression_constructor_args():
+    sig = inspect.signature(model_ArithmeticLiteralExpression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_model::enumerationliteralexpression_is_not_abstract():
-    assert not inspect.isabstract(model::EnumerationLiteralExpression)
+def test_model_booleanliteralexpression_is_not_abstract():
+    assert not inspect.isabstract(model_BooleanLiteralExpression)
 
 
-def test_model::enumerationliteralexpression_constructor_exists():
-    assert callable(model::EnumerationLiteralExpression.__init__)
+def test_model_booleanliteralexpression_constructor_exists():
+    assert callable(model_BooleanLiteralExpression.__init__)
 
 
-def test_model::enumerationliteralexpression_constructor_args():
-    sig = inspect.signature(model::EnumerationLiteralExpression.__init__)
+def test_model_booleanliteralexpression_constructor_args():
+    sig = inspect.signature(model_BooleanLiteralExpression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_model::booleanliteralexpression_is_not_abstract():
-    assert not inspect.isabstract(model::BooleanLiteralExpression)
+def test_model_referenceexpression_is_not_abstract():
+    assert not inspect.isabstract(model_ReferenceExpression)
 
 
-def test_model::booleanliteralexpression_constructor_exists():
-    assert callable(model::BooleanLiteralExpression.__init__)
+def test_model_referenceexpression_constructor_exists():
+    assert callable(model_ReferenceExpression.__init__)
 
 
-def test_model::booleanliteralexpression_constructor_args():
-    sig = inspect.signature(model::BooleanLiteralExpression.__init__)
+def test_model_referenceexpression_constructor_args():
+    sig = inspect.signature(model_ReferenceExpression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_model::referenceexpression_is_not_abstract():
-    assert not inspect.isabstract(model::ReferenceExpression)
+def test_model_enumerationliteralexpression_is_not_abstract():
+    assert not inspect.isabstract(model_EnumerationLiteralExpression)
 
 
-def test_model::referenceexpression_constructor_exists():
-    assert callable(model::ReferenceExpression.__init__)
+def test_model_enumerationliteralexpression_constructor_exists():
+    assert callable(model_EnumerationLiteralExpression.__init__)
 
 
-def test_model::referenceexpression_constructor_args():
-    sig = inspect.signature(model::ReferenceExpression.__init__)
+def test_model_enumerationliteralexpression_constructor_args():
+    sig = inspect.signature(model_EnumerationLiteralExpression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_model::opaqueexpression_is_not_abstract():
-    assert not inspect.isabstract(model::OpaqueExpression)
+def test_model_opaqueexpression_is_not_abstract():
+    assert not inspect.isabstract(model_OpaqueExpression)
 
 
-def test_model::opaqueexpression_constructor_exists():
-    assert callable(model::OpaqueExpression.__init__)
+def test_model_opaqueexpression_constructor_exists():
+    assert callable(model_OpaqueExpression.__init__)
 
 
-def test_model::opaqueexpression_constructor_args():
-    sig = inspect.signature(model::OpaqueExpression.__init__)
+def test_model_opaqueexpression_constructor_args():
+    sig = inspect.signature(model_OpaqueExpression.__init__)
     params = list(sig.parameters.keys())
     assert "expression" in params, "Missing parameter 'expression'"
 
-def test_model::opaqueexpression_has_expression():
-    assert hasattr(model::OpaqueExpression, "expression")
+def test_model_opaqueexpression_has_expression():
+    assert hasattr(model_OpaqueExpression, "expression")
     descriptor = None
-    for klass in model::OpaqueExpression.__mro__:
+    for klass in model_OpaqueExpression.__mro__:
         if "expression" in klass.__dict__:
             descriptor = klass.__dict__["expression"]
             break
@@ -1194,100 +1194,100 @@ def test_logicexpression_constructor_args():
 
 
 
-def test_model::elseexpression_is_not_abstract():
-    assert not inspect.isabstract(model::ElseExpression)
+def test_model_predicateexpression_is_not_abstract():
+    assert not inspect.isabstract(model_PredicateExpression)
 
 
-def test_model::elseexpression_constructor_exists():
-    assert callable(model::ElseExpression.__init__)
+def test_model_predicateexpression_constructor_exists():
+    assert callable(model_PredicateExpression.__init__)
 
 
-def test_model::elseexpression_constructor_args():
-    sig = inspect.signature(model::ElseExpression.__init__)
+def test_model_predicateexpression_constructor_args():
+    sig = inspect.signature(model_PredicateExpression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_model::predicateexpression_is_not_abstract():
-    assert not inspect.isabstract(model::PredicateExpression)
+def test_model_elseexpression_is_not_abstract():
+    assert not inspect.isabstract(model_ElseExpression)
 
 
-def test_model::predicateexpression_constructor_exists():
-    assert callable(model::PredicateExpression.__init__)
+def test_model_elseexpression_constructor_exists():
+    assert callable(model_ElseExpression.__init__)
 
 
-def test_model::predicateexpression_constructor_args():
-    sig = inspect.signature(model::PredicateExpression.__init__)
+def test_model_elseexpression_constructor_args():
+    sig = inspect.signature(model_ElseExpression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_model::booleanexpression_is_not_abstract():
-    assert not inspect.isabstract(model::BooleanExpression)
+def test_model_booleanexpression_is_not_abstract():
+    assert not inspect.isabstract(model_BooleanExpression)
 
 
-def test_model::booleanexpression_constructor_exists():
-    assert callable(model::BooleanExpression.__init__)
+def test_model_booleanexpression_constructor_exists():
+    assert callable(model_BooleanExpression.__init__)
 
 
-def test_model::booleanexpression_constructor_args():
-    sig = inspect.signature(model::BooleanExpression.__init__)
+def test_model_booleanexpression_constructor_args():
+    sig = inspect.signature(model_BooleanExpression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_model::logicexpression_is_not_abstract():
-    assert not inspect.isabstract(model::LogicExpression)
+def test_model_logicexpression_is_not_abstract():
+    assert not inspect.isabstract(model_LogicExpression)
 
 
-def test_model::logicexpression_constructor_exists():
-    assert callable(model::LogicExpression.__init__)
+def test_model_logicexpression_constructor_exists():
+    assert callable(model_LogicExpression.__init__)
 
 
-def test_model::logicexpression_constructor_args():
-    sig = inspect.signature(model::LogicExpression.__init__)
+def test_model_logicexpression_constructor_args():
+    sig = inspect.signature(model_LogicExpression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_model::arithmeticexpression_is_not_abstract():
-    assert not inspect.isabstract(model::ArithmeticExpression)
+def test_model_arithmeticexpression_is_not_abstract():
+    assert not inspect.isabstract(model_ArithmeticExpression)
 
 
-def test_model::arithmeticexpression_constructor_exists():
-    assert callable(model::ArithmeticExpression.__init__)
+def test_model_arithmeticexpression_constructor_exists():
+    assert callable(model_ArithmeticExpression.__init__)
 
 
-def test_model::arithmeticexpression_constructor_args():
-    sig = inspect.signature(model::ArithmeticExpression.__init__)
+def test_model_arithmeticexpression_constructor_args():
+    sig = inspect.signature(model_ArithmeticExpression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_model::multiaryexpression_is_not_abstract():
-    assert not inspect.isabstract(model::MultiaryExpression)
+def test_model_multiaryexpression_is_not_abstract():
+    assert not inspect.isabstract(model_MultiaryExpression)
 
 
-def test_model::multiaryexpression_constructor_exists():
-    assert callable(model::MultiaryExpression.__init__)
+def test_model_multiaryexpression_constructor_exists():
+    assert callable(model_MultiaryExpression.__init__)
 
 
-def test_model::multiaryexpression_constructor_args():
-    sig = inspect.signature(model::MultiaryExpression.__init__)
+def test_model_multiaryexpression_constructor_args():
+    sig = inspect.signature(model_MultiaryExpression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_model::binaryexpression_is_not_abstract():
-    assert not inspect.isabstract(model::BinaryExpression)
+def test_model_binaryexpression_is_not_abstract():
+    assert not inspect.isabstract(model_BinaryExpression)
 
 
-def test_model::binaryexpression_constructor_exists():
-    assert callable(model::BinaryExpression.__init__)
+def test_model_binaryexpression_constructor_exists():
+    assert callable(model_BinaryExpression.__init__)
 
 
-def test_model::binaryexpression_constructor_args():
-    sig = inspect.signature(model::BinaryExpression.__init__)
+def test_model_binaryexpression_constructor_args():
+    sig = inspect.signature(model_BinaryExpression.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1306,30 +1306,30 @@ def test_compositetypedefinition_constructor_args():
 
 
 
-def test_model::functiontypedefinition_is_not_abstract():
-    assert not inspect.isabstract(model::FunctionTypeDefinition)
+def test_model_functiontypedefinition_is_not_abstract():
+    assert not inspect.isabstract(model_FunctionTypeDefinition)
 
 
-def test_model::functiontypedefinition_constructor_exists():
-    assert callable(model::FunctionTypeDefinition.__init__)
+def test_model_functiontypedefinition_constructor_exists():
+    assert callable(model_FunctionTypeDefinition.__init__)
 
 
-def test_model::functiontypedefinition_constructor_args():
-    sig = inspect.signature(model::FunctionTypeDefinition.__init__)
+def test_model_functiontypedefinition_constructor_args():
+    sig = inspect.signature(model_FunctionTypeDefinition.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_model::recordtypedefinition_is_not_abstract():
-    assert not inspect.isabstract(model::RecordTypeDefinition)
+def test_model_recordtypedefinition_is_not_abstract():
+    assert not inspect.isabstract(model_RecordTypeDefinition)
 
 
-def test_model::recordtypedefinition_constructor_exists():
-    assert callable(model::RecordTypeDefinition.__init__)
+def test_model_recordtypedefinition_constructor_exists():
+    assert callable(model_RecordTypeDefinition.__init__)
 
 
-def test_model::recordtypedefinition_constructor_args():
-    sig = inspect.signature(model::RecordTypeDefinition.__init__)
+def test_model_recordtypedefinition_constructor_args():
+    sig = inspect.signature(model_RecordTypeDefinition.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1348,58 +1348,58 @@ def test_enumerabletypedefinition_constructor_args():
 
 
 
-def test_model::arraytypedefinition_is_not_abstract():
-    assert not inspect.isabstract(model::ArrayTypeDefinition)
+def test_model_arraytypedefinition_is_not_abstract():
+    assert not inspect.isabstract(model_ArrayTypeDefinition)
 
 
-def test_model::arraytypedefinition_constructor_exists():
-    assert callable(model::ArrayTypeDefinition.__init__)
+def test_model_arraytypedefinition_constructor_exists():
+    assert callable(model_ArrayTypeDefinition.__init__)
 
 
-def test_model::arraytypedefinition_constructor_args():
-    sig = inspect.signature(model::ArrayTypeDefinition.__init__)
+def test_model_arraytypedefinition_constructor_args():
+    sig = inspect.signature(model_ArrayTypeDefinition.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_model::integerrangetypedefinition_is_not_abstract():
-    assert not inspect.isabstract(model::IntegerRangeTypeDefinition)
+def test_model_integerrangetypedefinition_is_not_abstract():
+    assert not inspect.isabstract(model_IntegerRangeTypeDefinition)
 
 
-def test_model::integerrangetypedefinition_constructor_exists():
-    assert callable(model::IntegerRangeTypeDefinition.__init__)
+def test_model_integerrangetypedefinition_constructor_exists():
+    assert callable(model_IntegerRangeTypeDefinition.__init__)
 
 
-def test_model::integerrangetypedefinition_constructor_args():
-    sig = inspect.signature(model::IntegerRangeTypeDefinition.__init__)
+def test_model_integerrangetypedefinition_constructor_args():
+    sig = inspect.signature(model_IntegerRangeTypeDefinition.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_model::enumerationtypedefinition_is_not_abstract():
-    assert not inspect.isabstract(model::EnumerationTypeDefinition)
+def test_model_enumerationtypedefinition_is_not_abstract():
+    assert not inspect.isabstract(model_EnumerationTypeDefinition)
 
 
-def test_model::enumerationtypedefinition_constructor_exists():
-    assert callable(model::EnumerationTypeDefinition.__init__)
+def test_model_enumerationtypedefinition_constructor_exists():
+    assert callable(model_EnumerationTypeDefinition.__init__)
 
 
-def test_model::enumerationtypedefinition_constructor_args():
-    sig = inspect.signature(model::EnumerationTypeDefinition.__init__)
+def test_model_enumerationtypedefinition_constructor_args():
+    sig = inspect.signature(model_EnumerationTypeDefinition.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_model::enumerabletypedefinition_is_not_abstract():
-    assert not inspect.isabstract(model::EnumerableTypeDefinition)
+def test_model_enumerabletypedefinition_is_not_abstract():
+    assert not inspect.isabstract(model_EnumerableTypeDefinition)
 
 
-def test_model::enumerabletypedefinition_constructor_exists():
-    assert callable(model::EnumerableTypeDefinition.__init__)
+def test_model_enumerabletypedefinition_constructor_exists():
+    assert callable(model_EnumerableTypeDefinition.__init__)
 
 
-def test_model::enumerabletypedefinition_constructor_args():
-    sig = inspect.signature(model::EnumerableTypeDefinition.__init__)
+def test_model_enumerabletypedefinition_constructor_args():
+    sig = inspect.signature(model_EnumerableTypeDefinition.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1418,58 +1418,58 @@ def test_declaration_constructor_args():
 
 
 
-def test_model::valuedeclaration_is_not_abstract():
-    assert not inspect.isabstract(model::ValueDeclaration)
+def test_model_valuedeclaration_is_not_abstract():
+    assert not inspect.isabstract(model_ValueDeclaration)
 
 
-def test_model::valuedeclaration_constructor_exists():
-    assert callable(model::ValueDeclaration.__init__)
+def test_model_valuedeclaration_constructor_exists():
+    assert callable(model_ValueDeclaration.__init__)
 
 
-def test_model::valuedeclaration_constructor_args():
-    sig = inspect.signature(model::ValueDeclaration.__init__)
+def test_model_valuedeclaration_constructor_args():
+    sig = inspect.signature(model_ValueDeclaration.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_model::type_is_not_abstract():
-    assert not inspect.isabstract(model::Type)
+def test_model_type_is_not_abstract():
+    assert not inspect.isabstract(model_Type)
 
 
-def test_model::type_constructor_exists():
-    assert callable(model::Type.__init__)
+def test_model_type_constructor_exists():
+    assert callable(model_Type.__init__)
 
 
-def test_model::type_constructor_args():
-    sig = inspect.signature(model::Type.__init__)
+def test_model_type_constructor_args():
+    sig = inspect.signature(model_Type.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_model::basicconstraintdefinition_is_not_abstract():
-    assert not inspect.isabstract(model::BasicConstraintDefinition)
+def test_model_basicconstraintdefinition_is_not_abstract():
+    assert not inspect.isabstract(model_BasicConstraintDefinition)
 
 
-def test_model::basicconstraintdefinition_constructor_exists():
-    assert callable(model::BasicConstraintDefinition.__init__)
+def test_model_basicconstraintdefinition_constructor_exists():
+    assert callable(model_BasicConstraintDefinition.__init__)
 
 
-def test_model::basicconstraintdefinition_constructor_args():
-    sig = inspect.signature(model::BasicConstraintDefinition.__init__)
+def test_model_basicconstraintdefinition_constructor_args():
+    sig = inspect.signature(model_BasicConstraintDefinition.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_model::typedeclaration_is_not_abstract():
-    assert not inspect.isabstract(model::TypeDeclaration)
+def test_model_typedeclaration_is_not_abstract():
+    assert not inspect.isabstract(model_TypeDeclaration)
 
 
-def test_model::typedeclaration_constructor_exists():
-    assert callable(model::TypeDeclaration.__init__)
+def test_model_typedeclaration_constructor_exists():
+    assert callable(model_TypeDeclaration.__init__)
 
 
-def test_model::typedeclaration_constructor_args():
-    sig = inspect.signature(model::TypeDeclaration.__init__)
+def test_model_typedeclaration_constructor_args():
+    sig = inspect.signature(model_TypeDeclaration.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1488,30 +1488,30 @@ def test_parametricelement_constructor_args():
 
 
 
-def test_model::functiondeclaration_is_not_abstract():
-    assert not inspect.isabstract(model::FunctionDeclaration)
+def test_model_quantifierexpression_is_not_abstract():
+    assert not inspect.isabstract(model_QuantifierExpression)
 
 
-def test_model::functiondeclaration_constructor_exists():
-    assert callable(model::FunctionDeclaration.__init__)
+def test_model_quantifierexpression_constructor_exists():
+    assert callable(model_QuantifierExpression.__init__)
 
 
-def test_model::functiondeclaration_constructor_args():
-    sig = inspect.signature(model::FunctionDeclaration.__init__)
+def test_model_quantifierexpression_constructor_args():
+    sig = inspect.signature(model_QuantifierExpression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_model::quantifierexpression_is_not_abstract():
-    assert not inspect.isabstract(model::QuantifierExpression)
+def test_model_functiondeclaration_is_not_abstract():
+    assert not inspect.isabstract(model_FunctionDeclaration)
 
 
-def test_model::quantifierexpression_constructor_exists():
-    assert callable(model::QuantifierExpression.__init__)
+def test_model_functiondeclaration_constructor_exists():
+    assert callable(model_FunctionDeclaration.__init__)
 
 
-def test_model::quantifierexpression_constructor_args():
-    sig = inspect.signature(model::QuantifierExpression.__init__)
+def test_model_functiondeclaration_constructor_args():
+    sig = inspect.signature(model_FunctionDeclaration.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1530,58 +1530,58 @@ def test_namedelement_constructor_args():
 
 
 
-def test_model::initializableelement_is_not_abstract():
-    assert not inspect.isabstract(model::InitializableElement)
+def test_model_initializableelement_is_not_abstract():
+    assert not inspect.isabstract(model_InitializableElement)
 
 
-def test_model::initializableelement_constructor_exists():
-    assert callable(model::InitializableElement.__init__)
+def test_model_initializableelement_constructor_exists():
+    assert callable(model_InitializableElement.__init__)
 
 
-def test_model::initializableelement_constructor_args():
-    sig = inspect.signature(model::InitializableElement.__init__)
+def test_model_initializableelement_constructor_args():
+    sig = inspect.signature(model_InitializableElement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_model::declaration_is_not_abstract():
-    assert not inspect.isabstract(model::Declaration)
+def test_model_declaration_is_not_abstract():
+    assert not inspect.isabstract(model_Declaration)
 
 
-def test_model::declaration_constructor_exists():
-    assert callable(model::Declaration.__init__)
+def test_model_declaration_constructor_exists():
+    assert callable(model_Declaration.__init__)
 
 
-def test_model::declaration_constructor_args():
-    sig = inspect.signature(model::Declaration.__init__)
+def test_model_declaration_constructor_args():
+    sig = inspect.signature(model_Declaration.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_model::enumerationliteraldefinition_is_not_abstract():
-    assert not inspect.isabstract(model::EnumerationLiteralDefinition)
+def test_model_enumerationliteraldefinition_is_not_abstract():
+    assert not inspect.isabstract(model_EnumerationLiteralDefinition)
 
 
-def test_model::enumerationliteraldefinition_constructor_exists():
-    assert callable(model::EnumerationLiteralDefinition.__init__)
+def test_model_enumerationliteraldefinition_constructor_exists():
+    assert callable(model_EnumerationLiteralDefinition.__init__)
 
 
-def test_model::enumerationliteraldefinition_constructor_args():
-    sig = inspect.signature(model::EnumerationLiteralDefinition.__init__)
+def test_model_enumerationliteraldefinition_constructor_args():
+    sig = inspect.signature(model_EnumerationLiteralDefinition.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_model::expressionpackage_is_not_abstract():
-    assert not inspect.isabstract(model::ExpressionPackage)
+def test_model_expressionpackage_is_not_abstract():
+    assert not inspect.isabstract(model_ExpressionPackage)
 
 
-def test_model::expressionpackage_constructor_exists():
-    assert callable(model::ExpressionPackage.__init__)
+def test_model_expressionpackage_constructor_exists():
+    assert callable(model_ExpressionPackage.__init__)
 
 
-def test_model::expressionpackage_constructor_args():
-    sig = inspect.signature(model::ExpressionPackage.__init__)
+def test_model_expressionpackage_constructor_args():
+    sig = inspect.signature(model_ExpressionPackage.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1600,58 +1600,58 @@ def test_numericaltypedefinition_constructor_args():
 
 
 
-def test_model::decimaltypedefinition_is_not_abstract():
-    assert not inspect.isabstract(model::DecimalTypeDefinition)
+def test_model_decimaltypedefinition_is_not_abstract():
+    assert not inspect.isabstract(model_DecimalTypeDefinition)
 
 
-def test_model::decimaltypedefinition_constructor_exists():
-    assert callable(model::DecimalTypeDefinition.__init__)
+def test_model_decimaltypedefinition_constructor_exists():
+    assert callable(model_DecimalTypeDefinition.__init__)
 
 
-def test_model::decimaltypedefinition_constructor_args():
-    sig = inspect.signature(model::DecimalTypeDefinition.__init__)
+def test_model_decimaltypedefinition_constructor_args():
+    sig = inspect.signature(model_DecimalTypeDefinition.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_model::rationaltypedefinition_is_not_abstract():
-    assert not inspect.isabstract(model::RationalTypeDefinition)
+def test_model_subrangetypedefinition_is_not_abstract():
+    assert not inspect.isabstract(model_SubrangeTypeDefinition)
 
 
-def test_model::rationaltypedefinition_constructor_exists():
-    assert callable(model::RationalTypeDefinition.__init__)
+def test_model_subrangetypedefinition_constructor_exists():
+    assert callable(model_SubrangeTypeDefinition.__init__)
 
 
-def test_model::rationaltypedefinition_constructor_args():
-    sig = inspect.signature(model::RationalTypeDefinition.__init__)
+def test_model_subrangetypedefinition_constructor_args():
+    sig = inspect.signature(model_SubrangeTypeDefinition.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_model::subrangetypedefinition_is_not_abstract():
-    assert not inspect.isabstract(model::SubrangeTypeDefinition)
+def test_model_rationaltypedefinition_is_not_abstract():
+    assert not inspect.isabstract(model_RationalTypeDefinition)
 
 
-def test_model::subrangetypedefinition_constructor_exists():
-    assert callable(model::SubrangeTypeDefinition.__init__)
+def test_model_rationaltypedefinition_constructor_exists():
+    assert callable(model_RationalTypeDefinition.__init__)
 
 
-def test_model::subrangetypedefinition_constructor_args():
-    sig = inspect.signature(model::SubrangeTypeDefinition.__init__)
+def test_model_rationaltypedefinition_constructor_args():
+    sig = inspect.signature(model_RationalTypeDefinition.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_model::integertypedefinition_is_not_abstract():
-    assert not inspect.isabstract(model::IntegerTypeDefinition)
+def test_model_integertypedefinition_is_not_abstract():
+    assert not inspect.isabstract(model_IntegerTypeDefinition)
 
 
-def test_model::integertypedefinition_constructor_exists():
-    assert callable(model::IntegerTypeDefinition.__init__)
+def test_model_integertypedefinition_constructor_exists():
+    assert callable(model_IntegerTypeDefinition.__init__)
 
 
-def test_model::integertypedefinition_constructor_args():
-    sig = inspect.signature(model::IntegerTypeDefinition.__init__)
+def test_model_integertypedefinition_constructor_args():
+    sig = inspect.signature(model_IntegerTypeDefinition.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1670,58 +1670,58 @@ def test_typedefinition_constructor_args():
 
 
 
-def test_model::booleantypedefinition_is_not_abstract():
-    assert not inspect.isabstract(model::BooleanTypeDefinition)
+def test_model_booleantypedefinition_is_not_abstract():
+    assert not inspect.isabstract(model_BooleanTypeDefinition)
 
 
-def test_model::booleantypedefinition_constructor_exists():
-    assert callable(model::BooleanTypeDefinition.__init__)
+def test_model_booleantypedefinition_constructor_exists():
+    assert callable(model_BooleanTypeDefinition.__init__)
 
 
-def test_model::booleantypedefinition_constructor_args():
-    sig = inspect.signature(model::BooleanTypeDefinition.__init__)
+def test_model_booleantypedefinition_constructor_args():
+    sig = inspect.signature(model_BooleanTypeDefinition.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_model::voidtypedefinition_is_not_abstract():
-    assert not inspect.isabstract(model::VoidTypeDefinition)
+def test_model_voidtypedefinition_is_not_abstract():
+    assert not inspect.isabstract(model_VoidTypeDefinition)
 
 
-def test_model::voidtypedefinition_constructor_exists():
-    assert callable(model::VoidTypeDefinition.__init__)
+def test_model_voidtypedefinition_constructor_exists():
+    assert callable(model_VoidTypeDefinition.__init__)
 
 
-def test_model::voidtypedefinition_constructor_args():
-    sig = inspect.signature(model::VoidTypeDefinition.__init__)
+def test_model_voidtypedefinition_constructor_args():
+    sig = inspect.signature(model_VoidTypeDefinition.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_model::compositetypedefinition_is_not_abstract():
-    assert not inspect.isabstract(model::CompositeTypeDefinition)
+def test_model_compositetypedefinition_is_not_abstract():
+    assert not inspect.isabstract(model_CompositeTypeDefinition)
 
 
-def test_model::compositetypedefinition_constructor_exists():
-    assert callable(model::CompositeTypeDefinition.__init__)
+def test_model_compositetypedefinition_constructor_exists():
+    assert callable(model_CompositeTypeDefinition.__init__)
 
 
-def test_model::compositetypedefinition_constructor_args():
-    sig = inspect.signature(model::CompositeTypeDefinition.__init__)
+def test_model_compositetypedefinition_constructor_args():
+    sig = inspect.signature(model_CompositeTypeDefinition.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_model::numericaltypedefinition_is_not_abstract():
-    assert not inspect.isabstract(model::NumericalTypeDefinition)
+def test_model_numericaltypedefinition_is_not_abstract():
+    assert not inspect.isabstract(model_NumericalTypeDefinition)
 
 
-def test_model::numericaltypedefinition_constructor_exists():
-    assert callable(model::NumericalTypeDefinition.__init__)
+def test_model_numericaltypedefinition_constructor_exists():
+    assert callable(model_NumericalTypeDefinition.__init__)
 
 
-def test_model::numericaltypedefinition_constructor_args():
-    sig = inspect.signature(model::NumericalTypeDefinition.__init__)
+def test_model_numericaltypedefinition_constructor_args():
+    sig = inspect.signature(model_NumericalTypeDefinition.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1740,30 +1740,30 @@ def test_type_constructor_args():
 
 
 
-def test_model::typedefinition_is_not_abstract():
-    assert not inspect.isabstract(model::TypeDefinition)
+def test_model_typedefinition_is_not_abstract():
+    assert not inspect.isabstract(model_TypeDefinition)
 
 
-def test_model::typedefinition_constructor_exists():
-    assert callable(model::TypeDefinition.__init__)
+def test_model_typedefinition_constructor_exists():
+    assert callable(model_TypeDefinition.__init__)
 
 
-def test_model::typedefinition_constructor_args():
-    sig = inspect.signature(model::TypeDefinition.__init__)
+def test_model_typedefinition_constructor_args():
+    sig = inspect.signature(model_TypeDefinition.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_model::typereference_is_not_abstract():
-    assert not inspect.isabstract(model::TypeReference)
+def test_model_typereference_is_not_abstract():
+    assert not inspect.isabstract(model_TypeReference)
 
 
-def test_model::typereference_constructor_exists():
-    assert callable(model::TypeReference.__init__)
+def test_model_typereference_constructor_exists():
+    assert callable(model_TypeReference.__init__)
 
 
-def test_model::typereference_constructor_args():
-    sig = inspect.signature(model::TypeReference.__init__)
+def test_model_typereference_constructor_args():
+    sig = inspect.signature(model_TypeReference.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1796,16 +1796,16 @@ def test_initializableelement_constructor_args():
 
 
 
-def test_model::lambdadeclaration_is_not_abstract():
-    assert not inspect.isabstract(model::LambdaDeclaration)
+def test_model_lambdadeclaration_is_not_abstract():
+    assert not inspect.isabstract(model_LambdaDeclaration)
 
 
-def test_model::lambdadeclaration_constructor_exists():
-    assert callable(model::LambdaDeclaration.__init__)
+def test_model_lambdadeclaration_constructor_exists():
+    assert callable(model_LambdaDeclaration.__init__)
 
 
-def test_model::lambdadeclaration_constructor_args():
-    sig = inspect.signature(model::LambdaDeclaration.__init__)
+def test_model_lambdadeclaration_constructor_args():
+    sig = inspect.signature(model_LambdaDeclaration.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1824,65 +1824,65 @@ def test_valuedeclaration_constructor_args():
 
 
 
-def test_model::fielddeclaration_is_not_abstract():
-    assert not inspect.isabstract(model::FieldDeclaration)
+def test_model_fielddeclaration_is_not_abstract():
+    assert not inspect.isabstract(model_FieldDeclaration)
 
 
-def test_model::fielddeclaration_constructor_exists():
-    assert callable(model::FieldDeclaration.__init__)
+def test_model_fielddeclaration_constructor_exists():
+    assert callable(model_FieldDeclaration.__init__)
 
 
-def test_model::fielddeclaration_constructor_args():
-    sig = inspect.signature(model::FieldDeclaration.__init__)
+def test_model_fielddeclaration_constructor_args():
+    sig = inspect.signature(model_FieldDeclaration.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_model::constantdeclaration_is_not_abstract():
-    assert not inspect.isabstract(model::ConstantDeclaration)
+def test_model_constantdeclaration_is_not_abstract():
+    assert not inspect.isabstract(model_ConstantDeclaration)
 
 
-def test_model::constantdeclaration_constructor_exists():
-    assert callable(model::ConstantDeclaration.__init__)
+def test_model_constantdeclaration_constructor_exists():
+    assert callable(model_ConstantDeclaration.__init__)
 
 
-def test_model::constantdeclaration_constructor_args():
-    sig = inspect.signature(model::ConstantDeclaration.__init__)
+def test_model_constantdeclaration_constructor_args():
+    sig = inspect.signature(model_ConstantDeclaration.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_model::variabledeclaration_is_not_abstract():
-    assert not inspect.isabstract(model::VariableDeclaration)
+def test_model_variabledeclaration_is_not_abstract():
+    assert not inspect.isabstract(model_VariableDeclaration)
 
 
-def test_model::variabledeclaration_constructor_exists():
-    assert callable(model::VariableDeclaration.__init__)
+def test_model_variabledeclaration_constructor_exists():
+    assert callable(model_VariableDeclaration.__init__)
 
 
-def test_model::variabledeclaration_constructor_args():
-    sig = inspect.signature(model::VariableDeclaration.__init__)
+def test_model_variabledeclaration_constructor_args():
+    sig = inspect.signature(model_VariableDeclaration.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_model::comment_is_not_abstract():
-    assert not inspect.isabstract(model::Comment)
+def test_model_comment_is_not_abstract():
+    assert not inspect.isabstract(model_Comment)
 
 
-def test_model::comment_constructor_exists():
-    assert callable(model::Comment.__init__)
+def test_model_comment_constructor_exists():
+    assert callable(model_Comment.__init__)
 
 
-def test_model::comment_constructor_args():
-    sig = inspect.signature(model::Comment.__init__)
+def test_model_comment_constructor_args():
+    sig = inspect.signature(model_Comment.__init__)
     params = list(sig.parameters.keys())
     assert "comment" in params, "Missing parameter 'comment'"
 
-def test_model::comment_has_comment():
-    assert hasattr(model::Comment, "comment")
+def test_model_comment_has_comment():
+    assert hasattr(model_Comment, "comment")
     descriptor = None
-    for klass in model::Comment.__mro__:
+    for klass in model_Comment.__mro__:
         if "comment" in klass.__dict__:
             descriptor = klass.__dict__["comment"]
             break
@@ -1890,37 +1890,37 @@ def test_model::comment_has_comment():
 
 
 
-def test_model::commentableelement_is_not_abstract():
-    assert not inspect.isabstract(model::CommentableElement)
+def test_model_commentableelement_is_not_abstract():
+    assert not inspect.isabstract(model_CommentableElement)
 
 
-def test_model::commentableelement_constructor_exists():
-    assert callable(model::CommentableElement.__init__)
+def test_model_commentableelement_constructor_exists():
+    assert callable(model_CommentableElement.__init__)
 
 
-def test_model::commentableelement_constructor_args():
-    sig = inspect.signature(model::CommentableElement.__init__)
+def test_model_commentableelement_constructor_args():
+    sig = inspect.signature(model_CommentableElement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_model::namedelement_is_not_abstract():
-    assert not inspect.isabstract(model::NamedElement)
+def test_model_namedelement_is_not_abstract():
+    assert not inspect.isabstract(model_NamedElement)
 
 
-def test_model::namedelement_constructor_exists():
-    assert callable(model::NamedElement.__init__)
+def test_model_namedelement_constructor_exists():
+    assert callable(model_NamedElement.__init__)
 
 
-def test_model::namedelement_constructor_args():
-    sig = inspect.signature(model::NamedElement.__init__)
+def test_model_namedelement_constructor_args():
+    sig = inspect.signature(model_NamedElement.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_model::namedelement_has_name():
-    assert hasattr(model::NamedElement, "name")
+def test_model_namedelement_has_name():
+    assert hasattr(model_NamedElement, "name")
     descriptor = None
-    for klass in model::NamedElement.__mro__:
+    for klass in model_NamedElement.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -1928,58 +1928,58 @@ def test_model::namedelement_has_name():
 
 
 
-def test_model::expression_is_not_abstract():
-    assert not inspect.isabstract(model::Expression)
+def test_model_expression_is_not_abstract():
+    assert not inspect.isabstract(model_Expression)
 
 
-def test_model::expression_constructor_exists():
-    assert callable(model::Expression.__init__)
+def test_model_expression_constructor_exists():
+    assert callable(model_Expression.__init__)
 
 
-def test_model::expression_constructor_args():
-    sig = inspect.signature(model::Expression.__init__)
+def test_model_expression_constructor_args():
+    sig = inspect.signature(model_Expression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_model::argumentedelement_is_not_abstract():
-    assert not inspect.isabstract(model::ArgumentedElement)
+def test_model_argumentedelement_is_not_abstract():
+    assert not inspect.isabstract(model_ArgumentedElement)
 
 
-def test_model::argumentedelement_constructor_exists():
-    assert callable(model::ArgumentedElement.__init__)
+def test_model_argumentedelement_constructor_exists():
+    assert callable(model_ArgumentedElement.__init__)
 
 
-def test_model::argumentedelement_constructor_args():
-    sig = inspect.signature(model::ArgumentedElement.__init__)
+def test_model_argumentedelement_constructor_args():
+    sig = inspect.signature(model_ArgumentedElement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_model::parameterdeclaration_is_not_abstract():
-    assert not inspect.isabstract(model::ParameterDeclaration)
+def test_model_parameterdeclaration_is_not_abstract():
+    assert not inspect.isabstract(model_ParameterDeclaration)
 
 
-def test_model::parameterdeclaration_constructor_exists():
-    assert callable(model::ParameterDeclaration.__init__)
+def test_model_parameterdeclaration_constructor_exists():
+    assert callable(model_ParameterDeclaration.__init__)
 
 
-def test_model::parameterdeclaration_constructor_args():
-    sig = inspect.signature(model::ParameterDeclaration.__init__)
+def test_model_parameterdeclaration_constructor_args():
+    sig = inspect.signature(model_ParameterDeclaration.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_model::parametricelement_is_not_abstract():
-    assert not inspect.isabstract(model::ParametricElement)
+def test_model_parametricelement_is_not_abstract():
+    assert not inspect.isabstract(model_ParametricElement)
 
 
-def test_model::parametricelement_constructor_exists():
-    assert callable(model::ParametricElement.__init__)
+def test_model_parametricelement_constructor_exists():
+    assert callable(model_ParametricElement.__init__)
 
 
-def test_model::parametricelement_constructor_args():
-    sig = inspect.signature(model::ParametricElement.__init__)
+def test_model_parametricelement_constructor_args():
+    sig = inspect.signature(model_ParametricElement.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1997,20 +1997,20 @@ safe_text = st.text(
 ComparisonExpression_strategy = st.builds(
     ComparisonExpression,
 )
-model::GreaterEqualExpression_strategy = st.builds(
-    model::GreaterEqualExpression,
+model_GreaterEqualExpression_strategy = st.builds(
+    model_GreaterEqualExpression,
 )
-model::GreaterExpression_strategy = st.builds(
-    model::GreaterExpression,
+model_GreaterExpression_strategy = st.builds(
+    model_GreaterExpression,
 )
 EquivalenceExpression_strategy = st.builds(
     EquivalenceExpression,
 )
-model::InequalityExpression_strategy = st.builds(
-    model::InequalityExpression,
+model_InequalityExpression_strategy = st.builds(
+    model_InequalityExpression,
 )
-model::EqualityExpression_strategy = st.builds(
-    model::EqualityExpression,
+model_EqualityExpression_strategy = st.builds(
+    model_EqualityExpression,
 )
 PredicateExpression_strategy = st.builds(
     PredicateExpression,
@@ -2018,11 +2018,11 @@ PredicateExpression_strategy = st.builds(
 QuantifierExpression_strategy = st.builds(
     QuantifierExpression,
 )
-model::ExistsExpression_strategy = st.builds(
-    model::ExistsExpression,
+model_ExistsExpression_strategy = st.builds(
+    model_ExistsExpression,
 )
-model::ForallExpression_strategy = st.builds(
-    model::ForallExpression,
+model_ForallExpression_strategy = st.builds(
+    model_ForallExpression,
 )
 ArgumentedElement_strategy = st.builds(
     ArgumentedElement,
@@ -2030,34 +2030,34 @@ ArgumentedElement_strategy = st.builds(
 AccessExpression_strategy = st.builds(
     AccessExpression,
 )
-model::RecordAccessExpression_strategy = st.builds(
-    model::RecordAccessExpression,
+model_SelectExpression_strategy = st.builds(
+    model_SelectExpression,
+)
+model_RecordAccessExpression_strategy = st.builds(
+    model_RecordAccessExpression,
     field=
         safe_text
 )
-model::ArrayAccessExpression_strategy = st.builds(
-    model::ArrayAccessExpression,
+model_ArrayAccessExpression_strategy = st.builds(
+    model_ArrayAccessExpression,
 )
-model::SelectExpression_strategy = st.builds(
-    model::SelectExpression,
+model_FunctionAccessExpression_strategy = st.builds(
+    model_FunctionAccessExpression,
 )
-model::FunctionAccessExpression_strategy = st.builds(
-    model::FunctionAccessExpression,
+model_LessEqualExpression_strategy = st.builds(
+    model_LessEqualExpression,
 )
-model::LessEqualExpression_strategy = st.builds(
-    model::LessEqualExpression,
-)
-model::LessExpression_strategy = st.builds(
-    model::LessExpression,
+model_LessExpression_strategy = st.builds(
+    model_LessExpression,
 )
 BooleanLiteralExpression_strategy = st.builds(
     BooleanLiteralExpression,
 )
-model::FalseExpression_strategy = st.builds(
-    model::FalseExpression,
+model_FalseExpression_strategy = st.builds(
+    model_FalseExpression,
 )
-model::TrueExpression_strategy = st.builds(
-    model::TrueExpression,
+model_TrueExpression_strategy = st.builds(
+    model_TrueExpression,
 )
 BooleanExpression_strategy = st.builds(
     BooleanExpression,
@@ -2065,20 +2065,20 @@ BooleanExpression_strategy = st.builds(
 ArithmeticLiteralExpression_strategy = st.builds(
     ArithmeticLiteralExpression,
 )
-model::RationalLiteralExpression_strategy = st.builds(
-    model::RationalLiteralExpression,
-    denominator=
-        safe_text,
+model_RationalLiteralExpression_strategy = st.builds(
+    model_RationalLiteralExpression,
     numerator=
+        safe_text,
+    denominator=
         safe_text
 )
-model::DecimalLiteralExpression_strategy = st.builds(
-    model::DecimalLiteralExpression,
+model_DecimalLiteralExpression_strategy = st.builds(
+    model_DecimalLiteralExpression,
     value=
         safe_text
 )
-model::IntegerLiteralExpression_strategy = st.builds(
-    model::IntegerLiteralExpression,
+model_IntegerLiteralExpression_strategy = st.builds(
+    model_IntegerLiteralExpression,
     value=
         safe_text
 )
@@ -2088,259 +2088,259 @@ ArithmeticExpression_strategy = st.builds(
 LiteralExpression_strategy = st.builds(
     LiteralExpression,
 )
-model::FieldAssignment_strategy = st.builds(
-    model::FieldAssignment,
+model_FieldAssignment_strategy = st.builds(
+    model_FieldAssignment,
     reference=
         safe_text
 )
-model::RecordLiteralExpression_strategy = st.builds(
-    model::RecordLiteralExpression,
+model_RecordLiteralExpression_strategy = st.builds(
+    model_RecordLiteralExpression,
 )
 BinaryExpression_strategy = st.builds(
     BinaryExpression,
 )
-model::ModExpression_strategy = st.builds(
-    model::ModExpression,
+model_ImplyExpression_strategy = st.builds(
+    model_ImplyExpression,
 )
-model::ImplyExpression_strategy = st.builds(
-    model::ImplyExpression,
+model_SubtractExpression_strategy = st.builds(
+    model_SubtractExpression,
 )
-model::DivExpression_strategy = st.builds(
-    model::DivExpression,
+model_DivExpression_strategy = st.builds(
+    model_DivExpression,
 )
-model::SubtractExpression_strategy = st.builds(
-    model::SubtractExpression,
+model_ModExpression_strategy = st.builds(
+    model_ModExpression,
 )
-model::EquivalenceExpression_strategy = st.builds(
-    model::EquivalenceExpression,
+model_DivideExpression_strategy = st.builds(
+    model_DivideExpression,
 )
-model::ComparisonExpression_strategy = st.builds(
-    model::ComparisonExpression,
+model_EquivalenceExpression_strategy = st.builds(
+    model_EquivalenceExpression,
 )
-model::DivideExpression_strategy = st.builds(
-    model::DivideExpression,
+model_ComparisonExpression_strategy = st.builds(
+    model_ComparisonExpression,
 )
 MultiaryExpression_strategy = st.builds(
     MultiaryExpression,
 )
-model::XorExpression_strategy = st.builds(
-    model::XorExpression,
+model_OrExpression_strategy = st.builds(
+    model_OrExpression,
 )
-model::MultiplyExpression_strategy = st.builds(
-    model::MultiplyExpression,
+model_XorExpression_strategy = st.builds(
+    model_XorExpression,
 )
-model::OrExpression_strategy = st.builds(
-    model::OrExpression,
+model_AndExpression_strategy = st.builds(
+    model_AndExpression,
 )
-model::AndExpression_strategy = st.builds(
-    model::AndExpression,
+model_AddExpression_strategy = st.builds(
+    model_AddExpression,
 )
-model::AddExpression_strategy = st.builds(
-    model::AddExpression,
+model_MultiplyExpression_strategy = st.builds(
+    model_MultiplyExpression,
 )
 EnumerableExpression_strategy = st.builds(
     EnumerableExpression,
 )
-model::IntegerRangeLiteralExpression_strategy = st.builds(
-    model::IntegerRangeLiteralExpression,
+model_IntegerRangeLiteralExpression_strategy = st.builds(
+    model_IntegerRangeLiteralExpression,
     leftInclusive=
         st.booleans(),
     rightInclusive=
         st.booleans()
 )
-model::ArrayLiteralExpression_strategy = st.builds(
-    model::ArrayLiteralExpression,
+model_ArrayLiteralExpression_strategy = st.builds(
+    model_ArrayLiteralExpression,
 )
 Expression_strategy = st.builds(
     Expression,
 )
-model::EnumerableExpression_strategy = st.builds(
-    model::EnumerableExpression,
+model_EnumerableExpression_strategy = st.builds(
+    model_EnumerableExpression,
 )
-model::UnaryExpression_strategy = st.builds(
-    model::UnaryExpression,
+model_UnaryExpression_strategy = st.builds(
+    model_UnaryExpression,
 )
-model::IfThenElseExpression_strategy = st.builds(
-    model::IfThenElseExpression,
+model_LiteralExpression_strategy = st.builds(
+    model_LiteralExpression,
 )
-model::LiteralExpression_strategy = st.builds(
-    model::LiteralExpression,
+model_AccessExpression_strategy = st.builds(
+    model_AccessExpression,
 )
-model::AccessExpression_strategy = st.builds(
-    model::AccessExpression,
+model_IfThenElseExpression_strategy = st.builds(
+    model_IfThenElseExpression,
 )
-model::NullaryExpression_strategy = st.builds(
-    model::NullaryExpression,
+model_NullaryExpression_strategy = st.builds(
+    model_NullaryExpression,
 )
 ConstraintDefinition_strategy = st.builds(
     ConstraintDefinition,
 )
-model::ConstraintDefinition_strategy = st.builds(
-    model::ConstraintDefinition,
+model_ConstraintDefinition_strategy = st.builds(
+    model_ConstraintDefinition,
 )
 UnaryExpression_strategy = st.builds(
     UnaryExpression,
 )
-model::UnaryMinusExpression_strategy = st.builds(
-    model::UnaryMinusExpression,
+model_NotExpression_strategy = st.builds(
+    model_NotExpression,
 )
-model::UnaryPlusExpression_strategy = st.builds(
-    model::UnaryPlusExpression,
+model_UnaryMinusExpression_strategy = st.builds(
+    model_UnaryMinusExpression,
 )
-model::NotExpression_strategy = st.builds(
-    model::NotExpression,
+model_UnaryPlusExpression_strategy = st.builds(
+    model_UnaryPlusExpression,
 )
 ElseExpression_strategy = st.builds(
     ElseExpression,
 )
-model::DefaultExpression_strategy = st.builds(
-    model::DefaultExpression,
+model_DefaultExpression_strategy = st.builds(
+    model_DefaultExpression,
 )
 NullaryExpression_strategy = st.builds(
     NullaryExpression,
 )
-model::ArithmeticLiteralExpression_strategy = st.builds(
-    model::ArithmeticLiteralExpression,
+model_ArithmeticLiteralExpression_strategy = st.builds(
+    model_ArithmeticLiteralExpression,
 )
-model::EnumerationLiteralExpression_strategy = st.builds(
-    model::EnumerationLiteralExpression,
+model_BooleanLiteralExpression_strategy = st.builds(
+    model_BooleanLiteralExpression,
 )
-model::BooleanLiteralExpression_strategy = st.builds(
-    model::BooleanLiteralExpression,
+model_ReferenceExpression_strategy = st.builds(
+    model_ReferenceExpression,
 )
-model::ReferenceExpression_strategy = st.builds(
-    model::ReferenceExpression,
+model_EnumerationLiteralExpression_strategy = st.builds(
+    model_EnumerationLiteralExpression,
 )
-model::OpaqueExpression_strategy = st.builds(
-    model::OpaqueExpression,
+model_OpaqueExpression_strategy = st.builds(
+    model_OpaqueExpression,
     expression=
         safe_text
 )
 LogicExpression_strategy = st.builds(
     LogicExpression,
 )
-model::ElseExpression_strategy = st.builds(
-    model::ElseExpression,
+model_PredicateExpression_strategy = st.builds(
+    model_PredicateExpression,
 )
-model::PredicateExpression_strategy = st.builds(
-    model::PredicateExpression,
+model_ElseExpression_strategy = st.builds(
+    model_ElseExpression,
 )
-model::BooleanExpression_strategy = st.builds(
-    model::BooleanExpression,
+model_BooleanExpression_strategy = st.builds(
+    model_BooleanExpression,
 )
-model::LogicExpression_strategy = st.builds(
-    model::LogicExpression,
+model_LogicExpression_strategy = st.builds(
+    model_LogicExpression,
 )
-model::ArithmeticExpression_strategy = st.builds(
-    model::ArithmeticExpression,
+model_ArithmeticExpression_strategy = st.builds(
+    model_ArithmeticExpression,
 )
-model::MultiaryExpression_strategy = st.builds(
-    model::MultiaryExpression,
+model_MultiaryExpression_strategy = st.builds(
+    model_MultiaryExpression,
 )
-model::BinaryExpression_strategy = st.builds(
-    model::BinaryExpression,
+model_BinaryExpression_strategy = st.builds(
+    model_BinaryExpression,
 )
 CompositeTypeDefinition_strategy = st.builds(
     CompositeTypeDefinition,
 )
-model::FunctionTypeDefinition_strategy = st.builds(
-    model::FunctionTypeDefinition,
+model_FunctionTypeDefinition_strategy = st.builds(
+    model_FunctionTypeDefinition,
 )
-model::RecordTypeDefinition_strategy = st.builds(
-    model::RecordTypeDefinition,
+model_RecordTypeDefinition_strategy = st.builds(
+    model_RecordTypeDefinition,
 )
 EnumerableTypeDefinition_strategy = st.builds(
     EnumerableTypeDefinition,
 )
-model::ArrayTypeDefinition_strategy = st.builds(
-    model::ArrayTypeDefinition,
+model_ArrayTypeDefinition_strategy = st.builds(
+    model_ArrayTypeDefinition,
 )
-model::IntegerRangeTypeDefinition_strategy = st.builds(
-    model::IntegerRangeTypeDefinition,
+model_IntegerRangeTypeDefinition_strategy = st.builds(
+    model_IntegerRangeTypeDefinition,
 )
-model::EnumerationTypeDefinition_strategy = st.builds(
-    model::EnumerationTypeDefinition,
+model_EnumerationTypeDefinition_strategy = st.builds(
+    model_EnumerationTypeDefinition,
 )
-model::EnumerableTypeDefinition_strategy = st.builds(
-    model::EnumerableTypeDefinition,
+model_EnumerableTypeDefinition_strategy = st.builds(
+    model_EnumerableTypeDefinition,
 )
 Declaration_strategy = st.builds(
     Declaration,
 )
-model::ValueDeclaration_strategy = st.builds(
-    model::ValueDeclaration,
+model_ValueDeclaration_strategy = st.builds(
+    model_ValueDeclaration,
 )
-model::Type_strategy = st.builds(
-    model::Type,
+model_Type_strategy = st.builds(
+    model_Type,
 )
-model::BasicConstraintDefinition_strategy = st.builds(
-    model::BasicConstraintDefinition,
+model_BasicConstraintDefinition_strategy = st.builds(
+    model_BasicConstraintDefinition,
 )
-model::TypeDeclaration_strategy = st.builds(
-    model::TypeDeclaration,
+model_TypeDeclaration_strategy = st.builds(
+    model_TypeDeclaration,
 )
 ParametricElement_strategy = st.builds(
     ParametricElement,
 )
-model::FunctionDeclaration_strategy = st.builds(
-    model::FunctionDeclaration,
+model_QuantifierExpression_strategy = st.builds(
+    model_QuantifierExpression,
 )
-model::QuantifierExpression_strategy = st.builds(
-    model::QuantifierExpression,
+model_FunctionDeclaration_strategy = st.builds(
+    model_FunctionDeclaration,
 )
 NamedElement_strategy = st.builds(
     NamedElement,
 )
-model::InitializableElement_strategy = st.builds(
-    model::InitializableElement,
+model_InitializableElement_strategy = st.builds(
+    model_InitializableElement,
 )
-model::Declaration_strategy = st.builds(
-    model::Declaration,
+model_Declaration_strategy = st.builds(
+    model_Declaration,
 )
-model::EnumerationLiteralDefinition_strategy = st.builds(
-    model::EnumerationLiteralDefinition,
+model_EnumerationLiteralDefinition_strategy = st.builds(
+    model_EnumerationLiteralDefinition,
 )
-model::ExpressionPackage_strategy = st.builds(
-    model::ExpressionPackage,
+model_ExpressionPackage_strategy = st.builds(
+    model_ExpressionPackage,
 )
 NumericalTypeDefinition_strategy = st.builds(
     NumericalTypeDefinition,
 )
-model::DecimalTypeDefinition_strategy = st.builds(
-    model::DecimalTypeDefinition,
+model_DecimalTypeDefinition_strategy = st.builds(
+    model_DecimalTypeDefinition,
 )
-model::RationalTypeDefinition_strategy = st.builds(
-    model::RationalTypeDefinition,
+model_SubrangeTypeDefinition_strategy = st.builds(
+    model_SubrangeTypeDefinition,
 )
-model::SubrangeTypeDefinition_strategy = st.builds(
-    model::SubrangeTypeDefinition,
+model_RationalTypeDefinition_strategy = st.builds(
+    model_RationalTypeDefinition,
 )
-model::IntegerTypeDefinition_strategy = st.builds(
-    model::IntegerTypeDefinition,
+model_IntegerTypeDefinition_strategy = st.builds(
+    model_IntegerTypeDefinition,
 )
 TypeDefinition_strategy = st.builds(
     TypeDefinition,
 )
-model::BooleanTypeDefinition_strategy = st.builds(
-    model::BooleanTypeDefinition,
+model_BooleanTypeDefinition_strategy = st.builds(
+    model_BooleanTypeDefinition,
 )
-model::VoidTypeDefinition_strategy = st.builds(
-    model::VoidTypeDefinition,
+model_VoidTypeDefinition_strategy = st.builds(
+    model_VoidTypeDefinition,
 )
-model::CompositeTypeDefinition_strategy = st.builds(
-    model::CompositeTypeDefinition,
+model_CompositeTypeDefinition_strategy = st.builds(
+    model_CompositeTypeDefinition,
 )
-model::NumericalTypeDefinition_strategy = st.builds(
-    model::NumericalTypeDefinition,
+model_NumericalTypeDefinition_strategy = st.builds(
+    model_NumericalTypeDefinition,
 )
 Type_strategy = st.builds(
     Type,
 )
-model::TypeDefinition_strategy = st.builds(
-    model::TypeDefinition,
+model_TypeDefinition_strategy = st.builds(
+    model_TypeDefinition,
 )
-model::TypeReference_strategy = st.builds(
-    model::TypeReference,
+model_TypeReference_strategy = st.builds(
+    model_TypeReference,
 )
 FunctionDeclaration_strategy = st.builds(
     FunctionDeclaration,
@@ -2348,45 +2348,45 @@ FunctionDeclaration_strategy = st.builds(
 InitializableElement_strategy = st.builds(
     InitializableElement,
 )
-model::LambdaDeclaration_strategy = st.builds(
-    model::LambdaDeclaration,
+model_LambdaDeclaration_strategy = st.builds(
+    model_LambdaDeclaration,
 )
 ValueDeclaration_strategy = st.builds(
     ValueDeclaration,
 )
-model::FieldDeclaration_strategy = st.builds(
-    model::FieldDeclaration,
+model_FieldDeclaration_strategy = st.builds(
+    model_FieldDeclaration,
 )
-model::ConstantDeclaration_strategy = st.builds(
-    model::ConstantDeclaration,
+model_ConstantDeclaration_strategy = st.builds(
+    model_ConstantDeclaration,
 )
-model::VariableDeclaration_strategy = st.builds(
-    model::VariableDeclaration,
+model_VariableDeclaration_strategy = st.builds(
+    model_VariableDeclaration,
 )
-model::Comment_strategy = st.builds(
-    model::Comment,
+model_Comment_strategy = st.builds(
+    model_Comment,
     comment=
         safe_text
 )
-model::CommentableElement_strategy = st.builds(
-    model::CommentableElement,
+model_CommentableElement_strategy = st.builds(
+    model_CommentableElement,
 )
-model::NamedElement_strategy = st.builds(
-    model::NamedElement,
+model_NamedElement_strategy = st.builds(
+    model_NamedElement,
     name=
         safe_text
 )
-model::Expression_strategy = st.builds(
-    model::Expression,
+model_Expression_strategy = st.builds(
+    model_Expression,
 )
-model::ArgumentedElement_strategy = st.builds(
-    model::ArgumentedElement,
+model_ArgumentedElement_strategy = st.builds(
+    model_ArgumentedElement,
 )
-model::ParameterDeclaration_strategy = st.builds(
-    model::ParameterDeclaration,
+model_ParameterDeclaration_strategy = st.builds(
+    model_ParameterDeclaration,
 )
-model::ParametricElement_strategy = st.builds(
-    model::ParametricElement,
+model_ParametricElement_strategy = st.builds(
+    model_ParametricElement,
 )
 
 @given(instance=ComparisonExpression_strategy)
@@ -2394,30 +2394,30 @@ model::ParametricElement_strategy = st.builds(
 def test_comparisonexpression_instantiation(instance):
     assert isinstance(instance, ComparisonExpression)
 
-@given(instance=model::GreaterEqualExpression_strategy)
+@given(instance=model_GreaterEqualExpression_strategy)
 @settings(max_examples=50)
-def test_model::greaterequalexpression_instantiation(instance):
-    assert isinstance(instance, model::GreaterEqualExpression)
+def test_model_greaterequalexpression_instantiation(instance):
+    assert isinstance(instance, model_GreaterEqualExpression)
 
-@given(instance=model::GreaterExpression_strategy)
+@given(instance=model_GreaterExpression_strategy)
 @settings(max_examples=50)
-def test_model::greaterexpression_instantiation(instance):
-    assert isinstance(instance, model::GreaterExpression)
+def test_model_greaterexpression_instantiation(instance):
+    assert isinstance(instance, model_GreaterExpression)
 
 @given(instance=EquivalenceExpression_strategy)
 @settings(max_examples=50)
 def test_equivalenceexpression_instantiation(instance):
     assert isinstance(instance, EquivalenceExpression)
 
-@given(instance=model::InequalityExpression_strategy)
+@given(instance=model_InequalityExpression_strategy)
 @settings(max_examples=50)
-def test_model::inequalityexpression_instantiation(instance):
-    assert isinstance(instance, model::InequalityExpression)
+def test_model_inequalityexpression_instantiation(instance):
+    assert isinstance(instance, model_InequalityExpression)
 
-@given(instance=model::EqualityExpression_strategy)
+@given(instance=model_EqualityExpression_strategy)
 @settings(max_examples=50)
-def test_model::equalityexpression_instantiation(instance):
-    assert isinstance(instance, model::EqualityExpression)
+def test_model_equalityexpression_instantiation(instance):
+    assert isinstance(instance, model_EqualityExpression)
 
 @given(instance=PredicateExpression_strategy)
 @settings(max_examples=50)
@@ -2429,15 +2429,15 @@ def test_predicateexpression_instantiation(instance):
 def test_quantifierexpression_instantiation(instance):
     assert isinstance(instance, QuantifierExpression)
 
-@given(instance=model::ExistsExpression_strategy)
+@given(instance=model_ExistsExpression_strategy)
 @settings(max_examples=50)
-def test_model::existsexpression_instantiation(instance):
-    assert isinstance(instance, model::ExistsExpression)
+def test_model_existsexpression_instantiation(instance):
+    assert isinstance(instance, model_ExistsExpression)
 
-@given(instance=model::ForallExpression_strategy)
+@given(instance=model_ForallExpression_strategy)
 @settings(max_examples=50)
-def test_model::forallexpression_instantiation(instance):
-    assert isinstance(instance, model::ForallExpression)
+def test_model_forallexpression_instantiation(instance):
+    assert isinstance(instance, model_ForallExpression)
 
 @given(instance=ArgumentedElement_strategy)
 @settings(max_examples=50)
@@ -2449,61 +2449,58 @@ def test_argumentedelement_instantiation(instance):
 def test_accessexpression_instantiation(instance):
     assert isinstance(instance, AccessExpression)
 
-@given(instance=model::RecordAccessExpression_strategy)
+@given(instance=model_SelectExpression_strategy)
 @settings(max_examples=50)
-def test_model::recordaccessexpression_instantiation(instance):
-    assert isinstance(instance, model::RecordAccessExpression)
+def test_model_selectexpression_instantiation(instance):
+    assert isinstance(instance, model_SelectExpression)
 
-@given(instance=model::RecordAccessExpression_strategy)
-def test_model::recordaccessexpression_field_type(instance):
-    assert isinstance(instance.field, str)
+@given(instance=model_RecordAccessExpression_strategy)
+@settings(max_examples=50)
+def test_model_recordaccessexpression_instantiation(instance):
+    assert isinstance(instance, model_RecordAccessExpression)
 
 
-@given(instance=model::RecordAccessExpression_strategy)
-def test_model::recordaccessexpression_field_setter(instance):
+
+@given(instance=model_RecordAccessExpression_strategy)
+def test_model_recordaccessexpression_field_setter(instance):
     original = instance.field
     instance.field = original
     assert instance.field == original
 
-@given(instance=model::ArrayAccessExpression_strategy)
+@given(instance=model_ArrayAccessExpression_strategy)
 @settings(max_examples=50)
-def test_model::arrayaccessexpression_instantiation(instance):
-    assert isinstance(instance, model::ArrayAccessExpression)
+def test_model_arrayaccessexpression_instantiation(instance):
+    assert isinstance(instance, model_ArrayAccessExpression)
 
-@given(instance=model::SelectExpression_strategy)
+@given(instance=model_FunctionAccessExpression_strategy)
 @settings(max_examples=50)
-def test_model::selectexpression_instantiation(instance):
-    assert isinstance(instance, model::SelectExpression)
+def test_model_functionaccessexpression_instantiation(instance):
+    assert isinstance(instance, model_FunctionAccessExpression)
 
-@given(instance=model::FunctionAccessExpression_strategy)
+@given(instance=model_LessEqualExpression_strategy)
 @settings(max_examples=50)
-def test_model::functionaccessexpression_instantiation(instance):
-    assert isinstance(instance, model::FunctionAccessExpression)
+def test_model_lessequalexpression_instantiation(instance):
+    assert isinstance(instance, model_LessEqualExpression)
 
-@given(instance=model::LessEqualExpression_strategy)
+@given(instance=model_LessExpression_strategy)
 @settings(max_examples=50)
-def test_model::lessequalexpression_instantiation(instance):
-    assert isinstance(instance, model::LessEqualExpression)
-
-@given(instance=model::LessExpression_strategy)
-@settings(max_examples=50)
-def test_model::lessexpression_instantiation(instance):
-    assert isinstance(instance, model::LessExpression)
+def test_model_lessexpression_instantiation(instance):
+    assert isinstance(instance, model_LessExpression)
 
 @given(instance=BooleanLiteralExpression_strategy)
 @settings(max_examples=50)
 def test_booleanliteralexpression_instantiation(instance):
     assert isinstance(instance, BooleanLiteralExpression)
 
-@given(instance=model::FalseExpression_strategy)
+@given(instance=model_FalseExpression_strategy)
 @settings(max_examples=50)
-def test_model::falseexpression_instantiation(instance):
-    assert isinstance(instance, model::FalseExpression)
+def test_model_falseexpression_instantiation(instance):
+    assert isinstance(instance, model_FalseExpression)
 
-@given(instance=model::TrueExpression_strategy)
+@given(instance=model_TrueExpression_strategy)
 @settings(max_examples=50)
-def test_model::trueexpression_instantiation(instance):
-    assert isinstance(instance, model::TrueExpression)
+def test_model_trueexpression_instantiation(instance):
+    assert isinstance(instance, model_TrueExpression)
 
 @given(instance=BooleanExpression_strategy)
 @settings(max_examples=50)
@@ -2515,61 +2512,49 @@ def test_booleanexpression_instantiation(instance):
 def test_arithmeticliteralexpression_instantiation(instance):
     assert isinstance(instance, ArithmeticLiteralExpression)
 
-@given(instance=model::RationalLiteralExpression_strategy)
+@given(instance=model_RationalLiteralExpression_strategy)
 @settings(max_examples=50)
-def test_model::rationalliteralexpression_instantiation(instance):
-    assert isinstance(instance, model::RationalLiteralExpression)
-
-@given(instance=model::RationalLiteralExpression_strategy)
-def test_model::rationalliteralexpression_denominator_type(instance):
-    assert isinstance(instance.denominator, str)
+def test_model_rationalliteralexpression_instantiation(instance):
+    assert isinstance(instance, model_RationalLiteralExpression)
 
 
-@given(instance=model::RationalLiteralExpression_strategy)
-def test_model::rationalliteralexpression_denominator_setter(instance):
-    original = instance.denominator
-    instance.denominator = original
-    assert instance.denominator == original
 
-@given(instance=model::RationalLiteralExpression_strategy)
-def test_model::rationalliteralexpression_numerator_type(instance):
-    assert isinstance(instance.numerator, str)
-
-
-@given(instance=model::RationalLiteralExpression_strategy)
-def test_model::rationalliteralexpression_numerator_setter(instance):
+@given(instance=model_RationalLiteralExpression_strategy)
+def test_model_rationalliteralexpression_numerator_setter(instance):
     original = instance.numerator
     instance.numerator = original
     assert instance.numerator == original
 
-@given(instance=model::DecimalLiteralExpression_strategy)
+
+
+@given(instance=model_RationalLiteralExpression_strategy)
+def test_model_rationalliteralexpression_denominator_setter(instance):
+    original = instance.denominator
+    instance.denominator = original
+    assert instance.denominator == original
+
+@given(instance=model_DecimalLiteralExpression_strategy)
 @settings(max_examples=50)
-def test_model::decimalliteralexpression_instantiation(instance):
-    assert isinstance(instance, model::DecimalLiteralExpression)
-
-@given(instance=model::DecimalLiteralExpression_strategy)
-def test_model::decimalliteralexpression_value_type(instance):
-    assert isinstance(instance.value, str)
+def test_model_decimalliteralexpression_instantiation(instance):
+    assert isinstance(instance, model_DecimalLiteralExpression)
 
 
-@given(instance=model::DecimalLiteralExpression_strategy)
-def test_model::decimalliteralexpression_value_setter(instance):
+
+@given(instance=model_DecimalLiteralExpression_strategy)
+def test_model_decimalliteralexpression_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
 
-@given(instance=model::IntegerLiteralExpression_strategy)
+@given(instance=model_IntegerLiteralExpression_strategy)
 @settings(max_examples=50)
-def test_model::integerliteralexpression_instantiation(instance):
-    assert isinstance(instance, model::IntegerLiteralExpression)
-
-@given(instance=model::IntegerLiteralExpression_strategy)
-def test_model::integerliteralexpression_value_type(instance):
-    assert isinstance(instance.value, str)
+def test_model_integerliteralexpression_instantiation(instance):
+    assert isinstance(instance, model_IntegerLiteralExpression)
 
 
-@given(instance=model::IntegerLiteralExpression_strategy)
-def test_model::integerliteralexpression_value_setter(instance):
+
+@given(instance=model_IntegerLiteralExpression_strategy)
+def test_model_integerliteralexpression_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
@@ -2584,246 +2569,234 @@ def test_arithmeticexpression_instantiation(instance):
 def test_literalexpression_instantiation(instance):
     assert isinstance(instance, LiteralExpression)
 
-@given(instance=model::FieldAssignment_strategy)
+@given(instance=model_FieldAssignment_strategy)
 @settings(max_examples=50)
-def test_model::fieldassignment_instantiation(instance):
-    assert isinstance(instance, model::FieldAssignment)
-
-@given(instance=model::FieldAssignment_strategy)
-def test_model::fieldassignment_reference_type(instance):
-    assert isinstance(instance.reference, str)
+def test_model_fieldassignment_instantiation(instance):
+    assert isinstance(instance, model_FieldAssignment)
 
 
-@given(instance=model::FieldAssignment_strategy)
-def test_model::fieldassignment_reference_setter(instance):
+
+@given(instance=model_FieldAssignment_strategy)
+def test_model_fieldassignment_reference_setter(instance):
     original = instance.reference
     instance.reference = original
     assert instance.reference == original
 
-@given(instance=model::RecordLiteralExpression_strategy)
+@given(instance=model_RecordLiteralExpression_strategy)
 @settings(max_examples=50)
-def test_model::recordliteralexpression_instantiation(instance):
-    assert isinstance(instance, model::RecordLiteralExpression)
+def test_model_recordliteralexpression_instantiation(instance):
+    assert isinstance(instance, model_RecordLiteralExpression)
 
 @given(instance=BinaryExpression_strategy)
 @settings(max_examples=50)
 def test_binaryexpression_instantiation(instance):
     assert isinstance(instance, BinaryExpression)
 
-@given(instance=model::ModExpression_strategy)
+@given(instance=model_ImplyExpression_strategy)
 @settings(max_examples=50)
-def test_model::modexpression_instantiation(instance):
-    assert isinstance(instance, model::ModExpression)
+def test_model_implyexpression_instantiation(instance):
+    assert isinstance(instance, model_ImplyExpression)
 
-@given(instance=model::ImplyExpression_strategy)
+@given(instance=model_SubtractExpression_strategy)
 @settings(max_examples=50)
-def test_model::implyexpression_instantiation(instance):
-    assert isinstance(instance, model::ImplyExpression)
+def test_model_subtractexpression_instantiation(instance):
+    assert isinstance(instance, model_SubtractExpression)
 
-@given(instance=model::DivExpression_strategy)
+@given(instance=model_DivExpression_strategy)
 @settings(max_examples=50)
-def test_model::divexpression_instantiation(instance):
-    assert isinstance(instance, model::DivExpression)
+def test_model_divexpression_instantiation(instance):
+    assert isinstance(instance, model_DivExpression)
 
-@given(instance=model::SubtractExpression_strategy)
+@given(instance=model_ModExpression_strategy)
 @settings(max_examples=50)
-def test_model::subtractexpression_instantiation(instance):
-    assert isinstance(instance, model::SubtractExpression)
+def test_model_modexpression_instantiation(instance):
+    assert isinstance(instance, model_ModExpression)
 
-@given(instance=model::EquivalenceExpression_strategy)
+@given(instance=model_DivideExpression_strategy)
 @settings(max_examples=50)
-def test_model::equivalenceexpression_instantiation(instance):
-    assert isinstance(instance, model::EquivalenceExpression)
+def test_model_divideexpression_instantiation(instance):
+    assert isinstance(instance, model_DivideExpression)
 
-@given(instance=model::ComparisonExpression_strategy)
+@given(instance=model_EquivalenceExpression_strategy)
 @settings(max_examples=50)
-def test_model::comparisonexpression_instantiation(instance):
-    assert isinstance(instance, model::ComparisonExpression)
+def test_model_equivalenceexpression_instantiation(instance):
+    assert isinstance(instance, model_EquivalenceExpression)
 
-@given(instance=model::DivideExpression_strategy)
+@given(instance=model_ComparisonExpression_strategy)
 @settings(max_examples=50)
-def test_model::divideexpression_instantiation(instance):
-    assert isinstance(instance, model::DivideExpression)
+def test_model_comparisonexpression_instantiation(instance):
+    assert isinstance(instance, model_ComparisonExpression)
 
 @given(instance=MultiaryExpression_strategy)
 @settings(max_examples=50)
 def test_multiaryexpression_instantiation(instance):
     assert isinstance(instance, MultiaryExpression)
 
-@given(instance=model::XorExpression_strategy)
+@given(instance=model_OrExpression_strategy)
 @settings(max_examples=50)
-def test_model::xorexpression_instantiation(instance):
-    assert isinstance(instance, model::XorExpression)
+def test_model_orexpression_instantiation(instance):
+    assert isinstance(instance, model_OrExpression)
 
-@given(instance=model::MultiplyExpression_strategy)
+@given(instance=model_XorExpression_strategy)
 @settings(max_examples=50)
-def test_model::multiplyexpression_instantiation(instance):
-    assert isinstance(instance, model::MultiplyExpression)
+def test_model_xorexpression_instantiation(instance):
+    assert isinstance(instance, model_XorExpression)
 
-@given(instance=model::OrExpression_strategy)
+@given(instance=model_AndExpression_strategy)
 @settings(max_examples=50)
-def test_model::orexpression_instantiation(instance):
-    assert isinstance(instance, model::OrExpression)
+def test_model_andexpression_instantiation(instance):
+    assert isinstance(instance, model_AndExpression)
 
-@given(instance=model::AndExpression_strategy)
+@given(instance=model_AddExpression_strategy)
 @settings(max_examples=50)
-def test_model::andexpression_instantiation(instance):
-    assert isinstance(instance, model::AndExpression)
+def test_model_addexpression_instantiation(instance):
+    assert isinstance(instance, model_AddExpression)
 
-@given(instance=model::AddExpression_strategy)
+@given(instance=model_MultiplyExpression_strategy)
 @settings(max_examples=50)
-def test_model::addexpression_instantiation(instance):
-    assert isinstance(instance, model::AddExpression)
+def test_model_multiplyexpression_instantiation(instance):
+    assert isinstance(instance, model_MultiplyExpression)
 
 @given(instance=EnumerableExpression_strategy)
 @settings(max_examples=50)
 def test_enumerableexpression_instantiation(instance):
     assert isinstance(instance, EnumerableExpression)
 
-@given(instance=model::IntegerRangeLiteralExpression_strategy)
+@given(instance=model_IntegerRangeLiteralExpression_strategy)
 @settings(max_examples=50)
-def test_model::integerrangeliteralexpression_instantiation(instance):
-    assert isinstance(instance, model::IntegerRangeLiteralExpression)
-
-@given(instance=model::IntegerRangeLiteralExpression_strategy)
-def test_model::integerrangeliteralexpression_leftInclusive_type(instance):
-    assert isinstance(instance.leftInclusive, bool)
+def test_model_integerrangeliteralexpression_instantiation(instance):
+    assert isinstance(instance, model_IntegerRangeLiteralExpression)
 
 
-@given(instance=model::IntegerRangeLiteralExpression_strategy)
-def test_model::integerrangeliteralexpression_leftInclusive_setter(instance):
+
+@given(instance=model_IntegerRangeLiteralExpression_strategy)
+def test_model_integerrangeliteralexpression_leftInclusive_setter(instance):
     original = instance.leftInclusive
     instance.leftInclusive = original
     assert instance.leftInclusive == original
 
-@given(instance=model::IntegerRangeLiteralExpression_strategy)
-def test_model::integerrangeliteralexpression_rightInclusive_type(instance):
-    assert isinstance(instance.rightInclusive, bool)
 
 
-@given(instance=model::IntegerRangeLiteralExpression_strategy)
-def test_model::integerrangeliteralexpression_rightInclusive_setter(instance):
+@given(instance=model_IntegerRangeLiteralExpression_strategy)
+def test_model_integerrangeliteralexpression_rightInclusive_setter(instance):
     original = instance.rightInclusive
     instance.rightInclusive = original
     assert instance.rightInclusive == original
 
-@given(instance=model::ArrayLiteralExpression_strategy)
+@given(instance=model_ArrayLiteralExpression_strategy)
 @settings(max_examples=50)
-def test_model::arrayliteralexpression_instantiation(instance):
-    assert isinstance(instance, model::ArrayLiteralExpression)
+def test_model_arrayliteralexpression_instantiation(instance):
+    assert isinstance(instance, model_ArrayLiteralExpression)
 
 @given(instance=Expression_strategy)
 @settings(max_examples=50)
 def test_expression_instantiation(instance):
     assert isinstance(instance, Expression)
 
-@given(instance=model::EnumerableExpression_strategy)
+@given(instance=model_EnumerableExpression_strategy)
 @settings(max_examples=50)
-def test_model::enumerableexpression_instantiation(instance):
-    assert isinstance(instance, model::EnumerableExpression)
+def test_model_enumerableexpression_instantiation(instance):
+    assert isinstance(instance, model_EnumerableExpression)
 
-@given(instance=model::UnaryExpression_strategy)
+@given(instance=model_UnaryExpression_strategy)
 @settings(max_examples=50)
-def test_model::unaryexpression_instantiation(instance):
-    assert isinstance(instance, model::UnaryExpression)
+def test_model_unaryexpression_instantiation(instance):
+    assert isinstance(instance, model_UnaryExpression)
 
-@given(instance=model::IfThenElseExpression_strategy)
+@given(instance=model_LiteralExpression_strategy)
 @settings(max_examples=50)
-def test_model::ifthenelseexpression_instantiation(instance):
-    assert isinstance(instance, model::IfThenElseExpression)
+def test_model_literalexpression_instantiation(instance):
+    assert isinstance(instance, model_LiteralExpression)
 
-@given(instance=model::LiteralExpression_strategy)
+@given(instance=model_AccessExpression_strategy)
 @settings(max_examples=50)
-def test_model::literalexpression_instantiation(instance):
-    assert isinstance(instance, model::LiteralExpression)
+def test_model_accessexpression_instantiation(instance):
+    assert isinstance(instance, model_AccessExpression)
 
-@given(instance=model::AccessExpression_strategy)
+@given(instance=model_IfThenElseExpression_strategy)
 @settings(max_examples=50)
-def test_model::accessexpression_instantiation(instance):
-    assert isinstance(instance, model::AccessExpression)
+def test_model_ifthenelseexpression_instantiation(instance):
+    assert isinstance(instance, model_IfThenElseExpression)
 
-@given(instance=model::NullaryExpression_strategy)
+@given(instance=model_NullaryExpression_strategy)
 @settings(max_examples=50)
-def test_model::nullaryexpression_instantiation(instance):
-    assert isinstance(instance, model::NullaryExpression)
+def test_model_nullaryexpression_instantiation(instance):
+    assert isinstance(instance, model_NullaryExpression)
 
 @given(instance=ConstraintDefinition_strategy)
 @settings(max_examples=50)
 def test_constraintdefinition_instantiation(instance):
     assert isinstance(instance, ConstraintDefinition)
 
-@given(instance=model::ConstraintDefinition_strategy)
+@given(instance=model_ConstraintDefinition_strategy)
 @settings(max_examples=50)
-def test_model::constraintdefinition_instantiation(instance):
-    assert isinstance(instance, model::ConstraintDefinition)
+def test_model_constraintdefinition_instantiation(instance):
+    assert isinstance(instance, model_ConstraintDefinition)
 
 @given(instance=UnaryExpression_strategy)
 @settings(max_examples=50)
 def test_unaryexpression_instantiation(instance):
     assert isinstance(instance, UnaryExpression)
 
-@given(instance=model::UnaryMinusExpression_strategy)
+@given(instance=model_NotExpression_strategy)
 @settings(max_examples=50)
-def test_model::unaryminusexpression_instantiation(instance):
-    assert isinstance(instance, model::UnaryMinusExpression)
+def test_model_notexpression_instantiation(instance):
+    assert isinstance(instance, model_NotExpression)
 
-@given(instance=model::UnaryPlusExpression_strategy)
+@given(instance=model_UnaryMinusExpression_strategy)
 @settings(max_examples=50)
-def test_model::unaryplusexpression_instantiation(instance):
-    assert isinstance(instance, model::UnaryPlusExpression)
+def test_model_unaryminusexpression_instantiation(instance):
+    assert isinstance(instance, model_UnaryMinusExpression)
 
-@given(instance=model::NotExpression_strategy)
+@given(instance=model_UnaryPlusExpression_strategy)
 @settings(max_examples=50)
-def test_model::notexpression_instantiation(instance):
-    assert isinstance(instance, model::NotExpression)
+def test_model_unaryplusexpression_instantiation(instance):
+    assert isinstance(instance, model_UnaryPlusExpression)
 
 @given(instance=ElseExpression_strategy)
 @settings(max_examples=50)
 def test_elseexpression_instantiation(instance):
     assert isinstance(instance, ElseExpression)
 
-@given(instance=model::DefaultExpression_strategy)
+@given(instance=model_DefaultExpression_strategy)
 @settings(max_examples=50)
-def test_model::defaultexpression_instantiation(instance):
-    assert isinstance(instance, model::DefaultExpression)
+def test_model_defaultexpression_instantiation(instance):
+    assert isinstance(instance, model_DefaultExpression)
 
 @given(instance=NullaryExpression_strategy)
 @settings(max_examples=50)
 def test_nullaryexpression_instantiation(instance):
     assert isinstance(instance, NullaryExpression)
 
-@given(instance=model::ArithmeticLiteralExpression_strategy)
+@given(instance=model_ArithmeticLiteralExpression_strategy)
 @settings(max_examples=50)
-def test_model::arithmeticliteralexpression_instantiation(instance):
-    assert isinstance(instance, model::ArithmeticLiteralExpression)
+def test_model_arithmeticliteralexpression_instantiation(instance):
+    assert isinstance(instance, model_ArithmeticLiteralExpression)
 
-@given(instance=model::EnumerationLiteralExpression_strategy)
+@given(instance=model_BooleanLiteralExpression_strategy)
 @settings(max_examples=50)
-def test_model::enumerationliteralexpression_instantiation(instance):
-    assert isinstance(instance, model::EnumerationLiteralExpression)
+def test_model_booleanliteralexpression_instantiation(instance):
+    assert isinstance(instance, model_BooleanLiteralExpression)
 
-@given(instance=model::BooleanLiteralExpression_strategy)
+@given(instance=model_ReferenceExpression_strategy)
 @settings(max_examples=50)
-def test_model::booleanliteralexpression_instantiation(instance):
-    assert isinstance(instance, model::BooleanLiteralExpression)
+def test_model_referenceexpression_instantiation(instance):
+    assert isinstance(instance, model_ReferenceExpression)
 
-@given(instance=model::ReferenceExpression_strategy)
+@given(instance=model_EnumerationLiteralExpression_strategy)
 @settings(max_examples=50)
-def test_model::referenceexpression_instantiation(instance):
-    assert isinstance(instance, model::ReferenceExpression)
+def test_model_enumerationliteralexpression_instantiation(instance):
+    assert isinstance(instance, model_EnumerationLiteralExpression)
 
-@given(instance=model::OpaqueExpression_strategy)
+@given(instance=model_OpaqueExpression_strategy)
 @settings(max_examples=50)
-def test_model::opaqueexpression_instantiation(instance):
-    assert isinstance(instance, model::OpaqueExpression)
-
-@given(instance=model::OpaqueExpression_strategy)
-def test_model::opaqueexpression_expression_type(instance):
-    assert isinstance(instance.expression, str)
+def test_model_opaqueexpression_instantiation(instance):
+    assert isinstance(instance, model_OpaqueExpression)
 
 
-@given(instance=model::OpaqueExpression_strategy)
-def test_model::opaqueexpression_expression_setter(instance):
+
+@given(instance=model_OpaqueExpression_strategy)
+def test_model_opaqueexpression_expression_setter(instance):
     original = instance.expression
     instance.expression = original
     assert instance.expression == original
@@ -2833,210 +2806,210 @@ def test_model::opaqueexpression_expression_setter(instance):
 def test_logicexpression_instantiation(instance):
     assert isinstance(instance, LogicExpression)
 
-@given(instance=model::ElseExpression_strategy)
+@given(instance=model_PredicateExpression_strategy)
 @settings(max_examples=50)
-def test_model::elseexpression_instantiation(instance):
-    assert isinstance(instance, model::ElseExpression)
+def test_model_predicateexpression_instantiation(instance):
+    assert isinstance(instance, model_PredicateExpression)
 
-@given(instance=model::PredicateExpression_strategy)
+@given(instance=model_ElseExpression_strategy)
 @settings(max_examples=50)
-def test_model::predicateexpression_instantiation(instance):
-    assert isinstance(instance, model::PredicateExpression)
+def test_model_elseexpression_instantiation(instance):
+    assert isinstance(instance, model_ElseExpression)
 
-@given(instance=model::BooleanExpression_strategy)
+@given(instance=model_BooleanExpression_strategy)
 @settings(max_examples=50)
-def test_model::booleanexpression_instantiation(instance):
-    assert isinstance(instance, model::BooleanExpression)
+def test_model_booleanexpression_instantiation(instance):
+    assert isinstance(instance, model_BooleanExpression)
 
-@given(instance=model::LogicExpression_strategy)
+@given(instance=model_LogicExpression_strategy)
 @settings(max_examples=50)
-def test_model::logicexpression_instantiation(instance):
-    assert isinstance(instance, model::LogicExpression)
+def test_model_logicexpression_instantiation(instance):
+    assert isinstance(instance, model_LogicExpression)
 
-@given(instance=model::ArithmeticExpression_strategy)
+@given(instance=model_ArithmeticExpression_strategy)
 @settings(max_examples=50)
-def test_model::arithmeticexpression_instantiation(instance):
-    assert isinstance(instance, model::ArithmeticExpression)
+def test_model_arithmeticexpression_instantiation(instance):
+    assert isinstance(instance, model_ArithmeticExpression)
 
-@given(instance=model::MultiaryExpression_strategy)
+@given(instance=model_MultiaryExpression_strategy)
 @settings(max_examples=50)
-def test_model::multiaryexpression_instantiation(instance):
-    assert isinstance(instance, model::MultiaryExpression)
+def test_model_multiaryexpression_instantiation(instance):
+    assert isinstance(instance, model_MultiaryExpression)
 
-@given(instance=model::BinaryExpression_strategy)
+@given(instance=model_BinaryExpression_strategy)
 @settings(max_examples=50)
-def test_model::binaryexpression_instantiation(instance):
-    assert isinstance(instance, model::BinaryExpression)
+def test_model_binaryexpression_instantiation(instance):
+    assert isinstance(instance, model_BinaryExpression)
 
 @given(instance=CompositeTypeDefinition_strategy)
 @settings(max_examples=50)
 def test_compositetypedefinition_instantiation(instance):
     assert isinstance(instance, CompositeTypeDefinition)
 
-@given(instance=model::FunctionTypeDefinition_strategy)
+@given(instance=model_FunctionTypeDefinition_strategy)
 @settings(max_examples=50)
-def test_model::functiontypedefinition_instantiation(instance):
-    assert isinstance(instance, model::FunctionTypeDefinition)
+def test_model_functiontypedefinition_instantiation(instance):
+    assert isinstance(instance, model_FunctionTypeDefinition)
 
-@given(instance=model::RecordTypeDefinition_strategy)
+@given(instance=model_RecordTypeDefinition_strategy)
 @settings(max_examples=50)
-def test_model::recordtypedefinition_instantiation(instance):
-    assert isinstance(instance, model::RecordTypeDefinition)
+def test_model_recordtypedefinition_instantiation(instance):
+    assert isinstance(instance, model_RecordTypeDefinition)
 
 @given(instance=EnumerableTypeDefinition_strategy)
 @settings(max_examples=50)
 def test_enumerabletypedefinition_instantiation(instance):
     assert isinstance(instance, EnumerableTypeDefinition)
 
-@given(instance=model::ArrayTypeDefinition_strategy)
+@given(instance=model_ArrayTypeDefinition_strategy)
 @settings(max_examples=50)
-def test_model::arraytypedefinition_instantiation(instance):
-    assert isinstance(instance, model::ArrayTypeDefinition)
+def test_model_arraytypedefinition_instantiation(instance):
+    assert isinstance(instance, model_ArrayTypeDefinition)
 
-@given(instance=model::IntegerRangeTypeDefinition_strategy)
+@given(instance=model_IntegerRangeTypeDefinition_strategy)
 @settings(max_examples=50)
-def test_model::integerrangetypedefinition_instantiation(instance):
-    assert isinstance(instance, model::IntegerRangeTypeDefinition)
+def test_model_integerrangetypedefinition_instantiation(instance):
+    assert isinstance(instance, model_IntegerRangeTypeDefinition)
 
-@given(instance=model::EnumerationTypeDefinition_strategy)
+@given(instance=model_EnumerationTypeDefinition_strategy)
 @settings(max_examples=50)
-def test_model::enumerationtypedefinition_instantiation(instance):
-    assert isinstance(instance, model::EnumerationTypeDefinition)
+def test_model_enumerationtypedefinition_instantiation(instance):
+    assert isinstance(instance, model_EnumerationTypeDefinition)
 
-@given(instance=model::EnumerableTypeDefinition_strategy)
+@given(instance=model_EnumerableTypeDefinition_strategy)
 @settings(max_examples=50)
-def test_model::enumerabletypedefinition_instantiation(instance):
-    assert isinstance(instance, model::EnumerableTypeDefinition)
+def test_model_enumerabletypedefinition_instantiation(instance):
+    assert isinstance(instance, model_EnumerableTypeDefinition)
 
 @given(instance=Declaration_strategy)
 @settings(max_examples=50)
 def test_declaration_instantiation(instance):
     assert isinstance(instance, Declaration)
 
-@given(instance=model::ValueDeclaration_strategy)
+@given(instance=model_ValueDeclaration_strategy)
 @settings(max_examples=50)
-def test_model::valuedeclaration_instantiation(instance):
-    assert isinstance(instance, model::ValueDeclaration)
+def test_model_valuedeclaration_instantiation(instance):
+    assert isinstance(instance, model_ValueDeclaration)
 
-@given(instance=model::Type_strategy)
+@given(instance=model_Type_strategy)
 @settings(max_examples=50)
-def test_model::type_instantiation(instance):
-    assert isinstance(instance, model::Type)
+def test_model_type_instantiation(instance):
+    assert isinstance(instance, model_Type)
 
-@given(instance=model::BasicConstraintDefinition_strategy)
+@given(instance=model_BasicConstraintDefinition_strategy)
 @settings(max_examples=50)
-def test_model::basicconstraintdefinition_instantiation(instance):
-    assert isinstance(instance, model::BasicConstraintDefinition)
+def test_model_basicconstraintdefinition_instantiation(instance):
+    assert isinstance(instance, model_BasicConstraintDefinition)
 
-@given(instance=model::TypeDeclaration_strategy)
+@given(instance=model_TypeDeclaration_strategy)
 @settings(max_examples=50)
-def test_model::typedeclaration_instantiation(instance):
-    assert isinstance(instance, model::TypeDeclaration)
+def test_model_typedeclaration_instantiation(instance):
+    assert isinstance(instance, model_TypeDeclaration)
 
 @given(instance=ParametricElement_strategy)
 @settings(max_examples=50)
 def test_parametricelement_instantiation(instance):
     assert isinstance(instance, ParametricElement)
 
-@given(instance=model::FunctionDeclaration_strategy)
+@given(instance=model_QuantifierExpression_strategy)
 @settings(max_examples=50)
-def test_model::functiondeclaration_instantiation(instance):
-    assert isinstance(instance, model::FunctionDeclaration)
+def test_model_quantifierexpression_instantiation(instance):
+    assert isinstance(instance, model_QuantifierExpression)
 
-@given(instance=model::QuantifierExpression_strategy)
+@given(instance=model_FunctionDeclaration_strategy)
 @settings(max_examples=50)
-def test_model::quantifierexpression_instantiation(instance):
-    assert isinstance(instance, model::QuantifierExpression)
+def test_model_functiondeclaration_instantiation(instance):
+    assert isinstance(instance, model_FunctionDeclaration)
 
 @given(instance=NamedElement_strategy)
 @settings(max_examples=50)
 def test_namedelement_instantiation(instance):
     assert isinstance(instance, NamedElement)
 
-@given(instance=model::InitializableElement_strategy)
+@given(instance=model_InitializableElement_strategy)
 @settings(max_examples=50)
-def test_model::initializableelement_instantiation(instance):
-    assert isinstance(instance, model::InitializableElement)
+def test_model_initializableelement_instantiation(instance):
+    assert isinstance(instance, model_InitializableElement)
 
-@given(instance=model::Declaration_strategy)
+@given(instance=model_Declaration_strategy)
 @settings(max_examples=50)
-def test_model::declaration_instantiation(instance):
-    assert isinstance(instance, model::Declaration)
+def test_model_declaration_instantiation(instance):
+    assert isinstance(instance, model_Declaration)
 
-@given(instance=model::EnumerationLiteralDefinition_strategy)
+@given(instance=model_EnumerationLiteralDefinition_strategy)
 @settings(max_examples=50)
-def test_model::enumerationliteraldefinition_instantiation(instance):
-    assert isinstance(instance, model::EnumerationLiteralDefinition)
+def test_model_enumerationliteraldefinition_instantiation(instance):
+    assert isinstance(instance, model_EnumerationLiteralDefinition)
 
-@given(instance=model::ExpressionPackage_strategy)
+@given(instance=model_ExpressionPackage_strategy)
 @settings(max_examples=50)
-def test_model::expressionpackage_instantiation(instance):
-    assert isinstance(instance, model::ExpressionPackage)
+def test_model_expressionpackage_instantiation(instance):
+    assert isinstance(instance, model_ExpressionPackage)
 
 @given(instance=NumericalTypeDefinition_strategy)
 @settings(max_examples=50)
 def test_numericaltypedefinition_instantiation(instance):
     assert isinstance(instance, NumericalTypeDefinition)
 
-@given(instance=model::DecimalTypeDefinition_strategy)
+@given(instance=model_DecimalTypeDefinition_strategy)
 @settings(max_examples=50)
-def test_model::decimaltypedefinition_instantiation(instance):
-    assert isinstance(instance, model::DecimalTypeDefinition)
+def test_model_decimaltypedefinition_instantiation(instance):
+    assert isinstance(instance, model_DecimalTypeDefinition)
 
-@given(instance=model::RationalTypeDefinition_strategy)
+@given(instance=model_SubrangeTypeDefinition_strategy)
 @settings(max_examples=50)
-def test_model::rationaltypedefinition_instantiation(instance):
-    assert isinstance(instance, model::RationalTypeDefinition)
+def test_model_subrangetypedefinition_instantiation(instance):
+    assert isinstance(instance, model_SubrangeTypeDefinition)
 
-@given(instance=model::SubrangeTypeDefinition_strategy)
+@given(instance=model_RationalTypeDefinition_strategy)
 @settings(max_examples=50)
-def test_model::subrangetypedefinition_instantiation(instance):
-    assert isinstance(instance, model::SubrangeTypeDefinition)
+def test_model_rationaltypedefinition_instantiation(instance):
+    assert isinstance(instance, model_RationalTypeDefinition)
 
-@given(instance=model::IntegerTypeDefinition_strategy)
+@given(instance=model_IntegerTypeDefinition_strategy)
 @settings(max_examples=50)
-def test_model::integertypedefinition_instantiation(instance):
-    assert isinstance(instance, model::IntegerTypeDefinition)
+def test_model_integertypedefinition_instantiation(instance):
+    assert isinstance(instance, model_IntegerTypeDefinition)
 
 @given(instance=TypeDefinition_strategy)
 @settings(max_examples=50)
 def test_typedefinition_instantiation(instance):
     assert isinstance(instance, TypeDefinition)
 
-@given(instance=model::BooleanTypeDefinition_strategy)
+@given(instance=model_BooleanTypeDefinition_strategy)
 @settings(max_examples=50)
-def test_model::booleantypedefinition_instantiation(instance):
-    assert isinstance(instance, model::BooleanTypeDefinition)
+def test_model_booleantypedefinition_instantiation(instance):
+    assert isinstance(instance, model_BooleanTypeDefinition)
 
-@given(instance=model::VoidTypeDefinition_strategy)
+@given(instance=model_VoidTypeDefinition_strategy)
 @settings(max_examples=50)
-def test_model::voidtypedefinition_instantiation(instance):
-    assert isinstance(instance, model::VoidTypeDefinition)
+def test_model_voidtypedefinition_instantiation(instance):
+    assert isinstance(instance, model_VoidTypeDefinition)
 
-@given(instance=model::CompositeTypeDefinition_strategy)
+@given(instance=model_CompositeTypeDefinition_strategy)
 @settings(max_examples=50)
-def test_model::compositetypedefinition_instantiation(instance):
-    assert isinstance(instance, model::CompositeTypeDefinition)
+def test_model_compositetypedefinition_instantiation(instance):
+    assert isinstance(instance, model_CompositeTypeDefinition)
 
-@given(instance=model::NumericalTypeDefinition_strategy)
+@given(instance=model_NumericalTypeDefinition_strategy)
 @settings(max_examples=50)
-def test_model::numericaltypedefinition_instantiation(instance):
-    assert isinstance(instance, model::NumericalTypeDefinition)
+def test_model_numericaltypedefinition_instantiation(instance):
+    assert isinstance(instance, model_NumericalTypeDefinition)
 
 @given(instance=Type_strategy)
 @settings(max_examples=50)
 def test_type_instantiation(instance):
     assert isinstance(instance, Type)
 
-@given(instance=model::TypeDefinition_strategy)
+@given(instance=model_TypeDefinition_strategy)
 @settings(max_examples=50)
-def test_model::typedefinition_instantiation(instance):
-    assert isinstance(instance, model::TypeDefinition)
+def test_model_typedefinition_instantiation(instance):
+    assert isinstance(instance, model_TypeDefinition)
 
-@given(instance=model::TypeReference_strategy)
+@given(instance=model_TypeReference_strategy)
 @settings(max_examples=50)
-def test_model::typereference_instantiation(instance):
-    assert isinstance(instance, model::TypeReference)
+def test_model_typereference_instantiation(instance):
+    assert isinstance(instance, model_TypeReference)
 
 @given(instance=FunctionDeclaration_strategy)
 @settings(max_examples=50)
@@ -3048,84 +3021,78 @@ def test_functiondeclaration_instantiation(instance):
 def test_initializableelement_instantiation(instance):
     assert isinstance(instance, InitializableElement)
 
-@given(instance=model::LambdaDeclaration_strategy)
+@given(instance=model_LambdaDeclaration_strategy)
 @settings(max_examples=50)
-def test_model::lambdadeclaration_instantiation(instance):
-    assert isinstance(instance, model::LambdaDeclaration)
+def test_model_lambdadeclaration_instantiation(instance):
+    assert isinstance(instance, model_LambdaDeclaration)
 
 @given(instance=ValueDeclaration_strategy)
 @settings(max_examples=50)
 def test_valuedeclaration_instantiation(instance):
     assert isinstance(instance, ValueDeclaration)
 
-@given(instance=model::FieldDeclaration_strategy)
+@given(instance=model_FieldDeclaration_strategy)
 @settings(max_examples=50)
-def test_model::fielddeclaration_instantiation(instance):
-    assert isinstance(instance, model::FieldDeclaration)
+def test_model_fielddeclaration_instantiation(instance):
+    assert isinstance(instance, model_FieldDeclaration)
 
-@given(instance=model::ConstantDeclaration_strategy)
+@given(instance=model_ConstantDeclaration_strategy)
 @settings(max_examples=50)
-def test_model::constantdeclaration_instantiation(instance):
-    assert isinstance(instance, model::ConstantDeclaration)
+def test_model_constantdeclaration_instantiation(instance):
+    assert isinstance(instance, model_ConstantDeclaration)
 
-@given(instance=model::VariableDeclaration_strategy)
+@given(instance=model_VariableDeclaration_strategy)
 @settings(max_examples=50)
-def test_model::variabledeclaration_instantiation(instance):
-    assert isinstance(instance, model::VariableDeclaration)
+def test_model_variabledeclaration_instantiation(instance):
+    assert isinstance(instance, model_VariableDeclaration)
 
-@given(instance=model::Comment_strategy)
+@given(instance=model_Comment_strategy)
 @settings(max_examples=50)
-def test_model::comment_instantiation(instance):
-    assert isinstance(instance, model::Comment)
-
-@given(instance=model::Comment_strategy)
-def test_model::comment_comment_type(instance):
-    assert isinstance(instance.comment, str)
+def test_model_comment_instantiation(instance):
+    assert isinstance(instance, model_Comment)
 
 
-@given(instance=model::Comment_strategy)
-def test_model::comment_comment_setter(instance):
+
+@given(instance=model_Comment_strategy)
+def test_model_comment_comment_setter(instance):
     original = instance.comment
     instance.comment = original
     assert instance.comment == original
 
-@given(instance=model::CommentableElement_strategy)
+@given(instance=model_CommentableElement_strategy)
 @settings(max_examples=50)
-def test_model::commentableelement_instantiation(instance):
-    assert isinstance(instance, model::CommentableElement)
+def test_model_commentableelement_instantiation(instance):
+    assert isinstance(instance, model_CommentableElement)
 
-@given(instance=model::NamedElement_strategy)
+@given(instance=model_NamedElement_strategy)
 @settings(max_examples=50)
-def test_model::namedelement_instantiation(instance):
-    assert isinstance(instance, model::NamedElement)
-
-@given(instance=model::NamedElement_strategy)
-def test_model::namedelement_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_model_namedelement_instantiation(instance):
+    assert isinstance(instance, model_NamedElement)
 
 
-@given(instance=model::NamedElement_strategy)
-def test_model::namedelement_name_setter(instance):
+
+@given(instance=model_NamedElement_strategy)
+def test_model_namedelement_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=model::Expression_strategy)
+@given(instance=model_Expression_strategy)
 @settings(max_examples=50)
-def test_model::expression_instantiation(instance):
-    assert isinstance(instance, model::Expression)
+def test_model_expression_instantiation(instance):
+    assert isinstance(instance, model_Expression)
 
-@given(instance=model::ArgumentedElement_strategy)
+@given(instance=model_ArgumentedElement_strategy)
 @settings(max_examples=50)
-def test_model::argumentedelement_instantiation(instance):
-    assert isinstance(instance, model::ArgumentedElement)
+def test_model_argumentedelement_instantiation(instance):
+    assert isinstance(instance, model_ArgumentedElement)
 
-@given(instance=model::ParameterDeclaration_strategy)
+@given(instance=model_ParameterDeclaration_strategy)
 @settings(max_examples=50)
-def test_model::parameterdeclaration_instantiation(instance):
-    assert isinstance(instance, model::ParameterDeclaration)
+def test_model_parameterdeclaration_instantiation(instance):
+    assert isinstance(instance, model_ParameterDeclaration)
 
-@given(instance=model::ParametricElement_strategy)
+@given(instance=model_ParametricElement_strategy)
 @settings(max_examples=50)
-def test_model::parametricelement_instantiation(instance):
-    assert isinstance(instance, model::ParametricElement)
+def test_model_parametricelement_instantiation(instance):
+    assert isinstance(instance, model_ParametricElement)

@@ -3,11 +3,11 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    simple::metrics::Metric,
-    simple::metrics::MetricsSet,
+from python_code import (
+    simple_metrics_Metric,
+    simple_metrics_MetricsSet,
 )
 
 # =============================================================================
@@ -16,57 +16,57 @@ from classes import (
 
 
 
-def test_simple::metrics::metric_is_not_abstract():
-    assert not inspect.isabstract(simple::metrics::Metric)
+def test_simple_metrics_metric_is_not_abstract():
+    assert not inspect.isabstract(simple_metrics_Metric)
 
 
-def test_simple::metrics::metric_constructor_exists():
-    assert callable(simple::metrics::Metric.__init__)
+def test_simple_metrics_metric_constructor_exists():
+    assert callable(simple_metrics_Metric.__init__)
 
 
-def test_simple::metrics::metric_constructor_args():
-    sig = inspect.signature(simple::metrics::Metric.__init__)
+def test_simple_metrics_metric_constructor_args():
+    sig = inspect.signature(simple_metrics_Metric.__init__)
     params = list(sig.parameters.keys())
-    assert "value" in params, "Missing parameter 'value'"
     assert "name" in params, "Missing parameter 'name'"
+    assert "value" in params, "Missing parameter 'value'"
 
-def test_simple::metrics::metric_has_value():
-    assert hasattr(simple::metrics::Metric, "value")
+def test_simple_metrics_metric_has_name():
+    assert hasattr(simple_metrics_Metric, "name")
     descriptor = None
-    for klass in simple::metrics::Metric.__mro__:
-        if "value" in klass.__dict__:
-            descriptor = klass.__dict__["value"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_simple::metrics::metric_has_name():
-    assert hasattr(simple::metrics::Metric, "name")
-    descriptor = None
-    for klass in simple::metrics::Metric.__mro__:
+    for klass in simple_metrics_Metric.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
+def test_simple_metrics_metric_has_value():
+    assert hasattr(simple_metrics_Metric, "value")
+    descriptor = None
+    for klass in simple_metrics_Metric.__mro__:
+        if "value" in klass.__dict__:
+            descriptor = klass.__dict__["value"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_simple::metrics::metricsset_is_not_abstract():
-    assert not inspect.isabstract(simple::metrics::MetricsSet)
+
+def test_simple_metrics_metricsset_is_not_abstract():
+    assert not inspect.isabstract(simple_metrics_MetricsSet)
 
 
-def test_simple::metrics::metricsset_constructor_exists():
-    assert callable(simple::metrics::MetricsSet.__init__)
+def test_simple_metrics_metricsset_constructor_exists():
+    assert callable(simple_metrics_MetricsSet.__init__)
 
 
-def test_simple::metrics::metricsset_constructor_args():
-    sig = inspect.signature(simple::metrics::MetricsSet.__init__)
+def test_simple_metrics_metricsset_constructor_args():
+    sig = inspect.signature(simple_metrics_MetricsSet.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_simple::metrics::metricsset_has_name():
-    assert hasattr(simple::metrics::MetricsSet, "name")
+def test_simple_metrics_metricsset_has_name():
+    assert hasattr(simple_metrics_MetricsSet, "name")
     descriptor = None
-    for klass in simple::metrics::MetricsSet.__mro__:
+    for klass in simple_metrics_MetricsSet.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -84,58 +84,49 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-simple::metrics::Metric_strategy = st.builds(
-    simple::metrics::Metric,
-    value=
+simple_metrics_Metric_strategy = st.builds(
+    simple_metrics_Metric,
+    name=
         safe_text,
-    name=
+    value=
         safe_text
 )
-simple::metrics::MetricsSet_strategy = st.builds(
-    simple::metrics::MetricsSet,
+simple_metrics_MetricsSet_strategy = st.builds(
+    simple_metrics_MetricsSet,
     name=
         safe_text
 )
 
-@given(instance=simple::metrics::Metric_strategy)
+@given(instance=simple_metrics_Metric_strategy)
 @settings(max_examples=50)
-def test_simple::metrics::metric_instantiation(instance):
-    assert isinstance(instance, simple::metrics::Metric)
-
-@given(instance=simple::metrics::Metric_strategy)
-def test_simple::metrics::metric_value_type(instance):
-    assert isinstance(instance.value, str)
+def test_simple_metrics_metric_instantiation(instance):
+    assert isinstance(instance, simple_metrics_Metric)
 
 
-@given(instance=simple::metrics::Metric_strategy)
-def test_simple::metrics::metric_value_setter(instance):
-    original = instance.value
-    instance.value = original
-    assert instance.value == original
 
-@given(instance=simple::metrics::Metric_strategy)
-def test_simple::metrics::metric_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=simple::metrics::Metric_strategy)
-def test_simple::metrics::metric_name_setter(instance):
+@given(instance=simple_metrics_Metric_strategy)
+def test_simple_metrics_metric_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=simple::metrics::MetricsSet_strategy)
+
+
+@given(instance=simple_metrics_Metric_strategy)
+def test_simple_metrics_metric_value_setter(instance):
+    original = instance.value
+    instance.value = original
+    assert instance.value == original
+
+@given(instance=simple_metrics_MetricsSet_strategy)
 @settings(max_examples=50)
-def test_simple::metrics::metricsset_instantiation(instance):
-    assert isinstance(instance, simple::metrics::MetricsSet)
-
-@given(instance=simple::metrics::MetricsSet_strategy)
-def test_simple::metrics::metricsset_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_simple_metrics_metricsset_instantiation(instance):
+    assert isinstance(instance, simple_metrics_MetricsSet)
 
 
-@given(instance=simple::metrics::MetricsSet_strategy)
-def test_simple::metrics::metricsset_name_setter(instance):
+
+@given(instance=simple_metrics_MetricsSet_strategy)
+def test_simple_metrics_metricsset_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original

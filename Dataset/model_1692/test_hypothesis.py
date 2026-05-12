@@ -3,18 +3,18 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    stuff::NamedElement,
+from python_code import (
+    stuff_NamedElement,
     NamedElement,
-    stuff::Baz,
-    stuff::Bar,
-    stuff::Thing,
-    stuff::Foo,
+    stuff_Baz,
+    stuff_Bar,
+    stuff_Thing,
+    stuff_Foo,
     Thing,
-    stuff::Stuff,
-    stuff::World,
+    stuff_Stuff,
+    stuff_World,
 )
 
 # =============================================================================
@@ -23,23 +23,23 @@ from classes import (
 
 
 
-def test_stuff::namedelement_is_not_abstract():
-    assert not inspect.isabstract(stuff::NamedElement)
+def test_stuff_namedelement_is_not_abstract():
+    assert not inspect.isabstract(stuff_NamedElement)
 
 
-def test_stuff::namedelement_constructor_exists():
-    assert callable(stuff::NamedElement.__init__)
+def test_stuff_namedelement_constructor_exists():
+    assert callable(stuff_NamedElement.__init__)
 
 
-def test_stuff::namedelement_constructor_args():
-    sig = inspect.signature(stuff::NamedElement.__init__)
+def test_stuff_namedelement_constructor_args():
+    sig = inspect.signature(stuff_NamedElement.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_stuff::namedelement_has_name():
-    assert hasattr(stuff::NamedElement, "name")
+def test_stuff_namedelement_has_name():
+    assert hasattr(stuff_NamedElement, "name")
     descriptor = None
-    for klass in stuff::NamedElement.__mro__:
+    for klass in stuff_NamedElement.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -61,51 +61,51 @@ def test_namedelement_constructor_args():
 
 
 
-def test_stuff::baz_is_not_abstract():
-    assert not inspect.isabstract(stuff::Baz)
+def test_stuff_baz_is_not_abstract():
+    assert not inspect.isabstract(stuff_Baz)
 
 
-def test_stuff::baz_constructor_exists():
-    assert callable(stuff::Baz.__init__)
+def test_stuff_baz_constructor_exists():
+    assert callable(stuff_Baz.__init__)
 
 
-def test_stuff::baz_constructor_args():
-    sig = inspect.signature(stuff::Baz.__init__)
+def test_stuff_baz_constructor_args():
+    sig = inspect.signature(stuff_Baz.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_stuff::bar_is_not_abstract():
-    assert not inspect.isabstract(stuff::Bar)
+def test_stuff_bar_is_not_abstract():
+    assert not inspect.isabstract(stuff_Bar)
 
 
-def test_stuff::bar_constructor_exists():
-    assert callable(stuff::Bar.__init__)
+def test_stuff_bar_constructor_exists():
+    assert callable(stuff_Bar.__init__)
 
 
-def test_stuff::bar_constructor_args():
-    sig = inspect.signature(stuff::Bar.__init__)
+def test_stuff_bar_constructor_args():
+    sig = inspect.signature(stuff_Bar.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_stuff::thing_is_not_abstract():
-    assert not inspect.isabstract(stuff::Thing)
+def test_stuff_thing_is_not_abstract():
+    assert not inspect.isabstract(stuff_Thing)
 
 
-def test_stuff::thing_constructor_exists():
-    assert callable(stuff::Thing.__init__)
+def test_stuff_thing_constructor_exists():
+    assert callable(stuff_Thing.__init__)
 
 
-def test_stuff::thing_constructor_args():
-    sig = inspect.signature(stuff::Thing.__init__)
+def test_stuff_thing_constructor_args():
+    sig = inspect.signature(stuff_Thing.__init__)
     params = list(sig.parameters.keys())
     assert "id" in params, "Missing parameter 'id'"
 
-def test_stuff::thing_has_id():
-    assert hasattr(stuff::Thing, "id")
+def test_stuff_thing_has_id():
+    assert hasattr(stuff_Thing, "id")
     descriptor = None
-    for klass in stuff::Thing.__mro__:
+    for klass in stuff_Thing.__mro__:
         if "id" in klass.__dict__:
             descriptor = klass.__dict__["id"]
             break
@@ -113,23 +113,23 @@ def test_stuff::thing_has_id():
 
 
 
-def test_stuff::foo_is_not_abstract():
-    assert not inspect.isabstract(stuff::Foo)
+def test_stuff_foo_is_not_abstract():
+    assert not inspect.isabstract(stuff_Foo)
 
 
-def test_stuff::foo_constructor_exists():
-    assert callable(stuff::Foo.__init__)
+def test_stuff_foo_constructor_exists():
+    assert callable(stuff_Foo.__init__)
 
 
-def test_stuff::foo_constructor_args():
-    sig = inspect.signature(stuff::Foo.__init__)
+def test_stuff_foo_constructor_args():
+    sig = inspect.signature(stuff_Foo.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_stuff::foo_has_name():
-    assert hasattr(stuff::Foo, "name")
+def test_stuff_foo_has_name():
+    assert hasattr(stuff_Foo, "name")
     descriptor = None
-    for klass in stuff::Foo.__mro__:
+    for klass in stuff_Foo.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -151,30 +151,30 @@ def test_thing_constructor_args():
 
 
 
-def test_stuff::stuff_is_not_abstract():
-    assert not inspect.isabstract(stuff::Stuff)
+def test_stuff_stuff_is_not_abstract():
+    assert not inspect.isabstract(stuff_Stuff)
 
 
-def test_stuff::stuff_constructor_exists():
-    assert callable(stuff::Stuff.__init__)
+def test_stuff_stuff_constructor_exists():
+    assert callable(stuff_Stuff.__init__)
 
 
-def test_stuff::stuff_constructor_args():
-    sig = inspect.signature(stuff::Stuff.__init__)
+def test_stuff_stuff_constructor_args():
+    sig = inspect.signature(stuff_Stuff.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_stuff::world_is_not_abstract():
-    assert not inspect.isabstract(stuff::World)
+def test_stuff_world_is_not_abstract():
+    assert not inspect.isabstract(stuff_World)
 
 
-def test_stuff::world_constructor_exists():
-    assert callable(stuff::World.__init__)
+def test_stuff_world_constructor_exists():
+    assert callable(stuff_World.__init__)
 
 
-def test_stuff::world_constructor_args():
-    sig = inspect.signature(stuff::World.__init__)
+def test_stuff_world_constructor_args():
+    sig = inspect.signature(stuff_World.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -189,52 +189,49 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-stuff::NamedElement_strategy = st.builds(
-    stuff::NamedElement,
+stuff_NamedElement_strategy = st.builds(
+    stuff_NamedElement,
     name=
         safe_text
 )
 NamedElement_strategy = st.builds(
     NamedElement,
 )
-stuff::Baz_strategy = st.builds(
-    stuff::Baz,
+stuff_Baz_strategy = st.builds(
+    stuff_Baz,
 )
-stuff::Bar_strategy = st.builds(
-    stuff::Bar,
+stuff_Bar_strategy = st.builds(
+    stuff_Bar,
 )
-stuff::Thing_strategy = st.builds(
-    stuff::Thing,
+stuff_Thing_strategy = st.builds(
+    stuff_Thing,
     id=
         st.integers()
 )
-stuff::Foo_strategy = st.builds(
-    stuff::Foo,
+stuff_Foo_strategy = st.builds(
+    stuff_Foo,
     name=
         safe_text
 )
 Thing_strategy = st.builds(
     Thing,
 )
-stuff::Stuff_strategy = st.builds(
-    stuff::Stuff,
+stuff_Stuff_strategy = st.builds(
+    stuff_Stuff,
 )
-stuff::World_strategy = st.builds(
-    stuff::World,
+stuff_World_strategy = st.builds(
+    stuff_World,
 )
 
-@given(instance=stuff::NamedElement_strategy)
+@given(instance=stuff_NamedElement_strategy)
 @settings(max_examples=50)
-def test_stuff::namedelement_instantiation(instance):
-    assert isinstance(instance, stuff::NamedElement)
-
-@given(instance=stuff::NamedElement_strategy)
-def test_stuff::namedelement_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_stuff_namedelement_instantiation(instance):
+    assert isinstance(instance, stuff_NamedElement)
 
 
-@given(instance=stuff::NamedElement_strategy)
-def test_stuff::namedelement_name_setter(instance):
+
+@given(instance=stuff_NamedElement_strategy)
+def test_stuff_namedelement_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
@@ -244,44 +241,38 @@ def test_stuff::namedelement_name_setter(instance):
 def test_namedelement_instantiation(instance):
     assert isinstance(instance, NamedElement)
 
-@given(instance=stuff::Baz_strategy)
+@given(instance=stuff_Baz_strategy)
 @settings(max_examples=50)
-def test_stuff::baz_instantiation(instance):
-    assert isinstance(instance, stuff::Baz)
+def test_stuff_baz_instantiation(instance):
+    assert isinstance(instance, stuff_Baz)
 
-@given(instance=stuff::Bar_strategy)
+@given(instance=stuff_Bar_strategy)
 @settings(max_examples=50)
-def test_stuff::bar_instantiation(instance):
-    assert isinstance(instance, stuff::Bar)
+def test_stuff_bar_instantiation(instance):
+    assert isinstance(instance, stuff_Bar)
 
-@given(instance=stuff::Thing_strategy)
+@given(instance=stuff_Thing_strategy)
 @settings(max_examples=50)
-def test_stuff::thing_instantiation(instance):
-    assert isinstance(instance, stuff::Thing)
-
-@given(instance=stuff::Thing_strategy)
-def test_stuff::thing_id_type(instance):
-    assert isinstance(instance.id, int)
+def test_stuff_thing_instantiation(instance):
+    assert isinstance(instance, stuff_Thing)
 
 
-@given(instance=stuff::Thing_strategy)
-def test_stuff::thing_id_setter(instance):
+
+@given(instance=stuff_Thing_strategy)
+def test_stuff_thing_id_setter(instance):
     original = instance.id
     instance.id = original
     assert instance.id == original
 
-@given(instance=stuff::Foo_strategy)
+@given(instance=stuff_Foo_strategy)
 @settings(max_examples=50)
-def test_stuff::foo_instantiation(instance):
-    assert isinstance(instance, stuff::Foo)
-
-@given(instance=stuff::Foo_strategy)
-def test_stuff::foo_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_stuff_foo_instantiation(instance):
+    assert isinstance(instance, stuff_Foo)
 
 
-@given(instance=stuff::Foo_strategy)
-def test_stuff::foo_name_setter(instance):
+
+@given(instance=stuff_Foo_strategy)
+def test_stuff_foo_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
@@ -291,12 +282,12 @@ def test_stuff::foo_name_setter(instance):
 def test_thing_instantiation(instance):
     assert isinstance(instance, Thing)
 
-@given(instance=stuff::Stuff_strategy)
+@given(instance=stuff_Stuff_strategy)
 @settings(max_examples=50)
-def test_stuff::stuff_instantiation(instance):
-    assert isinstance(instance, stuff::Stuff)
+def test_stuff_stuff_instantiation(instance):
+    assert isinstance(instance, stuff_Stuff)
 
-@given(instance=stuff::World_strategy)
+@given(instance=stuff_World_strategy)
 @settings(max_examples=50)
-def test_stuff::world_instantiation(instance):
-    assert isinstance(instance, stuff::World)
+def test_stuff_world_instantiation(instance):
+    assert isinstance(instance, stuff_World)

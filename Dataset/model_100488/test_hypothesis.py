@@ -3,32 +3,32 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    UMLMetamodelFragment::Event,
+from python_code import (
+    UMLMetamodelFragment_Event,
     Event,
-    UMLMetamodelFragment::Transition,
+    UMLMetamodelFragment_Transition,
     CompositeState,
-    UMLMetamodelFragment::StateVertex,
+    UMLMetamodelFragment_StateVertex,
     Transition,
     Stereotype,
     Class,
     StateMachine,
-    UMLMetamodelFragment::Dependency,
-    UMLMetamodelFragment::Generalization_,
+    UMLMetamodelFragment_Dependency,
+    UMLMetamodelFragment_Generalization_,
     Dependency,
     Generalization_,
-    UMLMetamodelFragment::Class,
+    UMLMetamodelFragment_Class,
     StateVertex,
-    UMLMetamodelFragment::PseudoState,
-    UMLMetamodelFragment::State,
+    UMLMetamodelFragment_PseudoState,
+    UMLMetamodelFragment_State,
     State,
-    UMLMetamodelFragment::FinalState,
-    UMLMetamodelFragment::SimpleState,
-    UMLMetamodelFragment::CompositeState,
-    UMLMetamodelFragment::StateMachine,
-    UMLMetamodelFragment::Stereotype,
+    UMLMetamodelFragment_FinalState,
+    UMLMetamodelFragment_SimpleState,
+    UMLMetamodelFragment_CompositeState,
+    UMLMetamodelFragment_StateMachine,
+    UMLMetamodelFragment_Stereotype,
 )
 
 # =============================================================================
@@ -37,16 +37,16 @@ from classes import (
 
 
 
-def test_umlmetamodelfragment::event_is_not_abstract():
-    assert not inspect.isabstract(UMLMetamodelFragment::Event)
+def test_umlmetamodelfragment_event_is_not_abstract():
+    assert not inspect.isabstract(UMLMetamodelFragment_Event)
 
 
-def test_umlmetamodelfragment::event_constructor_exists():
-    assert callable(UMLMetamodelFragment::Event.__init__)
+def test_umlmetamodelfragment_event_constructor_exists():
+    assert callable(UMLMetamodelFragment_Event.__init__)
 
 
-def test_umlmetamodelfragment::event_constructor_args():
-    sig = inspect.signature(UMLMetamodelFragment::Event.__init__)
+def test_umlmetamodelfragment_event_constructor_args():
+    sig = inspect.signature(UMLMetamodelFragment_Event.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -65,16 +65,16 @@ def test_event_constructor_args():
 
 
 
-def test_umlmetamodelfragment::transition_is_not_abstract():
-    assert not inspect.isabstract(UMLMetamodelFragment::Transition)
+def test_umlmetamodelfragment_transition_is_not_abstract():
+    assert not inspect.isabstract(UMLMetamodelFragment_Transition)
 
 
-def test_umlmetamodelfragment::transition_constructor_exists():
-    assert callable(UMLMetamodelFragment::Transition.__init__)
+def test_umlmetamodelfragment_transition_constructor_exists():
+    assert callable(UMLMetamodelFragment_Transition.__init__)
 
 
-def test_umlmetamodelfragment::transition_constructor_args():
-    sig = inspect.signature(UMLMetamodelFragment::Transition.__init__)
+def test_umlmetamodelfragment_transition_constructor_args():
+    sig = inspect.signature(UMLMetamodelFragment_Transition.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -93,16 +93,16 @@ def test_compositestate_constructor_args():
 
 
 
-def test_umlmetamodelfragment::statevertex_is_not_abstract():
-    assert not inspect.isabstract(UMLMetamodelFragment::StateVertex)
+def test_umlmetamodelfragment_statevertex_is_not_abstract():
+    assert not inspect.isabstract(UMLMetamodelFragment_StateVertex)
 
 
-def test_umlmetamodelfragment::statevertex_constructor_exists():
-    assert callable(UMLMetamodelFragment::StateVertex.__init__)
+def test_umlmetamodelfragment_statevertex_constructor_exists():
+    assert callable(UMLMetamodelFragment_StateVertex.__init__)
 
 
-def test_umlmetamodelfragment::statevertex_constructor_args():
-    sig = inspect.signature(UMLMetamodelFragment::StateVertex.__init__)
+def test_umlmetamodelfragment_statevertex_constructor_args():
+    sig = inspect.signature(UMLMetamodelFragment_StateVertex.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -163,30 +163,30 @@ def test_statemachine_constructor_args():
 
 
 
-def test_umlmetamodelfragment::dependency_is_not_abstract():
-    assert not inspect.isabstract(UMLMetamodelFragment::Dependency)
+def test_umlmetamodelfragment_dependency_is_not_abstract():
+    assert not inspect.isabstract(UMLMetamodelFragment_Dependency)
 
 
-def test_umlmetamodelfragment::dependency_constructor_exists():
-    assert callable(UMLMetamodelFragment::Dependency.__init__)
+def test_umlmetamodelfragment_dependency_constructor_exists():
+    assert callable(UMLMetamodelFragment_Dependency.__init__)
 
 
-def test_umlmetamodelfragment::dependency_constructor_args():
-    sig = inspect.signature(UMLMetamodelFragment::Dependency.__init__)
+def test_umlmetamodelfragment_dependency_constructor_args():
+    sig = inspect.signature(UMLMetamodelFragment_Dependency.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_umlmetamodelfragment::generalization__is_not_abstract():
-    assert not inspect.isabstract(UMLMetamodelFragment::Generalization_)
+def test_umlmetamodelfragment_generalization__is_not_abstract():
+    assert not inspect.isabstract(UMLMetamodelFragment_Generalization_)
 
 
-def test_umlmetamodelfragment::generalization__constructor_exists():
-    assert callable(UMLMetamodelFragment::Generalization_.__init__)
+def test_umlmetamodelfragment_generalization__constructor_exists():
+    assert callable(UMLMetamodelFragment_Generalization_.__init__)
 
 
-def test_umlmetamodelfragment::generalization__constructor_args():
-    sig = inspect.signature(UMLMetamodelFragment::Generalization_.__init__)
+def test_umlmetamodelfragment_generalization__constructor_args():
+    sig = inspect.signature(UMLMetamodelFragment_Generalization_.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -219,16 +219,16 @@ def test_generalization__constructor_args():
 
 
 
-def test_umlmetamodelfragment::class_is_not_abstract():
-    assert not inspect.isabstract(UMLMetamodelFragment::Class)
+def test_umlmetamodelfragment_class_is_not_abstract():
+    assert not inspect.isabstract(UMLMetamodelFragment_Class)
 
 
-def test_umlmetamodelfragment::class_constructor_exists():
-    assert callable(UMLMetamodelFragment::Class.__init__)
+def test_umlmetamodelfragment_class_constructor_exists():
+    assert callable(UMLMetamodelFragment_Class.__init__)
 
 
-def test_umlmetamodelfragment::class_constructor_args():
-    sig = inspect.signature(UMLMetamodelFragment::Class.__init__)
+def test_umlmetamodelfragment_class_constructor_args():
+    sig = inspect.signature(UMLMetamodelFragment_Class.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -247,30 +247,30 @@ def test_statevertex_constructor_args():
 
 
 
-def test_umlmetamodelfragment::pseudostate_is_not_abstract():
-    assert not inspect.isabstract(UMLMetamodelFragment::PseudoState)
+def test_umlmetamodelfragment_pseudostate_is_not_abstract():
+    assert not inspect.isabstract(UMLMetamodelFragment_PseudoState)
 
 
-def test_umlmetamodelfragment::pseudostate_constructor_exists():
-    assert callable(UMLMetamodelFragment::PseudoState.__init__)
+def test_umlmetamodelfragment_pseudostate_constructor_exists():
+    assert callable(UMLMetamodelFragment_PseudoState.__init__)
 
 
-def test_umlmetamodelfragment::pseudostate_constructor_args():
-    sig = inspect.signature(UMLMetamodelFragment::PseudoState.__init__)
+def test_umlmetamodelfragment_pseudostate_constructor_args():
+    sig = inspect.signature(UMLMetamodelFragment_PseudoState.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_umlmetamodelfragment::state_is_not_abstract():
-    assert not inspect.isabstract(UMLMetamodelFragment::State)
+def test_umlmetamodelfragment_state_is_not_abstract():
+    assert not inspect.isabstract(UMLMetamodelFragment_State)
 
 
-def test_umlmetamodelfragment::state_constructor_exists():
-    assert callable(UMLMetamodelFragment::State.__init__)
+def test_umlmetamodelfragment_state_constructor_exists():
+    assert callable(UMLMetamodelFragment_State.__init__)
 
 
-def test_umlmetamodelfragment::state_constructor_args():
-    sig = inspect.signature(UMLMetamodelFragment::State.__init__)
+def test_umlmetamodelfragment_state_constructor_args():
+    sig = inspect.signature(UMLMetamodelFragment_State.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -289,79 +289,79 @@ def test_state_constructor_args():
 
 
 
-def test_umlmetamodelfragment::finalstate_is_not_abstract():
-    assert not inspect.isabstract(UMLMetamodelFragment::FinalState)
+def test_umlmetamodelfragment_finalstate_is_not_abstract():
+    assert not inspect.isabstract(UMLMetamodelFragment_FinalState)
 
 
-def test_umlmetamodelfragment::finalstate_constructor_exists():
-    assert callable(UMLMetamodelFragment::FinalState.__init__)
+def test_umlmetamodelfragment_finalstate_constructor_exists():
+    assert callable(UMLMetamodelFragment_FinalState.__init__)
 
 
-def test_umlmetamodelfragment::finalstate_constructor_args():
-    sig = inspect.signature(UMLMetamodelFragment::FinalState.__init__)
+def test_umlmetamodelfragment_finalstate_constructor_args():
+    sig = inspect.signature(UMLMetamodelFragment_FinalState.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_umlmetamodelfragment::simplestate_is_not_abstract():
-    assert not inspect.isabstract(UMLMetamodelFragment::SimpleState)
+def test_umlmetamodelfragment_simplestate_is_not_abstract():
+    assert not inspect.isabstract(UMLMetamodelFragment_SimpleState)
 
 
-def test_umlmetamodelfragment::simplestate_constructor_exists():
-    assert callable(UMLMetamodelFragment::SimpleState.__init__)
+def test_umlmetamodelfragment_simplestate_constructor_exists():
+    assert callable(UMLMetamodelFragment_SimpleState.__init__)
 
 
-def test_umlmetamodelfragment::simplestate_constructor_args():
-    sig = inspect.signature(UMLMetamodelFragment::SimpleState.__init__)
+def test_umlmetamodelfragment_simplestate_constructor_args():
+    sig = inspect.signature(UMLMetamodelFragment_SimpleState.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_umlmetamodelfragment::compositestate_is_not_abstract():
-    assert not inspect.isabstract(UMLMetamodelFragment::CompositeState)
+def test_umlmetamodelfragment_compositestate_is_not_abstract():
+    assert not inspect.isabstract(UMLMetamodelFragment_CompositeState)
 
 
-def test_umlmetamodelfragment::compositestate_constructor_exists():
-    assert callable(UMLMetamodelFragment::CompositeState.__init__)
+def test_umlmetamodelfragment_compositestate_constructor_exists():
+    assert callable(UMLMetamodelFragment_CompositeState.__init__)
 
 
-def test_umlmetamodelfragment::compositestate_constructor_args():
-    sig = inspect.signature(UMLMetamodelFragment::CompositeState.__init__)
+def test_umlmetamodelfragment_compositestate_constructor_args():
+    sig = inspect.signature(UMLMetamodelFragment_CompositeState.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_umlmetamodelfragment::statemachine_is_not_abstract():
-    assert not inspect.isabstract(UMLMetamodelFragment::StateMachine)
+def test_umlmetamodelfragment_statemachine_is_not_abstract():
+    assert not inspect.isabstract(UMLMetamodelFragment_StateMachine)
 
 
-def test_umlmetamodelfragment::statemachine_constructor_exists():
-    assert callable(UMLMetamodelFragment::StateMachine.__init__)
+def test_umlmetamodelfragment_statemachine_constructor_exists():
+    assert callable(UMLMetamodelFragment_StateMachine.__init__)
 
 
-def test_umlmetamodelfragment::statemachine_constructor_args():
-    sig = inspect.signature(UMLMetamodelFragment::StateMachine.__init__)
+def test_umlmetamodelfragment_statemachine_constructor_args():
+    sig = inspect.signature(UMLMetamodelFragment_StateMachine.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_umlmetamodelfragment::stereotype_is_not_abstract():
-    assert not inspect.isabstract(UMLMetamodelFragment::Stereotype)
+def test_umlmetamodelfragment_stereotype_is_not_abstract():
+    assert not inspect.isabstract(UMLMetamodelFragment_Stereotype)
 
 
-def test_umlmetamodelfragment::stereotype_constructor_exists():
-    assert callable(UMLMetamodelFragment::Stereotype.__init__)
+def test_umlmetamodelfragment_stereotype_constructor_exists():
+    assert callable(UMLMetamodelFragment_Stereotype.__init__)
 
 
-def test_umlmetamodelfragment::stereotype_constructor_args():
-    sig = inspect.signature(UMLMetamodelFragment::Stereotype.__init__)
+def test_umlmetamodelfragment_stereotype_constructor_args():
+    sig = inspect.signature(UMLMetamodelFragment_Stereotype.__init__)
     params = list(sig.parameters.keys())
     assert "baseClass" in params, "Missing parameter 'baseClass'"
 
-def test_umlmetamodelfragment::stereotype_has_baseClass():
-    assert hasattr(UMLMetamodelFragment::Stereotype, "baseClass")
+def test_umlmetamodelfragment_stereotype_has_baseClass():
+    assert hasattr(UMLMetamodelFragment_Stereotype, "baseClass")
     descriptor = None
-    for klass in UMLMetamodelFragment::Stereotype.__mro__:
+    for klass in UMLMetamodelFragment_Stereotype.__mro__:
         if "baseClass" in klass.__dict__:
             descriptor = klass.__dict__["baseClass"]
             break
@@ -379,20 +379,20 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-UMLMetamodelFragment::Event_strategy = st.builds(
-    UMLMetamodelFragment::Event,
+UMLMetamodelFragment_Event_strategy = st.builds(
+    UMLMetamodelFragment_Event,
 )
 Event_strategy = st.builds(
     Event,
 )
-UMLMetamodelFragment::Transition_strategy = st.builds(
-    UMLMetamodelFragment::Transition,
+UMLMetamodelFragment_Transition_strategy = st.builds(
+    UMLMetamodelFragment_Transition,
 )
 CompositeState_strategy = st.builds(
     CompositeState,
 )
-UMLMetamodelFragment::StateVertex_strategy = st.builds(
-    UMLMetamodelFragment::StateVertex,
+UMLMetamodelFragment_StateVertex_strategy = st.builds(
+    UMLMetamodelFragment_StateVertex,
 )
 Transition_strategy = st.builds(
     Transition,
@@ -406,11 +406,11 @@ Class_strategy = st.builds(
 StateMachine_strategy = st.builds(
     StateMachine,
 )
-UMLMetamodelFragment::Dependency_strategy = st.builds(
-    UMLMetamodelFragment::Dependency,
+UMLMetamodelFragment_Dependency_strategy = st.builds(
+    UMLMetamodelFragment_Dependency,
 )
-UMLMetamodelFragment::Generalization__strategy = st.builds(
-    UMLMetamodelFragment::Generalization_,
+UMLMetamodelFragment_Generalization__strategy = st.builds(
+    UMLMetamodelFragment_Generalization_,
 )
 Dependency_strategy = st.builds(
     Dependency,
@@ -418,63 +418,63 @@ Dependency_strategy = st.builds(
 Generalization__strategy = st.builds(
     Generalization_,
 )
-UMLMetamodelFragment::Class_strategy = st.builds(
-    UMLMetamodelFragment::Class,
+UMLMetamodelFragment_Class_strategy = st.builds(
+    UMLMetamodelFragment_Class,
 )
 StateVertex_strategy = st.builds(
     StateVertex,
 )
-UMLMetamodelFragment::PseudoState_strategy = st.builds(
-    UMLMetamodelFragment::PseudoState,
+UMLMetamodelFragment_PseudoState_strategy = st.builds(
+    UMLMetamodelFragment_PseudoState,
 )
-UMLMetamodelFragment::State_strategy = st.builds(
-    UMLMetamodelFragment::State,
+UMLMetamodelFragment_State_strategy = st.builds(
+    UMLMetamodelFragment_State,
 )
 State_strategy = st.builds(
     State,
 )
-UMLMetamodelFragment::FinalState_strategy = st.builds(
-    UMLMetamodelFragment::FinalState,
+UMLMetamodelFragment_FinalState_strategy = st.builds(
+    UMLMetamodelFragment_FinalState,
 )
-UMLMetamodelFragment::SimpleState_strategy = st.builds(
-    UMLMetamodelFragment::SimpleState,
+UMLMetamodelFragment_SimpleState_strategy = st.builds(
+    UMLMetamodelFragment_SimpleState,
 )
-UMLMetamodelFragment::CompositeState_strategy = st.builds(
-    UMLMetamodelFragment::CompositeState,
+UMLMetamodelFragment_CompositeState_strategy = st.builds(
+    UMLMetamodelFragment_CompositeState,
 )
-UMLMetamodelFragment::StateMachine_strategy = st.builds(
-    UMLMetamodelFragment::StateMachine,
+UMLMetamodelFragment_StateMachine_strategy = st.builds(
+    UMLMetamodelFragment_StateMachine,
 )
-UMLMetamodelFragment::Stereotype_strategy = st.builds(
-    UMLMetamodelFragment::Stereotype,
+UMLMetamodelFragment_Stereotype_strategy = st.builds(
+    UMLMetamodelFragment_Stereotype,
     baseClass=
         safe_text
 )
 
-@given(instance=UMLMetamodelFragment::Event_strategy)
+@given(instance=UMLMetamodelFragment_Event_strategy)
 @settings(max_examples=50)
-def test_umlmetamodelfragment::event_instantiation(instance):
-    assert isinstance(instance, UMLMetamodelFragment::Event)
+def test_umlmetamodelfragment_event_instantiation(instance):
+    assert isinstance(instance, UMLMetamodelFragment_Event)
 
 @given(instance=Event_strategy)
 @settings(max_examples=50)
 def test_event_instantiation(instance):
     assert isinstance(instance, Event)
 
-@given(instance=UMLMetamodelFragment::Transition_strategy)
+@given(instance=UMLMetamodelFragment_Transition_strategy)
 @settings(max_examples=50)
-def test_umlmetamodelfragment::transition_instantiation(instance):
-    assert isinstance(instance, UMLMetamodelFragment::Transition)
+def test_umlmetamodelfragment_transition_instantiation(instance):
+    assert isinstance(instance, UMLMetamodelFragment_Transition)
 
 @given(instance=CompositeState_strategy)
 @settings(max_examples=50)
 def test_compositestate_instantiation(instance):
     assert isinstance(instance, CompositeState)
 
-@given(instance=UMLMetamodelFragment::StateVertex_strategy)
+@given(instance=UMLMetamodelFragment_StateVertex_strategy)
 @settings(max_examples=50)
-def test_umlmetamodelfragment::statevertex_instantiation(instance):
-    assert isinstance(instance, UMLMetamodelFragment::StateVertex)
+def test_umlmetamodelfragment_statevertex_instantiation(instance):
+    assert isinstance(instance, UMLMetamodelFragment_StateVertex)
 
 @given(instance=Transition_strategy)
 @settings(max_examples=50)
@@ -496,15 +496,15 @@ def test_class_instantiation(instance):
 def test_statemachine_instantiation(instance):
     assert isinstance(instance, StateMachine)
 
-@given(instance=UMLMetamodelFragment::Dependency_strategy)
+@given(instance=UMLMetamodelFragment_Dependency_strategy)
 @settings(max_examples=50)
-def test_umlmetamodelfragment::dependency_instantiation(instance):
-    assert isinstance(instance, UMLMetamodelFragment::Dependency)
+def test_umlmetamodelfragment_dependency_instantiation(instance):
+    assert isinstance(instance, UMLMetamodelFragment_Dependency)
 
-@given(instance=UMLMetamodelFragment::Generalization__strategy)
+@given(instance=UMLMetamodelFragment_Generalization__strategy)
 @settings(max_examples=50)
-def test_umlmetamodelfragment::generalization__instantiation(instance):
-    assert isinstance(instance, UMLMetamodelFragment::Generalization_)
+def test_umlmetamodelfragment_generalization__instantiation(instance):
+    assert isinstance(instance, UMLMetamodelFragment_Generalization_)
 
 @given(instance=Dependency_strategy)
 @settings(max_examples=50)
@@ -516,63 +516,60 @@ def test_dependency_instantiation(instance):
 def test_generalization__instantiation(instance):
     assert isinstance(instance, Generalization_)
 
-@given(instance=UMLMetamodelFragment::Class_strategy)
+@given(instance=UMLMetamodelFragment_Class_strategy)
 @settings(max_examples=50)
-def test_umlmetamodelfragment::class_instantiation(instance):
-    assert isinstance(instance, UMLMetamodelFragment::Class)
+def test_umlmetamodelfragment_class_instantiation(instance):
+    assert isinstance(instance, UMLMetamodelFragment_Class)
 
 @given(instance=StateVertex_strategy)
 @settings(max_examples=50)
 def test_statevertex_instantiation(instance):
     assert isinstance(instance, StateVertex)
 
-@given(instance=UMLMetamodelFragment::PseudoState_strategy)
+@given(instance=UMLMetamodelFragment_PseudoState_strategy)
 @settings(max_examples=50)
-def test_umlmetamodelfragment::pseudostate_instantiation(instance):
-    assert isinstance(instance, UMLMetamodelFragment::PseudoState)
+def test_umlmetamodelfragment_pseudostate_instantiation(instance):
+    assert isinstance(instance, UMLMetamodelFragment_PseudoState)
 
-@given(instance=UMLMetamodelFragment::State_strategy)
+@given(instance=UMLMetamodelFragment_State_strategy)
 @settings(max_examples=50)
-def test_umlmetamodelfragment::state_instantiation(instance):
-    assert isinstance(instance, UMLMetamodelFragment::State)
+def test_umlmetamodelfragment_state_instantiation(instance):
+    assert isinstance(instance, UMLMetamodelFragment_State)
 
 @given(instance=State_strategy)
 @settings(max_examples=50)
 def test_state_instantiation(instance):
     assert isinstance(instance, State)
 
-@given(instance=UMLMetamodelFragment::FinalState_strategy)
+@given(instance=UMLMetamodelFragment_FinalState_strategy)
 @settings(max_examples=50)
-def test_umlmetamodelfragment::finalstate_instantiation(instance):
-    assert isinstance(instance, UMLMetamodelFragment::FinalState)
+def test_umlmetamodelfragment_finalstate_instantiation(instance):
+    assert isinstance(instance, UMLMetamodelFragment_FinalState)
 
-@given(instance=UMLMetamodelFragment::SimpleState_strategy)
+@given(instance=UMLMetamodelFragment_SimpleState_strategy)
 @settings(max_examples=50)
-def test_umlmetamodelfragment::simplestate_instantiation(instance):
-    assert isinstance(instance, UMLMetamodelFragment::SimpleState)
+def test_umlmetamodelfragment_simplestate_instantiation(instance):
+    assert isinstance(instance, UMLMetamodelFragment_SimpleState)
 
-@given(instance=UMLMetamodelFragment::CompositeState_strategy)
+@given(instance=UMLMetamodelFragment_CompositeState_strategy)
 @settings(max_examples=50)
-def test_umlmetamodelfragment::compositestate_instantiation(instance):
-    assert isinstance(instance, UMLMetamodelFragment::CompositeState)
+def test_umlmetamodelfragment_compositestate_instantiation(instance):
+    assert isinstance(instance, UMLMetamodelFragment_CompositeState)
 
-@given(instance=UMLMetamodelFragment::StateMachine_strategy)
+@given(instance=UMLMetamodelFragment_StateMachine_strategy)
 @settings(max_examples=50)
-def test_umlmetamodelfragment::statemachine_instantiation(instance):
-    assert isinstance(instance, UMLMetamodelFragment::StateMachine)
+def test_umlmetamodelfragment_statemachine_instantiation(instance):
+    assert isinstance(instance, UMLMetamodelFragment_StateMachine)
 
-@given(instance=UMLMetamodelFragment::Stereotype_strategy)
+@given(instance=UMLMetamodelFragment_Stereotype_strategy)
 @settings(max_examples=50)
-def test_umlmetamodelfragment::stereotype_instantiation(instance):
-    assert isinstance(instance, UMLMetamodelFragment::Stereotype)
-
-@given(instance=UMLMetamodelFragment::Stereotype_strategy)
-def test_umlmetamodelfragment::stereotype_baseClass_type(instance):
-    assert isinstance(instance.baseClass, str)
+def test_umlmetamodelfragment_stereotype_instantiation(instance):
+    assert isinstance(instance, UMLMetamodelFragment_Stereotype)
 
 
-@given(instance=UMLMetamodelFragment::Stereotype_strategy)
-def test_umlmetamodelfragment::stereotype_baseClass_setter(instance):
+
+@given(instance=UMLMetamodelFragment_Stereotype_strategy)
+def test_umlmetamodelfragment_stereotype_baseClass_setter(instance):
     original = instance.baseClass
     instance.baseClass = original
     assert instance.baseClass == original

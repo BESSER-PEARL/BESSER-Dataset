@@ -3,10 +3,10 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    panamaRelational::PanamaOfficers,
+from python_code import (
+    panamaRelational_PanamaOfficers,
 )
 
 # =============================================================================
@@ -15,33 +15,33 @@ from classes import (
 
 
 
-def test_panamarelational::panamaofficers_is_not_abstract():
-    assert not inspect.isabstract(panamaRelational::PanamaOfficers)
+def test_panamarelational_panamaofficers_is_not_abstract():
+    assert not inspect.isabstract(panamaRelational_PanamaOfficers)
 
 
-def test_panamarelational::panamaofficers_constructor_exists():
-    assert callable(panamaRelational::PanamaOfficers.__init__)
+def test_panamarelational_panamaofficers_constructor_exists():
+    assert callable(panamaRelational_PanamaOfficers.__init__)
 
 
-def test_panamarelational::panamaofficers_constructor_args():
-    sig = inspect.signature(panamaRelational::PanamaOfficers.__init__)
+def test_panamarelational_panamaofficers_constructor_args():
+    sig = inspect.signature(panamaRelational_PanamaOfficers.__init__)
     params = list(sig.parameters.keys())
     assert "company" in params, "Missing parameter 'company'"
     assert "name" in params, "Missing parameter 'name'"
 
-def test_panamarelational::panamaofficers_has_company():
-    assert hasattr(panamaRelational::PanamaOfficers, "company")
+def test_panamarelational_panamaofficers_has_company():
+    assert hasattr(panamaRelational_PanamaOfficers, "company")
     descriptor = None
-    for klass in panamaRelational::PanamaOfficers.__mro__:
+    for klass in panamaRelational_PanamaOfficers.__mro__:
         if "company" in klass.__dict__:
             descriptor = klass.__dict__["company"]
             break
     assert isinstance(descriptor, property)
 
-def test_panamarelational::panamaofficers_has_name():
-    assert hasattr(panamaRelational::PanamaOfficers, "name")
+def test_panamarelational_panamaofficers_has_name():
+    assert hasattr(panamaRelational_PanamaOfficers, "name")
     descriptor = None
-    for klass in panamaRelational::PanamaOfficers.__mro__:
+    for klass in panamaRelational_PanamaOfficers.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -59,37 +59,31 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-panamaRelational::PanamaOfficers_strategy = st.builds(
-    panamaRelational::PanamaOfficers,
+panamaRelational_PanamaOfficers_strategy = st.builds(
+    panamaRelational_PanamaOfficers,
     company=
         safe_text,
     name=
         safe_text
 )
 
-@given(instance=panamaRelational::PanamaOfficers_strategy)
+@given(instance=panamaRelational_PanamaOfficers_strategy)
 @settings(max_examples=50)
-def test_panamarelational::panamaofficers_instantiation(instance):
-    assert isinstance(instance, panamaRelational::PanamaOfficers)
-
-@given(instance=panamaRelational::PanamaOfficers_strategy)
-def test_panamarelational::panamaofficers_company_type(instance):
-    assert isinstance(instance.company, str)
+def test_panamarelational_panamaofficers_instantiation(instance):
+    assert isinstance(instance, panamaRelational_PanamaOfficers)
 
 
-@given(instance=panamaRelational::PanamaOfficers_strategy)
-def test_panamarelational::panamaofficers_company_setter(instance):
+
+@given(instance=panamaRelational_PanamaOfficers_strategy)
+def test_panamarelational_panamaofficers_company_setter(instance):
     original = instance.company
     instance.company = original
     assert instance.company == original
 
-@given(instance=panamaRelational::PanamaOfficers_strategy)
-def test_panamarelational::panamaofficers_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
-@given(instance=panamaRelational::PanamaOfficers_strategy)
-def test_panamarelational::panamaofficers_name_setter(instance):
+@given(instance=panamaRelational_PanamaOfficers_strategy)
+def test_panamarelational_panamaofficers_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original

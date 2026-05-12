@@ -3,134 +3,134 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    postfix::expressionR,
-    struct::or::union::specifier,
-    labeled::statement,
-    identifier::listR,
-    identifier::list,
-    direct::declarator,
-    declaration::specifiers,
-    myDsl::argument::expression::list,
-    myDsl::EObject,
-    abstract::declarator,
-    myDsl::argument::expression::listR,
-    type::specifier,
-    myDsl::atomic::type::specifier,
-    myDsl::struct::or::union::specifier,
+from python_code import (
+    postfix_expressionR,
+    struct_or_union_specifier,
+    labeled_statement,
+    identifier_listR,
+    identifier_list,
+    direct_declarator,
+    declaration_specifiers,
+    myDsl_argument_expression_list,
+    myDsl_EObject,
+    abstract_declarator,
+    myDsl_argument_expression_listR,
+    type_specifier,
+    myDsl_atomic_type_specifier,
+    myDsl_struct_or_union_specifier,
     declaration,
-    myDsl::struct::declaration,
-    myDsl::struct::declaration::list,
-    myDsl::struct::declarator::listR,
-    myDsl::struct::declarator,
-    myDsl::struct::declarator::list,
-    myDsl::struct::declaration::listR,
-    myDsl::type::specifier,
-    struct::declaration,
-    myDsl::static::assert::declaration,
-    type::name,
-    myDsl::specifier::qualifier::list,
-    myDsl::designator::listR,
-    myDsl::designator,
+    myDsl_struct_declaration,
+    myDsl_struct_declaration_list,
+    myDsl_struct_declarator_listR,
+    myDsl_struct_declarator,
+    myDsl_struct_declarator_list,
+    myDsl_struct_declaration_listR,
+    myDsl_type_specifier,
+    struct_declaration,
+    myDsl_static_assert_declaration,
+    type_name,
+    myDsl_specifier_qualifier_list,
+    myDsl_designator_listR,
+    myDsl_designator,
     designation,
-    atomic::type::specifier,
-    static::assert::declaration,
+    atomic_type_specifier,
+    static_assert_declaration,
     designator,
-    myDsl::designation,
-    myDsl::postfix::expressionR,
-    myDsl::primary::expression,
-    unary::expression,
-    myDsl::postfix::expression,
-    cast::expression,
-    myDsl::designator::list,
-    myDsl::initializer::listR,
-    myDsl::cast::expression,
-    myDsl::multiplicative::expressionR,
-    myDsl::additive::expressionR,
-    myDsl::multiplicative::expression,
-    myDsl::type::name,
-    myDsl::unary::expression,
+    myDsl_designation,
+    myDsl_postfix_expressionR,
+    myDsl_primary_expression,
+    unary_expression,
+    myDsl_postfix_expression,
+    cast_expression,
+    myDsl_designator_list,
+    myDsl_initializer_listR,
+    myDsl_cast_expression,
+    myDsl_multiplicative_expressionR,
+    myDsl_additive_expressionR,
+    myDsl_multiplicative_expression,
+    myDsl_type_name,
+    myDsl_unary_expression,
     initializer,
-    myDsl::initializer::list,
-    myDsl::relational::expressionR,
-    myDsl::shift::expression,
-    myDsl::equality::expressionR,
-    myDsl::relational::expression,
-    shift::expression,
-    myDsl::additive::expression,
-    myDsl::shift::expressionR,
-    myDsl::inclusive::or::expressionR,
-    myDsl::exclusive::or::expression,
-    myDsl::logical::and::expressionR,
-    myDsl::equality::expression,
-    myDsl::and::expressionR,
-    myDsl::exclusive::or::expressionR,
-    myDsl::and::expression,
-    constant::expression,
-    assignment::expression,
-    myDsl::conditional::expression,
-    myDsl::expressionR,
-    primary::expression,
-    myDsl::StringC,
-    expression::statement,
-    jump::statement,
-    myDsl::IDENTIFIER,
-    myDsl::inclusive::or::expression,
-    myDsl::logical::or::expressionR,
-    myDsl::logical::and::expression,
-    conditional::expression,
-    myDsl::logical::or::expression,
-    myDsl::initializer,
-    myDsl::init::declarator::listR,
-    myDsl::init::declarator,
-    myDsl::init::declarator::list,
-    parameter::declaration,
-    block::item,
-    myDsl::statement,
-    myDsl::block::item::listR,
-    myDsl::block::item,
-    compound::statement,
-    myDsl::block::item::list,
+    myDsl_initializer_list,
+    myDsl_relational_expressionR,
+    myDsl_shift_expression,
+    myDsl_equality_expressionR,
+    myDsl_relational_expression,
+    shift_expression,
+    myDsl_additive_expression,
+    myDsl_shift_expressionR,
+    myDsl_inclusive_or_expressionR,
+    myDsl_exclusive_or_expression,
+    myDsl_logical_and_expressionR,
+    myDsl_equality_expression,
+    myDsl_and_expressionR,
+    myDsl_exclusive_or_expressionR,
+    myDsl_and_expression,
+    constant_expression,
+    assignment_expression,
+    myDsl_conditional_expression,
+    myDsl_expressionR,
+    primary_expression,
+    myDsl_StringC,
+    expression_statement,
+    jump_statement,
+    myDsl_IDENTIFIER,
+    myDsl_inclusive_or_expression,
+    myDsl_logical_or_expressionR,
+    myDsl_logical_and_expression,
+    conditional_expression,
+    myDsl_logical_or_expression,
+    myDsl_initializer,
+    myDsl_init_declarator_listR,
+    myDsl_init_declarator,
+    myDsl_init_declarator_list,
+    parameter_declaration,
+    block_item,
+    myDsl_statement,
+    myDsl_block_item_listR,
+    myDsl_block_item,
+    compound_statement,
+    myDsl_block_item_list,
     statement,
-    myDsl::selection::statement,
-    myDsl::jump::statement,
-    myDsl::expression::statement,
-    myDsl::expression,
-    myDsl::iteration::statement,
-    myDsl::labeled::statement,
-    myDsl::parameter::listR,
-    myDsl::parameter::declaration,
-    parameter::type::list,
-    myDsl::parameter::list,
-    myDsl::identifier::listR,
-    myDsl::declaration::listR,
-    myDsl::abstract::declarator,
-    myDsl::type::qualifier::listR,
+    myDsl_jump_statement,
+    myDsl_selection_statement,
+    myDsl_expression_statement,
+    myDsl_expression,
+    myDsl_iteration_statement,
+    myDsl_labeled_statement,
+    myDsl_parameter_listR,
+    myDsl_parameter_declaration,
+    parameter_type_list,
+    myDsl_parameter_list,
+    myDsl_identifier_listR,
+    myDsl_declaration_listR,
+    myDsl_abstract_declarator,
+    myDsl_type_qualifier_listR,
     pointer,
-    myDsl::type::qualifier::list,
-    myDsl::pointer,
-    struct::declarator,
-    myDsl::constant::expression,
-    init::declarator,
-    myDsl::compound::statement,
-    myDsl::identifier::list,
-    myDsl::parameter::type::list,
-    myDsl::assignment::expression,
-    myDsl::direct::declaratorR,
+    myDsl_type_qualifier_list,
+    myDsl_pointer,
+    struct_declarator,
+    myDsl_constant_expression,
+    init_declarator,
+    myDsl_compound_statement,
+    myDsl_identifier_list,
+    myDsl_parameter_type_list,
+    myDsl_assignment_expression,
+    myDsl_direct_declaratorR,
     declarator,
-    myDsl::direct::declarator,
-    myDsl::external::declaration,
-    myDsl::translation::unit,
-    myDsl::Model,
-    myDsl::declaration::list,
-    myDsl::declarator,
-    external::declaration,
-    myDsl::declaration,
-    myDsl::function::definition,
-    myDsl::declaration::specifiers,
-    myDsl::translation::unitR,
+    myDsl_direct_declarator,
+    myDsl_external_declaration,
+    myDsl_translation_unit,
+    myDsl_Model,
+    myDsl_declaration_list,
+    myDsl_declarator,
+    external_declaration,
+    myDsl_declaration,
+    myDsl_function_definition,
+    myDsl_declaration_specifiers,
+    myDsl_translation_unitR,
 )
 
 # =============================================================================
@@ -139,205 +139,205 @@ from classes import (
 
 
 
-def test_postfix::expressionr_is_not_abstract():
-    assert not inspect.isabstract(postfix::expressionR)
+def test_postfix_expressionr_is_not_abstract():
+    assert not inspect.isabstract(postfix_expressionR)
 
 
-def test_postfix::expressionr_constructor_exists():
-    assert callable(postfix::expressionR.__init__)
+def test_postfix_expressionr_constructor_exists():
+    assert callable(postfix_expressionR.__init__)
 
 
-def test_postfix::expressionr_constructor_args():
-    sig = inspect.signature(postfix::expressionR.__init__)
+def test_postfix_expressionr_constructor_args():
+    sig = inspect.signature(postfix_expressionR.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_struct::or::union::specifier_is_not_abstract():
-    assert not inspect.isabstract(struct::or::union::specifier)
+def test_struct_or_union_specifier_is_not_abstract():
+    assert not inspect.isabstract(struct_or_union_specifier)
 
 
-def test_struct::or::union::specifier_constructor_exists():
-    assert callable(struct::or::union::specifier.__init__)
+def test_struct_or_union_specifier_constructor_exists():
+    assert callable(struct_or_union_specifier.__init__)
 
 
-def test_struct::or::union::specifier_constructor_args():
-    sig = inspect.signature(struct::or::union::specifier.__init__)
+def test_struct_or_union_specifier_constructor_args():
+    sig = inspect.signature(struct_or_union_specifier.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_labeled::statement_is_not_abstract():
-    assert not inspect.isabstract(labeled::statement)
+def test_labeled_statement_is_not_abstract():
+    assert not inspect.isabstract(labeled_statement)
 
 
-def test_labeled::statement_constructor_exists():
-    assert callable(labeled::statement.__init__)
+def test_labeled_statement_constructor_exists():
+    assert callable(labeled_statement.__init__)
 
 
-def test_labeled::statement_constructor_args():
-    sig = inspect.signature(labeled::statement.__init__)
+def test_labeled_statement_constructor_args():
+    sig = inspect.signature(labeled_statement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_identifier::listr_is_not_abstract():
-    assert not inspect.isabstract(identifier::listR)
+def test_identifier_listr_is_not_abstract():
+    assert not inspect.isabstract(identifier_listR)
 
 
-def test_identifier::listr_constructor_exists():
-    assert callable(identifier::listR.__init__)
+def test_identifier_listr_constructor_exists():
+    assert callable(identifier_listR.__init__)
 
 
-def test_identifier::listr_constructor_args():
-    sig = inspect.signature(identifier::listR.__init__)
+def test_identifier_listr_constructor_args():
+    sig = inspect.signature(identifier_listR.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_identifier::list_is_not_abstract():
-    assert not inspect.isabstract(identifier::list)
+def test_identifier_list_is_not_abstract():
+    assert not inspect.isabstract(identifier_list)
 
 
-def test_identifier::list_constructor_exists():
-    assert callable(identifier::list.__init__)
+def test_identifier_list_constructor_exists():
+    assert callable(identifier_list.__init__)
 
 
-def test_identifier::list_constructor_args():
-    sig = inspect.signature(identifier::list.__init__)
+def test_identifier_list_constructor_args():
+    sig = inspect.signature(identifier_list.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_direct::declarator_is_not_abstract():
-    assert not inspect.isabstract(direct::declarator)
+def test_direct_declarator_is_not_abstract():
+    assert not inspect.isabstract(direct_declarator)
 
 
-def test_direct::declarator_constructor_exists():
-    assert callable(direct::declarator.__init__)
+def test_direct_declarator_constructor_exists():
+    assert callable(direct_declarator.__init__)
 
 
-def test_direct::declarator_constructor_args():
-    sig = inspect.signature(direct::declarator.__init__)
+def test_direct_declarator_constructor_args():
+    sig = inspect.signature(direct_declarator.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_declaration::specifiers_is_not_abstract():
-    assert not inspect.isabstract(declaration::specifiers)
+def test_declaration_specifiers_is_not_abstract():
+    assert not inspect.isabstract(declaration_specifiers)
 
 
-def test_declaration::specifiers_constructor_exists():
-    assert callable(declaration::specifiers.__init__)
+def test_declaration_specifiers_constructor_exists():
+    assert callable(declaration_specifiers.__init__)
 
 
-def test_declaration::specifiers_constructor_args():
-    sig = inspect.signature(declaration::specifiers.__init__)
+def test_declaration_specifiers_constructor_args():
+    sig = inspect.signature(declaration_specifiers.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_mydsl::argument::expression::list_is_not_abstract():
-    assert not inspect.isabstract(myDsl::argument::expression::list)
+def test_mydsl_argument_expression_list_is_not_abstract():
+    assert not inspect.isabstract(myDsl_argument_expression_list)
 
 
-def test_mydsl::argument::expression::list_constructor_exists():
-    assert callable(myDsl::argument::expression::list.__init__)
+def test_mydsl_argument_expression_list_constructor_exists():
+    assert callable(myDsl_argument_expression_list.__init__)
 
 
-def test_mydsl::argument::expression::list_constructor_args():
-    sig = inspect.signature(myDsl::argument::expression::list.__init__)
+def test_mydsl_argument_expression_list_constructor_args():
+    sig = inspect.signature(myDsl_argument_expression_list.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_mydsl::eobject_is_not_abstract():
-    assert not inspect.isabstract(myDsl::EObject)
+def test_mydsl_eobject_is_not_abstract():
+    assert not inspect.isabstract(myDsl_EObject)
 
 
-def test_mydsl::eobject_constructor_exists():
-    assert callable(myDsl::EObject.__init__)
+def test_mydsl_eobject_constructor_exists():
+    assert callable(myDsl_EObject.__init__)
 
 
-def test_mydsl::eobject_constructor_args():
-    sig = inspect.signature(myDsl::EObject.__init__)
+def test_mydsl_eobject_constructor_args():
+    sig = inspect.signature(myDsl_EObject.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_abstract::declarator_is_not_abstract():
-    assert not inspect.isabstract(abstract::declarator)
+def test_abstract_declarator_is_not_abstract():
+    assert not inspect.isabstract(abstract_declarator)
 
 
-def test_abstract::declarator_constructor_exists():
-    assert callable(abstract::declarator.__init__)
+def test_abstract_declarator_constructor_exists():
+    assert callable(abstract_declarator.__init__)
 
 
-def test_abstract::declarator_constructor_args():
-    sig = inspect.signature(abstract::declarator.__init__)
+def test_abstract_declarator_constructor_args():
+    sig = inspect.signature(abstract_declarator.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_mydsl::argument::expression::listr_is_not_abstract():
-    assert not inspect.isabstract(myDsl::argument::expression::listR)
+def test_mydsl_argument_expression_listr_is_not_abstract():
+    assert not inspect.isabstract(myDsl_argument_expression_listR)
 
 
-def test_mydsl::argument::expression::listr_constructor_exists():
-    assert callable(myDsl::argument::expression::listR.__init__)
+def test_mydsl_argument_expression_listr_constructor_exists():
+    assert callable(myDsl_argument_expression_listR.__init__)
 
 
-def test_mydsl::argument::expression::listr_constructor_args():
-    sig = inspect.signature(myDsl::argument::expression::listR.__init__)
+def test_mydsl_argument_expression_listr_constructor_args():
+    sig = inspect.signature(myDsl_argument_expression_listR.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_type::specifier_is_not_abstract():
-    assert not inspect.isabstract(type::specifier)
+def test_type_specifier_is_not_abstract():
+    assert not inspect.isabstract(type_specifier)
 
 
-def test_type::specifier_constructor_exists():
-    assert callable(type::specifier.__init__)
+def test_type_specifier_constructor_exists():
+    assert callable(type_specifier.__init__)
 
 
-def test_type::specifier_constructor_args():
-    sig = inspect.signature(type::specifier.__init__)
+def test_type_specifier_constructor_args():
+    sig = inspect.signature(type_specifier.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_mydsl::atomic::type::specifier_is_not_abstract():
-    assert not inspect.isabstract(myDsl::atomic::type::specifier)
+def test_mydsl_atomic_type_specifier_is_not_abstract():
+    assert not inspect.isabstract(myDsl_atomic_type_specifier)
 
 
-def test_mydsl::atomic::type::specifier_constructor_exists():
-    assert callable(myDsl::atomic::type::specifier.__init__)
+def test_mydsl_atomic_type_specifier_constructor_exists():
+    assert callable(myDsl_atomic_type_specifier.__init__)
 
 
-def test_mydsl::atomic::type::specifier_constructor_args():
-    sig = inspect.signature(myDsl::atomic::type::specifier.__init__)
+def test_mydsl_atomic_type_specifier_constructor_args():
+    sig = inspect.signature(myDsl_atomic_type_specifier.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_mydsl::struct::or::union::specifier_is_not_abstract():
-    assert not inspect.isabstract(myDsl::struct::or::union::specifier)
+def test_mydsl_struct_or_union_specifier_is_not_abstract():
+    assert not inspect.isabstract(myDsl_struct_or_union_specifier)
 
 
-def test_mydsl::struct::or::union::specifier_constructor_exists():
-    assert callable(myDsl::struct::or::union::specifier.__init__)
+def test_mydsl_struct_or_union_specifier_constructor_exists():
+    assert callable(myDsl_struct_or_union_specifier.__init__)
 
 
-def test_mydsl::struct::or::union::specifier_constructor_args():
-    sig = inspect.signature(myDsl::struct::or::union::specifier.__init__)
+def test_mydsl_struct_or_union_specifier_constructor_args():
+    sig = inspect.signature(myDsl_struct_or_union_specifier.__init__)
     params = list(sig.parameters.keys())
     assert "Struct_or_union" in params, "Missing parameter 'Struct_or_union'"
 
-def test_mydsl::struct::or::union::specifier_has_Struct_or_union():
-    assert hasattr(myDsl::struct::or::union::specifier, "Struct_or_union")
+def test_mydsl_struct_or_union_specifier_has_Struct_or_union():
+    assert hasattr(myDsl_struct_or_union_specifier, "Struct_or_union")
     descriptor = None
-    for klass in myDsl::struct::or::union::specifier.__mro__:
+    for klass in myDsl_struct_or_union_specifier.__mro__:
         if "Struct_or_union" in klass.__dict__:
             descriptor = klass.__dict__["Struct_or_union"]
             break
@@ -359,184 +359,184 @@ def test_declaration_constructor_args():
 
 
 
-def test_mydsl::struct::declaration_is_not_abstract():
-    assert not inspect.isabstract(myDsl::struct::declaration)
+def test_mydsl_struct_declaration_is_not_abstract():
+    assert not inspect.isabstract(myDsl_struct_declaration)
 
 
-def test_mydsl::struct::declaration_constructor_exists():
-    assert callable(myDsl::struct::declaration.__init__)
+def test_mydsl_struct_declaration_constructor_exists():
+    assert callable(myDsl_struct_declaration.__init__)
 
 
-def test_mydsl::struct::declaration_constructor_args():
-    sig = inspect.signature(myDsl::struct::declaration.__init__)
+def test_mydsl_struct_declaration_constructor_args():
+    sig = inspect.signature(myDsl_struct_declaration.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_mydsl::struct::declaration::list_is_not_abstract():
-    assert not inspect.isabstract(myDsl::struct::declaration::list)
+def test_mydsl_struct_declaration_list_is_not_abstract():
+    assert not inspect.isabstract(myDsl_struct_declaration_list)
 
 
-def test_mydsl::struct::declaration::list_constructor_exists():
-    assert callable(myDsl::struct::declaration::list.__init__)
+def test_mydsl_struct_declaration_list_constructor_exists():
+    assert callable(myDsl_struct_declaration_list.__init__)
 
 
-def test_mydsl::struct::declaration::list_constructor_args():
-    sig = inspect.signature(myDsl::struct::declaration::list.__init__)
+def test_mydsl_struct_declaration_list_constructor_args():
+    sig = inspect.signature(myDsl_struct_declaration_list.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_mydsl::struct::declarator::listr_is_not_abstract():
-    assert not inspect.isabstract(myDsl::struct::declarator::listR)
+def test_mydsl_struct_declarator_listr_is_not_abstract():
+    assert not inspect.isabstract(myDsl_struct_declarator_listR)
 
 
-def test_mydsl::struct::declarator::listr_constructor_exists():
-    assert callable(myDsl::struct::declarator::listR.__init__)
+def test_mydsl_struct_declarator_listr_constructor_exists():
+    assert callable(myDsl_struct_declarator_listR.__init__)
 
 
-def test_mydsl::struct::declarator::listr_constructor_args():
-    sig = inspect.signature(myDsl::struct::declarator::listR.__init__)
+def test_mydsl_struct_declarator_listr_constructor_args():
+    sig = inspect.signature(myDsl_struct_declarator_listR.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_mydsl::struct::declarator_is_not_abstract():
-    assert not inspect.isabstract(myDsl::struct::declarator)
+def test_mydsl_struct_declarator_is_not_abstract():
+    assert not inspect.isabstract(myDsl_struct_declarator)
 
 
-def test_mydsl::struct::declarator_constructor_exists():
-    assert callable(myDsl::struct::declarator.__init__)
+def test_mydsl_struct_declarator_constructor_exists():
+    assert callable(myDsl_struct_declarator.__init__)
 
 
-def test_mydsl::struct::declarator_constructor_args():
-    sig = inspect.signature(myDsl::struct::declarator.__init__)
+def test_mydsl_struct_declarator_constructor_args():
+    sig = inspect.signature(myDsl_struct_declarator.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_mydsl::struct::declarator::list_is_not_abstract():
-    assert not inspect.isabstract(myDsl::struct::declarator::list)
+def test_mydsl_struct_declarator_list_is_not_abstract():
+    assert not inspect.isabstract(myDsl_struct_declarator_list)
 
 
-def test_mydsl::struct::declarator::list_constructor_exists():
-    assert callable(myDsl::struct::declarator::list.__init__)
+def test_mydsl_struct_declarator_list_constructor_exists():
+    assert callable(myDsl_struct_declarator_list.__init__)
 
 
-def test_mydsl::struct::declarator::list_constructor_args():
-    sig = inspect.signature(myDsl::struct::declarator::list.__init__)
+def test_mydsl_struct_declarator_list_constructor_args():
+    sig = inspect.signature(myDsl_struct_declarator_list.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_mydsl::struct::declaration::listr_is_not_abstract():
-    assert not inspect.isabstract(myDsl::struct::declaration::listR)
+def test_mydsl_struct_declaration_listr_is_not_abstract():
+    assert not inspect.isabstract(myDsl_struct_declaration_listR)
 
 
-def test_mydsl::struct::declaration::listr_constructor_exists():
-    assert callable(myDsl::struct::declaration::listR.__init__)
+def test_mydsl_struct_declaration_listr_constructor_exists():
+    assert callable(myDsl_struct_declaration_listR.__init__)
 
 
-def test_mydsl::struct::declaration::listr_constructor_args():
-    sig = inspect.signature(myDsl::struct::declaration::listR.__init__)
+def test_mydsl_struct_declaration_listr_constructor_args():
+    sig = inspect.signature(myDsl_struct_declaration_listR.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_mydsl::type::specifier_is_not_abstract():
-    assert not inspect.isabstract(myDsl::type::specifier)
+def test_mydsl_type_specifier_is_not_abstract():
+    assert not inspect.isabstract(myDsl_type_specifier)
 
 
-def test_mydsl::type::specifier_constructor_exists():
-    assert callable(myDsl::type::specifier.__init__)
+def test_mydsl_type_specifier_constructor_exists():
+    assert callable(myDsl_type_specifier.__init__)
 
 
-def test_mydsl::type::specifier_constructor_args():
-    sig = inspect.signature(myDsl::type::specifier.__init__)
+def test_mydsl_type_specifier_constructor_args():
+    sig = inspect.signature(myDsl_type_specifier.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_struct::declaration_is_not_abstract():
-    assert not inspect.isabstract(struct::declaration)
+def test_struct_declaration_is_not_abstract():
+    assert not inspect.isabstract(struct_declaration)
 
 
-def test_struct::declaration_constructor_exists():
-    assert callable(struct::declaration.__init__)
+def test_struct_declaration_constructor_exists():
+    assert callable(struct_declaration.__init__)
 
 
-def test_struct::declaration_constructor_args():
-    sig = inspect.signature(struct::declaration.__init__)
+def test_struct_declaration_constructor_args():
+    sig = inspect.signature(struct_declaration.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_mydsl::static::assert::declaration_is_not_abstract():
-    assert not inspect.isabstract(myDsl::static::assert::declaration)
+def test_mydsl_static_assert_declaration_is_not_abstract():
+    assert not inspect.isabstract(myDsl_static_assert_declaration)
 
 
-def test_mydsl::static::assert::declaration_constructor_exists():
-    assert callable(myDsl::static::assert::declaration.__init__)
+def test_mydsl_static_assert_declaration_constructor_exists():
+    assert callable(myDsl_static_assert_declaration.__init__)
 
 
-def test_mydsl::static::assert::declaration_constructor_args():
-    sig = inspect.signature(myDsl::static::assert::declaration.__init__)
+def test_mydsl_static_assert_declaration_constructor_args():
+    sig = inspect.signature(myDsl_static_assert_declaration.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_type::name_is_not_abstract():
-    assert not inspect.isabstract(type::name)
+def test_type_name_is_not_abstract():
+    assert not inspect.isabstract(type_name)
 
 
-def test_type::name_constructor_exists():
-    assert callable(type::name.__init__)
+def test_type_name_constructor_exists():
+    assert callable(type_name.__init__)
 
 
-def test_type::name_constructor_args():
-    sig = inspect.signature(type::name.__init__)
+def test_type_name_constructor_args():
+    sig = inspect.signature(type_name.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_mydsl::specifier::qualifier::list_is_not_abstract():
-    assert not inspect.isabstract(myDsl::specifier::qualifier::list)
+def test_mydsl_specifier_qualifier_list_is_not_abstract():
+    assert not inspect.isabstract(myDsl_specifier_qualifier_list)
 
 
-def test_mydsl::specifier::qualifier::list_constructor_exists():
-    assert callable(myDsl::specifier::qualifier::list.__init__)
+def test_mydsl_specifier_qualifier_list_constructor_exists():
+    assert callable(myDsl_specifier_qualifier_list.__init__)
 
 
-def test_mydsl::specifier::qualifier::list_constructor_args():
-    sig = inspect.signature(myDsl::specifier::qualifier::list.__init__)
+def test_mydsl_specifier_qualifier_list_constructor_args():
+    sig = inspect.signature(myDsl_specifier_qualifier_list.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_mydsl::designator::listr_is_not_abstract():
-    assert not inspect.isabstract(myDsl::designator::listR)
+def test_mydsl_designator_listr_is_not_abstract():
+    assert not inspect.isabstract(myDsl_designator_listR)
 
 
-def test_mydsl::designator::listr_constructor_exists():
-    assert callable(myDsl::designator::listR.__init__)
+def test_mydsl_designator_listr_constructor_exists():
+    assert callable(myDsl_designator_listR.__init__)
 
 
-def test_mydsl::designator::listr_constructor_args():
-    sig = inspect.signature(myDsl::designator::listR.__init__)
+def test_mydsl_designator_listr_constructor_args():
+    sig = inspect.signature(myDsl_designator_listR.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_mydsl::designator_is_not_abstract():
-    assert not inspect.isabstract(myDsl::designator)
+def test_mydsl_designator_is_not_abstract():
+    assert not inspect.isabstract(myDsl_designator)
 
 
-def test_mydsl::designator_constructor_exists():
-    assert callable(myDsl::designator.__init__)
+def test_mydsl_designator_constructor_exists():
+    assert callable(myDsl_designator.__init__)
 
 
-def test_mydsl::designator_constructor_args():
-    sig = inspect.signature(myDsl::designator.__init__)
+def test_mydsl_designator_constructor_args():
+    sig = inspect.signature(myDsl_designator.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -555,30 +555,30 @@ def test_designation_constructor_args():
 
 
 
-def test_atomic::type::specifier_is_not_abstract():
-    assert not inspect.isabstract(atomic::type::specifier)
+def test_atomic_type_specifier_is_not_abstract():
+    assert not inspect.isabstract(atomic_type_specifier)
 
 
-def test_atomic::type::specifier_constructor_exists():
-    assert callable(atomic::type::specifier.__init__)
+def test_atomic_type_specifier_constructor_exists():
+    assert callable(atomic_type_specifier.__init__)
 
 
-def test_atomic::type::specifier_constructor_args():
-    sig = inspect.signature(atomic::type::specifier.__init__)
+def test_atomic_type_specifier_constructor_args():
+    sig = inspect.signature(atomic_type_specifier.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_static::assert::declaration_is_not_abstract():
-    assert not inspect.isabstract(static::assert::declaration)
+def test_static_assert_declaration_is_not_abstract():
+    assert not inspect.isabstract(static_assert_declaration)
 
 
-def test_static::assert::declaration_constructor_exists():
-    assert callable(static::assert::declaration.__init__)
+def test_static_assert_declaration_constructor_exists():
+    assert callable(static_assert_declaration.__init__)
 
 
-def test_static::assert::declaration_constructor_args():
-    sig = inspect.signature(static::assert::declaration.__init__)
+def test_static_assert_declaration_constructor_args():
+    sig = inspect.signature(static_assert_declaration.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -597,205 +597,205 @@ def test_designator_constructor_args():
 
 
 
-def test_mydsl::designation_is_not_abstract():
-    assert not inspect.isabstract(myDsl::designation)
+def test_mydsl_designation_is_not_abstract():
+    assert not inspect.isabstract(myDsl_designation)
 
 
-def test_mydsl::designation_constructor_exists():
-    assert callable(myDsl::designation.__init__)
+def test_mydsl_designation_constructor_exists():
+    assert callable(myDsl_designation.__init__)
 
 
-def test_mydsl::designation_constructor_args():
-    sig = inspect.signature(myDsl::designation.__init__)
+def test_mydsl_designation_constructor_args():
+    sig = inspect.signature(myDsl_designation.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_mydsl::postfix::expressionr_is_not_abstract():
-    assert not inspect.isabstract(myDsl::postfix::expressionR)
+def test_mydsl_postfix_expressionr_is_not_abstract():
+    assert not inspect.isabstract(myDsl_postfix_expressionR)
 
 
-def test_mydsl::postfix::expressionr_constructor_exists():
-    assert callable(myDsl::postfix::expressionR.__init__)
+def test_mydsl_postfix_expressionr_constructor_exists():
+    assert callable(myDsl_postfix_expressionR.__init__)
 
 
-def test_mydsl::postfix::expressionr_constructor_args():
-    sig = inspect.signature(myDsl::postfix::expressionR.__init__)
+def test_mydsl_postfix_expressionr_constructor_args():
+    sig = inspect.signature(myDsl_postfix_expressionR.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_mydsl::primary::expression_is_not_abstract():
-    assert not inspect.isabstract(myDsl::primary::expression)
+def test_mydsl_primary_expression_is_not_abstract():
+    assert not inspect.isabstract(myDsl_primary_expression)
 
 
-def test_mydsl::primary::expression_constructor_exists():
-    assert callable(myDsl::primary::expression.__init__)
+def test_mydsl_primary_expression_constructor_exists():
+    assert callable(myDsl_primary_expression.__init__)
 
 
-def test_mydsl::primary::expression_constructor_args():
-    sig = inspect.signature(myDsl::primary::expression.__init__)
+def test_mydsl_primary_expression_constructor_args():
+    sig = inspect.signature(myDsl_primary_expression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_unary::expression_is_not_abstract():
-    assert not inspect.isabstract(unary::expression)
+def test_unary_expression_is_not_abstract():
+    assert not inspect.isabstract(unary_expression)
 
 
-def test_unary::expression_constructor_exists():
-    assert callable(unary::expression.__init__)
+def test_unary_expression_constructor_exists():
+    assert callable(unary_expression.__init__)
 
 
-def test_unary::expression_constructor_args():
-    sig = inspect.signature(unary::expression.__init__)
+def test_unary_expression_constructor_args():
+    sig = inspect.signature(unary_expression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_mydsl::postfix::expression_is_not_abstract():
-    assert not inspect.isabstract(myDsl::postfix::expression)
+def test_mydsl_postfix_expression_is_not_abstract():
+    assert not inspect.isabstract(myDsl_postfix_expression)
 
 
-def test_mydsl::postfix::expression_constructor_exists():
-    assert callable(myDsl::postfix::expression.__init__)
+def test_mydsl_postfix_expression_constructor_exists():
+    assert callable(myDsl_postfix_expression.__init__)
 
 
-def test_mydsl::postfix::expression_constructor_args():
-    sig = inspect.signature(myDsl::postfix::expression.__init__)
+def test_mydsl_postfix_expression_constructor_args():
+    sig = inspect.signature(myDsl_postfix_expression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_cast::expression_is_not_abstract():
-    assert not inspect.isabstract(cast::expression)
+def test_cast_expression_is_not_abstract():
+    assert not inspect.isabstract(cast_expression)
 
 
-def test_cast::expression_constructor_exists():
-    assert callable(cast::expression.__init__)
+def test_cast_expression_constructor_exists():
+    assert callable(cast_expression.__init__)
 
 
-def test_cast::expression_constructor_args():
-    sig = inspect.signature(cast::expression.__init__)
+def test_cast_expression_constructor_args():
+    sig = inspect.signature(cast_expression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_mydsl::designator::list_is_not_abstract():
-    assert not inspect.isabstract(myDsl::designator::list)
+def test_mydsl_designator_list_is_not_abstract():
+    assert not inspect.isabstract(myDsl_designator_list)
 
 
-def test_mydsl::designator::list_constructor_exists():
-    assert callable(myDsl::designator::list.__init__)
+def test_mydsl_designator_list_constructor_exists():
+    assert callable(myDsl_designator_list.__init__)
 
 
-def test_mydsl::designator::list_constructor_args():
-    sig = inspect.signature(myDsl::designator::list.__init__)
+def test_mydsl_designator_list_constructor_args():
+    sig = inspect.signature(myDsl_designator_list.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_mydsl::initializer::listr_is_not_abstract():
-    assert not inspect.isabstract(myDsl::initializer::listR)
+def test_mydsl_initializer_listr_is_not_abstract():
+    assert not inspect.isabstract(myDsl_initializer_listR)
 
 
-def test_mydsl::initializer::listr_constructor_exists():
-    assert callable(myDsl::initializer::listR.__init__)
+def test_mydsl_initializer_listr_constructor_exists():
+    assert callable(myDsl_initializer_listR.__init__)
 
 
-def test_mydsl::initializer::listr_constructor_args():
-    sig = inspect.signature(myDsl::initializer::listR.__init__)
+def test_mydsl_initializer_listr_constructor_args():
+    sig = inspect.signature(myDsl_initializer_listR.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_mydsl::cast::expression_is_not_abstract():
-    assert not inspect.isabstract(myDsl::cast::expression)
+def test_mydsl_cast_expression_is_not_abstract():
+    assert not inspect.isabstract(myDsl_cast_expression)
 
 
-def test_mydsl::cast::expression_constructor_exists():
-    assert callable(myDsl::cast::expression.__init__)
+def test_mydsl_cast_expression_constructor_exists():
+    assert callable(myDsl_cast_expression.__init__)
 
 
-def test_mydsl::cast::expression_constructor_args():
-    sig = inspect.signature(myDsl::cast::expression.__init__)
+def test_mydsl_cast_expression_constructor_args():
+    sig = inspect.signature(myDsl_cast_expression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_mydsl::multiplicative::expressionr_is_not_abstract():
-    assert not inspect.isabstract(myDsl::multiplicative::expressionR)
+def test_mydsl_multiplicative_expressionr_is_not_abstract():
+    assert not inspect.isabstract(myDsl_multiplicative_expressionR)
 
 
-def test_mydsl::multiplicative::expressionr_constructor_exists():
-    assert callable(myDsl::multiplicative::expressionR.__init__)
+def test_mydsl_multiplicative_expressionr_constructor_exists():
+    assert callable(myDsl_multiplicative_expressionR.__init__)
 
 
-def test_mydsl::multiplicative::expressionr_constructor_args():
-    sig = inspect.signature(myDsl::multiplicative::expressionR.__init__)
+def test_mydsl_multiplicative_expressionr_constructor_args():
+    sig = inspect.signature(myDsl_multiplicative_expressionR.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_mydsl::additive::expressionr_is_not_abstract():
-    assert not inspect.isabstract(myDsl::additive::expressionR)
+def test_mydsl_additive_expressionr_is_not_abstract():
+    assert not inspect.isabstract(myDsl_additive_expressionR)
 
 
-def test_mydsl::additive::expressionr_constructor_exists():
-    assert callable(myDsl::additive::expressionR.__init__)
+def test_mydsl_additive_expressionr_constructor_exists():
+    assert callable(myDsl_additive_expressionR.__init__)
 
 
-def test_mydsl::additive::expressionr_constructor_args():
-    sig = inspect.signature(myDsl::additive::expressionR.__init__)
+def test_mydsl_additive_expressionr_constructor_args():
+    sig = inspect.signature(myDsl_additive_expressionR.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_mydsl::multiplicative::expression_is_not_abstract():
-    assert not inspect.isabstract(myDsl::multiplicative::expression)
+def test_mydsl_multiplicative_expression_is_not_abstract():
+    assert not inspect.isabstract(myDsl_multiplicative_expression)
 
 
-def test_mydsl::multiplicative::expression_constructor_exists():
-    assert callable(myDsl::multiplicative::expression.__init__)
+def test_mydsl_multiplicative_expression_constructor_exists():
+    assert callable(myDsl_multiplicative_expression.__init__)
 
 
-def test_mydsl::multiplicative::expression_constructor_args():
-    sig = inspect.signature(myDsl::multiplicative::expression.__init__)
+def test_mydsl_multiplicative_expression_constructor_args():
+    sig = inspect.signature(myDsl_multiplicative_expression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_mydsl::type::name_is_not_abstract():
-    assert not inspect.isabstract(myDsl::type::name)
+def test_mydsl_type_name_is_not_abstract():
+    assert not inspect.isabstract(myDsl_type_name)
 
 
-def test_mydsl::type::name_constructor_exists():
-    assert callable(myDsl::type::name.__init__)
+def test_mydsl_type_name_constructor_exists():
+    assert callable(myDsl_type_name.__init__)
 
 
-def test_mydsl::type::name_constructor_args():
-    sig = inspect.signature(myDsl::type::name.__init__)
+def test_mydsl_type_name_constructor_args():
+    sig = inspect.signature(myDsl_type_name.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_mydsl::unary::expression_is_not_abstract():
-    assert not inspect.isabstract(myDsl::unary::expression)
+def test_mydsl_unary_expression_is_not_abstract():
+    assert not inspect.isabstract(myDsl_unary_expression)
 
 
-def test_mydsl::unary::expression_constructor_exists():
-    assert callable(myDsl::unary::expression.__init__)
+def test_mydsl_unary_expression_constructor_exists():
+    assert callable(myDsl_unary_expression.__init__)
 
 
-def test_mydsl::unary::expression_constructor_args():
-    sig = inspect.signature(myDsl::unary::expression.__init__)
+def test_mydsl_unary_expression_constructor_args():
+    sig = inspect.signature(myDsl_unary_expression.__init__)
     params = list(sig.parameters.keys())
     assert "Unary_operator" in params, "Missing parameter 'Unary_operator'"
 
-def test_mydsl::unary::expression_has_Unary_operator():
-    assert hasattr(myDsl::unary::expression, "Unary_operator")
+def test_mydsl_unary_expression_has_Unary_operator():
+    assert hasattr(myDsl_unary_expression, "Unary_operator")
     descriptor = None
-    for klass in myDsl::unary::expression.__mro__:
+    for klass in myDsl_unary_expression.__mro__:
         if "Unary_operator" in klass.__dict__:
             descriptor = klass.__dict__["Unary_operator"]
             break
@@ -817,303 +817,303 @@ def test_initializer_constructor_args():
 
 
 
-def test_mydsl::initializer::list_is_not_abstract():
-    assert not inspect.isabstract(myDsl::initializer::list)
+def test_mydsl_initializer_list_is_not_abstract():
+    assert not inspect.isabstract(myDsl_initializer_list)
 
 
-def test_mydsl::initializer::list_constructor_exists():
-    assert callable(myDsl::initializer::list.__init__)
+def test_mydsl_initializer_list_constructor_exists():
+    assert callable(myDsl_initializer_list.__init__)
 
 
-def test_mydsl::initializer::list_constructor_args():
-    sig = inspect.signature(myDsl::initializer::list.__init__)
+def test_mydsl_initializer_list_constructor_args():
+    sig = inspect.signature(myDsl_initializer_list.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_mydsl::relational::expressionr_is_not_abstract():
-    assert not inspect.isabstract(myDsl::relational::expressionR)
+def test_mydsl_relational_expressionr_is_not_abstract():
+    assert not inspect.isabstract(myDsl_relational_expressionR)
 
 
-def test_mydsl::relational::expressionr_constructor_exists():
-    assert callable(myDsl::relational::expressionR.__init__)
+def test_mydsl_relational_expressionr_constructor_exists():
+    assert callable(myDsl_relational_expressionR.__init__)
 
 
-def test_mydsl::relational::expressionr_constructor_args():
-    sig = inspect.signature(myDsl::relational::expressionR.__init__)
+def test_mydsl_relational_expressionr_constructor_args():
+    sig = inspect.signature(myDsl_relational_expressionR.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_mydsl::shift::expression_is_not_abstract():
-    assert not inspect.isabstract(myDsl::shift::expression)
+def test_mydsl_shift_expression_is_not_abstract():
+    assert not inspect.isabstract(myDsl_shift_expression)
 
 
-def test_mydsl::shift::expression_constructor_exists():
-    assert callable(myDsl::shift::expression.__init__)
+def test_mydsl_shift_expression_constructor_exists():
+    assert callable(myDsl_shift_expression.__init__)
 
 
-def test_mydsl::shift::expression_constructor_args():
-    sig = inspect.signature(myDsl::shift::expression.__init__)
+def test_mydsl_shift_expression_constructor_args():
+    sig = inspect.signature(myDsl_shift_expression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_mydsl::equality::expressionr_is_not_abstract():
-    assert not inspect.isabstract(myDsl::equality::expressionR)
+def test_mydsl_equality_expressionr_is_not_abstract():
+    assert not inspect.isabstract(myDsl_equality_expressionR)
 
 
-def test_mydsl::equality::expressionr_constructor_exists():
-    assert callable(myDsl::equality::expressionR.__init__)
+def test_mydsl_equality_expressionr_constructor_exists():
+    assert callable(myDsl_equality_expressionR.__init__)
 
 
-def test_mydsl::equality::expressionr_constructor_args():
-    sig = inspect.signature(myDsl::equality::expressionR.__init__)
+def test_mydsl_equality_expressionr_constructor_args():
+    sig = inspect.signature(myDsl_equality_expressionR.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_mydsl::relational::expression_is_not_abstract():
-    assert not inspect.isabstract(myDsl::relational::expression)
+def test_mydsl_relational_expression_is_not_abstract():
+    assert not inspect.isabstract(myDsl_relational_expression)
 
 
-def test_mydsl::relational::expression_constructor_exists():
-    assert callable(myDsl::relational::expression.__init__)
+def test_mydsl_relational_expression_constructor_exists():
+    assert callable(myDsl_relational_expression.__init__)
 
 
-def test_mydsl::relational::expression_constructor_args():
-    sig = inspect.signature(myDsl::relational::expression.__init__)
+def test_mydsl_relational_expression_constructor_args():
+    sig = inspect.signature(myDsl_relational_expression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_shift::expression_is_not_abstract():
-    assert not inspect.isabstract(shift::expression)
+def test_shift_expression_is_not_abstract():
+    assert not inspect.isabstract(shift_expression)
 
 
-def test_shift::expression_constructor_exists():
-    assert callable(shift::expression.__init__)
+def test_shift_expression_constructor_exists():
+    assert callable(shift_expression.__init__)
 
 
-def test_shift::expression_constructor_args():
-    sig = inspect.signature(shift::expression.__init__)
+def test_shift_expression_constructor_args():
+    sig = inspect.signature(shift_expression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_mydsl::additive::expression_is_not_abstract():
-    assert not inspect.isabstract(myDsl::additive::expression)
+def test_mydsl_additive_expression_is_not_abstract():
+    assert not inspect.isabstract(myDsl_additive_expression)
 
 
-def test_mydsl::additive::expression_constructor_exists():
-    assert callable(myDsl::additive::expression.__init__)
+def test_mydsl_additive_expression_constructor_exists():
+    assert callable(myDsl_additive_expression.__init__)
 
 
-def test_mydsl::additive::expression_constructor_args():
-    sig = inspect.signature(myDsl::additive::expression.__init__)
+def test_mydsl_additive_expression_constructor_args():
+    sig = inspect.signature(myDsl_additive_expression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_mydsl::shift::expressionr_is_not_abstract():
-    assert not inspect.isabstract(myDsl::shift::expressionR)
+def test_mydsl_shift_expressionr_is_not_abstract():
+    assert not inspect.isabstract(myDsl_shift_expressionR)
 
 
-def test_mydsl::shift::expressionr_constructor_exists():
-    assert callable(myDsl::shift::expressionR.__init__)
+def test_mydsl_shift_expressionr_constructor_exists():
+    assert callable(myDsl_shift_expressionR.__init__)
 
 
-def test_mydsl::shift::expressionr_constructor_args():
-    sig = inspect.signature(myDsl::shift::expressionR.__init__)
+def test_mydsl_shift_expressionr_constructor_args():
+    sig = inspect.signature(myDsl_shift_expressionR.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_mydsl::inclusive::or::expressionr_is_not_abstract():
-    assert not inspect.isabstract(myDsl::inclusive::or::expressionR)
+def test_mydsl_inclusive_or_expressionr_is_not_abstract():
+    assert not inspect.isabstract(myDsl_inclusive_or_expressionR)
 
 
-def test_mydsl::inclusive::or::expressionr_constructor_exists():
-    assert callable(myDsl::inclusive::or::expressionR.__init__)
+def test_mydsl_inclusive_or_expressionr_constructor_exists():
+    assert callable(myDsl_inclusive_or_expressionR.__init__)
 
 
-def test_mydsl::inclusive::or::expressionr_constructor_args():
-    sig = inspect.signature(myDsl::inclusive::or::expressionR.__init__)
+def test_mydsl_inclusive_or_expressionr_constructor_args():
+    sig = inspect.signature(myDsl_inclusive_or_expressionR.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_mydsl::exclusive::or::expression_is_not_abstract():
-    assert not inspect.isabstract(myDsl::exclusive::or::expression)
+def test_mydsl_exclusive_or_expression_is_not_abstract():
+    assert not inspect.isabstract(myDsl_exclusive_or_expression)
 
 
-def test_mydsl::exclusive::or::expression_constructor_exists():
-    assert callable(myDsl::exclusive::or::expression.__init__)
+def test_mydsl_exclusive_or_expression_constructor_exists():
+    assert callable(myDsl_exclusive_or_expression.__init__)
 
 
-def test_mydsl::exclusive::or::expression_constructor_args():
-    sig = inspect.signature(myDsl::exclusive::or::expression.__init__)
+def test_mydsl_exclusive_or_expression_constructor_args():
+    sig = inspect.signature(myDsl_exclusive_or_expression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_mydsl::logical::and::expressionr_is_not_abstract():
-    assert not inspect.isabstract(myDsl::logical::and::expressionR)
+def test_mydsl_logical_and_expressionr_is_not_abstract():
+    assert not inspect.isabstract(myDsl_logical_and_expressionR)
 
 
-def test_mydsl::logical::and::expressionr_constructor_exists():
-    assert callable(myDsl::logical::and::expressionR.__init__)
+def test_mydsl_logical_and_expressionr_constructor_exists():
+    assert callable(myDsl_logical_and_expressionR.__init__)
 
 
-def test_mydsl::logical::and::expressionr_constructor_args():
-    sig = inspect.signature(myDsl::logical::and::expressionR.__init__)
+def test_mydsl_logical_and_expressionr_constructor_args():
+    sig = inspect.signature(myDsl_logical_and_expressionR.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_mydsl::equality::expression_is_not_abstract():
-    assert not inspect.isabstract(myDsl::equality::expression)
+def test_mydsl_equality_expression_is_not_abstract():
+    assert not inspect.isabstract(myDsl_equality_expression)
 
 
-def test_mydsl::equality::expression_constructor_exists():
-    assert callable(myDsl::equality::expression.__init__)
+def test_mydsl_equality_expression_constructor_exists():
+    assert callable(myDsl_equality_expression.__init__)
 
 
-def test_mydsl::equality::expression_constructor_args():
-    sig = inspect.signature(myDsl::equality::expression.__init__)
+def test_mydsl_equality_expression_constructor_args():
+    sig = inspect.signature(myDsl_equality_expression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_mydsl::and::expressionr_is_not_abstract():
-    assert not inspect.isabstract(myDsl::and::expressionR)
+def test_mydsl_and_expressionr_is_not_abstract():
+    assert not inspect.isabstract(myDsl_and_expressionR)
 
 
-def test_mydsl::and::expressionr_constructor_exists():
-    assert callable(myDsl::and::expressionR.__init__)
+def test_mydsl_and_expressionr_constructor_exists():
+    assert callable(myDsl_and_expressionR.__init__)
 
 
-def test_mydsl::and::expressionr_constructor_args():
-    sig = inspect.signature(myDsl::and::expressionR.__init__)
+def test_mydsl_and_expressionr_constructor_args():
+    sig = inspect.signature(myDsl_and_expressionR.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_mydsl::exclusive::or::expressionr_is_not_abstract():
-    assert not inspect.isabstract(myDsl::exclusive::or::expressionR)
+def test_mydsl_exclusive_or_expressionr_is_not_abstract():
+    assert not inspect.isabstract(myDsl_exclusive_or_expressionR)
 
 
-def test_mydsl::exclusive::or::expressionr_constructor_exists():
-    assert callable(myDsl::exclusive::or::expressionR.__init__)
+def test_mydsl_exclusive_or_expressionr_constructor_exists():
+    assert callable(myDsl_exclusive_or_expressionR.__init__)
 
 
-def test_mydsl::exclusive::or::expressionr_constructor_args():
-    sig = inspect.signature(myDsl::exclusive::or::expressionR.__init__)
+def test_mydsl_exclusive_or_expressionr_constructor_args():
+    sig = inspect.signature(myDsl_exclusive_or_expressionR.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_mydsl::and::expression_is_not_abstract():
-    assert not inspect.isabstract(myDsl::and::expression)
+def test_mydsl_and_expression_is_not_abstract():
+    assert not inspect.isabstract(myDsl_and_expression)
 
 
-def test_mydsl::and::expression_constructor_exists():
-    assert callable(myDsl::and::expression.__init__)
+def test_mydsl_and_expression_constructor_exists():
+    assert callable(myDsl_and_expression.__init__)
 
 
-def test_mydsl::and::expression_constructor_args():
-    sig = inspect.signature(myDsl::and::expression.__init__)
+def test_mydsl_and_expression_constructor_args():
+    sig = inspect.signature(myDsl_and_expression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_constant::expression_is_not_abstract():
-    assert not inspect.isabstract(constant::expression)
+def test_constant_expression_is_not_abstract():
+    assert not inspect.isabstract(constant_expression)
 
 
-def test_constant::expression_constructor_exists():
-    assert callable(constant::expression.__init__)
+def test_constant_expression_constructor_exists():
+    assert callable(constant_expression.__init__)
 
 
-def test_constant::expression_constructor_args():
-    sig = inspect.signature(constant::expression.__init__)
+def test_constant_expression_constructor_args():
+    sig = inspect.signature(constant_expression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_assignment::expression_is_not_abstract():
-    assert not inspect.isabstract(assignment::expression)
+def test_assignment_expression_is_not_abstract():
+    assert not inspect.isabstract(assignment_expression)
 
 
-def test_assignment::expression_constructor_exists():
-    assert callable(assignment::expression.__init__)
+def test_assignment_expression_constructor_exists():
+    assert callable(assignment_expression.__init__)
 
 
-def test_assignment::expression_constructor_args():
-    sig = inspect.signature(assignment::expression.__init__)
+def test_assignment_expression_constructor_args():
+    sig = inspect.signature(assignment_expression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_mydsl::conditional::expression_is_not_abstract():
-    assert not inspect.isabstract(myDsl::conditional::expression)
+def test_mydsl_conditional_expression_is_not_abstract():
+    assert not inspect.isabstract(myDsl_conditional_expression)
 
 
-def test_mydsl::conditional::expression_constructor_exists():
-    assert callable(myDsl::conditional::expression.__init__)
+def test_mydsl_conditional_expression_constructor_exists():
+    assert callable(myDsl_conditional_expression.__init__)
 
 
-def test_mydsl::conditional::expression_constructor_args():
-    sig = inspect.signature(myDsl::conditional::expression.__init__)
+def test_mydsl_conditional_expression_constructor_args():
+    sig = inspect.signature(myDsl_conditional_expression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_mydsl::expressionr_is_not_abstract():
-    assert not inspect.isabstract(myDsl::expressionR)
+def test_mydsl_expressionr_is_not_abstract():
+    assert not inspect.isabstract(myDsl_expressionR)
 
 
-def test_mydsl::expressionr_constructor_exists():
-    assert callable(myDsl::expressionR.__init__)
+def test_mydsl_expressionr_constructor_exists():
+    assert callable(myDsl_expressionR.__init__)
 
 
-def test_mydsl::expressionr_constructor_args():
-    sig = inspect.signature(myDsl::expressionR.__init__)
+def test_mydsl_expressionr_constructor_args():
+    sig = inspect.signature(myDsl_expressionR.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_primary::expression_is_not_abstract():
-    assert not inspect.isabstract(primary::expression)
+def test_primary_expression_is_not_abstract():
+    assert not inspect.isabstract(primary_expression)
 
 
-def test_primary::expression_constructor_exists():
-    assert callable(primary::expression.__init__)
+def test_primary_expression_constructor_exists():
+    assert callable(primary_expression.__init__)
 
 
-def test_primary::expression_constructor_args():
-    sig = inspect.signature(primary::expression.__init__)
+def test_primary_expression_constructor_args():
+    sig = inspect.signature(primary_expression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_mydsl::stringc_is_not_abstract():
-    assert not inspect.isabstract(myDsl::StringC)
+def test_mydsl_stringc_is_not_abstract():
+    assert not inspect.isabstract(myDsl_StringC)
 
 
-def test_mydsl::stringc_constructor_exists():
-    assert callable(myDsl::StringC.__init__)
+def test_mydsl_stringc_constructor_exists():
+    assert callable(myDsl_StringC.__init__)
 
 
-def test_mydsl::stringc_constructor_args():
-    sig = inspect.signature(myDsl::StringC.__init__)
+def test_mydsl_stringc_constructor_args():
+    sig = inspect.signature(myDsl_StringC.__init__)
     params = list(sig.parameters.keys())
     assert "string" in params, "Missing parameter 'string'"
 
-def test_mydsl::stringc_has_string():
-    assert hasattr(myDsl::StringC, "string")
+def test_mydsl_stringc_has_string():
+    assert hasattr(myDsl_StringC, "string")
     descriptor = None
-    for klass in myDsl::StringC.__mro__:
+    for klass in myDsl_StringC.__mro__:
         if "string" in klass.__dict__:
             descriptor = klass.__dict__["string"]
             break
@@ -1121,51 +1121,51 @@ def test_mydsl::stringc_has_string():
 
 
 
-def test_expression::statement_is_not_abstract():
-    assert not inspect.isabstract(expression::statement)
+def test_expression_statement_is_not_abstract():
+    assert not inspect.isabstract(expression_statement)
 
 
-def test_expression::statement_constructor_exists():
-    assert callable(expression::statement.__init__)
+def test_expression_statement_constructor_exists():
+    assert callable(expression_statement.__init__)
 
 
-def test_expression::statement_constructor_args():
-    sig = inspect.signature(expression::statement.__init__)
+def test_expression_statement_constructor_args():
+    sig = inspect.signature(expression_statement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_jump::statement_is_not_abstract():
-    assert not inspect.isabstract(jump::statement)
+def test_jump_statement_is_not_abstract():
+    assert not inspect.isabstract(jump_statement)
 
 
-def test_jump::statement_constructor_exists():
-    assert callable(jump::statement.__init__)
+def test_jump_statement_constructor_exists():
+    assert callable(jump_statement.__init__)
 
 
-def test_jump::statement_constructor_args():
-    sig = inspect.signature(jump::statement.__init__)
+def test_jump_statement_constructor_args():
+    sig = inspect.signature(jump_statement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_mydsl::identifier_is_not_abstract():
-    assert not inspect.isabstract(myDsl::IDENTIFIER)
+def test_mydsl_identifier_is_not_abstract():
+    assert not inspect.isabstract(myDsl_IDENTIFIER)
 
 
-def test_mydsl::identifier_constructor_exists():
-    assert callable(myDsl::IDENTIFIER.__init__)
+def test_mydsl_identifier_constructor_exists():
+    assert callable(myDsl_IDENTIFIER.__init__)
 
 
-def test_mydsl::identifier_constructor_args():
-    sig = inspect.signature(myDsl::IDENTIFIER.__init__)
+def test_mydsl_identifier_constructor_args():
+    sig = inspect.signature(myDsl_IDENTIFIER.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_mydsl::identifier_has_name():
-    assert hasattr(myDsl::IDENTIFIER, "name")
+def test_mydsl_identifier_has_name():
+    assert hasattr(myDsl_IDENTIFIER, "name")
     descriptor = None
-    for klass in myDsl::IDENTIFIER.__mro__:
+    for klass in myDsl_IDENTIFIER.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -1173,226 +1173,226 @@ def test_mydsl::identifier_has_name():
 
 
 
-def test_mydsl::inclusive::or::expression_is_not_abstract():
-    assert not inspect.isabstract(myDsl::inclusive::or::expression)
+def test_mydsl_inclusive_or_expression_is_not_abstract():
+    assert not inspect.isabstract(myDsl_inclusive_or_expression)
 
 
-def test_mydsl::inclusive::or::expression_constructor_exists():
-    assert callable(myDsl::inclusive::or::expression.__init__)
+def test_mydsl_inclusive_or_expression_constructor_exists():
+    assert callable(myDsl_inclusive_or_expression.__init__)
 
 
-def test_mydsl::inclusive::or::expression_constructor_args():
-    sig = inspect.signature(myDsl::inclusive::or::expression.__init__)
+def test_mydsl_inclusive_or_expression_constructor_args():
+    sig = inspect.signature(myDsl_inclusive_or_expression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_mydsl::logical::or::expressionr_is_not_abstract():
-    assert not inspect.isabstract(myDsl::logical::or::expressionR)
+def test_mydsl_logical_or_expressionr_is_not_abstract():
+    assert not inspect.isabstract(myDsl_logical_or_expressionR)
 
 
-def test_mydsl::logical::or::expressionr_constructor_exists():
-    assert callable(myDsl::logical::or::expressionR.__init__)
+def test_mydsl_logical_or_expressionr_constructor_exists():
+    assert callable(myDsl_logical_or_expressionR.__init__)
 
 
-def test_mydsl::logical::or::expressionr_constructor_args():
-    sig = inspect.signature(myDsl::logical::or::expressionR.__init__)
+def test_mydsl_logical_or_expressionr_constructor_args():
+    sig = inspect.signature(myDsl_logical_or_expressionR.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_mydsl::logical::and::expression_is_not_abstract():
-    assert not inspect.isabstract(myDsl::logical::and::expression)
+def test_mydsl_logical_and_expression_is_not_abstract():
+    assert not inspect.isabstract(myDsl_logical_and_expression)
 
 
-def test_mydsl::logical::and::expression_constructor_exists():
-    assert callable(myDsl::logical::and::expression.__init__)
+def test_mydsl_logical_and_expression_constructor_exists():
+    assert callable(myDsl_logical_and_expression.__init__)
 
 
-def test_mydsl::logical::and::expression_constructor_args():
-    sig = inspect.signature(myDsl::logical::and::expression.__init__)
+def test_mydsl_logical_and_expression_constructor_args():
+    sig = inspect.signature(myDsl_logical_and_expression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_conditional::expression_is_not_abstract():
-    assert not inspect.isabstract(conditional::expression)
+def test_conditional_expression_is_not_abstract():
+    assert not inspect.isabstract(conditional_expression)
 
 
-def test_conditional::expression_constructor_exists():
-    assert callable(conditional::expression.__init__)
+def test_conditional_expression_constructor_exists():
+    assert callable(conditional_expression.__init__)
 
 
-def test_conditional::expression_constructor_args():
-    sig = inspect.signature(conditional::expression.__init__)
+def test_conditional_expression_constructor_args():
+    sig = inspect.signature(conditional_expression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_mydsl::logical::or::expression_is_not_abstract():
-    assert not inspect.isabstract(myDsl::logical::or::expression)
+def test_mydsl_logical_or_expression_is_not_abstract():
+    assert not inspect.isabstract(myDsl_logical_or_expression)
 
 
-def test_mydsl::logical::or::expression_constructor_exists():
-    assert callable(myDsl::logical::or::expression.__init__)
+def test_mydsl_logical_or_expression_constructor_exists():
+    assert callable(myDsl_logical_or_expression.__init__)
 
 
-def test_mydsl::logical::or::expression_constructor_args():
-    sig = inspect.signature(myDsl::logical::or::expression.__init__)
+def test_mydsl_logical_or_expression_constructor_args():
+    sig = inspect.signature(myDsl_logical_or_expression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_mydsl::initializer_is_not_abstract():
-    assert not inspect.isabstract(myDsl::initializer)
+def test_mydsl_initializer_is_not_abstract():
+    assert not inspect.isabstract(myDsl_initializer)
 
 
-def test_mydsl::initializer_constructor_exists():
-    assert callable(myDsl::initializer.__init__)
+def test_mydsl_initializer_constructor_exists():
+    assert callable(myDsl_initializer.__init__)
 
 
-def test_mydsl::initializer_constructor_args():
-    sig = inspect.signature(myDsl::initializer.__init__)
+def test_mydsl_initializer_constructor_args():
+    sig = inspect.signature(myDsl_initializer.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_mydsl::init::declarator::listr_is_not_abstract():
-    assert not inspect.isabstract(myDsl::init::declarator::listR)
+def test_mydsl_init_declarator_listr_is_not_abstract():
+    assert not inspect.isabstract(myDsl_init_declarator_listR)
 
 
-def test_mydsl::init::declarator::listr_constructor_exists():
-    assert callable(myDsl::init::declarator::listR.__init__)
+def test_mydsl_init_declarator_listr_constructor_exists():
+    assert callable(myDsl_init_declarator_listR.__init__)
 
 
-def test_mydsl::init::declarator::listr_constructor_args():
-    sig = inspect.signature(myDsl::init::declarator::listR.__init__)
+def test_mydsl_init_declarator_listr_constructor_args():
+    sig = inspect.signature(myDsl_init_declarator_listR.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_mydsl::init::declarator_is_not_abstract():
-    assert not inspect.isabstract(myDsl::init::declarator)
+def test_mydsl_init_declarator_is_not_abstract():
+    assert not inspect.isabstract(myDsl_init_declarator)
 
 
-def test_mydsl::init::declarator_constructor_exists():
-    assert callable(myDsl::init::declarator.__init__)
+def test_mydsl_init_declarator_constructor_exists():
+    assert callable(myDsl_init_declarator.__init__)
 
 
-def test_mydsl::init::declarator_constructor_args():
-    sig = inspect.signature(myDsl::init::declarator.__init__)
+def test_mydsl_init_declarator_constructor_args():
+    sig = inspect.signature(myDsl_init_declarator.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_mydsl::init::declarator::list_is_not_abstract():
-    assert not inspect.isabstract(myDsl::init::declarator::list)
+def test_mydsl_init_declarator_list_is_not_abstract():
+    assert not inspect.isabstract(myDsl_init_declarator_list)
 
 
-def test_mydsl::init::declarator::list_constructor_exists():
-    assert callable(myDsl::init::declarator::list.__init__)
+def test_mydsl_init_declarator_list_constructor_exists():
+    assert callable(myDsl_init_declarator_list.__init__)
 
 
-def test_mydsl::init::declarator::list_constructor_args():
-    sig = inspect.signature(myDsl::init::declarator::list.__init__)
+def test_mydsl_init_declarator_list_constructor_args():
+    sig = inspect.signature(myDsl_init_declarator_list.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_parameter::declaration_is_not_abstract():
-    assert not inspect.isabstract(parameter::declaration)
+def test_parameter_declaration_is_not_abstract():
+    assert not inspect.isabstract(parameter_declaration)
 
 
-def test_parameter::declaration_constructor_exists():
-    assert callable(parameter::declaration.__init__)
+def test_parameter_declaration_constructor_exists():
+    assert callable(parameter_declaration.__init__)
 
 
-def test_parameter::declaration_constructor_args():
-    sig = inspect.signature(parameter::declaration.__init__)
+def test_parameter_declaration_constructor_args():
+    sig = inspect.signature(parameter_declaration.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_block::item_is_not_abstract():
-    assert not inspect.isabstract(block::item)
+def test_block_item_is_not_abstract():
+    assert not inspect.isabstract(block_item)
 
 
-def test_block::item_constructor_exists():
-    assert callable(block::item.__init__)
+def test_block_item_constructor_exists():
+    assert callable(block_item.__init__)
 
 
-def test_block::item_constructor_args():
-    sig = inspect.signature(block::item.__init__)
+def test_block_item_constructor_args():
+    sig = inspect.signature(block_item.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_mydsl::statement_is_not_abstract():
-    assert not inspect.isabstract(myDsl::statement)
+def test_mydsl_statement_is_not_abstract():
+    assert not inspect.isabstract(myDsl_statement)
 
 
-def test_mydsl::statement_constructor_exists():
-    assert callable(myDsl::statement.__init__)
+def test_mydsl_statement_constructor_exists():
+    assert callable(myDsl_statement.__init__)
 
 
-def test_mydsl::statement_constructor_args():
-    sig = inspect.signature(myDsl::statement.__init__)
+def test_mydsl_statement_constructor_args():
+    sig = inspect.signature(myDsl_statement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_mydsl::block::item::listr_is_not_abstract():
-    assert not inspect.isabstract(myDsl::block::item::listR)
+def test_mydsl_block_item_listr_is_not_abstract():
+    assert not inspect.isabstract(myDsl_block_item_listR)
 
 
-def test_mydsl::block::item::listr_constructor_exists():
-    assert callable(myDsl::block::item::listR.__init__)
+def test_mydsl_block_item_listr_constructor_exists():
+    assert callable(myDsl_block_item_listR.__init__)
 
 
-def test_mydsl::block::item::listr_constructor_args():
-    sig = inspect.signature(myDsl::block::item::listR.__init__)
+def test_mydsl_block_item_listr_constructor_args():
+    sig = inspect.signature(myDsl_block_item_listR.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_mydsl::block::item_is_not_abstract():
-    assert not inspect.isabstract(myDsl::block::item)
+def test_mydsl_block_item_is_not_abstract():
+    assert not inspect.isabstract(myDsl_block_item)
 
 
-def test_mydsl::block::item_constructor_exists():
-    assert callable(myDsl::block::item.__init__)
+def test_mydsl_block_item_constructor_exists():
+    assert callable(myDsl_block_item.__init__)
 
 
-def test_mydsl::block::item_constructor_args():
-    sig = inspect.signature(myDsl::block::item.__init__)
+def test_mydsl_block_item_constructor_args():
+    sig = inspect.signature(myDsl_block_item.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_compound::statement_is_not_abstract():
-    assert not inspect.isabstract(compound::statement)
+def test_compound_statement_is_not_abstract():
+    assert not inspect.isabstract(compound_statement)
 
 
-def test_compound::statement_constructor_exists():
-    assert callable(compound::statement.__init__)
+def test_compound_statement_constructor_exists():
+    assert callable(compound_statement.__init__)
 
 
-def test_compound::statement_constructor_args():
-    sig = inspect.signature(compound::statement.__init__)
+def test_compound_statement_constructor_args():
+    sig = inspect.signature(compound_statement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_mydsl::block::item::list_is_not_abstract():
-    assert not inspect.isabstract(myDsl::block::item::list)
+def test_mydsl_block_item_list_is_not_abstract():
+    assert not inspect.isabstract(myDsl_block_item_list)
 
 
-def test_mydsl::block::item::list_constructor_exists():
-    assert callable(myDsl::block::item::list.__init__)
+def test_mydsl_block_item_list_constructor_exists():
+    assert callable(myDsl_block_item_list.__init__)
 
 
-def test_mydsl::block::item::list_constructor_args():
-    sig = inspect.signature(myDsl::block::item::list.__init__)
+def test_mydsl_block_item_list_constructor_args():
+    sig = inspect.signature(myDsl_block_item_list.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1411,205 +1411,205 @@ def test_statement_constructor_args():
 
 
 
-def test_mydsl::selection::statement_is_not_abstract():
-    assert not inspect.isabstract(myDsl::selection::statement)
+def test_mydsl_jump_statement_is_not_abstract():
+    assert not inspect.isabstract(myDsl_jump_statement)
 
 
-def test_mydsl::selection::statement_constructor_exists():
-    assert callable(myDsl::selection::statement.__init__)
+def test_mydsl_jump_statement_constructor_exists():
+    assert callable(myDsl_jump_statement.__init__)
 
 
-def test_mydsl::selection::statement_constructor_args():
-    sig = inspect.signature(myDsl::selection::statement.__init__)
+def test_mydsl_jump_statement_constructor_args():
+    sig = inspect.signature(myDsl_jump_statement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_mydsl::jump::statement_is_not_abstract():
-    assert not inspect.isabstract(myDsl::jump::statement)
+def test_mydsl_selection_statement_is_not_abstract():
+    assert not inspect.isabstract(myDsl_selection_statement)
 
 
-def test_mydsl::jump::statement_constructor_exists():
-    assert callable(myDsl::jump::statement.__init__)
+def test_mydsl_selection_statement_constructor_exists():
+    assert callable(myDsl_selection_statement.__init__)
 
 
-def test_mydsl::jump::statement_constructor_args():
-    sig = inspect.signature(myDsl::jump::statement.__init__)
+def test_mydsl_selection_statement_constructor_args():
+    sig = inspect.signature(myDsl_selection_statement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_mydsl::expression::statement_is_not_abstract():
-    assert not inspect.isabstract(myDsl::expression::statement)
+def test_mydsl_expression_statement_is_not_abstract():
+    assert not inspect.isabstract(myDsl_expression_statement)
 
 
-def test_mydsl::expression::statement_constructor_exists():
-    assert callable(myDsl::expression::statement.__init__)
+def test_mydsl_expression_statement_constructor_exists():
+    assert callable(myDsl_expression_statement.__init__)
 
 
-def test_mydsl::expression::statement_constructor_args():
-    sig = inspect.signature(myDsl::expression::statement.__init__)
+def test_mydsl_expression_statement_constructor_args():
+    sig = inspect.signature(myDsl_expression_statement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_mydsl::expression_is_not_abstract():
-    assert not inspect.isabstract(myDsl::expression)
+def test_mydsl_expression_is_not_abstract():
+    assert not inspect.isabstract(myDsl_expression)
 
 
-def test_mydsl::expression_constructor_exists():
-    assert callable(myDsl::expression.__init__)
+def test_mydsl_expression_constructor_exists():
+    assert callable(myDsl_expression.__init__)
 
 
-def test_mydsl::expression_constructor_args():
-    sig = inspect.signature(myDsl::expression.__init__)
+def test_mydsl_expression_constructor_args():
+    sig = inspect.signature(myDsl_expression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_mydsl::iteration::statement_is_not_abstract():
-    assert not inspect.isabstract(myDsl::iteration::statement)
+def test_mydsl_iteration_statement_is_not_abstract():
+    assert not inspect.isabstract(myDsl_iteration_statement)
 
 
-def test_mydsl::iteration::statement_constructor_exists():
-    assert callable(myDsl::iteration::statement.__init__)
+def test_mydsl_iteration_statement_constructor_exists():
+    assert callable(myDsl_iteration_statement.__init__)
 
 
-def test_mydsl::iteration::statement_constructor_args():
-    sig = inspect.signature(myDsl::iteration::statement.__init__)
+def test_mydsl_iteration_statement_constructor_args():
+    sig = inspect.signature(myDsl_iteration_statement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_mydsl::labeled::statement_is_not_abstract():
-    assert not inspect.isabstract(myDsl::labeled::statement)
+def test_mydsl_labeled_statement_is_not_abstract():
+    assert not inspect.isabstract(myDsl_labeled_statement)
 
 
-def test_mydsl::labeled::statement_constructor_exists():
-    assert callable(myDsl::labeled::statement.__init__)
+def test_mydsl_labeled_statement_constructor_exists():
+    assert callable(myDsl_labeled_statement.__init__)
 
 
-def test_mydsl::labeled::statement_constructor_args():
-    sig = inspect.signature(myDsl::labeled::statement.__init__)
+def test_mydsl_labeled_statement_constructor_args():
+    sig = inspect.signature(myDsl_labeled_statement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_mydsl::parameter::listr_is_not_abstract():
-    assert not inspect.isabstract(myDsl::parameter::listR)
+def test_mydsl_parameter_listr_is_not_abstract():
+    assert not inspect.isabstract(myDsl_parameter_listR)
 
 
-def test_mydsl::parameter::listr_constructor_exists():
-    assert callable(myDsl::parameter::listR.__init__)
+def test_mydsl_parameter_listr_constructor_exists():
+    assert callable(myDsl_parameter_listR.__init__)
 
 
-def test_mydsl::parameter::listr_constructor_args():
-    sig = inspect.signature(myDsl::parameter::listR.__init__)
+def test_mydsl_parameter_listr_constructor_args():
+    sig = inspect.signature(myDsl_parameter_listR.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_mydsl::parameter::declaration_is_not_abstract():
-    assert not inspect.isabstract(myDsl::parameter::declaration)
+def test_mydsl_parameter_declaration_is_not_abstract():
+    assert not inspect.isabstract(myDsl_parameter_declaration)
 
 
-def test_mydsl::parameter::declaration_constructor_exists():
-    assert callable(myDsl::parameter::declaration.__init__)
+def test_mydsl_parameter_declaration_constructor_exists():
+    assert callable(myDsl_parameter_declaration.__init__)
 
 
-def test_mydsl::parameter::declaration_constructor_args():
-    sig = inspect.signature(myDsl::parameter::declaration.__init__)
+def test_mydsl_parameter_declaration_constructor_args():
+    sig = inspect.signature(myDsl_parameter_declaration.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_parameter::type::list_is_not_abstract():
-    assert not inspect.isabstract(parameter::type::list)
+def test_parameter_type_list_is_not_abstract():
+    assert not inspect.isabstract(parameter_type_list)
 
 
-def test_parameter::type::list_constructor_exists():
-    assert callable(parameter::type::list.__init__)
+def test_parameter_type_list_constructor_exists():
+    assert callable(parameter_type_list.__init__)
 
 
-def test_parameter::type::list_constructor_args():
-    sig = inspect.signature(parameter::type::list.__init__)
+def test_parameter_type_list_constructor_args():
+    sig = inspect.signature(parameter_type_list.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_mydsl::parameter::list_is_not_abstract():
-    assert not inspect.isabstract(myDsl::parameter::list)
+def test_mydsl_parameter_list_is_not_abstract():
+    assert not inspect.isabstract(myDsl_parameter_list)
 
 
-def test_mydsl::parameter::list_constructor_exists():
-    assert callable(myDsl::parameter::list.__init__)
+def test_mydsl_parameter_list_constructor_exists():
+    assert callable(myDsl_parameter_list.__init__)
 
 
-def test_mydsl::parameter::list_constructor_args():
-    sig = inspect.signature(myDsl::parameter::list.__init__)
+def test_mydsl_parameter_list_constructor_args():
+    sig = inspect.signature(myDsl_parameter_list.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_mydsl::identifier::listr_is_not_abstract():
-    assert not inspect.isabstract(myDsl::identifier::listR)
+def test_mydsl_identifier_listr_is_not_abstract():
+    assert not inspect.isabstract(myDsl_identifier_listR)
 
 
-def test_mydsl::identifier::listr_constructor_exists():
-    assert callable(myDsl::identifier::listR.__init__)
+def test_mydsl_identifier_listr_constructor_exists():
+    assert callable(myDsl_identifier_listR.__init__)
 
 
-def test_mydsl::identifier::listr_constructor_args():
-    sig = inspect.signature(myDsl::identifier::listR.__init__)
+def test_mydsl_identifier_listr_constructor_args():
+    sig = inspect.signature(myDsl_identifier_listR.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_mydsl::declaration::listr_is_not_abstract():
-    assert not inspect.isabstract(myDsl::declaration::listR)
+def test_mydsl_declaration_listr_is_not_abstract():
+    assert not inspect.isabstract(myDsl_declaration_listR)
 
 
-def test_mydsl::declaration::listr_constructor_exists():
-    assert callable(myDsl::declaration::listR.__init__)
+def test_mydsl_declaration_listr_constructor_exists():
+    assert callable(myDsl_declaration_listR.__init__)
 
 
-def test_mydsl::declaration::listr_constructor_args():
-    sig = inspect.signature(myDsl::declaration::listR.__init__)
+def test_mydsl_declaration_listr_constructor_args():
+    sig = inspect.signature(myDsl_declaration_listR.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_mydsl::abstract::declarator_is_not_abstract():
-    assert not inspect.isabstract(myDsl::abstract::declarator)
+def test_mydsl_abstract_declarator_is_not_abstract():
+    assert not inspect.isabstract(myDsl_abstract_declarator)
 
 
-def test_mydsl::abstract::declarator_constructor_exists():
-    assert callable(myDsl::abstract::declarator.__init__)
+def test_mydsl_abstract_declarator_constructor_exists():
+    assert callable(myDsl_abstract_declarator.__init__)
 
 
-def test_mydsl::abstract::declarator_constructor_args():
-    sig = inspect.signature(myDsl::abstract::declarator.__init__)
+def test_mydsl_abstract_declarator_constructor_args():
+    sig = inspect.signature(myDsl_abstract_declarator.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_mydsl::type::qualifier::listr_is_not_abstract():
-    assert not inspect.isabstract(myDsl::type::qualifier::listR)
+def test_mydsl_type_qualifier_listr_is_not_abstract():
+    assert not inspect.isabstract(myDsl_type_qualifier_listR)
 
 
-def test_mydsl::type::qualifier::listr_constructor_exists():
-    assert callable(myDsl::type::qualifier::listR.__init__)
+def test_mydsl_type_qualifier_listr_constructor_exists():
+    assert callable(myDsl_type_qualifier_listR.__init__)
 
 
-def test_mydsl::type::qualifier::listr_constructor_args():
-    sig = inspect.signature(myDsl::type::qualifier::listR.__init__)
+def test_mydsl_type_qualifier_listr_constructor_args():
+    sig = inspect.signature(myDsl_type_qualifier_listR.__init__)
     params = list(sig.parameters.keys())
     assert "Type_qualifier" in params, "Missing parameter 'Type_qualifier'"
 
-def test_mydsl::type::qualifier::listr_has_Type_qualifier():
-    assert hasattr(myDsl::type::qualifier::listR, "Type_qualifier")
+def test_mydsl_type_qualifier_listr_has_Type_qualifier():
+    assert hasattr(myDsl_type_qualifier_listR, "Type_qualifier")
     descriptor = None
-    for klass in myDsl::type::qualifier::listR.__mro__:
+    for klass in myDsl_type_qualifier_listR.__mro__:
         if "Type_qualifier" in klass.__dict__:
             descriptor = klass.__dict__["Type_qualifier"]
             break
@@ -1631,23 +1631,23 @@ def test_pointer_constructor_args():
 
 
 
-def test_mydsl::type::qualifier::list_is_not_abstract():
-    assert not inspect.isabstract(myDsl::type::qualifier::list)
+def test_mydsl_type_qualifier_list_is_not_abstract():
+    assert not inspect.isabstract(myDsl_type_qualifier_list)
 
 
-def test_mydsl::type::qualifier::list_constructor_exists():
-    assert callable(myDsl::type::qualifier::list.__init__)
+def test_mydsl_type_qualifier_list_constructor_exists():
+    assert callable(myDsl_type_qualifier_list.__init__)
 
 
-def test_mydsl::type::qualifier::list_constructor_args():
-    sig = inspect.signature(myDsl::type::qualifier::list.__init__)
+def test_mydsl_type_qualifier_list_constructor_args():
+    sig = inspect.signature(myDsl_type_qualifier_list.__init__)
     params = list(sig.parameters.keys())
     assert "Type_qualifier" in params, "Missing parameter 'Type_qualifier'"
 
-def test_mydsl::type::qualifier::list_has_Type_qualifier():
-    assert hasattr(myDsl::type::qualifier::list, "Type_qualifier")
+def test_mydsl_type_qualifier_list_has_Type_qualifier():
+    assert hasattr(myDsl_type_qualifier_list, "Type_qualifier")
     descriptor = None
-    for klass in myDsl::type::qualifier::list.__mro__:
+    for klass in myDsl_type_qualifier_list.__mro__:
         if "Type_qualifier" in klass.__dict__:
             descriptor = klass.__dict__["Type_qualifier"]
             break
@@ -1655,121 +1655,121 @@ def test_mydsl::type::qualifier::list_has_Type_qualifier():
 
 
 
-def test_mydsl::pointer_is_not_abstract():
-    assert not inspect.isabstract(myDsl::pointer)
+def test_mydsl_pointer_is_not_abstract():
+    assert not inspect.isabstract(myDsl_pointer)
 
 
-def test_mydsl::pointer_constructor_exists():
-    assert callable(myDsl::pointer.__init__)
+def test_mydsl_pointer_constructor_exists():
+    assert callable(myDsl_pointer.__init__)
 
 
-def test_mydsl::pointer_constructor_args():
-    sig = inspect.signature(myDsl::pointer.__init__)
+def test_mydsl_pointer_constructor_args():
+    sig = inspect.signature(myDsl_pointer.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_struct::declarator_is_not_abstract():
-    assert not inspect.isabstract(struct::declarator)
+def test_struct_declarator_is_not_abstract():
+    assert not inspect.isabstract(struct_declarator)
 
 
-def test_struct::declarator_constructor_exists():
-    assert callable(struct::declarator.__init__)
+def test_struct_declarator_constructor_exists():
+    assert callable(struct_declarator.__init__)
 
 
-def test_struct::declarator_constructor_args():
-    sig = inspect.signature(struct::declarator.__init__)
+def test_struct_declarator_constructor_args():
+    sig = inspect.signature(struct_declarator.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_mydsl::constant::expression_is_not_abstract():
-    assert not inspect.isabstract(myDsl::constant::expression)
+def test_mydsl_constant_expression_is_not_abstract():
+    assert not inspect.isabstract(myDsl_constant_expression)
 
 
-def test_mydsl::constant::expression_constructor_exists():
-    assert callable(myDsl::constant::expression.__init__)
+def test_mydsl_constant_expression_constructor_exists():
+    assert callable(myDsl_constant_expression.__init__)
 
 
-def test_mydsl::constant::expression_constructor_args():
-    sig = inspect.signature(myDsl::constant::expression.__init__)
+def test_mydsl_constant_expression_constructor_args():
+    sig = inspect.signature(myDsl_constant_expression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_init::declarator_is_not_abstract():
-    assert not inspect.isabstract(init::declarator)
+def test_init_declarator_is_not_abstract():
+    assert not inspect.isabstract(init_declarator)
 
 
-def test_init::declarator_constructor_exists():
-    assert callable(init::declarator.__init__)
+def test_init_declarator_constructor_exists():
+    assert callable(init_declarator.__init__)
 
 
-def test_init::declarator_constructor_args():
-    sig = inspect.signature(init::declarator.__init__)
+def test_init_declarator_constructor_args():
+    sig = inspect.signature(init_declarator.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_mydsl::compound::statement_is_not_abstract():
-    assert not inspect.isabstract(myDsl::compound::statement)
+def test_mydsl_compound_statement_is_not_abstract():
+    assert not inspect.isabstract(myDsl_compound_statement)
 
 
-def test_mydsl::compound::statement_constructor_exists():
-    assert callable(myDsl::compound::statement.__init__)
+def test_mydsl_compound_statement_constructor_exists():
+    assert callable(myDsl_compound_statement.__init__)
 
 
-def test_mydsl::compound::statement_constructor_args():
-    sig = inspect.signature(myDsl::compound::statement.__init__)
+def test_mydsl_compound_statement_constructor_args():
+    sig = inspect.signature(myDsl_compound_statement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_mydsl::identifier::list_is_not_abstract():
-    assert not inspect.isabstract(myDsl::identifier::list)
+def test_mydsl_identifier_list_is_not_abstract():
+    assert not inspect.isabstract(myDsl_identifier_list)
 
 
-def test_mydsl::identifier::list_constructor_exists():
-    assert callable(myDsl::identifier::list.__init__)
+def test_mydsl_identifier_list_constructor_exists():
+    assert callable(myDsl_identifier_list.__init__)
 
 
-def test_mydsl::identifier::list_constructor_args():
-    sig = inspect.signature(myDsl::identifier::list.__init__)
+def test_mydsl_identifier_list_constructor_args():
+    sig = inspect.signature(myDsl_identifier_list.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_mydsl::parameter::type::list_is_not_abstract():
-    assert not inspect.isabstract(myDsl::parameter::type::list)
+def test_mydsl_parameter_type_list_is_not_abstract():
+    assert not inspect.isabstract(myDsl_parameter_type_list)
 
 
-def test_mydsl::parameter::type::list_constructor_exists():
-    assert callable(myDsl::parameter::type::list.__init__)
+def test_mydsl_parameter_type_list_constructor_exists():
+    assert callable(myDsl_parameter_type_list.__init__)
 
 
-def test_mydsl::parameter::type::list_constructor_args():
-    sig = inspect.signature(myDsl::parameter::type::list.__init__)
+def test_mydsl_parameter_type_list_constructor_args():
+    sig = inspect.signature(myDsl_parameter_type_list.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_mydsl::assignment::expression_is_not_abstract():
-    assert not inspect.isabstract(myDsl::assignment::expression)
+def test_mydsl_assignment_expression_is_not_abstract():
+    assert not inspect.isabstract(myDsl_assignment_expression)
 
 
-def test_mydsl::assignment::expression_constructor_exists():
-    assert callable(myDsl::assignment::expression.__init__)
+def test_mydsl_assignment_expression_constructor_exists():
+    assert callable(myDsl_assignment_expression.__init__)
 
 
-def test_mydsl::assignment::expression_constructor_args():
-    sig = inspect.signature(myDsl::assignment::expression.__init__)
+def test_mydsl_assignment_expression_constructor_args():
+    sig = inspect.signature(myDsl_assignment_expression.__init__)
     params = list(sig.parameters.keys())
     assert "Assignment_operator" in params, "Missing parameter 'Assignment_operator'"
 
-def test_mydsl::assignment::expression_has_Assignment_operator():
-    assert hasattr(myDsl::assignment::expression, "Assignment_operator")
+def test_mydsl_assignment_expression_has_Assignment_operator():
+    assert hasattr(myDsl_assignment_expression, "Assignment_operator")
     descriptor = None
-    for klass in myDsl::assignment::expression.__mro__:
+    for klass in myDsl_assignment_expression.__mro__:
         if "Assignment_operator" in klass.__dict__:
             descriptor = klass.__dict__["Assignment_operator"]
             break
@@ -1777,16 +1777,16 @@ def test_mydsl::assignment::expression_has_Assignment_operator():
 
 
 
-def test_mydsl::direct::declaratorr_is_not_abstract():
-    assert not inspect.isabstract(myDsl::direct::declaratorR)
+def test_mydsl_direct_declaratorr_is_not_abstract():
+    assert not inspect.isabstract(myDsl_direct_declaratorR)
 
 
-def test_mydsl::direct::declaratorr_constructor_exists():
-    assert callable(myDsl::direct::declaratorR.__init__)
+def test_mydsl_direct_declaratorr_constructor_exists():
+    assert callable(myDsl_direct_declaratorR.__init__)
 
 
-def test_mydsl::direct::declaratorr_constructor_args():
-    sig = inspect.signature(myDsl::direct::declaratorR.__init__)
+def test_mydsl_direct_declaratorr_constructor_args():
+    sig = inspect.signature(myDsl_direct_declaratorR.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1805,176 +1805,176 @@ def test_declarator_constructor_args():
 
 
 
-def test_mydsl::direct::declarator_is_not_abstract():
-    assert not inspect.isabstract(myDsl::direct::declarator)
+def test_mydsl_direct_declarator_is_not_abstract():
+    assert not inspect.isabstract(myDsl_direct_declarator)
 
 
-def test_mydsl::direct::declarator_constructor_exists():
-    assert callable(myDsl::direct::declarator.__init__)
+def test_mydsl_direct_declarator_constructor_exists():
+    assert callable(myDsl_direct_declarator.__init__)
 
 
-def test_mydsl::direct::declarator_constructor_args():
-    sig = inspect.signature(myDsl::direct::declarator.__init__)
+def test_mydsl_direct_declarator_constructor_args():
+    sig = inspect.signature(myDsl_direct_declarator.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_mydsl::external::declaration_is_not_abstract():
-    assert not inspect.isabstract(myDsl::external::declaration)
+def test_mydsl_external_declaration_is_not_abstract():
+    assert not inspect.isabstract(myDsl_external_declaration)
 
 
-def test_mydsl::external::declaration_constructor_exists():
-    assert callable(myDsl::external::declaration.__init__)
+def test_mydsl_external_declaration_constructor_exists():
+    assert callable(myDsl_external_declaration.__init__)
 
 
-def test_mydsl::external::declaration_constructor_args():
-    sig = inspect.signature(myDsl::external::declaration.__init__)
+def test_mydsl_external_declaration_constructor_args():
+    sig = inspect.signature(myDsl_external_declaration.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_mydsl::translation::unit_is_not_abstract():
-    assert not inspect.isabstract(myDsl::translation::unit)
+def test_mydsl_translation_unit_is_not_abstract():
+    assert not inspect.isabstract(myDsl_translation_unit)
 
 
-def test_mydsl::translation::unit_constructor_exists():
-    assert callable(myDsl::translation::unit.__init__)
+def test_mydsl_translation_unit_constructor_exists():
+    assert callable(myDsl_translation_unit.__init__)
 
 
-def test_mydsl::translation::unit_constructor_args():
-    sig = inspect.signature(myDsl::translation::unit.__init__)
+def test_mydsl_translation_unit_constructor_args():
+    sig = inspect.signature(myDsl_translation_unit.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_mydsl::model_is_not_abstract():
-    assert not inspect.isabstract(myDsl::Model)
+def test_mydsl_model_is_not_abstract():
+    assert not inspect.isabstract(myDsl_Model)
 
 
-def test_mydsl::model_constructor_exists():
-    assert callable(myDsl::Model.__init__)
+def test_mydsl_model_constructor_exists():
+    assert callable(myDsl_Model.__init__)
 
 
-def test_mydsl::model_constructor_args():
-    sig = inspect.signature(myDsl::Model.__init__)
+def test_mydsl_model_constructor_args():
+    sig = inspect.signature(myDsl_Model.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_mydsl::declaration::list_is_not_abstract():
-    assert not inspect.isabstract(myDsl::declaration::list)
+def test_mydsl_declaration_list_is_not_abstract():
+    assert not inspect.isabstract(myDsl_declaration_list)
 
 
-def test_mydsl::declaration::list_constructor_exists():
-    assert callable(myDsl::declaration::list.__init__)
+def test_mydsl_declaration_list_constructor_exists():
+    assert callable(myDsl_declaration_list.__init__)
 
 
-def test_mydsl::declaration::list_constructor_args():
-    sig = inspect.signature(myDsl::declaration::list.__init__)
+def test_mydsl_declaration_list_constructor_args():
+    sig = inspect.signature(myDsl_declaration_list.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_mydsl::declarator_is_not_abstract():
-    assert not inspect.isabstract(myDsl::declarator)
+def test_mydsl_declarator_is_not_abstract():
+    assert not inspect.isabstract(myDsl_declarator)
 
 
-def test_mydsl::declarator_constructor_exists():
-    assert callable(myDsl::declarator.__init__)
+def test_mydsl_declarator_constructor_exists():
+    assert callable(myDsl_declarator.__init__)
 
 
-def test_mydsl::declarator_constructor_args():
-    sig = inspect.signature(myDsl::declarator.__init__)
+def test_mydsl_declarator_constructor_args():
+    sig = inspect.signature(myDsl_declarator.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_external::declaration_is_not_abstract():
-    assert not inspect.isabstract(external::declaration)
+def test_external_declaration_is_not_abstract():
+    assert not inspect.isabstract(external_declaration)
 
 
-def test_external::declaration_constructor_exists():
-    assert callable(external::declaration.__init__)
+def test_external_declaration_constructor_exists():
+    assert callable(external_declaration.__init__)
 
 
-def test_external::declaration_constructor_args():
-    sig = inspect.signature(external::declaration.__init__)
+def test_external_declaration_constructor_args():
+    sig = inspect.signature(external_declaration.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_mydsl::declaration_is_not_abstract():
-    assert not inspect.isabstract(myDsl::declaration)
+def test_mydsl_declaration_is_not_abstract():
+    assert not inspect.isabstract(myDsl_declaration)
 
 
-def test_mydsl::declaration_constructor_exists():
-    assert callable(myDsl::declaration.__init__)
+def test_mydsl_declaration_constructor_exists():
+    assert callable(myDsl_declaration.__init__)
 
 
-def test_mydsl::declaration_constructor_args():
-    sig = inspect.signature(myDsl::declaration.__init__)
+def test_mydsl_declaration_constructor_args():
+    sig = inspect.signature(myDsl_declaration.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_mydsl::function::definition_is_not_abstract():
-    assert not inspect.isabstract(myDsl::function::definition)
+def test_mydsl_function_definition_is_not_abstract():
+    assert not inspect.isabstract(myDsl_function_definition)
 
 
-def test_mydsl::function::definition_constructor_exists():
-    assert callable(myDsl::function::definition.__init__)
+def test_mydsl_function_definition_constructor_exists():
+    assert callable(myDsl_function_definition.__init__)
 
 
-def test_mydsl::function::definition_constructor_args():
-    sig = inspect.signature(myDsl::function::definition.__init__)
+def test_mydsl_function_definition_constructor_args():
+    sig = inspect.signature(myDsl_function_definition.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_mydsl::declaration::specifiers_is_not_abstract():
-    assert not inspect.isabstract(myDsl::declaration::specifiers)
+def test_mydsl_declaration_specifiers_is_not_abstract():
+    assert not inspect.isabstract(myDsl_declaration_specifiers)
 
 
-def test_mydsl::declaration::specifiers_constructor_exists():
-    assert callable(myDsl::declaration::specifiers.__init__)
+def test_mydsl_declaration_specifiers_constructor_exists():
+    assert callable(myDsl_declaration_specifiers.__init__)
 
 
-def test_mydsl::declaration::specifiers_constructor_args():
-    sig = inspect.signature(myDsl::declaration::specifiers.__init__)
+def test_mydsl_declaration_specifiers_constructor_args():
+    sig = inspect.signature(myDsl_declaration_specifiers.__init__)
     params = list(sig.parameters.keys())
-    assert "Type_qualifier" in params, "Missing parameter 'Type_qualifier'"
     assert "Storage_class_specifier" in params, "Missing parameter 'Storage_class_specifier'"
+    assert "Type_qualifier" in params, "Missing parameter 'Type_qualifier'"
 
-def test_mydsl::declaration::specifiers_has_Type_qualifier():
-    assert hasattr(myDsl::declaration::specifiers, "Type_qualifier")
+def test_mydsl_declaration_specifiers_has_Storage_class_specifier():
+    assert hasattr(myDsl_declaration_specifiers, "Storage_class_specifier")
     descriptor = None
-    for klass in myDsl::declaration::specifiers.__mro__:
-        if "Type_qualifier" in klass.__dict__:
-            descriptor = klass.__dict__["Type_qualifier"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_mydsl::declaration::specifiers_has_Storage_class_specifier():
-    assert hasattr(myDsl::declaration::specifiers, "Storage_class_specifier")
-    descriptor = None
-    for klass in myDsl::declaration::specifiers.__mro__:
+    for klass in myDsl_declaration_specifiers.__mro__:
         if "Storage_class_specifier" in klass.__dict__:
             descriptor = klass.__dict__["Storage_class_specifier"]
             break
     assert isinstance(descriptor, property)
 
+def test_mydsl_declaration_specifiers_has_Type_qualifier():
+    assert hasattr(myDsl_declaration_specifiers, "Type_qualifier")
+    descriptor = None
+    for klass in myDsl_declaration_specifiers.__mro__:
+        if "Type_qualifier" in klass.__dict__:
+            descriptor = klass.__dict__["Type_qualifier"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_mydsl::translation::unitr_is_not_abstract():
-    assert not inspect.isabstract(myDsl::translation::unitR)
+
+def test_mydsl_translation_unitr_is_not_abstract():
+    assert not inspect.isabstract(myDsl_translation_unitR)
 
 
-def test_mydsl::translation::unitr_constructor_exists():
-    assert callable(myDsl::translation::unitR.__init__)
+def test_mydsl_translation_unitr_constructor_exists():
+    assert callable(myDsl_translation_unitR.__init__)
 
 
-def test_mydsl::translation::unitr_constructor_args():
-    sig = inspect.signature(myDsl::translation::unitR.__init__)
+def test_mydsl_translation_unitr_constructor_args():
+    sig = inspect.signature(myDsl_translation_unitR.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1989,477 +1989,474 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-postfix::expressionR_strategy = st.builds(
-    postfix::expressionR,
+postfix_expressionR_strategy = st.builds(
+    postfix_expressionR,
 )
-struct::or::union::specifier_strategy = st.builds(
-    struct::or::union::specifier,
+struct_or_union_specifier_strategy = st.builds(
+    struct_or_union_specifier,
 )
-labeled::statement_strategy = st.builds(
-    labeled::statement,
+labeled_statement_strategy = st.builds(
+    labeled_statement,
 )
-identifier::listR_strategy = st.builds(
-    identifier::listR,
+identifier_listR_strategy = st.builds(
+    identifier_listR,
 )
-identifier::list_strategy = st.builds(
-    identifier::list,
+identifier_list_strategy = st.builds(
+    identifier_list,
 )
-direct::declarator_strategy = st.builds(
-    direct::declarator,
+direct_declarator_strategy = st.builds(
+    direct_declarator,
 )
-declaration::specifiers_strategy = st.builds(
-    declaration::specifiers,
+declaration_specifiers_strategy = st.builds(
+    declaration_specifiers,
 )
-myDsl::argument::expression::list_strategy = st.builds(
-    myDsl::argument::expression::list,
+myDsl_argument_expression_list_strategy = st.builds(
+    myDsl_argument_expression_list,
 )
-myDsl::EObject_strategy = st.builds(
-    myDsl::EObject,
+myDsl_EObject_strategy = st.builds(
+    myDsl_EObject,
 )
-abstract::declarator_strategy = st.builds(
-    abstract::declarator,
+abstract_declarator_strategy = st.builds(
+    abstract_declarator,
 )
-myDsl::argument::expression::listR_strategy = st.builds(
-    myDsl::argument::expression::listR,
+myDsl_argument_expression_listR_strategy = st.builds(
+    myDsl_argument_expression_listR,
 )
-type::specifier_strategy = st.builds(
-    type::specifier,
+type_specifier_strategy = st.builds(
+    type_specifier,
 )
-myDsl::atomic::type::specifier_strategy = st.builds(
-    myDsl::atomic::type::specifier,
+myDsl_atomic_type_specifier_strategy = st.builds(
+    myDsl_atomic_type_specifier,
 )
-myDsl::struct::or::union::specifier_strategy = st.builds(
-    myDsl::struct::or::union::specifier,
+myDsl_struct_or_union_specifier_strategy = st.builds(
+    myDsl_struct_or_union_specifier,
     Struct_or_union=
         safe_text
 )
 declaration_strategy = st.builds(
     declaration,
 )
-myDsl::struct::declaration_strategy = st.builds(
-    myDsl::struct::declaration,
+myDsl_struct_declaration_strategy = st.builds(
+    myDsl_struct_declaration,
 )
-myDsl::struct::declaration::list_strategy = st.builds(
-    myDsl::struct::declaration::list,
+myDsl_struct_declaration_list_strategy = st.builds(
+    myDsl_struct_declaration_list,
 )
-myDsl::struct::declarator::listR_strategy = st.builds(
-    myDsl::struct::declarator::listR,
+myDsl_struct_declarator_listR_strategy = st.builds(
+    myDsl_struct_declarator_listR,
 )
-myDsl::struct::declarator_strategy = st.builds(
-    myDsl::struct::declarator,
+myDsl_struct_declarator_strategy = st.builds(
+    myDsl_struct_declarator,
 )
-myDsl::struct::declarator::list_strategy = st.builds(
-    myDsl::struct::declarator::list,
+myDsl_struct_declarator_list_strategy = st.builds(
+    myDsl_struct_declarator_list,
 )
-myDsl::struct::declaration::listR_strategy = st.builds(
-    myDsl::struct::declaration::listR,
+myDsl_struct_declaration_listR_strategy = st.builds(
+    myDsl_struct_declaration_listR,
 )
-myDsl::type::specifier_strategy = st.builds(
-    myDsl::type::specifier,
+myDsl_type_specifier_strategy = st.builds(
+    myDsl_type_specifier,
 )
-struct::declaration_strategy = st.builds(
-    struct::declaration,
+struct_declaration_strategy = st.builds(
+    struct_declaration,
 )
-myDsl::static::assert::declaration_strategy = st.builds(
-    myDsl::static::assert::declaration,
+myDsl_static_assert_declaration_strategy = st.builds(
+    myDsl_static_assert_declaration,
 )
-type::name_strategy = st.builds(
-    type::name,
+type_name_strategy = st.builds(
+    type_name,
 )
-myDsl::specifier::qualifier::list_strategy = st.builds(
-    myDsl::specifier::qualifier::list,
+myDsl_specifier_qualifier_list_strategy = st.builds(
+    myDsl_specifier_qualifier_list,
 )
-myDsl::designator::listR_strategy = st.builds(
-    myDsl::designator::listR,
+myDsl_designator_listR_strategy = st.builds(
+    myDsl_designator_listR,
 )
-myDsl::designator_strategy = st.builds(
-    myDsl::designator,
+myDsl_designator_strategy = st.builds(
+    myDsl_designator,
 )
 designation_strategy = st.builds(
     designation,
 )
-atomic::type::specifier_strategy = st.builds(
-    atomic::type::specifier,
+atomic_type_specifier_strategy = st.builds(
+    atomic_type_specifier,
 )
-static::assert::declaration_strategy = st.builds(
-    static::assert::declaration,
+static_assert_declaration_strategy = st.builds(
+    static_assert_declaration,
 )
 designator_strategy = st.builds(
     designator,
 )
-myDsl::designation_strategy = st.builds(
-    myDsl::designation,
+myDsl_designation_strategy = st.builds(
+    myDsl_designation,
 )
-myDsl::postfix::expressionR_strategy = st.builds(
-    myDsl::postfix::expressionR,
+myDsl_postfix_expressionR_strategy = st.builds(
+    myDsl_postfix_expressionR,
 )
-myDsl::primary::expression_strategy = st.builds(
-    myDsl::primary::expression,
+myDsl_primary_expression_strategy = st.builds(
+    myDsl_primary_expression,
 )
-unary::expression_strategy = st.builds(
-    unary::expression,
+unary_expression_strategy = st.builds(
+    unary_expression,
 )
-myDsl::postfix::expression_strategy = st.builds(
-    myDsl::postfix::expression,
+myDsl_postfix_expression_strategy = st.builds(
+    myDsl_postfix_expression,
 )
-cast::expression_strategy = st.builds(
-    cast::expression,
+cast_expression_strategy = st.builds(
+    cast_expression,
 )
-myDsl::designator::list_strategy = st.builds(
-    myDsl::designator::list,
+myDsl_designator_list_strategy = st.builds(
+    myDsl_designator_list,
 )
-myDsl::initializer::listR_strategy = st.builds(
-    myDsl::initializer::listR,
+myDsl_initializer_listR_strategy = st.builds(
+    myDsl_initializer_listR,
 )
-myDsl::cast::expression_strategy = st.builds(
-    myDsl::cast::expression,
+myDsl_cast_expression_strategy = st.builds(
+    myDsl_cast_expression,
 )
-myDsl::multiplicative::expressionR_strategy = st.builds(
-    myDsl::multiplicative::expressionR,
+myDsl_multiplicative_expressionR_strategy = st.builds(
+    myDsl_multiplicative_expressionR,
 )
-myDsl::additive::expressionR_strategy = st.builds(
-    myDsl::additive::expressionR,
+myDsl_additive_expressionR_strategy = st.builds(
+    myDsl_additive_expressionR,
 )
-myDsl::multiplicative::expression_strategy = st.builds(
-    myDsl::multiplicative::expression,
+myDsl_multiplicative_expression_strategy = st.builds(
+    myDsl_multiplicative_expression,
 )
-myDsl::type::name_strategy = st.builds(
-    myDsl::type::name,
+myDsl_type_name_strategy = st.builds(
+    myDsl_type_name,
 )
-myDsl::unary::expression_strategy = st.builds(
-    myDsl::unary::expression,
+myDsl_unary_expression_strategy = st.builds(
+    myDsl_unary_expression,
     Unary_operator=
         safe_text
 )
 initializer_strategy = st.builds(
     initializer,
 )
-myDsl::initializer::list_strategy = st.builds(
-    myDsl::initializer::list,
+myDsl_initializer_list_strategy = st.builds(
+    myDsl_initializer_list,
 )
-myDsl::relational::expressionR_strategy = st.builds(
-    myDsl::relational::expressionR,
+myDsl_relational_expressionR_strategy = st.builds(
+    myDsl_relational_expressionR,
 )
-myDsl::shift::expression_strategy = st.builds(
-    myDsl::shift::expression,
+myDsl_shift_expression_strategy = st.builds(
+    myDsl_shift_expression,
 )
-myDsl::equality::expressionR_strategy = st.builds(
-    myDsl::equality::expressionR,
+myDsl_equality_expressionR_strategy = st.builds(
+    myDsl_equality_expressionR,
 )
-myDsl::relational::expression_strategy = st.builds(
-    myDsl::relational::expression,
+myDsl_relational_expression_strategy = st.builds(
+    myDsl_relational_expression,
 )
-shift::expression_strategy = st.builds(
-    shift::expression,
+shift_expression_strategy = st.builds(
+    shift_expression,
 )
-myDsl::additive::expression_strategy = st.builds(
-    myDsl::additive::expression,
+myDsl_additive_expression_strategy = st.builds(
+    myDsl_additive_expression,
 )
-myDsl::shift::expressionR_strategy = st.builds(
-    myDsl::shift::expressionR,
+myDsl_shift_expressionR_strategy = st.builds(
+    myDsl_shift_expressionR,
 )
-myDsl::inclusive::or::expressionR_strategy = st.builds(
-    myDsl::inclusive::or::expressionR,
+myDsl_inclusive_or_expressionR_strategy = st.builds(
+    myDsl_inclusive_or_expressionR,
 )
-myDsl::exclusive::or::expression_strategy = st.builds(
-    myDsl::exclusive::or::expression,
+myDsl_exclusive_or_expression_strategy = st.builds(
+    myDsl_exclusive_or_expression,
 )
-myDsl::logical::and::expressionR_strategy = st.builds(
-    myDsl::logical::and::expressionR,
+myDsl_logical_and_expressionR_strategy = st.builds(
+    myDsl_logical_and_expressionR,
 )
-myDsl::equality::expression_strategy = st.builds(
-    myDsl::equality::expression,
+myDsl_equality_expression_strategy = st.builds(
+    myDsl_equality_expression,
 )
-myDsl::and::expressionR_strategy = st.builds(
-    myDsl::and::expressionR,
+myDsl_and_expressionR_strategy = st.builds(
+    myDsl_and_expressionR,
 )
-myDsl::exclusive::or::expressionR_strategy = st.builds(
-    myDsl::exclusive::or::expressionR,
+myDsl_exclusive_or_expressionR_strategy = st.builds(
+    myDsl_exclusive_or_expressionR,
 )
-myDsl::and::expression_strategy = st.builds(
-    myDsl::and::expression,
+myDsl_and_expression_strategy = st.builds(
+    myDsl_and_expression,
 )
-constant::expression_strategy = st.builds(
-    constant::expression,
+constant_expression_strategy = st.builds(
+    constant_expression,
 )
-assignment::expression_strategy = st.builds(
-    assignment::expression,
+assignment_expression_strategy = st.builds(
+    assignment_expression,
 )
-myDsl::conditional::expression_strategy = st.builds(
-    myDsl::conditional::expression,
+myDsl_conditional_expression_strategy = st.builds(
+    myDsl_conditional_expression,
 )
-myDsl::expressionR_strategy = st.builds(
-    myDsl::expressionR,
+myDsl_expressionR_strategy = st.builds(
+    myDsl_expressionR,
 )
-primary::expression_strategy = st.builds(
-    primary::expression,
+primary_expression_strategy = st.builds(
+    primary_expression,
 )
-myDsl::StringC_strategy = st.builds(
-    myDsl::StringC,
+myDsl_StringC_strategy = st.builds(
+    myDsl_StringC,
     string=
         safe_text
 )
-expression::statement_strategy = st.builds(
-    expression::statement,
+expression_statement_strategy = st.builds(
+    expression_statement,
 )
-jump::statement_strategy = st.builds(
-    jump::statement,
+jump_statement_strategy = st.builds(
+    jump_statement,
 )
-myDsl::IDENTIFIER_strategy = st.builds(
-    myDsl::IDENTIFIER,
+myDsl_IDENTIFIER_strategy = st.builds(
+    myDsl_IDENTIFIER,
     name=
         safe_text
 )
-myDsl::inclusive::or::expression_strategy = st.builds(
-    myDsl::inclusive::or::expression,
+myDsl_inclusive_or_expression_strategy = st.builds(
+    myDsl_inclusive_or_expression,
 )
-myDsl::logical::or::expressionR_strategy = st.builds(
-    myDsl::logical::or::expressionR,
+myDsl_logical_or_expressionR_strategy = st.builds(
+    myDsl_logical_or_expressionR,
 )
-myDsl::logical::and::expression_strategy = st.builds(
-    myDsl::logical::and::expression,
+myDsl_logical_and_expression_strategy = st.builds(
+    myDsl_logical_and_expression,
 )
-conditional::expression_strategy = st.builds(
-    conditional::expression,
+conditional_expression_strategy = st.builds(
+    conditional_expression,
 )
-myDsl::logical::or::expression_strategy = st.builds(
-    myDsl::logical::or::expression,
+myDsl_logical_or_expression_strategy = st.builds(
+    myDsl_logical_or_expression,
 )
-myDsl::initializer_strategy = st.builds(
-    myDsl::initializer,
+myDsl_initializer_strategy = st.builds(
+    myDsl_initializer,
 )
-myDsl::init::declarator::listR_strategy = st.builds(
-    myDsl::init::declarator::listR,
+myDsl_init_declarator_listR_strategy = st.builds(
+    myDsl_init_declarator_listR,
 )
-myDsl::init::declarator_strategy = st.builds(
-    myDsl::init::declarator,
+myDsl_init_declarator_strategy = st.builds(
+    myDsl_init_declarator,
 )
-myDsl::init::declarator::list_strategy = st.builds(
-    myDsl::init::declarator::list,
+myDsl_init_declarator_list_strategy = st.builds(
+    myDsl_init_declarator_list,
 )
-parameter::declaration_strategy = st.builds(
-    parameter::declaration,
+parameter_declaration_strategy = st.builds(
+    parameter_declaration,
 )
-block::item_strategy = st.builds(
-    block::item,
+block_item_strategy = st.builds(
+    block_item,
 )
-myDsl::statement_strategy = st.builds(
-    myDsl::statement,
+myDsl_statement_strategy = st.builds(
+    myDsl_statement,
 )
-myDsl::block::item::listR_strategy = st.builds(
-    myDsl::block::item::listR,
+myDsl_block_item_listR_strategy = st.builds(
+    myDsl_block_item_listR,
 )
-myDsl::block::item_strategy = st.builds(
-    myDsl::block::item,
+myDsl_block_item_strategy = st.builds(
+    myDsl_block_item,
 )
-compound::statement_strategy = st.builds(
-    compound::statement,
+compound_statement_strategy = st.builds(
+    compound_statement,
 )
-myDsl::block::item::list_strategy = st.builds(
-    myDsl::block::item::list,
+myDsl_block_item_list_strategy = st.builds(
+    myDsl_block_item_list,
 )
 statement_strategy = st.builds(
     statement,
 )
-myDsl::selection::statement_strategy = st.builds(
-    myDsl::selection::statement,
+myDsl_jump_statement_strategy = st.builds(
+    myDsl_jump_statement,
 )
-myDsl::jump::statement_strategy = st.builds(
-    myDsl::jump::statement,
+myDsl_selection_statement_strategy = st.builds(
+    myDsl_selection_statement,
 )
-myDsl::expression::statement_strategy = st.builds(
-    myDsl::expression::statement,
+myDsl_expression_statement_strategy = st.builds(
+    myDsl_expression_statement,
 )
-myDsl::expression_strategy = st.builds(
-    myDsl::expression,
+myDsl_expression_strategy = st.builds(
+    myDsl_expression,
 )
-myDsl::iteration::statement_strategy = st.builds(
-    myDsl::iteration::statement,
+myDsl_iteration_statement_strategy = st.builds(
+    myDsl_iteration_statement,
 )
-myDsl::labeled::statement_strategy = st.builds(
-    myDsl::labeled::statement,
+myDsl_labeled_statement_strategy = st.builds(
+    myDsl_labeled_statement,
 )
-myDsl::parameter::listR_strategy = st.builds(
-    myDsl::parameter::listR,
+myDsl_parameter_listR_strategy = st.builds(
+    myDsl_parameter_listR,
 )
-myDsl::parameter::declaration_strategy = st.builds(
-    myDsl::parameter::declaration,
+myDsl_parameter_declaration_strategy = st.builds(
+    myDsl_parameter_declaration,
 )
-parameter::type::list_strategy = st.builds(
-    parameter::type::list,
+parameter_type_list_strategy = st.builds(
+    parameter_type_list,
 )
-myDsl::parameter::list_strategy = st.builds(
-    myDsl::parameter::list,
+myDsl_parameter_list_strategy = st.builds(
+    myDsl_parameter_list,
 )
-myDsl::identifier::listR_strategy = st.builds(
-    myDsl::identifier::listR,
+myDsl_identifier_listR_strategy = st.builds(
+    myDsl_identifier_listR,
 )
-myDsl::declaration::listR_strategy = st.builds(
-    myDsl::declaration::listR,
+myDsl_declaration_listR_strategy = st.builds(
+    myDsl_declaration_listR,
 )
-myDsl::abstract::declarator_strategy = st.builds(
-    myDsl::abstract::declarator,
+myDsl_abstract_declarator_strategy = st.builds(
+    myDsl_abstract_declarator,
 )
-myDsl::type::qualifier::listR_strategy = st.builds(
-    myDsl::type::qualifier::listR,
+myDsl_type_qualifier_listR_strategy = st.builds(
+    myDsl_type_qualifier_listR,
     Type_qualifier=
         safe_text
 )
 pointer_strategy = st.builds(
     pointer,
 )
-myDsl::type::qualifier::list_strategy = st.builds(
-    myDsl::type::qualifier::list,
+myDsl_type_qualifier_list_strategy = st.builds(
+    myDsl_type_qualifier_list,
     Type_qualifier=
         safe_text
 )
-myDsl::pointer_strategy = st.builds(
-    myDsl::pointer,
+myDsl_pointer_strategy = st.builds(
+    myDsl_pointer,
 )
-struct::declarator_strategy = st.builds(
-    struct::declarator,
+struct_declarator_strategy = st.builds(
+    struct_declarator,
 )
-myDsl::constant::expression_strategy = st.builds(
-    myDsl::constant::expression,
+myDsl_constant_expression_strategy = st.builds(
+    myDsl_constant_expression,
 )
-init::declarator_strategy = st.builds(
-    init::declarator,
+init_declarator_strategy = st.builds(
+    init_declarator,
 )
-myDsl::compound::statement_strategy = st.builds(
-    myDsl::compound::statement,
+myDsl_compound_statement_strategy = st.builds(
+    myDsl_compound_statement,
 )
-myDsl::identifier::list_strategy = st.builds(
-    myDsl::identifier::list,
+myDsl_identifier_list_strategy = st.builds(
+    myDsl_identifier_list,
 )
-myDsl::parameter::type::list_strategy = st.builds(
-    myDsl::parameter::type::list,
+myDsl_parameter_type_list_strategy = st.builds(
+    myDsl_parameter_type_list,
 )
-myDsl::assignment::expression_strategy = st.builds(
-    myDsl::assignment::expression,
+myDsl_assignment_expression_strategy = st.builds(
+    myDsl_assignment_expression,
     Assignment_operator=
         safe_text
 )
-myDsl::direct::declaratorR_strategy = st.builds(
-    myDsl::direct::declaratorR,
+myDsl_direct_declaratorR_strategy = st.builds(
+    myDsl_direct_declaratorR,
 )
 declarator_strategy = st.builds(
     declarator,
 )
-myDsl::direct::declarator_strategy = st.builds(
-    myDsl::direct::declarator,
+myDsl_direct_declarator_strategy = st.builds(
+    myDsl_direct_declarator,
 )
-myDsl::external::declaration_strategy = st.builds(
-    myDsl::external::declaration,
+myDsl_external_declaration_strategy = st.builds(
+    myDsl_external_declaration,
 )
-myDsl::translation::unit_strategy = st.builds(
-    myDsl::translation::unit,
+myDsl_translation_unit_strategy = st.builds(
+    myDsl_translation_unit,
 )
-myDsl::Model_strategy = st.builds(
-    myDsl::Model,
+myDsl_Model_strategy = st.builds(
+    myDsl_Model,
 )
-myDsl::declaration::list_strategy = st.builds(
-    myDsl::declaration::list,
+myDsl_declaration_list_strategy = st.builds(
+    myDsl_declaration_list,
 )
-myDsl::declarator_strategy = st.builds(
-    myDsl::declarator,
+myDsl_declarator_strategy = st.builds(
+    myDsl_declarator,
 )
-external::declaration_strategy = st.builds(
-    external::declaration,
+external_declaration_strategy = st.builds(
+    external_declaration,
 )
-myDsl::declaration_strategy = st.builds(
-    myDsl::declaration,
+myDsl_declaration_strategy = st.builds(
+    myDsl_declaration,
 )
-myDsl::function::definition_strategy = st.builds(
-    myDsl::function::definition,
+myDsl_function_definition_strategy = st.builds(
+    myDsl_function_definition,
 )
-myDsl::declaration::specifiers_strategy = st.builds(
-    myDsl::declaration::specifiers,
-    Type_qualifier=
-        safe_text,
+myDsl_declaration_specifiers_strategy = st.builds(
+    myDsl_declaration_specifiers,
     Storage_class_specifier=
+        safe_text,
+    Type_qualifier=
         safe_text
 )
-myDsl::translation::unitR_strategy = st.builds(
-    myDsl::translation::unitR,
+myDsl_translation_unitR_strategy = st.builds(
+    myDsl_translation_unitR,
 )
 
-@given(instance=postfix::expressionR_strategy)
+@given(instance=postfix_expressionR_strategy)
 @settings(max_examples=50)
-def test_postfix::expressionr_instantiation(instance):
-    assert isinstance(instance, postfix::expressionR)
+def test_postfix_expressionr_instantiation(instance):
+    assert isinstance(instance, postfix_expressionR)
 
-@given(instance=struct::or::union::specifier_strategy)
+@given(instance=struct_or_union_specifier_strategy)
 @settings(max_examples=50)
-def test_struct::or::union::specifier_instantiation(instance):
-    assert isinstance(instance, struct::or::union::specifier)
+def test_struct_or_union_specifier_instantiation(instance):
+    assert isinstance(instance, struct_or_union_specifier)
 
-@given(instance=labeled::statement_strategy)
+@given(instance=labeled_statement_strategy)
 @settings(max_examples=50)
-def test_labeled::statement_instantiation(instance):
-    assert isinstance(instance, labeled::statement)
+def test_labeled_statement_instantiation(instance):
+    assert isinstance(instance, labeled_statement)
 
-@given(instance=identifier::listR_strategy)
+@given(instance=identifier_listR_strategy)
 @settings(max_examples=50)
-def test_identifier::listr_instantiation(instance):
-    assert isinstance(instance, identifier::listR)
+def test_identifier_listr_instantiation(instance):
+    assert isinstance(instance, identifier_listR)
 
-@given(instance=identifier::list_strategy)
+@given(instance=identifier_list_strategy)
 @settings(max_examples=50)
-def test_identifier::list_instantiation(instance):
-    assert isinstance(instance, identifier::list)
+def test_identifier_list_instantiation(instance):
+    assert isinstance(instance, identifier_list)
 
-@given(instance=direct::declarator_strategy)
+@given(instance=direct_declarator_strategy)
 @settings(max_examples=50)
-def test_direct::declarator_instantiation(instance):
-    assert isinstance(instance, direct::declarator)
+def test_direct_declarator_instantiation(instance):
+    assert isinstance(instance, direct_declarator)
 
-@given(instance=declaration::specifiers_strategy)
+@given(instance=declaration_specifiers_strategy)
 @settings(max_examples=50)
-def test_declaration::specifiers_instantiation(instance):
-    assert isinstance(instance, declaration::specifiers)
+def test_declaration_specifiers_instantiation(instance):
+    assert isinstance(instance, declaration_specifiers)
 
-@given(instance=myDsl::argument::expression::list_strategy)
+@given(instance=myDsl_argument_expression_list_strategy)
 @settings(max_examples=50)
-def test_mydsl::argument::expression::list_instantiation(instance):
-    assert isinstance(instance, myDsl::argument::expression::list)
+def test_mydsl_argument_expression_list_instantiation(instance):
+    assert isinstance(instance, myDsl_argument_expression_list)
 
-@given(instance=myDsl::EObject_strategy)
+@given(instance=myDsl_EObject_strategy)
 @settings(max_examples=50)
-def test_mydsl::eobject_instantiation(instance):
-    assert isinstance(instance, myDsl::EObject)
+def test_mydsl_eobject_instantiation(instance):
+    assert isinstance(instance, myDsl_EObject)
 
-@given(instance=abstract::declarator_strategy)
+@given(instance=abstract_declarator_strategy)
 @settings(max_examples=50)
-def test_abstract::declarator_instantiation(instance):
-    assert isinstance(instance, abstract::declarator)
+def test_abstract_declarator_instantiation(instance):
+    assert isinstance(instance, abstract_declarator)
 
-@given(instance=myDsl::argument::expression::listR_strategy)
+@given(instance=myDsl_argument_expression_listR_strategy)
 @settings(max_examples=50)
-def test_mydsl::argument::expression::listr_instantiation(instance):
-    assert isinstance(instance, myDsl::argument::expression::listR)
+def test_mydsl_argument_expression_listr_instantiation(instance):
+    assert isinstance(instance, myDsl_argument_expression_listR)
 
-@given(instance=type::specifier_strategy)
+@given(instance=type_specifier_strategy)
 @settings(max_examples=50)
-def test_type::specifier_instantiation(instance):
-    assert isinstance(instance, type::specifier)
+def test_type_specifier_instantiation(instance):
+    assert isinstance(instance, type_specifier)
 
-@given(instance=myDsl::atomic::type::specifier_strategy)
+@given(instance=myDsl_atomic_type_specifier_strategy)
 @settings(max_examples=50)
-def test_mydsl::atomic::type::specifier_instantiation(instance):
-    assert isinstance(instance, myDsl::atomic::type::specifier)
+def test_mydsl_atomic_type_specifier_instantiation(instance):
+    assert isinstance(instance, myDsl_atomic_type_specifier)
 
-@given(instance=myDsl::struct::or::union::specifier_strategy)
+@given(instance=myDsl_struct_or_union_specifier_strategy)
 @settings(max_examples=50)
-def test_mydsl::struct::or::union::specifier_instantiation(instance):
-    assert isinstance(instance, myDsl::struct::or::union::specifier)
-
-@given(instance=myDsl::struct::or::union::specifier_strategy)
-def test_mydsl::struct::or::union::specifier_Struct_or_union_type(instance):
-    assert isinstance(instance.Struct_or_union, str)
+def test_mydsl_struct_or_union_specifier_instantiation(instance):
+    assert isinstance(instance, myDsl_struct_or_union_specifier)
 
 
-@given(instance=myDsl::struct::or::union::specifier_strategy)
-def test_mydsl::struct::or::union::specifier_Struct_or_union_setter(instance):
+
+@given(instance=myDsl_struct_or_union_specifier_strategy)
+def test_mydsl_struct_or_union_specifier_Struct_or_union_setter(instance):
     original = instance.Struct_or_union
     instance.Struct_or_union = original
     assert instance.Struct_or_union == original
@@ -2469,168 +2466,165 @@ def test_mydsl::struct::or::union::specifier_Struct_or_union_setter(instance):
 def test_declaration_instantiation(instance):
     assert isinstance(instance, declaration)
 
-@given(instance=myDsl::struct::declaration_strategy)
+@given(instance=myDsl_struct_declaration_strategy)
 @settings(max_examples=50)
-def test_mydsl::struct::declaration_instantiation(instance):
-    assert isinstance(instance, myDsl::struct::declaration)
+def test_mydsl_struct_declaration_instantiation(instance):
+    assert isinstance(instance, myDsl_struct_declaration)
 
-@given(instance=myDsl::struct::declaration::list_strategy)
+@given(instance=myDsl_struct_declaration_list_strategy)
 @settings(max_examples=50)
-def test_mydsl::struct::declaration::list_instantiation(instance):
-    assert isinstance(instance, myDsl::struct::declaration::list)
+def test_mydsl_struct_declaration_list_instantiation(instance):
+    assert isinstance(instance, myDsl_struct_declaration_list)
 
-@given(instance=myDsl::struct::declarator::listR_strategy)
+@given(instance=myDsl_struct_declarator_listR_strategy)
 @settings(max_examples=50)
-def test_mydsl::struct::declarator::listr_instantiation(instance):
-    assert isinstance(instance, myDsl::struct::declarator::listR)
+def test_mydsl_struct_declarator_listr_instantiation(instance):
+    assert isinstance(instance, myDsl_struct_declarator_listR)
 
-@given(instance=myDsl::struct::declarator_strategy)
+@given(instance=myDsl_struct_declarator_strategy)
 @settings(max_examples=50)
-def test_mydsl::struct::declarator_instantiation(instance):
-    assert isinstance(instance, myDsl::struct::declarator)
+def test_mydsl_struct_declarator_instantiation(instance):
+    assert isinstance(instance, myDsl_struct_declarator)
 
-@given(instance=myDsl::struct::declarator::list_strategy)
+@given(instance=myDsl_struct_declarator_list_strategy)
 @settings(max_examples=50)
-def test_mydsl::struct::declarator::list_instantiation(instance):
-    assert isinstance(instance, myDsl::struct::declarator::list)
+def test_mydsl_struct_declarator_list_instantiation(instance):
+    assert isinstance(instance, myDsl_struct_declarator_list)
 
-@given(instance=myDsl::struct::declaration::listR_strategy)
+@given(instance=myDsl_struct_declaration_listR_strategy)
 @settings(max_examples=50)
-def test_mydsl::struct::declaration::listr_instantiation(instance):
-    assert isinstance(instance, myDsl::struct::declaration::listR)
+def test_mydsl_struct_declaration_listr_instantiation(instance):
+    assert isinstance(instance, myDsl_struct_declaration_listR)
 
-@given(instance=myDsl::type::specifier_strategy)
+@given(instance=myDsl_type_specifier_strategy)
 @settings(max_examples=50)
-def test_mydsl::type::specifier_instantiation(instance):
-    assert isinstance(instance, myDsl::type::specifier)
+def test_mydsl_type_specifier_instantiation(instance):
+    assert isinstance(instance, myDsl_type_specifier)
 
-@given(instance=struct::declaration_strategy)
+@given(instance=struct_declaration_strategy)
 @settings(max_examples=50)
-def test_struct::declaration_instantiation(instance):
-    assert isinstance(instance, struct::declaration)
+def test_struct_declaration_instantiation(instance):
+    assert isinstance(instance, struct_declaration)
 
-@given(instance=myDsl::static::assert::declaration_strategy)
+@given(instance=myDsl_static_assert_declaration_strategy)
 @settings(max_examples=50)
-def test_mydsl::static::assert::declaration_instantiation(instance):
-    assert isinstance(instance, myDsl::static::assert::declaration)
+def test_mydsl_static_assert_declaration_instantiation(instance):
+    assert isinstance(instance, myDsl_static_assert_declaration)
 
-@given(instance=type::name_strategy)
+@given(instance=type_name_strategy)
 @settings(max_examples=50)
-def test_type::name_instantiation(instance):
-    assert isinstance(instance, type::name)
+def test_type_name_instantiation(instance):
+    assert isinstance(instance, type_name)
 
-@given(instance=myDsl::specifier::qualifier::list_strategy)
+@given(instance=myDsl_specifier_qualifier_list_strategy)
 @settings(max_examples=50)
-def test_mydsl::specifier::qualifier::list_instantiation(instance):
-    assert isinstance(instance, myDsl::specifier::qualifier::list)
+def test_mydsl_specifier_qualifier_list_instantiation(instance):
+    assert isinstance(instance, myDsl_specifier_qualifier_list)
 
-@given(instance=myDsl::designator::listR_strategy)
+@given(instance=myDsl_designator_listR_strategy)
 @settings(max_examples=50)
-def test_mydsl::designator::listr_instantiation(instance):
-    assert isinstance(instance, myDsl::designator::listR)
+def test_mydsl_designator_listr_instantiation(instance):
+    assert isinstance(instance, myDsl_designator_listR)
 
-@given(instance=myDsl::designator_strategy)
+@given(instance=myDsl_designator_strategy)
 @settings(max_examples=50)
-def test_mydsl::designator_instantiation(instance):
-    assert isinstance(instance, myDsl::designator)
+def test_mydsl_designator_instantiation(instance):
+    assert isinstance(instance, myDsl_designator)
 
 @given(instance=designation_strategy)
 @settings(max_examples=50)
 def test_designation_instantiation(instance):
     assert isinstance(instance, designation)
 
-@given(instance=atomic::type::specifier_strategy)
+@given(instance=atomic_type_specifier_strategy)
 @settings(max_examples=50)
-def test_atomic::type::specifier_instantiation(instance):
-    assert isinstance(instance, atomic::type::specifier)
+def test_atomic_type_specifier_instantiation(instance):
+    assert isinstance(instance, atomic_type_specifier)
 
-@given(instance=static::assert::declaration_strategy)
+@given(instance=static_assert_declaration_strategy)
 @settings(max_examples=50)
-def test_static::assert::declaration_instantiation(instance):
-    assert isinstance(instance, static::assert::declaration)
+def test_static_assert_declaration_instantiation(instance):
+    assert isinstance(instance, static_assert_declaration)
 
 @given(instance=designator_strategy)
 @settings(max_examples=50)
 def test_designator_instantiation(instance):
     assert isinstance(instance, designator)
 
-@given(instance=myDsl::designation_strategy)
+@given(instance=myDsl_designation_strategy)
 @settings(max_examples=50)
-def test_mydsl::designation_instantiation(instance):
-    assert isinstance(instance, myDsl::designation)
+def test_mydsl_designation_instantiation(instance):
+    assert isinstance(instance, myDsl_designation)
 
-@given(instance=myDsl::postfix::expressionR_strategy)
+@given(instance=myDsl_postfix_expressionR_strategy)
 @settings(max_examples=50)
-def test_mydsl::postfix::expressionr_instantiation(instance):
-    assert isinstance(instance, myDsl::postfix::expressionR)
+def test_mydsl_postfix_expressionr_instantiation(instance):
+    assert isinstance(instance, myDsl_postfix_expressionR)
 
-@given(instance=myDsl::primary::expression_strategy)
+@given(instance=myDsl_primary_expression_strategy)
 @settings(max_examples=50)
-def test_mydsl::primary::expression_instantiation(instance):
-    assert isinstance(instance, myDsl::primary::expression)
+def test_mydsl_primary_expression_instantiation(instance):
+    assert isinstance(instance, myDsl_primary_expression)
 
-@given(instance=unary::expression_strategy)
+@given(instance=unary_expression_strategy)
 @settings(max_examples=50)
-def test_unary::expression_instantiation(instance):
-    assert isinstance(instance, unary::expression)
+def test_unary_expression_instantiation(instance):
+    assert isinstance(instance, unary_expression)
 
-@given(instance=myDsl::postfix::expression_strategy)
+@given(instance=myDsl_postfix_expression_strategy)
 @settings(max_examples=50)
-def test_mydsl::postfix::expression_instantiation(instance):
-    assert isinstance(instance, myDsl::postfix::expression)
+def test_mydsl_postfix_expression_instantiation(instance):
+    assert isinstance(instance, myDsl_postfix_expression)
 
-@given(instance=cast::expression_strategy)
+@given(instance=cast_expression_strategy)
 @settings(max_examples=50)
-def test_cast::expression_instantiation(instance):
-    assert isinstance(instance, cast::expression)
+def test_cast_expression_instantiation(instance):
+    assert isinstance(instance, cast_expression)
 
-@given(instance=myDsl::designator::list_strategy)
+@given(instance=myDsl_designator_list_strategy)
 @settings(max_examples=50)
-def test_mydsl::designator::list_instantiation(instance):
-    assert isinstance(instance, myDsl::designator::list)
+def test_mydsl_designator_list_instantiation(instance):
+    assert isinstance(instance, myDsl_designator_list)
 
-@given(instance=myDsl::initializer::listR_strategy)
+@given(instance=myDsl_initializer_listR_strategy)
 @settings(max_examples=50)
-def test_mydsl::initializer::listr_instantiation(instance):
-    assert isinstance(instance, myDsl::initializer::listR)
+def test_mydsl_initializer_listr_instantiation(instance):
+    assert isinstance(instance, myDsl_initializer_listR)
 
-@given(instance=myDsl::cast::expression_strategy)
+@given(instance=myDsl_cast_expression_strategy)
 @settings(max_examples=50)
-def test_mydsl::cast::expression_instantiation(instance):
-    assert isinstance(instance, myDsl::cast::expression)
+def test_mydsl_cast_expression_instantiation(instance):
+    assert isinstance(instance, myDsl_cast_expression)
 
-@given(instance=myDsl::multiplicative::expressionR_strategy)
+@given(instance=myDsl_multiplicative_expressionR_strategy)
 @settings(max_examples=50)
-def test_mydsl::multiplicative::expressionr_instantiation(instance):
-    assert isinstance(instance, myDsl::multiplicative::expressionR)
+def test_mydsl_multiplicative_expressionr_instantiation(instance):
+    assert isinstance(instance, myDsl_multiplicative_expressionR)
 
-@given(instance=myDsl::additive::expressionR_strategy)
+@given(instance=myDsl_additive_expressionR_strategy)
 @settings(max_examples=50)
-def test_mydsl::additive::expressionr_instantiation(instance):
-    assert isinstance(instance, myDsl::additive::expressionR)
+def test_mydsl_additive_expressionr_instantiation(instance):
+    assert isinstance(instance, myDsl_additive_expressionR)
 
-@given(instance=myDsl::multiplicative::expression_strategy)
+@given(instance=myDsl_multiplicative_expression_strategy)
 @settings(max_examples=50)
-def test_mydsl::multiplicative::expression_instantiation(instance):
-    assert isinstance(instance, myDsl::multiplicative::expression)
+def test_mydsl_multiplicative_expression_instantiation(instance):
+    assert isinstance(instance, myDsl_multiplicative_expression)
 
-@given(instance=myDsl::type::name_strategy)
+@given(instance=myDsl_type_name_strategy)
 @settings(max_examples=50)
-def test_mydsl::type::name_instantiation(instance):
-    assert isinstance(instance, myDsl::type::name)
+def test_mydsl_type_name_instantiation(instance):
+    assert isinstance(instance, myDsl_type_name)
 
-@given(instance=myDsl::unary::expression_strategy)
+@given(instance=myDsl_unary_expression_strategy)
 @settings(max_examples=50)
-def test_mydsl::unary::expression_instantiation(instance):
-    assert isinstance(instance, myDsl::unary::expression)
-
-@given(instance=myDsl::unary::expression_strategy)
-def test_mydsl::unary::expression_Unary_operator_type(instance):
-    assert isinstance(instance.Unary_operator, str)
+def test_mydsl_unary_expression_instantiation(instance):
+    assert isinstance(instance, myDsl_unary_expression)
 
 
-@given(instance=myDsl::unary::expression_strategy)
-def test_mydsl::unary::expression_Unary_operator_setter(instance):
+
+@given(instance=myDsl_unary_expression_strategy)
+def test_mydsl_unary_expression_Unary_operator_setter(instance):
     original = instance.Unary_operator
     instance.Unary_operator = original
     assert instance.Unary_operator == original
@@ -2640,310 +2634,301 @@ def test_mydsl::unary::expression_Unary_operator_setter(instance):
 def test_initializer_instantiation(instance):
     assert isinstance(instance, initializer)
 
-@given(instance=myDsl::initializer::list_strategy)
+@given(instance=myDsl_initializer_list_strategy)
 @settings(max_examples=50)
-def test_mydsl::initializer::list_instantiation(instance):
-    assert isinstance(instance, myDsl::initializer::list)
+def test_mydsl_initializer_list_instantiation(instance):
+    assert isinstance(instance, myDsl_initializer_list)
 
-@given(instance=myDsl::relational::expressionR_strategy)
+@given(instance=myDsl_relational_expressionR_strategy)
 @settings(max_examples=50)
-def test_mydsl::relational::expressionr_instantiation(instance):
-    assert isinstance(instance, myDsl::relational::expressionR)
+def test_mydsl_relational_expressionr_instantiation(instance):
+    assert isinstance(instance, myDsl_relational_expressionR)
 
-@given(instance=myDsl::shift::expression_strategy)
+@given(instance=myDsl_shift_expression_strategy)
 @settings(max_examples=50)
-def test_mydsl::shift::expression_instantiation(instance):
-    assert isinstance(instance, myDsl::shift::expression)
+def test_mydsl_shift_expression_instantiation(instance):
+    assert isinstance(instance, myDsl_shift_expression)
 
-@given(instance=myDsl::equality::expressionR_strategy)
+@given(instance=myDsl_equality_expressionR_strategy)
 @settings(max_examples=50)
-def test_mydsl::equality::expressionr_instantiation(instance):
-    assert isinstance(instance, myDsl::equality::expressionR)
+def test_mydsl_equality_expressionr_instantiation(instance):
+    assert isinstance(instance, myDsl_equality_expressionR)
 
-@given(instance=myDsl::relational::expression_strategy)
+@given(instance=myDsl_relational_expression_strategy)
 @settings(max_examples=50)
-def test_mydsl::relational::expression_instantiation(instance):
-    assert isinstance(instance, myDsl::relational::expression)
+def test_mydsl_relational_expression_instantiation(instance):
+    assert isinstance(instance, myDsl_relational_expression)
 
-@given(instance=shift::expression_strategy)
+@given(instance=shift_expression_strategy)
 @settings(max_examples=50)
-def test_shift::expression_instantiation(instance):
-    assert isinstance(instance, shift::expression)
+def test_shift_expression_instantiation(instance):
+    assert isinstance(instance, shift_expression)
 
-@given(instance=myDsl::additive::expression_strategy)
+@given(instance=myDsl_additive_expression_strategy)
 @settings(max_examples=50)
-def test_mydsl::additive::expression_instantiation(instance):
-    assert isinstance(instance, myDsl::additive::expression)
+def test_mydsl_additive_expression_instantiation(instance):
+    assert isinstance(instance, myDsl_additive_expression)
 
-@given(instance=myDsl::shift::expressionR_strategy)
+@given(instance=myDsl_shift_expressionR_strategy)
 @settings(max_examples=50)
-def test_mydsl::shift::expressionr_instantiation(instance):
-    assert isinstance(instance, myDsl::shift::expressionR)
+def test_mydsl_shift_expressionr_instantiation(instance):
+    assert isinstance(instance, myDsl_shift_expressionR)
 
-@given(instance=myDsl::inclusive::or::expressionR_strategy)
+@given(instance=myDsl_inclusive_or_expressionR_strategy)
 @settings(max_examples=50)
-def test_mydsl::inclusive::or::expressionr_instantiation(instance):
-    assert isinstance(instance, myDsl::inclusive::or::expressionR)
+def test_mydsl_inclusive_or_expressionr_instantiation(instance):
+    assert isinstance(instance, myDsl_inclusive_or_expressionR)
 
-@given(instance=myDsl::exclusive::or::expression_strategy)
+@given(instance=myDsl_exclusive_or_expression_strategy)
 @settings(max_examples=50)
-def test_mydsl::exclusive::or::expression_instantiation(instance):
-    assert isinstance(instance, myDsl::exclusive::or::expression)
+def test_mydsl_exclusive_or_expression_instantiation(instance):
+    assert isinstance(instance, myDsl_exclusive_or_expression)
 
-@given(instance=myDsl::logical::and::expressionR_strategy)
+@given(instance=myDsl_logical_and_expressionR_strategy)
 @settings(max_examples=50)
-def test_mydsl::logical::and::expressionr_instantiation(instance):
-    assert isinstance(instance, myDsl::logical::and::expressionR)
+def test_mydsl_logical_and_expressionr_instantiation(instance):
+    assert isinstance(instance, myDsl_logical_and_expressionR)
 
-@given(instance=myDsl::equality::expression_strategy)
+@given(instance=myDsl_equality_expression_strategy)
 @settings(max_examples=50)
-def test_mydsl::equality::expression_instantiation(instance):
-    assert isinstance(instance, myDsl::equality::expression)
+def test_mydsl_equality_expression_instantiation(instance):
+    assert isinstance(instance, myDsl_equality_expression)
 
-@given(instance=myDsl::and::expressionR_strategy)
+@given(instance=myDsl_and_expressionR_strategy)
 @settings(max_examples=50)
-def test_mydsl::and::expressionr_instantiation(instance):
-    assert isinstance(instance, myDsl::and::expressionR)
+def test_mydsl_and_expressionr_instantiation(instance):
+    assert isinstance(instance, myDsl_and_expressionR)
 
-@given(instance=myDsl::exclusive::or::expressionR_strategy)
+@given(instance=myDsl_exclusive_or_expressionR_strategy)
 @settings(max_examples=50)
-def test_mydsl::exclusive::or::expressionr_instantiation(instance):
-    assert isinstance(instance, myDsl::exclusive::or::expressionR)
+def test_mydsl_exclusive_or_expressionr_instantiation(instance):
+    assert isinstance(instance, myDsl_exclusive_or_expressionR)
 
-@given(instance=myDsl::and::expression_strategy)
+@given(instance=myDsl_and_expression_strategy)
 @settings(max_examples=50)
-def test_mydsl::and::expression_instantiation(instance):
-    assert isinstance(instance, myDsl::and::expression)
+def test_mydsl_and_expression_instantiation(instance):
+    assert isinstance(instance, myDsl_and_expression)
 
-@given(instance=constant::expression_strategy)
+@given(instance=constant_expression_strategy)
 @settings(max_examples=50)
-def test_constant::expression_instantiation(instance):
-    assert isinstance(instance, constant::expression)
+def test_constant_expression_instantiation(instance):
+    assert isinstance(instance, constant_expression)
 
-@given(instance=assignment::expression_strategy)
+@given(instance=assignment_expression_strategy)
 @settings(max_examples=50)
-def test_assignment::expression_instantiation(instance):
-    assert isinstance(instance, assignment::expression)
+def test_assignment_expression_instantiation(instance):
+    assert isinstance(instance, assignment_expression)
 
-@given(instance=myDsl::conditional::expression_strategy)
+@given(instance=myDsl_conditional_expression_strategy)
 @settings(max_examples=50)
-def test_mydsl::conditional::expression_instantiation(instance):
-    assert isinstance(instance, myDsl::conditional::expression)
+def test_mydsl_conditional_expression_instantiation(instance):
+    assert isinstance(instance, myDsl_conditional_expression)
 
-@given(instance=myDsl::expressionR_strategy)
+@given(instance=myDsl_expressionR_strategy)
 @settings(max_examples=50)
-def test_mydsl::expressionr_instantiation(instance):
-    assert isinstance(instance, myDsl::expressionR)
+def test_mydsl_expressionr_instantiation(instance):
+    assert isinstance(instance, myDsl_expressionR)
 
-@given(instance=primary::expression_strategy)
+@given(instance=primary_expression_strategy)
 @settings(max_examples=50)
-def test_primary::expression_instantiation(instance):
-    assert isinstance(instance, primary::expression)
+def test_primary_expression_instantiation(instance):
+    assert isinstance(instance, primary_expression)
 
-@given(instance=myDsl::StringC_strategy)
+@given(instance=myDsl_StringC_strategy)
 @settings(max_examples=50)
-def test_mydsl::stringc_instantiation(instance):
-    assert isinstance(instance, myDsl::StringC)
-
-@given(instance=myDsl::StringC_strategy)
-def test_mydsl::stringc_string_type(instance):
-    assert isinstance(instance.string, str)
+def test_mydsl_stringc_instantiation(instance):
+    assert isinstance(instance, myDsl_StringC)
 
 
-@given(instance=myDsl::StringC_strategy)
-def test_mydsl::stringc_string_setter(instance):
+
+@given(instance=myDsl_StringC_strategy)
+def test_mydsl_stringc_string_setter(instance):
     original = instance.string
     instance.string = original
     assert instance.string == original
 
-@given(instance=expression::statement_strategy)
+@given(instance=expression_statement_strategy)
 @settings(max_examples=50)
-def test_expression::statement_instantiation(instance):
-    assert isinstance(instance, expression::statement)
+def test_expression_statement_instantiation(instance):
+    assert isinstance(instance, expression_statement)
 
-@given(instance=jump::statement_strategy)
+@given(instance=jump_statement_strategy)
 @settings(max_examples=50)
-def test_jump::statement_instantiation(instance):
-    assert isinstance(instance, jump::statement)
+def test_jump_statement_instantiation(instance):
+    assert isinstance(instance, jump_statement)
 
-@given(instance=myDsl::IDENTIFIER_strategy)
+@given(instance=myDsl_IDENTIFIER_strategy)
 @settings(max_examples=50)
-def test_mydsl::identifier_instantiation(instance):
-    assert isinstance(instance, myDsl::IDENTIFIER)
-
-@given(instance=myDsl::IDENTIFIER_strategy)
-def test_mydsl::identifier_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_mydsl_identifier_instantiation(instance):
+    assert isinstance(instance, myDsl_IDENTIFIER)
 
 
-@given(instance=myDsl::IDENTIFIER_strategy)
-def test_mydsl::identifier_name_setter(instance):
+
+@given(instance=myDsl_IDENTIFIER_strategy)
+def test_mydsl_identifier_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=myDsl::inclusive::or::expression_strategy)
+@given(instance=myDsl_inclusive_or_expression_strategy)
 @settings(max_examples=50)
-def test_mydsl::inclusive::or::expression_instantiation(instance):
-    assert isinstance(instance, myDsl::inclusive::or::expression)
+def test_mydsl_inclusive_or_expression_instantiation(instance):
+    assert isinstance(instance, myDsl_inclusive_or_expression)
 
-@given(instance=myDsl::logical::or::expressionR_strategy)
+@given(instance=myDsl_logical_or_expressionR_strategy)
 @settings(max_examples=50)
-def test_mydsl::logical::or::expressionr_instantiation(instance):
-    assert isinstance(instance, myDsl::logical::or::expressionR)
+def test_mydsl_logical_or_expressionr_instantiation(instance):
+    assert isinstance(instance, myDsl_logical_or_expressionR)
 
-@given(instance=myDsl::logical::and::expression_strategy)
+@given(instance=myDsl_logical_and_expression_strategy)
 @settings(max_examples=50)
-def test_mydsl::logical::and::expression_instantiation(instance):
-    assert isinstance(instance, myDsl::logical::and::expression)
+def test_mydsl_logical_and_expression_instantiation(instance):
+    assert isinstance(instance, myDsl_logical_and_expression)
 
-@given(instance=conditional::expression_strategy)
+@given(instance=conditional_expression_strategy)
 @settings(max_examples=50)
-def test_conditional::expression_instantiation(instance):
-    assert isinstance(instance, conditional::expression)
+def test_conditional_expression_instantiation(instance):
+    assert isinstance(instance, conditional_expression)
 
-@given(instance=myDsl::logical::or::expression_strategy)
+@given(instance=myDsl_logical_or_expression_strategy)
 @settings(max_examples=50)
-def test_mydsl::logical::or::expression_instantiation(instance):
-    assert isinstance(instance, myDsl::logical::or::expression)
+def test_mydsl_logical_or_expression_instantiation(instance):
+    assert isinstance(instance, myDsl_logical_or_expression)
 
-@given(instance=myDsl::initializer_strategy)
+@given(instance=myDsl_initializer_strategy)
 @settings(max_examples=50)
-def test_mydsl::initializer_instantiation(instance):
-    assert isinstance(instance, myDsl::initializer)
+def test_mydsl_initializer_instantiation(instance):
+    assert isinstance(instance, myDsl_initializer)
 
-@given(instance=myDsl::init::declarator::listR_strategy)
+@given(instance=myDsl_init_declarator_listR_strategy)
 @settings(max_examples=50)
-def test_mydsl::init::declarator::listr_instantiation(instance):
-    assert isinstance(instance, myDsl::init::declarator::listR)
+def test_mydsl_init_declarator_listr_instantiation(instance):
+    assert isinstance(instance, myDsl_init_declarator_listR)
 
-@given(instance=myDsl::init::declarator_strategy)
+@given(instance=myDsl_init_declarator_strategy)
 @settings(max_examples=50)
-def test_mydsl::init::declarator_instantiation(instance):
-    assert isinstance(instance, myDsl::init::declarator)
+def test_mydsl_init_declarator_instantiation(instance):
+    assert isinstance(instance, myDsl_init_declarator)
 
-@given(instance=myDsl::init::declarator::list_strategy)
+@given(instance=myDsl_init_declarator_list_strategy)
 @settings(max_examples=50)
-def test_mydsl::init::declarator::list_instantiation(instance):
-    assert isinstance(instance, myDsl::init::declarator::list)
+def test_mydsl_init_declarator_list_instantiation(instance):
+    assert isinstance(instance, myDsl_init_declarator_list)
 
-@given(instance=parameter::declaration_strategy)
+@given(instance=parameter_declaration_strategy)
 @settings(max_examples=50)
-def test_parameter::declaration_instantiation(instance):
-    assert isinstance(instance, parameter::declaration)
+def test_parameter_declaration_instantiation(instance):
+    assert isinstance(instance, parameter_declaration)
 
-@given(instance=block::item_strategy)
+@given(instance=block_item_strategy)
 @settings(max_examples=50)
-def test_block::item_instantiation(instance):
-    assert isinstance(instance, block::item)
+def test_block_item_instantiation(instance):
+    assert isinstance(instance, block_item)
 
-@given(instance=myDsl::statement_strategy)
+@given(instance=myDsl_statement_strategy)
 @settings(max_examples=50)
-def test_mydsl::statement_instantiation(instance):
-    assert isinstance(instance, myDsl::statement)
+def test_mydsl_statement_instantiation(instance):
+    assert isinstance(instance, myDsl_statement)
 
-@given(instance=myDsl::block::item::listR_strategy)
+@given(instance=myDsl_block_item_listR_strategy)
 @settings(max_examples=50)
-def test_mydsl::block::item::listr_instantiation(instance):
-    assert isinstance(instance, myDsl::block::item::listR)
+def test_mydsl_block_item_listr_instantiation(instance):
+    assert isinstance(instance, myDsl_block_item_listR)
 
-@given(instance=myDsl::block::item_strategy)
+@given(instance=myDsl_block_item_strategy)
 @settings(max_examples=50)
-def test_mydsl::block::item_instantiation(instance):
-    assert isinstance(instance, myDsl::block::item)
+def test_mydsl_block_item_instantiation(instance):
+    assert isinstance(instance, myDsl_block_item)
 
-@given(instance=compound::statement_strategy)
+@given(instance=compound_statement_strategy)
 @settings(max_examples=50)
-def test_compound::statement_instantiation(instance):
-    assert isinstance(instance, compound::statement)
+def test_compound_statement_instantiation(instance):
+    assert isinstance(instance, compound_statement)
 
-@given(instance=myDsl::block::item::list_strategy)
+@given(instance=myDsl_block_item_list_strategy)
 @settings(max_examples=50)
-def test_mydsl::block::item::list_instantiation(instance):
-    assert isinstance(instance, myDsl::block::item::list)
+def test_mydsl_block_item_list_instantiation(instance):
+    assert isinstance(instance, myDsl_block_item_list)
 
 @given(instance=statement_strategy)
 @settings(max_examples=50)
 def test_statement_instantiation(instance):
     assert isinstance(instance, statement)
 
-@given(instance=myDsl::selection::statement_strategy)
+@given(instance=myDsl_jump_statement_strategy)
 @settings(max_examples=50)
-def test_mydsl::selection::statement_instantiation(instance):
-    assert isinstance(instance, myDsl::selection::statement)
+def test_mydsl_jump_statement_instantiation(instance):
+    assert isinstance(instance, myDsl_jump_statement)
 
-@given(instance=myDsl::jump::statement_strategy)
+@given(instance=myDsl_selection_statement_strategy)
 @settings(max_examples=50)
-def test_mydsl::jump::statement_instantiation(instance):
-    assert isinstance(instance, myDsl::jump::statement)
+def test_mydsl_selection_statement_instantiation(instance):
+    assert isinstance(instance, myDsl_selection_statement)
 
-@given(instance=myDsl::expression::statement_strategy)
+@given(instance=myDsl_expression_statement_strategy)
 @settings(max_examples=50)
-def test_mydsl::expression::statement_instantiation(instance):
-    assert isinstance(instance, myDsl::expression::statement)
+def test_mydsl_expression_statement_instantiation(instance):
+    assert isinstance(instance, myDsl_expression_statement)
 
-@given(instance=myDsl::expression_strategy)
+@given(instance=myDsl_expression_strategy)
 @settings(max_examples=50)
-def test_mydsl::expression_instantiation(instance):
-    assert isinstance(instance, myDsl::expression)
+def test_mydsl_expression_instantiation(instance):
+    assert isinstance(instance, myDsl_expression)
 
-@given(instance=myDsl::iteration::statement_strategy)
+@given(instance=myDsl_iteration_statement_strategy)
 @settings(max_examples=50)
-def test_mydsl::iteration::statement_instantiation(instance):
-    assert isinstance(instance, myDsl::iteration::statement)
+def test_mydsl_iteration_statement_instantiation(instance):
+    assert isinstance(instance, myDsl_iteration_statement)
 
-@given(instance=myDsl::labeled::statement_strategy)
+@given(instance=myDsl_labeled_statement_strategy)
 @settings(max_examples=50)
-def test_mydsl::labeled::statement_instantiation(instance):
-    assert isinstance(instance, myDsl::labeled::statement)
+def test_mydsl_labeled_statement_instantiation(instance):
+    assert isinstance(instance, myDsl_labeled_statement)
 
-@given(instance=myDsl::parameter::listR_strategy)
+@given(instance=myDsl_parameter_listR_strategy)
 @settings(max_examples=50)
-def test_mydsl::parameter::listr_instantiation(instance):
-    assert isinstance(instance, myDsl::parameter::listR)
+def test_mydsl_parameter_listr_instantiation(instance):
+    assert isinstance(instance, myDsl_parameter_listR)
 
-@given(instance=myDsl::parameter::declaration_strategy)
+@given(instance=myDsl_parameter_declaration_strategy)
 @settings(max_examples=50)
-def test_mydsl::parameter::declaration_instantiation(instance):
-    assert isinstance(instance, myDsl::parameter::declaration)
+def test_mydsl_parameter_declaration_instantiation(instance):
+    assert isinstance(instance, myDsl_parameter_declaration)
 
-@given(instance=parameter::type::list_strategy)
+@given(instance=parameter_type_list_strategy)
 @settings(max_examples=50)
-def test_parameter::type::list_instantiation(instance):
-    assert isinstance(instance, parameter::type::list)
+def test_parameter_type_list_instantiation(instance):
+    assert isinstance(instance, parameter_type_list)
 
-@given(instance=myDsl::parameter::list_strategy)
+@given(instance=myDsl_parameter_list_strategy)
 @settings(max_examples=50)
-def test_mydsl::parameter::list_instantiation(instance):
-    assert isinstance(instance, myDsl::parameter::list)
+def test_mydsl_parameter_list_instantiation(instance):
+    assert isinstance(instance, myDsl_parameter_list)
 
-@given(instance=myDsl::identifier::listR_strategy)
+@given(instance=myDsl_identifier_listR_strategy)
 @settings(max_examples=50)
-def test_mydsl::identifier::listr_instantiation(instance):
-    assert isinstance(instance, myDsl::identifier::listR)
+def test_mydsl_identifier_listr_instantiation(instance):
+    assert isinstance(instance, myDsl_identifier_listR)
 
-@given(instance=myDsl::declaration::listR_strategy)
+@given(instance=myDsl_declaration_listR_strategy)
 @settings(max_examples=50)
-def test_mydsl::declaration::listr_instantiation(instance):
-    assert isinstance(instance, myDsl::declaration::listR)
+def test_mydsl_declaration_listr_instantiation(instance):
+    assert isinstance(instance, myDsl_declaration_listR)
 
-@given(instance=myDsl::abstract::declarator_strategy)
+@given(instance=myDsl_abstract_declarator_strategy)
 @settings(max_examples=50)
-def test_mydsl::abstract::declarator_instantiation(instance):
-    assert isinstance(instance, myDsl::abstract::declarator)
+def test_mydsl_abstract_declarator_instantiation(instance):
+    assert isinstance(instance, myDsl_abstract_declarator)
 
-@given(instance=myDsl::type::qualifier::listR_strategy)
+@given(instance=myDsl_type_qualifier_listR_strategy)
 @settings(max_examples=50)
-def test_mydsl::type::qualifier::listr_instantiation(instance):
-    assert isinstance(instance, myDsl::type::qualifier::listR)
-
-@given(instance=myDsl::type::qualifier::listR_strategy)
-def test_mydsl::type::qualifier::listr_Type_qualifier_type(instance):
-    assert isinstance(instance.Type_qualifier, str)
+def test_mydsl_type_qualifier_listr_instantiation(instance):
+    assert isinstance(instance, myDsl_type_qualifier_listR)
 
 
-@given(instance=myDsl::type::qualifier::listR_strategy)
-def test_mydsl::type::qualifier::listr_Type_qualifier_setter(instance):
+
+@given(instance=myDsl_type_qualifier_listR_strategy)
+def test_mydsl_type_qualifier_listr_Type_qualifier_setter(instance):
     original = instance.Type_qualifier
     instance.Type_qualifier = original
     assert instance.Type_qualifier == original
@@ -2953,156 +2938,144 @@ def test_mydsl::type::qualifier::listr_Type_qualifier_setter(instance):
 def test_pointer_instantiation(instance):
     assert isinstance(instance, pointer)
 
-@given(instance=myDsl::type::qualifier::list_strategy)
+@given(instance=myDsl_type_qualifier_list_strategy)
 @settings(max_examples=50)
-def test_mydsl::type::qualifier::list_instantiation(instance):
-    assert isinstance(instance, myDsl::type::qualifier::list)
-
-@given(instance=myDsl::type::qualifier::list_strategy)
-def test_mydsl::type::qualifier::list_Type_qualifier_type(instance):
-    assert isinstance(instance.Type_qualifier, str)
+def test_mydsl_type_qualifier_list_instantiation(instance):
+    assert isinstance(instance, myDsl_type_qualifier_list)
 
 
-@given(instance=myDsl::type::qualifier::list_strategy)
-def test_mydsl::type::qualifier::list_Type_qualifier_setter(instance):
+
+@given(instance=myDsl_type_qualifier_list_strategy)
+def test_mydsl_type_qualifier_list_Type_qualifier_setter(instance):
     original = instance.Type_qualifier
     instance.Type_qualifier = original
     assert instance.Type_qualifier == original
 
-@given(instance=myDsl::pointer_strategy)
+@given(instance=myDsl_pointer_strategy)
 @settings(max_examples=50)
-def test_mydsl::pointer_instantiation(instance):
-    assert isinstance(instance, myDsl::pointer)
+def test_mydsl_pointer_instantiation(instance):
+    assert isinstance(instance, myDsl_pointer)
 
-@given(instance=struct::declarator_strategy)
+@given(instance=struct_declarator_strategy)
 @settings(max_examples=50)
-def test_struct::declarator_instantiation(instance):
-    assert isinstance(instance, struct::declarator)
+def test_struct_declarator_instantiation(instance):
+    assert isinstance(instance, struct_declarator)
 
-@given(instance=myDsl::constant::expression_strategy)
+@given(instance=myDsl_constant_expression_strategy)
 @settings(max_examples=50)
-def test_mydsl::constant::expression_instantiation(instance):
-    assert isinstance(instance, myDsl::constant::expression)
+def test_mydsl_constant_expression_instantiation(instance):
+    assert isinstance(instance, myDsl_constant_expression)
 
-@given(instance=init::declarator_strategy)
+@given(instance=init_declarator_strategy)
 @settings(max_examples=50)
-def test_init::declarator_instantiation(instance):
-    assert isinstance(instance, init::declarator)
+def test_init_declarator_instantiation(instance):
+    assert isinstance(instance, init_declarator)
 
-@given(instance=myDsl::compound::statement_strategy)
+@given(instance=myDsl_compound_statement_strategy)
 @settings(max_examples=50)
-def test_mydsl::compound::statement_instantiation(instance):
-    assert isinstance(instance, myDsl::compound::statement)
+def test_mydsl_compound_statement_instantiation(instance):
+    assert isinstance(instance, myDsl_compound_statement)
 
-@given(instance=myDsl::identifier::list_strategy)
+@given(instance=myDsl_identifier_list_strategy)
 @settings(max_examples=50)
-def test_mydsl::identifier::list_instantiation(instance):
-    assert isinstance(instance, myDsl::identifier::list)
+def test_mydsl_identifier_list_instantiation(instance):
+    assert isinstance(instance, myDsl_identifier_list)
 
-@given(instance=myDsl::parameter::type::list_strategy)
+@given(instance=myDsl_parameter_type_list_strategy)
 @settings(max_examples=50)
-def test_mydsl::parameter::type::list_instantiation(instance):
-    assert isinstance(instance, myDsl::parameter::type::list)
+def test_mydsl_parameter_type_list_instantiation(instance):
+    assert isinstance(instance, myDsl_parameter_type_list)
 
-@given(instance=myDsl::assignment::expression_strategy)
+@given(instance=myDsl_assignment_expression_strategy)
 @settings(max_examples=50)
-def test_mydsl::assignment::expression_instantiation(instance):
-    assert isinstance(instance, myDsl::assignment::expression)
-
-@given(instance=myDsl::assignment::expression_strategy)
-def test_mydsl::assignment::expression_Assignment_operator_type(instance):
-    assert isinstance(instance.Assignment_operator, str)
+def test_mydsl_assignment_expression_instantiation(instance):
+    assert isinstance(instance, myDsl_assignment_expression)
 
 
-@given(instance=myDsl::assignment::expression_strategy)
-def test_mydsl::assignment::expression_Assignment_operator_setter(instance):
+
+@given(instance=myDsl_assignment_expression_strategy)
+def test_mydsl_assignment_expression_Assignment_operator_setter(instance):
     original = instance.Assignment_operator
     instance.Assignment_operator = original
     assert instance.Assignment_operator == original
 
-@given(instance=myDsl::direct::declaratorR_strategy)
+@given(instance=myDsl_direct_declaratorR_strategy)
 @settings(max_examples=50)
-def test_mydsl::direct::declaratorr_instantiation(instance):
-    assert isinstance(instance, myDsl::direct::declaratorR)
+def test_mydsl_direct_declaratorr_instantiation(instance):
+    assert isinstance(instance, myDsl_direct_declaratorR)
 
 @given(instance=declarator_strategy)
 @settings(max_examples=50)
 def test_declarator_instantiation(instance):
     assert isinstance(instance, declarator)
 
-@given(instance=myDsl::direct::declarator_strategy)
+@given(instance=myDsl_direct_declarator_strategy)
 @settings(max_examples=50)
-def test_mydsl::direct::declarator_instantiation(instance):
-    assert isinstance(instance, myDsl::direct::declarator)
+def test_mydsl_direct_declarator_instantiation(instance):
+    assert isinstance(instance, myDsl_direct_declarator)
 
-@given(instance=myDsl::external::declaration_strategy)
+@given(instance=myDsl_external_declaration_strategy)
 @settings(max_examples=50)
-def test_mydsl::external::declaration_instantiation(instance):
-    assert isinstance(instance, myDsl::external::declaration)
+def test_mydsl_external_declaration_instantiation(instance):
+    assert isinstance(instance, myDsl_external_declaration)
 
-@given(instance=myDsl::translation::unit_strategy)
+@given(instance=myDsl_translation_unit_strategy)
 @settings(max_examples=50)
-def test_mydsl::translation::unit_instantiation(instance):
-    assert isinstance(instance, myDsl::translation::unit)
+def test_mydsl_translation_unit_instantiation(instance):
+    assert isinstance(instance, myDsl_translation_unit)
 
-@given(instance=myDsl::Model_strategy)
+@given(instance=myDsl_Model_strategy)
 @settings(max_examples=50)
-def test_mydsl::model_instantiation(instance):
-    assert isinstance(instance, myDsl::Model)
+def test_mydsl_model_instantiation(instance):
+    assert isinstance(instance, myDsl_Model)
 
-@given(instance=myDsl::declaration::list_strategy)
+@given(instance=myDsl_declaration_list_strategy)
 @settings(max_examples=50)
-def test_mydsl::declaration::list_instantiation(instance):
-    assert isinstance(instance, myDsl::declaration::list)
+def test_mydsl_declaration_list_instantiation(instance):
+    assert isinstance(instance, myDsl_declaration_list)
 
-@given(instance=myDsl::declarator_strategy)
+@given(instance=myDsl_declarator_strategy)
 @settings(max_examples=50)
-def test_mydsl::declarator_instantiation(instance):
-    assert isinstance(instance, myDsl::declarator)
+def test_mydsl_declarator_instantiation(instance):
+    assert isinstance(instance, myDsl_declarator)
 
-@given(instance=external::declaration_strategy)
+@given(instance=external_declaration_strategy)
 @settings(max_examples=50)
-def test_external::declaration_instantiation(instance):
-    assert isinstance(instance, external::declaration)
+def test_external_declaration_instantiation(instance):
+    assert isinstance(instance, external_declaration)
 
-@given(instance=myDsl::declaration_strategy)
+@given(instance=myDsl_declaration_strategy)
 @settings(max_examples=50)
-def test_mydsl::declaration_instantiation(instance):
-    assert isinstance(instance, myDsl::declaration)
+def test_mydsl_declaration_instantiation(instance):
+    assert isinstance(instance, myDsl_declaration)
 
-@given(instance=myDsl::function::definition_strategy)
+@given(instance=myDsl_function_definition_strategy)
 @settings(max_examples=50)
-def test_mydsl::function::definition_instantiation(instance):
-    assert isinstance(instance, myDsl::function::definition)
+def test_mydsl_function_definition_instantiation(instance):
+    assert isinstance(instance, myDsl_function_definition)
 
-@given(instance=myDsl::declaration::specifiers_strategy)
+@given(instance=myDsl_declaration_specifiers_strategy)
 @settings(max_examples=50)
-def test_mydsl::declaration::specifiers_instantiation(instance):
-    assert isinstance(instance, myDsl::declaration::specifiers)
-
-@given(instance=myDsl::declaration::specifiers_strategy)
-def test_mydsl::declaration::specifiers_Type_qualifier_type(instance):
-    assert isinstance(instance.Type_qualifier, str)
+def test_mydsl_declaration_specifiers_instantiation(instance):
+    assert isinstance(instance, myDsl_declaration_specifiers)
 
 
-@given(instance=myDsl::declaration::specifiers_strategy)
-def test_mydsl::declaration::specifiers_Type_qualifier_setter(instance):
-    original = instance.Type_qualifier
-    instance.Type_qualifier = original
-    assert instance.Type_qualifier == original
 
-@given(instance=myDsl::declaration::specifiers_strategy)
-def test_mydsl::declaration::specifiers_Storage_class_specifier_type(instance):
-    assert isinstance(instance.Storage_class_specifier, str)
-
-
-@given(instance=myDsl::declaration::specifiers_strategy)
-def test_mydsl::declaration::specifiers_Storage_class_specifier_setter(instance):
+@given(instance=myDsl_declaration_specifiers_strategy)
+def test_mydsl_declaration_specifiers_Storage_class_specifier_setter(instance):
     original = instance.Storage_class_specifier
     instance.Storage_class_specifier = original
     assert instance.Storage_class_specifier == original
 
-@given(instance=myDsl::translation::unitR_strategy)
+
+
+@given(instance=myDsl_declaration_specifiers_strategy)
+def test_mydsl_declaration_specifiers_Type_qualifier_setter(instance):
+    original = instance.Type_qualifier
+    instance.Type_qualifier = original
+    assert instance.Type_qualifier == original
+
+@given(instance=myDsl_translation_unitR_strategy)
 @settings(max_examples=50)
-def test_mydsl::translation::unitr_instantiation(instance):
-    assert isinstance(instance, myDsl::translation::unitR)
+def test_mydsl_translation_unitr_instantiation(instance):
+    assert isinstance(instance, myDsl_translation_unitR)

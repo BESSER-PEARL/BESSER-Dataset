@@ -3,15 +3,15 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    entityDsl::Property,
+from python_code import (
+    entityDsl_Property,
     Type,
-    entityDsl::Entity,
-    entityDsl::SimpleType,
-    entityDsl::Type,
-    entityDsl::Model,
+    entityDsl_Entity,
+    entityDsl_SimpleType,
+    entityDsl_Type,
+    entityDsl_Model,
 )
 
 # =============================================================================
@@ -20,35 +20,35 @@ from classes import (
 
 
 
-def test_entitydsl::property_is_not_abstract():
-    assert not inspect.isabstract(entityDsl::Property)
+def test_entitydsl_property_is_not_abstract():
+    assert not inspect.isabstract(entityDsl_Property)
 
 
-def test_entitydsl::property_constructor_exists():
-    assert callable(entityDsl::Property.__init__)
+def test_entitydsl_property_constructor_exists():
+    assert callable(entityDsl_Property.__init__)
 
 
-def test_entitydsl::property_constructor_args():
-    sig = inspect.signature(entityDsl::Property.__init__)
+def test_entitydsl_property_constructor_args():
+    sig = inspect.signature(entityDsl_Property.__init__)
     params = list(sig.parameters.keys())
-    assert "many" in params, "Missing parameter 'many'"
     assert "name" in params, "Missing parameter 'name'"
+    assert "many" in params, "Missing parameter 'many'"
 
-def test_entitydsl::property_has_many():
-    assert hasattr(entityDsl::Property, "many")
+def test_entitydsl_property_has_name():
+    assert hasattr(entityDsl_Property, "name")
     descriptor = None
-    for klass in entityDsl::Property.__mro__:
-        if "many" in klass.__dict__:
-            descriptor = klass.__dict__["many"]
+    for klass in entityDsl_Property.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
-def test_entitydsl::property_has_name():
-    assert hasattr(entityDsl::Property, "name")
+def test_entitydsl_property_has_many():
+    assert hasattr(entityDsl_Property, "many")
     descriptor = None
-    for klass in entityDsl::Property.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
+    for klass in entityDsl_Property.__mro__:
+        if "many" in klass.__dict__:
+            descriptor = klass.__dict__["many"]
             break
     assert isinstance(descriptor, property)
 
@@ -68,51 +68,51 @@ def test_type_constructor_args():
 
 
 
-def test_entitydsl::entity_is_not_abstract():
-    assert not inspect.isabstract(entityDsl::Entity)
+def test_entitydsl_entity_is_not_abstract():
+    assert not inspect.isabstract(entityDsl_Entity)
 
 
-def test_entitydsl::entity_constructor_exists():
-    assert callable(entityDsl::Entity.__init__)
+def test_entitydsl_entity_constructor_exists():
+    assert callable(entityDsl_Entity.__init__)
 
 
-def test_entitydsl::entity_constructor_args():
-    sig = inspect.signature(entityDsl::Entity.__init__)
+def test_entitydsl_entity_constructor_args():
+    sig = inspect.signature(entityDsl_Entity.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_entitydsl::simpletype_is_not_abstract():
-    assert not inspect.isabstract(entityDsl::SimpleType)
+def test_entitydsl_simpletype_is_not_abstract():
+    assert not inspect.isabstract(entityDsl_SimpleType)
 
 
-def test_entitydsl::simpletype_constructor_exists():
-    assert callable(entityDsl::SimpleType.__init__)
+def test_entitydsl_simpletype_constructor_exists():
+    assert callable(entityDsl_SimpleType.__init__)
 
 
-def test_entitydsl::simpletype_constructor_args():
-    sig = inspect.signature(entityDsl::SimpleType.__init__)
+def test_entitydsl_simpletype_constructor_args():
+    sig = inspect.signature(entityDsl_SimpleType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_entitydsl::type_is_not_abstract():
-    assert not inspect.isabstract(entityDsl::Type)
+def test_entitydsl_type_is_not_abstract():
+    assert not inspect.isabstract(entityDsl_Type)
 
 
-def test_entitydsl::type_constructor_exists():
-    assert callable(entityDsl::Type.__init__)
+def test_entitydsl_type_constructor_exists():
+    assert callable(entityDsl_Type.__init__)
 
 
-def test_entitydsl::type_constructor_args():
-    sig = inspect.signature(entityDsl::Type.__init__)
+def test_entitydsl_type_constructor_args():
+    sig = inspect.signature(entityDsl_Type.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_entitydsl::type_has_name():
-    assert hasattr(entityDsl::Type, "name")
+def test_entitydsl_type_has_name():
+    assert hasattr(entityDsl_Type, "name")
     descriptor = None
-    for klass in entityDsl::Type.__mro__:
+    for klass in entityDsl_Type.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -120,16 +120,16 @@ def test_entitydsl::type_has_name():
 
 
 
-def test_entitydsl::model_is_not_abstract():
-    assert not inspect.isabstract(entityDsl::Model)
+def test_entitydsl_model_is_not_abstract():
+    assert not inspect.isabstract(entityDsl_Model)
 
 
-def test_entitydsl::model_constructor_exists():
-    assert callable(entityDsl::Model.__init__)
+def test_entitydsl_model_constructor_exists():
+    assert callable(entityDsl_Model.__init__)
 
 
-def test_entitydsl::model_constructor_args():
-    sig = inspect.signature(entityDsl::Model.__init__)
+def test_entitydsl_model_constructor_args():
+    sig = inspect.signature(entityDsl_Model.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -144,90 +144,81 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-entityDsl::Property_strategy = st.builds(
-    entityDsl::Property,
-    many=
-        st.booleans(),
+entityDsl_Property_strategy = st.builds(
+    entityDsl_Property,
     name=
-        safe_text
+        safe_text,
+    many=
+        st.booleans()
 )
 Type_strategy = st.builds(
     Type,
 )
-entityDsl::Entity_strategy = st.builds(
-    entityDsl::Entity,
+entityDsl_Entity_strategy = st.builds(
+    entityDsl_Entity,
 )
-entityDsl::SimpleType_strategy = st.builds(
-    entityDsl::SimpleType,
+entityDsl_SimpleType_strategy = st.builds(
+    entityDsl_SimpleType,
 )
-entityDsl::Type_strategy = st.builds(
-    entityDsl::Type,
+entityDsl_Type_strategy = st.builds(
+    entityDsl_Type,
     name=
         safe_text
 )
-entityDsl::Model_strategy = st.builds(
-    entityDsl::Model,
+entityDsl_Model_strategy = st.builds(
+    entityDsl_Model,
 )
 
-@given(instance=entityDsl::Property_strategy)
+@given(instance=entityDsl_Property_strategy)
 @settings(max_examples=50)
-def test_entitydsl::property_instantiation(instance):
-    assert isinstance(instance, entityDsl::Property)
-
-@given(instance=entityDsl::Property_strategy)
-def test_entitydsl::property_many_type(instance):
-    assert isinstance(instance.many, bool)
+def test_entitydsl_property_instantiation(instance):
+    assert isinstance(instance, entityDsl_Property)
 
 
-@given(instance=entityDsl::Property_strategy)
-def test_entitydsl::property_many_setter(instance):
-    original = instance.many
-    instance.many = original
-    assert instance.many == original
 
-@given(instance=entityDsl::Property_strategy)
-def test_entitydsl::property_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=entityDsl::Property_strategy)
-def test_entitydsl::property_name_setter(instance):
+@given(instance=entityDsl_Property_strategy)
+def test_entitydsl_property_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
+
+
+
+@given(instance=entityDsl_Property_strategy)
+def test_entitydsl_property_many_setter(instance):
+    original = instance.many
+    instance.many = original
+    assert instance.many == original
 
 @given(instance=Type_strategy)
 @settings(max_examples=50)
 def test_type_instantiation(instance):
     assert isinstance(instance, Type)
 
-@given(instance=entityDsl::Entity_strategy)
+@given(instance=entityDsl_Entity_strategy)
 @settings(max_examples=50)
-def test_entitydsl::entity_instantiation(instance):
-    assert isinstance(instance, entityDsl::Entity)
+def test_entitydsl_entity_instantiation(instance):
+    assert isinstance(instance, entityDsl_Entity)
 
-@given(instance=entityDsl::SimpleType_strategy)
+@given(instance=entityDsl_SimpleType_strategy)
 @settings(max_examples=50)
-def test_entitydsl::simpletype_instantiation(instance):
-    assert isinstance(instance, entityDsl::SimpleType)
+def test_entitydsl_simpletype_instantiation(instance):
+    assert isinstance(instance, entityDsl_SimpleType)
 
-@given(instance=entityDsl::Type_strategy)
+@given(instance=entityDsl_Type_strategy)
 @settings(max_examples=50)
-def test_entitydsl::type_instantiation(instance):
-    assert isinstance(instance, entityDsl::Type)
-
-@given(instance=entityDsl::Type_strategy)
-def test_entitydsl::type_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_entitydsl_type_instantiation(instance):
+    assert isinstance(instance, entityDsl_Type)
 
 
-@given(instance=entityDsl::Type_strategy)
-def test_entitydsl::type_name_setter(instance):
+
+@given(instance=entityDsl_Type_strategy)
+def test_entitydsl_type_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=entityDsl::Model_strategy)
+@given(instance=entityDsl_Model_strategy)
 @settings(max_examples=50)
-def test_entitydsl::model_instantiation(instance):
-    assert isinstance(instance, entityDsl::Model)
+def test_entitydsl_model_instantiation(instance):
+    assert isinstance(instance, entityDsl_Model)

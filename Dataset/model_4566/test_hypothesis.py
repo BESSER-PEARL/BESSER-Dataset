@@ -3,52 +3,52 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     LinearChannel,
-    robot::MatrixChannel,
+    robot_MatrixChannel,
     Channel,
-    robot::TextChannel,
-    robot::ColorChannel,
-    robot::VoiceChannel,
-    robot::AudioChannel,
-    robot::CommandChannel,
-    robot::FileChannel,
-    robot::LinearChannel,
+    robot_TextChannel,
+    robot_AudioChannel,
+    robot_FileChannel,
+    robot_VoiceChannel,
+    robot_CommandChannel,
+    robot_ColorChannel,
+    robot_LinearChannel,
     Device,
-    robot::SensoryDevice,
-    robot::ChannelDevice,
+    robot_SensoryDevice,
+    robot_ChannelDevice,
     MotoringDevice,
-    robot::Command,
-    robot::Effector,
+    robot_Command,
+    robot_Effector,
     SensoryDevice,
-    robot::Event,
-    robot::Sensor,
+    robot_Event,
+    robot_Sensor,
     ChannelDevice,
-    robot::Port,
-    robot::MotoringDevice,
+    robot_Port,
+    robot_MotoringDevice,
     Findable,
     Storable,
     NamedElement,
-    robot::Protocol,
-    robot::Channel,
-    robot::Robot,
+    robot_Channel,
+    robot_Protocol,
+    robot_Robot,
     Simulacra,
-    robot::Device,
-    robot::Control,
-    robot::Roboid,
-    robot::Storable,
-    robot::DeviceListener,
-    robot::Simulacra,
-    robot::Findable,
-    robot::NamedElement,
-    ColorMode,
-    AccessType,
+    robot_Device,
+    robot_Control,
+    robot_Roboid,
+    robot_Storable,
+    robot_DeviceListener,
+    robot_Simulacra,
+    robot_Findable,
+    robot_NamedElement,
     LinearMode,
-    DataType,
-    IoMode,
     AudioMode,
+    ColorMode,
+    DataType,
+    AccessType,
+    IoMode,
 )
 
 # =============================================================================
@@ -71,16 +71,16 @@ def test_linearchannel_constructor_args():
 
 
 
-def test_robot::matrixchannel_is_not_abstract():
-    assert not inspect.isabstract(robot::MatrixChannel)
+def test_robot_matrixchannel_is_not_abstract():
+    assert not inspect.isabstract(robot_MatrixChannel)
 
 
-def test_robot::matrixchannel_constructor_exists():
-    assert callable(robot::MatrixChannel.__init__)
+def test_robot_matrixchannel_constructor_exists():
+    assert callable(robot_MatrixChannel.__init__)
 
 
-def test_robot::matrixchannel_constructor_args():
-    sig = inspect.signature(robot::MatrixChannel.__init__)
+def test_robot_matrixchannel_constructor_args():
+    sig = inspect.signature(robot_MatrixChannel.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -99,37 +99,93 @@ def test_channel_constructor_args():
 
 
 
-def test_robot::textchannel_is_not_abstract():
-    assert not inspect.isabstract(robot::TextChannel)
+def test_robot_textchannel_is_not_abstract():
+    assert not inspect.isabstract(robot_TextChannel)
 
 
-def test_robot::textchannel_constructor_exists():
-    assert callable(robot::TextChannel.__init__)
+def test_robot_textchannel_constructor_exists():
+    assert callable(robot_TextChannel.__init__)
 
 
-def test_robot::textchannel_constructor_args():
-    sig = inspect.signature(robot::TextChannel.__init__)
+def test_robot_textchannel_constructor_args():
+    sig = inspect.signature(robot_TextChannel.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_robot::colorchannel_is_not_abstract():
-    assert not inspect.isabstract(robot::ColorChannel)
+def test_robot_audiochannel_is_not_abstract():
+    assert not inspect.isabstract(robot_AudioChannel)
 
 
-def test_robot::colorchannel_constructor_exists():
-    assert callable(robot::ColorChannel.__init__)
+def test_robot_audiochannel_constructor_exists():
+    assert callable(robot_AudioChannel.__init__)
 
 
-def test_robot::colorchannel_constructor_args():
-    sig = inspect.signature(robot::ColorChannel.__init__)
+def test_robot_audiochannel_constructor_args():
+    sig = inspect.signature(robot_AudioChannel.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_robot_filechannel_is_not_abstract():
+    assert not inspect.isabstract(robot_FileChannel)
+
+
+def test_robot_filechannel_constructor_exists():
+    assert callable(robot_FileChannel.__init__)
+
+
+def test_robot_filechannel_constructor_args():
+    sig = inspect.signature(robot_FileChannel.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_robot_voicechannel_is_not_abstract():
+    assert not inspect.isabstract(robot_VoiceChannel)
+
+
+def test_robot_voicechannel_constructor_exists():
+    assert callable(robot_VoiceChannel.__init__)
+
+
+def test_robot_voicechannel_constructor_args():
+    sig = inspect.signature(robot_VoiceChannel.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_robot_commandchannel_is_not_abstract():
+    assert not inspect.isabstract(robot_CommandChannel)
+
+
+def test_robot_commandchannel_constructor_exists():
+    assert callable(robot_CommandChannel.__init__)
+
+
+def test_robot_commandchannel_constructor_args():
+    sig = inspect.signature(robot_CommandChannel.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_robot_colorchannel_is_not_abstract():
+    assert not inspect.isabstract(robot_ColorChannel)
+
+
+def test_robot_colorchannel_constructor_exists():
+    assert callable(robot_ColorChannel.__init__)
+
+
+def test_robot_colorchannel_constructor_args():
+    sig = inspect.signature(robot_ColorChannel.__init__)
     params = list(sig.parameters.keys())
     assert "mode" in params, "Missing parameter 'mode'"
 
-def test_robot::colorchannel_has_mode():
-    assert hasattr(robot::ColorChannel, "mode")
+def test_robot_colorchannel_has_mode():
+    assert hasattr(robot_ColorChannel, "mode")
     descriptor = None
-    for klass in robot::ColorChannel.__mro__:
+    for klass in robot_ColorChannel.__mro__:
         if "mode" in klass.__dict__:
             descriptor = klass.__dict__["mode"]
             break
@@ -137,79 +193,23 @@ def test_robot::colorchannel_has_mode():
 
 
 
-def test_robot::voicechannel_is_not_abstract():
-    assert not inspect.isabstract(robot::VoiceChannel)
+def test_robot_linearchannel_is_not_abstract():
+    assert not inspect.isabstract(robot_LinearChannel)
 
 
-def test_robot::voicechannel_constructor_exists():
-    assert callable(robot::VoiceChannel.__init__)
+def test_robot_linearchannel_constructor_exists():
+    assert callable(robot_LinearChannel.__init__)
 
 
-def test_robot::voicechannel_constructor_args():
-    sig = inspect.signature(robot::VoiceChannel.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_robot::audiochannel_is_not_abstract():
-    assert not inspect.isabstract(robot::AudioChannel)
-
-
-def test_robot::audiochannel_constructor_exists():
-    assert callable(robot::AudioChannel.__init__)
-
-
-def test_robot::audiochannel_constructor_args():
-    sig = inspect.signature(robot::AudioChannel.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_robot::commandchannel_is_not_abstract():
-    assert not inspect.isabstract(robot::CommandChannel)
-
-
-def test_robot::commandchannel_constructor_exists():
-    assert callable(robot::CommandChannel.__init__)
-
-
-def test_robot::commandchannel_constructor_args():
-    sig = inspect.signature(robot::CommandChannel.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_robot::filechannel_is_not_abstract():
-    assert not inspect.isabstract(robot::FileChannel)
-
-
-def test_robot::filechannel_constructor_exists():
-    assert callable(robot::FileChannel.__init__)
-
-
-def test_robot::filechannel_constructor_args():
-    sig = inspect.signature(robot::FileChannel.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_robot::linearchannel_is_not_abstract():
-    assert not inspect.isabstract(robot::LinearChannel)
-
-
-def test_robot::linearchannel_constructor_exists():
-    assert callable(robot::LinearChannel.__init__)
-
-
-def test_robot::linearchannel_constructor_args():
-    sig = inspect.signature(robot::LinearChannel.__init__)
+def test_robot_linearchannel_constructor_args():
+    sig = inspect.signature(robot_LinearChannel.__init__)
     params = list(sig.parameters.keys())
     assert "mode" in params, "Missing parameter 'mode'"
 
-def test_robot::linearchannel_has_mode():
-    assert hasattr(robot::LinearChannel, "mode")
+def test_robot_linearchannel_has_mode():
+    assert hasattr(robot_LinearChannel, "mode")
     descriptor = None
-    for klass in robot::LinearChannel.__mro__:
+    for klass in robot_LinearChannel.__mro__:
         if "mode" in klass.__dict__:
             descriptor = klass.__dict__["mode"]
             break
@@ -231,30 +231,30 @@ def test_device_constructor_args():
 
 
 
-def test_robot::sensorydevice_is_not_abstract():
-    assert not inspect.isabstract(robot::SensoryDevice)
+def test_robot_sensorydevice_is_not_abstract():
+    assert not inspect.isabstract(robot_SensoryDevice)
 
 
-def test_robot::sensorydevice_constructor_exists():
-    assert callable(robot::SensoryDevice.__init__)
+def test_robot_sensorydevice_constructor_exists():
+    assert callable(robot_SensoryDevice.__init__)
 
 
-def test_robot::sensorydevice_constructor_args():
-    sig = inspect.signature(robot::SensoryDevice.__init__)
+def test_robot_sensorydevice_constructor_args():
+    sig = inspect.signature(robot_SensoryDevice.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_robot::channeldevice_is_not_abstract():
-    assert not inspect.isabstract(robot::ChannelDevice)
+def test_robot_channeldevice_is_not_abstract():
+    assert not inspect.isabstract(robot_ChannelDevice)
 
 
-def test_robot::channeldevice_constructor_exists():
-    assert callable(robot::ChannelDevice.__init__)
+def test_robot_channeldevice_constructor_exists():
+    assert callable(robot_ChannelDevice.__init__)
 
 
-def test_robot::channeldevice_constructor_args():
-    sig = inspect.signature(robot::ChannelDevice.__init__)
+def test_robot_channeldevice_constructor_args():
+    sig = inspect.signature(robot_ChannelDevice.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -273,23 +273,23 @@ def test_motoringdevice_constructor_args():
 
 
 
-def test_robot::command_is_not_abstract():
-    assert not inspect.isabstract(robot::Command)
+def test_robot_command_is_not_abstract():
+    assert not inspect.isabstract(robot_Command)
 
 
-def test_robot::command_constructor_exists():
-    assert callable(robot::Command.__init__)
+def test_robot_command_constructor_exists():
+    assert callable(robot_Command.__init__)
 
 
-def test_robot::command_constructor_args():
-    sig = inspect.signature(robot::Command.__init__)
+def test_robot_command_constructor_args():
+    sig = inspect.signature(robot_Command.__init__)
     params = list(sig.parameters.keys())
     assert "id" in params, "Missing parameter 'id'"
 
-def test_robot::command_has_id():
-    assert hasattr(robot::Command, "id")
+def test_robot_command_has_id():
+    assert hasattr(robot_Command, "id")
     descriptor = None
-    for klass in robot::Command.__mro__:
+    for klass in robot_Command.__mro__:
         if "id" in klass.__dict__:
             descriptor = klass.__dict__["id"]
             break
@@ -297,33 +297,33 @@ def test_robot::command_has_id():
 
 
 
-def test_robot::effector_is_not_abstract():
-    assert not inspect.isabstract(robot::Effector)
+def test_robot_effector_is_not_abstract():
+    assert not inspect.isabstract(robot_Effector)
 
 
-def test_robot::effector_constructor_exists():
-    assert callable(robot::Effector.__init__)
+def test_robot_effector_constructor_exists():
+    assert callable(robot_Effector.__init__)
 
 
-def test_robot::effector_constructor_args():
-    sig = inspect.signature(robot::Effector.__init__)
+def test_robot_effector_constructor_args():
+    sig = inspect.signature(robot_Effector.__init__)
     params = list(sig.parameters.keys())
     assert "sustain" in params, "Missing parameter 'sustain'"
     assert "throttle" in params, "Missing parameter 'throttle'"
 
-def test_robot::effector_has_sustain():
-    assert hasattr(robot::Effector, "sustain")
+def test_robot_effector_has_sustain():
+    assert hasattr(robot_Effector, "sustain")
     descriptor = None
-    for klass in robot::Effector.__mro__:
+    for klass in robot_Effector.__mro__:
         if "sustain" in klass.__dict__:
             descriptor = klass.__dict__["sustain"]
             break
     assert isinstance(descriptor, property)
 
-def test_robot::effector_has_throttle():
-    assert hasattr(robot::Effector, "throttle")
+def test_robot_effector_has_throttle():
+    assert hasattr(robot_Effector, "throttle")
     descriptor = None
-    for klass in robot::Effector.__mro__:
+    for klass in robot_Effector.__mro__:
         if "throttle" in klass.__dict__:
             descriptor = klass.__dict__["throttle"]
             break
@@ -345,23 +345,23 @@ def test_sensorydevice_constructor_args():
 
 
 
-def test_robot::event_is_not_abstract():
-    assert not inspect.isabstract(robot::Event)
+def test_robot_event_is_not_abstract():
+    assert not inspect.isabstract(robot_Event)
 
 
-def test_robot::event_constructor_exists():
-    assert callable(robot::Event.__init__)
+def test_robot_event_constructor_exists():
+    assert callable(robot_Event.__init__)
 
 
-def test_robot::event_constructor_args():
-    sig = inspect.signature(robot::Event.__init__)
+def test_robot_event_constructor_args():
+    sig = inspect.signature(robot_Event.__init__)
     params = list(sig.parameters.keys())
     assert "id" in params, "Missing parameter 'id'"
 
-def test_robot::event_has_id():
-    assert hasattr(robot::Event, "id")
+def test_robot_event_has_id():
+    assert hasattr(robot_Event, "id")
     descriptor = None
-    for klass in robot::Event.__mro__:
+    for klass in robot_Event.__mro__:
         if "id" in klass.__dict__:
             descriptor = klass.__dict__["id"]
             break
@@ -369,23 +369,23 @@ def test_robot::event_has_id():
 
 
 
-def test_robot::sensor_is_not_abstract():
-    assert not inspect.isabstract(robot::Sensor)
+def test_robot_sensor_is_not_abstract():
+    assert not inspect.isabstract(robot_Sensor)
 
 
-def test_robot::sensor_constructor_exists():
-    assert callable(robot::Sensor.__init__)
+def test_robot_sensor_constructor_exists():
+    assert callable(robot_Sensor.__init__)
 
 
-def test_robot::sensor_constructor_args():
-    sig = inspect.signature(robot::Sensor.__init__)
+def test_robot_sensor_constructor_args():
+    sig = inspect.signature(robot_Sensor.__init__)
     params = list(sig.parameters.keys())
     assert "throttle" in params, "Missing parameter 'throttle'"
 
-def test_robot::sensor_has_throttle():
-    assert hasattr(robot::Sensor, "throttle")
+def test_robot_sensor_has_throttle():
+    assert hasattr(robot_Sensor, "throttle")
     descriptor = None
-    for klass in robot::Sensor.__mro__:
+    for klass in robot_Sensor.__mro__:
         if "throttle" in klass.__dict__:
             descriptor = klass.__dict__["throttle"]
             break
@@ -407,23 +407,23 @@ def test_channeldevice_constructor_args():
 
 
 
-def test_robot::port_is_not_abstract():
-    assert not inspect.isabstract(robot::Port)
+def test_robot_port_is_not_abstract():
+    assert not inspect.isabstract(robot_Port)
 
 
-def test_robot::port_constructor_exists():
-    assert callable(robot::Port.__init__)
+def test_robot_port_constructor_exists():
+    assert callable(robot_Port.__init__)
 
 
-def test_robot::port_constructor_args():
-    sig = inspect.signature(robot::Port.__init__)
+def test_robot_port_constructor_args():
+    sig = inspect.signature(robot_Port.__init__)
     params = list(sig.parameters.keys())
     assert "mode" in params, "Missing parameter 'mode'"
 
-def test_robot::port_has_mode():
-    assert hasattr(robot::Port, "mode")
+def test_robot_port_has_mode():
+    assert hasattr(robot_Port, "mode")
     descriptor = None
-    for klass in robot::Port.__mro__:
+    for klass in robot_Port.__mro__:
         if "mode" in klass.__dict__:
             descriptor = klass.__dict__["mode"]
             break
@@ -431,16 +431,16 @@ def test_robot::port_has_mode():
 
 
 
-def test_robot::motoringdevice_is_not_abstract():
-    assert not inspect.isabstract(robot::MotoringDevice)
+def test_robot_motoringdevice_is_not_abstract():
+    assert not inspect.isabstract(robot_MotoringDevice)
 
 
-def test_robot::motoringdevice_constructor_exists():
-    assert callable(robot::MotoringDevice.__init__)
+def test_robot_motoringdevice_constructor_exists():
+    assert callable(robot_MotoringDevice.__init__)
 
 
-def test_robot::motoringdevice_constructor_args():
-    sig = inspect.signature(robot::MotoringDevice.__init__)
+def test_robot_motoringdevice_constructor_args():
+    sig = inspect.signature(robot_MotoringDevice.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -487,43 +487,57 @@ def test_namedelement_constructor_args():
 
 
 
-def test_robot::protocol_is_not_abstract():
-    assert not inspect.isabstract(robot::Protocol)
+def test_robot_channel_is_not_abstract():
+    assert not inspect.isabstract(robot_Channel)
 
 
-def test_robot::protocol_constructor_exists():
-    assert callable(robot::Protocol.__init__)
+def test_robot_channel_constructor_exists():
+    assert callable(robot_Channel.__init__)
 
 
-def test_robot::protocol_constructor_args():
-    sig = inspect.signature(robot::Protocol.__init__)
+def test_robot_channel_constructor_args():
+    sig = inspect.signature(robot_Channel.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_robot_protocol_is_not_abstract():
+    assert not inspect.isabstract(robot_Protocol)
+
+
+def test_robot_protocol_constructor_exists():
+    assert callable(robot_Protocol.__init__)
+
+
+def test_robot_protocol_constructor_args():
+    sig = inspect.signature(robot_Protocol.__init__)
     params = list(sig.parameters.keys())
     assert "bufferSize" in params, "Missing parameter 'bufferSize'"
     assert "version" in params, "Missing parameter 'version'"
     assert "remainingBuffer" in params, "Missing parameter 'remainingBuffer'"
 
-def test_robot::protocol_has_bufferSize():
-    assert hasattr(robot::Protocol, "bufferSize")
+def test_robot_protocol_has_bufferSize():
+    assert hasattr(robot_Protocol, "bufferSize")
     descriptor = None
-    for klass in robot::Protocol.__mro__:
+    for klass in robot_Protocol.__mro__:
         if "bufferSize" in klass.__dict__:
             descriptor = klass.__dict__["bufferSize"]
             break
     assert isinstance(descriptor, property)
 
-def test_robot::protocol_has_version():
-    assert hasattr(robot::Protocol, "version")
+def test_robot_protocol_has_version():
+    assert hasattr(robot_Protocol, "version")
     descriptor = None
-    for klass in robot::Protocol.__mro__:
+    for klass in robot_Protocol.__mro__:
         if "version" in klass.__dict__:
             descriptor = klass.__dict__["version"]
             break
     assert isinstance(descriptor, property)
 
-def test_robot::protocol_has_remainingBuffer():
-    assert hasattr(robot::Protocol, "remainingBuffer")
+def test_robot_protocol_has_remainingBuffer():
+    assert hasattr(robot_Protocol, "remainingBuffer")
     descriptor = None
-    for klass in robot::Protocol.__mro__:
+    for klass in robot_Protocol.__mro__:
         if "remainingBuffer" in klass.__dict__:
             descriptor = klass.__dict__["remainingBuffer"]
             break
@@ -531,59 +545,45 @@ def test_robot::protocol_has_remainingBuffer():
 
 
 
-def test_robot::channel_is_not_abstract():
-    assert not inspect.isabstract(robot::Channel)
+def test_robot_robot_is_not_abstract():
+    assert not inspect.isabstract(robot_Robot)
 
 
-def test_robot::channel_constructor_exists():
-    assert callable(robot::Channel.__init__)
+def test_robot_robot_constructor_exists():
+    assert callable(robot_Robot.__init__)
 
 
-def test_robot::channel_constructor_args():
-    sig = inspect.signature(robot::Channel.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_robot::robot_is_not_abstract():
-    assert not inspect.isabstract(robot::Robot)
-
-
-def test_robot::robot_constructor_exists():
-    assert callable(robot::Robot.__init__)
-
-
-def test_robot::robot_constructor_args():
-    sig = inspect.signature(robot::Robot.__init__)
+def test_robot_robot_constructor_args():
+    sig = inspect.signature(robot_Robot.__init__)
     params = list(sig.parameters.keys())
     assert "version" in params, "Missing parameter 'version'"
-    assert "standard" in params, "Missing parameter 'standard'"
     assert "provider" in params, "Missing parameter 'provider'"
+    assert "standard" in params, "Missing parameter 'standard'"
 
-def test_robot::robot_has_version():
-    assert hasattr(robot::Robot, "version")
+def test_robot_robot_has_version():
+    assert hasattr(robot_Robot, "version")
     descriptor = None
-    for klass in robot::Robot.__mro__:
+    for klass in robot_Robot.__mro__:
         if "version" in klass.__dict__:
             descriptor = klass.__dict__["version"]
             break
     assert isinstance(descriptor, property)
 
-def test_robot::robot_has_standard():
-    assert hasattr(robot::Robot, "standard")
+def test_robot_robot_has_provider():
+    assert hasattr(robot_Robot, "provider")
     descriptor = None
-    for klass in robot::Robot.__mro__:
-        if "standard" in klass.__dict__:
-            descriptor = klass.__dict__["standard"]
+    for klass in robot_Robot.__mro__:
+        if "provider" in klass.__dict__:
+            descriptor = klass.__dict__["provider"]
             break
     assert isinstance(descriptor, property)
 
-def test_robot::robot_has_provider():
-    assert hasattr(robot::Robot, "provider")
+def test_robot_robot_has_standard():
+    assert hasattr(robot_Robot, "standard")
     descriptor = None
-    for klass in robot::Robot.__mro__:
-        if "provider" in klass.__dict__:
-            descriptor = klass.__dict__["provider"]
+    for klass in robot_Robot.__mro__:
+        if "standard" in klass.__dict__:
+            descriptor = klass.__dict__["standard"]
             break
     assert isinstance(descriptor, property)
 
@@ -603,117 +603,117 @@ def test_simulacra_constructor_args():
 
 
 
-def test_robot::device_is_not_abstract():
-    assert not inspect.isabstract(robot::Device)
+def test_robot_device_is_not_abstract():
+    assert not inspect.isabstract(robot_Device)
 
 
-def test_robot::device_constructor_exists():
-    assert callable(robot::Device.__init__)
+def test_robot_device_constructor_exists():
+    assert callable(robot_Device.__init__)
 
 
-def test_robot::device_constructor_args():
-    sig = inspect.signature(robot::Device.__init__)
+def test_robot_device_constructor_args():
+    sig = inspect.signature(robot_Device.__init__)
     params = list(sig.parameters.keys())
-    assert "proxy" in params, "Missing parameter 'proxy'"
-    assert "max" in params, "Missing parameter 'max'"
-    assert "access" in params, "Missing parameter 'access'"
-    assert "dataSize" in params, "Missing parameter 'dataSize'"
-    assert "dataType" in params, "Missing parameter 'dataType'"
-    assert "default" in params, "Missing parameter 'default'"
     assert "min" in params, "Missing parameter 'min'"
+    assert "dataType" in params, "Missing parameter 'dataType'"
+    assert "proxy" in params, "Missing parameter 'proxy'"
+    assert "dataSize" in params, "Missing parameter 'dataSize'"
+    assert "access" in params, "Missing parameter 'access'"
+    assert "default" in params, "Missing parameter 'default'"
+    assert "max" in params, "Missing parameter 'max'"
 
-def test_robot::device_has_proxy():
-    assert hasattr(robot::Device, "proxy")
+def test_robot_device_has_min():
+    assert hasattr(robot_Device, "min")
     descriptor = None
-    for klass in robot::Device.__mro__:
-        if "proxy" in klass.__dict__:
-            descriptor = klass.__dict__["proxy"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_robot::device_has_max():
-    assert hasattr(robot::Device, "max")
-    descriptor = None
-    for klass in robot::Device.__mro__:
-        if "max" in klass.__dict__:
-            descriptor = klass.__dict__["max"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_robot::device_has_access():
-    assert hasattr(robot::Device, "access")
-    descriptor = None
-    for klass in robot::Device.__mro__:
-        if "access" in klass.__dict__:
-            descriptor = klass.__dict__["access"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_robot::device_has_dataSize():
-    assert hasattr(robot::Device, "dataSize")
-    descriptor = None
-    for klass in robot::Device.__mro__:
-        if "dataSize" in klass.__dict__:
-            descriptor = klass.__dict__["dataSize"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_robot::device_has_dataType():
-    assert hasattr(robot::Device, "dataType")
-    descriptor = None
-    for klass in robot::Device.__mro__:
-        if "dataType" in klass.__dict__:
-            descriptor = klass.__dict__["dataType"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_robot::device_has_default():
-    assert hasattr(robot::Device, "default")
-    descriptor = None
-    for klass in robot::Device.__mro__:
-        if "default" in klass.__dict__:
-            descriptor = klass.__dict__["default"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_robot::device_has_min():
-    assert hasattr(robot::Device, "min")
-    descriptor = None
-    for klass in robot::Device.__mro__:
+    for klass in robot_Device.__mro__:
         if "min" in klass.__dict__:
             descriptor = klass.__dict__["min"]
             break
     assert isinstance(descriptor, property)
 
+def test_robot_device_has_dataType():
+    assert hasattr(robot_Device, "dataType")
+    descriptor = None
+    for klass in robot_Device.__mro__:
+        if "dataType" in klass.__dict__:
+            descriptor = klass.__dict__["dataType"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_robot_device_has_proxy():
+    assert hasattr(robot_Device, "proxy")
+    descriptor = None
+    for klass in robot_Device.__mro__:
+        if "proxy" in klass.__dict__:
+            descriptor = klass.__dict__["proxy"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_robot_device_has_dataSize():
+    assert hasattr(robot_Device, "dataSize")
+    descriptor = None
+    for klass in robot_Device.__mro__:
+        if "dataSize" in klass.__dict__:
+            descriptor = klass.__dict__["dataSize"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_robot_device_has_access():
+    assert hasattr(robot_Device, "access")
+    descriptor = None
+    for klass in robot_Device.__mro__:
+        if "access" in klass.__dict__:
+            descriptor = klass.__dict__["access"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_robot_device_has_default():
+    assert hasattr(robot_Device, "default")
+    descriptor = None
+    for klass in robot_Device.__mro__:
+        if "default" in klass.__dict__:
+            descriptor = klass.__dict__["default"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_robot_device_has_max():
+    assert hasattr(robot_Device, "max")
+    descriptor = None
+    for klass in robot_Device.__mro__:
+        if "max" in klass.__dict__:
+            descriptor = klass.__dict__["max"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_robot::control_is_not_abstract():
-    assert not inspect.isabstract(robot::Control)
+
+def test_robot_control_is_not_abstract():
+    assert not inspect.isabstract(robot_Control)
 
 
-def test_robot::control_constructor_exists():
-    assert callable(robot::Control.__init__)
+def test_robot_control_constructor_exists():
+    assert callable(robot_Control.__init__)
 
 
-def test_robot::control_constructor_args():
-    sig = inspect.signature(robot::Control.__init__)
+def test_robot_control_constructor_args():
+    sig = inspect.signature(robot_Control.__init__)
     params = list(sig.parameters.keys())
     assert "frameLimit" in params, "Missing parameter 'frameLimit'"
     assert "version" in params, "Missing parameter 'version'"
 
-def test_robot::control_has_frameLimit():
-    assert hasattr(robot::Control, "frameLimit")
+def test_robot_control_has_frameLimit():
+    assert hasattr(robot_Control, "frameLimit")
     descriptor = None
-    for klass in robot::Control.__mro__:
+    for klass in robot_Control.__mro__:
         if "frameLimit" in klass.__dict__:
             descriptor = klass.__dict__["frameLimit"]
             break
     assert isinstance(descriptor, property)
 
-def test_robot::control_has_version():
-    assert hasattr(robot::Control, "version")
+def test_robot_control_has_version():
+    assert hasattr(robot_Control, "version")
     descriptor = None
-    for klass in robot::Control.__mro__:
+    for klass in robot_Control.__mro__:
         if "version" in klass.__dict__:
             descriptor = klass.__dict__["version"]
             break
@@ -721,63 +721,63 @@ def test_robot::control_has_version():
 
 
 
-def test_robot::roboid_is_not_abstract():
-    assert not inspect.isabstract(robot::Roboid)
+def test_robot_roboid_is_not_abstract():
+    assert not inspect.isabstract(robot_Roboid)
 
 
-def test_robot::roboid_constructor_exists():
-    assert callable(robot::Roboid.__init__)
+def test_robot_roboid_constructor_exists():
+    assert callable(robot_Roboid.__init__)
 
 
-def test_robot::roboid_constructor_args():
-    sig = inspect.signature(robot::Roboid.__init__)
+def test_robot_roboid_constructor_args():
+    sig = inspect.signature(robot_Roboid.__init__)
     params = list(sig.parameters.keys())
     assert "uid" in params, "Missing parameter 'uid'"
+    assert "id" in params, "Missing parameter 'id'"
     assert "version" in params, "Missing parameter 'version'"
     assert "provider" in params, "Missing parameter 'provider'"
-    assert "id" in params, "Missing parameter 'id'"
     assert "address" in params, "Missing parameter 'address'"
 
-def test_robot::roboid_has_uid():
-    assert hasattr(robot::Roboid, "uid")
+def test_robot_roboid_has_uid():
+    assert hasattr(robot_Roboid, "uid")
     descriptor = None
-    for klass in robot::Roboid.__mro__:
+    for klass in robot_Roboid.__mro__:
         if "uid" in klass.__dict__:
             descriptor = klass.__dict__["uid"]
             break
     assert isinstance(descriptor, property)
 
-def test_robot::roboid_has_version():
-    assert hasattr(robot::Roboid, "version")
+def test_robot_roboid_has_id():
+    assert hasattr(robot_Roboid, "id")
     descriptor = None
-    for klass in robot::Roboid.__mro__:
-        if "version" in klass.__dict__:
-            descriptor = klass.__dict__["version"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_robot::roboid_has_provider():
-    assert hasattr(robot::Roboid, "provider")
-    descriptor = None
-    for klass in robot::Roboid.__mro__:
-        if "provider" in klass.__dict__:
-            descriptor = klass.__dict__["provider"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_robot::roboid_has_id():
-    assert hasattr(robot::Roboid, "id")
-    descriptor = None
-    for klass in robot::Roboid.__mro__:
+    for klass in robot_Roboid.__mro__:
         if "id" in klass.__dict__:
             descriptor = klass.__dict__["id"]
             break
     assert isinstance(descriptor, property)
 
-def test_robot::roboid_has_address():
-    assert hasattr(robot::Roboid, "address")
+def test_robot_roboid_has_version():
+    assert hasattr(robot_Roboid, "version")
     descriptor = None
-    for klass in robot::Roboid.__mro__:
+    for klass in robot_Roboid.__mro__:
+        if "version" in klass.__dict__:
+            descriptor = klass.__dict__["version"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_robot_roboid_has_provider():
+    assert hasattr(robot_Roboid, "provider")
+    descriptor = None
+    for klass in robot_Roboid.__mro__:
+        if "provider" in klass.__dict__:
+            descriptor = klass.__dict__["provider"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_robot_roboid_has_address():
+    assert hasattr(robot_Roboid, "address")
+    descriptor = None
+    for klass in robot_Roboid.__mro__:
         if "address" in klass.__dict__:
             descriptor = klass.__dict__["address"]
             break
@@ -785,137 +785,103 @@ def test_robot::roboid_has_address():
 
 
 
-def test_robot::storable_is_not_abstract():
-    assert not inspect.isabstract(robot::Storable)
+def test_robot_storable_is_not_abstract():
+    assert not inspect.isabstract(robot_Storable)
 
 
-def test_robot::storable_constructor_exists():
-    assert callable(robot::Storable.__init__)
+def test_robot_storable_constructor_exists():
+    assert callable(robot_Storable.__init__)
 
 
-def test_robot::storable_constructor_args():
-    sig = inspect.signature(robot::Storable.__init__)
+def test_robot_storable_constructor_args():
+    sig = inspect.signature(robot_Storable.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_robot::devicelistener_is_not_abstract():
-    assert not inspect.isabstract(robot::DeviceListener)
+def test_robot_devicelistener_is_not_abstract():
+    assert not inspect.isabstract(robot_DeviceListener)
 
 
-def test_robot::devicelistener_constructor_exists():
-    assert callable(robot::DeviceListener.__init__)
+def test_robot_devicelistener_constructor_exists():
+    assert callable(robot_DeviceListener.__init__)
 
 
-def test_robot::devicelistener_constructor_args():
-    sig = inspect.signature(robot::DeviceListener.__init__)
+def test_robot_devicelistener_constructor_args():
+    sig = inspect.signature(robot_DeviceListener.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_robot::simulacra_is_not_abstract():
-    assert not inspect.isabstract(robot::Simulacra)
+def test_robot_simulacra_is_not_abstract():
+    assert not inspect.isabstract(robot_Simulacra)
 
 
-def test_robot::simulacra_constructor_exists():
-    assert callable(robot::Simulacra.__init__)
+def test_robot_simulacra_constructor_exists():
+    assert callable(robot_Simulacra.__init__)
 
 
-def test_robot::simulacra_constructor_args():
-    sig = inspect.signature(robot::Simulacra.__init__)
+def test_robot_simulacra_constructor_args():
+    sig = inspect.signature(robot_Simulacra.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_robot::findable_is_not_abstract():
-    assert not inspect.isabstract(robot::Findable)
+def test_robot_findable_is_not_abstract():
+    assert not inspect.isabstract(robot_Findable)
 
 
-def test_robot::findable_constructor_exists():
-    assert callable(robot::Findable.__init__)
+def test_robot_findable_constructor_exists():
+    assert callable(robot_Findable.__init__)
 
 
-def test_robot::findable_constructor_args():
-    sig = inspect.signature(robot::Findable.__init__)
+def test_robot_findable_constructor_args():
+    sig = inspect.signature(robot_Findable.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_robot::namedelement_is_not_abstract():
-    assert not inspect.isabstract(robot::NamedElement)
+def test_robot_namedelement_is_not_abstract():
+    assert not inspect.isabstract(robot_NamedElement)
 
 
-def test_robot::namedelement_constructor_exists():
-    assert callable(robot::NamedElement.__init__)
+def test_robot_namedelement_constructor_exists():
+    assert callable(robot_NamedElement.__init__)
 
 
-def test_robot::namedelement_constructor_args():
-    sig = inspect.signature(robot::NamedElement.__init__)
+def test_robot_namedelement_constructor_args():
+    sig = inspect.signature(robot_NamedElement.__init__)
     params = list(sig.parameters.keys())
-    assert "name" in params, "Missing parameter 'name'"
-    assert "comment" in params, "Missing parameter 'comment'"
     assert "literal" in params, "Missing parameter 'literal'"
+    assert "comment" in params, "Missing parameter 'comment'"
+    assert "name" in params, "Missing parameter 'name'"
 
-def test_robot::namedelement_has_name():
-    assert hasattr(robot::NamedElement, "name")
+def test_robot_namedelement_has_literal():
+    assert hasattr(robot_NamedElement, "literal")
     descriptor = None
-    for klass in robot::NamedElement.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_robot::namedelement_has_comment():
-    assert hasattr(robot::NamedElement, "comment")
-    descriptor = None
-    for klass in robot::NamedElement.__mro__:
-        if "comment" in klass.__dict__:
-            descriptor = klass.__dict__["comment"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_robot::namedelement_has_literal():
-    assert hasattr(robot::NamedElement, "literal")
-    descriptor = None
-    for klass in robot::NamedElement.__mro__:
+    for klass in robot_NamedElement.__mro__:
         if "literal" in klass.__dict__:
             descriptor = klass.__dict__["literal"]
             break
     assert isinstance(descriptor, property)
 
-def test_colormode_exists():
-    # Check that the Enumeration exists
-    assert ColorMode is not None
+def test_robot_namedelement_has_comment():
+    assert hasattr(robot_NamedElement, "comment")
+    descriptor = None
+    for klass in robot_NamedElement.__mro__:
+        if "comment" in klass.__dict__:
+            descriptor = klass.__dict__["comment"]
+            break
+    assert isinstance(descriptor, property)
 
-def test_colormode_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in ColorMode]
-    expected_literals = [
-        "BLUE",
-        "GREEN",
-        "GRAY",
-        "RED",
-        "RGB",
-        "RED_GREEN",
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in ColorMode"
-
-def test_accesstype_exists():
-    # Check that the Enumeration exists
-    assert AccessType is not None
-
-def test_accesstype_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in AccessType]
-    expected_literals = [
-        "PRIVATE",
-        "PUBLIC",
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in AccessType"
+def test_robot_namedelement_has_name():
+    assert hasattr(robot_NamedElement, "name")
+    descriptor = None
+    for klass in robot_NamedElement.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
 
 def test_linearmode_exists():
     # Check that the Enumeration exists
@@ -925,52 +891,12 @@ def test_linearmode_has_all_literals():
     # Collect the names of literals in this Enumeration
     enum_literals = [lit.name for lit in LinearMode]
     expected_literals = [
-        "SUSTAIN",
         "LINEAR",
+        "SUSTAIN",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
         assert lit_name in enum_literals, f"Literal '' missing in LinearMode"
-
-def test_datatype_exists():
-    # Check that the Enumeration exists
-    assert DataType is not None
-
-def test_datatype_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in DataType]
-    expected_literals = [
-        "SHORT",
-        "FLOAT",
-        "UNSIGNED_BYTE",
-        "UNSIGNED_SHORT",
-        "BYTE",
-        "INTEGER",
-        "STRING",
-        "IMAGE",
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in DataType"
-
-def test_iomode_exists():
-    # Check that the Enumeration exists
-    assert IoMode is not None
-
-def test_iomode_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in IoMode]
-    expected_literals = [
-        "DIGITAL_OUTPUT",
-        "NONE",
-        "SERVO_OUTPUT",
-        "DIGITAL_INPUT",
-        "PWM_OUTPUT",
-        "ANALOG_INPUT",
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in IoMode"
 
 def test_audiomode_exists():
     # Check that the Enumeration exists
@@ -987,6 +913,80 @@ def test_audiomode_has_all_literals():
     for lit_name in expected_literals:
         assert lit_name in enum_literals, f"Literal '' missing in AudioMode"
 
+def test_colormode_exists():
+    # Check that the Enumeration exists
+    assert ColorMode is not None
+
+def test_colormode_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in ColorMode]
+    expected_literals = [
+        "BLUE",
+        "RGB",
+        "GREEN",
+        "RED",
+        "GRAY",
+        "RED_GREEN",
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in ColorMode"
+
+def test_datatype_exists():
+    # Check that the Enumeration exists
+    assert DataType is not None
+
+def test_datatype_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in DataType]
+    expected_literals = [
+        "FLOAT",
+        "BYTE",
+        "STRING",
+        "UNSIGNED_BYTE",
+        "IMAGE",
+        "INTEGER",
+        "UNSIGNED_SHORT",
+        "SHORT",
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in DataType"
+
+def test_accesstype_exists():
+    # Check that the Enumeration exists
+    assert AccessType is not None
+
+def test_accesstype_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in AccessType]
+    expected_literals = [
+        "PUBLIC",
+        "PRIVATE",
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in AccessType"
+
+def test_iomode_exists():
+    # Check that the Enumeration exists
+    assert IoMode is not None
+
+def test_iomode_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in IoMode]
+    expected_literals = [
+        "NONE",
+        "PWM_OUTPUT",
+        "DIGITAL_OUTPUT",
+        "SERVO_OUTPUT",
+        "DIGITAL_INPUT",
+        "ANALOG_INPUT",
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in IoMode"
+
 
 # =============================================================================
 # HYPOTHESIS STRATEGIES
@@ -1002,56 +1002,56 @@ safe_text = st.text(
 LinearChannel_strategy = st.builds(
     LinearChannel,
 )
-robot::MatrixChannel_strategy = st.builds(
-    robot::MatrixChannel,
+robot_MatrixChannel_strategy = st.builds(
+    robot_MatrixChannel,
 )
 Channel_strategy = st.builds(
     Channel,
 )
-robot::TextChannel_strategy = st.builds(
-    robot::TextChannel,
+robot_TextChannel_strategy = st.builds(
+    robot_TextChannel,
 )
-robot::ColorChannel_strategy = st.builds(
-    robot::ColorChannel,
+robot_AudioChannel_strategy = st.builds(
+    robot_AudioChannel,
+)
+robot_FileChannel_strategy = st.builds(
+    robot_FileChannel,
+)
+robot_VoiceChannel_strategy = st.builds(
+    robot_VoiceChannel,
+)
+robot_CommandChannel_strategy = st.builds(
+    robot_CommandChannel,
+)
+robot_ColorChannel_strategy = st.builds(
+    robot_ColorChannel,
     mode=
         safe_text
 )
-robot::VoiceChannel_strategy = st.builds(
-    robot::VoiceChannel,
-)
-robot::AudioChannel_strategy = st.builds(
-    robot::AudioChannel,
-)
-robot::CommandChannel_strategy = st.builds(
-    robot::CommandChannel,
-)
-robot::FileChannel_strategy = st.builds(
-    robot::FileChannel,
-)
-robot::LinearChannel_strategy = st.builds(
-    robot::LinearChannel,
+robot_LinearChannel_strategy = st.builds(
+    robot_LinearChannel,
     mode=
         safe_text
 )
 Device_strategy = st.builds(
     Device,
 )
-robot::SensoryDevice_strategy = st.builds(
-    robot::SensoryDevice,
+robot_SensoryDevice_strategy = st.builds(
+    robot_SensoryDevice,
 )
-robot::ChannelDevice_strategy = st.builds(
-    robot::ChannelDevice,
+robot_ChannelDevice_strategy = st.builds(
+    robot_ChannelDevice,
 )
 MotoringDevice_strategy = st.builds(
     MotoringDevice,
 )
-robot::Command_strategy = st.builds(
-    robot::Command,
+robot_Command_strategy = st.builds(
+    robot_Command,
     id=
         st.integers()
 )
-robot::Effector_strategy = st.builds(
-    robot::Effector,
+robot_Effector_strategy = st.builds(
+    robot_Effector,
     sustain=
         st.integers(),
     throttle=
@@ -1060,26 +1060,26 @@ robot::Effector_strategy = st.builds(
 SensoryDevice_strategy = st.builds(
     SensoryDevice,
 )
-robot::Event_strategy = st.builds(
-    robot::Event,
+robot_Event_strategy = st.builds(
+    robot_Event,
     id=
         st.integers()
 )
-robot::Sensor_strategy = st.builds(
-    robot::Sensor,
+robot_Sensor_strategy = st.builds(
+    robot_Sensor,
     throttle=
         st.integers()
 )
 ChannelDevice_strategy = st.builds(
     ChannelDevice,
 )
-robot::Port_strategy = st.builds(
-    robot::Port,
+robot_Port_strategy = st.builds(
+    robot_Port,
     mode=
         safe_text
 )
-robot::MotoringDevice_strategy = st.builds(
-    robot::MotoringDevice,
+robot_MotoringDevice_strategy = st.builds(
+    robot_MotoringDevice,
 )
 Findable_strategy = st.builds(
     Findable,
@@ -1090,8 +1090,11 @@ Storable_strategy = st.builds(
 NamedElement_strategy = st.builds(
     NamedElement,
 )
-robot::Protocol_strategy = st.builds(
-    robot::Protocol,
+robot_Channel_strategy = st.builds(
+    robot_Channel,
+)
+robot_Protocol_strategy = st.builds(
+    robot_Protocol,
     bufferSize=
         st.integers(),
     version=
@@ -1099,77 +1102,74 @@ robot::Protocol_strategy = st.builds(
     remainingBuffer=
         st.integers()
 )
-robot::Channel_strategy = st.builds(
-    robot::Channel,
-)
-robot::Robot_strategy = st.builds(
-    robot::Robot,
+robot_Robot_strategy = st.builds(
+    robot_Robot,
     version=
         safe_text,
-    standard=
-        safe_text,
     provider=
+        safe_text,
+    standard=
         safe_text
 )
 Simulacra_strategy = st.builds(
     Simulacra,
 )
-robot::Device_strategy = st.builds(
-    robot::Device,
+robot_Device_strategy = st.builds(
+    robot_Device,
+    min=
+        safe_text,
+    dataType=
+        safe_text,
     proxy=
         st.booleans(),
-    max=
-        safe_text,
-    access=
-        safe_text,
     dataSize=
         st.integers(),
-    dataType=
+    access=
         safe_text,
     default=
         safe_text,
-    min=
+    max=
         safe_text
 )
-robot::Control_strategy = st.builds(
-    robot::Control,
+robot_Control_strategy = st.builds(
+    robot_Control,
     frameLimit=
         st.integers(),
     version=
         safe_text
 )
-robot::Roboid_strategy = st.builds(
-    robot::Roboid,
+robot_Roboid_strategy = st.builds(
+    robot_Roboid,
     uid=
+        safe_text,
+    id=
         safe_text,
     version=
         safe_text,
     provider=
         safe_text,
-    id=
-        safe_text,
     address=
         safe_text
 )
-robot::Storable_strategy = st.builds(
-    robot::Storable,
+robot_Storable_strategy = st.builds(
+    robot_Storable,
 )
-robot::DeviceListener_strategy = st.builds(
-    robot::DeviceListener,
+robot_DeviceListener_strategy = st.builds(
+    robot_DeviceListener,
 )
-robot::Simulacra_strategy = st.builds(
-    robot::Simulacra,
+robot_Simulacra_strategy = st.builds(
+    robot_Simulacra,
 )
-robot::Findable_strategy = st.builds(
-    robot::Findable,
+robot_Findable_strategy = st.builds(
+    robot_Findable,
 )
-robot::NamedElement_strategy = st.builds(
-    robot::NamedElement,
-    name=
+robot_NamedElement_strategy = st.builds(
+    robot_NamedElement,
+    literal=
         safe_text,
     comment=
         safe_text,
-    literal=
+    name=
         safe_text
 )
 
@@ -1178,69 +1178,63 @@ robot::NamedElement_strategy = st.builds(
 def test_linearchannel_instantiation(instance):
     assert isinstance(instance, LinearChannel)
 
-@given(instance=robot::MatrixChannel_strategy)
+@given(instance=robot_MatrixChannel_strategy)
 @settings(max_examples=50)
-def test_robot::matrixchannel_instantiation(instance):
-    assert isinstance(instance, robot::MatrixChannel)
+def test_robot_matrixchannel_instantiation(instance):
+    assert isinstance(instance, robot_MatrixChannel)
 
 @given(instance=Channel_strategy)
 @settings(max_examples=50)
 def test_channel_instantiation(instance):
     assert isinstance(instance, Channel)
 
-@given(instance=robot::TextChannel_strategy)
+@given(instance=robot_TextChannel_strategy)
 @settings(max_examples=50)
-def test_robot::textchannel_instantiation(instance):
-    assert isinstance(instance, robot::TextChannel)
+def test_robot_textchannel_instantiation(instance):
+    assert isinstance(instance, robot_TextChannel)
 
-@given(instance=robot::ColorChannel_strategy)
+@given(instance=robot_AudioChannel_strategy)
 @settings(max_examples=50)
-def test_robot::colorchannel_instantiation(instance):
-    assert isinstance(instance, robot::ColorChannel)
+def test_robot_audiochannel_instantiation(instance):
+    assert isinstance(instance, robot_AudioChannel)
 
-@given(instance=robot::ColorChannel_strategy)
-def test_robot::colorchannel_mode_type(instance):
-    assert isinstance(instance.mode, str)
+@given(instance=robot_FileChannel_strategy)
+@settings(max_examples=50)
+def test_robot_filechannel_instantiation(instance):
+    assert isinstance(instance, robot_FileChannel)
+
+@given(instance=robot_VoiceChannel_strategy)
+@settings(max_examples=50)
+def test_robot_voicechannel_instantiation(instance):
+    assert isinstance(instance, robot_VoiceChannel)
+
+@given(instance=robot_CommandChannel_strategy)
+@settings(max_examples=50)
+def test_robot_commandchannel_instantiation(instance):
+    assert isinstance(instance, robot_CommandChannel)
+
+@given(instance=robot_ColorChannel_strategy)
+@settings(max_examples=50)
+def test_robot_colorchannel_instantiation(instance):
+    assert isinstance(instance, robot_ColorChannel)
 
 
-@given(instance=robot::ColorChannel_strategy)
-def test_robot::colorchannel_mode_setter(instance):
+
+@given(instance=robot_ColorChannel_strategy)
+def test_robot_colorchannel_mode_setter(instance):
     original = instance.mode
     instance.mode = original
     assert instance.mode == original
 
-@given(instance=robot::VoiceChannel_strategy)
+@given(instance=robot_LinearChannel_strategy)
 @settings(max_examples=50)
-def test_robot::voicechannel_instantiation(instance):
-    assert isinstance(instance, robot::VoiceChannel)
-
-@given(instance=robot::AudioChannel_strategy)
-@settings(max_examples=50)
-def test_robot::audiochannel_instantiation(instance):
-    assert isinstance(instance, robot::AudioChannel)
-
-@given(instance=robot::CommandChannel_strategy)
-@settings(max_examples=50)
-def test_robot::commandchannel_instantiation(instance):
-    assert isinstance(instance, robot::CommandChannel)
-
-@given(instance=robot::FileChannel_strategy)
-@settings(max_examples=50)
-def test_robot::filechannel_instantiation(instance):
-    assert isinstance(instance, robot::FileChannel)
-
-@given(instance=robot::LinearChannel_strategy)
-@settings(max_examples=50)
-def test_robot::linearchannel_instantiation(instance):
-    assert isinstance(instance, robot::LinearChannel)
-
-@given(instance=robot::LinearChannel_strategy)
-def test_robot::linearchannel_mode_type(instance):
-    assert isinstance(instance.mode, str)
+def test_robot_linearchannel_instantiation(instance):
+    assert isinstance(instance, robot_LinearChannel)
 
 
-@given(instance=robot::LinearChannel_strategy)
-def test_robot::linearchannel_mode_setter(instance):
+
+@given(instance=robot_LinearChannel_strategy)
+def test_robot_linearchannel_mode_setter(instance):
     original = instance.mode
     instance.mode = original
     assert instance.mode == original
@@ -1250,10 +1244,10 @@ def test_robot::linearchannel_mode_setter(instance):
 def test_device_instantiation(instance):
     assert isinstance(instance, Device)
 
-@given(instance=robot::SensoryDevice_strategy)
+@given(instance=robot_SensoryDevice_strategy)
 @settings(max_examples=50)
-def test_robot::sensorydevice_instantiation(instance):
-    assert isinstance(instance, robot::SensoryDevice)
+def test_robot_sensorydevice_instantiation(instance):
+    assert isinstance(instance, robot_SensoryDevice)
 
 import warnings
 import copy
@@ -1261,9 +1255,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=robot::SensoryDevice_strategy)
+@given(instance=robot_SensoryDevice_strategy)
 @settings(max_examples=30)
-def test_robot::sensorydevice_addreceptor_changes_state(instance):
+def test_robot_sensorydevice_addreceptor_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -1277,14 +1271,14 @@ def test_robot::sensorydevice_addreceptor_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'addReceptor' in robot::SensoryDevice is empty"
+        assert has_statements, f"Function 'addReceptor' in robot_SensoryDevice is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'addReceptor' in robot::SensoryDevice did not change state; check implementation")
+            warnings.warn(f"Operation 'addReceptor' in robot_SensoryDevice did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'addReceptor' in robot::SensoryDevice is not implemented or raised an error")
+        warnings.warn(f"Operation 'addReceptor' in robot_SensoryDevice is not implemented or raised an error")
 
 import warnings
 import copy
@@ -1292,9 +1286,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=robot::SensoryDevice_strategy)
+@given(instance=robot_SensoryDevice_strategy)
 @settings(max_examples=30)
-def test_robot::sensorydevice_removereceptor_changes_state(instance):
+def test_robot_sensorydevice_removereceptor_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -1308,64 +1302,55 @@ def test_robot::sensorydevice_removereceptor_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'removeReceptor' in robot::SensoryDevice is empty"
+        assert has_statements, f"Function 'removeReceptor' in robot_SensoryDevice is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'removeReceptor' in robot::SensoryDevice did not change state; check implementation")
+            warnings.warn(f"Operation 'removeReceptor' in robot_SensoryDevice did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'removeReceptor' in robot::SensoryDevice is not implemented or raised an error")
+        warnings.warn(f"Operation 'removeReceptor' in robot_SensoryDevice is not implemented or raised an error")
 
-@given(instance=robot::ChannelDevice_strategy)
+@given(instance=robot_ChannelDevice_strategy)
 @settings(max_examples=50)
-def test_robot::channeldevice_instantiation(instance):
-    assert isinstance(instance, robot::ChannelDevice)
+def test_robot_channeldevice_instantiation(instance):
+    assert isinstance(instance, robot_ChannelDevice)
 
 @given(instance=MotoringDevice_strategy)
 @settings(max_examples=50)
 def test_motoringdevice_instantiation(instance):
     assert isinstance(instance, MotoringDevice)
 
-@given(instance=robot::Command_strategy)
+@given(instance=robot_Command_strategy)
 @settings(max_examples=50)
-def test_robot::command_instantiation(instance):
-    assert isinstance(instance, robot::Command)
-
-@given(instance=robot::Command_strategy)
-def test_robot::command_id_type(instance):
-    assert isinstance(instance.id, int)
+def test_robot_command_instantiation(instance):
+    assert isinstance(instance, robot_Command)
 
 
-@given(instance=robot::Command_strategy)
-def test_robot::command_id_setter(instance):
+
+@given(instance=robot_Command_strategy)
+def test_robot_command_id_setter(instance):
     original = instance.id
     instance.id = original
     assert instance.id == original
 
-@given(instance=robot::Effector_strategy)
+@given(instance=robot_Effector_strategy)
 @settings(max_examples=50)
-def test_robot::effector_instantiation(instance):
-    assert isinstance(instance, robot::Effector)
-
-@given(instance=robot::Effector_strategy)
-def test_robot::effector_sustain_type(instance):
-    assert isinstance(instance.sustain, int)
+def test_robot_effector_instantiation(instance):
+    assert isinstance(instance, robot_Effector)
 
 
-@given(instance=robot::Effector_strategy)
-def test_robot::effector_sustain_setter(instance):
+
+@given(instance=robot_Effector_strategy)
+def test_robot_effector_sustain_setter(instance):
     original = instance.sustain
     instance.sustain = original
     assert instance.sustain == original
 
-@given(instance=robot::Effector_strategy)
-def test_robot::effector_throttle_type(instance):
-    assert isinstance(instance.throttle, int)
 
 
-@given(instance=robot::Effector_strategy)
-def test_robot::effector_throttle_setter(instance):
+@given(instance=robot_Effector_strategy)
+def test_robot_effector_throttle_setter(instance):
     original = instance.throttle
     instance.throttle = original
     assert instance.throttle == original
@@ -1376,9 +1361,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=robot::Effector_strategy)
+@given(instance=robot_Effector_strategy)
 @settings(max_examples=30)
-def test_robot::effector_hasnext_changes_state(instance):
+def test_robot_effector_hasnext_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -1390,48 +1375,42 @@ def test_robot::effector_hasnext_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'hasNext' in robot::Effector is empty"
+        assert has_statements, f"Function 'hasNext' in robot_Effector is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'hasNext' in robot::Effector did not change state; check implementation")
+            warnings.warn(f"Operation 'hasNext' in robot_Effector did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'hasNext' in robot::Effector is not implemented or raised an error")
+        warnings.warn(f"Operation 'hasNext' in robot_Effector is not implemented or raised an error")
 
 @given(instance=SensoryDevice_strategy)
 @settings(max_examples=50)
 def test_sensorydevice_instantiation(instance):
     assert isinstance(instance, SensoryDevice)
 
-@given(instance=robot::Event_strategy)
+@given(instance=robot_Event_strategy)
 @settings(max_examples=50)
-def test_robot::event_instantiation(instance):
-    assert isinstance(instance, robot::Event)
-
-@given(instance=robot::Event_strategy)
-def test_robot::event_id_type(instance):
-    assert isinstance(instance.id, int)
+def test_robot_event_instantiation(instance):
+    assert isinstance(instance, robot_Event)
 
 
-@given(instance=robot::Event_strategy)
-def test_robot::event_id_setter(instance):
+
+@given(instance=robot_Event_strategy)
+def test_robot_event_id_setter(instance):
     original = instance.id
     instance.id = original
     assert instance.id == original
 
-@given(instance=robot::Sensor_strategy)
+@given(instance=robot_Sensor_strategy)
 @settings(max_examples=50)
-def test_robot::sensor_instantiation(instance):
-    assert isinstance(instance, robot::Sensor)
-
-@given(instance=robot::Sensor_strategy)
-def test_robot::sensor_throttle_type(instance):
-    assert isinstance(instance.throttle, int)
+def test_robot_sensor_instantiation(instance):
+    assert isinstance(instance, robot_Sensor)
 
 
-@given(instance=robot::Sensor_strategy)
-def test_robot::sensor_throttle_setter(instance):
+
+@given(instance=robot_Sensor_strategy)
+def test_robot_sensor_throttle_setter(instance):
     original = instance.throttle
     instance.throttle = original
     assert instance.throttle == original
@@ -1441,26 +1420,23 @@ def test_robot::sensor_throttle_setter(instance):
 def test_channeldevice_instantiation(instance):
     assert isinstance(instance, ChannelDevice)
 
-@given(instance=robot::Port_strategy)
+@given(instance=robot_Port_strategy)
 @settings(max_examples=50)
-def test_robot::port_instantiation(instance):
-    assert isinstance(instance, robot::Port)
-
-@given(instance=robot::Port_strategy)
-def test_robot::port_mode_type(instance):
-    assert isinstance(instance.mode, str)
+def test_robot_port_instantiation(instance):
+    assert isinstance(instance, robot_Port)
 
 
-@given(instance=robot::Port_strategy)
-def test_robot::port_mode_setter(instance):
+
+@given(instance=robot_Port_strategy)
+def test_robot_port_mode_setter(instance):
     original = instance.mode
     instance.mode = original
     assert instance.mode == original
 
-@given(instance=robot::MotoringDevice_strategy)
+@given(instance=robot_MotoringDevice_strategy)
 @settings(max_examples=50)
-def test_robot::motoringdevice_instantiation(instance):
-    assert isinstance(instance, robot::MotoringDevice)
+def test_robot_motoringdevice_instantiation(instance):
+    assert isinstance(instance, robot_MotoringDevice)
 
 @given(instance=Findable_strategy)
 @settings(max_examples=50)
@@ -1477,40 +1453,65 @@ def test_storable_instantiation(instance):
 def test_namedelement_instantiation(instance):
     assert isinstance(instance, NamedElement)
 
-@given(instance=robot::Protocol_strategy)
+@given(instance=robot_Channel_strategy)
 @settings(max_examples=50)
-def test_robot::protocol_instantiation(instance):
-    assert isinstance(instance, robot::Protocol)
+def test_robot_channel_instantiation(instance):
+    assert isinstance(instance, robot_Channel)
 
-@given(instance=robot::Protocol_strategy)
-def test_robot::protocol_bufferSize_type(instance):
-    assert isinstance(instance.bufferSize, int)
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=robot_Channel_strategy)
+@settings(max_examples=30)
+def test_robot_channel_isenabled_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.isEnabled()
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.isEnabled).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'isEnabled' in robot_Channel is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'isEnabled' in robot_Channel did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'isEnabled' in robot_Channel is not implemented or raised an error")
+
+@given(instance=robot_Protocol_strategy)
+@settings(max_examples=50)
+def test_robot_protocol_instantiation(instance):
+    assert isinstance(instance, robot_Protocol)
 
 
-@given(instance=robot::Protocol_strategy)
-def test_robot::protocol_bufferSize_setter(instance):
+
+@given(instance=robot_Protocol_strategy)
+def test_robot_protocol_bufferSize_setter(instance):
     original = instance.bufferSize
     instance.bufferSize = original
     assert instance.bufferSize == original
 
-@given(instance=robot::Protocol_strategy)
-def test_robot::protocol_version_type(instance):
-    assert isinstance(instance.version, str)
 
 
-@given(instance=robot::Protocol_strategy)
-def test_robot::protocol_version_setter(instance):
+@given(instance=robot_Protocol_strategy)
+def test_robot_protocol_version_setter(instance):
     original = instance.version
     instance.version = original
     assert instance.version == original
 
-@given(instance=robot::Protocol_strategy)
-def test_robot::protocol_remainingBuffer_type(instance):
-    assert isinstance(instance.remainingBuffer, int)
 
 
-@given(instance=robot::Protocol_strategy)
-def test_robot::protocol_remainingBuffer_setter(instance):
+@given(instance=robot_Protocol_strategy)
+def test_robot_protocol_remainingBuffer_setter(instance):
     original = instance.remainingBuffer
     instance.remainingBuffer = original
     assert instance.remainingBuffer == original
@@ -1521,38 +1522,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=robot::Protocol_strategy)
+@given(instance=robot_Protocol_strategy)
 @settings(max_examples=30)
-def test_robot::protocol_setevents_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.setEvents()
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.setEvents).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'setEvents' in robot::Protocol is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'setEvents' in robot::Protocol did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'setEvents' in robot::Protocol is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=robot::Protocol_strategy)
-@settings(max_examples=30)
-def test_robot::protocol_clearbuffer_changes_state(instance):
+def test_robot_protocol_clearbuffer_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -1564,14 +1536,14 @@ def test_robot::protocol_clearbuffer_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'clearBuffer' in robot::Protocol is empty"
+        assert has_statements, f"Function 'clearBuffer' in robot_Protocol is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'clearBuffer' in robot::Protocol did not change state; check implementation")
+            warnings.warn(f"Operation 'clearBuffer' in robot_Protocol did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'clearBuffer' in robot::Protocol is not implemented or raised an error")
+        warnings.warn(f"Operation 'clearBuffer' in robot_Protocol is not implemented or raised an error")
 
 import warnings
 import copy
@@ -1579,9 +1551,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=robot::Protocol_strategy)
+@given(instance=robot_Protocol_strategy)
 @settings(max_examples=30)
-def test_robot::protocol_setsimulacrum_changes_state(instance):
+def test_robot_protocol_setsimulacrum_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -1596,19 +1568,14 @@ def test_robot::protocol_setsimulacrum_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'setSimulacrum' in robot::Protocol is empty"
+        assert has_statements, f"Function 'setSimulacrum' in robot_Protocol is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'setSimulacrum' in robot::Protocol did not change state; check implementation")
+            warnings.warn(f"Operation 'setSimulacrum' in robot_Protocol did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'setSimulacrum' in robot::Protocol is not implemented or raised an error")
-
-@given(instance=robot::Channel_strategy)
-@settings(max_examples=50)
-def test_robot::channel_instantiation(instance):
-    assert isinstance(instance, robot::Channel)
+        warnings.warn(f"Operation 'setSimulacrum' in robot_Protocol is not implemented or raised an error")
 
 import warnings
 import copy
@@ -1616,66 +1583,57 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=robot::Channel_strategy)
+@given(instance=robot_Protocol_strategy)
 @settings(max_examples=30)
-def test_robot::channel_isenabled_changes_state(instance):
+def test_robot_protocol_setevents_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
-        instance.isEnabled()
+        instance.setEvents()
         if instance.__dict__ != before.__dict__:
             return  # test passes
         # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.isEnabled).strip()
+        source = inspect.getsource(instance.setEvents).strip()
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'isEnabled' in robot::Channel is empty"
+        assert has_statements, f"Function 'setEvents' in robot_Protocol is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'isEnabled' in robot::Channel did not change state; check implementation")
+            warnings.warn(f"Operation 'setEvents' in robot_Protocol did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'isEnabled' in robot::Channel is not implemented or raised an error")
+        warnings.warn(f"Operation 'setEvents' in robot_Protocol is not implemented or raised an error")
 
-@given(instance=robot::Robot_strategy)
+@given(instance=robot_Robot_strategy)
 @settings(max_examples=50)
-def test_robot::robot_instantiation(instance):
-    assert isinstance(instance, robot::Robot)
-
-@given(instance=robot::Robot_strategy)
-def test_robot::robot_version_type(instance):
-    assert isinstance(instance.version, str)
+def test_robot_robot_instantiation(instance):
+    assert isinstance(instance, robot_Robot)
 
 
-@given(instance=robot::Robot_strategy)
-def test_robot::robot_version_setter(instance):
+
+@given(instance=robot_Robot_strategy)
+def test_robot_robot_version_setter(instance):
     original = instance.version
     instance.version = original
     assert instance.version == original
 
-@given(instance=robot::Robot_strategy)
-def test_robot::robot_standard_type(instance):
-    assert isinstance(instance.standard, str)
 
 
-@given(instance=robot::Robot_strategy)
-def test_robot::robot_standard_setter(instance):
-    original = instance.standard
-    instance.standard = original
-    assert instance.standard == original
-
-@given(instance=robot::Robot_strategy)
-def test_robot::robot_provider_type(instance):
-    assert isinstance(instance.provider, str)
-
-
-@given(instance=robot::Robot_strategy)
-def test_robot::robot_provider_setter(instance):
+@given(instance=robot_Robot_strategy)
+def test_robot_robot_provider_setter(instance):
     original = instance.provider
     instance.provider = original
     assert instance.provider == original
+
+
+
+@given(instance=robot_Robot_strategy)
+def test_robot_robot_standard_setter(instance):
+    original = instance.standard
+    instance.standard = original
+    assert instance.standard == original
 
 import warnings
 import copy
@@ -1683,9 +1641,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=robot::Robot_strategy)
+@given(instance=robot_Robot_strategy)
 @settings(max_examples=30)
-def test_robot::robot_collectalldevicenames_changes_state(instance):
+def test_robot_robot_collectalldevicenames_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -1699,14 +1657,14 @@ def test_robot::robot_collectalldevicenames_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'collectAllDeviceNames' in robot::Robot is empty"
+        assert has_statements, f"Function 'collectAllDeviceNames' in robot_Robot is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'collectAllDeviceNames' in robot::Robot did not change state; check implementation")
+            warnings.warn(f"Operation 'collectAllDeviceNames' in robot_Robot did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'collectAllDeviceNames' in robot::Robot is not implemented or raised an error")
+        warnings.warn(f"Operation 'collectAllDeviceNames' in robot_Robot is not implemented or raised an error")
 
 import warnings
 import copy
@@ -1714,9 +1672,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=robot::Robot_strategy)
+@given(instance=robot_Robot_strategy)
 @settings(max_examples=30)
-def test_robot::robot_collectalldevices_changes_state(instance):
+def test_robot_robot_collectalldevices_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -1730,14 +1688,14 @@ def test_robot::robot_collectalldevices_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'collectAllDevices' in robot::Robot is empty"
+        assert has_statements, f"Function 'collectAllDevices' in robot_Robot is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'collectAllDevices' in robot::Robot did not change state; check implementation")
+            warnings.warn(f"Operation 'collectAllDevices' in robot_Robot did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'collectAllDevices' in robot::Robot is not implemented or raised an error")
+        warnings.warn(f"Operation 'collectAllDevices' in robot_Robot is not implemented or raised an error")
 
 import warnings
 import copy
@@ -1745,9 +1703,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=robot::Robot_strategy)
+@given(instance=robot_Robot_strategy)
 @settings(max_examples=30)
-def test_robot::robot_collectallactivedevicenames_changes_state(instance):
+def test_robot_robot_collectallactivedevicenames_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -1761,142 +1719,90 @@ def test_robot::robot_collectallactivedevicenames_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'collectAllActiveDeviceNames' in robot::Robot is empty"
+        assert has_statements, f"Function 'collectAllActiveDeviceNames' in robot_Robot is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'collectAllActiveDeviceNames' in robot::Robot did not change state; check implementation")
+            warnings.warn(f"Operation 'collectAllActiveDeviceNames' in robot_Robot did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'collectAllActiveDeviceNames' in robot::Robot is not implemented or raised an error")
+        warnings.warn(f"Operation 'collectAllActiveDeviceNames' in robot_Robot is not implemented or raised an error")
 
 @given(instance=Simulacra_strategy)
 @settings(max_examples=50)
 def test_simulacra_instantiation(instance):
     assert isinstance(instance, Simulacra)
 
-@given(instance=robot::Device_strategy)
+@given(instance=robot_Device_strategy)
 @settings(max_examples=50)
-def test_robot::device_instantiation(instance):
-    assert isinstance(instance, robot::Device)
-
-@given(instance=robot::Device_strategy)
-def test_robot::device_proxy_type(instance):
-    assert isinstance(instance.proxy, bool)
+def test_robot_device_instantiation(instance):
+    assert isinstance(instance, robot_Device)
 
 
-@given(instance=robot::Device_strategy)
-def test_robot::device_proxy_setter(instance):
-    original = instance.proxy
-    instance.proxy = original
-    assert instance.proxy == original
 
-@given(instance=robot::Device_strategy)
-def test_robot::device_max_type(instance):
-    assert isinstance(instance.max, str)
-
-
-@given(instance=robot::Device_strategy)
-def test_robot::device_max_setter(instance):
-    original = instance.max
-    instance.max = original
-    assert instance.max == original
-
-@given(instance=robot::Device_strategy)
-def test_robot::device_access_type(instance):
-    assert isinstance(instance.access, str)
-
-
-@given(instance=robot::Device_strategy)
-def test_robot::device_access_setter(instance):
-    original = instance.access
-    instance.access = original
-    assert instance.access == original
-
-@given(instance=robot::Device_strategy)
-def test_robot::device_dataSize_type(instance):
-    assert isinstance(instance.dataSize, int)
-
-
-@given(instance=robot::Device_strategy)
-def test_robot::device_dataSize_setter(instance):
-    original = instance.dataSize
-    instance.dataSize = original
-    assert instance.dataSize == original
-
-@given(instance=robot::Device_strategy)
-def test_robot::device_dataType_type(instance):
-    assert isinstance(instance.dataType, str)
-
-
-@given(instance=robot::Device_strategy)
-def test_robot::device_dataType_setter(instance):
-    original = instance.dataType
-    instance.dataType = original
-    assert instance.dataType == original
-
-@given(instance=robot::Device_strategy)
-def test_robot::device_default_type(instance):
-    assert isinstance(instance.default, str)
-
-
-@given(instance=robot::Device_strategy)
-def test_robot::device_default_setter(instance):
-    original = instance.default
-    instance.default = original
-    assert instance.default == original
-
-@given(instance=robot::Device_strategy)
-def test_robot::device_min_type(instance):
-    assert isinstance(instance.min, str)
-
-
-@given(instance=robot::Device_strategy)
-def test_robot::device_min_setter(instance):
+@given(instance=robot_Device_strategy)
+def test_robot_device_min_setter(instance):
     original = instance.min
     instance.min = original
     assert instance.min == original
 
+
+
+@given(instance=robot_Device_strategy)
+def test_robot_device_dataType_setter(instance):
+    original = instance.dataType
+    instance.dataType = original
+    assert instance.dataType == original
+
+
+
+@given(instance=robot_Device_strategy)
+def test_robot_device_proxy_setter(instance):
+    original = instance.proxy
+    instance.proxy = original
+    assert instance.proxy == original
+
+
+
+@given(instance=robot_Device_strategy)
+def test_robot_device_dataSize_setter(instance):
+    original = instance.dataSize
+    instance.dataSize = original
+    assert instance.dataSize == original
+
+
+
+@given(instance=robot_Device_strategy)
+def test_robot_device_access_setter(instance):
+    original = instance.access
+    instance.access = original
+    assert instance.access == original
+
+
+
+@given(instance=robot_Device_strategy)
+def test_robot_device_default_setter(instance):
+    original = instance.default
+    instance.default = original
+    assert instance.default == original
+
+
+
+@given(instance=robot_Device_strategy)
+def test_robot_device_max_setter(instance):
+    original = instance.max
+    instance.max = original
+    assert instance.max == original
+
 import warnings
 import copy
 import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=robot::Device_strategy)
+@given(instance=robot_Device_strategy)
 @settings(max_examples=30)
-def test_robot::device_writefloat_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.writeFloat(
-            "test"
-        )
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.writeFloat).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'writeFloat' in robot::Device is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'writeFloat' in robot::Device did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'writeFloat' in robot::Device is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=robot::Device_strategy)
-@settings(max_examples=30)
-def test_robot::device_read_changes_state(instance):
+def test_robot_device_read_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -1910,14 +1816,14 @@ def test_robot::device_read_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'read' in robot::Device is empty"
+        assert has_statements, f"Function 'read' in robot_Device is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'read' in robot::Device did not change state; check implementation")
+            warnings.warn(f"Operation 'read' in robot_Device did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'read' in robot::Device is not implemented or raised an error")
+        warnings.warn(f"Operation 'read' in robot_Device is not implemented or raised an error")
 
 import warnings
 import copy
@@ -1925,191 +1831,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=robot::Device_strategy)
+@given(instance=robot_Device_strategy)
 @settings(max_examples=30)
-def test_robot::device_readfloat_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.readFloat(
-            "test"
-        )
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.readFloat).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'readFloat' in robot::Device is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'readFloat' in robot::Device did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'readFloat' in robot::Device is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=robot::Device_strategy)
-@settings(max_examples=30)
-def test_robot::device_removedevicelistener_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.removeDeviceListener(
-            "test"
-        )
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.removeDeviceListener).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'removeDeviceListener' in robot::Device is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'removeDeviceListener' in robot::Device did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'removeDeviceListener' in robot::Device is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=robot::Device_strategy)
-@settings(max_examples=30)
-def test_robot::device_setevent_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.setEvent()
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.setEvent).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'setEvent' in robot::Device is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'setEvent' in robot::Device did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'setEvent' in robot::Device is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=robot::Device_strategy)
-@settings(max_examples=30)
-def test_robot::device_e_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.e()
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.e).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'e' in robot::Device is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'e' in robot::Device did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'e' in robot::Device is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=robot::Device_strategy)
-@settings(max_examples=30)
-def test_robot::device_adddevicelistener_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.addDeviceListener(
-            "test"
-        )
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.addDeviceListener).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'addDeviceListener' in robot::Device is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'addDeviceListener' in robot::Device did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'addDeviceListener' in robot::Device is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=robot::Device_strategy)
-@settings(max_examples=30)
-def test_robot::device_writeint_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.writeInt(
-            "test"
-        )
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.writeInt).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'writeInt' in robot::Device is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'writeInt' in robot::Device did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'writeInt' in robot::Device is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=robot::Device_strategy)
-@settings(max_examples=30)
-def test_robot::device_writeimagedata_changes_state(instance):
+def test_robot_device_writeimagedata_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -2123,14 +1847,14 @@ def test_robot::device_writeimagedata_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'writeImageData' in robot::Device is empty"
+        assert has_statements, f"Function 'writeImageData' in robot_Device is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'writeImageData' in robot::Device did not change state; check implementation")
+            warnings.warn(f"Operation 'writeImageData' in robot_Device did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'writeImageData' in robot::Device is not implemented or raised an error")
+        warnings.warn(f"Operation 'writeImageData' in robot_Device is not implemented or raised an error")
 
 import warnings
 import copy
@@ -2138,30 +1862,30 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=robot::Device_strategy)
+@given(instance=robot_Device_strategy)
 @settings(max_examples=30)
-def test_robot::device_readstring_changes_state(instance):
+def test_robot_device_readfloat_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
-        instance.readString(
+        instance.readFloat(
             "test"
         )
         if instance.__dict__ != before.__dict__:
             return  # test passes
         # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.readString).strip()
+        source = inspect.getsource(instance.readFloat).strip()
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'readString' in robot::Device is empty"
+        assert has_statements, f"Function 'readFloat' in robot_Device is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'readString' in robot::Device did not change state; check implementation")
+            warnings.warn(f"Operation 'readFloat' in robot_Device did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'readString' in robot::Device is not implemented or raised an error")
+        warnings.warn(f"Operation 'readFloat' in robot_Device is not implemented or raised an error")
 
 import warnings
 import copy
@@ -2169,30 +1893,28 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=robot::Device_strategy)
+@given(instance=robot_Device_strategy)
 @settings(max_examples=30)
-def test_robot::device_write_changes_state(instance):
+def test_robot_device_e_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
-        instance.write(
-            "test"
-        )
+        instance.e()
         if instance.__dict__ != before.__dict__:
             return  # test passes
         # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.write).strip()
+        source = inspect.getsource(instance.e).strip()
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'write' in robot::Device is empty"
+        assert has_statements, f"Function 'e' in robot_Device is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'write' in robot::Device did not change state; check implementation")
+            warnings.warn(f"Operation 'e' in robot_Device did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'write' in robot::Device is not implemented or raised an error")
+        warnings.warn(f"Operation 'e' in robot_Device is not implemented or raised an error")
 
 import warnings
 import copy
@@ -2200,9 +1922,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=robot::Device_strategy)
+@given(instance=robot_Device_strategy)
 @settings(max_examples=30)
-def test_robot::device_readimagedata_changes_state(instance):
+def test_robot_device_readimagedata_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -2216,14 +1938,14 @@ def test_robot::device_readimagedata_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'readImageData' in robot::Device is empty"
+        assert has_statements, f"Function 'readImageData' in robot_Device is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'readImageData' in robot::Device did not change state; check implementation")
+            warnings.warn(f"Operation 'readImageData' in robot_Device did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'readImageData' in robot::Device is not implemented or raised an error")
+        warnings.warn(f"Operation 'readImageData' in robot_Device is not implemented or raised an error")
 
 import warnings
 import copy
@@ -2231,28 +1953,30 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=robot::Device_strategy)
+@given(instance=robot_Device_strategy)
 @settings(max_examples=30)
-def test_robot::device_setfired_changes_state(instance):
+def test_robot_device_adddevicelistener_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
-        instance.setFired()
+        instance.addDeviceListener(
+            "test"
+        )
         if instance.__dict__ != before.__dict__:
             return  # test passes
         # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.setFired).strip()
+        source = inspect.getsource(instance.addDeviceListener).strip()
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'setFired' in robot::Device is empty"
+        assert has_statements, f"Function 'addDeviceListener' in robot_Device is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'setFired' in robot::Device did not change state; check implementation")
+            warnings.warn(f"Operation 'addDeviceListener' in robot_Device did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'setFired' in robot::Device is not implemented or raised an error")
+        warnings.warn(f"Operation 'addDeviceListener' in robot_Device is not implemented or raised an error")
 
 import warnings
 import copy
@@ -2260,9 +1984,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=robot::Device_strategy)
+@given(instance=robot_Device_strategy)
 @settings(max_examples=30)
-def test_robot::device_writestring_changes_state(instance):
+def test_robot_device_writestring_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -2276,14 +2000,14 @@ def test_robot::device_writestring_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'writeString' in robot::Device is empty"
+        assert has_statements, f"Function 'writeString' in robot_Device is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'writeString' in robot::Device did not change state; check implementation")
+            warnings.warn(f"Operation 'writeString' in robot_Device did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'writeString' in robot::Device is not implemented or raised an error")
+        warnings.warn(f"Operation 'writeString' in robot_Device is not implemented or raised an error")
 
 import warnings
 import copy
@@ -2291,30 +2015,30 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=robot::Device_strategy)
+@given(instance=robot_Device_strategy)
 @settings(max_examples=30)
-def test_robot::device_readint_changes_state(instance):
+def test_robot_device_writefloat_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
-        instance.readInt(
+        instance.writeFloat(
             "test"
         )
         if instance.__dict__ != before.__dict__:
             return  # test passes
         # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.readInt).strip()
+        source = inspect.getsource(instance.writeFloat).strip()
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'readInt' in robot::Device is empty"
+        assert has_statements, f"Function 'writeFloat' in robot_Device is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'readInt' in robot::Device did not change state; check implementation")
+            warnings.warn(f"Operation 'writeFloat' in robot_Device did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'readInt' in robot::Device is not implemented or raised an error")
+        warnings.warn(f"Operation 'writeFloat' in robot_Device is not implemented or raised an error")
 
 import warnings
 import copy
@@ -2322,9 +2046,40 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=robot::Device_strategy)
+@given(instance=robot_Device_strategy)
 @settings(max_examples=30)
-def test_robot::device_isdatatypeof_changes_state(instance):
+def test_robot_device_removedevicelistener_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.removeDeviceListener(
+            "test"
+        )
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.removeDeviceListener).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'removeDeviceListener' in robot_Device is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'removeDeviceListener' in robot_Device did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'removeDeviceListener' in robot_Device is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=robot_Device_strategy)
+@settings(max_examples=30)
+def test_robot_device_isdatatypeof_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -2338,98 +2093,259 @@ def test_robot::device_isdatatypeof_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'isDataTypeOf' in robot::Device is empty"
+        assert has_statements, f"Function 'isDataTypeOf' in robot_Device is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'isDataTypeOf' in robot::Device did not change state; check implementation")
+            warnings.warn(f"Operation 'isDataTypeOf' in robot_Device did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'isDataTypeOf' in robot::Device is not implemented or raised an error")
+        warnings.warn(f"Operation 'isDataTypeOf' in robot_Device is not implemented or raised an error")
 
-@given(instance=robot::Control_strategy)
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=robot_Device_strategy)
+@settings(max_examples=30)
+def test_robot_device_writeint_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.writeInt(
+            "test"
+        )
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.writeInt).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'writeInt' in robot_Device is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'writeInt' in robot_Device did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'writeInt' in robot_Device is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=robot_Device_strategy)
+@settings(max_examples=30)
+def test_robot_device_readint_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.readInt(
+            "test"
+        )
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.readInt).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'readInt' in robot_Device is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'readInt' in robot_Device did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'readInt' in robot_Device is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=robot_Device_strategy)
+@settings(max_examples=30)
+def test_robot_device_readstring_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.readString(
+            "test"
+        )
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.readString).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'readString' in robot_Device is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'readString' in robot_Device did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'readString' in robot_Device is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=robot_Device_strategy)
+@settings(max_examples=30)
+def test_robot_device_write_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.write(
+            "test"
+        )
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.write).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'write' in robot_Device is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'write' in robot_Device did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'write' in robot_Device is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=robot_Device_strategy)
+@settings(max_examples=30)
+def test_robot_device_setevent_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.setEvent()
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.setEvent).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'setEvent' in robot_Device is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'setEvent' in robot_Device did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'setEvent' in robot_Device is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=robot_Device_strategy)
+@settings(max_examples=30)
+def test_robot_device_setfired_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.setFired()
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.setFired).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'setFired' in robot_Device is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'setFired' in robot_Device did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'setFired' in robot_Device is not implemented or raised an error")
+
+@given(instance=robot_Control_strategy)
 @settings(max_examples=50)
-def test_robot::control_instantiation(instance):
-    assert isinstance(instance, robot::Control)
-
-@given(instance=robot::Control_strategy)
-def test_robot::control_frameLimit_type(instance):
-    assert isinstance(instance.frameLimit, int)
+def test_robot_control_instantiation(instance):
+    assert isinstance(instance, robot_Control)
 
 
-@given(instance=robot::Control_strategy)
-def test_robot::control_frameLimit_setter(instance):
+
+@given(instance=robot_Control_strategy)
+def test_robot_control_frameLimit_setter(instance):
     original = instance.frameLimit
     instance.frameLimit = original
     assert instance.frameLimit == original
 
-@given(instance=robot::Control_strategy)
-def test_robot::control_version_type(instance):
-    assert isinstance(instance.version, str)
 
 
-@given(instance=robot::Control_strategy)
-def test_robot::control_version_setter(instance):
+@given(instance=robot_Control_strategy)
+def test_robot_control_version_setter(instance):
     original = instance.version
     instance.version = original
     assert instance.version == original
 
-@given(instance=robot::Roboid_strategy)
+@given(instance=robot_Roboid_strategy)
 @settings(max_examples=50)
-def test_robot::roboid_instantiation(instance):
-    assert isinstance(instance, robot::Roboid)
-
-@given(instance=robot::Roboid_strategy)
-def test_robot::roboid_uid_type(instance):
-    assert isinstance(instance.uid, str)
+def test_robot_roboid_instantiation(instance):
+    assert isinstance(instance, robot_Roboid)
 
 
-@given(instance=robot::Roboid_strategy)
-def test_robot::roboid_uid_setter(instance):
+
+@given(instance=robot_Roboid_strategy)
+def test_robot_roboid_uid_setter(instance):
     original = instance.uid
     instance.uid = original
     assert instance.uid == original
 
-@given(instance=robot::Roboid_strategy)
-def test_robot::roboid_version_type(instance):
-    assert isinstance(instance.version, str)
 
 
-@given(instance=robot::Roboid_strategy)
-def test_robot::roboid_version_setter(instance):
-    original = instance.version
-    instance.version = original
-    assert instance.version == original
-
-@given(instance=robot::Roboid_strategy)
-def test_robot::roboid_provider_type(instance):
-    assert isinstance(instance.provider, str)
-
-
-@given(instance=robot::Roboid_strategy)
-def test_robot::roboid_provider_setter(instance):
-    original = instance.provider
-    instance.provider = original
-    assert instance.provider == original
-
-@given(instance=robot::Roboid_strategy)
-def test_robot::roboid_id_type(instance):
-    assert isinstance(instance.id, str)
-
-
-@given(instance=robot::Roboid_strategy)
-def test_robot::roboid_id_setter(instance):
+@given(instance=robot_Roboid_strategy)
+def test_robot_roboid_id_setter(instance):
     original = instance.id
     instance.id = original
     assert instance.id == original
 
-@given(instance=robot::Roboid_strategy)
-def test_robot::roboid_address_type(instance):
-    assert isinstance(instance.address, str)
 
 
-@given(instance=robot::Roboid_strategy)
-def test_robot::roboid_address_setter(instance):
+@given(instance=robot_Roboid_strategy)
+def test_robot_roboid_version_setter(instance):
+    original = instance.version
+    instance.version = original
+    assert instance.version == original
+
+
+
+@given(instance=robot_Roboid_strategy)
+def test_robot_roboid_provider_setter(instance):
+    original = instance.provider
+    instance.provider = original
+    assert instance.provider == original
+
+
+
+@given(instance=robot_Roboid_strategy)
+def test_robot_roboid_address_setter(instance):
     original = instance.address
     instance.address = original
     assert instance.address == original
@@ -2440,9 +2356,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=robot::Roboid_strategy)
+@given(instance=robot_Roboid_strategy)
 @settings(max_examples=30)
-def test_robot::roboid_collectalldevices_changes_state(instance):
+def test_robot_roboid_collectalldevices_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -2456,19 +2372,19 @@ def test_robot::roboid_collectalldevices_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'collectAllDevices' in robot::Roboid is empty"
+        assert has_statements, f"Function 'collectAllDevices' in robot_Roboid is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'collectAllDevices' in robot::Roboid did not change state; check implementation")
+            warnings.warn(f"Operation 'collectAllDevices' in robot_Roboid did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'collectAllDevices' in robot::Roboid is not implemented or raised an error")
+        warnings.warn(f"Operation 'collectAllDevices' in robot_Roboid is not implemented or raised an error")
 
-@given(instance=robot::Storable_strategy)
+@given(instance=robot_Storable_strategy)
 @settings(max_examples=50)
-def test_robot::storable_instantiation(instance):
-    assert isinstance(instance, robot::Storable)
+def test_robot_storable_instantiation(instance):
+    assert isinstance(instance, robot_Storable)
 
 import warnings
 import copy
@@ -2476,38 +2392,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=robot::Storable_strategy)
+@given(instance=robot_Storable_strategy)
 @settings(max_examples=30)
-def test_robot::storable_createdevicememory_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.createDeviceMemory()
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.createDeviceMemory).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'createDeviceMemory' in robot::Storable is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'createDeviceMemory' in robot::Storable did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'createDeviceMemory' in robot::Storable is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=robot::Storable_strategy)
-@settings(max_examples=30)
-def test_robot::storable_cleardevicememory_changes_state(instance):
+def test_robot_storable_cleardevicememory_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -2519,19 +2406,48 @@ def test_robot::storable_cleardevicememory_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'clearDeviceMemory' in robot::Storable is empty"
+        assert has_statements, f"Function 'clearDeviceMemory' in robot_Storable is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'clearDeviceMemory' in robot::Storable did not change state; check implementation")
+            warnings.warn(f"Operation 'clearDeviceMemory' in robot_Storable did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'clearDeviceMemory' in robot::Storable is not implemented or raised an error")
+        warnings.warn(f"Operation 'clearDeviceMemory' in robot_Storable is not implemented or raised an error")
 
-@given(instance=robot::DeviceListener_strategy)
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=robot_Storable_strategy)
+@settings(max_examples=30)
+def test_robot_storable_createdevicememory_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.createDeviceMemory()
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.createDeviceMemory).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'createDeviceMemory' in robot_Storable is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'createDeviceMemory' in robot_Storable did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'createDeviceMemory' in robot_Storable is not implemented or raised an error")
+
+@given(instance=robot_DeviceListener_strategy)
 @settings(max_examples=50)
-def test_robot::devicelistener_instantiation(instance):
-    assert isinstance(instance, robot::DeviceListener)
+def test_robot_devicelistener_instantiation(instance):
+    assert isinstance(instance, robot_DeviceListener)
 
 import warnings
 import copy
@@ -2539,71 +2455,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=robot::DeviceListener_strategy)
+@given(instance=robot_DeviceListener_strategy)
 @settings(max_examples=30)
-def test_robot::devicelistener_statechanged_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.stateChanged(
-            "test"
-        )
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.stateChanged).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'stateChanged' in robot::DeviceListener is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'stateChanged' in robot::DeviceListener did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'stateChanged' in robot::DeviceListener is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=robot::DeviceListener_strategy)
-@settings(max_examples=30)
-def test_robot::devicelistener_handleevent_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.handleEvent(
-            "test"
-        )
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.handleEvent).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'handleEvent' in robot::DeviceListener is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'handleEvent' in robot::DeviceListener did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'handleEvent' in robot::DeviceListener is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=robot::DeviceListener_strategy)
-@settings(max_examples=30)
-def test_robot::devicelistener_effectperformed_changes_state(instance):
+def test_robot_devicelistener_effectperformed_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -2617,14 +2471,14 @@ def test_robot::devicelistener_effectperformed_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'effectPerformed' in robot::DeviceListener is empty"
+        assert has_statements, f"Function 'effectPerformed' in robot_DeviceListener is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'effectPerformed' in robot::DeviceListener did not change state; check implementation")
+            warnings.warn(f"Operation 'effectPerformed' in robot_DeviceListener did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'effectPerformed' in robot::DeviceListener is not implemented or raised an error")
+        warnings.warn(f"Operation 'effectPerformed' in robot_DeviceListener is not implemented or raised an error")
 
 import warnings
 import copy
@@ -2632,9 +2486,71 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=robot::DeviceListener_strategy)
+@given(instance=robot_DeviceListener_strategy)
 @settings(max_examples=30)
-def test_robot::devicelistener_commandperformed_changes_state(instance):
+def test_robot_devicelistener_handleevent_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.handleEvent(
+            "test"
+        )
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.handleEvent).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'handleEvent' in robot_DeviceListener is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'handleEvent' in robot_DeviceListener did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'handleEvent' in robot_DeviceListener is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=robot_DeviceListener_strategy)
+@settings(max_examples=30)
+def test_robot_devicelistener_statechanged_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.stateChanged(
+            "test"
+        )
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.stateChanged).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'stateChanged' in robot_DeviceListener is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'stateChanged' in robot_DeviceListener did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'stateChanged' in robot_DeviceListener is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=robot_DeviceListener_strategy)
+@settings(max_examples=30)
+def test_robot_devicelistener_commandperformed_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -2648,19 +2564,19 @@ def test_robot::devicelistener_commandperformed_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'commandPerformed' in robot::DeviceListener is empty"
+        assert has_statements, f"Function 'commandPerformed' in robot_DeviceListener is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'commandPerformed' in robot::DeviceListener did not change state; check implementation")
+            warnings.warn(f"Operation 'commandPerformed' in robot_DeviceListener did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'commandPerformed' in robot::DeviceListener is not implemented or raised an error")
+        warnings.warn(f"Operation 'commandPerformed' in robot_DeviceListener is not implemented or raised an error")
 
-@given(instance=robot::Simulacra_strategy)
+@given(instance=robot_Simulacra_strategy)
 @settings(max_examples=50)
-def test_robot::simulacra_instantiation(instance):
-    assert isinstance(instance, robot::Simulacra)
+def test_robot_simulacra_instantiation(instance):
+    assert isinstance(instance, robot_Simulacra)
 
 import warnings
 import copy
@@ -2668,128 +2584,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=robot::Simulacra_strategy)
+@given(instance=robot_Simulacra_strategy)
 @settings(max_examples=30)
-def test_robot::simulacra_updatedevicestate_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.updateDeviceState()
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.updateDeviceState).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'updateDeviceState' in robot::Simulacra is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'updateDeviceState' in robot::Simulacra did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'updateDeviceState' in robot::Simulacra is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=robot::Simulacra_strategy)
-@settings(max_examples=30)
-def test_robot::simulacra_cansend_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.canSend()
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.canSend).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'canSend' in robot::Simulacra is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'canSend' in robot::Simulacra did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'canSend' in robot::Simulacra is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=robot::Simulacra_strategy)
-@settings(max_examples=30)
-def test_robot::simulacra_isreceived_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.isReceived()
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.isReceived).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'isReceived' in robot::Simulacra is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'isReceived' in robot::Simulacra did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'isReceived' in robot::Simulacra is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=robot::Simulacra_strategy)
-@settings(max_examples=30)
-def test_robot::simulacra_setpayload_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.setPayload(
-            "test", 
-            "test"
-        )
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.setPayload).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'setPayload' in robot::Simulacra is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'setPayload' in robot::Simulacra did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'setPayload' in robot::Simulacra is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=robot::Simulacra_strategy)
-@settings(max_examples=30)
-def test_robot::simulacra_setdevicemap_changes_state(instance):
+def test_robot_simulacra_setdevicemap_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -2805,19 +2602,14 @@ def test_robot::simulacra_setdevicemap_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'setDeviceMap' in robot::Simulacra is empty"
+        assert has_statements, f"Function 'setDeviceMap' in robot_Simulacra is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'setDeviceMap' in robot::Simulacra did not change state; check implementation")
+            warnings.warn(f"Operation 'setDeviceMap' in robot_Simulacra did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'setDeviceMap' in robot::Simulacra is not implemented or raised an error")
-
-@given(instance=robot::Findable_strategy)
-@settings(max_examples=50)
-def test_robot::findable_instantiation(instance):
-    assert isinstance(instance, robot::Findable)
+        warnings.warn(f"Operation 'setDeviceMap' in robot_Simulacra is not implemented or raised an error")
 
 import warnings
 import copy
@@ -2825,9 +2617,133 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=robot::Findable_strategy)
+@given(instance=robot_Simulacra_strategy)
 @settings(max_examples=30)
-def test_robot::findable_findroboid_changes_state(instance):
+def test_robot_simulacra_setpayload_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.setPayload(
+            "test", 
+            "test"
+        )
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.setPayload).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'setPayload' in robot_Simulacra is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'setPayload' in robot_Simulacra did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'setPayload' in robot_Simulacra is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=robot_Simulacra_strategy)
+@settings(max_examples=30)
+def test_robot_simulacra_cansend_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.canSend()
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.canSend).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'canSend' in robot_Simulacra is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'canSend' in robot_Simulacra did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'canSend' in robot_Simulacra is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=robot_Simulacra_strategy)
+@settings(max_examples=30)
+def test_robot_simulacra_isreceived_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.isReceived()
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.isReceived).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'isReceived' in robot_Simulacra is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'isReceived' in robot_Simulacra did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'isReceived' in robot_Simulacra is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=robot_Simulacra_strategy)
+@settings(max_examples=30)
+def test_robot_simulacra_updatedevicestate_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.updateDeviceState()
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.updateDeviceState).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'updateDeviceState' in robot_Simulacra is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'updateDeviceState' in robot_Simulacra did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'updateDeviceState' in robot_Simulacra is not implemented or raised an error")
+
+@given(instance=robot_Findable_strategy)
+@settings(max_examples=50)
+def test_robot_findable_instantiation(instance):
+    assert isinstance(instance, robot_Findable)
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=robot_Findable_strategy)
+@settings(max_examples=30)
+def test_robot_findable_findroboid_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -2841,14 +2757,14 @@ def test_robot::findable_findroboid_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'findRoboid' in robot::Findable is empty"
+        assert has_statements, f"Function 'findRoboid' in robot_Findable is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'findRoboid' in robot::Findable did not change state; check implementation")
+            warnings.warn(f"Operation 'findRoboid' in robot_Findable did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'findRoboid' in robot::Findable is not implemented or raised an error")
+        warnings.warn(f"Operation 'findRoboid' in robot_Findable is not implemented or raised an error")
 
 import warnings
 import copy
@@ -2856,9 +2772,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=robot::Findable_strategy)
+@given(instance=robot_Findable_strategy)
 @settings(max_examples=30)
-def test_robot::findable_finddevice_changes_state(instance):
+def test_robot_findable_finddevice_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -2872,52 +2788,43 @@ def test_robot::findable_finddevice_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'findDevice' in robot::Findable is empty"
+        assert has_statements, f"Function 'findDevice' in robot_Findable is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'findDevice' in robot::Findable did not change state; check implementation")
+            warnings.warn(f"Operation 'findDevice' in robot_Findable did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'findDevice' in robot::Findable is not implemented or raised an error")
+        warnings.warn(f"Operation 'findDevice' in robot_Findable is not implemented or raised an error")
 
-@given(instance=robot::NamedElement_strategy)
+@given(instance=robot_NamedElement_strategy)
 @settings(max_examples=50)
-def test_robot::namedelement_instantiation(instance):
-    assert isinstance(instance, robot::NamedElement)
-
-@given(instance=robot::NamedElement_strategy)
-def test_robot::namedelement_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_robot_namedelement_instantiation(instance):
+    assert isinstance(instance, robot_NamedElement)
 
 
-@given(instance=robot::NamedElement_strategy)
-def test_robot::namedelement_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
 
-@given(instance=robot::NamedElement_strategy)
-def test_robot::namedelement_comment_type(instance):
-    assert isinstance(instance.comment, str)
+@given(instance=robot_NamedElement_strategy)
+def test_robot_namedelement_literal_setter(instance):
+    original = instance.literal
+    instance.literal = original
+    assert instance.literal == original
 
 
-@given(instance=robot::NamedElement_strategy)
-def test_robot::namedelement_comment_setter(instance):
+
+@given(instance=robot_NamedElement_strategy)
+def test_robot_namedelement_comment_setter(instance):
     original = instance.comment
     instance.comment = original
     assert instance.comment == original
 
-@given(instance=robot::NamedElement_strategy)
-def test_robot::namedelement_literal_type(instance):
-    assert isinstance(instance.literal, str)
 
 
-@given(instance=robot::NamedElement_strategy)
-def test_robot::namedelement_literal_setter(instance):
-    original = instance.literal
-    instance.literal = original
-    assert instance.literal == original
+@given(instance=robot_NamedElement_strategy)
+def test_robot_namedelement_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
 
 import warnings
 import copy
@@ -2925,9 +2832,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=robot::NamedElement_strategy)
+@given(instance=robot_NamedElement_strategy)
 @settings(max_examples=30)
-def test_robot::namedelement_equalscontents_changes_state(instance):
+def test_robot_namedelement_equalscontents_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -2941,11 +2848,11 @@ def test_robot::namedelement_equalscontents_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'equalsContents' in robot::NamedElement is empty"
+        assert has_statements, f"Function 'equalsContents' in robot_NamedElement is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'equalsContents' in robot::NamedElement did not change state; check implementation")
+            warnings.warn(f"Operation 'equalsContents' in robot_NamedElement did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'equalsContents' in robot::NamedElement is not implemented or raised an error")
+        warnings.warn(f"Operation 'equalsContents' in robot_NamedElement is not implemented or raised an error")

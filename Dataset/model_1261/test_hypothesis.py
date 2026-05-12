@@ -3,15 +3,15 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     Family,
-    family::WealthyFamily,
-    family::Family,
-    family::Car,
-    family::Address,
-    family::Person,
+    family_WealthyFamily,
+    family_Family,
+    family_Car,
+    family_Address,
+    family_Person,
     Sexe,
 )
 
@@ -35,23 +35,23 @@ def test_family_constructor_args():
 
 
 
-def test_family::wealthyfamily_is_not_abstract():
-    assert not inspect.isabstract(family::WealthyFamily)
+def test_family_wealthyfamily_is_not_abstract():
+    assert not inspect.isabstract(family_WealthyFamily)
 
 
-def test_family::wealthyfamily_constructor_exists():
-    assert callable(family::WealthyFamily.__init__)
+def test_family_wealthyfamily_constructor_exists():
+    assert callable(family_WealthyFamily.__init__)
 
 
-def test_family::wealthyfamily_constructor_args():
-    sig = inspect.signature(family::WealthyFamily.__init__)
+def test_family_wealthyfamily_constructor_args():
+    sig = inspect.signature(family_WealthyFamily.__init__)
     params = list(sig.parameters.keys())
     assert "forbesRanking" in params, "Missing parameter 'forbesRanking'"
 
-def test_family::wealthyfamily_has_forbesRanking():
-    assert hasattr(family::WealthyFamily, "forbesRanking")
+def test_family_wealthyfamily_has_forbesRanking():
+    assert hasattr(family_WealthyFamily, "forbesRanking")
     descriptor = None
-    for klass in family::WealthyFamily.__mro__:
+    for klass in family_WealthyFamily.__mro__:
         if "forbesRanking" in klass.__dict__:
             descriptor = klass.__dict__["forbesRanking"]
             break
@@ -59,77 +59,77 @@ def test_family::wealthyfamily_has_forbesRanking():
 
 
 
-def test_family::family_is_not_abstract():
-    assert not inspect.isabstract(family::Family)
+def test_family_family_is_not_abstract():
+    assert not inspect.isabstract(family_Family)
 
 
-def test_family::family_constructor_exists():
-    assert callable(family::Family.__init__)
+def test_family_family_constructor_exists():
+    assert callable(family_Family.__init__)
 
 
-def test_family::family_constructor_args():
-    sig = inspect.signature(family::Family.__init__)
+def test_family_family_constructor_args():
+    sig = inspect.signature(family_Family.__init__)
     params = list(sig.parameters.keys())
+    assert "surname" in params, "Missing parameter 'surname'"
+    assert "numberOfPets" in params, "Missing parameter 'numberOfPets'"
     assert "favoriteHolidayDestinations" in params, "Missing parameter 'favoriteHolidayDestinations'"
     assert "hasASwimmingPool" in params, "Missing parameter 'hasASwimmingPool'"
-    assert "numberOfPets" in params, "Missing parameter 'numberOfPets'"
-    assert "surname" in params, "Missing parameter 'surname'"
 
-def test_family::family_has_favoriteHolidayDestinations():
-    assert hasattr(family::Family, "favoriteHolidayDestinations")
+def test_family_family_has_surname():
+    assert hasattr(family_Family, "surname")
     descriptor = None
-    for klass in family::Family.__mro__:
-        if "favoriteHolidayDestinations" in klass.__dict__:
-            descriptor = klass.__dict__["favoriteHolidayDestinations"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_family::family_has_hasASwimmingPool():
-    assert hasattr(family::Family, "hasASwimmingPool")
-    descriptor = None
-    for klass in family::Family.__mro__:
-        if "hasASwimmingPool" in klass.__dict__:
-            descriptor = klass.__dict__["hasASwimmingPool"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_family::family_has_numberOfPets():
-    assert hasattr(family::Family, "numberOfPets")
-    descriptor = None
-    for klass in family::Family.__mro__:
-        if "numberOfPets" in klass.__dict__:
-            descriptor = klass.__dict__["numberOfPets"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_family::family_has_surname():
-    assert hasattr(family::Family, "surname")
-    descriptor = None
-    for klass in family::Family.__mro__:
+    for klass in family_Family.__mro__:
         if "surname" in klass.__dict__:
             descriptor = klass.__dict__["surname"]
             break
     assert isinstance(descriptor, property)
 
+def test_family_family_has_numberOfPets():
+    assert hasattr(family_Family, "numberOfPets")
+    descriptor = None
+    for klass in family_Family.__mro__:
+        if "numberOfPets" in klass.__dict__:
+            descriptor = klass.__dict__["numberOfPets"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_family_family_has_favoriteHolidayDestinations():
+    assert hasattr(family_Family, "favoriteHolidayDestinations")
+    descriptor = None
+    for klass in family_Family.__mro__:
+        if "favoriteHolidayDestinations" in klass.__dict__:
+            descriptor = klass.__dict__["favoriteHolidayDestinations"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_family_family_has_hasASwimmingPool():
+    assert hasattr(family_Family, "hasASwimmingPool")
+    descriptor = None
+    for klass in family_Family.__mro__:
+        if "hasASwimmingPool" in klass.__dict__:
+            descriptor = klass.__dict__["hasASwimmingPool"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_family::car_is_not_abstract():
-    assert not inspect.isabstract(family::Car)
+
+def test_family_car_is_not_abstract():
+    assert not inspect.isabstract(family_Car)
 
 
-def test_family::car_constructor_exists():
-    assert callable(family::Car.__init__)
+def test_family_car_constructor_exists():
+    assert callable(family_Car.__init__)
 
 
-def test_family::car_constructor_args():
-    sig = inspect.signature(family::Car.__init__)
+def test_family_car_constructor_args():
+    sig = inspect.signature(family_Car.__init__)
     params = list(sig.parameters.keys())
     assert "numberOfSeats" in params, "Missing parameter 'numberOfSeats'"
 
-def test_family::car_has_numberOfSeats():
-    assert hasattr(family::Car, "numberOfSeats")
+def test_family_car_has_numberOfSeats():
+    assert hasattr(family_Car, "numberOfSeats")
     descriptor = None
-    for klass in family::Car.__mro__:
+    for klass in family_Car.__mro__:
         if "numberOfSeats" in klass.__dict__:
             descriptor = klass.__dict__["numberOfSeats"]
             break
@@ -137,23 +137,23 @@ def test_family::car_has_numberOfSeats():
 
 
 
-def test_family::address_is_not_abstract():
-    assert not inspect.isabstract(family::Address)
+def test_family_address_is_not_abstract():
+    assert not inspect.isabstract(family_Address)
 
 
-def test_family::address_constructor_exists():
-    assert callable(family::Address.__init__)
+def test_family_address_constructor_exists():
+    assert callable(family_Address.__init__)
 
 
-def test_family::address_constructor_args():
-    sig = inspect.signature(family::Address.__init__)
+def test_family_address_constructor_args():
+    sig = inspect.signature(family_Address.__init__)
     params = list(sig.parameters.keys())
     assert "street" in params, "Missing parameter 'street'"
 
-def test_family::address_has_street():
-    assert hasattr(family::Address, "street")
+def test_family_address_has_street():
+    assert hasattr(family_Address, "street")
     descriptor = None
-    for klass in family::Address.__mro__:
+    for klass in family_Address.__mro__:
         if "street" in klass.__dict__:
             descriptor = klass.__dict__["street"]
             break
@@ -161,35 +161,35 @@ def test_family::address_has_street():
 
 
 
-def test_family::person_is_not_abstract():
-    assert not inspect.isabstract(family::Person)
+def test_family_person_is_not_abstract():
+    assert not inspect.isabstract(family_Person)
 
 
-def test_family::person_constructor_exists():
-    assert callable(family::Person.__init__)
+def test_family_person_constructor_exists():
+    assert callable(family_Person.__init__)
 
 
-def test_family::person_constructor_args():
-    sig = inspect.signature(family::Person.__init__)
+def test_family_person_constructor_args():
+    sig = inspect.signature(family_Person.__init__)
     params = list(sig.parameters.keys())
-    assert "firstName" in params, "Missing parameter 'firstName'"
     assert "sexe" in params, "Missing parameter 'sexe'"
+    assert "firstName" in params, "Missing parameter 'firstName'"
 
-def test_family::person_has_firstName():
-    assert hasattr(family::Person, "firstName")
+def test_family_person_has_sexe():
+    assert hasattr(family_Person, "sexe")
     descriptor = None
-    for klass in family::Person.__mro__:
-        if "firstName" in klass.__dict__:
-            descriptor = klass.__dict__["firstName"]
+    for klass in family_Person.__mro__:
+        if "sexe" in klass.__dict__:
+            descriptor = klass.__dict__["sexe"]
             break
     assert isinstance(descriptor, property)
 
-def test_family::person_has_sexe():
-    assert hasattr(family::Person, "sexe")
+def test_family_person_has_firstName():
+    assert hasattr(family_Person, "firstName")
     descriptor = None
-    for klass in family::Person.__mro__:
-        if "sexe" in klass.__dict__:
-            descriptor = klass.__dict__["sexe"]
+    for klass in family_Person.__mro__:
+        if "firstName" in klass.__dict__:
+            descriptor = klass.__dict__["firstName"]
             break
     assert isinstance(descriptor, property)
 
@@ -201,8 +201,8 @@ def test_sexe_has_all_literals():
     # Collect the names of literals in this Enumeration
     enum_literals = [lit.name for lit in Sexe]
     expected_literals = [
-        "FEMALE",
         "MALE",
+        "FEMALE",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
@@ -223,37 +223,37 @@ safe_text = st.text(
 Family_strategy = st.builds(
     Family,
 )
-family::WealthyFamily_strategy = st.builds(
-    family::WealthyFamily,
+family_WealthyFamily_strategy = st.builds(
+    family_WealthyFamily,
     forbesRanking=
         st.integers()
 )
-family::Family_strategy = st.builds(
-    family::Family,
+family_Family_strategy = st.builds(
+    family_Family,
+    surname=
+        safe_text,
+    numberOfPets=
+        st.integers(),
     favoriteHolidayDestinations=
         safe_text,
     hasASwimmingPool=
-        st.booleans(),
-    numberOfPets=
-        st.integers(),
-    surname=
-        safe_text
+        st.booleans()
 )
-family::Car_strategy = st.builds(
-    family::Car,
+family_Car_strategy = st.builds(
+    family_Car,
     numberOfSeats=
         safe_text
 )
-family::Address_strategy = st.builds(
-    family::Address,
+family_Address_strategy = st.builds(
+    family_Address,
     street=
         safe_text
 )
-family::Person_strategy = st.builds(
-    family::Person,
-    firstName=
-        safe_text,
+family_Person_strategy = st.builds(
+    family_Person,
     sexe=
+        safe_text,
+    firstName=
         safe_text
 )
 
@@ -262,126 +262,99 @@ family::Person_strategy = st.builds(
 def test_family_instantiation(instance):
     assert isinstance(instance, Family)
 
-@given(instance=family::WealthyFamily_strategy)
+@given(instance=family_WealthyFamily_strategy)
 @settings(max_examples=50)
-def test_family::wealthyfamily_instantiation(instance):
-    assert isinstance(instance, family::WealthyFamily)
-
-@given(instance=family::WealthyFamily_strategy)
-def test_family::wealthyfamily_forbesRanking_type(instance):
-    assert isinstance(instance.forbesRanking, int)
+def test_family_wealthyfamily_instantiation(instance):
+    assert isinstance(instance, family_WealthyFamily)
 
 
-@given(instance=family::WealthyFamily_strategy)
-def test_family::wealthyfamily_forbesRanking_setter(instance):
+
+@given(instance=family_WealthyFamily_strategy)
+def test_family_wealthyfamily_forbesRanking_setter(instance):
     original = instance.forbesRanking
     instance.forbesRanking = original
     assert instance.forbesRanking == original
 
-@given(instance=family::Family_strategy)
+@given(instance=family_Family_strategy)
 @settings(max_examples=50)
-def test_family::family_instantiation(instance):
-    assert isinstance(instance, family::Family)
-
-@given(instance=family::Family_strategy)
-def test_family::family_favoriteHolidayDestinations_type(instance):
-    assert isinstance(instance.favoriteHolidayDestinations, str)
+def test_family_family_instantiation(instance):
+    assert isinstance(instance, family_Family)
 
 
-@given(instance=family::Family_strategy)
-def test_family::family_favoriteHolidayDestinations_setter(instance):
-    original = instance.favoriteHolidayDestinations
-    instance.favoriteHolidayDestinations = original
-    assert instance.favoriteHolidayDestinations == original
 
-@given(instance=family::Family_strategy)
-def test_family::family_hasASwimmingPool_type(instance):
-    assert isinstance(instance.hasASwimmingPool, bool)
-
-
-@given(instance=family::Family_strategy)
-def test_family::family_hasASwimmingPool_setter(instance):
-    original = instance.hasASwimmingPool
-    instance.hasASwimmingPool = original
-    assert instance.hasASwimmingPool == original
-
-@given(instance=family::Family_strategy)
-def test_family::family_numberOfPets_type(instance):
-    assert isinstance(instance.numberOfPets, int)
-
-
-@given(instance=family::Family_strategy)
-def test_family::family_numberOfPets_setter(instance):
-    original = instance.numberOfPets
-    instance.numberOfPets = original
-    assert instance.numberOfPets == original
-
-@given(instance=family::Family_strategy)
-def test_family::family_surname_type(instance):
-    assert isinstance(instance.surname, str)
-
-
-@given(instance=family::Family_strategy)
-def test_family::family_surname_setter(instance):
+@given(instance=family_Family_strategy)
+def test_family_family_surname_setter(instance):
     original = instance.surname
     instance.surname = original
     assert instance.surname == original
 
-@given(instance=family::Car_strategy)
+
+
+@given(instance=family_Family_strategy)
+def test_family_family_numberOfPets_setter(instance):
+    original = instance.numberOfPets
+    instance.numberOfPets = original
+    assert instance.numberOfPets == original
+
+
+
+@given(instance=family_Family_strategy)
+def test_family_family_favoriteHolidayDestinations_setter(instance):
+    original = instance.favoriteHolidayDestinations
+    instance.favoriteHolidayDestinations = original
+    assert instance.favoriteHolidayDestinations == original
+
+
+
+@given(instance=family_Family_strategy)
+def test_family_family_hasASwimmingPool_setter(instance):
+    original = instance.hasASwimmingPool
+    instance.hasASwimmingPool = original
+    assert instance.hasASwimmingPool == original
+
+@given(instance=family_Car_strategy)
 @settings(max_examples=50)
-def test_family::car_instantiation(instance):
-    assert isinstance(instance, family::Car)
-
-@given(instance=family::Car_strategy)
-def test_family::car_numberOfSeats_type(instance):
-    assert isinstance(instance.numberOfSeats, str)
+def test_family_car_instantiation(instance):
+    assert isinstance(instance, family_Car)
 
 
-@given(instance=family::Car_strategy)
-def test_family::car_numberOfSeats_setter(instance):
+
+@given(instance=family_Car_strategy)
+def test_family_car_numberOfSeats_setter(instance):
     original = instance.numberOfSeats
     instance.numberOfSeats = original
     assert instance.numberOfSeats == original
 
-@given(instance=family::Address_strategy)
+@given(instance=family_Address_strategy)
 @settings(max_examples=50)
-def test_family::address_instantiation(instance):
-    assert isinstance(instance, family::Address)
-
-@given(instance=family::Address_strategy)
-def test_family::address_street_type(instance):
-    assert isinstance(instance.street, str)
+def test_family_address_instantiation(instance):
+    assert isinstance(instance, family_Address)
 
 
-@given(instance=family::Address_strategy)
-def test_family::address_street_setter(instance):
+
+@given(instance=family_Address_strategy)
+def test_family_address_street_setter(instance):
     original = instance.street
     instance.street = original
     assert instance.street == original
 
-@given(instance=family::Person_strategy)
+@given(instance=family_Person_strategy)
 @settings(max_examples=50)
-def test_family::person_instantiation(instance):
-    assert isinstance(instance, family::Person)
-
-@given(instance=family::Person_strategy)
-def test_family::person_firstName_type(instance):
-    assert isinstance(instance.firstName, str)
+def test_family_person_instantiation(instance):
+    assert isinstance(instance, family_Person)
 
 
-@given(instance=family::Person_strategy)
-def test_family::person_firstName_setter(instance):
-    original = instance.firstName
-    instance.firstName = original
-    assert instance.firstName == original
 
-@given(instance=family::Person_strategy)
-def test_family::person_sexe_type(instance):
-    assert isinstance(instance.sexe, str)
-
-
-@given(instance=family::Person_strategy)
-def test_family::person_sexe_setter(instance):
+@given(instance=family_Person_strategy)
+def test_family_person_sexe_setter(instance):
     original = instance.sexe
     instance.sexe = original
     assert instance.sexe == original
+
+
+
+@given(instance=family_Person_strategy)
+def test_family_person_firstName_setter(instance):
+    original = instance.firstName
+    instance.firstName = original
+    assert instance.firstName == original

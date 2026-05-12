@@ -3,18 +3,18 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    iot::IotActivity,
-    iot::Sketch,
-    iot::Board,
-    iot::System,
+from python_code import (
+    iot_IotActivity,
+    iot_Sketch,
+    iot_Board,
+    iot_System,
     HWComp,
-    iot::Actuator,
-    iot::Sensor,
-    iot::HWComp,
-    iot::IotOperationDef,
+    iot_Actuator,
+    iot_Sensor,
+    iot_HWComp,
+    iot_IotOperationDef,
     BoardType,
 )
 
@@ -24,61 +24,61 @@ from classes import (
 
 
 
-def test_iot::iotactivity_is_not_abstract():
-    assert not inspect.isabstract(iot::IotActivity)
+def test_iot_iotactivity_is_not_abstract():
+    assert not inspect.isabstract(iot_IotActivity)
 
 
-def test_iot::iotactivity_constructor_exists():
-    assert callable(iot::IotActivity.__init__)
+def test_iot_iotactivity_constructor_exists():
+    assert callable(iot_IotActivity.__init__)
 
 
-def test_iot::iotactivity_constructor_args():
-    sig = inspect.signature(iot::IotActivity.__init__)
+def test_iot_iotactivity_constructor_args():
+    sig = inspect.signature(iot_IotActivity.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_iot::sketch_is_not_abstract():
-    assert not inspect.isabstract(iot::Sketch)
+def test_iot_sketch_is_not_abstract():
+    assert not inspect.isabstract(iot_Sketch)
 
 
-def test_iot::sketch_constructor_exists():
-    assert callable(iot::Sketch.__init__)
+def test_iot_sketch_constructor_exists():
+    assert callable(iot_Sketch.__init__)
 
 
-def test_iot::sketch_constructor_args():
-    sig = inspect.signature(iot::Sketch.__init__)
+def test_iot_sketch_constructor_args():
+    sig = inspect.signature(iot_Sketch.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_iot::board_is_not_abstract():
-    assert not inspect.isabstract(iot::Board)
+def test_iot_board_is_not_abstract():
+    assert not inspect.isabstract(iot_Board)
 
 
-def test_iot::board_constructor_exists():
-    assert callable(iot::Board.__init__)
+def test_iot_board_constructor_exists():
+    assert callable(iot_Board.__init__)
 
 
-def test_iot::board_constructor_args():
-    sig = inspect.signature(iot::Board.__init__)
+def test_iot_board_constructor_args():
+    sig = inspect.signature(iot_Board.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
     assert "type" in params, "Missing parameter 'type'"
 
-def test_iot::board_has_name():
-    assert hasattr(iot::Board, "name")
+def test_iot_board_has_name():
+    assert hasattr(iot_Board, "name")
     descriptor = None
-    for klass in iot::Board.__mro__:
+    for klass in iot_Board.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
-def test_iot::board_has_type():
-    assert hasattr(iot::Board, "type")
+def test_iot_board_has_type():
+    assert hasattr(iot_Board, "type")
     descriptor = None
-    for klass in iot::Board.__mro__:
+    for klass in iot_Board.__mro__:
         if "type" in klass.__dict__:
             descriptor = klass.__dict__["type"]
             break
@@ -86,23 +86,23 @@ def test_iot::board_has_type():
 
 
 
-def test_iot::system_is_not_abstract():
-    assert not inspect.isabstract(iot::System)
+def test_iot_system_is_not_abstract():
+    assert not inspect.isabstract(iot_System)
 
 
-def test_iot::system_constructor_exists():
-    assert callable(iot::System.__init__)
+def test_iot_system_constructor_exists():
+    assert callable(iot_System.__init__)
 
 
-def test_iot::system_constructor_args():
-    sig = inspect.signature(iot::System.__init__)
+def test_iot_system_constructor_args():
+    sig = inspect.signature(iot_System.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_iot::system_has_name():
-    assert hasattr(iot::System, "name")
+def test_iot_system_has_name():
+    assert hasattr(iot_System, "name")
     descriptor = None
-    for klass in iot::System.__mro__:
+    for klass in iot_System.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -124,51 +124,51 @@ def test_hwcomp_constructor_args():
 
 
 
-def test_iot::actuator_is_not_abstract():
-    assert not inspect.isabstract(iot::Actuator)
+def test_iot_actuator_is_not_abstract():
+    assert not inspect.isabstract(iot_Actuator)
 
 
-def test_iot::actuator_constructor_exists():
-    assert callable(iot::Actuator.__init__)
+def test_iot_actuator_constructor_exists():
+    assert callable(iot_Actuator.__init__)
 
 
-def test_iot::actuator_constructor_args():
-    sig = inspect.signature(iot::Actuator.__init__)
+def test_iot_actuator_constructor_args():
+    sig = inspect.signature(iot_Actuator.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_iot::sensor_is_not_abstract():
-    assert not inspect.isabstract(iot::Sensor)
+def test_iot_sensor_is_not_abstract():
+    assert not inspect.isabstract(iot_Sensor)
 
 
-def test_iot::sensor_constructor_exists():
-    assert callable(iot::Sensor.__init__)
+def test_iot_sensor_constructor_exists():
+    assert callable(iot_Sensor.__init__)
 
 
-def test_iot::sensor_constructor_args():
-    sig = inspect.signature(iot::Sensor.__init__)
+def test_iot_sensor_constructor_args():
+    sig = inspect.signature(iot_Sensor.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_iot::hwcomp_is_not_abstract():
-    assert not inspect.isabstract(iot::HWComp)
+def test_iot_hwcomp_is_not_abstract():
+    assert not inspect.isabstract(iot_HWComp)
 
 
-def test_iot::hwcomp_constructor_exists():
-    assert callable(iot::HWComp.__init__)
+def test_iot_hwcomp_constructor_exists():
+    assert callable(iot_HWComp.__init__)
 
 
-def test_iot::hwcomp_constructor_args():
-    sig = inspect.signature(iot::HWComp.__init__)
+def test_iot_hwcomp_constructor_args():
+    sig = inspect.signature(iot_HWComp.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_iot::hwcomp_has_name():
-    assert hasattr(iot::HWComp, "name")
+def test_iot_hwcomp_has_name():
+    assert hasattr(iot_HWComp, "name")
     descriptor = None
-    for klass in iot::HWComp.__mro__:
+    for klass in iot_HWComp.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -176,16 +176,16 @@ def test_iot::hwcomp_has_name():
 
 
 
-def test_iot::iotoperationdef_is_not_abstract():
-    assert not inspect.isabstract(iot::IotOperationDef)
+def test_iot_iotoperationdef_is_not_abstract():
+    assert not inspect.isabstract(iot_IotOperationDef)
 
 
-def test_iot::iotoperationdef_constructor_exists():
-    assert callable(iot::IotOperationDef.__init__)
+def test_iot_iotoperationdef_constructor_exists():
+    assert callable(iot_IotOperationDef.__init__)
 
 
-def test_iot::iotoperationdef_constructor_args():
-    sig = inspect.signature(iot::IotOperationDef.__init__)
+def test_iot_iotoperationdef_constructor_args():
+    sig = inspect.signature(iot_IotOperationDef.__init__)
     params = list(sig.parameters.keys())
 
 def test_boardtype_exists():
@@ -196,8 +196,8 @@ def test_boardtype_has_all_literals():
     # Collect the names of literals in this Enumeration
     enum_literals = [lit.name for lit in BoardType]
     expected_literals = [
-        "Arduino",
         "BeagleBoard",
+        "Arduino",
         "RaspberryPi",
     ]
     # Check that all expected literals exist
@@ -216,91 +216,82 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-iot::IotActivity_strategy = st.builds(
-    iot::IotActivity,
+iot_IotActivity_strategy = st.builds(
+    iot_IotActivity,
 )
-iot::Sketch_strategy = st.builds(
-    iot::Sketch,
+iot_Sketch_strategy = st.builds(
+    iot_Sketch,
 )
-iot::Board_strategy = st.builds(
-    iot::Board,
+iot_Board_strategy = st.builds(
+    iot_Board,
     name=
         safe_text,
     type=
         safe_text
 )
-iot::System_strategy = st.builds(
-    iot::System,
+iot_System_strategy = st.builds(
+    iot_System,
     name=
         safe_text
 )
 HWComp_strategy = st.builds(
     HWComp,
 )
-iot::Actuator_strategy = st.builds(
-    iot::Actuator,
+iot_Actuator_strategy = st.builds(
+    iot_Actuator,
 )
-iot::Sensor_strategy = st.builds(
-    iot::Sensor,
+iot_Sensor_strategy = st.builds(
+    iot_Sensor,
 )
-iot::HWComp_strategy = st.builds(
-    iot::HWComp,
+iot_HWComp_strategy = st.builds(
+    iot_HWComp,
     name=
         safe_text
 )
-iot::IotOperationDef_strategy = st.builds(
-    iot::IotOperationDef,
+iot_IotOperationDef_strategy = st.builds(
+    iot_IotOperationDef,
 )
 
-@given(instance=iot::IotActivity_strategy)
+@given(instance=iot_IotActivity_strategy)
 @settings(max_examples=50)
-def test_iot::iotactivity_instantiation(instance):
-    assert isinstance(instance, iot::IotActivity)
+def test_iot_iotactivity_instantiation(instance):
+    assert isinstance(instance, iot_IotActivity)
 
-@given(instance=iot::Sketch_strategy)
+@given(instance=iot_Sketch_strategy)
 @settings(max_examples=50)
-def test_iot::sketch_instantiation(instance):
-    assert isinstance(instance, iot::Sketch)
+def test_iot_sketch_instantiation(instance):
+    assert isinstance(instance, iot_Sketch)
 
-@given(instance=iot::Board_strategy)
+@given(instance=iot_Board_strategy)
 @settings(max_examples=50)
-def test_iot::board_instantiation(instance):
-    assert isinstance(instance, iot::Board)
-
-@given(instance=iot::Board_strategy)
-def test_iot::board_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_iot_board_instantiation(instance):
+    assert isinstance(instance, iot_Board)
 
 
-@given(instance=iot::Board_strategy)
-def test_iot::board_name_setter(instance):
+
+@given(instance=iot_Board_strategy)
+def test_iot_board_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=iot::Board_strategy)
-def test_iot::board_type_type(instance):
-    assert isinstance(instance.type, str)
 
 
-@given(instance=iot::Board_strategy)
-def test_iot::board_type_setter(instance):
+@given(instance=iot_Board_strategy)
+def test_iot_board_type_setter(instance):
     original = instance.type
     instance.type = original
     assert instance.type == original
 
-@given(instance=iot::System_strategy)
+@given(instance=iot_System_strategy)
 @settings(max_examples=50)
-def test_iot::system_instantiation(instance):
-    assert isinstance(instance, iot::System)
-
-@given(instance=iot::System_strategy)
-def test_iot::system_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_iot_system_instantiation(instance):
+    assert isinstance(instance, iot_System)
 
 
-@given(instance=iot::System_strategy)
-def test_iot::system_name_setter(instance):
+
+@given(instance=iot_System_strategy)
+def test_iot_system_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
@@ -310,33 +301,30 @@ def test_iot::system_name_setter(instance):
 def test_hwcomp_instantiation(instance):
     assert isinstance(instance, HWComp)
 
-@given(instance=iot::Actuator_strategy)
+@given(instance=iot_Actuator_strategy)
 @settings(max_examples=50)
-def test_iot::actuator_instantiation(instance):
-    assert isinstance(instance, iot::Actuator)
+def test_iot_actuator_instantiation(instance):
+    assert isinstance(instance, iot_Actuator)
 
-@given(instance=iot::Sensor_strategy)
+@given(instance=iot_Sensor_strategy)
 @settings(max_examples=50)
-def test_iot::sensor_instantiation(instance):
-    assert isinstance(instance, iot::Sensor)
+def test_iot_sensor_instantiation(instance):
+    assert isinstance(instance, iot_Sensor)
 
-@given(instance=iot::HWComp_strategy)
+@given(instance=iot_HWComp_strategy)
 @settings(max_examples=50)
-def test_iot::hwcomp_instantiation(instance):
-    assert isinstance(instance, iot::HWComp)
-
-@given(instance=iot::HWComp_strategy)
-def test_iot::hwcomp_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_iot_hwcomp_instantiation(instance):
+    assert isinstance(instance, iot_HWComp)
 
 
-@given(instance=iot::HWComp_strategy)
-def test_iot::hwcomp_name_setter(instance):
+
+@given(instance=iot_HWComp_strategy)
+def test_iot_hwcomp_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=iot::IotOperationDef_strategy)
+@given(instance=iot_IotOperationDef_strategy)
 @settings(max_examples=50)
-def test_iot::iotoperationdef_instantiation(instance):
-    assert isinstance(instance, iot::IotOperationDef)
+def test_iot_iotoperationdef_instantiation(instance):
+    assert isinstance(instance, iot_IotOperationDef)

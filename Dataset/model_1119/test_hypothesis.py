@@ -3,19 +3,19 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    ctxmngr::ManagerState,
-    ctxmngr::OpaqueExpression,
-    ctxmngr::ManagerTransition,
-    ctxmngr::Manager,
+from python_code import (
+    ctxmngr_OpaqueExpression,
+    ctxmngr_ManagerTransition,
+    ctxmngr_Manager,
     NamedElement,
-    ctxmngr::ContextManager,
-    ctxmngr::ContextParameter,
-    ctxmngr::RemoteFiringDependency,
-    ctxmngr::CtxTransition,
-    ctxmngr::CtxState,
+    ctxmngr_CtxState,
+    ctxmngr_CtxTransition,
+    ctxmngr_RemoteFiringDependency,
+    ctxmngr_ContextParameter,
+    ctxmngr_ContextManager,
+    ctxmngr_ManagerState,
 )
 
 # =============================================================================
@@ -24,58 +24,44 @@ from classes import (
 
 
 
-def test_ctxmngr::managerstate_is_not_abstract():
-    assert not inspect.isabstract(ctxmngr::ManagerState)
+def test_ctxmngr_opaqueexpression_is_not_abstract():
+    assert not inspect.isabstract(ctxmngr_OpaqueExpression)
 
 
-def test_ctxmngr::managerstate_constructor_exists():
-    assert callable(ctxmngr::ManagerState.__init__)
+def test_ctxmngr_opaqueexpression_constructor_exists():
+    assert callable(ctxmngr_OpaqueExpression.__init__)
 
 
-def test_ctxmngr::managerstate_constructor_args():
-    sig = inspect.signature(ctxmngr::ManagerState.__init__)
+def test_ctxmngr_opaqueexpression_constructor_args():
+    sig = inspect.signature(ctxmngr_OpaqueExpression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ctxmngr::opaqueexpression_is_not_abstract():
-    assert not inspect.isabstract(ctxmngr::OpaqueExpression)
+def test_ctxmngr_managertransition_is_not_abstract():
+    assert not inspect.isabstract(ctxmngr_ManagerTransition)
 
 
-def test_ctxmngr::opaqueexpression_constructor_exists():
-    assert callable(ctxmngr::OpaqueExpression.__init__)
+def test_ctxmngr_managertransition_constructor_exists():
+    assert callable(ctxmngr_ManagerTransition.__init__)
 
 
-def test_ctxmngr::opaqueexpression_constructor_args():
-    sig = inspect.signature(ctxmngr::OpaqueExpression.__init__)
+def test_ctxmngr_managertransition_constructor_args():
+    sig = inspect.signature(ctxmngr_ManagerTransition.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ctxmngr::managertransition_is_not_abstract():
-    assert not inspect.isabstract(ctxmngr::ManagerTransition)
+def test_ctxmngr_manager_is_not_abstract():
+    assert not inspect.isabstract(ctxmngr_Manager)
 
 
-def test_ctxmngr::managertransition_constructor_exists():
-    assert callable(ctxmngr::ManagerTransition.__init__)
+def test_ctxmngr_manager_constructor_exists():
+    assert callable(ctxmngr_Manager.__init__)
 
 
-def test_ctxmngr::managertransition_constructor_args():
-    sig = inspect.signature(ctxmngr::ManagerTransition.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_ctxmngr::manager_is_not_abstract():
-    assert not inspect.isabstract(ctxmngr::Manager)
-
-
-def test_ctxmngr::manager_constructor_exists():
-    assert callable(ctxmngr::Manager.__init__)
-
-
-def test_ctxmngr::manager_constructor_args():
-    sig = inspect.signature(ctxmngr::Manager.__init__)
+def test_ctxmngr_manager_constructor_args():
+    sig = inspect.signature(ctxmngr_Manager.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -94,77 +80,205 @@ def test_namedelement_constructor_args():
 
 
 
-def test_ctxmngr::contextmanager_is_not_abstract():
-    assert not inspect.isabstract(ctxmngr::ContextManager)
+def test_ctxmngr_ctxstate_is_not_abstract():
+    assert not inspect.isabstract(ctxmngr_CtxState)
 
 
-def test_ctxmngr::contextmanager_constructor_exists():
-    assert callable(ctxmngr::ContextManager.__init__)
+def test_ctxmngr_ctxstate_constructor_exists():
+    assert callable(ctxmngr_CtxState.__init__)
 
 
-def test_ctxmngr::contextmanager_constructor_args():
-    sig = inspect.signature(ctxmngr::ContextManager.__init__)
+def test_ctxmngr_ctxstate_constructor_args():
+    sig = inspect.signature(ctxmngr_CtxState.__init__)
     params = list(sig.parameters.keys())
+    assert "isStart" in params, "Missing parameter 'isStart'"
+    assert "isEnd" in params, "Missing parameter 'isEnd'"
 
-
-
-def test_ctxmngr::contextparameter_is_not_abstract():
-    assert not inspect.isabstract(ctxmngr::ContextParameter)
-
-
-def test_ctxmngr::contextparameter_constructor_exists():
-    assert callable(ctxmngr::ContextParameter.__init__)
-
-
-def test_ctxmngr::contextparameter_constructor_args():
-    sig = inspect.signature(ctxmngr::ContextParameter.__init__)
-    params = list(sig.parameters.keys())
-    assert "LitteralInteger" in params, "Missing parameter 'LitteralInteger'"
-    assert "isInput" in params, "Missing parameter 'isInput'"
-    assert "LitteralUnlimitedNatural" in params, "Missing parameter 'LitteralUnlimitedNatural'"
-    assert "LitteralBoolean" in params, "Missing parameter 'LitteralBoolean'"
-    assert "LitteralString" in params, "Missing parameter 'LitteralString'"
-
-def test_ctxmngr::contextparameter_has_LitteralInteger():
-    assert hasattr(ctxmngr::ContextParameter, "LitteralInteger")
+def test_ctxmngr_ctxstate_has_isStart():
+    assert hasattr(ctxmngr_CtxState, "isStart")
     descriptor = None
-    for klass in ctxmngr::ContextParameter.__mro__:
-        if "LitteralInteger" in klass.__dict__:
-            descriptor = klass.__dict__["LitteralInteger"]
+    for klass in ctxmngr_CtxState.__mro__:
+        if "isStart" in klass.__dict__:
+            descriptor = klass.__dict__["isStart"]
             break
     assert isinstance(descriptor, property)
 
-def test_ctxmngr::contextparameter_has_isInput():
-    assert hasattr(ctxmngr::ContextParameter, "isInput")
+def test_ctxmngr_ctxstate_has_isEnd():
+    assert hasattr(ctxmngr_CtxState, "isEnd")
     descriptor = None
-    for klass in ctxmngr::ContextParameter.__mro__:
+    for klass in ctxmngr_CtxState.__mro__:
+        if "isEnd" in klass.__dict__:
+            descriptor = klass.__dict__["isEnd"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_ctxmngr_ctxtransition_is_not_abstract():
+    assert not inspect.isabstract(ctxmngr_CtxTransition)
+
+
+def test_ctxmngr_ctxtransition_constructor_exists():
+    assert callable(ctxmngr_CtxTransition.__init__)
+
+
+def test_ctxmngr_ctxtransition_constructor_args():
+    sig = inspect.signature(ctxmngr_CtxTransition.__init__)
+    params = list(sig.parameters.keys())
+    assert "Action" in params, "Missing parameter 'Action'"
+    assert "Event" in params, "Missing parameter 'Event'"
+    assert "transRate" in params, "Missing parameter 'transRate'"
+    assert "Condition" in params, "Missing parameter 'Condition'"
+    assert "input" in params, "Missing parameter 'input'"
+    assert "transProb" in params, "Missing parameter 'transProb'"
+    assert "output" in params, "Missing parameter 'output'"
+    assert "isRemote" in params, "Missing parameter 'isRemote'"
+
+def test_ctxmngr_ctxtransition_has_Action():
+    assert hasattr(ctxmngr_CtxTransition, "Action")
+    descriptor = None
+    for klass in ctxmngr_CtxTransition.__mro__:
+        if "Action" in klass.__dict__:
+            descriptor = klass.__dict__["Action"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_ctxmngr_ctxtransition_has_Event():
+    assert hasattr(ctxmngr_CtxTransition, "Event")
+    descriptor = None
+    for klass in ctxmngr_CtxTransition.__mro__:
+        if "Event" in klass.__dict__:
+            descriptor = klass.__dict__["Event"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_ctxmngr_ctxtransition_has_transRate():
+    assert hasattr(ctxmngr_CtxTransition, "transRate")
+    descriptor = None
+    for klass in ctxmngr_CtxTransition.__mro__:
+        if "transRate" in klass.__dict__:
+            descriptor = klass.__dict__["transRate"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_ctxmngr_ctxtransition_has_Condition():
+    assert hasattr(ctxmngr_CtxTransition, "Condition")
+    descriptor = None
+    for klass in ctxmngr_CtxTransition.__mro__:
+        if "Condition" in klass.__dict__:
+            descriptor = klass.__dict__["Condition"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_ctxmngr_ctxtransition_has_input():
+    assert hasattr(ctxmngr_CtxTransition, "input")
+    descriptor = None
+    for klass in ctxmngr_CtxTransition.__mro__:
+        if "input" in klass.__dict__:
+            descriptor = klass.__dict__["input"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_ctxmngr_ctxtransition_has_transProb():
+    assert hasattr(ctxmngr_CtxTransition, "transProb")
+    descriptor = None
+    for klass in ctxmngr_CtxTransition.__mro__:
+        if "transProb" in klass.__dict__:
+            descriptor = klass.__dict__["transProb"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_ctxmngr_ctxtransition_has_output():
+    assert hasattr(ctxmngr_CtxTransition, "output")
+    descriptor = None
+    for klass in ctxmngr_CtxTransition.__mro__:
+        if "output" in klass.__dict__:
+            descriptor = klass.__dict__["output"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_ctxmngr_ctxtransition_has_isRemote():
+    assert hasattr(ctxmngr_CtxTransition, "isRemote")
+    descriptor = None
+    for klass in ctxmngr_CtxTransition.__mro__:
+        if "isRemote" in klass.__dict__:
+            descriptor = klass.__dict__["isRemote"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_ctxmngr_remotefiringdependency_is_not_abstract():
+    assert not inspect.isabstract(ctxmngr_RemoteFiringDependency)
+
+
+def test_ctxmngr_remotefiringdependency_constructor_exists():
+    assert callable(ctxmngr_RemoteFiringDependency.__init__)
+
+
+def test_ctxmngr_remotefiringdependency_constructor_args():
+    sig = inspect.signature(ctxmngr_RemoteFiringDependency.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_ctxmngr_contextparameter_is_not_abstract():
+    assert not inspect.isabstract(ctxmngr_ContextParameter)
+
+
+def test_ctxmngr_contextparameter_constructor_exists():
+    assert callable(ctxmngr_ContextParameter.__init__)
+
+
+def test_ctxmngr_contextparameter_constructor_args():
+    sig = inspect.signature(ctxmngr_ContextParameter.__init__)
+    params = list(sig.parameters.keys())
+    assert "isInput" in params, "Missing parameter 'isInput'"
+    assert "LitteralInteger" in params, "Missing parameter 'LitteralInteger'"
+    assert "LitteralBoolean" in params, "Missing parameter 'LitteralBoolean'"
+    assert "LitteralUnlimitedNatural" in params, "Missing parameter 'LitteralUnlimitedNatural'"
+    assert "LitteralString" in params, "Missing parameter 'LitteralString'"
+
+def test_ctxmngr_contextparameter_has_isInput():
+    assert hasattr(ctxmngr_ContextParameter, "isInput")
+    descriptor = None
+    for klass in ctxmngr_ContextParameter.__mro__:
         if "isInput" in klass.__dict__:
             descriptor = klass.__dict__["isInput"]
             break
     assert isinstance(descriptor, property)
 
-def test_ctxmngr::contextparameter_has_LitteralUnlimitedNatural():
-    assert hasattr(ctxmngr::ContextParameter, "LitteralUnlimitedNatural")
+def test_ctxmngr_contextparameter_has_LitteralInteger():
+    assert hasattr(ctxmngr_ContextParameter, "LitteralInteger")
     descriptor = None
-    for klass in ctxmngr::ContextParameter.__mro__:
-        if "LitteralUnlimitedNatural" in klass.__dict__:
-            descriptor = klass.__dict__["LitteralUnlimitedNatural"]
+    for klass in ctxmngr_ContextParameter.__mro__:
+        if "LitteralInteger" in klass.__dict__:
+            descriptor = klass.__dict__["LitteralInteger"]
             break
     assert isinstance(descriptor, property)
 
-def test_ctxmngr::contextparameter_has_LitteralBoolean():
-    assert hasattr(ctxmngr::ContextParameter, "LitteralBoolean")
+def test_ctxmngr_contextparameter_has_LitteralBoolean():
+    assert hasattr(ctxmngr_ContextParameter, "LitteralBoolean")
     descriptor = None
-    for klass in ctxmngr::ContextParameter.__mro__:
+    for klass in ctxmngr_ContextParameter.__mro__:
         if "LitteralBoolean" in klass.__dict__:
             descriptor = klass.__dict__["LitteralBoolean"]
             break
     assert isinstance(descriptor, property)
 
-def test_ctxmngr::contextparameter_has_LitteralString():
-    assert hasattr(ctxmngr::ContextParameter, "LitteralString")
+def test_ctxmngr_contextparameter_has_LitteralUnlimitedNatural():
+    assert hasattr(ctxmngr_ContextParameter, "LitteralUnlimitedNatural")
     descriptor = None
-    for klass in ctxmngr::ContextParameter.__mro__:
+    for klass in ctxmngr_ContextParameter.__mro__:
+        if "LitteralUnlimitedNatural" in klass.__dict__:
+            descriptor = klass.__dict__["LitteralUnlimitedNatural"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_ctxmngr_contextparameter_has_LitteralString():
+    assert hasattr(ctxmngr_ContextParameter, "LitteralString")
+    descriptor = None
+    for klass in ctxmngr_ContextParameter.__mro__:
         if "LitteralString" in klass.__dict__:
             descriptor = klass.__dict__["LitteralString"]
             break
@@ -172,145 +286,31 @@ def test_ctxmngr::contextparameter_has_LitteralString():
 
 
 
-def test_ctxmngr::remotefiringdependency_is_not_abstract():
-    assert not inspect.isabstract(ctxmngr::RemoteFiringDependency)
+def test_ctxmngr_contextmanager_is_not_abstract():
+    assert not inspect.isabstract(ctxmngr_ContextManager)
 
 
-def test_ctxmngr::remotefiringdependency_constructor_exists():
-    assert callable(ctxmngr::RemoteFiringDependency.__init__)
+def test_ctxmngr_contextmanager_constructor_exists():
+    assert callable(ctxmngr_ContextManager.__init__)
 
 
-def test_ctxmngr::remotefiringdependency_constructor_args():
-    sig = inspect.signature(ctxmngr::RemoteFiringDependency.__init__)
+def test_ctxmngr_contextmanager_constructor_args():
+    sig = inspect.signature(ctxmngr_ContextManager.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ctxmngr::ctxtransition_is_not_abstract():
-    assert not inspect.isabstract(ctxmngr::CtxTransition)
+def test_ctxmngr_managerstate_is_not_abstract():
+    assert not inspect.isabstract(ctxmngr_ManagerState)
 
 
-def test_ctxmngr::ctxtransition_constructor_exists():
-    assert callable(ctxmngr::CtxTransition.__init__)
+def test_ctxmngr_managerstate_constructor_exists():
+    assert callable(ctxmngr_ManagerState.__init__)
 
 
-def test_ctxmngr::ctxtransition_constructor_args():
-    sig = inspect.signature(ctxmngr::CtxTransition.__init__)
+def test_ctxmngr_managerstate_constructor_args():
+    sig = inspect.signature(ctxmngr_ManagerState.__init__)
     params = list(sig.parameters.keys())
-    assert "transProb" in params, "Missing parameter 'transProb'"
-    assert "output" in params, "Missing parameter 'output'"
-    assert "transRate" in params, "Missing parameter 'transRate'"
-    assert "Event" in params, "Missing parameter 'Event'"
-    assert "isRemote" in params, "Missing parameter 'isRemote'"
-    assert "Action" in params, "Missing parameter 'Action'"
-    assert "Condition" in params, "Missing parameter 'Condition'"
-    assert "input" in params, "Missing parameter 'input'"
-
-def test_ctxmngr::ctxtransition_has_transProb():
-    assert hasattr(ctxmngr::CtxTransition, "transProb")
-    descriptor = None
-    for klass in ctxmngr::CtxTransition.__mro__:
-        if "transProb" in klass.__dict__:
-            descriptor = klass.__dict__["transProb"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_ctxmngr::ctxtransition_has_output():
-    assert hasattr(ctxmngr::CtxTransition, "output")
-    descriptor = None
-    for klass in ctxmngr::CtxTransition.__mro__:
-        if "output" in klass.__dict__:
-            descriptor = klass.__dict__["output"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_ctxmngr::ctxtransition_has_transRate():
-    assert hasattr(ctxmngr::CtxTransition, "transRate")
-    descriptor = None
-    for klass in ctxmngr::CtxTransition.__mro__:
-        if "transRate" in klass.__dict__:
-            descriptor = klass.__dict__["transRate"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_ctxmngr::ctxtransition_has_Event():
-    assert hasattr(ctxmngr::CtxTransition, "Event")
-    descriptor = None
-    for klass in ctxmngr::CtxTransition.__mro__:
-        if "Event" in klass.__dict__:
-            descriptor = klass.__dict__["Event"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_ctxmngr::ctxtransition_has_isRemote():
-    assert hasattr(ctxmngr::CtxTransition, "isRemote")
-    descriptor = None
-    for klass in ctxmngr::CtxTransition.__mro__:
-        if "isRemote" in klass.__dict__:
-            descriptor = klass.__dict__["isRemote"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_ctxmngr::ctxtransition_has_Action():
-    assert hasattr(ctxmngr::CtxTransition, "Action")
-    descriptor = None
-    for klass in ctxmngr::CtxTransition.__mro__:
-        if "Action" in klass.__dict__:
-            descriptor = klass.__dict__["Action"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_ctxmngr::ctxtransition_has_Condition():
-    assert hasattr(ctxmngr::CtxTransition, "Condition")
-    descriptor = None
-    for klass in ctxmngr::CtxTransition.__mro__:
-        if "Condition" in klass.__dict__:
-            descriptor = klass.__dict__["Condition"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_ctxmngr::ctxtransition_has_input():
-    assert hasattr(ctxmngr::CtxTransition, "input")
-    descriptor = None
-    for klass in ctxmngr::CtxTransition.__mro__:
-        if "input" in klass.__dict__:
-            descriptor = klass.__dict__["input"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_ctxmngr::ctxstate_is_not_abstract():
-    assert not inspect.isabstract(ctxmngr::CtxState)
-
-
-def test_ctxmngr::ctxstate_constructor_exists():
-    assert callable(ctxmngr::CtxState.__init__)
-
-
-def test_ctxmngr::ctxstate_constructor_args():
-    sig = inspect.signature(ctxmngr::CtxState.__init__)
-    params = list(sig.parameters.keys())
-    assert "isStart" in params, "Missing parameter 'isStart'"
-    assert "isEnd" in params, "Missing parameter 'isEnd'"
-
-def test_ctxmngr::ctxstate_has_isStart():
-    assert hasattr(ctxmngr::CtxState, "isStart")
-    descriptor = None
-    for klass in ctxmngr::CtxState.__mro__:
-        if "isStart" in klass.__dict__:
-            descriptor = klass.__dict__["isStart"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_ctxmngr::ctxstate_has_isEnd():
-    assert hasattr(ctxmngr::CtxState, "isEnd")
-    descriptor = None
-    for klass in ctxmngr::CtxState.__mro__:
-        if "isEnd" in klass.__dict__:
-            descriptor = klass.__dict__["isEnd"]
-            break
-    assert isinstance(descriptor, property)
 
 
 # =============================================================================
@@ -324,278 +324,233 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-ctxmngr::ManagerState_strategy = st.builds(
-    ctxmngr::ManagerState,
+ctxmngr_OpaqueExpression_strategy = st.builds(
+    ctxmngr_OpaqueExpression,
 )
-ctxmngr::OpaqueExpression_strategy = st.builds(
-    ctxmngr::OpaqueExpression,
+ctxmngr_ManagerTransition_strategy = st.builds(
+    ctxmngr_ManagerTransition,
 )
-ctxmngr::ManagerTransition_strategy = st.builds(
-    ctxmngr::ManagerTransition,
-)
-ctxmngr::Manager_strategy = st.builds(
-    ctxmngr::Manager,
+ctxmngr_Manager_strategy = st.builds(
+    ctxmngr_Manager,
 )
 NamedElement_strategy = st.builds(
     NamedElement,
 )
-ctxmngr::ContextManager_strategy = st.builds(
-    ctxmngr::ContextManager,
-)
-ctxmngr::ContextParameter_strategy = st.builds(
-    ctxmngr::ContextParameter,
-    LitteralInteger=
-        st.integers(),
-    isInput=
-        st.booleans(),
-    LitteralUnlimitedNatural=
-        st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False),
-    LitteralBoolean=
-        st.booleans(),
-    LitteralString=
-        safe_text
-)
-ctxmngr::RemoteFiringDependency_strategy = st.builds(
-    ctxmngr::RemoteFiringDependency,
-)
-ctxmngr::CtxTransition_strategy = st.builds(
-    ctxmngr::CtxTransition,
-    transProb=
-        st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False),
-    output=
-        safe_text,
-    transRate=
-        st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False),
-    Event=
-        safe_text,
-    isRemote=
-        st.booleans(),
-    Action=
-        safe_text,
-    Condition=
-        safe_text,
-    input=
-        safe_text
-)
-ctxmngr::CtxState_strategy = st.builds(
-    ctxmngr::CtxState,
+ctxmngr_CtxState_strategy = st.builds(
+    ctxmngr_CtxState,
     isStart=
         st.booleans(),
     isEnd=
         st.booleans()
 )
+ctxmngr_CtxTransition_strategy = st.builds(
+    ctxmngr_CtxTransition,
+    Action=
+        safe_text,
+    Event=
+        safe_text,
+    transRate=
+        st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False),
+    Condition=
+        safe_text,
+    input=
+        safe_text,
+    transProb=
+        st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False),
+    output=
+        safe_text,
+    isRemote=
+        st.booleans()
+)
+ctxmngr_RemoteFiringDependency_strategy = st.builds(
+    ctxmngr_RemoteFiringDependency,
+)
+ctxmngr_ContextParameter_strategy = st.builds(
+    ctxmngr_ContextParameter,
+    isInput=
+        st.booleans(),
+    LitteralInteger=
+        st.integers(),
+    LitteralBoolean=
+        st.booleans(),
+    LitteralUnlimitedNatural=
+        st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False),
+    LitteralString=
+        safe_text
+)
+ctxmngr_ContextManager_strategy = st.builds(
+    ctxmngr_ContextManager,
+)
+ctxmngr_ManagerState_strategy = st.builds(
+    ctxmngr_ManagerState,
+)
 
-@given(instance=ctxmngr::ManagerState_strategy)
+@given(instance=ctxmngr_OpaqueExpression_strategy)
 @settings(max_examples=50)
-def test_ctxmngr::managerstate_instantiation(instance):
-    assert isinstance(instance, ctxmngr::ManagerState)
+def test_ctxmngr_opaqueexpression_instantiation(instance):
+    assert isinstance(instance, ctxmngr_OpaqueExpression)
 
-@given(instance=ctxmngr::OpaqueExpression_strategy)
+@given(instance=ctxmngr_ManagerTransition_strategy)
 @settings(max_examples=50)
-def test_ctxmngr::opaqueexpression_instantiation(instance):
-    assert isinstance(instance, ctxmngr::OpaqueExpression)
+def test_ctxmngr_managertransition_instantiation(instance):
+    assert isinstance(instance, ctxmngr_ManagerTransition)
 
-@given(instance=ctxmngr::ManagerTransition_strategy)
+@given(instance=ctxmngr_Manager_strategy)
 @settings(max_examples=50)
-def test_ctxmngr::managertransition_instantiation(instance):
-    assert isinstance(instance, ctxmngr::ManagerTransition)
-
-@given(instance=ctxmngr::Manager_strategy)
-@settings(max_examples=50)
-def test_ctxmngr::manager_instantiation(instance):
-    assert isinstance(instance, ctxmngr::Manager)
+def test_ctxmngr_manager_instantiation(instance):
+    assert isinstance(instance, ctxmngr_Manager)
 
 @given(instance=NamedElement_strategy)
 @settings(max_examples=50)
 def test_namedelement_instantiation(instance):
     assert isinstance(instance, NamedElement)
 
-@given(instance=ctxmngr::ContextManager_strategy)
+@given(instance=ctxmngr_CtxState_strategy)
 @settings(max_examples=50)
-def test_ctxmngr::contextmanager_instantiation(instance):
-    assert isinstance(instance, ctxmngr::ContextManager)
-
-@given(instance=ctxmngr::ContextParameter_strategy)
-@settings(max_examples=50)
-def test_ctxmngr::contextparameter_instantiation(instance):
-    assert isinstance(instance, ctxmngr::ContextParameter)
-
-@given(instance=ctxmngr::ContextParameter_strategy)
-def test_ctxmngr::contextparameter_LitteralInteger_type(instance):
-    assert isinstance(instance.LitteralInteger, int)
+def test_ctxmngr_ctxstate_instantiation(instance):
+    assert isinstance(instance, ctxmngr_CtxState)
 
 
-@given(instance=ctxmngr::ContextParameter_strategy)
-def test_ctxmngr::contextparameter_LitteralInteger_setter(instance):
-    original = instance.LitteralInteger
-    instance.LitteralInteger = original
-    assert instance.LitteralInteger == original
 
-@given(instance=ctxmngr::ContextParameter_strategy)
-def test_ctxmngr::contextparameter_isInput_type(instance):
-    assert isinstance(instance.isInput, bool)
-
-
-@given(instance=ctxmngr::ContextParameter_strategy)
-def test_ctxmngr::contextparameter_isInput_setter(instance):
-    original = instance.isInput
-    instance.isInput = original
-    assert instance.isInput == original
-
-@given(instance=ctxmngr::ContextParameter_strategy)
-def test_ctxmngr::contextparameter_LitteralUnlimitedNatural_type(instance):
-    assert isinstance(instance.LitteralUnlimitedNatural, float)
-
-
-@given(instance=ctxmngr::ContextParameter_strategy)
-def test_ctxmngr::contextparameter_LitteralUnlimitedNatural_setter(instance):
-    original = instance.LitteralUnlimitedNatural
-    instance.LitteralUnlimitedNatural = original
-    assert instance.LitteralUnlimitedNatural == original
-
-@given(instance=ctxmngr::ContextParameter_strategy)
-def test_ctxmngr::contextparameter_LitteralBoolean_type(instance):
-    assert isinstance(instance.LitteralBoolean, bool)
-
-
-@given(instance=ctxmngr::ContextParameter_strategy)
-def test_ctxmngr::contextparameter_LitteralBoolean_setter(instance):
-    original = instance.LitteralBoolean
-    instance.LitteralBoolean = original
-    assert instance.LitteralBoolean == original
-
-@given(instance=ctxmngr::ContextParameter_strategy)
-def test_ctxmngr::contextparameter_LitteralString_type(instance):
-    assert isinstance(instance.LitteralString, str)
-
-
-@given(instance=ctxmngr::ContextParameter_strategy)
-def test_ctxmngr::contextparameter_LitteralString_setter(instance):
-    original = instance.LitteralString
-    instance.LitteralString = original
-    assert instance.LitteralString == original
-
-@given(instance=ctxmngr::RemoteFiringDependency_strategy)
-@settings(max_examples=50)
-def test_ctxmngr::remotefiringdependency_instantiation(instance):
-    assert isinstance(instance, ctxmngr::RemoteFiringDependency)
-
-@given(instance=ctxmngr::CtxTransition_strategy)
-@settings(max_examples=50)
-def test_ctxmngr::ctxtransition_instantiation(instance):
-    assert isinstance(instance, ctxmngr::CtxTransition)
-
-@given(instance=ctxmngr::CtxTransition_strategy)
-def test_ctxmngr::ctxtransition_transProb_type(instance):
-    assert isinstance(instance.transProb, float)
-
-
-@given(instance=ctxmngr::CtxTransition_strategy)
-def test_ctxmngr::ctxtransition_transProb_setter(instance):
-    original = instance.transProb
-    instance.transProb = original
-    assert instance.transProb == original
-
-@given(instance=ctxmngr::CtxTransition_strategy)
-def test_ctxmngr::ctxtransition_output_type(instance):
-    assert isinstance(instance.output, str)
-
-
-@given(instance=ctxmngr::CtxTransition_strategy)
-def test_ctxmngr::ctxtransition_output_setter(instance):
-    original = instance.output
-    instance.output = original
-    assert instance.output == original
-
-@given(instance=ctxmngr::CtxTransition_strategy)
-def test_ctxmngr::ctxtransition_transRate_type(instance):
-    assert isinstance(instance.transRate, float)
-
-
-@given(instance=ctxmngr::CtxTransition_strategy)
-def test_ctxmngr::ctxtransition_transRate_setter(instance):
-    original = instance.transRate
-    instance.transRate = original
-    assert instance.transRate == original
-
-@given(instance=ctxmngr::CtxTransition_strategy)
-def test_ctxmngr::ctxtransition_Event_type(instance):
-    assert isinstance(instance.Event, str)
-
-
-@given(instance=ctxmngr::CtxTransition_strategy)
-def test_ctxmngr::ctxtransition_Event_setter(instance):
-    original = instance.Event
-    instance.Event = original
-    assert instance.Event == original
-
-@given(instance=ctxmngr::CtxTransition_strategy)
-def test_ctxmngr::ctxtransition_isRemote_type(instance):
-    assert isinstance(instance.isRemote, bool)
-
-
-@given(instance=ctxmngr::CtxTransition_strategy)
-def test_ctxmngr::ctxtransition_isRemote_setter(instance):
-    original = instance.isRemote
-    instance.isRemote = original
-    assert instance.isRemote == original
-
-@given(instance=ctxmngr::CtxTransition_strategy)
-def test_ctxmngr::ctxtransition_Action_type(instance):
-    assert isinstance(instance.Action, str)
-
-
-@given(instance=ctxmngr::CtxTransition_strategy)
-def test_ctxmngr::ctxtransition_Action_setter(instance):
-    original = instance.Action
-    instance.Action = original
-    assert instance.Action == original
-
-@given(instance=ctxmngr::CtxTransition_strategy)
-def test_ctxmngr::ctxtransition_Condition_type(instance):
-    assert isinstance(instance.Condition, str)
-
-
-@given(instance=ctxmngr::CtxTransition_strategy)
-def test_ctxmngr::ctxtransition_Condition_setter(instance):
-    original = instance.Condition
-    instance.Condition = original
-    assert instance.Condition == original
-
-@given(instance=ctxmngr::CtxTransition_strategy)
-def test_ctxmngr::ctxtransition_input_type(instance):
-    assert isinstance(instance.input, str)
-
-
-@given(instance=ctxmngr::CtxTransition_strategy)
-def test_ctxmngr::ctxtransition_input_setter(instance):
-    original = instance.input
-    instance.input = original
-    assert instance.input == original
-
-@given(instance=ctxmngr::CtxState_strategy)
-@settings(max_examples=50)
-def test_ctxmngr::ctxstate_instantiation(instance):
-    assert isinstance(instance, ctxmngr::CtxState)
-
-@given(instance=ctxmngr::CtxState_strategy)
-def test_ctxmngr::ctxstate_isStart_type(instance):
-    assert isinstance(instance.isStart, bool)
-
-
-@given(instance=ctxmngr::CtxState_strategy)
-def test_ctxmngr::ctxstate_isStart_setter(instance):
+@given(instance=ctxmngr_CtxState_strategy)
+def test_ctxmngr_ctxstate_isStart_setter(instance):
     original = instance.isStart
     instance.isStart = original
     assert instance.isStart == original
 
-@given(instance=ctxmngr::CtxState_strategy)
-def test_ctxmngr::ctxstate_isEnd_type(instance):
-    assert isinstance(instance.isEnd, bool)
 
 
-@given(instance=ctxmngr::CtxState_strategy)
-def test_ctxmngr::ctxstate_isEnd_setter(instance):
+@given(instance=ctxmngr_CtxState_strategy)
+def test_ctxmngr_ctxstate_isEnd_setter(instance):
     original = instance.isEnd
     instance.isEnd = original
     assert instance.isEnd == original
+
+@given(instance=ctxmngr_CtxTransition_strategy)
+@settings(max_examples=50)
+def test_ctxmngr_ctxtransition_instantiation(instance):
+    assert isinstance(instance, ctxmngr_CtxTransition)
+
+
+
+@given(instance=ctxmngr_CtxTransition_strategy)
+def test_ctxmngr_ctxtransition_Action_setter(instance):
+    original = instance.Action
+    instance.Action = original
+    assert instance.Action == original
+
+
+
+@given(instance=ctxmngr_CtxTransition_strategy)
+def test_ctxmngr_ctxtransition_Event_setter(instance):
+    original = instance.Event
+    instance.Event = original
+    assert instance.Event == original
+
+
+
+@given(instance=ctxmngr_CtxTransition_strategy)
+def test_ctxmngr_ctxtransition_transRate_setter(instance):
+    original = instance.transRate
+    instance.transRate = original
+    assert instance.transRate == original
+
+
+
+@given(instance=ctxmngr_CtxTransition_strategy)
+def test_ctxmngr_ctxtransition_Condition_setter(instance):
+    original = instance.Condition
+    instance.Condition = original
+    assert instance.Condition == original
+
+
+
+@given(instance=ctxmngr_CtxTransition_strategy)
+def test_ctxmngr_ctxtransition_input_setter(instance):
+    original = instance.input
+    instance.input = original
+    assert instance.input == original
+
+
+
+@given(instance=ctxmngr_CtxTransition_strategy)
+def test_ctxmngr_ctxtransition_transProb_setter(instance):
+    original = instance.transProb
+    instance.transProb = original
+    assert instance.transProb == original
+
+
+
+@given(instance=ctxmngr_CtxTransition_strategy)
+def test_ctxmngr_ctxtransition_output_setter(instance):
+    original = instance.output
+    instance.output = original
+    assert instance.output == original
+
+
+
+@given(instance=ctxmngr_CtxTransition_strategy)
+def test_ctxmngr_ctxtransition_isRemote_setter(instance):
+    original = instance.isRemote
+    instance.isRemote = original
+    assert instance.isRemote == original
+
+@given(instance=ctxmngr_RemoteFiringDependency_strategy)
+@settings(max_examples=50)
+def test_ctxmngr_remotefiringdependency_instantiation(instance):
+    assert isinstance(instance, ctxmngr_RemoteFiringDependency)
+
+@given(instance=ctxmngr_ContextParameter_strategy)
+@settings(max_examples=50)
+def test_ctxmngr_contextparameter_instantiation(instance):
+    assert isinstance(instance, ctxmngr_ContextParameter)
+
+
+
+@given(instance=ctxmngr_ContextParameter_strategy)
+def test_ctxmngr_contextparameter_isInput_setter(instance):
+    original = instance.isInput
+    instance.isInput = original
+    assert instance.isInput == original
+
+
+
+@given(instance=ctxmngr_ContextParameter_strategy)
+def test_ctxmngr_contextparameter_LitteralInteger_setter(instance):
+    original = instance.LitteralInteger
+    instance.LitteralInteger = original
+    assert instance.LitteralInteger == original
+
+
+
+@given(instance=ctxmngr_ContextParameter_strategy)
+def test_ctxmngr_contextparameter_LitteralBoolean_setter(instance):
+    original = instance.LitteralBoolean
+    instance.LitteralBoolean = original
+    assert instance.LitteralBoolean == original
+
+
+
+@given(instance=ctxmngr_ContextParameter_strategy)
+def test_ctxmngr_contextparameter_LitteralUnlimitedNatural_setter(instance):
+    original = instance.LitteralUnlimitedNatural
+    instance.LitteralUnlimitedNatural = original
+    assert instance.LitteralUnlimitedNatural == original
+
+
+
+@given(instance=ctxmngr_ContextParameter_strategy)
+def test_ctxmngr_contextparameter_LitteralString_setter(instance):
+    original = instance.LitteralString
+    instance.LitteralString = original
+    assert instance.LitteralString == original
+
+@given(instance=ctxmngr_ContextManager_strategy)
+@settings(max_examples=50)
+def test_ctxmngr_contextmanager_instantiation(instance):
+    assert isinstance(instance, ctxmngr_ContextManager)
+
+@given(instance=ctxmngr_ManagerState_strategy)
+@settings(max_examples=50)
+def test_ctxmngr_managerstate_instantiation(instance):
+    assert isinstance(instance, ctxmngr_ManagerState)

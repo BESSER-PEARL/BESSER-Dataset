@@ -3,21 +3,9 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
 from python_code import (
-    DetailDescription,
-    ShortReview,
-    OriginalReview,
-    ClientRewiev,
-    Review_Interface,
-    DatabaseAPI,
-    ClientDatabase,
-    SearchRequest,
-    Catalog,
-    Wishlist,
-    Client_hoice_Interface,
-    PaymentByAccaunt,
     Order,
     Basket,
     Payment_Interface,
@@ -88,209 +76,23 @@ from python_code import (
     InnerBookStorage,
     OwnBookStorage,
     BookStorage_Interface,
+    DetailDescription,
+    ShortReview,
+    OriginalReview,
+    ClientRewiev,
+    Review_Interface,
+    DatabaseAPI,
+    ClientDatabase,
+    SearchRequest,
+    Catalog,
+    Wishlist,
+    Client_hoice_Interface,
+    PaymentByAccaunt,
 )
 
 # =============================================================================
 # SECTION 1 — STRUCTURAL TESTS
 # =============================================================================
-
-
-
-def test_detaildescription_is_not_abstract():
-    assert not inspect.isabstract(DetailDescription)
-
-
-def test_detaildescription_constructor_exists():
-    assert callable(DetailDescription.__init__)
-
-
-def test_detaildescription_constructor_args():
-    sig = inspect.signature(DetailDescription.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_shortreview_is_not_abstract():
-    assert not inspect.isabstract(ShortReview)
-
-
-def test_shortreview_constructor_exists():
-    assert callable(ShortReview.__init__)
-
-
-def test_shortreview_constructor_args():
-    sig = inspect.signature(ShortReview.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_originalreview_is_not_abstract():
-    assert not inspect.isabstract(OriginalReview)
-
-
-def test_originalreview_constructor_exists():
-    assert callable(OriginalReview.__init__)
-
-
-def test_originalreview_constructor_args():
-    sig = inspect.signature(OriginalReview.__init__)
-    params = list(sig.parameters.keys())
-    assert "texr" in params, "Missing parameter 'texr'"
-
-def test_originalreview_has_texr():
-    assert hasattr(OriginalReview, "texr")
-    descriptor = None
-    for klass in OriginalReview.__mro__:
-        if "texr" in klass.__dict__:
-            descriptor = klass.__dict__["texr"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_clientrewiev_is_not_abstract():
-    assert not inspect.isabstract(ClientRewiev)
-
-
-def test_clientrewiev_constructor_exists():
-    assert callable(ClientRewiev.__init__)
-
-
-def test_clientrewiev_constructor_args():
-    sig = inspect.signature(ClientRewiev.__init__)
-    params = list(sig.parameters.keys())
-    assert "text" in params, "Missing parameter 'text'"
-    assert "mark" in params, "Missing parameter 'mark'"
-
-def test_clientrewiev_has_text():
-    assert hasattr(ClientRewiev, "text")
-    descriptor = None
-    for klass in ClientRewiev.__mro__:
-        if "text" in klass.__dict__:
-            descriptor = klass.__dict__["text"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_clientrewiev_has_mark():
-    assert hasattr(ClientRewiev, "mark")
-    descriptor = None
-    for klass in ClientRewiev.__mro__:
-        if "mark" in klass.__dict__:
-            descriptor = klass.__dict__["mark"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_review_interface_is_not_abstract():
-    assert not inspect.isabstract(Review_Interface)
-
-
-def test_review_interface_constructor_exists():
-    assert callable(Review_Interface.__init__)
-
-
-def test_review_interface_constructor_args():
-    sig = inspect.signature(Review_Interface.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_databaseapi_is_not_abstract():
-    assert not inspect.isabstract(DatabaseAPI)
-
-
-def test_databaseapi_constructor_exists():
-    assert callable(DatabaseAPI.__init__)
-
-
-def test_databaseapi_constructor_args():
-    sig = inspect.signature(DatabaseAPI.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_clientdatabase_is_not_abstract():
-    assert not inspect.isabstract(ClientDatabase)
-
-
-def test_clientdatabase_constructor_exists():
-    assert callable(ClientDatabase.__init__)
-
-
-def test_clientdatabase_constructor_args():
-    sig = inspect.signature(ClientDatabase.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_searchrequest_is_not_abstract():
-    assert not inspect.isabstract(SearchRequest)
-
-
-def test_searchrequest_constructor_exists():
-    assert callable(SearchRequest.__init__)
-
-
-def test_searchrequest_constructor_args():
-    sig = inspect.signature(SearchRequest.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_catalog_is_not_abstract():
-    assert not inspect.isabstract(Catalog)
-
-
-def test_catalog_constructor_exists():
-    assert callable(Catalog.__init__)
-
-
-def test_catalog_constructor_args():
-    sig = inspect.signature(Catalog.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_wishlist_is_not_abstract():
-    assert not inspect.isabstract(Wishlist)
-
-
-def test_wishlist_constructor_exists():
-    assert callable(Wishlist.__init__)
-
-
-def test_wishlist_constructor_args():
-    sig = inspect.signature(Wishlist.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_client_hoice_interface_is_not_abstract():
-    assert not inspect.isabstract(Client_hoice_Interface)
-
-
-def test_client_hoice_interface_constructor_exists():
-    assert callable(Client_hoice_Interface.__init__)
-
-
-def test_client_hoice_interface_constructor_args():
-    sig = inspect.signature(Client_hoice_Interface.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_paymentbyaccaunt_is_not_abstract():
-    assert not inspect.isabstract(PaymentByAccaunt)
-
-
-def test_paymentbyaccaunt_constructor_exists():
-    assert callable(PaymentByAccaunt.__init__)
-
-
-def test_paymentbyaccaunt_constructor_args():
-    sig = inspect.signature(PaymentByAccaunt.__init__)
-    params = list(sig.parameters.keys())
 
 
 
@@ -403,16 +205,16 @@ def test_client_constructor_exists():
 def test_client_constructor_args():
     sig = inspect.signature(Client.__init__)
     params = list(sig.parameters.keys())
-    assert "addres" in params, "Missing parameter 'addres'"
-    assert "name" in params, "Missing parameter 'name'"
     assert "card" in params, "Missing parameter 'card'"
+    assert "name" in params, "Missing parameter 'name'"
+    assert "addres" in params, "Missing parameter 'addres'"
 
-def test_client_has_addres():
-    assert hasattr(Client, "addres")
+def test_client_has_card():
+    assert hasattr(Client, "card")
     descriptor = None
     for klass in Client.__mro__:
-        if "addres" in klass.__dict__:
-            descriptor = klass.__dict__["addres"]
+        if "card" in klass.__dict__:
+            descriptor = klass.__dict__["card"]
             break
     assert isinstance(descriptor, property)
 
@@ -425,12 +227,12 @@ def test_client_has_name():
             break
     assert isinstance(descriptor, property)
 
-def test_client_has_card():
-    assert hasattr(Client, "card")
+def test_client_has_addres():
+    assert hasattr(Client, "addres")
     descriptor = None
     for klass in Client.__mro__:
-        if "card" in klass.__dict__:
-            descriptor = klass.__dict__["card"]
+        if "addres" in klass.__dict__:
+            descriptor = klass.__dict__["addres"]
             break
     assert isinstance(descriptor, property)
 
@@ -448,8 +250,8 @@ def test_book_constructor_args():
     sig = inspect.signature(book.__init__)
     params = list(sig.parameters.keys())
     assert "rate" in params, "Missing parameter 'rate'"
-    assert "keywords" in params, "Missing parameter 'keywords'"
     assert "author" in params, "Missing parameter 'author'"
+    assert "keywords" in params, "Missing parameter 'keywords'"
     assert "title" in params, "Missing parameter 'title'"
     assert "catygory" in params, "Missing parameter 'catygory'"
 
@@ -462,21 +264,21 @@ def test_book_has_rate():
             break
     assert isinstance(descriptor, property)
 
-def test_book_has_keywords():
-    assert hasattr(book, "keywords")
-    descriptor = None
-    for klass in book.__mro__:
-        if "keywords" in klass.__dict__:
-            descriptor = klass.__dict__["keywords"]
-            break
-    assert isinstance(descriptor, property)
-
 def test_book_has_author():
     assert hasattr(book, "author")
     descriptor = None
     for klass in book.__mro__:
         if "author" in klass.__dict__:
             descriptor = klass.__dict__["author"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_book_has_keywords():
+    assert hasattr(book, "keywords")
+    descriptor = None
+    for klass in book.__mro__:
+        if "keywords" in klass.__dict__:
+            descriptor = klass.__dict__["keywords"]
             break
     assert isinstance(descriptor, property)
 
@@ -1255,8 +1057,8 @@ def test_classc_constructor_args():
     params = list(sig.parameters.keys())
     assert "protectedAttribute" in params, "Missing parameter 'protectedAttribute'"
     assert "publicAttribute" in params, "Missing parameter 'publicAttribute'"
-    assert "packageAttribute" in params, "Missing parameter 'packageAttribute'"
     assert "privateAttribute" in params, "Missing parameter 'privateAttribute'"
+    assert "packageAttribute" in params, "Missing parameter 'packageAttribute'"
 
 def test_classc_has_protectedAttribute():
     assert hasattr(ClassC, "protectedAttribute")
@@ -1276,21 +1078,21 @@ def test_classc_has_publicAttribute():
             break
     assert isinstance(descriptor, property)
 
-def test_classc_has_packageAttribute():
-    assert hasattr(ClassC, "packageAttribute")
-    descriptor = None
-    for klass in ClassC.__mro__:
-        if "packageAttribute" in klass.__dict__:
-            descriptor = klass.__dict__["packageAttribute"]
-            break
-    assert isinstance(descriptor, property)
-
 def test_classc_has_privateAttribute():
     assert hasattr(ClassC, "privateAttribute")
     descriptor = None
     for klass in ClassC.__mro__:
         if "privateAttribute" in klass.__dict__:
             descriptor = klass.__dict__["privateAttribute"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_classc_has_packageAttribute():
+    assert hasattr(ClassC, "packageAttribute")
+    descriptor = None
+    for klass in ClassC.__mro__:
+        if "packageAttribute" in klass.__dict__:
+            descriptor = klass.__dict__["packageAttribute"]
             break
     assert isinstance(descriptor, property)
 
@@ -1321,17 +1123,17 @@ def test_classa_constructor_exists():
 def test_classa_constructor_args():
     sig = inspect.signature(ClassA.__init__)
     params = list(sig.parameters.keys())
-    assert "packageAttribute" in params, "Missing parameter 'packageAttribute'"
+    assert "privateAttribute" in params, "Missing parameter 'privateAttribute'"
     assert "publicAttribute" in params, "Missing parameter 'publicAttribute'"
     assert "protectedAttribute" in params, "Missing parameter 'protectedAttribute'"
-    assert "privateAttribute" in params, "Missing parameter 'privateAttribute'"
+    assert "packageAttribute" in params, "Missing parameter 'packageAttribute'"
 
-def test_classa_has_packageAttribute():
-    assert hasattr(ClassA, "packageAttribute")
+def test_classa_has_privateAttribute():
+    assert hasattr(ClassA, "privateAttribute")
     descriptor = None
     for klass in ClassA.__mro__:
-        if "packageAttribute" in klass.__dict__:
-            descriptor = klass.__dict__["packageAttribute"]
+        if "privateAttribute" in klass.__dict__:
+            descriptor = klass.__dict__["privateAttribute"]
             break
     assert isinstance(descriptor, property)
 
@@ -1353,12 +1155,12 @@ def test_classa_has_protectedAttribute():
             break
     assert isinstance(descriptor, property)
 
-def test_classa_has_privateAttribute():
-    assert hasattr(ClassA, "privateAttribute")
+def test_classa_has_packageAttribute():
+    assert hasattr(ClassA, "packageAttribute")
     descriptor = None
     for klass in ClassA.__mro__:
-        if "privateAttribute" in klass.__dict__:
-            descriptor = klass.__dict__["privateAttribute"]
+        if "packageAttribute" in klass.__dict__:
+            descriptor = klass.__dict__["packageAttribute"]
             break
     assert isinstance(descriptor, property)
 
@@ -1375,17 +1177,8 @@ def test_bankaccount_constructor_exists():
 def test_bankaccount_constructor_args():
     sig = inspect.signature(BankAccount.__init__)
     params = list(sig.parameters.keys())
-    assert "balance" in params, "Missing parameter 'balance'"
     assert "ownerName" in params, "Missing parameter 'ownerName'"
-
-def test_bankaccount_has_balance():
-    assert hasattr(BankAccount, "balance")
-    descriptor = None
-    for klass in BankAccount.__mro__:
-        if "balance" in klass.__dict__:
-            descriptor = klass.__dict__["balance"]
-            break
-    assert isinstance(descriptor, property)
+    assert "balance" in params, "Missing parameter 'balance'"
 
 def test_bankaccount_has_ownerName():
     assert hasattr(BankAccount, "ownerName")
@@ -1393,6 +1186,15 @@ def test_bankaccount_has_ownerName():
     for klass in BankAccount.__mro__:
         if "ownerName" in klass.__dict__:
             descriptor = klass.__dict__["ownerName"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_bankaccount_has_balance():
+    assert hasattr(BankAccount, "balance")
+    descriptor = None
+    for klass in BankAccount.__mro__:
+        if "balance" in klass.__dict__:
+            descriptor = klass.__dict__["balance"]
             break
     assert isinstance(descriptor, property)
 
@@ -1453,6 +1255,204 @@ def test_bookstorage_interface_constructor_args():
     params = list(sig.parameters.keys())
 
 
+
+def test_detaildescription_is_not_abstract():
+    assert not inspect.isabstract(DetailDescription)
+
+
+def test_detaildescription_constructor_exists():
+    assert callable(DetailDescription.__init__)
+
+
+def test_detaildescription_constructor_args():
+    sig = inspect.signature(DetailDescription.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_shortreview_is_not_abstract():
+    assert not inspect.isabstract(ShortReview)
+
+
+def test_shortreview_constructor_exists():
+    assert callable(ShortReview.__init__)
+
+
+def test_shortreview_constructor_args():
+    sig = inspect.signature(ShortReview.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_originalreview_is_not_abstract():
+    assert not inspect.isabstract(OriginalReview)
+
+
+def test_originalreview_constructor_exists():
+    assert callable(OriginalReview.__init__)
+
+
+def test_originalreview_constructor_args():
+    sig = inspect.signature(OriginalReview.__init__)
+    params = list(sig.parameters.keys())
+    assert "texr" in params, "Missing parameter 'texr'"
+
+def test_originalreview_has_texr():
+    assert hasattr(OriginalReview, "texr")
+    descriptor = None
+    for klass in OriginalReview.__mro__:
+        if "texr" in klass.__dict__:
+            descriptor = klass.__dict__["texr"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_clientrewiev_is_not_abstract():
+    assert not inspect.isabstract(ClientRewiev)
+
+
+def test_clientrewiev_constructor_exists():
+    assert callable(ClientRewiev.__init__)
+
+
+def test_clientrewiev_constructor_args():
+    sig = inspect.signature(ClientRewiev.__init__)
+    params = list(sig.parameters.keys())
+    assert "text" in params, "Missing parameter 'text'"
+    assert "mark" in params, "Missing parameter 'mark'"
+
+def test_clientrewiev_has_text():
+    assert hasattr(ClientRewiev, "text")
+    descriptor = None
+    for klass in ClientRewiev.__mro__:
+        if "text" in klass.__dict__:
+            descriptor = klass.__dict__["text"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_clientrewiev_has_mark():
+    assert hasattr(ClientRewiev, "mark")
+    descriptor = None
+    for klass in ClientRewiev.__mro__:
+        if "mark" in klass.__dict__:
+            descriptor = klass.__dict__["mark"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_review_interface_is_not_abstract():
+    assert not inspect.isabstract(Review_Interface)
+
+
+def test_review_interface_constructor_exists():
+    assert callable(Review_Interface.__init__)
+
+
+def test_review_interface_constructor_args():
+    sig = inspect.signature(Review_Interface.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_databaseapi_is_not_abstract():
+    assert not inspect.isabstract(DatabaseAPI)
+
+
+def test_databaseapi_constructor_exists():
+    assert callable(DatabaseAPI.__init__)
+
+
+def test_databaseapi_constructor_args():
+    sig = inspect.signature(DatabaseAPI.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_clientdatabase_is_not_abstract():
+    assert not inspect.isabstract(ClientDatabase)
+
+
+def test_clientdatabase_constructor_exists():
+    assert callable(ClientDatabase.__init__)
+
+
+def test_clientdatabase_constructor_args():
+    sig = inspect.signature(ClientDatabase.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_searchrequest_is_not_abstract():
+    assert not inspect.isabstract(SearchRequest)
+
+
+def test_searchrequest_constructor_exists():
+    assert callable(SearchRequest.__init__)
+
+
+def test_searchrequest_constructor_args():
+    sig = inspect.signature(SearchRequest.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_catalog_is_not_abstract():
+    assert not inspect.isabstract(Catalog)
+
+
+def test_catalog_constructor_exists():
+    assert callable(Catalog.__init__)
+
+
+def test_catalog_constructor_args():
+    sig = inspect.signature(Catalog.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_wishlist_is_not_abstract():
+    assert not inspect.isabstract(Wishlist)
+
+
+def test_wishlist_constructor_exists():
+    assert callable(Wishlist.__init__)
+
+
+def test_wishlist_constructor_args():
+    sig = inspect.signature(Wishlist.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_client_hoice_interface_is_not_abstract():
+    assert not inspect.isabstract(Client_hoice_Interface)
+
+
+def test_client_hoice_interface_constructor_exists():
+    assert callable(Client_hoice_Interface.__init__)
+
+
+def test_client_hoice_interface_constructor_args():
+    sig = inspect.signature(Client_hoice_Interface.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_paymentbyaccaunt_is_not_abstract():
+    assert not inspect.isabstract(PaymentByAccaunt)
+
+
+def test_paymentbyaccaunt_constructor_exists():
+    assert callable(PaymentByAccaunt.__init__)
+
+
+def test_paymentbyaccaunt_constructor_args():
+    sig = inspect.signature(PaymentByAccaunt.__init__)
+    params = list(sig.parameters.keys())
+
+
 # =============================================================================
 # HYPOTHESIS STRATEGIES
 # =============================================================================
@@ -1464,48 +1464,6 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-DetailDescription_strategy = st.builds(
-    DetailDescription,
-)
-ShortReview_strategy = st.builds(
-    ShortReview,
-)
-OriginalReview_strategy = st.builds(
-    OriginalReview,
-    texr=
-        safe_text
-)
-ClientRewiev_strategy = st.builds(
-    ClientRewiev,
-    text=
-        safe_text,
-    mark=
-        st.integers()
-)
-Review_Interface_strategy = st.builds(
-    Review_Interface,
-)
-DatabaseAPI_strategy = st.builds(
-    DatabaseAPI,
-)
-ClientDatabase_strategy = st.builds(
-    ClientDatabase,
-)
-SearchRequest_strategy = st.builds(
-    SearchRequest,
-)
-Catalog_strategy = st.builds(
-    Catalog,
-)
-Wishlist_strategy = st.builds(
-    Wishlist,
-)
-Client_hoice_Interface_strategy = st.builds(
-    Client_hoice_Interface,
-)
-PaymentByAccaunt_strategy = st.builds(
-    PaymentByAccaunt,
-)
 Order_strategy = st.builds(
     Order,
 )
@@ -1529,20 +1487,20 @@ SystemUser_Interface_strategy = st.builds(
 )
 Client_strategy = st.builds(
     Client,
-    addres=
+    card=
         safe_text,
     name=
         safe_text,
-    card=
+    addres=
         safe_text
 )
 book_strategy = st.builds(
     book,
     rate=
         st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False),
-    keywords=
-        safe_text,
     author=
+        safe_text,
+    keywords=
         safe_text,
     title=
         safe_text,
@@ -1714,31 +1672,31 @@ ClassC_strategy = st.builds(
         safe_text,
     publicAttribute=
         st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False),
-    packageAttribute=
-        safe_text,
     privateAttribute=
-        st.integers()
+        st.integers(),
+    packageAttribute=
+        safe_text
 )
 ClassB_strategy = st.builds(
     ClassB,
 )
 ClassA_strategy = st.builds(
     ClassA,
-    packageAttribute=
-        safe_text,
+    privateAttribute=
+        st.integers(),
     publicAttribute=
         st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False),
     protectedAttribute=
         safe_text,
-    privateAttribute=
-        st.integers()
+    packageAttribute=
+        safe_text
 )
 BankAccount_strategy = st.builds(
     BankAccount,
-    balance=
-        st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False),
     ownerName=
-        safe_text
+        safe_text,
+    balance=
+        st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False)
 )
 PaymentByCard1_strategy = st.builds(
     PaymentByCard1,
@@ -1752,99 +1710,48 @@ OwnBookStorage_strategy = st.builds(
 BookStorage_Interface_strategy = st.builds(
     BookStorage_Interface,
 )
-
-@given(instance=DetailDescription_strategy)
-@settings(max_examples=50)
-def test_detaildescription_instantiation(instance):
-    assert isinstance(instance, DetailDescription)
-
-@given(instance=ShortReview_strategy)
-@settings(max_examples=50)
-def test_shortreview_instantiation(instance):
-    assert isinstance(instance, ShortReview)
-
-@given(instance=OriginalReview_strategy)
-@settings(max_examples=50)
-def test_originalreview_instantiation(instance):
-    assert isinstance(instance, OriginalReview)
-
-@given(instance=OriginalReview_strategy)
-def test_originalreview_texr_type(instance):
-    assert isinstance(instance.texr, str)
-
-
-@given(instance=OriginalReview_strategy)
-def test_originalreview_texr_setter(instance):
-    original = instance.texr
-    instance.texr = original
-    assert instance.texr == original
-
-@given(instance=ClientRewiev_strategy)
-@settings(max_examples=50)
-def test_clientrewiev_instantiation(instance):
-    assert isinstance(instance, ClientRewiev)
-
-@given(instance=ClientRewiev_strategy)
-def test_clientrewiev_text_type(instance):
-    assert isinstance(instance.text, str)
-
-
-@given(instance=ClientRewiev_strategy)
-def test_clientrewiev_text_setter(instance):
-    original = instance.text
-    instance.text = original
-    assert instance.text == original
-
-@given(instance=ClientRewiev_strategy)
-def test_clientrewiev_mark_type(instance):
-    assert isinstance(instance.mark, int)
-
-
-@given(instance=ClientRewiev_strategy)
-def test_clientrewiev_mark_setter(instance):
-    original = instance.mark
-    instance.mark = original
-    assert instance.mark == original
-
-@given(instance=Review_Interface_strategy)
-@settings(max_examples=50)
-def test_review_interface_instantiation(instance):
-    assert isinstance(instance, Review_Interface)
-
-@given(instance=DatabaseAPI_strategy)
-@settings(max_examples=50)
-def test_databaseapi_instantiation(instance):
-    assert isinstance(instance, DatabaseAPI)
-
-@given(instance=ClientDatabase_strategy)
-@settings(max_examples=50)
-def test_clientdatabase_instantiation(instance):
-    assert isinstance(instance, ClientDatabase)
-
-@given(instance=SearchRequest_strategy)
-@settings(max_examples=50)
-def test_searchrequest_instantiation(instance):
-    assert isinstance(instance, SearchRequest)
-
-@given(instance=Catalog_strategy)
-@settings(max_examples=50)
-def test_catalog_instantiation(instance):
-    assert isinstance(instance, Catalog)
-
-@given(instance=Wishlist_strategy)
-@settings(max_examples=50)
-def test_wishlist_instantiation(instance):
-    assert isinstance(instance, Wishlist)
-
-@given(instance=Client_hoice_Interface_strategy)
-@settings(max_examples=50)
-def test_client_hoice_interface_instantiation(instance):
-    assert isinstance(instance, Client_hoice_Interface)
-
-@given(instance=PaymentByAccaunt_strategy)
-@settings(max_examples=50)
-def test_paymentbyaccaunt_instantiation(instance):
-    assert isinstance(instance, PaymentByAccaunt)
+DetailDescription_strategy = st.builds(
+    DetailDescription,
+)
+ShortReview_strategy = st.builds(
+    ShortReview,
+)
+OriginalReview_strategy = st.builds(
+    OriginalReview,
+    texr=
+        safe_text
+)
+ClientRewiev_strategy = st.builds(
+    ClientRewiev,
+    text=
+        safe_text,
+    mark=
+        st.integers()
+)
+Review_Interface_strategy = st.builds(
+    Review_Interface,
+)
+DatabaseAPI_strategy = st.builds(
+    DatabaseAPI,
+)
+ClientDatabase_strategy = st.builds(
+    ClientDatabase,
+)
+SearchRequest_strategy = st.builds(
+    SearchRequest,
+)
+Catalog_strategy = st.builds(
+    Catalog,
+)
+Wishlist_strategy = st.builds(
+    Wishlist,
+)
+Client_hoice_Interface_strategy = st.builds(
+    Client_hoice_Interface,
+)
+PaymentByAccaunt_strategy = st.builds(
+    PaymentByAccaunt,
+)
 
 @given(instance=Order_strategy)
 @settings(max_examples=50)
@@ -1886,31 +1793,6 @@ def test_systemuser_interface_instantiation(instance):
 def test_client_instantiation(instance):
     assert isinstance(instance, Client)
 
-@given(instance=Client_strategy)
-def test_client_addres_type(instance):
-    assert isinstance(instance.addres, str)
-
-
-@given(instance=Client_strategy)
-def test_client_addres_setter(instance):
-    original = instance.addres
-    instance.addres = original
-    assert instance.addres == original
-
-@given(instance=Client_strategy)
-def test_client_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=Client_strategy)
-def test_client_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
-
-@given(instance=Client_strategy)
-def test_client_card_type(instance):
-    assert isinstance(instance.card, str)
 
 
 @given(instance=Client_strategy)
@@ -1919,14 +1801,27 @@ def test_client_card_setter(instance):
     instance.card = original
     assert instance.card == original
 
+
+
+@given(instance=Client_strategy)
+def test_client_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+
+
+@given(instance=Client_strategy)
+def test_client_addres_setter(instance):
+    original = instance.addres
+    instance.addres = original
+    assert instance.addres == original
+
 @given(instance=book_strategy)
 @settings(max_examples=50)
 def test_book_instantiation(instance):
     assert isinstance(instance, book)
 
-@given(instance=book_strategy)
-def test_book_rate_type(instance):
-    assert isinstance(instance.rate, float)
 
 
 @given(instance=book_strategy)
@@ -1935,20 +1830,6 @@ def test_book_rate_setter(instance):
     instance.rate = original
     assert instance.rate == original
 
-@given(instance=book_strategy)
-def test_book_keywords_type(instance):
-    assert isinstance(instance.keywords, str)
-
-
-@given(instance=book_strategy)
-def test_book_keywords_setter(instance):
-    original = instance.keywords
-    instance.keywords = original
-    assert instance.keywords == original
-
-@given(instance=book_strategy)
-def test_book_author_type(instance):
-    assert isinstance(instance.author, str)
 
 
 @given(instance=book_strategy)
@@ -1957,9 +1838,14 @@ def test_book_author_setter(instance):
     instance.author = original
     assert instance.author == original
 
+
+
 @given(instance=book_strategy)
-def test_book_title_type(instance):
-    assert isinstance(instance.title, str)
+def test_book_keywords_setter(instance):
+    original = instance.keywords
+    instance.keywords = original
+    assert instance.keywords == original
+
 
 
 @given(instance=book_strategy)
@@ -1968,9 +1854,6 @@ def test_book_title_setter(instance):
     instance.title = original
     assert instance.title == original
 
-@given(instance=book_strategy)
-def test_book_catygory_type(instance):
-    assert isinstance(instance.catygory, str)
 
 
 @given(instance=book_strategy)
@@ -2249,9 +2132,6 @@ def test_classd_instantiation(instance):
 def test_classc_instantiation(instance):
     assert isinstance(instance, ClassC)
 
-@given(instance=ClassC_strategy)
-def test_classc_protectedAttribute_type(instance):
-    assert isinstance(instance.protectedAttribute, str)
 
 
 @given(instance=ClassC_strategy)
@@ -2260,9 +2140,6 @@ def test_classc_protectedAttribute_setter(instance):
     instance.protectedAttribute = original
     assert instance.protectedAttribute == original
 
-@given(instance=ClassC_strategy)
-def test_classc_publicAttribute_type(instance):
-    assert isinstance(instance.publicAttribute, float)
 
 
 @given(instance=ClassC_strategy)
@@ -2271,20 +2148,6 @@ def test_classc_publicAttribute_setter(instance):
     instance.publicAttribute = original
     assert instance.publicAttribute == original
 
-@given(instance=ClassC_strategy)
-def test_classc_packageAttribute_type(instance):
-    assert isinstance(instance.packageAttribute, str)
-
-
-@given(instance=ClassC_strategy)
-def test_classc_packageAttribute_setter(instance):
-    original = instance.packageAttribute
-    instance.packageAttribute = original
-    assert instance.packageAttribute == original
-
-@given(instance=ClassC_strategy)
-def test_classc_privateAttribute_type(instance):
-    assert isinstance(instance.privateAttribute, int)
 
 
 @given(instance=ClassC_strategy)
@@ -2292,6 +2155,14 @@ def test_classc_privateAttribute_setter(instance):
     original = instance.privateAttribute
     instance.privateAttribute = original
     assert instance.privateAttribute == original
+
+
+
+@given(instance=ClassC_strategy)
+def test_classc_packageAttribute_setter(instance):
+    original = instance.packageAttribute
+    instance.packageAttribute = original
+    assert instance.packageAttribute == original
 
 @given(instance=ClassB_strategy)
 @settings(max_examples=50)
@@ -2303,42 +2174,6 @@ def test_classb_instantiation(instance):
 def test_classa_instantiation(instance):
     assert isinstance(instance, ClassA)
 
-@given(instance=ClassA_strategy)
-def test_classa_packageAttribute_type(instance):
-    assert isinstance(instance.packageAttribute, str)
-
-
-@given(instance=ClassA_strategy)
-def test_classa_packageAttribute_setter(instance):
-    original = instance.packageAttribute
-    instance.packageAttribute = original
-    assert instance.packageAttribute == original
-
-@given(instance=ClassA_strategy)
-def test_classa_publicAttribute_type(instance):
-    assert isinstance(instance.publicAttribute, float)
-
-
-@given(instance=ClassA_strategy)
-def test_classa_publicAttribute_setter(instance):
-    original = instance.publicAttribute
-    instance.publicAttribute = original
-    assert instance.publicAttribute == original
-
-@given(instance=ClassA_strategy)
-def test_classa_protectedAttribute_type(instance):
-    assert isinstance(instance.protectedAttribute, str)
-
-
-@given(instance=ClassA_strategy)
-def test_classa_protectedAttribute_setter(instance):
-    original = instance.protectedAttribute
-    instance.protectedAttribute = original
-    assert instance.protectedAttribute == original
-
-@given(instance=ClassA_strategy)
-def test_classa_privateAttribute_type(instance):
-    assert isinstance(instance.privateAttribute, int)
 
 
 @given(instance=ClassA_strategy)
@@ -2347,25 +2182,35 @@ def test_classa_privateAttribute_setter(instance):
     instance.privateAttribute = original
     assert instance.privateAttribute == original
 
+
+
+@given(instance=ClassA_strategy)
+def test_classa_publicAttribute_setter(instance):
+    original = instance.publicAttribute
+    instance.publicAttribute = original
+    assert instance.publicAttribute == original
+
+
+
+@given(instance=ClassA_strategy)
+def test_classa_protectedAttribute_setter(instance):
+    original = instance.protectedAttribute
+    instance.protectedAttribute = original
+    assert instance.protectedAttribute == original
+
+
+
+@given(instance=ClassA_strategy)
+def test_classa_packageAttribute_setter(instance):
+    original = instance.packageAttribute
+    instance.packageAttribute = original
+    assert instance.packageAttribute == original
+
 @given(instance=BankAccount_strategy)
 @settings(max_examples=50)
 def test_bankaccount_instantiation(instance):
     assert isinstance(instance, BankAccount)
 
-@given(instance=BankAccount_strategy)
-def test_bankaccount_balance_type(instance):
-    assert isinstance(instance.balance, float)
-
-
-@given(instance=BankAccount_strategy)
-def test_bankaccount_balance_setter(instance):
-    original = instance.balance
-    instance.balance = original
-    assert instance.balance == original
-
-@given(instance=BankAccount_strategy)
-def test_bankaccount_ownerName_type(instance):
-    assert isinstance(instance.ownerName, str)
 
 
 @given(instance=BankAccount_strategy)
@@ -2373,6 +2218,14 @@ def test_bankaccount_ownerName_setter(instance):
     original = instance.ownerName
     instance.ownerName = original
     assert instance.ownerName == original
+
+
+
+@given(instance=BankAccount_strategy)
+def test_bankaccount_balance_setter(instance):
+    original = instance.balance
+    instance.balance = original
+    assert instance.balance == original
 
 @given(instance=PaymentByCard1_strategy)
 @settings(max_examples=50)
@@ -2393,3 +2246,87 @@ def test_ownbookstorage_instantiation(instance):
 @settings(max_examples=50)
 def test_bookstorage_interface_instantiation(instance):
     assert isinstance(instance, BookStorage_Interface)
+
+@given(instance=DetailDescription_strategy)
+@settings(max_examples=50)
+def test_detaildescription_instantiation(instance):
+    assert isinstance(instance, DetailDescription)
+
+@given(instance=ShortReview_strategy)
+@settings(max_examples=50)
+def test_shortreview_instantiation(instance):
+    assert isinstance(instance, ShortReview)
+
+@given(instance=OriginalReview_strategy)
+@settings(max_examples=50)
+def test_originalreview_instantiation(instance):
+    assert isinstance(instance, OriginalReview)
+
+
+
+@given(instance=OriginalReview_strategy)
+def test_originalreview_texr_setter(instance):
+    original = instance.texr
+    instance.texr = original
+    assert instance.texr == original
+
+@given(instance=ClientRewiev_strategy)
+@settings(max_examples=50)
+def test_clientrewiev_instantiation(instance):
+    assert isinstance(instance, ClientRewiev)
+
+
+
+@given(instance=ClientRewiev_strategy)
+def test_clientrewiev_text_setter(instance):
+    original = instance.text
+    instance.text = original
+    assert instance.text == original
+
+
+
+@given(instance=ClientRewiev_strategy)
+def test_clientrewiev_mark_setter(instance):
+    original = instance.mark
+    instance.mark = original
+    assert instance.mark == original
+
+@given(instance=Review_Interface_strategy)
+@settings(max_examples=50)
+def test_review_interface_instantiation(instance):
+    assert isinstance(instance, Review_Interface)
+
+@given(instance=DatabaseAPI_strategy)
+@settings(max_examples=50)
+def test_databaseapi_instantiation(instance):
+    assert isinstance(instance, DatabaseAPI)
+
+@given(instance=ClientDatabase_strategy)
+@settings(max_examples=50)
+def test_clientdatabase_instantiation(instance):
+    assert isinstance(instance, ClientDatabase)
+
+@given(instance=SearchRequest_strategy)
+@settings(max_examples=50)
+def test_searchrequest_instantiation(instance):
+    assert isinstance(instance, SearchRequest)
+
+@given(instance=Catalog_strategy)
+@settings(max_examples=50)
+def test_catalog_instantiation(instance):
+    assert isinstance(instance, Catalog)
+
+@given(instance=Wishlist_strategy)
+@settings(max_examples=50)
+def test_wishlist_instantiation(instance):
+    assert isinstance(instance, Wishlist)
+
+@given(instance=Client_hoice_Interface_strategy)
+@settings(max_examples=50)
+def test_client_hoice_interface_instantiation(instance):
+    assert isinstance(instance, Client_hoice_Interface)
+
+@given(instance=PaymentByAccaunt_strategy)
+@settings(max_examples=50)
+def test_paymentbyaccaunt_instantiation(instance):
+    assert isinstance(instance, PaymentByAccaunt)

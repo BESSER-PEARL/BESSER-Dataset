@@ -3,13 +3,13 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    exo1::Project,
-    exo1::Departement,
-    exo1::Company,
-    exo1::Employee,
+from python_code import (
+    exo1_Project,
+    exo1_Departement,
+    exo1_Company,
+    exo1_Employee,
 )
 
 # =============================================================================
@@ -18,127 +18,127 @@ from classes import (
 
 
 
-def test_exo1::project_is_not_abstract():
-    assert not inspect.isabstract(exo1::Project)
+def test_exo1_project_is_not_abstract():
+    assert not inspect.isabstract(exo1_Project)
 
 
-def test_exo1::project_constructor_exists():
-    assert callable(exo1::Project.__init__)
+def test_exo1_project_constructor_exists():
+    assert callable(exo1_Project.__init__)
 
 
-def test_exo1::project_constructor_args():
-    sig = inspect.signature(exo1::Project.__init__)
+def test_exo1_project_constructor_args():
+    sig = inspect.signature(exo1_Project.__init__)
     params = list(sig.parameters.keys())
-    assert "name" in params, "Missing parameter 'name'"
     assert "budget" in params, "Missing parameter 'budget'"
+    assert "name" in params, "Missing parameter 'name'"
 
-def test_exo1::project_has_name():
-    assert hasattr(exo1::Project, "name")
+def test_exo1_project_has_budget():
+    assert hasattr(exo1_Project, "budget")
     descriptor = None
-    for klass in exo1::Project.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_exo1::project_has_budget():
-    assert hasattr(exo1::Project, "budget")
-    descriptor = None
-    for klass in exo1::Project.__mro__:
+    for klass in exo1_Project.__mro__:
         if "budget" in klass.__dict__:
             descriptor = klass.__dict__["budget"]
             break
     assert isinstance(descriptor, property)
 
+def test_exo1_project_has_name():
+    assert hasattr(exo1_Project, "name")
+    descriptor = None
+    for klass in exo1_Project.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_exo1::departement_is_not_abstract():
-    assert not inspect.isabstract(exo1::Departement)
+
+def test_exo1_departement_is_not_abstract():
+    assert not inspect.isabstract(exo1_Departement)
 
 
-def test_exo1::departement_constructor_exists():
-    assert callable(exo1::Departement.__init__)
+def test_exo1_departement_constructor_exists():
+    assert callable(exo1_Departement.__init__)
 
 
-def test_exo1::departement_constructor_args():
-    sig = inspect.signature(exo1::Departement.__init__)
+def test_exo1_departement_constructor_args():
+    sig = inspect.signature(exo1_Departement.__init__)
     params = list(sig.parameters.keys())
+    assert "name" in params, "Missing parameter 'name'"
     assert "location" in params, "Missing parameter 'location'"
     assert "budget" in params, "Missing parameter 'budget'"
-    assert "name" in params, "Missing parameter 'name'"
 
-def test_exo1::departement_has_location():
-    assert hasattr(exo1::Departement, "location")
+def test_exo1_departement_has_name():
+    assert hasattr(exo1_Departement, "name")
     descriptor = None
-    for klass in exo1::Departement.__mro__:
+    for klass in exo1_Departement.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_exo1_departement_has_location():
+    assert hasattr(exo1_Departement, "location")
+    descriptor = None
+    for klass in exo1_Departement.__mro__:
         if "location" in klass.__dict__:
             descriptor = klass.__dict__["location"]
             break
     assert isinstance(descriptor, property)
 
-def test_exo1::departement_has_budget():
-    assert hasattr(exo1::Departement, "budget")
+def test_exo1_departement_has_budget():
+    assert hasattr(exo1_Departement, "budget")
     descriptor = None
-    for klass in exo1::Departement.__mro__:
+    for klass in exo1_Departement.__mro__:
         if "budget" in klass.__dict__:
             descriptor = klass.__dict__["budget"]
             break
     assert isinstance(descriptor, property)
 
-def test_exo1::departement_has_name():
-    assert hasattr(exo1::Departement, "name")
+
+
+def test_exo1_company_is_not_abstract():
+    assert not inspect.isabstract(exo1_Company)
+
+
+def test_exo1_company_constructor_exists():
+    assert callable(exo1_Company.__init__)
+
+
+def test_exo1_company_constructor_args():
+    sig = inspect.signature(exo1_Company.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_exo1_employee_is_not_abstract():
+    assert not inspect.isabstract(exo1_Employee)
+
+
+def test_exo1_employee_constructor_exists():
+    assert callable(exo1_Employee.__init__)
+
+
+def test_exo1_employee_constructor_args():
+    sig = inspect.signature(exo1_Employee.__init__)
+    params = list(sig.parameters.keys())
+    assert "name" in params, "Missing parameter 'name'"
+    assert "salary" in params, "Missing parameter 'salary'"
+
+def test_exo1_employee_has_name():
+    assert hasattr(exo1_Employee, "name")
     descriptor = None
-    for klass in exo1::Departement.__mro__:
+    for klass in exo1_Employee.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
-
-
-def test_exo1::company_is_not_abstract():
-    assert not inspect.isabstract(exo1::Company)
-
-
-def test_exo1::company_constructor_exists():
-    assert callable(exo1::Company.__init__)
-
-
-def test_exo1::company_constructor_args():
-    sig = inspect.signature(exo1::Company.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_exo1::employee_is_not_abstract():
-    assert not inspect.isabstract(exo1::Employee)
-
-
-def test_exo1::employee_constructor_exists():
-    assert callable(exo1::Employee.__init__)
-
-
-def test_exo1::employee_constructor_args():
-    sig = inspect.signature(exo1::Employee.__init__)
-    params = list(sig.parameters.keys())
-    assert "salary" in params, "Missing parameter 'salary'"
-    assert "name" in params, "Missing parameter 'name'"
-
-def test_exo1::employee_has_salary():
-    assert hasattr(exo1::Employee, "salary")
+def test_exo1_employee_has_salary():
+    assert hasattr(exo1_Employee, "salary")
     descriptor = None
-    for klass in exo1::Employee.__mro__:
+    for klass in exo1_Employee.__mro__:
         if "salary" in klass.__dict__:
             descriptor = klass.__dict__["salary"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_exo1::employee_has_name():
-    assert hasattr(exo1::Employee, "name")
-    descriptor = None
-    for klass in exo1::Employee.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
@@ -154,126 +154,105 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-exo1::Project_strategy = st.builds(
-    exo1::Project,
-    name=
-        safe_text,
-    budget=
-        st.integers()
-)
-exo1::Departement_strategy = st.builds(
-    exo1::Departement,
-    location=
-        safe_text,
+exo1_Project_strategy = st.builds(
+    exo1_Project,
     budget=
         st.integers(),
     name=
         safe_text
 )
-exo1::Company_strategy = st.builds(
-    exo1::Company,
-)
-exo1::Employee_strategy = st.builds(
-    exo1::Employee,
-    salary=
-        safe_text,
+exo1_Departement_strategy = st.builds(
+    exo1_Departement,
     name=
+        safe_text,
+    location=
+        safe_text,
+    budget=
+        st.integers()
+)
+exo1_Company_strategy = st.builds(
+    exo1_Company,
+)
+exo1_Employee_strategy = st.builds(
+    exo1_Employee,
+    name=
+        safe_text,
+    salary=
         safe_text
 )
 
-@given(instance=exo1::Project_strategy)
+@given(instance=exo1_Project_strategy)
 @settings(max_examples=50)
-def test_exo1::project_instantiation(instance):
-    assert isinstance(instance, exo1::Project)
-
-@given(instance=exo1::Project_strategy)
-def test_exo1::project_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_exo1_project_instantiation(instance):
+    assert isinstance(instance, exo1_Project)
 
 
-@given(instance=exo1::Project_strategy)
-def test_exo1::project_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
 
-@given(instance=exo1::Project_strategy)
-def test_exo1::project_budget_type(instance):
-    assert isinstance(instance.budget, int)
-
-
-@given(instance=exo1::Project_strategy)
-def test_exo1::project_budget_setter(instance):
+@given(instance=exo1_Project_strategy)
+def test_exo1_project_budget_setter(instance):
     original = instance.budget
     instance.budget = original
     assert instance.budget == original
 
-@given(instance=exo1::Departement_strategy)
+
+
+@given(instance=exo1_Project_strategy)
+def test_exo1_project_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+@given(instance=exo1_Departement_strategy)
 @settings(max_examples=50)
-def test_exo1::departement_instantiation(instance):
-    assert isinstance(instance, exo1::Departement)
-
-@given(instance=exo1::Departement_strategy)
-def test_exo1::departement_location_type(instance):
-    assert isinstance(instance.location, str)
+def test_exo1_departement_instantiation(instance):
+    assert isinstance(instance, exo1_Departement)
 
 
-@given(instance=exo1::Departement_strategy)
-def test_exo1::departement_location_setter(instance):
+
+@given(instance=exo1_Departement_strategy)
+def test_exo1_departement_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+
+
+@given(instance=exo1_Departement_strategy)
+def test_exo1_departement_location_setter(instance):
     original = instance.location
     instance.location = original
     assert instance.location == original
 
-@given(instance=exo1::Departement_strategy)
-def test_exo1::departement_budget_type(instance):
-    assert isinstance(instance.budget, int)
 
 
-@given(instance=exo1::Departement_strategy)
-def test_exo1::departement_budget_setter(instance):
+@given(instance=exo1_Departement_strategy)
+def test_exo1_departement_budget_setter(instance):
     original = instance.budget
     instance.budget = original
     assert instance.budget == original
 
-@given(instance=exo1::Departement_strategy)
-def test_exo1::departement_name_type(instance):
-    assert isinstance(instance.name, str)
+@given(instance=exo1_Company_strategy)
+@settings(max_examples=50)
+def test_exo1_company_instantiation(instance):
+    assert isinstance(instance, exo1_Company)
+
+@given(instance=exo1_Employee_strategy)
+@settings(max_examples=50)
+def test_exo1_employee_instantiation(instance):
+    assert isinstance(instance, exo1_Employee)
 
 
-@given(instance=exo1::Departement_strategy)
-def test_exo1::departement_name_setter(instance):
+
+@given(instance=exo1_Employee_strategy)
+def test_exo1_employee_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=exo1::Company_strategy)
-@settings(max_examples=50)
-def test_exo1::company_instantiation(instance):
-    assert isinstance(instance, exo1::Company)
-
-@given(instance=exo1::Employee_strategy)
-@settings(max_examples=50)
-def test_exo1::employee_instantiation(instance):
-    assert isinstance(instance, exo1::Employee)
-
-@given(instance=exo1::Employee_strategy)
-def test_exo1::employee_salary_type(instance):
-    assert isinstance(instance.salary, str)
 
 
-@given(instance=exo1::Employee_strategy)
-def test_exo1::employee_salary_setter(instance):
+@given(instance=exo1_Employee_strategy)
+def test_exo1_employee_salary_setter(instance):
     original = instance.salary
     instance.salary = original
     assert instance.salary == original
-
-@given(instance=exo1::Employee_strategy)
-def test_exo1::employee_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=exo1::Employee_strategy)
-def test_exo1::employee_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original

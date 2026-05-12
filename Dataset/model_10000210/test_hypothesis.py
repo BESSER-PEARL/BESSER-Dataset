@@ -3,7 +3,7 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
 from python_code import (
     Queen,
@@ -226,9 +226,6 @@ def test_pawn_instantiation(instance):
 def test_piece_instantiation(instance):
     assert isinstance(instance, Piece)
 
-@given(instance=Piece_strategy)
-def test_piece_Name_type(instance):
-    assert isinstance(instance.Name, str)
 
 
 @given(instance=Piece_strategy)

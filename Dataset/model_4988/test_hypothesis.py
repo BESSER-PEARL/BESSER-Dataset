@@ -3,21 +3,21 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     Port,
-    componentmodel::OutPort,
-    componentmodel::InPort,
-    componentmodel::Property,
+    componentmodel_OutPort,
+    componentmodel_InPort,
+    componentmodel_Property,
     Property,
-    componentmodel::EnumProperty,
-    componentmodel::NumericProperty,
+    componentmodel_EnumProperty,
+    componentmodel_NumericProperty,
     Component,
-    componentmodel::CompositeComponent,
-    componentmodel::PrimitiveComponent,
-    componentmodel::Port,
-    componentmodel::Component,
+    componentmodel_CompositeComponent,
+    componentmodel_PrimitiveComponent,
+    componentmodel_Port,
+    componentmodel_Component,
 )
 
 # =============================================================================
@@ -40,63 +40,63 @@ def test_port_constructor_args():
 
 
 
-def test_componentmodel::outport_is_not_abstract():
-    assert not inspect.isabstract(componentmodel::OutPort)
+def test_componentmodel_outport_is_not_abstract():
+    assert not inspect.isabstract(componentmodel_OutPort)
 
 
-def test_componentmodel::outport_constructor_exists():
-    assert callable(componentmodel::OutPort.__init__)
+def test_componentmodel_outport_constructor_exists():
+    assert callable(componentmodel_OutPort.__init__)
 
 
-def test_componentmodel::outport_constructor_args():
-    sig = inspect.signature(componentmodel::OutPort.__init__)
+def test_componentmodel_outport_constructor_args():
+    sig = inspect.signature(componentmodel_OutPort.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_componentmodel::inport_is_not_abstract():
-    assert not inspect.isabstract(componentmodel::InPort)
+def test_componentmodel_inport_is_not_abstract():
+    assert not inspect.isabstract(componentmodel_InPort)
 
 
-def test_componentmodel::inport_constructor_exists():
-    assert callable(componentmodel::InPort.__init__)
+def test_componentmodel_inport_constructor_exists():
+    assert callable(componentmodel_InPort.__init__)
 
 
-def test_componentmodel::inport_constructor_args():
-    sig = inspect.signature(componentmodel::InPort.__init__)
+def test_componentmodel_inport_constructor_args():
+    sig = inspect.signature(componentmodel_InPort.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_componentmodel::property_is_not_abstract():
-    assert not inspect.isabstract(componentmodel::Property)
+def test_componentmodel_property_is_not_abstract():
+    assert not inspect.isabstract(componentmodel_Property)
 
 
-def test_componentmodel::property_constructor_exists():
-    assert callable(componentmodel::Property.__init__)
+def test_componentmodel_property_constructor_exists():
+    assert callable(componentmodel_Property.__init__)
 
 
-def test_componentmodel::property_constructor_args():
-    sig = inspect.signature(componentmodel::Property.__init__)
+def test_componentmodel_property_constructor_args():
+    sig = inspect.signature(componentmodel_Property.__init__)
     params = list(sig.parameters.keys())
-    assert "description" in params, "Missing parameter 'description'"
     assert "name" in params, "Missing parameter 'name'"
+    assert "description" in params, "Missing parameter 'description'"
 
-def test_componentmodel::property_has_description():
-    assert hasattr(componentmodel::Property, "description")
+def test_componentmodel_property_has_name():
+    assert hasattr(componentmodel_Property, "name")
     descriptor = None
-    for klass in componentmodel::Property.__mro__:
-        if "description" in klass.__dict__:
-            descriptor = klass.__dict__["description"]
+    for klass in componentmodel_Property.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
-def test_componentmodel::property_has_name():
-    assert hasattr(componentmodel::Property, "name")
+def test_componentmodel_property_has_description():
+    assert hasattr(componentmodel_Property, "description")
     descriptor = None
-    for klass in componentmodel::Property.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
+    for klass in componentmodel_Property.__mro__:
+        if "description" in klass.__dict__:
+            descriptor = klass.__dict__["description"]
             break
     assert isinstance(descriptor, property)
 
@@ -116,23 +116,23 @@ def test_property_constructor_args():
 
 
 
-def test_componentmodel::enumproperty_is_not_abstract():
-    assert not inspect.isabstract(componentmodel::EnumProperty)
+def test_componentmodel_enumproperty_is_not_abstract():
+    assert not inspect.isabstract(componentmodel_EnumProperty)
 
 
-def test_componentmodel::enumproperty_constructor_exists():
-    assert callable(componentmodel::EnumProperty.__init__)
+def test_componentmodel_enumproperty_constructor_exists():
+    assert callable(componentmodel_EnumProperty.__init__)
 
 
-def test_componentmodel::enumproperty_constructor_args():
-    sig = inspect.signature(componentmodel::EnumProperty.__init__)
+def test_componentmodel_enumproperty_constructor_args():
+    sig = inspect.signature(componentmodel_EnumProperty.__init__)
     params = list(sig.parameters.keys())
     assert "literalValue" in params, "Missing parameter 'literalValue'"
 
-def test_componentmodel::enumproperty_has_literalValue():
-    assert hasattr(componentmodel::EnumProperty, "literalValue")
+def test_componentmodel_enumproperty_has_literalValue():
+    assert hasattr(componentmodel_EnumProperty, "literalValue")
     descriptor = None
-    for klass in componentmodel::EnumProperty.__mro__:
+    for klass in componentmodel_EnumProperty.__mro__:
         if "literalValue" in klass.__dict__:
             descriptor = klass.__dict__["literalValue"]
             break
@@ -140,45 +140,45 @@ def test_componentmodel::enumproperty_has_literalValue():
 
 
 
-def test_componentmodel::numericproperty_is_not_abstract():
-    assert not inspect.isabstract(componentmodel::NumericProperty)
+def test_componentmodel_numericproperty_is_not_abstract():
+    assert not inspect.isabstract(componentmodel_NumericProperty)
 
 
-def test_componentmodel::numericproperty_constructor_exists():
-    assert callable(componentmodel::NumericProperty.__init__)
+def test_componentmodel_numericproperty_constructor_exists():
+    assert callable(componentmodel_NumericProperty.__init__)
 
 
-def test_componentmodel::numericproperty_constructor_args():
-    sig = inspect.signature(componentmodel::NumericProperty.__init__)
+def test_componentmodel_numericproperty_constructor_args():
+    sig = inspect.signature(componentmodel_NumericProperty.__init__)
     params = list(sig.parameters.keys())
     assert "maxValue" in params, "Missing parameter 'maxValue'"
-    assert "defaultValue" in params, "Missing parameter 'defaultValue'"
     assert "minValue" in params, "Missing parameter 'minValue'"
+    assert "defaultValue" in params, "Missing parameter 'defaultValue'"
 
-def test_componentmodel::numericproperty_has_maxValue():
-    assert hasattr(componentmodel::NumericProperty, "maxValue")
+def test_componentmodel_numericproperty_has_maxValue():
+    assert hasattr(componentmodel_NumericProperty, "maxValue")
     descriptor = None
-    for klass in componentmodel::NumericProperty.__mro__:
+    for klass in componentmodel_NumericProperty.__mro__:
         if "maxValue" in klass.__dict__:
             descriptor = klass.__dict__["maxValue"]
             break
     assert isinstance(descriptor, property)
 
-def test_componentmodel::numericproperty_has_defaultValue():
-    assert hasattr(componentmodel::NumericProperty, "defaultValue")
+def test_componentmodel_numericproperty_has_minValue():
+    assert hasattr(componentmodel_NumericProperty, "minValue")
     descriptor = None
-    for klass in componentmodel::NumericProperty.__mro__:
-        if "defaultValue" in klass.__dict__:
-            descriptor = klass.__dict__["defaultValue"]
+    for klass in componentmodel_NumericProperty.__mro__:
+        if "minValue" in klass.__dict__:
+            descriptor = klass.__dict__["minValue"]
             break
     assert isinstance(descriptor, property)
 
-def test_componentmodel::numericproperty_has_minValue():
-    assert hasattr(componentmodel::NumericProperty, "minValue")
+def test_componentmodel_numericproperty_has_defaultValue():
+    assert hasattr(componentmodel_NumericProperty, "defaultValue")
     descriptor = None
-    for klass in componentmodel::NumericProperty.__mro__:
-        if "minValue" in klass.__dict__:
-            descriptor = klass.__dict__["minValue"]
+    for klass in componentmodel_NumericProperty.__mro__:
+        if "defaultValue" in klass.__dict__:
+            descriptor = klass.__dict__["defaultValue"]
             break
     assert isinstance(descriptor, property)
 
@@ -198,81 +198,81 @@ def test_component_constructor_args():
 
 
 
-def test_componentmodel::compositecomponent_is_not_abstract():
-    assert not inspect.isabstract(componentmodel::CompositeComponent)
+def test_componentmodel_compositecomponent_is_not_abstract():
+    assert not inspect.isabstract(componentmodel_CompositeComponent)
 
 
-def test_componentmodel::compositecomponent_constructor_exists():
-    assert callable(componentmodel::CompositeComponent.__init__)
+def test_componentmodel_compositecomponent_constructor_exists():
+    assert callable(componentmodel_CompositeComponent.__init__)
 
 
-def test_componentmodel::compositecomponent_constructor_args():
-    sig = inspect.signature(componentmodel::CompositeComponent.__init__)
+def test_componentmodel_compositecomponent_constructor_args():
+    sig = inspect.signature(componentmodel_CompositeComponent.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_componentmodel::primitivecomponent_is_not_abstract():
-    assert not inspect.isabstract(componentmodel::PrimitiveComponent)
+def test_componentmodel_primitivecomponent_is_not_abstract():
+    assert not inspect.isabstract(componentmodel_PrimitiveComponent)
 
 
-def test_componentmodel::primitivecomponent_constructor_exists():
-    assert callable(componentmodel::PrimitiveComponent.__init__)
+def test_componentmodel_primitivecomponent_constructor_exists():
+    assert callable(componentmodel_PrimitiveComponent.__init__)
 
 
-def test_componentmodel::primitivecomponent_constructor_args():
-    sig = inspect.signature(componentmodel::PrimitiveComponent.__init__)
+def test_componentmodel_primitivecomponent_constructor_args():
+    sig = inspect.signature(componentmodel_PrimitiveComponent.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_componentmodel::port_is_not_abstract():
-    assert not inspect.isabstract(componentmodel::Port)
+def test_componentmodel_port_is_not_abstract():
+    assert not inspect.isabstract(componentmodel_Port)
 
 
-def test_componentmodel::port_constructor_exists():
-    assert callable(componentmodel::Port.__init__)
+def test_componentmodel_port_constructor_exists():
+    assert callable(componentmodel_Port.__init__)
 
 
-def test_componentmodel::port_constructor_args():
-    sig = inspect.signature(componentmodel::Port.__init__)
+def test_componentmodel_port_constructor_args():
+    sig = inspect.signature(componentmodel_Port.__init__)
     params = list(sig.parameters.keys())
     assert "type" in params, "Missing parameter 'type'"
     assert "name" in params, "Missing parameter 'name'"
     assert "description" in params, "Missing parameter 'description'"
     assert "typePackage" in params, "Missing parameter 'typePackage'"
 
-def test_componentmodel::port_has_type():
-    assert hasattr(componentmodel::Port, "type")
+def test_componentmodel_port_has_type():
+    assert hasattr(componentmodel_Port, "type")
     descriptor = None
-    for klass in componentmodel::Port.__mro__:
+    for klass in componentmodel_Port.__mro__:
         if "type" in klass.__dict__:
             descriptor = klass.__dict__["type"]
             break
     assert isinstance(descriptor, property)
 
-def test_componentmodel::port_has_name():
-    assert hasattr(componentmodel::Port, "name")
+def test_componentmodel_port_has_name():
+    assert hasattr(componentmodel_Port, "name")
     descriptor = None
-    for klass in componentmodel::Port.__mro__:
+    for klass in componentmodel_Port.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
-def test_componentmodel::port_has_description():
-    assert hasattr(componentmodel::Port, "description")
+def test_componentmodel_port_has_description():
+    assert hasattr(componentmodel_Port, "description")
     descriptor = None
-    for klass in componentmodel::Port.__mro__:
+    for klass in componentmodel_Port.__mro__:
         if "description" in klass.__dict__:
             descriptor = klass.__dict__["description"]
             break
     assert isinstance(descriptor, property)
 
-def test_componentmodel::port_has_typePackage():
-    assert hasattr(componentmodel::Port, "typePackage")
+def test_componentmodel_port_has_typePackage():
+    assert hasattr(componentmodel_Port, "typePackage")
     descriptor = None
-    for klass in componentmodel::Port.__mro__:
+    for klass in componentmodel_Port.__mro__:
         if "typePackage" in klass.__dict__:
             descriptor = klass.__dict__["typePackage"]
             break
@@ -280,33 +280,33 @@ def test_componentmodel::port_has_typePackage():
 
 
 
-def test_componentmodel::component_is_not_abstract():
-    assert not inspect.isabstract(componentmodel::Component)
+def test_componentmodel_component_is_not_abstract():
+    assert not inspect.isabstract(componentmodel_Component)
 
 
-def test_componentmodel::component_constructor_exists():
-    assert callable(componentmodel::Component.__init__)
+def test_componentmodel_component_constructor_exists():
+    assert callable(componentmodel_Component.__init__)
 
 
-def test_componentmodel::component_constructor_args():
-    sig = inspect.signature(componentmodel::Component.__init__)
+def test_componentmodel_component_constructor_args():
+    sig = inspect.signature(componentmodel_Component.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
     assert "description" in params, "Missing parameter 'description'"
 
-def test_componentmodel::component_has_name():
-    assert hasattr(componentmodel::Component, "name")
+def test_componentmodel_component_has_name():
+    assert hasattr(componentmodel_Component, "name")
     descriptor = None
-    for klass in componentmodel::Component.__mro__:
+    for klass in componentmodel_Component.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
-def test_componentmodel::component_has_description():
-    assert hasattr(componentmodel::Component, "description")
+def test_componentmodel_component_has_description():
+    assert hasattr(componentmodel_Component, "description")
     descriptor = None
-    for klass in componentmodel::Component.__mro__:
+    for klass in componentmodel_Component.__mro__:
         if "description" in klass.__dict__:
             descriptor = klass.__dict__["description"]
             break
@@ -327,47 +327,47 @@ safe_text = st.text(
 Port_strategy = st.builds(
     Port,
 )
-componentmodel::OutPort_strategy = st.builds(
-    componentmodel::OutPort,
+componentmodel_OutPort_strategy = st.builds(
+    componentmodel_OutPort,
 )
-componentmodel::InPort_strategy = st.builds(
-    componentmodel::InPort,
+componentmodel_InPort_strategy = st.builds(
+    componentmodel_InPort,
 )
-componentmodel::Property_strategy = st.builds(
-    componentmodel::Property,
-    description=
-        safe_text,
+componentmodel_Property_strategy = st.builds(
+    componentmodel_Property,
     name=
+        safe_text,
+    description=
         safe_text
 )
 Property_strategy = st.builds(
     Property,
 )
-componentmodel::EnumProperty_strategy = st.builds(
-    componentmodel::EnumProperty,
+componentmodel_EnumProperty_strategy = st.builds(
+    componentmodel_EnumProperty,
     literalValue=
         safe_text
 )
-componentmodel::NumericProperty_strategy = st.builds(
-    componentmodel::NumericProperty,
+componentmodel_NumericProperty_strategy = st.builds(
+    componentmodel_NumericProperty,
     maxValue=
         st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False),
-    defaultValue=
-        st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False),
     minValue=
+        st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False),
+    defaultValue=
         st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False)
 )
 Component_strategy = st.builds(
     Component,
 )
-componentmodel::CompositeComponent_strategy = st.builds(
-    componentmodel::CompositeComponent,
+componentmodel_CompositeComponent_strategy = st.builds(
+    componentmodel_CompositeComponent,
 )
-componentmodel::PrimitiveComponent_strategy = st.builds(
-    componentmodel::PrimitiveComponent,
+componentmodel_PrimitiveComponent_strategy = st.builds(
+    componentmodel_PrimitiveComponent,
 )
-componentmodel::Port_strategy = st.builds(
-    componentmodel::Port,
+componentmodel_Port_strategy = st.builds(
+    componentmodel_Port,
     type=
         safe_text,
     name=
@@ -377,8 +377,8 @@ componentmodel::Port_strategy = st.builds(
     typePackage=
         safe_text
 )
-componentmodel::Component_strategy = st.builds(
-    componentmodel::Component,
+componentmodel_Component_strategy = st.builds(
+    componentmodel_Component,
     name=
         safe_text,
     description=
@@ -390,189 +390,153 @@ componentmodel::Component_strategy = st.builds(
 def test_port_instantiation(instance):
     assert isinstance(instance, Port)
 
-@given(instance=componentmodel::OutPort_strategy)
+@given(instance=componentmodel_OutPort_strategy)
 @settings(max_examples=50)
-def test_componentmodel::outport_instantiation(instance):
-    assert isinstance(instance, componentmodel::OutPort)
+def test_componentmodel_outport_instantiation(instance):
+    assert isinstance(instance, componentmodel_OutPort)
 
-@given(instance=componentmodel::InPort_strategy)
+@given(instance=componentmodel_InPort_strategy)
 @settings(max_examples=50)
-def test_componentmodel::inport_instantiation(instance):
-    assert isinstance(instance, componentmodel::InPort)
+def test_componentmodel_inport_instantiation(instance):
+    assert isinstance(instance, componentmodel_InPort)
 
-@given(instance=componentmodel::Property_strategy)
+@given(instance=componentmodel_Property_strategy)
 @settings(max_examples=50)
-def test_componentmodel::property_instantiation(instance):
-    assert isinstance(instance, componentmodel::Property)
-
-@given(instance=componentmodel::Property_strategy)
-def test_componentmodel::property_description_type(instance):
-    assert isinstance(instance.description, str)
+def test_componentmodel_property_instantiation(instance):
+    assert isinstance(instance, componentmodel_Property)
 
 
-@given(instance=componentmodel::Property_strategy)
-def test_componentmodel::property_description_setter(instance):
-    original = instance.description
-    instance.description = original
-    assert instance.description == original
 
-@given(instance=componentmodel::Property_strategy)
-def test_componentmodel::property_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=componentmodel::Property_strategy)
-def test_componentmodel::property_name_setter(instance):
+@given(instance=componentmodel_Property_strategy)
+def test_componentmodel_property_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
+
+
+
+@given(instance=componentmodel_Property_strategy)
+def test_componentmodel_property_description_setter(instance):
+    original = instance.description
+    instance.description = original
+    assert instance.description == original
 
 @given(instance=Property_strategy)
 @settings(max_examples=50)
 def test_property_instantiation(instance):
     assert isinstance(instance, Property)
 
-@given(instance=componentmodel::EnumProperty_strategy)
+@given(instance=componentmodel_EnumProperty_strategy)
 @settings(max_examples=50)
-def test_componentmodel::enumproperty_instantiation(instance):
-    assert isinstance(instance, componentmodel::EnumProperty)
-
-@given(instance=componentmodel::EnumProperty_strategy)
-def test_componentmodel::enumproperty_literalValue_type(instance):
-    assert isinstance(instance.literalValue, str)
+def test_componentmodel_enumproperty_instantiation(instance):
+    assert isinstance(instance, componentmodel_EnumProperty)
 
 
-@given(instance=componentmodel::EnumProperty_strategy)
-def test_componentmodel::enumproperty_literalValue_setter(instance):
+
+@given(instance=componentmodel_EnumProperty_strategy)
+def test_componentmodel_enumproperty_literalValue_setter(instance):
     original = instance.literalValue
     instance.literalValue = original
     assert instance.literalValue == original
 
-@given(instance=componentmodel::NumericProperty_strategy)
+@given(instance=componentmodel_NumericProperty_strategy)
 @settings(max_examples=50)
-def test_componentmodel::numericproperty_instantiation(instance):
-    assert isinstance(instance, componentmodel::NumericProperty)
-
-@given(instance=componentmodel::NumericProperty_strategy)
-def test_componentmodel::numericproperty_maxValue_type(instance):
-    assert isinstance(instance.maxValue, float)
+def test_componentmodel_numericproperty_instantiation(instance):
+    assert isinstance(instance, componentmodel_NumericProperty)
 
 
-@given(instance=componentmodel::NumericProperty_strategy)
-def test_componentmodel::numericproperty_maxValue_setter(instance):
+
+@given(instance=componentmodel_NumericProperty_strategy)
+def test_componentmodel_numericproperty_maxValue_setter(instance):
     original = instance.maxValue
     instance.maxValue = original
     assert instance.maxValue == original
 
-@given(instance=componentmodel::NumericProperty_strategy)
-def test_componentmodel::numericproperty_defaultValue_type(instance):
-    assert isinstance(instance.defaultValue, float)
 
 
-@given(instance=componentmodel::NumericProperty_strategy)
-def test_componentmodel::numericproperty_defaultValue_setter(instance):
-    original = instance.defaultValue
-    instance.defaultValue = original
-    assert instance.defaultValue == original
-
-@given(instance=componentmodel::NumericProperty_strategy)
-def test_componentmodel::numericproperty_minValue_type(instance):
-    assert isinstance(instance.minValue, float)
-
-
-@given(instance=componentmodel::NumericProperty_strategy)
-def test_componentmodel::numericproperty_minValue_setter(instance):
+@given(instance=componentmodel_NumericProperty_strategy)
+def test_componentmodel_numericproperty_minValue_setter(instance):
     original = instance.minValue
     instance.minValue = original
     assert instance.minValue == original
+
+
+
+@given(instance=componentmodel_NumericProperty_strategy)
+def test_componentmodel_numericproperty_defaultValue_setter(instance):
+    original = instance.defaultValue
+    instance.defaultValue = original
+    assert instance.defaultValue == original
 
 @given(instance=Component_strategy)
 @settings(max_examples=50)
 def test_component_instantiation(instance):
     assert isinstance(instance, Component)
 
-@given(instance=componentmodel::CompositeComponent_strategy)
+@given(instance=componentmodel_CompositeComponent_strategy)
 @settings(max_examples=50)
-def test_componentmodel::compositecomponent_instantiation(instance):
-    assert isinstance(instance, componentmodel::CompositeComponent)
+def test_componentmodel_compositecomponent_instantiation(instance):
+    assert isinstance(instance, componentmodel_CompositeComponent)
 
-@given(instance=componentmodel::PrimitiveComponent_strategy)
+@given(instance=componentmodel_PrimitiveComponent_strategy)
 @settings(max_examples=50)
-def test_componentmodel::primitivecomponent_instantiation(instance):
-    assert isinstance(instance, componentmodel::PrimitiveComponent)
+def test_componentmodel_primitivecomponent_instantiation(instance):
+    assert isinstance(instance, componentmodel_PrimitiveComponent)
 
-@given(instance=componentmodel::Port_strategy)
+@given(instance=componentmodel_Port_strategy)
 @settings(max_examples=50)
-def test_componentmodel::port_instantiation(instance):
-    assert isinstance(instance, componentmodel::Port)
-
-@given(instance=componentmodel::Port_strategy)
-def test_componentmodel::port_type_type(instance):
-    assert isinstance(instance.type, str)
+def test_componentmodel_port_instantiation(instance):
+    assert isinstance(instance, componentmodel_Port)
 
 
-@given(instance=componentmodel::Port_strategy)
-def test_componentmodel::port_type_setter(instance):
+
+@given(instance=componentmodel_Port_strategy)
+def test_componentmodel_port_type_setter(instance):
     original = instance.type
     instance.type = original
     assert instance.type == original
 
-@given(instance=componentmodel::Port_strategy)
-def test_componentmodel::port_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
-@given(instance=componentmodel::Port_strategy)
-def test_componentmodel::port_name_setter(instance):
+@given(instance=componentmodel_Port_strategy)
+def test_componentmodel_port_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=componentmodel::Port_strategy)
-def test_componentmodel::port_description_type(instance):
-    assert isinstance(instance.description, str)
 
 
-@given(instance=componentmodel::Port_strategy)
-def test_componentmodel::port_description_setter(instance):
+@given(instance=componentmodel_Port_strategy)
+def test_componentmodel_port_description_setter(instance):
     original = instance.description
     instance.description = original
     assert instance.description == original
 
-@given(instance=componentmodel::Port_strategy)
-def test_componentmodel::port_typePackage_type(instance):
-    assert isinstance(instance.typePackage, str)
 
 
-@given(instance=componentmodel::Port_strategy)
-def test_componentmodel::port_typePackage_setter(instance):
+@given(instance=componentmodel_Port_strategy)
+def test_componentmodel_port_typePackage_setter(instance):
     original = instance.typePackage
     instance.typePackage = original
     assert instance.typePackage == original
 
-@given(instance=componentmodel::Component_strategy)
+@given(instance=componentmodel_Component_strategy)
 @settings(max_examples=50)
-def test_componentmodel::component_instantiation(instance):
-    assert isinstance(instance, componentmodel::Component)
-
-@given(instance=componentmodel::Component_strategy)
-def test_componentmodel::component_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_componentmodel_component_instantiation(instance):
+    assert isinstance(instance, componentmodel_Component)
 
 
-@given(instance=componentmodel::Component_strategy)
-def test_componentmodel::component_name_setter(instance):
+
+@given(instance=componentmodel_Component_strategy)
+def test_componentmodel_component_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=componentmodel::Component_strategy)
-def test_componentmodel::component_description_type(instance):
-    assert isinstance(instance.description, str)
 
 
-@given(instance=componentmodel::Component_strategy)
-def test_componentmodel::component_description_setter(instance):
+@given(instance=componentmodel_Component_strategy)
+def test_componentmodel_component_description_setter(instance):
     original = instance.description
     instance.description = original
     assert instance.description == original

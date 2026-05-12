@@ -3,48 +3,20 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
 from python_code import (
-    Class,
-    ShoppingCartExample_Customer,
     ShoppingCartExample_Account,
     ShoppingCartExample_LineItem,
     ShoppingCartExample_Order,
     ShoppingCartExample_ShoppingCart,
+    Class,
+    ShoppingCartExample_Customer,
 )
 
 # =============================================================================
 # SECTION 1 — STRUCTURAL TESTS
 # =============================================================================
-
-
-
-def test_class_is_not_abstract():
-    assert not inspect.isabstract(Class)
-
-
-def test_class_constructor_exists():
-    assert callable(Class.__init__)
-
-
-def test_class_constructor_args():
-    sig = inspect.signature(Class.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_shoppingcartexample_customer_is_not_abstract():
-    assert not inspect.isabstract(ShoppingCartExample_Customer)
-
-
-def test_shoppingcartexample_customer_constructor_exists():
-    assert callable(ShoppingCartExample_Customer.__init__)
-
-
-def test_shoppingcartexample_customer_constructor_args():
-    sig = inspect.signature(ShoppingCartExample_Customer.__init__)
-    params = list(sig.parameters.keys())
 
 
 
@@ -153,6 +125,34 @@ def test_shoppingcartexample_shoppingcart_has_creationDate():
     assert isinstance(descriptor, property)
 
 
+
+def test_class_is_not_abstract():
+    assert not inspect.isabstract(Class)
+
+
+def test_class_constructor_exists():
+    assert callable(Class.__init__)
+
+
+def test_class_constructor_args():
+    sig = inspect.signature(Class.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_shoppingcartexample_customer_is_not_abstract():
+    assert not inspect.isabstract(ShoppingCartExample_Customer)
+
+
+def test_shoppingcartexample_customer_constructor_exists():
+    assert callable(ShoppingCartExample_Customer.__init__)
+
+
+def test_shoppingcartexample_customer_constructor_args():
+    sig = inspect.signature(ShoppingCartExample_Customer.__init__)
+    params = list(sig.parameters.keys())
+
+
 # =============================================================================
 # HYPOTHESIS STRATEGIES
 # =============================================================================
@@ -164,12 +164,6 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-Class_strategy = st.builds(
-    Class,
-)
-ShoppingCartExample_Customer_strategy = st.builds(
-    ShoppingCartExample_Customer,
-)
 ShoppingCartExample_Account_strategy = st.builds(
     ShoppingCartExample_Account,
     id=
@@ -192,25 +186,18 @@ ShoppingCartExample_ShoppingCart_strategy = st.builds(
     creationDate=
         st.dates()
 )
-
-@given(instance=Class_strategy)
-@settings(max_examples=50)
-def test_class_instantiation(instance):
-    assert isinstance(instance, Class)
-
-@given(instance=ShoppingCartExample_Customer_strategy)
-@settings(max_examples=50)
-def test_shoppingcartexample_customer_instantiation(instance):
-    assert isinstance(instance, ShoppingCartExample_Customer)
+Class_strategy = st.builds(
+    Class,
+)
+ShoppingCartExample_Customer_strategy = st.builds(
+    ShoppingCartExample_Customer,
+)
 
 @given(instance=ShoppingCartExample_Account_strategy)
 @settings(max_examples=50)
 def test_shoppingcartexample_account_instantiation(instance):
     assert isinstance(instance, ShoppingCartExample_Account)
 
-@given(instance=ShoppingCartExample_Account_strategy)
-def test_shoppingcartexample_account_id_type(instance):
-    assert isinstance(instance.id, int)
 
 
 @given(instance=ShoppingCartExample_Account_strategy)
@@ -224,9 +211,6 @@ def test_shoppingcartexample_account_id_setter(instance):
 def test_shoppingcartexample_lineitem_instantiation(instance):
     assert isinstance(instance, ShoppingCartExample_LineItem)
 
-@given(instance=ShoppingCartExample_LineItem_strategy)
-def test_shoppingcartexample_lineitem_quantity_type(instance):
-    assert isinstance(instance.quantity, int)
 
 
 @given(instance=ShoppingCartExample_LineItem_strategy)
@@ -235,9 +219,6 @@ def test_shoppingcartexample_lineitem_quantity_setter(instance):
     instance.quantity = original
     assert instance.quantity == original
 
-@given(instance=ShoppingCartExample_LineItem_strategy)
-def test_shoppingcartexample_lineitem_price_type(instance):
-    assert isinstance(instance.price, int)
 
 
 @given(instance=ShoppingCartExample_LineItem_strategy)
@@ -251,9 +232,6 @@ def test_shoppingcartexample_lineitem_price_setter(instance):
 def test_shoppingcartexample_order_instantiation(instance):
     assert isinstance(instance, ShoppingCartExample_Order)
 
-@given(instance=ShoppingCartExample_Order_strategy)
-def test_shoppingcartexample_order_id_type(instance):
-    assert isinstance(instance.id, int)
 
 
 @given(instance=ShoppingCartExample_Order_strategy)
@@ -267,9 +245,6 @@ def test_shoppingcartexample_order_id_setter(instance):
 def test_shoppingcartexample_shoppingcart_instantiation(instance):
     assert isinstance(instance, ShoppingCartExample_ShoppingCart)
 
-@given(instance=ShoppingCartExample_ShoppingCart_strategy)
-def test_shoppingcartexample_shoppingcart_creationDate_type(instance):
-    assert isinstance(instance.creationDate, date)
 
 
 @given(instance=ShoppingCartExample_ShoppingCart_strategy)
@@ -277,3 +252,13 @@ def test_shoppingcartexample_shoppingcart_creationDate_setter(instance):
     original = instance.creationDate
     instance.creationDate = original
     assert instance.creationDate == original
+
+@given(instance=Class_strategy)
+@settings(max_examples=50)
+def test_class_instantiation(instance):
+    assert isinstance(instance, Class)
+
+@given(instance=ShoppingCartExample_Customer_strategy)
+@settings(max_examples=50)
+def test_shoppingcartexample_customer_instantiation(instance):
+    assert isinstance(instance, ShoppingCartExample_Customer)

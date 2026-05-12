@@ -3,15 +3,15 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     A,
-    root::SubA,
-    root::B,
+    root_SubA,
+    root_B,
     SuperA,
-    root::A,
-    root::SuperA,
+    root_A,
+    root_SuperA,
 )
 
 # =============================================================================
@@ -34,30 +34,30 @@ def test_a_constructor_args():
 
 
 
-def test_root::suba_is_not_abstract():
-    assert not inspect.isabstract(root::SubA)
+def test_root_suba_is_not_abstract():
+    assert not inspect.isabstract(root_SubA)
 
 
-def test_root::suba_constructor_exists():
-    assert callable(root::SubA.__init__)
+def test_root_suba_constructor_exists():
+    assert callable(root_SubA.__init__)
 
 
-def test_root::suba_constructor_args():
-    sig = inspect.signature(root::SubA.__init__)
+def test_root_suba_constructor_args():
+    sig = inspect.signature(root_SubA.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_root::b_is_not_abstract():
-    assert not inspect.isabstract(root::B)
+def test_root_b_is_not_abstract():
+    assert not inspect.isabstract(root_B)
 
 
-def test_root::b_constructor_exists():
-    assert callable(root::B.__init__)
+def test_root_b_constructor_exists():
+    assert callable(root_B.__init__)
 
 
-def test_root::b_constructor_args():
-    sig = inspect.signature(root::B.__init__)
+def test_root_b_constructor_args():
+    sig = inspect.signature(root_B.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -76,30 +76,30 @@ def test_supera_constructor_args():
 
 
 
-def test_root::a_is_not_abstract():
-    assert not inspect.isabstract(root::A)
+def test_root_a_is_not_abstract():
+    assert not inspect.isabstract(root_A)
 
 
-def test_root::a_constructor_exists():
-    assert callable(root::A.__init__)
+def test_root_a_constructor_exists():
+    assert callable(root_A.__init__)
 
 
-def test_root::a_constructor_args():
-    sig = inspect.signature(root::A.__init__)
+def test_root_a_constructor_args():
+    sig = inspect.signature(root_A.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_root::supera_is_not_abstract():
-    assert not inspect.isabstract(root::SuperA)
+def test_root_supera_is_not_abstract():
+    assert not inspect.isabstract(root_SuperA)
 
 
-def test_root::supera_constructor_exists():
-    assert callable(root::SuperA.__init__)
+def test_root_supera_constructor_exists():
+    assert callable(root_SuperA.__init__)
 
 
-def test_root::supera_constructor_args():
-    sig = inspect.signature(root::SuperA.__init__)
+def test_root_supera_constructor_args():
+    sig = inspect.signature(root_SuperA.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -117,20 +117,20 @@ safe_text = st.text(
 A_strategy = st.builds(
     A,
 )
-root::SubA_strategy = st.builds(
-    root::SubA,
+root_SubA_strategy = st.builds(
+    root_SubA,
 )
-root::B_strategy = st.builds(
-    root::B,
+root_B_strategy = st.builds(
+    root_B,
 )
 SuperA_strategy = st.builds(
     SuperA,
 )
-root::A_strategy = st.builds(
-    root::A,
+root_A_strategy = st.builds(
+    root_A,
 )
-root::SuperA_strategy = st.builds(
-    root::SuperA,
+root_SuperA_strategy = st.builds(
+    root_SuperA,
 )
 
 @given(instance=A_strategy)
@@ -138,27 +138,27 @@ root::SuperA_strategy = st.builds(
 def test_a_instantiation(instance):
     assert isinstance(instance, A)
 
-@given(instance=root::SubA_strategy)
+@given(instance=root_SubA_strategy)
 @settings(max_examples=50)
-def test_root::suba_instantiation(instance):
-    assert isinstance(instance, root::SubA)
+def test_root_suba_instantiation(instance):
+    assert isinstance(instance, root_SubA)
 
-@given(instance=root::B_strategy)
+@given(instance=root_B_strategy)
 @settings(max_examples=50)
-def test_root::b_instantiation(instance):
-    assert isinstance(instance, root::B)
+def test_root_b_instantiation(instance):
+    assert isinstance(instance, root_B)
 
 @given(instance=SuperA_strategy)
 @settings(max_examples=50)
 def test_supera_instantiation(instance):
     assert isinstance(instance, SuperA)
 
-@given(instance=root::A_strategy)
+@given(instance=root_A_strategy)
 @settings(max_examples=50)
-def test_root::a_instantiation(instance):
-    assert isinstance(instance, root::A)
+def test_root_a_instantiation(instance):
+    assert isinstance(instance, root_A)
 
-@given(instance=root::SuperA_strategy)
+@given(instance=root_SuperA_strategy)
 @settings(max_examples=50)
-def test_root::supera_instantiation(instance):
-    assert isinstance(instance, root::SuperA)
+def test_root_supera_instantiation(instance):
+    assert isinstance(instance, root_SuperA)

@@ -3,7 +3,7 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
 from python_code import (
     Create_New_Member_UseCase,
@@ -436,9 +436,6 @@ def test_reservations_instantiation(instance):
 def test_library_members_instantiation(instance):
     assert isinstance(instance, Library_Members)
 
-@given(instance=Library_Members_strategy)
-def test_library_members_Name_type(instance):
-    assert isinstance(instance.Name, str)
 
 
 @given(instance=Library_Members_strategy)
@@ -452,9 +449,6 @@ def test_library_members_Name_setter(instance):
 def test_books_instantiation(instance):
     assert isinstance(instance, Books)
 
-@given(instance=Books_strategy)
-def test_books_Title_type(instance):
-    assert isinstance(instance.Title, str)
 
 
 @given(instance=Books_strategy)

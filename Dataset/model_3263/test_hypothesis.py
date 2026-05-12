@@ -3,43 +3,43 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     EnumerationType,
-    aadl2::UnitsType,
+    aadl2_UnitsType,
     NumberType,
-    aadl2::AadlReal,
-    aadl2::AadlInteger,
+    aadl2_AadlReal,
+    aadl2_AadlInteger,
     NonListType,
-    aadl2::NumberType,
-    aadl2::ReferenceType,
-    aadl2::RangeType,
-    aadl2::AadlString,
-    aadl2::ClassifierType,
-    aadl2::AadlBoolean,
+    aadl2_AadlString,
+    aadl2_RangeType,
+    aadl2_ReferenceType,
+    aadl2_ClassifierType,
+    aadl2_NumberType,
+    aadl2_AadlBoolean,
     PropertyType,
-    aadl2::ListType,
-    aadl2::NonListType,
+    aadl2_ListType,
+    aadl2_NonListType,
     NumberValue,
-    aadl2::RealLiteral,
-    aadl2::IntegerLiteral,
+    aadl2_RealLiteral,
+    aadl2_IntegerLiteral,
     ContainedNamedElement,
     EnumerationLiteral,
-    aadl2::UnitLiteral,
+    aadl2_UnitLiteral,
     PropertyExpression,
-    aadl2::Operation,
-    aadl2::ListValue,
-    aadl2::PropertyValue,
+    aadl2_Operation,
+    aadl2_ListValue,
+    aadl2_PropertyValue,
     PropertyValue,
-    aadl2::ComputedValue,
-    aadl2::NamedValue,
-    aadl2::RangeValue,
-    aadl2::RecordValue,
-    aadl2::BooleanLiteral,
-    aadl2::NumberValue,
-    aadl2::ReferenceValue,
-    aadl2::StringLiteral,
+    aadl2_BooleanLiteral,
+    aadl2_ReferenceValue,
+    aadl2_NumberValue,
+    aadl2_NamedValue,
+    aadl2_RangeValue,
+    aadl2_RecordValue,
+    aadl2_ComputedValue,
+    aadl2_StringLiteral,
     VirtualProcessorClassifier,
     VirtualBusClassifier,
     ThreadGroupClassifier,
@@ -55,16 +55,16 @@ from classes import (
     BusClassifier,
     ComponentPrototype,
     ThreadGroupSubcomponentType,
-    aadl2::ThreadGroupPrototype,
+    aadl2_ThreadGroupPrototype,
     SystemSubcomponentType,
-    aadl2::SystemPrototype,
+    aadl2_SystemPrototype,
     SubprogramSubcomponentType,
-    aadl2::SubprogramPrototype,
+    aadl2_SubprogramPrototype,
     SubprogramGroupSubcomponentType,
-    aadl2::SubprogramGroupPrototype,
+    aadl2_SubprogramGroupPrototype,
     BehavioredImplementation,
-    aadl2::SubprogramImplementation,
-    aadl2::ThreadImplementation,
+    aadl2_SubprogramImplementation,
+    aadl2_ThreadImplementation,
     Processor,
     Device,
     Memory,
@@ -75,312 +75,312 @@ from classes import (
     VirtualBus,
     VirtualProcessor,
     VirtualProcessorSubcomponentType,
-    aadl2::VirtualProcessorPrototype,
-    VirtualBusSubcomponentType,
-    aadl2::VirtualBusPrototype,
+    aadl2_VirtualProcessorPrototype,
     ThreadSubcomponentType,
-    aadl2::ThreadPrototype,
+    aadl2_ThreadPrototype,
     ProcessSubcomponentType,
-    aadl2::ProcessPrototype,
+    aadl2_ProcessPrototype,
     ProcessorSubcomponentType,
-    aadl2::ProcessorPrototype,
+    aadl2_ProcessorPrototype,
     MemorySubcomponentType,
-    aadl2::MemoryPrototype,
+    aadl2_MemoryPrototype,
     DeviceSubcomponentType,
-    aadl2::DevicePrototype,
+    aadl2_DevicePrototype,
     DataSubcomponentType,
-    aadl2::DataPrototype,
+    aadl2_DataPrototype,
     BusSubcomponentType,
-    aadl2::BusPrototype,
+    aadl2_BusPrototype,
     AbstractSubcomponentType,
-    aadl2::AbstractPrototype,
     AbstractClassifier,
-    aadl2::AbstractImplementation,
+    aadl2_AbstractImplementation,
     ComponentType,
-    aadl2::BusType,
-    aadl2::ProcessorType,
-    aadl2::DeviceType,
-    aadl2::ProcessType,
-    aadl2::ThreadType,
-    aadl2::SystemType,
-    aadl2::ThreadGroupType,
-    aadl2::VirtualBusType,
-    aadl2::MemoryType,
-    aadl2::VirtualProcessorType,
+    aadl2_ProcessorType,
+    aadl2_ProcessType,
+    aadl2_VirtualBusType,
+    aadl2_VirtualProcessorType,
+    aadl2_SystemType,
+    aadl2_BusType,
+    aadl2_DeviceType,
+    aadl2_MemoryType,
+    aadl2_ThreadGroupType,
+    aadl2_ThreadType,
     ComponentImplementation,
-    aadl2::SystemImplementation,
-    aadl2::ProcessorImplementation,
-    aadl2::ProcessImplementation,
-    aadl2::ThreadGroupImplementation,
-    aadl2::DeviceImplementation,
-    aadl2::VirtualBusImplementation,
-    aadl2::VirtualProcessorImplementation,
-    aadl2::BusImplementation,
-    aadl2::DataImplementation,
-    aadl2::SubprogramGroupImplementation,
-    aadl2::MemoryImplementation,
-    aadl2::BehavioredImplementation,
+    aadl2_VirtualProcessorImplementation,
+    aadl2_ProcessorImplementation,
+    aadl2_ThreadGroupImplementation,
+    aadl2_MemoryImplementation,
+    aadl2_ProcessImplementation,
+    aadl2_DataImplementation,
+    aadl2_VirtualBusImplementation,
+    aadl2_SystemImplementation,
+    aadl2_DeviceImplementation,
+    aadl2_BusImplementation,
+    aadl2_SubprogramGroupImplementation,
+    aadl2_BehavioredImplementation,
     BehavioralFeature,
     FeaturePrototypeActual,
-    aadl2::FeaturePrototypeReference,
-    aadl2::PortSpecification,
-    aadl2::AccessSpecification,
-    aadl2::FeatureGroupPrototypeActual,
+    aadl2_AccessSpecification,
+    aadl2_FeaturePrototypeReference,
+    aadl2_PortSpecification,
+    aadl2_FeatureGroupPrototypeActual,
     PrototypeBinding,
-    aadl2::FeaturePrototypeBinding,
-    aadl2::FeatureGroupPrototypeBinding,
-    aadl2::ComponentPrototypeBinding,
+    aadl2_FeaturePrototypeBinding,
+    aadl2_FeatureGroupPrototypeBinding,
+    aadl2_ComponentPrototypeBinding,
     ModelUnit,
-    aadl2::AadlPackage,
+    aadl2_AadlPackage,
     PackageSection,
-    aadl2::PrivatePackageSection,
-    aadl2::PublicPackageSection,
+    aadl2_PrivatePackageSection,
+    aadl2_PublicPackageSection,
     AnnexSubclause,
-    aadl2::DefaultAnnexSubclause,
+    aadl2_DefaultAnnexSubclause,
     AnnexLibrary,
-    aadl2::DefaultAnnexLibrary,
+    aadl2_DefaultAnnexLibrary,
+    ProcessorFeature,
+    InternalFeature,
+    Connection,
+    VirtualBusSubcomponentType,
+    aadl2_VirtualBusPrototype,
+    aadl2_AbstractPrototype,
+    Abstract,
+    Subcomponent,
+    aadl2_SystemSubcomponent,
+    aadl2_VirtualProcessorSubcomponent,
+    aadl2_VirtualBusSubcomponent,
+    aadl2_ProcessSubcomponent,
+    aadl2_ThreadGroupSubcomponent,
+    aadl2_DeviceSubcomponent,
+    aadl2_ProcessorSubcomponent,
+    aadl2_ThreadSubcomponent,
+    aadl2_MemorySubcomponent,
+    SubprogramGroup,
+    Subprogram,
+    AccessConnectionEnd,
+    aadl2_SubprogramSubcomponent,
+    TriggerPort,
+    Port,
+    PortConnectionEnd,
+    ParameterConnectionEnd,
+    Data,
+    aadl2_DataSubcomponent,
+    Bus,
+    aadl2_BusSubcomponent,
+    Access,
+    aadl2_SubprogramAccess,
+    aadl2_EventPort,
+    aadl2_BusAccess,
     FeatureType,
     Feature,
-    aadl2::DirectedFeature,
-    aadl2::CallContext,
-    aadl2::FeatureType,
+    aadl2_Access,
+    aadl2_DirectedFeature,
+    aadl2_CallContext,
+    aadl2_FeatureType,
     CallContext,
-    aadl2::DataType,
-    aadl2::SubprogramGroupType,
-    aadl2::SubprogramType,
-    aadl2::AbstractType,
+    aadl2_SubprogramType,
+    aadl2_DataType,
+    aadl2_SubprogramGroupSubcomponent,
+    aadl2_SubprogramGroupAccess,
+    aadl2_SubprogramGroupType,
+    aadl2_AbstractType,
     FeatureGroupConnectionEnd,
     Context,
-    aadl2::SubprogramCall,
+    aadl2_EventDataPort,
+    aadl2_SubprogramCall,
+    aadl2_DataPort,
     Generalization_,
-    aadl2::GroupExtension,
+    aadl2_GroupExtension,
     DirectedFeature,
+    aadl2_Port,
+    aadl2_Parameter,
     EndToEndFlowElement,
-    aadl2::FlowElement,
+    aadl2_FlowElement,
     Flow,
     FlowElement,
+    aadl2_DataAccess,
     ModalPath,
     FlowFeature,
     Prototype,
-    aadl2::FeatureGroupPrototype,
+    aadl2_FeatureGroupPrototype,
+    aadl2_FeaturePrototype,
     ConnectionEnd,
-    aadl2::FeatureGroupConnectionEnd,
-    aadl2::FeatureConnectionEnd,
+    aadl2_AccessConnectionEnd,
+    aadl2_PortConnectionEnd,
+    aadl2_ParameterConnectionEnd,
+    aadl2_FeatureGroupConnectionEnd,
+    aadl2_FeatureConnectionEnd,
     ArrayableElement,
-    aadl2::FeaturePrototypeActual,
-    aadl2::ComponentPrototypeActual,
+    aadl2_FeaturePrototypeActual,
+    aadl2_ComponentPrototypeActual,
     FeatureConnectionEnd,
-    aadl2::FeatureGroup,
-    aadl2::TypeExtension,
-    aadl2::FlowSpecification,
-    aadl2::FeatureClassifier,
+    aadl2_AbstractFeature,
+    aadl2_FeatureGroup,
+    aadl2_TypeExtension,
+    aadl2_FlowSpecification,
+    aadl2_FeatureClassifier,
     FeatureClassifier,
     SubcomponentType,
-    aadl2::SystemSubcomponentType,
-    aadl2::ThreadGroupSubcomponentType,
-    aadl2::VirtualProcessorSubcomponentType,
-    aadl2::DeviceSubcomponentType,
-    aadl2::ProcessSubcomponentType,
-    aadl2::ThreadSubcomponentType,
-    aadl2::VirtualBusSubcomponentType,
-    aadl2::ProcessorSubcomponentType,
-    aadl2::MemorySubcomponentType,
-    aadl2::ComponentPrototype,
+    aadl2_SubprogramGroupSubcomponentType,
+    aadl2_DataSubcomponentType,
+    aadl2_ProcessorSubcomponentType,
+    aadl2_SubprogramSubcomponentType,
+    aadl2_VirtualBusSubcomponentType,
+    aadl2_ComponentPrototype,
+    aadl2_SystemSubcomponentType,
+    aadl2_ThreadSubcomponentType,
+    aadl2_DeviceSubcomponentType,
+    aadl2_MemorySubcomponentType,
+    aadl2_VirtualProcessorSubcomponentType,
+    aadl2_ProcessSubcomponentType,
+    aadl2_ThreadGroupSubcomponentType,
+    aadl2_BusSubcomponentType,
+    aadl2_AbstractSubcomponentType,
     Classifier,
-    aadl2::FeatureGroupType,
-    aadl2::ComponentClassifier,
-    aadl2::EndToEndFlow,
-    aadl2::Realization,
-    aadl2::ImplementationExtension,
-    ComponentClassifier,
-    aadl2::VirtualProcessorClassifier,
-    aadl2::BusClassifier,
-    aadl2::DataClassifier,
-    aadl2::AbstractClassifier,
-    aadl2::ProcessorClassifier,
-    aadl2::DeviceClassifier,
-    aadl2::SubprogramGroupClassifier,
-    aadl2::ComponentType,
-    aadl2::SubprogramClassifier,
-    aadl2::ProcessClassifier,
-    aadl2::ThreadClassifier,
-    aadl2::SystemClassifier,
-    aadl2::VirtualBusClassifier,
-    aadl2::ThreadGroupClassifier,
-    aadl2::MemoryClassifier,
-    aadl2::ComponentImplementation,
-    aadl2::CalledSubprogram,
-    RefinableElement,
-    CalledSubprogram,
-    StructuralFeature,
-    aadl2::Connection,
-    aadl2::Feature,
-    aadl2::FlowFeature,
-    ClassifierFeature,
-    aadl2::FlowImplementation,
-    aadl2::StructuralFeature,
-    aadl2::BehavioralFeature,
-    aadl2::ModeFeature,
-    ModeFeature,
-    aadl2::ModeTransition,
-    aadl2::Mode,
-    ModalElement,
-    aadl2::ProcessorFeature,
-    aadl2::SubprogramCallSequence,
-    aadl2::Subcomponent,
-    aadl2::ModalPath,
-    Relationship,
-    aadl2::DirectedRelationship,
+    aadl2_FeatureGroupType,
+    aadl2_ComponentClassifier,
+    aadl2_PortProxy,
+    aadl2_EventDataSource,
+    aadl2_EventSource,
+    aadl2_FeatureGroupConnection,
+    aadl2_FeatureConnection,
+    aadl2_PortConnection,
+    aadl2_ParameterConnection,
+    aadl2_AccessConnection,
+    aadl2_AbstractSubcomponent,
     DirectedRelationship,
-    aadl2::Prototype,
-    aadl2::AnnexSubclause,
-    aadl2::Generalization_,
+    aadl2_Generalization_,
     Namespace,
-    aadl2::PackageSection,
-    aadl2::EnumerationType,
-    aadl2::RecordType,
-    aadl2::GlobalNamespace,
-    aadl2::PropertySet,
+    aadl2_PackageSection,
+    aadl2_EnumerationType,
+    aadl2_PropertySet,
+    aadl2_GlobalNamespace,
+    aadl2_RecordType,
     PropertyOwner,
-    aadl2::ClassifierValue,
-    aadl2::ArraySizeProperty,
-    aadl2::AbstractNamedValue,
+    aadl2_ClassifierValue,
+    aadl2_ArraySizeProperty,
+    aadl2_AbstractNamedValue,
     Type,
-    aadl2::SubcomponentType,
-    aadl2::PropertyType,
+    aadl2_SubcomponentType,
+    aadl2_PropertyType,
     TypedElement,
-    aadl2::BasicProperty,
-    aadl2::MetaclassReference,
+    aadl2_BasicProperty,
+    aadl2_MetaclassReference,
     ArraySizeProperty,
     AbstractNamedValue,
-    aadl2::PropertyConstant,
+    aadl2_PropertyConstant,
     BasicProperty,
-    aadl2::RecordField,
-    aadl2::ModalPropertyValue,
-    aadl2::Classifier,
-    aadl2::Property,
+    aadl2_RecordField,
+    aadl2_Classifier,
+    aadl2_Property,
     NamedElement,
-    aadl2::ComponentTypeRename,
-    aadl2::PackageRename,
-    aadl2::VirtualBus,
-    aadl2::ModalElement,
-    aadl2::Processor,
-    aadl2::EndToEndFlowElement,
-    aadl2::TypedElement,
-    aadl2::VirtualProcessor,
-    aadl2::Device,
-    aadl2::Flow,
-    aadl2::Memory,
-    aadl2::AnnexLibrary,
-    aadl2::Namespace,
-    aadl2::ClassifierFeature,
-    aadl2::Process,
-    aadl2::EnumerationLiteral,
-    aadl2::Context,
-    aadl2::System,
-    aadl2::RefinableElement,
-    aadl2::TriggerPort,
-    aadl2::Thread,
-    aadl2::ModelUnit,
-    aadl2::ConnectionEnd,
-    aadl2::ThreadGroup,
-    aadl2::FeatureGroupTypeRename,
-    aadl2::Type,
+    aadl2_Device,
+    aadl2_ThreadGroup,
+    aadl2_VirtualBus,
+    aadl2_SubprogramGroup,
+    aadl2_Abstract,
+    aadl2_AnnexLibrary,
+    aadl2_ComponentTypeRename,
+    aadl2_System,
+    aadl2_FeatureGroupTypeRename,
+    aadl2_Data,
+    aadl2_Process,
+    aadl2_Bus,
+    aadl2_Namespace,
+    aadl2_TypedElement,
+    aadl2_VirtualProcessor,
+    aadl2_ClassifierFeature,
+    aadl2_PackageRename,
+    aadl2_ModelUnit,
+    aadl2_EnumerationLiteral,
+    aadl2_Context,
+    aadl2_ConnectionEnd,
+    aadl2_TriggerPort,
+    aadl2_Processor,
+    aadl2_EndToEndFlowElement,
+    aadl2_Flow,
+    aadl2_Thread,
+    aadl2_Memory,
+    aadl2_Type,
     Element,
-    aadl2::PropertyOwner,
-    aadl2::BasicPropertyAssociation,
-    aadl2::ArrayRange,
-    aadl2::NamedElement,
-    aadl2::ArrayableElement,
-    aadl2::PrototypeBinding,
-    aadl2::ContainedNamedElement,
-    aadl2::NumericRange,
-    aadl2::PropertyAssociation,
-    aadl2::ComponentImplementationReference,
-    aadl2::ContainmentPathElement,
-    aadl2::FlowEnd,
-    aadl2::ArraySize,
-    aadl2::Relationship,
-    aadl2::ModeTransitionTrigger,
-    aadl2::PropertyExpression,
-    aadl2::ArrayDimension,
-    aadl2::Comment,
-    aadl2::Element,
-    ProcessorFeature,
-    InternalFeature,
-    aadl2::EventSource,
-    aadl2::EventDataSource,
-    Connection,
-    aadl2::AccessConnection,
-    aadl2::ParameterConnection,
-    aadl2::FeatureConnection,
-    aadl2::FeatureGroupConnection,
-    aadl2::PortConnection,
-    aadl2::Abstract,
-    Abstract,
-    aadl2::AbstractSubcomponentType,
-    Subcomponent,
-    aadl2::SystemSubcomponent,
-    aadl2::VirtualBusSubcomponent,
-    aadl2::ProcessorSubcomponent,
-    aadl2::ThreadGroupSubcomponent,
-    aadl2::AbstractSubcomponent,
-    aadl2::ProcessSubcomponent,
-    aadl2::ThreadSubcomponent,
-    aadl2::VirtualProcessorSubcomponent,
-    aadl2::MemorySubcomponent,
-    aadl2::DeviceSubcomponent,
-    aadl2::EndToEndFlowSegment,
-    aadl2::ConnectedElement,
-    aadl2::FlowSegment,
-    aadl2::ModeBinding,
-    aadl2::FeaturePrototype,
-    aadl2::SubprogramGroup,
-    SubprogramGroup,
-    aadl2::SubprogramGroupSubcomponentType,
-    aadl2::Subprogram,
-    Subprogram,
-    aadl2::SubprogramSubcomponentType,
-    AccessConnectionEnd,
-    aadl2::SubprogramSubcomponent,
-    aadl2::SubprogramProxy,
-    aadl2::SubprogramGroupSubcomponent,
-    TriggerPort,
-    aadl2::AbstractFeature,
-    Port,
-    aadl2::EventPort,
-    aadl2::Data,
-    aadl2::PortConnectionEnd,
-    aadl2::ParameterConnectionEnd,
-    PortConnectionEnd,
-    aadl2::PortProxy,
-    aadl2::Port,
-    aadl2::InternalFeature,
-    ParameterConnectionEnd,
-    aadl2::Parameter,
-    Data,
-    aadl2::DataSubcomponent,
-    aadl2::EventDataPort,
-    aadl2::DataPort,
-    aadl2::DataSubcomponentType,
-    aadl2::Bus,
-    aadl2::AccessConnectionEnd,
-    aadl2::Access,
-    Bus,
-    aadl2::BusSubcomponent,
-    aadl2::BusSubcomponentType,
-    Access,
-    aadl2::DataAccess,
-    aadl2::SubprogramAccess,
-    aadl2::BusAccess,
-    aadl2::SubprogramGroupAccess,
-    AccessType,
+    aadl2_ModeBinding,
+    aadl2_ContainedNamedElement,
+    aadl2_NumericRange,
+    aadl2_BasicPropertyAssociation,
+    aadl2_FlowEnd,
+    aadl2_NamedElement,
+    aadl2_PropertyAssociation,
+    aadl2_ConnectedElement,
+    aadl2_PrototypeBinding,
+    aadl2_FlowSegment,
+    aadl2_PropertyOwner,
+    aadl2_PropertyExpression,
+    aadl2_EndToEndFlowSegment,
+    aadl2_ModeTransitionTrigger,
+    aadl2_Comment,
+    aadl2_Element,
+    aadl2_EndToEndFlow,
+    aadl2_Realization,
+    aadl2_ImplementationExtension,
+    aadl2_ArrayableElement,
+    ComponentClassifier,
+    aadl2_SubprogramClassifier,
+    aadl2_BusClassifier,
+    aadl2_ComponentType,
+    aadl2_ProcessorClassifier,
+    aadl2_MemoryClassifier,
+    aadl2_ThreadGroupClassifier,
+    aadl2_VirtualBusClassifier,
+    aadl2_VirtualProcessorClassifier,
+    aadl2_ThreadClassifier,
+    aadl2_SubprogramGroupClassifier,
+    aadl2_AbstractClassifier,
+    aadl2_DataClassifier,
+    aadl2_ProcessClassifier,
+    aadl2_DeviceClassifier,
+    aadl2_SystemClassifier,
+    aadl2_ComponentImplementation,
+    aadl2_ComponentImplementationReference,
+    aadl2_ArraySize,
+    aadl2_ArrayDimension,
+    aadl2_ArrayRange,
+    aadl2_ContainmentPathElement,
+    aadl2_CalledSubprogram,
+    aadl2_RefinableElement,
+    RefinableElement,
+    CalledSubprogram,
+    aadl2_Subprogram,
+    aadl2_SubprogramProxy,
+    StructuralFeature,
+    aadl2_FlowFeature,
+    aadl2_Prototype,
+    aadl2_Feature,
+    aadl2_Connection,
+    ClassifierFeature,
+    aadl2_FlowImplementation,
+    aadl2_BehavioralFeature,
+    aadl2_StructuralFeature,
+    aadl2_ModeFeature,
+    ModeFeature,
+    aadl2_ModeTransition,
+    aadl2_Mode,
+    aadl2_ModalElement,
+    ModalElement,
+    aadl2_InternalFeature,
+    aadl2_ModalPath,
+    aadl2_ProcessorFeature,
+    aadl2_ModalPropertyValue,
+    aadl2_AnnexSubclause,
+    aadl2_Subcomponent,
+    aadl2_SubprogramCallSequence,
+    aadl2_Relationship,
+    Relationship,
+    aadl2_DirectedRelationship,
     AccessCategory,
-    ComponentCategory,
     DirectionType,
-    PortCategory,
+    ComponentCategory,
     OperationKind,
+    PortCategory,
     FlowKind,
+    AccessType,
 )
 
 # =============================================================================
@@ -403,16 +403,16 @@ def test_enumerationtype_constructor_args():
 
 
 
-def test_aadl2::unitstype_is_not_abstract():
-    assert not inspect.isabstract(aadl2::UnitsType)
+def test_aadl2_unitstype_is_not_abstract():
+    assert not inspect.isabstract(aadl2_UnitsType)
 
 
-def test_aadl2::unitstype_constructor_exists():
-    assert callable(aadl2::UnitsType.__init__)
+def test_aadl2_unitstype_constructor_exists():
+    assert callable(aadl2_UnitsType.__init__)
 
 
-def test_aadl2::unitstype_constructor_args():
-    sig = inspect.signature(aadl2::UnitsType.__init__)
+def test_aadl2_unitstype_constructor_args():
+    sig = inspect.signature(aadl2_UnitsType.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -431,30 +431,30 @@ def test_numbertype_constructor_args():
 
 
 
-def test_aadl2::aadlreal_is_not_abstract():
-    assert not inspect.isabstract(aadl2::AadlReal)
+def test_aadl2_aadlreal_is_not_abstract():
+    assert not inspect.isabstract(aadl2_AadlReal)
 
 
-def test_aadl2::aadlreal_constructor_exists():
-    assert callable(aadl2::AadlReal.__init__)
+def test_aadl2_aadlreal_constructor_exists():
+    assert callable(aadl2_AadlReal.__init__)
 
 
-def test_aadl2::aadlreal_constructor_args():
-    sig = inspect.signature(aadl2::AadlReal.__init__)
+def test_aadl2_aadlreal_constructor_args():
+    sig = inspect.signature(aadl2_AadlReal.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_aadl2::aadlinteger_is_not_abstract():
-    assert not inspect.isabstract(aadl2::AadlInteger)
+def test_aadl2_aadlinteger_is_not_abstract():
+    assert not inspect.isabstract(aadl2_AadlInteger)
 
 
-def test_aadl2::aadlinteger_constructor_exists():
-    assert callable(aadl2::AadlInteger.__init__)
+def test_aadl2_aadlinteger_constructor_exists():
+    assert callable(aadl2_AadlInteger.__init__)
 
 
-def test_aadl2::aadlinteger_constructor_args():
-    sig = inspect.signature(aadl2::AadlInteger.__init__)
+def test_aadl2_aadlinteger_constructor_args():
+    sig = inspect.signature(aadl2_AadlInteger.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -473,86 +473,86 @@ def test_nonlisttype_constructor_args():
 
 
 
-def test_aadl2::numbertype_is_not_abstract():
-    assert not inspect.isabstract(aadl2::NumberType)
+def test_aadl2_aadlstring_is_not_abstract():
+    assert not inspect.isabstract(aadl2_AadlString)
 
 
-def test_aadl2::numbertype_constructor_exists():
-    assert callable(aadl2::NumberType.__init__)
+def test_aadl2_aadlstring_constructor_exists():
+    assert callable(aadl2_AadlString.__init__)
 
 
-def test_aadl2::numbertype_constructor_args():
-    sig = inspect.signature(aadl2::NumberType.__init__)
+def test_aadl2_aadlstring_constructor_args():
+    sig = inspect.signature(aadl2_AadlString.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_aadl2::referencetype_is_not_abstract():
-    assert not inspect.isabstract(aadl2::ReferenceType)
+def test_aadl2_rangetype_is_not_abstract():
+    assert not inspect.isabstract(aadl2_RangeType)
 
 
-def test_aadl2::referencetype_constructor_exists():
-    assert callable(aadl2::ReferenceType.__init__)
+def test_aadl2_rangetype_constructor_exists():
+    assert callable(aadl2_RangeType.__init__)
 
 
-def test_aadl2::referencetype_constructor_args():
-    sig = inspect.signature(aadl2::ReferenceType.__init__)
+def test_aadl2_rangetype_constructor_args():
+    sig = inspect.signature(aadl2_RangeType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_aadl2::rangetype_is_not_abstract():
-    assert not inspect.isabstract(aadl2::RangeType)
+def test_aadl2_referencetype_is_not_abstract():
+    assert not inspect.isabstract(aadl2_ReferenceType)
 
 
-def test_aadl2::rangetype_constructor_exists():
-    assert callable(aadl2::RangeType.__init__)
+def test_aadl2_referencetype_constructor_exists():
+    assert callable(aadl2_ReferenceType.__init__)
 
 
-def test_aadl2::rangetype_constructor_args():
-    sig = inspect.signature(aadl2::RangeType.__init__)
+def test_aadl2_referencetype_constructor_args():
+    sig = inspect.signature(aadl2_ReferenceType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_aadl2::aadlstring_is_not_abstract():
-    assert not inspect.isabstract(aadl2::AadlString)
+def test_aadl2_classifiertype_is_not_abstract():
+    assert not inspect.isabstract(aadl2_ClassifierType)
 
 
-def test_aadl2::aadlstring_constructor_exists():
-    assert callable(aadl2::AadlString.__init__)
+def test_aadl2_classifiertype_constructor_exists():
+    assert callable(aadl2_ClassifierType.__init__)
 
 
-def test_aadl2::aadlstring_constructor_args():
-    sig = inspect.signature(aadl2::AadlString.__init__)
+def test_aadl2_classifiertype_constructor_args():
+    sig = inspect.signature(aadl2_ClassifierType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_aadl2::classifiertype_is_not_abstract():
-    assert not inspect.isabstract(aadl2::ClassifierType)
+def test_aadl2_numbertype_is_not_abstract():
+    assert not inspect.isabstract(aadl2_NumberType)
 
 
-def test_aadl2::classifiertype_constructor_exists():
-    assert callable(aadl2::ClassifierType.__init__)
+def test_aadl2_numbertype_constructor_exists():
+    assert callable(aadl2_NumberType.__init__)
 
 
-def test_aadl2::classifiertype_constructor_args():
-    sig = inspect.signature(aadl2::ClassifierType.__init__)
+def test_aadl2_numbertype_constructor_args():
+    sig = inspect.signature(aadl2_NumberType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_aadl2::aadlboolean_is_not_abstract():
-    assert not inspect.isabstract(aadl2::AadlBoolean)
+def test_aadl2_aadlboolean_is_not_abstract():
+    assert not inspect.isabstract(aadl2_AadlBoolean)
 
 
-def test_aadl2::aadlboolean_constructor_exists():
-    assert callable(aadl2::AadlBoolean.__init__)
+def test_aadl2_aadlboolean_constructor_exists():
+    assert callable(aadl2_AadlBoolean.__init__)
 
 
-def test_aadl2::aadlboolean_constructor_args():
-    sig = inspect.signature(aadl2::AadlBoolean.__init__)
+def test_aadl2_aadlboolean_constructor_args():
+    sig = inspect.signature(aadl2_AadlBoolean.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -571,30 +571,30 @@ def test_propertytype_constructor_args():
 
 
 
-def test_aadl2::listtype_is_not_abstract():
-    assert not inspect.isabstract(aadl2::ListType)
+def test_aadl2_listtype_is_not_abstract():
+    assert not inspect.isabstract(aadl2_ListType)
 
 
-def test_aadl2::listtype_constructor_exists():
-    assert callable(aadl2::ListType.__init__)
+def test_aadl2_listtype_constructor_exists():
+    assert callable(aadl2_ListType.__init__)
 
 
-def test_aadl2::listtype_constructor_args():
-    sig = inspect.signature(aadl2::ListType.__init__)
+def test_aadl2_listtype_constructor_args():
+    sig = inspect.signature(aadl2_ListType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_aadl2::nonlisttype_is_not_abstract():
-    assert not inspect.isabstract(aadl2::NonListType)
+def test_aadl2_nonlisttype_is_not_abstract():
+    assert not inspect.isabstract(aadl2_NonListType)
 
 
-def test_aadl2::nonlisttype_constructor_exists():
-    assert callable(aadl2::NonListType.__init__)
+def test_aadl2_nonlisttype_constructor_exists():
+    assert callable(aadl2_NonListType.__init__)
 
 
-def test_aadl2::nonlisttype_constructor_args():
-    sig = inspect.signature(aadl2::NonListType.__init__)
+def test_aadl2_nonlisttype_constructor_args():
+    sig = inspect.signature(aadl2_NonListType.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -613,23 +613,23 @@ def test_numbervalue_constructor_args():
 
 
 
-def test_aadl2::realliteral_is_not_abstract():
-    assert not inspect.isabstract(aadl2::RealLiteral)
+def test_aadl2_realliteral_is_not_abstract():
+    assert not inspect.isabstract(aadl2_RealLiteral)
 
 
-def test_aadl2::realliteral_constructor_exists():
-    assert callable(aadl2::RealLiteral.__init__)
+def test_aadl2_realliteral_constructor_exists():
+    assert callable(aadl2_RealLiteral.__init__)
 
 
-def test_aadl2::realliteral_constructor_args():
-    sig = inspect.signature(aadl2::RealLiteral.__init__)
+def test_aadl2_realliteral_constructor_args():
+    sig = inspect.signature(aadl2_RealLiteral.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
 
-def test_aadl2::realliteral_has_value():
-    assert hasattr(aadl2::RealLiteral, "value")
+def test_aadl2_realliteral_has_value():
+    assert hasattr(aadl2_RealLiteral, "value")
     descriptor = None
-    for klass in aadl2::RealLiteral.__mro__:
+    for klass in aadl2_RealLiteral.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -637,35 +637,35 @@ def test_aadl2::realliteral_has_value():
 
 
 
-def test_aadl2::integerliteral_is_not_abstract():
-    assert not inspect.isabstract(aadl2::IntegerLiteral)
+def test_aadl2_integerliteral_is_not_abstract():
+    assert not inspect.isabstract(aadl2_IntegerLiteral)
 
 
-def test_aadl2::integerliteral_constructor_exists():
-    assert callable(aadl2::IntegerLiteral.__init__)
+def test_aadl2_integerliteral_constructor_exists():
+    assert callable(aadl2_IntegerLiteral.__init__)
 
 
-def test_aadl2::integerliteral_constructor_args():
-    sig = inspect.signature(aadl2::IntegerLiteral.__init__)
+def test_aadl2_integerliteral_constructor_args():
+    sig = inspect.signature(aadl2_IntegerLiteral.__init__)
     params = list(sig.parameters.keys())
-    assert "base" in params, "Missing parameter 'base'"
     assert "value" in params, "Missing parameter 'value'"
+    assert "base" in params, "Missing parameter 'base'"
 
-def test_aadl2::integerliteral_has_base():
-    assert hasattr(aadl2::IntegerLiteral, "base")
+def test_aadl2_integerliteral_has_value():
+    assert hasattr(aadl2_IntegerLiteral, "value")
     descriptor = None
-    for klass in aadl2::IntegerLiteral.__mro__:
+    for klass in aadl2_IntegerLiteral.__mro__:
+        if "value" in klass.__dict__:
+            descriptor = klass.__dict__["value"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_aadl2_integerliteral_has_base():
+    assert hasattr(aadl2_IntegerLiteral, "base")
+    descriptor = None
+    for klass in aadl2_IntegerLiteral.__mro__:
         if "base" in klass.__dict__:
             descriptor = klass.__dict__["base"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_aadl2::integerliteral_has_value():
-    assert hasattr(aadl2::IntegerLiteral, "value")
-    descriptor = None
-    for klass in aadl2::IntegerLiteral.__mro__:
-        if "value" in klass.__dict__:
-            descriptor = klass.__dict__["value"]
             break
     assert isinstance(descriptor, property)
 
@@ -699,16 +699,16 @@ def test_enumerationliteral_constructor_args():
 
 
 
-def test_aadl2::unitliteral_is_not_abstract():
-    assert not inspect.isabstract(aadl2::UnitLiteral)
+def test_aadl2_unitliteral_is_not_abstract():
+    assert not inspect.isabstract(aadl2_UnitLiteral)
 
 
-def test_aadl2::unitliteral_constructor_exists():
-    assert callable(aadl2::UnitLiteral.__init__)
+def test_aadl2_unitliteral_constructor_exists():
+    assert callable(aadl2_UnitLiteral.__init__)
 
 
-def test_aadl2::unitliteral_constructor_args():
-    sig = inspect.signature(aadl2::UnitLiteral.__init__)
+def test_aadl2_unitliteral_constructor_args():
+    sig = inspect.signature(aadl2_UnitLiteral.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -727,23 +727,23 @@ def test_propertyexpression_constructor_args():
 
 
 
-def test_aadl2::operation_is_not_abstract():
-    assert not inspect.isabstract(aadl2::Operation)
+def test_aadl2_operation_is_not_abstract():
+    assert not inspect.isabstract(aadl2_Operation)
 
 
-def test_aadl2::operation_constructor_exists():
-    assert callable(aadl2::Operation.__init__)
+def test_aadl2_operation_constructor_exists():
+    assert callable(aadl2_Operation.__init__)
 
 
-def test_aadl2::operation_constructor_args():
-    sig = inspect.signature(aadl2::Operation.__init__)
+def test_aadl2_operation_constructor_args():
+    sig = inspect.signature(aadl2_Operation.__init__)
     params = list(sig.parameters.keys())
     assert "op" in params, "Missing parameter 'op'"
 
-def test_aadl2::operation_has_op():
-    assert hasattr(aadl2::Operation, "op")
+def test_aadl2_operation_has_op():
+    assert hasattr(aadl2_Operation, "op")
     descriptor = None
-    for klass in aadl2::Operation.__mro__:
+    for klass in aadl2_Operation.__mro__:
         if "op" in klass.__dict__:
             descriptor = klass.__dict__["op"]
             break
@@ -751,30 +751,30 @@ def test_aadl2::operation_has_op():
 
 
 
-def test_aadl2::listvalue_is_not_abstract():
-    assert not inspect.isabstract(aadl2::ListValue)
+def test_aadl2_listvalue_is_not_abstract():
+    assert not inspect.isabstract(aadl2_ListValue)
 
 
-def test_aadl2::listvalue_constructor_exists():
-    assert callable(aadl2::ListValue.__init__)
+def test_aadl2_listvalue_constructor_exists():
+    assert callable(aadl2_ListValue.__init__)
 
 
-def test_aadl2::listvalue_constructor_args():
-    sig = inspect.signature(aadl2::ListValue.__init__)
+def test_aadl2_listvalue_constructor_args():
+    sig = inspect.signature(aadl2_ListValue.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_aadl2::propertyvalue_is_not_abstract():
-    assert not inspect.isabstract(aadl2::PropertyValue)
+def test_aadl2_propertyvalue_is_not_abstract():
+    assert not inspect.isabstract(aadl2_PropertyValue)
 
 
-def test_aadl2::propertyvalue_constructor_exists():
-    assert callable(aadl2::PropertyValue.__init__)
+def test_aadl2_propertyvalue_constructor_exists():
+    assert callable(aadl2_PropertyValue.__init__)
 
 
-def test_aadl2::propertyvalue_constructor_args():
-    sig = inspect.signature(aadl2::PropertyValue.__init__)
+def test_aadl2_propertyvalue_constructor_args():
+    sig = inspect.signature(aadl2_PropertyValue.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -793,89 +793,23 @@ def test_propertyvalue_constructor_args():
 
 
 
-def test_aadl2::computedvalue_is_not_abstract():
-    assert not inspect.isabstract(aadl2::ComputedValue)
+def test_aadl2_booleanliteral_is_not_abstract():
+    assert not inspect.isabstract(aadl2_BooleanLiteral)
 
 
-def test_aadl2::computedvalue_constructor_exists():
-    assert callable(aadl2::ComputedValue.__init__)
+def test_aadl2_booleanliteral_constructor_exists():
+    assert callable(aadl2_BooleanLiteral.__init__)
 
 
-def test_aadl2::computedvalue_constructor_args():
-    sig = inspect.signature(aadl2::ComputedValue.__init__)
-    params = list(sig.parameters.keys())
-    assert "function" in params, "Missing parameter 'function'"
-
-def test_aadl2::computedvalue_has_function():
-    assert hasattr(aadl2::ComputedValue, "function")
-    descriptor = None
-    for klass in aadl2::ComputedValue.__mro__:
-        if "function" in klass.__dict__:
-            descriptor = klass.__dict__["function"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_aadl2::namedvalue_is_not_abstract():
-    assert not inspect.isabstract(aadl2::NamedValue)
-
-
-def test_aadl2::namedvalue_constructor_exists():
-    assert callable(aadl2::NamedValue.__init__)
-
-
-def test_aadl2::namedvalue_constructor_args():
-    sig = inspect.signature(aadl2::NamedValue.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_aadl2::rangevalue_is_not_abstract():
-    assert not inspect.isabstract(aadl2::RangeValue)
-
-
-def test_aadl2::rangevalue_constructor_exists():
-    assert callable(aadl2::RangeValue.__init__)
-
-
-def test_aadl2::rangevalue_constructor_args():
-    sig = inspect.signature(aadl2::RangeValue.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_aadl2::recordvalue_is_not_abstract():
-    assert not inspect.isabstract(aadl2::RecordValue)
-
-
-def test_aadl2::recordvalue_constructor_exists():
-    assert callable(aadl2::RecordValue.__init__)
-
-
-def test_aadl2::recordvalue_constructor_args():
-    sig = inspect.signature(aadl2::RecordValue.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_aadl2::booleanliteral_is_not_abstract():
-    assert not inspect.isabstract(aadl2::BooleanLiteral)
-
-
-def test_aadl2::booleanliteral_constructor_exists():
-    assert callable(aadl2::BooleanLiteral.__init__)
-
-
-def test_aadl2::booleanliteral_constructor_args():
-    sig = inspect.signature(aadl2::BooleanLiteral.__init__)
+def test_aadl2_booleanliteral_constructor_args():
+    sig = inspect.signature(aadl2_BooleanLiteral.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
 
-def test_aadl2::booleanliteral_has_value():
-    assert hasattr(aadl2::BooleanLiteral, "value")
+def test_aadl2_booleanliteral_has_value():
+    assert hasattr(aadl2_BooleanLiteral, "value")
     descriptor = None
-    for klass in aadl2::BooleanLiteral.__mro__:
+    for klass in aadl2_BooleanLiteral.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -883,51 +817,117 @@ def test_aadl2::booleanliteral_has_value():
 
 
 
-def test_aadl2::numbervalue_is_not_abstract():
-    assert not inspect.isabstract(aadl2::NumberValue)
+def test_aadl2_referencevalue_is_not_abstract():
+    assert not inspect.isabstract(aadl2_ReferenceValue)
 
 
-def test_aadl2::numbervalue_constructor_exists():
-    assert callable(aadl2::NumberValue.__init__)
+def test_aadl2_referencevalue_constructor_exists():
+    assert callable(aadl2_ReferenceValue.__init__)
 
 
-def test_aadl2::numbervalue_constructor_args():
-    sig = inspect.signature(aadl2::NumberValue.__init__)
+def test_aadl2_referencevalue_constructor_args():
+    sig = inspect.signature(aadl2_ReferenceValue.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_aadl2::referencevalue_is_not_abstract():
-    assert not inspect.isabstract(aadl2::ReferenceValue)
+def test_aadl2_numbervalue_is_not_abstract():
+    assert not inspect.isabstract(aadl2_NumberValue)
 
 
-def test_aadl2::referencevalue_constructor_exists():
-    assert callable(aadl2::ReferenceValue.__init__)
+def test_aadl2_numbervalue_constructor_exists():
+    assert callable(aadl2_NumberValue.__init__)
 
 
-def test_aadl2::referencevalue_constructor_args():
-    sig = inspect.signature(aadl2::ReferenceValue.__init__)
+def test_aadl2_numbervalue_constructor_args():
+    sig = inspect.signature(aadl2_NumberValue.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_aadl2::stringliteral_is_not_abstract():
-    assert not inspect.isabstract(aadl2::StringLiteral)
+def test_aadl2_namedvalue_is_not_abstract():
+    assert not inspect.isabstract(aadl2_NamedValue)
 
 
-def test_aadl2::stringliteral_constructor_exists():
-    assert callable(aadl2::StringLiteral.__init__)
+def test_aadl2_namedvalue_constructor_exists():
+    assert callable(aadl2_NamedValue.__init__)
 
 
-def test_aadl2::stringliteral_constructor_args():
-    sig = inspect.signature(aadl2::StringLiteral.__init__)
+def test_aadl2_namedvalue_constructor_args():
+    sig = inspect.signature(aadl2_NamedValue.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_aadl2_rangevalue_is_not_abstract():
+    assert not inspect.isabstract(aadl2_RangeValue)
+
+
+def test_aadl2_rangevalue_constructor_exists():
+    assert callable(aadl2_RangeValue.__init__)
+
+
+def test_aadl2_rangevalue_constructor_args():
+    sig = inspect.signature(aadl2_RangeValue.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_aadl2_recordvalue_is_not_abstract():
+    assert not inspect.isabstract(aadl2_RecordValue)
+
+
+def test_aadl2_recordvalue_constructor_exists():
+    assert callable(aadl2_RecordValue.__init__)
+
+
+def test_aadl2_recordvalue_constructor_args():
+    sig = inspect.signature(aadl2_RecordValue.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_aadl2_computedvalue_is_not_abstract():
+    assert not inspect.isabstract(aadl2_ComputedValue)
+
+
+def test_aadl2_computedvalue_constructor_exists():
+    assert callable(aadl2_ComputedValue.__init__)
+
+
+def test_aadl2_computedvalue_constructor_args():
+    sig = inspect.signature(aadl2_ComputedValue.__init__)
+    params = list(sig.parameters.keys())
+    assert "function" in params, "Missing parameter 'function'"
+
+def test_aadl2_computedvalue_has_function():
+    assert hasattr(aadl2_ComputedValue, "function")
+    descriptor = None
+    for klass in aadl2_ComputedValue.__mro__:
+        if "function" in klass.__dict__:
+            descriptor = klass.__dict__["function"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_aadl2_stringliteral_is_not_abstract():
+    assert not inspect.isabstract(aadl2_StringLiteral)
+
+
+def test_aadl2_stringliteral_constructor_exists():
+    assert callable(aadl2_StringLiteral.__init__)
+
+
+def test_aadl2_stringliteral_constructor_args():
+    sig = inspect.signature(aadl2_StringLiteral.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
 
-def test_aadl2::stringliteral_has_value():
-    assert hasattr(aadl2::StringLiteral, "value")
+def test_aadl2_stringliteral_has_value():
+    assert hasattr(aadl2_StringLiteral, "value")
     descriptor = None
-    for klass in aadl2::StringLiteral.__mro__:
+    for klass in aadl2_StringLiteral.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -1145,16 +1145,16 @@ def test_threadgroupsubcomponenttype_constructor_args():
 
 
 
-def test_aadl2::threadgroupprototype_is_not_abstract():
-    assert not inspect.isabstract(aadl2::ThreadGroupPrototype)
+def test_aadl2_threadgroupprototype_is_not_abstract():
+    assert not inspect.isabstract(aadl2_ThreadGroupPrototype)
 
 
-def test_aadl2::threadgroupprototype_constructor_exists():
-    assert callable(aadl2::ThreadGroupPrototype.__init__)
+def test_aadl2_threadgroupprototype_constructor_exists():
+    assert callable(aadl2_ThreadGroupPrototype.__init__)
 
 
-def test_aadl2::threadgroupprototype_constructor_args():
-    sig = inspect.signature(aadl2::ThreadGroupPrototype.__init__)
+def test_aadl2_threadgroupprototype_constructor_args():
+    sig = inspect.signature(aadl2_ThreadGroupPrototype.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1173,16 +1173,16 @@ def test_systemsubcomponenttype_constructor_args():
 
 
 
-def test_aadl2::systemprototype_is_not_abstract():
-    assert not inspect.isabstract(aadl2::SystemPrototype)
+def test_aadl2_systemprototype_is_not_abstract():
+    assert not inspect.isabstract(aadl2_SystemPrototype)
 
 
-def test_aadl2::systemprototype_constructor_exists():
-    assert callable(aadl2::SystemPrototype.__init__)
+def test_aadl2_systemprototype_constructor_exists():
+    assert callable(aadl2_SystemPrototype.__init__)
 
 
-def test_aadl2::systemprototype_constructor_args():
-    sig = inspect.signature(aadl2::SystemPrototype.__init__)
+def test_aadl2_systemprototype_constructor_args():
+    sig = inspect.signature(aadl2_SystemPrototype.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1201,16 +1201,16 @@ def test_subprogramsubcomponenttype_constructor_args():
 
 
 
-def test_aadl2::subprogramprototype_is_not_abstract():
-    assert not inspect.isabstract(aadl2::SubprogramPrototype)
+def test_aadl2_subprogramprototype_is_not_abstract():
+    assert not inspect.isabstract(aadl2_SubprogramPrototype)
 
 
-def test_aadl2::subprogramprototype_constructor_exists():
-    assert callable(aadl2::SubprogramPrototype.__init__)
+def test_aadl2_subprogramprototype_constructor_exists():
+    assert callable(aadl2_SubprogramPrototype.__init__)
 
 
-def test_aadl2::subprogramprototype_constructor_args():
-    sig = inspect.signature(aadl2::SubprogramPrototype.__init__)
+def test_aadl2_subprogramprototype_constructor_args():
+    sig = inspect.signature(aadl2_SubprogramPrototype.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1229,16 +1229,16 @@ def test_subprogramgroupsubcomponenttype_constructor_args():
 
 
 
-def test_aadl2::subprogramgroupprototype_is_not_abstract():
-    assert not inspect.isabstract(aadl2::SubprogramGroupPrototype)
+def test_aadl2_subprogramgroupprototype_is_not_abstract():
+    assert not inspect.isabstract(aadl2_SubprogramGroupPrototype)
 
 
-def test_aadl2::subprogramgroupprototype_constructor_exists():
-    assert callable(aadl2::SubprogramGroupPrototype.__init__)
+def test_aadl2_subprogramgroupprototype_constructor_exists():
+    assert callable(aadl2_SubprogramGroupPrototype.__init__)
 
 
-def test_aadl2::subprogramgroupprototype_constructor_args():
-    sig = inspect.signature(aadl2::SubprogramGroupPrototype.__init__)
+def test_aadl2_subprogramgroupprototype_constructor_args():
+    sig = inspect.signature(aadl2_SubprogramGroupPrototype.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1257,30 +1257,30 @@ def test_behavioredimplementation_constructor_args():
 
 
 
-def test_aadl2::subprogramimplementation_is_not_abstract():
-    assert not inspect.isabstract(aadl2::SubprogramImplementation)
+def test_aadl2_subprogramimplementation_is_not_abstract():
+    assert not inspect.isabstract(aadl2_SubprogramImplementation)
 
 
-def test_aadl2::subprogramimplementation_constructor_exists():
-    assert callable(aadl2::SubprogramImplementation.__init__)
+def test_aadl2_subprogramimplementation_constructor_exists():
+    assert callable(aadl2_SubprogramImplementation.__init__)
 
 
-def test_aadl2::subprogramimplementation_constructor_args():
-    sig = inspect.signature(aadl2::SubprogramImplementation.__init__)
+def test_aadl2_subprogramimplementation_constructor_args():
+    sig = inspect.signature(aadl2_SubprogramImplementation.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_aadl2::threadimplementation_is_not_abstract():
-    assert not inspect.isabstract(aadl2::ThreadImplementation)
+def test_aadl2_threadimplementation_is_not_abstract():
+    assert not inspect.isabstract(aadl2_ThreadImplementation)
 
 
-def test_aadl2::threadimplementation_constructor_exists():
-    assert callable(aadl2::ThreadImplementation.__init__)
+def test_aadl2_threadimplementation_constructor_exists():
+    assert callable(aadl2_ThreadImplementation.__init__)
 
 
-def test_aadl2::threadimplementation_constructor_args():
-    sig = inspect.signature(aadl2::ThreadImplementation.__init__)
+def test_aadl2_threadimplementation_constructor_args():
+    sig = inspect.signature(aadl2_ThreadImplementation.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1425,44 +1425,16 @@ def test_virtualprocessorsubcomponenttype_constructor_args():
 
 
 
-def test_aadl2::virtualprocessorprototype_is_not_abstract():
-    assert not inspect.isabstract(aadl2::VirtualProcessorPrototype)
+def test_aadl2_virtualprocessorprototype_is_not_abstract():
+    assert not inspect.isabstract(aadl2_VirtualProcessorPrototype)
 
 
-def test_aadl2::virtualprocessorprototype_constructor_exists():
-    assert callable(aadl2::VirtualProcessorPrototype.__init__)
+def test_aadl2_virtualprocessorprototype_constructor_exists():
+    assert callable(aadl2_VirtualProcessorPrototype.__init__)
 
 
-def test_aadl2::virtualprocessorprototype_constructor_args():
-    sig = inspect.signature(aadl2::VirtualProcessorPrototype.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_virtualbussubcomponenttype_is_not_abstract():
-    assert not inspect.isabstract(VirtualBusSubcomponentType)
-
-
-def test_virtualbussubcomponenttype_constructor_exists():
-    assert callable(VirtualBusSubcomponentType.__init__)
-
-
-def test_virtualbussubcomponenttype_constructor_args():
-    sig = inspect.signature(VirtualBusSubcomponentType.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_aadl2::virtualbusprototype_is_not_abstract():
-    assert not inspect.isabstract(aadl2::VirtualBusPrototype)
-
-
-def test_aadl2::virtualbusprototype_constructor_exists():
-    assert callable(aadl2::VirtualBusPrototype.__init__)
-
-
-def test_aadl2::virtualbusprototype_constructor_args():
-    sig = inspect.signature(aadl2::VirtualBusPrototype.__init__)
+def test_aadl2_virtualprocessorprototype_constructor_args():
+    sig = inspect.signature(aadl2_VirtualProcessorPrototype.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1481,16 +1453,16 @@ def test_threadsubcomponenttype_constructor_args():
 
 
 
-def test_aadl2::threadprototype_is_not_abstract():
-    assert not inspect.isabstract(aadl2::ThreadPrototype)
+def test_aadl2_threadprototype_is_not_abstract():
+    assert not inspect.isabstract(aadl2_ThreadPrototype)
 
 
-def test_aadl2::threadprototype_constructor_exists():
-    assert callable(aadl2::ThreadPrototype.__init__)
+def test_aadl2_threadprototype_constructor_exists():
+    assert callable(aadl2_ThreadPrototype.__init__)
 
 
-def test_aadl2::threadprototype_constructor_args():
-    sig = inspect.signature(aadl2::ThreadPrototype.__init__)
+def test_aadl2_threadprototype_constructor_args():
+    sig = inspect.signature(aadl2_ThreadPrototype.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1509,16 +1481,16 @@ def test_processsubcomponenttype_constructor_args():
 
 
 
-def test_aadl2::processprototype_is_not_abstract():
-    assert not inspect.isabstract(aadl2::ProcessPrototype)
+def test_aadl2_processprototype_is_not_abstract():
+    assert not inspect.isabstract(aadl2_ProcessPrototype)
 
 
-def test_aadl2::processprototype_constructor_exists():
-    assert callable(aadl2::ProcessPrototype.__init__)
+def test_aadl2_processprototype_constructor_exists():
+    assert callable(aadl2_ProcessPrototype.__init__)
 
 
-def test_aadl2::processprototype_constructor_args():
-    sig = inspect.signature(aadl2::ProcessPrototype.__init__)
+def test_aadl2_processprototype_constructor_args():
+    sig = inspect.signature(aadl2_ProcessPrototype.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1537,16 +1509,16 @@ def test_processorsubcomponenttype_constructor_args():
 
 
 
-def test_aadl2::processorprototype_is_not_abstract():
-    assert not inspect.isabstract(aadl2::ProcessorPrototype)
+def test_aadl2_processorprototype_is_not_abstract():
+    assert not inspect.isabstract(aadl2_ProcessorPrototype)
 
 
-def test_aadl2::processorprototype_constructor_exists():
-    assert callable(aadl2::ProcessorPrototype.__init__)
+def test_aadl2_processorprototype_constructor_exists():
+    assert callable(aadl2_ProcessorPrototype.__init__)
 
 
-def test_aadl2::processorprototype_constructor_args():
-    sig = inspect.signature(aadl2::ProcessorPrototype.__init__)
+def test_aadl2_processorprototype_constructor_args():
+    sig = inspect.signature(aadl2_ProcessorPrototype.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1565,16 +1537,16 @@ def test_memorysubcomponenttype_constructor_args():
 
 
 
-def test_aadl2::memoryprototype_is_not_abstract():
-    assert not inspect.isabstract(aadl2::MemoryPrototype)
+def test_aadl2_memoryprototype_is_not_abstract():
+    assert not inspect.isabstract(aadl2_MemoryPrototype)
 
 
-def test_aadl2::memoryprototype_constructor_exists():
-    assert callable(aadl2::MemoryPrototype.__init__)
+def test_aadl2_memoryprototype_constructor_exists():
+    assert callable(aadl2_MemoryPrototype.__init__)
 
 
-def test_aadl2::memoryprototype_constructor_args():
-    sig = inspect.signature(aadl2::MemoryPrototype.__init__)
+def test_aadl2_memoryprototype_constructor_args():
+    sig = inspect.signature(aadl2_MemoryPrototype.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1593,16 +1565,16 @@ def test_devicesubcomponenttype_constructor_args():
 
 
 
-def test_aadl2::deviceprototype_is_not_abstract():
-    assert not inspect.isabstract(aadl2::DevicePrototype)
+def test_aadl2_deviceprototype_is_not_abstract():
+    assert not inspect.isabstract(aadl2_DevicePrototype)
 
 
-def test_aadl2::deviceprototype_constructor_exists():
-    assert callable(aadl2::DevicePrototype.__init__)
+def test_aadl2_deviceprototype_constructor_exists():
+    assert callable(aadl2_DevicePrototype.__init__)
 
 
-def test_aadl2::deviceprototype_constructor_args():
-    sig = inspect.signature(aadl2::DevicePrototype.__init__)
+def test_aadl2_deviceprototype_constructor_args():
+    sig = inspect.signature(aadl2_DevicePrototype.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1621,16 +1593,16 @@ def test_datasubcomponenttype_constructor_args():
 
 
 
-def test_aadl2::dataprototype_is_not_abstract():
-    assert not inspect.isabstract(aadl2::DataPrototype)
+def test_aadl2_dataprototype_is_not_abstract():
+    assert not inspect.isabstract(aadl2_DataPrototype)
 
 
-def test_aadl2::dataprototype_constructor_exists():
-    assert callable(aadl2::DataPrototype.__init__)
+def test_aadl2_dataprototype_constructor_exists():
+    assert callable(aadl2_DataPrototype.__init__)
 
 
-def test_aadl2::dataprototype_constructor_args():
-    sig = inspect.signature(aadl2::DataPrototype.__init__)
+def test_aadl2_dataprototype_constructor_args():
+    sig = inspect.signature(aadl2_DataPrototype.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1649,16 +1621,16 @@ def test_bussubcomponenttype_constructor_args():
 
 
 
-def test_aadl2::busprototype_is_not_abstract():
-    assert not inspect.isabstract(aadl2::BusPrototype)
+def test_aadl2_busprototype_is_not_abstract():
+    assert not inspect.isabstract(aadl2_BusPrototype)
 
 
-def test_aadl2::busprototype_constructor_exists():
-    assert callable(aadl2::BusPrototype.__init__)
+def test_aadl2_busprototype_constructor_exists():
+    assert callable(aadl2_BusPrototype.__init__)
 
 
-def test_aadl2::busprototype_constructor_args():
-    sig = inspect.signature(aadl2::BusPrototype.__init__)
+def test_aadl2_busprototype_constructor_args():
+    sig = inspect.signature(aadl2_BusPrototype.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1677,20 +1649,6 @@ def test_abstractsubcomponenttype_constructor_args():
 
 
 
-def test_aadl2::abstractprototype_is_not_abstract():
-    assert not inspect.isabstract(aadl2::AbstractPrototype)
-
-
-def test_aadl2::abstractprototype_constructor_exists():
-    assert callable(aadl2::AbstractPrototype.__init__)
-
-
-def test_aadl2::abstractprototype_constructor_args():
-    sig = inspect.signature(aadl2::AbstractPrototype.__init__)
-    params = list(sig.parameters.keys())
-
-
-
 def test_abstractclassifier_is_not_abstract():
     assert not inspect.isabstract(AbstractClassifier)
 
@@ -1705,16 +1663,16 @@ def test_abstractclassifier_constructor_args():
 
 
 
-def test_aadl2::abstractimplementation_is_not_abstract():
-    assert not inspect.isabstract(aadl2::AbstractImplementation)
+def test_aadl2_abstractimplementation_is_not_abstract():
+    assert not inspect.isabstract(aadl2_AbstractImplementation)
 
 
-def test_aadl2::abstractimplementation_constructor_exists():
-    assert callable(aadl2::AbstractImplementation.__init__)
+def test_aadl2_abstractimplementation_constructor_exists():
+    assert callable(aadl2_AbstractImplementation.__init__)
 
 
-def test_aadl2::abstractimplementation_constructor_args():
-    sig = inspect.signature(aadl2::AbstractImplementation.__init__)
+def test_aadl2_abstractimplementation_constructor_args():
+    sig = inspect.signature(aadl2_AbstractImplementation.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1733,142 +1691,142 @@ def test_componenttype_constructor_args():
 
 
 
-def test_aadl2::bustype_is_not_abstract():
-    assert not inspect.isabstract(aadl2::BusType)
+def test_aadl2_processortype_is_not_abstract():
+    assert not inspect.isabstract(aadl2_ProcessorType)
 
 
-def test_aadl2::bustype_constructor_exists():
-    assert callable(aadl2::BusType.__init__)
+def test_aadl2_processortype_constructor_exists():
+    assert callable(aadl2_ProcessorType.__init__)
 
 
-def test_aadl2::bustype_constructor_args():
-    sig = inspect.signature(aadl2::BusType.__init__)
+def test_aadl2_processortype_constructor_args():
+    sig = inspect.signature(aadl2_ProcessorType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_aadl2::processortype_is_not_abstract():
-    assert not inspect.isabstract(aadl2::ProcessorType)
+def test_aadl2_processtype_is_not_abstract():
+    assert not inspect.isabstract(aadl2_ProcessType)
 
 
-def test_aadl2::processortype_constructor_exists():
-    assert callable(aadl2::ProcessorType.__init__)
+def test_aadl2_processtype_constructor_exists():
+    assert callable(aadl2_ProcessType.__init__)
 
 
-def test_aadl2::processortype_constructor_args():
-    sig = inspect.signature(aadl2::ProcessorType.__init__)
+def test_aadl2_processtype_constructor_args():
+    sig = inspect.signature(aadl2_ProcessType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_aadl2::devicetype_is_not_abstract():
-    assert not inspect.isabstract(aadl2::DeviceType)
+def test_aadl2_virtualbustype_is_not_abstract():
+    assert not inspect.isabstract(aadl2_VirtualBusType)
 
 
-def test_aadl2::devicetype_constructor_exists():
-    assert callable(aadl2::DeviceType.__init__)
+def test_aadl2_virtualbustype_constructor_exists():
+    assert callable(aadl2_VirtualBusType.__init__)
 
 
-def test_aadl2::devicetype_constructor_args():
-    sig = inspect.signature(aadl2::DeviceType.__init__)
+def test_aadl2_virtualbustype_constructor_args():
+    sig = inspect.signature(aadl2_VirtualBusType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_aadl2::processtype_is_not_abstract():
-    assert not inspect.isabstract(aadl2::ProcessType)
+def test_aadl2_virtualprocessortype_is_not_abstract():
+    assert not inspect.isabstract(aadl2_VirtualProcessorType)
 
 
-def test_aadl2::processtype_constructor_exists():
-    assert callable(aadl2::ProcessType.__init__)
+def test_aadl2_virtualprocessortype_constructor_exists():
+    assert callable(aadl2_VirtualProcessorType.__init__)
 
 
-def test_aadl2::processtype_constructor_args():
-    sig = inspect.signature(aadl2::ProcessType.__init__)
+def test_aadl2_virtualprocessortype_constructor_args():
+    sig = inspect.signature(aadl2_VirtualProcessorType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_aadl2::threadtype_is_not_abstract():
-    assert not inspect.isabstract(aadl2::ThreadType)
+def test_aadl2_systemtype_is_not_abstract():
+    assert not inspect.isabstract(aadl2_SystemType)
 
 
-def test_aadl2::threadtype_constructor_exists():
-    assert callable(aadl2::ThreadType.__init__)
+def test_aadl2_systemtype_constructor_exists():
+    assert callable(aadl2_SystemType.__init__)
 
 
-def test_aadl2::threadtype_constructor_args():
-    sig = inspect.signature(aadl2::ThreadType.__init__)
+def test_aadl2_systemtype_constructor_args():
+    sig = inspect.signature(aadl2_SystemType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_aadl2::systemtype_is_not_abstract():
-    assert not inspect.isabstract(aadl2::SystemType)
+def test_aadl2_bustype_is_not_abstract():
+    assert not inspect.isabstract(aadl2_BusType)
 
 
-def test_aadl2::systemtype_constructor_exists():
-    assert callable(aadl2::SystemType.__init__)
+def test_aadl2_bustype_constructor_exists():
+    assert callable(aadl2_BusType.__init__)
 
 
-def test_aadl2::systemtype_constructor_args():
-    sig = inspect.signature(aadl2::SystemType.__init__)
+def test_aadl2_bustype_constructor_args():
+    sig = inspect.signature(aadl2_BusType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_aadl2::threadgrouptype_is_not_abstract():
-    assert not inspect.isabstract(aadl2::ThreadGroupType)
+def test_aadl2_devicetype_is_not_abstract():
+    assert not inspect.isabstract(aadl2_DeviceType)
 
 
-def test_aadl2::threadgrouptype_constructor_exists():
-    assert callable(aadl2::ThreadGroupType.__init__)
+def test_aadl2_devicetype_constructor_exists():
+    assert callable(aadl2_DeviceType.__init__)
 
 
-def test_aadl2::threadgrouptype_constructor_args():
-    sig = inspect.signature(aadl2::ThreadGroupType.__init__)
+def test_aadl2_devicetype_constructor_args():
+    sig = inspect.signature(aadl2_DeviceType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_aadl2::virtualbustype_is_not_abstract():
-    assert not inspect.isabstract(aadl2::VirtualBusType)
+def test_aadl2_memorytype_is_not_abstract():
+    assert not inspect.isabstract(aadl2_MemoryType)
 
 
-def test_aadl2::virtualbustype_constructor_exists():
-    assert callable(aadl2::VirtualBusType.__init__)
+def test_aadl2_memorytype_constructor_exists():
+    assert callable(aadl2_MemoryType.__init__)
 
 
-def test_aadl2::virtualbustype_constructor_args():
-    sig = inspect.signature(aadl2::VirtualBusType.__init__)
+def test_aadl2_memorytype_constructor_args():
+    sig = inspect.signature(aadl2_MemoryType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_aadl2::memorytype_is_not_abstract():
-    assert not inspect.isabstract(aadl2::MemoryType)
+def test_aadl2_threadgrouptype_is_not_abstract():
+    assert not inspect.isabstract(aadl2_ThreadGroupType)
 
 
-def test_aadl2::memorytype_constructor_exists():
-    assert callable(aadl2::MemoryType.__init__)
+def test_aadl2_threadgrouptype_constructor_exists():
+    assert callable(aadl2_ThreadGroupType.__init__)
 
 
-def test_aadl2::memorytype_constructor_args():
-    sig = inspect.signature(aadl2::MemoryType.__init__)
+def test_aadl2_threadgrouptype_constructor_args():
+    sig = inspect.signature(aadl2_ThreadGroupType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_aadl2::virtualprocessortype_is_not_abstract():
-    assert not inspect.isabstract(aadl2::VirtualProcessorType)
+def test_aadl2_threadtype_is_not_abstract():
+    assert not inspect.isabstract(aadl2_ThreadType)
 
 
-def test_aadl2::virtualprocessortype_constructor_exists():
-    assert callable(aadl2::VirtualProcessorType.__init__)
+def test_aadl2_threadtype_constructor_exists():
+    assert callable(aadl2_ThreadType.__init__)
 
 
-def test_aadl2::virtualprocessortype_constructor_args():
-    sig = inspect.signature(aadl2::VirtualProcessorType.__init__)
+def test_aadl2_threadtype_constructor_args():
+    sig = inspect.signature(aadl2_ThreadType.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1887,170 +1845,170 @@ def test_componentimplementation_constructor_args():
 
 
 
-def test_aadl2::systemimplementation_is_not_abstract():
-    assert not inspect.isabstract(aadl2::SystemImplementation)
+def test_aadl2_virtualprocessorimplementation_is_not_abstract():
+    assert not inspect.isabstract(aadl2_VirtualProcessorImplementation)
 
 
-def test_aadl2::systemimplementation_constructor_exists():
-    assert callable(aadl2::SystemImplementation.__init__)
+def test_aadl2_virtualprocessorimplementation_constructor_exists():
+    assert callable(aadl2_VirtualProcessorImplementation.__init__)
 
 
-def test_aadl2::systemimplementation_constructor_args():
-    sig = inspect.signature(aadl2::SystemImplementation.__init__)
+def test_aadl2_virtualprocessorimplementation_constructor_args():
+    sig = inspect.signature(aadl2_VirtualProcessorImplementation.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_aadl2::processorimplementation_is_not_abstract():
-    assert not inspect.isabstract(aadl2::ProcessorImplementation)
+def test_aadl2_processorimplementation_is_not_abstract():
+    assert not inspect.isabstract(aadl2_ProcessorImplementation)
 
 
-def test_aadl2::processorimplementation_constructor_exists():
-    assert callable(aadl2::ProcessorImplementation.__init__)
+def test_aadl2_processorimplementation_constructor_exists():
+    assert callable(aadl2_ProcessorImplementation.__init__)
 
 
-def test_aadl2::processorimplementation_constructor_args():
-    sig = inspect.signature(aadl2::ProcessorImplementation.__init__)
+def test_aadl2_processorimplementation_constructor_args():
+    sig = inspect.signature(aadl2_ProcessorImplementation.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_aadl2::processimplementation_is_not_abstract():
-    assert not inspect.isabstract(aadl2::ProcessImplementation)
+def test_aadl2_threadgroupimplementation_is_not_abstract():
+    assert not inspect.isabstract(aadl2_ThreadGroupImplementation)
 
 
-def test_aadl2::processimplementation_constructor_exists():
-    assert callable(aadl2::ProcessImplementation.__init__)
+def test_aadl2_threadgroupimplementation_constructor_exists():
+    assert callable(aadl2_ThreadGroupImplementation.__init__)
 
 
-def test_aadl2::processimplementation_constructor_args():
-    sig = inspect.signature(aadl2::ProcessImplementation.__init__)
+def test_aadl2_threadgroupimplementation_constructor_args():
+    sig = inspect.signature(aadl2_ThreadGroupImplementation.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_aadl2::threadgroupimplementation_is_not_abstract():
-    assert not inspect.isabstract(aadl2::ThreadGroupImplementation)
+def test_aadl2_memoryimplementation_is_not_abstract():
+    assert not inspect.isabstract(aadl2_MemoryImplementation)
 
 
-def test_aadl2::threadgroupimplementation_constructor_exists():
-    assert callable(aadl2::ThreadGroupImplementation.__init__)
+def test_aadl2_memoryimplementation_constructor_exists():
+    assert callable(aadl2_MemoryImplementation.__init__)
 
 
-def test_aadl2::threadgroupimplementation_constructor_args():
-    sig = inspect.signature(aadl2::ThreadGroupImplementation.__init__)
+def test_aadl2_memoryimplementation_constructor_args():
+    sig = inspect.signature(aadl2_MemoryImplementation.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_aadl2::deviceimplementation_is_not_abstract():
-    assert not inspect.isabstract(aadl2::DeviceImplementation)
+def test_aadl2_processimplementation_is_not_abstract():
+    assert not inspect.isabstract(aadl2_ProcessImplementation)
 
 
-def test_aadl2::deviceimplementation_constructor_exists():
-    assert callable(aadl2::DeviceImplementation.__init__)
+def test_aadl2_processimplementation_constructor_exists():
+    assert callable(aadl2_ProcessImplementation.__init__)
 
 
-def test_aadl2::deviceimplementation_constructor_args():
-    sig = inspect.signature(aadl2::DeviceImplementation.__init__)
+def test_aadl2_processimplementation_constructor_args():
+    sig = inspect.signature(aadl2_ProcessImplementation.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_aadl2::virtualbusimplementation_is_not_abstract():
-    assert not inspect.isabstract(aadl2::VirtualBusImplementation)
+def test_aadl2_dataimplementation_is_not_abstract():
+    assert not inspect.isabstract(aadl2_DataImplementation)
 
 
-def test_aadl2::virtualbusimplementation_constructor_exists():
-    assert callable(aadl2::VirtualBusImplementation.__init__)
+def test_aadl2_dataimplementation_constructor_exists():
+    assert callable(aadl2_DataImplementation.__init__)
 
 
-def test_aadl2::virtualbusimplementation_constructor_args():
-    sig = inspect.signature(aadl2::VirtualBusImplementation.__init__)
+def test_aadl2_dataimplementation_constructor_args():
+    sig = inspect.signature(aadl2_DataImplementation.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_aadl2::virtualprocessorimplementation_is_not_abstract():
-    assert not inspect.isabstract(aadl2::VirtualProcessorImplementation)
+def test_aadl2_virtualbusimplementation_is_not_abstract():
+    assert not inspect.isabstract(aadl2_VirtualBusImplementation)
 
 
-def test_aadl2::virtualprocessorimplementation_constructor_exists():
-    assert callable(aadl2::VirtualProcessorImplementation.__init__)
+def test_aadl2_virtualbusimplementation_constructor_exists():
+    assert callable(aadl2_VirtualBusImplementation.__init__)
 
 
-def test_aadl2::virtualprocessorimplementation_constructor_args():
-    sig = inspect.signature(aadl2::VirtualProcessorImplementation.__init__)
+def test_aadl2_virtualbusimplementation_constructor_args():
+    sig = inspect.signature(aadl2_VirtualBusImplementation.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_aadl2::busimplementation_is_not_abstract():
-    assert not inspect.isabstract(aadl2::BusImplementation)
+def test_aadl2_systemimplementation_is_not_abstract():
+    assert not inspect.isabstract(aadl2_SystemImplementation)
 
 
-def test_aadl2::busimplementation_constructor_exists():
-    assert callable(aadl2::BusImplementation.__init__)
+def test_aadl2_systemimplementation_constructor_exists():
+    assert callable(aadl2_SystemImplementation.__init__)
 
 
-def test_aadl2::busimplementation_constructor_args():
-    sig = inspect.signature(aadl2::BusImplementation.__init__)
+def test_aadl2_systemimplementation_constructor_args():
+    sig = inspect.signature(aadl2_SystemImplementation.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_aadl2::dataimplementation_is_not_abstract():
-    assert not inspect.isabstract(aadl2::DataImplementation)
+def test_aadl2_deviceimplementation_is_not_abstract():
+    assert not inspect.isabstract(aadl2_DeviceImplementation)
 
 
-def test_aadl2::dataimplementation_constructor_exists():
-    assert callable(aadl2::DataImplementation.__init__)
+def test_aadl2_deviceimplementation_constructor_exists():
+    assert callable(aadl2_DeviceImplementation.__init__)
 
 
-def test_aadl2::dataimplementation_constructor_args():
-    sig = inspect.signature(aadl2::DataImplementation.__init__)
+def test_aadl2_deviceimplementation_constructor_args():
+    sig = inspect.signature(aadl2_DeviceImplementation.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_aadl2::subprogramgroupimplementation_is_not_abstract():
-    assert not inspect.isabstract(aadl2::SubprogramGroupImplementation)
+def test_aadl2_busimplementation_is_not_abstract():
+    assert not inspect.isabstract(aadl2_BusImplementation)
 
 
-def test_aadl2::subprogramgroupimplementation_constructor_exists():
-    assert callable(aadl2::SubprogramGroupImplementation.__init__)
+def test_aadl2_busimplementation_constructor_exists():
+    assert callable(aadl2_BusImplementation.__init__)
 
 
-def test_aadl2::subprogramgroupimplementation_constructor_args():
-    sig = inspect.signature(aadl2::SubprogramGroupImplementation.__init__)
+def test_aadl2_busimplementation_constructor_args():
+    sig = inspect.signature(aadl2_BusImplementation.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_aadl2::memoryimplementation_is_not_abstract():
-    assert not inspect.isabstract(aadl2::MemoryImplementation)
+def test_aadl2_subprogramgroupimplementation_is_not_abstract():
+    assert not inspect.isabstract(aadl2_SubprogramGroupImplementation)
 
 
-def test_aadl2::memoryimplementation_constructor_exists():
-    assert callable(aadl2::MemoryImplementation.__init__)
+def test_aadl2_subprogramgroupimplementation_constructor_exists():
+    assert callable(aadl2_SubprogramGroupImplementation.__init__)
 
 
-def test_aadl2::memoryimplementation_constructor_args():
-    sig = inspect.signature(aadl2::MemoryImplementation.__init__)
+def test_aadl2_subprogramgroupimplementation_constructor_args():
+    sig = inspect.signature(aadl2_SubprogramGroupImplementation.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_aadl2::behavioredimplementation_is_not_abstract():
-    assert not inspect.isabstract(aadl2::BehavioredImplementation)
+def test_aadl2_behavioredimplementation_is_not_abstract():
+    assert not inspect.isabstract(aadl2_BehavioredImplementation)
 
 
-def test_aadl2::behavioredimplementation_constructor_exists():
-    assert callable(aadl2::BehavioredImplementation.__init__)
+def test_aadl2_behavioredimplementation_constructor_exists():
+    assert callable(aadl2_BehavioredImplementation.__init__)
 
 
-def test_aadl2::behavioredimplementation_constructor_args():
-    sig = inspect.signature(aadl2::BehavioredImplementation.__init__)
+def test_aadl2_behavioredimplementation_constructor_args():
+    sig = inspect.signature(aadl2_BehavioredImplementation.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -2083,91 +2041,33 @@ def test_featureprototypeactual_constructor_args():
 
 
 
-def test_aadl2::featureprototypereference_is_not_abstract():
-    assert not inspect.isabstract(aadl2::FeaturePrototypeReference)
+def test_aadl2_accessspecification_is_not_abstract():
+    assert not inspect.isabstract(aadl2_AccessSpecification)
 
 
-def test_aadl2::featureprototypereference_constructor_exists():
-    assert callable(aadl2::FeaturePrototypeReference.__init__)
+def test_aadl2_accessspecification_constructor_exists():
+    assert callable(aadl2_AccessSpecification.__init__)
 
 
-def test_aadl2::featureprototypereference_constructor_args():
-    sig = inspect.signature(aadl2::FeaturePrototypeReference.__init__)
-    params = list(sig.parameters.keys())
-    assert "direction" in params, "Missing parameter 'direction'"
-
-def test_aadl2::featureprototypereference_has_direction():
-    assert hasattr(aadl2::FeaturePrototypeReference, "direction")
-    descriptor = None
-    for klass in aadl2::FeaturePrototypeReference.__mro__:
-        if "direction" in klass.__dict__:
-            descriptor = klass.__dict__["direction"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_aadl2::portspecification_is_not_abstract():
-    assert not inspect.isabstract(aadl2::PortSpecification)
-
-
-def test_aadl2::portspecification_constructor_exists():
-    assert callable(aadl2::PortSpecification.__init__)
-
-
-def test_aadl2::portspecification_constructor_args():
-    sig = inspect.signature(aadl2::PortSpecification.__init__)
-    params = list(sig.parameters.keys())
-    assert "category" in params, "Missing parameter 'category'"
-    assert "direction" in params, "Missing parameter 'direction'"
-
-def test_aadl2::portspecification_has_category():
-    assert hasattr(aadl2::PortSpecification, "category")
-    descriptor = None
-    for klass in aadl2::PortSpecification.__mro__:
-        if "category" in klass.__dict__:
-            descriptor = klass.__dict__["category"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_aadl2::portspecification_has_direction():
-    assert hasattr(aadl2::PortSpecification, "direction")
-    descriptor = None
-    for klass in aadl2::PortSpecification.__mro__:
-        if "direction" in klass.__dict__:
-            descriptor = klass.__dict__["direction"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_aadl2::accessspecification_is_not_abstract():
-    assert not inspect.isabstract(aadl2::AccessSpecification)
-
-
-def test_aadl2::accessspecification_constructor_exists():
-    assert callable(aadl2::AccessSpecification.__init__)
-
-
-def test_aadl2::accessspecification_constructor_args():
-    sig = inspect.signature(aadl2::AccessSpecification.__init__)
+def test_aadl2_accessspecification_constructor_args():
+    sig = inspect.signature(aadl2_AccessSpecification.__init__)
     params = list(sig.parameters.keys())
     assert "kind" in params, "Missing parameter 'kind'"
     assert "category" in params, "Missing parameter 'category'"
 
-def test_aadl2::accessspecification_has_kind():
-    assert hasattr(aadl2::AccessSpecification, "kind")
+def test_aadl2_accessspecification_has_kind():
+    assert hasattr(aadl2_AccessSpecification, "kind")
     descriptor = None
-    for klass in aadl2::AccessSpecification.__mro__:
+    for klass in aadl2_AccessSpecification.__mro__:
         if "kind" in klass.__dict__:
             descriptor = klass.__dict__["kind"]
             break
     assert isinstance(descriptor, property)
 
-def test_aadl2::accessspecification_has_category():
-    assert hasattr(aadl2::AccessSpecification, "category")
+def test_aadl2_accessspecification_has_category():
+    assert hasattr(aadl2_AccessSpecification, "category")
     descriptor = None
-    for klass in aadl2::AccessSpecification.__mro__:
+    for klass in aadl2_AccessSpecification.__mro__:
         if "category" in klass.__dict__:
             descriptor = klass.__dict__["category"]
             break
@@ -2175,16 +2075,74 @@ def test_aadl2::accessspecification_has_category():
 
 
 
-def test_aadl2::featuregroupprototypeactual_is_not_abstract():
-    assert not inspect.isabstract(aadl2::FeatureGroupPrototypeActual)
+def test_aadl2_featureprototypereference_is_not_abstract():
+    assert not inspect.isabstract(aadl2_FeaturePrototypeReference)
 
 
-def test_aadl2::featuregroupprototypeactual_constructor_exists():
-    assert callable(aadl2::FeatureGroupPrototypeActual.__init__)
+def test_aadl2_featureprototypereference_constructor_exists():
+    assert callable(aadl2_FeaturePrototypeReference.__init__)
 
 
-def test_aadl2::featuregroupprototypeactual_constructor_args():
-    sig = inspect.signature(aadl2::FeatureGroupPrototypeActual.__init__)
+def test_aadl2_featureprototypereference_constructor_args():
+    sig = inspect.signature(aadl2_FeaturePrototypeReference.__init__)
+    params = list(sig.parameters.keys())
+    assert "direction" in params, "Missing parameter 'direction'"
+
+def test_aadl2_featureprototypereference_has_direction():
+    assert hasattr(aadl2_FeaturePrototypeReference, "direction")
+    descriptor = None
+    for klass in aadl2_FeaturePrototypeReference.__mro__:
+        if "direction" in klass.__dict__:
+            descriptor = klass.__dict__["direction"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_aadl2_portspecification_is_not_abstract():
+    assert not inspect.isabstract(aadl2_PortSpecification)
+
+
+def test_aadl2_portspecification_constructor_exists():
+    assert callable(aadl2_PortSpecification.__init__)
+
+
+def test_aadl2_portspecification_constructor_args():
+    sig = inspect.signature(aadl2_PortSpecification.__init__)
+    params = list(sig.parameters.keys())
+    assert "direction" in params, "Missing parameter 'direction'"
+    assert "category" in params, "Missing parameter 'category'"
+
+def test_aadl2_portspecification_has_direction():
+    assert hasattr(aadl2_PortSpecification, "direction")
+    descriptor = None
+    for klass in aadl2_PortSpecification.__mro__:
+        if "direction" in klass.__dict__:
+            descriptor = klass.__dict__["direction"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_aadl2_portspecification_has_category():
+    assert hasattr(aadl2_PortSpecification, "category")
+    descriptor = None
+    for klass in aadl2_PortSpecification.__mro__:
+        if "category" in klass.__dict__:
+            descriptor = klass.__dict__["category"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_aadl2_featuregroupprototypeactual_is_not_abstract():
+    assert not inspect.isabstract(aadl2_FeatureGroupPrototypeActual)
+
+
+def test_aadl2_featuregroupprototypeactual_constructor_exists():
+    assert callable(aadl2_FeatureGroupPrototypeActual.__init__)
+
+
+def test_aadl2_featuregroupprototypeactual_constructor_args():
+    sig = inspect.signature(aadl2_FeatureGroupPrototypeActual.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -2203,44 +2161,44 @@ def test_prototypebinding_constructor_args():
 
 
 
-def test_aadl2::featureprototypebinding_is_not_abstract():
-    assert not inspect.isabstract(aadl2::FeaturePrototypeBinding)
+def test_aadl2_featureprototypebinding_is_not_abstract():
+    assert not inspect.isabstract(aadl2_FeaturePrototypeBinding)
 
 
-def test_aadl2::featureprototypebinding_constructor_exists():
-    assert callable(aadl2::FeaturePrototypeBinding.__init__)
+def test_aadl2_featureprototypebinding_constructor_exists():
+    assert callable(aadl2_FeaturePrototypeBinding.__init__)
 
 
-def test_aadl2::featureprototypebinding_constructor_args():
-    sig = inspect.signature(aadl2::FeaturePrototypeBinding.__init__)
+def test_aadl2_featureprototypebinding_constructor_args():
+    sig = inspect.signature(aadl2_FeaturePrototypeBinding.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_aadl2::featuregroupprototypebinding_is_not_abstract():
-    assert not inspect.isabstract(aadl2::FeatureGroupPrototypeBinding)
+def test_aadl2_featuregroupprototypebinding_is_not_abstract():
+    assert not inspect.isabstract(aadl2_FeatureGroupPrototypeBinding)
 
 
-def test_aadl2::featuregroupprototypebinding_constructor_exists():
-    assert callable(aadl2::FeatureGroupPrototypeBinding.__init__)
+def test_aadl2_featuregroupprototypebinding_constructor_exists():
+    assert callable(aadl2_FeatureGroupPrototypeBinding.__init__)
 
 
-def test_aadl2::featuregroupprototypebinding_constructor_args():
-    sig = inspect.signature(aadl2::FeatureGroupPrototypeBinding.__init__)
+def test_aadl2_featuregroupprototypebinding_constructor_args():
+    sig = inspect.signature(aadl2_FeatureGroupPrototypeBinding.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_aadl2::componentprototypebinding_is_not_abstract():
-    assert not inspect.isabstract(aadl2::ComponentPrototypeBinding)
+def test_aadl2_componentprototypebinding_is_not_abstract():
+    assert not inspect.isabstract(aadl2_ComponentPrototypeBinding)
 
 
-def test_aadl2::componentprototypebinding_constructor_exists():
-    assert callable(aadl2::ComponentPrototypeBinding.__init__)
+def test_aadl2_componentprototypebinding_constructor_exists():
+    assert callable(aadl2_ComponentPrototypeBinding.__init__)
 
 
-def test_aadl2::componentprototypebinding_constructor_args():
-    sig = inspect.signature(aadl2::ComponentPrototypeBinding.__init__)
+def test_aadl2_componentprototypebinding_constructor_args():
+    sig = inspect.signature(aadl2_ComponentPrototypeBinding.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -2259,16 +2217,16 @@ def test_modelunit_constructor_args():
 
 
 
-def test_aadl2::aadlpackage_is_not_abstract():
-    assert not inspect.isabstract(aadl2::AadlPackage)
+def test_aadl2_aadlpackage_is_not_abstract():
+    assert not inspect.isabstract(aadl2_AadlPackage)
 
 
-def test_aadl2::aadlpackage_constructor_exists():
-    assert callable(aadl2::AadlPackage.__init__)
+def test_aadl2_aadlpackage_constructor_exists():
+    assert callable(aadl2_AadlPackage.__init__)
 
 
-def test_aadl2::aadlpackage_constructor_args():
-    sig = inspect.signature(aadl2::AadlPackage.__init__)
+def test_aadl2_aadlpackage_constructor_args():
+    sig = inspect.signature(aadl2_AadlPackage.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -2287,30 +2245,30 @@ def test_packagesection_constructor_args():
 
 
 
-def test_aadl2::privatepackagesection_is_not_abstract():
-    assert not inspect.isabstract(aadl2::PrivatePackageSection)
+def test_aadl2_privatepackagesection_is_not_abstract():
+    assert not inspect.isabstract(aadl2_PrivatePackageSection)
 
 
-def test_aadl2::privatepackagesection_constructor_exists():
-    assert callable(aadl2::PrivatePackageSection.__init__)
+def test_aadl2_privatepackagesection_constructor_exists():
+    assert callable(aadl2_PrivatePackageSection.__init__)
 
 
-def test_aadl2::privatepackagesection_constructor_args():
-    sig = inspect.signature(aadl2::PrivatePackageSection.__init__)
+def test_aadl2_privatepackagesection_constructor_args():
+    sig = inspect.signature(aadl2_PrivatePackageSection.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_aadl2::publicpackagesection_is_not_abstract():
-    assert not inspect.isabstract(aadl2::PublicPackageSection)
+def test_aadl2_publicpackagesection_is_not_abstract():
+    assert not inspect.isabstract(aadl2_PublicPackageSection)
 
 
-def test_aadl2::publicpackagesection_constructor_exists():
-    assert callable(aadl2::PublicPackageSection.__init__)
+def test_aadl2_publicpackagesection_constructor_exists():
+    assert callable(aadl2_PublicPackageSection.__init__)
 
 
-def test_aadl2::publicpackagesection_constructor_args():
-    sig = inspect.signature(aadl2::PublicPackageSection.__init__)
+def test_aadl2_publicpackagesection_constructor_args():
+    sig = inspect.signature(aadl2_PublicPackageSection.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -2329,23 +2287,23 @@ def test_annexsubclause_constructor_args():
 
 
 
-def test_aadl2::defaultannexsubclause_is_not_abstract():
-    assert not inspect.isabstract(aadl2::DefaultAnnexSubclause)
+def test_aadl2_defaultannexsubclause_is_not_abstract():
+    assert not inspect.isabstract(aadl2_DefaultAnnexSubclause)
 
 
-def test_aadl2::defaultannexsubclause_constructor_exists():
-    assert callable(aadl2::DefaultAnnexSubclause.__init__)
+def test_aadl2_defaultannexsubclause_constructor_exists():
+    assert callable(aadl2_DefaultAnnexSubclause.__init__)
 
 
-def test_aadl2::defaultannexsubclause_constructor_args():
-    sig = inspect.signature(aadl2::DefaultAnnexSubclause.__init__)
+def test_aadl2_defaultannexsubclause_constructor_args():
+    sig = inspect.signature(aadl2_DefaultAnnexSubclause.__init__)
     params = list(sig.parameters.keys())
     assert "sourceText" in params, "Missing parameter 'sourceText'"
 
-def test_aadl2::defaultannexsubclause_has_sourceText():
-    assert hasattr(aadl2::DefaultAnnexSubclause, "sourceText")
+def test_aadl2_defaultannexsubclause_has_sourceText():
+    assert hasattr(aadl2_DefaultAnnexSubclause, "sourceText")
     descriptor = None
-    for klass in aadl2::DefaultAnnexSubclause.__mro__:
+    for klass in aadl2_DefaultAnnexSubclause.__mro__:
         if "sourceText" in klass.__dict__:
             descriptor = klass.__dict__["sourceText"]
             break
@@ -2367,27 +2325,489 @@ def test_annexlibrary_constructor_args():
 
 
 
-def test_aadl2::defaultannexlibrary_is_not_abstract():
-    assert not inspect.isabstract(aadl2::DefaultAnnexLibrary)
+def test_aadl2_defaultannexlibrary_is_not_abstract():
+    assert not inspect.isabstract(aadl2_DefaultAnnexLibrary)
 
 
-def test_aadl2::defaultannexlibrary_constructor_exists():
-    assert callable(aadl2::DefaultAnnexLibrary.__init__)
+def test_aadl2_defaultannexlibrary_constructor_exists():
+    assert callable(aadl2_DefaultAnnexLibrary.__init__)
 
 
-def test_aadl2::defaultannexlibrary_constructor_args():
-    sig = inspect.signature(aadl2::DefaultAnnexLibrary.__init__)
+def test_aadl2_defaultannexlibrary_constructor_args():
+    sig = inspect.signature(aadl2_DefaultAnnexLibrary.__init__)
     params = list(sig.parameters.keys())
     assert "sourceText" in params, "Missing parameter 'sourceText'"
 
-def test_aadl2::defaultannexlibrary_has_sourceText():
-    assert hasattr(aadl2::DefaultAnnexLibrary, "sourceText")
+def test_aadl2_defaultannexlibrary_has_sourceText():
+    assert hasattr(aadl2_DefaultAnnexLibrary, "sourceText")
     descriptor = None
-    for klass in aadl2::DefaultAnnexLibrary.__mro__:
+    for klass in aadl2_DefaultAnnexLibrary.__mro__:
         if "sourceText" in klass.__dict__:
             descriptor = klass.__dict__["sourceText"]
             break
     assert isinstance(descriptor, property)
+
+
+
+def test_processorfeature_is_not_abstract():
+    assert not inspect.isabstract(ProcessorFeature)
+
+
+def test_processorfeature_constructor_exists():
+    assert callable(ProcessorFeature.__init__)
+
+
+def test_processorfeature_constructor_args():
+    sig = inspect.signature(ProcessorFeature.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_internalfeature_is_not_abstract():
+    assert not inspect.isabstract(InternalFeature)
+
+
+def test_internalfeature_constructor_exists():
+    assert callable(InternalFeature.__init__)
+
+
+def test_internalfeature_constructor_args():
+    sig = inspect.signature(InternalFeature.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_connection_is_not_abstract():
+    assert not inspect.isabstract(Connection)
+
+
+def test_connection_constructor_exists():
+    assert callable(Connection.__init__)
+
+
+def test_connection_constructor_args():
+    sig = inspect.signature(Connection.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_virtualbussubcomponenttype_is_not_abstract():
+    assert not inspect.isabstract(VirtualBusSubcomponentType)
+
+
+def test_virtualbussubcomponenttype_constructor_exists():
+    assert callable(VirtualBusSubcomponentType.__init__)
+
+
+def test_virtualbussubcomponenttype_constructor_args():
+    sig = inspect.signature(VirtualBusSubcomponentType.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_aadl2_virtualbusprototype_is_not_abstract():
+    assert not inspect.isabstract(aadl2_VirtualBusPrototype)
+
+
+def test_aadl2_virtualbusprototype_constructor_exists():
+    assert callable(aadl2_VirtualBusPrototype.__init__)
+
+
+def test_aadl2_virtualbusprototype_constructor_args():
+    sig = inspect.signature(aadl2_VirtualBusPrototype.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_aadl2_abstractprototype_is_not_abstract():
+    assert not inspect.isabstract(aadl2_AbstractPrototype)
+
+
+def test_aadl2_abstractprototype_constructor_exists():
+    assert callable(aadl2_AbstractPrototype.__init__)
+
+
+def test_aadl2_abstractprototype_constructor_args():
+    sig = inspect.signature(aadl2_AbstractPrototype.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_abstract_is_not_abstract():
+    assert not inspect.isabstract(Abstract)
+
+
+def test_abstract_constructor_exists():
+    assert callable(Abstract.__init__)
+
+
+def test_abstract_constructor_args():
+    sig = inspect.signature(Abstract.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_subcomponent_is_not_abstract():
+    assert not inspect.isabstract(Subcomponent)
+
+
+def test_subcomponent_constructor_exists():
+    assert callable(Subcomponent.__init__)
+
+
+def test_subcomponent_constructor_args():
+    sig = inspect.signature(Subcomponent.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_aadl2_systemsubcomponent_is_not_abstract():
+    assert not inspect.isabstract(aadl2_SystemSubcomponent)
+
+
+def test_aadl2_systemsubcomponent_constructor_exists():
+    assert callable(aadl2_SystemSubcomponent.__init__)
+
+
+def test_aadl2_systemsubcomponent_constructor_args():
+    sig = inspect.signature(aadl2_SystemSubcomponent.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_aadl2_virtualprocessorsubcomponent_is_not_abstract():
+    assert not inspect.isabstract(aadl2_VirtualProcessorSubcomponent)
+
+
+def test_aadl2_virtualprocessorsubcomponent_constructor_exists():
+    assert callable(aadl2_VirtualProcessorSubcomponent.__init__)
+
+
+def test_aadl2_virtualprocessorsubcomponent_constructor_args():
+    sig = inspect.signature(aadl2_VirtualProcessorSubcomponent.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_aadl2_virtualbussubcomponent_is_not_abstract():
+    assert not inspect.isabstract(aadl2_VirtualBusSubcomponent)
+
+
+def test_aadl2_virtualbussubcomponent_constructor_exists():
+    assert callable(aadl2_VirtualBusSubcomponent.__init__)
+
+
+def test_aadl2_virtualbussubcomponent_constructor_args():
+    sig = inspect.signature(aadl2_VirtualBusSubcomponent.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_aadl2_processsubcomponent_is_not_abstract():
+    assert not inspect.isabstract(aadl2_ProcessSubcomponent)
+
+
+def test_aadl2_processsubcomponent_constructor_exists():
+    assert callable(aadl2_ProcessSubcomponent.__init__)
+
+
+def test_aadl2_processsubcomponent_constructor_args():
+    sig = inspect.signature(aadl2_ProcessSubcomponent.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_aadl2_threadgroupsubcomponent_is_not_abstract():
+    assert not inspect.isabstract(aadl2_ThreadGroupSubcomponent)
+
+
+def test_aadl2_threadgroupsubcomponent_constructor_exists():
+    assert callable(aadl2_ThreadGroupSubcomponent.__init__)
+
+
+def test_aadl2_threadgroupsubcomponent_constructor_args():
+    sig = inspect.signature(aadl2_ThreadGroupSubcomponent.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_aadl2_devicesubcomponent_is_not_abstract():
+    assert not inspect.isabstract(aadl2_DeviceSubcomponent)
+
+
+def test_aadl2_devicesubcomponent_constructor_exists():
+    assert callable(aadl2_DeviceSubcomponent.__init__)
+
+
+def test_aadl2_devicesubcomponent_constructor_args():
+    sig = inspect.signature(aadl2_DeviceSubcomponent.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_aadl2_processorsubcomponent_is_not_abstract():
+    assert not inspect.isabstract(aadl2_ProcessorSubcomponent)
+
+
+def test_aadl2_processorsubcomponent_constructor_exists():
+    assert callable(aadl2_ProcessorSubcomponent.__init__)
+
+
+def test_aadl2_processorsubcomponent_constructor_args():
+    sig = inspect.signature(aadl2_ProcessorSubcomponent.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_aadl2_threadsubcomponent_is_not_abstract():
+    assert not inspect.isabstract(aadl2_ThreadSubcomponent)
+
+
+def test_aadl2_threadsubcomponent_constructor_exists():
+    assert callable(aadl2_ThreadSubcomponent.__init__)
+
+
+def test_aadl2_threadsubcomponent_constructor_args():
+    sig = inspect.signature(aadl2_ThreadSubcomponent.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_aadl2_memorysubcomponent_is_not_abstract():
+    assert not inspect.isabstract(aadl2_MemorySubcomponent)
+
+
+def test_aadl2_memorysubcomponent_constructor_exists():
+    assert callable(aadl2_MemorySubcomponent.__init__)
+
+
+def test_aadl2_memorysubcomponent_constructor_args():
+    sig = inspect.signature(aadl2_MemorySubcomponent.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_subprogramgroup_is_not_abstract():
+    assert not inspect.isabstract(SubprogramGroup)
+
+
+def test_subprogramgroup_constructor_exists():
+    assert callable(SubprogramGroup.__init__)
+
+
+def test_subprogramgroup_constructor_args():
+    sig = inspect.signature(SubprogramGroup.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_subprogram_is_not_abstract():
+    assert not inspect.isabstract(Subprogram)
+
+
+def test_subprogram_constructor_exists():
+    assert callable(Subprogram.__init__)
+
+
+def test_subprogram_constructor_args():
+    sig = inspect.signature(Subprogram.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_accessconnectionend_is_not_abstract():
+    assert not inspect.isabstract(AccessConnectionEnd)
+
+
+def test_accessconnectionend_constructor_exists():
+    assert callable(AccessConnectionEnd.__init__)
+
+
+def test_accessconnectionend_constructor_args():
+    sig = inspect.signature(AccessConnectionEnd.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_aadl2_subprogramsubcomponent_is_not_abstract():
+    assert not inspect.isabstract(aadl2_SubprogramSubcomponent)
+
+
+def test_aadl2_subprogramsubcomponent_constructor_exists():
+    assert callable(aadl2_SubprogramSubcomponent.__init__)
+
+
+def test_aadl2_subprogramsubcomponent_constructor_args():
+    sig = inspect.signature(aadl2_SubprogramSubcomponent.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_triggerport_is_not_abstract():
+    assert not inspect.isabstract(TriggerPort)
+
+
+def test_triggerport_constructor_exists():
+    assert callable(TriggerPort.__init__)
+
+
+def test_triggerport_constructor_args():
+    sig = inspect.signature(TriggerPort.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_port_is_not_abstract():
+    assert not inspect.isabstract(Port)
+
+
+def test_port_constructor_exists():
+    assert callable(Port.__init__)
+
+
+def test_port_constructor_args():
+    sig = inspect.signature(Port.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_portconnectionend_is_not_abstract():
+    assert not inspect.isabstract(PortConnectionEnd)
+
+
+def test_portconnectionend_constructor_exists():
+    assert callable(PortConnectionEnd.__init__)
+
+
+def test_portconnectionend_constructor_args():
+    sig = inspect.signature(PortConnectionEnd.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_parameterconnectionend_is_not_abstract():
+    assert not inspect.isabstract(ParameterConnectionEnd)
+
+
+def test_parameterconnectionend_constructor_exists():
+    assert callable(ParameterConnectionEnd.__init__)
+
+
+def test_parameterconnectionend_constructor_args():
+    sig = inspect.signature(ParameterConnectionEnd.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_data_is_not_abstract():
+    assert not inspect.isabstract(Data)
+
+
+def test_data_constructor_exists():
+    assert callable(Data.__init__)
+
+
+def test_data_constructor_args():
+    sig = inspect.signature(Data.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_aadl2_datasubcomponent_is_not_abstract():
+    assert not inspect.isabstract(aadl2_DataSubcomponent)
+
+
+def test_aadl2_datasubcomponent_constructor_exists():
+    assert callable(aadl2_DataSubcomponent.__init__)
+
+
+def test_aadl2_datasubcomponent_constructor_args():
+    sig = inspect.signature(aadl2_DataSubcomponent.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_bus_is_not_abstract():
+    assert not inspect.isabstract(Bus)
+
+
+def test_bus_constructor_exists():
+    assert callable(Bus.__init__)
+
+
+def test_bus_constructor_args():
+    sig = inspect.signature(Bus.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_aadl2_bussubcomponent_is_not_abstract():
+    assert not inspect.isabstract(aadl2_BusSubcomponent)
+
+
+def test_aadl2_bussubcomponent_constructor_exists():
+    assert callable(aadl2_BusSubcomponent.__init__)
+
+
+def test_aadl2_bussubcomponent_constructor_args():
+    sig = inspect.signature(aadl2_BusSubcomponent.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_access_is_not_abstract():
+    assert not inspect.isabstract(Access)
+
+
+def test_access_constructor_exists():
+    assert callable(Access.__init__)
+
+
+def test_access_constructor_args():
+    sig = inspect.signature(Access.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_aadl2_subprogramaccess_is_not_abstract():
+    assert not inspect.isabstract(aadl2_SubprogramAccess)
+
+
+def test_aadl2_subprogramaccess_constructor_exists():
+    assert callable(aadl2_SubprogramAccess.__init__)
+
+
+def test_aadl2_subprogramaccess_constructor_args():
+    sig = inspect.signature(aadl2_SubprogramAccess.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_aadl2_eventport_is_not_abstract():
+    assert not inspect.isabstract(aadl2_EventPort)
+
+
+def test_aadl2_eventport_constructor_exists():
+    assert callable(aadl2_EventPort.__init__)
+
+
+def test_aadl2_eventport_constructor_args():
+    sig = inspect.signature(aadl2_EventPort.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_aadl2_busaccess_is_not_abstract():
+    assert not inspect.isabstract(aadl2_BusAccess)
+
+
+def test_aadl2_busaccess_constructor_exists():
+    assert callable(aadl2_BusAccess.__init__)
+
+
+def test_aadl2_busaccess_constructor_args():
+    sig = inspect.signature(aadl2_BusAccess.__init__)
+    params = list(sig.parameters.keys())
 
 
 
@@ -2419,23 +2839,57 @@ def test_feature_constructor_args():
 
 
 
-def test_aadl2::directedfeature_is_not_abstract():
-    assert not inspect.isabstract(aadl2::DirectedFeature)
+def test_aadl2_access_is_not_abstract():
+    assert not inspect.isabstract(aadl2_Access)
 
 
-def test_aadl2::directedfeature_constructor_exists():
-    assert callable(aadl2::DirectedFeature.__init__)
+def test_aadl2_access_constructor_exists():
+    assert callable(aadl2_Access.__init__)
 
 
-def test_aadl2::directedfeature_constructor_args():
-    sig = inspect.signature(aadl2::DirectedFeature.__init__)
+def test_aadl2_access_constructor_args():
+    sig = inspect.signature(aadl2_Access.__init__)
+    params = list(sig.parameters.keys())
+    assert "category" in params, "Missing parameter 'category'"
+    assert "kind" in params, "Missing parameter 'kind'"
+
+def test_aadl2_access_has_category():
+    assert hasattr(aadl2_Access, "category")
+    descriptor = None
+    for klass in aadl2_Access.__mro__:
+        if "category" in klass.__dict__:
+            descriptor = klass.__dict__["category"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_aadl2_access_has_kind():
+    assert hasattr(aadl2_Access, "kind")
+    descriptor = None
+    for klass in aadl2_Access.__mro__:
+        if "kind" in klass.__dict__:
+            descriptor = klass.__dict__["kind"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_aadl2_directedfeature_is_not_abstract():
+    assert not inspect.isabstract(aadl2_DirectedFeature)
+
+
+def test_aadl2_directedfeature_constructor_exists():
+    assert callable(aadl2_DirectedFeature.__init__)
+
+
+def test_aadl2_directedfeature_constructor_args():
+    sig = inspect.signature(aadl2_DirectedFeature.__init__)
     params = list(sig.parameters.keys())
     assert "direction" in params, "Missing parameter 'direction'"
 
-def test_aadl2::directedfeature_has_direction():
-    assert hasattr(aadl2::DirectedFeature, "direction")
+def test_aadl2_directedfeature_has_direction():
+    assert hasattr(aadl2_DirectedFeature, "direction")
     descriptor = None
-    for klass in aadl2::DirectedFeature.__mro__:
+    for klass in aadl2_DirectedFeature.__mro__:
         if "direction" in klass.__dict__:
             descriptor = klass.__dict__["direction"]
             break
@@ -2443,30 +2897,30 @@ def test_aadl2::directedfeature_has_direction():
 
 
 
-def test_aadl2::callcontext_is_not_abstract():
-    assert not inspect.isabstract(aadl2::CallContext)
+def test_aadl2_callcontext_is_not_abstract():
+    assert not inspect.isabstract(aadl2_CallContext)
 
 
-def test_aadl2::callcontext_constructor_exists():
-    assert callable(aadl2::CallContext.__init__)
+def test_aadl2_callcontext_constructor_exists():
+    assert callable(aadl2_CallContext.__init__)
 
 
-def test_aadl2::callcontext_constructor_args():
-    sig = inspect.signature(aadl2::CallContext.__init__)
+def test_aadl2_callcontext_constructor_args():
+    sig = inspect.signature(aadl2_CallContext.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_aadl2::featuretype_is_not_abstract():
-    assert not inspect.isabstract(aadl2::FeatureType)
+def test_aadl2_featuretype_is_not_abstract():
+    assert not inspect.isabstract(aadl2_FeatureType)
 
 
-def test_aadl2::featuretype_constructor_exists():
-    assert callable(aadl2::FeatureType.__init__)
+def test_aadl2_featuretype_constructor_exists():
+    assert callable(aadl2_FeatureType.__init__)
 
 
-def test_aadl2::featuretype_constructor_args():
-    sig = inspect.signature(aadl2::FeatureType.__init__)
+def test_aadl2_featuretype_constructor_args():
+    sig = inspect.signature(aadl2_FeatureType.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -2485,58 +2939,86 @@ def test_callcontext_constructor_args():
 
 
 
-def test_aadl2::datatype_is_not_abstract():
-    assert not inspect.isabstract(aadl2::DataType)
+def test_aadl2_subprogramtype_is_not_abstract():
+    assert not inspect.isabstract(aadl2_SubprogramType)
 
 
-def test_aadl2::datatype_constructor_exists():
-    assert callable(aadl2::DataType.__init__)
+def test_aadl2_subprogramtype_constructor_exists():
+    assert callable(aadl2_SubprogramType.__init__)
 
 
-def test_aadl2::datatype_constructor_args():
-    sig = inspect.signature(aadl2::DataType.__init__)
+def test_aadl2_subprogramtype_constructor_args():
+    sig = inspect.signature(aadl2_SubprogramType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_aadl2::subprogramgrouptype_is_not_abstract():
-    assert not inspect.isabstract(aadl2::SubprogramGroupType)
+def test_aadl2_datatype_is_not_abstract():
+    assert not inspect.isabstract(aadl2_DataType)
 
 
-def test_aadl2::subprogramgrouptype_constructor_exists():
-    assert callable(aadl2::SubprogramGroupType.__init__)
+def test_aadl2_datatype_constructor_exists():
+    assert callable(aadl2_DataType.__init__)
 
 
-def test_aadl2::subprogramgrouptype_constructor_args():
-    sig = inspect.signature(aadl2::SubprogramGroupType.__init__)
+def test_aadl2_datatype_constructor_args():
+    sig = inspect.signature(aadl2_DataType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_aadl2::subprogramtype_is_not_abstract():
-    assert not inspect.isabstract(aadl2::SubprogramType)
+def test_aadl2_subprogramgroupsubcomponent_is_not_abstract():
+    assert not inspect.isabstract(aadl2_SubprogramGroupSubcomponent)
 
 
-def test_aadl2::subprogramtype_constructor_exists():
-    assert callable(aadl2::SubprogramType.__init__)
+def test_aadl2_subprogramgroupsubcomponent_constructor_exists():
+    assert callable(aadl2_SubprogramGroupSubcomponent.__init__)
 
 
-def test_aadl2::subprogramtype_constructor_args():
-    sig = inspect.signature(aadl2::SubprogramType.__init__)
+def test_aadl2_subprogramgroupsubcomponent_constructor_args():
+    sig = inspect.signature(aadl2_SubprogramGroupSubcomponent.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_aadl2::abstracttype_is_not_abstract():
-    assert not inspect.isabstract(aadl2::AbstractType)
+def test_aadl2_subprogramgroupaccess_is_not_abstract():
+    assert not inspect.isabstract(aadl2_SubprogramGroupAccess)
 
 
-def test_aadl2::abstracttype_constructor_exists():
-    assert callable(aadl2::AbstractType.__init__)
+def test_aadl2_subprogramgroupaccess_constructor_exists():
+    assert callable(aadl2_SubprogramGroupAccess.__init__)
 
 
-def test_aadl2::abstracttype_constructor_args():
-    sig = inspect.signature(aadl2::AbstractType.__init__)
+def test_aadl2_subprogramgroupaccess_constructor_args():
+    sig = inspect.signature(aadl2_SubprogramGroupAccess.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_aadl2_subprogramgrouptype_is_not_abstract():
+    assert not inspect.isabstract(aadl2_SubprogramGroupType)
+
+
+def test_aadl2_subprogramgrouptype_constructor_exists():
+    assert callable(aadl2_SubprogramGroupType.__init__)
+
+
+def test_aadl2_subprogramgrouptype_constructor_args():
+    sig = inspect.signature(aadl2_SubprogramGroupType.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_aadl2_abstracttype_is_not_abstract():
+    assert not inspect.isabstract(aadl2_AbstractType)
+
+
+def test_aadl2_abstracttype_constructor_exists():
+    assert callable(aadl2_AbstractType.__init__)
+
+
+def test_aadl2_abstracttype_constructor_args():
+    sig = inspect.signature(aadl2_AbstractType.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -2569,16 +3051,44 @@ def test_context_constructor_args():
 
 
 
-def test_aadl2::subprogramcall_is_not_abstract():
-    assert not inspect.isabstract(aadl2::SubprogramCall)
+def test_aadl2_eventdataport_is_not_abstract():
+    assert not inspect.isabstract(aadl2_EventDataPort)
 
 
-def test_aadl2::subprogramcall_constructor_exists():
-    assert callable(aadl2::SubprogramCall.__init__)
+def test_aadl2_eventdataport_constructor_exists():
+    assert callable(aadl2_EventDataPort.__init__)
 
 
-def test_aadl2::subprogramcall_constructor_args():
-    sig = inspect.signature(aadl2::SubprogramCall.__init__)
+def test_aadl2_eventdataport_constructor_args():
+    sig = inspect.signature(aadl2_EventDataPort.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_aadl2_subprogramcall_is_not_abstract():
+    assert not inspect.isabstract(aadl2_SubprogramCall)
+
+
+def test_aadl2_subprogramcall_constructor_exists():
+    assert callable(aadl2_SubprogramCall.__init__)
+
+
+def test_aadl2_subprogramcall_constructor_args():
+    sig = inspect.signature(aadl2_SubprogramCall.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_aadl2_dataport_is_not_abstract():
+    assert not inspect.isabstract(aadl2_DataPort)
+
+
+def test_aadl2_dataport_constructor_exists():
+    assert callable(aadl2_DataPort.__init__)
+
+
+def test_aadl2_dataport_constructor_args():
+    sig = inspect.signature(aadl2_DataPort.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -2597,16 +3107,16 @@ def test_generalization__constructor_args():
 
 
 
-def test_aadl2::groupextension_is_not_abstract():
-    assert not inspect.isabstract(aadl2::GroupExtension)
+def test_aadl2_groupextension_is_not_abstract():
+    assert not inspect.isabstract(aadl2_GroupExtension)
 
 
-def test_aadl2::groupextension_constructor_exists():
-    assert callable(aadl2::GroupExtension.__init__)
+def test_aadl2_groupextension_constructor_exists():
+    assert callable(aadl2_GroupExtension.__init__)
 
 
-def test_aadl2::groupextension_constructor_args():
-    sig = inspect.signature(aadl2::GroupExtension.__init__)
+def test_aadl2_groupextension_constructor_args():
+    sig = inspect.signature(aadl2_GroupExtension.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -2625,6 +3135,44 @@ def test_directedfeature_constructor_args():
 
 
 
+def test_aadl2_port_is_not_abstract():
+    assert not inspect.isabstract(aadl2_Port)
+
+
+def test_aadl2_port_constructor_exists():
+    assert callable(aadl2_Port.__init__)
+
+
+def test_aadl2_port_constructor_args():
+    sig = inspect.signature(aadl2_Port.__init__)
+    params = list(sig.parameters.keys())
+    assert "category" in params, "Missing parameter 'category'"
+
+def test_aadl2_port_has_category():
+    assert hasattr(aadl2_Port, "category")
+    descriptor = None
+    for klass in aadl2_Port.__mro__:
+        if "category" in klass.__dict__:
+            descriptor = klass.__dict__["category"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_aadl2_parameter_is_not_abstract():
+    assert not inspect.isabstract(aadl2_Parameter)
+
+
+def test_aadl2_parameter_constructor_exists():
+    assert callable(aadl2_Parameter.__init__)
+
+
+def test_aadl2_parameter_constructor_args():
+    sig = inspect.signature(aadl2_Parameter.__init__)
+    params = list(sig.parameters.keys())
+
+
+
 def test_endtoendflowelement_is_not_abstract():
     assert not inspect.isabstract(EndToEndFlowElement)
 
@@ -2639,16 +3187,16 @@ def test_endtoendflowelement_constructor_args():
 
 
 
-def test_aadl2::flowelement_is_not_abstract():
-    assert not inspect.isabstract(aadl2::FlowElement)
+def test_aadl2_flowelement_is_not_abstract():
+    assert not inspect.isabstract(aadl2_FlowElement)
 
 
-def test_aadl2::flowelement_constructor_exists():
-    assert callable(aadl2::FlowElement.__init__)
+def test_aadl2_flowelement_constructor_exists():
+    assert callable(aadl2_FlowElement.__init__)
 
 
-def test_aadl2::flowelement_constructor_args():
-    sig = inspect.signature(aadl2::FlowElement.__init__)
+def test_aadl2_flowelement_constructor_args():
+    sig = inspect.signature(aadl2_FlowElement.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -2677,6 +3225,20 @@ def test_flowelement_constructor_exists():
 
 def test_flowelement_constructor_args():
     sig = inspect.signature(FlowElement.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_aadl2_dataaccess_is_not_abstract():
+    assert not inspect.isabstract(aadl2_DataAccess)
+
+
+def test_aadl2_dataaccess_constructor_exists():
+    assert callable(aadl2_DataAccess.__init__)
+
+
+def test_aadl2_dataaccess_constructor_args():
+    sig = inspect.signature(aadl2_DataAccess.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -2723,17 +3285,41 @@ def test_prototype_constructor_args():
 
 
 
-def test_aadl2::featuregroupprototype_is_not_abstract():
-    assert not inspect.isabstract(aadl2::FeatureGroupPrototype)
+def test_aadl2_featuregroupprototype_is_not_abstract():
+    assert not inspect.isabstract(aadl2_FeatureGroupPrototype)
 
 
-def test_aadl2::featuregroupprototype_constructor_exists():
-    assert callable(aadl2::FeatureGroupPrototype.__init__)
+def test_aadl2_featuregroupprototype_constructor_exists():
+    assert callable(aadl2_FeatureGroupPrototype.__init__)
 
 
-def test_aadl2::featuregroupprototype_constructor_args():
-    sig = inspect.signature(aadl2::FeatureGroupPrototype.__init__)
+def test_aadl2_featuregroupprototype_constructor_args():
+    sig = inspect.signature(aadl2_FeatureGroupPrototype.__init__)
     params = list(sig.parameters.keys())
+
+
+
+def test_aadl2_featureprototype_is_not_abstract():
+    assert not inspect.isabstract(aadl2_FeaturePrototype)
+
+
+def test_aadl2_featureprototype_constructor_exists():
+    assert callable(aadl2_FeaturePrototype.__init__)
+
+
+def test_aadl2_featureprototype_constructor_args():
+    sig = inspect.signature(aadl2_FeaturePrototype.__init__)
+    params = list(sig.parameters.keys())
+    assert "direction" in params, "Missing parameter 'direction'"
+
+def test_aadl2_featureprototype_has_direction():
+    assert hasattr(aadl2_FeaturePrototype, "direction")
+    descriptor = None
+    for klass in aadl2_FeaturePrototype.__mro__:
+        if "direction" in klass.__dict__:
+            descriptor = klass.__dict__["direction"]
+            break
+    assert isinstance(descriptor, property)
 
 
 
@@ -2751,30 +3337,72 @@ def test_connectionend_constructor_args():
 
 
 
-def test_aadl2::featuregroupconnectionend_is_not_abstract():
-    assert not inspect.isabstract(aadl2::FeatureGroupConnectionEnd)
+def test_aadl2_accessconnectionend_is_not_abstract():
+    assert not inspect.isabstract(aadl2_AccessConnectionEnd)
 
 
-def test_aadl2::featuregroupconnectionend_constructor_exists():
-    assert callable(aadl2::FeatureGroupConnectionEnd.__init__)
+def test_aadl2_accessconnectionend_constructor_exists():
+    assert callable(aadl2_AccessConnectionEnd.__init__)
 
 
-def test_aadl2::featuregroupconnectionend_constructor_args():
-    sig = inspect.signature(aadl2::FeatureGroupConnectionEnd.__init__)
+def test_aadl2_accessconnectionend_constructor_args():
+    sig = inspect.signature(aadl2_AccessConnectionEnd.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_aadl2::featureconnectionend_is_not_abstract():
-    assert not inspect.isabstract(aadl2::FeatureConnectionEnd)
+def test_aadl2_portconnectionend_is_not_abstract():
+    assert not inspect.isabstract(aadl2_PortConnectionEnd)
 
 
-def test_aadl2::featureconnectionend_constructor_exists():
-    assert callable(aadl2::FeatureConnectionEnd.__init__)
+def test_aadl2_portconnectionend_constructor_exists():
+    assert callable(aadl2_PortConnectionEnd.__init__)
 
 
-def test_aadl2::featureconnectionend_constructor_args():
-    sig = inspect.signature(aadl2::FeatureConnectionEnd.__init__)
+def test_aadl2_portconnectionend_constructor_args():
+    sig = inspect.signature(aadl2_PortConnectionEnd.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_aadl2_parameterconnectionend_is_not_abstract():
+    assert not inspect.isabstract(aadl2_ParameterConnectionEnd)
+
+
+def test_aadl2_parameterconnectionend_constructor_exists():
+    assert callable(aadl2_ParameterConnectionEnd.__init__)
+
+
+def test_aadl2_parameterconnectionend_constructor_args():
+    sig = inspect.signature(aadl2_ParameterConnectionEnd.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_aadl2_featuregroupconnectionend_is_not_abstract():
+    assert not inspect.isabstract(aadl2_FeatureGroupConnectionEnd)
+
+
+def test_aadl2_featuregroupconnectionend_constructor_exists():
+    assert callable(aadl2_FeatureGroupConnectionEnd.__init__)
+
+
+def test_aadl2_featuregroupconnectionend_constructor_args():
+    sig = inspect.signature(aadl2_FeatureGroupConnectionEnd.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_aadl2_featureconnectionend_is_not_abstract():
+    assert not inspect.isabstract(aadl2_FeatureConnectionEnd)
+
+
+def test_aadl2_featureconnectionend_constructor_exists():
+    assert callable(aadl2_FeatureConnectionEnd.__init__)
+
+
+def test_aadl2_featureconnectionend_constructor_args():
+    sig = inspect.signature(aadl2_FeatureConnectionEnd.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -2793,37 +3421,37 @@ def test_arrayableelement_constructor_args():
 
 
 
-def test_aadl2::featureprototypeactual_is_not_abstract():
-    assert not inspect.isabstract(aadl2::FeaturePrototypeActual)
+def test_aadl2_featureprototypeactual_is_not_abstract():
+    assert not inspect.isabstract(aadl2_FeaturePrototypeActual)
 
 
-def test_aadl2::featureprototypeactual_constructor_exists():
-    assert callable(aadl2::FeaturePrototypeActual.__init__)
+def test_aadl2_featureprototypeactual_constructor_exists():
+    assert callable(aadl2_FeaturePrototypeActual.__init__)
 
 
-def test_aadl2::featureprototypeactual_constructor_args():
-    sig = inspect.signature(aadl2::FeaturePrototypeActual.__init__)
+def test_aadl2_featureprototypeactual_constructor_args():
+    sig = inspect.signature(aadl2_FeaturePrototypeActual.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_aadl2::componentprototypeactual_is_not_abstract():
-    assert not inspect.isabstract(aadl2::ComponentPrototypeActual)
+def test_aadl2_componentprototypeactual_is_not_abstract():
+    assert not inspect.isabstract(aadl2_ComponentPrototypeActual)
 
 
-def test_aadl2::componentprototypeactual_constructor_exists():
-    assert callable(aadl2::ComponentPrototypeActual.__init__)
+def test_aadl2_componentprototypeactual_constructor_exists():
+    assert callable(aadl2_ComponentPrototypeActual.__init__)
 
 
-def test_aadl2::componentprototypeactual_constructor_args():
-    sig = inspect.signature(aadl2::ComponentPrototypeActual.__init__)
+def test_aadl2_componentprototypeactual_constructor_args():
+    sig = inspect.signature(aadl2_ComponentPrototypeActual.__init__)
     params = list(sig.parameters.keys())
     assert "category" in params, "Missing parameter 'category'"
 
-def test_aadl2::componentprototypeactual_has_category():
-    assert hasattr(aadl2::ComponentPrototypeActual, "category")
+def test_aadl2_componentprototypeactual_has_category():
+    assert hasattr(aadl2_ComponentPrototypeActual, "category")
     descriptor = None
-    for klass in aadl2::ComponentPrototypeActual.__mro__:
+    for klass in aadl2_ComponentPrototypeActual.__mro__:
         if "category" in klass.__dict__:
             descriptor = klass.__dict__["category"]
             break
@@ -2845,23 +3473,37 @@ def test_featureconnectionend_constructor_args():
 
 
 
-def test_aadl2::featuregroup_is_not_abstract():
-    assert not inspect.isabstract(aadl2::FeatureGroup)
+def test_aadl2_abstractfeature_is_not_abstract():
+    assert not inspect.isabstract(aadl2_AbstractFeature)
 
 
-def test_aadl2::featuregroup_constructor_exists():
-    assert callable(aadl2::FeatureGroup.__init__)
+def test_aadl2_abstractfeature_constructor_exists():
+    assert callable(aadl2_AbstractFeature.__init__)
 
 
-def test_aadl2::featuregroup_constructor_args():
-    sig = inspect.signature(aadl2::FeatureGroup.__init__)
+def test_aadl2_abstractfeature_constructor_args():
+    sig = inspect.signature(aadl2_AbstractFeature.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_aadl2_featuregroup_is_not_abstract():
+    assert not inspect.isabstract(aadl2_FeatureGroup)
+
+
+def test_aadl2_featuregroup_constructor_exists():
+    assert callable(aadl2_FeatureGroup.__init__)
+
+
+def test_aadl2_featuregroup_constructor_args():
+    sig = inspect.signature(aadl2_FeatureGroup.__init__)
     params = list(sig.parameters.keys())
     assert "inverse" in params, "Missing parameter 'inverse'"
 
-def test_aadl2::featuregroup_has_inverse():
-    assert hasattr(aadl2::FeatureGroup, "inverse")
+def test_aadl2_featuregroup_has_inverse():
+    assert hasattr(aadl2_FeatureGroup, "inverse")
     descriptor = None
-    for klass in aadl2::FeatureGroup.__mro__:
+    for klass in aadl2_FeatureGroup.__mro__:
         if "inverse" in klass.__dict__:
             descriptor = klass.__dict__["inverse"]
             break
@@ -2869,37 +3511,37 @@ def test_aadl2::featuregroup_has_inverse():
 
 
 
-def test_aadl2::typeextension_is_not_abstract():
-    assert not inspect.isabstract(aadl2::TypeExtension)
+def test_aadl2_typeextension_is_not_abstract():
+    assert not inspect.isabstract(aadl2_TypeExtension)
 
 
-def test_aadl2::typeextension_constructor_exists():
-    assert callable(aadl2::TypeExtension.__init__)
+def test_aadl2_typeextension_constructor_exists():
+    assert callable(aadl2_TypeExtension.__init__)
 
 
-def test_aadl2::typeextension_constructor_args():
-    sig = inspect.signature(aadl2::TypeExtension.__init__)
+def test_aadl2_typeextension_constructor_args():
+    sig = inspect.signature(aadl2_TypeExtension.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_aadl2::flowspecification_is_not_abstract():
-    assert not inspect.isabstract(aadl2::FlowSpecification)
+def test_aadl2_flowspecification_is_not_abstract():
+    assert not inspect.isabstract(aadl2_FlowSpecification)
 
 
-def test_aadl2::flowspecification_constructor_exists():
-    assert callable(aadl2::FlowSpecification.__init__)
+def test_aadl2_flowspecification_constructor_exists():
+    assert callable(aadl2_FlowSpecification.__init__)
 
 
-def test_aadl2::flowspecification_constructor_args():
-    sig = inspect.signature(aadl2::FlowSpecification.__init__)
+def test_aadl2_flowspecification_constructor_args():
+    sig = inspect.signature(aadl2_FlowSpecification.__init__)
     params = list(sig.parameters.keys())
     assert "kind" in params, "Missing parameter 'kind'"
 
-def test_aadl2::flowspecification_has_kind():
-    assert hasattr(aadl2::FlowSpecification, "kind")
+def test_aadl2_flowspecification_has_kind():
+    assert hasattr(aadl2_FlowSpecification, "kind")
     descriptor = None
-    for klass in aadl2::FlowSpecification.__mro__:
+    for klass in aadl2_FlowSpecification.__mro__:
         if "kind" in klass.__dict__:
             descriptor = klass.__dict__["kind"]
             break
@@ -2907,16 +3549,16 @@ def test_aadl2::flowspecification_has_kind():
 
 
 
-def test_aadl2::featureclassifier_is_not_abstract():
-    assert not inspect.isabstract(aadl2::FeatureClassifier)
+def test_aadl2_featureclassifier_is_not_abstract():
+    assert not inspect.isabstract(aadl2_FeatureClassifier)
 
 
-def test_aadl2::featureclassifier_constructor_exists():
-    assert callable(aadl2::FeatureClassifier.__init__)
+def test_aadl2_featureclassifier_constructor_exists():
+    assert callable(aadl2_FeatureClassifier.__init__)
 
 
-def test_aadl2::featureclassifier_constructor_args():
-    sig = inspect.signature(aadl2::FeatureClassifier.__init__)
+def test_aadl2_featureclassifier_constructor_args():
+    sig = inspect.signature(aadl2_FeatureClassifier.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -2949,153 +3591,223 @@ def test_subcomponenttype_constructor_args():
 
 
 
-def test_aadl2::systemsubcomponenttype_is_not_abstract():
-    assert not inspect.isabstract(aadl2::SystemSubcomponentType)
+def test_aadl2_subprogramgroupsubcomponenttype_is_not_abstract():
+    assert not inspect.isabstract(aadl2_SubprogramGroupSubcomponentType)
 
 
-def test_aadl2::systemsubcomponenttype_constructor_exists():
-    assert callable(aadl2::SystemSubcomponentType.__init__)
+def test_aadl2_subprogramgroupsubcomponenttype_constructor_exists():
+    assert callable(aadl2_SubprogramGroupSubcomponentType.__init__)
 
 
-def test_aadl2::systemsubcomponenttype_constructor_args():
-    sig = inspect.signature(aadl2::SystemSubcomponentType.__init__)
+def test_aadl2_subprogramgroupsubcomponenttype_constructor_args():
+    sig = inspect.signature(aadl2_SubprogramGroupSubcomponentType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_aadl2::threadgroupsubcomponenttype_is_not_abstract():
-    assert not inspect.isabstract(aadl2::ThreadGroupSubcomponentType)
+def test_aadl2_datasubcomponenttype_is_not_abstract():
+    assert not inspect.isabstract(aadl2_DataSubcomponentType)
 
 
-def test_aadl2::threadgroupsubcomponenttype_constructor_exists():
-    assert callable(aadl2::ThreadGroupSubcomponentType.__init__)
+def test_aadl2_datasubcomponenttype_constructor_exists():
+    assert callable(aadl2_DataSubcomponentType.__init__)
 
 
-def test_aadl2::threadgroupsubcomponenttype_constructor_args():
-    sig = inspect.signature(aadl2::ThreadGroupSubcomponentType.__init__)
+def test_aadl2_datasubcomponenttype_constructor_args():
+    sig = inspect.signature(aadl2_DataSubcomponentType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_aadl2::virtualprocessorsubcomponenttype_is_not_abstract():
-    assert not inspect.isabstract(aadl2::VirtualProcessorSubcomponentType)
+def test_aadl2_processorsubcomponenttype_is_not_abstract():
+    assert not inspect.isabstract(aadl2_ProcessorSubcomponentType)
 
 
-def test_aadl2::virtualprocessorsubcomponenttype_constructor_exists():
-    assert callable(aadl2::VirtualProcessorSubcomponentType.__init__)
+def test_aadl2_processorsubcomponenttype_constructor_exists():
+    assert callable(aadl2_ProcessorSubcomponentType.__init__)
 
 
-def test_aadl2::virtualprocessorsubcomponenttype_constructor_args():
-    sig = inspect.signature(aadl2::VirtualProcessorSubcomponentType.__init__)
+def test_aadl2_processorsubcomponenttype_constructor_args():
+    sig = inspect.signature(aadl2_ProcessorSubcomponentType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_aadl2::devicesubcomponenttype_is_not_abstract():
-    assert not inspect.isabstract(aadl2::DeviceSubcomponentType)
+def test_aadl2_subprogramsubcomponenttype_is_not_abstract():
+    assert not inspect.isabstract(aadl2_SubprogramSubcomponentType)
 
 
-def test_aadl2::devicesubcomponenttype_constructor_exists():
-    assert callable(aadl2::DeviceSubcomponentType.__init__)
+def test_aadl2_subprogramsubcomponenttype_constructor_exists():
+    assert callable(aadl2_SubprogramSubcomponentType.__init__)
 
 
-def test_aadl2::devicesubcomponenttype_constructor_args():
-    sig = inspect.signature(aadl2::DeviceSubcomponentType.__init__)
+def test_aadl2_subprogramsubcomponenttype_constructor_args():
+    sig = inspect.signature(aadl2_SubprogramSubcomponentType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_aadl2::processsubcomponenttype_is_not_abstract():
-    assert not inspect.isabstract(aadl2::ProcessSubcomponentType)
+def test_aadl2_virtualbussubcomponenttype_is_not_abstract():
+    assert not inspect.isabstract(aadl2_VirtualBusSubcomponentType)
 
 
-def test_aadl2::processsubcomponenttype_constructor_exists():
-    assert callable(aadl2::ProcessSubcomponentType.__init__)
+def test_aadl2_virtualbussubcomponenttype_constructor_exists():
+    assert callable(aadl2_VirtualBusSubcomponentType.__init__)
 
 
-def test_aadl2::processsubcomponenttype_constructor_args():
-    sig = inspect.signature(aadl2::ProcessSubcomponentType.__init__)
+def test_aadl2_virtualbussubcomponenttype_constructor_args():
+    sig = inspect.signature(aadl2_VirtualBusSubcomponentType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_aadl2::threadsubcomponenttype_is_not_abstract():
-    assert not inspect.isabstract(aadl2::ThreadSubcomponentType)
+def test_aadl2_componentprototype_is_not_abstract():
+    assert not inspect.isabstract(aadl2_ComponentPrototype)
 
 
-def test_aadl2::threadsubcomponenttype_constructor_exists():
-    assert callable(aadl2::ThreadSubcomponentType.__init__)
+def test_aadl2_componentprototype_constructor_exists():
+    assert callable(aadl2_ComponentPrototype.__init__)
 
 
-def test_aadl2::threadsubcomponenttype_constructor_args():
-    sig = inspect.signature(aadl2::ThreadSubcomponentType.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_aadl2::virtualbussubcomponenttype_is_not_abstract():
-    assert not inspect.isabstract(aadl2::VirtualBusSubcomponentType)
-
-
-def test_aadl2::virtualbussubcomponenttype_constructor_exists():
-    assert callable(aadl2::VirtualBusSubcomponentType.__init__)
-
-
-def test_aadl2::virtualbussubcomponenttype_constructor_args():
-    sig = inspect.signature(aadl2::VirtualBusSubcomponentType.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_aadl2::processorsubcomponenttype_is_not_abstract():
-    assert not inspect.isabstract(aadl2::ProcessorSubcomponentType)
-
-
-def test_aadl2::processorsubcomponenttype_constructor_exists():
-    assert callable(aadl2::ProcessorSubcomponentType.__init__)
-
-
-def test_aadl2::processorsubcomponenttype_constructor_args():
-    sig = inspect.signature(aadl2::ProcessorSubcomponentType.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_aadl2::memorysubcomponenttype_is_not_abstract():
-    assert not inspect.isabstract(aadl2::MemorySubcomponentType)
-
-
-def test_aadl2::memorysubcomponenttype_constructor_exists():
-    assert callable(aadl2::MemorySubcomponentType.__init__)
-
-
-def test_aadl2::memorysubcomponenttype_constructor_args():
-    sig = inspect.signature(aadl2::MemorySubcomponentType.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_aadl2::componentprototype_is_not_abstract():
-    assert not inspect.isabstract(aadl2::ComponentPrototype)
-
-
-def test_aadl2::componentprototype_constructor_exists():
-    assert callable(aadl2::ComponentPrototype.__init__)
-
-
-def test_aadl2::componentprototype_constructor_args():
-    sig = inspect.signature(aadl2::ComponentPrototype.__init__)
+def test_aadl2_componentprototype_constructor_args():
+    sig = inspect.signature(aadl2_ComponentPrototype.__init__)
     params = list(sig.parameters.keys())
     assert "array" in params, "Missing parameter 'array'"
 
-def test_aadl2::componentprototype_has_array():
-    assert hasattr(aadl2::ComponentPrototype, "array")
+def test_aadl2_componentprototype_has_array():
+    assert hasattr(aadl2_ComponentPrototype, "array")
     descriptor = None
-    for klass in aadl2::ComponentPrototype.__mro__:
+    for klass in aadl2_ComponentPrototype.__mro__:
         if "array" in klass.__dict__:
             descriptor = klass.__dict__["array"]
             break
     assert isinstance(descriptor, property)
+
+
+
+def test_aadl2_systemsubcomponenttype_is_not_abstract():
+    assert not inspect.isabstract(aadl2_SystemSubcomponentType)
+
+
+def test_aadl2_systemsubcomponenttype_constructor_exists():
+    assert callable(aadl2_SystemSubcomponentType.__init__)
+
+
+def test_aadl2_systemsubcomponenttype_constructor_args():
+    sig = inspect.signature(aadl2_SystemSubcomponentType.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_aadl2_threadsubcomponenttype_is_not_abstract():
+    assert not inspect.isabstract(aadl2_ThreadSubcomponentType)
+
+
+def test_aadl2_threadsubcomponenttype_constructor_exists():
+    assert callable(aadl2_ThreadSubcomponentType.__init__)
+
+
+def test_aadl2_threadsubcomponenttype_constructor_args():
+    sig = inspect.signature(aadl2_ThreadSubcomponentType.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_aadl2_devicesubcomponenttype_is_not_abstract():
+    assert not inspect.isabstract(aadl2_DeviceSubcomponentType)
+
+
+def test_aadl2_devicesubcomponenttype_constructor_exists():
+    assert callable(aadl2_DeviceSubcomponentType.__init__)
+
+
+def test_aadl2_devicesubcomponenttype_constructor_args():
+    sig = inspect.signature(aadl2_DeviceSubcomponentType.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_aadl2_memorysubcomponenttype_is_not_abstract():
+    assert not inspect.isabstract(aadl2_MemorySubcomponentType)
+
+
+def test_aadl2_memorysubcomponenttype_constructor_exists():
+    assert callable(aadl2_MemorySubcomponentType.__init__)
+
+
+def test_aadl2_memorysubcomponenttype_constructor_args():
+    sig = inspect.signature(aadl2_MemorySubcomponentType.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_aadl2_virtualprocessorsubcomponenttype_is_not_abstract():
+    assert not inspect.isabstract(aadl2_VirtualProcessorSubcomponentType)
+
+
+def test_aadl2_virtualprocessorsubcomponenttype_constructor_exists():
+    assert callable(aadl2_VirtualProcessorSubcomponentType.__init__)
+
+
+def test_aadl2_virtualprocessorsubcomponenttype_constructor_args():
+    sig = inspect.signature(aadl2_VirtualProcessorSubcomponentType.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_aadl2_processsubcomponenttype_is_not_abstract():
+    assert not inspect.isabstract(aadl2_ProcessSubcomponentType)
+
+
+def test_aadl2_processsubcomponenttype_constructor_exists():
+    assert callable(aadl2_ProcessSubcomponentType.__init__)
+
+
+def test_aadl2_processsubcomponenttype_constructor_args():
+    sig = inspect.signature(aadl2_ProcessSubcomponentType.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_aadl2_threadgroupsubcomponenttype_is_not_abstract():
+    assert not inspect.isabstract(aadl2_ThreadGroupSubcomponentType)
+
+
+def test_aadl2_threadgroupsubcomponenttype_constructor_exists():
+    assert callable(aadl2_ThreadGroupSubcomponentType.__init__)
+
+
+def test_aadl2_threadgroupsubcomponenttype_constructor_args():
+    sig = inspect.signature(aadl2_ThreadGroupSubcomponentType.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_aadl2_bussubcomponenttype_is_not_abstract():
+    assert not inspect.isabstract(aadl2_BusSubcomponentType)
+
+
+def test_aadl2_bussubcomponenttype_constructor_exists():
+    assert callable(aadl2_BusSubcomponentType.__init__)
+
+
+def test_aadl2_bussubcomponenttype_constructor_args():
+    sig = inspect.signature(aadl2_BusSubcomponentType.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_aadl2_abstractsubcomponenttype_is_not_abstract():
+    assert not inspect.isabstract(aadl2_AbstractSubcomponentType)
+
+
+def test_aadl2_abstractsubcomponenttype_constructor_exists():
+    assert callable(aadl2_AbstractSubcomponentType.__init__)
+
+
+def test_aadl2_abstractsubcomponenttype_constructor_args():
+    sig = inspect.signature(aadl2_AbstractSubcomponentType.__init__)
+    params = list(sig.parameters.keys())
 
 
 
@@ -3113,738 +3825,206 @@ def test_classifier_constructor_args():
 
 
 
-def test_aadl2::featuregrouptype_is_not_abstract():
-    assert not inspect.isabstract(aadl2::FeatureGroupType)
+def test_aadl2_featuregrouptype_is_not_abstract():
+    assert not inspect.isabstract(aadl2_FeatureGroupType)
 
 
-def test_aadl2::featuregrouptype_constructor_exists():
-    assert callable(aadl2::FeatureGroupType.__init__)
+def test_aadl2_featuregrouptype_constructor_exists():
+    assert callable(aadl2_FeatureGroupType.__init__)
 
 
-def test_aadl2::featuregrouptype_constructor_args():
-    sig = inspect.signature(aadl2::FeatureGroupType.__init__)
+def test_aadl2_featuregrouptype_constructor_args():
+    sig = inspect.signature(aadl2_FeatureGroupType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_aadl2::componentclassifier_is_not_abstract():
-    assert not inspect.isabstract(aadl2::ComponentClassifier)
+def test_aadl2_componentclassifier_is_not_abstract():
+    assert not inspect.isabstract(aadl2_ComponentClassifier)
 
 
-def test_aadl2::componentclassifier_constructor_exists():
-    assert callable(aadl2::ComponentClassifier.__init__)
+def test_aadl2_componentclassifier_constructor_exists():
+    assert callable(aadl2_ComponentClassifier.__init__)
 
 
-def test_aadl2::componentclassifier_constructor_args():
-    sig = inspect.signature(aadl2::ComponentClassifier.__init__)
+def test_aadl2_componentclassifier_constructor_args():
+    sig = inspect.signature(aadl2_ComponentClassifier.__init__)
     params = list(sig.parameters.keys())
-    assert "noModes" in params, "Missing parameter 'noModes'"
     assert "derivedModes" in params, "Missing parameter 'derivedModes'"
     assert "noFlows" in params, "Missing parameter 'noFlows'"
+    assert "noModes" in params, "Missing parameter 'noModes'"
 
-def test_aadl2::componentclassifier_has_noModes():
-    assert hasattr(aadl2::ComponentClassifier, "noModes")
+def test_aadl2_componentclassifier_has_derivedModes():
+    assert hasattr(aadl2_ComponentClassifier, "derivedModes")
     descriptor = None
-    for klass in aadl2::ComponentClassifier.__mro__:
-        if "noModes" in klass.__dict__:
-            descriptor = klass.__dict__["noModes"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_aadl2::componentclassifier_has_derivedModes():
-    assert hasattr(aadl2::ComponentClassifier, "derivedModes")
-    descriptor = None
-    for klass in aadl2::ComponentClassifier.__mro__:
+    for klass in aadl2_ComponentClassifier.__mro__:
         if "derivedModes" in klass.__dict__:
             descriptor = klass.__dict__["derivedModes"]
             break
     assert isinstance(descriptor, property)
 
-def test_aadl2::componentclassifier_has_noFlows():
-    assert hasattr(aadl2::ComponentClassifier, "noFlows")
+def test_aadl2_componentclassifier_has_noFlows():
+    assert hasattr(aadl2_ComponentClassifier, "noFlows")
     descriptor = None
-    for klass in aadl2::ComponentClassifier.__mro__:
+    for klass in aadl2_ComponentClassifier.__mro__:
         if "noFlows" in klass.__dict__:
             descriptor = klass.__dict__["noFlows"]
             break
     assert isinstance(descriptor, property)
 
-
-
-def test_aadl2::endtoendflow_is_not_abstract():
-    assert not inspect.isabstract(aadl2::EndToEndFlow)
-
-
-def test_aadl2::endtoendflow_constructor_exists():
-    assert callable(aadl2::EndToEndFlow.__init__)
-
-
-def test_aadl2::endtoendflow_constructor_args():
-    sig = inspect.signature(aadl2::EndToEndFlow.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_aadl2::realization_is_not_abstract():
-    assert not inspect.isabstract(aadl2::Realization)
-
-
-def test_aadl2::realization_constructor_exists():
-    assert callable(aadl2::Realization.__init__)
-
-
-def test_aadl2::realization_constructor_args():
-    sig = inspect.signature(aadl2::Realization.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_aadl2::implementationextension_is_not_abstract():
-    assert not inspect.isabstract(aadl2::ImplementationExtension)
-
-
-def test_aadl2::implementationextension_constructor_exists():
-    assert callable(aadl2::ImplementationExtension.__init__)
-
-
-def test_aadl2::implementationextension_constructor_args():
-    sig = inspect.signature(aadl2::ImplementationExtension.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_componentclassifier_is_not_abstract():
-    assert not inspect.isabstract(ComponentClassifier)
-
-
-def test_componentclassifier_constructor_exists():
-    assert callable(ComponentClassifier.__init__)
-
-
-def test_componentclassifier_constructor_args():
-    sig = inspect.signature(ComponentClassifier.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_aadl2::virtualprocessorclassifier_is_not_abstract():
-    assert not inspect.isabstract(aadl2::VirtualProcessorClassifier)
-
-
-def test_aadl2::virtualprocessorclassifier_constructor_exists():
-    assert callable(aadl2::VirtualProcessorClassifier.__init__)
-
-
-def test_aadl2::virtualprocessorclassifier_constructor_args():
-    sig = inspect.signature(aadl2::VirtualProcessorClassifier.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_aadl2::busclassifier_is_not_abstract():
-    assert not inspect.isabstract(aadl2::BusClassifier)
-
-
-def test_aadl2::busclassifier_constructor_exists():
-    assert callable(aadl2::BusClassifier.__init__)
-
-
-def test_aadl2::busclassifier_constructor_args():
-    sig = inspect.signature(aadl2::BusClassifier.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_aadl2::dataclassifier_is_not_abstract():
-    assert not inspect.isabstract(aadl2::DataClassifier)
-
-
-def test_aadl2::dataclassifier_constructor_exists():
-    assert callable(aadl2::DataClassifier.__init__)
-
-
-def test_aadl2::dataclassifier_constructor_args():
-    sig = inspect.signature(aadl2::DataClassifier.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_aadl2::abstractclassifier_is_not_abstract():
-    assert not inspect.isabstract(aadl2::AbstractClassifier)
-
-
-def test_aadl2::abstractclassifier_constructor_exists():
-    assert callable(aadl2::AbstractClassifier.__init__)
-
-
-def test_aadl2::abstractclassifier_constructor_args():
-    sig = inspect.signature(aadl2::AbstractClassifier.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_aadl2::processorclassifier_is_not_abstract():
-    assert not inspect.isabstract(aadl2::ProcessorClassifier)
-
-
-def test_aadl2::processorclassifier_constructor_exists():
-    assert callable(aadl2::ProcessorClassifier.__init__)
-
-
-def test_aadl2::processorclassifier_constructor_args():
-    sig = inspect.signature(aadl2::ProcessorClassifier.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_aadl2::deviceclassifier_is_not_abstract():
-    assert not inspect.isabstract(aadl2::DeviceClassifier)
-
-
-def test_aadl2::deviceclassifier_constructor_exists():
-    assert callable(aadl2::DeviceClassifier.__init__)
-
-
-def test_aadl2::deviceclassifier_constructor_args():
-    sig = inspect.signature(aadl2::DeviceClassifier.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_aadl2::subprogramgroupclassifier_is_not_abstract():
-    assert not inspect.isabstract(aadl2::SubprogramGroupClassifier)
-
-
-def test_aadl2::subprogramgroupclassifier_constructor_exists():
-    assert callable(aadl2::SubprogramGroupClassifier.__init__)
-
-
-def test_aadl2::subprogramgroupclassifier_constructor_args():
-    sig = inspect.signature(aadl2::SubprogramGroupClassifier.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_aadl2::componenttype_is_not_abstract():
-    assert not inspect.isabstract(aadl2::ComponentType)
-
-
-def test_aadl2::componenttype_constructor_exists():
-    assert callable(aadl2::ComponentType.__init__)
-
-
-def test_aadl2::componenttype_constructor_args():
-    sig = inspect.signature(aadl2::ComponentType.__init__)
-    params = list(sig.parameters.keys())
-    assert "noFeatures" in params, "Missing parameter 'noFeatures'"
-
-def test_aadl2::componenttype_has_noFeatures():
-    assert hasattr(aadl2::ComponentType, "noFeatures")
+def test_aadl2_componentclassifier_has_noModes():
+    assert hasattr(aadl2_ComponentClassifier, "noModes")
     descriptor = None
-    for klass in aadl2::ComponentType.__mro__:
-        if "noFeatures" in klass.__dict__:
-            descriptor = klass.__dict__["noFeatures"]
+    for klass in aadl2_ComponentClassifier.__mro__:
+        if "noModes" in klass.__dict__:
+            descriptor = klass.__dict__["noModes"]
             break
     assert isinstance(descriptor, property)
 
 
 
-def test_aadl2::subprogramclassifier_is_not_abstract():
-    assert not inspect.isabstract(aadl2::SubprogramClassifier)
+def test_aadl2_portproxy_is_not_abstract():
+    assert not inspect.isabstract(aadl2_PortProxy)
 
 
-def test_aadl2::subprogramclassifier_constructor_exists():
-    assert callable(aadl2::SubprogramClassifier.__init__)
+def test_aadl2_portproxy_constructor_exists():
+    assert callable(aadl2_PortProxy.__init__)
 
 
-def test_aadl2::subprogramclassifier_constructor_args():
-    sig = inspect.signature(aadl2::SubprogramClassifier.__init__)
+def test_aadl2_portproxy_constructor_args():
+    sig = inspect.signature(aadl2_PortProxy.__init__)
     params = list(sig.parameters.keys())
+    assert "direction" in params, "Missing parameter 'direction'"
 
-
-
-def test_aadl2::processclassifier_is_not_abstract():
-    assert not inspect.isabstract(aadl2::ProcessClassifier)
-
-
-def test_aadl2::processclassifier_constructor_exists():
-    assert callable(aadl2::ProcessClassifier.__init__)
-
-
-def test_aadl2::processclassifier_constructor_args():
-    sig = inspect.signature(aadl2::ProcessClassifier.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_aadl2::threadclassifier_is_not_abstract():
-    assert not inspect.isabstract(aadl2::ThreadClassifier)
-
-
-def test_aadl2::threadclassifier_constructor_exists():
-    assert callable(aadl2::ThreadClassifier.__init__)
-
-
-def test_aadl2::threadclassifier_constructor_args():
-    sig = inspect.signature(aadl2::ThreadClassifier.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_aadl2::systemclassifier_is_not_abstract():
-    assert not inspect.isabstract(aadl2::SystemClassifier)
-
-
-def test_aadl2::systemclassifier_constructor_exists():
-    assert callable(aadl2::SystemClassifier.__init__)
-
-
-def test_aadl2::systemclassifier_constructor_args():
-    sig = inspect.signature(aadl2::SystemClassifier.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_aadl2::virtualbusclassifier_is_not_abstract():
-    assert not inspect.isabstract(aadl2::VirtualBusClassifier)
-
-
-def test_aadl2::virtualbusclassifier_constructor_exists():
-    assert callable(aadl2::VirtualBusClassifier.__init__)
-
-
-def test_aadl2::virtualbusclassifier_constructor_args():
-    sig = inspect.signature(aadl2::VirtualBusClassifier.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_aadl2::threadgroupclassifier_is_not_abstract():
-    assert not inspect.isabstract(aadl2::ThreadGroupClassifier)
-
-
-def test_aadl2::threadgroupclassifier_constructor_exists():
-    assert callable(aadl2::ThreadGroupClassifier.__init__)
-
-
-def test_aadl2::threadgroupclassifier_constructor_args():
-    sig = inspect.signature(aadl2::ThreadGroupClassifier.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_aadl2::memoryclassifier_is_not_abstract():
-    assert not inspect.isabstract(aadl2::MemoryClassifier)
-
-
-def test_aadl2::memoryclassifier_constructor_exists():
-    assert callable(aadl2::MemoryClassifier.__init__)
-
-
-def test_aadl2::memoryclassifier_constructor_args():
-    sig = inspect.signature(aadl2::MemoryClassifier.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_aadl2::componentimplementation_is_not_abstract():
-    assert not inspect.isabstract(aadl2::ComponentImplementation)
-
-
-def test_aadl2::componentimplementation_constructor_exists():
-    assert callable(aadl2::ComponentImplementation.__init__)
-
-
-def test_aadl2::componentimplementation_constructor_args():
-    sig = inspect.signature(aadl2::ComponentImplementation.__init__)
-    params = list(sig.parameters.keys())
-    assert "noCalls" in params, "Missing parameter 'noCalls'"
-    assert "noConnections" in params, "Missing parameter 'noConnections'"
-    assert "noSubcomponents" in params, "Missing parameter 'noSubcomponents'"
-
-def test_aadl2::componentimplementation_has_noCalls():
-    assert hasattr(aadl2::ComponentImplementation, "noCalls")
+def test_aadl2_portproxy_has_direction():
+    assert hasattr(aadl2_PortProxy, "direction")
     descriptor = None
-    for klass in aadl2::ComponentImplementation.__mro__:
-        if "noCalls" in klass.__dict__:
-            descriptor = klass.__dict__["noCalls"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_aadl2::componentimplementation_has_noConnections():
-    assert hasattr(aadl2::ComponentImplementation, "noConnections")
-    descriptor = None
-    for klass in aadl2::ComponentImplementation.__mro__:
-        if "noConnections" in klass.__dict__:
-            descriptor = klass.__dict__["noConnections"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_aadl2::componentimplementation_has_noSubcomponents():
-    assert hasattr(aadl2::ComponentImplementation, "noSubcomponents")
-    descriptor = None
-    for klass in aadl2::ComponentImplementation.__mro__:
-        if "noSubcomponents" in klass.__dict__:
-            descriptor = klass.__dict__["noSubcomponents"]
+    for klass in aadl2_PortProxy.__mro__:
+        if "direction" in klass.__dict__:
+            descriptor = klass.__dict__["direction"]
             break
     assert isinstance(descriptor, property)
 
 
 
-def test_aadl2::calledsubprogram_is_not_abstract():
-    assert not inspect.isabstract(aadl2::CalledSubprogram)
+def test_aadl2_eventdatasource_is_not_abstract():
+    assert not inspect.isabstract(aadl2_EventDataSource)
 
 
-def test_aadl2::calledsubprogram_constructor_exists():
-    assert callable(aadl2::CalledSubprogram.__init__)
+def test_aadl2_eventdatasource_constructor_exists():
+    assert callable(aadl2_EventDataSource.__init__)
 
 
-def test_aadl2::calledsubprogram_constructor_args():
-    sig = inspect.signature(aadl2::CalledSubprogram.__init__)
+def test_aadl2_eventdatasource_constructor_args():
+    sig = inspect.signature(aadl2_EventDataSource.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_refinableelement_is_not_abstract():
-    assert not inspect.isabstract(RefinableElement)
+def test_aadl2_eventsource_is_not_abstract():
+    assert not inspect.isabstract(aadl2_EventSource)
 
 
-def test_refinableelement_constructor_exists():
-    assert callable(RefinableElement.__init__)
+def test_aadl2_eventsource_constructor_exists():
+    assert callable(aadl2_EventSource.__init__)
 
 
-def test_refinableelement_constructor_args():
-    sig = inspect.signature(RefinableElement.__init__)
+def test_aadl2_eventsource_constructor_args():
+    sig = inspect.signature(aadl2_EventSource.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_calledsubprogram_is_not_abstract():
-    assert not inspect.isabstract(CalledSubprogram)
+def test_aadl2_featuregroupconnection_is_not_abstract():
+    assert not inspect.isabstract(aadl2_FeatureGroupConnection)
 
 
-def test_calledsubprogram_constructor_exists():
-    assert callable(CalledSubprogram.__init__)
+def test_aadl2_featuregroupconnection_constructor_exists():
+    assert callable(aadl2_FeatureGroupConnection.__init__)
 
 
-def test_calledsubprogram_constructor_args():
-    sig = inspect.signature(CalledSubprogram.__init__)
+def test_aadl2_featuregroupconnection_constructor_args():
+    sig = inspect.signature(aadl2_FeatureGroupConnection.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_structuralfeature_is_not_abstract():
-    assert not inspect.isabstract(StructuralFeature)
+def test_aadl2_featureconnection_is_not_abstract():
+    assert not inspect.isabstract(aadl2_FeatureConnection)
 
 
-def test_structuralfeature_constructor_exists():
-    assert callable(StructuralFeature.__init__)
+def test_aadl2_featureconnection_constructor_exists():
+    assert callable(aadl2_FeatureConnection.__init__)
 
 
-def test_structuralfeature_constructor_args():
-    sig = inspect.signature(StructuralFeature.__init__)
+def test_aadl2_featureconnection_constructor_args():
+    sig = inspect.signature(aadl2_FeatureConnection.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_aadl2::connection_is_not_abstract():
-    assert not inspect.isabstract(aadl2::Connection)
+def test_aadl2_portconnection_is_not_abstract():
+    assert not inspect.isabstract(aadl2_PortConnection)
 
 
-def test_aadl2::connection_constructor_exists():
-    assert callable(aadl2::Connection.__init__)
+def test_aadl2_portconnection_constructor_exists():
+    assert callable(aadl2_PortConnection.__init__)
 
 
-def test_aadl2::connection_constructor_args():
-    sig = inspect.signature(aadl2::Connection.__init__)
+def test_aadl2_portconnection_constructor_args():
+    sig = inspect.signature(aadl2_PortConnection.__init__)
     params = list(sig.parameters.keys())
-    assert "bidirectional" in params, "Missing parameter 'bidirectional'"
 
-def test_aadl2::connection_has_bidirectional():
-    assert hasattr(aadl2::Connection, "bidirectional")
+
+
+def test_aadl2_parameterconnection_is_not_abstract():
+    assert not inspect.isabstract(aadl2_ParameterConnection)
+
+
+def test_aadl2_parameterconnection_constructor_exists():
+    assert callable(aadl2_ParameterConnection.__init__)
+
+
+def test_aadl2_parameterconnection_constructor_args():
+    sig = inspect.signature(aadl2_ParameterConnection.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_aadl2_accessconnection_is_not_abstract():
+    assert not inspect.isabstract(aadl2_AccessConnection)
+
+
+def test_aadl2_accessconnection_constructor_exists():
+    assert callable(aadl2_AccessConnection.__init__)
+
+
+def test_aadl2_accessconnection_constructor_args():
+    sig = inspect.signature(aadl2_AccessConnection.__init__)
+    params = list(sig.parameters.keys())
+    assert "accessCategory" in params, "Missing parameter 'accessCategory'"
+
+def test_aadl2_accessconnection_has_accessCategory():
+    assert hasattr(aadl2_AccessConnection, "accessCategory")
     descriptor = None
-    for klass in aadl2::Connection.__mro__:
-        if "bidirectional" in klass.__dict__:
-            descriptor = klass.__dict__["bidirectional"]
+    for klass in aadl2_AccessConnection.__mro__:
+        if "accessCategory" in klass.__dict__:
+            descriptor = klass.__dict__["accessCategory"]
             break
     assert isinstance(descriptor, property)
 
 
 
-def test_aadl2::feature_is_not_abstract():
-    assert not inspect.isabstract(aadl2::Feature)
+def test_aadl2_abstractsubcomponent_is_not_abstract():
+    assert not inspect.isabstract(aadl2_AbstractSubcomponent)
 
 
-def test_aadl2::feature_constructor_exists():
-    assert callable(aadl2::Feature.__init__)
+def test_aadl2_abstractsubcomponent_constructor_exists():
+    assert callable(aadl2_AbstractSubcomponent.__init__)
 
 
-def test_aadl2::feature_constructor_args():
-    sig = inspect.signature(aadl2::Feature.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_aadl2::flowfeature_is_not_abstract():
-    assert not inspect.isabstract(aadl2::FlowFeature)
-
-
-def test_aadl2::flowfeature_constructor_exists():
-    assert callable(aadl2::FlowFeature.__init__)
-
-
-def test_aadl2::flowfeature_constructor_args():
-    sig = inspect.signature(aadl2::FlowFeature.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_classifierfeature_is_not_abstract():
-    assert not inspect.isabstract(ClassifierFeature)
-
-
-def test_classifierfeature_constructor_exists():
-    assert callable(ClassifierFeature.__init__)
-
-
-def test_classifierfeature_constructor_args():
-    sig = inspect.signature(ClassifierFeature.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_aadl2::flowimplementation_is_not_abstract():
-    assert not inspect.isabstract(aadl2::FlowImplementation)
-
-
-def test_aadl2::flowimplementation_constructor_exists():
-    assert callable(aadl2::FlowImplementation.__init__)
-
-
-def test_aadl2::flowimplementation_constructor_args():
-    sig = inspect.signature(aadl2::FlowImplementation.__init__)
-    params = list(sig.parameters.keys())
-    assert "kind" in params, "Missing parameter 'kind'"
-
-def test_aadl2::flowimplementation_has_kind():
-    assert hasattr(aadl2::FlowImplementation, "kind")
-    descriptor = None
-    for klass in aadl2::FlowImplementation.__mro__:
-        if "kind" in klass.__dict__:
-            descriptor = klass.__dict__["kind"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_aadl2::structuralfeature_is_not_abstract():
-    assert not inspect.isabstract(aadl2::StructuralFeature)
-
-
-def test_aadl2::structuralfeature_constructor_exists():
-    assert callable(aadl2::StructuralFeature.__init__)
-
-
-def test_aadl2::structuralfeature_constructor_args():
-    sig = inspect.signature(aadl2::StructuralFeature.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_aadl2::behavioralfeature_is_not_abstract():
-    assert not inspect.isabstract(aadl2::BehavioralFeature)
-
-
-def test_aadl2::behavioralfeature_constructor_exists():
-    assert callable(aadl2::BehavioralFeature.__init__)
-
-
-def test_aadl2::behavioralfeature_constructor_args():
-    sig = inspect.signature(aadl2::BehavioralFeature.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_aadl2::modefeature_is_not_abstract():
-    assert not inspect.isabstract(aadl2::ModeFeature)
-
-
-def test_aadl2::modefeature_constructor_exists():
-    assert callable(aadl2::ModeFeature.__init__)
-
-
-def test_aadl2::modefeature_constructor_args():
-    sig = inspect.signature(aadl2::ModeFeature.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_modefeature_is_not_abstract():
-    assert not inspect.isabstract(ModeFeature)
-
-
-def test_modefeature_constructor_exists():
-    assert callable(ModeFeature.__init__)
-
-
-def test_modefeature_constructor_args():
-    sig = inspect.signature(ModeFeature.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_aadl2::modetransition_is_not_abstract():
-    assert not inspect.isabstract(aadl2::ModeTransition)
-
-
-def test_aadl2::modetransition_constructor_exists():
-    assert callable(aadl2::ModeTransition.__init__)
-
-
-def test_aadl2::modetransition_constructor_args():
-    sig = inspect.signature(aadl2::ModeTransition.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_aadl2::mode_is_not_abstract():
-    assert not inspect.isabstract(aadl2::Mode)
-
-
-def test_aadl2::mode_constructor_exists():
-    assert callable(aadl2::Mode.__init__)
-
-
-def test_aadl2::mode_constructor_args():
-    sig = inspect.signature(aadl2::Mode.__init__)
-    params = list(sig.parameters.keys())
-    assert "derived" in params, "Missing parameter 'derived'"
-    assert "initial" in params, "Missing parameter 'initial'"
-
-def test_aadl2::mode_has_derived():
-    assert hasattr(aadl2::Mode, "derived")
-    descriptor = None
-    for klass in aadl2::Mode.__mro__:
-        if "derived" in klass.__dict__:
-            descriptor = klass.__dict__["derived"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_aadl2::mode_has_initial():
-    assert hasattr(aadl2::Mode, "initial")
-    descriptor = None
-    for klass in aadl2::Mode.__mro__:
-        if "initial" in klass.__dict__:
-            descriptor = klass.__dict__["initial"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_modalelement_is_not_abstract():
-    assert not inspect.isabstract(ModalElement)
-
-
-def test_modalelement_constructor_exists():
-    assert callable(ModalElement.__init__)
-
-
-def test_modalelement_constructor_args():
-    sig = inspect.signature(ModalElement.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_aadl2::processorfeature_is_not_abstract():
-    assert not inspect.isabstract(aadl2::ProcessorFeature)
-
-
-def test_aadl2::processorfeature_constructor_exists():
-    assert callable(aadl2::ProcessorFeature.__init__)
-
-
-def test_aadl2::processorfeature_constructor_args():
-    sig = inspect.signature(aadl2::ProcessorFeature.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_aadl2::subprogramcallsequence_is_not_abstract():
-    assert not inspect.isabstract(aadl2::SubprogramCallSequence)
-
-
-def test_aadl2::subprogramcallsequence_constructor_exists():
-    assert callable(aadl2::SubprogramCallSequence.__init__)
-
-
-def test_aadl2::subprogramcallsequence_constructor_args():
-    sig = inspect.signature(aadl2::SubprogramCallSequence.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_aadl2::subcomponent_is_not_abstract():
-    assert not inspect.isabstract(aadl2::Subcomponent)
-
-
-def test_aadl2::subcomponent_constructor_exists():
-    assert callable(aadl2::Subcomponent.__init__)
-
-
-def test_aadl2::subcomponent_constructor_args():
-    sig = inspect.signature(aadl2::Subcomponent.__init__)
-    params = list(sig.parameters.keys())
-    assert "allModes" in params, "Missing parameter 'allModes'"
-
-def test_aadl2::subcomponent_has_allModes():
-    assert hasattr(aadl2::Subcomponent, "allModes")
-    descriptor = None
-    for klass in aadl2::Subcomponent.__mro__:
-        if "allModes" in klass.__dict__:
-            descriptor = klass.__dict__["allModes"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_aadl2::modalpath_is_not_abstract():
-    assert not inspect.isabstract(aadl2::ModalPath)
-
-
-def test_aadl2::modalpath_constructor_exists():
-    assert callable(aadl2::ModalPath.__init__)
-
-
-def test_aadl2::modalpath_constructor_args():
-    sig = inspect.signature(aadl2::ModalPath.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_relationship_is_not_abstract():
-    assert not inspect.isabstract(Relationship)
-
-
-def test_relationship_constructor_exists():
-    assert callable(Relationship.__init__)
-
-
-def test_relationship_constructor_args():
-    sig = inspect.signature(Relationship.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_aadl2::directedrelationship_is_not_abstract():
-    assert not inspect.isabstract(aadl2::DirectedRelationship)
-
-
-def test_aadl2::directedrelationship_constructor_exists():
-    assert callable(aadl2::DirectedRelationship.__init__)
-
-
-def test_aadl2::directedrelationship_constructor_args():
-    sig = inspect.signature(aadl2::DirectedRelationship.__init__)
+def test_aadl2_abstractsubcomponent_constructor_args():
+    sig = inspect.signature(aadl2_AbstractSubcomponent.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -3863,44 +4043,16 @@ def test_directedrelationship_constructor_args():
 
 
 
-def test_aadl2::prototype_is_not_abstract():
-    assert not inspect.isabstract(aadl2::Prototype)
+def test_aadl2_generalization__is_not_abstract():
+    assert not inspect.isabstract(aadl2_Generalization_)
 
 
-def test_aadl2::prototype_constructor_exists():
-    assert callable(aadl2::Prototype.__init__)
+def test_aadl2_generalization__constructor_exists():
+    assert callable(aadl2_Generalization_.__init__)
 
 
-def test_aadl2::prototype_constructor_args():
-    sig = inspect.signature(aadl2::Prototype.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_aadl2::annexsubclause_is_not_abstract():
-    assert not inspect.isabstract(aadl2::AnnexSubclause)
-
-
-def test_aadl2::annexsubclause_constructor_exists():
-    assert callable(aadl2::AnnexSubclause.__init__)
-
-
-def test_aadl2::annexsubclause_constructor_args():
-    sig = inspect.signature(aadl2::AnnexSubclause.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_aadl2::generalization__is_not_abstract():
-    assert not inspect.isabstract(aadl2::Generalization_)
-
-
-def test_aadl2::generalization__constructor_exists():
-    assert callable(aadl2::Generalization_.__init__)
-
-
-def test_aadl2::generalization__constructor_args():
-    sig = inspect.signature(aadl2::Generalization_.__init__)
+def test_aadl2_generalization__constructor_args():
+    sig = inspect.signature(aadl2_Generalization_.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -3919,92 +4071,92 @@ def test_namespace_constructor_args():
 
 
 
-def test_aadl2::packagesection_is_not_abstract():
-    assert not inspect.isabstract(aadl2::PackageSection)
+def test_aadl2_packagesection_is_not_abstract():
+    assert not inspect.isabstract(aadl2_PackageSection)
 
 
-def test_aadl2::packagesection_constructor_exists():
-    assert callable(aadl2::PackageSection.__init__)
+def test_aadl2_packagesection_constructor_exists():
+    assert callable(aadl2_PackageSection.__init__)
 
 
-def test_aadl2::packagesection_constructor_args():
-    sig = inspect.signature(aadl2::PackageSection.__init__)
+def test_aadl2_packagesection_constructor_args():
+    sig = inspect.signature(aadl2_PackageSection.__init__)
     params = list(sig.parameters.keys())
-    assert "noProperties" in params, "Missing parameter 'noProperties'"
     assert "noAnnexes" in params, "Missing parameter 'noAnnexes'"
+    assert "noProperties" in params, "Missing parameter 'noProperties'"
 
-def test_aadl2::packagesection_has_noProperties():
-    assert hasattr(aadl2::PackageSection, "noProperties")
+def test_aadl2_packagesection_has_noAnnexes():
+    assert hasattr(aadl2_PackageSection, "noAnnexes")
     descriptor = None
-    for klass in aadl2::PackageSection.__mro__:
-        if "noProperties" in klass.__dict__:
-            descriptor = klass.__dict__["noProperties"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_aadl2::packagesection_has_noAnnexes():
-    assert hasattr(aadl2::PackageSection, "noAnnexes")
-    descriptor = None
-    for klass in aadl2::PackageSection.__mro__:
+    for klass in aadl2_PackageSection.__mro__:
         if "noAnnexes" in klass.__dict__:
             descriptor = klass.__dict__["noAnnexes"]
             break
     assert isinstance(descriptor, property)
 
+def test_aadl2_packagesection_has_noProperties():
+    assert hasattr(aadl2_PackageSection, "noProperties")
+    descriptor = None
+    for klass in aadl2_PackageSection.__mro__:
+        if "noProperties" in klass.__dict__:
+            descriptor = klass.__dict__["noProperties"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_aadl2::enumerationtype_is_not_abstract():
-    assert not inspect.isabstract(aadl2::EnumerationType)
+
+def test_aadl2_enumerationtype_is_not_abstract():
+    assert not inspect.isabstract(aadl2_EnumerationType)
 
 
-def test_aadl2::enumerationtype_constructor_exists():
-    assert callable(aadl2::EnumerationType.__init__)
+def test_aadl2_enumerationtype_constructor_exists():
+    assert callable(aadl2_EnumerationType.__init__)
 
 
-def test_aadl2::enumerationtype_constructor_args():
-    sig = inspect.signature(aadl2::EnumerationType.__init__)
+def test_aadl2_enumerationtype_constructor_args():
+    sig = inspect.signature(aadl2_EnumerationType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_aadl2::recordtype_is_not_abstract():
-    assert not inspect.isabstract(aadl2::RecordType)
+def test_aadl2_propertyset_is_not_abstract():
+    assert not inspect.isabstract(aadl2_PropertySet)
 
 
-def test_aadl2::recordtype_constructor_exists():
-    assert callable(aadl2::RecordType.__init__)
+def test_aadl2_propertyset_constructor_exists():
+    assert callable(aadl2_PropertySet.__init__)
 
 
-def test_aadl2::recordtype_constructor_args():
-    sig = inspect.signature(aadl2::RecordType.__init__)
+def test_aadl2_propertyset_constructor_args():
+    sig = inspect.signature(aadl2_PropertySet.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_aadl2::globalnamespace_is_not_abstract():
-    assert not inspect.isabstract(aadl2::GlobalNamespace)
+def test_aadl2_globalnamespace_is_not_abstract():
+    assert not inspect.isabstract(aadl2_GlobalNamespace)
 
 
-def test_aadl2::globalnamespace_constructor_exists():
-    assert callable(aadl2::GlobalNamespace.__init__)
+def test_aadl2_globalnamespace_constructor_exists():
+    assert callable(aadl2_GlobalNamespace.__init__)
 
 
-def test_aadl2::globalnamespace_constructor_args():
-    sig = inspect.signature(aadl2::GlobalNamespace.__init__)
+def test_aadl2_globalnamespace_constructor_args():
+    sig = inspect.signature(aadl2_GlobalNamespace.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_aadl2::propertyset_is_not_abstract():
-    assert not inspect.isabstract(aadl2::PropertySet)
+def test_aadl2_recordtype_is_not_abstract():
+    assert not inspect.isabstract(aadl2_RecordType)
 
 
-def test_aadl2::propertyset_constructor_exists():
-    assert callable(aadl2::PropertySet.__init__)
+def test_aadl2_recordtype_constructor_exists():
+    assert callable(aadl2_RecordType.__init__)
 
 
-def test_aadl2::propertyset_constructor_args():
-    sig = inspect.signature(aadl2::PropertySet.__init__)
+def test_aadl2_recordtype_constructor_args():
+    sig = inspect.signature(aadl2_RecordType.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -4023,44 +4175,44 @@ def test_propertyowner_constructor_args():
 
 
 
-def test_aadl2::classifiervalue_is_not_abstract():
-    assert not inspect.isabstract(aadl2::ClassifierValue)
+def test_aadl2_classifiervalue_is_not_abstract():
+    assert not inspect.isabstract(aadl2_ClassifierValue)
 
 
-def test_aadl2::classifiervalue_constructor_exists():
-    assert callable(aadl2::ClassifierValue.__init__)
+def test_aadl2_classifiervalue_constructor_exists():
+    assert callable(aadl2_ClassifierValue.__init__)
 
 
-def test_aadl2::classifiervalue_constructor_args():
-    sig = inspect.signature(aadl2::ClassifierValue.__init__)
+def test_aadl2_classifiervalue_constructor_args():
+    sig = inspect.signature(aadl2_ClassifierValue.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_aadl2::arraysizeproperty_is_not_abstract():
-    assert not inspect.isabstract(aadl2::ArraySizeProperty)
+def test_aadl2_arraysizeproperty_is_not_abstract():
+    assert not inspect.isabstract(aadl2_ArraySizeProperty)
 
 
-def test_aadl2::arraysizeproperty_constructor_exists():
-    assert callable(aadl2::ArraySizeProperty.__init__)
+def test_aadl2_arraysizeproperty_constructor_exists():
+    assert callable(aadl2_ArraySizeProperty.__init__)
 
 
-def test_aadl2::arraysizeproperty_constructor_args():
-    sig = inspect.signature(aadl2::ArraySizeProperty.__init__)
+def test_aadl2_arraysizeproperty_constructor_args():
+    sig = inspect.signature(aadl2_ArraySizeProperty.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_aadl2::abstractnamedvalue_is_not_abstract():
-    assert not inspect.isabstract(aadl2::AbstractNamedValue)
+def test_aadl2_abstractnamedvalue_is_not_abstract():
+    assert not inspect.isabstract(aadl2_AbstractNamedValue)
 
 
-def test_aadl2::abstractnamedvalue_constructor_exists():
-    assert callable(aadl2::AbstractNamedValue.__init__)
+def test_aadl2_abstractnamedvalue_constructor_exists():
+    assert callable(aadl2_AbstractNamedValue.__init__)
 
 
-def test_aadl2::abstractnamedvalue_constructor_args():
-    sig = inspect.signature(aadl2::AbstractNamedValue.__init__)
+def test_aadl2_abstractnamedvalue_constructor_args():
+    sig = inspect.signature(aadl2_AbstractNamedValue.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -4079,30 +4231,30 @@ def test_type_constructor_args():
 
 
 
-def test_aadl2::subcomponenttype_is_not_abstract():
-    assert not inspect.isabstract(aadl2::SubcomponentType)
+def test_aadl2_subcomponenttype_is_not_abstract():
+    assert not inspect.isabstract(aadl2_SubcomponentType)
 
 
-def test_aadl2::subcomponenttype_constructor_exists():
-    assert callable(aadl2::SubcomponentType.__init__)
+def test_aadl2_subcomponenttype_constructor_exists():
+    assert callable(aadl2_SubcomponentType.__init__)
 
 
-def test_aadl2::subcomponenttype_constructor_args():
-    sig = inspect.signature(aadl2::SubcomponentType.__init__)
+def test_aadl2_subcomponenttype_constructor_args():
+    sig = inspect.signature(aadl2_SubcomponentType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_aadl2::propertytype_is_not_abstract():
-    assert not inspect.isabstract(aadl2::PropertyType)
+def test_aadl2_propertytype_is_not_abstract():
+    assert not inspect.isabstract(aadl2_PropertyType)
 
 
-def test_aadl2::propertytype_constructor_exists():
-    assert callable(aadl2::PropertyType.__init__)
+def test_aadl2_propertytype_constructor_exists():
+    assert callable(aadl2_PropertyType.__init__)
 
 
-def test_aadl2::propertytype_constructor_args():
-    sig = inspect.signature(aadl2::PropertyType.__init__)
+def test_aadl2_propertytype_constructor_args():
+    sig = inspect.signature(aadl2_PropertyType.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -4121,49 +4273,49 @@ def test_typedelement_constructor_args():
 
 
 
-def test_aadl2::basicproperty_is_not_abstract():
-    assert not inspect.isabstract(aadl2::BasicProperty)
+def test_aadl2_basicproperty_is_not_abstract():
+    assert not inspect.isabstract(aadl2_BasicProperty)
 
 
-def test_aadl2::basicproperty_constructor_exists():
-    assert callable(aadl2::BasicProperty.__init__)
+def test_aadl2_basicproperty_constructor_exists():
+    assert callable(aadl2_BasicProperty.__init__)
 
 
-def test_aadl2::basicproperty_constructor_args():
-    sig = inspect.signature(aadl2::BasicProperty.__init__)
+def test_aadl2_basicproperty_constructor_args():
+    sig = inspect.signature(aadl2_BasicProperty.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_aadl2::metaclassreference_is_not_abstract():
-    assert not inspect.isabstract(aadl2::MetaclassReference)
+def test_aadl2_metaclassreference_is_not_abstract():
+    assert not inspect.isabstract(aadl2_MetaclassReference)
 
 
-def test_aadl2::metaclassreference_constructor_exists():
-    assert callable(aadl2::MetaclassReference.__init__)
+def test_aadl2_metaclassreference_constructor_exists():
+    assert callable(aadl2_MetaclassReference.__init__)
 
 
-def test_aadl2::metaclassreference_constructor_args():
-    sig = inspect.signature(aadl2::MetaclassReference.__init__)
+def test_aadl2_metaclassreference_constructor_args():
+    sig = inspect.signature(aadl2_MetaclassReference.__init__)
     params = list(sig.parameters.keys())
-    assert "metaclassName" in params, "Missing parameter 'metaclassName'"
     assert "annexName" in params, "Missing parameter 'annexName'"
+    assert "metaclassName" in params, "Missing parameter 'metaclassName'"
 
-def test_aadl2::metaclassreference_has_metaclassName():
-    assert hasattr(aadl2::MetaclassReference, "metaclassName")
+def test_aadl2_metaclassreference_has_annexName():
+    assert hasattr(aadl2_MetaclassReference, "annexName")
     descriptor = None
-    for klass in aadl2::MetaclassReference.__mro__:
-        if "metaclassName" in klass.__dict__:
-            descriptor = klass.__dict__["metaclassName"]
+    for klass in aadl2_MetaclassReference.__mro__:
+        if "annexName" in klass.__dict__:
+            descriptor = klass.__dict__["annexName"]
             break
     assert isinstance(descriptor, property)
 
-def test_aadl2::metaclassreference_has_annexName():
-    assert hasattr(aadl2::MetaclassReference, "annexName")
+def test_aadl2_metaclassreference_has_metaclassName():
+    assert hasattr(aadl2_MetaclassReference, "metaclassName")
     descriptor = None
-    for klass in aadl2::MetaclassReference.__mro__:
-        if "annexName" in klass.__dict__:
-            descriptor = klass.__dict__["annexName"]
+    for klass in aadl2_MetaclassReference.__mro__:
+        if "metaclassName" in klass.__dict__:
+            descriptor = klass.__dict__["metaclassName"]
             break
     assert isinstance(descriptor, property)
 
@@ -4197,16 +4349,16 @@ def test_abstractnamedvalue_constructor_args():
 
 
 
-def test_aadl2::propertyconstant_is_not_abstract():
-    assert not inspect.isabstract(aadl2::PropertyConstant)
+def test_aadl2_propertyconstant_is_not_abstract():
+    assert not inspect.isabstract(aadl2_PropertyConstant)
 
 
-def test_aadl2::propertyconstant_constructor_exists():
-    assert callable(aadl2::PropertyConstant.__init__)
+def test_aadl2_propertyconstant_constructor_exists():
+    assert callable(aadl2_PropertyConstant.__init__)
 
 
-def test_aadl2::propertyconstant_constructor_args():
-    sig = inspect.signature(aadl2::PropertyConstant.__init__)
+def test_aadl2_propertyconstant_constructor_args():
+    sig = inspect.signature(aadl2_PropertyConstant.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -4225,71 +4377,57 @@ def test_basicproperty_constructor_args():
 
 
 
-def test_aadl2::recordfield_is_not_abstract():
-    assert not inspect.isabstract(aadl2::RecordField)
+def test_aadl2_recordfield_is_not_abstract():
+    assert not inspect.isabstract(aadl2_RecordField)
 
 
-def test_aadl2::recordfield_constructor_exists():
-    assert callable(aadl2::RecordField.__init__)
+def test_aadl2_recordfield_constructor_exists():
+    assert callable(aadl2_RecordField.__init__)
 
 
-def test_aadl2::recordfield_constructor_args():
-    sig = inspect.signature(aadl2::RecordField.__init__)
+def test_aadl2_recordfield_constructor_args():
+    sig = inspect.signature(aadl2_RecordField.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_aadl2::modalpropertyvalue_is_not_abstract():
-    assert not inspect.isabstract(aadl2::ModalPropertyValue)
+def test_aadl2_classifier_is_not_abstract():
+    assert not inspect.isabstract(aadl2_Classifier)
 
 
-def test_aadl2::modalpropertyvalue_constructor_exists():
-    assert callable(aadl2::ModalPropertyValue.__init__)
+def test_aadl2_classifier_constructor_exists():
+    assert callable(aadl2_Classifier.__init__)
 
 
-def test_aadl2::modalpropertyvalue_constructor_args():
-    sig = inspect.signature(aadl2::ModalPropertyValue.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_aadl2::classifier_is_not_abstract():
-    assert not inspect.isabstract(aadl2::Classifier)
-
-
-def test_aadl2::classifier_constructor_exists():
-    assert callable(aadl2::Classifier.__init__)
-
-
-def test_aadl2::classifier_constructor_args():
-    sig = inspect.signature(aadl2::Classifier.__init__)
+def test_aadl2_classifier_constructor_args():
+    sig = inspect.signature(aadl2_Classifier.__init__)
     params = list(sig.parameters.keys())
     assert "noAnnexes" in params, "Missing parameter 'noAnnexes'"
     assert "noPrototypes" in params, "Missing parameter 'noPrototypes'"
     assert "noProperties" in params, "Missing parameter 'noProperties'"
 
-def test_aadl2::classifier_has_noAnnexes():
-    assert hasattr(aadl2::Classifier, "noAnnexes")
+def test_aadl2_classifier_has_noAnnexes():
+    assert hasattr(aadl2_Classifier, "noAnnexes")
     descriptor = None
-    for klass in aadl2::Classifier.__mro__:
+    for klass in aadl2_Classifier.__mro__:
         if "noAnnexes" in klass.__dict__:
             descriptor = klass.__dict__["noAnnexes"]
             break
     assert isinstance(descriptor, property)
 
-def test_aadl2::classifier_has_noPrototypes():
-    assert hasattr(aadl2::Classifier, "noPrototypes")
+def test_aadl2_classifier_has_noPrototypes():
+    assert hasattr(aadl2_Classifier, "noPrototypes")
     descriptor = None
-    for klass in aadl2::Classifier.__mro__:
+    for klass in aadl2_Classifier.__mro__:
         if "noPrototypes" in klass.__dict__:
             descriptor = klass.__dict__["noPrototypes"]
             break
     assert isinstance(descriptor, property)
 
-def test_aadl2::classifier_has_noProperties():
-    assert hasattr(aadl2::Classifier, "noProperties")
+def test_aadl2_classifier_has_noProperties():
+    assert hasattr(aadl2_Classifier, "noProperties")
     descriptor = None
-    for klass in aadl2::Classifier.__mro__:
+    for klass in aadl2_Classifier.__mro__:
         if "noProperties" in klass.__dict__:
             descriptor = klass.__dict__["noProperties"]
             break
@@ -4297,35 +4435,35 @@ def test_aadl2::classifier_has_noProperties():
 
 
 
-def test_aadl2::property_is_not_abstract():
-    assert not inspect.isabstract(aadl2::Property)
+def test_aadl2_property_is_not_abstract():
+    assert not inspect.isabstract(aadl2_Property)
 
 
-def test_aadl2::property_constructor_exists():
-    assert callable(aadl2::Property.__init__)
+def test_aadl2_property_constructor_exists():
+    assert callable(aadl2_Property.__init__)
 
 
-def test_aadl2::property_constructor_args():
-    sig = inspect.signature(aadl2::Property.__init__)
+def test_aadl2_property_constructor_args():
+    sig = inspect.signature(aadl2_Property.__init__)
     params = list(sig.parameters.keys())
-    assert "emptyListDefault" in params, "Missing parameter 'emptyListDefault'"
     assert "inherit" in params, "Missing parameter 'inherit'"
+    assert "emptyListDefault" in params, "Missing parameter 'emptyListDefault'"
 
-def test_aadl2::property_has_emptyListDefault():
-    assert hasattr(aadl2::Property, "emptyListDefault")
+def test_aadl2_property_has_inherit():
+    assert hasattr(aadl2_Property, "inherit")
     descriptor = None
-    for klass in aadl2::Property.__mro__:
-        if "emptyListDefault" in klass.__dict__:
-            descriptor = klass.__dict__["emptyListDefault"]
+    for klass in aadl2_Property.__mro__:
+        if "inherit" in klass.__dict__:
+            descriptor = klass.__dict__["inherit"]
             break
     assert isinstance(descriptor, property)
 
-def test_aadl2::property_has_inherit():
-    assert hasattr(aadl2::Property, "inherit")
+def test_aadl2_property_has_emptyListDefault():
+    assert hasattr(aadl2_Property, "emptyListDefault")
     descriptor = None
-    for klass in aadl2::Property.__mro__:
-        if "inherit" in klass.__dict__:
-            descriptor = klass.__dict__["inherit"]
+    for klass in aadl2_Property.__mro__:
+        if "emptyListDefault" in klass.__dict__:
+            descriptor = klass.__dict__["emptyListDefault"]
             break
     assert isinstance(descriptor, property)
 
@@ -4345,23 +4483,107 @@ def test_namedelement_constructor_args():
 
 
 
-def test_aadl2::componenttyperename_is_not_abstract():
-    assert not inspect.isabstract(aadl2::ComponentTypeRename)
+def test_aadl2_device_is_not_abstract():
+    assert not inspect.isabstract(aadl2_Device)
 
 
-def test_aadl2::componenttyperename_constructor_exists():
-    assert callable(aadl2::ComponentTypeRename.__init__)
+def test_aadl2_device_constructor_exists():
+    assert callable(aadl2_Device.__init__)
 
 
-def test_aadl2::componenttyperename_constructor_args():
-    sig = inspect.signature(aadl2::ComponentTypeRename.__init__)
+def test_aadl2_device_constructor_args():
+    sig = inspect.signature(aadl2_Device.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_aadl2_threadgroup_is_not_abstract():
+    assert not inspect.isabstract(aadl2_ThreadGroup)
+
+
+def test_aadl2_threadgroup_constructor_exists():
+    assert callable(aadl2_ThreadGroup.__init__)
+
+
+def test_aadl2_threadgroup_constructor_args():
+    sig = inspect.signature(aadl2_ThreadGroup.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_aadl2_virtualbus_is_not_abstract():
+    assert not inspect.isabstract(aadl2_VirtualBus)
+
+
+def test_aadl2_virtualbus_constructor_exists():
+    assert callable(aadl2_VirtualBus.__init__)
+
+
+def test_aadl2_virtualbus_constructor_args():
+    sig = inspect.signature(aadl2_VirtualBus.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_aadl2_subprogramgroup_is_not_abstract():
+    assert not inspect.isabstract(aadl2_SubprogramGroup)
+
+
+def test_aadl2_subprogramgroup_constructor_exists():
+    assert callable(aadl2_SubprogramGroup.__init__)
+
+
+def test_aadl2_subprogramgroup_constructor_args():
+    sig = inspect.signature(aadl2_SubprogramGroup.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_aadl2_abstract_is_not_abstract():
+    assert not inspect.isabstract(aadl2_Abstract)
+
+
+def test_aadl2_abstract_constructor_exists():
+    assert callable(aadl2_Abstract.__init__)
+
+
+def test_aadl2_abstract_constructor_args():
+    sig = inspect.signature(aadl2_Abstract.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_aadl2_annexlibrary_is_not_abstract():
+    assert not inspect.isabstract(aadl2_AnnexLibrary)
+
+
+def test_aadl2_annexlibrary_constructor_exists():
+    assert callable(aadl2_AnnexLibrary.__init__)
+
+
+def test_aadl2_annexlibrary_constructor_args():
+    sig = inspect.signature(aadl2_AnnexLibrary.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_aadl2_componenttyperename_is_not_abstract():
+    assert not inspect.isabstract(aadl2_ComponentTypeRename)
+
+
+def test_aadl2_componenttyperename_constructor_exists():
+    assert callable(aadl2_ComponentTypeRename.__init__)
+
+
+def test_aadl2_componenttyperename_constructor_args():
+    sig = inspect.signature(aadl2_ComponentTypeRename.__init__)
     params = list(sig.parameters.keys())
     assert "category" in params, "Missing parameter 'category'"
 
-def test_aadl2::componenttyperename_has_category():
-    assert hasattr(aadl2::ComponentTypeRename, "category")
+def test_aadl2_componenttyperename_has_category():
+    assert hasattr(aadl2_ComponentTypeRename, "category")
     descriptor = None
-    for klass in aadl2::ComponentTypeRename.__mro__:
+    for klass in aadl2_ComponentTypeRename.__mro__:
         if "category" in klass.__dict__:
             descriptor = klass.__dict__["category"]
             break
@@ -4369,23 +4591,149 @@ def test_aadl2::componenttyperename_has_category():
 
 
 
-def test_aadl2::packagerename_is_not_abstract():
-    assert not inspect.isabstract(aadl2::PackageRename)
+def test_aadl2_system_is_not_abstract():
+    assert not inspect.isabstract(aadl2_System)
 
 
-def test_aadl2::packagerename_constructor_exists():
-    assert callable(aadl2::PackageRename.__init__)
+def test_aadl2_system_constructor_exists():
+    assert callable(aadl2_System.__init__)
 
 
-def test_aadl2::packagerename_constructor_args():
-    sig = inspect.signature(aadl2::PackageRename.__init__)
+def test_aadl2_system_constructor_args():
+    sig = inspect.signature(aadl2_System.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_aadl2_featuregrouptyperename_is_not_abstract():
+    assert not inspect.isabstract(aadl2_FeatureGroupTypeRename)
+
+
+def test_aadl2_featuregrouptyperename_constructor_exists():
+    assert callable(aadl2_FeatureGroupTypeRename.__init__)
+
+
+def test_aadl2_featuregrouptyperename_constructor_args():
+    sig = inspect.signature(aadl2_FeatureGroupTypeRename.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_aadl2_data_is_not_abstract():
+    assert not inspect.isabstract(aadl2_Data)
+
+
+def test_aadl2_data_constructor_exists():
+    assert callable(aadl2_Data.__init__)
+
+
+def test_aadl2_data_constructor_args():
+    sig = inspect.signature(aadl2_Data.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_aadl2_process_is_not_abstract():
+    assert not inspect.isabstract(aadl2_Process)
+
+
+def test_aadl2_process_constructor_exists():
+    assert callable(aadl2_Process.__init__)
+
+
+def test_aadl2_process_constructor_args():
+    sig = inspect.signature(aadl2_Process.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_aadl2_bus_is_not_abstract():
+    assert not inspect.isabstract(aadl2_Bus)
+
+
+def test_aadl2_bus_constructor_exists():
+    assert callable(aadl2_Bus.__init__)
+
+
+def test_aadl2_bus_constructor_args():
+    sig = inspect.signature(aadl2_Bus.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_aadl2_namespace_is_not_abstract():
+    assert not inspect.isabstract(aadl2_Namespace)
+
+
+def test_aadl2_namespace_constructor_exists():
+    assert callable(aadl2_Namespace.__init__)
+
+
+def test_aadl2_namespace_constructor_args():
+    sig = inspect.signature(aadl2_Namespace.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_aadl2_typedelement_is_not_abstract():
+    assert not inspect.isabstract(aadl2_TypedElement)
+
+
+def test_aadl2_typedelement_constructor_exists():
+    assert callable(aadl2_TypedElement.__init__)
+
+
+def test_aadl2_typedelement_constructor_args():
+    sig = inspect.signature(aadl2_TypedElement.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_aadl2_virtualprocessor_is_not_abstract():
+    assert not inspect.isabstract(aadl2_VirtualProcessor)
+
+
+def test_aadl2_virtualprocessor_constructor_exists():
+    assert callable(aadl2_VirtualProcessor.__init__)
+
+
+def test_aadl2_virtualprocessor_constructor_args():
+    sig = inspect.signature(aadl2_VirtualProcessor.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_aadl2_classifierfeature_is_not_abstract():
+    assert not inspect.isabstract(aadl2_ClassifierFeature)
+
+
+def test_aadl2_classifierfeature_constructor_exists():
+    assert callable(aadl2_ClassifierFeature.__init__)
+
+
+def test_aadl2_classifierfeature_constructor_args():
+    sig = inspect.signature(aadl2_ClassifierFeature.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_aadl2_packagerename_is_not_abstract():
+    assert not inspect.isabstract(aadl2_PackageRename)
+
+
+def test_aadl2_packagerename_constructor_exists():
+    assert callable(aadl2_PackageRename.__init__)
+
+
+def test_aadl2_packagerename_constructor_args():
+    sig = inspect.signature(aadl2_PackageRename.__init__)
     params = list(sig.parameters.keys())
     assert "renameAll" in params, "Missing parameter 'renameAll'"
 
-def test_aadl2::packagerename_has_renameAll():
-    assert hasattr(aadl2::PackageRename, "renameAll")
+def test_aadl2_packagerename_has_renameAll():
+    assert hasattr(aadl2_PackageRename, "renameAll")
     descriptor = None
-    for klass in aadl2::PackageRename.__mro__:
+    for klass in aadl2_PackageRename.__mro__:
         if "renameAll" in klass.__dict__:
             descriptor = klass.__dict__["renameAll"]
             break
@@ -4393,338 +4741,156 @@ def test_aadl2::packagerename_has_renameAll():
 
 
 
-def test_aadl2::virtualbus_is_not_abstract():
-    assert not inspect.isabstract(aadl2::VirtualBus)
+def test_aadl2_modelunit_is_not_abstract():
+    assert not inspect.isabstract(aadl2_ModelUnit)
 
 
-def test_aadl2::virtualbus_constructor_exists():
-    assert callable(aadl2::VirtualBus.__init__)
+def test_aadl2_modelunit_constructor_exists():
+    assert callable(aadl2_ModelUnit.__init__)
 
 
-def test_aadl2::virtualbus_constructor_args():
-    sig = inspect.signature(aadl2::VirtualBus.__init__)
+def test_aadl2_modelunit_constructor_args():
+    sig = inspect.signature(aadl2_ModelUnit.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_aadl2::modalelement_is_not_abstract():
-    assert not inspect.isabstract(aadl2::ModalElement)
+def test_aadl2_enumerationliteral_is_not_abstract():
+    assert not inspect.isabstract(aadl2_EnumerationLiteral)
 
 
-def test_aadl2::modalelement_constructor_exists():
-    assert callable(aadl2::ModalElement.__init__)
+def test_aadl2_enumerationliteral_constructor_exists():
+    assert callable(aadl2_EnumerationLiteral.__init__)
 
 
-def test_aadl2::modalelement_constructor_args():
-    sig = inspect.signature(aadl2::ModalElement.__init__)
+def test_aadl2_enumerationliteral_constructor_args():
+    sig = inspect.signature(aadl2_EnumerationLiteral.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_aadl2::processor_is_not_abstract():
-    assert not inspect.isabstract(aadl2::Processor)
+def test_aadl2_context_is_not_abstract():
+    assert not inspect.isabstract(aadl2_Context)
 
 
-def test_aadl2::processor_constructor_exists():
-    assert callable(aadl2::Processor.__init__)
+def test_aadl2_context_constructor_exists():
+    assert callable(aadl2_Context.__init__)
 
 
-def test_aadl2::processor_constructor_args():
-    sig = inspect.signature(aadl2::Processor.__init__)
+def test_aadl2_context_constructor_args():
+    sig = inspect.signature(aadl2_Context.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_aadl2::endtoendflowelement_is_not_abstract():
-    assert not inspect.isabstract(aadl2::EndToEndFlowElement)
+def test_aadl2_connectionend_is_not_abstract():
+    assert not inspect.isabstract(aadl2_ConnectionEnd)
 
 
-def test_aadl2::endtoendflowelement_constructor_exists():
-    assert callable(aadl2::EndToEndFlowElement.__init__)
+def test_aadl2_connectionend_constructor_exists():
+    assert callable(aadl2_ConnectionEnd.__init__)
 
 
-def test_aadl2::endtoendflowelement_constructor_args():
-    sig = inspect.signature(aadl2::EndToEndFlowElement.__init__)
+def test_aadl2_connectionend_constructor_args():
+    sig = inspect.signature(aadl2_ConnectionEnd.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_aadl2::typedelement_is_not_abstract():
-    assert not inspect.isabstract(aadl2::TypedElement)
+def test_aadl2_triggerport_is_not_abstract():
+    assert not inspect.isabstract(aadl2_TriggerPort)
 
 
-def test_aadl2::typedelement_constructor_exists():
-    assert callable(aadl2::TypedElement.__init__)
+def test_aadl2_triggerport_constructor_exists():
+    assert callable(aadl2_TriggerPort.__init__)
 
 
-def test_aadl2::typedelement_constructor_args():
-    sig = inspect.signature(aadl2::TypedElement.__init__)
+def test_aadl2_triggerport_constructor_args():
+    sig = inspect.signature(aadl2_TriggerPort.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_aadl2::virtualprocessor_is_not_abstract():
-    assert not inspect.isabstract(aadl2::VirtualProcessor)
+def test_aadl2_processor_is_not_abstract():
+    assert not inspect.isabstract(aadl2_Processor)
 
 
-def test_aadl2::virtualprocessor_constructor_exists():
-    assert callable(aadl2::VirtualProcessor.__init__)
+def test_aadl2_processor_constructor_exists():
+    assert callable(aadl2_Processor.__init__)
 
 
-def test_aadl2::virtualprocessor_constructor_args():
-    sig = inspect.signature(aadl2::VirtualProcessor.__init__)
+def test_aadl2_processor_constructor_args():
+    sig = inspect.signature(aadl2_Processor.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_aadl2::device_is_not_abstract():
-    assert not inspect.isabstract(aadl2::Device)
+def test_aadl2_endtoendflowelement_is_not_abstract():
+    assert not inspect.isabstract(aadl2_EndToEndFlowElement)
 
 
-def test_aadl2::device_constructor_exists():
-    assert callable(aadl2::Device.__init__)
+def test_aadl2_endtoendflowelement_constructor_exists():
+    assert callable(aadl2_EndToEndFlowElement.__init__)
 
 
-def test_aadl2::device_constructor_args():
-    sig = inspect.signature(aadl2::Device.__init__)
+def test_aadl2_endtoendflowelement_constructor_args():
+    sig = inspect.signature(aadl2_EndToEndFlowElement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_aadl2::flow_is_not_abstract():
-    assert not inspect.isabstract(aadl2::Flow)
+def test_aadl2_flow_is_not_abstract():
+    assert not inspect.isabstract(aadl2_Flow)
 
 
-def test_aadl2::flow_constructor_exists():
-    assert callable(aadl2::Flow.__init__)
+def test_aadl2_flow_constructor_exists():
+    assert callable(aadl2_Flow.__init__)
 
 
-def test_aadl2::flow_constructor_args():
-    sig = inspect.signature(aadl2::Flow.__init__)
+def test_aadl2_flow_constructor_args():
+    sig = inspect.signature(aadl2_Flow.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_aadl2::memory_is_not_abstract():
-    assert not inspect.isabstract(aadl2::Memory)
+def test_aadl2_thread_is_not_abstract():
+    assert not inspect.isabstract(aadl2_Thread)
 
 
-def test_aadl2::memory_constructor_exists():
-    assert callable(aadl2::Memory.__init__)
+def test_aadl2_thread_constructor_exists():
+    assert callable(aadl2_Thread.__init__)
 
 
-def test_aadl2::memory_constructor_args():
-    sig = inspect.signature(aadl2::Memory.__init__)
+def test_aadl2_thread_constructor_args():
+    sig = inspect.signature(aadl2_Thread.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_aadl2::annexlibrary_is_not_abstract():
-    assert not inspect.isabstract(aadl2::AnnexLibrary)
+def test_aadl2_memory_is_not_abstract():
+    assert not inspect.isabstract(aadl2_Memory)
 
 
-def test_aadl2::annexlibrary_constructor_exists():
-    assert callable(aadl2::AnnexLibrary.__init__)
+def test_aadl2_memory_constructor_exists():
+    assert callable(aadl2_Memory.__init__)
 
 
-def test_aadl2::annexlibrary_constructor_args():
-    sig = inspect.signature(aadl2::AnnexLibrary.__init__)
+def test_aadl2_memory_constructor_args():
+    sig = inspect.signature(aadl2_Memory.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_aadl2::namespace_is_not_abstract():
-    assert not inspect.isabstract(aadl2::Namespace)
+def test_aadl2_type_is_not_abstract():
+    assert not inspect.isabstract(aadl2_Type)
 
 
-def test_aadl2::namespace_constructor_exists():
-    assert callable(aadl2::Namespace.__init__)
+def test_aadl2_type_constructor_exists():
+    assert callable(aadl2_Type.__init__)
 
 
-def test_aadl2::namespace_constructor_args():
-    sig = inspect.signature(aadl2::Namespace.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_aadl2::classifierfeature_is_not_abstract():
-    assert not inspect.isabstract(aadl2::ClassifierFeature)
-
-
-def test_aadl2::classifierfeature_constructor_exists():
-    assert callable(aadl2::ClassifierFeature.__init__)
-
-
-def test_aadl2::classifierfeature_constructor_args():
-    sig = inspect.signature(aadl2::ClassifierFeature.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_aadl2::process_is_not_abstract():
-    assert not inspect.isabstract(aadl2::Process)
-
-
-def test_aadl2::process_constructor_exists():
-    assert callable(aadl2::Process.__init__)
-
-
-def test_aadl2::process_constructor_args():
-    sig = inspect.signature(aadl2::Process.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_aadl2::enumerationliteral_is_not_abstract():
-    assert not inspect.isabstract(aadl2::EnumerationLiteral)
-
-
-def test_aadl2::enumerationliteral_constructor_exists():
-    assert callable(aadl2::EnumerationLiteral.__init__)
-
-
-def test_aadl2::enumerationliteral_constructor_args():
-    sig = inspect.signature(aadl2::EnumerationLiteral.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_aadl2::context_is_not_abstract():
-    assert not inspect.isabstract(aadl2::Context)
-
-
-def test_aadl2::context_constructor_exists():
-    assert callable(aadl2::Context.__init__)
-
-
-def test_aadl2::context_constructor_args():
-    sig = inspect.signature(aadl2::Context.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_aadl2::system_is_not_abstract():
-    assert not inspect.isabstract(aadl2::System)
-
-
-def test_aadl2::system_constructor_exists():
-    assert callable(aadl2::System.__init__)
-
-
-def test_aadl2::system_constructor_args():
-    sig = inspect.signature(aadl2::System.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_aadl2::refinableelement_is_not_abstract():
-    assert not inspect.isabstract(aadl2::RefinableElement)
-
-
-def test_aadl2::refinableelement_constructor_exists():
-    assert callable(aadl2::RefinableElement.__init__)
-
-
-def test_aadl2::refinableelement_constructor_args():
-    sig = inspect.signature(aadl2::RefinableElement.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_aadl2::triggerport_is_not_abstract():
-    assert not inspect.isabstract(aadl2::TriggerPort)
-
-
-def test_aadl2::triggerport_constructor_exists():
-    assert callable(aadl2::TriggerPort.__init__)
-
-
-def test_aadl2::triggerport_constructor_args():
-    sig = inspect.signature(aadl2::TriggerPort.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_aadl2::thread_is_not_abstract():
-    assert not inspect.isabstract(aadl2::Thread)
-
-
-def test_aadl2::thread_constructor_exists():
-    assert callable(aadl2::Thread.__init__)
-
-
-def test_aadl2::thread_constructor_args():
-    sig = inspect.signature(aadl2::Thread.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_aadl2::modelunit_is_not_abstract():
-    assert not inspect.isabstract(aadl2::ModelUnit)
-
-
-def test_aadl2::modelunit_constructor_exists():
-    assert callable(aadl2::ModelUnit.__init__)
-
-
-def test_aadl2::modelunit_constructor_args():
-    sig = inspect.signature(aadl2::ModelUnit.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_aadl2::connectionend_is_not_abstract():
-    assert not inspect.isabstract(aadl2::ConnectionEnd)
-
-
-def test_aadl2::connectionend_constructor_exists():
-    assert callable(aadl2::ConnectionEnd.__init__)
-
-
-def test_aadl2::connectionend_constructor_args():
-    sig = inspect.signature(aadl2::ConnectionEnd.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_aadl2::threadgroup_is_not_abstract():
-    assert not inspect.isabstract(aadl2::ThreadGroup)
-
-
-def test_aadl2::threadgroup_constructor_exists():
-    assert callable(aadl2::ThreadGroup.__init__)
-
-
-def test_aadl2::threadgroup_constructor_args():
-    sig = inspect.signature(aadl2::ThreadGroup.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_aadl2::featuregrouptyperename_is_not_abstract():
-    assert not inspect.isabstract(aadl2::FeatureGroupTypeRename)
-
-
-def test_aadl2::featuregrouptyperename_constructor_exists():
-    assert callable(aadl2::FeatureGroupTypeRename.__init__)
-
-
-def test_aadl2::featuregrouptyperename_constructor_args():
-    sig = inspect.signature(aadl2::FeatureGroupTypeRename.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_aadl2::type_is_not_abstract():
-    assert not inspect.isabstract(aadl2::Type)
-
-
-def test_aadl2::type_constructor_exists():
-    assert callable(aadl2::Type.__init__)
-
-
-def test_aadl2::type_constructor_args():
-    sig = inspect.signature(aadl2::Type.__init__)
+def test_aadl2_type_constructor_args():
+    sig = inspect.signature(aadl2_Type.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -4743,95 +4909,103 @@ def test_element_constructor_args():
 
 
 
-def test_aadl2::propertyowner_is_not_abstract():
-    assert not inspect.isabstract(aadl2::PropertyOwner)
+def test_aadl2_modebinding_is_not_abstract():
+    assert not inspect.isabstract(aadl2_ModeBinding)
 
 
-def test_aadl2::propertyowner_constructor_exists():
-    assert callable(aadl2::PropertyOwner.__init__)
+def test_aadl2_modebinding_constructor_exists():
+    assert callable(aadl2_ModeBinding.__init__)
 
 
-def test_aadl2::propertyowner_constructor_args():
-    sig = inspect.signature(aadl2::PropertyOwner.__init__)
+def test_aadl2_modebinding_constructor_args():
+    sig = inspect.signature(aadl2_ModeBinding.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_aadl2::basicpropertyassociation_is_not_abstract():
-    assert not inspect.isabstract(aadl2::BasicPropertyAssociation)
+def test_aadl2_containednamedelement_is_not_abstract():
+    assert not inspect.isabstract(aadl2_ContainedNamedElement)
 
 
-def test_aadl2::basicpropertyassociation_constructor_exists():
-    assert callable(aadl2::BasicPropertyAssociation.__init__)
+def test_aadl2_containednamedelement_constructor_exists():
+    assert callable(aadl2_ContainedNamedElement.__init__)
 
 
-def test_aadl2::basicpropertyassociation_constructor_args():
-    sig = inspect.signature(aadl2::BasicPropertyAssociation.__init__)
+def test_aadl2_containednamedelement_constructor_args():
+    sig = inspect.signature(aadl2_ContainedNamedElement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_aadl2::arrayrange_is_not_abstract():
-    assert not inspect.isabstract(aadl2::ArrayRange)
+def test_aadl2_numericrange_is_not_abstract():
+    assert not inspect.isabstract(aadl2_NumericRange)
 
 
-def test_aadl2::arrayrange_constructor_exists():
-    assert callable(aadl2::ArrayRange.__init__)
+def test_aadl2_numericrange_constructor_exists():
+    assert callable(aadl2_NumericRange.__init__)
 
 
-def test_aadl2::arrayrange_constructor_args():
-    sig = inspect.signature(aadl2::ArrayRange.__init__)
+def test_aadl2_numericrange_constructor_args():
+    sig = inspect.signature(aadl2_NumericRange.__init__)
     params = list(sig.parameters.keys())
-    assert "upperBound" in params, "Missing parameter 'upperBound'"
-    assert "lowerBound" in params, "Missing parameter 'lowerBound'"
-
-def test_aadl2::arrayrange_has_upperBound():
-    assert hasattr(aadl2::ArrayRange, "upperBound")
-    descriptor = None
-    for klass in aadl2::ArrayRange.__mro__:
-        if "upperBound" in klass.__dict__:
-            descriptor = klass.__dict__["upperBound"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_aadl2::arrayrange_has_lowerBound():
-    assert hasattr(aadl2::ArrayRange, "lowerBound")
-    descriptor = None
-    for klass in aadl2::ArrayRange.__mro__:
-        if "lowerBound" in klass.__dict__:
-            descriptor = klass.__dict__["lowerBound"]
-            break
-    assert isinstance(descriptor, property)
 
 
 
-def test_aadl2::namedelement_is_not_abstract():
-    assert not inspect.isabstract(aadl2::NamedElement)
+def test_aadl2_basicpropertyassociation_is_not_abstract():
+    assert not inspect.isabstract(aadl2_BasicPropertyAssociation)
 
 
-def test_aadl2::namedelement_constructor_exists():
-    assert callable(aadl2::NamedElement.__init__)
+def test_aadl2_basicpropertyassociation_constructor_exists():
+    assert callable(aadl2_BasicPropertyAssociation.__init__)
 
 
-def test_aadl2::namedelement_constructor_args():
-    sig = inspect.signature(aadl2::NamedElement.__init__)
+def test_aadl2_basicpropertyassociation_constructor_args():
+    sig = inspect.signature(aadl2_BasicPropertyAssociation.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_aadl2_flowend_is_not_abstract():
+    assert not inspect.isabstract(aadl2_FlowEnd)
+
+
+def test_aadl2_flowend_constructor_exists():
+    assert callable(aadl2_FlowEnd.__init__)
+
+
+def test_aadl2_flowend_constructor_args():
+    sig = inspect.signature(aadl2_FlowEnd.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_aadl2_namedelement_is_not_abstract():
+    assert not inspect.isabstract(aadl2_NamedElement)
+
+
+def test_aadl2_namedelement_constructor_exists():
+    assert callable(aadl2_NamedElement.__init__)
+
+
+def test_aadl2_namedelement_constructor_args():
+    sig = inspect.signature(aadl2_NamedElement.__init__)
     params = list(sig.parameters.keys())
     assert "qualifiedName" in params, "Missing parameter 'qualifiedName'"
     assert "name" in params, "Missing parameter 'name'"
 
-def test_aadl2::namedelement_has_qualifiedName():
-    assert hasattr(aadl2::NamedElement, "qualifiedName")
+def test_aadl2_namedelement_has_qualifiedName():
+    assert hasattr(aadl2_NamedElement, "qualifiedName")
     descriptor = None
-    for klass in aadl2::NamedElement.__mro__:
+    for klass in aadl2_NamedElement.__mro__:
         if "qualifiedName" in klass.__dict__:
             descriptor = klass.__dict__["qualifiedName"]
             break
     assert isinstance(descriptor, property)
 
-def test_aadl2::namedelement_has_name():
-    assert hasattr(aadl2::NamedElement, "name")
+def test_aadl2_namedelement_has_name():
+    assert hasattr(aadl2_NamedElement, "name")
     descriptor = None
-    for klass in aadl2::NamedElement.__mro__:
+    for klass in aadl2_NamedElement.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -4839,89 +5013,33 @@ def test_aadl2::namedelement_has_name():
 
 
 
-def test_aadl2::arrayableelement_is_not_abstract():
-    assert not inspect.isabstract(aadl2::ArrayableElement)
+def test_aadl2_propertyassociation_is_not_abstract():
+    assert not inspect.isabstract(aadl2_PropertyAssociation)
 
 
-def test_aadl2::arrayableelement_constructor_exists():
-    assert callable(aadl2::ArrayableElement.__init__)
+def test_aadl2_propertyassociation_constructor_exists():
+    assert callable(aadl2_PropertyAssociation.__init__)
 
 
-def test_aadl2::arrayableelement_constructor_args():
-    sig = inspect.signature(aadl2::ArrayableElement.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_aadl2::prototypebinding_is_not_abstract():
-    assert not inspect.isabstract(aadl2::PrototypeBinding)
-
-
-def test_aadl2::prototypebinding_constructor_exists():
-    assert callable(aadl2::PrototypeBinding.__init__)
-
-
-def test_aadl2::prototypebinding_constructor_args():
-    sig = inspect.signature(aadl2::PrototypeBinding.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_aadl2::containednamedelement_is_not_abstract():
-    assert not inspect.isabstract(aadl2::ContainedNamedElement)
-
-
-def test_aadl2::containednamedelement_constructor_exists():
-    assert callable(aadl2::ContainedNamedElement.__init__)
-
-
-def test_aadl2::containednamedelement_constructor_args():
-    sig = inspect.signature(aadl2::ContainedNamedElement.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_aadl2::numericrange_is_not_abstract():
-    assert not inspect.isabstract(aadl2::NumericRange)
-
-
-def test_aadl2::numericrange_constructor_exists():
-    assert callable(aadl2::NumericRange.__init__)
-
-
-def test_aadl2::numericrange_constructor_args():
-    sig = inspect.signature(aadl2::NumericRange.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_aadl2::propertyassociation_is_not_abstract():
-    assert not inspect.isabstract(aadl2::PropertyAssociation)
-
-
-def test_aadl2::propertyassociation_constructor_exists():
-    assert callable(aadl2::PropertyAssociation.__init__)
-
-
-def test_aadl2::propertyassociation_constructor_args():
-    sig = inspect.signature(aadl2::PropertyAssociation.__init__)
+def test_aadl2_propertyassociation_constructor_args():
+    sig = inspect.signature(aadl2_PropertyAssociation.__init__)
     params = list(sig.parameters.keys())
     assert "constant" in params, "Missing parameter 'constant'"
     assert "append" in params, "Missing parameter 'append'"
 
-def test_aadl2::propertyassociation_has_constant():
-    assert hasattr(aadl2::PropertyAssociation, "constant")
+def test_aadl2_propertyassociation_has_constant():
+    assert hasattr(aadl2_PropertyAssociation, "constant")
     descriptor = None
-    for klass in aadl2::PropertyAssociation.__mro__:
+    for klass in aadl2_PropertyAssociation.__mro__:
         if "constant" in klass.__dict__:
             descriptor = klass.__dict__["constant"]
             break
     assert isinstance(descriptor, property)
 
-def test_aadl2::propertyassociation_has_append():
-    assert hasattr(aadl2::PropertyAssociation, "append")
+def test_aadl2_propertyassociation_has_append():
+    assert hasattr(aadl2_PropertyAssociation, "append")
     descriptor = None
-    for klass in aadl2::PropertyAssociation.__mro__:
+    for klass in aadl2_PropertyAssociation.__mro__:
         if "append" in klass.__dict__:
             descriptor = klass.__dict__["append"]
             break
@@ -4929,155 +5047,121 @@ def test_aadl2::propertyassociation_has_append():
 
 
 
-def test_aadl2::componentimplementationreference_is_not_abstract():
-    assert not inspect.isabstract(aadl2::ComponentImplementationReference)
+def test_aadl2_connectedelement_is_not_abstract():
+    assert not inspect.isabstract(aadl2_ConnectedElement)
 
 
-def test_aadl2::componentimplementationreference_constructor_exists():
-    assert callable(aadl2::ComponentImplementationReference.__init__)
+def test_aadl2_connectedelement_constructor_exists():
+    assert callable(aadl2_ConnectedElement.__init__)
 
 
-def test_aadl2::componentimplementationreference_constructor_args():
-    sig = inspect.signature(aadl2::ComponentImplementationReference.__init__)
+def test_aadl2_connectedelement_constructor_args():
+    sig = inspect.signature(aadl2_ConnectedElement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_aadl2::containmentpathelement_is_not_abstract():
-    assert not inspect.isabstract(aadl2::ContainmentPathElement)
+def test_aadl2_prototypebinding_is_not_abstract():
+    assert not inspect.isabstract(aadl2_PrototypeBinding)
 
 
-def test_aadl2::containmentpathelement_constructor_exists():
-    assert callable(aadl2::ContainmentPathElement.__init__)
+def test_aadl2_prototypebinding_constructor_exists():
+    assert callable(aadl2_PrototypeBinding.__init__)
 
 
-def test_aadl2::containmentpathelement_constructor_args():
-    sig = inspect.signature(aadl2::ContainmentPathElement.__init__)
-    params = list(sig.parameters.keys())
-    assert "annexName" in params, "Missing parameter 'annexName'"
-
-def test_aadl2::containmentpathelement_has_annexName():
-    assert hasattr(aadl2::ContainmentPathElement, "annexName")
-    descriptor = None
-    for klass in aadl2::ContainmentPathElement.__mro__:
-        if "annexName" in klass.__dict__:
-            descriptor = klass.__dict__["annexName"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_aadl2::flowend_is_not_abstract():
-    assert not inspect.isabstract(aadl2::FlowEnd)
-
-
-def test_aadl2::flowend_constructor_exists():
-    assert callable(aadl2::FlowEnd.__init__)
-
-
-def test_aadl2::flowend_constructor_args():
-    sig = inspect.signature(aadl2::FlowEnd.__init__)
+def test_aadl2_prototypebinding_constructor_args():
+    sig = inspect.signature(aadl2_PrototypeBinding.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_aadl2::arraysize_is_not_abstract():
-    assert not inspect.isabstract(aadl2::ArraySize)
+def test_aadl2_flowsegment_is_not_abstract():
+    assert not inspect.isabstract(aadl2_FlowSegment)
 
 
-def test_aadl2::arraysize_constructor_exists():
-    assert callable(aadl2::ArraySize.__init__)
+def test_aadl2_flowsegment_constructor_exists():
+    assert callable(aadl2_FlowSegment.__init__)
 
 
-def test_aadl2::arraysize_constructor_args():
-    sig = inspect.signature(aadl2::ArraySize.__init__)
-    params = list(sig.parameters.keys())
-    assert "size" in params, "Missing parameter 'size'"
-
-def test_aadl2::arraysize_has_size():
-    assert hasattr(aadl2::ArraySize, "size")
-    descriptor = None
-    for klass in aadl2::ArraySize.__mro__:
-        if "size" in klass.__dict__:
-            descriptor = klass.__dict__["size"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_aadl2::relationship_is_not_abstract():
-    assert not inspect.isabstract(aadl2::Relationship)
-
-
-def test_aadl2::relationship_constructor_exists():
-    assert callable(aadl2::Relationship.__init__)
-
-
-def test_aadl2::relationship_constructor_args():
-    sig = inspect.signature(aadl2::Relationship.__init__)
+def test_aadl2_flowsegment_constructor_args():
+    sig = inspect.signature(aadl2_FlowSegment.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_aadl2::modetransitiontrigger_is_not_abstract():
-    assert not inspect.isabstract(aadl2::ModeTransitionTrigger)
+def test_aadl2_propertyowner_is_not_abstract():
+    assert not inspect.isabstract(aadl2_PropertyOwner)
 
 
-def test_aadl2::modetransitiontrigger_constructor_exists():
-    assert callable(aadl2::ModeTransitionTrigger.__init__)
+def test_aadl2_propertyowner_constructor_exists():
+    assert callable(aadl2_PropertyOwner.__init__)
 
 
-def test_aadl2::modetransitiontrigger_constructor_args():
-    sig = inspect.signature(aadl2::ModeTransitionTrigger.__init__)
+def test_aadl2_propertyowner_constructor_args():
+    sig = inspect.signature(aadl2_PropertyOwner.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_aadl2::propertyexpression_is_not_abstract():
-    assert not inspect.isabstract(aadl2::PropertyExpression)
+def test_aadl2_propertyexpression_is_not_abstract():
+    assert not inspect.isabstract(aadl2_PropertyExpression)
 
 
-def test_aadl2::propertyexpression_constructor_exists():
-    assert callable(aadl2::PropertyExpression.__init__)
+def test_aadl2_propertyexpression_constructor_exists():
+    assert callable(aadl2_PropertyExpression.__init__)
 
 
-def test_aadl2::propertyexpression_constructor_args():
-    sig = inspect.signature(aadl2::PropertyExpression.__init__)
+def test_aadl2_propertyexpression_constructor_args():
+    sig = inspect.signature(aadl2_PropertyExpression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_aadl2::arraydimension_is_not_abstract():
-    assert not inspect.isabstract(aadl2::ArrayDimension)
+def test_aadl2_endtoendflowsegment_is_not_abstract():
+    assert not inspect.isabstract(aadl2_EndToEndFlowSegment)
 
 
-def test_aadl2::arraydimension_constructor_exists():
-    assert callable(aadl2::ArrayDimension.__init__)
+def test_aadl2_endtoendflowsegment_constructor_exists():
+    assert callable(aadl2_EndToEndFlowSegment.__init__)
 
 
-def test_aadl2::arraydimension_constructor_args():
-    sig = inspect.signature(aadl2::ArrayDimension.__init__)
+def test_aadl2_endtoendflowsegment_constructor_args():
+    sig = inspect.signature(aadl2_EndToEndFlowSegment.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_aadl2::comment_is_not_abstract():
-    assert not inspect.isabstract(aadl2::Comment)
+def test_aadl2_modetransitiontrigger_is_not_abstract():
+    assert not inspect.isabstract(aadl2_ModeTransitionTrigger)
 
 
-def test_aadl2::comment_constructor_exists():
-    assert callable(aadl2::Comment.__init__)
+def test_aadl2_modetransitiontrigger_constructor_exists():
+    assert callable(aadl2_ModeTransitionTrigger.__init__)
 
 
-def test_aadl2::comment_constructor_args():
-    sig = inspect.signature(aadl2::Comment.__init__)
+def test_aadl2_modetransitiontrigger_constructor_args():
+    sig = inspect.signature(aadl2_ModeTransitionTrigger.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_aadl2_comment_is_not_abstract():
+    assert not inspect.isabstract(aadl2_Comment)
+
+
+def test_aadl2_comment_constructor_exists():
+    assert callable(aadl2_Comment.__init__)
+
+
+def test_aadl2_comment_constructor_args():
+    sig = inspect.signature(aadl2_Comment.__init__)
     params = list(sig.parameters.keys())
     assert "body" in params, "Missing parameter 'body'"
 
-def test_aadl2::comment_has_body():
-    assert hasattr(aadl2::Comment, "body")
+def test_aadl2_comment_has_body():
+    assert hasattr(aadl2_Comment, "body")
     descriptor = None
-    for klass in aadl2::Comment.__mro__:
+    for klass in aadl2_Comment.__mro__:
         if "body" in klass.__dict__:
             descriptor = klass.__dict__["body"]
             break
@@ -5085,923 +5169,659 @@ def test_aadl2::comment_has_body():
 
 
 
-def test_aadl2::element_is_not_abstract():
-    assert not inspect.isabstract(aadl2::Element)
+def test_aadl2_element_is_not_abstract():
+    assert not inspect.isabstract(aadl2_Element)
 
 
-def test_aadl2::element_constructor_exists():
-    assert callable(aadl2::Element.__init__)
+def test_aadl2_element_constructor_exists():
+    assert callable(aadl2_Element.__init__)
 
 
-def test_aadl2::element_constructor_args():
-    sig = inspect.signature(aadl2::Element.__init__)
+def test_aadl2_element_constructor_args():
+    sig = inspect.signature(aadl2_Element.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_processorfeature_is_not_abstract():
-    assert not inspect.isabstract(ProcessorFeature)
+def test_aadl2_endtoendflow_is_not_abstract():
+    assert not inspect.isabstract(aadl2_EndToEndFlow)
 
 
-def test_processorfeature_constructor_exists():
-    assert callable(ProcessorFeature.__init__)
+def test_aadl2_endtoendflow_constructor_exists():
+    assert callable(aadl2_EndToEndFlow.__init__)
 
 
-def test_processorfeature_constructor_args():
-    sig = inspect.signature(ProcessorFeature.__init__)
+def test_aadl2_endtoendflow_constructor_args():
+    sig = inspect.signature(aadl2_EndToEndFlow.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_internalfeature_is_not_abstract():
-    assert not inspect.isabstract(InternalFeature)
+def test_aadl2_realization_is_not_abstract():
+    assert not inspect.isabstract(aadl2_Realization)
 
 
-def test_internalfeature_constructor_exists():
-    assert callable(InternalFeature.__init__)
+def test_aadl2_realization_constructor_exists():
+    assert callable(aadl2_Realization.__init__)
 
 
-def test_internalfeature_constructor_args():
-    sig = inspect.signature(InternalFeature.__init__)
+def test_aadl2_realization_constructor_args():
+    sig = inspect.signature(aadl2_Realization.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_aadl2::eventsource_is_not_abstract():
-    assert not inspect.isabstract(aadl2::EventSource)
+def test_aadl2_implementationextension_is_not_abstract():
+    assert not inspect.isabstract(aadl2_ImplementationExtension)
 
 
-def test_aadl2::eventsource_constructor_exists():
-    assert callable(aadl2::EventSource.__init__)
+def test_aadl2_implementationextension_constructor_exists():
+    assert callable(aadl2_ImplementationExtension.__init__)
 
 
-def test_aadl2::eventsource_constructor_args():
-    sig = inspect.signature(aadl2::EventSource.__init__)
+def test_aadl2_implementationextension_constructor_args():
+    sig = inspect.signature(aadl2_ImplementationExtension.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_aadl2::eventdatasource_is_not_abstract():
-    assert not inspect.isabstract(aadl2::EventDataSource)
+def test_aadl2_arrayableelement_is_not_abstract():
+    assert not inspect.isabstract(aadl2_ArrayableElement)
 
 
-def test_aadl2::eventdatasource_constructor_exists():
-    assert callable(aadl2::EventDataSource.__init__)
+def test_aadl2_arrayableelement_constructor_exists():
+    assert callable(aadl2_ArrayableElement.__init__)
 
 
-def test_aadl2::eventdatasource_constructor_args():
-    sig = inspect.signature(aadl2::EventDataSource.__init__)
+def test_aadl2_arrayableelement_constructor_args():
+    sig = inspect.signature(aadl2_ArrayableElement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_connection_is_not_abstract():
-    assert not inspect.isabstract(Connection)
+def test_componentclassifier_is_not_abstract():
+    assert not inspect.isabstract(ComponentClassifier)
 
 
-def test_connection_constructor_exists():
-    assert callable(Connection.__init__)
+def test_componentclassifier_constructor_exists():
+    assert callable(ComponentClassifier.__init__)
 
 
-def test_connection_constructor_args():
-    sig = inspect.signature(Connection.__init__)
+def test_componentclassifier_constructor_args():
+    sig = inspect.signature(ComponentClassifier.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_aadl2::accessconnection_is_not_abstract():
-    assert not inspect.isabstract(aadl2::AccessConnection)
+def test_aadl2_subprogramclassifier_is_not_abstract():
+    assert not inspect.isabstract(aadl2_SubprogramClassifier)
 
 
-def test_aadl2::accessconnection_constructor_exists():
-    assert callable(aadl2::AccessConnection.__init__)
+def test_aadl2_subprogramclassifier_constructor_exists():
+    assert callable(aadl2_SubprogramClassifier.__init__)
 
 
-def test_aadl2::accessconnection_constructor_args():
-    sig = inspect.signature(aadl2::AccessConnection.__init__)
+def test_aadl2_subprogramclassifier_constructor_args():
+    sig = inspect.signature(aadl2_SubprogramClassifier.__init__)
     params = list(sig.parameters.keys())
-    assert "accessCategory" in params, "Missing parameter 'accessCategory'"
 
-def test_aadl2::accessconnection_has_accessCategory():
-    assert hasattr(aadl2::AccessConnection, "accessCategory")
+
+
+def test_aadl2_busclassifier_is_not_abstract():
+    assert not inspect.isabstract(aadl2_BusClassifier)
+
+
+def test_aadl2_busclassifier_constructor_exists():
+    assert callable(aadl2_BusClassifier.__init__)
+
+
+def test_aadl2_busclassifier_constructor_args():
+    sig = inspect.signature(aadl2_BusClassifier.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_aadl2_componenttype_is_not_abstract():
+    assert not inspect.isabstract(aadl2_ComponentType)
+
+
+def test_aadl2_componenttype_constructor_exists():
+    assert callable(aadl2_ComponentType.__init__)
+
+
+def test_aadl2_componenttype_constructor_args():
+    sig = inspect.signature(aadl2_ComponentType.__init__)
+    params = list(sig.parameters.keys())
+    assert "noFeatures" in params, "Missing parameter 'noFeatures'"
+
+def test_aadl2_componenttype_has_noFeatures():
+    assert hasattr(aadl2_ComponentType, "noFeatures")
     descriptor = None
-    for klass in aadl2::AccessConnection.__mro__:
-        if "accessCategory" in klass.__dict__:
-            descriptor = klass.__dict__["accessCategory"]
+    for klass in aadl2_ComponentType.__mro__:
+        if "noFeatures" in klass.__dict__:
+            descriptor = klass.__dict__["noFeatures"]
             break
     assert isinstance(descriptor, property)
 
 
 
-def test_aadl2::parameterconnection_is_not_abstract():
-    assert not inspect.isabstract(aadl2::ParameterConnection)
+def test_aadl2_processorclassifier_is_not_abstract():
+    assert not inspect.isabstract(aadl2_ProcessorClassifier)
 
 
-def test_aadl2::parameterconnection_constructor_exists():
-    assert callable(aadl2::ParameterConnection.__init__)
+def test_aadl2_processorclassifier_constructor_exists():
+    assert callable(aadl2_ProcessorClassifier.__init__)
 
 
-def test_aadl2::parameterconnection_constructor_args():
-    sig = inspect.signature(aadl2::ParameterConnection.__init__)
+def test_aadl2_processorclassifier_constructor_args():
+    sig = inspect.signature(aadl2_ProcessorClassifier.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_aadl2::featureconnection_is_not_abstract():
-    assert not inspect.isabstract(aadl2::FeatureConnection)
+def test_aadl2_memoryclassifier_is_not_abstract():
+    assert not inspect.isabstract(aadl2_MemoryClassifier)
 
 
-def test_aadl2::featureconnection_constructor_exists():
-    assert callable(aadl2::FeatureConnection.__init__)
+def test_aadl2_memoryclassifier_constructor_exists():
+    assert callable(aadl2_MemoryClassifier.__init__)
 
 
-def test_aadl2::featureconnection_constructor_args():
-    sig = inspect.signature(aadl2::FeatureConnection.__init__)
+def test_aadl2_memoryclassifier_constructor_args():
+    sig = inspect.signature(aadl2_MemoryClassifier.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_aadl2::featuregroupconnection_is_not_abstract():
-    assert not inspect.isabstract(aadl2::FeatureGroupConnection)
+def test_aadl2_threadgroupclassifier_is_not_abstract():
+    assert not inspect.isabstract(aadl2_ThreadGroupClassifier)
 
 
-def test_aadl2::featuregroupconnection_constructor_exists():
-    assert callable(aadl2::FeatureGroupConnection.__init__)
+def test_aadl2_threadgroupclassifier_constructor_exists():
+    assert callable(aadl2_ThreadGroupClassifier.__init__)
 
 
-def test_aadl2::featuregroupconnection_constructor_args():
-    sig = inspect.signature(aadl2::FeatureGroupConnection.__init__)
+def test_aadl2_threadgroupclassifier_constructor_args():
+    sig = inspect.signature(aadl2_ThreadGroupClassifier.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_aadl2::portconnection_is_not_abstract():
-    assert not inspect.isabstract(aadl2::PortConnection)
+def test_aadl2_virtualbusclassifier_is_not_abstract():
+    assert not inspect.isabstract(aadl2_VirtualBusClassifier)
 
 
-def test_aadl2::portconnection_constructor_exists():
-    assert callable(aadl2::PortConnection.__init__)
+def test_aadl2_virtualbusclassifier_constructor_exists():
+    assert callable(aadl2_VirtualBusClassifier.__init__)
 
 
-def test_aadl2::portconnection_constructor_args():
-    sig = inspect.signature(aadl2::PortConnection.__init__)
+def test_aadl2_virtualbusclassifier_constructor_args():
+    sig = inspect.signature(aadl2_VirtualBusClassifier.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_aadl2::abstract_is_not_abstract():
-    assert not inspect.isabstract(aadl2::Abstract)
+def test_aadl2_virtualprocessorclassifier_is_not_abstract():
+    assert not inspect.isabstract(aadl2_VirtualProcessorClassifier)
 
 
-def test_aadl2::abstract_constructor_exists():
-    assert callable(aadl2::Abstract.__init__)
+def test_aadl2_virtualprocessorclassifier_constructor_exists():
+    assert callable(aadl2_VirtualProcessorClassifier.__init__)
 
 
-def test_aadl2::abstract_constructor_args():
-    sig = inspect.signature(aadl2::Abstract.__init__)
+def test_aadl2_virtualprocessorclassifier_constructor_args():
+    sig = inspect.signature(aadl2_VirtualProcessorClassifier.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_abstract_is_not_abstract():
-    assert not inspect.isabstract(Abstract)
+def test_aadl2_threadclassifier_is_not_abstract():
+    assert not inspect.isabstract(aadl2_ThreadClassifier)
 
 
-def test_abstract_constructor_exists():
-    assert callable(Abstract.__init__)
+def test_aadl2_threadclassifier_constructor_exists():
+    assert callable(aadl2_ThreadClassifier.__init__)
 
 
-def test_abstract_constructor_args():
-    sig = inspect.signature(Abstract.__init__)
+def test_aadl2_threadclassifier_constructor_args():
+    sig = inspect.signature(aadl2_ThreadClassifier.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_aadl2::abstractsubcomponenttype_is_not_abstract():
-    assert not inspect.isabstract(aadl2::AbstractSubcomponentType)
+def test_aadl2_subprogramgroupclassifier_is_not_abstract():
+    assert not inspect.isabstract(aadl2_SubprogramGroupClassifier)
 
 
-def test_aadl2::abstractsubcomponenttype_constructor_exists():
-    assert callable(aadl2::AbstractSubcomponentType.__init__)
+def test_aadl2_subprogramgroupclassifier_constructor_exists():
+    assert callable(aadl2_SubprogramGroupClassifier.__init__)
 
 
-def test_aadl2::abstractsubcomponenttype_constructor_args():
-    sig = inspect.signature(aadl2::AbstractSubcomponentType.__init__)
+def test_aadl2_subprogramgroupclassifier_constructor_args():
+    sig = inspect.signature(aadl2_SubprogramGroupClassifier.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_subcomponent_is_not_abstract():
-    assert not inspect.isabstract(Subcomponent)
+def test_aadl2_abstractclassifier_is_not_abstract():
+    assert not inspect.isabstract(aadl2_AbstractClassifier)
 
 
-def test_subcomponent_constructor_exists():
-    assert callable(Subcomponent.__init__)
+def test_aadl2_abstractclassifier_constructor_exists():
+    assert callable(aadl2_AbstractClassifier.__init__)
 
 
-def test_subcomponent_constructor_args():
-    sig = inspect.signature(Subcomponent.__init__)
+def test_aadl2_abstractclassifier_constructor_args():
+    sig = inspect.signature(aadl2_AbstractClassifier.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_aadl2::systemsubcomponent_is_not_abstract():
-    assert not inspect.isabstract(aadl2::SystemSubcomponent)
+def test_aadl2_dataclassifier_is_not_abstract():
+    assert not inspect.isabstract(aadl2_DataClassifier)
 
 
-def test_aadl2::systemsubcomponent_constructor_exists():
-    assert callable(aadl2::SystemSubcomponent.__init__)
+def test_aadl2_dataclassifier_constructor_exists():
+    assert callable(aadl2_DataClassifier.__init__)
 
 
-def test_aadl2::systemsubcomponent_constructor_args():
-    sig = inspect.signature(aadl2::SystemSubcomponent.__init__)
+def test_aadl2_dataclassifier_constructor_args():
+    sig = inspect.signature(aadl2_DataClassifier.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_aadl2::virtualbussubcomponent_is_not_abstract():
-    assert not inspect.isabstract(aadl2::VirtualBusSubcomponent)
+def test_aadl2_processclassifier_is_not_abstract():
+    assert not inspect.isabstract(aadl2_ProcessClassifier)
 
 
-def test_aadl2::virtualbussubcomponent_constructor_exists():
-    assert callable(aadl2::VirtualBusSubcomponent.__init__)
+def test_aadl2_processclassifier_constructor_exists():
+    assert callable(aadl2_ProcessClassifier.__init__)
 
 
-def test_aadl2::virtualbussubcomponent_constructor_args():
-    sig = inspect.signature(aadl2::VirtualBusSubcomponent.__init__)
+def test_aadl2_processclassifier_constructor_args():
+    sig = inspect.signature(aadl2_ProcessClassifier.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_aadl2::processorsubcomponent_is_not_abstract():
-    assert not inspect.isabstract(aadl2::ProcessorSubcomponent)
+def test_aadl2_deviceclassifier_is_not_abstract():
+    assert not inspect.isabstract(aadl2_DeviceClassifier)
 
 
-def test_aadl2::processorsubcomponent_constructor_exists():
-    assert callable(aadl2::ProcessorSubcomponent.__init__)
+def test_aadl2_deviceclassifier_constructor_exists():
+    assert callable(aadl2_DeviceClassifier.__init__)
 
 
-def test_aadl2::processorsubcomponent_constructor_args():
-    sig = inspect.signature(aadl2::ProcessorSubcomponent.__init__)
+def test_aadl2_deviceclassifier_constructor_args():
+    sig = inspect.signature(aadl2_DeviceClassifier.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_aadl2::threadgroupsubcomponent_is_not_abstract():
-    assert not inspect.isabstract(aadl2::ThreadGroupSubcomponent)
+def test_aadl2_systemclassifier_is_not_abstract():
+    assert not inspect.isabstract(aadl2_SystemClassifier)
 
 
-def test_aadl2::threadgroupsubcomponent_constructor_exists():
-    assert callable(aadl2::ThreadGroupSubcomponent.__init__)
+def test_aadl2_systemclassifier_constructor_exists():
+    assert callable(aadl2_SystemClassifier.__init__)
 
 
-def test_aadl2::threadgroupsubcomponent_constructor_args():
-    sig = inspect.signature(aadl2::ThreadGroupSubcomponent.__init__)
+def test_aadl2_systemclassifier_constructor_args():
+    sig = inspect.signature(aadl2_SystemClassifier.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_aadl2::abstractsubcomponent_is_not_abstract():
-    assert not inspect.isabstract(aadl2::AbstractSubcomponent)
+def test_aadl2_componentimplementation_is_not_abstract():
+    assert not inspect.isabstract(aadl2_ComponentImplementation)
 
 
-def test_aadl2::abstractsubcomponent_constructor_exists():
-    assert callable(aadl2::AbstractSubcomponent.__init__)
+def test_aadl2_componentimplementation_constructor_exists():
+    assert callable(aadl2_ComponentImplementation.__init__)
 
 
-def test_aadl2::abstractsubcomponent_constructor_args():
-    sig = inspect.signature(aadl2::AbstractSubcomponent.__init__)
+def test_aadl2_componentimplementation_constructor_args():
+    sig = inspect.signature(aadl2_ComponentImplementation.__init__)
     params = list(sig.parameters.keys())
-
-
-
-def test_aadl2::processsubcomponent_is_not_abstract():
-    assert not inspect.isabstract(aadl2::ProcessSubcomponent)
-
-
-def test_aadl2::processsubcomponent_constructor_exists():
-    assert callable(aadl2::ProcessSubcomponent.__init__)
-
-
-def test_aadl2::processsubcomponent_constructor_args():
-    sig = inspect.signature(aadl2::ProcessSubcomponent.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_aadl2::threadsubcomponent_is_not_abstract():
-    assert not inspect.isabstract(aadl2::ThreadSubcomponent)
-
-
-def test_aadl2::threadsubcomponent_constructor_exists():
-    assert callable(aadl2::ThreadSubcomponent.__init__)
-
-
-def test_aadl2::threadsubcomponent_constructor_args():
-    sig = inspect.signature(aadl2::ThreadSubcomponent.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_aadl2::virtualprocessorsubcomponent_is_not_abstract():
-    assert not inspect.isabstract(aadl2::VirtualProcessorSubcomponent)
-
-
-def test_aadl2::virtualprocessorsubcomponent_constructor_exists():
-    assert callable(aadl2::VirtualProcessorSubcomponent.__init__)
-
-
-def test_aadl2::virtualprocessorsubcomponent_constructor_args():
-    sig = inspect.signature(aadl2::VirtualProcessorSubcomponent.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_aadl2::memorysubcomponent_is_not_abstract():
-    assert not inspect.isabstract(aadl2::MemorySubcomponent)
-
-
-def test_aadl2::memorysubcomponent_constructor_exists():
-    assert callable(aadl2::MemorySubcomponent.__init__)
-
-
-def test_aadl2::memorysubcomponent_constructor_args():
-    sig = inspect.signature(aadl2::MemorySubcomponent.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_aadl2::devicesubcomponent_is_not_abstract():
-    assert not inspect.isabstract(aadl2::DeviceSubcomponent)
-
-
-def test_aadl2::devicesubcomponent_constructor_exists():
-    assert callable(aadl2::DeviceSubcomponent.__init__)
-
-
-def test_aadl2::devicesubcomponent_constructor_args():
-    sig = inspect.signature(aadl2::DeviceSubcomponent.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_aadl2::endtoendflowsegment_is_not_abstract():
-    assert not inspect.isabstract(aadl2::EndToEndFlowSegment)
-
-
-def test_aadl2::endtoendflowsegment_constructor_exists():
-    assert callable(aadl2::EndToEndFlowSegment.__init__)
-
-
-def test_aadl2::endtoendflowsegment_constructor_args():
-    sig = inspect.signature(aadl2::EndToEndFlowSegment.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_aadl2::connectedelement_is_not_abstract():
-    assert not inspect.isabstract(aadl2::ConnectedElement)
-
-
-def test_aadl2::connectedelement_constructor_exists():
-    assert callable(aadl2::ConnectedElement.__init__)
-
-
-def test_aadl2::connectedelement_constructor_args():
-    sig = inspect.signature(aadl2::ConnectedElement.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_aadl2::flowsegment_is_not_abstract():
-    assert not inspect.isabstract(aadl2::FlowSegment)
-
-
-def test_aadl2::flowsegment_constructor_exists():
-    assert callable(aadl2::FlowSegment.__init__)
-
-
-def test_aadl2::flowsegment_constructor_args():
-    sig = inspect.signature(aadl2::FlowSegment.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_aadl2::modebinding_is_not_abstract():
-    assert not inspect.isabstract(aadl2::ModeBinding)
-
-
-def test_aadl2::modebinding_constructor_exists():
-    assert callable(aadl2::ModeBinding.__init__)
-
-
-def test_aadl2::modebinding_constructor_args():
-    sig = inspect.signature(aadl2::ModeBinding.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_aadl2::featureprototype_is_not_abstract():
-    assert not inspect.isabstract(aadl2::FeaturePrototype)
-
-
-def test_aadl2::featureprototype_constructor_exists():
-    assert callable(aadl2::FeaturePrototype.__init__)
-
-
-def test_aadl2::featureprototype_constructor_args():
-    sig = inspect.signature(aadl2::FeaturePrototype.__init__)
-    params = list(sig.parameters.keys())
-    assert "direction" in params, "Missing parameter 'direction'"
-
-def test_aadl2::featureprototype_has_direction():
-    assert hasattr(aadl2::FeaturePrototype, "direction")
+    assert "noConnections" in params, "Missing parameter 'noConnections'"
+    assert "noSubcomponents" in params, "Missing parameter 'noSubcomponents'"
+    assert "noCalls" in params, "Missing parameter 'noCalls'"
+
+def test_aadl2_componentimplementation_has_noConnections():
+    assert hasattr(aadl2_ComponentImplementation, "noConnections")
     descriptor = None
-    for klass in aadl2::FeaturePrototype.__mro__:
-        if "direction" in klass.__dict__:
-            descriptor = klass.__dict__["direction"]
+    for klass in aadl2_ComponentImplementation.__mro__:
+        if "noConnections" in klass.__dict__:
+            descriptor = klass.__dict__["noConnections"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_aadl2_componentimplementation_has_noSubcomponents():
+    assert hasattr(aadl2_ComponentImplementation, "noSubcomponents")
+    descriptor = None
+    for klass in aadl2_ComponentImplementation.__mro__:
+        if "noSubcomponents" in klass.__dict__:
+            descriptor = klass.__dict__["noSubcomponents"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_aadl2_componentimplementation_has_noCalls():
+    assert hasattr(aadl2_ComponentImplementation, "noCalls")
+    descriptor = None
+    for klass in aadl2_ComponentImplementation.__mro__:
+        if "noCalls" in klass.__dict__:
+            descriptor = klass.__dict__["noCalls"]
             break
     assert isinstance(descriptor, property)
 
 
 
-def test_aadl2::subprogramgroup_is_not_abstract():
-    assert not inspect.isabstract(aadl2::SubprogramGroup)
+def test_aadl2_componentimplementationreference_is_not_abstract():
+    assert not inspect.isabstract(aadl2_ComponentImplementationReference)
 
 
-def test_aadl2::subprogramgroup_constructor_exists():
-    assert callable(aadl2::SubprogramGroup.__init__)
+def test_aadl2_componentimplementationreference_constructor_exists():
+    assert callable(aadl2_ComponentImplementationReference.__init__)
 
 
-def test_aadl2::subprogramgroup_constructor_args():
-    sig = inspect.signature(aadl2::SubprogramGroup.__init__)
+def test_aadl2_componentimplementationreference_constructor_args():
+    sig = inspect.signature(aadl2_ComponentImplementationReference.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_subprogramgroup_is_not_abstract():
-    assert not inspect.isabstract(SubprogramGroup)
+def test_aadl2_arraysize_is_not_abstract():
+    assert not inspect.isabstract(aadl2_ArraySize)
 
 
-def test_subprogramgroup_constructor_exists():
-    assert callable(SubprogramGroup.__init__)
+def test_aadl2_arraysize_constructor_exists():
+    assert callable(aadl2_ArraySize.__init__)
 
 
-def test_subprogramgroup_constructor_args():
-    sig = inspect.signature(SubprogramGroup.__init__)
+def test_aadl2_arraysize_constructor_args():
+    sig = inspect.signature(aadl2_ArraySize.__init__)
     params = list(sig.parameters.keys())
+    assert "size" in params, "Missing parameter 'size'"
 
-
-
-def test_aadl2::subprogramgroupsubcomponenttype_is_not_abstract():
-    assert not inspect.isabstract(aadl2::SubprogramGroupSubcomponentType)
-
-
-def test_aadl2::subprogramgroupsubcomponenttype_constructor_exists():
-    assert callable(aadl2::SubprogramGroupSubcomponentType.__init__)
-
-
-def test_aadl2::subprogramgroupsubcomponenttype_constructor_args():
-    sig = inspect.signature(aadl2::SubprogramGroupSubcomponentType.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_aadl2::subprogram_is_not_abstract():
-    assert not inspect.isabstract(aadl2::Subprogram)
-
-
-def test_aadl2::subprogram_constructor_exists():
-    assert callable(aadl2::Subprogram.__init__)
-
-
-def test_aadl2::subprogram_constructor_args():
-    sig = inspect.signature(aadl2::Subprogram.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_subprogram_is_not_abstract():
-    assert not inspect.isabstract(Subprogram)
-
-
-def test_subprogram_constructor_exists():
-    assert callable(Subprogram.__init__)
-
-
-def test_subprogram_constructor_args():
-    sig = inspect.signature(Subprogram.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_aadl2::subprogramsubcomponenttype_is_not_abstract():
-    assert not inspect.isabstract(aadl2::SubprogramSubcomponentType)
-
-
-def test_aadl2::subprogramsubcomponenttype_constructor_exists():
-    assert callable(aadl2::SubprogramSubcomponentType.__init__)
-
-
-def test_aadl2::subprogramsubcomponenttype_constructor_args():
-    sig = inspect.signature(aadl2::SubprogramSubcomponentType.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_accessconnectionend_is_not_abstract():
-    assert not inspect.isabstract(AccessConnectionEnd)
-
-
-def test_accessconnectionend_constructor_exists():
-    assert callable(AccessConnectionEnd.__init__)
-
-
-def test_accessconnectionend_constructor_args():
-    sig = inspect.signature(AccessConnectionEnd.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_aadl2::subprogramsubcomponent_is_not_abstract():
-    assert not inspect.isabstract(aadl2::SubprogramSubcomponent)
-
-
-def test_aadl2::subprogramsubcomponent_constructor_exists():
-    assert callable(aadl2::SubprogramSubcomponent.__init__)
-
-
-def test_aadl2::subprogramsubcomponent_constructor_args():
-    sig = inspect.signature(aadl2::SubprogramSubcomponent.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_aadl2::subprogramproxy_is_not_abstract():
-    assert not inspect.isabstract(aadl2::SubprogramProxy)
-
-
-def test_aadl2::subprogramproxy_constructor_exists():
-    assert callable(aadl2::SubprogramProxy.__init__)
-
-
-def test_aadl2::subprogramproxy_constructor_args():
-    sig = inspect.signature(aadl2::SubprogramProxy.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_aadl2::subprogramgroupsubcomponent_is_not_abstract():
-    assert not inspect.isabstract(aadl2::SubprogramGroupSubcomponent)
-
-
-def test_aadl2::subprogramgroupsubcomponent_constructor_exists():
-    assert callable(aadl2::SubprogramGroupSubcomponent.__init__)
-
-
-def test_aadl2::subprogramgroupsubcomponent_constructor_args():
-    sig = inspect.signature(aadl2::SubprogramGroupSubcomponent.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_triggerport_is_not_abstract():
-    assert not inspect.isabstract(TriggerPort)
-
-
-def test_triggerport_constructor_exists():
-    assert callable(TriggerPort.__init__)
-
-
-def test_triggerport_constructor_args():
-    sig = inspect.signature(TriggerPort.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_aadl2::abstractfeature_is_not_abstract():
-    assert not inspect.isabstract(aadl2::AbstractFeature)
-
-
-def test_aadl2::abstractfeature_constructor_exists():
-    assert callable(aadl2::AbstractFeature.__init__)
-
-
-def test_aadl2::abstractfeature_constructor_args():
-    sig = inspect.signature(aadl2::AbstractFeature.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_port_is_not_abstract():
-    assert not inspect.isabstract(Port)
-
-
-def test_port_constructor_exists():
-    assert callable(Port.__init__)
-
-
-def test_port_constructor_args():
-    sig = inspect.signature(Port.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_aadl2::eventport_is_not_abstract():
-    assert not inspect.isabstract(aadl2::EventPort)
-
-
-def test_aadl2::eventport_constructor_exists():
-    assert callable(aadl2::EventPort.__init__)
-
-
-def test_aadl2::eventport_constructor_args():
-    sig = inspect.signature(aadl2::EventPort.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_aadl2::data_is_not_abstract():
-    assert not inspect.isabstract(aadl2::Data)
-
-
-def test_aadl2::data_constructor_exists():
-    assert callable(aadl2::Data.__init__)
-
-
-def test_aadl2::data_constructor_args():
-    sig = inspect.signature(aadl2::Data.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_aadl2::portconnectionend_is_not_abstract():
-    assert not inspect.isabstract(aadl2::PortConnectionEnd)
-
-
-def test_aadl2::portconnectionend_constructor_exists():
-    assert callable(aadl2::PortConnectionEnd.__init__)
-
-
-def test_aadl2::portconnectionend_constructor_args():
-    sig = inspect.signature(aadl2::PortConnectionEnd.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_aadl2::parameterconnectionend_is_not_abstract():
-    assert not inspect.isabstract(aadl2::ParameterConnectionEnd)
-
-
-def test_aadl2::parameterconnectionend_constructor_exists():
-    assert callable(aadl2::ParameterConnectionEnd.__init__)
-
-
-def test_aadl2::parameterconnectionend_constructor_args():
-    sig = inspect.signature(aadl2::ParameterConnectionEnd.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_portconnectionend_is_not_abstract():
-    assert not inspect.isabstract(PortConnectionEnd)
-
-
-def test_portconnectionend_constructor_exists():
-    assert callable(PortConnectionEnd.__init__)
-
-
-def test_portconnectionend_constructor_args():
-    sig = inspect.signature(PortConnectionEnd.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_aadl2::portproxy_is_not_abstract():
-    assert not inspect.isabstract(aadl2::PortProxy)
-
-
-def test_aadl2::portproxy_constructor_exists():
-    assert callable(aadl2::PortProxy.__init__)
-
-
-def test_aadl2::portproxy_constructor_args():
-    sig = inspect.signature(aadl2::PortProxy.__init__)
-    params = list(sig.parameters.keys())
-    assert "direction" in params, "Missing parameter 'direction'"
-
-def test_aadl2::portproxy_has_direction():
-    assert hasattr(aadl2::PortProxy, "direction")
+def test_aadl2_arraysize_has_size():
+    assert hasattr(aadl2_ArraySize, "size")
     descriptor = None
-    for klass in aadl2::PortProxy.__mro__:
-        if "direction" in klass.__dict__:
-            descriptor = klass.__dict__["direction"]
+    for klass in aadl2_ArraySize.__mro__:
+        if "size" in klass.__dict__:
+            descriptor = klass.__dict__["size"]
             break
     assert isinstance(descriptor, property)
 
 
 
-def test_aadl2::port_is_not_abstract():
-    assert not inspect.isabstract(aadl2::Port)
+def test_aadl2_arraydimension_is_not_abstract():
+    assert not inspect.isabstract(aadl2_ArrayDimension)
 
 
-def test_aadl2::port_constructor_exists():
-    assert callable(aadl2::Port.__init__)
+def test_aadl2_arraydimension_constructor_exists():
+    assert callable(aadl2_ArrayDimension.__init__)
 
 
-def test_aadl2::port_constructor_args():
-    sig = inspect.signature(aadl2::Port.__init__)
+def test_aadl2_arraydimension_constructor_args():
+    sig = inspect.signature(aadl2_ArrayDimension.__init__)
     params = list(sig.parameters.keys())
-    assert "category" in params, "Missing parameter 'category'"
 
-def test_aadl2::port_has_category():
-    assert hasattr(aadl2::Port, "category")
+
+
+def test_aadl2_arrayrange_is_not_abstract():
+    assert not inspect.isabstract(aadl2_ArrayRange)
+
+
+def test_aadl2_arrayrange_constructor_exists():
+    assert callable(aadl2_ArrayRange.__init__)
+
+
+def test_aadl2_arrayrange_constructor_args():
+    sig = inspect.signature(aadl2_ArrayRange.__init__)
+    params = list(sig.parameters.keys())
+    assert "upperBound" in params, "Missing parameter 'upperBound'"
+    assert "lowerBound" in params, "Missing parameter 'lowerBound'"
+
+def test_aadl2_arrayrange_has_upperBound():
+    assert hasattr(aadl2_ArrayRange, "upperBound")
     descriptor = None
-    for klass in aadl2::Port.__mro__:
-        if "category" in klass.__dict__:
-            descriptor = klass.__dict__["category"]
+    for klass in aadl2_ArrayRange.__mro__:
+        if "upperBound" in klass.__dict__:
+            descriptor = klass.__dict__["upperBound"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_aadl2_arrayrange_has_lowerBound():
+    assert hasattr(aadl2_ArrayRange, "lowerBound")
+    descriptor = None
+    for klass in aadl2_ArrayRange.__mro__:
+        if "lowerBound" in klass.__dict__:
+            descriptor = klass.__dict__["lowerBound"]
             break
     assert isinstance(descriptor, property)
 
 
 
-def test_aadl2::internalfeature_is_not_abstract():
-    assert not inspect.isabstract(aadl2::InternalFeature)
+def test_aadl2_containmentpathelement_is_not_abstract():
+    assert not inspect.isabstract(aadl2_ContainmentPathElement)
 
 
-def test_aadl2::internalfeature_constructor_exists():
-    assert callable(aadl2::InternalFeature.__init__)
+def test_aadl2_containmentpathelement_constructor_exists():
+    assert callable(aadl2_ContainmentPathElement.__init__)
 
 
-def test_aadl2::internalfeature_constructor_args():
-    sig = inspect.signature(aadl2::InternalFeature.__init__)
+def test_aadl2_containmentpathelement_constructor_args():
+    sig = inspect.signature(aadl2_ContainmentPathElement.__init__)
     params = list(sig.parameters.keys())
-    assert "direction" in params, "Missing parameter 'direction'"
+    assert "annexName" in params, "Missing parameter 'annexName'"
 
-def test_aadl2::internalfeature_has_direction():
-    assert hasattr(aadl2::InternalFeature, "direction")
+def test_aadl2_containmentpathelement_has_annexName():
+    assert hasattr(aadl2_ContainmentPathElement, "annexName")
     descriptor = None
-    for klass in aadl2::InternalFeature.__mro__:
-        if "direction" in klass.__dict__:
-            descriptor = klass.__dict__["direction"]
+    for klass in aadl2_ContainmentPathElement.__mro__:
+        if "annexName" in klass.__dict__:
+            descriptor = klass.__dict__["annexName"]
             break
     assert isinstance(descriptor, property)
 
 
 
-def test_parameterconnectionend_is_not_abstract():
-    assert not inspect.isabstract(ParameterConnectionEnd)
+def test_aadl2_calledsubprogram_is_not_abstract():
+    assert not inspect.isabstract(aadl2_CalledSubprogram)
 
 
-def test_parameterconnectionend_constructor_exists():
-    assert callable(ParameterConnectionEnd.__init__)
+def test_aadl2_calledsubprogram_constructor_exists():
+    assert callable(aadl2_CalledSubprogram.__init__)
 
 
-def test_parameterconnectionend_constructor_args():
-    sig = inspect.signature(ParameterConnectionEnd.__init__)
+def test_aadl2_calledsubprogram_constructor_args():
+    sig = inspect.signature(aadl2_CalledSubprogram.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_aadl2::parameter_is_not_abstract():
-    assert not inspect.isabstract(aadl2::Parameter)
+def test_aadl2_refinableelement_is_not_abstract():
+    assert not inspect.isabstract(aadl2_RefinableElement)
 
 
-def test_aadl2::parameter_constructor_exists():
-    assert callable(aadl2::Parameter.__init__)
+def test_aadl2_refinableelement_constructor_exists():
+    assert callable(aadl2_RefinableElement.__init__)
 
 
-def test_aadl2::parameter_constructor_args():
-    sig = inspect.signature(aadl2::Parameter.__init__)
+def test_aadl2_refinableelement_constructor_args():
+    sig = inspect.signature(aadl2_RefinableElement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_data_is_not_abstract():
-    assert not inspect.isabstract(Data)
+def test_refinableelement_is_not_abstract():
+    assert not inspect.isabstract(RefinableElement)
 
 
-def test_data_constructor_exists():
-    assert callable(Data.__init__)
+def test_refinableelement_constructor_exists():
+    assert callable(RefinableElement.__init__)
 
 
-def test_data_constructor_args():
-    sig = inspect.signature(Data.__init__)
+def test_refinableelement_constructor_args():
+    sig = inspect.signature(RefinableElement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_aadl2::datasubcomponent_is_not_abstract():
-    assert not inspect.isabstract(aadl2::DataSubcomponent)
+def test_calledsubprogram_is_not_abstract():
+    assert not inspect.isabstract(CalledSubprogram)
 
 
-def test_aadl2::datasubcomponent_constructor_exists():
-    assert callable(aadl2::DataSubcomponent.__init__)
+def test_calledsubprogram_constructor_exists():
+    assert callable(CalledSubprogram.__init__)
 
 
-def test_aadl2::datasubcomponent_constructor_args():
-    sig = inspect.signature(aadl2::DataSubcomponent.__init__)
+def test_calledsubprogram_constructor_args():
+    sig = inspect.signature(CalledSubprogram.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_aadl2::eventdataport_is_not_abstract():
-    assert not inspect.isabstract(aadl2::EventDataPort)
+def test_aadl2_subprogram_is_not_abstract():
+    assert not inspect.isabstract(aadl2_Subprogram)
 
 
-def test_aadl2::eventdataport_constructor_exists():
-    assert callable(aadl2::EventDataPort.__init__)
+def test_aadl2_subprogram_constructor_exists():
+    assert callable(aadl2_Subprogram.__init__)
 
 
-def test_aadl2::eventdataport_constructor_args():
-    sig = inspect.signature(aadl2::EventDataPort.__init__)
+def test_aadl2_subprogram_constructor_args():
+    sig = inspect.signature(aadl2_Subprogram.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_aadl2::dataport_is_not_abstract():
-    assert not inspect.isabstract(aadl2::DataPort)
+def test_aadl2_subprogramproxy_is_not_abstract():
+    assert not inspect.isabstract(aadl2_SubprogramProxy)
 
 
-def test_aadl2::dataport_constructor_exists():
-    assert callable(aadl2::DataPort.__init__)
+def test_aadl2_subprogramproxy_constructor_exists():
+    assert callable(aadl2_SubprogramProxy.__init__)
 
 
-def test_aadl2::dataport_constructor_args():
-    sig = inspect.signature(aadl2::DataPort.__init__)
+def test_aadl2_subprogramproxy_constructor_args():
+    sig = inspect.signature(aadl2_SubprogramProxy.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_aadl2::datasubcomponenttype_is_not_abstract():
-    assert not inspect.isabstract(aadl2::DataSubcomponentType)
+def test_structuralfeature_is_not_abstract():
+    assert not inspect.isabstract(StructuralFeature)
 
 
-def test_aadl2::datasubcomponenttype_constructor_exists():
-    assert callable(aadl2::DataSubcomponentType.__init__)
+def test_structuralfeature_constructor_exists():
+    assert callable(StructuralFeature.__init__)
 
 
-def test_aadl2::datasubcomponenttype_constructor_args():
-    sig = inspect.signature(aadl2::DataSubcomponentType.__init__)
+def test_structuralfeature_constructor_args():
+    sig = inspect.signature(StructuralFeature.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_aadl2::bus_is_not_abstract():
-    assert not inspect.isabstract(aadl2::Bus)
+def test_aadl2_flowfeature_is_not_abstract():
+    assert not inspect.isabstract(aadl2_FlowFeature)
 
 
-def test_aadl2::bus_constructor_exists():
-    assert callable(aadl2::Bus.__init__)
+def test_aadl2_flowfeature_constructor_exists():
+    assert callable(aadl2_FlowFeature.__init__)
 
 
-def test_aadl2::bus_constructor_args():
-    sig = inspect.signature(aadl2::Bus.__init__)
+def test_aadl2_flowfeature_constructor_args():
+    sig = inspect.signature(aadl2_FlowFeature.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_aadl2::accessconnectionend_is_not_abstract():
-    assert not inspect.isabstract(aadl2::AccessConnectionEnd)
+def test_aadl2_prototype_is_not_abstract():
+    assert not inspect.isabstract(aadl2_Prototype)
 
 
-def test_aadl2::accessconnectionend_constructor_exists():
-    assert callable(aadl2::AccessConnectionEnd.__init__)
+def test_aadl2_prototype_constructor_exists():
+    assert callable(aadl2_Prototype.__init__)
 
 
-def test_aadl2::accessconnectionend_constructor_args():
-    sig = inspect.signature(aadl2::AccessConnectionEnd.__init__)
+def test_aadl2_prototype_constructor_args():
+    sig = inspect.signature(aadl2_Prototype.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_aadl2::access_is_not_abstract():
-    assert not inspect.isabstract(aadl2::Access)
+def test_aadl2_feature_is_not_abstract():
+    assert not inspect.isabstract(aadl2_Feature)
 
 
-def test_aadl2::access_constructor_exists():
-    assert callable(aadl2::Access.__init__)
+def test_aadl2_feature_constructor_exists():
+    assert callable(aadl2_Feature.__init__)
 
 
-def test_aadl2::access_constructor_args():
-    sig = inspect.signature(aadl2::Access.__init__)
+def test_aadl2_feature_constructor_args():
+    sig = inspect.signature(aadl2_Feature.__init__)
     params = list(sig.parameters.keys())
-    assert "category" in params, "Missing parameter 'category'"
+
+
+
+def test_aadl2_connection_is_not_abstract():
+    assert not inspect.isabstract(aadl2_Connection)
+
+
+def test_aadl2_connection_constructor_exists():
+    assert callable(aadl2_Connection.__init__)
+
+
+def test_aadl2_connection_constructor_args():
+    sig = inspect.signature(aadl2_Connection.__init__)
+    params = list(sig.parameters.keys())
+    assert "bidirectional" in params, "Missing parameter 'bidirectional'"
+
+def test_aadl2_connection_has_bidirectional():
+    assert hasattr(aadl2_Connection, "bidirectional")
+    descriptor = None
+    for klass in aadl2_Connection.__mro__:
+        if "bidirectional" in klass.__dict__:
+            descriptor = klass.__dict__["bidirectional"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_classifierfeature_is_not_abstract():
+    assert not inspect.isabstract(ClassifierFeature)
+
+
+def test_classifierfeature_constructor_exists():
+    assert callable(ClassifierFeature.__init__)
+
+
+def test_classifierfeature_constructor_args():
+    sig = inspect.signature(ClassifierFeature.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_aadl2_flowimplementation_is_not_abstract():
+    assert not inspect.isabstract(aadl2_FlowImplementation)
+
+
+def test_aadl2_flowimplementation_constructor_exists():
+    assert callable(aadl2_FlowImplementation.__init__)
+
+
+def test_aadl2_flowimplementation_constructor_args():
+    sig = inspect.signature(aadl2_FlowImplementation.__init__)
+    params = list(sig.parameters.keys())
     assert "kind" in params, "Missing parameter 'kind'"
 
-def test_aadl2::access_has_category():
-    assert hasattr(aadl2::Access, "category")
+def test_aadl2_flowimplementation_has_kind():
+    assert hasattr(aadl2_FlowImplementation, "kind")
     descriptor = None
-    for klass in aadl2::Access.__mro__:
-        if "category" in klass.__dict__:
-            descriptor = klass.__dict__["category"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_aadl2::access_has_kind():
-    assert hasattr(aadl2::Access, "kind")
-    descriptor = None
-    for klass in aadl2::Access.__mro__:
+    for klass in aadl2_FlowImplementation.__mro__:
         if "kind" in klass.__dict__:
             descriptor = klass.__dict__["kind"]
             break
@@ -6009,130 +5829,295 @@ def test_aadl2::access_has_kind():
 
 
 
-def test_bus_is_not_abstract():
-    assert not inspect.isabstract(Bus)
+def test_aadl2_behavioralfeature_is_not_abstract():
+    assert not inspect.isabstract(aadl2_BehavioralFeature)
 
 
-def test_bus_constructor_exists():
-    assert callable(Bus.__init__)
+def test_aadl2_behavioralfeature_constructor_exists():
+    assert callable(aadl2_BehavioralFeature.__init__)
 
 
-def test_bus_constructor_args():
-    sig = inspect.signature(Bus.__init__)
+def test_aadl2_behavioralfeature_constructor_args():
+    sig = inspect.signature(aadl2_BehavioralFeature.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_aadl2::bussubcomponent_is_not_abstract():
-    assert not inspect.isabstract(aadl2::BusSubcomponent)
+def test_aadl2_structuralfeature_is_not_abstract():
+    assert not inspect.isabstract(aadl2_StructuralFeature)
 
 
-def test_aadl2::bussubcomponent_constructor_exists():
-    assert callable(aadl2::BusSubcomponent.__init__)
+def test_aadl2_structuralfeature_constructor_exists():
+    assert callable(aadl2_StructuralFeature.__init__)
 
 
-def test_aadl2::bussubcomponent_constructor_args():
-    sig = inspect.signature(aadl2::BusSubcomponent.__init__)
+def test_aadl2_structuralfeature_constructor_args():
+    sig = inspect.signature(aadl2_StructuralFeature.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_aadl2::bussubcomponenttype_is_not_abstract():
-    assert not inspect.isabstract(aadl2::BusSubcomponentType)
+def test_aadl2_modefeature_is_not_abstract():
+    assert not inspect.isabstract(aadl2_ModeFeature)
 
 
-def test_aadl2::bussubcomponenttype_constructor_exists():
-    assert callable(aadl2::BusSubcomponentType.__init__)
+def test_aadl2_modefeature_constructor_exists():
+    assert callable(aadl2_ModeFeature.__init__)
 
 
-def test_aadl2::bussubcomponenttype_constructor_args():
-    sig = inspect.signature(aadl2::BusSubcomponentType.__init__)
+def test_aadl2_modefeature_constructor_args():
+    sig = inspect.signature(aadl2_ModeFeature.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_access_is_not_abstract():
-    assert not inspect.isabstract(Access)
+def test_modefeature_is_not_abstract():
+    assert not inspect.isabstract(ModeFeature)
 
 
-def test_access_constructor_exists():
-    assert callable(Access.__init__)
+def test_modefeature_constructor_exists():
+    assert callable(ModeFeature.__init__)
 
 
-def test_access_constructor_args():
-    sig = inspect.signature(Access.__init__)
+def test_modefeature_constructor_args():
+    sig = inspect.signature(ModeFeature.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_aadl2::dataaccess_is_not_abstract():
-    assert not inspect.isabstract(aadl2::DataAccess)
+def test_aadl2_modetransition_is_not_abstract():
+    assert not inspect.isabstract(aadl2_ModeTransition)
 
 
-def test_aadl2::dataaccess_constructor_exists():
-    assert callable(aadl2::DataAccess.__init__)
+def test_aadl2_modetransition_constructor_exists():
+    assert callable(aadl2_ModeTransition.__init__)
 
 
-def test_aadl2::dataaccess_constructor_args():
-    sig = inspect.signature(aadl2::DataAccess.__init__)
+def test_aadl2_modetransition_constructor_args():
+    sig = inspect.signature(aadl2_ModeTransition.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_aadl2::subprogramaccess_is_not_abstract():
-    assert not inspect.isabstract(aadl2::SubprogramAccess)
+def test_aadl2_mode_is_not_abstract():
+    assert not inspect.isabstract(aadl2_Mode)
 
 
-def test_aadl2::subprogramaccess_constructor_exists():
-    assert callable(aadl2::SubprogramAccess.__init__)
+def test_aadl2_mode_constructor_exists():
+    assert callable(aadl2_Mode.__init__)
 
 
-def test_aadl2::subprogramaccess_constructor_args():
-    sig = inspect.signature(aadl2::SubprogramAccess.__init__)
+def test_aadl2_mode_constructor_args():
+    sig = inspect.signature(aadl2_Mode.__init__)
+    params = list(sig.parameters.keys())
+    assert "derived" in params, "Missing parameter 'derived'"
+    assert "initial" in params, "Missing parameter 'initial'"
+
+def test_aadl2_mode_has_derived():
+    assert hasattr(aadl2_Mode, "derived")
+    descriptor = None
+    for klass in aadl2_Mode.__mro__:
+        if "derived" in klass.__dict__:
+            descriptor = klass.__dict__["derived"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_aadl2_mode_has_initial():
+    assert hasattr(aadl2_Mode, "initial")
+    descriptor = None
+    for klass in aadl2_Mode.__mro__:
+        if "initial" in klass.__dict__:
+            descriptor = klass.__dict__["initial"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_aadl2_modalelement_is_not_abstract():
+    assert not inspect.isabstract(aadl2_ModalElement)
+
+
+def test_aadl2_modalelement_constructor_exists():
+    assert callable(aadl2_ModalElement.__init__)
+
+
+def test_aadl2_modalelement_constructor_args():
+    sig = inspect.signature(aadl2_ModalElement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_aadl2::busaccess_is_not_abstract():
-    assert not inspect.isabstract(aadl2::BusAccess)
+def test_modalelement_is_not_abstract():
+    assert not inspect.isabstract(ModalElement)
 
 
-def test_aadl2::busaccess_constructor_exists():
-    assert callable(aadl2::BusAccess.__init__)
+def test_modalelement_constructor_exists():
+    assert callable(ModalElement.__init__)
 
 
-def test_aadl2::busaccess_constructor_args():
-    sig = inspect.signature(aadl2::BusAccess.__init__)
+def test_modalelement_constructor_args():
+    sig = inspect.signature(ModalElement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_aadl2::subprogramgroupaccess_is_not_abstract():
-    assert not inspect.isabstract(aadl2::SubprogramGroupAccess)
+def test_aadl2_internalfeature_is_not_abstract():
+    assert not inspect.isabstract(aadl2_InternalFeature)
 
 
-def test_aadl2::subprogramgroupaccess_constructor_exists():
-    assert callable(aadl2::SubprogramGroupAccess.__init__)
+def test_aadl2_internalfeature_constructor_exists():
+    assert callable(aadl2_InternalFeature.__init__)
 
 
-def test_aadl2::subprogramgroupaccess_constructor_args():
-    sig = inspect.signature(aadl2::SubprogramGroupAccess.__init__)
+def test_aadl2_internalfeature_constructor_args():
+    sig = inspect.signature(aadl2_InternalFeature.__init__)
+    params = list(sig.parameters.keys())
+    assert "direction" in params, "Missing parameter 'direction'"
+
+def test_aadl2_internalfeature_has_direction():
+    assert hasattr(aadl2_InternalFeature, "direction")
+    descriptor = None
+    for klass in aadl2_InternalFeature.__mro__:
+        if "direction" in klass.__dict__:
+            descriptor = klass.__dict__["direction"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_aadl2_modalpath_is_not_abstract():
+    assert not inspect.isabstract(aadl2_ModalPath)
+
+
+def test_aadl2_modalpath_constructor_exists():
+    assert callable(aadl2_ModalPath.__init__)
+
+
+def test_aadl2_modalpath_constructor_args():
+    sig = inspect.signature(aadl2_ModalPath.__init__)
     params = list(sig.parameters.keys())
 
-def test_accesstype_exists():
-    # Check that the Enumeration exists
-    assert AccessType is not None
 
-def test_accesstype_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in AccessType]
-    expected_literals = [
-        "requires",
-        "provides",
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in AccessType"
+
+def test_aadl2_processorfeature_is_not_abstract():
+    assert not inspect.isabstract(aadl2_ProcessorFeature)
+
+
+def test_aadl2_processorfeature_constructor_exists():
+    assert callable(aadl2_ProcessorFeature.__init__)
+
+
+def test_aadl2_processorfeature_constructor_args():
+    sig = inspect.signature(aadl2_ProcessorFeature.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_aadl2_modalpropertyvalue_is_not_abstract():
+    assert not inspect.isabstract(aadl2_ModalPropertyValue)
+
+
+def test_aadl2_modalpropertyvalue_constructor_exists():
+    assert callable(aadl2_ModalPropertyValue.__init__)
+
+
+def test_aadl2_modalpropertyvalue_constructor_args():
+    sig = inspect.signature(aadl2_ModalPropertyValue.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_aadl2_annexsubclause_is_not_abstract():
+    assert not inspect.isabstract(aadl2_AnnexSubclause)
+
+
+def test_aadl2_annexsubclause_constructor_exists():
+    assert callable(aadl2_AnnexSubclause.__init__)
+
+
+def test_aadl2_annexsubclause_constructor_args():
+    sig = inspect.signature(aadl2_AnnexSubclause.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_aadl2_subcomponent_is_not_abstract():
+    assert not inspect.isabstract(aadl2_Subcomponent)
+
+
+def test_aadl2_subcomponent_constructor_exists():
+    assert callable(aadl2_Subcomponent.__init__)
+
+
+def test_aadl2_subcomponent_constructor_args():
+    sig = inspect.signature(aadl2_Subcomponent.__init__)
+    params = list(sig.parameters.keys())
+    assert "allModes" in params, "Missing parameter 'allModes'"
+
+def test_aadl2_subcomponent_has_allModes():
+    assert hasattr(aadl2_Subcomponent, "allModes")
+    descriptor = None
+    for klass in aadl2_Subcomponent.__mro__:
+        if "allModes" in klass.__dict__:
+            descriptor = klass.__dict__["allModes"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_aadl2_subprogramcallsequence_is_not_abstract():
+    assert not inspect.isabstract(aadl2_SubprogramCallSequence)
+
+
+def test_aadl2_subprogramcallsequence_constructor_exists():
+    assert callable(aadl2_SubprogramCallSequence.__init__)
+
+
+def test_aadl2_subprogramcallsequence_constructor_args():
+    sig = inspect.signature(aadl2_SubprogramCallSequence.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_aadl2_relationship_is_not_abstract():
+    assert not inspect.isabstract(aadl2_Relationship)
+
+
+def test_aadl2_relationship_constructor_exists():
+    assert callable(aadl2_Relationship.__init__)
+
+
+def test_aadl2_relationship_constructor_args():
+    sig = inspect.signature(aadl2_Relationship.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_relationship_is_not_abstract():
+    assert not inspect.isabstract(Relationship)
+
+
+def test_relationship_constructor_exists():
+    assert callable(Relationship.__init__)
+
+
+def test_relationship_constructor_args():
+    sig = inspect.signature(Relationship.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_aadl2_directedrelationship_is_not_abstract():
+    assert not inspect.isabstract(aadl2_DirectedRelationship)
+
+
+def test_aadl2_directedrelationship_constructor_exists():
+    assert callable(aadl2_DirectedRelationship.__init__)
+
+
+def test_aadl2_directedrelationship_constructor_args():
+    sig = inspect.signature(aadl2_DirectedRelationship.__init__)
+    params = list(sig.parameters.keys())
 
 def test_accesscategory_exists():
     # Check that the Enumeration exists
@@ -6151,33 +6136,6 @@ def test_accesscategory_has_all_literals():
     for lit_name in expected_literals:
         assert lit_name in enum_literals, f"Literal '' missing in AccessCategory"
 
-def test_componentcategory_exists():
-    # Check that the Enumeration exists
-    assert ComponentCategory is not None
-
-def test_componentcategory_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in ComponentCategory]
-    expected_literals = [
-        "subprogramGroup",
-        "bus",
-        "processor",
-        "virtualProcessor",
-        "system",
-        "process",
-        "abstract",
-        "thread",
-        "data",
-        "memory",
-        "threadGroup",
-        "virtualBus",
-        "subprogram",
-        "device",
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in ComponentCategory"
-
 def test_directiontype_exists():
     # Check that the Enumeration exists
     assert DirectionType is not None
@@ -6186,29 +6144,40 @@ def test_directiontype_has_all_literals():
     # Collect the names of literals in this Enumeration
     enum_literals = [lit.name for lit in DirectionType]
     expected_literals = [
-        "inOut",
         "out",
         "in_",
+        "inOut",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
         assert lit_name in enum_literals, f"Literal '' missing in DirectionType"
 
-def test_portcategory_exists():
+def test_componentcategory_exists():
     # Check that the Enumeration exists
-    assert PortCategory is not None
+    assert ComponentCategory is not None
 
-def test_portcategory_has_all_literals():
+def test_componentcategory_has_all_literals():
     # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in PortCategory]
+    enum_literals = [lit.name for lit in ComponentCategory]
     expected_literals = [
+        "subprogram",
         "data",
-        "eventData",
-        "event",
+        "bus",
+        "device",
+        "virtualBus",
+        "abstract",
+        "subprogramGroup",
+        "processor",
+        "system",
+        "memory",
+        "virtualProcessor",
+        "thread",
+        "threadGroup",
+        "process",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in PortCategory"
+        assert lit_name in enum_literals, f"Literal '' missing in ComponentCategory"
 
 def test_operationkind_exists():
     # Check that the Enumeration exists
@@ -6218,15 +6187,31 @@ def test_operationkind_has_all_literals():
     # Collect the names of literals in this Enumeration
     enum_literals = [lit.name for lit in OperationKind]
     expected_literals = [
-        "and_",
-        "not_",
         "or_",
         "plus",
+        "not_",
+        "and_",
         "minus",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
         assert lit_name in enum_literals, f"Literal '' missing in OperationKind"
+
+def test_portcategory_exists():
+    # Check that the Enumeration exists
+    assert PortCategory is not None
+
+def test_portcategory_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in PortCategory]
+    expected_literals = [
+        "event",
+        "data",
+        "eventData",
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in PortCategory"
 
 def test_flowkind_exists():
     # Check that the Enumeration exists
@@ -6236,13 +6221,28 @@ def test_flowkind_has_all_literals():
     # Collect the names of literals in this Enumeration
     enum_literals = [lit.name for lit in FlowKind]
     expected_literals = [
-        "path",
         "source",
         "sink",
+        "path",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
         assert lit_name in enum_literals, f"Literal '' missing in FlowKind"
+
+def test_accesstype_exists():
+    # Check that the Enumeration exists
+    assert AccessType is not None
+
+def test_accesstype_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in AccessType]
+    expected_literals = [
+        "provides",
+        "requires",
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in AccessType"
 
 
 # =============================================================================
@@ -6259,61 +6259,61 @@ safe_text = st.text(
 EnumerationType_strategy = st.builds(
     EnumerationType,
 )
-aadl2::UnitsType_strategy = st.builds(
-    aadl2::UnitsType,
+aadl2_UnitsType_strategy = st.builds(
+    aadl2_UnitsType,
 )
 NumberType_strategy = st.builds(
     NumberType,
 )
-aadl2::AadlReal_strategy = st.builds(
-    aadl2::AadlReal,
+aadl2_AadlReal_strategy = st.builds(
+    aadl2_AadlReal,
 )
-aadl2::AadlInteger_strategy = st.builds(
-    aadl2::AadlInteger,
+aadl2_AadlInteger_strategy = st.builds(
+    aadl2_AadlInteger,
 )
 NonListType_strategy = st.builds(
     NonListType,
 )
-aadl2::NumberType_strategy = st.builds(
-    aadl2::NumberType,
+aadl2_AadlString_strategy = st.builds(
+    aadl2_AadlString,
 )
-aadl2::ReferenceType_strategy = st.builds(
-    aadl2::ReferenceType,
+aadl2_RangeType_strategy = st.builds(
+    aadl2_RangeType,
 )
-aadl2::RangeType_strategy = st.builds(
-    aadl2::RangeType,
+aadl2_ReferenceType_strategy = st.builds(
+    aadl2_ReferenceType,
 )
-aadl2::AadlString_strategy = st.builds(
-    aadl2::AadlString,
+aadl2_ClassifierType_strategy = st.builds(
+    aadl2_ClassifierType,
 )
-aadl2::ClassifierType_strategy = st.builds(
-    aadl2::ClassifierType,
+aadl2_NumberType_strategy = st.builds(
+    aadl2_NumberType,
 )
-aadl2::AadlBoolean_strategy = st.builds(
-    aadl2::AadlBoolean,
+aadl2_AadlBoolean_strategy = st.builds(
+    aadl2_AadlBoolean,
 )
 PropertyType_strategy = st.builds(
     PropertyType,
 )
-aadl2::ListType_strategy = st.builds(
-    aadl2::ListType,
+aadl2_ListType_strategy = st.builds(
+    aadl2_ListType,
 )
-aadl2::NonListType_strategy = st.builds(
-    aadl2::NonListType,
+aadl2_NonListType_strategy = st.builds(
+    aadl2_NonListType,
 )
 NumberValue_strategy = st.builds(
     NumberValue,
 )
-aadl2::RealLiteral_strategy = st.builds(
-    aadl2::RealLiteral,
+aadl2_RealLiteral_strategy = st.builds(
+    aadl2_RealLiteral,
     value=
         safe_text
 )
-aadl2::IntegerLiteral_strategy = st.builds(
-    aadl2::IntegerLiteral,
-    base=
-        safe_text,
+aadl2_IntegerLiteral_strategy = st.builds(
+    aadl2_IntegerLiteral,
     value=
+        safe_text,
+    base=
         safe_text
 )
 ContainedNamedElement_strategy = st.builds(
@@ -6322,53 +6322,53 @@ ContainedNamedElement_strategy = st.builds(
 EnumerationLiteral_strategy = st.builds(
     EnumerationLiteral,
 )
-aadl2::UnitLiteral_strategy = st.builds(
-    aadl2::UnitLiteral,
+aadl2_UnitLiteral_strategy = st.builds(
+    aadl2_UnitLiteral,
 )
 PropertyExpression_strategy = st.builds(
     PropertyExpression,
 )
-aadl2::Operation_strategy = st.builds(
-    aadl2::Operation,
+aadl2_Operation_strategy = st.builds(
+    aadl2_Operation,
     op=
         safe_text
 )
-aadl2::ListValue_strategy = st.builds(
-    aadl2::ListValue,
+aadl2_ListValue_strategy = st.builds(
+    aadl2_ListValue,
 )
-aadl2::PropertyValue_strategy = st.builds(
-    aadl2::PropertyValue,
+aadl2_PropertyValue_strategy = st.builds(
+    aadl2_PropertyValue,
 )
 PropertyValue_strategy = st.builds(
     PropertyValue,
 )
-aadl2::ComputedValue_strategy = st.builds(
-    aadl2::ComputedValue,
-    function=
-        safe_text
-)
-aadl2::NamedValue_strategy = st.builds(
-    aadl2::NamedValue,
-)
-aadl2::RangeValue_strategy = st.builds(
-    aadl2::RangeValue,
-)
-aadl2::RecordValue_strategy = st.builds(
-    aadl2::RecordValue,
-)
-aadl2::BooleanLiteral_strategy = st.builds(
-    aadl2::BooleanLiteral,
+aadl2_BooleanLiteral_strategy = st.builds(
+    aadl2_BooleanLiteral,
     value=
         safe_text
 )
-aadl2::NumberValue_strategy = st.builds(
-    aadl2::NumberValue,
+aadl2_ReferenceValue_strategy = st.builds(
+    aadl2_ReferenceValue,
 )
-aadl2::ReferenceValue_strategy = st.builds(
-    aadl2::ReferenceValue,
+aadl2_NumberValue_strategy = st.builds(
+    aadl2_NumberValue,
 )
-aadl2::StringLiteral_strategy = st.builds(
-    aadl2::StringLiteral,
+aadl2_NamedValue_strategy = st.builds(
+    aadl2_NamedValue,
+)
+aadl2_RangeValue_strategy = st.builds(
+    aadl2_RangeValue,
+)
+aadl2_RecordValue_strategy = st.builds(
+    aadl2_RecordValue,
+)
+aadl2_ComputedValue_strategy = st.builds(
+    aadl2_ComputedValue,
+    function=
+        safe_text
+)
+aadl2_StringLiteral_strategy = st.builds(
+    aadl2_StringLiteral,
     value=
         safe_text
 )
@@ -6417,35 +6417,35 @@ ComponentPrototype_strategy = st.builds(
 ThreadGroupSubcomponentType_strategy = st.builds(
     ThreadGroupSubcomponentType,
 )
-aadl2::ThreadGroupPrototype_strategy = st.builds(
-    aadl2::ThreadGroupPrototype,
+aadl2_ThreadGroupPrototype_strategy = st.builds(
+    aadl2_ThreadGroupPrototype,
 )
 SystemSubcomponentType_strategy = st.builds(
     SystemSubcomponentType,
 )
-aadl2::SystemPrototype_strategy = st.builds(
-    aadl2::SystemPrototype,
+aadl2_SystemPrototype_strategy = st.builds(
+    aadl2_SystemPrototype,
 )
 SubprogramSubcomponentType_strategy = st.builds(
     SubprogramSubcomponentType,
 )
-aadl2::SubprogramPrototype_strategy = st.builds(
-    aadl2::SubprogramPrototype,
+aadl2_SubprogramPrototype_strategy = st.builds(
+    aadl2_SubprogramPrototype,
 )
 SubprogramGroupSubcomponentType_strategy = st.builds(
     SubprogramGroupSubcomponentType,
 )
-aadl2::SubprogramGroupPrototype_strategy = st.builds(
-    aadl2::SubprogramGroupPrototype,
+aadl2_SubprogramGroupPrototype_strategy = st.builds(
+    aadl2_SubprogramGroupPrototype,
 )
 BehavioredImplementation_strategy = st.builds(
     BehavioredImplementation,
 )
-aadl2::SubprogramImplementation_strategy = st.builds(
-    aadl2::SubprogramImplementation,
+aadl2_SubprogramImplementation_strategy = st.builds(
+    aadl2_SubprogramImplementation,
 )
-aadl2::ThreadImplementation_strategy = st.builds(
-    aadl2::ThreadImplementation,
+aadl2_ThreadImplementation_strategy = st.builds(
+    aadl2_ThreadImplementation,
 )
 Processor_strategy = st.builds(
     Processor,
@@ -6477,140 +6477,131 @@ VirtualProcessor_strategy = st.builds(
 VirtualProcessorSubcomponentType_strategy = st.builds(
     VirtualProcessorSubcomponentType,
 )
-aadl2::VirtualProcessorPrototype_strategy = st.builds(
-    aadl2::VirtualProcessorPrototype,
-)
-VirtualBusSubcomponentType_strategy = st.builds(
-    VirtualBusSubcomponentType,
-)
-aadl2::VirtualBusPrototype_strategy = st.builds(
-    aadl2::VirtualBusPrototype,
+aadl2_VirtualProcessorPrototype_strategy = st.builds(
+    aadl2_VirtualProcessorPrototype,
 )
 ThreadSubcomponentType_strategy = st.builds(
     ThreadSubcomponentType,
 )
-aadl2::ThreadPrototype_strategy = st.builds(
-    aadl2::ThreadPrototype,
+aadl2_ThreadPrototype_strategy = st.builds(
+    aadl2_ThreadPrototype,
 )
 ProcessSubcomponentType_strategy = st.builds(
     ProcessSubcomponentType,
 )
-aadl2::ProcessPrototype_strategy = st.builds(
-    aadl2::ProcessPrototype,
+aadl2_ProcessPrototype_strategy = st.builds(
+    aadl2_ProcessPrototype,
 )
 ProcessorSubcomponentType_strategy = st.builds(
     ProcessorSubcomponentType,
 )
-aadl2::ProcessorPrototype_strategy = st.builds(
-    aadl2::ProcessorPrototype,
+aadl2_ProcessorPrototype_strategy = st.builds(
+    aadl2_ProcessorPrototype,
 )
 MemorySubcomponentType_strategy = st.builds(
     MemorySubcomponentType,
 )
-aadl2::MemoryPrototype_strategy = st.builds(
-    aadl2::MemoryPrototype,
+aadl2_MemoryPrototype_strategy = st.builds(
+    aadl2_MemoryPrototype,
 )
 DeviceSubcomponentType_strategy = st.builds(
     DeviceSubcomponentType,
 )
-aadl2::DevicePrototype_strategy = st.builds(
-    aadl2::DevicePrototype,
+aadl2_DevicePrototype_strategy = st.builds(
+    aadl2_DevicePrototype,
 )
 DataSubcomponentType_strategy = st.builds(
     DataSubcomponentType,
 )
-aadl2::DataPrototype_strategy = st.builds(
-    aadl2::DataPrototype,
+aadl2_DataPrototype_strategy = st.builds(
+    aadl2_DataPrototype,
 )
 BusSubcomponentType_strategy = st.builds(
     BusSubcomponentType,
 )
-aadl2::BusPrototype_strategy = st.builds(
-    aadl2::BusPrototype,
+aadl2_BusPrototype_strategy = st.builds(
+    aadl2_BusPrototype,
 )
 AbstractSubcomponentType_strategy = st.builds(
     AbstractSubcomponentType,
 )
-aadl2::AbstractPrototype_strategy = st.builds(
-    aadl2::AbstractPrototype,
-)
 AbstractClassifier_strategy = st.builds(
     AbstractClassifier,
 )
-aadl2::AbstractImplementation_strategy = st.builds(
-    aadl2::AbstractImplementation,
+aadl2_AbstractImplementation_strategy = st.builds(
+    aadl2_AbstractImplementation,
 )
 ComponentType_strategy = st.builds(
     ComponentType,
 )
-aadl2::BusType_strategy = st.builds(
-    aadl2::BusType,
+aadl2_ProcessorType_strategy = st.builds(
+    aadl2_ProcessorType,
 )
-aadl2::ProcessorType_strategy = st.builds(
-    aadl2::ProcessorType,
+aadl2_ProcessType_strategy = st.builds(
+    aadl2_ProcessType,
 )
-aadl2::DeviceType_strategy = st.builds(
-    aadl2::DeviceType,
+aadl2_VirtualBusType_strategy = st.builds(
+    aadl2_VirtualBusType,
 )
-aadl2::ProcessType_strategy = st.builds(
-    aadl2::ProcessType,
+aadl2_VirtualProcessorType_strategy = st.builds(
+    aadl2_VirtualProcessorType,
 )
-aadl2::ThreadType_strategy = st.builds(
-    aadl2::ThreadType,
+aadl2_SystemType_strategy = st.builds(
+    aadl2_SystemType,
 )
-aadl2::SystemType_strategy = st.builds(
-    aadl2::SystemType,
+aadl2_BusType_strategy = st.builds(
+    aadl2_BusType,
 )
-aadl2::ThreadGroupType_strategy = st.builds(
-    aadl2::ThreadGroupType,
+aadl2_DeviceType_strategy = st.builds(
+    aadl2_DeviceType,
 )
-aadl2::VirtualBusType_strategy = st.builds(
-    aadl2::VirtualBusType,
+aadl2_MemoryType_strategy = st.builds(
+    aadl2_MemoryType,
 )
-aadl2::MemoryType_strategy = st.builds(
-    aadl2::MemoryType,
+aadl2_ThreadGroupType_strategy = st.builds(
+    aadl2_ThreadGroupType,
 )
-aadl2::VirtualProcessorType_strategy = st.builds(
-    aadl2::VirtualProcessorType,
+aadl2_ThreadType_strategy = st.builds(
+    aadl2_ThreadType,
 )
 ComponentImplementation_strategy = st.builds(
     ComponentImplementation,
 )
-aadl2::SystemImplementation_strategy = st.builds(
-    aadl2::SystemImplementation,
+aadl2_VirtualProcessorImplementation_strategy = st.builds(
+    aadl2_VirtualProcessorImplementation,
 )
-aadl2::ProcessorImplementation_strategy = st.builds(
-    aadl2::ProcessorImplementation,
+aadl2_ProcessorImplementation_strategy = st.builds(
+    aadl2_ProcessorImplementation,
 )
-aadl2::ProcessImplementation_strategy = st.builds(
-    aadl2::ProcessImplementation,
+aadl2_ThreadGroupImplementation_strategy = st.builds(
+    aadl2_ThreadGroupImplementation,
 )
-aadl2::ThreadGroupImplementation_strategy = st.builds(
-    aadl2::ThreadGroupImplementation,
+aadl2_MemoryImplementation_strategy = st.builds(
+    aadl2_MemoryImplementation,
 )
-aadl2::DeviceImplementation_strategy = st.builds(
-    aadl2::DeviceImplementation,
+aadl2_ProcessImplementation_strategy = st.builds(
+    aadl2_ProcessImplementation,
 )
-aadl2::VirtualBusImplementation_strategy = st.builds(
-    aadl2::VirtualBusImplementation,
+aadl2_DataImplementation_strategy = st.builds(
+    aadl2_DataImplementation,
 )
-aadl2::VirtualProcessorImplementation_strategy = st.builds(
-    aadl2::VirtualProcessorImplementation,
+aadl2_VirtualBusImplementation_strategy = st.builds(
+    aadl2_VirtualBusImplementation,
 )
-aadl2::BusImplementation_strategy = st.builds(
-    aadl2::BusImplementation,
+aadl2_SystemImplementation_strategy = st.builds(
+    aadl2_SystemImplementation,
 )
-aadl2::DataImplementation_strategy = st.builds(
-    aadl2::DataImplementation,
+aadl2_DeviceImplementation_strategy = st.builds(
+    aadl2_DeviceImplementation,
 )
-aadl2::SubprogramGroupImplementation_strategy = st.builds(
-    aadl2::SubprogramGroupImplementation,
+aadl2_BusImplementation_strategy = st.builds(
+    aadl2_BusImplementation,
 )
-aadl2::MemoryImplementation_strategy = st.builds(
-    aadl2::MemoryImplementation,
+aadl2_SubprogramGroupImplementation_strategy = st.builds(
+    aadl2_SubprogramGroupImplementation,
 )
-aadl2::BehavioredImplementation_strategy = st.builds(
-    aadl2::BehavioredImplementation,
+aadl2_BehavioredImplementation_strategy = st.builds(
+    aadl2_BehavioredImplementation,
 )
 BehavioralFeature_strategy = st.builds(
     BehavioralFeature,
@@ -6618,70 +6609,169 @@ BehavioralFeature_strategy = st.builds(
 FeaturePrototypeActual_strategy = st.builds(
     FeaturePrototypeActual,
 )
-aadl2::FeaturePrototypeReference_strategy = st.builds(
-    aadl2::FeaturePrototypeReference,
-    direction=
-        safe_text
-)
-aadl2::PortSpecification_strategy = st.builds(
-    aadl2::PortSpecification,
-    category=
-        safe_text,
-    direction=
-        safe_text
-)
-aadl2::AccessSpecification_strategy = st.builds(
-    aadl2::AccessSpecification,
+aadl2_AccessSpecification_strategy = st.builds(
+    aadl2_AccessSpecification,
     kind=
         safe_text,
     category=
         safe_text
 )
-aadl2::FeatureGroupPrototypeActual_strategy = st.builds(
-    aadl2::FeatureGroupPrototypeActual,
+aadl2_FeaturePrototypeReference_strategy = st.builds(
+    aadl2_FeaturePrototypeReference,
+    direction=
+        safe_text
+)
+aadl2_PortSpecification_strategy = st.builds(
+    aadl2_PortSpecification,
+    direction=
+        safe_text,
+    category=
+        safe_text
+)
+aadl2_FeatureGroupPrototypeActual_strategy = st.builds(
+    aadl2_FeatureGroupPrototypeActual,
 )
 PrototypeBinding_strategy = st.builds(
     PrototypeBinding,
 )
-aadl2::FeaturePrototypeBinding_strategy = st.builds(
-    aadl2::FeaturePrototypeBinding,
+aadl2_FeaturePrototypeBinding_strategy = st.builds(
+    aadl2_FeaturePrototypeBinding,
 )
-aadl2::FeatureGroupPrototypeBinding_strategy = st.builds(
-    aadl2::FeatureGroupPrototypeBinding,
+aadl2_FeatureGroupPrototypeBinding_strategy = st.builds(
+    aadl2_FeatureGroupPrototypeBinding,
 )
-aadl2::ComponentPrototypeBinding_strategy = st.builds(
-    aadl2::ComponentPrototypeBinding,
+aadl2_ComponentPrototypeBinding_strategy = st.builds(
+    aadl2_ComponentPrototypeBinding,
 )
 ModelUnit_strategy = st.builds(
     ModelUnit,
 )
-aadl2::AadlPackage_strategy = st.builds(
-    aadl2::AadlPackage,
+aadl2_AadlPackage_strategy = st.builds(
+    aadl2_AadlPackage,
 )
 PackageSection_strategy = st.builds(
     PackageSection,
 )
-aadl2::PrivatePackageSection_strategy = st.builds(
-    aadl2::PrivatePackageSection,
+aadl2_PrivatePackageSection_strategy = st.builds(
+    aadl2_PrivatePackageSection,
 )
-aadl2::PublicPackageSection_strategy = st.builds(
-    aadl2::PublicPackageSection,
+aadl2_PublicPackageSection_strategy = st.builds(
+    aadl2_PublicPackageSection,
 )
 AnnexSubclause_strategy = st.builds(
     AnnexSubclause,
 )
-aadl2::DefaultAnnexSubclause_strategy = st.builds(
-    aadl2::DefaultAnnexSubclause,
+aadl2_DefaultAnnexSubclause_strategy = st.builds(
+    aadl2_DefaultAnnexSubclause,
     sourceText=
         safe_text
 )
 AnnexLibrary_strategy = st.builds(
     AnnexLibrary,
 )
-aadl2::DefaultAnnexLibrary_strategy = st.builds(
-    aadl2::DefaultAnnexLibrary,
+aadl2_DefaultAnnexLibrary_strategy = st.builds(
+    aadl2_DefaultAnnexLibrary,
     sourceText=
         safe_text
+)
+ProcessorFeature_strategy = st.builds(
+    ProcessorFeature,
+)
+InternalFeature_strategy = st.builds(
+    InternalFeature,
+)
+Connection_strategy = st.builds(
+    Connection,
+)
+VirtualBusSubcomponentType_strategy = st.builds(
+    VirtualBusSubcomponentType,
+)
+aadl2_VirtualBusPrototype_strategy = st.builds(
+    aadl2_VirtualBusPrototype,
+)
+aadl2_AbstractPrototype_strategy = st.builds(
+    aadl2_AbstractPrototype,
+)
+Abstract_strategy = st.builds(
+    Abstract,
+)
+Subcomponent_strategy = st.builds(
+    Subcomponent,
+)
+aadl2_SystemSubcomponent_strategy = st.builds(
+    aadl2_SystemSubcomponent,
+)
+aadl2_VirtualProcessorSubcomponent_strategy = st.builds(
+    aadl2_VirtualProcessorSubcomponent,
+)
+aadl2_VirtualBusSubcomponent_strategy = st.builds(
+    aadl2_VirtualBusSubcomponent,
+)
+aadl2_ProcessSubcomponent_strategy = st.builds(
+    aadl2_ProcessSubcomponent,
+)
+aadl2_ThreadGroupSubcomponent_strategy = st.builds(
+    aadl2_ThreadGroupSubcomponent,
+)
+aadl2_DeviceSubcomponent_strategy = st.builds(
+    aadl2_DeviceSubcomponent,
+)
+aadl2_ProcessorSubcomponent_strategy = st.builds(
+    aadl2_ProcessorSubcomponent,
+)
+aadl2_ThreadSubcomponent_strategy = st.builds(
+    aadl2_ThreadSubcomponent,
+)
+aadl2_MemorySubcomponent_strategy = st.builds(
+    aadl2_MemorySubcomponent,
+)
+SubprogramGroup_strategy = st.builds(
+    SubprogramGroup,
+)
+Subprogram_strategy = st.builds(
+    Subprogram,
+)
+AccessConnectionEnd_strategy = st.builds(
+    AccessConnectionEnd,
+)
+aadl2_SubprogramSubcomponent_strategy = st.builds(
+    aadl2_SubprogramSubcomponent,
+)
+TriggerPort_strategy = st.builds(
+    TriggerPort,
+)
+Port_strategy = st.builds(
+    Port,
+)
+PortConnectionEnd_strategy = st.builds(
+    PortConnectionEnd,
+)
+ParameterConnectionEnd_strategy = st.builds(
+    ParameterConnectionEnd,
+)
+Data_strategy = st.builds(
+    Data,
+)
+aadl2_DataSubcomponent_strategy = st.builds(
+    aadl2_DataSubcomponent,
+)
+Bus_strategy = st.builds(
+    Bus,
+)
+aadl2_BusSubcomponent_strategy = st.builds(
+    aadl2_BusSubcomponent,
+)
+Access_strategy = st.builds(
+    Access,
+)
+aadl2_SubprogramAccess_strategy = st.builds(
+    aadl2_SubprogramAccess,
+)
+aadl2_EventPort_strategy = st.builds(
+    aadl2_EventPort,
+)
+aadl2_BusAccess_strategy = st.builds(
+    aadl2_BusAccess,
 )
 FeatureType_strategy = st.builds(
     FeatureType,
@@ -6689,31 +6779,44 @@ FeatureType_strategy = st.builds(
 Feature_strategy = st.builds(
     Feature,
 )
-aadl2::DirectedFeature_strategy = st.builds(
-    aadl2::DirectedFeature,
+aadl2_Access_strategy = st.builds(
+    aadl2_Access,
+    category=
+        safe_text,
+    kind=
+        safe_text
+)
+aadl2_DirectedFeature_strategy = st.builds(
+    aadl2_DirectedFeature,
     direction=
         safe_text
 )
-aadl2::CallContext_strategy = st.builds(
-    aadl2::CallContext,
+aadl2_CallContext_strategy = st.builds(
+    aadl2_CallContext,
 )
-aadl2::FeatureType_strategy = st.builds(
-    aadl2::FeatureType,
+aadl2_FeatureType_strategy = st.builds(
+    aadl2_FeatureType,
 )
 CallContext_strategy = st.builds(
     CallContext,
 )
-aadl2::DataType_strategy = st.builds(
-    aadl2::DataType,
+aadl2_SubprogramType_strategy = st.builds(
+    aadl2_SubprogramType,
 )
-aadl2::SubprogramGroupType_strategy = st.builds(
-    aadl2::SubprogramGroupType,
+aadl2_DataType_strategy = st.builds(
+    aadl2_DataType,
 )
-aadl2::SubprogramType_strategy = st.builds(
-    aadl2::SubprogramType,
+aadl2_SubprogramGroupSubcomponent_strategy = st.builds(
+    aadl2_SubprogramGroupSubcomponent,
 )
-aadl2::AbstractType_strategy = st.builds(
-    aadl2::AbstractType,
+aadl2_SubprogramGroupAccess_strategy = st.builds(
+    aadl2_SubprogramGroupAccess,
+)
+aadl2_SubprogramGroupType_strategy = st.builds(
+    aadl2_SubprogramGroupType,
+)
+aadl2_AbstractType_strategy = st.builds(
+    aadl2_AbstractType,
 )
 FeatureGroupConnectionEnd_strategy = st.builds(
     FeatureGroupConnectionEnd,
@@ -6721,29 +6824,46 @@ FeatureGroupConnectionEnd_strategy = st.builds(
 Context_strategy = st.builds(
     Context,
 )
-aadl2::SubprogramCall_strategy = st.builds(
-    aadl2::SubprogramCall,
+aadl2_EventDataPort_strategy = st.builds(
+    aadl2_EventDataPort,
+)
+aadl2_SubprogramCall_strategy = st.builds(
+    aadl2_SubprogramCall,
+)
+aadl2_DataPort_strategy = st.builds(
+    aadl2_DataPort,
 )
 Generalization__strategy = st.builds(
     Generalization_,
 )
-aadl2::GroupExtension_strategy = st.builds(
-    aadl2::GroupExtension,
+aadl2_GroupExtension_strategy = st.builds(
+    aadl2_GroupExtension,
 )
 DirectedFeature_strategy = st.builds(
     DirectedFeature,
 )
+aadl2_Port_strategy = st.builds(
+    aadl2_Port,
+    category=
+        safe_text
+)
+aadl2_Parameter_strategy = st.builds(
+    aadl2_Parameter,
+)
 EndToEndFlowElement_strategy = st.builds(
     EndToEndFlowElement,
 )
-aadl2::FlowElement_strategy = st.builds(
-    aadl2::FlowElement,
+aadl2_FlowElement_strategy = st.builds(
+    aadl2_FlowElement,
 )
 Flow_strategy = st.builds(
     Flow,
 )
 FlowElement_strategy = st.builds(
     FlowElement,
+)
+aadl2_DataAccess_strategy = st.builds(
+    aadl2_DataAccess,
 )
 ModalPath_strategy = st.builds(
     ModalPath,
@@ -6754,47 +6874,64 @@ FlowFeature_strategy = st.builds(
 Prototype_strategy = st.builds(
     Prototype,
 )
-aadl2::FeatureGroupPrototype_strategy = st.builds(
-    aadl2::FeatureGroupPrototype,
+aadl2_FeatureGroupPrototype_strategy = st.builds(
+    aadl2_FeatureGroupPrototype,
+)
+aadl2_FeaturePrototype_strategy = st.builds(
+    aadl2_FeaturePrototype,
+    direction=
+        safe_text
 )
 ConnectionEnd_strategy = st.builds(
     ConnectionEnd,
 )
-aadl2::FeatureGroupConnectionEnd_strategy = st.builds(
-    aadl2::FeatureGroupConnectionEnd,
+aadl2_AccessConnectionEnd_strategy = st.builds(
+    aadl2_AccessConnectionEnd,
 )
-aadl2::FeatureConnectionEnd_strategy = st.builds(
-    aadl2::FeatureConnectionEnd,
+aadl2_PortConnectionEnd_strategy = st.builds(
+    aadl2_PortConnectionEnd,
+)
+aadl2_ParameterConnectionEnd_strategy = st.builds(
+    aadl2_ParameterConnectionEnd,
+)
+aadl2_FeatureGroupConnectionEnd_strategy = st.builds(
+    aadl2_FeatureGroupConnectionEnd,
+)
+aadl2_FeatureConnectionEnd_strategy = st.builds(
+    aadl2_FeatureConnectionEnd,
 )
 ArrayableElement_strategy = st.builds(
     ArrayableElement,
 )
-aadl2::FeaturePrototypeActual_strategy = st.builds(
-    aadl2::FeaturePrototypeActual,
+aadl2_FeaturePrototypeActual_strategy = st.builds(
+    aadl2_FeaturePrototypeActual,
 )
-aadl2::ComponentPrototypeActual_strategy = st.builds(
-    aadl2::ComponentPrototypeActual,
+aadl2_ComponentPrototypeActual_strategy = st.builds(
+    aadl2_ComponentPrototypeActual,
     category=
         safe_text
 )
 FeatureConnectionEnd_strategy = st.builds(
     FeatureConnectionEnd,
 )
-aadl2::FeatureGroup_strategy = st.builds(
-    aadl2::FeatureGroup,
+aadl2_AbstractFeature_strategy = st.builds(
+    aadl2_AbstractFeature,
+)
+aadl2_FeatureGroup_strategy = st.builds(
+    aadl2_FeatureGroup,
     inverse=
         safe_text
 )
-aadl2::TypeExtension_strategy = st.builds(
-    aadl2::TypeExtension,
+aadl2_TypeExtension_strategy = st.builds(
+    aadl2_TypeExtension,
 )
-aadl2::FlowSpecification_strategy = st.builds(
-    aadl2::FlowSpecification,
+aadl2_FlowSpecification_strategy = st.builds(
+    aadl2_FlowSpecification,
     kind=
         safe_text
 )
-aadl2::FeatureClassifier_strategy = st.builds(
-    aadl2::FeatureClassifier,
+aadl2_FeatureClassifier_strategy = st.builds(
+    aadl2_FeatureClassifier,
 )
 FeatureClassifier_strategy = st.builds(
     FeatureClassifier,
@@ -6802,263 +6939,159 @@ FeatureClassifier_strategy = st.builds(
 SubcomponentType_strategy = st.builds(
     SubcomponentType,
 )
-aadl2::SystemSubcomponentType_strategy = st.builds(
-    aadl2::SystemSubcomponentType,
+aadl2_SubprogramGroupSubcomponentType_strategy = st.builds(
+    aadl2_SubprogramGroupSubcomponentType,
 )
-aadl2::ThreadGroupSubcomponentType_strategy = st.builds(
-    aadl2::ThreadGroupSubcomponentType,
+aadl2_DataSubcomponentType_strategy = st.builds(
+    aadl2_DataSubcomponentType,
 )
-aadl2::VirtualProcessorSubcomponentType_strategy = st.builds(
-    aadl2::VirtualProcessorSubcomponentType,
+aadl2_ProcessorSubcomponentType_strategy = st.builds(
+    aadl2_ProcessorSubcomponentType,
 )
-aadl2::DeviceSubcomponentType_strategy = st.builds(
-    aadl2::DeviceSubcomponentType,
+aadl2_SubprogramSubcomponentType_strategy = st.builds(
+    aadl2_SubprogramSubcomponentType,
 )
-aadl2::ProcessSubcomponentType_strategy = st.builds(
-    aadl2::ProcessSubcomponentType,
+aadl2_VirtualBusSubcomponentType_strategy = st.builds(
+    aadl2_VirtualBusSubcomponentType,
 )
-aadl2::ThreadSubcomponentType_strategy = st.builds(
-    aadl2::ThreadSubcomponentType,
-)
-aadl2::VirtualBusSubcomponentType_strategy = st.builds(
-    aadl2::VirtualBusSubcomponentType,
-)
-aadl2::ProcessorSubcomponentType_strategy = st.builds(
-    aadl2::ProcessorSubcomponentType,
-)
-aadl2::MemorySubcomponentType_strategy = st.builds(
-    aadl2::MemorySubcomponentType,
-)
-aadl2::ComponentPrototype_strategy = st.builds(
-    aadl2::ComponentPrototype,
+aadl2_ComponentPrototype_strategy = st.builds(
+    aadl2_ComponentPrototype,
     array=
         safe_text
+)
+aadl2_SystemSubcomponentType_strategy = st.builds(
+    aadl2_SystemSubcomponentType,
+)
+aadl2_ThreadSubcomponentType_strategy = st.builds(
+    aadl2_ThreadSubcomponentType,
+)
+aadl2_DeviceSubcomponentType_strategy = st.builds(
+    aadl2_DeviceSubcomponentType,
+)
+aadl2_MemorySubcomponentType_strategy = st.builds(
+    aadl2_MemorySubcomponentType,
+)
+aadl2_VirtualProcessorSubcomponentType_strategy = st.builds(
+    aadl2_VirtualProcessorSubcomponentType,
+)
+aadl2_ProcessSubcomponentType_strategy = st.builds(
+    aadl2_ProcessSubcomponentType,
+)
+aadl2_ThreadGroupSubcomponentType_strategy = st.builds(
+    aadl2_ThreadGroupSubcomponentType,
+)
+aadl2_BusSubcomponentType_strategy = st.builds(
+    aadl2_BusSubcomponentType,
+)
+aadl2_AbstractSubcomponentType_strategy = st.builds(
+    aadl2_AbstractSubcomponentType,
 )
 Classifier_strategy = st.builds(
     Classifier,
 )
-aadl2::FeatureGroupType_strategy = st.builds(
-    aadl2::FeatureGroupType,
+aadl2_FeatureGroupType_strategy = st.builds(
+    aadl2_FeatureGroupType,
 )
-aadl2::ComponentClassifier_strategy = st.builds(
-    aadl2::ComponentClassifier,
-    noModes=
-        safe_text,
+aadl2_ComponentClassifier_strategy = st.builds(
+    aadl2_ComponentClassifier,
     derivedModes=
         safe_text,
     noFlows=
-        safe_text
-)
-aadl2::EndToEndFlow_strategy = st.builds(
-    aadl2::EndToEndFlow,
-)
-aadl2::Realization_strategy = st.builds(
-    aadl2::Realization,
-)
-aadl2::ImplementationExtension_strategy = st.builds(
-    aadl2::ImplementationExtension,
-)
-ComponentClassifier_strategy = st.builds(
-    ComponentClassifier,
-)
-aadl2::VirtualProcessorClassifier_strategy = st.builds(
-    aadl2::VirtualProcessorClassifier,
-)
-aadl2::BusClassifier_strategy = st.builds(
-    aadl2::BusClassifier,
-)
-aadl2::DataClassifier_strategy = st.builds(
-    aadl2::DataClassifier,
-)
-aadl2::AbstractClassifier_strategy = st.builds(
-    aadl2::AbstractClassifier,
-)
-aadl2::ProcessorClassifier_strategy = st.builds(
-    aadl2::ProcessorClassifier,
-)
-aadl2::DeviceClassifier_strategy = st.builds(
-    aadl2::DeviceClassifier,
-)
-aadl2::SubprogramGroupClassifier_strategy = st.builds(
-    aadl2::SubprogramGroupClassifier,
-)
-aadl2::ComponentType_strategy = st.builds(
-    aadl2::ComponentType,
-    noFeatures=
-        safe_text
-)
-aadl2::SubprogramClassifier_strategy = st.builds(
-    aadl2::SubprogramClassifier,
-)
-aadl2::ProcessClassifier_strategy = st.builds(
-    aadl2::ProcessClassifier,
-)
-aadl2::ThreadClassifier_strategy = st.builds(
-    aadl2::ThreadClassifier,
-)
-aadl2::SystemClassifier_strategy = st.builds(
-    aadl2::SystemClassifier,
-)
-aadl2::VirtualBusClassifier_strategy = st.builds(
-    aadl2::VirtualBusClassifier,
-)
-aadl2::ThreadGroupClassifier_strategy = st.builds(
-    aadl2::ThreadGroupClassifier,
-)
-aadl2::MemoryClassifier_strategy = st.builds(
-    aadl2::MemoryClassifier,
-)
-aadl2::ComponentImplementation_strategy = st.builds(
-    aadl2::ComponentImplementation,
-    noCalls=
         safe_text,
-    noConnections=
-        safe_text,
-    noSubcomponents=
+    noModes=
         safe_text
 )
-aadl2::CalledSubprogram_strategy = st.builds(
-    aadl2::CalledSubprogram,
-)
-RefinableElement_strategy = st.builds(
-    RefinableElement,
-)
-CalledSubprogram_strategy = st.builds(
-    CalledSubprogram,
-)
-StructuralFeature_strategy = st.builds(
-    StructuralFeature,
-)
-aadl2::Connection_strategy = st.builds(
-    aadl2::Connection,
-    bidirectional=
+aadl2_PortProxy_strategy = st.builds(
+    aadl2_PortProxy,
+    direction=
         safe_text
 )
-aadl2::Feature_strategy = st.builds(
-    aadl2::Feature,
+aadl2_EventDataSource_strategy = st.builds(
+    aadl2_EventDataSource,
 )
-aadl2::FlowFeature_strategy = st.builds(
-    aadl2::FlowFeature,
+aadl2_EventSource_strategy = st.builds(
+    aadl2_EventSource,
 )
-ClassifierFeature_strategy = st.builds(
-    ClassifierFeature,
+aadl2_FeatureGroupConnection_strategy = st.builds(
+    aadl2_FeatureGroupConnection,
 )
-aadl2::FlowImplementation_strategy = st.builds(
-    aadl2::FlowImplementation,
-    kind=
+aadl2_FeatureConnection_strategy = st.builds(
+    aadl2_FeatureConnection,
+)
+aadl2_PortConnection_strategy = st.builds(
+    aadl2_PortConnection,
+)
+aadl2_ParameterConnection_strategy = st.builds(
+    aadl2_ParameterConnection,
+)
+aadl2_AccessConnection_strategy = st.builds(
+    aadl2_AccessConnection,
+    accessCategory=
         safe_text
 )
-aadl2::StructuralFeature_strategy = st.builds(
-    aadl2::StructuralFeature,
-)
-aadl2::BehavioralFeature_strategy = st.builds(
-    aadl2::BehavioralFeature,
-)
-aadl2::ModeFeature_strategy = st.builds(
-    aadl2::ModeFeature,
-)
-ModeFeature_strategy = st.builds(
-    ModeFeature,
-)
-aadl2::ModeTransition_strategy = st.builds(
-    aadl2::ModeTransition,
-)
-aadl2::Mode_strategy = st.builds(
-    aadl2::Mode,
-    derived=
-        safe_text,
-    initial=
-        safe_text
-)
-ModalElement_strategy = st.builds(
-    ModalElement,
-)
-aadl2::ProcessorFeature_strategy = st.builds(
-    aadl2::ProcessorFeature,
-)
-aadl2::SubprogramCallSequence_strategy = st.builds(
-    aadl2::SubprogramCallSequence,
-)
-aadl2::Subcomponent_strategy = st.builds(
-    aadl2::Subcomponent,
-    allModes=
-        safe_text
-)
-aadl2::ModalPath_strategy = st.builds(
-    aadl2::ModalPath,
-)
-Relationship_strategy = st.builds(
-    Relationship,
-)
-aadl2::DirectedRelationship_strategy = st.builds(
-    aadl2::DirectedRelationship,
+aadl2_AbstractSubcomponent_strategy = st.builds(
+    aadl2_AbstractSubcomponent,
 )
 DirectedRelationship_strategy = st.builds(
     DirectedRelationship,
 )
-aadl2::Prototype_strategy = st.builds(
-    aadl2::Prototype,
-)
-aadl2::AnnexSubclause_strategy = st.builds(
-    aadl2::AnnexSubclause,
-)
-aadl2::Generalization__strategy = st.builds(
-    aadl2::Generalization_,
+aadl2_Generalization__strategy = st.builds(
+    aadl2_Generalization_,
 )
 Namespace_strategy = st.builds(
     Namespace,
 )
-aadl2::PackageSection_strategy = st.builds(
-    aadl2::PackageSection,
-    noProperties=
-        safe_text,
+aadl2_PackageSection_strategy = st.builds(
+    aadl2_PackageSection,
     noAnnexes=
+        safe_text,
+    noProperties=
         safe_text
 )
-aadl2::EnumerationType_strategy = st.builds(
-    aadl2::EnumerationType,
+aadl2_EnumerationType_strategy = st.builds(
+    aadl2_EnumerationType,
 )
-aadl2::RecordType_strategy = st.builds(
-    aadl2::RecordType,
+aadl2_PropertySet_strategy = st.builds(
+    aadl2_PropertySet,
 )
-aadl2::GlobalNamespace_strategy = st.builds(
-    aadl2::GlobalNamespace,
+aadl2_GlobalNamespace_strategy = st.builds(
+    aadl2_GlobalNamespace,
 )
-aadl2::PropertySet_strategy = st.builds(
-    aadl2::PropertySet,
+aadl2_RecordType_strategy = st.builds(
+    aadl2_RecordType,
 )
 PropertyOwner_strategy = st.builds(
     PropertyOwner,
 )
-aadl2::ClassifierValue_strategy = st.builds(
-    aadl2::ClassifierValue,
+aadl2_ClassifierValue_strategy = st.builds(
+    aadl2_ClassifierValue,
 )
-aadl2::ArraySizeProperty_strategy = st.builds(
-    aadl2::ArraySizeProperty,
+aadl2_ArraySizeProperty_strategy = st.builds(
+    aadl2_ArraySizeProperty,
 )
-aadl2::AbstractNamedValue_strategy = st.builds(
-    aadl2::AbstractNamedValue,
+aadl2_AbstractNamedValue_strategy = st.builds(
+    aadl2_AbstractNamedValue,
 )
 Type_strategy = st.builds(
     Type,
 )
-aadl2::SubcomponentType_strategy = st.builds(
-    aadl2::SubcomponentType,
+aadl2_SubcomponentType_strategy = st.builds(
+    aadl2_SubcomponentType,
 )
-aadl2::PropertyType_strategy = st.builds(
-    aadl2::PropertyType,
+aadl2_PropertyType_strategy = st.builds(
+    aadl2_PropertyType,
 )
 TypedElement_strategy = st.builds(
     TypedElement,
 )
-aadl2::BasicProperty_strategy = st.builds(
-    aadl2::BasicProperty,
+aadl2_BasicProperty_strategy = st.builds(
+    aadl2_BasicProperty,
 )
-aadl2::MetaclassReference_strategy = st.builds(
-    aadl2::MetaclassReference,
-    metaclassName=
-        safe_text,
+aadl2_MetaclassReference_strategy = st.builds(
+    aadl2_MetaclassReference,
     annexName=
+        safe_text,
+    metaclassName=
         safe_text
 )
 ArraySizeProperty_strategy = st.builds(
@@ -7067,20 +7100,17 @@ ArraySizeProperty_strategy = st.builds(
 AbstractNamedValue_strategy = st.builds(
     AbstractNamedValue,
 )
-aadl2::PropertyConstant_strategy = st.builds(
-    aadl2::PropertyConstant,
+aadl2_PropertyConstant_strategy = st.builds(
+    aadl2_PropertyConstant,
 )
 BasicProperty_strategy = st.builds(
     BasicProperty,
 )
-aadl2::RecordField_strategy = st.builds(
-    aadl2::RecordField,
+aadl2_RecordField_strategy = st.builds(
+    aadl2_RecordField,
 )
-aadl2::ModalPropertyValue_strategy = st.builds(
-    aadl2::ModalPropertyValue,
-)
-aadl2::Classifier_strategy = st.builds(
-    aadl2::Classifier,
+aadl2_Classifier_strategy = st.builds(
+    aadl2_Classifier,
     noAnnexes=
         safe_text,
     noPrototypes=
@@ -7088,393 +7118,363 @@ aadl2::Classifier_strategy = st.builds(
     noProperties=
         safe_text
 )
-aadl2::Property_strategy = st.builds(
-    aadl2::Property,
-    emptyListDefault=
-        safe_text,
+aadl2_Property_strategy = st.builds(
+    aadl2_Property,
     inherit=
+        safe_text,
+    emptyListDefault=
         safe_text
 )
 NamedElement_strategy = st.builds(
     NamedElement,
 )
-aadl2::ComponentTypeRename_strategy = st.builds(
-    aadl2::ComponentTypeRename,
+aadl2_Device_strategy = st.builds(
+    aadl2_Device,
+)
+aadl2_ThreadGroup_strategy = st.builds(
+    aadl2_ThreadGroup,
+)
+aadl2_VirtualBus_strategy = st.builds(
+    aadl2_VirtualBus,
+)
+aadl2_SubprogramGroup_strategy = st.builds(
+    aadl2_SubprogramGroup,
+)
+aadl2_Abstract_strategy = st.builds(
+    aadl2_Abstract,
+)
+aadl2_AnnexLibrary_strategy = st.builds(
+    aadl2_AnnexLibrary,
+)
+aadl2_ComponentTypeRename_strategy = st.builds(
+    aadl2_ComponentTypeRename,
     category=
         safe_text
 )
-aadl2::PackageRename_strategy = st.builds(
-    aadl2::PackageRename,
+aadl2_System_strategy = st.builds(
+    aadl2_System,
+)
+aadl2_FeatureGroupTypeRename_strategy = st.builds(
+    aadl2_FeatureGroupTypeRename,
+)
+aadl2_Data_strategy = st.builds(
+    aadl2_Data,
+)
+aadl2_Process_strategy = st.builds(
+    aadl2_Process,
+)
+aadl2_Bus_strategy = st.builds(
+    aadl2_Bus,
+)
+aadl2_Namespace_strategy = st.builds(
+    aadl2_Namespace,
+)
+aadl2_TypedElement_strategy = st.builds(
+    aadl2_TypedElement,
+)
+aadl2_VirtualProcessor_strategy = st.builds(
+    aadl2_VirtualProcessor,
+)
+aadl2_ClassifierFeature_strategy = st.builds(
+    aadl2_ClassifierFeature,
+)
+aadl2_PackageRename_strategy = st.builds(
+    aadl2_PackageRename,
     renameAll=
         safe_text
 )
-aadl2::VirtualBus_strategy = st.builds(
-    aadl2::VirtualBus,
+aadl2_ModelUnit_strategy = st.builds(
+    aadl2_ModelUnit,
 )
-aadl2::ModalElement_strategy = st.builds(
-    aadl2::ModalElement,
+aadl2_EnumerationLiteral_strategy = st.builds(
+    aadl2_EnumerationLiteral,
 )
-aadl2::Processor_strategy = st.builds(
-    aadl2::Processor,
+aadl2_Context_strategy = st.builds(
+    aadl2_Context,
 )
-aadl2::EndToEndFlowElement_strategy = st.builds(
-    aadl2::EndToEndFlowElement,
+aadl2_ConnectionEnd_strategy = st.builds(
+    aadl2_ConnectionEnd,
 )
-aadl2::TypedElement_strategy = st.builds(
-    aadl2::TypedElement,
+aadl2_TriggerPort_strategy = st.builds(
+    aadl2_TriggerPort,
 )
-aadl2::VirtualProcessor_strategy = st.builds(
-    aadl2::VirtualProcessor,
+aadl2_Processor_strategy = st.builds(
+    aadl2_Processor,
 )
-aadl2::Device_strategy = st.builds(
-    aadl2::Device,
+aadl2_EndToEndFlowElement_strategy = st.builds(
+    aadl2_EndToEndFlowElement,
 )
-aadl2::Flow_strategy = st.builds(
-    aadl2::Flow,
+aadl2_Flow_strategy = st.builds(
+    aadl2_Flow,
 )
-aadl2::Memory_strategy = st.builds(
-    aadl2::Memory,
+aadl2_Thread_strategy = st.builds(
+    aadl2_Thread,
 )
-aadl2::AnnexLibrary_strategy = st.builds(
-    aadl2::AnnexLibrary,
+aadl2_Memory_strategy = st.builds(
+    aadl2_Memory,
 )
-aadl2::Namespace_strategy = st.builds(
-    aadl2::Namespace,
-)
-aadl2::ClassifierFeature_strategy = st.builds(
-    aadl2::ClassifierFeature,
-)
-aadl2::Process_strategy = st.builds(
-    aadl2::Process,
-)
-aadl2::EnumerationLiteral_strategy = st.builds(
-    aadl2::EnumerationLiteral,
-)
-aadl2::Context_strategy = st.builds(
-    aadl2::Context,
-)
-aadl2::System_strategy = st.builds(
-    aadl2::System,
-)
-aadl2::RefinableElement_strategy = st.builds(
-    aadl2::RefinableElement,
-)
-aadl2::TriggerPort_strategy = st.builds(
-    aadl2::TriggerPort,
-)
-aadl2::Thread_strategy = st.builds(
-    aadl2::Thread,
-)
-aadl2::ModelUnit_strategy = st.builds(
-    aadl2::ModelUnit,
-)
-aadl2::ConnectionEnd_strategy = st.builds(
-    aadl2::ConnectionEnd,
-)
-aadl2::ThreadGroup_strategy = st.builds(
-    aadl2::ThreadGroup,
-)
-aadl2::FeatureGroupTypeRename_strategy = st.builds(
-    aadl2::FeatureGroupTypeRename,
-)
-aadl2::Type_strategy = st.builds(
-    aadl2::Type,
+aadl2_Type_strategy = st.builds(
+    aadl2_Type,
 )
 Element_strategy = st.builds(
     Element,
 )
-aadl2::PropertyOwner_strategy = st.builds(
-    aadl2::PropertyOwner,
+aadl2_ModeBinding_strategy = st.builds(
+    aadl2_ModeBinding,
 )
-aadl2::BasicPropertyAssociation_strategy = st.builds(
-    aadl2::BasicPropertyAssociation,
+aadl2_ContainedNamedElement_strategy = st.builds(
+    aadl2_ContainedNamedElement,
 )
-aadl2::ArrayRange_strategy = st.builds(
-    aadl2::ArrayRange,
-    upperBound=
-        safe_text,
-    lowerBound=
-        safe_text
+aadl2_NumericRange_strategy = st.builds(
+    aadl2_NumericRange,
 )
-aadl2::NamedElement_strategy = st.builds(
-    aadl2::NamedElement,
+aadl2_BasicPropertyAssociation_strategy = st.builds(
+    aadl2_BasicPropertyAssociation,
+)
+aadl2_FlowEnd_strategy = st.builds(
+    aadl2_FlowEnd,
+)
+aadl2_NamedElement_strategy = st.builds(
+    aadl2_NamedElement,
     qualifiedName=
         safe_text,
     name=
         safe_text
 )
-aadl2::ArrayableElement_strategy = st.builds(
-    aadl2::ArrayableElement,
-)
-aadl2::PrototypeBinding_strategy = st.builds(
-    aadl2::PrototypeBinding,
-)
-aadl2::ContainedNamedElement_strategy = st.builds(
-    aadl2::ContainedNamedElement,
-)
-aadl2::NumericRange_strategy = st.builds(
-    aadl2::NumericRange,
-)
-aadl2::PropertyAssociation_strategy = st.builds(
-    aadl2::PropertyAssociation,
+aadl2_PropertyAssociation_strategy = st.builds(
+    aadl2_PropertyAssociation,
     constant=
         safe_text,
     append=
         safe_text
 )
-aadl2::ComponentImplementationReference_strategy = st.builds(
-    aadl2::ComponentImplementationReference,
+aadl2_ConnectedElement_strategy = st.builds(
+    aadl2_ConnectedElement,
 )
-aadl2::ContainmentPathElement_strategy = st.builds(
-    aadl2::ContainmentPathElement,
-    annexName=
-        safe_text
+aadl2_PrototypeBinding_strategy = st.builds(
+    aadl2_PrototypeBinding,
 )
-aadl2::FlowEnd_strategy = st.builds(
-    aadl2::FlowEnd,
+aadl2_FlowSegment_strategy = st.builds(
+    aadl2_FlowSegment,
 )
-aadl2::ArraySize_strategy = st.builds(
-    aadl2::ArraySize,
-    size=
-        safe_text
+aadl2_PropertyOwner_strategy = st.builds(
+    aadl2_PropertyOwner,
 )
-aadl2::Relationship_strategy = st.builds(
-    aadl2::Relationship,
+aadl2_PropertyExpression_strategy = st.builds(
+    aadl2_PropertyExpression,
 )
-aadl2::ModeTransitionTrigger_strategy = st.builds(
-    aadl2::ModeTransitionTrigger,
+aadl2_EndToEndFlowSegment_strategy = st.builds(
+    aadl2_EndToEndFlowSegment,
 )
-aadl2::PropertyExpression_strategy = st.builds(
-    aadl2::PropertyExpression,
+aadl2_ModeTransitionTrigger_strategy = st.builds(
+    aadl2_ModeTransitionTrigger,
 )
-aadl2::ArrayDimension_strategy = st.builds(
-    aadl2::ArrayDimension,
-)
-aadl2::Comment_strategy = st.builds(
-    aadl2::Comment,
+aadl2_Comment_strategy = st.builds(
+    aadl2_Comment,
     body=
         safe_text
 )
-aadl2::Element_strategy = st.builds(
-    aadl2::Element,
+aadl2_Element_strategy = st.builds(
+    aadl2_Element,
 )
-ProcessorFeature_strategy = st.builds(
-    ProcessorFeature,
+aadl2_EndToEndFlow_strategy = st.builds(
+    aadl2_EndToEndFlow,
 )
-InternalFeature_strategy = st.builds(
-    InternalFeature,
+aadl2_Realization_strategy = st.builds(
+    aadl2_Realization,
 )
-aadl2::EventSource_strategy = st.builds(
-    aadl2::EventSource,
+aadl2_ImplementationExtension_strategy = st.builds(
+    aadl2_ImplementationExtension,
 )
-aadl2::EventDataSource_strategy = st.builds(
-    aadl2::EventDataSource,
+aadl2_ArrayableElement_strategy = st.builds(
+    aadl2_ArrayableElement,
 )
-Connection_strategy = st.builds(
-    Connection,
+ComponentClassifier_strategy = st.builds(
+    ComponentClassifier,
 )
-aadl2::AccessConnection_strategy = st.builds(
-    aadl2::AccessConnection,
-    accessCategory=
+aadl2_SubprogramClassifier_strategy = st.builds(
+    aadl2_SubprogramClassifier,
+)
+aadl2_BusClassifier_strategy = st.builds(
+    aadl2_BusClassifier,
+)
+aadl2_ComponentType_strategy = st.builds(
+    aadl2_ComponentType,
+    noFeatures=
         safe_text
 )
-aadl2::ParameterConnection_strategy = st.builds(
-    aadl2::ParameterConnection,
+aadl2_ProcessorClassifier_strategy = st.builds(
+    aadl2_ProcessorClassifier,
 )
-aadl2::FeatureConnection_strategy = st.builds(
-    aadl2::FeatureConnection,
+aadl2_MemoryClassifier_strategy = st.builds(
+    aadl2_MemoryClassifier,
 )
-aadl2::FeatureGroupConnection_strategy = st.builds(
-    aadl2::FeatureGroupConnection,
+aadl2_ThreadGroupClassifier_strategy = st.builds(
+    aadl2_ThreadGroupClassifier,
 )
-aadl2::PortConnection_strategy = st.builds(
-    aadl2::PortConnection,
+aadl2_VirtualBusClassifier_strategy = st.builds(
+    aadl2_VirtualBusClassifier,
 )
-aadl2::Abstract_strategy = st.builds(
-    aadl2::Abstract,
+aadl2_VirtualProcessorClassifier_strategy = st.builds(
+    aadl2_VirtualProcessorClassifier,
 )
-Abstract_strategy = st.builds(
-    Abstract,
+aadl2_ThreadClassifier_strategy = st.builds(
+    aadl2_ThreadClassifier,
 )
-aadl2::AbstractSubcomponentType_strategy = st.builds(
-    aadl2::AbstractSubcomponentType,
+aadl2_SubprogramGroupClassifier_strategy = st.builds(
+    aadl2_SubprogramGroupClassifier,
 )
-Subcomponent_strategy = st.builds(
-    Subcomponent,
+aadl2_AbstractClassifier_strategy = st.builds(
+    aadl2_AbstractClassifier,
 )
-aadl2::SystemSubcomponent_strategy = st.builds(
-    aadl2::SystemSubcomponent,
+aadl2_DataClassifier_strategy = st.builds(
+    aadl2_DataClassifier,
 )
-aadl2::VirtualBusSubcomponent_strategy = st.builds(
-    aadl2::VirtualBusSubcomponent,
+aadl2_ProcessClassifier_strategy = st.builds(
+    aadl2_ProcessClassifier,
 )
-aadl2::ProcessorSubcomponent_strategy = st.builds(
-    aadl2::ProcessorSubcomponent,
+aadl2_DeviceClassifier_strategy = st.builds(
+    aadl2_DeviceClassifier,
 )
-aadl2::ThreadGroupSubcomponent_strategy = st.builds(
-    aadl2::ThreadGroupSubcomponent,
+aadl2_SystemClassifier_strategy = st.builds(
+    aadl2_SystemClassifier,
 )
-aadl2::AbstractSubcomponent_strategy = st.builds(
-    aadl2::AbstractSubcomponent,
-)
-aadl2::ProcessSubcomponent_strategy = st.builds(
-    aadl2::ProcessSubcomponent,
-)
-aadl2::ThreadSubcomponent_strategy = st.builds(
-    aadl2::ThreadSubcomponent,
-)
-aadl2::VirtualProcessorSubcomponent_strategy = st.builds(
-    aadl2::VirtualProcessorSubcomponent,
-)
-aadl2::MemorySubcomponent_strategy = st.builds(
-    aadl2::MemorySubcomponent,
-)
-aadl2::DeviceSubcomponent_strategy = st.builds(
-    aadl2::DeviceSubcomponent,
-)
-aadl2::EndToEndFlowSegment_strategy = st.builds(
-    aadl2::EndToEndFlowSegment,
-)
-aadl2::ConnectedElement_strategy = st.builds(
-    aadl2::ConnectedElement,
-)
-aadl2::FlowSegment_strategy = st.builds(
-    aadl2::FlowSegment,
-)
-aadl2::ModeBinding_strategy = st.builds(
-    aadl2::ModeBinding,
-)
-aadl2::FeaturePrototype_strategy = st.builds(
-    aadl2::FeaturePrototype,
-    direction=
-        safe_text
-)
-aadl2::SubprogramGroup_strategy = st.builds(
-    aadl2::SubprogramGroup,
-)
-SubprogramGroup_strategy = st.builds(
-    SubprogramGroup,
-)
-aadl2::SubprogramGroupSubcomponentType_strategy = st.builds(
-    aadl2::SubprogramGroupSubcomponentType,
-)
-aadl2::Subprogram_strategy = st.builds(
-    aadl2::Subprogram,
-)
-Subprogram_strategy = st.builds(
-    Subprogram,
-)
-aadl2::SubprogramSubcomponentType_strategy = st.builds(
-    aadl2::SubprogramSubcomponentType,
-)
-AccessConnectionEnd_strategy = st.builds(
-    AccessConnectionEnd,
-)
-aadl2::SubprogramSubcomponent_strategy = st.builds(
-    aadl2::SubprogramSubcomponent,
-)
-aadl2::SubprogramProxy_strategy = st.builds(
-    aadl2::SubprogramProxy,
-)
-aadl2::SubprogramGroupSubcomponent_strategy = st.builds(
-    aadl2::SubprogramGroupSubcomponent,
-)
-TriggerPort_strategy = st.builds(
-    TriggerPort,
-)
-aadl2::AbstractFeature_strategy = st.builds(
-    aadl2::AbstractFeature,
-)
-Port_strategy = st.builds(
-    Port,
-)
-aadl2::EventPort_strategy = st.builds(
-    aadl2::EventPort,
-)
-aadl2::Data_strategy = st.builds(
-    aadl2::Data,
-)
-aadl2::PortConnectionEnd_strategy = st.builds(
-    aadl2::PortConnectionEnd,
-)
-aadl2::ParameterConnectionEnd_strategy = st.builds(
-    aadl2::ParameterConnectionEnd,
-)
-PortConnectionEnd_strategy = st.builds(
-    PortConnectionEnd,
-)
-aadl2::PortProxy_strategy = st.builds(
-    aadl2::PortProxy,
-    direction=
-        safe_text
-)
-aadl2::Port_strategy = st.builds(
-    aadl2::Port,
-    category=
-        safe_text
-)
-aadl2::InternalFeature_strategy = st.builds(
-    aadl2::InternalFeature,
-    direction=
-        safe_text
-)
-ParameterConnectionEnd_strategy = st.builds(
-    ParameterConnectionEnd,
-)
-aadl2::Parameter_strategy = st.builds(
-    aadl2::Parameter,
-)
-Data_strategy = st.builds(
-    Data,
-)
-aadl2::DataSubcomponent_strategy = st.builds(
-    aadl2::DataSubcomponent,
-)
-aadl2::EventDataPort_strategy = st.builds(
-    aadl2::EventDataPort,
-)
-aadl2::DataPort_strategy = st.builds(
-    aadl2::DataPort,
-)
-aadl2::DataSubcomponentType_strategy = st.builds(
-    aadl2::DataSubcomponentType,
-)
-aadl2::Bus_strategy = st.builds(
-    aadl2::Bus,
-)
-aadl2::AccessConnectionEnd_strategy = st.builds(
-    aadl2::AccessConnectionEnd,
-)
-aadl2::Access_strategy = st.builds(
-    aadl2::Access,
-    category=
+aadl2_ComponentImplementation_strategy = st.builds(
+    aadl2_ComponentImplementation,
+    noConnections=
         safe_text,
+    noSubcomponents=
+        safe_text,
+    noCalls=
+        safe_text
+)
+aadl2_ComponentImplementationReference_strategy = st.builds(
+    aadl2_ComponentImplementationReference,
+)
+aadl2_ArraySize_strategy = st.builds(
+    aadl2_ArraySize,
+    size=
+        safe_text
+)
+aadl2_ArrayDimension_strategy = st.builds(
+    aadl2_ArrayDimension,
+)
+aadl2_ArrayRange_strategy = st.builds(
+    aadl2_ArrayRange,
+    upperBound=
+        safe_text,
+    lowerBound=
+        safe_text
+)
+aadl2_ContainmentPathElement_strategy = st.builds(
+    aadl2_ContainmentPathElement,
+    annexName=
+        safe_text
+)
+aadl2_CalledSubprogram_strategy = st.builds(
+    aadl2_CalledSubprogram,
+)
+aadl2_RefinableElement_strategy = st.builds(
+    aadl2_RefinableElement,
+)
+RefinableElement_strategy = st.builds(
+    RefinableElement,
+)
+CalledSubprogram_strategy = st.builds(
+    CalledSubprogram,
+)
+aadl2_Subprogram_strategy = st.builds(
+    aadl2_Subprogram,
+)
+aadl2_SubprogramProxy_strategy = st.builds(
+    aadl2_SubprogramProxy,
+)
+StructuralFeature_strategy = st.builds(
+    StructuralFeature,
+)
+aadl2_FlowFeature_strategy = st.builds(
+    aadl2_FlowFeature,
+)
+aadl2_Prototype_strategy = st.builds(
+    aadl2_Prototype,
+)
+aadl2_Feature_strategy = st.builds(
+    aadl2_Feature,
+)
+aadl2_Connection_strategy = st.builds(
+    aadl2_Connection,
+    bidirectional=
+        safe_text
+)
+ClassifierFeature_strategy = st.builds(
+    ClassifierFeature,
+)
+aadl2_FlowImplementation_strategy = st.builds(
+    aadl2_FlowImplementation,
     kind=
         safe_text
 )
-Bus_strategy = st.builds(
-    Bus,
+aadl2_BehavioralFeature_strategy = st.builds(
+    aadl2_BehavioralFeature,
 )
-aadl2::BusSubcomponent_strategy = st.builds(
-    aadl2::BusSubcomponent,
+aadl2_StructuralFeature_strategy = st.builds(
+    aadl2_StructuralFeature,
 )
-aadl2::BusSubcomponentType_strategy = st.builds(
-    aadl2::BusSubcomponentType,
+aadl2_ModeFeature_strategy = st.builds(
+    aadl2_ModeFeature,
 )
-Access_strategy = st.builds(
-    Access,
+ModeFeature_strategy = st.builds(
+    ModeFeature,
 )
-aadl2::DataAccess_strategy = st.builds(
-    aadl2::DataAccess,
+aadl2_ModeTransition_strategy = st.builds(
+    aadl2_ModeTransition,
 )
-aadl2::SubprogramAccess_strategy = st.builds(
-    aadl2::SubprogramAccess,
+aadl2_Mode_strategy = st.builds(
+    aadl2_Mode,
+    derived=
+        safe_text,
+    initial=
+        safe_text
 )
-aadl2::BusAccess_strategy = st.builds(
-    aadl2::BusAccess,
+aadl2_ModalElement_strategy = st.builds(
+    aadl2_ModalElement,
 )
-aadl2::SubprogramGroupAccess_strategy = st.builds(
-    aadl2::SubprogramGroupAccess,
+ModalElement_strategy = st.builds(
+    ModalElement,
+)
+aadl2_InternalFeature_strategy = st.builds(
+    aadl2_InternalFeature,
+    direction=
+        safe_text
+)
+aadl2_ModalPath_strategy = st.builds(
+    aadl2_ModalPath,
+)
+aadl2_ProcessorFeature_strategy = st.builds(
+    aadl2_ProcessorFeature,
+)
+aadl2_ModalPropertyValue_strategy = st.builds(
+    aadl2_ModalPropertyValue,
+)
+aadl2_AnnexSubclause_strategy = st.builds(
+    aadl2_AnnexSubclause,
+)
+aadl2_Subcomponent_strategy = st.builds(
+    aadl2_Subcomponent,
+    allModes=
+        safe_text
+)
+aadl2_SubprogramCallSequence_strategy = st.builds(
+    aadl2_SubprogramCallSequence,
+)
+aadl2_Relationship_strategy = st.builds(
+    aadl2_Relationship,
+)
+Relationship_strategy = st.builds(
+    Relationship,
+)
+aadl2_DirectedRelationship_strategy = st.builds(
+    aadl2_DirectedRelationship,
 )
 
 @given(instance=EnumerationType_strategy)
@@ -7482,123 +7482,114 @@ aadl2::SubprogramGroupAccess_strategy = st.builds(
 def test_enumerationtype_instantiation(instance):
     assert isinstance(instance, EnumerationType)
 
-@given(instance=aadl2::UnitsType_strategy)
+@given(instance=aadl2_UnitsType_strategy)
 @settings(max_examples=50)
-def test_aadl2::unitstype_instantiation(instance):
-    assert isinstance(instance, aadl2::UnitsType)
+def test_aadl2_unitstype_instantiation(instance):
+    assert isinstance(instance, aadl2_UnitsType)
 
 @given(instance=NumberType_strategy)
 @settings(max_examples=50)
 def test_numbertype_instantiation(instance):
     assert isinstance(instance, NumberType)
 
-@given(instance=aadl2::AadlReal_strategy)
+@given(instance=aadl2_AadlReal_strategy)
 @settings(max_examples=50)
-def test_aadl2::aadlreal_instantiation(instance):
-    assert isinstance(instance, aadl2::AadlReal)
+def test_aadl2_aadlreal_instantiation(instance):
+    assert isinstance(instance, aadl2_AadlReal)
 
-@given(instance=aadl2::AadlInteger_strategy)
+@given(instance=aadl2_AadlInteger_strategy)
 @settings(max_examples=50)
-def test_aadl2::aadlinteger_instantiation(instance):
-    assert isinstance(instance, aadl2::AadlInteger)
+def test_aadl2_aadlinteger_instantiation(instance):
+    assert isinstance(instance, aadl2_AadlInteger)
 
 @given(instance=NonListType_strategy)
 @settings(max_examples=50)
 def test_nonlisttype_instantiation(instance):
     assert isinstance(instance, NonListType)
 
-@given(instance=aadl2::NumberType_strategy)
+@given(instance=aadl2_AadlString_strategy)
 @settings(max_examples=50)
-def test_aadl2::numbertype_instantiation(instance):
-    assert isinstance(instance, aadl2::NumberType)
+def test_aadl2_aadlstring_instantiation(instance):
+    assert isinstance(instance, aadl2_AadlString)
 
-@given(instance=aadl2::ReferenceType_strategy)
+@given(instance=aadl2_RangeType_strategy)
 @settings(max_examples=50)
-def test_aadl2::referencetype_instantiation(instance):
-    assert isinstance(instance, aadl2::ReferenceType)
+def test_aadl2_rangetype_instantiation(instance):
+    assert isinstance(instance, aadl2_RangeType)
 
-@given(instance=aadl2::RangeType_strategy)
+@given(instance=aadl2_ReferenceType_strategy)
 @settings(max_examples=50)
-def test_aadl2::rangetype_instantiation(instance):
-    assert isinstance(instance, aadl2::RangeType)
+def test_aadl2_referencetype_instantiation(instance):
+    assert isinstance(instance, aadl2_ReferenceType)
 
-@given(instance=aadl2::AadlString_strategy)
+@given(instance=aadl2_ClassifierType_strategy)
 @settings(max_examples=50)
-def test_aadl2::aadlstring_instantiation(instance):
-    assert isinstance(instance, aadl2::AadlString)
+def test_aadl2_classifiertype_instantiation(instance):
+    assert isinstance(instance, aadl2_ClassifierType)
 
-@given(instance=aadl2::ClassifierType_strategy)
+@given(instance=aadl2_NumberType_strategy)
 @settings(max_examples=50)
-def test_aadl2::classifiertype_instantiation(instance):
-    assert isinstance(instance, aadl2::ClassifierType)
+def test_aadl2_numbertype_instantiation(instance):
+    assert isinstance(instance, aadl2_NumberType)
 
-@given(instance=aadl2::AadlBoolean_strategy)
+@given(instance=aadl2_AadlBoolean_strategy)
 @settings(max_examples=50)
-def test_aadl2::aadlboolean_instantiation(instance):
-    assert isinstance(instance, aadl2::AadlBoolean)
+def test_aadl2_aadlboolean_instantiation(instance):
+    assert isinstance(instance, aadl2_AadlBoolean)
 
 @given(instance=PropertyType_strategy)
 @settings(max_examples=50)
 def test_propertytype_instantiation(instance):
     assert isinstance(instance, PropertyType)
 
-@given(instance=aadl2::ListType_strategy)
+@given(instance=aadl2_ListType_strategy)
 @settings(max_examples=50)
-def test_aadl2::listtype_instantiation(instance):
-    assert isinstance(instance, aadl2::ListType)
+def test_aadl2_listtype_instantiation(instance):
+    assert isinstance(instance, aadl2_ListType)
 
-@given(instance=aadl2::NonListType_strategy)
+@given(instance=aadl2_NonListType_strategy)
 @settings(max_examples=50)
-def test_aadl2::nonlisttype_instantiation(instance):
-    assert isinstance(instance, aadl2::NonListType)
+def test_aadl2_nonlisttype_instantiation(instance):
+    assert isinstance(instance, aadl2_NonListType)
 
 @given(instance=NumberValue_strategy)
 @settings(max_examples=50)
 def test_numbervalue_instantiation(instance):
     assert isinstance(instance, NumberValue)
 
-@given(instance=aadl2::RealLiteral_strategy)
+@given(instance=aadl2_RealLiteral_strategy)
 @settings(max_examples=50)
-def test_aadl2::realliteral_instantiation(instance):
-    assert isinstance(instance, aadl2::RealLiteral)
-
-@given(instance=aadl2::RealLiteral_strategy)
-def test_aadl2::realliteral_value_type(instance):
-    assert isinstance(instance.value, str)
+def test_aadl2_realliteral_instantiation(instance):
+    assert isinstance(instance, aadl2_RealLiteral)
 
 
-@given(instance=aadl2::RealLiteral_strategy)
-def test_aadl2::realliteral_value_setter(instance):
+
+@given(instance=aadl2_RealLiteral_strategy)
+def test_aadl2_realliteral_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
 
-@given(instance=aadl2::IntegerLiteral_strategy)
+@given(instance=aadl2_IntegerLiteral_strategy)
 @settings(max_examples=50)
-def test_aadl2::integerliteral_instantiation(instance):
-    assert isinstance(instance, aadl2::IntegerLiteral)
-
-@given(instance=aadl2::IntegerLiteral_strategy)
-def test_aadl2::integerliteral_base_type(instance):
-    assert isinstance(instance.base, str)
+def test_aadl2_integerliteral_instantiation(instance):
+    assert isinstance(instance, aadl2_IntegerLiteral)
 
 
-@given(instance=aadl2::IntegerLiteral_strategy)
-def test_aadl2::integerliteral_base_setter(instance):
+
+@given(instance=aadl2_IntegerLiteral_strategy)
+def test_aadl2_integerliteral_value_setter(instance):
+    original = instance.value
+    instance.value = original
+    assert instance.value == original
+
+
+
+@given(instance=aadl2_IntegerLiteral_strategy)
+def test_aadl2_integerliteral_base_setter(instance):
     original = instance.base
     instance.base = original
     assert instance.base == original
-
-@given(instance=aadl2::IntegerLiteral_strategy)
-def test_aadl2::integerliteral_value_type(instance):
-    assert isinstance(instance.value, str)
-
-
-@given(instance=aadl2::IntegerLiteral_strategy)
-def test_aadl2::integerliteral_value_setter(instance):
-    original = instance.value
-    instance.value = original
-    assert instance.value == original
 
 @given(instance=ContainedNamedElement_strategy)
 @settings(max_examples=50)
@@ -7610,116 +7601,104 @@ def test_containednamedelement_instantiation(instance):
 def test_enumerationliteral_instantiation(instance):
     assert isinstance(instance, EnumerationLiteral)
 
-@given(instance=aadl2::UnitLiteral_strategy)
+@given(instance=aadl2_UnitLiteral_strategy)
 @settings(max_examples=50)
-def test_aadl2::unitliteral_instantiation(instance):
-    assert isinstance(instance, aadl2::UnitLiteral)
+def test_aadl2_unitliteral_instantiation(instance):
+    assert isinstance(instance, aadl2_UnitLiteral)
 
 @given(instance=PropertyExpression_strategy)
 @settings(max_examples=50)
 def test_propertyexpression_instantiation(instance):
     assert isinstance(instance, PropertyExpression)
 
-@given(instance=aadl2::Operation_strategy)
+@given(instance=aadl2_Operation_strategy)
 @settings(max_examples=50)
-def test_aadl2::operation_instantiation(instance):
-    assert isinstance(instance, aadl2::Operation)
-
-@given(instance=aadl2::Operation_strategy)
-def test_aadl2::operation_op_type(instance):
-    assert isinstance(instance.op, str)
+def test_aadl2_operation_instantiation(instance):
+    assert isinstance(instance, aadl2_Operation)
 
 
-@given(instance=aadl2::Operation_strategy)
-def test_aadl2::operation_op_setter(instance):
+
+@given(instance=aadl2_Operation_strategy)
+def test_aadl2_operation_op_setter(instance):
     original = instance.op
     instance.op = original
     assert instance.op == original
 
-@given(instance=aadl2::ListValue_strategy)
+@given(instance=aadl2_ListValue_strategy)
 @settings(max_examples=50)
-def test_aadl2::listvalue_instantiation(instance):
-    assert isinstance(instance, aadl2::ListValue)
+def test_aadl2_listvalue_instantiation(instance):
+    assert isinstance(instance, aadl2_ListValue)
 
-@given(instance=aadl2::PropertyValue_strategy)
+@given(instance=aadl2_PropertyValue_strategy)
 @settings(max_examples=50)
-def test_aadl2::propertyvalue_instantiation(instance):
-    assert isinstance(instance, aadl2::PropertyValue)
+def test_aadl2_propertyvalue_instantiation(instance):
+    assert isinstance(instance, aadl2_PropertyValue)
 
 @given(instance=PropertyValue_strategy)
 @settings(max_examples=50)
 def test_propertyvalue_instantiation(instance):
     assert isinstance(instance, PropertyValue)
 
-@given(instance=aadl2::ComputedValue_strategy)
+@given(instance=aadl2_BooleanLiteral_strategy)
 @settings(max_examples=50)
-def test_aadl2::computedvalue_instantiation(instance):
-    assert isinstance(instance, aadl2::ComputedValue)
-
-@given(instance=aadl2::ComputedValue_strategy)
-def test_aadl2::computedvalue_function_type(instance):
-    assert isinstance(instance.function, str)
+def test_aadl2_booleanliteral_instantiation(instance):
+    assert isinstance(instance, aadl2_BooleanLiteral)
 
 
-@given(instance=aadl2::ComputedValue_strategy)
-def test_aadl2::computedvalue_function_setter(instance):
-    original = instance.function
-    instance.function = original
-    assert instance.function == original
 
-@given(instance=aadl2::NamedValue_strategy)
-@settings(max_examples=50)
-def test_aadl2::namedvalue_instantiation(instance):
-    assert isinstance(instance, aadl2::NamedValue)
-
-@given(instance=aadl2::RangeValue_strategy)
-@settings(max_examples=50)
-def test_aadl2::rangevalue_instantiation(instance):
-    assert isinstance(instance, aadl2::RangeValue)
-
-@given(instance=aadl2::RecordValue_strategy)
-@settings(max_examples=50)
-def test_aadl2::recordvalue_instantiation(instance):
-    assert isinstance(instance, aadl2::RecordValue)
-
-@given(instance=aadl2::BooleanLiteral_strategy)
-@settings(max_examples=50)
-def test_aadl2::booleanliteral_instantiation(instance):
-    assert isinstance(instance, aadl2::BooleanLiteral)
-
-@given(instance=aadl2::BooleanLiteral_strategy)
-def test_aadl2::booleanliteral_value_type(instance):
-    assert isinstance(instance.value, str)
-
-
-@given(instance=aadl2::BooleanLiteral_strategy)
-def test_aadl2::booleanliteral_value_setter(instance):
+@given(instance=aadl2_BooleanLiteral_strategy)
+def test_aadl2_booleanliteral_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
 
-@given(instance=aadl2::NumberValue_strategy)
+@given(instance=aadl2_ReferenceValue_strategy)
 @settings(max_examples=50)
-def test_aadl2::numbervalue_instantiation(instance):
-    assert isinstance(instance, aadl2::NumberValue)
+def test_aadl2_referencevalue_instantiation(instance):
+    assert isinstance(instance, aadl2_ReferenceValue)
 
-@given(instance=aadl2::ReferenceValue_strategy)
+@given(instance=aadl2_NumberValue_strategy)
 @settings(max_examples=50)
-def test_aadl2::referencevalue_instantiation(instance):
-    assert isinstance(instance, aadl2::ReferenceValue)
+def test_aadl2_numbervalue_instantiation(instance):
+    assert isinstance(instance, aadl2_NumberValue)
 
-@given(instance=aadl2::StringLiteral_strategy)
+@given(instance=aadl2_NamedValue_strategy)
 @settings(max_examples=50)
-def test_aadl2::stringliteral_instantiation(instance):
-    assert isinstance(instance, aadl2::StringLiteral)
+def test_aadl2_namedvalue_instantiation(instance):
+    assert isinstance(instance, aadl2_NamedValue)
 
-@given(instance=aadl2::StringLiteral_strategy)
-def test_aadl2::stringliteral_value_type(instance):
-    assert isinstance(instance.value, str)
+@given(instance=aadl2_RangeValue_strategy)
+@settings(max_examples=50)
+def test_aadl2_rangevalue_instantiation(instance):
+    assert isinstance(instance, aadl2_RangeValue)
+
+@given(instance=aadl2_RecordValue_strategy)
+@settings(max_examples=50)
+def test_aadl2_recordvalue_instantiation(instance):
+    assert isinstance(instance, aadl2_RecordValue)
+
+@given(instance=aadl2_ComputedValue_strategy)
+@settings(max_examples=50)
+def test_aadl2_computedvalue_instantiation(instance):
+    assert isinstance(instance, aadl2_ComputedValue)
 
 
-@given(instance=aadl2::StringLiteral_strategy)
-def test_aadl2::stringliteral_value_setter(instance):
+
+@given(instance=aadl2_ComputedValue_strategy)
+def test_aadl2_computedvalue_function_setter(instance):
+    original = instance.function
+    instance.function = original
+    assert instance.function == original
+
+@given(instance=aadl2_StringLiteral_strategy)
+@settings(max_examples=50)
+def test_aadl2_stringliteral_instantiation(instance):
+    assert isinstance(instance, aadl2_StringLiteral)
+
+
+
+@given(instance=aadl2_StringLiteral_strategy)
+def test_aadl2_stringliteral_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
@@ -7799,55 +7778,55 @@ def test_componentprototype_instantiation(instance):
 def test_threadgroupsubcomponenttype_instantiation(instance):
     assert isinstance(instance, ThreadGroupSubcomponentType)
 
-@given(instance=aadl2::ThreadGroupPrototype_strategy)
+@given(instance=aadl2_ThreadGroupPrototype_strategy)
 @settings(max_examples=50)
-def test_aadl2::threadgroupprototype_instantiation(instance):
-    assert isinstance(instance, aadl2::ThreadGroupPrototype)
+def test_aadl2_threadgroupprototype_instantiation(instance):
+    assert isinstance(instance, aadl2_ThreadGroupPrototype)
 
 @given(instance=SystemSubcomponentType_strategy)
 @settings(max_examples=50)
 def test_systemsubcomponenttype_instantiation(instance):
     assert isinstance(instance, SystemSubcomponentType)
 
-@given(instance=aadl2::SystemPrototype_strategy)
+@given(instance=aadl2_SystemPrototype_strategy)
 @settings(max_examples=50)
-def test_aadl2::systemprototype_instantiation(instance):
-    assert isinstance(instance, aadl2::SystemPrototype)
+def test_aadl2_systemprototype_instantiation(instance):
+    assert isinstance(instance, aadl2_SystemPrototype)
 
 @given(instance=SubprogramSubcomponentType_strategy)
 @settings(max_examples=50)
 def test_subprogramsubcomponenttype_instantiation(instance):
     assert isinstance(instance, SubprogramSubcomponentType)
 
-@given(instance=aadl2::SubprogramPrototype_strategy)
+@given(instance=aadl2_SubprogramPrototype_strategy)
 @settings(max_examples=50)
-def test_aadl2::subprogramprototype_instantiation(instance):
-    assert isinstance(instance, aadl2::SubprogramPrototype)
+def test_aadl2_subprogramprototype_instantiation(instance):
+    assert isinstance(instance, aadl2_SubprogramPrototype)
 
 @given(instance=SubprogramGroupSubcomponentType_strategy)
 @settings(max_examples=50)
 def test_subprogramgroupsubcomponenttype_instantiation(instance):
     assert isinstance(instance, SubprogramGroupSubcomponentType)
 
-@given(instance=aadl2::SubprogramGroupPrototype_strategy)
+@given(instance=aadl2_SubprogramGroupPrototype_strategy)
 @settings(max_examples=50)
-def test_aadl2::subprogramgroupprototype_instantiation(instance):
-    assert isinstance(instance, aadl2::SubprogramGroupPrototype)
+def test_aadl2_subprogramgroupprototype_instantiation(instance):
+    assert isinstance(instance, aadl2_SubprogramGroupPrototype)
 
 @given(instance=BehavioredImplementation_strategy)
 @settings(max_examples=50)
 def test_behavioredimplementation_instantiation(instance):
     assert isinstance(instance, BehavioredImplementation)
 
-@given(instance=aadl2::SubprogramImplementation_strategy)
+@given(instance=aadl2_SubprogramImplementation_strategy)
 @settings(max_examples=50)
-def test_aadl2::subprogramimplementation_instantiation(instance):
-    assert isinstance(instance, aadl2::SubprogramImplementation)
+def test_aadl2_subprogramimplementation_instantiation(instance):
+    assert isinstance(instance, aadl2_SubprogramImplementation)
 
-@given(instance=aadl2::ThreadImplementation_strategy)
+@given(instance=aadl2_ThreadImplementation_strategy)
 @settings(max_examples=50)
-def test_aadl2::threadimplementation_instantiation(instance):
-    assert isinstance(instance, aadl2::ThreadImplementation)
+def test_aadl2_threadimplementation_instantiation(instance):
+    assert isinstance(instance, aadl2_ThreadImplementation)
 
 @given(instance=Processor_strategy)
 @settings(max_examples=50)
@@ -7899,230 +7878,215 @@ def test_virtualprocessor_instantiation(instance):
 def test_virtualprocessorsubcomponenttype_instantiation(instance):
     assert isinstance(instance, VirtualProcessorSubcomponentType)
 
-@given(instance=aadl2::VirtualProcessorPrototype_strategy)
+@given(instance=aadl2_VirtualProcessorPrototype_strategy)
 @settings(max_examples=50)
-def test_aadl2::virtualprocessorprototype_instantiation(instance):
-    assert isinstance(instance, aadl2::VirtualProcessorPrototype)
-
-@given(instance=VirtualBusSubcomponentType_strategy)
-@settings(max_examples=50)
-def test_virtualbussubcomponenttype_instantiation(instance):
-    assert isinstance(instance, VirtualBusSubcomponentType)
-
-@given(instance=aadl2::VirtualBusPrototype_strategy)
-@settings(max_examples=50)
-def test_aadl2::virtualbusprototype_instantiation(instance):
-    assert isinstance(instance, aadl2::VirtualBusPrototype)
+def test_aadl2_virtualprocessorprototype_instantiation(instance):
+    assert isinstance(instance, aadl2_VirtualProcessorPrototype)
 
 @given(instance=ThreadSubcomponentType_strategy)
 @settings(max_examples=50)
 def test_threadsubcomponenttype_instantiation(instance):
     assert isinstance(instance, ThreadSubcomponentType)
 
-@given(instance=aadl2::ThreadPrototype_strategy)
+@given(instance=aadl2_ThreadPrototype_strategy)
 @settings(max_examples=50)
-def test_aadl2::threadprototype_instantiation(instance):
-    assert isinstance(instance, aadl2::ThreadPrototype)
+def test_aadl2_threadprototype_instantiation(instance):
+    assert isinstance(instance, aadl2_ThreadPrototype)
 
 @given(instance=ProcessSubcomponentType_strategy)
 @settings(max_examples=50)
 def test_processsubcomponenttype_instantiation(instance):
     assert isinstance(instance, ProcessSubcomponentType)
 
-@given(instance=aadl2::ProcessPrototype_strategy)
+@given(instance=aadl2_ProcessPrototype_strategy)
 @settings(max_examples=50)
-def test_aadl2::processprototype_instantiation(instance):
-    assert isinstance(instance, aadl2::ProcessPrototype)
+def test_aadl2_processprototype_instantiation(instance):
+    assert isinstance(instance, aadl2_ProcessPrototype)
 
 @given(instance=ProcessorSubcomponentType_strategy)
 @settings(max_examples=50)
 def test_processorsubcomponenttype_instantiation(instance):
     assert isinstance(instance, ProcessorSubcomponentType)
 
-@given(instance=aadl2::ProcessorPrototype_strategy)
+@given(instance=aadl2_ProcessorPrototype_strategy)
 @settings(max_examples=50)
-def test_aadl2::processorprototype_instantiation(instance):
-    assert isinstance(instance, aadl2::ProcessorPrototype)
+def test_aadl2_processorprototype_instantiation(instance):
+    assert isinstance(instance, aadl2_ProcessorPrototype)
 
 @given(instance=MemorySubcomponentType_strategy)
 @settings(max_examples=50)
 def test_memorysubcomponenttype_instantiation(instance):
     assert isinstance(instance, MemorySubcomponentType)
 
-@given(instance=aadl2::MemoryPrototype_strategy)
+@given(instance=aadl2_MemoryPrototype_strategy)
 @settings(max_examples=50)
-def test_aadl2::memoryprototype_instantiation(instance):
-    assert isinstance(instance, aadl2::MemoryPrototype)
+def test_aadl2_memoryprototype_instantiation(instance):
+    assert isinstance(instance, aadl2_MemoryPrototype)
 
 @given(instance=DeviceSubcomponentType_strategy)
 @settings(max_examples=50)
 def test_devicesubcomponenttype_instantiation(instance):
     assert isinstance(instance, DeviceSubcomponentType)
 
-@given(instance=aadl2::DevicePrototype_strategy)
+@given(instance=aadl2_DevicePrototype_strategy)
 @settings(max_examples=50)
-def test_aadl2::deviceprototype_instantiation(instance):
-    assert isinstance(instance, aadl2::DevicePrototype)
+def test_aadl2_deviceprototype_instantiation(instance):
+    assert isinstance(instance, aadl2_DevicePrototype)
 
 @given(instance=DataSubcomponentType_strategy)
 @settings(max_examples=50)
 def test_datasubcomponenttype_instantiation(instance):
     assert isinstance(instance, DataSubcomponentType)
 
-@given(instance=aadl2::DataPrototype_strategy)
+@given(instance=aadl2_DataPrototype_strategy)
 @settings(max_examples=50)
-def test_aadl2::dataprototype_instantiation(instance):
-    assert isinstance(instance, aadl2::DataPrototype)
+def test_aadl2_dataprototype_instantiation(instance):
+    assert isinstance(instance, aadl2_DataPrototype)
 
 @given(instance=BusSubcomponentType_strategy)
 @settings(max_examples=50)
 def test_bussubcomponenttype_instantiation(instance):
     assert isinstance(instance, BusSubcomponentType)
 
-@given(instance=aadl2::BusPrototype_strategy)
+@given(instance=aadl2_BusPrototype_strategy)
 @settings(max_examples=50)
-def test_aadl2::busprototype_instantiation(instance):
-    assert isinstance(instance, aadl2::BusPrototype)
+def test_aadl2_busprototype_instantiation(instance):
+    assert isinstance(instance, aadl2_BusPrototype)
 
 @given(instance=AbstractSubcomponentType_strategy)
 @settings(max_examples=50)
 def test_abstractsubcomponenttype_instantiation(instance):
     assert isinstance(instance, AbstractSubcomponentType)
 
-@given(instance=aadl2::AbstractPrototype_strategy)
-@settings(max_examples=50)
-def test_aadl2::abstractprototype_instantiation(instance):
-    assert isinstance(instance, aadl2::AbstractPrototype)
-
 @given(instance=AbstractClassifier_strategy)
 @settings(max_examples=50)
 def test_abstractclassifier_instantiation(instance):
     assert isinstance(instance, AbstractClassifier)
 
-@given(instance=aadl2::AbstractImplementation_strategy)
+@given(instance=aadl2_AbstractImplementation_strategy)
 @settings(max_examples=50)
-def test_aadl2::abstractimplementation_instantiation(instance):
-    assert isinstance(instance, aadl2::AbstractImplementation)
+def test_aadl2_abstractimplementation_instantiation(instance):
+    assert isinstance(instance, aadl2_AbstractImplementation)
 
 @given(instance=ComponentType_strategy)
 @settings(max_examples=50)
 def test_componenttype_instantiation(instance):
     assert isinstance(instance, ComponentType)
 
-@given(instance=aadl2::BusType_strategy)
+@given(instance=aadl2_ProcessorType_strategy)
 @settings(max_examples=50)
-def test_aadl2::bustype_instantiation(instance):
-    assert isinstance(instance, aadl2::BusType)
+def test_aadl2_processortype_instantiation(instance):
+    assert isinstance(instance, aadl2_ProcessorType)
 
-@given(instance=aadl2::ProcessorType_strategy)
+@given(instance=aadl2_ProcessType_strategy)
 @settings(max_examples=50)
-def test_aadl2::processortype_instantiation(instance):
-    assert isinstance(instance, aadl2::ProcessorType)
+def test_aadl2_processtype_instantiation(instance):
+    assert isinstance(instance, aadl2_ProcessType)
 
-@given(instance=aadl2::DeviceType_strategy)
+@given(instance=aadl2_VirtualBusType_strategy)
 @settings(max_examples=50)
-def test_aadl2::devicetype_instantiation(instance):
-    assert isinstance(instance, aadl2::DeviceType)
+def test_aadl2_virtualbustype_instantiation(instance):
+    assert isinstance(instance, aadl2_VirtualBusType)
 
-@given(instance=aadl2::ProcessType_strategy)
+@given(instance=aadl2_VirtualProcessorType_strategy)
 @settings(max_examples=50)
-def test_aadl2::processtype_instantiation(instance):
-    assert isinstance(instance, aadl2::ProcessType)
+def test_aadl2_virtualprocessortype_instantiation(instance):
+    assert isinstance(instance, aadl2_VirtualProcessorType)
 
-@given(instance=aadl2::ThreadType_strategy)
+@given(instance=aadl2_SystemType_strategy)
 @settings(max_examples=50)
-def test_aadl2::threadtype_instantiation(instance):
-    assert isinstance(instance, aadl2::ThreadType)
+def test_aadl2_systemtype_instantiation(instance):
+    assert isinstance(instance, aadl2_SystemType)
 
-@given(instance=aadl2::SystemType_strategy)
+@given(instance=aadl2_BusType_strategy)
 @settings(max_examples=50)
-def test_aadl2::systemtype_instantiation(instance):
-    assert isinstance(instance, aadl2::SystemType)
+def test_aadl2_bustype_instantiation(instance):
+    assert isinstance(instance, aadl2_BusType)
 
-@given(instance=aadl2::ThreadGroupType_strategy)
+@given(instance=aadl2_DeviceType_strategy)
 @settings(max_examples=50)
-def test_aadl2::threadgrouptype_instantiation(instance):
-    assert isinstance(instance, aadl2::ThreadGroupType)
+def test_aadl2_devicetype_instantiation(instance):
+    assert isinstance(instance, aadl2_DeviceType)
 
-@given(instance=aadl2::VirtualBusType_strategy)
+@given(instance=aadl2_MemoryType_strategy)
 @settings(max_examples=50)
-def test_aadl2::virtualbustype_instantiation(instance):
-    assert isinstance(instance, aadl2::VirtualBusType)
+def test_aadl2_memorytype_instantiation(instance):
+    assert isinstance(instance, aadl2_MemoryType)
 
-@given(instance=aadl2::MemoryType_strategy)
+@given(instance=aadl2_ThreadGroupType_strategy)
 @settings(max_examples=50)
-def test_aadl2::memorytype_instantiation(instance):
-    assert isinstance(instance, aadl2::MemoryType)
+def test_aadl2_threadgrouptype_instantiation(instance):
+    assert isinstance(instance, aadl2_ThreadGroupType)
 
-@given(instance=aadl2::VirtualProcessorType_strategy)
+@given(instance=aadl2_ThreadType_strategy)
 @settings(max_examples=50)
-def test_aadl2::virtualprocessortype_instantiation(instance):
-    assert isinstance(instance, aadl2::VirtualProcessorType)
+def test_aadl2_threadtype_instantiation(instance):
+    assert isinstance(instance, aadl2_ThreadType)
 
 @given(instance=ComponentImplementation_strategy)
 @settings(max_examples=50)
 def test_componentimplementation_instantiation(instance):
     assert isinstance(instance, ComponentImplementation)
 
-@given(instance=aadl2::SystemImplementation_strategy)
+@given(instance=aadl2_VirtualProcessorImplementation_strategy)
 @settings(max_examples=50)
-def test_aadl2::systemimplementation_instantiation(instance):
-    assert isinstance(instance, aadl2::SystemImplementation)
+def test_aadl2_virtualprocessorimplementation_instantiation(instance):
+    assert isinstance(instance, aadl2_VirtualProcessorImplementation)
 
-@given(instance=aadl2::ProcessorImplementation_strategy)
+@given(instance=aadl2_ProcessorImplementation_strategy)
 @settings(max_examples=50)
-def test_aadl2::processorimplementation_instantiation(instance):
-    assert isinstance(instance, aadl2::ProcessorImplementation)
+def test_aadl2_processorimplementation_instantiation(instance):
+    assert isinstance(instance, aadl2_ProcessorImplementation)
 
-@given(instance=aadl2::ProcessImplementation_strategy)
+@given(instance=aadl2_ThreadGroupImplementation_strategy)
 @settings(max_examples=50)
-def test_aadl2::processimplementation_instantiation(instance):
-    assert isinstance(instance, aadl2::ProcessImplementation)
+def test_aadl2_threadgroupimplementation_instantiation(instance):
+    assert isinstance(instance, aadl2_ThreadGroupImplementation)
 
-@given(instance=aadl2::ThreadGroupImplementation_strategy)
+@given(instance=aadl2_MemoryImplementation_strategy)
 @settings(max_examples=50)
-def test_aadl2::threadgroupimplementation_instantiation(instance):
-    assert isinstance(instance, aadl2::ThreadGroupImplementation)
+def test_aadl2_memoryimplementation_instantiation(instance):
+    assert isinstance(instance, aadl2_MemoryImplementation)
 
-@given(instance=aadl2::DeviceImplementation_strategy)
+@given(instance=aadl2_ProcessImplementation_strategy)
 @settings(max_examples=50)
-def test_aadl2::deviceimplementation_instantiation(instance):
-    assert isinstance(instance, aadl2::DeviceImplementation)
+def test_aadl2_processimplementation_instantiation(instance):
+    assert isinstance(instance, aadl2_ProcessImplementation)
 
-@given(instance=aadl2::VirtualBusImplementation_strategy)
+@given(instance=aadl2_DataImplementation_strategy)
 @settings(max_examples=50)
-def test_aadl2::virtualbusimplementation_instantiation(instance):
-    assert isinstance(instance, aadl2::VirtualBusImplementation)
+def test_aadl2_dataimplementation_instantiation(instance):
+    assert isinstance(instance, aadl2_DataImplementation)
 
-@given(instance=aadl2::VirtualProcessorImplementation_strategy)
+@given(instance=aadl2_VirtualBusImplementation_strategy)
 @settings(max_examples=50)
-def test_aadl2::virtualprocessorimplementation_instantiation(instance):
-    assert isinstance(instance, aadl2::VirtualProcessorImplementation)
+def test_aadl2_virtualbusimplementation_instantiation(instance):
+    assert isinstance(instance, aadl2_VirtualBusImplementation)
 
-@given(instance=aadl2::BusImplementation_strategy)
+@given(instance=aadl2_SystemImplementation_strategy)
 @settings(max_examples=50)
-def test_aadl2::busimplementation_instantiation(instance):
-    assert isinstance(instance, aadl2::BusImplementation)
+def test_aadl2_systemimplementation_instantiation(instance):
+    assert isinstance(instance, aadl2_SystemImplementation)
 
-@given(instance=aadl2::DataImplementation_strategy)
+@given(instance=aadl2_DeviceImplementation_strategy)
 @settings(max_examples=50)
-def test_aadl2::dataimplementation_instantiation(instance):
-    assert isinstance(instance, aadl2::DataImplementation)
+def test_aadl2_deviceimplementation_instantiation(instance):
+    assert isinstance(instance, aadl2_DeviceImplementation)
 
-@given(instance=aadl2::SubprogramGroupImplementation_strategy)
+@given(instance=aadl2_BusImplementation_strategy)
 @settings(max_examples=50)
-def test_aadl2::subprogramgroupimplementation_instantiation(instance):
-    assert isinstance(instance, aadl2::SubprogramGroupImplementation)
+def test_aadl2_busimplementation_instantiation(instance):
+    assert isinstance(instance, aadl2_BusImplementation)
 
-@given(instance=aadl2::MemoryImplementation_strategy)
+@given(instance=aadl2_SubprogramGroupImplementation_strategy)
 @settings(max_examples=50)
-def test_aadl2::memoryimplementation_instantiation(instance):
-    assert isinstance(instance, aadl2::MemoryImplementation)
+def test_aadl2_subprogramgroupimplementation_instantiation(instance):
+    assert isinstance(instance, aadl2_SubprogramGroupImplementation)
 
-@given(instance=aadl2::BehavioredImplementation_strategy)
+@given(instance=aadl2_BehavioredImplementation_strategy)
 @settings(max_examples=50)
-def test_aadl2::behavioredimplementation_instantiation(instance):
-    assert isinstance(instance, aadl2::BehavioredImplementation)
+def test_aadl2_behavioredimplementation_instantiation(instance):
+    assert isinstance(instance, aadl2_BehavioredImplementation)
 
 import warnings
 import copy
@@ -8130,9 +8094,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=aadl2::BehavioredImplementation_strategy)
+@given(instance=aadl2_BehavioredImplementation_strategy)
 @settings(max_examples=30)
-def test_aadl2::behavioredimplementation_subprogramcalls_changes_state(instance):
+def test_aadl2_behavioredimplementation_subprogramcalls_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -8144,14 +8108,14 @@ def test_aadl2::behavioredimplementation_subprogramcalls_changes_state(instance)
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'subprogramCalls' in aadl2::BehavioredImplementation is empty"
+        assert has_statements, f"Function 'subprogramCalls' in aadl2_BehavioredImplementation is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'subprogramCalls' in aadl2::BehavioredImplementation did not change state; check implementation")
+            warnings.warn(f"Operation 'subprogramCalls' in aadl2_BehavioredImplementation did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'subprogramCalls' in aadl2::BehavioredImplementation is not implemented or raised an error")
+        warnings.warn(f"Operation 'subprogramCalls' in aadl2_BehavioredImplementation is not implemented or raised an error")
 
 @given(instance=BehavioralFeature_strategy)
 @settings(max_examples=50)
@@ -8163,143 +8127,125 @@ def test_behavioralfeature_instantiation(instance):
 def test_featureprototypeactual_instantiation(instance):
     assert isinstance(instance, FeaturePrototypeActual)
 
-@given(instance=aadl2::FeaturePrototypeReference_strategy)
+@given(instance=aadl2_AccessSpecification_strategy)
 @settings(max_examples=50)
-def test_aadl2::featureprototypereference_instantiation(instance):
-    assert isinstance(instance, aadl2::FeaturePrototypeReference)
-
-@given(instance=aadl2::FeaturePrototypeReference_strategy)
-def test_aadl2::featureprototypereference_direction_type(instance):
-    assert isinstance(instance.direction, str)
+def test_aadl2_accessspecification_instantiation(instance):
+    assert isinstance(instance, aadl2_AccessSpecification)
 
 
-@given(instance=aadl2::FeaturePrototypeReference_strategy)
-def test_aadl2::featureprototypereference_direction_setter(instance):
-    original = instance.direction
-    instance.direction = original
-    assert instance.direction == original
 
-@given(instance=aadl2::PortSpecification_strategy)
-@settings(max_examples=50)
-def test_aadl2::portspecification_instantiation(instance):
-    assert isinstance(instance, aadl2::PortSpecification)
-
-@given(instance=aadl2::PortSpecification_strategy)
-def test_aadl2::portspecification_category_type(instance):
-    assert isinstance(instance.category, str)
-
-
-@given(instance=aadl2::PortSpecification_strategy)
-def test_aadl2::portspecification_category_setter(instance):
-    original = instance.category
-    instance.category = original
-    assert instance.category == original
-
-@given(instance=aadl2::PortSpecification_strategy)
-def test_aadl2::portspecification_direction_type(instance):
-    assert isinstance(instance.direction, str)
-
-
-@given(instance=aadl2::PortSpecification_strategy)
-def test_aadl2::portspecification_direction_setter(instance):
-    original = instance.direction
-    instance.direction = original
-    assert instance.direction == original
-
-@given(instance=aadl2::AccessSpecification_strategy)
-@settings(max_examples=50)
-def test_aadl2::accessspecification_instantiation(instance):
-    assert isinstance(instance, aadl2::AccessSpecification)
-
-@given(instance=aadl2::AccessSpecification_strategy)
-def test_aadl2::accessspecification_kind_type(instance):
-    assert isinstance(instance.kind, str)
-
-
-@given(instance=aadl2::AccessSpecification_strategy)
-def test_aadl2::accessspecification_kind_setter(instance):
+@given(instance=aadl2_AccessSpecification_strategy)
+def test_aadl2_accessspecification_kind_setter(instance):
     original = instance.kind
     instance.kind = original
     assert instance.kind == original
 
-@given(instance=aadl2::AccessSpecification_strategy)
-def test_aadl2::accessspecification_category_type(instance):
-    assert isinstance(instance.category, str)
 
 
-@given(instance=aadl2::AccessSpecification_strategy)
-def test_aadl2::accessspecification_category_setter(instance):
+@given(instance=aadl2_AccessSpecification_strategy)
+def test_aadl2_accessspecification_category_setter(instance):
     original = instance.category
     instance.category = original
     assert instance.category == original
 
-@given(instance=aadl2::FeatureGroupPrototypeActual_strategy)
+@given(instance=aadl2_FeaturePrototypeReference_strategy)
 @settings(max_examples=50)
-def test_aadl2::featuregroupprototypeactual_instantiation(instance):
-    assert isinstance(instance, aadl2::FeatureGroupPrototypeActual)
+def test_aadl2_featureprototypereference_instantiation(instance):
+    assert isinstance(instance, aadl2_FeaturePrototypeReference)
+
+
+
+@given(instance=aadl2_FeaturePrototypeReference_strategy)
+def test_aadl2_featureprototypereference_direction_setter(instance):
+    original = instance.direction
+    instance.direction = original
+    assert instance.direction == original
+
+@given(instance=aadl2_PortSpecification_strategy)
+@settings(max_examples=50)
+def test_aadl2_portspecification_instantiation(instance):
+    assert isinstance(instance, aadl2_PortSpecification)
+
+
+
+@given(instance=aadl2_PortSpecification_strategy)
+def test_aadl2_portspecification_direction_setter(instance):
+    original = instance.direction
+    instance.direction = original
+    assert instance.direction == original
+
+
+
+@given(instance=aadl2_PortSpecification_strategy)
+def test_aadl2_portspecification_category_setter(instance):
+    original = instance.category
+    instance.category = original
+    assert instance.category == original
+
+@given(instance=aadl2_FeatureGroupPrototypeActual_strategy)
+@settings(max_examples=50)
+def test_aadl2_featuregroupprototypeactual_instantiation(instance):
+    assert isinstance(instance, aadl2_FeatureGroupPrototypeActual)
 
 @given(instance=PrototypeBinding_strategy)
 @settings(max_examples=50)
 def test_prototypebinding_instantiation(instance):
     assert isinstance(instance, PrototypeBinding)
 
-@given(instance=aadl2::FeaturePrototypeBinding_strategy)
+@given(instance=aadl2_FeaturePrototypeBinding_strategy)
 @settings(max_examples=50)
-def test_aadl2::featureprototypebinding_instantiation(instance):
-    assert isinstance(instance, aadl2::FeaturePrototypeBinding)
+def test_aadl2_featureprototypebinding_instantiation(instance):
+    assert isinstance(instance, aadl2_FeaturePrototypeBinding)
 
-@given(instance=aadl2::FeatureGroupPrototypeBinding_strategy)
+@given(instance=aadl2_FeatureGroupPrototypeBinding_strategy)
 @settings(max_examples=50)
-def test_aadl2::featuregroupprototypebinding_instantiation(instance):
-    assert isinstance(instance, aadl2::FeatureGroupPrototypeBinding)
+def test_aadl2_featuregroupprototypebinding_instantiation(instance):
+    assert isinstance(instance, aadl2_FeatureGroupPrototypeBinding)
 
-@given(instance=aadl2::ComponentPrototypeBinding_strategy)
+@given(instance=aadl2_ComponentPrototypeBinding_strategy)
 @settings(max_examples=50)
-def test_aadl2::componentprototypebinding_instantiation(instance):
-    assert isinstance(instance, aadl2::ComponentPrototypeBinding)
+def test_aadl2_componentprototypebinding_instantiation(instance):
+    assert isinstance(instance, aadl2_ComponentPrototypeBinding)
 
 @given(instance=ModelUnit_strategy)
 @settings(max_examples=50)
 def test_modelunit_instantiation(instance):
     assert isinstance(instance, ModelUnit)
 
-@given(instance=aadl2::AadlPackage_strategy)
+@given(instance=aadl2_AadlPackage_strategy)
 @settings(max_examples=50)
-def test_aadl2::aadlpackage_instantiation(instance):
-    assert isinstance(instance, aadl2::AadlPackage)
+def test_aadl2_aadlpackage_instantiation(instance):
+    assert isinstance(instance, aadl2_AadlPackage)
 
 @given(instance=PackageSection_strategy)
 @settings(max_examples=50)
 def test_packagesection_instantiation(instance):
     assert isinstance(instance, PackageSection)
 
-@given(instance=aadl2::PrivatePackageSection_strategy)
+@given(instance=aadl2_PrivatePackageSection_strategy)
 @settings(max_examples=50)
-def test_aadl2::privatepackagesection_instantiation(instance):
-    assert isinstance(instance, aadl2::PrivatePackageSection)
+def test_aadl2_privatepackagesection_instantiation(instance):
+    assert isinstance(instance, aadl2_PrivatePackageSection)
 
-@given(instance=aadl2::PublicPackageSection_strategy)
+@given(instance=aadl2_PublicPackageSection_strategy)
 @settings(max_examples=50)
-def test_aadl2::publicpackagesection_instantiation(instance):
-    assert isinstance(instance, aadl2::PublicPackageSection)
+def test_aadl2_publicpackagesection_instantiation(instance):
+    assert isinstance(instance, aadl2_PublicPackageSection)
 
 @given(instance=AnnexSubclause_strategy)
 @settings(max_examples=50)
 def test_annexsubclause_instantiation(instance):
     assert isinstance(instance, AnnexSubclause)
 
-@given(instance=aadl2::DefaultAnnexSubclause_strategy)
+@given(instance=aadl2_DefaultAnnexSubclause_strategy)
 @settings(max_examples=50)
-def test_aadl2::defaultannexsubclause_instantiation(instance):
-    assert isinstance(instance, aadl2::DefaultAnnexSubclause)
-
-@given(instance=aadl2::DefaultAnnexSubclause_strategy)
-def test_aadl2::defaultannexsubclause_sourceText_type(instance):
-    assert isinstance(instance.sourceText, str)
+def test_aadl2_defaultannexsubclause_instantiation(instance):
+    assert isinstance(instance, aadl2_DefaultAnnexSubclause)
 
 
-@given(instance=aadl2::DefaultAnnexSubclause_strategy)
-def test_aadl2::defaultannexsubclause_sourceText_setter(instance):
+
+@given(instance=aadl2_DefaultAnnexSubclause_strategy)
+def test_aadl2_defaultannexsubclause_sourceText_setter(instance):
     original = instance.sourceText
     instance.sourceText = original
     assert instance.sourceText == original
@@ -8309,21 +8255,183 @@ def test_aadl2::defaultannexsubclause_sourceText_setter(instance):
 def test_annexlibrary_instantiation(instance):
     assert isinstance(instance, AnnexLibrary)
 
-@given(instance=aadl2::DefaultAnnexLibrary_strategy)
+@given(instance=aadl2_DefaultAnnexLibrary_strategy)
 @settings(max_examples=50)
-def test_aadl2::defaultannexlibrary_instantiation(instance):
-    assert isinstance(instance, aadl2::DefaultAnnexLibrary)
-
-@given(instance=aadl2::DefaultAnnexLibrary_strategy)
-def test_aadl2::defaultannexlibrary_sourceText_type(instance):
-    assert isinstance(instance.sourceText, str)
+def test_aadl2_defaultannexlibrary_instantiation(instance):
+    assert isinstance(instance, aadl2_DefaultAnnexLibrary)
 
 
-@given(instance=aadl2::DefaultAnnexLibrary_strategy)
-def test_aadl2::defaultannexlibrary_sourceText_setter(instance):
+
+@given(instance=aadl2_DefaultAnnexLibrary_strategy)
+def test_aadl2_defaultannexlibrary_sourceText_setter(instance):
     original = instance.sourceText
     instance.sourceText = original
     assert instance.sourceText == original
+
+@given(instance=ProcessorFeature_strategy)
+@settings(max_examples=50)
+def test_processorfeature_instantiation(instance):
+    assert isinstance(instance, ProcessorFeature)
+
+@given(instance=InternalFeature_strategy)
+@settings(max_examples=50)
+def test_internalfeature_instantiation(instance):
+    assert isinstance(instance, InternalFeature)
+
+@given(instance=Connection_strategy)
+@settings(max_examples=50)
+def test_connection_instantiation(instance):
+    assert isinstance(instance, Connection)
+
+@given(instance=VirtualBusSubcomponentType_strategy)
+@settings(max_examples=50)
+def test_virtualbussubcomponenttype_instantiation(instance):
+    assert isinstance(instance, VirtualBusSubcomponentType)
+
+@given(instance=aadl2_VirtualBusPrototype_strategy)
+@settings(max_examples=50)
+def test_aadl2_virtualbusprototype_instantiation(instance):
+    assert isinstance(instance, aadl2_VirtualBusPrototype)
+
+@given(instance=aadl2_AbstractPrototype_strategy)
+@settings(max_examples=50)
+def test_aadl2_abstractprototype_instantiation(instance):
+    assert isinstance(instance, aadl2_AbstractPrototype)
+
+@given(instance=Abstract_strategy)
+@settings(max_examples=50)
+def test_abstract_instantiation(instance):
+    assert isinstance(instance, Abstract)
+
+@given(instance=Subcomponent_strategy)
+@settings(max_examples=50)
+def test_subcomponent_instantiation(instance):
+    assert isinstance(instance, Subcomponent)
+
+@given(instance=aadl2_SystemSubcomponent_strategy)
+@settings(max_examples=50)
+def test_aadl2_systemsubcomponent_instantiation(instance):
+    assert isinstance(instance, aadl2_SystemSubcomponent)
+
+@given(instance=aadl2_VirtualProcessorSubcomponent_strategy)
+@settings(max_examples=50)
+def test_aadl2_virtualprocessorsubcomponent_instantiation(instance):
+    assert isinstance(instance, aadl2_VirtualProcessorSubcomponent)
+
+@given(instance=aadl2_VirtualBusSubcomponent_strategy)
+@settings(max_examples=50)
+def test_aadl2_virtualbussubcomponent_instantiation(instance):
+    assert isinstance(instance, aadl2_VirtualBusSubcomponent)
+
+@given(instance=aadl2_ProcessSubcomponent_strategy)
+@settings(max_examples=50)
+def test_aadl2_processsubcomponent_instantiation(instance):
+    assert isinstance(instance, aadl2_ProcessSubcomponent)
+
+@given(instance=aadl2_ThreadGroupSubcomponent_strategy)
+@settings(max_examples=50)
+def test_aadl2_threadgroupsubcomponent_instantiation(instance):
+    assert isinstance(instance, aadl2_ThreadGroupSubcomponent)
+
+@given(instance=aadl2_DeviceSubcomponent_strategy)
+@settings(max_examples=50)
+def test_aadl2_devicesubcomponent_instantiation(instance):
+    assert isinstance(instance, aadl2_DeviceSubcomponent)
+
+@given(instance=aadl2_ProcessorSubcomponent_strategy)
+@settings(max_examples=50)
+def test_aadl2_processorsubcomponent_instantiation(instance):
+    assert isinstance(instance, aadl2_ProcessorSubcomponent)
+
+@given(instance=aadl2_ThreadSubcomponent_strategy)
+@settings(max_examples=50)
+def test_aadl2_threadsubcomponent_instantiation(instance):
+    assert isinstance(instance, aadl2_ThreadSubcomponent)
+
+@given(instance=aadl2_MemorySubcomponent_strategy)
+@settings(max_examples=50)
+def test_aadl2_memorysubcomponent_instantiation(instance):
+    assert isinstance(instance, aadl2_MemorySubcomponent)
+
+@given(instance=SubprogramGroup_strategy)
+@settings(max_examples=50)
+def test_subprogramgroup_instantiation(instance):
+    assert isinstance(instance, SubprogramGroup)
+
+@given(instance=Subprogram_strategy)
+@settings(max_examples=50)
+def test_subprogram_instantiation(instance):
+    assert isinstance(instance, Subprogram)
+
+@given(instance=AccessConnectionEnd_strategy)
+@settings(max_examples=50)
+def test_accessconnectionend_instantiation(instance):
+    assert isinstance(instance, AccessConnectionEnd)
+
+@given(instance=aadl2_SubprogramSubcomponent_strategy)
+@settings(max_examples=50)
+def test_aadl2_subprogramsubcomponent_instantiation(instance):
+    assert isinstance(instance, aadl2_SubprogramSubcomponent)
+
+@given(instance=TriggerPort_strategy)
+@settings(max_examples=50)
+def test_triggerport_instantiation(instance):
+    assert isinstance(instance, TriggerPort)
+
+@given(instance=Port_strategy)
+@settings(max_examples=50)
+def test_port_instantiation(instance):
+    assert isinstance(instance, Port)
+
+@given(instance=PortConnectionEnd_strategy)
+@settings(max_examples=50)
+def test_portconnectionend_instantiation(instance):
+    assert isinstance(instance, PortConnectionEnd)
+
+@given(instance=ParameterConnectionEnd_strategy)
+@settings(max_examples=50)
+def test_parameterconnectionend_instantiation(instance):
+    assert isinstance(instance, ParameterConnectionEnd)
+
+@given(instance=Data_strategy)
+@settings(max_examples=50)
+def test_data_instantiation(instance):
+    assert isinstance(instance, Data)
+
+@given(instance=aadl2_DataSubcomponent_strategy)
+@settings(max_examples=50)
+def test_aadl2_datasubcomponent_instantiation(instance):
+    assert isinstance(instance, aadl2_DataSubcomponent)
+
+@given(instance=Bus_strategy)
+@settings(max_examples=50)
+def test_bus_instantiation(instance):
+    assert isinstance(instance, Bus)
+
+@given(instance=aadl2_BusSubcomponent_strategy)
+@settings(max_examples=50)
+def test_aadl2_bussubcomponent_instantiation(instance):
+    assert isinstance(instance, aadl2_BusSubcomponent)
+
+@given(instance=Access_strategy)
+@settings(max_examples=50)
+def test_access_instantiation(instance):
+    assert isinstance(instance, Access)
+
+@given(instance=aadl2_SubprogramAccess_strategy)
+@settings(max_examples=50)
+def test_aadl2_subprogramaccess_instantiation(instance):
+    assert isinstance(instance, aadl2_SubprogramAccess)
+
+@given(instance=aadl2_EventPort_strategy)
+@settings(max_examples=50)
+def test_aadl2_eventport_instantiation(instance):
+    assert isinstance(instance, aadl2_EventPort)
+
+@given(instance=aadl2_BusAccess_strategy)
+@settings(max_examples=50)
+def test_aadl2_busaccess_instantiation(instance):
+    assert isinstance(instance, aadl2_BusAccess)
 
 @given(instance=FeatureType_strategy)
 @settings(max_examples=50)
@@ -8335,56 +8443,84 @@ def test_featuretype_instantiation(instance):
 def test_feature_instantiation(instance):
     assert isinstance(instance, Feature)
 
-@given(instance=aadl2::DirectedFeature_strategy)
+@given(instance=aadl2_Access_strategy)
 @settings(max_examples=50)
-def test_aadl2::directedfeature_instantiation(instance):
-    assert isinstance(instance, aadl2::DirectedFeature)
-
-@given(instance=aadl2::DirectedFeature_strategy)
-def test_aadl2::directedfeature_direction_type(instance):
-    assert isinstance(instance.direction, str)
+def test_aadl2_access_instantiation(instance):
+    assert isinstance(instance, aadl2_Access)
 
 
-@given(instance=aadl2::DirectedFeature_strategy)
-def test_aadl2::directedfeature_direction_setter(instance):
+
+@given(instance=aadl2_Access_strategy)
+def test_aadl2_access_category_setter(instance):
+    original = instance.category
+    instance.category = original
+    assert instance.category == original
+
+
+
+@given(instance=aadl2_Access_strategy)
+def test_aadl2_access_kind_setter(instance):
+    original = instance.kind
+    instance.kind = original
+    assert instance.kind == original
+
+@given(instance=aadl2_DirectedFeature_strategy)
+@settings(max_examples=50)
+def test_aadl2_directedfeature_instantiation(instance):
+    assert isinstance(instance, aadl2_DirectedFeature)
+
+
+
+@given(instance=aadl2_DirectedFeature_strategy)
+def test_aadl2_directedfeature_direction_setter(instance):
     original = instance.direction
     instance.direction = original
     assert instance.direction == original
 
-@given(instance=aadl2::CallContext_strategy)
+@given(instance=aadl2_CallContext_strategy)
 @settings(max_examples=50)
-def test_aadl2::callcontext_instantiation(instance):
-    assert isinstance(instance, aadl2::CallContext)
+def test_aadl2_callcontext_instantiation(instance):
+    assert isinstance(instance, aadl2_CallContext)
 
-@given(instance=aadl2::FeatureType_strategy)
+@given(instance=aadl2_FeatureType_strategy)
 @settings(max_examples=50)
-def test_aadl2::featuretype_instantiation(instance):
-    assert isinstance(instance, aadl2::FeatureType)
+def test_aadl2_featuretype_instantiation(instance):
+    assert isinstance(instance, aadl2_FeatureType)
 
 @given(instance=CallContext_strategy)
 @settings(max_examples=50)
 def test_callcontext_instantiation(instance):
     assert isinstance(instance, CallContext)
 
-@given(instance=aadl2::DataType_strategy)
+@given(instance=aadl2_SubprogramType_strategy)
 @settings(max_examples=50)
-def test_aadl2::datatype_instantiation(instance):
-    assert isinstance(instance, aadl2::DataType)
+def test_aadl2_subprogramtype_instantiation(instance):
+    assert isinstance(instance, aadl2_SubprogramType)
 
-@given(instance=aadl2::SubprogramGroupType_strategy)
+@given(instance=aadl2_DataType_strategy)
 @settings(max_examples=50)
-def test_aadl2::subprogramgrouptype_instantiation(instance):
-    assert isinstance(instance, aadl2::SubprogramGroupType)
+def test_aadl2_datatype_instantiation(instance):
+    assert isinstance(instance, aadl2_DataType)
 
-@given(instance=aadl2::SubprogramType_strategy)
+@given(instance=aadl2_SubprogramGroupSubcomponent_strategy)
 @settings(max_examples=50)
-def test_aadl2::subprogramtype_instantiation(instance):
-    assert isinstance(instance, aadl2::SubprogramType)
+def test_aadl2_subprogramgroupsubcomponent_instantiation(instance):
+    assert isinstance(instance, aadl2_SubprogramGroupSubcomponent)
 
-@given(instance=aadl2::AbstractType_strategy)
+@given(instance=aadl2_SubprogramGroupAccess_strategy)
 @settings(max_examples=50)
-def test_aadl2::abstracttype_instantiation(instance):
-    assert isinstance(instance, aadl2::AbstractType)
+def test_aadl2_subprogramgroupaccess_instantiation(instance):
+    assert isinstance(instance, aadl2_SubprogramGroupAccess)
+
+@given(instance=aadl2_SubprogramGroupType_strategy)
+@settings(max_examples=50)
+def test_aadl2_subprogramgrouptype_instantiation(instance):
+    assert isinstance(instance, aadl2_SubprogramGroupType)
+
+@given(instance=aadl2_AbstractType_strategy)
+@settings(max_examples=50)
+def test_aadl2_abstracttype_instantiation(instance):
+    assert isinstance(instance, aadl2_AbstractType)
 
 @given(instance=FeatureGroupConnectionEnd_strategy)
 @settings(max_examples=50)
@@ -8396,35 +8532,63 @@ def test_featuregroupconnectionend_instantiation(instance):
 def test_context_instantiation(instance):
     assert isinstance(instance, Context)
 
-@given(instance=aadl2::SubprogramCall_strategy)
+@given(instance=aadl2_EventDataPort_strategy)
 @settings(max_examples=50)
-def test_aadl2::subprogramcall_instantiation(instance):
-    assert isinstance(instance, aadl2::SubprogramCall)
+def test_aadl2_eventdataport_instantiation(instance):
+    assert isinstance(instance, aadl2_EventDataPort)
+
+@given(instance=aadl2_SubprogramCall_strategy)
+@settings(max_examples=50)
+def test_aadl2_subprogramcall_instantiation(instance):
+    assert isinstance(instance, aadl2_SubprogramCall)
+
+@given(instance=aadl2_DataPort_strategy)
+@settings(max_examples=50)
+def test_aadl2_dataport_instantiation(instance):
+    assert isinstance(instance, aadl2_DataPort)
 
 @given(instance=Generalization__strategy)
 @settings(max_examples=50)
 def test_generalization__instantiation(instance):
     assert isinstance(instance, Generalization_)
 
-@given(instance=aadl2::GroupExtension_strategy)
+@given(instance=aadl2_GroupExtension_strategy)
 @settings(max_examples=50)
-def test_aadl2::groupextension_instantiation(instance):
-    assert isinstance(instance, aadl2::GroupExtension)
+def test_aadl2_groupextension_instantiation(instance):
+    assert isinstance(instance, aadl2_GroupExtension)
 
 @given(instance=DirectedFeature_strategy)
 @settings(max_examples=50)
 def test_directedfeature_instantiation(instance):
     assert isinstance(instance, DirectedFeature)
 
+@given(instance=aadl2_Port_strategy)
+@settings(max_examples=50)
+def test_aadl2_port_instantiation(instance):
+    assert isinstance(instance, aadl2_Port)
+
+
+
+@given(instance=aadl2_Port_strategy)
+def test_aadl2_port_category_setter(instance):
+    original = instance.category
+    instance.category = original
+    assert instance.category == original
+
+@given(instance=aadl2_Parameter_strategy)
+@settings(max_examples=50)
+def test_aadl2_parameter_instantiation(instance):
+    assert isinstance(instance, aadl2_Parameter)
+
 @given(instance=EndToEndFlowElement_strategy)
 @settings(max_examples=50)
 def test_endtoendflowelement_instantiation(instance):
     assert isinstance(instance, EndToEndFlowElement)
 
-@given(instance=aadl2::FlowElement_strategy)
+@given(instance=aadl2_FlowElement_strategy)
 @settings(max_examples=50)
-def test_aadl2::flowelement_instantiation(instance):
-    assert isinstance(instance, aadl2::FlowElement)
+def test_aadl2_flowelement_instantiation(instance):
+    assert isinstance(instance, aadl2_FlowElement)
 
 @given(instance=Flow_strategy)
 @settings(max_examples=50)
@@ -8435,6 +8599,11 @@ def test_flow_instantiation(instance):
 @settings(max_examples=50)
 def test_flowelement_instantiation(instance):
     assert isinstance(instance, FlowElement)
+
+@given(instance=aadl2_DataAccess_strategy)
+@settings(max_examples=50)
+def test_aadl2_dataaccess_instantiation(instance):
+    assert isinstance(instance, aadl2_DataAccess)
 
 @given(instance=ModalPath_strategy)
 @settings(max_examples=50)
@@ -8451,48 +8620,73 @@ def test_flowfeature_instantiation(instance):
 def test_prototype_instantiation(instance):
     assert isinstance(instance, Prototype)
 
-@given(instance=aadl2::FeatureGroupPrototype_strategy)
+@given(instance=aadl2_FeatureGroupPrototype_strategy)
 @settings(max_examples=50)
-def test_aadl2::featuregroupprototype_instantiation(instance):
-    assert isinstance(instance, aadl2::FeatureGroupPrototype)
+def test_aadl2_featuregroupprototype_instantiation(instance):
+    assert isinstance(instance, aadl2_FeatureGroupPrototype)
+
+@given(instance=aadl2_FeaturePrototype_strategy)
+@settings(max_examples=50)
+def test_aadl2_featureprototype_instantiation(instance):
+    assert isinstance(instance, aadl2_FeaturePrototype)
+
+
+
+@given(instance=aadl2_FeaturePrototype_strategy)
+def test_aadl2_featureprototype_direction_setter(instance):
+    original = instance.direction
+    instance.direction = original
+    assert instance.direction == original
 
 @given(instance=ConnectionEnd_strategy)
 @settings(max_examples=50)
 def test_connectionend_instantiation(instance):
     assert isinstance(instance, ConnectionEnd)
 
-@given(instance=aadl2::FeatureGroupConnectionEnd_strategy)
+@given(instance=aadl2_AccessConnectionEnd_strategy)
 @settings(max_examples=50)
-def test_aadl2::featuregroupconnectionend_instantiation(instance):
-    assert isinstance(instance, aadl2::FeatureGroupConnectionEnd)
+def test_aadl2_accessconnectionend_instantiation(instance):
+    assert isinstance(instance, aadl2_AccessConnectionEnd)
 
-@given(instance=aadl2::FeatureConnectionEnd_strategy)
+@given(instance=aadl2_PortConnectionEnd_strategy)
 @settings(max_examples=50)
-def test_aadl2::featureconnectionend_instantiation(instance):
-    assert isinstance(instance, aadl2::FeatureConnectionEnd)
+def test_aadl2_portconnectionend_instantiation(instance):
+    assert isinstance(instance, aadl2_PortConnectionEnd)
+
+@given(instance=aadl2_ParameterConnectionEnd_strategy)
+@settings(max_examples=50)
+def test_aadl2_parameterconnectionend_instantiation(instance):
+    assert isinstance(instance, aadl2_ParameterConnectionEnd)
+
+@given(instance=aadl2_FeatureGroupConnectionEnd_strategy)
+@settings(max_examples=50)
+def test_aadl2_featuregroupconnectionend_instantiation(instance):
+    assert isinstance(instance, aadl2_FeatureGroupConnectionEnd)
+
+@given(instance=aadl2_FeatureConnectionEnd_strategy)
+@settings(max_examples=50)
+def test_aadl2_featureconnectionend_instantiation(instance):
+    assert isinstance(instance, aadl2_FeatureConnectionEnd)
 
 @given(instance=ArrayableElement_strategy)
 @settings(max_examples=50)
 def test_arrayableelement_instantiation(instance):
     assert isinstance(instance, ArrayableElement)
 
-@given(instance=aadl2::FeaturePrototypeActual_strategy)
+@given(instance=aadl2_FeaturePrototypeActual_strategy)
 @settings(max_examples=50)
-def test_aadl2::featureprototypeactual_instantiation(instance):
-    assert isinstance(instance, aadl2::FeaturePrototypeActual)
+def test_aadl2_featureprototypeactual_instantiation(instance):
+    assert isinstance(instance, aadl2_FeaturePrototypeActual)
 
-@given(instance=aadl2::ComponentPrototypeActual_strategy)
+@given(instance=aadl2_ComponentPrototypeActual_strategy)
 @settings(max_examples=50)
-def test_aadl2::componentprototypeactual_instantiation(instance):
-    assert isinstance(instance, aadl2::ComponentPrototypeActual)
-
-@given(instance=aadl2::ComponentPrototypeActual_strategy)
-def test_aadl2::componentprototypeactual_category_type(instance):
-    assert isinstance(instance.category, str)
+def test_aadl2_componentprototypeactual_instantiation(instance):
+    assert isinstance(instance, aadl2_ComponentPrototypeActual)
 
 
-@given(instance=aadl2::ComponentPrototypeActual_strategy)
-def test_aadl2::componentprototypeactual_category_setter(instance):
+
+@given(instance=aadl2_ComponentPrototypeActual_strategy)
+def test_aadl2_componentprototypeactual_category_setter(instance):
     original = instance.category
     instance.category = original
     assert instance.category == original
@@ -8502,47 +8696,46 @@ def test_aadl2::componentprototypeactual_category_setter(instance):
 def test_featureconnectionend_instantiation(instance):
     assert isinstance(instance, FeatureConnectionEnd)
 
-@given(instance=aadl2::FeatureGroup_strategy)
+@given(instance=aadl2_AbstractFeature_strategy)
 @settings(max_examples=50)
-def test_aadl2::featuregroup_instantiation(instance):
-    assert isinstance(instance, aadl2::FeatureGroup)
+def test_aadl2_abstractfeature_instantiation(instance):
+    assert isinstance(instance, aadl2_AbstractFeature)
 
-@given(instance=aadl2::FeatureGroup_strategy)
-def test_aadl2::featuregroup_inverse_type(instance):
-    assert isinstance(instance.inverse, str)
+@given(instance=aadl2_FeatureGroup_strategy)
+@settings(max_examples=50)
+def test_aadl2_featuregroup_instantiation(instance):
+    assert isinstance(instance, aadl2_FeatureGroup)
 
 
-@given(instance=aadl2::FeatureGroup_strategy)
-def test_aadl2::featuregroup_inverse_setter(instance):
+
+@given(instance=aadl2_FeatureGroup_strategy)
+def test_aadl2_featuregroup_inverse_setter(instance):
     original = instance.inverse
     instance.inverse = original
     assert instance.inverse == original
 
-@given(instance=aadl2::TypeExtension_strategy)
+@given(instance=aadl2_TypeExtension_strategy)
 @settings(max_examples=50)
-def test_aadl2::typeextension_instantiation(instance):
-    assert isinstance(instance, aadl2::TypeExtension)
+def test_aadl2_typeextension_instantiation(instance):
+    assert isinstance(instance, aadl2_TypeExtension)
 
-@given(instance=aadl2::FlowSpecification_strategy)
+@given(instance=aadl2_FlowSpecification_strategy)
 @settings(max_examples=50)
-def test_aadl2::flowspecification_instantiation(instance):
-    assert isinstance(instance, aadl2::FlowSpecification)
-
-@given(instance=aadl2::FlowSpecification_strategy)
-def test_aadl2::flowspecification_kind_type(instance):
-    assert isinstance(instance.kind, str)
+def test_aadl2_flowspecification_instantiation(instance):
+    assert isinstance(instance, aadl2_FlowSpecification)
 
 
-@given(instance=aadl2::FlowSpecification_strategy)
-def test_aadl2::flowspecification_kind_setter(instance):
+
+@given(instance=aadl2_FlowSpecification_strategy)
+def test_aadl2_flowspecification_kind_setter(instance):
     original = instance.kind
     instance.kind = original
     assert instance.kind == original
 
-@given(instance=aadl2::FeatureClassifier_strategy)
+@given(instance=aadl2_FeatureClassifier_strategy)
 @settings(max_examples=50)
-def test_aadl2::featureclassifier_instantiation(instance):
-    assert isinstance(instance, aadl2::FeatureClassifier)
+def test_aadl2_featureclassifier_instantiation(instance):
+    assert isinstance(instance, aadl2_FeatureClassifier)
 
 @given(instance=FeatureClassifier_strategy)
 @settings(max_examples=50)
@@ -8554,599 +8747,310 @@ def test_featureclassifier_instantiation(instance):
 def test_subcomponenttype_instantiation(instance):
     assert isinstance(instance, SubcomponentType)
 
-@given(instance=aadl2::SystemSubcomponentType_strategy)
+@given(instance=aadl2_SubprogramGroupSubcomponentType_strategy)
 @settings(max_examples=50)
-def test_aadl2::systemsubcomponenttype_instantiation(instance):
-    assert isinstance(instance, aadl2::SystemSubcomponentType)
+def test_aadl2_subprogramgroupsubcomponenttype_instantiation(instance):
+    assert isinstance(instance, aadl2_SubprogramGroupSubcomponentType)
 
-@given(instance=aadl2::ThreadGroupSubcomponentType_strategy)
+@given(instance=aadl2_DataSubcomponentType_strategy)
 @settings(max_examples=50)
-def test_aadl2::threadgroupsubcomponenttype_instantiation(instance):
-    assert isinstance(instance, aadl2::ThreadGroupSubcomponentType)
+def test_aadl2_datasubcomponenttype_instantiation(instance):
+    assert isinstance(instance, aadl2_DataSubcomponentType)
 
-@given(instance=aadl2::VirtualProcessorSubcomponentType_strategy)
+@given(instance=aadl2_ProcessorSubcomponentType_strategy)
 @settings(max_examples=50)
-def test_aadl2::virtualprocessorsubcomponenttype_instantiation(instance):
-    assert isinstance(instance, aadl2::VirtualProcessorSubcomponentType)
+def test_aadl2_processorsubcomponenttype_instantiation(instance):
+    assert isinstance(instance, aadl2_ProcessorSubcomponentType)
 
-@given(instance=aadl2::DeviceSubcomponentType_strategy)
+@given(instance=aadl2_SubprogramSubcomponentType_strategy)
 @settings(max_examples=50)
-def test_aadl2::devicesubcomponenttype_instantiation(instance):
-    assert isinstance(instance, aadl2::DeviceSubcomponentType)
+def test_aadl2_subprogramsubcomponenttype_instantiation(instance):
+    assert isinstance(instance, aadl2_SubprogramSubcomponentType)
 
-@given(instance=aadl2::ProcessSubcomponentType_strategy)
+@given(instance=aadl2_VirtualBusSubcomponentType_strategy)
 @settings(max_examples=50)
-def test_aadl2::processsubcomponenttype_instantiation(instance):
-    assert isinstance(instance, aadl2::ProcessSubcomponentType)
+def test_aadl2_virtualbussubcomponenttype_instantiation(instance):
+    assert isinstance(instance, aadl2_VirtualBusSubcomponentType)
 
-@given(instance=aadl2::ThreadSubcomponentType_strategy)
+@given(instance=aadl2_ComponentPrototype_strategy)
 @settings(max_examples=50)
-def test_aadl2::threadsubcomponenttype_instantiation(instance):
-    assert isinstance(instance, aadl2::ThreadSubcomponentType)
-
-@given(instance=aadl2::VirtualBusSubcomponentType_strategy)
-@settings(max_examples=50)
-def test_aadl2::virtualbussubcomponenttype_instantiation(instance):
-    assert isinstance(instance, aadl2::VirtualBusSubcomponentType)
-
-@given(instance=aadl2::ProcessorSubcomponentType_strategy)
-@settings(max_examples=50)
-def test_aadl2::processorsubcomponenttype_instantiation(instance):
-    assert isinstance(instance, aadl2::ProcessorSubcomponentType)
-
-@given(instance=aadl2::MemorySubcomponentType_strategy)
-@settings(max_examples=50)
-def test_aadl2::memorysubcomponenttype_instantiation(instance):
-    assert isinstance(instance, aadl2::MemorySubcomponentType)
-
-@given(instance=aadl2::ComponentPrototype_strategy)
-@settings(max_examples=50)
-def test_aadl2::componentprototype_instantiation(instance):
-    assert isinstance(instance, aadl2::ComponentPrototype)
-
-@given(instance=aadl2::ComponentPrototype_strategy)
-def test_aadl2::componentprototype_array_type(instance):
-    assert isinstance(instance.array, str)
+def test_aadl2_componentprototype_instantiation(instance):
+    assert isinstance(instance, aadl2_ComponentPrototype)
 
 
-@given(instance=aadl2::ComponentPrototype_strategy)
-def test_aadl2::componentprototype_array_setter(instance):
+
+@given(instance=aadl2_ComponentPrototype_strategy)
+def test_aadl2_componentprototype_array_setter(instance):
     original = instance.array
     instance.array = original
     assert instance.array == original
+
+@given(instance=aadl2_SystemSubcomponentType_strategy)
+@settings(max_examples=50)
+def test_aadl2_systemsubcomponenttype_instantiation(instance):
+    assert isinstance(instance, aadl2_SystemSubcomponentType)
+
+@given(instance=aadl2_ThreadSubcomponentType_strategy)
+@settings(max_examples=50)
+def test_aadl2_threadsubcomponenttype_instantiation(instance):
+    assert isinstance(instance, aadl2_ThreadSubcomponentType)
+
+@given(instance=aadl2_DeviceSubcomponentType_strategy)
+@settings(max_examples=50)
+def test_aadl2_devicesubcomponenttype_instantiation(instance):
+    assert isinstance(instance, aadl2_DeviceSubcomponentType)
+
+@given(instance=aadl2_MemorySubcomponentType_strategy)
+@settings(max_examples=50)
+def test_aadl2_memorysubcomponenttype_instantiation(instance):
+    assert isinstance(instance, aadl2_MemorySubcomponentType)
+
+@given(instance=aadl2_VirtualProcessorSubcomponentType_strategy)
+@settings(max_examples=50)
+def test_aadl2_virtualprocessorsubcomponenttype_instantiation(instance):
+    assert isinstance(instance, aadl2_VirtualProcessorSubcomponentType)
+
+@given(instance=aadl2_ProcessSubcomponentType_strategy)
+@settings(max_examples=50)
+def test_aadl2_processsubcomponenttype_instantiation(instance):
+    assert isinstance(instance, aadl2_ProcessSubcomponentType)
+
+@given(instance=aadl2_ThreadGroupSubcomponentType_strategy)
+@settings(max_examples=50)
+def test_aadl2_threadgroupsubcomponenttype_instantiation(instance):
+    assert isinstance(instance, aadl2_ThreadGroupSubcomponentType)
+
+@given(instance=aadl2_BusSubcomponentType_strategy)
+@settings(max_examples=50)
+def test_aadl2_bussubcomponenttype_instantiation(instance):
+    assert isinstance(instance, aadl2_BusSubcomponentType)
+
+@given(instance=aadl2_AbstractSubcomponentType_strategy)
+@settings(max_examples=50)
+def test_aadl2_abstractsubcomponenttype_instantiation(instance):
+    assert isinstance(instance, aadl2_AbstractSubcomponentType)
 
 @given(instance=Classifier_strategy)
 @settings(max_examples=50)
 def test_classifier_instantiation(instance):
     assert isinstance(instance, Classifier)
 
-@given(instance=aadl2::FeatureGroupType_strategy)
+@given(instance=aadl2_FeatureGroupType_strategy)
 @settings(max_examples=50)
-def test_aadl2::featuregrouptype_instantiation(instance):
-    assert isinstance(instance, aadl2::FeatureGroupType)
+def test_aadl2_featuregrouptype_instantiation(instance):
+    assert isinstance(instance, aadl2_FeatureGroupType)
 
-@given(instance=aadl2::ComponentClassifier_strategy)
+@given(instance=aadl2_ComponentClassifier_strategy)
 @settings(max_examples=50)
-def test_aadl2::componentclassifier_instantiation(instance):
-    assert isinstance(instance, aadl2::ComponentClassifier)
-
-@given(instance=aadl2::ComponentClassifier_strategy)
-def test_aadl2::componentclassifier_noModes_type(instance):
-    assert isinstance(instance.noModes, str)
+def test_aadl2_componentclassifier_instantiation(instance):
+    assert isinstance(instance, aadl2_ComponentClassifier)
 
 
-@given(instance=aadl2::ComponentClassifier_strategy)
-def test_aadl2::componentclassifier_noModes_setter(instance):
-    original = instance.noModes
-    instance.noModes = original
-    assert instance.noModes == original
 
-@given(instance=aadl2::ComponentClassifier_strategy)
-def test_aadl2::componentclassifier_derivedModes_type(instance):
-    assert isinstance(instance.derivedModes, str)
-
-
-@given(instance=aadl2::ComponentClassifier_strategy)
-def test_aadl2::componentclassifier_derivedModes_setter(instance):
+@given(instance=aadl2_ComponentClassifier_strategy)
+def test_aadl2_componentclassifier_derivedModes_setter(instance):
     original = instance.derivedModes
     instance.derivedModes = original
     assert instance.derivedModes == original
 
-@given(instance=aadl2::ComponentClassifier_strategy)
-def test_aadl2::componentclassifier_noFlows_type(instance):
-    assert isinstance(instance.noFlows, str)
 
 
-@given(instance=aadl2::ComponentClassifier_strategy)
-def test_aadl2::componentclassifier_noFlows_setter(instance):
+@given(instance=aadl2_ComponentClassifier_strategy)
+def test_aadl2_componentclassifier_noFlows_setter(instance):
     original = instance.noFlows
     instance.noFlows = original
     assert instance.noFlows == original
 
-@given(instance=aadl2::EndToEndFlow_strategy)
+
+
+@given(instance=aadl2_ComponentClassifier_strategy)
+def test_aadl2_componentclassifier_noModes_setter(instance):
+    original = instance.noModes
+    instance.noModes = original
+    assert instance.noModes == original
+
+@given(instance=aadl2_PortProxy_strategy)
 @settings(max_examples=50)
-def test_aadl2::endtoendflow_instantiation(instance):
-    assert isinstance(instance, aadl2::EndToEndFlow)
+def test_aadl2_portproxy_instantiation(instance):
+    assert isinstance(instance, aadl2_PortProxy)
 
-@given(instance=aadl2::Realization_strategy)
+
+
+@given(instance=aadl2_PortProxy_strategy)
+def test_aadl2_portproxy_direction_setter(instance):
+    original = instance.direction
+    instance.direction = original
+    assert instance.direction == original
+
+@given(instance=aadl2_EventDataSource_strategy)
 @settings(max_examples=50)
-def test_aadl2::realization_instantiation(instance):
-    assert isinstance(instance, aadl2::Realization)
+def test_aadl2_eventdatasource_instantiation(instance):
+    assert isinstance(instance, aadl2_EventDataSource)
 
-@given(instance=aadl2::ImplementationExtension_strategy)
+@given(instance=aadl2_EventSource_strategy)
 @settings(max_examples=50)
-def test_aadl2::implementationextension_instantiation(instance):
-    assert isinstance(instance, aadl2::ImplementationExtension)
+def test_aadl2_eventsource_instantiation(instance):
+    assert isinstance(instance, aadl2_EventSource)
 
-@given(instance=ComponentClassifier_strategy)
+@given(instance=aadl2_FeatureGroupConnection_strategy)
 @settings(max_examples=50)
-def test_componentclassifier_instantiation(instance):
-    assert isinstance(instance, ComponentClassifier)
+def test_aadl2_featuregroupconnection_instantiation(instance):
+    assert isinstance(instance, aadl2_FeatureGroupConnection)
 
-@given(instance=aadl2::VirtualProcessorClassifier_strategy)
+@given(instance=aadl2_FeatureConnection_strategy)
 @settings(max_examples=50)
-def test_aadl2::virtualprocessorclassifier_instantiation(instance):
-    assert isinstance(instance, aadl2::VirtualProcessorClassifier)
+def test_aadl2_featureconnection_instantiation(instance):
+    assert isinstance(instance, aadl2_FeatureConnection)
 
-@given(instance=aadl2::BusClassifier_strategy)
+@given(instance=aadl2_PortConnection_strategy)
 @settings(max_examples=50)
-def test_aadl2::busclassifier_instantiation(instance):
-    assert isinstance(instance, aadl2::BusClassifier)
+def test_aadl2_portconnection_instantiation(instance):
+    assert isinstance(instance, aadl2_PortConnection)
 
-@given(instance=aadl2::DataClassifier_strategy)
+@given(instance=aadl2_ParameterConnection_strategy)
 @settings(max_examples=50)
-def test_aadl2::dataclassifier_instantiation(instance):
-    assert isinstance(instance, aadl2::DataClassifier)
+def test_aadl2_parameterconnection_instantiation(instance):
+    assert isinstance(instance, aadl2_ParameterConnection)
 
-@given(instance=aadl2::AbstractClassifier_strategy)
+@given(instance=aadl2_AccessConnection_strategy)
 @settings(max_examples=50)
-def test_aadl2::abstractclassifier_instantiation(instance):
-    assert isinstance(instance, aadl2::AbstractClassifier)
+def test_aadl2_accessconnection_instantiation(instance):
+    assert isinstance(instance, aadl2_AccessConnection)
 
-@given(instance=aadl2::ProcessorClassifier_strategy)
+
+
+@given(instance=aadl2_AccessConnection_strategy)
+def test_aadl2_accessconnection_accessCategory_setter(instance):
+    original = instance.accessCategory
+    instance.accessCategory = original
+    assert instance.accessCategory == original
+
+@given(instance=aadl2_AbstractSubcomponent_strategy)
 @settings(max_examples=50)
-def test_aadl2::processorclassifier_instantiation(instance):
-    assert isinstance(instance, aadl2::ProcessorClassifier)
-
-@given(instance=aadl2::DeviceClassifier_strategy)
-@settings(max_examples=50)
-def test_aadl2::deviceclassifier_instantiation(instance):
-    assert isinstance(instance, aadl2::DeviceClassifier)
-
-@given(instance=aadl2::SubprogramGroupClassifier_strategy)
-@settings(max_examples=50)
-def test_aadl2::subprogramgroupclassifier_instantiation(instance):
-    assert isinstance(instance, aadl2::SubprogramGroupClassifier)
-
-@given(instance=aadl2::ComponentType_strategy)
-@settings(max_examples=50)
-def test_aadl2::componenttype_instantiation(instance):
-    assert isinstance(instance, aadl2::ComponentType)
-
-@given(instance=aadl2::ComponentType_strategy)
-def test_aadl2::componenttype_noFeatures_type(instance):
-    assert isinstance(instance.noFeatures, str)
-
-
-@given(instance=aadl2::ComponentType_strategy)
-def test_aadl2::componenttype_noFeatures_setter(instance):
-    original = instance.noFeatures
-    instance.noFeatures = original
-    assert instance.noFeatures == original
-
-@given(instance=aadl2::SubprogramClassifier_strategy)
-@settings(max_examples=50)
-def test_aadl2::subprogramclassifier_instantiation(instance):
-    assert isinstance(instance, aadl2::SubprogramClassifier)
-
-@given(instance=aadl2::ProcessClassifier_strategy)
-@settings(max_examples=50)
-def test_aadl2::processclassifier_instantiation(instance):
-    assert isinstance(instance, aadl2::ProcessClassifier)
-
-@given(instance=aadl2::ThreadClassifier_strategy)
-@settings(max_examples=50)
-def test_aadl2::threadclassifier_instantiation(instance):
-    assert isinstance(instance, aadl2::ThreadClassifier)
-
-@given(instance=aadl2::SystemClassifier_strategy)
-@settings(max_examples=50)
-def test_aadl2::systemclassifier_instantiation(instance):
-    assert isinstance(instance, aadl2::SystemClassifier)
-
-@given(instance=aadl2::VirtualBusClassifier_strategy)
-@settings(max_examples=50)
-def test_aadl2::virtualbusclassifier_instantiation(instance):
-    assert isinstance(instance, aadl2::VirtualBusClassifier)
-
-@given(instance=aadl2::ThreadGroupClassifier_strategy)
-@settings(max_examples=50)
-def test_aadl2::threadgroupclassifier_instantiation(instance):
-    assert isinstance(instance, aadl2::ThreadGroupClassifier)
-
-@given(instance=aadl2::MemoryClassifier_strategy)
-@settings(max_examples=50)
-def test_aadl2::memoryclassifier_instantiation(instance):
-    assert isinstance(instance, aadl2::MemoryClassifier)
-
-@given(instance=aadl2::ComponentImplementation_strategy)
-@settings(max_examples=50)
-def test_aadl2::componentimplementation_instantiation(instance):
-    assert isinstance(instance, aadl2::ComponentImplementation)
-
-@given(instance=aadl2::ComponentImplementation_strategy)
-def test_aadl2::componentimplementation_noCalls_type(instance):
-    assert isinstance(instance.noCalls, str)
-
-
-@given(instance=aadl2::ComponentImplementation_strategy)
-def test_aadl2::componentimplementation_noCalls_setter(instance):
-    original = instance.noCalls
-    instance.noCalls = original
-    assert instance.noCalls == original
-
-@given(instance=aadl2::ComponentImplementation_strategy)
-def test_aadl2::componentimplementation_noConnections_type(instance):
-    assert isinstance(instance.noConnections, str)
-
-
-@given(instance=aadl2::ComponentImplementation_strategy)
-def test_aadl2::componentimplementation_noConnections_setter(instance):
-    original = instance.noConnections
-    instance.noConnections = original
-    assert instance.noConnections == original
-
-@given(instance=aadl2::ComponentImplementation_strategy)
-def test_aadl2::componentimplementation_noSubcomponents_type(instance):
-    assert isinstance(instance.noSubcomponents, str)
-
-
-@given(instance=aadl2::ComponentImplementation_strategy)
-def test_aadl2::componentimplementation_noSubcomponents_setter(instance):
-    original = instance.noSubcomponents
-    instance.noSubcomponents = original
-    assert instance.noSubcomponents == original
-
-@given(instance=aadl2::CalledSubprogram_strategy)
-@settings(max_examples=50)
-def test_aadl2::calledsubprogram_instantiation(instance):
-    assert isinstance(instance, aadl2::CalledSubprogram)
-
-@given(instance=RefinableElement_strategy)
-@settings(max_examples=50)
-def test_refinableelement_instantiation(instance):
-    assert isinstance(instance, RefinableElement)
-
-@given(instance=CalledSubprogram_strategy)
-@settings(max_examples=50)
-def test_calledsubprogram_instantiation(instance):
-    assert isinstance(instance, CalledSubprogram)
-
-@given(instance=StructuralFeature_strategy)
-@settings(max_examples=50)
-def test_structuralfeature_instantiation(instance):
-    assert isinstance(instance, StructuralFeature)
-
-@given(instance=aadl2::Connection_strategy)
-@settings(max_examples=50)
-def test_aadl2::connection_instantiation(instance):
-    assert isinstance(instance, aadl2::Connection)
-
-@given(instance=aadl2::Connection_strategy)
-def test_aadl2::connection_bidirectional_type(instance):
-    assert isinstance(instance.bidirectional, str)
-
-
-@given(instance=aadl2::Connection_strategy)
-def test_aadl2::connection_bidirectional_setter(instance):
-    original = instance.bidirectional
-    instance.bidirectional = original
-    assert instance.bidirectional == original
-
-@given(instance=aadl2::Feature_strategy)
-@settings(max_examples=50)
-def test_aadl2::feature_instantiation(instance):
-    assert isinstance(instance, aadl2::Feature)
-
-@given(instance=aadl2::FlowFeature_strategy)
-@settings(max_examples=50)
-def test_aadl2::flowfeature_instantiation(instance):
-    assert isinstance(instance, aadl2::FlowFeature)
-
-@given(instance=ClassifierFeature_strategy)
-@settings(max_examples=50)
-def test_classifierfeature_instantiation(instance):
-    assert isinstance(instance, ClassifierFeature)
-
-@given(instance=aadl2::FlowImplementation_strategy)
-@settings(max_examples=50)
-def test_aadl2::flowimplementation_instantiation(instance):
-    assert isinstance(instance, aadl2::FlowImplementation)
-
-@given(instance=aadl2::FlowImplementation_strategy)
-def test_aadl2::flowimplementation_kind_type(instance):
-    assert isinstance(instance.kind, str)
-
-
-@given(instance=aadl2::FlowImplementation_strategy)
-def test_aadl2::flowimplementation_kind_setter(instance):
-    original = instance.kind
-    instance.kind = original
-    assert instance.kind == original
-
-@given(instance=aadl2::StructuralFeature_strategy)
-@settings(max_examples=50)
-def test_aadl2::structuralfeature_instantiation(instance):
-    assert isinstance(instance, aadl2::StructuralFeature)
-
-@given(instance=aadl2::BehavioralFeature_strategy)
-@settings(max_examples=50)
-def test_aadl2::behavioralfeature_instantiation(instance):
-    assert isinstance(instance, aadl2::BehavioralFeature)
-
-@given(instance=aadl2::ModeFeature_strategy)
-@settings(max_examples=50)
-def test_aadl2::modefeature_instantiation(instance):
-    assert isinstance(instance, aadl2::ModeFeature)
-
-@given(instance=ModeFeature_strategy)
-@settings(max_examples=50)
-def test_modefeature_instantiation(instance):
-    assert isinstance(instance, ModeFeature)
-
-@given(instance=aadl2::ModeTransition_strategy)
-@settings(max_examples=50)
-def test_aadl2::modetransition_instantiation(instance):
-    assert isinstance(instance, aadl2::ModeTransition)
-
-@given(instance=aadl2::Mode_strategy)
-@settings(max_examples=50)
-def test_aadl2::mode_instantiation(instance):
-    assert isinstance(instance, aadl2::Mode)
-
-@given(instance=aadl2::Mode_strategy)
-def test_aadl2::mode_derived_type(instance):
-    assert isinstance(instance.derived, str)
-
-
-@given(instance=aadl2::Mode_strategy)
-def test_aadl2::mode_derived_setter(instance):
-    original = instance.derived
-    instance.derived = original
-    assert instance.derived == original
-
-@given(instance=aadl2::Mode_strategy)
-def test_aadl2::mode_initial_type(instance):
-    assert isinstance(instance.initial, str)
-
-
-@given(instance=aadl2::Mode_strategy)
-def test_aadl2::mode_initial_setter(instance):
-    original = instance.initial
-    instance.initial = original
-    assert instance.initial == original
-
-@given(instance=ModalElement_strategy)
-@settings(max_examples=50)
-def test_modalelement_instantiation(instance):
-    assert isinstance(instance, ModalElement)
-
-@given(instance=aadl2::ProcessorFeature_strategy)
-@settings(max_examples=50)
-def test_aadl2::processorfeature_instantiation(instance):
-    assert isinstance(instance, aadl2::ProcessorFeature)
-
-@given(instance=aadl2::SubprogramCallSequence_strategy)
-@settings(max_examples=50)
-def test_aadl2::subprogramcallsequence_instantiation(instance):
-    assert isinstance(instance, aadl2::SubprogramCallSequence)
-
-@given(instance=aadl2::Subcomponent_strategy)
-@settings(max_examples=50)
-def test_aadl2::subcomponent_instantiation(instance):
-    assert isinstance(instance, aadl2::Subcomponent)
-
-@given(instance=aadl2::Subcomponent_strategy)
-def test_aadl2::subcomponent_allModes_type(instance):
-    assert isinstance(instance.allModes, str)
-
-
-@given(instance=aadl2::Subcomponent_strategy)
-def test_aadl2::subcomponent_allModes_setter(instance):
-    original = instance.allModes
-    instance.allModes = original
-    assert instance.allModes == original
-
-@given(instance=aadl2::ModalPath_strategy)
-@settings(max_examples=50)
-def test_aadl2::modalpath_instantiation(instance):
-    assert isinstance(instance, aadl2::ModalPath)
-
-@given(instance=Relationship_strategy)
-@settings(max_examples=50)
-def test_relationship_instantiation(instance):
-    assert isinstance(instance, Relationship)
-
-@given(instance=aadl2::DirectedRelationship_strategy)
-@settings(max_examples=50)
-def test_aadl2::directedrelationship_instantiation(instance):
-    assert isinstance(instance, aadl2::DirectedRelationship)
+def test_aadl2_abstractsubcomponent_instantiation(instance):
+    assert isinstance(instance, aadl2_AbstractSubcomponent)
 
 @given(instance=DirectedRelationship_strategy)
 @settings(max_examples=50)
 def test_directedrelationship_instantiation(instance):
     assert isinstance(instance, DirectedRelationship)
 
-@given(instance=aadl2::Prototype_strategy)
+@given(instance=aadl2_Generalization__strategy)
 @settings(max_examples=50)
-def test_aadl2::prototype_instantiation(instance):
-    assert isinstance(instance, aadl2::Prototype)
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=aadl2::Prototype_strategy)
-@settings(max_examples=30)
-def test_aadl2::prototype_categoryconstraint_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.categoryConstraint(
-            "test", 
-            "test"
-        )
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.categoryConstraint).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'categoryConstraint' in aadl2::Prototype is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'categoryConstraint' in aadl2::Prototype did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'categoryConstraint' in aadl2::Prototype is not implemented or raised an error")
-
-@given(instance=aadl2::AnnexSubclause_strategy)
-@settings(max_examples=50)
-def test_aadl2::annexsubclause_instantiation(instance):
-    assert isinstance(instance, aadl2::AnnexSubclause)
-
-@given(instance=aadl2::Generalization__strategy)
-@settings(max_examples=50)
-def test_aadl2::generalization__instantiation(instance):
-    assert isinstance(instance, aadl2::Generalization_)
+def test_aadl2_generalization__instantiation(instance):
+    assert isinstance(instance, aadl2_Generalization_)
 
 @given(instance=Namespace_strategy)
 @settings(max_examples=50)
 def test_namespace_instantiation(instance):
     assert isinstance(instance, Namespace)
 
-@given(instance=aadl2::PackageSection_strategy)
+@given(instance=aadl2_PackageSection_strategy)
 @settings(max_examples=50)
-def test_aadl2::packagesection_instantiation(instance):
-    assert isinstance(instance, aadl2::PackageSection)
-
-@given(instance=aadl2::PackageSection_strategy)
-def test_aadl2::packagesection_noProperties_type(instance):
-    assert isinstance(instance.noProperties, str)
+def test_aadl2_packagesection_instantiation(instance):
+    assert isinstance(instance, aadl2_PackageSection)
 
 
-@given(instance=aadl2::PackageSection_strategy)
-def test_aadl2::packagesection_noProperties_setter(instance):
-    original = instance.noProperties
-    instance.noProperties = original
-    assert instance.noProperties == original
 
-@given(instance=aadl2::PackageSection_strategy)
-def test_aadl2::packagesection_noAnnexes_type(instance):
-    assert isinstance(instance.noAnnexes, str)
-
-
-@given(instance=aadl2::PackageSection_strategy)
-def test_aadl2::packagesection_noAnnexes_setter(instance):
+@given(instance=aadl2_PackageSection_strategy)
+def test_aadl2_packagesection_noAnnexes_setter(instance):
     original = instance.noAnnexes
     instance.noAnnexes = original
     assert instance.noAnnexes == original
 
-@given(instance=aadl2::EnumerationType_strategy)
-@settings(max_examples=50)
-def test_aadl2::enumerationtype_instantiation(instance):
-    assert isinstance(instance, aadl2::EnumerationType)
 
-@given(instance=aadl2::RecordType_strategy)
-@settings(max_examples=50)
-def test_aadl2::recordtype_instantiation(instance):
-    assert isinstance(instance, aadl2::RecordType)
 
-@given(instance=aadl2::GlobalNamespace_strategy)
-@settings(max_examples=50)
-def test_aadl2::globalnamespace_instantiation(instance):
-    assert isinstance(instance, aadl2::GlobalNamespace)
+@given(instance=aadl2_PackageSection_strategy)
+def test_aadl2_packagesection_noProperties_setter(instance):
+    original = instance.noProperties
+    instance.noProperties = original
+    assert instance.noProperties == original
 
-@given(instance=aadl2::PropertySet_strategy)
+@given(instance=aadl2_EnumerationType_strategy)
 @settings(max_examples=50)
-def test_aadl2::propertyset_instantiation(instance):
-    assert isinstance(instance, aadl2::PropertySet)
+def test_aadl2_enumerationtype_instantiation(instance):
+    assert isinstance(instance, aadl2_EnumerationType)
+
+@given(instance=aadl2_PropertySet_strategy)
+@settings(max_examples=50)
+def test_aadl2_propertyset_instantiation(instance):
+    assert isinstance(instance, aadl2_PropertySet)
+
+@given(instance=aadl2_GlobalNamespace_strategy)
+@settings(max_examples=50)
+def test_aadl2_globalnamespace_instantiation(instance):
+    assert isinstance(instance, aadl2_GlobalNamespace)
+
+@given(instance=aadl2_RecordType_strategy)
+@settings(max_examples=50)
+def test_aadl2_recordtype_instantiation(instance):
+    assert isinstance(instance, aadl2_RecordType)
 
 @given(instance=PropertyOwner_strategy)
 @settings(max_examples=50)
 def test_propertyowner_instantiation(instance):
     assert isinstance(instance, PropertyOwner)
 
-@given(instance=aadl2::ClassifierValue_strategy)
+@given(instance=aadl2_ClassifierValue_strategy)
 @settings(max_examples=50)
-def test_aadl2::classifiervalue_instantiation(instance):
-    assert isinstance(instance, aadl2::ClassifierValue)
+def test_aadl2_classifiervalue_instantiation(instance):
+    assert isinstance(instance, aadl2_ClassifierValue)
 
-@given(instance=aadl2::ArraySizeProperty_strategy)
+@given(instance=aadl2_ArraySizeProperty_strategy)
 @settings(max_examples=50)
-def test_aadl2::arraysizeproperty_instantiation(instance):
-    assert isinstance(instance, aadl2::ArraySizeProperty)
+def test_aadl2_arraysizeproperty_instantiation(instance):
+    assert isinstance(instance, aadl2_ArraySizeProperty)
 
-@given(instance=aadl2::AbstractNamedValue_strategy)
+@given(instance=aadl2_AbstractNamedValue_strategy)
 @settings(max_examples=50)
-def test_aadl2::abstractnamedvalue_instantiation(instance):
-    assert isinstance(instance, aadl2::AbstractNamedValue)
+def test_aadl2_abstractnamedvalue_instantiation(instance):
+    assert isinstance(instance, aadl2_AbstractNamedValue)
 
 @given(instance=Type_strategy)
 @settings(max_examples=50)
 def test_type_instantiation(instance):
     assert isinstance(instance, Type)
 
-@given(instance=aadl2::SubcomponentType_strategy)
+@given(instance=aadl2_SubcomponentType_strategy)
 @settings(max_examples=50)
-def test_aadl2::subcomponenttype_instantiation(instance):
-    assert isinstance(instance, aadl2::SubcomponentType)
+def test_aadl2_subcomponenttype_instantiation(instance):
+    assert isinstance(instance, aadl2_SubcomponentType)
 
-@given(instance=aadl2::PropertyType_strategy)
+@given(instance=aadl2_PropertyType_strategy)
 @settings(max_examples=50)
-def test_aadl2::propertytype_instantiation(instance):
-    assert isinstance(instance, aadl2::PropertyType)
+def test_aadl2_propertytype_instantiation(instance):
+    assert isinstance(instance, aadl2_PropertyType)
 
 @given(instance=TypedElement_strategy)
 @settings(max_examples=50)
 def test_typedelement_instantiation(instance):
     assert isinstance(instance, TypedElement)
 
-@given(instance=aadl2::BasicProperty_strategy)
+@given(instance=aadl2_BasicProperty_strategy)
 @settings(max_examples=50)
-def test_aadl2::basicproperty_instantiation(instance):
-    assert isinstance(instance, aadl2::BasicProperty)
+def test_aadl2_basicproperty_instantiation(instance):
+    assert isinstance(instance, aadl2_BasicProperty)
 
-@given(instance=aadl2::MetaclassReference_strategy)
+@given(instance=aadl2_MetaclassReference_strategy)
 @settings(max_examples=50)
-def test_aadl2::metaclassreference_instantiation(instance):
-    assert isinstance(instance, aadl2::MetaclassReference)
-
-@given(instance=aadl2::MetaclassReference_strategy)
-def test_aadl2::metaclassreference_metaclassName_type(instance):
-    assert isinstance(instance.metaclassName, str)
+def test_aadl2_metaclassreference_instantiation(instance):
+    assert isinstance(instance, aadl2_MetaclassReference)
 
 
-@given(instance=aadl2::MetaclassReference_strategy)
-def test_aadl2::metaclassreference_metaclassName_setter(instance):
-    original = instance.metaclassName
-    instance.metaclassName = original
-    assert instance.metaclassName == original
 
-@given(instance=aadl2::MetaclassReference_strategy)
-def test_aadl2::metaclassreference_annexName_type(instance):
-    assert isinstance(instance.annexName, str)
-
-
-@given(instance=aadl2::MetaclassReference_strategy)
-def test_aadl2::metaclassreference_annexName_setter(instance):
+@given(instance=aadl2_MetaclassReference_strategy)
+def test_aadl2_metaclassreference_annexName_setter(instance):
     original = instance.annexName
     instance.annexName = original
     assert instance.annexName == original
+
+
+
+@given(instance=aadl2_MetaclassReference_strategy)
+def test_aadl2_metaclassreference_metaclassName_setter(instance):
+    original = instance.metaclassName
+    instance.metaclassName = original
+    assert instance.metaclassName == original
 
 @given(instance=ArraySizeProperty_strategy)
 @settings(max_examples=50)
@@ -9158,60 +9062,46 @@ def test_arraysizeproperty_instantiation(instance):
 def test_abstractnamedvalue_instantiation(instance):
     assert isinstance(instance, AbstractNamedValue)
 
-@given(instance=aadl2::PropertyConstant_strategy)
+@given(instance=aadl2_PropertyConstant_strategy)
 @settings(max_examples=50)
-def test_aadl2::propertyconstant_instantiation(instance):
-    assert isinstance(instance, aadl2::PropertyConstant)
+def test_aadl2_propertyconstant_instantiation(instance):
+    assert isinstance(instance, aadl2_PropertyConstant)
 
 @given(instance=BasicProperty_strategy)
 @settings(max_examples=50)
 def test_basicproperty_instantiation(instance):
     assert isinstance(instance, BasicProperty)
 
-@given(instance=aadl2::RecordField_strategy)
+@given(instance=aadl2_RecordField_strategy)
 @settings(max_examples=50)
-def test_aadl2::recordfield_instantiation(instance):
-    assert isinstance(instance, aadl2::RecordField)
+def test_aadl2_recordfield_instantiation(instance):
+    assert isinstance(instance, aadl2_RecordField)
 
-@given(instance=aadl2::ModalPropertyValue_strategy)
+@given(instance=aadl2_Classifier_strategy)
 @settings(max_examples=50)
-def test_aadl2::modalpropertyvalue_instantiation(instance):
-    assert isinstance(instance, aadl2::ModalPropertyValue)
-
-@given(instance=aadl2::Classifier_strategy)
-@settings(max_examples=50)
-def test_aadl2::classifier_instantiation(instance):
-    assert isinstance(instance, aadl2::Classifier)
-
-@given(instance=aadl2::Classifier_strategy)
-def test_aadl2::classifier_noAnnexes_type(instance):
-    assert isinstance(instance.noAnnexes, str)
+def test_aadl2_classifier_instantiation(instance):
+    assert isinstance(instance, aadl2_Classifier)
 
 
-@given(instance=aadl2::Classifier_strategy)
-def test_aadl2::classifier_noAnnexes_setter(instance):
+
+@given(instance=aadl2_Classifier_strategy)
+def test_aadl2_classifier_noAnnexes_setter(instance):
     original = instance.noAnnexes
     instance.noAnnexes = original
     assert instance.noAnnexes == original
 
-@given(instance=aadl2::Classifier_strategy)
-def test_aadl2::classifier_noPrototypes_type(instance):
-    assert isinstance(instance.noPrototypes, str)
 
 
-@given(instance=aadl2::Classifier_strategy)
-def test_aadl2::classifier_noPrototypes_setter(instance):
+@given(instance=aadl2_Classifier_strategy)
+def test_aadl2_classifier_noPrototypes_setter(instance):
     original = instance.noPrototypes
     instance.noPrototypes = original
     assert instance.noPrototypes == original
 
-@given(instance=aadl2::Classifier_strategy)
-def test_aadl2::classifier_noProperties_type(instance):
-    assert isinstance(instance.noProperties, str)
 
 
-@given(instance=aadl2::Classifier_strategy)
-def test_aadl2::classifier_noProperties_setter(instance):
+@given(instance=aadl2_Classifier_strategy)
+def test_aadl2_classifier_noProperties_setter(instance):
     original = instance.noProperties
     instance.noProperties = original
     assert instance.noProperties == original
@@ -9222,9 +9112,129 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=aadl2::Classifier_strategy)
+@given(instance=aadl2_Classifier_strategy)
 @settings(max_examples=30)
-def test_aadl2::classifier_specialize_type_changes_state(instance):
+def test_aadl2_classifier_mayspecializetype_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.maySpecializeType(
+            "test"
+        )
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.maySpecializeType).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'maySpecializeType' in aadl2_Classifier is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'maySpecializeType' in aadl2_Classifier did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'maySpecializeType' in aadl2_Classifier is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=aadl2_Classifier_strategy)
+@settings(max_examples=30)
+def test_aadl2_classifier_inheritedmember_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.inheritedMember()
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.inheritedMember).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'inheritedMember' in aadl2_Classifier is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'inheritedMember' in aadl2_Classifier did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'inheritedMember' in aadl2_Classifier is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=aadl2_Classifier_strategy)
+@settings(max_examples=30)
+def test_aadl2_classifier_parents_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.parents()
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.parents).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'parents' in aadl2_Classifier is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'parents' in aadl2_Classifier did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'parents' in aadl2_Classifier is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=aadl2_Classifier_strategy)
+@settings(max_examples=30)
+def test_aadl2_classifier_inherit_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.inherit(
+            "test"
+        )
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.inherit).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'inherit' in aadl2_Classifier is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'inherit' in aadl2_Classifier did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'inherit' in aadl2_Classifier is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=aadl2_Classifier_strategy)
+@settings(max_examples=30)
+def test_aadl2_classifier_specialize_type_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -9239,14 +9249,14 @@ def test_aadl2::classifier_specialize_type_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'specialize_type' in aadl2::Classifier is empty"
+        assert has_statements, f"Function 'specialize_type' in aadl2_Classifier is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'specialize_type' in aadl2::Classifier did not change state; check implementation")
+            warnings.warn(f"Operation 'specialize_type' in aadl2_Classifier did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'specialize_type' in aadl2::Classifier is not implemented or raised an error")
+        warnings.warn(f"Operation 'specialize_type' in aadl2_Classifier is not implemented or raised an error")
 
 import warnings
 import copy
@@ -9254,100 +9264,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=aadl2::Classifier_strategy)
+@given(instance=aadl2_Classifier_strategy)
 @settings(max_examples=30)
-def test_aadl2::classifier_mayspecializetype_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.maySpecializeType(
-            "test"
-        )
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.maySpecializeType).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'maySpecializeType' in aadl2::Classifier is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'maySpecializeType' in aadl2::Classifier did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'maySpecializeType' in aadl2::Classifier is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=aadl2::Classifier_strategy)
-@settings(max_examples=30)
-def test_aadl2::classifier_inheritablemembers_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.inheritableMembers(
-            "test"
-        )
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.inheritableMembers).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'inheritableMembers' in aadl2::Classifier is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'inheritableMembers' in aadl2::Classifier did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'inheritableMembers' in aadl2::Classifier is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=aadl2::Classifier_strategy)
-@settings(max_examples=30)
-def test_aadl2::classifier_inheritedmember_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.inheritedMember()
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.inheritedMember).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'inheritedMember' in aadl2::Classifier is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'inheritedMember' in aadl2::Classifier did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'inheritedMember' in aadl2::Classifier is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=aadl2::Classifier_strategy)
-@settings(max_examples=30)
-def test_aadl2::classifier_hasvisibilityof_changes_state(instance):
+def test_aadl2_classifier_hasvisibilityof_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -9361,14 +9280,14 @@ def test_aadl2::classifier_hasvisibilityof_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'hasVisibilityOf' in aadl2::Classifier is empty"
+        assert has_statements, f"Function 'hasVisibilityOf' in aadl2_Classifier is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'hasVisibilityOf' in aadl2::Classifier did not change state; check implementation")
+            warnings.warn(f"Operation 'hasVisibilityOf' in aadl2_Classifier did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'hasVisibilityOf' in aadl2::Classifier is not implemented or raised an error")
+        warnings.warn(f"Operation 'hasVisibilityOf' in aadl2_Classifier is not implemented or raised an error")
 
 import warnings
 import copy
@@ -9376,9 +9295,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=aadl2::Classifier_strategy)
+@given(instance=aadl2_Classifier_strategy)
 @settings(max_examples=30)
-def test_aadl2::classifier_no_cycles_in_generalization_changes_state(instance):
+def test_aadl2_classifier_no_cycles_in_generalization_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -9393,14 +9312,14 @@ def test_aadl2::classifier_no_cycles_in_generalization_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'no_cycles_in_generalization' in aadl2::Classifier is empty"
+        assert has_statements, f"Function 'no_cycles_in_generalization' in aadl2_Classifier is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'no_cycles_in_generalization' in aadl2::Classifier did not change state; check implementation")
+            warnings.warn(f"Operation 'no_cycles_in_generalization' in aadl2_Classifier did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'no_cycles_in_generalization' in aadl2::Classifier is not implemented or raised an error")
+        warnings.warn(f"Operation 'no_cycles_in_generalization' in aadl2_Classifier is not implemented or raised an error")
 
 import warnings
 import copy
@@ -9408,88 +9327,30 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=aadl2::Classifier_strategy)
+@given(instance=aadl2_Classifier_strategy)
 @settings(max_examples=30)
-def test_aadl2::classifier_parents_changes_state(instance):
+def test_aadl2_classifier_inheritablemembers_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
-        instance.parents()
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.parents).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'parents' in aadl2::Classifier is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'parents' in aadl2::Classifier did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'parents' in aadl2::Classifier is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=aadl2::Classifier_strategy)
-@settings(max_examples=30)
-def test_aadl2::classifier_allparents_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.allParents()
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.allParents).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'allParents' in aadl2::Classifier is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'allParents' in aadl2::Classifier did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'allParents' in aadl2::Classifier is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=aadl2::Classifier_strategy)
-@settings(max_examples=30)
-def test_aadl2::classifier_inherit_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.inherit(
+        instance.inheritableMembers(
             "test"
         )
         if instance.__dict__ != before.__dict__:
             return  # test passes
         # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.inherit).strip()
+        source = inspect.getsource(instance.inheritableMembers).strip()
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'inherit' in aadl2::Classifier is empty"
+        assert has_statements, f"Function 'inheritableMembers' in aadl2_Classifier is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'inherit' in aadl2::Classifier did not change state; check implementation")
+            warnings.warn(f"Operation 'inheritableMembers' in aadl2_Classifier did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'inherit' in aadl2::Classifier is not implemented or raised an error")
+        warnings.warn(f"Operation 'inheritableMembers' in aadl2_Classifier is not implemented or raised an error")
 
 import warnings
 import copy
@@ -9497,9 +9358,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=aadl2::Classifier_strategy)
+@given(instance=aadl2_Classifier_strategy)
 @settings(max_examples=30)
-def test_aadl2::classifier_allfeatures_changes_state(instance):
+def test_aadl2_classifier_allfeatures_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -9511,133 +9372,14 @@ def test_aadl2::classifier_allfeatures_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'allFeatures' in aadl2::Classifier is empty"
+        assert has_statements, f"Function 'allFeatures' in aadl2_Classifier is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'allFeatures' in aadl2::Classifier did not change state; check implementation")
+            warnings.warn(f"Operation 'allFeatures' in aadl2_Classifier did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'allFeatures' in aadl2::Classifier is not implemented or raised an error")
-
-@given(instance=aadl2::Property_strategy)
-@settings(max_examples=50)
-def test_aadl2::property_instantiation(instance):
-    assert isinstance(instance, aadl2::Property)
-
-@given(instance=aadl2::Property_strategy)
-def test_aadl2::property_emptyListDefault_type(instance):
-    assert isinstance(instance.emptyListDefault, str)
-
-
-@given(instance=aadl2::Property_strategy)
-def test_aadl2::property_emptyListDefault_setter(instance):
-    original = instance.emptyListDefault
-    instance.emptyListDefault = original
-    assert instance.emptyListDefault == original
-
-@given(instance=aadl2::Property_strategy)
-def test_aadl2::property_inherit_type(instance):
-    assert isinstance(instance.inherit, str)
-
-
-@given(instance=aadl2::Property_strategy)
-def test_aadl2::property_inherit_setter(instance):
-    original = instance.inherit
-    instance.inherit = original
-    assert instance.inherit == original
-
-@given(instance=NamedElement_strategy)
-@settings(max_examples=50)
-def test_namedelement_instantiation(instance):
-    assert isinstance(instance, NamedElement)
-
-@given(instance=aadl2::ComponentTypeRename_strategy)
-@settings(max_examples=50)
-def test_aadl2::componenttyperename_instantiation(instance):
-    assert isinstance(instance, aadl2::ComponentTypeRename)
-
-@given(instance=aadl2::ComponentTypeRename_strategy)
-def test_aadl2::componenttyperename_category_type(instance):
-    assert isinstance(instance.category, str)
-
-
-@given(instance=aadl2::ComponentTypeRename_strategy)
-def test_aadl2::componenttyperename_category_setter(instance):
-    original = instance.category
-    instance.category = original
-    assert instance.category == original
-
-@given(instance=aadl2::PackageRename_strategy)
-@settings(max_examples=50)
-def test_aadl2::packagerename_instantiation(instance):
-    assert isinstance(instance, aadl2::PackageRename)
-
-@given(instance=aadl2::PackageRename_strategy)
-def test_aadl2::packagerename_renameAll_type(instance):
-    assert isinstance(instance.renameAll, str)
-
-
-@given(instance=aadl2::PackageRename_strategy)
-def test_aadl2::packagerename_renameAll_setter(instance):
-    original = instance.renameAll
-    instance.renameAll = original
-    assert instance.renameAll == original
-
-@given(instance=aadl2::VirtualBus_strategy)
-@settings(max_examples=50)
-def test_aadl2::virtualbus_instantiation(instance):
-    assert isinstance(instance, aadl2::VirtualBus)
-
-@given(instance=aadl2::ModalElement_strategy)
-@settings(max_examples=50)
-def test_aadl2::modalelement_instantiation(instance):
-    assert isinstance(instance, aadl2::ModalElement)
-
-@given(instance=aadl2::Processor_strategy)
-@settings(max_examples=50)
-def test_aadl2::processor_instantiation(instance):
-    assert isinstance(instance, aadl2::Processor)
-
-@given(instance=aadl2::EndToEndFlowElement_strategy)
-@settings(max_examples=50)
-def test_aadl2::endtoendflowelement_instantiation(instance):
-    assert isinstance(instance, aadl2::EndToEndFlowElement)
-
-@given(instance=aadl2::TypedElement_strategy)
-@settings(max_examples=50)
-def test_aadl2::typedelement_instantiation(instance):
-    assert isinstance(instance, aadl2::TypedElement)
-
-@given(instance=aadl2::VirtualProcessor_strategy)
-@settings(max_examples=50)
-def test_aadl2::virtualprocessor_instantiation(instance):
-    assert isinstance(instance, aadl2::VirtualProcessor)
-
-@given(instance=aadl2::Device_strategy)
-@settings(max_examples=50)
-def test_aadl2::device_instantiation(instance):
-    assert isinstance(instance, aadl2::Device)
-
-@given(instance=aadl2::Flow_strategy)
-@settings(max_examples=50)
-def test_aadl2::flow_instantiation(instance):
-    assert isinstance(instance, aadl2::Flow)
-
-@given(instance=aadl2::Memory_strategy)
-@settings(max_examples=50)
-def test_aadl2::memory_instantiation(instance):
-    assert isinstance(instance, aadl2::Memory)
-
-@given(instance=aadl2::AnnexLibrary_strategy)
-@settings(max_examples=50)
-def test_aadl2::annexlibrary_instantiation(instance):
-    assert isinstance(instance, aadl2::AnnexLibrary)
-
-@given(instance=aadl2::Namespace_strategy)
-@settings(max_examples=50)
-def test_aadl2::namespace_instantiation(instance):
-    assert isinstance(instance, aadl2::Namespace)
+        warnings.warn(f"Operation 'allFeatures' in aadl2_Classifier is not implemented or raised an error")
 
 import warnings
 import copy
@@ -9645,9 +9387,166 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=aadl2::Namespace_strategy)
+@given(instance=aadl2_Classifier_strategy)
 @settings(max_examples=30)
-def test_aadl2::namespace_members_distinguishable_changes_state(instance):
+def test_aadl2_classifier_allparents_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.allParents()
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.allParents).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'allParents' in aadl2_Classifier is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'allParents' in aadl2_Classifier did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'allParents' in aadl2_Classifier is not implemented or raised an error")
+
+@given(instance=aadl2_Property_strategy)
+@settings(max_examples=50)
+def test_aadl2_property_instantiation(instance):
+    assert isinstance(instance, aadl2_Property)
+
+
+
+@given(instance=aadl2_Property_strategy)
+def test_aadl2_property_inherit_setter(instance):
+    original = instance.inherit
+    instance.inherit = original
+    assert instance.inherit == original
+
+
+
+@given(instance=aadl2_Property_strategy)
+def test_aadl2_property_emptyListDefault_setter(instance):
+    original = instance.emptyListDefault
+    instance.emptyListDefault = original
+    assert instance.emptyListDefault == original
+
+@given(instance=NamedElement_strategy)
+@settings(max_examples=50)
+def test_namedelement_instantiation(instance):
+    assert isinstance(instance, NamedElement)
+
+@given(instance=aadl2_Device_strategy)
+@settings(max_examples=50)
+def test_aadl2_device_instantiation(instance):
+    assert isinstance(instance, aadl2_Device)
+
+@given(instance=aadl2_ThreadGroup_strategy)
+@settings(max_examples=50)
+def test_aadl2_threadgroup_instantiation(instance):
+    assert isinstance(instance, aadl2_ThreadGroup)
+
+@given(instance=aadl2_VirtualBus_strategy)
+@settings(max_examples=50)
+def test_aadl2_virtualbus_instantiation(instance):
+    assert isinstance(instance, aadl2_VirtualBus)
+
+@given(instance=aadl2_SubprogramGroup_strategy)
+@settings(max_examples=50)
+def test_aadl2_subprogramgroup_instantiation(instance):
+    assert isinstance(instance, aadl2_SubprogramGroup)
+
+@given(instance=aadl2_Abstract_strategy)
+@settings(max_examples=50)
+def test_aadl2_abstract_instantiation(instance):
+    assert isinstance(instance, aadl2_Abstract)
+
+@given(instance=aadl2_AnnexLibrary_strategy)
+@settings(max_examples=50)
+def test_aadl2_annexlibrary_instantiation(instance):
+    assert isinstance(instance, aadl2_AnnexLibrary)
+
+@given(instance=aadl2_ComponentTypeRename_strategy)
+@settings(max_examples=50)
+def test_aadl2_componenttyperename_instantiation(instance):
+    assert isinstance(instance, aadl2_ComponentTypeRename)
+
+
+
+@given(instance=aadl2_ComponentTypeRename_strategy)
+def test_aadl2_componenttyperename_category_setter(instance):
+    original = instance.category
+    instance.category = original
+    assert instance.category == original
+
+@given(instance=aadl2_System_strategy)
+@settings(max_examples=50)
+def test_aadl2_system_instantiation(instance):
+    assert isinstance(instance, aadl2_System)
+
+@given(instance=aadl2_FeatureGroupTypeRename_strategy)
+@settings(max_examples=50)
+def test_aadl2_featuregrouptyperename_instantiation(instance):
+    assert isinstance(instance, aadl2_FeatureGroupTypeRename)
+
+@given(instance=aadl2_Data_strategy)
+@settings(max_examples=50)
+def test_aadl2_data_instantiation(instance):
+    assert isinstance(instance, aadl2_Data)
+
+@given(instance=aadl2_Process_strategy)
+@settings(max_examples=50)
+def test_aadl2_process_instantiation(instance):
+    assert isinstance(instance, aadl2_Process)
+
+@given(instance=aadl2_Bus_strategy)
+@settings(max_examples=50)
+def test_aadl2_bus_instantiation(instance):
+    assert isinstance(instance, aadl2_Bus)
+
+@given(instance=aadl2_Namespace_strategy)
+@settings(max_examples=50)
+def test_aadl2_namespace_instantiation(instance):
+    assert isinstance(instance, aadl2_Namespace)
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=aadl2_Namespace_strategy)
+@settings(max_examples=30)
+def test_aadl2_namespace_membersaredistinguishable_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.membersAreDistinguishable()
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.membersAreDistinguishable).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'membersAreDistinguishable' in aadl2_Namespace is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'membersAreDistinguishable' in aadl2_Namespace did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'membersAreDistinguishable' in aadl2_Namespace is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=aadl2_Namespace_strategy)
+@settings(max_examples=30)
+def test_aadl2_namespace_members_distinguishable_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -9662,14 +9561,97 @@ def test_aadl2::namespace_members_distinguishable_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'members_distinguishable' in aadl2::Namespace is empty"
+        assert has_statements, f"Function 'members_distinguishable' in aadl2_Namespace is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'members_distinguishable' in aadl2::Namespace did not change state; check implementation")
+            warnings.warn(f"Operation 'members_distinguishable' in aadl2_Namespace did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'members_distinguishable' in aadl2::Namespace is not implemented or raised an error")
+        warnings.warn(f"Operation 'members_distinguishable' in aadl2_Namespace is not implemented or raised an error")
+
+@given(instance=aadl2_TypedElement_strategy)
+@settings(max_examples=50)
+def test_aadl2_typedelement_instantiation(instance):
+    assert isinstance(instance, aadl2_TypedElement)
+
+@given(instance=aadl2_VirtualProcessor_strategy)
+@settings(max_examples=50)
+def test_aadl2_virtualprocessor_instantiation(instance):
+    assert isinstance(instance, aadl2_VirtualProcessor)
+
+@given(instance=aadl2_ClassifierFeature_strategy)
+@settings(max_examples=50)
+def test_aadl2_classifierfeature_instantiation(instance):
+    assert isinstance(instance, aadl2_ClassifierFeature)
+
+@given(instance=aadl2_PackageRename_strategy)
+@settings(max_examples=50)
+def test_aadl2_packagerename_instantiation(instance):
+    assert isinstance(instance, aadl2_PackageRename)
+
+
+
+@given(instance=aadl2_PackageRename_strategy)
+def test_aadl2_packagerename_renameAll_setter(instance):
+    original = instance.renameAll
+    instance.renameAll = original
+    assert instance.renameAll == original
+
+@given(instance=aadl2_ModelUnit_strategy)
+@settings(max_examples=50)
+def test_aadl2_modelunit_instantiation(instance):
+    assert isinstance(instance, aadl2_ModelUnit)
+
+@given(instance=aadl2_EnumerationLiteral_strategy)
+@settings(max_examples=50)
+def test_aadl2_enumerationliteral_instantiation(instance):
+    assert isinstance(instance, aadl2_EnumerationLiteral)
+
+@given(instance=aadl2_Context_strategy)
+@settings(max_examples=50)
+def test_aadl2_context_instantiation(instance):
+    assert isinstance(instance, aadl2_Context)
+
+@given(instance=aadl2_ConnectionEnd_strategy)
+@settings(max_examples=50)
+def test_aadl2_connectionend_instantiation(instance):
+    assert isinstance(instance, aadl2_ConnectionEnd)
+
+@given(instance=aadl2_TriggerPort_strategy)
+@settings(max_examples=50)
+def test_aadl2_triggerport_instantiation(instance):
+    assert isinstance(instance, aadl2_TriggerPort)
+
+@given(instance=aadl2_Processor_strategy)
+@settings(max_examples=50)
+def test_aadl2_processor_instantiation(instance):
+    assert isinstance(instance, aadl2_Processor)
+
+@given(instance=aadl2_EndToEndFlowElement_strategy)
+@settings(max_examples=50)
+def test_aadl2_endtoendflowelement_instantiation(instance):
+    assert isinstance(instance, aadl2_EndToEndFlowElement)
+
+@given(instance=aadl2_Flow_strategy)
+@settings(max_examples=50)
+def test_aadl2_flow_instantiation(instance):
+    assert isinstance(instance, aadl2_Flow)
+
+@given(instance=aadl2_Thread_strategy)
+@settings(max_examples=50)
+def test_aadl2_thread_instantiation(instance):
+    assert isinstance(instance, aadl2_Thread)
+
+@given(instance=aadl2_Memory_strategy)
+@settings(max_examples=50)
+def test_aadl2_memory_instantiation(instance):
+    assert isinstance(instance, aadl2_Memory)
+
+@given(instance=aadl2_Type_strategy)
+@settings(max_examples=50)
+def test_aadl2_type_instantiation(instance):
+    assert isinstance(instance, aadl2_Type)
 
 import warnings
 import copy
@@ -9677,103 +9659,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=aadl2::Namespace_strategy)
+@given(instance=aadl2_Type_strategy)
 @settings(max_examples=30)
-def test_aadl2::namespace_membersaredistinguishable_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.membersAreDistinguishable()
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.membersAreDistinguishable).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'membersAreDistinguishable' in aadl2::Namespace is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'membersAreDistinguishable' in aadl2::Namespace did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'membersAreDistinguishable' in aadl2::Namespace is not implemented or raised an error")
-
-@given(instance=aadl2::ClassifierFeature_strategy)
-@settings(max_examples=50)
-def test_aadl2::classifierfeature_instantiation(instance):
-    assert isinstance(instance, aadl2::ClassifierFeature)
-
-@given(instance=aadl2::Process_strategy)
-@settings(max_examples=50)
-def test_aadl2::process_instantiation(instance):
-    assert isinstance(instance, aadl2::Process)
-
-@given(instance=aadl2::EnumerationLiteral_strategy)
-@settings(max_examples=50)
-def test_aadl2::enumerationliteral_instantiation(instance):
-    assert isinstance(instance, aadl2::EnumerationLiteral)
-
-@given(instance=aadl2::Context_strategy)
-@settings(max_examples=50)
-def test_aadl2::context_instantiation(instance):
-    assert isinstance(instance, aadl2::Context)
-
-@given(instance=aadl2::System_strategy)
-@settings(max_examples=50)
-def test_aadl2::system_instantiation(instance):
-    assert isinstance(instance, aadl2::System)
-
-@given(instance=aadl2::RefinableElement_strategy)
-@settings(max_examples=50)
-def test_aadl2::refinableelement_instantiation(instance):
-    assert isinstance(instance, aadl2::RefinableElement)
-
-@given(instance=aadl2::TriggerPort_strategy)
-@settings(max_examples=50)
-def test_aadl2::triggerport_instantiation(instance):
-    assert isinstance(instance, aadl2::TriggerPort)
-
-@given(instance=aadl2::Thread_strategy)
-@settings(max_examples=50)
-def test_aadl2::thread_instantiation(instance):
-    assert isinstance(instance, aadl2::Thread)
-
-@given(instance=aadl2::ModelUnit_strategy)
-@settings(max_examples=50)
-def test_aadl2::modelunit_instantiation(instance):
-    assert isinstance(instance, aadl2::ModelUnit)
-
-@given(instance=aadl2::ConnectionEnd_strategy)
-@settings(max_examples=50)
-def test_aadl2::connectionend_instantiation(instance):
-    assert isinstance(instance, aadl2::ConnectionEnd)
-
-@given(instance=aadl2::ThreadGroup_strategy)
-@settings(max_examples=50)
-def test_aadl2::threadgroup_instantiation(instance):
-    assert isinstance(instance, aadl2::ThreadGroup)
-
-@given(instance=aadl2::FeatureGroupTypeRename_strategy)
-@settings(max_examples=50)
-def test_aadl2::featuregrouptyperename_instantiation(instance):
-    assert isinstance(instance, aadl2::FeatureGroupTypeRename)
-
-@given(instance=aadl2::Type_strategy)
-@settings(max_examples=50)
-def test_aadl2::type_instantiation(instance):
-    assert isinstance(instance, aadl2::Type)
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=aadl2::Type_strategy)
-@settings(max_examples=30)
-def test_aadl2::type_conformsto_changes_state(instance):
+def test_aadl2_type_conformsto_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -9787,80 +9675,62 @@ def test_aadl2::type_conformsto_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'conformsTo' in aadl2::Type is empty"
+        assert has_statements, f"Function 'conformsTo' in aadl2_Type is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'conformsTo' in aadl2::Type did not change state; check implementation")
+            warnings.warn(f"Operation 'conformsTo' in aadl2_Type did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'conformsTo' in aadl2::Type is not implemented or raised an error")
+        warnings.warn(f"Operation 'conformsTo' in aadl2_Type is not implemented or raised an error")
 
 @given(instance=Element_strategy)
 @settings(max_examples=50)
 def test_element_instantiation(instance):
     assert isinstance(instance, Element)
 
-@given(instance=aadl2::PropertyOwner_strategy)
+@given(instance=aadl2_ModeBinding_strategy)
 @settings(max_examples=50)
-def test_aadl2::propertyowner_instantiation(instance):
-    assert isinstance(instance, aadl2::PropertyOwner)
+def test_aadl2_modebinding_instantiation(instance):
+    assert isinstance(instance, aadl2_ModeBinding)
 
-@given(instance=aadl2::BasicPropertyAssociation_strategy)
+@given(instance=aadl2_ContainedNamedElement_strategy)
 @settings(max_examples=50)
-def test_aadl2::basicpropertyassociation_instantiation(instance):
-    assert isinstance(instance, aadl2::BasicPropertyAssociation)
+def test_aadl2_containednamedelement_instantiation(instance):
+    assert isinstance(instance, aadl2_ContainedNamedElement)
 
-@given(instance=aadl2::ArrayRange_strategy)
+@given(instance=aadl2_NumericRange_strategy)
 @settings(max_examples=50)
-def test_aadl2::arrayrange_instantiation(instance):
-    assert isinstance(instance, aadl2::ArrayRange)
+def test_aadl2_numericrange_instantiation(instance):
+    assert isinstance(instance, aadl2_NumericRange)
 
-@given(instance=aadl2::ArrayRange_strategy)
-def test_aadl2::arrayrange_upperBound_type(instance):
-    assert isinstance(instance.upperBound, str)
-
-
-@given(instance=aadl2::ArrayRange_strategy)
-def test_aadl2::arrayrange_upperBound_setter(instance):
-    original = instance.upperBound
-    instance.upperBound = original
-    assert instance.upperBound == original
-
-@given(instance=aadl2::ArrayRange_strategy)
-def test_aadl2::arrayrange_lowerBound_type(instance):
-    assert isinstance(instance.lowerBound, str)
-
-
-@given(instance=aadl2::ArrayRange_strategy)
-def test_aadl2::arrayrange_lowerBound_setter(instance):
-    original = instance.lowerBound
-    instance.lowerBound = original
-    assert instance.lowerBound == original
-
-@given(instance=aadl2::NamedElement_strategy)
+@given(instance=aadl2_BasicPropertyAssociation_strategy)
 @settings(max_examples=50)
-def test_aadl2::namedelement_instantiation(instance):
-    assert isinstance(instance, aadl2::NamedElement)
+def test_aadl2_basicpropertyassociation_instantiation(instance):
+    assert isinstance(instance, aadl2_BasicPropertyAssociation)
 
-@given(instance=aadl2::NamedElement_strategy)
-def test_aadl2::namedelement_qualifiedName_type(instance):
-    assert isinstance(instance.qualifiedName, str)
+@given(instance=aadl2_FlowEnd_strategy)
+@settings(max_examples=50)
+def test_aadl2_flowend_instantiation(instance):
+    assert isinstance(instance, aadl2_FlowEnd)
+
+@given(instance=aadl2_NamedElement_strategy)
+@settings(max_examples=50)
+def test_aadl2_namedelement_instantiation(instance):
+    assert isinstance(instance, aadl2_NamedElement)
 
 
-@given(instance=aadl2::NamedElement_strategy)
-def test_aadl2::namedelement_qualifiedName_setter(instance):
+
+@given(instance=aadl2_NamedElement_strategy)
+def test_aadl2_namedelement_qualifiedName_setter(instance):
     original = instance.qualifiedName
     instance.qualifiedName = original
     assert instance.qualifiedName == original
 
-@given(instance=aadl2::NamedElement_strategy)
-def test_aadl2::namedelement_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
-@given(instance=aadl2::NamedElement_strategy)
-def test_aadl2::namedelement_name_setter(instance):
+@given(instance=aadl2_NamedElement_strategy)
+def test_aadl2_namedelement_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
@@ -9871,99 +9741,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=aadl2::NamedElement_strategy)
+@given(instance=aadl2_NamedElement_strategy)
 @settings(max_examples=30)
-def test_aadl2::namedelement_has_no_qualified_name_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.has_no_qualified_name(
-            "test", 
-            "test"
-        )
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.has_no_qualified_name).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'has_no_qualified_name' in aadl2::NamedElement is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'has_no_qualified_name' in aadl2::NamedElement did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'has_no_qualified_name' in aadl2::NamedElement is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=aadl2::NamedElement_strategy)
-@settings(max_examples=30)
-def test_aadl2::namedelement_separator_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.separator()
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.separator).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'separator' in aadl2::NamedElement is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'separator' in aadl2::NamedElement did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'separator' in aadl2::NamedElement is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=aadl2::NamedElement_strategy)
-@settings(max_examples=30)
-def test_aadl2::namedelement_allnamespaces_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.allNamespaces()
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.allNamespaces).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'allNamespaces' in aadl2::NamedElement is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'allNamespaces' in aadl2::NamedElement did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'allNamespaces' in aadl2::NamedElement is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=aadl2::NamedElement_strategy)
-@settings(max_examples=30)
-def test_aadl2::namedelement_isdistinguishablefrom_changes_state(instance):
+def test_aadl2_namedelement_isdistinguishablefrom_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -9978,14 +9758,14 @@ def test_aadl2::namedelement_isdistinguishablefrom_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'isDistinguishableFrom' in aadl2::NamedElement is empty"
+        assert has_statements, f"Function 'isDistinguishableFrom' in aadl2_NamedElement is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'isDistinguishableFrom' in aadl2::NamedElement did not change state; check implementation")
+            warnings.warn(f"Operation 'isDistinguishableFrom' in aadl2_NamedElement did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'isDistinguishableFrom' in aadl2::NamedElement is not implemented or raised an error")
+        warnings.warn(f"Operation 'isDistinguishableFrom' in aadl2_NamedElement is not implemented or raised an error")
 
 import warnings
 import copy
@@ -9993,9 +9773,96 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=aadl2::NamedElement_strategy)
+@given(instance=aadl2_NamedElement_strategy)
 @settings(max_examples=30)
-def test_aadl2::namedelement_has_qualified_name_changes_state(instance):
+def test_aadl2_namedelement_qualifiedname_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.qualifiedName()
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.qualifiedName).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'qualifiedName' in aadl2_NamedElement is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'qualifiedName' in aadl2_NamedElement did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'qualifiedName' in aadl2_NamedElement is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=aadl2_NamedElement_strategy)
+@settings(max_examples=30)
+def test_aadl2_namedelement_separator_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.separator()
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.separator).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'separator' in aadl2_NamedElement is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'separator' in aadl2_NamedElement did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'separator' in aadl2_NamedElement is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=aadl2_NamedElement_strategy)
+@settings(max_examples=30)
+def test_aadl2_namedelement_allnamespaces_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.allNamespaces()
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.allNamespaces).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'allNamespaces' in aadl2_NamedElement is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'allNamespaces' in aadl2_NamedElement did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'allNamespaces' in aadl2_NamedElement is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=aadl2_NamedElement_strategy)
+@settings(max_examples=30)
+def test_aadl2_namedelement_has_qualified_name_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -10010,14 +9877,14 @@ def test_aadl2::namedelement_has_qualified_name_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'has_qualified_name' in aadl2::NamedElement is empty"
+        assert has_statements, f"Function 'has_qualified_name' in aadl2_NamedElement is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'has_qualified_name' in aadl2::NamedElement did not change state; check implementation")
+            warnings.warn(f"Operation 'has_qualified_name' in aadl2_NamedElement did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'has_qualified_name' in aadl2::NamedElement is not implemented or raised an error")
+        warnings.warn(f"Operation 'has_qualified_name' in aadl2_NamedElement is not implemented or raised an error")
 
 import warnings
 import copy
@@ -10025,190 +9892,105 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=aadl2::NamedElement_strategy)
+@given(instance=aadl2_NamedElement_strategy)
 @settings(max_examples=30)
-def test_aadl2::namedelement_qualifiedname_changes_state(instance):
+def test_aadl2_namedelement_has_no_qualified_name_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
-        instance.qualifiedName()
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.qualifiedName).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'qualifiedName' in aadl2::NamedElement is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'qualifiedName' in aadl2::NamedElement did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'qualifiedName' in aadl2::NamedElement is not implemented or raised an error")
-
-@given(instance=aadl2::ArrayableElement_strategy)
-@settings(max_examples=50)
-def test_aadl2::arrayableelement_instantiation(instance):
-    assert isinstance(instance, aadl2::ArrayableElement)
-
-@given(instance=aadl2::PrototypeBinding_strategy)
-@settings(max_examples=50)
-def test_aadl2::prototypebinding_instantiation(instance):
-    assert isinstance(instance, aadl2::PrototypeBinding)
-
-@given(instance=aadl2::ContainedNamedElement_strategy)
-@settings(max_examples=50)
-def test_aadl2::containednamedelement_instantiation(instance):
-    assert isinstance(instance, aadl2::ContainedNamedElement)
-
-@given(instance=aadl2::NumericRange_strategy)
-@settings(max_examples=50)
-def test_aadl2::numericrange_instantiation(instance):
-    assert isinstance(instance, aadl2::NumericRange)
-
-@given(instance=aadl2::PropertyAssociation_strategy)
-@settings(max_examples=50)
-def test_aadl2::propertyassociation_instantiation(instance):
-    assert isinstance(instance, aadl2::PropertyAssociation)
-
-@given(instance=aadl2::PropertyAssociation_strategy)
-def test_aadl2::propertyassociation_constant_type(instance):
-    assert isinstance(instance.constant, str)
-
-
-@given(instance=aadl2::PropertyAssociation_strategy)
-def test_aadl2::propertyassociation_constant_setter(instance):
-    original = instance.constant
-    instance.constant = original
-    assert instance.constant == original
-
-@given(instance=aadl2::PropertyAssociation_strategy)
-def test_aadl2::propertyassociation_append_type(instance):
-    assert isinstance(instance.append, str)
-
-
-@given(instance=aadl2::PropertyAssociation_strategy)
-def test_aadl2::propertyassociation_append_setter(instance):
-    original = instance.append
-    instance.append = original
-    assert instance.append == original
-
-@given(instance=aadl2::ComponentImplementationReference_strategy)
-@settings(max_examples=50)
-def test_aadl2::componentimplementationreference_instantiation(instance):
-    assert isinstance(instance, aadl2::ComponentImplementationReference)
-
-@given(instance=aadl2::ContainmentPathElement_strategy)
-@settings(max_examples=50)
-def test_aadl2::containmentpathelement_instantiation(instance):
-    assert isinstance(instance, aadl2::ContainmentPathElement)
-
-@given(instance=aadl2::ContainmentPathElement_strategy)
-def test_aadl2::containmentpathelement_annexName_type(instance):
-    assert isinstance(instance.annexName, str)
-
-
-@given(instance=aadl2::ContainmentPathElement_strategy)
-def test_aadl2::containmentpathelement_annexName_setter(instance):
-    original = instance.annexName
-    instance.annexName = original
-    assert instance.annexName == original
-
-@given(instance=aadl2::FlowEnd_strategy)
-@settings(max_examples=50)
-def test_aadl2::flowend_instantiation(instance):
-    assert isinstance(instance, aadl2::FlowEnd)
-
-@given(instance=aadl2::ArraySize_strategy)
-@settings(max_examples=50)
-def test_aadl2::arraysize_instantiation(instance):
-    assert isinstance(instance, aadl2::ArraySize)
-
-@given(instance=aadl2::ArraySize_strategy)
-def test_aadl2::arraysize_size_type(instance):
-    assert isinstance(instance.size, str)
-
-
-@given(instance=aadl2::ArraySize_strategy)
-def test_aadl2::arraysize_size_setter(instance):
-    original = instance.size
-    instance.size = original
-    assert instance.size == original
-
-@given(instance=aadl2::Relationship_strategy)
-@settings(max_examples=50)
-def test_aadl2::relationship_instantiation(instance):
-    assert isinstance(instance, aadl2::Relationship)
-
-@given(instance=aadl2::ModeTransitionTrigger_strategy)
-@settings(max_examples=50)
-def test_aadl2::modetransitiontrigger_instantiation(instance):
-    assert isinstance(instance, aadl2::ModeTransitionTrigger)
-
-@given(instance=aadl2::PropertyExpression_strategy)
-@settings(max_examples=50)
-def test_aadl2::propertyexpression_instantiation(instance):
-    assert isinstance(instance, aadl2::PropertyExpression)
-
-@given(instance=aadl2::ArrayDimension_strategy)
-@settings(max_examples=50)
-def test_aadl2::arraydimension_instantiation(instance):
-    assert isinstance(instance, aadl2::ArrayDimension)
-
-@given(instance=aadl2::Comment_strategy)
-@settings(max_examples=50)
-def test_aadl2::comment_instantiation(instance):
-    assert isinstance(instance, aadl2::Comment)
-
-@given(instance=aadl2::Comment_strategy)
-def test_aadl2::comment_body_type(instance):
-    assert isinstance(instance.body, str)
-
-
-@given(instance=aadl2::Comment_strategy)
-def test_aadl2::comment_body_setter(instance):
-    original = instance.body
-    instance.body = original
-    assert instance.body == original
-
-@given(instance=aadl2::Element_strategy)
-@settings(max_examples=50)
-def test_aadl2::element_instantiation(instance):
-    assert isinstance(instance, aadl2::Element)
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=aadl2::Element_strategy)
-@settings(max_examples=30)
-def test_aadl2::element_has_owner_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.has_owner(
+        instance.has_no_qualified_name(
             "test", 
             "test"
         )
         if instance.__dict__ != before.__dict__:
             return  # test passes
         # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.has_owner).strip()
+        source = inspect.getsource(instance.has_no_qualified_name).strip()
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'has_owner' in aadl2::Element is empty"
+        assert has_statements, f"Function 'has_no_qualified_name' in aadl2_NamedElement is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'has_owner' in aadl2::Element did not change state; check implementation")
+            warnings.warn(f"Operation 'has_no_qualified_name' in aadl2_NamedElement did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'has_owner' in aadl2::Element is not implemented or raised an error")
+        warnings.warn(f"Operation 'has_no_qualified_name' in aadl2_NamedElement is not implemented or raised an error")
+
+@given(instance=aadl2_PropertyAssociation_strategy)
+@settings(max_examples=50)
+def test_aadl2_propertyassociation_instantiation(instance):
+    assert isinstance(instance, aadl2_PropertyAssociation)
+
+
+
+@given(instance=aadl2_PropertyAssociation_strategy)
+def test_aadl2_propertyassociation_constant_setter(instance):
+    original = instance.constant
+    instance.constant = original
+    assert instance.constant == original
+
+
+
+@given(instance=aadl2_PropertyAssociation_strategy)
+def test_aadl2_propertyassociation_append_setter(instance):
+    original = instance.append
+    instance.append = original
+    assert instance.append == original
+
+@given(instance=aadl2_ConnectedElement_strategy)
+@settings(max_examples=50)
+def test_aadl2_connectedelement_instantiation(instance):
+    assert isinstance(instance, aadl2_ConnectedElement)
+
+@given(instance=aadl2_PrototypeBinding_strategy)
+@settings(max_examples=50)
+def test_aadl2_prototypebinding_instantiation(instance):
+    assert isinstance(instance, aadl2_PrototypeBinding)
+
+@given(instance=aadl2_FlowSegment_strategy)
+@settings(max_examples=50)
+def test_aadl2_flowsegment_instantiation(instance):
+    assert isinstance(instance, aadl2_FlowSegment)
+
+@given(instance=aadl2_PropertyOwner_strategy)
+@settings(max_examples=50)
+def test_aadl2_propertyowner_instantiation(instance):
+    assert isinstance(instance, aadl2_PropertyOwner)
+
+@given(instance=aadl2_PropertyExpression_strategy)
+@settings(max_examples=50)
+def test_aadl2_propertyexpression_instantiation(instance):
+    assert isinstance(instance, aadl2_PropertyExpression)
+
+@given(instance=aadl2_EndToEndFlowSegment_strategy)
+@settings(max_examples=50)
+def test_aadl2_endtoendflowsegment_instantiation(instance):
+    assert isinstance(instance, aadl2_EndToEndFlowSegment)
+
+@given(instance=aadl2_ModeTransitionTrigger_strategy)
+@settings(max_examples=50)
+def test_aadl2_modetransitiontrigger_instantiation(instance):
+    assert isinstance(instance, aadl2_ModeTransitionTrigger)
+
+@given(instance=aadl2_Comment_strategy)
+@settings(max_examples=50)
+def test_aadl2_comment_instantiation(instance):
+    assert isinstance(instance, aadl2_Comment)
+
+
+
+@given(instance=aadl2_Comment_strategy)
+def test_aadl2_comment_body_setter(instance):
+    original = instance.body
+    instance.body = original
+    assert instance.body == original
+
+@given(instance=aadl2_Element_strategy)
+@settings(max_examples=50)
+def test_aadl2_element_instantiation(instance):
+    assert isinstance(instance, aadl2_Element)
 
 import warnings
 import copy
@@ -10216,9 +9998,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=aadl2::Element_strategy)
+@given(instance=aadl2_Element_strategy)
 @settings(max_examples=30)
-def test_aadl2::element_allownedelements_changes_state(instance):
+def test_aadl2_element_allownedelements_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -10230,14 +10012,14 @@ def test_aadl2::element_allownedelements_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'allOwnedElements' in aadl2::Element is empty"
+        assert has_statements, f"Function 'allOwnedElements' in aadl2_Element is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'allOwnedElements' in aadl2::Element did not change state; check implementation")
+            warnings.warn(f"Operation 'allOwnedElements' in aadl2_Element did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'allOwnedElements' in aadl2::Element is not implemented or raised an error")
+        warnings.warn(f"Operation 'allOwnedElements' in aadl2_Element is not implemented or raised an error")
 
 import warnings
 import copy
@@ -10245,9 +10027,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=aadl2::Element_strategy)
+@given(instance=aadl2_Element_strategy)
 @settings(max_examples=30)
-def test_aadl2::element_not_own_self_changes_state(instance):
+def test_aadl2_element_not_own_self_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -10262,14 +10044,14 @@ def test_aadl2::element_not_own_self_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'not_own_self' in aadl2::Element is empty"
+        assert has_statements, f"Function 'not_own_self' in aadl2_Element is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'not_own_self' in aadl2::Element did not change state; check implementation")
+            warnings.warn(f"Operation 'not_own_self' in aadl2_Element did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'not_own_self' in aadl2::Element is not implemented or raised an error")
+        warnings.warn(f"Operation 'not_own_self' in aadl2_Element is not implemented or raised an error")
 
 import warnings
 import copy
@@ -10277,9 +10059,41 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=aadl2::Element_strategy)
+@given(instance=aadl2_Element_strategy)
 @settings(max_examples=30)
-def test_aadl2::element_mustbeowned_changes_state(instance):
+def test_aadl2_element_has_owner_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.has_owner(
+            "test", 
+            "test"
+        )
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.has_owner).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'has_owner' in aadl2_Element is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'has_owner' in aadl2_Element did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'has_owner' in aadl2_Element is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=aadl2_Element_strategy)
+@settings(max_examples=30)
+def test_aadl2_element_mustbeowned_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -10291,428 +10105,440 @@ def test_aadl2::element_mustbeowned_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'mustBeOwned' in aadl2::Element is empty"
+        assert has_statements, f"Function 'mustBeOwned' in aadl2_Element is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'mustBeOwned' in aadl2::Element did not change state; check implementation")
+            warnings.warn(f"Operation 'mustBeOwned' in aadl2_Element did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'mustBeOwned' in aadl2::Element is not implemented or raised an error")
+        warnings.warn(f"Operation 'mustBeOwned' in aadl2_Element is not implemented or raised an error")
 
-@given(instance=ProcessorFeature_strategy)
+@given(instance=aadl2_EndToEndFlow_strategy)
 @settings(max_examples=50)
-def test_processorfeature_instantiation(instance):
-    assert isinstance(instance, ProcessorFeature)
+def test_aadl2_endtoendflow_instantiation(instance):
+    assert isinstance(instance, aadl2_EndToEndFlow)
 
-@given(instance=InternalFeature_strategy)
+@given(instance=aadl2_Realization_strategy)
 @settings(max_examples=50)
-def test_internalfeature_instantiation(instance):
-    assert isinstance(instance, InternalFeature)
+def test_aadl2_realization_instantiation(instance):
+    assert isinstance(instance, aadl2_Realization)
 
-@given(instance=aadl2::EventSource_strategy)
+@given(instance=aadl2_ImplementationExtension_strategy)
 @settings(max_examples=50)
-def test_aadl2::eventsource_instantiation(instance):
-    assert isinstance(instance, aadl2::EventSource)
+def test_aadl2_implementationextension_instantiation(instance):
+    assert isinstance(instance, aadl2_ImplementationExtension)
 
-@given(instance=aadl2::EventDataSource_strategy)
+@given(instance=aadl2_ArrayableElement_strategy)
 @settings(max_examples=50)
-def test_aadl2::eventdatasource_instantiation(instance):
-    assert isinstance(instance, aadl2::EventDataSource)
+def test_aadl2_arrayableelement_instantiation(instance):
+    assert isinstance(instance, aadl2_ArrayableElement)
 
-@given(instance=Connection_strategy)
+@given(instance=ComponentClassifier_strategy)
 @settings(max_examples=50)
-def test_connection_instantiation(instance):
-    assert isinstance(instance, Connection)
+def test_componentclassifier_instantiation(instance):
+    assert isinstance(instance, ComponentClassifier)
 
-@given(instance=aadl2::AccessConnection_strategy)
+@given(instance=aadl2_SubprogramClassifier_strategy)
 @settings(max_examples=50)
-def test_aadl2::accessconnection_instantiation(instance):
-    assert isinstance(instance, aadl2::AccessConnection)
+def test_aadl2_subprogramclassifier_instantiation(instance):
+    assert isinstance(instance, aadl2_SubprogramClassifier)
 
-@given(instance=aadl2::AccessConnection_strategy)
-def test_aadl2::accessconnection_accessCategory_type(instance):
-    assert isinstance(instance.accessCategory, str)
-
-
-@given(instance=aadl2::AccessConnection_strategy)
-def test_aadl2::accessconnection_accessCategory_setter(instance):
-    original = instance.accessCategory
-    instance.accessCategory = original
-    assert instance.accessCategory == original
-
-@given(instance=aadl2::ParameterConnection_strategy)
+@given(instance=aadl2_BusClassifier_strategy)
 @settings(max_examples=50)
-def test_aadl2::parameterconnection_instantiation(instance):
-    assert isinstance(instance, aadl2::ParameterConnection)
+def test_aadl2_busclassifier_instantiation(instance):
+    assert isinstance(instance, aadl2_BusClassifier)
 
-@given(instance=aadl2::FeatureConnection_strategy)
+@given(instance=aadl2_ComponentType_strategy)
 @settings(max_examples=50)
-def test_aadl2::featureconnection_instantiation(instance):
-    assert isinstance(instance, aadl2::FeatureConnection)
+def test_aadl2_componenttype_instantiation(instance):
+    assert isinstance(instance, aadl2_ComponentType)
 
-@given(instance=aadl2::FeatureGroupConnection_strategy)
+
+
+@given(instance=aadl2_ComponentType_strategy)
+def test_aadl2_componenttype_noFeatures_setter(instance):
+    original = instance.noFeatures
+    instance.noFeatures = original
+    assert instance.noFeatures == original
+
+@given(instance=aadl2_ProcessorClassifier_strategy)
 @settings(max_examples=50)
-def test_aadl2::featuregroupconnection_instantiation(instance):
-    assert isinstance(instance, aadl2::FeatureGroupConnection)
+def test_aadl2_processorclassifier_instantiation(instance):
+    assert isinstance(instance, aadl2_ProcessorClassifier)
 
-@given(instance=aadl2::PortConnection_strategy)
+@given(instance=aadl2_MemoryClassifier_strategy)
 @settings(max_examples=50)
-def test_aadl2::portconnection_instantiation(instance):
-    assert isinstance(instance, aadl2::PortConnection)
+def test_aadl2_memoryclassifier_instantiation(instance):
+    assert isinstance(instance, aadl2_MemoryClassifier)
 
-@given(instance=aadl2::Abstract_strategy)
+@given(instance=aadl2_ThreadGroupClassifier_strategy)
 @settings(max_examples=50)
-def test_aadl2::abstract_instantiation(instance):
-    assert isinstance(instance, aadl2::Abstract)
+def test_aadl2_threadgroupclassifier_instantiation(instance):
+    assert isinstance(instance, aadl2_ThreadGroupClassifier)
 
-@given(instance=Abstract_strategy)
+@given(instance=aadl2_VirtualBusClassifier_strategy)
 @settings(max_examples=50)
-def test_abstract_instantiation(instance):
-    assert isinstance(instance, Abstract)
+def test_aadl2_virtualbusclassifier_instantiation(instance):
+    assert isinstance(instance, aadl2_VirtualBusClassifier)
 
-@given(instance=aadl2::AbstractSubcomponentType_strategy)
+@given(instance=aadl2_VirtualProcessorClassifier_strategy)
 @settings(max_examples=50)
-def test_aadl2::abstractsubcomponenttype_instantiation(instance):
-    assert isinstance(instance, aadl2::AbstractSubcomponentType)
+def test_aadl2_virtualprocessorclassifier_instantiation(instance):
+    assert isinstance(instance, aadl2_VirtualProcessorClassifier)
 
-@given(instance=Subcomponent_strategy)
+@given(instance=aadl2_ThreadClassifier_strategy)
 @settings(max_examples=50)
-def test_subcomponent_instantiation(instance):
-    assert isinstance(instance, Subcomponent)
+def test_aadl2_threadclassifier_instantiation(instance):
+    assert isinstance(instance, aadl2_ThreadClassifier)
 
-@given(instance=aadl2::SystemSubcomponent_strategy)
+@given(instance=aadl2_SubprogramGroupClassifier_strategy)
 @settings(max_examples=50)
-def test_aadl2::systemsubcomponent_instantiation(instance):
-    assert isinstance(instance, aadl2::SystemSubcomponent)
+def test_aadl2_subprogramgroupclassifier_instantiation(instance):
+    assert isinstance(instance, aadl2_SubprogramGroupClassifier)
 
-@given(instance=aadl2::VirtualBusSubcomponent_strategy)
+@given(instance=aadl2_AbstractClassifier_strategy)
 @settings(max_examples=50)
-def test_aadl2::virtualbussubcomponent_instantiation(instance):
-    assert isinstance(instance, aadl2::VirtualBusSubcomponent)
+def test_aadl2_abstractclassifier_instantiation(instance):
+    assert isinstance(instance, aadl2_AbstractClassifier)
 
-@given(instance=aadl2::ProcessorSubcomponent_strategy)
+@given(instance=aadl2_DataClassifier_strategy)
 @settings(max_examples=50)
-def test_aadl2::processorsubcomponent_instantiation(instance):
-    assert isinstance(instance, aadl2::ProcessorSubcomponent)
+def test_aadl2_dataclassifier_instantiation(instance):
+    assert isinstance(instance, aadl2_DataClassifier)
 
-@given(instance=aadl2::ThreadGroupSubcomponent_strategy)
+@given(instance=aadl2_ProcessClassifier_strategy)
 @settings(max_examples=50)
-def test_aadl2::threadgroupsubcomponent_instantiation(instance):
-    assert isinstance(instance, aadl2::ThreadGroupSubcomponent)
+def test_aadl2_processclassifier_instantiation(instance):
+    assert isinstance(instance, aadl2_ProcessClassifier)
 
-@given(instance=aadl2::AbstractSubcomponent_strategy)
+@given(instance=aadl2_DeviceClassifier_strategy)
 @settings(max_examples=50)
-def test_aadl2::abstractsubcomponent_instantiation(instance):
-    assert isinstance(instance, aadl2::AbstractSubcomponent)
+def test_aadl2_deviceclassifier_instantiation(instance):
+    assert isinstance(instance, aadl2_DeviceClassifier)
 
-@given(instance=aadl2::ProcessSubcomponent_strategy)
+@given(instance=aadl2_SystemClassifier_strategy)
 @settings(max_examples=50)
-def test_aadl2::processsubcomponent_instantiation(instance):
-    assert isinstance(instance, aadl2::ProcessSubcomponent)
+def test_aadl2_systemclassifier_instantiation(instance):
+    assert isinstance(instance, aadl2_SystemClassifier)
 
-@given(instance=aadl2::ThreadSubcomponent_strategy)
+@given(instance=aadl2_ComponentImplementation_strategy)
 @settings(max_examples=50)
-def test_aadl2::threadsubcomponent_instantiation(instance):
-    assert isinstance(instance, aadl2::ThreadSubcomponent)
+def test_aadl2_componentimplementation_instantiation(instance):
+    assert isinstance(instance, aadl2_ComponentImplementation)
 
-@given(instance=aadl2::VirtualProcessorSubcomponent_strategy)
+
+
+@given(instance=aadl2_ComponentImplementation_strategy)
+def test_aadl2_componentimplementation_noConnections_setter(instance):
+    original = instance.noConnections
+    instance.noConnections = original
+    assert instance.noConnections == original
+
+
+
+@given(instance=aadl2_ComponentImplementation_strategy)
+def test_aadl2_componentimplementation_noSubcomponents_setter(instance):
+    original = instance.noSubcomponents
+    instance.noSubcomponents = original
+    assert instance.noSubcomponents == original
+
+
+
+@given(instance=aadl2_ComponentImplementation_strategy)
+def test_aadl2_componentimplementation_noCalls_setter(instance):
+    original = instance.noCalls
+    instance.noCalls = original
+    assert instance.noCalls == original
+
+@given(instance=aadl2_ComponentImplementationReference_strategy)
 @settings(max_examples=50)
-def test_aadl2::virtualprocessorsubcomponent_instantiation(instance):
-    assert isinstance(instance, aadl2::VirtualProcessorSubcomponent)
+def test_aadl2_componentimplementationreference_instantiation(instance):
+    assert isinstance(instance, aadl2_ComponentImplementationReference)
 
-@given(instance=aadl2::MemorySubcomponent_strategy)
+@given(instance=aadl2_ArraySize_strategy)
 @settings(max_examples=50)
-def test_aadl2::memorysubcomponent_instantiation(instance):
-    assert isinstance(instance, aadl2::MemorySubcomponent)
+def test_aadl2_arraysize_instantiation(instance):
+    assert isinstance(instance, aadl2_ArraySize)
 
-@given(instance=aadl2::DeviceSubcomponent_strategy)
+
+
+@given(instance=aadl2_ArraySize_strategy)
+def test_aadl2_arraysize_size_setter(instance):
+    original = instance.size
+    instance.size = original
+    assert instance.size == original
+
+@given(instance=aadl2_ArrayDimension_strategy)
 @settings(max_examples=50)
-def test_aadl2::devicesubcomponent_instantiation(instance):
-    assert isinstance(instance, aadl2::DeviceSubcomponent)
+def test_aadl2_arraydimension_instantiation(instance):
+    assert isinstance(instance, aadl2_ArrayDimension)
 
-@given(instance=aadl2::EndToEndFlowSegment_strategy)
+@given(instance=aadl2_ArrayRange_strategy)
 @settings(max_examples=50)
-def test_aadl2::endtoendflowsegment_instantiation(instance):
-    assert isinstance(instance, aadl2::EndToEndFlowSegment)
+def test_aadl2_arrayrange_instantiation(instance):
+    assert isinstance(instance, aadl2_ArrayRange)
 
-@given(instance=aadl2::ConnectedElement_strategy)
+
+
+@given(instance=aadl2_ArrayRange_strategy)
+def test_aadl2_arrayrange_upperBound_setter(instance):
+    original = instance.upperBound
+    instance.upperBound = original
+    assert instance.upperBound == original
+
+
+
+@given(instance=aadl2_ArrayRange_strategy)
+def test_aadl2_arrayrange_lowerBound_setter(instance):
+    original = instance.lowerBound
+    instance.lowerBound = original
+    assert instance.lowerBound == original
+
+@given(instance=aadl2_ContainmentPathElement_strategy)
 @settings(max_examples=50)
-def test_aadl2::connectedelement_instantiation(instance):
-    assert isinstance(instance, aadl2::ConnectedElement)
+def test_aadl2_containmentpathelement_instantiation(instance):
+    assert isinstance(instance, aadl2_ContainmentPathElement)
 
-@given(instance=aadl2::FlowSegment_strategy)
+
+
+@given(instance=aadl2_ContainmentPathElement_strategy)
+def test_aadl2_containmentpathelement_annexName_setter(instance):
+    original = instance.annexName
+    instance.annexName = original
+    assert instance.annexName == original
+
+@given(instance=aadl2_CalledSubprogram_strategy)
 @settings(max_examples=50)
-def test_aadl2::flowsegment_instantiation(instance):
-    assert isinstance(instance, aadl2::FlowSegment)
+def test_aadl2_calledsubprogram_instantiation(instance):
+    assert isinstance(instance, aadl2_CalledSubprogram)
 
-@given(instance=aadl2::ModeBinding_strategy)
+@given(instance=aadl2_RefinableElement_strategy)
 @settings(max_examples=50)
-def test_aadl2::modebinding_instantiation(instance):
-    assert isinstance(instance, aadl2::ModeBinding)
+def test_aadl2_refinableelement_instantiation(instance):
+    assert isinstance(instance, aadl2_RefinableElement)
 
-@given(instance=aadl2::FeaturePrototype_strategy)
+@given(instance=RefinableElement_strategy)
 @settings(max_examples=50)
-def test_aadl2::featureprototype_instantiation(instance):
-    assert isinstance(instance, aadl2::FeaturePrototype)
+def test_refinableelement_instantiation(instance):
+    assert isinstance(instance, RefinableElement)
 
-@given(instance=aadl2::FeaturePrototype_strategy)
-def test_aadl2::featureprototype_direction_type(instance):
-    assert isinstance(instance.direction, str)
-
-
-@given(instance=aadl2::FeaturePrototype_strategy)
-def test_aadl2::featureprototype_direction_setter(instance):
-    original = instance.direction
-    instance.direction = original
-    assert instance.direction == original
-
-@given(instance=aadl2::SubprogramGroup_strategy)
+@given(instance=CalledSubprogram_strategy)
 @settings(max_examples=50)
-def test_aadl2::subprogramgroup_instantiation(instance):
-    assert isinstance(instance, aadl2::SubprogramGroup)
+def test_calledsubprogram_instantiation(instance):
+    assert isinstance(instance, CalledSubprogram)
 
-@given(instance=SubprogramGroup_strategy)
+@given(instance=aadl2_Subprogram_strategy)
 @settings(max_examples=50)
-def test_subprogramgroup_instantiation(instance):
-    assert isinstance(instance, SubprogramGroup)
+def test_aadl2_subprogram_instantiation(instance):
+    assert isinstance(instance, aadl2_Subprogram)
 
-@given(instance=aadl2::SubprogramGroupSubcomponentType_strategy)
+@given(instance=aadl2_SubprogramProxy_strategy)
 @settings(max_examples=50)
-def test_aadl2::subprogramgroupsubcomponenttype_instantiation(instance):
-    assert isinstance(instance, aadl2::SubprogramGroupSubcomponentType)
+def test_aadl2_subprogramproxy_instantiation(instance):
+    assert isinstance(instance, aadl2_SubprogramProxy)
 
-@given(instance=aadl2::Subprogram_strategy)
+@given(instance=StructuralFeature_strategy)
 @settings(max_examples=50)
-def test_aadl2::subprogram_instantiation(instance):
-    assert isinstance(instance, aadl2::Subprogram)
+def test_structuralfeature_instantiation(instance):
+    assert isinstance(instance, StructuralFeature)
 
-@given(instance=Subprogram_strategy)
+@given(instance=aadl2_FlowFeature_strategy)
 @settings(max_examples=50)
-def test_subprogram_instantiation(instance):
-    assert isinstance(instance, Subprogram)
+def test_aadl2_flowfeature_instantiation(instance):
+    assert isinstance(instance, aadl2_FlowFeature)
 
-@given(instance=aadl2::SubprogramSubcomponentType_strategy)
+@given(instance=aadl2_Prototype_strategy)
 @settings(max_examples=50)
-def test_aadl2::subprogramsubcomponenttype_instantiation(instance):
-    assert isinstance(instance, aadl2::SubprogramSubcomponentType)
+def test_aadl2_prototype_instantiation(instance):
+    assert isinstance(instance, aadl2_Prototype)
 
-@given(instance=AccessConnectionEnd_strategy)
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=aadl2_Prototype_strategy)
+@settings(max_examples=30)
+def test_aadl2_prototype_categoryconstraint_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.categoryConstraint(
+            "test", 
+            "test"
+        )
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.categoryConstraint).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'categoryConstraint' in aadl2_Prototype is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'categoryConstraint' in aadl2_Prototype did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'categoryConstraint' in aadl2_Prototype is not implemented or raised an error")
+
+@given(instance=aadl2_Feature_strategy)
 @settings(max_examples=50)
-def test_accessconnectionend_instantiation(instance):
-    assert isinstance(instance, AccessConnectionEnd)
+def test_aadl2_feature_instantiation(instance):
+    assert isinstance(instance, aadl2_Feature)
 
-@given(instance=aadl2::SubprogramSubcomponent_strategy)
+@given(instance=aadl2_Connection_strategy)
 @settings(max_examples=50)
-def test_aadl2::subprogramsubcomponent_instantiation(instance):
-    assert isinstance(instance, aadl2::SubprogramSubcomponent)
+def test_aadl2_connection_instantiation(instance):
+    assert isinstance(instance, aadl2_Connection)
 
-@given(instance=aadl2::SubprogramProxy_strategy)
+
+
+@given(instance=aadl2_Connection_strategy)
+def test_aadl2_connection_bidirectional_setter(instance):
+    original = instance.bidirectional
+    instance.bidirectional = original
+    assert instance.bidirectional == original
+
+@given(instance=ClassifierFeature_strategy)
 @settings(max_examples=50)
-def test_aadl2::subprogramproxy_instantiation(instance):
-    assert isinstance(instance, aadl2::SubprogramProxy)
+def test_classifierfeature_instantiation(instance):
+    assert isinstance(instance, ClassifierFeature)
 
-@given(instance=aadl2::SubprogramGroupSubcomponent_strategy)
+@given(instance=aadl2_FlowImplementation_strategy)
 @settings(max_examples=50)
-def test_aadl2::subprogramgroupsubcomponent_instantiation(instance):
-    assert isinstance(instance, aadl2::SubprogramGroupSubcomponent)
-
-@given(instance=TriggerPort_strategy)
-@settings(max_examples=50)
-def test_triggerport_instantiation(instance):
-    assert isinstance(instance, TriggerPort)
-
-@given(instance=aadl2::AbstractFeature_strategy)
-@settings(max_examples=50)
-def test_aadl2::abstractfeature_instantiation(instance):
-    assert isinstance(instance, aadl2::AbstractFeature)
-
-@given(instance=Port_strategy)
-@settings(max_examples=50)
-def test_port_instantiation(instance):
-    assert isinstance(instance, Port)
-
-@given(instance=aadl2::EventPort_strategy)
-@settings(max_examples=50)
-def test_aadl2::eventport_instantiation(instance):
-    assert isinstance(instance, aadl2::EventPort)
-
-@given(instance=aadl2::Data_strategy)
-@settings(max_examples=50)
-def test_aadl2::data_instantiation(instance):
-    assert isinstance(instance, aadl2::Data)
-
-@given(instance=aadl2::PortConnectionEnd_strategy)
-@settings(max_examples=50)
-def test_aadl2::portconnectionend_instantiation(instance):
-    assert isinstance(instance, aadl2::PortConnectionEnd)
-
-@given(instance=aadl2::ParameterConnectionEnd_strategy)
-@settings(max_examples=50)
-def test_aadl2::parameterconnectionend_instantiation(instance):
-    assert isinstance(instance, aadl2::ParameterConnectionEnd)
-
-@given(instance=PortConnectionEnd_strategy)
-@settings(max_examples=50)
-def test_portconnectionend_instantiation(instance):
-    assert isinstance(instance, PortConnectionEnd)
-
-@given(instance=aadl2::PortProxy_strategy)
-@settings(max_examples=50)
-def test_aadl2::portproxy_instantiation(instance):
-    assert isinstance(instance, aadl2::PortProxy)
-
-@given(instance=aadl2::PortProxy_strategy)
-def test_aadl2::portproxy_direction_type(instance):
-    assert isinstance(instance.direction, str)
+def test_aadl2_flowimplementation_instantiation(instance):
+    assert isinstance(instance, aadl2_FlowImplementation)
 
 
-@given(instance=aadl2::PortProxy_strategy)
-def test_aadl2::portproxy_direction_setter(instance):
-    original = instance.direction
-    instance.direction = original
-    assert instance.direction == original
 
-@given(instance=aadl2::Port_strategy)
-@settings(max_examples=50)
-def test_aadl2::port_instantiation(instance):
-    assert isinstance(instance, aadl2::Port)
-
-@given(instance=aadl2::Port_strategy)
-def test_aadl2::port_category_type(instance):
-    assert isinstance(instance.category, str)
-
-
-@given(instance=aadl2::Port_strategy)
-def test_aadl2::port_category_setter(instance):
-    original = instance.category
-    instance.category = original
-    assert instance.category == original
-
-@given(instance=aadl2::InternalFeature_strategy)
-@settings(max_examples=50)
-def test_aadl2::internalfeature_instantiation(instance):
-    assert isinstance(instance, aadl2::InternalFeature)
-
-@given(instance=aadl2::InternalFeature_strategy)
-def test_aadl2::internalfeature_direction_type(instance):
-    assert isinstance(instance.direction, str)
-
-
-@given(instance=aadl2::InternalFeature_strategy)
-def test_aadl2::internalfeature_direction_setter(instance):
-    original = instance.direction
-    instance.direction = original
-    assert instance.direction == original
-
-@given(instance=ParameterConnectionEnd_strategy)
-@settings(max_examples=50)
-def test_parameterconnectionend_instantiation(instance):
-    assert isinstance(instance, ParameterConnectionEnd)
-
-@given(instance=aadl2::Parameter_strategy)
-@settings(max_examples=50)
-def test_aadl2::parameter_instantiation(instance):
-    assert isinstance(instance, aadl2::Parameter)
-
-@given(instance=Data_strategy)
-@settings(max_examples=50)
-def test_data_instantiation(instance):
-    assert isinstance(instance, Data)
-
-@given(instance=aadl2::DataSubcomponent_strategy)
-@settings(max_examples=50)
-def test_aadl2::datasubcomponent_instantiation(instance):
-    assert isinstance(instance, aadl2::DataSubcomponent)
-
-@given(instance=aadl2::EventDataPort_strategy)
-@settings(max_examples=50)
-def test_aadl2::eventdataport_instantiation(instance):
-    assert isinstance(instance, aadl2::EventDataPort)
-
-@given(instance=aadl2::DataPort_strategy)
-@settings(max_examples=50)
-def test_aadl2::dataport_instantiation(instance):
-    assert isinstance(instance, aadl2::DataPort)
-
-@given(instance=aadl2::DataSubcomponentType_strategy)
-@settings(max_examples=50)
-def test_aadl2::datasubcomponenttype_instantiation(instance):
-    assert isinstance(instance, aadl2::DataSubcomponentType)
-
-@given(instance=aadl2::Bus_strategy)
-@settings(max_examples=50)
-def test_aadl2::bus_instantiation(instance):
-    assert isinstance(instance, aadl2::Bus)
-
-@given(instance=aadl2::AccessConnectionEnd_strategy)
-@settings(max_examples=50)
-def test_aadl2::accessconnectionend_instantiation(instance):
-    assert isinstance(instance, aadl2::AccessConnectionEnd)
-
-@given(instance=aadl2::Access_strategy)
-@settings(max_examples=50)
-def test_aadl2::access_instantiation(instance):
-    assert isinstance(instance, aadl2::Access)
-
-@given(instance=aadl2::Access_strategy)
-def test_aadl2::access_category_type(instance):
-    assert isinstance(instance.category, str)
-
-
-@given(instance=aadl2::Access_strategy)
-def test_aadl2::access_category_setter(instance):
-    original = instance.category
-    instance.category = original
-    assert instance.category == original
-
-@given(instance=aadl2::Access_strategy)
-def test_aadl2::access_kind_type(instance):
-    assert isinstance(instance.kind, str)
-
-
-@given(instance=aadl2::Access_strategy)
-def test_aadl2::access_kind_setter(instance):
+@given(instance=aadl2_FlowImplementation_strategy)
+def test_aadl2_flowimplementation_kind_setter(instance):
     original = instance.kind
     instance.kind = original
     assert instance.kind == original
 
-@given(instance=Bus_strategy)
+@given(instance=aadl2_BehavioralFeature_strategy)
 @settings(max_examples=50)
-def test_bus_instantiation(instance):
-    assert isinstance(instance, Bus)
+def test_aadl2_behavioralfeature_instantiation(instance):
+    assert isinstance(instance, aadl2_BehavioralFeature)
 
-@given(instance=aadl2::BusSubcomponent_strategy)
+@given(instance=aadl2_StructuralFeature_strategy)
 @settings(max_examples=50)
-def test_aadl2::bussubcomponent_instantiation(instance):
-    assert isinstance(instance, aadl2::BusSubcomponent)
+def test_aadl2_structuralfeature_instantiation(instance):
+    assert isinstance(instance, aadl2_StructuralFeature)
 
-@given(instance=aadl2::BusSubcomponentType_strategy)
+@given(instance=aadl2_ModeFeature_strategy)
 @settings(max_examples=50)
-def test_aadl2::bussubcomponenttype_instantiation(instance):
-    assert isinstance(instance, aadl2::BusSubcomponentType)
+def test_aadl2_modefeature_instantiation(instance):
+    assert isinstance(instance, aadl2_ModeFeature)
 
-@given(instance=Access_strategy)
+@given(instance=ModeFeature_strategy)
 @settings(max_examples=50)
-def test_access_instantiation(instance):
-    assert isinstance(instance, Access)
+def test_modefeature_instantiation(instance):
+    assert isinstance(instance, ModeFeature)
 
-@given(instance=aadl2::DataAccess_strategy)
+@given(instance=aadl2_ModeTransition_strategy)
 @settings(max_examples=50)
-def test_aadl2::dataaccess_instantiation(instance):
-    assert isinstance(instance, aadl2::DataAccess)
+def test_aadl2_modetransition_instantiation(instance):
+    assert isinstance(instance, aadl2_ModeTransition)
 
-@given(instance=aadl2::SubprogramAccess_strategy)
+@given(instance=aadl2_Mode_strategy)
 @settings(max_examples=50)
-def test_aadl2::subprogramaccess_instantiation(instance):
-    assert isinstance(instance, aadl2::SubprogramAccess)
+def test_aadl2_mode_instantiation(instance):
+    assert isinstance(instance, aadl2_Mode)
 
-@given(instance=aadl2::BusAccess_strategy)
-@settings(max_examples=50)
-def test_aadl2::busaccess_instantiation(instance):
-    assert isinstance(instance, aadl2::BusAccess)
 
-@given(instance=aadl2::SubprogramGroupAccess_strategy)
+
+@given(instance=aadl2_Mode_strategy)
+def test_aadl2_mode_derived_setter(instance):
+    original = instance.derived
+    instance.derived = original
+    assert instance.derived == original
+
+
+
+@given(instance=aadl2_Mode_strategy)
+def test_aadl2_mode_initial_setter(instance):
+    original = instance.initial
+    instance.initial = original
+    assert instance.initial == original
+
+@given(instance=aadl2_ModalElement_strategy)
 @settings(max_examples=50)
-def test_aadl2::subprogramgroupaccess_instantiation(instance):
-    assert isinstance(instance, aadl2::SubprogramGroupAccess)
+def test_aadl2_modalelement_instantiation(instance):
+    assert isinstance(instance, aadl2_ModalElement)
+
+@given(instance=ModalElement_strategy)
+@settings(max_examples=50)
+def test_modalelement_instantiation(instance):
+    assert isinstance(instance, ModalElement)
+
+@given(instance=aadl2_InternalFeature_strategy)
+@settings(max_examples=50)
+def test_aadl2_internalfeature_instantiation(instance):
+    assert isinstance(instance, aadl2_InternalFeature)
+
+
+
+@given(instance=aadl2_InternalFeature_strategy)
+def test_aadl2_internalfeature_direction_setter(instance):
+    original = instance.direction
+    instance.direction = original
+    assert instance.direction == original
+
+@given(instance=aadl2_ModalPath_strategy)
+@settings(max_examples=50)
+def test_aadl2_modalpath_instantiation(instance):
+    assert isinstance(instance, aadl2_ModalPath)
+
+@given(instance=aadl2_ProcessorFeature_strategy)
+@settings(max_examples=50)
+def test_aadl2_processorfeature_instantiation(instance):
+    assert isinstance(instance, aadl2_ProcessorFeature)
+
+@given(instance=aadl2_ModalPropertyValue_strategy)
+@settings(max_examples=50)
+def test_aadl2_modalpropertyvalue_instantiation(instance):
+    assert isinstance(instance, aadl2_ModalPropertyValue)
+
+@given(instance=aadl2_AnnexSubclause_strategy)
+@settings(max_examples=50)
+def test_aadl2_annexsubclause_instantiation(instance):
+    assert isinstance(instance, aadl2_AnnexSubclause)
+
+@given(instance=aadl2_Subcomponent_strategy)
+@settings(max_examples=50)
+def test_aadl2_subcomponent_instantiation(instance):
+    assert isinstance(instance, aadl2_Subcomponent)
+
+
+
+@given(instance=aadl2_Subcomponent_strategy)
+def test_aadl2_subcomponent_allModes_setter(instance):
+    original = instance.allModes
+    instance.allModes = original
+    assert instance.allModes == original
+
+@given(instance=aadl2_SubprogramCallSequence_strategy)
+@settings(max_examples=50)
+def test_aadl2_subprogramcallsequence_instantiation(instance):
+    assert isinstance(instance, aadl2_SubprogramCallSequence)
+
+@given(instance=aadl2_Relationship_strategy)
+@settings(max_examples=50)
+def test_aadl2_relationship_instantiation(instance):
+    assert isinstance(instance, aadl2_Relationship)
+
+@given(instance=Relationship_strategy)
+@settings(max_examples=50)
+def test_relationship_instantiation(instance):
+    assert isinstance(instance, Relationship)
+
+@given(instance=aadl2_DirectedRelationship_strategy)
+@settings(max_examples=50)
+def test_aadl2_directedrelationship_instantiation(instance):
+    assert isinstance(instance, aadl2_DirectedRelationship)

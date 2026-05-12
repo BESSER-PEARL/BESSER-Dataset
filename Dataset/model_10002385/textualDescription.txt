@@ -1,0 +1,17 @@
+The model has 9 class(es).
+The class 'Payment' has the following attributes: 'paymentId' of type int; 'paymentTotal' of type str.
+The class 'BookSet' has the following attributes: 'bookIsbn' of type int; 'bookTitle' of type str.
+The class 'Search' has the following attributes: 'bookTitle' of type str; 'authorName' of type str; 'priceLimit' of type str.
+The class 'User' has the following attributes: 'userId' of type int; 'password' of type str.
+The class 'Shopping_Cart' has the following attributes: 'customerId' of type Customer; 'price' of type str; 'orderId' of type int.
+The class 'Bookstore_Shop' has the following attributes: 'Admin' of type Admin; 'User' of type User.
+The class 'Customer' has the following attributes: 'customerAddress' of type str; 'customerPhone' of type int; 'customerName' of type str; 'customerId' of type int; 'customerPaymentInfo' of type str.
+The class 'Admin' has the following attributes: 'adminPassword' of type str; 'adminId' of type int; 'adminRmail' of type str; 'adminName' of type str.
+The class 'Order' has the following attributes: 'customerId' of type int; 'NumberOfBooks' of type int; 'price' of type str; 'orderId' of type int.
+'Shopping_Cart' (role 'addBookToCart5', cardinality 0..*) is associated with 'Customer' (role 'Customer_Shopping_Cart_04', cardinality 0..*).
+'Search' (role 'searchBook7', cardinality 0..*) is associated with 'Customer' (role 'search6', cardinality 0..*).
+'Order' (role 'orderIsUndatedToCart11', cardinality 0..*) is associated with 'Shopping_Cart' (role 'orderBook10', cardinality 0..*).
+'Admin' (role '_addUserAsMember3', cardinality 0..*) is associated with 'User' (role 'admin2', cardinality 0..*).
+'BookSet' (role 'search9', cardinality 0..*) is associated with 'Search' (role 'bookSet8', cardinality 0..*).
+'Admin' (role 'orderBook13', cardinality 0..*) is associated with 'Order' (role 'addBook12', cardinality 0..*).
+'User' (role 'customer0', cardinality 0..*) is associated with 'Customer' (role 'user1', cardinality 0..*).

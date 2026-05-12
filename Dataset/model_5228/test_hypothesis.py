@@ -3,15 +3,15 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    projectPlanning::Assignment,
-    projectPlanning::Rating,
-    projectPlanning::Project,
-    projectPlanning::Employee,
-    projectPlanning::Capability,
-    projectPlanning::ProjectPlan,
+from python_code import (
+    projectPlanning_Assignment,
+    projectPlanning_Rating,
+    projectPlanning_Project,
+    projectPlanning_Employee,
+    projectPlanning_Capability,
+    projectPlanning_ProjectPlan,
 )
 
 # =============================================================================
@@ -20,37 +20,37 @@ from classes import (
 
 
 
-def test_projectplanning::assignment_is_not_abstract():
-    assert not inspect.isabstract(projectPlanning::Assignment)
+def test_projectplanning_assignment_is_not_abstract():
+    assert not inspect.isabstract(projectPlanning_Assignment)
 
 
-def test_projectplanning::assignment_constructor_exists():
-    assert callable(projectPlanning::Assignment.__init__)
+def test_projectplanning_assignment_constructor_exists():
+    assert callable(projectPlanning_Assignment.__init__)
 
 
-def test_projectplanning::assignment_constructor_args():
-    sig = inspect.signature(projectPlanning::Assignment.__init__)
+def test_projectplanning_assignment_constructor_args():
+    sig = inspect.signature(projectPlanning_Assignment.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_projectplanning::rating_is_not_abstract():
-    assert not inspect.isabstract(projectPlanning::Rating)
+def test_projectplanning_rating_is_not_abstract():
+    assert not inspect.isabstract(projectPlanning_Rating)
 
 
-def test_projectplanning::rating_constructor_exists():
-    assert callable(projectPlanning::Rating.__init__)
+def test_projectplanning_rating_constructor_exists():
+    assert callable(projectPlanning_Rating.__init__)
 
 
-def test_projectplanning::rating_constructor_args():
-    sig = inspect.signature(projectPlanning::Rating.__init__)
+def test_projectplanning_rating_constructor_args():
+    sig = inspect.signature(projectPlanning_Rating.__init__)
     params = list(sig.parameters.keys())
     assert "rating" in params, "Missing parameter 'rating'"
 
-def test_projectplanning::rating_has_rating():
-    assert hasattr(projectPlanning::Rating, "rating")
+def test_projectplanning_rating_has_rating():
+    assert hasattr(projectPlanning_Rating, "rating")
     descriptor = None
-    for klass in projectPlanning::Rating.__mro__:
+    for klass in projectPlanning_Rating.__mro__:
         if "rating" in klass.__dict__:
             descriptor = klass.__dict__["rating"]
             break
@@ -58,67 +58,67 @@ def test_projectplanning::rating_has_rating():
 
 
 
-def test_projectplanning::project_is_not_abstract():
-    assert not inspect.isabstract(projectPlanning::Project)
+def test_projectplanning_project_is_not_abstract():
+    assert not inspect.isabstract(projectPlanning_Project)
 
 
-def test_projectplanning::project_constructor_exists():
-    assert callable(projectPlanning::Project.__init__)
+def test_projectplanning_project_constructor_exists():
+    assert callable(projectPlanning_Project.__init__)
 
 
-def test_projectplanning::project_constructor_args():
-    sig = inspect.signature(projectPlanning::Project.__init__)
+def test_projectplanning_project_constructor_args():
+    sig = inspect.signature(projectPlanning_Project.__init__)
     params = list(sig.parameters.keys())
-    assert "name" in params, "Missing parameter 'name'"
     assert "requiresResources" in params, "Missing parameter 'requiresResources'"
+    assert "name" in params, "Missing parameter 'name'"
 
-def test_projectplanning::project_has_name():
-    assert hasattr(projectPlanning::Project, "name")
+def test_projectplanning_project_has_requiresResources():
+    assert hasattr(projectPlanning_Project, "requiresResources")
     descriptor = None
-    for klass in projectPlanning::Project.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_projectplanning::project_has_requiresResources():
-    assert hasattr(projectPlanning::Project, "requiresResources")
-    descriptor = None
-    for klass in projectPlanning::Project.__mro__:
+    for klass in projectPlanning_Project.__mro__:
         if "requiresResources" in klass.__dict__:
             descriptor = klass.__dict__["requiresResources"]
             break
     assert isinstance(descriptor, property)
 
-
-
-def test_projectplanning::employee_is_not_abstract():
-    assert not inspect.isabstract(projectPlanning::Employee)
-
-
-def test_projectplanning::employee_constructor_exists():
-    assert callable(projectPlanning::Employee.__init__)
-
-
-def test_projectplanning::employee_constructor_args():
-    sig = inspect.signature(projectPlanning::Employee.__init__)
-    params = list(sig.parameters.keys())
-    assert "name" in params, "Missing parameter 'name'"
-    assert "hasResource" in params, "Missing parameter 'hasResource'"
-
-def test_projectplanning::employee_has_name():
-    assert hasattr(projectPlanning::Employee, "name")
+def test_projectplanning_project_has_name():
+    assert hasattr(projectPlanning_Project, "name")
     descriptor = None
-    for klass in projectPlanning::Employee.__mro__:
+    for klass in projectPlanning_Project.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
-def test_projectplanning::employee_has_hasResource():
-    assert hasattr(projectPlanning::Employee, "hasResource")
+
+
+def test_projectplanning_employee_is_not_abstract():
+    assert not inspect.isabstract(projectPlanning_Employee)
+
+
+def test_projectplanning_employee_constructor_exists():
+    assert callable(projectPlanning_Employee.__init__)
+
+
+def test_projectplanning_employee_constructor_args():
+    sig = inspect.signature(projectPlanning_Employee.__init__)
+    params = list(sig.parameters.keys())
+    assert "name" in params, "Missing parameter 'name'"
+    assert "hasResource" in params, "Missing parameter 'hasResource'"
+
+def test_projectplanning_employee_has_name():
+    assert hasattr(projectPlanning_Employee, "name")
     descriptor = None
-    for klass in projectPlanning::Employee.__mro__:
+    for klass in projectPlanning_Employee.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_projectplanning_employee_has_hasResource():
+    assert hasattr(projectPlanning_Employee, "hasResource")
+    descriptor = None
+    for klass in projectPlanning_Employee.__mro__:
         if "hasResource" in klass.__dict__:
             descriptor = klass.__dict__["hasResource"]
             break
@@ -126,23 +126,23 @@ def test_projectplanning::employee_has_hasResource():
 
 
 
-def test_projectplanning::capability_is_not_abstract():
-    assert not inspect.isabstract(projectPlanning::Capability)
+def test_projectplanning_capability_is_not_abstract():
+    assert not inspect.isabstract(projectPlanning_Capability)
 
 
-def test_projectplanning::capability_constructor_exists():
-    assert callable(projectPlanning::Capability.__init__)
+def test_projectplanning_capability_constructor_exists():
+    assert callable(projectPlanning_Capability.__init__)
 
 
-def test_projectplanning::capability_constructor_args():
-    sig = inspect.signature(projectPlanning::Capability.__init__)
+def test_projectplanning_capability_constructor_args():
+    sig = inspect.signature(projectPlanning_Capability.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_projectplanning::capability_has_name():
-    assert hasattr(projectPlanning::Capability, "name")
+def test_projectplanning_capability_has_name():
+    assert hasattr(projectPlanning_Capability, "name")
     descriptor = None
-    for klass in projectPlanning::Capability.__mro__:
+    for klass in projectPlanning_Capability.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -150,16 +150,16 @@ def test_projectplanning::capability_has_name():
 
 
 
-def test_projectplanning::projectplan_is_not_abstract():
-    assert not inspect.isabstract(projectPlanning::ProjectPlan)
+def test_projectplanning_projectplan_is_not_abstract():
+    assert not inspect.isabstract(projectPlanning_ProjectPlan)
 
 
-def test_projectplanning::projectplan_constructor_exists():
-    assert callable(projectPlanning::ProjectPlan.__init__)
+def test_projectplanning_projectplan_constructor_exists():
+    assert callable(projectPlanning_ProjectPlan.__init__)
 
 
-def test_projectplanning::projectplan_constructor_args():
-    sig = inspect.signature(projectPlanning::ProjectPlan.__init__)
+def test_projectplanning_projectplan_constructor_args():
+    sig = inspect.signature(projectPlanning_ProjectPlan.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -174,129 +174,111 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-projectPlanning::Assignment_strategy = st.builds(
-    projectPlanning::Assignment,
+projectPlanning_Assignment_strategy = st.builds(
+    projectPlanning_Assignment,
 )
-projectPlanning::Rating_strategy = st.builds(
-    projectPlanning::Rating,
+projectPlanning_Rating_strategy = st.builds(
+    projectPlanning_Rating,
     rating=
         st.integers()
 )
-projectPlanning::Project_strategy = st.builds(
-    projectPlanning::Project,
-    name=
-        safe_text,
+projectPlanning_Project_strategy = st.builds(
+    projectPlanning_Project,
     requiresResources=
-        st.integers()
+        st.integers(),
+    name=
+        safe_text
 )
-projectPlanning::Employee_strategy = st.builds(
-    projectPlanning::Employee,
+projectPlanning_Employee_strategy = st.builds(
+    projectPlanning_Employee,
     name=
         safe_text,
     hasResource=
         st.integers()
 )
-projectPlanning::Capability_strategy = st.builds(
-    projectPlanning::Capability,
+projectPlanning_Capability_strategy = st.builds(
+    projectPlanning_Capability,
     name=
         safe_text
 )
-projectPlanning::ProjectPlan_strategy = st.builds(
-    projectPlanning::ProjectPlan,
+projectPlanning_ProjectPlan_strategy = st.builds(
+    projectPlanning_ProjectPlan,
 )
 
-@given(instance=projectPlanning::Assignment_strategy)
+@given(instance=projectPlanning_Assignment_strategy)
 @settings(max_examples=50)
-def test_projectplanning::assignment_instantiation(instance):
-    assert isinstance(instance, projectPlanning::Assignment)
+def test_projectplanning_assignment_instantiation(instance):
+    assert isinstance(instance, projectPlanning_Assignment)
 
-@given(instance=projectPlanning::Rating_strategy)
+@given(instance=projectPlanning_Rating_strategy)
 @settings(max_examples=50)
-def test_projectplanning::rating_instantiation(instance):
-    assert isinstance(instance, projectPlanning::Rating)
-
-@given(instance=projectPlanning::Rating_strategy)
-def test_projectplanning::rating_rating_type(instance):
-    assert isinstance(instance.rating, int)
+def test_projectplanning_rating_instantiation(instance):
+    assert isinstance(instance, projectPlanning_Rating)
 
 
-@given(instance=projectPlanning::Rating_strategy)
-def test_projectplanning::rating_rating_setter(instance):
+
+@given(instance=projectPlanning_Rating_strategy)
+def test_projectplanning_rating_rating_setter(instance):
     original = instance.rating
     instance.rating = original
     assert instance.rating == original
 
-@given(instance=projectPlanning::Project_strategy)
+@given(instance=projectPlanning_Project_strategy)
 @settings(max_examples=50)
-def test_projectplanning::project_instantiation(instance):
-    assert isinstance(instance, projectPlanning::Project)
-
-@given(instance=projectPlanning::Project_strategy)
-def test_projectplanning::project_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_projectplanning_project_instantiation(instance):
+    assert isinstance(instance, projectPlanning_Project)
 
 
-@given(instance=projectPlanning::Project_strategy)
-def test_projectplanning::project_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
 
-@given(instance=projectPlanning::Project_strategy)
-def test_projectplanning::project_requiresResources_type(instance):
-    assert isinstance(instance.requiresResources, int)
-
-
-@given(instance=projectPlanning::Project_strategy)
-def test_projectplanning::project_requiresResources_setter(instance):
+@given(instance=projectPlanning_Project_strategy)
+def test_projectplanning_project_requiresResources_setter(instance):
     original = instance.requiresResources
     instance.requiresResources = original
     assert instance.requiresResources == original
 
-@given(instance=projectPlanning::Employee_strategy)
-@settings(max_examples=50)
-def test_projectplanning::employee_instantiation(instance):
-    assert isinstance(instance, projectPlanning::Employee)
-
-@given(instance=projectPlanning::Employee_strategy)
-def test_projectplanning::employee_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
-@given(instance=projectPlanning::Employee_strategy)
-def test_projectplanning::employee_name_setter(instance):
+@given(instance=projectPlanning_Project_strategy)
+def test_projectplanning_project_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=projectPlanning::Employee_strategy)
-def test_projectplanning::employee_hasResource_type(instance):
-    assert isinstance(instance.hasResource, int)
+@given(instance=projectPlanning_Employee_strategy)
+@settings(max_examples=50)
+def test_projectplanning_employee_instantiation(instance):
+    assert isinstance(instance, projectPlanning_Employee)
 
 
-@given(instance=projectPlanning::Employee_strategy)
-def test_projectplanning::employee_hasResource_setter(instance):
+
+@given(instance=projectPlanning_Employee_strategy)
+def test_projectplanning_employee_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+
+
+@given(instance=projectPlanning_Employee_strategy)
+def test_projectplanning_employee_hasResource_setter(instance):
     original = instance.hasResource
     instance.hasResource = original
     assert instance.hasResource == original
 
-@given(instance=projectPlanning::Capability_strategy)
+@given(instance=projectPlanning_Capability_strategy)
 @settings(max_examples=50)
-def test_projectplanning::capability_instantiation(instance):
-    assert isinstance(instance, projectPlanning::Capability)
-
-@given(instance=projectPlanning::Capability_strategy)
-def test_projectplanning::capability_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_projectplanning_capability_instantiation(instance):
+    assert isinstance(instance, projectPlanning_Capability)
 
 
-@given(instance=projectPlanning::Capability_strategy)
-def test_projectplanning::capability_name_setter(instance):
+
+@given(instance=projectPlanning_Capability_strategy)
+def test_projectplanning_capability_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=projectPlanning::ProjectPlan_strategy)
+@given(instance=projectPlanning_ProjectPlan_strategy)
 @settings(max_examples=50)
-def test_projectplanning::projectplan_instantiation(instance):
-    assert isinstance(instance, projectPlanning::ProjectPlan)
+def test_projectplanning_projectplan_instantiation(instance):
+    assert isinstance(instance, projectPlanning_ProjectPlan)

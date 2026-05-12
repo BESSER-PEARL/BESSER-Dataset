@@ -3,17 +3,17 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    simpleworld101::Named,
+from python_code import (
+    simpleworld101_Named,
     Named,
-    simpleworld101::Part,
-    simpleworld101::World,
-    simpleworld101::Thing,
-    simpleworld101::Element,
-    simpleworld101::Relations,
-    simpleworld101::Person,
+    simpleworld101_World,
+    simpleworld101_Part,
+    simpleworld101_Thing,
+    simpleworld101_Element,
+    simpleworld101_Relations,
+    simpleworld101_Person,
 )
 
 # =============================================================================
@@ -22,23 +22,23 @@ from classes import (
 
 
 
-def test_simpleworld101::named_is_not_abstract():
-    assert not inspect.isabstract(simpleworld101::Named)
+def test_simpleworld101_named_is_not_abstract():
+    assert not inspect.isabstract(simpleworld101_Named)
 
 
-def test_simpleworld101::named_constructor_exists():
-    assert callable(simpleworld101::Named.__init__)
+def test_simpleworld101_named_constructor_exists():
+    assert callable(simpleworld101_Named.__init__)
 
 
-def test_simpleworld101::named_constructor_args():
-    sig = inspect.signature(simpleworld101::Named.__init__)
+def test_simpleworld101_named_constructor_args():
+    sig = inspect.signature(simpleworld101_Named.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_simpleworld101::named_has_name():
-    assert hasattr(simpleworld101::Named, "name")
+def test_simpleworld101_named_has_name():
+    assert hasattr(simpleworld101_Named, "name")
     descriptor = None
-    for klass in simpleworld101::Named.__mro__:
+    for klass in simpleworld101_Named.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -60,85 +60,85 @@ def test_named_constructor_args():
 
 
 
-def test_simpleworld101::part_is_not_abstract():
-    assert not inspect.isabstract(simpleworld101::Part)
+def test_simpleworld101_world_is_not_abstract():
+    assert not inspect.isabstract(simpleworld101_World)
 
 
-def test_simpleworld101::part_constructor_exists():
-    assert callable(simpleworld101::Part.__init__)
+def test_simpleworld101_world_constructor_exists():
+    assert callable(simpleworld101_World.__init__)
 
 
-def test_simpleworld101::part_constructor_args():
-    sig = inspect.signature(simpleworld101::Part.__init__)
+def test_simpleworld101_world_constructor_args():
+    sig = inspect.signature(simpleworld101_World.__init__)
     params = list(sig.parameters.keys())
-    assert "id" in params, "Missing parameter 'id'"
+
+
+
+def test_simpleworld101_part_is_not_abstract():
+    assert not inspect.isabstract(simpleworld101_Part)
+
+
+def test_simpleworld101_part_constructor_exists():
+    assert callable(simpleworld101_Part.__init__)
+
+
+def test_simpleworld101_part_constructor_args():
+    sig = inspect.signature(simpleworld101_Part.__init__)
+    params = list(sig.parameters.keys())
     assert "content" in params, "Missing parameter 'content'"
+    assert "id" in params, "Missing parameter 'id'"
 
-def test_simpleworld101::part_has_id():
-    assert hasattr(simpleworld101::Part, "id")
+def test_simpleworld101_part_has_content():
+    assert hasattr(simpleworld101_Part, "content")
     descriptor = None
-    for klass in simpleworld101::Part.__mro__:
-        if "id" in klass.__dict__:
-            descriptor = klass.__dict__["id"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_simpleworld101::part_has_content():
-    assert hasattr(simpleworld101::Part, "content")
-    descriptor = None
-    for klass in simpleworld101::Part.__mro__:
+    for klass in simpleworld101_Part.__mro__:
         if "content" in klass.__dict__:
             descriptor = klass.__dict__["content"]
             break
     assert isinstance(descriptor, property)
 
+def test_simpleworld101_part_has_id():
+    assert hasattr(simpleworld101_Part, "id")
+    descriptor = None
+    for klass in simpleworld101_Part.__mro__:
+        if "id" in klass.__dict__:
+            descriptor = klass.__dict__["id"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_simpleworld101::world_is_not_abstract():
-    assert not inspect.isabstract(simpleworld101::World)
+
+def test_simpleworld101_thing_is_not_abstract():
+    assert not inspect.isabstract(simpleworld101_Thing)
 
 
-def test_simpleworld101::world_constructor_exists():
-    assert callable(simpleworld101::World.__init__)
+def test_simpleworld101_thing_constructor_exists():
+    assert callable(simpleworld101_Thing.__init__)
 
 
-def test_simpleworld101::world_constructor_args():
-    sig = inspect.signature(simpleworld101::World.__init__)
+def test_simpleworld101_thing_constructor_args():
+    sig = inspect.signature(simpleworld101_Thing.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_simpleworld101::thing_is_not_abstract():
-    assert not inspect.isabstract(simpleworld101::Thing)
+def test_simpleworld101_element_is_not_abstract():
+    assert not inspect.isabstract(simpleworld101_Element)
 
 
-def test_simpleworld101::thing_constructor_exists():
-    assert callable(simpleworld101::Thing.__init__)
+def test_simpleworld101_element_constructor_exists():
+    assert callable(simpleworld101_Element.__init__)
 
 
-def test_simpleworld101::thing_constructor_args():
-    sig = inspect.signature(simpleworld101::Thing.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_simpleworld101::element_is_not_abstract():
-    assert not inspect.isabstract(simpleworld101::Element)
-
-
-def test_simpleworld101::element_constructor_exists():
-    assert callable(simpleworld101::Element.__init__)
-
-
-def test_simpleworld101::element_constructor_args():
-    sig = inspect.signature(simpleworld101::Element.__init__)
+def test_simpleworld101_element_constructor_args():
+    sig = inspect.signature(simpleworld101_Element.__init__)
     params = list(sig.parameters.keys())
     assert "description" in params, "Missing parameter 'description'"
 
-def test_simpleworld101::element_has_description():
-    assert hasattr(simpleworld101::Element, "description")
+def test_simpleworld101_element_has_description():
+    assert hasattr(simpleworld101_Element, "description")
     descriptor = None
-    for klass in simpleworld101::Element.__mro__:
+    for klass in simpleworld101_Element.__mro__:
         if "description" in klass.__dict__:
             descriptor = klass.__dict__["description"]
             break
@@ -146,23 +146,23 @@ def test_simpleworld101::element_has_description():
 
 
 
-def test_simpleworld101::relations_is_not_abstract():
-    assert not inspect.isabstract(simpleworld101::Relations)
+def test_simpleworld101_relations_is_not_abstract():
+    assert not inspect.isabstract(simpleworld101_Relations)
 
 
-def test_simpleworld101::relations_constructor_exists():
-    assert callable(simpleworld101::Relations.__init__)
+def test_simpleworld101_relations_constructor_exists():
+    assert callable(simpleworld101_Relations.__init__)
 
 
-def test_simpleworld101::relations_constructor_args():
-    sig = inspect.signature(simpleworld101::Relations.__init__)
+def test_simpleworld101_relations_constructor_args():
+    sig = inspect.signature(simpleworld101_Relations.__init__)
     params = list(sig.parameters.keys())
     assert "since" in params, "Missing parameter 'since'"
 
-def test_simpleworld101::relations_has_since():
-    assert hasattr(simpleworld101::Relations, "since")
+def test_simpleworld101_relations_has_since():
+    assert hasattr(simpleworld101_Relations, "since")
     descriptor = None
-    for klass in simpleworld101::Relations.__mro__:
+    for klass in simpleworld101_Relations.__mro__:
         if "since" in klass.__dict__:
             descriptor = klass.__dict__["since"]
             break
@@ -170,33 +170,33 @@ def test_simpleworld101::relations_has_since():
 
 
 
-def test_simpleworld101::person_is_not_abstract():
-    assert not inspect.isabstract(simpleworld101::Person)
+def test_simpleworld101_person_is_not_abstract():
+    assert not inspect.isabstract(simpleworld101_Person)
 
 
-def test_simpleworld101::person_constructor_exists():
-    assert callable(simpleworld101::Person.__init__)
+def test_simpleworld101_person_constructor_exists():
+    assert callable(simpleworld101_Person.__init__)
 
 
-def test_simpleworld101::person_constructor_args():
-    sig = inspect.signature(simpleworld101::Person.__init__)
+def test_simpleworld101_person_constructor_args():
+    sig = inspect.signature(simpleworld101_Person.__init__)
     params = list(sig.parameters.keys())
     assert "foreName" in params, "Missing parameter 'foreName'"
     assert "name" in params, "Missing parameter 'name'"
 
-def test_simpleworld101::person_has_foreName():
-    assert hasattr(simpleworld101::Person, "foreName")
+def test_simpleworld101_person_has_foreName():
+    assert hasattr(simpleworld101_Person, "foreName")
     descriptor = None
-    for klass in simpleworld101::Person.__mro__:
+    for klass in simpleworld101_Person.__mro__:
         if "foreName" in klass.__dict__:
             descriptor = klass.__dict__["foreName"]
             break
     assert isinstance(descriptor, property)
 
-def test_simpleworld101::person_has_name():
-    assert hasattr(simpleworld101::Person, "name")
+def test_simpleworld101_person_has_name():
+    assert hasattr(simpleworld101_Person, "name")
     descriptor = None
-    for klass in simpleworld101::Person.__mro__:
+    for klass in simpleworld101_Person.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -214,57 +214,54 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-simpleworld101::Named_strategy = st.builds(
-    simpleworld101::Named,
+simpleworld101_Named_strategy = st.builds(
+    simpleworld101_Named,
     name=
         safe_text
 )
 Named_strategy = st.builds(
     Named,
 )
-simpleworld101::Part_strategy = st.builds(
-    simpleworld101::Part,
-    id=
-        st.integers(),
+simpleworld101_World_strategy = st.builds(
+    simpleworld101_World,
+)
+simpleworld101_Part_strategy = st.builds(
+    simpleworld101_Part,
     content=
-        safe_text
+        safe_text,
+    id=
+        st.integers()
 )
-simpleworld101::World_strategy = st.builds(
-    simpleworld101::World,
+simpleworld101_Thing_strategy = st.builds(
+    simpleworld101_Thing,
 )
-simpleworld101::Thing_strategy = st.builds(
-    simpleworld101::Thing,
-)
-simpleworld101::Element_strategy = st.builds(
-    simpleworld101::Element,
+simpleworld101_Element_strategy = st.builds(
+    simpleworld101_Element,
     description=
         safe_text
 )
-simpleworld101::Relations_strategy = st.builds(
-    simpleworld101::Relations,
+simpleworld101_Relations_strategy = st.builds(
+    simpleworld101_Relations,
     since=
         st.integers()
 )
-simpleworld101::Person_strategy = st.builds(
-    simpleworld101::Person,
+simpleworld101_Person_strategy = st.builds(
+    simpleworld101_Person,
     foreName=
         safe_text,
     name=
         safe_text
 )
 
-@given(instance=simpleworld101::Named_strategy)
+@given(instance=simpleworld101_Named_strategy)
 @settings(max_examples=50)
-def test_simpleworld101::named_instantiation(instance):
-    assert isinstance(instance, simpleworld101::Named)
-
-@given(instance=simpleworld101::Named_strategy)
-def test_simpleworld101::named_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_simpleworld101_named_instantiation(instance):
+    assert isinstance(instance, simpleworld101_Named)
 
 
-@given(instance=simpleworld101::Named_strategy)
-def test_simpleworld101::named_name_setter(instance):
+
+@given(instance=simpleworld101_Named_strategy)
+def test_simpleworld101_named_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
@@ -274,98 +271,80 @@ def test_simpleworld101::named_name_setter(instance):
 def test_named_instantiation(instance):
     assert isinstance(instance, Named)
 
-@given(instance=simpleworld101::Part_strategy)
+@given(instance=simpleworld101_World_strategy)
 @settings(max_examples=50)
-def test_simpleworld101::part_instantiation(instance):
-    assert isinstance(instance, simpleworld101::Part)
+def test_simpleworld101_world_instantiation(instance):
+    assert isinstance(instance, simpleworld101_World)
 
-@given(instance=simpleworld101::Part_strategy)
-def test_simpleworld101::part_id_type(instance):
-    assert isinstance(instance.id, int)
-
-
-@given(instance=simpleworld101::Part_strategy)
-def test_simpleworld101::part_id_setter(instance):
-    original = instance.id
-    instance.id = original
-    assert instance.id == original
-
-@given(instance=simpleworld101::Part_strategy)
-def test_simpleworld101::part_content_type(instance):
-    assert isinstance(instance.content, str)
+@given(instance=simpleworld101_Part_strategy)
+@settings(max_examples=50)
+def test_simpleworld101_part_instantiation(instance):
+    assert isinstance(instance, simpleworld101_Part)
 
 
-@given(instance=simpleworld101::Part_strategy)
-def test_simpleworld101::part_content_setter(instance):
+
+@given(instance=simpleworld101_Part_strategy)
+def test_simpleworld101_part_content_setter(instance):
     original = instance.content
     instance.content = original
     assert instance.content == original
 
-@given(instance=simpleworld101::World_strategy)
+
+
+@given(instance=simpleworld101_Part_strategy)
+def test_simpleworld101_part_id_setter(instance):
+    original = instance.id
+    instance.id = original
+    assert instance.id == original
+
+@given(instance=simpleworld101_Thing_strategy)
 @settings(max_examples=50)
-def test_simpleworld101::world_instantiation(instance):
-    assert isinstance(instance, simpleworld101::World)
+def test_simpleworld101_thing_instantiation(instance):
+    assert isinstance(instance, simpleworld101_Thing)
 
-@given(instance=simpleworld101::Thing_strategy)
+@given(instance=simpleworld101_Element_strategy)
 @settings(max_examples=50)
-def test_simpleworld101::thing_instantiation(instance):
-    assert isinstance(instance, simpleworld101::Thing)
-
-@given(instance=simpleworld101::Element_strategy)
-@settings(max_examples=50)
-def test_simpleworld101::element_instantiation(instance):
-    assert isinstance(instance, simpleworld101::Element)
-
-@given(instance=simpleworld101::Element_strategy)
-def test_simpleworld101::element_description_type(instance):
-    assert isinstance(instance.description, str)
+def test_simpleworld101_element_instantiation(instance):
+    assert isinstance(instance, simpleworld101_Element)
 
 
-@given(instance=simpleworld101::Element_strategy)
-def test_simpleworld101::element_description_setter(instance):
+
+@given(instance=simpleworld101_Element_strategy)
+def test_simpleworld101_element_description_setter(instance):
     original = instance.description
     instance.description = original
     assert instance.description == original
 
-@given(instance=simpleworld101::Relations_strategy)
+@given(instance=simpleworld101_Relations_strategy)
 @settings(max_examples=50)
-def test_simpleworld101::relations_instantiation(instance):
-    assert isinstance(instance, simpleworld101::Relations)
-
-@given(instance=simpleworld101::Relations_strategy)
-def test_simpleworld101::relations_since_type(instance):
-    assert isinstance(instance.since, int)
+def test_simpleworld101_relations_instantiation(instance):
+    assert isinstance(instance, simpleworld101_Relations)
 
 
-@given(instance=simpleworld101::Relations_strategy)
-def test_simpleworld101::relations_since_setter(instance):
+
+@given(instance=simpleworld101_Relations_strategy)
+def test_simpleworld101_relations_since_setter(instance):
     original = instance.since
     instance.since = original
     assert instance.since == original
 
-@given(instance=simpleworld101::Person_strategy)
+@given(instance=simpleworld101_Person_strategy)
 @settings(max_examples=50)
-def test_simpleworld101::person_instantiation(instance):
-    assert isinstance(instance, simpleworld101::Person)
-
-@given(instance=simpleworld101::Person_strategy)
-def test_simpleworld101::person_foreName_type(instance):
-    assert isinstance(instance.foreName, str)
+def test_simpleworld101_person_instantiation(instance):
+    assert isinstance(instance, simpleworld101_Person)
 
 
-@given(instance=simpleworld101::Person_strategy)
-def test_simpleworld101::person_foreName_setter(instance):
+
+@given(instance=simpleworld101_Person_strategy)
+def test_simpleworld101_person_foreName_setter(instance):
     original = instance.foreName
     instance.foreName = original
     assert instance.foreName == original
 
-@given(instance=simpleworld101::Person_strategy)
-def test_simpleworld101::person_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
-@given(instance=simpleworld101::Person_strategy)
-def test_simpleworld101::person_name_setter(instance):
+@given(instance=simpleworld101_Person_strategy)
+def test_simpleworld101_person_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original

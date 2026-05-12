@@ -3,9 +3,10 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
 from python_code import (
+    Actor_Actor,
     UseCase7_UseCase,
     UseCase6_UseCase,
     Class,
@@ -14,12 +15,25 @@ from python_code import (
     UseCase3_UseCase,
     UseCase2_UseCase,
     UseCase_UseCase,
-    Actor_Actor,
 )
 
 # =============================================================================
 # SECTION 1 — STRUCTURAL TESTS
 # =============================================================================
+
+
+
+def test_actor_actor_is_not_abstract():
+    assert not inspect.isabstract(Actor_Actor)
+
+
+def test_actor_actor_constructor_exists():
+    assert callable(Actor_Actor.__init__)
+
+
+def test_actor_actor_constructor_args():
+    sig = inspect.signature(Actor_Actor.__init__)
+    params = list(sig.parameters.keys())
 
 
 
@@ -134,20 +148,6 @@ def test_usecase_usecase_constructor_args():
     params = list(sig.parameters.keys())
 
 
-
-def test_actor_actor_is_not_abstract():
-    assert not inspect.isabstract(Actor_Actor)
-
-
-def test_actor_actor_constructor_exists():
-    assert callable(Actor_Actor.__init__)
-
-
-def test_actor_actor_constructor_args():
-    sig = inspect.signature(Actor_Actor.__init__)
-    params = list(sig.parameters.keys())
-
-
 # =============================================================================
 # HYPOTHESIS STRATEGIES
 # =============================================================================
@@ -159,6 +159,9 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
+Actor_Actor_strategy = st.builds(
+    Actor_Actor,
+)
 UseCase7_UseCase_strategy = st.builds(
     UseCase7_UseCase,
 )
@@ -183,9 +186,11 @@ UseCase2_UseCase_strategy = st.builds(
 UseCase_UseCase_strategy = st.builds(
     UseCase_UseCase,
 )
-Actor_Actor_strategy = st.builds(
-    Actor_Actor,
-)
+
+@given(instance=Actor_Actor_strategy)
+@settings(max_examples=50)
+def test_actor_actor_instantiation(instance):
+    assert isinstance(instance, Actor_Actor)
 
 @given(instance=UseCase7_UseCase_strategy)
 @settings(max_examples=50)
@@ -226,8 +231,3 @@ def test_usecase2_usecase_instantiation(instance):
 @settings(max_examples=50)
 def test_usecase_usecase_instantiation(instance):
     assert isinstance(instance, UseCase_UseCase)
-
-@given(instance=Actor_Actor_strategy)
-@settings(max_examples=50)
-def test_actor_actor_instantiation(instance):
-    assert isinstance(instance, Actor_Actor)

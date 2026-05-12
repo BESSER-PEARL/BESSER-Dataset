@@ -3,16 +3,16 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    ra::MandatoryCourse,
-    ra::Specialization,
-    ra::StudyPlan,
-    ra::Course,
-    ra::Semester,
-    ra::Programme,
-    ra::Department,
+from python_code import (
+    ra_MandatoryCourse,
+    ra_Specialization,
+    ra_StudyPlan,
+    ra_Course,
+    ra_Semester,
+    ra_Programme,
+    ra_Department,
     programmeCode,
 )
 
@@ -22,57 +22,57 @@ from classes import (
 
 
 
-def test_ra::mandatorycourse_is_not_abstract():
-    assert not inspect.isabstract(ra::MandatoryCourse)
+def test_ra_mandatorycourse_is_not_abstract():
+    assert not inspect.isabstract(ra_MandatoryCourse)
 
 
-def test_ra::mandatorycourse_constructor_exists():
-    assert callable(ra::MandatoryCourse.__init__)
+def test_ra_mandatorycourse_constructor_exists():
+    assert callable(ra_MandatoryCourse.__init__)
 
 
-def test_ra::mandatorycourse_constructor_args():
-    sig = inspect.signature(ra::MandatoryCourse.__init__)
+def test_ra_mandatorycourse_constructor_args():
+    sig = inspect.signature(ra_MandatoryCourse.__init__)
     params = list(sig.parameters.keys())
-    assert "credit" in params, "Missing parameter 'credit'"
     assert "mandatory" in params, "Missing parameter 'mandatory'"
+    assert "credit" in params, "Missing parameter 'credit'"
 
-def test_ra::mandatorycourse_has_credit():
-    assert hasattr(ra::MandatoryCourse, "credit")
+def test_ra_mandatorycourse_has_mandatory():
+    assert hasattr(ra_MandatoryCourse, "mandatory")
     descriptor = None
-    for klass in ra::MandatoryCourse.__mro__:
-        if "credit" in klass.__dict__:
-            descriptor = klass.__dict__["credit"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_ra::mandatorycourse_has_mandatory():
-    assert hasattr(ra::MandatoryCourse, "mandatory")
-    descriptor = None
-    for klass in ra::MandatoryCourse.__mro__:
+    for klass in ra_MandatoryCourse.__mro__:
         if "mandatory" in klass.__dict__:
             descriptor = klass.__dict__["mandatory"]
             break
     assert isinstance(descriptor, property)
 
+def test_ra_mandatorycourse_has_credit():
+    assert hasattr(ra_MandatoryCourse, "credit")
+    descriptor = None
+    for klass in ra_MandatoryCourse.__mro__:
+        if "credit" in klass.__dict__:
+            descriptor = klass.__dict__["credit"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_ra::specialization_is_not_abstract():
-    assert not inspect.isabstract(ra::Specialization)
+
+def test_ra_specialization_is_not_abstract():
+    assert not inspect.isabstract(ra_Specialization)
 
 
-def test_ra::specialization_constructor_exists():
-    assert callable(ra::Specialization.__init__)
+def test_ra_specialization_constructor_exists():
+    assert callable(ra_Specialization.__init__)
 
 
-def test_ra::specialization_constructor_args():
-    sig = inspect.signature(ra::Specialization.__init__)
+def test_ra_specialization_constructor_args():
+    sig = inspect.signature(ra_Specialization.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_ra::specialization_has_name():
-    assert hasattr(ra::Specialization, "name")
+def test_ra_specialization_has_name():
+    assert hasattr(ra_Specialization, "name")
     descriptor = None
-    for klass in ra::Specialization.__mro__:
+    for klass in ra_Specialization.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -80,47 +80,47 @@ def test_ra::specialization_has_name():
 
 
 
-def test_ra::studyplan_is_not_abstract():
-    assert not inspect.isabstract(ra::StudyPlan)
+def test_ra_studyplan_is_not_abstract():
+    assert not inspect.isabstract(ra_StudyPlan)
 
 
-def test_ra::studyplan_constructor_exists():
-    assert callable(ra::StudyPlan.__init__)
+def test_ra_studyplan_constructor_exists():
+    assert callable(ra_StudyPlan.__init__)
 
 
-def test_ra::studyplan_constructor_args():
-    sig = inspect.signature(ra::StudyPlan.__init__)
+def test_ra_studyplan_constructor_args():
+    sig = inspect.signature(ra_StudyPlan.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ra::course_is_not_abstract():
-    assert not inspect.isabstract(ra::Course)
+def test_ra_course_is_not_abstract():
+    assert not inspect.isabstract(ra_Course)
 
 
-def test_ra::course_constructor_exists():
-    assert callable(ra::Course.__init__)
+def test_ra_course_constructor_exists():
+    assert callable(ra_Course.__init__)
 
 
-def test_ra::course_constructor_args():
-    sig = inspect.signature(ra::Course.__init__)
+def test_ra_course_constructor_args():
+    sig = inspect.signature(ra_Course.__init__)
     params = list(sig.parameters.keys())
     assert "code" in params, "Missing parameter 'code'"
     assert "name" in params, "Missing parameter 'name'"
 
-def test_ra::course_has_code():
-    assert hasattr(ra::Course, "code")
+def test_ra_course_has_code():
+    assert hasattr(ra_Course, "code")
     descriptor = None
-    for klass in ra::Course.__mro__:
+    for klass in ra_Course.__mro__:
         if "code" in klass.__dict__:
             descriptor = klass.__dict__["code"]
             break
     assert isinstance(descriptor, property)
 
-def test_ra::course_has_name():
-    assert hasattr(ra::Course, "name")
+def test_ra_course_has_name():
+    assert hasattr(ra_Course, "name")
     descriptor = None
-    for klass in ra::Course.__mro__:
+    for klass in ra_Course.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -128,33 +128,33 @@ def test_ra::course_has_name():
 
 
 
-def test_ra::semester_is_not_abstract():
-    assert not inspect.isabstract(ra::Semester)
+def test_ra_semester_is_not_abstract():
+    assert not inspect.isabstract(ra_Semester)
 
 
-def test_ra::semester_constructor_exists():
-    assert callable(ra::Semester.__init__)
+def test_ra_semester_constructor_exists():
+    assert callable(ra_Semester.__init__)
 
 
-def test_ra::semester_constructor_args():
-    sig = inspect.signature(ra::Semester.__init__)
+def test_ra_semester_constructor_args():
+    sig = inspect.signature(ra_Semester.__init__)
     params = list(sig.parameters.keys())
     assert "totalPoints" in params, "Missing parameter 'totalPoints'"
     assert "semesterNumber" in params, "Missing parameter 'semesterNumber'"
 
-def test_ra::semester_has_totalPoints():
-    assert hasattr(ra::Semester, "totalPoints")
+def test_ra_semester_has_totalPoints():
+    assert hasattr(ra_Semester, "totalPoints")
     descriptor = None
-    for klass in ra::Semester.__mro__:
+    for klass in ra_Semester.__mro__:
         if "totalPoints" in klass.__dict__:
             descriptor = klass.__dict__["totalPoints"]
             break
     assert isinstance(descriptor, property)
 
-def test_ra::semester_has_semesterNumber():
-    assert hasattr(ra::Semester, "semesterNumber")
+def test_ra_semester_has_semesterNumber():
+    assert hasattr(ra_Semester, "semesterNumber")
     descriptor = None
-    for klass in ra::Semester.__mro__:
+    for klass in ra_Semester.__mro__:
         if "semesterNumber" in klass.__dict__:
             descriptor = klass.__dict__["semesterNumber"]
             break
@@ -162,33 +162,33 @@ def test_ra::semester_has_semesterNumber():
 
 
 
-def test_ra::programme_is_not_abstract():
-    assert not inspect.isabstract(ra::Programme)
+def test_ra_programme_is_not_abstract():
+    assert not inspect.isabstract(ra_Programme)
 
 
-def test_ra::programme_constructor_exists():
-    assert callable(ra::Programme.__init__)
+def test_ra_programme_constructor_exists():
+    assert callable(ra_Programme.__init__)
 
 
-def test_ra::programme_constructor_args():
-    sig = inspect.signature(ra::Programme.__init__)
+def test_ra_programme_constructor_args():
+    sig = inspect.signature(ra_Programme.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
     assert "mCode" in params, "Missing parameter 'mCode'"
 
-def test_ra::programme_has_name():
-    assert hasattr(ra::Programme, "name")
+def test_ra_programme_has_name():
+    assert hasattr(ra_Programme, "name")
     descriptor = None
-    for klass in ra::Programme.__mro__:
+    for klass in ra_Programme.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
-def test_ra::programme_has_mCode():
-    assert hasattr(ra::Programme, "mCode")
+def test_ra_programme_has_mCode():
+    assert hasattr(ra_Programme, "mCode")
     descriptor = None
-    for klass in ra::Programme.__mro__:
+    for klass in ra_Programme.__mro__:
         if "mCode" in klass.__dict__:
             descriptor = klass.__dict__["mCode"]
             break
@@ -196,16 +196,16 @@ def test_ra::programme_has_mCode():
 
 
 
-def test_ra::department_is_not_abstract():
-    assert not inspect.isabstract(ra::Department)
+def test_ra_department_is_not_abstract():
+    assert not inspect.isabstract(ra_Department)
 
 
-def test_ra::department_constructor_exists():
-    assert callable(ra::Department.__init__)
+def test_ra_department_constructor_exists():
+    assert callable(ra_Department.__init__)
 
 
-def test_ra::department_constructor_args():
-    sig = inspect.signature(ra::Department.__init__)
+def test_ra_department_constructor_args():
+    sig = inspect.signature(ra_Department.__init__)
     params = list(sig.parameters.keys())
 
 def test_programmecode_exists():
@@ -216,9 +216,9 @@ def test_programmecode_has_all_literals():
     # Collect the names of literals in this Enumeration
     enum_literals = [lit.name for lit in programmeCode]
     expected_literals = [
-        "Informatikk",
         "Datateknologi2",
         "Datateknologi5",
+        "Informatikk",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
@@ -236,176 +236,149 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-ra::MandatoryCourse_strategy = st.builds(
-    ra::MandatoryCourse,
-    credit=
-        st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False),
+ra_MandatoryCourse_strategy = st.builds(
+    ra_MandatoryCourse,
     mandatory=
-        st.booleans()
+        st.booleans(),
+    credit=
+        st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False)
 )
-ra::Specialization_strategy = st.builds(
-    ra::Specialization,
+ra_Specialization_strategy = st.builds(
+    ra_Specialization,
     name=
         safe_text
 )
-ra::StudyPlan_strategy = st.builds(
-    ra::StudyPlan,
+ra_StudyPlan_strategy = st.builds(
+    ra_StudyPlan,
 )
-ra::Course_strategy = st.builds(
-    ra::Course,
+ra_Course_strategy = st.builds(
+    ra_Course,
     code=
         safe_text,
     name=
         safe_text
 )
-ra::Semester_strategy = st.builds(
-    ra::Semester,
+ra_Semester_strategy = st.builds(
+    ra_Semester,
     totalPoints=
         st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False),
     semesterNumber=
         st.integers()
 )
-ra::Programme_strategy = st.builds(
-    ra::Programme,
+ra_Programme_strategy = st.builds(
+    ra_Programme,
     name=
         safe_text,
     mCode=
         safe_text
 )
-ra::Department_strategy = st.builds(
-    ra::Department,
+ra_Department_strategy = st.builds(
+    ra_Department,
 )
 
-@given(instance=ra::MandatoryCourse_strategy)
+@given(instance=ra_MandatoryCourse_strategy)
 @settings(max_examples=50)
-def test_ra::mandatorycourse_instantiation(instance):
-    assert isinstance(instance, ra::MandatoryCourse)
-
-@given(instance=ra::MandatoryCourse_strategy)
-def test_ra::mandatorycourse_credit_type(instance):
-    assert isinstance(instance.credit, float)
+def test_ra_mandatorycourse_instantiation(instance):
+    assert isinstance(instance, ra_MandatoryCourse)
 
 
-@given(instance=ra::MandatoryCourse_strategy)
-def test_ra::mandatorycourse_credit_setter(instance):
-    original = instance.credit
-    instance.credit = original
-    assert instance.credit == original
 
-@given(instance=ra::MandatoryCourse_strategy)
-def test_ra::mandatorycourse_mandatory_type(instance):
-    assert isinstance(instance.mandatory, bool)
-
-
-@given(instance=ra::MandatoryCourse_strategy)
-def test_ra::mandatorycourse_mandatory_setter(instance):
+@given(instance=ra_MandatoryCourse_strategy)
+def test_ra_mandatorycourse_mandatory_setter(instance):
     original = instance.mandatory
     instance.mandatory = original
     assert instance.mandatory == original
 
-@given(instance=ra::Specialization_strategy)
+
+
+@given(instance=ra_MandatoryCourse_strategy)
+def test_ra_mandatorycourse_credit_setter(instance):
+    original = instance.credit
+    instance.credit = original
+    assert instance.credit == original
+
+@given(instance=ra_Specialization_strategy)
 @settings(max_examples=50)
-def test_ra::specialization_instantiation(instance):
-    assert isinstance(instance, ra::Specialization)
-
-@given(instance=ra::Specialization_strategy)
-def test_ra::specialization_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_ra_specialization_instantiation(instance):
+    assert isinstance(instance, ra_Specialization)
 
 
-@given(instance=ra::Specialization_strategy)
-def test_ra::specialization_name_setter(instance):
+
+@given(instance=ra_Specialization_strategy)
+def test_ra_specialization_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=ra::StudyPlan_strategy)
+@given(instance=ra_StudyPlan_strategy)
 @settings(max_examples=50)
-def test_ra::studyplan_instantiation(instance):
-    assert isinstance(instance, ra::StudyPlan)
+def test_ra_studyplan_instantiation(instance):
+    assert isinstance(instance, ra_StudyPlan)
 
-@given(instance=ra::Course_strategy)
+@given(instance=ra_Course_strategy)
 @settings(max_examples=50)
-def test_ra::course_instantiation(instance):
-    assert isinstance(instance, ra::Course)
-
-@given(instance=ra::Course_strategy)
-def test_ra::course_code_type(instance):
-    assert isinstance(instance.code, str)
+def test_ra_course_instantiation(instance):
+    assert isinstance(instance, ra_Course)
 
 
-@given(instance=ra::Course_strategy)
-def test_ra::course_code_setter(instance):
+
+@given(instance=ra_Course_strategy)
+def test_ra_course_code_setter(instance):
     original = instance.code
     instance.code = original
     assert instance.code == original
 
-@given(instance=ra::Course_strategy)
-def test_ra::course_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
-@given(instance=ra::Course_strategy)
-def test_ra::course_name_setter(instance):
+@given(instance=ra_Course_strategy)
+def test_ra_course_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=ra::Semester_strategy)
+@given(instance=ra_Semester_strategy)
 @settings(max_examples=50)
-def test_ra::semester_instantiation(instance):
-    assert isinstance(instance, ra::Semester)
-
-@given(instance=ra::Semester_strategy)
-def test_ra::semester_totalPoints_type(instance):
-    assert isinstance(instance.totalPoints, float)
+def test_ra_semester_instantiation(instance):
+    assert isinstance(instance, ra_Semester)
 
 
-@given(instance=ra::Semester_strategy)
-def test_ra::semester_totalPoints_setter(instance):
+
+@given(instance=ra_Semester_strategy)
+def test_ra_semester_totalPoints_setter(instance):
     original = instance.totalPoints
     instance.totalPoints = original
     assert instance.totalPoints == original
 
-@given(instance=ra::Semester_strategy)
-def test_ra::semester_semesterNumber_type(instance):
-    assert isinstance(instance.semesterNumber, int)
 
 
-@given(instance=ra::Semester_strategy)
-def test_ra::semester_semesterNumber_setter(instance):
+@given(instance=ra_Semester_strategy)
+def test_ra_semester_semesterNumber_setter(instance):
     original = instance.semesterNumber
     instance.semesterNumber = original
     assert instance.semesterNumber == original
 
-@given(instance=ra::Programme_strategy)
+@given(instance=ra_Programme_strategy)
 @settings(max_examples=50)
-def test_ra::programme_instantiation(instance):
-    assert isinstance(instance, ra::Programme)
-
-@given(instance=ra::Programme_strategy)
-def test_ra::programme_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_ra_programme_instantiation(instance):
+    assert isinstance(instance, ra_Programme)
 
 
-@given(instance=ra::Programme_strategy)
-def test_ra::programme_name_setter(instance):
+
+@given(instance=ra_Programme_strategy)
+def test_ra_programme_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=ra::Programme_strategy)
-def test_ra::programme_mCode_type(instance):
-    assert isinstance(instance.mCode, str)
 
 
-@given(instance=ra::Programme_strategy)
-def test_ra::programme_mCode_setter(instance):
+@given(instance=ra_Programme_strategy)
+def test_ra_programme_mCode_setter(instance):
     original = instance.mCode
     instance.mCode = original
     assert instance.mCode == original
 
-@given(instance=ra::Department_strategy)
+@given(instance=ra_Department_strategy)
 @settings(max_examples=50)
-def test_ra::department_instantiation(instance):
-    assert isinstance(instance, ra::Department)
+def test_ra_department_instantiation(instance):
+    assert isinstance(instance, ra_Department)

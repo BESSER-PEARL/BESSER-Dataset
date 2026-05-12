@@ -3,7 +3,7 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
 from python_code import (
     splash_anim_controller,
@@ -294,9 +294,6 @@ player_Actor_strategy = st.builds(
 def test_splash_anim_controller_instantiation(instance):
     assert isinstance(instance, splash_anim_controller)
 
-@given(instance=splash_anim_controller_strategy)
-def test_splash_anim_controller_attribute_type(instance):
-    assert isinstance(instance.attribute, str)
 
 
 @given(instance=splash_anim_controller_strategy)

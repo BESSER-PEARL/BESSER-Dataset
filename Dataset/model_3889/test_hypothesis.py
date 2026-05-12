@@ -3,92 +3,92 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    S::Definition,
-    gaml::S::Var,
-    gaml::S::Action,
+from python_code import (
+    S_Definition,
+    gaml_S_Var,
+    gaml_S_Action,
     TerminalExpression,
-    gaml::StringLiteral,
-    gaml::TypeInfo,
+    gaml_StringLiteral,
+    gaml_TypeInfo,
     Expression,
-    gaml::If,
-    gaml::ExpressionList,
-    gaml::Array,
-    gaml::VariableRef,
-    gaml::TerminalExpression,
-    gaml::BinaryOperator,
-    gaml::Access,
-    gaml::ArgumentPair,
+    gaml_Access,
+    gaml_BinaryOperator,
+    gaml_Array,
+    gaml_VariableRef,
+    gaml_ExpressionList,
+    gaml_If,
+    gaml_TerminalExpression,
+    gaml_ArgumentPair,
     GamlDefinition,
-    gaml::UnitFakeDefinition,
-    gaml::SkillFakeDefinition,
-    gaml::VarDefinition,
-    gaml::ActionDefinition,
-    gaml::EquationDefinition,
-    gaml::GamlDefinition,
-    gaml::ActionArguments,
+    gaml_SkillFakeDefinition,
+    gaml_VarDefinition,
+    gaml_ActionDefinition,
+    gaml_UnitFakeDefinition,
+    gaml_EquationDefinition,
+    gaml_GamlDefinition,
+    gaml_ActionArguments,
     ActionDefinition,
-    gaml::TypeDefinition,
-    gaml::ActionFakeDefinition,
-    gaml::EObject,
+    gaml_TypeDefinition,
+    gaml_ActionFakeDefinition,
+    gaml_EObject,
     TypeDefinition,
-    gaml::TypeFakeDefinition,
-    S::Declaration,
-    gaml::S::Definition,
-    gaml::S::Reflex,
-    gaml::S::Loop,
+    gaml_TypeFakeDefinition,
+    S_Declaration,
+    gaml_S_Reflex,
+    gaml_S_Definition,
+    gaml_S_Loop,
     Statement,
-    gaml::S::Do,
-    gaml::S::Display,
-    gaml::S::Try,
-    gaml::S::Solve,
-    gaml::S::If,
-    gaml::speciesOrGridDisplayStatement,
-    gaml::S::Other,
-    gaml::S::Return,
-    gaml::S::Species,
-    gaml::S::Global,
-    gaml::ReservedLiteral,
-    gaml::BooleanLiteral,
-    gaml::DoubleLiteral,
-    gaml::IntLiteral,
-    gaml::TypeRef,
-    gaml::UnitName,
-    gaml::Parameter,
-    gaml::Function,
-    gaml::Point,
-    gaml::EquationRef,
-    gaml::ActionRef,
-    gaml::SkillRef,
-    gaml::Unary,
-    gaml::Unit,
+    gaml_S_Species,
+    gaml_S_Try,
+    gaml_speciesOrGridDisplayStatement,
+    gaml_S_Display,
+    gaml_S_Return,
+    gaml_S_Other,
+    gaml_S_Do,
+    gaml_S_If,
+    gaml_S_Solve,
+    gaml_S_Global,
     EquationDefinition,
-    gaml::EquationFakeDefinition,
-    gaml::S::Equations,
-    S::Assignment,
-    gaml::S::Set,
-    gaml::S::DirectAssignment,
-    gaml::S::Assignment,
-    gaml::HeadlessExperiment,
-    gaml::Statement,
-    gaml::Pragma,
+    gaml_EquationFakeDefinition,
+    gaml_S_Equations,
+    S_Assignment,
+    gaml_S_Set,
+    gaml_S_DirectAssignment,
+    gaml_S_Assignment,
+    gaml_HeadlessExperiment,
+    gaml_Statement,
+    gaml_Pragma,
     VarDefinition,
-    gaml::S::Declaration,
-    gaml::ArgumentDefinition,
-    gaml::VarFakeDefinition,
-    gaml::Import,
-    gaml::S::Experiment,
-    gaml::Expression,
-    gaml::Block,
+    gaml_S_Declaration,
+    gaml_S_Experiment,
+    gaml_ArgumentDefinition,
+    gaml_VarFakeDefinition,
+    gaml_Import,
+    gaml_Expression,
+    gaml_Block,
     Entry,
-    gaml::ExperimentFileStructure,
-    gaml::Model,
-    gaml::StringEvaluator,
-    gaml::StandaloneBlock,
-    gaml::Entry,
-    gaml::Facet,
+    gaml_StringEvaluator,
+    gaml_ExperimentFileStructure,
+    gaml_Model,
+    gaml_StandaloneBlock,
+    gaml_Entry,
+    gaml_Facet,
+    gaml_ReservedLiteral,
+    gaml_BooleanLiteral,
+    gaml_DoubleLiteral,
+    gaml_IntLiteral,
+    gaml_TypeRef,
+    gaml_UnitName,
+    gaml_Parameter,
+    gaml_Function,
+    gaml_Point,
+    gaml_EquationRef,
+    gaml_ActionRef,
+    gaml_SkillRef,
+    gaml_Unary,
+    gaml_Unit,
 )
 
 # =============================================================================
@@ -97,44 +97,44 @@ from classes import (
 
 
 
-def test_s::definition_is_not_abstract():
-    assert not inspect.isabstract(S::Definition)
+def test_s_definition_is_not_abstract():
+    assert not inspect.isabstract(S_Definition)
 
 
-def test_s::definition_constructor_exists():
-    assert callable(S::Definition.__init__)
+def test_s_definition_constructor_exists():
+    assert callable(S_Definition.__init__)
 
 
-def test_s::definition_constructor_args():
-    sig = inspect.signature(S::Definition.__init__)
+def test_s_definition_constructor_args():
+    sig = inspect.signature(S_Definition.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_gaml::s::var_is_not_abstract():
-    assert not inspect.isabstract(gaml::S::Var)
+def test_gaml_s_var_is_not_abstract():
+    assert not inspect.isabstract(gaml_S_Var)
 
 
-def test_gaml::s::var_constructor_exists():
-    assert callable(gaml::S::Var.__init__)
+def test_gaml_s_var_constructor_exists():
+    assert callable(gaml_S_Var.__init__)
 
 
-def test_gaml::s::var_constructor_args():
-    sig = inspect.signature(gaml::S::Var.__init__)
+def test_gaml_s_var_constructor_args():
+    sig = inspect.signature(gaml_S_Var.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_gaml::s::action_is_not_abstract():
-    assert not inspect.isabstract(gaml::S::Action)
+def test_gaml_s_action_is_not_abstract():
+    assert not inspect.isabstract(gaml_S_Action)
 
 
-def test_gaml::s::action_constructor_exists():
-    assert callable(gaml::S::Action.__init__)
+def test_gaml_s_action_constructor_exists():
+    assert callable(gaml_S_Action.__init__)
 
 
-def test_gaml::s::action_constructor_args():
-    sig = inspect.signature(gaml::S::Action.__init__)
+def test_gaml_s_action_constructor_args():
+    sig = inspect.signature(gaml_S_Action.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -153,30 +153,30 @@ def test_terminalexpression_constructor_args():
 
 
 
-def test_gaml::stringliteral_is_not_abstract():
-    assert not inspect.isabstract(gaml::StringLiteral)
+def test_gaml_stringliteral_is_not_abstract():
+    assert not inspect.isabstract(gaml_StringLiteral)
 
 
-def test_gaml::stringliteral_constructor_exists():
-    assert callable(gaml::StringLiteral.__init__)
+def test_gaml_stringliteral_constructor_exists():
+    assert callable(gaml_StringLiteral.__init__)
 
 
-def test_gaml::stringliteral_constructor_args():
-    sig = inspect.signature(gaml::StringLiteral.__init__)
+def test_gaml_stringliteral_constructor_args():
+    sig = inspect.signature(gaml_StringLiteral.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_gaml::typeinfo_is_not_abstract():
-    assert not inspect.isabstract(gaml::TypeInfo)
+def test_gaml_typeinfo_is_not_abstract():
+    assert not inspect.isabstract(gaml_TypeInfo)
 
 
-def test_gaml::typeinfo_constructor_exists():
-    assert callable(gaml::TypeInfo.__init__)
+def test_gaml_typeinfo_constructor_exists():
+    assert callable(gaml_TypeInfo.__init__)
 
 
-def test_gaml::typeinfo_constructor_args():
-    sig = inspect.signature(gaml::TypeInfo.__init__)
+def test_gaml_typeinfo_constructor_args():
+    sig = inspect.signature(gaml_TypeInfo.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -195,23 +195,23 @@ def test_expression_constructor_args():
 
 
 
-def test_gaml::if_is_not_abstract():
-    assert not inspect.isabstract(gaml::If)
+def test_gaml_access_is_not_abstract():
+    assert not inspect.isabstract(gaml_Access)
 
 
-def test_gaml::if_constructor_exists():
-    assert callable(gaml::If.__init__)
+def test_gaml_access_constructor_exists():
+    assert callable(gaml_Access.__init__)
 
 
-def test_gaml::if_constructor_args():
-    sig = inspect.signature(gaml::If.__init__)
+def test_gaml_access_constructor_args():
+    sig = inspect.signature(gaml_Access.__init__)
     params = list(sig.parameters.keys())
     assert "op" in params, "Missing parameter 'op'"
 
-def test_gaml::if_has_op():
-    assert hasattr(gaml::If, "op")
+def test_gaml_access_has_op():
+    assert hasattr(gaml_Access, "op")
     descriptor = None
-    for klass in gaml::If.__mro__:
+    for klass in gaml_Access.__mro__:
         if "op" in klass.__dict__:
             descriptor = klass.__dict__["op"]
             break
@@ -219,65 +219,23 @@ def test_gaml::if_has_op():
 
 
 
-def test_gaml::expressionlist_is_not_abstract():
-    assert not inspect.isabstract(gaml::ExpressionList)
+def test_gaml_binaryoperator_is_not_abstract():
+    assert not inspect.isabstract(gaml_BinaryOperator)
 
 
-def test_gaml::expressionlist_constructor_exists():
-    assert callable(gaml::ExpressionList.__init__)
+def test_gaml_binaryoperator_constructor_exists():
+    assert callable(gaml_BinaryOperator.__init__)
 
 
-def test_gaml::expressionlist_constructor_args():
-    sig = inspect.signature(gaml::ExpressionList.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_gaml::array_is_not_abstract():
-    assert not inspect.isabstract(gaml::Array)
-
-
-def test_gaml::array_constructor_exists():
-    assert callable(gaml::Array.__init__)
-
-
-def test_gaml::array_constructor_args():
-    sig = inspect.signature(gaml::Array.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_gaml::variableref_is_not_abstract():
-    assert not inspect.isabstract(gaml::VariableRef)
-
-
-def test_gaml::variableref_constructor_exists():
-    assert callable(gaml::VariableRef.__init__)
-
-
-def test_gaml::variableref_constructor_args():
-    sig = inspect.signature(gaml::VariableRef.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_gaml::terminalexpression_is_not_abstract():
-    assert not inspect.isabstract(gaml::TerminalExpression)
-
-
-def test_gaml::terminalexpression_constructor_exists():
-    assert callable(gaml::TerminalExpression.__init__)
-
-
-def test_gaml::terminalexpression_constructor_args():
-    sig = inspect.signature(gaml::TerminalExpression.__init__)
+def test_gaml_binaryoperator_constructor_args():
+    sig = inspect.signature(gaml_BinaryOperator.__init__)
     params = list(sig.parameters.keys())
     assert "op" in params, "Missing parameter 'op'"
 
-def test_gaml::terminalexpression_has_op():
-    assert hasattr(gaml::TerminalExpression, "op")
+def test_gaml_binaryoperator_has_op():
+    assert hasattr(gaml_BinaryOperator, "op")
     descriptor = None
-    for klass in gaml::TerminalExpression.__mro__:
+    for klass in gaml_BinaryOperator.__mro__:
         if "op" in klass.__dict__:
             descriptor = klass.__dict__["op"]
             break
@@ -285,23 +243,65 @@ def test_gaml::terminalexpression_has_op():
 
 
 
-def test_gaml::binaryoperator_is_not_abstract():
-    assert not inspect.isabstract(gaml::BinaryOperator)
+def test_gaml_array_is_not_abstract():
+    assert not inspect.isabstract(gaml_Array)
 
 
-def test_gaml::binaryoperator_constructor_exists():
-    assert callable(gaml::BinaryOperator.__init__)
+def test_gaml_array_constructor_exists():
+    assert callable(gaml_Array.__init__)
 
 
-def test_gaml::binaryoperator_constructor_args():
-    sig = inspect.signature(gaml::BinaryOperator.__init__)
+def test_gaml_array_constructor_args():
+    sig = inspect.signature(gaml_Array.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_gaml_variableref_is_not_abstract():
+    assert not inspect.isabstract(gaml_VariableRef)
+
+
+def test_gaml_variableref_constructor_exists():
+    assert callable(gaml_VariableRef.__init__)
+
+
+def test_gaml_variableref_constructor_args():
+    sig = inspect.signature(gaml_VariableRef.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_gaml_expressionlist_is_not_abstract():
+    assert not inspect.isabstract(gaml_ExpressionList)
+
+
+def test_gaml_expressionlist_constructor_exists():
+    assert callable(gaml_ExpressionList.__init__)
+
+
+def test_gaml_expressionlist_constructor_args():
+    sig = inspect.signature(gaml_ExpressionList.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_gaml_if_is_not_abstract():
+    assert not inspect.isabstract(gaml_If)
+
+
+def test_gaml_if_constructor_exists():
+    assert callable(gaml_If.__init__)
+
+
+def test_gaml_if_constructor_args():
+    sig = inspect.signature(gaml_If.__init__)
     params = list(sig.parameters.keys())
     assert "op" in params, "Missing parameter 'op'"
 
-def test_gaml::binaryoperator_has_op():
-    assert hasattr(gaml::BinaryOperator, "op")
+def test_gaml_if_has_op():
+    assert hasattr(gaml_If, "op")
     descriptor = None
-    for klass in gaml::BinaryOperator.__mro__:
+    for klass in gaml_If.__mro__:
         if "op" in klass.__dict__:
             descriptor = klass.__dict__["op"]
             break
@@ -309,23 +309,23 @@ def test_gaml::binaryoperator_has_op():
 
 
 
-def test_gaml::access_is_not_abstract():
-    assert not inspect.isabstract(gaml::Access)
+def test_gaml_terminalexpression_is_not_abstract():
+    assert not inspect.isabstract(gaml_TerminalExpression)
 
 
-def test_gaml::access_constructor_exists():
-    assert callable(gaml::Access.__init__)
+def test_gaml_terminalexpression_constructor_exists():
+    assert callable(gaml_TerminalExpression.__init__)
 
 
-def test_gaml::access_constructor_args():
-    sig = inspect.signature(gaml::Access.__init__)
+def test_gaml_terminalexpression_constructor_args():
+    sig = inspect.signature(gaml_TerminalExpression.__init__)
     params = list(sig.parameters.keys())
     assert "op" in params, "Missing parameter 'op'"
 
-def test_gaml::access_has_op():
-    assert hasattr(gaml::Access, "op")
+def test_gaml_terminalexpression_has_op():
+    assert hasattr(gaml_TerminalExpression, "op")
     descriptor = None
-    for klass in gaml::Access.__mro__:
+    for klass in gaml_TerminalExpression.__mro__:
         if "op" in klass.__dict__:
             descriptor = klass.__dict__["op"]
             break
@@ -333,23 +333,23 @@ def test_gaml::access_has_op():
 
 
 
-def test_gaml::argumentpair_is_not_abstract():
-    assert not inspect.isabstract(gaml::ArgumentPair)
+def test_gaml_argumentpair_is_not_abstract():
+    assert not inspect.isabstract(gaml_ArgumentPair)
 
 
-def test_gaml::argumentpair_constructor_exists():
-    assert callable(gaml::ArgumentPair.__init__)
+def test_gaml_argumentpair_constructor_exists():
+    assert callable(gaml_ArgumentPair.__init__)
 
 
-def test_gaml::argumentpair_constructor_args():
-    sig = inspect.signature(gaml::ArgumentPair.__init__)
+def test_gaml_argumentpair_constructor_args():
+    sig = inspect.signature(gaml_ArgumentPair.__init__)
     params = list(sig.parameters.keys())
     assert "op" in params, "Missing parameter 'op'"
 
-def test_gaml::argumentpair_has_op():
-    assert hasattr(gaml::ArgumentPair, "op")
+def test_gaml_argumentpair_has_op():
+    assert hasattr(gaml_ArgumentPair, "op")
     descriptor = None
-    for klass in gaml::ArgumentPair.__mro__:
+    for klass in gaml_ArgumentPair.__mro__:
         if "op" in klass.__dict__:
             descriptor = klass.__dict__["op"]
             break
@@ -371,93 +371,93 @@ def test_gamldefinition_constructor_args():
 
 
 
-def test_gaml::unitfakedefinition_is_not_abstract():
-    assert not inspect.isabstract(gaml::UnitFakeDefinition)
+def test_gaml_skillfakedefinition_is_not_abstract():
+    assert not inspect.isabstract(gaml_SkillFakeDefinition)
 
 
-def test_gaml::unitfakedefinition_constructor_exists():
-    assert callable(gaml::UnitFakeDefinition.__init__)
+def test_gaml_skillfakedefinition_constructor_exists():
+    assert callable(gaml_SkillFakeDefinition.__init__)
 
 
-def test_gaml::unitfakedefinition_constructor_args():
-    sig = inspect.signature(gaml::UnitFakeDefinition.__init__)
+def test_gaml_skillfakedefinition_constructor_args():
+    sig = inspect.signature(gaml_SkillFakeDefinition.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_gaml::skillfakedefinition_is_not_abstract():
-    assert not inspect.isabstract(gaml::SkillFakeDefinition)
+def test_gaml_vardefinition_is_not_abstract():
+    assert not inspect.isabstract(gaml_VarDefinition)
 
 
-def test_gaml::skillfakedefinition_constructor_exists():
-    assert callable(gaml::SkillFakeDefinition.__init__)
+def test_gaml_vardefinition_constructor_exists():
+    assert callable(gaml_VarDefinition.__init__)
 
 
-def test_gaml::skillfakedefinition_constructor_args():
-    sig = inspect.signature(gaml::SkillFakeDefinition.__init__)
+def test_gaml_vardefinition_constructor_args():
+    sig = inspect.signature(gaml_VarDefinition.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_gaml::vardefinition_is_not_abstract():
-    assert not inspect.isabstract(gaml::VarDefinition)
+def test_gaml_actiondefinition_is_not_abstract():
+    assert not inspect.isabstract(gaml_ActionDefinition)
 
 
-def test_gaml::vardefinition_constructor_exists():
-    assert callable(gaml::VarDefinition.__init__)
+def test_gaml_actiondefinition_constructor_exists():
+    assert callable(gaml_ActionDefinition.__init__)
 
 
-def test_gaml::vardefinition_constructor_args():
-    sig = inspect.signature(gaml::VarDefinition.__init__)
+def test_gaml_actiondefinition_constructor_args():
+    sig = inspect.signature(gaml_ActionDefinition.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_gaml::actiondefinition_is_not_abstract():
-    assert not inspect.isabstract(gaml::ActionDefinition)
+def test_gaml_unitfakedefinition_is_not_abstract():
+    assert not inspect.isabstract(gaml_UnitFakeDefinition)
 
 
-def test_gaml::actiondefinition_constructor_exists():
-    assert callable(gaml::ActionDefinition.__init__)
+def test_gaml_unitfakedefinition_constructor_exists():
+    assert callable(gaml_UnitFakeDefinition.__init__)
 
 
-def test_gaml::actiondefinition_constructor_args():
-    sig = inspect.signature(gaml::ActionDefinition.__init__)
+def test_gaml_unitfakedefinition_constructor_args():
+    sig = inspect.signature(gaml_UnitFakeDefinition.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_gaml::equationdefinition_is_not_abstract():
-    assert not inspect.isabstract(gaml::EquationDefinition)
+def test_gaml_equationdefinition_is_not_abstract():
+    assert not inspect.isabstract(gaml_EquationDefinition)
 
 
-def test_gaml::equationdefinition_constructor_exists():
-    assert callable(gaml::EquationDefinition.__init__)
+def test_gaml_equationdefinition_constructor_exists():
+    assert callable(gaml_EquationDefinition.__init__)
 
 
-def test_gaml::equationdefinition_constructor_args():
-    sig = inspect.signature(gaml::EquationDefinition.__init__)
+def test_gaml_equationdefinition_constructor_args():
+    sig = inspect.signature(gaml_EquationDefinition.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_gaml::gamldefinition_is_not_abstract():
-    assert not inspect.isabstract(gaml::GamlDefinition)
+def test_gaml_gamldefinition_is_not_abstract():
+    assert not inspect.isabstract(gaml_GamlDefinition)
 
 
-def test_gaml::gamldefinition_constructor_exists():
-    assert callable(gaml::GamlDefinition.__init__)
+def test_gaml_gamldefinition_constructor_exists():
+    assert callable(gaml_GamlDefinition.__init__)
 
 
-def test_gaml::gamldefinition_constructor_args():
-    sig = inspect.signature(gaml::GamlDefinition.__init__)
+def test_gaml_gamldefinition_constructor_args():
+    sig = inspect.signature(gaml_GamlDefinition.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_gaml::gamldefinition_has_name():
-    assert hasattr(gaml::GamlDefinition, "name")
+def test_gaml_gamldefinition_has_name():
+    assert hasattr(gaml_GamlDefinition, "name")
     descriptor = None
-    for klass in gaml::GamlDefinition.__mro__:
+    for klass in gaml_GamlDefinition.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -465,16 +465,16 @@ def test_gaml::gamldefinition_has_name():
 
 
 
-def test_gaml::actionarguments_is_not_abstract():
-    assert not inspect.isabstract(gaml::ActionArguments)
+def test_gaml_actionarguments_is_not_abstract():
+    assert not inspect.isabstract(gaml_ActionArguments)
 
 
-def test_gaml::actionarguments_constructor_exists():
-    assert callable(gaml::ActionArguments.__init__)
+def test_gaml_actionarguments_constructor_exists():
+    assert callable(gaml_ActionArguments.__init__)
 
 
-def test_gaml::actionarguments_constructor_args():
-    sig = inspect.signature(gaml::ActionArguments.__init__)
+def test_gaml_actionarguments_constructor_args():
+    sig = inspect.signature(gaml_ActionArguments.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -493,44 +493,44 @@ def test_actiondefinition_constructor_args():
 
 
 
-def test_gaml::typedefinition_is_not_abstract():
-    assert not inspect.isabstract(gaml::TypeDefinition)
+def test_gaml_typedefinition_is_not_abstract():
+    assert not inspect.isabstract(gaml_TypeDefinition)
 
 
-def test_gaml::typedefinition_constructor_exists():
-    assert callable(gaml::TypeDefinition.__init__)
+def test_gaml_typedefinition_constructor_exists():
+    assert callable(gaml_TypeDefinition.__init__)
 
 
-def test_gaml::typedefinition_constructor_args():
-    sig = inspect.signature(gaml::TypeDefinition.__init__)
+def test_gaml_typedefinition_constructor_args():
+    sig = inspect.signature(gaml_TypeDefinition.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_gaml::actionfakedefinition_is_not_abstract():
-    assert not inspect.isabstract(gaml::ActionFakeDefinition)
+def test_gaml_actionfakedefinition_is_not_abstract():
+    assert not inspect.isabstract(gaml_ActionFakeDefinition)
 
 
-def test_gaml::actionfakedefinition_constructor_exists():
-    assert callable(gaml::ActionFakeDefinition.__init__)
+def test_gaml_actionfakedefinition_constructor_exists():
+    assert callable(gaml_ActionFakeDefinition.__init__)
 
 
-def test_gaml::actionfakedefinition_constructor_args():
-    sig = inspect.signature(gaml::ActionFakeDefinition.__init__)
+def test_gaml_actionfakedefinition_constructor_args():
+    sig = inspect.signature(gaml_ActionFakeDefinition.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_gaml::eobject_is_not_abstract():
-    assert not inspect.isabstract(gaml::EObject)
+def test_gaml_eobject_is_not_abstract():
+    assert not inspect.isabstract(gaml_EObject)
 
 
-def test_gaml::eobject_constructor_exists():
-    assert callable(gaml::EObject.__init__)
+def test_gaml_eobject_constructor_exists():
+    assert callable(gaml_EObject.__init__)
 
 
-def test_gaml::eobject_constructor_args():
-    sig = inspect.signature(gaml::EObject.__init__)
+def test_gaml_eobject_constructor_args():
+    sig = inspect.signature(gaml_EObject.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -549,72 +549,72 @@ def test_typedefinition_constructor_args():
 
 
 
-def test_gaml::typefakedefinition_is_not_abstract():
-    assert not inspect.isabstract(gaml::TypeFakeDefinition)
+def test_gaml_typefakedefinition_is_not_abstract():
+    assert not inspect.isabstract(gaml_TypeFakeDefinition)
 
 
-def test_gaml::typefakedefinition_constructor_exists():
-    assert callable(gaml::TypeFakeDefinition.__init__)
+def test_gaml_typefakedefinition_constructor_exists():
+    assert callable(gaml_TypeFakeDefinition.__init__)
 
 
-def test_gaml::typefakedefinition_constructor_args():
-    sig = inspect.signature(gaml::TypeFakeDefinition.__init__)
+def test_gaml_typefakedefinition_constructor_args():
+    sig = inspect.signature(gaml_TypeFakeDefinition.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_s::declaration_is_not_abstract():
-    assert not inspect.isabstract(S::Declaration)
+def test_s_declaration_is_not_abstract():
+    assert not inspect.isabstract(S_Declaration)
 
 
-def test_s::declaration_constructor_exists():
-    assert callable(S::Declaration.__init__)
+def test_s_declaration_constructor_exists():
+    assert callable(S_Declaration.__init__)
 
 
-def test_s::declaration_constructor_args():
-    sig = inspect.signature(S::Declaration.__init__)
+def test_s_declaration_constructor_args():
+    sig = inspect.signature(S_Declaration.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_gaml::s::definition_is_not_abstract():
-    assert not inspect.isabstract(gaml::S::Definition)
+def test_gaml_s_reflex_is_not_abstract():
+    assert not inspect.isabstract(gaml_S_Reflex)
 
 
-def test_gaml::s::definition_constructor_exists():
-    assert callable(gaml::S::Definition.__init__)
+def test_gaml_s_reflex_constructor_exists():
+    assert callable(gaml_S_Reflex.__init__)
 
 
-def test_gaml::s::definition_constructor_args():
-    sig = inspect.signature(gaml::S::Definition.__init__)
+def test_gaml_s_reflex_constructor_args():
+    sig = inspect.signature(gaml_S_Reflex.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_gaml::s::reflex_is_not_abstract():
-    assert not inspect.isabstract(gaml::S::Reflex)
+def test_gaml_s_definition_is_not_abstract():
+    assert not inspect.isabstract(gaml_S_Definition)
 
 
-def test_gaml::s::reflex_constructor_exists():
-    assert callable(gaml::S::Reflex.__init__)
+def test_gaml_s_definition_constructor_exists():
+    assert callable(gaml_S_Definition.__init__)
 
 
-def test_gaml::s::reflex_constructor_args():
-    sig = inspect.signature(gaml::S::Reflex.__init__)
+def test_gaml_s_definition_constructor_args():
+    sig = inspect.signature(gaml_S_Definition.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_gaml::s::loop_is_not_abstract():
-    assert not inspect.isabstract(gaml::S::Loop)
+def test_gaml_s_loop_is_not_abstract():
+    assert not inspect.isabstract(gaml_S_Loop)
 
 
-def test_gaml::s::loop_constructor_exists():
-    assert callable(gaml::S::Loop.__init__)
+def test_gaml_s_loop_constructor_exists():
+    assert callable(gaml_S_Loop.__init__)
 
 
-def test_gaml::s::loop_constructor_args():
-    sig = inspect.signature(gaml::S::Loop.__init__)
+def test_gaml_s_loop_constructor_args():
+    sig = inspect.signature(gaml_S_Loop.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -633,37 +633,65 @@ def test_statement_constructor_args():
 
 
 
-def test_gaml::s::do_is_not_abstract():
-    assert not inspect.isabstract(gaml::S::Do)
+def test_gaml_s_species_is_not_abstract():
+    assert not inspect.isabstract(gaml_S_Species)
 
 
-def test_gaml::s::do_constructor_exists():
-    assert callable(gaml::S::Do.__init__)
+def test_gaml_s_species_constructor_exists():
+    assert callable(gaml_S_Species.__init__)
 
 
-def test_gaml::s::do_constructor_args():
-    sig = inspect.signature(gaml::S::Do.__init__)
+def test_gaml_s_species_constructor_args():
+    sig = inspect.signature(gaml_S_Species.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_gaml::s::display_is_not_abstract():
-    assert not inspect.isabstract(gaml::S::Display)
+def test_gaml_s_try_is_not_abstract():
+    assert not inspect.isabstract(gaml_S_Try)
 
 
-def test_gaml::s::display_constructor_exists():
-    assert callable(gaml::S::Display.__init__)
+def test_gaml_s_try_constructor_exists():
+    assert callable(gaml_S_Try.__init__)
 
 
-def test_gaml::s::display_constructor_args():
-    sig = inspect.signature(gaml::S::Display.__init__)
+def test_gaml_s_try_constructor_args():
+    sig = inspect.signature(gaml_S_Try.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_gaml_speciesorgriddisplaystatement_is_not_abstract():
+    assert not inspect.isabstract(gaml_speciesOrGridDisplayStatement)
+
+
+def test_gaml_speciesorgriddisplaystatement_constructor_exists():
+    assert callable(gaml_speciesOrGridDisplayStatement.__init__)
+
+
+def test_gaml_speciesorgriddisplaystatement_constructor_args():
+    sig = inspect.signature(gaml_speciesOrGridDisplayStatement.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_gaml_s_display_is_not_abstract():
+    assert not inspect.isabstract(gaml_S_Display)
+
+
+def test_gaml_s_display_constructor_exists():
+    assert callable(gaml_S_Display.__init__)
+
+
+def test_gaml_s_display_constructor_args():
+    sig = inspect.signature(gaml_S_Display.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_gaml::s::display_has_name():
-    assert hasattr(gaml::S::Display, "name")
+def test_gaml_s_display_has_name():
+    assert hasattr(gaml_S_Display, "name")
     descriptor = None
-    for klass in gaml::S::Display.__mro__:
+    for klass in gaml_S_Display.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -671,351 +699,87 @@ def test_gaml::s::display_has_name():
 
 
 
-def test_gaml::s::try_is_not_abstract():
-    assert not inspect.isabstract(gaml::S::Try)
+def test_gaml_s_return_is_not_abstract():
+    assert not inspect.isabstract(gaml_S_Return)
 
 
-def test_gaml::s::try_constructor_exists():
-    assert callable(gaml::S::Try.__init__)
+def test_gaml_s_return_constructor_exists():
+    assert callable(gaml_S_Return.__init__)
 
 
-def test_gaml::s::try_constructor_args():
-    sig = inspect.signature(gaml::S::Try.__init__)
+def test_gaml_s_return_constructor_args():
+    sig = inspect.signature(gaml_S_Return.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_gaml::s::solve_is_not_abstract():
-    assert not inspect.isabstract(gaml::S::Solve)
+def test_gaml_s_other_is_not_abstract():
+    assert not inspect.isabstract(gaml_S_Other)
 
 
-def test_gaml::s::solve_constructor_exists():
-    assert callable(gaml::S::Solve.__init__)
+def test_gaml_s_other_constructor_exists():
+    assert callable(gaml_S_Other.__init__)
 
 
-def test_gaml::s::solve_constructor_args():
-    sig = inspect.signature(gaml::S::Solve.__init__)
+def test_gaml_s_other_constructor_args():
+    sig = inspect.signature(gaml_S_Other.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_gaml::s::if_is_not_abstract():
-    assert not inspect.isabstract(gaml::S::If)
+def test_gaml_s_do_is_not_abstract():
+    assert not inspect.isabstract(gaml_S_Do)
 
 
-def test_gaml::s::if_constructor_exists():
-    assert callable(gaml::S::If.__init__)
+def test_gaml_s_do_constructor_exists():
+    assert callable(gaml_S_Do.__init__)
 
 
-def test_gaml::s::if_constructor_args():
-    sig = inspect.signature(gaml::S::If.__init__)
+def test_gaml_s_do_constructor_args():
+    sig = inspect.signature(gaml_S_Do.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_gaml::speciesorgriddisplaystatement_is_not_abstract():
-    assert not inspect.isabstract(gaml::speciesOrGridDisplayStatement)
+def test_gaml_s_if_is_not_abstract():
+    assert not inspect.isabstract(gaml_S_If)
 
 
-def test_gaml::speciesorgriddisplaystatement_constructor_exists():
-    assert callable(gaml::speciesOrGridDisplayStatement.__init__)
+def test_gaml_s_if_constructor_exists():
+    assert callable(gaml_S_If.__init__)
 
 
-def test_gaml::speciesorgriddisplaystatement_constructor_args():
-    sig = inspect.signature(gaml::speciesOrGridDisplayStatement.__init__)
+def test_gaml_s_if_constructor_args():
+    sig = inspect.signature(gaml_S_If.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_gaml::s::other_is_not_abstract():
-    assert not inspect.isabstract(gaml::S::Other)
+def test_gaml_s_solve_is_not_abstract():
+    assert not inspect.isabstract(gaml_S_Solve)
 
 
-def test_gaml::s::other_constructor_exists():
-    assert callable(gaml::S::Other.__init__)
+def test_gaml_s_solve_constructor_exists():
+    assert callable(gaml_S_Solve.__init__)
 
 
-def test_gaml::s::other_constructor_args():
-    sig = inspect.signature(gaml::S::Other.__init__)
+def test_gaml_s_solve_constructor_args():
+    sig = inspect.signature(gaml_S_Solve.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_gaml::s::return_is_not_abstract():
-    assert not inspect.isabstract(gaml::S::Return)
+def test_gaml_s_global_is_not_abstract():
+    assert not inspect.isabstract(gaml_S_Global)
 
 
-def test_gaml::s::return_constructor_exists():
-    assert callable(gaml::S::Return.__init__)
+def test_gaml_s_global_constructor_exists():
+    assert callable(gaml_S_Global.__init__)
 
 
-def test_gaml::s::return_constructor_args():
-    sig = inspect.signature(gaml::S::Return.__init__)
+def test_gaml_s_global_constructor_args():
+    sig = inspect.signature(gaml_S_Global.__init__)
     params = list(sig.parameters.keys())
-
-
-
-def test_gaml::s::species_is_not_abstract():
-    assert not inspect.isabstract(gaml::S::Species)
-
-
-def test_gaml::s::species_constructor_exists():
-    assert callable(gaml::S::Species.__init__)
-
-
-def test_gaml::s::species_constructor_args():
-    sig = inspect.signature(gaml::S::Species.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_gaml::s::global_is_not_abstract():
-    assert not inspect.isabstract(gaml::S::Global)
-
-
-def test_gaml::s::global_constructor_exists():
-    assert callable(gaml::S::Global.__init__)
-
-
-def test_gaml::s::global_constructor_args():
-    sig = inspect.signature(gaml::S::Global.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_gaml::reservedliteral_is_not_abstract():
-    assert not inspect.isabstract(gaml::ReservedLiteral)
-
-
-def test_gaml::reservedliteral_constructor_exists():
-    assert callable(gaml::ReservedLiteral.__init__)
-
-
-def test_gaml::reservedliteral_constructor_args():
-    sig = inspect.signature(gaml::ReservedLiteral.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_gaml::booleanliteral_is_not_abstract():
-    assert not inspect.isabstract(gaml::BooleanLiteral)
-
-
-def test_gaml::booleanliteral_constructor_exists():
-    assert callable(gaml::BooleanLiteral.__init__)
-
-
-def test_gaml::booleanliteral_constructor_args():
-    sig = inspect.signature(gaml::BooleanLiteral.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_gaml::doubleliteral_is_not_abstract():
-    assert not inspect.isabstract(gaml::DoubleLiteral)
-
-
-def test_gaml::doubleliteral_constructor_exists():
-    assert callable(gaml::DoubleLiteral.__init__)
-
-
-def test_gaml::doubleliteral_constructor_args():
-    sig = inspect.signature(gaml::DoubleLiteral.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_gaml::intliteral_is_not_abstract():
-    assert not inspect.isabstract(gaml::IntLiteral)
-
-
-def test_gaml::intliteral_constructor_exists():
-    assert callable(gaml::IntLiteral.__init__)
-
-
-def test_gaml::intliteral_constructor_args():
-    sig = inspect.signature(gaml::IntLiteral.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_gaml::typeref_is_not_abstract():
-    assert not inspect.isabstract(gaml::TypeRef)
-
-
-def test_gaml::typeref_constructor_exists():
-    assert callable(gaml::TypeRef.__init__)
-
-
-def test_gaml::typeref_constructor_args():
-    sig = inspect.signature(gaml::TypeRef.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_gaml::unitname_is_not_abstract():
-    assert not inspect.isabstract(gaml::UnitName)
-
-
-def test_gaml::unitname_constructor_exists():
-    assert callable(gaml::UnitName.__init__)
-
-
-def test_gaml::unitname_constructor_args():
-    sig = inspect.signature(gaml::UnitName.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_gaml::parameter_is_not_abstract():
-    assert not inspect.isabstract(gaml::Parameter)
-
-
-def test_gaml::parameter_constructor_exists():
-    assert callable(gaml::Parameter.__init__)
-
-
-def test_gaml::parameter_constructor_args():
-    sig = inspect.signature(gaml::Parameter.__init__)
-    params = list(sig.parameters.keys())
-    assert "builtInFacetKey" in params, "Missing parameter 'builtInFacetKey'"
-
-def test_gaml::parameter_has_builtInFacetKey():
-    assert hasattr(gaml::Parameter, "builtInFacetKey")
-    descriptor = None
-    for klass in gaml::Parameter.__mro__:
-        if "builtInFacetKey" in klass.__dict__:
-            descriptor = klass.__dict__["builtInFacetKey"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_gaml::function_is_not_abstract():
-    assert not inspect.isabstract(gaml::Function)
-
-
-def test_gaml::function_constructor_exists():
-    assert callable(gaml::Function.__init__)
-
-
-def test_gaml::function_constructor_args():
-    sig = inspect.signature(gaml::Function.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_gaml::point_is_not_abstract():
-    assert not inspect.isabstract(gaml::Point)
-
-
-def test_gaml::point_constructor_exists():
-    assert callable(gaml::Point.__init__)
-
-
-def test_gaml::point_constructor_args():
-    sig = inspect.signature(gaml::Point.__init__)
-    params = list(sig.parameters.keys())
-    assert "op" in params, "Missing parameter 'op'"
-
-def test_gaml::point_has_op():
-    assert hasattr(gaml::Point, "op")
-    descriptor = None
-    for klass in gaml::Point.__mro__:
-        if "op" in klass.__dict__:
-            descriptor = klass.__dict__["op"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_gaml::equationref_is_not_abstract():
-    assert not inspect.isabstract(gaml::EquationRef)
-
-
-def test_gaml::equationref_constructor_exists():
-    assert callable(gaml::EquationRef.__init__)
-
-
-def test_gaml::equationref_constructor_args():
-    sig = inspect.signature(gaml::EquationRef.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_gaml::actionref_is_not_abstract():
-    assert not inspect.isabstract(gaml::ActionRef)
-
-
-def test_gaml::actionref_constructor_exists():
-    assert callable(gaml::ActionRef.__init__)
-
-
-def test_gaml::actionref_constructor_args():
-    sig = inspect.signature(gaml::ActionRef.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_gaml::skillref_is_not_abstract():
-    assert not inspect.isabstract(gaml::SkillRef)
-
-
-def test_gaml::skillref_constructor_exists():
-    assert callable(gaml::SkillRef.__init__)
-
-
-def test_gaml::skillref_constructor_args():
-    sig = inspect.signature(gaml::SkillRef.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_gaml::unary_is_not_abstract():
-    assert not inspect.isabstract(gaml::Unary)
-
-
-def test_gaml::unary_constructor_exists():
-    assert callable(gaml::Unary.__init__)
-
-
-def test_gaml::unary_constructor_args():
-    sig = inspect.signature(gaml::Unary.__init__)
-    params = list(sig.parameters.keys())
-    assert "op" in params, "Missing parameter 'op'"
-
-def test_gaml::unary_has_op():
-    assert hasattr(gaml::Unary, "op")
-    descriptor = None
-    for klass in gaml::Unary.__mro__:
-        if "op" in klass.__dict__:
-            descriptor = klass.__dict__["op"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_gaml::unit_is_not_abstract():
-    assert not inspect.isabstract(gaml::Unit)
-
-
-def test_gaml::unit_constructor_exists():
-    assert callable(gaml::Unit.__init__)
-
-
-def test_gaml::unit_constructor_args():
-    sig = inspect.signature(gaml::Unit.__init__)
-    params = list(sig.parameters.keys())
-    assert "op" in params, "Missing parameter 'op'"
-
-def test_gaml::unit_has_op():
-    assert hasattr(gaml::Unit, "op")
-    descriptor = None
-    for klass in gaml::Unit.__mro__:
-        if "op" in klass.__dict__:
-            descriptor = klass.__dict__["op"]
-            break
-    assert isinstance(descriptor, property)
 
 
 
@@ -1033,137 +797,137 @@ def test_equationdefinition_constructor_args():
 
 
 
-def test_gaml::equationfakedefinition_is_not_abstract():
-    assert not inspect.isabstract(gaml::EquationFakeDefinition)
+def test_gaml_equationfakedefinition_is_not_abstract():
+    assert not inspect.isabstract(gaml_EquationFakeDefinition)
 
 
-def test_gaml::equationfakedefinition_constructor_exists():
-    assert callable(gaml::EquationFakeDefinition.__init__)
+def test_gaml_equationfakedefinition_constructor_exists():
+    assert callable(gaml_EquationFakeDefinition.__init__)
 
 
-def test_gaml::equationfakedefinition_constructor_args():
-    sig = inspect.signature(gaml::EquationFakeDefinition.__init__)
+def test_gaml_equationfakedefinition_constructor_args():
+    sig = inspect.signature(gaml_EquationFakeDefinition.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_gaml::s::equations_is_not_abstract():
-    assert not inspect.isabstract(gaml::S::Equations)
+def test_gaml_s_equations_is_not_abstract():
+    assert not inspect.isabstract(gaml_S_Equations)
 
 
-def test_gaml::s::equations_constructor_exists():
-    assert callable(gaml::S::Equations.__init__)
+def test_gaml_s_equations_constructor_exists():
+    assert callable(gaml_S_Equations.__init__)
 
 
-def test_gaml::s::equations_constructor_args():
-    sig = inspect.signature(gaml::S::Equations.__init__)
+def test_gaml_s_equations_constructor_args():
+    sig = inspect.signature(gaml_S_Equations.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_s::assignment_is_not_abstract():
-    assert not inspect.isabstract(S::Assignment)
+def test_s_assignment_is_not_abstract():
+    assert not inspect.isabstract(S_Assignment)
 
 
-def test_s::assignment_constructor_exists():
-    assert callable(S::Assignment.__init__)
+def test_s_assignment_constructor_exists():
+    assert callable(S_Assignment.__init__)
 
 
-def test_s::assignment_constructor_args():
-    sig = inspect.signature(S::Assignment.__init__)
+def test_s_assignment_constructor_args():
+    sig = inspect.signature(S_Assignment.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_gaml::s::set_is_not_abstract():
-    assert not inspect.isabstract(gaml::S::Set)
+def test_gaml_s_set_is_not_abstract():
+    assert not inspect.isabstract(gaml_S_Set)
 
 
-def test_gaml::s::set_constructor_exists():
-    assert callable(gaml::S::Set.__init__)
+def test_gaml_s_set_constructor_exists():
+    assert callable(gaml_S_Set.__init__)
 
 
-def test_gaml::s::set_constructor_args():
-    sig = inspect.signature(gaml::S::Set.__init__)
+def test_gaml_s_set_constructor_args():
+    sig = inspect.signature(gaml_S_Set.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_gaml::s::directassignment_is_not_abstract():
-    assert not inspect.isabstract(gaml::S::DirectAssignment)
+def test_gaml_s_directassignment_is_not_abstract():
+    assert not inspect.isabstract(gaml_S_DirectAssignment)
 
 
-def test_gaml::s::directassignment_constructor_exists():
-    assert callable(gaml::S::DirectAssignment.__init__)
+def test_gaml_s_directassignment_constructor_exists():
+    assert callable(gaml_S_DirectAssignment.__init__)
 
 
-def test_gaml::s::directassignment_constructor_args():
-    sig = inspect.signature(gaml::S::DirectAssignment.__init__)
+def test_gaml_s_directassignment_constructor_args():
+    sig = inspect.signature(gaml_S_DirectAssignment.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_gaml::s::assignment_is_not_abstract():
-    assert not inspect.isabstract(gaml::S::Assignment)
+def test_gaml_s_assignment_is_not_abstract():
+    assert not inspect.isabstract(gaml_S_Assignment)
 
 
-def test_gaml::s::assignment_constructor_exists():
-    assert callable(gaml::S::Assignment.__init__)
+def test_gaml_s_assignment_constructor_exists():
+    assert callable(gaml_S_Assignment.__init__)
 
 
-def test_gaml::s::assignment_constructor_args():
-    sig = inspect.signature(gaml::S::Assignment.__init__)
+def test_gaml_s_assignment_constructor_args():
+    sig = inspect.signature(gaml_S_Assignment.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_gaml::headlessexperiment_is_not_abstract():
-    assert not inspect.isabstract(gaml::HeadlessExperiment)
+def test_gaml_headlessexperiment_is_not_abstract():
+    assert not inspect.isabstract(gaml_HeadlessExperiment)
 
 
-def test_gaml::headlessexperiment_constructor_exists():
-    assert callable(gaml::HeadlessExperiment.__init__)
+def test_gaml_headlessexperiment_constructor_exists():
+    assert callable(gaml_HeadlessExperiment.__init__)
 
 
-def test_gaml::headlessexperiment_constructor_args():
-    sig = inspect.signature(gaml::HeadlessExperiment.__init__)
+def test_gaml_headlessexperiment_constructor_args():
+    sig = inspect.signature(gaml_HeadlessExperiment.__init__)
     params = list(sig.parameters.keys())
-    assert "name" in params, "Missing parameter 'name'"
     assert "firstFacet" in params, "Missing parameter 'firstFacet'"
+    assert "name" in params, "Missing parameter 'name'"
     assert "key" in params, "Missing parameter 'key'"
     assert "importURI" in params, "Missing parameter 'importURI'"
 
-def test_gaml::headlessexperiment_has_name():
-    assert hasattr(gaml::HeadlessExperiment, "name")
+def test_gaml_headlessexperiment_has_firstFacet():
+    assert hasattr(gaml_HeadlessExperiment, "firstFacet")
     descriptor = None
-    for klass in gaml::HeadlessExperiment.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_gaml::headlessexperiment_has_firstFacet():
-    assert hasattr(gaml::HeadlessExperiment, "firstFacet")
-    descriptor = None
-    for klass in gaml::HeadlessExperiment.__mro__:
+    for klass in gaml_HeadlessExperiment.__mro__:
         if "firstFacet" in klass.__dict__:
             descriptor = klass.__dict__["firstFacet"]
             break
     assert isinstance(descriptor, property)
 
-def test_gaml::headlessexperiment_has_key():
-    assert hasattr(gaml::HeadlessExperiment, "key")
+def test_gaml_headlessexperiment_has_name():
+    assert hasattr(gaml_HeadlessExperiment, "name")
     descriptor = None
-    for klass in gaml::HeadlessExperiment.__mro__:
+    for klass in gaml_HeadlessExperiment.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_gaml_headlessexperiment_has_key():
+    assert hasattr(gaml_HeadlessExperiment, "key")
+    descriptor = None
+    for klass in gaml_HeadlessExperiment.__mro__:
         if "key" in klass.__dict__:
             descriptor = klass.__dict__["key"]
             break
     assert isinstance(descriptor, property)
 
-def test_gaml::headlessexperiment_has_importURI():
-    assert hasattr(gaml::HeadlessExperiment, "importURI")
+def test_gaml_headlessexperiment_has_importURI():
+    assert hasattr(gaml_HeadlessExperiment, "importURI")
     descriptor = None
-    for klass in gaml::HeadlessExperiment.__mro__:
+    for klass in gaml_HeadlessExperiment.__mro__:
         if "importURI" in klass.__dict__:
             descriptor = klass.__dict__["importURI"]
             break
@@ -1171,57 +935,57 @@ def test_gaml::headlessexperiment_has_importURI():
 
 
 
-def test_gaml::statement_is_not_abstract():
-    assert not inspect.isabstract(gaml::Statement)
+def test_gaml_statement_is_not_abstract():
+    assert not inspect.isabstract(gaml_Statement)
 
 
-def test_gaml::statement_constructor_exists():
-    assert callable(gaml::Statement.__init__)
+def test_gaml_statement_constructor_exists():
+    assert callable(gaml_Statement.__init__)
 
 
-def test_gaml::statement_constructor_args():
-    sig = inspect.signature(gaml::Statement.__init__)
+def test_gaml_statement_constructor_args():
+    sig = inspect.signature(gaml_Statement.__init__)
     params = list(sig.parameters.keys())
-    assert "key" in params, "Missing parameter 'key'"
     assert "firstFacet" in params, "Missing parameter 'firstFacet'"
+    assert "key" in params, "Missing parameter 'key'"
 
-def test_gaml::statement_has_key():
-    assert hasattr(gaml::Statement, "key")
+def test_gaml_statement_has_firstFacet():
+    assert hasattr(gaml_Statement, "firstFacet")
     descriptor = None
-    for klass in gaml::Statement.__mro__:
-        if "key" in klass.__dict__:
-            descriptor = klass.__dict__["key"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_gaml::statement_has_firstFacet():
-    assert hasattr(gaml::Statement, "firstFacet")
-    descriptor = None
-    for klass in gaml::Statement.__mro__:
+    for klass in gaml_Statement.__mro__:
         if "firstFacet" in klass.__dict__:
             descriptor = klass.__dict__["firstFacet"]
             break
     assert isinstance(descriptor, property)
 
+def test_gaml_statement_has_key():
+    assert hasattr(gaml_Statement, "key")
+    descriptor = None
+    for klass in gaml_Statement.__mro__:
+        if "key" in klass.__dict__:
+            descriptor = klass.__dict__["key"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_gaml::pragma_is_not_abstract():
-    assert not inspect.isabstract(gaml::Pragma)
+
+def test_gaml_pragma_is_not_abstract():
+    assert not inspect.isabstract(gaml_Pragma)
 
 
-def test_gaml::pragma_constructor_exists():
-    assert callable(gaml::Pragma.__init__)
+def test_gaml_pragma_constructor_exists():
+    assert callable(gaml_Pragma.__init__)
 
 
-def test_gaml::pragma_constructor_args():
-    sig = inspect.signature(gaml::Pragma.__init__)
+def test_gaml_pragma_constructor_args():
+    sig = inspect.signature(gaml_Pragma.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_gaml::pragma_has_name():
-    assert hasattr(gaml::Pragma, "name")
+def test_gaml_pragma_has_name():
+    assert hasattr(gaml_Pragma, "name")
     descriptor = None
-    for klass in gaml::Pragma.__mro__:
+    for klass in gaml_Pragma.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -1243,65 +1007,79 @@ def test_vardefinition_constructor_args():
 
 
 
-def test_gaml::s::declaration_is_not_abstract():
-    assert not inspect.isabstract(gaml::S::Declaration)
+def test_gaml_s_declaration_is_not_abstract():
+    assert not inspect.isabstract(gaml_S_Declaration)
 
 
-def test_gaml::s::declaration_constructor_exists():
-    assert callable(gaml::S::Declaration.__init__)
+def test_gaml_s_declaration_constructor_exists():
+    assert callable(gaml_S_Declaration.__init__)
 
 
-def test_gaml::s::declaration_constructor_args():
-    sig = inspect.signature(gaml::S::Declaration.__init__)
+def test_gaml_s_declaration_constructor_args():
+    sig = inspect.signature(gaml_S_Declaration.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_gaml::argumentdefinition_is_not_abstract():
-    assert not inspect.isabstract(gaml::ArgumentDefinition)
+def test_gaml_s_experiment_is_not_abstract():
+    assert not inspect.isabstract(gaml_S_Experiment)
 
 
-def test_gaml::argumentdefinition_constructor_exists():
-    assert callable(gaml::ArgumentDefinition.__init__)
+def test_gaml_s_experiment_constructor_exists():
+    assert callable(gaml_S_Experiment.__init__)
 
 
-def test_gaml::argumentdefinition_constructor_args():
-    sig = inspect.signature(gaml::ArgumentDefinition.__init__)
+def test_gaml_s_experiment_constructor_args():
+    sig = inspect.signature(gaml_S_Experiment.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_gaml::varfakedefinition_is_not_abstract():
-    assert not inspect.isabstract(gaml::VarFakeDefinition)
+def test_gaml_argumentdefinition_is_not_abstract():
+    assert not inspect.isabstract(gaml_ArgumentDefinition)
 
 
-def test_gaml::varfakedefinition_constructor_exists():
-    assert callable(gaml::VarFakeDefinition.__init__)
+def test_gaml_argumentdefinition_constructor_exists():
+    assert callable(gaml_ArgumentDefinition.__init__)
 
 
-def test_gaml::varfakedefinition_constructor_args():
-    sig = inspect.signature(gaml::VarFakeDefinition.__init__)
+def test_gaml_argumentdefinition_constructor_args():
+    sig = inspect.signature(gaml_ArgumentDefinition.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_gaml::import_is_not_abstract():
-    assert not inspect.isabstract(gaml::Import)
+def test_gaml_varfakedefinition_is_not_abstract():
+    assert not inspect.isabstract(gaml_VarFakeDefinition)
 
 
-def test_gaml::import_constructor_exists():
-    assert callable(gaml::Import.__init__)
+def test_gaml_varfakedefinition_constructor_exists():
+    assert callable(gaml_VarFakeDefinition.__init__)
 
 
-def test_gaml::import_constructor_args():
-    sig = inspect.signature(gaml::Import.__init__)
+def test_gaml_varfakedefinition_constructor_args():
+    sig = inspect.signature(gaml_VarFakeDefinition.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_gaml_import_is_not_abstract():
+    assert not inspect.isabstract(gaml_Import)
+
+
+def test_gaml_import_constructor_exists():
+    assert callable(gaml_Import.__init__)
+
+
+def test_gaml_import_constructor_args():
+    sig = inspect.signature(gaml_Import.__init__)
     params = list(sig.parameters.keys())
     assert "importURI" in params, "Missing parameter 'importURI'"
 
-def test_gaml::import_has_importURI():
-    assert hasattr(gaml::Import, "importURI")
+def test_gaml_import_has_importURI():
+    assert hasattr(gaml_Import, "importURI")
     descriptor = None
-    for klass in gaml::Import.__mro__:
+    for klass in gaml_Import.__mro__:
         if "importURI" in klass.__dict__:
             descriptor = klass.__dict__["importURI"]
             break
@@ -1309,44 +1087,30 @@ def test_gaml::import_has_importURI():
 
 
 
-def test_gaml::s::experiment_is_not_abstract():
-    assert not inspect.isabstract(gaml::S::Experiment)
+def test_gaml_expression_is_not_abstract():
+    assert not inspect.isabstract(gaml_Expression)
 
 
-def test_gaml::s::experiment_constructor_exists():
-    assert callable(gaml::S::Experiment.__init__)
+def test_gaml_expression_constructor_exists():
+    assert callable(gaml_Expression.__init__)
 
 
-def test_gaml::s::experiment_constructor_args():
-    sig = inspect.signature(gaml::S::Experiment.__init__)
+def test_gaml_expression_constructor_args():
+    sig = inspect.signature(gaml_Expression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_gaml::expression_is_not_abstract():
-    assert not inspect.isabstract(gaml::Expression)
+def test_gaml_block_is_not_abstract():
+    assert not inspect.isabstract(gaml_Block)
 
 
-def test_gaml::expression_constructor_exists():
-    assert callable(gaml::Expression.__init__)
+def test_gaml_block_constructor_exists():
+    assert callable(gaml_Block.__init__)
 
 
-def test_gaml::expression_constructor_args():
-    sig = inspect.signature(gaml::Expression.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_gaml::block_is_not_abstract():
-    assert not inspect.isabstract(gaml::Block)
-
-
-def test_gaml::block_constructor_exists():
-    assert callable(gaml::Block.__init__)
-
-
-def test_gaml::block_constructor_args():
-    sig = inspect.signature(gaml::Block.__init__)
+def test_gaml_block_constructor_args():
+    sig = inspect.signature(gaml_Block.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1365,51 +1129,23 @@ def test_entry_constructor_args():
 
 
 
-def test_gaml::experimentfilestructure_is_not_abstract():
-    assert not inspect.isabstract(gaml::ExperimentFileStructure)
+def test_gaml_stringevaluator_is_not_abstract():
+    assert not inspect.isabstract(gaml_StringEvaluator)
 
 
-def test_gaml::experimentfilestructure_constructor_exists():
-    assert callable(gaml::ExperimentFileStructure.__init__)
+def test_gaml_stringevaluator_constructor_exists():
+    assert callable(gaml_StringEvaluator.__init__)
 
 
-def test_gaml::experimentfilestructure_constructor_args():
-    sig = inspect.signature(gaml::ExperimentFileStructure.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_gaml::model_is_not_abstract():
-    assert not inspect.isabstract(gaml::Model)
-
-
-def test_gaml::model_constructor_exists():
-    assert callable(gaml::Model.__init__)
-
-
-def test_gaml::model_constructor_args():
-    sig = inspect.signature(gaml::Model.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_gaml::stringevaluator_is_not_abstract():
-    assert not inspect.isabstract(gaml::StringEvaluator)
-
-
-def test_gaml::stringevaluator_constructor_exists():
-    assert callable(gaml::StringEvaluator.__init__)
-
-
-def test_gaml::stringevaluator_constructor_args():
-    sig = inspect.signature(gaml::StringEvaluator.__init__)
+def test_gaml_stringevaluator_constructor_args():
+    sig = inspect.signature(gaml_StringEvaluator.__init__)
     params = list(sig.parameters.keys())
     assert "toto" in params, "Missing parameter 'toto'"
 
-def test_gaml::stringevaluator_has_toto():
-    assert hasattr(gaml::StringEvaluator, "toto")
+def test_gaml_stringevaluator_has_toto():
+    assert hasattr(gaml_StringEvaluator, "toto")
     descriptor = None
-    for klass in gaml::StringEvaluator.__mro__:
+    for klass in gaml_StringEvaluator.__mro__:
         if "toto" in klass.__dict__:
             descriptor = klass.__dict__["toto"]
             break
@@ -1417,53 +1153,317 @@ def test_gaml::stringevaluator_has_toto():
 
 
 
-def test_gaml::standaloneblock_is_not_abstract():
-    assert not inspect.isabstract(gaml::StandaloneBlock)
+def test_gaml_experimentfilestructure_is_not_abstract():
+    assert not inspect.isabstract(gaml_ExperimentFileStructure)
 
 
-def test_gaml::standaloneblock_constructor_exists():
-    assert callable(gaml::StandaloneBlock.__init__)
+def test_gaml_experimentfilestructure_constructor_exists():
+    assert callable(gaml_ExperimentFileStructure.__init__)
 
 
-def test_gaml::standaloneblock_constructor_args():
-    sig = inspect.signature(gaml::StandaloneBlock.__init__)
+def test_gaml_experimentfilestructure_constructor_args():
+    sig = inspect.signature(gaml_ExperimentFileStructure.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_gaml::entry_is_not_abstract():
-    assert not inspect.isabstract(gaml::Entry)
+def test_gaml_model_is_not_abstract():
+    assert not inspect.isabstract(gaml_Model)
 
 
-def test_gaml::entry_constructor_exists():
-    assert callable(gaml::Entry.__init__)
+def test_gaml_model_constructor_exists():
+    assert callable(gaml_Model.__init__)
 
 
-def test_gaml::entry_constructor_args():
-    sig = inspect.signature(gaml::Entry.__init__)
+def test_gaml_model_constructor_args():
+    sig = inspect.signature(gaml_Model.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_gaml::facet_is_not_abstract():
-    assert not inspect.isabstract(gaml::Facet)
+def test_gaml_standaloneblock_is_not_abstract():
+    assert not inspect.isabstract(gaml_StandaloneBlock)
 
 
-def test_gaml::facet_constructor_exists():
-    assert callable(gaml::Facet.__init__)
+def test_gaml_standaloneblock_constructor_exists():
+    assert callable(gaml_StandaloneBlock.__init__)
 
 
-def test_gaml::facet_constructor_args():
-    sig = inspect.signature(gaml::Facet.__init__)
+def test_gaml_standaloneblock_constructor_args():
+    sig = inspect.signature(gaml_StandaloneBlock.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_gaml_entry_is_not_abstract():
+    assert not inspect.isabstract(gaml_Entry)
+
+
+def test_gaml_entry_constructor_exists():
+    assert callable(gaml_Entry.__init__)
+
+
+def test_gaml_entry_constructor_args():
+    sig = inspect.signature(gaml_Entry.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_gaml_facet_is_not_abstract():
+    assert not inspect.isabstract(gaml_Facet)
+
+
+def test_gaml_facet_constructor_exists():
+    assert callable(gaml_Facet.__init__)
+
+
+def test_gaml_facet_constructor_args():
+    sig = inspect.signature(gaml_Facet.__init__)
     params = list(sig.parameters.keys())
     assert "key" in params, "Missing parameter 'key'"
 
-def test_gaml::facet_has_key():
-    assert hasattr(gaml::Facet, "key")
+def test_gaml_facet_has_key():
+    assert hasattr(gaml_Facet, "key")
     descriptor = None
-    for klass in gaml::Facet.__mro__:
+    for klass in gaml_Facet.__mro__:
         if "key" in klass.__dict__:
             descriptor = klass.__dict__["key"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_gaml_reservedliteral_is_not_abstract():
+    assert not inspect.isabstract(gaml_ReservedLiteral)
+
+
+def test_gaml_reservedliteral_constructor_exists():
+    assert callable(gaml_ReservedLiteral.__init__)
+
+
+def test_gaml_reservedliteral_constructor_args():
+    sig = inspect.signature(gaml_ReservedLiteral.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_gaml_booleanliteral_is_not_abstract():
+    assert not inspect.isabstract(gaml_BooleanLiteral)
+
+
+def test_gaml_booleanliteral_constructor_exists():
+    assert callable(gaml_BooleanLiteral.__init__)
+
+
+def test_gaml_booleanliteral_constructor_args():
+    sig = inspect.signature(gaml_BooleanLiteral.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_gaml_doubleliteral_is_not_abstract():
+    assert not inspect.isabstract(gaml_DoubleLiteral)
+
+
+def test_gaml_doubleliteral_constructor_exists():
+    assert callable(gaml_DoubleLiteral.__init__)
+
+
+def test_gaml_doubleliteral_constructor_args():
+    sig = inspect.signature(gaml_DoubleLiteral.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_gaml_intliteral_is_not_abstract():
+    assert not inspect.isabstract(gaml_IntLiteral)
+
+
+def test_gaml_intliteral_constructor_exists():
+    assert callable(gaml_IntLiteral.__init__)
+
+
+def test_gaml_intliteral_constructor_args():
+    sig = inspect.signature(gaml_IntLiteral.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_gaml_typeref_is_not_abstract():
+    assert not inspect.isabstract(gaml_TypeRef)
+
+
+def test_gaml_typeref_constructor_exists():
+    assert callable(gaml_TypeRef.__init__)
+
+
+def test_gaml_typeref_constructor_args():
+    sig = inspect.signature(gaml_TypeRef.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_gaml_unitname_is_not_abstract():
+    assert not inspect.isabstract(gaml_UnitName)
+
+
+def test_gaml_unitname_constructor_exists():
+    assert callable(gaml_UnitName.__init__)
+
+
+def test_gaml_unitname_constructor_args():
+    sig = inspect.signature(gaml_UnitName.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_gaml_parameter_is_not_abstract():
+    assert not inspect.isabstract(gaml_Parameter)
+
+
+def test_gaml_parameter_constructor_exists():
+    assert callable(gaml_Parameter.__init__)
+
+
+def test_gaml_parameter_constructor_args():
+    sig = inspect.signature(gaml_Parameter.__init__)
+    params = list(sig.parameters.keys())
+    assert "builtInFacetKey" in params, "Missing parameter 'builtInFacetKey'"
+
+def test_gaml_parameter_has_builtInFacetKey():
+    assert hasattr(gaml_Parameter, "builtInFacetKey")
+    descriptor = None
+    for klass in gaml_Parameter.__mro__:
+        if "builtInFacetKey" in klass.__dict__:
+            descriptor = klass.__dict__["builtInFacetKey"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_gaml_function_is_not_abstract():
+    assert not inspect.isabstract(gaml_Function)
+
+
+def test_gaml_function_constructor_exists():
+    assert callable(gaml_Function.__init__)
+
+
+def test_gaml_function_constructor_args():
+    sig = inspect.signature(gaml_Function.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_gaml_point_is_not_abstract():
+    assert not inspect.isabstract(gaml_Point)
+
+
+def test_gaml_point_constructor_exists():
+    assert callable(gaml_Point.__init__)
+
+
+def test_gaml_point_constructor_args():
+    sig = inspect.signature(gaml_Point.__init__)
+    params = list(sig.parameters.keys())
+    assert "op" in params, "Missing parameter 'op'"
+
+def test_gaml_point_has_op():
+    assert hasattr(gaml_Point, "op")
+    descriptor = None
+    for klass in gaml_Point.__mro__:
+        if "op" in klass.__dict__:
+            descriptor = klass.__dict__["op"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_gaml_equationref_is_not_abstract():
+    assert not inspect.isabstract(gaml_EquationRef)
+
+
+def test_gaml_equationref_constructor_exists():
+    assert callable(gaml_EquationRef.__init__)
+
+
+def test_gaml_equationref_constructor_args():
+    sig = inspect.signature(gaml_EquationRef.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_gaml_actionref_is_not_abstract():
+    assert not inspect.isabstract(gaml_ActionRef)
+
+
+def test_gaml_actionref_constructor_exists():
+    assert callable(gaml_ActionRef.__init__)
+
+
+def test_gaml_actionref_constructor_args():
+    sig = inspect.signature(gaml_ActionRef.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_gaml_skillref_is_not_abstract():
+    assert not inspect.isabstract(gaml_SkillRef)
+
+
+def test_gaml_skillref_constructor_exists():
+    assert callable(gaml_SkillRef.__init__)
+
+
+def test_gaml_skillref_constructor_args():
+    sig = inspect.signature(gaml_SkillRef.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_gaml_unary_is_not_abstract():
+    assert not inspect.isabstract(gaml_Unary)
+
+
+def test_gaml_unary_constructor_exists():
+    assert callable(gaml_Unary.__init__)
+
+
+def test_gaml_unary_constructor_args():
+    sig = inspect.signature(gaml_Unary.__init__)
+    params = list(sig.parameters.keys())
+    assert "op" in params, "Missing parameter 'op'"
+
+def test_gaml_unary_has_op():
+    assert hasattr(gaml_Unary, "op")
+    descriptor = None
+    for klass in gaml_Unary.__mro__:
+        if "op" in klass.__dict__:
+            descriptor = klass.__dict__["op"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_gaml_unit_is_not_abstract():
+    assert not inspect.isabstract(gaml_Unit)
+
+
+def test_gaml_unit_constructor_exists():
+    assert callable(gaml_Unit.__init__)
+
+
+def test_gaml_unit_constructor_args():
+    sig = inspect.signature(gaml_Unit.__init__)
+    params = list(sig.parameters.keys())
+    assert "op" in params, "Missing parameter 'op'"
+
+def test_gaml_unit_has_op():
+    assert hasattr(gaml_Unit, "op")
+    descriptor = None
+    for klass in gaml_Unit.__mro__:
+        if "op" in klass.__dict__:
+            descriptor = klass.__dict__["op"]
             break
     assert isinstance(descriptor, property)
 
@@ -1479,424 +1479,409 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-S::Definition_strategy = st.builds(
-    S::Definition,
+S_Definition_strategy = st.builds(
+    S_Definition,
 )
-gaml::S::Var_strategy = st.builds(
-    gaml::S::Var,
+gaml_S_Var_strategy = st.builds(
+    gaml_S_Var,
 )
-gaml::S::Action_strategy = st.builds(
-    gaml::S::Action,
+gaml_S_Action_strategy = st.builds(
+    gaml_S_Action,
 )
 TerminalExpression_strategy = st.builds(
     TerminalExpression,
 )
-gaml::StringLiteral_strategy = st.builds(
-    gaml::StringLiteral,
+gaml_StringLiteral_strategy = st.builds(
+    gaml_StringLiteral,
 )
-gaml::TypeInfo_strategy = st.builds(
-    gaml::TypeInfo,
+gaml_TypeInfo_strategy = st.builds(
+    gaml_TypeInfo,
 )
 Expression_strategy = st.builds(
     Expression,
 )
-gaml::If_strategy = st.builds(
-    gaml::If,
+gaml_Access_strategy = st.builds(
+    gaml_Access,
     op=
         safe_text
 )
-gaml::ExpressionList_strategy = st.builds(
-    gaml::ExpressionList,
-)
-gaml::Array_strategy = st.builds(
-    gaml::Array,
-)
-gaml::VariableRef_strategy = st.builds(
-    gaml::VariableRef,
-)
-gaml::TerminalExpression_strategy = st.builds(
-    gaml::TerminalExpression,
+gaml_BinaryOperator_strategy = st.builds(
+    gaml_BinaryOperator,
     op=
         safe_text
 )
-gaml::BinaryOperator_strategy = st.builds(
-    gaml::BinaryOperator,
+gaml_Array_strategy = st.builds(
+    gaml_Array,
+)
+gaml_VariableRef_strategy = st.builds(
+    gaml_VariableRef,
+)
+gaml_ExpressionList_strategy = st.builds(
+    gaml_ExpressionList,
+)
+gaml_If_strategy = st.builds(
+    gaml_If,
     op=
         safe_text
 )
-gaml::Access_strategy = st.builds(
-    gaml::Access,
+gaml_TerminalExpression_strategy = st.builds(
+    gaml_TerminalExpression,
     op=
         safe_text
 )
-gaml::ArgumentPair_strategy = st.builds(
-    gaml::ArgumentPair,
+gaml_ArgumentPair_strategy = st.builds(
+    gaml_ArgumentPair,
     op=
         safe_text
 )
 GamlDefinition_strategy = st.builds(
     GamlDefinition,
 )
-gaml::UnitFakeDefinition_strategy = st.builds(
-    gaml::UnitFakeDefinition,
+gaml_SkillFakeDefinition_strategy = st.builds(
+    gaml_SkillFakeDefinition,
 )
-gaml::SkillFakeDefinition_strategy = st.builds(
-    gaml::SkillFakeDefinition,
+gaml_VarDefinition_strategy = st.builds(
+    gaml_VarDefinition,
 )
-gaml::VarDefinition_strategy = st.builds(
-    gaml::VarDefinition,
+gaml_ActionDefinition_strategy = st.builds(
+    gaml_ActionDefinition,
 )
-gaml::ActionDefinition_strategy = st.builds(
-    gaml::ActionDefinition,
+gaml_UnitFakeDefinition_strategy = st.builds(
+    gaml_UnitFakeDefinition,
 )
-gaml::EquationDefinition_strategy = st.builds(
-    gaml::EquationDefinition,
+gaml_EquationDefinition_strategy = st.builds(
+    gaml_EquationDefinition,
 )
-gaml::GamlDefinition_strategy = st.builds(
-    gaml::GamlDefinition,
+gaml_GamlDefinition_strategy = st.builds(
+    gaml_GamlDefinition,
     name=
         safe_text
 )
-gaml::ActionArguments_strategy = st.builds(
-    gaml::ActionArguments,
+gaml_ActionArguments_strategy = st.builds(
+    gaml_ActionArguments,
 )
 ActionDefinition_strategy = st.builds(
     ActionDefinition,
 )
-gaml::TypeDefinition_strategy = st.builds(
-    gaml::TypeDefinition,
+gaml_TypeDefinition_strategy = st.builds(
+    gaml_TypeDefinition,
 )
-gaml::ActionFakeDefinition_strategy = st.builds(
-    gaml::ActionFakeDefinition,
+gaml_ActionFakeDefinition_strategy = st.builds(
+    gaml_ActionFakeDefinition,
 )
-gaml::EObject_strategy = st.builds(
-    gaml::EObject,
+gaml_EObject_strategy = st.builds(
+    gaml_EObject,
 )
 TypeDefinition_strategy = st.builds(
     TypeDefinition,
 )
-gaml::TypeFakeDefinition_strategy = st.builds(
-    gaml::TypeFakeDefinition,
+gaml_TypeFakeDefinition_strategy = st.builds(
+    gaml_TypeFakeDefinition,
 )
-S::Declaration_strategy = st.builds(
-    S::Declaration,
+S_Declaration_strategy = st.builds(
+    S_Declaration,
 )
-gaml::S::Definition_strategy = st.builds(
-    gaml::S::Definition,
+gaml_S_Reflex_strategy = st.builds(
+    gaml_S_Reflex,
 )
-gaml::S::Reflex_strategy = st.builds(
-    gaml::S::Reflex,
+gaml_S_Definition_strategy = st.builds(
+    gaml_S_Definition,
 )
-gaml::S::Loop_strategy = st.builds(
-    gaml::S::Loop,
+gaml_S_Loop_strategy = st.builds(
+    gaml_S_Loop,
 )
 Statement_strategy = st.builds(
     Statement,
 )
-gaml::S::Do_strategy = st.builds(
-    gaml::S::Do,
+gaml_S_Species_strategy = st.builds(
+    gaml_S_Species,
 )
-gaml::S::Display_strategy = st.builds(
-    gaml::S::Display,
+gaml_S_Try_strategy = st.builds(
+    gaml_S_Try,
+)
+gaml_speciesOrGridDisplayStatement_strategy = st.builds(
+    gaml_speciesOrGridDisplayStatement,
+)
+gaml_S_Display_strategy = st.builds(
+    gaml_S_Display,
     name=
         safe_text
 )
-gaml::S::Try_strategy = st.builds(
-    gaml::S::Try,
+gaml_S_Return_strategy = st.builds(
+    gaml_S_Return,
 )
-gaml::S::Solve_strategy = st.builds(
-    gaml::S::Solve,
+gaml_S_Other_strategy = st.builds(
+    gaml_S_Other,
 )
-gaml::S::If_strategy = st.builds(
-    gaml::S::If,
+gaml_S_Do_strategy = st.builds(
+    gaml_S_Do,
 )
-gaml::speciesOrGridDisplayStatement_strategy = st.builds(
-    gaml::speciesOrGridDisplayStatement,
+gaml_S_If_strategy = st.builds(
+    gaml_S_If,
 )
-gaml::S::Other_strategy = st.builds(
-    gaml::S::Other,
+gaml_S_Solve_strategy = st.builds(
+    gaml_S_Solve,
 )
-gaml::S::Return_strategy = st.builds(
-    gaml::S::Return,
-)
-gaml::S::Species_strategy = st.builds(
-    gaml::S::Species,
-)
-gaml::S::Global_strategy = st.builds(
-    gaml::S::Global,
-)
-gaml::ReservedLiteral_strategy = st.builds(
-    gaml::ReservedLiteral,
-)
-gaml::BooleanLiteral_strategy = st.builds(
-    gaml::BooleanLiteral,
-)
-gaml::DoubleLiteral_strategy = st.builds(
-    gaml::DoubleLiteral,
-)
-gaml::IntLiteral_strategy = st.builds(
-    gaml::IntLiteral,
-)
-gaml::TypeRef_strategy = st.builds(
-    gaml::TypeRef,
-)
-gaml::UnitName_strategy = st.builds(
-    gaml::UnitName,
-)
-gaml::Parameter_strategy = st.builds(
-    gaml::Parameter,
-    builtInFacetKey=
-        safe_text
-)
-gaml::Function_strategy = st.builds(
-    gaml::Function,
-)
-gaml::Point_strategy = st.builds(
-    gaml::Point,
-    op=
-        safe_text
-)
-gaml::EquationRef_strategy = st.builds(
-    gaml::EquationRef,
-)
-gaml::ActionRef_strategy = st.builds(
-    gaml::ActionRef,
-)
-gaml::SkillRef_strategy = st.builds(
-    gaml::SkillRef,
-)
-gaml::Unary_strategy = st.builds(
-    gaml::Unary,
-    op=
-        safe_text
-)
-gaml::Unit_strategy = st.builds(
-    gaml::Unit,
-    op=
-        safe_text
+gaml_S_Global_strategy = st.builds(
+    gaml_S_Global,
 )
 EquationDefinition_strategy = st.builds(
     EquationDefinition,
 )
-gaml::EquationFakeDefinition_strategy = st.builds(
-    gaml::EquationFakeDefinition,
+gaml_EquationFakeDefinition_strategy = st.builds(
+    gaml_EquationFakeDefinition,
 )
-gaml::S::Equations_strategy = st.builds(
-    gaml::S::Equations,
+gaml_S_Equations_strategy = st.builds(
+    gaml_S_Equations,
 )
-S::Assignment_strategy = st.builds(
-    S::Assignment,
+S_Assignment_strategy = st.builds(
+    S_Assignment,
 )
-gaml::S::Set_strategy = st.builds(
-    gaml::S::Set,
+gaml_S_Set_strategy = st.builds(
+    gaml_S_Set,
 )
-gaml::S::DirectAssignment_strategy = st.builds(
-    gaml::S::DirectAssignment,
+gaml_S_DirectAssignment_strategy = st.builds(
+    gaml_S_DirectAssignment,
 )
-gaml::S::Assignment_strategy = st.builds(
-    gaml::S::Assignment,
+gaml_S_Assignment_strategy = st.builds(
+    gaml_S_Assignment,
 )
-gaml::HeadlessExperiment_strategy = st.builds(
-    gaml::HeadlessExperiment,
-    name=
-        safe_text,
+gaml_HeadlessExperiment_strategy = st.builds(
+    gaml_HeadlessExperiment,
     firstFacet=
+        safe_text,
+    name=
         safe_text,
     key=
         safe_text,
     importURI=
         safe_text
 )
-gaml::Statement_strategy = st.builds(
-    gaml::Statement,
-    key=
-        safe_text,
+gaml_Statement_strategy = st.builds(
+    gaml_Statement,
     firstFacet=
+        safe_text,
+    key=
         safe_text
 )
-gaml::Pragma_strategy = st.builds(
-    gaml::Pragma,
+gaml_Pragma_strategy = st.builds(
+    gaml_Pragma,
     name=
         safe_text
 )
 VarDefinition_strategy = st.builds(
     VarDefinition,
 )
-gaml::S::Declaration_strategy = st.builds(
-    gaml::S::Declaration,
+gaml_S_Declaration_strategy = st.builds(
+    gaml_S_Declaration,
 )
-gaml::ArgumentDefinition_strategy = st.builds(
-    gaml::ArgumentDefinition,
+gaml_S_Experiment_strategy = st.builds(
+    gaml_S_Experiment,
 )
-gaml::VarFakeDefinition_strategy = st.builds(
-    gaml::VarFakeDefinition,
+gaml_ArgumentDefinition_strategy = st.builds(
+    gaml_ArgumentDefinition,
 )
-gaml::Import_strategy = st.builds(
-    gaml::Import,
+gaml_VarFakeDefinition_strategy = st.builds(
+    gaml_VarFakeDefinition,
+)
+gaml_Import_strategy = st.builds(
+    gaml_Import,
     importURI=
         safe_text
 )
-gaml::S::Experiment_strategy = st.builds(
-    gaml::S::Experiment,
+gaml_Expression_strategy = st.builds(
+    gaml_Expression,
 )
-gaml::Expression_strategy = st.builds(
-    gaml::Expression,
-)
-gaml::Block_strategy = st.builds(
-    gaml::Block,
+gaml_Block_strategy = st.builds(
+    gaml_Block,
 )
 Entry_strategy = st.builds(
     Entry,
 )
-gaml::ExperimentFileStructure_strategy = st.builds(
-    gaml::ExperimentFileStructure,
-)
-gaml::Model_strategy = st.builds(
-    gaml::Model,
-)
-gaml::StringEvaluator_strategy = st.builds(
-    gaml::StringEvaluator,
+gaml_StringEvaluator_strategy = st.builds(
+    gaml_StringEvaluator,
     toto=
         safe_text
 )
-gaml::StandaloneBlock_strategy = st.builds(
-    gaml::StandaloneBlock,
+gaml_ExperimentFileStructure_strategy = st.builds(
+    gaml_ExperimentFileStructure,
 )
-gaml::Entry_strategy = st.builds(
-    gaml::Entry,
+gaml_Model_strategy = st.builds(
+    gaml_Model,
 )
-gaml::Facet_strategy = st.builds(
-    gaml::Facet,
+gaml_StandaloneBlock_strategy = st.builds(
+    gaml_StandaloneBlock,
+)
+gaml_Entry_strategy = st.builds(
+    gaml_Entry,
+)
+gaml_Facet_strategy = st.builds(
+    gaml_Facet,
     key=
         safe_text
 )
+gaml_ReservedLiteral_strategy = st.builds(
+    gaml_ReservedLiteral,
+)
+gaml_BooleanLiteral_strategy = st.builds(
+    gaml_BooleanLiteral,
+)
+gaml_DoubleLiteral_strategy = st.builds(
+    gaml_DoubleLiteral,
+)
+gaml_IntLiteral_strategy = st.builds(
+    gaml_IntLiteral,
+)
+gaml_TypeRef_strategy = st.builds(
+    gaml_TypeRef,
+)
+gaml_UnitName_strategy = st.builds(
+    gaml_UnitName,
+)
+gaml_Parameter_strategy = st.builds(
+    gaml_Parameter,
+    builtInFacetKey=
+        safe_text
+)
+gaml_Function_strategy = st.builds(
+    gaml_Function,
+)
+gaml_Point_strategy = st.builds(
+    gaml_Point,
+    op=
+        safe_text
+)
+gaml_EquationRef_strategy = st.builds(
+    gaml_EquationRef,
+)
+gaml_ActionRef_strategy = st.builds(
+    gaml_ActionRef,
+)
+gaml_SkillRef_strategy = st.builds(
+    gaml_SkillRef,
+)
+gaml_Unary_strategy = st.builds(
+    gaml_Unary,
+    op=
+        safe_text
+)
+gaml_Unit_strategy = st.builds(
+    gaml_Unit,
+    op=
+        safe_text
+)
 
-@given(instance=S::Definition_strategy)
+@given(instance=S_Definition_strategy)
 @settings(max_examples=50)
-def test_s::definition_instantiation(instance):
-    assert isinstance(instance, S::Definition)
+def test_s_definition_instantiation(instance):
+    assert isinstance(instance, S_Definition)
 
-@given(instance=gaml::S::Var_strategy)
+@given(instance=gaml_S_Var_strategy)
 @settings(max_examples=50)
-def test_gaml::s::var_instantiation(instance):
-    assert isinstance(instance, gaml::S::Var)
+def test_gaml_s_var_instantiation(instance):
+    assert isinstance(instance, gaml_S_Var)
 
-@given(instance=gaml::S::Action_strategy)
+@given(instance=gaml_S_Action_strategy)
 @settings(max_examples=50)
-def test_gaml::s::action_instantiation(instance):
-    assert isinstance(instance, gaml::S::Action)
+def test_gaml_s_action_instantiation(instance):
+    assert isinstance(instance, gaml_S_Action)
 
 @given(instance=TerminalExpression_strategy)
 @settings(max_examples=50)
 def test_terminalexpression_instantiation(instance):
     assert isinstance(instance, TerminalExpression)
 
-@given(instance=gaml::StringLiteral_strategy)
+@given(instance=gaml_StringLiteral_strategy)
 @settings(max_examples=50)
-def test_gaml::stringliteral_instantiation(instance):
-    assert isinstance(instance, gaml::StringLiteral)
+def test_gaml_stringliteral_instantiation(instance):
+    assert isinstance(instance, gaml_StringLiteral)
 
-@given(instance=gaml::TypeInfo_strategy)
+@given(instance=gaml_TypeInfo_strategy)
 @settings(max_examples=50)
-def test_gaml::typeinfo_instantiation(instance):
-    assert isinstance(instance, gaml::TypeInfo)
+def test_gaml_typeinfo_instantiation(instance):
+    assert isinstance(instance, gaml_TypeInfo)
 
 @given(instance=Expression_strategy)
 @settings(max_examples=50)
 def test_expression_instantiation(instance):
     assert isinstance(instance, Expression)
 
-@given(instance=gaml::If_strategy)
+@given(instance=gaml_Access_strategy)
 @settings(max_examples=50)
-def test_gaml::if_instantiation(instance):
-    assert isinstance(instance, gaml::If)
-
-@given(instance=gaml::If_strategy)
-def test_gaml::if_op_type(instance):
-    assert isinstance(instance.op, str)
+def test_gaml_access_instantiation(instance):
+    assert isinstance(instance, gaml_Access)
 
 
-@given(instance=gaml::If_strategy)
-def test_gaml::if_op_setter(instance):
+
+@given(instance=gaml_Access_strategy)
+def test_gaml_access_op_setter(instance):
     original = instance.op
     instance.op = original
     assert instance.op == original
 
-@given(instance=gaml::ExpressionList_strategy)
+@given(instance=gaml_BinaryOperator_strategy)
 @settings(max_examples=50)
-def test_gaml::expressionlist_instantiation(instance):
-    assert isinstance(instance, gaml::ExpressionList)
-
-@given(instance=gaml::Array_strategy)
-@settings(max_examples=50)
-def test_gaml::array_instantiation(instance):
-    assert isinstance(instance, gaml::Array)
-
-@given(instance=gaml::VariableRef_strategy)
-@settings(max_examples=50)
-def test_gaml::variableref_instantiation(instance):
-    assert isinstance(instance, gaml::VariableRef)
-
-@given(instance=gaml::TerminalExpression_strategy)
-@settings(max_examples=50)
-def test_gaml::terminalexpression_instantiation(instance):
-    assert isinstance(instance, gaml::TerminalExpression)
-
-@given(instance=gaml::TerminalExpression_strategy)
-def test_gaml::terminalexpression_op_type(instance):
-    assert isinstance(instance.op, str)
+def test_gaml_binaryoperator_instantiation(instance):
+    assert isinstance(instance, gaml_BinaryOperator)
 
 
-@given(instance=gaml::TerminalExpression_strategy)
-def test_gaml::terminalexpression_op_setter(instance):
+
+@given(instance=gaml_BinaryOperator_strategy)
+def test_gaml_binaryoperator_op_setter(instance):
     original = instance.op
     instance.op = original
     assert instance.op == original
 
-@given(instance=gaml::BinaryOperator_strategy)
+@given(instance=gaml_Array_strategy)
 @settings(max_examples=50)
-def test_gaml::binaryoperator_instantiation(instance):
-    assert isinstance(instance, gaml::BinaryOperator)
+def test_gaml_array_instantiation(instance):
+    assert isinstance(instance, gaml_Array)
 
-@given(instance=gaml::BinaryOperator_strategy)
-def test_gaml::binaryoperator_op_type(instance):
-    assert isinstance(instance.op, str)
+@given(instance=gaml_VariableRef_strategy)
+@settings(max_examples=50)
+def test_gaml_variableref_instantiation(instance):
+    assert isinstance(instance, gaml_VariableRef)
+
+@given(instance=gaml_ExpressionList_strategy)
+@settings(max_examples=50)
+def test_gaml_expressionlist_instantiation(instance):
+    assert isinstance(instance, gaml_ExpressionList)
+
+@given(instance=gaml_If_strategy)
+@settings(max_examples=50)
+def test_gaml_if_instantiation(instance):
+    assert isinstance(instance, gaml_If)
 
 
-@given(instance=gaml::BinaryOperator_strategy)
-def test_gaml::binaryoperator_op_setter(instance):
+
+@given(instance=gaml_If_strategy)
+def test_gaml_if_op_setter(instance):
     original = instance.op
     instance.op = original
     assert instance.op == original
 
-@given(instance=gaml::Access_strategy)
+@given(instance=gaml_TerminalExpression_strategy)
 @settings(max_examples=50)
-def test_gaml::access_instantiation(instance):
-    assert isinstance(instance, gaml::Access)
-
-@given(instance=gaml::Access_strategy)
-def test_gaml::access_op_type(instance):
-    assert isinstance(instance.op, str)
+def test_gaml_terminalexpression_instantiation(instance):
+    assert isinstance(instance, gaml_TerminalExpression)
 
 
-@given(instance=gaml::Access_strategy)
-def test_gaml::access_op_setter(instance):
+
+@given(instance=gaml_TerminalExpression_strategy)
+def test_gaml_terminalexpression_op_setter(instance):
     original = instance.op
     instance.op = original
     assert instance.op == original
 
-@given(instance=gaml::ArgumentPair_strategy)
+@given(instance=gaml_ArgumentPair_strategy)
 @settings(max_examples=50)
-def test_gaml::argumentpair_instantiation(instance):
-    assert isinstance(instance, gaml::ArgumentPair)
-
-@given(instance=gaml::ArgumentPair_strategy)
-def test_gaml::argumentpair_op_type(instance):
-    assert isinstance(instance.op, str)
+def test_gaml_argumentpair_instantiation(instance):
+    assert isinstance(instance, gaml_ArgumentPair)
 
 
-@given(instance=gaml::ArgumentPair_strategy)
-def test_gaml::argumentpair_op_setter(instance):
+
+@given(instance=gaml_ArgumentPair_strategy)
+def test_gaml_argumentpair_op_setter(instance):
     original = instance.op
     instance.op = original
     assert instance.op == original
@@ -1906,405 +1891,264 @@ def test_gaml::argumentpair_op_setter(instance):
 def test_gamldefinition_instantiation(instance):
     assert isinstance(instance, GamlDefinition)
 
-@given(instance=gaml::UnitFakeDefinition_strategy)
+@given(instance=gaml_SkillFakeDefinition_strategy)
 @settings(max_examples=50)
-def test_gaml::unitfakedefinition_instantiation(instance):
-    assert isinstance(instance, gaml::UnitFakeDefinition)
+def test_gaml_skillfakedefinition_instantiation(instance):
+    assert isinstance(instance, gaml_SkillFakeDefinition)
 
-@given(instance=gaml::SkillFakeDefinition_strategy)
+@given(instance=gaml_VarDefinition_strategy)
 @settings(max_examples=50)
-def test_gaml::skillfakedefinition_instantiation(instance):
-    assert isinstance(instance, gaml::SkillFakeDefinition)
+def test_gaml_vardefinition_instantiation(instance):
+    assert isinstance(instance, gaml_VarDefinition)
 
-@given(instance=gaml::VarDefinition_strategy)
+@given(instance=gaml_ActionDefinition_strategy)
 @settings(max_examples=50)
-def test_gaml::vardefinition_instantiation(instance):
-    assert isinstance(instance, gaml::VarDefinition)
+def test_gaml_actiondefinition_instantiation(instance):
+    assert isinstance(instance, gaml_ActionDefinition)
 
-@given(instance=gaml::ActionDefinition_strategy)
+@given(instance=gaml_UnitFakeDefinition_strategy)
 @settings(max_examples=50)
-def test_gaml::actiondefinition_instantiation(instance):
-    assert isinstance(instance, gaml::ActionDefinition)
+def test_gaml_unitfakedefinition_instantiation(instance):
+    assert isinstance(instance, gaml_UnitFakeDefinition)
 
-@given(instance=gaml::EquationDefinition_strategy)
+@given(instance=gaml_EquationDefinition_strategy)
 @settings(max_examples=50)
-def test_gaml::equationdefinition_instantiation(instance):
-    assert isinstance(instance, gaml::EquationDefinition)
+def test_gaml_equationdefinition_instantiation(instance):
+    assert isinstance(instance, gaml_EquationDefinition)
 
-@given(instance=gaml::GamlDefinition_strategy)
+@given(instance=gaml_GamlDefinition_strategy)
 @settings(max_examples=50)
-def test_gaml::gamldefinition_instantiation(instance):
-    assert isinstance(instance, gaml::GamlDefinition)
-
-@given(instance=gaml::GamlDefinition_strategy)
-def test_gaml::gamldefinition_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_gaml_gamldefinition_instantiation(instance):
+    assert isinstance(instance, gaml_GamlDefinition)
 
 
-@given(instance=gaml::GamlDefinition_strategy)
-def test_gaml::gamldefinition_name_setter(instance):
+
+@given(instance=gaml_GamlDefinition_strategy)
+def test_gaml_gamldefinition_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=gaml::ActionArguments_strategy)
+@given(instance=gaml_ActionArguments_strategy)
 @settings(max_examples=50)
-def test_gaml::actionarguments_instantiation(instance):
-    assert isinstance(instance, gaml::ActionArguments)
+def test_gaml_actionarguments_instantiation(instance):
+    assert isinstance(instance, gaml_ActionArguments)
 
 @given(instance=ActionDefinition_strategy)
 @settings(max_examples=50)
 def test_actiondefinition_instantiation(instance):
     assert isinstance(instance, ActionDefinition)
 
-@given(instance=gaml::TypeDefinition_strategy)
+@given(instance=gaml_TypeDefinition_strategy)
 @settings(max_examples=50)
-def test_gaml::typedefinition_instantiation(instance):
-    assert isinstance(instance, gaml::TypeDefinition)
+def test_gaml_typedefinition_instantiation(instance):
+    assert isinstance(instance, gaml_TypeDefinition)
 
-@given(instance=gaml::ActionFakeDefinition_strategy)
+@given(instance=gaml_ActionFakeDefinition_strategy)
 @settings(max_examples=50)
-def test_gaml::actionfakedefinition_instantiation(instance):
-    assert isinstance(instance, gaml::ActionFakeDefinition)
+def test_gaml_actionfakedefinition_instantiation(instance):
+    assert isinstance(instance, gaml_ActionFakeDefinition)
 
-@given(instance=gaml::EObject_strategy)
+@given(instance=gaml_EObject_strategy)
 @settings(max_examples=50)
-def test_gaml::eobject_instantiation(instance):
-    assert isinstance(instance, gaml::EObject)
+def test_gaml_eobject_instantiation(instance):
+    assert isinstance(instance, gaml_EObject)
 
 @given(instance=TypeDefinition_strategy)
 @settings(max_examples=50)
 def test_typedefinition_instantiation(instance):
     assert isinstance(instance, TypeDefinition)
 
-@given(instance=gaml::TypeFakeDefinition_strategy)
+@given(instance=gaml_TypeFakeDefinition_strategy)
 @settings(max_examples=50)
-def test_gaml::typefakedefinition_instantiation(instance):
-    assert isinstance(instance, gaml::TypeFakeDefinition)
+def test_gaml_typefakedefinition_instantiation(instance):
+    assert isinstance(instance, gaml_TypeFakeDefinition)
 
-@given(instance=S::Declaration_strategy)
+@given(instance=S_Declaration_strategy)
 @settings(max_examples=50)
-def test_s::declaration_instantiation(instance):
-    assert isinstance(instance, S::Declaration)
+def test_s_declaration_instantiation(instance):
+    assert isinstance(instance, S_Declaration)
 
-@given(instance=gaml::S::Definition_strategy)
+@given(instance=gaml_S_Reflex_strategy)
 @settings(max_examples=50)
-def test_gaml::s::definition_instantiation(instance):
-    assert isinstance(instance, gaml::S::Definition)
+def test_gaml_s_reflex_instantiation(instance):
+    assert isinstance(instance, gaml_S_Reflex)
 
-@given(instance=gaml::S::Reflex_strategy)
+@given(instance=gaml_S_Definition_strategy)
 @settings(max_examples=50)
-def test_gaml::s::reflex_instantiation(instance):
-    assert isinstance(instance, gaml::S::Reflex)
+def test_gaml_s_definition_instantiation(instance):
+    assert isinstance(instance, gaml_S_Definition)
 
-@given(instance=gaml::S::Loop_strategy)
+@given(instance=gaml_S_Loop_strategy)
 @settings(max_examples=50)
-def test_gaml::s::loop_instantiation(instance):
-    assert isinstance(instance, gaml::S::Loop)
+def test_gaml_s_loop_instantiation(instance):
+    assert isinstance(instance, gaml_S_Loop)
 
 @given(instance=Statement_strategy)
 @settings(max_examples=50)
 def test_statement_instantiation(instance):
     assert isinstance(instance, Statement)
 
-@given(instance=gaml::S::Do_strategy)
+@given(instance=gaml_S_Species_strategy)
 @settings(max_examples=50)
-def test_gaml::s::do_instantiation(instance):
-    assert isinstance(instance, gaml::S::Do)
+def test_gaml_s_species_instantiation(instance):
+    assert isinstance(instance, gaml_S_Species)
 
-@given(instance=gaml::S::Display_strategy)
+@given(instance=gaml_S_Try_strategy)
 @settings(max_examples=50)
-def test_gaml::s::display_instantiation(instance):
-    assert isinstance(instance, gaml::S::Display)
+def test_gaml_s_try_instantiation(instance):
+    assert isinstance(instance, gaml_S_Try)
 
-@given(instance=gaml::S::Display_strategy)
-def test_gaml::s::display_name_type(instance):
-    assert isinstance(instance.name, str)
+@given(instance=gaml_speciesOrGridDisplayStatement_strategy)
+@settings(max_examples=50)
+def test_gaml_speciesorgriddisplaystatement_instantiation(instance):
+    assert isinstance(instance, gaml_speciesOrGridDisplayStatement)
+
+@given(instance=gaml_S_Display_strategy)
+@settings(max_examples=50)
+def test_gaml_s_display_instantiation(instance):
+    assert isinstance(instance, gaml_S_Display)
 
 
-@given(instance=gaml::S::Display_strategy)
-def test_gaml::s::display_name_setter(instance):
+
+@given(instance=gaml_S_Display_strategy)
+def test_gaml_s_display_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=gaml::S::Try_strategy)
+@given(instance=gaml_S_Return_strategy)
 @settings(max_examples=50)
-def test_gaml::s::try_instantiation(instance):
-    assert isinstance(instance, gaml::S::Try)
+def test_gaml_s_return_instantiation(instance):
+    assert isinstance(instance, gaml_S_Return)
 
-@given(instance=gaml::S::Solve_strategy)
+@given(instance=gaml_S_Other_strategy)
 @settings(max_examples=50)
-def test_gaml::s::solve_instantiation(instance):
-    assert isinstance(instance, gaml::S::Solve)
+def test_gaml_s_other_instantiation(instance):
+    assert isinstance(instance, gaml_S_Other)
 
-@given(instance=gaml::S::If_strategy)
+@given(instance=gaml_S_Do_strategy)
 @settings(max_examples=50)
-def test_gaml::s::if_instantiation(instance):
-    assert isinstance(instance, gaml::S::If)
+def test_gaml_s_do_instantiation(instance):
+    assert isinstance(instance, gaml_S_Do)
 
-@given(instance=gaml::speciesOrGridDisplayStatement_strategy)
+@given(instance=gaml_S_If_strategy)
 @settings(max_examples=50)
-def test_gaml::speciesorgriddisplaystatement_instantiation(instance):
-    assert isinstance(instance, gaml::speciesOrGridDisplayStatement)
+def test_gaml_s_if_instantiation(instance):
+    assert isinstance(instance, gaml_S_If)
 
-@given(instance=gaml::S::Other_strategy)
+@given(instance=gaml_S_Solve_strategy)
 @settings(max_examples=50)
-def test_gaml::s::other_instantiation(instance):
-    assert isinstance(instance, gaml::S::Other)
+def test_gaml_s_solve_instantiation(instance):
+    assert isinstance(instance, gaml_S_Solve)
 
-@given(instance=gaml::S::Return_strategy)
+@given(instance=gaml_S_Global_strategy)
 @settings(max_examples=50)
-def test_gaml::s::return_instantiation(instance):
-    assert isinstance(instance, gaml::S::Return)
-
-@given(instance=gaml::S::Species_strategy)
-@settings(max_examples=50)
-def test_gaml::s::species_instantiation(instance):
-    assert isinstance(instance, gaml::S::Species)
-
-@given(instance=gaml::S::Global_strategy)
-@settings(max_examples=50)
-def test_gaml::s::global_instantiation(instance):
-    assert isinstance(instance, gaml::S::Global)
-
-@given(instance=gaml::ReservedLiteral_strategy)
-@settings(max_examples=50)
-def test_gaml::reservedliteral_instantiation(instance):
-    assert isinstance(instance, gaml::ReservedLiteral)
-
-@given(instance=gaml::BooleanLiteral_strategy)
-@settings(max_examples=50)
-def test_gaml::booleanliteral_instantiation(instance):
-    assert isinstance(instance, gaml::BooleanLiteral)
-
-@given(instance=gaml::DoubleLiteral_strategy)
-@settings(max_examples=50)
-def test_gaml::doubleliteral_instantiation(instance):
-    assert isinstance(instance, gaml::DoubleLiteral)
-
-@given(instance=gaml::IntLiteral_strategy)
-@settings(max_examples=50)
-def test_gaml::intliteral_instantiation(instance):
-    assert isinstance(instance, gaml::IntLiteral)
-
-@given(instance=gaml::TypeRef_strategy)
-@settings(max_examples=50)
-def test_gaml::typeref_instantiation(instance):
-    assert isinstance(instance, gaml::TypeRef)
-
-@given(instance=gaml::UnitName_strategy)
-@settings(max_examples=50)
-def test_gaml::unitname_instantiation(instance):
-    assert isinstance(instance, gaml::UnitName)
-
-@given(instance=gaml::Parameter_strategy)
-@settings(max_examples=50)
-def test_gaml::parameter_instantiation(instance):
-    assert isinstance(instance, gaml::Parameter)
-
-@given(instance=gaml::Parameter_strategy)
-def test_gaml::parameter_builtInFacetKey_type(instance):
-    assert isinstance(instance.builtInFacetKey, str)
-
-
-@given(instance=gaml::Parameter_strategy)
-def test_gaml::parameter_builtInFacetKey_setter(instance):
-    original = instance.builtInFacetKey
-    instance.builtInFacetKey = original
-    assert instance.builtInFacetKey == original
-
-@given(instance=gaml::Function_strategy)
-@settings(max_examples=50)
-def test_gaml::function_instantiation(instance):
-    assert isinstance(instance, gaml::Function)
-
-@given(instance=gaml::Point_strategy)
-@settings(max_examples=50)
-def test_gaml::point_instantiation(instance):
-    assert isinstance(instance, gaml::Point)
-
-@given(instance=gaml::Point_strategy)
-def test_gaml::point_op_type(instance):
-    assert isinstance(instance.op, str)
-
-
-@given(instance=gaml::Point_strategy)
-def test_gaml::point_op_setter(instance):
-    original = instance.op
-    instance.op = original
-    assert instance.op == original
-
-@given(instance=gaml::EquationRef_strategy)
-@settings(max_examples=50)
-def test_gaml::equationref_instantiation(instance):
-    assert isinstance(instance, gaml::EquationRef)
-
-@given(instance=gaml::ActionRef_strategy)
-@settings(max_examples=50)
-def test_gaml::actionref_instantiation(instance):
-    assert isinstance(instance, gaml::ActionRef)
-
-@given(instance=gaml::SkillRef_strategy)
-@settings(max_examples=50)
-def test_gaml::skillref_instantiation(instance):
-    assert isinstance(instance, gaml::SkillRef)
-
-@given(instance=gaml::Unary_strategy)
-@settings(max_examples=50)
-def test_gaml::unary_instantiation(instance):
-    assert isinstance(instance, gaml::Unary)
-
-@given(instance=gaml::Unary_strategy)
-def test_gaml::unary_op_type(instance):
-    assert isinstance(instance.op, str)
-
-
-@given(instance=gaml::Unary_strategy)
-def test_gaml::unary_op_setter(instance):
-    original = instance.op
-    instance.op = original
-    assert instance.op == original
-
-@given(instance=gaml::Unit_strategy)
-@settings(max_examples=50)
-def test_gaml::unit_instantiation(instance):
-    assert isinstance(instance, gaml::Unit)
-
-@given(instance=gaml::Unit_strategy)
-def test_gaml::unit_op_type(instance):
-    assert isinstance(instance.op, str)
-
-
-@given(instance=gaml::Unit_strategy)
-def test_gaml::unit_op_setter(instance):
-    original = instance.op
-    instance.op = original
-    assert instance.op == original
+def test_gaml_s_global_instantiation(instance):
+    assert isinstance(instance, gaml_S_Global)
 
 @given(instance=EquationDefinition_strategy)
 @settings(max_examples=50)
 def test_equationdefinition_instantiation(instance):
     assert isinstance(instance, EquationDefinition)
 
-@given(instance=gaml::EquationFakeDefinition_strategy)
+@given(instance=gaml_EquationFakeDefinition_strategy)
 @settings(max_examples=50)
-def test_gaml::equationfakedefinition_instantiation(instance):
-    assert isinstance(instance, gaml::EquationFakeDefinition)
+def test_gaml_equationfakedefinition_instantiation(instance):
+    assert isinstance(instance, gaml_EquationFakeDefinition)
 
-@given(instance=gaml::S::Equations_strategy)
+@given(instance=gaml_S_Equations_strategy)
 @settings(max_examples=50)
-def test_gaml::s::equations_instantiation(instance):
-    assert isinstance(instance, gaml::S::Equations)
+def test_gaml_s_equations_instantiation(instance):
+    assert isinstance(instance, gaml_S_Equations)
 
-@given(instance=S::Assignment_strategy)
+@given(instance=S_Assignment_strategy)
 @settings(max_examples=50)
-def test_s::assignment_instantiation(instance):
-    assert isinstance(instance, S::Assignment)
+def test_s_assignment_instantiation(instance):
+    assert isinstance(instance, S_Assignment)
 
-@given(instance=gaml::S::Set_strategy)
+@given(instance=gaml_S_Set_strategy)
 @settings(max_examples=50)
-def test_gaml::s::set_instantiation(instance):
-    assert isinstance(instance, gaml::S::Set)
+def test_gaml_s_set_instantiation(instance):
+    assert isinstance(instance, gaml_S_Set)
 
-@given(instance=gaml::S::DirectAssignment_strategy)
+@given(instance=gaml_S_DirectAssignment_strategy)
 @settings(max_examples=50)
-def test_gaml::s::directassignment_instantiation(instance):
-    assert isinstance(instance, gaml::S::DirectAssignment)
+def test_gaml_s_directassignment_instantiation(instance):
+    assert isinstance(instance, gaml_S_DirectAssignment)
 
-@given(instance=gaml::S::Assignment_strategy)
+@given(instance=gaml_S_Assignment_strategy)
 @settings(max_examples=50)
-def test_gaml::s::assignment_instantiation(instance):
-    assert isinstance(instance, gaml::S::Assignment)
+def test_gaml_s_assignment_instantiation(instance):
+    assert isinstance(instance, gaml_S_Assignment)
 
-@given(instance=gaml::HeadlessExperiment_strategy)
+@given(instance=gaml_HeadlessExperiment_strategy)
 @settings(max_examples=50)
-def test_gaml::headlessexperiment_instantiation(instance):
-    assert isinstance(instance, gaml::HeadlessExperiment)
-
-@given(instance=gaml::HeadlessExperiment_strategy)
-def test_gaml::headlessexperiment_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_gaml_headlessexperiment_instantiation(instance):
+    assert isinstance(instance, gaml_HeadlessExperiment)
 
 
-@given(instance=gaml::HeadlessExperiment_strategy)
-def test_gaml::headlessexperiment_name_setter(instance):
+
+@given(instance=gaml_HeadlessExperiment_strategy)
+def test_gaml_headlessexperiment_firstFacet_setter(instance):
+    original = instance.firstFacet
+    instance.firstFacet = original
+    assert instance.firstFacet == original
+
+
+
+@given(instance=gaml_HeadlessExperiment_strategy)
+def test_gaml_headlessexperiment_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=gaml::HeadlessExperiment_strategy)
-def test_gaml::headlessexperiment_firstFacet_type(instance):
-    assert isinstance(instance.firstFacet, str)
 
 
-@given(instance=gaml::HeadlessExperiment_strategy)
-def test_gaml::headlessexperiment_firstFacet_setter(instance):
-    original = instance.firstFacet
-    instance.firstFacet = original
-    assert instance.firstFacet == original
-
-@given(instance=gaml::HeadlessExperiment_strategy)
-def test_gaml::headlessexperiment_key_type(instance):
-    assert isinstance(instance.key, str)
-
-
-@given(instance=gaml::HeadlessExperiment_strategy)
-def test_gaml::headlessexperiment_key_setter(instance):
+@given(instance=gaml_HeadlessExperiment_strategy)
+def test_gaml_headlessexperiment_key_setter(instance):
     original = instance.key
     instance.key = original
     assert instance.key == original
 
-@given(instance=gaml::HeadlessExperiment_strategy)
-def test_gaml::headlessexperiment_importURI_type(instance):
-    assert isinstance(instance.importURI, str)
 
 
-@given(instance=gaml::HeadlessExperiment_strategy)
-def test_gaml::headlessexperiment_importURI_setter(instance):
+@given(instance=gaml_HeadlessExperiment_strategy)
+def test_gaml_headlessexperiment_importURI_setter(instance):
     original = instance.importURI
     instance.importURI = original
     assert instance.importURI == original
 
-@given(instance=gaml::Statement_strategy)
+@given(instance=gaml_Statement_strategy)
 @settings(max_examples=50)
-def test_gaml::statement_instantiation(instance):
-    assert isinstance(instance, gaml::Statement)
-
-@given(instance=gaml::Statement_strategy)
-def test_gaml::statement_key_type(instance):
-    assert isinstance(instance.key, str)
+def test_gaml_statement_instantiation(instance):
+    assert isinstance(instance, gaml_Statement)
 
 
-@given(instance=gaml::Statement_strategy)
-def test_gaml::statement_key_setter(instance):
-    original = instance.key
-    instance.key = original
-    assert instance.key == original
 
-@given(instance=gaml::Statement_strategy)
-def test_gaml::statement_firstFacet_type(instance):
-    assert isinstance(instance.firstFacet, str)
-
-
-@given(instance=gaml::Statement_strategy)
-def test_gaml::statement_firstFacet_setter(instance):
+@given(instance=gaml_Statement_strategy)
+def test_gaml_statement_firstFacet_setter(instance):
     original = instance.firstFacet
     instance.firstFacet = original
     assert instance.firstFacet == original
 
-@given(instance=gaml::Pragma_strategy)
+
+
+@given(instance=gaml_Statement_strategy)
+def test_gaml_statement_key_setter(instance):
+    original = instance.key
+    instance.key = original
+    assert instance.key == original
+
+@given(instance=gaml_Pragma_strategy)
 @settings(max_examples=50)
-def test_gaml::pragma_instantiation(instance):
-    assert isinstance(instance, gaml::Pragma)
-
-@given(instance=gaml::Pragma_strategy)
-def test_gaml::pragma_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_gaml_pragma_instantiation(instance):
+    assert isinstance(instance, gaml_Pragma)
 
 
-@given(instance=gaml::Pragma_strategy)
-def test_gaml::pragma_name_setter(instance):
+
+@given(instance=gaml_Pragma_strategy)
+def test_gaml_pragma_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
@@ -2314,105 +2158,198 @@ def test_gaml::pragma_name_setter(instance):
 def test_vardefinition_instantiation(instance):
     assert isinstance(instance, VarDefinition)
 
-@given(instance=gaml::S::Declaration_strategy)
+@given(instance=gaml_S_Declaration_strategy)
 @settings(max_examples=50)
-def test_gaml::s::declaration_instantiation(instance):
-    assert isinstance(instance, gaml::S::Declaration)
+def test_gaml_s_declaration_instantiation(instance):
+    assert isinstance(instance, gaml_S_Declaration)
 
-@given(instance=gaml::ArgumentDefinition_strategy)
+@given(instance=gaml_S_Experiment_strategy)
 @settings(max_examples=50)
-def test_gaml::argumentdefinition_instantiation(instance):
-    assert isinstance(instance, gaml::ArgumentDefinition)
+def test_gaml_s_experiment_instantiation(instance):
+    assert isinstance(instance, gaml_S_Experiment)
 
-@given(instance=gaml::VarFakeDefinition_strategy)
+@given(instance=gaml_ArgumentDefinition_strategy)
 @settings(max_examples=50)
-def test_gaml::varfakedefinition_instantiation(instance):
-    assert isinstance(instance, gaml::VarFakeDefinition)
+def test_gaml_argumentdefinition_instantiation(instance):
+    assert isinstance(instance, gaml_ArgumentDefinition)
 
-@given(instance=gaml::Import_strategy)
+@given(instance=gaml_VarFakeDefinition_strategy)
 @settings(max_examples=50)
-def test_gaml::import_instantiation(instance):
-    assert isinstance(instance, gaml::Import)
+def test_gaml_varfakedefinition_instantiation(instance):
+    assert isinstance(instance, gaml_VarFakeDefinition)
 
-@given(instance=gaml::Import_strategy)
-def test_gaml::import_importURI_type(instance):
-    assert isinstance(instance.importURI, str)
+@given(instance=gaml_Import_strategy)
+@settings(max_examples=50)
+def test_gaml_import_instantiation(instance):
+    assert isinstance(instance, gaml_Import)
 
 
-@given(instance=gaml::Import_strategy)
-def test_gaml::import_importURI_setter(instance):
+
+@given(instance=gaml_Import_strategy)
+def test_gaml_import_importURI_setter(instance):
     original = instance.importURI
     instance.importURI = original
     assert instance.importURI == original
 
-@given(instance=gaml::S::Experiment_strategy)
+@given(instance=gaml_Expression_strategy)
 @settings(max_examples=50)
-def test_gaml::s::experiment_instantiation(instance):
-    assert isinstance(instance, gaml::S::Experiment)
+def test_gaml_expression_instantiation(instance):
+    assert isinstance(instance, gaml_Expression)
 
-@given(instance=gaml::Expression_strategy)
+@given(instance=gaml_Block_strategy)
 @settings(max_examples=50)
-def test_gaml::expression_instantiation(instance):
-    assert isinstance(instance, gaml::Expression)
-
-@given(instance=gaml::Block_strategy)
-@settings(max_examples=50)
-def test_gaml::block_instantiation(instance):
-    assert isinstance(instance, gaml::Block)
+def test_gaml_block_instantiation(instance):
+    assert isinstance(instance, gaml_Block)
 
 @given(instance=Entry_strategy)
 @settings(max_examples=50)
 def test_entry_instantiation(instance):
     assert isinstance(instance, Entry)
 
-@given(instance=gaml::ExperimentFileStructure_strategy)
+@given(instance=gaml_StringEvaluator_strategy)
 @settings(max_examples=50)
-def test_gaml::experimentfilestructure_instantiation(instance):
-    assert isinstance(instance, gaml::ExperimentFileStructure)
-
-@given(instance=gaml::Model_strategy)
-@settings(max_examples=50)
-def test_gaml::model_instantiation(instance):
-    assert isinstance(instance, gaml::Model)
-
-@given(instance=gaml::StringEvaluator_strategy)
-@settings(max_examples=50)
-def test_gaml::stringevaluator_instantiation(instance):
-    assert isinstance(instance, gaml::StringEvaluator)
-
-@given(instance=gaml::StringEvaluator_strategy)
-def test_gaml::stringevaluator_toto_type(instance):
-    assert isinstance(instance.toto, str)
+def test_gaml_stringevaluator_instantiation(instance):
+    assert isinstance(instance, gaml_StringEvaluator)
 
 
-@given(instance=gaml::StringEvaluator_strategy)
-def test_gaml::stringevaluator_toto_setter(instance):
+
+@given(instance=gaml_StringEvaluator_strategy)
+def test_gaml_stringevaluator_toto_setter(instance):
     original = instance.toto
     instance.toto = original
     assert instance.toto == original
 
-@given(instance=gaml::StandaloneBlock_strategy)
+@given(instance=gaml_ExperimentFileStructure_strategy)
 @settings(max_examples=50)
-def test_gaml::standaloneblock_instantiation(instance):
-    assert isinstance(instance, gaml::StandaloneBlock)
+def test_gaml_experimentfilestructure_instantiation(instance):
+    assert isinstance(instance, gaml_ExperimentFileStructure)
 
-@given(instance=gaml::Entry_strategy)
+@given(instance=gaml_Model_strategy)
 @settings(max_examples=50)
-def test_gaml::entry_instantiation(instance):
-    assert isinstance(instance, gaml::Entry)
+def test_gaml_model_instantiation(instance):
+    assert isinstance(instance, gaml_Model)
 
-@given(instance=gaml::Facet_strategy)
+@given(instance=gaml_StandaloneBlock_strategy)
 @settings(max_examples=50)
-def test_gaml::facet_instantiation(instance):
-    assert isinstance(instance, gaml::Facet)
+def test_gaml_standaloneblock_instantiation(instance):
+    assert isinstance(instance, gaml_StandaloneBlock)
 
-@given(instance=gaml::Facet_strategy)
-def test_gaml::facet_key_type(instance):
-    assert isinstance(instance.key, str)
+@given(instance=gaml_Entry_strategy)
+@settings(max_examples=50)
+def test_gaml_entry_instantiation(instance):
+    assert isinstance(instance, gaml_Entry)
+
+@given(instance=gaml_Facet_strategy)
+@settings(max_examples=50)
+def test_gaml_facet_instantiation(instance):
+    assert isinstance(instance, gaml_Facet)
 
 
-@given(instance=gaml::Facet_strategy)
-def test_gaml::facet_key_setter(instance):
+
+@given(instance=gaml_Facet_strategy)
+def test_gaml_facet_key_setter(instance):
     original = instance.key
     instance.key = original
     assert instance.key == original
+
+@given(instance=gaml_ReservedLiteral_strategy)
+@settings(max_examples=50)
+def test_gaml_reservedliteral_instantiation(instance):
+    assert isinstance(instance, gaml_ReservedLiteral)
+
+@given(instance=gaml_BooleanLiteral_strategy)
+@settings(max_examples=50)
+def test_gaml_booleanliteral_instantiation(instance):
+    assert isinstance(instance, gaml_BooleanLiteral)
+
+@given(instance=gaml_DoubleLiteral_strategy)
+@settings(max_examples=50)
+def test_gaml_doubleliteral_instantiation(instance):
+    assert isinstance(instance, gaml_DoubleLiteral)
+
+@given(instance=gaml_IntLiteral_strategy)
+@settings(max_examples=50)
+def test_gaml_intliteral_instantiation(instance):
+    assert isinstance(instance, gaml_IntLiteral)
+
+@given(instance=gaml_TypeRef_strategy)
+@settings(max_examples=50)
+def test_gaml_typeref_instantiation(instance):
+    assert isinstance(instance, gaml_TypeRef)
+
+@given(instance=gaml_UnitName_strategy)
+@settings(max_examples=50)
+def test_gaml_unitname_instantiation(instance):
+    assert isinstance(instance, gaml_UnitName)
+
+@given(instance=gaml_Parameter_strategy)
+@settings(max_examples=50)
+def test_gaml_parameter_instantiation(instance):
+    assert isinstance(instance, gaml_Parameter)
+
+
+
+@given(instance=gaml_Parameter_strategy)
+def test_gaml_parameter_builtInFacetKey_setter(instance):
+    original = instance.builtInFacetKey
+    instance.builtInFacetKey = original
+    assert instance.builtInFacetKey == original
+
+@given(instance=gaml_Function_strategy)
+@settings(max_examples=50)
+def test_gaml_function_instantiation(instance):
+    assert isinstance(instance, gaml_Function)
+
+@given(instance=gaml_Point_strategy)
+@settings(max_examples=50)
+def test_gaml_point_instantiation(instance):
+    assert isinstance(instance, gaml_Point)
+
+
+
+@given(instance=gaml_Point_strategy)
+def test_gaml_point_op_setter(instance):
+    original = instance.op
+    instance.op = original
+    assert instance.op == original
+
+@given(instance=gaml_EquationRef_strategy)
+@settings(max_examples=50)
+def test_gaml_equationref_instantiation(instance):
+    assert isinstance(instance, gaml_EquationRef)
+
+@given(instance=gaml_ActionRef_strategy)
+@settings(max_examples=50)
+def test_gaml_actionref_instantiation(instance):
+    assert isinstance(instance, gaml_ActionRef)
+
+@given(instance=gaml_SkillRef_strategy)
+@settings(max_examples=50)
+def test_gaml_skillref_instantiation(instance):
+    assert isinstance(instance, gaml_SkillRef)
+
+@given(instance=gaml_Unary_strategy)
+@settings(max_examples=50)
+def test_gaml_unary_instantiation(instance):
+    assert isinstance(instance, gaml_Unary)
+
+
+
+@given(instance=gaml_Unary_strategy)
+def test_gaml_unary_op_setter(instance):
+    original = instance.op
+    instance.op = original
+    assert instance.op == original
+
+@given(instance=gaml_Unit_strategy)
+@settings(max_examples=50)
+def test_gaml_unit_instantiation(instance):
+    assert isinstance(instance, gaml_Unit)
+
+
+
+@given(instance=gaml_Unit_strategy)
+def test_gaml_unit_op_setter(instance):
+    original = instance.op
+    instance.op = original
+    assert instance.op == original

@@ -3,96 +3,208 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    ZChild,
-    top::IntegerLiteral,
-    YChild,
-    top::ZChild,
-    top::Z,
-    XChild,
-    top::YChild,
-    top::Y,
-    QChild,
-    top::RChild,
-    top::R,
-    PChild,
-    top::QChild,
-    top::Q,
-    TChild,
-    top::UChild,
-    top::U,
-    SChild,
-    top::TChild,
-    top::T,
-    RChild,
-    top::SChild,
-    top::S,
-    IChild,
-    top::JChild,
-    top::J,
-    HChild,
-    top::IChild,
-    top::I,
-    GChild,
-    top::HChild,
-    top::H,
-    OChild,
-    top::PChild,
-    top::P,
-    NChild,
-    top::OChild,
-    top::O,
-    MChild,
-    top::NChild,
-    top::N,
-    LChild,
-    top::MChild,
-    top::M,
-    KChild,
-    top::LChild,
-    top::L,
-    JChild,
-    top::KChild,
-    top::K,
-    ExprChild,
-    top::AChild,
-    top::A,
-    top::ExprChild,
-    FChild,
-    top::GChild,
-    top::G,
-    EChild,
-    top::FChild,
-    top::F,
-    DChild,
-    top::EChild,
-    top::E,
-    CChild,
-    top::DChild,
-    top::D,
-    BChild,
-    top::CChild,
-    top::C,
-    AChild,
-    top::BChild,
-    top::B,
-    top::Expr,
+from python_code import (
     WChild,
-    top::XChild,
-    top::X,
+    top_X,
     VChild,
-    top::WChild,
-    top::W,
+    top_WChild,
+    top_W,
     UChild,
-    top::V,
-    top::VChild,
+    top_VChild,
+    top_V,
+    ZChild,
+    top_IntegerLiteral,
+    YChild,
+    top_ZChild,
+    top_Z,
+    XChild,
+    top_YChild,
+    top_Y,
+    top_XChild,
+    QChild,
+    top_RChild,
+    top_R,
+    PChild,
+    top_QChild,
+    top_Q,
+    TChild,
+    top_UChild,
+    top_U,
+    SChild,
+    top_TChild,
+    top_T,
+    RChild,
+    top_SChild,
+    top_S,
+    IChild,
+    top_JChild,
+    top_J,
+    HChild,
+    top_IChild,
+    top_I,
+    GChild,
+    top_HChild,
+    top_H,
+    OChild,
+    top_PChild,
+    top_P,
+    NChild,
+    top_OChild,
+    top_O,
+    MChild,
+    top_NChild,
+    top_N,
+    LChild,
+    top_MChild,
+    top_M,
+    KChild,
+    top_LChild,
+    top_L,
+    JChild,
+    top_KChild,
+    top_K,
+    ExprChild,
+    top_AChild,
+    top_A,
+    top_ExprChild,
+    FChild,
+    top_GChild,
+    top_G,
+    EChild,
+    top_FChild,
+    top_F,
+    DChild,
+    top_EChild,
+    top_E,
+    CChild,
+    top_DChild,
+    top_D,
+    BChild,
+    top_CChild,
+    top_C,
+    AChild,
+    top_BChild,
+    top_B,
+    top_Expr,
 )
 
 # =============================================================================
 # SECTION 1 — STRUCTURAL TESTS
 # =============================================================================
+
+
+
+def test_wchild_is_not_abstract():
+    assert not inspect.isabstract(WChild)
+
+
+def test_wchild_constructor_exists():
+    assert callable(WChild.__init__)
+
+
+def test_wchild_constructor_args():
+    sig = inspect.signature(WChild.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_top_x_is_not_abstract():
+    assert not inspect.isabstract(top_X)
+
+
+def test_top_x_constructor_exists():
+    assert callable(top_X.__init__)
+
+
+def test_top_x_constructor_args():
+    sig = inspect.signature(top_X.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_vchild_is_not_abstract():
+    assert not inspect.isabstract(VChild)
+
+
+def test_vchild_constructor_exists():
+    assert callable(VChild.__init__)
+
+
+def test_vchild_constructor_args():
+    sig = inspect.signature(VChild.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_top_wchild_is_not_abstract():
+    assert not inspect.isabstract(top_WChild)
+
+
+def test_top_wchild_constructor_exists():
+    assert callable(top_WChild.__init__)
+
+
+def test_top_wchild_constructor_args():
+    sig = inspect.signature(top_WChild.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_top_w_is_not_abstract():
+    assert not inspect.isabstract(top_W)
+
+
+def test_top_w_constructor_exists():
+    assert callable(top_W.__init__)
+
+
+def test_top_w_constructor_args():
+    sig = inspect.signature(top_W.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_uchild_is_not_abstract():
+    assert not inspect.isabstract(UChild)
+
+
+def test_uchild_constructor_exists():
+    assert callable(UChild.__init__)
+
+
+def test_uchild_constructor_args():
+    sig = inspect.signature(UChild.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_top_vchild_is_not_abstract():
+    assert not inspect.isabstract(top_VChild)
+
+
+def test_top_vchild_constructor_exists():
+    assert callable(top_VChild.__init__)
+
+
+def test_top_vchild_constructor_args():
+    sig = inspect.signature(top_VChild.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_top_v_is_not_abstract():
+    assert not inspect.isabstract(top_V)
+
+
+def test_top_v_constructor_exists():
+    assert callable(top_V.__init__)
+
+
+def test_top_v_constructor_args():
+    sig = inspect.signature(top_V.__init__)
+    params = list(sig.parameters.keys())
 
 
 
@@ -110,23 +222,23 @@ def test_zchild_constructor_args():
 
 
 
-def test_top::integerliteral_is_not_abstract():
-    assert not inspect.isabstract(top::IntegerLiteral)
+def test_top_integerliteral_is_not_abstract():
+    assert not inspect.isabstract(top_IntegerLiteral)
 
 
-def test_top::integerliteral_constructor_exists():
-    assert callable(top::IntegerLiteral.__init__)
+def test_top_integerliteral_constructor_exists():
+    assert callable(top_IntegerLiteral.__init__)
 
 
-def test_top::integerliteral_constructor_args():
-    sig = inspect.signature(top::IntegerLiteral.__init__)
+def test_top_integerliteral_constructor_args():
+    sig = inspect.signature(top_IntegerLiteral.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
 
-def test_top::integerliteral_has_value():
-    assert hasattr(top::IntegerLiteral, "value")
+def test_top_integerliteral_has_value():
+    assert hasattr(top_IntegerLiteral, "value")
     descriptor = None
-    for klass in top::IntegerLiteral.__mro__:
+    for klass in top_IntegerLiteral.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -148,30 +260,30 @@ def test_ychild_constructor_args():
 
 
 
-def test_top::zchild_is_not_abstract():
-    assert not inspect.isabstract(top::ZChild)
+def test_top_zchild_is_not_abstract():
+    assert not inspect.isabstract(top_ZChild)
 
 
-def test_top::zchild_constructor_exists():
-    assert callable(top::ZChild.__init__)
+def test_top_zchild_constructor_exists():
+    assert callable(top_ZChild.__init__)
 
 
-def test_top::zchild_constructor_args():
-    sig = inspect.signature(top::ZChild.__init__)
+def test_top_zchild_constructor_args():
+    sig = inspect.signature(top_ZChild.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_top::z_is_not_abstract():
-    assert not inspect.isabstract(top::Z)
+def test_top_z_is_not_abstract():
+    assert not inspect.isabstract(top_Z)
 
 
-def test_top::z_constructor_exists():
-    assert callable(top::Z.__init__)
+def test_top_z_constructor_exists():
+    assert callable(top_Z.__init__)
 
 
-def test_top::z_constructor_args():
-    sig = inspect.signature(top::Z.__init__)
+def test_top_z_constructor_args():
+    sig = inspect.signature(top_Z.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -190,30 +302,44 @@ def test_xchild_constructor_args():
 
 
 
-def test_top::ychild_is_not_abstract():
-    assert not inspect.isabstract(top::YChild)
+def test_top_ychild_is_not_abstract():
+    assert not inspect.isabstract(top_YChild)
 
 
-def test_top::ychild_constructor_exists():
-    assert callable(top::YChild.__init__)
+def test_top_ychild_constructor_exists():
+    assert callable(top_YChild.__init__)
 
 
-def test_top::ychild_constructor_args():
-    sig = inspect.signature(top::YChild.__init__)
+def test_top_ychild_constructor_args():
+    sig = inspect.signature(top_YChild.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_top::y_is_not_abstract():
-    assert not inspect.isabstract(top::Y)
+def test_top_y_is_not_abstract():
+    assert not inspect.isabstract(top_Y)
 
 
-def test_top::y_constructor_exists():
-    assert callable(top::Y.__init__)
+def test_top_y_constructor_exists():
+    assert callable(top_Y.__init__)
 
 
-def test_top::y_constructor_args():
-    sig = inspect.signature(top::Y.__init__)
+def test_top_y_constructor_args():
+    sig = inspect.signature(top_Y.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_top_xchild_is_not_abstract():
+    assert not inspect.isabstract(top_XChild)
+
+
+def test_top_xchild_constructor_exists():
+    assert callable(top_XChild.__init__)
+
+
+def test_top_xchild_constructor_args():
+    sig = inspect.signature(top_XChild.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -232,30 +358,30 @@ def test_qchild_constructor_args():
 
 
 
-def test_top::rchild_is_not_abstract():
-    assert not inspect.isabstract(top::RChild)
+def test_top_rchild_is_not_abstract():
+    assert not inspect.isabstract(top_RChild)
 
 
-def test_top::rchild_constructor_exists():
-    assert callable(top::RChild.__init__)
+def test_top_rchild_constructor_exists():
+    assert callable(top_RChild.__init__)
 
 
-def test_top::rchild_constructor_args():
-    sig = inspect.signature(top::RChild.__init__)
+def test_top_rchild_constructor_args():
+    sig = inspect.signature(top_RChild.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_top::r_is_not_abstract():
-    assert not inspect.isabstract(top::R)
+def test_top_r_is_not_abstract():
+    assert not inspect.isabstract(top_R)
 
 
-def test_top::r_constructor_exists():
-    assert callable(top::R.__init__)
+def test_top_r_constructor_exists():
+    assert callable(top_R.__init__)
 
 
-def test_top::r_constructor_args():
-    sig = inspect.signature(top::R.__init__)
+def test_top_r_constructor_args():
+    sig = inspect.signature(top_R.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -274,30 +400,30 @@ def test_pchild_constructor_args():
 
 
 
-def test_top::qchild_is_not_abstract():
-    assert not inspect.isabstract(top::QChild)
+def test_top_qchild_is_not_abstract():
+    assert not inspect.isabstract(top_QChild)
 
 
-def test_top::qchild_constructor_exists():
-    assert callable(top::QChild.__init__)
+def test_top_qchild_constructor_exists():
+    assert callable(top_QChild.__init__)
 
 
-def test_top::qchild_constructor_args():
-    sig = inspect.signature(top::QChild.__init__)
+def test_top_qchild_constructor_args():
+    sig = inspect.signature(top_QChild.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_top::q_is_not_abstract():
-    assert not inspect.isabstract(top::Q)
+def test_top_q_is_not_abstract():
+    assert not inspect.isabstract(top_Q)
 
 
-def test_top::q_constructor_exists():
-    assert callable(top::Q.__init__)
+def test_top_q_constructor_exists():
+    assert callable(top_Q.__init__)
 
 
-def test_top::q_constructor_args():
-    sig = inspect.signature(top::Q.__init__)
+def test_top_q_constructor_args():
+    sig = inspect.signature(top_Q.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -316,30 +442,30 @@ def test_tchild_constructor_args():
 
 
 
-def test_top::uchild_is_not_abstract():
-    assert not inspect.isabstract(top::UChild)
+def test_top_uchild_is_not_abstract():
+    assert not inspect.isabstract(top_UChild)
 
 
-def test_top::uchild_constructor_exists():
-    assert callable(top::UChild.__init__)
+def test_top_uchild_constructor_exists():
+    assert callable(top_UChild.__init__)
 
 
-def test_top::uchild_constructor_args():
-    sig = inspect.signature(top::UChild.__init__)
+def test_top_uchild_constructor_args():
+    sig = inspect.signature(top_UChild.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_top::u_is_not_abstract():
-    assert not inspect.isabstract(top::U)
+def test_top_u_is_not_abstract():
+    assert not inspect.isabstract(top_U)
 
 
-def test_top::u_constructor_exists():
-    assert callable(top::U.__init__)
+def test_top_u_constructor_exists():
+    assert callable(top_U.__init__)
 
 
-def test_top::u_constructor_args():
-    sig = inspect.signature(top::U.__init__)
+def test_top_u_constructor_args():
+    sig = inspect.signature(top_U.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -358,30 +484,30 @@ def test_schild_constructor_args():
 
 
 
-def test_top::tchild_is_not_abstract():
-    assert not inspect.isabstract(top::TChild)
+def test_top_tchild_is_not_abstract():
+    assert not inspect.isabstract(top_TChild)
 
 
-def test_top::tchild_constructor_exists():
-    assert callable(top::TChild.__init__)
+def test_top_tchild_constructor_exists():
+    assert callable(top_TChild.__init__)
 
 
-def test_top::tchild_constructor_args():
-    sig = inspect.signature(top::TChild.__init__)
+def test_top_tchild_constructor_args():
+    sig = inspect.signature(top_TChild.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_top::t_is_not_abstract():
-    assert not inspect.isabstract(top::T)
+def test_top_t_is_not_abstract():
+    assert not inspect.isabstract(top_T)
 
 
-def test_top::t_constructor_exists():
-    assert callable(top::T.__init__)
+def test_top_t_constructor_exists():
+    assert callable(top_T.__init__)
 
 
-def test_top::t_constructor_args():
-    sig = inspect.signature(top::T.__init__)
+def test_top_t_constructor_args():
+    sig = inspect.signature(top_T.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -400,30 +526,30 @@ def test_rchild_constructor_args():
 
 
 
-def test_top::schild_is_not_abstract():
-    assert not inspect.isabstract(top::SChild)
+def test_top_schild_is_not_abstract():
+    assert not inspect.isabstract(top_SChild)
 
 
-def test_top::schild_constructor_exists():
-    assert callable(top::SChild.__init__)
+def test_top_schild_constructor_exists():
+    assert callable(top_SChild.__init__)
 
 
-def test_top::schild_constructor_args():
-    sig = inspect.signature(top::SChild.__init__)
+def test_top_schild_constructor_args():
+    sig = inspect.signature(top_SChild.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_top::s_is_not_abstract():
-    assert not inspect.isabstract(top::S)
+def test_top_s_is_not_abstract():
+    assert not inspect.isabstract(top_S)
 
 
-def test_top::s_constructor_exists():
-    assert callable(top::S.__init__)
+def test_top_s_constructor_exists():
+    assert callable(top_S.__init__)
 
 
-def test_top::s_constructor_args():
-    sig = inspect.signature(top::S.__init__)
+def test_top_s_constructor_args():
+    sig = inspect.signature(top_S.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -442,30 +568,30 @@ def test_ichild_constructor_args():
 
 
 
-def test_top::jchild_is_not_abstract():
-    assert not inspect.isabstract(top::JChild)
+def test_top_jchild_is_not_abstract():
+    assert not inspect.isabstract(top_JChild)
 
 
-def test_top::jchild_constructor_exists():
-    assert callable(top::JChild.__init__)
+def test_top_jchild_constructor_exists():
+    assert callable(top_JChild.__init__)
 
 
-def test_top::jchild_constructor_args():
-    sig = inspect.signature(top::JChild.__init__)
+def test_top_jchild_constructor_args():
+    sig = inspect.signature(top_JChild.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_top::j_is_not_abstract():
-    assert not inspect.isabstract(top::J)
+def test_top_j_is_not_abstract():
+    assert not inspect.isabstract(top_J)
 
 
-def test_top::j_constructor_exists():
-    assert callable(top::J.__init__)
+def test_top_j_constructor_exists():
+    assert callable(top_J.__init__)
 
 
-def test_top::j_constructor_args():
-    sig = inspect.signature(top::J.__init__)
+def test_top_j_constructor_args():
+    sig = inspect.signature(top_J.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -484,30 +610,30 @@ def test_hchild_constructor_args():
 
 
 
-def test_top::ichild_is_not_abstract():
-    assert not inspect.isabstract(top::IChild)
+def test_top_ichild_is_not_abstract():
+    assert not inspect.isabstract(top_IChild)
 
 
-def test_top::ichild_constructor_exists():
-    assert callable(top::IChild.__init__)
+def test_top_ichild_constructor_exists():
+    assert callable(top_IChild.__init__)
 
 
-def test_top::ichild_constructor_args():
-    sig = inspect.signature(top::IChild.__init__)
+def test_top_ichild_constructor_args():
+    sig = inspect.signature(top_IChild.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_top::i_is_not_abstract():
-    assert not inspect.isabstract(top::I)
+def test_top_i_is_not_abstract():
+    assert not inspect.isabstract(top_I)
 
 
-def test_top::i_constructor_exists():
-    assert callable(top::I.__init__)
+def test_top_i_constructor_exists():
+    assert callable(top_I.__init__)
 
 
-def test_top::i_constructor_args():
-    sig = inspect.signature(top::I.__init__)
+def test_top_i_constructor_args():
+    sig = inspect.signature(top_I.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -526,30 +652,30 @@ def test_gchild_constructor_args():
 
 
 
-def test_top::hchild_is_not_abstract():
-    assert not inspect.isabstract(top::HChild)
+def test_top_hchild_is_not_abstract():
+    assert not inspect.isabstract(top_HChild)
 
 
-def test_top::hchild_constructor_exists():
-    assert callable(top::HChild.__init__)
+def test_top_hchild_constructor_exists():
+    assert callable(top_HChild.__init__)
 
 
-def test_top::hchild_constructor_args():
-    sig = inspect.signature(top::HChild.__init__)
+def test_top_hchild_constructor_args():
+    sig = inspect.signature(top_HChild.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_top::h_is_not_abstract():
-    assert not inspect.isabstract(top::H)
+def test_top_h_is_not_abstract():
+    assert not inspect.isabstract(top_H)
 
 
-def test_top::h_constructor_exists():
-    assert callable(top::H.__init__)
+def test_top_h_constructor_exists():
+    assert callable(top_H.__init__)
 
 
-def test_top::h_constructor_args():
-    sig = inspect.signature(top::H.__init__)
+def test_top_h_constructor_args():
+    sig = inspect.signature(top_H.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -568,30 +694,30 @@ def test_ochild_constructor_args():
 
 
 
-def test_top::pchild_is_not_abstract():
-    assert not inspect.isabstract(top::PChild)
+def test_top_pchild_is_not_abstract():
+    assert not inspect.isabstract(top_PChild)
 
 
-def test_top::pchild_constructor_exists():
-    assert callable(top::PChild.__init__)
+def test_top_pchild_constructor_exists():
+    assert callable(top_PChild.__init__)
 
 
-def test_top::pchild_constructor_args():
-    sig = inspect.signature(top::PChild.__init__)
+def test_top_pchild_constructor_args():
+    sig = inspect.signature(top_PChild.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_top::p_is_not_abstract():
-    assert not inspect.isabstract(top::P)
+def test_top_p_is_not_abstract():
+    assert not inspect.isabstract(top_P)
 
 
-def test_top::p_constructor_exists():
-    assert callable(top::P.__init__)
+def test_top_p_constructor_exists():
+    assert callable(top_P.__init__)
 
 
-def test_top::p_constructor_args():
-    sig = inspect.signature(top::P.__init__)
+def test_top_p_constructor_args():
+    sig = inspect.signature(top_P.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -610,30 +736,30 @@ def test_nchild_constructor_args():
 
 
 
-def test_top::ochild_is_not_abstract():
-    assert not inspect.isabstract(top::OChild)
+def test_top_ochild_is_not_abstract():
+    assert not inspect.isabstract(top_OChild)
 
 
-def test_top::ochild_constructor_exists():
-    assert callable(top::OChild.__init__)
+def test_top_ochild_constructor_exists():
+    assert callable(top_OChild.__init__)
 
 
-def test_top::ochild_constructor_args():
-    sig = inspect.signature(top::OChild.__init__)
+def test_top_ochild_constructor_args():
+    sig = inspect.signature(top_OChild.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_top::o_is_not_abstract():
-    assert not inspect.isabstract(top::O)
+def test_top_o_is_not_abstract():
+    assert not inspect.isabstract(top_O)
 
 
-def test_top::o_constructor_exists():
-    assert callable(top::O.__init__)
+def test_top_o_constructor_exists():
+    assert callable(top_O.__init__)
 
 
-def test_top::o_constructor_args():
-    sig = inspect.signature(top::O.__init__)
+def test_top_o_constructor_args():
+    sig = inspect.signature(top_O.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -652,30 +778,30 @@ def test_mchild_constructor_args():
 
 
 
-def test_top::nchild_is_not_abstract():
-    assert not inspect.isabstract(top::NChild)
+def test_top_nchild_is_not_abstract():
+    assert not inspect.isabstract(top_NChild)
 
 
-def test_top::nchild_constructor_exists():
-    assert callable(top::NChild.__init__)
+def test_top_nchild_constructor_exists():
+    assert callable(top_NChild.__init__)
 
 
-def test_top::nchild_constructor_args():
-    sig = inspect.signature(top::NChild.__init__)
+def test_top_nchild_constructor_args():
+    sig = inspect.signature(top_NChild.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_top::n_is_not_abstract():
-    assert not inspect.isabstract(top::N)
+def test_top_n_is_not_abstract():
+    assert not inspect.isabstract(top_N)
 
 
-def test_top::n_constructor_exists():
-    assert callable(top::N.__init__)
+def test_top_n_constructor_exists():
+    assert callable(top_N.__init__)
 
 
-def test_top::n_constructor_args():
-    sig = inspect.signature(top::N.__init__)
+def test_top_n_constructor_args():
+    sig = inspect.signature(top_N.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -694,30 +820,30 @@ def test_lchild_constructor_args():
 
 
 
-def test_top::mchild_is_not_abstract():
-    assert not inspect.isabstract(top::MChild)
+def test_top_mchild_is_not_abstract():
+    assert not inspect.isabstract(top_MChild)
 
 
-def test_top::mchild_constructor_exists():
-    assert callable(top::MChild.__init__)
+def test_top_mchild_constructor_exists():
+    assert callable(top_MChild.__init__)
 
 
-def test_top::mchild_constructor_args():
-    sig = inspect.signature(top::MChild.__init__)
+def test_top_mchild_constructor_args():
+    sig = inspect.signature(top_MChild.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_top::m_is_not_abstract():
-    assert not inspect.isabstract(top::M)
+def test_top_m_is_not_abstract():
+    assert not inspect.isabstract(top_M)
 
 
-def test_top::m_constructor_exists():
-    assert callable(top::M.__init__)
+def test_top_m_constructor_exists():
+    assert callable(top_M.__init__)
 
 
-def test_top::m_constructor_args():
-    sig = inspect.signature(top::M.__init__)
+def test_top_m_constructor_args():
+    sig = inspect.signature(top_M.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -736,30 +862,30 @@ def test_kchild_constructor_args():
 
 
 
-def test_top::lchild_is_not_abstract():
-    assert not inspect.isabstract(top::LChild)
+def test_top_lchild_is_not_abstract():
+    assert not inspect.isabstract(top_LChild)
 
 
-def test_top::lchild_constructor_exists():
-    assert callable(top::LChild.__init__)
+def test_top_lchild_constructor_exists():
+    assert callable(top_LChild.__init__)
 
 
-def test_top::lchild_constructor_args():
-    sig = inspect.signature(top::LChild.__init__)
+def test_top_lchild_constructor_args():
+    sig = inspect.signature(top_LChild.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_top::l_is_not_abstract():
-    assert not inspect.isabstract(top::L)
+def test_top_l_is_not_abstract():
+    assert not inspect.isabstract(top_L)
 
 
-def test_top::l_constructor_exists():
-    assert callable(top::L.__init__)
+def test_top_l_constructor_exists():
+    assert callable(top_L.__init__)
 
 
-def test_top::l_constructor_args():
-    sig = inspect.signature(top::L.__init__)
+def test_top_l_constructor_args():
+    sig = inspect.signature(top_L.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -778,30 +904,30 @@ def test_jchild_constructor_args():
 
 
 
-def test_top::kchild_is_not_abstract():
-    assert not inspect.isabstract(top::KChild)
+def test_top_kchild_is_not_abstract():
+    assert not inspect.isabstract(top_KChild)
 
 
-def test_top::kchild_constructor_exists():
-    assert callable(top::KChild.__init__)
+def test_top_kchild_constructor_exists():
+    assert callable(top_KChild.__init__)
 
 
-def test_top::kchild_constructor_args():
-    sig = inspect.signature(top::KChild.__init__)
+def test_top_kchild_constructor_args():
+    sig = inspect.signature(top_KChild.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_top::k_is_not_abstract():
-    assert not inspect.isabstract(top::K)
+def test_top_k_is_not_abstract():
+    assert not inspect.isabstract(top_K)
 
 
-def test_top::k_constructor_exists():
-    assert callable(top::K.__init__)
+def test_top_k_constructor_exists():
+    assert callable(top_K.__init__)
 
 
-def test_top::k_constructor_args():
-    sig = inspect.signature(top::K.__init__)
+def test_top_k_constructor_args():
+    sig = inspect.signature(top_K.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -820,44 +946,44 @@ def test_exprchild_constructor_args():
 
 
 
-def test_top::achild_is_not_abstract():
-    assert not inspect.isabstract(top::AChild)
+def test_top_achild_is_not_abstract():
+    assert not inspect.isabstract(top_AChild)
 
 
-def test_top::achild_constructor_exists():
-    assert callable(top::AChild.__init__)
+def test_top_achild_constructor_exists():
+    assert callable(top_AChild.__init__)
 
 
-def test_top::achild_constructor_args():
-    sig = inspect.signature(top::AChild.__init__)
+def test_top_achild_constructor_args():
+    sig = inspect.signature(top_AChild.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_top::a_is_not_abstract():
-    assert not inspect.isabstract(top::A)
+def test_top_a_is_not_abstract():
+    assert not inspect.isabstract(top_A)
 
 
-def test_top::a_constructor_exists():
-    assert callable(top::A.__init__)
+def test_top_a_constructor_exists():
+    assert callable(top_A.__init__)
 
 
-def test_top::a_constructor_args():
-    sig = inspect.signature(top::A.__init__)
+def test_top_a_constructor_args():
+    sig = inspect.signature(top_A.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_top::exprchild_is_not_abstract():
-    assert not inspect.isabstract(top::ExprChild)
+def test_top_exprchild_is_not_abstract():
+    assert not inspect.isabstract(top_ExprChild)
 
 
-def test_top::exprchild_constructor_exists():
-    assert callable(top::ExprChild.__init__)
+def test_top_exprchild_constructor_exists():
+    assert callable(top_ExprChild.__init__)
 
 
-def test_top::exprchild_constructor_args():
-    sig = inspect.signature(top::ExprChild.__init__)
+def test_top_exprchild_constructor_args():
+    sig = inspect.signature(top_ExprChild.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -876,30 +1002,30 @@ def test_fchild_constructor_args():
 
 
 
-def test_top::gchild_is_not_abstract():
-    assert not inspect.isabstract(top::GChild)
+def test_top_gchild_is_not_abstract():
+    assert not inspect.isabstract(top_GChild)
 
 
-def test_top::gchild_constructor_exists():
-    assert callable(top::GChild.__init__)
+def test_top_gchild_constructor_exists():
+    assert callable(top_GChild.__init__)
 
 
-def test_top::gchild_constructor_args():
-    sig = inspect.signature(top::GChild.__init__)
+def test_top_gchild_constructor_args():
+    sig = inspect.signature(top_GChild.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_top::g_is_not_abstract():
-    assert not inspect.isabstract(top::G)
+def test_top_g_is_not_abstract():
+    assert not inspect.isabstract(top_G)
 
 
-def test_top::g_constructor_exists():
-    assert callable(top::G.__init__)
+def test_top_g_constructor_exists():
+    assert callable(top_G.__init__)
 
 
-def test_top::g_constructor_args():
-    sig = inspect.signature(top::G.__init__)
+def test_top_g_constructor_args():
+    sig = inspect.signature(top_G.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -918,30 +1044,30 @@ def test_echild_constructor_args():
 
 
 
-def test_top::fchild_is_not_abstract():
-    assert not inspect.isabstract(top::FChild)
+def test_top_fchild_is_not_abstract():
+    assert not inspect.isabstract(top_FChild)
 
 
-def test_top::fchild_constructor_exists():
-    assert callable(top::FChild.__init__)
+def test_top_fchild_constructor_exists():
+    assert callable(top_FChild.__init__)
 
 
-def test_top::fchild_constructor_args():
-    sig = inspect.signature(top::FChild.__init__)
+def test_top_fchild_constructor_args():
+    sig = inspect.signature(top_FChild.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_top::f_is_not_abstract():
-    assert not inspect.isabstract(top::F)
+def test_top_f_is_not_abstract():
+    assert not inspect.isabstract(top_F)
 
 
-def test_top::f_constructor_exists():
-    assert callable(top::F.__init__)
+def test_top_f_constructor_exists():
+    assert callable(top_F.__init__)
 
 
-def test_top::f_constructor_args():
-    sig = inspect.signature(top::F.__init__)
+def test_top_f_constructor_args():
+    sig = inspect.signature(top_F.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -960,30 +1086,30 @@ def test_dchild_constructor_args():
 
 
 
-def test_top::echild_is_not_abstract():
-    assert not inspect.isabstract(top::EChild)
+def test_top_echild_is_not_abstract():
+    assert not inspect.isabstract(top_EChild)
 
 
-def test_top::echild_constructor_exists():
-    assert callable(top::EChild.__init__)
+def test_top_echild_constructor_exists():
+    assert callable(top_EChild.__init__)
 
 
-def test_top::echild_constructor_args():
-    sig = inspect.signature(top::EChild.__init__)
+def test_top_echild_constructor_args():
+    sig = inspect.signature(top_EChild.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_top::e_is_not_abstract():
-    assert not inspect.isabstract(top::E)
+def test_top_e_is_not_abstract():
+    assert not inspect.isabstract(top_E)
 
 
-def test_top::e_constructor_exists():
-    assert callable(top::E.__init__)
+def test_top_e_constructor_exists():
+    assert callable(top_E.__init__)
 
 
-def test_top::e_constructor_args():
-    sig = inspect.signature(top::E.__init__)
+def test_top_e_constructor_args():
+    sig = inspect.signature(top_E.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1002,30 +1128,30 @@ def test_cchild_constructor_args():
 
 
 
-def test_top::dchild_is_not_abstract():
-    assert not inspect.isabstract(top::DChild)
+def test_top_dchild_is_not_abstract():
+    assert not inspect.isabstract(top_DChild)
 
 
-def test_top::dchild_constructor_exists():
-    assert callable(top::DChild.__init__)
+def test_top_dchild_constructor_exists():
+    assert callable(top_DChild.__init__)
 
 
-def test_top::dchild_constructor_args():
-    sig = inspect.signature(top::DChild.__init__)
+def test_top_dchild_constructor_args():
+    sig = inspect.signature(top_DChild.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_top::d_is_not_abstract():
-    assert not inspect.isabstract(top::D)
+def test_top_d_is_not_abstract():
+    assert not inspect.isabstract(top_D)
 
 
-def test_top::d_constructor_exists():
-    assert callable(top::D.__init__)
+def test_top_d_constructor_exists():
+    assert callable(top_D.__init__)
 
 
-def test_top::d_constructor_args():
-    sig = inspect.signature(top::D.__init__)
+def test_top_d_constructor_args():
+    sig = inspect.signature(top_D.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1044,30 +1170,30 @@ def test_bchild_constructor_args():
 
 
 
-def test_top::cchild_is_not_abstract():
-    assert not inspect.isabstract(top::CChild)
+def test_top_cchild_is_not_abstract():
+    assert not inspect.isabstract(top_CChild)
 
 
-def test_top::cchild_constructor_exists():
-    assert callable(top::CChild.__init__)
+def test_top_cchild_constructor_exists():
+    assert callable(top_CChild.__init__)
 
 
-def test_top::cchild_constructor_args():
-    sig = inspect.signature(top::CChild.__init__)
+def test_top_cchild_constructor_args():
+    sig = inspect.signature(top_CChild.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_top::c_is_not_abstract():
-    assert not inspect.isabstract(top::C)
+def test_top_c_is_not_abstract():
+    assert not inspect.isabstract(top_C)
 
 
-def test_top::c_constructor_exists():
-    assert callable(top::C.__init__)
+def test_top_c_constructor_exists():
+    assert callable(top_C.__init__)
 
 
-def test_top::c_constructor_args():
-    sig = inspect.signature(top::C.__init__)
+def test_top_c_constructor_args():
+    sig = inspect.signature(top_C.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1086,170 +1212,44 @@ def test_achild_constructor_args():
 
 
 
-def test_top::bchild_is_not_abstract():
-    assert not inspect.isabstract(top::BChild)
+def test_top_bchild_is_not_abstract():
+    assert not inspect.isabstract(top_BChild)
 
 
-def test_top::bchild_constructor_exists():
-    assert callable(top::BChild.__init__)
+def test_top_bchild_constructor_exists():
+    assert callable(top_BChild.__init__)
 
 
-def test_top::bchild_constructor_args():
-    sig = inspect.signature(top::BChild.__init__)
+def test_top_bchild_constructor_args():
+    sig = inspect.signature(top_BChild.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_top::b_is_not_abstract():
-    assert not inspect.isabstract(top::B)
+def test_top_b_is_not_abstract():
+    assert not inspect.isabstract(top_B)
 
 
-def test_top::b_constructor_exists():
-    assert callable(top::B.__init__)
+def test_top_b_constructor_exists():
+    assert callable(top_B.__init__)
 
 
-def test_top::b_constructor_args():
-    sig = inspect.signature(top::B.__init__)
+def test_top_b_constructor_args():
+    sig = inspect.signature(top_B.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_top::expr_is_not_abstract():
-    assert not inspect.isabstract(top::Expr)
+def test_top_expr_is_not_abstract():
+    assert not inspect.isabstract(top_Expr)
 
 
-def test_top::expr_constructor_exists():
-    assert callable(top::Expr.__init__)
+def test_top_expr_constructor_exists():
+    assert callable(top_Expr.__init__)
 
 
-def test_top::expr_constructor_args():
-    sig = inspect.signature(top::Expr.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_wchild_is_not_abstract():
-    assert not inspect.isabstract(WChild)
-
-
-def test_wchild_constructor_exists():
-    assert callable(WChild.__init__)
-
-
-def test_wchild_constructor_args():
-    sig = inspect.signature(WChild.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_top::xchild_is_not_abstract():
-    assert not inspect.isabstract(top::XChild)
-
-
-def test_top::xchild_constructor_exists():
-    assert callable(top::XChild.__init__)
-
-
-def test_top::xchild_constructor_args():
-    sig = inspect.signature(top::XChild.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_top::x_is_not_abstract():
-    assert not inspect.isabstract(top::X)
-
-
-def test_top::x_constructor_exists():
-    assert callable(top::X.__init__)
-
-
-def test_top::x_constructor_args():
-    sig = inspect.signature(top::X.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_vchild_is_not_abstract():
-    assert not inspect.isabstract(VChild)
-
-
-def test_vchild_constructor_exists():
-    assert callable(VChild.__init__)
-
-
-def test_vchild_constructor_args():
-    sig = inspect.signature(VChild.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_top::wchild_is_not_abstract():
-    assert not inspect.isabstract(top::WChild)
-
-
-def test_top::wchild_constructor_exists():
-    assert callable(top::WChild.__init__)
-
-
-def test_top::wchild_constructor_args():
-    sig = inspect.signature(top::WChild.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_top::w_is_not_abstract():
-    assert not inspect.isabstract(top::W)
-
-
-def test_top::w_constructor_exists():
-    assert callable(top::W.__init__)
-
-
-def test_top::w_constructor_args():
-    sig = inspect.signature(top::W.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_uchild_is_not_abstract():
-    assert not inspect.isabstract(UChild)
-
-
-def test_uchild_constructor_exists():
-    assert callable(UChild.__init__)
-
-
-def test_uchild_constructor_args():
-    sig = inspect.signature(UChild.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_top::v_is_not_abstract():
-    assert not inspect.isabstract(top::V)
-
-
-def test_top::v_constructor_exists():
-    assert callable(top::V.__init__)
-
-
-def test_top::v_constructor_args():
-    sig = inspect.signature(top::V.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_top::vchild_is_not_abstract():
-    assert not inspect.isabstract(top::VChild)
-
-
-def test_top::vchild_constructor_exists():
-    assert callable(top::VChild.__init__)
-
-
-def test_top::vchild_constructor_args():
-    sig = inspect.signature(top::VChild.__init__)
+def test_top_expr_constructor_args():
+    sig = inspect.signature(top_Expr.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1264,272 +1264,309 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
+WChild_strategy = st.builds(
+    WChild,
+)
+top_X_strategy = st.builds(
+    top_X,
+)
+VChild_strategy = st.builds(
+    VChild,
+)
+top_WChild_strategy = st.builds(
+    top_WChild,
+)
+top_W_strategy = st.builds(
+    top_W,
+)
+UChild_strategy = st.builds(
+    UChild,
+)
+top_VChild_strategy = st.builds(
+    top_VChild,
+)
+top_V_strategy = st.builds(
+    top_V,
+)
 ZChild_strategy = st.builds(
     ZChild,
 )
-top::IntegerLiteral_strategy = st.builds(
-    top::IntegerLiteral,
+top_IntegerLiteral_strategy = st.builds(
+    top_IntegerLiteral,
     value=
         st.integers()
 )
 YChild_strategy = st.builds(
     YChild,
 )
-top::ZChild_strategy = st.builds(
-    top::ZChild,
+top_ZChild_strategy = st.builds(
+    top_ZChild,
 )
-top::Z_strategy = st.builds(
-    top::Z,
+top_Z_strategy = st.builds(
+    top_Z,
 )
 XChild_strategy = st.builds(
     XChild,
 )
-top::YChild_strategy = st.builds(
-    top::YChild,
+top_YChild_strategy = st.builds(
+    top_YChild,
 )
-top::Y_strategy = st.builds(
-    top::Y,
+top_Y_strategy = st.builds(
+    top_Y,
+)
+top_XChild_strategy = st.builds(
+    top_XChild,
 )
 QChild_strategy = st.builds(
     QChild,
 )
-top::RChild_strategy = st.builds(
-    top::RChild,
+top_RChild_strategy = st.builds(
+    top_RChild,
 )
-top::R_strategy = st.builds(
-    top::R,
+top_R_strategy = st.builds(
+    top_R,
 )
 PChild_strategy = st.builds(
     PChild,
 )
-top::QChild_strategy = st.builds(
-    top::QChild,
+top_QChild_strategy = st.builds(
+    top_QChild,
 )
-top::Q_strategy = st.builds(
-    top::Q,
+top_Q_strategy = st.builds(
+    top_Q,
 )
 TChild_strategy = st.builds(
     TChild,
 )
-top::UChild_strategy = st.builds(
-    top::UChild,
+top_UChild_strategy = st.builds(
+    top_UChild,
 )
-top::U_strategy = st.builds(
-    top::U,
+top_U_strategy = st.builds(
+    top_U,
 )
 SChild_strategy = st.builds(
     SChild,
 )
-top::TChild_strategy = st.builds(
-    top::TChild,
+top_TChild_strategy = st.builds(
+    top_TChild,
 )
-top::T_strategy = st.builds(
-    top::T,
+top_T_strategy = st.builds(
+    top_T,
 )
 RChild_strategy = st.builds(
     RChild,
 )
-top::SChild_strategy = st.builds(
-    top::SChild,
+top_SChild_strategy = st.builds(
+    top_SChild,
 )
-top::S_strategy = st.builds(
-    top::S,
+top_S_strategy = st.builds(
+    top_S,
 )
 IChild_strategy = st.builds(
     IChild,
 )
-top::JChild_strategy = st.builds(
-    top::JChild,
+top_JChild_strategy = st.builds(
+    top_JChild,
 )
-top::J_strategy = st.builds(
-    top::J,
+top_J_strategy = st.builds(
+    top_J,
 )
 HChild_strategy = st.builds(
     HChild,
 )
-top::IChild_strategy = st.builds(
-    top::IChild,
+top_IChild_strategy = st.builds(
+    top_IChild,
 )
-top::I_strategy = st.builds(
-    top::I,
+top_I_strategy = st.builds(
+    top_I,
 )
 GChild_strategy = st.builds(
     GChild,
 )
-top::HChild_strategy = st.builds(
-    top::HChild,
+top_HChild_strategy = st.builds(
+    top_HChild,
 )
-top::H_strategy = st.builds(
-    top::H,
+top_H_strategy = st.builds(
+    top_H,
 )
 OChild_strategy = st.builds(
     OChild,
 )
-top::PChild_strategy = st.builds(
-    top::PChild,
+top_PChild_strategy = st.builds(
+    top_PChild,
 )
-top::P_strategy = st.builds(
-    top::P,
+top_P_strategy = st.builds(
+    top_P,
 )
 NChild_strategy = st.builds(
     NChild,
 )
-top::OChild_strategy = st.builds(
-    top::OChild,
+top_OChild_strategy = st.builds(
+    top_OChild,
 )
-top::O_strategy = st.builds(
-    top::O,
+top_O_strategy = st.builds(
+    top_O,
 )
 MChild_strategy = st.builds(
     MChild,
 )
-top::NChild_strategy = st.builds(
-    top::NChild,
+top_NChild_strategy = st.builds(
+    top_NChild,
 )
-top::N_strategy = st.builds(
-    top::N,
+top_N_strategy = st.builds(
+    top_N,
 )
 LChild_strategy = st.builds(
     LChild,
 )
-top::MChild_strategy = st.builds(
-    top::MChild,
+top_MChild_strategy = st.builds(
+    top_MChild,
 )
-top::M_strategy = st.builds(
-    top::M,
+top_M_strategy = st.builds(
+    top_M,
 )
 KChild_strategy = st.builds(
     KChild,
 )
-top::LChild_strategy = st.builds(
-    top::LChild,
+top_LChild_strategy = st.builds(
+    top_LChild,
 )
-top::L_strategy = st.builds(
-    top::L,
+top_L_strategy = st.builds(
+    top_L,
 )
 JChild_strategy = st.builds(
     JChild,
 )
-top::KChild_strategy = st.builds(
-    top::KChild,
+top_KChild_strategy = st.builds(
+    top_KChild,
 )
-top::K_strategy = st.builds(
-    top::K,
+top_K_strategy = st.builds(
+    top_K,
 )
 ExprChild_strategy = st.builds(
     ExprChild,
 )
-top::AChild_strategy = st.builds(
-    top::AChild,
+top_AChild_strategy = st.builds(
+    top_AChild,
 )
-top::A_strategy = st.builds(
-    top::A,
+top_A_strategy = st.builds(
+    top_A,
 )
-top::ExprChild_strategy = st.builds(
-    top::ExprChild,
+top_ExprChild_strategy = st.builds(
+    top_ExprChild,
 )
 FChild_strategy = st.builds(
     FChild,
 )
-top::GChild_strategy = st.builds(
-    top::GChild,
+top_GChild_strategy = st.builds(
+    top_GChild,
 )
-top::G_strategy = st.builds(
-    top::G,
+top_G_strategy = st.builds(
+    top_G,
 )
 EChild_strategy = st.builds(
     EChild,
 )
-top::FChild_strategy = st.builds(
-    top::FChild,
+top_FChild_strategy = st.builds(
+    top_FChild,
 )
-top::F_strategy = st.builds(
-    top::F,
+top_F_strategy = st.builds(
+    top_F,
 )
 DChild_strategy = st.builds(
     DChild,
 )
-top::EChild_strategy = st.builds(
-    top::EChild,
+top_EChild_strategy = st.builds(
+    top_EChild,
 )
-top::E_strategy = st.builds(
-    top::E,
+top_E_strategy = st.builds(
+    top_E,
 )
 CChild_strategy = st.builds(
     CChild,
 )
-top::DChild_strategy = st.builds(
-    top::DChild,
+top_DChild_strategy = st.builds(
+    top_DChild,
 )
-top::D_strategy = st.builds(
-    top::D,
+top_D_strategy = st.builds(
+    top_D,
 )
 BChild_strategy = st.builds(
     BChild,
 )
-top::CChild_strategy = st.builds(
-    top::CChild,
+top_CChild_strategy = st.builds(
+    top_CChild,
 )
-top::C_strategy = st.builds(
-    top::C,
+top_C_strategy = st.builds(
+    top_C,
 )
 AChild_strategy = st.builds(
     AChild,
 )
-top::BChild_strategy = st.builds(
-    top::BChild,
+top_BChild_strategy = st.builds(
+    top_BChild,
 )
-top::B_strategy = st.builds(
-    top::B,
+top_B_strategy = st.builds(
+    top_B,
 )
-top::Expr_strategy = st.builds(
-    top::Expr,
+top_Expr_strategy = st.builds(
+    top_Expr,
 )
-WChild_strategy = st.builds(
-    WChild,
-)
-top::XChild_strategy = st.builds(
-    top::XChild,
-)
-top::X_strategy = st.builds(
-    top::X,
-)
-VChild_strategy = st.builds(
-    VChild,
-)
-top::WChild_strategy = st.builds(
-    top::WChild,
-)
-top::W_strategy = st.builds(
-    top::W,
-)
-UChild_strategy = st.builds(
-    UChild,
-)
-top::V_strategy = st.builds(
-    top::V,
-)
-top::VChild_strategy = st.builds(
-    top::VChild,
-)
+
+@given(instance=WChild_strategy)
+@settings(max_examples=50)
+def test_wchild_instantiation(instance):
+    assert isinstance(instance, WChild)
+
+@given(instance=top_X_strategy)
+@settings(max_examples=50)
+def test_top_x_instantiation(instance):
+    assert isinstance(instance, top_X)
+
+@given(instance=VChild_strategy)
+@settings(max_examples=50)
+def test_vchild_instantiation(instance):
+    assert isinstance(instance, VChild)
+
+@given(instance=top_WChild_strategy)
+@settings(max_examples=50)
+def test_top_wchild_instantiation(instance):
+    assert isinstance(instance, top_WChild)
+
+@given(instance=top_W_strategy)
+@settings(max_examples=50)
+def test_top_w_instantiation(instance):
+    assert isinstance(instance, top_W)
+
+@given(instance=UChild_strategy)
+@settings(max_examples=50)
+def test_uchild_instantiation(instance):
+    assert isinstance(instance, UChild)
+
+@given(instance=top_VChild_strategy)
+@settings(max_examples=50)
+def test_top_vchild_instantiation(instance):
+    assert isinstance(instance, top_VChild)
+
+@given(instance=top_V_strategy)
+@settings(max_examples=50)
+def test_top_v_instantiation(instance):
+    assert isinstance(instance, top_V)
 
 @given(instance=ZChild_strategy)
 @settings(max_examples=50)
 def test_zchild_instantiation(instance):
     assert isinstance(instance, ZChild)
 
-@given(instance=top::IntegerLiteral_strategy)
+@given(instance=top_IntegerLiteral_strategy)
 @settings(max_examples=50)
-def test_top::integerliteral_instantiation(instance):
-    assert isinstance(instance, top::IntegerLiteral)
-
-@given(instance=top::IntegerLiteral_strategy)
-def test_top::integerliteral_value_type(instance):
-    assert isinstance(instance.value, int)
+def test_top_integerliteral_instantiation(instance):
+    assert isinstance(instance, top_IntegerLiteral)
 
 
-@given(instance=top::IntegerLiteral_strategy)
-def test_top::integerliteral_value_setter(instance):
+
+@given(instance=top_IntegerLiteral_strategy)
+def test_top_integerliteral_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
@@ -1539,397 +1576,357 @@ def test_top::integerliteral_value_setter(instance):
 def test_ychild_instantiation(instance):
     assert isinstance(instance, YChild)
 
-@given(instance=top::ZChild_strategy)
+@given(instance=top_ZChild_strategy)
 @settings(max_examples=50)
-def test_top::zchild_instantiation(instance):
-    assert isinstance(instance, top::ZChild)
+def test_top_zchild_instantiation(instance):
+    assert isinstance(instance, top_ZChild)
 
-@given(instance=top::Z_strategy)
+@given(instance=top_Z_strategy)
 @settings(max_examples=50)
-def test_top::z_instantiation(instance):
-    assert isinstance(instance, top::Z)
+def test_top_z_instantiation(instance):
+    assert isinstance(instance, top_Z)
 
 @given(instance=XChild_strategy)
 @settings(max_examples=50)
 def test_xchild_instantiation(instance):
     assert isinstance(instance, XChild)
 
-@given(instance=top::YChild_strategy)
+@given(instance=top_YChild_strategy)
 @settings(max_examples=50)
-def test_top::ychild_instantiation(instance):
-    assert isinstance(instance, top::YChild)
+def test_top_ychild_instantiation(instance):
+    assert isinstance(instance, top_YChild)
 
-@given(instance=top::Y_strategy)
+@given(instance=top_Y_strategy)
 @settings(max_examples=50)
-def test_top::y_instantiation(instance):
-    assert isinstance(instance, top::Y)
+def test_top_y_instantiation(instance):
+    assert isinstance(instance, top_Y)
+
+@given(instance=top_XChild_strategy)
+@settings(max_examples=50)
+def test_top_xchild_instantiation(instance):
+    assert isinstance(instance, top_XChild)
 
 @given(instance=QChild_strategy)
 @settings(max_examples=50)
 def test_qchild_instantiation(instance):
     assert isinstance(instance, QChild)
 
-@given(instance=top::RChild_strategy)
+@given(instance=top_RChild_strategy)
 @settings(max_examples=50)
-def test_top::rchild_instantiation(instance):
-    assert isinstance(instance, top::RChild)
+def test_top_rchild_instantiation(instance):
+    assert isinstance(instance, top_RChild)
 
-@given(instance=top::R_strategy)
+@given(instance=top_R_strategy)
 @settings(max_examples=50)
-def test_top::r_instantiation(instance):
-    assert isinstance(instance, top::R)
+def test_top_r_instantiation(instance):
+    assert isinstance(instance, top_R)
 
 @given(instance=PChild_strategy)
 @settings(max_examples=50)
 def test_pchild_instantiation(instance):
     assert isinstance(instance, PChild)
 
-@given(instance=top::QChild_strategy)
+@given(instance=top_QChild_strategy)
 @settings(max_examples=50)
-def test_top::qchild_instantiation(instance):
-    assert isinstance(instance, top::QChild)
+def test_top_qchild_instantiation(instance):
+    assert isinstance(instance, top_QChild)
 
-@given(instance=top::Q_strategy)
+@given(instance=top_Q_strategy)
 @settings(max_examples=50)
-def test_top::q_instantiation(instance):
-    assert isinstance(instance, top::Q)
+def test_top_q_instantiation(instance):
+    assert isinstance(instance, top_Q)
 
 @given(instance=TChild_strategy)
 @settings(max_examples=50)
 def test_tchild_instantiation(instance):
     assert isinstance(instance, TChild)
 
-@given(instance=top::UChild_strategy)
+@given(instance=top_UChild_strategy)
 @settings(max_examples=50)
-def test_top::uchild_instantiation(instance):
-    assert isinstance(instance, top::UChild)
+def test_top_uchild_instantiation(instance):
+    assert isinstance(instance, top_UChild)
 
-@given(instance=top::U_strategy)
+@given(instance=top_U_strategy)
 @settings(max_examples=50)
-def test_top::u_instantiation(instance):
-    assert isinstance(instance, top::U)
+def test_top_u_instantiation(instance):
+    assert isinstance(instance, top_U)
 
 @given(instance=SChild_strategy)
 @settings(max_examples=50)
 def test_schild_instantiation(instance):
     assert isinstance(instance, SChild)
 
-@given(instance=top::TChild_strategy)
+@given(instance=top_TChild_strategy)
 @settings(max_examples=50)
-def test_top::tchild_instantiation(instance):
-    assert isinstance(instance, top::TChild)
+def test_top_tchild_instantiation(instance):
+    assert isinstance(instance, top_TChild)
 
-@given(instance=top::T_strategy)
+@given(instance=top_T_strategy)
 @settings(max_examples=50)
-def test_top::t_instantiation(instance):
-    assert isinstance(instance, top::T)
+def test_top_t_instantiation(instance):
+    assert isinstance(instance, top_T)
 
 @given(instance=RChild_strategy)
 @settings(max_examples=50)
 def test_rchild_instantiation(instance):
     assert isinstance(instance, RChild)
 
-@given(instance=top::SChild_strategy)
+@given(instance=top_SChild_strategy)
 @settings(max_examples=50)
-def test_top::schild_instantiation(instance):
-    assert isinstance(instance, top::SChild)
+def test_top_schild_instantiation(instance):
+    assert isinstance(instance, top_SChild)
 
-@given(instance=top::S_strategy)
+@given(instance=top_S_strategy)
 @settings(max_examples=50)
-def test_top::s_instantiation(instance):
-    assert isinstance(instance, top::S)
+def test_top_s_instantiation(instance):
+    assert isinstance(instance, top_S)
 
 @given(instance=IChild_strategy)
 @settings(max_examples=50)
 def test_ichild_instantiation(instance):
     assert isinstance(instance, IChild)
 
-@given(instance=top::JChild_strategy)
+@given(instance=top_JChild_strategy)
 @settings(max_examples=50)
-def test_top::jchild_instantiation(instance):
-    assert isinstance(instance, top::JChild)
+def test_top_jchild_instantiation(instance):
+    assert isinstance(instance, top_JChild)
 
-@given(instance=top::J_strategy)
+@given(instance=top_J_strategy)
 @settings(max_examples=50)
-def test_top::j_instantiation(instance):
-    assert isinstance(instance, top::J)
+def test_top_j_instantiation(instance):
+    assert isinstance(instance, top_J)
 
 @given(instance=HChild_strategy)
 @settings(max_examples=50)
 def test_hchild_instantiation(instance):
     assert isinstance(instance, HChild)
 
-@given(instance=top::IChild_strategy)
+@given(instance=top_IChild_strategy)
 @settings(max_examples=50)
-def test_top::ichild_instantiation(instance):
-    assert isinstance(instance, top::IChild)
+def test_top_ichild_instantiation(instance):
+    assert isinstance(instance, top_IChild)
 
-@given(instance=top::I_strategy)
+@given(instance=top_I_strategy)
 @settings(max_examples=50)
-def test_top::i_instantiation(instance):
-    assert isinstance(instance, top::I)
+def test_top_i_instantiation(instance):
+    assert isinstance(instance, top_I)
 
 @given(instance=GChild_strategy)
 @settings(max_examples=50)
 def test_gchild_instantiation(instance):
     assert isinstance(instance, GChild)
 
-@given(instance=top::HChild_strategy)
+@given(instance=top_HChild_strategy)
 @settings(max_examples=50)
-def test_top::hchild_instantiation(instance):
-    assert isinstance(instance, top::HChild)
+def test_top_hchild_instantiation(instance):
+    assert isinstance(instance, top_HChild)
 
-@given(instance=top::H_strategy)
+@given(instance=top_H_strategy)
 @settings(max_examples=50)
-def test_top::h_instantiation(instance):
-    assert isinstance(instance, top::H)
+def test_top_h_instantiation(instance):
+    assert isinstance(instance, top_H)
 
 @given(instance=OChild_strategy)
 @settings(max_examples=50)
 def test_ochild_instantiation(instance):
     assert isinstance(instance, OChild)
 
-@given(instance=top::PChild_strategy)
+@given(instance=top_PChild_strategy)
 @settings(max_examples=50)
-def test_top::pchild_instantiation(instance):
-    assert isinstance(instance, top::PChild)
+def test_top_pchild_instantiation(instance):
+    assert isinstance(instance, top_PChild)
 
-@given(instance=top::P_strategy)
+@given(instance=top_P_strategy)
 @settings(max_examples=50)
-def test_top::p_instantiation(instance):
-    assert isinstance(instance, top::P)
+def test_top_p_instantiation(instance):
+    assert isinstance(instance, top_P)
 
 @given(instance=NChild_strategy)
 @settings(max_examples=50)
 def test_nchild_instantiation(instance):
     assert isinstance(instance, NChild)
 
-@given(instance=top::OChild_strategy)
+@given(instance=top_OChild_strategy)
 @settings(max_examples=50)
-def test_top::ochild_instantiation(instance):
-    assert isinstance(instance, top::OChild)
+def test_top_ochild_instantiation(instance):
+    assert isinstance(instance, top_OChild)
 
-@given(instance=top::O_strategy)
+@given(instance=top_O_strategy)
 @settings(max_examples=50)
-def test_top::o_instantiation(instance):
-    assert isinstance(instance, top::O)
+def test_top_o_instantiation(instance):
+    assert isinstance(instance, top_O)
 
 @given(instance=MChild_strategy)
 @settings(max_examples=50)
 def test_mchild_instantiation(instance):
     assert isinstance(instance, MChild)
 
-@given(instance=top::NChild_strategy)
+@given(instance=top_NChild_strategy)
 @settings(max_examples=50)
-def test_top::nchild_instantiation(instance):
-    assert isinstance(instance, top::NChild)
+def test_top_nchild_instantiation(instance):
+    assert isinstance(instance, top_NChild)
 
-@given(instance=top::N_strategy)
+@given(instance=top_N_strategy)
 @settings(max_examples=50)
-def test_top::n_instantiation(instance):
-    assert isinstance(instance, top::N)
+def test_top_n_instantiation(instance):
+    assert isinstance(instance, top_N)
 
 @given(instance=LChild_strategy)
 @settings(max_examples=50)
 def test_lchild_instantiation(instance):
     assert isinstance(instance, LChild)
 
-@given(instance=top::MChild_strategy)
+@given(instance=top_MChild_strategy)
 @settings(max_examples=50)
-def test_top::mchild_instantiation(instance):
-    assert isinstance(instance, top::MChild)
+def test_top_mchild_instantiation(instance):
+    assert isinstance(instance, top_MChild)
 
-@given(instance=top::M_strategy)
+@given(instance=top_M_strategy)
 @settings(max_examples=50)
-def test_top::m_instantiation(instance):
-    assert isinstance(instance, top::M)
+def test_top_m_instantiation(instance):
+    assert isinstance(instance, top_M)
 
 @given(instance=KChild_strategy)
 @settings(max_examples=50)
 def test_kchild_instantiation(instance):
     assert isinstance(instance, KChild)
 
-@given(instance=top::LChild_strategy)
+@given(instance=top_LChild_strategy)
 @settings(max_examples=50)
-def test_top::lchild_instantiation(instance):
-    assert isinstance(instance, top::LChild)
+def test_top_lchild_instantiation(instance):
+    assert isinstance(instance, top_LChild)
 
-@given(instance=top::L_strategy)
+@given(instance=top_L_strategy)
 @settings(max_examples=50)
-def test_top::l_instantiation(instance):
-    assert isinstance(instance, top::L)
+def test_top_l_instantiation(instance):
+    assert isinstance(instance, top_L)
 
 @given(instance=JChild_strategy)
 @settings(max_examples=50)
 def test_jchild_instantiation(instance):
     assert isinstance(instance, JChild)
 
-@given(instance=top::KChild_strategy)
+@given(instance=top_KChild_strategy)
 @settings(max_examples=50)
-def test_top::kchild_instantiation(instance):
-    assert isinstance(instance, top::KChild)
+def test_top_kchild_instantiation(instance):
+    assert isinstance(instance, top_KChild)
 
-@given(instance=top::K_strategy)
+@given(instance=top_K_strategy)
 @settings(max_examples=50)
-def test_top::k_instantiation(instance):
-    assert isinstance(instance, top::K)
+def test_top_k_instantiation(instance):
+    assert isinstance(instance, top_K)
 
 @given(instance=ExprChild_strategy)
 @settings(max_examples=50)
 def test_exprchild_instantiation(instance):
     assert isinstance(instance, ExprChild)
 
-@given(instance=top::AChild_strategy)
+@given(instance=top_AChild_strategy)
 @settings(max_examples=50)
-def test_top::achild_instantiation(instance):
-    assert isinstance(instance, top::AChild)
+def test_top_achild_instantiation(instance):
+    assert isinstance(instance, top_AChild)
 
-@given(instance=top::A_strategy)
+@given(instance=top_A_strategy)
 @settings(max_examples=50)
-def test_top::a_instantiation(instance):
-    assert isinstance(instance, top::A)
+def test_top_a_instantiation(instance):
+    assert isinstance(instance, top_A)
 
-@given(instance=top::ExprChild_strategy)
+@given(instance=top_ExprChild_strategy)
 @settings(max_examples=50)
-def test_top::exprchild_instantiation(instance):
-    assert isinstance(instance, top::ExprChild)
+def test_top_exprchild_instantiation(instance):
+    assert isinstance(instance, top_ExprChild)
 
 @given(instance=FChild_strategy)
 @settings(max_examples=50)
 def test_fchild_instantiation(instance):
     assert isinstance(instance, FChild)
 
-@given(instance=top::GChild_strategy)
+@given(instance=top_GChild_strategy)
 @settings(max_examples=50)
-def test_top::gchild_instantiation(instance):
-    assert isinstance(instance, top::GChild)
+def test_top_gchild_instantiation(instance):
+    assert isinstance(instance, top_GChild)
 
-@given(instance=top::G_strategy)
+@given(instance=top_G_strategy)
 @settings(max_examples=50)
-def test_top::g_instantiation(instance):
-    assert isinstance(instance, top::G)
+def test_top_g_instantiation(instance):
+    assert isinstance(instance, top_G)
 
 @given(instance=EChild_strategy)
 @settings(max_examples=50)
 def test_echild_instantiation(instance):
     assert isinstance(instance, EChild)
 
-@given(instance=top::FChild_strategy)
+@given(instance=top_FChild_strategy)
 @settings(max_examples=50)
-def test_top::fchild_instantiation(instance):
-    assert isinstance(instance, top::FChild)
+def test_top_fchild_instantiation(instance):
+    assert isinstance(instance, top_FChild)
 
-@given(instance=top::F_strategy)
+@given(instance=top_F_strategy)
 @settings(max_examples=50)
-def test_top::f_instantiation(instance):
-    assert isinstance(instance, top::F)
+def test_top_f_instantiation(instance):
+    assert isinstance(instance, top_F)
 
 @given(instance=DChild_strategy)
 @settings(max_examples=50)
 def test_dchild_instantiation(instance):
     assert isinstance(instance, DChild)
 
-@given(instance=top::EChild_strategy)
+@given(instance=top_EChild_strategy)
 @settings(max_examples=50)
-def test_top::echild_instantiation(instance):
-    assert isinstance(instance, top::EChild)
+def test_top_echild_instantiation(instance):
+    assert isinstance(instance, top_EChild)
 
-@given(instance=top::E_strategy)
+@given(instance=top_E_strategy)
 @settings(max_examples=50)
-def test_top::e_instantiation(instance):
-    assert isinstance(instance, top::E)
+def test_top_e_instantiation(instance):
+    assert isinstance(instance, top_E)
 
 @given(instance=CChild_strategy)
 @settings(max_examples=50)
 def test_cchild_instantiation(instance):
     assert isinstance(instance, CChild)
 
-@given(instance=top::DChild_strategy)
+@given(instance=top_DChild_strategy)
 @settings(max_examples=50)
-def test_top::dchild_instantiation(instance):
-    assert isinstance(instance, top::DChild)
+def test_top_dchild_instantiation(instance):
+    assert isinstance(instance, top_DChild)
 
-@given(instance=top::D_strategy)
+@given(instance=top_D_strategy)
 @settings(max_examples=50)
-def test_top::d_instantiation(instance):
-    assert isinstance(instance, top::D)
+def test_top_d_instantiation(instance):
+    assert isinstance(instance, top_D)
 
 @given(instance=BChild_strategy)
 @settings(max_examples=50)
 def test_bchild_instantiation(instance):
     assert isinstance(instance, BChild)
 
-@given(instance=top::CChild_strategy)
+@given(instance=top_CChild_strategy)
 @settings(max_examples=50)
-def test_top::cchild_instantiation(instance):
-    assert isinstance(instance, top::CChild)
+def test_top_cchild_instantiation(instance):
+    assert isinstance(instance, top_CChild)
 
-@given(instance=top::C_strategy)
+@given(instance=top_C_strategy)
 @settings(max_examples=50)
-def test_top::c_instantiation(instance):
-    assert isinstance(instance, top::C)
+def test_top_c_instantiation(instance):
+    assert isinstance(instance, top_C)
 
 @given(instance=AChild_strategy)
 @settings(max_examples=50)
 def test_achild_instantiation(instance):
     assert isinstance(instance, AChild)
 
-@given(instance=top::BChild_strategy)
+@given(instance=top_BChild_strategy)
 @settings(max_examples=50)
-def test_top::bchild_instantiation(instance):
-    assert isinstance(instance, top::BChild)
+def test_top_bchild_instantiation(instance):
+    assert isinstance(instance, top_BChild)
 
-@given(instance=top::B_strategy)
+@given(instance=top_B_strategy)
 @settings(max_examples=50)
-def test_top::b_instantiation(instance):
-    assert isinstance(instance, top::B)
+def test_top_b_instantiation(instance):
+    assert isinstance(instance, top_B)
 
-@given(instance=top::Expr_strategy)
+@given(instance=top_Expr_strategy)
 @settings(max_examples=50)
-def test_top::expr_instantiation(instance):
-    assert isinstance(instance, top::Expr)
-
-@given(instance=WChild_strategy)
-@settings(max_examples=50)
-def test_wchild_instantiation(instance):
-    assert isinstance(instance, WChild)
-
-@given(instance=top::XChild_strategy)
-@settings(max_examples=50)
-def test_top::xchild_instantiation(instance):
-    assert isinstance(instance, top::XChild)
-
-@given(instance=top::X_strategy)
-@settings(max_examples=50)
-def test_top::x_instantiation(instance):
-    assert isinstance(instance, top::X)
-
-@given(instance=VChild_strategy)
-@settings(max_examples=50)
-def test_vchild_instantiation(instance):
-    assert isinstance(instance, VChild)
-
-@given(instance=top::WChild_strategy)
-@settings(max_examples=50)
-def test_top::wchild_instantiation(instance):
-    assert isinstance(instance, top::WChild)
-
-@given(instance=top::W_strategy)
-@settings(max_examples=50)
-def test_top::w_instantiation(instance):
-    assert isinstance(instance, top::W)
-
-@given(instance=UChild_strategy)
-@settings(max_examples=50)
-def test_uchild_instantiation(instance):
-    assert isinstance(instance, UChild)
-
-@given(instance=top::V_strategy)
-@settings(max_examples=50)
-def test_top::v_instantiation(instance):
-    assert isinstance(instance, top::V)
-
-@given(instance=top::VChild_strategy)
-@settings(max_examples=50)
-def test_top::vchild_instantiation(instance):
-    assert isinstance(instance, top::VChild)
+def test_top_expr_instantiation(instance):
+    assert isinstance(instance, top_Expr)

@@ -3,10 +3,10 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    minimalB::B,
+from python_code import (
+    minimalB_B,
 )
 
 # =============================================================================
@@ -15,23 +15,23 @@ from classes import (
 
 
 
-def test_minimalb::b_is_not_abstract():
-    assert not inspect.isabstract(minimalB::B)
+def test_minimalb_b_is_not_abstract():
+    assert not inspect.isabstract(minimalB_B)
 
 
-def test_minimalb::b_constructor_exists():
-    assert callable(minimalB::B.__init__)
+def test_minimalb_b_constructor_exists():
+    assert callable(minimalB_B.__init__)
 
 
-def test_minimalb::b_constructor_args():
-    sig = inspect.signature(minimalB::B.__init__)
+def test_minimalb_b_constructor_args():
+    sig = inspect.signature(minimalB_B.__init__)
     params = list(sig.parameters.keys())
     assert "b" in params, "Missing parameter 'b'"
 
-def test_minimalb::b_has_b():
-    assert hasattr(minimalB::B, "b")
+def test_minimalb_b_has_b():
+    assert hasattr(minimalB_B, "b")
     descriptor = None
-    for klass in minimalB::B.__mro__:
+    for klass in minimalB_B.__mro__:
         if "b" in klass.__dict__:
             descriptor = klass.__dict__["b"]
             break
@@ -49,24 +49,21 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-minimalB::B_strategy = st.builds(
-    minimalB::B,
+minimalB_B_strategy = st.builds(
+    minimalB_B,
     b=
         st.integers()
 )
 
-@given(instance=minimalB::B_strategy)
+@given(instance=minimalB_B_strategy)
 @settings(max_examples=50)
-def test_minimalb::b_instantiation(instance):
-    assert isinstance(instance, minimalB::B)
-
-@given(instance=minimalB::B_strategy)
-def test_minimalb::b_b_type(instance):
-    assert isinstance(instance.b, int)
+def test_minimalb_b_instantiation(instance):
+    assert isinstance(instance, minimalB_B)
 
 
-@given(instance=minimalB::B_strategy)
-def test_minimalb::b_b_setter(instance):
+
+@given(instance=minimalB_B_strategy)
+def test_minimalb_b_b_setter(instance):
     original = instance.b
     instance.b = original
     assert instance.b == original

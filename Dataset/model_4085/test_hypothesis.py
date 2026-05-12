@@ -3,12 +3,12 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    simpleUML::Model,
-    simpleUML::Generalization,
-    simpleUML::UMLClass,
+from python_code import (
+    simpleUML_Model,
+    simpleUML_Generalization,
+    simpleUML_UMLClass,
 )
 
 # =============================================================================
@@ -17,51 +17,51 @@ from classes import (
 
 
 
-def test_simpleuml::model_is_not_abstract():
-    assert not inspect.isabstract(simpleUML::Model)
+def test_simpleuml_model_is_not_abstract():
+    assert not inspect.isabstract(simpleUML_Model)
 
 
-def test_simpleuml::model_constructor_exists():
-    assert callable(simpleUML::Model.__init__)
+def test_simpleuml_model_constructor_exists():
+    assert callable(simpleUML_Model.__init__)
 
 
-def test_simpleuml::model_constructor_args():
-    sig = inspect.signature(simpleUML::Model.__init__)
+def test_simpleuml_model_constructor_args():
+    sig = inspect.signature(simpleUML_Model.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_simpleuml::generalization_is_not_abstract():
-    assert not inspect.isabstract(simpleUML::Generalization)
+def test_simpleuml_generalization_is_not_abstract():
+    assert not inspect.isabstract(simpleUML_Generalization)
 
 
-def test_simpleuml::generalization_constructor_exists():
-    assert callable(simpleUML::Generalization.__init__)
+def test_simpleuml_generalization_constructor_exists():
+    assert callable(simpleUML_Generalization.__init__)
 
 
-def test_simpleuml::generalization_constructor_args():
-    sig = inspect.signature(simpleUML::Generalization.__init__)
+def test_simpleuml_generalization_constructor_args():
+    sig = inspect.signature(simpleUML_Generalization.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_simpleuml::umlclass_is_not_abstract():
-    assert not inspect.isabstract(simpleUML::UMLClass)
+def test_simpleuml_umlclass_is_not_abstract():
+    assert not inspect.isabstract(simpleUML_UMLClass)
 
 
-def test_simpleuml::umlclass_constructor_exists():
-    assert callable(simpleUML::UMLClass.__init__)
+def test_simpleuml_umlclass_constructor_exists():
+    assert callable(simpleUML_UMLClass.__init__)
 
 
-def test_simpleuml::umlclass_constructor_args():
-    sig = inspect.signature(simpleUML::UMLClass.__init__)
+def test_simpleuml_umlclass_constructor_args():
+    sig = inspect.signature(simpleUML_UMLClass.__init__)
     params = list(sig.parameters.keys())
     assert "umlName" in params, "Missing parameter 'umlName'"
 
-def test_simpleuml::umlclass_has_umlName():
-    assert hasattr(simpleUML::UMLClass, "umlName")
+def test_simpleuml_umlclass_has_umlName():
+    assert hasattr(simpleUML_UMLClass, "umlName")
     descriptor = None
-    for klass in simpleUML::UMLClass.__mro__:
+    for klass in simpleUML_UMLClass.__mro__:
         if "umlName" in klass.__dict__:
             descriptor = klass.__dict__["umlName"]
             break
@@ -79,40 +79,37 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-simpleUML::Model_strategy = st.builds(
-    simpleUML::Model,
+simpleUML_Model_strategy = st.builds(
+    simpleUML_Model,
 )
-simpleUML::Generalization_strategy = st.builds(
-    simpleUML::Generalization,
+simpleUML_Generalization_strategy = st.builds(
+    simpleUML_Generalization,
 )
-simpleUML::UMLClass_strategy = st.builds(
-    simpleUML::UMLClass,
+simpleUML_UMLClass_strategy = st.builds(
+    simpleUML_UMLClass,
     umlName=
         safe_text
 )
 
-@given(instance=simpleUML::Model_strategy)
+@given(instance=simpleUML_Model_strategy)
 @settings(max_examples=50)
-def test_simpleuml::model_instantiation(instance):
-    assert isinstance(instance, simpleUML::Model)
+def test_simpleuml_model_instantiation(instance):
+    assert isinstance(instance, simpleUML_Model)
 
-@given(instance=simpleUML::Generalization_strategy)
+@given(instance=simpleUML_Generalization_strategy)
 @settings(max_examples=50)
-def test_simpleuml::generalization_instantiation(instance):
-    assert isinstance(instance, simpleUML::Generalization)
+def test_simpleuml_generalization_instantiation(instance):
+    assert isinstance(instance, simpleUML_Generalization)
 
-@given(instance=simpleUML::UMLClass_strategy)
+@given(instance=simpleUML_UMLClass_strategy)
 @settings(max_examples=50)
-def test_simpleuml::umlclass_instantiation(instance):
-    assert isinstance(instance, simpleUML::UMLClass)
-
-@given(instance=simpleUML::UMLClass_strategy)
-def test_simpleuml::umlclass_umlName_type(instance):
-    assert isinstance(instance.umlName, str)
+def test_simpleuml_umlclass_instantiation(instance):
+    assert isinstance(instance, simpleUML_UMLClass)
 
 
-@given(instance=simpleUML::UMLClass_strategy)
-def test_simpleuml::umlclass_umlName_setter(instance):
+
+@given(instance=simpleUML_UMLClass_strategy)
+def test_simpleuml_umlclass_umlName_setter(instance):
     original = instance.umlName
     instance.umlName = original
     assert instance.umlName == original

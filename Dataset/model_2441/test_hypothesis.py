@@ -3,15 +3,15 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    ddl::DataElement,
+from python_code import (
+    ddl_DataElement,
     DataElement,
-    ddl::Column,
-    ddl::DataType,
-    ddl::Table,
-    ddl::Schema,
+    ddl_DataType,
+    ddl_Table,
+    ddl_Column,
+    ddl_Schema,
 )
 
 # =============================================================================
@@ -20,23 +20,23 @@ from classes import (
 
 
 
-def test_ddl::dataelement_is_not_abstract():
-    assert not inspect.isabstract(ddl::DataElement)
+def test_ddl_dataelement_is_not_abstract():
+    assert not inspect.isabstract(ddl_DataElement)
 
 
-def test_ddl::dataelement_constructor_exists():
-    assert callable(ddl::DataElement.__init__)
+def test_ddl_dataelement_constructor_exists():
+    assert callable(ddl_DataElement.__init__)
 
 
-def test_ddl::dataelement_constructor_args():
-    sig = inspect.signature(ddl::DataElement.__init__)
+def test_ddl_dataelement_constructor_args():
+    sig = inspect.signature(ddl_DataElement.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_ddl::dataelement_has_name():
-    assert hasattr(ddl::DataElement, "name")
+def test_ddl_dataelement_has_name():
+    assert hasattr(ddl_DataElement, "name")
     descriptor = None
-    for klass in ddl::DataElement.__mro__:
+    for klass in ddl_DataElement.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -58,58 +58,58 @@ def test_dataelement_constructor_args():
 
 
 
-def test_ddl::column_is_not_abstract():
-    assert not inspect.isabstract(ddl::Column)
+def test_ddl_datatype_is_not_abstract():
+    assert not inspect.isabstract(ddl_DataType)
 
 
-def test_ddl::column_constructor_exists():
-    assert callable(ddl::Column.__init__)
+def test_ddl_datatype_constructor_exists():
+    assert callable(ddl_DataType.__init__)
 
 
-def test_ddl::column_constructor_args():
-    sig = inspect.signature(ddl::Column.__init__)
+def test_ddl_datatype_constructor_args():
+    sig = inspect.signature(ddl_DataType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ddl::datatype_is_not_abstract():
-    assert not inspect.isabstract(ddl::DataType)
+def test_ddl_table_is_not_abstract():
+    assert not inspect.isabstract(ddl_Table)
 
 
-def test_ddl::datatype_constructor_exists():
-    assert callable(ddl::DataType.__init__)
+def test_ddl_table_constructor_exists():
+    assert callable(ddl_Table.__init__)
 
 
-def test_ddl::datatype_constructor_args():
-    sig = inspect.signature(ddl::DataType.__init__)
+def test_ddl_table_constructor_args():
+    sig = inspect.signature(ddl_Table.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ddl::table_is_not_abstract():
-    assert not inspect.isabstract(ddl::Table)
+def test_ddl_column_is_not_abstract():
+    assert not inspect.isabstract(ddl_Column)
 
 
-def test_ddl::table_constructor_exists():
-    assert callable(ddl::Table.__init__)
+def test_ddl_column_constructor_exists():
+    assert callable(ddl_Column.__init__)
 
 
-def test_ddl::table_constructor_args():
-    sig = inspect.signature(ddl::Table.__init__)
+def test_ddl_column_constructor_args():
+    sig = inspect.signature(ddl_Column.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ddl::schema_is_not_abstract():
-    assert not inspect.isabstract(ddl::Schema)
+def test_ddl_schema_is_not_abstract():
+    assert not inspect.isabstract(ddl_Schema)
 
 
-def test_ddl::schema_constructor_exists():
-    assert callable(ddl::Schema.__init__)
+def test_ddl_schema_constructor_exists():
+    assert callable(ddl_Schema.__init__)
 
 
-def test_ddl::schema_constructor_args():
-    sig = inspect.signature(ddl::Schema.__init__)
+def test_ddl_schema_constructor_args():
+    sig = inspect.signature(ddl_Schema.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -124,39 +124,36 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-ddl::DataElement_strategy = st.builds(
-    ddl::DataElement,
+ddl_DataElement_strategy = st.builds(
+    ddl_DataElement,
     name=
         safe_text
 )
 DataElement_strategy = st.builds(
     DataElement,
 )
-ddl::Column_strategy = st.builds(
-    ddl::Column,
+ddl_DataType_strategy = st.builds(
+    ddl_DataType,
 )
-ddl::DataType_strategy = st.builds(
-    ddl::DataType,
+ddl_Table_strategy = st.builds(
+    ddl_Table,
 )
-ddl::Table_strategy = st.builds(
-    ddl::Table,
+ddl_Column_strategy = st.builds(
+    ddl_Column,
 )
-ddl::Schema_strategy = st.builds(
-    ddl::Schema,
+ddl_Schema_strategy = st.builds(
+    ddl_Schema,
 )
 
-@given(instance=ddl::DataElement_strategy)
+@given(instance=ddl_DataElement_strategy)
 @settings(max_examples=50)
-def test_ddl::dataelement_instantiation(instance):
-    assert isinstance(instance, ddl::DataElement)
-
-@given(instance=ddl::DataElement_strategy)
-def test_ddl::dataelement_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_ddl_dataelement_instantiation(instance):
+    assert isinstance(instance, ddl_DataElement)
 
 
-@given(instance=ddl::DataElement_strategy)
-def test_ddl::dataelement_name_setter(instance):
+
+@given(instance=ddl_DataElement_strategy)
+def test_ddl_dataelement_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
@@ -166,22 +163,22 @@ def test_ddl::dataelement_name_setter(instance):
 def test_dataelement_instantiation(instance):
     assert isinstance(instance, DataElement)
 
-@given(instance=ddl::Column_strategy)
+@given(instance=ddl_DataType_strategy)
 @settings(max_examples=50)
-def test_ddl::column_instantiation(instance):
-    assert isinstance(instance, ddl::Column)
+def test_ddl_datatype_instantiation(instance):
+    assert isinstance(instance, ddl_DataType)
 
-@given(instance=ddl::DataType_strategy)
+@given(instance=ddl_Table_strategy)
 @settings(max_examples=50)
-def test_ddl::datatype_instantiation(instance):
-    assert isinstance(instance, ddl::DataType)
+def test_ddl_table_instantiation(instance):
+    assert isinstance(instance, ddl_Table)
 
-@given(instance=ddl::Table_strategy)
+@given(instance=ddl_Column_strategy)
 @settings(max_examples=50)
-def test_ddl::table_instantiation(instance):
-    assert isinstance(instance, ddl::Table)
+def test_ddl_column_instantiation(instance):
+    assert isinstance(instance, ddl_Column)
 
-@given(instance=ddl::Schema_strategy)
+@given(instance=ddl_Schema_strategy)
 @settings(max_examples=50)
-def test_ddl::schema_instantiation(instance):
-    assert isinstance(instance, ddl::Schema)
+def test_ddl_schema_instantiation(instance):
+    assert isinstance(instance, ddl_Schema)

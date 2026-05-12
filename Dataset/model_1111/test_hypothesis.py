@@ -3,17 +3,17 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     State,
-    states::CompoundState,
-    states::SimpleState,
-    states::Transition,
-    states::State,
-    states::Statemachine,
-    states::Module,
-    states::Event,
+    states_CompoundState,
+    states_SimpleState,
+    states_Transition,
+    states_State,
+    states_Statemachine,
+    states_Module,
+    states_Event,
 )
 
 # =============================================================================
@@ -36,37 +36,37 @@ def test_state_constructor_args():
 
 
 
-def test_states::compoundstate_is_not_abstract():
-    assert not inspect.isabstract(states::CompoundState)
+def test_states_compoundstate_is_not_abstract():
+    assert not inspect.isabstract(states_CompoundState)
 
 
-def test_states::compoundstate_constructor_exists():
-    assert callable(states::CompoundState.__init__)
+def test_states_compoundstate_constructor_exists():
+    assert callable(states_CompoundState.__init__)
 
 
-def test_states::compoundstate_constructor_args():
-    sig = inspect.signature(states::CompoundState.__init__)
+def test_states_compoundstate_constructor_args():
+    sig = inspect.signature(states_CompoundState.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_states::simplestate_is_not_abstract():
-    assert not inspect.isabstract(states::SimpleState)
+def test_states_simplestate_is_not_abstract():
+    assert not inspect.isabstract(states_SimpleState)
 
 
-def test_states::simplestate_constructor_exists():
-    assert callable(states::SimpleState.__init__)
+def test_states_simplestate_constructor_exists():
+    assert callable(states_SimpleState.__init__)
 
 
-def test_states::simplestate_constructor_args():
-    sig = inspect.signature(states::SimpleState.__init__)
+def test_states_simplestate_constructor_args():
+    sig = inspect.signature(states_SimpleState.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
 
-def test_states::simplestate_has_value():
-    assert hasattr(states::SimpleState, "value")
+def test_states_simplestate_has_value():
+    assert hasattr(states_SimpleState, "value")
     descriptor = None
-    for klass in states::SimpleState.__mro__:
+    for klass in states_SimpleState.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -74,91 +74,115 @@ def test_states::simplestate_has_value():
 
 
 
-def test_states::transition_is_not_abstract():
-    assert not inspect.isabstract(states::Transition)
+def test_states_transition_is_not_abstract():
+    assert not inspect.isabstract(states_Transition)
 
 
-def test_states::transition_constructor_exists():
-    assert callable(states::Transition.__init__)
+def test_states_transition_constructor_exists():
+    assert callable(states_Transition.__init__)
 
 
-def test_states::transition_constructor_args():
-    sig = inspect.signature(states::Transition.__init__)
+def test_states_transition_constructor_args():
+    sig = inspect.signature(states_Transition.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_states::state_is_not_abstract():
-    assert not inspect.isabstract(states::State)
+def test_states_state_is_not_abstract():
+    assert not inspect.isabstract(states_State)
 
 
-def test_states::state_constructor_exists():
-    assert callable(states::State.__init__)
+def test_states_state_constructor_exists():
+    assert callable(states_State.__init__)
 
 
-def test_states::state_constructor_args():
-    sig = inspect.signature(states::State.__init__)
+def test_states_state_constructor_args():
+    sig = inspect.signature(states_State.__init__)
     params = list(sig.parameters.keys())
-    assert "name" in params, "Missing parameter 'name'"
     assert "initial" in params, "Missing parameter 'initial'"
+    assert "name" in params, "Missing parameter 'name'"
 
-def test_states::state_has_name():
-    assert hasattr(states::State, "name")
+def test_states_state_has_initial():
+    assert hasattr(states_State, "initial")
     descriptor = None
-    for klass in states::State.__mro__:
+    for klass in states_State.__mro__:
+        if "initial" in klass.__dict__:
+            descriptor = klass.__dict__["initial"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_states_state_has_name():
+    assert hasattr(states_State, "name")
+    descriptor = None
+    for klass in states_State.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
-def test_states::state_has_initial():
-    assert hasattr(states::State, "initial")
-    descriptor = None
-    for klass in states::State.__mro__:
-        if "initial" in klass.__dict__:
-            descriptor = klass.__dict__["initial"]
-            break
-    assert isinstance(descriptor, property)
 
 
-
-def test_states::statemachine_is_not_abstract():
-    assert not inspect.isabstract(states::Statemachine)
-
-
-def test_states::statemachine_constructor_exists():
-    assert callable(states::Statemachine.__init__)
+def test_states_statemachine_is_not_abstract():
+    assert not inspect.isabstract(states_Statemachine)
 
 
-def test_states::statemachine_constructor_args():
-    sig = inspect.signature(states::Statemachine.__init__)
+def test_states_statemachine_constructor_exists():
+    assert callable(states_Statemachine.__init__)
+
+
+def test_states_statemachine_constructor_args():
+    sig = inspect.signature(states_Statemachine.__init__)
     params = list(sig.parameters.keys())
+    assert "name" in params, "Missing parameter 'name'"
     assert "initial" in params, "Missing parameter 'initial'"
     assert "value" in params, "Missing parameter 'value'"
-    assert "name" in params, "Missing parameter 'name'"
 
-def test_states::statemachine_has_initial():
-    assert hasattr(states::Statemachine, "initial")
+def test_states_statemachine_has_name():
+    assert hasattr(states_Statemachine, "name")
     descriptor = None
-    for klass in states::Statemachine.__mro__:
+    for klass in states_Statemachine.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_states_statemachine_has_initial():
+    assert hasattr(states_Statemachine, "initial")
+    descriptor = None
+    for klass in states_Statemachine.__mro__:
         if "initial" in klass.__dict__:
             descriptor = klass.__dict__["initial"]
             break
     assert isinstance(descriptor, property)
 
-def test_states::statemachine_has_value():
-    assert hasattr(states::Statemachine, "value")
+def test_states_statemachine_has_value():
+    assert hasattr(states_Statemachine, "value")
     descriptor = None
-    for klass in states::Statemachine.__mro__:
+    for klass in states_Statemachine.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
     assert isinstance(descriptor, property)
 
-def test_states::statemachine_has_name():
-    assert hasattr(states::Statemachine, "name")
+
+
+def test_states_module_is_not_abstract():
+    assert not inspect.isabstract(states_Module)
+
+
+def test_states_module_constructor_exists():
+    assert callable(states_Module.__init__)
+
+
+def test_states_module_constructor_args():
+    sig = inspect.signature(states_Module.__init__)
+    params = list(sig.parameters.keys())
+    assert "name" in params, "Missing parameter 'name'"
+
+def test_states_module_has_name():
+    assert hasattr(states_Module, "name")
     descriptor = None
-    for klass in states::Statemachine.__mro__:
+    for klass in states_Module.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -166,47 +190,23 @@ def test_states::statemachine_has_name():
 
 
 
-def test_states::module_is_not_abstract():
-    assert not inspect.isabstract(states::Module)
+def test_states_event_is_not_abstract():
+    assert not inspect.isabstract(states_Event)
 
 
-def test_states::module_constructor_exists():
-    assert callable(states::Module.__init__)
+def test_states_event_constructor_exists():
+    assert callable(states_Event.__init__)
 
 
-def test_states::module_constructor_args():
-    sig = inspect.signature(states::Module.__init__)
+def test_states_event_constructor_args():
+    sig = inspect.signature(states_Event.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_states::module_has_name():
-    assert hasattr(states::Module, "name")
+def test_states_event_has_name():
+    assert hasattr(states_Event, "name")
     descriptor = None
-    for klass in states::Module.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_states::event_is_not_abstract():
-    assert not inspect.isabstract(states::Event)
-
-
-def test_states::event_constructor_exists():
-    assert callable(states::Event.__init__)
-
-
-def test_states::event_constructor_args():
-    sig = inspect.signature(states::Event.__init__)
-    params = list(sig.parameters.keys())
-    assert "name" in params, "Missing parameter 'name'"
-
-def test_states::event_has_name():
-    assert hasattr(states::Event, "name")
-    descriptor = None
-    for klass in states::Event.__mro__:
+    for klass in states_Event.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -227,40 +227,40 @@ safe_text = st.text(
 State_strategy = st.builds(
     State,
 )
-states::CompoundState_strategy = st.builds(
-    states::CompoundState,
+states_CompoundState_strategy = st.builds(
+    states_CompoundState,
 )
-states::SimpleState_strategy = st.builds(
-    states::SimpleState,
+states_SimpleState_strategy = st.builds(
+    states_SimpleState,
     value=
         st.integers()
 )
-states::Transition_strategy = st.builds(
-    states::Transition,
+states_Transition_strategy = st.builds(
+    states_Transition,
 )
-states::State_strategy = st.builds(
-    states::State,
+states_State_strategy = st.builds(
+    states_State,
+    initial=
+        st.booleans(),
+    name=
+        safe_text
+)
+states_Statemachine_strategy = st.builds(
+    states_Statemachine,
     name=
         safe_text,
     initial=
-        st.booleans()
-)
-states::Statemachine_strategy = st.builds(
-    states::Statemachine,
-    initial=
         st.booleans(),
     value=
-        st.integers(),
+        st.integers()
+)
+states_Module_strategy = st.builds(
+    states_Module,
     name=
         safe_text
 )
-states::Module_strategy = st.builds(
-    states::Module,
-    name=
-        safe_text
-)
-states::Event_strategy = st.builds(
-    states::Event,
+states_Event_strategy = st.builds(
+    states_Event,
     name=
         safe_text
 )
@@ -270,125 +270,101 @@ states::Event_strategy = st.builds(
 def test_state_instantiation(instance):
     assert isinstance(instance, State)
 
-@given(instance=states::CompoundState_strategy)
+@given(instance=states_CompoundState_strategy)
 @settings(max_examples=50)
-def test_states::compoundstate_instantiation(instance):
-    assert isinstance(instance, states::CompoundState)
+def test_states_compoundstate_instantiation(instance):
+    assert isinstance(instance, states_CompoundState)
 
-@given(instance=states::SimpleState_strategy)
+@given(instance=states_SimpleState_strategy)
 @settings(max_examples=50)
-def test_states::simplestate_instantiation(instance):
-    assert isinstance(instance, states::SimpleState)
-
-@given(instance=states::SimpleState_strategy)
-def test_states::simplestate_value_type(instance):
-    assert isinstance(instance.value, int)
+def test_states_simplestate_instantiation(instance):
+    assert isinstance(instance, states_SimpleState)
 
 
-@given(instance=states::SimpleState_strategy)
-def test_states::simplestate_value_setter(instance):
+
+@given(instance=states_SimpleState_strategy)
+def test_states_simplestate_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
 
-@given(instance=states::Transition_strategy)
+@given(instance=states_Transition_strategy)
 @settings(max_examples=50)
-def test_states::transition_instantiation(instance):
-    assert isinstance(instance, states::Transition)
+def test_states_transition_instantiation(instance):
+    assert isinstance(instance, states_Transition)
 
-@given(instance=states::State_strategy)
+@given(instance=states_State_strategy)
 @settings(max_examples=50)
-def test_states::state_instantiation(instance):
-    assert isinstance(instance, states::State)
-
-@given(instance=states::State_strategy)
-def test_states::state_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_states_state_instantiation(instance):
+    assert isinstance(instance, states_State)
 
 
-@given(instance=states::State_strategy)
-def test_states::state_name_setter(instance):
+
+@given(instance=states_State_strategy)
+def test_states_state_initial_setter(instance):
+    original = instance.initial
+    instance.initial = original
+    assert instance.initial == original
+
+
+
+@given(instance=states_State_strategy)
+def test_states_state_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=states::State_strategy)
-def test_states::state_initial_type(instance):
-    assert isinstance(instance.initial, bool)
-
-
-@given(instance=states::State_strategy)
-def test_states::state_initial_setter(instance):
-    original = instance.initial
-    instance.initial = original
-    assert instance.initial == original
-
-@given(instance=states::Statemachine_strategy)
+@given(instance=states_Statemachine_strategy)
 @settings(max_examples=50)
-def test_states::statemachine_instantiation(instance):
-    assert isinstance(instance, states::Statemachine)
-
-@given(instance=states::Statemachine_strategy)
-def test_states::statemachine_initial_type(instance):
-    assert isinstance(instance.initial, bool)
+def test_states_statemachine_instantiation(instance):
+    assert isinstance(instance, states_Statemachine)
 
 
-@given(instance=states::Statemachine_strategy)
-def test_states::statemachine_initial_setter(instance):
+
+@given(instance=states_Statemachine_strategy)
+def test_states_statemachine_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+
+
+@given(instance=states_Statemachine_strategy)
+def test_states_statemachine_initial_setter(instance):
     original = instance.initial
     instance.initial = original
     assert instance.initial == original
 
-@given(instance=states::Statemachine_strategy)
-def test_states::statemachine_value_type(instance):
-    assert isinstance(instance.value, int)
 
 
-@given(instance=states::Statemachine_strategy)
-def test_states::statemachine_value_setter(instance):
+@given(instance=states_Statemachine_strategy)
+def test_states_statemachine_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
 
-@given(instance=states::Statemachine_strategy)
-def test_states::statemachine_name_type(instance):
-    assert isinstance(instance.name, str)
+@given(instance=states_Module_strategy)
+@settings(max_examples=50)
+def test_states_module_instantiation(instance):
+    assert isinstance(instance, states_Module)
 
 
-@given(instance=states::Statemachine_strategy)
-def test_states::statemachine_name_setter(instance):
+
+@given(instance=states_Module_strategy)
+def test_states_module_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=states::Module_strategy)
+@given(instance=states_Event_strategy)
 @settings(max_examples=50)
-def test_states::module_instantiation(instance):
-    assert isinstance(instance, states::Module)
-
-@given(instance=states::Module_strategy)
-def test_states::module_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_states_event_instantiation(instance):
+    assert isinstance(instance, states_Event)
 
 
-@given(instance=states::Module_strategy)
-def test_states::module_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
 
-@given(instance=states::Event_strategy)
-@settings(max_examples=50)
-def test_states::event_instantiation(instance):
-    assert isinstance(instance, states::Event)
-
-@given(instance=states::Event_strategy)
-def test_states::event_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=states::Event_strategy)
-def test_states::event_name_setter(instance):
+@given(instance=states_Event_strategy)
+def test_states_event_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original

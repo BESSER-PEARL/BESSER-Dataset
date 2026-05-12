@@ -3,14 +3,14 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     State,
-    complexStateMachineMetaModel::CompositeState,
-    complexStateMachineMetaModel::Transition,
-    complexStateMachineMetaModel::State,
-    complexStateMachineMetaModel::ComplexStateMachine,
+    complexStateMachineMetaModel_CompositeState,
+    complexStateMachineMetaModel_Transition,
+    complexStateMachineMetaModel_State,
+    complexStateMachineMetaModel_ComplexStateMachine,
 )
 
 # =============================================================================
@@ -33,37 +33,37 @@ def test_state_constructor_args():
 
 
 
-def test_complexstatemachinemetamodel::compositestate_is_not_abstract():
-    assert not inspect.isabstract(complexStateMachineMetaModel::CompositeState)
+def test_complexstatemachinemetamodel_compositestate_is_not_abstract():
+    assert not inspect.isabstract(complexStateMachineMetaModel_CompositeState)
 
 
-def test_complexstatemachinemetamodel::compositestate_constructor_exists():
-    assert callable(complexStateMachineMetaModel::CompositeState.__init__)
+def test_complexstatemachinemetamodel_compositestate_constructor_exists():
+    assert callable(complexStateMachineMetaModel_CompositeState.__init__)
 
 
-def test_complexstatemachinemetamodel::compositestate_constructor_args():
-    sig = inspect.signature(complexStateMachineMetaModel::CompositeState.__init__)
+def test_complexstatemachinemetamodel_compositestate_constructor_args():
+    sig = inspect.signature(complexStateMachineMetaModel_CompositeState.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_complexstatemachinemetamodel::transition_is_not_abstract():
-    assert not inspect.isabstract(complexStateMachineMetaModel::Transition)
+def test_complexstatemachinemetamodel_transition_is_not_abstract():
+    assert not inspect.isabstract(complexStateMachineMetaModel_Transition)
 
 
-def test_complexstatemachinemetamodel::transition_constructor_exists():
-    assert callable(complexStateMachineMetaModel::Transition.__init__)
+def test_complexstatemachinemetamodel_transition_constructor_exists():
+    assert callable(complexStateMachineMetaModel_Transition.__init__)
 
 
-def test_complexstatemachinemetamodel::transition_constructor_args():
-    sig = inspect.signature(complexStateMachineMetaModel::Transition.__init__)
+def test_complexstatemachinemetamodel_transition_constructor_args():
+    sig = inspect.signature(complexStateMachineMetaModel_Transition.__init__)
     params = list(sig.parameters.keys())
     assert "Name" in params, "Missing parameter 'Name'"
 
-def test_complexstatemachinemetamodel::transition_has_Name():
-    assert hasattr(complexStateMachineMetaModel::Transition, "Name")
+def test_complexstatemachinemetamodel_transition_has_Name():
+    assert hasattr(complexStateMachineMetaModel_Transition, "Name")
     descriptor = None
-    for klass in complexStateMachineMetaModel::Transition.__mro__:
+    for klass in complexStateMachineMetaModel_Transition.__mro__:
         if "Name" in klass.__dict__:
             descriptor = klass.__dict__["Name"]
             break
@@ -71,23 +71,23 @@ def test_complexstatemachinemetamodel::transition_has_Name():
 
 
 
-def test_complexstatemachinemetamodel::state_is_not_abstract():
-    assert not inspect.isabstract(complexStateMachineMetaModel::State)
+def test_complexstatemachinemetamodel_state_is_not_abstract():
+    assert not inspect.isabstract(complexStateMachineMetaModel_State)
 
 
-def test_complexstatemachinemetamodel::state_constructor_exists():
-    assert callable(complexStateMachineMetaModel::State.__init__)
+def test_complexstatemachinemetamodel_state_constructor_exists():
+    assert callable(complexStateMachineMetaModel_State.__init__)
 
 
-def test_complexstatemachinemetamodel::state_constructor_args():
-    sig = inspect.signature(complexStateMachineMetaModel::State.__init__)
+def test_complexstatemachinemetamodel_state_constructor_args():
+    sig = inspect.signature(complexStateMachineMetaModel_State.__init__)
     params = list(sig.parameters.keys())
     assert "Name" in params, "Missing parameter 'Name'"
 
-def test_complexstatemachinemetamodel::state_has_Name():
-    assert hasattr(complexStateMachineMetaModel::State, "Name")
+def test_complexstatemachinemetamodel_state_has_Name():
+    assert hasattr(complexStateMachineMetaModel_State, "Name")
     descriptor = None
-    for klass in complexStateMachineMetaModel::State.__mro__:
+    for klass in complexStateMachineMetaModel_State.__mro__:
         if "Name" in klass.__dict__:
             descriptor = klass.__dict__["Name"]
             break
@@ -95,23 +95,23 @@ def test_complexstatemachinemetamodel::state_has_Name():
 
 
 
-def test_complexstatemachinemetamodel::complexstatemachine_is_not_abstract():
-    assert not inspect.isabstract(complexStateMachineMetaModel::ComplexStateMachine)
+def test_complexstatemachinemetamodel_complexstatemachine_is_not_abstract():
+    assert not inspect.isabstract(complexStateMachineMetaModel_ComplexStateMachine)
 
 
-def test_complexstatemachinemetamodel::complexstatemachine_constructor_exists():
-    assert callable(complexStateMachineMetaModel::ComplexStateMachine.__init__)
+def test_complexstatemachinemetamodel_complexstatemachine_constructor_exists():
+    assert callable(complexStateMachineMetaModel_ComplexStateMachine.__init__)
 
 
-def test_complexstatemachinemetamodel::complexstatemachine_constructor_args():
-    sig = inspect.signature(complexStateMachineMetaModel::ComplexStateMachine.__init__)
+def test_complexstatemachinemetamodel_complexstatemachine_constructor_args():
+    sig = inspect.signature(complexStateMachineMetaModel_ComplexStateMachine.__init__)
     params = list(sig.parameters.keys())
     assert "Name" in params, "Missing parameter 'Name'"
 
-def test_complexstatemachinemetamodel::complexstatemachine_has_Name():
-    assert hasattr(complexStateMachineMetaModel::ComplexStateMachine, "Name")
+def test_complexstatemachinemetamodel_complexstatemachine_has_Name():
+    assert hasattr(complexStateMachineMetaModel_ComplexStateMachine, "Name")
     descriptor = None
-    for klass in complexStateMachineMetaModel::ComplexStateMachine.__mro__:
+    for klass in complexStateMachineMetaModel_ComplexStateMachine.__mro__:
         if "Name" in klass.__dict__:
             descriptor = klass.__dict__["Name"]
             break
@@ -132,21 +132,21 @@ safe_text = st.text(
 State_strategy = st.builds(
     State,
 )
-complexStateMachineMetaModel::CompositeState_strategy = st.builds(
-    complexStateMachineMetaModel::CompositeState,
+complexStateMachineMetaModel_CompositeState_strategy = st.builds(
+    complexStateMachineMetaModel_CompositeState,
 )
-complexStateMachineMetaModel::Transition_strategy = st.builds(
-    complexStateMachineMetaModel::Transition,
+complexStateMachineMetaModel_Transition_strategy = st.builds(
+    complexStateMachineMetaModel_Transition,
     Name=
         safe_text
 )
-complexStateMachineMetaModel::State_strategy = st.builds(
-    complexStateMachineMetaModel::State,
+complexStateMachineMetaModel_State_strategy = st.builds(
+    complexStateMachineMetaModel_State,
     Name=
         safe_text
 )
-complexStateMachineMetaModel::ComplexStateMachine_strategy = st.builds(
-    complexStateMachineMetaModel::ComplexStateMachine,
+complexStateMachineMetaModel_ComplexStateMachine_strategy = st.builds(
+    complexStateMachineMetaModel_ComplexStateMachine,
     Name=
         safe_text
 )
@@ -156,55 +156,46 @@ complexStateMachineMetaModel::ComplexStateMachine_strategy = st.builds(
 def test_state_instantiation(instance):
     assert isinstance(instance, State)
 
-@given(instance=complexStateMachineMetaModel::CompositeState_strategy)
+@given(instance=complexStateMachineMetaModel_CompositeState_strategy)
 @settings(max_examples=50)
-def test_complexstatemachinemetamodel::compositestate_instantiation(instance):
-    assert isinstance(instance, complexStateMachineMetaModel::CompositeState)
+def test_complexstatemachinemetamodel_compositestate_instantiation(instance):
+    assert isinstance(instance, complexStateMachineMetaModel_CompositeState)
 
-@given(instance=complexStateMachineMetaModel::Transition_strategy)
+@given(instance=complexStateMachineMetaModel_Transition_strategy)
 @settings(max_examples=50)
-def test_complexstatemachinemetamodel::transition_instantiation(instance):
-    assert isinstance(instance, complexStateMachineMetaModel::Transition)
-
-@given(instance=complexStateMachineMetaModel::Transition_strategy)
-def test_complexstatemachinemetamodel::transition_Name_type(instance):
-    assert isinstance(instance.Name, str)
+def test_complexstatemachinemetamodel_transition_instantiation(instance):
+    assert isinstance(instance, complexStateMachineMetaModel_Transition)
 
 
-@given(instance=complexStateMachineMetaModel::Transition_strategy)
-def test_complexstatemachinemetamodel::transition_Name_setter(instance):
+
+@given(instance=complexStateMachineMetaModel_Transition_strategy)
+def test_complexstatemachinemetamodel_transition_Name_setter(instance):
     original = instance.Name
     instance.Name = original
     assert instance.Name == original
 
-@given(instance=complexStateMachineMetaModel::State_strategy)
+@given(instance=complexStateMachineMetaModel_State_strategy)
 @settings(max_examples=50)
-def test_complexstatemachinemetamodel::state_instantiation(instance):
-    assert isinstance(instance, complexStateMachineMetaModel::State)
-
-@given(instance=complexStateMachineMetaModel::State_strategy)
-def test_complexstatemachinemetamodel::state_Name_type(instance):
-    assert isinstance(instance.Name, str)
+def test_complexstatemachinemetamodel_state_instantiation(instance):
+    assert isinstance(instance, complexStateMachineMetaModel_State)
 
 
-@given(instance=complexStateMachineMetaModel::State_strategy)
-def test_complexstatemachinemetamodel::state_Name_setter(instance):
+
+@given(instance=complexStateMachineMetaModel_State_strategy)
+def test_complexstatemachinemetamodel_state_Name_setter(instance):
     original = instance.Name
     instance.Name = original
     assert instance.Name == original
 
-@given(instance=complexStateMachineMetaModel::ComplexStateMachine_strategy)
+@given(instance=complexStateMachineMetaModel_ComplexStateMachine_strategy)
 @settings(max_examples=50)
-def test_complexstatemachinemetamodel::complexstatemachine_instantiation(instance):
-    assert isinstance(instance, complexStateMachineMetaModel::ComplexStateMachine)
-
-@given(instance=complexStateMachineMetaModel::ComplexStateMachine_strategy)
-def test_complexstatemachinemetamodel::complexstatemachine_Name_type(instance):
-    assert isinstance(instance.Name, str)
+def test_complexstatemachinemetamodel_complexstatemachine_instantiation(instance):
+    assert isinstance(instance, complexStateMachineMetaModel_ComplexStateMachine)
 
 
-@given(instance=complexStateMachineMetaModel::ComplexStateMachine_strategy)
-def test_complexstatemachinemetamodel::complexstatemachine_Name_setter(instance):
+
+@given(instance=complexStateMachineMetaModel_ComplexStateMachine_strategy)
+def test_complexstatemachinemetamodel_complexstatemachine_Name_setter(instance):
     original = instance.Name
     instance.Name = original
     assert instance.Name == original

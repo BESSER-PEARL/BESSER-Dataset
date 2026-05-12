@@ -3,7 +3,7 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
 from python_code import (
     Deposito,
@@ -44,17 +44,8 @@ def test_deposito_constructor_exists():
 def test_deposito_constructor_args():
     sig = inspect.signature(Deposito.__init__)
     params = list(sig.parameters.keys())
-    assert "Nome" in params, "Missing parameter 'Nome'"
     assert "Valor" in params, "Missing parameter 'Valor'"
-
-def test_deposito_has_Nome():
-    assert hasattr(Deposito, "Nome")
-    descriptor = None
-    for klass in Deposito.__mro__:
-        if "Nome" in klass.__dict__:
-            descriptor = klass.__dict__["Nome"]
-            break
-    assert isinstance(descriptor, property)
+    assert "Nome" in params, "Missing parameter 'Nome'"
 
 def test_deposito_has_Valor():
     assert hasattr(Deposito, "Valor")
@@ -62,6 +53,15 @@ def test_deposito_has_Valor():
     for klass in Deposito.__mro__:
         if "Valor" in klass.__dict__:
             descriptor = klass.__dict__["Valor"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_deposito_has_Nome():
+    assert hasattr(Deposito, "Nome")
+    descriptor = None
+    for klass in Deposito.__mro__:
+        if "Nome" in klass.__dict__:
+            descriptor = klass.__dict__["Nome"]
             break
     assert isinstance(descriptor, property)
 
@@ -266,18 +266,9 @@ def test_conta_poupan_a_constructor_exists():
 def test_conta_poupan_a_constructor_args():
     sig = inspect.signature(Conta_Poupan_a.__init__)
     params = list(sig.parameters.keys())
-    assert "Senha" in params, "Missing parameter 'Senha'"
     assert "Nome" in params, "Missing parameter 'Nome'"
+    assert "Senha" in params, "Missing parameter 'Senha'"
     assert "CPF" in params, "Missing parameter 'CPF'"
-
-def test_conta_poupan_a_has_Senha():
-    assert hasattr(Conta_Poupan_a, "Senha")
-    descriptor = None
-    for klass in Conta_Poupan_a.__mro__:
-        if "Senha" in klass.__dict__:
-            descriptor = klass.__dict__["Senha"]
-            break
-    assert isinstance(descriptor, property)
 
 def test_conta_poupan_a_has_Nome():
     assert hasattr(Conta_Poupan_a, "Nome")
@@ -285,6 +276,15 @@ def test_conta_poupan_a_has_Nome():
     for klass in Conta_Poupan_a.__mro__:
         if "Nome" in klass.__dict__:
             descriptor = klass.__dict__["Nome"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_conta_poupan_a_has_Senha():
+    assert hasattr(Conta_Poupan_a, "Senha")
+    descriptor = None
+    for klass in Conta_Poupan_a.__mro__:
+        if "Senha" in klass.__dict__:
+            descriptor = klass.__dict__["Senha"]
             break
     assert isinstance(descriptor, property)
 
@@ -310,17 +310,17 @@ def test_conta_corrente_constructor_exists():
 def test_conta_corrente_constructor_args():
     sig = inspect.signature(Conta_Corrente.__init__)
     params = list(sig.parameters.keys())
-    assert "CPF" in params, "Missing parameter 'CPF'"
-    assert "Nome" in params, "Missing parameter 'Nome'"
     assert "Senha" in params, "Missing parameter 'Senha'"
+    assert "Nome" in params, "Missing parameter 'Nome'"
+    assert "CPF" in params, "Missing parameter 'CPF'"
     assert "Taxa_de_Movimenta__o" in params, "Missing parameter 'Taxa_de_Movimenta__o'"
 
-def test_conta_corrente_has_CPF():
-    assert hasattr(Conta_Corrente, "CPF")
+def test_conta_corrente_has_Senha():
+    assert hasattr(Conta_Corrente, "Senha")
     descriptor = None
     for klass in Conta_Corrente.__mro__:
-        if "CPF" in klass.__dict__:
-            descriptor = klass.__dict__["CPF"]
+        if "Senha" in klass.__dict__:
+            descriptor = klass.__dict__["Senha"]
             break
     assert isinstance(descriptor, property)
 
@@ -333,12 +333,12 @@ def test_conta_corrente_has_Nome():
             break
     assert isinstance(descriptor, property)
 
-def test_conta_corrente_has_Senha():
-    assert hasattr(Conta_Corrente, "Senha")
+def test_conta_corrente_has_CPF():
+    assert hasattr(Conta_Corrente, "CPF")
     descriptor = None
     for klass in Conta_Corrente.__mro__:
-        if "Senha" in klass.__dict__:
-            descriptor = klass.__dict__["Senha"]
+        if "CPF" in klass.__dict__:
+            descriptor = klass.__dict__["CPF"]
             break
     assert isinstance(descriptor, property)
 
@@ -437,8 +437,8 @@ def test_sistemainterno_constructor_args():
     sig = inspect.signature(SistemaInterno.__init__)
     params = list(sig.parameters.keys())
     assert "Entrar" in params, "Missing parameter 'Entrar'"
-    assert "_attr1" in params, "Missing parameter '_attr1'"
     assert "_attr" in params, "Missing parameter '_attr'"
+    assert "_attr1" in params, "Missing parameter '_attr1'"
 
 def test_sistemainterno_has_Entrar():
     assert hasattr(SistemaInterno, "Entrar")
@@ -449,21 +449,21 @@ def test_sistemainterno_has_Entrar():
             break
     assert isinstance(descriptor, property)
 
-def test_sistemainterno_has__attr1():
-    assert hasattr(SistemaInterno, "_attr1")
-    descriptor = None
-    for klass in SistemaInterno.__mro__:
-        if "_attr1" in klass.__dict__:
-            descriptor = klass.__dict__["_attr1"]
-            break
-    assert isinstance(descriptor, property)
-
 def test_sistemainterno_has__attr():
     assert hasattr(SistemaInterno, "_attr")
     descriptor = None
     for klass in SistemaInterno.__mro__:
         if "_attr" in klass.__dict__:
             descriptor = klass.__dict__["_attr"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_sistemainterno_has__attr1():
+    assert hasattr(SistemaInterno, "_attr1")
+    descriptor = None
+    for klass in SistemaInterno.__mro__:
+        if "_attr1" in klass.__dict__:
+            descriptor = klass.__dict__["_attr1"]
             break
     assert isinstance(descriptor, property)
 
@@ -538,18 +538,9 @@ def test_contabancaria_constructor_exists():
 def test_contabancaria_constructor_args():
     sig = inspect.signature(ContaBancaria.__init__)
     params = list(sig.parameters.keys())
-    assert "NumeroConta" in params, "Missing parameter 'NumeroConta'"
     assert "NomeConta" in params, "Missing parameter 'NomeConta'"
     assert "Saldo" in params, "Missing parameter 'Saldo'"
-
-def test_contabancaria_has_NumeroConta():
-    assert hasattr(ContaBancaria, "NumeroConta")
-    descriptor = None
-    for klass in ContaBancaria.__mro__:
-        if "NumeroConta" in klass.__dict__:
-            descriptor = klass.__dict__["NumeroConta"]
-            break
-    assert isinstance(descriptor, property)
+    assert "NumeroConta" in params, "Missing parameter 'NumeroConta'"
 
 def test_contabancaria_has_NomeConta():
     assert hasattr(ContaBancaria, "NomeConta")
@@ -566,6 +557,15 @@ def test_contabancaria_has_Saldo():
     for klass in ContaBancaria.__mro__:
         if "Saldo" in klass.__dict__:
             descriptor = klass.__dict__["Saldo"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_contabancaria_has_NumeroConta():
+    assert hasattr(ContaBancaria, "NumeroConta")
+    descriptor = None
+    for klass in ContaBancaria.__mro__:
+        if "NumeroConta" in klass.__dict__:
+            descriptor = klass.__dict__["NumeroConta"]
             break
     assert isinstance(descriptor, property)
 
@@ -620,10 +620,10 @@ safe_text = st.text(
 ).filter(lambda s: s[0].isalpha())
 Deposito_strategy = st.builds(
     Deposito,
-    Nome=
-        safe_text,
     Valor=
-        st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False)
+        st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False),
+    Nome=
+        safe_text
 )
 Transferencia_strategy = st.builds(
     Transferencia,
@@ -666,21 +666,21 @@ CRUD_strategy = st.builds(
 )
 Conta_Poupan_a_strategy = st.builds(
     Conta_Poupan_a,
-    Senha=
-        st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False),
     Nome=
         safe_text,
+    Senha=
+        st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False),
     CPF=
         st.integers()
 )
 Conta_Corrente_strategy = st.builds(
     Conta_Corrente,
-    CPF=
-        st.integers(),
-    Nome=
-        safe_text,
     Senha=
         st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False),
+    Nome=
+        safe_text,
+    CPF=
+        st.integers(),
     Taxa_de_Movimenta__o=
         st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False)
 )
@@ -703,10 +703,10 @@ SistemaInterno_strategy = st.builds(
     SistemaInterno,
     Entrar=
         st.none(),
-    _attr1=
-        safe_text,
     _attr=
-        st.none()
+        st.none(),
+    _attr1=
+        safe_text
 )
 FixedAccount_strategy = st.builds(
     FixedAccount,
@@ -722,12 +722,12 @@ SalvarConta_strategy = st.builds(
 )
 ContaBancaria_strategy = st.builds(
     ContaBancaria,
-    NumeroConta=
-        st.integers(),
     NomeConta=
         safe_text,
     Saldo=
-        st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False)
+        st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False),
+    NumeroConta=
+        st.integers()
 )
 Banco_strategy = st.builds(
     Banco,
@@ -740,20 +740,6 @@ Banco_strategy = st.builds(
 def test_deposito_instantiation(instance):
     assert isinstance(instance, Deposito)
 
-@given(instance=Deposito_strategy)
-def test_deposito_Nome_type(instance):
-    assert isinstance(instance.Nome, str)
-
-
-@given(instance=Deposito_strategy)
-def test_deposito_Nome_setter(instance):
-    original = instance.Nome
-    instance.Nome = original
-    assert instance.Nome == original
-
-@given(instance=Deposito_strategy)
-def test_deposito_Valor_type(instance):
-    assert isinstance(instance.Valor, float)
 
 
 @given(instance=Deposito_strategy)
@@ -762,14 +748,19 @@ def test_deposito_Valor_setter(instance):
     instance.Valor = original
     assert instance.Valor == original
 
+
+
+@given(instance=Deposito_strategy)
+def test_deposito_Nome_setter(instance):
+    original = instance.Nome
+    instance.Nome = original
+    assert instance.Nome == original
+
 @given(instance=Transferencia_strategy)
 @settings(max_examples=50)
 def test_transferencia_instantiation(instance):
     assert isinstance(instance, Transferencia)
 
-@given(instance=Transferencia_strategy)
-def test_transferencia_Valor_type(instance):
-    assert isinstance(instance.Valor, float)
 
 
 @given(instance=Transferencia_strategy)
@@ -778,9 +769,6 @@ def test_transferencia_Valor_setter(instance):
     instance.Valor = original
     assert instance.Valor == original
 
-@given(instance=Transferencia_strategy)
-def test_transferencia_Nome_type(instance):
-    assert isinstance(instance.Nome, str)
 
 
 @given(instance=Transferencia_strategy)
@@ -794,9 +782,6 @@ def test_transferencia_Nome_setter(instance):
 def test_cofre_instantiation(instance):
     assert isinstance(instance, Cofre)
 
-@given(instance=Cofre_strategy)
-def test_cofre_Dinheiro_Armazenado_type(instance):
-    assert isinstance(instance.Dinheiro_Armazenado, float)
 
 
 @given(instance=Cofre_strategy)
@@ -805,9 +790,6 @@ def test_cofre_Dinheiro_Armazenado_setter(instance):
     instance.Dinheiro_Armazenado = original
     assert instance.Dinheiro_Armazenado == original
 
-@given(instance=Cofre_strategy)
-def test_cofre_Emprestimo_Total_type(instance):
-    assert isinstance(instance.Emprestimo_Total, float)
 
 
 @given(instance=Cofre_strategy)
@@ -821,9 +803,6 @@ def test_cofre_Emprestimo_Total_setter(instance):
 def test_emprestimo_instantiation(instance):
     assert isinstance(instance, Emprestimo)
 
-@given(instance=Emprestimo_strategy)
-def test_emprestimo_Valor_type(instance):
-    assert isinstance(instance.Valor, float)
 
 
 @given(instance=Emprestimo_strategy)
@@ -837,9 +816,6 @@ def test_emprestimo_Valor_setter(instance):
 def test_conta_normal_instantiation(instance):
     assert isinstance(instance, Conta_Normal)
 
-@given(instance=Conta_Normal_strategy)
-def test_conta_normal_id_type(instance):
-    assert isinstance(instance.id, int)
 
 
 @given(instance=Conta_Normal_strategy)
@@ -853,9 +829,6 @@ def test_conta_normal_id_setter(instance):
 def test_conta_conjunta_instantiation(instance):
     assert isinstance(instance, Conta_Conjunta)
 
-@given(instance=Conta_Conjunta_strategy)
-def test_conta_conjunta_id_type(instance):
-    assert isinstance(instance.id, int)
 
 
 @given(instance=Conta_Conjunta_strategy)
@@ -874,9 +847,6 @@ def test_remover_conta_instantiation(instance):
 def test_crud_instantiation(instance):
     assert isinstance(instance, CRUD)
 
-@given(instance=CRUD_strategy)
-def test_crud_Adicionar_Conta_type(instance):
-    assert isinstance(instance.Adicionar_Conta, str)
 
 
 @given(instance=CRUD_strategy)
@@ -885,9 +855,6 @@ def test_crud_Adicionar_Conta_setter(instance):
     instance.Adicionar_Conta = original
     assert instance.Adicionar_Conta == original
 
-@given(instance=CRUD_strategy)
-def test_crud_Remover_Conta_type(instance):
-    assert isinstance(instance.Remover_Conta, str)
 
 
 @given(instance=CRUD_strategy)
@@ -901,20 +868,6 @@ def test_crud_Remover_Conta_setter(instance):
 def test_conta_poupan_a_instantiation(instance):
     assert isinstance(instance, Conta_Poupan_a)
 
-@given(instance=Conta_Poupan_a_strategy)
-def test_conta_poupan_a_Senha_type(instance):
-    assert isinstance(instance.Senha, float)
-
-
-@given(instance=Conta_Poupan_a_strategy)
-def test_conta_poupan_a_Senha_setter(instance):
-    original = instance.Senha
-    instance.Senha = original
-    assert instance.Senha == original
-
-@given(instance=Conta_Poupan_a_strategy)
-def test_conta_poupan_a_Nome_type(instance):
-    assert isinstance(instance.Nome, str)
 
 
 @given(instance=Conta_Poupan_a_strategy)
@@ -923,9 +876,14 @@ def test_conta_poupan_a_Nome_setter(instance):
     instance.Nome = original
     assert instance.Nome == original
 
+
+
 @given(instance=Conta_Poupan_a_strategy)
-def test_conta_poupan_a_CPF_type(instance):
-    assert isinstance(instance.CPF, int)
+def test_conta_poupan_a_Senha_setter(instance):
+    original = instance.Senha
+    instance.Senha = original
+    assert instance.Senha == original
+
 
 
 @given(instance=Conta_Poupan_a_strategy)
@@ -939,31 +897,6 @@ def test_conta_poupan_a_CPF_setter(instance):
 def test_conta_corrente_instantiation(instance):
     assert isinstance(instance, Conta_Corrente)
 
-@given(instance=Conta_Corrente_strategy)
-def test_conta_corrente_CPF_type(instance):
-    assert isinstance(instance.CPF, int)
-
-
-@given(instance=Conta_Corrente_strategy)
-def test_conta_corrente_CPF_setter(instance):
-    original = instance.CPF
-    instance.CPF = original
-    assert instance.CPF == original
-
-@given(instance=Conta_Corrente_strategy)
-def test_conta_corrente_Nome_type(instance):
-    assert isinstance(instance.Nome, str)
-
-
-@given(instance=Conta_Corrente_strategy)
-def test_conta_corrente_Nome_setter(instance):
-    original = instance.Nome
-    instance.Nome = original
-    assert instance.Nome == original
-
-@given(instance=Conta_Corrente_strategy)
-def test_conta_corrente_Senha_type(instance):
-    assert isinstance(instance.Senha, float)
 
 
 @given(instance=Conta_Corrente_strategy)
@@ -972,9 +905,22 @@ def test_conta_corrente_Senha_setter(instance):
     instance.Senha = original
     assert instance.Senha == original
 
+
+
 @given(instance=Conta_Corrente_strategy)
-def test_conta_corrente_Taxa_de_Movimenta__o_type(instance):
-    assert isinstance(instance.Taxa_de_Movimenta__o, float)
+def test_conta_corrente_Nome_setter(instance):
+    original = instance.Nome
+    instance.Nome = original
+    assert instance.Nome == original
+
+
+
+@given(instance=Conta_Corrente_strategy)
+def test_conta_corrente_CPF_setter(instance):
+    original = instance.CPF
+    instance.CPF = original
+    assert instance.CPF == original
+
 
 
 @given(instance=Conta_Corrente_strategy)
@@ -993,9 +939,6 @@ def test_class_instantiation(instance):
 def test_autenticavel_instantiation(instance):
     assert isinstance(instance, Autenticavel)
 
-@given(instance=Autenticavel_strategy)
-def test_autenticavel_Autenticar_type(instance):
-    assert isinstance(instance.Autenticar, str)
 
 
 @given(instance=Autenticavel_strategy)
@@ -1004,9 +947,6 @@ def test_autenticavel_Autenticar_setter(instance):
     instance.Autenticar = original
     assert instance.Autenticar == original
 
-@given(instance=Autenticavel_strategy)
-def test_autenticavel_Senha_type(instance):
-    assert isinstance(instance.Senha, str)
 
 
 @given(instance=Autenticavel_strategy)
@@ -1020,9 +960,6 @@ def test_autenticavel_Senha_setter(instance):
 def test_iautenticavel_instantiation(instance):
     assert isinstance(instance, IAutenticavel)
 
-@given(instance=IAutenticavel_strategy)
-def test_iautenticavel_Autenticar_type(instance):
-    assert isinstance(instance.Autenticar, str)
 
 
 @given(instance=IAutenticavel_strategy)
@@ -1036,9 +973,6 @@ def test_iautenticavel_Autenticar_setter(instance):
 def test_sistemainterno_instantiation(instance):
     assert isinstance(instance, SistemaInterno)
 
-@given(instance=SistemaInterno_strategy)
-def test_sistemainterno_Entrar_type(instance):
-    assert isinstance(instance.Entrar, iautenticavel)
 
 
 @given(instance=SistemaInterno_strategy)
@@ -1047,20 +981,6 @@ def test_sistemainterno_Entrar_setter(instance):
     instance.Entrar = original
     assert instance.Entrar == original
 
-@given(instance=SistemaInterno_strategy)
-def test_sistemainterno__attr1_type(instance):
-    assert isinstance(instance._attr1, str)
-
-
-@given(instance=SistemaInterno_strategy)
-def test_sistemainterno__attr1_setter(instance):
-    original = instance._attr1
-    instance._attr1 = original
-    assert instance._attr1 == original
-
-@given(instance=SistemaInterno_strategy)
-def test_sistemainterno__attr_type(instance):
-    assert isinstance(instance._attr, iautenticavel)
 
 
 @given(instance=SistemaInterno_strategy)
@@ -1069,14 +989,19 @@ def test_sistemainterno__attr_setter(instance):
     instance._attr = original
     assert instance._attr == original
 
+
+
+@given(instance=SistemaInterno_strategy)
+def test_sistemainterno__attr1_setter(instance):
+    original = instance._attr1
+    instance._attr1 = original
+    assert instance._attr1 == original
+
 @given(instance=FixedAccount_strategy)
 @settings(max_examples=50)
 def test_fixedaccount_instantiation(instance):
     assert isinstance(instance, FixedAccount)
 
-@given(instance=FixedAccount_strategy)
-def test_fixedaccount_chequeBookNo_type(instance):
-    assert isinstance(instance.chequeBookNo, str)
 
 
 @given(instance=FixedAccount_strategy)
@@ -1090,9 +1015,6 @@ def test_fixedaccount_chequeBookNo_setter(instance):
 def test_salvarconta_instantiation(instance):
     assert isinstance(instance, SalvarConta)
 
-@given(instance=SalvarConta_strategy)
-def test_salvarconta_noticeGiven_type(instance):
-    assert isinstance(instance.noticeGiven, bool)
 
 
 @given(instance=SalvarConta_strategy)
@@ -1101,9 +1023,6 @@ def test_salvarconta_noticeGiven_setter(instance):
     instance.noticeGiven = original
     assert instance.noticeGiven == original
 
-@given(instance=SalvarConta_strategy)
-def test_salvarconta_interestRate_type(instance):
-    assert isinstance(instance.interestRate, float)
 
 
 @given(instance=SalvarConta_strategy)
@@ -1117,20 +1036,6 @@ def test_salvarconta_interestRate_setter(instance):
 def test_contabancaria_instantiation(instance):
     assert isinstance(instance, ContaBancaria)
 
-@given(instance=ContaBancaria_strategy)
-def test_contabancaria_NumeroConta_type(instance):
-    assert isinstance(instance.NumeroConta, int)
-
-
-@given(instance=ContaBancaria_strategy)
-def test_contabancaria_NumeroConta_setter(instance):
-    original = instance.NumeroConta
-    instance.NumeroConta = original
-    assert instance.NumeroConta == original
-
-@given(instance=ContaBancaria_strategy)
-def test_contabancaria_NomeConta_type(instance):
-    assert isinstance(instance.NomeConta, str)
 
 
 @given(instance=ContaBancaria_strategy)
@@ -1139,9 +1044,6 @@ def test_contabancaria_NomeConta_setter(instance):
     instance.NomeConta = original
     assert instance.NomeConta == original
 
-@given(instance=ContaBancaria_strategy)
-def test_contabancaria_Saldo_type(instance):
-    assert isinstance(instance.Saldo, float)
 
 
 @given(instance=ContaBancaria_strategy)
@@ -1150,14 +1052,19 @@ def test_contabancaria_Saldo_setter(instance):
     instance.Saldo = original
     assert instance.Saldo == original
 
+
+
+@given(instance=ContaBancaria_strategy)
+def test_contabancaria_NumeroConta_setter(instance):
+    original = instance.NumeroConta
+    instance.NumeroConta = original
+    assert instance.NumeroConta == original
+
 @given(instance=Banco_strategy)
 @settings(max_examples=50)
 def test_banco_instantiation(instance):
     assert isinstance(instance, Banco)
 
-@given(instance=Banco_strategy)
-def test_banco_NomeBanco_type(instance):
-    assert isinstance(instance.NomeBanco, str)
 
 
 @given(instance=Banco_strategy)

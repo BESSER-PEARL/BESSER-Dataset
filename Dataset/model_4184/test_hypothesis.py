@@ -3,11 +3,11 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    hello::Greeting,
-    hello::Model,
+from python_code import (
+    hello_Greeting,
+    hello_Model,
 )
 
 # =============================================================================
@@ -16,23 +16,23 @@ from classes import (
 
 
 
-def test_hello::greeting_is_not_abstract():
-    assert not inspect.isabstract(hello::Greeting)
+def test_hello_greeting_is_not_abstract():
+    assert not inspect.isabstract(hello_Greeting)
 
 
-def test_hello::greeting_constructor_exists():
-    assert callable(hello::Greeting.__init__)
+def test_hello_greeting_constructor_exists():
+    assert callable(hello_Greeting.__init__)
 
 
-def test_hello::greeting_constructor_args():
-    sig = inspect.signature(hello::Greeting.__init__)
+def test_hello_greeting_constructor_args():
+    sig = inspect.signature(hello_Greeting.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_hello::greeting_has_name():
-    assert hasattr(hello::Greeting, "name")
+def test_hello_greeting_has_name():
+    assert hasattr(hello_Greeting, "name")
     descriptor = None
-    for klass in hello::Greeting.__mro__:
+    for klass in hello_Greeting.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -40,16 +40,16 @@ def test_hello::greeting_has_name():
 
 
 
-def test_hello::model_is_not_abstract():
-    assert not inspect.isabstract(hello::Model)
+def test_hello_model_is_not_abstract():
+    assert not inspect.isabstract(hello_Model)
 
 
-def test_hello::model_constructor_exists():
-    assert callable(hello::Model.__init__)
+def test_hello_model_constructor_exists():
+    assert callable(hello_Model.__init__)
 
 
-def test_hello::model_constructor_args():
-    sig = inspect.signature(hello::Model.__init__)
+def test_hello_model_constructor_args():
+    sig = inspect.signature(hello_Model.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -64,32 +64,29 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-hello::Greeting_strategy = st.builds(
-    hello::Greeting,
+hello_Greeting_strategy = st.builds(
+    hello_Greeting,
     name=
         safe_text
 )
-hello::Model_strategy = st.builds(
-    hello::Model,
+hello_Model_strategy = st.builds(
+    hello_Model,
 )
 
-@given(instance=hello::Greeting_strategy)
+@given(instance=hello_Greeting_strategy)
 @settings(max_examples=50)
-def test_hello::greeting_instantiation(instance):
-    assert isinstance(instance, hello::Greeting)
-
-@given(instance=hello::Greeting_strategy)
-def test_hello::greeting_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_hello_greeting_instantiation(instance):
+    assert isinstance(instance, hello_Greeting)
 
 
-@given(instance=hello::Greeting_strategy)
-def test_hello::greeting_name_setter(instance):
+
+@given(instance=hello_Greeting_strategy)
+def test_hello_greeting_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=hello::Model_strategy)
+@given(instance=hello_Model_strategy)
 @settings(max_examples=50)
-def test_hello::model_instantiation(instance):
-    assert isinstance(instance, hello::Model)
+def test_hello_model_instantiation(instance):
+    assert isinstance(instance, hello_Model)

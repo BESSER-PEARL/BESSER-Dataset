@@ -3,18 +3,18 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    trip::NamedElement,
+from python_code import (
+    trip_NamedElement,
     NamedElement,
-    trip::TripModel,
-    trip::Person,
-    trip::Vehicle,
-    trip::Trip,
+    trip_Person,
+    trip_TripModel,
+    trip_Vehicle,
+    trip_Trip,
     Vehicle,
-    trip::Van,
-    trip::Car,
+    trip_Van,
+    trip_Car,
 )
 
 # =============================================================================
@@ -23,23 +23,23 @@ from classes import (
 
 
 
-def test_trip::namedelement_is_not_abstract():
-    assert not inspect.isabstract(trip::NamedElement)
+def test_trip_namedelement_is_not_abstract():
+    assert not inspect.isabstract(trip_NamedElement)
 
 
-def test_trip::namedelement_constructor_exists():
-    assert callable(trip::NamedElement.__init__)
+def test_trip_namedelement_constructor_exists():
+    assert callable(trip_NamedElement.__init__)
 
 
-def test_trip::namedelement_constructor_args():
-    sig = inspect.signature(trip::NamedElement.__init__)
+def test_trip_namedelement_constructor_args():
+    sig = inspect.signature(trip_NamedElement.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_trip::namedelement_has_name():
-    assert hasattr(trip::NamedElement, "name")
+def test_trip_namedelement_has_name():
+    assert hasattr(trip_NamedElement, "name")
     descriptor = None
-    for klass in trip::NamedElement.__mro__:
+    for klass in trip_NamedElement.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -61,51 +61,51 @@ def test_namedelement_constructor_args():
 
 
 
-def test_trip::tripmodel_is_not_abstract():
-    assert not inspect.isabstract(trip::TripModel)
+def test_trip_person_is_not_abstract():
+    assert not inspect.isabstract(trip_Person)
 
 
-def test_trip::tripmodel_constructor_exists():
-    assert callable(trip::TripModel.__init__)
+def test_trip_person_constructor_exists():
+    assert callable(trip_Person.__init__)
 
 
-def test_trip::tripmodel_constructor_args():
-    sig = inspect.signature(trip::TripModel.__init__)
+def test_trip_person_constructor_args():
+    sig = inspect.signature(trip_Person.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_trip::person_is_not_abstract():
-    assert not inspect.isabstract(trip::Person)
+def test_trip_tripmodel_is_not_abstract():
+    assert not inspect.isabstract(trip_TripModel)
 
 
-def test_trip::person_constructor_exists():
-    assert callable(trip::Person.__init__)
+def test_trip_tripmodel_constructor_exists():
+    assert callable(trip_TripModel.__init__)
 
 
-def test_trip::person_constructor_args():
-    sig = inspect.signature(trip::Person.__init__)
+def test_trip_tripmodel_constructor_args():
+    sig = inspect.signature(trip_TripModel.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_trip::vehicle_is_not_abstract():
-    assert not inspect.isabstract(trip::Vehicle)
+def test_trip_vehicle_is_not_abstract():
+    assert not inspect.isabstract(trip_Vehicle)
 
 
-def test_trip::vehicle_constructor_exists():
-    assert callable(trip::Vehicle.__init__)
+def test_trip_vehicle_constructor_exists():
+    assert callable(trip_Vehicle.__init__)
 
 
-def test_trip::vehicle_constructor_args():
-    sig = inspect.signature(trip::Vehicle.__init__)
+def test_trip_vehicle_constructor_args():
+    sig = inspect.signature(trip_Vehicle.__init__)
     params = list(sig.parameters.keys())
     assert "nrOfSeats" in params, "Missing parameter 'nrOfSeats'"
 
-def test_trip::vehicle_has_nrOfSeats():
-    assert hasattr(trip::Vehicle, "nrOfSeats")
+def test_trip_vehicle_has_nrOfSeats():
+    assert hasattr(trip_Vehicle, "nrOfSeats")
     descriptor = None
-    for klass in trip::Vehicle.__mro__:
+    for klass in trip_Vehicle.__mro__:
         if "nrOfSeats" in klass.__dict__:
             descriptor = klass.__dict__["nrOfSeats"]
             break
@@ -113,16 +113,16 @@ def test_trip::vehicle_has_nrOfSeats():
 
 
 
-def test_trip::trip_is_not_abstract():
-    assert not inspect.isabstract(trip::Trip)
+def test_trip_trip_is_not_abstract():
+    assert not inspect.isabstract(trip_Trip)
 
 
-def test_trip::trip_constructor_exists():
-    assert callable(trip::Trip.__init__)
+def test_trip_trip_constructor_exists():
+    assert callable(trip_Trip.__init__)
 
 
-def test_trip::trip_constructor_args():
-    sig = inspect.signature(trip::Trip.__init__)
+def test_trip_trip_constructor_args():
+    sig = inspect.signature(trip_Trip.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -141,30 +141,30 @@ def test_vehicle_constructor_args():
 
 
 
-def test_trip::van_is_not_abstract():
-    assert not inspect.isabstract(trip::Van)
+def test_trip_van_is_not_abstract():
+    assert not inspect.isabstract(trip_Van)
 
 
-def test_trip::van_constructor_exists():
-    assert callable(trip::Van.__init__)
+def test_trip_van_constructor_exists():
+    assert callable(trip_Van.__init__)
 
 
-def test_trip::van_constructor_args():
-    sig = inspect.signature(trip::Van.__init__)
+def test_trip_van_constructor_args():
+    sig = inspect.signature(trip_Van.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_trip::car_is_not_abstract():
-    assert not inspect.isabstract(trip::Car)
+def test_trip_car_is_not_abstract():
+    assert not inspect.isabstract(trip_Car)
 
 
-def test_trip::car_constructor_exists():
-    assert callable(trip::Car.__init__)
+def test_trip_car_constructor_exists():
+    assert callable(trip_Car.__init__)
 
 
-def test_trip::car_constructor_args():
-    sig = inspect.signature(trip::Car.__init__)
+def test_trip_car_constructor_args():
+    sig = inspect.signature(trip_Car.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -179,50 +179,47 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-trip::NamedElement_strategy = st.builds(
-    trip::NamedElement,
+trip_NamedElement_strategy = st.builds(
+    trip_NamedElement,
     name=
         safe_text
 )
 NamedElement_strategy = st.builds(
     NamedElement,
 )
-trip::TripModel_strategy = st.builds(
-    trip::TripModel,
+trip_Person_strategy = st.builds(
+    trip_Person,
 )
-trip::Person_strategy = st.builds(
-    trip::Person,
+trip_TripModel_strategy = st.builds(
+    trip_TripModel,
 )
-trip::Vehicle_strategy = st.builds(
-    trip::Vehicle,
+trip_Vehicle_strategy = st.builds(
+    trip_Vehicle,
     nrOfSeats=
         st.integers()
 )
-trip::Trip_strategy = st.builds(
-    trip::Trip,
+trip_Trip_strategy = st.builds(
+    trip_Trip,
 )
 Vehicle_strategy = st.builds(
     Vehicle,
 )
-trip::Van_strategy = st.builds(
-    trip::Van,
+trip_Van_strategy = st.builds(
+    trip_Van,
 )
-trip::Car_strategy = st.builds(
-    trip::Car,
+trip_Car_strategy = st.builds(
+    trip_Car,
 )
 
-@given(instance=trip::NamedElement_strategy)
+@given(instance=trip_NamedElement_strategy)
 @settings(max_examples=50)
-def test_trip::namedelement_instantiation(instance):
-    assert isinstance(instance, trip::NamedElement)
-
-@given(instance=trip::NamedElement_strategy)
-def test_trip::namedelement_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_trip_namedelement_instantiation(instance):
+    assert isinstance(instance, trip_NamedElement)
 
 
-@given(instance=trip::NamedElement_strategy)
-def test_trip::namedelement_name_setter(instance):
+
+@given(instance=trip_NamedElement_strategy)
+def test_trip_namedelement_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
@@ -232,48 +229,45 @@ def test_trip::namedelement_name_setter(instance):
 def test_namedelement_instantiation(instance):
     assert isinstance(instance, NamedElement)
 
-@given(instance=trip::TripModel_strategy)
+@given(instance=trip_Person_strategy)
 @settings(max_examples=50)
-def test_trip::tripmodel_instantiation(instance):
-    assert isinstance(instance, trip::TripModel)
+def test_trip_person_instantiation(instance):
+    assert isinstance(instance, trip_Person)
 
-@given(instance=trip::Person_strategy)
+@given(instance=trip_TripModel_strategy)
 @settings(max_examples=50)
-def test_trip::person_instantiation(instance):
-    assert isinstance(instance, trip::Person)
+def test_trip_tripmodel_instantiation(instance):
+    assert isinstance(instance, trip_TripModel)
 
-@given(instance=trip::Vehicle_strategy)
+@given(instance=trip_Vehicle_strategy)
 @settings(max_examples=50)
-def test_trip::vehicle_instantiation(instance):
-    assert isinstance(instance, trip::Vehicle)
-
-@given(instance=trip::Vehicle_strategy)
-def test_trip::vehicle_nrOfSeats_type(instance):
-    assert isinstance(instance.nrOfSeats, int)
+def test_trip_vehicle_instantiation(instance):
+    assert isinstance(instance, trip_Vehicle)
 
 
-@given(instance=trip::Vehicle_strategy)
-def test_trip::vehicle_nrOfSeats_setter(instance):
+
+@given(instance=trip_Vehicle_strategy)
+def test_trip_vehicle_nrOfSeats_setter(instance):
     original = instance.nrOfSeats
     instance.nrOfSeats = original
     assert instance.nrOfSeats == original
 
-@given(instance=trip::Trip_strategy)
+@given(instance=trip_Trip_strategy)
 @settings(max_examples=50)
-def test_trip::trip_instantiation(instance):
-    assert isinstance(instance, trip::Trip)
+def test_trip_trip_instantiation(instance):
+    assert isinstance(instance, trip_Trip)
 
 @given(instance=Vehicle_strategy)
 @settings(max_examples=50)
 def test_vehicle_instantiation(instance):
     assert isinstance(instance, Vehicle)
 
-@given(instance=trip::Van_strategy)
+@given(instance=trip_Van_strategy)
 @settings(max_examples=50)
-def test_trip::van_instantiation(instance):
-    assert isinstance(instance, trip::Van)
+def test_trip_van_instantiation(instance):
+    assert isinstance(instance, trip_Van)
 
-@given(instance=trip::Car_strategy)
+@given(instance=trip_Car_strategy)
 @settings(max_examples=50)
-def test_trip::car_instantiation(instance):
-    assert isinstance(instance, trip::Car)
+def test_trip_car_instantiation(instance):
+    assert isinstance(instance, trip_Car)

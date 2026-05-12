@@ -3,14 +3,14 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    spreadsheet::Column,
-    spreadsheet::Row,
-    spreadsheet::Cell,
-    spreadsheet::Spreadsheet,
-    spreadsheet::Sheet,
+from python_code import (
+    spreadsheet_Column,
+    spreadsheet_Row,
+    spreadsheet_Cell,
+    spreadsheet_Spreadsheet,
+    spreadsheet_Sheet,
     CellType,
 )
 
@@ -20,23 +20,23 @@ from classes import (
 
 
 
-def test_spreadsheet::column_is_not_abstract():
-    assert not inspect.isabstract(spreadsheet::Column)
+def test_spreadsheet_column_is_not_abstract():
+    assert not inspect.isabstract(spreadsheet_Column)
 
 
-def test_spreadsheet::column_constructor_exists():
-    assert callable(spreadsheet::Column.__init__)
+def test_spreadsheet_column_constructor_exists():
+    assert callable(spreadsheet_Column.__init__)
 
 
-def test_spreadsheet::column_constructor_args():
-    sig = inspect.signature(spreadsheet::Column.__init__)
+def test_spreadsheet_column_constructor_args():
+    sig = inspect.signature(spreadsheet_Column.__init__)
     params = list(sig.parameters.keys())
     assert "ColumnIndex" in params, "Missing parameter 'ColumnIndex'"
 
-def test_spreadsheet::column_has_ColumnIndex():
-    assert hasattr(spreadsheet::Column, "ColumnIndex")
+def test_spreadsheet_column_has_ColumnIndex():
+    assert hasattr(spreadsheet_Column, "ColumnIndex")
     descriptor = None
-    for klass in spreadsheet::Column.__mro__:
+    for klass in spreadsheet_Column.__mro__:
         if "ColumnIndex" in klass.__dict__:
             descriptor = klass.__dict__["ColumnIndex"]
             break
@@ -44,23 +44,23 @@ def test_spreadsheet::column_has_ColumnIndex():
 
 
 
-def test_spreadsheet::row_is_not_abstract():
-    assert not inspect.isabstract(spreadsheet::Row)
+def test_spreadsheet_row_is_not_abstract():
+    assert not inspect.isabstract(spreadsheet_Row)
 
 
-def test_spreadsheet::row_constructor_exists():
-    assert callable(spreadsheet::Row.__init__)
+def test_spreadsheet_row_constructor_exists():
+    assert callable(spreadsheet_Row.__init__)
 
 
-def test_spreadsheet::row_constructor_args():
-    sig = inspect.signature(spreadsheet::Row.__init__)
+def test_spreadsheet_row_constructor_args():
+    sig = inspect.signature(spreadsheet_Row.__init__)
     params = list(sig.parameters.keys())
     assert "RowIndex" in params, "Missing parameter 'RowIndex'"
 
-def test_spreadsheet::row_has_RowIndex():
-    assert hasattr(spreadsheet::Row, "RowIndex")
+def test_spreadsheet_row_has_RowIndex():
+    assert hasattr(spreadsheet_Row, "RowIndex")
     descriptor = None
-    for klass in spreadsheet::Row.__mro__:
+    for klass in spreadsheet_Row.__mro__:
         if "RowIndex" in klass.__dict__:
             descriptor = klass.__dict__["RowIndex"]
             break
@@ -68,121 +68,121 @@ def test_spreadsheet::row_has_RowIndex():
 
 
 
-def test_spreadsheet::cell_is_not_abstract():
-    assert not inspect.isabstract(spreadsheet::Cell)
+def test_spreadsheet_cell_is_not_abstract():
+    assert not inspect.isabstract(spreadsheet_Cell)
 
 
-def test_spreadsheet::cell_constructor_exists():
-    assert callable(spreadsheet::Cell.__init__)
+def test_spreadsheet_cell_constructor_exists():
+    assert callable(spreadsheet_Cell.__init__)
 
 
-def test_spreadsheet::cell_constructor_args():
-    sig = inspect.signature(spreadsheet::Cell.__init__)
+def test_spreadsheet_cell_constructor_args():
+    sig = inspect.signature(spreadsheet_Cell.__init__)
     params = list(sig.parameters.keys())
-    assert "CellType" in params, "Missing parameter 'CellType'"
     assert "StringValue" in params, "Missing parameter 'StringValue'"
-    assert "ValueFormatted" in params, "Missing parameter 'ValueFormatted'"
     assert "DoubleValue" in params, "Missing parameter 'DoubleValue'"
+    assert "CellType" in params, "Missing parameter 'CellType'"
+    assert "ValueFormatted" in params, "Missing parameter 'ValueFormatted'"
 
-def test_spreadsheet::cell_has_CellType():
-    assert hasattr(spreadsheet::Cell, "CellType")
+def test_spreadsheet_cell_has_StringValue():
+    assert hasattr(spreadsheet_Cell, "StringValue")
     descriptor = None
-    for klass in spreadsheet::Cell.__mro__:
-        if "CellType" in klass.__dict__:
-            descriptor = klass.__dict__["CellType"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_spreadsheet::cell_has_StringValue():
-    assert hasattr(spreadsheet::Cell, "StringValue")
-    descriptor = None
-    for klass in spreadsheet::Cell.__mro__:
+    for klass in spreadsheet_Cell.__mro__:
         if "StringValue" in klass.__dict__:
             descriptor = klass.__dict__["StringValue"]
             break
     assert isinstance(descriptor, property)
 
-def test_spreadsheet::cell_has_ValueFormatted():
-    assert hasattr(spreadsheet::Cell, "ValueFormatted")
+def test_spreadsheet_cell_has_DoubleValue():
+    assert hasattr(spreadsheet_Cell, "DoubleValue")
     descriptor = None
-    for klass in spreadsheet::Cell.__mro__:
-        if "ValueFormatted" in klass.__dict__:
-            descriptor = klass.__dict__["ValueFormatted"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_spreadsheet::cell_has_DoubleValue():
-    assert hasattr(spreadsheet::Cell, "DoubleValue")
-    descriptor = None
-    for klass in spreadsheet::Cell.__mro__:
+    for klass in spreadsheet_Cell.__mro__:
         if "DoubleValue" in klass.__dict__:
             descriptor = klass.__dict__["DoubleValue"]
             break
     assert isinstance(descriptor, property)
 
-
-
-def test_spreadsheet::spreadsheet_is_not_abstract():
-    assert not inspect.isabstract(spreadsheet::Spreadsheet)
-
-
-def test_spreadsheet::spreadsheet_constructor_exists():
-    assert callable(spreadsheet::Spreadsheet.__init__)
-
-
-def test_spreadsheet::spreadsheet_constructor_args():
-    sig = inspect.signature(spreadsheet::Spreadsheet.__init__)
-    params = list(sig.parameters.keys())
-    assert "FilePath" in params, "Missing parameter 'FilePath'"
-    assert "Label" in params, "Missing parameter 'Label'"
-
-def test_spreadsheet::spreadsheet_has_FilePath():
-    assert hasattr(spreadsheet::Spreadsheet, "FilePath")
+def test_spreadsheet_cell_has_CellType():
+    assert hasattr(spreadsheet_Cell, "CellType")
     descriptor = None
-    for klass in spreadsheet::Spreadsheet.__mro__:
-        if "FilePath" in klass.__dict__:
-            descriptor = klass.__dict__["FilePath"]
+    for klass in spreadsheet_Cell.__mro__:
+        if "CellType" in klass.__dict__:
+            descriptor = klass.__dict__["CellType"]
             break
     assert isinstance(descriptor, property)
 
-def test_spreadsheet::spreadsheet_has_Label():
-    assert hasattr(spreadsheet::Spreadsheet, "Label")
+def test_spreadsheet_cell_has_ValueFormatted():
+    assert hasattr(spreadsheet_Cell, "ValueFormatted")
     descriptor = None
-    for klass in spreadsheet::Spreadsheet.__mro__:
+    for klass in spreadsheet_Cell.__mro__:
+        if "ValueFormatted" in klass.__dict__:
+            descriptor = klass.__dict__["ValueFormatted"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_spreadsheet_spreadsheet_is_not_abstract():
+    assert not inspect.isabstract(spreadsheet_Spreadsheet)
+
+
+def test_spreadsheet_spreadsheet_constructor_exists():
+    assert callable(spreadsheet_Spreadsheet.__init__)
+
+
+def test_spreadsheet_spreadsheet_constructor_args():
+    sig = inspect.signature(spreadsheet_Spreadsheet.__init__)
+    params = list(sig.parameters.keys())
+    assert "Label" in params, "Missing parameter 'Label'"
+    assert "FilePath" in params, "Missing parameter 'FilePath'"
+
+def test_spreadsheet_spreadsheet_has_Label():
+    assert hasattr(spreadsheet_Spreadsheet, "Label")
+    descriptor = None
+    for klass in spreadsheet_Spreadsheet.__mro__:
         if "Label" in klass.__dict__:
             descriptor = klass.__dict__["Label"]
             break
     assert isinstance(descriptor, property)
 
+def test_spreadsheet_spreadsheet_has_FilePath():
+    assert hasattr(spreadsheet_Spreadsheet, "FilePath")
+    descriptor = None
+    for klass in spreadsheet_Spreadsheet.__mro__:
+        if "FilePath" in klass.__dict__:
+            descriptor = klass.__dict__["FilePath"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_spreadsheet::sheet_is_not_abstract():
-    assert not inspect.isabstract(spreadsheet::Sheet)
+
+def test_spreadsheet_sheet_is_not_abstract():
+    assert not inspect.isabstract(spreadsheet_Sheet)
 
 
-def test_spreadsheet::sheet_constructor_exists():
-    assert callable(spreadsheet::Sheet.__init__)
+def test_spreadsheet_sheet_constructor_exists():
+    assert callable(spreadsheet_Sheet.__init__)
 
 
-def test_spreadsheet::sheet_constructor_args():
-    sig = inspect.signature(spreadsheet::Sheet.__init__)
+def test_spreadsheet_sheet_constructor_args():
+    sig = inspect.signature(spreadsheet_Sheet.__init__)
     params = list(sig.parameters.keys())
     assert "SheetName" in params, "Missing parameter 'SheetName'"
     assert "SheetIndex" in params, "Missing parameter 'SheetIndex'"
 
-def test_spreadsheet::sheet_has_SheetName():
-    assert hasattr(spreadsheet::Sheet, "SheetName")
+def test_spreadsheet_sheet_has_SheetName():
+    assert hasattr(spreadsheet_Sheet, "SheetName")
     descriptor = None
-    for klass in spreadsheet::Sheet.__mro__:
+    for klass in spreadsheet_Sheet.__mro__:
         if "SheetName" in klass.__dict__:
             descriptor = klass.__dict__["SheetName"]
             break
     assert isinstance(descriptor, property)
 
-def test_spreadsheet::sheet_has_SheetIndex():
-    assert hasattr(spreadsheet::Sheet, "SheetIndex")
+def test_spreadsheet_sheet_has_SheetIndex():
+    assert hasattr(spreadsheet_Sheet, "SheetIndex")
     descriptor = None
-    for klass in spreadsheet::Sheet.__mro__:
+    for klass in spreadsheet_Sheet.__mro__:
         if "SheetIndex" in klass.__dict__:
             descriptor = klass.__dict__["SheetIndex"]
             break
@@ -196,10 +196,10 @@ def test_celltype_has_all_literals():
     # Collect the names of literals in this Enumeration
     enum_literals = [lit.name for lit in CellType]
     expected_literals = [
-        "CellTypeFormula",
-        "CellTypeString",
         "CellTypeDate",
+        "CellTypeFormula",
         "CellTypeNumeric",
+        "CellTypeString",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
@@ -217,149 +217,125 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-spreadsheet::Column_strategy = st.builds(
-    spreadsheet::Column,
+spreadsheet_Column_strategy = st.builds(
+    spreadsheet_Column,
     ColumnIndex=
         st.integers()
 )
-spreadsheet::Row_strategy = st.builds(
-    spreadsheet::Row,
+spreadsheet_Row_strategy = st.builds(
+    spreadsheet_Row,
     RowIndex=
         st.integers()
 )
-spreadsheet::Cell_strategy = st.builds(
-    spreadsheet::Cell,
-    CellType=
-        safe_text,
+spreadsheet_Cell_strategy = st.builds(
+    spreadsheet_Cell,
     StringValue=
         safe_text,
-    ValueFormatted=
-        safe_text,
     DoubleValue=
-        st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False)
-)
-spreadsheet::Spreadsheet_strategy = st.builds(
-    spreadsheet::Spreadsheet,
-    FilePath=
+        st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False),
+    CellType=
         safe_text,
-    Label=
+    ValueFormatted=
         safe_text
 )
-spreadsheet::Sheet_strategy = st.builds(
-    spreadsheet::Sheet,
+spreadsheet_Spreadsheet_strategy = st.builds(
+    spreadsheet_Spreadsheet,
+    Label=
+        safe_text,
+    FilePath=
+        safe_text
+)
+spreadsheet_Sheet_strategy = st.builds(
+    spreadsheet_Sheet,
     SheetName=
         safe_text,
     SheetIndex=
         st.integers()
 )
 
-@given(instance=spreadsheet::Column_strategy)
+@given(instance=spreadsheet_Column_strategy)
 @settings(max_examples=50)
-def test_spreadsheet::column_instantiation(instance):
-    assert isinstance(instance, spreadsheet::Column)
-
-@given(instance=spreadsheet::Column_strategy)
-def test_spreadsheet::column_ColumnIndex_type(instance):
-    assert isinstance(instance.ColumnIndex, int)
+def test_spreadsheet_column_instantiation(instance):
+    assert isinstance(instance, spreadsheet_Column)
 
 
-@given(instance=spreadsheet::Column_strategy)
-def test_spreadsheet::column_ColumnIndex_setter(instance):
+
+@given(instance=spreadsheet_Column_strategy)
+def test_spreadsheet_column_ColumnIndex_setter(instance):
     original = instance.ColumnIndex
     instance.ColumnIndex = original
     assert instance.ColumnIndex == original
 
-@given(instance=spreadsheet::Row_strategy)
+@given(instance=spreadsheet_Row_strategy)
 @settings(max_examples=50)
-def test_spreadsheet::row_instantiation(instance):
-    assert isinstance(instance, spreadsheet::Row)
-
-@given(instance=spreadsheet::Row_strategy)
-def test_spreadsheet::row_RowIndex_type(instance):
-    assert isinstance(instance.RowIndex, int)
+def test_spreadsheet_row_instantiation(instance):
+    assert isinstance(instance, spreadsheet_Row)
 
 
-@given(instance=spreadsheet::Row_strategy)
-def test_spreadsheet::row_RowIndex_setter(instance):
+
+@given(instance=spreadsheet_Row_strategy)
+def test_spreadsheet_row_RowIndex_setter(instance):
     original = instance.RowIndex
     instance.RowIndex = original
     assert instance.RowIndex == original
 
-@given(instance=spreadsheet::Cell_strategy)
+@given(instance=spreadsheet_Cell_strategy)
 @settings(max_examples=50)
-def test_spreadsheet::cell_instantiation(instance):
-    assert isinstance(instance, spreadsheet::Cell)
-
-@given(instance=spreadsheet::Cell_strategy)
-def test_spreadsheet::cell_CellType_type(instance):
-    assert isinstance(instance.CellType, str)
+def test_spreadsheet_cell_instantiation(instance):
+    assert isinstance(instance, spreadsheet_Cell)
 
 
-@given(instance=spreadsheet::Cell_strategy)
-def test_spreadsheet::cell_CellType_setter(instance):
-    original = instance.CellType
-    instance.CellType = original
-    assert instance.CellType == original
 
-@given(instance=spreadsheet::Cell_strategy)
-def test_spreadsheet::cell_StringValue_type(instance):
-    assert isinstance(instance.StringValue, str)
-
-
-@given(instance=spreadsheet::Cell_strategy)
-def test_spreadsheet::cell_StringValue_setter(instance):
+@given(instance=spreadsheet_Cell_strategy)
+def test_spreadsheet_cell_StringValue_setter(instance):
     original = instance.StringValue
     instance.StringValue = original
     assert instance.StringValue == original
 
-@given(instance=spreadsheet::Cell_strategy)
-def test_spreadsheet::cell_ValueFormatted_type(instance):
-    assert isinstance(instance.ValueFormatted, str)
 
 
-@given(instance=spreadsheet::Cell_strategy)
-def test_spreadsheet::cell_ValueFormatted_setter(instance):
-    original = instance.ValueFormatted
-    instance.ValueFormatted = original
-    assert instance.ValueFormatted == original
-
-@given(instance=spreadsheet::Cell_strategy)
-def test_spreadsheet::cell_DoubleValue_type(instance):
-    assert isinstance(instance.DoubleValue, float)
-
-
-@given(instance=spreadsheet::Cell_strategy)
-def test_spreadsheet::cell_DoubleValue_setter(instance):
+@given(instance=spreadsheet_Cell_strategy)
+def test_spreadsheet_cell_DoubleValue_setter(instance):
     original = instance.DoubleValue
     instance.DoubleValue = original
     assert instance.DoubleValue == original
 
-@given(instance=spreadsheet::Spreadsheet_strategy)
+
+
+@given(instance=spreadsheet_Cell_strategy)
+def test_spreadsheet_cell_CellType_setter(instance):
+    original = instance.CellType
+    instance.CellType = original
+    assert instance.CellType == original
+
+
+
+@given(instance=spreadsheet_Cell_strategy)
+def test_spreadsheet_cell_ValueFormatted_setter(instance):
+    original = instance.ValueFormatted
+    instance.ValueFormatted = original
+    assert instance.ValueFormatted == original
+
+@given(instance=spreadsheet_Spreadsheet_strategy)
 @settings(max_examples=50)
-def test_spreadsheet::spreadsheet_instantiation(instance):
-    assert isinstance(instance, spreadsheet::Spreadsheet)
-
-@given(instance=spreadsheet::Spreadsheet_strategy)
-def test_spreadsheet::spreadsheet_FilePath_type(instance):
-    assert isinstance(instance.FilePath, str)
+def test_spreadsheet_spreadsheet_instantiation(instance):
+    assert isinstance(instance, spreadsheet_Spreadsheet)
 
 
-@given(instance=spreadsheet::Spreadsheet_strategy)
-def test_spreadsheet::spreadsheet_FilePath_setter(instance):
-    original = instance.FilePath
-    instance.FilePath = original
-    assert instance.FilePath == original
 
-@given(instance=spreadsheet::Spreadsheet_strategy)
-def test_spreadsheet::spreadsheet_Label_type(instance):
-    assert isinstance(instance.Label, str)
-
-
-@given(instance=spreadsheet::Spreadsheet_strategy)
-def test_spreadsheet::spreadsheet_Label_setter(instance):
+@given(instance=spreadsheet_Spreadsheet_strategy)
+def test_spreadsheet_spreadsheet_Label_setter(instance):
     original = instance.Label
     instance.Label = original
     assert instance.Label == original
+
+
+
+@given(instance=spreadsheet_Spreadsheet_strategy)
+def test_spreadsheet_spreadsheet_FilePath_setter(instance):
+    original = instance.FilePath
+    instance.FilePath = original
+    assert instance.FilePath == original
 
 import warnings
 import copy
@@ -367,9 +343,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=spreadsheet::Spreadsheet_strategy)
+@given(instance=spreadsheet_Spreadsheet_strategy)
 @settings(max_examples=30)
-def test_spreadsheet::spreadsheet_writefile_changes_state(instance):
+def test_spreadsheet_spreadsheet_writefile_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -381,14 +357,14 @@ def test_spreadsheet::spreadsheet_writefile_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'writeFile' in spreadsheet::Spreadsheet is empty"
+        assert has_statements, f"Function 'writeFile' in spreadsheet_Spreadsheet is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'writeFile' in spreadsheet::Spreadsheet did not change state; check implementation")
+            warnings.warn(f"Operation 'writeFile' in spreadsheet_Spreadsheet did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'writeFile' in spreadsheet::Spreadsheet is not implemented or raised an error")
+        warnings.warn(f"Operation 'writeFile' in spreadsheet_Spreadsheet is not implemented or raised an error")
 
 import warnings
 import copy
@@ -396,9 +372,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=spreadsheet::Spreadsheet_strategy)
+@given(instance=spreadsheet_Spreadsheet_strategy)
 @settings(max_examples=30)
-def test_spreadsheet::spreadsheet_readfile_changes_state(instance):
+def test_spreadsheet_spreadsheet_readfile_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -410,38 +386,32 @@ def test_spreadsheet::spreadsheet_readfile_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'readFile' in spreadsheet::Spreadsheet is empty"
+        assert has_statements, f"Function 'readFile' in spreadsheet_Spreadsheet is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'readFile' in spreadsheet::Spreadsheet did not change state; check implementation")
+            warnings.warn(f"Operation 'readFile' in spreadsheet_Spreadsheet did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'readFile' in spreadsheet::Spreadsheet is not implemented or raised an error")
+        warnings.warn(f"Operation 'readFile' in spreadsheet_Spreadsheet is not implemented or raised an error")
 
-@given(instance=spreadsheet::Sheet_strategy)
+@given(instance=spreadsheet_Sheet_strategy)
 @settings(max_examples=50)
-def test_spreadsheet::sheet_instantiation(instance):
-    assert isinstance(instance, spreadsheet::Sheet)
-
-@given(instance=spreadsheet::Sheet_strategy)
-def test_spreadsheet::sheet_SheetName_type(instance):
-    assert isinstance(instance.SheetName, str)
+def test_spreadsheet_sheet_instantiation(instance):
+    assert isinstance(instance, spreadsheet_Sheet)
 
 
-@given(instance=spreadsheet::Sheet_strategy)
-def test_spreadsheet::sheet_SheetName_setter(instance):
+
+@given(instance=spreadsheet_Sheet_strategy)
+def test_spreadsheet_sheet_SheetName_setter(instance):
     original = instance.SheetName
     instance.SheetName = original
     assert instance.SheetName == original
 
-@given(instance=spreadsheet::Sheet_strategy)
-def test_spreadsheet::sheet_SheetIndex_type(instance):
-    assert isinstance(instance.SheetIndex, int)
 
 
-@given(instance=spreadsheet::Sheet_strategy)
-def test_spreadsheet::sheet_SheetIndex_setter(instance):
+@given(instance=spreadsheet_Sheet_strategy)
+def test_spreadsheet_sheet_SheetIndex_setter(instance):
     original = instance.SheetIndex
     instance.SheetIndex = original
     assert instance.SheetIndex == original

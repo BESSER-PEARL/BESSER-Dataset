@@ -3,14 +3,14 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    A::E,
-    A::D,
-    A::C,
-    A::B,
-    A::A,
+from python_code import (
+    A_E,
+    A_D,
+    A_C,
+    A_B,
+    A_A,
 )
 
 # =============================================================================
@@ -19,72 +19,72 @@ from classes import (
 
 
 
-def test_a::e_is_not_abstract():
-    assert not inspect.isabstract(A::E)
+def test_a_e_is_not_abstract():
+    assert not inspect.isabstract(A_E)
 
 
-def test_a::e_constructor_exists():
-    assert callable(A::E.__init__)
+def test_a_e_constructor_exists():
+    assert callable(A_E.__init__)
 
 
-def test_a::e_constructor_args():
-    sig = inspect.signature(A::E.__init__)
+def test_a_e_constructor_args():
+    sig = inspect.signature(A_E.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_a::d_is_not_abstract():
-    assert not inspect.isabstract(A::D)
+def test_a_d_is_not_abstract():
+    assert not inspect.isabstract(A_D)
 
 
-def test_a::d_constructor_exists():
-    assert callable(A::D.__init__)
+def test_a_d_constructor_exists():
+    assert callable(A_D.__init__)
 
 
-def test_a::d_constructor_args():
-    sig = inspect.signature(A::D.__init__)
+def test_a_d_constructor_args():
+    sig = inspect.signature(A_D.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_a::c_is_not_abstract():
-    assert not inspect.isabstract(A::C)
+def test_a_c_is_not_abstract():
+    assert not inspect.isabstract(A_C)
 
 
-def test_a::c_constructor_exists():
-    assert callable(A::C.__init__)
+def test_a_c_constructor_exists():
+    assert callable(A_C.__init__)
 
 
-def test_a::c_constructor_args():
-    sig = inspect.signature(A::C.__init__)
+def test_a_c_constructor_args():
+    sig = inspect.signature(A_C.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_a::b_is_not_abstract():
-    assert not inspect.isabstract(A::B)
+def test_a_b_is_not_abstract():
+    assert not inspect.isabstract(A_B)
 
 
-def test_a::b_constructor_exists():
-    assert callable(A::B.__init__)
+def test_a_b_constructor_exists():
+    assert callable(A_B.__init__)
 
 
-def test_a::b_constructor_args():
-    sig = inspect.signature(A::B.__init__)
+def test_a_b_constructor_args():
+    sig = inspect.signature(A_B.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_a::a_is_not_abstract():
-    assert not inspect.isabstract(A::A)
+def test_a_a_is_not_abstract():
+    assert not inspect.isabstract(A_A)
 
 
-def test_a::a_constructor_exists():
-    assert callable(A::A.__init__)
+def test_a_a_constructor_exists():
+    assert callable(A_A.__init__)
 
 
-def test_a::a_constructor_args():
-    sig = inspect.signature(A::A.__init__)
+def test_a_a_constructor_args():
+    sig = inspect.signature(A_A.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -99,43 +99,43 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-A::E_strategy = st.builds(
-    A::E,
+A_E_strategy = st.builds(
+    A_E,
 )
-A::D_strategy = st.builds(
-    A::D,
+A_D_strategy = st.builds(
+    A_D,
 )
-A::C_strategy = st.builds(
-    A::C,
+A_C_strategy = st.builds(
+    A_C,
 )
-A::B_strategy = st.builds(
-    A::B,
+A_B_strategy = st.builds(
+    A_B,
 )
-A::A_strategy = st.builds(
-    A::A,
+A_A_strategy = st.builds(
+    A_A,
 )
 
-@given(instance=A::E_strategy)
+@given(instance=A_E_strategy)
 @settings(max_examples=50)
-def test_a::e_instantiation(instance):
-    assert isinstance(instance, A::E)
+def test_a_e_instantiation(instance):
+    assert isinstance(instance, A_E)
 
-@given(instance=A::D_strategy)
+@given(instance=A_D_strategy)
 @settings(max_examples=50)
-def test_a::d_instantiation(instance):
-    assert isinstance(instance, A::D)
+def test_a_d_instantiation(instance):
+    assert isinstance(instance, A_D)
 
-@given(instance=A::C_strategy)
+@given(instance=A_C_strategy)
 @settings(max_examples=50)
-def test_a::c_instantiation(instance):
-    assert isinstance(instance, A::C)
+def test_a_c_instantiation(instance):
+    assert isinstance(instance, A_C)
 
-@given(instance=A::B_strategy)
+@given(instance=A_B_strategy)
 @settings(max_examples=50)
-def test_a::b_instantiation(instance):
-    assert isinstance(instance, A::B)
+def test_a_b_instantiation(instance):
+    assert isinstance(instance, A_B)
 
-@given(instance=A::A_strategy)
+@given(instance=A_A_strategy)
 @settings(max_examples=50)
-def test_a::a_instantiation(instance):
-    assert isinstance(instance, A::A)
+def test_a_a_instantiation(instance):
+    assert isinstance(instance, A_A)

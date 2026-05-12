@@ -3,11 +3,11 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    Persons::Person,
-    Persons::Persons,
+from python_code import (
+    Persons_Person,
+    Persons_Persons,
     GenderType,
 )
 
@@ -17,60 +17,60 @@ from classes import (
 
 
 
-def test_persons::person_is_not_abstract():
-    assert not inspect.isabstract(Persons::Person)
+def test_persons_person_is_not_abstract():
+    assert not inspect.isabstract(Persons_Person)
 
 
-def test_persons::person_constructor_exists():
-    assert callable(Persons::Person.__init__)
+def test_persons_person_constructor_exists():
+    assert callable(Persons_Person.__init__)
 
 
-def test_persons::person_constructor_args():
-    sig = inspect.signature(Persons::Person.__init__)
+def test_persons_person_constructor_args():
+    sig = inspect.signature(Persons_Person.__init__)
     params = list(sig.parameters.keys())
-    assert "firstname" in params, "Missing parameter 'firstname'"
-    assert "gender" in params, "Missing parameter 'gender'"
     assert "lastname" in params, "Missing parameter 'lastname'"
+    assert "gender" in params, "Missing parameter 'gender'"
+    assert "firstname" in params, "Missing parameter 'firstname'"
 
-def test_persons::person_has_firstname():
-    assert hasattr(Persons::Person, "firstname")
+def test_persons_person_has_lastname():
+    assert hasattr(Persons_Person, "lastname")
     descriptor = None
-    for klass in Persons::Person.__mro__:
-        if "firstname" in klass.__dict__:
-            descriptor = klass.__dict__["firstname"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_persons::person_has_gender():
-    assert hasattr(Persons::Person, "gender")
-    descriptor = None
-    for klass in Persons::Person.__mro__:
-        if "gender" in klass.__dict__:
-            descriptor = klass.__dict__["gender"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_persons::person_has_lastname():
-    assert hasattr(Persons::Person, "lastname")
-    descriptor = None
-    for klass in Persons::Person.__mro__:
+    for klass in Persons_Person.__mro__:
         if "lastname" in klass.__dict__:
             descriptor = klass.__dict__["lastname"]
             break
     assert isinstance(descriptor, property)
 
+def test_persons_person_has_gender():
+    assert hasattr(Persons_Person, "gender")
+    descriptor = None
+    for klass in Persons_Person.__mro__:
+        if "gender" in klass.__dict__:
+            descriptor = klass.__dict__["gender"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_persons_person_has_firstname():
+    assert hasattr(Persons_Person, "firstname")
+    descriptor = None
+    for klass in Persons_Person.__mro__:
+        if "firstname" in klass.__dict__:
+            descriptor = klass.__dict__["firstname"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_persons::persons_is_not_abstract():
-    assert not inspect.isabstract(Persons::Persons)
+
+def test_persons_persons_is_not_abstract():
+    assert not inspect.isabstract(Persons_Persons)
 
 
-def test_persons::persons_constructor_exists():
-    assert callable(Persons::Persons.__init__)
+def test_persons_persons_constructor_exists():
+    assert callable(Persons_Persons.__init__)
 
 
-def test_persons::persons_constructor_args():
-    sig = inspect.signature(Persons::Persons.__init__)
+def test_persons_persons_constructor_args():
+    sig = inspect.signature(Persons_Persons.__init__)
     params = list(sig.parameters.keys())
 
 def test_gendertype_exists():
@@ -100,58 +100,49 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-Persons::Person_strategy = st.builds(
-    Persons::Person,
-    firstname=
+Persons_Person_strategy = st.builds(
+    Persons_Person,
+    lastname=
         safe_text,
     gender=
         safe_text,
-    lastname=
+    firstname=
         safe_text
 )
-Persons::Persons_strategy = st.builds(
-    Persons::Persons,
+Persons_Persons_strategy = st.builds(
+    Persons_Persons,
 )
 
-@given(instance=Persons::Person_strategy)
+@given(instance=Persons_Person_strategy)
 @settings(max_examples=50)
-def test_persons::person_instantiation(instance):
-    assert isinstance(instance, Persons::Person)
-
-@given(instance=Persons::Person_strategy)
-def test_persons::person_firstname_type(instance):
-    assert isinstance(instance.firstname, str)
+def test_persons_person_instantiation(instance):
+    assert isinstance(instance, Persons_Person)
 
 
-@given(instance=Persons::Person_strategy)
-def test_persons::person_firstname_setter(instance):
-    original = instance.firstname
-    instance.firstname = original
-    assert instance.firstname == original
 
-@given(instance=Persons::Person_strategy)
-def test_persons::person_gender_type(instance):
-    assert isinstance(instance.gender, str)
-
-
-@given(instance=Persons::Person_strategy)
-def test_persons::person_gender_setter(instance):
-    original = instance.gender
-    instance.gender = original
-    assert instance.gender == original
-
-@given(instance=Persons::Person_strategy)
-def test_persons::person_lastname_type(instance):
-    assert isinstance(instance.lastname, str)
-
-
-@given(instance=Persons::Person_strategy)
-def test_persons::person_lastname_setter(instance):
+@given(instance=Persons_Person_strategy)
+def test_persons_person_lastname_setter(instance):
     original = instance.lastname
     instance.lastname = original
     assert instance.lastname == original
 
-@given(instance=Persons::Persons_strategy)
+
+
+@given(instance=Persons_Person_strategy)
+def test_persons_person_gender_setter(instance):
+    original = instance.gender
+    instance.gender = original
+    assert instance.gender == original
+
+
+
+@given(instance=Persons_Person_strategy)
+def test_persons_person_firstname_setter(instance):
+    original = instance.firstname
+    instance.firstname = original
+    assert instance.firstname == original
+
+@given(instance=Persons_Persons_strategy)
 @settings(max_examples=50)
-def test_persons::persons_instantiation(instance):
-    assert isinstance(instance, Persons::Persons)
+def test_persons_persons_instantiation(instance):
+    assert isinstance(instance, Persons_Persons)

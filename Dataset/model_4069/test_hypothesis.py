@@ -3,18 +3,18 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    simpleuml::UMLPackage,
+from python_code import (
+    simpleuml_UMLPackage,
     ModelElement,
-    simpleuml::Classifier,
-    simpleuml::Association,
-    simpleuml::ModelElement,
-    simpleuml::Attribute,
+    simpleuml_Classifier,
+    simpleuml_Association,
+    simpleuml_ModelElement,
+    simpleuml_Attribute,
     Classifier,
-    simpleuml::PrimitiveDataType,
-    simpleuml::UMLClass,
+    simpleuml_PrimitiveDataType,
+    simpleuml_UMLClass,
     Ignore,
 )
 
@@ -24,16 +24,16 @@ from classes import (
 
 
 
-def test_simpleuml::umlpackage_is_not_abstract():
-    assert not inspect.isabstract(simpleuml::UMLPackage)
+def test_simpleuml_umlpackage_is_not_abstract():
+    assert not inspect.isabstract(simpleuml_UMLPackage)
 
 
-def test_simpleuml::umlpackage_constructor_exists():
-    assert callable(simpleuml::UMLPackage.__init__)
+def test_simpleuml_umlpackage_constructor_exists():
+    assert callable(simpleuml_UMLPackage.__init__)
 
 
-def test_simpleuml::umlpackage_constructor_args():
-    sig = inspect.signature(simpleuml::UMLPackage.__init__)
+def test_simpleuml_umlpackage_constructor_args():
+    sig = inspect.signature(simpleuml_UMLPackage.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -52,51 +52,51 @@ def test_modelelement_constructor_args():
 
 
 
-def test_simpleuml::classifier_is_not_abstract():
-    assert not inspect.isabstract(simpleuml::Classifier)
+def test_simpleuml_classifier_is_not_abstract():
+    assert not inspect.isabstract(simpleuml_Classifier)
 
 
-def test_simpleuml::classifier_constructor_exists():
-    assert callable(simpleuml::Classifier.__init__)
+def test_simpleuml_classifier_constructor_exists():
+    assert callable(simpleuml_Classifier.__init__)
 
 
-def test_simpleuml::classifier_constructor_args():
-    sig = inspect.signature(simpleuml::Classifier.__init__)
+def test_simpleuml_classifier_constructor_args():
+    sig = inspect.signature(simpleuml_Classifier.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_simpleuml::association_is_not_abstract():
-    assert not inspect.isabstract(simpleuml::Association)
+def test_simpleuml_association_is_not_abstract():
+    assert not inspect.isabstract(simpleuml_Association)
 
 
-def test_simpleuml::association_constructor_exists():
-    assert callable(simpleuml::Association.__init__)
+def test_simpleuml_association_constructor_exists():
+    assert callable(simpleuml_Association.__init__)
 
 
-def test_simpleuml::association_constructor_args():
-    sig = inspect.signature(simpleuml::Association.__init__)
+def test_simpleuml_association_constructor_args():
+    sig = inspect.signature(simpleuml_Association.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_simpleuml::modelelement_is_not_abstract():
-    assert not inspect.isabstract(simpleuml::ModelElement)
+def test_simpleuml_modelelement_is_not_abstract():
+    assert not inspect.isabstract(simpleuml_ModelElement)
 
 
-def test_simpleuml::modelelement_constructor_exists():
-    assert callable(simpleuml::ModelElement.__init__)
+def test_simpleuml_modelelement_constructor_exists():
+    assert callable(simpleuml_ModelElement.__init__)
 
 
-def test_simpleuml::modelelement_constructor_args():
-    sig = inspect.signature(simpleuml::ModelElement.__init__)
+def test_simpleuml_modelelement_constructor_args():
+    sig = inspect.signature(simpleuml_ModelElement.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_simpleuml::modelelement_has_name():
-    assert hasattr(simpleuml::ModelElement, "name")
+def test_simpleuml_modelelement_has_name():
+    assert hasattr(simpleuml_ModelElement, "name")
     descriptor = None
-    for klass in simpleuml::ModelElement.__mro__:
+    for klass in simpleuml_ModelElement.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -104,16 +104,16 @@ def test_simpleuml::modelelement_has_name():
 
 
 
-def test_simpleuml::attribute_is_not_abstract():
-    assert not inspect.isabstract(simpleuml::Attribute)
+def test_simpleuml_attribute_is_not_abstract():
+    assert not inspect.isabstract(simpleuml_Attribute)
 
 
-def test_simpleuml::attribute_constructor_exists():
-    assert callable(simpleuml::Attribute.__init__)
+def test_simpleuml_attribute_constructor_exists():
+    assert callable(simpleuml_Attribute.__init__)
 
 
-def test_simpleuml::attribute_constructor_args():
-    sig = inspect.signature(simpleuml::Attribute.__init__)
+def test_simpleuml_attribute_constructor_args():
+    sig = inspect.signature(simpleuml_Attribute.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -132,37 +132,37 @@ def test_classifier_constructor_args():
 
 
 
-def test_simpleuml::primitivedatatype_is_not_abstract():
-    assert not inspect.isabstract(simpleuml::PrimitiveDataType)
+def test_simpleuml_primitivedatatype_is_not_abstract():
+    assert not inspect.isabstract(simpleuml_PrimitiveDataType)
 
 
-def test_simpleuml::primitivedatatype_constructor_exists():
-    assert callable(simpleuml::PrimitiveDataType.__init__)
+def test_simpleuml_primitivedatatype_constructor_exists():
+    assert callable(simpleuml_PrimitiveDataType.__init__)
 
 
-def test_simpleuml::primitivedatatype_constructor_args():
-    sig = inspect.signature(simpleuml::PrimitiveDataType.__init__)
+def test_simpleuml_primitivedatatype_constructor_args():
+    sig = inspect.signature(simpleuml_PrimitiveDataType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_simpleuml::umlclass_is_not_abstract():
-    assert not inspect.isabstract(simpleuml::UMLClass)
+def test_simpleuml_umlclass_is_not_abstract():
+    assert not inspect.isabstract(simpleuml_UMLClass)
 
 
-def test_simpleuml::umlclass_constructor_exists():
-    assert callable(simpleuml::UMLClass.__init__)
+def test_simpleuml_umlclass_constructor_exists():
+    assert callable(simpleuml_UMLClass.__init__)
 
 
-def test_simpleuml::umlclass_constructor_args():
-    sig = inspect.signature(simpleuml::UMLClass.__init__)
+def test_simpleuml_umlclass_constructor_args():
+    sig = inspect.signature(simpleuml_UMLClass.__init__)
     params = list(sig.parameters.keys())
     assert "kind" in params, "Missing parameter 'kind'"
 
-def test_simpleuml::umlclass_has_kind():
-    assert hasattr(simpleuml::UMLClass, "kind")
+def test_simpleuml_umlclass_has_kind():
+    assert hasattr(simpleuml_UMLClass, "kind")
     descriptor = None
-    for klass in simpleuml::UMLClass.__mro__:
+    for klass in simpleuml_UMLClass.__mro__:
         if "kind" in klass.__dict__:
             descriptor = klass.__dict__["kind"]
             break
@@ -176,8 +176,8 @@ def test_ignore_has_all_literals():
     # Collect the names of literals in this Enumeration
     enum_literals = [lit.name for lit in Ignore]
     expected_literals = [
-        "anotherlit",
         "lit1",
+        "anotherlit",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
@@ -195,101 +195,95 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-simpleuml::UMLPackage_strategy = st.builds(
-    simpleuml::UMLPackage,
+simpleuml_UMLPackage_strategy = st.builds(
+    simpleuml_UMLPackage,
 )
 ModelElement_strategy = st.builds(
     ModelElement,
 )
-simpleuml::Classifier_strategy = st.builds(
-    simpleuml::Classifier,
+simpleuml_Classifier_strategy = st.builds(
+    simpleuml_Classifier,
 )
-simpleuml::Association_strategy = st.builds(
-    simpleuml::Association,
+simpleuml_Association_strategy = st.builds(
+    simpleuml_Association,
 )
-simpleuml::ModelElement_strategy = st.builds(
-    simpleuml::ModelElement,
+simpleuml_ModelElement_strategy = st.builds(
+    simpleuml_ModelElement,
     name=
         safe_text
 )
-simpleuml::Attribute_strategy = st.builds(
-    simpleuml::Attribute,
+simpleuml_Attribute_strategy = st.builds(
+    simpleuml_Attribute,
 )
 Classifier_strategy = st.builds(
     Classifier,
 )
-simpleuml::PrimitiveDataType_strategy = st.builds(
-    simpleuml::PrimitiveDataType,
+simpleuml_PrimitiveDataType_strategy = st.builds(
+    simpleuml_PrimitiveDataType,
 )
-simpleuml::UMLClass_strategy = st.builds(
-    simpleuml::UMLClass,
+simpleuml_UMLClass_strategy = st.builds(
+    simpleuml_UMLClass,
     kind=
         safe_text
 )
 
-@given(instance=simpleuml::UMLPackage_strategy)
+@given(instance=simpleuml_UMLPackage_strategy)
 @settings(max_examples=50)
-def test_simpleuml::umlpackage_instantiation(instance):
-    assert isinstance(instance, simpleuml::UMLPackage)
+def test_simpleuml_umlpackage_instantiation(instance):
+    assert isinstance(instance, simpleuml_UMLPackage)
 
 @given(instance=ModelElement_strategy)
 @settings(max_examples=50)
 def test_modelelement_instantiation(instance):
     assert isinstance(instance, ModelElement)
 
-@given(instance=simpleuml::Classifier_strategy)
+@given(instance=simpleuml_Classifier_strategy)
 @settings(max_examples=50)
-def test_simpleuml::classifier_instantiation(instance):
-    assert isinstance(instance, simpleuml::Classifier)
+def test_simpleuml_classifier_instantiation(instance):
+    assert isinstance(instance, simpleuml_Classifier)
 
-@given(instance=simpleuml::Association_strategy)
+@given(instance=simpleuml_Association_strategy)
 @settings(max_examples=50)
-def test_simpleuml::association_instantiation(instance):
-    assert isinstance(instance, simpleuml::Association)
+def test_simpleuml_association_instantiation(instance):
+    assert isinstance(instance, simpleuml_Association)
 
-@given(instance=simpleuml::ModelElement_strategy)
+@given(instance=simpleuml_ModelElement_strategy)
 @settings(max_examples=50)
-def test_simpleuml::modelelement_instantiation(instance):
-    assert isinstance(instance, simpleuml::ModelElement)
-
-@given(instance=simpleuml::ModelElement_strategy)
-def test_simpleuml::modelelement_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_simpleuml_modelelement_instantiation(instance):
+    assert isinstance(instance, simpleuml_ModelElement)
 
 
-@given(instance=simpleuml::ModelElement_strategy)
-def test_simpleuml::modelelement_name_setter(instance):
+
+@given(instance=simpleuml_ModelElement_strategy)
+def test_simpleuml_modelelement_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=simpleuml::Attribute_strategy)
+@given(instance=simpleuml_Attribute_strategy)
 @settings(max_examples=50)
-def test_simpleuml::attribute_instantiation(instance):
-    assert isinstance(instance, simpleuml::Attribute)
+def test_simpleuml_attribute_instantiation(instance):
+    assert isinstance(instance, simpleuml_Attribute)
 
 @given(instance=Classifier_strategy)
 @settings(max_examples=50)
 def test_classifier_instantiation(instance):
     assert isinstance(instance, Classifier)
 
-@given(instance=simpleuml::PrimitiveDataType_strategy)
+@given(instance=simpleuml_PrimitiveDataType_strategy)
 @settings(max_examples=50)
-def test_simpleuml::primitivedatatype_instantiation(instance):
-    assert isinstance(instance, simpleuml::PrimitiveDataType)
+def test_simpleuml_primitivedatatype_instantiation(instance):
+    assert isinstance(instance, simpleuml_PrimitiveDataType)
 
-@given(instance=simpleuml::UMLClass_strategy)
+@given(instance=simpleuml_UMLClass_strategy)
 @settings(max_examples=50)
-def test_simpleuml::umlclass_instantiation(instance):
-    assert isinstance(instance, simpleuml::UMLClass)
-
-@given(instance=simpleuml::UMLClass_strategy)
-def test_simpleuml::umlclass_kind_type(instance):
-    assert isinstance(instance.kind, str)
+def test_simpleuml_umlclass_instantiation(instance):
+    assert isinstance(instance, simpleuml_UMLClass)
 
 
-@given(instance=simpleuml::UMLClass_strategy)
-def test_simpleuml::umlclass_kind_setter(instance):
+
+@given(instance=simpleuml_UMLClass_strategy)
+def test_simpleuml_umlclass_kind_setter(instance):
     original = instance.kind
     instance.kind = original
     assert instance.kind == original

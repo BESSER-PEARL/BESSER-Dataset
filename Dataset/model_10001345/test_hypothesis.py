@@ -3,7 +3,7 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
 from python_code import (
     Class,
@@ -68,17 +68,8 @@ def test_exo6_point_constructor_exists():
 def test_exo6_point_constructor_args():
     sig = inspect.signature(exo6_Point.__init__)
     params = list(sig.parameters.keys())
-    assert "abcisse" in params, "Missing parameter 'abcisse'"
     assert "ordonnee" in params, "Missing parameter 'ordonnee'"
-
-def test_exo6_point_has_abcisse():
-    assert hasattr(exo6_Point, "abcisse")
-    descriptor = None
-    for klass in exo6_Point.__mro__:
-        if "abcisse" in klass.__dict__:
-            descriptor = klass.__dict__["abcisse"]
-            break
-    assert isinstance(descriptor, property)
+    assert "abcisse" in params, "Missing parameter 'abcisse'"
 
 def test_exo6_point_has_ordonnee():
     assert hasattr(exo6_Point, "ordonnee")
@@ -86,6 +77,15 @@ def test_exo6_point_has_ordonnee():
     for klass in exo6_Point.__mro__:
         if "ordonnee" in klass.__dict__:
             descriptor = klass.__dict__["ordonnee"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_exo6_point_has_abcisse():
+    assert hasattr(exo6_Point, "abcisse")
+    descriptor = None
+    for klass in exo6_Point.__mro__:
+        if "abcisse" in klass.__dict__:
+            descriptor = klass.__dict__["abcisse"]
             break
     assert isinstance(descriptor, property)
 
@@ -226,17 +226,8 @@ def test_model2_c_constructor_exists():
 def test_model2_c_constructor_args():
     sig = inspect.signature(model2_C.__init__)
     params = list(sig.parameters.keys())
-    assert "attC1" in params, "Missing parameter 'attC1'"
     assert "attC2" in params, "Missing parameter 'attC2'"
-
-def test_model2_c_has_attC1():
-    assert hasattr(model2_C, "attC1")
-    descriptor = None
-    for klass in model2_C.__mro__:
-        if "attC1" in klass.__dict__:
-            descriptor = klass.__dict__["attC1"]
-            break
-    assert isinstance(descriptor, property)
+    assert "attC1" in params, "Missing parameter 'attC1'"
 
 def test_model2_c_has_attC2():
     assert hasattr(model2_C, "attC2")
@@ -244,6 +235,15 @@ def test_model2_c_has_attC2():
     for klass in model2_C.__mro__:
         if "attC2" in klass.__dict__:
             descriptor = klass.__dict__["attC2"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_model2_c_has_attC1():
+    assert hasattr(model2_C, "attC1")
+    descriptor = None
+    for klass in model2_C.__mro__:
+        if "attC1" in klass.__dict__:
+            descriptor = klass.__dict__["attC1"]
             break
     assert isinstance(descriptor, property)
 
@@ -377,9 +377,9 @@ exo6_Triangle_strategy = st.builds(
 )
 exo6_Point_strategy = st.builds(
     exo6_Point,
-    abcisse=
-        st.none(),
     ordonnee=
+        st.none(),
+    abcisse=
         st.none()
 )
 exo6_Polygone_strategy = st.builds(
@@ -410,10 +410,10 @@ model2_Z_strategy = st.builds(
 )
 model2_C_strategy = st.builds(
     model2_C,
-    attC1=
-        st.integers(),
     attC2=
-        st.booleans()
+        st.booleans(),
+    attC1=
+        st.integers()
 )
 model2_C2_strategy = st.builds(
     model2_C2,
@@ -454,20 +454,6 @@ def test_exo6_triangle_instantiation(instance):
 def test_exo6_point_instantiation(instance):
     assert isinstance(instance, exo6_Point)
 
-@given(instance=exo6_Point_strategy)
-def test_exo6_point_abcisse_type(instance):
-    assert isinstance(instance.abcisse, c)
-
-
-@given(instance=exo6_Point_strategy)
-def test_exo6_point_abcisse_setter(instance):
-    original = instance.abcisse
-    instance.abcisse = original
-    assert instance.abcisse == original
-
-@given(instance=exo6_Point_strategy)
-def test_exo6_point_ordonnee_type(instance):
-    assert isinstance(instance.ordonnee, c)
 
 
 @given(instance=exo6_Point_strategy)
@@ -476,14 +462,19 @@ def test_exo6_point_ordonnee_setter(instance):
     instance.ordonnee = original
     assert instance.ordonnee == original
 
+
+
+@given(instance=exo6_Point_strategy)
+def test_exo6_point_abcisse_setter(instance):
+    original = instance.abcisse
+    instance.abcisse = original
+    assert instance.abcisse == original
+
 @given(instance=exo6_Polygone_strategy)
 @settings(max_examples=50)
 def test_exo6_polygone_instantiation(instance):
     assert isinstance(instance, exo6_Polygone)
 
-@given(instance=exo6_Polygone_strategy)
-def test_exo6_polygone_sommets_type(instance):
-    assert isinstance(instance.sommets, model2_c)
 
 
 @given(instance=exo6_Polygone_strategy)
@@ -502,9 +493,6 @@ def test_model2_r_instantiation(instance):
 def test_model2_b_instantiation(instance):
     assert isinstance(instance, model2_B)
 
-@given(instance=model2_B_strategy)
-def test_model2_b_attB_type(instance):
-    assert isinstance(instance.attB, int)
 
 
 @given(instance=model2_B_strategy)
@@ -518,9 +506,6 @@ def test_model2_b_attB_setter(instance):
 def test_model2_y_instantiation(instance):
     assert isinstance(instance, model2_Y)
 
-@given(instance=model2_Y_strategy)
-def test_model2_y_attY_type(instance):
-    assert isinstance(instance.attY, str)
 
 
 @given(instance=model2_Y_strategy)
@@ -534,9 +519,6 @@ def test_model2_y_attY_setter(instance):
 def test_model2_a_instantiation(instance):
     assert isinstance(instance, model2_A)
 
-@given(instance=model2_A_strategy)
-def test_model2_a_attA_type(instance):
-    assert isinstance(instance.attA, str)
 
 
 @given(instance=model2_A_strategy)
@@ -555,20 +537,6 @@ def test_model2_z_instantiation(instance):
 def test_model2_c_instantiation(instance):
     assert isinstance(instance, model2_C)
 
-@given(instance=model2_C_strategy)
-def test_model2_c_attC1_type(instance):
-    assert isinstance(instance.attC1, int)
-
-
-@given(instance=model2_C_strategy)
-def test_model2_c_attC1_setter(instance):
-    original = instance.attC1
-    instance.attC1 = original
-    assert instance.attC1 == original
-
-@given(instance=model2_C_strategy)
-def test_model2_c_attC2_type(instance):
-    assert isinstance(instance.attC2, bool)
 
 
 @given(instance=model2_C_strategy)
@@ -576,6 +544,14 @@ def test_model2_c_attC2_setter(instance):
     original = instance.attC2
     instance.attC2 = original
     assert instance.attC2 == original
+
+
+
+@given(instance=model2_C_strategy)
+def test_model2_c_attC1_setter(instance):
+    original = instance.attC1
+    instance.attC1 = original
+    assert instance.attC1 == original
 
 @given(instance=model2_C2_strategy)
 @settings(max_examples=50)
@@ -592,9 +568,6 @@ def test_model2_c1_instantiation(instance):
 def test_c_instantiation(instance):
     assert isinstance(instance, C)
 
-@given(instance=C_strategy)
-def test_c_attC1_type(instance):
-    assert isinstance(instance.attC1, int)
 
 
 @given(instance=C_strategy)
@@ -603,9 +576,6 @@ def test_c_attC1_setter(instance):
     instance.attC1 = original
     assert instance.attC1 == original
 
-@given(instance=C_strategy)
-def test_c_attC2_type(instance):
-    assert isinstance(instance.attC2, bool)
 
 
 @given(instance=C_strategy)
@@ -619,9 +589,6 @@ def test_c_attC2_setter(instance):
 def test_b_instantiation(instance):
     assert isinstance(instance, B)
 
-@given(instance=B_strategy)
-def test_b_attB_type(instance):
-    assert isinstance(instance.attB, int)
 
 
 @given(instance=B_strategy)
@@ -635,9 +602,6 @@ def test_b_attB_setter(instance):
 def test_a_instantiation(instance):
     assert isinstance(instance, A)
 
-@given(instance=A_strategy)
-def test_a_attA_type(instance):
-    assert isinstance(instance.attA, str)
 
 
 @given(instance=A_strategy)

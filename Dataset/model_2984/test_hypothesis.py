@@ -3,13 +3,13 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    mealymodel::State,
-    mealymodel::MealyMachine,
-    mealymodel::Transition,
-    mealymodel::Alphabet,
+from python_code import (
+    mealymodel_State,
+    mealymodel_MealyMachine,
+    mealymodel_Transition,
+    mealymodel_Alphabet,
 )
 
 # =============================================================================
@@ -18,23 +18,23 @@ from classes import (
 
 
 
-def test_mealymodel::state_is_not_abstract():
-    assert not inspect.isabstract(mealymodel::State)
+def test_mealymodel_state_is_not_abstract():
+    assert not inspect.isabstract(mealymodel_State)
 
 
-def test_mealymodel::state_constructor_exists():
-    assert callable(mealymodel::State.__init__)
+def test_mealymodel_state_constructor_exists():
+    assert callable(mealymodel_State.__init__)
 
 
-def test_mealymodel::state_constructor_args():
-    sig = inspect.signature(mealymodel::State.__init__)
+def test_mealymodel_state_constructor_args():
+    sig = inspect.signature(mealymodel_State.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_mealymodel::state_has_name():
-    assert hasattr(mealymodel::State, "name")
+def test_mealymodel_state_has_name():
+    assert hasattr(mealymodel_State, "name")
     descriptor = None
-    for klass in mealymodel::State.__mro__:
+    for klass in mealymodel_State.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -42,47 +42,47 @@ def test_mealymodel::state_has_name():
 
 
 
-def test_mealymodel::mealymachine_is_not_abstract():
-    assert not inspect.isabstract(mealymodel::MealyMachine)
+def test_mealymodel_mealymachine_is_not_abstract():
+    assert not inspect.isabstract(mealymodel_MealyMachine)
 
 
-def test_mealymodel::mealymachine_constructor_exists():
-    assert callable(mealymodel::MealyMachine.__init__)
+def test_mealymodel_mealymachine_constructor_exists():
+    assert callable(mealymodel_MealyMachine.__init__)
 
 
-def test_mealymodel::mealymachine_constructor_args():
-    sig = inspect.signature(mealymodel::MealyMachine.__init__)
+def test_mealymodel_mealymachine_constructor_args():
+    sig = inspect.signature(mealymodel_MealyMachine.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_mealymodel::transition_is_not_abstract():
-    assert not inspect.isabstract(mealymodel::Transition)
+def test_mealymodel_transition_is_not_abstract():
+    assert not inspect.isabstract(mealymodel_Transition)
 
 
-def test_mealymodel::transition_constructor_exists():
-    assert callable(mealymodel::Transition.__init__)
+def test_mealymodel_transition_constructor_exists():
+    assert callable(mealymodel_Transition.__init__)
 
 
-def test_mealymodel::transition_constructor_args():
-    sig = inspect.signature(mealymodel::Transition.__init__)
+def test_mealymodel_transition_constructor_args():
+    sig = inspect.signature(mealymodel_Transition.__init__)
     params = list(sig.parameters.keys())
     assert "input" in params, "Missing parameter 'input'"
     assert "output" in params, "Missing parameter 'output'"
 
-def test_mealymodel::transition_has_input():
-    assert hasattr(mealymodel::Transition, "input")
+def test_mealymodel_transition_has_input():
+    assert hasattr(mealymodel_Transition, "input")
     descriptor = None
-    for klass in mealymodel::Transition.__mro__:
+    for klass in mealymodel_Transition.__mro__:
         if "input" in klass.__dict__:
             descriptor = klass.__dict__["input"]
             break
     assert isinstance(descriptor, property)
 
-def test_mealymodel::transition_has_output():
-    assert hasattr(mealymodel::Transition, "output")
+def test_mealymodel_transition_has_output():
+    assert hasattr(mealymodel_Transition, "output")
     descriptor = None
-    for klass in mealymodel::Transition.__mro__:
+    for klass in mealymodel_Transition.__mro__:
         if "output" in klass.__dict__:
             descriptor = klass.__dict__["output"]
             break
@@ -90,23 +90,23 @@ def test_mealymodel::transition_has_output():
 
 
 
-def test_mealymodel::alphabet_is_not_abstract():
-    assert not inspect.isabstract(mealymodel::Alphabet)
+def test_mealymodel_alphabet_is_not_abstract():
+    assert not inspect.isabstract(mealymodel_Alphabet)
 
 
-def test_mealymodel::alphabet_constructor_exists():
-    assert callable(mealymodel::Alphabet.__init__)
+def test_mealymodel_alphabet_constructor_exists():
+    assert callable(mealymodel_Alphabet.__init__)
 
 
-def test_mealymodel::alphabet_constructor_args():
-    sig = inspect.signature(mealymodel::Alphabet.__init__)
+def test_mealymodel_alphabet_constructor_args():
+    sig = inspect.signature(mealymodel_Alphabet.__init__)
     params = list(sig.parameters.keys())
     assert "characters" in params, "Missing parameter 'characters'"
 
-def test_mealymodel::alphabet_has_characters():
-    assert hasattr(mealymodel::Alphabet, "characters")
+def test_mealymodel_alphabet_has_characters():
+    assert hasattr(mealymodel_Alphabet, "characters")
     descriptor = None
-    for klass in mealymodel::Alphabet.__mro__:
+    for klass in mealymodel_Alphabet.__mro__:
         if "characters" in klass.__dict__:
             descriptor = klass.__dict__["characters"]
             break
@@ -124,87 +124,75 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-mealymodel::State_strategy = st.builds(
-    mealymodel::State,
+mealymodel_State_strategy = st.builds(
+    mealymodel_State,
     name=
         safe_text
 )
-mealymodel::MealyMachine_strategy = st.builds(
-    mealymodel::MealyMachine,
+mealymodel_MealyMachine_strategy = st.builds(
+    mealymodel_MealyMachine,
 )
-mealymodel::Transition_strategy = st.builds(
-    mealymodel::Transition,
+mealymodel_Transition_strategy = st.builds(
+    mealymodel_Transition,
     input=
         safe_text,
     output=
         safe_text
 )
-mealymodel::Alphabet_strategy = st.builds(
-    mealymodel::Alphabet,
+mealymodel_Alphabet_strategy = st.builds(
+    mealymodel_Alphabet,
     characters=
         safe_text
 )
 
-@given(instance=mealymodel::State_strategy)
+@given(instance=mealymodel_State_strategy)
 @settings(max_examples=50)
-def test_mealymodel::state_instantiation(instance):
-    assert isinstance(instance, mealymodel::State)
-
-@given(instance=mealymodel::State_strategy)
-def test_mealymodel::state_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_mealymodel_state_instantiation(instance):
+    assert isinstance(instance, mealymodel_State)
 
 
-@given(instance=mealymodel::State_strategy)
-def test_mealymodel::state_name_setter(instance):
+
+@given(instance=mealymodel_State_strategy)
+def test_mealymodel_state_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=mealymodel::MealyMachine_strategy)
+@given(instance=mealymodel_MealyMachine_strategy)
 @settings(max_examples=50)
-def test_mealymodel::mealymachine_instantiation(instance):
-    assert isinstance(instance, mealymodel::MealyMachine)
+def test_mealymodel_mealymachine_instantiation(instance):
+    assert isinstance(instance, mealymodel_MealyMachine)
 
-@given(instance=mealymodel::Transition_strategy)
+@given(instance=mealymodel_Transition_strategy)
 @settings(max_examples=50)
-def test_mealymodel::transition_instantiation(instance):
-    assert isinstance(instance, mealymodel::Transition)
-
-@given(instance=mealymodel::Transition_strategy)
-def test_mealymodel::transition_input_type(instance):
-    assert isinstance(instance.input, str)
+def test_mealymodel_transition_instantiation(instance):
+    assert isinstance(instance, mealymodel_Transition)
 
 
-@given(instance=mealymodel::Transition_strategy)
-def test_mealymodel::transition_input_setter(instance):
+
+@given(instance=mealymodel_Transition_strategy)
+def test_mealymodel_transition_input_setter(instance):
     original = instance.input
     instance.input = original
     assert instance.input == original
 
-@given(instance=mealymodel::Transition_strategy)
-def test_mealymodel::transition_output_type(instance):
-    assert isinstance(instance.output, str)
 
 
-@given(instance=mealymodel::Transition_strategy)
-def test_mealymodel::transition_output_setter(instance):
+@given(instance=mealymodel_Transition_strategy)
+def test_mealymodel_transition_output_setter(instance):
     original = instance.output
     instance.output = original
     assert instance.output == original
 
-@given(instance=mealymodel::Alphabet_strategy)
+@given(instance=mealymodel_Alphabet_strategy)
 @settings(max_examples=50)
-def test_mealymodel::alphabet_instantiation(instance):
-    assert isinstance(instance, mealymodel::Alphabet)
-
-@given(instance=mealymodel::Alphabet_strategy)
-def test_mealymodel::alphabet_characters_type(instance):
-    assert isinstance(instance.characters, str)
+def test_mealymodel_alphabet_instantiation(instance):
+    assert isinstance(instance, mealymodel_Alphabet)
 
 
-@given(instance=mealymodel::Alphabet_strategy)
-def test_mealymodel::alphabet_characters_setter(instance):
+
+@given(instance=mealymodel_Alphabet_strategy)
+def test_mealymodel_alphabet_characters_setter(instance):
     original = instance.characters
     instance.characters = original
     assert instance.characters == original

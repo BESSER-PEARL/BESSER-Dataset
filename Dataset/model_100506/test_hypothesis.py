@@ -3,30 +3,30 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     AbstractRequirement,
-    Reqtify::MacroRequirement,
+    Reqtify_MacroRequirement,
     TextElement,
-    Reqtify::AbstractRequirement,
-    Reqtify::Section,
-    Reqtify::Requirement,
+    Reqtify_AbstractRequirement,
+    Reqtify_Section,
+    Reqtify_Requirement,
     Attribute,
     CoverLink,
     MacroRequirement,
     TypedElement,
-    Reqtify::Attribute,
-    Reqtify::CoverLink,
-    Reqtify::ElementWithIL,
-    Reqtify::TypedElement,
+    Reqtify_Attribute,
+    Reqtify_CoverLink,
+    Reqtify_ElementWithIL,
+    Reqtify_TypedElement,
     Document,
-    Reqtify::Project,
+    Reqtify_Project,
     Section,
     Project,
     ElementWithIL,
-    Reqtify::TextElement,
-    Reqtify::Document,
+    Reqtify_TextElement,
+    Reqtify_Document,
 )
 
 # =============================================================================
@@ -49,16 +49,16 @@ def test_abstractrequirement_constructor_args():
 
 
 
-def test_reqtify::macrorequirement_is_not_abstract():
-    assert not inspect.isabstract(Reqtify::MacroRequirement)
+def test_reqtify_macrorequirement_is_not_abstract():
+    assert not inspect.isabstract(Reqtify_MacroRequirement)
 
 
-def test_reqtify::macrorequirement_constructor_exists():
-    assert callable(Reqtify::MacroRequirement.__init__)
+def test_reqtify_macrorequirement_constructor_exists():
+    assert callable(Reqtify_MacroRequirement.__init__)
 
 
-def test_reqtify::macrorequirement_constructor_args():
-    sig = inspect.signature(Reqtify::MacroRequirement.__init__)
+def test_reqtify_macrorequirement_constructor_args():
+    sig = inspect.signature(Reqtify_MacroRequirement.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -77,44 +77,44 @@ def test_textelement_constructor_args():
 
 
 
-def test_reqtify::abstractrequirement_is_not_abstract():
-    assert not inspect.isabstract(Reqtify::AbstractRequirement)
+def test_reqtify_abstractrequirement_is_not_abstract():
+    assert not inspect.isabstract(Reqtify_AbstractRequirement)
 
 
-def test_reqtify::abstractrequirement_constructor_exists():
-    assert callable(Reqtify::AbstractRequirement.__init__)
+def test_reqtify_abstractrequirement_constructor_exists():
+    assert callable(Reqtify_AbstractRequirement.__init__)
 
 
-def test_reqtify::abstractrequirement_constructor_args():
-    sig = inspect.signature(Reqtify::AbstractRequirement.__init__)
+def test_reqtify_abstractrequirement_constructor_args():
+    sig = inspect.signature(Reqtify_AbstractRequirement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_reqtify::section_is_not_abstract():
-    assert not inspect.isabstract(Reqtify::Section)
+def test_reqtify_section_is_not_abstract():
+    assert not inspect.isabstract(Reqtify_Section)
 
 
-def test_reqtify::section_constructor_exists():
-    assert callable(Reqtify::Section.__init__)
+def test_reqtify_section_constructor_exists():
+    assert callable(Reqtify_Section.__init__)
 
 
-def test_reqtify::section_constructor_args():
-    sig = inspect.signature(Reqtify::Section.__init__)
+def test_reqtify_section_constructor_args():
+    sig = inspect.signature(Reqtify_Section.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_reqtify::requirement_is_not_abstract():
-    assert not inspect.isabstract(Reqtify::Requirement)
+def test_reqtify_requirement_is_not_abstract():
+    assert not inspect.isabstract(Reqtify_Requirement)
 
 
-def test_reqtify::requirement_constructor_exists():
-    assert callable(Reqtify::Requirement.__init__)
+def test_reqtify_requirement_constructor_exists():
+    assert callable(Reqtify_Requirement.__init__)
 
 
-def test_reqtify::requirement_constructor_args():
-    sig = inspect.signature(Reqtify::Requirement.__init__)
+def test_reqtify_requirement_constructor_args():
+    sig = inspect.signature(Reqtify_Requirement.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -175,23 +175,23 @@ def test_typedelement_constructor_args():
 
 
 
-def test_reqtify::attribute_is_not_abstract():
-    assert not inspect.isabstract(Reqtify::Attribute)
+def test_reqtify_attribute_is_not_abstract():
+    assert not inspect.isabstract(Reqtify_Attribute)
 
 
-def test_reqtify::attribute_constructor_exists():
-    assert callable(Reqtify::Attribute.__init__)
+def test_reqtify_attribute_constructor_exists():
+    assert callable(Reqtify_Attribute.__init__)
 
 
-def test_reqtify::attribute_constructor_args():
-    sig = inspect.signature(Reqtify::Attribute.__init__)
+def test_reqtify_attribute_constructor_args():
+    sig = inspect.signature(Reqtify_Attribute.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
 
-def test_reqtify::attribute_has_value():
-    assert hasattr(Reqtify::Attribute, "value")
+def test_reqtify_attribute_has_value():
+    assert hasattr(Reqtify_Attribute, "value")
     descriptor = None
-    for klass in Reqtify::Attribute.__mro__:
+    for klass in Reqtify_Attribute.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -199,47 +199,47 @@ def test_reqtify::attribute_has_value():
 
 
 
-def test_reqtify::coverlink_is_not_abstract():
-    assert not inspect.isabstract(Reqtify::CoverLink)
+def test_reqtify_coverlink_is_not_abstract():
+    assert not inspect.isabstract(Reqtify_CoverLink)
 
 
-def test_reqtify::coverlink_constructor_exists():
-    assert callable(Reqtify::CoverLink.__init__)
+def test_reqtify_coverlink_constructor_exists():
+    assert callable(Reqtify_CoverLink.__init__)
 
 
-def test_reqtify::coverlink_constructor_args():
-    sig = inspect.signature(Reqtify::CoverLink.__init__)
+def test_reqtify_coverlink_constructor_args():
+    sig = inspect.signature(Reqtify_CoverLink.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_reqtify::elementwithil_is_not_abstract():
-    assert not inspect.isabstract(Reqtify::ElementWithIL)
+def test_reqtify_elementwithil_is_not_abstract():
+    assert not inspect.isabstract(Reqtify_ElementWithIL)
 
 
-def test_reqtify::elementwithil_constructor_exists():
-    assert callable(Reqtify::ElementWithIL.__init__)
+def test_reqtify_elementwithil_constructor_exists():
+    assert callable(Reqtify_ElementWithIL.__init__)
 
 
-def test_reqtify::elementwithil_constructor_args():
-    sig = inspect.signature(Reqtify::ElementWithIL.__init__)
+def test_reqtify_elementwithil_constructor_args():
+    sig = inspect.signature(Reqtify_ElementWithIL.__init__)
     params = list(sig.parameters.keys())
     assert "label" in params, "Missing parameter 'label'"
     assert "name" in params, "Missing parameter 'name'"
 
-def test_reqtify::elementwithil_has_label():
-    assert hasattr(Reqtify::ElementWithIL, "label")
+def test_reqtify_elementwithil_has_label():
+    assert hasattr(Reqtify_ElementWithIL, "label")
     descriptor = None
-    for klass in Reqtify::ElementWithIL.__mro__:
+    for klass in Reqtify_ElementWithIL.__mro__:
         if "label" in klass.__dict__:
             descriptor = klass.__dict__["label"]
             break
     assert isinstance(descriptor, property)
 
-def test_reqtify::elementwithil_has_name():
-    assert hasattr(Reqtify::ElementWithIL, "name")
+def test_reqtify_elementwithil_has_name():
+    assert hasattr(Reqtify_ElementWithIL, "name")
     descriptor = None
-    for klass in Reqtify::ElementWithIL.__mro__:
+    for klass in Reqtify_ElementWithIL.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -247,23 +247,23 @@ def test_reqtify::elementwithil_has_name():
 
 
 
-def test_reqtify::typedelement_is_not_abstract():
-    assert not inspect.isabstract(Reqtify::TypedElement)
+def test_reqtify_typedelement_is_not_abstract():
+    assert not inspect.isabstract(Reqtify_TypedElement)
 
 
-def test_reqtify::typedelement_constructor_exists():
-    assert callable(Reqtify::TypedElement.__init__)
+def test_reqtify_typedelement_constructor_exists():
+    assert callable(Reqtify_TypedElement.__init__)
 
 
-def test_reqtify::typedelement_constructor_args():
-    sig = inspect.signature(Reqtify::TypedElement.__init__)
+def test_reqtify_typedelement_constructor_args():
+    sig = inspect.signature(Reqtify_TypedElement.__init__)
     params = list(sig.parameters.keys())
     assert "type" in params, "Missing parameter 'type'"
 
-def test_reqtify::typedelement_has_type():
-    assert hasattr(Reqtify::TypedElement, "type")
+def test_reqtify_typedelement_has_type():
+    assert hasattr(Reqtify_TypedElement, "type")
     descriptor = None
-    for klass in Reqtify::TypedElement.__mro__:
+    for klass in Reqtify_TypedElement.__mro__:
         if "type" in klass.__dict__:
             descriptor = klass.__dict__["type"]
             break
@@ -285,16 +285,16 @@ def test_document_constructor_args():
 
 
 
-def test_reqtify::project_is_not_abstract():
-    assert not inspect.isabstract(Reqtify::Project)
+def test_reqtify_project_is_not_abstract():
+    assert not inspect.isabstract(Reqtify_Project)
 
 
-def test_reqtify::project_constructor_exists():
-    assert callable(Reqtify::Project.__init__)
+def test_reqtify_project_constructor_exists():
+    assert callable(Reqtify_Project.__init__)
 
 
-def test_reqtify::project_constructor_args():
-    sig = inspect.signature(Reqtify::Project.__init__)
+def test_reqtify_project_constructor_args():
+    sig = inspect.signature(Reqtify_Project.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -341,23 +341,23 @@ def test_elementwithil_constructor_args():
 
 
 
-def test_reqtify::textelement_is_not_abstract():
-    assert not inspect.isabstract(Reqtify::TextElement)
+def test_reqtify_textelement_is_not_abstract():
+    assert not inspect.isabstract(Reqtify_TextElement)
 
 
-def test_reqtify::textelement_constructor_exists():
-    assert callable(Reqtify::TextElement.__init__)
+def test_reqtify_textelement_constructor_exists():
+    assert callable(Reqtify_TextElement.__init__)
 
 
-def test_reqtify::textelement_constructor_args():
-    sig = inspect.signature(Reqtify::TextElement.__init__)
+def test_reqtify_textelement_constructor_args():
+    sig = inspect.signature(Reqtify_TextElement.__init__)
     params = list(sig.parameters.keys())
     assert "description" in params, "Missing parameter 'description'"
 
-def test_reqtify::textelement_has_description():
-    assert hasattr(Reqtify::TextElement, "description")
+def test_reqtify_textelement_has_description():
+    assert hasattr(Reqtify_TextElement, "description")
     descriptor = None
-    for klass in Reqtify::TextElement.__mro__:
+    for klass in Reqtify_TextElement.__mro__:
         if "description" in klass.__dict__:
             descriptor = klass.__dict__["description"]
             break
@@ -365,16 +365,16 @@ def test_reqtify::textelement_has_description():
 
 
 
-def test_reqtify::document_is_not_abstract():
-    assert not inspect.isabstract(Reqtify::Document)
+def test_reqtify_document_is_not_abstract():
+    assert not inspect.isabstract(Reqtify_Document)
 
 
-def test_reqtify::document_constructor_exists():
-    assert callable(Reqtify::Document.__init__)
+def test_reqtify_document_constructor_exists():
+    assert callable(Reqtify_Document.__init__)
 
 
-def test_reqtify::document_constructor_args():
-    sig = inspect.signature(Reqtify::Document.__init__)
+def test_reqtify_document_constructor_args():
+    sig = inspect.signature(Reqtify_Document.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -392,20 +392,20 @@ safe_text = st.text(
 AbstractRequirement_strategy = st.builds(
     AbstractRequirement,
 )
-Reqtify::MacroRequirement_strategy = st.builds(
-    Reqtify::MacroRequirement,
+Reqtify_MacroRequirement_strategy = st.builds(
+    Reqtify_MacroRequirement,
 )
 TextElement_strategy = st.builds(
     TextElement,
 )
-Reqtify::AbstractRequirement_strategy = st.builds(
-    Reqtify::AbstractRequirement,
+Reqtify_AbstractRequirement_strategy = st.builds(
+    Reqtify_AbstractRequirement,
 )
-Reqtify::Section_strategy = st.builds(
-    Reqtify::Section,
+Reqtify_Section_strategy = st.builds(
+    Reqtify_Section,
 )
-Reqtify::Requirement_strategy = st.builds(
-    Reqtify::Requirement,
+Reqtify_Requirement_strategy = st.builds(
+    Reqtify_Requirement,
 )
 Attribute_strategy = st.builds(
     Attribute,
@@ -419,31 +419,31 @@ MacroRequirement_strategy = st.builds(
 TypedElement_strategy = st.builds(
     TypedElement,
 )
-Reqtify::Attribute_strategy = st.builds(
-    Reqtify::Attribute,
+Reqtify_Attribute_strategy = st.builds(
+    Reqtify_Attribute,
     value=
         safe_text
 )
-Reqtify::CoverLink_strategy = st.builds(
-    Reqtify::CoverLink,
+Reqtify_CoverLink_strategy = st.builds(
+    Reqtify_CoverLink,
 )
-Reqtify::ElementWithIL_strategy = st.builds(
-    Reqtify::ElementWithIL,
+Reqtify_ElementWithIL_strategy = st.builds(
+    Reqtify_ElementWithIL,
     label=
         safe_text,
     name=
         safe_text
 )
-Reqtify::TypedElement_strategy = st.builds(
-    Reqtify::TypedElement,
+Reqtify_TypedElement_strategy = st.builds(
+    Reqtify_TypedElement,
     type=
         safe_text
 )
 Document_strategy = st.builds(
     Document,
 )
-Reqtify::Project_strategy = st.builds(
-    Reqtify::Project,
+Reqtify_Project_strategy = st.builds(
+    Reqtify_Project,
 )
 Section_strategy = st.builds(
     Section,
@@ -454,13 +454,13 @@ Project_strategy = st.builds(
 ElementWithIL_strategy = st.builds(
     ElementWithIL,
 )
-Reqtify::TextElement_strategy = st.builds(
-    Reqtify::TextElement,
+Reqtify_TextElement_strategy = st.builds(
+    Reqtify_TextElement,
     description=
         safe_text
 )
-Reqtify::Document_strategy = st.builds(
-    Reqtify::Document,
+Reqtify_Document_strategy = st.builds(
+    Reqtify_Document,
 )
 
 @given(instance=AbstractRequirement_strategy)
@@ -468,30 +468,30 @@ Reqtify::Document_strategy = st.builds(
 def test_abstractrequirement_instantiation(instance):
     assert isinstance(instance, AbstractRequirement)
 
-@given(instance=Reqtify::MacroRequirement_strategy)
+@given(instance=Reqtify_MacroRequirement_strategy)
 @settings(max_examples=50)
-def test_reqtify::macrorequirement_instantiation(instance):
-    assert isinstance(instance, Reqtify::MacroRequirement)
+def test_reqtify_macrorequirement_instantiation(instance):
+    assert isinstance(instance, Reqtify_MacroRequirement)
 
 @given(instance=TextElement_strategy)
 @settings(max_examples=50)
 def test_textelement_instantiation(instance):
     assert isinstance(instance, TextElement)
 
-@given(instance=Reqtify::AbstractRequirement_strategy)
+@given(instance=Reqtify_AbstractRequirement_strategy)
 @settings(max_examples=50)
-def test_reqtify::abstractrequirement_instantiation(instance):
-    assert isinstance(instance, Reqtify::AbstractRequirement)
+def test_reqtify_abstractrequirement_instantiation(instance):
+    assert isinstance(instance, Reqtify_AbstractRequirement)
 
-@given(instance=Reqtify::Section_strategy)
+@given(instance=Reqtify_Section_strategy)
 @settings(max_examples=50)
-def test_reqtify::section_instantiation(instance):
-    assert isinstance(instance, Reqtify::Section)
+def test_reqtify_section_instantiation(instance):
+    assert isinstance(instance, Reqtify_Section)
 
-@given(instance=Reqtify::Requirement_strategy)
+@given(instance=Reqtify_Requirement_strategy)
 @settings(max_examples=50)
-def test_reqtify::requirement_instantiation(instance):
-    assert isinstance(instance, Reqtify::Requirement)
+def test_reqtify_requirement_instantiation(instance):
+    assert isinstance(instance, Reqtify_Requirement)
 
 @given(instance=Attribute_strategy)
 @settings(max_examples=50)
@@ -513,66 +513,54 @@ def test_macrorequirement_instantiation(instance):
 def test_typedelement_instantiation(instance):
     assert isinstance(instance, TypedElement)
 
-@given(instance=Reqtify::Attribute_strategy)
+@given(instance=Reqtify_Attribute_strategy)
 @settings(max_examples=50)
-def test_reqtify::attribute_instantiation(instance):
-    assert isinstance(instance, Reqtify::Attribute)
-
-@given(instance=Reqtify::Attribute_strategy)
-def test_reqtify::attribute_value_type(instance):
-    assert isinstance(instance.value, str)
+def test_reqtify_attribute_instantiation(instance):
+    assert isinstance(instance, Reqtify_Attribute)
 
 
-@given(instance=Reqtify::Attribute_strategy)
-def test_reqtify::attribute_value_setter(instance):
+
+@given(instance=Reqtify_Attribute_strategy)
+def test_reqtify_attribute_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
 
-@given(instance=Reqtify::CoverLink_strategy)
+@given(instance=Reqtify_CoverLink_strategy)
 @settings(max_examples=50)
-def test_reqtify::coverlink_instantiation(instance):
-    assert isinstance(instance, Reqtify::CoverLink)
+def test_reqtify_coverlink_instantiation(instance):
+    assert isinstance(instance, Reqtify_CoverLink)
 
-@given(instance=Reqtify::ElementWithIL_strategy)
+@given(instance=Reqtify_ElementWithIL_strategy)
 @settings(max_examples=50)
-def test_reqtify::elementwithil_instantiation(instance):
-    assert isinstance(instance, Reqtify::ElementWithIL)
-
-@given(instance=Reqtify::ElementWithIL_strategy)
-def test_reqtify::elementwithil_label_type(instance):
-    assert isinstance(instance.label, str)
+def test_reqtify_elementwithil_instantiation(instance):
+    assert isinstance(instance, Reqtify_ElementWithIL)
 
 
-@given(instance=Reqtify::ElementWithIL_strategy)
-def test_reqtify::elementwithil_label_setter(instance):
+
+@given(instance=Reqtify_ElementWithIL_strategy)
+def test_reqtify_elementwithil_label_setter(instance):
     original = instance.label
     instance.label = original
     assert instance.label == original
 
-@given(instance=Reqtify::ElementWithIL_strategy)
-def test_reqtify::elementwithil_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
-@given(instance=Reqtify::ElementWithIL_strategy)
-def test_reqtify::elementwithil_name_setter(instance):
+@given(instance=Reqtify_ElementWithIL_strategy)
+def test_reqtify_elementwithil_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=Reqtify::TypedElement_strategy)
+@given(instance=Reqtify_TypedElement_strategy)
 @settings(max_examples=50)
-def test_reqtify::typedelement_instantiation(instance):
-    assert isinstance(instance, Reqtify::TypedElement)
-
-@given(instance=Reqtify::TypedElement_strategy)
-def test_reqtify::typedelement_type_type(instance):
-    assert isinstance(instance.type, str)
+def test_reqtify_typedelement_instantiation(instance):
+    assert isinstance(instance, Reqtify_TypedElement)
 
 
-@given(instance=Reqtify::TypedElement_strategy)
-def test_reqtify::typedelement_type_setter(instance):
+
+@given(instance=Reqtify_TypedElement_strategy)
+def test_reqtify_typedelement_type_setter(instance):
     original = instance.type
     instance.type = original
     assert instance.type == original
@@ -582,10 +570,10 @@ def test_reqtify::typedelement_type_setter(instance):
 def test_document_instantiation(instance):
     assert isinstance(instance, Document)
 
-@given(instance=Reqtify::Project_strategy)
+@given(instance=Reqtify_Project_strategy)
 @settings(max_examples=50)
-def test_reqtify::project_instantiation(instance):
-    assert isinstance(instance, Reqtify::Project)
+def test_reqtify_project_instantiation(instance):
+    assert isinstance(instance, Reqtify_Project)
 
 @given(instance=Section_strategy)
 @settings(max_examples=50)
@@ -602,23 +590,20 @@ def test_project_instantiation(instance):
 def test_elementwithil_instantiation(instance):
     assert isinstance(instance, ElementWithIL)
 
-@given(instance=Reqtify::TextElement_strategy)
+@given(instance=Reqtify_TextElement_strategy)
 @settings(max_examples=50)
-def test_reqtify::textelement_instantiation(instance):
-    assert isinstance(instance, Reqtify::TextElement)
-
-@given(instance=Reqtify::TextElement_strategy)
-def test_reqtify::textelement_description_type(instance):
-    assert isinstance(instance.description, str)
+def test_reqtify_textelement_instantiation(instance):
+    assert isinstance(instance, Reqtify_TextElement)
 
 
-@given(instance=Reqtify::TextElement_strategy)
-def test_reqtify::textelement_description_setter(instance):
+
+@given(instance=Reqtify_TextElement_strategy)
+def test_reqtify_textelement_description_setter(instance):
     original = instance.description
     instance.description = original
     assert instance.description == original
 
-@given(instance=Reqtify::Document_strategy)
+@given(instance=Reqtify_Document_strategy)
 @settings(max_examples=50)
-def test_reqtify::document_instantiation(instance):
-    assert isinstance(instance, Reqtify::Document)
+def test_reqtify_document_instantiation(instance):
+    assert isinstance(instance, Reqtify_Document)

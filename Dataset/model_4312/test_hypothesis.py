@@ -3,15 +3,15 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     Metric,
-    metric::SimpleMetric,
-    metric::AggregatedIntegerMetric,
-    metric::Metric,
-    metric::Container,
-    metric::AggregatedRealMetric,
+    metric_SimpleMetric,
+    metric_AggregatedIntegerMetric,
+    metric_Metric,
+    metric_Container,
+    metric_AggregatedRealMetric,
 )
 
 # =============================================================================
@@ -34,23 +34,23 @@ def test_metric_constructor_args():
 
 
 
-def test_metric::simplemetric_is_not_abstract():
-    assert not inspect.isabstract(metric::SimpleMetric)
+def test_metric_simplemetric_is_not_abstract():
+    assert not inspect.isabstract(metric_SimpleMetric)
 
 
-def test_metric::simplemetric_constructor_exists():
-    assert callable(metric::SimpleMetric.__init__)
+def test_metric_simplemetric_constructor_exists():
+    assert callable(metric_SimpleMetric.__init__)
 
 
-def test_metric::simplemetric_constructor_args():
-    sig = inspect.signature(metric::SimpleMetric.__init__)
+def test_metric_simplemetric_constructor_args():
+    sig = inspect.signature(metric_SimpleMetric.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
 
-def test_metric::simplemetric_has_value():
-    assert hasattr(metric::SimpleMetric, "value")
+def test_metric_simplemetric_has_value():
+    assert hasattr(metric_SimpleMetric, "value")
     descriptor = None
-    for klass in metric::SimpleMetric.__mro__:
+    for klass in metric_SimpleMetric.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -58,63 +58,63 @@ def test_metric::simplemetric_has_value():
 
 
 
-def test_metric::aggregatedintegermetric_is_not_abstract():
-    assert not inspect.isabstract(metric::AggregatedIntegerMetric)
+def test_metric_aggregatedintegermetric_is_not_abstract():
+    assert not inspect.isabstract(metric_AggregatedIntegerMetric)
 
 
-def test_metric::aggregatedintegermetric_constructor_exists():
-    assert callable(metric::AggregatedIntegerMetric.__init__)
+def test_metric_aggregatedintegermetric_constructor_exists():
+    assert callable(metric_AggregatedIntegerMetric.__init__)
 
 
-def test_metric::aggregatedintegermetric_constructor_args():
-    sig = inspect.signature(metric::AggregatedIntegerMetric.__init__)
+def test_metric_aggregatedintegermetric_constructor_args():
+    sig = inspect.signature(metric_AggregatedIntegerMetric.__init__)
     params = list(sig.parameters.keys())
-    assert "average" in params, "Missing parameter 'average'"
-    assert "minimum" in params, "Missing parameter 'minimum'"
-    assert "maximum" in params, "Missing parameter 'maximum'"
     assert "median" in params, "Missing parameter 'median'"
+    assert "minimum" in params, "Missing parameter 'minimum'"
+    assert "average" in params, "Missing parameter 'average'"
+    assert "maximum" in params, "Missing parameter 'maximum'"
     assert "standardDeviation" in params, "Missing parameter 'standardDeviation'"
 
-def test_metric::aggregatedintegermetric_has_average():
-    assert hasattr(metric::AggregatedIntegerMetric, "average")
+def test_metric_aggregatedintegermetric_has_median():
+    assert hasattr(metric_AggregatedIntegerMetric, "median")
     descriptor = None
-    for klass in metric::AggregatedIntegerMetric.__mro__:
-        if "average" in klass.__dict__:
-            descriptor = klass.__dict__["average"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_metric::aggregatedintegermetric_has_minimum():
-    assert hasattr(metric::AggregatedIntegerMetric, "minimum")
-    descriptor = None
-    for klass in metric::AggregatedIntegerMetric.__mro__:
-        if "minimum" in klass.__dict__:
-            descriptor = klass.__dict__["minimum"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_metric::aggregatedintegermetric_has_maximum():
-    assert hasattr(metric::AggregatedIntegerMetric, "maximum")
-    descriptor = None
-    for klass in metric::AggregatedIntegerMetric.__mro__:
-        if "maximum" in klass.__dict__:
-            descriptor = klass.__dict__["maximum"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_metric::aggregatedintegermetric_has_median():
-    assert hasattr(metric::AggregatedIntegerMetric, "median")
-    descriptor = None
-    for klass in metric::AggregatedIntegerMetric.__mro__:
+    for klass in metric_AggregatedIntegerMetric.__mro__:
         if "median" in klass.__dict__:
             descriptor = klass.__dict__["median"]
             break
     assert isinstance(descriptor, property)
 
-def test_metric::aggregatedintegermetric_has_standardDeviation():
-    assert hasattr(metric::AggregatedIntegerMetric, "standardDeviation")
+def test_metric_aggregatedintegermetric_has_minimum():
+    assert hasattr(metric_AggregatedIntegerMetric, "minimum")
     descriptor = None
-    for klass in metric::AggregatedIntegerMetric.__mro__:
+    for klass in metric_AggregatedIntegerMetric.__mro__:
+        if "minimum" in klass.__dict__:
+            descriptor = klass.__dict__["minimum"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_metric_aggregatedintegermetric_has_average():
+    assert hasattr(metric_AggregatedIntegerMetric, "average")
+    descriptor = None
+    for klass in metric_AggregatedIntegerMetric.__mro__:
+        if "average" in klass.__dict__:
+            descriptor = klass.__dict__["average"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_metric_aggregatedintegermetric_has_maximum():
+    assert hasattr(metric_AggregatedIntegerMetric, "maximum")
+    descriptor = None
+    for klass in metric_AggregatedIntegerMetric.__mro__:
+        if "maximum" in klass.__dict__:
+            descriptor = klass.__dict__["maximum"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_metric_aggregatedintegermetric_has_standardDeviation():
+    assert hasattr(metric_AggregatedIntegerMetric, "standardDeviation")
+    descriptor = None
+    for klass in metric_AggregatedIntegerMetric.__mro__:
         if "standardDeviation" in klass.__dict__:
             descriptor = klass.__dict__["standardDeviation"]
             break
@@ -122,67 +122,67 @@ def test_metric::aggregatedintegermetric_has_standardDeviation():
 
 
 
-def test_metric::metric_is_not_abstract():
-    assert not inspect.isabstract(metric::Metric)
+def test_metric_metric_is_not_abstract():
+    assert not inspect.isabstract(metric_Metric)
 
 
-def test_metric::metric_constructor_exists():
-    assert callable(metric::Metric.__init__)
+def test_metric_metric_constructor_exists():
+    assert callable(metric_Metric.__init__)
 
 
-def test_metric::metric_constructor_args():
-    sig = inspect.signature(metric::Metric.__init__)
+def test_metric_metric_constructor_args():
+    sig = inspect.signature(metric_Metric.__init__)
     params = list(sig.parameters.keys())
-    assert "description" in params, "Missing parameter 'description'"
-    assert "code" in params, "Missing parameter 'code'"
     assert "name" in params, "Missing parameter 'name'"
+    assert "code" in params, "Missing parameter 'code'"
+    assert "description" in params, "Missing parameter 'description'"
 
-def test_metric::metric_has_description():
-    assert hasattr(metric::Metric, "description")
+def test_metric_metric_has_name():
+    assert hasattr(metric_Metric, "name")
     descriptor = None
-    for klass in metric::Metric.__mro__:
-        if "description" in klass.__dict__:
-            descriptor = klass.__dict__["description"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_metric::metric_has_code():
-    assert hasattr(metric::Metric, "code")
-    descriptor = None
-    for klass in metric::Metric.__mro__:
-        if "code" in klass.__dict__:
-            descriptor = klass.__dict__["code"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_metric::metric_has_name():
-    assert hasattr(metric::Metric, "name")
-    descriptor = None
-    for klass in metric::Metric.__mro__:
+    for klass in metric_Metric.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
+def test_metric_metric_has_code():
+    assert hasattr(metric_Metric, "code")
+    descriptor = None
+    for klass in metric_Metric.__mro__:
+        if "code" in klass.__dict__:
+            descriptor = klass.__dict__["code"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_metric_metric_has_description():
+    assert hasattr(metric_Metric, "description")
+    descriptor = None
+    for klass in metric_Metric.__mro__:
+        if "description" in klass.__dict__:
+            descriptor = klass.__dict__["description"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_metric::container_is_not_abstract():
-    assert not inspect.isabstract(metric::Container)
+
+def test_metric_container_is_not_abstract():
+    assert not inspect.isabstract(metric_Container)
 
 
-def test_metric::container_constructor_exists():
-    assert callable(metric::Container.__init__)
+def test_metric_container_constructor_exists():
+    assert callable(metric_Container.__init__)
 
 
-def test_metric::container_constructor_args():
-    sig = inspect.signature(metric::Container.__init__)
+def test_metric_container_constructor_args():
+    sig = inspect.signature(metric_Container.__init__)
     params = list(sig.parameters.keys())
     assert "artifact" in params, "Missing parameter 'artifact'"
 
-def test_metric::container_has_artifact():
-    assert hasattr(metric::Container, "artifact")
+def test_metric_container_has_artifact():
+    assert hasattr(metric_Container, "artifact")
     descriptor = None
-    for klass in metric::Container.__mro__:
+    for klass in metric_Container.__mro__:
         if "artifact" in klass.__dict__:
             descriptor = klass.__dict__["artifact"]
             break
@@ -190,65 +190,65 @@ def test_metric::container_has_artifact():
 
 
 
-def test_metric::aggregatedrealmetric_is_not_abstract():
-    assert not inspect.isabstract(metric::AggregatedRealMetric)
+def test_metric_aggregatedrealmetric_is_not_abstract():
+    assert not inspect.isabstract(metric_AggregatedRealMetric)
 
 
-def test_metric::aggregatedrealmetric_constructor_exists():
-    assert callable(metric::AggregatedRealMetric.__init__)
+def test_metric_aggregatedrealmetric_constructor_exists():
+    assert callable(metric_AggregatedRealMetric.__init__)
 
 
-def test_metric::aggregatedrealmetric_constructor_args():
-    sig = inspect.signature(metric::AggregatedRealMetric.__init__)
+def test_metric_aggregatedrealmetric_constructor_args():
+    sig = inspect.signature(metric_AggregatedRealMetric.__init__)
     params = list(sig.parameters.keys())
-    assert "minimum" in params, "Missing parameter 'minimum'"
     assert "average" in params, "Missing parameter 'average'"
     assert "median" in params, "Missing parameter 'median'"
-    assert "standardDeviation" in params, "Missing parameter 'standardDeviation'"
+    assert "minimum" in params, "Missing parameter 'minimum'"
     assert "maximum" in params, "Missing parameter 'maximum'"
+    assert "standardDeviation" in params, "Missing parameter 'standardDeviation'"
 
-def test_metric::aggregatedrealmetric_has_minimum():
-    assert hasattr(metric::AggregatedRealMetric, "minimum")
+def test_metric_aggregatedrealmetric_has_average():
+    assert hasattr(metric_AggregatedRealMetric, "average")
     descriptor = None
-    for klass in metric::AggregatedRealMetric.__mro__:
-        if "minimum" in klass.__dict__:
-            descriptor = klass.__dict__["minimum"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_metric::aggregatedrealmetric_has_average():
-    assert hasattr(metric::AggregatedRealMetric, "average")
-    descriptor = None
-    for klass in metric::AggregatedRealMetric.__mro__:
+    for klass in metric_AggregatedRealMetric.__mro__:
         if "average" in klass.__dict__:
             descriptor = klass.__dict__["average"]
             break
     assert isinstance(descriptor, property)
 
-def test_metric::aggregatedrealmetric_has_median():
-    assert hasattr(metric::AggregatedRealMetric, "median")
+def test_metric_aggregatedrealmetric_has_median():
+    assert hasattr(metric_AggregatedRealMetric, "median")
     descriptor = None
-    for klass in metric::AggregatedRealMetric.__mro__:
+    for klass in metric_AggregatedRealMetric.__mro__:
         if "median" in klass.__dict__:
             descriptor = klass.__dict__["median"]
             break
     assert isinstance(descriptor, property)
 
-def test_metric::aggregatedrealmetric_has_standardDeviation():
-    assert hasattr(metric::AggregatedRealMetric, "standardDeviation")
+def test_metric_aggregatedrealmetric_has_minimum():
+    assert hasattr(metric_AggregatedRealMetric, "minimum")
     descriptor = None
-    for klass in metric::AggregatedRealMetric.__mro__:
-        if "standardDeviation" in klass.__dict__:
-            descriptor = klass.__dict__["standardDeviation"]
+    for klass in metric_AggregatedRealMetric.__mro__:
+        if "minimum" in klass.__dict__:
+            descriptor = klass.__dict__["minimum"]
             break
     assert isinstance(descriptor, property)
 
-def test_metric::aggregatedrealmetric_has_maximum():
-    assert hasattr(metric::AggregatedRealMetric, "maximum")
+def test_metric_aggregatedrealmetric_has_maximum():
+    assert hasattr(metric_AggregatedRealMetric, "maximum")
     descriptor = None
-    for klass in metric::AggregatedRealMetric.__mro__:
+    for klass in metric_AggregatedRealMetric.__mro__:
         if "maximum" in klass.__dict__:
             descriptor = klass.__dict__["maximum"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_metric_aggregatedrealmetric_has_standardDeviation():
+    assert hasattr(metric_AggregatedRealMetric, "standardDeviation")
+    descriptor = None
+    for klass in metric_AggregatedRealMetric.__mro__:
+        if "standardDeviation" in klass.__dict__:
+            descriptor = klass.__dict__["standardDeviation"]
             break
     assert isinstance(descriptor, property)
 
@@ -267,49 +267,49 @@ safe_text = st.text(
 Metric_strategy = st.builds(
     Metric,
 )
-metric::SimpleMetric_strategy = st.builds(
-    metric::SimpleMetric,
+metric_SimpleMetric_strategy = st.builds(
+    metric_SimpleMetric,
     value=
         safe_text
 )
-metric::AggregatedIntegerMetric_strategy = st.builds(
-    metric::AggregatedIntegerMetric,
-    average=
-        st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False),
+metric_AggregatedIntegerMetric_strategy = st.builds(
+    metric_AggregatedIntegerMetric,
+    median=
+        safe_text,
     minimum=
         safe_text,
+    average=
+        st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False),
     maximum=
-        safe_text,
-    median=
         safe_text,
     standardDeviation=
         st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False)
 )
-metric::Metric_strategy = st.builds(
-    metric::Metric,
-    description=
+metric_Metric_strategy = st.builds(
+    metric_Metric,
+    name=
         safe_text,
     code=
         safe_text,
-    name=
+    description=
         safe_text
 )
-metric::Container_strategy = st.builds(
-    metric::Container,
+metric_Container_strategy = st.builds(
+    metric_Container,
     artifact=
         safe_text
 )
-metric::AggregatedRealMetric_strategy = st.builds(
-    metric::AggregatedRealMetric,
-    minimum=
-        st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False),
+metric_AggregatedRealMetric_strategy = st.builds(
+    metric_AggregatedRealMetric,
     average=
         st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False),
     median=
         st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False),
-    standardDeviation=
+    minimum=
         st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False),
     maximum=
+        st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False),
+    standardDeviation=
         st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False)
 )
 
@@ -318,192 +318,147 @@ metric::AggregatedRealMetric_strategy = st.builds(
 def test_metric_instantiation(instance):
     assert isinstance(instance, Metric)
 
-@given(instance=metric::SimpleMetric_strategy)
+@given(instance=metric_SimpleMetric_strategy)
 @settings(max_examples=50)
-def test_metric::simplemetric_instantiation(instance):
-    assert isinstance(instance, metric::SimpleMetric)
-
-@given(instance=metric::SimpleMetric_strategy)
-def test_metric::simplemetric_value_type(instance):
-    assert isinstance(instance.value, str)
+def test_metric_simplemetric_instantiation(instance):
+    assert isinstance(instance, metric_SimpleMetric)
 
 
-@given(instance=metric::SimpleMetric_strategy)
-def test_metric::simplemetric_value_setter(instance):
+
+@given(instance=metric_SimpleMetric_strategy)
+def test_metric_simplemetric_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
 
-@given(instance=metric::AggregatedIntegerMetric_strategy)
+@given(instance=metric_AggregatedIntegerMetric_strategy)
 @settings(max_examples=50)
-def test_metric::aggregatedintegermetric_instantiation(instance):
-    assert isinstance(instance, metric::AggregatedIntegerMetric)
-
-@given(instance=metric::AggregatedIntegerMetric_strategy)
-def test_metric::aggregatedintegermetric_average_type(instance):
-    assert isinstance(instance.average, float)
+def test_metric_aggregatedintegermetric_instantiation(instance):
+    assert isinstance(instance, metric_AggregatedIntegerMetric)
 
 
-@given(instance=metric::AggregatedIntegerMetric_strategy)
-def test_metric::aggregatedintegermetric_average_setter(instance):
-    original = instance.average
-    instance.average = original
-    assert instance.average == original
 
-@given(instance=metric::AggregatedIntegerMetric_strategy)
-def test_metric::aggregatedintegermetric_minimum_type(instance):
-    assert isinstance(instance.minimum, str)
-
-
-@given(instance=metric::AggregatedIntegerMetric_strategy)
-def test_metric::aggregatedintegermetric_minimum_setter(instance):
-    original = instance.minimum
-    instance.minimum = original
-    assert instance.minimum == original
-
-@given(instance=metric::AggregatedIntegerMetric_strategy)
-def test_metric::aggregatedintegermetric_maximum_type(instance):
-    assert isinstance(instance.maximum, str)
-
-
-@given(instance=metric::AggregatedIntegerMetric_strategy)
-def test_metric::aggregatedintegermetric_maximum_setter(instance):
-    original = instance.maximum
-    instance.maximum = original
-    assert instance.maximum == original
-
-@given(instance=metric::AggregatedIntegerMetric_strategy)
-def test_metric::aggregatedintegermetric_median_type(instance):
-    assert isinstance(instance.median, str)
-
-
-@given(instance=metric::AggregatedIntegerMetric_strategy)
-def test_metric::aggregatedintegermetric_median_setter(instance):
+@given(instance=metric_AggregatedIntegerMetric_strategy)
+def test_metric_aggregatedintegermetric_median_setter(instance):
     original = instance.median
     instance.median = original
     assert instance.median == original
 
-@given(instance=metric::AggregatedIntegerMetric_strategy)
-def test_metric::aggregatedintegermetric_standardDeviation_type(instance):
-    assert isinstance(instance.standardDeviation, float)
 
 
-@given(instance=metric::AggregatedIntegerMetric_strategy)
-def test_metric::aggregatedintegermetric_standardDeviation_setter(instance):
+@given(instance=metric_AggregatedIntegerMetric_strategy)
+def test_metric_aggregatedintegermetric_minimum_setter(instance):
+    original = instance.minimum
+    instance.minimum = original
+    assert instance.minimum == original
+
+
+
+@given(instance=metric_AggregatedIntegerMetric_strategy)
+def test_metric_aggregatedintegermetric_average_setter(instance):
+    original = instance.average
+    instance.average = original
+    assert instance.average == original
+
+
+
+@given(instance=metric_AggregatedIntegerMetric_strategy)
+def test_metric_aggregatedintegermetric_maximum_setter(instance):
+    original = instance.maximum
+    instance.maximum = original
+    assert instance.maximum == original
+
+
+
+@given(instance=metric_AggregatedIntegerMetric_strategy)
+def test_metric_aggregatedintegermetric_standardDeviation_setter(instance):
     original = instance.standardDeviation
     instance.standardDeviation = original
     assert instance.standardDeviation == original
 
-@given(instance=metric::Metric_strategy)
+@given(instance=metric_Metric_strategy)
 @settings(max_examples=50)
-def test_metric::metric_instantiation(instance):
-    assert isinstance(instance, metric::Metric)
-
-@given(instance=metric::Metric_strategy)
-def test_metric::metric_description_type(instance):
-    assert isinstance(instance.description, str)
+def test_metric_metric_instantiation(instance):
+    assert isinstance(instance, metric_Metric)
 
 
-@given(instance=metric::Metric_strategy)
-def test_metric::metric_description_setter(instance):
-    original = instance.description
-    instance.description = original
-    assert instance.description == original
 
-@given(instance=metric::Metric_strategy)
-def test_metric::metric_code_type(instance):
-    assert isinstance(instance.code, str)
-
-
-@given(instance=metric::Metric_strategy)
-def test_metric::metric_code_setter(instance):
-    original = instance.code
-    instance.code = original
-    assert instance.code == original
-
-@given(instance=metric::Metric_strategy)
-def test_metric::metric_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=metric::Metric_strategy)
-def test_metric::metric_name_setter(instance):
+@given(instance=metric_Metric_strategy)
+def test_metric_metric_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=metric::Container_strategy)
+
+
+@given(instance=metric_Metric_strategy)
+def test_metric_metric_code_setter(instance):
+    original = instance.code
+    instance.code = original
+    assert instance.code == original
+
+
+
+@given(instance=metric_Metric_strategy)
+def test_metric_metric_description_setter(instance):
+    original = instance.description
+    instance.description = original
+    assert instance.description == original
+
+@given(instance=metric_Container_strategy)
 @settings(max_examples=50)
-def test_metric::container_instantiation(instance):
-    assert isinstance(instance, metric::Container)
-
-@given(instance=metric::Container_strategy)
-def test_metric::container_artifact_type(instance):
-    assert isinstance(instance.artifact, str)
+def test_metric_container_instantiation(instance):
+    assert isinstance(instance, metric_Container)
 
 
-@given(instance=metric::Container_strategy)
-def test_metric::container_artifact_setter(instance):
+
+@given(instance=metric_Container_strategy)
+def test_metric_container_artifact_setter(instance):
     original = instance.artifact
     instance.artifact = original
     assert instance.artifact == original
 
-@given(instance=metric::AggregatedRealMetric_strategy)
+@given(instance=metric_AggregatedRealMetric_strategy)
 @settings(max_examples=50)
-def test_metric::aggregatedrealmetric_instantiation(instance):
-    assert isinstance(instance, metric::AggregatedRealMetric)
-
-@given(instance=metric::AggregatedRealMetric_strategy)
-def test_metric::aggregatedrealmetric_minimum_type(instance):
-    assert isinstance(instance.minimum, float)
+def test_metric_aggregatedrealmetric_instantiation(instance):
+    assert isinstance(instance, metric_AggregatedRealMetric)
 
 
-@given(instance=metric::AggregatedRealMetric_strategy)
-def test_metric::aggregatedrealmetric_minimum_setter(instance):
-    original = instance.minimum
-    instance.minimum = original
-    assert instance.minimum == original
 
-@given(instance=metric::AggregatedRealMetric_strategy)
-def test_metric::aggregatedrealmetric_average_type(instance):
-    assert isinstance(instance.average, float)
-
-
-@given(instance=metric::AggregatedRealMetric_strategy)
-def test_metric::aggregatedrealmetric_average_setter(instance):
+@given(instance=metric_AggregatedRealMetric_strategy)
+def test_metric_aggregatedrealmetric_average_setter(instance):
     original = instance.average
     instance.average = original
     assert instance.average == original
 
-@given(instance=metric::AggregatedRealMetric_strategy)
-def test_metric::aggregatedrealmetric_median_type(instance):
-    assert isinstance(instance.median, float)
 
 
-@given(instance=metric::AggregatedRealMetric_strategy)
-def test_metric::aggregatedrealmetric_median_setter(instance):
+@given(instance=metric_AggregatedRealMetric_strategy)
+def test_metric_aggregatedrealmetric_median_setter(instance):
     original = instance.median
     instance.median = original
     assert instance.median == original
 
-@given(instance=metric::AggregatedRealMetric_strategy)
-def test_metric::aggregatedrealmetric_standardDeviation_type(instance):
-    assert isinstance(instance.standardDeviation, float)
 
 
-@given(instance=metric::AggregatedRealMetric_strategy)
-def test_metric::aggregatedrealmetric_standardDeviation_setter(instance):
-    original = instance.standardDeviation
-    instance.standardDeviation = original
-    assert instance.standardDeviation == original
-
-@given(instance=metric::AggregatedRealMetric_strategy)
-def test_metric::aggregatedrealmetric_maximum_type(instance):
-    assert isinstance(instance.maximum, float)
+@given(instance=metric_AggregatedRealMetric_strategy)
+def test_metric_aggregatedrealmetric_minimum_setter(instance):
+    original = instance.minimum
+    instance.minimum = original
+    assert instance.minimum == original
 
 
-@given(instance=metric::AggregatedRealMetric_strategy)
-def test_metric::aggregatedrealmetric_maximum_setter(instance):
+
+@given(instance=metric_AggregatedRealMetric_strategy)
+def test_metric_aggregatedrealmetric_maximum_setter(instance):
     original = instance.maximum
     instance.maximum = original
     assert instance.maximum == original
+
+
+
+@given(instance=metric_AggregatedRealMetric_strategy)
+def test_metric_aggregatedrealmetric_standardDeviation_setter(instance):
+    original = instance.standardDeviation
+    instance.standardDeviation = original
+    assert instance.standardDeviation == original

@@ -3,10 +3,10 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    cppmodel::XTClass,
+from python_code import (
+    cppmodel_XTClass,
     OOPLUserDefinedType,
     OOPLStructMember,
     OOPLStructType,
@@ -14,72 +14,72 @@ from classes import (
     OOPLEnumType,
     OOPLSequence,
     OOPLBasicType,
-    cppmodel::CPPExternalLibrary,
-    cppmodel::Parameter,
-    cppmodel::XTEvent,
-    cppmodel::Transition,
-    cppmodel::TypedMultiplicityElement,
-    cppmodel::State,
-    cppmodel::OOPLDataType,
-    cppmodel::CPPSequence,
-    cppmodel::Attribute,
+    cppmodel_CPPExternalLibrary,
+    cppmodel_Parameter,
+    cppmodel_XTEvent,
+    cppmodel_Transition,
+    cppmodel_TypedMultiplicityElement,
+    cppmodel_State,
+    cppmodel_OOPLDataType,
+    cppmodel_CPPSequence,
+    cppmodel_Attribute,
     OOPLClassRefAssocCollection,
     OOPLClassRefSimpleCollection,
     OOPLClassReferenceStorage,
     OOPLClassReference,
-    cppmodel::XTProtocolOperationImplementation,
-    cppmodel::XTProtocolOperationDefinition,
-    cppmodel::XTPort,
-    cppmodel::Snippet,
-    cppmodel::Signal,
-    cppmodel::Operation,
+    cppmodel_XTProtocolOperationImplementation,
+    cppmodel_XTProtocolOperationDefinition,
+    cppmodel_XTPort,
+    cppmodel_Snippet,
+    cppmodel_Signal,
+    cppmodel_Operation,
     OOPLRelation,
-    cppmodel::CPPExternalHeader,
-    cppmodel::XTComponent,
+    cppmodel_CPPExternalHeader,
+    cppmodel_XTComponent,
     CPPSourceFile,
-    cppmodel::CPPMakeFile,
-    cppmodel::CPPExternalHeaderInclusion,
-    cppmodel::CPPSourceFile,
-    cppmodel::XTProtocol,
+    cppmodel_CPPMakeFile,
+    cppmodel_CPPExternalHeaderInclusion,
+    cppmodel_CPPSourceFile,
+    cppmodel_XTProtocol,
     OOPLClass,
-    cppmodel::Package,
-    cppmodel::CPPDirectory,
-    cppmodel::CPPHeaderFile,
-    cppmodel::CPPBodyFile,
-    cppmodel::Model,
+    cppmodel_Package,
+    cppmodel_CPPDirectory,
+    cppmodel_CPPHeaderFile,
+    cppmodel_CPPBodyFile,
+    cppmodel_Model,
     CPPQualifiedNamedElement,
-    cppmodel::CPPReturnValue,
-    cppmodel::CPPClassRefSimpleCollection,
-    cppmodel::CPPProtocolOperationDefinition,
-    cppmodel::CPPAttribute,
-    cppmodel::CPPState,
-    cppmodel::CPPProtocolOperationImplementation,
-    cppmodel::CPPRelation,
-    cppmodel::CPPClassReferenceStorage,
-    cppmodel::CPPClass,
-    cppmodel::CPPPort,
-    cppmodel::CPPStructType,
-    cppmodel::CPPProtocol,
-    cppmodel::CPPOperation,
-    cppmodel::CPPTransition,
-    cppmodel::CPPUserDefinedType,
-    cppmodel::CPPClassReference,
-    cppmodel::CPPBasicType,
-    cppmodel::CPPFormalParameter,
-    cppmodel::CPPComponent,
-    cppmodel::CPPClassRefAssocCollection,
-    cppmodel::CPPSignal,
-    cppmodel::CPPEnumType,
-    cppmodel::CPPPackage,
-    cppmodel::CPPEvent,
-    cppmodel::CPPEnumerator,
-    cppmodel::CPPStructMember,
-    cppmodel::CPPExternalBridge,
-    cppmodel::CPPModel,
+    cppmodel_CPPRelation,
+    cppmodel_CPPClass,
+    cppmodel_CPPProtocol,
+    cppmodel_CPPBasicType,
+    cppmodel_CPPClassReferenceStorage,
+    cppmodel_CPPProtocolOperationImplementation,
+    cppmodel_CPPPackage,
+    cppmodel_CPPAttribute,
+    cppmodel_CPPClassRefAssocCollection,
+    cppmodel_CPPFormalParameter,
+    cppmodel_CPPUserDefinedType,
+    cppmodel_CPPEnumerator,
+    cppmodel_CPPTransition,
+    cppmodel_CPPClassRefSimpleCollection,
+    cppmodel_CPPClassReference,
+    cppmodel_CPPSignal,
+    cppmodel_CPPReturnValue,
+    cppmodel_CPPEvent,
+    cppmodel_CPPComponent,
+    cppmodel_CPPProtocolOperationDefinition,
+    cppmodel_CPPState,
+    cppmodel_CPPOperation,
+    cppmodel_CPPExternalBridge,
+    cppmodel_CPPPort,
+    cppmodel_CPPEnumType,
+    cppmodel_CPPStructType,
+    cppmodel_CPPStructMember,
+    cppmodel_CPPModel,
     CPPNamedElement,
-    cppmodel::CPPQualifiedNamedElement,
-    cppmodel::OOPLNameProvider,
-    cppmodel::CPPNamedElement,
+    cppmodel_CPPQualifiedNamedElement,
+    cppmodel_OOPLNameProvider,
+    cppmodel_CPPNamedElement,
     CPPParameterPassingKind,
 )
 
@@ -89,16 +89,16 @@ from classes import (
 
 
 
-def test_cppmodel::xtclass_is_not_abstract():
-    assert not inspect.isabstract(cppmodel::XTClass)
+def test_cppmodel_xtclass_is_not_abstract():
+    assert not inspect.isabstract(cppmodel_XTClass)
 
 
-def test_cppmodel::xtclass_constructor_exists():
-    assert callable(cppmodel::XTClass.__init__)
+def test_cppmodel_xtclass_constructor_exists():
+    assert callable(cppmodel_XTClass.__init__)
 
 
-def test_cppmodel::xtclass_constructor_args():
-    sig = inspect.signature(cppmodel::XTClass.__init__)
+def test_cppmodel_xtclass_constructor_args():
+    sig = inspect.signature(cppmodel_XTClass.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -201,121 +201,121 @@ def test_ooplbasictype_constructor_args():
 
 
 
-def test_cppmodel::cppexternallibrary_is_not_abstract():
-    assert not inspect.isabstract(cppmodel::CPPExternalLibrary)
+def test_cppmodel_cppexternallibrary_is_not_abstract():
+    assert not inspect.isabstract(cppmodel_CPPExternalLibrary)
 
 
-def test_cppmodel::cppexternallibrary_constructor_exists():
-    assert callable(cppmodel::CPPExternalLibrary.__init__)
+def test_cppmodel_cppexternallibrary_constructor_exists():
+    assert callable(cppmodel_CPPExternalLibrary.__init__)
 
 
-def test_cppmodel::cppexternallibrary_constructor_args():
-    sig = inspect.signature(cppmodel::CPPExternalLibrary.__init__)
+def test_cppmodel_cppexternallibrary_constructor_args():
+    sig = inspect.signature(cppmodel_CPPExternalLibrary.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_cppmodel::parameter_is_not_abstract():
-    assert not inspect.isabstract(cppmodel::Parameter)
+def test_cppmodel_parameter_is_not_abstract():
+    assert not inspect.isabstract(cppmodel_Parameter)
 
 
-def test_cppmodel::parameter_constructor_exists():
-    assert callable(cppmodel::Parameter.__init__)
+def test_cppmodel_parameter_constructor_exists():
+    assert callable(cppmodel_Parameter.__init__)
 
 
-def test_cppmodel::parameter_constructor_args():
-    sig = inspect.signature(cppmodel::Parameter.__init__)
+def test_cppmodel_parameter_constructor_args():
+    sig = inspect.signature(cppmodel_Parameter.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_cppmodel::xtevent_is_not_abstract():
-    assert not inspect.isabstract(cppmodel::XTEvent)
+def test_cppmodel_xtevent_is_not_abstract():
+    assert not inspect.isabstract(cppmodel_XTEvent)
 
 
-def test_cppmodel::xtevent_constructor_exists():
-    assert callable(cppmodel::XTEvent.__init__)
+def test_cppmodel_xtevent_constructor_exists():
+    assert callable(cppmodel_XTEvent.__init__)
 
 
-def test_cppmodel::xtevent_constructor_args():
-    sig = inspect.signature(cppmodel::XTEvent.__init__)
+def test_cppmodel_xtevent_constructor_args():
+    sig = inspect.signature(cppmodel_XTEvent.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_cppmodel::transition_is_not_abstract():
-    assert not inspect.isabstract(cppmodel::Transition)
+def test_cppmodel_transition_is_not_abstract():
+    assert not inspect.isabstract(cppmodel_Transition)
 
 
-def test_cppmodel::transition_constructor_exists():
-    assert callable(cppmodel::Transition.__init__)
+def test_cppmodel_transition_constructor_exists():
+    assert callable(cppmodel_Transition.__init__)
 
 
-def test_cppmodel::transition_constructor_args():
-    sig = inspect.signature(cppmodel::Transition.__init__)
+def test_cppmodel_transition_constructor_args():
+    sig = inspect.signature(cppmodel_Transition.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_cppmodel::typedmultiplicityelement_is_not_abstract():
-    assert not inspect.isabstract(cppmodel::TypedMultiplicityElement)
+def test_cppmodel_typedmultiplicityelement_is_not_abstract():
+    assert not inspect.isabstract(cppmodel_TypedMultiplicityElement)
 
 
-def test_cppmodel::typedmultiplicityelement_constructor_exists():
-    assert callable(cppmodel::TypedMultiplicityElement.__init__)
+def test_cppmodel_typedmultiplicityelement_constructor_exists():
+    assert callable(cppmodel_TypedMultiplicityElement.__init__)
 
 
-def test_cppmodel::typedmultiplicityelement_constructor_args():
-    sig = inspect.signature(cppmodel::TypedMultiplicityElement.__init__)
+def test_cppmodel_typedmultiplicityelement_constructor_args():
+    sig = inspect.signature(cppmodel_TypedMultiplicityElement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_cppmodel::state_is_not_abstract():
-    assert not inspect.isabstract(cppmodel::State)
+def test_cppmodel_state_is_not_abstract():
+    assert not inspect.isabstract(cppmodel_State)
 
 
-def test_cppmodel::state_constructor_exists():
-    assert callable(cppmodel::State.__init__)
+def test_cppmodel_state_constructor_exists():
+    assert callable(cppmodel_State.__init__)
 
 
-def test_cppmodel::state_constructor_args():
-    sig = inspect.signature(cppmodel::State.__init__)
+def test_cppmodel_state_constructor_args():
+    sig = inspect.signature(cppmodel_State.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_cppmodel::oopldatatype_is_not_abstract():
-    assert not inspect.isabstract(cppmodel::OOPLDataType)
+def test_cppmodel_oopldatatype_is_not_abstract():
+    assert not inspect.isabstract(cppmodel_OOPLDataType)
 
 
-def test_cppmodel::oopldatatype_constructor_exists():
-    assert callable(cppmodel::OOPLDataType.__init__)
+def test_cppmodel_oopldatatype_constructor_exists():
+    assert callable(cppmodel_OOPLDataType.__init__)
 
 
-def test_cppmodel::oopldatatype_constructor_args():
-    sig = inspect.signature(cppmodel::OOPLDataType.__init__)
+def test_cppmodel_oopldatatype_constructor_args():
+    sig = inspect.signature(cppmodel_OOPLDataType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_cppmodel::cppsequence_is_not_abstract():
-    assert not inspect.isabstract(cppmodel::CPPSequence)
+def test_cppmodel_cppsequence_is_not_abstract():
+    assert not inspect.isabstract(cppmodel_CPPSequence)
 
 
-def test_cppmodel::cppsequence_constructor_exists():
-    assert callable(cppmodel::CPPSequence.__init__)
+def test_cppmodel_cppsequence_constructor_exists():
+    assert callable(cppmodel_CPPSequence.__init__)
 
 
-def test_cppmodel::cppsequence_constructor_args():
-    sig = inspect.signature(cppmodel::CPPSequence.__init__)
+def test_cppmodel_cppsequence_constructor_args():
+    sig = inspect.signature(cppmodel_CPPSequence.__init__)
     params = list(sig.parameters.keys())
     assert "cppContainer" in params, "Missing parameter 'cppContainer'"
 
-def test_cppmodel::cppsequence_has_cppContainer():
-    assert hasattr(cppmodel::CPPSequence, "cppContainer")
+def test_cppmodel_cppsequence_has_cppContainer():
+    assert hasattr(cppmodel_CPPSequence, "cppContainer")
     descriptor = None
-    for klass in cppmodel::CPPSequence.__mro__:
+    for klass in cppmodel_CPPSequence.__mro__:
         if "cppContainer" in klass.__dict__:
             descriptor = klass.__dict__["cppContainer"]
             break
@@ -323,16 +323,16 @@ def test_cppmodel::cppsequence_has_cppContainer():
 
 
 
-def test_cppmodel::attribute_is_not_abstract():
-    assert not inspect.isabstract(cppmodel::Attribute)
+def test_cppmodel_attribute_is_not_abstract():
+    assert not inspect.isabstract(cppmodel_Attribute)
 
 
-def test_cppmodel::attribute_constructor_exists():
-    assert callable(cppmodel::Attribute.__init__)
+def test_cppmodel_attribute_constructor_exists():
+    assert callable(cppmodel_Attribute.__init__)
 
 
-def test_cppmodel::attribute_constructor_args():
-    sig = inspect.signature(cppmodel::Attribute.__init__)
+def test_cppmodel_attribute_constructor_args():
+    sig = inspect.signature(cppmodel_Attribute.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -393,86 +393,86 @@ def test_ooplclassreference_constructor_args():
 
 
 
-def test_cppmodel::xtprotocoloperationimplementation_is_not_abstract():
-    assert not inspect.isabstract(cppmodel::XTProtocolOperationImplementation)
+def test_cppmodel_xtprotocoloperationimplementation_is_not_abstract():
+    assert not inspect.isabstract(cppmodel_XTProtocolOperationImplementation)
 
 
-def test_cppmodel::xtprotocoloperationimplementation_constructor_exists():
-    assert callable(cppmodel::XTProtocolOperationImplementation.__init__)
+def test_cppmodel_xtprotocoloperationimplementation_constructor_exists():
+    assert callable(cppmodel_XTProtocolOperationImplementation.__init__)
 
 
-def test_cppmodel::xtprotocoloperationimplementation_constructor_args():
-    sig = inspect.signature(cppmodel::XTProtocolOperationImplementation.__init__)
+def test_cppmodel_xtprotocoloperationimplementation_constructor_args():
+    sig = inspect.signature(cppmodel_XTProtocolOperationImplementation.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_cppmodel::xtprotocoloperationdefinition_is_not_abstract():
-    assert not inspect.isabstract(cppmodel::XTProtocolOperationDefinition)
+def test_cppmodel_xtprotocoloperationdefinition_is_not_abstract():
+    assert not inspect.isabstract(cppmodel_XTProtocolOperationDefinition)
 
 
-def test_cppmodel::xtprotocoloperationdefinition_constructor_exists():
-    assert callable(cppmodel::XTProtocolOperationDefinition.__init__)
+def test_cppmodel_xtprotocoloperationdefinition_constructor_exists():
+    assert callable(cppmodel_XTProtocolOperationDefinition.__init__)
 
 
-def test_cppmodel::xtprotocoloperationdefinition_constructor_args():
-    sig = inspect.signature(cppmodel::XTProtocolOperationDefinition.__init__)
+def test_cppmodel_xtprotocoloperationdefinition_constructor_args():
+    sig = inspect.signature(cppmodel_XTProtocolOperationDefinition.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_cppmodel::xtport_is_not_abstract():
-    assert not inspect.isabstract(cppmodel::XTPort)
+def test_cppmodel_xtport_is_not_abstract():
+    assert not inspect.isabstract(cppmodel_XTPort)
 
 
-def test_cppmodel::xtport_constructor_exists():
-    assert callable(cppmodel::XTPort.__init__)
+def test_cppmodel_xtport_constructor_exists():
+    assert callable(cppmodel_XTPort.__init__)
 
 
-def test_cppmodel::xtport_constructor_args():
-    sig = inspect.signature(cppmodel::XTPort.__init__)
+def test_cppmodel_xtport_constructor_args():
+    sig = inspect.signature(cppmodel_XTPort.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_cppmodel::snippet_is_not_abstract():
-    assert not inspect.isabstract(cppmodel::Snippet)
+def test_cppmodel_snippet_is_not_abstract():
+    assert not inspect.isabstract(cppmodel_Snippet)
 
 
-def test_cppmodel::snippet_constructor_exists():
-    assert callable(cppmodel::Snippet.__init__)
+def test_cppmodel_snippet_constructor_exists():
+    assert callable(cppmodel_Snippet.__init__)
 
 
-def test_cppmodel::snippet_constructor_args():
-    sig = inspect.signature(cppmodel::Snippet.__init__)
+def test_cppmodel_snippet_constructor_args():
+    sig = inspect.signature(cppmodel_Snippet.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_cppmodel::signal_is_not_abstract():
-    assert not inspect.isabstract(cppmodel::Signal)
+def test_cppmodel_signal_is_not_abstract():
+    assert not inspect.isabstract(cppmodel_Signal)
 
 
-def test_cppmodel::signal_constructor_exists():
-    assert callable(cppmodel::Signal.__init__)
+def test_cppmodel_signal_constructor_exists():
+    assert callable(cppmodel_Signal.__init__)
 
 
-def test_cppmodel::signal_constructor_args():
-    sig = inspect.signature(cppmodel::Signal.__init__)
+def test_cppmodel_signal_constructor_args():
+    sig = inspect.signature(cppmodel_Signal.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_cppmodel::operation_is_not_abstract():
-    assert not inspect.isabstract(cppmodel::Operation)
+def test_cppmodel_operation_is_not_abstract():
+    assert not inspect.isabstract(cppmodel_Operation)
 
 
-def test_cppmodel::operation_constructor_exists():
-    assert callable(cppmodel::Operation.__init__)
+def test_cppmodel_operation_constructor_exists():
+    assert callable(cppmodel_Operation.__init__)
 
 
-def test_cppmodel::operation_constructor_args():
-    sig = inspect.signature(cppmodel::Operation.__init__)
+def test_cppmodel_operation_constructor_args():
+    sig = inspect.signature(cppmodel_Operation.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -491,23 +491,23 @@ def test_ooplrelation_constructor_args():
 
 
 
-def test_cppmodel::cppexternalheader_is_not_abstract():
-    assert not inspect.isabstract(cppmodel::CPPExternalHeader)
+def test_cppmodel_cppexternalheader_is_not_abstract():
+    assert not inspect.isabstract(cppmodel_CPPExternalHeader)
 
 
-def test_cppmodel::cppexternalheader_constructor_exists():
-    assert callable(cppmodel::CPPExternalHeader.__init__)
+def test_cppmodel_cppexternalheader_constructor_exists():
+    assert callable(cppmodel_CPPExternalHeader.__init__)
 
 
-def test_cppmodel::cppexternalheader_constructor_args():
-    sig = inspect.signature(cppmodel::CPPExternalHeader.__init__)
+def test_cppmodel_cppexternalheader_constructor_args():
+    sig = inspect.signature(cppmodel_CPPExternalHeader.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_cppmodel::cppexternalheader_has_name():
-    assert hasattr(cppmodel::CPPExternalHeader, "name")
+def test_cppmodel_cppexternalheader_has_name():
+    assert hasattr(cppmodel_CPPExternalHeader, "name")
     descriptor = None
-    for klass in cppmodel::CPPExternalHeader.__mro__:
+    for klass in cppmodel_CPPExternalHeader.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -515,16 +515,16 @@ def test_cppmodel::cppexternalheader_has_name():
 
 
 
-def test_cppmodel::xtcomponent_is_not_abstract():
-    assert not inspect.isabstract(cppmodel::XTComponent)
+def test_cppmodel_xtcomponent_is_not_abstract():
+    assert not inspect.isabstract(cppmodel_XTComponent)
 
 
-def test_cppmodel::xtcomponent_constructor_exists():
-    assert callable(cppmodel::XTComponent.__init__)
+def test_cppmodel_xtcomponent_constructor_exists():
+    assert callable(cppmodel_XTComponent.__init__)
 
 
-def test_cppmodel::xtcomponent_constructor_args():
-    sig = inspect.signature(cppmodel::XTComponent.__init__)
+def test_cppmodel_xtcomponent_constructor_args():
+    sig = inspect.signature(cppmodel_XTComponent.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -543,37 +543,37 @@ def test_cppsourcefile_constructor_args():
 
 
 
-def test_cppmodel::cppmakefile_is_not_abstract():
-    assert not inspect.isabstract(cppmodel::CPPMakeFile)
+def test_cppmodel_cppmakefile_is_not_abstract():
+    assert not inspect.isabstract(cppmodel_CPPMakeFile)
 
 
-def test_cppmodel::cppmakefile_constructor_exists():
-    assert callable(cppmodel::CPPMakeFile.__init__)
+def test_cppmodel_cppmakefile_constructor_exists():
+    assert callable(cppmodel_CPPMakeFile.__init__)
 
 
-def test_cppmodel::cppmakefile_constructor_args():
-    sig = inspect.signature(cppmodel::CPPMakeFile.__init__)
+def test_cppmodel_cppmakefile_constructor_args():
+    sig = inspect.signature(cppmodel_CPPMakeFile.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_cppmodel::cppexternalheaderinclusion_is_not_abstract():
-    assert not inspect.isabstract(cppmodel::CPPExternalHeaderInclusion)
+def test_cppmodel_cppexternalheaderinclusion_is_not_abstract():
+    assert not inspect.isabstract(cppmodel_CPPExternalHeaderInclusion)
 
 
-def test_cppmodel::cppexternalheaderinclusion_constructor_exists():
-    assert callable(cppmodel::CPPExternalHeaderInclusion.__init__)
+def test_cppmodel_cppexternalheaderinclusion_constructor_exists():
+    assert callable(cppmodel_CPPExternalHeaderInclusion.__init__)
 
 
-def test_cppmodel::cppexternalheaderinclusion_constructor_args():
-    sig = inspect.signature(cppmodel::CPPExternalHeaderInclusion.__init__)
+def test_cppmodel_cppexternalheaderinclusion_constructor_args():
+    sig = inspect.signature(cppmodel_CPPExternalHeaderInclusion.__init__)
     params = list(sig.parameters.keys())
     assert "comment" in params, "Missing parameter 'comment'"
 
-def test_cppmodel::cppexternalheaderinclusion_has_comment():
-    assert hasattr(cppmodel::CPPExternalHeaderInclusion, "comment")
+def test_cppmodel_cppexternalheaderinclusion_has_comment():
+    assert hasattr(cppmodel_CPPExternalHeaderInclusion, "comment")
     descriptor = None
-    for klass in cppmodel::CPPExternalHeaderInclusion.__mro__:
+    for klass in cppmodel_CPPExternalHeaderInclusion.__mro__:
         if "comment" in klass.__dict__:
             descriptor = klass.__dict__["comment"]
             break
@@ -581,60 +581,60 @@ def test_cppmodel::cppexternalheaderinclusion_has_comment():
 
 
 
-def test_cppmodel::cppsourcefile_is_not_abstract():
-    assert not inspect.isabstract(cppmodel::CPPSourceFile)
+def test_cppmodel_cppsourcefile_is_not_abstract():
+    assert not inspect.isabstract(cppmodel_CPPSourceFile)
 
 
-def test_cppmodel::cppsourcefile_constructor_exists():
-    assert callable(cppmodel::CPPSourceFile.__init__)
+def test_cppmodel_cppsourcefile_constructor_exists():
+    assert callable(cppmodel_CPPSourceFile.__init__)
 
 
-def test_cppmodel::cppsourcefile_constructor_args():
-    sig = inspect.signature(cppmodel::CPPSourceFile.__init__)
+def test_cppmodel_cppsourcefile_constructor_args():
+    sig = inspect.signature(cppmodel_CPPSourceFile.__init__)
     params = list(sig.parameters.keys())
     assert "generationName" in params, "Missing parameter 'generationName'"
-    assert "generationPath" in params, "Missing parameter 'generationPath'"
     assert "generationDirectory" in params, "Missing parameter 'generationDirectory'"
+    assert "generationPath" in params, "Missing parameter 'generationPath'"
 
-def test_cppmodel::cppsourcefile_has_generationName():
-    assert hasattr(cppmodel::CPPSourceFile, "generationName")
+def test_cppmodel_cppsourcefile_has_generationName():
+    assert hasattr(cppmodel_CPPSourceFile, "generationName")
     descriptor = None
-    for klass in cppmodel::CPPSourceFile.__mro__:
+    for klass in cppmodel_CPPSourceFile.__mro__:
         if "generationName" in klass.__dict__:
             descriptor = klass.__dict__["generationName"]
             break
     assert isinstance(descriptor, property)
 
-def test_cppmodel::cppsourcefile_has_generationPath():
-    assert hasattr(cppmodel::CPPSourceFile, "generationPath")
+def test_cppmodel_cppsourcefile_has_generationDirectory():
+    assert hasattr(cppmodel_CPPSourceFile, "generationDirectory")
     descriptor = None
-    for klass in cppmodel::CPPSourceFile.__mro__:
-        if "generationPath" in klass.__dict__:
-            descriptor = klass.__dict__["generationPath"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_cppmodel::cppsourcefile_has_generationDirectory():
-    assert hasattr(cppmodel::CPPSourceFile, "generationDirectory")
-    descriptor = None
-    for klass in cppmodel::CPPSourceFile.__mro__:
+    for klass in cppmodel_CPPSourceFile.__mro__:
         if "generationDirectory" in klass.__dict__:
             descriptor = klass.__dict__["generationDirectory"]
             break
     assert isinstance(descriptor, property)
 
+def test_cppmodel_cppsourcefile_has_generationPath():
+    assert hasattr(cppmodel_CPPSourceFile, "generationPath")
+    descriptor = None
+    for klass in cppmodel_CPPSourceFile.__mro__:
+        if "generationPath" in klass.__dict__:
+            descriptor = klass.__dict__["generationPath"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_cppmodel::xtprotocol_is_not_abstract():
-    assert not inspect.isabstract(cppmodel::XTProtocol)
+
+def test_cppmodel_xtprotocol_is_not_abstract():
+    assert not inspect.isabstract(cppmodel_XTProtocol)
 
 
-def test_cppmodel::xtprotocol_constructor_exists():
-    assert callable(cppmodel::XTProtocol.__init__)
+def test_cppmodel_xtprotocol_constructor_exists():
+    assert callable(cppmodel_XTProtocol.__init__)
 
 
-def test_cppmodel::xtprotocol_constructor_args():
-    sig = inspect.signature(cppmodel::XTProtocol.__init__)
+def test_cppmodel_xtprotocol_constructor_args():
+    sig = inspect.signature(cppmodel_XTProtocol.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -653,57 +653,57 @@ def test_ooplclass_constructor_args():
 
 
 
-def test_cppmodel::package_is_not_abstract():
-    assert not inspect.isabstract(cppmodel::Package)
+def test_cppmodel_package_is_not_abstract():
+    assert not inspect.isabstract(cppmodel_Package)
 
 
-def test_cppmodel::package_constructor_exists():
-    assert callable(cppmodel::Package.__init__)
+def test_cppmodel_package_constructor_exists():
+    assert callable(cppmodel_Package.__init__)
 
 
-def test_cppmodel::package_constructor_args():
-    sig = inspect.signature(cppmodel::Package.__init__)
+def test_cppmodel_package_constructor_args():
+    sig = inspect.signature(cppmodel_Package.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_cppmodel::cppdirectory_is_not_abstract():
-    assert not inspect.isabstract(cppmodel::CPPDirectory)
+def test_cppmodel_cppdirectory_is_not_abstract():
+    assert not inspect.isabstract(cppmodel_CPPDirectory)
 
 
-def test_cppmodel::cppdirectory_constructor_exists():
-    assert callable(cppmodel::CPPDirectory.__init__)
+def test_cppmodel_cppdirectory_constructor_exists():
+    assert callable(cppmodel_CPPDirectory.__init__)
 
 
-def test_cppmodel::cppdirectory_constructor_args():
-    sig = inspect.signature(cppmodel::CPPDirectory.__init__)
+def test_cppmodel_cppdirectory_constructor_args():
+    sig = inspect.signature(cppmodel_CPPDirectory.__init__)
     params = list(sig.parameters.keys())
     assert "parentDirectory" in params, "Missing parameter 'parentDirectory'"
     assert "path" in params, "Missing parameter 'path'"
     assert "name" in params, "Missing parameter 'name'"
 
-def test_cppmodel::cppdirectory_has_parentDirectory():
-    assert hasattr(cppmodel::CPPDirectory, "parentDirectory")
+def test_cppmodel_cppdirectory_has_parentDirectory():
+    assert hasattr(cppmodel_CPPDirectory, "parentDirectory")
     descriptor = None
-    for klass in cppmodel::CPPDirectory.__mro__:
+    for klass in cppmodel_CPPDirectory.__mro__:
         if "parentDirectory" in klass.__dict__:
             descriptor = klass.__dict__["parentDirectory"]
             break
     assert isinstance(descriptor, property)
 
-def test_cppmodel::cppdirectory_has_path():
-    assert hasattr(cppmodel::CPPDirectory, "path")
+def test_cppmodel_cppdirectory_has_path():
+    assert hasattr(cppmodel_CPPDirectory, "path")
     descriptor = None
-    for klass in cppmodel::CPPDirectory.__mro__:
+    for klass in cppmodel_CPPDirectory.__mro__:
         if "path" in klass.__dict__:
             descriptor = klass.__dict__["path"]
             break
     assert isinstance(descriptor, property)
 
-def test_cppmodel::cppdirectory_has_name():
-    assert hasattr(cppmodel::CPPDirectory, "name")
+def test_cppmodel_cppdirectory_has_name():
+    assert hasattr(cppmodel_CPPDirectory, "name")
     descriptor = None
-    for klass in cppmodel::CPPDirectory.__mro__:
+    for klass in cppmodel_CPPDirectory.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -711,74 +711,74 @@ def test_cppmodel::cppdirectory_has_name():
 
 
 
-def test_cppmodel::cppheaderfile_is_not_abstract():
-    assert not inspect.isabstract(cppmodel::CPPHeaderFile)
+def test_cppmodel_cppheaderfile_is_not_abstract():
+    assert not inspect.isabstract(cppmodel_CPPHeaderFile)
 
 
-def test_cppmodel::cppheaderfile_constructor_exists():
-    assert callable(cppmodel::CPPHeaderFile.__init__)
+def test_cppmodel_cppheaderfile_constructor_exists():
+    assert callable(cppmodel_CPPHeaderFile.__init__)
 
 
-def test_cppmodel::cppheaderfile_constructor_args():
-    sig = inspect.signature(cppmodel::CPPHeaderFile.__init__)
+def test_cppmodel_cppheaderfile_constructor_args():
+    sig = inspect.signature(cppmodel_CPPHeaderFile.__init__)
     params = list(sig.parameters.keys())
-    assert "includePath" in params, "Missing parameter 'includePath'"
-    assert "includeName" in params, "Missing parameter 'includeName'"
     assert "includeDirectory" in params, "Missing parameter 'includeDirectory'"
+    assert "includeName" in params, "Missing parameter 'includeName'"
+    assert "includePath" in params, "Missing parameter 'includePath'"
 
-def test_cppmodel::cppheaderfile_has_includePath():
-    assert hasattr(cppmodel::CPPHeaderFile, "includePath")
+def test_cppmodel_cppheaderfile_has_includeDirectory():
+    assert hasattr(cppmodel_CPPHeaderFile, "includeDirectory")
     descriptor = None
-    for klass in cppmodel::CPPHeaderFile.__mro__:
-        if "includePath" in klass.__dict__:
-            descriptor = klass.__dict__["includePath"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_cppmodel::cppheaderfile_has_includeName():
-    assert hasattr(cppmodel::CPPHeaderFile, "includeName")
-    descriptor = None
-    for klass in cppmodel::CPPHeaderFile.__mro__:
-        if "includeName" in klass.__dict__:
-            descriptor = klass.__dict__["includeName"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_cppmodel::cppheaderfile_has_includeDirectory():
-    assert hasattr(cppmodel::CPPHeaderFile, "includeDirectory")
-    descriptor = None
-    for klass in cppmodel::CPPHeaderFile.__mro__:
+    for klass in cppmodel_CPPHeaderFile.__mro__:
         if "includeDirectory" in klass.__dict__:
             descriptor = klass.__dict__["includeDirectory"]
             break
     assert isinstance(descriptor, property)
 
+def test_cppmodel_cppheaderfile_has_includeName():
+    assert hasattr(cppmodel_CPPHeaderFile, "includeName")
+    descriptor = None
+    for klass in cppmodel_CPPHeaderFile.__mro__:
+        if "includeName" in klass.__dict__:
+            descriptor = klass.__dict__["includeName"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_cppmodel_cppheaderfile_has_includePath():
+    assert hasattr(cppmodel_CPPHeaderFile, "includePath")
+    descriptor = None
+    for klass in cppmodel_CPPHeaderFile.__mro__:
+        if "includePath" in klass.__dict__:
+            descriptor = klass.__dict__["includePath"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_cppmodel::cppbodyfile_is_not_abstract():
-    assert not inspect.isabstract(cppmodel::CPPBodyFile)
+
+def test_cppmodel_cppbodyfile_is_not_abstract():
+    assert not inspect.isabstract(cppmodel_CPPBodyFile)
 
 
-def test_cppmodel::cppbodyfile_constructor_exists():
-    assert callable(cppmodel::CPPBodyFile.__init__)
+def test_cppmodel_cppbodyfile_constructor_exists():
+    assert callable(cppmodel_CPPBodyFile.__init__)
 
 
-def test_cppmodel::cppbodyfile_constructor_args():
-    sig = inspect.signature(cppmodel::CPPBodyFile.__init__)
+def test_cppmodel_cppbodyfile_constructor_args():
+    sig = inspect.signature(cppmodel_CPPBodyFile.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_cppmodel::model_is_not_abstract():
-    assert not inspect.isabstract(cppmodel::Model)
+def test_cppmodel_model_is_not_abstract():
+    assert not inspect.isabstract(cppmodel_Model)
 
 
-def test_cppmodel::model_constructor_exists():
-    assert callable(cppmodel::Model.__init__)
+def test_cppmodel_model_constructor_exists():
+    assert callable(cppmodel_Model.__init__)
 
 
-def test_cppmodel::model_constructor_args():
-    sig = inspect.signature(cppmodel::Model.__init__)
+def test_cppmodel_model_constructor_args():
+    sig = inspect.signature(cppmodel_Model.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -797,257 +797,65 @@ def test_cppqualifiednamedelement_constructor_args():
 
 
 
-def test_cppmodel::cppreturnvalue_is_not_abstract():
-    assert not inspect.isabstract(cppmodel::CPPReturnValue)
+def test_cppmodel_cpprelation_is_not_abstract():
+    assert not inspect.isabstract(cppmodel_CPPRelation)
 
 
-def test_cppmodel::cppreturnvalue_constructor_exists():
-    assert callable(cppmodel::CPPReturnValue.__init__)
+def test_cppmodel_cpprelation_constructor_exists():
+    assert callable(cppmodel_CPPRelation.__init__)
 
 
-def test_cppmodel::cppreturnvalue_constructor_args():
-    sig = inspect.signature(cppmodel::CPPReturnValue.__init__)
+def test_cppmodel_cpprelation_constructor_args():
+    sig = inspect.signature(cppmodel_CPPRelation.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_cppmodel::cppclassrefsimplecollection_is_not_abstract():
-    assert not inspect.isabstract(cppmodel::CPPClassRefSimpleCollection)
+def test_cppmodel_cppclass_is_not_abstract():
+    assert not inspect.isabstract(cppmodel_CPPClass)
 
 
-def test_cppmodel::cppclassrefsimplecollection_constructor_exists():
-    assert callable(cppmodel::CPPClassRefSimpleCollection.__init__)
+def test_cppmodel_cppclass_constructor_exists():
+    assert callable(cppmodel_CPPClass.__init__)
 
 
-def test_cppmodel::cppclassrefsimplecollection_constructor_args():
-    sig = inspect.signature(cppmodel::CPPClassRefSimpleCollection.__init__)
-    params = list(sig.parameters.keys())
-    assert "cppContainer" in params, "Missing parameter 'cppContainer'"
-
-def test_cppmodel::cppclassrefsimplecollection_has_cppContainer():
-    assert hasattr(cppmodel::CPPClassRefSimpleCollection, "cppContainer")
-    descriptor = None
-    for klass in cppmodel::CPPClassRefSimpleCollection.__mro__:
-        if "cppContainer" in klass.__dict__:
-            descriptor = klass.__dict__["cppContainer"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_cppmodel::cppprotocoloperationdefinition_is_not_abstract():
-    assert not inspect.isabstract(cppmodel::CPPProtocolOperationDefinition)
-
-
-def test_cppmodel::cppprotocoloperationdefinition_constructor_exists():
-    assert callable(cppmodel::CPPProtocolOperationDefinition.__init__)
-
-
-def test_cppmodel::cppprotocoloperationdefinition_constructor_args():
-    sig = inspect.signature(cppmodel::CPPProtocolOperationDefinition.__init__)
+def test_cppmodel_cppclass_constructor_args():
+    sig = inspect.signature(cppmodel_CPPClass.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_cppmodel::cppattribute_is_not_abstract():
-    assert not inspect.isabstract(cppmodel::CPPAttribute)
+def test_cppmodel_cppprotocol_is_not_abstract():
+    assert not inspect.isabstract(cppmodel_CPPProtocol)
 
 
-def test_cppmodel::cppattribute_constructor_exists():
-    assert callable(cppmodel::CPPAttribute.__init__)
+def test_cppmodel_cppprotocol_constructor_exists():
+    assert callable(cppmodel_CPPProtocol.__init__)
 
 
-def test_cppmodel::cppattribute_constructor_args():
-    sig = inspect.signature(cppmodel::CPPAttribute.__init__)
+def test_cppmodel_cppprotocol_constructor_args():
+    sig = inspect.signature(cppmodel_CPPProtocol.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_cppmodel::cppstate_is_not_abstract():
-    assert not inspect.isabstract(cppmodel::CPPState)
+def test_cppmodel_cppbasictype_is_not_abstract():
+    assert not inspect.isabstract(cppmodel_CPPBasicType)
 
 
-def test_cppmodel::cppstate_constructor_exists():
-    assert callable(cppmodel::CPPState.__init__)
+def test_cppmodel_cppbasictype_constructor_exists():
+    assert callable(cppmodel_CPPBasicType.__init__)
 
 
-def test_cppmodel::cppstate_constructor_args():
-    sig = inspect.signature(cppmodel::CPPState.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_cppmodel::cppprotocoloperationimplementation_is_not_abstract():
-    assert not inspect.isabstract(cppmodel::CPPProtocolOperationImplementation)
-
-
-def test_cppmodel::cppprotocoloperationimplementation_constructor_exists():
-    assert callable(cppmodel::CPPProtocolOperationImplementation.__init__)
-
-
-def test_cppmodel::cppprotocoloperationimplementation_constructor_args():
-    sig = inspect.signature(cppmodel::CPPProtocolOperationImplementation.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_cppmodel::cpprelation_is_not_abstract():
-    assert not inspect.isabstract(cppmodel::CPPRelation)
-
-
-def test_cppmodel::cpprelation_constructor_exists():
-    assert callable(cppmodel::CPPRelation.__init__)
-
-
-def test_cppmodel::cpprelation_constructor_args():
-    sig = inspect.signature(cppmodel::CPPRelation.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_cppmodel::cppclassreferencestorage_is_not_abstract():
-    assert not inspect.isabstract(cppmodel::CPPClassReferenceStorage)
-
-
-def test_cppmodel::cppclassreferencestorage_constructor_exists():
-    assert callable(cppmodel::CPPClassReferenceStorage.__init__)
-
-
-def test_cppmodel::cppclassreferencestorage_constructor_args():
-    sig = inspect.signature(cppmodel::CPPClassReferenceStorage.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_cppmodel::cppclass_is_not_abstract():
-    assert not inspect.isabstract(cppmodel::CPPClass)
-
-
-def test_cppmodel::cppclass_constructor_exists():
-    assert callable(cppmodel::CPPClass.__init__)
-
-
-def test_cppmodel::cppclass_constructor_args():
-    sig = inspect.signature(cppmodel::CPPClass.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_cppmodel::cppport_is_not_abstract():
-    assert not inspect.isabstract(cppmodel::CPPPort)
-
-
-def test_cppmodel::cppport_constructor_exists():
-    assert callable(cppmodel::CPPPort.__init__)
-
-
-def test_cppmodel::cppport_constructor_args():
-    sig = inspect.signature(cppmodel::CPPPort.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_cppmodel::cppstructtype_is_not_abstract():
-    assert not inspect.isabstract(cppmodel::CPPStructType)
-
-
-def test_cppmodel::cppstructtype_constructor_exists():
-    assert callable(cppmodel::CPPStructType.__init__)
-
-
-def test_cppmodel::cppstructtype_constructor_args():
-    sig = inspect.signature(cppmodel::CPPStructType.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_cppmodel::cppprotocol_is_not_abstract():
-    assert not inspect.isabstract(cppmodel::CPPProtocol)
-
-
-def test_cppmodel::cppprotocol_constructor_exists():
-    assert callable(cppmodel::CPPProtocol.__init__)
-
-
-def test_cppmodel::cppprotocol_constructor_args():
-    sig = inspect.signature(cppmodel::CPPProtocol.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_cppmodel::cppoperation_is_not_abstract():
-    assert not inspect.isabstract(cppmodel::CPPOperation)
-
-
-def test_cppmodel::cppoperation_constructor_exists():
-    assert callable(cppmodel::CPPOperation.__init__)
-
-
-def test_cppmodel::cppoperation_constructor_args():
-    sig = inspect.signature(cppmodel::CPPOperation.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_cppmodel::cpptransition_is_not_abstract():
-    assert not inspect.isabstract(cppmodel::CPPTransition)
-
-
-def test_cppmodel::cpptransition_constructor_exists():
-    assert callable(cppmodel::CPPTransition.__init__)
-
-
-def test_cppmodel::cpptransition_constructor_args():
-    sig = inspect.signature(cppmodel::CPPTransition.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_cppmodel::cppuserdefinedtype_is_not_abstract():
-    assert not inspect.isabstract(cppmodel::CPPUserDefinedType)
-
-
-def test_cppmodel::cppuserdefinedtype_constructor_exists():
-    assert callable(cppmodel::CPPUserDefinedType.__init__)
-
-
-def test_cppmodel::cppuserdefinedtype_constructor_args():
-    sig = inspect.signature(cppmodel::CPPUserDefinedType.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_cppmodel::cppclassreference_is_not_abstract():
-    assert not inspect.isabstract(cppmodel::CPPClassReference)
-
-
-def test_cppmodel::cppclassreference_constructor_exists():
-    assert callable(cppmodel::CPPClassReference.__init__)
-
-
-def test_cppmodel::cppclassreference_constructor_args():
-    sig = inspect.signature(cppmodel::CPPClassReference.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_cppmodel::cppbasictype_is_not_abstract():
-    assert not inspect.isabstract(cppmodel::CPPBasicType)
-
-
-def test_cppmodel::cppbasictype_constructor_exists():
-    assert callable(cppmodel::CPPBasicType.__init__)
-
-
-def test_cppmodel::cppbasictype_constructor_args():
-    sig = inspect.signature(cppmodel::CPPBasicType.__init__)
+def test_cppmodel_cppbasictype_constructor_args():
+    sig = inspect.signature(cppmodel_CPPBasicType.__init__)
     params = list(sig.parameters.keys())
     assert "cppSpecifier" in params, "Missing parameter 'cppSpecifier'"
 
-def test_cppmodel::cppbasictype_has_cppSpecifier():
-    assert hasattr(cppmodel::CPPBasicType, "cppSpecifier")
+def test_cppmodel_cppbasictype_has_cppSpecifier():
+    assert hasattr(cppmodel_CPPBasicType, "cppSpecifier")
     descriptor = None
-    for klass in cppmodel::CPPBasicType.__mro__:
+    for klass in cppmodel_CPPBasicType.__mro__:
         if "cppSpecifier" in klass.__dict__:
             descriptor = klass.__dict__["cppSpecifier"]
             break
@@ -1055,61 +863,79 @@ def test_cppmodel::cppbasictype_has_cppSpecifier():
 
 
 
-def test_cppmodel::cppformalparameter_is_not_abstract():
-    assert not inspect.isabstract(cppmodel::CPPFormalParameter)
+def test_cppmodel_cppclassreferencestorage_is_not_abstract():
+    assert not inspect.isabstract(cppmodel_CPPClassReferenceStorage)
 
 
-def test_cppmodel::cppformalparameter_constructor_exists():
-    assert callable(cppmodel::CPPFormalParameter.__init__)
+def test_cppmodel_cppclassreferencestorage_constructor_exists():
+    assert callable(cppmodel_CPPClassReferenceStorage.__init__)
 
 
-def test_cppmodel::cppformalparameter_constructor_args():
-    sig = inspect.signature(cppmodel::CPPFormalParameter.__init__)
-    params = list(sig.parameters.keys())
-    assert "passingMode" in params, "Missing parameter 'passingMode'"
-
-def test_cppmodel::cppformalparameter_has_passingMode():
-    assert hasattr(cppmodel::CPPFormalParameter, "passingMode")
-    descriptor = None
-    for klass in cppmodel::CPPFormalParameter.__mro__:
-        if "passingMode" in klass.__dict__:
-            descriptor = klass.__dict__["passingMode"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_cppmodel::cppcomponent_is_not_abstract():
-    assert not inspect.isabstract(cppmodel::CPPComponent)
-
-
-def test_cppmodel::cppcomponent_constructor_exists():
-    assert callable(cppmodel::CPPComponent.__init__)
-
-
-def test_cppmodel::cppcomponent_constructor_args():
-    sig = inspect.signature(cppmodel::CPPComponent.__init__)
+def test_cppmodel_cppclassreferencestorage_constructor_args():
+    sig = inspect.signature(cppmodel_CPPClassReferenceStorage.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_cppmodel::cppclassrefassoccollection_is_not_abstract():
-    assert not inspect.isabstract(cppmodel::CPPClassRefAssocCollection)
+def test_cppmodel_cppprotocoloperationimplementation_is_not_abstract():
+    assert not inspect.isabstract(cppmodel_CPPProtocolOperationImplementation)
 
 
-def test_cppmodel::cppclassrefassoccollection_constructor_exists():
-    assert callable(cppmodel::CPPClassRefAssocCollection.__init__)
+def test_cppmodel_cppprotocoloperationimplementation_constructor_exists():
+    assert callable(cppmodel_CPPProtocolOperationImplementation.__init__)
 
 
-def test_cppmodel::cppclassrefassoccollection_constructor_args():
-    sig = inspect.signature(cppmodel::CPPClassRefAssocCollection.__init__)
+def test_cppmodel_cppprotocoloperationimplementation_constructor_args():
+    sig = inspect.signature(cppmodel_CPPProtocolOperationImplementation.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_cppmodel_cpppackage_is_not_abstract():
+    assert not inspect.isabstract(cppmodel_CPPPackage)
+
+
+def test_cppmodel_cpppackage_constructor_exists():
+    assert callable(cppmodel_CPPPackage.__init__)
+
+
+def test_cppmodel_cpppackage_constructor_args():
+    sig = inspect.signature(cppmodel_CPPPackage.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_cppmodel_cppattribute_is_not_abstract():
+    assert not inspect.isabstract(cppmodel_CPPAttribute)
+
+
+def test_cppmodel_cppattribute_constructor_exists():
+    assert callable(cppmodel_CPPAttribute.__init__)
+
+
+def test_cppmodel_cppattribute_constructor_args():
+    sig = inspect.signature(cppmodel_CPPAttribute.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_cppmodel_cppclassrefassoccollection_is_not_abstract():
+    assert not inspect.isabstract(cppmodel_CPPClassRefAssocCollection)
+
+
+def test_cppmodel_cppclassrefassoccollection_constructor_exists():
+    assert callable(cppmodel_CPPClassRefAssocCollection.__init__)
+
+
+def test_cppmodel_cppclassrefassoccollection_constructor_args():
+    sig = inspect.signature(cppmodel_CPPClassRefAssocCollection.__init__)
     params = list(sig.parameters.keys())
     assert "cppContainer" in params, "Missing parameter 'cppContainer'"
 
-def test_cppmodel::cppclassrefassoccollection_has_cppContainer():
-    assert hasattr(cppmodel::CPPClassRefAssocCollection, "cppContainer")
+def test_cppmodel_cppclassrefassoccollection_has_cppContainer():
+    assert hasattr(cppmodel_CPPClassRefAssocCollection, "cppContainer")
     descriptor = None
-    for klass in cppmodel::CPPClassRefAssocCollection.__mro__:
+    for klass in cppmodel_CPPClassRefAssocCollection.__mro__:
         if "cppContainer" in klass.__dict__:
             descriptor = klass.__dict__["cppContainer"]
             break
@@ -1117,79 +943,61 @@ def test_cppmodel::cppclassrefassoccollection_has_cppContainer():
 
 
 
-def test_cppmodel::cppsignal_is_not_abstract():
-    assert not inspect.isabstract(cppmodel::CPPSignal)
+def test_cppmodel_cppformalparameter_is_not_abstract():
+    assert not inspect.isabstract(cppmodel_CPPFormalParameter)
 
 
-def test_cppmodel::cppsignal_constructor_exists():
-    assert callable(cppmodel::CPPSignal.__init__)
+def test_cppmodel_cppformalparameter_constructor_exists():
+    assert callable(cppmodel_CPPFormalParameter.__init__)
 
 
-def test_cppmodel::cppsignal_constructor_args():
-    sig = inspect.signature(cppmodel::CPPSignal.__init__)
+def test_cppmodel_cppformalparameter_constructor_args():
+    sig = inspect.signature(cppmodel_CPPFormalParameter.__init__)
+    params = list(sig.parameters.keys())
+    assert "passingMode" in params, "Missing parameter 'passingMode'"
+
+def test_cppmodel_cppformalparameter_has_passingMode():
+    assert hasattr(cppmodel_CPPFormalParameter, "passingMode")
+    descriptor = None
+    for klass in cppmodel_CPPFormalParameter.__mro__:
+        if "passingMode" in klass.__dict__:
+            descriptor = klass.__dict__["passingMode"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_cppmodel_cppuserdefinedtype_is_not_abstract():
+    assert not inspect.isabstract(cppmodel_CPPUserDefinedType)
+
+
+def test_cppmodel_cppuserdefinedtype_constructor_exists():
+    assert callable(cppmodel_CPPUserDefinedType.__init__)
+
+
+def test_cppmodel_cppuserdefinedtype_constructor_args():
+    sig = inspect.signature(cppmodel_CPPUserDefinedType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_cppmodel::cppenumtype_is_not_abstract():
-    assert not inspect.isabstract(cppmodel::CPPEnumType)
+def test_cppmodel_cppenumerator_is_not_abstract():
+    assert not inspect.isabstract(cppmodel_CPPEnumerator)
 
 
-def test_cppmodel::cppenumtype_constructor_exists():
-    assert callable(cppmodel::CPPEnumType.__init__)
+def test_cppmodel_cppenumerator_constructor_exists():
+    assert callable(cppmodel_CPPEnumerator.__init__)
 
 
-def test_cppmodel::cppenumtype_constructor_args():
-    sig = inspect.signature(cppmodel::CPPEnumType.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_cppmodel::cpppackage_is_not_abstract():
-    assert not inspect.isabstract(cppmodel::CPPPackage)
-
-
-def test_cppmodel::cpppackage_constructor_exists():
-    assert callable(cppmodel::CPPPackage.__init__)
-
-
-def test_cppmodel::cpppackage_constructor_args():
-    sig = inspect.signature(cppmodel::CPPPackage.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_cppmodel::cppevent_is_not_abstract():
-    assert not inspect.isabstract(cppmodel::CPPEvent)
-
-
-def test_cppmodel::cppevent_constructor_exists():
-    assert callable(cppmodel::CPPEvent.__init__)
-
-
-def test_cppmodel::cppevent_constructor_args():
-    sig = inspect.signature(cppmodel::CPPEvent.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_cppmodel::cppenumerator_is_not_abstract():
-    assert not inspect.isabstract(cppmodel::CPPEnumerator)
-
-
-def test_cppmodel::cppenumerator_constructor_exists():
-    assert callable(cppmodel::CPPEnumerator.__init__)
-
-
-def test_cppmodel::cppenumerator_constructor_args():
-    sig = inspect.signature(cppmodel::CPPEnumerator.__init__)
+def test_cppmodel_cppenumerator_constructor_args():
+    sig = inspect.signature(cppmodel_CPPEnumerator.__init__)
     params = list(sig.parameters.keys())
     assert "cppValue" in params, "Missing parameter 'cppValue'"
 
-def test_cppmodel::cppenumerator_has_cppValue():
-    assert hasattr(cppmodel::CPPEnumerator, "cppValue")
+def test_cppmodel_cppenumerator_has_cppValue():
+    assert hasattr(cppmodel_CPPEnumerator, "cppValue")
     descriptor = None
-    for klass in cppmodel::CPPEnumerator.__mro__:
+    for klass in cppmodel_CPPEnumerator.__mro__:
         if "cppValue" in klass.__dict__:
             descriptor = klass.__dict__["cppValue"]
             break
@@ -1197,37 +1005,173 @@ def test_cppmodel::cppenumerator_has_cppValue():
 
 
 
-def test_cppmodel::cppstructmember_is_not_abstract():
-    assert not inspect.isabstract(cppmodel::CPPStructMember)
+def test_cppmodel_cpptransition_is_not_abstract():
+    assert not inspect.isabstract(cppmodel_CPPTransition)
 
 
-def test_cppmodel::cppstructmember_constructor_exists():
-    assert callable(cppmodel::CPPStructMember.__init__)
+def test_cppmodel_cpptransition_constructor_exists():
+    assert callable(cppmodel_CPPTransition.__init__)
 
 
-def test_cppmodel::cppstructmember_constructor_args():
-    sig = inspect.signature(cppmodel::CPPStructMember.__init__)
+def test_cppmodel_cpptransition_constructor_args():
+    sig = inspect.signature(cppmodel_CPPTransition.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_cppmodel::cppexternalbridge_is_not_abstract():
-    assert not inspect.isabstract(cppmodel::CPPExternalBridge)
+def test_cppmodel_cppclassrefsimplecollection_is_not_abstract():
+    assert not inspect.isabstract(cppmodel_CPPClassRefSimpleCollection)
 
 
-def test_cppmodel::cppexternalbridge_constructor_exists():
-    assert callable(cppmodel::CPPExternalBridge.__init__)
+def test_cppmodel_cppclassrefsimplecollection_constructor_exists():
+    assert callable(cppmodel_CPPClassRefSimpleCollection.__init__)
 
 
-def test_cppmodel::cppexternalbridge_constructor_args():
-    sig = inspect.signature(cppmodel::CPPExternalBridge.__init__)
+def test_cppmodel_cppclassrefsimplecollection_constructor_args():
+    sig = inspect.signature(cppmodel_CPPClassRefSimpleCollection.__init__)
+    params = list(sig.parameters.keys())
+    assert "cppContainer" in params, "Missing parameter 'cppContainer'"
+
+def test_cppmodel_cppclassrefsimplecollection_has_cppContainer():
+    assert hasattr(cppmodel_CPPClassRefSimpleCollection, "cppContainer")
+    descriptor = None
+    for klass in cppmodel_CPPClassRefSimpleCollection.__mro__:
+        if "cppContainer" in klass.__dict__:
+            descriptor = klass.__dict__["cppContainer"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_cppmodel_cppclassreference_is_not_abstract():
+    assert not inspect.isabstract(cppmodel_CPPClassReference)
+
+
+def test_cppmodel_cppclassreference_constructor_exists():
+    assert callable(cppmodel_CPPClassReference.__init__)
+
+
+def test_cppmodel_cppclassreference_constructor_args():
+    sig = inspect.signature(cppmodel_CPPClassReference.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_cppmodel_cppsignal_is_not_abstract():
+    assert not inspect.isabstract(cppmodel_CPPSignal)
+
+
+def test_cppmodel_cppsignal_constructor_exists():
+    assert callable(cppmodel_CPPSignal.__init__)
+
+
+def test_cppmodel_cppsignal_constructor_args():
+    sig = inspect.signature(cppmodel_CPPSignal.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_cppmodel_cppreturnvalue_is_not_abstract():
+    assert not inspect.isabstract(cppmodel_CPPReturnValue)
+
+
+def test_cppmodel_cppreturnvalue_constructor_exists():
+    assert callable(cppmodel_CPPReturnValue.__init__)
+
+
+def test_cppmodel_cppreturnvalue_constructor_args():
+    sig = inspect.signature(cppmodel_CPPReturnValue.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_cppmodel_cppevent_is_not_abstract():
+    assert not inspect.isabstract(cppmodel_CPPEvent)
+
+
+def test_cppmodel_cppevent_constructor_exists():
+    assert callable(cppmodel_CPPEvent.__init__)
+
+
+def test_cppmodel_cppevent_constructor_args():
+    sig = inspect.signature(cppmodel_CPPEvent.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_cppmodel_cppcomponent_is_not_abstract():
+    assert not inspect.isabstract(cppmodel_CPPComponent)
+
+
+def test_cppmodel_cppcomponent_constructor_exists():
+    assert callable(cppmodel_CPPComponent.__init__)
+
+
+def test_cppmodel_cppcomponent_constructor_args():
+    sig = inspect.signature(cppmodel_CPPComponent.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_cppmodel_cppprotocoloperationdefinition_is_not_abstract():
+    assert not inspect.isabstract(cppmodel_CPPProtocolOperationDefinition)
+
+
+def test_cppmodel_cppprotocoloperationdefinition_constructor_exists():
+    assert callable(cppmodel_CPPProtocolOperationDefinition.__init__)
+
+
+def test_cppmodel_cppprotocoloperationdefinition_constructor_args():
+    sig = inspect.signature(cppmodel_CPPProtocolOperationDefinition.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_cppmodel_cppstate_is_not_abstract():
+    assert not inspect.isabstract(cppmodel_CPPState)
+
+
+def test_cppmodel_cppstate_constructor_exists():
+    assert callable(cppmodel_CPPState.__init__)
+
+
+def test_cppmodel_cppstate_constructor_args():
+    sig = inspect.signature(cppmodel_CPPState.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_cppmodel_cppoperation_is_not_abstract():
+    assert not inspect.isabstract(cppmodel_CPPOperation)
+
+
+def test_cppmodel_cppoperation_constructor_exists():
+    assert callable(cppmodel_CPPOperation.__init__)
+
+
+def test_cppmodel_cppoperation_constructor_args():
+    sig = inspect.signature(cppmodel_CPPOperation.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_cppmodel_cppexternalbridge_is_not_abstract():
+    assert not inspect.isabstract(cppmodel_CPPExternalBridge)
+
+
+def test_cppmodel_cppexternalbridge_constructor_exists():
+    assert callable(cppmodel_CPPExternalBridge.__init__)
+
+
+def test_cppmodel_cppexternalbridge_constructor_args():
+    sig = inspect.signature(cppmodel_CPPExternalBridge.__init__)
     params = list(sig.parameters.keys())
     assert "cppExternalNamespace" in params, "Missing parameter 'cppExternalNamespace'"
 
-def test_cppmodel::cppexternalbridge_has_cppExternalNamespace():
-    assert hasattr(cppmodel::CPPExternalBridge, "cppExternalNamespace")
+def test_cppmodel_cppexternalbridge_has_cppExternalNamespace():
+    assert hasattr(cppmodel_CPPExternalBridge, "cppExternalNamespace")
     descriptor = None
-    for klass in cppmodel::CPPExternalBridge.__mro__:
+    for klass in cppmodel_CPPExternalBridge.__mro__:
         if "cppExternalNamespace" in klass.__dict__:
             descriptor = klass.__dict__["cppExternalNamespace"]
             break
@@ -1235,16 +1179,72 @@ def test_cppmodel::cppexternalbridge_has_cppExternalNamespace():
 
 
 
-def test_cppmodel::cppmodel_is_not_abstract():
-    assert not inspect.isabstract(cppmodel::CPPModel)
+def test_cppmodel_cppport_is_not_abstract():
+    assert not inspect.isabstract(cppmodel_CPPPort)
 
 
-def test_cppmodel::cppmodel_constructor_exists():
-    assert callable(cppmodel::CPPModel.__init__)
+def test_cppmodel_cppport_constructor_exists():
+    assert callable(cppmodel_CPPPort.__init__)
 
 
-def test_cppmodel::cppmodel_constructor_args():
-    sig = inspect.signature(cppmodel::CPPModel.__init__)
+def test_cppmodel_cppport_constructor_args():
+    sig = inspect.signature(cppmodel_CPPPort.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_cppmodel_cppenumtype_is_not_abstract():
+    assert not inspect.isabstract(cppmodel_CPPEnumType)
+
+
+def test_cppmodel_cppenumtype_constructor_exists():
+    assert callable(cppmodel_CPPEnumType.__init__)
+
+
+def test_cppmodel_cppenumtype_constructor_args():
+    sig = inspect.signature(cppmodel_CPPEnumType.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_cppmodel_cppstructtype_is_not_abstract():
+    assert not inspect.isabstract(cppmodel_CPPStructType)
+
+
+def test_cppmodel_cppstructtype_constructor_exists():
+    assert callable(cppmodel_CPPStructType.__init__)
+
+
+def test_cppmodel_cppstructtype_constructor_args():
+    sig = inspect.signature(cppmodel_CPPStructType.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_cppmodel_cppstructmember_is_not_abstract():
+    assert not inspect.isabstract(cppmodel_CPPStructMember)
+
+
+def test_cppmodel_cppstructmember_constructor_exists():
+    assert callable(cppmodel_CPPStructMember.__init__)
+
+
+def test_cppmodel_cppstructmember_constructor_args():
+    sig = inspect.signature(cppmodel_CPPStructMember.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_cppmodel_cppmodel_is_not_abstract():
+    assert not inspect.isabstract(cppmodel_CPPModel)
+
+
+def test_cppmodel_cppmodel_constructor_exists():
+    assert callable(cppmodel_CPPModel.__init__)
+
+
+def test_cppmodel_cppmodel_constructor_args():
+    sig = inspect.signature(cppmodel_CPPModel.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1263,71 +1263,71 @@ def test_cppnamedelement_constructor_args():
 
 
 
-def test_cppmodel::cppqualifiednamedelement_is_not_abstract():
-    assert not inspect.isabstract(cppmodel::CPPQualifiedNamedElement)
+def test_cppmodel_cppqualifiednamedelement_is_not_abstract():
+    assert not inspect.isabstract(cppmodel_CPPQualifiedNamedElement)
 
 
-def test_cppmodel::cppqualifiednamedelement_constructor_exists():
-    assert callable(cppmodel::CPPQualifiedNamedElement.__init__)
+def test_cppmodel_cppqualifiednamedelement_constructor_exists():
+    assert callable(cppmodel_CPPQualifiedNamedElement.__init__)
 
 
-def test_cppmodel::cppqualifiednamedelement_constructor_args():
-    sig = inspect.signature(cppmodel::CPPQualifiedNamedElement.__init__)
+def test_cppmodel_cppqualifiednamedelement_constructor_args():
+    sig = inspect.signature(cppmodel_CPPQualifiedNamedElement.__init__)
     params = list(sig.parameters.keys())
-    assert "cppPrefix" in params, "Missing parameter 'cppPrefix'"
     assert "cppQualifiedName" in params, "Missing parameter 'cppQualifiedName'"
+    assert "cppPrefix" in params, "Missing parameter 'cppPrefix'"
 
-def test_cppmodel::cppqualifiednamedelement_has_cppPrefix():
-    assert hasattr(cppmodel::CPPQualifiedNamedElement, "cppPrefix")
+def test_cppmodel_cppqualifiednamedelement_has_cppQualifiedName():
+    assert hasattr(cppmodel_CPPQualifiedNamedElement, "cppQualifiedName")
     descriptor = None
-    for klass in cppmodel::CPPQualifiedNamedElement.__mro__:
-        if "cppPrefix" in klass.__dict__:
-            descriptor = klass.__dict__["cppPrefix"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_cppmodel::cppqualifiednamedelement_has_cppQualifiedName():
-    assert hasattr(cppmodel::CPPQualifiedNamedElement, "cppQualifiedName")
-    descriptor = None
-    for klass in cppmodel::CPPQualifiedNamedElement.__mro__:
+    for klass in cppmodel_CPPQualifiedNamedElement.__mro__:
         if "cppQualifiedName" in klass.__dict__:
             descriptor = klass.__dict__["cppQualifiedName"]
             break
     assert isinstance(descriptor, property)
 
+def test_cppmodel_cppqualifiednamedelement_has_cppPrefix():
+    assert hasattr(cppmodel_CPPQualifiedNamedElement, "cppPrefix")
+    descriptor = None
+    for klass in cppmodel_CPPQualifiedNamedElement.__mro__:
+        if "cppPrefix" in klass.__dict__:
+            descriptor = klass.__dict__["cppPrefix"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_cppmodel::ooplnameprovider_is_not_abstract():
-    assert not inspect.isabstract(cppmodel::OOPLNameProvider)
+
+def test_cppmodel_ooplnameprovider_is_not_abstract():
+    assert not inspect.isabstract(cppmodel_OOPLNameProvider)
 
 
-def test_cppmodel::ooplnameprovider_constructor_exists():
-    assert callable(cppmodel::OOPLNameProvider.__init__)
+def test_cppmodel_ooplnameprovider_constructor_exists():
+    assert callable(cppmodel_OOPLNameProvider.__init__)
 
 
-def test_cppmodel::ooplnameprovider_constructor_args():
-    sig = inspect.signature(cppmodel::OOPLNameProvider.__init__)
+def test_cppmodel_ooplnameprovider_constructor_args():
+    sig = inspect.signature(cppmodel_OOPLNameProvider.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_cppmodel::cppnamedelement_is_not_abstract():
-    assert not inspect.isabstract(cppmodel::CPPNamedElement)
+def test_cppmodel_cppnamedelement_is_not_abstract():
+    assert not inspect.isabstract(cppmodel_CPPNamedElement)
 
 
-def test_cppmodel::cppnamedelement_constructor_exists():
-    assert callable(cppmodel::CPPNamedElement.__init__)
+def test_cppmodel_cppnamedelement_constructor_exists():
+    assert callable(cppmodel_CPPNamedElement.__init__)
 
 
-def test_cppmodel::cppnamedelement_constructor_args():
-    sig = inspect.signature(cppmodel::CPPNamedElement.__init__)
+def test_cppmodel_cppnamedelement_constructor_args():
+    sig = inspect.signature(cppmodel_CPPNamedElement.__init__)
     params = list(sig.parameters.keys())
     assert "cppName" in params, "Missing parameter 'cppName'"
 
-def test_cppmodel::cppnamedelement_has_cppName():
-    assert hasattr(cppmodel::CPPNamedElement, "cppName")
+def test_cppmodel_cppnamedelement_has_cppName():
+    assert hasattr(cppmodel_CPPNamedElement, "cppName")
     descriptor = None
-    for klass in cppmodel::CPPNamedElement.__mro__:
+    for klass in cppmodel_CPPNamedElement.__mro__:
         if "cppName" in klass.__dict__:
             descriptor = klass.__dict__["cppName"]
             break
@@ -1342,8 +1342,8 @@ def test_cppparameterpassingkind_has_all_literals():
     enum_literals = [lit.name for lit in CPPParameterPassingKind]
     expected_literals = [
         "BY_VALUE",
-        "BY_CONSTANT_REFERENCE",
         "BY_REFERENCE",
+        "BY_CONSTANT_REFERENCE",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
@@ -1361,8 +1361,8 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-cppmodel::XTClass_strategy = st.builds(
-    cppmodel::XTClass,
+cppmodel_XTClass_strategy = st.builds(
+    cppmodel_XTClass,
 )
 OOPLUserDefinedType_strategy = st.builds(
     OOPLUserDefinedType,
@@ -1385,34 +1385,34 @@ OOPLSequence_strategy = st.builds(
 OOPLBasicType_strategy = st.builds(
     OOPLBasicType,
 )
-cppmodel::CPPExternalLibrary_strategy = st.builds(
-    cppmodel::CPPExternalLibrary,
+cppmodel_CPPExternalLibrary_strategy = st.builds(
+    cppmodel_CPPExternalLibrary,
 )
-cppmodel::Parameter_strategy = st.builds(
-    cppmodel::Parameter,
+cppmodel_Parameter_strategy = st.builds(
+    cppmodel_Parameter,
 )
-cppmodel::XTEvent_strategy = st.builds(
-    cppmodel::XTEvent,
+cppmodel_XTEvent_strategy = st.builds(
+    cppmodel_XTEvent,
 )
-cppmodel::Transition_strategy = st.builds(
-    cppmodel::Transition,
+cppmodel_Transition_strategy = st.builds(
+    cppmodel_Transition,
 )
-cppmodel::TypedMultiplicityElement_strategy = st.builds(
-    cppmodel::TypedMultiplicityElement,
+cppmodel_TypedMultiplicityElement_strategy = st.builds(
+    cppmodel_TypedMultiplicityElement,
 )
-cppmodel::State_strategy = st.builds(
-    cppmodel::State,
+cppmodel_State_strategy = st.builds(
+    cppmodel_State,
 )
-cppmodel::OOPLDataType_strategy = st.builds(
-    cppmodel::OOPLDataType,
+cppmodel_OOPLDataType_strategy = st.builds(
+    cppmodel_OOPLDataType,
 )
-cppmodel::CPPSequence_strategy = st.builds(
-    cppmodel::CPPSequence,
+cppmodel_CPPSequence_strategy = st.builds(
+    cppmodel_CPPSequence,
     cppContainer=
         safe_text
 )
-cppmodel::Attribute_strategy = st.builds(
-    cppmodel::Attribute,
+cppmodel_Attribute_strategy = st.builds(
+    cppmodel_Attribute,
 )
 OOPLClassRefAssocCollection_strategy = st.builds(
     OOPLClassRefAssocCollection,
@@ -1426,66 +1426,66 @@ OOPLClassReferenceStorage_strategy = st.builds(
 OOPLClassReference_strategy = st.builds(
     OOPLClassReference,
 )
-cppmodel::XTProtocolOperationImplementation_strategy = st.builds(
-    cppmodel::XTProtocolOperationImplementation,
+cppmodel_XTProtocolOperationImplementation_strategy = st.builds(
+    cppmodel_XTProtocolOperationImplementation,
 )
-cppmodel::XTProtocolOperationDefinition_strategy = st.builds(
-    cppmodel::XTProtocolOperationDefinition,
+cppmodel_XTProtocolOperationDefinition_strategy = st.builds(
+    cppmodel_XTProtocolOperationDefinition,
 )
-cppmodel::XTPort_strategy = st.builds(
-    cppmodel::XTPort,
+cppmodel_XTPort_strategy = st.builds(
+    cppmodel_XTPort,
 )
-cppmodel::Snippet_strategy = st.builds(
-    cppmodel::Snippet,
+cppmodel_Snippet_strategy = st.builds(
+    cppmodel_Snippet,
 )
-cppmodel::Signal_strategy = st.builds(
-    cppmodel::Signal,
+cppmodel_Signal_strategy = st.builds(
+    cppmodel_Signal,
 )
-cppmodel::Operation_strategy = st.builds(
-    cppmodel::Operation,
+cppmodel_Operation_strategy = st.builds(
+    cppmodel_Operation,
 )
 OOPLRelation_strategy = st.builds(
     OOPLRelation,
 )
-cppmodel::CPPExternalHeader_strategy = st.builds(
-    cppmodel::CPPExternalHeader,
+cppmodel_CPPExternalHeader_strategy = st.builds(
+    cppmodel_CPPExternalHeader,
     name=
         safe_text
 )
-cppmodel::XTComponent_strategy = st.builds(
-    cppmodel::XTComponent,
+cppmodel_XTComponent_strategy = st.builds(
+    cppmodel_XTComponent,
 )
 CPPSourceFile_strategy = st.builds(
     CPPSourceFile,
 )
-cppmodel::CPPMakeFile_strategy = st.builds(
-    cppmodel::CPPMakeFile,
+cppmodel_CPPMakeFile_strategy = st.builds(
+    cppmodel_CPPMakeFile,
 )
-cppmodel::CPPExternalHeaderInclusion_strategy = st.builds(
-    cppmodel::CPPExternalHeaderInclusion,
+cppmodel_CPPExternalHeaderInclusion_strategy = st.builds(
+    cppmodel_CPPExternalHeaderInclusion,
     comment=
         safe_text
 )
-cppmodel::CPPSourceFile_strategy = st.builds(
-    cppmodel::CPPSourceFile,
+cppmodel_CPPSourceFile_strategy = st.builds(
+    cppmodel_CPPSourceFile,
     generationName=
         safe_text,
-    generationPath=
-        safe_text,
     generationDirectory=
+        safe_text,
+    generationPath=
         safe_text
 )
-cppmodel::XTProtocol_strategy = st.builds(
-    cppmodel::XTProtocol,
+cppmodel_XTProtocol_strategy = st.builds(
+    cppmodel_XTProtocol,
 )
 OOPLClass_strategy = st.builds(
     OOPLClass,
 )
-cppmodel::Package_strategy = st.builds(
-    cppmodel::Package,
+cppmodel_Package_strategy = st.builds(
+    cppmodel_Package,
 )
-cppmodel::CPPDirectory_strategy = st.builds(
-    cppmodel::CPPDirectory,
+cppmodel_CPPDirectory_strategy = st.builds(
+    cppmodel_CPPDirectory,
     parentDirectory=
         safe_text,
     path=
@@ -1493,143 +1493,143 @@ cppmodel::CPPDirectory_strategy = st.builds(
     name=
         safe_text
 )
-cppmodel::CPPHeaderFile_strategy = st.builds(
-    cppmodel::CPPHeaderFile,
-    includePath=
+cppmodel_CPPHeaderFile_strategy = st.builds(
+    cppmodel_CPPHeaderFile,
+    includeDirectory=
         safe_text,
     includeName=
         safe_text,
-    includeDirectory=
+    includePath=
         safe_text
 )
-cppmodel::CPPBodyFile_strategy = st.builds(
-    cppmodel::CPPBodyFile,
+cppmodel_CPPBodyFile_strategy = st.builds(
+    cppmodel_CPPBodyFile,
 )
-cppmodel::Model_strategy = st.builds(
-    cppmodel::Model,
+cppmodel_Model_strategy = st.builds(
+    cppmodel_Model,
 )
 CPPQualifiedNamedElement_strategy = st.builds(
     CPPQualifiedNamedElement,
 )
-cppmodel::CPPReturnValue_strategy = st.builds(
-    cppmodel::CPPReturnValue,
+cppmodel_CPPRelation_strategy = st.builds(
+    cppmodel_CPPRelation,
 )
-cppmodel::CPPClassRefSimpleCollection_strategy = st.builds(
-    cppmodel::CPPClassRefSimpleCollection,
-    cppContainer=
-        safe_text
+cppmodel_CPPClass_strategy = st.builds(
+    cppmodel_CPPClass,
 )
-cppmodel::CPPProtocolOperationDefinition_strategy = st.builds(
-    cppmodel::CPPProtocolOperationDefinition,
+cppmodel_CPPProtocol_strategy = st.builds(
+    cppmodel_CPPProtocol,
 )
-cppmodel::CPPAttribute_strategy = st.builds(
-    cppmodel::CPPAttribute,
-)
-cppmodel::CPPState_strategy = st.builds(
-    cppmodel::CPPState,
-)
-cppmodel::CPPProtocolOperationImplementation_strategy = st.builds(
-    cppmodel::CPPProtocolOperationImplementation,
-)
-cppmodel::CPPRelation_strategy = st.builds(
-    cppmodel::CPPRelation,
-)
-cppmodel::CPPClassReferenceStorage_strategy = st.builds(
-    cppmodel::CPPClassReferenceStorage,
-)
-cppmodel::CPPClass_strategy = st.builds(
-    cppmodel::CPPClass,
-)
-cppmodel::CPPPort_strategy = st.builds(
-    cppmodel::CPPPort,
-)
-cppmodel::CPPStructType_strategy = st.builds(
-    cppmodel::CPPStructType,
-)
-cppmodel::CPPProtocol_strategy = st.builds(
-    cppmodel::CPPProtocol,
-)
-cppmodel::CPPOperation_strategy = st.builds(
-    cppmodel::CPPOperation,
-)
-cppmodel::CPPTransition_strategy = st.builds(
-    cppmodel::CPPTransition,
-)
-cppmodel::CPPUserDefinedType_strategy = st.builds(
-    cppmodel::CPPUserDefinedType,
-)
-cppmodel::CPPClassReference_strategy = st.builds(
-    cppmodel::CPPClassReference,
-)
-cppmodel::CPPBasicType_strategy = st.builds(
-    cppmodel::CPPBasicType,
+cppmodel_CPPBasicType_strategy = st.builds(
+    cppmodel_CPPBasicType,
     cppSpecifier=
         safe_text
 )
-cppmodel::CPPFormalParameter_strategy = st.builds(
-    cppmodel::CPPFormalParameter,
-    passingMode=
-        safe_text
+cppmodel_CPPClassReferenceStorage_strategy = st.builds(
+    cppmodel_CPPClassReferenceStorage,
 )
-cppmodel::CPPComponent_strategy = st.builds(
-    cppmodel::CPPComponent,
+cppmodel_CPPProtocolOperationImplementation_strategy = st.builds(
+    cppmodel_CPPProtocolOperationImplementation,
 )
-cppmodel::CPPClassRefAssocCollection_strategy = st.builds(
-    cppmodel::CPPClassRefAssocCollection,
+cppmodel_CPPPackage_strategy = st.builds(
+    cppmodel_CPPPackage,
+)
+cppmodel_CPPAttribute_strategy = st.builds(
+    cppmodel_CPPAttribute,
+)
+cppmodel_CPPClassRefAssocCollection_strategy = st.builds(
+    cppmodel_CPPClassRefAssocCollection,
     cppContainer=
         safe_text
 )
-cppmodel::CPPSignal_strategy = st.builds(
-    cppmodel::CPPSignal,
+cppmodel_CPPFormalParameter_strategy = st.builds(
+    cppmodel_CPPFormalParameter,
+    passingMode=
+        safe_text
 )
-cppmodel::CPPEnumType_strategy = st.builds(
-    cppmodel::CPPEnumType,
+cppmodel_CPPUserDefinedType_strategy = st.builds(
+    cppmodel_CPPUserDefinedType,
 )
-cppmodel::CPPPackage_strategy = st.builds(
-    cppmodel::CPPPackage,
-)
-cppmodel::CPPEvent_strategy = st.builds(
-    cppmodel::CPPEvent,
-)
-cppmodel::CPPEnumerator_strategy = st.builds(
-    cppmodel::CPPEnumerator,
+cppmodel_CPPEnumerator_strategy = st.builds(
+    cppmodel_CPPEnumerator,
     cppValue=
         safe_text
 )
-cppmodel::CPPStructMember_strategy = st.builds(
-    cppmodel::CPPStructMember,
+cppmodel_CPPTransition_strategy = st.builds(
+    cppmodel_CPPTransition,
 )
-cppmodel::CPPExternalBridge_strategy = st.builds(
-    cppmodel::CPPExternalBridge,
+cppmodel_CPPClassRefSimpleCollection_strategy = st.builds(
+    cppmodel_CPPClassRefSimpleCollection,
+    cppContainer=
+        safe_text
+)
+cppmodel_CPPClassReference_strategy = st.builds(
+    cppmodel_CPPClassReference,
+)
+cppmodel_CPPSignal_strategy = st.builds(
+    cppmodel_CPPSignal,
+)
+cppmodel_CPPReturnValue_strategy = st.builds(
+    cppmodel_CPPReturnValue,
+)
+cppmodel_CPPEvent_strategy = st.builds(
+    cppmodel_CPPEvent,
+)
+cppmodel_CPPComponent_strategy = st.builds(
+    cppmodel_CPPComponent,
+)
+cppmodel_CPPProtocolOperationDefinition_strategy = st.builds(
+    cppmodel_CPPProtocolOperationDefinition,
+)
+cppmodel_CPPState_strategy = st.builds(
+    cppmodel_CPPState,
+)
+cppmodel_CPPOperation_strategy = st.builds(
+    cppmodel_CPPOperation,
+)
+cppmodel_CPPExternalBridge_strategy = st.builds(
+    cppmodel_CPPExternalBridge,
     cppExternalNamespace=
         safe_text
 )
-cppmodel::CPPModel_strategy = st.builds(
-    cppmodel::CPPModel,
+cppmodel_CPPPort_strategy = st.builds(
+    cppmodel_CPPPort,
+)
+cppmodel_CPPEnumType_strategy = st.builds(
+    cppmodel_CPPEnumType,
+)
+cppmodel_CPPStructType_strategy = st.builds(
+    cppmodel_CPPStructType,
+)
+cppmodel_CPPStructMember_strategy = st.builds(
+    cppmodel_CPPStructMember,
+)
+cppmodel_CPPModel_strategy = st.builds(
+    cppmodel_CPPModel,
 )
 CPPNamedElement_strategy = st.builds(
     CPPNamedElement,
 )
-cppmodel::CPPQualifiedNamedElement_strategy = st.builds(
-    cppmodel::CPPQualifiedNamedElement,
-    cppPrefix=
-        safe_text,
+cppmodel_CPPQualifiedNamedElement_strategy = st.builds(
+    cppmodel_CPPQualifiedNamedElement,
     cppQualifiedName=
+        safe_text,
+    cppPrefix=
         safe_text
 )
-cppmodel::OOPLNameProvider_strategy = st.builds(
-    cppmodel::OOPLNameProvider,
+cppmodel_OOPLNameProvider_strategy = st.builds(
+    cppmodel_OOPLNameProvider,
 )
-cppmodel::CPPNamedElement_strategy = st.builds(
-    cppmodel::CPPNamedElement,
+cppmodel_CPPNamedElement_strategy = st.builds(
+    cppmodel_CPPNamedElement,
     cppName=
         safe_text
 )
 
-@given(instance=cppmodel::XTClass_strategy)
+@given(instance=cppmodel_XTClass_strategy)
 @settings(max_examples=50)
-def test_cppmodel::xtclass_instantiation(instance):
-    assert isinstance(instance, cppmodel::XTClass)
+def test_cppmodel_xtclass_instantiation(instance):
+    assert isinstance(instance, cppmodel_XTClass)
 
 @given(instance=OOPLUserDefinedType_strategy)
 @settings(max_examples=50)
@@ -1666,61 +1666,58 @@ def test_ooplsequence_instantiation(instance):
 def test_ooplbasictype_instantiation(instance):
     assert isinstance(instance, OOPLBasicType)
 
-@given(instance=cppmodel::CPPExternalLibrary_strategy)
+@given(instance=cppmodel_CPPExternalLibrary_strategy)
 @settings(max_examples=50)
-def test_cppmodel::cppexternallibrary_instantiation(instance):
-    assert isinstance(instance, cppmodel::CPPExternalLibrary)
+def test_cppmodel_cppexternallibrary_instantiation(instance):
+    assert isinstance(instance, cppmodel_CPPExternalLibrary)
 
-@given(instance=cppmodel::Parameter_strategy)
+@given(instance=cppmodel_Parameter_strategy)
 @settings(max_examples=50)
-def test_cppmodel::parameter_instantiation(instance):
-    assert isinstance(instance, cppmodel::Parameter)
+def test_cppmodel_parameter_instantiation(instance):
+    assert isinstance(instance, cppmodel_Parameter)
 
-@given(instance=cppmodel::XTEvent_strategy)
+@given(instance=cppmodel_XTEvent_strategy)
 @settings(max_examples=50)
-def test_cppmodel::xtevent_instantiation(instance):
-    assert isinstance(instance, cppmodel::XTEvent)
+def test_cppmodel_xtevent_instantiation(instance):
+    assert isinstance(instance, cppmodel_XTEvent)
 
-@given(instance=cppmodel::Transition_strategy)
+@given(instance=cppmodel_Transition_strategy)
 @settings(max_examples=50)
-def test_cppmodel::transition_instantiation(instance):
-    assert isinstance(instance, cppmodel::Transition)
+def test_cppmodel_transition_instantiation(instance):
+    assert isinstance(instance, cppmodel_Transition)
 
-@given(instance=cppmodel::TypedMultiplicityElement_strategy)
+@given(instance=cppmodel_TypedMultiplicityElement_strategy)
 @settings(max_examples=50)
-def test_cppmodel::typedmultiplicityelement_instantiation(instance):
-    assert isinstance(instance, cppmodel::TypedMultiplicityElement)
+def test_cppmodel_typedmultiplicityelement_instantiation(instance):
+    assert isinstance(instance, cppmodel_TypedMultiplicityElement)
 
-@given(instance=cppmodel::State_strategy)
+@given(instance=cppmodel_State_strategy)
 @settings(max_examples=50)
-def test_cppmodel::state_instantiation(instance):
-    assert isinstance(instance, cppmodel::State)
+def test_cppmodel_state_instantiation(instance):
+    assert isinstance(instance, cppmodel_State)
 
-@given(instance=cppmodel::OOPLDataType_strategy)
+@given(instance=cppmodel_OOPLDataType_strategy)
 @settings(max_examples=50)
-def test_cppmodel::oopldatatype_instantiation(instance):
-    assert isinstance(instance, cppmodel::OOPLDataType)
+def test_cppmodel_oopldatatype_instantiation(instance):
+    assert isinstance(instance, cppmodel_OOPLDataType)
 
-@given(instance=cppmodel::CPPSequence_strategy)
+@given(instance=cppmodel_CPPSequence_strategy)
 @settings(max_examples=50)
-def test_cppmodel::cppsequence_instantiation(instance):
-    assert isinstance(instance, cppmodel::CPPSequence)
-
-@given(instance=cppmodel::CPPSequence_strategy)
-def test_cppmodel::cppsequence_cppContainer_type(instance):
-    assert isinstance(instance.cppContainer, str)
+def test_cppmodel_cppsequence_instantiation(instance):
+    assert isinstance(instance, cppmodel_CPPSequence)
 
 
-@given(instance=cppmodel::CPPSequence_strategy)
-def test_cppmodel::cppsequence_cppContainer_setter(instance):
+
+@given(instance=cppmodel_CPPSequence_strategy)
+def test_cppmodel_cppsequence_cppContainer_setter(instance):
     original = instance.cppContainer
     instance.cppContainer = original
     assert instance.cppContainer == original
 
-@given(instance=cppmodel::Attribute_strategy)
+@given(instance=cppmodel_Attribute_strategy)
 @settings(max_examples=50)
-def test_cppmodel::attribute_instantiation(instance):
-    assert isinstance(instance, cppmodel::Attribute)
+def test_cppmodel_attribute_instantiation(instance):
+    assert isinstance(instance, cppmodel_Attribute)
 
 @given(instance=OOPLClassRefAssocCollection_strategy)
 @settings(max_examples=50)
@@ -1742,487 +1739,427 @@ def test_ooplclassreferencestorage_instantiation(instance):
 def test_ooplclassreference_instantiation(instance):
     assert isinstance(instance, OOPLClassReference)
 
-@given(instance=cppmodel::XTProtocolOperationImplementation_strategy)
+@given(instance=cppmodel_XTProtocolOperationImplementation_strategy)
 @settings(max_examples=50)
-def test_cppmodel::xtprotocoloperationimplementation_instantiation(instance):
-    assert isinstance(instance, cppmodel::XTProtocolOperationImplementation)
+def test_cppmodel_xtprotocoloperationimplementation_instantiation(instance):
+    assert isinstance(instance, cppmodel_XTProtocolOperationImplementation)
 
-@given(instance=cppmodel::XTProtocolOperationDefinition_strategy)
+@given(instance=cppmodel_XTProtocolOperationDefinition_strategy)
 @settings(max_examples=50)
-def test_cppmodel::xtprotocoloperationdefinition_instantiation(instance):
-    assert isinstance(instance, cppmodel::XTProtocolOperationDefinition)
+def test_cppmodel_xtprotocoloperationdefinition_instantiation(instance):
+    assert isinstance(instance, cppmodel_XTProtocolOperationDefinition)
 
-@given(instance=cppmodel::XTPort_strategy)
+@given(instance=cppmodel_XTPort_strategy)
 @settings(max_examples=50)
-def test_cppmodel::xtport_instantiation(instance):
-    assert isinstance(instance, cppmodel::XTPort)
+def test_cppmodel_xtport_instantiation(instance):
+    assert isinstance(instance, cppmodel_XTPort)
 
-@given(instance=cppmodel::Snippet_strategy)
+@given(instance=cppmodel_Snippet_strategy)
 @settings(max_examples=50)
-def test_cppmodel::snippet_instantiation(instance):
-    assert isinstance(instance, cppmodel::Snippet)
+def test_cppmodel_snippet_instantiation(instance):
+    assert isinstance(instance, cppmodel_Snippet)
 
-@given(instance=cppmodel::Signal_strategy)
+@given(instance=cppmodel_Signal_strategy)
 @settings(max_examples=50)
-def test_cppmodel::signal_instantiation(instance):
-    assert isinstance(instance, cppmodel::Signal)
+def test_cppmodel_signal_instantiation(instance):
+    assert isinstance(instance, cppmodel_Signal)
 
-@given(instance=cppmodel::Operation_strategy)
+@given(instance=cppmodel_Operation_strategy)
 @settings(max_examples=50)
-def test_cppmodel::operation_instantiation(instance):
-    assert isinstance(instance, cppmodel::Operation)
+def test_cppmodel_operation_instantiation(instance):
+    assert isinstance(instance, cppmodel_Operation)
 
 @given(instance=OOPLRelation_strategy)
 @settings(max_examples=50)
 def test_ooplrelation_instantiation(instance):
     assert isinstance(instance, OOPLRelation)
 
-@given(instance=cppmodel::CPPExternalHeader_strategy)
+@given(instance=cppmodel_CPPExternalHeader_strategy)
 @settings(max_examples=50)
-def test_cppmodel::cppexternalheader_instantiation(instance):
-    assert isinstance(instance, cppmodel::CPPExternalHeader)
-
-@given(instance=cppmodel::CPPExternalHeader_strategy)
-def test_cppmodel::cppexternalheader_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_cppmodel_cppexternalheader_instantiation(instance):
+    assert isinstance(instance, cppmodel_CPPExternalHeader)
 
 
-@given(instance=cppmodel::CPPExternalHeader_strategy)
-def test_cppmodel::cppexternalheader_name_setter(instance):
+
+@given(instance=cppmodel_CPPExternalHeader_strategy)
+def test_cppmodel_cppexternalheader_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=cppmodel::XTComponent_strategy)
+@given(instance=cppmodel_XTComponent_strategy)
 @settings(max_examples=50)
-def test_cppmodel::xtcomponent_instantiation(instance):
-    assert isinstance(instance, cppmodel::XTComponent)
+def test_cppmodel_xtcomponent_instantiation(instance):
+    assert isinstance(instance, cppmodel_XTComponent)
 
 @given(instance=CPPSourceFile_strategy)
 @settings(max_examples=50)
 def test_cppsourcefile_instantiation(instance):
     assert isinstance(instance, CPPSourceFile)
 
-@given(instance=cppmodel::CPPMakeFile_strategy)
+@given(instance=cppmodel_CPPMakeFile_strategy)
 @settings(max_examples=50)
-def test_cppmodel::cppmakefile_instantiation(instance):
-    assert isinstance(instance, cppmodel::CPPMakeFile)
+def test_cppmodel_cppmakefile_instantiation(instance):
+    assert isinstance(instance, cppmodel_CPPMakeFile)
 
-@given(instance=cppmodel::CPPExternalHeaderInclusion_strategy)
+@given(instance=cppmodel_CPPExternalHeaderInclusion_strategy)
 @settings(max_examples=50)
-def test_cppmodel::cppexternalheaderinclusion_instantiation(instance):
-    assert isinstance(instance, cppmodel::CPPExternalHeaderInclusion)
-
-@given(instance=cppmodel::CPPExternalHeaderInclusion_strategy)
-def test_cppmodel::cppexternalheaderinclusion_comment_type(instance):
-    assert isinstance(instance.comment, str)
+def test_cppmodel_cppexternalheaderinclusion_instantiation(instance):
+    assert isinstance(instance, cppmodel_CPPExternalHeaderInclusion)
 
 
-@given(instance=cppmodel::CPPExternalHeaderInclusion_strategy)
-def test_cppmodel::cppexternalheaderinclusion_comment_setter(instance):
+
+@given(instance=cppmodel_CPPExternalHeaderInclusion_strategy)
+def test_cppmodel_cppexternalheaderinclusion_comment_setter(instance):
     original = instance.comment
     instance.comment = original
     assert instance.comment == original
 
-@given(instance=cppmodel::CPPSourceFile_strategy)
+@given(instance=cppmodel_CPPSourceFile_strategy)
 @settings(max_examples=50)
-def test_cppmodel::cppsourcefile_instantiation(instance):
-    assert isinstance(instance, cppmodel::CPPSourceFile)
-
-@given(instance=cppmodel::CPPSourceFile_strategy)
-def test_cppmodel::cppsourcefile_generationName_type(instance):
-    assert isinstance(instance.generationName, str)
+def test_cppmodel_cppsourcefile_instantiation(instance):
+    assert isinstance(instance, cppmodel_CPPSourceFile)
 
 
-@given(instance=cppmodel::CPPSourceFile_strategy)
-def test_cppmodel::cppsourcefile_generationName_setter(instance):
+
+@given(instance=cppmodel_CPPSourceFile_strategy)
+def test_cppmodel_cppsourcefile_generationName_setter(instance):
     original = instance.generationName
     instance.generationName = original
     assert instance.generationName == original
 
-@given(instance=cppmodel::CPPSourceFile_strategy)
-def test_cppmodel::cppsourcefile_generationPath_type(instance):
-    assert isinstance(instance.generationPath, str)
 
 
-@given(instance=cppmodel::CPPSourceFile_strategy)
-def test_cppmodel::cppsourcefile_generationPath_setter(instance):
-    original = instance.generationPath
-    instance.generationPath = original
-    assert instance.generationPath == original
-
-@given(instance=cppmodel::CPPSourceFile_strategy)
-def test_cppmodel::cppsourcefile_generationDirectory_type(instance):
-    assert isinstance(instance.generationDirectory, str)
-
-
-@given(instance=cppmodel::CPPSourceFile_strategy)
-def test_cppmodel::cppsourcefile_generationDirectory_setter(instance):
+@given(instance=cppmodel_CPPSourceFile_strategy)
+def test_cppmodel_cppsourcefile_generationDirectory_setter(instance):
     original = instance.generationDirectory
     instance.generationDirectory = original
     assert instance.generationDirectory == original
 
-@given(instance=cppmodel::XTProtocol_strategy)
+
+
+@given(instance=cppmodel_CPPSourceFile_strategy)
+def test_cppmodel_cppsourcefile_generationPath_setter(instance):
+    original = instance.generationPath
+    instance.generationPath = original
+    assert instance.generationPath == original
+
+@given(instance=cppmodel_XTProtocol_strategy)
 @settings(max_examples=50)
-def test_cppmodel::xtprotocol_instantiation(instance):
-    assert isinstance(instance, cppmodel::XTProtocol)
+def test_cppmodel_xtprotocol_instantiation(instance):
+    assert isinstance(instance, cppmodel_XTProtocol)
 
 @given(instance=OOPLClass_strategy)
 @settings(max_examples=50)
 def test_ooplclass_instantiation(instance):
     assert isinstance(instance, OOPLClass)
 
-@given(instance=cppmodel::Package_strategy)
+@given(instance=cppmodel_Package_strategy)
 @settings(max_examples=50)
-def test_cppmodel::package_instantiation(instance):
-    assert isinstance(instance, cppmodel::Package)
+def test_cppmodel_package_instantiation(instance):
+    assert isinstance(instance, cppmodel_Package)
 
-@given(instance=cppmodel::CPPDirectory_strategy)
+@given(instance=cppmodel_CPPDirectory_strategy)
 @settings(max_examples=50)
-def test_cppmodel::cppdirectory_instantiation(instance):
-    assert isinstance(instance, cppmodel::CPPDirectory)
-
-@given(instance=cppmodel::CPPDirectory_strategy)
-def test_cppmodel::cppdirectory_parentDirectory_type(instance):
-    assert isinstance(instance.parentDirectory, str)
+def test_cppmodel_cppdirectory_instantiation(instance):
+    assert isinstance(instance, cppmodel_CPPDirectory)
 
 
-@given(instance=cppmodel::CPPDirectory_strategy)
-def test_cppmodel::cppdirectory_parentDirectory_setter(instance):
+
+@given(instance=cppmodel_CPPDirectory_strategy)
+def test_cppmodel_cppdirectory_parentDirectory_setter(instance):
     original = instance.parentDirectory
     instance.parentDirectory = original
     assert instance.parentDirectory == original
 
-@given(instance=cppmodel::CPPDirectory_strategy)
-def test_cppmodel::cppdirectory_path_type(instance):
-    assert isinstance(instance.path, str)
 
 
-@given(instance=cppmodel::CPPDirectory_strategy)
-def test_cppmodel::cppdirectory_path_setter(instance):
+@given(instance=cppmodel_CPPDirectory_strategy)
+def test_cppmodel_cppdirectory_path_setter(instance):
     original = instance.path
     instance.path = original
     assert instance.path == original
 
-@given(instance=cppmodel::CPPDirectory_strategy)
-def test_cppmodel::cppdirectory_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
-@given(instance=cppmodel::CPPDirectory_strategy)
-def test_cppmodel::cppdirectory_name_setter(instance):
+@given(instance=cppmodel_CPPDirectory_strategy)
+def test_cppmodel_cppdirectory_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=cppmodel::CPPHeaderFile_strategy)
+@given(instance=cppmodel_CPPHeaderFile_strategy)
 @settings(max_examples=50)
-def test_cppmodel::cppheaderfile_instantiation(instance):
-    assert isinstance(instance, cppmodel::CPPHeaderFile)
-
-@given(instance=cppmodel::CPPHeaderFile_strategy)
-def test_cppmodel::cppheaderfile_includePath_type(instance):
-    assert isinstance(instance.includePath, str)
+def test_cppmodel_cppheaderfile_instantiation(instance):
+    assert isinstance(instance, cppmodel_CPPHeaderFile)
 
 
-@given(instance=cppmodel::CPPHeaderFile_strategy)
-def test_cppmodel::cppheaderfile_includePath_setter(instance):
-    original = instance.includePath
-    instance.includePath = original
-    assert instance.includePath == original
 
-@given(instance=cppmodel::CPPHeaderFile_strategy)
-def test_cppmodel::cppheaderfile_includeName_type(instance):
-    assert isinstance(instance.includeName, str)
-
-
-@given(instance=cppmodel::CPPHeaderFile_strategy)
-def test_cppmodel::cppheaderfile_includeName_setter(instance):
-    original = instance.includeName
-    instance.includeName = original
-    assert instance.includeName == original
-
-@given(instance=cppmodel::CPPHeaderFile_strategy)
-def test_cppmodel::cppheaderfile_includeDirectory_type(instance):
-    assert isinstance(instance.includeDirectory, str)
-
-
-@given(instance=cppmodel::CPPHeaderFile_strategy)
-def test_cppmodel::cppheaderfile_includeDirectory_setter(instance):
+@given(instance=cppmodel_CPPHeaderFile_strategy)
+def test_cppmodel_cppheaderfile_includeDirectory_setter(instance):
     original = instance.includeDirectory
     instance.includeDirectory = original
     assert instance.includeDirectory == original
 
-@given(instance=cppmodel::CPPBodyFile_strategy)
-@settings(max_examples=50)
-def test_cppmodel::cppbodyfile_instantiation(instance):
-    assert isinstance(instance, cppmodel::CPPBodyFile)
 
-@given(instance=cppmodel::Model_strategy)
+
+@given(instance=cppmodel_CPPHeaderFile_strategy)
+def test_cppmodel_cppheaderfile_includeName_setter(instance):
+    original = instance.includeName
+    instance.includeName = original
+    assert instance.includeName == original
+
+
+
+@given(instance=cppmodel_CPPHeaderFile_strategy)
+def test_cppmodel_cppheaderfile_includePath_setter(instance):
+    original = instance.includePath
+    instance.includePath = original
+    assert instance.includePath == original
+
+@given(instance=cppmodel_CPPBodyFile_strategy)
 @settings(max_examples=50)
-def test_cppmodel::model_instantiation(instance):
-    assert isinstance(instance, cppmodel::Model)
+def test_cppmodel_cppbodyfile_instantiation(instance):
+    assert isinstance(instance, cppmodel_CPPBodyFile)
+
+@given(instance=cppmodel_Model_strategy)
+@settings(max_examples=50)
+def test_cppmodel_model_instantiation(instance):
+    assert isinstance(instance, cppmodel_Model)
 
 @given(instance=CPPQualifiedNamedElement_strategy)
 @settings(max_examples=50)
 def test_cppqualifiednamedelement_instantiation(instance):
     assert isinstance(instance, CPPQualifiedNamedElement)
 
-@given(instance=cppmodel::CPPReturnValue_strategy)
+@given(instance=cppmodel_CPPRelation_strategy)
 @settings(max_examples=50)
-def test_cppmodel::cppreturnvalue_instantiation(instance):
-    assert isinstance(instance, cppmodel::CPPReturnValue)
+def test_cppmodel_cpprelation_instantiation(instance):
+    assert isinstance(instance, cppmodel_CPPRelation)
 
-@given(instance=cppmodel::CPPClassRefSimpleCollection_strategy)
+@given(instance=cppmodel_CPPClass_strategy)
 @settings(max_examples=50)
-def test_cppmodel::cppclassrefsimplecollection_instantiation(instance):
-    assert isinstance(instance, cppmodel::CPPClassRefSimpleCollection)
+def test_cppmodel_cppclass_instantiation(instance):
+    assert isinstance(instance, cppmodel_CPPClass)
 
-@given(instance=cppmodel::CPPClassRefSimpleCollection_strategy)
-def test_cppmodel::cppclassrefsimplecollection_cppContainer_type(instance):
-    assert isinstance(instance.cppContainer, str)
-
-
-@given(instance=cppmodel::CPPClassRefSimpleCollection_strategy)
-def test_cppmodel::cppclassrefsimplecollection_cppContainer_setter(instance):
-    original = instance.cppContainer
-    instance.cppContainer = original
-    assert instance.cppContainer == original
-
-@given(instance=cppmodel::CPPProtocolOperationDefinition_strategy)
+@given(instance=cppmodel_CPPProtocol_strategy)
 @settings(max_examples=50)
-def test_cppmodel::cppprotocoloperationdefinition_instantiation(instance):
-    assert isinstance(instance, cppmodel::CPPProtocolOperationDefinition)
+def test_cppmodel_cppprotocol_instantiation(instance):
+    assert isinstance(instance, cppmodel_CPPProtocol)
 
-@given(instance=cppmodel::CPPAttribute_strategy)
+@given(instance=cppmodel_CPPBasicType_strategy)
 @settings(max_examples=50)
-def test_cppmodel::cppattribute_instantiation(instance):
-    assert isinstance(instance, cppmodel::CPPAttribute)
-
-@given(instance=cppmodel::CPPState_strategy)
-@settings(max_examples=50)
-def test_cppmodel::cppstate_instantiation(instance):
-    assert isinstance(instance, cppmodel::CPPState)
-
-@given(instance=cppmodel::CPPProtocolOperationImplementation_strategy)
-@settings(max_examples=50)
-def test_cppmodel::cppprotocoloperationimplementation_instantiation(instance):
-    assert isinstance(instance, cppmodel::CPPProtocolOperationImplementation)
-
-@given(instance=cppmodel::CPPRelation_strategy)
-@settings(max_examples=50)
-def test_cppmodel::cpprelation_instantiation(instance):
-    assert isinstance(instance, cppmodel::CPPRelation)
-
-@given(instance=cppmodel::CPPClassReferenceStorage_strategy)
-@settings(max_examples=50)
-def test_cppmodel::cppclassreferencestorage_instantiation(instance):
-    assert isinstance(instance, cppmodel::CPPClassReferenceStorage)
-
-@given(instance=cppmodel::CPPClass_strategy)
-@settings(max_examples=50)
-def test_cppmodel::cppclass_instantiation(instance):
-    assert isinstance(instance, cppmodel::CPPClass)
-
-@given(instance=cppmodel::CPPPort_strategy)
-@settings(max_examples=50)
-def test_cppmodel::cppport_instantiation(instance):
-    assert isinstance(instance, cppmodel::CPPPort)
-
-@given(instance=cppmodel::CPPStructType_strategy)
-@settings(max_examples=50)
-def test_cppmodel::cppstructtype_instantiation(instance):
-    assert isinstance(instance, cppmodel::CPPStructType)
-
-@given(instance=cppmodel::CPPProtocol_strategy)
-@settings(max_examples=50)
-def test_cppmodel::cppprotocol_instantiation(instance):
-    assert isinstance(instance, cppmodel::CPPProtocol)
-
-@given(instance=cppmodel::CPPOperation_strategy)
-@settings(max_examples=50)
-def test_cppmodel::cppoperation_instantiation(instance):
-    assert isinstance(instance, cppmodel::CPPOperation)
-
-@given(instance=cppmodel::CPPTransition_strategy)
-@settings(max_examples=50)
-def test_cppmodel::cpptransition_instantiation(instance):
-    assert isinstance(instance, cppmodel::CPPTransition)
-
-@given(instance=cppmodel::CPPUserDefinedType_strategy)
-@settings(max_examples=50)
-def test_cppmodel::cppuserdefinedtype_instantiation(instance):
-    assert isinstance(instance, cppmodel::CPPUserDefinedType)
-
-@given(instance=cppmodel::CPPClassReference_strategy)
-@settings(max_examples=50)
-def test_cppmodel::cppclassreference_instantiation(instance):
-    assert isinstance(instance, cppmodel::CPPClassReference)
-
-@given(instance=cppmodel::CPPBasicType_strategy)
-@settings(max_examples=50)
-def test_cppmodel::cppbasictype_instantiation(instance):
-    assert isinstance(instance, cppmodel::CPPBasicType)
-
-@given(instance=cppmodel::CPPBasicType_strategy)
-def test_cppmodel::cppbasictype_cppSpecifier_type(instance):
-    assert isinstance(instance.cppSpecifier, str)
+def test_cppmodel_cppbasictype_instantiation(instance):
+    assert isinstance(instance, cppmodel_CPPBasicType)
 
 
-@given(instance=cppmodel::CPPBasicType_strategy)
-def test_cppmodel::cppbasictype_cppSpecifier_setter(instance):
+
+@given(instance=cppmodel_CPPBasicType_strategy)
+def test_cppmodel_cppbasictype_cppSpecifier_setter(instance):
     original = instance.cppSpecifier
     instance.cppSpecifier = original
     assert instance.cppSpecifier == original
 
-@given(instance=cppmodel::CPPFormalParameter_strategy)
+@given(instance=cppmodel_CPPClassReferenceStorage_strategy)
 @settings(max_examples=50)
-def test_cppmodel::cppformalparameter_instantiation(instance):
-    assert isinstance(instance, cppmodel::CPPFormalParameter)
+def test_cppmodel_cppclassreferencestorage_instantiation(instance):
+    assert isinstance(instance, cppmodel_CPPClassReferenceStorage)
 
-@given(instance=cppmodel::CPPFormalParameter_strategy)
-def test_cppmodel::cppformalparameter_passingMode_type(instance):
-    assert isinstance(instance.passingMode, str)
-
-
-@given(instance=cppmodel::CPPFormalParameter_strategy)
-def test_cppmodel::cppformalparameter_passingMode_setter(instance):
-    original = instance.passingMode
-    instance.passingMode = original
-    assert instance.passingMode == original
-
-@given(instance=cppmodel::CPPComponent_strategy)
+@given(instance=cppmodel_CPPProtocolOperationImplementation_strategy)
 @settings(max_examples=50)
-def test_cppmodel::cppcomponent_instantiation(instance):
-    assert isinstance(instance, cppmodel::CPPComponent)
+def test_cppmodel_cppprotocoloperationimplementation_instantiation(instance):
+    assert isinstance(instance, cppmodel_CPPProtocolOperationImplementation)
 
-@given(instance=cppmodel::CPPClassRefAssocCollection_strategy)
+@given(instance=cppmodel_CPPPackage_strategy)
 @settings(max_examples=50)
-def test_cppmodel::cppclassrefassoccollection_instantiation(instance):
-    assert isinstance(instance, cppmodel::CPPClassRefAssocCollection)
+def test_cppmodel_cpppackage_instantiation(instance):
+    assert isinstance(instance, cppmodel_CPPPackage)
 
-@given(instance=cppmodel::CPPClassRefAssocCollection_strategy)
-def test_cppmodel::cppclassrefassoccollection_cppContainer_type(instance):
-    assert isinstance(instance.cppContainer, str)
+@given(instance=cppmodel_CPPAttribute_strategy)
+@settings(max_examples=50)
+def test_cppmodel_cppattribute_instantiation(instance):
+    assert isinstance(instance, cppmodel_CPPAttribute)
+
+@given(instance=cppmodel_CPPClassRefAssocCollection_strategy)
+@settings(max_examples=50)
+def test_cppmodel_cppclassrefassoccollection_instantiation(instance):
+    assert isinstance(instance, cppmodel_CPPClassRefAssocCollection)
 
 
-@given(instance=cppmodel::CPPClassRefAssocCollection_strategy)
-def test_cppmodel::cppclassrefassoccollection_cppContainer_setter(instance):
+
+@given(instance=cppmodel_CPPClassRefAssocCollection_strategy)
+def test_cppmodel_cppclassrefassoccollection_cppContainer_setter(instance):
     original = instance.cppContainer
     instance.cppContainer = original
     assert instance.cppContainer == original
 
-@given(instance=cppmodel::CPPSignal_strategy)
+@given(instance=cppmodel_CPPFormalParameter_strategy)
 @settings(max_examples=50)
-def test_cppmodel::cppsignal_instantiation(instance):
-    assert isinstance(instance, cppmodel::CPPSignal)
+def test_cppmodel_cppformalparameter_instantiation(instance):
+    assert isinstance(instance, cppmodel_CPPFormalParameter)
 
-@given(instance=cppmodel::CPPEnumType_strategy)
+
+
+@given(instance=cppmodel_CPPFormalParameter_strategy)
+def test_cppmodel_cppformalparameter_passingMode_setter(instance):
+    original = instance.passingMode
+    instance.passingMode = original
+    assert instance.passingMode == original
+
+@given(instance=cppmodel_CPPUserDefinedType_strategy)
 @settings(max_examples=50)
-def test_cppmodel::cppenumtype_instantiation(instance):
-    assert isinstance(instance, cppmodel::CPPEnumType)
+def test_cppmodel_cppuserdefinedtype_instantiation(instance):
+    assert isinstance(instance, cppmodel_CPPUserDefinedType)
 
-@given(instance=cppmodel::CPPPackage_strategy)
+@given(instance=cppmodel_CPPEnumerator_strategy)
 @settings(max_examples=50)
-def test_cppmodel::cpppackage_instantiation(instance):
-    assert isinstance(instance, cppmodel::CPPPackage)
-
-@given(instance=cppmodel::CPPEvent_strategy)
-@settings(max_examples=50)
-def test_cppmodel::cppevent_instantiation(instance):
-    assert isinstance(instance, cppmodel::CPPEvent)
-
-@given(instance=cppmodel::CPPEnumerator_strategy)
-@settings(max_examples=50)
-def test_cppmodel::cppenumerator_instantiation(instance):
-    assert isinstance(instance, cppmodel::CPPEnumerator)
-
-@given(instance=cppmodel::CPPEnumerator_strategy)
-def test_cppmodel::cppenumerator_cppValue_type(instance):
-    assert isinstance(instance.cppValue, str)
+def test_cppmodel_cppenumerator_instantiation(instance):
+    assert isinstance(instance, cppmodel_CPPEnumerator)
 
 
-@given(instance=cppmodel::CPPEnumerator_strategy)
-def test_cppmodel::cppenumerator_cppValue_setter(instance):
+
+@given(instance=cppmodel_CPPEnumerator_strategy)
+def test_cppmodel_cppenumerator_cppValue_setter(instance):
     original = instance.cppValue
     instance.cppValue = original
     assert instance.cppValue == original
 
-@given(instance=cppmodel::CPPStructMember_strategy)
+@given(instance=cppmodel_CPPTransition_strategy)
 @settings(max_examples=50)
-def test_cppmodel::cppstructmember_instantiation(instance):
-    assert isinstance(instance, cppmodel::CPPStructMember)
+def test_cppmodel_cpptransition_instantiation(instance):
+    assert isinstance(instance, cppmodel_CPPTransition)
 
-@given(instance=cppmodel::CPPExternalBridge_strategy)
+@given(instance=cppmodel_CPPClassRefSimpleCollection_strategy)
 @settings(max_examples=50)
-def test_cppmodel::cppexternalbridge_instantiation(instance):
-    assert isinstance(instance, cppmodel::CPPExternalBridge)
-
-@given(instance=cppmodel::CPPExternalBridge_strategy)
-def test_cppmodel::cppexternalbridge_cppExternalNamespace_type(instance):
-    assert isinstance(instance.cppExternalNamespace, str)
+def test_cppmodel_cppclassrefsimplecollection_instantiation(instance):
+    assert isinstance(instance, cppmodel_CPPClassRefSimpleCollection)
 
 
-@given(instance=cppmodel::CPPExternalBridge_strategy)
-def test_cppmodel::cppexternalbridge_cppExternalNamespace_setter(instance):
+
+@given(instance=cppmodel_CPPClassRefSimpleCollection_strategy)
+def test_cppmodel_cppclassrefsimplecollection_cppContainer_setter(instance):
+    original = instance.cppContainer
+    instance.cppContainer = original
+    assert instance.cppContainer == original
+
+@given(instance=cppmodel_CPPClassReference_strategy)
+@settings(max_examples=50)
+def test_cppmodel_cppclassreference_instantiation(instance):
+    assert isinstance(instance, cppmodel_CPPClassReference)
+
+@given(instance=cppmodel_CPPSignal_strategy)
+@settings(max_examples=50)
+def test_cppmodel_cppsignal_instantiation(instance):
+    assert isinstance(instance, cppmodel_CPPSignal)
+
+@given(instance=cppmodel_CPPReturnValue_strategy)
+@settings(max_examples=50)
+def test_cppmodel_cppreturnvalue_instantiation(instance):
+    assert isinstance(instance, cppmodel_CPPReturnValue)
+
+@given(instance=cppmodel_CPPEvent_strategy)
+@settings(max_examples=50)
+def test_cppmodel_cppevent_instantiation(instance):
+    assert isinstance(instance, cppmodel_CPPEvent)
+
+@given(instance=cppmodel_CPPComponent_strategy)
+@settings(max_examples=50)
+def test_cppmodel_cppcomponent_instantiation(instance):
+    assert isinstance(instance, cppmodel_CPPComponent)
+
+@given(instance=cppmodel_CPPProtocolOperationDefinition_strategy)
+@settings(max_examples=50)
+def test_cppmodel_cppprotocoloperationdefinition_instantiation(instance):
+    assert isinstance(instance, cppmodel_CPPProtocolOperationDefinition)
+
+@given(instance=cppmodel_CPPState_strategy)
+@settings(max_examples=50)
+def test_cppmodel_cppstate_instantiation(instance):
+    assert isinstance(instance, cppmodel_CPPState)
+
+@given(instance=cppmodel_CPPOperation_strategy)
+@settings(max_examples=50)
+def test_cppmodel_cppoperation_instantiation(instance):
+    assert isinstance(instance, cppmodel_CPPOperation)
+
+@given(instance=cppmodel_CPPExternalBridge_strategy)
+@settings(max_examples=50)
+def test_cppmodel_cppexternalbridge_instantiation(instance):
+    assert isinstance(instance, cppmodel_CPPExternalBridge)
+
+
+
+@given(instance=cppmodel_CPPExternalBridge_strategy)
+def test_cppmodel_cppexternalbridge_cppExternalNamespace_setter(instance):
     original = instance.cppExternalNamespace
     instance.cppExternalNamespace = original
     assert instance.cppExternalNamespace == original
 
-@given(instance=cppmodel::CPPModel_strategy)
+@given(instance=cppmodel_CPPPort_strategy)
 @settings(max_examples=50)
-def test_cppmodel::cppmodel_instantiation(instance):
-    assert isinstance(instance, cppmodel::CPPModel)
+def test_cppmodel_cppport_instantiation(instance):
+    assert isinstance(instance, cppmodel_CPPPort)
+
+@given(instance=cppmodel_CPPEnumType_strategy)
+@settings(max_examples=50)
+def test_cppmodel_cppenumtype_instantiation(instance):
+    assert isinstance(instance, cppmodel_CPPEnumType)
+
+@given(instance=cppmodel_CPPStructType_strategy)
+@settings(max_examples=50)
+def test_cppmodel_cppstructtype_instantiation(instance):
+    assert isinstance(instance, cppmodel_CPPStructType)
+
+@given(instance=cppmodel_CPPStructMember_strategy)
+@settings(max_examples=50)
+def test_cppmodel_cppstructmember_instantiation(instance):
+    assert isinstance(instance, cppmodel_CPPStructMember)
+
+@given(instance=cppmodel_CPPModel_strategy)
+@settings(max_examples=50)
+def test_cppmodel_cppmodel_instantiation(instance):
+    assert isinstance(instance, cppmodel_CPPModel)
 
 @given(instance=CPPNamedElement_strategy)
 @settings(max_examples=50)
 def test_cppnamedelement_instantiation(instance):
     assert isinstance(instance, CPPNamedElement)
 
-@given(instance=cppmodel::CPPQualifiedNamedElement_strategy)
+@given(instance=cppmodel_CPPQualifiedNamedElement_strategy)
 @settings(max_examples=50)
-def test_cppmodel::cppqualifiednamedelement_instantiation(instance):
-    assert isinstance(instance, cppmodel::CPPQualifiedNamedElement)
-
-@given(instance=cppmodel::CPPQualifiedNamedElement_strategy)
-def test_cppmodel::cppqualifiednamedelement_cppPrefix_type(instance):
-    assert isinstance(instance.cppPrefix, str)
+def test_cppmodel_cppqualifiednamedelement_instantiation(instance):
+    assert isinstance(instance, cppmodel_CPPQualifiedNamedElement)
 
 
-@given(instance=cppmodel::CPPQualifiedNamedElement_strategy)
-def test_cppmodel::cppqualifiednamedelement_cppPrefix_setter(instance):
-    original = instance.cppPrefix
-    instance.cppPrefix = original
-    assert instance.cppPrefix == original
 
-@given(instance=cppmodel::CPPQualifiedNamedElement_strategy)
-def test_cppmodel::cppqualifiednamedelement_cppQualifiedName_type(instance):
-    assert isinstance(instance.cppQualifiedName, str)
-
-
-@given(instance=cppmodel::CPPQualifiedNamedElement_strategy)
-def test_cppmodel::cppqualifiednamedelement_cppQualifiedName_setter(instance):
+@given(instance=cppmodel_CPPQualifiedNamedElement_strategy)
+def test_cppmodel_cppqualifiednamedelement_cppQualifiedName_setter(instance):
     original = instance.cppQualifiedName
     instance.cppQualifiedName = original
     assert instance.cppQualifiedName == original
 
-@given(instance=cppmodel::OOPLNameProvider_strategy)
+
+
+@given(instance=cppmodel_CPPQualifiedNamedElement_strategy)
+def test_cppmodel_cppqualifiednamedelement_cppPrefix_setter(instance):
+    original = instance.cppPrefix
+    instance.cppPrefix = original
+    assert instance.cppPrefix == original
+
+@given(instance=cppmodel_OOPLNameProvider_strategy)
 @settings(max_examples=50)
-def test_cppmodel::ooplnameprovider_instantiation(instance):
-    assert isinstance(instance, cppmodel::OOPLNameProvider)
+def test_cppmodel_ooplnameprovider_instantiation(instance):
+    assert isinstance(instance, cppmodel_OOPLNameProvider)
 
-@given(instance=cppmodel::CPPNamedElement_strategy)
+@given(instance=cppmodel_CPPNamedElement_strategy)
 @settings(max_examples=50)
-def test_cppmodel::cppnamedelement_instantiation(instance):
-    assert isinstance(instance, cppmodel::CPPNamedElement)
-
-@given(instance=cppmodel::CPPNamedElement_strategy)
-def test_cppmodel::cppnamedelement_cppName_type(instance):
-    assert isinstance(instance.cppName, str)
+def test_cppmodel_cppnamedelement_instantiation(instance):
+    assert isinstance(instance, cppmodel_CPPNamedElement)
 
 
-@given(instance=cppmodel::CPPNamedElement_strategy)
-def test_cppmodel::cppnamedelement_cppName_setter(instance):
+
+@given(instance=cppmodel_CPPNamedElement_strategy)
+def test_cppmodel_cppnamedelement_cppName_setter(instance):
     original = instance.cppName
     instance.cppName = original
     assert instance.cppName == original

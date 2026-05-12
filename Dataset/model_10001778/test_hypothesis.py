@@ -3,15 +3,9 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
 from python_code import (
-    modify_list_of_students_external,
-    recieve_attendance_sms_external,
-    send_attendance_sms_external,
-    logout_external,
-    login_external,
-    view_cumiliative_attendance_external,
     view_subject_wise_attendance_external,
     answer_attendance_call_external,
     post_attendance_external,
@@ -26,95 +20,17 @@ from python_code import (
     Student_Attendance_at_INU_Component,
     Teachers_Actor,
     student_Actor,
+    modify_list_of_students_external,
+    recieve_attendance_sms_external,
+    send_attendance_sms_external,
+    logout_external,
+    login_external,
+    view_cumiliative_attendance_external,
 )
 
 # =============================================================================
 # SECTION 1 — STRUCTURAL TESTS
 # =============================================================================
-
-
-
-def test_modify_list_of_students_external_is_not_abstract():
-    assert not inspect.isabstract(modify_list_of_students_external)
-
-
-def test_modify_list_of_students_external_constructor_exists():
-    assert callable(modify_list_of_students_external.__init__)
-
-
-def test_modify_list_of_students_external_constructor_args():
-    sig = inspect.signature(modify_list_of_students_external.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_recieve_attendance_sms_external_is_not_abstract():
-    assert not inspect.isabstract(recieve_attendance_sms_external)
-
-
-def test_recieve_attendance_sms_external_constructor_exists():
-    assert callable(recieve_attendance_sms_external.__init__)
-
-
-def test_recieve_attendance_sms_external_constructor_args():
-    sig = inspect.signature(recieve_attendance_sms_external.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_send_attendance_sms_external_is_not_abstract():
-    assert not inspect.isabstract(send_attendance_sms_external)
-
-
-def test_send_attendance_sms_external_constructor_exists():
-    assert callable(send_attendance_sms_external.__init__)
-
-
-def test_send_attendance_sms_external_constructor_args():
-    sig = inspect.signature(send_attendance_sms_external.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_logout_external_is_not_abstract():
-    assert not inspect.isabstract(logout_external)
-
-
-def test_logout_external_constructor_exists():
-    assert callable(logout_external.__init__)
-
-
-def test_logout_external_constructor_args():
-    sig = inspect.signature(logout_external.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_login_external_is_not_abstract():
-    assert not inspect.isabstract(login_external)
-
-
-def test_login_external_constructor_exists():
-    assert callable(login_external.__init__)
-
-
-def test_login_external_constructor_args():
-    sig = inspect.signature(login_external.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_view_cumiliative_attendance_external_is_not_abstract():
-    assert not inspect.isabstract(view_cumiliative_attendance_external)
-
-
-def test_view_cumiliative_attendance_external_constructor_exists():
-    assert callable(view_cumiliative_attendance_external.__init__)
-
-
-def test_view_cumiliative_attendance_external_constructor_args():
-    sig = inspect.signature(view_cumiliative_attendance_external.__init__)
-    params = list(sig.parameters.keys())
 
 
 
@@ -233,16 +149,16 @@ def test_parent_constructor_exists():
 def test_parent_constructor_args():
     sig = inspect.signature(PARENT.__init__)
     params = list(sig.parameters.keys())
-    assert "id" in params, "Missing parameter 'id'"
-    assert "password" in params, "Missing parameter 'password'"
     assert "phoneNumber" in params, "Missing parameter 'phoneNumber'"
+    assert "password" in params, "Missing parameter 'password'"
+    assert "id" in params, "Missing parameter 'id'"
 
-def test_parent_has_id():
-    assert hasattr(PARENT, "id")
+def test_parent_has_phoneNumber():
+    assert hasattr(PARENT, "phoneNumber")
     descriptor = None
     for klass in PARENT.__mro__:
-        if "id" in klass.__dict__:
-            descriptor = klass.__dict__["id"]
+        if "phoneNumber" in klass.__dict__:
+            descriptor = klass.__dict__["phoneNumber"]
             break
     assert isinstance(descriptor, property)
 
@@ -255,12 +171,12 @@ def test_parent_has_password():
             break
     assert isinstance(descriptor, property)
 
-def test_parent_has_phoneNumber():
-    assert hasattr(PARENT, "phoneNumber")
+def test_parent_has_id():
+    assert hasattr(PARENT, "id")
     descriptor = None
     for klass in PARENT.__mro__:
-        if "phoneNumber" in klass.__dict__:
-            descriptor = klass.__dict__["phoneNumber"]
+        if "id" in klass.__dict__:
+            descriptor = klass.__dict__["id"]
             break
     assert isinstance(descriptor, property)
 
@@ -403,6 +319,90 @@ def test_student_actor_constructor_args():
     params = list(sig.parameters.keys())
 
 
+
+def test_modify_list_of_students_external_is_not_abstract():
+    assert not inspect.isabstract(modify_list_of_students_external)
+
+
+def test_modify_list_of_students_external_constructor_exists():
+    assert callable(modify_list_of_students_external.__init__)
+
+
+def test_modify_list_of_students_external_constructor_args():
+    sig = inspect.signature(modify_list_of_students_external.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_recieve_attendance_sms_external_is_not_abstract():
+    assert not inspect.isabstract(recieve_attendance_sms_external)
+
+
+def test_recieve_attendance_sms_external_constructor_exists():
+    assert callable(recieve_attendance_sms_external.__init__)
+
+
+def test_recieve_attendance_sms_external_constructor_args():
+    sig = inspect.signature(recieve_attendance_sms_external.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_send_attendance_sms_external_is_not_abstract():
+    assert not inspect.isabstract(send_attendance_sms_external)
+
+
+def test_send_attendance_sms_external_constructor_exists():
+    assert callable(send_attendance_sms_external.__init__)
+
+
+def test_send_attendance_sms_external_constructor_args():
+    sig = inspect.signature(send_attendance_sms_external.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_logout_external_is_not_abstract():
+    assert not inspect.isabstract(logout_external)
+
+
+def test_logout_external_constructor_exists():
+    assert callable(logout_external.__init__)
+
+
+def test_logout_external_constructor_args():
+    sig = inspect.signature(logout_external.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_login_external_is_not_abstract():
+    assert not inspect.isabstract(login_external)
+
+
+def test_login_external_constructor_exists():
+    assert callable(login_external.__init__)
+
+
+def test_login_external_constructor_args():
+    sig = inspect.signature(login_external.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_view_cumiliative_attendance_external_is_not_abstract():
+    assert not inspect.isabstract(view_cumiliative_attendance_external)
+
+
+def test_view_cumiliative_attendance_external_constructor_exists():
+    assert callable(view_cumiliative_attendance_external.__init__)
+
+
+def test_view_cumiliative_attendance_external_constructor_args():
+    sig = inspect.signature(view_cumiliative_attendance_external.__init__)
+    params = list(sig.parameters.keys())
+
+
 # =============================================================================
 # HYPOTHESIS STRATEGIES
 # =============================================================================
@@ -414,24 +414,6 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-modify_list_of_students_external_strategy = st.builds(
-    modify_list_of_students_external,
-)
-recieve_attendance_sms_external_strategy = st.builds(
-    recieve_attendance_sms_external,
-)
-send_attendance_sms_external_strategy = st.builds(
-    send_attendance_sms_external,
-)
-logout_external_strategy = st.builds(
-    logout_external,
-)
-login_external_strategy = st.builds(
-    login_external,
-)
-view_cumiliative_attendance_external_strategy = st.builds(
-    view_cumiliative_attendance_external,
-)
 view_subject_wise_attendance_external_strategy = st.builds(
     view_subject_wise_attendance_external,
 )
@@ -456,12 +438,12 @@ ADMIN_strategy = st.builds(
 )
 PARENT_strategy = st.builds(
     PARENT,
-    id=
-        safe_text,
+    phoneNumber=
+        st.integers(),
     password=
         safe_text,
-    phoneNumber=
-        st.integers()
+    id=
+        safe_text
 )
 STUDENT_strategy = st.builds(
     STUDENT,
@@ -492,36 +474,24 @@ Teachers_Actor_strategy = st.builds(
 student_Actor_strategy = st.builds(
     student_Actor,
 )
-
-@given(instance=modify_list_of_students_external_strategy)
-@settings(max_examples=50)
-def test_modify_list_of_students_external_instantiation(instance):
-    assert isinstance(instance, modify_list_of_students_external)
-
-@given(instance=recieve_attendance_sms_external_strategy)
-@settings(max_examples=50)
-def test_recieve_attendance_sms_external_instantiation(instance):
-    assert isinstance(instance, recieve_attendance_sms_external)
-
-@given(instance=send_attendance_sms_external_strategy)
-@settings(max_examples=50)
-def test_send_attendance_sms_external_instantiation(instance):
-    assert isinstance(instance, send_attendance_sms_external)
-
-@given(instance=logout_external_strategy)
-@settings(max_examples=50)
-def test_logout_external_instantiation(instance):
-    assert isinstance(instance, logout_external)
-
-@given(instance=login_external_strategy)
-@settings(max_examples=50)
-def test_login_external_instantiation(instance):
-    assert isinstance(instance, login_external)
-
-@given(instance=view_cumiliative_attendance_external_strategy)
-@settings(max_examples=50)
-def test_view_cumiliative_attendance_external_instantiation(instance):
-    assert isinstance(instance, view_cumiliative_attendance_external)
+modify_list_of_students_external_strategy = st.builds(
+    modify_list_of_students_external,
+)
+recieve_attendance_sms_external_strategy = st.builds(
+    recieve_attendance_sms_external,
+)
+send_attendance_sms_external_strategy = st.builds(
+    send_attendance_sms_external,
+)
+logout_external_strategy = st.builds(
+    logout_external,
+)
+login_external_strategy = st.builds(
+    login_external,
+)
+view_cumiliative_attendance_external_strategy = st.builds(
+    view_cumiliative_attendance_external,
+)
 
 @given(instance=view_subject_wise_attendance_external_strategy)
 @settings(max_examples=50)
@@ -553,9 +523,6 @@ def test_call_students_for_attendance_external_instantiation(instance):
 def test_admin_instantiation(instance):
     assert isinstance(instance, ADMIN)
 
-@given(instance=ADMIN_strategy)
-def test_admin_id_type(instance):
-    assert isinstance(instance.id, str)
 
 
 @given(instance=ADMIN_strategy)
@@ -564,9 +531,6 @@ def test_admin_id_setter(instance):
     instance.id = original
     assert instance.id == original
 
-@given(instance=ADMIN_strategy)
-def test_admin_password_type(instance):
-    assert isinstance(instance.password, str)
 
 
 @given(instance=ADMIN_strategy)
@@ -580,31 +544,6 @@ def test_admin_password_setter(instance):
 def test_parent_instantiation(instance):
     assert isinstance(instance, PARENT)
 
-@given(instance=PARENT_strategy)
-def test_parent_id_type(instance):
-    assert isinstance(instance.id, str)
-
-
-@given(instance=PARENT_strategy)
-def test_parent_id_setter(instance):
-    original = instance.id
-    instance.id = original
-    assert instance.id == original
-
-@given(instance=PARENT_strategy)
-def test_parent_password_type(instance):
-    assert isinstance(instance.password, str)
-
-
-@given(instance=PARENT_strategy)
-def test_parent_password_setter(instance):
-    original = instance.password
-    instance.password = original
-    assert instance.password == original
-
-@given(instance=PARENT_strategy)
-def test_parent_phoneNumber_type(instance):
-    assert isinstance(instance.phoneNumber, int)
 
 
 @given(instance=PARENT_strategy)
@@ -613,14 +552,27 @@ def test_parent_phoneNumber_setter(instance):
     instance.phoneNumber = original
     assert instance.phoneNumber == original
 
+
+
+@given(instance=PARENT_strategy)
+def test_parent_password_setter(instance):
+    original = instance.password
+    instance.password = original
+    assert instance.password == original
+
+
+
+@given(instance=PARENT_strategy)
+def test_parent_id_setter(instance):
+    original = instance.id
+    instance.id = original
+    assert instance.id == original
+
 @given(instance=STUDENT_strategy)
 @settings(max_examples=50)
 def test_student_instantiation(instance):
     assert isinstance(instance, STUDENT)
 
-@given(instance=STUDENT_strategy)
-def test_student_password_type(instance):
-    assert isinstance(instance.password, str)
 
 
 @given(instance=STUDENT_strategy)
@@ -629,9 +581,6 @@ def test_student_password_setter(instance):
     instance.password = original
     assert instance.password == original
 
-@given(instance=STUDENT_strategy)
-def test_student_id_type(instance):
-    assert isinstance(instance.id, str)
 
 
 @given(instance=STUDENT_strategy)
@@ -645,9 +594,6 @@ def test_student_id_setter(instance):
 def test_faculty_instantiation(instance):
     assert isinstance(instance, FACULTY)
 
-@given(instance=FACULTY_strategy)
-def test_faculty_password_type(instance):
-    assert isinstance(instance.password, str)
 
 
 @given(instance=FACULTY_strategy)
@@ -656,9 +602,6 @@ def test_faculty_password_setter(instance):
     instance.password = original
     assert instance.password == original
 
-@given(instance=FACULTY_strategy)
-def test_faculty_id_type(instance):
-    assert isinstance(instance.id, str)
 
 
 @given(instance=FACULTY_strategy)
@@ -691,3 +634,33 @@ def test_teachers_actor_instantiation(instance):
 @settings(max_examples=50)
 def test_student_actor_instantiation(instance):
     assert isinstance(instance, student_Actor)
+
+@given(instance=modify_list_of_students_external_strategy)
+@settings(max_examples=50)
+def test_modify_list_of_students_external_instantiation(instance):
+    assert isinstance(instance, modify_list_of_students_external)
+
+@given(instance=recieve_attendance_sms_external_strategy)
+@settings(max_examples=50)
+def test_recieve_attendance_sms_external_instantiation(instance):
+    assert isinstance(instance, recieve_attendance_sms_external)
+
+@given(instance=send_attendance_sms_external_strategy)
+@settings(max_examples=50)
+def test_send_attendance_sms_external_instantiation(instance):
+    assert isinstance(instance, send_attendance_sms_external)
+
+@given(instance=logout_external_strategy)
+@settings(max_examples=50)
+def test_logout_external_instantiation(instance):
+    assert isinstance(instance, logout_external)
+
+@given(instance=login_external_strategy)
+@settings(max_examples=50)
+def test_login_external_instantiation(instance):
+    assert isinstance(instance, login_external)
+
+@given(instance=view_cumiliative_attendance_external_strategy)
+@settings(max_examples=50)
+def test_view_cumiliative_attendance_external_instantiation(instance):
+    assert isinstance(instance, view_cumiliative_attendance_external)

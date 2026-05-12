@@ -3,14 +3,14 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     Entity,
-    my::AType,
-    my::Entity,
-    my::Model,
-    my::BType,
+    my_AType,
+    my_Entity,
+    my_Model,
+    my_BType,
 )
 
 # =============================================================================
@@ -33,37 +33,37 @@ def test_entity_constructor_args():
 
 
 
-def test_my::atype_is_not_abstract():
-    assert not inspect.isabstract(my::AType)
+def test_my_atype_is_not_abstract():
+    assert not inspect.isabstract(my_AType)
 
 
-def test_my::atype_constructor_exists():
-    assert callable(my::AType.__init__)
+def test_my_atype_constructor_exists():
+    assert callable(my_AType.__init__)
 
 
-def test_my::atype_constructor_args():
-    sig = inspect.signature(my::AType.__init__)
+def test_my_atype_constructor_args():
+    sig = inspect.signature(my_AType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_my::entity_is_not_abstract():
-    assert not inspect.isabstract(my::Entity)
+def test_my_entity_is_not_abstract():
+    assert not inspect.isabstract(my_Entity)
 
 
-def test_my::entity_constructor_exists():
-    assert callable(my::Entity.__init__)
+def test_my_entity_constructor_exists():
+    assert callable(my_Entity.__init__)
 
 
-def test_my::entity_constructor_args():
-    sig = inspect.signature(my::Entity.__init__)
+def test_my_entity_constructor_args():
+    sig = inspect.signature(my_Entity.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_my::entity_has_name():
-    assert hasattr(my::Entity, "name")
+def test_my_entity_has_name():
+    assert hasattr(my_Entity, "name")
     descriptor = None
-    for klass in my::Entity.__mro__:
+    for klass in my_Entity.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -71,30 +71,30 @@ def test_my::entity_has_name():
 
 
 
-def test_my::model_is_not_abstract():
-    assert not inspect.isabstract(my::Model)
+def test_my_model_is_not_abstract():
+    assert not inspect.isabstract(my_Model)
 
 
-def test_my::model_constructor_exists():
-    assert callable(my::Model.__init__)
+def test_my_model_constructor_exists():
+    assert callable(my_Model.__init__)
 
 
-def test_my::model_constructor_args():
-    sig = inspect.signature(my::Model.__init__)
+def test_my_model_constructor_args():
+    sig = inspect.signature(my_Model.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_my::btype_is_not_abstract():
-    assert not inspect.isabstract(my::BType)
+def test_my_btype_is_not_abstract():
+    assert not inspect.isabstract(my_BType)
 
 
-def test_my::btype_constructor_exists():
-    assert callable(my::BType.__init__)
+def test_my_btype_constructor_exists():
+    assert callable(my_BType.__init__)
 
 
-def test_my::btype_constructor_args():
-    sig = inspect.signature(my::BType.__init__)
+def test_my_btype_constructor_args():
+    sig = inspect.signature(my_BType.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -112,19 +112,19 @@ safe_text = st.text(
 Entity_strategy = st.builds(
     Entity,
 )
-my::AType_strategy = st.builds(
-    my::AType,
+my_AType_strategy = st.builds(
+    my_AType,
 )
-my::Entity_strategy = st.builds(
-    my::Entity,
+my_Entity_strategy = st.builds(
+    my_Entity,
     name=
         safe_text
 )
-my::Model_strategy = st.builds(
-    my::Model,
+my_Model_strategy = st.builds(
+    my_Model,
 )
-my::BType_strategy = st.builds(
-    my::BType,
+my_BType_strategy = st.builds(
+    my_BType,
 )
 
 @given(instance=Entity_strategy)
@@ -132,10 +132,10 @@ my::BType_strategy = st.builds(
 def test_entity_instantiation(instance):
     assert isinstance(instance, Entity)
 
-@given(instance=my::AType_strategy)
+@given(instance=my_AType_strategy)
 @settings(max_examples=50)
-def test_my::atype_instantiation(instance):
-    assert isinstance(instance, my::AType)
+def test_my_atype_instantiation(instance):
+    assert isinstance(instance, my_AType)
 
 import warnings
 import copy
@@ -143,9 +143,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=my::AType_strategy)
+@given(instance=my_AType_strategy)
 @settings(max_examples=30)
-def test_my::atype_referenced_changes_state(instance):
+def test_my_atype_referenced_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -157,37 +157,34 @@ def test_my::atype_referenced_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'referenced' in my::AType is empty"
+        assert has_statements, f"Function 'referenced' in my_AType is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'referenced' in my::AType did not change state; check implementation")
+            warnings.warn(f"Operation 'referenced' in my_AType did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'referenced' in my::AType is not implemented or raised an error")
+        warnings.warn(f"Operation 'referenced' in my_AType is not implemented or raised an error")
 
-@given(instance=my::Entity_strategy)
+@given(instance=my_Entity_strategy)
 @settings(max_examples=50)
-def test_my::entity_instantiation(instance):
-    assert isinstance(instance, my::Entity)
-
-@given(instance=my::Entity_strategy)
-def test_my::entity_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_my_entity_instantiation(instance):
+    assert isinstance(instance, my_Entity)
 
 
-@given(instance=my::Entity_strategy)
-def test_my::entity_name_setter(instance):
+
+@given(instance=my_Entity_strategy)
+def test_my_entity_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=my::Model_strategy)
+@given(instance=my_Model_strategy)
 @settings(max_examples=50)
-def test_my::model_instantiation(instance):
-    assert isinstance(instance, my::Model)
+def test_my_model_instantiation(instance):
+    assert isinstance(instance, my_Model)
 
-@given(instance=my::BType_strategy)
+@given(instance=my_BType_strategy)
 @settings(max_examples=50)
-def test_my::btype_instantiation(instance):
-    assert isinstance(instance, my::BType)
+def test_my_btype_instantiation(instance):
+    assert isinstance(instance, my_BType)

@@ -3,20 +3,20 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     C,
-    dispatch::G,
-    dispatch::F,
+    dispatch_G,
+    dispatch_F,
     B,
-    dispatch::E,
-    dispatch::D,
+    dispatch_E,
+    dispatch_D,
     A,
-    dispatch::C,
-    dispatch::B,
-    dispatch::A,
-    dispatch::Container,
+    dispatch_C,
+    dispatch_B,
+    dispatch_A,
+    dispatch_Container,
 )
 
 # =============================================================================
@@ -39,30 +39,30 @@ def test_c_constructor_args():
 
 
 
-def test_dispatch::g_is_not_abstract():
-    assert not inspect.isabstract(dispatch::G)
+def test_dispatch_g_is_not_abstract():
+    assert not inspect.isabstract(dispatch_G)
 
 
-def test_dispatch::g_constructor_exists():
-    assert callable(dispatch::G.__init__)
+def test_dispatch_g_constructor_exists():
+    assert callable(dispatch_G.__init__)
 
 
-def test_dispatch::g_constructor_args():
-    sig = inspect.signature(dispatch::G.__init__)
+def test_dispatch_g_constructor_args():
+    sig = inspect.signature(dispatch_G.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_dispatch::f_is_not_abstract():
-    assert not inspect.isabstract(dispatch::F)
+def test_dispatch_f_is_not_abstract():
+    assert not inspect.isabstract(dispatch_F)
 
 
-def test_dispatch::f_constructor_exists():
-    assert callable(dispatch::F.__init__)
+def test_dispatch_f_constructor_exists():
+    assert callable(dispatch_F.__init__)
 
 
-def test_dispatch::f_constructor_args():
-    sig = inspect.signature(dispatch::F.__init__)
+def test_dispatch_f_constructor_args():
+    sig = inspect.signature(dispatch_F.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -81,30 +81,30 @@ def test_b_constructor_args():
 
 
 
-def test_dispatch::e_is_not_abstract():
-    assert not inspect.isabstract(dispatch::E)
+def test_dispatch_e_is_not_abstract():
+    assert not inspect.isabstract(dispatch_E)
 
 
-def test_dispatch::e_constructor_exists():
-    assert callable(dispatch::E.__init__)
+def test_dispatch_e_constructor_exists():
+    assert callable(dispatch_E.__init__)
 
 
-def test_dispatch::e_constructor_args():
-    sig = inspect.signature(dispatch::E.__init__)
+def test_dispatch_e_constructor_args():
+    sig = inspect.signature(dispatch_E.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_dispatch::d_is_not_abstract():
-    assert not inspect.isabstract(dispatch::D)
+def test_dispatch_d_is_not_abstract():
+    assert not inspect.isabstract(dispatch_D)
 
 
-def test_dispatch::d_constructor_exists():
-    assert callable(dispatch::D.__init__)
+def test_dispatch_d_constructor_exists():
+    assert callable(dispatch_D.__init__)
 
 
-def test_dispatch::d_constructor_args():
-    sig = inspect.signature(dispatch::D.__init__)
+def test_dispatch_d_constructor_args():
+    sig = inspect.signature(dispatch_D.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -123,58 +123,58 @@ def test_a_constructor_args():
 
 
 
-def test_dispatch::c_is_not_abstract():
-    assert not inspect.isabstract(dispatch::C)
+def test_dispatch_c_is_not_abstract():
+    assert not inspect.isabstract(dispatch_C)
 
 
-def test_dispatch::c_constructor_exists():
-    assert callable(dispatch::C.__init__)
+def test_dispatch_c_constructor_exists():
+    assert callable(dispatch_C.__init__)
 
 
-def test_dispatch::c_constructor_args():
-    sig = inspect.signature(dispatch::C.__init__)
+def test_dispatch_c_constructor_args():
+    sig = inspect.signature(dispatch_C.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_dispatch::b_is_not_abstract():
-    assert not inspect.isabstract(dispatch::B)
+def test_dispatch_b_is_not_abstract():
+    assert not inspect.isabstract(dispatch_B)
 
 
-def test_dispatch::b_constructor_exists():
-    assert callable(dispatch::B.__init__)
+def test_dispatch_b_constructor_exists():
+    assert callable(dispatch_B.__init__)
 
 
-def test_dispatch::b_constructor_args():
-    sig = inspect.signature(dispatch::B.__init__)
+def test_dispatch_b_constructor_args():
+    sig = inspect.signature(dispatch_B.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_dispatch::a_is_not_abstract():
-    assert not inspect.isabstract(dispatch::A)
+def test_dispatch_a_is_not_abstract():
+    assert not inspect.isabstract(dispatch_A)
 
 
-def test_dispatch::a_constructor_exists():
-    assert callable(dispatch::A.__init__)
+def test_dispatch_a_constructor_exists():
+    assert callable(dispatch_A.__init__)
 
 
-def test_dispatch::a_constructor_args():
-    sig = inspect.signature(dispatch::A.__init__)
+def test_dispatch_a_constructor_args():
+    sig = inspect.signature(dispatch_A.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_dispatch::container_is_not_abstract():
-    assert not inspect.isabstract(dispatch::Container)
+def test_dispatch_container_is_not_abstract():
+    assert not inspect.isabstract(dispatch_Container)
 
 
-def test_dispatch::container_constructor_exists():
-    assert callable(dispatch::Container.__init__)
+def test_dispatch_container_constructor_exists():
+    assert callable(dispatch_Container.__init__)
 
 
-def test_dispatch::container_constructor_args():
-    sig = inspect.signature(dispatch::Container.__init__)
+def test_dispatch_container_constructor_args():
+    sig = inspect.signature(dispatch_Container.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -192,35 +192,35 @@ safe_text = st.text(
 C_strategy = st.builds(
     C,
 )
-dispatch::G_strategy = st.builds(
-    dispatch::G,
+dispatch_G_strategy = st.builds(
+    dispatch_G,
 )
-dispatch::F_strategy = st.builds(
-    dispatch::F,
+dispatch_F_strategy = st.builds(
+    dispatch_F,
 )
 B_strategy = st.builds(
     B,
 )
-dispatch::E_strategy = st.builds(
-    dispatch::E,
+dispatch_E_strategy = st.builds(
+    dispatch_E,
 )
-dispatch::D_strategy = st.builds(
-    dispatch::D,
+dispatch_D_strategy = st.builds(
+    dispatch_D,
 )
 A_strategy = st.builds(
     A,
 )
-dispatch::C_strategy = st.builds(
-    dispatch::C,
+dispatch_C_strategy = st.builds(
+    dispatch_C,
 )
-dispatch::B_strategy = st.builds(
-    dispatch::B,
+dispatch_B_strategy = st.builds(
+    dispatch_B,
 )
-dispatch::A_strategy = st.builds(
-    dispatch::A,
+dispatch_A_strategy = st.builds(
+    dispatch_A,
 )
-dispatch::Container_strategy = st.builds(
-    dispatch::Container,
+dispatch_Container_strategy = st.builds(
+    dispatch_Container,
 )
 
 @given(instance=C_strategy)
@@ -228,52 +228,52 @@ dispatch::Container_strategy = st.builds(
 def test_c_instantiation(instance):
     assert isinstance(instance, C)
 
-@given(instance=dispatch::G_strategy)
+@given(instance=dispatch_G_strategy)
 @settings(max_examples=50)
-def test_dispatch::g_instantiation(instance):
-    assert isinstance(instance, dispatch::G)
+def test_dispatch_g_instantiation(instance):
+    assert isinstance(instance, dispatch_G)
 
-@given(instance=dispatch::F_strategy)
+@given(instance=dispatch_F_strategy)
 @settings(max_examples=50)
-def test_dispatch::f_instantiation(instance):
-    assert isinstance(instance, dispatch::F)
+def test_dispatch_f_instantiation(instance):
+    assert isinstance(instance, dispatch_F)
 
 @given(instance=B_strategy)
 @settings(max_examples=50)
 def test_b_instantiation(instance):
     assert isinstance(instance, B)
 
-@given(instance=dispatch::E_strategy)
+@given(instance=dispatch_E_strategy)
 @settings(max_examples=50)
-def test_dispatch::e_instantiation(instance):
-    assert isinstance(instance, dispatch::E)
+def test_dispatch_e_instantiation(instance):
+    assert isinstance(instance, dispatch_E)
 
-@given(instance=dispatch::D_strategy)
+@given(instance=dispatch_D_strategy)
 @settings(max_examples=50)
-def test_dispatch::d_instantiation(instance):
-    assert isinstance(instance, dispatch::D)
+def test_dispatch_d_instantiation(instance):
+    assert isinstance(instance, dispatch_D)
 
 @given(instance=A_strategy)
 @settings(max_examples=50)
 def test_a_instantiation(instance):
     assert isinstance(instance, A)
 
-@given(instance=dispatch::C_strategy)
+@given(instance=dispatch_C_strategy)
 @settings(max_examples=50)
-def test_dispatch::c_instantiation(instance):
-    assert isinstance(instance, dispatch::C)
+def test_dispatch_c_instantiation(instance):
+    assert isinstance(instance, dispatch_C)
 
-@given(instance=dispatch::B_strategy)
+@given(instance=dispatch_B_strategy)
 @settings(max_examples=50)
-def test_dispatch::b_instantiation(instance):
-    assert isinstance(instance, dispatch::B)
+def test_dispatch_b_instantiation(instance):
+    assert isinstance(instance, dispatch_B)
 
-@given(instance=dispatch::A_strategy)
+@given(instance=dispatch_A_strategy)
 @settings(max_examples=50)
-def test_dispatch::a_instantiation(instance):
-    assert isinstance(instance, dispatch::A)
+def test_dispatch_a_instantiation(instance):
+    assert isinstance(instance, dispatch_A)
 
-@given(instance=dispatch::Container_strategy)
+@given(instance=dispatch_Container_strategy)
 @settings(max_examples=50)
-def test_dispatch::container_instantiation(instance):
-    assert isinstance(instance, dispatch::Container)
+def test_dispatch_container_instantiation(instance):
+    assert isinstance(instance, dispatch_Container)

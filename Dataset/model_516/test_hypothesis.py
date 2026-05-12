@@ -3,13 +3,13 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    familyleft1::Son,
-    familyleft1::Mother,
-    familyleft1::Family,
-    familyleft1::Father,
+from python_code import (
+    familyleft1_Son,
+    familyleft1_Mother,
+    familyleft1_Family,
+    familyleft1_Father,
 )
 
 # =============================================================================
@@ -18,43 +18,43 @@ from classes import (
 
 
 
-def test_familyleft1::son_is_not_abstract():
-    assert not inspect.isabstract(familyleft1::Son)
+def test_familyleft1_son_is_not_abstract():
+    assert not inspect.isabstract(familyleft1_Son)
 
 
-def test_familyleft1::son_constructor_exists():
-    assert callable(familyleft1::Son.__init__)
+def test_familyleft1_son_constructor_exists():
+    assert callable(familyleft1_Son.__init__)
 
 
-def test_familyleft1::son_constructor_args():
-    sig = inspect.signature(familyleft1::Son.__init__)
+def test_familyleft1_son_constructor_args():
+    sig = inspect.signature(familyleft1_Son.__init__)
     params = list(sig.parameters.keys())
-    assert "name" in params, "Missing parameter 'name'"
     assert "age" in params, "Missing parameter 'age'"
+    assert "name" in params, "Missing parameter 'name'"
     assert "sex" in params, "Missing parameter 'sex'"
 
-def test_familyleft1::son_has_name():
-    assert hasattr(familyleft1::Son, "name")
+def test_familyleft1_son_has_age():
+    assert hasattr(familyleft1_Son, "age")
     descriptor = None
-    for klass in familyleft1::Son.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_familyleft1::son_has_age():
-    assert hasattr(familyleft1::Son, "age")
-    descriptor = None
-    for klass in familyleft1::Son.__mro__:
+    for klass in familyleft1_Son.__mro__:
         if "age" in klass.__dict__:
             descriptor = klass.__dict__["age"]
             break
     assert isinstance(descriptor, property)
 
-def test_familyleft1::son_has_sex():
-    assert hasattr(familyleft1::Son, "sex")
+def test_familyleft1_son_has_name():
+    assert hasattr(familyleft1_Son, "name")
     descriptor = None
-    for klass in familyleft1::Son.__mro__:
+    for klass in familyleft1_Son.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_familyleft1_son_has_sex():
+    assert hasattr(familyleft1_Son, "sex")
+    descriptor = None
+    for klass in familyleft1_Son.__mro__:
         if "sex" in klass.__dict__:
             descriptor = klass.__dict__["sex"]
             break
@@ -62,67 +62,67 @@ def test_familyleft1::son_has_sex():
 
 
 
-def test_familyleft1::mother_is_not_abstract():
-    assert not inspect.isabstract(familyleft1::Mother)
+def test_familyleft1_mother_is_not_abstract():
+    assert not inspect.isabstract(familyleft1_Mother)
 
 
-def test_familyleft1::mother_constructor_exists():
-    assert callable(familyleft1::Mother.__init__)
+def test_familyleft1_mother_constructor_exists():
+    assert callable(familyleft1_Mother.__init__)
 
 
-def test_familyleft1::mother_constructor_args():
-    sig = inspect.signature(familyleft1::Mother.__init__)
+def test_familyleft1_mother_constructor_args():
+    sig = inspect.signature(familyleft1_Mother.__init__)
     params = list(sig.parameters.keys())
-    assert "age" in params, "Missing parameter 'age'"
     assert "name" in params, "Missing parameter 'name'"
+    assert "age" in params, "Missing parameter 'age'"
 
-def test_familyleft1::mother_has_age():
-    assert hasattr(familyleft1::Mother, "age")
+def test_familyleft1_mother_has_name():
+    assert hasattr(familyleft1_Mother, "name")
     descriptor = None
-    for klass in familyleft1::Mother.__mro__:
-        if "age" in klass.__dict__:
-            descriptor = klass.__dict__["age"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_familyleft1::mother_has_name():
-    assert hasattr(familyleft1::Mother, "name")
-    descriptor = None
-    for klass in familyleft1::Mother.__mro__:
+    for klass in familyleft1_Mother.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
+def test_familyleft1_mother_has_age():
+    assert hasattr(familyleft1_Mother, "age")
+    descriptor = None
+    for klass in familyleft1_Mother.__mro__:
+        if "age" in klass.__dict__:
+            descriptor = klass.__dict__["age"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_familyleft1::family_is_not_abstract():
-    assert not inspect.isabstract(familyleft1::Family)
+
+def test_familyleft1_family_is_not_abstract():
+    assert not inspect.isabstract(familyleft1_Family)
 
 
-def test_familyleft1::family_constructor_exists():
-    assert callable(familyleft1::Family.__init__)
+def test_familyleft1_family_constructor_exists():
+    assert callable(familyleft1_Family.__init__)
 
 
-def test_familyleft1::family_constructor_args():
-    sig = inspect.signature(familyleft1::Family.__init__)
+def test_familyleft1_family_constructor_args():
+    sig = inspect.signature(familyleft1_Family.__init__)
     params = list(sig.parameters.keys())
     assert "location" in params, "Missing parameter 'location'"
     assert "surname" in params, "Missing parameter 'surname'"
 
-def test_familyleft1::family_has_location():
-    assert hasattr(familyleft1::Family, "location")
+def test_familyleft1_family_has_location():
+    assert hasattr(familyleft1_Family, "location")
     descriptor = None
-    for klass in familyleft1::Family.__mro__:
+    for klass in familyleft1_Family.__mro__:
         if "location" in klass.__dict__:
             descriptor = klass.__dict__["location"]
             break
     assert isinstance(descriptor, property)
 
-def test_familyleft1::family_has_surname():
-    assert hasattr(familyleft1::Family, "surname")
+def test_familyleft1_family_has_surname():
+    assert hasattr(familyleft1_Family, "surname")
     descriptor = None
-    for klass in familyleft1::Family.__mro__:
+    for klass in familyleft1_Family.__mro__:
         if "surname" in klass.__dict__:
             descriptor = klass.__dict__["surname"]
             break
@@ -130,33 +130,33 @@ def test_familyleft1::family_has_surname():
 
 
 
-def test_familyleft1::father_is_not_abstract():
-    assert not inspect.isabstract(familyleft1::Father)
+def test_familyleft1_father_is_not_abstract():
+    assert not inspect.isabstract(familyleft1_Father)
 
 
-def test_familyleft1::father_constructor_exists():
-    assert callable(familyleft1::Father.__init__)
+def test_familyleft1_father_constructor_exists():
+    assert callable(familyleft1_Father.__init__)
 
 
-def test_familyleft1::father_constructor_args():
-    sig = inspect.signature(familyleft1::Father.__init__)
+def test_familyleft1_father_constructor_args():
+    sig = inspect.signature(familyleft1_Father.__init__)
     params = list(sig.parameters.keys())
     assert "age" in params, "Missing parameter 'age'"
     assert "name" in params, "Missing parameter 'name'"
 
-def test_familyleft1::father_has_age():
-    assert hasattr(familyleft1::Father, "age")
+def test_familyleft1_father_has_age():
+    assert hasattr(familyleft1_Father, "age")
     descriptor = None
-    for klass in familyleft1::Father.__mro__:
+    for klass in familyleft1_Father.__mro__:
         if "age" in klass.__dict__:
             descriptor = klass.__dict__["age"]
             break
     assert isinstance(descriptor, property)
 
-def test_familyleft1::father_has_name():
-    assert hasattr(familyleft1::Father, "name")
+def test_familyleft1_father_has_name():
+    assert hasattr(familyleft1_Father, "name")
     descriptor = None
-    for klass in familyleft1::Father.__mro__:
+    for klass in familyleft1_Father.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -174,152 +174,125 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-familyleft1::Son_strategy = st.builds(
-    familyleft1::Son,
-    name=
-        safe_text,
+familyleft1_Son_strategy = st.builds(
+    familyleft1_Son,
     age=
         st.integers(),
+    name=
+        safe_text,
     sex=
         safe_text
 )
-familyleft1::Mother_strategy = st.builds(
-    familyleft1::Mother,
-    age=
-        st.integers(),
+familyleft1_Mother_strategy = st.builds(
+    familyleft1_Mother,
     name=
-        safe_text
+        safe_text,
+    age=
+        st.integers()
 )
-familyleft1::Family_strategy = st.builds(
-    familyleft1::Family,
+familyleft1_Family_strategy = st.builds(
+    familyleft1_Family,
     location=
         safe_text,
     surname=
         safe_text
 )
-familyleft1::Father_strategy = st.builds(
-    familyleft1::Father,
+familyleft1_Father_strategy = st.builds(
+    familyleft1_Father,
     age=
         st.integers(),
     name=
         safe_text
 )
 
-@given(instance=familyleft1::Son_strategy)
+@given(instance=familyleft1_Son_strategy)
 @settings(max_examples=50)
-def test_familyleft1::son_instantiation(instance):
-    assert isinstance(instance, familyleft1::Son)
-
-@given(instance=familyleft1::Son_strategy)
-def test_familyleft1::son_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_familyleft1_son_instantiation(instance):
+    assert isinstance(instance, familyleft1_Son)
 
 
-@given(instance=familyleft1::Son_strategy)
-def test_familyleft1::son_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
 
-@given(instance=familyleft1::Son_strategy)
-def test_familyleft1::son_age_type(instance):
-    assert isinstance(instance.age, int)
-
-
-@given(instance=familyleft1::Son_strategy)
-def test_familyleft1::son_age_setter(instance):
+@given(instance=familyleft1_Son_strategy)
+def test_familyleft1_son_age_setter(instance):
     original = instance.age
     instance.age = original
     assert instance.age == original
 
-@given(instance=familyleft1::Son_strategy)
-def test_familyleft1::son_sex_type(instance):
-    assert isinstance(instance.sex, str)
 
 
-@given(instance=familyleft1::Son_strategy)
-def test_familyleft1::son_sex_setter(instance):
+@given(instance=familyleft1_Son_strategy)
+def test_familyleft1_son_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+
+
+@given(instance=familyleft1_Son_strategy)
+def test_familyleft1_son_sex_setter(instance):
     original = instance.sex
     instance.sex = original
     assert instance.sex == original
 
-@given(instance=familyleft1::Mother_strategy)
+@given(instance=familyleft1_Mother_strategy)
 @settings(max_examples=50)
-def test_familyleft1::mother_instantiation(instance):
-    assert isinstance(instance, familyleft1::Mother)
-
-@given(instance=familyleft1::Mother_strategy)
-def test_familyleft1::mother_age_type(instance):
-    assert isinstance(instance.age, int)
+def test_familyleft1_mother_instantiation(instance):
+    assert isinstance(instance, familyleft1_Mother)
 
 
-@given(instance=familyleft1::Mother_strategy)
-def test_familyleft1::mother_age_setter(instance):
-    original = instance.age
-    instance.age = original
-    assert instance.age == original
 
-@given(instance=familyleft1::Mother_strategy)
-def test_familyleft1::mother_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=familyleft1::Mother_strategy)
-def test_familyleft1::mother_name_setter(instance):
+@given(instance=familyleft1_Mother_strategy)
+def test_familyleft1_mother_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=familyleft1::Family_strategy)
-@settings(max_examples=50)
-def test_familyleft1::family_instantiation(instance):
-    assert isinstance(instance, familyleft1::Family)
-
-@given(instance=familyleft1::Family_strategy)
-def test_familyleft1::family_location_type(instance):
-    assert isinstance(instance.location, str)
 
 
-@given(instance=familyleft1::Family_strategy)
-def test_familyleft1::family_location_setter(instance):
-    original = instance.location
-    instance.location = original
-    assert instance.location == original
-
-@given(instance=familyleft1::Family_strategy)
-def test_familyleft1::family_surname_type(instance):
-    assert isinstance(instance.surname, str)
-
-
-@given(instance=familyleft1::Family_strategy)
-def test_familyleft1::family_surname_setter(instance):
-    original = instance.surname
-    instance.surname = original
-    assert instance.surname == original
-
-@given(instance=familyleft1::Father_strategy)
-@settings(max_examples=50)
-def test_familyleft1::father_instantiation(instance):
-    assert isinstance(instance, familyleft1::Father)
-
-@given(instance=familyleft1::Father_strategy)
-def test_familyleft1::father_age_type(instance):
-    assert isinstance(instance.age, int)
-
-
-@given(instance=familyleft1::Father_strategy)
-def test_familyleft1::father_age_setter(instance):
+@given(instance=familyleft1_Mother_strategy)
+def test_familyleft1_mother_age_setter(instance):
     original = instance.age
     instance.age = original
     assert instance.age == original
 
-@given(instance=familyleft1::Father_strategy)
-def test_familyleft1::father_name_type(instance):
-    assert isinstance(instance.name, str)
+@given(instance=familyleft1_Family_strategy)
+@settings(max_examples=50)
+def test_familyleft1_family_instantiation(instance):
+    assert isinstance(instance, familyleft1_Family)
 
 
-@given(instance=familyleft1::Father_strategy)
-def test_familyleft1::father_name_setter(instance):
+
+@given(instance=familyleft1_Family_strategy)
+def test_familyleft1_family_location_setter(instance):
+    original = instance.location
+    instance.location = original
+    assert instance.location == original
+
+
+
+@given(instance=familyleft1_Family_strategy)
+def test_familyleft1_family_surname_setter(instance):
+    original = instance.surname
+    instance.surname = original
+    assert instance.surname == original
+
+@given(instance=familyleft1_Father_strategy)
+@settings(max_examples=50)
+def test_familyleft1_father_instantiation(instance):
+    assert isinstance(instance, familyleft1_Father)
+
+
+
+@given(instance=familyleft1_Father_strategy)
+def test_familyleft1_father_age_setter(instance):
+    original = instance.age
+    instance.age = original
+    assert instance.age == original
+
+
+
+@given(instance=familyleft1_Father_strategy)
+def test_familyleft1_father_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original

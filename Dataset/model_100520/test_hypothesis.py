@@ -3,28 +3,28 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     Statement,
-    textualusecase::LoopStatement,
-    textualusecase::ConditionalStatement,
+    textualusecase_LoopStatement,
+    textualusecase_ConditionalStatement,
     Step,
     Agent,
-    textualusecase::Statement,
-    textualusecase::FlowOfEvents,
-    textualusecase::Action,
-    textualusecase::Agent,
+    textualusecase_Statement,
+    textualusecase_FlowOfEvents,
+    textualusecase_Action,
+    textualusecase_Agent,
     FlowOfEvents,
-    textualusecase::Include,
-    textualusecase::Condition,
-    textualusecase::Step,
-    textualusecase::AlternativeFlow,
-    textualusecase::Subject,
-    textualusecase::Actor,
-    textualusecase::UseCase,
-    textualusecase::BasicFlow,
-    textualusecase::UseCaseModel,
+    textualusecase_Include,
+    textualusecase_Condition,
+    textualusecase_Step,
+    textualusecase_AlternativeFlow,
+    textualusecase_Subject,
+    textualusecase_Actor,
+    textualusecase_UseCase,
+    textualusecase_BasicFlow,
+    textualusecase_UseCaseModel,
 )
 
 # =============================================================================
@@ -47,30 +47,30 @@ def test_statement_constructor_args():
 
 
 
-def test_textualusecase::loopstatement_is_not_abstract():
-    assert not inspect.isabstract(textualusecase::LoopStatement)
+def test_textualusecase_loopstatement_is_not_abstract():
+    assert not inspect.isabstract(textualusecase_LoopStatement)
 
 
-def test_textualusecase::loopstatement_constructor_exists():
-    assert callable(textualusecase::LoopStatement.__init__)
+def test_textualusecase_loopstatement_constructor_exists():
+    assert callable(textualusecase_LoopStatement.__init__)
 
 
-def test_textualusecase::loopstatement_constructor_args():
-    sig = inspect.signature(textualusecase::LoopStatement.__init__)
+def test_textualusecase_loopstatement_constructor_args():
+    sig = inspect.signature(textualusecase_LoopStatement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_textualusecase::conditionalstatement_is_not_abstract():
-    assert not inspect.isabstract(textualusecase::ConditionalStatement)
+def test_textualusecase_conditionalstatement_is_not_abstract():
+    assert not inspect.isabstract(textualusecase_ConditionalStatement)
 
 
-def test_textualusecase::conditionalstatement_constructor_exists():
-    assert callable(textualusecase::ConditionalStatement.__init__)
+def test_textualusecase_conditionalstatement_constructor_exists():
+    assert callable(textualusecase_ConditionalStatement.__init__)
 
 
-def test_textualusecase::conditionalstatement_constructor_args():
-    sig = inspect.signature(textualusecase::ConditionalStatement.__init__)
+def test_textualusecase_conditionalstatement_constructor_args():
+    sig = inspect.signature(textualusecase_ConditionalStatement.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -103,37 +103,37 @@ def test_agent_constructor_args():
 
 
 
-def test_textualusecase::statement_is_not_abstract():
-    assert not inspect.isabstract(textualusecase::Statement)
+def test_textualusecase_statement_is_not_abstract():
+    assert not inspect.isabstract(textualusecase_Statement)
 
 
-def test_textualusecase::statement_constructor_exists():
-    assert callable(textualusecase::Statement.__init__)
+def test_textualusecase_statement_constructor_exists():
+    assert callable(textualusecase_Statement.__init__)
 
 
-def test_textualusecase::statement_constructor_args():
-    sig = inspect.signature(textualusecase::Statement.__init__)
+def test_textualusecase_statement_constructor_args():
+    sig = inspect.signature(textualusecase_Statement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_textualusecase::flowofevents_is_not_abstract():
-    assert not inspect.isabstract(textualusecase::FlowOfEvents)
+def test_textualusecase_flowofevents_is_not_abstract():
+    assert not inspect.isabstract(textualusecase_FlowOfEvents)
 
 
-def test_textualusecase::flowofevents_constructor_exists():
-    assert callable(textualusecase::FlowOfEvents.__init__)
+def test_textualusecase_flowofevents_constructor_exists():
+    assert callable(textualusecase_FlowOfEvents.__init__)
 
 
-def test_textualusecase::flowofevents_constructor_args():
-    sig = inspect.signature(textualusecase::FlowOfEvents.__init__)
+def test_textualusecase_flowofevents_constructor_args():
+    sig = inspect.signature(textualusecase_FlowOfEvents.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_textualusecase::flowofevents_has_name():
-    assert hasattr(textualusecase::FlowOfEvents, "name")
+def test_textualusecase_flowofevents_has_name():
+    assert hasattr(textualusecase_FlowOfEvents, "name")
     descriptor = None
-    for klass in textualusecase::FlowOfEvents.__mro__:
+    for klass in textualusecase_FlowOfEvents.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -141,23 +141,23 @@ def test_textualusecase::flowofevents_has_name():
 
 
 
-def test_textualusecase::action_is_not_abstract():
-    assert not inspect.isabstract(textualusecase::Action)
+def test_textualusecase_action_is_not_abstract():
+    assert not inspect.isabstract(textualusecase_Action)
 
 
-def test_textualusecase::action_constructor_exists():
-    assert callable(textualusecase::Action.__init__)
+def test_textualusecase_action_constructor_exists():
+    assert callable(textualusecase_Action.__init__)
 
 
-def test_textualusecase::action_constructor_args():
-    sig = inspect.signature(textualusecase::Action.__init__)
+def test_textualusecase_action_constructor_args():
+    sig = inspect.signature(textualusecase_Action.__init__)
     params = list(sig.parameters.keys())
     assert "description" in params, "Missing parameter 'description'"
 
-def test_textualusecase::action_has_description():
-    assert hasattr(textualusecase::Action, "description")
+def test_textualusecase_action_has_description():
+    assert hasattr(textualusecase_Action, "description")
     descriptor = None
-    for klass in textualusecase::Action.__mro__:
+    for klass in textualusecase_Action.__mro__:
         if "description" in klass.__dict__:
             descriptor = klass.__dict__["description"]
             break
@@ -165,23 +165,23 @@ def test_textualusecase::action_has_description():
 
 
 
-def test_textualusecase::agent_is_not_abstract():
-    assert not inspect.isabstract(textualusecase::Agent)
+def test_textualusecase_agent_is_not_abstract():
+    assert not inspect.isabstract(textualusecase_Agent)
 
 
-def test_textualusecase::agent_constructor_exists():
-    assert callable(textualusecase::Agent.__init__)
+def test_textualusecase_agent_constructor_exists():
+    assert callable(textualusecase_Agent.__init__)
 
 
-def test_textualusecase::agent_constructor_args():
-    sig = inspect.signature(textualusecase::Agent.__init__)
+def test_textualusecase_agent_constructor_args():
+    sig = inspect.signature(textualusecase_Agent.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_textualusecase::agent_has_name():
-    assert hasattr(textualusecase::Agent, "name")
+def test_textualusecase_agent_has_name():
+    assert hasattr(textualusecase_Agent, "name")
     descriptor = None
-    for klass in textualusecase::Agent.__mro__:
+    for klass in textualusecase_Agent.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -203,37 +203,37 @@ def test_flowofevents_constructor_args():
 
 
 
-def test_textualusecase::include_is_not_abstract():
-    assert not inspect.isabstract(textualusecase::Include)
+def test_textualusecase_include_is_not_abstract():
+    assert not inspect.isabstract(textualusecase_Include)
 
 
-def test_textualusecase::include_constructor_exists():
-    assert callable(textualusecase::Include.__init__)
+def test_textualusecase_include_constructor_exists():
+    assert callable(textualusecase_Include.__init__)
 
 
-def test_textualusecase::include_constructor_args():
-    sig = inspect.signature(textualusecase::Include.__init__)
+def test_textualusecase_include_constructor_args():
+    sig = inspect.signature(textualusecase_Include.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_textualusecase::condition_is_not_abstract():
-    assert not inspect.isabstract(textualusecase::Condition)
+def test_textualusecase_condition_is_not_abstract():
+    assert not inspect.isabstract(textualusecase_Condition)
 
 
-def test_textualusecase::condition_constructor_exists():
-    assert callable(textualusecase::Condition.__init__)
+def test_textualusecase_condition_constructor_exists():
+    assert callable(textualusecase_Condition.__init__)
 
 
-def test_textualusecase::condition_constructor_args():
-    sig = inspect.signature(textualusecase::Condition.__init__)
+def test_textualusecase_condition_constructor_args():
+    sig = inspect.signature(textualusecase_Condition.__init__)
     params = list(sig.parameters.keys())
     assert "expression" in params, "Missing parameter 'expression'"
 
-def test_textualusecase::condition_has_expression():
-    assert hasattr(textualusecase::Condition, "expression")
+def test_textualusecase_condition_has_expression():
+    assert hasattr(textualusecase_Condition, "expression")
     descriptor = None
-    for klass in textualusecase::Condition.__mro__:
+    for klass in textualusecase_Condition.__mro__:
         if "expression" in klass.__dict__:
             descriptor = klass.__dict__["expression"]
             break
@@ -241,23 +241,23 @@ def test_textualusecase::condition_has_expression():
 
 
 
-def test_textualusecase::step_is_not_abstract():
-    assert not inspect.isabstract(textualusecase::Step)
+def test_textualusecase_step_is_not_abstract():
+    assert not inspect.isabstract(textualusecase_Step)
 
 
-def test_textualusecase::step_constructor_exists():
-    assert callable(textualusecase::Step.__init__)
+def test_textualusecase_step_constructor_exists():
+    assert callable(textualusecase_Step.__init__)
 
 
-def test_textualusecase::step_constructor_args():
-    sig = inspect.signature(textualusecase::Step.__init__)
+def test_textualusecase_step_constructor_args():
+    sig = inspect.signature(textualusecase_Step.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_textualusecase::step_has_name():
-    assert hasattr(textualusecase::Step, "name")
+def test_textualusecase_step_has_name():
+    assert hasattr(textualusecase_Step, "name")
     descriptor = None
-    for klass in textualusecase::Step.__mro__:
+    for klass in textualusecase_Step.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -265,75 +265,75 @@ def test_textualusecase::step_has_name():
 
 
 
-def test_textualusecase::alternativeflow_is_not_abstract():
-    assert not inspect.isabstract(textualusecase::AlternativeFlow)
+def test_textualusecase_alternativeflow_is_not_abstract():
+    assert not inspect.isabstract(textualusecase_AlternativeFlow)
 
 
-def test_textualusecase::alternativeflow_constructor_exists():
-    assert callable(textualusecase::AlternativeFlow.__init__)
+def test_textualusecase_alternativeflow_constructor_exists():
+    assert callable(textualusecase_AlternativeFlow.__init__)
 
 
-def test_textualusecase::alternativeflow_constructor_args():
-    sig = inspect.signature(textualusecase::AlternativeFlow.__init__)
+def test_textualusecase_alternativeflow_constructor_args():
+    sig = inspect.signature(textualusecase_AlternativeFlow.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_textualusecase::subject_is_not_abstract():
-    assert not inspect.isabstract(textualusecase::Subject)
+def test_textualusecase_subject_is_not_abstract():
+    assert not inspect.isabstract(textualusecase_Subject)
 
 
-def test_textualusecase::subject_constructor_exists():
-    assert callable(textualusecase::Subject.__init__)
+def test_textualusecase_subject_constructor_exists():
+    assert callable(textualusecase_Subject.__init__)
 
 
-def test_textualusecase::subject_constructor_args():
-    sig = inspect.signature(textualusecase::Subject.__init__)
+def test_textualusecase_subject_constructor_args():
+    sig = inspect.signature(textualusecase_Subject.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_textualusecase::actor_is_not_abstract():
-    assert not inspect.isabstract(textualusecase::Actor)
+def test_textualusecase_actor_is_not_abstract():
+    assert not inspect.isabstract(textualusecase_Actor)
 
 
-def test_textualusecase::actor_constructor_exists():
-    assert callable(textualusecase::Actor.__init__)
+def test_textualusecase_actor_constructor_exists():
+    assert callable(textualusecase_Actor.__init__)
 
 
-def test_textualusecase::actor_constructor_args():
-    sig = inspect.signature(textualusecase::Actor.__init__)
+def test_textualusecase_actor_constructor_args():
+    sig = inspect.signature(textualusecase_Actor.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_textualusecase::usecase_is_not_abstract():
-    assert not inspect.isabstract(textualusecase::UseCase)
+def test_textualusecase_usecase_is_not_abstract():
+    assert not inspect.isabstract(textualusecase_UseCase)
 
 
-def test_textualusecase::usecase_constructor_exists():
-    assert callable(textualusecase::UseCase.__init__)
+def test_textualusecase_usecase_constructor_exists():
+    assert callable(textualusecase_UseCase.__init__)
 
 
-def test_textualusecase::usecase_constructor_args():
-    sig = inspect.signature(textualusecase::UseCase.__init__)
+def test_textualusecase_usecase_constructor_args():
+    sig = inspect.signature(textualusecase_UseCase.__init__)
     params = list(sig.parameters.keys())
     assert "description" in params, "Missing parameter 'description'"
     assert "name" in params, "Missing parameter 'name'"
 
-def test_textualusecase::usecase_has_description():
-    assert hasattr(textualusecase::UseCase, "description")
+def test_textualusecase_usecase_has_description():
+    assert hasattr(textualusecase_UseCase, "description")
     descriptor = None
-    for klass in textualusecase::UseCase.__mro__:
+    for klass in textualusecase_UseCase.__mro__:
         if "description" in klass.__dict__:
             descriptor = klass.__dict__["description"]
             break
     assert isinstance(descriptor, property)
 
-def test_textualusecase::usecase_has_name():
-    assert hasattr(textualusecase::UseCase, "name")
+def test_textualusecase_usecase_has_name():
+    assert hasattr(textualusecase_UseCase, "name")
     descriptor = None
-    for klass in textualusecase::UseCase.__mro__:
+    for klass in textualusecase_UseCase.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -341,30 +341,30 @@ def test_textualusecase::usecase_has_name():
 
 
 
-def test_textualusecase::basicflow_is_not_abstract():
-    assert not inspect.isabstract(textualusecase::BasicFlow)
+def test_textualusecase_basicflow_is_not_abstract():
+    assert not inspect.isabstract(textualusecase_BasicFlow)
 
 
-def test_textualusecase::basicflow_constructor_exists():
-    assert callable(textualusecase::BasicFlow.__init__)
+def test_textualusecase_basicflow_constructor_exists():
+    assert callable(textualusecase_BasicFlow.__init__)
 
 
-def test_textualusecase::basicflow_constructor_args():
-    sig = inspect.signature(textualusecase::BasicFlow.__init__)
+def test_textualusecase_basicflow_constructor_args():
+    sig = inspect.signature(textualusecase_BasicFlow.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_textualusecase::usecasemodel_is_not_abstract():
-    assert not inspect.isabstract(textualusecase::UseCaseModel)
+def test_textualusecase_usecasemodel_is_not_abstract():
+    assert not inspect.isabstract(textualusecase_UseCaseModel)
 
 
-def test_textualusecase::usecasemodel_constructor_exists():
-    assert callable(textualusecase::UseCaseModel.__init__)
+def test_textualusecase_usecasemodel_constructor_exists():
+    assert callable(textualusecase_UseCaseModel.__init__)
 
 
-def test_textualusecase::usecasemodel_constructor_args():
-    sig = inspect.signature(textualusecase::UseCaseModel.__init__)
+def test_textualusecase_usecasemodel_constructor_args():
+    sig = inspect.signature(textualusecase_UseCaseModel.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -382,11 +382,11 @@ safe_text = st.text(
 Statement_strategy = st.builds(
     Statement,
 )
-textualusecase::LoopStatement_strategy = st.builds(
-    textualusecase::LoopStatement,
+textualusecase_LoopStatement_strategy = st.builds(
+    textualusecase_LoopStatement,
 )
-textualusecase::ConditionalStatement_strategy = st.builds(
-    textualusecase::ConditionalStatement,
+textualusecase_ConditionalStatement_strategy = st.builds(
+    textualusecase_ConditionalStatement,
 )
 Step_strategy = st.builds(
     Step,
@@ -394,61 +394,61 @@ Step_strategy = st.builds(
 Agent_strategy = st.builds(
     Agent,
 )
-textualusecase::Statement_strategy = st.builds(
-    textualusecase::Statement,
+textualusecase_Statement_strategy = st.builds(
+    textualusecase_Statement,
 )
-textualusecase::FlowOfEvents_strategy = st.builds(
-    textualusecase::FlowOfEvents,
+textualusecase_FlowOfEvents_strategy = st.builds(
+    textualusecase_FlowOfEvents,
     name=
         safe_text
 )
-textualusecase::Action_strategy = st.builds(
-    textualusecase::Action,
+textualusecase_Action_strategy = st.builds(
+    textualusecase_Action,
     description=
         safe_text
 )
-textualusecase::Agent_strategy = st.builds(
-    textualusecase::Agent,
+textualusecase_Agent_strategy = st.builds(
+    textualusecase_Agent,
     name=
         safe_text
 )
 FlowOfEvents_strategy = st.builds(
     FlowOfEvents,
 )
-textualusecase::Include_strategy = st.builds(
-    textualusecase::Include,
+textualusecase_Include_strategy = st.builds(
+    textualusecase_Include,
 )
-textualusecase::Condition_strategy = st.builds(
-    textualusecase::Condition,
+textualusecase_Condition_strategy = st.builds(
+    textualusecase_Condition,
     expression=
         safe_text
 )
-textualusecase::Step_strategy = st.builds(
-    textualusecase::Step,
+textualusecase_Step_strategy = st.builds(
+    textualusecase_Step,
     name=
         safe_text
 )
-textualusecase::AlternativeFlow_strategy = st.builds(
-    textualusecase::AlternativeFlow,
+textualusecase_AlternativeFlow_strategy = st.builds(
+    textualusecase_AlternativeFlow,
 )
-textualusecase::Subject_strategy = st.builds(
-    textualusecase::Subject,
+textualusecase_Subject_strategy = st.builds(
+    textualusecase_Subject,
 )
-textualusecase::Actor_strategy = st.builds(
-    textualusecase::Actor,
+textualusecase_Actor_strategy = st.builds(
+    textualusecase_Actor,
 )
-textualusecase::UseCase_strategy = st.builds(
-    textualusecase::UseCase,
+textualusecase_UseCase_strategy = st.builds(
+    textualusecase_UseCase,
     description=
         safe_text,
     name=
         safe_text
 )
-textualusecase::BasicFlow_strategy = st.builds(
-    textualusecase::BasicFlow,
+textualusecase_BasicFlow_strategy = st.builds(
+    textualusecase_BasicFlow,
 )
-textualusecase::UseCaseModel_strategy = st.builds(
-    textualusecase::UseCaseModel,
+textualusecase_UseCaseModel_strategy = st.builds(
+    textualusecase_UseCaseModel,
 )
 
 @given(instance=Statement_strategy)
@@ -456,15 +456,15 @@ textualusecase::UseCaseModel_strategy = st.builds(
 def test_statement_instantiation(instance):
     assert isinstance(instance, Statement)
 
-@given(instance=textualusecase::LoopStatement_strategy)
+@given(instance=textualusecase_LoopStatement_strategy)
 @settings(max_examples=50)
-def test_textualusecase::loopstatement_instantiation(instance):
-    assert isinstance(instance, textualusecase::LoopStatement)
+def test_textualusecase_loopstatement_instantiation(instance):
+    assert isinstance(instance, textualusecase_LoopStatement)
 
-@given(instance=textualusecase::ConditionalStatement_strategy)
+@given(instance=textualusecase_ConditionalStatement_strategy)
 @settings(max_examples=50)
-def test_textualusecase::conditionalstatement_instantiation(instance):
-    assert isinstance(instance, textualusecase::ConditionalStatement)
+def test_textualusecase_conditionalstatement_instantiation(instance):
+    assert isinstance(instance, textualusecase_ConditionalStatement)
 
 @given(instance=Step_strategy)
 @settings(max_examples=50)
@@ -476,55 +476,46 @@ def test_step_instantiation(instance):
 def test_agent_instantiation(instance):
     assert isinstance(instance, Agent)
 
-@given(instance=textualusecase::Statement_strategy)
+@given(instance=textualusecase_Statement_strategy)
 @settings(max_examples=50)
-def test_textualusecase::statement_instantiation(instance):
-    assert isinstance(instance, textualusecase::Statement)
+def test_textualusecase_statement_instantiation(instance):
+    assert isinstance(instance, textualusecase_Statement)
 
-@given(instance=textualusecase::FlowOfEvents_strategy)
+@given(instance=textualusecase_FlowOfEvents_strategy)
 @settings(max_examples=50)
-def test_textualusecase::flowofevents_instantiation(instance):
-    assert isinstance(instance, textualusecase::FlowOfEvents)
-
-@given(instance=textualusecase::FlowOfEvents_strategy)
-def test_textualusecase::flowofevents_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_textualusecase_flowofevents_instantiation(instance):
+    assert isinstance(instance, textualusecase_FlowOfEvents)
 
 
-@given(instance=textualusecase::FlowOfEvents_strategy)
-def test_textualusecase::flowofevents_name_setter(instance):
+
+@given(instance=textualusecase_FlowOfEvents_strategy)
+def test_textualusecase_flowofevents_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=textualusecase::Action_strategy)
+@given(instance=textualusecase_Action_strategy)
 @settings(max_examples=50)
-def test_textualusecase::action_instantiation(instance):
-    assert isinstance(instance, textualusecase::Action)
-
-@given(instance=textualusecase::Action_strategy)
-def test_textualusecase::action_description_type(instance):
-    assert isinstance(instance.description, str)
+def test_textualusecase_action_instantiation(instance):
+    assert isinstance(instance, textualusecase_Action)
 
 
-@given(instance=textualusecase::Action_strategy)
-def test_textualusecase::action_description_setter(instance):
+
+@given(instance=textualusecase_Action_strategy)
+def test_textualusecase_action_description_setter(instance):
     original = instance.description
     instance.description = original
     assert instance.description == original
 
-@given(instance=textualusecase::Agent_strategy)
+@given(instance=textualusecase_Agent_strategy)
 @settings(max_examples=50)
-def test_textualusecase::agent_instantiation(instance):
-    assert isinstance(instance, textualusecase::Agent)
-
-@given(instance=textualusecase::Agent_strategy)
-def test_textualusecase::agent_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_textualusecase_agent_instantiation(instance):
+    assert isinstance(instance, textualusecase_Agent)
 
 
-@given(instance=textualusecase::Agent_strategy)
-def test_textualusecase::agent_name_setter(instance):
+
+@given(instance=textualusecase_Agent_strategy)
+def test_textualusecase_agent_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
@@ -534,91 +525,79 @@ def test_textualusecase::agent_name_setter(instance):
 def test_flowofevents_instantiation(instance):
     assert isinstance(instance, FlowOfEvents)
 
-@given(instance=textualusecase::Include_strategy)
+@given(instance=textualusecase_Include_strategy)
 @settings(max_examples=50)
-def test_textualusecase::include_instantiation(instance):
-    assert isinstance(instance, textualusecase::Include)
+def test_textualusecase_include_instantiation(instance):
+    assert isinstance(instance, textualusecase_Include)
 
-@given(instance=textualusecase::Condition_strategy)
+@given(instance=textualusecase_Condition_strategy)
 @settings(max_examples=50)
-def test_textualusecase::condition_instantiation(instance):
-    assert isinstance(instance, textualusecase::Condition)
-
-@given(instance=textualusecase::Condition_strategy)
-def test_textualusecase::condition_expression_type(instance):
-    assert isinstance(instance.expression, str)
+def test_textualusecase_condition_instantiation(instance):
+    assert isinstance(instance, textualusecase_Condition)
 
 
-@given(instance=textualusecase::Condition_strategy)
-def test_textualusecase::condition_expression_setter(instance):
+
+@given(instance=textualusecase_Condition_strategy)
+def test_textualusecase_condition_expression_setter(instance):
     original = instance.expression
     instance.expression = original
     assert instance.expression == original
 
-@given(instance=textualusecase::Step_strategy)
+@given(instance=textualusecase_Step_strategy)
 @settings(max_examples=50)
-def test_textualusecase::step_instantiation(instance):
-    assert isinstance(instance, textualusecase::Step)
-
-@given(instance=textualusecase::Step_strategy)
-def test_textualusecase::step_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_textualusecase_step_instantiation(instance):
+    assert isinstance(instance, textualusecase_Step)
 
 
-@given(instance=textualusecase::Step_strategy)
-def test_textualusecase::step_name_setter(instance):
+
+@given(instance=textualusecase_Step_strategy)
+def test_textualusecase_step_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=textualusecase::AlternativeFlow_strategy)
+@given(instance=textualusecase_AlternativeFlow_strategy)
 @settings(max_examples=50)
-def test_textualusecase::alternativeflow_instantiation(instance):
-    assert isinstance(instance, textualusecase::AlternativeFlow)
+def test_textualusecase_alternativeflow_instantiation(instance):
+    assert isinstance(instance, textualusecase_AlternativeFlow)
 
-@given(instance=textualusecase::Subject_strategy)
+@given(instance=textualusecase_Subject_strategy)
 @settings(max_examples=50)
-def test_textualusecase::subject_instantiation(instance):
-    assert isinstance(instance, textualusecase::Subject)
+def test_textualusecase_subject_instantiation(instance):
+    assert isinstance(instance, textualusecase_Subject)
 
-@given(instance=textualusecase::Actor_strategy)
+@given(instance=textualusecase_Actor_strategy)
 @settings(max_examples=50)
-def test_textualusecase::actor_instantiation(instance):
-    assert isinstance(instance, textualusecase::Actor)
+def test_textualusecase_actor_instantiation(instance):
+    assert isinstance(instance, textualusecase_Actor)
 
-@given(instance=textualusecase::UseCase_strategy)
+@given(instance=textualusecase_UseCase_strategy)
 @settings(max_examples=50)
-def test_textualusecase::usecase_instantiation(instance):
-    assert isinstance(instance, textualusecase::UseCase)
-
-@given(instance=textualusecase::UseCase_strategy)
-def test_textualusecase::usecase_description_type(instance):
-    assert isinstance(instance.description, str)
+def test_textualusecase_usecase_instantiation(instance):
+    assert isinstance(instance, textualusecase_UseCase)
 
 
-@given(instance=textualusecase::UseCase_strategy)
-def test_textualusecase::usecase_description_setter(instance):
+
+@given(instance=textualusecase_UseCase_strategy)
+def test_textualusecase_usecase_description_setter(instance):
     original = instance.description
     instance.description = original
     assert instance.description == original
 
-@given(instance=textualusecase::UseCase_strategy)
-def test_textualusecase::usecase_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
-@given(instance=textualusecase::UseCase_strategy)
-def test_textualusecase::usecase_name_setter(instance):
+@given(instance=textualusecase_UseCase_strategy)
+def test_textualusecase_usecase_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=textualusecase::BasicFlow_strategy)
+@given(instance=textualusecase_BasicFlow_strategy)
 @settings(max_examples=50)
-def test_textualusecase::basicflow_instantiation(instance):
-    assert isinstance(instance, textualusecase::BasicFlow)
+def test_textualusecase_basicflow_instantiation(instance):
+    assert isinstance(instance, textualusecase_BasicFlow)
 
-@given(instance=textualusecase::UseCaseModel_strategy)
+@given(instance=textualusecase_UseCaseModel_strategy)
 @settings(max_examples=50)
-def test_textualusecase::usecasemodel_instantiation(instance):
-    assert isinstance(instance, textualusecase::UseCaseModel)
+def test_textualusecase_usecasemodel_instantiation(instance):
+    assert isinstance(instance, textualusecase_UseCaseModel)

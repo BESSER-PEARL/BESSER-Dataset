@@ -3,56 +3,56 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    rdbms::RdbmsOperationMeta,
-    rdbms::RdbmsViewRecordValue,
+from python_code import (
+    rdbms_RdbmsOperationMeta,
+    rdbms_RdbmsViewRecordValue,
     RdbmsFieldOperation,
-    rdbms::RdbmsDeleteFieldOperation,
-    rdbms::RdbmsModifyFieldOperation,
-    rdbms::RdbmsCreateFieldOperation,
+    rdbms_RdbmsDeleteFieldOperation,
+    rdbms_RdbmsModifyFieldOperation,
+    rdbms_RdbmsCreateFieldOperation,
     RdbmsTableOperation,
-    rdbms::RdbmsDeleteTableOperation,
-    rdbms::RdbmsCreateTableOperation,
+    rdbms_RdbmsDeleteTableOperation,
+    rdbms_RdbmsCreateTableOperation,
     RdbmsExpression,
-    rdbms::RdbmsRelationExpression,
-    rdbms::RdbmsLabelExpression,
-    rdbms::RdbmsFeature,
-    rdbms::RdbmsViewRecord,
-    rdbms::RdbmsConfiguration,
-    rdbms::RdbmsModel,
-    rdbms::RdbmsModifyTableOperation,
+    rdbms_RdbmsRelationExpression,
+    rdbms_RdbmsLabelExpression,
+    rdbms_RdbmsFeature,
+    rdbms_RdbmsViewRecord,
+    rdbms_RdbmsConfiguration,
+    rdbms_RdbmsModel,
+    rdbms_RdbmsModifyTableOperation,
     RdbmsViewTableField,
-    rdbms::RdbmsViewForeignIdentifierField,
-    rdbms::RdbmsViewAliasField,
+    rdbms_RdbmsViewAliasField,
+    rdbms_RdbmsViewForeignIdentifierField,
     RdbmsViewField,
-    rdbms::RdbmsViewTableField,
-    rdbms::RdbmsViewExpressionField,
+    rdbms_RdbmsViewTableField,
+    rdbms_RdbmsViewExpressionField,
     RdbmsViewAliasField,
-    rdbms::RdbmsViewValueField,
-    rdbms::RdbmsViewIdentifierField,
-    rdbms::RdbmsViewRelation,
+    rdbms_RdbmsViewValueField,
+    rdbms_RdbmsViewIdentifierField,
+    rdbms_RdbmsViewRelation,
     RdbmsField,
-    rdbms::RdbmsValueField,
+    rdbms_RdbmsValueField,
     RdbmsTable,
     RdbmsIdentifierField,
-    rdbms::RdbmsForeignKey,
-    rdbms::RdbmsFieldType,
-    rdbms::RdbmsIdentifierField,
-    rdbms::RdbmsJunctionTable,
-    rdbms::RdbmsElement,
+    rdbms_RdbmsForeignKey,
+    rdbms_RdbmsFieldType,
+    rdbms_RdbmsIdentifierField,
+    rdbms_RdbmsJunctionTable,
+    rdbms_RdbmsElement,
     RdbmsElement,
-    rdbms::RdbmsField,
-    rdbms::RdbmsIndex,
-    rdbms::RdbmsViewField,
-    rdbms::RdbmsUniqueConstraint,
-    rdbms::RdbmsFieldOperation,
-    rdbms::RdbmsTableAlias,
-    rdbms::RdbmsTableOperation,
-    rdbms::RdbmsExpression,
-    rdbms::RdbmsView,
-    rdbms::RdbmsTable,
+    rdbms_RdbmsTable,
+    rdbms_RdbmsUniqueConstraint,
+    rdbms_RdbmsExpression,
+    rdbms_RdbmsField,
+    rdbms_RdbmsTableAlias,
+    rdbms_RdbmsFieldOperation,
+    rdbms_RdbmsView,
+    rdbms_RdbmsTableOperation,
+    rdbms_RdbmsIndex,
+    rdbms_RdbmsViewField,
 )
 
 # =============================================================================
@@ -61,37 +61,37 @@ from classes import (
 
 
 
-def test_rdbms::rdbmsoperationmeta_is_not_abstract():
-    assert not inspect.isabstract(rdbms::RdbmsOperationMeta)
+def test_rdbms_rdbmsoperationmeta_is_not_abstract():
+    assert not inspect.isabstract(rdbms_RdbmsOperationMeta)
 
 
-def test_rdbms::rdbmsoperationmeta_constructor_exists():
-    assert callable(rdbms::RdbmsOperationMeta.__init__)
+def test_rdbms_rdbmsoperationmeta_constructor_exists():
+    assert callable(rdbms_RdbmsOperationMeta.__init__)
 
 
-def test_rdbms::rdbmsoperationmeta_constructor_args():
-    sig = inspect.signature(rdbms::RdbmsOperationMeta.__init__)
+def test_rdbms_rdbmsoperationmeta_constructor_args():
+    sig = inspect.signature(rdbms_RdbmsOperationMeta.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_rdbms::rdbmsviewrecordvalue_is_not_abstract():
-    assert not inspect.isabstract(rdbms::RdbmsViewRecordValue)
+def test_rdbms_rdbmsviewrecordvalue_is_not_abstract():
+    assert not inspect.isabstract(rdbms_RdbmsViewRecordValue)
 
 
-def test_rdbms::rdbmsviewrecordvalue_constructor_exists():
-    assert callable(rdbms::RdbmsViewRecordValue.__init__)
+def test_rdbms_rdbmsviewrecordvalue_constructor_exists():
+    assert callable(rdbms_RdbmsViewRecordValue.__init__)
 
 
-def test_rdbms::rdbmsviewrecordvalue_constructor_args():
-    sig = inspect.signature(rdbms::RdbmsViewRecordValue.__init__)
+def test_rdbms_rdbmsviewrecordvalue_constructor_args():
+    sig = inspect.signature(rdbms_RdbmsViewRecordValue.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
 
-def test_rdbms::rdbmsviewrecordvalue_has_value():
-    assert hasattr(rdbms::RdbmsViewRecordValue, "value")
+def test_rdbms_rdbmsviewrecordvalue_has_value():
+    assert hasattr(rdbms_RdbmsViewRecordValue, "value")
     descriptor = None
-    for klass in rdbms::RdbmsViewRecordValue.__mro__:
+    for klass in rdbms_RdbmsViewRecordValue.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -113,104 +113,104 @@ def test_rdbmsfieldoperation_constructor_args():
 
 
 
-def test_rdbms::rdbmsdeletefieldoperation_is_not_abstract():
-    assert not inspect.isabstract(rdbms::RdbmsDeleteFieldOperation)
+def test_rdbms_rdbmsdeletefieldoperation_is_not_abstract():
+    assert not inspect.isabstract(rdbms_RdbmsDeleteFieldOperation)
 
 
-def test_rdbms::rdbmsdeletefieldoperation_constructor_exists():
-    assert callable(rdbms::RdbmsDeleteFieldOperation.__init__)
+def test_rdbms_rdbmsdeletefieldoperation_constructor_exists():
+    assert callable(rdbms_RdbmsDeleteFieldOperation.__init__)
 
 
-def test_rdbms::rdbmsdeletefieldoperation_constructor_args():
-    sig = inspect.signature(rdbms::RdbmsDeleteFieldOperation.__init__)
+def test_rdbms_rdbmsdeletefieldoperation_constructor_args():
+    sig = inspect.signature(rdbms_RdbmsDeleteFieldOperation.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_rdbms::rdbmsmodifyfieldoperation_is_not_abstract():
-    assert not inspect.isabstract(rdbms::RdbmsModifyFieldOperation)
+def test_rdbms_rdbmsmodifyfieldoperation_is_not_abstract():
+    assert not inspect.isabstract(rdbms_RdbmsModifyFieldOperation)
 
 
-def test_rdbms::rdbmsmodifyfieldoperation_constructor_exists():
-    assert callable(rdbms::RdbmsModifyFieldOperation.__init__)
+def test_rdbms_rdbmsmodifyfieldoperation_constructor_exists():
+    assert callable(rdbms_RdbmsModifyFieldOperation.__init__)
 
 
-def test_rdbms::rdbmsmodifyfieldoperation_constructor_args():
-    sig = inspect.signature(rdbms::RdbmsModifyFieldOperation.__init__)
+def test_rdbms_rdbmsmodifyfieldoperation_constructor_args():
+    sig = inspect.signature(rdbms_RdbmsModifyFieldOperation.__init__)
     params = list(sig.parameters.keys())
+    assert "changedForeignKeyToValueField" in params, "Missing parameter 'changedForeignKeyToValueField'"
     assert "nameChanged" in params, "Missing parameter 'nameChanged'"
+    assert "sizeChanged" in params, "Missing parameter 'sizeChanged'"
+    assert "changedValueFieldToForeignKey" in params, "Missing parameter 'changedValueFieldToForeignKey'"
     assert "mandatoryChanged" in params, "Missing parameter 'mandatoryChanged'"
     assert "typeChanged" in params, "Missing parameter 'typeChanged'"
-    assert "changedValueFieldToForeignKey" in params, "Missing parameter 'changedValueFieldToForeignKey'"
-    assert "sizeChanged" in params, "Missing parameter 'sizeChanged'"
-    assert "changedForeignKeyToValueField" in params, "Missing parameter 'changedForeignKeyToValueField'"
 
-def test_rdbms::rdbmsmodifyfieldoperation_has_nameChanged():
-    assert hasattr(rdbms::RdbmsModifyFieldOperation, "nameChanged")
+def test_rdbms_rdbmsmodifyfieldoperation_has_changedForeignKeyToValueField():
+    assert hasattr(rdbms_RdbmsModifyFieldOperation, "changedForeignKeyToValueField")
     descriptor = None
-    for klass in rdbms::RdbmsModifyFieldOperation.__mro__:
-        if "nameChanged" in klass.__dict__:
-            descriptor = klass.__dict__["nameChanged"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_rdbms::rdbmsmodifyfieldoperation_has_mandatoryChanged():
-    assert hasattr(rdbms::RdbmsModifyFieldOperation, "mandatoryChanged")
-    descriptor = None
-    for klass in rdbms::RdbmsModifyFieldOperation.__mro__:
-        if "mandatoryChanged" in klass.__dict__:
-            descriptor = klass.__dict__["mandatoryChanged"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_rdbms::rdbmsmodifyfieldoperation_has_typeChanged():
-    assert hasattr(rdbms::RdbmsModifyFieldOperation, "typeChanged")
-    descriptor = None
-    for klass in rdbms::RdbmsModifyFieldOperation.__mro__:
-        if "typeChanged" in klass.__dict__:
-            descriptor = klass.__dict__["typeChanged"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_rdbms::rdbmsmodifyfieldoperation_has_changedValueFieldToForeignKey():
-    assert hasattr(rdbms::RdbmsModifyFieldOperation, "changedValueFieldToForeignKey")
-    descriptor = None
-    for klass in rdbms::RdbmsModifyFieldOperation.__mro__:
-        if "changedValueFieldToForeignKey" in klass.__dict__:
-            descriptor = klass.__dict__["changedValueFieldToForeignKey"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_rdbms::rdbmsmodifyfieldoperation_has_sizeChanged():
-    assert hasattr(rdbms::RdbmsModifyFieldOperation, "sizeChanged")
-    descriptor = None
-    for klass in rdbms::RdbmsModifyFieldOperation.__mro__:
-        if "sizeChanged" in klass.__dict__:
-            descriptor = klass.__dict__["sizeChanged"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_rdbms::rdbmsmodifyfieldoperation_has_changedForeignKeyToValueField():
-    assert hasattr(rdbms::RdbmsModifyFieldOperation, "changedForeignKeyToValueField")
-    descriptor = None
-    for klass in rdbms::RdbmsModifyFieldOperation.__mro__:
+    for klass in rdbms_RdbmsModifyFieldOperation.__mro__:
         if "changedForeignKeyToValueField" in klass.__dict__:
             descriptor = klass.__dict__["changedForeignKeyToValueField"]
             break
     assert isinstance(descriptor, property)
 
+def test_rdbms_rdbmsmodifyfieldoperation_has_nameChanged():
+    assert hasattr(rdbms_RdbmsModifyFieldOperation, "nameChanged")
+    descriptor = None
+    for klass in rdbms_RdbmsModifyFieldOperation.__mro__:
+        if "nameChanged" in klass.__dict__:
+            descriptor = klass.__dict__["nameChanged"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_rdbms_rdbmsmodifyfieldoperation_has_sizeChanged():
+    assert hasattr(rdbms_RdbmsModifyFieldOperation, "sizeChanged")
+    descriptor = None
+    for klass in rdbms_RdbmsModifyFieldOperation.__mro__:
+        if "sizeChanged" in klass.__dict__:
+            descriptor = klass.__dict__["sizeChanged"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_rdbms_rdbmsmodifyfieldoperation_has_changedValueFieldToForeignKey():
+    assert hasattr(rdbms_RdbmsModifyFieldOperation, "changedValueFieldToForeignKey")
+    descriptor = None
+    for klass in rdbms_RdbmsModifyFieldOperation.__mro__:
+        if "changedValueFieldToForeignKey" in klass.__dict__:
+            descriptor = klass.__dict__["changedValueFieldToForeignKey"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_rdbms_rdbmsmodifyfieldoperation_has_mandatoryChanged():
+    assert hasattr(rdbms_RdbmsModifyFieldOperation, "mandatoryChanged")
+    descriptor = None
+    for klass in rdbms_RdbmsModifyFieldOperation.__mro__:
+        if "mandatoryChanged" in klass.__dict__:
+            descriptor = klass.__dict__["mandatoryChanged"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_rdbms_rdbmsmodifyfieldoperation_has_typeChanged():
+    assert hasattr(rdbms_RdbmsModifyFieldOperation, "typeChanged")
+    descriptor = None
+    for klass in rdbms_RdbmsModifyFieldOperation.__mro__:
+        if "typeChanged" in klass.__dict__:
+            descriptor = klass.__dict__["typeChanged"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_rdbms::rdbmscreatefieldoperation_is_not_abstract():
-    assert not inspect.isabstract(rdbms::RdbmsCreateFieldOperation)
+
+def test_rdbms_rdbmscreatefieldoperation_is_not_abstract():
+    assert not inspect.isabstract(rdbms_RdbmsCreateFieldOperation)
 
 
-def test_rdbms::rdbmscreatefieldoperation_constructor_exists():
-    assert callable(rdbms::RdbmsCreateFieldOperation.__init__)
+def test_rdbms_rdbmscreatefieldoperation_constructor_exists():
+    assert callable(rdbms_RdbmsCreateFieldOperation.__init__)
 
 
-def test_rdbms::rdbmscreatefieldoperation_constructor_args():
-    sig = inspect.signature(rdbms::RdbmsCreateFieldOperation.__init__)
+def test_rdbms_rdbmscreatefieldoperation_constructor_args():
+    sig = inspect.signature(rdbms_RdbmsCreateFieldOperation.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -229,30 +229,30 @@ def test_rdbmstableoperation_constructor_args():
 
 
 
-def test_rdbms::rdbmsdeletetableoperation_is_not_abstract():
-    assert not inspect.isabstract(rdbms::RdbmsDeleteTableOperation)
+def test_rdbms_rdbmsdeletetableoperation_is_not_abstract():
+    assert not inspect.isabstract(rdbms_RdbmsDeleteTableOperation)
 
 
-def test_rdbms::rdbmsdeletetableoperation_constructor_exists():
-    assert callable(rdbms::RdbmsDeleteTableOperation.__init__)
+def test_rdbms_rdbmsdeletetableoperation_constructor_exists():
+    assert callable(rdbms_RdbmsDeleteTableOperation.__init__)
 
 
-def test_rdbms::rdbmsdeletetableoperation_constructor_args():
-    sig = inspect.signature(rdbms::RdbmsDeleteTableOperation.__init__)
+def test_rdbms_rdbmsdeletetableoperation_constructor_args():
+    sig = inspect.signature(rdbms_RdbmsDeleteTableOperation.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_rdbms::rdbmscreatetableoperation_is_not_abstract():
-    assert not inspect.isabstract(rdbms::RdbmsCreateTableOperation)
+def test_rdbms_rdbmscreatetableoperation_is_not_abstract():
+    assert not inspect.isabstract(rdbms_RdbmsCreateTableOperation)
 
 
-def test_rdbms::rdbmscreatetableoperation_constructor_exists():
-    assert callable(rdbms::RdbmsCreateTableOperation.__init__)
+def test_rdbms_rdbmscreatetableoperation_constructor_exists():
+    assert callable(rdbms_RdbmsCreateTableOperation.__init__)
 
 
-def test_rdbms::rdbmscreatetableoperation_constructor_args():
-    sig = inspect.signature(rdbms::RdbmsCreateTableOperation.__init__)
+def test_rdbms_rdbmscreatetableoperation_constructor_args():
+    sig = inspect.signature(rdbms_RdbmsCreateTableOperation.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -271,37 +271,37 @@ def test_rdbmsexpression_constructor_args():
 
 
 
-def test_rdbms::rdbmsrelationexpression_is_not_abstract():
-    assert not inspect.isabstract(rdbms::RdbmsRelationExpression)
+def test_rdbms_rdbmsrelationexpression_is_not_abstract():
+    assert not inspect.isabstract(rdbms_RdbmsRelationExpression)
 
 
-def test_rdbms::rdbmsrelationexpression_constructor_exists():
-    assert callable(rdbms::RdbmsRelationExpression.__init__)
+def test_rdbms_rdbmsrelationexpression_constructor_exists():
+    assert callable(rdbms_RdbmsRelationExpression.__init__)
 
 
-def test_rdbms::rdbmsrelationexpression_constructor_args():
-    sig = inspect.signature(rdbms::RdbmsRelationExpression.__init__)
+def test_rdbms_rdbmsrelationexpression_constructor_args():
+    sig = inspect.signature(rdbms_RdbmsRelationExpression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_rdbms::rdbmslabelexpression_is_not_abstract():
-    assert not inspect.isabstract(rdbms::RdbmsLabelExpression)
+def test_rdbms_rdbmslabelexpression_is_not_abstract():
+    assert not inspect.isabstract(rdbms_RdbmsLabelExpression)
 
 
-def test_rdbms::rdbmslabelexpression_constructor_exists():
-    assert callable(rdbms::RdbmsLabelExpression.__init__)
+def test_rdbms_rdbmslabelexpression_constructor_exists():
+    assert callable(rdbms_RdbmsLabelExpression.__init__)
 
 
-def test_rdbms::rdbmslabelexpression_constructor_args():
-    sig = inspect.signature(rdbms::RdbmsLabelExpression.__init__)
+def test_rdbms_rdbmslabelexpression_constructor_args():
+    sig = inspect.signature(rdbms_RdbmsLabelExpression.__init__)
     params = list(sig.parameters.keys())
     assert "text" in params, "Missing parameter 'text'"
 
-def test_rdbms::rdbmslabelexpression_has_text():
-    assert hasattr(rdbms::RdbmsLabelExpression, "text")
+def test_rdbms_rdbmslabelexpression_has_text():
+    assert hasattr(rdbms_RdbmsLabelExpression, "text")
     descriptor = None
-    for klass in rdbms::RdbmsLabelExpression.__mro__:
+    for klass in rdbms_RdbmsLabelExpression.__mro__:
         if "text" in klass.__dict__:
             descriptor = klass.__dict__["text"]
             break
@@ -309,23 +309,23 @@ def test_rdbms::rdbmslabelexpression_has_text():
 
 
 
-def test_rdbms::rdbmsfeature_is_not_abstract():
-    assert not inspect.isabstract(rdbms::RdbmsFeature)
+def test_rdbms_rdbmsfeature_is_not_abstract():
+    assert not inspect.isabstract(rdbms_RdbmsFeature)
 
 
-def test_rdbms::rdbmsfeature_constructor_exists():
-    assert callable(rdbms::RdbmsFeature.__init__)
+def test_rdbms_rdbmsfeature_constructor_exists():
+    assert callable(rdbms_RdbmsFeature.__init__)
 
 
-def test_rdbms::rdbmsfeature_constructor_args():
-    sig = inspect.signature(rdbms::RdbmsFeature.__init__)
+def test_rdbms_rdbmsfeature_constructor_args():
+    sig = inspect.signature(rdbms_RdbmsFeature.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_rdbms::rdbmsfeature_has_name():
-    assert hasattr(rdbms::RdbmsFeature, "name")
+def test_rdbms_rdbmsfeature_has_name():
+    assert hasattr(rdbms_RdbmsFeature, "name")
     descriptor = None
-    for klass in rdbms::RdbmsFeature.__mro__:
+    for klass in rdbms_RdbmsFeature.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -333,37 +333,37 @@ def test_rdbms::rdbmsfeature_has_name():
 
 
 
-def test_rdbms::rdbmsviewrecord_is_not_abstract():
-    assert not inspect.isabstract(rdbms::RdbmsViewRecord)
+def test_rdbms_rdbmsviewrecord_is_not_abstract():
+    assert not inspect.isabstract(rdbms_RdbmsViewRecord)
 
 
-def test_rdbms::rdbmsviewrecord_constructor_exists():
-    assert callable(rdbms::RdbmsViewRecord.__init__)
+def test_rdbms_rdbmsviewrecord_constructor_exists():
+    assert callable(rdbms_RdbmsViewRecord.__init__)
 
 
-def test_rdbms::rdbmsviewrecord_constructor_args():
-    sig = inspect.signature(rdbms::RdbmsViewRecord.__init__)
+def test_rdbms_rdbmsviewrecord_constructor_args():
+    sig = inspect.signature(rdbms_RdbmsViewRecord.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_rdbms::rdbmsconfiguration_is_not_abstract():
-    assert not inspect.isabstract(rdbms::RdbmsConfiguration)
+def test_rdbms_rdbmsconfiguration_is_not_abstract():
+    assert not inspect.isabstract(rdbms_RdbmsConfiguration)
 
 
-def test_rdbms::rdbmsconfiguration_constructor_exists():
-    assert callable(rdbms::RdbmsConfiguration.__init__)
+def test_rdbms_rdbmsconfiguration_constructor_exists():
+    assert callable(rdbms_RdbmsConfiguration.__init__)
 
 
-def test_rdbms::rdbmsconfiguration_constructor_args():
-    sig = inspect.signature(rdbms::RdbmsConfiguration.__init__)
+def test_rdbms_rdbmsconfiguration_constructor_args():
+    sig = inspect.signature(rdbms_RdbmsConfiguration.__init__)
     params = list(sig.parameters.keys())
     assert "dialect" in params, "Missing parameter 'dialect'"
 
-def test_rdbms::rdbmsconfiguration_has_dialect():
-    assert hasattr(rdbms::RdbmsConfiguration, "dialect")
+def test_rdbms_rdbmsconfiguration_has_dialect():
+    assert hasattr(rdbms_RdbmsConfiguration, "dialect")
     descriptor = None
-    for klass in rdbms::RdbmsConfiguration.__mro__:
+    for klass in rdbms_RdbmsConfiguration.__mro__:
         if "dialect" in klass.__dict__:
             descriptor = klass.__dict__["dialect"]
             break
@@ -371,23 +371,23 @@ def test_rdbms::rdbmsconfiguration_has_dialect():
 
 
 
-def test_rdbms::rdbmsmodel_is_not_abstract():
-    assert not inspect.isabstract(rdbms::RdbmsModel)
+def test_rdbms_rdbmsmodel_is_not_abstract():
+    assert not inspect.isabstract(rdbms_RdbmsModel)
 
 
-def test_rdbms::rdbmsmodel_constructor_exists():
-    assert callable(rdbms::RdbmsModel.__init__)
+def test_rdbms_rdbmsmodel_constructor_exists():
+    assert callable(rdbms_RdbmsModel.__init__)
 
 
-def test_rdbms::rdbmsmodel_constructor_args():
-    sig = inspect.signature(rdbms::RdbmsModel.__init__)
+def test_rdbms_rdbmsmodel_constructor_args():
+    sig = inspect.signature(rdbms_RdbmsModel.__init__)
     params = list(sig.parameters.keys())
     assert "version" in params, "Missing parameter 'version'"
 
-def test_rdbms::rdbmsmodel_has_version():
-    assert hasattr(rdbms::RdbmsModel, "version")
+def test_rdbms_rdbmsmodel_has_version():
+    assert hasattr(rdbms_RdbmsModel, "version")
     descriptor = None
-    for klass in rdbms::RdbmsModel.__mro__:
+    for klass in rdbms_RdbmsModel.__mro__:
         if "version" in klass.__dict__:
             descriptor = klass.__dict__["version"]
             break
@@ -395,23 +395,23 @@ def test_rdbms::rdbmsmodel_has_version():
 
 
 
-def test_rdbms::rdbmsmodifytableoperation_is_not_abstract():
-    assert not inspect.isabstract(rdbms::RdbmsModifyTableOperation)
+def test_rdbms_rdbmsmodifytableoperation_is_not_abstract():
+    assert not inspect.isabstract(rdbms_RdbmsModifyTableOperation)
 
 
-def test_rdbms::rdbmsmodifytableoperation_constructor_exists():
-    assert callable(rdbms::RdbmsModifyTableOperation.__init__)
+def test_rdbms_rdbmsmodifytableoperation_constructor_exists():
+    assert callable(rdbms_RdbmsModifyTableOperation.__init__)
 
 
-def test_rdbms::rdbmsmodifytableoperation_constructor_args():
-    sig = inspect.signature(rdbms::RdbmsModifyTableOperation.__init__)
+def test_rdbms_rdbmsmodifytableoperation_constructor_args():
+    sig = inspect.signature(rdbms_RdbmsModifyTableOperation.__init__)
     params = list(sig.parameters.keys())
     assert "nameChanged" in params, "Missing parameter 'nameChanged'"
 
-def test_rdbms::rdbmsmodifytableoperation_has_nameChanged():
-    assert hasattr(rdbms::RdbmsModifyTableOperation, "nameChanged")
+def test_rdbms_rdbmsmodifytableoperation_has_nameChanged():
+    assert hasattr(rdbms_RdbmsModifyTableOperation, "nameChanged")
     descriptor = None
-    for klass in rdbms::RdbmsModifyTableOperation.__mro__:
+    for klass in rdbms_RdbmsModifyTableOperation.__mro__:
         if "nameChanged" in klass.__dict__:
             descriptor = klass.__dict__["nameChanged"]
             break
@@ -433,30 +433,30 @@ def test_rdbmsviewtablefield_constructor_args():
 
 
 
-def test_rdbms::rdbmsviewforeignidentifierfield_is_not_abstract():
-    assert not inspect.isabstract(rdbms::RdbmsViewForeignIdentifierField)
+def test_rdbms_rdbmsviewaliasfield_is_not_abstract():
+    assert not inspect.isabstract(rdbms_RdbmsViewAliasField)
 
 
-def test_rdbms::rdbmsviewforeignidentifierfield_constructor_exists():
-    assert callable(rdbms::RdbmsViewForeignIdentifierField.__init__)
+def test_rdbms_rdbmsviewaliasfield_constructor_exists():
+    assert callable(rdbms_RdbmsViewAliasField.__init__)
 
 
-def test_rdbms::rdbmsviewforeignidentifierfield_constructor_args():
-    sig = inspect.signature(rdbms::RdbmsViewForeignIdentifierField.__init__)
+def test_rdbms_rdbmsviewaliasfield_constructor_args():
+    sig = inspect.signature(rdbms_RdbmsViewAliasField.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_rdbms::rdbmsviewaliasfield_is_not_abstract():
-    assert not inspect.isabstract(rdbms::RdbmsViewAliasField)
+def test_rdbms_rdbmsviewforeignidentifierfield_is_not_abstract():
+    assert not inspect.isabstract(rdbms_RdbmsViewForeignIdentifierField)
 
 
-def test_rdbms::rdbmsviewaliasfield_constructor_exists():
-    assert callable(rdbms::RdbmsViewAliasField.__init__)
+def test_rdbms_rdbmsviewforeignidentifierfield_constructor_exists():
+    assert callable(rdbms_RdbmsViewForeignIdentifierField.__init__)
 
 
-def test_rdbms::rdbmsviewaliasfield_constructor_args():
-    sig = inspect.signature(rdbms::RdbmsViewAliasField.__init__)
+def test_rdbms_rdbmsviewforeignidentifierfield_constructor_args():
+    sig = inspect.signature(rdbms_RdbmsViewForeignIdentifierField.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -475,23 +475,23 @@ def test_rdbmsviewfield_constructor_args():
 
 
 
-def test_rdbms::rdbmsviewtablefield_is_not_abstract():
-    assert not inspect.isabstract(rdbms::RdbmsViewTableField)
+def test_rdbms_rdbmsviewtablefield_is_not_abstract():
+    assert not inspect.isabstract(rdbms_RdbmsViewTableField)
 
 
-def test_rdbms::rdbmsviewtablefield_constructor_exists():
-    assert callable(rdbms::RdbmsViewTableField.__init__)
+def test_rdbms_rdbmsviewtablefield_constructor_exists():
+    assert callable(rdbms_RdbmsViewTableField.__init__)
 
 
-def test_rdbms::rdbmsviewtablefield_constructor_args():
-    sig = inspect.signature(rdbms::RdbmsViewTableField.__init__)
+def test_rdbms_rdbmsviewtablefield_constructor_args():
+    sig = inspect.signature(rdbms_RdbmsViewTableField.__init__)
     params = list(sig.parameters.keys())
     assert "foreign" in params, "Missing parameter 'foreign'"
 
-def test_rdbms::rdbmsviewtablefield_has_foreign():
-    assert hasattr(rdbms::RdbmsViewTableField, "foreign")
+def test_rdbms_rdbmsviewtablefield_has_foreign():
+    assert hasattr(rdbms_RdbmsViewTableField, "foreign")
     descriptor = None
-    for klass in rdbms::RdbmsViewTableField.__mro__:
+    for klass in rdbms_RdbmsViewTableField.__mro__:
         if "foreign" in klass.__dict__:
             descriptor = klass.__dict__["foreign"]
             break
@@ -499,23 +499,23 @@ def test_rdbms::rdbmsviewtablefield_has_foreign():
 
 
 
-def test_rdbms::rdbmsviewexpressionfield_is_not_abstract():
-    assert not inspect.isabstract(rdbms::RdbmsViewExpressionField)
+def test_rdbms_rdbmsviewexpressionfield_is_not_abstract():
+    assert not inspect.isabstract(rdbms_RdbmsViewExpressionField)
 
 
-def test_rdbms::rdbmsviewexpressionfield_constructor_exists():
-    assert callable(rdbms::RdbmsViewExpressionField.__init__)
+def test_rdbms_rdbmsviewexpressionfield_constructor_exists():
+    assert callable(rdbms_RdbmsViewExpressionField.__init__)
 
 
-def test_rdbms::rdbmsviewexpressionfield_constructor_args():
-    sig = inspect.signature(rdbms::RdbmsViewExpressionField.__init__)
+def test_rdbms_rdbmsviewexpressionfield_constructor_args():
+    sig = inspect.signature(rdbms_RdbmsViewExpressionField.__init__)
     params = list(sig.parameters.keys())
     assert "expression" in params, "Missing parameter 'expression'"
 
-def test_rdbms::rdbmsviewexpressionfield_has_expression():
-    assert hasattr(rdbms::RdbmsViewExpressionField, "expression")
+def test_rdbms_rdbmsviewexpressionfield_has_expression():
+    assert hasattr(rdbms_RdbmsViewExpressionField, "expression")
     descriptor = None
-    for klass in rdbms::RdbmsViewExpressionField.__mro__:
+    for klass in rdbms_RdbmsViewExpressionField.__mro__:
         if "expression" in klass.__dict__:
             descriptor = klass.__dict__["expression"]
             break
@@ -537,51 +537,51 @@ def test_rdbmsviewaliasfield_constructor_args():
 
 
 
-def test_rdbms::rdbmsviewvaluefield_is_not_abstract():
-    assert not inspect.isabstract(rdbms::RdbmsViewValueField)
+def test_rdbms_rdbmsviewvaluefield_is_not_abstract():
+    assert not inspect.isabstract(rdbms_RdbmsViewValueField)
 
 
-def test_rdbms::rdbmsviewvaluefield_constructor_exists():
-    assert callable(rdbms::RdbmsViewValueField.__init__)
+def test_rdbms_rdbmsviewvaluefield_constructor_exists():
+    assert callable(rdbms_RdbmsViewValueField.__init__)
 
 
-def test_rdbms::rdbmsviewvaluefield_constructor_args():
-    sig = inspect.signature(rdbms::RdbmsViewValueField.__init__)
+def test_rdbms_rdbmsviewvaluefield_constructor_args():
+    sig = inspect.signature(rdbms_RdbmsViewValueField.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_rdbms::rdbmsviewidentifierfield_is_not_abstract():
-    assert not inspect.isabstract(rdbms::RdbmsViewIdentifierField)
+def test_rdbms_rdbmsviewidentifierfield_is_not_abstract():
+    assert not inspect.isabstract(rdbms_RdbmsViewIdentifierField)
 
 
-def test_rdbms::rdbmsviewidentifierfield_constructor_exists():
-    assert callable(rdbms::RdbmsViewIdentifierField.__init__)
+def test_rdbms_rdbmsviewidentifierfield_constructor_exists():
+    assert callable(rdbms_RdbmsViewIdentifierField.__init__)
 
 
-def test_rdbms::rdbmsviewidentifierfield_constructor_args():
-    sig = inspect.signature(rdbms::RdbmsViewIdentifierField.__init__)
+def test_rdbms_rdbmsviewidentifierfield_constructor_args():
+    sig = inspect.signature(rdbms_RdbmsViewIdentifierField.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_rdbms::rdbmsviewrelation_is_not_abstract():
-    assert not inspect.isabstract(rdbms::RdbmsViewRelation)
+def test_rdbms_rdbmsviewrelation_is_not_abstract():
+    assert not inspect.isabstract(rdbms_RdbmsViewRelation)
 
 
-def test_rdbms::rdbmsviewrelation_constructor_exists():
-    assert callable(rdbms::RdbmsViewRelation.__init__)
+def test_rdbms_rdbmsviewrelation_constructor_exists():
+    assert callable(rdbms_RdbmsViewRelation.__init__)
 
 
-def test_rdbms::rdbmsviewrelation_constructor_args():
-    sig = inspect.signature(rdbms::RdbmsViewRelation.__init__)
+def test_rdbms_rdbmsviewrelation_constructor_args():
+    sig = inspect.signature(rdbms_RdbmsViewRelation.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_rdbms::rdbmsviewrelation_has_name():
-    assert hasattr(rdbms::RdbmsViewRelation, "name")
+def test_rdbms_rdbmsviewrelation_has_name():
+    assert hasattr(rdbms_RdbmsViewRelation, "name")
     descriptor = None
-    for klass in rdbms::RdbmsViewRelation.__mro__:
+    for klass in rdbms_RdbmsViewRelation.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -603,23 +603,23 @@ def test_rdbmsfield_constructor_args():
 
 
 
-def test_rdbms::rdbmsvaluefield_is_not_abstract():
-    assert not inspect.isabstract(rdbms::RdbmsValueField)
+def test_rdbms_rdbmsvaluefield_is_not_abstract():
+    assert not inspect.isabstract(rdbms_RdbmsValueField)
 
 
-def test_rdbms::rdbmsvaluefield_constructor_exists():
-    assert callable(rdbms::RdbmsValueField.__init__)
+def test_rdbms_rdbmsvaluefield_constructor_exists():
+    assert callable(rdbms_RdbmsValueField.__init__)
 
 
-def test_rdbms::rdbmsvaluefield_constructor_args():
-    sig = inspect.signature(rdbms::RdbmsValueField.__init__)
+def test_rdbms_rdbmsvaluefield_constructor_args():
+    sig = inspect.signature(rdbms_RdbmsValueField.__init__)
     params = list(sig.parameters.keys())
     assert "technical" in params, "Missing parameter 'technical'"
 
-def test_rdbms::rdbmsvaluefield_has_technical():
-    assert hasattr(rdbms::RdbmsValueField, "technical")
+def test_rdbms_rdbmsvaluefield_has_technical():
+    assert hasattr(rdbms_RdbmsValueField, "technical")
     descriptor = None
-    for klass in rdbms::RdbmsValueField.__mro__:
+    for klass in rdbms_RdbmsValueField.__mro__:
         if "technical" in klass.__dict__:
             descriptor = klass.__dict__["technical"]
             break
@@ -655,281 +655,281 @@ def test_rdbmsidentifierfield_constructor_args():
 
 
 
-def test_rdbms::rdbmsforeignkey_is_not_abstract():
-    assert not inspect.isabstract(rdbms::RdbmsForeignKey)
+def test_rdbms_rdbmsforeignkey_is_not_abstract():
+    assert not inspect.isabstract(rdbms_RdbmsForeignKey)
 
 
-def test_rdbms::rdbmsforeignkey_constructor_exists():
-    assert callable(rdbms::RdbmsForeignKey.__init__)
+def test_rdbms_rdbmsforeignkey_constructor_exists():
+    assert callable(rdbms_RdbmsForeignKey.__init__)
 
 
-def test_rdbms::rdbmsforeignkey_constructor_args():
-    sig = inspect.signature(rdbms::RdbmsForeignKey.__init__)
+def test_rdbms_rdbmsforeignkey_constructor_args():
+    sig = inspect.signature(rdbms_RdbmsForeignKey.__init__)
     params = list(sig.parameters.keys())
-    assert "deleteOnCascade" in params, "Missing parameter 'deleteOnCascade'"
-    assert "deferred" in params, "Missing parameter 'deferred'"
+    assert "inheritenceBased" in params, "Missing parameter 'inheritenceBased'"
     assert "readOnly" in params, "Missing parameter 'readOnly'"
     assert "foreignKeySqlName" in params, "Missing parameter 'foreignKeySqlName'"
-    assert "inheritenceBased" in params, "Missing parameter 'inheritenceBased'"
+    assert "deleteOnCascade" in params, "Missing parameter 'deleteOnCascade'"
+    assert "deferred" in params, "Missing parameter 'deferred'"
 
-def test_rdbms::rdbmsforeignkey_has_deleteOnCascade():
-    assert hasattr(rdbms::RdbmsForeignKey, "deleteOnCascade")
+def test_rdbms_rdbmsforeignkey_has_inheritenceBased():
+    assert hasattr(rdbms_RdbmsForeignKey, "inheritenceBased")
     descriptor = None
-    for klass in rdbms::RdbmsForeignKey.__mro__:
-        if "deleteOnCascade" in klass.__dict__:
-            descriptor = klass.__dict__["deleteOnCascade"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_rdbms::rdbmsforeignkey_has_deferred():
-    assert hasattr(rdbms::RdbmsForeignKey, "deferred")
-    descriptor = None
-    for klass in rdbms::RdbmsForeignKey.__mro__:
-        if "deferred" in klass.__dict__:
-            descriptor = klass.__dict__["deferred"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_rdbms::rdbmsforeignkey_has_readOnly():
-    assert hasattr(rdbms::RdbmsForeignKey, "readOnly")
-    descriptor = None
-    for klass in rdbms::RdbmsForeignKey.__mro__:
-        if "readOnly" in klass.__dict__:
-            descriptor = klass.__dict__["readOnly"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_rdbms::rdbmsforeignkey_has_foreignKeySqlName():
-    assert hasattr(rdbms::RdbmsForeignKey, "foreignKeySqlName")
-    descriptor = None
-    for klass in rdbms::RdbmsForeignKey.__mro__:
-        if "foreignKeySqlName" in klass.__dict__:
-            descriptor = klass.__dict__["foreignKeySqlName"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_rdbms::rdbmsforeignkey_has_inheritenceBased():
-    assert hasattr(rdbms::RdbmsForeignKey, "inheritenceBased")
-    descriptor = None
-    for klass in rdbms::RdbmsForeignKey.__mro__:
+    for klass in rdbms_RdbmsForeignKey.__mro__:
         if "inheritenceBased" in klass.__dict__:
             descriptor = klass.__dict__["inheritenceBased"]
             break
     assert isinstance(descriptor, property)
 
+def test_rdbms_rdbmsforeignkey_has_readOnly():
+    assert hasattr(rdbms_RdbmsForeignKey, "readOnly")
+    descriptor = None
+    for klass in rdbms_RdbmsForeignKey.__mro__:
+        if "readOnly" in klass.__dict__:
+            descriptor = klass.__dict__["readOnly"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_rdbms_rdbmsforeignkey_has_foreignKeySqlName():
+    assert hasattr(rdbms_RdbmsForeignKey, "foreignKeySqlName")
+    descriptor = None
+    for klass in rdbms_RdbmsForeignKey.__mro__:
+        if "foreignKeySqlName" in klass.__dict__:
+            descriptor = klass.__dict__["foreignKeySqlName"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_rdbms_rdbmsforeignkey_has_deleteOnCascade():
+    assert hasattr(rdbms_RdbmsForeignKey, "deleteOnCascade")
+    descriptor = None
+    for klass in rdbms_RdbmsForeignKey.__mro__:
+        if "deleteOnCascade" in klass.__dict__:
+            descriptor = klass.__dict__["deleteOnCascade"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_rdbms_rdbmsforeignkey_has_deferred():
+    assert hasattr(rdbms_RdbmsForeignKey, "deferred")
+    descriptor = None
+    for klass in rdbms_RdbmsForeignKey.__mro__:
+        if "deferred" in klass.__dict__:
+            descriptor = klass.__dict__["deferred"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_rdbms::rdbmsfieldtype_is_not_abstract():
-    assert not inspect.isabstract(rdbms::RdbmsFieldType)
+
+def test_rdbms_rdbmsfieldtype_is_not_abstract():
+    assert not inspect.isabstract(rdbms_RdbmsFieldType)
 
 
-def test_rdbms::rdbmsfieldtype_constructor_exists():
-    assert callable(rdbms::RdbmsFieldType.__init__)
+def test_rdbms_rdbmsfieldtype_constructor_exists():
+    assert callable(rdbms_RdbmsFieldType.__init__)
 
 
-def test_rdbms::rdbmsfieldtype_constructor_args():
-    sig = inspect.signature(rdbms::RdbmsFieldType.__init__)
+def test_rdbms_rdbmsfieldtype_constructor_args():
+    sig = inspect.signature(rdbms_RdbmsFieldType.__init__)
     params = list(sig.parameters.keys())
+    assert "rdbmsTypeName" in params, "Missing parameter 'rdbmsTypeName'"
     assert "uuid" in params, "Missing parameter 'uuid'"
     assert "size" in params, "Missing parameter 'size'"
-    assert "description" in params, "Missing parameter 'description'"
-    assert "precision" in params, "Missing parameter 'precision'"
-    assert "rdbmsTypeName" in params, "Missing parameter 'rdbmsTypeName'"
-    assert "scale" in params, "Missing parameter 'scale'"
     assert "name" in params, "Missing parameter 'name'"
+    assert "precision" in params, "Missing parameter 'precision'"
+    assert "scale" in params, "Missing parameter 'scale'"
     assert "storageByte" in params, "Missing parameter 'storageByte'"
+    assert "description" in params, "Missing parameter 'description'"
 
-def test_rdbms::rdbmsfieldtype_has_uuid():
-    assert hasattr(rdbms::RdbmsFieldType, "uuid")
+def test_rdbms_rdbmsfieldtype_has_rdbmsTypeName():
+    assert hasattr(rdbms_RdbmsFieldType, "rdbmsTypeName")
     descriptor = None
-    for klass in rdbms::RdbmsFieldType.__mro__:
-        if "uuid" in klass.__dict__:
-            descriptor = klass.__dict__["uuid"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_rdbms::rdbmsfieldtype_has_size():
-    assert hasattr(rdbms::RdbmsFieldType, "size")
-    descriptor = None
-    for klass in rdbms::RdbmsFieldType.__mro__:
-        if "size" in klass.__dict__:
-            descriptor = klass.__dict__["size"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_rdbms::rdbmsfieldtype_has_description():
-    assert hasattr(rdbms::RdbmsFieldType, "description")
-    descriptor = None
-    for klass in rdbms::RdbmsFieldType.__mro__:
-        if "description" in klass.__dict__:
-            descriptor = klass.__dict__["description"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_rdbms::rdbmsfieldtype_has_precision():
-    assert hasattr(rdbms::RdbmsFieldType, "precision")
-    descriptor = None
-    for klass in rdbms::RdbmsFieldType.__mro__:
-        if "precision" in klass.__dict__:
-            descriptor = klass.__dict__["precision"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_rdbms::rdbmsfieldtype_has_rdbmsTypeName():
-    assert hasattr(rdbms::RdbmsFieldType, "rdbmsTypeName")
-    descriptor = None
-    for klass in rdbms::RdbmsFieldType.__mro__:
+    for klass in rdbms_RdbmsFieldType.__mro__:
         if "rdbmsTypeName" in klass.__dict__:
             descriptor = klass.__dict__["rdbmsTypeName"]
             break
     assert isinstance(descriptor, property)
 
-def test_rdbms::rdbmsfieldtype_has_scale():
-    assert hasattr(rdbms::RdbmsFieldType, "scale")
+def test_rdbms_rdbmsfieldtype_has_uuid():
+    assert hasattr(rdbms_RdbmsFieldType, "uuid")
     descriptor = None
-    for klass in rdbms::RdbmsFieldType.__mro__:
+    for klass in rdbms_RdbmsFieldType.__mro__:
+        if "uuid" in klass.__dict__:
+            descriptor = klass.__dict__["uuid"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_rdbms_rdbmsfieldtype_has_size():
+    assert hasattr(rdbms_RdbmsFieldType, "size")
+    descriptor = None
+    for klass in rdbms_RdbmsFieldType.__mro__:
+        if "size" in klass.__dict__:
+            descriptor = klass.__dict__["size"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_rdbms_rdbmsfieldtype_has_name():
+    assert hasattr(rdbms_RdbmsFieldType, "name")
+    descriptor = None
+    for klass in rdbms_RdbmsFieldType.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_rdbms_rdbmsfieldtype_has_precision():
+    assert hasattr(rdbms_RdbmsFieldType, "precision")
+    descriptor = None
+    for klass in rdbms_RdbmsFieldType.__mro__:
+        if "precision" in klass.__dict__:
+            descriptor = klass.__dict__["precision"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_rdbms_rdbmsfieldtype_has_scale():
+    assert hasattr(rdbms_RdbmsFieldType, "scale")
+    descriptor = None
+    for klass in rdbms_RdbmsFieldType.__mro__:
         if "scale" in klass.__dict__:
             descriptor = klass.__dict__["scale"]
             break
     assert isinstance(descriptor, property)
 
-def test_rdbms::rdbmsfieldtype_has_name():
-    assert hasattr(rdbms::RdbmsFieldType, "name")
+def test_rdbms_rdbmsfieldtype_has_storageByte():
+    assert hasattr(rdbms_RdbmsFieldType, "storageByte")
     descriptor = None
-    for klass in rdbms::RdbmsFieldType.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_rdbms::rdbmsfieldtype_has_storageByte():
-    assert hasattr(rdbms::RdbmsFieldType, "storageByte")
-    descriptor = None
-    for klass in rdbms::RdbmsFieldType.__mro__:
+    for klass in rdbms_RdbmsFieldType.__mro__:
         if "storageByte" in klass.__dict__:
             descriptor = klass.__dict__["storageByte"]
             break
     assert isinstance(descriptor, property)
 
-
-
-def test_rdbms::rdbmsidentifierfield_is_not_abstract():
-    assert not inspect.isabstract(rdbms::RdbmsIdentifierField)
-
-
-def test_rdbms::rdbmsidentifierfield_constructor_exists():
-    assert callable(rdbms::RdbmsIdentifierField.__init__)
-
-
-def test_rdbms::rdbmsidentifierfield_constructor_args():
-    sig = inspect.signature(rdbms::RdbmsIdentifierField.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_rdbms::rdbmsjunctiontable_is_not_abstract():
-    assert not inspect.isabstract(rdbms::RdbmsJunctionTable)
-
-
-def test_rdbms::rdbmsjunctiontable_constructor_exists():
-    assert callable(rdbms::RdbmsJunctionTable.__init__)
-
-
-def test_rdbms::rdbmsjunctiontable_constructor_args():
-    sig = inspect.signature(rdbms::RdbmsJunctionTable.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_rdbms::rdbmselement_is_not_abstract():
-    assert not inspect.isabstract(rdbms::RdbmsElement)
-
-
-def test_rdbms::rdbmselement_constructor_exists():
-    assert callable(rdbms::RdbmsElement.__init__)
-
-
-def test_rdbms::rdbmselement_constructor_args():
-    sig = inspect.signature(rdbms::RdbmsElement.__init__)
-    params = list(sig.parameters.keys())
-    assert "description" in params, "Missing parameter 'description'"
-    assert "originalName" in params, "Missing parameter 'originalName'"
-    assert "fullName" in params, "Missing parameter 'fullName'"
-    assert "originalPackage" in params, "Missing parameter 'originalPackage'"
-    assert "sqlName" in params, "Missing parameter 'sqlName'"
-    assert "shortName" in params, "Missing parameter 'shortName'"
-    assert "name" in params, "Missing parameter 'name'"
-    assert "uuid" in params, "Missing parameter 'uuid'"
-
-def test_rdbms::rdbmselement_has_description():
-    assert hasattr(rdbms::RdbmsElement, "description")
+def test_rdbms_rdbmsfieldtype_has_description():
+    assert hasattr(rdbms_RdbmsFieldType, "description")
     descriptor = None
-    for klass in rdbms::RdbmsElement.__mro__:
+    for klass in rdbms_RdbmsFieldType.__mro__:
         if "description" in klass.__dict__:
             descriptor = klass.__dict__["description"]
             break
     assert isinstance(descriptor, property)
 
-def test_rdbms::rdbmselement_has_originalName():
-    assert hasattr(rdbms::RdbmsElement, "originalName")
-    descriptor = None
-    for klass in rdbms::RdbmsElement.__mro__:
-        if "originalName" in klass.__dict__:
-            descriptor = klass.__dict__["originalName"]
-            break
-    assert isinstance(descriptor, property)
 
-def test_rdbms::rdbmselement_has_fullName():
-    assert hasattr(rdbms::RdbmsElement, "fullName")
-    descriptor = None
-    for klass in rdbms::RdbmsElement.__mro__:
-        if "fullName" in klass.__dict__:
-            descriptor = klass.__dict__["fullName"]
-            break
-    assert isinstance(descriptor, property)
 
-def test_rdbms::rdbmselement_has_originalPackage():
-    assert hasattr(rdbms::RdbmsElement, "originalPackage")
-    descriptor = None
-    for klass in rdbms::RdbmsElement.__mro__:
-        if "originalPackage" in klass.__dict__:
-            descriptor = klass.__dict__["originalPackage"]
-            break
-    assert isinstance(descriptor, property)
+def test_rdbms_rdbmsidentifierfield_is_not_abstract():
+    assert not inspect.isabstract(rdbms_RdbmsIdentifierField)
 
-def test_rdbms::rdbmselement_has_sqlName():
-    assert hasattr(rdbms::RdbmsElement, "sqlName")
-    descriptor = None
-    for klass in rdbms::RdbmsElement.__mro__:
-        if "sqlName" in klass.__dict__:
-            descriptor = klass.__dict__["sqlName"]
-            break
-    assert isinstance(descriptor, property)
 
-def test_rdbms::rdbmselement_has_shortName():
-    assert hasattr(rdbms::RdbmsElement, "shortName")
+def test_rdbms_rdbmsidentifierfield_constructor_exists():
+    assert callable(rdbms_RdbmsIdentifierField.__init__)
+
+
+def test_rdbms_rdbmsidentifierfield_constructor_args():
+    sig = inspect.signature(rdbms_RdbmsIdentifierField.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_rdbms_rdbmsjunctiontable_is_not_abstract():
+    assert not inspect.isabstract(rdbms_RdbmsJunctionTable)
+
+
+def test_rdbms_rdbmsjunctiontable_constructor_exists():
+    assert callable(rdbms_RdbmsJunctionTable.__init__)
+
+
+def test_rdbms_rdbmsjunctiontable_constructor_args():
+    sig = inspect.signature(rdbms_RdbmsJunctionTable.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_rdbms_rdbmselement_is_not_abstract():
+    assert not inspect.isabstract(rdbms_RdbmsElement)
+
+
+def test_rdbms_rdbmselement_constructor_exists():
+    assert callable(rdbms_RdbmsElement.__init__)
+
+
+def test_rdbms_rdbmselement_constructor_args():
+    sig = inspect.signature(rdbms_RdbmsElement.__init__)
+    params = list(sig.parameters.keys())
+    assert "shortName" in params, "Missing parameter 'shortName'"
+    assert "name" in params, "Missing parameter 'name'"
+    assert "description" in params, "Missing parameter 'description'"
+    assert "sqlName" in params, "Missing parameter 'sqlName'"
+    assert "originalPackage" in params, "Missing parameter 'originalPackage'"
+    assert "fullName" in params, "Missing parameter 'fullName'"
+    assert "uuid" in params, "Missing parameter 'uuid'"
+    assert "originalName" in params, "Missing parameter 'originalName'"
+
+def test_rdbms_rdbmselement_has_shortName():
+    assert hasattr(rdbms_RdbmsElement, "shortName")
     descriptor = None
-    for klass in rdbms::RdbmsElement.__mro__:
+    for klass in rdbms_RdbmsElement.__mro__:
         if "shortName" in klass.__dict__:
             descriptor = klass.__dict__["shortName"]
             break
     assert isinstance(descriptor, property)
 
-def test_rdbms::rdbmselement_has_name():
-    assert hasattr(rdbms::RdbmsElement, "name")
+def test_rdbms_rdbmselement_has_name():
+    assert hasattr(rdbms_RdbmsElement, "name")
     descriptor = None
-    for klass in rdbms::RdbmsElement.__mro__:
+    for klass in rdbms_RdbmsElement.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
-def test_rdbms::rdbmselement_has_uuid():
-    assert hasattr(rdbms::RdbmsElement, "uuid")
+def test_rdbms_rdbmselement_has_description():
+    assert hasattr(rdbms_RdbmsElement, "description")
     descriptor = None
-    for klass in rdbms::RdbmsElement.__mro__:
+    for klass in rdbms_RdbmsElement.__mro__:
+        if "description" in klass.__dict__:
+            descriptor = klass.__dict__["description"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_rdbms_rdbmselement_has_sqlName():
+    assert hasattr(rdbms_RdbmsElement, "sqlName")
+    descriptor = None
+    for klass in rdbms_RdbmsElement.__mro__:
+        if "sqlName" in klass.__dict__:
+            descriptor = klass.__dict__["sqlName"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_rdbms_rdbmselement_has_originalPackage():
+    assert hasattr(rdbms_RdbmsElement, "originalPackage")
+    descriptor = None
+    for klass in rdbms_RdbmsElement.__mro__:
+        if "originalPackage" in klass.__dict__:
+            descriptor = klass.__dict__["originalPackage"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_rdbms_rdbmselement_has_fullName():
+    assert hasattr(rdbms_RdbmsElement, "fullName")
+    descriptor = None
+    for klass in rdbms_RdbmsElement.__mro__:
+        if "fullName" in klass.__dict__:
+            descriptor = klass.__dict__["fullName"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_rdbms_rdbmselement_has_uuid():
+    assert hasattr(rdbms_RdbmsElement, "uuid")
+    descriptor = None
+    for klass in rdbms_RdbmsElement.__mro__:
         if "uuid" in klass.__dict__:
             descriptor = klass.__dict__["uuid"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_rdbms_rdbmselement_has_originalName():
+    assert hasattr(rdbms_RdbmsElement, "originalName")
+    descriptor = None
+    for klass in rdbms_RdbmsElement.__mro__:
+        if "originalName" in klass.__dict__:
+            descriptor = klass.__dict__["originalName"]
             break
     assert isinstance(descriptor, property)
 
@@ -949,211 +949,51 @@ def test_rdbmselement_constructor_args():
 
 
 
-def test_rdbms::rdbmsfield_is_not_abstract():
-    assert not inspect.isabstract(rdbms::RdbmsField)
+def test_rdbms_rdbmstable_is_not_abstract():
+    assert not inspect.isabstract(rdbms_RdbmsTable)
 
 
-def test_rdbms::rdbmsfield_constructor_exists():
-    assert callable(rdbms::RdbmsField.__init__)
+def test_rdbms_rdbmstable_constructor_exists():
+    assert callable(rdbms_RdbmsTable.__init__)
 
 
-def test_rdbms::rdbmsfield_constructor_args():
-    sig = inspect.signature(rdbms::RdbmsField.__init__)
-    params = list(sig.parameters.keys())
-    assert "mandatory" in params, "Missing parameter 'mandatory'"
-    assert "precision" in params, "Missing parameter 'precision'"
-    assert "scale" in params, "Missing parameter 'scale'"
-    assert "storageByte" in params, "Missing parameter 'storageByte'"
-    assert "rdbmsTypeName" in params, "Missing parameter 'rdbmsTypeName'"
-    assert "size" in params, "Missing parameter 'size'"
-
-def test_rdbms::rdbmsfield_has_mandatory():
-    assert hasattr(rdbms::RdbmsField, "mandatory")
-    descriptor = None
-    for klass in rdbms::RdbmsField.__mro__:
-        if "mandatory" in klass.__dict__:
-            descriptor = klass.__dict__["mandatory"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_rdbms::rdbmsfield_has_precision():
-    assert hasattr(rdbms::RdbmsField, "precision")
-    descriptor = None
-    for klass in rdbms::RdbmsField.__mro__:
-        if "precision" in klass.__dict__:
-            descriptor = klass.__dict__["precision"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_rdbms::rdbmsfield_has_scale():
-    assert hasattr(rdbms::RdbmsField, "scale")
-    descriptor = None
-    for klass in rdbms::RdbmsField.__mro__:
-        if "scale" in klass.__dict__:
-            descriptor = klass.__dict__["scale"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_rdbms::rdbmsfield_has_storageByte():
-    assert hasattr(rdbms::RdbmsField, "storageByte")
-    descriptor = None
-    for klass in rdbms::RdbmsField.__mro__:
-        if "storageByte" in klass.__dict__:
-            descriptor = klass.__dict__["storageByte"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_rdbms::rdbmsfield_has_rdbmsTypeName():
-    assert hasattr(rdbms::RdbmsField, "rdbmsTypeName")
-    descriptor = None
-    for klass in rdbms::RdbmsField.__mro__:
-        if "rdbmsTypeName" in klass.__dict__:
-            descriptor = klass.__dict__["rdbmsTypeName"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_rdbms::rdbmsfield_has_size():
-    assert hasattr(rdbms::RdbmsField, "size")
-    descriptor = None
-    for klass in rdbms::RdbmsField.__mro__:
-        if "size" in klass.__dict__:
-            descriptor = klass.__dict__["size"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_rdbms::rdbmsindex_is_not_abstract():
-    assert not inspect.isabstract(rdbms::RdbmsIndex)
-
-
-def test_rdbms::rdbmsindex_constructor_exists():
-    assert callable(rdbms::RdbmsIndex.__init__)
-
-
-def test_rdbms::rdbmsindex_constructor_args():
-    sig = inspect.signature(rdbms::RdbmsIndex.__init__)
-    params = list(sig.parameters.keys())
-    assert "unique" in params, "Missing parameter 'unique'"
-
-def test_rdbms::rdbmsindex_has_unique():
-    assert hasattr(rdbms::RdbmsIndex, "unique")
-    descriptor = None
-    for klass in rdbms::RdbmsIndex.__mro__:
-        if "unique" in klass.__dict__:
-            descriptor = klass.__dict__["unique"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_rdbms::rdbmsviewfield_is_not_abstract():
-    assert not inspect.isabstract(rdbms::RdbmsViewField)
-
-
-def test_rdbms::rdbmsviewfield_constructor_exists():
-    assert callable(rdbms::RdbmsViewField.__init__)
-
-
-def test_rdbms::rdbmsviewfield_constructor_args():
-    sig = inspect.signature(rdbms::RdbmsViewField.__init__)
-    params = list(sig.parameters.keys())
-    assert "inherited" in params, "Missing parameter 'inherited'"
-
-def test_rdbms::rdbmsviewfield_has_inherited():
-    assert hasattr(rdbms::RdbmsViewField, "inherited")
-    descriptor = None
-    for klass in rdbms::RdbmsViewField.__mro__:
-        if "inherited" in klass.__dict__:
-            descriptor = klass.__dict__["inherited"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_rdbms::rdbmsuniqueconstraint_is_not_abstract():
-    assert not inspect.isabstract(rdbms::RdbmsUniqueConstraint)
-
-
-def test_rdbms::rdbmsuniqueconstraint_constructor_exists():
-    assert callable(rdbms::RdbmsUniqueConstraint.__init__)
-
-
-def test_rdbms::rdbmsuniqueconstraint_constructor_args():
-    sig = inspect.signature(rdbms::RdbmsUniqueConstraint.__init__)
+def test_rdbms_rdbmstable_constructor_args():
+    sig = inspect.signature(rdbms_RdbmsTable.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_rdbms::rdbmsfieldoperation_is_not_abstract():
-    assert not inspect.isabstract(rdbms::RdbmsFieldOperation)
+def test_rdbms_rdbmsuniqueconstraint_is_not_abstract():
+    assert not inspect.isabstract(rdbms_RdbmsUniqueConstraint)
 
 
-def test_rdbms::rdbmsfieldoperation_constructor_exists():
-    assert callable(rdbms::RdbmsFieldOperation.__init__)
+def test_rdbms_rdbmsuniqueconstraint_constructor_exists():
+    assert callable(rdbms_RdbmsUniqueConstraint.__init__)
 
 
-def test_rdbms::rdbmsfieldoperation_constructor_args():
-    sig = inspect.signature(rdbms::RdbmsFieldOperation.__init__)
-    params = list(sig.parameters.keys())
-    assert "reviewRequired" in params, "Missing parameter 'reviewRequired'"
-
-def test_rdbms::rdbmsfieldoperation_has_reviewRequired():
-    assert hasattr(rdbms::RdbmsFieldOperation, "reviewRequired")
-    descriptor = None
-    for klass in rdbms::RdbmsFieldOperation.__mro__:
-        if "reviewRequired" in klass.__dict__:
-            descriptor = klass.__dict__["reviewRequired"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_rdbms::rdbmstablealias_is_not_abstract():
-    assert not inspect.isabstract(rdbms::RdbmsTableAlias)
-
-
-def test_rdbms::rdbmstablealias_constructor_exists():
-    assert callable(rdbms::RdbmsTableAlias.__init__)
-
-
-def test_rdbms::rdbmstablealias_constructor_args():
-    sig = inspect.signature(rdbms::RdbmsTableAlias.__init__)
+def test_rdbms_rdbmsuniqueconstraint_constructor_args():
+    sig = inspect.signature(rdbms_RdbmsUniqueConstraint.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_rdbms::rdbmstableoperation_is_not_abstract():
-    assert not inspect.isabstract(rdbms::RdbmsTableOperation)
+def test_rdbms_rdbmsexpression_is_not_abstract():
+    assert not inspect.isabstract(rdbms_RdbmsExpression)
 
 
-def test_rdbms::rdbmstableoperation_constructor_exists():
-    assert callable(rdbms::RdbmsTableOperation.__init__)
+def test_rdbms_rdbmsexpression_constructor_exists():
+    assert callable(rdbms_RdbmsExpression.__init__)
 
 
-def test_rdbms::rdbmstableoperation_constructor_args():
-    sig = inspect.signature(rdbms::RdbmsTableOperation.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_rdbms::rdbmsexpression_is_not_abstract():
-    assert not inspect.isabstract(rdbms::RdbmsExpression)
-
-
-def test_rdbms::rdbmsexpression_constructor_exists():
-    assert callable(rdbms::RdbmsExpression.__init__)
-
-
-def test_rdbms::rdbmsexpression_constructor_args():
-    sig = inspect.signature(rdbms::RdbmsExpression.__init__)
+def test_rdbms_rdbmsexpression_constructor_args():
+    sig = inspect.signature(rdbms_RdbmsExpression.__init__)
     params = list(sig.parameters.keys())
     assert "expression" in params, "Missing parameter 'expression'"
 
-def test_rdbms::rdbmsexpression_has_expression():
-    assert hasattr(rdbms::RdbmsExpression, "expression")
+def test_rdbms_rdbmsexpression_has_expression():
+    assert hasattr(rdbms_RdbmsExpression, "expression")
     descriptor = None
-    for klass in rdbms::RdbmsExpression.__mro__:
+    for klass in rdbms_RdbmsExpression.__mro__:
         if "expression" in klass.__dict__:
             descriptor = klass.__dict__["expression"]
             break
@@ -1161,23 +1001,135 @@ def test_rdbms::rdbmsexpression_has_expression():
 
 
 
-def test_rdbms::rdbmsview_is_not_abstract():
-    assert not inspect.isabstract(rdbms::RdbmsView)
+def test_rdbms_rdbmsfield_is_not_abstract():
+    assert not inspect.isabstract(rdbms_RdbmsField)
 
 
-def test_rdbms::rdbmsview_constructor_exists():
-    assert callable(rdbms::RdbmsView.__init__)
+def test_rdbms_rdbmsfield_constructor_exists():
+    assert callable(rdbms_RdbmsField.__init__)
 
 
-def test_rdbms::rdbmsview_constructor_args():
-    sig = inspect.signature(rdbms::RdbmsView.__init__)
+def test_rdbms_rdbmsfield_constructor_args():
+    sig = inspect.signature(rdbms_RdbmsField.__init__)
+    params = list(sig.parameters.keys())
+    assert "size" in params, "Missing parameter 'size'"
+    assert "rdbmsTypeName" in params, "Missing parameter 'rdbmsTypeName'"
+    assert "mandatory" in params, "Missing parameter 'mandatory'"
+    assert "precision" in params, "Missing parameter 'precision'"
+    assert "storageByte" in params, "Missing parameter 'storageByte'"
+    assert "scale" in params, "Missing parameter 'scale'"
+
+def test_rdbms_rdbmsfield_has_size():
+    assert hasattr(rdbms_RdbmsField, "size")
+    descriptor = None
+    for klass in rdbms_RdbmsField.__mro__:
+        if "size" in klass.__dict__:
+            descriptor = klass.__dict__["size"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_rdbms_rdbmsfield_has_rdbmsTypeName():
+    assert hasattr(rdbms_RdbmsField, "rdbmsTypeName")
+    descriptor = None
+    for klass in rdbms_RdbmsField.__mro__:
+        if "rdbmsTypeName" in klass.__dict__:
+            descriptor = klass.__dict__["rdbmsTypeName"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_rdbms_rdbmsfield_has_mandatory():
+    assert hasattr(rdbms_RdbmsField, "mandatory")
+    descriptor = None
+    for klass in rdbms_RdbmsField.__mro__:
+        if "mandatory" in klass.__dict__:
+            descriptor = klass.__dict__["mandatory"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_rdbms_rdbmsfield_has_precision():
+    assert hasattr(rdbms_RdbmsField, "precision")
+    descriptor = None
+    for klass in rdbms_RdbmsField.__mro__:
+        if "precision" in klass.__dict__:
+            descriptor = klass.__dict__["precision"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_rdbms_rdbmsfield_has_storageByte():
+    assert hasattr(rdbms_RdbmsField, "storageByte")
+    descriptor = None
+    for klass in rdbms_RdbmsField.__mro__:
+        if "storageByte" in klass.__dict__:
+            descriptor = klass.__dict__["storageByte"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_rdbms_rdbmsfield_has_scale():
+    assert hasattr(rdbms_RdbmsField, "scale")
+    descriptor = None
+    for klass in rdbms_RdbmsField.__mro__:
+        if "scale" in klass.__dict__:
+            descriptor = klass.__dict__["scale"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_rdbms_rdbmstablealias_is_not_abstract():
+    assert not inspect.isabstract(rdbms_RdbmsTableAlias)
+
+
+def test_rdbms_rdbmstablealias_constructor_exists():
+    assert callable(rdbms_RdbmsTableAlias.__init__)
+
+
+def test_rdbms_rdbmstablealias_constructor_args():
+    sig = inspect.signature(rdbms_RdbmsTableAlias.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_rdbms_rdbmsfieldoperation_is_not_abstract():
+    assert not inspect.isabstract(rdbms_RdbmsFieldOperation)
+
+
+def test_rdbms_rdbmsfieldoperation_constructor_exists():
+    assert callable(rdbms_RdbmsFieldOperation.__init__)
+
+
+def test_rdbms_rdbmsfieldoperation_constructor_args():
+    sig = inspect.signature(rdbms_RdbmsFieldOperation.__init__)
+    params = list(sig.parameters.keys())
+    assert "reviewRequired" in params, "Missing parameter 'reviewRequired'"
+
+def test_rdbms_rdbmsfieldoperation_has_reviewRequired():
+    assert hasattr(rdbms_RdbmsFieldOperation, "reviewRequired")
+    descriptor = None
+    for klass in rdbms_RdbmsFieldOperation.__mro__:
+        if "reviewRequired" in klass.__dict__:
+            descriptor = klass.__dict__["reviewRequired"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_rdbms_rdbmsview_is_not_abstract():
+    assert not inspect.isabstract(rdbms_RdbmsView)
+
+
+def test_rdbms_rdbmsview_constructor_exists():
+    assert callable(rdbms_RdbmsView.__init__)
+
+
+def test_rdbms_rdbmsview_constructor_args():
+    sig = inspect.signature(rdbms_RdbmsView.__init__)
     params = list(sig.parameters.keys())
     assert "originUuid" in params, "Missing parameter 'originUuid'"
 
-def test_rdbms::rdbmsview_has_originUuid():
-    assert hasattr(rdbms::RdbmsView, "originUuid")
+def test_rdbms_rdbmsview_has_originUuid():
+    assert hasattr(rdbms_RdbmsView, "originUuid")
     descriptor = None
-    for klass in rdbms::RdbmsView.__mro__:
+    for klass in rdbms_RdbmsView.__mro__:
         if "originUuid" in klass.__dict__:
             descriptor = klass.__dict__["originUuid"]
             break
@@ -1185,17 +1137,65 @@ def test_rdbms::rdbmsview_has_originUuid():
 
 
 
-def test_rdbms::rdbmstable_is_not_abstract():
-    assert not inspect.isabstract(rdbms::RdbmsTable)
+def test_rdbms_rdbmstableoperation_is_not_abstract():
+    assert not inspect.isabstract(rdbms_RdbmsTableOperation)
 
 
-def test_rdbms::rdbmstable_constructor_exists():
-    assert callable(rdbms::RdbmsTable.__init__)
+def test_rdbms_rdbmstableoperation_constructor_exists():
+    assert callable(rdbms_RdbmsTableOperation.__init__)
 
 
-def test_rdbms::rdbmstable_constructor_args():
-    sig = inspect.signature(rdbms::RdbmsTable.__init__)
+def test_rdbms_rdbmstableoperation_constructor_args():
+    sig = inspect.signature(rdbms_RdbmsTableOperation.__init__)
     params = list(sig.parameters.keys())
+
+
+
+def test_rdbms_rdbmsindex_is_not_abstract():
+    assert not inspect.isabstract(rdbms_RdbmsIndex)
+
+
+def test_rdbms_rdbmsindex_constructor_exists():
+    assert callable(rdbms_RdbmsIndex.__init__)
+
+
+def test_rdbms_rdbmsindex_constructor_args():
+    sig = inspect.signature(rdbms_RdbmsIndex.__init__)
+    params = list(sig.parameters.keys())
+    assert "unique" in params, "Missing parameter 'unique'"
+
+def test_rdbms_rdbmsindex_has_unique():
+    assert hasattr(rdbms_RdbmsIndex, "unique")
+    descriptor = None
+    for klass in rdbms_RdbmsIndex.__mro__:
+        if "unique" in klass.__dict__:
+            descriptor = klass.__dict__["unique"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_rdbms_rdbmsviewfield_is_not_abstract():
+    assert not inspect.isabstract(rdbms_RdbmsViewField)
+
+
+def test_rdbms_rdbmsviewfield_constructor_exists():
+    assert callable(rdbms_RdbmsViewField.__init__)
+
+
+def test_rdbms_rdbmsviewfield_constructor_args():
+    sig = inspect.signature(rdbms_RdbmsViewField.__init__)
+    params = list(sig.parameters.keys())
+    assert "inherited" in params, "Missing parameter 'inherited'"
+
+def test_rdbms_rdbmsviewfield_has_inherited():
+    assert hasattr(rdbms_RdbmsViewField, "inherited")
+    descriptor = None
+    for klass in rdbms_RdbmsViewField.__mro__:
+        if "inherited" in klass.__dict__:
+            descriptor = klass.__dict__["inherited"]
+            break
+    assert isinstance(descriptor, property)
 
 
 # =============================================================================
@@ -1209,122 +1209,122 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-rdbms::RdbmsOperationMeta_strategy = st.builds(
-    rdbms::RdbmsOperationMeta,
+rdbms_RdbmsOperationMeta_strategy = st.builds(
+    rdbms_RdbmsOperationMeta,
 )
-rdbms::RdbmsViewRecordValue_strategy = st.builds(
-    rdbms::RdbmsViewRecordValue,
+rdbms_RdbmsViewRecordValue_strategy = st.builds(
+    rdbms_RdbmsViewRecordValue,
     value=
         safe_text
 )
 RdbmsFieldOperation_strategy = st.builds(
     RdbmsFieldOperation,
 )
-rdbms::RdbmsDeleteFieldOperation_strategy = st.builds(
-    rdbms::RdbmsDeleteFieldOperation,
+rdbms_RdbmsDeleteFieldOperation_strategy = st.builds(
+    rdbms_RdbmsDeleteFieldOperation,
 )
-rdbms::RdbmsModifyFieldOperation_strategy = st.builds(
-    rdbms::RdbmsModifyFieldOperation,
+rdbms_RdbmsModifyFieldOperation_strategy = st.builds(
+    rdbms_RdbmsModifyFieldOperation,
+    changedForeignKeyToValueField=
+        safe_text,
     nameChanged=
+        safe_text,
+    sizeChanged=
+        safe_text,
+    changedValueFieldToForeignKey=
         safe_text,
     mandatoryChanged=
         st.booleans(),
     typeChanged=
-        st.booleans(),
-    changedValueFieldToForeignKey=
-        safe_text,
-    sizeChanged=
-        safe_text,
-    changedForeignKeyToValueField=
-        safe_text
+        st.booleans()
 )
-rdbms::RdbmsCreateFieldOperation_strategy = st.builds(
-    rdbms::RdbmsCreateFieldOperation,
+rdbms_RdbmsCreateFieldOperation_strategy = st.builds(
+    rdbms_RdbmsCreateFieldOperation,
 )
 RdbmsTableOperation_strategy = st.builds(
     RdbmsTableOperation,
 )
-rdbms::RdbmsDeleteTableOperation_strategy = st.builds(
-    rdbms::RdbmsDeleteTableOperation,
+rdbms_RdbmsDeleteTableOperation_strategy = st.builds(
+    rdbms_RdbmsDeleteTableOperation,
 )
-rdbms::RdbmsCreateTableOperation_strategy = st.builds(
-    rdbms::RdbmsCreateTableOperation,
+rdbms_RdbmsCreateTableOperation_strategy = st.builds(
+    rdbms_RdbmsCreateTableOperation,
 )
 RdbmsExpression_strategy = st.builds(
     RdbmsExpression,
 )
-rdbms::RdbmsRelationExpression_strategy = st.builds(
-    rdbms::RdbmsRelationExpression,
+rdbms_RdbmsRelationExpression_strategy = st.builds(
+    rdbms_RdbmsRelationExpression,
 )
-rdbms::RdbmsLabelExpression_strategy = st.builds(
-    rdbms::RdbmsLabelExpression,
+rdbms_RdbmsLabelExpression_strategy = st.builds(
+    rdbms_RdbmsLabelExpression,
     text=
         safe_text
 )
-rdbms::RdbmsFeature_strategy = st.builds(
-    rdbms::RdbmsFeature,
+rdbms_RdbmsFeature_strategy = st.builds(
+    rdbms_RdbmsFeature,
     name=
         safe_text
 )
-rdbms::RdbmsViewRecord_strategy = st.builds(
-    rdbms::RdbmsViewRecord,
+rdbms_RdbmsViewRecord_strategy = st.builds(
+    rdbms_RdbmsViewRecord,
 )
-rdbms::RdbmsConfiguration_strategy = st.builds(
-    rdbms::RdbmsConfiguration,
+rdbms_RdbmsConfiguration_strategy = st.builds(
+    rdbms_RdbmsConfiguration,
     dialect=
         safe_text
 )
-rdbms::RdbmsModel_strategy = st.builds(
-    rdbms::RdbmsModel,
+rdbms_RdbmsModel_strategy = st.builds(
+    rdbms_RdbmsModel,
     version=
         safe_text
 )
-rdbms::RdbmsModifyTableOperation_strategy = st.builds(
-    rdbms::RdbmsModifyTableOperation,
+rdbms_RdbmsModifyTableOperation_strategy = st.builds(
+    rdbms_RdbmsModifyTableOperation,
     nameChanged=
         safe_text
 )
 RdbmsViewTableField_strategy = st.builds(
     RdbmsViewTableField,
 )
-rdbms::RdbmsViewForeignIdentifierField_strategy = st.builds(
-    rdbms::RdbmsViewForeignIdentifierField,
+rdbms_RdbmsViewAliasField_strategy = st.builds(
+    rdbms_RdbmsViewAliasField,
 )
-rdbms::RdbmsViewAliasField_strategy = st.builds(
-    rdbms::RdbmsViewAliasField,
+rdbms_RdbmsViewForeignIdentifierField_strategy = st.builds(
+    rdbms_RdbmsViewForeignIdentifierField,
 )
 RdbmsViewField_strategy = st.builds(
     RdbmsViewField,
 )
-rdbms::RdbmsViewTableField_strategy = st.builds(
-    rdbms::RdbmsViewTableField,
+rdbms_RdbmsViewTableField_strategy = st.builds(
+    rdbms_RdbmsViewTableField,
     foreign=
         st.booleans()
 )
-rdbms::RdbmsViewExpressionField_strategy = st.builds(
-    rdbms::RdbmsViewExpressionField,
+rdbms_RdbmsViewExpressionField_strategy = st.builds(
+    rdbms_RdbmsViewExpressionField,
     expression=
         safe_text
 )
 RdbmsViewAliasField_strategy = st.builds(
     RdbmsViewAliasField,
 )
-rdbms::RdbmsViewValueField_strategy = st.builds(
-    rdbms::RdbmsViewValueField,
+rdbms_RdbmsViewValueField_strategy = st.builds(
+    rdbms_RdbmsViewValueField,
 )
-rdbms::RdbmsViewIdentifierField_strategy = st.builds(
-    rdbms::RdbmsViewIdentifierField,
+rdbms_RdbmsViewIdentifierField_strategy = st.builds(
+    rdbms_RdbmsViewIdentifierField,
 )
-rdbms::RdbmsViewRelation_strategy = st.builds(
-    rdbms::RdbmsViewRelation,
+rdbms_RdbmsViewRelation_strategy = st.builds(
+    rdbms_RdbmsViewRelation,
     name=
         safe_text
 )
 RdbmsField_strategy = st.builds(
     RdbmsField,
 )
-rdbms::RdbmsValueField_strategy = st.builds(
-    rdbms::RdbmsValueField,
+rdbms_RdbmsValueField_strategy = st.builds(
+    rdbms_RdbmsValueField,
     technical=
         st.booleans()
 )
@@ -1334,136 +1334,133 @@ RdbmsTable_strategy = st.builds(
 RdbmsIdentifierField_strategy = st.builds(
     RdbmsIdentifierField,
 )
-rdbms::RdbmsForeignKey_strategy = st.builds(
-    rdbms::RdbmsForeignKey,
-    deleteOnCascade=
-        st.booleans(),
-    deferred=
+rdbms_RdbmsForeignKey_strategy = st.builds(
+    rdbms_RdbmsForeignKey,
+    inheritenceBased=
         st.booleans(),
     readOnly=
         st.booleans(),
     foreignKeySqlName=
         safe_text,
-    inheritenceBased=
+    deleteOnCascade=
+        st.booleans(),
+    deferred=
         st.booleans()
 )
-rdbms::RdbmsFieldType_strategy = st.builds(
-    rdbms::RdbmsFieldType,
+rdbms_RdbmsFieldType_strategy = st.builds(
+    rdbms_RdbmsFieldType,
+    rdbmsTypeName=
+        safe_text,
     uuid=
         safe_text,
     size=
         st.integers(),
-    description=
+    name=
         safe_text,
     precision=
         st.integers(),
-    rdbmsTypeName=
-        safe_text,
     scale=
         st.integers(),
-    name=
-        safe_text,
     storageByte=
-        st.integers()
-)
-rdbms::RdbmsIdentifierField_strategy = st.builds(
-    rdbms::RdbmsIdentifierField,
-)
-rdbms::RdbmsJunctionTable_strategy = st.builds(
-    rdbms::RdbmsJunctionTable,
-)
-rdbms::RdbmsElement_strategy = st.builds(
-    rdbms::RdbmsElement,
+        st.integers(),
     description=
-        safe_text,
-    originalName=
-        safe_text,
-    fullName=
-        safe_text,
-    originalPackage=
-        safe_text,
-    sqlName=
-        safe_text,
+        safe_text
+)
+rdbms_RdbmsIdentifierField_strategy = st.builds(
+    rdbms_RdbmsIdentifierField,
+)
+rdbms_RdbmsJunctionTable_strategy = st.builds(
+    rdbms_RdbmsJunctionTable,
+)
+rdbms_RdbmsElement_strategy = st.builds(
+    rdbms_RdbmsElement,
     shortName=
         safe_text,
     name=
         safe_text,
+    description=
+        safe_text,
+    sqlName=
+        safe_text,
+    originalPackage=
+        safe_text,
+    fullName=
+        safe_text,
     uuid=
+        safe_text,
+    originalName=
         safe_text
 )
 RdbmsElement_strategy = st.builds(
     RdbmsElement,
 )
-rdbms::RdbmsField_strategy = st.builds(
-    rdbms::RdbmsField,
+rdbms_RdbmsTable_strategy = st.builds(
+    rdbms_RdbmsTable,
+)
+rdbms_RdbmsUniqueConstraint_strategy = st.builds(
+    rdbms_RdbmsUniqueConstraint,
+)
+rdbms_RdbmsExpression_strategy = st.builds(
+    rdbms_RdbmsExpression,
+    expression=
+        safe_text
+)
+rdbms_RdbmsField_strategy = st.builds(
+    rdbms_RdbmsField,
+    size=
+        st.integers(),
+    rdbmsTypeName=
+        safe_text,
     mandatory=
         st.booleans(),
     precision=
         st.integers(),
-    scale=
-        st.integers(),
     storageByte=
         st.integers(),
-    rdbmsTypeName=
-        safe_text,
-    size=
+    scale=
         st.integers()
 )
-rdbms::RdbmsIndex_strategy = st.builds(
-    rdbms::RdbmsIndex,
-    unique=
-        st.booleans()
+rdbms_RdbmsTableAlias_strategy = st.builds(
+    rdbms_RdbmsTableAlias,
 )
-rdbms::RdbmsViewField_strategy = st.builds(
-    rdbms::RdbmsViewField,
-    inherited=
-        st.booleans()
-)
-rdbms::RdbmsUniqueConstraint_strategy = st.builds(
-    rdbms::RdbmsUniqueConstraint,
-)
-rdbms::RdbmsFieldOperation_strategy = st.builds(
-    rdbms::RdbmsFieldOperation,
+rdbms_RdbmsFieldOperation_strategy = st.builds(
+    rdbms_RdbmsFieldOperation,
     reviewRequired=
         st.booleans()
 )
-rdbms::RdbmsTableAlias_strategy = st.builds(
-    rdbms::RdbmsTableAlias,
-)
-rdbms::RdbmsTableOperation_strategy = st.builds(
-    rdbms::RdbmsTableOperation,
-)
-rdbms::RdbmsExpression_strategy = st.builds(
-    rdbms::RdbmsExpression,
-    expression=
-        safe_text
-)
-rdbms::RdbmsView_strategy = st.builds(
-    rdbms::RdbmsView,
+rdbms_RdbmsView_strategy = st.builds(
+    rdbms_RdbmsView,
     originUuid=
         safe_text
 )
-rdbms::RdbmsTable_strategy = st.builds(
-    rdbms::RdbmsTable,
+rdbms_RdbmsTableOperation_strategy = st.builds(
+    rdbms_RdbmsTableOperation,
+)
+rdbms_RdbmsIndex_strategy = st.builds(
+    rdbms_RdbmsIndex,
+    unique=
+        st.booleans()
+)
+rdbms_RdbmsViewField_strategy = st.builds(
+    rdbms_RdbmsViewField,
+    inherited=
+        st.booleans()
 )
 
-@given(instance=rdbms::RdbmsOperationMeta_strategy)
+@given(instance=rdbms_RdbmsOperationMeta_strategy)
 @settings(max_examples=50)
-def test_rdbms::rdbmsoperationmeta_instantiation(instance):
-    assert isinstance(instance, rdbms::RdbmsOperationMeta)
+def test_rdbms_rdbmsoperationmeta_instantiation(instance):
+    assert isinstance(instance, rdbms_RdbmsOperationMeta)
 
-@given(instance=rdbms::RdbmsViewRecordValue_strategy)
+@given(instance=rdbms_RdbmsViewRecordValue_strategy)
 @settings(max_examples=50)
-def test_rdbms::rdbmsviewrecordvalue_instantiation(instance):
-    assert isinstance(instance, rdbms::RdbmsViewRecordValue)
-
-@given(instance=rdbms::RdbmsViewRecordValue_strategy)
-def test_rdbms::rdbmsviewrecordvalue_value_type(instance):
-    assert isinstance(instance.value, str)
+def test_rdbms_rdbmsviewrecordvalue_instantiation(instance):
+    assert isinstance(instance, rdbms_RdbmsViewRecordValue)
 
 
-@given(instance=rdbms::RdbmsViewRecordValue_strategy)
-def test_rdbms::rdbmsviewrecordvalue_value_setter(instance):
+
+@given(instance=rdbms_RdbmsViewRecordValue_strategy)
+def test_rdbms_rdbmsviewrecordvalue_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
@@ -1473,193 +1470,160 @@ def test_rdbms::rdbmsviewrecordvalue_value_setter(instance):
 def test_rdbmsfieldoperation_instantiation(instance):
     assert isinstance(instance, RdbmsFieldOperation)
 
-@given(instance=rdbms::RdbmsDeleteFieldOperation_strategy)
+@given(instance=rdbms_RdbmsDeleteFieldOperation_strategy)
 @settings(max_examples=50)
-def test_rdbms::rdbmsdeletefieldoperation_instantiation(instance):
-    assert isinstance(instance, rdbms::RdbmsDeleteFieldOperation)
+def test_rdbms_rdbmsdeletefieldoperation_instantiation(instance):
+    assert isinstance(instance, rdbms_RdbmsDeleteFieldOperation)
 
-@given(instance=rdbms::RdbmsModifyFieldOperation_strategy)
+@given(instance=rdbms_RdbmsModifyFieldOperation_strategy)
 @settings(max_examples=50)
-def test_rdbms::rdbmsmodifyfieldoperation_instantiation(instance):
-    assert isinstance(instance, rdbms::RdbmsModifyFieldOperation)
-
-@given(instance=rdbms::RdbmsModifyFieldOperation_strategy)
-def test_rdbms::rdbmsmodifyfieldoperation_nameChanged_type(instance):
-    assert isinstance(instance.nameChanged, str)
+def test_rdbms_rdbmsmodifyfieldoperation_instantiation(instance):
+    assert isinstance(instance, rdbms_RdbmsModifyFieldOperation)
 
 
-@given(instance=rdbms::RdbmsModifyFieldOperation_strategy)
-def test_rdbms::rdbmsmodifyfieldoperation_nameChanged_setter(instance):
-    original = instance.nameChanged
-    instance.nameChanged = original
-    assert instance.nameChanged == original
 
-@given(instance=rdbms::RdbmsModifyFieldOperation_strategy)
-def test_rdbms::rdbmsmodifyfieldoperation_mandatoryChanged_type(instance):
-    assert isinstance(instance.mandatoryChanged, bool)
-
-
-@given(instance=rdbms::RdbmsModifyFieldOperation_strategy)
-def test_rdbms::rdbmsmodifyfieldoperation_mandatoryChanged_setter(instance):
-    original = instance.mandatoryChanged
-    instance.mandatoryChanged = original
-    assert instance.mandatoryChanged == original
-
-@given(instance=rdbms::RdbmsModifyFieldOperation_strategy)
-def test_rdbms::rdbmsmodifyfieldoperation_typeChanged_type(instance):
-    assert isinstance(instance.typeChanged, bool)
-
-
-@given(instance=rdbms::RdbmsModifyFieldOperation_strategy)
-def test_rdbms::rdbmsmodifyfieldoperation_typeChanged_setter(instance):
-    original = instance.typeChanged
-    instance.typeChanged = original
-    assert instance.typeChanged == original
-
-@given(instance=rdbms::RdbmsModifyFieldOperation_strategy)
-def test_rdbms::rdbmsmodifyfieldoperation_changedValueFieldToForeignKey_type(instance):
-    assert isinstance(instance.changedValueFieldToForeignKey, str)
-
-
-@given(instance=rdbms::RdbmsModifyFieldOperation_strategy)
-def test_rdbms::rdbmsmodifyfieldoperation_changedValueFieldToForeignKey_setter(instance):
-    original = instance.changedValueFieldToForeignKey
-    instance.changedValueFieldToForeignKey = original
-    assert instance.changedValueFieldToForeignKey == original
-
-@given(instance=rdbms::RdbmsModifyFieldOperation_strategy)
-def test_rdbms::rdbmsmodifyfieldoperation_sizeChanged_type(instance):
-    assert isinstance(instance.sizeChanged, str)
-
-
-@given(instance=rdbms::RdbmsModifyFieldOperation_strategy)
-def test_rdbms::rdbmsmodifyfieldoperation_sizeChanged_setter(instance):
-    original = instance.sizeChanged
-    instance.sizeChanged = original
-    assert instance.sizeChanged == original
-
-@given(instance=rdbms::RdbmsModifyFieldOperation_strategy)
-def test_rdbms::rdbmsmodifyfieldoperation_changedForeignKeyToValueField_type(instance):
-    assert isinstance(instance.changedForeignKeyToValueField, str)
-
-
-@given(instance=rdbms::RdbmsModifyFieldOperation_strategy)
-def test_rdbms::rdbmsmodifyfieldoperation_changedForeignKeyToValueField_setter(instance):
+@given(instance=rdbms_RdbmsModifyFieldOperation_strategy)
+def test_rdbms_rdbmsmodifyfieldoperation_changedForeignKeyToValueField_setter(instance):
     original = instance.changedForeignKeyToValueField
     instance.changedForeignKeyToValueField = original
     assert instance.changedForeignKeyToValueField == original
 
-@given(instance=rdbms::RdbmsCreateFieldOperation_strategy)
+
+
+@given(instance=rdbms_RdbmsModifyFieldOperation_strategy)
+def test_rdbms_rdbmsmodifyfieldoperation_nameChanged_setter(instance):
+    original = instance.nameChanged
+    instance.nameChanged = original
+    assert instance.nameChanged == original
+
+
+
+@given(instance=rdbms_RdbmsModifyFieldOperation_strategy)
+def test_rdbms_rdbmsmodifyfieldoperation_sizeChanged_setter(instance):
+    original = instance.sizeChanged
+    instance.sizeChanged = original
+    assert instance.sizeChanged == original
+
+
+
+@given(instance=rdbms_RdbmsModifyFieldOperation_strategy)
+def test_rdbms_rdbmsmodifyfieldoperation_changedValueFieldToForeignKey_setter(instance):
+    original = instance.changedValueFieldToForeignKey
+    instance.changedValueFieldToForeignKey = original
+    assert instance.changedValueFieldToForeignKey == original
+
+
+
+@given(instance=rdbms_RdbmsModifyFieldOperation_strategy)
+def test_rdbms_rdbmsmodifyfieldoperation_mandatoryChanged_setter(instance):
+    original = instance.mandatoryChanged
+    instance.mandatoryChanged = original
+    assert instance.mandatoryChanged == original
+
+
+
+@given(instance=rdbms_RdbmsModifyFieldOperation_strategy)
+def test_rdbms_rdbmsmodifyfieldoperation_typeChanged_setter(instance):
+    original = instance.typeChanged
+    instance.typeChanged = original
+    assert instance.typeChanged == original
+
+@given(instance=rdbms_RdbmsCreateFieldOperation_strategy)
 @settings(max_examples=50)
-def test_rdbms::rdbmscreatefieldoperation_instantiation(instance):
-    assert isinstance(instance, rdbms::RdbmsCreateFieldOperation)
+def test_rdbms_rdbmscreatefieldoperation_instantiation(instance):
+    assert isinstance(instance, rdbms_RdbmsCreateFieldOperation)
 
 @given(instance=RdbmsTableOperation_strategy)
 @settings(max_examples=50)
 def test_rdbmstableoperation_instantiation(instance):
     assert isinstance(instance, RdbmsTableOperation)
 
-@given(instance=rdbms::RdbmsDeleteTableOperation_strategy)
+@given(instance=rdbms_RdbmsDeleteTableOperation_strategy)
 @settings(max_examples=50)
-def test_rdbms::rdbmsdeletetableoperation_instantiation(instance):
-    assert isinstance(instance, rdbms::RdbmsDeleteTableOperation)
+def test_rdbms_rdbmsdeletetableoperation_instantiation(instance):
+    assert isinstance(instance, rdbms_RdbmsDeleteTableOperation)
 
-@given(instance=rdbms::RdbmsCreateTableOperation_strategy)
+@given(instance=rdbms_RdbmsCreateTableOperation_strategy)
 @settings(max_examples=50)
-def test_rdbms::rdbmscreatetableoperation_instantiation(instance):
-    assert isinstance(instance, rdbms::RdbmsCreateTableOperation)
+def test_rdbms_rdbmscreatetableoperation_instantiation(instance):
+    assert isinstance(instance, rdbms_RdbmsCreateTableOperation)
 
 @given(instance=RdbmsExpression_strategy)
 @settings(max_examples=50)
 def test_rdbmsexpression_instantiation(instance):
     assert isinstance(instance, RdbmsExpression)
 
-@given(instance=rdbms::RdbmsRelationExpression_strategy)
+@given(instance=rdbms_RdbmsRelationExpression_strategy)
 @settings(max_examples=50)
-def test_rdbms::rdbmsrelationexpression_instantiation(instance):
-    assert isinstance(instance, rdbms::RdbmsRelationExpression)
+def test_rdbms_rdbmsrelationexpression_instantiation(instance):
+    assert isinstance(instance, rdbms_RdbmsRelationExpression)
 
-@given(instance=rdbms::RdbmsLabelExpression_strategy)
+@given(instance=rdbms_RdbmsLabelExpression_strategy)
 @settings(max_examples=50)
-def test_rdbms::rdbmslabelexpression_instantiation(instance):
-    assert isinstance(instance, rdbms::RdbmsLabelExpression)
-
-@given(instance=rdbms::RdbmsLabelExpression_strategy)
-def test_rdbms::rdbmslabelexpression_text_type(instance):
-    assert isinstance(instance.text, str)
+def test_rdbms_rdbmslabelexpression_instantiation(instance):
+    assert isinstance(instance, rdbms_RdbmsLabelExpression)
 
 
-@given(instance=rdbms::RdbmsLabelExpression_strategy)
-def test_rdbms::rdbmslabelexpression_text_setter(instance):
+
+@given(instance=rdbms_RdbmsLabelExpression_strategy)
+def test_rdbms_rdbmslabelexpression_text_setter(instance):
     original = instance.text
     instance.text = original
     assert instance.text == original
 
-@given(instance=rdbms::RdbmsFeature_strategy)
+@given(instance=rdbms_RdbmsFeature_strategy)
 @settings(max_examples=50)
-def test_rdbms::rdbmsfeature_instantiation(instance):
-    assert isinstance(instance, rdbms::RdbmsFeature)
-
-@given(instance=rdbms::RdbmsFeature_strategy)
-def test_rdbms::rdbmsfeature_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_rdbms_rdbmsfeature_instantiation(instance):
+    assert isinstance(instance, rdbms_RdbmsFeature)
 
 
-@given(instance=rdbms::RdbmsFeature_strategy)
-def test_rdbms::rdbmsfeature_name_setter(instance):
+
+@given(instance=rdbms_RdbmsFeature_strategy)
+def test_rdbms_rdbmsfeature_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=rdbms::RdbmsViewRecord_strategy)
+@given(instance=rdbms_RdbmsViewRecord_strategy)
 @settings(max_examples=50)
-def test_rdbms::rdbmsviewrecord_instantiation(instance):
-    assert isinstance(instance, rdbms::RdbmsViewRecord)
+def test_rdbms_rdbmsviewrecord_instantiation(instance):
+    assert isinstance(instance, rdbms_RdbmsViewRecord)
 
-@given(instance=rdbms::RdbmsConfiguration_strategy)
+@given(instance=rdbms_RdbmsConfiguration_strategy)
 @settings(max_examples=50)
-def test_rdbms::rdbmsconfiguration_instantiation(instance):
-    assert isinstance(instance, rdbms::RdbmsConfiguration)
-
-@given(instance=rdbms::RdbmsConfiguration_strategy)
-def test_rdbms::rdbmsconfiguration_dialect_type(instance):
-    assert isinstance(instance.dialect, str)
+def test_rdbms_rdbmsconfiguration_instantiation(instance):
+    assert isinstance(instance, rdbms_RdbmsConfiguration)
 
 
-@given(instance=rdbms::RdbmsConfiguration_strategy)
-def test_rdbms::rdbmsconfiguration_dialect_setter(instance):
+
+@given(instance=rdbms_RdbmsConfiguration_strategy)
+def test_rdbms_rdbmsconfiguration_dialect_setter(instance):
     original = instance.dialect
     instance.dialect = original
     assert instance.dialect == original
 
-@given(instance=rdbms::RdbmsModel_strategy)
+@given(instance=rdbms_RdbmsModel_strategy)
 @settings(max_examples=50)
-def test_rdbms::rdbmsmodel_instantiation(instance):
-    assert isinstance(instance, rdbms::RdbmsModel)
-
-@given(instance=rdbms::RdbmsModel_strategy)
-def test_rdbms::rdbmsmodel_version_type(instance):
-    assert isinstance(instance.version, str)
+def test_rdbms_rdbmsmodel_instantiation(instance):
+    assert isinstance(instance, rdbms_RdbmsModel)
 
 
-@given(instance=rdbms::RdbmsModel_strategy)
-def test_rdbms::rdbmsmodel_version_setter(instance):
+
+@given(instance=rdbms_RdbmsModel_strategy)
+def test_rdbms_rdbmsmodel_version_setter(instance):
     original = instance.version
     instance.version = original
     assert instance.version == original
 
-@given(instance=rdbms::RdbmsModifyTableOperation_strategy)
+@given(instance=rdbms_RdbmsModifyTableOperation_strategy)
 @settings(max_examples=50)
-def test_rdbms::rdbmsmodifytableoperation_instantiation(instance):
-    assert isinstance(instance, rdbms::RdbmsModifyTableOperation)
-
-@given(instance=rdbms::RdbmsModifyTableOperation_strategy)
-def test_rdbms::rdbmsmodifytableoperation_nameChanged_type(instance):
-    assert isinstance(instance.nameChanged, str)
+def test_rdbms_rdbmsmodifytableoperation_instantiation(instance):
+    assert isinstance(instance, rdbms_RdbmsModifyTableOperation)
 
 
-@given(instance=rdbms::RdbmsModifyTableOperation_strategy)
-def test_rdbms::rdbmsmodifytableoperation_nameChanged_setter(instance):
+
+@given(instance=rdbms_RdbmsModifyTableOperation_strategy)
+def test_rdbms_rdbmsmodifytableoperation_nameChanged_setter(instance):
     original = instance.nameChanged
     instance.nameChanged = original
     assert instance.nameChanged == original
@@ -1669,49 +1633,43 @@ def test_rdbms::rdbmsmodifytableoperation_nameChanged_setter(instance):
 def test_rdbmsviewtablefield_instantiation(instance):
     assert isinstance(instance, RdbmsViewTableField)
 
-@given(instance=rdbms::RdbmsViewForeignIdentifierField_strategy)
+@given(instance=rdbms_RdbmsViewAliasField_strategy)
 @settings(max_examples=50)
-def test_rdbms::rdbmsviewforeignidentifierfield_instantiation(instance):
-    assert isinstance(instance, rdbms::RdbmsViewForeignIdentifierField)
+def test_rdbms_rdbmsviewaliasfield_instantiation(instance):
+    assert isinstance(instance, rdbms_RdbmsViewAliasField)
 
-@given(instance=rdbms::RdbmsViewAliasField_strategy)
+@given(instance=rdbms_RdbmsViewForeignIdentifierField_strategy)
 @settings(max_examples=50)
-def test_rdbms::rdbmsviewaliasfield_instantiation(instance):
-    assert isinstance(instance, rdbms::RdbmsViewAliasField)
+def test_rdbms_rdbmsviewforeignidentifierfield_instantiation(instance):
+    assert isinstance(instance, rdbms_RdbmsViewForeignIdentifierField)
 
 @given(instance=RdbmsViewField_strategy)
 @settings(max_examples=50)
 def test_rdbmsviewfield_instantiation(instance):
     assert isinstance(instance, RdbmsViewField)
 
-@given(instance=rdbms::RdbmsViewTableField_strategy)
+@given(instance=rdbms_RdbmsViewTableField_strategy)
 @settings(max_examples=50)
-def test_rdbms::rdbmsviewtablefield_instantiation(instance):
-    assert isinstance(instance, rdbms::RdbmsViewTableField)
-
-@given(instance=rdbms::RdbmsViewTableField_strategy)
-def test_rdbms::rdbmsviewtablefield_foreign_type(instance):
-    assert isinstance(instance.foreign, bool)
+def test_rdbms_rdbmsviewtablefield_instantiation(instance):
+    assert isinstance(instance, rdbms_RdbmsViewTableField)
 
 
-@given(instance=rdbms::RdbmsViewTableField_strategy)
-def test_rdbms::rdbmsviewtablefield_foreign_setter(instance):
+
+@given(instance=rdbms_RdbmsViewTableField_strategy)
+def test_rdbms_rdbmsviewtablefield_foreign_setter(instance):
     original = instance.foreign
     instance.foreign = original
     assert instance.foreign == original
 
-@given(instance=rdbms::RdbmsViewExpressionField_strategy)
+@given(instance=rdbms_RdbmsViewExpressionField_strategy)
 @settings(max_examples=50)
-def test_rdbms::rdbmsviewexpressionfield_instantiation(instance):
-    assert isinstance(instance, rdbms::RdbmsViewExpressionField)
-
-@given(instance=rdbms::RdbmsViewExpressionField_strategy)
-def test_rdbms::rdbmsviewexpressionfield_expression_type(instance):
-    assert isinstance(instance.expression, str)
+def test_rdbms_rdbmsviewexpressionfield_instantiation(instance):
+    assert isinstance(instance, rdbms_RdbmsViewExpressionField)
 
 
-@given(instance=rdbms::RdbmsViewExpressionField_strategy)
-def test_rdbms::rdbmsviewexpressionfield_expression_setter(instance):
+
+@given(instance=rdbms_RdbmsViewExpressionField_strategy)
+def test_rdbms_rdbmsviewexpressionfield_expression_setter(instance):
     original = instance.expression
     instance.expression = original
     assert instance.expression == original
@@ -1721,28 +1679,25 @@ def test_rdbms::rdbmsviewexpressionfield_expression_setter(instance):
 def test_rdbmsviewaliasfield_instantiation(instance):
     assert isinstance(instance, RdbmsViewAliasField)
 
-@given(instance=rdbms::RdbmsViewValueField_strategy)
+@given(instance=rdbms_RdbmsViewValueField_strategy)
 @settings(max_examples=50)
-def test_rdbms::rdbmsviewvaluefield_instantiation(instance):
-    assert isinstance(instance, rdbms::RdbmsViewValueField)
+def test_rdbms_rdbmsviewvaluefield_instantiation(instance):
+    assert isinstance(instance, rdbms_RdbmsViewValueField)
 
-@given(instance=rdbms::RdbmsViewIdentifierField_strategy)
+@given(instance=rdbms_RdbmsViewIdentifierField_strategy)
 @settings(max_examples=50)
-def test_rdbms::rdbmsviewidentifierfield_instantiation(instance):
-    assert isinstance(instance, rdbms::RdbmsViewIdentifierField)
+def test_rdbms_rdbmsviewidentifierfield_instantiation(instance):
+    assert isinstance(instance, rdbms_RdbmsViewIdentifierField)
 
-@given(instance=rdbms::RdbmsViewRelation_strategy)
+@given(instance=rdbms_RdbmsViewRelation_strategy)
 @settings(max_examples=50)
-def test_rdbms::rdbmsviewrelation_instantiation(instance):
-    assert isinstance(instance, rdbms::RdbmsViewRelation)
-
-@given(instance=rdbms::RdbmsViewRelation_strategy)
-def test_rdbms::rdbmsviewrelation_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_rdbms_rdbmsviewrelation_instantiation(instance):
+    assert isinstance(instance, rdbms_RdbmsViewRelation)
 
 
-@given(instance=rdbms::RdbmsViewRelation_strategy)
-def test_rdbms::rdbmsviewrelation_name_setter(instance):
+
+@given(instance=rdbms_RdbmsViewRelation_strategy)
+def test_rdbms_rdbmsviewrelation_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
@@ -1752,18 +1707,15 @@ def test_rdbms::rdbmsviewrelation_name_setter(instance):
 def test_rdbmsfield_instantiation(instance):
     assert isinstance(instance, RdbmsField)
 
-@given(instance=rdbms::RdbmsValueField_strategy)
+@given(instance=rdbms_RdbmsValueField_strategy)
 @settings(max_examples=50)
-def test_rdbms::rdbmsvaluefield_instantiation(instance):
-    assert isinstance(instance, rdbms::RdbmsValueField)
-
-@given(instance=rdbms::RdbmsValueField_strategy)
-def test_rdbms::rdbmsvaluefield_technical_type(instance):
-    assert isinstance(instance.technical, bool)
+def test_rdbms_rdbmsvaluefield_instantiation(instance):
+    assert isinstance(instance, rdbms_RdbmsValueField)
 
 
-@given(instance=rdbms::RdbmsValueField_strategy)
-def test_rdbms::rdbmsvaluefield_technical_setter(instance):
+
+@given(instance=rdbms_RdbmsValueField_strategy)
+def test_rdbms_rdbmsvaluefield_technical_setter(instance):
     original = instance.technical
     instance.technical = original
     assert instance.technical == original
@@ -1778,434 +1730,338 @@ def test_rdbmstable_instantiation(instance):
 def test_rdbmsidentifierfield_instantiation(instance):
     assert isinstance(instance, RdbmsIdentifierField)
 
-@given(instance=rdbms::RdbmsForeignKey_strategy)
+@given(instance=rdbms_RdbmsForeignKey_strategy)
 @settings(max_examples=50)
-def test_rdbms::rdbmsforeignkey_instantiation(instance):
-    assert isinstance(instance, rdbms::RdbmsForeignKey)
-
-@given(instance=rdbms::RdbmsForeignKey_strategy)
-def test_rdbms::rdbmsforeignkey_deleteOnCascade_type(instance):
-    assert isinstance(instance.deleteOnCascade, bool)
+def test_rdbms_rdbmsforeignkey_instantiation(instance):
+    assert isinstance(instance, rdbms_RdbmsForeignKey)
 
 
-@given(instance=rdbms::RdbmsForeignKey_strategy)
-def test_rdbms::rdbmsforeignkey_deleteOnCascade_setter(instance):
-    original = instance.deleteOnCascade
-    instance.deleteOnCascade = original
-    assert instance.deleteOnCascade == original
 
-@given(instance=rdbms::RdbmsForeignKey_strategy)
-def test_rdbms::rdbmsforeignkey_deferred_type(instance):
-    assert isinstance(instance.deferred, bool)
-
-
-@given(instance=rdbms::RdbmsForeignKey_strategy)
-def test_rdbms::rdbmsforeignkey_deferred_setter(instance):
-    original = instance.deferred
-    instance.deferred = original
-    assert instance.deferred == original
-
-@given(instance=rdbms::RdbmsForeignKey_strategy)
-def test_rdbms::rdbmsforeignkey_readOnly_type(instance):
-    assert isinstance(instance.readOnly, bool)
-
-
-@given(instance=rdbms::RdbmsForeignKey_strategy)
-def test_rdbms::rdbmsforeignkey_readOnly_setter(instance):
-    original = instance.readOnly
-    instance.readOnly = original
-    assert instance.readOnly == original
-
-@given(instance=rdbms::RdbmsForeignKey_strategy)
-def test_rdbms::rdbmsforeignkey_foreignKeySqlName_type(instance):
-    assert isinstance(instance.foreignKeySqlName, str)
-
-
-@given(instance=rdbms::RdbmsForeignKey_strategy)
-def test_rdbms::rdbmsforeignkey_foreignKeySqlName_setter(instance):
-    original = instance.foreignKeySqlName
-    instance.foreignKeySqlName = original
-    assert instance.foreignKeySqlName == original
-
-@given(instance=rdbms::RdbmsForeignKey_strategy)
-def test_rdbms::rdbmsforeignkey_inheritenceBased_type(instance):
-    assert isinstance(instance.inheritenceBased, bool)
-
-
-@given(instance=rdbms::RdbmsForeignKey_strategy)
-def test_rdbms::rdbmsforeignkey_inheritenceBased_setter(instance):
+@given(instance=rdbms_RdbmsForeignKey_strategy)
+def test_rdbms_rdbmsforeignkey_inheritenceBased_setter(instance):
     original = instance.inheritenceBased
     instance.inheritenceBased = original
     assert instance.inheritenceBased == original
 
-@given(instance=rdbms::RdbmsFieldType_strategy)
+
+
+@given(instance=rdbms_RdbmsForeignKey_strategy)
+def test_rdbms_rdbmsforeignkey_readOnly_setter(instance):
+    original = instance.readOnly
+    instance.readOnly = original
+    assert instance.readOnly == original
+
+
+
+@given(instance=rdbms_RdbmsForeignKey_strategy)
+def test_rdbms_rdbmsforeignkey_foreignKeySqlName_setter(instance):
+    original = instance.foreignKeySqlName
+    instance.foreignKeySqlName = original
+    assert instance.foreignKeySqlName == original
+
+
+
+@given(instance=rdbms_RdbmsForeignKey_strategy)
+def test_rdbms_rdbmsforeignkey_deleteOnCascade_setter(instance):
+    original = instance.deleteOnCascade
+    instance.deleteOnCascade = original
+    assert instance.deleteOnCascade == original
+
+
+
+@given(instance=rdbms_RdbmsForeignKey_strategy)
+def test_rdbms_rdbmsforeignkey_deferred_setter(instance):
+    original = instance.deferred
+    instance.deferred = original
+    assert instance.deferred == original
+
+@given(instance=rdbms_RdbmsFieldType_strategy)
 @settings(max_examples=50)
-def test_rdbms::rdbmsfieldtype_instantiation(instance):
-    assert isinstance(instance, rdbms::RdbmsFieldType)
-
-@given(instance=rdbms::RdbmsFieldType_strategy)
-def test_rdbms::rdbmsfieldtype_uuid_type(instance):
-    assert isinstance(instance.uuid, str)
+def test_rdbms_rdbmsfieldtype_instantiation(instance):
+    assert isinstance(instance, rdbms_RdbmsFieldType)
 
 
-@given(instance=rdbms::RdbmsFieldType_strategy)
-def test_rdbms::rdbmsfieldtype_uuid_setter(instance):
-    original = instance.uuid
-    instance.uuid = original
-    assert instance.uuid == original
 
-@given(instance=rdbms::RdbmsFieldType_strategy)
-def test_rdbms::rdbmsfieldtype_size_type(instance):
-    assert isinstance(instance.size, int)
-
-
-@given(instance=rdbms::RdbmsFieldType_strategy)
-def test_rdbms::rdbmsfieldtype_size_setter(instance):
-    original = instance.size
-    instance.size = original
-    assert instance.size == original
-
-@given(instance=rdbms::RdbmsFieldType_strategy)
-def test_rdbms::rdbmsfieldtype_description_type(instance):
-    assert isinstance(instance.description, str)
-
-
-@given(instance=rdbms::RdbmsFieldType_strategy)
-def test_rdbms::rdbmsfieldtype_description_setter(instance):
-    original = instance.description
-    instance.description = original
-    assert instance.description == original
-
-@given(instance=rdbms::RdbmsFieldType_strategy)
-def test_rdbms::rdbmsfieldtype_precision_type(instance):
-    assert isinstance(instance.precision, int)
-
-
-@given(instance=rdbms::RdbmsFieldType_strategy)
-def test_rdbms::rdbmsfieldtype_precision_setter(instance):
-    original = instance.precision
-    instance.precision = original
-    assert instance.precision == original
-
-@given(instance=rdbms::RdbmsFieldType_strategy)
-def test_rdbms::rdbmsfieldtype_rdbmsTypeName_type(instance):
-    assert isinstance(instance.rdbmsTypeName, str)
-
-
-@given(instance=rdbms::RdbmsFieldType_strategy)
-def test_rdbms::rdbmsfieldtype_rdbmsTypeName_setter(instance):
+@given(instance=rdbms_RdbmsFieldType_strategy)
+def test_rdbms_rdbmsfieldtype_rdbmsTypeName_setter(instance):
     original = instance.rdbmsTypeName
     instance.rdbmsTypeName = original
     assert instance.rdbmsTypeName == original
 
-@given(instance=rdbms::RdbmsFieldType_strategy)
-def test_rdbms::rdbmsfieldtype_scale_type(instance):
-    assert isinstance(instance.scale, int)
 
 
-@given(instance=rdbms::RdbmsFieldType_strategy)
-def test_rdbms::rdbmsfieldtype_scale_setter(instance):
+@given(instance=rdbms_RdbmsFieldType_strategy)
+def test_rdbms_rdbmsfieldtype_uuid_setter(instance):
+    original = instance.uuid
+    instance.uuid = original
+    assert instance.uuid == original
+
+
+
+@given(instance=rdbms_RdbmsFieldType_strategy)
+def test_rdbms_rdbmsfieldtype_size_setter(instance):
+    original = instance.size
+    instance.size = original
+    assert instance.size == original
+
+
+
+@given(instance=rdbms_RdbmsFieldType_strategy)
+def test_rdbms_rdbmsfieldtype_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+
+
+@given(instance=rdbms_RdbmsFieldType_strategy)
+def test_rdbms_rdbmsfieldtype_precision_setter(instance):
+    original = instance.precision
+    instance.precision = original
+    assert instance.precision == original
+
+
+
+@given(instance=rdbms_RdbmsFieldType_strategy)
+def test_rdbms_rdbmsfieldtype_scale_setter(instance):
     original = instance.scale
     instance.scale = original
     assert instance.scale == original
 
-@given(instance=rdbms::RdbmsFieldType_strategy)
-def test_rdbms::rdbmsfieldtype_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
-@given(instance=rdbms::RdbmsFieldType_strategy)
-def test_rdbms::rdbmsfieldtype_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
-
-@given(instance=rdbms::RdbmsFieldType_strategy)
-def test_rdbms::rdbmsfieldtype_storageByte_type(instance):
-    assert isinstance(instance.storageByte, int)
-
-
-@given(instance=rdbms::RdbmsFieldType_strategy)
-def test_rdbms::rdbmsfieldtype_storageByte_setter(instance):
+@given(instance=rdbms_RdbmsFieldType_strategy)
+def test_rdbms_rdbmsfieldtype_storageByte_setter(instance):
     original = instance.storageByte
     instance.storageByte = original
     assert instance.storageByte == original
 
-@given(instance=rdbms::RdbmsIdentifierField_strategy)
-@settings(max_examples=50)
-def test_rdbms::rdbmsidentifierfield_instantiation(instance):
-    assert isinstance(instance, rdbms::RdbmsIdentifierField)
-
-@given(instance=rdbms::RdbmsJunctionTable_strategy)
-@settings(max_examples=50)
-def test_rdbms::rdbmsjunctiontable_instantiation(instance):
-    assert isinstance(instance, rdbms::RdbmsJunctionTable)
-
-@given(instance=rdbms::RdbmsElement_strategy)
-@settings(max_examples=50)
-def test_rdbms::rdbmselement_instantiation(instance):
-    assert isinstance(instance, rdbms::RdbmsElement)
-
-@given(instance=rdbms::RdbmsElement_strategy)
-def test_rdbms::rdbmselement_description_type(instance):
-    assert isinstance(instance.description, str)
 
 
-@given(instance=rdbms::RdbmsElement_strategy)
-def test_rdbms::rdbmselement_description_setter(instance):
+@given(instance=rdbms_RdbmsFieldType_strategy)
+def test_rdbms_rdbmsfieldtype_description_setter(instance):
     original = instance.description
     instance.description = original
     assert instance.description == original
 
-@given(instance=rdbms::RdbmsElement_strategy)
-def test_rdbms::rdbmselement_originalName_type(instance):
-    assert isinstance(instance.originalName, str)
+@given(instance=rdbms_RdbmsIdentifierField_strategy)
+@settings(max_examples=50)
+def test_rdbms_rdbmsidentifierfield_instantiation(instance):
+    assert isinstance(instance, rdbms_RdbmsIdentifierField)
+
+@given(instance=rdbms_RdbmsJunctionTable_strategy)
+@settings(max_examples=50)
+def test_rdbms_rdbmsjunctiontable_instantiation(instance):
+    assert isinstance(instance, rdbms_RdbmsJunctionTable)
+
+@given(instance=rdbms_RdbmsElement_strategy)
+@settings(max_examples=50)
+def test_rdbms_rdbmselement_instantiation(instance):
+    assert isinstance(instance, rdbms_RdbmsElement)
 
 
-@given(instance=rdbms::RdbmsElement_strategy)
-def test_rdbms::rdbmselement_originalName_setter(instance):
-    original = instance.originalName
-    instance.originalName = original
-    assert instance.originalName == original
 
-@given(instance=rdbms::RdbmsElement_strategy)
-def test_rdbms::rdbmselement_fullName_type(instance):
-    assert isinstance(instance.fullName, str)
-
-
-@given(instance=rdbms::RdbmsElement_strategy)
-def test_rdbms::rdbmselement_fullName_setter(instance):
-    original = instance.fullName
-    instance.fullName = original
-    assert instance.fullName == original
-
-@given(instance=rdbms::RdbmsElement_strategy)
-def test_rdbms::rdbmselement_originalPackage_type(instance):
-    assert isinstance(instance.originalPackage, str)
-
-
-@given(instance=rdbms::RdbmsElement_strategy)
-def test_rdbms::rdbmselement_originalPackage_setter(instance):
-    original = instance.originalPackage
-    instance.originalPackage = original
-    assert instance.originalPackage == original
-
-@given(instance=rdbms::RdbmsElement_strategy)
-def test_rdbms::rdbmselement_sqlName_type(instance):
-    assert isinstance(instance.sqlName, str)
-
-
-@given(instance=rdbms::RdbmsElement_strategy)
-def test_rdbms::rdbmselement_sqlName_setter(instance):
-    original = instance.sqlName
-    instance.sqlName = original
-    assert instance.sqlName == original
-
-@given(instance=rdbms::RdbmsElement_strategy)
-def test_rdbms::rdbmselement_shortName_type(instance):
-    assert isinstance(instance.shortName, str)
-
-
-@given(instance=rdbms::RdbmsElement_strategy)
-def test_rdbms::rdbmselement_shortName_setter(instance):
+@given(instance=rdbms_RdbmsElement_strategy)
+def test_rdbms_rdbmselement_shortName_setter(instance):
     original = instance.shortName
     instance.shortName = original
     assert instance.shortName == original
 
-@given(instance=rdbms::RdbmsElement_strategy)
-def test_rdbms::rdbmselement_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
-@given(instance=rdbms::RdbmsElement_strategy)
-def test_rdbms::rdbmselement_name_setter(instance):
+@given(instance=rdbms_RdbmsElement_strategy)
+def test_rdbms_rdbmselement_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=rdbms::RdbmsElement_strategy)
-def test_rdbms::rdbmselement_uuid_type(instance):
-    assert isinstance(instance.uuid, str)
 
 
-@given(instance=rdbms::RdbmsElement_strategy)
-def test_rdbms::rdbmselement_uuid_setter(instance):
+@given(instance=rdbms_RdbmsElement_strategy)
+def test_rdbms_rdbmselement_description_setter(instance):
+    original = instance.description
+    instance.description = original
+    assert instance.description == original
+
+
+
+@given(instance=rdbms_RdbmsElement_strategy)
+def test_rdbms_rdbmselement_sqlName_setter(instance):
+    original = instance.sqlName
+    instance.sqlName = original
+    assert instance.sqlName == original
+
+
+
+@given(instance=rdbms_RdbmsElement_strategy)
+def test_rdbms_rdbmselement_originalPackage_setter(instance):
+    original = instance.originalPackage
+    instance.originalPackage = original
+    assert instance.originalPackage == original
+
+
+
+@given(instance=rdbms_RdbmsElement_strategy)
+def test_rdbms_rdbmselement_fullName_setter(instance):
+    original = instance.fullName
+    instance.fullName = original
+    assert instance.fullName == original
+
+
+
+@given(instance=rdbms_RdbmsElement_strategy)
+def test_rdbms_rdbmselement_uuid_setter(instance):
     original = instance.uuid
     instance.uuid = original
     assert instance.uuid == original
+
+
+
+@given(instance=rdbms_RdbmsElement_strategy)
+def test_rdbms_rdbmselement_originalName_setter(instance):
+    original = instance.originalName
+    instance.originalName = original
+    assert instance.originalName == original
 
 @given(instance=RdbmsElement_strategy)
 @settings(max_examples=50)
 def test_rdbmselement_instantiation(instance):
     assert isinstance(instance, RdbmsElement)
 
-@given(instance=rdbms::RdbmsField_strategy)
+@given(instance=rdbms_RdbmsTable_strategy)
 @settings(max_examples=50)
-def test_rdbms::rdbmsfield_instantiation(instance):
-    assert isinstance(instance, rdbms::RdbmsField)
+def test_rdbms_rdbmstable_instantiation(instance):
+    assert isinstance(instance, rdbms_RdbmsTable)
 
-@given(instance=rdbms::RdbmsField_strategy)
-def test_rdbms::rdbmsfield_mandatory_type(instance):
-    assert isinstance(instance.mandatory, bool)
-
-
-@given(instance=rdbms::RdbmsField_strategy)
-def test_rdbms::rdbmsfield_mandatory_setter(instance):
-    original = instance.mandatory
-    instance.mandatory = original
-    assert instance.mandatory == original
-
-@given(instance=rdbms::RdbmsField_strategy)
-def test_rdbms::rdbmsfield_precision_type(instance):
-    assert isinstance(instance.precision, int)
-
-
-@given(instance=rdbms::RdbmsField_strategy)
-def test_rdbms::rdbmsfield_precision_setter(instance):
-    original = instance.precision
-    instance.precision = original
-    assert instance.precision == original
-
-@given(instance=rdbms::RdbmsField_strategy)
-def test_rdbms::rdbmsfield_scale_type(instance):
-    assert isinstance(instance.scale, int)
-
-
-@given(instance=rdbms::RdbmsField_strategy)
-def test_rdbms::rdbmsfield_scale_setter(instance):
-    original = instance.scale
-    instance.scale = original
-    assert instance.scale == original
-
-@given(instance=rdbms::RdbmsField_strategy)
-def test_rdbms::rdbmsfield_storageByte_type(instance):
-    assert isinstance(instance.storageByte, int)
-
-
-@given(instance=rdbms::RdbmsField_strategy)
-def test_rdbms::rdbmsfield_storageByte_setter(instance):
-    original = instance.storageByte
-    instance.storageByte = original
-    assert instance.storageByte == original
-
-@given(instance=rdbms::RdbmsField_strategy)
-def test_rdbms::rdbmsfield_rdbmsTypeName_type(instance):
-    assert isinstance(instance.rdbmsTypeName, str)
-
-
-@given(instance=rdbms::RdbmsField_strategy)
-def test_rdbms::rdbmsfield_rdbmsTypeName_setter(instance):
-    original = instance.rdbmsTypeName
-    instance.rdbmsTypeName = original
-    assert instance.rdbmsTypeName == original
-
-@given(instance=rdbms::RdbmsField_strategy)
-def test_rdbms::rdbmsfield_size_type(instance):
-    assert isinstance(instance.size, int)
-
-
-@given(instance=rdbms::RdbmsField_strategy)
-def test_rdbms::rdbmsfield_size_setter(instance):
-    original = instance.size
-    instance.size = original
-    assert instance.size == original
-
-@given(instance=rdbms::RdbmsIndex_strategy)
+@given(instance=rdbms_RdbmsUniqueConstraint_strategy)
 @settings(max_examples=50)
-def test_rdbms::rdbmsindex_instantiation(instance):
-    assert isinstance(instance, rdbms::RdbmsIndex)
+def test_rdbms_rdbmsuniqueconstraint_instantiation(instance):
+    assert isinstance(instance, rdbms_RdbmsUniqueConstraint)
 
-@given(instance=rdbms::RdbmsIndex_strategy)
-def test_rdbms::rdbmsindex_unique_type(instance):
-    assert isinstance(instance.unique, bool)
-
-
-@given(instance=rdbms::RdbmsIndex_strategy)
-def test_rdbms::rdbmsindex_unique_setter(instance):
-    original = instance.unique
-    instance.unique = original
-    assert instance.unique == original
-
-@given(instance=rdbms::RdbmsViewField_strategy)
+@given(instance=rdbms_RdbmsExpression_strategy)
 @settings(max_examples=50)
-def test_rdbms::rdbmsviewfield_instantiation(instance):
-    assert isinstance(instance, rdbms::RdbmsViewField)
-
-@given(instance=rdbms::RdbmsViewField_strategy)
-def test_rdbms::rdbmsviewfield_inherited_type(instance):
-    assert isinstance(instance.inherited, bool)
+def test_rdbms_rdbmsexpression_instantiation(instance):
+    assert isinstance(instance, rdbms_RdbmsExpression)
 
 
-@given(instance=rdbms::RdbmsViewField_strategy)
-def test_rdbms::rdbmsviewfield_inherited_setter(instance):
-    original = instance.inherited
-    instance.inherited = original
-    assert instance.inherited == original
 
-@given(instance=rdbms::RdbmsUniqueConstraint_strategy)
-@settings(max_examples=50)
-def test_rdbms::rdbmsuniqueconstraint_instantiation(instance):
-    assert isinstance(instance, rdbms::RdbmsUniqueConstraint)
-
-@given(instance=rdbms::RdbmsFieldOperation_strategy)
-@settings(max_examples=50)
-def test_rdbms::rdbmsfieldoperation_instantiation(instance):
-    assert isinstance(instance, rdbms::RdbmsFieldOperation)
-
-@given(instance=rdbms::RdbmsFieldOperation_strategy)
-def test_rdbms::rdbmsfieldoperation_reviewRequired_type(instance):
-    assert isinstance(instance.reviewRequired, bool)
-
-
-@given(instance=rdbms::RdbmsFieldOperation_strategy)
-def test_rdbms::rdbmsfieldoperation_reviewRequired_setter(instance):
-    original = instance.reviewRequired
-    instance.reviewRequired = original
-    assert instance.reviewRequired == original
-
-@given(instance=rdbms::RdbmsTableAlias_strategy)
-@settings(max_examples=50)
-def test_rdbms::rdbmstablealias_instantiation(instance):
-    assert isinstance(instance, rdbms::RdbmsTableAlias)
-
-@given(instance=rdbms::RdbmsTableOperation_strategy)
-@settings(max_examples=50)
-def test_rdbms::rdbmstableoperation_instantiation(instance):
-    assert isinstance(instance, rdbms::RdbmsTableOperation)
-
-@given(instance=rdbms::RdbmsExpression_strategy)
-@settings(max_examples=50)
-def test_rdbms::rdbmsexpression_instantiation(instance):
-    assert isinstance(instance, rdbms::RdbmsExpression)
-
-@given(instance=rdbms::RdbmsExpression_strategy)
-def test_rdbms::rdbmsexpression_expression_type(instance):
-    assert isinstance(instance.expression, str)
-
-
-@given(instance=rdbms::RdbmsExpression_strategy)
-def test_rdbms::rdbmsexpression_expression_setter(instance):
+@given(instance=rdbms_RdbmsExpression_strategy)
+def test_rdbms_rdbmsexpression_expression_setter(instance):
     original = instance.expression
     instance.expression = original
     assert instance.expression == original
 
-@given(instance=rdbms::RdbmsView_strategy)
+@given(instance=rdbms_RdbmsField_strategy)
 @settings(max_examples=50)
-def test_rdbms::rdbmsview_instantiation(instance):
-    assert isinstance(instance, rdbms::RdbmsView)
-
-@given(instance=rdbms::RdbmsView_strategy)
-def test_rdbms::rdbmsview_originUuid_type(instance):
-    assert isinstance(instance.originUuid, str)
+def test_rdbms_rdbmsfield_instantiation(instance):
+    assert isinstance(instance, rdbms_RdbmsField)
 
 
-@given(instance=rdbms::RdbmsView_strategy)
-def test_rdbms::rdbmsview_originUuid_setter(instance):
+
+@given(instance=rdbms_RdbmsField_strategy)
+def test_rdbms_rdbmsfield_size_setter(instance):
+    original = instance.size
+    instance.size = original
+    assert instance.size == original
+
+
+
+@given(instance=rdbms_RdbmsField_strategy)
+def test_rdbms_rdbmsfield_rdbmsTypeName_setter(instance):
+    original = instance.rdbmsTypeName
+    instance.rdbmsTypeName = original
+    assert instance.rdbmsTypeName == original
+
+
+
+@given(instance=rdbms_RdbmsField_strategy)
+def test_rdbms_rdbmsfield_mandatory_setter(instance):
+    original = instance.mandatory
+    instance.mandatory = original
+    assert instance.mandatory == original
+
+
+
+@given(instance=rdbms_RdbmsField_strategy)
+def test_rdbms_rdbmsfield_precision_setter(instance):
+    original = instance.precision
+    instance.precision = original
+    assert instance.precision == original
+
+
+
+@given(instance=rdbms_RdbmsField_strategy)
+def test_rdbms_rdbmsfield_storageByte_setter(instance):
+    original = instance.storageByte
+    instance.storageByte = original
+    assert instance.storageByte == original
+
+
+
+@given(instance=rdbms_RdbmsField_strategy)
+def test_rdbms_rdbmsfield_scale_setter(instance):
+    original = instance.scale
+    instance.scale = original
+    assert instance.scale == original
+
+@given(instance=rdbms_RdbmsTableAlias_strategy)
+@settings(max_examples=50)
+def test_rdbms_rdbmstablealias_instantiation(instance):
+    assert isinstance(instance, rdbms_RdbmsTableAlias)
+
+@given(instance=rdbms_RdbmsFieldOperation_strategy)
+@settings(max_examples=50)
+def test_rdbms_rdbmsfieldoperation_instantiation(instance):
+    assert isinstance(instance, rdbms_RdbmsFieldOperation)
+
+
+
+@given(instance=rdbms_RdbmsFieldOperation_strategy)
+def test_rdbms_rdbmsfieldoperation_reviewRequired_setter(instance):
+    original = instance.reviewRequired
+    instance.reviewRequired = original
+    assert instance.reviewRequired == original
+
+@given(instance=rdbms_RdbmsView_strategy)
+@settings(max_examples=50)
+def test_rdbms_rdbmsview_instantiation(instance):
+    assert isinstance(instance, rdbms_RdbmsView)
+
+
+
+@given(instance=rdbms_RdbmsView_strategy)
+def test_rdbms_rdbmsview_originUuid_setter(instance):
     original = instance.originUuid
     instance.originUuid = original
     assert instance.originUuid == original
 
-@given(instance=rdbms::RdbmsTable_strategy)
+@given(instance=rdbms_RdbmsTableOperation_strategy)
 @settings(max_examples=50)
-def test_rdbms::rdbmstable_instantiation(instance):
-    assert isinstance(instance, rdbms::RdbmsTable)
+def test_rdbms_rdbmstableoperation_instantiation(instance):
+    assert isinstance(instance, rdbms_RdbmsTableOperation)
+
+@given(instance=rdbms_RdbmsIndex_strategy)
+@settings(max_examples=50)
+def test_rdbms_rdbmsindex_instantiation(instance):
+    assert isinstance(instance, rdbms_RdbmsIndex)
+
+
+
+@given(instance=rdbms_RdbmsIndex_strategy)
+def test_rdbms_rdbmsindex_unique_setter(instance):
+    original = instance.unique
+    instance.unique = original
+    assert instance.unique == original
+
+@given(instance=rdbms_RdbmsViewField_strategy)
+@settings(max_examples=50)
+def test_rdbms_rdbmsviewfield_instantiation(instance):
+    assert isinstance(instance, rdbms_RdbmsViewField)
+
+
+
+@given(instance=rdbms_RdbmsViewField_strategy)
+def test_rdbms_rdbmsviewfield_inherited_setter(instance):
+    original = instance.inherited
+    instance.inherited = original
+    assert instance.inherited == original

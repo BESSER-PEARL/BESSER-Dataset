@@ -3,7 +3,7 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
 from python_code import (
     Test_Report,
@@ -53,11 +53,11 @@ def test_passenger_constructor_args():
     params = list(sig.parameters.keys())
     assert "DEST" in params, "Missing parameter 'DEST'"
     assert "WEIGHT" in params, "Missing parameter 'WEIGHT'"
+    assert "readyToDie" in params, "Missing parameter 'readyToDie'"
+    assert "traveling" in params, "Missing parameter 'traveling'"
+    assert "START_FLOOR" in params, "Missing parameter 'START_FLOOR'"
     assert "waiting" in params, "Missing parameter 'waiting'"
     assert "carNum" in params, "Missing parameter 'carNum'"
-    assert "START_FLOOR" in params, "Missing parameter 'START_FLOOR'"
-    assert "traveling" in params, "Missing parameter 'traveling'"
-    assert "readyToDie" in params, "Missing parameter 'readyToDie'"
 
 def test_passenger_has_DEST():
     assert hasattr(Passenger, "DEST")
@@ -77,6 +77,33 @@ def test_passenger_has_WEIGHT():
             break
     assert isinstance(descriptor, property)
 
+def test_passenger_has_readyToDie():
+    assert hasattr(Passenger, "readyToDie")
+    descriptor = None
+    for klass in Passenger.__mro__:
+        if "readyToDie" in klass.__dict__:
+            descriptor = klass.__dict__["readyToDie"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_passenger_has_traveling():
+    assert hasattr(Passenger, "traveling")
+    descriptor = None
+    for klass in Passenger.__mro__:
+        if "traveling" in klass.__dict__:
+            descriptor = klass.__dict__["traveling"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_passenger_has_START_FLOOR():
+    assert hasattr(Passenger, "START_FLOOR")
+    descriptor = None
+    for klass in Passenger.__mro__:
+        if "START_FLOOR" in klass.__dict__:
+            descriptor = klass.__dict__["START_FLOOR"]
+            break
+    assert isinstance(descriptor, property)
+
 def test_passenger_has_waiting():
     assert hasattr(Passenger, "waiting")
     descriptor = None
@@ -92,33 +119,6 @@ def test_passenger_has_carNum():
     for klass in Passenger.__mro__:
         if "carNum" in klass.__dict__:
             descriptor = klass.__dict__["carNum"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_passenger_has_START_FLOOR():
-    assert hasattr(Passenger, "START_FLOOR")
-    descriptor = None
-    for klass in Passenger.__mro__:
-        if "START_FLOOR" in klass.__dict__:
-            descriptor = klass.__dict__["START_FLOOR"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_passenger_has_traveling():
-    assert hasattr(Passenger, "traveling")
-    descriptor = None
-    for klass in Passenger.__mro__:
-        if "traveling" in klass.__dict__:
-            descriptor = klass.__dict__["traveling"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_passenger_has_readyToDie():
-    assert hasattr(Passenger, "readyToDie")
-    descriptor = None
-    for klass in Passenger.__mro__:
-        if "readyToDie" in klass.__dict__:
-            descriptor = klass.__dict__["readyToDie"]
             break
     assert isinstance(descriptor, property)
 
@@ -245,17 +245,8 @@ def test_floorcallbox_constructor_exists():
 def test_floorcallbox_constructor_args():
     sig = inspect.signature(FloorCallBox.__init__)
     params = list(sig.parameters.keys())
-    assert "LOCATION" in params, "Missing parameter 'LOCATION'"
     assert "BUTTONS" in params, "Missing parameter 'BUTTONS'"
-
-def test_floorcallbox_has_LOCATION():
-    assert hasattr(FloorCallBox, "LOCATION")
-    descriptor = None
-    for klass in FloorCallBox.__mro__:
-        if "LOCATION" in klass.__dict__:
-            descriptor = klass.__dict__["LOCATION"]
-            break
-    assert isinstance(descriptor, property)
+    assert "LOCATION" in params, "Missing parameter 'LOCATION'"
 
 def test_floorcallbox_has_BUTTONS():
     assert hasattr(FloorCallBox, "BUTTONS")
@@ -263,6 +254,15 @@ def test_floorcallbox_has_BUTTONS():
     for klass in FloorCallBox.__mro__:
         if "BUTTONS" in klass.__dict__:
             descriptor = klass.__dict__["BUTTONS"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_floorcallbox_has_LOCATION():
+    assert hasattr(FloorCallBox, "LOCATION")
+    descriptor = None
+    for klass in FloorCallBox.__mro__:
+        if "LOCATION" in klass.__dict__:
+            descriptor = klass.__dict__["LOCATION"]
             break
     assert isinstance(descriptor, property)
 
@@ -279,17 +279,17 @@ def test_controller_constructor_exists():
 def test_controller_constructor_args():
     sig = inspect.signature(Controller.__init__)
     params = list(sig.parameters.keys())
-    assert "cars" in params, "Missing parameter 'cars'"
-    assert "floors" in params, "Missing parameter 'floors'"
     assert "callQueue" in params, "Missing parameter 'callQueue'"
+    assert "floors" in params, "Missing parameter 'floors'"
+    assert "cars" in params, "Missing parameter 'cars'"
     assert "callAdmin" in params, "Missing parameter 'callAdmin'"
 
-def test_controller_has_cars():
-    assert hasattr(Controller, "cars")
+def test_controller_has_callQueue():
+    assert hasattr(Controller, "callQueue")
     descriptor = None
     for klass in Controller.__mro__:
-        if "cars" in klass.__dict__:
-            descriptor = klass.__dict__["cars"]
+        if "callQueue" in klass.__dict__:
+            descriptor = klass.__dict__["callQueue"]
             break
     assert isinstance(descriptor, property)
 
@@ -302,12 +302,12 @@ def test_controller_has_floors():
             break
     assert isinstance(descriptor, property)
 
-def test_controller_has_callQueue():
-    assert hasattr(Controller, "callQueue")
+def test_controller_has_cars():
+    assert hasattr(Controller, "cars")
     descriptor = None
     for klass in Controller.__mro__:
-        if "callQueue" in klass.__dict__:
-            descriptor = klass.__dict__["callQueue"]
+        if "cars" in klass.__dict__:
+            descriptor = klass.__dict__["cars"]
             break
     assert isinstance(descriptor, property)
 
@@ -333,9 +333,18 @@ def test_call_constructor_exists():
 def test_call_constructor_args():
     sig = inspect.signature(Call.__init__)
     params = list(sig.parameters.keys())
+    assert "location" in params, "Missing parameter 'location'"
     assert "direction" in params, "Missing parameter 'direction'"
     assert "created" in params, "Missing parameter 'created'"
-    assert "location" in params, "Missing parameter 'location'"
+
+def test_call_has_location():
+    assert hasattr(Call, "location")
+    descriptor = None
+    for klass in Call.__mro__:
+        if "location" in klass.__dict__:
+            descriptor = klass.__dict__["location"]
+            break
+    assert isinstance(descriptor, property)
 
 def test_call_has_direction():
     assert hasattr(Call, "direction")
@@ -355,15 +364,6 @@ def test_call_has_created():
             break
     assert isinstance(descriptor, property)
 
-def test_call_has_location():
-    assert hasattr(Call, "location")
-    descriptor = None
-    for klass in Call.__mro__:
-        if "location" in klass.__dict__:
-            descriptor = klass.__dict__["location"]
-            break
-    assert isinstance(descriptor, property)
-
 
 
 def test_floor_is_not_abstract():
@@ -378,10 +378,10 @@ def test_floor_constructor_args():
     sig = inspect.signature(Floor.__init__)
     params = list(sig.parameters.keys())
     assert "TOP" in params, "Missing parameter 'TOP'"
+    assert "LOCATION" in params, "Missing parameter 'LOCATION'"
+    assert "BOTTOM" in params, "Missing parameter 'BOTTOM'"
     assert "number" in params, "Missing parameter 'number'"
     assert "box" in params, "Missing parameter 'box'"
-    assert "BOTTOM" in params, "Missing parameter 'BOTTOM'"
-    assert "LOCATION" in params, "Missing parameter 'LOCATION'"
 
 def test_floor_has_TOP():
     assert hasattr(Floor, "TOP")
@@ -389,6 +389,24 @@ def test_floor_has_TOP():
     for klass in Floor.__mro__:
         if "TOP" in klass.__dict__:
             descriptor = klass.__dict__["TOP"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_floor_has_LOCATION():
+    assert hasattr(Floor, "LOCATION")
+    descriptor = None
+    for klass in Floor.__mro__:
+        if "LOCATION" in klass.__dict__:
+            descriptor = klass.__dict__["LOCATION"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_floor_has_BOTTOM():
+    assert hasattr(Floor, "BOTTOM")
+    descriptor = None
+    for klass in Floor.__mro__:
+        if "BOTTOM" in klass.__dict__:
+            descriptor = klass.__dict__["BOTTOM"]
             break
     assert isinstance(descriptor, property)
 
@@ -410,24 +428,6 @@ def test_floor_has_box():
             break
     assert isinstance(descriptor, property)
 
-def test_floor_has_BOTTOM():
-    assert hasattr(Floor, "BOTTOM")
-    descriptor = None
-    for klass in Floor.__mro__:
-        if "BOTTOM" in klass.__dict__:
-            descriptor = klass.__dict__["BOTTOM"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_floor_has_LOCATION():
-    assert hasattr(Floor, "LOCATION")
-    descriptor = None
-    for klass in Floor.__mro__:
-        if "LOCATION" in klass.__dict__:
-            descriptor = klass.__dict__["LOCATION"]
-            break
-    assert isinstance(descriptor, property)
-
 
 
 def test_car_is_not_abstract():
@@ -441,16 +441,25 @@ def test_car_constructor_exists():
 def test_car_constructor_args():
     sig = inspect.signature(Car.__init__)
     params = list(sig.parameters.keys())
+    assert "box" in params, "Missing parameter 'box'"
     assert "destination" in params, "Missing parameter 'destination'"
     assert "direction" in params, "Missing parameter 'direction'"
+    assert "stopQueue" in params, "Missing parameter 'stopQueue'"
+    assert "destQueue" in params, "Missing parameter 'destQueue'"
+    assert "floorNum" in params, "Missing parameter 'floorNum'"
     assert "stopLoader" in params, "Missing parameter 'stopLoader'"
     assert "weightLoad" in params, "Missing parameter 'weightLoad'"
-    assert "destQueue" in params, "Missing parameter 'destQueue'"
-    assert "stopQueue" in params, "Missing parameter 'stopQueue'"
-    assert "box" in params, "Missing parameter 'box'"
-    assert "location" in params, "Missing parameter 'location'"
     assert "WEIGHT_LIMIT" in params, "Missing parameter 'WEIGHT_LIMIT'"
-    assert "floorNum" in params, "Missing parameter 'floorNum'"
+    assert "location" in params, "Missing parameter 'location'"
+
+def test_car_has_box():
+    assert hasattr(Car, "box")
+    descriptor = None
+    for klass in Car.__mro__:
+        if "box" in klass.__dict__:
+            descriptor = klass.__dict__["box"]
+            break
+    assert isinstance(descriptor, property)
 
 def test_car_has_destination():
     assert hasattr(Car, "destination")
@@ -467,6 +476,33 @@ def test_car_has_direction():
     for klass in Car.__mro__:
         if "direction" in klass.__dict__:
             descriptor = klass.__dict__["direction"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_car_has_stopQueue():
+    assert hasattr(Car, "stopQueue")
+    descriptor = None
+    for klass in Car.__mro__:
+        if "stopQueue" in klass.__dict__:
+            descriptor = klass.__dict__["stopQueue"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_car_has_destQueue():
+    assert hasattr(Car, "destQueue")
+    descriptor = None
+    for klass in Car.__mro__:
+        if "destQueue" in klass.__dict__:
+            descriptor = klass.__dict__["destQueue"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_car_has_floorNum():
+    assert hasattr(Car, "floorNum")
+    descriptor = None
+    for klass in Car.__mro__:
+        if "floorNum" in klass.__dict__:
+            descriptor = klass.__dict__["floorNum"]
             break
     assert isinstance(descriptor, property)
 
@@ -488,42 +524,6 @@ def test_car_has_weightLoad():
             break
     assert isinstance(descriptor, property)
 
-def test_car_has_destQueue():
-    assert hasattr(Car, "destQueue")
-    descriptor = None
-    for klass in Car.__mro__:
-        if "destQueue" in klass.__dict__:
-            descriptor = klass.__dict__["destQueue"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_car_has_stopQueue():
-    assert hasattr(Car, "stopQueue")
-    descriptor = None
-    for klass in Car.__mro__:
-        if "stopQueue" in klass.__dict__:
-            descriptor = klass.__dict__["stopQueue"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_car_has_box():
-    assert hasattr(Car, "box")
-    descriptor = None
-    for klass in Car.__mro__:
-        if "box" in klass.__dict__:
-            descriptor = klass.__dict__["box"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_car_has_location():
-    assert hasattr(Car, "location")
-    descriptor = None
-    for klass in Car.__mro__:
-        if "location" in klass.__dict__:
-            descriptor = klass.__dict__["location"]
-            break
-    assert isinstance(descriptor, property)
-
 def test_car_has_WEIGHT_LIMIT():
     assert hasattr(Car, "WEIGHT_LIMIT")
     descriptor = None
@@ -533,12 +533,12 @@ def test_car_has_WEIGHT_LIMIT():
             break
     assert isinstance(descriptor, property)
 
-def test_car_has_floorNum():
-    assert hasattr(Car, "floorNum")
+def test_car_has_location():
+    assert hasattr(Car, "location")
     descriptor = None
     for klass in Car.__mro__:
-        if "floorNum" in klass.__dict__:
-            descriptor = klass.__dict__["floorNum"]
+        if "location" in klass.__dict__:
+            descriptor = klass.__dict__["location"]
             break
     assert isinstance(descriptor, property)
 
@@ -563,16 +563,16 @@ Passenger_strategy = st.builds(
         st.integers(),
     WEIGHT=
         st.integers(),
+    readyToDie=
+        st.booleans(),
+    traveling=
+        st.booleans(),
+    START_FLOOR=
+        st.integers(),
     waiting=
         st.booleans(),
     carNum=
-        st.integers(),
-    START_FLOOR=
-        st.integers(),
-    traveling=
-        st.booleans(),
-    readyToDie=
-        st.booleans()
+        st.integers()
 )
 CarCallBox_strategy = st.builds(
     CarCallBox,
@@ -599,65 +599,65 @@ array_enum__strategy = st.builds(
 )
 FloorCallBox_strategy = st.builds(
     FloorCallBox,
-    LOCATION=
-        st.integers(),
     BUTTONS=
-        st.none()
+        st.none(),
+    LOCATION=
+        st.integers()
 )
 Controller_strategy = st.builds(
     Controller,
-    cars=
+    callQueue=
         safe_text,
     floors=
         safe_text,
-    callQueue=
+    cars=
         safe_text,
     callAdmin=
         st.none()
 )
 Call_strategy = st.builds(
     Call,
+    location=
+        st.none(),
     direction=
         safe_text,
     created=
-        safe_text,
-    location=
-        st.none()
+        safe_text
 )
 Floor_strategy = st.builds(
     Floor,
     TOP=
         st.integers(),
+    LOCATION=
+        st.integers(),
+    BOTTOM=
+        st.integers(),
     number=
         st.integers(),
     box=
-        st.none(),
-    BOTTOM=
-        st.integers(),
-    LOCATION=
-        st.integers()
+        st.none()
 )
 Car_strategy = st.builds(
     Car,
+    box=
+        st.none(),
     destination=
         st.none(),
     direction=
         safe_text,
+    stopQueue=
+        safe_text,
+    destQueue=
+        safe_text,
+    floorNum=
+        st.integers(),
     stopLoader=
         st.none(),
     weightLoad=
         st.integers(),
-    destQueue=
-        safe_text,
-    stopQueue=
-        safe_text,
-    box=
-        st.none(),
-    location=
-        st.integers(),
     WEIGHT_LIMIT=
         st.integers(),
-    floorNum=
+    location=
         st.integers()
 )
 
@@ -671,9 +671,6 @@ def test_test_report_instantiation(instance):
 def test_passenger_instantiation(instance):
     assert isinstance(instance, Passenger)
 
-@given(instance=Passenger_strategy)
-def test_passenger_DEST_type(instance):
-    assert isinstance(instance.DEST, int)
 
 
 @given(instance=Passenger_strategy)
@@ -682,9 +679,6 @@ def test_passenger_DEST_setter(instance):
     instance.DEST = original
     assert instance.DEST == original
 
-@given(instance=Passenger_strategy)
-def test_passenger_WEIGHT_type(instance):
-    assert isinstance(instance.WEIGHT, int)
 
 
 @given(instance=Passenger_strategy)
@@ -693,53 +687,6 @@ def test_passenger_WEIGHT_setter(instance):
     instance.WEIGHT = original
     assert instance.WEIGHT == original
 
-@given(instance=Passenger_strategy)
-def test_passenger_waiting_type(instance):
-    assert isinstance(instance.waiting, bool)
-
-
-@given(instance=Passenger_strategy)
-def test_passenger_waiting_setter(instance):
-    original = instance.waiting
-    instance.waiting = original
-    assert instance.waiting == original
-
-@given(instance=Passenger_strategy)
-def test_passenger_carNum_type(instance):
-    assert isinstance(instance.carNum, int)
-
-
-@given(instance=Passenger_strategy)
-def test_passenger_carNum_setter(instance):
-    original = instance.carNum
-    instance.carNum = original
-    assert instance.carNum == original
-
-@given(instance=Passenger_strategy)
-def test_passenger_START_FLOOR_type(instance):
-    assert isinstance(instance.START_FLOOR, int)
-
-
-@given(instance=Passenger_strategy)
-def test_passenger_START_FLOOR_setter(instance):
-    original = instance.START_FLOOR
-    instance.START_FLOOR = original
-    assert instance.START_FLOOR == original
-
-@given(instance=Passenger_strategy)
-def test_passenger_traveling_type(instance):
-    assert isinstance(instance.traveling, bool)
-
-
-@given(instance=Passenger_strategy)
-def test_passenger_traveling_setter(instance):
-    original = instance.traveling
-    instance.traveling = original
-    assert instance.traveling == original
-
-@given(instance=Passenger_strategy)
-def test_passenger_readyToDie_type(instance):
-    assert isinstance(instance.readyToDie, bool)
 
 
 @given(instance=Passenger_strategy)
@@ -748,14 +695,43 @@ def test_passenger_readyToDie_setter(instance):
     instance.readyToDie = original
     assert instance.readyToDie == original
 
+
+
+@given(instance=Passenger_strategy)
+def test_passenger_traveling_setter(instance):
+    original = instance.traveling
+    instance.traveling = original
+    assert instance.traveling == original
+
+
+
+@given(instance=Passenger_strategy)
+def test_passenger_START_FLOOR_setter(instance):
+    original = instance.START_FLOOR
+    instance.START_FLOOR = original
+    assert instance.START_FLOOR == original
+
+
+
+@given(instance=Passenger_strategy)
+def test_passenger_waiting_setter(instance):
+    original = instance.waiting
+    instance.waiting = original
+    assert instance.waiting == original
+
+
+
+@given(instance=Passenger_strategy)
+def test_passenger_carNum_setter(instance):
+    original = instance.carNum
+    instance.carNum = original
+    assert instance.carNum == original
+
 @given(instance=CarCallBox_strategy)
 @settings(max_examples=50)
 def test_carcallbox_instantiation(instance):
     assert isinstance(instance, CarCallBox)
 
-@given(instance=CarCallBox_strategy)
-def test_carcallbox_buttons_type(instance):
-    assert isinstance(instance.buttons, str)
 
 
 @given(instance=CarCallBox_strategy)
@@ -769,9 +745,6 @@ def test_carcallbox_buttons_setter(instance):
 def test_sim_instantiation(instance):
     assert isinstance(instance, Sim)
 
-@given(instance=Sim_strategy)
-def test_sim_people_type(instance):
-    assert isinstance(instance.people, str)
 
 
 @given(instance=Sim_strategy)
@@ -780,9 +753,6 @@ def test_sim_people_setter(instance):
     instance.people = original
     assert instance.people == original
 
-@given(instance=Sim_strategy)
-def test_sim_elevator_type(instance):
-    assert isinstance(instance.elevator, controller)
 
 
 @given(instance=Sim_strategy)
@@ -801,9 +771,6 @@ def test_backgroundcalllistener_instantiation(instance):
 def test_backgroundstoploader_instantiation(instance):
     assert isinstance(instance, BackgroundStopLoader)
 
-@given(instance=BackgroundStopLoader_strategy)
-def test_backgroundstoploader_stops_type(instance):
-    assert isinstance(instance.stops, str)
 
 
 @given(instance=BackgroundStopLoader_strategy)
@@ -822,20 +789,6 @@ def test_array_enum__instantiation(instance):
 def test_floorcallbox_instantiation(instance):
     assert isinstance(instance, FloorCallBox)
 
-@given(instance=FloorCallBox_strategy)
-def test_floorcallbox_LOCATION_type(instance):
-    assert isinstance(instance.LOCATION, int)
-
-
-@given(instance=FloorCallBox_strategy)
-def test_floorcallbox_LOCATION_setter(instance):
-    original = instance.LOCATION
-    instance.LOCATION = original
-    assert instance.LOCATION == original
-
-@given(instance=FloorCallBox_strategy)
-def test_floorcallbox_BUTTONS_type(instance):
-    assert isinstance(instance.BUTTONS, array_enum_)
 
 
 @given(instance=FloorCallBox_strategy)
@@ -844,36 +797,19 @@ def test_floorcallbox_BUTTONS_setter(instance):
     instance.BUTTONS = original
     assert instance.BUTTONS == original
 
+
+
+@given(instance=FloorCallBox_strategy)
+def test_floorcallbox_LOCATION_setter(instance):
+    original = instance.LOCATION
+    instance.LOCATION = original
+    assert instance.LOCATION == original
+
 @given(instance=Controller_strategy)
 @settings(max_examples=50)
 def test_controller_instantiation(instance):
     assert isinstance(instance, Controller)
 
-@given(instance=Controller_strategy)
-def test_controller_cars_type(instance):
-    assert isinstance(instance.cars, str)
-
-
-@given(instance=Controller_strategy)
-def test_controller_cars_setter(instance):
-    original = instance.cars
-    instance.cars = original
-    assert instance.cars == original
-
-@given(instance=Controller_strategy)
-def test_controller_floors_type(instance):
-    assert isinstance(instance.floors, str)
-
-
-@given(instance=Controller_strategy)
-def test_controller_floors_setter(instance):
-    original = instance.floors
-    instance.floors = original
-    assert instance.floors == original
-
-@given(instance=Controller_strategy)
-def test_controller_callQueue_type(instance):
-    assert isinstance(instance.callQueue, str)
 
 
 @given(instance=Controller_strategy)
@@ -882,9 +818,22 @@ def test_controller_callQueue_setter(instance):
     instance.callQueue = original
     assert instance.callQueue == original
 
+
+
 @given(instance=Controller_strategy)
-def test_controller_callAdmin_type(instance):
-    assert isinstance(instance.callAdmin, backgroundcalllistener)
+def test_controller_floors_setter(instance):
+    original = instance.floors
+    instance.floors = original
+    assert instance.floors == original
+
+
+
+@given(instance=Controller_strategy)
+def test_controller_cars_setter(instance):
+    original = instance.cars
+    instance.cars = original
+    assert instance.cars == original
+
 
 
 @given(instance=Controller_strategy)
@@ -898,31 +847,6 @@ def test_controller_callAdmin_setter(instance):
 def test_call_instantiation(instance):
     assert isinstance(instance, Call)
 
-@given(instance=Call_strategy)
-def test_call_direction_type(instance):
-    assert isinstance(instance.direction, str)
-
-
-@given(instance=Call_strategy)
-def test_call_direction_setter(instance):
-    original = instance.direction
-    instance.direction = original
-    assert instance.direction == original
-
-@given(instance=Call_strategy)
-def test_call_created_type(instance):
-    assert isinstance(instance.created, str)
-
-
-@given(instance=Call_strategy)
-def test_call_created_setter(instance):
-    original = instance.created
-    instance.created = original
-    assert instance.created == original
-
-@given(instance=Call_strategy)
-def test_call_location_type(instance):
-    assert isinstance(instance.location, floor)
 
 
 @given(instance=Call_strategy)
@@ -931,14 +855,27 @@ def test_call_location_setter(instance):
     instance.location = original
     assert instance.location == original
 
+
+
+@given(instance=Call_strategy)
+def test_call_direction_setter(instance):
+    original = instance.direction
+    instance.direction = original
+    assert instance.direction == original
+
+
+
+@given(instance=Call_strategy)
+def test_call_created_setter(instance):
+    original = instance.created
+    instance.created = original
+    assert instance.created == original
+
 @given(instance=Floor_strategy)
 @settings(max_examples=50)
 def test_floor_instantiation(instance):
     assert isinstance(instance, Floor)
 
-@given(instance=Floor_strategy)
-def test_floor_TOP_type(instance):
-    assert isinstance(instance.TOP, int)
 
 
 @given(instance=Floor_strategy)
@@ -947,42 +884,6 @@ def test_floor_TOP_setter(instance):
     instance.TOP = original
     assert instance.TOP == original
 
-@given(instance=Floor_strategy)
-def test_floor_number_type(instance):
-    assert isinstance(instance.number, int)
-
-
-@given(instance=Floor_strategy)
-def test_floor_number_setter(instance):
-    original = instance.number
-    instance.number = original
-    assert instance.number == original
-
-@given(instance=Floor_strategy)
-def test_floor_box_type(instance):
-    assert isinstance(instance.box, floorcallbox)
-
-
-@given(instance=Floor_strategy)
-def test_floor_box_setter(instance):
-    original = instance.box
-    instance.box = original
-    assert instance.box == original
-
-@given(instance=Floor_strategy)
-def test_floor_BOTTOM_type(instance):
-    assert isinstance(instance.BOTTOM, int)
-
-
-@given(instance=Floor_strategy)
-def test_floor_BOTTOM_setter(instance):
-    original = instance.BOTTOM
-    instance.BOTTOM = original
-    assert instance.BOTTOM == original
-
-@given(instance=Floor_strategy)
-def test_floor_LOCATION_type(instance):
-    assert isinstance(instance.LOCATION, int)
 
 
 @given(instance=Floor_strategy)
@@ -991,80 +892,35 @@ def test_floor_LOCATION_setter(instance):
     instance.LOCATION = original
     assert instance.LOCATION == original
 
+
+
+@given(instance=Floor_strategy)
+def test_floor_BOTTOM_setter(instance):
+    original = instance.BOTTOM
+    instance.BOTTOM = original
+    assert instance.BOTTOM == original
+
+
+
+@given(instance=Floor_strategy)
+def test_floor_number_setter(instance):
+    original = instance.number
+    instance.number = original
+    assert instance.number == original
+
+
+
+@given(instance=Floor_strategy)
+def test_floor_box_setter(instance):
+    original = instance.box
+    instance.box = original
+    assert instance.box == original
+
 @given(instance=Car_strategy)
 @settings(max_examples=50)
 def test_car_instantiation(instance):
     assert isinstance(instance, Car)
 
-@given(instance=Car_strategy)
-def test_car_destination_type(instance):
-    assert isinstance(instance.destination, floor)
-
-
-@given(instance=Car_strategy)
-def test_car_destination_setter(instance):
-    original = instance.destination
-    instance.destination = original
-    assert instance.destination == original
-
-@given(instance=Car_strategy)
-def test_car_direction_type(instance):
-    assert isinstance(instance.direction, str)
-
-
-@given(instance=Car_strategy)
-def test_car_direction_setter(instance):
-    original = instance.direction
-    instance.direction = original
-    assert instance.direction == original
-
-@given(instance=Car_strategy)
-def test_car_stopLoader_type(instance):
-    assert isinstance(instance.stopLoader, backgroundstoploader)
-
-
-@given(instance=Car_strategy)
-def test_car_stopLoader_setter(instance):
-    original = instance.stopLoader
-    instance.stopLoader = original
-    assert instance.stopLoader == original
-
-@given(instance=Car_strategy)
-def test_car_weightLoad_type(instance):
-    assert isinstance(instance.weightLoad, int)
-
-
-@given(instance=Car_strategy)
-def test_car_weightLoad_setter(instance):
-    original = instance.weightLoad
-    instance.weightLoad = original
-    assert instance.weightLoad == original
-
-@given(instance=Car_strategy)
-def test_car_destQueue_type(instance):
-    assert isinstance(instance.destQueue, str)
-
-
-@given(instance=Car_strategy)
-def test_car_destQueue_setter(instance):
-    original = instance.destQueue
-    instance.destQueue = original
-    assert instance.destQueue == original
-
-@given(instance=Car_strategy)
-def test_car_stopQueue_type(instance):
-    assert isinstance(instance.stopQueue, str)
-
-
-@given(instance=Car_strategy)
-def test_car_stopQueue_setter(instance):
-    original = instance.stopQueue
-    instance.stopQueue = original
-    assert instance.stopQueue == original
-
-@given(instance=Car_strategy)
-def test_car_box_type(instance):
-    assert isinstance(instance.box, carcallbox)
 
 
 @given(instance=Car_strategy)
@@ -1073,20 +929,62 @@ def test_car_box_setter(instance):
     instance.box = original
     assert instance.box == original
 
-@given(instance=Car_strategy)
-def test_car_location_type(instance):
-    assert isinstance(instance.location, int)
 
 
 @given(instance=Car_strategy)
-def test_car_location_setter(instance):
-    original = instance.location
-    instance.location = original
-    assert instance.location == original
+def test_car_destination_setter(instance):
+    original = instance.destination
+    instance.destination = original
+    assert instance.destination == original
+
+
 
 @given(instance=Car_strategy)
-def test_car_WEIGHT_LIMIT_type(instance):
-    assert isinstance(instance.WEIGHT_LIMIT, int)
+def test_car_direction_setter(instance):
+    original = instance.direction
+    instance.direction = original
+    assert instance.direction == original
+
+
+
+@given(instance=Car_strategy)
+def test_car_stopQueue_setter(instance):
+    original = instance.stopQueue
+    instance.stopQueue = original
+    assert instance.stopQueue == original
+
+
+
+@given(instance=Car_strategy)
+def test_car_destQueue_setter(instance):
+    original = instance.destQueue
+    instance.destQueue = original
+    assert instance.destQueue == original
+
+
+
+@given(instance=Car_strategy)
+def test_car_floorNum_setter(instance):
+    original = instance.floorNum
+    instance.floorNum = original
+    assert instance.floorNum == original
+
+
+
+@given(instance=Car_strategy)
+def test_car_stopLoader_setter(instance):
+    original = instance.stopLoader
+    instance.stopLoader = original
+    assert instance.stopLoader == original
+
+
+
+@given(instance=Car_strategy)
+def test_car_weightLoad_setter(instance):
+    original = instance.weightLoad
+    instance.weightLoad = original
+    assert instance.weightLoad == original
+
 
 
 @given(instance=Car_strategy)
@@ -1095,13 +993,10 @@ def test_car_WEIGHT_LIMIT_setter(instance):
     instance.WEIGHT_LIMIT = original
     assert instance.WEIGHT_LIMIT == original
 
-@given(instance=Car_strategy)
-def test_car_floorNum_type(instance):
-    assert isinstance(instance.floorNum, int)
 
 
 @given(instance=Car_strategy)
-def test_car_floorNum_setter(instance):
-    original = instance.floorNum
-    instance.floorNum = original
-    assert instance.floorNum == original
+def test_car_location_setter(instance):
+    original = instance.location
+    instance.location = original
+    assert instance.location == original

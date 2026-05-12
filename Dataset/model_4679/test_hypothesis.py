@@ -3,66 +3,66 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     RenMapping,
-    Maude::LabelMapping,
-    Maude::OpMapping,
-    Maude::SortMapping,
+    Maude_LabelMapping,
+    Maude_OpMapping,
+    Maude_SortMapping,
     ViewMapping,
-    Maude::TermMapping,
-    Maude::ViewMapping,
-    Maude::OpTypedMapping,
+    Maude_TermMapping,
+    Maude_ViewMapping,
+    Maude_OpTypedMapping,
     Term,
-    Maude::RecTerm,
-    Maude::Constant,
-    Maude::Variable,
+    Maude_RecTerm,
+    Maude_Constant,
+    Maude_Variable,
     EquationalCond,
-    Maude::EqualCond,
-    Maude::MembershipCond,
+    Maude_EqualCond,
+    Maude_MembershipCond,
     Condition,
-    Maude::RewriteCond,
-    Maude::EquationalCond,
-    Maude::MatchingCond,
-    Maude::BooleanCond,
-    Maude::Term,
+    Maude_RewriteCond,
+    Maude_EquationalCond,
+    Maude_MatchingCond,
+    Maude_BooleanCond,
+    Maude_Term,
     Statement,
-    Maude::Rule,
-    Maude::Equation,
-    Maude::Membership,
-    Maude::Condition,
+    Maude_Rule,
+    Maude_Equation,
+    Maude_Membership,
+    Maude_Condition,
     ModElement,
-    Maude::Statement,
-    Maude::Operation,
-    Maude::SubsortRel,
-    Maude::ModImportation,
+    Maude_Operation,
+    Maude_SubsortRel,
+    Maude_Statement,
+    Maude_ModImportation,
     Module,
-    Maude::SModule,
-    Maude::FModule,
+    Maude_SModule,
+    Maude_FModule,
     Theory,
-    Maude::STheory,
-    Maude::FTheory,
-    Maude::ModElement,
+    Maude_STheory,
+    Maude_FTheory,
+    Maude_ModElement,
     MaudeTopEl,
     Type,
-    Maude::Kind,
-    Maude::Sort,
-    Maude::Type,
-    Maude::Module,
-    Maude::RenMapping,
-    Maude::View,
+    Maude_Kind,
+    Maude_Sort,
+    Maude_Type,
+    Maude_Module,
+    Maude_RenMapping,
+    Maude_View,
     ModExpression,
-    Maude::CompModExp,
-    Maude::ModuleIdModExp,
-    Maude::RenModExp,
-    Maude::InstModExp,
-    Maude::ModExpression,
-    Maude::MaudeTopEl,
-    Maude::Parameter,
-    Maude::Theory,
-    Maude::TheoryIdModExp,
-    Maude::MaudeSpec,
+    Maude_RenModExp,
+    Maude_ModuleIdModExp,
+    Maude_CompModExp,
+    Maude_InstModExp,
+    Maude_ModExpression,
+    Maude_MaudeTopEl,
+    Maude_Parameter,
+    Maude_Theory,
+    Maude_TheoryIdModExp,
+    Maude_MaudeSpec,
     ImportationMode,
 )
 
@@ -86,33 +86,57 @@ def test_renmapping_constructor_args():
 
 
 
-def test_maude::labelmapping_is_not_abstract():
-    assert not inspect.isabstract(Maude::LabelMapping)
+def test_maude_labelmapping_is_not_abstract():
+    assert not inspect.isabstract(Maude_LabelMapping)
 
 
-def test_maude::labelmapping_constructor_exists():
-    assert callable(Maude::LabelMapping.__init__)
+def test_maude_labelmapping_constructor_exists():
+    assert callable(Maude_LabelMapping.__init__)
 
 
-def test_maude::labelmapping_constructor_args():
-    sig = inspect.signature(Maude::LabelMapping.__init__)
+def test_maude_labelmapping_constructor_args():
+    sig = inspect.signature(Maude_LabelMapping.__init__)
     params = list(sig.parameters.keys())
-    assert "from_" in params, "Missing parameter 'from_'"
     assert "to" in params, "Missing parameter 'to'"
+    assert "from_" in params, "Missing parameter 'from_'"
 
-def test_maude::labelmapping_has_from_():
-    assert hasattr(Maude::LabelMapping, "from_")
+def test_maude_labelmapping_has_to():
+    assert hasattr(Maude_LabelMapping, "to")
     descriptor = None
-    for klass in Maude::LabelMapping.__mro__:
+    for klass in Maude_LabelMapping.__mro__:
+        if "to" in klass.__dict__:
+            descriptor = klass.__dict__["to"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_maude_labelmapping_has_from_():
+    assert hasattr(Maude_LabelMapping, "from_")
+    descriptor = None
+    for klass in Maude_LabelMapping.__mro__:
         if "from_" in klass.__dict__:
             descriptor = klass.__dict__["from_"]
             break
     assert isinstance(descriptor, property)
 
-def test_maude::labelmapping_has_to():
-    assert hasattr(Maude::LabelMapping, "to")
+
+
+def test_maude_opmapping_is_not_abstract():
+    assert not inspect.isabstract(Maude_OpMapping)
+
+
+def test_maude_opmapping_constructor_exists():
+    assert callable(Maude_OpMapping.__init__)
+
+
+def test_maude_opmapping_constructor_args():
+    sig = inspect.signature(Maude_OpMapping.__init__)
+    params = list(sig.parameters.keys())
+    assert "to" in params, "Missing parameter 'to'"
+
+def test_maude_opmapping_has_to():
+    assert hasattr(Maude_OpMapping, "to")
     descriptor = None
-    for klass in Maude::LabelMapping.__mro__:
+    for klass in Maude_OpMapping.__mro__:
         if "to" in klass.__dict__:
             descriptor = klass.__dict__["to"]
             break
@@ -120,47 +144,23 @@ def test_maude::labelmapping_has_to():
 
 
 
-def test_maude::opmapping_is_not_abstract():
-    assert not inspect.isabstract(Maude::OpMapping)
+def test_maude_sortmapping_is_not_abstract():
+    assert not inspect.isabstract(Maude_SortMapping)
 
 
-def test_maude::opmapping_constructor_exists():
-    assert callable(Maude::OpMapping.__init__)
+def test_maude_sortmapping_constructor_exists():
+    assert callable(Maude_SortMapping.__init__)
 
 
-def test_maude::opmapping_constructor_args():
-    sig = inspect.signature(Maude::OpMapping.__init__)
+def test_maude_sortmapping_constructor_args():
+    sig = inspect.signature(Maude_SortMapping.__init__)
     params = list(sig.parameters.keys())
     assert "to" in params, "Missing parameter 'to'"
 
-def test_maude::opmapping_has_to():
-    assert hasattr(Maude::OpMapping, "to")
+def test_maude_sortmapping_has_to():
+    assert hasattr(Maude_SortMapping, "to")
     descriptor = None
-    for klass in Maude::OpMapping.__mro__:
-        if "to" in klass.__dict__:
-            descriptor = klass.__dict__["to"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_maude::sortmapping_is_not_abstract():
-    assert not inspect.isabstract(Maude::SortMapping)
-
-
-def test_maude::sortmapping_constructor_exists():
-    assert callable(Maude::SortMapping.__init__)
-
-
-def test_maude::sortmapping_constructor_args():
-    sig = inspect.signature(Maude::SortMapping.__init__)
-    params = list(sig.parameters.keys())
-    assert "to" in params, "Missing parameter 'to'"
-
-def test_maude::sortmapping_has_to():
-    assert hasattr(Maude::SortMapping, "to")
-    descriptor = None
-    for klass in Maude::SortMapping.__mro__:
+    for klass in Maude_SortMapping.__mro__:
         if "to" in klass.__dict__:
             descriptor = klass.__dict__["to"]
             break
@@ -182,63 +182,63 @@ def test_viewmapping_constructor_args():
 
 
 
-def test_maude::termmapping_is_not_abstract():
-    assert not inspect.isabstract(Maude::TermMapping)
+def test_maude_termmapping_is_not_abstract():
+    assert not inspect.isabstract(Maude_TermMapping)
 
 
-def test_maude::termmapping_constructor_exists():
-    assert callable(Maude::TermMapping.__init__)
+def test_maude_termmapping_constructor_exists():
+    assert callable(Maude_TermMapping.__init__)
 
 
-def test_maude::termmapping_constructor_args():
-    sig = inspect.signature(Maude::TermMapping.__init__)
+def test_maude_termmapping_constructor_args():
+    sig = inspect.signature(Maude_TermMapping.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_maude::viewmapping_is_not_abstract():
-    assert not inspect.isabstract(Maude::ViewMapping)
+def test_maude_viewmapping_is_not_abstract():
+    assert not inspect.isabstract(Maude_ViewMapping)
 
 
-def test_maude::viewmapping_constructor_exists():
-    assert callable(Maude::ViewMapping.__init__)
+def test_maude_viewmapping_constructor_exists():
+    assert callable(Maude_ViewMapping.__init__)
 
 
-def test_maude::viewmapping_constructor_args():
-    sig = inspect.signature(Maude::ViewMapping.__init__)
+def test_maude_viewmapping_constructor_args():
+    sig = inspect.signature(Maude_ViewMapping.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_maude::optypedmapping_is_not_abstract():
-    assert not inspect.isabstract(Maude::OpTypedMapping)
+def test_maude_optypedmapping_is_not_abstract():
+    assert not inspect.isabstract(Maude_OpTypedMapping)
 
 
-def test_maude::optypedmapping_constructor_exists():
-    assert callable(Maude::OpTypedMapping.__init__)
+def test_maude_optypedmapping_constructor_exists():
+    assert callable(Maude_OpTypedMapping.__init__)
 
 
-def test_maude::optypedmapping_constructor_args():
-    sig = inspect.signature(Maude::OpTypedMapping.__init__)
+def test_maude_optypedmapping_constructor_args():
+    sig = inspect.signature(Maude_OpTypedMapping.__init__)
     params = list(sig.parameters.keys())
-    assert "atts" in params, "Missing parameter 'atts'"
     assert "to" in params, "Missing parameter 'to'"
+    assert "atts" in params, "Missing parameter 'atts'"
 
-def test_maude::optypedmapping_has_atts():
-    assert hasattr(Maude::OpTypedMapping, "atts")
+def test_maude_optypedmapping_has_to():
+    assert hasattr(Maude_OpTypedMapping, "to")
     descriptor = None
-    for klass in Maude::OpTypedMapping.__mro__:
-        if "atts" in klass.__dict__:
-            descriptor = klass.__dict__["atts"]
+    for klass in Maude_OpTypedMapping.__mro__:
+        if "to" in klass.__dict__:
+            descriptor = klass.__dict__["to"]
             break
     assert isinstance(descriptor, property)
 
-def test_maude::optypedmapping_has_to():
-    assert hasattr(Maude::OpTypedMapping, "to")
+def test_maude_optypedmapping_has_atts():
+    assert hasattr(Maude_OpTypedMapping, "atts")
     descriptor = None
-    for klass in Maude::OpTypedMapping.__mro__:
-        if "to" in klass.__dict__:
-            descriptor = klass.__dict__["to"]
+    for klass in Maude_OpTypedMapping.__mro__:
+        if "atts" in klass.__dict__:
+            descriptor = klass.__dict__["atts"]
             break
     assert isinstance(descriptor, property)
 
@@ -258,23 +258,23 @@ def test_term_constructor_args():
 
 
 
-def test_maude::recterm_is_not_abstract():
-    assert not inspect.isabstract(Maude::RecTerm)
+def test_maude_recterm_is_not_abstract():
+    assert not inspect.isabstract(Maude_RecTerm)
 
 
-def test_maude::recterm_constructor_exists():
-    assert callable(Maude::RecTerm.__init__)
+def test_maude_recterm_constructor_exists():
+    assert callable(Maude_RecTerm.__init__)
 
 
-def test_maude::recterm_constructor_args():
-    sig = inspect.signature(Maude::RecTerm.__init__)
+def test_maude_recterm_constructor_args():
+    sig = inspect.signature(Maude_RecTerm.__init__)
     params = list(sig.parameters.keys())
     assert "op" in params, "Missing parameter 'op'"
 
-def test_maude::recterm_has_op():
-    assert hasattr(Maude::RecTerm, "op")
+def test_maude_recterm_has_op():
+    assert hasattr(Maude_RecTerm, "op")
     descriptor = None
-    for klass in Maude::RecTerm.__mro__:
+    for klass in Maude_RecTerm.__mro__:
         if "op" in klass.__dict__:
             descriptor = klass.__dict__["op"]
             break
@@ -282,23 +282,23 @@ def test_maude::recterm_has_op():
 
 
 
-def test_maude::constant_is_not_abstract():
-    assert not inspect.isabstract(Maude::Constant)
+def test_maude_constant_is_not_abstract():
+    assert not inspect.isabstract(Maude_Constant)
 
 
-def test_maude::constant_constructor_exists():
-    assert callable(Maude::Constant.__init__)
+def test_maude_constant_constructor_exists():
+    assert callable(Maude_Constant.__init__)
 
 
-def test_maude::constant_constructor_args():
-    sig = inspect.signature(Maude::Constant.__init__)
+def test_maude_constant_constructor_args():
+    sig = inspect.signature(Maude_Constant.__init__)
     params = list(sig.parameters.keys())
     assert "op" in params, "Missing parameter 'op'"
 
-def test_maude::constant_has_op():
-    assert hasattr(Maude::Constant, "op")
+def test_maude_constant_has_op():
+    assert hasattr(Maude_Constant, "op")
     descriptor = None
-    for klass in Maude::Constant.__mro__:
+    for klass in Maude_Constant.__mro__:
         if "op" in klass.__dict__:
             descriptor = klass.__dict__["op"]
             break
@@ -306,23 +306,23 @@ def test_maude::constant_has_op():
 
 
 
-def test_maude::variable_is_not_abstract():
-    assert not inspect.isabstract(Maude::Variable)
+def test_maude_variable_is_not_abstract():
+    assert not inspect.isabstract(Maude_Variable)
 
 
-def test_maude::variable_constructor_exists():
-    assert callable(Maude::Variable.__init__)
+def test_maude_variable_constructor_exists():
+    assert callable(Maude_Variable.__init__)
 
 
-def test_maude::variable_constructor_args():
-    sig = inspect.signature(Maude::Variable.__init__)
+def test_maude_variable_constructor_args():
+    sig = inspect.signature(Maude_Variable.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_maude::variable_has_name():
-    assert hasattr(Maude::Variable, "name")
+def test_maude_variable_has_name():
+    assert hasattr(Maude_Variable, "name")
     descriptor = None
-    for klass in Maude::Variable.__mro__:
+    for klass in Maude_Variable.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -344,30 +344,30 @@ def test_equationalcond_constructor_args():
 
 
 
-def test_maude::equalcond_is_not_abstract():
-    assert not inspect.isabstract(Maude::EqualCond)
+def test_maude_equalcond_is_not_abstract():
+    assert not inspect.isabstract(Maude_EqualCond)
 
 
-def test_maude::equalcond_constructor_exists():
-    assert callable(Maude::EqualCond.__init__)
+def test_maude_equalcond_constructor_exists():
+    assert callable(Maude_EqualCond.__init__)
 
 
-def test_maude::equalcond_constructor_args():
-    sig = inspect.signature(Maude::EqualCond.__init__)
+def test_maude_equalcond_constructor_args():
+    sig = inspect.signature(Maude_EqualCond.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_maude::membershipcond_is_not_abstract():
-    assert not inspect.isabstract(Maude::MembershipCond)
+def test_maude_membershipcond_is_not_abstract():
+    assert not inspect.isabstract(Maude_MembershipCond)
 
 
-def test_maude::membershipcond_constructor_exists():
-    assert callable(Maude::MembershipCond.__init__)
+def test_maude_membershipcond_constructor_exists():
+    assert callable(Maude_MembershipCond.__init__)
 
 
-def test_maude::membershipcond_constructor_args():
-    sig = inspect.signature(Maude::MembershipCond.__init__)
+def test_maude_membershipcond_constructor_args():
+    sig = inspect.signature(Maude_MembershipCond.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -386,72 +386,72 @@ def test_condition_constructor_args():
 
 
 
-def test_maude::rewritecond_is_not_abstract():
-    assert not inspect.isabstract(Maude::RewriteCond)
+def test_maude_rewritecond_is_not_abstract():
+    assert not inspect.isabstract(Maude_RewriteCond)
 
 
-def test_maude::rewritecond_constructor_exists():
-    assert callable(Maude::RewriteCond.__init__)
+def test_maude_rewritecond_constructor_exists():
+    assert callable(Maude_RewriteCond.__init__)
 
 
-def test_maude::rewritecond_constructor_args():
-    sig = inspect.signature(Maude::RewriteCond.__init__)
+def test_maude_rewritecond_constructor_args():
+    sig = inspect.signature(Maude_RewriteCond.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_maude::equationalcond_is_not_abstract():
-    assert not inspect.isabstract(Maude::EquationalCond)
+def test_maude_equationalcond_is_not_abstract():
+    assert not inspect.isabstract(Maude_EquationalCond)
 
 
-def test_maude::equationalcond_constructor_exists():
-    assert callable(Maude::EquationalCond.__init__)
+def test_maude_equationalcond_constructor_exists():
+    assert callable(Maude_EquationalCond.__init__)
 
 
-def test_maude::equationalcond_constructor_args():
-    sig = inspect.signature(Maude::EquationalCond.__init__)
+def test_maude_equationalcond_constructor_args():
+    sig = inspect.signature(Maude_EquationalCond.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_maude::matchingcond_is_not_abstract():
-    assert not inspect.isabstract(Maude::MatchingCond)
+def test_maude_matchingcond_is_not_abstract():
+    assert not inspect.isabstract(Maude_MatchingCond)
 
 
-def test_maude::matchingcond_constructor_exists():
-    assert callable(Maude::MatchingCond.__init__)
+def test_maude_matchingcond_constructor_exists():
+    assert callable(Maude_MatchingCond.__init__)
 
 
-def test_maude::matchingcond_constructor_args():
-    sig = inspect.signature(Maude::MatchingCond.__init__)
+def test_maude_matchingcond_constructor_args():
+    sig = inspect.signature(Maude_MatchingCond.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_maude::booleancond_is_not_abstract():
-    assert not inspect.isabstract(Maude::BooleanCond)
+def test_maude_booleancond_is_not_abstract():
+    assert not inspect.isabstract(Maude_BooleanCond)
 
 
-def test_maude::booleancond_constructor_exists():
-    assert callable(Maude::BooleanCond.__init__)
+def test_maude_booleancond_constructor_exists():
+    assert callable(Maude_BooleanCond.__init__)
 
 
-def test_maude::booleancond_constructor_args():
-    sig = inspect.signature(Maude::BooleanCond.__init__)
+def test_maude_booleancond_constructor_args():
+    sig = inspect.signature(Maude_BooleanCond.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_maude::term_is_not_abstract():
-    assert not inspect.isabstract(Maude::Term)
+def test_maude_term_is_not_abstract():
+    assert not inspect.isabstract(Maude_Term)
 
 
-def test_maude::term_constructor_exists():
-    assert callable(Maude::Term.__init__)
+def test_maude_term_constructor_exists():
+    assert callable(Maude_Term.__init__)
 
 
-def test_maude::term_constructor_args():
-    sig = inspect.signature(Maude::Term.__init__)
+def test_maude_term_constructor_args():
+    sig = inspect.signature(Maude_Term.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -470,58 +470,58 @@ def test_statement_constructor_args():
 
 
 
-def test_maude::rule_is_not_abstract():
-    assert not inspect.isabstract(Maude::Rule)
+def test_maude_rule_is_not_abstract():
+    assert not inspect.isabstract(Maude_Rule)
 
 
-def test_maude::rule_constructor_exists():
-    assert callable(Maude::Rule.__init__)
+def test_maude_rule_constructor_exists():
+    assert callable(Maude_Rule.__init__)
 
 
-def test_maude::rule_constructor_args():
-    sig = inspect.signature(Maude::Rule.__init__)
+def test_maude_rule_constructor_args():
+    sig = inspect.signature(Maude_Rule.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_maude::equation_is_not_abstract():
-    assert not inspect.isabstract(Maude::Equation)
+def test_maude_equation_is_not_abstract():
+    assert not inspect.isabstract(Maude_Equation)
 
 
-def test_maude::equation_constructor_exists():
-    assert callable(Maude::Equation.__init__)
+def test_maude_equation_constructor_exists():
+    assert callable(Maude_Equation.__init__)
 
 
-def test_maude::equation_constructor_args():
-    sig = inspect.signature(Maude::Equation.__init__)
+def test_maude_equation_constructor_args():
+    sig = inspect.signature(Maude_Equation.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_maude::membership_is_not_abstract():
-    assert not inspect.isabstract(Maude::Membership)
+def test_maude_membership_is_not_abstract():
+    assert not inspect.isabstract(Maude_Membership)
 
 
-def test_maude::membership_constructor_exists():
-    assert callable(Maude::Membership.__init__)
+def test_maude_membership_constructor_exists():
+    assert callable(Maude_Membership.__init__)
 
 
-def test_maude::membership_constructor_args():
-    sig = inspect.signature(Maude::Membership.__init__)
+def test_maude_membership_constructor_args():
+    sig = inspect.signature(Maude_Membership.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_maude::condition_is_not_abstract():
-    assert not inspect.isabstract(Maude::Condition)
+def test_maude_condition_is_not_abstract():
+    assert not inspect.isabstract(Maude_Condition)
 
 
-def test_maude::condition_constructor_exists():
-    assert callable(Maude::Condition.__init__)
+def test_maude_condition_constructor_exists():
+    assert callable(Maude_Condition.__init__)
 
 
-def test_maude::condition_constructor_args():
-    sig = inspect.signature(Maude::Condition.__init__)
+def test_maude_condition_constructor_args():
+    sig = inspect.signature(Maude_Condition.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -540,67 +540,33 @@ def test_modelement_constructor_args():
 
 
 
-def test_maude::statement_is_not_abstract():
-    assert not inspect.isabstract(Maude::Statement)
+def test_maude_operation_is_not_abstract():
+    assert not inspect.isabstract(Maude_Operation)
 
 
-def test_maude::statement_constructor_exists():
-    assert callable(Maude::Statement.__init__)
+def test_maude_operation_constructor_exists():
+    assert callable(Maude_Operation.__init__)
 
 
-def test_maude::statement_constructor_args():
-    sig = inspect.signature(Maude::Statement.__init__)
-    params = list(sig.parameters.keys())
-    assert "atts" in params, "Missing parameter 'atts'"
-    assert "label" in params, "Missing parameter 'label'"
-
-def test_maude::statement_has_atts():
-    assert hasattr(Maude::Statement, "atts")
-    descriptor = None
-    for klass in Maude::Statement.__mro__:
-        if "atts" in klass.__dict__:
-            descriptor = klass.__dict__["atts"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_maude::statement_has_label():
-    assert hasattr(Maude::Statement, "label")
-    descriptor = None
-    for klass in Maude::Statement.__mro__:
-        if "label" in klass.__dict__:
-            descriptor = klass.__dict__["label"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_maude::operation_is_not_abstract():
-    assert not inspect.isabstract(Maude::Operation)
-
-
-def test_maude::operation_constructor_exists():
-    assert callable(Maude::Operation.__init__)
-
-
-def test_maude::operation_constructor_args():
-    sig = inspect.signature(Maude::Operation.__init__)
+def test_maude_operation_constructor_args():
+    sig = inspect.signature(Maude_Operation.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
     assert "atts" in params, "Missing parameter 'atts'"
 
-def test_maude::operation_has_name():
-    assert hasattr(Maude::Operation, "name")
+def test_maude_operation_has_name():
+    assert hasattr(Maude_Operation, "name")
     descriptor = None
-    for klass in Maude::Operation.__mro__:
+    for klass in Maude_Operation.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
-def test_maude::operation_has_atts():
-    assert hasattr(Maude::Operation, "atts")
+def test_maude_operation_has_atts():
+    assert hasattr(Maude_Operation, "atts")
     descriptor = None
-    for klass in Maude::Operation.__mro__:
+    for klass in Maude_Operation.__mro__:
         if "atts" in klass.__dict__:
             descriptor = klass.__dict__["atts"]
             break
@@ -608,37 +574,71 @@ def test_maude::operation_has_atts():
 
 
 
-def test_maude::subsortrel_is_not_abstract():
-    assert not inspect.isabstract(Maude::SubsortRel)
+def test_maude_subsortrel_is_not_abstract():
+    assert not inspect.isabstract(Maude_SubsortRel)
 
 
-def test_maude::subsortrel_constructor_exists():
-    assert callable(Maude::SubsortRel.__init__)
+def test_maude_subsortrel_constructor_exists():
+    assert callable(Maude_SubsortRel.__init__)
 
 
-def test_maude::subsortrel_constructor_args():
-    sig = inspect.signature(Maude::SubsortRel.__init__)
+def test_maude_subsortrel_constructor_args():
+    sig = inspect.signature(Maude_SubsortRel.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_maude::modimportation_is_not_abstract():
-    assert not inspect.isabstract(Maude::ModImportation)
+def test_maude_statement_is_not_abstract():
+    assert not inspect.isabstract(Maude_Statement)
 
 
-def test_maude::modimportation_constructor_exists():
-    assert callable(Maude::ModImportation.__init__)
+def test_maude_statement_constructor_exists():
+    assert callable(Maude_Statement.__init__)
 
 
-def test_maude::modimportation_constructor_args():
-    sig = inspect.signature(Maude::ModImportation.__init__)
+def test_maude_statement_constructor_args():
+    sig = inspect.signature(Maude_Statement.__init__)
+    params = list(sig.parameters.keys())
+    assert "label" in params, "Missing parameter 'label'"
+    assert "atts" in params, "Missing parameter 'atts'"
+
+def test_maude_statement_has_label():
+    assert hasattr(Maude_Statement, "label")
+    descriptor = None
+    for klass in Maude_Statement.__mro__:
+        if "label" in klass.__dict__:
+            descriptor = klass.__dict__["label"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_maude_statement_has_atts():
+    assert hasattr(Maude_Statement, "atts")
+    descriptor = None
+    for klass in Maude_Statement.__mro__:
+        if "atts" in klass.__dict__:
+            descriptor = klass.__dict__["atts"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_maude_modimportation_is_not_abstract():
+    assert not inspect.isabstract(Maude_ModImportation)
+
+
+def test_maude_modimportation_constructor_exists():
+    assert callable(Maude_ModImportation.__init__)
+
+
+def test_maude_modimportation_constructor_args():
+    sig = inspect.signature(Maude_ModImportation.__init__)
     params = list(sig.parameters.keys())
     assert "mode" in params, "Missing parameter 'mode'"
 
-def test_maude::modimportation_has_mode():
-    assert hasattr(Maude::ModImportation, "mode")
+def test_maude_modimportation_has_mode():
+    assert hasattr(Maude_ModImportation, "mode")
     descriptor = None
-    for klass in Maude::ModImportation.__mro__:
+    for klass in Maude_ModImportation.__mro__:
         if "mode" in klass.__dict__:
             descriptor = klass.__dict__["mode"]
             break
@@ -660,30 +660,30 @@ def test_module_constructor_args():
 
 
 
-def test_maude::smodule_is_not_abstract():
-    assert not inspect.isabstract(Maude::SModule)
+def test_maude_smodule_is_not_abstract():
+    assert not inspect.isabstract(Maude_SModule)
 
 
-def test_maude::smodule_constructor_exists():
-    assert callable(Maude::SModule.__init__)
+def test_maude_smodule_constructor_exists():
+    assert callable(Maude_SModule.__init__)
 
 
-def test_maude::smodule_constructor_args():
-    sig = inspect.signature(Maude::SModule.__init__)
+def test_maude_smodule_constructor_args():
+    sig = inspect.signature(Maude_SModule.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_maude::fmodule_is_not_abstract():
-    assert not inspect.isabstract(Maude::FModule)
+def test_maude_fmodule_is_not_abstract():
+    assert not inspect.isabstract(Maude_FModule)
 
 
-def test_maude::fmodule_constructor_exists():
-    assert callable(Maude::FModule.__init__)
+def test_maude_fmodule_constructor_exists():
+    assert callable(Maude_FModule.__init__)
 
 
-def test_maude::fmodule_constructor_args():
-    sig = inspect.signature(Maude::FModule.__init__)
+def test_maude_fmodule_constructor_args():
+    sig = inspect.signature(Maude_FModule.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -702,44 +702,44 @@ def test_theory_constructor_args():
 
 
 
-def test_maude::stheory_is_not_abstract():
-    assert not inspect.isabstract(Maude::STheory)
+def test_maude_stheory_is_not_abstract():
+    assert not inspect.isabstract(Maude_STheory)
 
 
-def test_maude::stheory_constructor_exists():
-    assert callable(Maude::STheory.__init__)
+def test_maude_stheory_constructor_exists():
+    assert callable(Maude_STheory.__init__)
 
 
-def test_maude::stheory_constructor_args():
-    sig = inspect.signature(Maude::STheory.__init__)
+def test_maude_stheory_constructor_args():
+    sig = inspect.signature(Maude_STheory.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_maude::ftheory_is_not_abstract():
-    assert not inspect.isabstract(Maude::FTheory)
+def test_maude_ftheory_is_not_abstract():
+    assert not inspect.isabstract(Maude_FTheory)
 
 
-def test_maude::ftheory_constructor_exists():
-    assert callable(Maude::FTheory.__init__)
+def test_maude_ftheory_constructor_exists():
+    assert callable(Maude_FTheory.__init__)
 
 
-def test_maude::ftheory_constructor_args():
-    sig = inspect.signature(Maude::FTheory.__init__)
+def test_maude_ftheory_constructor_args():
+    sig = inspect.signature(Maude_FTheory.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_maude::modelement_is_not_abstract():
-    assert not inspect.isabstract(Maude::ModElement)
+def test_maude_modelement_is_not_abstract():
+    assert not inspect.isabstract(Maude_ModElement)
 
 
-def test_maude::modelement_constructor_exists():
-    assert callable(Maude::ModElement.__init__)
+def test_maude_modelement_constructor_exists():
+    assert callable(Maude_ModElement.__init__)
 
 
-def test_maude::modelement_constructor_args():
-    sig = inspect.signature(Maude::ModElement.__init__)
+def test_maude_modelement_constructor_args():
+    sig = inspect.signature(Maude_ModElement.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -772,51 +772,51 @@ def test_type_constructor_args():
 
 
 
-def test_maude::kind_is_not_abstract():
-    assert not inspect.isabstract(Maude::Kind)
+def test_maude_kind_is_not_abstract():
+    assert not inspect.isabstract(Maude_Kind)
 
 
-def test_maude::kind_constructor_exists():
-    assert callable(Maude::Kind.__init__)
+def test_maude_kind_constructor_exists():
+    assert callable(Maude_Kind.__init__)
 
 
-def test_maude::kind_constructor_args():
-    sig = inspect.signature(Maude::Kind.__init__)
+def test_maude_kind_constructor_args():
+    sig = inspect.signature(Maude_Kind.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_maude::sort_is_not_abstract():
-    assert not inspect.isabstract(Maude::Sort)
+def test_maude_sort_is_not_abstract():
+    assert not inspect.isabstract(Maude_Sort)
 
 
-def test_maude::sort_constructor_exists():
-    assert callable(Maude::Sort.__init__)
+def test_maude_sort_constructor_exists():
+    assert callable(Maude_Sort.__init__)
 
 
-def test_maude::sort_constructor_args():
-    sig = inspect.signature(Maude::Sort.__init__)
+def test_maude_sort_constructor_args():
+    sig = inspect.signature(Maude_Sort.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_maude::type_is_not_abstract():
-    assert not inspect.isabstract(Maude::Type)
+def test_maude_type_is_not_abstract():
+    assert not inspect.isabstract(Maude_Type)
 
 
-def test_maude::type_constructor_exists():
-    assert callable(Maude::Type.__init__)
+def test_maude_type_constructor_exists():
+    assert callable(Maude_Type.__init__)
 
 
-def test_maude::type_constructor_args():
-    sig = inspect.signature(Maude::Type.__init__)
+def test_maude_type_constructor_args():
+    sig = inspect.signature(Maude_Type.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_maude::type_has_name():
-    assert hasattr(Maude::Type, "name")
+def test_maude_type_has_name():
+    assert hasattr(Maude_Type, "name")
     descriptor = None
-    for klass in Maude::Type.__mro__:
+    for klass in Maude_Type.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -824,44 +824,44 @@ def test_maude::type_has_name():
 
 
 
-def test_maude::module_is_not_abstract():
-    assert not inspect.isabstract(Maude::Module)
+def test_maude_module_is_not_abstract():
+    assert not inspect.isabstract(Maude_Module)
 
 
-def test_maude::module_constructor_exists():
-    assert callable(Maude::Module.__init__)
+def test_maude_module_constructor_exists():
+    assert callable(Maude_Module.__init__)
 
 
-def test_maude::module_constructor_args():
-    sig = inspect.signature(Maude::Module.__init__)
+def test_maude_module_constructor_args():
+    sig = inspect.signature(Maude_Module.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_maude::renmapping_is_not_abstract():
-    assert not inspect.isabstract(Maude::RenMapping)
+def test_maude_renmapping_is_not_abstract():
+    assert not inspect.isabstract(Maude_RenMapping)
 
 
-def test_maude::renmapping_constructor_exists():
-    assert callable(Maude::RenMapping.__init__)
+def test_maude_renmapping_constructor_exists():
+    assert callable(Maude_RenMapping.__init__)
 
 
-def test_maude::renmapping_constructor_args():
-    sig = inspect.signature(Maude::RenMapping.__init__)
+def test_maude_renmapping_constructor_args():
+    sig = inspect.signature(Maude_RenMapping.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_maude::view_is_not_abstract():
-    assert not inspect.isabstract(Maude::View)
+def test_maude_view_is_not_abstract():
+    assert not inspect.isabstract(Maude_View)
 
 
-def test_maude::view_constructor_exists():
-    assert callable(Maude::View.__init__)
+def test_maude_view_constructor_exists():
+    assert callable(Maude_View.__init__)
 
 
-def test_maude::view_constructor_args():
-    sig = inspect.signature(Maude::View.__init__)
+def test_maude_view_constructor_args():
+    sig = inspect.signature(Maude_View.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -880,93 +880,93 @@ def test_modexpression_constructor_args():
 
 
 
-def test_maude::compmodexp_is_not_abstract():
-    assert not inspect.isabstract(Maude::CompModExp)
+def test_maude_renmodexp_is_not_abstract():
+    assert not inspect.isabstract(Maude_RenModExp)
 
 
-def test_maude::compmodexp_constructor_exists():
-    assert callable(Maude::CompModExp.__init__)
+def test_maude_renmodexp_constructor_exists():
+    assert callable(Maude_RenModExp.__init__)
 
 
-def test_maude::compmodexp_constructor_args():
-    sig = inspect.signature(Maude::CompModExp.__init__)
+def test_maude_renmodexp_constructor_args():
+    sig = inspect.signature(Maude_RenModExp.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_maude::moduleidmodexp_is_not_abstract():
-    assert not inspect.isabstract(Maude::ModuleIdModExp)
+def test_maude_moduleidmodexp_is_not_abstract():
+    assert not inspect.isabstract(Maude_ModuleIdModExp)
 
 
-def test_maude::moduleidmodexp_constructor_exists():
-    assert callable(Maude::ModuleIdModExp.__init__)
+def test_maude_moduleidmodexp_constructor_exists():
+    assert callable(Maude_ModuleIdModExp.__init__)
 
 
-def test_maude::moduleidmodexp_constructor_args():
-    sig = inspect.signature(Maude::ModuleIdModExp.__init__)
+def test_maude_moduleidmodexp_constructor_args():
+    sig = inspect.signature(Maude_ModuleIdModExp.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_maude::renmodexp_is_not_abstract():
-    assert not inspect.isabstract(Maude::RenModExp)
+def test_maude_compmodexp_is_not_abstract():
+    assert not inspect.isabstract(Maude_CompModExp)
 
 
-def test_maude::renmodexp_constructor_exists():
-    assert callable(Maude::RenModExp.__init__)
+def test_maude_compmodexp_constructor_exists():
+    assert callable(Maude_CompModExp.__init__)
 
 
-def test_maude::renmodexp_constructor_args():
-    sig = inspect.signature(Maude::RenModExp.__init__)
+def test_maude_compmodexp_constructor_args():
+    sig = inspect.signature(Maude_CompModExp.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_maude::instmodexp_is_not_abstract():
-    assert not inspect.isabstract(Maude::InstModExp)
+def test_maude_instmodexp_is_not_abstract():
+    assert not inspect.isabstract(Maude_InstModExp)
 
 
-def test_maude::instmodexp_constructor_exists():
-    assert callable(Maude::InstModExp.__init__)
+def test_maude_instmodexp_constructor_exists():
+    assert callable(Maude_InstModExp.__init__)
 
 
-def test_maude::instmodexp_constructor_args():
-    sig = inspect.signature(Maude::InstModExp.__init__)
+def test_maude_instmodexp_constructor_args():
+    sig = inspect.signature(Maude_InstModExp.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_maude::modexpression_is_not_abstract():
-    assert not inspect.isabstract(Maude::ModExpression)
+def test_maude_modexpression_is_not_abstract():
+    assert not inspect.isabstract(Maude_ModExpression)
 
 
-def test_maude::modexpression_constructor_exists():
-    assert callable(Maude::ModExpression.__init__)
+def test_maude_modexpression_constructor_exists():
+    assert callable(Maude_ModExpression.__init__)
 
 
-def test_maude::modexpression_constructor_args():
-    sig = inspect.signature(Maude::ModExpression.__init__)
+def test_maude_modexpression_constructor_args():
+    sig = inspect.signature(Maude_ModExpression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_maude::maudetopel_is_not_abstract():
-    assert not inspect.isabstract(Maude::MaudeTopEl)
+def test_maude_maudetopel_is_not_abstract():
+    assert not inspect.isabstract(Maude_MaudeTopEl)
 
 
-def test_maude::maudetopel_constructor_exists():
-    assert callable(Maude::MaudeTopEl.__init__)
+def test_maude_maudetopel_constructor_exists():
+    assert callable(Maude_MaudeTopEl.__init__)
 
 
-def test_maude::maudetopel_constructor_args():
-    sig = inspect.signature(Maude::MaudeTopEl.__init__)
+def test_maude_maudetopel_constructor_args():
+    sig = inspect.signature(Maude_MaudeTopEl.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_maude::maudetopel_has_name():
-    assert hasattr(Maude::MaudeTopEl, "name")
+def test_maude_maudetopel_has_name():
+    assert hasattr(Maude_MaudeTopEl, "name")
     descriptor = None
-    for klass in Maude::MaudeTopEl.__mro__:
+    for klass in Maude_MaudeTopEl.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -974,23 +974,23 @@ def test_maude::maudetopel_has_name():
 
 
 
-def test_maude::parameter_is_not_abstract():
-    assert not inspect.isabstract(Maude::Parameter)
+def test_maude_parameter_is_not_abstract():
+    assert not inspect.isabstract(Maude_Parameter)
 
 
-def test_maude::parameter_constructor_exists():
-    assert callable(Maude::Parameter.__init__)
+def test_maude_parameter_constructor_exists():
+    assert callable(Maude_Parameter.__init__)
 
 
-def test_maude::parameter_constructor_args():
-    sig = inspect.signature(Maude::Parameter.__init__)
+def test_maude_parameter_constructor_args():
+    sig = inspect.signature(Maude_Parameter.__init__)
     params = list(sig.parameters.keys())
     assert "label" in params, "Missing parameter 'label'"
 
-def test_maude::parameter_has_label():
-    assert hasattr(Maude::Parameter, "label")
+def test_maude_parameter_has_label():
+    assert hasattr(Maude_Parameter, "label")
     descriptor = None
-    for klass in Maude::Parameter.__mro__:
+    for klass in Maude_Parameter.__mro__:
         if "label" in klass.__dict__:
             descriptor = klass.__dict__["label"]
             break
@@ -998,44 +998,44 @@ def test_maude::parameter_has_label():
 
 
 
-def test_maude::theory_is_not_abstract():
-    assert not inspect.isabstract(Maude::Theory)
+def test_maude_theory_is_not_abstract():
+    assert not inspect.isabstract(Maude_Theory)
 
 
-def test_maude::theory_constructor_exists():
-    assert callable(Maude::Theory.__init__)
+def test_maude_theory_constructor_exists():
+    assert callable(Maude_Theory.__init__)
 
 
-def test_maude::theory_constructor_args():
-    sig = inspect.signature(Maude::Theory.__init__)
+def test_maude_theory_constructor_args():
+    sig = inspect.signature(Maude_Theory.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_maude::theoryidmodexp_is_not_abstract():
-    assert not inspect.isabstract(Maude::TheoryIdModExp)
+def test_maude_theoryidmodexp_is_not_abstract():
+    assert not inspect.isabstract(Maude_TheoryIdModExp)
 
 
-def test_maude::theoryidmodexp_constructor_exists():
-    assert callable(Maude::TheoryIdModExp.__init__)
+def test_maude_theoryidmodexp_constructor_exists():
+    assert callable(Maude_TheoryIdModExp.__init__)
 
 
-def test_maude::theoryidmodexp_constructor_args():
-    sig = inspect.signature(Maude::TheoryIdModExp.__init__)
+def test_maude_theoryidmodexp_constructor_args():
+    sig = inspect.signature(Maude_TheoryIdModExp.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_maude::maudespec_is_not_abstract():
-    assert not inspect.isabstract(Maude::MaudeSpec)
+def test_maude_maudespec_is_not_abstract():
+    assert not inspect.isabstract(Maude_MaudeSpec)
 
 
-def test_maude::maudespec_constructor_exists():
-    assert callable(Maude::MaudeSpec.__init__)
+def test_maude_maudespec_constructor_exists():
+    assert callable(Maude_MaudeSpec.__init__)
 
 
-def test_maude::maudespec_constructor_args():
-    sig = inspect.signature(Maude::MaudeSpec.__init__)
+def test_maude_maudespec_constructor_args():
+    sig = inspect.signature(Maude_MaudeSpec.__init__)
     params = list(sig.parameters.keys())
 
 def test_importationmode_exists():
@@ -1047,8 +1047,8 @@ def test_importationmode_has_all_literals():
     enum_literals = [lit.name for lit in ImportationMode]
     expected_literals = [
         "including",
-        "protecting",
         "extending",
+        "protecting",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
@@ -1069,144 +1069,144 @@ safe_text = st.text(
 RenMapping_strategy = st.builds(
     RenMapping,
 )
-Maude::LabelMapping_strategy = st.builds(
-    Maude::LabelMapping,
-    from_=
+Maude_LabelMapping_strategy = st.builds(
+    Maude_LabelMapping,
+    to=
         safe_text,
+    from_=
+        safe_text
+)
+Maude_OpMapping_strategy = st.builds(
+    Maude_OpMapping,
     to=
         safe_text
 )
-Maude::OpMapping_strategy = st.builds(
-    Maude::OpMapping,
-    to=
-        safe_text
-)
-Maude::SortMapping_strategy = st.builds(
-    Maude::SortMapping,
+Maude_SortMapping_strategy = st.builds(
+    Maude_SortMapping,
     to=
         safe_text
 )
 ViewMapping_strategy = st.builds(
     ViewMapping,
 )
-Maude::TermMapping_strategy = st.builds(
-    Maude::TermMapping,
+Maude_TermMapping_strategy = st.builds(
+    Maude_TermMapping,
 )
-Maude::ViewMapping_strategy = st.builds(
-    Maude::ViewMapping,
+Maude_ViewMapping_strategy = st.builds(
+    Maude_ViewMapping,
 )
-Maude::OpTypedMapping_strategy = st.builds(
-    Maude::OpTypedMapping,
-    atts=
-        safe_text,
+Maude_OpTypedMapping_strategy = st.builds(
+    Maude_OpTypedMapping,
     to=
+        safe_text,
+    atts=
         safe_text
 )
 Term_strategy = st.builds(
     Term,
 )
-Maude::RecTerm_strategy = st.builds(
-    Maude::RecTerm,
+Maude_RecTerm_strategy = st.builds(
+    Maude_RecTerm,
     op=
         safe_text
 )
-Maude::Constant_strategy = st.builds(
-    Maude::Constant,
+Maude_Constant_strategy = st.builds(
+    Maude_Constant,
     op=
         safe_text
 )
-Maude::Variable_strategy = st.builds(
-    Maude::Variable,
+Maude_Variable_strategy = st.builds(
+    Maude_Variable,
     name=
         safe_text
 )
 EquationalCond_strategy = st.builds(
     EquationalCond,
 )
-Maude::EqualCond_strategy = st.builds(
-    Maude::EqualCond,
+Maude_EqualCond_strategy = st.builds(
+    Maude_EqualCond,
 )
-Maude::MembershipCond_strategy = st.builds(
-    Maude::MembershipCond,
+Maude_MembershipCond_strategy = st.builds(
+    Maude_MembershipCond,
 )
 Condition_strategy = st.builds(
     Condition,
 )
-Maude::RewriteCond_strategy = st.builds(
-    Maude::RewriteCond,
+Maude_RewriteCond_strategy = st.builds(
+    Maude_RewriteCond,
 )
-Maude::EquationalCond_strategy = st.builds(
-    Maude::EquationalCond,
+Maude_EquationalCond_strategy = st.builds(
+    Maude_EquationalCond,
 )
-Maude::MatchingCond_strategy = st.builds(
-    Maude::MatchingCond,
+Maude_MatchingCond_strategy = st.builds(
+    Maude_MatchingCond,
 )
-Maude::BooleanCond_strategy = st.builds(
-    Maude::BooleanCond,
+Maude_BooleanCond_strategy = st.builds(
+    Maude_BooleanCond,
 )
-Maude::Term_strategy = st.builds(
-    Maude::Term,
+Maude_Term_strategy = st.builds(
+    Maude_Term,
 )
 Statement_strategy = st.builds(
     Statement,
 )
-Maude::Rule_strategy = st.builds(
-    Maude::Rule,
+Maude_Rule_strategy = st.builds(
+    Maude_Rule,
 )
-Maude::Equation_strategy = st.builds(
-    Maude::Equation,
+Maude_Equation_strategy = st.builds(
+    Maude_Equation,
 )
-Maude::Membership_strategy = st.builds(
-    Maude::Membership,
+Maude_Membership_strategy = st.builds(
+    Maude_Membership,
 )
-Maude::Condition_strategy = st.builds(
-    Maude::Condition,
+Maude_Condition_strategy = st.builds(
+    Maude_Condition,
 )
 ModElement_strategy = st.builds(
     ModElement,
 )
-Maude::Statement_strategy = st.builds(
-    Maude::Statement,
-    atts=
-        safe_text,
-    label=
-        safe_text
-)
-Maude::Operation_strategy = st.builds(
-    Maude::Operation,
+Maude_Operation_strategy = st.builds(
+    Maude_Operation,
     name=
         safe_text,
     atts=
         safe_text
 )
-Maude::SubsortRel_strategy = st.builds(
-    Maude::SubsortRel,
+Maude_SubsortRel_strategy = st.builds(
+    Maude_SubsortRel,
 )
-Maude::ModImportation_strategy = st.builds(
-    Maude::ModImportation,
+Maude_Statement_strategy = st.builds(
+    Maude_Statement,
+    label=
+        safe_text,
+    atts=
+        safe_text
+)
+Maude_ModImportation_strategy = st.builds(
+    Maude_ModImportation,
     mode=
         safe_text
 )
 Module_strategy = st.builds(
     Module,
 )
-Maude::SModule_strategy = st.builds(
-    Maude::SModule,
+Maude_SModule_strategy = st.builds(
+    Maude_SModule,
 )
-Maude::FModule_strategy = st.builds(
-    Maude::FModule,
+Maude_FModule_strategy = st.builds(
+    Maude_FModule,
 )
 Theory_strategy = st.builds(
     Theory,
 )
-Maude::STheory_strategy = st.builds(
-    Maude::STheory,
+Maude_STheory_strategy = st.builds(
+    Maude_STheory,
 )
-Maude::FTheory_strategy = st.builds(
-    Maude::FTheory,
+Maude_FTheory_strategy = st.builds(
+    Maude_FTheory,
 )
-Maude::ModElement_strategy = st.builds(
-    Maude::ModElement,
+Maude_ModElement_strategy = st.builds(
+    Maude_ModElement,
 )
 MaudeTopEl_strategy = st.builds(
     MaudeTopEl,
@@ -1214,62 +1214,62 @@ MaudeTopEl_strategy = st.builds(
 Type_strategy = st.builds(
     Type,
 )
-Maude::Kind_strategy = st.builds(
-    Maude::Kind,
+Maude_Kind_strategy = st.builds(
+    Maude_Kind,
 )
-Maude::Sort_strategy = st.builds(
-    Maude::Sort,
+Maude_Sort_strategy = st.builds(
+    Maude_Sort,
 )
-Maude::Type_strategy = st.builds(
-    Maude::Type,
+Maude_Type_strategy = st.builds(
+    Maude_Type,
     name=
         safe_text
 )
-Maude::Module_strategy = st.builds(
-    Maude::Module,
+Maude_Module_strategy = st.builds(
+    Maude_Module,
 )
-Maude::RenMapping_strategy = st.builds(
-    Maude::RenMapping,
+Maude_RenMapping_strategy = st.builds(
+    Maude_RenMapping,
 )
-Maude::View_strategy = st.builds(
-    Maude::View,
+Maude_View_strategy = st.builds(
+    Maude_View,
 )
 ModExpression_strategy = st.builds(
     ModExpression,
 )
-Maude::CompModExp_strategy = st.builds(
-    Maude::CompModExp,
+Maude_RenModExp_strategy = st.builds(
+    Maude_RenModExp,
 )
-Maude::ModuleIdModExp_strategy = st.builds(
-    Maude::ModuleIdModExp,
+Maude_ModuleIdModExp_strategy = st.builds(
+    Maude_ModuleIdModExp,
 )
-Maude::RenModExp_strategy = st.builds(
-    Maude::RenModExp,
+Maude_CompModExp_strategy = st.builds(
+    Maude_CompModExp,
 )
-Maude::InstModExp_strategy = st.builds(
-    Maude::InstModExp,
+Maude_InstModExp_strategy = st.builds(
+    Maude_InstModExp,
 )
-Maude::ModExpression_strategy = st.builds(
-    Maude::ModExpression,
+Maude_ModExpression_strategy = st.builds(
+    Maude_ModExpression,
 )
-Maude::MaudeTopEl_strategy = st.builds(
-    Maude::MaudeTopEl,
+Maude_MaudeTopEl_strategy = st.builds(
+    Maude_MaudeTopEl,
     name=
         safe_text
 )
-Maude::Parameter_strategy = st.builds(
-    Maude::Parameter,
+Maude_Parameter_strategy = st.builds(
+    Maude_Parameter,
     label=
         safe_text
 )
-Maude::Theory_strategy = st.builds(
-    Maude::Theory,
+Maude_Theory_strategy = st.builds(
+    Maude_Theory,
 )
-Maude::TheoryIdModExp_strategy = st.builds(
-    Maude::TheoryIdModExp,
+Maude_TheoryIdModExp_strategy = st.builds(
+    Maude_TheoryIdModExp,
 )
-Maude::MaudeSpec_strategy = st.builds(
-    Maude::MaudeSpec,
+Maude_MaudeSpec_strategy = st.builds(
+    Maude_MaudeSpec,
 )
 
 @given(instance=RenMapping_strategy)
@@ -1277,61 +1277,49 @@ Maude::MaudeSpec_strategy = st.builds(
 def test_renmapping_instantiation(instance):
     assert isinstance(instance, RenMapping)
 
-@given(instance=Maude::LabelMapping_strategy)
+@given(instance=Maude_LabelMapping_strategy)
 @settings(max_examples=50)
-def test_maude::labelmapping_instantiation(instance):
-    assert isinstance(instance, Maude::LabelMapping)
-
-@given(instance=Maude::LabelMapping_strategy)
-def test_maude::labelmapping_from__type(instance):
-    assert isinstance(instance.from_, str)
+def test_maude_labelmapping_instantiation(instance):
+    assert isinstance(instance, Maude_LabelMapping)
 
 
-@given(instance=Maude::LabelMapping_strategy)
-def test_maude::labelmapping_from__setter(instance):
+
+@given(instance=Maude_LabelMapping_strategy)
+def test_maude_labelmapping_to_setter(instance):
+    original = instance.to
+    instance.to = original
+    assert instance.to == original
+
+
+
+@given(instance=Maude_LabelMapping_strategy)
+def test_maude_labelmapping_from__setter(instance):
     original = instance.from_
     instance.from_ = original
     assert instance.from_ == original
 
-@given(instance=Maude::LabelMapping_strategy)
-def test_maude::labelmapping_to_type(instance):
-    assert isinstance(instance.to, str)
+@given(instance=Maude_OpMapping_strategy)
+@settings(max_examples=50)
+def test_maude_opmapping_instantiation(instance):
+    assert isinstance(instance, Maude_OpMapping)
 
 
-@given(instance=Maude::LabelMapping_strategy)
-def test_maude::labelmapping_to_setter(instance):
+
+@given(instance=Maude_OpMapping_strategy)
+def test_maude_opmapping_to_setter(instance):
     original = instance.to
     instance.to = original
     assert instance.to == original
 
-@given(instance=Maude::OpMapping_strategy)
+@given(instance=Maude_SortMapping_strategy)
 @settings(max_examples=50)
-def test_maude::opmapping_instantiation(instance):
-    assert isinstance(instance, Maude::OpMapping)
-
-@given(instance=Maude::OpMapping_strategy)
-def test_maude::opmapping_to_type(instance):
-    assert isinstance(instance.to, str)
+def test_maude_sortmapping_instantiation(instance):
+    assert isinstance(instance, Maude_SortMapping)
 
 
-@given(instance=Maude::OpMapping_strategy)
-def test_maude::opmapping_to_setter(instance):
-    original = instance.to
-    instance.to = original
-    assert instance.to == original
 
-@given(instance=Maude::SortMapping_strategy)
-@settings(max_examples=50)
-def test_maude::sortmapping_instantiation(instance):
-    assert isinstance(instance, Maude::SortMapping)
-
-@given(instance=Maude::SortMapping_strategy)
-def test_maude::sortmapping_to_type(instance):
-    assert isinstance(instance.to, str)
-
-
-@given(instance=Maude::SortMapping_strategy)
-def test_maude::sortmapping_to_setter(instance):
+@given(instance=Maude_SortMapping_strategy)
+def test_maude_sortmapping_to_setter(instance):
     original = instance.to
     instance.to = original
     assert instance.to == original
@@ -1341,92 +1329,77 @@ def test_maude::sortmapping_to_setter(instance):
 def test_viewmapping_instantiation(instance):
     assert isinstance(instance, ViewMapping)
 
-@given(instance=Maude::TermMapping_strategy)
+@given(instance=Maude_TermMapping_strategy)
 @settings(max_examples=50)
-def test_maude::termmapping_instantiation(instance):
-    assert isinstance(instance, Maude::TermMapping)
+def test_maude_termmapping_instantiation(instance):
+    assert isinstance(instance, Maude_TermMapping)
 
-@given(instance=Maude::ViewMapping_strategy)
+@given(instance=Maude_ViewMapping_strategy)
 @settings(max_examples=50)
-def test_maude::viewmapping_instantiation(instance):
-    assert isinstance(instance, Maude::ViewMapping)
+def test_maude_viewmapping_instantiation(instance):
+    assert isinstance(instance, Maude_ViewMapping)
 
-@given(instance=Maude::OpTypedMapping_strategy)
+@given(instance=Maude_OpTypedMapping_strategy)
 @settings(max_examples=50)
-def test_maude::optypedmapping_instantiation(instance):
-    assert isinstance(instance, Maude::OpTypedMapping)
-
-@given(instance=Maude::OpTypedMapping_strategy)
-def test_maude::optypedmapping_atts_type(instance):
-    assert isinstance(instance.atts, str)
+def test_maude_optypedmapping_instantiation(instance):
+    assert isinstance(instance, Maude_OpTypedMapping)
 
 
-@given(instance=Maude::OpTypedMapping_strategy)
-def test_maude::optypedmapping_atts_setter(instance):
-    original = instance.atts
-    instance.atts = original
-    assert instance.atts == original
 
-@given(instance=Maude::OpTypedMapping_strategy)
-def test_maude::optypedmapping_to_type(instance):
-    assert isinstance(instance.to, str)
-
-
-@given(instance=Maude::OpTypedMapping_strategy)
-def test_maude::optypedmapping_to_setter(instance):
+@given(instance=Maude_OpTypedMapping_strategy)
+def test_maude_optypedmapping_to_setter(instance):
     original = instance.to
     instance.to = original
     assert instance.to == original
+
+
+
+@given(instance=Maude_OpTypedMapping_strategy)
+def test_maude_optypedmapping_atts_setter(instance):
+    original = instance.atts
+    instance.atts = original
+    assert instance.atts == original
 
 @given(instance=Term_strategy)
 @settings(max_examples=50)
 def test_term_instantiation(instance):
     assert isinstance(instance, Term)
 
-@given(instance=Maude::RecTerm_strategy)
+@given(instance=Maude_RecTerm_strategy)
 @settings(max_examples=50)
-def test_maude::recterm_instantiation(instance):
-    assert isinstance(instance, Maude::RecTerm)
-
-@given(instance=Maude::RecTerm_strategy)
-def test_maude::recterm_op_type(instance):
-    assert isinstance(instance.op, str)
+def test_maude_recterm_instantiation(instance):
+    assert isinstance(instance, Maude_RecTerm)
 
 
-@given(instance=Maude::RecTerm_strategy)
-def test_maude::recterm_op_setter(instance):
+
+@given(instance=Maude_RecTerm_strategy)
+def test_maude_recterm_op_setter(instance):
     original = instance.op
     instance.op = original
     assert instance.op == original
 
-@given(instance=Maude::Constant_strategy)
+@given(instance=Maude_Constant_strategy)
 @settings(max_examples=50)
-def test_maude::constant_instantiation(instance):
-    assert isinstance(instance, Maude::Constant)
-
-@given(instance=Maude::Constant_strategy)
-def test_maude::constant_op_type(instance):
-    assert isinstance(instance.op, str)
+def test_maude_constant_instantiation(instance):
+    assert isinstance(instance, Maude_Constant)
 
 
-@given(instance=Maude::Constant_strategy)
-def test_maude::constant_op_setter(instance):
+
+@given(instance=Maude_Constant_strategy)
+def test_maude_constant_op_setter(instance):
     original = instance.op
     instance.op = original
     assert instance.op == original
 
-@given(instance=Maude::Variable_strategy)
+@given(instance=Maude_Variable_strategy)
 @settings(max_examples=50)
-def test_maude::variable_instantiation(instance):
-    assert isinstance(instance, Maude::Variable)
-
-@given(instance=Maude::Variable_strategy)
-def test_maude::variable_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_maude_variable_instantiation(instance):
+    assert isinstance(instance, Maude_Variable)
 
 
-@given(instance=Maude::Variable_strategy)
-def test_maude::variable_name_setter(instance):
+
+@given(instance=Maude_Variable_strategy)
+def test_maude_variable_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
@@ -1436,147 +1409,132 @@ def test_maude::variable_name_setter(instance):
 def test_equationalcond_instantiation(instance):
     assert isinstance(instance, EquationalCond)
 
-@given(instance=Maude::EqualCond_strategy)
+@given(instance=Maude_EqualCond_strategy)
 @settings(max_examples=50)
-def test_maude::equalcond_instantiation(instance):
-    assert isinstance(instance, Maude::EqualCond)
+def test_maude_equalcond_instantiation(instance):
+    assert isinstance(instance, Maude_EqualCond)
 
-@given(instance=Maude::MembershipCond_strategy)
+@given(instance=Maude_MembershipCond_strategy)
 @settings(max_examples=50)
-def test_maude::membershipcond_instantiation(instance):
-    assert isinstance(instance, Maude::MembershipCond)
+def test_maude_membershipcond_instantiation(instance):
+    assert isinstance(instance, Maude_MembershipCond)
 
 @given(instance=Condition_strategy)
 @settings(max_examples=50)
 def test_condition_instantiation(instance):
     assert isinstance(instance, Condition)
 
-@given(instance=Maude::RewriteCond_strategy)
+@given(instance=Maude_RewriteCond_strategy)
 @settings(max_examples=50)
-def test_maude::rewritecond_instantiation(instance):
-    assert isinstance(instance, Maude::RewriteCond)
+def test_maude_rewritecond_instantiation(instance):
+    assert isinstance(instance, Maude_RewriteCond)
 
-@given(instance=Maude::EquationalCond_strategy)
+@given(instance=Maude_EquationalCond_strategy)
 @settings(max_examples=50)
-def test_maude::equationalcond_instantiation(instance):
-    assert isinstance(instance, Maude::EquationalCond)
+def test_maude_equationalcond_instantiation(instance):
+    assert isinstance(instance, Maude_EquationalCond)
 
-@given(instance=Maude::MatchingCond_strategy)
+@given(instance=Maude_MatchingCond_strategy)
 @settings(max_examples=50)
-def test_maude::matchingcond_instantiation(instance):
-    assert isinstance(instance, Maude::MatchingCond)
+def test_maude_matchingcond_instantiation(instance):
+    assert isinstance(instance, Maude_MatchingCond)
 
-@given(instance=Maude::BooleanCond_strategy)
+@given(instance=Maude_BooleanCond_strategy)
 @settings(max_examples=50)
-def test_maude::booleancond_instantiation(instance):
-    assert isinstance(instance, Maude::BooleanCond)
+def test_maude_booleancond_instantiation(instance):
+    assert isinstance(instance, Maude_BooleanCond)
 
-@given(instance=Maude::Term_strategy)
+@given(instance=Maude_Term_strategy)
 @settings(max_examples=50)
-def test_maude::term_instantiation(instance):
-    assert isinstance(instance, Maude::Term)
+def test_maude_term_instantiation(instance):
+    assert isinstance(instance, Maude_Term)
 
 @given(instance=Statement_strategy)
 @settings(max_examples=50)
 def test_statement_instantiation(instance):
     assert isinstance(instance, Statement)
 
-@given(instance=Maude::Rule_strategy)
+@given(instance=Maude_Rule_strategy)
 @settings(max_examples=50)
-def test_maude::rule_instantiation(instance):
-    assert isinstance(instance, Maude::Rule)
+def test_maude_rule_instantiation(instance):
+    assert isinstance(instance, Maude_Rule)
 
-@given(instance=Maude::Equation_strategy)
+@given(instance=Maude_Equation_strategy)
 @settings(max_examples=50)
-def test_maude::equation_instantiation(instance):
-    assert isinstance(instance, Maude::Equation)
+def test_maude_equation_instantiation(instance):
+    assert isinstance(instance, Maude_Equation)
 
-@given(instance=Maude::Membership_strategy)
+@given(instance=Maude_Membership_strategy)
 @settings(max_examples=50)
-def test_maude::membership_instantiation(instance):
-    assert isinstance(instance, Maude::Membership)
+def test_maude_membership_instantiation(instance):
+    assert isinstance(instance, Maude_Membership)
 
-@given(instance=Maude::Condition_strategy)
+@given(instance=Maude_Condition_strategy)
 @settings(max_examples=50)
-def test_maude::condition_instantiation(instance):
-    assert isinstance(instance, Maude::Condition)
+def test_maude_condition_instantiation(instance):
+    assert isinstance(instance, Maude_Condition)
 
 @given(instance=ModElement_strategy)
 @settings(max_examples=50)
 def test_modelement_instantiation(instance):
     assert isinstance(instance, ModElement)
 
-@given(instance=Maude::Statement_strategy)
+@given(instance=Maude_Operation_strategy)
 @settings(max_examples=50)
-def test_maude::statement_instantiation(instance):
-    assert isinstance(instance, Maude::Statement)
-
-@given(instance=Maude::Statement_strategy)
-def test_maude::statement_atts_type(instance):
-    assert isinstance(instance.atts, str)
+def test_maude_operation_instantiation(instance):
+    assert isinstance(instance, Maude_Operation)
 
 
-@given(instance=Maude::Statement_strategy)
-def test_maude::statement_atts_setter(instance):
-    original = instance.atts
-    instance.atts = original
-    assert instance.atts == original
 
-@given(instance=Maude::Statement_strategy)
-def test_maude::statement_label_type(instance):
-    assert isinstance(instance.label, str)
-
-
-@given(instance=Maude::Statement_strategy)
-def test_maude::statement_label_setter(instance):
-    original = instance.label
-    instance.label = original
-    assert instance.label == original
-
-@given(instance=Maude::Operation_strategy)
-@settings(max_examples=50)
-def test_maude::operation_instantiation(instance):
-    assert isinstance(instance, Maude::Operation)
-
-@given(instance=Maude::Operation_strategy)
-def test_maude::operation_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=Maude::Operation_strategy)
-def test_maude::operation_name_setter(instance):
+@given(instance=Maude_Operation_strategy)
+def test_maude_operation_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=Maude::Operation_strategy)
-def test_maude::operation_atts_type(instance):
-    assert isinstance(instance.atts, str)
 
 
-@given(instance=Maude::Operation_strategy)
-def test_maude::operation_atts_setter(instance):
+@given(instance=Maude_Operation_strategy)
+def test_maude_operation_atts_setter(instance):
     original = instance.atts
     instance.atts = original
     assert instance.atts == original
 
-@given(instance=Maude::SubsortRel_strategy)
+@given(instance=Maude_SubsortRel_strategy)
 @settings(max_examples=50)
-def test_maude::subsortrel_instantiation(instance):
-    assert isinstance(instance, Maude::SubsortRel)
+def test_maude_subsortrel_instantiation(instance):
+    assert isinstance(instance, Maude_SubsortRel)
 
-@given(instance=Maude::ModImportation_strategy)
+@given(instance=Maude_Statement_strategy)
 @settings(max_examples=50)
-def test_maude::modimportation_instantiation(instance):
-    assert isinstance(instance, Maude::ModImportation)
-
-@given(instance=Maude::ModImportation_strategy)
-def test_maude::modimportation_mode_type(instance):
-    assert isinstance(instance.mode, str)
+def test_maude_statement_instantiation(instance):
+    assert isinstance(instance, Maude_Statement)
 
 
-@given(instance=Maude::ModImportation_strategy)
-def test_maude::modimportation_mode_setter(instance):
+
+@given(instance=Maude_Statement_strategy)
+def test_maude_statement_label_setter(instance):
+    original = instance.label
+    instance.label = original
+    assert instance.label == original
+
+
+
+@given(instance=Maude_Statement_strategy)
+def test_maude_statement_atts_setter(instance):
+    original = instance.atts
+    instance.atts = original
+    assert instance.atts == original
+
+@given(instance=Maude_ModImportation_strategy)
+@settings(max_examples=50)
+def test_maude_modimportation_instantiation(instance):
+    assert isinstance(instance, Maude_ModImportation)
+
+
+
+@given(instance=Maude_ModImportation_strategy)
+def test_maude_modimportation_mode_setter(instance):
     original = instance.mode
     instance.mode = original
     assert instance.mode == original
@@ -1586,35 +1544,35 @@ def test_maude::modimportation_mode_setter(instance):
 def test_module_instantiation(instance):
     assert isinstance(instance, Module)
 
-@given(instance=Maude::SModule_strategy)
+@given(instance=Maude_SModule_strategy)
 @settings(max_examples=50)
-def test_maude::smodule_instantiation(instance):
-    assert isinstance(instance, Maude::SModule)
+def test_maude_smodule_instantiation(instance):
+    assert isinstance(instance, Maude_SModule)
 
-@given(instance=Maude::FModule_strategy)
+@given(instance=Maude_FModule_strategy)
 @settings(max_examples=50)
-def test_maude::fmodule_instantiation(instance):
-    assert isinstance(instance, Maude::FModule)
+def test_maude_fmodule_instantiation(instance):
+    assert isinstance(instance, Maude_FModule)
 
 @given(instance=Theory_strategy)
 @settings(max_examples=50)
 def test_theory_instantiation(instance):
     assert isinstance(instance, Theory)
 
-@given(instance=Maude::STheory_strategy)
+@given(instance=Maude_STheory_strategy)
 @settings(max_examples=50)
-def test_maude::stheory_instantiation(instance):
-    assert isinstance(instance, Maude::STheory)
+def test_maude_stheory_instantiation(instance):
+    assert isinstance(instance, Maude_STheory)
 
-@given(instance=Maude::FTheory_strategy)
+@given(instance=Maude_FTheory_strategy)
 @settings(max_examples=50)
-def test_maude::ftheory_instantiation(instance):
-    assert isinstance(instance, Maude::FTheory)
+def test_maude_ftheory_instantiation(instance):
+    assert isinstance(instance, Maude_FTheory)
 
-@given(instance=Maude::ModElement_strategy)
+@given(instance=Maude_ModElement_strategy)
 @settings(max_examples=50)
-def test_maude::modelement_instantiation(instance):
-    assert isinstance(instance, Maude::ModElement)
+def test_maude_modelement_instantiation(instance):
+    assert isinstance(instance, Maude_ModElement)
 
 @given(instance=MaudeTopEl_strategy)
 @settings(max_examples=50)
@@ -1626,120 +1584,111 @@ def test_maudetopel_instantiation(instance):
 def test_type_instantiation(instance):
     assert isinstance(instance, Type)
 
-@given(instance=Maude::Kind_strategy)
+@given(instance=Maude_Kind_strategy)
 @settings(max_examples=50)
-def test_maude::kind_instantiation(instance):
-    assert isinstance(instance, Maude::Kind)
+def test_maude_kind_instantiation(instance):
+    assert isinstance(instance, Maude_Kind)
 
-@given(instance=Maude::Sort_strategy)
+@given(instance=Maude_Sort_strategy)
 @settings(max_examples=50)
-def test_maude::sort_instantiation(instance):
-    assert isinstance(instance, Maude::Sort)
+def test_maude_sort_instantiation(instance):
+    assert isinstance(instance, Maude_Sort)
 
-@given(instance=Maude::Type_strategy)
+@given(instance=Maude_Type_strategy)
 @settings(max_examples=50)
-def test_maude::type_instantiation(instance):
-    assert isinstance(instance, Maude::Type)
-
-@given(instance=Maude::Type_strategy)
-def test_maude::type_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_maude_type_instantiation(instance):
+    assert isinstance(instance, Maude_Type)
 
 
-@given(instance=Maude::Type_strategy)
-def test_maude::type_name_setter(instance):
+
+@given(instance=Maude_Type_strategy)
+def test_maude_type_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=Maude::Module_strategy)
+@given(instance=Maude_Module_strategy)
 @settings(max_examples=50)
-def test_maude::module_instantiation(instance):
-    assert isinstance(instance, Maude::Module)
+def test_maude_module_instantiation(instance):
+    assert isinstance(instance, Maude_Module)
 
-@given(instance=Maude::RenMapping_strategy)
+@given(instance=Maude_RenMapping_strategy)
 @settings(max_examples=50)
-def test_maude::renmapping_instantiation(instance):
-    assert isinstance(instance, Maude::RenMapping)
+def test_maude_renmapping_instantiation(instance):
+    assert isinstance(instance, Maude_RenMapping)
 
-@given(instance=Maude::View_strategy)
+@given(instance=Maude_View_strategy)
 @settings(max_examples=50)
-def test_maude::view_instantiation(instance):
-    assert isinstance(instance, Maude::View)
+def test_maude_view_instantiation(instance):
+    assert isinstance(instance, Maude_View)
 
 @given(instance=ModExpression_strategy)
 @settings(max_examples=50)
 def test_modexpression_instantiation(instance):
     assert isinstance(instance, ModExpression)
 
-@given(instance=Maude::CompModExp_strategy)
+@given(instance=Maude_RenModExp_strategy)
 @settings(max_examples=50)
-def test_maude::compmodexp_instantiation(instance):
-    assert isinstance(instance, Maude::CompModExp)
+def test_maude_renmodexp_instantiation(instance):
+    assert isinstance(instance, Maude_RenModExp)
 
-@given(instance=Maude::ModuleIdModExp_strategy)
+@given(instance=Maude_ModuleIdModExp_strategy)
 @settings(max_examples=50)
-def test_maude::moduleidmodexp_instantiation(instance):
-    assert isinstance(instance, Maude::ModuleIdModExp)
+def test_maude_moduleidmodexp_instantiation(instance):
+    assert isinstance(instance, Maude_ModuleIdModExp)
 
-@given(instance=Maude::RenModExp_strategy)
+@given(instance=Maude_CompModExp_strategy)
 @settings(max_examples=50)
-def test_maude::renmodexp_instantiation(instance):
-    assert isinstance(instance, Maude::RenModExp)
+def test_maude_compmodexp_instantiation(instance):
+    assert isinstance(instance, Maude_CompModExp)
 
-@given(instance=Maude::InstModExp_strategy)
+@given(instance=Maude_InstModExp_strategy)
 @settings(max_examples=50)
-def test_maude::instmodexp_instantiation(instance):
-    assert isinstance(instance, Maude::InstModExp)
+def test_maude_instmodexp_instantiation(instance):
+    assert isinstance(instance, Maude_InstModExp)
 
-@given(instance=Maude::ModExpression_strategy)
+@given(instance=Maude_ModExpression_strategy)
 @settings(max_examples=50)
-def test_maude::modexpression_instantiation(instance):
-    assert isinstance(instance, Maude::ModExpression)
+def test_maude_modexpression_instantiation(instance):
+    assert isinstance(instance, Maude_ModExpression)
 
-@given(instance=Maude::MaudeTopEl_strategy)
+@given(instance=Maude_MaudeTopEl_strategy)
 @settings(max_examples=50)
-def test_maude::maudetopel_instantiation(instance):
-    assert isinstance(instance, Maude::MaudeTopEl)
-
-@given(instance=Maude::MaudeTopEl_strategy)
-def test_maude::maudetopel_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_maude_maudetopel_instantiation(instance):
+    assert isinstance(instance, Maude_MaudeTopEl)
 
 
-@given(instance=Maude::MaudeTopEl_strategy)
-def test_maude::maudetopel_name_setter(instance):
+
+@given(instance=Maude_MaudeTopEl_strategy)
+def test_maude_maudetopel_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=Maude::Parameter_strategy)
+@given(instance=Maude_Parameter_strategy)
 @settings(max_examples=50)
-def test_maude::parameter_instantiation(instance):
-    assert isinstance(instance, Maude::Parameter)
-
-@given(instance=Maude::Parameter_strategy)
-def test_maude::parameter_label_type(instance):
-    assert isinstance(instance.label, str)
+def test_maude_parameter_instantiation(instance):
+    assert isinstance(instance, Maude_Parameter)
 
 
-@given(instance=Maude::Parameter_strategy)
-def test_maude::parameter_label_setter(instance):
+
+@given(instance=Maude_Parameter_strategy)
+def test_maude_parameter_label_setter(instance):
     original = instance.label
     instance.label = original
     assert instance.label == original
 
-@given(instance=Maude::Theory_strategy)
+@given(instance=Maude_Theory_strategy)
 @settings(max_examples=50)
-def test_maude::theory_instantiation(instance):
-    assert isinstance(instance, Maude::Theory)
+def test_maude_theory_instantiation(instance):
+    assert isinstance(instance, Maude_Theory)
 
-@given(instance=Maude::TheoryIdModExp_strategy)
+@given(instance=Maude_TheoryIdModExp_strategy)
 @settings(max_examples=50)
-def test_maude::theoryidmodexp_instantiation(instance):
-    assert isinstance(instance, Maude::TheoryIdModExp)
+def test_maude_theoryidmodexp_instantiation(instance):
+    assert isinstance(instance, Maude_TheoryIdModExp)
 
-@given(instance=Maude::MaudeSpec_strategy)
+@given(instance=Maude_MaudeSpec_strategy)
 @settings(max_examples=50)
-def test_maude::maudespec_instantiation(instance):
-    assert isinstance(instance, Maude::MaudeSpec)
+def test_maude_maudespec_instantiation(instance):
+    assert isinstance(instance, Maude_MaudeSpec)

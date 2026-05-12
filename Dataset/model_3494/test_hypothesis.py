@@ -3,31 +3,31 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    features::modeling::NOT,
-    features::modeling::AND,
-    features::modeling::PropositionOR,
-    features::modeling::PropFormulaCNF,
-    features::modeling::Constraints,
-    features::modeling::Group,
-    features::modeling::Constraint,
+from python_code import (
+    features_modeling_NOT,
+    features_modeling_AND,
+    features_modeling_PropositionOR,
+    features_modeling_PropFormulaCNF,
+    features_modeling_Constraints,
+    features_modeling_Group,
+    features_modeling_Constraint,
     Constraint,
-    features::modeling::EX,
-    features::modeling::I,
+    features_modeling_EX,
+    features_modeling_I,
     Group,
-    features::modeling::GOR,
-    features::modeling::GXOR,
+    features_modeling_GOR,
+    features_modeling_GXOR,
     E,
-    features::modeling::EMAND,
-    features::modeling::E,
-    features::modeling::Edge,
-    features::modeling::F,
-    features::modeling::Feature,
+    features_modeling_EMAND,
+    features_modeling_E,
+    features_modeling_Edge,
+    features_modeling_F,
+    features_modeling_Feature,
     Feature,
-    features::modeling::R,
-    features::modeling::G,
+    features_modeling_R,
+    features_modeling_G,
 )
 
 # =============================================================================
@@ -36,100 +36,100 @@ from classes import (
 
 
 
-def test_features::modeling::not_is_not_abstract():
-    assert not inspect.isabstract(features::modeling::NOT)
+def test_features_modeling_not_is_not_abstract():
+    assert not inspect.isabstract(features_modeling_NOT)
 
 
-def test_features::modeling::not_constructor_exists():
-    assert callable(features::modeling::NOT.__init__)
+def test_features_modeling_not_constructor_exists():
+    assert callable(features_modeling_NOT.__init__)
 
 
-def test_features::modeling::not_constructor_args():
-    sig = inspect.signature(features::modeling::NOT.__init__)
+def test_features_modeling_not_constructor_args():
+    sig = inspect.signature(features_modeling_NOT.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_features::modeling::and_is_not_abstract():
-    assert not inspect.isabstract(features::modeling::AND)
+def test_features_modeling_and_is_not_abstract():
+    assert not inspect.isabstract(features_modeling_AND)
 
 
-def test_features::modeling::and_constructor_exists():
-    assert callable(features::modeling::AND.__init__)
+def test_features_modeling_and_constructor_exists():
+    assert callable(features_modeling_AND.__init__)
 
 
-def test_features::modeling::and_constructor_args():
-    sig = inspect.signature(features::modeling::AND.__init__)
+def test_features_modeling_and_constructor_args():
+    sig = inspect.signature(features_modeling_AND.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_features::modeling::propositionor_is_not_abstract():
-    assert not inspect.isabstract(features::modeling::PropositionOR)
+def test_features_modeling_propositionor_is_not_abstract():
+    assert not inspect.isabstract(features_modeling_PropositionOR)
 
 
-def test_features::modeling::propositionor_constructor_exists():
-    assert callable(features::modeling::PropositionOR.__init__)
+def test_features_modeling_propositionor_constructor_exists():
+    assert callable(features_modeling_PropositionOR.__init__)
 
 
-def test_features::modeling::propositionor_constructor_args():
-    sig = inspect.signature(features::modeling::PropositionOR.__init__)
+def test_features_modeling_propositionor_constructor_args():
+    sig = inspect.signature(features_modeling_PropositionOR.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_features::modeling::propformulacnf_is_not_abstract():
-    assert not inspect.isabstract(features::modeling::PropFormulaCNF)
+def test_features_modeling_propformulacnf_is_not_abstract():
+    assert not inspect.isabstract(features_modeling_PropFormulaCNF)
 
 
-def test_features::modeling::propformulacnf_constructor_exists():
-    assert callable(features::modeling::PropFormulaCNF.__init__)
+def test_features_modeling_propformulacnf_constructor_exists():
+    assert callable(features_modeling_PropFormulaCNF.__init__)
 
 
-def test_features::modeling::propformulacnf_constructor_args():
-    sig = inspect.signature(features::modeling::PropFormulaCNF.__init__)
+def test_features_modeling_propformulacnf_constructor_args():
+    sig = inspect.signature(features_modeling_PropFormulaCNF.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_features::modeling::constraints_is_not_abstract():
-    assert not inspect.isabstract(features::modeling::Constraints)
+def test_features_modeling_constraints_is_not_abstract():
+    assert not inspect.isabstract(features_modeling_Constraints)
 
 
-def test_features::modeling::constraints_constructor_exists():
-    assert callable(features::modeling::Constraints.__init__)
+def test_features_modeling_constraints_constructor_exists():
+    assert callable(features_modeling_Constraints.__init__)
 
 
-def test_features::modeling::constraints_constructor_args():
-    sig = inspect.signature(features::modeling::Constraints.__init__)
+def test_features_modeling_constraints_constructor_args():
+    sig = inspect.signature(features_modeling_Constraints.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_features::modeling::group_is_not_abstract():
-    assert not inspect.isabstract(features::modeling::Group)
+def test_features_modeling_group_is_not_abstract():
+    assert not inspect.isabstract(features_modeling_Group)
 
 
-def test_features::modeling::group_constructor_exists():
-    assert callable(features::modeling::Group.__init__)
+def test_features_modeling_group_constructor_exists():
+    assert callable(features_modeling_Group.__init__)
 
 
-def test_features::modeling::group_constructor_args():
-    sig = inspect.signature(features::modeling::Group.__init__)
+def test_features_modeling_group_constructor_args():
+    sig = inspect.signature(features_modeling_Group.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_features::modeling::constraint_is_not_abstract():
-    assert not inspect.isabstract(features::modeling::Constraint)
+def test_features_modeling_constraint_is_not_abstract():
+    assert not inspect.isabstract(features_modeling_Constraint)
 
 
-def test_features::modeling::constraint_constructor_exists():
-    assert callable(features::modeling::Constraint.__init__)
+def test_features_modeling_constraint_constructor_exists():
+    assert callable(features_modeling_Constraint.__init__)
 
 
-def test_features::modeling::constraint_constructor_args():
-    sig = inspect.signature(features::modeling::Constraint.__init__)
+def test_features_modeling_constraint_constructor_args():
+    sig = inspect.signature(features_modeling_Constraint.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -148,30 +148,30 @@ def test_constraint_constructor_args():
 
 
 
-def test_features::modeling::ex_is_not_abstract():
-    assert not inspect.isabstract(features::modeling::EX)
+def test_features_modeling_ex_is_not_abstract():
+    assert not inspect.isabstract(features_modeling_EX)
 
 
-def test_features::modeling::ex_constructor_exists():
-    assert callable(features::modeling::EX.__init__)
+def test_features_modeling_ex_constructor_exists():
+    assert callable(features_modeling_EX.__init__)
 
 
-def test_features::modeling::ex_constructor_args():
-    sig = inspect.signature(features::modeling::EX.__init__)
+def test_features_modeling_ex_constructor_args():
+    sig = inspect.signature(features_modeling_EX.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_features::modeling::i_is_not_abstract():
-    assert not inspect.isabstract(features::modeling::I)
+def test_features_modeling_i_is_not_abstract():
+    assert not inspect.isabstract(features_modeling_I)
 
 
-def test_features::modeling::i_constructor_exists():
-    assert callable(features::modeling::I.__init__)
+def test_features_modeling_i_constructor_exists():
+    assert callable(features_modeling_I.__init__)
 
 
-def test_features::modeling::i_constructor_args():
-    sig = inspect.signature(features::modeling::I.__init__)
+def test_features_modeling_i_constructor_args():
+    sig = inspect.signature(features_modeling_I.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -190,30 +190,30 @@ def test_group_constructor_args():
 
 
 
-def test_features::modeling::gor_is_not_abstract():
-    assert not inspect.isabstract(features::modeling::GOR)
+def test_features_modeling_gor_is_not_abstract():
+    assert not inspect.isabstract(features_modeling_GOR)
 
 
-def test_features::modeling::gor_constructor_exists():
-    assert callable(features::modeling::GOR.__init__)
+def test_features_modeling_gor_constructor_exists():
+    assert callable(features_modeling_GOR.__init__)
 
 
-def test_features::modeling::gor_constructor_args():
-    sig = inspect.signature(features::modeling::GOR.__init__)
+def test_features_modeling_gor_constructor_args():
+    sig = inspect.signature(features_modeling_GOR.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_features::modeling::gxor_is_not_abstract():
-    assert not inspect.isabstract(features::modeling::GXOR)
+def test_features_modeling_gxor_is_not_abstract():
+    assert not inspect.isabstract(features_modeling_GXOR)
 
 
-def test_features::modeling::gxor_constructor_exists():
-    assert callable(features::modeling::GXOR.__init__)
+def test_features_modeling_gxor_constructor_exists():
+    assert callable(features_modeling_GXOR.__init__)
 
 
-def test_features::modeling::gxor_constructor_args():
-    sig = inspect.signature(features::modeling::GXOR.__init__)
+def test_features_modeling_gxor_constructor_args():
+    sig = inspect.signature(features_modeling_GXOR.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -232,79 +232,79 @@ def test_e_constructor_args():
 
 
 
-def test_features::modeling::emand_is_not_abstract():
-    assert not inspect.isabstract(features::modeling::EMAND)
+def test_features_modeling_emand_is_not_abstract():
+    assert not inspect.isabstract(features_modeling_EMAND)
 
 
-def test_features::modeling::emand_constructor_exists():
-    assert callable(features::modeling::EMAND.__init__)
+def test_features_modeling_emand_constructor_exists():
+    assert callable(features_modeling_EMAND.__init__)
 
 
-def test_features::modeling::emand_constructor_args():
-    sig = inspect.signature(features::modeling::EMAND.__init__)
+def test_features_modeling_emand_constructor_args():
+    sig = inspect.signature(features_modeling_EMAND.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_features::modeling::e_is_not_abstract():
-    assert not inspect.isabstract(features::modeling::E)
+def test_features_modeling_e_is_not_abstract():
+    assert not inspect.isabstract(features_modeling_E)
 
 
-def test_features::modeling::e_constructor_exists():
-    assert callable(features::modeling::E.__init__)
+def test_features_modeling_e_constructor_exists():
+    assert callable(features_modeling_E.__init__)
 
 
-def test_features::modeling::e_constructor_args():
-    sig = inspect.signature(features::modeling::E.__init__)
+def test_features_modeling_e_constructor_args():
+    sig = inspect.signature(features_modeling_E.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_features::modeling::edge_is_not_abstract():
-    assert not inspect.isabstract(features::modeling::Edge)
+def test_features_modeling_edge_is_not_abstract():
+    assert not inspect.isabstract(features_modeling_Edge)
 
 
-def test_features::modeling::edge_constructor_exists():
-    assert callable(features::modeling::Edge.__init__)
+def test_features_modeling_edge_constructor_exists():
+    assert callable(features_modeling_Edge.__init__)
 
 
-def test_features::modeling::edge_constructor_args():
-    sig = inspect.signature(features::modeling::Edge.__init__)
+def test_features_modeling_edge_constructor_args():
+    sig = inspect.signature(features_modeling_Edge.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_features::modeling::f_is_not_abstract():
-    assert not inspect.isabstract(features::modeling::F)
+def test_features_modeling_f_is_not_abstract():
+    assert not inspect.isabstract(features_modeling_F)
 
 
-def test_features::modeling::f_constructor_exists():
-    assert callable(features::modeling::F.__init__)
+def test_features_modeling_f_constructor_exists():
+    assert callable(features_modeling_F.__init__)
 
 
-def test_features::modeling::f_constructor_args():
-    sig = inspect.signature(features::modeling::F.__init__)
+def test_features_modeling_f_constructor_args():
+    sig = inspect.signature(features_modeling_F.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_features::modeling::feature_is_not_abstract():
-    assert not inspect.isabstract(features::modeling::Feature)
+def test_features_modeling_feature_is_not_abstract():
+    assert not inspect.isabstract(features_modeling_Feature)
 
 
-def test_features::modeling::feature_constructor_exists():
-    assert callable(features::modeling::Feature.__init__)
+def test_features_modeling_feature_constructor_exists():
+    assert callable(features_modeling_Feature.__init__)
 
 
-def test_features::modeling::feature_constructor_args():
-    sig = inspect.signature(features::modeling::Feature.__init__)
+def test_features_modeling_feature_constructor_args():
+    sig = inspect.signature(features_modeling_Feature.__init__)
     params = list(sig.parameters.keys())
     assert "ID" in params, "Missing parameter 'ID'"
 
-def test_features::modeling::feature_has_ID():
-    assert hasattr(features::modeling::Feature, "ID")
+def test_features_modeling_feature_has_ID():
+    assert hasattr(features_modeling_Feature, "ID")
     descriptor = None
-    for klass in features::modeling::Feature.__mro__:
+    for klass in features_modeling_Feature.__mro__:
         if "ID" in klass.__dict__:
             descriptor = klass.__dict__["ID"]
             break
@@ -326,30 +326,30 @@ def test_feature_constructor_args():
 
 
 
-def test_features::modeling::r_is_not_abstract():
-    assert not inspect.isabstract(features::modeling::R)
+def test_features_modeling_r_is_not_abstract():
+    assert not inspect.isabstract(features_modeling_R)
 
 
-def test_features::modeling::r_constructor_exists():
-    assert callable(features::modeling::R.__init__)
+def test_features_modeling_r_constructor_exists():
+    assert callable(features_modeling_R.__init__)
 
 
-def test_features::modeling::r_constructor_args():
-    sig = inspect.signature(features::modeling::R.__init__)
+def test_features_modeling_r_constructor_args():
+    sig = inspect.signature(features_modeling_R.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_features::modeling::g_is_not_abstract():
-    assert not inspect.isabstract(features::modeling::G)
+def test_features_modeling_g_is_not_abstract():
+    assert not inspect.isabstract(features_modeling_G)
 
 
-def test_features::modeling::g_constructor_exists():
-    assert callable(features::modeling::G.__init__)
+def test_features_modeling_g_constructor_exists():
+    assert callable(features_modeling_G.__init__)
 
 
-def test_features::modeling::g_constructor_args():
-    sig = inspect.signature(features::modeling::G.__init__)
+def test_features_modeling_g_constructor_args():
+    sig = inspect.signature(features_modeling_G.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -364,177 +364,174 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-features::modeling::NOT_strategy = st.builds(
-    features::modeling::NOT,
+features_modeling_NOT_strategy = st.builds(
+    features_modeling_NOT,
 )
-features::modeling::AND_strategy = st.builds(
-    features::modeling::AND,
+features_modeling_AND_strategy = st.builds(
+    features_modeling_AND,
 )
-features::modeling::PropositionOR_strategy = st.builds(
-    features::modeling::PropositionOR,
+features_modeling_PropositionOR_strategy = st.builds(
+    features_modeling_PropositionOR,
 )
-features::modeling::PropFormulaCNF_strategy = st.builds(
-    features::modeling::PropFormulaCNF,
+features_modeling_PropFormulaCNF_strategy = st.builds(
+    features_modeling_PropFormulaCNF,
 )
-features::modeling::Constraints_strategy = st.builds(
-    features::modeling::Constraints,
+features_modeling_Constraints_strategy = st.builds(
+    features_modeling_Constraints,
 )
-features::modeling::Group_strategy = st.builds(
-    features::modeling::Group,
+features_modeling_Group_strategy = st.builds(
+    features_modeling_Group,
 )
-features::modeling::Constraint_strategy = st.builds(
-    features::modeling::Constraint,
+features_modeling_Constraint_strategy = st.builds(
+    features_modeling_Constraint,
 )
 Constraint_strategy = st.builds(
     Constraint,
 )
-features::modeling::EX_strategy = st.builds(
-    features::modeling::EX,
+features_modeling_EX_strategy = st.builds(
+    features_modeling_EX,
 )
-features::modeling::I_strategy = st.builds(
-    features::modeling::I,
+features_modeling_I_strategy = st.builds(
+    features_modeling_I,
 )
 Group_strategy = st.builds(
     Group,
 )
-features::modeling::GOR_strategy = st.builds(
-    features::modeling::GOR,
+features_modeling_GOR_strategy = st.builds(
+    features_modeling_GOR,
 )
-features::modeling::GXOR_strategy = st.builds(
-    features::modeling::GXOR,
+features_modeling_GXOR_strategy = st.builds(
+    features_modeling_GXOR,
 )
 E_strategy = st.builds(
     E,
 )
-features::modeling::EMAND_strategy = st.builds(
-    features::modeling::EMAND,
+features_modeling_EMAND_strategy = st.builds(
+    features_modeling_EMAND,
 )
-features::modeling::E_strategy = st.builds(
-    features::modeling::E,
+features_modeling_E_strategy = st.builds(
+    features_modeling_E,
 )
-features::modeling::Edge_strategy = st.builds(
-    features::modeling::Edge,
+features_modeling_Edge_strategy = st.builds(
+    features_modeling_Edge,
 )
-features::modeling::F_strategy = st.builds(
-    features::modeling::F,
+features_modeling_F_strategy = st.builds(
+    features_modeling_F,
 )
-features::modeling::Feature_strategy = st.builds(
-    features::modeling::Feature,
+features_modeling_Feature_strategy = st.builds(
+    features_modeling_Feature,
     ID=
         safe_text
 )
 Feature_strategy = st.builds(
     Feature,
 )
-features::modeling::R_strategy = st.builds(
-    features::modeling::R,
+features_modeling_R_strategy = st.builds(
+    features_modeling_R,
 )
-features::modeling::G_strategy = st.builds(
-    features::modeling::G,
+features_modeling_G_strategy = st.builds(
+    features_modeling_G,
 )
 
-@given(instance=features::modeling::NOT_strategy)
+@given(instance=features_modeling_NOT_strategy)
 @settings(max_examples=50)
-def test_features::modeling::not_instantiation(instance):
-    assert isinstance(instance, features::modeling::NOT)
+def test_features_modeling_not_instantiation(instance):
+    assert isinstance(instance, features_modeling_NOT)
 
-@given(instance=features::modeling::AND_strategy)
+@given(instance=features_modeling_AND_strategy)
 @settings(max_examples=50)
-def test_features::modeling::and_instantiation(instance):
-    assert isinstance(instance, features::modeling::AND)
+def test_features_modeling_and_instantiation(instance):
+    assert isinstance(instance, features_modeling_AND)
 
-@given(instance=features::modeling::PropositionOR_strategy)
+@given(instance=features_modeling_PropositionOR_strategy)
 @settings(max_examples=50)
-def test_features::modeling::propositionor_instantiation(instance):
-    assert isinstance(instance, features::modeling::PropositionOR)
+def test_features_modeling_propositionor_instantiation(instance):
+    assert isinstance(instance, features_modeling_PropositionOR)
 
-@given(instance=features::modeling::PropFormulaCNF_strategy)
+@given(instance=features_modeling_PropFormulaCNF_strategy)
 @settings(max_examples=50)
-def test_features::modeling::propformulacnf_instantiation(instance):
-    assert isinstance(instance, features::modeling::PropFormulaCNF)
+def test_features_modeling_propformulacnf_instantiation(instance):
+    assert isinstance(instance, features_modeling_PropFormulaCNF)
 
-@given(instance=features::modeling::Constraints_strategy)
+@given(instance=features_modeling_Constraints_strategy)
 @settings(max_examples=50)
-def test_features::modeling::constraints_instantiation(instance):
-    assert isinstance(instance, features::modeling::Constraints)
+def test_features_modeling_constraints_instantiation(instance):
+    assert isinstance(instance, features_modeling_Constraints)
 
-@given(instance=features::modeling::Group_strategy)
+@given(instance=features_modeling_Group_strategy)
 @settings(max_examples=50)
-def test_features::modeling::group_instantiation(instance):
-    assert isinstance(instance, features::modeling::Group)
+def test_features_modeling_group_instantiation(instance):
+    assert isinstance(instance, features_modeling_Group)
 
-@given(instance=features::modeling::Constraint_strategy)
+@given(instance=features_modeling_Constraint_strategy)
 @settings(max_examples=50)
-def test_features::modeling::constraint_instantiation(instance):
-    assert isinstance(instance, features::modeling::Constraint)
+def test_features_modeling_constraint_instantiation(instance):
+    assert isinstance(instance, features_modeling_Constraint)
 
 @given(instance=Constraint_strategy)
 @settings(max_examples=50)
 def test_constraint_instantiation(instance):
     assert isinstance(instance, Constraint)
 
-@given(instance=features::modeling::EX_strategy)
+@given(instance=features_modeling_EX_strategy)
 @settings(max_examples=50)
-def test_features::modeling::ex_instantiation(instance):
-    assert isinstance(instance, features::modeling::EX)
+def test_features_modeling_ex_instantiation(instance):
+    assert isinstance(instance, features_modeling_EX)
 
-@given(instance=features::modeling::I_strategy)
+@given(instance=features_modeling_I_strategy)
 @settings(max_examples=50)
-def test_features::modeling::i_instantiation(instance):
-    assert isinstance(instance, features::modeling::I)
+def test_features_modeling_i_instantiation(instance):
+    assert isinstance(instance, features_modeling_I)
 
 @given(instance=Group_strategy)
 @settings(max_examples=50)
 def test_group_instantiation(instance):
     assert isinstance(instance, Group)
 
-@given(instance=features::modeling::GOR_strategy)
+@given(instance=features_modeling_GOR_strategy)
 @settings(max_examples=50)
-def test_features::modeling::gor_instantiation(instance):
-    assert isinstance(instance, features::modeling::GOR)
+def test_features_modeling_gor_instantiation(instance):
+    assert isinstance(instance, features_modeling_GOR)
 
-@given(instance=features::modeling::GXOR_strategy)
+@given(instance=features_modeling_GXOR_strategy)
 @settings(max_examples=50)
-def test_features::modeling::gxor_instantiation(instance):
-    assert isinstance(instance, features::modeling::GXOR)
+def test_features_modeling_gxor_instantiation(instance):
+    assert isinstance(instance, features_modeling_GXOR)
 
 @given(instance=E_strategy)
 @settings(max_examples=50)
 def test_e_instantiation(instance):
     assert isinstance(instance, E)
 
-@given(instance=features::modeling::EMAND_strategy)
+@given(instance=features_modeling_EMAND_strategy)
 @settings(max_examples=50)
-def test_features::modeling::emand_instantiation(instance):
-    assert isinstance(instance, features::modeling::EMAND)
+def test_features_modeling_emand_instantiation(instance):
+    assert isinstance(instance, features_modeling_EMAND)
 
-@given(instance=features::modeling::E_strategy)
+@given(instance=features_modeling_E_strategy)
 @settings(max_examples=50)
-def test_features::modeling::e_instantiation(instance):
-    assert isinstance(instance, features::modeling::E)
+def test_features_modeling_e_instantiation(instance):
+    assert isinstance(instance, features_modeling_E)
 
-@given(instance=features::modeling::Edge_strategy)
+@given(instance=features_modeling_Edge_strategy)
 @settings(max_examples=50)
-def test_features::modeling::edge_instantiation(instance):
-    assert isinstance(instance, features::modeling::Edge)
+def test_features_modeling_edge_instantiation(instance):
+    assert isinstance(instance, features_modeling_Edge)
 
-@given(instance=features::modeling::F_strategy)
+@given(instance=features_modeling_F_strategy)
 @settings(max_examples=50)
-def test_features::modeling::f_instantiation(instance):
-    assert isinstance(instance, features::modeling::F)
+def test_features_modeling_f_instantiation(instance):
+    assert isinstance(instance, features_modeling_F)
 
-@given(instance=features::modeling::Feature_strategy)
+@given(instance=features_modeling_Feature_strategy)
 @settings(max_examples=50)
-def test_features::modeling::feature_instantiation(instance):
-    assert isinstance(instance, features::modeling::Feature)
-
-@given(instance=features::modeling::Feature_strategy)
-def test_features::modeling::feature_ID_type(instance):
-    assert isinstance(instance.ID, str)
+def test_features_modeling_feature_instantiation(instance):
+    assert isinstance(instance, features_modeling_Feature)
 
 
-@given(instance=features::modeling::Feature_strategy)
-def test_features::modeling::feature_ID_setter(instance):
+
+@given(instance=features_modeling_Feature_strategy)
+def test_features_modeling_feature_ID_setter(instance):
     original = instance.ID
     instance.ID = original
     assert instance.ID == original
@@ -544,12 +541,12 @@ def test_features::modeling::feature_ID_setter(instance):
 def test_feature_instantiation(instance):
     assert isinstance(instance, Feature)
 
-@given(instance=features::modeling::R_strategy)
+@given(instance=features_modeling_R_strategy)
 @settings(max_examples=50)
-def test_features::modeling::r_instantiation(instance):
-    assert isinstance(instance, features::modeling::R)
+def test_features_modeling_r_instantiation(instance):
+    assert isinstance(instance, features_modeling_R)
 
-@given(instance=features::modeling::G_strategy)
+@given(instance=features_modeling_G_strategy)
 @settings(max_examples=50)
-def test_features::modeling::g_instantiation(instance):
-    assert isinstance(instance, features::modeling::G)
+def test_features_modeling_g_instantiation(instance):
+    assert isinstance(instance, features_modeling_G)

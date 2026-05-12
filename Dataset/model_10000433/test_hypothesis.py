@@ -3,7 +3,7 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
 from python_code import (
     Advertiesment,
@@ -92,17 +92,8 @@ def test_management_constructor_exists():
 def test_management_constructor_args():
     sig = inspect.signature(Management.__init__)
     params = list(sig.parameters.keys())
-    assert "suggetions" in params, "Missing parameter 'suggetions'"
     assert "specialoffers" in params, "Missing parameter 'specialoffers'"
-
-def test_management_has_suggetions():
-    assert hasattr(Management, "suggetions")
-    descriptor = None
-    for klass in Management.__mro__:
-        if "suggetions" in klass.__dict__:
-            descriptor = klass.__dict__["suggetions"]
-            break
-    assert isinstance(descriptor, property)
+    assert "suggetions" in params, "Missing parameter 'suggetions'"
 
 def test_management_has_specialoffers():
     assert hasattr(Management, "specialoffers")
@@ -110,6 +101,15 @@ def test_management_has_specialoffers():
     for klass in Management.__mro__:
         if "specialoffers" in klass.__dict__:
             descriptor = klass.__dict__["specialoffers"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_management_has_suggetions():
+    assert hasattr(Management, "suggetions")
+    descriptor = None
+    for klass in Management.__mro__:
+        if "suggetions" in klass.__dict__:
+            descriptor = klass.__dict__["suggetions"]
             break
     assert isinstance(descriptor, property)
 
@@ -127,9 +127,9 @@ def test_request_constructor_args():
     sig = inspect.signature(Request.__init__)
     params = list(sig.parameters.keys())
     assert "request_type" in params, "Missing parameter 'request_type'"
-    assert "request_details" in params, "Missing parameter 'request_details'"
     assert "requser_id" in params, "Missing parameter 'requser_id'"
     assert "request_id" in params, "Missing parameter 'request_id'"
+    assert "request_details" in params, "Missing parameter 'request_details'"
 
 def test_request_has_request_type():
     assert hasattr(Request, "request_type")
@@ -137,15 +137,6 @@ def test_request_has_request_type():
     for klass in Request.__mro__:
         if "request_type" in klass.__dict__:
             descriptor = klass.__dict__["request_type"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_request_has_request_details():
-    assert hasattr(Request, "request_details")
-    descriptor = None
-    for klass in Request.__mro__:
-        if "request_details" in klass.__dict__:
-            descriptor = klass.__dict__["request_details"]
             break
     assert isinstance(descriptor, property)
 
@@ -167,6 +158,15 @@ def test_request_has_request_id():
             break
     assert isinstance(descriptor, property)
 
+def test_request_has_request_details():
+    assert hasattr(Request, "request_details")
+    descriptor = None
+    for klass in Request.__mro__:
+        if "request_details" in klass.__dict__:
+            descriptor = klass.__dict__["request_details"]
+            break
+    assert isinstance(descriptor, property)
+
 
 
 def test_requirement_is_not_abstract():
@@ -180,19 +180,10 @@ def test_requirement_constructor_exists():
 def test_requirement_constructor_args():
     sig = inspect.signature(Requirement.__init__)
     params = list(sig.parameters.keys())
-    assert "user_id" in params, "Missing parameter 'user_id'"
     assert "requirement_location" in params, "Missing parameter 'requirement_location'"
-    assert "req_description" in params, "Missing parameter 'req_description'"
     assert "requirement_type" in params, "Missing parameter 'requirement_type'"
-
-def test_requirement_has_user_id():
-    assert hasattr(Requirement, "user_id")
-    descriptor = None
-    for klass in Requirement.__mro__:
-        if "user_id" in klass.__dict__:
-            descriptor = klass.__dict__["user_id"]
-            break
-    assert isinstance(descriptor, property)
+    assert "req_description" in params, "Missing parameter 'req_description'"
+    assert "user_id" in params, "Missing parameter 'user_id'"
 
 def test_requirement_has_requirement_location():
     assert hasattr(Requirement, "requirement_location")
@@ -200,6 +191,15 @@ def test_requirement_has_requirement_location():
     for klass in Requirement.__mro__:
         if "requirement_location" in klass.__dict__:
             descriptor = klass.__dict__["requirement_location"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_requirement_has_requirement_type():
+    assert hasattr(Requirement, "requirement_type")
+    descriptor = None
+    for klass in Requirement.__mro__:
+        if "requirement_type" in klass.__dict__:
+            descriptor = klass.__dict__["requirement_type"]
             break
     assert isinstance(descriptor, property)
 
@@ -212,12 +212,12 @@ def test_requirement_has_req_description():
             break
     assert isinstance(descriptor, property)
 
-def test_requirement_has_requirement_type():
-    assert hasattr(Requirement, "requirement_type")
+def test_requirement_has_user_id():
+    assert hasattr(Requirement, "user_id")
     descriptor = None
     for klass in Requirement.__mro__:
-        if "requirement_type" in klass.__dict__:
-            descriptor = klass.__dict__["requirement_type"]
+        if "user_id" in klass.__dict__:
+            descriptor = klass.__dict__["user_id"]
             break
     assert isinstance(descriptor, property)
 
@@ -235,9 +235,9 @@ def test_payment_constructor_args():
     sig = inspect.signature(Payment.__init__)
     params = list(sig.parameters.keys())
     assert "pay_id" in params, "Missing parameter 'pay_id'"
-    assert "pay_amount" in params, "Missing parameter 'pay_amount'"
     assert "ex_date" in params, "Missing parameter 'ex_date'"
     assert "pay_mode" in params, "Missing parameter 'pay_mode'"
+    assert "pay_amount" in params, "Missing parameter 'pay_amount'"
     assert "card_no" in params, "Missing parameter 'card_no'"
 
 def test_payment_has_pay_id():
@@ -246,15 +246,6 @@ def test_payment_has_pay_id():
     for klass in Payment.__mro__:
         if "pay_id" in klass.__dict__:
             descriptor = klass.__dict__["pay_id"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_payment_has_pay_amount():
-    assert hasattr(Payment, "pay_amount")
-    descriptor = None
-    for klass in Payment.__mro__:
-        if "pay_amount" in klass.__dict__:
-            descriptor = klass.__dict__["pay_amount"]
             break
     assert isinstance(descriptor, property)
 
@@ -273,6 +264,15 @@ def test_payment_has_pay_mode():
     for klass in Payment.__mro__:
         if "pay_mode" in klass.__dict__:
             descriptor = klass.__dict__["pay_mode"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_payment_has_pay_amount():
+    assert hasattr(Payment, "pay_amount")
+    descriptor = None
+    for klass in Payment.__mro__:
+        if "pay_amount" in klass.__dict__:
+            descriptor = klass.__dict__["pay_amount"]
             break
     assert isinstance(descriptor, property)
 
@@ -390,17 +390,8 @@ def test_advertiser_constructor_exists():
 def test_advertiser_constructor_args():
     sig = inspect.signature(Advertiser.__init__)
     params = list(sig.parameters.keys())
-    assert "advertiser_id" in params, "Missing parameter 'advertiser_id'"
     assert "advertiesment_id" in params, "Missing parameter 'advertiesment_id'"
-
-def test_advertiser_has_advertiser_id():
-    assert hasattr(Advertiser, "advertiser_id")
-    descriptor = None
-    for klass in Advertiser.__mro__:
-        if "advertiser_id" in klass.__dict__:
-            descriptor = klass.__dict__["advertiser_id"]
-            break
-    assert isinstance(descriptor, property)
+    assert "advertiser_id" in params, "Missing parameter 'advertiser_id'"
 
 def test_advertiser_has_advertiesment_id():
     assert hasattr(Advertiser, "advertiesment_id")
@@ -408,6 +399,15 @@ def test_advertiser_has_advertiesment_id():
     for klass in Advertiser.__mro__:
         if "advertiesment_id" in klass.__dict__:
             descriptor = klass.__dict__["advertiesment_id"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_advertiser_has_advertiser_id():
+    assert hasattr(Advertiser, "advertiser_id")
+    descriptor = None
+    for klass in Advertiser.__mro__:
+        if "advertiser_id" in klass.__dict__:
+            descriptor = klass.__dict__["advertiser_id"]
             break
     assert isinstance(descriptor, property)
 
@@ -438,9 +438,18 @@ def test_reg_user_constructor_exists():
 def test_reg_user_constructor_args():
     sig = inspect.signature(Reg_User.__init__)
     params = list(sig.parameters.keys())
+    assert "password" in params, "Missing parameter 'password'"
     assert "Address" in params, "Missing parameter 'Address'"
     assert "username" in params, "Missing parameter 'username'"
-    assert "password" in params, "Missing parameter 'password'"
+
+def test_reg_user_has_password():
+    assert hasattr(Reg_User, "password")
+    descriptor = None
+    for klass in Reg_User.__mro__:
+        if "password" in klass.__dict__:
+            descriptor = klass.__dict__["password"]
+            break
+    assert isinstance(descriptor, property)
 
 def test_reg_user_has_Address():
     assert hasattr(Reg_User, "Address")
@@ -460,15 +469,6 @@ def test_reg_user_has_username():
             break
     assert isinstance(descriptor, property)
 
-def test_reg_user_has_password():
-    assert hasattr(Reg_User, "password")
-    descriptor = None
-    for klass in Reg_User.__mro__:
-        if "password" in klass.__dict__:
-            descriptor = klass.__dict__["password"]
-            break
-    assert isinstance(descriptor, property)
-
 
 
 def test_user_is_not_abstract():
@@ -482,17 +482,8 @@ def test_user_constructor_exists():
 def test_user_constructor_args():
     sig = inspect.signature(User.__init__)
     params = list(sig.parameters.keys())
-    assert "email" in params, "Missing parameter 'email'"
     assert "location" in params, "Missing parameter 'location'"
-
-def test_user_has_email():
-    assert hasattr(User, "email")
-    descriptor = None
-    for klass in User.__mro__:
-        if "email" in klass.__dict__:
-            descriptor = klass.__dict__["email"]
-            break
-    assert isinstance(descriptor, property)
+    assert "email" in params, "Missing parameter 'email'"
 
 def test_user_has_location():
     assert hasattr(User, "location")
@@ -500,6 +491,15 @@ def test_user_has_location():
     for klass in User.__mro__:
         if "location" in klass.__dict__:
             descriptor = klass.__dict__["location"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_user_has_email():
+    assert hasattr(User, "email")
+    descriptor = None
+    for klass in User.__mro__:
+        if "email" in klass.__dict__:
+            descriptor = klass.__dict__["email"]
             break
     assert isinstance(descriptor, property)
 
@@ -517,9 +517,9 @@ def test_property_constructor_args():
     sig = inspect.signature(Property.__init__)
     params = list(sig.parameters.keys())
     assert "property_id" in params, "Missing parameter 'property_id'"
+    assert "address" in params, "Missing parameter 'address'"
     assert "location" in params, "Missing parameter 'location'"
     assert "property_type" in params, "Missing parameter 'property_type'"
-    assert "address" in params, "Missing parameter 'address'"
 
 def test_property_has_property_id():
     assert hasattr(Property, "property_id")
@@ -527,6 +527,15 @@ def test_property_has_property_id():
     for klass in Property.__mro__:
         if "property_id" in klass.__dict__:
             descriptor = klass.__dict__["property_id"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_property_has_address():
+    assert hasattr(Property, "address")
+    descriptor = None
+    for klass in Property.__mro__:
+        if "address" in klass.__dict__:
+            descriptor = klass.__dict__["address"]
             break
     assert isinstance(descriptor, property)
 
@@ -545,15 +554,6 @@ def test_property_has_property_type():
     for klass in Property.__mro__:
         if "property_type" in klass.__dict__:
             descriptor = klass.__dict__["property_type"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_property_has_address():
-    assert hasattr(Property, "address")
-    descriptor = None
-    for klass in Property.__mro__:
-        if "address" in klass.__dict__:
-            descriptor = klass.__dict__["address"]
             break
     assert isinstance(descriptor, property)
 
@@ -582,42 +582,42 @@ Advertiesment_strategy = st.builds(
 )
 Management_strategy = st.builds(
     Management,
-    suggetions=
-        safe_text,
     specialoffers=
+        safe_text,
+    suggetions=
         safe_text
 )
 Request_strategy = st.builds(
     Request,
     request_type=
         safe_text,
-    request_details=
-        safe_text,
     requser_id=
         safe_text,
     request_id=
-        st.integers()
+        st.integers(),
+    request_details=
+        safe_text
 )
 Requirement_strategy = st.builds(
     Requirement,
-    user_id=
-        safe_text,
     requirement_location=
+        safe_text,
+    requirement_type=
         safe_text,
     req_description=
         safe_text,
-    requirement_type=
+    user_id=
         safe_text
 )
 Payment_strategy = st.builds(
     Payment,
     pay_id=
         st.integers(),
-    pay_amount=
-        safe_text,
     ex_date=
         safe_text,
     pay_mode=
+        safe_text,
+    pay_amount=
         safe_text,
     card_no=
         safe_text
@@ -643,9 +643,9 @@ Buyer_strategy = st.builds(
 )
 Advertiser_strategy = st.builds(
     Advertiser,
-    advertiser_id=
-        safe_text,
     advertiesment_id=
+        safe_text,
+    advertiser_id=
         safe_text
 )
 Unreg_User_strategy = st.builds(
@@ -653,29 +653,29 @@ Unreg_User_strategy = st.builds(
 )
 Reg_User_strategy = st.builds(
     Reg_User,
+    password=
+        safe_text,
     Address=
         safe_text,
     username=
-        safe_text,
-    password=
         safe_text
 )
 User_strategy = st.builds(
     User,
-    email=
-        safe_text,
     location=
+        safe_text,
+    email=
         safe_text
 )
 Property_strategy = st.builds(
     Property,
     property_id=
         safe_text,
+    address=
+        safe_text,
     location=
         safe_text,
     property_type=
-        safe_text,
-    address=
         safe_text
 )
 
@@ -684,9 +684,6 @@ Property_strategy = st.builds(
 def test_advertiesment_instantiation(instance):
     assert isinstance(instance, Advertiesment)
 
-@given(instance=Advertiesment_strategy)
-def test_advertiesment_advertiesment_id_type(instance):
-    assert isinstance(instance.advertiesment_id, int)
 
 
 @given(instance=Advertiesment_strategy)
@@ -695,9 +692,6 @@ def test_advertiesment_advertiesment_id_setter(instance):
     instance.advertiesment_id = original
     assert instance.advertiesment_id == original
 
-@given(instance=Advertiesment_strategy)
-def test_advertiesment_start_date_type(instance):
-    assert isinstance(instance.start_date, str)
 
 
 @given(instance=Advertiesment_strategy)
@@ -706,9 +700,6 @@ def test_advertiesment_start_date_setter(instance):
     instance.start_date = original
     assert instance.start_date == original
 
-@given(instance=Advertiesment_strategy)
-def test_advertiesment_advertiser_id_type(instance):
-    assert isinstance(instance.advertiser_id, str)
 
 
 @given(instance=Advertiesment_strategy)
@@ -717,9 +708,6 @@ def test_advertiesment_advertiser_id_setter(instance):
     instance.advertiser_id = original
     assert instance.advertiser_id == original
 
-@given(instance=Advertiesment_strategy)
-def test_advertiesment_end_date_type(instance):
-    assert isinstance(instance.end_date, str)
 
 
 @given(instance=Advertiesment_strategy)
@@ -733,20 +721,6 @@ def test_advertiesment_end_date_setter(instance):
 def test_management_instantiation(instance):
     assert isinstance(instance, Management)
 
-@given(instance=Management_strategy)
-def test_management_suggetions_type(instance):
-    assert isinstance(instance.suggetions, str)
-
-
-@given(instance=Management_strategy)
-def test_management_suggetions_setter(instance):
-    original = instance.suggetions
-    instance.suggetions = original
-    assert instance.suggetions == original
-
-@given(instance=Management_strategy)
-def test_management_specialoffers_type(instance):
-    assert isinstance(instance.specialoffers, str)
 
 
 @given(instance=Management_strategy)
@@ -755,14 +729,19 @@ def test_management_specialoffers_setter(instance):
     instance.specialoffers = original
     assert instance.specialoffers == original
 
+
+
+@given(instance=Management_strategy)
+def test_management_suggetions_setter(instance):
+    original = instance.suggetions
+    instance.suggetions = original
+    assert instance.suggetions == original
+
 @given(instance=Request_strategy)
 @settings(max_examples=50)
 def test_request_instantiation(instance):
     assert isinstance(instance, Request)
 
-@given(instance=Request_strategy)
-def test_request_request_type_type(instance):
-    assert isinstance(instance.request_type, str)
 
 
 @given(instance=Request_strategy)
@@ -771,20 +750,6 @@ def test_request_request_type_setter(instance):
     instance.request_type = original
     assert instance.request_type == original
 
-@given(instance=Request_strategy)
-def test_request_request_details_type(instance):
-    assert isinstance(instance.request_details, str)
-
-
-@given(instance=Request_strategy)
-def test_request_request_details_setter(instance):
-    original = instance.request_details
-    instance.request_details = original
-    assert instance.request_details == original
-
-@given(instance=Request_strategy)
-def test_request_requser_id_type(instance):
-    assert isinstance(instance.requser_id, str)
 
 
 @given(instance=Request_strategy)
@@ -793,9 +758,6 @@ def test_request_requser_id_setter(instance):
     instance.requser_id = original
     assert instance.requser_id == original
 
-@given(instance=Request_strategy)
-def test_request_request_id_type(instance):
-    assert isinstance(instance.request_id, int)
 
 
 @given(instance=Request_strategy)
@@ -804,25 +766,19 @@ def test_request_request_id_setter(instance):
     instance.request_id = original
     assert instance.request_id == original
 
+
+
+@given(instance=Request_strategy)
+def test_request_request_details_setter(instance):
+    original = instance.request_details
+    instance.request_details = original
+    assert instance.request_details == original
+
 @given(instance=Requirement_strategy)
 @settings(max_examples=50)
 def test_requirement_instantiation(instance):
     assert isinstance(instance, Requirement)
 
-@given(instance=Requirement_strategy)
-def test_requirement_user_id_type(instance):
-    assert isinstance(instance.user_id, str)
-
-
-@given(instance=Requirement_strategy)
-def test_requirement_user_id_setter(instance):
-    original = instance.user_id
-    instance.user_id = original
-    assert instance.user_id == original
-
-@given(instance=Requirement_strategy)
-def test_requirement_requirement_location_type(instance):
-    assert isinstance(instance.requirement_location, str)
 
 
 @given(instance=Requirement_strategy)
@@ -831,20 +787,6 @@ def test_requirement_requirement_location_setter(instance):
     instance.requirement_location = original
     assert instance.requirement_location == original
 
-@given(instance=Requirement_strategy)
-def test_requirement_req_description_type(instance):
-    assert isinstance(instance.req_description, str)
-
-
-@given(instance=Requirement_strategy)
-def test_requirement_req_description_setter(instance):
-    original = instance.req_description
-    instance.req_description = original
-    assert instance.req_description == original
-
-@given(instance=Requirement_strategy)
-def test_requirement_requirement_type_type(instance):
-    assert isinstance(instance.requirement_type, str)
 
 
 @given(instance=Requirement_strategy)
@@ -853,14 +795,27 @@ def test_requirement_requirement_type_setter(instance):
     instance.requirement_type = original
     assert instance.requirement_type == original
 
+
+
+@given(instance=Requirement_strategy)
+def test_requirement_req_description_setter(instance):
+    original = instance.req_description
+    instance.req_description = original
+    assert instance.req_description == original
+
+
+
+@given(instance=Requirement_strategy)
+def test_requirement_user_id_setter(instance):
+    original = instance.user_id
+    instance.user_id = original
+    assert instance.user_id == original
+
 @given(instance=Payment_strategy)
 @settings(max_examples=50)
 def test_payment_instantiation(instance):
     assert isinstance(instance, Payment)
 
-@given(instance=Payment_strategy)
-def test_payment_pay_id_type(instance):
-    assert isinstance(instance.pay_id, int)
 
 
 @given(instance=Payment_strategy)
@@ -869,20 +824,6 @@ def test_payment_pay_id_setter(instance):
     instance.pay_id = original
     assert instance.pay_id == original
 
-@given(instance=Payment_strategy)
-def test_payment_pay_amount_type(instance):
-    assert isinstance(instance.pay_amount, str)
-
-
-@given(instance=Payment_strategy)
-def test_payment_pay_amount_setter(instance):
-    original = instance.pay_amount
-    instance.pay_amount = original
-    assert instance.pay_amount == original
-
-@given(instance=Payment_strategy)
-def test_payment_ex_date_type(instance):
-    assert isinstance(instance.ex_date, str)
 
 
 @given(instance=Payment_strategy)
@@ -891,9 +832,6 @@ def test_payment_ex_date_setter(instance):
     instance.ex_date = original
     assert instance.ex_date == original
 
-@given(instance=Payment_strategy)
-def test_payment_pay_mode_type(instance):
-    assert isinstance(instance.pay_mode, str)
 
 
 @given(instance=Payment_strategy)
@@ -902,9 +840,14 @@ def test_payment_pay_mode_setter(instance):
     instance.pay_mode = original
     assert instance.pay_mode == original
 
+
+
 @given(instance=Payment_strategy)
-def test_payment_card_no_type(instance):
-    assert isinstance(instance.card_no, str)
+def test_payment_pay_amount_setter(instance):
+    original = instance.pay_amount
+    instance.pay_amount = original
+    assert instance.pay_amount == original
+
 
 
 @given(instance=Payment_strategy)
@@ -918,9 +861,6 @@ def test_payment_card_no_setter(instance):
 def test_administrator_instantiation(instance):
     assert isinstance(instance, Administrator)
 
-@given(instance=Administrator_strategy)
-def test_administrator_password_type(instance):
-    assert isinstance(instance.password, str)
 
 
 @given(instance=Administrator_strategy)
@@ -929,9 +869,6 @@ def test_administrator_password_setter(instance):
     instance.password = original
     assert instance.password == original
 
-@given(instance=Administrator_strategy)
-def test_administrator_admin_name_type(instance):
-    assert isinstance(instance.admin_name, str)
 
 
 @given(instance=Administrator_strategy)
@@ -945,9 +882,6 @@ def test_administrator_admin_name_setter(instance):
 def test_seller_instantiation(instance):
     assert isinstance(instance, Seller)
 
-@given(instance=Seller_strategy)
-def test_seller_seller_id_type(instance):
-    assert isinstance(instance.seller_id, str)
 
 
 @given(instance=Seller_strategy)
@@ -956,9 +890,6 @@ def test_seller_seller_id_setter(instance):
     instance.seller_id = original
     assert instance.seller_id == original
 
-@given(instance=Seller_strategy)
-def test_seller_property_id_type(instance):
-    assert isinstance(instance.property_id, str)
 
 
 @given(instance=Seller_strategy)
@@ -972,9 +903,6 @@ def test_seller_property_id_setter(instance):
 def test_buyer_instantiation(instance):
     assert isinstance(instance, Buyer)
 
-@given(instance=Buyer_strategy)
-def test_buyer_buyer_id_type(instance):
-    assert isinstance(instance.buyer_id, str)
 
 
 @given(instance=Buyer_strategy)
@@ -988,20 +916,6 @@ def test_buyer_buyer_id_setter(instance):
 def test_advertiser_instantiation(instance):
     assert isinstance(instance, Advertiser)
 
-@given(instance=Advertiser_strategy)
-def test_advertiser_advertiser_id_type(instance):
-    assert isinstance(instance.advertiser_id, str)
-
-
-@given(instance=Advertiser_strategy)
-def test_advertiser_advertiser_id_setter(instance):
-    original = instance.advertiser_id
-    instance.advertiser_id = original
-    assert instance.advertiser_id == original
-
-@given(instance=Advertiser_strategy)
-def test_advertiser_advertiesment_id_type(instance):
-    assert isinstance(instance.advertiesment_id, str)
 
 
 @given(instance=Advertiser_strategy)
@@ -1009,6 +923,14 @@ def test_advertiser_advertiesment_id_setter(instance):
     original = instance.advertiesment_id
     instance.advertiesment_id = original
     assert instance.advertiesment_id == original
+
+
+
+@given(instance=Advertiser_strategy)
+def test_advertiser_advertiser_id_setter(instance):
+    original = instance.advertiser_id
+    instance.advertiser_id = original
+    assert instance.advertiser_id == original
 
 @given(instance=Unreg_User_strategy)
 @settings(max_examples=50)
@@ -1020,31 +942,6 @@ def test_unreg_user_instantiation(instance):
 def test_reg_user_instantiation(instance):
     assert isinstance(instance, Reg_User)
 
-@given(instance=Reg_User_strategy)
-def test_reg_user_Address_type(instance):
-    assert isinstance(instance.Address, str)
-
-
-@given(instance=Reg_User_strategy)
-def test_reg_user_Address_setter(instance):
-    original = instance.Address
-    instance.Address = original
-    assert instance.Address == original
-
-@given(instance=Reg_User_strategy)
-def test_reg_user_username_type(instance):
-    assert isinstance(instance.username, str)
-
-
-@given(instance=Reg_User_strategy)
-def test_reg_user_username_setter(instance):
-    original = instance.username
-    instance.username = original
-    assert instance.username == original
-
-@given(instance=Reg_User_strategy)
-def test_reg_user_password_type(instance):
-    assert isinstance(instance.password, str)
 
 
 @given(instance=Reg_User_strategy)
@@ -1053,25 +950,27 @@ def test_reg_user_password_setter(instance):
     instance.password = original
     assert instance.password == original
 
+
+
+@given(instance=Reg_User_strategy)
+def test_reg_user_Address_setter(instance):
+    original = instance.Address
+    instance.Address = original
+    assert instance.Address == original
+
+
+
+@given(instance=Reg_User_strategy)
+def test_reg_user_username_setter(instance):
+    original = instance.username
+    instance.username = original
+    assert instance.username == original
+
 @given(instance=User_strategy)
 @settings(max_examples=50)
 def test_user_instantiation(instance):
     assert isinstance(instance, User)
 
-@given(instance=User_strategy)
-def test_user_email_type(instance):
-    assert isinstance(instance.email, str)
-
-
-@given(instance=User_strategy)
-def test_user_email_setter(instance):
-    original = instance.email
-    instance.email = original
-    assert instance.email == original
-
-@given(instance=User_strategy)
-def test_user_location_type(instance):
-    assert isinstance(instance.location, str)
 
 
 @given(instance=User_strategy)
@@ -1080,14 +979,19 @@ def test_user_location_setter(instance):
     instance.location = original
     assert instance.location == original
 
+
+
+@given(instance=User_strategy)
+def test_user_email_setter(instance):
+    original = instance.email
+    instance.email = original
+    assert instance.email == original
+
 @given(instance=Property_strategy)
 @settings(max_examples=50)
 def test_property_instantiation(instance):
     assert isinstance(instance, Property)
 
-@given(instance=Property_strategy)
-def test_property_property_id_type(instance):
-    assert isinstance(instance.property_id, str)
 
 
 @given(instance=Property_strategy)
@@ -1096,9 +1000,14 @@ def test_property_property_id_setter(instance):
     instance.property_id = original
     assert instance.property_id == original
 
+
+
 @given(instance=Property_strategy)
-def test_property_location_type(instance):
-    assert isinstance(instance.location, str)
+def test_property_address_setter(instance):
+    original = instance.address
+    instance.address = original
+    assert instance.address == original
+
 
 
 @given(instance=Property_strategy)
@@ -1107,9 +1016,6 @@ def test_property_location_setter(instance):
     instance.location = original
     assert instance.location == original
 
-@given(instance=Property_strategy)
-def test_property_property_type_type(instance):
-    assert isinstance(instance.property_type, str)
 
 
 @given(instance=Property_strategy)
@@ -1117,14 +1023,3 @@ def test_property_property_type_setter(instance):
     original = instance.property_type
     instance.property_type = original
     assert instance.property_type == original
-
-@given(instance=Property_strategy)
-def test_property_address_type(instance):
-    assert isinstance(instance.address, str)
-
-
-@given(instance=Property_strategy)
-def test_property_address_setter(instance):
-    original = instance.address
-    instance.address = original
-    assert instance.address == original

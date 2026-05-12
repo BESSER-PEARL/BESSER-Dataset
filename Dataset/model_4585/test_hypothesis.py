@@ -3,52 +3,52 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     ActivityEdge,
-    activity::InterruptEdge,
-    activity::ObjectFlow,
-    activity::ControlFlow,
+    activity_ObjectFlow,
+    activity_InterruptEdge,
+    activity_ControlFlow,
     Pin,
-    activity::InputPin,
-    activity::OutputPin,
+    activity_InputPin,
+    activity_OutputPin,
     ExecutableNode,
-    activity::SendSignalAction,
-    activity::AcceptTimeEventAction,
-    activity::AcceptEventAction,
-    activity::Action,
+    activity_AcceptTimeEventAction,
+    activity_SendSignalAction,
+    activity_AcceptEventAction,
+    activity_Action,
     FinalNode,
-    activity::ActivityFinalNode,
-    activity::FlowFinalNode,
+    activity_ActivityFinalNode,
+    activity_FlowFinalNode,
     ControlNode,
-    activity::JoinNode,
-    activity::ForkNode,
-    activity::FinalNode,
-    activity::Connector,
-    activity::MergeNode,
-    activity::DecisionNode,
-    activity::InitialNode,
+    activity_ForkNode,
+    activity_MergeNode,
+    activity_Connector,
+    activity_FinalNode,
+    activity_DecisionNode,
+    activity_JoinNode,
+    activity_InitialNode,
     ActivityNode,
-    activity::ExecutableNode,
-    activity::ObjectNode,
-    activity::ControlNode,
+    activity_ExecutableNode,
+    activity_ObjectNode,
+    activity_ControlNode,
     ObjectNode,
-    activity::CentralBufferNode,
-    activity::Object,
-    activity::DataStoreNode,
-    activity::Pin,
+    activity_CentralBufferNode,
+    activity_DataStoreNode,
+    activity_Object,
+    activity_Pin,
     ActivityGroup,
     NamedElement,
     Activity,
-    activity::ActivityGroup,
-    activity::ActivityPartition,
-    activity::ActivityParameterNode,
-    activity::NamedElement,
-    activity::InterruptibleActivityRegion,
-    activity::ActivityEdge,
-    activity::Activity,
-    activity::ActivityNode,
+    activity_ActivityGroup,
+    activity_ActivityPartition,
+    activity_ActivityParameterNode,
+    activity_NamedElement,
+    activity_InterruptibleActivityRegion,
+    activity_ActivityEdge,
+    activity_Activity,
+    activity_ActivityNode,
 )
 
 # =============================================================================
@@ -71,44 +71,44 @@ def test_activityedge_constructor_args():
 
 
 
-def test_activity::interruptedge_is_not_abstract():
-    assert not inspect.isabstract(activity::InterruptEdge)
+def test_activity_objectflow_is_not_abstract():
+    assert not inspect.isabstract(activity_ObjectFlow)
 
 
-def test_activity::interruptedge_constructor_exists():
-    assert callable(activity::InterruptEdge.__init__)
+def test_activity_objectflow_constructor_exists():
+    assert callable(activity_ObjectFlow.__init__)
 
 
-def test_activity::interruptedge_constructor_args():
-    sig = inspect.signature(activity::InterruptEdge.__init__)
+def test_activity_objectflow_constructor_args():
+    sig = inspect.signature(activity_ObjectFlow.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_activity::objectflow_is_not_abstract():
-    assert not inspect.isabstract(activity::ObjectFlow)
+def test_activity_interruptedge_is_not_abstract():
+    assert not inspect.isabstract(activity_InterruptEdge)
 
 
-def test_activity::objectflow_constructor_exists():
-    assert callable(activity::ObjectFlow.__init__)
+def test_activity_interruptedge_constructor_exists():
+    assert callable(activity_InterruptEdge.__init__)
 
 
-def test_activity::objectflow_constructor_args():
-    sig = inspect.signature(activity::ObjectFlow.__init__)
+def test_activity_interruptedge_constructor_args():
+    sig = inspect.signature(activity_InterruptEdge.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_activity::controlflow_is_not_abstract():
-    assert not inspect.isabstract(activity::ControlFlow)
+def test_activity_controlflow_is_not_abstract():
+    assert not inspect.isabstract(activity_ControlFlow)
 
 
-def test_activity::controlflow_constructor_exists():
-    assert callable(activity::ControlFlow.__init__)
+def test_activity_controlflow_constructor_exists():
+    assert callable(activity_ControlFlow.__init__)
 
 
-def test_activity::controlflow_constructor_args():
-    sig = inspect.signature(activity::ControlFlow.__init__)
+def test_activity_controlflow_constructor_args():
+    sig = inspect.signature(activity_ControlFlow.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -127,30 +127,30 @@ def test_pin_constructor_args():
 
 
 
-def test_activity::inputpin_is_not_abstract():
-    assert not inspect.isabstract(activity::InputPin)
+def test_activity_inputpin_is_not_abstract():
+    assert not inspect.isabstract(activity_InputPin)
 
 
-def test_activity::inputpin_constructor_exists():
-    assert callable(activity::InputPin.__init__)
+def test_activity_inputpin_constructor_exists():
+    assert callable(activity_InputPin.__init__)
 
 
-def test_activity::inputpin_constructor_args():
-    sig = inspect.signature(activity::InputPin.__init__)
+def test_activity_inputpin_constructor_args():
+    sig = inspect.signature(activity_InputPin.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_activity::outputpin_is_not_abstract():
-    assert not inspect.isabstract(activity::OutputPin)
+def test_activity_outputpin_is_not_abstract():
+    assert not inspect.isabstract(activity_OutputPin)
 
 
-def test_activity::outputpin_constructor_exists():
-    assert callable(activity::OutputPin.__init__)
+def test_activity_outputpin_constructor_exists():
+    assert callable(activity_OutputPin.__init__)
 
 
-def test_activity::outputpin_constructor_args():
-    sig = inspect.signature(activity::OutputPin.__init__)
+def test_activity_outputpin_constructor_args():
+    sig = inspect.signature(activity_OutputPin.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -169,58 +169,58 @@ def test_executablenode_constructor_args():
 
 
 
-def test_activity::sendsignalaction_is_not_abstract():
-    assert not inspect.isabstract(activity::SendSignalAction)
+def test_activity_accepttimeeventaction_is_not_abstract():
+    assert not inspect.isabstract(activity_AcceptTimeEventAction)
 
 
-def test_activity::sendsignalaction_constructor_exists():
-    assert callable(activity::SendSignalAction.__init__)
+def test_activity_accepttimeeventaction_constructor_exists():
+    assert callable(activity_AcceptTimeEventAction.__init__)
 
 
-def test_activity::sendsignalaction_constructor_args():
-    sig = inspect.signature(activity::SendSignalAction.__init__)
+def test_activity_accepttimeeventaction_constructor_args():
+    sig = inspect.signature(activity_AcceptTimeEventAction.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_activity::accepttimeeventaction_is_not_abstract():
-    assert not inspect.isabstract(activity::AcceptTimeEventAction)
+def test_activity_sendsignalaction_is_not_abstract():
+    assert not inspect.isabstract(activity_SendSignalAction)
 
 
-def test_activity::accepttimeeventaction_constructor_exists():
-    assert callable(activity::AcceptTimeEventAction.__init__)
+def test_activity_sendsignalaction_constructor_exists():
+    assert callable(activity_SendSignalAction.__init__)
 
 
-def test_activity::accepttimeeventaction_constructor_args():
-    sig = inspect.signature(activity::AcceptTimeEventAction.__init__)
+def test_activity_sendsignalaction_constructor_args():
+    sig = inspect.signature(activity_SendSignalAction.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_activity::accepteventaction_is_not_abstract():
-    assert not inspect.isabstract(activity::AcceptEventAction)
+def test_activity_accepteventaction_is_not_abstract():
+    assert not inspect.isabstract(activity_AcceptEventAction)
 
 
-def test_activity::accepteventaction_constructor_exists():
-    assert callable(activity::AcceptEventAction.__init__)
+def test_activity_accepteventaction_constructor_exists():
+    assert callable(activity_AcceptEventAction.__init__)
 
 
-def test_activity::accepteventaction_constructor_args():
-    sig = inspect.signature(activity::AcceptEventAction.__init__)
+def test_activity_accepteventaction_constructor_args():
+    sig = inspect.signature(activity_AcceptEventAction.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_activity::action_is_not_abstract():
-    assert not inspect.isabstract(activity::Action)
+def test_activity_action_is_not_abstract():
+    assert not inspect.isabstract(activity_Action)
 
 
-def test_activity::action_constructor_exists():
-    assert callable(activity::Action.__init__)
+def test_activity_action_constructor_exists():
+    assert callable(activity_Action.__init__)
 
 
-def test_activity::action_constructor_args():
-    sig = inspect.signature(activity::Action.__init__)
+def test_activity_action_constructor_args():
+    sig = inspect.signature(activity_Action.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -239,30 +239,30 @@ def test_finalnode_constructor_args():
 
 
 
-def test_activity::activityfinalnode_is_not_abstract():
-    assert not inspect.isabstract(activity::ActivityFinalNode)
+def test_activity_activityfinalnode_is_not_abstract():
+    assert not inspect.isabstract(activity_ActivityFinalNode)
 
 
-def test_activity::activityfinalnode_constructor_exists():
-    assert callable(activity::ActivityFinalNode.__init__)
+def test_activity_activityfinalnode_constructor_exists():
+    assert callable(activity_ActivityFinalNode.__init__)
 
 
-def test_activity::activityfinalnode_constructor_args():
-    sig = inspect.signature(activity::ActivityFinalNode.__init__)
+def test_activity_activityfinalnode_constructor_args():
+    sig = inspect.signature(activity_ActivityFinalNode.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_activity::flowfinalnode_is_not_abstract():
-    assert not inspect.isabstract(activity::FlowFinalNode)
+def test_activity_flowfinalnode_is_not_abstract():
+    assert not inspect.isabstract(activity_FlowFinalNode)
 
 
-def test_activity::flowfinalnode_constructor_exists():
-    assert callable(activity::FlowFinalNode.__init__)
+def test_activity_flowfinalnode_constructor_exists():
+    assert callable(activity_FlowFinalNode.__init__)
 
 
-def test_activity::flowfinalnode_constructor_args():
-    sig = inspect.signature(activity::FlowFinalNode.__init__)
+def test_activity_flowfinalnode_constructor_args():
+    sig = inspect.signature(activity_FlowFinalNode.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -281,100 +281,100 @@ def test_controlnode_constructor_args():
 
 
 
-def test_activity::joinnode_is_not_abstract():
-    assert not inspect.isabstract(activity::JoinNode)
+def test_activity_forknode_is_not_abstract():
+    assert not inspect.isabstract(activity_ForkNode)
 
 
-def test_activity::joinnode_constructor_exists():
-    assert callable(activity::JoinNode.__init__)
+def test_activity_forknode_constructor_exists():
+    assert callable(activity_ForkNode.__init__)
 
 
-def test_activity::joinnode_constructor_args():
-    sig = inspect.signature(activity::JoinNode.__init__)
+def test_activity_forknode_constructor_args():
+    sig = inspect.signature(activity_ForkNode.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_activity::forknode_is_not_abstract():
-    assert not inspect.isabstract(activity::ForkNode)
+def test_activity_mergenode_is_not_abstract():
+    assert not inspect.isabstract(activity_MergeNode)
 
 
-def test_activity::forknode_constructor_exists():
-    assert callable(activity::ForkNode.__init__)
+def test_activity_mergenode_constructor_exists():
+    assert callable(activity_MergeNode.__init__)
 
 
-def test_activity::forknode_constructor_args():
-    sig = inspect.signature(activity::ForkNode.__init__)
+def test_activity_mergenode_constructor_args():
+    sig = inspect.signature(activity_MergeNode.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_activity::finalnode_is_not_abstract():
-    assert not inspect.isabstract(activity::FinalNode)
+def test_activity_connector_is_not_abstract():
+    assert not inspect.isabstract(activity_Connector)
 
 
-def test_activity::finalnode_constructor_exists():
-    assert callable(activity::FinalNode.__init__)
+def test_activity_connector_constructor_exists():
+    assert callable(activity_Connector.__init__)
 
 
-def test_activity::finalnode_constructor_args():
-    sig = inspect.signature(activity::FinalNode.__init__)
+def test_activity_connector_constructor_args():
+    sig = inspect.signature(activity_Connector.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_activity::connector_is_not_abstract():
-    assert not inspect.isabstract(activity::Connector)
+def test_activity_finalnode_is_not_abstract():
+    assert not inspect.isabstract(activity_FinalNode)
 
 
-def test_activity::connector_constructor_exists():
-    assert callable(activity::Connector.__init__)
+def test_activity_finalnode_constructor_exists():
+    assert callable(activity_FinalNode.__init__)
 
 
-def test_activity::connector_constructor_args():
-    sig = inspect.signature(activity::Connector.__init__)
+def test_activity_finalnode_constructor_args():
+    sig = inspect.signature(activity_FinalNode.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_activity::mergenode_is_not_abstract():
-    assert not inspect.isabstract(activity::MergeNode)
+def test_activity_decisionnode_is_not_abstract():
+    assert not inspect.isabstract(activity_DecisionNode)
 
 
-def test_activity::mergenode_constructor_exists():
-    assert callable(activity::MergeNode.__init__)
+def test_activity_decisionnode_constructor_exists():
+    assert callable(activity_DecisionNode.__init__)
 
 
-def test_activity::mergenode_constructor_args():
-    sig = inspect.signature(activity::MergeNode.__init__)
+def test_activity_decisionnode_constructor_args():
+    sig = inspect.signature(activity_DecisionNode.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_activity::decisionnode_is_not_abstract():
-    assert not inspect.isabstract(activity::DecisionNode)
+def test_activity_joinnode_is_not_abstract():
+    assert not inspect.isabstract(activity_JoinNode)
 
 
-def test_activity::decisionnode_constructor_exists():
-    assert callable(activity::DecisionNode.__init__)
+def test_activity_joinnode_constructor_exists():
+    assert callable(activity_JoinNode.__init__)
 
 
-def test_activity::decisionnode_constructor_args():
-    sig = inspect.signature(activity::DecisionNode.__init__)
+def test_activity_joinnode_constructor_args():
+    sig = inspect.signature(activity_JoinNode.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_activity::initialnode_is_not_abstract():
-    assert not inspect.isabstract(activity::InitialNode)
+def test_activity_initialnode_is_not_abstract():
+    assert not inspect.isabstract(activity_InitialNode)
 
 
-def test_activity::initialnode_constructor_exists():
-    assert callable(activity::InitialNode.__init__)
+def test_activity_initialnode_constructor_exists():
+    assert callable(activity_InitialNode.__init__)
 
 
-def test_activity::initialnode_constructor_args():
-    sig = inspect.signature(activity::InitialNode.__init__)
+def test_activity_initialnode_constructor_args():
+    sig = inspect.signature(activity_InitialNode.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -393,44 +393,44 @@ def test_activitynode_constructor_args():
 
 
 
-def test_activity::executablenode_is_not_abstract():
-    assert not inspect.isabstract(activity::ExecutableNode)
+def test_activity_executablenode_is_not_abstract():
+    assert not inspect.isabstract(activity_ExecutableNode)
 
 
-def test_activity::executablenode_constructor_exists():
-    assert callable(activity::ExecutableNode.__init__)
+def test_activity_executablenode_constructor_exists():
+    assert callable(activity_ExecutableNode.__init__)
 
 
-def test_activity::executablenode_constructor_args():
-    sig = inspect.signature(activity::ExecutableNode.__init__)
+def test_activity_executablenode_constructor_args():
+    sig = inspect.signature(activity_ExecutableNode.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_activity::objectnode_is_not_abstract():
-    assert not inspect.isabstract(activity::ObjectNode)
+def test_activity_objectnode_is_not_abstract():
+    assert not inspect.isabstract(activity_ObjectNode)
 
 
-def test_activity::objectnode_constructor_exists():
-    assert callable(activity::ObjectNode.__init__)
+def test_activity_objectnode_constructor_exists():
+    assert callable(activity_ObjectNode.__init__)
 
 
-def test_activity::objectnode_constructor_args():
-    sig = inspect.signature(activity::ObjectNode.__init__)
+def test_activity_objectnode_constructor_args():
+    sig = inspect.signature(activity_ObjectNode.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_activity::controlnode_is_not_abstract():
-    assert not inspect.isabstract(activity::ControlNode)
+def test_activity_controlnode_is_not_abstract():
+    assert not inspect.isabstract(activity_ControlNode)
 
 
-def test_activity::controlnode_constructor_exists():
-    assert callable(activity::ControlNode.__init__)
+def test_activity_controlnode_constructor_exists():
+    assert callable(activity_ControlNode.__init__)
 
 
-def test_activity::controlnode_constructor_args():
-    sig = inspect.signature(activity::ControlNode.__init__)
+def test_activity_controlnode_constructor_args():
+    sig = inspect.signature(activity_ControlNode.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -449,58 +449,58 @@ def test_objectnode_constructor_args():
 
 
 
-def test_activity::centralbuffernode_is_not_abstract():
-    assert not inspect.isabstract(activity::CentralBufferNode)
+def test_activity_centralbuffernode_is_not_abstract():
+    assert not inspect.isabstract(activity_CentralBufferNode)
 
 
-def test_activity::centralbuffernode_constructor_exists():
-    assert callable(activity::CentralBufferNode.__init__)
+def test_activity_centralbuffernode_constructor_exists():
+    assert callable(activity_CentralBufferNode.__init__)
 
 
-def test_activity::centralbuffernode_constructor_args():
-    sig = inspect.signature(activity::CentralBufferNode.__init__)
+def test_activity_centralbuffernode_constructor_args():
+    sig = inspect.signature(activity_CentralBufferNode.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_activity::object_is_not_abstract():
-    assert not inspect.isabstract(activity::Object)
+def test_activity_datastorenode_is_not_abstract():
+    assert not inspect.isabstract(activity_DataStoreNode)
 
 
-def test_activity::object_constructor_exists():
-    assert callable(activity::Object.__init__)
+def test_activity_datastorenode_constructor_exists():
+    assert callable(activity_DataStoreNode.__init__)
 
 
-def test_activity::object_constructor_args():
-    sig = inspect.signature(activity::Object.__init__)
+def test_activity_datastorenode_constructor_args():
+    sig = inspect.signature(activity_DataStoreNode.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_activity::datastorenode_is_not_abstract():
-    assert not inspect.isabstract(activity::DataStoreNode)
+def test_activity_object_is_not_abstract():
+    assert not inspect.isabstract(activity_Object)
 
 
-def test_activity::datastorenode_constructor_exists():
-    assert callable(activity::DataStoreNode.__init__)
+def test_activity_object_constructor_exists():
+    assert callable(activity_Object.__init__)
 
 
-def test_activity::datastorenode_constructor_args():
-    sig = inspect.signature(activity::DataStoreNode.__init__)
+def test_activity_object_constructor_args():
+    sig = inspect.signature(activity_Object.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_activity::pin_is_not_abstract():
-    assert not inspect.isabstract(activity::Pin)
+def test_activity_pin_is_not_abstract():
+    assert not inspect.isabstract(activity_Pin)
 
 
-def test_activity::pin_constructor_exists():
-    assert callable(activity::Pin.__init__)
+def test_activity_pin_constructor_exists():
+    assert callable(activity_Pin.__init__)
 
 
-def test_activity::pin_constructor_args():
-    sig = inspect.signature(activity::Pin.__init__)
+def test_activity_pin_constructor_args():
+    sig = inspect.signature(activity_Pin.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -547,23 +547,23 @@ def test_activity_constructor_args():
 
 
 
-def test_activity::activitygroup_is_not_abstract():
-    assert not inspect.isabstract(activity::ActivityGroup)
+def test_activity_activitygroup_is_not_abstract():
+    assert not inspect.isabstract(activity_ActivityGroup)
 
 
-def test_activity::activitygroup_constructor_exists():
-    assert callable(activity::ActivityGroup.__init__)
+def test_activity_activitygroup_constructor_exists():
+    assert callable(activity_ActivityGroup.__init__)
 
 
-def test_activity::activitygroup_constructor_args():
-    sig = inspect.signature(activity::ActivityGroup.__init__)
+def test_activity_activitygroup_constructor_args():
+    sig = inspect.signature(activity_ActivityGroup.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_activity::activitygroup_has_name():
-    assert hasattr(activity::ActivityGroup, "name")
+def test_activity_activitygroup_has_name():
+    assert hasattr(activity_ActivityGroup, "name")
     descriptor = None
-    for klass in activity::ActivityGroup.__mro__:
+    for klass in activity_ActivityGroup.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -571,37 +571,37 @@ def test_activity::activitygroup_has_name():
 
 
 
-def test_activity::activitypartition_is_not_abstract():
-    assert not inspect.isabstract(activity::ActivityPartition)
+def test_activity_activitypartition_is_not_abstract():
+    assert not inspect.isabstract(activity_ActivityPartition)
 
 
-def test_activity::activitypartition_constructor_exists():
-    assert callable(activity::ActivityPartition.__init__)
+def test_activity_activitypartition_constructor_exists():
+    assert callable(activity_ActivityPartition.__init__)
 
 
-def test_activity::activitypartition_constructor_args():
-    sig = inspect.signature(activity::ActivityPartition.__init__)
+def test_activity_activitypartition_constructor_args():
+    sig = inspect.signature(activity_ActivityPartition.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_activity::activityparameternode_is_not_abstract():
-    assert not inspect.isabstract(activity::ActivityParameterNode)
+def test_activity_activityparameternode_is_not_abstract():
+    assert not inspect.isabstract(activity_ActivityParameterNode)
 
 
-def test_activity::activityparameternode_constructor_exists():
-    assert callable(activity::ActivityParameterNode.__init__)
+def test_activity_activityparameternode_constructor_exists():
+    assert callable(activity_ActivityParameterNode.__init__)
 
 
-def test_activity::activityparameternode_constructor_args():
-    sig = inspect.signature(activity::ActivityParameterNode.__init__)
+def test_activity_activityparameternode_constructor_args():
+    sig = inspect.signature(activity_ActivityParameterNode.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_activity::activityparameternode_has_name():
-    assert hasattr(activity::ActivityParameterNode, "name")
+def test_activity_activityparameternode_has_name():
+    assert hasattr(activity_ActivityParameterNode, "name")
     descriptor = None
-    for klass in activity::ActivityParameterNode.__mro__:
+    for klass in activity_ActivityParameterNode.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -609,92 +609,92 @@ def test_activity::activityparameternode_has_name():
 
 
 
-def test_activity::namedelement_is_not_abstract():
-    assert not inspect.isabstract(activity::NamedElement)
+def test_activity_namedelement_is_not_abstract():
+    assert not inspect.isabstract(activity_NamedElement)
 
 
-def test_activity::namedelement_constructor_exists():
-    assert callable(activity::NamedElement.__init__)
+def test_activity_namedelement_constructor_exists():
+    assert callable(activity_NamedElement.__init__)
 
 
-def test_activity::namedelement_constructor_args():
-    sig = inspect.signature(activity::NamedElement.__init__)
+def test_activity_namedelement_constructor_args():
+    sig = inspect.signature(activity_NamedElement.__init__)
     params = list(sig.parameters.keys())
-    assert "qualifiedName" in params, "Missing parameter 'qualifiedName'"
     assert "Name" in params, "Missing parameter 'Name'"
+    assert "qualifiedName" in params, "Missing parameter 'qualifiedName'"
 
-def test_activity::namedelement_has_qualifiedName():
-    assert hasattr(activity::NamedElement, "qualifiedName")
+def test_activity_namedelement_has_Name():
+    assert hasattr(activity_NamedElement, "Name")
     descriptor = None
-    for klass in activity::NamedElement.__mro__:
-        if "qualifiedName" in klass.__dict__:
-            descriptor = klass.__dict__["qualifiedName"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_activity::namedelement_has_Name():
-    assert hasattr(activity::NamedElement, "Name")
-    descriptor = None
-    for klass in activity::NamedElement.__mro__:
+    for klass in activity_NamedElement.__mro__:
         if "Name" in klass.__dict__:
             descriptor = klass.__dict__["Name"]
             break
     assert isinstance(descriptor, property)
 
+def test_activity_namedelement_has_qualifiedName():
+    assert hasattr(activity_NamedElement, "qualifiedName")
+    descriptor = None
+    for klass in activity_NamedElement.__mro__:
+        if "qualifiedName" in klass.__dict__:
+            descriptor = klass.__dict__["qualifiedName"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_activity::interruptibleactivityregion_is_not_abstract():
-    assert not inspect.isabstract(activity::InterruptibleActivityRegion)
+
+def test_activity_interruptibleactivityregion_is_not_abstract():
+    assert not inspect.isabstract(activity_InterruptibleActivityRegion)
 
 
-def test_activity::interruptibleactivityregion_constructor_exists():
-    assert callable(activity::InterruptibleActivityRegion.__init__)
+def test_activity_interruptibleactivityregion_constructor_exists():
+    assert callable(activity_InterruptibleActivityRegion.__init__)
 
 
-def test_activity::interruptibleactivityregion_constructor_args():
-    sig = inspect.signature(activity::InterruptibleActivityRegion.__init__)
+def test_activity_interruptibleactivityregion_constructor_args():
+    sig = inspect.signature(activity_InterruptibleActivityRegion.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_activity::activityedge_is_not_abstract():
-    assert not inspect.isabstract(activity::ActivityEdge)
+def test_activity_activityedge_is_not_abstract():
+    assert not inspect.isabstract(activity_ActivityEdge)
 
 
-def test_activity::activityedge_constructor_exists():
-    assert callable(activity::ActivityEdge.__init__)
+def test_activity_activityedge_constructor_exists():
+    assert callable(activity_ActivityEdge.__init__)
 
 
-def test_activity::activityedge_constructor_args():
-    sig = inspect.signature(activity::ActivityEdge.__init__)
+def test_activity_activityedge_constructor_args():
+    sig = inspect.signature(activity_ActivityEdge.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_activity::activity_is_not_abstract():
-    assert not inspect.isabstract(activity::Activity)
+def test_activity_activity_is_not_abstract():
+    assert not inspect.isabstract(activity_Activity)
 
 
-def test_activity::activity_constructor_exists():
-    assert callable(activity::Activity.__init__)
+def test_activity_activity_constructor_exists():
+    assert callable(activity_Activity.__init__)
 
 
-def test_activity::activity_constructor_args():
-    sig = inspect.signature(activity::Activity.__init__)
+def test_activity_activity_constructor_args():
+    sig = inspect.signature(activity_Activity.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_activity::activitynode_is_not_abstract():
-    assert not inspect.isabstract(activity::ActivityNode)
+def test_activity_activitynode_is_not_abstract():
+    assert not inspect.isabstract(activity_ActivityNode)
 
 
-def test_activity::activitynode_constructor_exists():
-    assert callable(activity::ActivityNode.__init__)
+def test_activity_activitynode_constructor_exists():
+    assert callable(activity_ActivityNode.__init__)
 
 
-def test_activity::activitynode_constructor_args():
-    sig = inspect.signature(activity::ActivityNode.__init__)
+def test_activity_activitynode_constructor_args():
+    sig = inspect.signature(activity_ActivityNode.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -712,98 +712,98 @@ safe_text = st.text(
 ActivityEdge_strategy = st.builds(
     ActivityEdge,
 )
-activity::InterruptEdge_strategy = st.builds(
-    activity::InterruptEdge,
+activity_ObjectFlow_strategy = st.builds(
+    activity_ObjectFlow,
 )
-activity::ObjectFlow_strategy = st.builds(
-    activity::ObjectFlow,
+activity_InterruptEdge_strategy = st.builds(
+    activity_InterruptEdge,
 )
-activity::ControlFlow_strategy = st.builds(
-    activity::ControlFlow,
+activity_ControlFlow_strategy = st.builds(
+    activity_ControlFlow,
 )
 Pin_strategy = st.builds(
     Pin,
 )
-activity::InputPin_strategy = st.builds(
-    activity::InputPin,
+activity_InputPin_strategy = st.builds(
+    activity_InputPin,
 )
-activity::OutputPin_strategy = st.builds(
-    activity::OutputPin,
+activity_OutputPin_strategy = st.builds(
+    activity_OutputPin,
 )
 ExecutableNode_strategy = st.builds(
     ExecutableNode,
 )
-activity::SendSignalAction_strategy = st.builds(
-    activity::SendSignalAction,
+activity_AcceptTimeEventAction_strategy = st.builds(
+    activity_AcceptTimeEventAction,
 )
-activity::AcceptTimeEventAction_strategy = st.builds(
-    activity::AcceptTimeEventAction,
+activity_SendSignalAction_strategy = st.builds(
+    activity_SendSignalAction,
 )
-activity::AcceptEventAction_strategy = st.builds(
-    activity::AcceptEventAction,
+activity_AcceptEventAction_strategy = st.builds(
+    activity_AcceptEventAction,
 )
-activity::Action_strategy = st.builds(
-    activity::Action,
+activity_Action_strategy = st.builds(
+    activity_Action,
 )
 FinalNode_strategy = st.builds(
     FinalNode,
 )
-activity::ActivityFinalNode_strategy = st.builds(
-    activity::ActivityFinalNode,
+activity_ActivityFinalNode_strategy = st.builds(
+    activity_ActivityFinalNode,
 )
-activity::FlowFinalNode_strategy = st.builds(
-    activity::FlowFinalNode,
+activity_FlowFinalNode_strategy = st.builds(
+    activity_FlowFinalNode,
 )
 ControlNode_strategy = st.builds(
     ControlNode,
 )
-activity::JoinNode_strategy = st.builds(
-    activity::JoinNode,
+activity_ForkNode_strategy = st.builds(
+    activity_ForkNode,
 )
-activity::ForkNode_strategy = st.builds(
-    activity::ForkNode,
+activity_MergeNode_strategy = st.builds(
+    activity_MergeNode,
 )
-activity::FinalNode_strategy = st.builds(
-    activity::FinalNode,
+activity_Connector_strategy = st.builds(
+    activity_Connector,
 )
-activity::Connector_strategy = st.builds(
-    activity::Connector,
+activity_FinalNode_strategy = st.builds(
+    activity_FinalNode,
 )
-activity::MergeNode_strategy = st.builds(
-    activity::MergeNode,
+activity_DecisionNode_strategy = st.builds(
+    activity_DecisionNode,
 )
-activity::DecisionNode_strategy = st.builds(
-    activity::DecisionNode,
+activity_JoinNode_strategy = st.builds(
+    activity_JoinNode,
 )
-activity::InitialNode_strategy = st.builds(
-    activity::InitialNode,
+activity_InitialNode_strategy = st.builds(
+    activity_InitialNode,
 )
 ActivityNode_strategy = st.builds(
     ActivityNode,
 )
-activity::ExecutableNode_strategy = st.builds(
-    activity::ExecutableNode,
+activity_ExecutableNode_strategy = st.builds(
+    activity_ExecutableNode,
 )
-activity::ObjectNode_strategy = st.builds(
-    activity::ObjectNode,
+activity_ObjectNode_strategy = st.builds(
+    activity_ObjectNode,
 )
-activity::ControlNode_strategy = st.builds(
-    activity::ControlNode,
+activity_ControlNode_strategy = st.builds(
+    activity_ControlNode,
 )
 ObjectNode_strategy = st.builds(
     ObjectNode,
 )
-activity::CentralBufferNode_strategy = st.builds(
-    activity::CentralBufferNode,
+activity_CentralBufferNode_strategy = st.builds(
+    activity_CentralBufferNode,
 )
-activity::Object_strategy = st.builds(
-    activity::Object,
+activity_DataStoreNode_strategy = st.builds(
+    activity_DataStoreNode,
 )
-activity::DataStoreNode_strategy = st.builds(
-    activity::DataStoreNode,
+activity_Object_strategy = st.builds(
+    activity_Object,
 )
-activity::Pin_strategy = st.builds(
-    activity::Pin,
+activity_Pin_strategy = st.builds(
+    activity_Pin,
 )
 ActivityGroup_strategy = st.builds(
     ActivityGroup,
@@ -814,37 +814,37 @@ NamedElement_strategy = st.builds(
 Activity_strategy = st.builds(
     Activity,
 )
-activity::ActivityGroup_strategy = st.builds(
-    activity::ActivityGroup,
+activity_ActivityGroup_strategy = st.builds(
+    activity_ActivityGroup,
     name=
         safe_text
 )
-activity::ActivityPartition_strategy = st.builds(
-    activity::ActivityPartition,
+activity_ActivityPartition_strategy = st.builds(
+    activity_ActivityPartition,
 )
-activity::ActivityParameterNode_strategy = st.builds(
-    activity::ActivityParameterNode,
+activity_ActivityParameterNode_strategy = st.builds(
+    activity_ActivityParameterNode,
     name=
         safe_text
 )
-activity::NamedElement_strategy = st.builds(
-    activity::NamedElement,
-    qualifiedName=
-        safe_text,
+activity_NamedElement_strategy = st.builds(
+    activity_NamedElement,
     Name=
+        safe_text,
+    qualifiedName=
         safe_text
 )
-activity::InterruptibleActivityRegion_strategy = st.builds(
-    activity::InterruptibleActivityRegion,
+activity_InterruptibleActivityRegion_strategy = st.builds(
+    activity_InterruptibleActivityRegion,
 )
-activity::ActivityEdge_strategy = st.builds(
-    activity::ActivityEdge,
+activity_ActivityEdge_strategy = st.builds(
+    activity_ActivityEdge,
 )
-activity::Activity_strategy = st.builds(
-    activity::Activity,
+activity_Activity_strategy = st.builds(
+    activity_Activity,
 )
-activity::ActivityNode_strategy = st.builds(
-    activity::ActivityNode,
+activity_ActivityNode_strategy = st.builds(
+    activity_ActivityNode,
 )
 
 @given(instance=ActivityEdge_strategy)
@@ -852,160 +852,160 @@ activity::ActivityNode_strategy = st.builds(
 def test_activityedge_instantiation(instance):
     assert isinstance(instance, ActivityEdge)
 
-@given(instance=activity::InterruptEdge_strategy)
+@given(instance=activity_ObjectFlow_strategy)
 @settings(max_examples=50)
-def test_activity::interruptedge_instantiation(instance):
-    assert isinstance(instance, activity::InterruptEdge)
+def test_activity_objectflow_instantiation(instance):
+    assert isinstance(instance, activity_ObjectFlow)
 
-@given(instance=activity::ObjectFlow_strategy)
+@given(instance=activity_InterruptEdge_strategy)
 @settings(max_examples=50)
-def test_activity::objectflow_instantiation(instance):
-    assert isinstance(instance, activity::ObjectFlow)
+def test_activity_interruptedge_instantiation(instance):
+    assert isinstance(instance, activity_InterruptEdge)
 
-@given(instance=activity::ControlFlow_strategy)
+@given(instance=activity_ControlFlow_strategy)
 @settings(max_examples=50)
-def test_activity::controlflow_instantiation(instance):
-    assert isinstance(instance, activity::ControlFlow)
+def test_activity_controlflow_instantiation(instance):
+    assert isinstance(instance, activity_ControlFlow)
 
 @given(instance=Pin_strategy)
 @settings(max_examples=50)
 def test_pin_instantiation(instance):
     assert isinstance(instance, Pin)
 
-@given(instance=activity::InputPin_strategy)
+@given(instance=activity_InputPin_strategy)
 @settings(max_examples=50)
-def test_activity::inputpin_instantiation(instance):
-    assert isinstance(instance, activity::InputPin)
+def test_activity_inputpin_instantiation(instance):
+    assert isinstance(instance, activity_InputPin)
 
-@given(instance=activity::OutputPin_strategy)
+@given(instance=activity_OutputPin_strategy)
 @settings(max_examples=50)
-def test_activity::outputpin_instantiation(instance):
-    assert isinstance(instance, activity::OutputPin)
+def test_activity_outputpin_instantiation(instance):
+    assert isinstance(instance, activity_OutputPin)
 
 @given(instance=ExecutableNode_strategy)
 @settings(max_examples=50)
 def test_executablenode_instantiation(instance):
     assert isinstance(instance, ExecutableNode)
 
-@given(instance=activity::SendSignalAction_strategy)
+@given(instance=activity_AcceptTimeEventAction_strategy)
 @settings(max_examples=50)
-def test_activity::sendsignalaction_instantiation(instance):
-    assert isinstance(instance, activity::SendSignalAction)
+def test_activity_accepttimeeventaction_instantiation(instance):
+    assert isinstance(instance, activity_AcceptTimeEventAction)
 
-@given(instance=activity::AcceptTimeEventAction_strategy)
+@given(instance=activity_SendSignalAction_strategy)
 @settings(max_examples=50)
-def test_activity::accepttimeeventaction_instantiation(instance):
-    assert isinstance(instance, activity::AcceptTimeEventAction)
+def test_activity_sendsignalaction_instantiation(instance):
+    assert isinstance(instance, activity_SendSignalAction)
 
-@given(instance=activity::AcceptEventAction_strategy)
+@given(instance=activity_AcceptEventAction_strategy)
 @settings(max_examples=50)
-def test_activity::accepteventaction_instantiation(instance):
-    assert isinstance(instance, activity::AcceptEventAction)
+def test_activity_accepteventaction_instantiation(instance):
+    assert isinstance(instance, activity_AcceptEventAction)
 
-@given(instance=activity::Action_strategy)
+@given(instance=activity_Action_strategy)
 @settings(max_examples=50)
-def test_activity::action_instantiation(instance):
-    assert isinstance(instance, activity::Action)
+def test_activity_action_instantiation(instance):
+    assert isinstance(instance, activity_Action)
 
 @given(instance=FinalNode_strategy)
 @settings(max_examples=50)
 def test_finalnode_instantiation(instance):
     assert isinstance(instance, FinalNode)
 
-@given(instance=activity::ActivityFinalNode_strategy)
+@given(instance=activity_ActivityFinalNode_strategy)
 @settings(max_examples=50)
-def test_activity::activityfinalnode_instantiation(instance):
-    assert isinstance(instance, activity::ActivityFinalNode)
+def test_activity_activityfinalnode_instantiation(instance):
+    assert isinstance(instance, activity_ActivityFinalNode)
 
-@given(instance=activity::FlowFinalNode_strategy)
+@given(instance=activity_FlowFinalNode_strategy)
 @settings(max_examples=50)
-def test_activity::flowfinalnode_instantiation(instance):
-    assert isinstance(instance, activity::FlowFinalNode)
+def test_activity_flowfinalnode_instantiation(instance):
+    assert isinstance(instance, activity_FlowFinalNode)
 
 @given(instance=ControlNode_strategy)
 @settings(max_examples=50)
 def test_controlnode_instantiation(instance):
     assert isinstance(instance, ControlNode)
 
-@given(instance=activity::JoinNode_strategy)
+@given(instance=activity_ForkNode_strategy)
 @settings(max_examples=50)
-def test_activity::joinnode_instantiation(instance):
-    assert isinstance(instance, activity::JoinNode)
+def test_activity_forknode_instantiation(instance):
+    assert isinstance(instance, activity_ForkNode)
 
-@given(instance=activity::ForkNode_strategy)
+@given(instance=activity_MergeNode_strategy)
 @settings(max_examples=50)
-def test_activity::forknode_instantiation(instance):
-    assert isinstance(instance, activity::ForkNode)
+def test_activity_mergenode_instantiation(instance):
+    assert isinstance(instance, activity_MergeNode)
 
-@given(instance=activity::FinalNode_strategy)
+@given(instance=activity_Connector_strategy)
 @settings(max_examples=50)
-def test_activity::finalnode_instantiation(instance):
-    assert isinstance(instance, activity::FinalNode)
+def test_activity_connector_instantiation(instance):
+    assert isinstance(instance, activity_Connector)
 
-@given(instance=activity::Connector_strategy)
+@given(instance=activity_FinalNode_strategy)
 @settings(max_examples=50)
-def test_activity::connector_instantiation(instance):
-    assert isinstance(instance, activity::Connector)
+def test_activity_finalnode_instantiation(instance):
+    assert isinstance(instance, activity_FinalNode)
 
-@given(instance=activity::MergeNode_strategy)
+@given(instance=activity_DecisionNode_strategy)
 @settings(max_examples=50)
-def test_activity::mergenode_instantiation(instance):
-    assert isinstance(instance, activity::MergeNode)
+def test_activity_decisionnode_instantiation(instance):
+    assert isinstance(instance, activity_DecisionNode)
 
-@given(instance=activity::DecisionNode_strategy)
+@given(instance=activity_JoinNode_strategy)
 @settings(max_examples=50)
-def test_activity::decisionnode_instantiation(instance):
-    assert isinstance(instance, activity::DecisionNode)
+def test_activity_joinnode_instantiation(instance):
+    assert isinstance(instance, activity_JoinNode)
 
-@given(instance=activity::InitialNode_strategy)
+@given(instance=activity_InitialNode_strategy)
 @settings(max_examples=50)
-def test_activity::initialnode_instantiation(instance):
-    assert isinstance(instance, activity::InitialNode)
+def test_activity_initialnode_instantiation(instance):
+    assert isinstance(instance, activity_InitialNode)
 
 @given(instance=ActivityNode_strategy)
 @settings(max_examples=50)
 def test_activitynode_instantiation(instance):
     assert isinstance(instance, ActivityNode)
 
-@given(instance=activity::ExecutableNode_strategy)
+@given(instance=activity_ExecutableNode_strategy)
 @settings(max_examples=50)
-def test_activity::executablenode_instantiation(instance):
-    assert isinstance(instance, activity::ExecutableNode)
+def test_activity_executablenode_instantiation(instance):
+    assert isinstance(instance, activity_ExecutableNode)
 
-@given(instance=activity::ObjectNode_strategy)
+@given(instance=activity_ObjectNode_strategy)
 @settings(max_examples=50)
-def test_activity::objectnode_instantiation(instance):
-    assert isinstance(instance, activity::ObjectNode)
+def test_activity_objectnode_instantiation(instance):
+    assert isinstance(instance, activity_ObjectNode)
 
-@given(instance=activity::ControlNode_strategy)
+@given(instance=activity_ControlNode_strategy)
 @settings(max_examples=50)
-def test_activity::controlnode_instantiation(instance):
-    assert isinstance(instance, activity::ControlNode)
+def test_activity_controlnode_instantiation(instance):
+    assert isinstance(instance, activity_ControlNode)
 
 @given(instance=ObjectNode_strategy)
 @settings(max_examples=50)
 def test_objectnode_instantiation(instance):
     assert isinstance(instance, ObjectNode)
 
-@given(instance=activity::CentralBufferNode_strategy)
+@given(instance=activity_CentralBufferNode_strategy)
 @settings(max_examples=50)
-def test_activity::centralbuffernode_instantiation(instance):
-    assert isinstance(instance, activity::CentralBufferNode)
+def test_activity_centralbuffernode_instantiation(instance):
+    assert isinstance(instance, activity_CentralBufferNode)
 
-@given(instance=activity::Object_strategy)
+@given(instance=activity_DataStoreNode_strategy)
 @settings(max_examples=50)
-def test_activity::object_instantiation(instance):
-    assert isinstance(instance, activity::Object)
+def test_activity_datastorenode_instantiation(instance):
+    assert isinstance(instance, activity_DataStoreNode)
 
-@given(instance=activity::DataStoreNode_strategy)
+@given(instance=activity_Object_strategy)
 @settings(max_examples=50)
-def test_activity::datastorenode_instantiation(instance):
-    assert isinstance(instance, activity::DataStoreNode)
+def test_activity_object_instantiation(instance):
+    assert isinstance(instance, activity_Object)
 
-@given(instance=activity::Pin_strategy)
+@given(instance=activity_Pin_strategy)
 @settings(max_examples=50)
-def test_activity::pin_instantiation(instance):
-    assert isinstance(instance, activity::Pin)
+def test_activity_pin_instantiation(instance):
+    assert isinstance(instance, activity_Pin)
 
 @given(instance=ActivityGroup_strategy)
 @settings(max_examples=50)
@@ -1022,86 +1022,74 @@ def test_namedelement_instantiation(instance):
 def test_activity_instantiation(instance):
     assert isinstance(instance, Activity)
 
-@given(instance=activity::ActivityGroup_strategy)
+@given(instance=activity_ActivityGroup_strategy)
 @settings(max_examples=50)
-def test_activity::activitygroup_instantiation(instance):
-    assert isinstance(instance, activity::ActivityGroup)
-
-@given(instance=activity::ActivityGroup_strategy)
-def test_activity::activitygroup_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_activity_activitygroup_instantiation(instance):
+    assert isinstance(instance, activity_ActivityGroup)
 
 
-@given(instance=activity::ActivityGroup_strategy)
-def test_activity::activitygroup_name_setter(instance):
+
+@given(instance=activity_ActivityGroup_strategy)
+def test_activity_activitygroup_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=activity::ActivityPartition_strategy)
+@given(instance=activity_ActivityPartition_strategy)
 @settings(max_examples=50)
-def test_activity::activitypartition_instantiation(instance):
-    assert isinstance(instance, activity::ActivityPartition)
+def test_activity_activitypartition_instantiation(instance):
+    assert isinstance(instance, activity_ActivityPartition)
 
-@given(instance=activity::ActivityParameterNode_strategy)
+@given(instance=activity_ActivityParameterNode_strategy)
 @settings(max_examples=50)
-def test_activity::activityparameternode_instantiation(instance):
-    assert isinstance(instance, activity::ActivityParameterNode)
-
-@given(instance=activity::ActivityParameterNode_strategy)
-def test_activity::activityparameternode_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_activity_activityparameternode_instantiation(instance):
+    assert isinstance(instance, activity_ActivityParameterNode)
 
 
-@given(instance=activity::ActivityParameterNode_strategy)
-def test_activity::activityparameternode_name_setter(instance):
+
+@given(instance=activity_ActivityParameterNode_strategy)
+def test_activity_activityparameternode_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=activity::NamedElement_strategy)
+@given(instance=activity_NamedElement_strategy)
 @settings(max_examples=50)
-def test_activity::namedelement_instantiation(instance):
-    assert isinstance(instance, activity::NamedElement)
-
-@given(instance=activity::NamedElement_strategy)
-def test_activity::namedelement_qualifiedName_type(instance):
-    assert isinstance(instance.qualifiedName, str)
+def test_activity_namedelement_instantiation(instance):
+    assert isinstance(instance, activity_NamedElement)
 
 
-@given(instance=activity::NamedElement_strategy)
-def test_activity::namedelement_qualifiedName_setter(instance):
-    original = instance.qualifiedName
-    instance.qualifiedName = original
-    assert instance.qualifiedName == original
 
-@given(instance=activity::NamedElement_strategy)
-def test_activity::namedelement_Name_type(instance):
-    assert isinstance(instance.Name, str)
-
-
-@given(instance=activity::NamedElement_strategy)
-def test_activity::namedelement_Name_setter(instance):
+@given(instance=activity_NamedElement_strategy)
+def test_activity_namedelement_Name_setter(instance):
     original = instance.Name
     instance.Name = original
     assert instance.Name == original
 
-@given(instance=activity::InterruptibleActivityRegion_strategy)
-@settings(max_examples=50)
-def test_activity::interruptibleactivityregion_instantiation(instance):
-    assert isinstance(instance, activity::InterruptibleActivityRegion)
 
-@given(instance=activity::ActivityEdge_strategy)
-@settings(max_examples=50)
-def test_activity::activityedge_instantiation(instance):
-    assert isinstance(instance, activity::ActivityEdge)
 
-@given(instance=activity::Activity_strategy)
-@settings(max_examples=50)
-def test_activity::activity_instantiation(instance):
-    assert isinstance(instance, activity::Activity)
+@given(instance=activity_NamedElement_strategy)
+def test_activity_namedelement_qualifiedName_setter(instance):
+    original = instance.qualifiedName
+    instance.qualifiedName = original
+    assert instance.qualifiedName == original
 
-@given(instance=activity::ActivityNode_strategy)
+@given(instance=activity_InterruptibleActivityRegion_strategy)
 @settings(max_examples=50)
-def test_activity::activitynode_instantiation(instance):
-    assert isinstance(instance, activity::ActivityNode)
+def test_activity_interruptibleactivityregion_instantiation(instance):
+    assert isinstance(instance, activity_InterruptibleActivityRegion)
+
+@given(instance=activity_ActivityEdge_strategy)
+@settings(max_examples=50)
+def test_activity_activityedge_instantiation(instance):
+    assert isinstance(instance, activity_ActivityEdge)
+
+@given(instance=activity_Activity_strategy)
+@settings(max_examples=50)
+def test_activity_activity_instantiation(instance):
+    assert isinstance(instance, activity_Activity)
+
+@given(instance=activity_ActivityNode_strategy)
+@settings(max_examples=50)
+def test_activity_activitynode_instantiation(instance):
+    assert isinstance(instance, activity_ActivityNode)

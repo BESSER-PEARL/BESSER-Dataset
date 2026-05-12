@@ -3,25 +3,25 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    qVTcDataDependencyGraph::Graph,
-    qVTcDataDependencyGraph::Element,
+from python_code import (
+    qVTcDataDependencyGraph_Graph,
+    qVTcDataDependencyGraph_Element,
     Element,
-    qVTcDataDependencyGraph::Node,
-    qVTcDataDependencyGraph::Edge,
+    qVTcDataDependencyGraph_Node,
+    qVTcDataDependencyGraph_Edge,
     Edge,
-    qVTcDataDependencyGraph::ContainmentEdge,
-    qVTcDataDependencyGraph::ReferenceEdge,
-    qVTcDataDependencyGraph::DependencyEdge,
-    qVTcDataDependencyGraph::EObject,
+    qVTcDataDependencyGraph_ReferenceEdge,
+    qVTcDataDependencyGraph_ContainmentEdge,
+    qVTcDataDependencyGraph_DependencyEdge,
+    qVTcDataDependencyGraph_EObject,
     Node,
-    qVTcDataDependencyGraph::DataTypeNode,
-    qVTcDataDependencyGraph::MappingNode,
-    qVTcDataDependencyGraph::ClassNode,
-    Model,
+    qVTcDataDependencyGraph_DataTypeNode,
+    qVTcDataDependencyGraph_MappingNode,
+    qVTcDataDependencyGraph_ClassNode,
     DependencyDirection,
+    Model,
 )
 
 # =============================================================================
@@ -30,23 +30,23 @@ from classes import (
 
 
 
-def test_qvtcdatadependencygraph::graph_is_not_abstract():
-    assert not inspect.isabstract(qVTcDataDependencyGraph::Graph)
+def test_qvtcdatadependencygraph_graph_is_not_abstract():
+    assert not inspect.isabstract(qVTcDataDependencyGraph_Graph)
 
 
-def test_qvtcdatadependencygraph::graph_constructor_exists():
-    assert callable(qVTcDataDependencyGraph::Graph.__init__)
+def test_qvtcdatadependencygraph_graph_constructor_exists():
+    assert callable(qVTcDataDependencyGraph_Graph.__init__)
 
 
-def test_qvtcdatadependencygraph::graph_constructor_args():
-    sig = inspect.signature(qVTcDataDependencyGraph::Graph.__init__)
+def test_qvtcdatadependencygraph_graph_constructor_args():
+    sig = inspect.signature(qVTcDataDependencyGraph_Graph.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_qvtcdatadependencygraph::graph_has_name():
-    assert hasattr(qVTcDataDependencyGraph::Graph, "name")
+def test_qvtcdatadependencygraph_graph_has_name():
+    assert hasattr(qVTcDataDependencyGraph_Graph, "name")
     descriptor = None
-    for klass in qVTcDataDependencyGraph::Graph.__mro__:
+    for klass in qVTcDataDependencyGraph_Graph.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -54,16 +54,16 @@ def test_qvtcdatadependencygraph::graph_has_name():
 
 
 
-def test_qvtcdatadependencygraph::element_is_not_abstract():
-    assert not inspect.isabstract(qVTcDataDependencyGraph::Element)
+def test_qvtcdatadependencygraph_element_is_not_abstract():
+    assert not inspect.isabstract(qVTcDataDependencyGraph_Element)
 
 
-def test_qvtcdatadependencygraph::element_constructor_exists():
-    assert callable(qVTcDataDependencyGraph::Element.__init__)
+def test_qvtcdatadependencygraph_element_constructor_exists():
+    assert callable(qVTcDataDependencyGraph_Element.__init__)
 
 
-def test_qvtcdatadependencygraph::element_constructor_args():
-    sig = inspect.signature(qVTcDataDependencyGraph::Element.__init__)
+def test_qvtcdatadependencygraph_element_constructor_args():
+    sig = inspect.signature(qVTcDataDependencyGraph_Element.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -82,23 +82,23 @@ def test_element_constructor_args():
 
 
 
-def test_qvtcdatadependencygraph::node_is_not_abstract():
-    assert not inspect.isabstract(qVTcDataDependencyGraph::Node)
+def test_qvtcdatadependencygraph_node_is_not_abstract():
+    assert not inspect.isabstract(qVTcDataDependencyGraph_Node)
 
 
-def test_qvtcdatadependencygraph::node_constructor_exists():
-    assert callable(qVTcDataDependencyGraph::Node.__init__)
+def test_qvtcdatadependencygraph_node_constructor_exists():
+    assert callable(qVTcDataDependencyGraph_Node.__init__)
 
 
-def test_qvtcdatadependencygraph::node_constructor_args():
-    sig = inspect.signature(qVTcDataDependencyGraph::Node.__init__)
+def test_qvtcdatadependencygraph_node_constructor_args():
+    sig = inspect.signature(qVTcDataDependencyGraph_Node.__init__)
     params = list(sig.parameters.keys())
     assert "label" in params, "Missing parameter 'label'"
 
-def test_qvtcdatadependencygraph::node_has_label():
-    assert hasattr(qVTcDataDependencyGraph::Node, "label")
+def test_qvtcdatadependencygraph_node_has_label():
+    assert hasattr(qVTcDataDependencyGraph_Node, "label")
     descriptor = None
-    for klass in qVTcDataDependencyGraph::Node.__mro__:
+    for klass in qVTcDataDependencyGraph_Node.__mro__:
         if "label" in klass.__dict__:
             descriptor = klass.__dict__["label"]
             break
@@ -106,16 +106,16 @@ def test_qvtcdatadependencygraph::node_has_label():
 
 
 
-def test_qvtcdatadependencygraph::edge_is_not_abstract():
-    assert not inspect.isabstract(qVTcDataDependencyGraph::Edge)
+def test_qvtcdatadependencygraph_edge_is_not_abstract():
+    assert not inspect.isabstract(qVTcDataDependencyGraph_Edge)
 
 
-def test_qvtcdatadependencygraph::edge_constructor_exists():
-    assert callable(qVTcDataDependencyGraph::Edge.__init__)
+def test_qvtcdatadependencygraph_edge_constructor_exists():
+    assert callable(qVTcDataDependencyGraph_Edge.__init__)
 
 
-def test_qvtcdatadependencygraph::edge_constructor_args():
-    sig = inspect.signature(qVTcDataDependencyGraph::Edge.__init__)
+def test_qvtcdatadependencygraph_edge_constructor_args():
+    sig = inspect.signature(qVTcDataDependencyGraph_Edge.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -134,23 +134,37 @@ def test_edge_constructor_args():
 
 
 
-def test_qvtcdatadependencygraph::containmentedge_is_not_abstract():
-    assert not inspect.isabstract(qVTcDataDependencyGraph::ContainmentEdge)
+def test_qvtcdatadependencygraph_referenceedge_is_not_abstract():
+    assert not inspect.isabstract(qVTcDataDependencyGraph_ReferenceEdge)
 
 
-def test_qvtcdatadependencygraph::containmentedge_constructor_exists():
-    assert callable(qVTcDataDependencyGraph::ContainmentEdge.__init__)
+def test_qvtcdatadependencygraph_referenceedge_constructor_exists():
+    assert callable(qVTcDataDependencyGraph_ReferenceEdge.__init__)
 
 
-def test_qvtcdatadependencygraph::containmentedge_constructor_args():
-    sig = inspect.signature(qVTcDataDependencyGraph::ContainmentEdge.__init__)
+def test_qvtcdatadependencygraph_referenceedge_constructor_args():
+    sig = inspect.signature(qVTcDataDependencyGraph_ReferenceEdge.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_qvtcdatadependencygraph_containmentedge_is_not_abstract():
+    assert not inspect.isabstract(qVTcDataDependencyGraph_ContainmentEdge)
+
+
+def test_qvtcdatadependencygraph_containmentedge_constructor_exists():
+    assert callable(qVTcDataDependencyGraph_ContainmentEdge.__init__)
+
+
+def test_qvtcdatadependencygraph_containmentedge_constructor_args():
+    sig = inspect.signature(qVTcDataDependencyGraph_ContainmentEdge.__init__)
     params = list(sig.parameters.keys())
     assert "model" in params, "Missing parameter 'model'"
 
-def test_qvtcdatadependencygraph::containmentedge_has_model():
-    assert hasattr(qVTcDataDependencyGraph::ContainmentEdge, "model")
+def test_qvtcdatadependencygraph_containmentedge_has_model():
+    assert hasattr(qVTcDataDependencyGraph_ContainmentEdge, "model")
     descriptor = None
-    for klass in qVTcDataDependencyGraph::ContainmentEdge.__mro__:
+    for klass in qVTcDataDependencyGraph_ContainmentEdge.__mro__:
         if "model" in klass.__dict__:
             descriptor = klass.__dict__["model"]
             break
@@ -158,74 +172,60 @@ def test_qvtcdatadependencygraph::containmentedge_has_model():
 
 
 
-def test_qvtcdatadependencygraph::referenceedge_is_not_abstract():
-    assert not inspect.isabstract(qVTcDataDependencyGraph::ReferenceEdge)
+def test_qvtcdatadependencygraph_dependencyedge_is_not_abstract():
+    assert not inspect.isabstract(qVTcDataDependencyGraph_DependencyEdge)
 
 
-def test_qvtcdatadependencygraph::referenceedge_constructor_exists():
-    assert callable(qVTcDataDependencyGraph::ReferenceEdge.__init__)
+def test_qvtcdatadependencygraph_dependencyedge_constructor_exists():
+    assert callable(qVTcDataDependencyGraph_DependencyEdge.__init__)
 
 
-def test_qvtcdatadependencygraph::referenceedge_constructor_args():
-    sig = inspect.signature(qVTcDataDependencyGraph::ReferenceEdge.__init__)
+def test_qvtcdatadependencygraph_dependencyedge_constructor_args():
+    sig = inspect.signature(qVTcDataDependencyGraph_DependencyEdge.__init__)
     params = list(sig.parameters.keys())
-
-
-
-def test_qvtcdatadependencygraph::dependencyedge_is_not_abstract():
-    assert not inspect.isabstract(qVTcDataDependencyGraph::DependencyEdge)
-
-
-def test_qvtcdatadependencygraph::dependencyedge_constructor_exists():
-    assert callable(qVTcDataDependencyGraph::DependencyEdge.__init__)
-
-
-def test_qvtcdatadependencygraph::dependencyedge_constructor_args():
-    sig = inspect.signature(qVTcDataDependencyGraph::DependencyEdge.__init__)
-    params = list(sig.parameters.keys())
-    assert "direction" in params, "Missing parameter 'direction'"
-    assert "multiple" in params, "Missing parameter 'multiple'"
     assert "derived" in params, "Missing parameter 'derived'"
+    assert "multiple" in params, "Missing parameter 'multiple'"
+    assert "direction" in params, "Missing parameter 'direction'"
 
-def test_qvtcdatadependencygraph::dependencyedge_has_direction():
-    assert hasattr(qVTcDataDependencyGraph::DependencyEdge, "direction")
+def test_qvtcdatadependencygraph_dependencyedge_has_derived():
+    assert hasattr(qVTcDataDependencyGraph_DependencyEdge, "derived")
     descriptor = None
-    for klass in qVTcDataDependencyGraph::DependencyEdge.__mro__:
-        if "direction" in klass.__dict__:
-            descriptor = klass.__dict__["direction"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_qvtcdatadependencygraph::dependencyedge_has_multiple():
-    assert hasattr(qVTcDataDependencyGraph::DependencyEdge, "multiple")
-    descriptor = None
-    for klass in qVTcDataDependencyGraph::DependencyEdge.__mro__:
-        if "multiple" in klass.__dict__:
-            descriptor = klass.__dict__["multiple"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_qvtcdatadependencygraph::dependencyedge_has_derived():
-    assert hasattr(qVTcDataDependencyGraph::DependencyEdge, "derived")
-    descriptor = None
-    for klass in qVTcDataDependencyGraph::DependencyEdge.__mro__:
+    for klass in qVTcDataDependencyGraph_DependencyEdge.__mro__:
         if "derived" in klass.__dict__:
             descriptor = klass.__dict__["derived"]
             break
     assert isinstance(descriptor, property)
 
+def test_qvtcdatadependencygraph_dependencyedge_has_multiple():
+    assert hasattr(qVTcDataDependencyGraph_DependencyEdge, "multiple")
+    descriptor = None
+    for klass in qVTcDataDependencyGraph_DependencyEdge.__mro__:
+        if "multiple" in klass.__dict__:
+            descriptor = klass.__dict__["multiple"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_qvtcdatadependencygraph_dependencyedge_has_direction():
+    assert hasattr(qVTcDataDependencyGraph_DependencyEdge, "direction")
+    descriptor = None
+    for klass in qVTcDataDependencyGraph_DependencyEdge.__mro__:
+        if "direction" in klass.__dict__:
+            descriptor = klass.__dict__["direction"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_qvtcdatadependencygraph::eobject_is_not_abstract():
-    assert not inspect.isabstract(qVTcDataDependencyGraph::EObject)
+
+def test_qvtcdatadependencygraph_eobject_is_not_abstract():
+    assert not inspect.isabstract(qVTcDataDependencyGraph_EObject)
 
 
-def test_qvtcdatadependencygraph::eobject_constructor_exists():
-    assert callable(qVTcDataDependencyGraph::EObject.__init__)
+def test_qvtcdatadependencygraph_eobject_constructor_exists():
+    assert callable(qVTcDataDependencyGraph_EObject.__init__)
 
 
-def test_qvtcdatadependencygraph::eobject_constructor_args():
-    sig = inspect.signature(qVTcDataDependencyGraph::EObject.__init__)
+def test_qvtcdatadependencygraph_eobject_constructor_args():
+    sig = inspect.signature(qVTcDataDependencyGraph_EObject.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -244,81 +244,65 @@ def test_node_constructor_args():
 
 
 
-def test_qvtcdatadependencygraph::datatypenode_is_not_abstract():
-    assert not inspect.isabstract(qVTcDataDependencyGraph::DataTypeNode)
+def test_qvtcdatadependencygraph_datatypenode_is_not_abstract():
+    assert not inspect.isabstract(qVTcDataDependencyGraph_DataTypeNode)
 
 
-def test_qvtcdatadependencygraph::datatypenode_constructor_exists():
-    assert callable(qVTcDataDependencyGraph::DataTypeNode.__init__)
+def test_qvtcdatadependencygraph_datatypenode_constructor_exists():
+    assert callable(qVTcDataDependencyGraph_DataTypeNode.__init__)
 
 
-def test_qvtcdatadependencygraph::datatypenode_constructor_args():
-    sig = inspect.signature(qVTcDataDependencyGraph::DataTypeNode.__init__)
+def test_qvtcdatadependencygraph_datatypenode_constructor_args():
+    sig = inspect.signature(qVTcDataDependencyGraph_DataTypeNode.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_qvtcdatadependencygraph::mappingnode_is_not_abstract():
-    assert not inspect.isabstract(qVTcDataDependencyGraph::MappingNode)
+def test_qvtcdatadependencygraph_mappingnode_is_not_abstract():
+    assert not inspect.isabstract(qVTcDataDependencyGraph_MappingNode)
 
 
-def test_qvtcdatadependencygraph::mappingnode_constructor_exists():
-    assert callable(qVTcDataDependencyGraph::MappingNode.__init__)
+def test_qvtcdatadependencygraph_mappingnode_constructor_exists():
+    assert callable(qVTcDataDependencyGraph_MappingNode.__init__)
 
 
-def test_qvtcdatadependencygraph::mappingnode_constructor_args():
-    sig = inspect.signature(qVTcDataDependencyGraph::MappingNode.__init__)
+def test_qvtcdatadependencygraph_mappingnode_constructor_args():
+    sig = inspect.signature(qVTcDataDependencyGraph_MappingNode.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_qvtcdatadependencygraph::classnode_is_not_abstract():
-    assert not inspect.isabstract(qVTcDataDependencyGraph::ClassNode)
+def test_qvtcdatadependencygraph_classnode_is_not_abstract():
+    assert not inspect.isabstract(qVTcDataDependencyGraph_ClassNode)
 
 
-def test_qvtcdatadependencygraph::classnode_constructor_exists():
-    assert callable(qVTcDataDependencyGraph::ClassNode.__init__)
+def test_qvtcdatadependencygraph_classnode_constructor_exists():
+    assert callable(qVTcDataDependencyGraph_ClassNode.__init__)
 
 
-def test_qvtcdatadependencygraph::classnode_constructor_args():
-    sig = inspect.signature(qVTcDataDependencyGraph::ClassNode.__init__)
+def test_qvtcdatadependencygraph_classnode_constructor_args():
+    sig = inspect.signature(qVTcDataDependencyGraph_ClassNode.__init__)
     params = list(sig.parameters.keys())
     assert "model" in params, "Missing parameter 'model'"
     assert "superTypes" in params, "Missing parameter 'superTypes'"
 
-def test_qvtcdatadependencygraph::classnode_has_model():
-    assert hasattr(qVTcDataDependencyGraph::ClassNode, "model")
+def test_qvtcdatadependencygraph_classnode_has_model():
+    assert hasattr(qVTcDataDependencyGraph_ClassNode, "model")
     descriptor = None
-    for klass in qVTcDataDependencyGraph::ClassNode.__mro__:
+    for klass in qVTcDataDependencyGraph_ClassNode.__mro__:
         if "model" in klass.__dict__:
             descriptor = klass.__dict__["model"]
             break
     assert isinstance(descriptor, property)
 
-def test_qvtcdatadependencygraph::classnode_has_superTypes():
-    assert hasattr(qVTcDataDependencyGraph::ClassNode, "superTypes")
+def test_qvtcdatadependencygraph_classnode_has_superTypes():
+    assert hasattr(qVTcDataDependencyGraph_ClassNode, "superTypes")
     descriptor = None
-    for klass in qVTcDataDependencyGraph::ClassNode.__mro__:
+    for klass in qVTcDataDependencyGraph_ClassNode.__mro__:
         if "superTypes" in klass.__dict__:
             descriptor = klass.__dict__["superTypes"]
             break
     assert isinstance(descriptor, property)
-
-def test_model_exists():
-    # Check that the Enumeration exists
-    assert Model is not None
-
-def test_model_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in Model]
-    expected_literals = [
-        "middle",
-        "output",
-        "input",
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in Model"
 
 def test_dependencydirection_exists():
     # Check that the Enumeration exists
@@ -335,6 +319,22 @@ def test_dependencydirection_has_all_literals():
     for lit_name in expected_literals:
         assert lit_name in enum_literals, f"Literal '' missing in DependencyDirection"
 
+def test_model_exists():
+    # Check that the Enumeration exists
+    assert Model is not None
+
+def test_model_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in Model]
+    expected_literals = [
+        "output",
+        "middle",
+        "input",
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in Model"
+
 
 # =============================================================================
 # HYPOTHESIS STRATEGIES
@@ -347,219 +347,195 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-qVTcDataDependencyGraph::Graph_strategy = st.builds(
-    qVTcDataDependencyGraph::Graph,
+qVTcDataDependencyGraph_Graph_strategy = st.builds(
+    qVTcDataDependencyGraph_Graph,
     name=
         safe_text
 )
-qVTcDataDependencyGraph::Element_strategy = st.builds(
-    qVTcDataDependencyGraph::Element,
+qVTcDataDependencyGraph_Element_strategy = st.builds(
+    qVTcDataDependencyGraph_Element,
 )
 Element_strategy = st.builds(
     Element,
 )
-qVTcDataDependencyGraph::Node_strategy = st.builds(
-    qVTcDataDependencyGraph::Node,
+qVTcDataDependencyGraph_Node_strategy = st.builds(
+    qVTcDataDependencyGraph_Node,
     label=
         safe_text
 )
-qVTcDataDependencyGraph::Edge_strategy = st.builds(
-    qVTcDataDependencyGraph::Edge,
+qVTcDataDependencyGraph_Edge_strategy = st.builds(
+    qVTcDataDependencyGraph_Edge,
 )
 Edge_strategy = st.builds(
     Edge,
 )
-qVTcDataDependencyGraph::ContainmentEdge_strategy = st.builds(
-    qVTcDataDependencyGraph::ContainmentEdge,
+qVTcDataDependencyGraph_ReferenceEdge_strategy = st.builds(
+    qVTcDataDependencyGraph_ReferenceEdge,
+)
+qVTcDataDependencyGraph_ContainmentEdge_strategy = st.builds(
+    qVTcDataDependencyGraph_ContainmentEdge,
     model=
         safe_text
 )
-qVTcDataDependencyGraph::ReferenceEdge_strategy = st.builds(
-    qVTcDataDependencyGraph::ReferenceEdge,
-)
-qVTcDataDependencyGraph::DependencyEdge_strategy = st.builds(
-    qVTcDataDependencyGraph::DependencyEdge,
-    direction=
-        safe_text,
+qVTcDataDependencyGraph_DependencyEdge_strategy = st.builds(
+    qVTcDataDependencyGraph_DependencyEdge,
+    derived=
+        st.booleans(),
     multiple=
         st.booleans(),
-    derived=
-        st.booleans()
+    direction=
+        safe_text
 )
-qVTcDataDependencyGraph::EObject_strategy = st.builds(
-    qVTcDataDependencyGraph::EObject,
+qVTcDataDependencyGraph_EObject_strategy = st.builds(
+    qVTcDataDependencyGraph_EObject,
 )
 Node_strategy = st.builds(
     Node,
 )
-qVTcDataDependencyGraph::DataTypeNode_strategy = st.builds(
-    qVTcDataDependencyGraph::DataTypeNode,
+qVTcDataDependencyGraph_DataTypeNode_strategy = st.builds(
+    qVTcDataDependencyGraph_DataTypeNode,
 )
-qVTcDataDependencyGraph::MappingNode_strategy = st.builds(
-    qVTcDataDependencyGraph::MappingNode,
+qVTcDataDependencyGraph_MappingNode_strategy = st.builds(
+    qVTcDataDependencyGraph_MappingNode,
 )
-qVTcDataDependencyGraph::ClassNode_strategy = st.builds(
-    qVTcDataDependencyGraph::ClassNode,
+qVTcDataDependencyGraph_ClassNode_strategy = st.builds(
+    qVTcDataDependencyGraph_ClassNode,
     model=
         safe_text,
     superTypes=
         safe_text
 )
 
-@given(instance=qVTcDataDependencyGraph::Graph_strategy)
+@given(instance=qVTcDataDependencyGraph_Graph_strategy)
 @settings(max_examples=50)
-def test_qvtcdatadependencygraph::graph_instantiation(instance):
-    assert isinstance(instance, qVTcDataDependencyGraph::Graph)
-
-@given(instance=qVTcDataDependencyGraph::Graph_strategy)
-def test_qvtcdatadependencygraph::graph_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_qvtcdatadependencygraph_graph_instantiation(instance):
+    assert isinstance(instance, qVTcDataDependencyGraph_Graph)
 
 
-@given(instance=qVTcDataDependencyGraph::Graph_strategy)
-def test_qvtcdatadependencygraph::graph_name_setter(instance):
+
+@given(instance=qVTcDataDependencyGraph_Graph_strategy)
+def test_qvtcdatadependencygraph_graph_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=qVTcDataDependencyGraph::Element_strategy)
+@given(instance=qVTcDataDependencyGraph_Element_strategy)
 @settings(max_examples=50)
-def test_qvtcdatadependencygraph::element_instantiation(instance):
-    assert isinstance(instance, qVTcDataDependencyGraph::Element)
+def test_qvtcdatadependencygraph_element_instantiation(instance):
+    assert isinstance(instance, qVTcDataDependencyGraph_Element)
 
 @given(instance=Element_strategy)
 @settings(max_examples=50)
 def test_element_instantiation(instance):
     assert isinstance(instance, Element)
 
-@given(instance=qVTcDataDependencyGraph::Node_strategy)
+@given(instance=qVTcDataDependencyGraph_Node_strategy)
 @settings(max_examples=50)
-def test_qvtcdatadependencygraph::node_instantiation(instance):
-    assert isinstance(instance, qVTcDataDependencyGraph::Node)
-
-@given(instance=qVTcDataDependencyGraph::Node_strategy)
-def test_qvtcdatadependencygraph::node_label_type(instance):
-    assert isinstance(instance.label, str)
+def test_qvtcdatadependencygraph_node_instantiation(instance):
+    assert isinstance(instance, qVTcDataDependencyGraph_Node)
 
 
-@given(instance=qVTcDataDependencyGraph::Node_strategy)
-def test_qvtcdatadependencygraph::node_label_setter(instance):
+
+@given(instance=qVTcDataDependencyGraph_Node_strategy)
+def test_qvtcdatadependencygraph_node_label_setter(instance):
     original = instance.label
     instance.label = original
     assert instance.label == original
 
-@given(instance=qVTcDataDependencyGraph::Edge_strategy)
+@given(instance=qVTcDataDependencyGraph_Edge_strategy)
 @settings(max_examples=50)
-def test_qvtcdatadependencygraph::edge_instantiation(instance):
-    assert isinstance(instance, qVTcDataDependencyGraph::Edge)
+def test_qvtcdatadependencygraph_edge_instantiation(instance):
+    assert isinstance(instance, qVTcDataDependencyGraph_Edge)
 
 @given(instance=Edge_strategy)
 @settings(max_examples=50)
 def test_edge_instantiation(instance):
     assert isinstance(instance, Edge)
 
-@given(instance=qVTcDataDependencyGraph::ContainmentEdge_strategy)
+@given(instance=qVTcDataDependencyGraph_ReferenceEdge_strategy)
 @settings(max_examples=50)
-def test_qvtcdatadependencygraph::containmentedge_instantiation(instance):
-    assert isinstance(instance, qVTcDataDependencyGraph::ContainmentEdge)
+def test_qvtcdatadependencygraph_referenceedge_instantiation(instance):
+    assert isinstance(instance, qVTcDataDependencyGraph_ReferenceEdge)
 
-@given(instance=qVTcDataDependencyGraph::ContainmentEdge_strategy)
-def test_qvtcdatadependencygraph::containmentedge_model_type(instance):
-    assert isinstance(instance.model, str)
+@given(instance=qVTcDataDependencyGraph_ContainmentEdge_strategy)
+@settings(max_examples=50)
+def test_qvtcdatadependencygraph_containmentedge_instantiation(instance):
+    assert isinstance(instance, qVTcDataDependencyGraph_ContainmentEdge)
 
 
-@given(instance=qVTcDataDependencyGraph::ContainmentEdge_strategy)
-def test_qvtcdatadependencygraph::containmentedge_model_setter(instance):
+
+@given(instance=qVTcDataDependencyGraph_ContainmentEdge_strategy)
+def test_qvtcdatadependencygraph_containmentedge_model_setter(instance):
     original = instance.model
     instance.model = original
     assert instance.model == original
 
-@given(instance=qVTcDataDependencyGraph::ReferenceEdge_strategy)
+@given(instance=qVTcDataDependencyGraph_DependencyEdge_strategy)
 @settings(max_examples=50)
-def test_qvtcdatadependencygraph::referenceedge_instantiation(instance):
-    assert isinstance(instance, qVTcDataDependencyGraph::ReferenceEdge)
-
-@given(instance=qVTcDataDependencyGraph::DependencyEdge_strategy)
-@settings(max_examples=50)
-def test_qvtcdatadependencygraph::dependencyedge_instantiation(instance):
-    assert isinstance(instance, qVTcDataDependencyGraph::DependencyEdge)
-
-@given(instance=qVTcDataDependencyGraph::DependencyEdge_strategy)
-def test_qvtcdatadependencygraph::dependencyedge_direction_type(instance):
-    assert isinstance(instance.direction, str)
+def test_qvtcdatadependencygraph_dependencyedge_instantiation(instance):
+    assert isinstance(instance, qVTcDataDependencyGraph_DependencyEdge)
 
 
-@given(instance=qVTcDataDependencyGraph::DependencyEdge_strategy)
-def test_qvtcdatadependencygraph::dependencyedge_direction_setter(instance):
-    original = instance.direction
-    instance.direction = original
-    assert instance.direction == original
 
-@given(instance=qVTcDataDependencyGraph::DependencyEdge_strategy)
-def test_qvtcdatadependencygraph::dependencyedge_multiple_type(instance):
-    assert isinstance(instance.multiple, bool)
-
-
-@given(instance=qVTcDataDependencyGraph::DependencyEdge_strategy)
-def test_qvtcdatadependencygraph::dependencyedge_multiple_setter(instance):
-    original = instance.multiple
-    instance.multiple = original
-    assert instance.multiple == original
-
-@given(instance=qVTcDataDependencyGraph::DependencyEdge_strategy)
-def test_qvtcdatadependencygraph::dependencyedge_derived_type(instance):
-    assert isinstance(instance.derived, bool)
-
-
-@given(instance=qVTcDataDependencyGraph::DependencyEdge_strategy)
-def test_qvtcdatadependencygraph::dependencyedge_derived_setter(instance):
+@given(instance=qVTcDataDependencyGraph_DependencyEdge_strategy)
+def test_qvtcdatadependencygraph_dependencyedge_derived_setter(instance):
     original = instance.derived
     instance.derived = original
     assert instance.derived == original
 
-@given(instance=qVTcDataDependencyGraph::EObject_strategy)
+
+
+@given(instance=qVTcDataDependencyGraph_DependencyEdge_strategy)
+def test_qvtcdatadependencygraph_dependencyedge_multiple_setter(instance):
+    original = instance.multiple
+    instance.multiple = original
+    assert instance.multiple == original
+
+
+
+@given(instance=qVTcDataDependencyGraph_DependencyEdge_strategy)
+def test_qvtcdatadependencygraph_dependencyedge_direction_setter(instance):
+    original = instance.direction
+    instance.direction = original
+    assert instance.direction == original
+
+@given(instance=qVTcDataDependencyGraph_EObject_strategy)
 @settings(max_examples=50)
-def test_qvtcdatadependencygraph::eobject_instantiation(instance):
-    assert isinstance(instance, qVTcDataDependencyGraph::EObject)
+def test_qvtcdatadependencygraph_eobject_instantiation(instance):
+    assert isinstance(instance, qVTcDataDependencyGraph_EObject)
 
 @given(instance=Node_strategy)
 @settings(max_examples=50)
 def test_node_instantiation(instance):
     assert isinstance(instance, Node)
 
-@given(instance=qVTcDataDependencyGraph::DataTypeNode_strategy)
+@given(instance=qVTcDataDependencyGraph_DataTypeNode_strategy)
 @settings(max_examples=50)
-def test_qvtcdatadependencygraph::datatypenode_instantiation(instance):
-    assert isinstance(instance, qVTcDataDependencyGraph::DataTypeNode)
+def test_qvtcdatadependencygraph_datatypenode_instantiation(instance):
+    assert isinstance(instance, qVTcDataDependencyGraph_DataTypeNode)
 
-@given(instance=qVTcDataDependencyGraph::MappingNode_strategy)
+@given(instance=qVTcDataDependencyGraph_MappingNode_strategy)
 @settings(max_examples=50)
-def test_qvtcdatadependencygraph::mappingnode_instantiation(instance):
-    assert isinstance(instance, qVTcDataDependencyGraph::MappingNode)
+def test_qvtcdatadependencygraph_mappingnode_instantiation(instance):
+    assert isinstance(instance, qVTcDataDependencyGraph_MappingNode)
 
-@given(instance=qVTcDataDependencyGraph::ClassNode_strategy)
+@given(instance=qVTcDataDependencyGraph_ClassNode_strategy)
 @settings(max_examples=50)
-def test_qvtcdatadependencygraph::classnode_instantiation(instance):
-    assert isinstance(instance, qVTcDataDependencyGraph::ClassNode)
-
-@given(instance=qVTcDataDependencyGraph::ClassNode_strategy)
-def test_qvtcdatadependencygraph::classnode_model_type(instance):
-    assert isinstance(instance.model, str)
+def test_qvtcdatadependencygraph_classnode_instantiation(instance):
+    assert isinstance(instance, qVTcDataDependencyGraph_ClassNode)
 
 
-@given(instance=qVTcDataDependencyGraph::ClassNode_strategy)
-def test_qvtcdatadependencygraph::classnode_model_setter(instance):
+
+@given(instance=qVTcDataDependencyGraph_ClassNode_strategy)
+def test_qvtcdatadependencygraph_classnode_model_setter(instance):
     original = instance.model
     instance.model = original
     assert instance.model == original
 
-@given(instance=qVTcDataDependencyGraph::ClassNode_strategy)
-def test_qvtcdatadependencygraph::classnode_superTypes_type(instance):
-    assert isinstance(instance.superTypes, str)
 
 
-@given(instance=qVTcDataDependencyGraph::ClassNode_strategy)
-def test_qvtcdatadependencygraph::classnode_superTypes_setter(instance):
+@given(instance=qVTcDataDependencyGraph_ClassNode_strategy)
+def test_qvtcdatadependencygraph_classnode_superTypes_setter(instance):
     original = instance.superTypes
     instance.superTypes = original
     assert instance.superTypes == original

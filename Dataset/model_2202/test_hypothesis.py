@@ -3,11 +3,11 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    tree::Node,
-    tree::Tree,
+from python_code import (
+    tree_Node,
+    tree_Tree,
 )
 
 # =============================================================================
@@ -16,23 +16,23 @@ from classes import (
 
 
 
-def test_tree::node_is_not_abstract():
-    assert not inspect.isabstract(tree::Node)
+def test_tree_node_is_not_abstract():
+    assert not inspect.isabstract(tree_Node)
 
 
-def test_tree::node_constructor_exists():
-    assert callable(tree::Node.__init__)
+def test_tree_node_constructor_exists():
+    assert callable(tree_Node.__init__)
 
 
-def test_tree::node_constructor_args():
-    sig = inspect.signature(tree::Node.__init__)
+def test_tree_node_constructor_args():
+    sig = inspect.signature(tree_Node.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_tree::node_has_name():
-    assert hasattr(tree::Node, "name")
+def test_tree_node_has_name():
+    assert hasattr(tree_Node, "name")
     descriptor = None
-    for klass in tree::Node.__mro__:
+    for klass in tree_Node.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -40,16 +40,16 @@ def test_tree::node_has_name():
 
 
 
-def test_tree::tree_is_not_abstract():
-    assert not inspect.isabstract(tree::Tree)
+def test_tree_tree_is_not_abstract():
+    assert not inspect.isabstract(tree_Tree)
 
 
-def test_tree::tree_constructor_exists():
-    assert callable(tree::Tree.__init__)
+def test_tree_tree_constructor_exists():
+    assert callable(tree_Tree.__init__)
 
 
-def test_tree::tree_constructor_args():
-    sig = inspect.signature(tree::Tree.__init__)
+def test_tree_tree_constructor_args():
+    sig = inspect.signature(tree_Tree.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -64,32 +64,29 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-tree::Node_strategy = st.builds(
-    tree::Node,
+tree_Node_strategy = st.builds(
+    tree_Node,
     name=
         safe_text
 )
-tree::Tree_strategy = st.builds(
-    tree::Tree,
+tree_Tree_strategy = st.builds(
+    tree_Tree,
 )
 
-@given(instance=tree::Node_strategy)
+@given(instance=tree_Node_strategy)
 @settings(max_examples=50)
-def test_tree::node_instantiation(instance):
-    assert isinstance(instance, tree::Node)
-
-@given(instance=tree::Node_strategy)
-def test_tree::node_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_tree_node_instantiation(instance):
+    assert isinstance(instance, tree_Node)
 
 
-@given(instance=tree::Node_strategy)
-def test_tree::node_name_setter(instance):
+
+@given(instance=tree_Node_strategy)
+def test_tree_node_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=tree::Tree_strategy)
+@given(instance=tree_Tree_strategy)
 @settings(max_examples=50)
-def test_tree::tree_instantiation(instance):
-    assert isinstance(instance, tree::Tree)
+def test_tree_tree_instantiation(instance):
+    assert isinstance(instance, tree_Tree)

@@ -3,7 +3,7 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
 from python_code import (
     TPagarPorEdificios1,
@@ -218,17 +218,8 @@ def test_tarjeta1_constructor_exists():
 def test_tarjeta1_constructor_args():
     sig = inspect.signature(Tarjeta1.__init__)
     params = list(sig.parameters.keys())
-    assert "tipoDeCarta" in params, "Missing parameter 'tipoDeCarta'"
     assert "descripcion" in params, "Missing parameter 'descripcion'"
-
-def test_tarjeta1_has_tipoDeCarta():
-    assert hasattr(Tarjeta1, "tipoDeCarta")
-    descriptor = None
-    for klass in Tarjeta1.__mro__:
-        if "tipoDeCarta" in klass.__dict__:
-            descriptor = klass.__dict__["tipoDeCarta"]
-            break
-    assert isinstance(descriptor, property)
+    assert "tipoDeCarta" in params, "Missing parameter 'tipoDeCarta'"
 
 def test_tarjeta1_has_descripcion():
     assert hasattr(Tarjeta1, "descripcion")
@@ -236,6 +227,15 @@ def test_tarjeta1_has_descripcion():
     for klass in Tarjeta1.__mro__:
         if "descripcion" in klass.__dict__:
             descriptor = klass.__dict__["descripcion"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_tarjeta1_has_tipoDeCarta():
+    assert hasattr(Tarjeta1, "tipoDeCarta")
+    descriptor = None
+    for klass in Tarjeta1.__mro__:
+        if "tipoDeCarta" in klass.__dict__:
+            descriptor = klass.__dict__["tipoDeCarta"]
             break
     assert isinstance(descriptor, property)
 
@@ -674,9 +674,9 @@ TPagarBanco1_strategy = st.builds(
 )
 Tarjeta1_strategy = st.builds(
     Tarjeta1,
-    tipoDeCarta=
-        safe_text,
     descripcion=
+        safe_text,
+    tipoDeCarta=
         safe_text
 )
 TSalirCarcel_strategy = st.builds(
@@ -773,9 +773,6 @@ def test_tpagarporedificios1_instantiation(instance):
 def test_tpagarjugadores1_instantiation(instance):
     assert isinstance(instance, TPagarJugadores1)
 
-@given(instance=TPagarJugadores1_strategy)
-def test_tpagarjugadores1_monto_type(instance):
-    assert isinstance(instance.monto, int)
 
 
 @given(instance=TPagarJugadores1_strategy)
@@ -809,9 +806,6 @@ def test_tavanzar1_instantiation(instance):
 def test_tcobrarjugadores1_instantiation(instance):
     assert isinstance(instance, TCobrarJugadores1)
 
-@given(instance=TCobrarJugadores1_strategy)
-def test_tcobrarjugadores1_monto_type(instance):
-    assert isinstance(instance.monto, int)
 
 
 @given(instance=TCobrarJugadores1_strategy)
@@ -830,9 +824,6 @@ def test_tpagarporedificios_instantiation(instance):
 def test_tpagarbanco1_instantiation(instance):
     assert isinstance(instance, TPagarBanco1)
 
-@given(instance=TPagarBanco1_strategy)
-def test_tpagarbanco1_monto_type(instance):
-    assert isinstance(instance.monto, int)
 
 
 @given(instance=TPagarBanco1_strategy)
@@ -846,20 +837,6 @@ def test_tpagarbanco1_monto_setter(instance):
 def test_tarjeta1_instantiation(instance):
     assert isinstance(instance, Tarjeta1)
 
-@given(instance=Tarjeta1_strategy)
-def test_tarjeta1_tipoDeCarta_type(instance):
-    assert isinstance(instance.tipoDeCarta, str)
-
-
-@given(instance=Tarjeta1_strategy)
-def test_tarjeta1_tipoDeCarta_setter(instance):
-    original = instance.tipoDeCarta
-    instance.tipoDeCarta = original
-    assert instance.tipoDeCarta == original
-
-@given(instance=Tarjeta1_strategy)
-def test_tarjeta1_descripcion_type(instance):
-    assert isinstance(instance.descripcion, str)
 
 
 @given(instance=Tarjeta1_strategy)
@@ -867,6 +844,14 @@ def test_tarjeta1_descripcion_setter(instance):
     original = instance.descripcion
     instance.descripcion = original
     assert instance.descripcion == original
+
+
+
+@given(instance=Tarjeta1_strategy)
+def test_tarjeta1_tipoDeCarta_setter(instance):
+    original = instance.tipoDeCarta
+    instance.tipoDeCarta = original
+    assert instance.tipoDeCarta == original
 
 @given(instance=TSalirCarcel_strategy)
 @settings(max_examples=50)
@@ -968,9 +953,6 @@ def test_tiracarcel_instantiation(instance):
 def test_monopoly1_instantiation(instance):
     assert isinstance(instance, Monopoly1)
 
-@given(instance=Monopoly1_strategy)
-def test_monopoly1_attribute_type(instance):
-    assert isinstance(instance.attribute, str)
 
 
 @given(instance=Monopoly1_strategy)

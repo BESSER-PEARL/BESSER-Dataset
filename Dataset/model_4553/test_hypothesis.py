@@ -3,15 +3,15 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     Command,
-    logo::WhileNoObstacle,
-    logo::Turn,
-    logo::Move,
-    logo::Command,
-    logo::ProgramUnit,
+    logo_Turn,
+    logo_WhileNoObstacle,
+    logo_Move,
+    logo_Command,
+    logo_ProgramUnit,
 )
 
 # =============================================================================
@@ -34,47 +34,23 @@ def test_command_constructor_args():
 
 
 
-def test_logo::whilenoobstacle_is_not_abstract():
-    assert not inspect.isabstract(logo::WhileNoObstacle)
+def test_logo_turn_is_not_abstract():
+    assert not inspect.isabstract(logo_Turn)
 
 
-def test_logo::whilenoobstacle_constructor_exists():
-    assert callable(logo::WhileNoObstacle.__init__)
+def test_logo_turn_constructor_exists():
+    assert callable(logo_Turn.__init__)
 
 
-def test_logo::whilenoobstacle_constructor_args():
-    sig = inspect.signature(logo::WhileNoObstacle.__init__)
-    params = list(sig.parameters.keys())
-    assert "distance" in params, "Missing parameter 'distance'"
-
-def test_logo::whilenoobstacle_has_distance():
-    assert hasattr(logo::WhileNoObstacle, "distance")
-    descriptor = None
-    for klass in logo::WhileNoObstacle.__mro__:
-        if "distance" in klass.__dict__:
-            descriptor = klass.__dict__["distance"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_logo::turn_is_not_abstract():
-    assert not inspect.isabstract(logo::Turn)
-
-
-def test_logo::turn_constructor_exists():
-    assert callable(logo::Turn.__init__)
-
-
-def test_logo::turn_constructor_args():
-    sig = inspect.signature(logo::Turn.__init__)
+def test_logo_turn_constructor_args():
+    sig = inspect.signature(logo_Turn.__init__)
     params = list(sig.parameters.keys())
     assert "angle" in params, "Missing parameter 'angle'"
 
-def test_logo::turn_has_angle():
-    assert hasattr(logo::Turn, "angle")
+def test_logo_turn_has_angle():
+    assert hasattr(logo_Turn, "angle")
     descriptor = None
-    for klass in logo::Turn.__mro__:
+    for klass in logo_Turn.__mro__:
         if "angle" in klass.__dict__:
             descriptor = klass.__dict__["angle"]
             break
@@ -82,23 +58,23 @@ def test_logo::turn_has_angle():
 
 
 
-def test_logo::move_is_not_abstract():
-    assert not inspect.isabstract(logo::Move)
+def test_logo_whilenoobstacle_is_not_abstract():
+    assert not inspect.isabstract(logo_WhileNoObstacle)
 
 
-def test_logo::move_constructor_exists():
-    assert callable(logo::Move.__init__)
+def test_logo_whilenoobstacle_constructor_exists():
+    assert callable(logo_WhileNoObstacle.__init__)
 
 
-def test_logo::move_constructor_args():
-    sig = inspect.signature(logo::Move.__init__)
+def test_logo_whilenoobstacle_constructor_args():
+    sig = inspect.signature(logo_WhileNoObstacle.__init__)
     params = list(sig.parameters.keys())
     assert "distance" in params, "Missing parameter 'distance'"
 
-def test_logo::move_has_distance():
-    assert hasattr(logo::Move, "distance")
+def test_logo_whilenoobstacle_has_distance():
+    assert hasattr(logo_WhileNoObstacle, "distance")
     descriptor = None
-    for klass in logo::Move.__mro__:
+    for klass in logo_WhileNoObstacle.__mro__:
         if "distance" in klass.__dict__:
             descriptor = klass.__dict__["distance"]
             break
@@ -106,30 +82,54 @@ def test_logo::move_has_distance():
 
 
 
-def test_logo::command_is_not_abstract():
-    assert not inspect.isabstract(logo::Command)
+def test_logo_move_is_not_abstract():
+    assert not inspect.isabstract(logo_Move)
 
 
-def test_logo::command_constructor_exists():
-    assert callable(logo::Command.__init__)
+def test_logo_move_constructor_exists():
+    assert callable(logo_Move.__init__)
 
 
-def test_logo::command_constructor_args():
-    sig = inspect.signature(logo::Command.__init__)
+def test_logo_move_constructor_args():
+    sig = inspect.signature(logo_Move.__init__)
+    params = list(sig.parameters.keys())
+    assert "distance" in params, "Missing parameter 'distance'"
+
+def test_logo_move_has_distance():
+    assert hasattr(logo_Move, "distance")
+    descriptor = None
+    for klass in logo_Move.__mro__:
+        if "distance" in klass.__dict__:
+            descriptor = klass.__dict__["distance"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_logo_command_is_not_abstract():
+    assert not inspect.isabstract(logo_Command)
+
+
+def test_logo_command_constructor_exists():
+    assert callable(logo_Command.__init__)
+
+
+def test_logo_command_constructor_args():
+    sig = inspect.signature(logo_Command.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_logo::programunit_is_not_abstract():
-    assert not inspect.isabstract(logo::ProgramUnit)
+def test_logo_programunit_is_not_abstract():
+    assert not inspect.isabstract(logo_ProgramUnit)
 
 
-def test_logo::programunit_constructor_exists():
-    assert callable(logo::ProgramUnit.__init__)
+def test_logo_programunit_constructor_exists():
+    assert callable(logo_ProgramUnit.__init__)
 
 
-def test_logo::programunit_constructor_args():
-    sig = inspect.signature(logo::ProgramUnit.__init__)
+def test_logo_programunit_constructor_args():
+    sig = inspect.signature(logo_ProgramUnit.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -147,26 +147,26 @@ safe_text = st.text(
 Command_strategy = st.builds(
     Command,
 )
-logo::WhileNoObstacle_strategy = st.builds(
-    logo::WhileNoObstacle,
-    distance=
-        st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False)
-)
-logo::Turn_strategy = st.builds(
-    logo::Turn,
+logo_Turn_strategy = st.builds(
+    logo_Turn,
     angle=
         st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False)
 )
-logo::Move_strategy = st.builds(
-    logo::Move,
+logo_WhileNoObstacle_strategy = st.builds(
+    logo_WhileNoObstacle,
     distance=
         st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False)
 )
-logo::Command_strategy = st.builds(
-    logo::Command,
+logo_Move_strategy = st.builds(
+    logo_Move,
+    distance=
+        st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False)
 )
-logo::ProgramUnit_strategy = st.builds(
-    logo::ProgramUnit,
+logo_Command_strategy = st.builds(
+    logo_Command,
+)
+logo_ProgramUnit_strategy = st.builds(
+    logo_ProgramUnit,
 )
 
 @given(instance=Command_strategy)
@@ -174,60 +174,51 @@ logo::ProgramUnit_strategy = st.builds(
 def test_command_instantiation(instance):
     assert isinstance(instance, Command)
 
-@given(instance=logo::WhileNoObstacle_strategy)
+@given(instance=logo_Turn_strategy)
 @settings(max_examples=50)
-def test_logo::whilenoobstacle_instantiation(instance):
-    assert isinstance(instance, logo::WhileNoObstacle)
-
-@given(instance=logo::WhileNoObstacle_strategy)
-def test_logo::whilenoobstacle_distance_type(instance):
-    assert isinstance(instance.distance, float)
+def test_logo_turn_instantiation(instance):
+    assert isinstance(instance, logo_Turn)
 
 
-@given(instance=logo::WhileNoObstacle_strategy)
-def test_logo::whilenoobstacle_distance_setter(instance):
-    original = instance.distance
-    instance.distance = original
-    assert instance.distance == original
 
-@given(instance=logo::Turn_strategy)
-@settings(max_examples=50)
-def test_logo::turn_instantiation(instance):
-    assert isinstance(instance, logo::Turn)
-
-@given(instance=logo::Turn_strategy)
-def test_logo::turn_angle_type(instance):
-    assert isinstance(instance.angle, float)
-
-
-@given(instance=logo::Turn_strategy)
-def test_logo::turn_angle_setter(instance):
+@given(instance=logo_Turn_strategy)
+def test_logo_turn_angle_setter(instance):
     original = instance.angle
     instance.angle = original
     assert instance.angle == original
 
-@given(instance=logo::Move_strategy)
+@given(instance=logo_WhileNoObstacle_strategy)
 @settings(max_examples=50)
-def test_logo::move_instantiation(instance):
-    assert isinstance(instance, logo::Move)
-
-@given(instance=logo::Move_strategy)
-def test_logo::move_distance_type(instance):
-    assert isinstance(instance.distance, float)
+def test_logo_whilenoobstacle_instantiation(instance):
+    assert isinstance(instance, logo_WhileNoObstacle)
 
 
-@given(instance=logo::Move_strategy)
-def test_logo::move_distance_setter(instance):
+
+@given(instance=logo_WhileNoObstacle_strategy)
+def test_logo_whilenoobstacle_distance_setter(instance):
     original = instance.distance
     instance.distance = original
     assert instance.distance == original
 
-@given(instance=logo::Command_strategy)
+@given(instance=logo_Move_strategy)
 @settings(max_examples=50)
-def test_logo::command_instantiation(instance):
-    assert isinstance(instance, logo::Command)
+def test_logo_move_instantiation(instance):
+    assert isinstance(instance, logo_Move)
 
-@given(instance=logo::ProgramUnit_strategy)
+
+
+@given(instance=logo_Move_strategy)
+def test_logo_move_distance_setter(instance):
+    original = instance.distance
+    instance.distance = original
+    assert instance.distance == original
+
+@given(instance=logo_Command_strategy)
 @settings(max_examples=50)
-def test_logo::programunit_instantiation(instance):
-    assert isinstance(instance, logo::ProgramUnit)
+def test_logo_command_instantiation(instance):
+    assert isinstance(instance, logo_Command)
+
+@given(instance=logo_ProgramUnit_strategy)
+@settings(max_examples=50)
+def test_logo_programunit_instantiation(instance):
+    assert isinstance(instance, logo_ProgramUnit)

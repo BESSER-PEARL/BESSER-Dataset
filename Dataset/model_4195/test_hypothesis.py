@@ -3,12 +3,12 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    dSL::EClass,
-    dSL::Greeting,
-    dSL::Model,
+from python_code import (
+    dSL_EClass,
+    dSL_Greeting,
+    dSL_Model,
 )
 
 # =============================================================================
@@ -17,44 +17,44 @@ from classes import (
 
 
 
-def test_dsl::eclass_is_not_abstract():
-    assert not inspect.isabstract(dSL::EClass)
+def test_dsl_eclass_is_not_abstract():
+    assert not inspect.isabstract(dSL_EClass)
 
 
-def test_dsl::eclass_constructor_exists():
-    assert callable(dSL::EClass.__init__)
+def test_dsl_eclass_constructor_exists():
+    assert callable(dSL_EClass.__init__)
 
 
-def test_dsl::eclass_constructor_args():
-    sig = inspect.signature(dSL::EClass.__init__)
+def test_dsl_eclass_constructor_args():
+    sig = inspect.signature(dSL_EClass.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_dsl::greeting_is_not_abstract():
-    assert not inspect.isabstract(dSL::Greeting)
+def test_dsl_greeting_is_not_abstract():
+    assert not inspect.isabstract(dSL_Greeting)
 
 
-def test_dsl::greeting_constructor_exists():
-    assert callable(dSL::Greeting.__init__)
+def test_dsl_greeting_constructor_exists():
+    assert callable(dSL_Greeting.__init__)
 
 
-def test_dsl::greeting_constructor_args():
-    sig = inspect.signature(dSL::Greeting.__init__)
+def test_dsl_greeting_constructor_args():
+    sig = inspect.signature(dSL_Greeting.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_dsl::model_is_not_abstract():
-    assert not inspect.isabstract(dSL::Model)
+def test_dsl_model_is_not_abstract():
+    assert not inspect.isabstract(dSL_Model)
 
 
-def test_dsl::model_constructor_exists():
-    assert callable(dSL::Model.__init__)
+def test_dsl_model_constructor_exists():
+    assert callable(dSL_Model.__init__)
 
 
-def test_dsl::model_constructor_args():
-    sig = inspect.signature(dSL::Model.__init__)
+def test_dsl_model_constructor_args():
+    sig = inspect.signature(dSL_Model.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -69,27 +69,27 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-dSL::EClass_strategy = st.builds(
-    dSL::EClass,
+dSL_EClass_strategy = st.builds(
+    dSL_EClass,
 )
-dSL::Greeting_strategy = st.builds(
-    dSL::Greeting,
+dSL_Greeting_strategy = st.builds(
+    dSL_Greeting,
 )
-dSL::Model_strategy = st.builds(
-    dSL::Model,
+dSL_Model_strategy = st.builds(
+    dSL_Model,
 )
 
-@given(instance=dSL::EClass_strategy)
+@given(instance=dSL_EClass_strategy)
 @settings(max_examples=50)
-def test_dsl::eclass_instantiation(instance):
-    assert isinstance(instance, dSL::EClass)
+def test_dsl_eclass_instantiation(instance):
+    assert isinstance(instance, dSL_EClass)
 
-@given(instance=dSL::Greeting_strategy)
+@given(instance=dSL_Greeting_strategy)
 @settings(max_examples=50)
-def test_dsl::greeting_instantiation(instance):
-    assert isinstance(instance, dSL::Greeting)
+def test_dsl_greeting_instantiation(instance):
+    assert isinstance(instance, dSL_Greeting)
 
-@given(instance=dSL::Model_strategy)
+@given(instance=dSL_Model_strategy)
 @settings(max_examples=50)
-def test_dsl::model_instantiation(instance):
-    assert isinstance(instance, dSL::Model)
+def test_dsl_model_instantiation(instance):
+    assert isinstance(instance, dSL_Model)

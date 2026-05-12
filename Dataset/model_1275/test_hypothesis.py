@@ -3,63 +3,63 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    ocl::uml::TemplateParameterType,
-    ocl::uml::VariableExp,
-    ocl::uml::Variable,
-    ocl::uml::LetExp,
-    ocl::uml::IteratorExp,
-    ocl::uml::LoopExp,
-    ocl::uml::IterateExp,
-    ocl::uml::InvalidLiteralExp,
-    ocl::uml::UnspecifiedValueExp,
-    ocl::uml::TypeExp,
-    ocl::uml::TupleLiteralPart,
-    ocl::uml::TupleLiteralExp,
-    ocl::uml::StringLiteralExp,
-    ocl::uml::StateExp,
-    ocl::uml::RealLiteralExp,
-    ocl::uml::PropertyCallExp,
-    ocl::uml::OperationCallExp,
-    ocl::uml::NullLiteralExp,
-    ocl::uml::MessageExp,
-    ocl::uml::OCLExpression,
-    ocl::uml::CallExp,
-    ocl::uml::FeatureCallExp,
-    ocl::uml::NavigationCallExp,
-    ocl::uml::AssociationClassCallExp,
-    ocl::uml::UnlimitedNaturalLiteralExp,
-    ocl::uml::NumericLiteralExp,
-    ocl::uml::IntegerLiteralExp,
-    ocl::uml::IfExp,
-    ocl::uml::EnumLiteralExp,
-    ocl::uml::CollectionRange,
-    ocl::uml::CollectionLiteralExp,
-    ocl::uml::CollectionLiteralPart,
-    ocl::uml::CollectionItem,
-    ocl::uml::LiteralExp,
-    ocl::uml::PrimitiveLiteralExp,
-    ocl::uml::BooleanLiteralExp,
-    ocl::uml::TypeType,
-    types::ElementType,
+from python_code import (
+    ocl_uml_TemplateParameterType,
+    ocl_uml_VariableExp,
+    ocl_uml_Variable,
+    ocl_uml_LetExp,
+    ocl_uml_IteratorExp,
+    ocl_uml_LoopExp,
+    ocl_uml_IterateExp,
+    ocl_uml_InvalidLiteralExp,
+    ocl_uml_UnspecifiedValueExp,
+    ocl_uml_TypeExp,
+    ocl_uml_TupleLiteralPart,
+    ocl_uml_TupleLiteralExp,
+    ocl_uml_StringLiteralExp,
+    ocl_uml_StateExp,
+    ocl_uml_RealLiteralExp,
+    ocl_uml_PropertyCallExp,
+    ocl_uml_OperationCallExp,
+    ocl_uml_NullLiteralExp,
+    ocl_uml_MessageExp,
+    ocl_uml_OCLExpression,
+    ocl_uml_CallExp,
+    ocl_uml_FeatureCallExp,
+    ocl_uml_NavigationCallExp,
+    ocl_uml_AssociationClassCallExp,
+    ocl_uml_UnlimitedNaturalLiteralExp,
+    ocl_uml_NumericLiteralExp,
+    ocl_uml_IntegerLiteralExp,
+    ocl_uml_IfExp,
+    ocl_uml_EnumLiteralExp,
+    ocl_uml_CollectionRange,
+    ocl_uml_CollectionLiteralExp,
+    ocl_uml_CollectionLiteralPart,
+    ocl_uml_CollectionItem,
+    ocl_uml_LiteralExp,
+    ocl_uml_PrimitiveLiteralExp,
+    ocl_uml_BooleanLiteralExp,
+    ocl_uml_TypeType,
+    types_ElementType,
     Classifier,
-    ocl::uml::ElementType,
-    ocl::uml::ExpressionInOCL,
-    ocl::uml::SequenceType,
-    ocl::uml::OrderedSetType,
-    ocl::uml::SetType,
-    ocl::uml::BagType,
-    ocl::uml::TupleType,
-    ocl::uml::CollectionType,
-    ocl::uml::PrimitiveType,
-    uml::ocl::Property,
-    ocl::uml::MessageType,
-    ocl::uml::InvalidType,
-    ocl::uml::VoidType,
-    uml::ocl::Operation,
-    ocl::uml::AnyType,
+    ocl_uml_ElementType,
+    ocl_uml_ExpressionInOCL,
+    ocl_uml_SequenceType,
+    ocl_uml_OrderedSetType,
+    ocl_uml_SetType,
+    ocl_uml_BagType,
+    ocl_uml_TupleType,
+    ocl_uml_CollectionType,
+    ocl_uml_PrimitiveType,
+    uml_ocl_Property,
+    ocl_uml_MessageType,
+    ocl_uml_InvalidType,
+    ocl_uml_VoidType,
+    uml_ocl_Operation,
+    ocl_uml_AnyType,
 )
 
 # =============================================================================
@@ -68,534 +68,534 @@ from classes import (
 
 
 
-def test_ocl::uml::templateparametertype_is_not_abstract():
-    assert not inspect.isabstract(ocl::uml::TemplateParameterType)
+def test_ocl_uml_templateparametertype_is_not_abstract():
+    assert not inspect.isabstract(ocl_uml_TemplateParameterType)
 
 
-def test_ocl::uml::templateparametertype_constructor_exists():
-    assert callable(ocl::uml::TemplateParameterType.__init__)
+def test_ocl_uml_templateparametertype_constructor_exists():
+    assert callable(ocl_uml_TemplateParameterType.__init__)
 
 
-def test_ocl::uml::templateparametertype_constructor_args():
-    sig = inspect.signature(ocl::uml::TemplateParameterType.__init__)
+def test_ocl_uml_templateparametertype_constructor_args():
+    sig = inspect.signature(ocl_uml_TemplateParameterType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ocl::uml::variableexp_is_not_abstract():
-    assert not inspect.isabstract(ocl::uml::VariableExp)
+def test_ocl_uml_variableexp_is_not_abstract():
+    assert not inspect.isabstract(ocl_uml_VariableExp)
 
 
-def test_ocl::uml::variableexp_constructor_exists():
-    assert callable(ocl::uml::VariableExp.__init__)
+def test_ocl_uml_variableexp_constructor_exists():
+    assert callable(ocl_uml_VariableExp.__init__)
 
 
-def test_ocl::uml::variableexp_constructor_args():
-    sig = inspect.signature(ocl::uml::VariableExp.__init__)
+def test_ocl_uml_variableexp_constructor_args():
+    sig = inspect.signature(ocl_uml_VariableExp.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ocl::uml::variable_is_not_abstract():
-    assert not inspect.isabstract(ocl::uml::Variable)
+def test_ocl_uml_variable_is_not_abstract():
+    assert not inspect.isabstract(ocl_uml_Variable)
 
 
-def test_ocl::uml::variable_constructor_exists():
-    assert callable(ocl::uml::Variable.__init__)
+def test_ocl_uml_variable_constructor_exists():
+    assert callable(ocl_uml_Variable.__init__)
 
 
-def test_ocl::uml::variable_constructor_args():
-    sig = inspect.signature(ocl::uml::Variable.__init__)
+def test_ocl_uml_variable_constructor_args():
+    sig = inspect.signature(ocl_uml_Variable.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ocl::uml::letexp_is_not_abstract():
-    assert not inspect.isabstract(ocl::uml::LetExp)
+def test_ocl_uml_letexp_is_not_abstract():
+    assert not inspect.isabstract(ocl_uml_LetExp)
 
 
-def test_ocl::uml::letexp_constructor_exists():
-    assert callable(ocl::uml::LetExp.__init__)
+def test_ocl_uml_letexp_constructor_exists():
+    assert callable(ocl_uml_LetExp.__init__)
 
 
-def test_ocl::uml::letexp_constructor_args():
-    sig = inspect.signature(ocl::uml::LetExp.__init__)
+def test_ocl_uml_letexp_constructor_args():
+    sig = inspect.signature(ocl_uml_LetExp.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ocl::uml::iteratorexp_is_not_abstract():
-    assert not inspect.isabstract(ocl::uml::IteratorExp)
+def test_ocl_uml_iteratorexp_is_not_abstract():
+    assert not inspect.isabstract(ocl_uml_IteratorExp)
 
 
-def test_ocl::uml::iteratorexp_constructor_exists():
-    assert callable(ocl::uml::IteratorExp.__init__)
+def test_ocl_uml_iteratorexp_constructor_exists():
+    assert callable(ocl_uml_IteratorExp.__init__)
 
 
-def test_ocl::uml::iteratorexp_constructor_args():
-    sig = inspect.signature(ocl::uml::IteratorExp.__init__)
+def test_ocl_uml_iteratorexp_constructor_args():
+    sig = inspect.signature(ocl_uml_IteratorExp.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ocl::uml::loopexp_is_not_abstract():
-    assert not inspect.isabstract(ocl::uml::LoopExp)
+def test_ocl_uml_loopexp_is_not_abstract():
+    assert not inspect.isabstract(ocl_uml_LoopExp)
 
 
-def test_ocl::uml::loopexp_constructor_exists():
-    assert callable(ocl::uml::LoopExp.__init__)
+def test_ocl_uml_loopexp_constructor_exists():
+    assert callable(ocl_uml_LoopExp.__init__)
 
 
-def test_ocl::uml::loopexp_constructor_args():
-    sig = inspect.signature(ocl::uml::LoopExp.__init__)
+def test_ocl_uml_loopexp_constructor_args():
+    sig = inspect.signature(ocl_uml_LoopExp.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ocl::uml::iterateexp_is_not_abstract():
-    assert not inspect.isabstract(ocl::uml::IterateExp)
+def test_ocl_uml_iterateexp_is_not_abstract():
+    assert not inspect.isabstract(ocl_uml_IterateExp)
 
 
-def test_ocl::uml::iterateexp_constructor_exists():
-    assert callable(ocl::uml::IterateExp.__init__)
+def test_ocl_uml_iterateexp_constructor_exists():
+    assert callable(ocl_uml_IterateExp.__init__)
 
 
-def test_ocl::uml::iterateexp_constructor_args():
-    sig = inspect.signature(ocl::uml::IterateExp.__init__)
+def test_ocl_uml_iterateexp_constructor_args():
+    sig = inspect.signature(ocl_uml_IterateExp.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ocl::uml::invalidliteralexp_is_not_abstract():
-    assert not inspect.isabstract(ocl::uml::InvalidLiteralExp)
+def test_ocl_uml_invalidliteralexp_is_not_abstract():
+    assert not inspect.isabstract(ocl_uml_InvalidLiteralExp)
 
 
-def test_ocl::uml::invalidliteralexp_constructor_exists():
-    assert callable(ocl::uml::InvalidLiteralExp.__init__)
+def test_ocl_uml_invalidliteralexp_constructor_exists():
+    assert callable(ocl_uml_InvalidLiteralExp.__init__)
 
 
-def test_ocl::uml::invalidliteralexp_constructor_args():
-    sig = inspect.signature(ocl::uml::InvalidLiteralExp.__init__)
+def test_ocl_uml_invalidliteralexp_constructor_args():
+    sig = inspect.signature(ocl_uml_InvalidLiteralExp.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ocl::uml::unspecifiedvalueexp_is_not_abstract():
-    assert not inspect.isabstract(ocl::uml::UnspecifiedValueExp)
+def test_ocl_uml_unspecifiedvalueexp_is_not_abstract():
+    assert not inspect.isabstract(ocl_uml_UnspecifiedValueExp)
 
 
-def test_ocl::uml::unspecifiedvalueexp_constructor_exists():
-    assert callable(ocl::uml::UnspecifiedValueExp.__init__)
+def test_ocl_uml_unspecifiedvalueexp_constructor_exists():
+    assert callable(ocl_uml_UnspecifiedValueExp.__init__)
 
 
-def test_ocl::uml::unspecifiedvalueexp_constructor_args():
-    sig = inspect.signature(ocl::uml::UnspecifiedValueExp.__init__)
+def test_ocl_uml_unspecifiedvalueexp_constructor_args():
+    sig = inspect.signature(ocl_uml_UnspecifiedValueExp.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ocl::uml::typeexp_is_not_abstract():
-    assert not inspect.isabstract(ocl::uml::TypeExp)
+def test_ocl_uml_typeexp_is_not_abstract():
+    assert not inspect.isabstract(ocl_uml_TypeExp)
 
 
-def test_ocl::uml::typeexp_constructor_exists():
-    assert callable(ocl::uml::TypeExp.__init__)
+def test_ocl_uml_typeexp_constructor_exists():
+    assert callable(ocl_uml_TypeExp.__init__)
 
 
-def test_ocl::uml::typeexp_constructor_args():
-    sig = inspect.signature(ocl::uml::TypeExp.__init__)
+def test_ocl_uml_typeexp_constructor_args():
+    sig = inspect.signature(ocl_uml_TypeExp.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ocl::uml::tupleliteralpart_is_not_abstract():
-    assert not inspect.isabstract(ocl::uml::TupleLiteralPart)
+def test_ocl_uml_tupleliteralpart_is_not_abstract():
+    assert not inspect.isabstract(ocl_uml_TupleLiteralPart)
 
 
-def test_ocl::uml::tupleliteralpart_constructor_exists():
-    assert callable(ocl::uml::TupleLiteralPart.__init__)
+def test_ocl_uml_tupleliteralpart_constructor_exists():
+    assert callable(ocl_uml_TupleLiteralPart.__init__)
 
 
-def test_ocl::uml::tupleliteralpart_constructor_args():
-    sig = inspect.signature(ocl::uml::TupleLiteralPart.__init__)
+def test_ocl_uml_tupleliteralpart_constructor_args():
+    sig = inspect.signature(ocl_uml_TupleLiteralPart.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ocl::uml::tupleliteralexp_is_not_abstract():
-    assert not inspect.isabstract(ocl::uml::TupleLiteralExp)
+def test_ocl_uml_tupleliteralexp_is_not_abstract():
+    assert not inspect.isabstract(ocl_uml_TupleLiteralExp)
 
 
-def test_ocl::uml::tupleliteralexp_constructor_exists():
-    assert callable(ocl::uml::TupleLiteralExp.__init__)
+def test_ocl_uml_tupleliteralexp_constructor_exists():
+    assert callable(ocl_uml_TupleLiteralExp.__init__)
 
 
-def test_ocl::uml::tupleliteralexp_constructor_args():
-    sig = inspect.signature(ocl::uml::TupleLiteralExp.__init__)
+def test_ocl_uml_tupleliteralexp_constructor_args():
+    sig = inspect.signature(ocl_uml_TupleLiteralExp.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ocl::uml::stringliteralexp_is_not_abstract():
-    assert not inspect.isabstract(ocl::uml::StringLiteralExp)
+def test_ocl_uml_stringliteralexp_is_not_abstract():
+    assert not inspect.isabstract(ocl_uml_StringLiteralExp)
 
 
-def test_ocl::uml::stringliteralexp_constructor_exists():
-    assert callable(ocl::uml::StringLiteralExp.__init__)
+def test_ocl_uml_stringliteralexp_constructor_exists():
+    assert callable(ocl_uml_StringLiteralExp.__init__)
 
 
-def test_ocl::uml::stringliteralexp_constructor_args():
-    sig = inspect.signature(ocl::uml::StringLiteralExp.__init__)
+def test_ocl_uml_stringliteralexp_constructor_args():
+    sig = inspect.signature(ocl_uml_StringLiteralExp.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ocl::uml::stateexp_is_not_abstract():
-    assert not inspect.isabstract(ocl::uml::StateExp)
+def test_ocl_uml_stateexp_is_not_abstract():
+    assert not inspect.isabstract(ocl_uml_StateExp)
 
 
-def test_ocl::uml::stateexp_constructor_exists():
-    assert callable(ocl::uml::StateExp.__init__)
+def test_ocl_uml_stateexp_constructor_exists():
+    assert callable(ocl_uml_StateExp.__init__)
 
 
-def test_ocl::uml::stateexp_constructor_args():
-    sig = inspect.signature(ocl::uml::StateExp.__init__)
+def test_ocl_uml_stateexp_constructor_args():
+    sig = inspect.signature(ocl_uml_StateExp.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ocl::uml::realliteralexp_is_not_abstract():
-    assert not inspect.isabstract(ocl::uml::RealLiteralExp)
+def test_ocl_uml_realliteralexp_is_not_abstract():
+    assert not inspect.isabstract(ocl_uml_RealLiteralExp)
 
 
-def test_ocl::uml::realliteralexp_constructor_exists():
-    assert callable(ocl::uml::RealLiteralExp.__init__)
+def test_ocl_uml_realliteralexp_constructor_exists():
+    assert callable(ocl_uml_RealLiteralExp.__init__)
 
 
-def test_ocl::uml::realliteralexp_constructor_args():
-    sig = inspect.signature(ocl::uml::RealLiteralExp.__init__)
+def test_ocl_uml_realliteralexp_constructor_args():
+    sig = inspect.signature(ocl_uml_RealLiteralExp.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ocl::uml::propertycallexp_is_not_abstract():
-    assert not inspect.isabstract(ocl::uml::PropertyCallExp)
+def test_ocl_uml_propertycallexp_is_not_abstract():
+    assert not inspect.isabstract(ocl_uml_PropertyCallExp)
 
 
-def test_ocl::uml::propertycallexp_constructor_exists():
-    assert callable(ocl::uml::PropertyCallExp.__init__)
+def test_ocl_uml_propertycallexp_constructor_exists():
+    assert callable(ocl_uml_PropertyCallExp.__init__)
 
 
-def test_ocl::uml::propertycallexp_constructor_args():
-    sig = inspect.signature(ocl::uml::PropertyCallExp.__init__)
+def test_ocl_uml_propertycallexp_constructor_args():
+    sig = inspect.signature(ocl_uml_PropertyCallExp.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ocl::uml::operationcallexp_is_not_abstract():
-    assert not inspect.isabstract(ocl::uml::OperationCallExp)
+def test_ocl_uml_operationcallexp_is_not_abstract():
+    assert not inspect.isabstract(ocl_uml_OperationCallExp)
 
 
-def test_ocl::uml::operationcallexp_constructor_exists():
-    assert callable(ocl::uml::OperationCallExp.__init__)
+def test_ocl_uml_operationcallexp_constructor_exists():
+    assert callable(ocl_uml_OperationCallExp.__init__)
 
 
-def test_ocl::uml::operationcallexp_constructor_args():
-    sig = inspect.signature(ocl::uml::OperationCallExp.__init__)
+def test_ocl_uml_operationcallexp_constructor_args():
+    sig = inspect.signature(ocl_uml_OperationCallExp.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ocl::uml::nullliteralexp_is_not_abstract():
-    assert not inspect.isabstract(ocl::uml::NullLiteralExp)
+def test_ocl_uml_nullliteralexp_is_not_abstract():
+    assert not inspect.isabstract(ocl_uml_NullLiteralExp)
 
 
-def test_ocl::uml::nullliteralexp_constructor_exists():
-    assert callable(ocl::uml::NullLiteralExp.__init__)
+def test_ocl_uml_nullliteralexp_constructor_exists():
+    assert callable(ocl_uml_NullLiteralExp.__init__)
 
 
-def test_ocl::uml::nullliteralexp_constructor_args():
-    sig = inspect.signature(ocl::uml::NullLiteralExp.__init__)
+def test_ocl_uml_nullliteralexp_constructor_args():
+    sig = inspect.signature(ocl_uml_NullLiteralExp.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ocl::uml::messageexp_is_not_abstract():
-    assert not inspect.isabstract(ocl::uml::MessageExp)
+def test_ocl_uml_messageexp_is_not_abstract():
+    assert not inspect.isabstract(ocl_uml_MessageExp)
 
 
-def test_ocl::uml::messageexp_constructor_exists():
-    assert callable(ocl::uml::MessageExp.__init__)
+def test_ocl_uml_messageexp_constructor_exists():
+    assert callable(ocl_uml_MessageExp.__init__)
 
 
-def test_ocl::uml::messageexp_constructor_args():
-    sig = inspect.signature(ocl::uml::MessageExp.__init__)
+def test_ocl_uml_messageexp_constructor_args():
+    sig = inspect.signature(ocl_uml_MessageExp.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ocl::uml::oclexpression_is_not_abstract():
-    assert not inspect.isabstract(ocl::uml::OCLExpression)
+def test_ocl_uml_oclexpression_is_not_abstract():
+    assert not inspect.isabstract(ocl_uml_OCLExpression)
 
 
-def test_ocl::uml::oclexpression_constructor_exists():
-    assert callable(ocl::uml::OCLExpression.__init__)
+def test_ocl_uml_oclexpression_constructor_exists():
+    assert callable(ocl_uml_OCLExpression.__init__)
 
 
-def test_ocl::uml::oclexpression_constructor_args():
-    sig = inspect.signature(ocl::uml::OCLExpression.__init__)
+def test_ocl_uml_oclexpression_constructor_args():
+    sig = inspect.signature(ocl_uml_OCLExpression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ocl::uml::callexp_is_not_abstract():
-    assert not inspect.isabstract(ocl::uml::CallExp)
+def test_ocl_uml_callexp_is_not_abstract():
+    assert not inspect.isabstract(ocl_uml_CallExp)
 
 
-def test_ocl::uml::callexp_constructor_exists():
-    assert callable(ocl::uml::CallExp.__init__)
+def test_ocl_uml_callexp_constructor_exists():
+    assert callable(ocl_uml_CallExp.__init__)
 
 
-def test_ocl::uml::callexp_constructor_args():
-    sig = inspect.signature(ocl::uml::CallExp.__init__)
+def test_ocl_uml_callexp_constructor_args():
+    sig = inspect.signature(ocl_uml_CallExp.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ocl::uml::featurecallexp_is_not_abstract():
-    assert not inspect.isabstract(ocl::uml::FeatureCallExp)
+def test_ocl_uml_featurecallexp_is_not_abstract():
+    assert not inspect.isabstract(ocl_uml_FeatureCallExp)
 
 
-def test_ocl::uml::featurecallexp_constructor_exists():
-    assert callable(ocl::uml::FeatureCallExp.__init__)
+def test_ocl_uml_featurecallexp_constructor_exists():
+    assert callable(ocl_uml_FeatureCallExp.__init__)
 
 
-def test_ocl::uml::featurecallexp_constructor_args():
-    sig = inspect.signature(ocl::uml::FeatureCallExp.__init__)
+def test_ocl_uml_featurecallexp_constructor_args():
+    sig = inspect.signature(ocl_uml_FeatureCallExp.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ocl::uml::navigationcallexp_is_not_abstract():
-    assert not inspect.isabstract(ocl::uml::NavigationCallExp)
+def test_ocl_uml_navigationcallexp_is_not_abstract():
+    assert not inspect.isabstract(ocl_uml_NavigationCallExp)
 
 
-def test_ocl::uml::navigationcallexp_constructor_exists():
-    assert callable(ocl::uml::NavigationCallExp.__init__)
+def test_ocl_uml_navigationcallexp_constructor_exists():
+    assert callable(ocl_uml_NavigationCallExp.__init__)
 
 
-def test_ocl::uml::navigationcallexp_constructor_args():
-    sig = inspect.signature(ocl::uml::NavigationCallExp.__init__)
+def test_ocl_uml_navigationcallexp_constructor_args():
+    sig = inspect.signature(ocl_uml_NavigationCallExp.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ocl::uml::associationclasscallexp_is_not_abstract():
-    assert not inspect.isabstract(ocl::uml::AssociationClassCallExp)
+def test_ocl_uml_associationclasscallexp_is_not_abstract():
+    assert not inspect.isabstract(ocl_uml_AssociationClassCallExp)
 
 
-def test_ocl::uml::associationclasscallexp_constructor_exists():
-    assert callable(ocl::uml::AssociationClassCallExp.__init__)
+def test_ocl_uml_associationclasscallexp_constructor_exists():
+    assert callable(ocl_uml_AssociationClassCallExp.__init__)
 
 
-def test_ocl::uml::associationclasscallexp_constructor_args():
-    sig = inspect.signature(ocl::uml::AssociationClassCallExp.__init__)
+def test_ocl_uml_associationclasscallexp_constructor_args():
+    sig = inspect.signature(ocl_uml_AssociationClassCallExp.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ocl::uml::unlimitednaturalliteralexp_is_not_abstract():
-    assert not inspect.isabstract(ocl::uml::UnlimitedNaturalLiteralExp)
+def test_ocl_uml_unlimitednaturalliteralexp_is_not_abstract():
+    assert not inspect.isabstract(ocl_uml_UnlimitedNaturalLiteralExp)
 
 
-def test_ocl::uml::unlimitednaturalliteralexp_constructor_exists():
-    assert callable(ocl::uml::UnlimitedNaturalLiteralExp.__init__)
+def test_ocl_uml_unlimitednaturalliteralexp_constructor_exists():
+    assert callable(ocl_uml_UnlimitedNaturalLiteralExp.__init__)
 
 
-def test_ocl::uml::unlimitednaturalliteralexp_constructor_args():
-    sig = inspect.signature(ocl::uml::UnlimitedNaturalLiteralExp.__init__)
+def test_ocl_uml_unlimitednaturalliteralexp_constructor_args():
+    sig = inspect.signature(ocl_uml_UnlimitedNaturalLiteralExp.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ocl::uml::numericliteralexp_is_not_abstract():
-    assert not inspect.isabstract(ocl::uml::NumericLiteralExp)
+def test_ocl_uml_numericliteralexp_is_not_abstract():
+    assert not inspect.isabstract(ocl_uml_NumericLiteralExp)
 
 
-def test_ocl::uml::numericliteralexp_constructor_exists():
-    assert callable(ocl::uml::NumericLiteralExp.__init__)
+def test_ocl_uml_numericliteralexp_constructor_exists():
+    assert callable(ocl_uml_NumericLiteralExp.__init__)
 
 
-def test_ocl::uml::numericliteralexp_constructor_args():
-    sig = inspect.signature(ocl::uml::NumericLiteralExp.__init__)
+def test_ocl_uml_numericliteralexp_constructor_args():
+    sig = inspect.signature(ocl_uml_NumericLiteralExp.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ocl::uml::integerliteralexp_is_not_abstract():
-    assert not inspect.isabstract(ocl::uml::IntegerLiteralExp)
+def test_ocl_uml_integerliteralexp_is_not_abstract():
+    assert not inspect.isabstract(ocl_uml_IntegerLiteralExp)
 
 
-def test_ocl::uml::integerliteralexp_constructor_exists():
-    assert callable(ocl::uml::IntegerLiteralExp.__init__)
+def test_ocl_uml_integerliteralexp_constructor_exists():
+    assert callable(ocl_uml_IntegerLiteralExp.__init__)
 
 
-def test_ocl::uml::integerliteralexp_constructor_args():
-    sig = inspect.signature(ocl::uml::IntegerLiteralExp.__init__)
+def test_ocl_uml_integerliteralexp_constructor_args():
+    sig = inspect.signature(ocl_uml_IntegerLiteralExp.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ocl::uml::ifexp_is_not_abstract():
-    assert not inspect.isabstract(ocl::uml::IfExp)
+def test_ocl_uml_ifexp_is_not_abstract():
+    assert not inspect.isabstract(ocl_uml_IfExp)
 
 
-def test_ocl::uml::ifexp_constructor_exists():
-    assert callable(ocl::uml::IfExp.__init__)
+def test_ocl_uml_ifexp_constructor_exists():
+    assert callable(ocl_uml_IfExp.__init__)
 
 
-def test_ocl::uml::ifexp_constructor_args():
-    sig = inspect.signature(ocl::uml::IfExp.__init__)
+def test_ocl_uml_ifexp_constructor_args():
+    sig = inspect.signature(ocl_uml_IfExp.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ocl::uml::enumliteralexp_is_not_abstract():
-    assert not inspect.isabstract(ocl::uml::EnumLiteralExp)
+def test_ocl_uml_enumliteralexp_is_not_abstract():
+    assert not inspect.isabstract(ocl_uml_EnumLiteralExp)
 
 
-def test_ocl::uml::enumliteralexp_constructor_exists():
-    assert callable(ocl::uml::EnumLiteralExp.__init__)
+def test_ocl_uml_enumliteralexp_constructor_exists():
+    assert callable(ocl_uml_EnumLiteralExp.__init__)
 
 
-def test_ocl::uml::enumliteralexp_constructor_args():
-    sig = inspect.signature(ocl::uml::EnumLiteralExp.__init__)
+def test_ocl_uml_enumliteralexp_constructor_args():
+    sig = inspect.signature(ocl_uml_EnumLiteralExp.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ocl::uml::collectionrange_is_not_abstract():
-    assert not inspect.isabstract(ocl::uml::CollectionRange)
+def test_ocl_uml_collectionrange_is_not_abstract():
+    assert not inspect.isabstract(ocl_uml_CollectionRange)
 
 
-def test_ocl::uml::collectionrange_constructor_exists():
-    assert callable(ocl::uml::CollectionRange.__init__)
+def test_ocl_uml_collectionrange_constructor_exists():
+    assert callable(ocl_uml_CollectionRange.__init__)
 
 
-def test_ocl::uml::collectionrange_constructor_args():
-    sig = inspect.signature(ocl::uml::CollectionRange.__init__)
+def test_ocl_uml_collectionrange_constructor_args():
+    sig = inspect.signature(ocl_uml_CollectionRange.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ocl::uml::collectionliteralexp_is_not_abstract():
-    assert not inspect.isabstract(ocl::uml::CollectionLiteralExp)
+def test_ocl_uml_collectionliteralexp_is_not_abstract():
+    assert not inspect.isabstract(ocl_uml_CollectionLiteralExp)
 
 
-def test_ocl::uml::collectionliteralexp_constructor_exists():
-    assert callable(ocl::uml::CollectionLiteralExp.__init__)
+def test_ocl_uml_collectionliteralexp_constructor_exists():
+    assert callable(ocl_uml_CollectionLiteralExp.__init__)
 
 
-def test_ocl::uml::collectionliteralexp_constructor_args():
-    sig = inspect.signature(ocl::uml::CollectionLiteralExp.__init__)
+def test_ocl_uml_collectionliteralexp_constructor_args():
+    sig = inspect.signature(ocl_uml_CollectionLiteralExp.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ocl::uml::collectionliteralpart_is_not_abstract():
-    assert not inspect.isabstract(ocl::uml::CollectionLiteralPart)
+def test_ocl_uml_collectionliteralpart_is_not_abstract():
+    assert not inspect.isabstract(ocl_uml_CollectionLiteralPart)
 
 
-def test_ocl::uml::collectionliteralpart_constructor_exists():
-    assert callable(ocl::uml::CollectionLiteralPart.__init__)
+def test_ocl_uml_collectionliteralpart_constructor_exists():
+    assert callable(ocl_uml_CollectionLiteralPart.__init__)
 
 
-def test_ocl::uml::collectionliteralpart_constructor_args():
-    sig = inspect.signature(ocl::uml::CollectionLiteralPart.__init__)
+def test_ocl_uml_collectionliteralpart_constructor_args():
+    sig = inspect.signature(ocl_uml_CollectionLiteralPart.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ocl::uml::collectionitem_is_not_abstract():
-    assert not inspect.isabstract(ocl::uml::CollectionItem)
+def test_ocl_uml_collectionitem_is_not_abstract():
+    assert not inspect.isabstract(ocl_uml_CollectionItem)
 
 
-def test_ocl::uml::collectionitem_constructor_exists():
-    assert callable(ocl::uml::CollectionItem.__init__)
+def test_ocl_uml_collectionitem_constructor_exists():
+    assert callable(ocl_uml_CollectionItem.__init__)
 
 
-def test_ocl::uml::collectionitem_constructor_args():
-    sig = inspect.signature(ocl::uml::CollectionItem.__init__)
+def test_ocl_uml_collectionitem_constructor_args():
+    sig = inspect.signature(ocl_uml_CollectionItem.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ocl::uml::literalexp_is_not_abstract():
-    assert not inspect.isabstract(ocl::uml::LiteralExp)
+def test_ocl_uml_literalexp_is_not_abstract():
+    assert not inspect.isabstract(ocl_uml_LiteralExp)
 
 
-def test_ocl::uml::literalexp_constructor_exists():
-    assert callable(ocl::uml::LiteralExp.__init__)
+def test_ocl_uml_literalexp_constructor_exists():
+    assert callable(ocl_uml_LiteralExp.__init__)
 
 
-def test_ocl::uml::literalexp_constructor_args():
-    sig = inspect.signature(ocl::uml::LiteralExp.__init__)
+def test_ocl_uml_literalexp_constructor_args():
+    sig = inspect.signature(ocl_uml_LiteralExp.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ocl::uml::primitiveliteralexp_is_not_abstract():
-    assert not inspect.isabstract(ocl::uml::PrimitiveLiteralExp)
+def test_ocl_uml_primitiveliteralexp_is_not_abstract():
+    assert not inspect.isabstract(ocl_uml_PrimitiveLiteralExp)
 
 
-def test_ocl::uml::primitiveliteralexp_constructor_exists():
-    assert callable(ocl::uml::PrimitiveLiteralExp.__init__)
+def test_ocl_uml_primitiveliteralexp_constructor_exists():
+    assert callable(ocl_uml_PrimitiveLiteralExp.__init__)
 
 
-def test_ocl::uml::primitiveliteralexp_constructor_args():
-    sig = inspect.signature(ocl::uml::PrimitiveLiteralExp.__init__)
+def test_ocl_uml_primitiveliteralexp_constructor_args():
+    sig = inspect.signature(ocl_uml_PrimitiveLiteralExp.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ocl::uml::booleanliteralexp_is_not_abstract():
-    assert not inspect.isabstract(ocl::uml::BooleanLiteralExp)
+def test_ocl_uml_booleanliteralexp_is_not_abstract():
+    assert not inspect.isabstract(ocl_uml_BooleanLiteralExp)
 
 
-def test_ocl::uml::booleanliteralexp_constructor_exists():
-    assert callable(ocl::uml::BooleanLiteralExp.__init__)
+def test_ocl_uml_booleanliteralexp_constructor_exists():
+    assert callable(ocl_uml_BooleanLiteralExp.__init__)
 
 
-def test_ocl::uml::booleanliteralexp_constructor_args():
-    sig = inspect.signature(ocl::uml::BooleanLiteralExp.__init__)
+def test_ocl_uml_booleanliteralexp_constructor_args():
+    sig = inspect.signature(ocl_uml_BooleanLiteralExp.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ocl::uml::typetype_is_not_abstract():
-    assert not inspect.isabstract(ocl::uml::TypeType)
+def test_ocl_uml_typetype_is_not_abstract():
+    assert not inspect.isabstract(ocl_uml_TypeType)
 
 
-def test_ocl::uml::typetype_constructor_exists():
-    assert callable(ocl::uml::TypeType.__init__)
+def test_ocl_uml_typetype_constructor_exists():
+    assert callable(ocl_uml_TypeType.__init__)
 
 
-def test_ocl::uml::typetype_constructor_args():
-    sig = inspect.signature(ocl::uml::TypeType.__init__)
+def test_ocl_uml_typetype_constructor_args():
+    sig = inspect.signature(ocl_uml_TypeType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_types::elementtype_is_not_abstract():
-    assert not inspect.isabstract(types::ElementType)
+def test_types_elementtype_is_not_abstract():
+    assert not inspect.isabstract(types_ElementType)
 
 
-def test_types::elementtype_constructor_exists():
-    assert callable(types::ElementType.__init__)
+def test_types_elementtype_constructor_exists():
+    assert callable(types_ElementType.__init__)
 
 
-def test_types::elementtype_constructor_args():
-    sig = inspect.signature(types::ElementType.__init__)
+def test_types_elementtype_constructor_args():
+    sig = inspect.signature(types_ElementType.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -614,212 +614,212 @@ def test_classifier_constructor_args():
 
 
 
-def test_ocl::uml::elementtype_is_not_abstract():
-    assert not inspect.isabstract(ocl::uml::ElementType)
+def test_ocl_uml_elementtype_is_not_abstract():
+    assert not inspect.isabstract(ocl_uml_ElementType)
 
 
-def test_ocl::uml::elementtype_constructor_exists():
-    assert callable(ocl::uml::ElementType.__init__)
+def test_ocl_uml_elementtype_constructor_exists():
+    assert callable(ocl_uml_ElementType.__init__)
 
 
-def test_ocl::uml::elementtype_constructor_args():
-    sig = inspect.signature(ocl::uml::ElementType.__init__)
+def test_ocl_uml_elementtype_constructor_args():
+    sig = inspect.signature(ocl_uml_ElementType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ocl::uml::expressioninocl_is_not_abstract():
-    assert not inspect.isabstract(ocl::uml::ExpressionInOCL)
+def test_ocl_uml_expressioninocl_is_not_abstract():
+    assert not inspect.isabstract(ocl_uml_ExpressionInOCL)
 
 
-def test_ocl::uml::expressioninocl_constructor_exists():
-    assert callable(ocl::uml::ExpressionInOCL.__init__)
+def test_ocl_uml_expressioninocl_constructor_exists():
+    assert callable(ocl_uml_ExpressionInOCL.__init__)
 
 
-def test_ocl::uml::expressioninocl_constructor_args():
-    sig = inspect.signature(ocl::uml::ExpressionInOCL.__init__)
+def test_ocl_uml_expressioninocl_constructor_args():
+    sig = inspect.signature(ocl_uml_ExpressionInOCL.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ocl::uml::sequencetype_is_not_abstract():
-    assert not inspect.isabstract(ocl::uml::SequenceType)
+def test_ocl_uml_sequencetype_is_not_abstract():
+    assert not inspect.isabstract(ocl_uml_SequenceType)
 
 
-def test_ocl::uml::sequencetype_constructor_exists():
-    assert callable(ocl::uml::SequenceType.__init__)
+def test_ocl_uml_sequencetype_constructor_exists():
+    assert callable(ocl_uml_SequenceType.__init__)
 
 
-def test_ocl::uml::sequencetype_constructor_args():
-    sig = inspect.signature(ocl::uml::SequenceType.__init__)
+def test_ocl_uml_sequencetype_constructor_args():
+    sig = inspect.signature(ocl_uml_SequenceType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ocl::uml::orderedsettype_is_not_abstract():
-    assert not inspect.isabstract(ocl::uml::OrderedSetType)
+def test_ocl_uml_orderedsettype_is_not_abstract():
+    assert not inspect.isabstract(ocl_uml_OrderedSetType)
 
 
-def test_ocl::uml::orderedsettype_constructor_exists():
-    assert callable(ocl::uml::OrderedSetType.__init__)
+def test_ocl_uml_orderedsettype_constructor_exists():
+    assert callable(ocl_uml_OrderedSetType.__init__)
 
 
-def test_ocl::uml::orderedsettype_constructor_args():
-    sig = inspect.signature(ocl::uml::OrderedSetType.__init__)
+def test_ocl_uml_orderedsettype_constructor_args():
+    sig = inspect.signature(ocl_uml_OrderedSetType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ocl::uml::settype_is_not_abstract():
-    assert not inspect.isabstract(ocl::uml::SetType)
+def test_ocl_uml_settype_is_not_abstract():
+    assert not inspect.isabstract(ocl_uml_SetType)
 
 
-def test_ocl::uml::settype_constructor_exists():
-    assert callable(ocl::uml::SetType.__init__)
+def test_ocl_uml_settype_constructor_exists():
+    assert callable(ocl_uml_SetType.__init__)
 
 
-def test_ocl::uml::settype_constructor_args():
-    sig = inspect.signature(ocl::uml::SetType.__init__)
+def test_ocl_uml_settype_constructor_args():
+    sig = inspect.signature(ocl_uml_SetType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ocl::uml::bagtype_is_not_abstract():
-    assert not inspect.isabstract(ocl::uml::BagType)
+def test_ocl_uml_bagtype_is_not_abstract():
+    assert not inspect.isabstract(ocl_uml_BagType)
 
 
-def test_ocl::uml::bagtype_constructor_exists():
-    assert callable(ocl::uml::BagType.__init__)
+def test_ocl_uml_bagtype_constructor_exists():
+    assert callable(ocl_uml_BagType.__init__)
 
 
-def test_ocl::uml::bagtype_constructor_args():
-    sig = inspect.signature(ocl::uml::BagType.__init__)
+def test_ocl_uml_bagtype_constructor_args():
+    sig = inspect.signature(ocl_uml_BagType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ocl::uml::tupletype_is_not_abstract():
-    assert not inspect.isabstract(ocl::uml::TupleType)
+def test_ocl_uml_tupletype_is_not_abstract():
+    assert not inspect.isabstract(ocl_uml_TupleType)
 
 
-def test_ocl::uml::tupletype_constructor_exists():
-    assert callable(ocl::uml::TupleType.__init__)
+def test_ocl_uml_tupletype_constructor_exists():
+    assert callable(ocl_uml_TupleType.__init__)
 
 
-def test_ocl::uml::tupletype_constructor_args():
-    sig = inspect.signature(ocl::uml::TupleType.__init__)
+def test_ocl_uml_tupletype_constructor_args():
+    sig = inspect.signature(ocl_uml_TupleType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ocl::uml::collectiontype_is_not_abstract():
-    assert not inspect.isabstract(ocl::uml::CollectionType)
+def test_ocl_uml_collectiontype_is_not_abstract():
+    assert not inspect.isabstract(ocl_uml_CollectionType)
 
 
-def test_ocl::uml::collectiontype_constructor_exists():
-    assert callable(ocl::uml::CollectionType.__init__)
+def test_ocl_uml_collectiontype_constructor_exists():
+    assert callable(ocl_uml_CollectionType.__init__)
 
 
-def test_ocl::uml::collectiontype_constructor_args():
-    sig = inspect.signature(ocl::uml::CollectionType.__init__)
+def test_ocl_uml_collectiontype_constructor_args():
+    sig = inspect.signature(ocl_uml_CollectionType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ocl::uml::primitivetype_is_not_abstract():
-    assert not inspect.isabstract(ocl::uml::PrimitiveType)
+def test_ocl_uml_primitivetype_is_not_abstract():
+    assert not inspect.isabstract(ocl_uml_PrimitiveType)
 
 
-def test_ocl::uml::primitivetype_constructor_exists():
-    assert callable(ocl::uml::PrimitiveType.__init__)
+def test_ocl_uml_primitivetype_constructor_exists():
+    assert callable(ocl_uml_PrimitiveType.__init__)
 
 
-def test_ocl::uml::primitivetype_constructor_args():
-    sig = inspect.signature(ocl::uml::PrimitiveType.__init__)
+def test_ocl_uml_primitivetype_constructor_args():
+    sig = inspect.signature(ocl_uml_PrimitiveType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_uml::ocl::property_is_not_abstract():
-    assert not inspect.isabstract(uml::ocl::Property)
+def test_uml_ocl_property_is_not_abstract():
+    assert not inspect.isabstract(uml_ocl_Property)
 
 
-def test_uml::ocl::property_constructor_exists():
-    assert callable(uml::ocl::Property.__init__)
+def test_uml_ocl_property_constructor_exists():
+    assert callable(uml_ocl_Property.__init__)
 
 
-def test_uml::ocl::property_constructor_args():
-    sig = inspect.signature(uml::ocl::Property.__init__)
+def test_uml_ocl_property_constructor_args():
+    sig = inspect.signature(uml_ocl_Property.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ocl::uml::messagetype_is_not_abstract():
-    assert not inspect.isabstract(ocl::uml::MessageType)
+def test_ocl_uml_messagetype_is_not_abstract():
+    assert not inspect.isabstract(ocl_uml_MessageType)
 
 
-def test_ocl::uml::messagetype_constructor_exists():
-    assert callable(ocl::uml::MessageType.__init__)
+def test_ocl_uml_messagetype_constructor_exists():
+    assert callable(ocl_uml_MessageType.__init__)
 
 
-def test_ocl::uml::messagetype_constructor_args():
-    sig = inspect.signature(ocl::uml::MessageType.__init__)
+def test_ocl_uml_messagetype_constructor_args():
+    sig = inspect.signature(ocl_uml_MessageType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ocl::uml::invalidtype_is_not_abstract():
-    assert not inspect.isabstract(ocl::uml::InvalidType)
+def test_ocl_uml_invalidtype_is_not_abstract():
+    assert not inspect.isabstract(ocl_uml_InvalidType)
 
 
-def test_ocl::uml::invalidtype_constructor_exists():
-    assert callable(ocl::uml::InvalidType.__init__)
+def test_ocl_uml_invalidtype_constructor_exists():
+    assert callable(ocl_uml_InvalidType.__init__)
 
 
-def test_ocl::uml::invalidtype_constructor_args():
-    sig = inspect.signature(ocl::uml::InvalidType.__init__)
+def test_ocl_uml_invalidtype_constructor_args():
+    sig = inspect.signature(ocl_uml_InvalidType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ocl::uml::voidtype_is_not_abstract():
-    assert not inspect.isabstract(ocl::uml::VoidType)
+def test_ocl_uml_voidtype_is_not_abstract():
+    assert not inspect.isabstract(ocl_uml_VoidType)
 
 
-def test_ocl::uml::voidtype_constructor_exists():
-    assert callable(ocl::uml::VoidType.__init__)
+def test_ocl_uml_voidtype_constructor_exists():
+    assert callable(ocl_uml_VoidType.__init__)
 
 
-def test_ocl::uml::voidtype_constructor_args():
-    sig = inspect.signature(ocl::uml::VoidType.__init__)
+def test_ocl_uml_voidtype_constructor_args():
+    sig = inspect.signature(ocl_uml_VoidType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_uml::ocl::operation_is_not_abstract():
-    assert not inspect.isabstract(uml::ocl::Operation)
+def test_uml_ocl_operation_is_not_abstract():
+    assert not inspect.isabstract(uml_ocl_Operation)
 
 
-def test_uml::ocl::operation_constructor_exists():
-    assert callable(uml::ocl::Operation.__init__)
+def test_uml_ocl_operation_constructor_exists():
+    assert callable(uml_ocl_Operation.__init__)
 
 
-def test_uml::ocl::operation_constructor_args():
-    sig = inspect.signature(uml::ocl::Operation.__init__)
+def test_uml_ocl_operation_constructor_args():
+    sig = inspect.signature(uml_ocl_Operation.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ocl::uml::anytype_is_not_abstract():
-    assert not inspect.isabstract(ocl::uml::AnyType)
+def test_ocl_uml_anytype_is_not_abstract():
+    assert not inspect.isabstract(ocl_uml_AnyType)
 
 
-def test_ocl::uml::anytype_constructor_exists():
-    assert callable(ocl::uml::AnyType.__init__)
+def test_ocl_uml_anytype_constructor_exists():
+    assert callable(ocl_uml_AnyType.__init__)
 
 
-def test_ocl::uml::anytype_constructor_args():
-    sig = inspect.signature(ocl::uml::AnyType.__init__)
+def test_ocl_uml_anytype_constructor_args():
+    sig = inspect.signature(ocl_uml_AnyType.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -834,435 +834,435 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-ocl::uml::TemplateParameterType_strategy = st.builds(
-    ocl::uml::TemplateParameterType,
+ocl_uml_TemplateParameterType_strategy = st.builds(
+    ocl_uml_TemplateParameterType,
 )
-ocl::uml::VariableExp_strategy = st.builds(
-    ocl::uml::VariableExp,
+ocl_uml_VariableExp_strategy = st.builds(
+    ocl_uml_VariableExp,
 )
-ocl::uml::Variable_strategy = st.builds(
-    ocl::uml::Variable,
+ocl_uml_Variable_strategy = st.builds(
+    ocl_uml_Variable,
 )
-ocl::uml::LetExp_strategy = st.builds(
-    ocl::uml::LetExp,
+ocl_uml_LetExp_strategy = st.builds(
+    ocl_uml_LetExp,
 )
-ocl::uml::IteratorExp_strategy = st.builds(
-    ocl::uml::IteratorExp,
+ocl_uml_IteratorExp_strategy = st.builds(
+    ocl_uml_IteratorExp,
 )
-ocl::uml::LoopExp_strategy = st.builds(
-    ocl::uml::LoopExp,
+ocl_uml_LoopExp_strategy = st.builds(
+    ocl_uml_LoopExp,
 )
-ocl::uml::IterateExp_strategy = st.builds(
-    ocl::uml::IterateExp,
+ocl_uml_IterateExp_strategy = st.builds(
+    ocl_uml_IterateExp,
 )
-ocl::uml::InvalidLiteralExp_strategy = st.builds(
-    ocl::uml::InvalidLiteralExp,
+ocl_uml_InvalidLiteralExp_strategy = st.builds(
+    ocl_uml_InvalidLiteralExp,
 )
-ocl::uml::UnspecifiedValueExp_strategy = st.builds(
-    ocl::uml::UnspecifiedValueExp,
+ocl_uml_UnspecifiedValueExp_strategy = st.builds(
+    ocl_uml_UnspecifiedValueExp,
 )
-ocl::uml::TypeExp_strategy = st.builds(
-    ocl::uml::TypeExp,
+ocl_uml_TypeExp_strategy = st.builds(
+    ocl_uml_TypeExp,
 )
-ocl::uml::TupleLiteralPart_strategy = st.builds(
-    ocl::uml::TupleLiteralPart,
+ocl_uml_TupleLiteralPart_strategy = st.builds(
+    ocl_uml_TupleLiteralPart,
 )
-ocl::uml::TupleLiteralExp_strategy = st.builds(
-    ocl::uml::TupleLiteralExp,
+ocl_uml_TupleLiteralExp_strategy = st.builds(
+    ocl_uml_TupleLiteralExp,
 )
-ocl::uml::StringLiteralExp_strategy = st.builds(
-    ocl::uml::StringLiteralExp,
+ocl_uml_StringLiteralExp_strategy = st.builds(
+    ocl_uml_StringLiteralExp,
 )
-ocl::uml::StateExp_strategy = st.builds(
-    ocl::uml::StateExp,
+ocl_uml_StateExp_strategy = st.builds(
+    ocl_uml_StateExp,
 )
-ocl::uml::RealLiteralExp_strategy = st.builds(
-    ocl::uml::RealLiteralExp,
+ocl_uml_RealLiteralExp_strategy = st.builds(
+    ocl_uml_RealLiteralExp,
 )
-ocl::uml::PropertyCallExp_strategy = st.builds(
-    ocl::uml::PropertyCallExp,
+ocl_uml_PropertyCallExp_strategy = st.builds(
+    ocl_uml_PropertyCallExp,
 )
-ocl::uml::OperationCallExp_strategy = st.builds(
-    ocl::uml::OperationCallExp,
+ocl_uml_OperationCallExp_strategy = st.builds(
+    ocl_uml_OperationCallExp,
 )
-ocl::uml::NullLiteralExp_strategy = st.builds(
-    ocl::uml::NullLiteralExp,
+ocl_uml_NullLiteralExp_strategy = st.builds(
+    ocl_uml_NullLiteralExp,
 )
-ocl::uml::MessageExp_strategy = st.builds(
-    ocl::uml::MessageExp,
+ocl_uml_MessageExp_strategy = st.builds(
+    ocl_uml_MessageExp,
 )
-ocl::uml::OCLExpression_strategy = st.builds(
-    ocl::uml::OCLExpression,
+ocl_uml_OCLExpression_strategy = st.builds(
+    ocl_uml_OCLExpression,
 )
-ocl::uml::CallExp_strategy = st.builds(
-    ocl::uml::CallExp,
+ocl_uml_CallExp_strategy = st.builds(
+    ocl_uml_CallExp,
 )
-ocl::uml::FeatureCallExp_strategy = st.builds(
-    ocl::uml::FeatureCallExp,
+ocl_uml_FeatureCallExp_strategy = st.builds(
+    ocl_uml_FeatureCallExp,
 )
-ocl::uml::NavigationCallExp_strategy = st.builds(
-    ocl::uml::NavigationCallExp,
+ocl_uml_NavigationCallExp_strategy = st.builds(
+    ocl_uml_NavigationCallExp,
 )
-ocl::uml::AssociationClassCallExp_strategy = st.builds(
-    ocl::uml::AssociationClassCallExp,
+ocl_uml_AssociationClassCallExp_strategy = st.builds(
+    ocl_uml_AssociationClassCallExp,
 )
-ocl::uml::UnlimitedNaturalLiteralExp_strategy = st.builds(
-    ocl::uml::UnlimitedNaturalLiteralExp,
+ocl_uml_UnlimitedNaturalLiteralExp_strategy = st.builds(
+    ocl_uml_UnlimitedNaturalLiteralExp,
 )
-ocl::uml::NumericLiteralExp_strategy = st.builds(
-    ocl::uml::NumericLiteralExp,
+ocl_uml_NumericLiteralExp_strategy = st.builds(
+    ocl_uml_NumericLiteralExp,
 )
-ocl::uml::IntegerLiteralExp_strategy = st.builds(
-    ocl::uml::IntegerLiteralExp,
+ocl_uml_IntegerLiteralExp_strategy = st.builds(
+    ocl_uml_IntegerLiteralExp,
 )
-ocl::uml::IfExp_strategy = st.builds(
-    ocl::uml::IfExp,
+ocl_uml_IfExp_strategy = st.builds(
+    ocl_uml_IfExp,
 )
-ocl::uml::EnumLiteralExp_strategy = st.builds(
-    ocl::uml::EnumLiteralExp,
+ocl_uml_EnumLiteralExp_strategy = st.builds(
+    ocl_uml_EnumLiteralExp,
 )
-ocl::uml::CollectionRange_strategy = st.builds(
-    ocl::uml::CollectionRange,
+ocl_uml_CollectionRange_strategy = st.builds(
+    ocl_uml_CollectionRange,
 )
-ocl::uml::CollectionLiteralExp_strategy = st.builds(
-    ocl::uml::CollectionLiteralExp,
+ocl_uml_CollectionLiteralExp_strategy = st.builds(
+    ocl_uml_CollectionLiteralExp,
 )
-ocl::uml::CollectionLiteralPart_strategy = st.builds(
-    ocl::uml::CollectionLiteralPart,
+ocl_uml_CollectionLiteralPart_strategy = st.builds(
+    ocl_uml_CollectionLiteralPart,
 )
-ocl::uml::CollectionItem_strategy = st.builds(
-    ocl::uml::CollectionItem,
+ocl_uml_CollectionItem_strategy = st.builds(
+    ocl_uml_CollectionItem,
 )
-ocl::uml::LiteralExp_strategy = st.builds(
-    ocl::uml::LiteralExp,
+ocl_uml_LiteralExp_strategy = st.builds(
+    ocl_uml_LiteralExp,
 )
-ocl::uml::PrimitiveLiteralExp_strategy = st.builds(
-    ocl::uml::PrimitiveLiteralExp,
+ocl_uml_PrimitiveLiteralExp_strategy = st.builds(
+    ocl_uml_PrimitiveLiteralExp,
 )
-ocl::uml::BooleanLiteralExp_strategy = st.builds(
-    ocl::uml::BooleanLiteralExp,
+ocl_uml_BooleanLiteralExp_strategy = st.builds(
+    ocl_uml_BooleanLiteralExp,
 )
-ocl::uml::TypeType_strategy = st.builds(
-    ocl::uml::TypeType,
+ocl_uml_TypeType_strategy = st.builds(
+    ocl_uml_TypeType,
 )
-types::ElementType_strategy = st.builds(
-    types::ElementType,
+types_ElementType_strategy = st.builds(
+    types_ElementType,
 )
 Classifier_strategy = st.builds(
     Classifier,
 )
-ocl::uml::ElementType_strategy = st.builds(
-    ocl::uml::ElementType,
+ocl_uml_ElementType_strategy = st.builds(
+    ocl_uml_ElementType,
 )
-ocl::uml::ExpressionInOCL_strategy = st.builds(
-    ocl::uml::ExpressionInOCL,
+ocl_uml_ExpressionInOCL_strategy = st.builds(
+    ocl_uml_ExpressionInOCL,
 )
-ocl::uml::SequenceType_strategy = st.builds(
-    ocl::uml::SequenceType,
+ocl_uml_SequenceType_strategy = st.builds(
+    ocl_uml_SequenceType,
 )
-ocl::uml::OrderedSetType_strategy = st.builds(
-    ocl::uml::OrderedSetType,
+ocl_uml_OrderedSetType_strategy = st.builds(
+    ocl_uml_OrderedSetType,
 )
-ocl::uml::SetType_strategy = st.builds(
-    ocl::uml::SetType,
+ocl_uml_SetType_strategy = st.builds(
+    ocl_uml_SetType,
 )
-ocl::uml::BagType_strategy = st.builds(
-    ocl::uml::BagType,
+ocl_uml_BagType_strategy = st.builds(
+    ocl_uml_BagType,
 )
-ocl::uml::TupleType_strategy = st.builds(
-    ocl::uml::TupleType,
+ocl_uml_TupleType_strategy = st.builds(
+    ocl_uml_TupleType,
 )
-ocl::uml::CollectionType_strategy = st.builds(
-    ocl::uml::CollectionType,
+ocl_uml_CollectionType_strategy = st.builds(
+    ocl_uml_CollectionType,
 )
-ocl::uml::PrimitiveType_strategy = st.builds(
-    ocl::uml::PrimitiveType,
+ocl_uml_PrimitiveType_strategy = st.builds(
+    ocl_uml_PrimitiveType,
 )
-uml::ocl::Property_strategy = st.builds(
-    uml::ocl::Property,
+uml_ocl_Property_strategy = st.builds(
+    uml_ocl_Property,
 )
-ocl::uml::MessageType_strategy = st.builds(
-    ocl::uml::MessageType,
+ocl_uml_MessageType_strategy = st.builds(
+    ocl_uml_MessageType,
 )
-ocl::uml::InvalidType_strategy = st.builds(
-    ocl::uml::InvalidType,
+ocl_uml_InvalidType_strategy = st.builds(
+    ocl_uml_InvalidType,
 )
-ocl::uml::VoidType_strategy = st.builds(
-    ocl::uml::VoidType,
+ocl_uml_VoidType_strategy = st.builds(
+    ocl_uml_VoidType,
 )
-uml::ocl::Operation_strategy = st.builds(
-    uml::ocl::Operation,
+uml_ocl_Operation_strategy = st.builds(
+    uml_ocl_Operation,
 )
-ocl::uml::AnyType_strategy = st.builds(
-    ocl::uml::AnyType,
+ocl_uml_AnyType_strategy = st.builds(
+    ocl_uml_AnyType,
 )
 
-@given(instance=ocl::uml::TemplateParameterType_strategy)
+@given(instance=ocl_uml_TemplateParameterType_strategy)
 @settings(max_examples=50)
-def test_ocl::uml::templateparametertype_instantiation(instance):
-    assert isinstance(instance, ocl::uml::TemplateParameterType)
+def test_ocl_uml_templateparametertype_instantiation(instance):
+    assert isinstance(instance, ocl_uml_TemplateParameterType)
 
-@given(instance=ocl::uml::VariableExp_strategy)
+@given(instance=ocl_uml_VariableExp_strategy)
 @settings(max_examples=50)
-def test_ocl::uml::variableexp_instantiation(instance):
-    assert isinstance(instance, ocl::uml::VariableExp)
+def test_ocl_uml_variableexp_instantiation(instance):
+    assert isinstance(instance, ocl_uml_VariableExp)
 
-@given(instance=ocl::uml::Variable_strategy)
+@given(instance=ocl_uml_Variable_strategy)
 @settings(max_examples=50)
-def test_ocl::uml::variable_instantiation(instance):
-    assert isinstance(instance, ocl::uml::Variable)
+def test_ocl_uml_variable_instantiation(instance):
+    assert isinstance(instance, ocl_uml_Variable)
 
-@given(instance=ocl::uml::LetExp_strategy)
+@given(instance=ocl_uml_LetExp_strategy)
 @settings(max_examples=50)
-def test_ocl::uml::letexp_instantiation(instance):
-    assert isinstance(instance, ocl::uml::LetExp)
+def test_ocl_uml_letexp_instantiation(instance):
+    assert isinstance(instance, ocl_uml_LetExp)
 
-@given(instance=ocl::uml::IteratorExp_strategy)
+@given(instance=ocl_uml_IteratorExp_strategy)
 @settings(max_examples=50)
-def test_ocl::uml::iteratorexp_instantiation(instance):
-    assert isinstance(instance, ocl::uml::IteratorExp)
+def test_ocl_uml_iteratorexp_instantiation(instance):
+    assert isinstance(instance, ocl_uml_IteratorExp)
 
-@given(instance=ocl::uml::LoopExp_strategy)
+@given(instance=ocl_uml_LoopExp_strategy)
 @settings(max_examples=50)
-def test_ocl::uml::loopexp_instantiation(instance):
-    assert isinstance(instance, ocl::uml::LoopExp)
+def test_ocl_uml_loopexp_instantiation(instance):
+    assert isinstance(instance, ocl_uml_LoopExp)
 
-@given(instance=ocl::uml::IterateExp_strategy)
+@given(instance=ocl_uml_IterateExp_strategy)
 @settings(max_examples=50)
-def test_ocl::uml::iterateexp_instantiation(instance):
-    assert isinstance(instance, ocl::uml::IterateExp)
+def test_ocl_uml_iterateexp_instantiation(instance):
+    assert isinstance(instance, ocl_uml_IterateExp)
 
-@given(instance=ocl::uml::InvalidLiteralExp_strategy)
+@given(instance=ocl_uml_InvalidLiteralExp_strategy)
 @settings(max_examples=50)
-def test_ocl::uml::invalidliteralexp_instantiation(instance):
-    assert isinstance(instance, ocl::uml::InvalidLiteralExp)
+def test_ocl_uml_invalidliteralexp_instantiation(instance):
+    assert isinstance(instance, ocl_uml_InvalidLiteralExp)
 
-@given(instance=ocl::uml::UnspecifiedValueExp_strategy)
+@given(instance=ocl_uml_UnspecifiedValueExp_strategy)
 @settings(max_examples=50)
-def test_ocl::uml::unspecifiedvalueexp_instantiation(instance):
-    assert isinstance(instance, ocl::uml::UnspecifiedValueExp)
+def test_ocl_uml_unspecifiedvalueexp_instantiation(instance):
+    assert isinstance(instance, ocl_uml_UnspecifiedValueExp)
 
-@given(instance=ocl::uml::TypeExp_strategy)
+@given(instance=ocl_uml_TypeExp_strategy)
 @settings(max_examples=50)
-def test_ocl::uml::typeexp_instantiation(instance):
-    assert isinstance(instance, ocl::uml::TypeExp)
+def test_ocl_uml_typeexp_instantiation(instance):
+    assert isinstance(instance, ocl_uml_TypeExp)
 
-@given(instance=ocl::uml::TupleLiteralPart_strategy)
+@given(instance=ocl_uml_TupleLiteralPart_strategy)
 @settings(max_examples=50)
-def test_ocl::uml::tupleliteralpart_instantiation(instance):
-    assert isinstance(instance, ocl::uml::TupleLiteralPart)
+def test_ocl_uml_tupleliteralpart_instantiation(instance):
+    assert isinstance(instance, ocl_uml_TupleLiteralPart)
 
-@given(instance=ocl::uml::TupleLiteralExp_strategy)
+@given(instance=ocl_uml_TupleLiteralExp_strategy)
 @settings(max_examples=50)
-def test_ocl::uml::tupleliteralexp_instantiation(instance):
-    assert isinstance(instance, ocl::uml::TupleLiteralExp)
+def test_ocl_uml_tupleliteralexp_instantiation(instance):
+    assert isinstance(instance, ocl_uml_TupleLiteralExp)
 
-@given(instance=ocl::uml::StringLiteralExp_strategy)
+@given(instance=ocl_uml_StringLiteralExp_strategy)
 @settings(max_examples=50)
-def test_ocl::uml::stringliteralexp_instantiation(instance):
-    assert isinstance(instance, ocl::uml::StringLiteralExp)
+def test_ocl_uml_stringliteralexp_instantiation(instance):
+    assert isinstance(instance, ocl_uml_StringLiteralExp)
 
-@given(instance=ocl::uml::StateExp_strategy)
+@given(instance=ocl_uml_StateExp_strategy)
 @settings(max_examples=50)
-def test_ocl::uml::stateexp_instantiation(instance):
-    assert isinstance(instance, ocl::uml::StateExp)
+def test_ocl_uml_stateexp_instantiation(instance):
+    assert isinstance(instance, ocl_uml_StateExp)
 
-@given(instance=ocl::uml::RealLiteralExp_strategy)
+@given(instance=ocl_uml_RealLiteralExp_strategy)
 @settings(max_examples=50)
-def test_ocl::uml::realliteralexp_instantiation(instance):
-    assert isinstance(instance, ocl::uml::RealLiteralExp)
+def test_ocl_uml_realliteralexp_instantiation(instance):
+    assert isinstance(instance, ocl_uml_RealLiteralExp)
 
-@given(instance=ocl::uml::PropertyCallExp_strategy)
+@given(instance=ocl_uml_PropertyCallExp_strategy)
 @settings(max_examples=50)
-def test_ocl::uml::propertycallexp_instantiation(instance):
-    assert isinstance(instance, ocl::uml::PropertyCallExp)
+def test_ocl_uml_propertycallexp_instantiation(instance):
+    assert isinstance(instance, ocl_uml_PropertyCallExp)
 
-@given(instance=ocl::uml::OperationCallExp_strategy)
+@given(instance=ocl_uml_OperationCallExp_strategy)
 @settings(max_examples=50)
-def test_ocl::uml::operationcallexp_instantiation(instance):
-    assert isinstance(instance, ocl::uml::OperationCallExp)
+def test_ocl_uml_operationcallexp_instantiation(instance):
+    assert isinstance(instance, ocl_uml_OperationCallExp)
 
-@given(instance=ocl::uml::NullLiteralExp_strategy)
+@given(instance=ocl_uml_NullLiteralExp_strategy)
 @settings(max_examples=50)
-def test_ocl::uml::nullliteralexp_instantiation(instance):
-    assert isinstance(instance, ocl::uml::NullLiteralExp)
+def test_ocl_uml_nullliteralexp_instantiation(instance):
+    assert isinstance(instance, ocl_uml_NullLiteralExp)
 
-@given(instance=ocl::uml::MessageExp_strategy)
+@given(instance=ocl_uml_MessageExp_strategy)
 @settings(max_examples=50)
-def test_ocl::uml::messageexp_instantiation(instance):
-    assert isinstance(instance, ocl::uml::MessageExp)
+def test_ocl_uml_messageexp_instantiation(instance):
+    assert isinstance(instance, ocl_uml_MessageExp)
 
-@given(instance=ocl::uml::OCLExpression_strategy)
+@given(instance=ocl_uml_OCLExpression_strategy)
 @settings(max_examples=50)
-def test_ocl::uml::oclexpression_instantiation(instance):
-    assert isinstance(instance, ocl::uml::OCLExpression)
+def test_ocl_uml_oclexpression_instantiation(instance):
+    assert isinstance(instance, ocl_uml_OCLExpression)
 
-@given(instance=ocl::uml::CallExp_strategy)
+@given(instance=ocl_uml_CallExp_strategy)
 @settings(max_examples=50)
-def test_ocl::uml::callexp_instantiation(instance):
-    assert isinstance(instance, ocl::uml::CallExp)
+def test_ocl_uml_callexp_instantiation(instance):
+    assert isinstance(instance, ocl_uml_CallExp)
 
-@given(instance=ocl::uml::FeatureCallExp_strategy)
+@given(instance=ocl_uml_FeatureCallExp_strategy)
 @settings(max_examples=50)
-def test_ocl::uml::featurecallexp_instantiation(instance):
-    assert isinstance(instance, ocl::uml::FeatureCallExp)
+def test_ocl_uml_featurecallexp_instantiation(instance):
+    assert isinstance(instance, ocl_uml_FeatureCallExp)
 
-@given(instance=ocl::uml::NavigationCallExp_strategy)
+@given(instance=ocl_uml_NavigationCallExp_strategy)
 @settings(max_examples=50)
-def test_ocl::uml::navigationcallexp_instantiation(instance):
-    assert isinstance(instance, ocl::uml::NavigationCallExp)
+def test_ocl_uml_navigationcallexp_instantiation(instance):
+    assert isinstance(instance, ocl_uml_NavigationCallExp)
 
-@given(instance=ocl::uml::AssociationClassCallExp_strategy)
+@given(instance=ocl_uml_AssociationClassCallExp_strategy)
 @settings(max_examples=50)
-def test_ocl::uml::associationclasscallexp_instantiation(instance):
-    assert isinstance(instance, ocl::uml::AssociationClassCallExp)
+def test_ocl_uml_associationclasscallexp_instantiation(instance):
+    assert isinstance(instance, ocl_uml_AssociationClassCallExp)
 
-@given(instance=ocl::uml::UnlimitedNaturalLiteralExp_strategy)
+@given(instance=ocl_uml_UnlimitedNaturalLiteralExp_strategy)
 @settings(max_examples=50)
-def test_ocl::uml::unlimitednaturalliteralexp_instantiation(instance):
-    assert isinstance(instance, ocl::uml::UnlimitedNaturalLiteralExp)
+def test_ocl_uml_unlimitednaturalliteralexp_instantiation(instance):
+    assert isinstance(instance, ocl_uml_UnlimitedNaturalLiteralExp)
 
-@given(instance=ocl::uml::NumericLiteralExp_strategy)
+@given(instance=ocl_uml_NumericLiteralExp_strategy)
 @settings(max_examples=50)
-def test_ocl::uml::numericliteralexp_instantiation(instance):
-    assert isinstance(instance, ocl::uml::NumericLiteralExp)
+def test_ocl_uml_numericliteralexp_instantiation(instance):
+    assert isinstance(instance, ocl_uml_NumericLiteralExp)
 
-@given(instance=ocl::uml::IntegerLiteralExp_strategy)
+@given(instance=ocl_uml_IntegerLiteralExp_strategy)
 @settings(max_examples=50)
-def test_ocl::uml::integerliteralexp_instantiation(instance):
-    assert isinstance(instance, ocl::uml::IntegerLiteralExp)
+def test_ocl_uml_integerliteralexp_instantiation(instance):
+    assert isinstance(instance, ocl_uml_IntegerLiteralExp)
 
-@given(instance=ocl::uml::IfExp_strategy)
+@given(instance=ocl_uml_IfExp_strategy)
 @settings(max_examples=50)
-def test_ocl::uml::ifexp_instantiation(instance):
-    assert isinstance(instance, ocl::uml::IfExp)
+def test_ocl_uml_ifexp_instantiation(instance):
+    assert isinstance(instance, ocl_uml_IfExp)
 
-@given(instance=ocl::uml::EnumLiteralExp_strategy)
+@given(instance=ocl_uml_EnumLiteralExp_strategy)
 @settings(max_examples=50)
-def test_ocl::uml::enumliteralexp_instantiation(instance):
-    assert isinstance(instance, ocl::uml::EnumLiteralExp)
+def test_ocl_uml_enumliteralexp_instantiation(instance):
+    assert isinstance(instance, ocl_uml_EnumLiteralExp)
 
-@given(instance=ocl::uml::CollectionRange_strategy)
+@given(instance=ocl_uml_CollectionRange_strategy)
 @settings(max_examples=50)
-def test_ocl::uml::collectionrange_instantiation(instance):
-    assert isinstance(instance, ocl::uml::CollectionRange)
+def test_ocl_uml_collectionrange_instantiation(instance):
+    assert isinstance(instance, ocl_uml_CollectionRange)
 
-@given(instance=ocl::uml::CollectionLiteralExp_strategy)
+@given(instance=ocl_uml_CollectionLiteralExp_strategy)
 @settings(max_examples=50)
-def test_ocl::uml::collectionliteralexp_instantiation(instance):
-    assert isinstance(instance, ocl::uml::CollectionLiteralExp)
+def test_ocl_uml_collectionliteralexp_instantiation(instance):
+    assert isinstance(instance, ocl_uml_CollectionLiteralExp)
 
-@given(instance=ocl::uml::CollectionLiteralPart_strategy)
+@given(instance=ocl_uml_CollectionLiteralPart_strategy)
 @settings(max_examples=50)
-def test_ocl::uml::collectionliteralpart_instantiation(instance):
-    assert isinstance(instance, ocl::uml::CollectionLiteralPart)
+def test_ocl_uml_collectionliteralpart_instantiation(instance):
+    assert isinstance(instance, ocl_uml_CollectionLiteralPart)
 
-@given(instance=ocl::uml::CollectionItem_strategy)
+@given(instance=ocl_uml_CollectionItem_strategy)
 @settings(max_examples=50)
-def test_ocl::uml::collectionitem_instantiation(instance):
-    assert isinstance(instance, ocl::uml::CollectionItem)
+def test_ocl_uml_collectionitem_instantiation(instance):
+    assert isinstance(instance, ocl_uml_CollectionItem)
 
-@given(instance=ocl::uml::LiteralExp_strategy)
+@given(instance=ocl_uml_LiteralExp_strategy)
 @settings(max_examples=50)
-def test_ocl::uml::literalexp_instantiation(instance):
-    assert isinstance(instance, ocl::uml::LiteralExp)
+def test_ocl_uml_literalexp_instantiation(instance):
+    assert isinstance(instance, ocl_uml_LiteralExp)
 
-@given(instance=ocl::uml::PrimitiveLiteralExp_strategy)
+@given(instance=ocl_uml_PrimitiveLiteralExp_strategy)
 @settings(max_examples=50)
-def test_ocl::uml::primitiveliteralexp_instantiation(instance):
-    assert isinstance(instance, ocl::uml::PrimitiveLiteralExp)
+def test_ocl_uml_primitiveliteralexp_instantiation(instance):
+    assert isinstance(instance, ocl_uml_PrimitiveLiteralExp)
 
-@given(instance=ocl::uml::BooleanLiteralExp_strategy)
+@given(instance=ocl_uml_BooleanLiteralExp_strategy)
 @settings(max_examples=50)
-def test_ocl::uml::booleanliteralexp_instantiation(instance):
-    assert isinstance(instance, ocl::uml::BooleanLiteralExp)
+def test_ocl_uml_booleanliteralexp_instantiation(instance):
+    assert isinstance(instance, ocl_uml_BooleanLiteralExp)
 
-@given(instance=ocl::uml::TypeType_strategy)
+@given(instance=ocl_uml_TypeType_strategy)
 @settings(max_examples=50)
-def test_ocl::uml::typetype_instantiation(instance):
-    assert isinstance(instance, ocl::uml::TypeType)
+def test_ocl_uml_typetype_instantiation(instance):
+    assert isinstance(instance, ocl_uml_TypeType)
 
-@given(instance=types::ElementType_strategy)
+@given(instance=types_ElementType_strategy)
 @settings(max_examples=50)
-def test_types::elementtype_instantiation(instance):
-    assert isinstance(instance, types::ElementType)
+def test_types_elementtype_instantiation(instance):
+    assert isinstance(instance, types_ElementType)
 
 @given(instance=Classifier_strategy)
 @settings(max_examples=50)
 def test_classifier_instantiation(instance):
     assert isinstance(instance, Classifier)
 
-@given(instance=ocl::uml::ElementType_strategy)
+@given(instance=ocl_uml_ElementType_strategy)
 @settings(max_examples=50)
-def test_ocl::uml::elementtype_instantiation(instance):
-    assert isinstance(instance, ocl::uml::ElementType)
+def test_ocl_uml_elementtype_instantiation(instance):
+    assert isinstance(instance, ocl_uml_ElementType)
 
-@given(instance=ocl::uml::ExpressionInOCL_strategy)
+@given(instance=ocl_uml_ExpressionInOCL_strategy)
 @settings(max_examples=50)
-def test_ocl::uml::expressioninocl_instantiation(instance):
-    assert isinstance(instance, ocl::uml::ExpressionInOCL)
+def test_ocl_uml_expressioninocl_instantiation(instance):
+    assert isinstance(instance, ocl_uml_ExpressionInOCL)
 
-@given(instance=ocl::uml::SequenceType_strategy)
+@given(instance=ocl_uml_SequenceType_strategy)
 @settings(max_examples=50)
-def test_ocl::uml::sequencetype_instantiation(instance):
-    assert isinstance(instance, ocl::uml::SequenceType)
+def test_ocl_uml_sequencetype_instantiation(instance):
+    assert isinstance(instance, ocl_uml_SequenceType)
 
-@given(instance=ocl::uml::OrderedSetType_strategy)
+@given(instance=ocl_uml_OrderedSetType_strategy)
 @settings(max_examples=50)
-def test_ocl::uml::orderedsettype_instantiation(instance):
-    assert isinstance(instance, ocl::uml::OrderedSetType)
+def test_ocl_uml_orderedsettype_instantiation(instance):
+    assert isinstance(instance, ocl_uml_OrderedSetType)
 
-@given(instance=ocl::uml::SetType_strategy)
+@given(instance=ocl_uml_SetType_strategy)
 @settings(max_examples=50)
-def test_ocl::uml::settype_instantiation(instance):
-    assert isinstance(instance, ocl::uml::SetType)
+def test_ocl_uml_settype_instantiation(instance):
+    assert isinstance(instance, ocl_uml_SetType)
 
-@given(instance=ocl::uml::BagType_strategy)
+@given(instance=ocl_uml_BagType_strategy)
 @settings(max_examples=50)
-def test_ocl::uml::bagtype_instantiation(instance):
-    assert isinstance(instance, ocl::uml::BagType)
+def test_ocl_uml_bagtype_instantiation(instance):
+    assert isinstance(instance, ocl_uml_BagType)
 
-@given(instance=ocl::uml::TupleType_strategy)
+@given(instance=ocl_uml_TupleType_strategy)
 @settings(max_examples=50)
-def test_ocl::uml::tupletype_instantiation(instance):
-    assert isinstance(instance, ocl::uml::TupleType)
+def test_ocl_uml_tupletype_instantiation(instance):
+    assert isinstance(instance, ocl_uml_TupleType)
 
-@given(instance=ocl::uml::CollectionType_strategy)
+@given(instance=ocl_uml_CollectionType_strategy)
 @settings(max_examples=50)
-def test_ocl::uml::collectiontype_instantiation(instance):
-    assert isinstance(instance, ocl::uml::CollectionType)
+def test_ocl_uml_collectiontype_instantiation(instance):
+    assert isinstance(instance, ocl_uml_CollectionType)
 
-@given(instance=ocl::uml::PrimitiveType_strategy)
+@given(instance=ocl_uml_PrimitiveType_strategy)
 @settings(max_examples=50)
-def test_ocl::uml::primitivetype_instantiation(instance):
-    assert isinstance(instance, ocl::uml::PrimitiveType)
+def test_ocl_uml_primitivetype_instantiation(instance):
+    assert isinstance(instance, ocl_uml_PrimitiveType)
 
-@given(instance=uml::ocl::Property_strategy)
+@given(instance=uml_ocl_Property_strategy)
 @settings(max_examples=50)
-def test_uml::ocl::property_instantiation(instance):
-    assert isinstance(instance, uml::ocl::Property)
+def test_uml_ocl_property_instantiation(instance):
+    assert isinstance(instance, uml_ocl_Property)
 
-@given(instance=ocl::uml::MessageType_strategy)
+@given(instance=ocl_uml_MessageType_strategy)
 @settings(max_examples=50)
-def test_ocl::uml::messagetype_instantiation(instance):
-    assert isinstance(instance, ocl::uml::MessageType)
+def test_ocl_uml_messagetype_instantiation(instance):
+    assert isinstance(instance, ocl_uml_MessageType)
 
-@given(instance=ocl::uml::InvalidType_strategy)
+@given(instance=ocl_uml_InvalidType_strategy)
 @settings(max_examples=50)
-def test_ocl::uml::invalidtype_instantiation(instance):
-    assert isinstance(instance, ocl::uml::InvalidType)
+def test_ocl_uml_invalidtype_instantiation(instance):
+    assert isinstance(instance, ocl_uml_InvalidType)
 
-@given(instance=ocl::uml::VoidType_strategy)
+@given(instance=ocl_uml_VoidType_strategy)
 @settings(max_examples=50)
-def test_ocl::uml::voidtype_instantiation(instance):
-    assert isinstance(instance, ocl::uml::VoidType)
+def test_ocl_uml_voidtype_instantiation(instance):
+    assert isinstance(instance, ocl_uml_VoidType)
 
-@given(instance=uml::ocl::Operation_strategy)
+@given(instance=uml_ocl_Operation_strategy)
 @settings(max_examples=50)
-def test_uml::ocl::operation_instantiation(instance):
-    assert isinstance(instance, uml::ocl::Operation)
+def test_uml_ocl_operation_instantiation(instance):
+    assert isinstance(instance, uml_ocl_Operation)
 
-@given(instance=ocl::uml::AnyType_strategy)
+@given(instance=ocl_uml_AnyType_strategy)
 @settings(max_examples=50)
-def test_ocl::uml::anytype_instantiation(instance):
-    assert isinstance(instance, ocl::uml::AnyType)
+def test_ocl_uml_anytype_instantiation(instance):
+    assert isinstance(instance, ocl_uml_AnyType)

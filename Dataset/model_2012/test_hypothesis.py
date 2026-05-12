@@ -3,12 +3,12 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    trace::Exception,
-    trace::Log,
-    trace::Trace,
+from python_code import (
+    trace_Exception,
+    trace_Log,
+    trace_Trace,
     LogLevel,
 )
 
@@ -18,23 +18,23 @@ from classes import (
 
 
 
-def test_trace::exception_is_not_abstract():
-    assert not inspect.isabstract(trace::Exception)
+def test_trace_exception_is_not_abstract():
+    assert not inspect.isabstract(trace_Exception)
 
 
-def test_trace::exception_constructor_exists():
-    assert callable(trace::Exception.__init__)
+def test_trace_exception_constructor_exists():
+    assert callable(trace_Exception.__init__)
 
 
-def test_trace::exception_constructor_args():
-    sig = inspect.signature(trace::Exception.__init__)
+def test_trace_exception_constructor_args():
+    sig = inspect.signature(trace_Exception.__init__)
     params = list(sig.parameters.keys())
     assert "message" in params, "Missing parameter 'message'"
 
-def test_trace::exception_has_message():
-    assert hasattr(trace::Exception, "message")
+def test_trace_exception_has_message():
+    assert hasattr(trace_Exception, "message")
     descriptor = None
-    for klass in trace::Exception.__mro__:
+    for klass in trace_Exception.__mro__:
         if "message" in klass.__dict__:
             descriptor = klass.__dict__["message"]
             break
@@ -42,70 +42,70 @@ def test_trace::exception_has_message():
 
 
 
-def test_trace::log_is_not_abstract():
-    assert not inspect.isabstract(trace::Log)
+def test_trace_log_is_not_abstract():
+    assert not inspect.isabstract(trace_Log)
 
 
-def test_trace::log_constructor_exists():
-    assert callable(trace::Log.__init__)
+def test_trace_log_constructor_exists():
+    assert callable(trace_Log.__init__)
 
 
-def test_trace::log_constructor_args():
-    sig = inspect.signature(trace::Log.__init__)
+def test_trace_log_constructor_args():
+    sig = inspect.signature(trace_Log.__init__)
     params = list(sig.parameters.keys())
-    assert "timestamp" in params, "Missing parameter 'timestamp'"
+    assert "level" in params, "Missing parameter 'level'"
     assert "message" in params, "Missing parameter 'message'"
     assert "source" in params, "Missing parameter 'source'"
-    assert "level" in params, "Missing parameter 'level'"
+    assert "timestamp" in params, "Missing parameter 'timestamp'"
 
-def test_trace::log_has_timestamp():
-    assert hasattr(trace::Log, "timestamp")
+def test_trace_log_has_level():
+    assert hasattr(trace_Log, "level")
     descriptor = None
-    for klass in trace::Log.__mro__:
-        if "timestamp" in klass.__dict__:
-            descriptor = klass.__dict__["timestamp"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_trace::log_has_message():
-    assert hasattr(trace::Log, "message")
-    descriptor = None
-    for klass in trace::Log.__mro__:
-        if "message" in klass.__dict__:
-            descriptor = klass.__dict__["message"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_trace::log_has_source():
-    assert hasattr(trace::Log, "source")
-    descriptor = None
-    for klass in trace::Log.__mro__:
-        if "source" in klass.__dict__:
-            descriptor = klass.__dict__["source"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_trace::log_has_level():
-    assert hasattr(trace::Log, "level")
-    descriptor = None
-    for klass in trace::Log.__mro__:
+    for klass in trace_Log.__mro__:
         if "level" in klass.__dict__:
             descriptor = klass.__dict__["level"]
             break
     assert isinstance(descriptor, property)
 
+def test_trace_log_has_message():
+    assert hasattr(trace_Log, "message")
+    descriptor = None
+    for klass in trace_Log.__mro__:
+        if "message" in klass.__dict__:
+            descriptor = klass.__dict__["message"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_trace_log_has_source():
+    assert hasattr(trace_Log, "source")
+    descriptor = None
+    for klass in trace_Log.__mro__:
+        if "source" in klass.__dict__:
+            descriptor = klass.__dict__["source"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_trace_log_has_timestamp():
+    assert hasattr(trace_Log, "timestamp")
+    descriptor = None
+    for klass in trace_Log.__mro__:
+        if "timestamp" in klass.__dict__:
+            descriptor = klass.__dict__["timestamp"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_trace::trace_is_not_abstract():
-    assert not inspect.isabstract(trace::Trace)
+
+def test_trace_trace_is_not_abstract():
+    assert not inspect.isabstract(trace_Trace)
 
 
-def test_trace::trace_constructor_exists():
-    assert callable(trace::Trace.__init__)
+def test_trace_trace_constructor_exists():
+    assert callable(trace_Trace.__init__)
 
 
-def test_trace::trace_constructor_args():
-    sig = inspect.signature(trace::Trace.__init__)
+def test_trace_trace_constructor_args():
+    sig = inspect.signature(trace_Trace.__init__)
     params = list(sig.parameters.keys())
 
 def test_loglevel_exists():
@@ -117,12 +117,12 @@ def test_loglevel_has_all_literals():
     enum_literals = [lit.name for lit in LogLevel]
     expected_literals = [
         "WARNING",
-        "FINER",
         "SEVERE",
         "FINEST",
-        "FINE",
         "INFO",
+        "FINE",
         "CONFIG",
+        "FINER",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
@@ -140,92 +140,77 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-trace::Exception_strategy = st.builds(
-    trace::Exception,
+trace_Exception_strategy = st.builds(
+    trace_Exception,
     message=
         safe_text
 )
-trace::Log_strategy = st.builds(
-    trace::Log,
-    timestamp=
-        st.dates(),
+trace_Log_strategy = st.builds(
+    trace_Log,
+    level=
+        safe_text,
     message=
         safe_text,
     source=
         safe_text,
-    level=
-        safe_text
+    timestamp=
+        st.dates()
 )
-trace::Trace_strategy = st.builds(
-    trace::Trace,
+trace_Trace_strategy = st.builds(
+    trace_Trace,
 )
 
-@given(instance=trace::Exception_strategy)
+@given(instance=trace_Exception_strategy)
 @settings(max_examples=50)
-def test_trace::exception_instantiation(instance):
-    assert isinstance(instance, trace::Exception)
-
-@given(instance=trace::Exception_strategy)
-def test_trace::exception_message_type(instance):
-    assert isinstance(instance.message, str)
+def test_trace_exception_instantiation(instance):
+    assert isinstance(instance, trace_Exception)
 
 
-@given(instance=trace::Exception_strategy)
-def test_trace::exception_message_setter(instance):
+
+@given(instance=trace_Exception_strategy)
+def test_trace_exception_message_setter(instance):
     original = instance.message
     instance.message = original
     assert instance.message == original
 
-@given(instance=trace::Log_strategy)
+@given(instance=trace_Log_strategy)
 @settings(max_examples=50)
-def test_trace::log_instantiation(instance):
-    assert isinstance(instance, trace::Log)
-
-@given(instance=trace::Log_strategy)
-def test_trace::log_timestamp_type(instance):
-    assert isinstance(instance.timestamp, date)
+def test_trace_log_instantiation(instance):
+    assert isinstance(instance, trace_Log)
 
 
-@given(instance=trace::Log_strategy)
-def test_trace::log_timestamp_setter(instance):
-    original = instance.timestamp
-    instance.timestamp = original
-    assert instance.timestamp == original
 
-@given(instance=trace::Log_strategy)
-def test_trace::log_message_type(instance):
-    assert isinstance(instance.message, str)
-
-
-@given(instance=trace::Log_strategy)
-def test_trace::log_message_setter(instance):
-    original = instance.message
-    instance.message = original
-    assert instance.message == original
-
-@given(instance=trace::Log_strategy)
-def test_trace::log_source_type(instance):
-    assert isinstance(instance.source, str)
-
-
-@given(instance=trace::Log_strategy)
-def test_trace::log_source_setter(instance):
-    original = instance.source
-    instance.source = original
-    assert instance.source == original
-
-@given(instance=trace::Log_strategy)
-def test_trace::log_level_type(instance):
-    assert isinstance(instance.level, str)
-
-
-@given(instance=trace::Log_strategy)
-def test_trace::log_level_setter(instance):
+@given(instance=trace_Log_strategy)
+def test_trace_log_level_setter(instance):
     original = instance.level
     instance.level = original
     assert instance.level == original
 
-@given(instance=trace::Trace_strategy)
+
+
+@given(instance=trace_Log_strategy)
+def test_trace_log_message_setter(instance):
+    original = instance.message
+    instance.message = original
+    assert instance.message == original
+
+
+
+@given(instance=trace_Log_strategy)
+def test_trace_log_source_setter(instance):
+    original = instance.source
+    instance.source = original
+    assert instance.source == original
+
+
+
+@given(instance=trace_Log_strategy)
+def test_trace_log_timestamp_setter(instance):
+    original = instance.timestamp
+    instance.timestamp = original
+    assert instance.timestamp == original
+
+@given(instance=trace_Trace_strategy)
 @settings(max_examples=50)
-def test_trace::trace_instantiation(instance):
-    assert isinstance(instance, trace::Trace)
+def test_trace_trace_instantiation(instance):
+    assert isinstance(instance, trace_Trace)

@@ -3,83 +3,83 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    type::relaxed::art::relaxed::DataType,
+from python_code import (
+    type_relaxed_art_relaxed_DataType,
     DictionaryDefaultValue,
     PortId,
-    type::relaxed::AbstractPort,
+    type_relaxed_AbstractPort,
     CardinalityElement,
-    art::relaxed::type::relaxed::Port,
+    art_relaxed_type_relaxed_Port,
     TypedElement,
-    art::relaxed::type::relaxed::Attribute,
-    art::relaxed::type::relaxed::Parameter,
+    art_relaxed_type_relaxed_Attribute,
+    art_relaxed_type_relaxed_Parameter,
     Parameter,
     Operation,
     TypeImplementation,
-    art::relaxed::implem::relaxed::OSGiType,
+    art_relaxed_implem_relaxed_OSGiType,
     TypeGroup,
     Attribute,
-    art::relaxed::type::relaxed::BasicAttribute,
-    art::relaxed::type::relaxed::Dictionary,
+    art_relaxed_type_relaxed_BasicAttribute,
+    art_relaxed_type_relaxed_Dictionary,
     ComponentInstance,
-    art::relaxed::instance::relaxed::CompositeInstance,
-    art::relaxed::instance::relaxed::PrimitiveInstance,
+    art_relaxed_instance_relaxed_CompositeInstance,
+    art_relaxed_instance_relaxed_PrimitiveInstance,
     InstanceGroup,
     ComponentImplementation,
-    art::relaxed::implem::relaxed::OSGiComponent,
-    art::relaxed::implem::relaxed::FractalComponent,
+    art_relaxed_implem_relaxed_FractalComponent,
+    art_relaxed_implem_relaxed_OSGiComponent,
     TransmissionBinding,
     AttributeInstance,
     Dictionary,
     Entry,
-    art::relaxed::instance::relaxed::OtherEntry,
-    art::relaxed::instance::relaxed::DefaultEntry,
-    art::relaxed::instance::relaxed::DictionaryValuedAttribute,
+    art_relaxed_instance_relaxed_OtherEntry,
+    art_relaxed_instance_relaxed_DefaultEntry,
+    art_relaxed_instance_relaxed_DictionaryValuedAttribute,
     BasicAttribute,
-    art::relaxed::instance::relaxed::ValuedAttribute,
+    art_relaxed_instance_relaxed_ValuedAttribute,
     AbstractPort,
-    art::relaxed::type::relaxed::PortCollection,
+    art_relaxed_type_relaxed_PortCollection,
     Binding,
-    art::relaxed::instance::relaxed::DelegationBinding,
-    art::relaxed::instance::relaxed::TransmissionBinding,
+    art_relaxed_instance_relaxed_DelegationBinding,
+    art_relaxed_instance_relaxed_TransmissionBinding,
     DelegationBinding,
     AspectModelElement,
-    art::relaxed::type::relaxed::DictionaryDefaultValue,
-    art::relaxed::implem::relaxed::TypeImplementation,
-    art::relaxed::instance::relaxed::Binding,
-    art::relaxed::implem::relaxed::ComponentImplementation,
-    art::relaxed::instance::relaxed::Entry,
-    art::relaxed::instance::relaxed::AttributeInstance,
-    art::relaxed::NamedElement,
+    art_relaxed_instance_relaxed_Entry,
+    art_relaxed_instance_relaxed_Binding,
+    art_relaxed_instance_relaxed_AttributeInstance,
+    art_relaxed_type_relaxed_DictionaryDefaultValue,
+    art_relaxed_implem_relaxed_ComponentImplementation,
+    art_relaxed_implem_relaxed_TypeImplementation,
+    art_relaxed_NamedElement,
     CompositeInstance,
-    art::relaxed::AspectModelElement,
+    art_relaxed_AspectModelElement,
     Group,
-    art::relaxed::group::relaxed::TypeGroup,
-    art::relaxed::group::relaxed::InstanceGroup,
+    art_relaxed_group_relaxed_TypeGroup,
+    art_relaxed_group_relaxed_InstanceGroup,
     ComponentType,
-    art::relaxed::type::relaxed::PrimitiveType,
-    art::relaxed::type::relaxed::CompositeType,
+    art_relaxed_type_relaxed_PrimitiveType,
+    art_relaxed_type_relaxed_CompositeType,
     Service,
-    art::relaxed::type::relaxed::FunctionalService,
-    art::relaxed::type::relaxed::ControlService,
+    art_relaxed_type_relaxed_FunctionalService,
+    art_relaxed_type_relaxed_ControlService,
     Node,
     ModelElement,
-    art::relaxed::DataType,
-    art::relaxed::type::relaxed::Service,
-    art::relaxed::type::relaxed::Operation,
-    art::relaxed::instance::relaxed::ComponentInstance,
-    art::relaxed::CardinalityElement,
-    art::relaxed::TypedElement,
-    art::relaxed::type::relaxed::ComponentType,
-    art::relaxed::System,
+    art_relaxed_type_relaxed_Service,
+    art_relaxed_type_relaxed_Operation,
+    art_relaxed_CardinalityElement,
+    art_relaxed_TypedElement,
+    art_relaxed_instance_relaxed_ComponentInstance,
+    art_relaxed_type_relaxed_ComponentType,
+    art_relaxed_DataType,
+    art_relaxed_System,
     NamedElement,
-    art::relaxed::group::relaxed::Group,
-    art::relaxed::type::relaxed::PortId,
-    art::relaxed::distrib::relaxed::Node,
-    art::relaxed::type::relaxed::AbstractPort,
-    art::relaxed::ModelElement,
+    art_relaxed_type_relaxed_AbstractPort,
+    art_relaxed_type_relaxed_PortId,
+    art_relaxed_distrib_relaxed_Node,
+    art_relaxed_group_relaxed_Group,
+    art_relaxed_ModelElement,
     InstanceState,
     PortRole,
 )
@@ -90,16 +90,16 @@ from classes import (
 
 
 
-def test_type::relaxed::art::relaxed::datatype_is_not_abstract():
-    assert not inspect.isabstract(type::relaxed::art::relaxed::DataType)
+def test_type_relaxed_art_relaxed_datatype_is_not_abstract():
+    assert not inspect.isabstract(type_relaxed_art_relaxed_DataType)
 
 
-def test_type::relaxed::art::relaxed::datatype_constructor_exists():
-    assert callable(type::relaxed::art::relaxed::DataType.__init__)
+def test_type_relaxed_art_relaxed_datatype_constructor_exists():
+    assert callable(type_relaxed_art_relaxed_DataType.__init__)
 
 
-def test_type::relaxed::art::relaxed::datatype_constructor_args():
-    sig = inspect.signature(type::relaxed::art::relaxed::DataType.__init__)
+def test_type_relaxed_art_relaxed_datatype_constructor_args():
+    sig = inspect.signature(type_relaxed_art_relaxed_DataType.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -132,16 +132,16 @@ def test_portid_constructor_args():
 
 
 
-def test_type::relaxed::abstractport_is_not_abstract():
-    assert not inspect.isabstract(type::relaxed::AbstractPort)
+def test_type_relaxed_abstractport_is_not_abstract():
+    assert not inspect.isabstract(type_relaxed_AbstractPort)
 
 
-def test_type::relaxed::abstractport_constructor_exists():
-    assert callable(type::relaxed::AbstractPort.__init__)
+def test_type_relaxed_abstractport_constructor_exists():
+    assert callable(type_relaxed_AbstractPort.__init__)
 
 
-def test_type::relaxed::abstractport_constructor_args():
-    sig = inspect.signature(type::relaxed::AbstractPort.__init__)
+def test_type_relaxed_abstractport_constructor_args():
+    sig = inspect.signature(type_relaxed_AbstractPort.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -160,16 +160,16 @@ def test_cardinalityelement_constructor_args():
 
 
 
-def test_art::relaxed::type::relaxed::port_is_not_abstract():
-    assert not inspect.isabstract(art::relaxed::type::relaxed::Port)
+def test_art_relaxed_type_relaxed_port_is_not_abstract():
+    assert not inspect.isabstract(art_relaxed_type_relaxed_Port)
 
 
-def test_art::relaxed::type::relaxed::port_constructor_exists():
-    assert callable(art::relaxed::type::relaxed::Port.__init__)
+def test_art_relaxed_type_relaxed_port_constructor_exists():
+    assert callable(art_relaxed_type_relaxed_Port.__init__)
 
 
-def test_art::relaxed::type::relaxed::port_constructor_args():
-    sig = inspect.signature(art::relaxed::type::relaxed::Port.__init__)
+def test_art_relaxed_type_relaxed_port_constructor_args():
+    sig = inspect.signature(art_relaxed_type_relaxed_Port.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -188,30 +188,30 @@ def test_typedelement_constructor_args():
 
 
 
-def test_art::relaxed::type::relaxed::attribute_is_not_abstract():
-    assert not inspect.isabstract(art::relaxed::type::relaxed::Attribute)
+def test_art_relaxed_type_relaxed_attribute_is_not_abstract():
+    assert not inspect.isabstract(art_relaxed_type_relaxed_Attribute)
 
 
-def test_art::relaxed::type::relaxed::attribute_constructor_exists():
-    assert callable(art::relaxed::type::relaxed::Attribute.__init__)
+def test_art_relaxed_type_relaxed_attribute_constructor_exists():
+    assert callable(art_relaxed_type_relaxed_Attribute.__init__)
 
 
-def test_art::relaxed::type::relaxed::attribute_constructor_args():
-    sig = inspect.signature(art::relaxed::type::relaxed::Attribute.__init__)
+def test_art_relaxed_type_relaxed_attribute_constructor_args():
+    sig = inspect.signature(art_relaxed_type_relaxed_Attribute.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_art::relaxed::type::relaxed::parameter_is_not_abstract():
-    assert not inspect.isabstract(art::relaxed::type::relaxed::Parameter)
+def test_art_relaxed_type_relaxed_parameter_is_not_abstract():
+    assert not inspect.isabstract(art_relaxed_type_relaxed_Parameter)
 
 
-def test_art::relaxed::type::relaxed::parameter_constructor_exists():
-    assert callable(art::relaxed::type::relaxed::Parameter.__init__)
+def test_art_relaxed_type_relaxed_parameter_constructor_exists():
+    assert callable(art_relaxed_type_relaxed_Parameter.__init__)
 
 
-def test_art::relaxed::type::relaxed::parameter_constructor_args():
-    sig = inspect.signature(art::relaxed::type::relaxed::Parameter.__init__)
+def test_art_relaxed_type_relaxed_parameter_constructor_args():
+    sig = inspect.signature(art_relaxed_type_relaxed_Parameter.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -258,23 +258,23 @@ def test_typeimplementation_constructor_args():
 
 
 
-def test_art::relaxed::implem::relaxed::osgitype_is_not_abstract():
-    assert not inspect.isabstract(art::relaxed::implem::relaxed::OSGiType)
+def test_art_relaxed_implem_relaxed_osgitype_is_not_abstract():
+    assert not inspect.isabstract(art_relaxed_implem_relaxed_OSGiType)
 
 
-def test_art::relaxed::implem::relaxed::osgitype_constructor_exists():
-    assert callable(art::relaxed::implem::relaxed::OSGiType.__init__)
+def test_art_relaxed_implem_relaxed_osgitype_constructor_exists():
+    assert callable(art_relaxed_implem_relaxed_OSGiType.__init__)
 
 
-def test_art::relaxed::implem::relaxed::osgitype_constructor_args():
-    sig = inspect.signature(art::relaxed::implem::relaxed::OSGiType.__init__)
+def test_art_relaxed_implem_relaxed_osgitype_constructor_args():
+    sig = inspect.signature(art_relaxed_implem_relaxed_OSGiType.__init__)
     params = list(sig.parameters.keys())
     assert "generateInstanceBundle" in params, "Missing parameter 'generateInstanceBundle'"
 
-def test_art::relaxed::implem::relaxed::osgitype_has_generateInstanceBundle():
-    assert hasattr(art::relaxed::implem::relaxed::OSGiType, "generateInstanceBundle")
+def test_art_relaxed_implem_relaxed_osgitype_has_generateInstanceBundle():
+    assert hasattr(art_relaxed_implem_relaxed_OSGiType, "generateInstanceBundle")
     descriptor = None
-    for klass in art::relaxed::implem::relaxed::OSGiType.__mro__:
+    for klass in art_relaxed_implem_relaxed_OSGiType.__mro__:
         if "generateInstanceBundle" in klass.__dict__:
             descriptor = klass.__dict__["generateInstanceBundle"]
             break
@@ -310,23 +310,23 @@ def test_attribute_constructor_args():
 
 
 
-def test_art::relaxed::type::relaxed::basicattribute_is_not_abstract():
-    assert not inspect.isabstract(art::relaxed::type::relaxed::BasicAttribute)
+def test_art_relaxed_type_relaxed_basicattribute_is_not_abstract():
+    assert not inspect.isabstract(art_relaxed_type_relaxed_BasicAttribute)
 
 
-def test_art::relaxed::type::relaxed::basicattribute_constructor_exists():
-    assert callable(art::relaxed::type::relaxed::BasicAttribute.__init__)
+def test_art_relaxed_type_relaxed_basicattribute_constructor_exists():
+    assert callable(art_relaxed_type_relaxed_BasicAttribute.__init__)
 
 
-def test_art::relaxed::type::relaxed::basicattribute_constructor_args():
-    sig = inspect.signature(art::relaxed::type::relaxed::BasicAttribute.__init__)
+def test_art_relaxed_type_relaxed_basicattribute_constructor_args():
+    sig = inspect.signature(art_relaxed_type_relaxed_BasicAttribute.__init__)
     params = list(sig.parameters.keys())
     assert "defaultValue" in params, "Missing parameter 'defaultValue'"
 
-def test_art::relaxed::type::relaxed::basicattribute_has_defaultValue():
-    assert hasattr(art::relaxed::type::relaxed::BasicAttribute, "defaultValue")
+def test_art_relaxed_type_relaxed_basicattribute_has_defaultValue():
+    assert hasattr(art_relaxed_type_relaxed_BasicAttribute, "defaultValue")
     descriptor = None
-    for klass in art::relaxed::type::relaxed::BasicAttribute.__mro__:
+    for klass in art_relaxed_type_relaxed_BasicAttribute.__mro__:
         if "defaultValue" in klass.__dict__:
             descriptor = klass.__dict__["defaultValue"]
             break
@@ -334,16 +334,16 @@ def test_art::relaxed::type::relaxed::basicattribute_has_defaultValue():
 
 
 
-def test_art::relaxed::type::relaxed::dictionary_is_not_abstract():
-    assert not inspect.isabstract(art::relaxed::type::relaxed::Dictionary)
+def test_art_relaxed_type_relaxed_dictionary_is_not_abstract():
+    assert not inspect.isabstract(art_relaxed_type_relaxed_Dictionary)
 
 
-def test_art::relaxed::type::relaxed::dictionary_constructor_exists():
-    assert callable(art::relaxed::type::relaxed::Dictionary.__init__)
+def test_art_relaxed_type_relaxed_dictionary_constructor_exists():
+    assert callable(art_relaxed_type_relaxed_Dictionary.__init__)
 
 
-def test_art::relaxed::type::relaxed::dictionary_constructor_args():
-    sig = inspect.signature(art::relaxed::type::relaxed::Dictionary.__init__)
+def test_art_relaxed_type_relaxed_dictionary_constructor_args():
+    sig = inspect.signature(art_relaxed_type_relaxed_Dictionary.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -362,30 +362,30 @@ def test_componentinstance_constructor_args():
 
 
 
-def test_art::relaxed::instance::relaxed::compositeinstance_is_not_abstract():
-    assert not inspect.isabstract(art::relaxed::instance::relaxed::CompositeInstance)
+def test_art_relaxed_instance_relaxed_compositeinstance_is_not_abstract():
+    assert not inspect.isabstract(art_relaxed_instance_relaxed_CompositeInstance)
 
 
-def test_art::relaxed::instance::relaxed::compositeinstance_constructor_exists():
-    assert callable(art::relaxed::instance::relaxed::CompositeInstance.__init__)
+def test_art_relaxed_instance_relaxed_compositeinstance_constructor_exists():
+    assert callable(art_relaxed_instance_relaxed_CompositeInstance.__init__)
 
 
-def test_art::relaxed::instance::relaxed::compositeinstance_constructor_args():
-    sig = inspect.signature(art::relaxed::instance::relaxed::CompositeInstance.__init__)
+def test_art_relaxed_instance_relaxed_compositeinstance_constructor_args():
+    sig = inspect.signature(art_relaxed_instance_relaxed_CompositeInstance.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_art::relaxed::instance::relaxed::primitiveinstance_is_not_abstract():
-    assert not inspect.isabstract(art::relaxed::instance::relaxed::PrimitiveInstance)
+def test_art_relaxed_instance_relaxed_primitiveinstance_is_not_abstract():
+    assert not inspect.isabstract(art_relaxed_instance_relaxed_PrimitiveInstance)
 
 
-def test_art::relaxed::instance::relaxed::primitiveinstance_constructor_exists():
-    assert callable(art::relaxed::instance::relaxed::PrimitiveInstance.__init__)
+def test_art_relaxed_instance_relaxed_primitiveinstance_constructor_exists():
+    assert callable(art_relaxed_instance_relaxed_PrimitiveInstance.__init__)
 
 
-def test_art::relaxed::instance::relaxed::primitiveinstance_constructor_args():
-    sig = inspect.signature(art::relaxed::instance::relaxed::PrimitiveInstance.__init__)
+def test_art_relaxed_instance_relaxed_primitiveinstance_constructor_args():
+    sig = inspect.signature(art_relaxed_instance_relaxed_PrimitiveInstance.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -418,59 +418,59 @@ def test_componentimplementation_constructor_args():
 
 
 
-def test_art::relaxed::implem::relaxed::osgicomponent_is_not_abstract():
-    assert not inspect.isabstract(art::relaxed::implem::relaxed::OSGiComponent)
+def test_art_relaxed_implem_relaxed_fractalcomponent_is_not_abstract():
+    assert not inspect.isabstract(art_relaxed_implem_relaxed_FractalComponent)
 
 
-def test_art::relaxed::implem::relaxed::osgicomponent_constructor_exists():
-    assert callable(art::relaxed::implem::relaxed::OSGiComponent.__init__)
+def test_art_relaxed_implem_relaxed_fractalcomponent_constructor_exists():
+    assert callable(art_relaxed_implem_relaxed_FractalComponent.__init__)
 
 
-def test_art::relaxed::implem::relaxed::osgicomponent_constructor_args():
-    sig = inspect.signature(art::relaxed::implem::relaxed::OSGiComponent.__init__)
+def test_art_relaxed_implem_relaxed_fractalcomponent_constructor_args():
+    sig = inspect.signature(art_relaxed_implem_relaxed_FractalComponent.__init__)
     params = list(sig.parameters.keys())
-    assert "implementingClass" in params, "Missing parameter 'implementingClass'"
+    assert "contentDesc" in params, "Missing parameter 'contentDesc'"
+    assert "controllerDesc" in params, "Missing parameter 'controllerDesc'"
 
-def test_art::relaxed::implem::relaxed::osgicomponent_has_implementingClass():
-    assert hasattr(art::relaxed::implem::relaxed::OSGiComponent, "implementingClass")
+def test_art_relaxed_implem_relaxed_fractalcomponent_has_contentDesc():
+    assert hasattr(art_relaxed_implem_relaxed_FractalComponent, "contentDesc")
     descriptor = None
-    for klass in art::relaxed::implem::relaxed::OSGiComponent.__mro__:
-        if "implementingClass" in klass.__dict__:
-            descriptor = klass.__dict__["implementingClass"]
+    for klass in art_relaxed_implem_relaxed_FractalComponent.__mro__:
+        if "contentDesc" in klass.__dict__:
+            descriptor = klass.__dict__["contentDesc"]
             break
     assert isinstance(descriptor, property)
 
-
-
-def test_art::relaxed::implem::relaxed::fractalcomponent_is_not_abstract():
-    assert not inspect.isabstract(art::relaxed::implem::relaxed::FractalComponent)
-
-
-def test_art::relaxed::implem::relaxed::fractalcomponent_constructor_exists():
-    assert callable(art::relaxed::implem::relaxed::FractalComponent.__init__)
-
-
-def test_art::relaxed::implem::relaxed::fractalcomponent_constructor_args():
-    sig = inspect.signature(art::relaxed::implem::relaxed::FractalComponent.__init__)
-    params = list(sig.parameters.keys())
-    assert "controllerDesc" in params, "Missing parameter 'controllerDesc'"
-    assert "contentDesc" in params, "Missing parameter 'contentDesc'"
-
-def test_art::relaxed::implem::relaxed::fractalcomponent_has_controllerDesc():
-    assert hasattr(art::relaxed::implem::relaxed::FractalComponent, "controllerDesc")
+def test_art_relaxed_implem_relaxed_fractalcomponent_has_controllerDesc():
+    assert hasattr(art_relaxed_implem_relaxed_FractalComponent, "controllerDesc")
     descriptor = None
-    for klass in art::relaxed::implem::relaxed::FractalComponent.__mro__:
+    for klass in art_relaxed_implem_relaxed_FractalComponent.__mro__:
         if "controllerDesc" in klass.__dict__:
             descriptor = klass.__dict__["controllerDesc"]
             break
     assert isinstance(descriptor, property)
 
-def test_art::relaxed::implem::relaxed::fractalcomponent_has_contentDesc():
-    assert hasattr(art::relaxed::implem::relaxed::FractalComponent, "contentDesc")
+
+
+def test_art_relaxed_implem_relaxed_osgicomponent_is_not_abstract():
+    assert not inspect.isabstract(art_relaxed_implem_relaxed_OSGiComponent)
+
+
+def test_art_relaxed_implem_relaxed_osgicomponent_constructor_exists():
+    assert callable(art_relaxed_implem_relaxed_OSGiComponent.__init__)
+
+
+def test_art_relaxed_implem_relaxed_osgicomponent_constructor_args():
+    sig = inspect.signature(art_relaxed_implem_relaxed_OSGiComponent.__init__)
+    params = list(sig.parameters.keys())
+    assert "implementingClass" in params, "Missing parameter 'implementingClass'"
+
+def test_art_relaxed_implem_relaxed_osgicomponent_has_implementingClass():
+    assert hasattr(art_relaxed_implem_relaxed_OSGiComponent, "implementingClass")
     descriptor = None
-    for klass in art::relaxed::implem::relaxed::FractalComponent.__mro__:
-        if "contentDesc" in klass.__dict__:
-            descriptor = klass.__dict__["contentDesc"]
+    for klass in art_relaxed_implem_relaxed_OSGiComponent.__mro__:
+        if "implementingClass" in klass.__dict__:
+            descriptor = klass.__dict__["implementingClass"]
             break
     assert isinstance(descriptor, property)
 
@@ -532,23 +532,23 @@ def test_entry_constructor_args():
 
 
 
-def test_art::relaxed::instance::relaxed::otherentry_is_not_abstract():
-    assert not inspect.isabstract(art::relaxed::instance::relaxed::OtherEntry)
+def test_art_relaxed_instance_relaxed_otherentry_is_not_abstract():
+    assert not inspect.isabstract(art_relaxed_instance_relaxed_OtherEntry)
 
 
-def test_art::relaxed::instance::relaxed::otherentry_constructor_exists():
-    assert callable(art::relaxed::instance::relaxed::OtherEntry.__init__)
+def test_art_relaxed_instance_relaxed_otherentry_constructor_exists():
+    assert callable(art_relaxed_instance_relaxed_OtherEntry.__init__)
 
 
-def test_art::relaxed::instance::relaxed::otherentry_constructor_args():
-    sig = inspect.signature(art::relaxed::instance::relaxed::OtherEntry.__init__)
+def test_art_relaxed_instance_relaxed_otherentry_constructor_args():
+    sig = inspect.signature(art_relaxed_instance_relaxed_OtherEntry.__init__)
     params = list(sig.parameters.keys())
     assert "key" in params, "Missing parameter 'key'"
 
-def test_art::relaxed::instance::relaxed::otherentry_has_key():
-    assert hasattr(art::relaxed::instance::relaxed::OtherEntry, "key")
+def test_art_relaxed_instance_relaxed_otherentry_has_key():
+    assert hasattr(art_relaxed_instance_relaxed_OtherEntry, "key")
     descriptor = None
-    for klass in art::relaxed::instance::relaxed::OtherEntry.__mro__:
+    for klass in art_relaxed_instance_relaxed_OtherEntry.__mro__:
         if "key" in klass.__dict__:
             descriptor = klass.__dict__["key"]
             break
@@ -556,30 +556,30 @@ def test_art::relaxed::instance::relaxed::otherentry_has_key():
 
 
 
-def test_art::relaxed::instance::relaxed::defaultentry_is_not_abstract():
-    assert not inspect.isabstract(art::relaxed::instance::relaxed::DefaultEntry)
+def test_art_relaxed_instance_relaxed_defaultentry_is_not_abstract():
+    assert not inspect.isabstract(art_relaxed_instance_relaxed_DefaultEntry)
 
 
-def test_art::relaxed::instance::relaxed::defaultentry_constructor_exists():
-    assert callable(art::relaxed::instance::relaxed::DefaultEntry.__init__)
+def test_art_relaxed_instance_relaxed_defaultentry_constructor_exists():
+    assert callable(art_relaxed_instance_relaxed_DefaultEntry.__init__)
 
 
-def test_art::relaxed::instance::relaxed::defaultentry_constructor_args():
-    sig = inspect.signature(art::relaxed::instance::relaxed::DefaultEntry.__init__)
+def test_art_relaxed_instance_relaxed_defaultentry_constructor_args():
+    sig = inspect.signature(art_relaxed_instance_relaxed_DefaultEntry.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_art::relaxed::instance::relaxed::dictionaryvaluedattribute_is_not_abstract():
-    assert not inspect.isabstract(art::relaxed::instance::relaxed::DictionaryValuedAttribute)
+def test_art_relaxed_instance_relaxed_dictionaryvaluedattribute_is_not_abstract():
+    assert not inspect.isabstract(art_relaxed_instance_relaxed_DictionaryValuedAttribute)
 
 
-def test_art::relaxed::instance::relaxed::dictionaryvaluedattribute_constructor_exists():
-    assert callable(art::relaxed::instance::relaxed::DictionaryValuedAttribute.__init__)
+def test_art_relaxed_instance_relaxed_dictionaryvaluedattribute_constructor_exists():
+    assert callable(art_relaxed_instance_relaxed_DictionaryValuedAttribute.__init__)
 
 
-def test_art::relaxed::instance::relaxed::dictionaryvaluedattribute_constructor_args():
-    sig = inspect.signature(art::relaxed::instance::relaxed::DictionaryValuedAttribute.__init__)
+def test_art_relaxed_instance_relaxed_dictionaryvaluedattribute_constructor_args():
+    sig = inspect.signature(art_relaxed_instance_relaxed_DictionaryValuedAttribute.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -598,23 +598,23 @@ def test_basicattribute_constructor_args():
 
 
 
-def test_art::relaxed::instance::relaxed::valuedattribute_is_not_abstract():
-    assert not inspect.isabstract(art::relaxed::instance::relaxed::ValuedAttribute)
+def test_art_relaxed_instance_relaxed_valuedattribute_is_not_abstract():
+    assert not inspect.isabstract(art_relaxed_instance_relaxed_ValuedAttribute)
 
 
-def test_art::relaxed::instance::relaxed::valuedattribute_constructor_exists():
-    assert callable(art::relaxed::instance::relaxed::ValuedAttribute.__init__)
+def test_art_relaxed_instance_relaxed_valuedattribute_constructor_exists():
+    assert callable(art_relaxed_instance_relaxed_ValuedAttribute.__init__)
 
 
-def test_art::relaxed::instance::relaxed::valuedattribute_constructor_args():
-    sig = inspect.signature(art::relaxed::instance::relaxed::ValuedAttribute.__init__)
+def test_art_relaxed_instance_relaxed_valuedattribute_constructor_args():
+    sig = inspect.signature(art_relaxed_instance_relaxed_ValuedAttribute.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
 
-def test_art::relaxed::instance::relaxed::valuedattribute_has_value():
-    assert hasattr(art::relaxed::instance::relaxed::ValuedAttribute, "value")
+def test_art_relaxed_instance_relaxed_valuedattribute_has_value():
+    assert hasattr(art_relaxed_instance_relaxed_ValuedAttribute, "value")
     descriptor = None
-    for klass in art::relaxed::instance::relaxed::ValuedAttribute.__mro__:
+    for klass in art_relaxed_instance_relaxed_ValuedAttribute.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -636,16 +636,16 @@ def test_abstractport_constructor_args():
 
 
 
-def test_art::relaxed::type::relaxed::portcollection_is_not_abstract():
-    assert not inspect.isabstract(art::relaxed::type::relaxed::PortCollection)
+def test_art_relaxed_type_relaxed_portcollection_is_not_abstract():
+    assert not inspect.isabstract(art_relaxed_type_relaxed_PortCollection)
 
 
-def test_art::relaxed::type::relaxed::portcollection_constructor_exists():
-    assert callable(art::relaxed::type::relaxed::PortCollection.__init__)
+def test_art_relaxed_type_relaxed_portcollection_constructor_exists():
+    assert callable(art_relaxed_type_relaxed_PortCollection.__init__)
 
 
-def test_art::relaxed::type::relaxed::portcollection_constructor_args():
-    sig = inspect.signature(art::relaxed::type::relaxed::PortCollection.__init__)
+def test_art_relaxed_type_relaxed_portcollection_constructor_args():
+    sig = inspect.signature(art_relaxed_type_relaxed_PortCollection.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -664,30 +664,30 @@ def test_binding_constructor_args():
 
 
 
-def test_art::relaxed::instance::relaxed::delegationbinding_is_not_abstract():
-    assert not inspect.isabstract(art::relaxed::instance::relaxed::DelegationBinding)
+def test_art_relaxed_instance_relaxed_delegationbinding_is_not_abstract():
+    assert not inspect.isabstract(art_relaxed_instance_relaxed_DelegationBinding)
 
 
-def test_art::relaxed::instance::relaxed::delegationbinding_constructor_exists():
-    assert callable(art::relaxed::instance::relaxed::DelegationBinding.__init__)
+def test_art_relaxed_instance_relaxed_delegationbinding_constructor_exists():
+    assert callable(art_relaxed_instance_relaxed_DelegationBinding.__init__)
 
 
-def test_art::relaxed::instance::relaxed::delegationbinding_constructor_args():
-    sig = inspect.signature(art::relaxed::instance::relaxed::DelegationBinding.__init__)
+def test_art_relaxed_instance_relaxed_delegationbinding_constructor_args():
+    sig = inspect.signature(art_relaxed_instance_relaxed_DelegationBinding.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_art::relaxed::instance::relaxed::transmissionbinding_is_not_abstract():
-    assert not inspect.isabstract(art::relaxed::instance::relaxed::TransmissionBinding)
+def test_art_relaxed_instance_relaxed_transmissionbinding_is_not_abstract():
+    assert not inspect.isabstract(art_relaxed_instance_relaxed_TransmissionBinding)
 
 
-def test_art::relaxed::instance::relaxed::transmissionbinding_constructor_exists():
-    assert callable(art::relaxed::instance::relaxed::TransmissionBinding.__init__)
+def test_art_relaxed_instance_relaxed_transmissionbinding_constructor_exists():
+    assert callable(art_relaxed_instance_relaxed_TransmissionBinding.__init__)
 
 
-def test_art::relaxed::instance::relaxed::transmissionbinding_constructor_args():
-    sig = inspect.signature(art::relaxed::instance::relaxed::TransmissionBinding.__init__)
+def test_art_relaxed_instance_relaxed_transmissionbinding_constructor_args():
+    sig = inspect.signature(art_relaxed_instance_relaxed_TransmissionBinding.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -720,33 +720,23 @@ def test_aspectmodelelement_constructor_args():
 
 
 
-def test_art::relaxed::type::relaxed::dictionarydefaultvalue_is_not_abstract():
-    assert not inspect.isabstract(art::relaxed::type::relaxed::DictionaryDefaultValue)
+def test_art_relaxed_instance_relaxed_entry_is_not_abstract():
+    assert not inspect.isabstract(art_relaxed_instance_relaxed_Entry)
 
 
-def test_art::relaxed::type::relaxed::dictionarydefaultvalue_constructor_exists():
-    assert callable(art::relaxed::type::relaxed::DictionaryDefaultValue.__init__)
+def test_art_relaxed_instance_relaxed_entry_constructor_exists():
+    assert callable(art_relaxed_instance_relaxed_Entry.__init__)
 
 
-def test_art::relaxed::type::relaxed::dictionarydefaultvalue_constructor_args():
-    sig = inspect.signature(art::relaxed::type::relaxed::DictionaryDefaultValue.__init__)
+def test_art_relaxed_instance_relaxed_entry_constructor_args():
+    sig = inspect.signature(art_relaxed_instance_relaxed_Entry.__init__)
     params = list(sig.parameters.keys())
-    assert "key" in params, "Missing parameter 'key'"
     assert "value" in params, "Missing parameter 'value'"
 
-def test_art::relaxed::type::relaxed::dictionarydefaultvalue_has_key():
-    assert hasattr(art::relaxed::type::relaxed::DictionaryDefaultValue, "key")
+def test_art_relaxed_instance_relaxed_entry_has_value():
+    assert hasattr(art_relaxed_instance_relaxed_Entry, "value")
     descriptor = None
-    for klass in art::relaxed::type::relaxed::DictionaryDefaultValue.__mro__:
-        if "key" in klass.__dict__:
-            descriptor = klass.__dict__["key"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_art::relaxed::type::relaxed::dictionarydefaultvalue_has_value():
-    assert hasattr(art::relaxed::type::relaxed::DictionaryDefaultValue, "value")
-    descriptor = None
-    for klass in art::relaxed::type::relaxed::DictionaryDefaultValue.__mro__:
+    for klass in art_relaxed_instance_relaxed_Entry.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -754,37 +744,23 @@ def test_art::relaxed::type::relaxed::dictionarydefaultvalue_has_value():
 
 
 
-def test_art::relaxed::implem::relaxed::typeimplementation_is_not_abstract():
-    assert not inspect.isabstract(art::relaxed::implem::relaxed::TypeImplementation)
+def test_art_relaxed_instance_relaxed_binding_is_not_abstract():
+    assert not inspect.isabstract(art_relaxed_instance_relaxed_Binding)
 
 
-def test_art::relaxed::implem::relaxed::typeimplementation_constructor_exists():
-    assert callable(art::relaxed::implem::relaxed::TypeImplementation.__init__)
+def test_art_relaxed_instance_relaxed_binding_constructor_exists():
+    assert callable(art_relaxed_instance_relaxed_Binding.__init__)
 
 
-def test_art::relaxed::implem::relaxed::typeimplementation_constructor_args():
-    sig = inspect.signature(art::relaxed::implem::relaxed::TypeImplementation.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_art::relaxed::instance::relaxed::binding_is_not_abstract():
-    assert not inspect.isabstract(art::relaxed::instance::relaxed::Binding)
-
-
-def test_art::relaxed::instance::relaxed::binding_constructor_exists():
-    assert callable(art::relaxed::instance::relaxed::Binding.__init__)
-
-
-def test_art::relaxed::instance::relaxed::binding_constructor_args():
-    sig = inspect.signature(art::relaxed::instance::relaxed::Binding.__init__)
+def test_art_relaxed_instance_relaxed_binding_constructor_args():
+    sig = inspect.signature(art_relaxed_instance_relaxed_Binding.__init__)
     params = list(sig.parameters.keys())
     assert "id" in params, "Missing parameter 'id'"
 
-def test_art::relaxed::instance::relaxed::binding_has_id():
-    assert hasattr(art::relaxed::instance::relaxed::Binding, "id")
+def test_art_relaxed_instance_relaxed_binding_has_id():
+    assert hasattr(art_relaxed_instance_relaxed_Binding, "id")
     descriptor = None
-    for klass in art::relaxed::instance::relaxed::Binding.__mro__:
+    for klass in art_relaxed_instance_relaxed_Binding.__mro__:
         if "id" in klass.__dict__:
             descriptor = klass.__dict__["id"]
             break
@@ -792,37 +768,47 @@ def test_art::relaxed::instance::relaxed::binding_has_id():
 
 
 
-def test_art::relaxed::implem::relaxed::componentimplementation_is_not_abstract():
-    assert not inspect.isabstract(art::relaxed::implem::relaxed::ComponentImplementation)
+def test_art_relaxed_instance_relaxed_attributeinstance_is_not_abstract():
+    assert not inspect.isabstract(art_relaxed_instance_relaxed_AttributeInstance)
 
 
-def test_art::relaxed::implem::relaxed::componentimplementation_constructor_exists():
-    assert callable(art::relaxed::implem::relaxed::ComponentImplementation.__init__)
+def test_art_relaxed_instance_relaxed_attributeinstance_constructor_exists():
+    assert callable(art_relaxed_instance_relaxed_AttributeInstance.__init__)
 
 
-def test_art::relaxed::implem::relaxed::componentimplementation_constructor_args():
-    sig = inspect.signature(art::relaxed::implem::relaxed::ComponentImplementation.__init__)
+def test_art_relaxed_instance_relaxed_attributeinstance_constructor_args():
+    sig = inspect.signature(art_relaxed_instance_relaxed_AttributeInstance.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_art::relaxed::instance::relaxed::entry_is_not_abstract():
-    assert not inspect.isabstract(art::relaxed::instance::relaxed::Entry)
+def test_art_relaxed_type_relaxed_dictionarydefaultvalue_is_not_abstract():
+    assert not inspect.isabstract(art_relaxed_type_relaxed_DictionaryDefaultValue)
 
 
-def test_art::relaxed::instance::relaxed::entry_constructor_exists():
-    assert callable(art::relaxed::instance::relaxed::Entry.__init__)
+def test_art_relaxed_type_relaxed_dictionarydefaultvalue_constructor_exists():
+    assert callable(art_relaxed_type_relaxed_DictionaryDefaultValue.__init__)
 
 
-def test_art::relaxed::instance::relaxed::entry_constructor_args():
-    sig = inspect.signature(art::relaxed::instance::relaxed::Entry.__init__)
+def test_art_relaxed_type_relaxed_dictionarydefaultvalue_constructor_args():
+    sig = inspect.signature(art_relaxed_type_relaxed_DictionaryDefaultValue.__init__)
     params = list(sig.parameters.keys())
+    assert "key" in params, "Missing parameter 'key'"
     assert "value" in params, "Missing parameter 'value'"
 
-def test_art::relaxed::instance::relaxed::entry_has_value():
-    assert hasattr(art::relaxed::instance::relaxed::Entry, "value")
+def test_art_relaxed_type_relaxed_dictionarydefaultvalue_has_key():
+    assert hasattr(art_relaxed_type_relaxed_DictionaryDefaultValue, "key")
     descriptor = None
-    for klass in art::relaxed::instance::relaxed::Entry.__mro__:
+    for klass in art_relaxed_type_relaxed_DictionaryDefaultValue.__mro__:
+        if "key" in klass.__dict__:
+            descriptor = klass.__dict__["key"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_art_relaxed_type_relaxed_dictionarydefaultvalue_has_value():
+    assert hasattr(art_relaxed_type_relaxed_DictionaryDefaultValue, "value")
+    descriptor = None
+    for klass in art_relaxed_type_relaxed_DictionaryDefaultValue.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -830,37 +816,51 @@ def test_art::relaxed::instance::relaxed::entry_has_value():
 
 
 
-def test_art::relaxed::instance::relaxed::attributeinstance_is_not_abstract():
-    assert not inspect.isabstract(art::relaxed::instance::relaxed::AttributeInstance)
+def test_art_relaxed_implem_relaxed_componentimplementation_is_not_abstract():
+    assert not inspect.isabstract(art_relaxed_implem_relaxed_ComponentImplementation)
 
 
-def test_art::relaxed::instance::relaxed::attributeinstance_constructor_exists():
-    assert callable(art::relaxed::instance::relaxed::AttributeInstance.__init__)
+def test_art_relaxed_implem_relaxed_componentimplementation_constructor_exists():
+    assert callable(art_relaxed_implem_relaxed_ComponentImplementation.__init__)
 
 
-def test_art::relaxed::instance::relaxed::attributeinstance_constructor_args():
-    sig = inspect.signature(art::relaxed::instance::relaxed::AttributeInstance.__init__)
+def test_art_relaxed_implem_relaxed_componentimplementation_constructor_args():
+    sig = inspect.signature(art_relaxed_implem_relaxed_ComponentImplementation.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_art::relaxed::namedelement_is_not_abstract():
-    assert not inspect.isabstract(art::relaxed::NamedElement)
+def test_art_relaxed_implem_relaxed_typeimplementation_is_not_abstract():
+    assert not inspect.isabstract(art_relaxed_implem_relaxed_TypeImplementation)
 
 
-def test_art::relaxed::namedelement_constructor_exists():
-    assert callable(art::relaxed::NamedElement.__init__)
+def test_art_relaxed_implem_relaxed_typeimplementation_constructor_exists():
+    assert callable(art_relaxed_implem_relaxed_TypeImplementation.__init__)
 
 
-def test_art::relaxed::namedelement_constructor_args():
-    sig = inspect.signature(art::relaxed::NamedElement.__init__)
+def test_art_relaxed_implem_relaxed_typeimplementation_constructor_args():
+    sig = inspect.signature(art_relaxed_implem_relaxed_TypeImplementation.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_art_relaxed_namedelement_is_not_abstract():
+    assert not inspect.isabstract(art_relaxed_NamedElement)
+
+
+def test_art_relaxed_namedelement_constructor_exists():
+    assert callable(art_relaxed_NamedElement.__init__)
+
+
+def test_art_relaxed_namedelement_constructor_args():
+    sig = inspect.signature(art_relaxed_NamedElement.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_art::relaxed::namedelement_has_name():
-    assert hasattr(art::relaxed::NamedElement, "name")
+def test_art_relaxed_namedelement_has_name():
+    assert hasattr(art_relaxed_NamedElement, "name")
     descriptor = None
-    for klass in art::relaxed::NamedElement.__mro__:
+    for klass in art_relaxed_NamedElement.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -882,23 +882,23 @@ def test_compositeinstance_constructor_args():
 
 
 
-def test_art::relaxed::aspectmodelelement_is_not_abstract():
-    assert not inspect.isabstract(art::relaxed::AspectModelElement)
+def test_art_relaxed_aspectmodelelement_is_not_abstract():
+    assert not inspect.isabstract(art_relaxed_AspectModelElement)
 
 
-def test_art::relaxed::aspectmodelelement_constructor_exists():
-    assert callable(art::relaxed::AspectModelElement.__init__)
+def test_art_relaxed_aspectmodelelement_constructor_exists():
+    assert callable(art_relaxed_AspectModelElement.__init__)
 
 
-def test_art::relaxed::aspectmodelelement_constructor_args():
-    sig = inspect.signature(art::relaxed::AspectModelElement.__init__)
+def test_art_relaxed_aspectmodelelement_constructor_args():
+    sig = inspect.signature(art_relaxed_AspectModelElement.__init__)
     params = list(sig.parameters.keys())
     assert "pid" in params, "Missing parameter 'pid'"
 
-def test_art::relaxed::aspectmodelelement_has_pid():
-    assert hasattr(art::relaxed::AspectModelElement, "pid")
+def test_art_relaxed_aspectmodelelement_has_pid():
+    assert hasattr(art_relaxed_AspectModelElement, "pid")
     descriptor = None
-    for klass in art::relaxed::AspectModelElement.__mro__:
+    for klass in art_relaxed_AspectModelElement.__mro__:
         if "pid" in klass.__dict__:
             descriptor = klass.__dict__["pid"]
             break
@@ -920,30 +920,30 @@ def test_group_constructor_args():
 
 
 
-def test_art::relaxed::group::relaxed::typegroup_is_not_abstract():
-    assert not inspect.isabstract(art::relaxed::group::relaxed::TypeGroup)
+def test_art_relaxed_group_relaxed_typegroup_is_not_abstract():
+    assert not inspect.isabstract(art_relaxed_group_relaxed_TypeGroup)
 
 
-def test_art::relaxed::group::relaxed::typegroup_constructor_exists():
-    assert callable(art::relaxed::group::relaxed::TypeGroup.__init__)
+def test_art_relaxed_group_relaxed_typegroup_constructor_exists():
+    assert callable(art_relaxed_group_relaxed_TypeGroup.__init__)
 
 
-def test_art::relaxed::group::relaxed::typegroup_constructor_args():
-    sig = inspect.signature(art::relaxed::group::relaxed::TypeGroup.__init__)
+def test_art_relaxed_group_relaxed_typegroup_constructor_args():
+    sig = inspect.signature(art_relaxed_group_relaxed_TypeGroup.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_art::relaxed::group::relaxed::instancegroup_is_not_abstract():
-    assert not inspect.isabstract(art::relaxed::group::relaxed::InstanceGroup)
+def test_art_relaxed_group_relaxed_instancegroup_is_not_abstract():
+    assert not inspect.isabstract(art_relaxed_group_relaxed_InstanceGroup)
 
 
-def test_art::relaxed::group::relaxed::instancegroup_constructor_exists():
-    assert callable(art::relaxed::group::relaxed::InstanceGroup.__init__)
+def test_art_relaxed_group_relaxed_instancegroup_constructor_exists():
+    assert callable(art_relaxed_group_relaxed_InstanceGroup.__init__)
 
 
-def test_art::relaxed::group::relaxed::instancegroup_constructor_args():
-    sig = inspect.signature(art::relaxed::group::relaxed::InstanceGroup.__init__)
+def test_art_relaxed_group_relaxed_instancegroup_constructor_args():
+    sig = inspect.signature(art_relaxed_group_relaxed_InstanceGroup.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -962,30 +962,30 @@ def test_componenttype_constructor_args():
 
 
 
-def test_art::relaxed::type::relaxed::primitivetype_is_not_abstract():
-    assert not inspect.isabstract(art::relaxed::type::relaxed::PrimitiveType)
+def test_art_relaxed_type_relaxed_primitivetype_is_not_abstract():
+    assert not inspect.isabstract(art_relaxed_type_relaxed_PrimitiveType)
 
 
-def test_art::relaxed::type::relaxed::primitivetype_constructor_exists():
-    assert callable(art::relaxed::type::relaxed::PrimitiveType.__init__)
+def test_art_relaxed_type_relaxed_primitivetype_constructor_exists():
+    assert callable(art_relaxed_type_relaxed_PrimitiveType.__init__)
 
 
-def test_art::relaxed::type::relaxed::primitivetype_constructor_args():
-    sig = inspect.signature(art::relaxed::type::relaxed::PrimitiveType.__init__)
+def test_art_relaxed_type_relaxed_primitivetype_constructor_args():
+    sig = inspect.signature(art_relaxed_type_relaxed_PrimitiveType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_art::relaxed::type::relaxed::compositetype_is_not_abstract():
-    assert not inspect.isabstract(art::relaxed::type::relaxed::CompositeType)
+def test_art_relaxed_type_relaxed_compositetype_is_not_abstract():
+    assert not inspect.isabstract(art_relaxed_type_relaxed_CompositeType)
 
 
-def test_art::relaxed::type::relaxed::compositetype_constructor_exists():
-    assert callable(art::relaxed::type::relaxed::CompositeType.__init__)
+def test_art_relaxed_type_relaxed_compositetype_constructor_exists():
+    assert callable(art_relaxed_type_relaxed_CompositeType.__init__)
 
 
-def test_art::relaxed::type::relaxed::compositetype_constructor_args():
-    sig = inspect.signature(art::relaxed::type::relaxed::CompositeType.__init__)
+def test_art_relaxed_type_relaxed_compositetype_constructor_args():
+    sig = inspect.signature(art_relaxed_type_relaxed_CompositeType.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1004,30 +1004,30 @@ def test_service_constructor_args():
 
 
 
-def test_art::relaxed::type::relaxed::functionalservice_is_not_abstract():
-    assert not inspect.isabstract(art::relaxed::type::relaxed::FunctionalService)
+def test_art_relaxed_type_relaxed_functionalservice_is_not_abstract():
+    assert not inspect.isabstract(art_relaxed_type_relaxed_FunctionalService)
 
 
-def test_art::relaxed::type::relaxed::functionalservice_constructor_exists():
-    assert callable(art::relaxed::type::relaxed::FunctionalService.__init__)
+def test_art_relaxed_type_relaxed_functionalservice_constructor_exists():
+    assert callable(art_relaxed_type_relaxed_FunctionalService.__init__)
 
 
-def test_art::relaxed::type::relaxed::functionalservice_constructor_args():
-    sig = inspect.signature(art::relaxed::type::relaxed::FunctionalService.__init__)
+def test_art_relaxed_type_relaxed_functionalservice_constructor_args():
+    sig = inspect.signature(art_relaxed_type_relaxed_FunctionalService.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_art::relaxed::type::relaxed::controlservice_is_not_abstract():
-    assert not inspect.isabstract(art::relaxed::type::relaxed::ControlService)
+def test_art_relaxed_type_relaxed_controlservice_is_not_abstract():
+    assert not inspect.isabstract(art_relaxed_type_relaxed_ControlService)
 
 
-def test_art::relaxed::type::relaxed::controlservice_constructor_exists():
-    assert callable(art::relaxed::type::relaxed::ControlService.__init__)
+def test_art_relaxed_type_relaxed_controlservice_constructor_exists():
+    assert callable(art_relaxed_type_relaxed_ControlService.__init__)
 
 
-def test_art::relaxed::type::relaxed::controlservice_constructor_args():
-    sig = inspect.signature(art::relaxed::type::relaxed::ControlService.__init__)
+def test_art_relaxed_type_relaxed_controlservice_constructor_args():
+    sig = inspect.signature(art_relaxed_type_relaxed_ControlService.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1060,99 +1060,61 @@ def test_modelelement_constructor_args():
 
 
 
-def test_art::relaxed::datatype_is_not_abstract():
-    assert not inspect.isabstract(art::relaxed::DataType)
+def test_art_relaxed_type_relaxed_service_is_not_abstract():
+    assert not inspect.isabstract(art_relaxed_type_relaxed_Service)
 
 
-def test_art::relaxed::datatype_constructor_exists():
-    assert callable(art::relaxed::DataType.__init__)
+def test_art_relaxed_type_relaxed_service_constructor_exists():
+    assert callable(art_relaxed_type_relaxed_Service.__init__)
 
 
-def test_art::relaxed::datatype_constructor_args():
-    sig = inspect.signature(art::relaxed::DataType.__init__)
+def test_art_relaxed_type_relaxed_service_constructor_args():
+    sig = inspect.signature(art_relaxed_type_relaxed_Service.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_art::relaxed::type::relaxed::service_is_not_abstract():
-    assert not inspect.isabstract(art::relaxed::type::relaxed::Service)
+def test_art_relaxed_type_relaxed_operation_is_not_abstract():
+    assert not inspect.isabstract(art_relaxed_type_relaxed_Operation)
 
 
-def test_art::relaxed::type::relaxed::service_constructor_exists():
-    assert callable(art::relaxed::type::relaxed::Service.__init__)
+def test_art_relaxed_type_relaxed_operation_constructor_exists():
+    assert callable(art_relaxed_type_relaxed_Operation.__init__)
 
 
-def test_art::relaxed::type::relaxed::service_constructor_args():
-    sig = inspect.signature(art::relaxed::type::relaxed::Service.__init__)
+def test_art_relaxed_type_relaxed_operation_constructor_args():
+    sig = inspect.signature(art_relaxed_type_relaxed_Operation.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_art::relaxed::type::relaxed::operation_is_not_abstract():
-    assert not inspect.isabstract(art::relaxed::type::relaxed::Operation)
+def test_art_relaxed_cardinalityelement_is_not_abstract():
+    assert not inspect.isabstract(art_relaxed_CardinalityElement)
 
 
-def test_art::relaxed::type::relaxed::operation_constructor_exists():
-    assert callable(art::relaxed::type::relaxed::Operation.__init__)
+def test_art_relaxed_cardinalityelement_constructor_exists():
+    assert callable(art_relaxed_CardinalityElement.__init__)
 
 
-def test_art::relaxed::type::relaxed::operation_constructor_args():
-    sig = inspect.signature(art::relaxed::type::relaxed::Operation.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_art::relaxed::instance::relaxed::componentinstance_is_not_abstract():
-    assert not inspect.isabstract(art::relaxed::instance::relaxed::ComponentInstance)
-
-
-def test_art::relaxed::instance::relaxed::componentinstance_constructor_exists():
-    assert callable(art::relaxed::instance::relaxed::ComponentInstance.__init__)
-
-
-def test_art::relaxed::instance::relaxed::componentinstance_constructor_args():
-    sig = inspect.signature(art::relaxed::instance::relaxed::ComponentInstance.__init__)
-    params = list(sig.parameters.keys())
-    assert "state" in params, "Missing parameter 'state'"
-
-def test_art::relaxed::instance::relaxed::componentinstance_has_state():
-    assert hasattr(art::relaxed::instance::relaxed::ComponentInstance, "state")
-    descriptor = None
-    for klass in art::relaxed::instance::relaxed::ComponentInstance.__mro__:
-        if "state" in klass.__dict__:
-            descriptor = klass.__dict__["state"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_art::relaxed::cardinalityelement_is_not_abstract():
-    assert not inspect.isabstract(art::relaxed::CardinalityElement)
-
-
-def test_art::relaxed::cardinalityelement_constructor_exists():
-    assert callable(art::relaxed::CardinalityElement.__init__)
-
-
-def test_art::relaxed::cardinalityelement_constructor_args():
-    sig = inspect.signature(art::relaxed::CardinalityElement.__init__)
+def test_art_relaxed_cardinalityelement_constructor_args():
+    sig = inspect.signature(art_relaxed_CardinalityElement.__init__)
     params = list(sig.parameters.keys())
     assert "upper" in params, "Missing parameter 'upper'"
     assert "lower" in params, "Missing parameter 'lower'"
 
-def test_art::relaxed::cardinalityelement_has_upper():
-    assert hasattr(art::relaxed::CardinalityElement, "upper")
+def test_art_relaxed_cardinalityelement_has_upper():
+    assert hasattr(art_relaxed_CardinalityElement, "upper")
     descriptor = None
-    for klass in art::relaxed::CardinalityElement.__mro__:
+    for klass in art_relaxed_CardinalityElement.__mro__:
         if "upper" in klass.__dict__:
             descriptor = klass.__dict__["upper"]
             break
     assert isinstance(descriptor, property)
 
-def test_art::relaxed::cardinalityelement_has_lower():
-    assert hasattr(art::relaxed::CardinalityElement, "lower")
+def test_art_relaxed_cardinalityelement_has_lower():
+    assert hasattr(art_relaxed_CardinalityElement, "lower")
     descriptor = None
-    for klass in art::relaxed::CardinalityElement.__mro__:
+    for klass in art_relaxed_CardinalityElement.__mro__:
         if "lower" in klass.__dict__:
             descriptor = klass.__dict__["lower"]
             break
@@ -1160,44 +1122,82 @@ def test_art::relaxed::cardinalityelement_has_lower():
 
 
 
-def test_art::relaxed::typedelement_is_not_abstract():
-    assert not inspect.isabstract(art::relaxed::TypedElement)
+def test_art_relaxed_typedelement_is_not_abstract():
+    assert not inspect.isabstract(art_relaxed_TypedElement)
 
 
-def test_art::relaxed::typedelement_constructor_exists():
-    assert callable(art::relaxed::TypedElement.__init__)
+def test_art_relaxed_typedelement_constructor_exists():
+    assert callable(art_relaxed_TypedElement.__init__)
 
 
-def test_art::relaxed::typedelement_constructor_args():
-    sig = inspect.signature(art::relaxed::TypedElement.__init__)
+def test_art_relaxed_typedelement_constructor_args():
+    sig = inspect.signature(art_relaxed_TypedElement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_art::relaxed::type::relaxed::componenttype_is_not_abstract():
-    assert not inspect.isabstract(art::relaxed::type::relaxed::ComponentType)
+def test_art_relaxed_instance_relaxed_componentinstance_is_not_abstract():
+    assert not inspect.isabstract(art_relaxed_instance_relaxed_ComponentInstance)
 
 
-def test_art::relaxed::type::relaxed::componenttype_constructor_exists():
-    assert callable(art::relaxed::type::relaxed::ComponentType.__init__)
+def test_art_relaxed_instance_relaxed_componentinstance_constructor_exists():
+    assert callable(art_relaxed_instance_relaxed_ComponentInstance.__init__)
 
 
-def test_art::relaxed::type::relaxed::componenttype_constructor_args():
-    sig = inspect.signature(art::relaxed::type::relaxed::ComponentType.__init__)
+def test_art_relaxed_instance_relaxed_componentinstance_constructor_args():
+    sig = inspect.signature(art_relaxed_instance_relaxed_ComponentInstance.__init__)
+    params = list(sig.parameters.keys())
+    assert "state" in params, "Missing parameter 'state'"
+
+def test_art_relaxed_instance_relaxed_componentinstance_has_state():
+    assert hasattr(art_relaxed_instance_relaxed_ComponentInstance, "state")
+    descriptor = None
+    for klass in art_relaxed_instance_relaxed_ComponentInstance.__mro__:
+        if "state" in klass.__dict__:
+            descriptor = klass.__dict__["state"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_art_relaxed_type_relaxed_componenttype_is_not_abstract():
+    assert not inspect.isabstract(art_relaxed_type_relaxed_ComponentType)
+
+
+def test_art_relaxed_type_relaxed_componenttype_constructor_exists():
+    assert callable(art_relaxed_type_relaxed_ComponentType.__init__)
+
+
+def test_art_relaxed_type_relaxed_componenttype_constructor_args():
+    sig = inspect.signature(art_relaxed_type_relaxed_ComponentType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_art::relaxed::system_is_not_abstract():
-    assert not inspect.isabstract(art::relaxed::System)
+def test_art_relaxed_datatype_is_not_abstract():
+    assert not inspect.isabstract(art_relaxed_DataType)
 
 
-def test_art::relaxed::system_constructor_exists():
-    assert callable(art::relaxed::System.__init__)
+def test_art_relaxed_datatype_constructor_exists():
+    assert callable(art_relaxed_DataType.__init__)
 
 
-def test_art::relaxed::system_constructor_args():
-    sig = inspect.signature(art::relaxed::System.__init__)
+def test_art_relaxed_datatype_constructor_args():
+    sig = inspect.signature(art_relaxed_DataType.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_art_relaxed_system_is_not_abstract():
+    assert not inspect.isabstract(art_relaxed_System)
+
+
+def test_art_relaxed_system_constructor_exists():
+    assert callable(art_relaxed_System.__init__)
+
+
+def test_art_relaxed_system_constructor_args():
+    sig = inspect.signature(art_relaxed_System.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1216,112 +1216,112 @@ def test_namedelement_constructor_args():
 
 
 
-def test_art::relaxed::group::relaxed::group_is_not_abstract():
-    assert not inspect.isabstract(art::relaxed::group::relaxed::Group)
+def test_art_relaxed_type_relaxed_abstractport_is_not_abstract():
+    assert not inspect.isabstract(art_relaxed_type_relaxed_AbstractPort)
 
 
-def test_art::relaxed::group::relaxed::group_constructor_exists():
-    assert callable(art::relaxed::group::relaxed::Group.__init__)
+def test_art_relaxed_type_relaxed_abstractport_constructor_exists():
+    assert callable(art_relaxed_type_relaxed_AbstractPort.__init__)
 
 
-def test_art::relaxed::group::relaxed::group_constructor_args():
-    sig = inspect.signature(art::relaxed::group::relaxed::Group.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_art::relaxed::type::relaxed::portid_is_not_abstract():
-    assert not inspect.isabstract(art::relaxed::type::relaxed::PortId)
-
-
-def test_art::relaxed::type::relaxed::portid_constructor_exists():
-    assert callable(art::relaxed::type::relaxed::PortId.__init__)
-
-
-def test_art::relaxed::type::relaxed::portid_constructor_args():
-    sig = inspect.signature(art::relaxed::type::relaxed::PortId.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_art::relaxed::distrib::relaxed::node_is_not_abstract():
-    assert not inspect.isabstract(art::relaxed::distrib::relaxed::Node)
-
-
-def test_art::relaxed::distrib::relaxed::node_constructor_exists():
-    assert callable(art::relaxed::distrib::relaxed::Node.__init__)
-
-
-def test_art::relaxed::distrib::relaxed::node_constructor_args():
-    sig = inspect.signature(art::relaxed::distrib::relaxed::Node.__init__)
+def test_art_relaxed_type_relaxed_abstractport_constructor_args():
+    sig = inspect.signature(art_relaxed_type_relaxed_AbstractPort.__init__)
     params = list(sig.parameters.keys())
     assert "uri" in params, "Missing parameter 'uri'"
-
-def test_art::relaxed::distrib::relaxed::node_has_uri():
-    assert hasattr(art::relaxed::distrib::relaxed::Node, "uri")
-    descriptor = None
-    for klass in art::relaxed::distrib::relaxed::Node.__mro__:
-        if "uri" in klass.__dict__:
-            descriptor = klass.__dict__["uri"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_art::relaxed::type::relaxed::abstractport_is_not_abstract():
-    assert not inspect.isabstract(art::relaxed::type::relaxed::AbstractPort)
-
-
-def test_art::relaxed::type::relaxed::abstractport_constructor_exists():
-    assert callable(art::relaxed::type::relaxed::AbstractPort.__init__)
-
-
-def test_art::relaxed::type::relaxed::abstractport_constructor_args():
-    sig = inspect.signature(art::relaxed::type::relaxed::AbstractPort.__init__)
-    params = list(sig.parameters.keys())
-    assert "uri" in params, "Missing parameter 'uri'"
-    assert "protocol" in params, "Missing parameter 'protocol'"
     assert "role" in params, "Missing parameter 'role'"
+    assert "protocol" in params, "Missing parameter 'protocol'"
 
-def test_art::relaxed::type::relaxed::abstractport_has_uri():
-    assert hasattr(art::relaxed::type::relaxed::AbstractPort, "uri")
+def test_art_relaxed_type_relaxed_abstractport_has_uri():
+    assert hasattr(art_relaxed_type_relaxed_AbstractPort, "uri")
     descriptor = None
-    for klass in art::relaxed::type::relaxed::AbstractPort.__mro__:
+    for klass in art_relaxed_type_relaxed_AbstractPort.__mro__:
         if "uri" in klass.__dict__:
             descriptor = klass.__dict__["uri"]
             break
     assert isinstance(descriptor, property)
 
-def test_art::relaxed::type::relaxed::abstractport_has_protocol():
-    assert hasattr(art::relaxed::type::relaxed::AbstractPort, "protocol")
+def test_art_relaxed_type_relaxed_abstractport_has_role():
+    assert hasattr(art_relaxed_type_relaxed_AbstractPort, "role")
     descriptor = None
-    for klass in art::relaxed::type::relaxed::AbstractPort.__mro__:
-        if "protocol" in klass.__dict__:
-            descriptor = klass.__dict__["protocol"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_art::relaxed::type::relaxed::abstractport_has_role():
-    assert hasattr(art::relaxed::type::relaxed::AbstractPort, "role")
-    descriptor = None
-    for klass in art::relaxed::type::relaxed::AbstractPort.__mro__:
+    for klass in art_relaxed_type_relaxed_AbstractPort.__mro__:
         if "role" in klass.__dict__:
             descriptor = klass.__dict__["role"]
             break
     assert isinstance(descriptor, property)
 
+def test_art_relaxed_type_relaxed_abstractport_has_protocol():
+    assert hasattr(art_relaxed_type_relaxed_AbstractPort, "protocol")
+    descriptor = None
+    for klass in art_relaxed_type_relaxed_AbstractPort.__mro__:
+        if "protocol" in klass.__dict__:
+            descriptor = klass.__dict__["protocol"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_art::relaxed::modelelement_is_not_abstract():
-    assert not inspect.isabstract(art::relaxed::ModelElement)
+
+def test_art_relaxed_type_relaxed_portid_is_not_abstract():
+    assert not inspect.isabstract(art_relaxed_type_relaxed_PortId)
 
 
-def test_art::relaxed::modelelement_constructor_exists():
-    assert callable(art::relaxed::ModelElement.__init__)
+def test_art_relaxed_type_relaxed_portid_constructor_exists():
+    assert callable(art_relaxed_type_relaxed_PortId.__init__)
 
 
-def test_art::relaxed::modelelement_constructor_args():
-    sig = inspect.signature(art::relaxed::ModelElement.__init__)
+def test_art_relaxed_type_relaxed_portid_constructor_args():
+    sig = inspect.signature(art_relaxed_type_relaxed_PortId.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_art_relaxed_distrib_relaxed_node_is_not_abstract():
+    assert not inspect.isabstract(art_relaxed_distrib_relaxed_Node)
+
+
+def test_art_relaxed_distrib_relaxed_node_constructor_exists():
+    assert callable(art_relaxed_distrib_relaxed_Node.__init__)
+
+
+def test_art_relaxed_distrib_relaxed_node_constructor_args():
+    sig = inspect.signature(art_relaxed_distrib_relaxed_Node.__init__)
+    params = list(sig.parameters.keys())
+    assert "uri" in params, "Missing parameter 'uri'"
+
+def test_art_relaxed_distrib_relaxed_node_has_uri():
+    assert hasattr(art_relaxed_distrib_relaxed_Node, "uri")
+    descriptor = None
+    for klass in art_relaxed_distrib_relaxed_Node.__mro__:
+        if "uri" in klass.__dict__:
+            descriptor = klass.__dict__["uri"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_art_relaxed_group_relaxed_group_is_not_abstract():
+    assert not inspect.isabstract(art_relaxed_group_relaxed_Group)
+
+
+def test_art_relaxed_group_relaxed_group_constructor_exists():
+    assert callable(art_relaxed_group_relaxed_Group.__init__)
+
+
+def test_art_relaxed_group_relaxed_group_constructor_args():
+    sig = inspect.signature(art_relaxed_group_relaxed_Group.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_art_relaxed_modelelement_is_not_abstract():
+    assert not inspect.isabstract(art_relaxed_ModelElement)
+
+
+def test_art_relaxed_modelelement_constructor_exists():
+    assert callable(art_relaxed_ModelElement.__init__)
+
+
+def test_art_relaxed_modelelement_constructor_args():
+    sig = inspect.signature(art_relaxed_ModelElement.__init__)
     params = list(sig.parameters.keys())
 
 def test_instancestate_exists():
@@ -1332,8 +1332,8 @@ def test_instancestate_has_all_literals():
     # Collect the names of literals in this Enumeration
     enum_literals = [lit.name for lit in InstanceState]
     expected_literals = [
-        "ON",
         "OFF",
+        "ON",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
@@ -1347,8 +1347,8 @@ def test_portrole_has_all_literals():
     # Collect the names of literals in this Enumeration
     enum_literals = [lit.name for lit in PortRole]
     expected_literals = [
-        "client",
         "server",
+        "client",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
@@ -1366,8 +1366,8 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-type::relaxed::art::relaxed::DataType_strategy = st.builds(
-    type::relaxed::art::relaxed::DataType,
+type_relaxed_art_relaxed_DataType_strategy = st.builds(
+    type_relaxed_art_relaxed_DataType,
 )
 DictionaryDefaultValue_strategy = st.builds(
     DictionaryDefaultValue,
@@ -1375,23 +1375,23 @@ DictionaryDefaultValue_strategy = st.builds(
 PortId_strategy = st.builds(
     PortId,
 )
-type::relaxed::AbstractPort_strategy = st.builds(
-    type::relaxed::AbstractPort,
+type_relaxed_AbstractPort_strategy = st.builds(
+    type_relaxed_AbstractPort,
 )
 CardinalityElement_strategy = st.builds(
     CardinalityElement,
 )
-art::relaxed::type::relaxed::Port_strategy = st.builds(
-    art::relaxed::type::relaxed::Port,
+art_relaxed_type_relaxed_Port_strategy = st.builds(
+    art_relaxed_type_relaxed_Port,
 )
 TypedElement_strategy = st.builds(
     TypedElement,
 )
-art::relaxed::type::relaxed::Attribute_strategy = st.builds(
-    art::relaxed::type::relaxed::Attribute,
+art_relaxed_type_relaxed_Attribute_strategy = st.builds(
+    art_relaxed_type_relaxed_Attribute,
 )
-art::relaxed::type::relaxed::Parameter_strategy = st.builds(
-    art::relaxed::type::relaxed::Parameter,
+art_relaxed_type_relaxed_Parameter_strategy = st.builds(
+    art_relaxed_type_relaxed_Parameter,
 )
 Parameter_strategy = st.builds(
     Parameter,
@@ -1402,8 +1402,8 @@ Operation_strategy = st.builds(
 TypeImplementation_strategy = st.builds(
     TypeImplementation,
 )
-art::relaxed::implem::relaxed::OSGiType_strategy = st.builds(
-    art::relaxed::implem::relaxed::OSGiType,
+art_relaxed_implem_relaxed_OSGiType_strategy = st.builds(
+    art_relaxed_implem_relaxed_OSGiType,
     generateInstanceBundle=
         safe_text
 )
@@ -1413,22 +1413,22 @@ TypeGroup_strategy = st.builds(
 Attribute_strategy = st.builds(
     Attribute,
 )
-art::relaxed::type::relaxed::BasicAttribute_strategy = st.builds(
-    art::relaxed::type::relaxed::BasicAttribute,
+art_relaxed_type_relaxed_BasicAttribute_strategy = st.builds(
+    art_relaxed_type_relaxed_BasicAttribute,
     defaultValue=
         safe_text
 )
-art::relaxed::type::relaxed::Dictionary_strategy = st.builds(
-    art::relaxed::type::relaxed::Dictionary,
+art_relaxed_type_relaxed_Dictionary_strategy = st.builds(
+    art_relaxed_type_relaxed_Dictionary,
 )
 ComponentInstance_strategy = st.builds(
     ComponentInstance,
 )
-art::relaxed::instance::relaxed::CompositeInstance_strategy = st.builds(
-    art::relaxed::instance::relaxed::CompositeInstance,
+art_relaxed_instance_relaxed_CompositeInstance_strategy = st.builds(
+    art_relaxed_instance_relaxed_CompositeInstance,
 )
-art::relaxed::instance::relaxed::PrimitiveInstance_strategy = st.builds(
-    art::relaxed::instance::relaxed::PrimitiveInstance,
+art_relaxed_instance_relaxed_PrimitiveInstance_strategy = st.builds(
+    art_relaxed_instance_relaxed_PrimitiveInstance,
 )
 InstanceGroup_strategy = st.builds(
     InstanceGroup,
@@ -1436,16 +1436,16 @@ InstanceGroup_strategy = st.builds(
 ComponentImplementation_strategy = st.builds(
     ComponentImplementation,
 )
-art::relaxed::implem::relaxed::OSGiComponent_strategy = st.builds(
-    art::relaxed::implem::relaxed::OSGiComponent,
-    implementingClass=
+art_relaxed_implem_relaxed_FractalComponent_strategy = st.builds(
+    art_relaxed_implem_relaxed_FractalComponent,
+    contentDesc=
+        safe_text,
+    controllerDesc=
         safe_text
 )
-art::relaxed::implem::relaxed::FractalComponent_strategy = st.builds(
-    art::relaxed::implem::relaxed::FractalComponent,
-    controllerDesc=
-        safe_text,
-    contentDesc=
+art_relaxed_implem_relaxed_OSGiComponent_strategy = st.builds(
+    art_relaxed_implem_relaxed_OSGiComponent,
+    implementingClass=
         safe_text
 )
 TransmissionBinding_strategy = st.builds(
@@ -1460,39 +1460,39 @@ Dictionary_strategy = st.builds(
 Entry_strategy = st.builds(
     Entry,
 )
-art::relaxed::instance::relaxed::OtherEntry_strategy = st.builds(
-    art::relaxed::instance::relaxed::OtherEntry,
+art_relaxed_instance_relaxed_OtherEntry_strategy = st.builds(
+    art_relaxed_instance_relaxed_OtherEntry,
     key=
         safe_text
 )
-art::relaxed::instance::relaxed::DefaultEntry_strategy = st.builds(
-    art::relaxed::instance::relaxed::DefaultEntry,
+art_relaxed_instance_relaxed_DefaultEntry_strategy = st.builds(
+    art_relaxed_instance_relaxed_DefaultEntry,
 )
-art::relaxed::instance::relaxed::DictionaryValuedAttribute_strategy = st.builds(
-    art::relaxed::instance::relaxed::DictionaryValuedAttribute,
+art_relaxed_instance_relaxed_DictionaryValuedAttribute_strategy = st.builds(
+    art_relaxed_instance_relaxed_DictionaryValuedAttribute,
 )
 BasicAttribute_strategy = st.builds(
     BasicAttribute,
 )
-art::relaxed::instance::relaxed::ValuedAttribute_strategy = st.builds(
-    art::relaxed::instance::relaxed::ValuedAttribute,
+art_relaxed_instance_relaxed_ValuedAttribute_strategy = st.builds(
+    art_relaxed_instance_relaxed_ValuedAttribute,
     value=
         safe_text
 )
 AbstractPort_strategy = st.builds(
     AbstractPort,
 )
-art::relaxed::type::relaxed::PortCollection_strategy = st.builds(
-    art::relaxed::type::relaxed::PortCollection,
+art_relaxed_type_relaxed_PortCollection_strategy = st.builds(
+    art_relaxed_type_relaxed_PortCollection,
 )
 Binding_strategy = st.builds(
     Binding,
 )
-art::relaxed::instance::relaxed::DelegationBinding_strategy = st.builds(
-    art::relaxed::instance::relaxed::DelegationBinding,
+art_relaxed_instance_relaxed_DelegationBinding_strategy = st.builds(
+    art_relaxed_instance_relaxed_DelegationBinding,
 )
-art::relaxed::instance::relaxed::TransmissionBinding_strategy = st.builds(
-    art::relaxed::instance::relaxed::TransmissionBinding,
+art_relaxed_instance_relaxed_TransmissionBinding_strategy = st.builds(
+    art_relaxed_instance_relaxed_TransmissionBinding,
 )
 DelegationBinding_strategy = st.builds(
     DelegationBinding,
@@ -1500,71 +1500,71 @@ DelegationBinding_strategy = st.builds(
 AspectModelElement_strategy = st.builds(
     AspectModelElement,
 )
-art::relaxed::type::relaxed::DictionaryDefaultValue_strategy = st.builds(
-    art::relaxed::type::relaxed::DictionaryDefaultValue,
+art_relaxed_instance_relaxed_Entry_strategy = st.builds(
+    art_relaxed_instance_relaxed_Entry,
+    value=
+        safe_text
+)
+art_relaxed_instance_relaxed_Binding_strategy = st.builds(
+    art_relaxed_instance_relaxed_Binding,
+    id=
+        safe_text
+)
+art_relaxed_instance_relaxed_AttributeInstance_strategy = st.builds(
+    art_relaxed_instance_relaxed_AttributeInstance,
+)
+art_relaxed_type_relaxed_DictionaryDefaultValue_strategy = st.builds(
+    art_relaxed_type_relaxed_DictionaryDefaultValue,
     key=
         safe_text,
     value=
         safe_text
 )
-art::relaxed::implem::relaxed::TypeImplementation_strategy = st.builds(
-    art::relaxed::implem::relaxed::TypeImplementation,
+art_relaxed_implem_relaxed_ComponentImplementation_strategy = st.builds(
+    art_relaxed_implem_relaxed_ComponentImplementation,
 )
-art::relaxed::instance::relaxed::Binding_strategy = st.builds(
-    art::relaxed::instance::relaxed::Binding,
-    id=
-        safe_text
+art_relaxed_implem_relaxed_TypeImplementation_strategy = st.builds(
+    art_relaxed_implem_relaxed_TypeImplementation,
 )
-art::relaxed::implem::relaxed::ComponentImplementation_strategy = st.builds(
-    art::relaxed::implem::relaxed::ComponentImplementation,
-)
-art::relaxed::instance::relaxed::Entry_strategy = st.builds(
-    art::relaxed::instance::relaxed::Entry,
-    value=
-        safe_text
-)
-art::relaxed::instance::relaxed::AttributeInstance_strategy = st.builds(
-    art::relaxed::instance::relaxed::AttributeInstance,
-)
-art::relaxed::NamedElement_strategy = st.builds(
-    art::relaxed::NamedElement,
+art_relaxed_NamedElement_strategy = st.builds(
+    art_relaxed_NamedElement,
     name=
         safe_text
 )
 CompositeInstance_strategy = st.builds(
     CompositeInstance,
 )
-art::relaxed::AspectModelElement_strategy = st.builds(
-    art::relaxed::AspectModelElement,
+art_relaxed_AspectModelElement_strategy = st.builds(
+    art_relaxed_AspectModelElement,
     pid=
         safe_text
 )
 Group_strategy = st.builds(
     Group,
 )
-art::relaxed::group::relaxed::TypeGroup_strategy = st.builds(
-    art::relaxed::group::relaxed::TypeGroup,
+art_relaxed_group_relaxed_TypeGroup_strategy = st.builds(
+    art_relaxed_group_relaxed_TypeGroup,
 )
-art::relaxed::group::relaxed::InstanceGroup_strategy = st.builds(
-    art::relaxed::group::relaxed::InstanceGroup,
+art_relaxed_group_relaxed_InstanceGroup_strategy = st.builds(
+    art_relaxed_group_relaxed_InstanceGroup,
 )
 ComponentType_strategy = st.builds(
     ComponentType,
 )
-art::relaxed::type::relaxed::PrimitiveType_strategy = st.builds(
-    art::relaxed::type::relaxed::PrimitiveType,
+art_relaxed_type_relaxed_PrimitiveType_strategy = st.builds(
+    art_relaxed_type_relaxed_PrimitiveType,
 )
-art::relaxed::type::relaxed::CompositeType_strategy = st.builds(
-    art::relaxed::type::relaxed::CompositeType,
+art_relaxed_type_relaxed_CompositeType_strategy = st.builds(
+    art_relaxed_type_relaxed_CompositeType,
 )
 Service_strategy = st.builds(
     Service,
 )
-art::relaxed::type::relaxed::FunctionalService_strategy = st.builds(
-    art::relaxed::type::relaxed::FunctionalService,
+art_relaxed_type_relaxed_FunctionalService_strategy = st.builds(
+    art_relaxed_type_relaxed_FunctionalService,
 )
-art::relaxed::type::relaxed::ControlService_strategy = st.builds(
-    art::relaxed::type::relaxed::ControlService,
+art_relaxed_type_relaxed_ControlService_strategy = st.builds(
+    art_relaxed_type_relaxed_ControlService,
 )
 Node_strategy = st.builds(
     Node,
@@ -1572,67 +1572,67 @@ Node_strategy = st.builds(
 ModelElement_strategy = st.builds(
     ModelElement,
 )
-art::relaxed::DataType_strategy = st.builds(
-    art::relaxed::DataType,
+art_relaxed_type_relaxed_Service_strategy = st.builds(
+    art_relaxed_type_relaxed_Service,
 )
-art::relaxed::type::relaxed::Service_strategy = st.builds(
-    art::relaxed::type::relaxed::Service,
+art_relaxed_type_relaxed_Operation_strategy = st.builds(
+    art_relaxed_type_relaxed_Operation,
 )
-art::relaxed::type::relaxed::Operation_strategy = st.builds(
-    art::relaxed::type::relaxed::Operation,
-)
-art::relaxed::instance::relaxed::ComponentInstance_strategy = st.builds(
-    art::relaxed::instance::relaxed::ComponentInstance,
-    state=
-        safe_text
-)
-art::relaxed::CardinalityElement_strategy = st.builds(
-    art::relaxed::CardinalityElement,
+art_relaxed_CardinalityElement_strategy = st.builds(
+    art_relaxed_CardinalityElement,
     upper=
         safe_text,
     lower=
         safe_text
 )
-art::relaxed::TypedElement_strategy = st.builds(
-    art::relaxed::TypedElement,
+art_relaxed_TypedElement_strategy = st.builds(
+    art_relaxed_TypedElement,
 )
-art::relaxed::type::relaxed::ComponentType_strategy = st.builds(
-    art::relaxed::type::relaxed::ComponentType,
+art_relaxed_instance_relaxed_ComponentInstance_strategy = st.builds(
+    art_relaxed_instance_relaxed_ComponentInstance,
+    state=
+        safe_text
 )
-art::relaxed::System_strategy = st.builds(
-    art::relaxed::System,
+art_relaxed_type_relaxed_ComponentType_strategy = st.builds(
+    art_relaxed_type_relaxed_ComponentType,
+)
+art_relaxed_DataType_strategy = st.builds(
+    art_relaxed_DataType,
+)
+art_relaxed_System_strategy = st.builds(
+    art_relaxed_System,
 )
 NamedElement_strategy = st.builds(
     NamedElement,
 )
-art::relaxed::group::relaxed::Group_strategy = st.builds(
-    art::relaxed::group::relaxed::Group,
-)
-art::relaxed::type::relaxed::PortId_strategy = st.builds(
-    art::relaxed::type::relaxed::PortId,
-)
-art::relaxed::distrib::relaxed::Node_strategy = st.builds(
-    art::relaxed::distrib::relaxed::Node,
+art_relaxed_type_relaxed_AbstractPort_strategy = st.builds(
+    art_relaxed_type_relaxed_AbstractPort,
     uri=
-        safe_text
-)
-art::relaxed::type::relaxed::AbstractPort_strategy = st.builds(
-    art::relaxed::type::relaxed::AbstractPort,
-    uri=
-        safe_text,
-    protocol=
         safe_text,
     role=
+        safe_text,
+    protocol=
         safe_text
 )
-art::relaxed::ModelElement_strategy = st.builds(
-    art::relaxed::ModelElement,
+art_relaxed_type_relaxed_PortId_strategy = st.builds(
+    art_relaxed_type_relaxed_PortId,
+)
+art_relaxed_distrib_relaxed_Node_strategy = st.builds(
+    art_relaxed_distrib_relaxed_Node,
+    uri=
+        safe_text
+)
+art_relaxed_group_relaxed_Group_strategy = st.builds(
+    art_relaxed_group_relaxed_Group,
+)
+art_relaxed_ModelElement_strategy = st.builds(
+    art_relaxed_ModelElement,
 )
 
-@given(instance=type::relaxed::art::relaxed::DataType_strategy)
+@given(instance=type_relaxed_art_relaxed_DataType_strategy)
 @settings(max_examples=50)
-def test_type::relaxed::art::relaxed::datatype_instantiation(instance):
-    assert isinstance(instance, type::relaxed::art::relaxed::DataType)
+def test_type_relaxed_art_relaxed_datatype_instantiation(instance):
+    assert isinstance(instance, type_relaxed_art_relaxed_DataType)
 
 @given(instance=DictionaryDefaultValue_strategy)
 @settings(max_examples=50)
@@ -1644,35 +1644,35 @@ def test_dictionarydefaultvalue_instantiation(instance):
 def test_portid_instantiation(instance):
     assert isinstance(instance, PortId)
 
-@given(instance=type::relaxed::AbstractPort_strategy)
+@given(instance=type_relaxed_AbstractPort_strategy)
 @settings(max_examples=50)
-def test_type::relaxed::abstractport_instantiation(instance):
-    assert isinstance(instance, type::relaxed::AbstractPort)
+def test_type_relaxed_abstractport_instantiation(instance):
+    assert isinstance(instance, type_relaxed_AbstractPort)
 
 @given(instance=CardinalityElement_strategy)
 @settings(max_examples=50)
 def test_cardinalityelement_instantiation(instance):
     assert isinstance(instance, CardinalityElement)
 
-@given(instance=art::relaxed::type::relaxed::Port_strategy)
+@given(instance=art_relaxed_type_relaxed_Port_strategy)
 @settings(max_examples=50)
-def test_art::relaxed::type::relaxed::port_instantiation(instance):
-    assert isinstance(instance, art::relaxed::type::relaxed::Port)
+def test_art_relaxed_type_relaxed_port_instantiation(instance):
+    assert isinstance(instance, art_relaxed_type_relaxed_Port)
 
 @given(instance=TypedElement_strategy)
 @settings(max_examples=50)
 def test_typedelement_instantiation(instance):
     assert isinstance(instance, TypedElement)
 
-@given(instance=art::relaxed::type::relaxed::Attribute_strategy)
+@given(instance=art_relaxed_type_relaxed_Attribute_strategy)
 @settings(max_examples=50)
-def test_art::relaxed::type::relaxed::attribute_instantiation(instance):
-    assert isinstance(instance, art::relaxed::type::relaxed::Attribute)
+def test_art_relaxed_type_relaxed_attribute_instantiation(instance):
+    assert isinstance(instance, art_relaxed_type_relaxed_Attribute)
 
-@given(instance=art::relaxed::type::relaxed::Parameter_strategy)
+@given(instance=art_relaxed_type_relaxed_Parameter_strategy)
 @settings(max_examples=50)
-def test_art::relaxed::type::relaxed::parameter_instantiation(instance):
-    assert isinstance(instance, art::relaxed::type::relaxed::Parameter)
+def test_art_relaxed_type_relaxed_parameter_instantiation(instance):
+    assert isinstance(instance, art_relaxed_type_relaxed_Parameter)
 
 @given(instance=Parameter_strategy)
 @settings(max_examples=50)
@@ -1689,18 +1689,15 @@ def test_operation_instantiation(instance):
 def test_typeimplementation_instantiation(instance):
     assert isinstance(instance, TypeImplementation)
 
-@given(instance=art::relaxed::implem::relaxed::OSGiType_strategy)
+@given(instance=art_relaxed_implem_relaxed_OSGiType_strategy)
 @settings(max_examples=50)
-def test_art::relaxed::implem::relaxed::osgitype_instantiation(instance):
-    assert isinstance(instance, art::relaxed::implem::relaxed::OSGiType)
-
-@given(instance=art::relaxed::implem::relaxed::OSGiType_strategy)
-def test_art::relaxed::implem::relaxed::osgitype_generateInstanceBundle_type(instance):
-    assert isinstance(instance.generateInstanceBundle, str)
+def test_art_relaxed_implem_relaxed_osgitype_instantiation(instance):
+    assert isinstance(instance, art_relaxed_implem_relaxed_OSGiType)
 
 
-@given(instance=art::relaxed::implem::relaxed::OSGiType_strategy)
-def test_art::relaxed::implem::relaxed::osgitype_generateInstanceBundle_setter(instance):
+
+@given(instance=art_relaxed_implem_relaxed_OSGiType_strategy)
+def test_art_relaxed_implem_relaxed_osgitype_generateInstanceBundle_setter(instance):
     original = instance.generateInstanceBundle
     instance.generateInstanceBundle = original
     assert instance.generateInstanceBundle == original
@@ -1715,41 +1712,38 @@ def test_typegroup_instantiation(instance):
 def test_attribute_instantiation(instance):
     assert isinstance(instance, Attribute)
 
-@given(instance=art::relaxed::type::relaxed::BasicAttribute_strategy)
+@given(instance=art_relaxed_type_relaxed_BasicAttribute_strategy)
 @settings(max_examples=50)
-def test_art::relaxed::type::relaxed::basicattribute_instantiation(instance):
-    assert isinstance(instance, art::relaxed::type::relaxed::BasicAttribute)
-
-@given(instance=art::relaxed::type::relaxed::BasicAttribute_strategy)
-def test_art::relaxed::type::relaxed::basicattribute_defaultValue_type(instance):
-    assert isinstance(instance.defaultValue, str)
+def test_art_relaxed_type_relaxed_basicattribute_instantiation(instance):
+    assert isinstance(instance, art_relaxed_type_relaxed_BasicAttribute)
 
 
-@given(instance=art::relaxed::type::relaxed::BasicAttribute_strategy)
-def test_art::relaxed::type::relaxed::basicattribute_defaultValue_setter(instance):
+
+@given(instance=art_relaxed_type_relaxed_BasicAttribute_strategy)
+def test_art_relaxed_type_relaxed_basicattribute_defaultValue_setter(instance):
     original = instance.defaultValue
     instance.defaultValue = original
     assert instance.defaultValue == original
 
-@given(instance=art::relaxed::type::relaxed::Dictionary_strategy)
+@given(instance=art_relaxed_type_relaxed_Dictionary_strategy)
 @settings(max_examples=50)
-def test_art::relaxed::type::relaxed::dictionary_instantiation(instance):
-    assert isinstance(instance, art::relaxed::type::relaxed::Dictionary)
+def test_art_relaxed_type_relaxed_dictionary_instantiation(instance):
+    assert isinstance(instance, art_relaxed_type_relaxed_Dictionary)
 
 @given(instance=ComponentInstance_strategy)
 @settings(max_examples=50)
 def test_componentinstance_instantiation(instance):
     assert isinstance(instance, ComponentInstance)
 
-@given(instance=art::relaxed::instance::relaxed::CompositeInstance_strategy)
+@given(instance=art_relaxed_instance_relaxed_CompositeInstance_strategy)
 @settings(max_examples=50)
-def test_art::relaxed::instance::relaxed::compositeinstance_instantiation(instance):
-    assert isinstance(instance, art::relaxed::instance::relaxed::CompositeInstance)
+def test_art_relaxed_instance_relaxed_compositeinstance_instantiation(instance):
+    assert isinstance(instance, art_relaxed_instance_relaxed_CompositeInstance)
 
-@given(instance=art::relaxed::instance::relaxed::PrimitiveInstance_strategy)
+@given(instance=art_relaxed_instance_relaxed_PrimitiveInstance_strategy)
 @settings(max_examples=50)
-def test_art::relaxed::instance::relaxed::primitiveinstance_instantiation(instance):
-    assert isinstance(instance, art::relaxed::instance::relaxed::PrimitiveInstance)
+def test_art_relaxed_instance_relaxed_primitiveinstance_instantiation(instance):
+    assert isinstance(instance, art_relaxed_instance_relaxed_PrimitiveInstance)
 
 @given(instance=InstanceGroup_strategy)
 @settings(max_examples=50)
@@ -1761,48 +1755,39 @@ def test_instancegroup_instantiation(instance):
 def test_componentimplementation_instantiation(instance):
     assert isinstance(instance, ComponentImplementation)
 
-@given(instance=art::relaxed::implem::relaxed::OSGiComponent_strategy)
+@given(instance=art_relaxed_implem_relaxed_FractalComponent_strategy)
 @settings(max_examples=50)
-def test_art::relaxed::implem::relaxed::osgicomponent_instantiation(instance):
-    assert isinstance(instance, art::relaxed::implem::relaxed::OSGiComponent)
-
-@given(instance=art::relaxed::implem::relaxed::OSGiComponent_strategy)
-def test_art::relaxed::implem::relaxed::osgicomponent_implementingClass_type(instance):
-    assert isinstance(instance.implementingClass, str)
+def test_art_relaxed_implem_relaxed_fractalcomponent_instantiation(instance):
+    assert isinstance(instance, art_relaxed_implem_relaxed_FractalComponent)
 
 
-@given(instance=art::relaxed::implem::relaxed::OSGiComponent_strategy)
-def test_art::relaxed::implem::relaxed::osgicomponent_implementingClass_setter(instance):
-    original = instance.implementingClass
-    instance.implementingClass = original
-    assert instance.implementingClass == original
 
-@given(instance=art::relaxed::implem::relaxed::FractalComponent_strategy)
-@settings(max_examples=50)
-def test_art::relaxed::implem::relaxed::fractalcomponent_instantiation(instance):
-    assert isinstance(instance, art::relaxed::implem::relaxed::FractalComponent)
-
-@given(instance=art::relaxed::implem::relaxed::FractalComponent_strategy)
-def test_art::relaxed::implem::relaxed::fractalcomponent_controllerDesc_type(instance):
-    assert isinstance(instance.controllerDesc, str)
+@given(instance=art_relaxed_implem_relaxed_FractalComponent_strategy)
+def test_art_relaxed_implem_relaxed_fractalcomponent_contentDesc_setter(instance):
+    original = instance.contentDesc
+    instance.contentDesc = original
+    assert instance.contentDesc == original
 
 
-@given(instance=art::relaxed::implem::relaxed::FractalComponent_strategy)
-def test_art::relaxed::implem::relaxed::fractalcomponent_controllerDesc_setter(instance):
+
+@given(instance=art_relaxed_implem_relaxed_FractalComponent_strategy)
+def test_art_relaxed_implem_relaxed_fractalcomponent_controllerDesc_setter(instance):
     original = instance.controllerDesc
     instance.controllerDesc = original
     assert instance.controllerDesc == original
 
-@given(instance=art::relaxed::implem::relaxed::FractalComponent_strategy)
-def test_art::relaxed::implem::relaxed::fractalcomponent_contentDesc_type(instance):
-    assert isinstance(instance.contentDesc, str)
+@given(instance=art_relaxed_implem_relaxed_OSGiComponent_strategy)
+@settings(max_examples=50)
+def test_art_relaxed_implem_relaxed_osgicomponent_instantiation(instance):
+    assert isinstance(instance, art_relaxed_implem_relaxed_OSGiComponent)
 
 
-@given(instance=art::relaxed::implem::relaxed::FractalComponent_strategy)
-def test_art::relaxed::implem::relaxed::fractalcomponent_contentDesc_setter(instance):
-    original = instance.contentDesc
-    instance.contentDesc = original
-    assert instance.contentDesc == original
+
+@given(instance=art_relaxed_implem_relaxed_OSGiComponent_strategy)
+def test_art_relaxed_implem_relaxed_osgicomponent_implementingClass_setter(instance):
+    original = instance.implementingClass
+    instance.implementingClass = original
+    assert instance.implementingClass == original
 
 @given(instance=TransmissionBinding_strategy)
 @settings(max_examples=50)
@@ -1824,49 +1809,43 @@ def test_dictionary_instantiation(instance):
 def test_entry_instantiation(instance):
     assert isinstance(instance, Entry)
 
-@given(instance=art::relaxed::instance::relaxed::OtherEntry_strategy)
+@given(instance=art_relaxed_instance_relaxed_OtherEntry_strategy)
 @settings(max_examples=50)
-def test_art::relaxed::instance::relaxed::otherentry_instantiation(instance):
-    assert isinstance(instance, art::relaxed::instance::relaxed::OtherEntry)
-
-@given(instance=art::relaxed::instance::relaxed::OtherEntry_strategy)
-def test_art::relaxed::instance::relaxed::otherentry_key_type(instance):
-    assert isinstance(instance.key, str)
+def test_art_relaxed_instance_relaxed_otherentry_instantiation(instance):
+    assert isinstance(instance, art_relaxed_instance_relaxed_OtherEntry)
 
 
-@given(instance=art::relaxed::instance::relaxed::OtherEntry_strategy)
-def test_art::relaxed::instance::relaxed::otherentry_key_setter(instance):
+
+@given(instance=art_relaxed_instance_relaxed_OtherEntry_strategy)
+def test_art_relaxed_instance_relaxed_otherentry_key_setter(instance):
     original = instance.key
     instance.key = original
     assert instance.key == original
 
-@given(instance=art::relaxed::instance::relaxed::DefaultEntry_strategy)
+@given(instance=art_relaxed_instance_relaxed_DefaultEntry_strategy)
 @settings(max_examples=50)
-def test_art::relaxed::instance::relaxed::defaultentry_instantiation(instance):
-    assert isinstance(instance, art::relaxed::instance::relaxed::DefaultEntry)
+def test_art_relaxed_instance_relaxed_defaultentry_instantiation(instance):
+    assert isinstance(instance, art_relaxed_instance_relaxed_DefaultEntry)
 
-@given(instance=art::relaxed::instance::relaxed::DictionaryValuedAttribute_strategy)
+@given(instance=art_relaxed_instance_relaxed_DictionaryValuedAttribute_strategy)
 @settings(max_examples=50)
-def test_art::relaxed::instance::relaxed::dictionaryvaluedattribute_instantiation(instance):
-    assert isinstance(instance, art::relaxed::instance::relaxed::DictionaryValuedAttribute)
+def test_art_relaxed_instance_relaxed_dictionaryvaluedattribute_instantiation(instance):
+    assert isinstance(instance, art_relaxed_instance_relaxed_DictionaryValuedAttribute)
 
 @given(instance=BasicAttribute_strategy)
 @settings(max_examples=50)
 def test_basicattribute_instantiation(instance):
     assert isinstance(instance, BasicAttribute)
 
-@given(instance=art::relaxed::instance::relaxed::ValuedAttribute_strategy)
+@given(instance=art_relaxed_instance_relaxed_ValuedAttribute_strategy)
 @settings(max_examples=50)
-def test_art::relaxed::instance::relaxed::valuedattribute_instantiation(instance):
-    assert isinstance(instance, art::relaxed::instance::relaxed::ValuedAttribute)
-
-@given(instance=art::relaxed::instance::relaxed::ValuedAttribute_strategy)
-def test_art::relaxed::instance::relaxed::valuedattribute_value_type(instance):
-    assert isinstance(instance.value, str)
+def test_art_relaxed_instance_relaxed_valuedattribute_instantiation(instance):
+    assert isinstance(instance, art_relaxed_instance_relaxed_ValuedAttribute)
 
 
-@given(instance=art::relaxed::instance::relaxed::ValuedAttribute_strategy)
-def test_art::relaxed::instance::relaxed::valuedattribute_value_setter(instance):
+
+@given(instance=art_relaxed_instance_relaxed_ValuedAttribute_strategy)
+def test_art_relaxed_instance_relaxed_valuedattribute_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
@@ -1876,25 +1855,25 @@ def test_art::relaxed::instance::relaxed::valuedattribute_value_setter(instance)
 def test_abstractport_instantiation(instance):
     assert isinstance(instance, AbstractPort)
 
-@given(instance=art::relaxed::type::relaxed::PortCollection_strategy)
+@given(instance=art_relaxed_type_relaxed_PortCollection_strategy)
 @settings(max_examples=50)
-def test_art::relaxed::type::relaxed::portcollection_instantiation(instance):
-    assert isinstance(instance, art::relaxed::type::relaxed::PortCollection)
+def test_art_relaxed_type_relaxed_portcollection_instantiation(instance):
+    assert isinstance(instance, art_relaxed_type_relaxed_PortCollection)
 
 @given(instance=Binding_strategy)
 @settings(max_examples=50)
 def test_binding_instantiation(instance):
     assert isinstance(instance, Binding)
 
-@given(instance=art::relaxed::instance::relaxed::DelegationBinding_strategy)
+@given(instance=art_relaxed_instance_relaxed_DelegationBinding_strategy)
 @settings(max_examples=50)
-def test_art::relaxed::instance::relaxed::delegationbinding_instantiation(instance):
-    assert isinstance(instance, art::relaxed::instance::relaxed::DelegationBinding)
+def test_art_relaxed_instance_relaxed_delegationbinding_instantiation(instance):
+    assert isinstance(instance, art_relaxed_instance_relaxed_DelegationBinding)
 
-@given(instance=art::relaxed::instance::relaxed::TransmissionBinding_strategy)
+@given(instance=art_relaxed_instance_relaxed_TransmissionBinding_strategy)
 @settings(max_examples=50)
-def test_art::relaxed::instance::relaxed::transmissionbinding_instantiation(instance):
-    assert isinstance(instance, art::relaxed::instance::relaxed::TransmissionBinding)
+def test_art_relaxed_instance_relaxed_transmissionbinding_instantiation(instance):
+    assert isinstance(instance, art_relaxed_instance_relaxed_TransmissionBinding)
 
 @given(instance=DelegationBinding_strategy)
 @settings(max_examples=50)
@@ -1906,92 +1885,77 @@ def test_delegationbinding_instantiation(instance):
 def test_aspectmodelelement_instantiation(instance):
     assert isinstance(instance, AspectModelElement)
 
-@given(instance=art::relaxed::type::relaxed::DictionaryDefaultValue_strategy)
+@given(instance=art_relaxed_instance_relaxed_Entry_strategy)
 @settings(max_examples=50)
-def test_art::relaxed::type::relaxed::dictionarydefaultvalue_instantiation(instance):
-    assert isinstance(instance, art::relaxed::type::relaxed::DictionaryDefaultValue)
-
-@given(instance=art::relaxed::type::relaxed::DictionaryDefaultValue_strategy)
-def test_art::relaxed::type::relaxed::dictionarydefaultvalue_key_type(instance):
-    assert isinstance(instance.key, str)
+def test_art_relaxed_instance_relaxed_entry_instantiation(instance):
+    assert isinstance(instance, art_relaxed_instance_relaxed_Entry)
 
 
-@given(instance=art::relaxed::type::relaxed::DictionaryDefaultValue_strategy)
-def test_art::relaxed::type::relaxed::dictionarydefaultvalue_key_setter(instance):
-    original = instance.key
-    instance.key = original
-    assert instance.key == original
 
-@given(instance=art::relaxed::type::relaxed::DictionaryDefaultValue_strategy)
-def test_art::relaxed::type::relaxed::dictionarydefaultvalue_value_type(instance):
-    assert isinstance(instance.value, str)
-
-
-@given(instance=art::relaxed::type::relaxed::DictionaryDefaultValue_strategy)
-def test_art::relaxed::type::relaxed::dictionarydefaultvalue_value_setter(instance):
+@given(instance=art_relaxed_instance_relaxed_Entry_strategy)
+def test_art_relaxed_instance_relaxed_entry_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
 
-@given(instance=art::relaxed::implem::relaxed::TypeImplementation_strategy)
+@given(instance=art_relaxed_instance_relaxed_Binding_strategy)
 @settings(max_examples=50)
-def test_art::relaxed::implem::relaxed::typeimplementation_instantiation(instance):
-    assert isinstance(instance, art::relaxed::implem::relaxed::TypeImplementation)
-
-@given(instance=art::relaxed::instance::relaxed::Binding_strategy)
-@settings(max_examples=50)
-def test_art::relaxed::instance::relaxed::binding_instantiation(instance):
-    assert isinstance(instance, art::relaxed::instance::relaxed::Binding)
-
-@given(instance=art::relaxed::instance::relaxed::Binding_strategy)
-def test_art::relaxed::instance::relaxed::binding_id_type(instance):
-    assert isinstance(instance.id, str)
+def test_art_relaxed_instance_relaxed_binding_instantiation(instance):
+    assert isinstance(instance, art_relaxed_instance_relaxed_Binding)
 
 
-@given(instance=art::relaxed::instance::relaxed::Binding_strategy)
-def test_art::relaxed::instance::relaxed::binding_id_setter(instance):
+
+@given(instance=art_relaxed_instance_relaxed_Binding_strategy)
+def test_art_relaxed_instance_relaxed_binding_id_setter(instance):
     original = instance.id
     instance.id = original
     assert instance.id == original
 
-@given(instance=art::relaxed::implem::relaxed::ComponentImplementation_strategy)
+@given(instance=art_relaxed_instance_relaxed_AttributeInstance_strategy)
 @settings(max_examples=50)
-def test_art::relaxed::implem::relaxed::componentimplementation_instantiation(instance):
-    assert isinstance(instance, art::relaxed::implem::relaxed::ComponentImplementation)
+def test_art_relaxed_instance_relaxed_attributeinstance_instantiation(instance):
+    assert isinstance(instance, art_relaxed_instance_relaxed_AttributeInstance)
 
-@given(instance=art::relaxed::instance::relaxed::Entry_strategy)
+@given(instance=art_relaxed_type_relaxed_DictionaryDefaultValue_strategy)
 @settings(max_examples=50)
-def test_art::relaxed::instance::relaxed::entry_instantiation(instance):
-    assert isinstance(instance, art::relaxed::instance::relaxed::Entry)
-
-@given(instance=art::relaxed::instance::relaxed::Entry_strategy)
-def test_art::relaxed::instance::relaxed::entry_value_type(instance):
-    assert isinstance(instance.value, str)
+def test_art_relaxed_type_relaxed_dictionarydefaultvalue_instantiation(instance):
+    assert isinstance(instance, art_relaxed_type_relaxed_DictionaryDefaultValue)
 
 
-@given(instance=art::relaxed::instance::relaxed::Entry_strategy)
-def test_art::relaxed::instance::relaxed::entry_value_setter(instance):
+
+@given(instance=art_relaxed_type_relaxed_DictionaryDefaultValue_strategy)
+def test_art_relaxed_type_relaxed_dictionarydefaultvalue_key_setter(instance):
+    original = instance.key
+    instance.key = original
+    assert instance.key == original
+
+
+
+@given(instance=art_relaxed_type_relaxed_DictionaryDefaultValue_strategy)
+def test_art_relaxed_type_relaxed_dictionarydefaultvalue_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
 
-@given(instance=art::relaxed::instance::relaxed::AttributeInstance_strategy)
+@given(instance=art_relaxed_implem_relaxed_ComponentImplementation_strategy)
 @settings(max_examples=50)
-def test_art::relaxed::instance::relaxed::attributeinstance_instantiation(instance):
-    assert isinstance(instance, art::relaxed::instance::relaxed::AttributeInstance)
+def test_art_relaxed_implem_relaxed_componentimplementation_instantiation(instance):
+    assert isinstance(instance, art_relaxed_implem_relaxed_ComponentImplementation)
 
-@given(instance=art::relaxed::NamedElement_strategy)
+@given(instance=art_relaxed_implem_relaxed_TypeImplementation_strategy)
 @settings(max_examples=50)
-def test_art::relaxed::namedelement_instantiation(instance):
-    assert isinstance(instance, art::relaxed::NamedElement)
+def test_art_relaxed_implem_relaxed_typeimplementation_instantiation(instance):
+    assert isinstance(instance, art_relaxed_implem_relaxed_TypeImplementation)
 
-@given(instance=art::relaxed::NamedElement_strategy)
-def test_art::relaxed::namedelement_name_type(instance):
-    assert isinstance(instance.name, str)
+@given(instance=art_relaxed_NamedElement_strategy)
+@settings(max_examples=50)
+def test_art_relaxed_namedelement_instantiation(instance):
+    assert isinstance(instance, art_relaxed_NamedElement)
 
 
-@given(instance=art::relaxed::NamedElement_strategy)
-def test_art::relaxed::namedelement_name_setter(instance):
+
+@given(instance=art_relaxed_NamedElement_strategy)
+def test_art_relaxed_namedelement_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
@@ -2001,18 +1965,15 @@ def test_art::relaxed::namedelement_name_setter(instance):
 def test_compositeinstance_instantiation(instance):
     assert isinstance(instance, CompositeInstance)
 
-@given(instance=art::relaxed::AspectModelElement_strategy)
+@given(instance=art_relaxed_AspectModelElement_strategy)
 @settings(max_examples=50)
-def test_art::relaxed::aspectmodelelement_instantiation(instance):
-    assert isinstance(instance, art::relaxed::AspectModelElement)
-
-@given(instance=art::relaxed::AspectModelElement_strategy)
-def test_art::relaxed::aspectmodelelement_pid_type(instance):
-    assert isinstance(instance.pid, str)
+def test_art_relaxed_aspectmodelelement_instantiation(instance):
+    assert isinstance(instance, art_relaxed_AspectModelElement)
 
 
-@given(instance=art::relaxed::AspectModelElement_strategy)
-def test_art::relaxed::aspectmodelelement_pid_setter(instance):
+
+@given(instance=art_relaxed_AspectModelElement_strategy)
+def test_art_relaxed_aspectmodelelement_pid_setter(instance):
     original = instance.pid
     instance.pid = original
     assert instance.pid == original
@@ -2022,45 +1983,45 @@ def test_art::relaxed::aspectmodelelement_pid_setter(instance):
 def test_group_instantiation(instance):
     assert isinstance(instance, Group)
 
-@given(instance=art::relaxed::group::relaxed::TypeGroup_strategy)
+@given(instance=art_relaxed_group_relaxed_TypeGroup_strategy)
 @settings(max_examples=50)
-def test_art::relaxed::group::relaxed::typegroup_instantiation(instance):
-    assert isinstance(instance, art::relaxed::group::relaxed::TypeGroup)
+def test_art_relaxed_group_relaxed_typegroup_instantiation(instance):
+    assert isinstance(instance, art_relaxed_group_relaxed_TypeGroup)
 
-@given(instance=art::relaxed::group::relaxed::InstanceGroup_strategy)
+@given(instance=art_relaxed_group_relaxed_InstanceGroup_strategy)
 @settings(max_examples=50)
-def test_art::relaxed::group::relaxed::instancegroup_instantiation(instance):
-    assert isinstance(instance, art::relaxed::group::relaxed::InstanceGroup)
+def test_art_relaxed_group_relaxed_instancegroup_instantiation(instance):
+    assert isinstance(instance, art_relaxed_group_relaxed_InstanceGroup)
 
 @given(instance=ComponentType_strategy)
 @settings(max_examples=50)
 def test_componenttype_instantiation(instance):
     assert isinstance(instance, ComponentType)
 
-@given(instance=art::relaxed::type::relaxed::PrimitiveType_strategy)
+@given(instance=art_relaxed_type_relaxed_PrimitiveType_strategy)
 @settings(max_examples=50)
-def test_art::relaxed::type::relaxed::primitivetype_instantiation(instance):
-    assert isinstance(instance, art::relaxed::type::relaxed::PrimitiveType)
+def test_art_relaxed_type_relaxed_primitivetype_instantiation(instance):
+    assert isinstance(instance, art_relaxed_type_relaxed_PrimitiveType)
 
-@given(instance=art::relaxed::type::relaxed::CompositeType_strategy)
+@given(instance=art_relaxed_type_relaxed_CompositeType_strategy)
 @settings(max_examples=50)
-def test_art::relaxed::type::relaxed::compositetype_instantiation(instance):
-    assert isinstance(instance, art::relaxed::type::relaxed::CompositeType)
+def test_art_relaxed_type_relaxed_compositetype_instantiation(instance):
+    assert isinstance(instance, art_relaxed_type_relaxed_CompositeType)
 
 @given(instance=Service_strategy)
 @settings(max_examples=50)
 def test_service_instantiation(instance):
     assert isinstance(instance, Service)
 
-@given(instance=art::relaxed::type::relaxed::FunctionalService_strategy)
+@given(instance=art_relaxed_type_relaxed_FunctionalService_strategy)
 @settings(max_examples=50)
-def test_art::relaxed::type::relaxed::functionalservice_instantiation(instance):
-    assert isinstance(instance, art::relaxed::type::relaxed::FunctionalService)
+def test_art_relaxed_type_relaxed_functionalservice_instantiation(instance):
+    assert isinstance(instance, art_relaxed_type_relaxed_FunctionalService)
 
-@given(instance=art::relaxed::type::relaxed::ControlService_strategy)
+@given(instance=art_relaxed_type_relaxed_ControlService_strategy)
 @settings(max_examples=50)
-def test_art::relaxed::type::relaxed::controlservice_instantiation(instance):
-    assert isinstance(instance, art::relaxed::type::relaxed::ControlService)
+def test_art_relaxed_type_relaxed_controlservice_instantiation(instance):
+    assert isinstance(instance, art_relaxed_type_relaxed_ControlService)
 
 @given(instance=Node_strategy)
 @settings(max_examples=50)
@@ -2072,149 +2033,128 @@ def test_node_instantiation(instance):
 def test_modelelement_instantiation(instance):
     assert isinstance(instance, ModelElement)
 
-@given(instance=art::relaxed::DataType_strategy)
+@given(instance=art_relaxed_type_relaxed_Service_strategy)
 @settings(max_examples=50)
-def test_art::relaxed::datatype_instantiation(instance):
-    assert isinstance(instance, art::relaxed::DataType)
+def test_art_relaxed_type_relaxed_service_instantiation(instance):
+    assert isinstance(instance, art_relaxed_type_relaxed_Service)
 
-@given(instance=art::relaxed::type::relaxed::Service_strategy)
+@given(instance=art_relaxed_type_relaxed_Operation_strategy)
 @settings(max_examples=50)
-def test_art::relaxed::type::relaxed::service_instantiation(instance):
-    assert isinstance(instance, art::relaxed::type::relaxed::Service)
+def test_art_relaxed_type_relaxed_operation_instantiation(instance):
+    assert isinstance(instance, art_relaxed_type_relaxed_Operation)
 
-@given(instance=art::relaxed::type::relaxed::Operation_strategy)
+@given(instance=art_relaxed_CardinalityElement_strategy)
 @settings(max_examples=50)
-def test_art::relaxed::type::relaxed::operation_instantiation(instance):
-    assert isinstance(instance, art::relaxed::type::relaxed::Operation)
-
-@given(instance=art::relaxed::instance::relaxed::ComponentInstance_strategy)
-@settings(max_examples=50)
-def test_art::relaxed::instance::relaxed::componentinstance_instantiation(instance):
-    assert isinstance(instance, art::relaxed::instance::relaxed::ComponentInstance)
-
-@given(instance=art::relaxed::instance::relaxed::ComponentInstance_strategy)
-def test_art::relaxed::instance::relaxed::componentinstance_state_type(instance):
-    assert isinstance(instance.state, str)
+def test_art_relaxed_cardinalityelement_instantiation(instance):
+    assert isinstance(instance, art_relaxed_CardinalityElement)
 
 
-@given(instance=art::relaxed::instance::relaxed::ComponentInstance_strategy)
-def test_art::relaxed::instance::relaxed::componentinstance_state_setter(instance):
-    original = instance.state
-    instance.state = original
-    assert instance.state == original
 
-@given(instance=art::relaxed::CardinalityElement_strategy)
-@settings(max_examples=50)
-def test_art::relaxed::cardinalityelement_instantiation(instance):
-    assert isinstance(instance, art::relaxed::CardinalityElement)
-
-@given(instance=art::relaxed::CardinalityElement_strategy)
-def test_art::relaxed::cardinalityelement_upper_type(instance):
-    assert isinstance(instance.upper, str)
-
-
-@given(instance=art::relaxed::CardinalityElement_strategy)
-def test_art::relaxed::cardinalityelement_upper_setter(instance):
+@given(instance=art_relaxed_CardinalityElement_strategy)
+def test_art_relaxed_cardinalityelement_upper_setter(instance):
     original = instance.upper
     instance.upper = original
     assert instance.upper == original
 
-@given(instance=art::relaxed::CardinalityElement_strategy)
-def test_art::relaxed::cardinalityelement_lower_type(instance):
-    assert isinstance(instance.lower, str)
 
 
-@given(instance=art::relaxed::CardinalityElement_strategy)
-def test_art::relaxed::cardinalityelement_lower_setter(instance):
+@given(instance=art_relaxed_CardinalityElement_strategy)
+def test_art_relaxed_cardinalityelement_lower_setter(instance):
     original = instance.lower
     instance.lower = original
     assert instance.lower == original
 
-@given(instance=art::relaxed::TypedElement_strategy)
+@given(instance=art_relaxed_TypedElement_strategy)
 @settings(max_examples=50)
-def test_art::relaxed::typedelement_instantiation(instance):
-    assert isinstance(instance, art::relaxed::TypedElement)
+def test_art_relaxed_typedelement_instantiation(instance):
+    assert isinstance(instance, art_relaxed_TypedElement)
 
-@given(instance=art::relaxed::type::relaxed::ComponentType_strategy)
+@given(instance=art_relaxed_instance_relaxed_ComponentInstance_strategy)
 @settings(max_examples=50)
-def test_art::relaxed::type::relaxed::componenttype_instantiation(instance):
-    assert isinstance(instance, art::relaxed::type::relaxed::ComponentType)
+def test_art_relaxed_instance_relaxed_componentinstance_instantiation(instance):
+    assert isinstance(instance, art_relaxed_instance_relaxed_ComponentInstance)
 
-@given(instance=art::relaxed::System_strategy)
+
+
+@given(instance=art_relaxed_instance_relaxed_ComponentInstance_strategy)
+def test_art_relaxed_instance_relaxed_componentinstance_state_setter(instance):
+    original = instance.state
+    instance.state = original
+    assert instance.state == original
+
+@given(instance=art_relaxed_type_relaxed_ComponentType_strategy)
 @settings(max_examples=50)
-def test_art::relaxed::system_instantiation(instance):
-    assert isinstance(instance, art::relaxed::System)
+def test_art_relaxed_type_relaxed_componenttype_instantiation(instance):
+    assert isinstance(instance, art_relaxed_type_relaxed_ComponentType)
+
+@given(instance=art_relaxed_DataType_strategy)
+@settings(max_examples=50)
+def test_art_relaxed_datatype_instantiation(instance):
+    assert isinstance(instance, art_relaxed_DataType)
+
+@given(instance=art_relaxed_System_strategy)
+@settings(max_examples=50)
+def test_art_relaxed_system_instantiation(instance):
+    assert isinstance(instance, art_relaxed_System)
 
 @given(instance=NamedElement_strategy)
 @settings(max_examples=50)
 def test_namedelement_instantiation(instance):
     assert isinstance(instance, NamedElement)
 
-@given(instance=art::relaxed::group::relaxed::Group_strategy)
+@given(instance=art_relaxed_type_relaxed_AbstractPort_strategy)
 @settings(max_examples=50)
-def test_art::relaxed::group::relaxed::group_instantiation(instance):
-    assert isinstance(instance, art::relaxed::group::relaxed::Group)
-
-@given(instance=art::relaxed::type::relaxed::PortId_strategy)
-@settings(max_examples=50)
-def test_art::relaxed::type::relaxed::portid_instantiation(instance):
-    assert isinstance(instance, art::relaxed::type::relaxed::PortId)
-
-@given(instance=art::relaxed::distrib::relaxed::Node_strategy)
-@settings(max_examples=50)
-def test_art::relaxed::distrib::relaxed::node_instantiation(instance):
-    assert isinstance(instance, art::relaxed::distrib::relaxed::Node)
-
-@given(instance=art::relaxed::distrib::relaxed::Node_strategy)
-def test_art::relaxed::distrib::relaxed::node_uri_type(instance):
-    assert isinstance(instance.uri, str)
+def test_art_relaxed_type_relaxed_abstractport_instantiation(instance):
+    assert isinstance(instance, art_relaxed_type_relaxed_AbstractPort)
 
 
-@given(instance=art::relaxed::distrib::relaxed::Node_strategy)
-def test_art::relaxed::distrib::relaxed::node_uri_setter(instance):
+
+@given(instance=art_relaxed_type_relaxed_AbstractPort_strategy)
+def test_art_relaxed_type_relaxed_abstractport_uri_setter(instance):
     original = instance.uri
     instance.uri = original
     assert instance.uri == original
 
-@given(instance=art::relaxed::type::relaxed::AbstractPort_strategy)
-@settings(max_examples=50)
-def test_art::relaxed::type::relaxed::abstractport_instantiation(instance):
-    assert isinstance(instance, art::relaxed::type::relaxed::AbstractPort)
-
-@given(instance=art::relaxed::type::relaxed::AbstractPort_strategy)
-def test_art::relaxed::type::relaxed::abstractport_uri_type(instance):
-    assert isinstance(instance.uri, str)
 
 
-@given(instance=art::relaxed::type::relaxed::AbstractPort_strategy)
-def test_art::relaxed::type::relaxed::abstractport_uri_setter(instance):
-    original = instance.uri
-    instance.uri = original
-    assert instance.uri == original
-
-@given(instance=art::relaxed::type::relaxed::AbstractPort_strategy)
-def test_art::relaxed::type::relaxed::abstractport_protocol_type(instance):
-    assert isinstance(instance.protocol, str)
-
-
-@given(instance=art::relaxed::type::relaxed::AbstractPort_strategy)
-def test_art::relaxed::type::relaxed::abstractport_protocol_setter(instance):
-    original = instance.protocol
-    instance.protocol = original
-    assert instance.protocol == original
-
-@given(instance=art::relaxed::type::relaxed::AbstractPort_strategy)
-def test_art::relaxed::type::relaxed::abstractport_role_type(instance):
-    assert isinstance(instance.role, str)
-
-
-@given(instance=art::relaxed::type::relaxed::AbstractPort_strategy)
-def test_art::relaxed::type::relaxed::abstractport_role_setter(instance):
+@given(instance=art_relaxed_type_relaxed_AbstractPort_strategy)
+def test_art_relaxed_type_relaxed_abstractport_role_setter(instance):
     original = instance.role
     instance.role = original
     assert instance.role == original
 
-@given(instance=art::relaxed::ModelElement_strategy)
+
+
+@given(instance=art_relaxed_type_relaxed_AbstractPort_strategy)
+def test_art_relaxed_type_relaxed_abstractport_protocol_setter(instance):
+    original = instance.protocol
+    instance.protocol = original
+    assert instance.protocol == original
+
+@given(instance=art_relaxed_type_relaxed_PortId_strategy)
 @settings(max_examples=50)
-def test_art::relaxed::modelelement_instantiation(instance):
-    assert isinstance(instance, art::relaxed::ModelElement)
+def test_art_relaxed_type_relaxed_portid_instantiation(instance):
+    assert isinstance(instance, art_relaxed_type_relaxed_PortId)
+
+@given(instance=art_relaxed_distrib_relaxed_Node_strategy)
+@settings(max_examples=50)
+def test_art_relaxed_distrib_relaxed_node_instantiation(instance):
+    assert isinstance(instance, art_relaxed_distrib_relaxed_Node)
+
+
+
+@given(instance=art_relaxed_distrib_relaxed_Node_strategy)
+def test_art_relaxed_distrib_relaxed_node_uri_setter(instance):
+    original = instance.uri
+    instance.uri = original
+    assert instance.uri == original
+
+@given(instance=art_relaxed_group_relaxed_Group_strategy)
+@settings(max_examples=50)
+def test_art_relaxed_group_relaxed_group_instantiation(instance):
+    assert isinstance(instance, art_relaxed_group_relaxed_Group)
+
+@given(instance=art_relaxed_ModelElement_strategy)
+@settings(max_examples=50)
+def test_art_relaxed_modelelement_instantiation(instance):
+    assert isinstance(instance, art_relaxed_ModelElement)

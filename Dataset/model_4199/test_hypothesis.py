@@ -3,10 +3,10 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    myDsl::Greeting,
+from python_code import (
+    myDsl_Greeting,
 )
 
 # =============================================================================
@@ -15,23 +15,23 @@ from classes import (
 
 
 
-def test_mydsl::greeting_is_not_abstract():
-    assert not inspect.isabstract(myDsl::Greeting)
+def test_mydsl_greeting_is_not_abstract():
+    assert not inspect.isabstract(myDsl_Greeting)
 
 
-def test_mydsl::greeting_constructor_exists():
-    assert callable(myDsl::Greeting.__init__)
+def test_mydsl_greeting_constructor_exists():
+    assert callable(myDsl_Greeting.__init__)
 
 
-def test_mydsl::greeting_constructor_args():
-    sig = inspect.signature(myDsl::Greeting.__init__)
+def test_mydsl_greeting_constructor_args():
+    sig = inspect.signature(myDsl_Greeting.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_mydsl::greeting_has_name():
-    assert hasattr(myDsl::Greeting, "name")
+def test_mydsl_greeting_has_name():
+    assert hasattr(myDsl_Greeting, "name")
     descriptor = None
-    for klass in myDsl::Greeting.__mro__:
+    for klass in myDsl_Greeting.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -49,24 +49,21 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-myDsl::Greeting_strategy = st.builds(
-    myDsl::Greeting,
+myDsl_Greeting_strategy = st.builds(
+    myDsl_Greeting,
     name=
         safe_text
 )
 
-@given(instance=myDsl::Greeting_strategy)
+@given(instance=myDsl_Greeting_strategy)
 @settings(max_examples=50)
-def test_mydsl::greeting_instantiation(instance):
-    assert isinstance(instance, myDsl::Greeting)
-
-@given(instance=myDsl::Greeting_strategy)
-def test_mydsl::greeting_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_mydsl_greeting_instantiation(instance):
+    assert isinstance(instance, myDsl_Greeting)
 
 
-@given(instance=myDsl::Greeting_strategy)
-def test_mydsl::greeting_name_setter(instance):
+
+@given(instance=myDsl_Greeting_strategy)
+def test_mydsl_greeting_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original

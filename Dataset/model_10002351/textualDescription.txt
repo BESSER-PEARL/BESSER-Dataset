@@ -1,0 +1,13 @@
+The model has 9 class(es).
+The class 'employee' has the following attributes: 'id' of type str; 'password' of type str; 'department' of type str; 'Salary' of type int.
+The class 'Room' has the following attributes: 'capasittity' of type int; 'num' of type int; 'patients' of type str; 'available' of type bool; 'room_type' of type str.
+The class 'appointment' has the following attributes: 'duration' of type int; 'minute' of type int; 'hour' of type int; 'day' of type int.
+The class 'nurse' has the following attributes: '_rom' of type Room.
+The class 'Receptionist' has no attributes.
+The class 'Person' has the following attributes: 'age' of type int; 'name' of type str.
+The class 'Patient' has the following attributes: '_doc' of type doctor; 'illness' of type str; '_nur' of type nurse; 'id' of type str.
+The class 'doctor' has the following attributes: 'patient' of type str; 'weekappointment' of type str.
+The class 'It' has the following attributes: 'password' of type str.
+'Patient' (role 'doctor4', cardinality 0..*) is associated with 'doctor' (role 'patient_25', cardinality 0..*).
+'Room' (role 'patient0', cardinality 0..*) is associated with 'Patient' (role 'room1', cardinality 0..*).
+'Room' (role 'nurse3', cardinality 0..*) is associated with 'nurse' (role 'room2', cardinality 0..*).

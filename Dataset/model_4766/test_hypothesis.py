@@ -3,21 +3,21 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    syswbeff106prepa::Port,
+from python_code import (
+    syswbeff106prepa_Port,
     AbstractFunction,
-    syswbeff106prepa::Workbench,
-    syswbeff106prepa::Pattern,
-    syswbeff106prepa::PatternCatalog,
-    syswbeff106prepa::Function,
+    syswbeff106prepa_Workbench,
+    syswbeff106prepa_Pattern,
+    syswbeff106prepa_PatternCatalog,
+    syswbeff106prepa_Function,
     Port,
-    syswbeff106prepa::System,
-    syswbeff106prepa::Flow,
-    syswbeff106prepa::OutputPort,
-    syswbeff106prepa::InputPort,
-    syswbeff106prepa::AbstractFunction,
+    syswbeff106prepa_System,
+    syswbeff106prepa_Flow,
+    syswbeff106prepa_OutputPort,
+    syswbeff106prepa_InputPort,
+    syswbeff106prepa_AbstractFunction,
 )
 
 # =============================================================================
@@ -26,23 +26,23 @@ from classes import (
 
 
 
-def test_syswbeff106prepa::port_is_not_abstract():
-    assert not inspect.isabstract(syswbeff106prepa::Port)
+def test_syswbeff106prepa_port_is_not_abstract():
+    assert not inspect.isabstract(syswbeff106prepa_Port)
 
 
-def test_syswbeff106prepa::port_constructor_exists():
-    assert callable(syswbeff106prepa::Port.__init__)
+def test_syswbeff106prepa_port_constructor_exists():
+    assert callable(syswbeff106prepa_Port.__init__)
 
 
-def test_syswbeff106prepa::port_constructor_args():
-    sig = inspect.signature(syswbeff106prepa::Port.__init__)
+def test_syswbeff106prepa_port_constructor_args():
+    sig = inspect.signature(syswbeff106prepa_Port.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_syswbeff106prepa::port_has_name():
-    assert hasattr(syswbeff106prepa::Port, "name")
+def test_syswbeff106prepa_port_has_name():
+    assert hasattr(syswbeff106prepa_Port, "name")
     descriptor = None
-    for klass in syswbeff106prepa::Port.__mro__:
+    for klass in syswbeff106prepa_Port.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -64,51 +64,51 @@ def test_abstractfunction_constructor_args():
 
 
 
-def test_syswbeff106prepa::workbench_is_not_abstract():
-    assert not inspect.isabstract(syswbeff106prepa::Workbench)
+def test_syswbeff106prepa_workbench_is_not_abstract():
+    assert not inspect.isabstract(syswbeff106prepa_Workbench)
 
 
-def test_syswbeff106prepa::workbench_constructor_exists():
-    assert callable(syswbeff106prepa::Workbench.__init__)
+def test_syswbeff106prepa_workbench_constructor_exists():
+    assert callable(syswbeff106prepa_Workbench.__init__)
 
 
-def test_syswbeff106prepa::workbench_constructor_args():
-    sig = inspect.signature(syswbeff106prepa::Workbench.__init__)
+def test_syswbeff106prepa_workbench_constructor_args():
+    sig = inspect.signature(syswbeff106prepa_Workbench.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_syswbeff106prepa::pattern_is_not_abstract():
-    assert not inspect.isabstract(syswbeff106prepa::Pattern)
+def test_syswbeff106prepa_pattern_is_not_abstract():
+    assert not inspect.isabstract(syswbeff106prepa_Pattern)
 
 
-def test_syswbeff106prepa::pattern_constructor_exists():
-    assert callable(syswbeff106prepa::Pattern.__init__)
+def test_syswbeff106prepa_pattern_constructor_exists():
+    assert callable(syswbeff106prepa_Pattern.__init__)
 
 
-def test_syswbeff106prepa::pattern_constructor_args():
-    sig = inspect.signature(syswbeff106prepa::Pattern.__init__)
+def test_syswbeff106prepa_pattern_constructor_args():
+    sig = inspect.signature(syswbeff106prepa_Pattern.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_syswbeff106prepa::patterncatalog_is_not_abstract():
-    assert not inspect.isabstract(syswbeff106prepa::PatternCatalog)
+def test_syswbeff106prepa_patterncatalog_is_not_abstract():
+    assert not inspect.isabstract(syswbeff106prepa_PatternCatalog)
 
 
-def test_syswbeff106prepa::patterncatalog_constructor_exists():
-    assert callable(syswbeff106prepa::PatternCatalog.__init__)
+def test_syswbeff106prepa_patterncatalog_constructor_exists():
+    assert callable(syswbeff106prepa_PatternCatalog.__init__)
 
 
-def test_syswbeff106prepa::patterncatalog_constructor_args():
-    sig = inspect.signature(syswbeff106prepa::PatternCatalog.__init__)
+def test_syswbeff106prepa_patterncatalog_constructor_args():
+    sig = inspect.signature(syswbeff106prepa_PatternCatalog.__init__)
     params = list(sig.parameters.keys())
     assert "id" in params, "Missing parameter 'id'"
 
-def test_syswbeff106prepa::patterncatalog_has_id():
-    assert hasattr(syswbeff106prepa::PatternCatalog, "id")
+def test_syswbeff106prepa_patterncatalog_has_id():
+    assert hasattr(syswbeff106prepa_PatternCatalog, "id")
     descriptor = None
-    for klass in syswbeff106prepa::PatternCatalog.__mro__:
+    for klass in syswbeff106prepa_PatternCatalog.__mro__:
         if "id" in klass.__dict__:
             descriptor = klass.__dict__["id"]
             break
@@ -116,16 +116,16 @@ def test_syswbeff106prepa::patterncatalog_has_id():
 
 
 
-def test_syswbeff106prepa::function_is_not_abstract():
-    assert not inspect.isabstract(syswbeff106prepa::Function)
+def test_syswbeff106prepa_function_is_not_abstract():
+    assert not inspect.isabstract(syswbeff106prepa_Function)
 
 
-def test_syswbeff106prepa::function_constructor_exists():
-    assert callable(syswbeff106prepa::Function.__init__)
+def test_syswbeff106prepa_function_constructor_exists():
+    assert callable(syswbeff106prepa_Function.__init__)
 
 
-def test_syswbeff106prepa::function_constructor_args():
-    sig = inspect.signature(syswbeff106prepa::Function.__init__)
+def test_syswbeff106prepa_function_constructor_args():
+    sig = inspect.signature(syswbeff106prepa_Function.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -144,23 +144,23 @@ def test_port_constructor_args():
 
 
 
-def test_syswbeff106prepa::system_is_not_abstract():
-    assert not inspect.isabstract(syswbeff106prepa::System)
+def test_syswbeff106prepa_system_is_not_abstract():
+    assert not inspect.isabstract(syswbeff106prepa_System)
 
 
-def test_syswbeff106prepa::system_constructor_exists():
-    assert callable(syswbeff106prepa::System.__init__)
+def test_syswbeff106prepa_system_constructor_exists():
+    assert callable(syswbeff106prepa_System.__init__)
 
 
-def test_syswbeff106prepa::system_constructor_args():
-    sig = inspect.signature(syswbeff106prepa::System.__init__)
+def test_syswbeff106prepa_system_constructor_args():
+    sig = inspect.signature(syswbeff106prepa_System.__init__)
     params = list(sig.parameters.keys())
     assert "id" in params, "Missing parameter 'id'"
 
-def test_syswbeff106prepa::system_has_id():
-    assert hasattr(syswbeff106prepa::System, "id")
+def test_syswbeff106prepa_system_has_id():
+    assert hasattr(syswbeff106prepa_System, "id")
     descriptor = None
-    for klass in syswbeff106prepa::System.__mro__:
+    for klass in syswbeff106prepa_System.__mro__:
         if "id" in klass.__dict__:
             descriptor = klass.__dict__["id"]
             break
@@ -168,65 +168,65 @@ def test_syswbeff106prepa::system_has_id():
 
 
 
-def test_syswbeff106prepa::flow_is_not_abstract():
-    assert not inspect.isabstract(syswbeff106prepa::Flow)
+def test_syswbeff106prepa_flow_is_not_abstract():
+    assert not inspect.isabstract(syswbeff106prepa_Flow)
 
 
-def test_syswbeff106prepa::flow_constructor_exists():
-    assert callable(syswbeff106prepa::Flow.__init__)
+def test_syswbeff106prepa_flow_constructor_exists():
+    assert callable(syswbeff106prepa_Flow.__init__)
 
 
-def test_syswbeff106prepa::flow_constructor_args():
-    sig = inspect.signature(syswbeff106prepa::Flow.__init__)
+def test_syswbeff106prepa_flow_constructor_args():
+    sig = inspect.signature(syswbeff106prepa_Flow.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_syswbeff106prepa::outputport_is_not_abstract():
-    assert not inspect.isabstract(syswbeff106prepa::OutputPort)
+def test_syswbeff106prepa_outputport_is_not_abstract():
+    assert not inspect.isabstract(syswbeff106prepa_OutputPort)
 
 
-def test_syswbeff106prepa::outputport_constructor_exists():
-    assert callable(syswbeff106prepa::OutputPort.__init__)
+def test_syswbeff106prepa_outputport_constructor_exists():
+    assert callable(syswbeff106prepa_OutputPort.__init__)
 
 
-def test_syswbeff106prepa::outputport_constructor_args():
-    sig = inspect.signature(syswbeff106prepa::OutputPort.__init__)
+def test_syswbeff106prepa_outputport_constructor_args():
+    sig = inspect.signature(syswbeff106prepa_OutputPort.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_syswbeff106prepa::inputport_is_not_abstract():
-    assert not inspect.isabstract(syswbeff106prepa::InputPort)
+def test_syswbeff106prepa_inputport_is_not_abstract():
+    assert not inspect.isabstract(syswbeff106prepa_InputPort)
 
 
-def test_syswbeff106prepa::inputport_constructor_exists():
-    assert callable(syswbeff106prepa::InputPort.__init__)
+def test_syswbeff106prepa_inputport_constructor_exists():
+    assert callable(syswbeff106prepa_InputPort.__init__)
 
 
-def test_syswbeff106prepa::inputport_constructor_args():
-    sig = inspect.signature(syswbeff106prepa::InputPort.__init__)
+def test_syswbeff106prepa_inputport_constructor_args():
+    sig = inspect.signature(syswbeff106prepa_InputPort.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_syswbeff106prepa::abstractfunction_is_not_abstract():
-    assert not inspect.isabstract(syswbeff106prepa::AbstractFunction)
+def test_syswbeff106prepa_abstractfunction_is_not_abstract():
+    assert not inspect.isabstract(syswbeff106prepa_AbstractFunction)
 
 
-def test_syswbeff106prepa::abstractfunction_constructor_exists():
-    assert callable(syswbeff106prepa::AbstractFunction.__init__)
+def test_syswbeff106prepa_abstractfunction_constructor_exists():
+    assert callable(syswbeff106prepa_AbstractFunction.__init__)
 
 
-def test_syswbeff106prepa::abstractfunction_constructor_args():
-    sig = inspect.signature(syswbeff106prepa::AbstractFunction.__init__)
+def test_syswbeff106prepa_abstractfunction_constructor_args():
+    sig = inspect.signature(syswbeff106prepa_AbstractFunction.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_syswbeff106prepa::abstractfunction_has_name():
-    assert hasattr(syswbeff106prepa::AbstractFunction, "name")
+def test_syswbeff106prepa_abstractfunction_has_name():
+    assert hasattr(syswbeff106prepa_AbstractFunction, "name")
     descriptor = None
-    for klass in syswbeff106prepa::AbstractFunction.__mro__:
+    for klass in syswbeff106prepa_AbstractFunction.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -244,63 +244,60 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-syswbeff106prepa::Port_strategy = st.builds(
-    syswbeff106prepa::Port,
+syswbeff106prepa_Port_strategy = st.builds(
+    syswbeff106prepa_Port,
     name=
         safe_text
 )
 AbstractFunction_strategy = st.builds(
     AbstractFunction,
 )
-syswbeff106prepa::Workbench_strategy = st.builds(
-    syswbeff106prepa::Workbench,
+syswbeff106prepa_Workbench_strategy = st.builds(
+    syswbeff106prepa_Workbench,
 )
-syswbeff106prepa::Pattern_strategy = st.builds(
-    syswbeff106prepa::Pattern,
+syswbeff106prepa_Pattern_strategy = st.builds(
+    syswbeff106prepa_Pattern,
 )
-syswbeff106prepa::PatternCatalog_strategy = st.builds(
-    syswbeff106prepa::PatternCatalog,
+syswbeff106prepa_PatternCatalog_strategy = st.builds(
+    syswbeff106prepa_PatternCatalog,
     id=
         safe_text
 )
-syswbeff106prepa::Function_strategy = st.builds(
-    syswbeff106prepa::Function,
+syswbeff106prepa_Function_strategy = st.builds(
+    syswbeff106prepa_Function,
 )
 Port_strategy = st.builds(
     Port,
 )
-syswbeff106prepa::System_strategy = st.builds(
-    syswbeff106prepa::System,
+syswbeff106prepa_System_strategy = st.builds(
+    syswbeff106prepa_System,
     id=
         safe_text
 )
-syswbeff106prepa::Flow_strategy = st.builds(
-    syswbeff106prepa::Flow,
+syswbeff106prepa_Flow_strategy = st.builds(
+    syswbeff106prepa_Flow,
 )
-syswbeff106prepa::OutputPort_strategy = st.builds(
-    syswbeff106prepa::OutputPort,
+syswbeff106prepa_OutputPort_strategy = st.builds(
+    syswbeff106prepa_OutputPort,
 )
-syswbeff106prepa::InputPort_strategy = st.builds(
-    syswbeff106prepa::InputPort,
+syswbeff106prepa_InputPort_strategy = st.builds(
+    syswbeff106prepa_InputPort,
 )
-syswbeff106prepa::AbstractFunction_strategy = st.builds(
-    syswbeff106prepa::AbstractFunction,
+syswbeff106prepa_AbstractFunction_strategy = st.builds(
+    syswbeff106prepa_AbstractFunction,
     name=
         safe_text
 )
 
-@given(instance=syswbeff106prepa::Port_strategy)
+@given(instance=syswbeff106prepa_Port_strategy)
 @settings(max_examples=50)
-def test_syswbeff106prepa::port_instantiation(instance):
-    assert isinstance(instance, syswbeff106prepa::Port)
-
-@given(instance=syswbeff106prepa::Port_strategy)
-def test_syswbeff106prepa::port_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_syswbeff106prepa_port_instantiation(instance):
+    assert isinstance(instance, syswbeff106prepa_Port)
 
 
-@given(instance=syswbeff106prepa::Port_strategy)
-def test_syswbeff106prepa::port_name_setter(instance):
+
+@given(instance=syswbeff106prepa_Port_strategy)
+def test_syswbeff106prepa_port_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
@@ -310,85 +307,76 @@ def test_syswbeff106prepa::port_name_setter(instance):
 def test_abstractfunction_instantiation(instance):
     assert isinstance(instance, AbstractFunction)
 
-@given(instance=syswbeff106prepa::Workbench_strategy)
+@given(instance=syswbeff106prepa_Workbench_strategy)
 @settings(max_examples=50)
-def test_syswbeff106prepa::workbench_instantiation(instance):
-    assert isinstance(instance, syswbeff106prepa::Workbench)
+def test_syswbeff106prepa_workbench_instantiation(instance):
+    assert isinstance(instance, syswbeff106prepa_Workbench)
 
-@given(instance=syswbeff106prepa::Pattern_strategy)
+@given(instance=syswbeff106prepa_Pattern_strategy)
 @settings(max_examples=50)
-def test_syswbeff106prepa::pattern_instantiation(instance):
-    assert isinstance(instance, syswbeff106prepa::Pattern)
+def test_syswbeff106prepa_pattern_instantiation(instance):
+    assert isinstance(instance, syswbeff106prepa_Pattern)
 
-@given(instance=syswbeff106prepa::PatternCatalog_strategy)
+@given(instance=syswbeff106prepa_PatternCatalog_strategy)
 @settings(max_examples=50)
-def test_syswbeff106prepa::patterncatalog_instantiation(instance):
-    assert isinstance(instance, syswbeff106prepa::PatternCatalog)
-
-@given(instance=syswbeff106prepa::PatternCatalog_strategy)
-def test_syswbeff106prepa::patterncatalog_id_type(instance):
-    assert isinstance(instance.id, str)
+def test_syswbeff106prepa_patterncatalog_instantiation(instance):
+    assert isinstance(instance, syswbeff106prepa_PatternCatalog)
 
 
-@given(instance=syswbeff106prepa::PatternCatalog_strategy)
-def test_syswbeff106prepa::patterncatalog_id_setter(instance):
+
+@given(instance=syswbeff106prepa_PatternCatalog_strategy)
+def test_syswbeff106prepa_patterncatalog_id_setter(instance):
     original = instance.id
     instance.id = original
     assert instance.id == original
 
-@given(instance=syswbeff106prepa::Function_strategy)
+@given(instance=syswbeff106prepa_Function_strategy)
 @settings(max_examples=50)
-def test_syswbeff106prepa::function_instantiation(instance):
-    assert isinstance(instance, syswbeff106prepa::Function)
+def test_syswbeff106prepa_function_instantiation(instance):
+    assert isinstance(instance, syswbeff106prepa_Function)
 
 @given(instance=Port_strategy)
 @settings(max_examples=50)
 def test_port_instantiation(instance):
     assert isinstance(instance, Port)
 
-@given(instance=syswbeff106prepa::System_strategy)
+@given(instance=syswbeff106prepa_System_strategy)
 @settings(max_examples=50)
-def test_syswbeff106prepa::system_instantiation(instance):
-    assert isinstance(instance, syswbeff106prepa::System)
-
-@given(instance=syswbeff106prepa::System_strategy)
-def test_syswbeff106prepa::system_id_type(instance):
-    assert isinstance(instance.id, str)
+def test_syswbeff106prepa_system_instantiation(instance):
+    assert isinstance(instance, syswbeff106prepa_System)
 
 
-@given(instance=syswbeff106prepa::System_strategy)
-def test_syswbeff106prepa::system_id_setter(instance):
+
+@given(instance=syswbeff106prepa_System_strategy)
+def test_syswbeff106prepa_system_id_setter(instance):
     original = instance.id
     instance.id = original
     assert instance.id == original
 
-@given(instance=syswbeff106prepa::Flow_strategy)
+@given(instance=syswbeff106prepa_Flow_strategy)
 @settings(max_examples=50)
-def test_syswbeff106prepa::flow_instantiation(instance):
-    assert isinstance(instance, syswbeff106prepa::Flow)
+def test_syswbeff106prepa_flow_instantiation(instance):
+    assert isinstance(instance, syswbeff106prepa_Flow)
 
-@given(instance=syswbeff106prepa::OutputPort_strategy)
+@given(instance=syswbeff106prepa_OutputPort_strategy)
 @settings(max_examples=50)
-def test_syswbeff106prepa::outputport_instantiation(instance):
-    assert isinstance(instance, syswbeff106prepa::OutputPort)
+def test_syswbeff106prepa_outputport_instantiation(instance):
+    assert isinstance(instance, syswbeff106prepa_OutputPort)
 
-@given(instance=syswbeff106prepa::InputPort_strategy)
+@given(instance=syswbeff106prepa_InputPort_strategy)
 @settings(max_examples=50)
-def test_syswbeff106prepa::inputport_instantiation(instance):
-    assert isinstance(instance, syswbeff106prepa::InputPort)
+def test_syswbeff106prepa_inputport_instantiation(instance):
+    assert isinstance(instance, syswbeff106prepa_InputPort)
 
-@given(instance=syswbeff106prepa::AbstractFunction_strategy)
+@given(instance=syswbeff106prepa_AbstractFunction_strategy)
 @settings(max_examples=50)
-def test_syswbeff106prepa::abstractfunction_instantiation(instance):
-    assert isinstance(instance, syswbeff106prepa::AbstractFunction)
-
-@given(instance=syswbeff106prepa::AbstractFunction_strategy)
-def test_syswbeff106prepa::abstractfunction_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_syswbeff106prepa_abstractfunction_instantiation(instance):
+    assert isinstance(instance, syswbeff106prepa_AbstractFunction)
 
 
-@given(instance=syswbeff106prepa::AbstractFunction_strategy)
-def test_syswbeff106prepa::abstractfunction_name_setter(instance):
+
+@given(instance=syswbeff106prepa_AbstractFunction_strategy)
+def test_syswbeff106prepa_abstractfunction_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original

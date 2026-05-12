@@ -3,15 +3,15 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    errya::Alias,
-    errya::NamedElement,
+from python_code import (
+    errya_Alias,
+    errya_NamedElement,
     NamedElement,
-    errya::RelatedTo,
-    errya::Thing,
-    errya::World,
+    errya_RelatedTo,
+    errya_Thing,
+    errya_World,
 )
 
 # =============================================================================
@@ -20,23 +20,23 @@ from classes import (
 
 
 
-def test_errya::alias_is_not_abstract():
-    assert not inspect.isabstract(errya::Alias)
+def test_errya_alias_is_not_abstract():
+    assert not inspect.isabstract(errya_Alias)
 
 
-def test_errya::alias_constructor_exists():
-    assert callable(errya::Alias.__init__)
+def test_errya_alias_constructor_exists():
+    assert callable(errya_Alias.__init__)
 
 
-def test_errya::alias_constructor_args():
-    sig = inspect.signature(errya::Alias.__init__)
+def test_errya_alias_constructor_args():
+    sig = inspect.signature(errya_Alias.__init__)
     params = list(sig.parameters.keys())
     assert "id" in params, "Missing parameter 'id'"
 
-def test_errya::alias_has_id():
-    assert hasattr(errya::Alias, "id")
+def test_errya_alias_has_id():
+    assert hasattr(errya_Alias, "id")
     descriptor = None
-    for klass in errya::Alias.__mro__:
+    for klass in errya_Alias.__mro__:
         if "id" in klass.__dict__:
             descriptor = klass.__dict__["id"]
             break
@@ -44,23 +44,23 @@ def test_errya::alias_has_id():
 
 
 
-def test_errya::namedelement_is_not_abstract():
-    assert not inspect.isabstract(errya::NamedElement)
+def test_errya_namedelement_is_not_abstract():
+    assert not inspect.isabstract(errya_NamedElement)
 
 
-def test_errya::namedelement_constructor_exists():
-    assert callable(errya::NamedElement.__init__)
+def test_errya_namedelement_constructor_exists():
+    assert callable(errya_NamedElement.__init__)
 
 
-def test_errya::namedelement_constructor_args():
-    sig = inspect.signature(errya::NamedElement.__init__)
+def test_errya_namedelement_constructor_args():
+    sig = inspect.signature(errya_NamedElement.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_errya::namedelement_has_name():
-    assert hasattr(errya::NamedElement, "name")
+def test_errya_namedelement_has_name():
+    assert hasattr(errya_NamedElement, "name")
     descriptor = None
-    for klass in errya::NamedElement.__mro__:
+    for klass in errya_NamedElement.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -82,23 +82,23 @@ def test_namedelement_constructor_args():
 
 
 
-def test_errya::relatedto_is_not_abstract():
-    assert not inspect.isabstract(errya::RelatedTo)
+def test_errya_relatedto_is_not_abstract():
+    assert not inspect.isabstract(errya_RelatedTo)
 
 
-def test_errya::relatedto_constructor_exists():
-    assert callable(errya::RelatedTo.__init__)
+def test_errya_relatedto_constructor_exists():
+    assert callable(errya_RelatedTo.__init__)
 
 
-def test_errya::relatedto_constructor_args():
-    sig = inspect.signature(errya::RelatedTo.__init__)
+def test_errya_relatedto_constructor_args():
+    sig = inspect.signature(errya_RelatedTo.__init__)
     params = list(sig.parameters.keys())
     assert "since" in params, "Missing parameter 'since'"
 
-def test_errya::relatedto_has_since():
-    assert hasattr(errya::RelatedTo, "since")
+def test_errya_relatedto_has_since():
+    assert hasattr(errya_RelatedTo, "since")
     descriptor = None
-    for klass in errya::RelatedTo.__mro__:
+    for klass in errya_RelatedTo.__mro__:
         if "since" in klass.__dict__:
             descriptor = klass.__dict__["since"]
             break
@@ -106,23 +106,23 @@ def test_errya::relatedto_has_since():
 
 
 
-def test_errya::thing_is_not_abstract():
-    assert not inspect.isabstract(errya::Thing)
+def test_errya_thing_is_not_abstract():
+    assert not inspect.isabstract(errya_Thing)
 
 
-def test_errya::thing_constructor_exists():
-    assert callable(errya::Thing.__init__)
+def test_errya_thing_constructor_exists():
+    assert callable(errya_Thing.__init__)
 
 
-def test_errya::thing_constructor_args():
-    sig = inspect.signature(errya::Thing.__init__)
+def test_errya_thing_constructor_args():
+    sig = inspect.signature(errya_Thing.__init__)
     params = list(sig.parameters.keys())
     assert "id" in params, "Missing parameter 'id'"
 
-def test_errya::thing_has_id():
-    assert hasattr(errya::Thing, "id")
+def test_errya_thing_has_id():
+    assert hasattr(errya_Thing, "id")
     descriptor = None
-    for klass in errya::Thing.__mro__:
+    for klass in errya_Thing.__mro__:
         if "id" in klass.__dict__:
             descriptor = klass.__dict__["id"]
             break
@@ -130,16 +130,16 @@ def test_errya::thing_has_id():
 
 
 
-def test_errya::world_is_not_abstract():
-    assert not inspect.isabstract(errya::World)
+def test_errya_world_is_not_abstract():
+    assert not inspect.isabstract(errya_World)
 
 
-def test_errya::world_constructor_exists():
-    assert callable(errya::World.__init__)
+def test_errya_world_constructor_exists():
+    assert callable(errya_World.__init__)
 
 
-def test_errya::world_constructor_args():
-    sig = inspect.signature(errya::World.__init__)
+def test_errya_world_constructor_args():
+    sig = inspect.signature(errya_World.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -154,61 +154,55 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-errya::Alias_strategy = st.builds(
-    errya::Alias,
+errya_Alias_strategy = st.builds(
+    errya_Alias,
     id=
         safe_text
 )
-errya::NamedElement_strategy = st.builds(
-    errya::NamedElement,
+errya_NamedElement_strategy = st.builds(
+    errya_NamedElement,
     name=
         safe_text
 )
 NamedElement_strategy = st.builds(
     NamedElement,
 )
-errya::RelatedTo_strategy = st.builds(
-    errya::RelatedTo,
+errya_RelatedTo_strategy = st.builds(
+    errya_RelatedTo,
     since=
         safe_text
 )
-errya::Thing_strategy = st.builds(
-    errya::Thing,
+errya_Thing_strategy = st.builds(
+    errya_Thing,
     id=
         st.integers()
 )
-errya::World_strategy = st.builds(
-    errya::World,
+errya_World_strategy = st.builds(
+    errya_World,
 )
 
-@given(instance=errya::Alias_strategy)
+@given(instance=errya_Alias_strategy)
 @settings(max_examples=50)
-def test_errya::alias_instantiation(instance):
-    assert isinstance(instance, errya::Alias)
-
-@given(instance=errya::Alias_strategy)
-def test_errya::alias_id_type(instance):
-    assert isinstance(instance.id, str)
+def test_errya_alias_instantiation(instance):
+    assert isinstance(instance, errya_Alias)
 
 
-@given(instance=errya::Alias_strategy)
-def test_errya::alias_id_setter(instance):
+
+@given(instance=errya_Alias_strategy)
+def test_errya_alias_id_setter(instance):
     original = instance.id
     instance.id = original
     assert instance.id == original
 
-@given(instance=errya::NamedElement_strategy)
+@given(instance=errya_NamedElement_strategy)
 @settings(max_examples=50)
-def test_errya::namedelement_instantiation(instance):
-    assert isinstance(instance, errya::NamedElement)
-
-@given(instance=errya::NamedElement_strategy)
-def test_errya::namedelement_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_errya_namedelement_instantiation(instance):
+    assert isinstance(instance, errya_NamedElement)
 
 
-@given(instance=errya::NamedElement_strategy)
-def test_errya::namedelement_name_setter(instance):
+
+@given(instance=errya_NamedElement_strategy)
+def test_errya_namedelement_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
@@ -218,39 +212,33 @@ def test_errya::namedelement_name_setter(instance):
 def test_namedelement_instantiation(instance):
     assert isinstance(instance, NamedElement)
 
-@given(instance=errya::RelatedTo_strategy)
+@given(instance=errya_RelatedTo_strategy)
 @settings(max_examples=50)
-def test_errya::relatedto_instantiation(instance):
-    assert isinstance(instance, errya::RelatedTo)
-
-@given(instance=errya::RelatedTo_strategy)
-def test_errya::relatedto_since_type(instance):
-    assert isinstance(instance.since, str)
+def test_errya_relatedto_instantiation(instance):
+    assert isinstance(instance, errya_RelatedTo)
 
 
-@given(instance=errya::RelatedTo_strategy)
-def test_errya::relatedto_since_setter(instance):
+
+@given(instance=errya_RelatedTo_strategy)
+def test_errya_relatedto_since_setter(instance):
     original = instance.since
     instance.since = original
     assert instance.since == original
 
-@given(instance=errya::Thing_strategy)
+@given(instance=errya_Thing_strategy)
 @settings(max_examples=50)
-def test_errya::thing_instantiation(instance):
-    assert isinstance(instance, errya::Thing)
-
-@given(instance=errya::Thing_strategy)
-def test_errya::thing_id_type(instance):
-    assert isinstance(instance.id, int)
+def test_errya_thing_instantiation(instance):
+    assert isinstance(instance, errya_Thing)
 
 
-@given(instance=errya::Thing_strategy)
-def test_errya::thing_id_setter(instance):
+
+@given(instance=errya_Thing_strategy)
+def test_errya_thing_id_setter(instance):
     original = instance.id
     instance.id = original
     assert instance.id == original
 
-@given(instance=errya::World_strategy)
+@given(instance=errya_World_strategy)
 @settings(max_examples=50)
-def test_errya::world_instantiation(instance):
-    assert isinstance(instance, errya::World)
+def test_errya_world_instantiation(instance):
+    assert isinstance(instance, errya_World)

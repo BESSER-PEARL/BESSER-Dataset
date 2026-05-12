@@ -3,26 +3,26 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     Shape,
-    di::LabeledShape,
+    di_LabeledShape,
     Edge,
-    di::LabeledEdge,
-    di::Bounds,
+    di_LabeledEdge,
+    di_Bounds,
     Node,
-    di::Label,
-    di::Shape,
-    di::Plane,
-    di::Diagram,
-    di::DiagramElement,
-    di::Point,
+    di_Label,
+    di_Shape,
+    di_Plane,
+    di_Diagram,
+    di_DiagramElement,
+    di_Point,
     DiagramElement,
-    di::Edge,
-    di::Node,
-    di::Style,
-    di::EObject,
+    di_Edge,
+    di_Node,
+    di_Style,
+    di_EObject,
 )
 
 # =============================================================================
@@ -45,16 +45,16 @@ def test_shape_constructor_args():
 
 
 
-def test_di::labeledshape_is_not_abstract():
-    assert not inspect.isabstract(di::LabeledShape)
+def test_di_labeledshape_is_not_abstract():
+    assert not inspect.isabstract(di_LabeledShape)
 
 
-def test_di::labeledshape_constructor_exists():
-    assert callable(di::LabeledShape.__init__)
+def test_di_labeledshape_constructor_exists():
+    assert callable(di_LabeledShape.__init__)
 
 
-def test_di::labeledshape_constructor_args():
-    sig = inspect.signature(di::LabeledShape.__init__)
+def test_di_labeledshape_constructor_args():
+    sig = inspect.signature(di_LabeledShape.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -73,30 +73,30 @@ def test_edge_constructor_args():
 
 
 
-def test_di::labelededge_is_not_abstract():
-    assert not inspect.isabstract(di::LabeledEdge)
+def test_di_labelededge_is_not_abstract():
+    assert not inspect.isabstract(di_LabeledEdge)
 
 
-def test_di::labelededge_constructor_exists():
-    assert callable(di::LabeledEdge.__init__)
+def test_di_labelededge_constructor_exists():
+    assert callable(di_LabeledEdge.__init__)
 
 
-def test_di::labelededge_constructor_args():
-    sig = inspect.signature(di::LabeledEdge.__init__)
+def test_di_labelededge_constructor_args():
+    sig = inspect.signature(di_LabeledEdge.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_di::bounds_is_not_abstract():
-    assert not inspect.isabstract(di::Bounds)
+def test_di_bounds_is_not_abstract():
+    assert not inspect.isabstract(di_Bounds)
 
 
-def test_di::bounds_constructor_exists():
-    assert callable(di::Bounds.__init__)
+def test_di_bounds_constructor_exists():
+    assert callable(di_Bounds.__init__)
 
 
-def test_di::bounds_constructor_args():
-    sig = inspect.signature(di::Bounds.__init__)
+def test_di_bounds_constructor_args():
+    sig = inspect.signature(di_Bounds.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -115,85 +115,85 @@ def test_node_constructor_args():
 
 
 
-def test_di::label_is_not_abstract():
-    assert not inspect.isabstract(di::Label)
+def test_di_label_is_not_abstract():
+    assert not inspect.isabstract(di_Label)
 
 
-def test_di::label_constructor_exists():
-    assert callable(di::Label.__init__)
+def test_di_label_constructor_exists():
+    assert callable(di_Label.__init__)
 
 
-def test_di::label_constructor_args():
-    sig = inspect.signature(di::Label.__init__)
+def test_di_label_constructor_args():
+    sig = inspect.signature(di_Label.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_di::shape_is_not_abstract():
-    assert not inspect.isabstract(di::Shape)
+def test_di_shape_is_not_abstract():
+    assert not inspect.isabstract(di_Shape)
 
 
-def test_di::shape_constructor_exists():
-    assert callable(di::Shape.__init__)
+def test_di_shape_constructor_exists():
+    assert callable(di_Shape.__init__)
 
 
-def test_di::shape_constructor_args():
-    sig = inspect.signature(di::Shape.__init__)
+def test_di_shape_constructor_args():
+    sig = inspect.signature(di_Shape.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_di::plane_is_not_abstract():
-    assert not inspect.isabstract(di::Plane)
+def test_di_plane_is_not_abstract():
+    assert not inspect.isabstract(di_Plane)
 
 
-def test_di::plane_constructor_exists():
-    assert callable(di::Plane.__init__)
+def test_di_plane_constructor_exists():
+    assert callable(di_Plane.__init__)
 
 
-def test_di::plane_constructor_args():
-    sig = inspect.signature(di::Plane.__init__)
+def test_di_plane_constructor_args():
+    sig = inspect.signature(di_Plane.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_di::diagram_is_not_abstract():
-    assert not inspect.isabstract(di::Diagram)
+def test_di_diagram_is_not_abstract():
+    assert not inspect.isabstract(di_Diagram)
 
 
-def test_di::diagram_constructor_exists():
-    assert callable(di::Diagram.__init__)
+def test_di_diagram_constructor_exists():
+    assert callable(di_Diagram.__init__)
 
 
-def test_di::diagram_constructor_args():
-    sig = inspect.signature(di::Diagram.__init__)
+def test_di_diagram_constructor_args():
+    sig = inspect.signature(di_Diagram.__init__)
     params = list(sig.parameters.keys())
-    assert "name" in params, "Missing parameter 'name'"
     assert "resolution" in params, "Missing parameter 'resolution'"
+    assert "name" in params, "Missing parameter 'name'"
     assert "documentation" in params, "Missing parameter 'documentation'"
 
-def test_di::diagram_has_name():
-    assert hasattr(di::Diagram, "name")
+def test_di_diagram_has_resolution():
+    assert hasattr(di_Diagram, "resolution")
     descriptor = None
-    for klass in di::Diagram.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_di::diagram_has_resolution():
-    assert hasattr(di::Diagram, "resolution")
-    descriptor = None
-    for klass in di::Diagram.__mro__:
+    for klass in di_Diagram.__mro__:
         if "resolution" in klass.__dict__:
             descriptor = klass.__dict__["resolution"]
             break
     assert isinstance(descriptor, property)
 
-def test_di::diagram_has_documentation():
-    assert hasattr(di::Diagram, "documentation")
+def test_di_diagram_has_name():
+    assert hasattr(di_Diagram, "name")
     descriptor = None
-    for klass in di::Diagram.__mro__:
+    for klass in di_Diagram.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_di_diagram_has_documentation():
+    assert hasattr(di_Diagram, "documentation")
+    descriptor = None
+    for klass in di_Diagram.__mro__:
         if "documentation" in klass.__dict__:
             descriptor = klass.__dict__["documentation"]
             break
@@ -201,30 +201,30 @@ def test_di::diagram_has_documentation():
 
 
 
-def test_di::diagramelement_is_not_abstract():
-    assert not inspect.isabstract(di::DiagramElement)
+def test_di_diagramelement_is_not_abstract():
+    assert not inspect.isabstract(di_DiagramElement)
 
 
-def test_di::diagramelement_constructor_exists():
-    assert callable(di::DiagramElement.__init__)
+def test_di_diagramelement_constructor_exists():
+    assert callable(di_DiagramElement.__init__)
 
 
-def test_di::diagramelement_constructor_args():
-    sig = inspect.signature(di::DiagramElement.__init__)
+def test_di_diagramelement_constructor_args():
+    sig = inspect.signature(di_DiagramElement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_di::point_is_not_abstract():
-    assert not inspect.isabstract(di::Point)
+def test_di_point_is_not_abstract():
+    assert not inspect.isabstract(di_Point)
 
 
-def test_di::point_constructor_exists():
-    assert callable(di::Point.__init__)
+def test_di_point_constructor_exists():
+    assert callable(di_Point.__init__)
 
 
-def test_di::point_constructor_args():
-    sig = inspect.signature(di::Point.__init__)
+def test_di_point_constructor_args():
+    sig = inspect.signature(di_Point.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -243,58 +243,58 @@ def test_diagramelement_constructor_args():
 
 
 
-def test_di::edge_is_not_abstract():
-    assert not inspect.isabstract(di::Edge)
+def test_di_edge_is_not_abstract():
+    assert not inspect.isabstract(di_Edge)
 
 
-def test_di::edge_constructor_exists():
-    assert callable(di::Edge.__init__)
+def test_di_edge_constructor_exists():
+    assert callable(di_Edge.__init__)
 
 
-def test_di::edge_constructor_args():
-    sig = inspect.signature(di::Edge.__init__)
+def test_di_edge_constructor_args():
+    sig = inspect.signature(di_Edge.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_di::node_is_not_abstract():
-    assert not inspect.isabstract(di::Node)
+def test_di_node_is_not_abstract():
+    assert not inspect.isabstract(di_Node)
 
 
-def test_di::node_constructor_exists():
-    assert callable(di::Node.__init__)
+def test_di_node_constructor_exists():
+    assert callable(di_Node.__init__)
 
 
-def test_di::node_constructor_args():
-    sig = inspect.signature(di::Node.__init__)
+def test_di_node_constructor_args():
+    sig = inspect.signature(di_Node.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_di::style_is_not_abstract():
-    assert not inspect.isabstract(di::Style)
+def test_di_style_is_not_abstract():
+    assert not inspect.isabstract(di_Style)
 
 
-def test_di::style_constructor_exists():
-    assert callable(di::Style.__init__)
+def test_di_style_constructor_exists():
+    assert callable(di_Style.__init__)
 
 
-def test_di::style_constructor_args():
-    sig = inspect.signature(di::Style.__init__)
+def test_di_style_constructor_args():
+    sig = inspect.signature(di_Style.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_di::eobject_is_not_abstract():
-    assert not inspect.isabstract(di::EObject)
+def test_di_eobject_is_not_abstract():
+    assert not inspect.isabstract(di_EObject)
 
 
-def test_di::eobject_constructor_exists():
-    assert callable(di::EObject.__init__)
+def test_di_eobject_constructor_exists():
+    assert callable(di_EObject.__init__)
 
 
-def test_di::eobject_constructor_args():
-    sig = inspect.signature(di::EObject.__init__)
+def test_di_eobject_constructor_args():
+    sig = inspect.signature(di_EObject.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -312,59 +312,59 @@ safe_text = st.text(
 Shape_strategy = st.builds(
     Shape,
 )
-di::LabeledShape_strategy = st.builds(
-    di::LabeledShape,
+di_LabeledShape_strategy = st.builds(
+    di_LabeledShape,
 )
 Edge_strategy = st.builds(
     Edge,
 )
-di::LabeledEdge_strategy = st.builds(
-    di::LabeledEdge,
+di_LabeledEdge_strategy = st.builds(
+    di_LabeledEdge,
 )
-di::Bounds_strategy = st.builds(
-    di::Bounds,
+di_Bounds_strategy = st.builds(
+    di_Bounds,
 )
 Node_strategy = st.builds(
     Node,
 )
-di::Label_strategy = st.builds(
-    di::Label,
+di_Label_strategy = st.builds(
+    di_Label,
 )
-di::Shape_strategy = st.builds(
-    di::Shape,
+di_Shape_strategy = st.builds(
+    di_Shape,
 )
-di::Plane_strategy = st.builds(
-    di::Plane,
+di_Plane_strategy = st.builds(
+    di_Plane,
 )
-di::Diagram_strategy = st.builds(
-    di::Diagram,
-    name=
-        safe_text,
+di_Diagram_strategy = st.builds(
+    di_Diagram,
     resolution=
         st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False),
+    name=
+        safe_text,
     documentation=
         safe_text
 )
-di::DiagramElement_strategy = st.builds(
-    di::DiagramElement,
+di_DiagramElement_strategy = st.builds(
+    di_DiagramElement,
 )
-di::Point_strategy = st.builds(
-    di::Point,
+di_Point_strategy = st.builds(
+    di_Point,
 )
 DiagramElement_strategy = st.builds(
     DiagramElement,
 )
-di::Edge_strategy = st.builds(
-    di::Edge,
+di_Edge_strategy = st.builds(
+    di_Edge,
 )
-di::Node_strategy = st.builds(
-    di::Node,
+di_Node_strategy = st.builds(
+    di_Node,
 )
-di::Style_strategy = st.builds(
-    di::Style,
+di_Style_strategy = st.builds(
+    di_Style,
 )
-di::EObject_strategy = st.builds(
-    di::EObject,
+di_EObject_strategy = st.builds(
+    di_EObject,
 )
 
 @given(instance=Shape_strategy)
@@ -372,45 +372,45 @@ di::EObject_strategy = st.builds(
 def test_shape_instantiation(instance):
     assert isinstance(instance, Shape)
 
-@given(instance=di::LabeledShape_strategy)
+@given(instance=di_LabeledShape_strategy)
 @settings(max_examples=50)
-def test_di::labeledshape_instantiation(instance):
-    assert isinstance(instance, di::LabeledShape)
+def test_di_labeledshape_instantiation(instance):
+    assert isinstance(instance, di_LabeledShape)
 
 @given(instance=Edge_strategy)
 @settings(max_examples=50)
 def test_edge_instantiation(instance):
     assert isinstance(instance, Edge)
 
-@given(instance=di::LabeledEdge_strategy)
+@given(instance=di_LabeledEdge_strategy)
 @settings(max_examples=50)
-def test_di::labelededge_instantiation(instance):
-    assert isinstance(instance, di::LabeledEdge)
+def test_di_labelededge_instantiation(instance):
+    assert isinstance(instance, di_LabeledEdge)
 
-@given(instance=di::Bounds_strategy)
+@given(instance=di_Bounds_strategy)
 @settings(max_examples=50)
-def test_di::bounds_instantiation(instance):
-    assert isinstance(instance, di::Bounds)
+def test_di_bounds_instantiation(instance):
+    assert isinstance(instance, di_Bounds)
 
 @given(instance=Node_strategy)
 @settings(max_examples=50)
 def test_node_instantiation(instance):
     assert isinstance(instance, Node)
 
-@given(instance=di::Label_strategy)
+@given(instance=di_Label_strategy)
 @settings(max_examples=50)
-def test_di::label_instantiation(instance):
-    assert isinstance(instance, di::Label)
+def test_di_label_instantiation(instance):
+    assert isinstance(instance, di_Label)
 
-@given(instance=di::Shape_strategy)
+@given(instance=di_Shape_strategy)
 @settings(max_examples=50)
-def test_di::shape_instantiation(instance):
-    assert isinstance(instance, di::Shape)
+def test_di_shape_instantiation(instance):
+    assert isinstance(instance, di_Shape)
 
-@given(instance=di::Plane_strategy)
+@given(instance=di_Plane_strategy)
 @settings(max_examples=50)
-def test_di::plane_instantiation(instance):
-    assert isinstance(instance, di::Plane)
+def test_di_plane_instantiation(instance):
+    assert isinstance(instance, di_Plane)
 
 import warnings
 import copy
@@ -418,9 +418,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=di::Plane_strategy)
+@given(instance=di_Plane_strategy)
 @settings(max_examples=30)
-def test_di::plane_plane_element_type_changes_state(instance):
+def test_di_plane_plane_element_type_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -435,84 +435,75 @@ def test_di::plane_plane_element_type_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'plane_element_type' in di::Plane is empty"
+        assert has_statements, f"Function 'plane_element_type' in di_Plane is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'plane_element_type' in di::Plane did not change state; check implementation")
+            warnings.warn(f"Operation 'plane_element_type' in di_Plane did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'plane_element_type' in di::Plane is not implemented or raised an error")
+        warnings.warn(f"Operation 'plane_element_type' in di_Plane is not implemented or raised an error")
 
-@given(instance=di::Diagram_strategy)
+@given(instance=di_Diagram_strategy)
 @settings(max_examples=50)
-def test_di::diagram_instantiation(instance):
-    assert isinstance(instance, di::Diagram)
-
-@given(instance=di::Diagram_strategy)
-def test_di::diagram_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_di_diagram_instantiation(instance):
+    assert isinstance(instance, di_Diagram)
 
 
-@given(instance=di::Diagram_strategy)
-def test_di::diagram_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
 
-@given(instance=di::Diagram_strategy)
-def test_di::diagram_resolution_type(instance):
-    assert isinstance(instance.resolution, float)
-
-
-@given(instance=di::Diagram_strategy)
-def test_di::diagram_resolution_setter(instance):
+@given(instance=di_Diagram_strategy)
+def test_di_diagram_resolution_setter(instance):
     original = instance.resolution
     instance.resolution = original
     assert instance.resolution == original
 
-@given(instance=di::Diagram_strategy)
-def test_di::diagram_documentation_type(instance):
-    assert isinstance(instance.documentation, str)
 
 
-@given(instance=di::Diagram_strategy)
-def test_di::diagram_documentation_setter(instance):
+@given(instance=di_Diagram_strategy)
+def test_di_diagram_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+
+
+@given(instance=di_Diagram_strategy)
+def test_di_diagram_documentation_setter(instance):
     original = instance.documentation
     instance.documentation = original
     assert instance.documentation == original
 
-@given(instance=di::DiagramElement_strategy)
+@given(instance=di_DiagramElement_strategy)
 @settings(max_examples=50)
-def test_di::diagramelement_instantiation(instance):
-    assert isinstance(instance, di::DiagramElement)
+def test_di_diagramelement_instantiation(instance):
+    assert isinstance(instance, di_DiagramElement)
 
-@given(instance=di::Point_strategy)
+@given(instance=di_Point_strategy)
 @settings(max_examples=50)
-def test_di::point_instantiation(instance):
-    assert isinstance(instance, di::Point)
+def test_di_point_instantiation(instance):
+    assert isinstance(instance, di_Point)
 
 @given(instance=DiagramElement_strategy)
 @settings(max_examples=50)
 def test_diagramelement_instantiation(instance):
     assert isinstance(instance, DiagramElement)
 
-@given(instance=di::Edge_strategy)
+@given(instance=di_Edge_strategy)
 @settings(max_examples=50)
-def test_di::edge_instantiation(instance):
-    assert isinstance(instance, di::Edge)
+def test_di_edge_instantiation(instance):
+    assert isinstance(instance, di_Edge)
 
-@given(instance=di::Node_strategy)
+@given(instance=di_Node_strategy)
 @settings(max_examples=50)
-def test_di::node_instantiation(instance):
-    assert isinstance(instance, di::Node)
+def test_di_node_instantiation(instance):
+    assert isinstance(instance, di_Node)
 
-@given(instance=di::Style_strategy)
+@given(instance=di_Style_strategy)
 @settings(max_examples=50)
-def test_di::style_instantiation(instance):
-    assert isinstance(instance, di::Style)
+def test_di_style_instantiation(instance):
+    assert isinstance(instance, di_Style)
 
-@given(instance=di::EObject_strategy)
+@given(instance=di_EObject_strategy)
 @settings(max_examples=50)
-def test_di::eobject_instantiation(instance):
-    assert isinstance(instance, di::EObject)
+def test_di_eobject_instantiation(instance):
+    assert isinstance(instance, di_EObject)

@@ -3,26 +3,26 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     Primary,
-    mathInterpreter::VariableRef,
-    mathInterpreter::Bracket,
-    mathInterpreter::Num,
+    mathInterpreter_VariableRef,
+    mathInterpreter_Bracket,
+    mathInterpreter_Num,
     MultiplyOrDivide,
-    mathInterpreter::Divide,
-    mathInterpreter::Multiply,
+    mathInterpreter_Divide,
+    mathInterpreter_Multiply,
     PlusOrMinus,
-    mathInterpreter::Minus,
-    mathInterpreter::Plus,
-    mathInterpreter::Primary,
-    mathInterpreter::MultiplyOrDivide,
-    mathInterpreter::EObject,
-    mathInterpreter::PlusOrMinus,
-    mathInterpreter::Expression,
-    mathInterpreter::Variable,
-    mathInterpreter::Solution,
+    mathInterpreter_Minus,
+    mathInterpreter_Plus,
+    mathInterpreter_Primary,
+    mathInterpreter_MultiplyOrDivide,
+    mathInterpreter_EObject,
+    mathInterpreter_PlusOrMinus,
+    mathInterpreter_Expression,
+    mathInterpreter_Variable,
+    mathInterpreter_Solution,
 )
 
 # =============================================================================
@@ -45,51 +45,51 @@ def test_primary_constructor_args():
 
 
 
-def test_mathinterpreter::variableref_is_not_abstract():
-    assert not inspect.isabstract(mathInterpreter::VariableRef)
+def test_mathinterpreter_variableref_is_not_abstract():
+    assert not inspect.isabstract(mathInterpreter_VariableRef)
 
 
-def test_mathinterpreter::variableref_constructor_exists():
-    assert callable(mathInterpreter::VariableRef.__init__)
+def test_mathinterpreter_variableref_constructor_exists():
+    assert callable(mathInterpreter_VariableRef.__init__)
 
 
-def test_mathinterpreter::variableref_constructor_args():
-    sig = inspect.signature(mathInterpreter::VariableRef.__init__)
+def test_mathinterpreter_variableref_constructor_args():
+    sig = inspect.signature(mathInterpreter_VariableRef.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_mathinterpreter::bracket_is_not_abstract():
-    assert not inspect.isabstract(mathInterpreter::Bracket)
+def test_mathinterpreter_bracket_is_not_abstract():
+    assert not inspect.isabstract(mathInterpreter_Bracket)
 
 
-def test_mathinterpreter::bracket_constructor_exists():
-    assert callable(mathInterpreter::Bracket.__init__)
+def test_mathinterpreter_bracket_constructor_exists():
+    assert callable(mathInterpreter_Bracket.__init__)
 
 
-def test_mathinterpreter::bracket_constructor_args():
-    sig = inspect.signature(mathInterpreter::Bracket.__init__)
+def test_mathinterpreter_bracket_constructor_args():
+    sig = inspect.signature(mathInterpreter_Bracket.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_mathinterpreter::num_is_not_abstract():
-    assert not inspect.isabstract(mathInterpreter::Num)
+def test_mathinterpreter_num_is_not_abstract():
+    assert not inspect.isabstract(mathInterpreter_Num)
 
 
-def test_mathinterpreter::num_constructor_exists():
-    assert callable(mathInterpreter::Num.__init__)
+def test_mathinterpreter_num_constructor_exists():
+    assert callable(mathInterpreter_Num.__init__)
 
 
-def test_mathinterpreter::num_constructor_args():
-    sig = inspect.signature(mathInterpreter::Num.__init__)
+def test_mathinterpreter_num_constructor_args():
+    sig = inspect.signature(mathInterpreter_Num.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
 
-def test_mathinterpreter::num_has_value():
-    assert hasattr(mathInterpreter::Num, "value")
+def test_mathinterpreter_num_has_value():
+    assert hasattr(mathInterpreter_Num, "value")
     descriptor = None
-    for klass in mathInterpreter::Num.__mro__:
+    for klass in mathInterpreter_Num.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -111,30 +111,30 @@ def test_multiplyordivide_constructor_args():
 
 
 
-def test_mathinterpreter::divide_is_not_abstract():
-    assert not inspect.isabstract(mathInterpreter::Divide)
+def test_mathinterpreter_divide_is_not_abstract():
+    assert not inspect.isabstract(mathInterpreter_Divide)
 
 
-def test_mathinterpreter::divide_constructor_exists():
-    assert callable(mathInterpreter::Divide.__init__)
+def test_mathinterpreter_divide_constructor_exists():
+    assert callable(mathInterpreter_Divide.__init__)
 
 
-def test_mathinterpreter::divide_constructor_args():
-    sig = inspect.signature(mathInterpreter::Divide.__init__)
+def test_mathinterpreter_divide_constructor_args():
+    sig = inspect.signature(mathInterpreter_Divide.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_mathinterpreter::multiply_is_not_abstract():
-    assert not inspect.isabstract(mathInterpreter::Multiply)
+def test_mathinterpreter_multiply_is_not_abstract():
+    assert not inspect.isabstract(mathInterpreter_Multiply)
 
 
-def test_mathinterpreter::multiply_constructor_exists():
-    assert callable(mathInterpreter::Multiply.__init__)
+def test_mathinterpreter_multiply_constructor_exists():
+    assert callable(mathInterpreter_Multiply.__init__)
 
 
-def test_mathinterpreter::multiply_constructor_args():
-    sig = inspect.signature(mathInterpreter::Multiply.__init__)
+def test_mathinterpreter_multiply_constructor_args():
+    sig = inspect.signature(mathInterpreter_Multiply.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -153,65 +153,65 @@ def test_plusorminus_constructor_args():
 
 
 
-def test_mathinterpreter::minus_is_not_abstract():
-    assert not inspect.isabstract(mathInterpreter::Minus)
+def test_mathinterpreter_minus_is_not_abstract():
+    assert not inspect.isabstract(mathInterpreter_Minus)
 
 
-def test_mathinterpreter::minus_constructor_exists():
-    assert callable(mathInterpreter::Minus.__init__)
+def test_mathinterpreter_minus_constructor_exists():
+    assert callable(mathInterpreter_Minus.__init__)
 
 
-def test_mathinterpreter::minus_constructor_args():
-    sig = inspect.signature(mathInterpreter::Minus.__init__)
+def test_mathinterpreter_minus_constructor_args():
+    sig = inspect.signature(mathInterpreter_Minus.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_mathinterpreter::plus_is_not_abstract():
-    assert not inspect.isabstract(mathInterpreter::Plus)
+def test_mathinterpreter_plus_is_not_abstract():
+    assert not inspect.isabstract(mathInterpreter_Plus)
 
 
-def test_mathinterpreter::plus_constructor_exists():
-    assert callable(mathInterpreter::Plus.__init__)
+def test_mathinterpreter_plus_constructor_exists():
+    assert callable(mathInterpreter_Plus.__init__)
 
 
-def test_mathinterpreter::plus_constructor_args():
-    sig = inspect.signature(mathInterpreter::Plus.__init__)
+def test_mathinterpreter_plus_constructor_args():
+    sig = inspect.signature(mathInterpreter_Plus.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_mathinterpreter::primary_is_not_abstract():
-    assert not inspect.isabstract(mathInterpreter::Primary)
+def test_mathinterpreter_primary_is_not_abstract():
+    assert not inspect.isabstract(mathInterpreter_Primary)
 
 
-def test_mathinterpreter::primary_constructor_exists():
-    assert callable(mathInterpreter::Primary.__init__)
+def test_mathinterpreter_primary_constructor_exists():
+    assert callable(mathInterpreter_Primary.__init__)
 
 
-def test_mathinterpreter::primary_constructor_args():
-    sig = inspect.signature(mathInterpreter::Primary.__init__)
+def test_mathinterpreter_primary_constructor_args():
+    sig = inspect.signature(mathInterpreter_Primary.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_mathinterpreter::multiplyordivide_is_not_abstract():
-    assert not inspect.isabstract(mathInterpreter::MultiplyOrDivide)
+def test_mathinterpreter_multiplyordivide_is_not_abstract():
+    assert not inspect.isabstract(mathInterpreter_MultiplyOrDivide)
 
 
-def test_mathinterpreter::multiplyordivide_constructor_exists():
-    assert callable(mathInterpreter::MultiplyOrDivide.__init__)
+def test_mathinterpreter_multiplyordivide_constructor_exists():
+    assert callable(mathInterpreter_MultiplyOrDivide.__init__)
 
 
-def test_mathinterpreter::multiplyordivide_constructor_args():
-    sig = inspect.signature(mathInterpreter::MultiplyOrDivide.__init__)
+def test_mathinterpreter_multiplyordivide_constructor_args():
+    sig = inspect.signature(mathInterpreter_MultiplyOrDivide.__init__)
     params = list(sig.parameters.keys())
     assert "operator" in params, "Missing parameter 'operator'"
 
-def test_mathinterpreter::multiplyordivide_has_operator():
-    assert hasattr(mathInterpreter::MultiplyOrDivide, "operator")
+def test_mathinterpreter_multiplyordivide_has_operator():
+    assert hasattr(mathInterpreter_MultiplyOrDivide, "operator")
     descriptor = None
-    for klass in mathInterpreter::MultiplyOrDivide.__mro__:
+    for klass in mathInterpreter_MultiplyOrDivide.__mro__:
         if "operator" in klass.__dict__:
             descriptor = klass.__dict__["operator"]
             break
@@ -219,37 +219,37 @@ def test_mathinterpreter::multiplyordivide_has_operator():
 
 
 
-def test_mathinterpreter::eobject_is_not_abstract():
-    assert not inspect.isabstract(mathInterpreter::EObject)
+def test_mathinterpreter_eobject_is_not_abstract():
+    assert not inspect.isabstract(mathInterpreter_EObject)
 
 
-def test_mathinterpreter::eobject_constructor_exists():
-    assert callable(mathInterpreter::EObject.__init__)
+def test_mathinterpreter_eobject_constructor_exists():
+    assert callable(mathInterpreter_EObject.__init__)
 
 
-def test_mathinterpreter::eobject_constructor_args():
-    sig = inspect.signature(mathInterpreter::EObject.__init__)
+def test_mathinterpreter_eobject_constructor_args():
+    sig = inspect.signature(mathInterpreter_EObject.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_mathinterpreter::plusorminus_is_not_abstract():
-    assert not inspect.isabstract(mathInterpreter::PlusOrMinus)
+def test_mathinterpreter_plusorminus_is_not_abstract():
+    assert not inspect.isabstract(mathInterpreter_PlusOrMinus)
 
 
-def test_mathinterpreter::plusorminus_constructor_exists():
-    assert callable(mathInterpreter::PlusOrMinus.__init__)
+def test_mathinterpreter_plusorminus_constructor_exists():
+    assert callable(mathInterpreter_PlusOrMinus.__init__)
 
 
-def test_mathinterpreter::plusorminus_constructor_args():
-    sig = inspect.signature(mathInterpreter::PlusOrMinus.__init__)
+def test_mathinterpreter_plusorminus_constructor_args():
+    sig = inspect.signature(mathInterpreter_PlusOrMinus.__init__)
     params = list(sig.parameters.keys())
     assert "operator" in params, "Missing parameter 'operator'"
 
-def test_mathinterpreter::plusorminus_has_operator():
-    assert hasattr(mathInterpreter::PlusOrMinus, "operator")
+def test_mathinterpreter_plusorminus_has_operator():
+    assert hasattr(mathInterpreter_PlusOrMinus, "operator")
     descriptor = None
-    for klass in mathInterpreter::PlusOrMinus.__mro__:
+    for klass in mathInterpreter_PlusOrMinus.__mro__:
         if "operator" in klass.__dict__:
             descriptor = klass.__dict__["operator"]
             break
@@ -257,37 +257,37 @@ def test_mathinterpreter::plusorminus_has_operator():
 
 
 
-def test_mathinterpreter::expression_is_not_abstract():
-    assert not inspect.isabstract(mathInterpreter::Expression)
+def test_mathinterpreter_expression_is_not_abstract():
+    assert not inspect.isabstract(mathInterpreter_Expression)
 
 
-def test_mathinterpreter::expression_constructor_exists():
-    assert callable(mathInterpreter::Expression.__init__)
+def test_mathinterpreter_expression_constructor_exists():
+    assert callable(mathInterpreter_Expression.__init__)
 
 
-def test_mathinterpreter::expression_constructor_args():
-    sig = inspect.signature(mathInterpreter::Expression.__init__)
+def test_mathinterpreter_expression_constructor_args():
+    sig = inspect.signature(mathInterpreter_Expression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_mathinterpreter::variable_is_not_abstract():
-    assert not inspect.isabstract(mathInterpreter::Variable)
+def test_mathinterpreter_variable_is_not_abstract():
+    assert not inspect.isabstract(mathInterpreter_Variable)
 
 
-def test_mathinterpreter::variable_constructor_exists():
-    assert callable(mathInterpreter::Variable.__init__)
+def test_mathinterpreter_variable_constructor_exists():
+    assert callable(mathInterpreter_Variable.__init__)
 
 
-def test_mathinterpreter::variable_constructor_args():
-    sig = inspect.signature(mathInterpreter::Variable.__init__)
+def test_mathinterpreter_variable_constructor_args():
+    sig = inspect.signature(mathInterpreter_Variable.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_mathinterpreter::variable_has_name():
-    assert hasattr(mathInterpreter::Variable, "name")
+def test_mathinterpreter_variable_has_name():
+    assert hasattr(mathInterpreter_Variable, "name")
     descriptor = None
-    for klass in mathInterpreter::Variable.__mro__:
+    for klass in mathInterpreter_Variable.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -295,16 +295,16 @@ def test_mathinterpreter::variable_has_name():
 
 
 
-def test_mathinterpreter::solution_is_not_abstract():
-    assert not inspect.isabstract(mathInterpreter::Solution)
+def test_mathinterpreter_solution_is_not_abstract():
+    assert not inspect.isabstract(mathInterpreter_Solution)
 
 
-def test_mathinterpreter::solution_constructor_exists():
-    assert callable(mathInterpreter::Solution.__init__)
+def test_mathinterpreter_solution_constructor_exists():
+    assert callable(mathInterpreter_Solution.__init__)
 
 
-def test_mathinterpreter::solution_constructor_args():
-    sig = inspect.signature(mathInterpreter::Solution.__init__)
+def test_mathinterpreter_solution_constructor_args():
+    sig = inspect.signature(mathInterpreter_Solution.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -322,61 +322,61 @@ safe_text = st.text(
 Primary_strategy = st.builds(
     Primary,
 )
-mathInterpreter::VariableRef_strategy = st.builds(
-    mathInterpreter::VariableRef,
+mathInterpreter_VariableRef_strategy = st.builds(
+    mathInterpreter_VariableRef,
 )
-mathInterpreter::Bracket_strategy = st.builds(
-    mathInterpreter::Bracket,
+mathInterpreter_Bracket_strategy = st.builds(
+    mathInterpreter_Bracket,
 )
-mathInterpreter::Num_strategy = st.builds(
-    mathInterpreter::Num,
+mathInterpreter_Num_strategy = st.builds(
+    mathInterpreter_Num,
     value=
         st.integers()
 )
 MultiplyOrDivide_strategy = st.builds(
     MultiplyOrDivide,
 )
-mathInterpreter::Divide_strategy = st.builds(
-    mathInterpreter::Divide,
+mathInterpreter_Divide_strategy = st.builds(
+    mathInterpreter_Divide,
 )
-mathInterpreter::Multiply_strategy = st.builds(
-    mathInterpreter::Multiply,
+mathInterpreter_Multiply_strategy = st.builds(
+    mathInterpreter_Multiply,
 )
 PlusOrMinus_strategy = st.builds(
     PlusOrMinus,
 )
-mathInterpreter::Minus_strategy = st.builds(
-    mathInterpreter::Minus,
+mathInterpreter_Minus_strategy = st.builds(
+    mathInterpreter_Minus,
 )
-mathInterpreter::Plus_strategy = st.builds(
-    mathInterpreter::Plus,
+mathInterpreter_Plus_strategy = st.builds(
+    mathInterpreter_Plus,
 )
-mathInterpreter::Primary_strategy = st.builds(
-    mathInterpreter::Primary,
+mathInterpreter_Primary_strategy = st.builds(
+    mathInterpreter_Primary,
 )
-mathInterpreter::MultiplyOrDivide_strategy = st.builds(
-    mathInterpreter::MultiplyOrDivide,
+mathInterpreter_MultiplyOrDivide_strategy = st.builds(
+    mathInterpreter_MultiplyOrDivide,
     operator=
         safe_text
 )
-mathInterpreter::EObject_strategy = st.builds(
-    mathInterpreter::EObject,
+mathInterpreter_EObject_strategy = st.builds(
+    mathInterpreter_EObject,
 )
-mathInterpreter::PlusOrMinus_strategy = st.builds(
-    mathInterpreter::PlusOrMinus,
+mathInterpreter_PlusOrMinus_strategy = st.builds(
+    mathInterpreter_PlusOrMinus,
     operator=
         safe_text
 )
-mathInterpreter::Expression_strategy = st.builds(
-    mathInterpreter::Expression,
+mathInterpreter_Expression_strategy = st.builds(
+    mathInterpreter_Expression,
 )
-mathInterpreter::Variable_strategy = st.builds(
-    mathInterpreter::Variable,
+mathInterpreter_Variable_strategy = st.builds(
+    mathInterpreter_Variable,
     name=
         safe_text
 )
-mathInterpreter::Solution_strategy = st.builds(
-    mathInterpreter::Solution,
+mathInterpreter_Solution_strategy = st.builds(
+    mathInterpreter_Solution,
 )
 
 @given(instance=Primary_strategy)
@@ -384,28 +384,25 @@ mathInterpreter::Solution_strategy = st.builds(
 def test_primary_instantiation(instance):
     assert isinstance(instance, Primary)
 
-@given(instance=mathInterpreter::VariableRef_strategy)
+@given(instance=mathInterpreter_VariableRef_strategy)
 @settings(max_examples=50)
-def test_mathinterpreter::variableref_instantiation(instance):
-    assert isinstance(instance, mathInterpreter::VariableRef)
+def test_mathinterpreter_variableref_instantiation(instance):
+    assert isinstance(instance, mathInterpreter_VariableRef)
 
-@given(instance=mathInterpreter::Bracket_strategy)
+@given(instance=mathInterpreter_Bracket_strategy)
 @settings(max_examples=50)
-def test_mathinterpreter::bracket_instantiation(instance):
-    assert isinstance(instance, mathInterpreter::Bracket)
+def test_mathinterpreter_bracket_instantiation(instance):
+    assert isinstance(instance, mathInterpreter_Bracket)
 
-@given(instance=mathInterpreter::Num_strategy)
+@given(instance=mathInterpreter_Num_strategy)
 @settings(max_examples=50)
-def test_mathinterpreter::num_instantiation(instance):
-    assert isinstance(instance, mathInterpreter::Num)
-
-@given(instance=mathInterpreter::Num_strategy)
-def test_mathinterpreter::num_value_type(instance):
-    assert isinstance(instance.value, int)
+def test_mathinterpreter_num_instantiation(instance):
+    assert isinstance(instance, mathInterpreter_Num)
 
 
-@given(instance=mathInterpreter::Num_strategy)
-def test_mathinterpreter::num_value_setter(instance):
+
+@given(instance=mathInterpreter_Num_strategy)
+def test_mathinterpreter_num_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
@@ -415,95 +412,86 @@ def test_mathinterpreter::num_value_setter(instance):
 def test_multiplyordivide_instantiation(instance):
     assert isinstance(instance, MultiplyOrDivide)
 
-@given(instance=mathInterpreter::Divide_strategy)
+@given(instance=mathInterpreter_Divide_strategy)
 @settings(max_examples=50)
-def test_mathinterpreter::divide_instantiation(instance):
-    assert isinstance(instance, mathInterpreter::Divide)
+def test_mathinterpreter_divide_instantiation(instance):
+    assert isinstance(instance, mathInterpreter_Divide)
 
-@given(instance=mathInterpreter::Multiply_strategy)
+@given(instance=mathInterpreter_Multiply_strategy)
 @settings(max_examples=50)
-def test_mathinterpreter::multiply_instantiation(instance):
-    assert isinstance(instance, mathInterpreter::Multiply)
+def test_mathinterpreter_multiply_instantiation(instance):
+    assert isinstance(instance, mathInterpreter_Multiply)
 
 @given(instance=PlusOrMinus_strategy)
 @settings(max_examples=50)
 def test_plusorminus_instantiation(instance):
     assert isinstance(instance, PlusOrMinus)
 
-@given(instance=mathInterpreter::Minus_strategy)
+@given(instance=mathInterpreter_Minus_strategy)
 @settings(max_examples=50)
-def test_mathinterpreter::minus_instantiation(instance):
-    assert isinstance(instance, mathInterpreter::Minus)
+def test_mathinterpreter_minus_instantiation(instance):
+    assert isinstance(instance, mathInterpreter_Minus)
 
-@given(instance=mathInterpreter::Plus_strategy)
+@given(instance=mathInterpreter_Plus_strategy)
 @settings(max_examples=50)
-def test_mathinterpreter::plus_instantiation(instance):
-    assert isinstance(instance, mathInterpreter::Plus)
+def test_mathinterpreter_plus_instantiation(instance):
+    assert isinstance(instance, mathInterpreter_Plus)
 
-@given(instance=mathInterpreter::Primary_strategy)
+@given(instance=mathInterpreter_Primary_strategy)
 @settings(max_examples=50)
-def test_mathinterpreter::primary_instantiation(instance):
-    assert isinstance(instance, mathInterpreter::Primary)
+def test_mathinterpreter_primary_instantiation(instance):
+    assert isinstance(instance, mathInterpreter_Primary)
 
-@given(instance=mathInterpreter::MultiplyOrDivide_strategy)
+@given(instance=mathInterpreter_MultiplyOrDivide_strategy)
 @settings(max_examples=50)
-def test_mathinterpreter::multiplyordivide_instantiation(instance):
-    assert isinstance(instance, mathInterpreter::MultiplyOrDivide)
-
-@given(instance=mathInterpreter::MultiplyOrDivide_strategy)
-def test_mathinterpreter::multiplyordivide_operator_type(instance):
-    assert isinstance(instance.operator, str)
+def test_mathinterpreter_multiplyordivide_instantiation(instance):
+    assert isinstance(instance, mathInterpreter_MultiplyOrDivide)
 
 
-@given(instance=mathInterpreter::MultiplyOrDivide_strategy)
-def test_mathinterpreter::multiplyordivide_operator_setter(instance):
+
+@given(instance=mathInterpreter_MultiplyOrDivide_strategy)
+def test_mathinterpreter_multiplyordivide_operator_setter(instance):
     original = instance.operator
     instance.operator = original
     assert instance.operator == original
 
-@given(instance=mathInterpreter::EObject_strategy)
+@given(instance=mathInterpreter_EObject_strategy)
 @settings(max_examples=50)
-def test_mathinterpreter::eobject_instantiation(instance):
-    assert isinstance(instance, mathInterpreter::EObject)
+def test_mathinterpreter_eobject_instantiation(instance):
+    assert isinstance(instance, mathInterpreter_EObject)
 
-@given(instance=mathInterpreter::PlusOrMinus_strategy)
+@given(instance=mathInterpreter_PlusOrMinus_strategy)
 @settings(max_examples=50)
-def test_mathinterpreter::plusorminus_instantiation(instance):
-    assert isinstance(instance, mathInterpreter::PlusOrMinus)
-
-@given(instance=mathInterpreter::PlusOrMinus_strategy)
-def test_mathinterpreter::plusorminus_operator_type(instance):
-    assert isinstance(instance.operator, str)
+def test_mathinterpreter_plusorminus_instantiation(instance):
+    assert isinstance(instance, mathInterpreter_PlusOrMinus)
 
 
-@given(instance=mathInterpreter::PlusOrMinus_strategy)
-def test_mathinterpreter::plusorminus_operator_setter(instance):
+
+@given(instance=mathInterpreter_PlusOrMinus_strategy)
+def test_mathinterpreter_plusorminus_operator_setter(instance):
     original = instance.operator
     instance.operator = original
     assert instance.operator == original
 
-@given(instance=mathInterpreter::Expression_strategy)
+@given(instance=mathInterpreter_Expression_strategy)
 @settings(max_examples=50)
-def test_mathinterpreter::expression_instantiation(instance):
-    assert isinstance(instance, mathInterpreter::Expression)
+def test_mathinterpreter_expression_instantiation(instance):
+    assert isinstance(instance, mathInterpreter_Expression)
 
-@given(instance=mathInterpreter::Variable_strategy)
+@given(instance=mathInterpreter_Variable_strategy)
 @settings(max_examples=50)
-def test_mathinterpreter::variable_instantiation(instance):
-    assert isinstance(instance, mathInterpreter::Variable)
-
-@given(instance=mathInterpreter::Variable_strategy)
-def test_mathinterpreter::variable_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_mathinterpreter_variable_instantiation(instance):
+    assert isinstance(instance, mathInterpreter_Variable)
 
 
-@given(instance=mathInterpreter::Variable_strategy)
-def test_mathinterpreter::variable_name_setter(instance):
+
+@given(instance=mathInterpreter_Variable_strategy)
+def test_mathinterpreter_variable_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=mathInterpreter::Solution_strategy)
+@given(instance=mathInterpreter_Solution_strategy)
 @settings(max_examples=50)
-def test_mathinterpreter::solution_instantiation(instance):
-    assert isinstance(instance, mathInterpreter::Solution)
+def test_mathinterpreter_solution_instantiation(instance):
+    assert isinstance(instance, mathInterpreter_Solution)

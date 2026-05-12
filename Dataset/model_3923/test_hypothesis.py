@@ -3,20 +3,20 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    entities::Property,
+from python_code import (
+    entities_Property,
     Type,
-    entities::SimpleType,
-    entities::PackagedType,
+    entities_SimpleType,
+    entities_PackagedType,
     PackagedType,
-    entities::Type,
-    entities::JAVAID,
-    entities::TypeDef,
-    entities::Entity,
-    entities::Package,
-    entities::Model,
+    entities_Type,
+    entities_JAVAID,
+    entities_TypeDef,
+    entities_Entity,
+    entities_Package,
+    entities_Model,
 )
 
 # =============================================================================
@@ -25,33 +25,33 @@ from classes import (
 
 
 
-def test_entities::property_is_not_abstract():
-    assert not inspect.isabstract(entities::Property)
+def test_entities_property_is_not_abstract():
+    assert not inspect.isabstract(entities_Property)
 
 
-def test_entities::property_constructor_exists():
-    assert callable(entities::Property.__init__)
+def test_entities_property_constructor_exists():
+    assert callable(entities_Property.__init__)
 
 
-def test_entities::property_constructor_args():
-    sig = inspect.signature(entities::Property.__init__)
+def test_entities_property_constructor_args():
+    sig = inspect.signature(entities_Property.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
     assert "many" in params, "Missing parameter 'many'"
 
-def test_entities::property_has_name():
-    assert hasattr(entities::Property, "name")
+def test_entities_property_has_name():
+    assert hasattr(entities_Property, "name")
     descriptor = None
-    for klass in entities::Property.__mro__:
+    for klass in entities_Property.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
-def test_entities::property_has_many():
-    assert hasattr(entities::Property, "many")
+def test_entities_property_has_many():
+    assert hasattr(entities_Property, "many")
     descriptor = None
-    for klass in entities::Property.__mro__:
+    for klass in entities_Property.__mro__:
         if "many" in klass.__dict__:
             descriptor = klass.__dict__["many"]
             break
@@ -73,37 +73,37 @@ def test_type_constructor_args():
 
 
 
-def test_entities::simpletype_is_not_abstract():
-    assert not inspect.isabstract(entities::SimpleType)
+def test_entities_simpletype_is_not_abstract():
+    assert not inspect.isabstract(entities_SimpleType)
 
 
-def test_entities::simpletype_constructor_exists():
-    assert callable(entities::SimpleType.__init__)
+def test_entities_simpletype_constructor_exists():
+    assert callable(entities_SimpleType.__init__)
 
 
-def test_entities::simpletype_constructor_args():
-    sig = inspect.signature(entities::SimpleType.__init__)
+def test_entities_simpletype_constructor_args():
+    sig = inspect.signature(entities_SimpleType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_entities::packagedtype_is_not_abstract():
-    assert not inspect.isabstract(entities::PackagedType)
+def test_entities_packagedtype_is_not_abstract():
+    assert not inspect.isabstract(entities_PackagedType)
 
 
-def test_entities::packagedtype_constructor_exists():
-    assert callable(entities::PackagedType.__init__)
+def test_entities_packagedtype_constructor_exists():
+    assert callable(entities_PackagedType.__init__)
 
 
-def test_entities::packagedtype_constructor_args():
-    sig = inspect.signature(entities::PackagedType.__init__)
+def test_entities_packagedtype_constructor_args():
+    sig = inspect.signature(entities_PackagedType.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_entities::packagedtype_has_name():
-    assert hasattr(entities::PackagedType, "name")
+def test_entities_packagedtype_has_name():
+    assert hasattr(entities_PackagedType, "name")
     descriptor = None
-    for klass in entities::PackagedType.__mro__:
+    for klass in entities_PackagedType.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -125,37 +125,37 @@ def test_packagedtype_constructor_args():
 
 
 
-def test_entities::type_is_not_abstract():
-    assert not inspect.isabstract(entities::Type)
+def test_entities_type_is_not_abstract():
+    assert not inspect.isabstract(entities_Type)
 
 
-def test_entities::type_constructor_exists():
-    assert callable(entities::Type.__init__)
+def test_entities_type_constructor_exists():
+    assert callable(entities_Type.__init__)
 
 
-def test_entities::type_constructor_args():
-    sig = inspect.signature(entities::Type.__init__)
+def test_entities_type_constructor_args():
+    sig = inspect.signature(entities_Type.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_entities::javaid_is_not_abstract():
-    assert not inspect.isabstract(entities::JAVAID)
+def test_entities_javaid_is_not_abstract():
+    assert not inspect.isabstract(entities_JAVAID)
 
 
-def test_entities::javaid_constructor_exists():
-    assert callable(entities::JAVAID.__init__)
+def test_entities_javaid_constructor_exists():
+    assert callable(entities_JAVAID.__init__)
 
 
-def test_entities::javaid_constructor_args():
-    sig = inspect.signature(entities::JAVAID.__init__)
+def test_entities_javaid_constructor_args():
+    sig = inspect.signature(entities_JAVAID.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_entities::javaid_has_name():
-    assert hasattr(entities::JAVAID, "name")
+def test_entities_javaid_has_name():
+    assert hasattr(entities_JAVAID, "name")
     descriptor = None
-    for klass in entities::JAVAID.__mro__:
+    for klass in entities_JAVAID.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -163,23 +163,23 @@ def test_entities::javaid_has_name():
 
 
 
-def test_entities::typedef_is_not_abstract():
-    assert not inspect.isabstract(entities::TypeDef)
+def test_entities_typedef_is_not_abstract():
+    assert not inspect.isabstract(entities_TypeDef)
 
 
-def test_entities::typedef_constructor_exists():
-    assert callable(entities::TypeDef.__init__)
+def test_entities_typedef_constructor_exists():
+    assert callable(entities_TypeDef.__init__)
 
 
-def test_entities::typedef_constructor_args():
-    sig = inspect.signature(entities::TypeDef.__init__)
+def test_entities_typedef_constructor_args():
+    sig = inspect.signature(entities_TypeDef.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_entities::typedef_has_name():
-    assert hasattr(entities::TypeDef, "name")
+def test_entities_typedef_has_name():
+    assert hasattr(entities_TypeDef, "name")
     descriptor = None
-    for klass in entities::TypeDef.__mro__:
+    for klass in entities_TypeDef.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -187,44 +187,44 @@ def test_entities::typedef_has_name():
 
 
 
-def test_entities::entity_is_not_abstract():
-    assert not inspect.isabstract(entities::Entity)
+def test_entities_entity_is_not_abstract():
+    assert not inspect.isabstract(entities_Entity)
 
 
-def test_entities::entity_constructor_exists():
-    assert callable(entities::Entity.__init__)
+def test_entities_entity_constructor_exists():
+    assert callable(entities_Entity.__init__)
 
 
-def test_entities::entity_constructor_args():
-    sig = inspect.signature(entities::Entity.__init__)
+def test_entities_entity_constructor_args():
+    sig = inspect.signature(entities_Entity.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_entities::package_is_not_abstract():
-    assert not inspect.isabstract(entities::Package)
+def test_entities_package_is_not_abstract():
+    assert not inspect.isabstract(entities_Package)
 
 
-def test_entities::package_constructor_exists():
-    assert callable(entities::Package.__init__)
+def test_entities_package_constructor_exists():
+    assert callable(entities_Package.__init__)
 
 
-def test_entities::package_constructor_args():
-    sig = inspect.signature(entities::Package.__init__)
+def test_entities_package_constructor_args():
+    sig = inspect.signature(entities_Package.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_entities::model_is_not_abstract():
-    assert not inspect.isabstract(entities::Model)
+def test_entities_model_is_not_abstract():
+    assert not inspect.isabstract(entities_Model)
 
 
-def test_entities::model_constructor_exists():
-    assert callable(entities::Model.__init__)
+def test_entities_model_constructor_exists():
+    assert callable(entities_Model.__init__)
 
 
-def test_entities::model_constructor_args():
-    sig = inspect.signature(entities::Model.__init__)
+def test_entities_model_constructor_args():
+    sig = inspect.signature(entities_Model.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -239,8 +239,8 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-entities::Property_strategy = st.builds(
-    entities::Property,
+entities_Property_strategy = st.builds(
+    entities_Property,
     name=
         safe_text,
     many=
@@ -249,63 +249,57 @@ entities::Property_strategy = st.builds(
 Type_strategy = st.builds(
     Type,
 )
-entities::SimpleType_strategy = st.builds(
-    entities::SimpleType,
+entities_SimpleType_strategy = st.builds(
+    entities_SimpleType,
 )
-entities::PackagedType_strategy = st.builds(
-    entities::PackagedType,
+entities_PackagedType_strategy = st.builds(
+    entities_PackagedType,
     name=
         safe_text
 )
 PackagedType_strategy = st.builds(
     PackagedType,
 )
-entities::Type_strategy = st.builds(
-    entities::Type,
+entities_Type_strategy = st.builds(
+    entities_Type,
 )
-entities::JAVAID_strategy = st.builds(
-    entities::JAVAID,
+entities_JAVAID_strategy = st.builds(
+    entities_JAVAID,
     name=
         safe_text
 )
-entities::TypeDef_strategy = st.builds(
-    entities::TypeDef,
+entities_TypeDef_strategy = st.builds(
+    entities_TypeDef,
     name=
         safe_text
 )
-entities::Entity_strategy = st.builds(
-    entities::Entity,
+entities_Entity_strategy = st.builds(
+    entities_Entity,
 )
-entities::Package_strategy = st.builds(
-    entities::Package,
+entities_Package_strategy = st.builds(
+    entities_Package,
 )
-entities::Model_strategy = st.builds(
-    entities::Model,
+entities_Model_strategy = st.builds(
+    entities_Model,
 )
 
-@given(instance=entities::Property_strategy)
+@given(instance=entities_Property_strategy)
 @settings(max_examples=50)
-def test_entities::property_instantiation(instance):
-    assert isinstance(instance, entities::Property)
-
-@given(instance=entities::Property_strategy)
-def test_entities::property_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_entities_property_instantiation(instance):
+    assert isinstance(instance, entities_Property)
 
 
-@given(instance=entities::Property_strategy)
-def test_entities::property_name_setter(instance):
+
+@given(instance=entities_Property_strategy)
+def test_entities_property_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=entities::Property_strategy)
-def test_entities::property_many_type(instance):
-    assert isinstance(instance.many, bool)
 
 
-@given(instance=entities::Property_strategy)
-def test_entities::property_many_setter(instance):
+@given(instance=entities_Property_strategy)
+def test_entities_property_many_setter(instance):
     original = instance.many
     instance.many = original
     assert instance.many == original
@@ -315,23 +309,20 @@ def test_entities::property_many_setter(instance):
 def test_type_instantiation(instance):
     assert isinstance(instance, Type)
 
-@given(instance=entities::SimpleType_strategy)
+@given(instance=entities_SimpleType_strategy)
 @settings(max_examples=50)
-def test_entities::simpletype_instantiation(instance):
-    assert isinstance(instance, entities::SimpleType)
+def test_entities_simpletype_instantiation(instance):
+    assert isinstance(instance, entities_SimpleType)
 
-@given(instance=entities::PackagedType_strategy)
+@given(instance=entities_PackagedType_strategy)
 @settings(max_examples=50)
-def test_entities::packagedtype_instantiation(instance):
-    assert isinstance(instance, entities::PackagedType)
-
-@given(instance=entities::PackagedType_strategy)
-def test_entities::packagedtype_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_entities_packagedtype_instantiation(instance):
+    assert isinstance(instance, entities_PackagedType)
 
 
-@given(instance=entities::PackagedType_strategy)
-def test_entities::packagedtype_name_setter(instance):
+
+@given(instance=entities_PackagedType_strategy)
+def test_entities_packagedtype_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
@@ -341,54 +332,48 @@ def test_entities::packagedtype_name_setter(instance):
 def test_packagedtype_instantiation(instance):
     assert isinstance(instance, PackagedType)
 
-@given(instance=entities::Type_strategy)
+@given(instance=entities_Type_strategy)
 @settings(max_examples=50)
-def test_entities::type_instantiation(instance):
-    assert isinstance(instance, entities::Type)
+def test_entities_type_instantiation(instance):
+    assert isinstance(instance, entities_Type)
 
-@given(instance=entities::JAVAID_strategy)
+@given(instance=entities_JAVAID_strategy)
 @settings(max_examples=50)
-def test_entities::javaid_instantiation(instance):
-    assert isinstance(instance, entities::JAVAID)
-
-@given(instance=entities::JAVAID_strategy)
-def test_entities::javaid_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_entities_javaid_instantiation(instance):
+    assert isinstance(instance, entities_JAVAID)
 
 
-@given(instance=entities::JAVAID_strategy)
-def test_entities::javaid_name_setter(instance):
+
+@given(instance=entities_JAVAID_strategy)
+def test_entities_javaid_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=entities::TypeDef_strategy)
+@given(instance=entities_TypeDef_strategy)
 @settings(max_examples=50)
-def test_entities::typedef_instantiation(instance):
-    assert isinstance(instance, entities::TypeDef)
-
-@given(instance=entities::TypeDef_strategy)
-def test_entities::typedef_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_entities_typedef_instantiation(instance):
+    assert isinstance(instance, entities_TypeDef)
 
 
-@given(instance=entities::TypeDef_strategy)
-def test_entities::typedef_name_setter(instance):
+
+@given(instance=entities_TypeDef_strategy)
+def test_entities_typedef_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=entities::Entity_strategy)
+@given(instance=entities_Entity_strategy)
 @settings(max_examples=50)
-def test_entities::entity_instantiation(instance):
-    assert isinstance(instance, entities::Entity)
+def test_entities_entity_instantiation(instance):
+    assert isinstance(instance, entities_Entity)
 
-@given(instance=entities::Package_strategy)
+@given(instance=entities_Package_strategy)
 @settings(max_examples=50)
-def test_entities::package_instantiation(instance):
-    assert isinstance(instance, entities::Package)
+def test_entities_package_instantiation(instance):
+    assert isinstance(instance, entities_Package)
 
-@given(instance=entities::Model_strategy)
+@given(instance=entities_Model_strategy)
 @settings(max_examples=50)
-def test_entities::model_instantiation(instance):
-    assert isinstance(instance, entities::Model)
+def test_entities_model_instantiation(instance):
+    assert isinstance(instance, entities_Model)

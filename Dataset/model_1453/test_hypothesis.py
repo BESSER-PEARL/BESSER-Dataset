@@ -3,12 +3,12 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    tree::Edge,
-    tree::Node,
-    tree::Diagram,
+from python_code import (
+    tree_Edge,
+    tree_Node,
+    tree_Diagram,
 )
 
 # =============================================================================
@@ -17,37 +17,37 @@ from classes import (
 
 
 
-def test_tree::edge_is_not_abstract():
-    assert not inspect.isabstract(tree::Edge)
+def test_tree_edge_is_not_abstract():
+    assert not inspect.isabstract(tree_Edge)
 
 
-def test_tree::edge_constructor_exists():
-    assert callable(tree::Edge.__init__)
+def test_tree_edge_constructor_exists():
+    assert callable(tree_Edge.__init__)
 
 
-def test_tree::edge_constructor_args():
-    sig = inspect.signature(tree::Edge.__init__)
+def test_tree_edge_constructor_args():
+    sig = inspect.signature(tree_Edge.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_tree::node_is_not_abstract():
-    assert not inspect.isabstract(tree::Node)
+def test_tree_node_is_not_abstract():
+    assert not inspect.isabstract(tree_Node)
 
 
-def test_tree::node_constructor_exists():
-    assert callable(tree::Node.__init__)
+def test_tree_node_constructor_exists():
+    assert callable(tree_Node.__init__)
 
 
-def test_tree::node_constructor_args():
-    sig = inspect.signature(tree::Node.__init__)
+def test_tree_node_constructor_args():
+    sig = inspect.signature(tree_Node.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_tree::node_has_name():
-    assert hasattr(tree::Node, "name")
+def test_tree_node_has_name():
+    assert hasattr(tree_Node, "name")
     descriptor = None
-    for klass in tree::Node.__mro__:
+    for klass in tree_Node.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -55,16 +55,16 @@ def test_tree::node_has_name():
 
 
 
-def test_tree::diagram_is_not_abstract():
-    assert not inspect.isabstract(tree::Diagram)
+def test_tree_diagram_is_not_abstract():
+    assert not inspect.isabstract(tree_Diagram)
 
 
-def test_tree::diagram_constructor_exists():
-    assert callable(tree::Diagram.__init__)
+def test_tree_diagram_constructor_exists():
+    assert callable(tree_Diagram.__init__)
 
 
-def test_tree::diagram_constructor_args():
-    sig = inspect.signature(tree::Diagram.__init__)
+def test_tree_diagram_constructor_args():
+    sig = inspect.signature(tree_Diagram.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -79,40 +79,37 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-tree::Edge_strategy = st.builds(
-    tree::Edge,
+tree_Edge_strategy = st.builds(
+    tree_Edge,
 )
-tree::Node_strategy = st.builds(
-    tree::Node,
+tree_Node_strategy = st.builds(
+    tree_Node,
     name=
         safe_text
 )
-tree::Diagram_strategy = st.builds(
-    tree::Diagram,
+tree_Diagram_strategy = st.builds(
+    tree_Diagram,
 )
 
-@given(instance=tree::Edge_strategy)
+@given(instance=tree_Edge_strategy)
 @settings(max_examples=50)
-def test_tree::edge_instantiation(instance):
-    assert isinstance(instance, tree::Edge)
+def test_tree_edge_instantiation(instance):
+    assert isinstance(instance, tree_Edge)
 
-@given(instance=tree::Node_strategy)
+@given(instance=tree_Node_strategy)
 @settings(max_examples=50)
-def test_tree::node_instantiation(instance):
-    assert isinstance(instance, tree::Node)
-
-@given(instance=tree::Node_strategy)
-def test_tree::node_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_tree_node_instantiation(instance):
+    assert isinstance(instance, tree_Node)
 
 
-@given(instance=tree::Node_strategy)
-def test_tree::node_name_setter(instance):
+
+@given(instance=tree_Node_strategy)
+def test_tree_node_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=tree::Diagram_strategy)
+@given(instance=tree_Diagram_strategy)
 @settings(max_examples=50)
-def test_tree::diagram_instantiation(instance):
-    assert isinstance(instance, tree::Diagram)
+def test_tree_diagram_instantiation(instance):
+    assert isinstance(instance, tree_Diagram)

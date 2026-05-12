@@ -3,12 +3,12 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    SimpleTrace::EObject,
-    SimpleTrace::TraceLink,
-    SimpleTrace::Trace,
+from python_code import (
+    SimpleTrace_EObject,
+    SimpleTrace_TraceLink,
+    SimpleTrace_Trace,
 )
 
 # =============================================================================
@@ -17,37 +17,37 @@ from classes import (
 
 
 
-def test_simpletrace::eobject_is_not_abstract():
-    assert not inspect.isabstract(SimpleTrace::EObject)
+def test_simpletrace_eobject_is_not_abstract():
+    assert not inspect.isabstract(SimpleTrace_EObject)
 
 
-def test_simpletrace::eobject_constructor_exists():
-    assert callable(SimpleTrace::EObject.__init__)
+def test_simpletrace_eobject_constructor_exists():
+    assert callable(SimpleTrace_EObject.__init__)
 
 
-def test_simpletrace::eobject_constructor_args():
-    sig = inspect.signature(SimpleTrace::EObject.__init__)
+def test_simpletrace_eobject_constructor_args():
+    sig = inspect.signature(SimpleTrace_EObject.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_simpletrace::tracelink_is_not_abstract():
-    assert not inspect.isabstract(SimpleTrace::TraceLink)
+def test_simpletrace_tracelink_is_not_abstract():
+    assert not inspect.isabstract(SimpleTrace_TraceLink)
 
 
-def test_simpletrace::tracelink_constructor_exists():
-    assert callable(SimpleTrace::TraceLink.__init__)
+def test_simpletrace_tracelink_constructor_exists():
+    assert callable(SimpleTrace_TraceLink.__init__)
 
 
-def test_simpletrace::tracelink_constructor_args():
-    sig = inspect.signature(SimpleTrace::TraceLink.__init__)
+def test_simpletrace_tracelink_constructor_args():
+    sig = inspect.signature(SimpleTrace_TraceLink.__init__)
     params = list(sig.parameters.keys())
     assert "description" in params, "Missing parameter 'description'"
 
-def test_simpletrace::tracelink_has_description():
-    assert hasattr(SimpleTrace::TraceLink, "description")
+def test_simpletrace_tracelink_has_description():
+    assert hasattr(SimpleTrace_TraceLink, "description")
     descriptor = None
-    for klass in SimpleTrace::TraceLink.__mro__:
+    for klass in SimpleTrace_TraceLink.__mro__:
         if "description" in klass.__dict__:
             descriptor = klass.__dict__["description"]
             break
@@ -55,16 +55,16 @@ def test_simpletrace::tracelink_has_description():
 
 
 
-def test_simpletrace::trace_is_not_abstract():
-    assert not inspect.isabstract(SimpleTrace::Trace)
+def test_simpletrace_trace_is_not_abstract():
+    assert not inspect.isabstract(SimpleTrace_Trace)
 
 
-def test_simpletrace::trace_constructor_exists():
-    assert callable(SimpleTrace::Trace.__init__)
+def test_simpletrace_trace_constructor_exists():
+    assert callable(SimpleTrace_Trace.__init__)
 
 
-def test_simpletrace::trace_constructor_args():
-    sig = inspect.signature(SimpleTrace::Trace.__init__)
+def test_simpletrace_trace_constructor_args():
+    sig = inspect.signature(SimpleTrace_Trace.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -79,40 +79,37 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-SimpleTrace::EObject_strategy = st.builds(
-    SimpleTrace::EObject,
+SimpleTrace_EObject_strategy = st.builds(
+    SimpleTrace_EObject,
 )
-SimpleTrace::TraceLink_strategy = st.builds(
-    SimpleTrace::TraceLink,
+SimpleTrace_TraceLink_strategy = st.builds(
+    SimpleTrace_TraceLink,
     description=
         safe_text
 )
-SimpleTrace::Trace_strategy = st.builds(
-    SimpleTrace::Trace,
+SimpleTrace_Trace_strategy = st.builds(
+    SimpleTrace_Trace,
 )
 
-@given(instance=SimpleTrace::EObject_strategy)
+@given(instance=SimpleTrace_EObject_strategy)
 @settings(max_examples=50)
-def test_simpletrace::eobject_instantiation(instance):
-    assert isinstance(instance, SimpleTrace::EObject)
+def test_simpletrace_eobject_instantiation(instance):
+    assert isinstance(instance, SimpleTrace_EObject)
 
-@given(instance=SimpleTrace::TraceLink_strategy)
+@given(instance=SimpleTrace_TraceLink_strategy)
 @settings(max_examples=50)
-def test_simpletrace::tracelink_instantiation(instance):
-    assert isinstance(instance, SimpleTrace::TraceLink)
-
-@given(instance=SimpleTrace::TraceLink_strategy)
-def test_simpletrace::tracelink_description_type(instance):
-    assert isinstance(instance.description, str)
+def test_simpletrace_tracelink_instantiation(instance):
+    assert isinstance(instance, SimpleTrace_TraceLink)
 
 
-@given(instance=SimpleTrace::TraceLink_strategy)
-def test_simpletrace::tracelink_description_setter(instance):
+
+@given(instance=SimpleTrace_TraceLink_strategy)
+def test_simpletrace_tracelink_description_setter(instance):
     original = instance.description
     instance.description = original
     assert instance.description == original
 
-@given(instance=SimpleTrace::Trace_strategy)
+@given(instance=SimpleTrace_Trace_strategy)
 @settings(max_examples=50)
-def test_simpletrace::trace_instantiation(instance):
-    assert isinstance(instance, SimpleTrace::Trace)
+def test_simpletrace_trace_instantiation(instance):
+    assert isinstance(instance, SimpleTrace_Trace)

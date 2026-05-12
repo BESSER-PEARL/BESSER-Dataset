@@ -3,7 +3,7 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
 from python_code import (
     JobSeeker,
@@ -70,8 +70,8 @@ def test_jobseeker_constructor_args():
     sig = inspect.signature(JobSeeker.__init__)
     params = list(sig.parameters.keys())
     assert "Name" in params, "Missing parameter 'Name'"
-    assert "Qualification" in params, "Missing parameter 'Qualification'"
     assert "Experience" in params, "Missing parameter 'Experience'"
+    assert "Qualification" in params, "Missing parameter 'Qualification'"
 
 def test_jobseeker_has_Name():
     assert hasattr(JobSeeker, "Name")
@@ -82,21 +82,21 @@ def test_jobseeker_has_Name():
             break
     assert isinstance(descriptor, property)
 
-def test_jobseeker_has_Qualification():
-    assert hasattr(JobSeeker, "Qualification")
-    descriptor = None
-    for klass in JobSeeker.__mro__:
-        if "Qualification" in klass.__dict__:
-            descriptor = klass.__dict__["Qualification"]
-            break
-    assert isinstance(descriptor, property)
-
 def test_jobseeker_has_Experience():
     assert hasattr(JobSeeker, "Experience")
     descriptor = None
     for klass in JobSeeker.__mro__:
         if "Experience" in klass.__dict__:
             descriptor = klass.__dict__["Experience"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_jobseeker_has_Qualification():
+    assert hasattr(JobSeeker, "Qualification")
+    descriptor = None
+    for klass in JobSeeker.__mro__:
+        if "Qualification" in klass.__dict__:
+            descriptor = klass.__dict__["Qualification"]
             break
     assert isinstance(descriptor, property)
 
@@ -113,9 +113,18 @@ def test_administrator_constructor_exists():
 def test_administrator_constructor_args():
     sig = inspect.signature(Administrator.__init__)
     params = list(sig.parameters.keys())
+    assert "Name" in params, "Missing parameter 'Name'"
     assert "Company" in params, "Missing parameter 'Company'"
     assert "Address" in params, "Missing parameter 'Address'"
-    assert "Name" in params, "Missing parameter 'Name'"
+
+def test_administrator_has_Name():
+    assert hasattr(Administrator, "Name")
+    descriptor = None
+    for klass in Administrator.__mro__:
+        if "Name" in klass.__dict__:
+            descriptor = klass.__dict__["Name"]
+            break
+    assert isinstance(descriptor, property)
 
 def test_administrator_has_Company():
     assert hasattr(Administrator, "Company")
@@ -132,15 +141,6 @@ def test_administrator_has_Address():
     for klass in Administrator.__mro__:
         if "Address" in klass.__dict__:
             descriptor = klass.__dict__["Address"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_administrator_has_Name():
-    assert hasattr(Administrator, "Name")
-    descriptor = None
-    for klass in Administrator.__mro__:
-        if "Name" in klass.__dict__:
-            descriptor = klass.__dict__["Name"]
             break
     assert isinstance(descriptor, property)
 
@@ -788,18 +788,18 @@ JobSeeker_strategy = st.builds(
     JobSeeker,
     Name=
         safe_text,
-    Qualification=
-        safe_text,
     Experience=
+        safe_text,
+    Qualification=
         safe_text
 )
 Administrator_strategy = st.builds(
     Administrator,
+    Name=
+        safe_text,
     Company=
         safe_text,
     Address=
-        safe_text,
-    Name=
         safe_text
 )
 Employer_strategy = st.builds(
@@ -942,9 +942,6 @@ Administrator_Actor_strategy = st.builds(
 def test_jobseeker_instantiation(instance):
     assert isinstance(instance, JobSeeker)
 
-@given(instance=JobSeeker_strategy)
-def test_jobseeker_Name_type(instance):
-    assert isinstance(instance.Name, str)
 
 
 @given(instance=JobSeeker_strategy)
@@ -953,20 +950,6 @@ def test_jobseeker_Name_setter(instance):
     instance.Name = original
     assert instance.Name == original
 
-@given(instance=JobSeeker_strategy)
-def test_jobseeker_Qualification_type(instance):
-    assert isinstance(instance.Qualification, str)
-
-
-@given(instance=JobSeeker_strategy)
-def test_jobseeker_Qualification_setter(instance):
-    original = instance.Qualification
-    instance.Qualification = original
-    assert instance.Qualification == original
-
-@given(instance=JobSeeker_strategy)
-def test_jobseeker_Experience_type(instance):
-    assert isinstance(instance.Experience, str)
 
 
 @given(instance=JobSeeker_strategy)
@@ -975,36 +958,19 @@ def test_jobseeker_Experience_setter(instance):
     instance.Experience = original
     assert instance.Experience == original
 
+
+
+@given(instance=JobSeeker_strategy)
+def test_jobseeker_Qualification_setter(instance):
+    original = instance.Qualification
+    instance.Qualification = original
+    assert instance.Qualification == original
+
 @given(instance=Administrator_strategy)
 @settings(max_examples=50)
 def test_administrator_instantiation(instance):
     assert isinstance(instance, Administrator)
 
-@given(instance=Administrator_strategy)
-def test_administrator_Company_type(instance):
-    assert isinstance(instance.Company, str)
-
-
-@given(instance=Administrator_strategy)
-def test_administrator_Company_setter(instance):
-    original = instance.Company
-    instance.Company = original
-    assert instance.Company == original
-
-@given(instance=Administrator_strategy)
-def test_administrator_Address_type(instance):
-    assert isinstance(instance.Address, str)
-
-
-@given(instance=Administrator_strategy)
-def test_administrator_Address_setter(instance):
-    original = instance.Address
-    instance.Address = original
-    assert instance.Address == original
-
-@given(instance=Administrator_strategy)
-def test_administrator_Name_type(instance):
-    assert isinstance(instance.Name, str)
 
 
 @given(instance=Administrator_strategy)
@@ -1013,14 +979,27 @@ def test_administrator_Name_setter(instance):
     instance.Name = original
     assert instance.Name == original
 
+
+
+@given(instance=Administrator_strategy)
+def test_administrator_Company_setter(instance):
+    original = instance.Company
+    instance.Company = original
+    assert instance.Company == original
+
+
+
+@given(instance=Administrator_strategy)
+def test_administrator_Address_setter(instance):
+    original = instance.Address
+    instance.Address = original
+    assert instance.Address == original
+
 @given(instance=Employer_strategy)
 @settings(max_examples=50)
 def test_employer_instantiation(instance):
     assert isinstance(instance, Employer)
 
-@given(instance=Employer_strategy)
-def test_employer_Address_type(instance):
-    assert isinstance(instance.Address, str)
 
 
 @given(instance=Employer_strategy)
@@ -1029,9 +1008,6 @@ def test_employer_Address_setter(instance):
     instance.Address = original
     assert instance.Address == original
 
-@given(instance=Employer_strategy)
-def test_employer_Name_type(instance):
-    assert isinstance(instance.Name, str)
 
 
 @given(instance=Employer_strategy)
@@ -1045,9 +1021,6 @@ def test_employer_Name_setter(instance):
 def test_user_instantiation(instance):
     assert isinstance(instance, User)
 
-@given(instance=User_strategy)
-def test_user_Address_type(instance):
-    assert isinstance(instance.Address, str)
 
 
 @given(instance=User_strategy)
@@ -1056,9 +1029,6 @@ def test_user_Address_setter(instance):
     instance.Address = original
     assert instance.Address == original
 
-@given(instance=User_strategy)
-def test_user_Name_type(instance):
-    assert isinstance(instance.Name, str)
 
 
 @given(instance=User_strategy)

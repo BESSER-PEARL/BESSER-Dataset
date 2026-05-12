@@ -3,73 +3,73 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    ryz::Header,
-    ryz::PresentationFormElementToPropertyKey,
-    ryz::Choice,
+from python_code import (
+    ryz_Header,
+    ryz_PresentationFormElementToPropertyKey,
+    ryz_Choice,
     PresentationFormElement,
-    ryz::Button,
-    ryz::Input,
-    ryz::MultipleChoice,
-    ryz::PresentationFormElement,
+    ryz_Button,
+    ryz_Input,
+    ryz_MultipleChoice,
+    ryz_PresentationFormElement,
     PresentationElement,
-    ryz::Table,
-    ryz::Link,
-    ryz::PresentationForm,
+    ryz_Table,
+    ryz_Link,
+    ryz_PresentationForm,
     HelperForSendingRequest,
-    ryz::Form,
-    ryz::ActionLink,
+    ryz_Form,
+    ryz_ActionLink,
     MainComponentRelation,
-    ryz::ViewToModelRelation,
-    ryz::FormElementToPropertyKeyRelation,
-    ryz::ControllerToViewRelation,
-    ryz::ControllerToModelRelation,
-    ryz::ViewToControllerRelation,
+    ryz_ViewToModelRelation,
+    ryz_FormElementToPropertyKeyRelation,
+    ryz_ControllerToModelRelation,
+    ryz_ControllerToViewRelation,
+    ryz_ViewToControllerRelation,
     MainComponent,
     AbstractView,
-    ryz::View,
-    ryz::Layout,
-    ryz::HelperForSendingRequest,
-    ryz::Partial,
-    ryz::Controller,
-    ryz::AbstractView,
-    ryz::Model,
+    ryz_Layout,
+    ryz_View,
+    ryz_HelperForSendingRequest,
+    ryz_Partial,
+    ryz_Controller,
+    ryz_AbstractView,
+    ryz_Model,
     ComponentPackage,
-    ryz::ViewPackage,
-    ryz::ControllerPackage,
-    ryz::ModelPackage,
-    ryz::NamedElement,
+    ryz_ControllerPackage,
+    ryz_ViewPackage,
+    ryz_ModelPackage,
+    ryz_NamedElement,
     Package,
-    ryz::MvcPackage,
-    ryz::UseCaseActorPackage,
-    ryz::ComponentPackage,
+    ryz_MvcPackage,
+    ryz_UseCaseActorPackage,
+    ryz_ComponentPackage,
     NamedElement,
-    ryz::MainComponent,
-    ryz::PresentationElement,
-    ryz::ModelAssociation,
-    ryz::UseCasePackage,
-    ryz::Package,
-    ryz::Actor,
-    ryz::Parameter,
-    ryz::ActionMethod,
-    ryz::Property,
-    ryz::MainComponentRelation,
-    ryz::UseCase,
-    ryz::TableKey,
-    ryz::Project,
-    Cardinality,
-    InputDataType,
-    ActionMethodReturnType,
-    ButtonType,
-    RequestType,
-    ModelOperation,
-    HttpMethod,
-    ActionMethodParameterType,
-    ModelPropertyType,
+    ryz_Property,
+    ryz_Package,
+    ryz_PresentationElement,
+    ryz_TableKey,
+    ryz_UseCasePackage,
+    ryz_ActionMethod,
+    ryz_ModelAssociation,
+    ryz_MainComponent,
+    ryz_UseCase,
+    ryz_Parameter,
+    ryz_MainComponentRelation,
+    ryz_Actor,
+    ryz_Project,
     ModelCardinality,
     MultipleChoiceType,
+    Cardinality,
+    RequestType,
+    ButtonType,
+    HttpMethod,
+    InputDataType,
+    ActionMethodReturnType,
+    ModelPropertyType,
+    ActionMethodParameterType,
+    ModelOperation,
 )
 
 # =============================================================================
@@ -78,91 +78,91 @@ from classes import (
 
 
 
-def test_ryz::header_is_not_abstract():
-    assert not inspect.isabstract(ryz::Header)
+def test_ryz_header_is_not_abstract():
+    assert not inspect.isabstract(ryz_Header)
 
 
-def test_ryz::header_constructor_exists():
-    assert callable(ryz::Header.__init__)
+def test_ryz_header_constructor_exists():
+    assert callable(ryz_Header.__init__)
 
 
-def test_ryz::header_constructor_args():
-    sig = inspect.signature(ryz::Header.__init__)
+def test_ryz_header_constructor_args():
+    sig = inspect.signature(ryz_Header.__init__)
     params = list(sig.parameters.keys())
-    assert "labelText" in params, "Missing parameter 'labelText'"
     assert "name" in params, "Missing parameter 'name'"
+    assert "labelText" in params, "Missing parameter 'labelText'"
 
-def test_ryz::header_has_labelText():
-    assert hasattr(ryz::Header, "labelText")
+def test_ryz_header_has_name():
+    assert hasattr(ryz_Header, "name")
     descriptor = None
-    for klass in ryz::Header.__mro__:
-        if "labelText" in klass.__dict__:
-            descriptor = klass.__dict__["labelText"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_ryz::header_has_name():
-    assert hasattr(ryz::Header, "name")
-    descriptor = None
-    for klass in ryz::Header.__mro__:
+    for klass in ryz_Header.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
+def test_ryz_header_has_labelText():
+    assert hasattr(ryz_Header, "labelText")
+    descriptor = None
+    for klass in ryz_Header.__mro__:
+        if "labelText" in klass.__dict__:
+            descriptor = klass.__dict__["labelText"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_ryz::presentationformelementtopropertykey_is_not_abstract():
-    assert not inspect.isabstract(ryz::PresentationFormElementToPropertyKey)
+
+def test_ryz_presentationformelementtopropertykey_is_not_abstract():
+    assert not inspect.isabstract(ryz_PresentationFormElementToPropertyKey)
 
 
-def test_ryz::presentationformelementtopropertykey_constructor_exists():
-    assert callable(ryz::PresentationFormElementToPropertyKey.__init__)
+def test_ryz_presentationformelementtopropertykey_constructor_exists():
+    assert callable(ryz_PresentationFormElementToPropertyKey.__init__)
 
 
-def test_ryz::presentationformelementtopropertykey_constructor_args():
-    sig = inspect.signature(ryz::PresentationFormElementToPropertyKey.__init__)
+def test_ryz_presentationformelementtopropertykey_constructor_args():
+    sig = inspect.signature(ryz_PresentationFormElementToPropertyKey.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ryz::choice_is_not_abstract():
-    assert not inspect.isabstract(ryz::Choice)
+def test_ryz_choice_is_not_abstract():
+    assert not inspect.isabstract(ryz_Choice)
 
 
-def test_ryz::choice_constructor_exists():
-    assert callable(ryz::Choice.__init__)
+def test_ryz_choice_constructor_exists():
+    assert callable(ryz_Choice.__init__)
 
 
-def test_ryz::choice_constructor_args():
-    sig = inspect.signature(ryz::Choice.__init__)
+def test_ryz_choice_constructor_args():
+    sig = inspect.signature(ryz_Choice.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
     assert "selected" in params, "Missing parameter 'selected'"
     assert "text" in params, "Missing parameter 'text'"
 
-def test_ryz::choice_has_value():
-    assert hasattr(ryz::Choice, "value")
+def test_ryz_choice_has_value():
+    assert hasattr(ryz_Choice, "value")
     descriptor = None
-    for klass in ryz::Choice.__mro__:
+    for klass in ryz_Choice.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
     assert isinstance(descriptor, property)
 
-def test_ryz::choice_has_selected():
-    assert hasattr(ryz::Choice, "selected")
+def test_ryz_choice_has_selected():
+    assert hasattr(ryz_Choice, "selected")
     descriptor = None
-    for klass in ryz::Choice.__mro__:
+    for klass in ryz_Choice.__mro__:
         if "selected" in klass.__dict__:
             descriptor = klass.__dict__["selected"]
             break
     assert isinstance(descriptor, property)
 
-def test_ryz::choice_has_text():
-    assert hasattr(ryz::Choice, "text")
+def test_ryz_choice_has_text():
+    assert hasattr(ryz_Choice, "text")
     descriptor = None
-    for klass in ryz::Choice.__mro__:
+    for klass in ryz_Choice.__mro__:
         if "text" in klass.__dict__:
             descriptor = klass.__dict__["text"]
             break
@@ -184,23 +184,23 @@ def test_presentationformelement_constructor_args():
 
 
 
-def test_ryz::button_is_not_abstract():
-    assert not inspect.isabstract(ryz::Button)
+def test_ryz_button_is_not_abstract():
+    assert not inspect.isabstract(ryz_Button)
 
 
-def test_ryz::button_constructor_exists():
-    assert callable(ryz::Button.__init__)
+def test_ryz_button_constructor_exists():
+    assert callable(ryz_Button.__init__)
 
 
-def test_ryz::button_constructor_args():
-    sig = inspect.signature(ryz::Button.__init__)
+def test_ryz_button_constructor_args():
+    sig = inspect.signature(ryz_Button.__init__)
     params = list(sig.parameters.keys())
     assert "buttonType" in params, "Missing parameter 'buttonType'"
 
-def test_ryz::button_has_buttonType():
-    assert hasattr(ryz::Button, "buttonType")
+def test_ryz_button_has_buttonType():
+    assert hasattr(ryz_Button, "buttonType")
     descriptor = None
-    for klass in ryz::Button.__mro__:
+    for klass in ryz_Button.__mro__:
         if "buttonType" in klass.__dict__:
             descriptor = klass.__dict__["buttonType"]
             break
@@ -208,77 +208,77 @@ def test_ryz::button_has_buttonType():
 
 
 
-def test_ryz::input_is_not_abstract():
-    assert not inspect.isabstract(ryz::Input)
+def test_ryz_input_is_not_abstract():
+    assert not inspect.isabstract(ryz_Input)
 
 
-def test_ryz::input_constructor_exists():
-    assert callable(ryz::Input.__init__)
+def test_ryz_input_constructor_exists():
+    assert callable(ryz_Input.__init__)
 
 
-def test_ryz::input_constructor_args():
-    sig = inspect.signature(ryz::Input.__init__)
+def test_ryz_input_constructor_args():
+    sig = inspect.signature(ryz_Input.__init__)
     params = list(sig.parameters.keys())
     assert "isReadOnly" in params, "Missing parameter 'isReadOnly'"
-    assert "inputDataType" in params, "Missing parameter 'inputDataType'"
     assert "isHidden" in params, "Missing parameter 'isHidden'"
+    assert "inputDataType" in params, "Missing parameter 'inputDataType'"
 
-def test_ryz::input_has_isReadOnly():
-    assert hasattr(ryz::Input, "isReadOnly")
+def test_ryz_input_has_isReadOnly():
+    assert hasattr(ryz_Input, "isReadOnly")
     descriptor = None
-    for klass in ryz::Input.__mro__:
+    for klass in ryz_Input.__mro__:
         if "isReadOnly" in klass.__dict__:
             descriptor = klass.__dict__["isReadOnly"]
             break
     assert isinstance(descriptor, property)
 
-def test_ryz::input_has_inputDataType():
-    assert hasattr(ryz::Input, "inputDataType")
+def test_ryz_input_has_isHidden():
+    assert hasattr(ryz_Input, "isHidden")
     descriptor = None
-    for klass in ryz::Input.__mro__:
-        if "inputDataType" in klass.__dict__:
-            descriptor = klass.__dict__["inputDataType"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_ryz::input_has_isHidden():
-    assert hasattr(ryz::Input, "isHidden")
-    descriptor = None
-    for klass in ryz::Input.__mro__:
+    for klass in ryz_Input.__mro__:
         if "isHidden" in klass.__dict__:
             descriptor = klass.__dict__["isHidden"]
             break
     assert isinstance(descriptor, property)
 
+def test_ryz_input_has_inputDataType():
+    assert hasattr(ryz_Input, "inputDataType")
+    descriptor = None
+    for klass in ryz_Input.__mro__:
+        if "inputDataType" in klass.__dict__:
+            descriptor = klass.__dict__["inputDataType"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_ryz::multiplechoice_is_not_abstract():
-    assert not inspect.isabstract(ryz::MultipleChoice)
+
+def test_ryz_multiplechoice_is_not_abstract():
+    assert not inspect.isabstract(ryz_MultipleChoice)
 
 
-def test_ryz::multiplechoice_constructor_exists():
-    assert callable(ryz::MultipleChoice.__init__)
+def test_ryz_multiplechoice_constructor_exists():
+    assert callable(ryz_MultipleChoice.__init__)
 
 
-def test_ryz::multiplechoice_constructor_args():
-    sig = inspect.signature(ryz::MultipleChoice.__init__)
+def test_ryz_multiplechoice_constructor_args():
+    sig = inspect.signature(ryz_MultipleChoice.__init__)
     params = list(sig.parameters.keys())
     assert "multipleChoiceType" in params, "Missing parameter 'multipleChoiceType'"
     assert "multipleSelection" in params, "Missing parameter 'multipleSelection'"
 
-def test_ryz::multiplechoice_has_multipleChoiceType():
-    assert hasattr(ryz::MultipleChoice, "multipleChoiceType")
+def test_ryz_multiplechoice_has_multipleChoiceType():
+    assert hasattr(ryz_MultipleChoice, "multipleChoiceType")
     descriptor = None
-    for klass in ryz::MultipleChoice.__mro__:
+    for klass in ryz_MultipleChoice.__mro__:
         if "multipleChoiceType" in klass.__dict__:
             descriptor = klass.__dict__["multipleChoiceType"]
             break
     assert isinstance(descriptor, property)
 
-def test_ryz::multiplechoice_has_multipleSelection():
-    assert hasattr(ryz::MultipleChoice, "multipleSelection")
+def test_ryz_multiplechoice_has_multipleSelection():
+    assert hasattr(ryz_MultipleChoice, "multipleSelection")
     descriptor = None
-    for klass in ryz::MultipleChoice.__mro__:
+    for klass in ryz_MultipleChoice.__mro__:
         if "multipleSelection" in klass.__dict__:
             descriptor = klass.__dict__["multipleSelection"]
             break
@@ -286,23 +286,23 @@ def test_ryz::multiplechoice_has_multipleSelection():
 
 
 
-def test_ryz::presentationformelement_is_not_abstract():
-    assert not inspect.isabstract(ryz::PresentationFormElement)
+def test_ryz_presentationformelement_is_not_abstract():
+    assert not inspect.isabstract(ryz_PresentationFormElement)
 
 
-def test_ryz::presentationformelement_constructor_exists():
-    assert callable(ryz::PresentationFormElement.__init__)
+def test_ryz_presentationformelement_constructor_exists():
+    assert callable(ryz_PresentationFormElement.__init__)
 
 
-def test_ryz::presentationformelement_constructor_args():
-    sig = inspect.signature(ryz::PresentationFormElement.__init__)
+def test_ryz_presentationformelement_constructor_args():
+    sig = inspect.signature(ryz_PresentationFormElement.__init__)
     params = list(sig.parameters.keys())
     assert "labelText" in params, "Missing parameter 'labelText'"
 
-def test_ryz::presentationformelement_has_labelText():
-    assert hasattr(ryz::PresentationFormElement, "labelText")
+def test_ryz_presentationformelement_has_labelText():
+    assert hasattr(ryz_PresentationFormElement, "labelText")
     descriptor = None
-    for klass in ryz::PresentationFormElement.__mro__:
+    for klass in ryz_PresentationFormElement.__mro__:
         if "labelText" in klass.__dict__:
             descriptor = klass.__dict__["labelText"]
             break
@@ -324,37 +324,37 @@ def test_presentationelement_constructor_args():
 
 
 
-def test_ryz::table_is_not_abstract():
-    assert not inspect.isabstract(ryz::Table)
+def test_ryz_table_is_not_abstract():
+    assert not inspect.isabstract(ryz_Table)
 
 
-def test_ryz::table_constructor_exists():
-    assert callable(ryz::Table.__init__)
+def test_ryz_table_constructor_exists():
+    assert callable(ryz_Table.__init__)
 
 
-def test_ryz::table_constructor_args():
-    sig = inspect.signature(ryz::Table.__init__)
+def test_ryz_table_constructor_args():
+    sig = inspect.signature(ryz_Table.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ryz::link_is_not_abstract():
-    assert not inspect.isabstract(ryz::Link)
+def test_ryz_link_is_not_abstract():
+    assert not inspect.isabstract(ryz_Link)
 
 
-def test_ryz::link_constructor_exists():
-    assert callable(ryz::Link.__init__)
+def test_ryz_link_constructor_exists():
+    assert callable(ryz_Link.__init__)
 
 
-def test_ryz::link_constructor_args():
-    sig = inspect.signature(ryz::Link.__init__)
+def test_ryz_link_constructor_args():
+    sig = inspect.signature(ryz_Link.__init__)
     params = list(sig.parameters.keys())
     assert "text" in params, "Missing parameter 'text'"
 
-def test_ryz::link_has_text():
-    assert hasattr(ryz::Link, "text")
+def test_ryz_link_has_text():
+    assert hasattr(ryz_Link, "text")
     descriptor = None
-    for klass in ryz::Link.__mro__:
+    for klass in ryz_Link.__mro__:
         if "text" in klass.__dict__:
             descriptor = klass.__dict__["text"]
             break
@@ -362,16 +362,16 @@ def test_ryz::link_has_text():
 
 
 
-def test_ryz::presentationform_is_not_abstract():
-    assert not inspect.isabstract(ryz::PresentationForm)
+def test_ryz_presentationform_is_not_abstract():
+    assert not inspect.isabstract(ryz_PresentationForm)
 
 
-def test_ryz::presentationform_constructor_exists():
-    assert callable(ryz::PresentationForm.__init__)
+def test_ryz_presentationform_constructor_exists():
+    assert callable(ryz_PresentationForm.__init__)
 
 
-def test_ryz::presentationform_constructor_args():
-    sig = inspect.signature(ryz::PresentationForm.__init__)
+def test_ryz_presentationform_constructor_args():
+    sig = inspect.signature(ryz_PresentationForm.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -390,30 +390,30 @@ def test_helperforsendingrequest_constructor_args():
 
 
 
-def test_ryz::form_is_not_abstract():
-    assert not inspect.isabstract(ryz::Form)
+def test_ryz_form_is_not_abstract():
+    assert not inspect.isabstract(ryz_Form)
 
 
-def test_ryz::form_constructor_exists():
-    assert callable(ryz::Form.__init__)
+def test_ryz_form_constructor_exists():
+    assert callable(ryz_Form.__init__)
 
 
-def test_ryz::form_constructor_args():
-    sig = inspect.signature(ryz::Form.__init__)
+def test_ryz_form_constructor_args():
+    sig = inspect.signature(ryz_Form.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ryz::actionlink_is_not_abstract():
-    assert not inspect.isabstract(ryz::ActionLink)
+def test_ryz_actionlink_is_not_abstract():
+    assert not inspect.isabstract(ryz_ActionLink)
 
 
-def test_ryz::actionlink_constructor_exists():
-    assert callable(ryz::ActionLink.__init__)
+def test_ryz_actionlink_constructor_exists():
+    assert callable(ryz_ActionLink.__init__)
 
 
-def test_ryz::actionlink_constructor_args():
-    sig = inspect.signature(ryz::ActionLink.__init__)
+def test_ryz_actionlink_constructor_args():
+    sig = inspect.signature(ryz_ActionLink.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -432,23 +432,23 @@ def test_maincomponentrelation_constructor_args():
 
 
 
-def test_ryz::viewtomodelrelation_is_not_abstract():
-    assert not inspect.isabstract(ryz::ViewToModelRelation)
+def test_ryz_viewtomodelrelation_is_not_abstract():
+    assert not inspect.isabstract(ryz_ViewToModelRelation)
 
 
-def test_ryz::viewtomodelrelation_constructor_exists():
-    assert callable(ryz::ViewToModelRelation.__init__)
+def test_ryz_viewtomodelrelation_constructor_exists():
+    assert callable(ryz_ViewToModelRelation.__init__)
 
 
-def test_ryz::viewtomodelrelation_constructor_args():
-    sig = inspect.signature(ryz::ViewToModelRelation.__init__)
+def test_ryz_viewtomodelrelation_constructor_args():
+    sig = inspect.signature(ryz_ViewToModelRelation.__init__)
     params = list(sig.parameters.keys())
     assert "modelcardinality" in params, "Missing parameter 'modelcardinality'"
 
-def test_ryz::viewtomodelrelation_has_modelcardinality():
-    assert hasattr(ryz::ViewToModelRelation, "modelcardinality")
+def test_ryz_viewtomodelrelation_has_modelcardinality():
+    assert hasattr(ryz_ViewToModelRelation, "modelcardinality")
     descriptor = None
-    for klass in ryz::ViewToModelRelation.__mro__:
+    for klass in ryz_ViewToModelRelation.__mro__:
         if "modelcardinality" in klass.__dict__:
             descriptor = klass.__dict__["modelcardinality"]
             break
@@ -456,78 +456,78 @@ def test_ryz::viewtomodelrelation_has_modelcardinality():
 
 
 
-def test_ryz::formelementtopropertykeyrelation_is_not_abstract():
-    assert not inspect.isabstract(ryz::FormElementToPropertyKeyRelation)
+def test_ryz_formelementtopropertykeyrelation_is_not_abstract():
+    assert not inspect.isabstract(ryz_FormElementToPropertyKeyRelation)
 
 
-def test_ryz::formelementtopropertykeyrelation_constructor_exists():
-    assert callable(ryz::FormElementToPropertyKeyRelation.__init__)
+def test_ryz_formelementtopropertykeyrelation_constructor_exists():
+    assert callable(ryz_FormElementToPropertyKeyRelation.__init__)
 
 
-def test_ryz::formelementtopropertykeyrelation_constructor_args():
-    sig = inspect.signature(ryz::FormElementToPropertyKeyRelation.__init__)
+def test_ryz_formelementtopropertykeyrelation_constructor_args():
+    sig = inspect.signature(ryz_FormElementToPropertyKeyRelation.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ryz::controllertoviewrelation_is_not_abstract():
-    assert not inspect.isabstract(ryz::ControllerToViewRelation)
+def test_ryz_controllertomodelrelation_is_not_abstract():
+    assert not inspect.isabstract(ryz_ControllerToModelRelation)
 
 
-def test_ryz::controllertoviewrelation_constructor_exists():
-    assert callable(ryz::ControllerToViewRelation.__init__)
+def test_ryz_controllertomodelrelation_constructor_exists():
+    assert callable(ryz_ControllerToModelRelation.__init__)
 
 
-def test_ryz::controllertoviewrelation_constructor_args():
-    sig = inspect.signature(ryz::ControllerToViewRelation.__init__)
+def test_ryz_controllertomodelrelation_constructor_args():
+    sig = inspect.signature(ryz_ControllerToModelRelation.__init__)
     params = list(sig.parameters.keys())
-
-
-
-def test_ryz::controllertomodelrelation_is_not_abstract():
-    assert not inspect.isabstract(ryz::ControllerToModelRelation)
-
-
-def test_ryz::controllertomodelrelation_constructor_exists():
-    assert callable(ryz::ControllerToModelRelation.__init__)
-
-
-def test_ryz::controllertomodelrelation_constructor_args():
-    sig = inspect.signature(ryz::ControllerToModelRelation.__init__)
-    params = list(sig.parameters.keys())
-    assert "modelCardinality" in params, "Missing parameter 'modelCardinality'"
     assert "modelOperation" in params, "Missing parameter 'modelOperation'"
+    assert "modelCardinality" in params, "Missing parameter 'modelCardinality'"
 
-def test_ryz::controllertomodelrelation_has_modelCardinality():
-    assert hasattr(ryz::ControllerToModelRelation, "modelCardinality")
+def test_ryz_controllertomodelrelation_has_modelOperation():
+    assert hasattr(ryz_ControllerToModelRelation, "modelOperation")
     descriptor = None
-    for klass in ryz::ControllerToModelRelation.__mro__:
-        if "modelCardinality" in klass.__dict__:
-            descriptor = klass.__dict__["modelCardinality"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_ryz::controllertomodelrelation_has_modelOperation():
-    assert hasattr(ryz::ControllerToModelRelation, "modelOperation")
-    descriptor = None
-    for klass in ryz::ControllerToModelRelation.__mro__:
+    for klass in ryz_ControllerToModelRelation.__mro__:
         if "modelOperation" in klass.__dict__:
             descriptor = klass.__dict__["modelOperation"]
             break
     assert isinstance(descriptor, property)
 
+def test_ryz_controllertomodelrelation_has_modelCardinality():
+    assert hasattr(ryz_ControllerToModelRelation, "modelCardinality")
+    descriptor = None
+    for klass in ryz_ControllerToModelRelation.__mro__:
+        if "modelCardinality" in klass.__dict__:
+            descriptor = klass.__dict__["modelCardinality"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_ryz::viewtocontrollerrelation_is_not_abstract():
-    assert not inspect.isabstract(ryz::ViewToControllerRelation)
+
+def test_ryz_controllertoviewrelation_is_not_abstract():
+    assert not inspect.isabstract(ryz_ControllerToViewRelation)
 
 
-def test_ryz::viewtocontrollerrelation_constructor_exists():
-    assert callable(ryz::ViewToControllerRelation.__init__)
+def test_ryz_controllertoviewrelation_constructor_exists():
+    assert callable(ryz_ControllerToViewRelation.__init__)
 
 
-def test_ryz::viewtocontrollerrelation_constructor_args():
-    sig = inspect.signature(ryz::ViewToControllerRelation.__init__)
+def test_ryz_controllertoviewrelation_constructor_args():
+    sig = inspect.signature(ryz_ControllerToViewRelation.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_ryz_viewtocontrollerrelation_is_not_abstract():
+    assert not inspect.isabstract(ryz_ViewToControllerRelation)
+
+
+def test_ryz_viewtocontrollerrelation_constructor_exists():
+    assert callable(ryz_ViewToControllerRelation.__init__)
+
+
+def test_ryz_viewtocontrollerrelation_constructor_args():
+    sig = inspect.signature(ryz_ViewToControllerRelation.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -560,137 +560,137 @@ def test_abstractview_constructor_args():
 
 
 
-def test_ryz::view_is_not_abstract():
-    assert not inspect.isabstract(ryz::View)
+def test_ryz_layout_is_not_abstract():
+    assert not inspect.isabstract(ryz_Layout)
 
 
-def test_ryz::view_constructor_exists():
-    assert callable(ryz::View.__init__)
+def test_ryz_layout_constructor_exists():
+    assert callable(ryz_Layout.__init__)
 
 
-def test_ryz::view_constructor_args():
-    sig = inspect.signature(ryz::View.__init__)
+def test_ryz_layout_constructor_args():
+    sig = inspect.signature(ryz_Layout.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ryz::layout_is_not_abstract():
-    assert not inspect.isabstract(ryz::Layout)
+def test_ryz_view_is_not_abstract():
+    assert not inspect.isabstract(ryz_View)
 
 
-def test_ryz::layout_constructor_exists():
-    assert callable(ryz::Layout.__init__)
+def test_ryz_view_constructor_exists():
+    assert callable(ryz_View.__init__)
 
 
-def test_ryz::layout_constructor_args():
-    sig = inspect.signature(ryz::Layout.__init__)
+def test_ryz_view_constructor_args():
+    sig = inspect.signature(ryz_View.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ryz::helperforsendingrequest_is_not_abstract():
-    assert not inspect.isabstract(ryz::HelperForSendingRequest)
+def test_ryz_helperforsendingrequest_is_not_abstract():
+    assert not inspect.isabstract(ryz_HelperForSendingRequest)
 
 
-def test_ryz::helperforsendingrequest_constructor_exists():
-    assert callable(ryz::HelperForSendingRequest.__init__)
+def test_ryz_helperforsendingrequest_constructor_exists():
+    assert callable(ryz_HelperForSendingRequest.__init__)
 
 
-def test_ryz::helperforsendingrequest_constructor_args():
-    sig = inspect.signature(ryz::HelperForSendingRequest.__init__)
+def test_ryz_helperforsendingrequest_constructor_args():
+    sig = inspect.signature(ryz_HelperForSendingRequest.__init__)
     params = list(sig.parameters.keys())
+    assert "httpMethod" in params, "Missing parameter 'httpMethod'"
     assert "requestType" in params, "Missing parameter 'requestType'"
     assert "text" in params, "Missing parameter 'text'"
-    assert "httpMethod" in params, "Missing parameter 'httpMethod'"
 
-def test_ryz::helperforsendingrequest_has_requestType():
-    assert hasattr(ryz::HelperForSendingRequest, "requestType")
+def test_ryz_helperforsendingrequest_has_httpMethod():
+    assert hasattr(ryz_HelperForSendingRequest, "httpMethod")
     descriptor = None
-    for klass in ryz::HelperForSendingRequest.__mro__:
-        if "requestType" in klass.__dict__:
-            descriptor = klass.__dict__["requestType"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_ryz::helperforsendingrequest_has_text():
-    assert hasattr(ryz::HelperForSendingRequest, "text")
-    descriptor = None
-    for klass in ryz::HelperForSendingRequest.__mro__:
-        if "text" in klass.__dict__:
-            descriptor = klass.__dict__["text"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_ryz::helperforsendingrequest_has_httpMethod():
-    assert hasattr(ryz::HelperForSendingRequest, "httpMethod")
-    descriptor = None
-    for klass in ryz::HelperForSendingRequest.__mro__:
+    for klass in ryz_HelperForSendingRequest.__mro__:
         if "httpMethod" in klass.__dict__:
             descriptor = klass.__dict__["httpMethod"]
             break
     assert isinstance(descriptor, property)
 
+def test_ryz_helperforsendingrequest_has_requestType():
+    assert hasattr(ryz_HelperForSendingRequest, "requestType")
+    descriptor = None
+    for klass in ryz_HelperForSendingRequest.__mro__:
+        if "requestType" in klass.__dict__:
+            descriptor = klass.__dict__["requestType"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_ryz_helperforsendingrequest_has_text():
+    assert hasattr(ryz_HelperForSendingRequest, "text")
+    descriptor = None
+    for klass in ryz_HelperForSendingRequest.__mro__:
+        if "text" in klass.__dict__:
+            descriptor = klass.__dict__["text"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_ryz::partial_is_not_abstract():
-    assert not inspect.isabstract(ryz::Partial)
+
+def test_ryz_partial_is_not_abstract():
+    assert not inspect.isabstract(ryz_Partial)
 
 
-def test_ryz::partial_constructor_exists():
-    assert callable(ryz::Partial.__init__)
+def test_ryz_partial_constructor_exists():
+    assert callable(ryz_Partial.__init__)
 
 
-def test_ryz::partial_constructor_args():
-    sig = inspect.signature(ryz::Partial.__init__)
+def test_ryz_partial_constructor_args():
+    sig = inspect.signature(ryz_Partial.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ryz::controller_is_not_abstract():
-    assert not inspect.isabstract(ryz::Controller)
+def test_ryz_controller_is_not_abstract():
+    assert not inspect.isabstract(ryz_Controller)
 
 
-def test_ryz::controller_constructor_exists():
-    assert callable(ryz::Controller.__init__)
+def test_ryz_controller_constructor_exists():
+    assert callable(ryz_Controller.__init__)
 
 
-def test_ryz::controller_constructor_args():
-    sig = inspect.signature(ryz::Controller.__init__)
+def test_ryz_controller_constructor_args():
+    sig = inspect.signature(ryz_Controller.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ryz::abstractview_is_not_abstract():
-    assert not inspect.isabstract(ryz::AbstractView)
+def test_ryz_abstractview_is_not_abstract():
+    assert not inspect.isabstract(ryz_AbstractView)
 
 
-def test_ryz::abstractview_constructor_exists():
-    assert callable(ryz::AbstractView.__init__)
+def test_ryz_abstractview_constructor_exists():
+    assert callable(ryz_AbstractView.__init__)
 
 
-def test_ryz::abstractview_constructor_args():
-    sig = inspect.signature(ryz::AbstractView.__init__)
+def test_ryz_abstractview_constructor_args():
+    sig = inspect.signature(ryz_AbstractView.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ryz::model_is_not_abstract():
-    assert not inspect.isabstract(ryz::Model)
+def test_ryz_model_is_not_abstract():
+    assert not inspect.isabstract(ryz_Model)
 
 
-def test_ryz::model_constructor_exists():
-    assert callable(ryz::Model.__init__)
+def test_ryz_model_constructor_exists():
+    assert callable(ryz_Model.__init__)
 
 
-def test_ryz::model_constructor_args():
-    sig = inspect.signature(ryz::Model.__init__)
+def test_ryz_model_constructor_args():
+    sig = inspect.signature(ryz_Model.__init__)
     params = list(sig.parameters.keys())
     assert "isAbstract" in params, "Missing parameter 'isAbstract'"
 
-def test_ryz::model_has_isAbstract():
-    assert hasattr(ryz::Model, "isAbstract")
+def test_ryz_model_has_isAbstract():
+    assert hasattr(ryz_Model, "isAbstract")
     descriptor = None
-    for klass in ryz::Model.__mro__:
+    for klass in ryz_Model.__mro__:
         if "isAbstract" in klass.__dict__:
             descriptor = klass.__dict__["isAbstract"]
             break
@@ -712,65 +712,65 @@ def test_componentpackage_constructor_args():
 
 
 
-def test_ryz::viewpackage_is_not_abstract():
-    assert not inspect.isabstract(ryz::ViewPackage)
+def test_ryz_controllerpackage_is_not_abstract():
+    assert not inspect.isabstract(ryz_ControllerPackage)
 
 
-def test_ryz::viewpackage_constructor_exists():
-    assert callable(ryz::ViewPackage.__init__)
+def test_ryz_controllerpackage_constructor_exists():
+    assert callable(ryz_ControllerPackage.__init__)
 
 
-def test_ryz::viewpackage_constructor_args():
-    sig = inspect.signature(ryz::ViewPackage.__init__)
+def test_ryz_controllerpackage_constructor_args():
+    sig = inspect.signature(ryz_ControllerPackage.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ryz::controllerpackage_is_not_abstract():
-    assert not inspect.isabstract(ryz::ControllerPackage)
+def test_ryz_viewpackage_is_not_abstract():
+    assert not inspect.isabstract(ryz_ViewPackage)
 
 
-def test_ryz::controllerpackage_constructor_exists():
-    assert callable(ryz::ControllerPackage.__init__)
+def test_ryz_viewpackage_constructor_exists():
+    assert callable(ryz_ViewPackage.__init__)
 
 
-def test_ryz::controllerpackage_constructor_args():
-    sig = inspect.signature(ryz::ControllerPackage.__init__)
+def test_ryz_viewpackage_constructor_args():
+    sig = inspect.signature(ryz_ViewPackage.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ryz::modelpackage_is_not_abstract():
-    assert not inspect.isabstract(ryz::ModelPackage)
+def test_ryz_modelpackage_is_not_abstract():
+    assert not inspect.isabstract(ryz_ModelPackage)
 
 
-def test_ryz::modelpackage_constructor_exists():
-    assert callable(ryz::ModelPackage.__init__)
+def test_ryz_modelpackage_constructor_exists():
+    assert callable(ryz_ModelPackage.__init__)
 
 
-def test_ryz::modelpackage_constructor_args():
-    sig = inspect.signature(ryz::ModelPackage.__init__)
+def test_ryz_modelpackage_constructor_args():
+    sig = inspect.signature(ryz_ModelPackage.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ryz::namedelement_is_not_abstract():
-    assert not inspect.isabstract(ryz::NamedElement)
+def test_ryz_namedelement_is_not_abstract():
+    assert not inspect.isabstract(ryz_NamedElement)
 
 
-def test_ryz::namedelement_constructor_exists():
-    assert callable(ryz::NamedElement.__init__)
+def test_ryz_namedelement_constructor_exists():
+    assert callable(ryz_NamedElement.__init__)
 
 
-def test_ryz::namedelement_constructor_args():
-    sig = inspect.signature(ryz::NamedElement.__init__)
+def test_ryz_namedelement_constructor_args():
+    sig = inspect.signature(ryz_NamedElement.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_ryz::namedelement_has_name():
-    assert hasattr(ryz::NamedElement, "name")
+def test_ryz_namedelement_has_name():
+    assert hasattr(ryz_NamedElement, "name")
     descriptor = None
-    for klass in ryz::NamedElement.__mro__:
+    for klass in ryz_NamedElement.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -792,44 +792,44 @@ def test_package_constructor_args():
 
 
 
-def test_ryz::mvcpackage_is_not_abstract():
-    assert not inspect.isabstract(ryz::MvcPackage)
+def test_ryz_mvcpackage_is_not_abstract():
+    assert not inspect.isabstract(ryz_MvcPackage)
 
 
-def test_ryz::mvcpackage_constructor_exists():
-    assert callable(ryz::MvcPackage.__init__)
+def test_ryz_mvcpackage_constructor_exists():
+    assert callable(ryz_MvcPackage.__init__)
 
 
-def test_ryz::mvcpackage_constructor_args():
-    sig = inspect.signature(ryz::MvcPackage.__init__)
+def test_ryz_mvcpackage_constructor_args():
+    sig = inspect.signature(ryz_MvcPackage.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ryz::usecaseactorpackage_is_not_abstract():
-    assert not inspect.isabstract(ryz::UseCaseActorPackage)
+def test_ryz_usecaseactorpackage_is_not_abstract():
+    assert not inspect.isabstract(ryz_UseCaseActorPackage)
 
 
-def test_ryz::usecaseactorpackage_constructor_exists():
-    assert callable(ryz::UseCaseActorPackage.__init__)
+def test_ryz_usecaseactorpackage_constructor_exists():
+    assert callable(ryz_UseCaseActorPackage.__init__)
 
 
-def test_ryz::usecaseactorpackage_constructor_args():
-    sig = inspect.signature(ryz::UseCaseActorPackage.__init__)
+def test_ryz_usecaseactorpackage_constructor_args():
+    sig = inspect.signature(ryz_UseCaseActorPackage.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ryz::componentpackage_is_not_abstract():
-    assert not inspect.isabstract(ryz::ComponentPackage)
+def test_ryz_componentpackage_is_not_abstract():
+    assert not inspect.isabstract(ryz_ComponentPackage)
 
 
-def test_ryz::componentpackage_constructor_exists():
-    assert callable(ryz::ComponentPackage.__init__)
+def test_ryz_componentpackage_constructor_exists():
+    assert callable(ryz_ComponentPackage.__init__)
 
 
-def test_ryz::componentpackage_constructor_args():
-    sig = inspect.signature(ryz::ComponentPackage.__init__)
+def test_ryz_componentpackage_constructor_args():
+    sig = inspect.signature(ryz_ComponentPackage.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -848,81 +848,33 @@ def test_namedelement_constructor_args():
 
 
 
-def test_ryz::maincomponent_is_not_abstract():
-    assert not inspect.isabstract(ryz::MainComponent)
+def test_ryz_property_is_not_abstract():
+    assert not inspect.isabstract(ryz_Property)
 
 
-def test_ryz::maincomponent_constructor_exists():
-    assert callable(ryz::MainComponent.__init__)
+def test_ryz_property_constructor_exists():
+    assert callable(ryz_Property.__init__)
 
 
-def test_ryz::maincomponent_constructor_args():
-    sig = inspect.signature(ryz::MainComponent.__init__)
+def test_ryz_property_constructor_args():
+    sig = inspect.signature(ryz_Property.__init__)
     params = list(sig.parameters.keys())
-
-
-
-def test_ryz::presentationelement_is_not_abstract():
-    assert not inspect.isabstract(ryz::PresentationElement)
-
-
-def test_ryz::presentationelement_constructor_exists():
-    assert callable(ryz::PresentationElement.__init__)
-
-
-def test_ryz::presentationelement_constructor_args():
-    sig = inspect.signature(ryz::PresentationElement.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_ryz::modelassociation_is_not_abstract():
-    assert not inspect.isabstract(ryz::ModelAssociation)
-
-
-def test_ryz::modelassociation_constructor_exists():
-    assert callable(ryz::ModelAssociation.__init__)
-
-
-def test_ryz::modelassociation_constructor_args():
-    sig = inspect.signature(ryz::ModelAssociation.__init__)
-    params = list(sig.parameters.keys())
-    assert "cardinality" in params, "Missing parameter 'cardinality'"
-    assert "dependentRoleName" in params, "Missing parameter 'dependentRoleName'"
-    assert "principalRoleName" in params, "Missing parameter 'principalRoleName'"
+    assert "type" in params, "Missing parameter 'type'"
     assert "isRequired" in params, "Missing parameter 'isRequired'"
 
-def test_ryz::modelassociation_has_cardinality():
-    assert hasattr(ryz::ModelAssociation, "cardinality")
+def test_ryz_property_has_type():
+    assert hasattr(ryz_Property, "type")
     descriptor = None
-    for klass in ryz::ModelAssociation.__mro__:
-        if "cardinality" in klass.__dict__:
-            descriptor = klass.__dict__["cardinality"]
+    for klass in ryz_Property.__mro__:
+        if "type" in klass.__dict__:
+            descriptor = klass.__dict__["type"]
             break
     assert isinstance(descriptor, property)
 
-def test_ryz::modelassociation_has_dependentRoleName():
-    assert hasattr(ryz::ModelAssociation, "dependentRoleName")
+def test_ryz_property_has_isRequired():
+    assert hasattr(ryz_Property, "isRequired")
     descriptor = None
-    for klass in ryz::ModelAssociation.__mro__:
-        if "dependentRoleName" in klass.__dict__:
-            descriptor = klass.__dict__["dependentRoleName"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_ryz::modelassociation_has_principalRoleName():
-    assert hasattr(ryz::ModelAssociation, "principalRoleName")
-    descriptor = None
-    for klass in ryz::ModelAssociation.__mro__:
-        if "principalRoleName" in klass.__dict__:
-            descriptor = klass.__dict__["principalRoleName"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_ryz::modelassociation_has_isRequired():
-    assert hasattr(ryz::ModelAssociation, "isRequired")
-    descriptor = None
-    for klass in ryz::ModelAssociation.__mro__:
+    for klass in ryz_Property.__mro__:
         if "isRequired" in klass.__dict__:
             descriptor = klass.__dict__["isRequired"]
             break
@@ -930,119 +882,129 @@ def test_ryz::modelassociation_has_isRequired():
 
 
 
-def test_ryz::usecasepackage_is_not_abstract():
-    assert not inspect.isabstract(ryz::UseCasePackage)
+def test_ryz_package_is_not_abstract():
+    assert not inspect.isabstract(ryz_Package)
 
 
-def test_ryz::usecasepackage_constructor_exists():
-    assert callable(ryz::UseCasePackage.__init__)
+def test_ryz_package_constructor_exists():
+    assert callable(ryz_Package.__init__)
 
 
-def test_ryz::usecasepackage_constructor_args():
-    sig = inspect.signature(ryz::UseCasePackage.__init__)
+def test_ryz_package_constructor_args():
+    sig = inspect.signature(ryz_Package.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ryz::package_is_not_abstract():
-    assert not inspect.isabstract(ryz::Package)
+def test_ryz_presentationelement_is_not_abstract():
+    assert not inspect.isabstract(ryz_PresentationElement)
 
 
-def test_ryz::package_constructor_exists():
-    assert callable(ryz::Package.__init__)
+def test_ryz_presentationelement_constructor_exists():
+    assert callable(ryz_PresentationElement.__init__)
 
 
-def test_ryz::package_constructor_args():
-    sig = inspect.signature(ryz::Package.__init__)
+def test_ryz_presentationelement_constructor_args():
+    sig = inspect.signature(ryz_PresentationElement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ryz::actor_is_not_abstract():
-    assert not inspect.isabstract(ryz::Actor)
+def test_ryz_tablekey_is_not_abstract():
+    assert not inspect.isabstract(ryz_TableKey)
 
 
-def test_ryz::actor_constructor_exists():
-    assert callable(ryz::Actor.__init__)
+def test_ryz_tablekey_constructor_exists():
+    assert callable(ryz_TableKey.__init__)
 
 
-def test_ryz::actor_constructor_args():
-    sig = inspect.signature(ryz::Actor.__init__)
+def test_ryz_tablekey_constructor_args():
+    sig = inspect.signature(ryz_TableKey.__init__)
     params = list(sig.parameters.keys())
-
-
-
-def test_ryz::parameter_is_not_abstract():
-    assert not inspect.isabstract(ryz::Parameter)
-
-
-def test_ryz::parameter_constructor_exists():
-    assert callable(ryz::Parameter.__init__)
-
-
-def test_ryz::parameter_constructor_args():
-    sig = inspect.signature(ryz::Parameter.__init__)
-    params = list(sig.parameters.keys())
-    assert "isList" in params, "Missing parameter 'isList'"
+    assert "isRequired" in params, "Missing parameter 'isRequired'"
+    assert "isPrimaryKey" in params, "Missing parameter 'isPrimaryKey'"
     assert "type" in params, "Missing parameter 'type'"
-    assert "isNullable" in params, "Missing parameter 'isNullable'"
+    assert "isForeignKey" in params, "Missing parameter 'isForeignKey'"
 
-def test_ryz::parameter_has_isList():
-    assert hasattr(ryz::Parameter, "isList")
+def test_ryz_tablekey_has_isRequired():
+    assert hasattr(ryz_TableKey, "isRequired")
     descriptor = None
-    for klass in ryz::Parameter.__mro__:
-        if "isList" in klass.__dict__:
-            descriptor = klass.__dict__["isList"]
+    for klass in ryz_TableKey.__mro__:
+        if "isRequired" in klass.__dict__:
+            descriptor = klass.__dict__["isRequired"]
             break
     assert isinstance(descriptor, property)
 
-def test_ryz::parameter_has_type():
-    assert hasattr(ryz::Parameter, "type")
+def test_ryz_tablekey_has_isPrimaryKey():
+    assert hasattr(ryz_TableKey, "isPrimaryKey")
     descriptor = None
-    for klass in ryz::Parameter.__mro__:
+    for klass in ryz_TableKey.__mro__:
+        if "isPrimaryKey" in klass.__dict__:
+            descriptor = klass.__dict__["isPrimaryKey"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_ryz_tablekey_has_type():
+    assert hasattr(ryz_TableKey, "type")
+    descriptor = None
+    for klass in ryz_TableKey.__mro__:
         if "type" in klass.__dict__:
             descriptor = klass.__dict__["type"]
             break
     assert isinstance(descriptor, property)
 
-def test_ryz::parameter_has_isNullable():
-    assert hasattr(ryz::Parameter, "isNullable")
+def test_ryz_tablekey_has_isForeignKey():
+    assert hasattr(ryz_TableKey, "isForeignKey")
     descriptor = None
-    for klass in ryz::Parameter.__mro__:
-        if "isNullable" in klass.__dict__:
-            descriptor = klass.__dict__["isNullable"]
+    for klass in ryz_TableKey.__mro__:
+        if "isForeignKey" in klass.__dict__:
+            descriptor = klass.__dict__["isForeignKey"]
             break
     assert isinstance(descriptor, property)
 
 
 
-def test_ryz::actionmethod_is_not_abstract():
-    assert not inspect.isabstract(ryz::ActionMethod)
+def test_ryz_usecasepackage_is_not_abstract():
+    assert not inspect.isabstract(ryz_UseCasePackage)
 
 
-def test_ryz::actionmethod_constructor_exists():
-    assert callable(ryz::ActionMethod.__init__)
+def test_ryz_usecasepackage_constructor_exists():
+    assert callable(ryz_UseCasePackage.__init__)
 
 
-def test_ryz::actionmethod_constructor_args():
-    sig = inspect.signature(ryz::ActionMethod.__init__)
+def test_ryz_usecasepackage_constructor_args():
+    sig = inspect.signature(ryz_UseCasePackage.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_ryz_actionmethod_is_not_abstract():
+    assert not inspect.isabstract(ryz_ActionMethod)
+
+
+def test_ryz_actionmethod_constructor_exists():
+    assert callable(ryz_ActionMethod.__init__)
+
+
+def test_ryz_actionmethod_constructor_args():
+    sig = inspect.signature(ryz_ActionMethod.__init__)
     params = list(sig.parameters.keys())
     assert "returns" in params, "Missing parameter 'returns'"
     assert "httpMethod" in params, "Missing parameter 'httpMethod'"
 
-def test_ryz::actionmethod_has_returns():
-    assert hasattr(ryz::ActionMethod, "returns")
+def test_ryz_actionmethod_has_returns():
+    assert hasattr(ryz_ActionMethod, "returns")
     descriptor = None
-    for klass in ryz::ActionMethod.__mro__:
+    for klass in ryz_ActionMethod.__mro__:
         if "returns" in klass.__dict__:
             descriptor = klass.__dict__["returns"]
             break
     assert isinstance(descriptor, property)
 
-def test_ryz::actionmethod_has_httpMethod():
-    assert hasattr(ryz::ActionMethod, "httpMethod")
+def test_ryz_actionmethod_has_httpMethod():
+    assert hasattr(ryz_ActionMethod, "httpMethod")
     descriptor = None
-    for klass in ryz::ActionMethod.__mro__:
+    for klass in ryz_ActionMethod.__mro__:
         if "httpMethod" in klass.__dict__:
             descriptor = klass.__dict__["httpMethod"]
             break
@@ -1050,283 +1012,171 @@ def test_ryz::actionmethod_has_httpMethod():
 
 
 
-def test_ryz::property_is_not_abstract():
-    assert not inspect.isabstract(ryz::Property)
+def test_ryz_modelassociation_is_not_abstract():
+    assert not inspect.isabstract(ryz_ModelAssociation)
 
 
-def test_ryz::property_constructor_exists():
-    assert callable(ryz::Property.__init__)
+def test_ryz_modelassociation_constructor_exists():
+    assert callable(ryz_ModelAssociation.__init__)
 
 
-def test_ryz::property_constructor_args():
-    sig = inspect.signature(ryz::Property.__init__)
+def test_ryz_modelassociation_constructor_args():
+    sig = inspect.signature(ryz_ModelAssociation.__init__)
     params = list(sig.parameters.keys())
-    assert "type" in params, "Missing parameter 'type'"
+    assert "principalRoleName" in params, "Missing parameter 'principalRoleName'"
+    assert "dependentRoleName" in params, "Missing parameter 'dependentRoleName'"
     assert "isRequired" in params, "Missing parameter 'isRequired'"
+    assert "cardinality" in params, "Missing parameter 'cardinality'"
 
-def test_ryz::property_has_type():
-    assert hasattr(ryz::Property, "type")
+def test_ryz_modelassociation_has_principalRoleName():
+    assert hasattr(ryz_ModelAssociation, "principalRoleName")
     descriptor = None
-    for klass in ryz::Property.__mro__:
-        if "type" in klass.__dict__:
-            descriptor = klass.__dict__["type"]
+    for klass in ryz_ModelAssociation.__mro__:
+        if "principalRoleName" in klass.__dict__:
+            descriptor = klass.__dict__["principalRoleName"]
             break
     assert isinstance(descriptor, property)
 
-def test_ryz::property_has_isRequired():
-    assert hasattr(ryz::Property, "isRequired")
+def test_ryz_modelassociation_has_dependentRoleName():
+    assert hasattr(ryz_ModelAssociation, "dependentRoleName")
     descriptor = None
-    for klass in ryz::Property.__mro__:
+    for klass in ryz_ModelAssociation.__mro__:
+        if "dependentRoleName" in klass.__dict__:
+            descriptor = klass.__dict__["dependentRoleName"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_ryz_modelassociation_has_isRequired():
+    assert hasattr(ryz_ModelAssociation, "isRequired")
+    descriptor = None
+    for klass in ryz_ModelAssociation.__mro__:
         if "isRequired" in klass.__dict__:
             descriptor = klass.__dict__["isRequired"]
             break
     assert isinstance(descriptor, property)
 
+def test_ryz_modelassociation_has_cardinality():
+    assert hasattr(ryz_ModelAssociation, "cardinality")
+    descriptor = None
+    for klass in ryz_ModelAssociation.__mro__:
+        if "cardinality" in klass.__dict__:
+            descriptor = klass.__dict__["cardinality"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_ryz::maincomponentrelation_is_not_abstract():
-    assert not inspect.isabstract(ryz::MainComponentRelation)
+
+def test_ryz_maincomponent_is_not_abstract():
+    assert not inspect.isabstract(ryz_MainComponent)
 
 
-def test_ryz::maincomponentrelation_constructor_exists():
-    assert callable(ryz::MainComponentRelation.__init__)
+def test_ryz_maincomponent_constructor_exists():
+    assert callable(ryz_MainComponent.__init__)
 
 
-def test_ryz::maincomponentrelation_constructor_args():
-    sig = inspect.signature(ryz::MainComponentRelation.__init__)
+def test_ryz_maincomponent_constructor_args():
+    sig = inspect.signature(ryz_MainComponent.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ryz::usecase_is_not_abstract():
-    assert not inspect.isabstract(ryz::UseCase)
+def test_ryz_usecase_is_not_abstract():
+    assert not inspect.isabstract(ryz_UseCase)
 
 
-def test_ryz::usecase_constructor_exists():
-    assert callable(ryz::UseCase.__init__)
+def test_ryz_usecase_constructor_exists():
+    assert callable(ryz_UseCase.__init__)
 
 
-def test_ryz::usecase_constructor_args():
-    sig = inspect.signature(ryz::UseCase.__init__)
+def test_ryz_usecase_constructor_args():
+    sig = inspect.signature(ryz_UseCase.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ryz::tablekey_is_not_abstract():
-    assert not inspect.isabstract(ryz::TableKey)
+def test_ryz_parameter_is_not_abstract():
+    assert not inspect.isabstract(ryz_Parameter)
 
 
-def test_ryz::tablekey_constructor_exists():
-    assert callable(ryz::TableKey.__init__)
+def test_ryz_parameter_constructor_exists():
+    assert callable(ryz_Parameter.__init__)
 
 
-def test_ryz::tablekey_constructor_args():
-    sig = inspect.signature(ryz::TableKey.__init__)
+def test_ryz_parameter_constructor_args():
+    sig = inspect.signature(ryz_Parameter.__init__)
     params = list(sig.parameters.keys())
     assert "type" in params, "Missing parameter 'type'"
-    assert "isForeignKey" in params, "Missing parameter 'isForeignKey'"
-    assert "isPrimaryKey" in params, "Missing parameter 'isPrimaryKey'"
-    assert "isRequired" in params, "Missing parameter 'isRequired'"
+    assert "isNullable" in params, "Missing parameter 'isNullable'"
+    assert "isList" in params, "Missing parameter 'isList'"
 
-def test_ryz::tablekey_has_type():
-    assert hasattr(ryz::TableKey, "type")
+def test_ryz_parameter_has_type():
+    assert hasattr(ryz_Parameter, "type")
     descriptor = None
-    for klass in ryz::TableKey.__mro__:
+    for klass in ryz_Parameter.__mro__:
         if "type" in klass.__dict__:
             descriptor = klass.__dict__["type"]
             break
     assert isinstance(descriptor, property)
 
-def test_ryz::tablekey_has_isForeignKey():
-    assert hasattr(ryz::TableKey, "isForeignKey")
+def test_ryz_parameter_has_isNullable():
+    assert hasattr(ryz_Parameter, "isNullable")
     descriptor = None
-    for klass in ryz::TableKey.__mro__:
-        if "isForeignKey" in klass.__dict__:
-            descriptor = klass.__dict__["isForeignKey"]
+    for klass in ryz_Parameter.__mro__:
+        if "isNullable" in klass.__dict__:
+            descriptor = klass.__dict__["isNullable"]
             break
     assert isinstance(descriptor, property)
 
-def test_ryz::tablekey_has_isPrimaryKey():
-    assert hasattr(ryz::TableKey, "isPrimaryKey")
+def test_ryz_parameter_has_isList():
+    assert hasattr(ryz_Parameter, "isList")
     descriptor = None
-    for klass in ryz::TableKey.__mro__:
-        if "isPrimaryKey" in klass.__dict__:
-            descriptor = klass.__dict__["isPrimaryKey"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_ryz::tablekey_has_isRequired():
-    assert hasattr(ryz::TableKey, "isRequired")
-    descriptor = None
-    for klass in ryz::TableKey.__mro__:
-        if "isRequired" in klass.__dict__:
-            descriptor = klass.__dict__["isRequired"]
+    for klass in ryz_Parameter.__mro__:
+        if "isList" in klass.__dict__:
+            descriptor = klass.__dict__["isList"]
             break
     assert isinstance(descriptor, property)
 
 
 
-def test_ryz::project_is_not_abstract():
-    assert not inspect.isabstract(ryz::Project)
+def test_ryz_maincomponentrelation_is_not_abstract():
+    assert not inspect.isabstract(ryz_MainComponentRelation)
 
 
-def test_ryz::project_constructor_exists():
-    assert callable(ryz::Project.__init__)
+def test_ryz_maincomponentrelation_constructor_exists():
+    assert callable(ryz_MainComponentRelation.__init__)
 
 
-def test_ryz::project_constructor_args():
-    sig = inspect.signature(ryz::Project.__init__)
+def test_ryz_maincomponentrelation_constructor_args():
+    sig = inspect.signature(ryz_MainComponentRelation.__init__)
     params = list(sig.parameters.keys())
 
-def test_cardinality_exists():
-    # Check that the Enumeration exists
-    assert Cardinality is not None
 
-def test_cardinality_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in Cardinality]
-    expected_literals = [
-        "ONE_TO_ONE",
-        "MANY_TO_MANY",
-        "ONE_TO_MANY",
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in Cardinality"
 
-def test_inputdatatype_exists():
-    # Check that the Enumeration exists
-    assert InputDataType is not None
+def test_ryz_actor_is_not_abstract():
+    assert not inspect.isabstract(ryz_Actor)
 
-def test_inputdatatype_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in InputDataType]
-    expected_literals = [
-        "DATE",
-        "TIME",
-        "PASSWORD",
-        "TEXT",
-        "NUMBER",
-        "TEL",
-        "EMAIL",
-        "FILE",
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in InputDataType"
 
-def test_actionmethodreturntype_exists():
-    # Check that the Enumeration exists
-    assert ActionMethodReturnType is not None
+def test_ryz_actor_constructor_exists():
+    assert callable(ryz_Actor.__init__)
 
-def test_actionmethodreturntype_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in ActionMethodReturnType]
-    expected_literals = [
-        "Content",
-        "PartialView",
-        "Json",
-        "RedirectToAction",
-        "View",
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in ActionMethodReturnType"
 
-def test_buttontype_exists():
-    # Check that the Enumeration exists
-    assert ButtonType is not None
+def test_ryz_actor_constructor_args():
+    sig = inspect.signature(ryz_Actor.__init__)
+    params = list(sig.parameters.keys())
 
-def test_buttontype_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in ButtonType]
-    expected_literals = [
-        "RESET",
-        "SUBMIT",
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in ButtonType"
 
-def test_requesttype_exists():
-    # Check that the Enumeration exists
-    assert RequestType is not None
 
-def test_requesttype_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in RequestType]
-    expected_literals = [
-        "REGULAR_HTTP",
-        "AJAX",
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in RequestType"
+def test_ryz_project_is_not_abstract():
+    assert not inspect.isabstract(ryz_Project)
 
-def test_modeloperation_exists():
-    # Check that the Enumeration exists
-    assert ModelOperation is not None
 
-def test_modeloperation_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in ModelOperation]
-    expected_literals = [
-        "UPDATE",
-        "DELETE",
-        "READ",
-        "CREATE",
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in ModelOperation"
+def test_ryz_project_constructor_exists():
+    assert callable(ryz_Project.__init__)
 
-def test_httpmethod_exists():
-    # Check that the Enumeration exists
-    assert HttpMethod is not None
 
-def test_httpmethod_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in HttpMethod]
-    expected_literals = [
-        "POST",
-        "GET",
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in HttpMethod"
-
-def test_actionmethodparametertype_exists():
-    # Check that the Enumeration exists
-    assert ActionMethodParameterType is not None
-
-def test_actionmethodparametertype_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in ActionMethodParameterType]
-    expected_literals = [
-        "STRING",
-        "INTEGER",
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in ActionMethodParameterType"
-
-def test_modelpropertytype_exists():
-    # Check that the Enumeration exists
-    assert ModelPropertyType is not None
-
-def test_modelpropertytype_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in ModelPropertyType]
-    expected_literals = [
-        "BOOLEAN",
-        "DOUBLE",
-        "INTEGER",
-        "STRING",
-        "DATETIME",
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in ModelPropertyType"
+def test_ryz_project_constructor_args():
+    sig = inspect.signature(ryz_Project.__init__)
+    params = list(sig.parameters.keys())
 
 def test_modelcardinality_exists():
     # Check that the Enumeration exists
@@ -1351,13 +1201,163 @@ def test_multiplechoicetype_has_all_literals():
     # Collect the names of literals in this Enumeration
     enum_literals = [lit.name for lit in MultipleChoiceType]
     expected_literals = [
-        "CHECKBOX_GROUP",
         "RADIO_BUTTON",
         "DROPDOWN_LIST",
+        "CHECKBOX_GROUP",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
         assert lit_name in enum_literals, f"Literal '' missing in MultipleChoiceType"
+
+def test_cardinality_exists():
+    # Check that the Enumeration exists
+    assert Cardinality is not None
+
+def test_cardinality_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in Cardinality]
+    expected_literals = [
+        "MANY_TO_MANY",
+        "ONE_TO_ONE",
+        "ONE_TO_MANY",
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in Cardinality"
+
+def test_requesttype_exists():
+    # Check that the Enumeration exists
+    assert RequestType is not None
+
+def test_requesttype_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in RequestType]
+    expected_literals = [
+        "REGULAR_HTTP",
+        "AJAX",
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in RequestType"
+
+def test_buttontype_exists():
+    # Check that the Enumeration exists
+    assert ButtonType is not None
+
+def test_buttontype_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in ButtonType]
+    expected_literals = [
+        "SUBMIT",
+        "RESET",
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in ButtonType"
+
+def test_httpmethod_exists():
+    # Check that the Enumeration exists
+    assert HttpMethod is not None
+
+def test_httpmethod_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in HttpMethod]
+    expected_literals = [
+        "POST",
+        "GET",
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in HttpMethod"
+
+def test_inputdatatype_exists():
+    # Check that the Enumeration exists
+    assert InputDataType is not None
+
+def test_inputdatatype_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in InputDataType]
+    expected_literals = [
+        "EMAIL",
+        "NUMBER",
+        "TIME",
+        "TEXT",
+        "DATE",
+        "FILE",
+        "TEL",
+        "PASSWORD",
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in InputDataType"
+
+def test_actionmethodreturntype_exists():
+    # Check that the Enumeration exists
+    assert ActionMethodReturnType is not None
+
+def test_actionmethodreturntype_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in ActionMethodReturnType]
+    expected_literals = [
+        "View",
+        "Json",
+        "Content",
+        "RedirectToAction",
+        "PartialView",
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in ActionMethodReturnType"
+
+def test_modelpropertytype_exists():
+    # Check that the Enumeration exists
+    assert ModelPropertyType is not None
+
+def test_modelpropertytype_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in ModelPropertyType]
+    expected_literals = [
+        "STRING",
+        "DOUBLE",
+        "BOOLEAN",
+        "DATETIME",
+        "INTEGER",
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in ModelPropertyType"
+
+def test_actionmethodparametertype_exists():
+    # Check that the Enumeration exists
+    assert ActionMethodParameterType is not None
+
+def test_actionmethodparametertype_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in ActionMethodParameterType]
+    expected_literals = [
+        "INTEGER",
+        "STRING",
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in ActionMethodParameterType"
+
+def test_modeloperation_exists():
+    # Check that the Enumeration exists
+    assert ModelOperation is not None
+
+def test_modeloperation_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in ModelOperation]
+    expected_literals = [
+        "UPDATE",
+        "CREATE",
+        "READ",
+        "DELETE",
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in ModelOperation"
 
 
 # =============================================================================
@@ -1371,18 +1371,18 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-ryz::Header_strategy = st.builds(
-    ryz::Header,
-    labelText=
-        safe_text,
+ryz_Header_strategy = st.builds(
+    ryz_Header,
     name=
+        safe_text,
+    labelText=
         safe_text
 )
-ryz::PresentationFormElementToPropertyKey_strategy = st.builds(
-    ryz::PresentationFormElementToPropertyKey,
+ryz_PresentationFormElementToPropertyKey_strategy = st.builds(
+    ryz_PresentationFormElementToPropertyKey,
 )
-ryz::Choice_strategy = st.builds(
-    ryz::Choice,
+ryz_Choice_strategy = st.builds(
+    ryz_Choice,
     value=
         safe_text,
     selected=
@@ -1393,78 +1393,78 @@ ryz::Choice_strategy = st.builds(
 PresentationFormElement_strategy = st.builds(
     PresentationFormElement,
 )
-ryz::Button_strategy = st.builds(
-    ryz::Button,
+ryz_Button_strategy = st.builds(
+    ryz_Button,
     buttonType=
         safe_text
 )
-ryz::Input_strategy = st.builds(
-    ryz::Input,
+ryz_Input_strategy = st.builds(
+    ryz_Input,
     isReadOnly=
         st.booleans(),
-    inputDataType=
-        safe_text,
     isHidden=
-        st.booleans()
+        st.booleans(),
+    inputDataType=
+        safe_text
 )
-ryz::MultipleChoice_strategy = st.builds(
-    ryz::MultipleChoice,
+ryz_MultipleChoice_strategy = st.builds(
+    ryz_MultipleChoice,
     multipleChoiceType=
         safe_text,
     multipleSelection=
         st.booleans()
 )
-ryz::PresentationFormElement_strategy = st.builds(
-    ryz::PresentationFormElement,
+ryz_PresentationFormElement_strategy = st.builds(
+    ryz_PresentationFormElement,
     labelText=
         safe_text
 )
 PresentationElement_strategy = st.builds(
     PresentationElement,
 )
-ryz::Table_strategy = st.builds(
-    ryz::Table,
+ryz_Table_strategy = st.builds(
+    ryz_Table,
 )
-ryz::Link_strategy = st.builds(
-    ryz::Link,
+ryz_Link_strategy = st.builds(
+    ryz_Link,
     text=
         safe_text
 )
-ryz::PresentationForm_strategy = st.builds(
-    ryz::PresentationForm,
+ryz_PresentationForm_strategy = st.builds(
+    ryz_PresentationForm,
 )
 HelperForSendingRequest_strategy = st.builds(
     HelperForSendingRequest,
 )
-ryz::Form_strategy = st.builds(
-    ryz::Form,
+ryz_Form_strategy = st.builds(
+    ryz_Form,
 )
-ryz::ActionLink_strategy = st.builds(
-    ryz::ActionLink,
+ryz_ActionLink_strategy = st.builds(
+    ryz_ActionLink,
 )
 MainComponentRelation_strategy = st.builds(
     MainComponentRelation,
 )
-ryz::ViewToModelRelation_strategy = st.builds(
-    ryz::ViewToModelRelation,
+ryz_ViewToModelRelation_strategy = st.builds(
+    ryz_ViewToModelRelation,
     modelcardinality=
         safe_text
 )
-ryz::FormElementToPropertyKeyRelation_strategy = st.builds(
-    ryz::FormElementToPropertyKeyRelation,
+ryz_FormElementToPropertyKeyRelation_strategy = st.builds(
+    ryz_FormElementToPropertyKeyRelation,
 )
-ryz::ControllerToViewRelation_strategy = st.builds(
-    ryz::ControllerToViewRelation,
-)
-ryz::ControllerToModelRelation_strategy = st.builds(
-    ryz::ControllerToModelRelation,
-    modelCardinality=
-        safe_text,
+ryz_ControllerToModelRelation_strategy = st.builds(
+    ryz_ControllerToModelRelation,
     modelOperation=
+        safe_text,
+    modelCardinality=
         safe_text
 )
-ryz::ViewToControllerRelation_strategy = st.builds(
-    ryz::ViewToControllerRelation,
+ryz_ControllerToViewRelation_strategy = st.builds(
+    ryz_ControllerToViewRelation,
+)
+ryz_ViewToControllerRelation_strategy = st.builds(
+    ryz_ViewToControllerRelation,
 )
 MainComponent_strategy = st.builds(
     MainComponent,
@@ -1472,203 +1472,188 @@ MainComponent_strategy = st.builds(
 AbstractView_strategy = st.builds(
     AbstractView,
 )
-ryz::View_strategy = st.builds(
-    ryz::View,
+ryz_Layout_strategy = st.builds(
+    ryz_Layout,
 )
-ryz::Layout_strategy = st.builds(
-    ryz::Layout,
+ryz_View_strategy = st.builds(
+    ryz_View,
 )
-ryz::HelperForSendingRequest_strategy = st.builds(
-    ryz::HelperForSendingRequest,
+ryz_HelperForSendingRequest_strategy = st.builds(
+    ryz_HelperForSendingRequest,
+    httpMethod=
+        safe_text,
     requestType=
         safe_text,
     text=
-        safe_text,
-    httpMethod=
         safe_text
 )
-ryz::Partial_strategy = st.builds(
-    ryz::Partial,
+ryz_Partial_strategy = st.builds(
+    ryz_Partial,
 )
-ryz::Controller_strategy = st.builds(
-    ryz::Controller,
+ryz_Controller_strategy = st.builds(
+    ryz_Controller,
 )
-ryz::AbstractView_strategy = st.builds(
-    ryz::AbstractView,
+ryz_AbstractView_strategy = st.builds(
+    ryz_AbstractView,
 )
-ryz::Model_strategy = st.builds(
-    ryz::Model,
+ryz_Model_strategy = st.builds(
+    ryz_Model,
     isAbstract=
         st.booleans()
 )
 ComponentPackage_strategy = st.builds(
     ComponentPackage,
 )
-ryz::ViewPackage_strategy = st.builds(
-    ryz::ViewPackage,
+ryz_ControllerPackage_strategy = st.builds(
+    ryz_ControllerPackage,
 )
-ryz::ControllerPackage_strategy = st.builds(
-    ryz::ControllerPackage,
+ryz_ViewPackage_strategy = st.builds(
+    ryz_ViewPackage,
 )
-ryz::ModelPackage_strategy = st.builds(
-    ryz::ModelPackage,
+ryz_ModelPackage_strategy = st.builds(
+    ryz_ModelPackage,
 )
-ryz::NamedElement_strategy = st.builds(
-    ryz::NamedElement,
+ryz_NamedElement_strategy = st.builds(
+    ryz_NamedElement,
     name=
         safe_text
 )
 Package_strategy = st.builds(
     Package,
 )
-ryz::MvcPackage_strategy = st.builds(
-    ryz::MvcPackage,
+ryz_MvcPackage_strategy = st.builds(
+    ryz_MvcPackage,
 )
-ryz::UseCaseActorPackage_strategy = st.builds(
-    ryz::UseCaseActorPackage,
+ryz_UseCaseActorPackage_strategy = st.builds(
+    ryz_UseCaseActorPackage,
 )
-ryz::ComponentPackage_strategy = st.builds(
-    ryz::ComponentPackage,
+ryz_ComponentPackage_strategy = st.builds(
+    ryz_ComponentPackage,
 )
 NamedElement_strategy = st.builds(
     NamedElement,
 )
-ryz::MainComponent_strategy = st.builds(
-    ryz::MainComponent,
-)
-ryz::PresentationElement_strategy = st.builds(
-    ryz::PresentationElement,
-)
-ryz::ModelAssociation_strategy = st.builds(
-    ryz::ModelAssociation,
-    cardinality=
-        safe_text,
-    dependentRoleName=
-        safe_text,
-    principalRoleName=
+ryz_Property_strategy = st.builds(
+    ryz_Property,
+    type=
         safe_text,
     isRequired=
         st.booleans()
 )
-ryz::UseCasePackage_strategy = st.builds(
-    ryz::UseCasePackage,
+ryz_Package_strategy = st.builds(
+    ryz_Package,
 )
-ryz::Package_strategy = st.builds(
-    ryz::Package,
+ryz_PresentationElement_strategy = st.builds(
+    ryz_PresentationElement,
 )
-ryz::Actor_strategy = st.builds(
-    ryz::Actor,
-)
-ryz::Parameter_strategy = st.builds(
-    ryz::Parameter,
-    isList=
+ryz_TableKey_strategy = st.builds(
+    ryz_TableKey,
+    isRequired=
+        st.booleans(),
+    isPrimaryKey=
         st.booleans(),
     type=
         safe_text,
-    isNullable=
+    isForeignKey=
         st.booleans()
 )
-ryz::ActionMethod_strategy = st.builds(
-    ryz::ActionMethod,
+ryz_UseCasePackage_strategy = st.builds(
+    ryz_UseCasePackage,
+)
+ryz_ActionMethod_strategy = st.builds(
+    ryz_ActionMethod,
     returns=
         safe_text,
     httpMethod=
         safe_text
 )
-ryz::Property_strategy = st.builds(
-    ryz::Property,
-    type=
+ryz_ModelAssociation_strategy = st.builds(
+    ryz_ModelAssociation,
+    principalRoleName=
+        safe_text,
+    dependentRoleName=
         safe_text,
     isRequired=
-        st.booleans()
+        st.booleans(),
+    cardinality=
+        safe_text
 )
-ryz::MainComponentRelation_strategy = st.builds(
-    ryz::MainComponentRelation,
+ryz_MainComponent_strategy = st.builds(
+    ryz_MainComponent,
 )
-ryz::UseCase_strategy = st.builds(
-    ryz::UseCase,
+ryz_UseCase_strategy = st.builds(
+    ryz_UseCase,
 )
-ryz::TableKey_strategy = st.builds(
-    ryz::TableKey,
+ryz_Parameter_strategy = st.builds(
+    ryz_Parameter,
     type=
         safe_text,
-    isForeignKey=
+    isNullable=
         st.booleans(),
-    isPrimaryKey=
-        st.booleans(),
-    isRequired=
+    isList=
         st.booleans()
 )
-ryz::Project_strategy = st.builds(
-    ryz::Project,
+ryz_MainComponentRelation_strategy = st.builds(
+    ryz_MainComponentRelation,
+)
+ryz_Actor_strategy = st.builds(
+    ryz_Actor,
+)
+ryz_Project_strategy = st.builds(
+    ryz_Project,
 )
 
-@given(instance=ryz::Header_strategy)
+@given(instance=ryz_Header_strategy)
 @settings(max_examples=50)
-def test_ryz::header_instantiation(instance):
-    assert isinstance(instance, ryz::Header)
-
-@given(instance=ryz::Header_strategy)
-def test_ryz::header_labelText_type(instance):
-    assert isinstance(instance.labelText, str)
+def test_ryz_header_instantiation(instance):
+    assert isinstance(instance, ryz_Header)
 
 
-@given(instance=ryz::Header_strategy)
-def test_ryz::header_labelText_setter(instance):
-    original = instance.labelText
-    instance.labelText = original
-    assert instance.labelText == original
 
-@given(instance=ryz::Header_strategy)
-def test_ryz::header_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=ryz::Header_strategy)
-def test_ryz::header_name_setter(instance):
+@given(instance=ryz_Header_strategy)
+def test_ryz_header_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=ryz::PresentationFormElementToPropertyKey_strategy)
+
+
+@given(instance=ryz_Header_strategy)
+def test_ryz_header_labelText_setter(instance):
+    original = instance.labelText
+    instance.labelText = original
+    assert instance.labelText == original
+
+@given(instance=ryz_PresentationFormElementToPropertyKey_strategy)
 @settings(max_examples=50)
-def test_ryz::presentationformelementtopropertykey_instantiation(instance):
-    assert isinstance(instance, ryz::PresentationFormElementToPropertyKey)
+def test_ryz_presentationformelementtopropertykey_instantiation(instance):
+    assert isinstance(instance, ryz_PresentationFormElementToPropertyKey)
 
-@given(instance=ryz::Choice_strategy)
+@given(instance=ryz_Choice_strategy)
 @settings(max_examples=50)
-def test_ryz::choice_instantiation(instance):
-    assert isinstance(instance, ryz::Choice)
-
-@given(instance=ryz::Choice_strategy)
-def test_ryz::choice_value_type(instance):
-    assert isinstance(instance.value, str)
+def test_ryz_choice_instantiation(instance):
+    assert isinstance(instance, ryz_Choice)
 
 
-@given(instance=ryz::Choice_strategy)
-def test_ryz::choice_value_setter(instance):
+
+@given(instance=ryz_Choice_strategy)
+def test_ryz_choice_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
 
-@given(instance=ryz::Choice_strategy)
-def test_ryz::choice_selected_type(instance):
-    assert isinstance(instance.selected, str)
 
 
-@given(instance=ryz::Choice_strategy)
-def test_ryz::choice_selected_setter(instance):
+@given(instance=ryz_Choice_strategy)
+def test_ryz_choice_selected_setter(instance):
     original = instance.selected
     instance.selected = original
     assert instance.selected == original
 
-@given(instance=ryz::Choice_strategy)
-def test_ryz::choice_text_type(instance):
-    assert isinstance(instance.text, str)
 
 
-@given(instance=ryz::Choice_strategy)
-def test_ryz::choice_text_setter(instance):
+@given(instance=ryz_Choice_strategy)
+def test_ryz_choice_text_setter(instance):
     original = instance.text
     instance.text = original
     assert instance.text == original
@@ -1678,99 +1663,78 @@ def test_ryz::choice_text_setter(instance):
 def test_presentationformelement_instantiation(instance):
     assert isinstance(instance, PresentationFormElement)
 
-@given(instance=ryz::Button_strategy)
+@given(instance=ryz_Button_strategy)
 @settings(max_examples=50)
-def test_ryz::button_instantiation(instance):
-    assert isinstance(instance, ryz::Button)
-
-@given(instance=ryz::Button_strategy)
-def test_ryz::button_buttonType_type(instance):
-    assert isinstance(instance.buttonType, str)
+def test_ryz_button_instantiation(instance):
+    assert isinstance(instance, ryz_Button)
 
 
-@given(instance=ryz::Button_strategy)
-def test_ryz::button_buttonType_setter(instance):
+
+@given(instance=ryz_Button_strategy)
+def test_ryz_button_buttonType_setter(instance):
     original = instance.buttonType
     instance.buttonType = original
     assert instance.buttonType == original
 
-@given(instance=ryz::Input_strategy)
+@given(instance=ryz_Input_strategy)
 @settings(max_examples=50)
-def test_ryz::input_instantiation(instance):
-    assert isinstance(instance, ryz::Input)
-
-@given(instance=ryz::Input_strategy)
-def test_ryz::input_isReadOnly_type(instance):
-    assert isinstance(instance.isReadOnly, bool)
+def test_ryz_input_instantiation(instance):
+    assert isinstance(instance, ryz_Input)
 
 
-@given(instance=ryz::Input_strategy)
-def test_ryz::input_isReadOnly_setter(instance):
+
+@given(instance=ryz_Input_strategy)
+def test_ryz_input_isReadOnly_setter(instance):
     original = instance.isReadOnly
     instance.isReadOnly = original
     assert instance.isReadOnly == original
 
-@given(instance=ryz::Input_strategy)
-def test_ryz::input_inputDataType_type(instance):
-    assert isinstance(instance.inputDataType, str)
 
 
-@given(instance=ryz::Input_strategy)
-def test_ryz::input_inputDataType_setter(instance):
-    original = instance.inputDataType
-    instance.inputDataType = original
-    assert instance.inputDataType == original
-
-@given(instance=ryz::Input_strategy)
-def test_ryz::input_isHidden_type(instance):
-    assert isinstance(instance.isHidden, bool)
-
-
-@given(instance=ryz::Input_strategy)
-def test_ryz::input_isHidden_setter(instance):
+@given(instance=ryz_Input_strategy)
+def test_ryz_input_isHidden_setter(instance):
     original = instance.isHidden
     instance.isHidden = original
     assert instance.isHidden == original
 
-@given(instance=ryz::MultipleChoice_strategy)
+
+
+@given(instance=ryz_Input_strategy)
+def test_ryz_input_inputDataType_setter(instance):
+    original = instance.inputDataType
+    instance.inputDataType = original
+    assert instance.inputDataType == original
+
+@given(instance=ryz_MultipleChoice_strategy)
 @settings(max_examples=50)
-def test_ryz::multiplechoice_instantiation(instance):
-    assert isinstance(instance, ryz::MultipleChoice)
-
-@given(instance=ryz::MultipleChoice_strategy)
-def test_ryz::multiplechoice_multipleChoiceType_type(instance):
-    assert isinstance(instance.multipleChoiceType, str)
+def test_ryz_multiplechoice_instantiation(instance):
+    assert isinstance(instance, ryz_MultipleChoice)
 
 
-@given(instance=ryz::MultipleChoice_strategy)
-def test_ryz::multiplechoice_multipleChoiceType_setter(instance):
+
+@given(instance=ryz_MultipleChoice_strategy)
+def test_ryz_multiplechoice_multipleChoiceType_setter(instance):
     original = instance.multipleChoiceType
     instance.multipleChoiceType = original
     assert instance.multipleChoiceType == original
 
-@given(instance=ryz::MultipleChoice_strategy)
-def test_ryz::multiplechoice_multipleSelection_type(instance):
-    assert isinstance(instance.multipleSelection, bool)
 
 
-@given(instance=ryz::MultipleChoice_strategy)
-def test_ryz::multiplechoice_multipleSelection_setter(instance):
+@given(instance=ryz_MultipleChoice_strategy)
+def test_ryz_multiplechoice_multipleSelection_setter(instance):
     original = instance.multipleSelection
     instance.multipleSelection = original
     assert instance.multipleSelection == original
 
-@given(instance=ryz::PresentationFormElement_strategy)
+@given(instance=ryz_PresentationFormElement_strategy)
 @settings(max_examples=50)
-def test_ryz::presentationformelement_instantiation(instance):
-    assert isinstance(instance, ryz::PresentationFormElement)
-
-@given(instance=ryz::PresentationFormElement_strategy)
-def test_ryz::presentationformelement_labelText_type(instance):
-    assert isinstance(instance.labelText, str)
+def test_ryz_presentationformelement_instantiation(instance):
+    assert isinstance(instance, ryz_PresentationFormElement)
 
 
-@given(instance=ryz::PresentationFormElement_strategy)
-def test_ryz::presentationformelement_labelText_setter(instance):
+
+@given(instance=ryz_PresentationFormElement_strategy)
+def test_ryz_presentationformelement_labelText_setter(instance):
     original = instance.labelText
     instance.labelText = original
     assert instance.labelText == original
@@ -1780,109 +1744,97 @@ def test_ryz::presentationformelement_labelText_setter(instance):
 def test_presentationelement_instantiation(instance):
     assert isinstance(instance, PresentationElement)
 
-@given(instance=ryz::Table_strategy)
+@given(instance=ryz_Table_strategy)
 @settings(max_examples=50)
-def test_ryz::table_instantiation(instance):
-    assert isinstance(instance, ryz::Table)
+def test_ryz_table_instantiation(instance):
+    assert isinstance(instance, ryz_Table)
 
-@given(instance=ryz::Link_strategy)
+@given(instance=ryz_Link_strategy)
 @settings(max_examples=50)
-def test_ryz::link_instantiation(instance):
-    assert isinstance(instance, ryz::Link)
-
-@given(instance=ryz::Link_strategy)
-def test_ryz::link_text_type(instance):
-    assert isinstance(instance.text, str)
+def test_ryz_link_instantiation(instance):
+    assert isinstance(instance, ryz_Link)
 
 
-@given(instance=ryz::Link_strategy)
-def test_ryz::link_text_setter(instance):
+
+@given(instance=ryz_Link_strategy)
+def test_ryz_link_text_setter(instance):
     original = instance.text
     instance.text = original
     assert instance.text == original
 
-@given(instance=ryz::PresentationForm_strategy)
+@given(instance=ryz_PresentationForm_strategy)
 @settings(max_examples=50)
-def test_ryz::presentationform_instantiation(instance):
-    assert isinstance(instance, ryz::PresentationForm)
+def test_ryz_presentationform_instantiation(instance):
+    assert isinstance(instance, ryz_PresentationForm)
 
 @given(instance=HelperForSendingRequest_strategy)
 @settings(max_examples=50)
 def test_helperforsendingrequest_instantiation(instance):
     assert isinstance(instance, HelperForSendingRequest)
 
-@given(instance=ryz::Form_strategy)
+@given(instance=ryz_Form_strategy)
 @settings(max_examples=50)
-def test_ryz::form_instantiation(instance):
-    assert isinstance(instance, ryz::Form)
+def test_ryz_form_instantiation(instance):
+    assert isinstance(instance, ryz_Form)
 
-@given(instance=ryz::ActionLink_strategy)
+@given(instance=ryz_ActionLink_strategy)
 @settings(max_examples=50)
-def test_ryz::actionlink_instantiation(instance):
-    assert isinstance(instance, ryz::ActionLink)
+def test_ryz_actionlink_instantiation(instance):
+    assert isinstance(instance, ryz_ActionLink)
 
 @given(instance=MainComponentRelation_strategy)
 @settings(max_examples=50)
 def test_maincomponentrelation_instantiation(instance):
     assert isinstance(instance, MainComponentRelation)
 
-@given(instance=ryz::ViewToModelRelation_strategy)
+@given(instance=ryz_ViewToModelRelation_strategy)
 @settings(max_examples=50)
-def test_ryz::viewtomodelrelation_instantiation(instance):
-    assert isinstance(instance, ryz::ViewToModelRelation)
-
-@given(instance=ryz::ViewToModelRelation_strategy)
-def test_ryz::viewtomodelrelation_modelcardinality_type(instance):
-    assert isinstance(instance.modelcardinality, str)
+def test_ryz_viewtomodelrelation_instantiation(instance):
+    assert isinstance(instance, ryz_ViewToModelRelation)
 
 
-@given(instance=ryz::ViewToModelRelation_strategy)
-def test_ryz::viewtomodelrelation_modelcardinality_setter(instance):
+
+@given(instance=ryz_ViewToModelRelation_strategy)
+def test_ryz_viewtomodelrelation_modelcardinality_setter(instance):
     original = instance.modelcardinality
     instance.modelcardinality = original
     assert instance.modelcardinality == original
 
-@given(instance=ryz::FormElementToPropertyKeyRelation_strategy)
+@given(instance=ryz_FormElementToPropertyKeyRelation_strategy)
 @settings(max_examples=50)
-def test_ryz::formelementtopropertykeyrelation_instantiation(instance):
-    assert isinstance(instance, ryz::FormElementToPropertyKeyRelation)
+def test_ryz_formelementtopropertykeyrelation_instantiation(instance):
+    assert isinstance(instance, ryz_FormElementToPropertyKeyRelation)
 
-@given(instance=ryz::ControllerToViewRelation_strategy)
+@given(instance=ryz_ControllerToModelRelation_strategy)
 @settings(max_examples=50)
-def test_ryz::controllertoviewrelation_instantiation(instance):
-    assert isinstance(instance, ryz::ControllerToViewRelation)
-
-@given(instance=ryz::ControllerToModelRelation_strategy)
-@settings(max_examples=50)
-def test_ryz::controllertomodelrelation_instantiation(instance):
-    assert isinstance(instance, ryz::ControllerToModelRelation)
-
-@given(instance=ryz::ControllerToModelRelation_strategy)
-def test_ryz::controllertomodelrelation_modelCardinality_type(instance):
-    assert isinstance(instance.modelCardinality, str)
+def test_ryz_controllertomodelrelation_instantiation(instance):
+    assert isinstance(instance, ryz_ControllerToModelRelation)
 
 
-@given(instance=ryz::ControllerToModelRelation_strategy)
-def test_ryz::controllertomodelrelation_modelCardinality_setter(instance):
-    original = instance.modelCardinality
-    instance.modelCardinality = original
-    assert instance.modelCardinality == original
 
-@given(instance=ryz::ControllerToModelRelation_strategy)
-def test_ryz::controllertomodelrelation_modelOperation_type(instance):
-    assert isinstance(instance.modelOperation, str)
-
-
-@given(instance=ryz::ControllerToModelRelation_strategy)
-def test_ryz::controllertomodelrelation_modelOperation_setter(instance):
+@given(instance=ryz_ControllerToModelRelation_strategy)
+def test_ryz_controllertomodelrelation_modelOperation_setter(instance):
     original = instance.modelOperation
     instance.modelOperation = original
     assert instance.modelOperation == original
 
-@given(instance=ryz::ViewToControllerRelation_strategy)
+
+
+@given(instance=ryz_ControllerToModelRelation_strategy)
+def test_ryz_controllertomodelrelation_modelCardinality_setter(instance):
+    original = instance.modelCardinality
+    instance.modelCardinality = original
+    assert instance.modelCardinality == original
+
+@given(instance=ryz_ControllerToViewRelation_strategy)
 @settings(max_examples=50)
-def test_ryz::viewtocontrollerrelation_instantiation(instance):
-    assert isinstance(instance, ryz::ViewToControllerRelation)
+def test_ryz_controllertoviewrelation_instantiation(instance):
+    assert isinstance(instance, ryz_ControllerToViewRelation)
+
+@given(instance=ryz_ViewToControllerRelation_strategy)
+@settings(max_examples=50)
+def test_ryz_viewtocontrollerrelation_instantiation(instance):
+    assert isinstance(instance, ryz_ViewToControllerRelation)
 
 @given(instance=MainComponent_strategy)
 @settings(max_examples=50)
@@ -1894,81 +1846,69 @@ def test_maincomponent_instantiation(instance):
 def test_abstractview_instantiation(instance):
     assert isinstance(instance, AbstractView)
 
-@given(instance=ryz::View_strategy)
+@given(instance=ryz_Layout_strategy)
 @settings(max_examples=50)
-def test_ryz::view_instantiation(instance):
-    assert isinstance(instance, ryz::View)
+def test_ryz_layout_instantiation(instance):
+    assert isinstance(instance, ryz_Layout)
 
-@given(instance=ryz::Layout_strategy)
+@given(instance=ryz_View_strategy)
 @settings(max_examples=50)
-def test_ryz::layout_instantiation(instance):
-    assert isinstance(instance, ryz::Layout)
+def test_ryz_view_instantiation(instance):
+    assert isinstance(instance, ryz_View)
 
-@given(instance=ryz::HelperForSendingRequest_strategy)
+@given(instance=ryz_HelperForSendingRequest_strategy)
 @settings(max_examples=50)
-def test_ryz::helperforsendingrequest_instantiation(instance):
-    assert isinstance(instance, ryz::HelperForSendingRequest)
-
-@given(instance=ryz::HelperForSendingRequest_strategy)
-def test_ryz::helperforsendingrequest_requestType_type(instance):
-    assert isinstance(instance.requestType, str)
+def test_ryz_helperforsendingrequest_instantiation(instance):
+    assert isinstance(instance, ryz_HelperForSendingRequest)
 
 
-@given(instance=ryz::HelperForSendingRequest_strategy)
-def test_ryz::helperforsendingrequest_requestType_setter(instance):
-    original = instance.requestType
-    instance.requestType = original
-    assert instance.requestType == original
 
-@given(instance=ryz::HelperForSendingRequest_strategy)
-def test_ryz::helperforsendingrequest_text_type(instance):
-    assert isinstance(instance.text, str)
-
-
-@given(instance=ryz::HelperForSendingRequest_strategy)
-def test_ryz::helperforsendingrequest_text_setter(instance):
-    original = instance.text
-    instance.text = original
-    assert instance.text == original
-
-@given(instance=ryz::HelperForSendingRequest_strategy)
-def test_ryz::helperforsendingrequest_httpMethod_type(instance):
-    assert isinstance(instance.httpMethod, str)
-
-
-@given(instance=ryz::HelperForSendingRequest_strategy)
-def test_ryz::helperforsendingrequest_httpMethod_setter(instance):
+@given(instance=ryz_HelperForSendingRequest_strategy)
+def test_ryz_helperforsendingrequest_httpMethod_setter(instance):
     original = instance.httpMethod
     instance.httpMethod = original
     assert instance.httpMethod == original
 
-@given(instance=ryz::Partial_strategy)
+
+
+@given(instance=ryz_HelperForSendingRequest_strategy)
+def test_ryz_helperforsendingrequest_requestType_setter(instance):
+    original = instance.requestType
+    instance.requestType = original
+    assert instance.requestType == original
+
+
+
+@given(instance=ryz_HelperForSendingRequest_strategy)
+def test_ryz_helperforsendingrequest_text_setter(instance):
+    original = instance.text
+    instance.text = original
+    assert instance.text == original
+
+@given(instance=ryz_Partial_strategy)
 @settings(max_examples=50)
-def test_ryz::partial_instantiation(instance):
-    assert isinstance(instance, ryz::Partial)
+def test_ryz_partial_instantiation(instance):
+    assert isinstance(instance, ryz_Partial)
 
-@given(instance=ryz::Controller_strategy)
+@given(instance=ryz_Controller_strategy)
 @settings(max_examples=50)
-def test_ryz::controller_instantiation(instance):
-    assert isinstance(instance, ryz::Controller)
+def test_ryz_controller_instantiation(instance):
+    assert isinstance(instance, ryz_Controller)
 
-@given(instance=ryz::AbstractView_strategy)
+@given(instance=ryz_AbstractView_strategy)
 @settings(max_examples=50)
-def test_ryz::abstractview_instantiation(instance):
-    assert isinstance(instance, ryz::AbstractView)
+def test_ryz_abstractview_instantiation(instance):
+    assert isinstance(instance, ryz_AbstractView)
 
-@given(instance=ryz::Model_strategy)
+@given(instance=ryz_Model_strategy)
 @settings(max_examples=50)
-def test_ryz::model_instantiation(instance):
-    assert isinstance(instance, ryz::Model)
-
-@given(instance=ryz::Model_strategy)
-def test_ryz::model_isAbstract_type(instance):
-    assert isinstance(instance.isAbstract, bool)
+def test_ryz_model_instantiation(instance):
+    assert isinstance(instance, ryz_Model)
 
 
-@given(instance=ryz::Model_strategy)
-def test_ryz::model_isAbstract_setter(instance):
+
+@given(instance=ryz_Model_strategy)
+def test_ryz_model_isAbstract_setter(instance):
     original = instance.isAbstract
     instance.isAbstract = original
     assert instance.isAbstract == original
@@ -1978,33 +1918,30 @@ def test_ryz::model_isAbstract_setter(instance):
 def test_componentpackage_instantiation(instance):
     assert isinstance(instance, ComponentPackage)
 
-@given(instance=ryz::ViewPackage_strategy)
+@given(instance=ryz_ControllerPackage_strategy)
 @settings(max_examples=50)
-def test_ryz::viewpackage_instantiation(instance):
-    assert isinstance(instance, ryz::ViewPackage)
+def test_ryz_controllerpackage_instantiation(instance):
+    assert isinstance(instance, ryz_ControllerPackage)
 
-@given(instance=ryz::ControllerPackage_strategy)
+@given(instance=ryz_ViewPackage_strategy)
 @settings(max_examples=50)
-def test_ryz::controllerpackage_instantiation(instance):
-    assert isinstance(instance, ryz::ControllerPackage)
+def test_ryz_viewpackage_instantiation(instance):
+    assert isinstance(instance, ryz_ViewPackage)
 
-@given(instance=ryz::ModelPackage_strategy)
+@given(instance=ryz_ModelPackage_strategy)
 @settings(max_examples=50)
-def test_ryz::modelpackage_instantiation(instance):
-    assert isinstance(instance, ryz::ModelPackage)
+def test_ryz_modelpackage_instantiation(instance):
+    assert isinstance(instance, ryz_ModelPackage)
 
-@given(instance=ryz::NamedElement_strategy)
+@given(instance=ryz_NamedElement_strategy)
 @settings(max_examples=50)
-def test_ryz::namedelement_instantiation(instance):
-    assert isinstance(instance, ryz::NamedElement)
-
-@given(instance=ryz::NamedElement_strategy)
-def test_ryz::namedelement_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_ryz_namedelement_instantiation(instance):
+    assert isinstance(instance, ryz_NamedElement)
 
 
-@given(instance=ryz::NamedElement_strategy)
-def test_ryz::namedelement_name_setter(instance):
+
+@given(instance=ryz_NamedElement_strategy)
+def test_ryz_namedelement_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
@@ -2014,252 +1951,207 @@ def test_ryz::namedelement_name_setter(instance):
 def test_package_instantiation(instance):
     assert isinstance(instance, Package)
 
-@given(instance=ryz::MvcPackage_strategy)
+@given(instance=ryz_MvcPackage_strategy)
 @settings(max_examples=50)
-def test_ryz::mvcpackage_instantiation(instance):
-    assert isinstance(instance, ryz::MvcPackage)
+def test_ryz_mvcpackage_instantiation(instance):
+    assert isinstance(instance, ryz_MvcPackage)
 
-@given(instance=ryz::UseCaseActorPackage_strategy)
+@given(instance=ryz_UseCaseActorPackage_strategy)
 @settings(max_examples=50)
-def test_ryz::usecaseactorpackage_instantiation(instance):
-    assert isinstance(instance, ryz::UseCaseActorPackage)
+def test_ryz_usecaseactorpackage_instantiation(instance):
+    assert isinstance(instance, ryz_UseCaseActorPackage)
 
-@given(instance=ryz::ComponentPackage_strategy)
+@given(instance=ryz_ComponentPackage_strategy)
 @settings(max_examples=50)
-def test_ryz::componentpackage_instantiation(instance):
-    assert isinstance(instance, ryz::ComponentPackage)
+def test_ryz_componentpackage_instantiation(instance):
+    assert isinstance(instance, ryz_ComponentPackage)
 
 @given(instance=NamedElement_strategy)
 @settings(max_examples=50)
 def test_namedelement_instantiation(instance):
     assert isinstance(instance, NamedElement)
 
-@given(instance=ryz::MainComponent_strategy)
+@given(instance=ryz_Property_strategy)
 @settings(max_examples=50)
-def test_ryz::maincomponent_instantiation(instance):
-    assert isinstance(instance, ryz::MainComponent)
-
-@given(instance=ryz::PresentationElement_strategy)
-@settings(max_examples=50)
-def test_ryz::presentationelement_instantiation(instance):
-    assert isinstance(instance, ryz::PresentationElement)
-
-@given(instance=ryz::ModelAssociation_strategy)
-@settings(max_examples=50)
-def test_ryz::modelassociation_instantiation(instance):
-    assert isinstance(instance, ryz::ModelAssociation)
-
-@given(instance=ryz::ModelAssociation_strategy)
-def test_ryz::modelassociation_cardinality_type(instance):
-    assert isinstance(instance.cardinality, str)
+def test_ryz_property_instantiation(instance):
+    assert isinstance(instance, ryz_Property)
 
 
-@given(instance=ryz::ModelAssociation_strategy)
-def test_ryz::modelassociation_cardinality_setter(instance):
-    original = instance.cardinality
-    instance.cardinality = original
-    assert instance.cardinality == original
 
-@given(instance=ryz::ModelAssociation_strategy)
-def test_ryz::modelassociation_dependentRoleName_type(instance):
-    assert isinstance(instance.dependentRoleName, str)
+@given(instance=ryz_Property_strategy)
+def test_ryz_property_type_setter(instance):
+    original = instance.type
+    instance.type = original
+    assert instance.type == original
 
 
-@given(instance=ryz::ModelAssociation_strategy)
-def test_ryz::modelassociation_dependentRoleName_setter(instance):
-    original = instance.dependentRoleName
-    instance.dependentRoleName = original
-    assert instance.dependentRoleName == original
 
-@given(instance=ryz::ModelAssociation_strategy)
-def test_ryz::modelassociation_principalRoleName_type(instance):
-    assert isinstance(instance.principalRoleName, str)
-
-
-@given(instance=ryz::ModelAssociation_strategy)
-def test_ryz::modelassociation_principalRoleName_setter(instance):
-    original = instance.principalRoleName
-    instance.principalRoleName = original
-    assert instance.principalRoleName == original
-
-@given(instance=ryz::ModelAssociation_strategy)
-def test_ryz::modelassociation_isRequired_type(instance):
-    assert isinstance(instance.isRequired, bool)
-
-
-@given(instance=ryz::ModelAssociation_strategy)
-def test_ryz::modelassociation_isRequired_setter(instance):
+@given(instance=ryz_Property_strategy)
+def test_ryz_property_isRequired_setter(instance):
     original = instance.isRequired
     instance.isRequired = original
     assert instance.isRequired == original
 
-@given(instance=ryz::UseCasePackage_strategy)
+@given(instance=ryz_Package_strategy)
 @settings(max_examples=50)
-def test_ryz::usecasepackage_instantiation(instance):
-    assert isinstance(instance, ryz::UseCasePackage)
+def test_ryz_package_instantiation(instance):
+    assert isinstance(instance, ryz_Package)
 
-@given(instance=ryz::Package_strategy)
+@given(instance=ryz_PresentationElement_strategy)
 @settings(max_examples=50)
-def test_ryz::package_instantiation(instance):
-    assert isinstance(instance, ryz::Package)
+def test_ryz_presentationelement_instantiation(instance):
+    assert isinstance(instance, ryz_PresentationElement)
 
-@given(instance=ryz::Actor_strategy)
+@given(instance=ryz_TableKey_strategy)
 @settings(max_examples=50)
-def test_ryz::actor_instantiation(instance):
-    assert isinstance(instance, ryz::Actor)
-
-@given(instance=ryz::Parameter_strategy)
-@settings(max_examples=50)
-def test_ryz::parameter_instantiation(instance):
-    assert isinstance(instance, ryz::Parameter)
-
-@given(instance=ryz::Parameter_strategy)
-def test_ryz::parameter_isList_type(instance):
-    assert isinstance(instance.isList, bool)
+def test_ryz_tablekey_instantiation(instance):
+    assert isinstance(instance, ryz_TableKey)
 
 
-@given(instance=ryz::Parameter_strategy)
-def test_ryz::parameter_isList_setter(instance):
-    original = instance.isList
-    instance.isList = original
-    assert instance.isList == original
 
-@given(instance=ryz::Parameter_strategy)
-def test_ryz::parameter_type_type(instance):
-    assert isinstance(instance.type, str)
-
-
-@given(instance=ryz::Parameter_strategy)
-def test_ryz::parameter_type_setter(instance):
-    original = instance.type
-    instance.type = original
-    assert instance.type == original
-
-@given(instance=ryz::Parameter_strategy)
-def test_ryz::parameter_isNullable_type(instance):
-    assert isinstance(instance.isNullable, bool)
-
-
-@given(instance=ryz::Parameter_strategy)
-def test_ryz::parameter_isNullable_setter(instance):
-    original = instance.isNullable
-    instance.isNullable = original
-    assert instance.isNullable == original
-
-@given(instance=ryz::ActionMethod_strategy)
-@settings(max_examples=50)
-def test_ryz::actionmethod_instantiation(instance):
-    assert isinstance(instance, ryz::ActionMethod)
-
-@given(instance=ryz::ActionMethod_strategy)
-def test_ryz::actionmethod_returns_type(instance):
-    assert isinstance(instance.returns, str)
-
-
-@given(instance=ryz::ActionMethod_strategy)
-def test_ryz::actionmethod_returns_setter(instance):
-    original = instance.returns
-    instance.returns = original
-    assert instance.returns == original
-
-@given(instance=ryz::ActionMethod_strategy)
-def test_ryz::actionmethod_httpMethod_type(instance):
-    assert isinstance(instance.httpMethod, str)
-
-
-@given(instance=ryz::ActionMethod_strategy)
-def test_ryz::actionmethod_httpMethod_setter(instance):
-    original = instance.httpMethod
-    instance.httpMethod = original
-    assert instance.httpMethod == original
-
-@given(instance=ryz::Property_strategy)
-@settings(max_examples=50)
-def test_ryz::property_instantiation(instance):
-    assert isinstance(instance, ryz::Property)
-
-@given(instance=ryz::Property_strategy)
-def test_ryz::property_type_type(instance):
-    assert isinstance(instance.type, str)
-
-
-@given(instance=ryz::Property_strategy)
-def test_ryz::property_type_setter(instance):
-    original = instance.type
-    instance.type = original
-    assert instance.type == original
-
-@given(instance=ryz::Property_strategy)
-def test_ryz::property_isRequired_type(instance):
-    assert isinstance(instance.isRequired, bool)
-
-
-@given(instance=ryz::Property_strategy)
-def test_ryz::property_isRequired_setter(instance):
+@given(instance=ryz_TableKey_strategy)
+def test_ryz_tablekey_isRequired_setter(instance):
     original = instance.isRequired
     instance.isRequired = original
     assert instance.isRequired == original
 
-@given(instance=ryz::MainComponentRelation_strategy)
-@settings(max_examples=50)
-def test_ryz::maincomponentrelation_instantiation(instance):
-    assert isinstance(instance, ryz::MainComponentRelation)
-
-@given(instance=ryz::UseCase_strategy)
-@settings(max_examples=50)
-def test_ryz::usecase_instantiation(instance):
-    assert isinstance(instance, ryz::UseCase)
-
-@given(instance=ryz::TableKey_strategy)
-@settings(max_examples=50)
-def test_ryz::tablekey_instantiation(instance):
-    assert isinstance(instance, ryz::TableKey)
-
-@given(instance=ryz::TableKey_strategy)
-def test_ryz::tablekey_type_type(instance):
-    assert isinstance(instance.type, str)
 
 
-@given(instance=ryz::TableKey_strategy)
-def test_ryz::tablekey_type_setter(instance):
-    original = instance.type
-    instance.type = original
-    assert instance.type == original
-
-@given(instance=ryz::TableKey_strategy)
-def test_ryz::tablekey_isForeignKey_type(instance):
-    assert isinstance(instance.isForeignKey, bool)
-
-
-@given(instance=ryz::TableKey_strategy)
-def test_ryz::tablekey_isForeignKey_setter(instance):
-    original = instance.isForeignKey
-    instance.isForeignKey = original
-    assert instance.isForeignKey == original
-
-@given(instance=ryz::TableKey_strategy)
-def test_ryz::tablekey_isPrimaryKey_type(instance):
-    assert isinstance(instance.isPrimaryKey, bool)
-
-
-@given(instance=ryz::TableKey_strategy)
-def test_ryz::tablekey_isPrimaryKey_setter(instance):
+@given(instance=ryz_TableKey_strategy)
+def test_ryz_tablekey_isPrimaryKey_setter(instance):
     original = instance.isPrimaryKey
     instance.isPrimaryKey = original
     assert instance.isPrimaryKey == original
 
-@given(instance=ryz::TableKey_strategy)
-def test_ryz::tablekey_isRequired_type(instance):
-    assert isinstance(instance.isRequired, bool)
 
 
-@given(instance=ryz::TableKey_strategy)
-def test_ryz::tablekey_isRequired_setter(instance):
+@given(instance=ryz_TableKey_strategy)
+def test_ryz_tablekey_type_setter(instance):
+    original = instance.type
+    instance.type = original
+    assert instance.type == original
+
+
+
+@given(instance=ryz_TableKey_strategy)
+def test_ryz_tablekey_isForeignKey_setter(instance):
+    original = instance.isForeignKey
+    instance.isForeignKey = original
+    assert instance.isForeignKey == original
+
+@given(instance=ryz_UseCasePackage_strategy)
+@settings(max_examples=50)
+def test_ryz_usecasepackage_instantiation(instance):
+    assert isinstance(instance, ryz_UseCasePackage)
+
+@given(instance=ryz_ActionMethod_strategy)
+@settings(max_examples=50)
+def test_ryz_actionmethod_instantiation(instance):
+    assert isinstance(instance, ryz_ActionMethod)
+
+
+
+@given(instance=ryz_ActionMethod_strategy)
+def test_ryz_actionmethod_returns_setter(instance):
+    original = instance.returns
+    instance.returns = original
+    assert instance.returns == original
+
+
+
+@given(instance=ryz_ActionMethod_strategy)
+def test_ryz_actionmethod_httpMethod_setter(instance):
+    original = instance.httpMethod
+    instance.httpMethod = original
+    assert instance.httpMethod == original
+
+@given(instance=ryz_ModelAssociation_strategy)
+@settings(max_examples=50)
+def test_ryz_modelassociation_instantiation(instance):
+    assert isinstance(instance, ryz_ModelAssociation)
+
+
+
+@given(instance=ryz_ModelAssociation_strategy)
+def test_ryz_modelassociation_principalRoleName_setter(instance):
+    original = instance.principalRoleName
+    instance.principalRoleName = original
+    assert instance.principalRoleName == original
+
+
+
+@given(instance=ryz_ModelAssociation_strategy)
+def test_ryz_modelassociation_dependentRoleName_setter(instance):
+    original = instance.dependentRoleName
+    instance.dependentRoleName = original
+    assert instance.dependentRoleName == original
+
+
+
+@given(instance=ryz_ModelAssociation_strategy)
+def test_ryz_modelassociation_isRequired_setter(instance):
     original = instance.isRequired
     instance.isRequired = original
     assert instance.isRequired == original
 
-@given(instance=ryz::Project_strategy)
+
+
+@given(instance=ryz_ModelAssociation_strategy)
+def test_ryz_modelassociation_cardinality_setter(instance):
+    original = instance.cardinality
+    instance.cardinality = original
+    assert instance.cardinality == original
+
+@given(instance=ryz_MainComponent_strategy)
 @settings(max_examples=50)
-def test_ryz::project_instantiation(instance):
-    assert isinstance(instance, ryz::Project)
+def test_ryz_maincomponent_instantiation(instance):
+    assert isinstance(instance, ryz_MainComponent)
+
+@given(instance=ryz_UseCase_strategy)
+@settings(max_examples=50)
+def test_ryz_usecase_instantiation(instance):
+    assert isinstance(instance, ryz_UseCase)
+
+@given(instance=ryz_Parameter_strategy)
+@settings(max_examples=50)
+def test_ryz_parameter_instantiation(instance):
+    assert isinstance(instance, ryz_Parameter)
+
+
+
+@given(instance=ryz_Parameter_strategy)
+def test_ryz_parameter_type_setter(instance):
+    original = instance.type
+    instance.type = original
+    assert instance.type == original
+
+
+
+@given(instance=ryz_Parameter_strategy)
+def test_ryz_parameter_isNullable_setter(instance):
+    original = instance.isNullable
+    instance.isNullable = original
+    assert instance.isNullable == original
+
+
+
+@given(instance=ryz_Parameter_strategy)
+def test_ryz_parameter_isList_setter(instance):
+    original = instance.isList
+    instance.isList = original
+    assert instance.isList == original
+
+@given(instance=ryz_MainComponentRelation_strategy)
+@settings(max_examples=50)
+def test_ryz_maincomponentrelation_instantiation(instance):
+    assert isinstance(instance, ryz_MainComponentRelation)
+
+@given(instance=ryz_Actor_strategy)
+@settings(max_examples=50)
+def test_ryz_actor_instantiation(instance):
+    assert isinstance(instance, ryz_Actor)
+
+@given(instance=ryz_Project_strategy)
+@settings(max_examples=50)
+def test_ryz_project_instantiation(instance):
+    assert isinstance(instance, ryz_Project)

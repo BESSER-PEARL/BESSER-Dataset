@@ -3,24 +3,24 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    test::ClassA,
-    test::Interface4,
-    test::ClassF,
+from python_code import (
+    test_ClassA,
+    test_Interface4,
+    test_ClassF,
     ClassC,
     Itf2,
     Interface3,
-    test::ClassE,
-    test::Interface3,
-    test::Itf2,
-    test::Itf1,
+    test_ClassE,
+    test_Interface3,
+    test_Itf2,
+    test_Itf1,
     ClassB,
     Itf1,
-    test::ClassD,
-    test::ClassB,
-    test::ClassC,
+    test_ClassD,
+    test_ClassB,
+    test_ClassC,
 )
 
 # =============================================================================
@@ -29,44 +29,44 @@ from classes import (
 
 
 
-def test_test::classa_is_not_abstract():
-    assert not inspect.isabstract(test::ClassA)
+def test_test_classa_is_not_abstract():
+    assert not inspect.isabstract(test_ClassA)
 
 
-def test_test::classa_constructor_exists():
-    assert callable(test::ClassA.__init__)
+def test_test_classa_constructor_exists():
+    assert callable(test_ClassA.__init__)
 
 
-def test_test::classa_constructor_args():
-    sig = inspect.signature(test::ClassA.__init__)
+def test_test_classa_constructor_args():
+    sig = inspect.signature(test_ClassA.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_test::interface4_is_not_abstract():
-    assert not inspect.isabstract(test::Interface4)
+def test_test_interface4_is_not_abstract():
+    assert not inspect.isabstract(test_Interface4)
 
 
-def test_test::interface4_constructor_exists():
-    assert callable(test::Interface4.__init__)
+def test_test_interface4_constructor_exists():
+    assert callable(test_Interface4.__init__)
 
 
-def test_test::interface4_constructor_args():
-    sig = inspect.signature(test::Interface4.__init__)
+def test_test_interface4_constructor_args():
+    sig = inspect.signature(test_Interface4.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_test::classf_is_not_abstract():
-    assert not inspect.isabstract(test::ClassF)
+def test_test_classf_is_not_abstract():
+    assert not inspect.isabstract(test_ClassF)
 
 
-def test_test::classf_constructor_exists():
-    assert callable(test::ClassF.__init__)
+def test_test_classf_constructor_exists():
+    assert callable(test_ClassF.__init__)
 
 
-def test_test::classf_constructor_args():
-    sig = inspect.signature(test::ClassF.__init__)
+def test_test_classf_constructor_args():
+    sig = inspect.signature(test_ClassF.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -113,58 +113,58 @@ def test_interface3_constructor_args():
 
 
 
-def test_test::classe_is_not_abstract():
-    assert not inspect.isabstract(test::ClassE)
+def test_test_classe_is_not_abstract():
+    assert not inspect.isabstract(test_ClassE)
 
 
-def test_test::classe_constructor_exists():
-    assert callable(test::ClassE.__init__)
+def test_test_classe_constructor_exists():
+    assert callable(test_ClassE.__init__)
 
 
-def test_test::classe_constructor_args():
-    sig = inspect.signature(test::ClassE.__init__)
+def test_test_classe_constructor_args():
+    sig = inspect.signature(test_ClassE.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_test::interface3_is_not_abstract():
-    assert not inspect.isabstract(test::Interface3)
+def test_test_interface3_is_not_abstract():
+    assert not inspect.isabstract(test_Interface3)
 
 
-def test_test::interface3_constructor_exists():
-    assert callable(test::Interface3.__init__)
+def test_test_interface3_constructor_exists():
+    assert callable(test_Interface3.__init__)
 
 
-def test_test::interface3_constructor_args():
-    sig = inspect.signature(test::Interface3.__init__)
+def test_test_interface3_constructor_args():
+    sig = inspect.signature(test_Interface3.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_test::itf2_is_not_abstract():
-    assert not inspect.isabstract(test::Itf2)
+def test_test_itf2_is_not_abstract():
+    assert not inspect.isabstract(test_Itf2)
 
 
-def test_test::itf2_constructor_exists():
-    assert callable(test::Itf2.__init__)
+def test_test_itf2_constructor_exists():
+    assert callable(test_Itf2.__init__)
 
 
-def test_test::itf2_constructor_args():
-    sig = inspect.signature(test::Itf2.__init__)
+def test_test_itf2_constructor_args():
+    sig = inspect.signature(test_Itf2.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_test::itf1_is_not_abstract():
-    assert not inspect.isabstract(test::Itf1)
+def test_test_itf1_is_not_abstract():
+    assert not inspect.isabstract(test_Itf1)
 
 
-def test_test::itf1_constructor_exists():
-    assert callable(test::Itf1.__init__)
+def test_test_itf1_constructor_exists():
+    assert callable(test_Itf1.__init__)
 
 
-def test_test::itf1_constructor_args():
-    sig = inspect.signature(test::Itf1.__init__)
+def test_test_itf1_constructor_args():
+    sig = inspect.signature(test_Itf1.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -197,44 +197,44 @@ def test_itf1_constructor_args():
 
 
 
-def test_test::classd_is_not_abstract():
-    assert not inspect.isabstract(test::ClassD)
+def test_test_classd_is_not_abstract():
+    assert not inspect.isabstract(test_ClassD)
 
 
-def test_test::classd_constructor_exists():
-    assert callable(test::ClassD.__init__)
+def test_test_classd_constructor_exists():
+    assert callable(test_ClassD.__init__)
 
 
-def test_test::classd_constructor_args():
-    sig = inspect.signature(test::ClassD.__init__)
+def test_test_classd_constructor_args():
+    sig = inspect.signature(test_ClassD.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_test::classb_is_not_abstract():
-    assert not inspect.isabstract(test::ClassB)
+def test_test_classb_is_not_abstract():
+    assert not inspect.isabstract(test_ClassB)
 
 
-def test_test::classb_constructor_exists():
-    assert callable(test::ClassB.__init__)
+def test_test_classb_constructor_exists():
+    assert callable(test_ClassB.__init__)
 
 
-def test_test::classb_constructor_args():
-    sig = inspect.signature(test::ClassB.__init__)
+def test_test_classb_constructor_args():
+    sig = inspect.signature(test_ClassB.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_test::classc_is_not_abstract():
-    assert not inspect.isabstract(test::ClassC)
+def test_test_classc_is_not_abstract():
+    assert not inspect.isabstract(test_ClassC)
 
 
-def test_test::classc_constructor_exists():
-    assert callable(test::ClassC.__init__)
+def test_test_classc_constructor_exists():
+    assert callable(test_ClassC.__init__)
 
 
-def test_test::classc_constructor_args():
-    sig = inspect.signature(test::ClassC.__init__)
+def test_test_classc_constructor_args():
+    sig = inspect.signature(test_ClassC.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -249,14 +249,14 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-test::ClassA_strategy = st.builds(
-    test::ClassA,
+test_ClassA_strategy = st.builds(
+    test_ClassA,
 )
-test::Interface4_strategy = st.builds(
-    test::Interface4,
+test_Interface4_strategy = st.builds(
+    test_Interface4,
 )
-test::ClassF_strategy = st.builds(
-    test::ClassF,
+test_ClassF_strategy = st.builds(
+    test_ClassF,
 )
 ClassC_strategy = st.builds(
     ClassC,
@@ -267,17 +267,17 @@ Itf2_strategy = st.builds(
 Interface3_strategy = st.builds(
     Interface3,
 )
-test::ClassE_strategy = st.builds(
-    test::ClassE,
+test_ClassE_strategy = st.builds(
+    test_ClassE,
 )
-test::Interface3_strategy = st.builds(
-    test::Interface3,
+test_Interface3_strategy = st.builds(
+    test_Interface3,
 )
-test::Itf2_strategy = st.builds(
-    test::Itf2,
+test_Itf2_strategy = st.builds(
+    test_Itf2,
 )
-test::Itf1_strategy = st.builds(
-    test::Itf1,
+test_Itf1_strategy = st.builds(
+    test_Itf1,
 )
 ClassB_strategy = st.builds(
     ClassB,
@@ -285,30 +285,30 @@ ClassB_strategy = st.builds(
 Itf1_strategy = st.builds(
     Itf1,
 )
-test::ClassD_strategy = st.builds(
-    test::ClassD,
+test_ClassD_strategy = st.builds(
+    test_ClassD,
 )
-test::ClassB_strategy = st.builds(
-    test::ClassB,
+test_ClassB_strategy = st.builds(
+    test_ClassB,
 )
-test::ClassC_strategy = st.builds(
-    test::ClassC,
+test_ClassC_strategy = st.builds(
+    test_ClassC,
 )
 
-@given(instance=test::ClassA_strategy)
+@given(instance=test_ClassA_strategy)
 @settings(max_examples=50)
-def test_test::classa_instantiation(instance):
-    assert isinstance(instance, test::ClassA)
+def test_test_classa_instantiation(instance):
+    assert isinstance(instance, test_ClassA)
 
-@given(instance=test::Interface4_strategy)
+@given(instance=test_Interface4_strategy)
 @settings(max_examples=50)
-def test_test::interface4_instantiation(instance):
-    assert isinstance(instance, test::Interface4)
+def test_test_interface4_instantiation(instance):
+    assert isinstance(instance, test_Interface4)
 
-@given(instance=test::ClassF_strategy)
+@given(instance=test_ClassF_strategy)
 @settings(max_examples=50)
-def test_test::classf_instantiation(instance):
-    assert isinstance(instance, test::ClassF)
+def test_test_classf_instantiation(instance):
+    assert isinstance(instance, test_ClassF)
 
 @given(instance=ClassC_strategy)
 @settings(max_examples=50)
@@ -325,25 +325,25 @@ def test_itf2_instantiation(instance):
 def test_interface3_instantiation(instance):
     assert isinstance(instance, Interface3)
 
-@given(instance=test::ClassE_strategy)
+@given(instance=test_ClassE_strategy)
 @settings(max_examples=50)
-def test_test::classe_instantiation(instance):
-    assert isinstance(instance, test::ClassE)
+def test_test_classe_instantiation(instance):
+    assert isinstance(instance, test_ClassE)
 
-@given(instance=test::Interface3_strategy)
+@given(instance=test_Interface3_strategy)
 @settings(max_examples=50)
-def test_test::interface3_instantiation(instance):
-    assert isinstance(instance, test::Interface3)
+def test_test_interface3_instantiation(instance):
+    assert isinstance(instance, test_Interface3)
 
-@given(instance=test::Itf2_strategy)
+@given(instance=test_Itf2_strategy)
 @settings(max_examples=50)
-def test_test::itf2_instantiation(instance):
-    assert isinstance(instance, test::Itf2)
+def test_test_itf2_instantiation(instance):
+    assert isinstance(instance, test_Itf2)
 
-@given(instance=test::Itf1_strategy)
+@given(instance=test_Itf1_strategy)
 @settings(max_examples=50)
-def test_test::itf1_instantiation(instance):
-    assert isinstance(instance, test::Itf1)
+def test_test_itf1_instantiation(instance):
+    assert isinstance(instance, test_Itf1)
 
 @given(instance=ClassB_strategy)
 @settings(max_examples=50)
@@ -355,17 +355,17 @@ def test_classb_instantiation(instance):
 def test_itf1_instantiation(instance):
     assert isinstance(instance, Itf1)
 
-@given(instance=test::ClassD_strategy)
+@given(instance=test_ClassD_strategy)
 @settings(max_examples=50)
-def test_test::classd_instantiation(instance):
-    assert isinstance(instance, test::ClassD)
+def test_test_classd_instantiation(instance):
+    assert isinstance(instance, test_ClassD)
 
-@given(instance=test::ClassB_strategy)
+@given(instance=test_ClassB_strategy)
 @settings(max_examples=50)
-def test_test::classb_instantiation(instance):
-    assert isinstance(instance, test::ClassB)
+def test_test_classb_instantiation(instance):
+    assert isinstance(instance, test_ClassB)
 
-@given(instance=test::ClassC_strategy)
+@given(instance=test_ClassC_strategy)
 @settings(max_examples=50)
-def test_test::classc_instantiation(instance):
-    assert isinstance(instance, test::ClassC)
+def test_test_classc_instantiation(instance):
+    assert isinstance(instance, test_ClassC)

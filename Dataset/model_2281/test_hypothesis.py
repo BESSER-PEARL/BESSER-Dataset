@@ -3,15 +3,15 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    model::root,
-    model::Response,
-    model::Exercise,
-    model::Delivery,
-    model::Course,
-    model::Student,
+from python_code import (
+    model_root,
+    model_Response,
+    model_Exercise,
+    model_Delivery,
+    model_Course,
+    model_Student,
 )
 
 # =============================================================================
@@ -20,57 +20,57 @@ from classes import (
 
 
 
-def test_model::root_is_not_abstract():
-    assert not inspect.isabstract(model::root)
+def test_model_root_is_not_abstract():
+    assert not inspect.isabstract(model_root)
 
 
-def test_model::root_constructor_exists():
-    assert callable(model::root.__init__)
+def test_model_root_constructor_exists():
+    assert callable(model_root.__init__)
 
 
-def test_model::root_constructor_args():
-    sig = inspect.signature(model::root.__init__)
+def test_model_root_constructor_args():
+    sig = inspect.signature(model_root.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_model::response_is_not_abstract():
-    assert not inspect.isabstract(model::Response)
+def test_model_response_is_not_abstract():
+    assert not inspect.isabstract(model_Response)
 
 
-def test_model::response_constructor_exists():
-    assert callable(model::Response.__init__)
+def test_model_response_constructor_exists():
+    assert callable(model_Response.__init__)
 
 
-def test_model::response_constructor_args():
-    sig = inspect.signature(model::Response.__init__)
+def test_model_response_constructor_args():
+    sig = inspect.signature(model_Response.__init__)
     params = list(sig.parameters.keys())
-    assert "comment" in params, "Missing parameter 'comment'"
     assert "ok" in params, "Missing parameter 'ok'"
+    assert "comment" in params, "Missing parameter 'comment'"
     assert "ID" in params, "Missing parameter 'ID'"
 
-def test_model::response_has_comment():
-    assert hasattr(model::Response, "comment")
+def test_model_response_has_ok():
+    assert hasattr(model_Response, "ok")
     descriptor = None
-    for klass in model::Response.__mro__:
-        if "comment" in klass.__dict__:
-            descriptor = klass.__dict__["comment"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_model::response_has_ok():
-    assert hasattr(model::Response, "ok")
-    descriptor = None
-    for klass in model::Response.__mro__:
+    for klass in model_Response.__mro__:
         if "ok" in klass.__dict__:
             descriptor = klass.__dict__["ok"]
             break
     assert isinstance(descriptor, property)
 
-def test_model::response_has_ID():
-    assert hasattr(model::Response, "ID")
+def test_model_response_has_comment():
+    assert hasattr(model_Response, "comment")
     descriptor = None
-    for klass in model::Response.__mro__:
+    for klass in model_Response.__mro__:
+        if "comment" in klass.__dict__:
+            descriptor = klass.__dict__["comment"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_model_response_has_ID():
+    assert hasattr(model_Response, "ID")
+    descriptor = None
+    for klass in model_Response.__mro__:
         if "ID" in klass.__dict__:
             descriptor = klass.__dict__["ID"]
             break
@@ -78,157 +78,157 @@ def test_model::response_has_ID():
 
 
 
-def test_model::exercise_is_not_abstract():
-    assert not inspect.isabstract(model::Exercise)
+def test_model_exercise_is_not_abstract():
+    assert not inspect.isabstract(model_Exercise)
 
 
-def test_model::exercise_constructor_exists():
-    assert callable(model::Exercise.__init__)
+def test_model_exercise_constructor_exists():
+    assert callable(model_Exercise.__init__)
 
 
-def test_model::exercise_constructor_args():
-    sig = inspect.signature(model::Exercise.__init__)
+def test_model_exercise_constructor_args():
+    sig = inspect.signature(model_Exercise.__init__)
     params = list(sig.parameters.keys())
-    assert "deadline_date" in params, "Missing parameter 'deadline_date'"
     assert "ID" in params, "Missing parameter 'ID'"
+    assert "deadline_date" in params, "Missing parameter 'deadline_date'"
 
-def test_model::exercise_has_deadline_date():
-    assert hasattr(model::Exercise, "deadline_date")
+def test_model_exercise_has_ID():
+    assert hasattr(model_Exercise, "ID")
     descriptor = None
-    for klass in model::Exercise.__mro__:
+    for klass in model_Exercise.__mro__:
+        if "ID" in klass.__dict__:
+            descriptor = klass.__dict__["ID"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_model_exercise_has_deadline_date():
+    assert hasattr(model_Exercise, "deadline_date")
+    descriptor = None
+    for klass in model_Exercise.__mro__:
         if "deadline_date" in klass.__dict__:
             descriptor = klass.__dict__["deadline_date"]
             break
     assert isinstance(descriptor, property)
 
-def test_model::exercise_has_ID():
-    assert hasattr(model::Exercise, "ID")
-    descriptor = None
-    for klass in model::Exercise.__mro__:
-        if "ID" in klass.__dict__:
-            descriptor = klass.__dict__["ID"]
-            break
-    assert isinstance(descriptor, property)
 
 
-
-def test_model::delivery_is_not_abstract():
-    assert not inspect.isabstract(model::Delivery)
-
-
-def test_model::delivery_constructor_exists():
-    assert callable(model::Delivery.__init__)
+def test_model_delivery_is_not_abstract():
+    assert not inspect.isabstract(model_Delivery)
 
 
-def test_model::delivery_constructor_args():
-    sig = inspect.signature(model::Delivery.__init__)
+def test_model_delivery_constructor_exists():
+    assert callable(model_Delivery.__init__)
+
+
+def test_model_delivery_constructor_args():
+    sig = inspect.signature(model_Delivery.__init__)
     params = list(sig.parameters.keys())
     assert "submission_date" in params, "Missing parameter 'submission_date'"
     assert "ID" in params, "Missing parameter 'ID'"
-    assert "answer" in params, "Missing parameter 'answer'"
     assert "group_number" in params, "Missing parameter 'group_number'"
+    assert "answer" in params, "Missing parameter 'answer'"
 
-def test_model::delivery_has_submission_date():
-    assert hasattr(model::Delivery, "submission_date")
+def test_model_delivery_has_submission_date():
+    assert hasattr(model_Delivery, "submission_date")
     descriptor = None
-    for klass in model::Delivery.__mro__:
+    for klass in model_Delivery.__mro__:
         if "submission_date" in klass.__dict__:
             descriptor = klass.__dict__["submission_date"]
             break
     assert isinstance(descriptor, property)
 
-def test_model::delivery_has_ID():
-    assert hasattr(model::Delivery, "ID")
+def test_model_delivery_has_ID():
+    assert hasattr(model_Delivery, "ID")
     descriptor = None
-    for klass in model::Delivery.__mro__:
+    for klass in model_Delivery.__mro__:
         if "ID" in klass.__dict__:
             descriptor = klass.__dict__["ID"]
             break
     assert isinstance(descriptor, property)
 
-def test_model::delivery_has_answer():
-    assert hasattr(model::Delivery, "answer")
+def test_model_delivery_has_group_number():
+    assert hasattr(model_Delivery, "group_number")
     descriptor = None
-    for klass in model::Delivery.__mro__:
-        if "answer" in klass.__dict__:
-            descriptor = klass.__dict__["answer"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_model::delivery_has_group_number():
-    assert hasattr(model::Delivery, "group_number")
-    descriptor = None
-    for klass in model::Delivery.__mro__:
+    for klass in model_Delivery.__mro__:
         if "group_number" in klass.__dict__:
             descriptor = klass.__dict__["group_number"]
             break
     assert isinstance(descriptor, property)
 
-
-
-def test_model::course_is_not_abstract():
-    assert not inspect.isabstract(model::Course)
-
-
-def test_model::course_constructor_exists():
-    assert callable(model::Course.__init__)
-
-
-def test_model::course_constructor_args():
-    sig = inspect.signature(model::Course.__init__)
-    params = list(sig.parameters.keys())
-    assert "ID" in params, "Missing parameter 'ID'"
-    assert "name" in params, "Missing parameter 'name'"
-
-def test_model::course_has_ID():
-    assert hasattr(model::Course, "ID")
+def test_model_delivery_has_answer():
+    assert hasattr(model_Delivery, "answer")
     descriptor = None
-    for klass in model::Course.__mro__:
-        if "ID" in klass.__dict__:
-            descriptor = klass.__dict__["ID"]
+    for klass in model_Delivery.__mro__:
+        if "answer" in klass.__dict__:
+            descriptor = klass.__dict__["answer"]
             break
     assert isinstance(descriptor, property)
 
-def test_model::course_has_name():
-    assert hasattr(model::Course, "name")
+
+
+def test_model_course_is_not_abstract():
+    assert not inspect.isabstract(model_Course)
+
+
+def test_model_course_constructor_exists():
+    assert callable(model_Course.__init__)
+
+
+def test_model_course_constructor_args():
+    sig = inspect.signature(model_Course.__init__)
+    params = list(sig.parameters.keys())
+    assert "name" in params, "Missing parameter 'name'"
+    assert "ID" in params, "Missing parameter 'ID'"
+
+def test_model_course_has_name():
+    assert hasattr(model_Course, "name")
     descriptor = None
-    for klass in model::Course.__mro__:
+    for klass in model_Course.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
-
-
-def test_model::student_is_not_abstract():
-    assert not inspect.isabstract(model::Student)
-
-
-def test_model::student_constructor_exists():
-    assert callable(model::Student.__init__)
-
-
-def test_model::student_constructor_args():
-    sig = inspect.signature(model::Student.__init__)
-    params = list(sig.parameters.keys())
-    assert "ID" in params, "Missing parameter 'ID'"
-    assert "name" in params, "Missing parameter 'name'"
-
-def test_model::student_has_ID():
-    assert hasattr(model::Student, "ID")
+def test_model_course_has_ID():
+    assert hasattr(model_Course, "ID")
     descriptor = None
-    for klass in model::Student.__mro__:
+    for klass in model_Course.__mro__:
         if "ID" in klass.__dict__:
             descriptor = klass.__dict__["ID"]
             break
     assert isinstance(descriptor, property)
 
-def test_model::student_has_name():
-    assert hasattr(model::Student, "name")
+
+
+def test_model_student_is_not_abstract():
+    assert not inspect.isabstract(model_Student)
+
+
+def test_model_student_constructor_exists():
+    assert callable(model_Student.__init__)
+
+
+def test_model_student_constructor_args():
+    sig = inspect.signature(model_Student.__init__)
+    params = list(sig.parameters.keys())
+    assert "name" in params, "Missing parameter 'name'"
+    assert "ID" in params, "Missing parameter 'ID'"
+
+def test_model_student_has_name():
+    assert hasattr(model_Student, "name")
     descriptor = None
-    for klass in model::Student.__mro__:
+    for klass in model_Student.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_model_student_has_ID():
+    assert hasattr(model_Student, "ID")
+    descriptor = None
+    for klass in model_Student.__mro__:
+        if "ID" in klass.__dict__:
+            descriptor = klass.__dict__["ID"]
             break
     assert isinstance(descriptor, property)
 
@@ -244,220 +244,181 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-model::root_strategy = st.builds(
-    model::root,
+model_root_strategy = st.builds(
+    model_root,
 )
-model::Response_strategy = st.builds(
-    model::Response,
-    comment=
-        safe_text,
+model_Response_strategy = st.builds(
+    model_Response,
     ok=
         st.booleans(),
+    comment=
+        safe_text,
     ID=
         st.integers()
 )
-model::Exercise_strategy = st.builds(
-    model::Exercise,
+model_Exercise_strategy = st.builds(
+    model_Exercise,
+    ID=
+        st.integers(),
     deadline_date=
-        st.dates(),
-    ID=
-        st.integers()
+        st.dates()
 )
-model::Delivery_strategy = st.builds(
-    model::Delivery,
+model_Delivery_strategy = st.builds(
+    model_Delivery,
     submission_date=
         st.dates(),
     ID=
         st.integers(),
-    answer=
-        safe_text,
     group_number=
+        st.integers(),
+    answer=
+        safe_text
+)
+model_Course_strategy = st.builds(
+    model_Course,
+    name=
+        safe_text,
+    ID=
         st.integers()
 )
-model::Course_strategy = st.builds(
-    model::Course,
-    ID=
-        st.integers(),
+model_Student_strategy = st.builds(
+    model_Student,
     name=
-        safe_text
-)
-model::Student_strategy = st.builds(
-    model::Student,
+        safe_text,
     ID=
-        st.integers(),
-    name=
-        safe_text
+        st.integers()
 )
 
-@given(instance=model::root_strategy)
+@given(instance=model_root_strategy)
 @settings(max_examples=50)
-def test_model::root_instantiation(instance):
-    assert isinstance(instance, model::root)
+def test_model_root_instantiation(instance):
+    assert isinstance(instance, model_root)
 
-@given(instance=model::Response_strategy)
+@given(instance=model_Response_strategy)
 @settings(max_examples=50)
-def test_model::response_instantiation(instance):
-    assert isinstance(instance, model::Response)
-
-@given(instance=model::Response_strategy)
-def test_model::response_comment_type(instance):
-    assert isinstance(instance.comment, str)
+def test_model_response_instantiation(instance):
+    assert isinstance(instance, model_Response)
 
 
-@given(instance=model::Response_strategy)
-def test_model::response_comment_setter(instance):
-    original = instance.comment
-    instance.comment = original
-    assert instance.comment == original
 
-@given(instance=model::Response_strategy)
-def test_model::response_ok_type(instance):
-    assert isinstance(instance.ok, bool)
-
-
-@given(instance=model::Response_strategy)
-def test_model::response_ok_setter(instance):
+@given(instance=model_Response_strategy)
+def test_model_response_ok_setter(instance):
     original = instance.ok
     instance.ok = original
     assert instance.ok == original
 
-@given(instance=model::Response_strategy)
-def test_model::response_ID_type(instance):
-    assert isinstance(instance.ID, int)
 
 
-@given(instance=model::Response_strategy)
-def test_model::response_ID_setter(instance):
+@given(instance=model_Response_strategy)
+def test_model_response_comment_setter(instance):
+    original = instance.comment
+    instance.comment = original
+    assert instance.comment == original
+
+
+
+@given(instance=model_Response_strategy)
+def test_model_response_ID_setter(instance):
     original = instance.ID
     instance.ID = original
     assert instance.ID == original
 
-@given(instance=model::Exercise_strategy)
+@given(instance=model_Exercise_strategy)
 @settings(max_examples=50)
-def test_model::exercise_instantiation(instance):
-    assert isinstance(instance, model::Exercise)
-
-@given(instance=model::Exercise_strategy)
-def test_model::exercise_deadline_date_type(instance):
-    assert isinstance(instance.deadline_date, date)
+def test_model_exercise_instantiation(instance):
+    assert isinstance(instance, model_Exercise)
 
 
-@given(instance=model::Exercise_strategy)
-def test_model::exercise_deadline_date_setter(instance):
+
+@given(instance=model_Exercise_strategy)
+def test_model_exercise_ID_setter(instance):
+    original = instance.ID
+    instance.ID = original
+    assert instance.ID == original
+
+
+
+@given(instance=model_Exercise_strategy)
+def test_model_exercise_deadline_date_setter(instance):
     original = instance.deadline_date
     instance.deadline_date = original
     assert instance.deadline_date == original
 
-@given(instance=model::Exercise_strategy)
-def test_model::exercise_ID_type(instance):
-    assert isinstance(instance.ID, int)
-
-
-@given(instance=model::Exercise_strategy)
-def test_model::exercise_ID_setter(instance):
-    original = instance.ID
-    instance.ID = original
-    assert instance.ID == original
-
-@given(instance=model::Delivery_strategy)
+@given(instance=model_Delivery_strategy)
 @settings(max_examples=50)
-def test_model::delivery_instantiation(instance):
-    assert isinstance(instance, model::Delivery)
-
-@given(instance=model::Delivery_strategy)
-def test_model::delivery_submission_date_type(instance):
-    assert isinstance(instance.submission_date, date)
+def test_model_delivery_instantiation(instance):
+    assert isinstance(instance, model_Delivery)
 
 
-@given(instance=model::Delivery_strategy)
-def test_model::delivery_submission_date_setter(instance):
+
+@given(instance=model_Delivery_strategy)
+def test_model_delivery_submission_date_setter(instance):
     original = instance.submission_date
     instance.submission_date = original
     assert instance.submission_date == original
 
-@given(instance=model::Delivery_strategy)
-def test_model::delivery_ID_type(instance):
-    assert isinstance(instance.ID, int)
 
 
-@given(instance=model::Delivery_strategy)
-def test_model::delivery_ID_setter(instance):
+@given(instance=model_Delivery_strategy)
+def test_model_delivery_ID_setter(instance):
     original = instance.ID
     instance.ID = original
     assert instance.ID == original
 
-@given(instance=model::Delivery_strategy)
-def test_model::delivery_answer_type(instance):
-    assert isinstance(instance.answer, str)
 
 
-@given(instance=model::Delivery_strategy)
-def test_model::delivery_answer_setter(instance):
-    original = instance.answer
-    instance.answer = original
-    assert instance.answer == original
-
-@given(instance=model::Delivery_strategy)
-def test_model::delivery_group_number_type(instance):
-    assert isinstance(instance.group_number, int)
-
-
-@given(instance=model::Delivery_strategy)
-def test_model::delivery_group_number_setter(instance):
+@given(instance=model_Delivery_strategy)
+def test_model_delivery_group_number_setter(instance):
     original = instance.group_number
     instance.group_number = original
     assert instance.group_number == original
 
-@given(instance=model::Course_strategy)
+
+
+@given(instance=model_Delivery_strategy)
+def test_model_delivery_answer_setter(instance):
+    original = instance.answer
+    instance.answer = original
+    assert instance.answer == original
+
+@given(instance=model_Course_strategy)
 @settings(max_examples=50)
-def test_model::course_instantiation(instance):
-    assert isinstance(instance, model::Course)
-
-@given(instance=model::Course_strategy)
-def test_model::course_ID_type(instance):
-    assert isinstance(instance.ID, int)
+def test_model_course_instantiation(instance):
+    assert isinstance(instance, model_Course)
 
 
-@given(instance=model::Course_strategy)
-def test_model::course_ID_setter(instance):
-    original = instance.ID
-    instance.ID = original
-    assert instance.ID == original
 
-@given(instance=model::Course_strategy)
-def test_model::course_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=model::Course_strategy)
-def test_model::course_name_setter(instance):
+@given(instance=model_Course_strategy)
+def test_model_course_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=model::Student_strategy)
-@settings(max_examples=50)
-def test_model::student_instantiation(instance):
-    assert isinstance(instance, model::Student)
-
-@given(instance=model::Student_strategy)
-def test_model::student_ID_type(instance):
-    assert isinstance(instance.ID, int)
 
 
-@given(instance=model::Student_strategy)
-def test_model::student_ID_setter(instance):
+@given(instance=model_Course_strategy)
+def test_model_course_ID_setter(instance):
     original = instance.ID
     instance.ID = original
     assert instance.ID == original
 
-@given(instance=model::Student_strategy)
-def test_model::student_name_type(instance):
-    assert isinstance(instance.name, str)
+@given(instance=model_Student_strategy)
+@settings(max_examples=50)
+def test_model_student_instantiation(instance):
+    assert isinstance(instance, model_Student)
 
 
-@given(instance=model::Student_strategy)
-def test_model::student_name_setter(instance):
+
+@given(instance=model_Student_strategy)
+def test_model_student_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
+
+
+
+@given(instance=model_Student_strategy)
+def test_model_student_ID_setter(instance):
+    original = instance.ID
+    instance.ID = original
+    assert instance.ID == original

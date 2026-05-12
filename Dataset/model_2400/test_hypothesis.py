@@ -3,45 +3,21 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    rdb::Schema,
+from python_code import (
     Key,
-    rdb::ForeignKey,
-    rdb::PrimaryKey,
-    rdb::Key,
-    rdb::Column,
-    rdb::Table,
+    rdb_ForeignKey,
+    rdb_PrimaryKey,
+    rdb_Key,
+    rdb_Column,
+    rdb_Table,
+    rdb_Schema,
 )
 
 # =============================================================================
 # SECTION 1 — STRUCTURAL TESTS
 # =============================================================================
-
-
-
-def test_rdb::schema_is_not_abstract():
-    assert not inspect.isabstract(rdb::Schema)
-
-
-def test_rdb::schema_constructor_exists():
-    assert callable(rdb::Schema.__init__)
-
-
-def test_rdb::schema_constructor_args():
-    sig = inspect.signature(rdb::Schema.__init__)
-    params = list(sig.parameters.keys())
-    assert "name" in params, "Missing parameter 'name'"
-
-def test_rdb::schema_has_name():
-    assert hasattr(rdb::Schema, "name")
-    descriptor = None
-    for klass in rdb::Schema.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
 
 
 
@@ -59,75 +35,75 @@ def test_key_constructor_args():
 
 
 
-def test_rdb::foreignkey_is_not_abstract():
-    assert not inspect.isabstract(rdb::ForeignKey)
+def test_rdb_foreignkey_is_not_abstract():
+    assert not inspect.isabstract(rdb_ForeignKey)
 
 
-def test_rdb::foreignkey_constructor_exists():
-    assert callable(rdb::ForeignKey.__init__)
+def test_rdb_foreignkey_constructor_exists():
+    assert callable(rdb_ForeignKey.__init__)
 
 
-def test_rdb::foreignkey_constructor_args():
-    sig = inspect.signature(rdb::ForeignKey.__init__)
+def test_rdb_foreignkey_constructor_args():
+    sig = inspect.signature(rdb_ForeignKey.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_rdb::primarykey_is_not_abstract():
-    assert not inspect.isabstract(rdb::PrimaryKey)
+def test_rdb_primarykey_is_not_abstract():
+    assert not inspect.isabstract(rdb_PrimaryKey)
 
 
-def test_rdb::primarykey_constructor_exists():
-    assert callable(rdb::PrimaryKey.__init__)
+def test_rdb_primarykey_constructor_exists():
+    assert callable(rdb_PrimaryKey.__init__)
 
 
-def test_rdb::primarykey_constructor_args():
-    sig = inspect.signature(rdb::PrimaryKey.__init__)
+def test_rdb_primarykey_constructor_args():
+    sig = inspect.signature(rdb_PrimaryKey.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_rdb::key_is_not_abstract():
-    assert not inspect.isabstract(rdb::Key)
+def test_rdb_key_is_not_abstract():
+    assert not inspect.isabstract(rdb_Key)
 
 
-def test_rdb::key_constructor_exists():
-    assert callable(rdb::Key.__init__)
+def test_rdb_key_constructor_exists():
+    assert callable(rdb_Key.__init__)
 
 
-def test_rdb::key_constructor_args():
-    sig = inspect.signature(rdb::Key.__init__)
+def test_rdb_key_constructor_args():
+    sig = inspect.signature(rdb_Key.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_rdb::column_is_not_abstract():
-    assert not inspect.isabstract(rdb::Column)
+def test_rdb_column_is_not_abstract():
+    assert not inspect.isabstract(rdb_Column)
 
 
-def test_rdb::column_constructor_exists():
-    assert callable(rdb::Column.__init__)
+def test_rdb_column_constructor_exists():
+    assert callable(rdb_Column.__init__)
 
 
-def test_rdb::column_constructor_args():
-    sig = inspect.signature(rdb::Column.__init__)
+def test_rdb_column_constructor_args():
+    sig = inspect.signature(rdb_Column.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
     assert "type" in params, "Missing parameter 'type'"
 
-def test_rdb::column_has_name():
-    assert hasattr(rdb::Column, "name")
+def test_rdb_column_has_name():
+    assert hasattr(rdb_Column, "name")
     descriptor = None
-    for klass in rdb::Column.__mro__:
+    for klass in rdb_Column.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
-def test_rdb::column_has_type():
-    assert hasattr(rdb::Column, "type")
+def test_rdb_column_has_type():
+    assert hasattr(rdb_Column, "type")
     descriptor = None
-    for klass in rdb::Column.__mro__:
+    for klass in rdb_Column.__mro__:
         if "type" in klass.__dict__:
             descriptor = klass.__dict__["type"]
             break
@@ -135,23 +111,47 @@ def test_rdb::column_has_type():
 
 
 
-def test_rdb::table_is_not_abstract():
-    assert not inspect.isabstract(rdb::Table)
+def test_rdb_table_is_not_abstract():
+    assert not inspect.isabstract(rdb_Table)
 
 
-def test_rdb::table_constructor_exists():
-    assert callable(rdb::Table.__init__)
+def test_rdb_table_constructor_exists():
+    assert callable(rdb_Table.__init__)
 
 
-def test_rdb::table_constructor_args():
-    sig = inspect.signature(rdb::Table.__init__)
+def test_rdb_table_constructor_args():
+    sig = inspect.signature(rdb_Table.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_rdb::table_has_name():
-    assert hasattr(rdb::Table, "name")
+def test_rdb_table_has_name():
+    assert hasattr(rdb_Table, "name")
     descriptor = None
-    for klass in rdb::Table.__mro__:
+    for klass in rdb_Table.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_rdb_schema_is_not_abstract():
+    assert not inspect.isabstract(rdb_Schema)
+
+
+def test_rdb_schema_constructor_exists():
+    assert callable(rdb_Schema.__init__)
+
+
+def test_rdb_schema_constructor_args():
+    sig = inspect.signature(rdb_Schema.__init__)
+    params = list(sig.parameters.keys())
+    assert "name" in params, "Missing parameter 'name'"
+
+def test_rdb_schema_has_name():
+    assert hasattr(rdb_Schema, "name")
+    descriptor = None
+    for klass in rdb_Schema.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -169,111 +169,99 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-rdb::Schema_strategy = st.builds(
-    rdb::Schema,
-    name=
-        safe_text
-)
 Key_strategy = st.builds(
     Key,
 )
-rdb::ForeignKey_strategy = st.builds(
-    rdb::ForeignKey,
+rdb_ForeignKey_strategy = st.builds(
+    rdb_ForeignKey,
 )
-rdb::PrimaryKey_strategy = st.builds(
-    rdb::PrimaryKey,
+rdb_PrimaryKey_strategy = st.builds(
+    rdb_PrimaryKey,
 )
-rdb::Key_strategy = st.builds(
-    rdb::Key,
+rdb_Key_strategy = st.builds(
+    rdb_Key,
 )
-rdb::Column_strategy = st.builds(
-    rdb::Column,
+rdb_Column_strategy = st.builds(
+    rdb_Column,
     name=
         safe_text,
     type=
         safe_text
 )
-rdb::Table_strategy = st.builds(
-    rdb::Table,
+rdb_Table_strategy = st.builds(
+    rdb_Table,
     name=
         safe_text
 )
-
-@given(instance=rdb::Schema_strategy)
-@settings(max_examples=50)
-def test_rdb::schema_instantiation(instance):
-    assert isinstance(instance, rdb::Schema)
-
-@given(instance=rdb::Schema_strategy)
-def test_rdb::schema_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=rdb::Schema_strategy)
-def test_rdb::schema_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
+rdb_Schema_strategy = st.builds(
+    rdb_Schema,
+    name=
+        safe_text
+)
 
 @given(instance=Key_strategy)
 @settings(max_examples=50)
 def test_key_instantiation(instance):
     assert isinstance(instance, Key)
 
-@given(instance=rdb::ForeignKey_strategy)
+@given(instance=rdb_ForeignKey_strategy)
 @settings(max_examples=50)
-def test_rdb::foreignkey_instantiation(instance):
-    assert isinstance(instance, rdb::ForeignKey)
+def test_rdb_foreignkey_instantiation(instance):
+    assert isinstance(instance, rdb_ForeignKey)
 
-@given(instance=rdb::PrimaryKey_strategy)
+@given(instance=rdb_PrimaryKey_strategy)
 @settings(max_examples=50)
-def test_rdb::primarykey_instantiation(instance):
-    assert isinstance(instance, rdb::PrimaryKey)
+def test_rdb_primarykey_instantiation(instance):
+    assert isinstance(instance, rdb_PrimaryKey)
 
-@given(instance=rdb::Key_strategy)
+@given(instance=rdb_Key_strategy)
 @settings(max_examples=50)
-def test_rdb::key_instantiation(instance):
-    assert isinstance(instance, rdb::Key)
+def test_rdb_key_instantiation(instance):
+    assert isinstance(instance, rdb_Key)
 
-@given(instance=rdb::Column_strategy)
+@given(instance=rdb_Column_strategy)
 @settings(max_examples=50)
-def test_rdb::column_instantiation(instance):
-    assert isinstance(instance, rdb::Column)
-
-@given(instance=rdb::Column_strategy)
-def test_rdb::column_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_rdb_column_instantiation(instance):
+    assert isinstance(instance, rdb_Column)
 
 
-@given(instance=rdb::Column_strategy)
-def test_rdb::column_name_setter(instance):
+
+@given(instance=rdb_Column_strategy)
+def test_rdb_column_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=rdb::Column_strategy)
-def test_rdb::column_type_type(instance):
-    assert isinstance(instance.type, str)
 
 
-@given(instance=rdb::Column_strategy)
-def test_rdb::column_type_setter(instance):
+@given(instance=rdb_Column_strategy)
+def test_rdb_column_type_setter(instance):
     original = instance.type
     instance.type = original
     assert instance.type == original
 
-@given(instance=rdb::Table_strategy)
+@given(instance=rdb_Table_strategy)
 @settings(max_examples=50)
-def test_rdb::table_instantiation(instance):
-    assert isinstance(instance, rdb::Table)
-
-@given(instance=rdb::Table_strategy)
-def test_rdb::table_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_rdb_table_instantiation(instance):
+    assert isinstance(instance, rdb_Table)
 
 
-@given(instance=rdb::Table_strategy)
-def test_rdb::table_name_setter(instance):
+
+@given(instance=rdb_Table_strategy)
+def test_rdb_table_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+@given(instance=rdb_Schema_strategy)
+@settings(max_examples=50)
+def test_rdb_schema_instantiation(instance):
+    assert isinstance(instance, rdb_Schema)
+
+
+
+@given(instance=rdb_Schema_strategy)
+def test_rdb_schema_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original

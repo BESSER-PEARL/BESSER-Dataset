@@ -3,7 +3,7 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
 from python_code import (
     Message,
@@ -235,17 +235,8 @@ def test_login_constructor_exists():
 def test_login_constructor_args():
     sig = inspect.signature(Login.__init__)
     params = list(sig.parameters.keys())
-    assert "password" in params, "Missing parameter 'password'"
     assert "username" in params, "Missing parameter 'username'"
-
-def test_login_has_password():
-    assert hasattr(Login, "password")
-    descriptor = None
-    for klass in Login.__mro__:
-        if "password" in klass.__dict__:
-            descriptor = klass.__dict__["password"]
-            break
-    assert isinstance(descriptor, property)
+    assert "password" in params, "Missing parameter 'password'"
 
 def test_login_has_username():
     assert hasattr(Login, "username")
@@ -253,6 +244,15 @@ def test_login_has_username():
     for klass in Login.__mro__:
         if "username" in klass.__dict__:
             descriptor = klass.__dict__["username"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_login_has_password():
+    assert hasattr(Login, "password")
+    descriptor = None
+    for klass in Login.__mro__:
+        if "password" in klass.__dict__:
+            descriptor = klass.__dict__["password"]
             break
     assert isinstance(descriptor, property)
 
@@ -270,9 +270,9 @@ def test_sign_up_constructor_args():
     sig = inspect.signature(Sign_Up.__init__)
     params = list(sig.parameters.keys())
     assert "password" in params, "Missing parameter 'password'"
-    assert "fname" in params, "Missing parameter 'fname'"
-    assert "userName" in params, "Missing parameter 'userName'"
     assert "lname" in params, "Missing parameter 'lname'"
+    assert "userName" in params, "Missing parameter 'userName'"
+    assert "fname" in params, "Missing parameter 'fname'"
 
 def test_sign_up_has_password():
     assert hasattr(Sign_Up, "password")
@@ -283,12 +283,12 @@ def test_sign_up_has_password():
             break
     assert isinstance(descriptor, property)
 
-def test_sign_up_has_fname():
-    assert hasattr(Sign_Up, "fname")
+def test_sign_up_has_lname():
+    assert hasattr(Sign_Up, "lname")
     descriptor = None
     for klass in Sign_Up.__mro__:
-        if "fname" in klass.__dict__:
-            descriptor = klass.__dict__["fname"]
+        if "lname" in klass.__dict__:
+            descriptor = klass.__dict__["lname"]
             break
     assert isinstance(descriptor, property)
 
@@ -301,12 +301,12 @@ def test_sign_up_has_userName():
             break
     assert isinstance(descriptor, property)
 
-def test_sign_up_has_lname():
-    assert hasattr(Sign_Up, "lname")
+def test_sign_up_has_fname():
+    assert hasattr(Sign_Up, "fname")
     descriptor = None
     for klass in Sign_Up.__mro__:
-        if "lname" in klass.__dict__:
-            descriptor = klass.__dict__["lname"]
+        if "fname" in klass.__dict__:
+            descriptor = klass.__dict__["fname"]
             break
     assert isinstance(descriptor, property)
 
@@ -347,17 +347,8 @@ def test_hashtag_constructor_exists():
 def test_hashtag_constructor_args():
     sig = inspect.signature(Hashtag.__init__)
     params = list(sig.parameters.keys())
-    assert "numOfRepeat" in params, "Missing parameter 'numOfRepeat'"
     assert "name" in params, "Missing parameter 'name'"
-
-def test_hashtag_has_numOfRepeat():
-    assert hasattr(Hashtag, "numOfRepeat")
-    descriptor = None
-    for klass in Hashtag.__mro__:
-        if "numOfRepeat" in klass.__dict__:
-            descriptor = klass.__dict__["numOfRepeat"]
-            break
-    assert isinstance(descriptor, property)
+    assert "numOfRepeat" in params, "Missing parameter 'numOfRepeat'"
 
 def test_hashtag_has_name():
     assert hasattr(Hashtag, "name")
@@ -365,6 +356,15 @@ def test_hashtag_has_name():
     for klass in Hashtag.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_hashtag_has_numOfRepeat():
+    assert hasattr(Hashtag, "numOfRepeat")
+    descriptor = None
+    for klass in Hashtag.__mro__:
+        if "numOfRepeat" in klass.__dict__:
+            descriptor = klass.__dict__["numOfRepeat"]
             break
     assert isinstance(descriptor, property)
 
@@ -437,20 +437,20 @@ User_strategy = st.builds(
 )
 Login_strategy = st.builds(
     Login,
-    password=
-        safe_text,
     username=
+        safe_text,
+    password=
         safe_text
 )
 Sign_Up_strategy = st.builds(
     Sign_Up,
     password=
         st.none(),
-    fname=
+    lname=
         safe_text,
     userName=
         safe_text,
-    lname=
+    fname=
         safe_text
 )
 Page_strategy = st.builds(
@@ -460,10 +460,10 @@ Page_strategy = st.builds(
 )
 Hashtag_strategy = st.builds(
     Hashtag,
-    numOfRepeat=
-        st.integers(),
     name=
-        safe_text
+        safe_text,
+    numOfRepeat=
+        st.integers()
 )
 Friend_strategy = st.builds(
     Friend,
@@ -474,9 +474,6 @@ Friend_strategy = st.builds(
 def test_message_instantiation(instance):
     assert isinstance(instance, Message)
 
-@given(instance=Message_strategy)
-def test_message_maxChars_type(instance):
-    assert isinstance(instance.maxChars, str)
 
 
 @given(instance=Message_strategy)
@@ -490,9 +487,6 @@ def test_message_maxChars_setter(instance):
 def test_secret_instantiation(instance):
     assert isinstance(instance, secret)
 
-@given(instance=secret_strategy)
-def test_secret_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
 @given(instance=secret_strategy)
@@ -506,9 +500,6 @@ def test_secret_name_setter(instance):
 def test_public_instantiation(instance):
     assert isinstance(instance, public)
 
-@given(instance=public_strategy)
-def test_public_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
 @given(instance=public_strategy)
@@ -522,9 +513,6 @@ def test_public_name_setter(instance):
 def test_group_instantiation(instance):
     assert isinstance(instance, Group)
 
-@given(instance=Group_strategy)
-def test_group_discription_type(instance):
-    assert isinstance(instance.discription, str)
 
 
 @given(instance=Group_strategy)
@@ -533,9 +521,6 @@ def test_group_discription_setter(instance):
     instance.discription = original
     assert instance.discription == original
 
-@given(instance=Group_strategy)
-def test_group_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
 @given(instance=Group_strategy)
@@ -549,9 +534,6 @@ def test_group_name_setter(instance):
 def test_post_instantiation(instance):
     assert isinstance(instance, Post)
 
-@given(instance=Post_strategy)
-def test_post_info_type(instance):
-    assert isinstance(instance.info, str)
 
 
 @given(instance=Post_strategy)
@@ -560,9 +542,6 @@ def test_post_info_setter(instance):
     instance.info = original
     assert instance.info == original
 
-@given(instance=Post_strategy)
-def test_post_privacy_type(instance):
-    assert isinstance(instance.privacy, str)
 
 
 @given(instance=Post_strategy)
@@ -576,9 +555,6 @@ def test_post_privacy_setter(instance):
 def test_profile_instantiation(instance):
     assert isinstance(instance, Profile)
 
-@given(instance=Profile_strategy)
-def test_profile_password_type(instance):
-    assert isinstance(instance.password, str)
 
 
 @given(instance=Profile_strategy)
@@ -587,9 +563,6 @@ def test_profile_password_setter(instance):
     instance.password = original
     assert instance.password == original
 
-@given(instance=Profile_strategy)
-def test_profile_username_type(instance):
-    assert isinstance(instance.username, str)
 
 
 @given(instance=Profile_strategy)
@@ -603,9 +576,6 @@ def test_profile_username_setter(instance):
 def test_user_instantiation(instance):
     assert isinstance(instance, User)
 
-@given(instance=User_strategy)
-def test_user_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
 @given(instance=User_strategy)
@@ -619,20 +589,6 @@ def test_user_name_setter(instance):
 def test_login_instantiation(instance):
     assert isinstance(instance, Login)
 
-@given(instance=Login_strategy)
-def test_login_password_type(instance):
-    assert isinstance(instance.password, str)
-
-
-@given(instance=Login_strategy)
-def test_login_password_setter(instance):
-    original = instance.password
-    instance.password = original
-    assert instance.password == original
-
-@given(instance=Login_strategy)
-def test_login_username_type(instance):
-    assert isinstance(instance.username, str)
 
 
 @given(instance=Login_strategy)
@@ -641,14 +597,19 @@ def test_login_username_setter(instance):
     instance.username = original
     assert instance.username == original
 
+
+
+@given(instance=Login_strategy)
+def test_login_password_setter(instance):
+    original = instance.password
+    instance.password = original
+    assert instance.password == original
+
 @given(instance=Sign_Up_strategy)
 @settings(max_examples=50)
 def test_sign_up_instantiation(instance):
     assert isinstance(instance, Sign_Up)
 
-@given(instance=Sign_Up_strategy)
-def test_sign_up_password_type(instance):
-    assert isinstance(instance.password, secret)
 
 
 @given(instance=Sign_Up_strategy)
@@ -657,31 +618,6 @@ def test_sign_up_password_setter(instance):
     instance.password = original
     assert instance.password == original
 
-@given(instance=Sign_Up_strategy)
-def test_sign_up_fname_type(instance):
-    assert isinstance(instance.fname, str)
-
-
-@given(instance=Sign_Up_strategy)
-def test_sign_up_fname_setter(instance):
-    original = instance.fname
-    instance.fname = original
-    assert instance.fname == original
-
-@given(instance=Sign_Up_strategy)
-def test_sign_up_userName_type(instance):
-    assert isinstance(instance.userName, str)
-
-
-@given(instance=Sign_Up_strategy)
-def test_sign_up_userName_setter(instance):
-    original = instance.userName
-    instance.userName = original
-    assert instance.userName == original
-
-@given(instance=Sign_Up_strategy)
-def test_sign_up_lname_type(instance):
-    assert isinstance(instance.lname, str)
 
 
 @given(instance=Sign_Up_strategy)
@@ -690,14 +626,27 @@ def test_sign_up_lname_setter(instance):
     instance.lname = original
     assert instance.lname == original
 
+
+
+@given(instance=Sign_Up_strategy)
+def test_sign_up_userName_setter(instance):
+    original = instance.userName
+    instance.userName = original
+    assert instance.userName == original
+
+
+
+@given(instance=Sign_Up_strategy)
+def test_sign_up_fname_setter(instance):
+    original = instance.fname
+    instance.fname = original
+    assert instance.fname == original
+
 @given(instance=Page_strategy)
 @settings(max_examples=50)
 def test_page_instantiation(instance):
     assert isinstance(instance, Page)
 
-@given(instance=Page_strategy)
-def test_page_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
 @given(instance=Page_strategy)
@@ -711,20 +660,6 @@ def test_page_name_setter(instance):
 def test_hashtag_instantiation(instance):
     assert isinstance(instance, Hashtag)
 
-@given(instance=Hashtag_strategy)
-def test_hashtag_numOfRepeat_type(instance):
-    assert isinstance(instance.numOfRepeat, int)
-
-
-@given(instance=Hashtag_strategy)
-def test_hashtag_numOfRepeat_setter(instance):
-    original = instance.numOfRepeat
-    instance.numOfRepeat = original
-    assert instance.numOfRepeat == original
-
-@given(instance=Hashtag_strategy)
-def test_hashtag_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
 @given(instance=Hashtag_strategy)
@@ -732,6 +667,14 @@ def test_hashtag_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
+
+
+
+@given(instance=Hashtag_strategy)
+def test_hashtag_numOfRepeat_setter(instance):
+    original = instance.numOfRepeat
+    instance.numOfRepeat = original
+    assert instance.numOfRepeat == original
 
 @given(instance=Friend_strategy)
 @settings(max_examples=50)

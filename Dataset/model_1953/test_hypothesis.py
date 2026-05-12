@@ -3,21 +3,21 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     MediaArtifact,
-    mode::AudioBook,
-    mode::EBook,
-    mode::Music,
-    mode::Video,
-    mode::MediaArtifact,
-    mode::MediaCollection,
-    mode::User,
-    mode::Device,
-    mode::MediaLibrary,
-    DeviceType,
+    mode_Music,
+    mode_EBook,
+    mode_AudioBook,
+    mode_Video,
+    mode_MediaArtifact,
+    mode_MediaCollection,
+    mode_User,
+    mode_Device,
+    mode_MediaLibrary,
     MediaSourceType,
+    DeviceType,
 )
 
 # =============================================================================
@@ -40,23 +40,23 @@ def test_mediaartifact_constructor_args():
 
 
 
-def test_mode::audiobook_is_not_abstract():
-    assert not inspect.isabstract(mode::AudioBook)
+def test_mode_music_is_not_abstract():
+    assert not inspect.isabstract(mode_Music)
 
 
-def test_mode::audiobook_constructor_exists():
-    assert callable(mode::AudioBook.__init__)
+def test_mode_music_constructor_exists():
+    assert callable(mode_Music.__init__)
 
 
-def test_mode::audiobook_constructor_args():
-    sig = inspect.signature(mode::AudioBook.__init__)
+def test_mode_music_constructor_args():
+    sig = inspect.signature(mode_Music.__init__)
     params = list(sig.parameters.keys())
     assert "length" in params, "Missing parameter 'length'"
 
-def test_mode::audiobook_has_length():
-    assert hasattr(mode::AudioBook, "length")
+def test_mode_music_has_length():
+    assert hasattr(mode_Music, "length")
     descriptor = None
-    for klass in mode::AudioBook.__mro__:
+    for klass in mode_Music.__mro__:
         if "length" in klass.__dict__:
             descriptor = klass.__dict__["length"]
             break
@@ -64,37 +64,37 @@ def test_mode::audiobook_has_length():
 
 
 
-def test_mode::ebook_is_not_abstract():
-    assert not inspect.isabstract(mode::EBook)
+def test_mode_ebook_is_not_abstract():
+    assert not inspect.isabstract(mode_EBook)
 
 
-def test_mode::ebook_constructor_exists():
-    assert callable(mode::EBook.__init__)
+def test_mode_ebook_constructor_exists():
+    assert callable(mode_EBook.__init__)
 
 
-def test_mode::ebook_constructor_args():
-    sig = inspect.signature(mode::EBook.__init__)
+def test_mode_ebook_constructor_args():
+    sig = inspect.signature(mode_EBook.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_mode::music_is_not_abstract():
-    assert not inspect.isabstract(mode::Music)
+def test_mode_audiobook_is_not_abstract():
+    assert not inspect.isabstract(mode_AudioBook)
 
 
-def test_mode::music_constructor_exists():
-    assert callable(mode::Music.__init__)
+def test_mode_audiobook_constructor_exists():
+    assert callable(mode_AudioBook.__init__)
 
 
-def test_mode::music_constructor_args():
-    sig = inspect.signature(mode::Music.__init__)
+def test_mode_audiobook_constructor_args():
+    sig = inspect.signature(mode_AudioBook.__init__)
     params = list(sig.parameters.keys())
     assert "length" in params, "Missing parameter 'length'"
 
-def test_mode::music_has_length():
-    assert hasattr(mode::Music, "length")
+def test_mode_audiobook_has_length():
+    assert hasattr(mode_AudioBook, "length")
     descriptor = None
-    for klass in mode::Music.__mro__:
+    for klass in mode_AudioBook.__mro__:
         if "length" in klass.__dict__:
             descriptor = klass.__dict__["length"]
             break
@@ -102,23 +102,23 @@ def test_mode::music_has_length():
 
 
 
-def test_mode::video_is_not_abstract():
-    assert not inspect.isabstract(mode::Video)
+def test_mode_video_is_not_abstract():
+    assert not inspect.isabstract(mode_Video)
 
 
-def test_mode::video_constructor_exists():
-    assert callable(mode::Video.__init__)
+def test_mode_video_constructor_exists():
+    assert callable(mode_Video.__init__)
 
 
-def test_mode::video_constructor_args():
-    sig = inspect.signature(mode::Video.__init__)
+def test_mode_video_constructor_args():
+    sig = inspect.signature(mode_Video.__init__)
     params = list(sig.parameters.keys())
     assert "length" in params, "Missing parameter 'length'"
 
-def test_mode::video_has_length():
-    assert hasattr(mode::Video, "length")
+def test_mode_video_has_length():
+    assert hasattr(mode_Video, "length")
     descriptor = None
-    for klass in mode::Video.__mro__:
+    for klass in mode_Video.__mro__:
         if "length" in klass.__dict__:
             descriptor = klass.__dict__["length"]
             break
@@ -126,67 +126,67 @@ def test_mode::video_has_length():
 
 
 
-def test_mode::mediaartifact_is_not_abstract():
-    assert not inspect.isabstract(mode::MediaArtifact)
+def test_mode_mediaartifact_is_not_abstract():
+    assert not inspect.isabstract(mode_MediaArtifact)
 
 
-def test_mode::mediaartifact_constructor_exists():
-    assert callable(mode::MediaArtifact.__init__)
+def test_mode_mediaartifact_constructor_exists():
+    assert callable(mode_MediaArtifact.__init__)
 
 
-def test_mode::mediaartifact_constructor_args():
-    sig = inspect.signature(mode::MediaArtifact.__init__)
+def test_mode_mediaartifact_constructor_args():
+    sig = inspect.signature(mode_MediaArtifact.__init__)
     params = list(sig.parameters.keys())
-    assert "source" in params, "Missing parameter 'source'"
-    assert "identifier" in params, "Missing parameter 'identifier'"
     assert "name" in params, "Missing parameter 'name'"
+    assert "identifier" in params, "Missing parameter 'identifier'"
+    assert "source" in params, "Missing parameter 'source'"
 
-def test_mode::mediaartifact_has_source():
-    assert hasattr(mode::MediaArtifact, "source")
+def test_mode_mediaartifact_has_name():
+    assert hasattr(mode_MediaArtifact, "name")
     descriptor = None
-    for klass in mode::MediaArtifact.__mro__:
-        if "source" in klass.__dict__:
-            descriptor = klass.__dict__["source"]
+    for klass in mode_MediaArtifact.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
-def test_mode::mediaartifact_has_identifier():
-    assert hasattr(mode::MediaArtifact, "identifier")
+def test_mode_mediaartifact_has_identifier():
+    assert hasattr(mode_MediaArtifact, "identifier")
     descriptor = None
-    for klass in mode::MediaArtifact.__mro__:
+    for klass in mode_MediaArtifact.__mro__:
         if "identifier" in klass.__dict__:
             descriptor = klass.__dict__["identifier"]
             break
     assert isinstance(descriptor, property)
 
-def test_mode::mediaartifact_has_name():
-    assert hasattr(mode::MediaArtifact, "name")
+def test_mode_mediaartifact_has_source():
+    assert hasattr(mode_MediaArtifact, "source")
     descriptor = None
-    for klass in mode::MediaArtifact.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
+    for klass in mode_MediaArtifact.__mro__:
+        if "source" in klass.__dict__:
+            descriptor = klass.__dict__["source"]
             break
     assert isinstance(descriptor, property)
 
 
 
-def test_mode::mediacollection_is_not_abstract():
-    assert not inspect.isabstract(mode::MediaCollection)
+def test_mode_mediacollection_is_not_abstract():
+    assert not inspect.isabstract(mode_MediaCollection)
 
 
-def test_mode::mediacollection_constructor_exists():
-    assert callable(mode::MediaCollection.__init__)
+def test_mode_mediacollection_constructor_exists():
+    assert callable(mode_MediaCollection.__init__)
 
 
-def test_mode::mediacollection_constructor_args():
-    sig = inspect.signature(mode::MediaCollection.__init__)
+def test_mode_mediacollection_constructor_args():
+    sig = inspect.signature(mode_MediaCollection.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_mode::mediacollection_has_name():
-    assert hasattr(mode::MediaCollection, "name")
+def test_mode_mediacollection_has_name():
+    assert hasattr(mode_MediaCollection, "name")
     descriptor = None
-    for klass in mode::MediaCollection.__mro__:
+    for klass in mode_MediaCollection.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -194,23 +194,23 @@ def test_mode::mediacollection_has_name():
 
 
 
-def test_mode::user_is_not_abstract():
-    assert not inspect.isabstract(mode::User)
+def test_mode_user_is_not_abstract():
+    assert not inspect.isabstract(mode_User)
 
 
-def test_mode::user_constructor_exists():
-    assert callable(mode::User.__init__)
+def test_mode_user_constructor_exists():
+    assert callable(mode_User.__init__)
 
 
-def test_mode::user_constructor_args():
-    sig = inspect.signature(mode::User.__init__)
+def test_mode_user_constructor_args():
+    sig = inspect.signature(mode_User.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_mode::user_has_name():
-    assert hasattr(mode::User, "name")
+def test_mode_user_has_name():
+    assert hasattr(mode_User, "name")
     descriptor = None
-    for klass in mode::User.__mro__:
+    for klass in mode_User.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -218,33 +218,33 @@ def test_mode::user_has_name():
 
 
 
-def test_mode::device_is_not_abstract():
-    assert not inspect.isabstract(mode::Device)
+def test_mode_device_is_not_abstract():
+    assert not inspect.isabstract(mode_Device)
 
 
-def test_mode::device_constructor_exists():
-    assert callable(mode::Device.__init__)
+def test_mode_device_constructor_exists():
+    assert callable(mode_Device.__init__)
 
 
-def test_mode::device_constructor_args():
-    sig = inspect.signature(mode::Device.__init__)
+def test_mode_device_constructor_args():
+    sig = inspect.signature(mode_Device.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
     assert "type" in params, "Missing parameter 'type'"
 
-def test_mode::device_has_name():
-    assert hasattr(mode::Device, "name")
+def test_mode_device_has_name():
+    assert hasattr(mode_Device, "name")
     descriptor = None
-    for klass in mode::Device.__mro__:
+    for klass in mode_Device.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
-def test_mode::device_has_type():
-    assert hasattr(mode::Device, "type")
+def test_mode_device_has_type():
+    assert hasattr(mode_Device, "type")
     descriptor = None
-    for klass in mode::Device.__mro__:
+    for klass in mode_Device.__mro__:
         if "type" in klass.__dict__:
             descriptor = klass.__dict__["type"]
             break
@@ -252,33 +252,17 @@ def test_mode::device_has_type():
 
 
 
-def test_mode::medialibrary_is_not_abstract():
-    assert not inspect.isabstract(mode::MediaLibrary)
+def test_mode_medialibrary_is_not_abstract():
+    assert not inspect.isabstract(mode_MediaLibrary)
 
 
-def test_mode::medialibrary_constructor_exists():
-    assert callable(mode::MediaLibrary.__init__)
+def test_mode_medialibrary_constructor_exists():
+    assert callable(mode_MediaLibrary.__init__)
 
 
-def test_mode::medialibrary_constructor_args():
-    sig = inspect.signature(mode::MediaLibrary.__init__)
+def test_mode_medialibrary_constructor_args():
+    sig = inspect.signature(mode_MediaLibrary.__init__)
     params = list(sig.parameters.keys())
-
-def test_devicetype_exists():
-    # Check that the Enumeration exists
-    assert DeviceType is not None
-
-def test_devicetype_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in DeviceType]
-    expected_literals = [
-        "Computer",
-        "Tablet",
-        "Smartphone",
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in DeviceType"
 
 def test_mediasourcetype_exists():
     # Check that the Enumeration exists
@@ -295,6 +279,22 @@ def test_mediasourcetype_has_all_literals():
     for lit_name in expected_literals:
         assert lit_name in enum_literals, f"Literal '' missing in MediaSourceType"
 
+def test_devicetype_exists():
+    # Check that the Enumeration exists
+    assert DeviceType is not None
+
+def test_devicetype_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in DeviceType]
+    expected_literals = [
+        "Smartphone",
+        "Tablet",
+        "Computer",
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in DeviceType"
+
 
 # =============================================================================
 # HYPOTHESIS STRATEGIES
@@ -310,52 +310,52 @@ safe_text = st.text(
 MediaArtifact_strategy = st.builds(
     MediaArtifact,
 )
-mode::AudioBook_strategy = st.builds(
-    mode::AudioBook,
+mode_Music_strategy = st.builds(
+    mode_Music,
     length=
         st.integers()
 )
-mode::EBook_strategy = st.builds(
-    mode::EBook,
+mode_EBook_strategy = st.builds(
+    mode_EBook,
 )
-mode::Music_strategy = st.builds(
-    mode::Music,
+mode_AudioBook_strategy = st.builds(
+    mode_AudioBook,
     length=
         st.integers()
 )
-mode::Video_strategy = st.builds(
-    mode::Video,
+mode_Video_strategy = st.builds(
+    mode_Video,
     length=
         st.integers()
 )
-mode::MediaArtifact_strategy = st.builds(
-    mode::MediaArtifact,
-    source=
+mode_MediaArtifact_strategy = st.builds(
+    mode_MediaArtifact,
+    name=
         safe_text,
     identifier=
         safe_text,
+    source=
+        safe_text
+)
+mode_MediaCollection_strategy = st.builds(
+    mode_MediaCollection,
     name=
         safe_text
 )
-mode::MediaCollection_strategy = st.builds(
-    mode::MediaCollection,
+mode_User_strategy = st.builds(
+    mode_User,
     name=
         safe_text
 )
-mode::User_strategy = st.builds(
-    mode::User,
-    name=
-        safe_text
-)
-mode::Device_strategy = st.builds(
-    mode::Device,
+mode_Device_strategy = st.builds(
+    mode_Device,
     name=
         safe_text,
     type=
         safe_text
 )
-mode::MediaLibrary_strategy = st.builds(
-    mode::MediaLibrary,
+mode_MediaLibrary_strategy = st.builds(
+    mode_MediaLibrary,
 )
 
 @given(instance=MediaArtifact_strategy)
@@ -363,157 +363,127 @@ mode::MediaLibrary_strategy = st.builds(
 def test_mediaartifact_instantiation(instance):
     assert isinstance(instance, MediaArtifact)
 
-@given(instance=mode::AudioBook_strategy)
+@given(instance=mode_Music_strategy)
 @settings(max_examples=50)
-def test_mode::audiobook_instantiation(instance):
-    assert isinstance(instance, mode::AudioBook)
-
-@given(instance=mode::AudioBook_strategy)
-def test_mode::audiobook_length_type(instance):
-    assert isinstance(instance.length, int)
+def test_mode_music_instantiation(instance):
+    assert isinstance(instance, mode_Music)
 
 
-@given(instance=mode::AudioBook_strategy)
-def test_mode::audiobook_length_setter(instance):
+
+@given(instance=mode_Music_strategy)
+def test_mode_music_length_setter(instance):
     original = instance.length
     instance.length = original
     assert instance.length == original
 
-@given(instance=mode::EBook_strategy)
+@given(instance=mode_EBook_strategy)
 @settings(max_examples=50)
-def test_mode::ebook_instantiation(instance):
-    assert isinstance(instance, mode::EBook)
+def test_mode_ebook_instantiation(instance):
+    assert isinstance(instance, mode_EBook)
 
-@given(instance=mode::Music_strategy)
+@given(instance=mode_AudioBook_strategy)
 @settings(max_examples=50)
-def test_mode::music_instantiation(instance):
-    assert isinstance(instance, mode::Music)
-
-@given(instance=mode::Music_strategy)
-def test_mode::music_length_type(instance):
-    assert isinstance(instance.length, int)
+def test_mode_audiobook_instantiation(instance):
+    assert isinstance(instance, mode_AudioBook)
 
 
-@given(instance=mode::Music_strategy)
-def test_mode::music_length_setter(instance):
+
+@given(instance=mode_AudioBook_strategy)
+def test_mode_audiobook_length_setter(instance):
     original = instance.length
     instance.length = original
     assert instance.length == original
 
-@given(instance=mode::Video_strategy)
+@given(instance=mode_Video_strategy)
 @settings(max_examples=50)
-def test_mode::video_instantiation(instance):
-    assert isinstance(instance, mode::Video)
-
-@given(instance=mode::Video_strategy)
-def test_mode::video_length_type(instance):
-    assert isinstance(instance.length, int)
+def test_mode_video_instantiation(instance):
+    assert isinstance(instance, mode_Video)
 
 
-@given(instance=mode::Video_strategy)
-def test_mode::video_length_setter(instance):
+
+@given(instance=mode_Video_strategy)
+def test_mode_video_length_setter(instance):
     original = instance.length
     instance.length = original
     assert instance.length == original
 
-@given(instance=mode::MediaArtifact_strategy)
+@given(instance=mode_MediaArtifact_strategy)
 @settings(max_examples=50)
-def test_mode::mediaartifact_instantiation(instance):
-    assert isinstance(instance, mode::MediaArtifact)
-
-@given(instance=mode::MediaArtifact_strategy)
-def test_mode::mediaartifact_source_type(instance):
-    assert isinstance(instance.source, str)
+def test_mode_mediaartifact_instantiation(instance):
+    assert isinstance(instance, mode_MediaArtifact)
 
 
-@given(instance=mode::MediaArtifact_strategy)
-def test_mode::mediaartifact_source_setter(instance):
-    original = instance.source
-    instance.source = original
-    assert instance.source == original
 
-@given(instance=mode::MediaArtifact_strategy)
-def test_mode::mediaartifact_identifier_type(instance):
-    assert isinstance(instance.identifier, str)
+@given(instance=mode_MediaArtifact_strategy)
+def test_mode_mediaartifact_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
 
 
-@given(instance=mode::MediaArtifact_strategy)
-def test_mode::mediaartifact_identifier_setter(instance):
+
+@given(instance=mode_MediaArtifact_strategy)
+def test_mode_mediaartifact_identifier_setter(instance):
     original = instance.identifier
     instance.identifier = original
     assert instance.identifier == original
 
-@given(instance=mode::MediaArtifact_strategy)
-def test_mode::mediaartifact_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
-@given(instance=mode::MediaArtifact_strategy)
-def test_mode::mediaartifact_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
+@given(instance=mode_MediaArtifact_strategy)
+def test_mode_mediaartifact_source_setter(instance):
+    original = instance.source
+    instance.source = original
+    assert instance.source == original
 
-@given(instance=mode::MediaCollection_strategy)
+@given(instance=mode_MediaCollection_strategy)
 @settings(max_examples=50)
-def test_mode::mediacollection_instantiation(instance):
-    assert isinstance(instance, mode::MediaCollection)
-
-@given(instance=mode::MediaCollection_strategy)
-def test_mode::mediacollection_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_mode_mediacollection_instantiation(instance):
+    assert isinstance(instance, mode_MediaCollection)
 
 
-@given(instance=mode::MediaCollection_strategy)
-def test_mode::mediacollection_name_setter(instance):
+
+@given(instance=mode_MediaCollection_strategy)
+def test_mode_mediacollection_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=mode::User_strategy)
+@given(instance=mode_User_strategy)
 @settings(max_examples=50)
-def test_mode::user_instantiation(instance):
-    assert isinstance(instance, mode::User)
-
-@given(instance=mode::User_strategy)
-def test_mode::user_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_mode_user_instantiation(instance):
+    assert isinstance(instance, mode_User)
 
 
-@given(instance=mode::User_strategy)
-def test_mode::user_name_setter(instance):
+
+@given(instance=mode_User_strategy)
+def test_mode_user_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=mode::Device_strategy)
+@given(instance=mode_Device_strategy)
 @settings(max_examples=50)
-def test_mode::device_instantiation(instance):
-    assert isinstance(instance, mode::Device)
-
-@given(instance=mode::Device_strategy)
-def test_mode::device_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_mode_device_instantiation(instance):
+    assert isinstance(instance, mode_Device)
 
 
-@given(instance=mode::Device_strategy)
-def test_mode::device_name_setter(instance):
+
+@given(instance=mode_Device_strategy)
+def test_mode_device_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=mode::Device_strategy)
-def test_mode::device_type_type(instance):
-    assert isinstance(instance.type, str)
 
 
-@given(instance=mode::Device_strategy)
-def test_mode::device_type_setter(instance):
+@given(instance=mode_Device_strategy)
+def test_mode_device_type_setter(instance):
     original = instance.type
     instance.type = original
     assert instance.type == original
 
-@given(instance=mode::MediaLibrary_strategy)
+@given(instance=mode_MediaLibrary_strategy)
 @settings(max_examples=50)
-def test_mode::medialibrary_instantiation(instance):
-    assert isinstance(instance, mode::MediaLibrary)
+def test_mode_medialibrary_instantiation(instance):
+    assert isinstance(instance, mode_MediaLibrary)

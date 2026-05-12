@@ -3,14 +3,14 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    beans::NamedElement,
+from python_code import (
+    beans_NamedElement,
     NamedElement,
-    beans::BeanProperty,
-    beans::Bean,
-    beans::BeanLibrary,
+    beans_BeanProperty,
+    beans_Bean,
+    beans_BeanLibrary,
 )
 
 # =============================================================================
@@ -19,23 +19,23 @@ from classes import (
 
 
 
-def test_beans::namedelement_is_not_abstract():
-    assert not inspect.isabstract(beans::NamedElement)
+def test_beans_namedelement_is_not_abstract():
+    assert not inspect.isabstract(beans_NamedElement)
 
 
-def test_beans::namedelement_constructor_exists():
-    assert callable(beans::NamedElement.__init__)
+def test_beans_namedelement_constructor_exists():
+    assert callable(beans_NamedElement.__init__)
 
 
-def test_beans::namedelement_constructor_args():
-    sig = inspect.signature(beans::NamedElement.__init__)
+def test_beans_namedelement_constructor_args():
+    sig = inspect.signature(beans_NamedElement.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_beans::namedelement_has_name():
-    assert hasattr(beans::NamedElement, "name")
+def test_beans_namedelement_has_name():
+    assert hasattr(beans_NamedElement, "name")
     descriptor = None
-    for klass in beans::NamedElement.__mro__:
+    for klass in beans_NamedElement.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -57,33 +57,33 @@ def test_namedelement_constructor_args():
 
 
 
-def test_beans::beanproperty_is_not_abstract():
-    assert not inspect.isabstract(beans::BeanProperty)
+def test_beans_beanproperty_is_not_abstract():
+    assert not inspect.isabstract(beans_BeanProperty)
 
 
-def test_beans::beanproperty_constructor_exists():
-    assert callable(beans::BeanProperty.__init__)
+def test_beans_beanproperty_constructor_exists():
+    assert callable(beans_BeanProperty.__init__)
 
 
-def test_beans::beanproperty_constructor_args():
-    sig = inspect.signature(beans::BeanProperty.__init__)
+def test_beans_beanproperty_constructor_args():
+    sig = inspect.signature(beans_BeanProperty.__init__)
     params = list(sig.parameters.keys())
     assert "typeName" in params, "Missing parameter 'typeName'"
     assert "changeable" in params, "Missing parameter 'changeable'"
 
-def test_beans::beanproperty_has_typeName():
-    assert hasattr(beans::BeanProperty, "typeName")
+def test_beans_beanproperty_has_typeName():
+    assert hasattr(beans_BeanProperty, "typeName")
     descriptor = None
-    for klass in beans::BeanProperty.__mro__:
+    for klass in beans_BeanProperty.__mro__:
         if "typeName" in klass.__dict__:
             descriptor = klass.__dict__["typeName"]
             break
     assert isinstance(descriptor, property)
 
-def test_beans::beanproperty_has_changeable():
-    assert hasattr(beans::BeanProperty, "changeable")
+def test_beans_beanproperty_has_changeable():
+    assert hasattr(beans_BeanProperty, "changeable")
     descriptor = None
-    for klass in beans::BeanProperty.__mro__:
+    for klass in beans_BeanProperty.__mro__:
         if "changeable" in klass.__dict__:
             descriptor = klass.__dict__["changeable"]
             break
@@ -91,37 +91,37 @@ def test_beans::beanproperty_has_changeable():
 
 
 
-def test_beans::bean_is_not_abstract():
-    assert not inspect.isabstract(beans::Bean)
+def test_beans_bean_is_not_abstract():
+    assert not inspect.isabstract(beans_Bean)
 
 
-def test_beans::bean_constructor_exists():
-    assert callable(beans::Bean.__init__)
+def test_beans_bean_constructor_exists():
+    assert callable(beans_Bean.__init__)
 
 
-def test_beans::bean_constructor_args():
-    sig = inspect.signature(beans::Bean.__init__)
+def test_beans_bean_constructor_args():
+    sig = inspect.signature(beans_Bean.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_beans::beanlibrary_is_not_abstract():
-    assert not inspect.isabstract(beans::BeanLibrary)
+def test_beans_beanlibrary_is_not_abstract():
+    assert not inspect.isabstract(beans_BeanLibrary)
 
 
-def test_beans::beanlibrary_constructor_exists():
-    assert callable(beans::BeanLibrary.__init__)
+def test_beans_beanlibrary_constructor_exists():
+    assert callable(beans_BeanLibrary.__init__)
 
 
-def test_beans::beanlibrary_constructor_args():
-    sig = inspect.signature(beans::BeanLibrary.__init__)
+def test_beans_beanlibrary_constructor_args():
+    sig = inspect.signature(beans_BeanLibrary.__init__)
     params = list(sig.parameters.keys())
     assert "packageName" in params, "Missing parameter 'packageName'"
 
-def test_beans::beanlibrary_has_packageName():
-    assert hasattr(beans::BeanLibrary, "packageName")
+def test_beans_beanlibrary_has_packageName():
+    assert hasattr(beans_BeanLibrary, "packageName")
     descriptor = None
-    for klass in beans::BeanLibrary.__mro__:
+    for klass in beans_BeanLibrary.__mro__:
         if "packageName" in klass.__dict__:
             descriptor = klass.__dict__["packageName"]
             break
@@ -139,42 +139,39 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-beans::NamedElement_strategy = st.builds(
-    beans::NamedElement,
+beans_NamedElement_strategy = st.builds(
+    beans_NamedElement,
     name=
         safe_text
 )
 NamedElement_strategy = st.builds(
     NamedElement,
 )
-beans::BeanProperty_strategy = st.builds(
-    beans::BeanProperty,
+beans_BeanProperty_strategy = st.builds(
+    beans_BeanProperty,
     typeName=
         safe_text,
     changeable=
         st.booleans()
 )
-beans::Bean_strategy = st.builds(
-    beans::Bean,
+beans_Bean_strategy = st.builds(
+    beans_Bean,
 )
-beans::BeanLibrary_strategy = st.builds(
-    beans::BeanLibrary,
+beans_BeanLibrary_strategy = st.builds(
+    beans_BeanLibrary,
     packageName=
         safe_text
 )
 
-@given(instance=beans::NamedElement_strategy)
+@given(instance=beans_NamedElement_strategy)
 @settings(max_examples=50)
-def test_beans::namedelement_instantiation(instance):
-    assert isinstance(instance, beans::NamedElement)
-
-@given(instance=beans::NamedElement_strategy)
-def test_beans::namedelement_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_beans_namedelement_instantiation(instance):
+    assert isinstance(instance, beans_NamedElement)
 
 
-@given(instance=beans::NamedElement_strategy)
-def test_beans::namedelement_name_setter(instance):
+
+@given(instance=beans_NamedElement_strategy)
+def test_beans_namedelement_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
@@ -184,50 +181,41 @@ def test_beans::namedelement_name_setter(instance):
 def test_namedelement_instantiation(instance):
     assert isinstance(instance, NamedElement)
 
-@given(instance=beans::BeanProperty_strategy)
+@given(instance=beans_BeanProperty_strategy)
 @settings(max_examples=50)
-def test_beans::beanproperty_instantiation(instance):
-    assert isinstance(instance, beans::BeanProperty)
-
-@given(instance=beans::BeanProperty_strategy)
-def test_beans::beanproperty_typeName_type(instance):
-    assert isinstance(instance.typeName, str)
+def test_beans_beanproperty_instantiation(instance):
+    assert isinstance(instance, beans_BeanProperty)
 
 
-@given(instance=beans::BeanProperty_strategy)
-def test_beans::beanproperty_typeName_setter(instance):
+
+@given(instance=beans_BeanProperty_strategy)
+def test_beans_beanproperty_typeName_setter(instance):
     original = instance.typeName
     instance.typeName = original
     assert instance.typeName == original
 
-@given(instance=beans::BeanProperty_strategy)
-def test_beans::beanproperty_changeable_type(instance):
-    assert isinstance(instance.changeable, bool)
 
 
-@given(instance=beans::BeanProperty_strategy)
-def test_beans::beanproperty_changeable_setter(instance):
+@given(instance=beans_BeanProperty_strategy)
+def test_beans_beanproperty_changeable_setter(instance):
     original = instance.changeable
     instance.changeable = original
     assert instance.changeable == original
 
-@given(instance=beans::Bean_strategy)
+@given(instance=beans_Bean_strategy)
 @settings(max_examples=50)
-def test_beans::bean_instantiation(instance):
-    assert isinstance(instance, beans::Bean)
+def test_beans_bean_instantiation(instance):
+    assert isinstance(instance, beans_Bean)
 
-@given(instance=beans::BeanLibrary_strategy)
+@given(instance=beans_BeanLibrary_strategy)
 @settings(max_examples=50)
-def test_beans::beanlibrary_instantiation(instance):
-    assert isinstance(instance, beans::BeanLibrary)
-
-@given(instance=beans::BeanLibrary_strategy)
-def test_beans::beanlibrary_packageName_type(instance):
-    assert isinstance(instance.packageName, str)
+def test_beans_beanlibrary_instantiation(instance):
+    assert isinstance(instance, beans_BeanLibrary)
 
 
-@given(instance=beans::BeanLibrary_strategy)
-def test_beans::beanlibrary_packageName_setter(instance):
+
+@given(instance=beans_BeanLibrary_strategy)
+def test_beans_beanlibrary_packageName_setter(instance):
     original = instance.packageName
     instance.packageName = original
     assert instance.packageName == original

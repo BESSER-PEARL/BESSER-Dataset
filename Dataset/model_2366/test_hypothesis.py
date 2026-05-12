@@ -3,25 +3,25 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    sql::Annotation,
-    sql::ModelElement,
+from python_code import (
+    sql_Annotation,
+    sql_ModelElement,
     NamedElement,
-    sql::Table,
+    sql_Table,
     Key,
-    sql::Schema,
-    sql::ForeignKey,
-    sql::PrimaryKey,
+    sql_Schema,
+    sql_ForeignKey,
+    sql_PrimaryKey,
     ModelElement,
-    sql::Key,
-    sql::Event,
-    sql::Column,
-    sql::NamedElement,
+    sql_Column,
+    sql_Event,
+    sql_Key,
+    sql_NamedElement,
     Condition,
-    Action,
     Property,
+    Action,
 )
 
 # =============================================================================
@@ -30,23 +30,23 @@ from classes import (
 
 
 
-def test_sql::annotation_is_not_abstract():
-    assert not inspect.isabstract(sql::Annotation)
+def test_sql_annotation_is_not_abstract():
+    assert not inspect.isabstract(sql_Annotation)
 
 
-def test_sql::annotation_constructor_exists():
-    assert callable(sql::Annotation.__init__)
+def test_sql_annotation_constructor_exists():
+    assert callable(sql_Annotation.__init__)
 
 
-def test_sql::annotation_constructor_args():
-    sig = inspect.signature(sql::Annotation.__init__)
+def test_sql_annotation_constructor_args():
+    sig = inspect.signature(sql_Annotation.__init__)
     params = list(sig.parameters.keys())
     assert "annotation" in params, "Missing parameter 'annotation'"
 
-def test_sql::annotation_has_annotation():
-    assert hasattr(sql::Annotation, "annotation")
+def test_sql_annotation_has_annotation():
+    assert hasattr(sql_Annotation, "annotation")
     descriptor = None
-    for klass in sql::Annotation.__mro__:
+    for klass in sql_Annotation.__mro__:
         if "annotation" in klass.__dict__:
             descriptor = klass.__dict__["annotation"]
             break
@@ -54,16 +54,16 @@ def test_sql::annotation_has_annotation():
 
 
 
-def test_sql::modelelement_is_not_abstract():
-    assert not inspect.isabstract(sql::ModelElement)
+def test_sql_modelelement_is_not_abstract():
+    assert not inspect.isabstract(sql_ModelElement)
 
 
-def test_sql::modelelement_constructor_exists():
-    assert callable(sql::ModelElement.__init__)
+def test_sql_modelelement_constructor_exists():
+    assert callable(sql_ModelElement.__init__)
 
 
-def test_sql::modelelement_constructor_args():
-    sig = inspect.signature(sql::ModelElement.__init__)
+def test_sql_modelelement_constructor_args():
+    sig = inspect.signature(sql_ModelElement.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -82,16 +82,16 @@ def test_namedelement_constructor_args():
 
 
 
-def test_sql::table_is_not_abstract():
-    assert not inspect.isabstract(sql::Table)
+def test_sql_table_is_not_abstract():
+    assert not inspect.isabstract(sql_Table)
 
 
-def test_sql::table_constructor_exists():
-    assert callable(sql::Table.__init__)
+def test_sql_table_constructor_exists():
+    assert callable(sql_Table.__init__)
 
 
-def test_sql::table_constructor_args():
-    sig = inspect.signature(sql::Table.__init__)
+def test_sql_table_constructor_args():
+    sig = inspect.signature(sql_Table.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -110,44 +110,44 @@ def test_key_constructor_args():
 
 
 
-def test_sql::schema_is_not_abstract():
-    assert not inspect.isabstract(sql::Schema)
+def test_sql_schema_is_not_abstract():
+    assert not inspect.isabstract(sql_Schema)
 
 
-def test_sql::schema_constructor_exists():
-    assert callable(sql::Schema.__init__)
+def test_sql_schema_constructor_exists():
+    assert callable(sql_Schema.__init__)
 
 
-def test_sql::schema_constructor_args():
-    sig = inspect.signature(sql::Schema.__init__)
+def test_sql_schema_constructor_args():
+    sig = inspect.signature(sql_Schema.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sql::foreignkey_is_not_abstract():
-    assert not inspect.isabstract(sql::ForeignKey)
+def test_sql_foreignkey_is_not_abstract():
+    assert not inspect.isabstract(sql_ForeignKey)
 
 
-def test_sql::foreignkey_constructor_exists():
-    assert callable(sql::ForeignKey.__init__)
+def test_sql_foreignkey_constructor_exists():
+    assert callable(sql_ForeignKey.__init__)
 
 
-def test_sql::foreignkey_constructor_args():
-    sig = inspect.signature(sql::ForeignKey.__init__)
+def test_sql_foreignkey_constructor_args():
+    sig = inspect.signature(sql_ForeignKey.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sql::primarykey_is_not_abstract():
-    assert not inspect.isabstract(sql::PrimaryKey)
+def test_sql_primarykey_is_not_abstract():
+    assert not inspect.isabstract(sql_PrimaryKey)
 
 
-def test_sql::primarykey_constructor_exists():
-    assert callable(sql::PrimaryKey.__init__)
+def test_sql_primarykey_constructor_exists():
+    assert callable(sql_PrimaryKey.__init__)
 
 
-def test_sql::primarykey_constructor_args():
-    sig = inspect.signature(sql::PrimaryKey.__init__)
+def test_sql_primarykey_constructor_args():
+    sig = inspect.signature(sql_PrimaryKey.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -166,81 +166,33 @@ def test_modelelement_constructor_args():
 
 
 
-def test_sql::key_is_not_abstract():
-    assert not inspect.isabstract(sql::Key)
+def test_sql_column_is_not_abstract():
+    assert not inspect.isabstract(sql_Column)
 
 
-def test_sql::key_constructor_exists():
-    assert callable(sql::Key.__init__)
+def test_sql_column_constructor_exists():
+    assert callable(sql_Column.__init__)
 
 
-def test_sql::key_constructor_args():
-    sig = inspect.signature(sql::Key.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_sql::event_is_not_abstract():
-    assert not inspect.isabstract(sql::Event)
-
-
-def test_sql::event_constructor_exists():
-    assert callable(sql::Event.__init__)
-
-
-def test_sql::event_constructor_args():
-    sig = inspect.signature(sql::Event.__init__)
-    params = list(sig.parameters.keys())
-    assert "action" in params, "Missing parameter 'action'"
-    assert "condition" in params, "Missing parameter 'condition'"
-
-def test_sql::event_has_action():
-    assert hasattr(sql::Event, "action")
-    descriptor = None
-    for klass in sql::Event.__mro__:
-        if "action" in klass.__dict__:
-            descriptor = klass.__dict__["action"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_sql::event_has_condition():
-    assert hasattr(sql::Event, "condition")
-    descriptor = None
-    for klass in sql::Event.__mro__:
-        if "condition" in klass.__dict__:
-            descriptor = klass.__dict__["condition"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_sql::column_is_not_abstract():
-    assert not inspect.isabstract(sql::Column)
-
-
-def test_sql::column_constructor_exists():
-    assert callable(sql::Column.__init__)
-
-
-def test_sql::column_constructor_args():
-    sig = inspect.signature(sql::Column.__init__)
+def test_sql_column_constructor_args():
+    sig = inspect.signature(sql_Column.__init__)
     params = list(sig.parameters.keys())
     assert "type" in params, "Missing parameter 'type'"
     assert "properties" in params, "Missing parameter 'properties'"
 
-def test_sql::column_has_type():
-    assert hasattr(sql::Column, "type")
+def test_sql_column_has_type():
+    assert hasattr(sql_Column, "type")
     descriptor = None
-    for klass in sql::Column.__mro__:
+    for klass in sql_Column.__mro__:
         if "type" in klass.__dict__:
             descriptor = klass.__dict__["type"]
             break
     assert isinstance(descriptor, property)
 
-def test_sql::column_has_properties():
-    assert hasattr(sql::Column, "properties")
+def test_sql_column_has_properties():
+    assert hasattr(sql_Column, "properties")
     descriptor = None
-    for klass in sql::Column.__mro__:
+    for klass in sql_Column.__mro__:
         if "properties" in klass.__dict__:
             descriptor = klass.__dict__["properties"]
             break
@@ -248,23 +200,71 @@ def test_sql::column_has_properties():
 
 
 
-def test_sql::namedelement_is_not_abstract():
-    assert not inspect.isabstract(sql::NamedElement)
+def test_sql_event_is_not_abstract():
+    assert not inspect.isabstract(sql_Event)
 
 
-def test_sql::namedelement_constructor_exists():
-    assert callable(sql::NamedElement.__init__)
+def test_sql_event_constructor_exists():
+    assert callable(sql_Event.__init__)
 
 
-def test_sql::namedelement_constructor_args():
-    sig = inspect.signature(sql::NamedElement.__init__)
+def test_sql_event_constructor_args():
+    sig = inspect.signature(sql_Event.__init__)
+    params = list(sig.parameters.keys())
+    assert "action" in params, "Missing parameter 'action'"
+    assert "condition" in params, "Missing parameter 'condition'"
+
+def test_sql_event_has_action():
+    assert hasattr(sql_Event, "action")
+    descriptor = None
+    for klass in sql_Event.__mro__:
+        if "action" in klass.__dict__:
+            descriptor = klass.__dict__["action"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_sql_event_has_condition():
+    assert hasattr(sql_Event, "condition")
+    descriptor = None
+    for klass in sql_Event.__mro__:
+        if "condition" in klass.__dict__:
+            descriptor = klass.__dict__["condition"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_sql_key_is_not_abstract():
+    assert not inspect.isabstract(sql_Key)
+
+
+def test_sql_key_constructor_exists():
+    assert callable(sql_Key.__init__)
+
+
+def test_sql_key_constructor_args():
+    sig = inspect.signature(sql_Key.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_sql_namedelement_is_not_abstract():
+    assert not inspect.isabstract(sql_NamedElement)
+
+
+def test_sql_namedelement_constructor_exists():
+    assert callable(sql_NamedElement.__init__)
+
+
+def test_sql_namedelement_constructor_args():
+    sig = inspect.signature(sql_NamedElement.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_sql::namedelement_has_name():
-    assert hasattr(sql::NamedElement, "name")
+def test_sql_namedelement_has_name():
+    assert hasattr(sql_NamedElement, "name")
     descriptor = None
-    for klass in sql::NamedElement.__mro__:
+    for klass in sql_NamedElement.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -285,21 +285,6 @@ def test_condition_has_all_literals():
     for lit_name in expected_literals:
         assert lit_name in enum_literals, f"Literal '' missing in Condition"
 
-def test_action_exists():
-    # Check that the Enumeration exists
-    assert Action is not None
-
-def test_action_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in Action]
-    expected_literals = [
-        "SetNull",
-        "Cascade",
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in Action"
-
 def test_property_exists():
     # Check that the Enumeration exists
     assert Property is not None
@@ -316,6 +301,21 @@ def test_property_has_all_literals():
     for lit_name in expected_literals:
         assert lit_name in enum_literals, f"Literal '' missing in Property"
 
+def test_action_exists():
+    # Check that the Enumeration exists
+    assert Action is not None
+
+def test_action_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in Action]
+    expected_literals = [
+        "Cascade",
+        "SetNull",
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in Action"
+
 
 # =============================================================================
 # HYPOTHESIS STRATEGIES
@@ -328,185 +328,167 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-sql::Annotation_strategy = st.builds(
-    sql::Annotation,
+sql_Annotation_strategy = st.builds(
+    sql_Annotation,
     annotation=
         safe_text
 )
-sql::ModelElement_strategy = st.builds(
-    sql::ModelElement,
+sql_ModelElement_strategy = st.builds(
+    sql_ModelElement,
 )
 NamedElement_strategy = st.builds(
     NamedElement,
 )
-sql::Table_strategy = st.builds(
-    sql::Table,
+sql_Table_strategy = st.builds(
+    sql_Table,
 )
 Key_strategy = st.builds(
     Key,
 )
-sql::Schema_strategy = st.builds(
-    sql::Schema,
+sql_Schema_strategy = st.builds(
+    sql_Schema,
 )
-sql::ForeignKey_strategy = st.builds(
-    sql::ForeignKey,
+sql_ForeignKey_strategy = st.builds(
+    sql_ForeignKey,
 )
-sql::PrimaryKey_strategy = st.builds(
-    sql::PrimaryKey,
+sql_PrimaryKey_strategy = st.builds(
+    sql_PrimaryKey,
 )
 ModelElement_strategy = st.builds(
     ModelElement,
 )
-sql::Key_strategy = st.builds(
-    sql::Key,
-)
-sql::Event_strategy = st.builds(
-    sql::Event,
-    action=
-        safe_text,
-    condition=
-        safe_text
-)
-sql::Column_strategy = st.builds(
-    sql::Column,
+sql_Column_strategy = st.builds(
+    sql_Column,
     type=
         safe_text,
     properties=
         safe_text
 )
-sql::NamedElement_strategy = st.builds(
-    sql::NamedElement,
+sql_Event_strategy = st.builds(
+    sql_Event,
+    action=
+        safe_text,
+    condition=
+        safe_text
+)
+sql_Key_strategy = st.builds(
+    sql_Key,
+)
+sql_NamedElement_strategy = st.builds(
+    sql_NamedElement,
     name=
         safe_text
 )
 
-@given(instance=sql::Annotation_strategy)
+@given(instance=sql_Annotation_strategy)
 @settings(max_examples=50)
-def test_sql::annotation_instantiation(instance):
-    assert isinstance(instance, sql::Annotation)
-
-@given(instance=sql::Annotation_strategy)
-def test_sql::annotation_annotation_type(instance):
-    assert isinstance(instance.annotation, str)
+def test_sql_annotation_instantiation(instance):
+    assert isinstance(instance, sql_Annotation)
 
 
-@given(instance=sql::Annotation_strategy)
-def test_sql::annotation_annotation_setter(instance):
+
+@given(instance=sql_Annotation_strategy)
+def test_sql_annotation_annotation_setter(instance):
     original = instance.annotation
     instance.annotation = original
     assert instance.annotation == original
 
-@given(instance=sql::ModelElement_strategy)
+@given(instance=sql_ModelElement_strategy)
 @settings(max_examples=50)
-def test_sql::modelelement_instantiation(instance):
-    assert isinstance(instance, sql::ModelElement)
+def test_sql_modelelement_instantiation(instance):
+    assert isinstance(instance, sql_ModelElement)
 
 @given(instance=NamedElement_strategy)
 @settings(max_examples=50)
 def test_namedelement_instantiation(instance):
     assert isinstance(instance, NamedElement)
 
-@given(instance=sql::Table_strategy)
+@given(instance=sql_Table_strategy)
 @settings(max_examples=50)
-def test_sql::table_instantiation(instance):
-    assert isinstance(instance, sql::Table)
+def test_sql_table_instantiation(instance):
+    assert isinstance(instance, sql_Table)
 
 @given(instance=Key_strategy)
 @settings(max_examples=50)
 def test_key_instantiation(instance):
     assert isinstance(instance, Key)
 
-@given(instance=sql::Schema_strategy)
+@given(instance=sql_Schema_strategy)
 @settings(max_examples=50)
-def test_sql::schema_instantiation(instance):
-    assert isinstance(instance, sql::Schema)
+def test_sql_schema_instantiation(instance):
+    assert isinstance(instance, sql_Schema)
 
-@given(instance=sql::ForeignKey_strategy)
+@given(instance=sql_ForeignKey_strategy)
 @settings(max_examples=50)
-def test_sql::foreignkey_instantiation(instance):
-    assert isinstance(instance, sql::ForeignKey)
+def test_sql_foreignkey_instantiation(instance):
+    assert isinstance(instance, sql_ForeignKey)
 
-@given(instance=sql::PrimaryKey_strategy)
+@given(instance=sql_PrimaryKey_strategy)
 @settings(max_examples=50)
-def test_sql::primarykey_instantiation(instance):
-    assert isinstance(instance, sql::PrimaryKey)
+def test_sql_primarykey_instantiation(instance):
+    assert isinstance(instance, sql_PrimaryKey)
 
 @given(instance=ModelElement_strategy)
 @settings(max_examples=50)
 def test_modelelement_instantiation(instance):
     assert isinstance(instance, ModelElement)
 
-@given(instance=sql::Key_strategy)
+@given(instance=sql_Column_strategy)
 @settings(max_examples=50)
-def test_sql::key_instantiation(instance):
-    assert isinstance(instance, sql::Key)
-
-@given(instance=sql::Event_strategy)
-@settings(max_examples=50)
-def test_sql::event_instantiation(instance):
-    assert isinstance(instance, sql::Event)
-
-@given(instance=sql::Event_strategy)
-def test_sql::event_action_type(instance):
-    assert isinstance(instance.action, str)
+def test_sql_column_instantiation(instance):
+    assert isinstance(instance, sql_Column)
 
 
-@given(instance=sql::Event_strategy)
-def test_sql::event_action_setter(instance):
-    original = instance.action
-    instance.action = original
-    assert instance.action == original
 
-@given(instance=sql::Event_strategy)
-def test_sql::event_condition_type(instance):
-    assert isinstance(instance.condition, str)
-
-
-@given(instance=sql::Event_strategy)
-def test_sql::event_condition_setter(instance):
-    original = instance.condition
-    instance.condition = original
-    assert instance.condition == original
-
-@given(instance=sql::Column_strategy)
-@settings(max_examples=50)
-def test_sql::column_instantiation(instance):
-    assert isinstance(instance, sql::Column)
-
-@given(instance=sql::Column_strategy)
-def test_sql::column_type_type(instance):
-    assert isinstance(instance.type, str)
-
-
-@given(instance=sql::Column_strategy)
-def test_sql::column_type_setter(instance):
+@given(instance=sql_Column_strategy)
+def test_sql_column_type_setter(instance):
     original = instance.type
     instance.type = original
     assert instance.type == original
 
-@given(instance=sql::Column_strategy)
-def test_sql::column_properties_type(instance):
-    assert isinstance(instance.properties, str)
 
 
-@given(instance=sql::Column_strategy)
-def test_sql::column_properties_setter(instance):
+@given(instance=sql_Column_strategy)
+def test_sql_column_properties_setter(instance):
     original = instance.properties
     instance.properties = original
     assert instance.properties == original
 
-@given(instance=sql::NamedElement_strategy)
+@given(instance=sql_Event_strategy)
 @settings(max_examples=50)
-def test_sql::namedelement_instantiation(instance):
-    assert isinstance(instance, sql::NamedElement)
-
-@given(instance=sql::NamedElement_strategy)
-def test_sql::namedelement_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_sql_event_instantiation(instance):
+    assert isinstance(instance, sql_Event)
 
 
-@given(instance=sql::NamedElement_strategy)
-def test_sql::namedelement_name_setter(instance):
+
+@given(instance=sql_Event_strategy)
+def test_sql_event_action_setter(instance):
+    original = instance.action
+    instance.action = original
+    assert instance.action == original
+
+
+
+@given(instance=sql_Event_strategy)
+def test_sql_event_condition_setter(instance):
+    original = instance.condition
+    instance.condition = original
+    assert instance.condition == original
+
+@given(instance=sql_Key_strategy)
+@settings(max_examples=50)
+def test_sql_key_instantiation(instance):
+    assert isinstance(instance, sql_Key)
+
+@given(instance=sql_NamedElement_strategy)
+@settings(max_examples=50)
+def test_sql_namedelement_instantiation(instance):
+    assert isinstance(instance, sql_NamedElement)
+
+
+
+@given(instance=sql_NamedElement_strategy)
+def test_sql_namedelement_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original

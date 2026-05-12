@@ -3,21 +3,21 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     Lit,
-    boolExpEnv::Tru,
+    boolExpEnv_Tru,
     Exp,
-    boolExpEnv::Lit,
-    boolExpEnv::BinExp,
-    boolExpEnv::VarRef,
+    boolExpEnv_Lit,
+    boolExpEnv_BinExp,
+    boolExpEnv_VarRef,
     BinExp,
-    boolExpEnv::Or,
-    boolExpEnv::And,
-    boolExpEnv::Not,
-    boolExpEnv::Fals,
-    boolExpEnv::Exp,
+    boolExpEnv_Or,
+    boolExpEnv_And,
+    boolExpEnv_Not,
+    boolExpEnv_Fals,
+    boolExpEnv_Exp,
 )
 
 # =============================================================================
@@ -40,16 +40,16 @@ def test_lit_constructor_args():
 
 
 
-def test_boolexpenv::tru_is_not_abstract():
-    assert not inspect.isabstract(boolExpEnv::Tru)
+def test_boolexpenv_tru_is_not_abstract():
+    assert not inspect.isabstract(boolExpEnv_Tru)
 
 
-def test_boolexpenv::tru_constructor_exists():
-    assert callable(boolExpEnv::Tru.__init__)
+def test_boolexpenv_tru_constructor_exists():
+    assert callable(boolExpEnv_Tru.__init__)
 
 
-def test_boolexpenv::tru_constructor_args():
-    sig = inspect.signature(boolExpEnv::Tru.__init__)
+def test_boolexpenv_tru_constructor_args():
+    sig = inspect.signature(boolExpEnv_Tru.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -68,51 +68,51 @@ def test_exp_constructor_args():
 
 
 
-def test_boolexpenv::lit_is_not_abstract():
-    assert not inspect.isabstract(boolExpEnv::Lit)
+def test_boolexpenv_lit_is_not_abstract():
+    assert not inspect.isabstract(boolExpEnv_Lit)
 
 
-def test_boolexpenv::lit_constructor_exists():
-    assert callable(boolExpEnv::Lit.__init__)
+def test_boolexpenv_lit_constructor_exists():
+    assert callable(boolExpEnv_Lit.__init__)
 
 
-def test_boolexpenv::lit_constructor_args():
-    sig = inspect.signature(boolExpEnv::Lit.__init__)
+def test_boolexpenv_lit_constructor_args():
+    sig = inspect.signature(boolExpEnv_Lit.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_boolexpenv::binexp_is_not_abstract():
-    assert not inspect.isabstract(boolExpEnv::BinExp)
+def test_boolexpenv_binexp_is_not_abstract():
+    assert not inspect.isabstract(boolExpEnv_BinExp)
 
 
-def test_boolexpenv::binexp_constructor_exists():
-    assert callable(boolExpEnv::BinExp.__init__)
+def test_boolexpenv_binexp_constructor_exists():
+    assert callable(boolExpEnv_BinExp.__init__)
 
 
-def test_boolexpenv::binexp_constructor_args():
-    sig = inspect.signature(boolExpEnv::BinExp.__init__)
+def test_boolexpenv_binexp_constructor_args():
+    sig = inspect.signature(boolExpEnv_BinExp.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_boolexpenv::varref_is_not_abstract():
-    assert not inspect.isabstract(boolExpEnv::VarRef)
+def test_boolexpenv_varref_is_not_abstract():
+    assert not inspect.isabstract(boolExpEnv_VarRef)
 
 
-def test_boolexpenv::varref_constructor_exists():
-    assert callable(boolExpEnv::VarRef.__init__)
+def test_boolexpenv_varref_constructor_exists():
+    assert callable(boolExpEnv_VarRef.__init__)
 
 
-def test_boolexpenv::varref_constructor_args():
-    sig = inspect.signature(boolExpEnv::VarRef.__init__)
+def test_boolexpenv_varref_constructor_args():
+    sig = inspect.signature(boolExpEnv_VarRef.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_boolexpenv::varref_has_name():
-    assert hasattr(boolExpEnv::VarRef, "name")
+def test_boolexpenv_varref_has_name():
+    assert hasattr(boolExpEnv_VarRef, "name")
     descriptor = None
-    for klass in boolExpEnv::VarRef.__mro__:
+    for klass in boolExpEnv_VarRef.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -134,72 +134,72 @@ def test_binexp_constructor_args():
 
 
 
-def test_boolexpenv::or_is_not_abstract():
-    assert not inspect.isabstract(boolExpEnv::Or)
+def test_boolexpenv_or_is_not_abstract():
+    assert not inspect.isabstract(boolExpEnv_Or)
 
 
-def test_boolexpenv::or_constructor_exists():
-    assert callable(boolExpEnv::Or.__init__)
+def test_boolexpenv_or_constructor_exists():
+    assert callable(boolExpEnv_Or.__init__)
 
 
-def test_boolexpenv::or_constructor_args():
-    sig = inspect.signature(boolExpEnv::Or.__init__)
+def test_boolexpenv_or_constructor_args():
+    sig = inspect.signature(boolExpEnv_Or.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_boolexpenv::and_is_not_abstract():
-    assert not inspect.isabstract(boolExpEnv::And)
+def test_boolexpenv_and_is_not_abstract():
+    assert not inspect.isabstract(boolExpEnv_And)
 
 
-def test_boolexpenv::and_constructor_exists():
-    assert callable(boolExpEnv::And.__init__)
+def test_boolexpenv_and_constructor_exists():
+    assert callable(boolExpEnv_And.__init__)
 
 
-def test_boolexpenv::and_constructor_args():
-    sig = inspect.signature(boolExpEnv::And.__init__)
+def test_boolexpenv_and_constructor_args():
+    sig = inspect.signature(boolExpEnv_And.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_boolexpenv::not_is_not_abstract():
-    assert not inspect.isabstract(boolExpEnv::Not)
+def test_boolexpenv_not_is_not_abstract():
+    assert not inspect.isabstract(boolExpEnv_Not)
 
 
-def test_boolexpenv::not_constructor_exists():
-    assert callable(boolExpEnv::Not.__init__)
+def test_boolexpenv_not_constructor_exists():
+    assert callable(boolExpEnv_Not.__init__)
 
 
-def test_boolexpenv::not_constructor_args():
-    sig = inspect.signature(boolExpEnv::Not.__init__)
+def test_boolexpenv_not_constructor_args():
+    sig = inspect.signature(boolExpEnv_Not.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_boolexpenv::fals_is_not_abstract():
-    assert not inspect.isabstract(boolExpEnv::Fals)
+def test_boolexpenv_fals_is_not_abstract():
+    assert not inspect.isabstract(boolExpEnv_Fals)
 
 
-def test_boolexpenv::fals_constructor_exists():
-    assert callable(boolExpEnv::Fals.__init__)
+def test_boolexpenv_fals_constructor_exists():
+    assert callable(boolExpEnv_Fals.__init__)
 
 
-def test_boolexpenv::fals_constructor_args():
-    sig = inspect.signature(boolExpEnv::Fals.__init__)
+def test_boolexpenv_fals_constructor_args():
+    sig = inspect.signature(boolExpEnv_Fals.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_boolexpenv::exp_is_not_abstract():
-    assert not inspect.isabstract(boolExpEnv::Exp)
+def test_boolexpenv_exp_is_not_abstract():
+    assert not inspect.isabstract(boolExpEnv_Exp)
 
 
-def test_boolexpenv::exp_constructor_exists():
-    assert callable(boolExpEnv::Exp.__init__)
+def test_boolexpenv_exp_constructor_exists():
+    assert callable(boolExpEnv_Exp.__init__)
 
 
-def test_boolexpenv::exp_constructor_args():
-    sig = inspect.signature(boolExpEnv::Exp.__init__)
+def test_boolexpenv_exp_constructor_args():
+    sig = inspect.signature(boolExpEnv_Exp.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -217,40 +217,40 @@ safe_text = st.text(
 Lit_strategy = st.builds(
     Lit,
 )
-boolExpEnv::Tru_strategy = st.builds(
-    boolExpEnv::Tru,
+boolExpEnv_Tru_strategy = st.builds(
+    boolExpEnv_Tru,
 )
 Exp_strategy = st.builds(
     Exp,
 )
-boolExpEnv::Lit_strategy = st.builds(
-    boolExpEnv::Lit,
+boolExpEnv_Lit_strategy = st.builds(
+    boolExpEnv_Lit,
 )
-boolExpEnv::BinExp_strategy = st.builds(
-    boolExpEnv::BinExp,
+boolExpEnv_BinExp_strategy = st.builds(
+    boolExpEnv_BinExp,
 )
-boolExpEnv::VarRef_strategy = st.builds(
-    boolExpEnv::VarRef,
+boolExpEnv_VarRef_strategy = st.builds(
+    boolExpEnv_VarRef,
     name=
         safe_text
 )
 BinExp_strategy = st.builds(
     BinExp,
 )
-boolExpEnv::Or_strategy = st.builds(
-    boolExpEnv::Or,
+boolExpEnv_Or_strategy = st.builds(
+    boolExpEnv_Or,
 )
-boolExpEnv::And_strategy = st.builds(
-    boolExpEnv::And,
+boolExpEnv_And_strategy = st.builds(
+    boolExpEnv_And,
 )
-boolExpEnv::Not_strategy = st.builds(
-    boolExpEnv::Not,
+boolExpEnv_Not_strategy = st.builds(
+    boolExpEnv_Not,
 )
-boolExpEnv::Fals_strategy = st.builds(
-    boolExpEnv::Fals,
+boolExpEnv_Fals_strategy = st.builds(
+    boolExpEnv_Fals,
 )
-boolExpEnv::Exp_strategy = st.builds(
-    boolExpEnv::Exp,
+boolExpEnv_Exp_strategy = st.builds(
+    boolExpEnv_Exp,
 )
 
 @given(instance=Lit_strategy)
@@ -258,38 +258,35 @@ boolExpEnv::Exp_strategy = st.builds(
 def test_lit_instantiation(instance):
     assert isinstance(instance, Lit)
 
-@given(instance=boolExpEnv::Tru_strategy)
+@given(instance=boolExpEnv_Tru_strategy)
 @settings(max_examples=50)
-def test_boolexpenv::tru_instantiation(instance):
-    assert isinstance(instance, boolExpEnv::Tru)
+def test_boolexpenv_tru_instantiation(instance):
+    assert isinstance(instance, boolExpEnv_Tru)
 
 @given(instance=Exp_strategy)
 @settings(max_examples=50)
 def test_exp_instantiation(instance):
     assert isinstance(instance, Exp)
 
-@given(instance=boolExpEnv::Lit_strategy)
+@given(instance=boolExpEnv_Lit_strategy)
 @settings(max_examples=50)
-def test_boolexpenv::lit_instantiation(instance):
-    assert isinstance(instance, boolExpEnv::Lit)
+def test_boolexpenv_lit_instantiation(instance):
+    assert isinstance(instance, boolExpEnv_Lit)
 
-@given(instance=boolExpEnv::BinExp_strategy)
+@given(instance=boolExpEnv_BinExp_strategy)
 @settings(max_examples=50)
-def test_boolexpenv::binexp_instantiation(instance):
-    assert isinstance(instance, boolExpEnv::BinExp)
+def test_boolexpenv_binexp_instantiation(instance):
+    assert isinstance(instance, boolExpEnv_BinExp)
 
-@given(instance=boolExpEnv::VarRef_strategy)
+@given(instance=boolExpEnv_VarRef_strategy)
 @settings(max_examples=50)
-def test_boolexpenv::varref_instantiation(instance):
-    assert isinstance(instance, boolExpEnv::VarRef)
-
-@given(instance=boolExpEnv::VarRef_strategy)
-def test_boolexpenv::varref_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_boolexpenv_varref_instantiation(instance):
+    assert isinstance(instance, boolExpEnv_VarRef)
 
 
-@given(instance=boolExpEnv::VarRef_strategy)
-def test_boolexpenv::varref_name_setter(instance):
+
+@given(instance=boolExpEnv_VarRef_strategy)
+def test_boolexpenv_varref_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
@@ -299,27 +296,27 @@ def test_boolexpenv::varref_name_setter(instance):
 def test_binexp_instantiation(instance):
     assert isinstance(instance, BinExp)
 
-@given(instance=boolExpEnv::Or_strategy)
+@given(instance=boolExpEnv_Or_strategy)
 @settings(max_examples=50)
-def test_boolexpenv::or_instantiation(instance):
-    assert isinstance(instance, boolExpEnv::Or)
+def test_boolexpenv_or_instantiation(instance):
+    assert isinstance(instance, boolExpEnv_Or)
 
-@given(instance=boolExpEnv::And_strategy)
+@given(instance=boolExpEnv_And_strategy)
 @settings(max_examples=50)
-def test_boolexpenv::and_instantiation(instance):
-    assert isinstance(instance, boolExpEnv::And)
+def test_boolexpenv_and_instantiation(instance):
+    assert isinstance(instance, boolExpEnv_And)
 
-@given(instance=boolExpEnv::Not_strategy)
+@given(instance=boolExpEnv_Not_strategy)
 @settings(max_examples=50)
-def test_boolexpenv::not_instantiation(instance):
-    assert isinstance(instance, boolExpEnv::Not)
+def test_boolexpenv_not_instantiation(instance):
+    assert isinstance(instance, boolExpEnv_Not)
 
-@given(instance=boolExpEnv::Fals_strategy)
+@given(instance=boolExpEnv_Fals_strategy)
 @settings(max_examples=50)
-def test_boolexpenv::fals_instantiation(instance):
-    assert isinstance(instance, boolExpEnv::Fals)
+def test_boolexpenv_fals_instantiation(instance):
+    assert isinstance(instance, boolExpEnv_Fals)
 
-@given(instance=boolExpEnv::Exp_strategy)
+@given(instance=boolExpEnv_Exp_strategy)
 @settings(max_examples=50)
-def test_boolexpenv::exp_instantiation(instance):
-    assert isinstance(instance, boolExpEnv::Exp)
+def test_boolexpenv_exp_instantiation(instance):
+    assert isinstance(instance, boolExpEnv_Exp)

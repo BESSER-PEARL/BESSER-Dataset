@@ -3,50 +3,50 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    activitydiagram::Context,
-    Value,
-    activitydiagram::IntegerValue,
-    activitydiagram::BooleanValue,
-    Variable,
-    activitydiagram::IntegerVariable,
-    activitydiagram::Input,
-    activitydiagram::InputValue,
-    activitydiagram::Value,
-    FinalNode,
-    activitydiagram::ActivityFinalNode,
-    activitydiagram::Trace,
-    Token,
-    activitydiagram::ForkedToken,
-    activitydiagram::ControlToken,
-    ActivityEdge,
-    activitydiagram::ControlFlow,
-    activitydiagram::Offer,
-    activitydiagram::Token,
-    activitydiagram::Variable,
-    ControlNode,
-    activitydiagram::FinalNode,
-    activitydiagram::JoinNode,
-    activitydiagram::MergeNode,
-    activitydiagram::DecisionNode,
-    activitydiagram::ForkNode,
-    activitydiagram::InitialNode,
-    activitydiagram::NamedActivity,
-    activitydiagram::Exp,
-    Action,
-    activitydiagram::OpaqueAction,
-    ExecutableNode,
-    activitydiagram::Action,
-    ActivityNode,
-    activitydiagram::ExecutableNode,
-    activitydiagram::ControlNode,
-    activitydiagram::BooleanVariable,
+from python_code import (
     NamedActivity,
-    activitydiagram::ActivityEdge,
-    activitydiagram::ActivityNode,
-    activitydiagram::Activity,
+    activitydiagram_Activity,
+    activitydiagram_Context,
+    Value,
+    activitydiagram_IntegerValue,
+    activitydiagram_BooleanValue,
+    Variable,
+    activitydiagram_IntegerVariable,
+    activitydiagram_Input,
+    activitydiagram_InputValue,
+    activitydiagram_Value,
+    FinalNode,
+    activitydiagram_ActivityFinalNode,
+    activitydiagram_Trace,
+    Token,
+    activitydiagram_ForkedToken,
+    activitydiagram_ControlToken,
+    ActivityEdge,
+    activitydiagram_ControlFlow,
+    activitydiagram_Offer,
+    activitydiagram_Token,
+    activitydiagram_Variable,
+    activitydiagram_ActivityEdge,
+    activitydiagram_ActivityNode,
+    ControlNode,
+    activitydiagram_FinalNode,
+    activitydiagram_DecisionNode,
+    activitydiagram_MergeNode,
+    activitydiagram_ForkNode,
+    activitydiagram_JoinNode,
+    activitydiagram_InitialNode,
+    activitydiagram_NamedActivity,
+    activitydiagram_Exp,
+    Action,
+    activitydiagram_OpaqueAction,
+    ExecutableNode,
+    activitydiagram_Action,
+    ActivityNode,
+    activitydiagram_ExecutableNode,
+    activitydiagram_ControlNode,
+    activitydiagram_BooleanVariable,
 )
 
 # =============================================================================
@@ -55,16 +55,44 @@ from classes import (
 
 
 
-def test_activitydiagram::context_is_not_abstract():
-    assert not inspect.isabstract(activitydiagram::Context)
+def test_namedactivity_is_not_abstract():
+    assert not inspect.isabstract(NamedActivity)
 
 
-def test_activitydiagram::context_constructor_exists():
-    assert callable(activitydiagram::Context.__init__)
+def test_namedactivity_constructor_exists():
+    assert callable(NamedActivity.__init__)
 
 
-def test_activitydiagram::context_constructor_args():
-    sig = inspect.signature(activitydiagram::Context.__init__)
+def test_namedactivity_constructor_args():
+    sig = inspect.signature(NamedActivity.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_activitydiagram_activity_is_not_abstract():
+    assert not inspect.isabstract(activitydiagram_Activity)
+
+
+def test_activitydiagram_activity_constructor_exists():
+    assert callable(activitydiagram_Activity.__init__)
+
+
+def test_activitydiagram_activity_constructor_args():
+    sig = inspect.signature(activitydiagram_Activity.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_activitydiagram_context_is_not_abstract():
+    assert not inspect.isabstract(activitydiagram_Context)
+
+
+def test_activitydiagram_context_constructor_exists():
+    assert callable(activitydiagram_Context.__init__)
+
+
+def test_activitydiagram_context_constructor_args():
+    sig = inspect.signature(activitydiagram_Context.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -83,23 +111,23 @@ def test_value_constructor_args():
 
 
 
-def test_activitydiagram::integervalue_is_not_abstract():
-    assert not inspect.isabstract(activitydiagram::IntegerValue)
+def test_activitydiagram_integervalue_is_not_abstract():
+    assert not inspect.isabstract(activitydiagram_IntegerValue)
 
 
-def test_activitydiagram::integervalue_constructor_exists():
-    assert callable(activitydiagram::IntegerValue.__init__)
+def test_activitydiagram_integervalue_constructor_exists():
+    assert callable(activitydiagram_IntegerValue.__init__)
 
 
-def test_activitydiagram::integervalue_constructor_args():
-    sig = inspect.signature(activitydiagram::IntegerValue.__init__)
+def test_activitydiagram_integervalue_constructor_args():
+    sig = inspect.signature(activitydiagram_IntegerValue.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
 
-def test_activitydiagram::integervalue_has_value():
-    assert hasattr(activitydiagram::IntegerValue, "value")
+def test_activitydiagram_integervalue_has_value():
+    assert hasattr(activitydiagram_IntegerValue, "value")
     descriptor = None
-    for klass in activitydiagram::IntegerValue.__mro__:
+    for klass in activitydiagram_IntegerValue.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -107,23 +135,23 @@ def test_activitydiagram::integervalue_has_value():
 
 
 
-def test_activitydiagram::booleanvalue_is_not_abstract():
-    assert not inspect.isabstract(activitydiagram::BooleanValue)
+def test_activitydiagram_booleanvalue_is_not_abstract():
+    assert not inspect.isabstract(activitydiagram_BooleanValue)
 
 
-def test_activitydiagram::booleanvalue_constructor_exists():
-    assert callable(activitydiagram::BooleanValue.__init__)
+def test_activitydiagram_booleanvalue_constructor_exists():
+    assert callable(activitydiagram_BooleanValue.__init__)
 
 
-def test_activitydiagram::booleanvalue_constructor_args():
-    sig = inspect.signature(activitydiagram::BooleanValue.__init__)
+def test_activitydiagram_booleanvalue_constructor_args():
+    sig = inspect.signature(activitydiagram_BooleanValue.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
 
-def test_activitydiagram::booleanvalue_has_value():
-    assert hasattr(activitydiagram::BooleanValue, "value")
+def test_activitydiagram_booleanvalue_has_value():
+    assert hasattr(activitydiagram_BooleanValue, "value")
     descriptor = None
-    for klass in activitydiagram::BooleanValue.__mro__:
+    for klass in activitydiagram_BooleanValue.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -145,58 +173,58 @@ def test_variable_constructor_args():
 
 
 
-def test_activitydiagram::integervariable_is_not_abstract():
-    assert not inspect.isabstract(activitydiagram::IntegerVariable)
+def test_activitydiagram_integervariable_is_not_abstract():
+    assert not inspect.isabstract(activitydiagram_IntegerVariable)
 
 
-def test_activitydiagram::integervariable_constructor_exists():
-    assert callable(activitydiagram::IntegerVariable.__init__)
+def test_activitydiagram_integervariable_constructor_exists():
+    assert callable(activitydiagram_IntegerVariable.__init__)
 
 
-def test_activitydiagram::integervariable_constructor_args():
-    sig = inspect.signature(activitydiagram::IntegerVariable.__init__)
+def test_activitydiagram_integervariable_constructor_args():
+    sig = inspect.signature(activitydiagram_IntegerVariable.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_activitydiagram::input_is_not_abstract():
-    assert not inspect.isabstract(activitydiagram::Input)
+def test_activitydiagram_input_is_not_abstract():
+    assert not inspect.isabstract(activitydiagram_Input)
 
 
-def test_activitydiagram::input_constructor_exists():
-    assert callable(activitydiagram::Input.__init__)
+def test_activitydiagram_input_constructor_exists():
+    assert callable(activitydiagram_Input.__init__)
 
 
-def test_activitydiagram::input_constructor_args():
-    sig = inspect.signature(activitydiagram::Input.__init__)
+def test_activitydiagram_input_constructor_args():
+    sig = inspect.signature(activitydiagram_Input.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_activitydiagram::inputvalue_is_not_abstract():
-    assert not inspect.isabstract(activitydiagram::InputValue)
+def test_activitydiagram_inputvalue_is_not_abstract():
+    assert not inspect.isabstract(activitydiagram_InputValue)
 
 
-def test_activitydiagram::inputvalue_constructor_exists():
-    assert callable(activitydiagram::InputValue.__init__)
+def test_activitydiagram_inputvalue_constructor_exists():
+    assert callable(activitydiagram_InputValue.__init__)
 
 
-def test_activitydiagram::inputvalue_constructor_args():
-    sig = inspect.signature(activitydiagram::InputValue.__init__)
+def test_activitydiagram_inputvalue_constructor_args():
+    sig = inspect.signature(activitydiagram_InputValue.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_activitydiagram::value_is_not_abstract():
-    assert not inspect.isabstract(activitydiagram::Value)
+def test_activitydiagram_value_is_not_abstract():
+    assert not inspect.isabstract(activitydiagram_Value)
 
 
-def test_activitydiagram::value_constructor_exists():
-    assert callable(activitydiagram::Value.__init__)
+def test_activitydiagram_value_constructor_exists():
+    assert callable(activitydiagram_Value.__init__)
 
 
-def test_activitydiagram::value_constructor_args():
-    sig = inspect.signature(activitydiagram::Value.__init__)
+def test_activitydiagram_value_constructor_args():
+    sig = inspect.signature(activitydiagram_Value.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -215,30 +243,30 @@ def test_finalnode_constructor_args():
 
 
 
-def test_activitydiagram::activityfinalnode_is_not_abstract():
-    assert not inspect.isabstract(activitydiagram::ActivityFinalNode)
+def test_activitydiagram_activityfinalnode_is_not_abstract():
+    assert not inspect.isabstract(activitydiagram_ActivityFinalNode)
 
 
-def test_activitydiagram::activityfinalnode_constructor_exists():
-    assert callable(activitydiagram::ActivityFinalNode.__init__)
+def test_activitydiagram_activityfinalnode_constructor_exists():
+    assert callable(activitydiagram_ActivityFinalNode.__init__)
 
 
-def test_activitydiagram::activityfinalnode_constructor_args():
-    sig = inspect.signature(activitydiagram::ActivityFinalNode.__init__)
+def test_activitydiagram_activityfinalnode_constructor_args():
+    sig = inspect.signature(activitydiagram_ActivityFinalNode.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_activitydiagram::trace_is_not_abstract():
-    assert not inspect.isabstract(activitydiagram::Trace)
+def test_activitydiagram_trace_is_not_abstract():
+    assert not inspect.isabstract(activitydiagram_Trace)
 
 
-def test_activitydiagram::trace_constructor_exists():
-    assert callable(activitydiagram::Trace.__init__)
+def test_activitydiagram_trace_constructor_exists():
+    assert callable(activitydiagram_Trace.__init__)
 
 
-def test_activitydiagram::trace_constructor_args():
-    sig = inspect.signature(activitydiagram::Trace.__init__)
+def test_activitydiagram_trace_constructor_args():
+    sig = inspect.signature(activitydiagram_Trace.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -257,23 +285,23 @@ def test_token_constructor_args():
 
 
 
-def test_activitydiagram::forkedtoken_is_not_abstract():
-    assert not inspect.isabstract(activitydiagram::ForkedToken)
+def test_activitydiagram_forkedtoken_is_not_abstract():
+    assert not inspect.isabstract(activitydiagram_ForkedToken)
 
 
-def test_activitydiagram::forkedtoken_constructor_exists():
-    assert callable(activitydiagram::ForkedToken.__init__)
+def test_activitydiagram_forkedtoken_constructor_exists():
+    assert callable(activitydiagram_ForkedToken.__init__)
 
 
-def test_activitydiagram::forkedtoken_constructor_args():
-    sig = inspect.signature(activitydiagram::ForkedToken.__init__)
+def test_activitydiagram_forkedtoken_constructor_args():
+    sig = inspect.signature(activitydiagram_ForkedToken.__init__)
     params = list(sig.parameters.keys())
     assert "remainingOffersCount" in params, "Missing parameter 'remainingOffersCount'"
 
-def test_activitydiagram::forkedtoken_has_remainingOffersCount():
-    assert hasattr(activitydiagram::ForkedToken, "remainingOffersCount")
+def test_activitydiagram_forkedtoken_has_remainingOffersCount():
+    assert hasattr(activitydiagram_ForkedToken, "remainingOffersCount")
     descriptor = None
-    for klass in activitydiagram::ForkedToken.__mro__:
+    for klass in activitydiagram_ForkedToken.__mro__:
         if "remainingOffersCount" in klass.__dict__:
             descriptor = klass.__dict__["remainingOffersCount"]
             break
@@ -281,16 +309,16 @@ def test_activitydiagram::forkedtoken_has_remainingOffersCount():
 
 
 
-def test_activitydiagram::controltoken_is_not_abstract():
-    assert not inspect.isabstract(activitydiagram::ControlToken)
+def test_activitydiagram_controltoken_is_not_abstract():
+    assert not inspect.isabstract(activitydiagram_ControlToken)
 
 
-def test_activitydiagram::controltoken_constructor_exists():
-    assert callable(activitydiagram::ControlToken.__init__)
+def test_activitydiagram_controltoken_constructor_exists():
+    assert callable(activitydiagram_ControlToken.__init__)
 
 
-def test_activitydiagram::controltoken_constructor_args():
-    sig = inspect.signature(activitydiagram::ControlToken.__init__)
+def test_activitydiagram_controltoken_constructor_args():
+    sig = inspect.signature(activitydiagram_ControlToken.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -309,59 +337,97 @@ def test_activityedge_constructor_args():
 
 
 
-def test_activitydiagram::controlflow_is_not_abstract():
-    assert not inspect.isabstract(activitydiagram::ControlFlow)
+def test_activitydiagram_controlflow_is_not_abstract():
+    assert not inspect.isabstract(activitydiagram_ControlFlow)
 
 
-def test_activitydiagram::controlflow_constructor_exists():
-    assert callable(activitydiagram::ControlFlow.__init__)
+def test_activitydiagram_controlflow_constructor_exists():
+    assert callable(activitydiagram_ControlFlow.__init__)
 
 
-def test_activitydiagram::controlflow_constructor_args():
-    sig = inspect.signature(activitydiagram::ControlFlow.__init__)
+def test_activitydiagram_controlflow_constructor_args():
+    sig = inspect.signature(activitydiagram_ControlFlow.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_activitydiagram::offer_is_not_abstract():
-    assert not inspect.isabstract(activitydiagram::Offer)
+def test_activitydiagram_offer_is_not_abstract():
+    assert not inspect.isabstract(activitydiagram_Offer)
 
 
-def test_activitydiagram::offer_constructor_exists():
-    assert callable(activitydiagram::Offer.__init__)
+def test_activitydiagram_offer_constructor_exists():
+    assert callable(activitydiagram_Offer.__init__)
 
 
-def test_activitydiagram::offer_constructor_args():
-    sig = inspect.signature(activitydiagram::Offer.__init__)
+def test_activitydiagram_offer_constructor_args():
+    sig = inspect.signature(activitydiagram_Offer.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_activitydiagram::token_is_not_abstract():
-    assert not inspect.isabstract(activitydiagram::Token)
+def test_activitydiagram_token_is_not_abstract():
+    assert not inspect.isabstract(activitydiagram_Token)
 
 
-def test_activitydiagram::token_constructor_exists():
-    assert callable(activitydiagram::Token.__init__)
+def test_activitydiagram_token_constructor_exists():
+    assert callable(activitydiagram_Token.__init__)
 
 
-def test_activitydiagram::token_constructor_args():
-    sig = inspect.signature(activitydiagram::Token.__init__)
+def test_activitydiagram_token_constructor_args():
+    sig = inspect.signature(activitydiagram_Token.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_activitydiagram::variable_is_not_abstract():
-    assert not inspect.isabstract(activitydiagram::Variable)
+def test_activitydiagram_variable_is_not_abstract():
+    assert not inspect.isabstract(activitydiagram_Variable)
 
 
-def test_activitydiagram::variable_constructor_exists():
-    assert callable(activitydiagram::Variable.__init__)
+def test_activitydiagram_variable_constructor_exists():
+    assert callable(activitydiagram_Variable.__init__)
 
 
-def test_activitydiagram::variable_constructor_args():
-    sig = inspect.signature(activitydiagram::Variable.__init__)
+def test_activitydiagram_variable_constructor_args():
+    sig = inspect.signature(activitydiagram_Variable.__init__)
     params = list(sig.parameters.keys())
+
+
+
+def test_activitydiagram_activityedge_is_not_abstract():
+    assert not inspect.isabstract(activitydiagram_ActivityEdge)
+
+
+def test_activitydiagram_activityedge_constructor_exists():
+    assert callable(activitydiagram_ActivityEdge.__init__)
+
+
+def test_activitydiagram_activityedge_constructor_args():
+    sig = inspect.signature(activitydiagram_ActivityEdge.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_activitydiagram_activitynode_is_not_abstract():
+    assert not inspect.isabstract(activitydiagram_ActivityNode)
+
+
+def test_activitydiagram_activitynode_constructor_exists():
+    assert callable(activitydiagram_ActivityNode.__init__)
+
+
+def test_activitydiagram_activitynode_constructor_args():
+    sig = inspect.signature(activitydiagram_ActivityNode.__init__)
+    params = list(sig.parameters.keys())
+    assert "running" in params, "Missing parameter 'running'"
+
+def test_activitydiagram_activitynode_has_running():
+    assert hasattr(activitydiagram_ActivityNode, "running")
+    descriptor = None
+    for klass in activitydiagram_ActivityNode.__mro__:
+        if "running" in klass.__dict__:
+            descriptor = klass.__dict__["running"]
+            break
+    assert isinstance(descriptor, property)
 
 
 
@@ -379,107 +445,107 @@ def test_controlnode_constructor_args():
 
 
 
-def test_activitydiagram::finalnode_is_not_abstract():
-    assert not inspect.isabstract(activitydiagram::FinalNode)
+def test_activitydiagram_finalnode_is_not_abstract():
+    assert not inspect.isabstract(activitydiagram_FinalNode)
 
 
-def test_activitydiagram::finalnode_constructor_exists():
-    assert callable(activitydiagram::FinalNode.__init__)
+def test_activitydiagram_finalnode_constructor_exists():
+    assert callable(activitydiagram_FinalNode.__init__)
 
 
-def test_activitydiagram::finalnode_constructor_args():
-    sig = inspect.signature(activitydiagram::FinalNode.__init__)
+def test_activitydiagram_finalnode_constructor_args():
+    sig = inspect.signature(activitydiagram_FinalNode.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_activitydiagram::joinnode_is_not_abstract():
-    assert not inspect.isabstract(activitydiagram::JoinNode)
+def test_activitydiagram_decisionnode_is_not_abstract():
+    assert not inspect.isabstract(activitydiagram_DecisionNode)
 
 
-def test_activitydiagram::joinnode_constructor_exists():
-    assert callable(activitydiagram::JoinNode.__init__)
+def test_activitydiagram_decisionnode_constructor_exists():
+    assert callable(activitydiagram_DecisionNode.__init__)
 
 
-def test_activitydiagram::joinnode_constructor_args():
-    sig = inspect.signature(activitydiagram::JoinNode.__init__)
+def test_activitydiagram_decisionnode_constructor_args():
+    sig = inspect.signature(activitydiagram_DecisionNode.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_activitydiagram::mergenode_is_not_abstract():
-    assert not inspect.isabstract(activitydiagram::MergeNode)
+def test_activitydiagram_mergenode_is_not_abstract():
+    assert not inspect.isabstract(activitydiagram_MergeNode)
 
 
-def test_activitydiagram::mergenode_constructor_exists():
-    assert callable(activitydiagram::MergeNode.__init__)
+def test_activitydiagram_mergenode_constructor_exists():
+    assert callable(activitydiagram_MergeNode.__init__)
 
 
-def test_activitydiagram::mergenode_constructor_args():
-    sig = inspect.signature(activitydiagram::MergeNode.__init__)
+def test_activitydiagram_mergenode_constructor_args():
+    sig = inspect.signature(activitydiagram_MergeNode.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_activitydiagram::decisionnode_is_not_abstract():
-    assert not inspect.isabstract(activitydiagram::DecisionNode)
+def test_activitydiagram_forknode_is_not_abstract():
+    assert not inspect.isabstract(activitydiagram_ForkNode)
 
 
-def test_activitydiagram::decisionnode_constructor_exists():
-    assert callable(activitydiagram::DecisionNode.__init__)
+def test_activitydiagram_forknode_constructor_exists():
+    assert callable(activitydiagram_ForkNode.__init__)
 
 
-def test_activitydiagram::decisionnode_constructor_args():
-    sig = inspect.signature(activitydiagram::DecisionNode.__init__)
+def test_activitydiagram_forknode_constructor_args():
+    sig = inspect.signature(activitydiagram_ForkNode.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_activitydiagram::forknode_is_not_abstract():
-    assert not inspect.isabstract(activitydiagram::ForkNode)
+def test_activitydiagram_joinnode_is_not_abstract():
+    assert not inspect.isabstract(activitydiagram_JoinNode)
 
 
-def test_activitydiagram::forknode_constructor_exists():
-    assert callable(activitydiagram::ForkNode.__init__)
+def test_activitydiagram_joinnode_constructor_exists():
+    assert callable(activitydiagram_JoinNode.__init__)
 
 
-def test_activitydiagram::forknode_constructor_args():
-    sig = inspect.signature(activitydiagram::ForkNode.__init__)
+def test_activitydiagram_joinnode_constructor_args():
+    sig = inspect.signature(activitydiagram_JoinNode.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_activitydiagram::initialnode_is_not_abstract():
-    assert not inspect.isabstract(activitydiagram::InitialNode)
+def test_activitydiagram_initialnode_is_not_abstract():
+    assert not inspect.isabstract(activitydiagram_InitialNode)
 
 
-def test_activitydiagram::initialnode_constructor_exists():
-    assert callable(activitydiagram::InitialNode.__init__)
+def test_activitydiagram_initialnode_constructor_exists():
+    assert callable(activitydiagram_InitialNode.__init__)
 
 
-def test_activitydiagram::initialnode_constructor_args():
-    sig = inspect.signature(activitydiagram::InitialNode.__init__)
+def test_activitydiagram_initialnode_constructor_args():
+    sig = inspect.signature(activitydiagram_InitialNode.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_activitydiagram::namedactivity_is_not_abstract():
-    assert not inspect.isabstract(activitydiagram::NamedActivity)
+def test_activitydiagram_namedactivity_is_not_abstract():
+    assert not inspect.isabstract(activitydiagram_NamedActivity)
 
 
-def test_activitydiagram::namedactivity_constructor_exists():
-    assert callable(activitydiagram::NamedActivity.__init__)
+def test_activitydiagram_namedactivity_constructor_exists():
+    assert callable(activitydiagram_NamedActivity.__init__)
 
 
-def test_activitydiagram::namedactivity_constructor_args():
-    sig = inspect.signature(activitydiagram::NamedActivity.__init__)
+def test_activitydiagram_namedactivity_constructor_args():
+    sig = inspect.signature(activitydiagram_NamedActivity.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_activitydiagram::namedactivity_has_name():
-    assert hasattr(activitydiagram::NamedActivity, "name")
+def test_activitydiagram_namedactivity_has_name():
+    assert hasattr(activitydiagram_NamedActivity, "name")
     descriptor = None
-    for klass in activitydiagram::NamedActivity.__mro__:
+    for klass in activitydiagram_NamedActivity.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -487,16 +553,16 @@ def test_activitydiagram::namedactivity_has_name():
 
 
 
-def test_activitydiagram::exp_is_not_abstract():
-    assert not inspect.isabstract(activitydiagram::Exp)
+def test_activitydiagram_exp_is_not_abstract():
+    assert not inspect.isabstract(activitydiagram_Exp)
 
 
-def test_activitydiagram::exp_constructor_exists():
-    assert callable(activitydiagram::Exp.__init__)
+def test_activitydiagram_exp_constructor_exists():
+    assert callable(activitydiagram_Exp.__init__)
 
 
-def test_activitydiagram::exp_constructor_args():
-    sig = inspect.signature(activitydiagram::Exp.__init__)
+def test_activitydiagram_exp_constructor_args():
+    sig = inspect.signature(activitydiagram_Exp.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -515,16 +581,16 @@ def test_action_constructor_args():
 
 
 
-def test_activitydiagram::opaqueaction_is_not_abstract():
-    assert not inspect.isabstract(activitydiagram::OpaqueAction)
+def test_activitydiagram_opaqueaction_is_not_abstract():
+    assert not inspect.isabstract(activitydiagram_OpaqueAction)
 
 
-def test_activitydiagram::opaqueaction_constructor_exists():
-    assert callable(activitydiagram::OpaqueAction.__init__)
+def test_activitydiagram_opaqueaction_constructor_exists():
+    assert callable(activitydiagram_OpaqueAction.__init__)
 
 
-def test_activitydiagram::opaqueaction_constructor_args():
-    sig = inspect.signature(activitydiagram::OpaqueAction.__init__)
+def test_activitydiagram_opaqueaction_constructor_args():
+    sig = inspect.signature(activitydiagram_OpaqueAction.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -543,16 +609,16 @@ def test_executablenode_constructor_args():
 
 
 
-def test_activitydiagram::action_is_not_abstract():
-    assert not inspect.isabstract(activitydiagram::Action)
+def test_activitydiagram_action_is_not_abstract():
+    assert not inspect.isabstract(activitydiagram_Action)
 
 
-def test_activitydiagram::action_constructor_exists():
-    assert callable(activitydiagram::Action.__init__)
+def test_activitydiagram_action_constructor_exists():
+    assert callable(activitydiagram_Action.__init__)
 
 
-def test_activitydiagram::action_constructor_args():
-    sig = inspect.signature(activitydiagram::Action.__init__)
+def test_activitydiagram_action_constructor_args():
+    sig = inspect.signature(activitydiagram_Action.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -571,110 +637,44 @@ def test_activitynode_constructor_args():
 
 
 
-def test_activitydiagram::executablenode_is_not_abstract():
-    assert not inspect.isabstract(activitydiagram::ExecutableNode)
+def test_activitydiagram_executablenode_is_not_abstract():
+    assert not inspect.isabstract(activitydiagram_ExecutableNode)
 
 
-def test_activitydiagram::executablenode_constructor_exists():
-    assert callable(activitydiagram::ExecutableNode.__init__)
+def test_activitydiagram_executablenode_constructor_exists():
+    assert callable(activitydiagram_ExecutableNode.__init__)
 
 
-def test_activitydiagram::executablenode_constructor_args():
-    sig = inspect.signature(activitydiagram::ExecutableNode.__init__)
+def test_activitydiagram_executablenode_constructor_args():
+    sig = inspect.signature(activitydiagram_ExecutableNode.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_activitydiagram::controlnode_is_not_abstract():
-    assert not inspect.isabstract(activitydiagram::ControlNode)
+def test_activitydiagram_controlnode_is_not_abstract():
+    assert not inspect.isabstract(activitydiagram_ControlNode)
 
 
-def test_activitydiagram::controlnode_constructor_exists():
-    assert callable(activitydiagram::ControlNode.__init__)
+def test_activitydiagram_controlnode_constructor_exists():
+    assert callable(activitydiagram_ControlNode.__init__)
 
 
-def test_activitydiagram::controlnode_constructor_args():
-    sig = inspect.signature(activitydiagram::ControlNode.__init__)
+def test_activitydiagram_controlnode_constructor_args():
+    sig = inspect.signature(activitydiagram_ControlNode.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_activitydiagram::booleanvariable_is_not_abstract():
-    assert not inspect.isabstract(activitydiagram::BooleanVariable)
+def test_activitydiagram_booleanvariable_is_not_abstract():
+    assert not inspect.isabstract(activitydiagram_BooleanVariable)
 
 
-def test_activitydiagram::booleanvariable_constructor_exists():
-    assert callable(activitydiagram::BooleanVariable.__init__)
+def test_activitydiagram_booleanvariable_constructor_exists():
+    assert callable(activitydiagram_BooleanVariable.__init__)
 
 
-def test_activitydiagram::booleanvariable_constructor_args():
-    sig = inspect.signature(activitydiagram::BooleanVariable.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_namedactivity_is_not_abstract():
-    assert not inspect.isabstract(NamedActivity)
-
-
-def test_namedactivity_constructor_exists():
-    assert callable(NamedActivity.__init__)
-
-
-def test_namedactivity_constructor_args():
-    sig = inspect.signature(NamedActivity.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_activitydiagram::activityedge_is_not_abstract():
-    assert not inspect.isabstract(activitydiagram::ActivityEdge)
-
-
-def test_activitydiagram::activityedge_constructor_exists():
-    assert callable(activitydiagram::ActivityEdge.__init__)
-
-
-def test_activitydiagram::activityedge_constructor_args():
-    sig = inspect.signature(activitydiagram::ActivityEdge.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_activitydiagram::activitynode_is_not_abstract():
-    assert not inspect.isabstract(activitydiagram::ActivityNode)
-
-
-def test_activitydiagram::activitynode_constructor_exists():
-    assert callable(activitydiagram::ActivityNode.__init__)
-
-
-def test_activitydiagram::activitynode_constructor_args():
-    sig = inspect.signature(activitydiagram::ActivityNode.__init__)
-    params = list(sig.parameters.keys())
-    assert "running" in params, "Missing parameter 'running'"
-
-def test_activitydiagram::activitynode_has_running():
-    assert hasattr(activitydiagram::ActivityNode, "running")
-    descriptor = None
-    for klass in activitydiagram::ActivityNode.__mro__:
-        if "running" in klass.__dict__:
-            descriptor = klass.__dict__["running"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_activitydiagram::activity_is_not_abstract():
-    assert not inspect.isabstract(activitydiagram::Activity)
-
-
-def test_activitydiagram::activity_constructor_exists():
-    assert callable(activitydiagram::Activity.__init__)
-
-
-def test_activitydiagram::activity_constructor_args():
-    sig = inspect.signature(activitydiagram::Activity.__init__)
+def test_activitydiagram_booleanvariable_constructor_args():
+    sig = inspect.signature(activitydiagram_BooleanVariable.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -689,178 +689,182 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-activitydiagram::Context_strategy = st.builds(
-    activitydiagram::Context,
+NamedActivity_strategy = st.builds(
+    NamedActivity,
+)
+activitydiagram_Activity_strategy = st.builds(
+    activitydiagram_Activity,
+)
+activitydiagram_Context_strategy = st.builds(
+    activitydiagram_Context,
 )
 Value_strategy = st.builds(
     Value,
 )
-activitydiagram::IntegerValue_strategy = st.builds(
-    activitydiagram::IntegerValue,
+activitydiagram_IntegerValue_strategy = st.builds(
+    activitydiagram_IntegerValue,
     value=
         st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False)
 )
-activitydiagram::BooleanValue_strategy = st.builds(
-    activitydiagram::BooleanValue,
+activitydiagram_BooleanValue_strategy = st.builds(
+    activitydiagram_BooleanValue,
     value=
         st.booleans()
 )
 Variable_strategy = st.builds(
     Variable,
 )
-activitydiagram::IntegerVariable_strategy = st.builds(
-    activitydiagram::IntegerVariable,
+activitydiagram_IntegerVariable_strategy = st.builds(
+    activitydiagram_IntegerVariable,
 )
-activitydiagram::Input_strategy = st.builds(
-    activitydiagram::Input,
+activitydiagram_Input_strategy = st.builds(
+    activitydiagram_Input,
 )
-activitydiagram::InputValue_strategy = st.builds(
-    activitydiagram::InputValue,
+activitydiagram_InputValue_strategy = st.builds(
+    activitydiagram_InputValue,
 )
-activitydiagram::Value_strategy = st.builds(
-    activitydiagram::Value,
+activitydiagram_Value_strategy = st.builds(
+    activitydiagram_Value,
 )
 FinalNode_strategy = st.builds(
     FinalNode,
 )
-activitydiagram::ActivityFinalNode_strategy = st.builds(
-    activitydiagram::ActivityFinalNode,
+activitydiagram_ActivityFinalNode_strategy = st.builds(
+    activitydiagram_ActivityFinalNode,
 )
-activitydiagram::Trace_strategy = st.builds(
-    activitydiagram::Trace,
+activitydiagram_Trace_strategy = st.builds(
+    activitydiagram_Trace,
 )
 Token_strategy = st.builds(
     Token,
 )
-activitydiagram::ForkedToken_strategy = st.builds(
-    activitydiagram::ForkedToken,
+activitydiagram_ForkedToken_strategy = st.builds(
+    activitydiagram_ForkedToken,
     remainingOffersCount=
         st.integers()
 )
-activitydiagram::ControlToken_strategy = st.builds(
-    activitydiagram::ControlToken,
+activitydiagram_ControlToken_strategy = st.builds(
+    activitydiagram_ControlToken,
 )
 ActivityEdge_strategy = st.builds(
     ActivityEdge,
 )
-activitydiagram::ControlFlow_strategy = st.builds(
-    activitydiagram::ControlFlow,
+activitydiagram_ControlFlow_strategy = st.builds(
+    activitydiagram_ControlFlow,
 )
-activitydiagram::Offer_strategy = st.builds(
-    activitydiagram::Offer,
+activitydiagram_Offer_strategy = st.builds(
+    activitydiagram_Offer,
 )
-activitydiagram::Token_strategy = st.builds(
-    activitydiagram::Token,
+activitydiagram_Token_strategy = st.builds(
+    activitydiagram_Token,
 )
-activitydiagram::Variable_strategy = st.builds(
-    activitydiagram::Variable,
+activitydiagram_Variable_strategy = st.builds(
+    activitydiagram_Variable,
+)
+activitydiagram_ActivityEdge_strategy = st.builds(
+    activitydiagram_ActivityEdge,
+)
+activitydiagram_ActivityNode_strategy = st.builds(
+    activitydiagram_ActivityNode,
+    running=
+        st.booleans()
 )
 ControlNode_strategy = st.builds(
     ControlNode,
 )
-activitydiagram::FinalNode_strategy = st.builds(
-    activitydiagram::FinalNode,
+activitydiagram_FinalNode_strategy = st.builds(
+    activitydiagram_FinalNode,
 )
-activitydiagram::JoinNode_strategy = st.builds(
-    activitydiagram::JoinNode,
+activitydiagram_DecisionNode_strategy = st.builds(
+    activitydiagram_DecisionNode,
 )
-activitydiagram::MergeNode_strategy = st.builds(
-    activitydiagram::MergeNode,
+activitydiagram_MergeNode_strategy = st.builds(
+    activitydiagram_MergeNode,
 )
-activitydiagram::DecisionNode_strategy = st.builds(
-    activitydiagram::DecisionNode,
+activitydiagram_ForkNode_strategy = st.builds(
+    activitydiagram_ForkNode,
 )
-activitydiagram::ForkNode_strategy = st.builds(
-    activitydiagram::ForkNode,
+activitydiagram_JoinNode_strategy = st.builds(
+    activitydiagram_JoinNode,
 )
-activitydiagram::InitialNode_strategy = st.builds(
-    activitydiagram::InitialNode,
+activitydiagram_InitialNode_strategy = st.builds(
+    activitydiagram_InitialNode,
 )
-activitydiagram::NamedActivity_strategy = st.builds(
-    activitydiagram::NamedActivity,
+activitydiagram_NamedActivity_strategy = st.builds(
+    activitydiagram_NamedActivity,
     name=
         safe_text
 )
-activitydiagram::Exp_strategy = st.builds(
-    activitydiagram::Exp,
+activitydiagram_Exp_strategy = st.builds(
+    activitydiagram_Exp,
 )
 Action_strategy = st.builds(
     Action,
 )
-activitydiagram::OpaqueAction_strategy = st.builds(
-    activitydiagram::OpaqueAction,
+activitydiagram_OpaqueAction_strategy = st.builds(
+    activitydiagram_OpaqueAction,
 )
 ExecutableNode_strategy = st.builds(
     ExecutableNode,
 )
-activitydiagram::Action_strategy = st.builds(
-    activitydiagram::Action,
+activitydiagram_Action_strategy = st.builds(
+    activitydiagram_Action,
 )
 ActivityNode_strategy = st.builds(
     ActivityNode,
 )
-activitydiagram::ExecutableNode_strategy = st.builds(
-    activitydiagram::ExecutableNode,
+activitydiagram_ExecutableNode_strategy = st.builds(
+    activitydiagram_ExecutableNode,
 )
-activitydiagram::ControlNode_strategy = st.builds(
-    activitydiagram::ControlNode,
+activitydiagram_ControlNode_strategy = st.builds(
+    activitydiagram_ControlNode,
 )
-activitydiagram::BooleanVariable_strategy = st.builds(
-    activitydiagram::BooleanVariable,
-)
-NamedActivity_strategy = st.builds(
-    NamedActivity,
-)
-activitydiagram::ActivityEdge_strategy = st.builds(
-    activitydiagram::ActivityEdge,
-)
-activitydiagram::ActivityNode_strategy = st.builds(
-    activitydiagram::ActivityNode,
-    running=
-        st.booleans()
-)
-activitydiagram::Activity_strategy = st.builds(
-    activitydiagram::Activity,
+activitydiagram_BooleanVariable_strategy = st.builds(
+    activitydiagram_BooleanVariable,
 )
 
-@given(instance=activitydiagram::Context_strategy)
+@given(instance=NamedActivity_strategy)
 @settings(max_examples=50)
-def test_activitydiagram::context_instantiation(instance):
-    assert isinstance(instance, activitydiagram::Context)
+def test_namedactivity_instantiation(instance):
+    assert isinstance(instance, NamedActivity)
+
+@given(instance=activitydiagram_Activity_strategy)
+@settings(max_examples=50)
+def test_activitydiagram_activity_instantiation(instance):
+    assert isinstance(instance, activitydiagram_Activity)
+
+@given(instance=activitydiagram_Context_strategy)
+@settings(max_examples=50)
+def test_activitydiagram_context_instantiation(instance):
+    assert isinstance(instance, activitydiagram_Context)
 
 @given(instance=Value_strategy)
 @settings(max_examples=50)
 def test_value_instantiation(instance):
     assert isinstance(instance, Value)
 
-@given(instance=activitydiagram::IntegerValue_strategy)
+@given(instance=activitydiagram_IntegerValue_strategy)
 @settings(max_examples=50)
-def test_activitydiagram::integervalue_instantiation(instance):
-    assert isinstance(instance, activitydiagram::IntegerValue)
-
-@given(instance=activitydiagram::IntegerValue_strategy)
-def test_activitydiagram::integervalue_value_type(instance):
-    assert isinstance(instance.value, float)
+def test_activitydiagram_integervalue_instantiation(instance):
+    assert isinstance(instance, activitydiagram_IntegerValue)
 
 
-@given(instance=activitydiagram::IntegerValue_strategy)
-def test_activitydiagram::integervalue_value_setter(instance):
+
+@given(instance=activitydiagram_IntegerValue_strategy)
+def test_activitydiagram_integervalue_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
 
-@given(instance=activitydiagram::BooleanValue_strategy)
+@given(instance=activitydiagram_BooleanValue_strategy)
 @settings(max_examples=50)
-def test_activitydiagram::booleanvalue_instantiation(instance):
-    assert isinstance(instance, activitydiagram::BooleanValue)
-
-@given(instance=activitydiagram::BooleanValue_strategy)
-def test_activitydiagram::booleanvalue_value_type(instance):
-    assert isinstance(instance.value, bool)
+def test_activitydiagram_booleanvalue_instantiation(instance):
+    assert isinstance(instance, activitydiagram_BooleanValue)
 
 
-@given(instance=activitydiagram::BooleanValue_strategy)
-def test_activitydiagram::booleanvalue_value_setter(instance):
+
+@given(instance=activitydiagram_BooleanValue_strategy)
+def test_activitydiagram_booleanvalue_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
@@ -870,215 +874,196 @@ def test_activitydiagram::booleanvalue_value_setter(instance):
 def test_variable_instantiation(instance):
     assert isinstance(instance, Variable)
 
-@given(instance=activitydiagram::IntegerVariable_strategy)
+@given(instance=activitydiagram_IntegerVariable_strategy)
 @settings(max_examples=50)
-def test_activitydiagram::integervariable_instantiation(instance):
-    assert isinstance(instance, activitydiagram::IntegerVariable)
+def test_activitydiagram_integervariable_instantiation(instance):
+    assert isinstance(instance, activitydiagram_IntegerVariable)
 
-@given(instance=activitydiagram::Input_strategy)
+@given(instance=activitydiagram_Input_strategy)
 @settings(max_examples=50)
-def test_activitydiagram::input_instantiation(instance):
-    assert isinstance(instance, activitydiagram::Input)
+def test_activitydiagram_input_instantiation(instance):
+    assert isinstance(instance, activitydiagram_Input)
 
-@given(instance=activitydiagram::InputValue_strategy)
+@given(instance=activitydiagram_InputValue_strategy)
 @settings(max_examples=50)
-def test_activitydiagram::inputvalue_instantiation(instance):
-    assert isinstance(instance, activitydiagram::InputValue)
+def test_activitydiagram_inputvalue_instantiation(instance):
+    assert isinstance(instance, activitydiagram_InputValue)
 
-@given(instance=activitydiagram::Value_strategy)
+@given(instance=activitydiagram_Value_strategy)
 @settings(max_examples=50)
-def test_activitydiagram::value_instantiation(instance):
-    assert isinstance(instance, activitydiagram::Value)
+def test_activitydiagram_value_instantiation(instance):
+    assert isinstance(instance, activitydiagram_Value)
 
 @given(instance=FinalNode_strategy)
 @settings(max_examples=50)
 def test_finalnode_instantiation(instance):
     assert isinstance(instance, FinalNode)
 
-@given(instance=activitydiagram::ActivityFinalNode_strategy)
+@given(instance=activitydiagram_ActivityFinalNode_strategy)
 @settings(max_examples=50)
-def test_activitydiagram::activityfinalnode_instantiation(instance):
-    assert isinstance(instance, activitydiagram::ActivityFinalNode)
+def test_activitydiagram_activityfinalnode_instantiation(instance):
+    assert isinstance(instance, activitydiagram_ActivityFinalNode)
 
-@given(instance=activitydiagram::Trace_strategy)
+@given(instance=activitydiagram_Trace_strategy)
 @settings(max_examples=50)
-def test_activitydiagram::trace_instantiation(instance):
-    assert isinstance(instance, activitydiagram::Trace)
+def test_activitydiagram_trace_instantiation(instance):
+    assert isinstance(instance, activitydiagram_Trace)
 
 @given(instance=Token_strategy)
 @settings(max_examples=50)
 def test_token_instantiation(instance):
     assert isinstance(instance, Token)
 
-@given(instance=activitydiagram::ForkedToken_strategy)
+@given(instance=activitydiagram_ForkedToken_strategy)
 @settings(max_examples=50)
-def test_activitydiagram::forkedtoken_instantiation(instance):
-    assert isinstance(instance, activitydiagram::ForkedToken)
-
-@given(instance=activitydiagram::ForkedToken_strategy)
-def test_activitydiagram::forkedtoken_remainingOffersCount_type(instance):
-    assert isinstance(instance.remainingOffersCount, int)
+def test_activitydiagram_forkedtoken_instantiation(instance):
+    assert isinstance(instance, activitydiagram_ForkedToken)
 
 
-@given(instance=activitydiagram::ForkedToken_strategy)
-def test_activitydiagram::forkedtoken_remainingOffersCount_setter(instance):
+
+@given(instance=activitydiagram_ForkedToken_strategy)
+def test_activitydiagram_forkedtoken_remainingOffersCount_setter(instance):
     original = instance.remainingOffersCount
     instance.remainingOffersCount = original
     assert instance.remainingOffersCount == original
 
-@given(instance=activitydiagram::ControlToken_strategy)
+@given(instance=activitydiagram_ControlToken_strategy)
 @settings(max_examples=50)
-def test_activitydiagram::controltoken_instantiation(instance):
-    assert isinstance(instance, activitydiagram::ControlToken)
+def test_activitydiagram_controltoken_instantiation(instance):
+    assert isinstance(instance, activitydiagram_ControlToken)
 
 @given(instance=ActivityEdge_strategy)
 @settings(max_examples=50)
 def test_activityedge_instantiation(instance):
     assert isinstance(instance, ActivityEdge)
 
-@given(instance=activitydiagram::ControlFlow_strategy)
+@given(instance=activitydiagram_ControlFlow_strategy)
 @settings(max_examples=50)
-def test_activitydiagram::controlflow_instantiation(instance):
-    assert isinstance(instance, activitydiagram::ControlFlow)
+def test_activitydiagram_controlflow_instantiation(instance):
+    assert isinstance(instance, activitydiagram_ControlFlow)
 
-@given(instance=activitydiagram::Offer_strategy)
+@given(instance=activitydiagram_Offer_strategy)
 @settings(max_examples=50)
-def test_activitydiagram::offer_instantiation(instance):
-    assert isinstance(instance, activitydiagram::Offer)
+def test_activitydiagram_offer_instantiation(instance):
+    assert isinstance(instance, activitydiagram_Offer)
 
-@given(instance=activitydiagram::Token_strategy)
+@given(instance=activitydiagram_Token_strategy)
 @settings(max_examples=50)
-def test_activitydiagram::token_instantiation(instance):
-    assert isinstance(instance, activitydiagram::Token)
+def test_activitydiagram_token_instantiation(instance):
+    assert isinstance(instance, activitydiagram_Token)
 
-@given(instance=activitydiagram::Variable_strategy)
+@given(instance=activitydiagram_Variable_strategy)
 @settings(max_examples=50)
-def test_activitydiagram::variable_instantiation(instance):
-    assert isinstance(instance, activitydiagram::Variable)
+def test_activitydiagram_variable_instantiation(instance):
+    assert isinstance(instance, activitydiagram_Variable)
+
+@given(instance=activitydiagram_ActivityEdge_strategy)
+@settings(max_examples=50)
+def test_activitydiagram_activityedge_instantiation(instance):
+    assert isinstance(instance, activitydiagram_ActivityEdge)
+
+@given(instance=activitydiagram_ActivityNode_strategy)
+@settings(max_examples=50)
+def test_activitydiagram_activitynode_instantiation(instance):
+    assert isinstance(instance, activitydiagram_ActivityNode)
+
+
+
+@given(instance=activitydiagram_ActivityNode_strategy)
+def test_activitydiagram_activitynode_running_setter(instance):
+    original = instance.running
+    instance.running = original
+    assert instance.running == original
 
 @given(instance=ControlNode_strategy)
 @settings(max_examples=50)
 def test_controlnode_instantiation(instance):
     assert isinstance(instance, ControlNode)
 
-@given(instance=activitydiagram::FinalNode_strategy)
+@given(instance=activitydiagram_FinalNode_strategy)
 @settings(max_examples=50)
-def test_activitydiagram::finalnode_instantiation(instance):
-    assert isinstance(instance, activitydiagram::FinalNode)
+def test_activitydiagram_finalnode_instantiation(instance):
+    assert isinstance(instance, activitydiagram_FinalNode)
 
-@given(instance=activitydiagram::JoinNode_strategy)
+@given(instance=activitydiagram_DecisionNode_strategy)
 @settings(max_examples=50)
-def test_activitydiagram::joinnode_instantiation(instance):
-    assert isinstance(instance, activitydiagram::JoinNode)
+def test_activitydiagram_decisionnode_instantiation(instance):
+    assert isinstance(instance, activitydiagram_DecisionNode)
 
-@given(instance=activitydiagram::MergeNode_strategy)
+@given(instance=activitydiagram_MergeNode_strategy)
 @settings(max_examples=50)
-def test_activitydiagram::mergenode_instantiation(instance):
-    assert isinstance(instance, activitydiagram::MergeNode)
+def test_activitydiagram_mergenode_instantiation(instance):
+    assert isinstance(instance, activitydiagram_MergeNode)
 
-@given(instance=activitydiagram::DecisionNode_strategy)
+@given(instance=activitydiagram_ForkNode_strategy)
 @settings(max_examples=50)
-def test_activitydiagram::decisionnode_instantiation(instance):
-    assert isinstance(instance, activitydiagram::DecisionNode)
+def test_activitydiagram_forknode_instantiation(instance):
+    assert isinstance(instance, activitydiagram_ForkNode)
 
-@given(instance=activitydiagram::ForkNode_strategy)
+@given(instance=activitydiagram_JoinNode_strategy)
 @settings(max_examples=50)
-def test_activitydiagram::forknode_instantiation(instance):
-    assert isinstance(instance, activitydiagram::ForkNode)
+def test_activitydiagram_joinnode_instantiation(instance):
+    assert isinstance(instance, activitydiagram_JoinNode)
 
-@given(instance=activitydiagram::InitialNode_strategy)
+@given(instance=activitydiagram_InitialNode_strategy)
 @settings(max_examples=50)
-def test_activitydiagram::initialnode_instantiation(instance):
-    assert isinstance(instance, activitydiagram::InitialNode)
+def test_activitydiagram_initialnode_instantiation(instance):
+    assert isinstance(instance, activitydiagram_InitialNode)
 
-@given(instance=activitydiagram::NamedActivity_strategy)
+@given(instance=activitydiagram_NamedActivity_strategy)
 @settings(max_examples=50)
-def test_activitydiagram::namedactivity_instantiation(instance):
-    assert isinstance(instance, activitydiagram::NamedActivity)
-
-@given(instance=activitydiagram::NamedActivity_strategy)
-def test_activitydiagram::namedactivity_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_activitydiagram_namedactivity_instantiation(instance):
+    assert isinstance(instance, activitydiagram_NamedActivity)
 
 
-@given(instance=activitydiagram::NamedActivity_strategy)
-def test_activitydiagram::namedactivity_name_setter(instance):
+
+@given(instance=activitydiagram_NamedActivity_strategy)
+def test_activitydiagram_namedactivity_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=activitydiagram::Exp_strategy)
+@given(instance=activitydiagram_Exp_strategy)
 @settings(max_examples=50)
-def test_activitydiagram::exp_instantiation(instance):
-    assert isinstance(instance, activitydiagram::Exp)
+def test_activitydiagram_exp_instantiation(instance):
+    assert isinstance(instance, activitydiagram_Exp)
 
 @given(instance=Action_strategy)
 @settings(max_examples=50)
 def test_action_instantiation(instance):
     assert isinstance(instance, Action)
 
-@given(instance=activitydiagram::OpaqueAction_strategy)
+@given(instance=activitydiagram_OpaqueAction_strategy)
 @settings(max_examples=50)
-def test_activitydiagram::opaqueaction_instantiation(instance):
-    assert isinstance(instance, activitydiagram::OpaqueAction)
+def test_activitydiagram_opaqueaction_instantiation(instance):
+    assert isinstance(instance, activitydiagram_OpaqueAction)
 
 @given(instance=ExecutableNode_strategy)
 @settings(max_examples=50)
 def test_executablenode_instantiation(instance):
     assert isinstance(instance, ExecutableNode)
 
-@given(instance=activitydiagram::Action_strategy)
+@given(instance=activitydiagram_Action_strategy)
 @settings(max_examples=50)
-def test_activitydiagram::action_instantiation(instance):
-    assert isinstance(instance, activitydiagram::Action)
+def test_activitydiagram_action_instantiation(instance):
+    assert isinstance(instance, activitydiagram_Action)
 
 @given(instance=ActivityNode_strategy)
 @settings(max_examples=50)
 def test_activitynode_instantiation(instance):
     assert isinstance(instance, ActivityNode)
 
-@given(instance=activitydiagram::ExecutableNode_strategy)
+@given(instance=activitydiagram_ExecutableNode_strategy)
 @settings(max_examples=50)
-def test_activitydiagram::executablenode_instantiation(instance):
-    assert isinstance(instance, activitydiagram::ExecutableNode)
+def test_activitydiagram_executablenode_instantiation(instance):
+    assert isinstance(instance, activitydiagram_ExecutableNode)
 
-@given(instance=activitydiagram::ControlNode_strategy)
+@given(instance=activitydiagram_ControlNode_strategy)
 @settings(max_examples=50)
-def test_activitydiagram::controlnode_instantiation(instance):
-    assert isinstance(instance, activitydiagram::ControlNode)
+def test_activitydiagram_controlnode_instantiation(instance):
+    assert isinstance(instance, activitydiagram_ControlNode)
 
-@given(instance=activitydiagram::BooleanVariable_strategy)
+@given(instance=activitydiagram_BooleanVariable_strategy)
 @settings(max_examples=50)
-def test_activitydiagram::booleanvariable_instantiation(instance):
-    assert isinstance(instance, activitydiagram::BooleanVariable)
-
-@given(instance=NamedActivity_strategy)
-@settings(max_examples=50)
-def test_namedactivity_instantiation(instance):
-    assert isinstance(instance, NamedActivity)
-
-@given(instance=activitydiagram::ActivityEdge_strategy)
-@settings(max_examples=50)
-def test_activitydiagram::activityedge_instantiation(instance):
-    assert isinstance(instance, activitydiagram::ActivityEdge)
-
-@given(instance=activitydiagram::ActivityNode_strategy)
-@settings(max_examples=50)
-def test_activitydiagram::activitynode_instantiation(instance):
-    assert isinstance(instance, activitydiagram::ActivityNode)
-
-@given(instance=activitydiagram::ActivityNode_strategy)
-def test_activitydiagram::activitynode_running_type(instance):
-    assert isinstance(instance.running, bool)
-
-
-@given(instance=activitydiagram::ActivityNode_strategy)
-def test_activitydiagram::activitynode_running_setter(instance):
-    original = instance.running
-    instance.running = original
-    assert instance.running == original
-
-@given(instance=activitydiagram::Activity_strategy)
-@settings(max_examples=50)
-def test_activitydiagram::activity_instantiation(instance):
-    assert isinstance(instance, activitydiagram::Activity)
+def test_activitydiagram_booleanvariable_instantiation(instance):
+    assert isinstance(instance, activitydiagram_BooleanVariable)

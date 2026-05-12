@@ -3,25 +3,25 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    publication103::Labelled,
-    publication103::Counted,
-    publication103::Named,
+from python_code import (
+    publication103_Labelled,
+    publication103_Counted,
+    publication103_Named,
     Named,
-    publication103::Collaboration,
-    publication103::Position,
-    publication103::Skill,
-    publication103::PublicationStructure,
-    publication103::Paper,
+    publication103_Collaboration,
+    publication103_Position,
+    publication103_Skill,
+    publication103_PublicationStructure,
+    publication103_Paper,
     Labelled,
-    publication103::Review,
-    publication103::ReviewNote,
+    publication103_Review,
+    publication103_ReviewNote,
     Counted,
-    publication103::Paragraph,
-    publication103::Write,
-    publication103::Researcher,
+    publication103_Paragraph,
+    publication103_Write,
+    publication103_Researcher,
 )
 
 # =============================================================================
@@ -30,23 +30,23 @@ from classes import (
 
 
 
-def test_publication103::labelled_is_not_abstract():
-    assert not inspect.isabstract(publication103::Labelled)
+def test_publication103_labelled_is_not_abstract():
+    assert not inspect.isabstract(publication103_Labelled)
 
 
-def test_publication103::labelled_constructor_exists():
-    assert callable(publication103::Labelled.__init__)
+def test_publication103_labelled_constructor_exists():
+    assert callable(publication103_Labelled.__init__)
 
 
-def test_publication103::labelled_constructor_args():
-    sig = inspect.signature(publication103::Labelled.__init__)
+def test_publication103_labelled_constructor_args():
+    sig = inspect.signature(publication103_Labelled.__init__)
     params = list(sig.parameters.keys())
     assert "lname" in params, "Missing parameter 'lname'"
 
-def test_publication103::labelled_has_lname():
-    assert hasattr(publication103::Labelled, "lname")
+def test_publication103_labelled_has_lname():
+    assert hasattr(publication103_Labelled, "lname")
     descriptor = None
-    for klass in publication103::Labelled.__mro__:
+    for klass in publication103_Labelled.__mro__:
         if "lname" in klass.__dict__:
             descriptor = klass.__dict__["lname"]
             break
@@ -54,23 +54,23 @@ def test_publication103::labelled_has_lname():
 
 
 
-def test_publication103::counted_is_not_abstract():
-    assert not inspect.isabstract(publication103::Counted)
+def test_publication103_counted_is_not_abstract():
+    assert not inspect.isabstract(publication103_Counted)
 
 
-def test_publication103::counted_constructor_exists():
-    assert callable(publication103::Counted.__init__)
+def test_publication103_counted_constructor_exists():
+    assert callable(publication103_Counted.__init__)
 
 
-def test_publication103::counted_constructor_args():
-    sig = inspect.signature(publication103::Counted.__init__)
+def test_publication103_counted_constructor_args():
+    sig = inspect.signature(publication103_Counted.__init__)
     params = list(sig.parameters.keys())
     assert "id" in params, "Missing parameter 'id'"
 
-def test_publication103::counted_has_id():
-    assert hasattr(publication103::Counted, "id")
+def test_publication103_counted_has_id():
+    assert hasattr(publication103_Counted, "id")
     descriptor = None
-    for klass in publication103::Counted.__mro__:
+    for klass in publication103_Counted.__mro__:
         if "id" in klass.__dict__:
             descriptor = klass.__dict__["id"]
             break
@@ -78,23 +78,23 @@ def test_publication103::counted_has_id():
 
 
 
-def test_publication103::named_is_not_abstract():
-    assert not inspect.isabstract(publication103::Named)
+def test_publication103_named_is_not_abstract():
+    assert not inspect.isabstract(publication103_Named)
 
 
-def test_publication103::named_constructor_exists():
-    assert callable(publication103::Named.__init__)
+def test_publication103_named_constructor_exists():
+    assert callable(publication103_Named.__init__)
 
 
-def test_publication103::named_constructor_args():
-    sig = inspect.signature(publication103::Named.__init__)
+def test_publication103_named_constructor_args():
+    sig = inspect.signature(publication103_Named.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_publication103::named_has_name():
-    assert hasattr(publication103::Named, "name")
+def test_publication103_named_has_name():
+    assert hasattr(publication103_Named, "name")
     descriptor = None
-    for klass in publication103::Named.__mro__:
+    for klass in publication103_Named.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -116,23 +116,23 @@ def test_named_constructor_args():
 
 
 
-def test_publication103::collaboration_is_not_abstract():
-    assert not inspect.isabstract(publication103::Collaboration)
+def test_publication103_collaboration_is_not_abstract():
+    assert not inspect.isabstract(publication103_Collaboration)
 
 
-def test_publication103::collaboration_constructor_exists():
-    assert callable(publication103::Collaboration.__init__)
+def test_publication103_collaboration_constructor_exists():
+    assert callable(publication103_Collaboration.__init__)
 
 
-def test_publication103::collaboration_constructor_args():
-    sig = inspect.signature(publication103::Collaboration.__init__)
+def test_publication103_collaboration_constructor_args():
+    sig = inspect.signature(publication103_Collaboration.__init__)
     params = list(sig.parameters.keys())
     assert "ratio" in params, "Missing parameter 'ratio'"
 
-def test_publication103::collaboration_has_ratio():
-    assert hasattr(publication103::Collaboration, "ratio")
+def test_publication103_collaboration_has_ratio():
+    assert hasattr(publication103_Collaboration, "ratio")
     descriptor = None
-    for klass in publication103::Collaboration.__mro__:
+    for klass in publication103_Collaboration.__mro__:
         if "ratio" in klass.__dict__:
             descriptor = klass.__dict__["ratio"]
             break
@@ -140,23 +140,23 @@ def test_publication103::collaboration_has_ratio():
 
 
 
-def test_publication103::position_is_not_abstract():
-    assert not inspect.isabstract(publication103::Position)
+def test_publication103_position_is_not_abstract():
+    assert not inspect.isabstract(publication103_Position)
 
 
-def test_publication103::position_constructor_exists():
-    assert callable(publication103::Position.__init__)
+def test_publication103_position_constructor_exists():
+    assert callable(publication103_Position.__init__)
 
 
-def test_publication103::position_constructor_args():
-    sig = inspect.signature(publication103::Position.__init__)
+def test_publication103_position_constructor_args():
+    sig = inspect.signature(publication103_Position.__init__)
     params = list(sig.parameters.keys())
     assert "description" in params, "Missing parameter 'description'"
 
-def test_publication103::position_has_description():
-    assert hasattr(publication103::Position, "description")
+def test_publication103_position_has_description():
+    assert hasattr(publication103_Position, "description")
     descriptor = None
-    for klass in publication103::Position.__mro__:
+    for klass in publication103_Position.__mro__:
         if "description" in klass.__dict__:
             descriptor = klass.__dict__["description"]
             break
@@ -164,23 +164,23 @@ def test_publication103::position_has_description():
 
 
 
-def test_publication103::skill_is_not_abstract():
-    assert not inspect.isabstract(publication103::Skill)
+def test_publication103_skill_is_not_abstract():
+    assert not inspect.isabstract(publication103_Skill)
 
 
-def test_publication103::skill_constructor_exists():
-    assert callable(publication103::Skill.__init__)
+def test_publication103_skill_constructor_exists():
+    assert callable(publication103_Skill.__init__)
 
 
-def test_publication103::skill_constructor_args():
-    sig = inspect.signature(publication103::Skill.__init__)
+def test_publication103_skill_constructor_args():
+    sig = inspect.signature(publication103_Skill.__init__)
     params = list(sig.parameters.keys())
     assert "description" in params, "Missing parameter 'description'"
 
-def test_publication103::skill_has_description():
-    assert hasattr(publication103::Skill, "description")
+def test_publication103_skill_has_description():
+    assert hasattr(publication103_Skill, "description")
     descriptor = None
-    for klass in publication103::Skill.__mro__:
+    for klass in publication103_Skill.__mro__:
         if "description" in klass.__dict__:
             descriptor = klass.__dict__["description"]
             break
@@ -188,30 +188,30 @@ def test_publication103::skill_has_description():
 
 
 
-def test_publication103::publicationstructure_is_not_abstract():
-    assert not inspect.isabstract(publication103::PublicationStructure)
+def test_publication103_publicationstructure_is_not_abstract():
+    assert not inspect.isabstract(publication103_PublicationStructure)
 
 
-def test_publication103::publicationstructure_constructor_exists():
-    assert callable(publication103::PublicationStructure.__init__)
+def test_publication103_publicationstructure_constructor_exists():
+    assert callable(publication103_PublicationStructure.__init__)
 
 
-def test_publication103::publicationstructure_constructor_args():
-    sig = inspect.signature(publication103::PublicationStructure.__init__)
+def test_publication103_publicationstructure_constructor_args():
+    sig = inspect.signature(publication103_PublicationStructure.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_publication103::paper_is_not_abstract():
-    assert not inspect.isabstract(publication103::Paper)
+def test_publication103_paper_is_not_abstract():
+    assert not inspect.isabstract(publication103_Paper)
 
 
-def test_publication103::paper_constructor_exists():
-    assert callable(publication103::Paper.__init__)
+def test_publication103_paper_constructor_exists():
+    assert callable(publication103_Paper.__init__)
 
 
-def test_publication103::paper_constructor_args():
-    sig = inspect.signature(publication103::Paper.__init__)
+def test_publication103_paper_constructor_args():
+    sig = inspect.signature(publication103_Paper.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -230,23 +230,23 @@ def test_labelled_constructor_args():
 
 
 
-def test_publication103::review_is_not_abstract():
-    assert not inspect.isabstract(publication103::Review)
+def test_publication103_review_is_not_abstract():
+    assert not inspect.isabstract(publication103_Review)
 
 
-def test_publication103::review_constructor_exists():
-    assert callable(publication103::Review.__init__)
+def test_publication103_review_constructor_exists():
+    assert callable(publication103_Review.__init__)
 
 
-def test_publication103::review_constructor_args():
-    sig = inspect.signature(publication103::Review.__init__)
+def test_publication103_review_constructor_args():
+    sig = inspect.signature(publication103_Review.__init__)
     params = list(sig.parameters.keys())
     assert "date" in params, "Missing parameter 'date'"
 
-def test_publication103::review_has_date():
-    assert hasattr(publication103::Review, "date")
+def test_publication103_review_has_date():
+    assert hasattr(publication103_Review, "date")
     descriptor = None
-    for klass in publication103::Review.__mro__:
+    for klass in publication103_Review.__mro__:
         if "date" in klass.__dict__:
             descriptor = klass.__dict__["date"]
             break
@@ -254,23 +254,23 @@ def test_publication103::review_has_date():
 
 
 
-def test_publication103::reviewnote_is_not_abstract():
-    assert not inspect.isabstract(publication103::ReviewNote)
+def test_publication103_reviewnote_is_not_abstract():
+    assert not inspect.isabstract(publication103_ReviewNote)
 
 
-def test_publication103::reviewnote_constructor_exists():
-    assert callable(publication103::ReviewNote.__init__)
+def test_publication103_reviewnote_constructor_exists():
+    assert callable(publication103_ReviewNote.__init__)
 
 
-def test_publication103::reviewnote_constructor_args():
-    sig = inspect.signature(publication103::ReviewNote.__init__)
+def test_publication103_reviewnote_constructor_args():
+    sig = inspect.signature(publication103_ReviewNote.__init__)
     params = list(sig.parameters.keys())
     assert "content" in params, "Missing parameter 'content'"
 
-def test_publication103::reviewnote_has_content():
-    assert hasattr(publication103::ReviewNote, "content")
+def test_publication103_reviewnote_has_content():
+    assert hasattr(publication103_ReviewNote, "content")
     descriptor = None
-    for klass in publication103::ReviewNote.__mro__:
+    for klass in publication103_ReviewNote.__mro__:
         if "content" in klass.__dict__:
             descriptor = klass.__dict__["content"]
             break
@@ -292,23 +292,23 @@ def test_counted_constructor_args():
 
 
 
-def test_publication103::paragraph_is_not_abstract():
-    assert not inspect.isabstract(publication103::Paragraph)
+def test_publication103_paragraph_is_not_abstract():
+    assert not inspect.isabstract(publication103_Paragraph)
 
 
-def test_publication103::paragraph_constructor_exists():
-    assert callable(publication103::Paragraph.__init__)
+def test_publication103_paragraph_constructor_exists():
+    assert callable(publication103_Paragraph.__init__)
 
 
-def test_publication103::paragraph_constructor_args():
-    sig = inspect.signature(publication103::Paragraph.__init__)
+def test_publication103_paragraph_constructor_args():
+    sig = inspect.signature(publication103_Paragraph.__init__)
     params = list(sig.parameters.keys())
     assert "content" in params, "Missing parameter 'content'"
 
-def test_publication103::paragraph_has_content():
-    assert hasattr(publication103::Paragraph, "content")
+def test_publication103_paragraph_has_content():
+    assert hasattr(publication103_Paragraph, "content")
     descriptor = None
-    for klass in publication103::Paragraph.__mro__:
+    for klass in publication103_Paragraph.__mro__:
         if "content" in klass.__dict__:
             descriptor = klass.__dict__["content"]
             break
@@ -316,23 +316,23 @@ def test_publication103::paragraph_has_content():
 
 
 
-def test_publication103::write_is_not_abstract():
-    assert not inspect.isabstract(publication103::Write)
+def test_publication103_write_is_not_abstract():
+    assert not inspect.isabstract(publication103_Write)
 
 
-def test_publication103::write_constructor_exists():
-    assert callable(publication103::Write.__init__)
+def test_publication103_write_constructor_exists():
+    assert callable(publication103_Write.__init__)
 
 
-def test_publication103::write_constructor_args():
-    sig = inspect.signature(publication103::Write.__init__)
+def test_publication103_write_constructor_args():
+    sig = inspect.signature(publication103_Write.__init__)
     params = list(sig.parameters.keys())
     assert "timeSpent" in params, "Missing parameter 'timeSpent'"
 
-def test_publication103::write_has_timeSpent():
-    assert hasattr(publication103::Write, "timeSpent")
+def test_publication103_write_has_timeSpent():
+    assert hasattr(publication103_Write, "timeSpent")
     descriptor = None
-    for klass in publication103::Write.__mro__:
+    for klass in publication103_Write.__mro__:
         if "timeSpent" in klass.__dict__:
             descriptor = klass.__dict__["timeSpent"]
             break
@@ -340,35 +340,35 @@ def test_publication103::write_has_timeSpent():
 
 
 
-def test_publication103::researcher_is_not_abstract():
-    assert not inspect.isabstract(publication103::Researcher)
+def test_publication103_researcher_is_not_abstract():
+    assert not inspect.isabstract(publication103_Researcher)
 
 
-def test_publication103::researcher_constructor_exists():
-    assert callable(publication103::Researcher.__init__)
+def test_publication103_researcher_constructor_exists():
+    assert callable(publication103_Researcher.__init__)
 
 
-def test_publication103::researcher_constructor_args():
-    sig = inspect.signature(publication103::Researcher.__init__)
+def test_publication103_researcher_constructor_args():
+    sig = inspect.signature(publication103_Researcher.__init__)
     params = list(sig.parameters.keys())
-    assert "forName" in params, "Missing parameter 'forName'"
     assert "name" in params, "Missing parameter 'name'"
+    assert "forName" in params, "Missing parameter 'forName'"
 
-def test_publication103::researcher_has_forName():
-    assert hasattr(publication103::Researcher, "forName")
+def test_publication103_researcher_has_name():
+    assert hasattr(publication103_Researcher, "name")
     descriptor = None
-    for klass in publication103::Researcher.__mro__:
-        if "forName" in klass.__dict__:
-            descriptor = klass.__dict__["forName"]
+    for klass in publication103_Researcher.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
-def test_publication103::researcher_has_name():
-    assert hasattr(publication103::Researcher, "name")
+def test_publication103_researcher_has_forName():
+    assert hasattr(publication103_Researcher, "forName")
     descriptor = None
-    for klass in publication103::Researcher.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
+    for klass in publication103_Researcher.__mro__:
+        if "forName" in klass.__dict__:
+            descriptor = klass.__dict__["forName"]
             break
     assert isinstance(descriptor, property)
 
@@ -384,123 +384,114 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-publication103::Labelled_strategy = st.builds(
-    publication103::Labelled,
+publication103_Labelled_strategy = st.builds(
+    publication103_Labelled,
     lname=
         safe_text
 )
-publication103::Counted_strategy = st.builds(
-    publication103::Counted,
+publication103_Counted_strategy = st.builds(
+    publication103_Counted,
     id=
         st.integers()
 )
-publication103::Named_strategy = st.builds(
-    publication103::Named,
+publication103_Named_strategy = st.builds(
+    publication103_Named,
     name=
         safe_text
 )
 Named_strategy = st.builds(
     Named,
 )
-publication103::Collaboration_strategy = st.builds(
-    publication103::Collaboration,
+publication103_Collaboration_strategy = st.builds(
+    publication103_Collaboration,
     ratio=
         st.integers()
 )
-publication103::Position_strategy = st.builds(
-    publication103::Position,
+publication103_Position_strategy = st.builds(
+    publication103_Position,
     description=
         safe_text
 )
-publication103::Skill_strategy = st.builds(
-    publication103::Skill,
+publication103_Skill_strategy = st.builds(
+    publication103_Skill,
     description=
         safe_text
 )
-publication103::PublicationStructure_strategy = st.builds(
-    publication103::PublicationStructure,
+publication103_PublicationStructure_strategy = st.builds(
+    publication103_PublicationStructure,
 )
-publication103::Paper_strategy = st.builds(
-    publication103::Paper,
+publication103_Paper_strategy = st.builds(
+    publication103_Paper,
 )
 Labelled_strategy = st.builds(
     Labelled,
 )
-publication103::Review_strategy = st.builds(
-    publication103::Review,
+publication103_Review_strategy = st.builds(
+    publication103_Review,
     date=
         st.dates()
 )
-publication103::ReviewNote_strategy = st.builds(
-    publication103::ReviewNote,
+publication103_ReviewNote_strategy = st.builds(
+    publication103_ReviewNote,
     content=
         safe_text
 )
 Counted_strategy = st.builds(
     Counted,
 )
-publication103::Paragraph_strategy = st.builds(
-    publication103::Paragraph,
+publication103_Paragraph_strategy = st.builds(
+    publication103_Paragraph,
     content=
         safe_text
 )
-publication103::Write_strategy = st.builds(
-    publication103::Write,
+publication103_Write_strategy = st.builds(
+    publication103_Write,
     timeSpent=
         st.integers()
 )
-publication103::Researcher_strategy = st.builds(
-    publication103::Researcher,
-    forName=
-        safe_text,
+publication103_Researcher_strategy = st.builds(
+    publication103_Researcher,
     name=
+        safe_text,
+    forName=
         safe_text
 )
 
-@given(instance=publication103::Labelled_strategy)
+@given(instance=publication103_Labelled_strategy)
 @settings(max_examples=50)
-def test_publication103::labelled_instantiation(instance):
-    assert isinstance(instance, publication103::Labelled)
-
-@given(instance=publication103::Labelled_strategy)
-def test_publication103::labelled_lname_type(instance):
-    assert isinstance(instance.lname, str)
+def test_publication103_labelled_instantiation(instance):
+    assert isinstance(instance, publication103_Labelled)
 
 
-@given(instance=publication103::Labelled_strategy)
-def test_publication103::labelled_lname_setter(instance):
+
+@given(instance=publication103_Labelled_strategy)
+def test_publication103_labelled_lname_setter(instance):
     original = instance.lname
     instance.lname = original
     assert instance.lname == original
 
-@given(instance=publication103::Counted_strategy)
+@given(instance=publication103_Counted_strategy)
 @settings(max_examples=50)
-def test_publication103::counted_instantiation(instance):
-    assert isinstance(instance, publication103::Counted)
-
-@given(instance=publication103::Counted_strategy)
-def test_publication103::counted_id_type(instance):
-    assert isinstance(instance.id, int)
+def test_publication103_counted_instantiation(instance):
+    assert isinstance(instance, publication103_Counted)
 
 
-@given(instance=publication103::Counted_strategy)
-def test_publication103::counted_id_setter(instance):
+
+@given(instance=publication103_Counted_strategy)
+def test_publication103_counted_id_setter(instance):
     original = instance.id
     instance.id = original
     assert instance.id == original
 
-@given(instance=publication103::Named_strategy)
+@given(instance=publication103_Named_strategy)
 @settings(max_examples=50)
-def test_publication103::named_instantiation(instance):
-    assert isinstance(instance, publication103::Named)
-
-@given(instance=publication103::Named_strategy)
-def test_publication103::named_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_publication103_named_instantiation(instance):
+    assert isinstance(instance, publication103_Named)
 
 
-@given(instance=publication103::Named_strategy)
-def test_publication103::named_name_setter(instance):
+
+@given(instance=publication103_Named_strategy)
+def test_publication103_named_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
@@ -510,97 +501,82 @@ def test_publication103::named_name_setter(instance):
 def test_named_instantiation(instance):
     assert isinstance(instance, Named)
 
-@given(instance=publication103::Collaboration_strategy)
+@given(instance=publication103_Collaboration_strategy)
 @settings(max_examples=50)
-def test_publication103::collaboration_instantiation(instance):
-    assert isinstance(instance, publication103::Collaboration)
-
-@given(instance=publication103::Collaboration_strategy)
-def test_publication103::collaboration_ratio_type(instance):
-    assert isinstance(instance.ratio, int)
+def test_publication103_collaboration_instantiation(instance):
+    assert isinstance(instance, publication103_Collaboration)
 
 
-@given(instance=publication103::Collaboration_strategy)
-def test_publication103::collaboration_ratio_setter(instance):
+
+@given(instance=publication103_Collaboration_strategy)
+def test_publication103_collaboration_ratio_setter(instance):
     original = instance.ratio
     instance.ratio = original
     assert instance.ratio == original
 
-@given(instance=publication103::Position_strategy)
+@given(instance=publication103_Position_strategy)
 @settings(max_examples=50)
-def test_publication103::position_instantiation(instance):
-    assert isinstance(instance, publication103::Position)
-
-@given(instance=publication103::Position_strategy)
-def test_publication103::position_description_type(instance):
-    assert isinstance(instance.description, str)
+def test_publication103_position_instantiation(instance):
+    assert isinstance(instance, publication103_Position)
 
 
-@given(instance=publication103::Position_strategy)
-def test_publication103::position_description_setter(instance):
+
+@given(instance=publication103_Position_strategy)
+def test_publication103_position_description_setter(instance):
     original = instance.description
     instance.description = original
     assert instance.description == original
 
-@given(instance=publication103::Skill_strategy)
+@given(instance=publication103_Skill_strategy)
 @settings(max_examples=50)
-def test_publication103::skill_instantiation(instance):
-    assert isinstance(instance, publication103::Skill)
-
-@given(instance=publication103::Skill_strategy)
-def test_publication103::skill_description_type(instance):
-    assert isinstance(instance.description, str)
+def test_publication103_skill_instantiation(instance):
+    assert isinstance(instance, publication103_Skill)
 
 
-@given(instance=publication103::Skill_strategy)
-def test_publication103::skill_description_setter(instance):
+
+@given(instance=publication103_Skill_strategy)
+def test_publication103_skill_description_setter(instance):
     original = instance.description
     instance.description = original
     assert instance.description == original
 
-@given(instance=publication103::PublicationStructure_strategy)
+@given(instance=publication103_PublicationStructure_strategy)
 @settings(max_examples=50)
-def test_publication103::publicationstructure_instantiation(instance):
-    assert isinstance(instance, publication103::PublicationStructure)
+def test_publication103_publicationstructure_instantiation(instance):
+    assert isinstance(instance, publication103_PublicationStructure)
 
-@given(instance=publication103::Paper_strategy)
+@given(instance=publication103_Paper_strategy)
 @settings(max_examples=50)
-def test_publication103::paper_instantiation(instance):
-    assert isinstance(instance, publication103::Paper)
+def test_publication103_paper_instantiation(instance):
+    assert isinstance(instance, publication103_Paper)
 
 @given(instance=Labelled_strategy)
 @settings(max_examples=50)
 def test_labelled_instantiation(instance):
     assert isinstance(instance, Labelled)
 
-@given(instance=publication103::Review_strategy)
+@given(instance=publication103_Review_strategy)
 @settings(max_examples=50)
-def test_publication103::review_instantiation(instance):
-    assert isinstance(instance, publication103::Review)
-
-@given(instance=publication103::Review_strategy)
-def test_publication103::review_date_type(instance):
-    assert isinstance(instance.date, date)
+def test_publication103_review_instantiation(instance):
+    assert isinstance(instance, publication103_Review)
 
 
-@given(instance=publication103::Review_strategy)
-def test_publication103::review_date_setter(instance):
+
+@given(instance=publication103_Review_strategy)
+def test_publication103_review_date_setter(instance):
     original = instance.date
     instance.date = original
     assert instance.date == original
 
-@given(instance=publication103::ReviewNote_strategy)
+@given(instance=publication103_ReviewNote_strategy)
 @settings(max_examples=50)
-def test_publication103::reviewnote_instantiation(instance):
-    assert isinstance(instance, publication103::ReviewNote)
-
-@given(instance=publication103::ReviewNote_strategy)
-def test_publication103::reviewnote_content_type(instance):
-    assert isinstance(instance.content, str)
+def test_publication103_reviewnote_instantiation(instance):
+    assert isinstance(instance, publication103_ReviewNote)
 
 
-@given(instance=publication103::ReviewNote_strategy)
-def test_publication103::reviewnote_content_setter(instance):
+
+@given(instance=publication103_ReviewNote_strategy)
+def test_publication103_reviewnote_content_setter(instance):
     original = instance.content
     instance.content = original
     assert instance.content == original
@@ -610,61 +586,49 @@ def test_publication103::reviewnote_content_setter(instance):
 def test_counted_instantiation(instance):
     assert isinstance(instance, Counted)
 
-@given(instance=publication103::Paragraph_strategy)
+@given(instance=publication103_Paragraph_strategy)
 @settings(max_examples=50)
-def test_publication103::paragraph_instantiation(instance):
-    assert isinstance(instance, publication103::Paragraph)
-
-@given(instance=publication103::Paragraph_strategy)
-def test_publication103::paragraph_content_type(instance):
-    assert isinstance(instance.content, str)
+def test_publication103_paragraph_instantiation(instance):
+    assert isinstance(instance, publication103_Paragraph)
 
 
-@given(instance=publication103::Paragraph_strategy)
-def test_publication103::paragraph_content_setter(instance):
+
+@given(instance=publication103_Paragraph_strategy)
+def test_publication103_paragraph_content_setter(instance):
     original = instance.content
     instance.content = original
     assert instance.content == original
 
-@given(instance=publication103::Write_strategy)
+@given(instance=publication103_Write_strategy)
 @settings(max_examples=50)
-def test_publication103::write_instantiation(instance):
-    assert isinstance(instance, publication103::Write)
-
-@given(instance=publication103::Write_strategy)
-def test_publication103::write_timeSpent_type(instance):
-    assert isinstance(instance.timeSpent, int)
+def test_publication103_write_instantiation(instance):
+    assert isinstance(instance, publication103_Write)
 
 
-@given(instance=publication103::Write_strategy)
-def test_publication103::write_timeSpent_setter(instance):
+
+@given(instance=publication103_Write_strategy)
+def test_publication103_write_timeSpent_setter(instance):
     original = instance.timeSpent
     instance.timeSpent = original
     assert instance.timeSpent == original
 
-@given(instance=publication103::Researcher_strategy)
+@given(instance=publication103_Researcher_strategy)
 @settings(max_examples=50)
-def test_publication103::researcher_instantiation(instance):
-    assert isinstance(instance, publication103::Researcher)
-
-@given(instance=publication103::Researcher_strategy)
-def test_publication103::researcher_forName_type(instance):
-    assert isinstance(instance.forName, str)
+def test_publication103_researcher_instantiation(instance):
+    assert isinstance(instance, publication103_Researcher)
 
 
-@given(instance=publication103::Researcher_strategy)
-def test_publication103::researcher_forName_setter(instance):
-    original = instance.forName
-    instance.forName = original
-    assert instance.forName == original
 
-@given(instance=publication103::Researcher_strategy)
-def test_publication103::researcher_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=publication103::Researcher_strategy)
-def test_publication103::researcher_name_setter(instance):
+@given(instance=publication103_Researcher_strategy)
+def test_publication103_researcher_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
+
+
+
+@given(instance=publication103_Researcher_strategy)
+def test_publication103_researcher_forName_setter(instance):
+    original = instance.forName
+    instance.forName = original
+    assert instance.forName == original

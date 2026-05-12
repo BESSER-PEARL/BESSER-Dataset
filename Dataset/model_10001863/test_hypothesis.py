@@ -3,7 +3,7 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
 from python_code import (
     Mengedit_Data_Tumbuh_Tumbuhan_Herbal_UseCase,
@@ -414,40 +414,22 @@ def test_nama_tumbuh_tumbuhan_herbal_constructor_exists():
 def test_nama_tumbuh_tumbuhan_herbal_constructor_args():
     sig = inspect.signature(Nama_Tumbuh_Tumbuhan_Herbal.__init__)
     params = list(sig.parameters.keys())
-    assert "attribute2" in params, "Missing parameter 'attribute2'"
-    assert "attribute8" in params, "Missing parameter 'attribute8'"
-    assert "attribute9" in params, "Missing parameter 'attribute9'"
-    assert "attribute7" in params, "Missing parameter 'attribute7'"
-    assert "attribute4" in params, "Missing parameter 'attribute4'"
     assert "attribute5" in params, "Missing parameter 'attribute5'"
+    assert "attribute7" in params, "Missing parameter 'attribute7'"
     assert "attribute6" in params, "Missing parameter 'attribute6'"
+    assert "attribute9" in params, "Missing parameter 'attribute9'"
     assert "attribute" in params, "Missing parameter 'attribute'"
+    assert "attribute8" in params, "Missing parameter 'attribute8'"
     assert "attribute3" in params, "Missing parameter 'attribute3'"
+    assert "attribute4" in params, "Missing parameter 'attribute4'"
+    assert "attribute2" in params, "Missing parameter 'attribute2'"
 
-def test_nama_tumbuh_tumbuhan_herbal_has_attribute2():
-    assert hasattr(Nama_Tumbuh_Tumbuhan_Herbal, "attribute2")
+def test_nama_tumbuh_tumbuhan_herbal_has_attribute5():
+    assert hasattr(Nama_Tumbuh_Tumbuhan_Herbal, "attribute5")
     descriptor = None
     for klass in Nama_Tumbuh_Tumbuhan_Herbal.__mro__:
-        if "attribute2" in klass.__dict__:
-            descriptor = klass.__dict__["attribute2"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_nama_tumbuh_tumbuhan_herbal_has_attribute8():
-    assert hasattr(Nama_Tumbuh_Tumbuhan_Herbal, "attribute8")
-    descriptor = None
-    for klass in Nama_Tumbuh_Tumbuhan_Herbal.__mro__:
-        if "attribute8" in klass.__dict__:
-            descriptor = klass.__dict__["attribute8"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_nama_tumbuh_tumbuhan_herbal_has_attribute9():
-    assert hasattr(Nama_Tumbuh_Tumbuhan_Herbal, "attribute9")
-    descriptor = None
-    for klass in Nama_Tumbuh_Tumbuhan_Herbal.__mro__:
-        if "attribute9" in klass.__dict__:
-            descriptor = klass.__dict__["attribute9"]
+        if "attribute5" in klass.__dict__:
+            descriptor = klass.__dict__["attribute5"]
             break
     assert isinstance(descriptor, property)
 
@@ -460,30 +442,21 @@ def test_nama_tumbuh_tumbuhan_herbal_has_attribute7():
             break
     assert isinstance(descriptor, property)
 
-def test_nama_tumbuh_tumbuhan_herbal_has_attribute4():
-    assert hasattr(Nama_Tumbuh_Tumbuhan_Herbal, "attribute4")
-    descriptor = None
-    for klass in Nama_Tumbuh_Tumbuhan_Herbal.__mro__:
-        if "attribute4" in klass.__dict__:
-            descriptor = klass.__dict__["attribute4"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_nama_tumbuh_tumbuhan_herbal_has_attribute5():
-    assert hasattr(Nama_Tumbuh_Tumbuhan_Herbal, "attribute5")
-    descriptor = None
-    for klass in Nama_Tumbuh_Tumbuhan_Herbal.__mro__:
-        if "attribute5" in klass.__dict__:
-            descriptor = klass.__dict__["attribute5"]
-            break
-    assert isinstance(descriptor, property)
-
 def test_nama_tumbuh_tumbuhan_herbal_has_attribute6():
     assert hasattr(Nama_Tumbuh_Tumbuhan_Herbal, "attribute6")
     descriptor = None
     for klass in Nama_Tumbuh_Tumbuhan_Herbal.__mro__:
         if "attribute6" in klass.__dict__:
             descriptor = klass.__dict__["attribute6"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_nama_tumbuh_tumbuhan_herbal_has_attribute9():
+    assert hasattr(Nama_Tumbuh_Tumbuhan_Herbal, "attribute9")
+    descriptor = None
+    for klass in Nama_Tumbuh_Tumbuhan_Herbal.__mro__:
+        if "attribute9" in klass.__dict__:
+            descriptor = klass.__dict__["attribute9"]
             break
     assert isinstance(descriptor, property)
 
@@ -496,12 +469,39 @@ def test_nama_tumbuh_tumbuhan_herbal_has_attribute():
             break
     assert isinstance(descriptor, property)
 
+def test_nama_tumbuh_tumbuhan_herbal_has_attribute8():
+    assert hasattr(Nama_Tumbuh_Tumbuhan_Herbal, "attribute8")
+    descriptor = None
+    for klass in Nama_Tumbuh_Tumbuhan_Herbal.__mro__:
+        if "attribute8" in klass.__dict__:
+            descriptor = klass.__dict__["attribute8"]
+            break
+    assert isinstance(descriptor, property)
+
 def test_nama_tumbuh_tumbuhan_herbal_has_attribute3():
     assert hasattr(Nama_Tumbuh_Tumbuhan_Herbal, "attribute3")
     descriptor = None
     for klass in Nama_Tumbuh_Tumbuhan_Herbal.__mro__:
         if "attribute3" in klass.__dict__:
             descriptor = klass.__dict__["attribute3"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_nama_tumbuh_tumbuhan_herbal_has_attribute4():
+    assert hasattr(Nama_Tumbuh_Tumbuhan_Herbal, "attribute4")
+    descriptor = None
+    for klass in Nama_Tumbuh_Tumbuhan_Herbal.__mro__:
+        if "attribute4" in klass.__dict__:
+            descriptor = klass.__dict__["attribute4"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_nama_tumbuh_tumbuhan_herbal_has_attribute2():
+    assert hasattr(Nama_Tumbuh_Tumbuhan_Herbal, "attribute2")
+    descriptor = None
+    for klass in Nama_Tumbuh_Tumbuhan_Herbal.__mro__:
+        if "attribute2" in klass.__dict__:
+            descriptor = klass.__dict__["attribute2"]
             break
     assert isinstance(descriptor, property)
 
@@ -518,17 +518,8 @@ def test_menu_halaman_website_constructor_exists():
 def test_menu_halaman_website_constructor_args():
     sig = inspect.signature(Menu_Halaman_Website.__init__)
     params = list(sig.parameters.keys())
-    assert "attribute2" in params, "Missing parameter 'attribute2'"
     assert "attribute" in params, "Missing parameter 'attribute'"
-
-def test_menu_halaman_website_has_attribute2():
-    assert hasattr(Menu_Halaman_Website, "attribute2")
-    descriptor = None
-    for klass in Menu_Halaman_Website.__mro__:
-        if "attribute2" in klass.__dict__:
-            descriptor = klass.__dict__["attribute2"]
-            break
-    assert isinstance(descriptor, property)
+    assert "attribute2" in params, "Missing parameter 'attribute2'"
 
 def test_menu_halaman_website_has_attribute():
     assert hasattr(Menu_Halaman_Website, "attribute")
@@ -536,6 +527,15 @@ def test_menu_halaman_website_has_attribute():
     for klass in Menu_Halaman_Website.__mro__:
         if "attribute" in klass.__dict__:
             descriptor = klass.__dict__["attribute"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_menu_halaman_website_has_attribute2():
+    assert hasattr(Menu_Halaman_Website, "attribute2")
+    descriptor = None
+    for klass in Menu_Halaman_Website.__mro__:
+        if "attribute2" in klass.__dict__:
+            descriptor = klass.__dict__["attribute2"]
             break
     assert isinstance(descriptor, property)
 
@@ -552,17 +552,17 @@ def test_pengelola_website_constructor_exists():
 def test_pengelola_website_constructor_args():
     sig = inspect.signature(Pengelola_Website.__init__)
     params = list(sig.parameters.keys())
-    assert "attribute" in params, "Missing parameter 'attribute'"
-    assert "attribute3" in params, "Missing parameter 'attribute3'"
     assert "attribute2" in params, "Missing parameter 'attribute2'"
+    assert "attribute3" in params, "Missing parameter 'attribute3'"
     assert "attribute4" in params, "Missing parameter 'attribute4'"
+    assert "attribute" in params, "Missing parameter 'attribute'"
 
-def test_pengelola_website_has_attribute():
-    assert hasattr(Pengelola_Website, "attribute")
+def test_pengelola_website_has_attribute2():
+    assert hasattr(Pengelola_Website, "attribute2")
     descriptor = None
     for klass in Pengelola_Website.__mro__:
-        if "attribute" in klass.__dict__:
-            descriptor = klass.__dict__["attribute"]
+        if "attribute2" in klass.__dict__:
+            descriptor = klass.__dict__["attribute2"]
             break
     assert isinstance(descriptor, property)
 
@@ -575,21 +575,21 @@ def test_pengelola_website_has_attribute3():
             break
     assert isinstance(descriptor, property)
 
-def test_pengelola_website_has_attribute2():
-    assert hasattr(Pengelola_Website, "attribute2")
-    descriptor = None
-    for klass in Pengelola_Website.__mro__:
-        if "attribute2" in klass.__dict__:
-            descriptor = klass.__dict__["attribute2"]
-            break
-    assert isinstance(descriptor, property)
-
 def test_pengelola_website_has_attribute4():
     assert hasattr(Pengelola_Website, "attribute4")
     descriptor = None
     for klass in Pengelola_Website.__mro__:
         if "attribute4" in klass.__dict__:
             descriptor = klass.__dict__["attribute4"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_pengelola_website_has_attribute():
+    assert hasattr(Pengelola_Website, "attribute")
+    descriptor = None
+    for klass in Pengelola_Website.__mro__:
+        if "attribute" in klass.__dict__:
+            descriptor = klass.__dict__["attribute"]
             break
     assert isinstance(descriptor, property)
 
@@ -1063,41 +1063,41 @@ Admin_Website_Actor_strategy = st.builds(
 )
 Nama_Tumbuh_Tumbuhan_Herbal_strategy = st.builds(
     Nama_Tumbuh_Tumbuhan_Herbal,
-    attribute2=
-        st.none(),
-    attribute8=
-        st.none(),
-    attribute9=
+    attribute5=
         st.none(),
     attribute7=
         st.none(),
-    attribute4=
-        st.none(),
-    attribute5=
-        st.none(),
     attribute6=
+        st.none(),
+    attribute9=
         st.none(),
     attribute=
         st.none(),
+    attribute8=
+        st.none(),
     attribute3=
+        st.none(),
+    attribute4=
+        st.none(),
+    attribute2=
         st.none()
 )
 Menu_Halaman_Website_strategy = st.builds(
     Menu_Halaman_Website,
-    attribute2=
-        st.none(),
     attribute=
+        st.none(),
+    attribute2=
         st.none()
 )
 Pengelola_Website_strategy = st.builds(
     Pengelola_Website,
-    attribute=
+    attribute2=
         st.none(),
     attribute3=
         st.none(),
-    attribute2=
-        st.none(),
     attribute4=
+        st.none(),
+    attribute=
         st.none()
 )
 Browsing_Website_strategy = st.builds(
@@ -1308,64 +1308,6 @@ def test_admin_website_actor_instantiation(instance):
 def test_nama_tumbuh_tumbuhan_herbal_instantiation(instance):
     assert isinstance(instance, Nama_Tumbuh_Tumbuhan_Herbal)
 
-@given(instance=Nama_Tumbuh_Tumbuhan_Herbal_strategy)
-def test_nama_tumbuh_tumbuhan_herbal_attribute2_type(instance):
-    assert isinstance(instance.attribute2, jenis_tumbuhan_herbal_usecase)
-
-
-@given(instance=Nama_Tumbuh_Tumbuhan_Herbal_strategy)
-def test_nama_tumbuh_tumbuhan_herbal_attribute2_setter(instance):
-    original = instance.attribute2
-    instance.attribute2 = original
-    assert instance.attribute2 == original
-
-@given(instance=Nama_Tumbuh_Tumbuhan_Herbal_strategy)
-def test_nama_tumbuh_tumbuhan_herbal_attribute8_type(instance):
-    assert isinstance(instance.attribute8, gambar_tumbuhan_herbalnya_usecase)
-
-
-@given(instance=Nama_Tumbuh_Tumbuhan_Herbal_strategy)
-def test_nama_tumbuh_tumbuhan_herbal_attribute8_setter(instance):
-    original = instance.attribute8
-    instance.attribute8 = original
-    assert instance.attribute8 == original
-
-@given(instance=Nama_Tumbuh_Tumbuhan_Herbal_strategy)
-def test_nama_tumbuh_tumbuhan_herbal_attribute9_type(instance):
-    assert isinstance(instance.attribute9, obat__produk_jadi__usecase)
-
-
-@given(instance=Nama_Tumbuh_Tumbuhan_Herbal_strategy)
-def test_nama_tumbuh_tumbuhan_herbal_attribute9_setter(instance):
-    original = instance.attribute9
-    instance.attribute9 = original
-    assert instance.attribute9 == original
-
-@given(instance=Nama_Tumbuh_Tumbuhan_Herbal_strategy)
-def test_nama_tumbuh_tumbuhan_herbal_attribute7_type(instance):
-    assert isinstance(instance.attribute7, cara_pengolahannya_usecase)
-
-
-@given(instance=Nama_Tumbuh_Tumbuhan_Herbal_strategy)
-def test_nama_tumbuh_tumbuhan_herbal_attribute7_setter(instance):
-    original = instance.attribute7
-    instance.attribute7 = original
-    assert instance.attribute7 == original
-
-@given(instance=Nama_Tumbuh_Tumbuhan_Herbal_strategy)
-def test_nama_tumbuh_tumbuhan_herbal_attribute4_type(instance):
-    assert isinstance(instance.attribute4, kelas_ordo_tumbuhan_herbal_usecase)
-
-
-@given(instance=Nama_Tumbuh_Tumbuhan_Herbal_strategy)
-def test_nama_tumbuh_tumbuhan_herbal_attribute4_setter(instance):
-    original = instance.attribute4
-    instance.attribute4 = original
-    assert instance.attribute4 == original
-
-@given(instance=Nama_Tumbuh_Tumbuhan_Herbal_strategy)
-def test_nama_tumbuh_tumbuhan_herbal_attribute5_type(instance):
-    assert isinstance(instance.attribute5, khasiatnya_apa_usecase)
 
 
 @given(instance=Nama_Tumbuh_Tumbuhan_Herbal_strategy)
@@ -1374,9 +1316,14 @@ def test_nama_tumbuh_tumbuhan_herbal_attribute5_setter(instance):
     instance.attribute5 = original
     assert instance.attribute5 == original
 
+
+
 @given(instance=Nama_Tumbuh_Tumbuhan_Herbal_strategy)
-def test_nama_tumbuh_tumbuhan_herbal_attribute6_type(instance):
-    assert isinstance(instance.attribute6, dosisnya_usecase)
+def test_nama_tumbuh_tumbuhan_herbal_attribute7_setter(instance):
+    original = instance.attribute7
+    instance.attribute7 = original
+    assert instance.attribute7 == original
+
 
 
 @given(instance=Nama_Tumbuh_Tumbuhan_Herbal_strategy)
@@ -1385,9 +1332,14 @@ def test_nama_tumbuh_tumbuhan_herbal_attribute6_setter(instance):
     instance.attribute6 = original
     assert instance.attribute6 == original
 
+
+
 @given(instance=Nama_Tumbuh_Tumbuhan_Herbal_strategy)
-def test_nama_tumbuh_tumbuhan_herbal_attribute_type(instance):
-    assert isinstance(instance.attribute, nama_latinnya_usecase)
+def test_nama_tumbuh_tumbuhan_herbal_attribute9_setter(instance):
+    original = instance.attribute9
+    instance.attribute9 = original
+    assert instance.attribute9 == original
+
 
 
 @given(instance=Nama_Tumbuh_Tumbuhan_Herbal_strategy)
@@ -1396,9 +1348,14 @@ def test_nama_tumbuh_tumbuhan_herbal_attribute_setter(instance):
     instance.attribute = original
     assert instance.attribute == original
 
+
+
 @given(instance=Nama_Tumbuh_Tumbuhan_Herbal_strategy)
-def test_nama_tumbuh_tumbuhan_herbal_attribute3_type(instance):
-    assert isinstance(instance.attribute3, asal_daerah_tumbuhan_herbal_usecase)
+def test_nama_tumbuh_tumbuhan_herbal_attribute8_setter(instance):
+    original = instance.attribute8
+    instance.attribute8 = original
+    assert instance.attribute8 == original
+
 
 
 @given(instance=Nama_Tumbuh_Tumbuhan_Herbal_strategy)
@@ -1407,25 +1364,27 @@ def test_nama_tumbuh_tumbuhan_herbal_attribute3_setter(instance):
     instance.attribute3 = original
     assert instance.attribute3 == original
 
-@given(instance=Menu_Halaman_Website_strategy)
-@settings(max_examples=50)
-def test_menu_halaman_website_instantiation(instance):
-    assert isinstance(instance, Menu_Halaman_Website)
-
-@given(instance=Menu_Halaman_Website_strategy)
-def test_menu_halaman_website_attribute2_type(instance):
-    assert isinstance(instance.attribute2, fitur_pencarian_berdsarkan_penyakit_usecase)
 
 
-@given(instance=Menu_Halaman_Website_strategy)
-def test_menu_halaman_website_attribute2_setter(instance):
+@given(instance=Nama_Tumbuh_Tumbuhan_Herbal_strategy)
+def test_nama_tumbuh_tumbuhan_herbal_attribute4_setter(instance):
+    original = instance.attribute4
+    instance.attribute4 = original
+    assert instance.attribute4 == original
+
+
+
+@given(instance=Nama_Tumbuh_Tumbuhan_Herbal_strategy)
+def test_nama_tumbuh_tumbuhan_herbal_attribute2_setter(instance):
     original = instance.attribute2
     instance.attribute2 = original
     assert instance.attribute2 == original
 
 @given(instance=Menu_Halaman_Website_strategy)
-def test_menu_halaman_website_attribute_type(instance):
-    assert isinstance(instance.attribute, forum_diskusi_usecase)
+@settings(max_examples=50)
+def test_menu_halaman_website_instantiation(instance):
+    assert isinstance(instance, Menu_Halaman_Website)
+
 
 
 @given(instance=Menu_Halaman_Website_strategy)
@@ -1434,36 +1393,19 @@ def test_menu_halaman_website_attribute_setter(instance):
     instance.attribute = original
     assert instance.attribute == original
 
+
+
+@given(instance=Menu_Halaman_Website_strategy)
+def test_menu_halaman_website_attribute2_setter(instance):
+    original = instance.attribute2
+    instance.attribute2 = original
+    assert instance.attribute2 == original
+
 @given(instance=Pengelola_Website_strategy)
 @settings(max_examples=50)
 def test_pengelola_website_instantiation(instance):
     assert isinstance(instance, Pengelola_Website)
 
-@given(instance=Pengelola_Website_strategy)
-def test_pengelola_website_attribute_type(instance):
-    assert isinstance(instance.attribute, kelola_data_website_usecase)
-
-
-@given(instance=Pengelola_Website_strategy)
-def test_pengelola_website_attribute_setter(instance):
-    original = instance.attribute
-    instance.attribute = original
-    assert instance.attribute == original
-
-@given(instance=Pengelola_Website_strategy)
-def test_pengelola_website_attribute3_type(instance):
-    assert isinstance(instance.attribute3, menghapus_data_website_usecase)
-
-
-@given(instance=Pengelola_Website_strategy)
-def test_pengelola_website_attribute3_setter(instance):
-    original = instance.attribute3
-    instance.attribute3 = original
-    assert instance.attribute3 == original
-
-@given(instance=Pengelola_Website_strategy)
-def test_pengelola_website_attribute2_type(instance):
-    assert isinstance(instance.attribute2, menambah_membuat_data_website_usecase)
 
 
 @given(instance=Pengelola_Website_strategy)
@@ -1472,9 +1414,14 @@ def test_pengelola_website_attribute2_setter(instance):
     instance.attribute2 = original
     assert instance.attribute2 == original
 
+
+
 @given(instance=Pengelola_Website_strategy)
-def test_pengelola_website_attribute4_type(instance):
-    assert isinstance(instance.attribute4, mengedit_data_website_usecase)
+def test_pengelola_website_attribute3_setter(instance):
+    original = instance.attribute3
+    instance.attribute3 = original
+    assert instance.attribute3 == original
+
 
 
 @given(instance=Pengelola_Website_strategy)
@@ -1483,14 +1430,19 @@ def test_pengelola_website_attribute4_setter(instance):
     instance.attribute4 = original
     assert instance.attribute4 == original
 
+
+
+@given(instance=Pengelola_Website_strategy)
+def test_pengelola_website_attribute_setter(instance):
+    original = instance.attribute
+    instance.attribute = original
+    assert instance.attribute == original
+
 @given(instance=Browsing_Website_strategy)
 @settings(max_examples=50)
 def test_browsing_website_instantiation(instance):
     assert isinstance(instance, Browsing_Website)
 
-@given(instance=Browsing_Website_strategy)
-def test_browsing_website_attribute_type(instance):
-    assert isinstance(instance.attribute, user__pengunjung__actor)
 
 
 @given(instance=Browsing_Website_strategy)
@@ -1504,9 +1456,6 @@ def test_browsing_website_attribute_setter(instance):
 def test_login_website_instantiation(instance):
     assert isinstance(instance, Login_Website)
 
-@given(instance=Login_Website_strategy)
-def test_login_website_attribute_type(instance):
-    assert isinstance(instance.attribute, admin_actor)
 
 
 @given(instance=Login_Website_strategy)

@@ -3,19 +3,9 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
 from python_code import (
-    be_jebouquine_dao_AuteurDAO,
-    be_jebouquine_dao_AdministrateurDAO,
-    be_jebouquine_dao_AbstractFactory,
-    Collection_Object_,
-    Object,
-    Collection_Client_,
-    be_jebouquine_bo_ICategorieBORemote_Interface,
-    be_jebouquine_bo_IEtatCommandeRemote_Interface,
-    be_jebouquine_bo_LigneCommandeBORemote_Interface,
-    be_jebouquine_bo_IAdministrateurBORemote_Interface,
     be_jebouquine_bo_LivraisonTypeBORemote_Interface,
     be_jebouquine_bo_IPanierBORemote_Interface,
     be_jebouquine_bo_IAuteurBORemote_Interface,
@@ -94,151 +84,21 @@ from python_code import (
     Administrateur_Actor,
     Visiteur_Actor,
     Client_Actor,
+    be_jebouquine_dao_AuteurDAO,
+    be_jebouquine_dao_AdministrateurDAO,
+    be_jebouquine_dao_AbstractFactory,
+    Collection_Object_,
+    Object,
+    Collection_Client_,
+    be_jebouquine_bo_ICategorieBORemote_Interface,
+    be_jebouquine_bo_IEtatCommandeRemote_Interface,
+    be_jebouquine_bo_LigneCommandeBORemote_Interface,
+    be_jebouquine_bo_IAdministrateurBORemote_Interface,
 )
 
 # =============================================================================
 # SECTION 1 — STRUCTURAL TESTS
 # =============================================================================
-
-
-
-def test_be_jebouquine_dao_auteurdao_is_not_abstract():
-    assert not inspect.isabstract(be_jebouquine_dao_AuteurDAO)
-
-
-def test_be_jebouquine_dao_auteurdao_constructor_exists():
-    assert callable(be_jebouquine_dao_AuteurDAO.__init__)
-
-
-def test_be_jebouquine_dao_auteurdao_constructor_args():
-    sig = inspect.signature(be_jebouquine_dao_AuteurDAO.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_be_jebouquine_dao_administrateurdao_is_not_abstract():
-    assert not inspect.isabstract(be_jebouquine_dao_AdministrateurDAO)
-
-
-def test_be_jebouquine_dao_administrateurdao_constructor_exists():
-    assert callable(be_jebouquine_dao_AdministrateurDAO.__init__)
-
-
-def test_be_jebouquine_dao_administrateurdao_constructor_args():
-    sig = inspect.signature(be_jebouquine_dao_AdministrateurDAO.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_be_jebouquine_dao_abstractfactory_is_not_abstract():
-    assert not inspect.isabstract(be_jebouquine_dao_AbstractFactory)
-
-
-def test_be_jebouquine_dao_abstractfactory_constructor_exists():
-    assert callable(be_jebouquine_dao_AbstractFactory.__init__)
-
-
-def test_be_jebouquine_dao_abstractfactory_constructor_args():
-    sig = inspect.signature(be_jebouquine_dao_AbstractFactory.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_collection_object__is_not_abstract():
-    assert not inspect.isabstract(Collection_Object_)
-
-
-def test_collection_object__constructor_exists():
-    assert callable(Collection_Object_.__init__)
-
-
-def test_collection_object__constructor_args():
-    sig = inspect.signature(Collection_Object_.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_object_is_not_abstract():
-    assert not inspect.isabstract(Object)
-
-
-def test_object_constructor_exists():
-    assert callable(Object.__init__)
-
-
-def test_object_constructor_args():
-    sig = inspect.signature(Object.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_collection_client__is_not_abstract():
-    assert not inspect.isabstract(Collection_Client_)
-
-
-def test_collection_client__constructor_exists():
-    assert callable(Collection_Client_.__init__)
-
-
-def test_collection_client__constructor_args():
-    sig = inspect.signature(Collection_Client_.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_be_jebouquine_bo_icategorieboremote_interface_is_not_abstract():
-    assert not inspect.isabstract(be_jebouquine_bo_ICategorieBORemote_Interface)
-
-
-def test_be_jebouquine_bo_icategorieboremote_interface_constructor_exists():
-    assert callable(be_jebouquine_bo_ICategorieBORemote_Interface.__init__)
-
-
-def test_be_jebouquine_bo_icategorieboremote_interface_constructor_args():
-    sig = inspect.signature(be_jebouquine_bo_ICategorieBORemote_Interface.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_be_jebouquine_bo_ietatcommanderemote_interface_is_not_abstract():
-    assert not inspect.isabstract(be_jebouquine_bo_IEtatCommandeRemote_Interface)
-
-
-def test_be_jebouquine_bo_ietatcommanderemote_interface_constructor_exists():
-    assert callable(be_jebouquine_bo_IEtatCommandeRemote_Interface.__init__)
-
-
-def test_be_jebouquine_bo_ietatcommanderemote_interface_constructor_args():
-    sig = inspect.signature(be_jebouquine_bo_IEtatCommandeRemote_Interface.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_be_jebouquine_bo_lignecommandeboremote_interface_is_not_abstract():
-    assert not inspect.isabstract(be_jebouquine_bo_LigneCommandeBORemote_Interface)
-
-
-def test_be_jebouquine_bo_lignecommandeboremote_interface_constructor_exists():
-    assert callable(be_jebouquine_bo_LigneCommandeBORemote_Interface.__init__)
-
-
-def test_be_jebouquine_bo_lignecommandeboremote_interface_constructor_args():
-    sig = inspect.signature(be_jebouquine_bo_LigneCommandeBORemote_Interface.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_be_jebouquine_bo_iadministrateurboremote_interface_is_not_abstract():
-    assert not inspect.isabstract(be_jebouquine_bo_IAdministrateurBORemote_Interface)
-
-
-def test_be_jebouquine_bo_iadministrateurboremote_interface_constructor_exists():
-    assert callable(be_jebouquine_bo_IAdministrateurBORemote_Interface.__init__)
-
-
-def test_be_jebouquine_bo_iadministrateurboremote_interface_constructor_args():
-    sig = inspect.signature(be_jebouquine_bo_IAdministrateurBORemote_Interface.__init__)
-    params = list(sig.parameters.keys())
 
 
 
@@ -421,10 +281,19 @@ def test_be_jebouquine_bo_panierbo_constructor_exists():
 def test_be_jebouquine_bo_panierbo_constructor_args():
     sig = inspect.signature(be_jebouquine_bo_PanierBO.__init__)
     params = list(sig.parameters.keys())
-    assert "quantity" in params, "Missing parameter 'quantity'"
-    assert "date" in params, "Missing parameter 'date'"
-    assert "idPanier" in params, "Missing parameter 'idPanier'"
     assert "listLivres" in params, "Missing parameter 'listLivres'"
+    assert "quantity" in params, "Missing parameter 'quantity'"
+    assert "idPanier" in params, "Missing parameter 'idPanier'"
+    assert "date" in params, "Missing parameter 'date'"
+
+def test_be_jebouquine_bo_panierbo_has_listLivres():
+    assert hasattr(be_jebouquine_bo_PanierBO, "listLivres")
+    descriptor = None
+    for klass in be_jebouquine_bo_PanierBO.__mro__:
+        if "listLivres" in klass.__dict__:
+            descriptor = klass.__dict__["listLivres"]
+            break
+    assert isinstance(descriptor, property)
 
 def test_be_jebouquine_bo_panierbo_has_quantity():
     assert hasattr(be_jebouquine_bo_PanierBO, "quantity")
@@ -432,15 +301,6 @@ def test_be_jebouquine_bo_panierbo_has_quantity():
     for klass in be_jebouquine_bo_PanierBO.__mro__:
         if "quantity" in klass.__dict__:
             descriptor = klass.__dict__["quantity"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_be_jebouquine_bo_panierbo_has_date():
-    assert hasattr(be_jebouquine_bo_PanierBO, "date")
-    descriptor = None
-    for klass in be_jebouquine_bo_PanierBO.__mro__:
-        if "date" in klass.__dict__:
-            descriptor = klass.__dict__["date"]
             break
     assert isinstance(descriptor, property)
 
@@ -453,12 +313,12 @@ def test_be_jebouquine_bo_panierbo_has_idPanier():
             break
     assert isinstance(descriptor, property)
 
-def test_be_jebouquine_bo_panierbo_has_listLivres():
-    assert hasattr(be_jebouquine_bo_PanierBO, "listLivres")
+def test_be_jebouquine_bo_panierbo_has_date():
+    assert hasattr(be_jebouquine_bo_PanierBO, "date")
     descriptor = None
     for klass in be_jebouquine_bo_PanierBO.__mro__:
-        if "listLivres" in klass.__dict__:
-            descriptor = klass.__dict__["listLivres"]
+        if "date" in klass.__dict__:
+            descriptor = klass.__dict__["date"]
             break
     assert isinstance(descriptor, property)
 
@@ -779,20 +639,11 @@ def test_be_jebouquine_entities_commentaire_constructor_exists():
 def test_be_jebouquine_entities_commentaire_constructor_args():
     sig = inspect.signature(be_jebouquine_entities_Commentaire.__init__)
     params = list(sig.parameters.keys())
-    assert "idCommentaire" in params, "Missing parameter 'idCommentaire'"
     assert "idLivre" in params, "Missing parameter 'idLivre'"
+    assert "idCommentaire" in params, "Missing parameter 'idCommentaire'"
     assert "idClient" in params, "Missing parameter 'idClient'"
-    assert "dateCommentaire" in params, "Missing parameter 'dateCommentaire'"
     assert "textCommentaire" in params, "Missing parameter 'textCommentaire'"
-
-def test_be_jebouquine_entities_commentaire_has_idCommentaire():
-    assert hasattr(be_jebouquine_entities_Commentaire, "idCommentaire")
-    descriptor = None
-    for klass in be_jebouquine_entities_Commentaire.__mro__:
-        if "idCommentaire" in klass.__dict__:
-            descriptor = klass.__dict__["idCommentaire"]
-            break
-    assert isinstance(descriptor, property)
+    assert "dateCommentaire" in params, "Missing parameter 'dateCommentaire'"
 
 def test_be_jebouquine_entities_commentaire_has_idLivre():
     assert hasattr(be_jebouquine_entities_Commentaire, "idLivre")
@@ -800,6 +651,15 @@ def test_be_jebouquine_entities_commentaire_has_idLivre():
     for klass in be_jebouquine_entities_Commentaire.__mro__:
         if "idLivre" in klass.__dict__:
             descriptor = klass.__dict__["idLivre"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_be_jebouquine_entities_commentaire_has_idCommentaire():
+    assert hasattr(be_jebouquine_entities_Commentaire, "idCommentaire")
+    descriptor = None
+    for klass in be_jebouquine_entities_Commentaire.__mro__:
+        if "idCommentaire" in klass.__dict__:
+            descriptor = klass.__dict__["idCommentaire"]
             break
     assert isinstance(descriptor, property)
 
@@ -812,21 +672,21 @@ def test_be_jebouquine_entities_commentaire_has_idClient():
             break
     assert isinstance(descriptor, property)
 
-def test_be_jebouquine_entities_commentaire_has_dateCommentaire():
-    assert hasattr(be_jebouquine_entities_Commentaire, "dateCommentaire")
-    descriptor = None
-    for klass in be_jebouquine_entities_Commentaire.__mro__:
-        if "dateCommentaire" in klass.__dict__:
-            descriptor = klass.__dict__["dateCommentaire"]
-            break
-    assert isinstance(descriptor, property)
-
 def test_be_jebouquine_entities_commentaire_has_textCommentaire():
     assert hasattr(be_jebouquine_entities_Commentaire, "textCommentaire")
     descriptor = None
     for klass in be_jebouquine_entities_Commentaire.__mro__:
         if "textCommentaire" in klass.__dict__:
             descriptor = klass.__dict__["textCommentaire"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_be_jebouquine_entities_commentaire_has_dateCommentaire():
+    assert hasattr(be_jebouquine_entities_Commentaire, "dateCommentaire")
+    descriptor = None
+    for klass in be_jebouquine_entities_Commentaire.__mro__:
+        if "dateCommentaire" in klass.__dict__:
+            descriptor = klass.__dict__["dateCommentaire"]
             break
     assert isinstance(descriptor, property)
 
@@ -877,9 +737,18 @@ def test_be_jebouquine_entities_lignecommande_constructor_exists():
 def test_be_jebouquine_entities_lignecommande_constructor_args():
     sig = inspect.signature(be_jebouquine_entities_LigneCommande.__init__)
     params = list(sig.parameters.keys())
+    assert "idLivre" in params, "Missing parameter 'idLivre'"
     assert "idCommande" in params, "Missing parameter 'idCommande'"
     assert "idLigneCommande" in params, "Missing parameter 'idLigneCommande'"
-    assert "idLivre" in params, "Missing parameter 'idLivre'"
+
+def test_be_jebouquine_entities_lignecommande_has_idLivre():
+    assert hasattr(be_jebouquine_entities_LigneCommande, "idLivre")
+    descriptor = None
+    for klass in be_jebouquine_entities_LigneCommande.__mro__:
+        if "idLivre" in klass.__dict__:
+            descriptor = klass.__dict__["idLivre"]
+            break
+    assert isinstance(descriptor, property)
 
 def test_be_jebouquine_entities_lignecommande_has_idCommande():
     assert hasattr(be_jebouquine_entities_LigneCommande, "idCommande")
@@ -899,15 +768,6 @@ def test_be_jebouquine_entities_lignecommande_has_idLigneCommande():
             break
     assert isinstance(descriptor, property)
 
-def test_be_jebouquine_entities_lignecommande_has_idLivre():
-    assert hasattr(be_jebouquine_entities_LigneCommande, "idLivre")
-    descriptor = None
-    for klass in be_jebouquine_entities_LigneCommande.__mro__:
-        if "idLivre" in klass.__dict__:
-            descriptor = klass.__dict__["idLivre"]
-            break
-    assert isinstance(descriptor, property)
-
 
 
 def test_be_jebouquine_entities_livraisontype_is_not_abstract():
@@ -921,9 +781,18 @@ def test_be_jebouquine_entities_livraisontype_constructor_exists():
 def test_be_jebouquine_entities_livraisontype_constructor_args():
     sig = inspect.signature(be_jebouquine_entities_LivraisonType.__init__)
     params = list(sig.parameters.keys())
+    assert "prixLivraison" in params, "Missing parameter 'prixLivraison'"
     assert "typeLivraison" in params, "Missing parameter 'typeLivraison'"
     assert "idLivraison" in params, "Missing parameter 'idLivraison'"
-    assert "prixLivraison" in params, "Missing parameter 'prixLivraison'"
+
+def test_be_jebouquine_entities_livraisontype_has_prixLivraison():
+    assert hasattr(be_jebouquine_entities_LivraisonType, "prixLivraison")
+    descriptor = None
+    for klass in be_jebouquine_entities_LivraisonType.__mro__:
+        if "prixLivraison" in klass.__dict__:
+            descriptor = klass.__dict__["prixLivraison"]
+            break
+    assert isinstance(descriptor, property)
 
 def test_be_jebouquine_entities_livraisontype_has_typeLivraison():
     assert hasattr(be_jebouquine_entities_LivraisonType, "typeLivraison")
@@ -940,15 +809,6 @@ def test_be_jebouquine_entities_livraisontype_has_idLivraison():
     for klass in be_jebouquine_entities_LivraisonType.__mro__:
         if "idLivraison" in klass.__dict__:
             descriptor = klass.__dict__["idLivraison"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_be_jebouquine_entities_livraisontype_has_prixLivraison():
-    assert hasattr(be_jebouquine_entities_LivraisonType, "prixLivraison")
-    descriptor = None
-    for klass in be_jebouquine_entities_LivraisonType.__mro__:
-        if "prixLivraison" in klass.__dict__:
-            descriptor = klass.__dict__["prixLivraison"]
             break
     assert isinstance(descriptor, property)
 
@@ -1000,10 +860,10 @@ def test_be_jebouquine_entities_commande_constructor_args():
     sig = inspect.signature(be_jebouquine_entities_Commande.__init__)
     params = list(sig.parameters.keys())
     assert "idLivraisonInfo" in params, "Missing parameter 'idLivraisonInfo'"
-    assert "idEtat" in params, "Missing parameter 'idEtat'"
     assert "dateCommande" in params, "Missing parameter 'dateCommande'"
-    assert "idClient" in params, "Missing parameter 'idClient'"
     assert "idcommande" in params, "Missing parameter 'idcommande'"
+    assert "idClient" in params, "Missing parameter 'idClient'"
+    assert "idEtat" in params, "Missing parameter 'idEtat'"
 
 def test_be_jebouquine_entities_commande_has_idLivraisonInfo():
     assert hasattr(be_jebouquine_entities_Commande, "idLivraisonInfo")
@@ -1011,15 +871,6 @@ def test_be_jebouquine_entities_commande_has_idLivraisonInfo():
     for klass in be_jebouquine_entities_Commande.__mro__:
         if "idLivraisonInfo" in klass.__dict__:
             descriptor = klass.__dict__["idLivraisonInfo"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_be_jebouquine_entities_commande_has_idEtat():
-    assert hasattr(be_jebouquine_entities_Commande, "idEtat")
-    descriptor = None
-    for klass in be_jebouquine_entities_Commande.__mro__:
-        if "idEtat" in klass.__dict__:
-            descriptor = klass.__dict__["idEtat"]
             break
     assert isinstance(descriptor, property)
 
@@ -1032,6 +883,15 @@ def test_be_jebouquine_entities_commande_has_dateCommande():
             break
     assert isinstance(descriptor, property)
 
+def test_be_jebouquine_entities_commande_has_idcommande():
+    assert hasattr(be_jebouquine_entities_Commande, "idcommande")
+    descriptor = None
+    for klass in be_jebouquine_entities_Commande.__mro__:
+        if "idcommande" in klass.__dict__:
+            descriptor = klass.__dict__["idcommande"]
+            break
+    assert isinstance(descriptor, property)
+
 def test_be_jebouquine_entities_commande_has_idClient():
     assert hasattr(be_jebouquine_entities_Commande, "idClient")
     descriptor = None
@@ -1041,12 +901,12 @@ def test_be_jebouquine_entities_commande_has_idClient():
             break
     assert isinstance(descriptor, property)
 
-def test_be_jebouquine_entities_commande_has_idcommande():
-    assert hasattr(be_jebouquine_entities_Commande, "idcommande")
+def test_be_jebouquine_entities_commande_has_idEtat():
+    assert hasattr(be_jebouquine_entities_Commande, "idEtat")
     descriptor = None
     for klass in be_jebouquine_entities_Commande.__mro__:
-        if "idcommande" in klass.__dict__:
-            descriptor = klass.__dict__["idcommande"]
+        if "idEtat" in klass.__dict__:
+            descriptor = klass.__dict__["idEtat"]
             break
     assert isinstance(descriptor, property)
 
@@ -1063,17 +923,8 @@ def test_be_jebouquine_entities_categorie_constructor_exists():
 def test_be_jebouquine_entities_categorie_constructor_args():
     sig = inspect.signature(be_jebouquine_entities_Categorie.__init__)
     params = list(sig.parameters.keys())
-    assert "idCategorie" in params, "Missing parameter 'idCategorie'"
     assert "ordreCategorie" in params, "Missing parameter 'ordreCategorie'"
-
-def test_be_jebouquine_entities_categorie_has_idCategorie():
-    assert hasattr(be_jebouquine_entities_Categorie, "idCategorie")
-    descriptor = None
-    for klass in be_jebouquine_entities_Categorie.__mro__:
-        if "idCategorie" in klass.__dict__:
-            descriptor = klass.__dict__["idCategorie"]
-            break
-    assert isinstance(descriptor, property)
+    assert "idCategorie" in params, "Missing parameter 'idCategorie'"
 
 def test_be_jebouquine_entities_categorie_has_ordreCategorie():
     assert hasattr(be_jebouquine_entities_Categorie, "ordreCategorie")
@@ -1081,6 +932,15 @@ def test_be_jebouquine_entities_categorie_has_ordreCategorie():
     for klass in be_jebouquine_entities_Categorie.__mro__:
         if "ordreCategorie" in klass.__dict__:
             descriptor = klass.__dict__["ordreCategorie"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_be_jebouquine_entities_categorie_has_idCategorie():
+    assert hasattr(be_jebouquine_entities_Categorie, "idCategorie")
+    descriptor = None
+    for klass in be_jebouquine_entities_Categorie.__mro__:
+        if "idCategorie" in klass.__dict__:
+            descriptor = klass.__dict__["idCategorie"]
             break
     assert isinstance(descriptor, property)
 
@@ -1097,9 +957,18 @@ def test_be_jebouquine_entities_editeur_constructor_exists():
 def test_be_jebouquine_entities_editeur_constructor_args():
     sig = inspect.signature(be_jebouquine_entities_Editeur.__init__)
     params = list(sig.parameters.keys())
+    assert "adresseEditeur" in params, "Missing parameter 'adresseEditeur'"
     assert "nomEditeur" in params, "Missing parameter 'nomEditeur'"
     assert "idEditeur" in params, "Missing parameter 'idEditeur'"
-    assert "adresseEditeur" in params, "Missing parameter 'adresseEditeur'"
+
+def test_be_jebouquine_entities_editeur_has_adresseEditeur():
+    assert hasattr(be_jebouquine_entities_Editeur, "adresseEditeur")
+    descriptor = None
+    for klass in be_jebouquine_entities_Editeur.__mro__:
+        if "adresseEditeur" in klass.__dict__:
+            descriptor = klass.__dict__["adresseEditeur"]
+            break
+    assert isinstance(descriptor, property)
 
 def test_be_jebouquine_entities_editeur_has_nomEditeur():
     assert hasattr(be_jebouquine_entities_Editeur, "nomEditeur")
@@ -1119,15 +988,6 @@ def test_be_jebouquine_entities_editeur_has_idEditeur():
             break
     assert isinstance(descriptor, property)
 
-def test_be_jebouquine_entities_editeur_has_adresseEditeur():
-    assert hasattr(be_jebouquine_entities_Editeur, "adresseEditeur")
-    descriptor = None
-    for klass in be_jebouquine_entities_Editeur.__mro__:
-        if "adresseEditeur" in klass.__dict__:
-            descriptor = klass.__dict__["adresseEditeur"]
-            break
-    assert isinstance(descriptor, property)
-
 
 
 def test_be_jebouquine_entities_auteur_is_not_abstract():
@@ -1141,17 +1001,8 @@ def test_be_jebouquine_entities_auteur_constructor_exists():
 def test_be_jebouquine_entities_auteur_constructor_args():
     sig = inspect.signature(be_jebouquine_entities_Auteur.__init__)
     params = list(sig.parameters.keys())
-    assert "idAuteur" in params, "Missing parameter 'idAuteur'"
     assert "nomAuteur" in params, "Missing parameter 'nomAuteur'"
-
-def test_be_jebouquine_entities_auteur_has_idAuteur():
-    assert hasattr(be_jebouquine_entities_Auteur, "idAuteur")
-    descriptor = None
-    for klass in be_jebouquine_entities_Auteur.__mro__:
-        if "idAuteur" in klass.__dict__:
-            descriptor = klass.__dict__["idAuteur"]
-            break
-    assert isinstance(descriptor, property)
+    assert "idAuteur" in params, "Missing parameter 'idAuteur'"
 
 def test_be_jebouquine_entities_auteur_has_nomAuteur():
     assert hasattr(be_jebouquine_entities_Auteur, "nomAuteur")
@@ -1159,6 +1010,15 @@ def test_be_jebouquine_entities_auteur_has_nomAuteur():
     for klass in be_jebouquine_entities_Auteur.__mro__:
         if "nomAuteur" in klass.__dict__:
             descriptor = klass.__dict__["nomAuteur"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_be_jebouquine_entities_auteur_has_idAuteur():
+    assert hasattr(be_jebouquine_entities_Auteur, "idAuteur")
+    descriptor = None
+    for klass in be_jebouquine_entities_Auteur.__mro__:
+        if "idAuteur" in klass.__dict__:
+            descriptor = klass.__dict__["idAuteur"]
             break
     assert isinstance(descriptor, property)
 
@@ -1176,16 +1036,16 @@ def test_be_jebouquine_entities_livre_constructor_args():
     sig = inspect.signature(be_jebouquine_entities_Livre.__init__)
     params = list(sig.parameters.keys())
     assert "idCategorie" in params, "Missing parameter 'idCategorie'"
-    assert "titre" in params, "Missing parameter 'titre'"
     assert "quantiteEnStock" in params, "Missing parameter 'quantiteEnStock'"
+    assert "titre" in params, "Missing parameter 'titre'"
     assert "prix" in params, "Missing parameter 'prix'"
     assert "photoLivre" in params, "Missing parameter 'photoLivre'"
-    assert "dateApparition" in params, "Missing parameter 'dateApparition'"
-    assert "idAuteur" in params, "Missing parameter 'idAuteur'"
     assert "idLangue" in params, "Missing parameter 'idLangue'"
     assert "idLivre" in params, "Missing parameter 'idLivre'"
     assert "isbn" in params, "Missing parameter 'isbn'"
+    assert "idAuteur" in params, "Missing parameter 'idAuteur'"
     assert "idEditeur" in params, "Missing parameter 'idEditeur'"
+    assert "dateApparition" in params, "Missing parameter 'dateApparition'"
 
 def test_be_jebouquine_entities_livre_has_idCategorie():
     assert hasattr(be_jebouquine_entities_Livre, "idCategorie")
@@ -1196,21 +1056,21 @@ def test_be_jebouquine_entities_livre_has_idCategorie():
             break
     assert isinstance(descriptor, property)
 
-def test_be_jebouquine_entities_livre_has_titre():
-    assert hasattr(be_jebouquine_entities_Livre, "titre")
-    descriptor = None
-    for klass in be_jebouquine_entities_Livre.__mro__:
-        if "titre" in klass.__dict__:
-            descriptor = klass.__dict__["titre"]
-            break
-    assert isinstance(descriptor, property)
-
 def test_be_jebouquine_entities_livre_has_quantiteEnStock():
     assert hasattr(be_jebouquine_entities_Livre, "quantiteEnStock")
     descriptor = None
     for klass in be_jebouquine_entities_Livre.__mro__:
         if "quantiteEnStock" in klass.__dict__:
             descriptor = klass.__dict__["quantiteEnStock"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_be_jebouquine_entities_livre_has_titre():
+    assert hasattr(be_jebouquine_entities_Livre, "titre")
+    descriptor = None
+    for klass in be_jebouquine_entities_Livre.__mro__:
+        if "titre" in klass.__dict__:
+            descriptor = klass.__dict__["titre"]
             break
     assert isinstance(descriptor, property)
 
@@ -1229,24 +1089,6 @@ def test_be_jebouquine_entities_livre_has_photoLivre():
     for klass in be_jebouquine_entities_Livre.__mro__:
         if "photoLivre" in klass.__dict__:
             descriptor = klass.__dict__["photoLivre"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_be_jebouquine_entities_livre_has_dateApparition():
-    assert hasattr(be_jebouquine_entities_Livre, "dateApparition")
-    descriptor = None
-    for klass in be_jebouquine_entities_Livre.__mro__:
-        if "dateApparition" in klass.__dict__:
-            descriptor = klass.__dict__["dateApparition"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_be_jebouquine_entities_livre_has_idAuteur():
-    assert hasattr(be_jebouquine_entities_Livre, "idAuteur")
-    descriptor = None
-    for klass in be_jebouquine_entities_Livre.__mro__:
-        if "idAuteur" in klass.__dict__:
-            descriptor = klass.__dict__["idAuteur"]
             break
     assert isinstance(descriptor, property)
 
@@ -1277,12 +1119,30 @@ def test_be_jebouquine_entities_livre_has_isbn():
             break
     assert isinstance(descriptor, property)
 
+def test_be_jebouquine_entities_livre_has_idAuteur():
+    assert hasattr(be_jebouquine_entities_Livre, "idAuteur")
+    descriptor = None
+    for klass in be_jebouquine_entities_Livre.__mro__:
+        if "idAuteur" in klass.__dict__:
+            descriptor = klass.__dict__["idAuteur"]
+            break
+    assert isinstance(descriptor, property)
+
 def test_be_jebouquine_entities_livre_has_idEditeur():
     assert hasattr(be_jebouquine_entities_Livre, "idEditeur")
     descriptor = None
     for klass in be_jebouquine_entities_Livre.__mro__:
         if "idEditeur" in klass.__dict__:
             descriptor = klass.__dict__["idEditeur"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_be_jebouquine_entities_livre_has_dateApparition():
+    assert hasattr(be_jebouquine_entities_Livre, "dateApparition")
+    descriptor = None
+    for klass in be_jebouquine_entities_Livre.__mro__:
+        if "dateApparition" in klass.__dict__:
+            descriptor = klass.__dict__["dateApparition"]
             break
     assert isinstance(descriptor, property)
 
@@ -1299,11 +1159,29 @@ def test_be_jebouquine_entities_administrateur_constructor_exists():
 def test_be_jebouquine_entities_administrateur_constructor_args():
     sig = inspect.signature(be_jebouquine_entities_Administrateur.__init__)
     params = list(sig.parameters.keys())
+    assert "prenomAdministrateur" in params, "Missing parameter 'prenomAdministrateur'"
+    assert "emailAdministrateur" in params, "Missing parameter 'emailAdministrateur'"
     assert "nomAdministrateur" in params, "Missing parameter 'nomAdministrateur'"
     assert "idAdministrateur" in params, "Missing parameter 'idAdministrateur'"
-    assert "emailAdministrateur" in params, "Missing parameter 'emailAdministrateur'"
-    assert "prenomAdministrateur" in params, "Missing parameter 'prenomAdministrateur'"
     assert "motDePasseAdministrateur" in params, "Missing parameter 'motDePasseAdministrateur'"
+
+def test_be_jebouquine_entities_administrateur_has_prenomAdministrateur():
+    assert hasattr(be_jebouquine_entities_Administrateur, "prenomAdministrateur")
+    descriptor = None
+    for klass in be_jebouquine_entities_Administrateur.__mro__:
+        if "prenomAdministrateur" in klass.__dict__:
+            descriptor = klass.__dict__["prenomAdministrateur"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_be_jebouquine_entities_administrateur_has_emailAdministrateur():
+    assert hasattr(be_jebouquine_entities_Administrateur, "emailAdministrateur")
+    descriptor = None
+    for klass in be_jebouquine_entities_Administrateur.__mro__:
+        if "emailAdministrateur" in klass.__dict__:
+            descriptor = klass.__dict__["emailAdministrateur"]
+            break
+    assert isinstance(descriptor, property)
 
 def test_be_jebouquine_entities_administrateur_has_nomAdministrateur():
     assert hasattr(be_jebouquine_entities_Administrateur, "nomAdministrateur")
@@ -1320,24 +1198,6 @@ def test_be_jebouquine_entities_administrateur_has_idAdministrateur():
     for klass in be_jebouquine_entities_Administrateur.__mro__:
         if "idAdministrateur" in klass.__dict__:
             descriptor = klass.__dict__["idAdministrateur"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_be_jebouquine_entities_administrateur_has_emailAdministrateur():
-    assert hasattr(be_jebouquine_entities_Administrateur, "emailAdministrateur")
-    descriptor = None
-    for klass in be_jebouquine_entities_Administrateur.__mro__:
-        if "emailAdministrateur" in klass.__dict__:
-            descriptor = klass.__dict__["emailAdministrateur"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_be_jebouquine_entities_administrateur_has_prenomAdministrateur():
-    assert hasattr(be_jebouquine_entities_Administrateur, "prenomAdministrateur")
-    descriptor = None
-    for klass in be_jebouquine_entities_Administrateur.__mro__:
-        if "prenomAdministrateur" in klass.__dict__:
-            descriptor = klass.__dict__["prenomAdministrateur"]
             break
     assert isinstance(descriptor, property)
 
@@ -1363,22 +1223,13 @@ def test_be_jebouquine_entities_client_constructor_exists():
 def test_be_jebouquine_entities_client_constructor_args():
     sig = inspect.signature(be_jebouquine_entities_Client.__init__)
     params = list(sig.parameters.keys())
-    assert "motDePasseClient" in params, "Missing parameter 'motDePasseClient'"
     assert "adresseClient" in params, "Missing parameter 'adresseClient'"
-    assert "etatLogin" in params, "Missing parameter 'etatLogin'"
     assert "nomClient" in params, "Missing parameter 'nomClient'"
+    assert "etatLogin" in params, "Missing parameter 'etatLogin'"
+    assert "motDePasseClient" in params, "Missing parameter 'motDePasseClient'"
     assert "idClient" in params, "Missing parameter 'idClient'"
-    assert "telephoneClient" in params, "Missing parameter 'telephoneClient'"
     assert "emailClient" in params, "Missing parameter 'emailClient'"
-
-def test_be_jebouquine_entities_client_has_motDePasseClient():
-    assert hasattr(be_jebouquine_entities_Client, "motDePasseClient")
-    descriptor = None
-    for klass in be_jebouquine_entities_Client.__mro__:
-        if "motDePasseClient" in klass.__dict__:
-            descriptor = klass.__dict__["motDePasseClient"]
-            break
-    assert isinstance(descriptor, property)
+    assert "telephoneClient" in params, "Missing parameter 'telephoneClient'"
 
 def test_be_jebouquine_entities_client_has_adresseClient():
     assert hasattr(be_jebouquine_entities_Client, "adresseClient")
@@ -1386,15 +1237,6 @@ def test_be_jebouquine_entities_client_has_adresseClient():
     for klass in be_jebouquine_entities_Client.__mro__:
         if "adresseClient" in klass.__dict__:
             descriptor = klass.__dict__["adresseClient"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_be_jebouquine_entities_client_has_etatLogin():
-    assert hasattr(be_jebouquine_entities_Client, "etatLogin")
-    descriptor = None
-    for klass in be_jebouquine_entities_Client.__mro__:
-        if "etatLogin" in klass.__dict__:
-            descriptor = klass.__dict__["etatLogin"]
             break
     assert isinstance(descriptor, property)
 
@@ -1407,6 +1249,24 @@ def test_be_jebouquine_entities_client_has_nomClient():
             break
     assert isinstance(descriptor, property)
 
+def test_be_jebouquine_entities_client_has_etatLogin():
+    assert hasattr(be_jebouquine_entities_Client, "etatLogin")
+    descriptor = None
+    for klass in be_jebouquine_entities_Client.__mro__:
+        if "etatLogin" in klass.__dict__:
+            descriptor = klass.__dict__["etatLogin"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_be_jebouquine_entities_client_has_motDePasseClient():
+    assert hasattr(be_jebouquine_entities_Client, "motDePasseClient")
+    descriptor = None
+    for klass in be_jebouquine_entities_Client.__mro__:
+        if "motDePasseClient" in klass.__dict__:
+            descriptor = klass.__dict__["motDePasseClient"]
+            break
+    assert isinstance(descriptor, property)
+
 def test_be_jebouquine_entities_client_has_idClient():
     assert hasattr(be_jebouquine_entities_Client, "idClient")
     descriptor = None
@@ -1416,21 +1276,21 @@ def test_be_jebouquine_entities_client_has_idClient():
             break
     assert isinstance(descriptor, property)
 
-def test_be_jebouquine_entities_client_has_telephoneClient():
-    assert hasattr(be_jebouquine_entities_Client, "telephoneClient")
-    descriptor = None
-    for klass in be_jebouquine_entities_Client.__mro__:
-        if "telephoneClient" in klass.__dict__:
-            descriptor = klass.__dict__["telephoneClient"]
-            break
-    assert isinstance(descriptor, property)
-
 def test_be_jebouquine_entities_client_has_emailClient():
     assert hasattr(be_jebouquine_entities_Client, "emailClient")
     descriptor = None
     for klass in be_jebouquine_entities_Client.__mro__:
         if "emailClient" in klass.__dict__:
             descriptor = klass.__dict__["emailClient"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_be_jebouquine_entities_client_has_telephoneClient():
+    assert hasattr(be_jebouquine_entities_Client, "telephoneClient")
+    descriptor = None
+    for klass in be_jebouquine_entities_Client.__mro__:
+        if "telephoneClient" in klass.__dict__:
+            descriptor = klass.__dict__["telephoneClient"]
             break
     assert isinstance(descriptor, property)
 
@@ -1883,6 +1743,146 @@ def test_client_actor_constructor_args():
     params = list(sig.parameters.keys())
 
 
+
+def test_be_jebouquine_dao_auteurdao_is_not_abstract():
+    assert not inspect.isabstract(be_jebouquine_dao_AuteurDAO)
+
+
+def test_be_jebouquine_dao_auteurdao_constructor_exists():
+    assert callable(be_jebouquine_dao_AuteurDAO.__init__)
+
+
+def test_be_jebouquine_dao_auteurdao_constructor_args():
+    sig = inspect.signature(be_jebouquine_dao_AuteurDAO.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_be_jebouquine_dao_administrateurdao_is_not_abstract():
+    assert not inspect.isabstract(be_jebouquine_dao_AdministrateurDAO)
+
+
+def test_be_jebouquine_dao_administrateurdao_constructor_exists():
+    assert callable(be_jebouquine_dao_AdministrateurDAO.__init__)
+
+
+def test_be_jebouquine_dao_administrateurdao_constructor_args():
+    sig = inspect.signature(be_jebouquine_dao_AdministrateurDAO.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_be_jebouquine_dao_abstractfactory_is_not_abstract():
+    assert not inspect.isabstract(be_jebouquine_dao_AbstractFactory)
+
+
+def test_be_jebouquine_dao_abstractfactory_constructor_exists():
+    assert callable(be_jebouquine_dao_AbstractFactory.__init__)
+
+
+def test_be_jebouquine_dao_abstractfactory_constructor_args():
+    sig = inspect.signature(be_jebouquine_dao_AbstractFactory.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_collection_object__is_not_abstract():
+    assert not inspect.isabstract(Collection_Object_)
+
+
+def test_collection_object__constructor_exists():
+    assert callable(Collection_Object_.__init__)
+
+
+def test_collection_object__constructor_args():
+    sig = inspect.signature(Collection_Object_.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_object_is_not_abstract():
+    assert not inspect.isabstract(Object)
+
+
+def test_object_constructor_exists():
+    assert callable(Object.__init__)
+
+
+def test_object_constructor_args():
+    sig = inspect.signature(Object.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_collection_client__is_not_abstract():
+    assert not inspect.isabstract(Collection_Client_)
+
+
+def test_collection_client__constructor_exists():
+    assert callable(Collection_Client_.__init__)
+
+
+def test_collection_client__constructor_args():
+    sig = inspect.signature(Collection_Client_.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_be_jebouquine_bo_icategorieboremote_interface_is_not_abstract():
+    assert not inspect.isabstract(be_jebouquine_bo_ICategorieBORemote_Interface)
+
+
+def test_be_jebouquine_bo_icategorieboremote_interface_constructor_exists():
+    assert callable(be_jebouquine_bo_ICategorieBORemote_Interface.__init__)
+
+
+def test_be_jebouquine_bo_icategorieboremote_interface_constructor_args():
+    sig = inspect.signature(be_jebouquine_bo_ICategorieBORemote_Interface.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_be_jebouquine_bo_ietatcommanderemote_interface_is_not_abstract():
+    assert not inspect.isabstract(be_jebouquine_bo_IEtatCommandeRemote_Interface)
+
+
+def test_be_jebouquine_bo_ietatcommanderemote_interface_constructor_exists():
+    assert callable(be_jebouquine_bo_IEtatCommandeRemote_Interface.__init__)
+
+
+def test_be_jebouquine_bo_ietatcommanderemote_interface_constructor_args():
+    sig = inspect.signature(be_jebouquine_bo_IEtatCommandeRemote_Interface.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_be_jebouquine_bo_lignecommandeboremote_interface_is_not_abstract():
+    assert not inspect.isabstract(be_jebouquine_bo_LigneCommandeBORemote_Interface)
+
+
+def test_be_jebouquine_bo_lignecommandeboremote_interface_constructor_exists():
+    assert callable(be_jebouquine_bo_LigneCommandeBORemote_Interface.__init__)
+
+
+def test_be_jebouquine_bo_lignecommandeboremote_interface_constructor_args():
+    sig = inspect.signature(be_jebouquine_bo_LigneCommandeBORemote_Interface.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_be_jebouquine_bo_iadministrateurboremote_interface_is_not_abstract():
+    assert not inspect.isabstract(be_jebouquine_bo_IAdministrateurBORemote_Interface)
+
+
+def test_be_jebouquine_bo_iadministrateurboremote_interface_constructor_exists():
+    assert callable(be_jebouquine_bo_IAdministrateurBORemote_Interface.__init__)
+
+
+def test_be_jebouquine_bo_iadministrateurboremote_interface_constructor_args():
+    sig = inspect.signature(be_jebouquine_bo_IAdministrateurBORemote_Interface.__init__)
+    params = list(sig.parameters.keys())
+
+
 # =============================================================================
 # HYPOTHESIS STRATEGIES
 # =============================================================================
@@ -1894,36 +1894,6 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-be_jebouquine_dao_AuteurDAO_strategy = st.builds(
-    be_jebouquine_dao_AuteurDAO,
-)
-be_jebouquine_dao_AdministrateurDAO_strategy = st.builds(
-    be_jebouquine_dao_AdministrateurDAO,
-)
-be_jebouquine_dao_AbstractFactory_strategy = st.builds(
-    be_jebouquine_dao_AbstractFactory,
-)
-Collection_Object__strategy = st.builds(
-    Collection_Object_,
-)
-Object_strategy = st.builds(
-    Object,
-)
-Collection_Client__strategy = st.builds(
-    Collection_Client_,
-)
-be_jebouquine_bo_ICategorieBORemote_Interface_strategy = st.builds(
-    be_jebouquine_bo_ICategorieBORemote_Interface,
-)
-be_jebouquine_bo_IEtatCommandeRemote_Interface_strategy = st.builds(
-    be_jebouquine_bo_IEtatCommandeRemote_Interface,
-)
-be_jebouquine_bo_LigneCommandeBORemote_Interface_strategy = st.builds(
-    be_jebouquine_bo_LigneCommandeBORemote_Interface,
-)
-be_jebouquine_bo_IAdministrateurBORemote_Interface_strategy = st.builds(
-    be_jebouquine_bo_IAdministrateurBORemote_Interface,
-)
 be_jebouquine_bo_LivraisonTypeBORemote_Interface_strategy = st.builds(
     be_jebouquine_bo_LivraisonTypeBORemote_Interface,
 )
@@ -1962,14 +1932,14 @@ be_jebouquine_bo_EtatCommandeBO_strategy = st.builds(
 )
 be_jebouquine_bo_PanierBO_strategy = st.builds(
     be_jebouquine_bo_PanierBO,
+    listLivres=
+        st.none(),
     quantity=
         st.integers(),
-    date=
-        st.dates(),
     idPanier=
         st.integers(),
-    listLivres=
-        st.none()
+    date=
+        st.dates()
 )
 be_jebouquine_bo_CommentaireBO_strategy = st.builds(
     be_jebouquine_bo_CommentaireBO,
@@ -2038,16 +2008,16 @@ backoffice_Gerer_les_produits_UseCase_strategy = st.builds(
 )
 be_jebouquine_entities_Commentaire_strategy = st.builds(
     be_jebouquine_entities_Commentaire,
-    idCommentaire=
-        st.integers(),
     idLivre=
+        st.integers(),
+    idCommentaire=
         st.integers(),
     idClient=
         st.integers(),
-    dateCommentaire=
-        st.dates(),
     textCommentaire=
-        safe_text
+        safe_text,
+    dateCommentaire=
+        st.dates()
 )
 be_jebouquine_entities_Langue_strategy = st.builds(
     be_jebouquine_entities_Langue,
@@ -2058,21 +2028,21 @@ be_jebouquine_entities_Langue_strategy = st.builds(
 )
 be_jebouquine_entities_LigneCommande_strategy = st.builds(
     be_jebouquine_entities_LigneCommande,
+    idLivre=
+        st.integers(),
     idCommande=
         st.integers(),
     idLigneCommande=
-        st.integers(),
-    idLivre=
         st.integers()
 )
 be_jebouquine_entities_LivraisonType_strategy = st.builds(
     be_jebouquine_entities_LivraisonType,
+    prixLivraison=
+        st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False),
     typeLivraison=
         safe_text,
     idLivraison=
-        st.integers(),
-    prixLivraison=
-        st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False)
+        st.integers()
 )
 be_jebouquine_entities_EtatCommande_strategy = st.builds(
     be_jebouquine_entities_EtatCommande,
@@ -2085,91 +2055,91 @@ be_jebouquine_entities_Commande_strategy = st.builds(
     be_jebouquine_entities_Commande,
     idLivraisonInfo=
         st.integers(),
-    idEtat=
-        st.integers(),
     dateCommande=
         st.dates(),
+    idcommande=
+        st.integers(),
     idClient=
         st.integers(),
-    idcommande=
+    idEtat=
         st.integers()
 )
 be_jebouquine_entities_Categorie_strategy = st.builds(
     be_jebouquine_entities_Categorie,
-    idCategorie=
-        st.integers(),
     ordreCategorie=
-        safe_text
+        safe_text,
+    idCategorie=
+        st.integers()
 )
 be_jebouquine_entities_Editeur_strategy = st.builds(
     be_jebouquine_entities_Editeur,
+    adresseEditeur=
+        safe_text,
     nomEditeur=
         safe_text,
     idEditeur=
-        st.integers(),
-    adresseEditeur=
-        safe_text
+        st.integers()
 )
 be_jebouquine_entities_Auteur_strategy = st.builds(
     be_jebouquine_entities_Auteur,
-    idAuteur=
-        st.integers(),
     nomAuteur=
-        safe_text
+        safe_text,
+    idAuteur=
+        st.integers()
 )
 be_jebouquine_entities_Livre_strategy = st.builds(
     be_jebouquine_entities_Livre,
     idCategorie=
         st.integers(),
-    titre=
-        safe_text,
     quantiteEnStock=
         st.integers(),
+    titre=
+        safe_text,
     prix=
         st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False),
     photoLivre=
         safe_text,
-    dateApparition=
-        st.dates(),
-    idAuteur=
-        st.integers(),
     idLangue=
         st.integers(),
     idLivre=
         st.integers(),
     isbn=
         safe_text,
+    idAuteur=
+        st.integers(),
     idEditeur=
-        st.integers()
+        st.integers(),
+    dateApparition=
+        st.dates()
 )
 be_jebouquine_entities_Administrateur_strategy = st.builds(
     be_jebouquine_entities_Administrateur,
+    prenomAdministrateur=
+        safe_text,
+    emailAdministrateur=
+        safe_text,
     nomAdministrateur=
         safe_text,
     idAdministrateur=
         st.integers(),
-    emailAdministrateur=
-        safe_text,
-    prenomAdministrateur=
-        safe_text,
     motDePasseAdministrateur=
         safe_text
 )
 be_jebouquine_entities_Client_strategy = st.builds(
     be_jebouquine_entities_Client,
-    motDePasseClient=
-        safe_text,
     adresseClient=
-        safe_text,
-    etatLogin=
         safe_text,
     nomClient=
         safe_text,
+    etatLogin=
+        safe_text,
+    motDePasseClient=
+        safe_text,
     idClient=
         st.integers(),
-    telephoneClient=
-        safe_text,
     emailClient=
+        safe_text,
+    telephoneClient=
         safe_text
 )
 be_jebouquine_dao_EtatCommandeDAO_strategy = st.builds(
@@ -2268,56 +2238,36 @@ Visiteur_Actor_strategy = st.builds(
 Client_Actor_strategy = st.builds(
     Client_Actor,
 )
-
-@given(instance=be_jebouquine_dao_AuteurDAO_strategy)
-@settings(max_examples=50)
-def test_be_jebouquine_dao_auteurdao_instantiation(instance):
-    assert isinstance(instance, be_jebouquine_dao_AuteurDAO)
-
-@given(instance=be_jebouquine_dao_AdministrateurDAO_strategy)
-@settings(max_examples=50)
-def test_be_jebouquine_dao_administrateurdao_instantiation(instance):
-    assert isinstance(instance, be_jebouquine_dao_AdministrateurDAO)
-
-@given(instance=be_jebouquine_dao_AbstractFactory_strategy)
-@settings(max_examples=50)
-def test_be_jebouquine_dao_abstractfactory_instantiation(instance):
-    assert isinstance(instance, be_jebouquine_dao_AbstractFactory)
-
-@given(instance=Collection_Object__strategy)
-@settings(max_examples=50)
-def test_collection_object__instantiation(instance):
-    assert isinstance(instance, Collection_Object_)
-
-@given(instance=Object_strategy)
-@settings(max_examples=50)
-def test_object_instantiation(instance):
-    assert isinstance(instance, Object)
-
-@given(instance=Collection_Client__strategy)
-@settings(max_examples=50)
-def test_collection_client__instantiation(instance):
-    assert isinstance(instance, Collection_Client_)
-
-@given(instance=be_jebouquine_bo_ICategorieBORemote_Interface_strategy)
-@settings(max_examples=50)
-def test_be_jebouquine_bo_icategorieboremote_interface_instantiation(instance):
-    assert isinstance(instance, be_jebouquine_bo_ICategorieBORemote_Interface)
-
-@given(instance=be_jebouquine_bo_IEtatCommandeRemote_Interface_strategy)
-@settings(max_examples=50)
-def test_be_jebouquine_bo_ietatcommanderemote_interface_instantiation(instance):
-    assert isinstance(instance, be_jebouquine_bo_IEtatCommandeRemote_Interface)
-
-@given(instance=be_jebouquine_bo_LigneCommandeBORemote_Interface_strategy)
-@settings(max_examples=50)
-def test_be_jebouquine_bo_lignecommandeboremote_interface_instantiation(instance):
-    assert isinstance(instance, be_jebouquine_bo_LigneCommandeBORemote_Interface)
-
-@given(instance=be_jebouquine_bo_IAdministrateurBORemote_Interface_strategy)
-@settings(max_examples=50)
-def test_be_jebouquine_bo_iadministrateurboremote_interface_instantiation(instance):
-    assert isinstance(instance, be_jebouquine_bo_IAdministrateurBORemote_Interface)
+be_jebouquine_dao_AuteurDAO_strategy = st.builds(
+    be_jebouquine_dao_AuteurDAO,
+)
+be_jebouquine_dao_AdministrateurDAO_strategy = st.builds(
+    be_jebouquine_dao_AdministrateurDAO,
+)
+be_jebouquine_dao_AbstractFactory_strategy = st.builds(
+    be_jebouquine_dao_AbstractFactory,
+)
+Collection_Object__strategy = st.builds(
+    Collection_Object_,
+)
+Object_strategy = st.builds(
+    Object,
+)
+Collection_Client__strategy = st.builds(
+    Collection_Client_,
+)
+be_jebouquine_bo_ICategorieBORemote_Interface_strategy = st.builds(
+    be_jebouquine_bo_ICategorieBORemote_Interface,
+)
+be_jebouquine_bo_IEtatCommandeRemote_Interface_strategy = st.builds(
+    be_jebouquine_bo_IEtatCommandeRemote_Interface,
+)
+be_jebouquine_bo_LigneCommandeBORemote_Interface_strategy = st.builds(
+    be_jebouquine_bo_LigneCommandeBORemote_Interface,
+)
+be_jebouquine_bo_IAdministrateurBORemote_Interface_strategy = st.builds(
+    be_jebouquine_bo_IAdministrateurBORemote_Interface,
+)
 
 @given(instance=be_jebouquine_bo_LivraisonTypeBORemote_Interface_strategy)
 @settings(max_examples=50)
@@ -2384,9 +2334,14 @@ def test_be_jebouquine_bo_etatcommandebo_instantiation(instance):
 def test_be_jebouquine_bo_panierbo_instantiation(instance):
     assert isinstance(instance, be_jebouquine_bo_PanierBO)
 
+
+
 @given(instance=be_jebouquine_bo_PanierBO_strategy)
-def test_be_jebouquine_bo_panierbo_quantity_type(instance):
-    assert isinstance(instance.quantity, int)
+def test_be_jebouquine_bo_panierbo_listLivres_setter(instance):
+    original = instance.listLivres
+    instance.listLivres = original
+    assert instance.listLivres == original
+
 
 
 @given(instance=be_jebouquine_bo_PanierBO_strategy)
@@ -2395,20 +2350,6 @@ def test_be_jebouquine_bo_panierbo_quantity_setter(instance):
     instance.quantity = original
     assert instance.quantity == original
 
-@given(instance=be_jebouquine_bo_PanierBO_strategy)
-def test_be_jebouquine_bo_panierbo_date_type(instance):
-    assert isinstance(instance.date, date)
-
-
-@given(instance=be_jebouquine_bo_PanierBO_strategy)
-def test_be_jebouquine_bo_panierbo_date_setter(instance):
-    original = instance.date
-    instance.date = original
-    assert instance.date == original
-
-@given(instance=be_jebouquine_bo_PanierBO_strategy)
-def test_be_jebouquine_bo_panierbo_idPanier_type(instance):
-    assert isinstance(instance.idPanier, int)
 
 
 @given(instance=be_jebouquine_bo_PanierBO_strategy)
@@ -2417,16 +2358,13 @@ def test_be_jebouquine_bo_panierbo_idPanier_setter(instance):
     instance.idPanier = original
     assert instance.idPanier == original
 
-@given(instance=be_jebouquine_bo_PanierBO_strategy)
-def test_be_jebouquine_bo_panierbo_listLivres_type(instance):
-    assert isinstance(instance.listLivres, collection_livre_)
 
 
 @given(instance=be_jebouquine_bo_PanierBO_strategy)
-def test_be_jebouquine_bo_panierbo_listLivres_setter(instance):
-    original = instance.listLivres
-    instance.listLivres = original
-    assert instance.listLivres == original
+def test_be_jebouquine_bo_panierbo_date_setter(instance):
+    original = instance.date
+    instance.date = original
+    assert instance.date == original
 
 @given(instance=be_jebouquine_bo_CommentaireBO_strategy)
 @settings(max_examples=50)
@@ -2463,9 +2401,6 @@ def test_be_jebouquine_bo_lignecommandebo_instantiation(instance):
 def test_be_jebouquine_bo_livrebo_instantiation(instance):
     assert isinstance(instance, be_jebouquine_bo_LivreBO)
 
-@given(instance=be_jebouquine_bo_LivreBO_strategy)
-def test_be_jebouquine_bo_livrebo_idPanier_type(instance):
-    assert isinstance(instance.idPanier, int)
 
 
 @given(instance=be_jebouquine_bo_LivreBO_strategy)
@@ -2549,20 +2484,6 @@ def test_backoffice_gerer_les_produits_usecase_instantiation(instance):
 def test_be_jebouquine_entities_commentaire_instantiation(instance):
     assert isinstance(instance, be_jebouquine_entities_Commentaire)
 
-@given(instance=be_jebouquine_entities_Commentaire_strategy)
-def test_be_jebouquine_entities_commentaire_idCommentaire_type(instance):
-    assert isinstance(instance.idCommentaire, int)
-
-
-@given(instance=be_jebouquine_entities_Commentaire_strategy)
-def test_be_jebouquine_entities_commentaire_idCommentaire_setter(instance):
-    original = instance.idCommentaire
-    instance.idCommentaire = original
-    assert instance.idCommentaire == original
-
-@given(instance=be_jebouquine_entities_Commentaire_strategy)
-def test_be_jebouquine_entities_commentaire_idLivre_type(instance):
-    assert isinstance(instance.idLivre, int)
 
 
 @given(instance=be_jebouquine_entities_Commentaire_strategy)
@@ -2571,9 +2492,14 @@ def test_be_jebouquine_entities_commentaire_idLivre_setter(instance):
     instance.idLivre = original
     assert instance.idLivre == original
 
+
+
 @given(instance=be_jebouquine_entities_Commentaire_strategy)
-def test_be_jebouquine_entities_commentaire_idClient_type(instance):
-    assert isinstance(instance.idClient, int)
+def test_be_jebouquine_entities_commentaire_idCommentaire_setter(instance):
+    original = instance.idCommentaire
+    instance.idCommentaire = original
+    assert instance.idCommentaire == original
+
 
 
 @given(instance=be_jebouquine_entities_Commentaire_strategy)
@@ -2582,20 +2508,6 @@ def test_be_jebouquine_entities_commentaire_idClient_setter(instance):
     instance.idClient = original
     assert instance.idClient == original
 
-@given(instance=be_jebouquine_entities_Commentaire_strategy)
-def test_be_jebouquine_entities_commentaire_dateCommentaire_type(instance):
-    assert isinstance(instance.dateCommentaire, date)
-
-
-@given(instance=be_jebouquine_entities_Commentaire_strategy)
-def test_be_jebouquine_entities_commentaire_dateCommentaire_setter(instance):
-    original = instance.dateCommentaire
-    instance.dateCommentaire = original
-    assert instance.dateCommentaire == original
-
-@given(instance=be_jebouquine_entities_Commentaire_strategy)
-def test_be_jebouquine_entities_commentaire_textCommentaire_type(instance):
-    assert isinstance(instance.textCommentaire, str)
 
 
 @given(instance=be_jebouquine_entities_Commentaire_strategy)
@@ -2604,14 +2516,19 @@ def test_be_jebouquine_entities_commentaire_textCommentaire_setter(instance):
     instance.textCommentaire = original
     assert instance.textCommentaire == original
 
+
+
+@given(instance=be_jebouquine_entities_Commentaire_strategy)
+def test_be_jebouquine_entities_commentaire_dateCommentaire_setter(instance):
+    original = instance.dateCommentaire
+    instance.dateCommentaire = original
+    assert instance.dateCommentaire == original
+
 @given(instance=be_jebouquine_entities_Langue_strategy)
 @settings(max_examples=50)
 def test_be_jebouquine_entities_langue_instantiation(instance):
     assert isinstance(instance, be_jebouquine_entities_Langue)
 
-@given(instance=be_jebouquine_entities_Langue_strategy)
-def test_be_jebouquine_entities_langue_idLangue_type(instance):
-    assert isinstance(instance.idLangue, int)
 
 
 @given(instance=be_jebouquine_entities_Langue_strategy)
@@ -2620,9 +2537,6 @@ def test_be_jebouquine_entities_langue_idLangue_setter(instance):
     instance.idLangue = original
     assert instance.idLangue == original
 
-@given(instance=be_jebouquine_entities_Langue_strategy)
-def test_be_jebouquine_entities_langue_libelleLangue_type(instance):
-    assert isinstance(instance.libelleLangue, str)
 
 
 @given(instance=be_jebouquine_entities_Langue_strategy)
@@ -2636,31 +2550,6 @@ def test_be_jebouquine_entities_langue_libelleLangue_setter(instance):
 def test_be_jebouquine_entities_lignecommande_instantiation(instance):
     assert isinstance(instance, be_jebouquine_entities_LigneCommande)
 
-@given(instance=be_jebouquine_entities_LigneCommande_strategy)
-def test_be_jebouquine_entities_lignecommande_idCommande_type(instance):
-    assert isinstance(instance.idCommande, int)
-
-
-@given(instance=be_jebouquine_entities_LigneCommande_strategy)
-def test_be_jebouquine_entities_lignecommande_idCommande_setter(instance):
-    original = instance.idCommande
-    instance.idCommande = original
-    assert instance.idCommande == original
-
-@given(instance=be_jebouquine_entities_LigneCommande_strategy)
-def test_be_jebouquine_entities_lignecommande_idLigneCommande_type(instance):
-    assert isinstance(instance.idLigneCommande, int)
-
-
-@given(instance=be_jebouquine_entities_LigneCommande_strategy)
-def test_be_jebouquine_entities_lignecommande_idLigneCommande_setter(instance):
-    original = instance.idLigneCommande
-    instance.idLigneCommande = original
-    assert instance.idLigneCommande == original
-
-@given(instance=be_jebouquine_entities_LigneCommande_strategy)
-def test_be_jebouquine_entities_lignecommande_idLivre_type(instance):
-    assert isinstance(instance.idLivre, int)
 
 
 @given(instance=be_jebouquine_entities_LigneCommande_strategy)
@@ -2669,36 +2558,27 @@ def test_be_jebouquine_entities_lignecommande_idLivre_setter(instance):
     instance.idLivre = original
     assert instance.idLivre == original
 
+
+
+@given(instance=be_jebouquine_entities_LigneCommande_strategy)
+def test_be_jebouquine_entities_lignecommande_idCommande_setter(instance):
+    original = instance.idCommande
+    instance.idCommande = original
+    assert instance.idCommande == original
+
+
+
+@given(instance=be_jebouquine_entities_LigneCommande_strategy)
+def test_be_jebouquine_entities_lignecommande_idLigneCommande_setter(instance):
+    original = instance.idLigneCommande
+    instance.idLigneCommande = original
+    assert instance.idLigneCommande == original
+
 @given(instance=be_jebouquine_entities_LivraisonType_strategy)
 @settings(max_examples=50)
 def test_be_jebouquine_entities_livraisontype_instantiation(instance):
     assert isinstance(instance, be_jebouquine_entities_LivraisonType)
 
-@given(instance=be_jebouquine_entities_LivraisonType_strategy)
-def test_be_jebouquine_entities_livraisontype_typeLivraison_type(instance):
-    assert isinstance(instance.typeLivraison, str)
-
-
-@given(instance=be_jebouquine_entities_LivraisonType_strategy)
-def test_be_jebouquine_entities_livraisontype_typeLivraison_setter(instance):
-    original = instance.typeLivraison
-    instance.typeLivraison = original
-    assert instance.typeLivraison == original
-
-@given(instance=be_jebouquine_entities_LivraisonType_strategy)
-def test_be_jebouquine_entities_livraisontype_idLivraison_type(instance):
-    assert isinstance(instance.idLivraison, int)
-
-
-@given(instance=be_jebouquine_entities_LivraisonType_strategy)
-def test_be_jebouquine_entities_livraisontype_idLivraison_setter(instance):
-    original = instance.idLivraison
-    instance.idLivraison = original
-    assert instance.idLivraison == original
-
-@given(instance=be_jebouquine_entities_LivraisonType_strategy)
-def test_be_jebouquine_entities_livraisontype_prixLivraison_type(instance):
-    assert isinstance(instance.prixLivraison, float)
 
 
 @given(instance=be_jebouquine_entities_LivraisonType_strategy)
@@ -2707,14 +2587,27 @@ def test_be_jebouquine_entities_livraisontype_prixLivraison_setter(instance):
     instance.prixLivraison = original
     assert instance.prixLivraison == original
 
+
+
+@given(instance=be_jebouquine_entities_LivraisonType_strategy)
+def test_be_jebouquine_entities_livraisontype_typeLivraison_setter(instance):
+    original = instance.typeLivraison
+    instance.typeLivraison = original
+    assert instance.typeLivraison == original
+
+
+
+@given(instance=be_jebouquine_entities_LivraisonType_strategy)
+def test_be_jebouquine_entities_livraisontype_idLivraison_setter(instance):
+    original = instance.idLivraison
+    instance.idLivraison = original
+    assert instance.idLivraison == original
+
 @given(instance=be_jebouquine_entities_EtatCommande_strategy)
 @settings(max_examples=50)
 def test_be_jebouquine_entities_etatcommande_instantiation(instance):
     assert isinstance(instance, be_jebouquine_entities_EtatCommande)
 
-@given(instance=be_jebouquine_entities_EtatCommande_strategy)
-def test_be_jebouquine_entities_etatcommande_libelleEtat_type(instance):
-    assert isinstance(instance.libelleEtat, str)
 
 
 @given(instance=be_jebouquine_entities_EtatCommande_strategy)
@@ -2723,9 +2616,6 @@ def test_be_jebouquine_entities_etatcommande_libelleEtat_setter(instance):
     instance.libelleEtat = original
     assert instance.libelleEtat == original
 
-@given(instance=be_jebouquine_entities_EtatCommande_strategy)
-def test_be_jebouquine_entities_etatcommande_idEtat_type(instance):
-    assert isinstance(instance.idEtat, int)
 
 
 @given(instance=be_jebouquine_entities_EtatCommande_strategy)
@@ -2739,9 +2629,6 @@ def test_be_jebouquine_entities_etatcommande_idEtat_setter(instance):
 def test_be_jebouquine_entities_commande_instantiation(instance):
     assert isinstance(instance, be_jebouquine_entities_Commande)
 
-@given(instance=be_jebouquine_entities_Commande_strategy)
-def test_be_jebouquine_entities_commande_idLivraisonInfo_type(instance):
-    assert isinstance(instance.idLivraisonInfo, int)
 
 
 @given(instance=be_jebouquine_entities_Commande_strategy)
@@ -2750,20 +2637,6 @@ def test_be_jebouquine_entities_commande_idLivraisonInfo_setter(instance):
     instance.idLivraisonInfo = original
     assert instance.idLivraisonInfo == original
 
-@given(instance=be_jebouquine_entities_Commande_strategy)
-def test_be_jebouquine_entities_commande_idEtat_type(instance):
-    assert isinstance(instance.idEtat, int)
-
-
-@given(instance=be_jebouquine_entities_Commande_strategy)
-def test_be_jebouquine_entities_commande_idEtat_setter(instance):
-    original = instance.idEtat
-    instance.idEtat = original
-    assert instance.idEtat == original
-
-@given(instance=be_jebouquine_entities_Commande_strategy)
-def test_be_jebouquine_entities_commande_dateCommande_type(instance):
-    assert isinstance(instance.dateCommande, date)
 
 
 @given(instance=be_jebouquine_entities_Commande_strategy)
@@ -2772,20 +2645,6 @@ def test_be_jebouquine_entities_commande_dateCommande_setter(instance):
     instance.dateCommande = original
     assert instance.dateCommande == original
 
-@given(instance=be_jebouquine_entities_Commande_strategy)
-def test_be_jebouquine_entities_commande_idClient_type(instance):
-    assert isinstance(instance.idClient, int)
-
-
-@given(instance=be_jebouquine_entities_Commande_strategy)
-def test_be_jebouquine_entities_commande_idClient_setter(instance):
-    original = instance.idClient
-    instance.idClient = original
-    assert instance.idClient == original
-
-@given(instance=be_jebouquine_entities_Commande_strategy)
-def test_be_jebouquine_entities_commande_idcommande_type(instance):
-    assert isinstance(instance.idcommande, int)
 
 
 @given(instance=be_jebouquine_entities_Commande_strategy)
@@ -2794,25 +2653,27 @@ def test_be_jebouquine_entities_commande_idcommande_setter(instance):
     instance.idcommande = original
     assert instance.idcommande == original
 
+
+
+@given(instance=be_jebouquine_entities_Commande_strategy)
+def test_be_jebouquine_entities_commande_idClient_setter(instance):
+    original = instance.idClient
+    instance.idClient = original
+    assert instance.idClient == original
+
+
+
+@given(instance=be_jebouquine_entities_Commande_strategy)
+def test_be_jebouquine_entities_commande_idEtat_setter(instance):
+    original = instance.idEtat
+    instance.idEtat = original
+    assert instance.idEtat == original
+
 @given(instance=be_jebouquine_entities_Categorie_strategy)
 @settings(max_examples=50)
 def test_be_jebouquine_entities_categorie_instantiation(instance):
     assert isinstance(instance, be_jebouquine_entities_Categorie)
 
-@given(instance=be_jebouquine_entities_Categorie_strategy)
-def test_be_jebouquine_entities_categorie_idCategorie_type(instance):
-    assert isinstance(instance.idCategorie, int)
-
-
-@given(instance=be_jebouquine_entities_Categorie_strategy)
-def test_be_jebouquine_entities_categorie_idCategorie_setter(instance):
-    original = instance.idCategorie
-    instance.idCategorie = original
-    assert instance.idCategorie == original
-
-@given(instance=be_jebouquine_entities_Categorie_strategy)
-def test_be_jebouquine_entities_categorie_ordreCategorie_type(instance):
-    assert isinstance(instance.ordreCategorie, str)
 
 
 @given(instance=be_jebouquine_entities_Categorie_strategy)
@@ -2821,36 +2682,19 @@ def test_be_jebouquine_entities_categorie_ordreCategorie_setter(instance):
     instance.ordreCategorie = original
     assert instance.ordreCategorie == original
 
+
+
+@given(instance=be_jebouquine_entities_Categorie_strategy)
+def test_be_jebouquine_entities_categorie_idCategorie_setter(instance):
+    original = instance.idCategorie
+    instance.idCategorie = original
+    assert instance.idCategorie == original
+
 @given(instance=be_jebouquine_entities_Editeur_strategy)
 @settings(max_examples=50)
 def test_be_jebouquine_entities_editeur_instantiation(instance):
     assert isinstance(instance, be_jebouquine_entities_Editeur)
 
-@given(instance=be_jebouquine_entities_Editeur_strategy)
-def test_be_jebouquine_entities_editeur_nomEditeur_type(instance):
-    assert isinstance(instance.nomEditeur, str)
-
-
-@given(instance=be_jebouquine_entities_Editeur_strategy)
-def test_be_jebouquine_entities_editeur_nomEditeur_setter(instance):
-    original = instance.nomEditeur
-    instance.nomEditeur = original
-    assert instance.nomEditeur == original
-
-@given(instance=be_jebouquine_entities_Editeur_strategy)
-def test_be_jebouquine_entities_editeur_idEditeur_type(instance):
-    assert isinstance(instance.idEditeur, int)
-
-
-@given(instance=be_jebouquine_entities_Editeur_strategy)
-def test_be_jebouquine_entities_editeur_idEditeur_setter(instance):
-    original = instance.idEditeur
-    instance.idEditeur = original
-    assert instance.idEditeur == original
-
-@given(instance=be_jebouquine_entities_Editeur_strategy)
-def test_be_jebouquine_entities_editeur_adresseEditeur_type(instance):
-    assert isinstance(instance.adresseEditeur, str)
 
 
 @given(instance=be_jebouquine_entities_Editeur_strategy)
@@ -2859,25 +2703,27 @@ def test_be_jebouquine_entities_editeur_adresseEditeur_setter(instance):
     instance.adresseEditeur = original
     assert instance.adresseEditeur == original
 
+
+
+@given(instance=be_jebouquine_entities_Editeur_strategy)
+def test_be_jebouquine_entities_editeur_nomEditeur_setter(instance):
+    original = instance.nomEditeur
+    instance.nomEditeur = original
+    assert instance.nomEditeur == original
+
+
+
+@given(instance=be_jebouquine_entities_Editeur_strategy)
+def test_be_jebouquine_entities_editeur_idEditeur_setter(instance):
+    original = instance.idEditeur
+    instance.idEditeur = original
+    assert instance.idEditeur == original
+
 @given(instance=be_jebouquine_entities_Auteur_strategy)
 @settings(max_examples=50)
 def test_be_jebouquine_entities_auteur_instantiation(instance):
     assert isinstance(instance, be_jebouquine_entities_Auteur)
 
-@given(instance=be_jebouquine_entities_Auteur_strategy)
-def test_be_jebouquine_entities_auteur_idAuteur_type(instance):
-    assert isinstance(instance.idAuteur, int)
-
-
-@given(instance=be_jebouquine_entities_Auteur_strategy)
-def test_be_jebouquine_entities_auteur_idAuteur_setter(instance):
-    original = instance.idAuteur
-    instance.idAuteur = original
-    assert instance.idAuteur == original
-
-@given(instance=be_jebouquine_entities_Auteur_strategy)
-def test_be_jebouquine_entities_auteur_nomAuteur_type(instance):
-    assert isinstance(instance.nomAuteur, str)
 
 
 @given(instance=be_jebouquine_entities_Auteur_strategy)
@@ -2886,14 +2732,19 @@ def test_be_jebouquine_entities_auteur_nomAuteur_setter(instance):
     instance.nomAuteur = original
     assert instance.nomAuteur == original
 
+
+
+@given(instance=be_jebouquine_entities_Auteur_strategy)
+def test_be_jebouquine_entities_auteur_idAuteur_setter(instance):
+    original = instance.idAuteur
+    instance.idAuteur = original
+    assert instance.idAuteur == original
+
 @given(instance=be_jebouquine_entities_Livre_strategy)
 @settings(max_examples=50)
 def test_be_jebouquine_entities_livre_instantiation(instance):
     assert isinstance(instance, be_jebouquine_entities_Livre)
 
-@given(instance=be_jebouquine_entities_Livre_strategy)
-def test_be_jebouquine_entities_livre_idCategorie_type(instance):
-    assert isinstance(instance.idCategorie, int)
 
 
 @given(instance=be_jebouquine_entities_Livre_strategy)
@@ -2902,20 +2753,6 @@ def test_be_jebouquine_entities_livre_idCategorie_setter(instance):
     instance.idCategorie = original
     assert instance.idCategorie == original
 
-@given(instance=be_jebouquine_entities_Livre_strategy)
-def test_be_jebouquine_entities_livre_titre_type(instance):
-    assert isinstance(instance.titre, str)
-
-
-@given(instance=be_jebouquine_entities_Livre_strategy)
-def test_be_jebouquine_entities_livre_titre_setter(instance):
-    original = instance.titre
-    instance.titre = original
-    assert instance.titre == original
-
-@given(instance=be_jebouquine_entities_Livre_strategy)
-def test_be_jebouquine_entities_livre_quantiteEnStock_type(instance):
-    assert isinstance(instance.quantiteEnStock, int)
 
 
 @given(instance=be_jebouquine_entities_Livre_strategy)
@@ -2924,9 +2761,14 @@ def test_be_jebouquine_entities_livre_quantiteEnStock_setter(instance):
     instance.quantiteEnStock = original
     assert instance.quantiteEnStock == original
 
+
+
 @given(instance=be_jebouquine_entities_Livre_strategy)
-def test_be_jebouquine_entities_livre_prix_type(instance):
-    assert isinstance(instance.prix, float)
+def test_be_jebouquine_entities_livre_titre_setter(instance):
+    original = instance.titre
+    instance.titre = original
+    assert instance.titre == original
+
 
 
 @given(instance=be_jebouquine_entities_Livre_strategy)
@@ -2935,9 +2777,6 @@ def test_be_jebouquine_entities_livre_prix_setter(instance):
     instance.prix = original
     assert instance.prix == original
 
-@given(instance=be_jebouquine_entities_Livre_strategy)
-def test_be_jebouquine_entities_livre_photoLivre_type(instance):
-    assert isinstance(instance.photoLivre, str)
 
 
 @given(instance=be_jebouquine_entities_Livre_strategy)
@@ -2946,31 +2785,6 @@ def test_be_jebouquine_entities_livre_photoLivre_setter(instance):
     instance.photoLivre = original
     assert instance.photoLivre == original
 
-@given(instance=be_jebouquine_entities_Livre_strategy)
-def test_be_jebouquine_entities_livre_dateApparition_type(instance):
-    assert isinstance(instance.dateApparition, date)
-
-
-@given(instance=be_jebouquine_entities_Livre_strategy)
-def test_be_jebouquine_entities_livre_dateApparition_setter(instance):
-    original = instance.dateApparition
-    instance.dateApparition = original
-    assert instance.dateApparition == original
-
-@given(instance=be_jebouquine_entities_Livre_strategy)
-def test_be_jebouquine_entities_livre_idAuteur_type(instance):
-    assert isinstance(instance.idAuteur, int)
-
-
-@given(instance=be_jebouquine_entities_Livre_strategy)
-def test_be_jebouquine_entities_livre_idAuteur_setter(instance):
-    original = instance.idAuteur
-    instance.idAuteur = original
-    assert instance.idAuteur == original
-
-@given(instance=be_jebouquine_entities_Livre_strategy)
-def test_be_jebouquine_entities_livre_idLangue_type(instance):
-    assert isinstance(instance.idLangue, int)
 
 
 @given(instance=be_jebouquine_entities_Livre_strategy)
@@ -2979,9 +2793,6 @@ def test_be_jebouquine_entities_livre_idLangue_setter(instance):
     instance.idLangue = original
     assert instance.idLangue == original
 
-@given(instance=be_jebouquine_entities_Livre_strategy)
-def test_be_jebouquine_entities_livre_idLivre_type(instance):
-    assert isinstance(instance.idLivre, int)
 
 
 @given(instance=be_jebouquine_entities_Livre_strategy)
@@ -2990,9 +2801,6 @@ def test_be_jebouquine_entities_livre_idLivre_setter(instance):
     instance.idLivre = original
     assert instance.idLivre == original
 
-@given(instance=be_jebouquine_entities_Livre_strategy)
-def test_be_jebouquine_entities_livre_isbn_type(instance):
-    assert isinstance(instance.isbn, str)
 
 
 @given(instance=be_jebouquine_entities_Livre_strategy)
@@ -3001,9 +2809,14 @@ def test_be_jebouquine_entities_livre_isbn_setter(instance):
     instance.isbn = original
     assert instance.isbn == original
 
+
+
 @given(instance=be_jebouquine_entities_Livre_strategy)
-def test_be_jebouquine_entities_livre_idEditeur_type(instance):
-    assert isinstance(instance.idEditeur, int)
+def test_be_jebouquine_entities_livre_idAuteur_setter(instance):
+    original = instance.idAuteur
+    instance.idAuteur = original
+    assert instance.idAuteur == original
+
 
 
 @given(instance=be_jebouquine_entities_Livre_strategy)
@@ -3012,47 +2825,19 @@ def test_be_jebouquine_entities_livre_idEditeur_setter(instance):
     instance.idEditeur = original
     assert instance.idEditeur == original
 
+
+
+@given(instance=be_jebouquine_entities_Livre_strategy)
+def test_be_jebouquine_entities_livre_dateApparition_setter(instance):
+    original = instance.dateApparition
+    instance.dateApparition = original
+    assert instance.dateApparition == original
+
 @given(instance=be_jebouquine_entities_Administrateur_strategy)
 @settings(max_examples=50)
 def test_be_jebouquine_entities_administrateur_instantiation(instance):
     assert isinstance(instance, be_jebouquine_entities_Administrateur)
 
-@given(instance=be_jebouquine_entities_Administrateur_strategy)
-def test_be_jebouquine_entities_administrateur_nomAdministrateur_type(instance):
-    assert isinstance(instance.nomAdministrateur, str)
-
-
-@given(instance=be_jebouquine_entities_Administrateur_strategy)
-def test_be_jebouquine_entities_administrateur_nomAdministrateur_setter(instance):
-    original = instance.nomAdministrateur
-    instance.nomAdministrateur = original
-    assert instance.nomAdministrateur == original
-
-@given(instance=be_jebouquine_entities_Administrateur_strategy)
-def test_be_jebouquine_entities_administrateur_idAdministrateur_type(instance):
-    assert isinstance(instance.idAdministrateur, int)
-
-
-@given(instance=be_jebouquine_entities_Administrateur_strategy)
-def test_be_jebouquine_entities_administrateur_idAdministrateur_setter(instance):
-    original = instance.idAdministrateur
-    instance.idAdministrateur = original
-    assert instance.idAdministrateur == original
-
-@given(instance=be_jebouquine_entities_Administrateur_strategy)
-def test_be_jebouquine_entities_administrateur_emailAdministrateur_type(instance):
-    assert isinstance(instance.emailAdministrateur, str)
-
-
-@given(instance=be_jebouquine_entities_Administrateur_strategy)
-def test_be_jebouquine_entities_administrateur_emailAdministrateur_setter(instance):
-    original = instance.emailAdministrateur
-    instance.emailAdministrateur = original
-    assert instance.emailAdministrateur == original
-
-@given(instance=be_jebouquine_entities_Administrateur_strategy)
-def test_be_jebouquine_entities_administrateur_prenomAdministrateur_type(instance):
-    assert isinstance(instance.prenomAdministrateur, str)
 
 
 @given(instance=be_jebouquine_entities_Administrateur_strategy)
@@ -3061,9 +2846,30 @@ def test_be_jebouquine_entities_administrateur_prenomAdministrateur_setter(insta
     instance.prenomAdministrateur = original
     assert instance.prenomAdministrateur == original
 
+
+
 @given(instance=be_jebouquine_entities_Administrateur_strategy)
-def test_be_jebouquine_entities_administrateur_motDePasseAdministrateur_type(instance):
-    assert isinstance(instance.motDePasseAdministrateur, str)
+def test_be_jebouquine_entities_administrateur_emailAdministrateur_setter(instance):
+    original = instance.emailAdministrateur
+    instance.emailAdministrateur = original
+    assert instance.emailAdministrateur == original
+
+
+
+@given(instance=be_jebouquine_entities_Administrateur_strategy)
+def test_be_jebouquine_entities_administrateur_nomAdministrateur_setter(instance):
+    original = instance.nomAdministrateur
+    instance.nomAdministrateur = original
+    assert instance.nomAdministrateur == original
+
+
+
+@given(instance=be_jebouquine_entities_Administrateur_strategy)
+def test_be_jebouquine_entities_administrateur_idAdministrateur_setter(instance):
+    original = instance.idAdministrateur
+    instance.idAdministrateur = original
+    assert instance.idAdministrateur == original
+
 
 
 @given(instance=be_jebouquine_entities_Administrateur_strategy)
@@ -3077,20 +2883,6 @@ def test_be_jebouquine_entities_administrateur_motDePasseAdministrateur_setter(i
 def test_be_jebouquine_entities_client_instantiation(instance):
     assert isinstance(instance, be_jebouquine_entities_Client)
 
-@given(instance=be_jebouquine_entities_Client_strategy)
-def test_be_jebouquine_entities_client_motDePasseClient_type(instance):
-    assert isinstance(instance.motDePasseClient, str)
-
-
-@given(instance=be_jebouquine_entities_Client_strategy)
-def test_be_jebouquine_entities_client_motDePasseClient_setter(instance):
-    original = instance.motDePasseClient
-    instance.motDePasseClient = original
-    assert instance.motDePasseClient == original
-
-@given(instance=be_jebouquine_entities_Client_strategy)
-def test_be_jebouquine_entities_client_adresseClient_type(instance):
-    assert isinstance(instance.adresseClient, str)
 
 
 @given(instance=be_jebouquine_entities_Client_strategy)
@@ -3099,20 +2891,6 @@ def test_be_jebouquine_entities_client_adresseClient_setter(instance):
     instance.adresseClient = original
     assert instance.adresseClient == original
 
-@given(instance=be_jebouquine_entities_Client_strategy)
-def test_be_jebouquine_entities_client_etatLogin_type(instance):
-    assert isinstance(instance.etatLogin, str)
-
-
-@given(instance=be_jebouquine_entities_Client_strategy)
-def test_be_jebouquine_entities_client_etatLogin_setter(instance):
-    original = instance.etatLogin
-    instance.etatLogin = original
-    assert instance.etatLogin == original
-
-@given(instance=be_jebouquine_entities_Client_strategy)
-def test_be_jebouquine_entities_client_nomClient_type(instance):
-    assert isinstance(instance.nomClient, str)
 
 
 @given(instance=be_jebouquine_entities_Client_strategy)
@@ -3121,9 +2899,22 @@ def test_be_jebouquine_entities_client_nomClient_setter(instance):
     instance.nomClient = original
     assert instance.nomClient == original
 
+
+
 @given(instance=be_jebouquine_entities_Client_strategy)
-def test_be_jebouquine_entities_client_idClient_type(instance):
-    assert isinstance(instance.idClient, int)
+def test_be_jebouquine_entities_client_etatLogin_setter(instance):
+    original = instance.etatLogin
+    instance.etatLogin = original
+    assert instance.etatLogin == original
+
+
+
+@given(instance=be_jebouquine_entities_Client_strategy)
+def test_be_jebouquine_entities_client_motDePasseClient_setter(instance):
+    original = instance.motDePasseClient
+    instance.motDePasseClient = original
+    assert instance.motDePasseClient == original
+
 
 
 @given(instance=be_jebouquine_entities_Client_strategy)
@@ -3132,20 +2923,6 @@ def test_be_jebouquine_entities_client_idClient_setter(instance):
     instance.idClient = original
     assert instance.idClient == original
 
-@given(instance=be_jebouquine_entities_Client_strategy)
-def test_be_jebouquine_entities_client_telephoneClient_type(instance):
-    assert isinstance(instance.telephoneClient, str)
-
-
-@given(instance=be_jebouquine_entities_Client_strategy)
-def test_be_jebouquine_entities_client_telephoneClient_setter(instance):
-    original = instance.telephoneClient
-    instance.telephoneClient = original
-    assert instance.telephoneClient == original
-
-@given(instance=be_jebouquine_entities_Client_strategy)
-def test_be_jebouquine_entities_client_emailClient_type(instance):
-    assert isinstance(instance.emailClient, str)
 
 
 @given(instance=be_jebouquine_entities_Client_strategy)
@@ -3153,6 +2930,14 @@ def test_be_jebouquine_entities_client_emailClient_setter(instance):
     original = instance.emailClient
     instance.emailClient = original
     assert instance.emailClient == original
+
+
+
+@given(instance=be_jebouquine_entities_Client_strategy)
+def test_be_jebouquine_entities_client_telephoneClient_setter(instance):
+    original = instance.telephoneClient
+    instance.telephoneClient = original
+    assert instance.telephoneClient == original
 
 @given(instance=be_jebouquine_dao_EtatCommandeDAO_strategy)
 @settings(max_examples=50)
@@ -3313,3 +3098,53 @@ def test_visiteur_actor_instantiation(instance):
 @settings(max_examples=50)
 def test_client_actor_instantiation(instance):
     assert isinstance(instance, Client_Actor)
+
+@given(instance=be_jebouquine_dao_AuteurDAO_strategy)
+@settings(max_examples=50)
+def test_be_jebouquine_dao_auteurdao_instantiation(instance):
+    assert isinstance(instance, be_jebouquine_dao_AuteurDAO)
+
+@given(instance=be_jebouquine_dao_AdministrateurDAO_strategy)
+@settings(max_examples=50)
+def test_be_jebouquine_dao_administrateurdao_instantiation(instance):
+    assert isinstance(instance, be_jebouquine_dao_AdministrateurDAO)
+
+@given(instance=be_jebouquine_dao_AbstractFactory_strategy)
+@settings(max_examples=50)
+def test_be_jebouquine_dao_abstractfactory_instantiation(instance):
+    assert isinstance(instance, be_jebouquine_dao_AbstractFactory)
+
+@given(instance=Collection_Object__strategy)
+@settings(max_examples=50)
+def test_collection_object__instantiation(instance):
+    assert isinstance(instance, Collection_Object_)
+
+@given(instance=Object_strategy)
+@settings(max_examples=50)
+def test_object_instantiation(instance):
+    assert isinstance(instance, Object)
+
+@given(instance=Collection_Client__strategy)
+@settings(max_examples=50)
+def test_collection_client__instantiation(instance):
+    assert isinstance(instance, Collection_Client_)
+
+@given(instance=be_jebouquine_bo_ICategorieBORemote_Interface_strategy)
+@settings(max_examples=50)
+def test_be_jebouquine_bo_icategorieboremote_interface_instantiation(instance):
+    assert isinstance(instance, be_jebouquine_bo_ICategorieBORemote_Interface)
+
+@given(instance=be_jebouquine_bo_IEtatCommandeRemote_Interface_strategy)
+@settings(max_examples=50)
+def test_be_jebouquine_bo_ietatcommanderemote_interface_instantiation(instance):
+    assert isinstance(instance, be_jebouquine_bo_IEtatCommandeRemote_Interface)
+
+@given(instance=be_jebouquine_bo_LigneCommandeBORemote_Interface_strategy)
+@settings(max_examples=50)
+def test_be_jebouquine_bo_lignecommandeboremote_interface_instantiation(instance):
+    assert isinstance(instance, be_jebouquine_bo_LigneCommandeBORemote_Interface)
+
+@given(instance=be_jebouquine_bo_IAdministrateurBORemote_Interface_strategy)
+@settings(max_examples=50)
+def test_be_jebouquine_bo_iadministrateurboremote_interface_instantiation(instance):
+    assert isinstance(instance, be_jebouquine_bo_IAdministrateurBORemote_Interface)

@@ -3,22 +3,22 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     TraceStackframe,
-    junitmodel::JUnitTraceStackframe,
+    junitmodel_JUnitTraceStackframe,
     ComparisonProblem,
     JUnitProblem,
-    junitmodel::JUnitComparisonProblem,
+    junitmodel_JUnitComparisonProblem,
     TestProblem,
-    junitmodel::JUnitProblem,
+    junitmodel_JUnitProblem,
     TestRoot,
-    junitmodel::JUnitRoot,
+    junitmodel_JUnitRoot,
     TestContainer,
-    junitmodel::JUnitTestSuite,
+    junitmodel_JUnitTestSuite,
     TestCaseElement,
-    junitmodel::JUnitTestCase,
+    junitmodel_JUnitTestCase,
 )
 
 # =============================================================================
@@ -41,16 +41,16 @@ def test_tracestackframe_constructor_args():
 
 
 
-def test_junitmodel::junittracestackframe_is_not_abstract():
-    assert not inspect.isabstract(junitmodel::JUnitTraceStackframe)
+def test_junitmodel_junittracestackframe_is_not_abstract():
+    assert not inspect.isabstract(junitmodel_JUnitTraceStackframe)
 
 
-def test_junitmodel::junittracestackframe_constructor_exists():
-    assert callable(junitmodel::JUnitTraceStackframe.__init__)
+def test_junitmodel_junittracestackframe_constructor_exists():
+    assert callable(junitmodel_JUnitTraceStackframe.__init__)
 
 
-def test_junitmodel::junittracestackframe_constructor_args():
-    sig = inspect.signature(junitmodel::JUnitTraceStackframe.__init__)
+def test_junitmodel_junittracestackframe_constructor_args():
+    sig = inspect.signature(junitmodel_JUnitTraceStackframe.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -83,16 +83,16 @@ def test_junitproblem_constructor_args():
 
 
 
-def test_junitmodel::junitcomparisonproblem_is_not_abstract():
-    assert not inspect.isabstract(junitmodel::JUnitComparisonProblem)
+def test_junitmodel_junitcomparisonproblem_is_not_abstract():
+    assert not inspect.isabstract(junitmodel_JUnitComparisonProblem)
 
 
-def test_junitmodel::junitcomparisonproblem_constructor_exists():
-    assert callable(junitmodel::JUnitComparisonProblem.__init__)
+def test_junitmodel_junitcomparisonproblem_constructor_exists():
+    assert callable(junitmodel_JUnitComparisonProblem.__init__)
 
 
-def test_junitmodel::junitcomparisonproblem_constructor_args():
-    sig = inspect.signature(junitmodel::JUnitComparisonProblem.__init__)
+def test_junitmodel_junitcomparisonproblem_constructor_args():
+    sig = inspect.signature(junitmodel_JUnitComparisonProblem.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -111,23 +111,23 @@ def test_testproblem_constructor_args():
 
 
 
-def test_junitmodel::junitproblem_is_not_abstract():
-    assert not inspect.isabstract(junitmodel::JUnitProblem)
+def test_junitmodel_junitproblem_is_not_abstract():
+    assert not inspect.isabstract(junitmodel_JUnitProblem)
 
 
-def test_junitmodel::junitproblem_constructor_exists():
-    assert callable(junitmodel::JUnitProblem.__init__)
+def test_junitmodel_junitproblem_constructor_exists():
+    assert callable(junitmodel_JUnitProblem.__init__)
 
 
-def test_junitmodel::junitproblem_constructor_args():
-    sig = inspect.signature(junitmodel::JUnitProblem.__init__)
+def test_junitmodel_junitproblem_constructor_args():
+    sig = inspect.signature(junitmodel_JUnitProblem.__init__)
     params = list(sig.parameters.keys())
     assert "lastTraceWasFiltered" in params, "Missing parameter 'lastTraceWasFiltered'"
 
-def test_junitmodel::junitproblem_has_lastTraceWasFiltered():
-    assert hasattr(junitmodel::JUnitProblem, "lastTraceWasFiltered")
+def test_junitmodel_junitproblem_has_lastTraceWasFiltered():
+    assert hasattr(junitmodel_JUnitProblem, "lastTraceWasFiltered")
     descriptor = None
-    for klass in junitmodel::JUnitProblem.__mro__:
+    for klass in junitmodel_JUnitProblem.__mro__:
         if "lastTraceWasFiltered" in klass.__dict__:
             descriptor = klass.__dict__["lastTraceWasFiltered"]
             break
@@ -149,16 +149,16 @@ def test_testroot_constructor_args():
 
 
 
-def test_junitmodel::junitroot_is_not_abstract():
-    assert not inspect.isabstract(junitmodel::JUnitRoot)
+def test_junitmodel_junitroot_is_not_abstract():
+    assert not inspect.isabstract(junitmodel_JUnitRoot)
 
 
-def test_junitmodel::junitroot_constructor_exists():
-    assert callable(junitmodel::JUnitRoot.__init__)
+def test_junitmodel_junitroot_constructor_exists():
+    assert callable(junitmodel_JUnitRoot.__init__)
 
 
-def test_junitmodel::junitroot_constructor_args():
-    sig = inspect.signature(junitmodel::JUnitRoot.__init__)
+def test_junitmodel_junitroot_constructor_args():
+    sig = inspect.signature(junitmodel_JUnitRoot.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -177,16 +177,16 @@ def test_testcontainer_constructor_args():
 
 
 
-def test_junitmodel::junittestsuite_is_not_abstract():
-    assert not inspect.isabstract(junitmodel::JUnitTestSuite)
+def test_junitmodel_junittestsuite_is_not_abstract():
+    assert not inspect.isabstract(junitmodel_JUnitTestSuite)
 
 
-def test_junitmodel::junittestsuite_constructor_exists():
-    assert callable(junitmodel::JUnitTestSuite.__init__)
+def test_junitmodel_junittestsuite_constructor_exists():
+    assert callable(junitmodel_JUnitTestSuite.__init__)
 
 
-def test_junitmodel::junittestsuite_constructor_args():
-    sig = inspect.signature(junitmodel::JUnitTestSuite.__init__)
+def test_junitmodel_junittestsuite_constructor_args():
+    sig = inspect.signature(junitmodel_JUnitTestSuite.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -205,16 +205,16 @@ def test_testcaseelement_constructor_args():
 
 
 
-def test_junitmodel::junittestcase_is_not_abstract():
-    assert not inspect.isabstract(junitmodel::JUnitTestCase)
+def test_junitmodel_junittestcase_is_not_abstract():
+    assert not inspect.isabstract(junitmodel_JUnitTestCase)
 
 
-def test_junitmodel::junittestcase_constructor_exists():
-    assert callable(junitmodel::JUnitTestCase.__init__)
+def test_junitmodel_junittestcase_constructor_exists():
+    assert callable(junitmodel_JUnitTestCase.__init__)
 
 
-def test_junitmodel::junittestcase_constructor_args():
-    sig = inspect.signature(junitmodel::JUnitTestCase.__init__)
+def test_junitmodel_junittestcase_constructor_args():
+    sig = inspect.signature(junitmodel_JUnitTestCase.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -232,8 +232,8 @@ safe_text = st.text(
 TraceStackframe_strategy = st.builds(
     TraceStackframe,
 )
-junitmodel::JUnitTraceStackframe_strategy = st.builds(
-    junitmodel::JUnitTraceStackframe,
+junitmodel_JUnitTraceStackframe_strategy = st.builds(
+    junitmodel_JUnitTraceStackframe,
 )
 ComparisonProblem_strategy = st.builds(
     ComparisonProblem,
@@ -241,34 +241,34 @@ ComparisonProblem_strategy = st.builds(
 JUnitProblem_strategy = st.builds(
     JUnitProblem,
 )
-junitmodel::JUnitComparisonProblem_strategy = st.builds(
-    junitmodel::JUnitComparisonProblem,
+junitmodel_JUnitComparisonProblem_strategy = st.builds(
+    junitmodel_JUnitComparisonProblem,
 )
 TestProblem_strategy = st.builds(
     TestProblem,
 )
-junitmodel::JUnitProblem_strategy = st.builds(
-    junitmodel::JUnitProblem,
+junitmodel_JUnitProblem_strategy = st.builds(
+    junitmodel_JUnitProblem,
     lastTraceWasFiltered=
         st.booleans()
 )
 TestRoot_strategy = st.builds(
     TestRoot,
 )
-junitmodel::JUnitRoot_strategy = st.builds(
-    junitmodel::JUnitRoot,
+junitmodel_JUnitRoot_strategy = st.builds(
+    junitmodel_JUnitRoot,
 )
 TestContainer_strategy = st.builds(
     TestContainer,
 )
-junitmodel::JUnitTestSuite_strategy = st.builds(
-    junitmodel::JUnitTestSuite,
+junitmodel_JUnitTestSuite_strategy = st.builds(
+    junitmodel_JUnitTestSuite,
 )
 TestCaseElement_strategy = st.builds(
     TestCaseElement,
 )
-junitmodel::JUnitTestCase_strategy = st.builds(
-    junitmodel::JUnitTestCase,
+junitmodel_JUnitTestCase_strategy = st.builds(
+    junitmodel_JUnitTestCase,
 )
 
 @given(instance=TraceStackframe_strategy)
@@ -276,10 +276,10 @@ junitmodel::JUnitTestCase_strategy = st.builds(
 def test_tracestackframe_instantiation(instance):
     assert isinstance(instance, TraceStackframe)
 
-@given(instance=junitmodel::JUnitTraceStackframe_strategy)
+@given(instance=junitmodel_JUnitTraceStackframe_strategy)
 @settings(max_examples=50)
-def test_junitmodel::junittracestackframe_instantiation(instance):
-    assert isinstance(instance, junitmodel::JUnitTraceStackframe)
+def test_junitmodel_junittracestackframe_instantiation(instance):
+    assert isinstance(instance, junitmodel_JUnitTraceStackframe)
 
 @given(instance=ComparisonProblem_strategy)
 @settings(max_examples=50)
@@ -291,28 +291,25 @@ def test_comparisonproblem_instantiation(instance):
 def test_junitproblem_instantiation(instance):
     assert isinstance(instance, JUnitProblem)
 
-@given(instance=junitmodel::JUnitComparisonProblem_strategy)
+@given(instance=junitmodel_JUnitComparisonProblem_strategy)
 @settings(max_examples=50)
-def test_junitmodel::junitcomparisonproblem_instantiation(instance):
-    assert isinstance(instance, junitmodel::JUnitComparisonProblem)
+def test_junitmodel_junitcomparisonproblem_instantiation(instance):
+    assert isinstance(instance, junitmodel_JUnitComparisonProblem)
 
 @given(instance=TestProblem_strategy)
 @settings(max_examples=50)
 def test_testproblem_instantiation(instance):
     assert isinstance(instance, TestProblem)
 
-@given(instance=junitmodel::JUnitProblem_strategy)
+@given(instance=junitmodel_JUnitProblem_strategy)
 @settings(max_examples=50)
-def test_junitmodel::junitproblem_instantiation(instance):
-    assert isinstance(instance, junitmodel::JUnitProblem)
-
-@given(instance=junitmodel::JUnitProblem_strategy)
-def test_junitmodel::junitproblem_lastTraceWasFiltered_type(instance):
-    assert isinstance(instance.lastTraceWasFiltered, bool)
+def test_junitmodel_junitproblem_instantiation(instance):
+    assert isinstance(instance, junitmodel_JUnitProblem)
 
 
-@given(instance=junitmodel::JUnitProblem_strategy)
-def test_junitmodel::junitproblem_lastTraceWasFiltered_setter(instance):
+
+@given(instance=junitmodel_JUnitProblem_strategy)
+def test_junitmodel_junitproblem_lastTraceWasFiltered_setter(instance):
     original = instance.lastTraceWasFiltered
     instance.lastTraceWasFiltered = original
     assert instance.lastTraceWasFiltered == original
@@ -322,27 +319,27 @@ def test_junitmodel::junitproblem_lastTraceWasFiltered_setter(instance):
 def test_testroot_instantiation(instance):
     assert isinstance(instance, TestRoot)
 
-@given(instance=junitmodel::JUnitRoot_strategy)
+@given(instance=junitmodel_JUnitRoot_strategy)
 @settings(max_examples=50)
-def test_junitmodel::junitroot_instantiation(instance):
-    assert isinstance(instance, junitmodel::JUnitRoot)
+def test_junitmodel_junitroot_instantiation(instance):
+    assert isinstance(instance, junitmodel_JUnitRoot)
 
 @given(instance=TestContainer_strategy)
 @settings(max_examples=50)
 def test_testcontainer_instantiation(instance):
     assert isinstance(instance, TestContainer)
 
-@given(instance=junitmodel::JUnitTestSuite_strategy)
+@given(instance=junitmodel_JUnitTestSuite_strategy)
 @settings(max_examples=50)
-def test_junitmodel::junittestsuite_instantiation(instance):
-    assert isinstance(instance, junitmodel::JUnitTestSuite)
+def test_junitmodel_junittestsuite_instantiation(instance):
+    assert isinstance(instance, junitmodel_JUnitTestSuite)
 
 @given(instance=TestCaseElement_strategy)
 @settings(max_examples=50)
 def test_testcaseelement_instantiation(instance):
     assert isinstance(instance, TestCaseElement)
 
-@given(instance=junitmodel::JUnitTestCase_strategy)
+@given(instance=junitmodel_JUnitTestCase_strategy)
 @settings(max_examples=50)
-def test_junitmodel::junittestcase_instantiation(instance):
-    assert isinstance(instance, junitmodel::JUnitTestCase)
+def test_junitmodel_junittestcase_instantiation(instance):
+    assert isinstance(instance, junitmodel_JUnitTestCase)

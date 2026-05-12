@@ -3,49 +3,49 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    l2::Trace,
-    l2::Subsystem,
-    l2::Specification,
-    l2::Utility,
-    l2::Type,
-    l2::Send,
-    l2::Responsibility,
-    l2::Refine,
-    l2::Classifier,
-    l2::Service,
-    l2::Instantiate,
-    l2::Realization,
-    l2::Process,
-    l2::ModelLibrary,
-    l2::Metaclass,
-    l2::Implement,
-    l2::Package,
-    l2::Framework,
-    l2::Focus,
-    l2::Component,
-    l2::ImplementationClass,
+from python_code import (
+    l2_Trace,
+    l2_Subsystem,
+    l2_Specification,
+    l2_Utility,
+    l2_Type,
+    l2_Send,
+    l2_Responsibility,
+    l2_Refine,
+    l2_Classifier,
+    l2_Service,
+    l2_Instantiate,
+    l2_Realization,
+    l2_Process,
+    l2_ModelLibrary,
+    l2_Metaclass,
+    l2_Implement,
+    l2_Package,
+    l2_Framework,
+    l2_Focus,
+    l2_Component,
+    l2_ImplementationClass,
     File,
-    l2::Executable,
-    l2::Source,
-    l2::Library,
-    l2::Script,
-    l2::Document,
-    l2::Destroy,
-    l2::ValueSpecification,
-    l2::Abstraction,
-    l2::Derive,
-    l2::BehavioralFeature,
-    l2::Entity,
-    l2::Artifact,
-    l2::File,
-    l2::Call,
-    l2::Class,
-    l2::Auxiliary,
-    l2::Create,
-    l2::Usage,
+    l2_Executable,
+    l2_Library,
+    l2_Script,
+    l2_Source,
+    l2_Document,
+    l2_Destroy,
+    l2_ValueSpecification,
+    l2_Abstraction,
+    l2_Derive,
+    l2_BehavioralFeature,
+    l2_Entity,
+    l2_Artifact,
+    l2_File,
+    l2_Call,
+    l2_Class,
+    l2_Auxiliary,
+    l2_Create,
+    l2_Usage,
 )
 
 # =============================================================================
@@ -54,296 +54,296 @@ from classes import (
 
 
 
-def test_l2::trace_is_not_abstract():
-    assert not inspect.isabstract(l2::Trace)
+def test_l2_trace_is_not_abstract():
+    assert not inspect.isabstract(l2_Trace)
 
 
-def test_l2::trace_constructor_exists():
-    assert callable(l2::Trace.__init__)
+def test_l2_trace_constructor_exists():
+    assert callable(l2_Trace.__init__)
 
 
-def test_l2::trace_constructor_args():
-    sig = inspect.signature(l2::Trace.__init__)
+def test_l2_trace_constructor_args():
+    sig = inspect.signature(l2_Trace.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_l2::subsystem_is_not_abstract():
-    assert not inspect.isabstract(l2::Subsystem)
+def test_l2_subsystem_is_not_abstract():
+    assert not inspect.isabstract(l2_Subsystem)
 
 
-def test_l2::subsystem_constructor_exists():
-    assert callable(l2::Subsystem.__init__)
+def test_l2_subsystem_constructor_exists():
+    assert callable(l2_Subsystem.__init__)
 
 
-def test_l2::subsystem_constructor_args():
-    sig = inspect.signature(l2::Subsystem.__init__)
+def test_l2_subsystem_constructor_args():
+    sig = inspect.signature(l2_Subsystem.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_l2::specification_is_not_abstract():
-    assert not inspect.isabstract(l2::Specification)
+def test_l2_specification_is_not_abstract():
+    assert not inspect.isabstract(l2_Specification)
 
 
-def test_l2::specification_constructor_exists():
-    assert callable(l2::Specification.__init__)
+def test_l2_specification_constructor_exists():
+    assert callable(l2_Specification.__init__)
 
 
-def test_l2::specification_constructor_args():
-    sig = inspect.signature(l2::Specification.__init__)
+def test_l2_specification_constructor_args():
+    sig = inspect.signature(l2_Specification.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_l2::utility_is_not_abstract():
-    assert not inspect.isabstract(l2::Utility)
+def test_l2_utility_is_not_abstract():
+    assert not inspect.isabstract(l2_Utility)
 
 
-def test_l2::utility_constructor_exists():
-    assert callable(l2::Utility.__init__)
+def test_l2_utility_constructor_exists():
+    assert callable(l2_Utility.__init__)
 
 
-def test_l2::utility_constructor_args():
-    sig = inspect.signature(l2::Utility.__init__)
+def test_l2_utility_constructor_args():
+    sig = inspect.signature(l2_Utility.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_l2::type_is_not_abstract():
-    assert not inspect.isabstract(l2::Type)
+def test_l2_type_is_not_abstract():
+    assert not inspect.isabstract(l2_Type)
 
 
-def test_l2::type_constructor_exists():
-    assert callable(l2::Type.__init__)
+def test_l2_type_constructor_exists():
+    assert callable(l2_Type.__init__)
 
 
-def test_l2::type_constructor_args():
-    sig = inspect.signature(l2::Type.__init__)
+def test_l2_type_constructor_args():
+    sig = inspect.signature(l2_Type.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_l2::send_is_not_abstract():
-    assert not inspect.isabstract(l2::Send)
+def test_l2_send_is_not_abstract():
+    assert not inspect.isabstract(l2_Send)
 
 
-def test_l2::send_constructor_exists():
-    assert callable(l2::Send.__init__)
+def test_l2_send_constructor_exists():
+    assert callable(l2_Send.__init__)
 
 
-def test_l2::send_constructor_args():
-    sig = inspect.signature(l2::Send.__init__)
+def test_l2_send_constructor_args():
+    sig = inspect.signature(l2_Send.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_l2::responsibility_is_not_abstract():
-    assert not inspect.isabstract(l2::Responsibility)
+def test_l2_responsibility_is_not_abstract():
+    assert not inspect.isabstract(l2_Responsibility)
 
 
-def test_l2::responsibility_constructor_exists():
-    assert callable(l2::Responsibility.__init__)
+def test_l2_responsibility_constructor_exists():
+    assert callable(l2_Responsibility.__init__)
 
 
-def test_l2::responsibility_constructor_args():
-    sig = inspect.signature(l2::Responsibility.__init__)
+def test_l2_responsibility_constructor_args():
+    sig = inspect.signature(l2_Responsibility.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_l2::refine_is_not_abstract():
-    assert not inspect.isabstract(l2::Refine)
+def test_l2_refine_is_not_abstract():
+    assert not inspect.isabstract(l2_Refine)
 
 
-def test_l2::refine_constructor_exists():
-    assert callable(l2::Refine.__init__)
+def test_l2_refine_constructor_exists():
+    assert callable(l2_Refine.__init__)
 
 
-def test_l2::refine_constructor_args():
-    sig = inspect.signature(l2::Refine.__init__)
+def test_l2_refine_constructor_args():
+    sig = inspect.signature(l2_Refine.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_l2::classifier_is_not_abstract():
-    assert not inspect.isabstract(l2::Classifier)
+def test_l2_classifier_is_not_abstract():
+    assert not inspect.isabstract(l2_Classifier)
 
 
-def test_l2::classifier_constructor_exists():
-    assert callable(l2::Classifier.__init__)
+def test_l2_classifier_constructor_exists():
+    assert callable(l2_Classifier.__init__)
 
 
-def test_l2::classifier_constructor_args():
-    sig = inspect.signature(l2::Classifier.__init__)
+def test_l2_classifier_constructor_args():
+    sig = inspect.signature(l2_Classifier.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_l2::service_is_not_abstract():
-    assert not inspect.isabstract(l2::Service)
+def test_l2_service_is_not_abstract():
+    assert not inspect.isabstract(l2_Service)
 
 
-def test_l2::service_constructor_exists():
-    assert callable(l2::Service.__init__)
+def test_l2_service_constructor_exists():
+    assert callable(l2_Service.__init__)
 
 
-def test_l2::service_constructor_args():
-    sig = inspect.signature(l2::Service.__init__)
+def test_l2_service_constructor_args():
+    sig = inspect.signature(l2_Service.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_l2::instantiate_is_not_abstract():
-    assert not inspect.isabstract(l2::Instantiate)
+def test_l2_instantiate_is_not_abstract():
+    assert not inspect.isabstract(l2_Instantiate)
 
 
-def test_l2::instantiate_constructor_exists():
-    assert callable(l2::Instantiate.__init__)
+def test_l2_instantiate_constructor_exists():
+    assert callable(l2_Instantiate.__init__)
 
 
-def test_l2::instantiate_constructor_args():
-    sig = inspect.signature(l2::Instantiate.__init__)
+def test_l2_instantiate_constructor_args():
+    sig = inspect.signature(l2_Instantiate.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_l2::realization_is_not_abstract():
-    assert not inspect.isabstract(l2::Realization)
+def test_l2_realization_is_not_abstract():
+    assert not inspect.isabstract(l2_Realization)
 
 
-def test_l2::realization_constructor_exists():
-    assert callable(l2::Realization.__init__)
+def test_l2_realization_constructor_exists():
+    assert callable(l2_Realization.__init__)
 
 
-def test_l2::realization_constructor_args():
-    sig = inspect.signature(l2::Realization.__init__)
+def test_l2_realization_constructor_args():
+    sig = inspect.signature(l2_Realization.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_l2::process_is_not_abstract():
-    assert not inspect.isabstract(l2::Process)
+def test_l2_process_is_not_abstract():
+    assert not inspect.isabstract(l2_Process)
 
 
-def test_l2::process_constructor_exists():
-    assert callable(l2::Process.__init__)
+def test_l2_process_constructor_exists():
+    assert callable(l2_Process.__init__)
 
 
-def test_l2::process_constructor_args():
-    sig = inspect.signature(l2::Process.__init__)
+def test_l2_process_constructor_args():
+    sig = inspect.signature(l2_Process.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_l2::modellibrary_is_not_abstract():
-    assert not inspect.isabstract(l2::ModelLibrary)
+def test_l2_modellibrary_is_not_abstract():
+    assert not inspect.isabstract(l2_ModelLibrary)
 
 
-def test_l2::modellibrary_constructor_exists():
-    assert callable(l2::ModelLibrary.__init__)
+def test_l2_modellibrary_constructor_exists():
+    assert callable(l2_ModelLibrary.__init__)
 
 
-def test_l2::modellibrary_constructor_args():
-    sig = inspect.signature(l2::ModelLibrary.__init__)
+def test_l2_modellibrary_constructor_args():
+    sig = inspect.signature(l2_ModelLibrary.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_l2::metaclass_is_not_abstract():
-    assert not inspect.isabstract(l2::Metaclass)
+def test_l2_metaclass_is_not_abstract():
+    assert not inspect.isabstract(l2_Metaclass)
 
 
-def test_l2::metaclass_constructor_exists():
-    assert callable(l2::Metaclass.__init__)
+def test_l2_metaclass_constructor_exists():
+    assert callable(l2_Metaclass.__init__)
 
 
-def test_l2::metaclass_constructor_args():
-    sig = inspect.signature(l2::Metaclass.__init__)
+def test_l2_metaclass_constructor_args():
+    sig = inspect.signature(l2_Metaclass.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_l2::implement_is_not_abstract():
-    assert not inspect.isabstract(l2::Implement)
+def test_l2_implement_is_not_abstract():
+    assert not inspect.isabstract(l2_Implement)
 
 
-def test_l2::implement_constructor_exists():
-    assert callable(l2::Implement.__init__)
+def test_l2_implement_constructor_exists():
+    assert callable(l2_Implement.__init__)
 
 
-def test_l2::implement_constructor_args():
-    sig = inspect.signature(l2::Implement.__init__)
+def test_l2_implement_constructor_args():
+    sig = inspect.signature(l2_Implement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_l2::package_is_not_abstract():
-    assert not inspect.isabstract(l2::Package)
+def test_l2_package_is_not_abstract():
+    assert not inspect.isabstract(l2_Package)
 
 
-def test_l2::package_constructor_exists():
-    assert callable(l2::Package.__init__)
+def test_l2_package_constructor_exists():
+    assert callable(l2_Package.__init__)
 
 
-def test_l2::package_constructor_args():
-    sig = inspect.signature(l2::Package.__init__)
+def test_l2_package_constructor_args():
+    sig = inspect.signature(l2_Package.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_l2::framework_is_not_abstract():
-    assert not inspect.isabstract(l2::Framework)
+def test_l2_framework_is_not_abstract():
+    assert not inspect.isabstract(l2_Framework)
 
 
-def test_l2::framework_constructor_exists():
-    assert callable(l2::Framework.__init__)
+def test_l2_framework_constructor_exists():
+    assert callable(l2_Framework.__init__)
 
 
-def test_l2::framework_constructor_args():
-    sig = inspect.signature(l2::Framework.__init__)
+def test_l2_framework_constructor_args():
+    sig = inspect.signature(l2_Framework.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_l2::focus_is_not_abstract():
-    assert not inspect.isabstract(l2::Focus)
+def test_l2_focus_is_not_abstract():
+    assert not inspect.isabstract(l2_Focus)
 
 
-def test_l2::focus_constructor_exists():
-    assert callable(l2::Focus.__init__)
+def test_l2_focus_constructor_exists():
+    assert callable(l2_Focus.__init__)
 
 
-def test_l2::focus_constructor_args():
-    sig = inspect.signature(l2::Focus.__init__)
+def test_l2_focus_constructor_args():
+    sig = inspect.signature(l2_Focus.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_l2::component_is_not_abstract():
-    assert not inspect.isabstract(l2::Component)
+def test_l2_component_is_not_abstract():
+    assert not inspect.isabstract(l2_Component)
 
 
-def test_l2::component_constructor_exists():
-    assert callable(l2::Component.__init__)
+def test_l2_component_constructor_exists():
+    assert callable(l2_Component.__init__)
 
 
-def test_l2::component_constructor_args():
-    sig = inspect.signature(l2::Component.__init__)
+def test_l2_component_constructor_args():
+    sig = inspect.signature(l2_Component.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_l2::implementationclass_is_not_abstract():
-    assert not inspect.isabstract(l2::ImplementationClass)
+def test_l2_implementationclass_is_not_abstract():
+    assert not inspect.isabstract(l2_ImplementationClass)
 
 
-def test_l2::implementationclass_constructor_exists():
-    assert callable(l2::ImplementationClass.__init__)
+def test_l2_implementationclass_constructor_exists():
+    assert callable(l2_ImplementationClass.__init__)
 
 
-def test_l2::implementationclass_constructor_args():
-    sig = inspect.signature(l2::ImplementationClass.__init__)
+def test_l2_implementationclass_constructor_args():
+    sig = inspect.signature(l2_ImplementationClass.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -362,254 +362,254 @@ def test_file_constructor_args():
 
 
 
-def test_l2::executable_is_not_abstract():
-    assert not inspect.isabstract(l2::Executable)
+def test_l2_executable_is_not_abstract():
+    assert not inspect.isabstract(l2_Executable)
 
 
-def test_l2::executable_constructor_exists():
-    assert callable(l2::Executable.__init__)
+def test_l2_executable_constructor_exists():
+    assert callable(l2_Executable.__init__)
 
 
-def test_l2::executable_constructor_args():
-    sig = inspect.signature(l2::Executable.__init__)
+def test_l2_executable_constructor_args():
+    sig = inspect.signature(l2_Executable.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_l2::source_is_not_abstract():
-    assert not inspect.isabstract(l2::Source)
+def test_l2_library_is_not_abstract():
+    assert not inspect.isabstract(l2_Library)
 
 
-def test_l2::source_constructor_exists():
-    assert callable(l2::Source.__init__)
+def test_l2_library_constructor_exists():
+    assert callable(l2_Library.__init__)
 
 
-def test_l2::source_constructor_args():
-    sig = inspect.signature(l2::Source.__init__)
+def test_l2_library_constructor_args():
+    sig = inspect.signature(l2_Library.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_l2::library_is_not_abstract():
-    assert not inspect.isabstract(l2::Library)
+def test_l2_script_is_not_abstract():
+    assert not inspect.isabstract(l2_Script)
 
 
-def test_l2::library_constructor_exists():
-    assert callable(l2::Library.__init__)
+def test_l2_script_constructor_exists():
+    assert callable(l2_Script.__init__)
 
 
-def test_l2::library_constructor_args():
-    sig = inspect.signature(l2::Library.__init__)
+def test_l2_script_constructor_args():
+    sig = inspect.signature(l2_Script.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_l2::script_is_not_abstract():
-    assert not inspect.isabstract(l2::Script)
+def test_l2_source_is_not_abstract():
+    assert not inspect.isabstract(l2_Source)
 
 
-def test_l2::script_constructor_exists():
-    assert callable(l2::Script.__init__)
+def test_l2_source_constructor_exists():
+    assert callable(l2_Source.__init__)
 
 
-def test_l2::script_constructor_args():
-    sig = inspect.signature(l2::Script.__init__)
+def test_l2_source_constructor_args():
+    sig = inspect.signature(l2_Source.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_l2::document_is_not_abstract():
-    assert not inspect.isabstract(l2::Document)
+def test_l2_document_is_not_abstract():
+    assert not inspect.isabstract(l2_Document)
 
 
-def test_l2::document_constructor_exists():
-    assert callable(l2::Document.__init__)
+def test_l2_document_constructor_exists():
+    assert callable(l2_Document.__init__)
 
 
-def test_l2::document_constructor_args():
-    sig = inspect.signature(l2::Document.__init__)
+def test_l2_document_constructor_args():
+    sig = inspect.signature(l2_Document.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_l2::destroy_is_not_abstract():
-    assert not inspect.isabstract(l2::Destroy)
+def test_l2_destroy_is_not_abstract():
+    assert not inspect.isabstract(l2_Destroy)
 
 
-def test_l2::destroy_constructor_exists():
-    assert callable(l2::Destroy.__init__)
+def test_l2_destroy_constructor_exists():
+    assert callable(l2_Destroy.__init__)
 
 
-def test_l2::destroy_constructor_args():
-    sig = inspect.signature(l2::Destroy.__init__)
+def test_l2_destroy_constructor_args():
+    sig = inspect.signature(l2_Destroy.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_l2::valuespecification_is_not_abstract():
-    assert not inspect.isabstract(l2::ValueSpecification)
+def test_l2_valuespecification_is_not_abstract():
+    assert not inspect.isabstract(l2_ValueSpecification)
 
 
-def test_l2::valuespecification_constructor_exists():
-    assert callable(l2::ValueSpecification.__init__)
+def test_l2_valuespecification_constructor_exists():
+    assert callable(l2_ValueSpecification.__init__)
 
 
-def test_l2::valuespecification_constructor_args():
-    sig = inspect.signature(l2::ValueSpecification.__init__)
+def test_l2_valuespecification_constructor_args():
+    sig = inspect.signature(l2_ValueSpecification.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_l2::abstraction_is_not_abstract():
-    assert not inspect.isabstract(l2::Abstraction)
+def test_l2_abstraction_is_not_abstract():
+    assert not inspect.isabstract(l2_Abstraction)
 
 
-def test_l2::abstraction_constructor_exists():
-    assert callable(l2::Abstraction.__init__)
+def test_l2_abstraction_constructor_exists():
+    assert callable(l2_Abstraction.__init__)
 
 
-def test_l2::abstraction_constructor_args():
-    sig = inspect.signature(l2::Abstraction.__init__)
+def test_l2_abstraction_constructor_args():
+    sig = inspect.signature(l2_Abstraction.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_l2::derive_is_not_abstract():
-    assert not inspect.isabstract(l2::Derive)
+def test_l2_derive_is_not_abstract():
+    assert not inspect.isabstract(l2_Derive)
 
 
-def test_l2::derive_constructor_exists():
-    assert callable(l2::Derive.__init__)
+def test_l2_derive_constructor_exists():
+    assert callable(l2_Derive.__init__)
 
 
-def test_l2::derive_constructor_args():
-    sig = inspect.signature(l2::Derive.__init__)
+def test_l2_derive_constructor_args():
+    sig = inspect.signature(l2_Derive.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_l2::behavioralfeature_is_not_abstract():
-    assert not inspect.isabstract(l2::BehavioralFeature)
+def test_l2_behavioralfeature_is_not_abstract():
+    assert not inspect.isabstract(l2_BehavioralFeature)
 
 
-def test_l2::behavioralfeature_constructor_exists():
-    assert callable(l2::BehavioralFeature.__init__)
+def test_l2_behavioralfeature_constructor_exists():
+    assert callable(l2_BehavioralFeature.__init__)
 
 
-def test_l2::behavioralfeature_constructor_args():
-    sig = inspect.signature(l2::BehavioralFeature.__init__)
+def test_l2_behavioralfeature_constructor_args():
+    sig = inspect.signature(l2_BehavioralFeature.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_l2::entity_is_not_abstract():
-    assert not inspect.isabstract(l2::Entity)
+def test_l2_entity_is_not_abstract():
+    assert not inspect.isabstract(l2_Entity)
 
 
-def test_l2::entity_constructor_exists():
-    assert callable(l2::Entity.__init__)
+def test_l2_entity_constructor_exists():
+    assert callable(l2_Entity.__init__)
 
 
-def test_l2::entity_constructor_args():
-    sig = inspect.signature(l2::Entity.__init__)
+def test_l2_entity_constructor_args():
+    sig = inspect.signature(l2_Entity.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_l2::artifact_is_not_abstract():
-    assert not inspect.isabstract(l2::Artifact)
+def test_l2_artifact_is_not_abstract():
+    assert not inspect.isabstract(l2_Artifact)
 
 
-def test_l2::artifact_constructor_exists():
-    assert callable(l2::Artifact.__init__)
+def test_l2_artifact_constructor_exists():
+    assert callable(l2_Artifact.__init__)
 
 
-def test_l2::artifact_constructor_args():
-    sig = inspect.signature(l2::Artifact.__init__)
+def test_l2_artifact_constructor_args():
+    sig = inspect.signature(l2_Artifact.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_l2::file_is_not_abstract():
-    assert not inspect.isabstract(l2::File)
+def test_l2_file_is_not_abstract():
+    assert not inspect.isabstract(l2_File)
 
 
-def test_l2::file_constructor_exists():
-    assert callable(l2::File.__init__)
+def test_l2_file_constructor_exists():
+    assert callable(l2_File.__init__)
 
 
-def test_l2::file_constructor_args():
-    sig = inspect.signature(l2::File.__init__)
+def test_l2_file_constructor_args():
+    sig = inspect.signature(l2_File.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_l2::call_is_not_abstract():
-    assert not inspect.isabstract(l2::Call)
+def test_l2_call_is_not_abstract():
+    assert not inspect.isabstract(l2_Call)
 
 
-def test_l2::call_constructor_exists():
-    assert callable(l2::Call.__init__)
+def test_l2_call_constructor_exists():
+    assert callable(l2_Call.__init__)
 
 
-def test_l2::call_constructor_args():
-    sig = inspect.signature(l2::Call.__init__)
+def test_l2_call_constructor_args():
+    sig = inspect.signature(l2_Call.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_l2::class_is_not_abstract():
-    assert not inspect.isabstract(l2::Class)
+def test_l2_class_is_not_abstract():
+    assert not inspect.isabstract(l2_Class)
 
 
-def test_l2::class_constructor_exists():
-    assert callable(l2::Class.__init__)
+def test_l2_class_constructor_exists():
+    assert callable(l2_Class.__init__)
 
 
-def test_l2::class_constructor_args():
-    sig = inspect.signature(l2::Class.__init__)
+def test_l2_class_constructor_args():
+    sig = inspect.signature(l2_Class.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_l2::auxiliary_is_not_abstract():
-    assert not inspect.isabstract(l2::Auxiliary)
+def test_l2_auxiliary_is_not_abstract():
+    assert not inspect.isabstract(l2_Auxiliary)
 
 
-def test_l2::auxiliary_constructor_exists():
-    assert callable(l2::Auxiliary.__init__)
+def test_l2_auxiliary_constructor_exists():
+    assert callable(l2_Auxiliary.__init__)
 
 
-def test_l2::auxiliary_constructor_args():
-    sig = inspect.signature(l2::Auxiliary.__init__)
+def test_l2_auxiliary_constructor_args():
+    sig = inspect.signature(l2_Auxiliary.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_l2::create_is_not_abstract():
-    assert not inspect.isabstract(l2::Create)
+def test_l2_create_is_not_abstract():
+    assert not inspect.isabstract(l2_Create)
 
 
-def test_l2::create_constructor_exists():
-    assert callable(l2::Create.__init__)
+def test_l2_create_constructor_exists():
+    assert callable(l2_Create.__init__)
 
 
-def test_l2::create_constructor_args():
-    sig = inspect.signature(l2::Create.__init__)
+def test_l2_create_constructor_args():
+    sig = inspect.signature(l2_Create.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_l2::usage_is_not_abstract():
-    assert not inspect.isabstract(l2::Usage)
+def test_l2_usage_is_not_abstract():
+    assert not inspect.isabstract(l2_Usage)
 
 
-def test_l2::usage_constructor_exists():
-    assert callable(l2::Usage.__init__)
+def test_l2_usage_constructor_exists():
+    assert callable(l2_Usage.__init__)
 
 
-def test_l2::usage_constructor_args():
-    sig = inspect.signature(l2::Usage.__init__)
+def test_l2_usage_constructor_args():
+    sig = inspect.signature(l2_Usage.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -624,141 +624,141 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-l2::Trace_strategy = st.builds(
-    l2::Trace,
+l2_Trace_strategy = st.builds(
+    l2_Trace,
 )
-l2::Subsystem_strategy = st.builds(
-    l2::Subsystem,
+l2_Subsystem_strategy = st.builds(
+    l2_Subsystem,
 )
-l2::Specification_strategy = st.builds(
-    l2::Specification,
+l2_Specification_strategy = st.builds(
+    l2_Specification,
 )
-l2::Utility_strategy = st.builds(
-    l2::Utility,
+l2_Utility_strategy = st.builds(
+    l2_Utility,
 )
-l2::Type_strategy = st.builds(
-    l2::Type,
+l2_Type_strategy = st.builds(
+    l2_Type,
 )
-l2::Send_strategy = st.builds(
-    l2::Send,
+l2_Send_strategy = st.builds(
+    l2_Send,
 )
-l2::Responsibility_strategy = st.builds(
-    l2::Responsibility,
+l2_Responsibility_strategy = st.builds(
+    l2_Responsibility,
 )
-l2::Refine_strategy = st.builds(
-    l2::Refine,
+l2_Refine_strategy = st.builds(
+    l2_Refine,
 )
-l2::Classifier_strategy = st.builds(
-    l2::Classifier,
+l2_Classifier_strategy = st.builds(
+    l2_Classifier,
 )
-l2::Service_strategy = st.builds(
-    l2::Service,
+l2_Service_strategy = st.builds(
+    l2_Service,
 )
-l2::Instantiate_strategy = st.builds(
-    l2::Instantiate,
+l2_Instantiate_strategy = st.builds(
+    l2_Instantiate,
 )
-l2::Realization_strategy = st.builds(
-    l2::Realization,
+l2_Realization_strategy = st.builds(
+    l2_Realization,
 )
-l2::Process_strategy = st.builds(
-    l2::Process,
+l2_Process_strategy = st.builds(
+    l2_Process,
 )
-l2::ModelLibrary_strategy = st.builds(
-    l2::ModelLibrary,
+l2_ModelLibrary_strategy = st.builds(
+    l2_ModelLibrary,
 )
-l2::Metaclass_strategy = st.builds(
-    l2::Metaclass,
+l2_Metaclass_strategy = st.builds(
+    l2_Metaclass,
 )
-l2::Implement_strategy = st.builds(
-    l2::Implement,
+l2_Implement_strategy = st.builds(
+    l2_Implement,
 )
-l2::Package_strategy = st.builds(
-    l2::Package,
+l2_Package_strategy = st.builds(
+    l2_Package,
 )
-l2::Framework_strategy = st.builds(
-    l2::Framework,
+l2_Framework_strategy = st.builds(
+    l2_Framework,
 )
-l2::Focus_strategy = st.builds(
-    l2::Focus,
+l2_Focus_strategy = st.builds(
+    l2_Focus,
 )
-l2::Component_strategy = st.builds(
-    l2::Component,
+l2_Component_strategy = st.builds(
+    l2_Component,
 )
-l2::ImplementationClass_strategy = st.builds(
-    l2::ImplementationClass,
+l2_ImplementationClass_strategy = st.builds(
+    l2_ImplementationClass,
 )
 File_strategy = st.builds(
     File,
 )
-l2::Executable_strategy = st.builds(
-    l2::Executable,
+l2_Executable_strategy = st.builds(
+    l2_Executable,
 )
-l2::Source_strategy = st.builds(
-    l2::Source,
+l2_Library_strategy = st.builds(
+    l2_Library,
 )
-l2::Library_strategy = st.builds(
-    l2::Library,
+l2_Script_strategy = st.builds(
+    l2_Script,
 )
-l2::Script_strategy = st.builds(
-    l2::Script,
+l2_Source_strategy = st.builds(
+    l2_Source,
 )
-l2::Document_strategy = st.builds(
-    l2::Document,
+l2_Document_strategy = st.builds(
+    l2_Document,
 )
-l2::Destroy_strategy = st.builds(
-    l2::Destroy,
+l2_Destroy_strategy = st.builds(
+    l2_Destroy,
 )
-l2::ValueSpecification_strategy = st.builds(
-    l2::ValueSpecification,
+l2_ValueSpecification_strategy = st.builds(
+    l2_ValueSpecification,
 )
-l2::Abstraction_strategy = st.builds(
-    l2::Abstraction,
+l2_Abstraction_strategy = st.builds(
+    l2_Abstraction,
 )
-l2::Derive_strategy = st.builds(
-    l2::Derive,
+l2_Derive_strategy = st.builds(
+    l2_Derive,
 )
-l2::BehavioralFeature_strategy = st.builds(
-    l2::BehavioralFeature,
+l2_BehavioralFeature_strategy = st.builds(
+    l2_BehavioralFeature,
 )
-l2::Entity_strategy = st.builds(
-    l2::Entity,
+l2_Entity_strategy = st.builds(
+    l2_Entity,
 )
-l2::Artifact_strategy = st.builds(
-    l2::Artifact,
+l2_Artifact_strategy = st.builds(
+    l2_Artifact,
 )
-l2::File_strategy = st.builds(
-    l2::File,
+l2_File_strategy = st.builds(
+    l2_File,
 )
-l2::Call_strategy = st.builds(
-    l2::Call,
+l2_Call_strategy = st.builds(
+    l2_Call,
 )
-l2::Class_strategy = st.builds(
-    l2::Class,
+l2_Class_strategy = st.builds(
+    l2_Class,
 )
-l2::Auxiliary_strategy = st.builds(
-    l2::Auxiliary,
+l2_Auxiliary_strategy = st.builds(
+    l2_Auxiliary,
 )
-l2::Create_strategy = st.builds(
-    l2::Create,
+l2_Create_strategy = st.builds(
+    l2_Create,
 )
-l2::Usage_strategy = st.builds(
-    l2::Usage,
+l2_Usage_strategy = st.builds(
+    l2_Usage,
 )
 
-@given(instance=l2::Trace_strategy)
+@given(instance=l2_Trace_strategy)
 @settings(max_examples=50)
-def test_l2::trace_instantiation(instance):
-    assert isinstance(instance, l2::Trace)
+def test_l2_trace_instantiation(instance):
+    assert isinstance(instance, l2_Trace)
 
-@given(instance=l2::Subsystem_strategy)
+@given(instance=l2_Subsystem_strategy)
 @settings(max_examples=50)
-def test_l2::subsystem_instantiation(instance):
-    assert isinstance(instance, l2::Subsystem)
+def test_l2_subsystem_instantiation(instance):
+    assert isinstance(instance, l2_Subsystem)
 
-@given(instance=l2::Specification_strategy)
+@given(instance=l2_Specification_strategy)
 @settings(max_examples=50)
-def test_l2::specification_instantiation(instance):
-    assert isinstance(instance, l2::Specification)
+def test_l2_specification_instantiation(instance):
+    assert isinstance(instance, l2_Specification)
 
 import warnings
 import copy
@@ -766,9 +766,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=l2::Specification_strategy)
+@given(instance=l2_Specification_strategy)
 @settings(max_examples=30)
-def test_l2::specification_cannot_be_type_changes_state(instance):
+def test_l2_specification_cannot_be_type_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -783,19 +783,19 @@ def test_l2::specification_cannot_be_type_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'cannot_be_type' in l2::Specification is empty"
+        assert has_statements, f"Function 'cannot_be_type' in l2_Specification is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'cannot_be_type' in l2::Specification did not change state; check implementation")
+            warnings.warn(f"Operation 'cannot_be_type' in l2_Specification did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'cannot_be_type' in l2::Specification is not implemented or raised an error")
+        warnings.warn(f"Operation 'cannot_be_type' in l2_Specification is not implemented or raised an error")
 
-@given(instance=l2::Utility_strategy)
+@given(instance=l2_Utility_strategy)
 @settings(max_examples=50)
-def test_l2::utility_instantiation(instance):
-    assert isinstance(instance, l2::Utility)
+def test_l2_utility_instantiation(instance):
+    assert isinstance(instance, l2_Utility)
 
 import warnings
 import copy
@@ -803,9 +803,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=l2::Utility_strategy)
+@given(instance=l2_Utility_strategy)
 @settings(max_examples=30)
-def test_l2::utility_is_utility_changes_state(instance):
+def test_l2_utility_is_utility_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -820,19 +820,19 @@ def test_l2::utility_is_utility_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'is_utility' in l2::Utility is empty"
+        assert has_statements, f"Function 'is_utility' in l2_Utility is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'is_utility' in l2::Utility did not change state; check implementation")
+            warnings.warn(f"Operation 'is_utility' in l2_Utility did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'is_utility' in l2::Utility is not implemented or raised an error")
+        warnings.warn(f"Operation 'is_utility' in l2_Utility is not implemented or raised an error")
 
-@given(instance=l2::Type_strategy)
+@given(instance=l2_Type_strategy)
 @settings(max_examples=50)
-def test_l2::type_instantiation(instance):
-    assert isinstance(instance, l2::Type)
+def test_l2_type_instantiation(instance):
+    assert isinstance(instance, l2_Type)
 
 import warnings
 import copy
@@ -840,9 +840,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=l2::Type_strategy)
+@given(instance=l2_Type_strategy)
 @settings(max_examples=30)
-def test_l2::type_cannot_be_specification_changes_state(instance):
+def test_l2_type_cannot_be_specification_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -857,19 +857,19 @@ def test_l2::type_cannot_be_specification_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'cannot_be_specification' in l2::Type is empty"
+        assert has_statements, f"Function 'cannot_be_specification' in l2_Type is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'cannot_be_specification' in l2::Type did not change state; check implementation")
+            warnings.warn(f"Operation 'cannot_be_specification' in l2_Type did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'cannot_be_specification' in l2::Type is not implemented or raised an error")
+        warnings.warn(f"Operation 'cannot_be_specification' in l2_Type is not implemented or raised an error")
 
-@given(instance=l2::Send_strategy)
+@given(instance=l2_Send_strategy)
 @settings(max_examples=50)
-def test_l2::send_instantiation(instance):
-    assert isinstance(instance, l2::Send)
+def test_l2_send_instantiation(instance):
+    assert isinstance(instance, l2_Send)
 
 import warnings
 import copy
@@ -877,9 +877,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=l2::Send_strategy)
+@given(instance=l2_Send_strategy)
 @settings(max_examples=30)
-def test_l2::send_client_operation_sends_supplier_signal_changes_state(instance):
+def test_l2_send_client_operation_sends_supplier_signal_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -894,39 +894,39 @@ def test_l2::send_client_operation_sends_supplier_signal_changes_state(instance)
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'client_operation_sends_supplier_signal' in l2::Send is empty"
+        assert has_statements, f"Function 'client_operation_sends_supplier_signal' in l2_Send is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'client_operation_sends_supplier_signal' in l2::Send did not change state; check implementation")
+            warnings.warn(f"Operation 'client_operation_sends_supplier_signal' in l2_Send did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'client_operation_sends_supplier_signal' in l2::Send is not implemented or raised an error")
+        warnings.warn(f"Operation 'client_operation_sends_supplier_signal' in l2_Send is not implemented or raised an error")
 
-@given(instance=l2::Responsibility_strategy)
+@given(instance=l2_Responsibility_strategy)
 @settings(max_examples=50)
-def test_l2::responsibility_instantiation(instance):
-    assert isinstance(instance, l2::Responsibility)
+def test_l2_responsibility_instantiation(instance):
+    assert isinstance(instance, l2_Responsibility)
 
-@given(instance=l2::Refine_strategy)
+@given(instance=l2_Refine_strategy)
 @settings(max_examples=50)
-def test_l2::refine_instantiation(instance):
-    assert isinstance(instance, l2::Refine)
+def test_l2_refine_instantiation(instance):
+    assert isinstance(instance, l2_Refine)
 
-@given(instance=l2::Classifier_strategy)
+@given(instance=l2_Classifier_strategy)
 @settings(max_examples=50)
-def test_l2::classifier_instantiation(instance):
-    assert isinstance(instance, l2::Classifier)
+def test_l2_classifier_instantiation(instance):
+    assert isinstance(instance, l2_Classifier)
 
-@given(instance=l2::Service_strategy)
+@given(instance=l2_Service_strategy)
 @settings(max_examples=50)
-def test_l2::service_instantiation(instance):
-    assert isinstance(instance, l2::Service)
+def test_l2_service_instantiation(instance):
+    assert isinstance(instance, l2_Service)
 
-@given(instance=l2::Instantiate_strategy)
+@given(instance=l2_Instantiate_strategy)
 @settings(max_examples=50)
-def test_l2::instantiate_instantiation(instance):
-    assert isinstance(instance, l2::Instantiate)
+def test_l2_instantiate_instantiation(instance):
+    assert isinstance(instance, l2_Instantiate)
 
 import warnings
 import copy
@@ -934,9 +934,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=l2::Instantiate_strategy)
+@given(instance=l2_Instantiate_strategy)
 @settings(max_examples=30)
-def test_l2::instantiate_client_and_supplier_are_classifiers_changes_state(instance):
+def test_l2_instantiate_client_and_supplier_are_classifiers_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -951,19 +951,19 @@ def test_l2::instantiate_client_and_supplier_are_classifiers_changes_state(insta
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'client_and_supplier_are_classifiers' in l2::Instantiate is empty"
+        assert has_statements, f"Function 'client_and_supplier_are_classifiers' in l2_Instantiate is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'client_and_supplier_are_classifiers' in l2::Instantiate did not change state; check implementation")
+            warnings.warn(f"Operation 'client_and_supplier_are_classifiers' in l2_Instantiate did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'client_and_supplier_are_classifiers' in l2::Instantiate is not implemented or raised an error")
+        warnings.warn(f"Operation 'client_and_supplier_are_classifiers' in l2_Instantiate is not implemented or raised an error")
 
-@given(instance=l2::Realization_strategy)
+@given(instance=l2_Realization_strategy)
 @settings(max_examples=50)
-def test_l2::realization_instantiation(instance):
-    assert isinstance(instance, l2::Realization)
+def test_l2_realization_instantiation(instance):
+    assert isinstance(instance, l2_Realization)
 
 import warnings
 import copy
@@ -971,9 +971,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=l2::Realization_strategy)
+@given(instance=l2_Realization_strategy)
 @settings(max_examples=30)
-def test_l2::realization_cannot_be_implementationclass_changes_state(instance):
+def test_l2_realization_cannot_be_implementationclass_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -988,34 +988,34 @@ def test_l2::realization_cannot_be_implementationclass_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'cannot_be_implementationClass' in l2::Realization is empty"
+        assert has_statements, f"Function 'cannot_be_implementationClass' in l2_Realization is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'cannot_be_implementationClass' in l2::Realization did not change state; check implementation")
+            warnings.warn(f"Operation 'cannot_be_implementationClass' in l2_Realization did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'cannot_be_implementationClass' in l2::Realization is not implemented or raised an error")
+        warnings.warn(f"Operation 'cannot_be_implementationClass' in l2_Realization is not implemented or raised an error")
 
-@given(instance=l2::Process_strategy)
+@given(instance=l2_Process_strategy)
 @settings(max_examples=50)
-def test_l2::process_instantiation(instance):
-    assert isinstance(instance, l2::Process)
+def test_l2_process_instantiation(instance):
+    assert isinstance(instance, l2_Process)
 
-@given(instance=l2::ModelLibrary_strategy)
+@given(instance=l2_ModelLibrary_strategy)
 @settings(max_examples=50)
-def test_l2::modellibrary_instantiation(instance):
-    assert isinstance(instance, l2::ModelLibrary)
+def test_l2_modellibrary_instantiation(instance):
+    assert isinstance(instance, l2_ModelLibrary)
 
-@given(instance=l2::Metaclass_strategy)
+@given(instance=l2_Metaclass_strategy)
 @settings(max_examples=50)
-def test_l2::metaclass_instantiation(instance):
-    assert isinstance(instance, l2::Metaclass)
+def test_l2_metaclass_instantiation(instance):
+    assert isinstance(instance, l2_Metaclass)
 
-@given(instance=l2::Implement_strategy)
+@given(instance=l2_Implement_strategy)
 @settings(max_examples=50)
-def test_l2::implement_instantiation(instance):
-    assert isinstance(instance, l2::Implement)
+def test_l2_implement_instantiation(instance):
+    assert isinstance(instance, l2_Implement)
 
 import warnings
 import copy
@@ -1023,9 +1023,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=l2::Implement_strategy)
+@given(instance=l2_Implement_strategy)
 @settings(max_examples=30)
-def test_l2::implement_implements_specification_changes_state(instance):
+def test_l2_implement_implements_specification_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -1040,39 +1040,39 @@ def test_l2::implement_implements_specification_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'implements_specification' in l2::Implement is empty"
+        assert has_statements, f"Function 'implements_specification' in l2_Implement is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'implements_specification' in l2::Implement did not change state; check implementation")
+            warnings.warn(f"Operation 'implements_specification' in l2_Implement did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'implements_specification' in l2::Implement is not implemented or raised an error")
+        warnings.warn(f"Operation 'implements_specification' in l2_Implement is not implemented or raised an error")
 
-@given(instance=l2::Package_strategy)
+@given(instance=l2_Package_strategy)
 @settings(max_examples=50)
-def test_l2::package_instantiation(instance):
-    assert isinstance(instance, l2::Package)
+def test_l2_package_instantiation(instance):
+    assert isinstance(instance, l2_Package)
 
-@given(instance=l2::Framework_strategy)
+@given(instance=l2_Framework_strategy)
 @settings(max_examples=50)
-def test_l2::framework_instantiation(instance):
-    assert isinstance(instance, l2::Framework)
+def test_l2_framework_instantiation(instance):
+    assert isinstance(instance, l2_Framework)
 
-@given(instance=l2::Focus_strategy)
+@given(instance=l2_Focus_strategy)
 @settings(max_examples=50)
-def test_l2::focus_instantiation(instance):
-    assert isinstance(instance, l2::Focus)
+def test_l2_focus_instantiation(instance):
+    assert isinstance(instance, l2_Focus)
 
-@given(instance=l2::Component_strategy)
+@given(instance=l2_Component_strategy)
 @settings(max_examples=50)
-def test_l2::component_instantiation(instance):
-    assert isinstance(instance, l2::Component)
+def test_l2_component_instantiation(instance):
+    assert isinstance(instance, l2_Component)
 
-@given(instance=l2::ImplementationClass_strategy)
+@given(instance=l2_ImplementationClass_strategy)
 @settings(max_examples=50)
-def test_l2::implementationclass_instantiation(instance):
-    assert isinstance(instance, l2::ImplementationClass)
+def test_l2_implementationclass_instantiation(instance):
+    assert isinstance(instance, l2_ImplementationClass)
 
 import warnings
 import copy
@@ -1080,9 +1080,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=l2::ImplementationClass_strategy)
+@given(instance=l2_ImplementationClass_strategy)
 @settings(max_examples=30)
-def test_l2::implementationclass_cannot_be_realization_changes_state(instance):
+def test_l2_implementationclass_cannot_be_realization_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -1097,89 +1097,89 @@ def test_l2::implementationclass_cannot_be_realization_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'cannot_be_realization' in l2::ImplementationClass is empty"
+        assert has_statements, f"Function 'cannot_be_realization' in l2_ImplementationClass is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'cannot_be_realization' in l2::ImplementationClass did not change state; check implementation")
+            warnings.warn(f"Operation 'cannot_be_realization' in l2_ImplementationClass did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'cannot_be_realization' in l2::ImplementationClass is not implemented or raised an error")
+        warnings.warn(f"Operation 'cannot_be_realization' in l2_ImplementationClass is not implemented or raised an error")
 
 @given(instance=File_strategy)
 @settings(max_examples=50)
 def test_file_instantiation(instance):
     assert isinstance(instance, File)
 
-@given(instance=l2::Executable_strategy)
+@given(instance=l2_Executable_strategy)
 @settings(max_examples=50)
-def test_l2::executable_instantiation(instance):
-    assert isinstance(instance, l2::Executable)
+def test_l2_executable_instantiation(instance):
+    assert isinstance(instance, l2_Executable)
 
-@given(instance=l2::Source_strategy)
+@given(instance=l2_Library_strategy)
 @settings(max_examples=50)
-def test_l2::source_instantiation(instance):
-    assert isinstance(instance, l2::Source)
+def test_l2_library_instantiation(instance):
+    assert isinstance(instance, l2_Library)
 
-@given(instance=l2::Library_strategy)
+@given(instance=l2_Script_strategy)
 @settings(max_examples=50)
-def test_l2::library_instantiation(instance):
-    assert isinstance(instance, l2::Library)
+def test_l2_script_instantiation(instance):
+    assert isinstance(instance, l2_Script)
 
-@given(instance=l2::Script_strategy)
+@given(instance=l2_Source_strategy)
 @settings(max_examples=50)
-def test_l2::script_instantiation(instance):
-    assert isinstance(instance, l2::Script)
+def test_l2_source_instantiation(instance):
+    assert isinstance(instance, l2_Source)
 
-@given(instance=l2::Document_strategy)
+@given(instance=l2_Document_strategy)
 @settings(max_examples=50)
-def test_l2::document_instantiation(instance):
-    assert isinstance(instance, l2::Document)
+def test_l2_document_instantiation(instance):
+    assert isinstance(instance, l2_Document)
 
-@given(instance=l2::Destroy_strategy)
+@given(instance=l2_Destroy_strategy)
 @settings(max_examples=50)
-def test_l2::destroy_instantiation(instance):
-    assert isinstance(instance, l2::Destroy)
+def test_l2_destroy_instantiation(instance):
+    assert isinstance(instance, l2_Destroy)
 
-@given(instance=l2::ValueSpecification_strategy)
+@given(instance=l2_ValueSpecification_strategy)
 @settings(max_examples=50)
-def test_l2::valuespecification_instantiation(instance):
-    assert isinstance(instance, l2::ValueSpecification)
+def test_l2_valuespecification_instantiation(instance):
+    assert isinstance(instance, l2_ValueSpecification)
 
-@given(instance=l2::Abstraction_strategy)
+@given(instance=l2_Abstraction_strategy)
 @settings(max_examples=50)
-def test_l2::abstraction_instantiation(instance):
-    assert isinstance(instance, l2::Abstraction)
+def test_l2_abstraction_instantiation(instance):
+    assert isinstance(instance, l2_Abstraction)
 
-@given(instance=l2::Derive_strategy)
+@given(instance=l2_Derive_strategy)
 @settings(max_examples=50)
-def test_l2::derive_instantiation(instance):
-    assert isinstance(instance, l2::Derive)
+def test_l2_derive_instantiation(instance):
+    assert isinstance(instance, l2_Derive)
 
-@given(instance=l2::BehavioralFeature_strategy)
+@given(instance=l2_BehavioralFeature_strategy)
 @settings(max_examples=50)
-def test_l2::behavioralfeature_instantiation(instance):
-    assert isinstance(instance, l2::BehavioralFeature)
+def test_l2_behavioralfeature_instantiation(instance):
+    assert isinstance(instance, l2_BehavioralFeature)
 
-@given(instance=l2::Entity_strategy)
+@given(instance=l2_Entity_strategy)
 @settings(max_examples=50)
-def test_l2::entity_instantiation(instance):
-    assert isinstance(instance, l2::Entity)
+def test_l2_entity_instantiation(instance):
+    assert isinstance(instance, l2_Entity)
 
-@given(instance=l2::Artifact_strategy)
+@given(instance=l2_Artifact_strategy)
 @settings(max_examples=50)
-def test_l2::artifact_instantiation(instance):
-    assert isinstance(instance, l2::Artifact)
+def test_l2_artifact_instantiation(instance):
+    assert isinstance(instance, l2_Artifact)
 
-@given(instance=l2::File_strategy)
+@given(instance=l2_File_strategy)
 @settings(max_examples=50)
-def test_l2::file_instantiation(instance):
-    assert isinstance(instance, l2::File)
+def test_l2_file_instantiation(instance):
+    assert isinstance(instance, l2_File)
 
-@given(instance=l2::Call_strategy)
+@given(instance=l2_Call_strategy)
 @settings(max_examples=50)
-def test_l2::call_instantiation(instance):
-    assert isinstance(instance, l2::Call)
+def test_l2_call_instantiation(instance):
+    assert isinstance(instance, l2_Call)
 
 import warnings
 import copy
@@ -1187,9 +1187,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=l2::Call_strategy)
+@given(instance=l2_Call_strategy)
 @settings(max_examples=30)
-def test_l2::call_client_and_supplier_are_operations_changes_state(instance):
+def test_l2_call_client_and_supplier_are_operations_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -1204,29 +1204,29 @@ def test_l2::call_client_and_supplier_are_operations_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'client_and_supplier_are_operations' in l2::Call is empty"
+        assert has_statements, f"Function 'client_and_supplier_are_operations' in l2_Call is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'client_and_supplier_are_operations' in l2::Call did not change state; check implementation")
+            warnings.warn(f"Operation 'client_and_supplier_are_operations' in l2_Call did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'client_and_supplier_are_operations' in l2::Call is not implemented or raised an error")
+        warnings.warn(f"Operation 'client_and_supplier_are_operations' in l2_Call is not implemented or raised an error")
 
-@given(instance=l2::Class_strategy)
+@given(instance=l2_Class_strategy)
 @settings(max_examples=50)
-def test_l2::class_instantiation(instance):
-    assert isinstance(instance, l2::Class)
+def test_l2_class_instantiation(instance):
+    assert isinstance(instance, l2_Class)
 
-@given(instance=l2::Auxiliary_strategy)
+@given(instance=l2_Auxiliary_strategy)
 @settings(max_examples=50)
-def test_l2::auxiliary_instantiation(instance):
-    assert isinstance(instance, l2::Auxiliary)
+def test_l2_auxiliary_instantiation(instance):
+    assert isinstance(instance, l2_Auxiliary)
 
-@given(instance=l2::Create_strategy)
+@given(instance=l2_Create_strategy)
 @settings(max_examples=50)
-def test_l2::create_instantiation(instance):
-    assert isinstance(instance, l2::Create)
+def test_l2_create_instantiation(instance):
+    assert isinstance(instance, l2_Create)
 
 import warnings
 import copy
@@ -1234,9 +1234,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=l2::Create_strategy)
+@given(instance=l2_Create_strategy)
 @settings(max_examples=30)
-def test_l2::create_client_and_supplier_are_classifiers_changes_state(instance):
+def test_l2_create_client_and_supplier_are_classifiers_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -1251,16 +1251,16 @@ def test_l2::create_client_and_supplier_are_classifiers_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'client_and_supplier_are_classifiers' in l2::Create is empty"
+        assert has_statements, f"Function 'client_and_supplier_are_classifiers' in l2_Create is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'client_and_supplier_are_classifiers' in l2::Create did not change state; check implementation")
+            warnings.warn(f"Operation 'client_and_supplier_are_classifiers' in l2_Create did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'client_and_supplier_are_classifiers' in l2::Create is not implemented or raised an error")
+        warnings.warn(f"Operation 'client_and_supplier_are_classifiers' in l2_Create is not implemented or raised an error")
 
-@given(instance=l2::Usage_strategy)
+@given(instance=l2_Usage_strategy)
 @settings(max_examples=50)
-def test_l2::usage_instantiation(instance):
-    assert isinstance(instance, l2::Usage)
+def test_l2_usage_instantiation(instance):
+    assert isinstance(instance, l2_Usage)

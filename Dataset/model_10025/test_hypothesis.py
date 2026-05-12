@@ -3,16 +3,16 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    RoyalAndLoyal::LoyaltyProgram,
-    RoyalAndLoyal::CustomerCard,
-    RoyalAndLoyal::Container::RandL,
-    RoyalAndLoyal::Customer,
-    RoyalAndLoyal::ServiceLevel,
-    RoyalAndLoyal::ProgramPartner,
-    RoyalAndLoyal::Service,
+from python_code import (
+    RoyalAndLoyal_LoyaltyProgram,
+    RoyalAndLoyal_CustomerCard,
+    RoyalAndLoyal_Container_RandL,
+    RoyalAndLoyal_Customer,
+    RoyalAndLoyal_ServiceLevel,
+    RoyalAndLoyal_ProgramPartner,
+    RoyalAndLoyal_Service,
 )
 
 # =============================================================================
@@ -21,37 +21,37 @@ from classes import (
 
 
 
-def test_royalandloyal::loyaltyprogram_is_not_abstract():
-    assert not inspect.isabstract(RoyalAndLoyal::LoyaltyProgram)
+def test_royalandloyal_loyaltyprogram_is_not_abstract():
+    assert not inspect.isabstract(RoyalAndLoyal_LoyaltyProgram)
 
 
-def test_royalandloyal::loyaltyprogram_constructor_exists():
-    assert callable(RoyalAndLoyal::LoyaltyProgram.__init__)
+def test_royalandloyal_loyaltyprogram_constructor_exists():
+    assert callable(RoyalAndLoyal_LoyaltyProgram.__init__)
 
 
-def test_royalandloyal::loyaltyprogram_constructor_args():
-    sig = inspect.signature(RoyalAndLoyal::LoyaltyProgram.__init__)
+def test_royalandloyal_loyaltyprogram_constructor_args():
+    sig = inspect.signature(RoyalAndLoyal_LoyaltyProgram.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_royalandloyal::customercard_is_not_abstract():
-    assert not inspect.isabstract(RoyalAndLoyal::CustomerCard)
+def test_royalandloyal_customercard_is_not_abstract():
+    assert not inspect.isabstract(RoyalAndLoyal_CustomerCard)
 
 
-def test_royalandloyal::customercard_constructor_exists():
-    assert callable(RoyalAndLoyal::CustomerCard.__init__)
+def test_royalandloyal_customercard_constructor_exists():
+    assert callable(RoyalAndLoyal_CustomerCard.__init__)
 
 
-def test_royalandloyal::customercard_constructor_args():
-    sig = inspect.signature(RoyalAndLoyal::CustomerCard.__init__)
+def test_royalandloyal_customercard_constructor_args():
+    sig = inspect.signature(RoyalAndLoyal_CustomerCard.__init__)
     params = list(sig.parameters.keys())
     assert "valid" in params, "Missing parameter 'valid'"
 
-def test_royalandloyal::customercard_has_valid():
-    assert hasattr(RoyalAndLoyal::CustomerCard, "valid")
+def test_royalandloyal_customercard_has_valid():
+    assert hasattr(RoyalAndLoyal_CustomerCard, "valid")
     descriptor = None
-    for klass in RoyalAndLoyal::CustomerCard.__mro__:
+    for klass in RoyalAndLoyal_CustomerCard.__mro__:
         if "valid" in klass.__dict__:
             descriptor = klass.__dict__["valid"]
             break
@@ -59,65 +59,65 @@ def test_royalandloyal::customercard_has_valid():
 
 
 
-def test_royalandloyal::container::randl_is_not_abstract():
-    assert not inspect.isabstract(RoyalAndLoyal::Container::RandL)
+def test_royalandloyal_container_randl_is_not_abstract():
+    assert not inspect.isabstract(RoyalAndLoyal_Container_RandL)
 
 
-def test_royalandloyal::container::randl_constructor_exists():
-    assert callable(RoyalAndLoyal::Container::RandL.__init__)
+def test_royalandloyal_container_randl_constructor_exists():
+    assert callable(RoyalAndLoyal_Container_RandL.__init__)
 
 
-def test_royalandloyal::container::randl_constructor_args():
-    sig = inspect.signature(RoyalAndLoyal::Container::RandL.__init__)
+def test_royalandloyal_container_randl_constructor_args():
+    sig = inspect.signature(RoyalAndLoyal_Container_RandL.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_royalandloyal::customer_is_not_abstract():
-    assert not inspect.isabstract(RoyalAndLoyal::Customer)
+def test_royalandloyal_customer_is_not_abstract():
+    assert not inspect.isabstract(RoyalAndLoyal_Customer)
 
 
-def test_royalandloyal::customer_constructor_exists():
-    assert callable(RoyalAndLoyal::Customer.__init__)
+def test_royalandloyal_customer_constructor_exists():
+    assert callable(RoyalAndLoyal_Customer.__init__)
 
 
-def test_royalandloyal::customer_constructor_args():
-    sig = inspect.signature(RoyalAndLoyal::Customer.__init__)
+def test_royalandloyal_customer_constructor_args():
+    sig = inspect.signature(RoyalAndLoyal_Customer.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_royalandloyal::servicelevel_is_not_abstract():
-    assert not inspect.isabstract(RoyalAndLoyal::ServiceLevel)
+def test_royalandloyal_servicelevel_is_not_abstract():
+    assert not inspect.isabstract(RoyalAndLoyal_ServiceLevel)
 
 
-def test_royalandloyal::servicelevel_constructor_exists():
-    assert callable(RoyalAndLoyal::ServiceLevel.__init__)
+def test_royalandloyal_servicelevel_constructor_exists():
+    assert callable(RoyalAndLoyal_ServiceLevel.__init__)
 
 
-def test_royalandloyal::servicelevel_constructor_args():
-    sig = inspect.signature(RoyalAndLoyal::ServiceLevel.__init__)
+def test_royalandloyal_servicelevel_constructor_args():
+    sig = inspect.signature(RoyalAndLoyal_ServiceLevel.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_royalandloyal::programpartner_is_not_abstract():
-    assert not inspect.isabstract(RoyalAndLoyal::ProgramPartner)
+def test_royalandloyal_programpartner_is_not_abstract():
+    assert not inspect.isabstract(RoyalAndLoyal_ProgramPartner)
 
 
-def test_royalandloyal::programpartner_constructor_exists():
-    assert callable(RoyalAndLoyal::ProgramPartner.__init__)
+def test_royalandloyal_programpartner_constructor_exists():
+    assert callable(RoyalAndLoyal_ProgramPartner.__init__)
 
 
-def test_royalandloyal::programpartner_constructor_args():
-    sig = inspect.signature(RoyalAndLoyal::ProgramPartner.__init__)
+def test_royalandloyal_programpartner_constructor_args():
+    sig = inspect.signature(RoyalAndLoyal_ProgramPartner.__init__)
     params = list(sig.parameters.keys())
     assert "numberOfCustomers" in params, "Missing parameter 'numberOfCustomers'"
 
-def test_royalandloyal::programpartner_has_numberOfCustomers():
-    assert hasattr(RoyalAndLoyal::ProgramPartner, "numberOfCustomers")
+def test_royalandloyal_programpartner_has_numberOfCustomers():
+    assert hasattr(RoyalAndLoyal_ProgramPartner, "numberOfCustomers")
     descriptor = None
-    for klass in RoyalAndLoyal::ProgramPartner.__mro__:
+    for klass in RoyalAndLoyal_ProgramPartner.__mro__:
         if "numberOfCustomers" in klass.__dict__:
             descriptor = klass.__dict__["numberOfCustomers"]
             break
@@ -125,16 +125,16 @@ def test_royalandloyal::programpartner_has_numberOfCustomers():
 
 
 
-def test_royalandloyal::service_is_not_abstract():
-    assert not inspect.isabstract(RoyalAndLoyal::Service)
+def test_royalandloyal_service_is_not_abstract():
+    assert not inspect.isabstract(RoyalAndLoyal_Service)
 
 
-def test_royalandloyal::service_constructor_exists():
-    assert callable(RoyalAndLoyal::Service.__init__)
+def test_royalandloyal_service_constructor_exists():
+    assert callable(RoyalAndLoyal_Service.__init__)
 
 
-def test_royalandloyal::service_constructor_args():
-    sig = inspect.signature(RoyalAndLoyal::Service.__init__)
+def test_royalandloyal_service_constructor_args():
+    sig = inspect.signature(RoyalAndLoyal_Service.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -149,36 +149,36 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-RoyalAndLoyal::LoyaltyProgram_strategy = st.builds(
-    RoyalAndLoyal::LoyaltyProgram,
+RoyalAndLoyal_LoyaltyProgram_strategy = st.builds(
+    RoyalAndLoyal_LoyaltyProgram,
 )
-RoyalAndLoyal::CustomerCard_strategy = st.builds(
-    RoyalAndLoyal::CustomerCard,
+RoyalAndLoyal_CustomerCard_strategy = st.builds(
+    RoyalAndLoyal_CustomerCard,
     valid=
         st.booleans()
 )
-RoyalAndLoyal::Container::RandL_strategy = st.builds(
-    RoyalAndLoyal::Container::RandL,
+RoyalAndLoyal_Container_RandL_strategy = st.builds(
+    RoyalAndLoyal_Container_RandL,
 )
-RoyalAndLoyal::Customer_strategy = st.builds(
-    RoyalAndLoyal::Customer,
+RoyalAndLoyal_Customer_strategy = st.builds(
+    RoyalAndLoyal_Customer,
 )
-RoyalAndLoyal::ServiceLevel_strategy = st.builds(
-    RoyalAndLoyal::ServiceLevel,
+RoyalAndLoyal_ServiceLevel_strategy = st.builds(
+    RoyalAndLoyal_ServiceLevel,
 )
-RoyalAndLoyal::ProgramPartner_strategy = st.builds(
-    RoyalAndLoyal::ProgramPartner,
+RoyalAndLoyal_ProgramPartner_strategy = st.builds(
+    RoyalAndLoyal_ProgramPartner,
     numberOfCustomers=
         st.integers()
 )
-RoyalAndLoyal::Service_strategy = st.builds(
-    RoyalAndLoyal::Service,
+RoyalAndLoyal_Service_strategy = st.builds(
+    RoyalAndLoyal_Service,
 )
 
-@given(instance=RoyalAndLoyal::LoyaltyProgram_strategy)
+@given(instance=RoyalAndLoyal_LoyaltyProgram_strategy)
 @settings(max_examples=50)
-def test_royalandloyal::loyaltyprogram_instantiation(instance):
-    assert isinstance(instance, RoyalAndLoyal::LoyaltyProgram)
+def test_royalandloyal_loyaltyprogram_instantiation(instance):
+    assert isinstance(instance, RoyalAndLoyal_LoyaltyProgram)
 
 import warnings
 import copy
@@ -186,9 +186,40 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=RoyalAndLoyal::LoyaltyProgram_strategy)
+@given(instance=RoyalAndLoyal_LoyaltyProgram_strategy)
 @settings(max_examples=30)
-def test_royalandloyal::loyaltyprogram_addservice_changes_state(instance):
+def test_royalandloyal_loyaltyprogram_enroll_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.enroll(
+            "test"
+        )
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.enroll).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'enroll' in RoyalAndLoyal_LoyaltyProgram is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'enroll' in RoyalAndLoyal_LoyaltyProgram did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'enroll' in RoyalAndLoyal_LoyaltyProgram is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=RoyalAndLoyal_LoyaltyProgram_strategy)
+@settings(max_examples=30)
+def test_royalandloyal_loyaltyprogram_addservice_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -204,94 +235,57 @@ def test_royalandloyal::loyaltyprogram_addservice_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'addService' in RoyalAndLoyal::LoyaltyProgram is empty"
+        assert has_statements, f"Function 'addService' in RoyalAndLoyal_LoyaltyProgram is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'addService' in RoyalAndLoyal::LoyaltyProgram did not change state; check implementation")
+            warnings.warn(f"Operation 'addService' in RoyalAndLoyal_LoyaltyProgram did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'addService' in RoyalAndLoyal::LoyaltyProgram is not implemented or raised an error")
+        warnings.warn(f"Operation 'addService' in RoyalAndLoyal_LoyaltyProgram is not implemented or raised an error")
 
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=RoyalAndLoyal::LoyaltyProgram_strategy)
-@settings(max_examples=30)
-def test_royalandloyal::loyaltyprogram_enroll_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.enroll(
-            "test"
-        )
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.enroll).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'enroll' in RoyalAndLoyal::LoyaltyProgram is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'enroll' in RoyalAndLoyal::LoyaltyProgram did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'enroll' in RoyalAndLoyal::LoyaltyProgram is not implemented or raised an error")
-
-@given(instance=RoyalAndLoyal::CustomerCard_strategy)
+@given(instance=RoyalAndLoyal_CustomerCard_strategy)
 @settings(max_examples=50)
-def test_royalandloyal::customercard_instantiation(instance):
-    assert isinstance(instance, RoyalAndLoyal::CustomerCard)
-
-@given(instance=RoyalAndLoyal::CustomerCard_strategy)
-def test_royalandloyal::customercard_valid_type(instance):
-    assert isinstance(instance.valid, bool)
+def test_royalandloyal_customercard_instantiation(instance):
+    assert isinstance(instance, RoyalAndLoyal_CustomerCard)
 
 
-@given(instance=RoyalAndLoyal::CustomerCard_strategy)
-def test_royalandloyal::customercard_valid_setter(instance):
+
+@given(instance=RoyalAndLoyal_CustomerCard_strategy)
+def test_royalandloyal_customercard_valid_setter(instance):
     original = instance.valid
     instance.valid = original
     assert instance.valid == original
 
-@given(instance=RoyalAndLoyal::Container::RandL_strategy)
+@given(instance=RoyalAndLoyal_Container_RandL_strategy)
 @settings(max_examples=50)
-def test_royalandloyal::container::randl_instantiation(instance):
-    assert isinstance(instance, RoyalAndLoyal::Container::RandL)
+def test_royalandloyal_container_randl_instantiation(instance):
+    assert isinstance(instance, RoyalAndLoyal_Container_RandL)
 
-@given(instance=RoyalAndLoyal::Customer_strategy)
+@given(instance=RoyalAndLoyal_Customer_strategy)
 @settings(max_examples=50)
-def test_royalandloyal::customer_instantiation(instance):
-    assert isinstance(instance, RoyalAndLoyal::Customer)
+def test_royalandloyal_customer_instantiation(instance):
+    assert isinstance(instance, RoyalAndLoyal_Customer)
 
-@given(instance=RoyalAndLoyal::ServiceLevel_strategy)
+@given(instance=RoyalAndLoyal_ServiceLevel_strategy)
 @settings(max_examples=50)
-def test_royalandloyal::servicelevel_instantiation(instance):
-    assert isinstance(instance, RoyalAndLoyal::ServiceLevel)
+def test_royalandloyal_servicelevel_instantiation(instance):
+    assert isinstance(instance, RoyalAndLoyal_ServiceLevel)
 
-@given(instance=RoyalAndLoyal::ProgramPartner_strategy)
+@given(instance=RoyalAndLoyal_ProgramPartner_strategy)
 @settings(max_examples=50)
-def test_royalandloyal::programpartner_instantiation(instance):
-    assert isinstance(instance, RoyalAndLoyal::ProgramPartner)
-
-@given(instance=RoyalAndLoyal::ProgramPartner_strategy)
-def test_royalandloyal::programpartner_numberOfCustomers_type(instance):
-    assert isinstance(instance.numberOfCustomers, int)
+def test_royalandloyal_programpartner_instantiation(instance):
+    assert isinstance(instance, RoyalAndLoyal_ProgramPartner)
 
 
-@given(instance=RoyalAndLoyal::ProgramPartner_strategy)
-def test_royalandloyal::programpartner_numberOfCustomers_setter(instance):
+
+@given(instance=RoyalAndLoyal_ProgramPartner_strategy)
+def test_royalandloyal_programpartner_numberOfCustomers_setter(instance):
     original = instance.numberOfCustomers
     instance.numberOfCustomers = original
     assert instance.numberOfCustomers == original
 
-@given(instance=RoyalAndLoyal::Service_strategy)
+@given(instance=RoyalAndLoyal_Service_strategy)
 @settings(max_examples=50)
-def test_royalandloyal::service_instantiation(instance):
-    assert isinstance(instance, RoyalAndLoyal::Service)
+def test_royalandloyal_service_instantiation(instance):
+    assert isinstance(instance, RoyalAndLoyal_Service)

@@ -3,12 +3,12 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    FaultyRelations::A,
-    FaultyRelations::C,
-    FaultyRelations::B,
+from python_code import (
+    FaultyRelations_A,
+    FaultyRelations_C,
+    FaultyRelations_B,
 )
 
 # =============================================================================
@@ -17,57 +17,57 @@ from classes import (
 
 
 
-def test_faultyrelations::a_is_not_abstract():
-    assert not inspect.isabstract(FaultyRelations::A)
+def test_faultyrelations_a_is_not_abstract():
+    assert not inspect.isabstract(FaultyRelations_A)
 
 
-def test_faultyrelations::a_constructor_exists():
-    assert callable(FaultyRelations::A.__init__)
+def test_faultyrelations_a_constructor_exists():
+    assert callable(FaultyRelations_A.__init__)
 
 
-def test_faultyrelations::a_constructor_args():
-    sig = inspect.signature(FaultyRelations::A.__init__)
+def test_faultyrelations_a_constructor_args():
+    sig = inspect.signature(FaultyRelations_A.__init__)
     params = list(sig.parameters.keys())
-    assert "w" in params, "Missing parameter 'w'"
     assert "v" in params, "Missing parameter 'v'"
+    assert "w" in params, "Missing parameter 'w'"
 
-def test_faultyrelations::a_has_w():
-    assert hasattr(FaultyRelations::A, "w")
+def test_faultyrelations_a_has_v():
+    assert hasattr(FaultyRelations_A, "v")
     descriptor = None
-    for klass in FaultyRelations::A.__mro__:
-        if "w" in klass.__dict__:
-            descriptor = klass.__dict__["w"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_faultyrelations::a_has_v():
-    assert hasattr(FaultyRelations::A, "v")
-    descriptor = None
-    for klass in FaultyRelations::A.__mro__:
+    for klass in FaultyRelations_A.__mro__:
         if "v" in klass.__dict__:
             descriptor = klass.__dict__["v"]
             break
     assert isinstance(descriptor, property)
 
+def test_faultyrelations_a_has_w():
+    assert hasattr(FaultyRelations_A, "w")
+    descriptor = None
+    for klass in FaultyRelations_A.__mro__:
+        if "w" in klass.__dict__:
+            descriptor = klass.__dict__["w"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_faultyrelations::c_is_not_abstract():
-    assert not inspect.isabstract(FaultyRelations::C)
+
+def test_faultyrelations_c_is_not_abstract():
+    assert not inspect.isabstract(FaultyRelations_C)
 
 
-def test_faultyrelations::c_constructor_exists():
-    assert callable(FaultyRelations::C.__init__)
+def test_faultyrelations_c_constructor_exists():
+    assert callable(FaultyRelations_C.__init__)
 
 
-def test_faultyrelations::c_constructor_args():
-    sig = inspect.signature(FaultyRelations::C.__init__)
+def test_faultyrelations_c_constructor_args():
+    sig = inspect.signature(FaultyRelations_C.__init__)
     params = list(sig.parameters.keys())
     assert "u" in params, "Missing parameter 'u'"
 
-def test_faultyrelations::c_has_u():
-    assert hasattr(FaultyRelations::C, "u")
+def test_faultyrelations_c_has_u():
+    assert hasattr(FaultyRelations_C, "u")
     descriptor = None
-    for klass in FaultyRelations::C.__mro__:
+    for klass in FaultyRelations_C.__mro__:
         if "u" in klass.__dict__:
             descriptor = klass.__dict__["u"]
             break
@@ -75,35 +75,35 @@ def test_faultyrelations::c_has_u():
 
 
 
-def test_faultyrelations::b_is_not_abstract():
-    assert not inspect.isabstract(FaultyRelations::B)
+def test_faultyrelations_b_is_not_abstract():
+    assert not inspect.isabstract(FaultyRelations_B)
 
 
-def test_faultyrelations::b_constructor_exists():
-    assert callable(FaultyRelations::B.__init__)
+def test_faultyrelations_b_constructor_exists():
+    assert callable(FaultyRelations_B.__init__)
 
 
-def test_faultyrelations::b_constructor_args():
-    sig = inspect.signature(FaultyRelations::B.__init__)
+def test_faultyrelations_b_constructor_args():
+    sig = inspect.signature(FaultyRelations_B.__init__)
     params = list(sig.parameters.keys())
-    assert "x" in params, "Missing parameter 'x'"
     assert "y" in params, "Missing parameter 'y'"
+    assert "x" in params, "Missing parameter 'x'"
 
-def test_faultyrelations::b_has_x():
-    assert hasattr(FaultyRelations::B, "x")
+def test_faultyrelations_b_has_y():
+    assert hasattr(FaultyRelations_B, "y")
     descriptor = None
-    for klass in FaultyRelations::B.__mro__:
-        if "x" in klass.__dict__:
-            descriptor = klass.__dict__["x"]
+    for klass in FaultyRelations_B.__mro__:
+        if "y" in klass.__dict__:
+            descriptor = klass.__dict__["y"]
             break
     assert isinstance(descriptor, property)
 
-def test_faultyrelations::b_has_y():
-    assert hasattr(FaultyRelations::B, "y")
+def test_faultyrelations_b_has_x():
+    assert hasattr(FaultyRelations_B, "x")
     descriptor = None
-    for klass in FaultyRelations::B.__mro__:
-        if "y" in klass.__dict__:
-            descriptor = klass.__dict__["y"]
+    for klass in FaultyRelations_B.__mro__:
+        if "x" in klass.__dict__:
+            descriptor = klass.__dict__["x"]
             break
     assert isinstance(descriptor, property)
 
@@ -119,92 +119,77 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-FaultyRelations::A_strategy = st.builds(
-    FaultyRelations::A,
-    w=
-        st.booleans(),
+FaultyRelations_A_strategy = st.builds(
+    FaultyRelations_A,
     v=
-        st.integers()
+        st.integers(),
+    w=
+        st.booleans()
 )
-FaultyRelations::C_strategy = st.builds(
-    FaultyRelations::C,
+FaultyRelations_C_strategy = st.builds(
+    FaultyRelations_C,
     u=
         st.integers()
 )
-FaultyRelations::B_strategy = st.builds(
-    FaultyRelations::B,
-    x=
-        st.integers(),
+FaultyRelations_B_strategy = st.builds(
+    FaultyRelations_B,
     y=
+        st.integers(),
+    x=
         st.integers()
 )
 
-@given(instance=FaultyRelations::A_strategy)
+@given(instance=FaultyRelations_A_strategy)
 @settings(max_examples=50)
-def test_faultyrelations::a_instantiation(instance):
-    assert isinstance(instance, FaultyRelations::A)
-
-@given(instance=FaultyRelations::A_strategy)
-def test_faultyrelations::a_w_type(instance):
-    assert isinstance(instance.w, bool)
+def test_faultyrelations_a_instantiation(instance):
+    assert isinstance(instance, FaultyRelations_A)
 
 
-@given(instance=FaultyRelations::A_strategy)
-def test_faultyrelations::a_w_setter(instance):
-    original = instance.w
-    instance.w = original
-    assert instance.w == original
 
-@given(instance=FaultyRelations::A_strategy)
-def test_faultyrelations::a_v_type(instance):
-    assert isinstance(instance.v, int)
-
-
-@given(instance=FaultyRelations::A_strategy)
-def test_faultyrelations::a_v_setter(instance):
+@given(instance=FaultyRelations_A_strategy)
+def test_faultyrelations_a_v_setter(instance):
     original = instance.v
     instance.v = original
     assert instance.v == original
 
-@given(instance=FaultyRelations::C_strategy)
+
+
+@given(instance=FaultyRelations_A_strategy)
+def test_faultyrelations_a_w_setter(instance):
+    original = instance.w
+    instance.w = original
+    assert instance.w == original
+
+@given(instance=FaultyRelations_C_strategy)
 @settings(max_examples=50)
-def test_faultyrelations::c_instantiation(instance):
-    assert isinstance(instance, FaultyRelations::C)
-
-@given(instance=FaultyRelations::C_strategy)
-def test_faultyrelations::c_u_type(instance):
-    assert isinstance(instance.u, int)
+def test_faultyrelations_c_instantiation(instance):
+    assert isinstance(instance, FaultyRelations_C)
 
 
-@given(instance=FaultyRelations::C_strategy)
-def test_faultyrelations::c_u_setter(instance):
+
+@given(instance=FaultyRelations_C_strategy)
+def test_faultyrelations_c_u_setter(instance):
     original = instance.u
     instance.u = original
     assert instance.u == original
 
-@given(instance=FaultyRelations::B_strategy)
+@given(instance=FaultyRelations_B_strategy)
 @settings(max_examples=50)
-def test_faultyrelations::b_instantiation(instance):
-    assert isinstance(instance, FaultyRelations::B)
-
-@given(instance=FaultyRelations::B_strategy)
-def test_faultyrelations::b_x_type(instance):
-    assert isinstance(instance.x, int)
+def test_faultyrelations_b_instantiation(instance):
+    assert isinstance(instance, FaultyRelations_B)
 
 
-@given(instance=FaultyRelations::B_strategy)
-def test_faultyrelations::b_x_setter(instance):
-    original = instance.x
-    instance.x = original
-    assert instance.x == original
 
-@given(instance=FaultyRelations::B_strategy)
-def test_faultyrelations::b_y_type(instance):
-    assert isinstance(instance.y, int)
-
-
-@given(instance=FaultyRelations::B_strategy)
-def test_faultyrelations::b_y_setter(instance):
+@given(instance=FaultyRelations_B_strategy)
+def test_faultyrelations_b_y_setter(instance):
     original = instance.y
     instance.y = original
     assert instance.y == original
+
+
+
+@given(instance=FaultyRelations_B_strategy)
+def test_faultyrelations_b_x_setter(instance):
+    original = instance.x
+    instance.x = original
+    assert instance.x == original

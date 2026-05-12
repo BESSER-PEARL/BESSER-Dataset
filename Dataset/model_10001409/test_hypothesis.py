@@ -3,7 +3,7 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
 from python_code import (
     java_lang_Runnable_Interface,
@@ -23,9 +23,9 @@ from python_code import (
     memory_MMU,
     memory_Word,
     memory_Memory,
-    cpu_InstructionSet,
-    driver_CPUSchedulingPolicy,
     Byte,
+    driver_CPUSchedulingPolicy,
+    cpu_InstructionSet,
     pcb_PCB_Status,
 )
 
@@ -60,10 +60,19 @@ def test_driver_scheduler_constructor_exists():
 def test_driver_scheduler_constructor_args():
     sig = inspect.signature(driver_Scheduler.__init__)
     params = list(sig.parameters.keys())
-    assert "taskManager" in params, "Missing parameter 'taskManager'"
-    assert "disk" in params, "Missing parameter 'disk'"
-    assert "schedulingMethod" in params, "Missing parameter 'schedulingMethod'"
     assert "mmu" in params, "Missing parameter 'mmu'"
+    assert "taskManager" in params, "Missing parameter 'taskManager'"
+    assert "schedulingMethod" in params, "Missing parameter 'schedulingMethod'"
+    assert "disk" in params, "Missing parameter 'disk'"
+
+def test_driver_scheduler_has_mmu():
+    assert hasattr(driver_Scheduler, "mmu")
+    descriptor = None
+    for klass in driver_Scheduler.__mro__:
+        if "mmu" in klass.__dict__:
+            descriptor = klass.__dict__["mmu"]
+            break
+    assert isinstance(descriptor, property)
 
 def test_driver_scheduler_has_taskManager():
     assert hasattr(driver_Scheduler, "taskManager")
@@ -71,15 +80,6 @@ def test_driver_scheduler_has_taskManager():
     for klass in driver_Scheduler.__mro__:
         if "taskManager" in klass.__dict__:
             descriptor = klass.__dict__["taskManager"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_driver_scheduler_has_disk():
-    assert hasattr(driver_Scheduler, "disk")
-    descriptor = None
-    for klass in driver_Scheduler.__mro__:
-        if "disk" in klass.__dict__:
-            descriptor = klass.__dict__["disk"]
             break
     assert isinstance(descriptor, property)
 
@@ -92,12 +92,12 @@ def test_driver_scheduler_has_schedulingMethod():
             break
     assert isinstance(descriptor, property)
 
-def test_driver_scheduler_has_mmu():
-    assert hasattr(driver_Scheduler, "mmu")
+def test_driver_scheduler_has_disk():
+    assert hasattr(driver_Scheduler, "disk")
     descriptor = None
     for klass in driver_Scheduler.__mro__:
-        if "mmu" in klass.__dict__:
-            descriptor = klass.__dict__["mmu"]
+        if "disk" in klass.__dict__:
+            descriptor = klass.__dict__["disk"]
             break
     assert isinstance(descriptor, property)
 
@@ -114,18 +114,9 @@ def test_driver_dispatcher_constructor_exists():
 def test_driver_dispatcher_constructor_args():
     sig = inspect.signature(driver_Dispatcher.__init__)
     params = list(sig.parameters.keys())
-    assert "mmu" in params, "Missing parameter 'mmu'"
     assert "taskManager" in params, "Missing parameter 'taskManager'"
+    assert "mmu" in params, "Missing parameter 'mmu'"
     assert "cpus" in params, "Missing parameter 'cpus'"
-
-def test_driver_dispatcher_has_mmu():
-    assert hasattr(driver_Dispatcher, "mmu")
-    descriptor = None
-    for klass in driver_Dispatcher.__mro__:
-        if "mmu" in klass.__dict__:
-            descriptor = klass.__dict__["mmu"]
-            break
-    assert isinstance(descriptor, property)
 
 def test_driver_dispatcher_has_taskManager():
     assert hasattr(driver_Dispatcher, "taskManager")
@@ -133,6 +124,15 @@ def test_driver_dispatcher_has_taskManager():
     for klass in driver_Dispatcher.__mro__:
         if "taskManager" in klass.__dict__:
             descriptor = klass.__dict__["taskManager"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_driver_dispatcher_has_mmu():
+    assert hasattr(driver_Dispatcher, "mmu")
+    descriptor = None
+    for klass in driver_Dispatcher.__mro__:
+        if "mmu" in klass.__dict__:
+            descriptor = klass.__dict__["mmu"]
             break
     assert isinstance(descriptor, property)
 
@@ -158,58 +158,31 @@ def test_driver_loader_constructor_exists():
 def test_driver_loader_constructor_args():
     sig = inspect.signature(driver_Loader.__init__)
     params = list(sig.parameters.keys())
-    assert "endOutputBufferAddress" in params, "Missing parameter 'endOutputBufferAddress'"
-    assert "startTempBufferAddress" in params, "Missing parameter 'startTempBufferAddress'"
-    assert "tempBuffSize" in params, "Missing parameter 'tempBuffSize'"
-    assert "programFile" in params, "Missing parameter 'programFile'"
-    assert "currAddress" in params, "Missing parameter 'currAddress'"
-    assert "instructionsLength" in params, "Missing parameter 'instructionsLength'"
-    assert "endInstructionAddress" in params, "Missing parameter 'endInstructionAddress'"
-    assert "pid" in params, "Missing parameter 'pid'"
-    assert "startInstructionAddress" in params, "Missing parameter 'startInstructionAddress'"
-    assert "processList" in params, "Missing parameter 'processList'"
-    assert "endTempBufferAddress" in params, "Missing parameter 'endTempBufferAddress'"
-    assert "priority" in params, "Missing parameter 'priority'"
     assert "startInputBufferAddress" in params, "Missing parameter 'startInputBufferAddress'"
-    assert "endInputBufferAddres" in params, "Missing parameter 'endInputBufferAddres'"
-    assert "outputBuffSize" in params, "Missing parameter 'outputBuffSize'"
-    assert "inputBuffSize" in params, "Missing parameter 'inputBuffSize'"
-    assert "disk" in params, "Missing parameter 'disk'"
+    assert "currAddress" in params, "Missing parameter 'currAddress'"
+    assert "endOutputBufferAddress" in params, "Missing parameter 'endOutputBufferAddress'"
+    assert "processList" in params, "Missing parameter 'processList'"
+    assert "startInstructionAddress" in params, "Missing parameter 'startInstructionAddress'"
     assert "startOutputBufferAddress" in params, "Missing parameter 'startOutputBufferAddress'"
+    assert "endInputBufferAddres" in params, "Missing parameter 'endInputBufferAddres'"
+    assert "priority" in params, "Missing parameter 'priority'"
+    assert "pid" in params, "Missing parameter 'pid'"
+    assert "endInstructionAddress" in params, "Missing parameter 'endInstructionAddress'"
+    assert "instructionsLength" in params, "Missing parameter 'instructionsLength'"
+    assert "tempBuffSize" in params, "Missing parameter 'tempBuffSize'"
+    assert "disk" in params, "Missing parameter 'disk'"
+    assert "inputBuffSize" in params, "Missing parameter 'inputBuffSize'"
+    assert "programFile" in params, "Missing parameter 'programFile'"
+    assert "startTempBufferAddress" in params, "Missing parameter 'startTempBufferAddress'"
+    assert "outputBuffSize" in params, "Missing parameter 'outputBuffSize'"
+    assert "endTempBufferAddress" in params, "Missing parameter 'endTempBufferAddress'"
 
-def test_driver_loader_has_endOutputBufferAddress():
-    assert hasattr(driver_Loader, "endOutputBufferAddress")
+def test_driver_loader_has_startInputBufferAddress():
+    assert hasattr(driver_Loader, "startInputBufferAddress")
     descriptor = None
     for klass in driver_Loader.__mro__:
-        if "endOutputBufferAddress" in klass.__dict__:
-            descriptor = klass.__dict__["endOutputBufferAddress"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_driver_loader_has_startTempBufferAddress():
-    assert hasattr(driver_Loader, "startTempBufferAddress")
-    descriptor = None
-    for klass in driver_Loader.__mro__:
-        if "startTempBufferAddress" in klass.__dict__:
-            descriptor = klass.__dict__["startTempBufferAddress"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_driver_loader_has_tempBuffSize():
-    assert hasattr(driver_Loader, "tempBuffSize")
-    descriptor = None
-    for klass in driver_Loader.__mro__:
-        if "tempBuffSize" in klass.__dict__:
-            descriptor = klass.__dict__["tempBuffSize"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_driver_loader_has_programFile():
-    assert hasattr(driver_Loader, "programFile")
-    descriptor = None
-    for klass in driver_Loader.__mro__:
-        if "programFile" in klass.__dict__:
-            descriptor = klass.__dict__["programFile"]
+        if "startInputBufferAddress" in klass.__dict__:
+            descriptor = klass.__dict__["startInputBufferAddress"]
             break
     assert isinstance(descriptor, property)
 
@@ -222,39 +195,12 @@ def test_driver_loader_has_currAddress():
             break
     assert isinstance(descriptor, property)
 
-def test_driver_loader_has_instructionsLength():
-    assert hasattr(driver_Loader, "instructionsLength")
+def test_driver_loader_has_endOutputBufferAddress():
+    assert hasattr(driver_Loader, "endOutputBufferAddress")
     descriptor = None
     for klass in driver_Loader.__mro__:
-        if "instructionsLength" in klass.__dict__:
-            descriptor = klass.__dict__["instructionsLength"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_driver_loader_has_endInstructionAddress():
-    assert hasattr(driver_Loader, "endInstructionAddress")
-    descriptor = None
-    for klass in driver_Loader.__mro__:
-        if "endInstructionAddress" in klass.__dict__:
-            descriptor = klass.__dict__["endInstructionAddress"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_driver_loader_has_pid():
-    assert hasattr(driver_Loader, "pid")
-    descriptor = None
-    for klass in driver_Loader.__mro__:
-        if "pid" in klass.__dict__:
-            descriptor = klass.__dict__["pid"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_driver_loader_has_startInstructionAddress():
-    assert hasattr(driver_Loader, "startInstructionAddress")
-    descriptor = None
-    for klass in driver_Loader.__mro__:
-        if "startInstructionAddress" in klass.__dict__:
-            descriptor = klass.__dict__["startInstructionAddress"]
+        if "endOutputBufferAddress" in klass.__dict__:
+            descriptor = klass.__dict__["endOutputBufferAddress"]
             break
     assert isinstance(descriptor, property)
 
@@ -267,30 +213,21 @@ def test_driver_loader_has_processList():
             break
     assert isinstance(descriptor, property)
 
-def test_driver_loader_has_endTempBufferAddress():
-    assert hasattr(driver_Loader, "endTempBufferAddress")
+def test_driver_loader_has_startInstructionAddress():
+    assert hasattr(driver_Loader, "startInstructionAddress")
     descriptor = None
     for klass in driver_Loader.__mro__:
-        if "endTempBufferAddress" in klass.__dict__:
-            descriptor = klass.__dict__["endTempBufferAddress"]
+        if "startInstructionAddress" in klass.__dict__:
+            descriptor = klass.__dict__["startInstructionAddress"]
             break
     assert isinstance(descriptor, property)
 
-def test_driver_loader_has_priority():
-    assert hasattr(driver_Loader, "priority")
+def test_driver_loader_has_startOutputBufferAddress():
+    assert hasattr(driver_Loader, "startOutputBufferAddress")
     descriptor = None
     for klass in driver_Loader.__mro__:
-        if "priority" in klass.__dict__:
-            descriptor = klass.__dict__["priority"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_driver_loader_has_startInputBufferAddress():
-    assert hasattr(driver_Loader, "startInputBufferAddress")
-    descriptor = None
-    for klass in driver_Loader.__mro__:
-        if "startInputBufferAddress" in klass.__dict__:
-            descriptor = klass.__dict__["startInputBufferAddress"]
+        if "startOutputBufferAddress" in klass.__dict__:
+            descriptor = klass.__dict__["startOutputBufferAddress"]
             break
     assert isinstance(descriptor, property)
 
@@ -303,21 +240,48 @@ def test_driver_loader_has_endInputBufferAddres():
             break
     assert isinstance(descriptor, property)
 
-def test_driver_loader_has_outputBuffSize():
-    assert hasattr(driver_Loader, "outputBuffSize")
+def test_driver_loader_has_priority():
+    assert hasattr(driver_Loader, "priority")
     descriptor = None
     for klass in driver_Loader.__mro__:
-        if "outputBuffSize" in klass.__dict__:
-            descriptor = klass.__dict__["outputBuffSize"]
+        if "priority" in klass.__dict__:
+            descriptor = klass.__dict__["priority"]
             break
     assert isinstance(descriptor, property)
 
-def test_driver_loader_has_inputBuffSize():
-    assert hasattr(driver_Loader, "inputBuffSize")
+def test_driver_loader_has_pid():
+    assert hasattr(driver_Loader, "pid")
     descriptor = None
     for klass in driver_Loader.__mro__:
-        if "inputBuffSize" in klass.__dict__:
-            descriptor = klass.__dict__["inputBuffSize"]
+        if "pid" in klass.__dict__:
+            descriptor = klass.__dict__["pid"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_driver_loader_has_endInstructionAddress():
+    assert hasattr(driver_Loader, "endInstructionAddress")
+    descriptor = None
+    for klass in driver_Loader.__mro__:
+        if "endInstructionAddress" in klass.__dict__:
+            descriptor = klass.__dict__["endInstructionAddress"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_driver_loader_has_instructionsLength():
+    assert hasattr(driver_Loader, "instructionsLength")
+    descriptor = None
+    for klass in driver_Loader.__mro__:
+        if "instructionsLength" in klass.__dict__:
+            descriptor = klass.__dict__["instructionsLength"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_driver_loader_has_tempBuffSize():
+    assert hasattr(driver_Loader, "tempBuffSize")
+    descriptor = None
+    for klass in driver_Loader.__mro__:
+        if "tempBuffSize" in klass.__dict__:
+            descriptor = klass.__dict__["tempBuffSize"]
             break
     assert isinstance(descriptor, property)
 
@@ -330,12 +294,48 @@ def test_driver_loader_has_disk():
             break
     assert isinstance(descriptor, property)
 
-def test_driver_loader_has_startOutputBufferAddress():
-    assert hasattr(driver_Loader, "startOutputBufferAddress")
+def test_driver_loader_has_inputBuffSize():
+    assert hasattr(driver_Loader, "inputBuffSize")
     descriptor = None
     for klass in driver_Loader.__mro__:
-        if "startOutputBufferAddress" in klass.__dict__:
-            descriptor = klass.__dict__["startOutputBufferAddress"]
+        if "inputBuffSize" in klass.__dict__:
+            descriptor = klass.__dict__["inputBuffSize"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_driver_loader_has_programFile():
+    assert hasattr(driver_Loader, "programFile")
+    descriptor = None
+    for klass in driver_Loader.__mro__:
+        if "programFile" in klass.__dict__:
+            descriptor = klass.__dict__["programFile"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_driver_loader_has_startTempBufferAddress():
+    assert hasattr(driver_Loader, "startTempBufferAddress")
+    descriptor = None
+    for klass in driver_Loader.__mro__:
+        if "startTempBufferAddress" in klass.__dict__:
+            descriptor = klass.__dict__["startTempBufferAddress"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_driver_loader_has_outputBuffSize():
+    assert hasattr(driver_Loader, "outputBuffSize")
+    descriptor = None
+    for klass in driver_Loader.__mro__:
+        if "outputBuffSize" in klass.__dict__:
+            descriptor = klass.__dict__["outputBuffSize"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_driver_loader_has_endTempBufferAddress():
+    assert hasattr(driver_Loader, "endTempBufferAddress")
+    descriptor = None
+    for klass in driver_Loader.__mro__:
+        if "endTempBufferAddress" in klass.__dict__:
+            descriptor = klass.__dict__["endTempBufferAddress"]
             break
     assert isinstance(descriptor, property)
 
@@ -352,61 +352,25 @@ def test_driver_driver_constructor_exists():
 def test_driver_driver_constructor_args():
     sig = inspect.signature(driver_Driver.__init__)
     params = list(sig.parameters.keys())
-    assert "ramSize" in params, "Missing parameter 'ramSize'"
-    assert "dispatcher" in params, "Missing parameter 'dispatcher'"
-    assert "cacheSize" in params, "Missing parameter 'cacheSize'"
-    assert "scheduler" in params, "Missing parameter 'scheduler'"
-    assert "cpus" in params, "Missing parameter 'cpus'"
-    assert "idleTimes" in params, "Missing parameter 'idleTimes'"
     assert "threads" in params, "Missing parameter 'threads'"
+    assert "idleTimes" in params, "Missing parameter 'idleTimes'"
+    assert "scheduler" in params, "Missing parameter 'scheduler'"
+    assert "cacheSize" in params, "Missing parameter 'cacheSize'"
+    assert "disk" in params, "Missing parameter 'disk'"
+    assert "taskManager" in params, "Missing parameter 'taskManager'"
     assert "executeTimes" in params, "Missing parameter 'executeTimes'"
     assert "loader" in params, "Missing parameter 'loader'"
     assert "registerSize" in params, "Missing parameter 'registerSize'"
-    assert "disk" in params, "Missing parameter 'disk'"
-    assert "taskManager" in params, "Missing parameter 'taskManager'"
+    assert "dispatcher" in params, "Missing parameter 'dispatcher'"
+    assert "cpus" in params, "Missing parameter 'cpus'"
+    assert "ramSize" in params, "Missing parameter 'ramSize'"
 
-def test_driver_driver_has_ramSize():
-    assert hasattr(driver_Driver, "ramSize")
+def test_driver_driver_has_threads():
+    assert hasattr(driver_Driver, "threads")
     descriptor = None
     for klass in driver_Driver.__mro__:
-        if "ramSize" in klass.__dict__:
-            descriptor = klass.__dict__["ramSize"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_driver_driver_has_dispatcher():
-    assert hasattr(driver_Driver, "dispatcher")
-    descriptor = None
-    for klass in driver_Driver.__mro__:
-        if "dispatcher" in klass.__dict__:
-            descriptor = klass.__dict__["dispatcher"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_driver_driver_has_cacheSize():
-    assert hasattr(driver_Driver, "cacheSize")
-    descriptor = None
-    for klass in driver_Driver.__mro__:
-        if "cacheSize" in klass.__dict__:
-            descriptor = klass.__dict__["cacheSize"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_driver_driver_has_scheduler():
-    assert hasattr(driver_Driver, "scheduler")
-    descriptor = None
-    for klass in driver_Driver.__mro__:
-        if "scheduler" in klass.__dict__:
-            descriptor = klass.__dict__["scheduler"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_driver_driver_has_cpus():
-    assert hasattr(driver_Driver, "cpus")
-    descriptor = None
-    for klass in driver_Driver.__mro__:
-        if "cpus" in klass.__dict__:
-            descriptor = klass.__dict__["cpus"]
+        if "threads" in klass.__dict__:
+            descriptor = klass.__dict__["threads"]
             break
     assert isinstance(descriptor, property)
 
@@ -419,12 +383,39 @@ def test_driver_driver_has_idleTimes():
             break
     assert isinstance(descriptor, property)
 
-def test_driver_driver_has_threads():
-    assert hasattr(driver_Driver, "threads")
+def test_driver_driver_has_scheduler():
+    assert hasattr(driver_Driver, "scheduler")
     descriptor = None
     for klass in driver_Driver.__mro__:
-        if "threads" in klass.__dict__:
-            descriptor = klass.__dict__["threads"]
+        if "scheduler" in klass.__dict__:
+            descriptor = klass.__dict__["scheduler"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_driver_driver_has_cacheSize():
+    assert hasattr(driver_Driver, "cacheSize")
+    descriptor = None
+    for klass in driver_Driver.__mro__:
+        if "cacheSize" in klass.__dict__:
+            descriptor = klass.__dict__["cacheSize"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_driver_driver_has_disk():
+    assert hasattr(driver_Driver, "disk")
+    descriptor = None
+    for klass in driver_Driver.__mro__:
+        if "disk" in klass.__dict__:
+            descriptor = klass.__dict__["disk"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_driver_driver_has_taskManager():
+    assert hasattr(driver_Driver, "taskManager")
+    descriptor = None
+    for klass in driver_Driver.__mro__:
+        if "taskManager" in klass.__dict__:
+            descriptor = klass.__dict__["taskManager"]
             break
     assert isinstance(descriptor, property)
 
@@ -455,21 +446,30 @@ def test_driver_driver_has_registerSize():
             break
     assert isinstance(descriptor, property)
 
-def test_driver_driver_has_disk():
-    assert hasattr(driver_Driver, "disk")
+def test_driver_driver_has_dispatcher():
+    assert hasattr(driver_Driver, "dispatcher")
     descriptor = None
     for klass in driver_Driver.__mro__:
-        if "disk" in klass.__dict__:
-            descriptor = klass.__dict__["disk"]
+        if "dispatcher" in klass.__dict__:
+            descriptor = klass.__dict__["dispatcher"]
             break
     assert isinstance(descriptor, property)
 
-def test_driver_driver_has_taskManager():
-    assert hasattr(driver_Driver, "taskManager")
+def test_driver_driver_has_cpus():
+    assert hasattr(driver_Driver, "cpus")
     descriptor = None
     for klass in driver_Driver.__mro__:
-        if "taskManager" in klass.__dict__:
-            descriptor = klass.__dict__["taskManager"]
+        if "cpus" in klass.__dict__:
+            descriptor = klass.__dict__["cpus"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_driver_driver_has_ramSize():
+    assert hasattr(driver_Driver, "ramSize")
+    descriptor = None
+    for klass in driver_Driver.__mro__:
+        if "ramSize" in klass.__dict__:
+            descriptor = klass.__dict__["ramSize"]
             break
     assert isinstance(descriptor, property)
 
@@ -486,18 +486,9 @@ def test_cpu_ioexecutableinstruction_constructor_exists():
 def test_cpu_ioexecutableinstruction_constructor_args():
     sig = inspect.signature(cpu_IOExecutableInstruction.__init__)
     params = list(sig.parameters.keys())
-    assert "reg2" in params, "Missing parameter 'reg2'"
     assert "address" in params, "Missing parameter 'address'"
     assert "reg1" in params, "Missing parameter 'reg1'"
-
-def test_cpu_ioexecutableinstruction_has_reg2():
-    assert hasattr(cpu_IOExecutableInstruction, "reg2")
-    descriptor = None
-    for klass in cpu_IOExecutableInstruction.__mro__:
-        if "reg2" in klass.__dict__:
-            descriptor = klass.__dict__["reg2"]
-            break
-    assert isinstance(descriptor, property)
+    assert "reg2" in params, "Missing parameter 'reg2'"
 
 def test_cpu_ioexecutableinstruction_has_address():
     assert hasattr(cpu_IOExecutableInstruction, "address")
@@ -517,6 +508,15 @@ def test_cpu_ioexecutableinstruction_has_reg1():
             break
     assert isinstance(descriptor, property)
 
+def test_cpu_ioexecutableinstruction_has_reg2():
+    assert hasattr(cpu_IOExecutableInstruction, "reg2")
+    descriptor = None
+    for klass in cpu_IOExecutableInstruction.__mro__:
+        if "reg2" in klass.__dict__:
+            descriptor = klass.__dict__["reg2"]
+            break
+    assert isinstance(descriptor, property)
+
 
 
 def test_cpu_unconditionaljumpexecutableinstruction_is_not_abstract():
@@ -530,17 +530,8 @@ def test_cpu_unconditionaljumpexecutableinstruction_constructor_exists():
 def test_cpu_unconditionaljumpexecutableinstruction_constructor_args():
     sig = inspect.signature(cpu_UnconditionalJumpExecutableInstruction.__init__)
     params = list(sig.parameters.keys())
-    assert "address" in params, "Missing parameter 'address'"
     assert "cpu" in params, "Missing parameter 'cpu'"
-
-def test_cpu_unconditionaljumpexecutableinstruction_has_address():
-    assert hasattr(cpu_UnconditionalJumpExecutableInstruction, "address")
-    descriptor = None
-    for klass in cpu_UnconditionalJumpExecutableInstruction.__mro__:
-        if "address" in klass.__dict__:
-            descriptor = klass.__dict__["address"]
-            break
-    assert isinstance(descriptor, property)
+    assert "address" in params, "Missing parameter 'address'"
 
 def test_cpu_unconditionaljumpexecutableinstruction_has_cpu():
     assert hasattr(cpu_UnconditionalJumpExecutableInstruction, "cpu")
@@ -548,6 +539,15 @@ def test_cpu_unconditionaljumpexecutableinstruction_has_cpu():
     for klass in cpu_UnconditionalJumpExecutableInstruction.__mro__:
         if "cpu" in klass.__dict__:
             descriptor = klass.__dict__["cpu"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_cpu_unconditionaljumpexecutableinstruction_has_address():
+    assert hasattr(cpu_UnconditionalJumpExecutableInstruction, "address")
+    descriptor = None
+    for klass in cpu_UnconditionalJumpExecutableInstruction.__mro__:
+        if "address" in klass.__dict__:
+            descriptor = klass.__dict__["address"]
             break
     assert isinstance(descriptor, property)
 
@@ -565,9 +565,9 @@ def test_cpu_conditionalexecutableinstruction_constructor_args():
     sig = inspect.signature(cpu_ConditionalExecutableInstruction.__init__)
     params = list(sig.parameters.keys())
     assert "cache" in params, "Missing parameter 'cache'"
-    assert "dReg" in params, "Missing parameter 'dReg'"
-    assert "cpu" in params, "Missing parameter 'cpu'"
     assert "bReg" in params, "Missing parameter 'bReg'"
+    assert "cpu" in params, "Missing parameter 'cpu'"
+    assert "dReg" in params, "Missing parameter 'dReg'"
     assert "data" in params, "Missing parameter 'data'"
 
 def test_cpu_conditionalexecutableinstruction_has_cache():
@@ -579,12 +579,12 @@ def test_cpu_conditionalexecutableinstruction_has_cache():
             break
     assert isinstance(descriptor, property)
 
-def test_cpu_conditionalexecutableinstruction_has_dReg():
-    assert hasattr(cpu_ConditionalExecutableInstruction, "dReg")
+def test_cpu_conditionalexecutableinstruction_has_bReg():
+    assert hasattr(cpu_ConditionalExecutableInstruction, "bReg")
     descriptor = None
     for klass in cpu_ConditionalExecutableInstruction.__mro__:
-        if "dReg" in klass.__dict__:
-            descriptor = klass.__dict__["dReg"]
+        if "bReg" in klass.__dict__:
+            descriptor = klass.__dict__["bReg"]
             break
     assert isinstance(descriptor, property)
 
@@ -597,12 +597,12 @@ def test_cpu_conditionalexecutableinstruction_has_cpu():
             break
     assert isinstance(descriptor, property)
 
-def test_cpu_conditionalexecutableinstruction_has_bReg():
-    assert hasattr(cpu_ConditionalExecutableInstruction, "bReg")
+def test_cpu_conditionalexecutableinstruction_has_dReg():
+    assert hasattr(cpu_ConditionalExecutableInstruction, "dReg")
     descriptor = None
     for klass in cpu_ConditionalExecutableInstruction.__mro__:
-        if "bReg" in klass.__dict__:
-            descriptor = klass.__dict__["bReg"]
+        if "dReg" in klass.__dict__:
+            descriptor = klass.__dict__["dReg"]
             break
     assert isinstance(descriptor, property)
 
@@ -730,18 +730,36 @@ def test_cpu_cpu_constructor_exists():
 def test_cpu_cpu_constructor_args():
     sig = inspect.signature(cpu_CPU.__init__)
     params = list(sig.parameters.keys())
+    assert "register" in params, "Missing parameter 'register'"
+    assert "executeTime" in params, "Missing parameter 'executeTime'"
     assert "shutdown" in params, "Missing parameter 'shutdown'"
+    assert "cpuids" in params, "Missing parameter 'cpuids'"
+    assert "idleTime" in params, "Missing parameter 'idleTime'"
     assert "cache" in params, "Missing parameter 'cache'"
     assert "numProcesses" in params, "Missing parameter 'numProcesses'"
-    assert "cpuids" in params, "Missing parameter 'cpuids'"
-    assert "cpuid" in params, "Missing parameter 'cpuid'"
-    assert "register" in params, "Missing parameter 'register'"
-    assert "pcb" in params, "Missing parameter 'pcb'"
     assert "previousInstruction" in params, "Missing parameter 'previousInstruction'"
-    assert "idleTime" in params, "Missing parameter 'idleTime'"
     assert "dmaChannel" in params, "Missing parameter 'dmaChannel'"
     assert "log" in params, "Missing parameter 'log'"
-    assert "executeTime" in params, "Missing parameter 'executeTime'"
+    assert "cpuid" in params, "Missing parameter 'cpuid'"
+    assert "pcb" in params, "Missing parameter 'pcb'"
+
+def test_cpu_cpu_has_register():
+    assert hasattr(cpu_CPU, "register")
+    descriptor = None
+    for klass in cpu_CPU.__mro__:
+        if "register" in klass.__dict__:
+            descriptor = klass.__dict__["register"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_cpu_cpu_has_executeTime():
+    assert hasattr(cpu_CPU, "executeTime")
+    descriptor = None
+    for klass in cpu_CPU.__mro__:
+        if "executeTime" in klass.__dict__:
+            descriptor = klass.__dict__["executeTime"]
+            break
+    assert isinstance(descriptor, property)
 
 def test_cpu_cpu_has_shutdown():
     assert hasattr(cpu_CPU, "shutdown")
@@ -749,6 +767,24 @@ def test_cpu_cpu_has_shutdown():
     for klass in cpu_CPU.__mro__:
         if "shutdown" in klass.__dict__:
             descriptor = klass.__dict__["shutdown"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_cpu_cpu_has_cpuids():
+    assert hasattr(cpu_CPU, "cpuids")
+    descriptor = None
+    for klass in cpu_CPU.__mro__:
+        if "cpuids" in klass.__dict__:
+            descriptor = klass.__dict__["cpuids"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_cpu_cpu_has_idleTime():
+    assert hasattr(cpu_CPU, "idleTime")
+    descriptor = None
+    for klass in cpu_CPU.__mro__:
+        if "idleTime" in klass.__dict__:
+            descriptor = klass.__dict__["idleTime"]
             break
     assert isinstance(descriptor, property)
 
@@ -770,57 +806,12 @@ def test_cpu_cpu_has_numProcesses():
             break
     assert isinstance(descriptor, property)
 
-def test_cpu_cpu_has_cpuids():
-    assert hasattr(cpu_CPU, "cpuids")
-    descriptor = None
-    for klass in cpu_CPU.__mro__:
-        if "cpuids" in klass.__dict__:
-            descriptor = klass.__dict__["cpuids"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_cpu_cpu_has_cpuid():
-    assert hasattr(cpu_CPU, "cpuid")
-    descriptor = None
-    for klass in cpu_CPU.__mro__:
-        if "cpuid" in klass.__dict__:
-            descriptor = klass.__dict__["cpuid"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_cpu_cpu_has_register():
-    assert hasattr(cpu_CPU, "register")
-    descriptor = None
-    for klass in cpu_CPU.__mro__:
-        if "register" in klass.__dict__:
-            descriptor = klass.__dict__["register"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_cpu_cpu_has_pcb():
-    assert hasattr(cpu_CPU, "pcb")
-    descriptor = None
-    for klass in cpu_CPU.__mro__:
-        if "pcb" in klass.__dict__:
-            descriptor = klass.__dict__["pcb"]
-            break
-    assert isinstance(descriptor, property)
-
 def test_cpu_cpu_has_previousInstruction():
     assert hasattr(cpu_CPU, "previousInstruction")
     descriptor = None
     for klass in cpu_CPU.__mro__:
         if "previousInstruction" in klass.__dict__:
             descriptor = klass.__dict__["previousInstruction"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_cpu_cpu_has_idleTime():
-    assert hasattr(cpu_CPU, "idleTime")
-    descriptor = None
-    for klass in cpu_CPU.__mro__:
-        if "idleTime" in klass.__dict__:
-            descriptor = klass.__dict__["idleTime"]
             break
     assert isinstance(descriptor, property)
 
@@ -842,12 +833,21 @@ def test_cpu_cpu_has_log():
             break
     assert isinstance(descriptor, property)
 
-def test_cpu_cpu_has_executeTime():
-    assert hasattr(cpu_CPU, "executeTime")
+def test_cpu_cpu_has_cpuid():
+    assert hasattr(cpu_CPU, "cpuid")
     descriptor = None
     for klass in cpu_CPU.__mro__:
-        if "executeTime" in klass.__dict__:
-            descriptor = klass.__dict__["executeTime"]
+        if "cpuid" in klass.__dict__:
+            descriptor = klass.__dict__["cpuid"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_cpu_cpu_has_pcb():
+    assert hasattr(cpu_CPU, "pcb")
+    descriptor = None
+    for klass in cpu_CPU.__mro__:
+        if "pcb" in klass.__dict__:
+            descriptor = klass.__dict__["pcb"]
             break
     assert isinstance(descriptor, property)
 
@@ -888,86 +888,23 @@ def test_pcb_pcb_constructor_exists():
 def test_pcb_pcb_constructor_args():
     sig = inspect.signature(pcb_PCB.__init__)
     params = list(sig.parameters.keys())
-    assert "startDiskTempBufferAddress" in params, "Missing parameter 'startDiskTempBufferAddress'"
-    assert "numIO" in params, "Missing parameter 'numIO'"
-    assert "startDiskInstructionAddress" in params, "Missing parameter 'startDiskInstructionAddress'"
-    assert "pid" in params, "Missing parameter 'pid'"
-    assert "outputBufferLength" in params, "Missing parameter 'outputBufferLength'"
-    assert "tempBufferLength" in params, "Missing parameter 'tempBufferLength'"
-    assert "executionCount" in params, "Missing parameter 'executionCount'"
     assert "elapsedRunTime" in params, "Missing parameter 'elapsedRunTime'"
-    assert "inputBufferLength" in params, "Missing parameter 'inputBufferLength'"
-    assert "startDiskOutputBufferAddress" in params, "Missing parameter 'startDiskOutputBufferAddress'"
-    assert "priority" in params, "Missing parameter 'priority'"
-    assert "clock" in params, "Missing parameter 'clock'"
-    assert "elapsedWaitTime" in params, "Missing parameter 'elapsedWaitTime'"
-    assert "cpuid" in params, "Missing parameter 'cpuid'"
-    assert "instructionLength" in params, "Missing parameter 'instructionLength'"
     assert "programCounter" in params, "Missing parameter 'programCounter'"
+    assert "cpuid" in params, "Missing parameter 'cpuid'"
+    assert "startDiskInstructionAddress" in params, "Missing parameter 'startDiskInstructionAddress'"
+    assert "startDiskTempBufferAddress" in params, "Missing parameter 'startDiskTempBufferAddress'"
+    assert "tempBufferLength" in params, "Missing parameter 'tempBufferLength'"
+    assert "clock" in params, "Missing parameter 'clock'"
+    assert "numIO" in params, "Missing parameter 'numIO'"
+    assert "pid" in params, "Missing parameter 'pid'"
+    assert "startDiskOutputBufferAddress" in params, "Missing parameter 'startDiskOutputBufferAddress'"
+    assert "instructionLength" in params, "Missing parameter 'instructionLength'"
+    assert "priority" in params, "Missing parameter 'priority'"
     assert "startDiskInputBufferAddress" in params, "Missing parameter 'startDiskInputBufferAddress'"
-
-def test_pcb_pcb_has_startDiskTempBufferAddress():
-    assert hasattr(pcb_PCB, "startDiskTempBufferAddress")
-    descriptor = None
-    for klass in pcb_PCB.__mro__:
-        if "startDiskTempBufferAddress" in klass.__dict__:
-            descriptor = klass.__dict__["startDiskTempBufferAddress"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_pcb_pcb_has_numIO():
-    assert hasattr(pcb_PCB, "numIO")
-    descriptor = None
-    for klass in pcb_PCB.__mro__:
-        if "numIO" in klass.__dict__:
-            descriptor = klass.__dict__["numIO"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_pcb_pcb_has_startDiskInstructionAddress():
-    assert hasattr(pcb_PCB, "startDiskInstructionAddress")
-    descriptor = None
-    for klass in pcb_PCB.__mro__:
-        if "startDiskInstructionAddress" in klass.__dict__:
-            descriptor = klass.__dict__["startDiskInstructionAddress"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_pcb_pcb_has_pid():
-    assert hasattr(pcb_PCB, "pid")
-    descriptor = None
-    for klass in pcb_PCB.__mro__:
-        if "pid" in klass.__dict__:
-            descriptor = klass.__dict__["pid"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_pcb_pcb_has_outputBufferLength():
-    assert hasattr(pcb_PCB, "outputBufferLength")
-    descriptor = None
-    for klass in pcb_PCB.__mro__:
-        if "outputBufferLength" in klass.__dict__:
-            descriptor = klass.__dict__["outputBufferLength"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_pcb_pcb_has_tempBufferLength():
-    assert hasattr(pcb_PCB, "tempBufferLength")
-    descriptor = None
-    for klass in pcb_PCB.__mro__:
-        if "tempBufferLength" in klass.__dict__:
-            descriptor = klass.__dict__["tempBufferLength"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_pcb_pcb_has_executionCount():
-    assert hasattr(pcb_PCB, "executionCount")
-    descriptor = None
-    for klass in pcb_PCB.__mro__:
-        if "executionCount" in klass.__dict__:
-            descriptor = klass.__dict__["executionCount"]
-            break
-    assert isinstance(descriptor, property)
+    assert "inputBufferLength" in params, "Missing parameter 'inputBufferLength'"
+    assert "outputBufferLength" in params, "Missing parameter 'outputBufferLength'"
+    assert "executionCount" in params, "Missing parameter 'executionCount'"
+    assert "elapsedWaitTime" in params, "Missing parameter 'elapsedWaitTime'"
 
 def test_pcb_pcb_has_elapsedRunTime():
     assert hasattr(pcb_PCB, "elapsedRunTime")
@@ -975,69 +912,6 @@ def test_pcb_pcb_has_elapsedRunTime():
     for klass in pcb_PCB.__mro__:
         if "elapsedRunTime" in klass.__dict__:
             descriptor = klass.__dict__["elapsedRunTime"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_pcb_pcb_has_inputBufferLength():
-    assert hasattr(pcb_PCB, "inputBufferLength")
-    descriptor = None
-    for klass in pcb_PCB.__mro__:
-        if "inputBufferLength" in klass.__dict__:
-            descriptor = klass.__dict__["inputBufferLength"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_pcb_pcb_has_startDiskOutputBufferAddress():
-    assert hasattr(pcb_PCB, "startDiskOutputBufferAddress")
-    descriptor = None
-    for klass in pcb_PCB.__mro__:
-        if "startDiskOutputBufferAddress" in klass.__dict__:
-            descriptor = klass.__dict__["startDiskOutputBufferAddress"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_pcb_pcb_has_priority():
-    assert hasattr(pcb_PCB, "priority")
-    descriptor = None
-    for klass in pcb_PCB.__mro__:
-        if "priority" in klass.__dict__:
-            descriptor = klass.__dict__["priority"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_pcb_pcb_has_clock():
-    assert hasattr(pcb_PCB, "clock")
-    descriptor = None
-    for klass in pcb_PCB.__mro__:
-        if "clock" in klass.__dict__:
-            descriptor = klass.__dict__["clock"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_pcb_pcb_has_elapsedWaitTime():
-    assert hasattr(pcb_PCB, "elapsedWaitTime")
-    descriptor = None
-    for klass in pcb_PCB.__mro__:
-        if "elapsedWaitTime" in klass.__dict__:
-            descriptor = klass.__dict__["elapsedWaitTime"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_pcb_pcb_has_cpuid():
-    assert hasattr(pcb_PCB, "cpuid")
-    descriptor = None
-    for klass in pcb_PCB.__mro__:
-        if "cpuid" in klass.__dict__:
-            descriptor = klass.__dict__["cpuid"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_pcb_pcb_has_instructionLength():
-    assert hasattr(pcb_PCB, "instructionLength")
-    descriptor = None
-    for klass in pcb_PCB.__mro__:
-        if "instructionLength" in klass.__dict__:
-            descriptor = klass.__dict__["instructionLength"]
             break
     assert isinstance(descriptor, property)
 
@@ -1050,12 +924,138 @@ def test_pcb_pcb_has_programCounter():
             break
     assert isinstance(descriptor, property)
 
+def test_pcb_pcb_has_cpuid():
+    assert hasattr(pcb_PCB, "cpuid")
+    descriptor = None
+    for klass in pcb_PCB.__mro__:
+        if "cpuid" in klass.__dict__:
+            descriptor = klass.__dict__["cpuid"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_pcb_pcb_has_startDiskInstructionAddress():
+    assert hasattr(pcb_PCB, "startDiskInstructionAddress")
+    descriptor = None
+    for klass in pcb_PCB.__mro__:
+        if "startDiskInstructionAddress" in klass.__dict__:
+            descriptor = klass.__dict__["startDiskInstructionAddress"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_pcb_pcb_has_startDiskTempBufferAddress():
+    assert hasattr(pcb_PCB, "startDiskTempBufferAddress")
+    descriptor = None
+    for klass in pcb_PCB.__mro__:
+        if "startDiskTempBufferAddress" in klass.__dict__:
+            descriptor = klass.__dict__["startDiskTempBufferAddress"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_pcb_pcb_has_tempBufferLength():
+    assert hasattr(pcb_PCB, "tempBufferLength")
+    descriptor = None
+    for klass in pcb_PCB.__mro__:
+        if "tempBufferLength" in klass.__dict__:
+            descriptor = klass.__dict__["tempBufferLength"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_pcb_pcb_has_clock():
+    assert hasattr(pcb_PCB, "clock")
+    descriptor = None
+    for klass in pcb_PCB.__mro__:
+        if "clock" in klass.__dict__:
+            descriptor = klass.__dict__["clock"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_pcb_pcb_has_numIO():
+    assert hasattr(pcb_PCB, "numIO")
+    descriptor = None
+    for klass in pcb_PCB.__mro__:
+        if "numIO" in klass.__dict__:
+            descriptor = klass.__dict__["numIO"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_pcb_pcb_has_pid():
+    assert hasattr(pcb_PCB, "pid")
+    descriptor = None
+    for klass in pcb_PCB.__mro__:
+        if "pid" in klass.__dict__:
+            descriptor = klass.__dict__["pid"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_pcb_pcb_has_startDiskOutputBufferAddress():
+    assert hasattr(pcb_PCB, "startDiskOutputBufferAddress")
+    descriptor = None
+    for klass in pcb_PCB.__mro__:
+        if "startDiskOutputBufferAddress" in klass.__dict__:
+            descriptor = klass.__dict__["startDiskOutputBufferAddress"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_pcb_pcb_has_instructionLength():
+    assert hasattr(pcb_PCB, "instructionLength")
+    descriptor = None
+    for klass in pcb_PCB.__mro__:
+        if "instructionLength" in klass.__dict__:
+            descriptor = klass.__dict__["instructionLength"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_pcb_pcb_has_priority():
+    assert hasattr(pcb_PCB, "priority")
+    descriptor = None
+    for klass in pcb_PCB.__mro__:
+        if "priority" in klass.__dict__:
+            descriptor = klass.__dict__["priority"]
+            break
+    assert isinstance(descriptor, property)
+
 def test_pcb_pcb_has_startDiskInputBufferAddress():
     assert hasattr(pcb_PCB, "startDiskInputBufferAddress")
     descriptor = None
     for klass in pcb_PCB.__mro__:
         if "startDiskInputBufferAddress" in klass.__dict__:
             descriptor = klass.__dict__["startDiskInputBufferAddress"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_pcb_pcb_has_inputBufferLength():
+    assert hasattr(pcb_PCB, "inputBufferLength")
+    descriptor = None
+    for klass in pcb_PCB.__mro__:
+        if "inputBufferLength" in klass.__dict__:
+            descriptor = klass.__dict__["inputBufferLength"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_pcb_pcb_has_outputBufferLength():
+    assert hasattr(pcb_PCB, "outputBufferLength")
+    descriptor = None
+    for klass in pcb_PCB.__mro__:
+        if "outputBufferLength" in klass.__dict__:
+            descriptor = klass.__dict__["outputBufferLength"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_pcb_pcb_has_executionCount():
+    assert hasattr(pcb_PCB, "executionCount")
+    descriptor = None
+    for klass in pcb_PCB.__mro__:
+        if "executionCount" in klass.__dict__:
+            descriptor = klass.__dict__["executionCount"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_pcb_pcb_has_elapsedWaitTime():
+    assert hasattr(pcb_PCB, "elapsedWaitTime")
+    descriptor = None
+    for klass in pcb_PCB.__mro__:
+        if "elapsedWaitTime" in klass.__dict__:
+            descriptor = klass.__dict__["elapsedWaitTime"]
             break
     assert isinstance(descriptor, property)
 
@@ -1131,18 +1131,18 @@ def test_memory_memory_has_storage():
             break
     assert isinstance(descriptor, property)
 
-def test_cpu_instructionset_exists():
+def test_byte_exists():
     # Check that the Enumeration exists
-    assert cpu_InstructionSet is not None
+    assert Byte is not None
 
-def test_cpu_instructionset_has_all_literals():
+def test_byte_has_all_literals():
     # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in cpu_InstructionSet]
+    enum_literals = [lit.name for lit in Byte]
     expected_literals = [
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in cpu_InstructionSet"
+        assert lit_name in enum_literals, f"Literal '' missing in Byte"
 
 def test_driver_cpuschedulingpolicy_exists():
     # Check that the Enumeration exists
@@ -1157,18 +1157,18 @@ def test_driver_cpuschedulingpolicy_has_all_literals():
     for lit_name in expected_literals:
         assert lit_name in enum_literals, f"Literal '' missing in driver_CPUSchedulingPolicy"
 
-def test_byte_exists():
+def test_cpu_instructionset_exists():
     # Check that the Enumeration exists
-    assert Byte is not None
+    assert cpu_InstructionSet is not None
 
-def test_byte_has_all_literals():
+def test_cpu_instructionset_has_all_literals():
     # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in Byte]
+    enum_literals = [lit.name for lit in cpu_InstructionSet]
     expected_literals = [
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in Byte"
+        assert lit_name in enum_literals, f"Literal '' missing in cpu_InstructionSet"
 
 def test_pcb_pcb_status_exists():
     # Check that the Enumeration exists
@@ -1200,115 +1200,115 @@ java_lang_Runnable_Interface_strategy = st.builds(
 )
 driver_Scheduler_strategy = st.builds(
     driver_Scheduler,
-    taskManager=
+    mmu=
         st.none(),
-    disk=
+    taskManager=
         st.none(),
     schedulingMethod=
         st.none(),
-    mmu=
+    disk=
         st.none()
 )
 driver_Dispatcher_strategy = st.builds(
     driver_Dispatcher,
-    mmu=
-        st.none(),
     taskManager=
+        st.none(),
+    mmu=
         st.none(),
     cpus=
         st.none()
 )
 driver_Loader_strategy = st.builds(
     driver_Loader,
-    endOutputBufferAddress=
+    startInputBufferAddress=
         st.integers(),
-    startTempBufferAddress=
-        st.integers(),
-    tempBuffSize=
-        st.integers(),
-    programFile=
-        safe_text,
     currAddress=
         st.integers(),
-    instructionsLength=
-        st.integers(),
-    endInstructionAddress=
-        st.integers(),
-    pid=
-        st.integers(),
-    startInstructionAddress=
+    endOutputBufferAddress=
         st.integers(),
     processList=
         st.none(),
-    endTempBufferAddress=
+    startInstructionAddress=
         st.integers(),
-    priority=
-        st.integers(),
-    startInputBufferAddress=
+    startOutputBufferAddress=
         st.integers(),
     endInputBufferAddres=
         st.integers(),
-    outputBuffSize=
+    priority=
         st.integers(),
-    inputBuffSize=
+    pid=
+        st.integers(),
+    endInstructionAddress=
+        st.integers(),
+    instructionsLength=
+        st.integers(),
+    tempBuffSize=
         st.integers(),
     disk=
         st.none(),
-    startOutputBufferAddress=
+    inputBuffSize=
+        st.integers(),
+    programFile=
+        safe_text,
+    startTempBufferAddress=
+        st.integers(),
+    outputBuffSize=
+        st.integers(),
+    endTempBufferAddress=
         st.integers()
 )
 driver_Driver_strategy = st.builds(
     driver_Driver,
-    ramSize=
-        st.integers(),
-    dispatcher=
-        st.none(),
-    cacheSize=
+    threads=
+        safe_text,
+    idleTimes=
         st.integers(),
     scheduler=
         st.none(),
-    cpus=
-        st.none(),
-    idleTimes=
+    cacheSize=
         st.integers(),
-    threads=
-        safe_text,
+    disk=
+        st.none(),
+    taskManager=
+        st.none(),
     executeTimes=
         st.integers(),
     loader=
         st.none(),
     registerSize=
         st.integers(),
-    disk=
+    dispatcher=
         st.none(),
-    taskManager=
-        st.none()
+    cpus=
+        st.none(),
+    ramSize=
+        st.integers()
 )
 cpu_IOExecutableInstruction_strategy = st.builds(
     cpu_IOExecutableInstruction,
-    reg2=
-        st.integers(),
     address=
         st.integers(),
     reg1=
+        st.integers(),
+    reg2=
         st.integers()
 )
 cpu_UnconditionalJumpExecutableInstruction_strategy = st.builds(
     cpu_UnconditionalJumpExecutableInstruction,
-    address=
-        st.integers(),
     cpu=
-        st.none()
+        st.none(),
+    address=
+        st.integers()
 )
 cpu_ConditionalExecutableInstruction_strategy = st.builds(
     cpu_ConditionalExecutableInstruction,
     cache=
         st.none(),
-    dReg=
+    bReg=
         st.integers(),
     cpu=
         st.none(),
-    bReg=
+    dReg=
         st.integers(),
     data=
         st.integers()
@@ -1336,30 +1336,30 @@ cpu_DMAChannel_strategy = st.builds(
 )
 cpu_CPU_strategy = st.builds(
     cpu_CPU,
+    register=
+        st.none(),
+    executeTime=
+        st.integers(),
     shutdown=
         st.booleans(),
+    cpuids=
+        st.integers(),
+    idleTime=
+        st.integers(),
     cache=
         st.none(),
     numProcesses=
         st.integers(),
-    cpuids=
-        st.integers(),
-    cpuid=
-        st.integers(),
-    register=
-        st.none(),
-    pcb=
-        st.none(),
     previousInstruction=
         st.none(),
-    idleTime=
-        st.integers(),
     dmaChannel=
         safe_text,
     log=
         safe_text,
-    executeTime=
-        st.integers()
+    cpuid=
+        st.integers(),
+    pcb=
+        st.none()
 )
 pcb_TaskManager_strategy = st.builds(
     pcb_TaskManager,
@@ -1368,39 +1368,39 @@ pcb_TaskManager_strategy = st.builds(
 )
 pcb_PCB_strategy = st.builds(
     pcb_PCB,
-    startDiskTempBufferAddress=
-        st.integers(),
-    numIO=
-        st.integers(),
-    startDiskInstructionAddress=
-        st.integers(),
-    pid=
-        st.integers(),
-    outputBufferLength=
-        st.integers(),
-    tempBufferLength=
-        st.integers(),
-    executionCount=
-        st.integers(),
     elapsedRunTime=
-        st.integers(),
-    inputBufferLength=
-        st.integers(),
-    startDiskOutputBufferAddress=
-        st.integers(),
-    priority=
-        st.integers(),
-    clock=
-        st.integers(),
-    elapsedWaitTime=
-        st.integers(),
-    cpuid=
-        st.integers(),
-    instructionLength=
         st.integers(),
     programCounter=
         st.integers(),
+    cpuid=
+        st.integers(),
+    startDiskInstructionAddress=
+        st.integers(),
+    startDiskTempBufferAddress=
+        st.integers(),
+    tempBufferLength=
+        st.integers(),
+    clock=
+        st.integers(),
+    numIO=
+        st.integers(),
+    pid=
+        st.integers(),
+    startDiskOutputBufferAddress=
+        st.integers(),
+    instructionLength=
+        st.integers(),
+    priority=
+        st.integers(),
     startDiskInputBufferAddress=
+        st.integers(),
+    inputBufferLength=
+        st.integers(),
+    outputBufferLength=
+        st.integers(),
+    executionCount=
+        st.integers(),
+    elapsedWaitTime=
         st.integers()
 )
 memory_MMU_strategy = st.builds(
@@ -1429,42 +1429,6 @@ def test_java_lang_runnable_interface_instantiation(instance):
 def test_driver_scheduler_instantiation(instance):
     assert isinstance(instance, driver_Scheduler)
 
-@given(instance=driver_Scheduler_strategy)
-def test_driver_scheduler_taskManager_type(instance):
-    assert isinstance(instance.taskManager, pcb_taskmanager)
-
-
-@given(instance=driver_Scheduler_strategy)
-def test_driver_scheduler_taskManager_setter(instance):
-    original = instance.taskManager
-    instance.taskManager = original
-    assert instance.taskManager == original
-
-@given(instance=driver_Scheduler_strategy)
-def test_driver_scheduler_disk_type(instance):
-    assert isinstance(instance.disk, memory_memory)
-
-
-@given(instance=driver_Scheduler_strategy)
-def test_driver_scheduler_disk_setter(instance):
-    original = instance.disk
-    instance.disk = original
-    assert instance.disk == original
-
-@given(instance=driver_Scheduler_strategy)
-def test_driver_scheduler_schedulingMethod_type(instance):
-    assert isinstance(instance.schedulingMethod, driver_cpuschedulingpolicy)
-
-
-@given(instance=driver_Scheduler_strategy)
-def test_driver_scheduler_schedulingMethod_setter(instance):
-    original = instance.schedulingMethod
-    instance.schedulingMethod = original
-    assert instance.schedulingMethod == original
-
-@given(instance=driver_Scheduler_strategy)
-def test_driver_scheduler_mmu_type(instance):
-    assert isinstance(instance.mmu, memory_mmu)
 
 
 @given(instance=driver_Scheduler_strategy)
@@ -1473,25 +1437,35 @@ def test_driver_scheduler_mmu_setter(instance):
     instance.mmu = original
     assert instance.mmu == original
 
+
+
+@given(instance=driver_Scheduler_strategy)
+def test_driver_scheduler_taskManager_setter(instance):
+    original = instance.taskManager
+    instance.taskManager = original
+    assert instance.taskManager == original
+
+
+
+@given(instance=driver_Scheduler_strategy)
+def test_driver_scheduler_schedulingMethod_setter(instance):
+    original = instance.schedulingMethod
+    instance.schedulingMethod = original
+    assert instance.schedulingMethod == original
+
+
+
+@given(instance=driver_Scheduler_strategy)
+def test_driver_scheduler_disk_setter(instance):
+    original = instance.disk
+    instance.disk = original
+    assert instance.disk == original
+
 @given(instance=driver_Dispatcher_strategy)
 @settings(max_examples=50)
 def test_driver_dispatcher_instantiation(instance):
     assert isinstance(instance, driver_Dispatcher)
 
-@given(instance=driver_Dispatcher_strategy)
-def test_driver_dispatcher_mmu_type(instance):
-    assert isinstance(instance.mmu, memory_mmu)
-
-
-@given(instance=driver_Dispatcher_strategy)
-def test_driver_dispatcher_mmu_setter(instance):
-    original = instance.mmu
-    instance.mmu = original
-    assert instance.mmu == original
-
-@given(instance=driver_Dispatcher_strategy)
-def test_driver_dispatcher_taskManager_type(instance):
-    assert isinstance(instance.taskManager, pcb_taskmanager)
 
 
 @given(instance=driver_Dispatcher_strategy)
@@ -1500,9 +1474,14 @@ def test_driver_dispatcher_taskManager_setter(instance):
     instance.taskManager = original
     assert instance.taskManager == original
 
+
+
 @given(instance=driver_Dispatcher_strategy)
-def test_driver_dispatcher_cpus_type(instance):
-    assert isinstance(instance.cpus, cpu_cpu)
+def test_driver_dispatcher_mmu_setter(instance):
+    original = instance.mmu
+    instance.mmu = original
+    assert instance.mmu == original
+
 
 
 @given(instance=driver_Dispatcher_strategy)
@@ -1516,141 +1495,6 @@ def test_driver_dispatcher_cpus_setter(instance):
 def test_driver_loader_instantiation(instance):
     assert isinstance(instance, driver_Loader)
 
-@given(instance=driver_Loader_strategy)
-def test_driver_loader_endOutputBufferAddress_type(instance):
-    assert isinstance(instance.endOutputBufferAddress, int)
-
-
-@given(instance=driver_Loader_strategy)
-def test_driver_loader_endOutputBufferAddress_setter(instance):
-    original = instance.endOutputBufferAddress
-    instance.endOutputBufferAddress = original
-    assert instance.endOutputBufferAddress == original
-
-@given(instance=driver_Loader_strategy)
-def test_driver_loader_startTempBufferAddress_type(instance):
-    assert isinstance(instance.startTempBufferAddress, int)
-
-
-@given(instance=driver_Loader_strategy)
-def test_driver_loader_startTempBufferAddress_setter(instance):
-    original = instance.startTempBufferAddress
-    instance.startTempBufferAddress = original
-    assert instance.startTempBufferAddress == original
-
-@given(instance=driver_Loader_strategy)
-def test_driver_loader_tempBuffSize_type(instance):
-    assert isinstance(instance.tempBuffSize, int)
-
-
-@given(instance=driver_Loader_strategy)
-def test_driver_loader_tempBuffSize_setter(instance):
-    original = instance.tempBuffSize
-    instance.tempBuffSize = original
-    assert instance.tempBuffSize == original
-
-@given(instance=driver_Loader_strategy)
-def test_driver_loader_programFile_type(instance):
-    assert isinstance(instance.programFile, str)
-
-
-@given(instance=driver_Loader_strategy)
-def test_driver_loader_programFile_setter(instance):
-    original = instance.programFile
-    instance.programFile = original
-    assert instance.programFile == original
-
-@given(instance=driver_Loader_strategy)
-def test_driver_loader_currAddress_type(instance):
-    assert isinstance(instance.currAddress, int)
-
-
-@given(instance=driver_Loader_strategy)
-def test_driver_loader_currAddress_setter(instance):
-    original = instance.currAddress
-    instance.currAddress = original
-    assert instance.currAddress == original
-
-@given(instance=driver_Loader_strategy)
-def test_driver_loader_instructionsLength_type(instance):
-    assert isinstance(instance.instructionsLength, int)
-
-
-@given(instance=driver_Loader_strategy)
-def test_driver_loader_instructionsLength_setter(instance):
-    original = instance.instructionsLength
-    instance.instructionsLength = original
-    assert instance.instructionsLength == original
-
-@given(instance=driver_Loader_strategy)
-def test_driver_loader_endInstructionAddress_type(instance):
-    assert isinstance(instance.endInstructionAddress, int)
-
-
-@given(instance=driver_Loader_strategy)
-def test_driver_loader_endInstructionAddress_setter(instance):
-    original = instance.endInstructionAddress
-    instance.endInstructionAddress = original
-    assert instance.endInstructionAddress == original
-
-@given(instance=driver_Loader_strategy)
-def test_driver_loader_pid_type(instance):
-    assert isinstance(instance.pid, int)
-
-
-@given(instance=driver_Loader_strategy)
-def test_driver_loader_pid_setter(instance):
-    original = instance.pid
-    instance.pid = original
-    assert instance.pid == original
-
-@given(instance=driver_Loader_strategy)
-def test_driver_loader_startInstructionAddress_type(instance):
-    assert isinstance(instance.startInstructionAddress, int)
-
-
-@given(instance=driver_Loader_strategy)
-def test_driver_loader_startInstructionAddress_setter(instance):
-    original = instance.startInstructionAddress
-    instance.startInstructionAddress = original
-    assert instance.startInstructionAddress == original
-
-@given(instance=driver_Loader_strategy)
-def test_driver_loader_processList_type(instance):
-    assert isinstance(instance.processList, pcb_taskmanager)
-
-
-@given(instance=driver_Loader_strategy)
-def test_driver_loader_processList_setter(instance):
-    original = instance.processList
-    instance.processList = original
-    assert instance.processList == original
-
-@given(instance=driver_Loader_strategy)
-def test_driver_loader_endTempBufferAddress_type(instance):
-    assert isinstance(instance.endTempBufferAddress, int)
-
-
-@given(instance=driver_Loader_strategy)
-def test_driver_loader_endTempBufferAddress_setter(instance):
-    original = instance.endTempBufferAddress
-    instance.endTempBufferAddress = original
-    assert instance.endTempBufferAddress == original
-
-@given(instance=driver_Loader_strategy)
-def test_driver_loader_priority_type(instance):
-    assert isinstance(instance.priority, int)
-
-
-@given(instance=driver_Loader_strategy)
-def test_driver_loader_priority_setter(instance):
-    original = instance.priority
-    instance.priority = original
-    assert instance.priority == original
-
-@given(instance=driver_Loader_strategy)
-def test_driver_loader_startInputBufferAddress_type(instance):
-    assert isinstance(instance.startInputBufferAddress, int)
 
 
 @given(instance=driver_Loader_strategy)
@@ -1659,53 +1503,38 @@ def test_driver_loader_startInputBufferAddress_setter(instance):
     instance.startInputBufferAddress = original
     assert instance.startInputBufferAddress == original
 
-@given(instance=driver_Loader_strategy)
-def test_driver_loader_endInputBufferAddres_type(instance):
-    assert isinstance(instance.endInputBufferAddres, int)
 
 
 @given(instance=driver_Loader_strategy)
-def test_driver_loader_endInputBufferAddres_setter(instance):
-    original = instance.endInputBufferAddres
-    instance.endInputBufferAddres = original
-    assert instance.endInputBufferAddres == original
+def test_driver_loader_currAddress_setter(instance):
+    original = instance.currAddress
+    instance.currAddress = original
+    assert instance.currAddress == original
 
-@given(instance=driver_Loader_strategy)
-def test_driver_loader_outputBuffSize_type(instance):
-    assert isinstance(instance.outputBuffSize, int)
 
 
 @given(instance=driver_Loader_strategy)
-def test_driver_loader_outputBuffSize_setter(instance):
-    original = instance.outputBuffSize
-    instance.outputBuffSize = original
-    assert instance.outputBuffSize == original
+def test_driver_loader_endOutputBufferAddress_setter(instance):
+    original = instance.endOutputBufferAddress
+    instance.endOutputBufferAddress = original
+    assert instance.endOutputBufferAddress == original
 
-@given(instance=driver_Loader_strategy)
-def test_driver_loader_inputBuffSize_type(instance):
-    assert isinstance(instance.inputBuffSize, int)
 
 
 @given(instance=driver_Loader_strategy)
-def test_driver_loader_inputBuffSize_setter(instance):
-    original = instance.inputBuffSize
-    instance.inputBuffSize = original
-    assert instance.inputBuffSize == original
+def test_driver_loader_processList_setter(instance):
+    original = instance.processList
+    instance.processList = original
+    assert instance.processList == original
 
-@given(instance=driver_Loader_strategy)
-def test_driver_loader_disk_type(instance):
-    assert isinstance(instance.disk, memory_memory)
 
 
 @given(instance=driver_Loader_strategy)
-def test_driver_loader_disk_setter(instance):
-    original = instance.disk
-    instance.disk = original
-    assert instance.disk == original
+def test_driver_loader_startInstructionAddress_setter(instance):
+    original = instance.startInstructionAddress
+    instance.startInstructionAddress = original
+    assert instance.startInstructionAddress == original
 
-@given(instance=driver_Loader_strategy)
-def test_driver_loader_startOutputBufferAddress_type(instance):
-    assert isinstance(instance.startOutputBufferAddress, int)
 
 
 @given(instance=driver_Loader_strategy)
@@ -1714,80 +1543,107 @@ def test_driver_loader_startOutputBufferAddress_setter(instance):
     instance.startOutputBufferAddress = original
     assert instance.startOutputBufferAddress == original
 
+
+
+@given(instance=driver_Loader_strategy)
+def test_driver_loader_endInputBufferAddres_setter(instance):
+    original = instance.endInputBufferAddres
+    instance.endInputBufferAddres = original
+    assert instance.endInputBufferAddres == original
+
+
+
+@given(instance=driver_Loader_strategy)
+def test_driver_loader_priority_setter(instance):
+    original = instance.priority
+    instance.priority = original
+    assert instance.priority == original
+
+
+
+@given(instance=driver_Loader_strategy)
+def test_driver_loader_pid_setter(instance):
+    original = instance.pid
+    instance.pid = original
+    assert instance.pid == original
+
+
+
+@given(instance=driver_Loader_strategy)
+def test_driver_loader_endInstructionAddress_setter(instance):
+    original = instance.endInstructionAddress
+    instance.endInstructionAddress = original
+    assert instance.endInstructionAddress == original
+
+
+
+@given(instance=driver_Loader_strategy)
+def test_driver_loader_instructionsLength_setter(instance):
+    original = instance.instructionsLength
+    instance.instructionsLength = original
+    assert instance.instructionsLength == original
+
+
+
+@given(instance=driver_Loader_strategy)
+def test_driver_loader_tempBuffSize_setter(instance):
+    original = instance.tempBuffSize
+    instance.tempBuffSize = original
+    assert instance.tempBuffSize == original
+
+
+
+@given(instance=driver_Loader_strategy)
+def test_driver_loader_disk_setter(instance):
+    original = instance.disk
+    instance.disk = original
+    assert instance.disk == original
+
+
+
+@given(instance=driver_Loader_strategy)
+def test_driver_loader_inputBuffSize_setter(instance):
+    original = instance.inputBuffSize
+    instance.inputBuffSize = original
+    assert instance.inputBuffSize == original
+
+
+
+@given(instance=driver_Loader_strategy)
+def test_driver_loader_programFile_setter(instance):
+    original = instance.programFile
+    instance.programFile = original
+    assert instance.programFile == original
+
+
+
+@given(instance=driver_Loader_strategy)
+def test_driver_loader_startTempBufferAddress_setter(instance):
+    original = instance.startTempBufferAddress
+    instance.startTempBufferAddress = original
+    assert instance.startTempBufferAddress == original
+
+
+
+@given(instance=driver_Loader_strategy)
+def test_driver_loader_outputBuffSize_setter(instance):
+    original = instance.outputBuffSize
+    instance.outputBuffSize = original
+    assert instance.outputBuffSize == original
+
+
+
+@given(instance=driver_Loader_strategy)
+def test_driver_loader_endTempBufferAddress_setter(instance):
+    original = instance.endTempBufferAddress
+    instance.endTempBufferAddress = original
+    assert instance.endTempBufferAddress == original
+
 @given(instance=driver_Driver_strategy)
 @settings(max_examples=50)
 def test_driver_driver_instantiation(instance):
     assert isinstance(instance, driver_Driver)
 
-@given(instance=driver_Driver_strategy)
-def test_driver_driver_ramSize_type(instance):
-    assert isinstance(instance.ramSize, int)
-
-
-@given(instance=driver_Driver_strategy)
-def test_driver_driver_ramSize_setter(instance):
-    original = instance.ramSize
-    instance.ramSize = original
-    assert instance.ramSize == original
-
-@given(instance=driver_Driver_strategy)
-def test_driver_driver_dispatcher_type(instance):
-    assert isinstance(instance.dispatcher, driver_dispatcher)
-
-
-@given(instance=driver_Driver_strategy)
-def test_driver_driver_dispatcher_setter(instance):
-    original = instance.dispatcher
-    instance.dispatcher = original
-    assert instance.dispatcher == original
-
-@given(instance=driver_Driver_strategy)
-def test_driver_driver_cacheSize_type(instance):
-    assert isinstance(instance.cacheSize, int)
-
-
-@given(instance=driver_Driver_strategy)
-def test_driver_driver_cacheSize_setter(instance):
-    original = instance.cacheSize
-    instance.cacheSize = original
-    assert instance.cacheSize == original
-
-@given(instance=driver_Driver_strategy)
-def test_driver_driver_scheduler_type(instance):
-    assert isinstance(instance.scheduler, driver_scheduler)
-
-
-@given(instance=driver_Driver_strategy)
-def test_driver_driver_scheduler_setter(instance):
-    original = instance.scheduler
-    instance.scheduler = original
-    assert instance.scheduler == original
-
-@given(instance=driver_Driver_strategy)
-def test_driver_driver_cpus_type(instance):
-    assert isinstance(instance.cpus, cpu_cpu)
-
-
-@given(instance=driver_Driver_strategy)
-def test_driver_driver_cpus_setter(instance):
-    original = instance.cpus
-    instance.cpus = original
-    assert instance.cpus == original
-
-@given(instance=driver_Driver_strategy)
-def test_driver_driver_idleTimes_type(instance):
-    assert isinstance(instance.idleTimes, int)
-
-
-@given(instance=driver_Driver_strategy)
-def test_driver_driver_idleTimes_setter(instance):
-    original = instance.idleTimes
-    instance.idleTimes = original
-    assert instance.idleTimes == original
-
-@given(instance=driver_Driver_strategy)
-def test_driver_driver_threads_type(instance):
-    assert isinstance(instance.threads, str)
 
 
 @given(instance=driver_Driver_strategy)
@@ -1796,42 +1652,30 @@ def test_driver_driver_threads_setter(instance):
     instance.threads = original
     assert instance.threads == original
 
-@given(instance=driver_Driver_strategy)
-def test_driver_driver_executeTimes_type(instance):
-    assert isinstance(instance.executeTimes, int)
 
 
 @given(instance=driver_Driver_strategy)
-def test_driver_driver_executeTimes_setter(instance):
-    original = instance.executeTimes
-    instance.executeTimes = original
-    assert instance.executeTimes == original
+def test_driver_driver_idleTimes_setter(instance):
+    original = instance.idleTimes
+    instance.idleTimes = original
+    assert instance.idleTimes == original
 
-@given(instance=driver_Driver_strategy)
-def test_driver_driver_loader_type(instance):
-    assert isinstance(instance.loader, driver_loader)
 
 
 @given(instance=driver_Driver_strategy)
-def test_driver_driver_loader_setter(instance):
-    original = instance.loader
-    instance.loader = original
-    assert instance.loader == original
+def test_driver_driver_scheduler_setter(instance):
+    original = instance.scheduler
+    instance.scheduler = original
+    assert instance.scheduler == original
 
-@given(instance=driver_Driver_strategy)
-def test_driver_driver_registerSize_type(instance):
-    assert isinstance(instance.registerSize, int)
 
 
 @given(instance=driver_Driver_strategy)
-def test_driver_driver_registerSize_setter(instance):
-    original = instance.registerSize
-    instance.registerSize = original
-    assert instance.registerSize == original
+def test_driver_driver_cacheSize_setter(instance):
+    original = instance.cacheSize
+    instance.cacheSize = original
+    assert instance.cacheSize == original
 
-@given(instance=driver_Driver_strategy)
-def test_driver_driver_disk_type(instance):
-    assert isinstance(instance.disk, memory_memory)
 
 
 @given(instance=driver_Driver_strategy)
@@ -1840,9 +1684,6 @@ def test_driver_driver_disk_setter(instance):
     instance.disk = original
     assert instance.disk == original
 
-@given(instance=driver_Driver_strategy)
-def test_driver_driver_taskManager_type(instance):
-    assert isinstance(instance.taskManager, pcb_taskmanager)
 
 
 @given(instance=driver_Driver_strategy)
@@ -1851,25 +1692,59 @@ def test_driver_driver_taskManager_setter(instance):
     instance.taskManager = original
     assert instance.taskManager == original
 
+
+
+@given(instance=driver_Driver_strategy)
+def test_driver_driver_executeTimes_setter(instance):
+    original = instance.executeTimes
+    instance.executeTimes = original
+    assert instance.executeTimes == original
+
+
+
+@given(instance=driver_Driver_strategy)
+def test_driver_driver_loader_setter(instance):
+    original = instance.loader
+    instance.loader = original
+    assert instance.loader == original
+
+
+
+@given(instance=driver_Driver_strategy)
+def test_driver_driver_registerSize_setter(instance):
+    original = instance.registerSize
+    instance.registerSize = original
+    assert instance.registerSize == original
+
+
+
+@given(instance=driver_Driver_strategy)
+def test_driver_driver_dispatcher_setter(instance):
+    original = instance.dispatcher
+    instance.dispatcher = original
+    assert instance.dispatcher == original
+
+
+
+@given(instance=driver_Driver_strategy)
+def test_driver_driver_cpus_setter(instance):
+    original = instance.cpus
+    instance.cpus = original
+    assert instance.cpus == original
+
+
+
+@given(instance=driver_Driver_strategy)
+def test_driver_driver_ramSize_setter(instance):
+    original = instance.ramSize
+    instance.ramSize = original
+    assert instance.ramSize == original
+
 @given(instance=cpu_IOExecutableInstruction_strategy)
 @settings(max_examples=50)
 def test_cpu_ioexecutableinstruction_instantiation(instance):
     assert isinstance(instance, cpu_IOExecutableInstruction)
 
-@given(instance=cpu_IOExecutableInstruction_strategy)
-def test_cpu_ioexecutableinstruction_reg2_type(instance):
-    assert isinstance(instance.reg2, int)
-
-
-@given(instance=cpu_IOExecutableInstruction_strategy)
-def test_cpu_ioexecutableinstruction_reg2_setter(instance):
-    original = instance.reg2
-    instance.reg2 = original
-    assert instance.reg2 == original
-
-@given(instance=cpu_IOExecutableInstruction_strategy)
-def test_cpu_ioexecutableinstruction_address_type(instance):
-    assert isinstance(instance.address, int)
 
 
 @given(instance=cpu_IOExecutableInstruction_strategy)
@@ -1878,9 +1753,6 @@ def test_cpu_ioexecutableinstruction_address_setter(instance):
     instance.address = original
     assert instance.address == original
 
-@given(instance=cpu_IOExecutableInstruction_strategy)
-def test_cpu_ioexecutableinstruction_reg1_type(instance):
-    assert isinstance(instance.reg1, int)
 
 
 @given(instance=cpu_IOExecutableInstruction_strategy)
@@ -1889,25 +1761,19 @@ def test_cpu_ioexecutableinstruction_reg1_setter(instance):
     instance.reg1 = original
     assert instance.reg1 == original
 
+
+
+@given(instance=cpu_IOExecutableInstruction_strategy)
+def test_cpu_ioexecutableinstruction_reg2_setter(instance):
+    original = instance.reg2
+    instance.reg2 = original
+    assert instance.reg2 == original
+
 @given(instance=cpu_UnconditionalJumpExecutableInstruction_strategy)
 @settings(max_examples=50)
 def test_cpu_unconditionaljumpexecutableinstruction_instantiation(instance):
     assert isinstance(instance, cpu_UnconditionalJumpExecutableInstruction)
 
-@given(instance=cpu_UnconditionalJumpExecutableInstruction_strategy)
-def test_cpu_unconditionaljumpexecutableinstruction_address_type(instance):
-    assert isinstance(instance.address, int)
-
-
-@given(instance=cpu_UnconditionalJumpExecutableInstruction_strategy)
-def test_cpu_unconditionaljumpexecutableinstruction_address_setter(instance):
-    original = instance.address
-    instance.address = original
-    assert instance.address == original
-
-@given(instance=cpu_UnconditionalJumpExecutableInstruction_strategy)
-def test_cpu_unconditionaljumpexecutableinstruction_cpu_type(instance):
-    assert isinstance(instance.cpu, cpu_cpu)
 
 
 @given(instance=cpu_UnconditionalJumpExecutableInstruction_strategy)
@@ -1916,14 +1782,19 @@ def test_cpu_unconditionaljumpexecutableinstruction_cpu_setter(instance):
     instance.cpu = original
     assert instance.cpu == original
 
+
+
+@given(instance=cpu_UnconditionalJumpExecutableInstruction_strategy)
+def test_cpu_unconditionaljumpexecutableinstruction_address_setter(instance):
+    original = instance.address
+    instance.address = original
+    assert instance.address == original
+
 @given(instance=cpu_ConditionalExecutableInstruction_strategy)
 @settings(max_examples=50)
 def test_cpu_conditionalexecutableinstruction_instantiation(instance):
     assert isinstance(instance, cpu_ConditionalExecutableInstruction)
 
-@given(instance=cpu_ConditionalExecutableInstruction_strategy)
-def test_cpu_conditionalexecutableinstruction_cache_type(instance):
-    assert isinstance(instance.cache, memory_memory)
 
 
 @given(instance=cpu_ConditionalExecutableInstruction_strategy)
@@ -1932,31 +1803,6 @@ def test_cpu_conditionalexecutableinstruction_cache_setter(instance):
     instance.cache = original
     assert instance.cache == original
 
-@given(instance=cpu_ConditionalExecutableInstruction_strategy)
-def test_cpu_conditionalexecutableinstruction_dReg_type(instance):
-    assert isinstance(instance.dReg, int)
-
-
-@given(instance=cpu_ConditionalExecutableInstruction_strategy)
-def test_cpu_conditionalexecutableinstruction_dReg_setter(instance):
-    original = instance.dReg
-    instance.dReg = original
-    assert instance.dReg == original
-
-@given(instance=cpu_ConditionalExecutableInstruction_strategy)
-def test_cpu_conditionalexecutableinstruction_cpu_type(instance):
-    assert isinstance(instance.cpu, cpu_cpu)
-
-
-@given(instance=cpu_ConditionalExecutableInstruction_strategy)
-def test_cpu_conditionalexecutableinstruction_cpu_setter(instance):
-    original = instance.cpu
-    instance.cpu = original
-    assert instance.cpu == original
-
-@given(instance=cpu_ConditionalExecutableInstruction_strategy)
-def test_cpu_conditionalexecutableinstruction_bReg_type(instance):
-    assert isinstance(instance.bReg, int)
 
 
 @given(instance=cpu_ConditionalExecutableInstruction_strategy)
@@ -1965,9 +1811,22 @@ def test_cpu_conditionalexecutableinstruction_bReg_setter(instance):
     instance.bReg = original
     assert instance.bReg == original
 
+
+
 @given(instance=cpu_ConditionalExecutableInstruction_strategy)
-def test_cpu_conditionalexecutableinstruction_data_type(instance):
-    assert isinstance(instance.data, int)
+def test_cpu_conditionalexecutableinstruction_cpu_setter(instance):
+    original = instance.cpu
+    instance.cpu = original
+    assert instance.cpu == original
+
+
+
+@given(instance=cpu_ConditionalExecutableInstruction_strategy)
+def test_cpu_conditionalexecutableinstruction_dReg_setter(instance):
+    original = instance.dReg
+    instance.dReg = original
+    assert instance.dReg == original
+
 
 
 @given(instance=cpu_ConditionalExecutableInstruction_strategy)
@@ -1981,9 +1840,6 @@ def test_cpu_conditionalexecutableinstruction_data_setter(instance):
 def test_cpu_arithmeticexecutableinstruction_instantiation(instance):
     assert isinstance(instance, cpu_ArithmeticExecutableInstruction)
 
-@given(instance=cpu_ArithmeticExecutableInstruction_strategy)
-def test_cpu_arithmeticexecutableinstruction_s2_type(instance):
-    assert isinstance(instance.s2, int)
 
 
 @given(instance=cpu_ArithmeticExecutableInstruction_strategy)
@@ -1992,9 +1848,6 @@ def test_cpu_arithmeticexecutableinstruction_s2_setter(instance):
     instance.s2 = original
     assert instance.s2 == original
 
-@given(instance=cpu_ArithmeticExecutableInstruction_strategy)
-def test_cpu_arithmeticexecutableinstruction_d_type(instance):
-    assert isinstance(instance.d, int)
 
 
 @given(instance=cpu_ArithmeticExecutableInstruction_strategy)
@@ -2003,9 +1856,6 @@ def test_cpu_arithmeticexecutableinstruction_d_setter(instance):
     instance.d = original
     assert instance.d == original
 
-@given(instance=cpu_ArithmeticExecutableInstruction_strategy)
-def test_cpu_arithmeticexecutableinstruction_s1_type(instance):
-    assert isinstance(instance.s1, int)
 
 
 @given(instance=cpu_ArithmeticExecutableInstruction_strategy)
@@ -2019,9 +1869,6 @@ def test_cpu_arithmeticexecutableinstruction_s1_setter(instance):
 def test_cpu_executableinstruction_instantiation(instance):
     assert isinstance(instance, cpu_ExecutableInstruction)
 
-@given(instance=cpu_ExecutableInstruction_strategy)
-def test_cpu_executableinstruction_type_type(instance):
-    assert isinstance(instance.type, cpu_instructionset)
 
 
 @given(instance=cpu_ExecutableInstruction_strategy)
@@ -2030,9 +1877,6 @@ def test_cpu_executableinstruction_type_setter(instance):
     instance.type = original
     assert instance.type == original
 
-@given(instance=cpu_ExecutableInstruction_strategy)
-def test_cpu_executableinstruction_registers_type(instance):
-    assert isinstance(instance.registers, memory_memory)
 
 
 @given(instance=cpu_ExecutableInstruction_strategy)
@@ -2046,9 +1890,6 @@ def test_cpu_executableinstruction_registers_setter(instance):
 def test_cpu_dmachannel_instantiation(instance):
     assert isinstance(instance, cpu_DMAChannel)
 
-@given(instance=cpu_DMAChannel_strategy)
-def test_cpu_dmachannel_mmu_type(instance):
-    assert isinstance(instance.mmu, str)
 
 
 @given(instance=cpu_DMAChannel_strategy)
@@ -2062,64 +1903,6 @@ def test_cpu_dmachannel_mmu_setter(instance):
 def test_cpu_cpu_instantiation(instance):
     assert isinstance(instance, cpu_CPU)
 
-@given(instance=cpu_CPU_strategy)
-def test_cpu_cpu_shutdown_type(instance):
-    assert isinstance(instance.shutdown, bool)
-
-
-@given(instance=cpu_CPU_strategy)
-def test_cpu_cpu_shutdown_setter(instance):
-    original = instance.shutdown
-    instance.shutdown = original
-    assert instance.shutdown == original
-
-@given(instance=cpu_CPU_strategy)
-def test_cpu_cpu_cache_type(instance):
-    assert isinstance(instance.cache, memory_memory)
-
-
-@given(instance=cpu_CPU_strategy)
-def test_cpu_cpu_cache_setter(instance):
-    original = instance.cache
-    instance.cache = original
-    assert instance.cache == original
-
-@given(instance=cpu_CPU_strategy)
-def test_cpu_cpu_numProcesses_type(instance):
-    assert isinstance(instance.numProcesses, int)
-
-
-@given(instance=cpu_CPU_strategy)
-def test_cpu_cpu_numProcesses_setter(instance):
-    original = instance.numProcesses
-    instance.numProcesses = original
-    assert instance.numProcesses == original
-
-@given(instance=cpu_CPU_strategy)
-def test_cpu_cpu_cpuids_type(instance):
-    assert isinstance(instance.cpuids, int)
-
-
-@given(instance=cpu_CPU_strategy)
-def test_cpu_cpu_cpuids_setter(instance):
-    original = instance.cpuids
-    instance.cpuids = original
-    assert instance.cpuids == original
-
-@given(instance=cpu_CPU_strategy)
-def test_cpu_cpu_cpuid_type(instance):
-    assert isinstance(instance.cpuid, int)
-
-
-@given(instance=cpu_CPU_strategy)
-def test_cpu_cpu_cpuid_setter(instance):
-    original = instance.cpuid
-    instance.cpuid = original
-    assert instance.cpuid == original
-
-@given(instance=cpu_CPU_strategy)
-def test_cpu_cpu_register_type(instance):
-    assert isinstance(instance.register, memory_memory)
 
 
 @given(instance=cpu_CPU_strategy)
@@ -2128,64 +1911,6 @@ def test_cpu_cpu_register_setter(instance):
     instance.register = original
     assert instance.register == original
 
-@given(instance=cpu_CPU_strategy)
-def test_cpu_cpu_pcb_type(instance):
-    assert isinstance(instance.pcb, pcb_pcb)
-
-
-@given(instance=cpu_CPU_strategy)
-def test_cpu_cpu_pcb_setter(instance):
-    original = instance.pcb
-    instance.pcb = original
-    assert instance.pcb == original
-
-@given(instance=cpu_CPU_strategy)
-def test_cpu_cpu_previousInstruction_type(instance):
-    assert isinstance(instance.previousInstruction, cpu_executableinstruction)
-
-
-@given(instance=cpu_CPU_strategy)
-def test_cpu_cpu_previousInstruction_setter(instance):
-    original = instance.previousInstruction
-    instance.previousInstruction = original
-    assert instance.previousInstruction == original
-
-@given(instance=cpu_CPU_strategy)
-def test_cpu_cpu_idleTime_type(instance):
-    assert isinstance(instance.idleTime, int)
-
-
-@given(instance=cpu_CPU_strategy)
-def test_cpu_cpu_idleTime_setter(instance):
-    original = instance.idleTime
-    instance.idleTime = original
-    assert instance.idleTime == original
-
-@given(instance=cpu_CPU_strategy)
-def test_cpu_cpu_dmaChannel_type(instance):
-    assert isinstance(instance.dmaChannel, str)
-
-
-@given(instance=cpu_CPU_strategy)
-def test_cpu_cpu_dmaChannel_setter(instance):
-    original = instance.dmaChannel
-    instance.dmaChannel = original
-    assert instance.dmaChannel == original
-
-@given(instance=cpu_CPU_strategy)
-def test_cpu_cpu_log_type(instance):
-    assert isinstance(instance.log, str)
-
-
-@given(instance=cpu_CPU_strategy)
-def test_cpu_cpu_log_setter(instance):
-    original = instance.log
-    instance.log = original
-    assert instance.log == original
-
-@given(instance=cpu_CPU_strategy)
-def test_cpu_cpu_executeTime_type(instance):
-    assert isinstance(instance.executeTime, int)
 
 
 @given(instance=cpu_CPU_strategy)
@@ -2194,14 +1919,91 @@ def test_cpu_cpu_executeTime_setter(instance):
     instance.executeTime = original
     assert instance.executeTime == original
 
+
+
+@given(instance=cpu_CPU_strategy)
+def test_cpu_cpu_shutdown_setter(instance):
+    original = instance.shutdown
+    instance.shutdown = original
+    assert instance.shutdown == original
+
+
+
+@given(instance=cpu_CPU_strategy)
+def test_cpu_cpu_cpuids_setter(instance):
+    original = instance.cpuids
+    instance.cpuids = original
+    assert instance.cpuids == original
+
+
+
+@given(instance=cpu_CPU_strategy)
+def test_cpu_cpu_idleTime_setter(instance):
+    original = instance.idleTime
+    instance.idleTime = original
+    assert instance.idleTime == original
+
+
+
+@given(instance=cpu_CPU_strategy)
+def test_cpu_cpu_cache_setter(instance):
+    original = instance.cache
+    instance.cache = original
+    assert instance.cache == original
+
+
+
+@given(instance=cpu_CPU_strategy)
+def test_cpu_cpu_numProcesses_setter(instance):
+    original = instance.numProcesses
+    instance.numProcesses = original
+    assert instance.numProcesses == original
+
+
+
+@given(instance=cpu_CPU_strategy)
+def test_cpu_cpu_previousInstruction_setter(instance):
+    original = instance.previousInstruction
+    instance.previousInstruction = original
+    assert instance.previousInstruction == original
+
+
+
+@given(instance=cpu_CPU_strategy)
+def test_cpu_cpu_dmaChannel_setter(instance):
+    original = instance.dmaChannel
+    instance.dmaChannel = original
+    assert instance.dmaChannel == original
+
+
+
+@given(instance=cpu_CPU_strategy)
+def test_cpu_cpu_log_setter(instance):
+    original = instance.log
+    instance.log = original
+    assert instance.log == original
+
+
+
+@given(instance=cpu_CPU_strategy)
+def test_cpu_cpu_cpuid_setter(instance):
+    original = instance.cpuid
+    instance.cpuid = original
+    assert instance.cpuid == original
+
+
+
+@given(instance=cpu_CPU_strategy)
+def test_cpu_cpu_pcb_setter(instance):
+    original = instance.pcb
+    instance.pcb = original
+    assert instance.pcb == original
+
 @given(instance=pcb_TaskManager_strategy)
 @settings(max_examples=50)
 def test_pcb_taskmanager_instantiation(instance):
     assert isinstance(instance, pcb_TaskManager)
 
-@given(instance=pcb_TaskManager_strategy)
-def test_pcb_taskmanager_processes_type(instance):
-    assert isinstance(instance.processes, pcb_pcb)
 
 
 @given(instance=pcb_TaskManager_strategy)
@@ -2215,86 +2017,6 @@ def test_pcb_taskmanager_processes_setter(instance):
 def test_pcb_pcb_instantiation(instance):
     assert isinstance(instance, pcb_PCB)
 
-@given(instance=pcb_PCB_strategy)
-def test_pcb_pcb_startDiskTempBufferAddress_type(instance):
-    assert isinstance(instance.startDiskTempBufferAddress, int)
-
-
-@given(instance=pcb_PCB_strategy)
-def test_pcb_pcb_startDiskTempBufferAddress_setter(instance):
-    original = instance.startDiskTempBufferAddress
-    instance.startDiskTempBufferAddress = original
-    assert instance.startDiskTempBufferAddress == original
-
-@given(instance=pcb_PCB_strategy)
-def test_pcb_pcb_numIO_type(instance):
-    assert isinstance(instance.numIO, int)
-
-
-@given(instance=pcb_PCB_strategy)
-def test_pcb_pcb_numIO_setter(instance):
-    original = instance.numIO
-    instance.numIO = original
-    assert instance.numIO == original
-
-@given(instance=pcb_PCB_strategy)
-def test_pcb_pcb_startDiskInstructionAddress_type(instance):
-    assert isinstance(instance.startDiskInstructionAddress, int)
-
-
-@given(instance=pcb_PCB_strategy)
-def test_pcb_pcb_startDiskInstructionAddress_setter(instance):
-    original = instance.startDiskInstructionAddress
-    instance.startDiskInstructionAddress = original
-    assert instance.startDiskInstructionAddress == original
-
-@given(instance=pcb_PCB_strategy)
-def test_pcb_pcb_pid_type(instance):
-    assert isinstance(instance.pid, int)
-
-
-@given(instance=pcb_PCB_strategy)
-def test_pcb_pcb_pid_setter(instance):
-    original = instance.pid
-    instance.pid = original
-    assert instance.pid == original
-
-@given(instance=pcb_PCB_strategy)
-def test_pcb_pcb_outputBufferLength_type(instance):
-    assert isinstance(instance.outputBufferLength, int)
-
-
-@given(instance=pcb_PCB_strategy)
-def test_pcb_pcb_outputBufferLength_setter(instance):
-    original = instance.outputBufferLength
-    instance.outputBufferLength = original
-    assert instance.outputBufferLength == original
-
-@given(instance=pcb_PCB_strategy)
-def test_pcb_pcb_tempBufferLength_type(instance):
-    assert isinstance(instance.tempBufferLength, int)
-
-
-@given(instance=pcb_PCB_strategy)
-def test_pcb_pcb_tempBufferLength_setter(instance):
-    original = instance.tempBufferLength
-    instance.tempBufferLength = original
-    assert instance.tempBufferLength == original
-
-@given(instance=pcb_PCB_strategy)
-def test_pcb_pcb_executionCount_type(instance):
-    assert isinstance(instance.executionCount, int)
-
-
-@given(instance=pcb_PCB_strategy)
-def test_pcb_pcb_executionCount_setter(instance):
-    original = instance.executionCount
-    instance.executionCount = original
-    assert instance.executionCount == original
-
-@given(instance=pcb_PCB_strategy)
-def test_pcb_pcb_elapsedRunTime_type(instance):
-    assert isinstance(instance.elapsedRunTime, int)
 
 
 @given(instance=pcb_PCB_strategy)
@@ -2303,86 +2025,6 @@ def test_pcb_pcb_elapsedRunTime_setter(instance):
     instance.elapsedRunTime = original
     assert instance.elapsedRunTime == original
 
-@given(instance=pcb_PCB_strategy)
-def test_pcb_pcb_inputBufferLength_type(instance):
-    assert isinstance(instance.inputBufferLength, int)
-
-
-@given(instance=pcb_PCB_strategy)
-def test_pcb_pcb_inputBufferLength_setter(instance):
-    original = instance.inputBufferLength
-    instance.inputBufferLength = original
-    assert instance.inputBufferLength == original
-
-@given(instance=pcb_PCB_strategy)
-def test_pcb_pcb_startDiskOutputBufferAddress_type(instance):
-    assert isinstance(instance.startDiskOutputBufferAddress, int)
-
-
-@given(instance=pcb_PCB_strategy)
-def test_pcb_pcb_startDiskOutputBufferAddress_setter(instance):
-    original = instance.startDiskOutputBufferAddress
-    instance.startDiskOutputBufferAddress = original
-    assert instance.startDiskOutputBufferAddress == original
-
-@given(instance=pcb_PCB_strategy)
-def test_pcb_pcb_priority_type(instance):
-    assert isinstance(instance.priority, int)
-
-
-@given(instance=pcb_PCB_strategy)
-def test_pcb_pcb_priority_setter(instance):
-    original = instance.priority
-    instance.priority = original
-    assert instance.priority == original
-
-@given(instance=pcb_PCB_strategy)
-def test_pcb_pcb_clock_type(instance):
-    assert isinstance(instance.clock, int)
-
-
-@given(instance=pcb_PCB_strategy)
-def test_pcb_pcb_clock_setter(instance):
-    original = instance.clock
-    instance.clock = original
-    assert instance.clock == original
-
-@given(instance=pcb_PCB_strategy)
-def test_pcb_pcb_elapsedWaitTime_type(instance):
-    assert isinstance(instance.elapsedWaitTime, int)
-
-
-@given(instance=pcb_PCB_strategy)
-def test_pcb_pcb_elapsedWaitTime_setter(instance):
-    original = instance.elapsedWaitTime
-    instance.elapsedWaitTime = original
-    assert instance.elapsedWaitTime == original
-
-@given(instance=pcb_PCB_strategy)
-def test_pcb_pcb_cpuid_type(instance):
-    assert isinstance(instance.cpuid, int)
-
-
-@given(instance=pcb_PCB_strategy)
-def test_pcb_pcb_cpuid_setter(instance):
-    original = instance.cpuid
-    instance.cpuid = original
-    assert instance.cpuid == original
-
-@given(instance=pcb_PCB_strategy)
-def test_pcb_pcb_instructionLength_type(instance):
-    assert isinstance(instance.instructionLength, int)
-
-
-@given(instance=pcb_PCB_strategy)
-def test_pcb_pcb_instructionLength_setter(instance):
-    original = instance.instructionLength
-    instance.instructionLength = original
-    assert instance.instructionLength == original
-
-@given(instance=pcb_PCB_strategy)
-def test_pcb_pcb_programCounter_type(instance):
-    assert isinstance(instance.programCounter, int)
 
 
 @given(instance=pcb_PCB_strategy)
@@ -2391,9 +2033,86 @@ def test_pcb_pcb_programCounter_setter(instance):
     instance.programCounter = original
     assert instance.programCounter == original
 
+
+
 @given(instance=pcb_PCB_strategy)
-def test_pcb_pcb_startDiskInputBufferAddress_type(instance):
-    assert isinstance(instance.startDiskInputBufferAddress, int)
+def test_pcb_pcb_cpuid_setter(instance):
+    original = instance.cpuid
+    instance.cpuid = original
+    assert instance.cpuid == original
+
+
+
+@given(instance=pcb_PCB_strategy)
+def test_pcb_pcb_startDiskInstructionAddress_setter(instance):
+    original = instance.startDiskInstructionAddress
+    instance.startDiskInstructionAddress = original
+    assert instance.startDiskInstructionAddress == original
+
+
+
+@given(instance=pcb_PCB_strategy)
+def test_pcb_pcb_startDiskTempBufferAddress_setter(instance):
+    original = instance.startDiskTempBufferAddress
+    instance.startDiskTempBufferAddress = original
+    assert instance.startDiskTempBufferAddress == original
+
+
+
+@given(instance=pcb_PCB_strategy)
+def test_pcb_pcb_tempBufferLength_setter(instance):
+    original = instance.tempBufferLength
+    instance.tempBufferLength = original
+    assert instance.tempBufferLength == original
+
+
+
+@given(instance=pcb_PCB_strategy)
+def test_pcb_pcb_clock_setter(instance):
+    original = instance.clock
+    instance.clock = original
+    assert instance.clock == original
+
+
+
+@given(instance=pcb_PCB_strategy)
+def test_pcb_pcb_numIO_setter(instance):
+    original = instance.numIO
+    instance.numIO = original
+    assert instance.numIO == original
+
+
+
+@given(instance=pcb_PCB_strategy)
+def test_pcb_pcb_pid_setter(instance):
+    original = instance.pid
+    instance.pid = original
+    assert instance.pid == original
+
+
+
+@given(instance=pcb_PCB_strategy)
+def test_pcb_pcb_startDiskOutputBufferAddress_setter(instance):
+    original = instance.startDiskOutputBufferAddress
+    instance.startDiskOutputBufferAddress = original
+    assert instance.startDiskOutputBufferAddress == original
+
+
+
+@given(instance=pcb_PCB_strategy)
+def test_pcb_pcb_instructionLength_setter(instance):
+    original = instance.instructionLength
+    instance.instructionLength = original
+    assert instance.instructionLength == original
+
+
+
+@given(instance=pcb_PCB_strategy)
+def test_pcb_pcb_priority_setter(instance):
+    original = instance.priority
+    instance.priority = original
+    assert instance.priority == original
+
 
 
 @given(instance=pcb_PCB_strategy)
@@ -2402,14 +2121,43 @@ def test_pcb_pcb_startDiskInputBufferAddress_setter(instance):
     instance.startDiskInputBufferAddress = original
     assert instance.startDiskInputBufferAddress == original
 
+
+
+@given(instance=pcb_PCB_strategy)
+def test_pcb_pcb_inputBufferLength_setter(instance):
+    original = instance.inputBufferLength
+    instance.inputBufferLength = original
+    assert instance.inputBufferLength == original
+
+
+
+@given(instance=pcb_PCB_strategy)
+def test_pcb_pcb_outputBufferLength_setter(instance):
+    original = instance.outputBufferLength
+    instance.outputBufferLength = original
+    assert instance.outputBufferLength == original
+
+
+
+@given(instance=pcb_PCB_strategy)
+def test_pcb_pcb_executionCount_setter(instance):
+    original = instance.executionCount
+    instance.executionCount = original
+    assert instance.executionCount == original
+
+
+
+@given(instance=pcb_PCB_strategy)
+def test_pcb_pcb_elapsedWaitTime_setter(instance):
+    original = instance.elapsedWaitTime
+    instance.elapsedWaitTime = original
+    assert instance.elapsedWaitTime == original
+
 @given(instance=memory_MMU_strategy)
 @settings(max_examples=50)
 def test_memory_mmu_instantiation(instance):
     assert isinstance(instance, memory_MMU)
 
-@given(instance=memory_MMU_strategy)
-def test_memory_mmu_RAM_type(instance):
-    assert isinstance(instance.RAM, memory_memory)
 
 
 @given(instance=memory_MMU_strategy)
@@ -2423,9 +2171,6 @@ def test_memory_mmu_RAM_setter(instance):
 def test_memory_word_instantiation(instance):
     assert isinstance(instance, memory_Word)
 
-@given(instance=memory_Word_strategy)
-def test_memory_word_data_type(instance):
-    assert isinstance(instance.data, int)
 
 
 @given(instance=memory_Word_strategy)
@@ -2439,9 +2184,6 @@ def test_memory_word_data_setter(instance):
 def test_memory_memory_instantiation(instance):
     assert isinstance(instance, memory_Memory)
 
-@given(instance=memory_Memory_strategy)
-def test_memory_memory_storage_type(instance):
-    assert isinstance(instance.storage, memory_word)
 
 
 @given(instance=memory_Memory_strategy)

@@ -3,28 +3,28 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     DriveAction,
-    taskDSL::TurnRight,
-    taskDSL::TurnLeft,
-    taskDSL::MoveBack,
-    taskDSL::DriveAction,
+    taskDSL_TurnLeft,
+    taskDSL_TurnRight,
+    taskDSL_MoveBack,
+    taskDSL_DriveAction,
     Action,
-    taskDSL::FollowLine,
-    taskDSL::Speak,
-    taskDSL::Investigate,
-    taskDSL::DriveUntil,
-    taskDSL::Avoid,
-    taskDSL::Task,
-    taskDSL::Mission,
-    taskDSL::DSL,
-    taskDSL::Detector,
-    taskDSL::Action,
-    Object,
+    taskDSL_Speak,
+    taskDSL_FollowLine,
+    taskDSL_Investigate,
+    taskDSL_DriveUntil,
+    taskDSL_Avoid,
+    taskDSL_Task,
+    taskDSL_Mission,
+    taskDSL_DSL,
+    taskDSL_Detector,
+    taskDSL_Action,
     Speed,
     Color,
+    Object,
 )
 
 # =============================================================================
@@ -47,23 +47,23 @@ def test_driveaction_constructor_args():
 
 
 
-def test_taskdsl::turnright_is_not_abstract():
-    assert not inspect.isabstract(taskDSL::TurnRight)
+def test_taskdsl_turnleft_is_not_abstract():
+    assert not inspect.isabstract(taskDSL_TurnLeft)
 
 
-def test_taskdsl::turnright_constructor_exists():
-    assert callable(taskDSL::TurnRight.__init__)
+def test_taskdsl_turnleft_constructor_exists():
+    assert callable(taskDSL_TurnLeft.__init__)
 
 
-def test_taskdsl::turnright_constructor_args():
-    sig = inspect.signature(taskDSL::TurnRight.__init__)
+def test_taskdsl_turnleft_constructor_args():
+    sig = inspect.signature(taskDSL_TurnLeft.__init__)
     params = list(sig.parameters.keys())
     assert "degrees" in params, "Missing parameter 'degrees'"
 
-def test_taskdsl::turnright_has_degrees():
-    assert hasattr(taskDSL::TurnRight, "degrees")
+def test_taskdsl_turnleft_has_degrees():
+    assert hasattr(taskDSL_TurnLeft, "degrees")
     descriptor = None
-    for klass in taskDSL::TurnRight.__mro__:
+    for klass in taskDSL_TurnLeft.__mro__:
         if "degrees" in klass.__dict__:
             descriptor = klass.__dict__["degrees"]
             break
@@ -71,23 +71,23 @@ def test_taskdsl::turnright_has_degrees():
 
 
 
-def test_taskdsl::turnleft_is_not_abstract():
-    assert not inspect.isabstract(taskDSL::TurnLeft)
+def test_taskdsl_turnright_is_not_abstract():
+    assert not inspect.isabstract(taskDSL_TurnRight)
 
 
-def test_taskdsl::turnleft_constructor_exists():
-    assert callable(taskDSL::TurnLeft.__init__)
+def test_taskdsl_turnright_constructor_exists():
+    assert callable(taskDSL_TurnRight.__init__)
 
 
-def test_taskdsl::turnleft_constructor_args():
-    sig = inspect.signature(taskDSL::TurnLeft.__init__)
+def test_taskdsl_turnright_constructor_args():
+    sig = inspect.signature(taskDSL_TurnRight.__init__)
     params = list(sig.parameters.keys())
     assert "degrees" in params, "Missing parameter 'degrees'"
 
-def test_taskdsl::turnleft_has_degrees():
-    assert hasattr(taskDSL::TurnLeft, "degrees")
+def test_taskdsl_turnright_has_degrees():
+    assert hasattr(taskDSL_TurnRight, "degrees")
     descriptor = None
-    for klass in taskDSL::TurnLeft.__mro__:
+    for klass in taskDSL_TurnRight.__mro__:
         if "degrees" in klass.__dict__:
             descriptor = klass.__dict__["degrees"]
             break
@@ -95,23 +95,23 @@ def test_taskdsl::turnleft_has_degrees():
 
 
 
-def test_taskdsl::moveback_is_not_abstract():
-    assert not inspect.isabstract(taskDSL::MoveBack)
+def test_taskdsl_moveback_is_not_abstract():
+    assert not inspect.isabstract(taskDSL_MoveBack)
 
 
-def test_taskdsl::moveback_constructor_exists():
-    assert callable(taskDSL::MoveBack.__init__)
+def test_taskdsl_moveback_constructor_exists():
+    assert callable(taskDSL_MoveBack.__init__)
 
 
-def test_taskdsl::moveback_constructor_args():
-    sig = inspect.signature(taskDSL::MoveBack.__init__)
+def test_taskdsl_moveback_constructor_args():
+    sig = inspect.signature(taskDSL_MoveBack.__init__)
     params = list(sig.parameters.keys())
     assert "meters" in params, "Missing parameter 'meters'"
 
-def test_taskdsl::moveback_has_meters():
-    assert hasattr(taskDSL::MoveBack, "meters")
+def test_taskdsl_moveback_has_meters():
+    assert hasattr(taskDSL_MoveBack, "meters")
     descriptor = None
-    for klass in taskDSL::MoveBack.__mro__:
+    for klass in taskDSL_MoveBack.__mro__:
         if "meters" in klass.__dict__:
             descriptor = klass.__dict__["meters"]
             break
@@ -119,16 +119,16 @@ def test_taskdsl::moveback_has_meters():
 
 
 
-def test_taskdsl::driveaction_is_not_abstract():
-    assert not inspect.isabstract(taskDSL::DriveAction)
+def test_taskdsl_driveaction_is_not_abstract():
+    assert not inspect.isabstract(taskDSL_DriveAction)
 
 
-def test_taskdsl::driveaction_constructor_exists():
-    assert callable(taskDSL::DriveAction.__init__)
+def test_taskdsl_driveaction_constructor_exists():
+    assert callable(taskDSL_DriveAction.__init__)
 
 
-def test_taskdsl::driveaction_constructor_args():
-    sig = inspect.signature(taskDSL::DriveAction.__init__)
+def test_taskdsl_driveaction_constructor_args():
+    sig = inspect.signature(taskDSL_DriveAction.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -147,47 +147,23 @@ def test_action_constructor_args():
 
 
 
-def test_taskdsl::followline_is_not_abstract():
-    assert not inspect.isabstract(taskDSL::FollowLine)
+def test_taskdsl_speak_is_not_abstract():
+    assert not inspect.isabstract(taskDSL_Speak)
 
 
-def test_taskdsl::followline_constructor_exists():
-    assert callable(taskDSL::FollowLine.__init__)
+def test_taskdsl_speak_constructor_exists():
+    assert callable(taskDSL_Speak.__init__)
 
 
-def test_taskdsl::followline_constructor_args():
-    sig = inspect.signature(taskDSL::FollowLine.__init__)
-    params = list(sig.parameters.keys())
-    assert "distance" in params, "Missing parameter 'distance'"
-
-def test_taskdsl::followline_has_distance():
-    assert hasattr(taskDSL::FollowLine, "distance")
-    descriptor = None
-    for klass in taskDSL::FollowLine.__mro__:
-        if "distance" in klass.__dict__:
-            descriptor = klass.__dict__["distance"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_taskdsl::speak_is_not_abstract():
-    assert not inspect.isabstract(taskDSL::Speak)
-
-
-def test_taskdsl::speak_constructor_exists():
-    assert callable(taskDSL::Speak.__init__)
-
-
-def test_taskdsl::speak_constructor_args():
-    sig = inspect.signature(taskDSL::Speak.__init__)
+def test_taskdsl_speak_constructor_args():
+    sig = inspect.signature(taskDSL_Speak.__init__)
     params = list(sig.parameters.keys())
     assert "text" in params, "Missing parameter 'text'"
 
-def test_taskdsl::speak_has_text():
-    assert hasattr(taskDSL::Speak, "text")
+def test_taskdsl_speak_has_text():
+    assert hasattr(taskDSL_Speak, "text")
     descriptor = None
-    for klass in taskDSL::Speak.__mro__:
+    for klass in taskDSL_Speak.__mro__:
         if "text" in klass.__dict__:
             descriptor = klass.__dict__["text"]
             break
@@ -195,23 +171,47 @@ def test_taskdsl::speak_has_text():
 
 
 
-def test_taskdsl::investigate_is_not_abstract():
-    assert not inspect.isabstract(taskDSL::Investigate)
+def test_taskdsl_followline_is_not_abstract():
+    assert not inspect.isabstract(taskDSL_FollowLine)
 
 
-def test_taskdsl::investigate_constructor_exists():
-    assert callable(taskDSL::Investigate.__init__)
+def test_taskdsl_followline_constructor_exists():
+    assert callable(taskDSL_FollowLine.__init__)
 
 
-def test_taskdsl::investigate_constructor_args():
-    sig = inspect.signature(taskDSL::Investigate.__init__)
+def test_taskdsl_followline_constructor_args():
+    sig = inspect.signature(taskDSL_FollowLine.__init__)
+    params = list(sig.parameters.keys())
+    assert "distance" in params, "Missing parameter 'distance'"
+
+def test_taskdsl_followline_has_distance():
+    assert hasattr(taskDSL_FollowLine, "distance")
+    descriptor = None
+    for klass in taskDSL_FollowLine.__mro__:
+        if "distance" in klass.__dict__:
+            descriptor = klass.__dict__["distance"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_taskdsl_investigate_is_not_abstract():
+    assert not inspect.isabstract(taskDSL_Investigate)
+
+
+def test_taskdsl_investigate_constructor_exists():
+    assert callable(taskDSL_Investigate.__init__)
+
+
+def test_taskdsl_investigate_constructor_args():
+    sig = inspect.signature(taskDSL_Investigate.__init__)
     params = list(sig.parameters.keys())
     assert "speed" in params, "Missing parameter 'speed'"
 
-def test_taskdsl::investigate_has_speed():
-    assert hasattr(taskDSL::Investigate, "speed")
+def test_taskdsl_investigate_has_speed():
+    assert hasattr(taskDSL_Investigate, "speed")
     descriptor = None
-    for klass in taskDSL::Investigate.__mro__:
+    for klass in taskDSL_Investigate.__mro__:
         if "speed" in klass.__dict__:
             descriptor = klass.__dict__["speed"]
             break
@@ -219,77 +219,43 @@ def test_taskdsl::investigate_has_speed():
 
 
 
-def test_taskdsl::driveuntil_is_not_abstract():
-    assert not inspect.isabstract(taskDSL::DriveUntil)
+def test_taskdsl_driveuntil_is_not_abstract():
+    assert not inspect.isabstract(taskDSL_DriveUntil)
 
 
-def test_taskdsl::driveuntil_constructor_exists():
-    assert callable(taskDSL::DriveUntil.__init__)
+def test_taskdsl_driveuntil_constructor_exists():
+    assert callable(taskDSL_DriveUntil.__init__)
 
 
-def test_taskdsl::driveuntil_constructor_args():
-    sig = inspect.signature(taskDSL::DriveUntil.__init__)
+def test_taskdsl_driveuntil_constructor_args():
+    sig = inspect.signature(taskDSL_DriveUntil.__init__)
     params = list(sig.parameters.keys())
-    assert "object" in params, "Missing parameter 'object'"
     assert "speed" in params, "Missing parameter 'speed'"
+    assert "object" in params, "Missing parameter 'object'"
     assert "color" in params, "Missing parameter 'color'"
 
-def test_taskdsl::driveuntil_has_object():
-    assert hasattr(taskDSL::DriveUntil, "object")
+def test_taskdsl_driveuntil_has_speed():
+    assert hasattr(taskDSL_DriveUntil, "speed")
     descriptor = None
-    for klass in taskDSL::DriveUntil.__mro__:
-        if "object" in klass.__dict__:
-            descriptor = klass.__dict__["object"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_taskdsl::driveuntil_has_speed():
-    assert hasattr(taskDSL::DriveUntil, "speed")
-    descriptor = None
-    for klass in taskDSL::DriveUntil.__mro__:
+    for klass in taskDSL_DriveUntil.__mro__:
         if "speed" in klass.__dict__:
             descriptor = klass.__dict__["speed"]
             break
     assert isinstance(descriptor, property)
 
-def test_taskdsl::driveuntil_has_color():
-    assert hasattr(taskDSL::DriveUntil, "color")
+def test_taskdsl_driveuntil_has_object():
+    assert hasattr(taskDSL_DriveUntil, "object")
     descriptor = None
-    for klass in taskDSL::DriveUntil.__mro__:
-        if "color" in klass.__dict__:
-            descriptor = klass.__dict__["color"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_taskdsl::avoid_is_not_abstract():
-    assert not inspect.isabstract(taskDSL::Avoid)
-
-
-def test_taskdsl::avoid_constructor_exists():
-    assert callable(taskDSL::Avoid.__init__)
-
-
-def test_taskdsl::avoid_constructor_args():
-    sig = inspect.signature(taskDSL::Avoid.__init__)
-    params = list(sig.parameters.keys())
-    assert "object" in params, "Missing parameter 'object'"
-    assert "color" in params, "Missing parameter 'color'"
-
-def test_taskdsl::avoid_has_object():
-    assert hasattr(taskDSL::Avoid, "object")
-    descriptor = None
-    for klass in taskDSL::Avoid.__mro__:
+    for klass in taskDSL_DriveUntil.__mro__:
         if "object" in klass.__dict__:
             descriptor = klass.__dict__["object"]
             break
     assert isinstance(descriptor, property)
 
-def test_taskdsl::avoid_has_color():
-    assert hasattr(taskDSL::Avoid, "color")
+def test_taskdsl_driveuntil_has_color():
+    assert hasattr(taskDSL_DriveUntil, "color")
     descriptor = None
-    for klass in taskDSL::Avoid.__mro__:
+    for klass in taskDSL_DriveUntil.__mro__:
         if "color" in klass.__dict__:
             descriptor = klass.__dict__["color"]
             break
@@ -297,23 +263,57 @@ def test_taskdsl::avoid_has_color():
 
 
 
-def test_taskdsl::task_is_not_abstract():
-    assert not inspect.isabstract(taskDSL::Task)
+def test_taskdsl_avoid_is_not_abstract():
+    assert not inspect.isabstract(taskDSL_Avoid)
 
 
-def test_taskdsl::task_constructor_exists():
-    assert callable(taskDSL::Task.__init__)
+def test_taskdsl_avoid_constructor_exists():
+    assert callable(taskDSL_Avoid.__init__)
 
 
-def test_taskdsl::task_constructor_args():
-    sig = inspect.signature(taskDSL::Task.__init__)
+def test_taskdsl_avoid_constructor_args():
+    sig = inspect.signature(taskDSL_Avoid.__init__)
+    params = list(sig.parameters.keys())
+    assert "object" in params, "Missing parameter 'object'"
+    assert "color" in params, "Missing parameter 'color'"
+
+def test_taskdsl_avoid_has_object():
+    assert hasattr(taskDSL_Avoid, "object")
+    descriptor = None
+    for klass in taskDSL_Avoid.__mro__:
+        if "object" in klass.__dict__:
+            descriptor = klass.__dict__["object"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_taskdsl_avoid_has_color():
+    assert hasattr(taskDSL_Avoid, "color")
+    descriptor = None
+    for klass in taskDSL_Avoid.__mro__:
+        if "color" in klass.__dict__:
+            descriptor = klass.__dict__["color"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_taskdsl_task_is_not_abstract():
+    assert not inspect.isabstract(taskDSL_Task)
+
+
+def test_taskdsl_task_constructor_exists():
+    assert callable(taskDSL_Task.__init__)
+
+
+def test_taskdsl_task_constructor_args():
+    sig = inspect.signature(taskDSL_Task.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_taskdsl::task_has_name():
-    assert hasattr(taskDSL::Task, "name")
+def test_taskdsl_task_has_name():
+    assert hasattr(taskDSL_Task, "name")
     descriptor = None
-    for klass in taskDSL::Task.__mro__:
+    for klass in taskDSL_Task.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -321,23 +321,23 @@ def test_taskdsl::task_has_name():
 
 
 
-def test_taskdsl::mission_is_not_abstract():
-    assert not inspect.isabstract(taskDSL::Mission)
+def test_taskdsl_mission_is_not_abstract():
+    assert not inspect.isabstract(taskDSL_Mission)
 
 
-def test_taskdsl::mission_constructor_exists():
-    assert callable(taskDSL::Mission.__init__)
+def test_taskdsl_mission_constructor_exists():
+    assert callable(taskDSL_Mission.__init__)
 
 
-def test_taskdsl::mission_constructor_args():
-    sig = inspect.signature(taskDSL::Mission.__init__)
+def test_taskdsl_mission_constructor_args():
+    sig = inspect.signature(taskDSL_Mission.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_taskdsl::mission_has_name():
-    assert hasattr(taskDSL::Mission, "name")
+def test_taskdsl_mission_has_name():
+    assert hasattr(taskDSL_Mission, "name")
     descriptor = None
-    for klass in taskDSL::Mission.__mro__:
+    for klass in taskDSL_Mission.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -345,60 +345,45 @@ def test_taskdsl::mission_has_name():
 
 
 
-def test_taskdsl::dsl_is_not_abstract():
-    assert not inspect.isabstract(taskDSL::DSL)
+def test_taskdsl_dsl_is_not_abstract():
+    assert not inspect.isabstract(taskDSL_DSL)
 
 
-def test_taskdsl::dsl_constructor_exists():
-    assert callable(taskDSL::DSL.__init__)
+def test_taskdsl_dsl_constructor_exists():
+    assert callable(taskDSL_DSL.__init__)
 
 
-def test_taskdsl::dsl_constructor_args():
-    sig = inspect.signature(taskDSL::DSL.__init__)
+def test_taskdsl_dsl_constructor_args():
+    sig = inspect.signature(taskDSL_DSL.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_taskdsl::detector_is_not_abstract():
-    assert not inspect.isabstract(taskDSL::Detector)
+def test_taskdsl_detector_is_not_abstract():
+    assert not inspect.isabstract(taskDSL_Detector)
 
 
-def test_taskdsl::detector_constructor_exists():
-    assert callable(taskDSL::Detector.__init__)
+def test_taskdsl_detector_constructor_exists():
+    assert callable(taskDSL_Detector.__init__)
 
 
-def test_taskdsl::detector_constructor_args():
-    sig = inspect.signature(taskDSL::Detector.__init__)
+def test_taskdsl_detector_constructor_args():
+    sig = inspect.signature(taskDSL_Detector.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_taskdsl::action_is_not_abstract():
-    assert not inspect.isabstract(taskDSL::Action)
+def test_taskdsl_action_is_not_abstract():
+    assert not inspect.isabstract(taskDSL_Action)
 
 
-def test_taskdsl::action_constructor_exists():
-    assert callable(taskDSL::Action.__init__)
+def test_taskdsl_action_constructor_exists():
+    assert callable(taskDSL_Action.__init__)
 
 
-def test_taskdsl::action_constructor_args():
-    sig = inspect.signature(taskDSL::Action.__init__)
+def test_taskdsl_action_constructor_args():
+    sig = inspect.signature(taskDSL_Action.__init__)
     params = list(sig.parameters.keys())
-
-def test_object_exists():
-    # Check that the Enumeration exists
-    assert Object is not None
-
-def test_object_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in Object]
-    expected_literals = [
-        "LAKE",
-        "ROCK",
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in Object"
 
 def test_speed_exists():
     # Check that the Enumeration exists
@@ -408,9 +393,9 @@ def test_speed_has_all_literals():
     # Collect the names of literals in this Enumeration
     enum_literals = [lit.name for lit in Speed]
     expected_literals = [
-        "FAST",
         "SLOW",
         "NORMAL",
+        "FAST",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
@@ -424,13 +409,28 @@ def test_color_has_all_literals():
     # Collect the names of literals in this Enumeration
     enum_literals = [lit.name for lit in Color]
     expected_literals = [
-        "RED",
         "GREEN",
         "BLUE",
+        "RED",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
         assert lit_name in enum_literals, f"Literal '' missing in Color"
+
+def test_object_exists():
+    # Check that the Enumeration exists
+    assert Object is not None
+
+def test_object_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in Object]
+    expected_literals = [
+        "ROCK",
+        "LAKE",
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in Object"
 
 
 # =============================================================================
@@ -447,76 +447,76 @@ safe_text = st.text(
 DriveAction_strategy = st.builds(
     DriveAction,
 )
-taskDSL::TurnRight_strategy = st.builds(
-    taskDSL::TurnRight,
+taskDSL_TurnLeft_strategy = st.builds(
+    taskDSL_TurnLeft,
     degrees=
         st.integers()
 )
-taskDSL::TurnLeft_strategy = st.builds(
-    taskDSL::TurnLeft,
+taskDSL_TurnRight_strategy = st.builds(
+    taskDSL_TurnRight,
     degrees=
         st.integers()
 )
-taskDSL::MoveBack_strategy = st.builds(
-    taskDSL::MoveBack,
+taskDSL_MoveBack_strategy = st.builds(
+    taskDSL_MoveBack,
     meters=
         st.integers()
 )
-taskDSL::DriveAction_strategy = st.builds(
-    taskDSL::DriveAction,
+taskDSL_DriveAction_strategy = st.builds(
+    taskDSL_DriveAction,
 )
 Action_strategy = st.builds(
     Action,
 )
-taskDSL::FollowLine_strategy = st.builds(
-    taskDSL::FollowLine,
-    distance=
-        st.integers()
-)
-taskDSL::Speak_strategy = st.builds(
-    taskDSL::Speak,
+taskDSL_Speak_strategy = st.builds(
+    taskDSL_Speak,
     text=
         safe_text
 )
-taskDSL::Investigate_strategy = st.builds(
-    taskDSL::Investigate,
+taskDSL_FollowLine_strategy = st.builds(
+    taskDSL_FollowLine,
+    distance=
+        st.integers()
+)
+taskDSL_Investigate_strategy = st.builds(
+    taskDSL_Investigate,
     speed=
         safe_text
 )
-taskDSL::DriveUntil_strategy = st.builds(
-    taskDSL::DriveUntil,
-    object=
-        safe_text,
+taskDSL_DriveUntil_strategy = st.builds(
+    taskDSL_DriveUntil,
     speed=
+        safe_text,
+    object=
         safe_text,
     color=
         safe_text
 )
-taskDSL::Avoid_strategy = st.builds(
-    taskDSL::Avoid,
+taskDSL_Avoid_strategy = st.builds(
+    taskDSL_Avoid,
     object=
         safe_text,
     color=
         safe_text
 )
-taskDSL::Task_strategy = st.builds(
-    taskDSL::Task,
+taskDSL_Task_strategy = st.builds(
+    taskDSL_Task,
     name=
         safe_text
 )
-taskDSL::Mission_strategy = st.builds(
-    taskDSL::Mission,
+taskDSL_Mission_strategy = st.builds(
+    taskDSL_Mission,
     name=
         safe_text
 )
-taskDSL::DSL_strategy = st.builds(
-    taskDSL::DSL,
+taskDSL_DSL_strategy = st.builds(
+    taskDSL_DSL,
 )
-taskDSL::Detector_strategy = st.builds(
-    taskDSL::Detector,
+taskDSL_Detector_strategy = st.builds(
+    taskDSL_Detector,
 )
-taskDSL::Action_strategy = st.builds(
-    taskDSL::Action,
+taskDSL_Action_strategy = st.builds(
+    taskDSL_Action,
 )
 
 @given(instance=DriveAction_strategy)
@@ -524,220 +524,181 @@ taskDSL::Action_strategy = st.builds(
 def test_driveaction_instantiation(instance):
     assert isinstance(instance, DriveAction)
 
-@given(instance=taskDSL::TurnRight_strategy)
+@given(instance=taskDSL_TurnLeft_strategy)
 @settings(max_examples=50)
-def test_taskdsl::turnright_instantiation(instance):
-    assert isinstance(instance, taskDSL::TurnRight)
-
-@given(instance=taskDSL::TurnRight_strategy)
-def test_taskdsl::turnright_degrees_type(instance):
-    assert isinstance(instance.degrees, int)
+def test_taskdsl_turnleft_instantiation(instance):
+    assert isinstance(instance, taskDSL_TurnLeft)
 
 
-@given(instance=taskDSL::TurnRight_strategy)
-def test_taskdsl::turnright_degrees_setter(instance):
+
+@given(instance=taskDSL_TurnLeft_strategy)
+def test_taskdsl_turnleft_degrees_setter(instance):
     original = instance.degrees
     instance.degrees = original
     assert instance.degrees == original
 
-@given(instance=taskDSL::TurnLeft_strategy)
+@given(instance=taskDSL_TurnRight_strategy)
 @settings(max_examples=50)
-def test_taskdsl::turnleft_instantiation(instance):
-    assert isinstance(instance, taskDSL::TurnLeft)
-
-@given(instance=taskDSL::TurnLeft_strategy)
-def test_taskdsl::turnleft_degrees_type(instance):
-    assert isinstance(instance.degrees, int)
+def test_taskdsl_turnright_instantiation(instance):
+    assert isinstance(instance, taskDSL_TurnRight)
 
 
-@given(instance=taskDSL::TurnLeft_strategy)
-def test_taskdsl::turnleft_degrees_setter(instance):
+
+@given(instance=taskDSL_TurnRight_strategy)
+def test_taskdsl_turnright_degrees_setter(instance):
     original = instance.degrees
     instance.degrees = original
     assert instance.degrees == original
 
-@given(instance=taskDSL::MoveBack_strategy)
+@given(instance=taskDSL_MoveBack_strategy)
 @settings(max_examples=50)
-def test_taskdsl::moveback_instantiation(instance):
-    assert isinstance(instance, taskDSL::MoveBack)
-
-@given(instance=taskDSL::MoveBack_strategy)
-def test_taskdsl::moveback_meters_type(instance):
-    assert isinstance(instance.meters, int)
+def test_taskdsl_moveback_instantiation(instance):
+    assert isinstance(instance, taskDSL_MoveBack)
 
 
-@given(instance=taskDSL::MoveBack_strategy)
-def test_taskdsl::moveback_meters_setter(instance):
+
+@given(instance=taskDSL_MoveBack_strategy)
+def test_taskdsl_moveback_meters_setter(instance):
     original = instance.meters
     instance.meters = original
     assert instance.meters == original
 
-@given(instance=taskDSL::DriveAction_strategy)
+@given(instance=taskDSL_DriveAction_strategy)
 @settings(max_examples=50)
-def test_taskdsl::driveaction_instantiation(instance):
-    assert isinstance(instance, taskDSL::DriveAction)
+def test_taskdsl_driveaction_instantiation(instance):
+    assert isinstance(instance, taskDSL_DriveAction)
 
 @given(instance=Action_strategy)
 @settings(max_examples=50)
 def test_action_instantiation(instance):
     assert isinstance(instance, Action)
 
-@given(instance=taskDSL::FollowLine_strategy)
+@given(instance=taskDSL_Speak_strategy)
 @settings(max_examples=50)
-def test_taskdsl::followline_instantiation(instance):
-    assert isinstance(instance, taskDSL::FollowLine)
-
-@given(instance=taskDSL::FollowLine_strategy)
-def test_taskdsl::followline_distance_type(instance):
-    assert isinstance(instance.distance, int)
+def test_taskdsl_speak_instantiation(instance):
+    assert isinstance(instance, taskDSL_Speak)
 
 
-@given(instance=taskDSL::FollowLine_strategy)
-def test_taskdsl::followline_distance_setter(instance):
-    original = instance.distance
-    instance.distance = original
-    assert instance.distance == original
 
-@given(instance=taskDSL::Speak_strategy)
-@settings(max_examples=50)
-def test_taskdsl::speak_instantiation(instance):
-    assert isinstance(instance, taskDSL::Speak)
-
-@given(instance=taskDSL::Speak_strategy)
-def test_taskdsl::speak_text_type(instance):
-    assert isinstance(instance.text, str)
-
-
-@given(instance=taskDSL::Speak_strategy)
-def test_taskdsl::speak_text_setter(instance):
+@given(instance=taskDSL_Speak_strategy)
+def test_taskdsl_speak_text_setter(instance):
     original = instance.text
     instance.text = original
     assert instance.text == original
 
-@given(instance=taskDSL::Investigate_strategy)
+@given(instance=taskDSL_FollowLine_strategy)
 @settings(max_examples=50)
-def test_taskdsl::investigate_instantiation(instance):
-    assert isinstance(instance, taskDSL::Investigate)
-
-@given(instance=taskDSL::Investigate_strategy)
-def test_taskdsl::investigate_speed_type(instance):
-    assert isinstance(instance.speed, str)
+def test_taskdsl_followline_instantiation(instance):
+    assert isinstance(instance, taskDSL_FollowLine)
 
 
-@given(instance=taskDSL::Investigate_strategy)
-def test_taskdsl::investigate_speed_setter(instance):
+
+@given(instance=taskDSL_FollowLine_strategy)
+def test_taskdsl_followline_distance_setter(instance):
+    original = instance.distance
+    instance.distance = original
+    assert instance.distance == original
+
+@given(instance=taskDSL_Investigate_strategy)
+@settings(max_examples=50)
+def test_taskdsl_investigate_instantiation(instance):
+    assert isinstance(instance, taskDSL_Investigate)
+
+
+
+@given(instance=taskDSL_Investigate_strategy)
+def test_taskdsl_investigate_speed_setter(instance):
     original = instance.speed
     instance.speed = original
     assert instance.speed == original
 
-@given(instance=taskDSL::DriveUntil_strategy)
+@given(instance=taskDSL_DriveUntil_strategy)
 @settings(max_examples=50)
-def test_taskdsl::driveuntil_instantiation(instance):
-    assert isinstance(instance, taskDSL::DriveUntil)
-
-@given(instance=taskDSL::DriveUntil_strategy)
-def test_taskdsl::driveuntil_object_type(instance):
-    assert isinstance(instance.object, str)
+def test_taskdsl_driveuntil_instantiation(instance):
+    assert isinstance(instance, taskDSL_DriveUntil)
 
 
-@given(instance=taskDSL::DriveUntil_strategy)
-def test_taskdsl::driveuntil_object_setter(instance):
-    original = instance.object
-    instance.object = original
-    assert instance.object == original
 
-@given(instance=taskDSL::DriveUntil_strategy)
-def test_taskdsl::driveuntil_speed_type(instance):
-    assert isinstance(instance.speed, str)
-
-
-@given(instance=taskDSL::DriveUntil_strategy)
-def test_taskdsl::driveuntil_speed_setter(instance):
+@given(instance=taskDSL_DriveUntil_strategy)
+def test_taskdsl_driveuntil_speed_setter(instance):
     original = instance.speed
     instance.speed = original
     assert instance.speed == original
 
-@given(instance=taskDSL::DriveUntil_strategy)
-def test_taskdsl::driveuntil_color_type(instance):
-    assert isinstance(instance.color, str)
 
 
-@given(instance=taskDSL::DriveUntil_strategy)
-def test_taskdsl::driveuntil_color_setter(instance):
-    original = instance.color
-    instance.color = original
-    assert instance.color == original
-
-@given(instance=taskDSL::Avoid_strategy)
-@settings(max_examples=50)
-def test_taskdsl::avoid_instantiation(instance):
-    assert isinstance(instance, taskDSL::Avoid)
-
-@given(instance=taskDSL::Avoid_strategy)
-def test_taskdsl::avoid_object_type(instance):
-    assert isinstance(instance.object, str)
-
-
-@given(instance=taskDSL::Avoid_strategy)
-def test_taskdsl::avoid_object_setter(instance):
+@given(instance=taskDSL_DriveUntil_strategy)
+def test_taskdsl_driveuntil_object_setter(instance):
     original = instance.object
     instance.object = original
     assert instance.object == original
 
-@given(instance=taskDSL::Avoid_strategy)
-def test_taskdsl::avoid_color_type(instance):
-    assert isinstance(instance.color, str)
 
 
-@given(instance=taskDSL::Avoid_strategy)
-def test_taskdsl::avoid_color_setter(instance):
+@given(instance=taskDSL_DriveUntil_strategy)
+def test_taskdsl_driveuntil_color_setter(instance):
     original = instance.color
     instance.color = original
     assert instance.color == original
 
-@given(instance=taskDSL::Task_strategy)
+@given(instance=taskDSL_Avoid_strategy)
 @settings(max_examples=50)
-def test_taskdsl::task_instantiation(instance):
-    assert isinstance(instance, taskDSL::Task)
-
-@given(instance=taskDSL::Task_strategy)
-def test_taskdsl::task_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_taskdsl_avoid_instantiation(instance):
+    assert isinstance(instance, taskDSL_Avoid)
 
 
-@given(instance=taskDSL::Task_strategy)
-def test_taskdsl::task_name_setter(instance):
+
+@given(instance=taskDSL_Avoid_strategy)
+def test_taskdsl_avoid_object_setter(instance):
+    original = instance.object
+    instance.object = original
+    assert instance.object == original
+
+
+
+@given(instance=taskDSL_Avoid_strategy)
+def test_taskdsl_avoid_color_setter(instance):
+    original = instance.color
+    instance.color = original
+    assert instance.color == original
+
+@given(instance=taskDSL_Task_strategy)
+@settings(max_examples=50)
+def test_taskdsl_task_instantiation(instance):
+    assert isinstance(instance, taskDSL_Task)
+
+
+
+@given(instance=taskDSL_Task_strategy)
+def test_taskdsl_task_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=taskDSL::Mission_strategy)
+@given(instance=taskDSL_Mission_strategy)
 @settings(max_examples=50)
-def test_taskdsl::mission_instantiation(instance):
-    assert isinstance(instance, taskDSL::Mission)
-
-@given(instance=taskDSL::Mission_strategy)
-def test_taskdsl::mission_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_taskdsl_mission_instantiation(instance):
+    assert isinstance(instance, taskDSL_Mission)
 
 
-@given(instance=taskDSL::Mission_strategy)
-def test_taskdsl::mission_name_setter(instance):
+
+@given(instance=taskDSL_Mission_strategy)
+def test_taskdsl_mission_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=taskDSL::DSL_strategy)
+@given(instance=taskDSL_DSL_strategy)
 @settings(max_examples=50)
-def test_taskdsl::dsl_instantiation(instance):
-    assert isinstance(instance, taskDSL::DSL)
+def test_taskdsl_dsl_instantiation(instance):
+    assert isinstance(instance, taskDSL_DSL)
 
-@given(instance=taskDSL::Detector_strategy)
+@given(instance=taskDSL_Detector_strategy)
 @settings(max_examples=50)
-def test_taskdsl::detector_instantiation(instance):
-    assert isinstance(instance, taskDSL::Detector)
+def test_taskdsl_detector_instantiation(instance):
+    assert isinstance(instance, taskDSL_Detector)
 
-@given(instance=taskDSL::Action_strategy)
+@given(instance=taskDSL_Action_strategy)
 @settings(max_examples=50)
-def test_taskdsl::action_instantiation(instance):
-    assert isinstance(instance, taskDSL::Action)
+def test_taskdsl_action_instantiation(instance):
+    assert isinstance(instance, taskDSL_Action)

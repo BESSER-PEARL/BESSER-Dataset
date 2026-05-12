@@ -3,73 +3,73 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    Acoes::Modificaveis,
-    arduino::Cabeca::Modificavel,
-    arduino::Corpo::Modificavel,
+from python_code import (
+    Acoes_Modificaveis,
+    arduino_Cabeca_Modificavel,
+    arduino_Corpo_Modificavel,
     Condicao,
-    arduino::Distancia::Infra::Vermelhos,
-    arduino::Bumper::Pressionado,
-    Acoes::Condicionais,
-    arduino::If,
-    arduino::While,
+    arduino_Distancia_Infra_Vermelhos,
+    arduino_Bumper_Pressionado,
+    Acoes_Condicionais,
+    arduino_If,
+    arduino_While,
     Verde,
-    arduino::Desligar::LED::Verde,
-    arduino::Ligar::LED::Verde,
-    Unica::Cor,
-    arduino::Ligar::Vermelho,
-    arduino::Desligar::Cor,
-    arduino::Ligar::Verde,
+    arduino_Desligar_LED_Verde,
+    arduino_Ligar_LED_Verde,
+    Unica_Cor,
+    arduino_Ligar_Verde,
+    arduino_Desligar_Cor,
+    arduino_Ligar_Vermelho,
     LED,
-    arduino::Tricolor,
-    arduino::Ligar::Azul,
-    arduino::Verde,
-    Varias::Cores,
-    arduino::Ligar::Cores::Arco::Iris,
-    arduino::Desligar::Cores,
-    arduino::Ligar::Cores::Policia,
+    arduino_Tricolor,
+    arduino_Ligar_Azul,
+    arduino_Verde,
+    Varias_Cores,
+    arduino_Ligar_Cores_Arco_Iris,
+    arduino_Desligar_Cores,
+    arduino_Ligar_Cores_Policia,
     Tricolor,
-    arduino::Unica::Cor,
-    arduino::Varias::Cores,
-    arduino::Desligar::Intermitencia,
-    arduino::Ligar::Intermitencia,
+    arduino_Unica_Cor,
+    arduino_Varias_Cores,
+    arduino_Desligar_Intermitencia,
+    arduino_Ligar_Intermitencia,
     Cabeca,
-    arduino::Virar::Max::Esq,
-    arduino::Virar::Max::Drt,
-    Acoes::Predefinidas,
-    arduino::Cabeca,
-    arduino::Corpo,
-    arduino::LED,
-    arduino::Virar::45::Drt,
-    arduino::Virar::45::Esq,
-    arduino::Centrar,
-    Cabeca::Modificavel,
-    arduino::Virar::para::X::Graus,
+    arduino_Virar_Max_Esq,
+    arduino_Virar_Max_Drt,
+    Acoes_Predefinidas,
+    arduino_Corpo,
+    arduino_Cabeca,
+    arduino_LED,
+    arduino_Virar_45_Drt,
+    arduino_Virar_45_Esq,
+    arduino_Centrar,
+    Cabeca_Modificavel,
+    arduino_Virar_para_X_Graus,
     Acao,
-    arduino::Acoes::Modificaveis,
-    arduino::Inicio,
-    arduino::Fim,
-    arduino::Acoes::Condicionais,
-    arduino::Acoes::Predefinidas,
-    Corpo::Modificavel,
-    arduino::Rodar::Direita::Tempo,
-    arduino::Mover::Tras::Tempo,
-    arduino::Parar::Tempo,
-    arduino::Mover::Frente::Tempo,
-    arduino::Rodar::Esquerda::Tempo,
+    arduino_Acoes_Modificaveis,
+    arduino_Fim,
+    arduino_Acoes_Condicionais,
+    arduino_Inicio,
+    arduino_Acoes_Predefinidas,
+    Corpo_Modificavel,
+    arduino_Parar_Tempo,
+    arduino_Mover_Frente_Tempo,
+    arduino_Mover_Tras_Tempo,
+    arduino_Rodar_Direita_Tempo,
+    arduino_Rodar_Esquerda_Tempo,
     Corpo,
-    arduino::Parar,
-    arduino::Mover::Tras,
-    arduino::Virar::Direita,
-    arduino::Mover::Frente,
-    arduino::Mover::Aleatoriamente,
-    arduino::Virar::Esquerda,
-    arduino::Condicao,
-    arduino::Transicoes,
-    arduino::Acao,
-    arduino::Robo,
+    arduino_Mover_Frente,
+    arduino_Parar,
+    arduino_Mover_Aleatoriamente,
+    arduino_Mover_Tras,
+    arduino_Virar_Direita,
+    arduino_Virar_Esquerda,
+    arduino_Condicao,
+    arduino_Transicoes,
+    arduino_Acao,
+    arduino_Robo,
 )
 
 # =============================================================================
@@ -78,37 +78,37 @@ from classes import (
 
 
 
-def test_acoes::modificaveis_is_not_abstract():
-    assert not inspect.isabstract(Acoes::Modificaveis)
+def test_acoes_modificaveis_is_not_abstract():
+    assert not inspect.isabstract(Acoes_Modificaveis)
 
 
-def test_acoes::modificaveis_constructor_exists():
-    assert callable(Acoes::Modificaveis.__init__)
+def test_acoes_modificaveis_constructor_exists():
+    assert callable(Acoes_Modificaveis.__init__)
 
 
-def test_acoes::modificaveis_constructor_args():
-    sig = inspect.signature(Acoes::Modificaveis.__init__)
+def test_acoes_modificaveis_constructor_args():
+    sig = inspect.signature(Acoes_Modificaveis.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_arduino::cabeca::modificavel_is_not_abstract():
-    assert not inspect.isabstract(arduino::Cabeca::Modificavel)
+def test_arduino_cabeca_modificavel_is_not_abstract():
+    assert not inspect.isabstract(arduino_Cabeca_Modificavel)
 
 
-def test_arduino::cabeca::modificavel_constructor_exists():
-    assert callable(arduino::Cabeca::Modificavel.__init__)
+def test_arduino_cabeca_modificavel_constructor_exists():
+    assert callable(arduino_Cabeca_Modificavel.__init__)
 
 
-def test_arduino::cabeca::modificavel_constructor_args():
-    sig = inspect.signature(arduino::Cabeca::Modificavel.__init__)
+def test_arduino_cabeca_modificavel_constructor_args():
+    sig = inspect.signature(arduino_Cabeca_Modificavel.__init__)
     params = list(sig.parameters.keys())
     assert "graus" in params, "Missing parameter 'graus'"
 
-def test_arduino::cabeca::modificavel_has_graus():
-    assert hasattr(arduino::Cabeca::Modificavel, "graus")
+def test_arduino_cabeca_modificavel_has_graus():
+    assert hasattr(arduino_Cabeca_Modificavel, "graus")
     descriptor = None
-    for klass in arduino::Cabeca::Modificavel.__mro__:
+    for klass in arduino_Cabeca_Modificavel.__mro__:
         if "graus" in klass.__dict__:
             descriptor = klass.__dict__["graus"]
             break
@@ -116,33 +116,33 @@ def test_arduino::cabeca::modificavel_has_graus():
 
 
 
-def test_arduino::corpo::modificavel_is_not_abstract():
-    assert not inspect.isabstract(arduino::Corpo::Modificavel)
+def test_arduino_corpo_modificavel_is_not_abstract():
+    assert not inspect.isabstract(arduino_Corpo_Modificavel)
 
 
-def test_arduino::corpo::modificavel_constructor_exists():
-    assert callable(arduino::Corpo::Modificavel.__init__)
+def test_arduino_corpo_modificavel_constructor_exists():
+    assert callable(arduino_Corpo_Modificavel.__init__)
 
 
-def test_arduino::corpo::modificavel_constructor_args():
-    sig = inspect.signature(arduino::Corpo::Modificavel.__init__)
+def test_arduino_corpo_modificavel_constructor_args():
+    sig = inspect.signature(arduino_Corpo_Modificavel.__init__)
     params = list(sig.parameters.keys())
     assert "tempo" in params, "Missing parameter 'tempo'"
     assert "evitarObstaculo" in params, "Missing parameter 'evitarObstaculo'"
 
-def test_arduino::corpo::modificavel_has_tempo():
-    assert hasattr(arduino::Corpo::Modificavel, "tempo")
+def test_arduino_corpo_modificavel_has_tempo():
+    assert hasattr(arduino_Corpo_Modificavel, "tempo")
     descriptor = None
-    for klass in arduino::Corpo::Modificavel.__mro__:
+    for klass in arduino_Corpo_Modificavel.__mro__:
         if "tempo" in klass.__dict__:
             descriptor = klass.__dict__["tempo"]
             break
     assert isinstance(descriptor, property)
 
-def test_arduino::corpo::modificavel_has_evitarObstaculo():
-    assert hasattr(arduino::Corpo::Modificavel, "evitarObstaculo")
+def test_arduino_corpo_modificavel_has_evitarObstaculo():
+    assert hasattr(arduino_Corpo_Modificavel, "evitarObstaculo")
     descriptor = None
-    for klass in arduino::Corpo::Modificavel.__mro__:
+    for klass in arduino_Corpo_Modificavel.__mro__:
         if "evitarObstaculo" in klass.__dict__:
             descriptor = klass.__dict__["evitarObstaculo"]
             break
@@ -164,23 +164,23 @@ def test_condicao_constructor_args():
 
 
 
-def test_arduino::distancia::infra::vermelhos_is_not_abstract():
-    assert not inspect.isabstract(arduino::Distancia::Infra::Vermelhos)
+def test_arduino_distancia_infra_vermelhos_is_not_abstract():
+    assert not inspect.isabstract(arduino_Distancia_Infra_Vermelhos)
 
 
-def test_arduino::distancia::infra::vermelhos_constructor_exists():
-    assert callable(arduino::Distancia::Infra::Vermelhos.__init__)
+def test_arduino_distancia_infra_vermelhos_constructor_exists():
+    assert callable(arduino_Distancia_Infra_Vermelhos.__init__)
 
 
-def test_arduino::distancia::infra::vermelhos_constructor_args():
-    sig = inspect.signature(arduino::Distancia::Infra::Vermelhos.__init__)
+def test_arduino_distancia_infra_vermelhos_constructor_args():
+    sig = inspect.signature(arduino_Distancia_Infra_Vermelhos.__init__)
     params = list(sig.parameters.keys())
     assert "distancia" in params, "Missing parameter 'distancia'"
 
-def test_arduino::distancia::infra::vermelhos_has_distancia():
-    assert hasattr(arduino::Distancia::Infra::Vermelhos, "distancia")
+def test_arduino_distancia_infra_vermelhos_has_distancia():
+    assert hasattr(arduino_Distancia_Infra_Vermelhos, "distancia")
     descriptor = None
-    for klass in arduino::Distancia::Infra::Vermelhos.__mro__:
+    for klass in arduino_Distancia_Infra_Vermelhos.__mro__:
         if "distancia" in klass.__dict__:
             descriptor = klass.__dict__["distancia"]
             break
@@ -188,23 +188,23 @@ def test_arduino::distancia::infra::vermelhos_has_distancia():
 
 
 
-def test_arduino::bumper::pressionado_is_not_abstract():
-    assert not inspect.isabstract(arduino::Bumper::Pressionado)
+def test_arduino_bumper_pressionado_is_not_abstract():
+    assert not inspect.isabstract(arduino_Bumper_Pressionado)
 
 
-def test_arduino::bumper::pressionado_constructor_exists():
-    assert callable(arduino::Bumper::Pressionado.__init__)
+def test_arduino_bumper_pressionado_constructor_exists():
+    assert callable(arduino_Bumper_Pressionado.__init__)
 
 
-def test_arduino::bumper::pressionado_constructor_args():
-    sig = inspect.signature(arduino::Bumper::Pressionado.__init__)
+def test_arduino_bumper_pressionado_constructor_args():
+    sig = inspect.signature(arduino_Bumper_Pressionado.__init__)
     params = list(sig.parameters.keys())
     assert "nome" in params, "Missing parameter 'nome'"
 
-def test_arduino::bumper::pressionado_has_nome():
-    assert hasattr(arduino::Bumper::Pressionado, "nome")
+def test_arduino_bumper_pressionado_has_nome():
+    assert hasattr(arduino_Bumper_Pressionado, "nome")
     descriptor = None
-    for klass in arduino::Bumper::Pressionado.__mro__:
+    for klass in arduino_Bumper_Pressionado.__mro__:
         if "nome" in klass.__dict__:
             descriptor = klass.__dict__["nome"]
             break
@@ -212,37 +212,37 @@ def test_arduino::bumper::pressionado_has_nome():
 
 
 
-def test_acoes::condicionais_is_not_abstract():
-    assert not inspect.isabstract(Acoes::Condicionais)
+def test_acoes_condicionais_is_not_abstract():
+    assert not inspect.isabstract(Acoes_Condicionais)
 
 
-def test_acoes::condicionais_constructor_exists():
-    assert callable(Acoes::Condicionais.__init__)
+def test_acoes_condicionais_constructor_exists():
+    assert callable(Acoes_Condicionais.__init__)
 
 
-def test_acoes::condicionais_constructor_args():
-    sig = inspect.signature(Acoes::Condicionais.__init__)
+def test_acoes_condicionais_constructor_args():
+    sig = inspect.signature(Acoes_Condicionais.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_arduino::if_is_not_abstract():
-    assert not inspect.isabstract(arduino::If)
+def test_arduino_if_is_not_abstract():
+    assert not inspect.isabstract(arduino_If)
 
 
-def test_arduino::if_constructor_exists():
-    assert callable(arduino::If.__init__)
+def test_arduino_if_constructor_exists():
+    assert callable(arduino_If.__init__)
 
 
-def test_arduino::if_constructor_args():
-    sig = inspect.signature(arduino::If.__init__)
+def test_arduino_if_constructor_args():
+    sig = inspect.signature(arduino_If.__init__)
     params = list(sig.parameters.keys())
     assert "nome" in params, "Missing parameter 'nome'"
 
-def test_arduino::if_has_nome():
-    assert hasattr(arduino::If, "nome")
+def test_arduino_if_has_nome():
+    assert hasattr(arduino_If, "nome")
     descriptor = None
-    for klass in arduino::If.__mro__:
+    for klass in arduino_If.__mro__:
         if "nome" in klass.__dict__:
             descriptor = klass.__dict__["nome"]
             break
@@ -250,23 +250,23 @@ def test_arduino::if_has_nome():
 
 
 
-def test_arduino::while_is_not_abstract():
-    assert not inspect.isabstract(arduino::While)
+def test_arduino_while_is_not_abstract():
+    assert not inspect.isabstract(arduino_While)
 
 
-def test_arduino::while_constructor_exists():
-    assert callable(arduino::While.__init__)
+def test_arduino_while_constructor_exists():
+    assert callable(arduino_While.__init__)
 
 
-def test_arduino::while_constructor_args():
-    sig = inspect.signature(arduino::While.__init__)
+def test_arduino_while_constructor_args():
+    sig = inspect.signature(arduino_While.__init__)
     params = list(sig.parameters.keys())
     assert "nome" in params, "Missing parameter 'nome'"
 
-def test_arduino::while_has_nome():
-    assert hasattr(arduino::While, "nome")
+def test_arduino_while_has_nome():
+    assert hasattr(arduino_While, "nome")
     descriptor = None
-    for klass in arduino::While.__mro__:
+    for klass in arduino_While.__mro__:
         if "nome" in klass.__dict__:
             descriptor = klass.__dict__["nome"]
             break
@@ -288,23 +288,23 @@ def test_verde_constructor_args():
 
 
 
-def test_arduino::desligar::led::verde_is_not_abstract():
-    assert not inspect.isabstract(arduino::Desligar::LED::Verde)
+def test_arduino_desligar_led_verde_is_not_abstract():
+    assert not inspect.isabstract(arduino_Desligar_LED_Verde)
 
 
-def test_arduino::desligar::led::verde_constructor_exists():
-    assert callable(arduino::Desligar::LED::Verde.__init__)
+def test_arduino_desligar_led_verde_constructor_exists():
+    assert callable(arduino_Desligar_LED_Verde.__init__)
 
 
-def test_arduino::desligar::led::verde_constructor_args():
-    sig = inspect.signature(arduino::Desligar::LED::Verde.__init__)
+def test_arduino_desligar_led_verde_constructor_args():
+    sig = inspect.signature(arduino_Desligar_LED_Verde.__init__)
     params = list(sig.parameters.keys())
     assert "nome" in params, "Missing parameter 'nome'"
 
-def test_arduino::desligar::led::verde_has_nome():
-    assert hasattr(arduino::Desligar::LED::Verde, "nome")
+def test_arduino_desligar_led_verde_has_nome():
+    assert hasattr(arduino_Desligar_LED_Verde, "nome")
     descriptor = None
-    for klass in arduino::Desligar::LED::Verde.__mro__:
+    for klass in arduino_Desligar_LED_Verde.__mro__:
         if "nome" in klass.__dict__:
             descriptor = klass.__dict__["nome"]
             break
@@ -312,23 +312,23 @@ def test_arduino::desligar::led::verde_has_nome():
 
 
 
-def test_arduino::ligar::led::verde_is_not_abstract():
-    assert not inspect.isabstract(arduino::Ligar::LED::Verde)
+def test_arduino_ligar_led_verde_is_not_abstract():
+    assert not inspect.isabstract(arduino_Ligar_LED_Verde)
 
 
-def test_arduino::ligar::led::verde_constructor_exists():
-    assert callable(arduino::Ligar::LED::Verde.__init__)
+def test_arduino_ligar_led_verde_constructor_exists():
+    assert callable(arduino_Ligar_LED_Verde.__init__)
 
 
-def test_arduino::ligar::led::verde_constructor_args():
-    sig = inspect.signature(arduino::Ligar::LED::Verde.__init__)
+def test_arduino_ligar_led_verde_constructor_args():
+    sig = inspect.signature(arduino_Ligar_LED_Verde.__init__)
     params = list(sig.parameters.keys())
     assert "nome" in params, "Missing parameter 'nome'"
 
-def test_arduino::ligar::led::verde_has_nome():
-    assert hasattr(arduino::Ligar::LED::Verde, "nome")
+def test_arduino_ligar_led_verde_has_nome():
+    assert hasattr(arduino_Ligar_LED_Verde, "nome")
     descriptor = None
-    for klass in arduino::Ligar::LED::Verde.__mro__:
+    for klass in arduino_Ligar_LED_Verde.__mro__:
         if "nome" in klass.__dict__:
             descriptor = klass.__dict__["nome"]
             break
@@ -336,37 +336,37 @@ def test_arduino::ligar::led::verde_has_nome():
 
 
 
-def test_unica::cor_is_not_abstract():
-    assert not inspect.isabstract(Unica::Cor)
+def test_unica_cor_is_not_abstract():
+    assert not inspect.isabstract(Unica_Cor)
 
 
-def test_unica::cor_constructor_exists():
-    assert callable(Unica::Cor.__init__)
+def test_unica_cor_constructor_exists():
+    assert callable(Unica_Cor.__init__)
 
 
-def test_unica::cor_constructor_args():
-    sig = inspect.signature(Unica::Cor.__init__)
+def test_unica_cor_constructor_args():
+    sig = inspect.signature(Unica_Cor.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_arduino::ligar::vermelho_is_not_abstract():
-    assert not inspect.isabstract(arduino::Ligar::Vermelho)
+def test_arduino_ligar_verde_is_not_abstract():
+    assert not inspect.isabstract(arduino_Ligar_Verde)
 
 
-def test_arduino::ligar::vermelho_constructor_exists():
-    assert callable(arduino::Ligar::Vermelho.__init__)
+def test_arduino_ligar_verde_constructor_exists():
+    assert callable(arduino_Ligar_Verde.__init__)
 
 
-def test_arduino::ligar::vermelho_constructor_args():
-    sig = inspect.signature(arduino::Ligar::Vermelho.__init__)
+def test_arduino_ligar_verde_constructor_args():
+    sig = inspect.signature(arduino_Ligar_Verde.__init__)
     params = list(sig.parameters.keys())
     assert "nome" in params, "Missing parameter 'nome'"
 
-def test_arduino::ligar::vermelho_has_nome():
-    assert hasattr(arduino::Ligar::Vermelho, "nome")
+def test_arduino_ligar_verde_has_nome():
+    assert hasattr(arduino_Ligar_Verde, "nome")
     descriptor = None
-    for klass in arduino::Ligar::Vermelho.__mro__:
+    for klass in arduino_Ligar_Verde.__mro__:
         if "nome" in klass.__dict__:
             descriptor = klass.__dict__["nome"]
             break
@@ -374,23 +374,23 @@ def test_arduino::ligar::vermelho_has_nome():
 
 
 
-def test_arduino::desligar::cor_is_not_abstract():
-    assert not inspect.isabstract(arduino::Desligar::Cor)
+def test_arduino_desligar_cor_is_not_abstract():
+    assert not inspect.isabstract(arduino_Desligar_Cor)
 
 
-def test_arduino::desligar::cor_constructor_exists():
-    assert callable(arduino::Desligar::Cor.__init__)
+def test_arduino_desligar_cor_constructor_exists():
+    assert callable(arduino_Desligar_Cor.__init__)
 
 
-def test_arduino::desligar::cor_constructor_args():
-    sig = inspect.signature(arduino::Desligar::Cor.__init__)
+def test_arduino_desligar_cor_constructor_args():
+    sig = inspect.signature(arduino_Desligar_Cor.__init__)
     params = list(sig.parameters.keys())
     assert "nome" in params, "Missing parameter 'nome'"
 
-def test_arduino::desligar::cor_has_nome():
-    assert hasattr(arduino::Desligar::Cor, "nome")
+def test_arduino_desligar_cor_has_nome():
+    assert hasattr(arduino_Desligar_Cor, "nome")
     descriptor = None
-    for klass in arduino::Desligar::Cor.__mro__:
+    for klass in arduino_Desligar_Cor.__mro__:
         if "nome" in klass.__dict__:
             descriptor = klass.__dict__["nome"]
             break
@@ -398,23 +398,23 @@ def test_arduino::desligar::cor_has_nome():
 
 
 
-def test_arduino::ligar::verde_is_not_abstract():
-    assert not inspect.isabstract(arduino::Ligar::Verde)
+def test_arduino_ligar_vermelho_is_not_abstract():
+    assert not inspect.isabstract(arduino_Ligar_Vermelho)
 
 
-def test_arduino::ligar::verde_constructor_exists():
-    assert callable(arduino::Ligar::Verde.__init__)
+def test_arduino_ligar_vermelho_constructor_exists():
+    assert callable(arduino_Ligar_Vermelho.__init__)
 
 
-def test_arduino::ligar::verde_constructor_args():
-    sig = inspect.signature(arduino::Ligar::Verde.__init__)
+def test_arduino_ligar_vermelho_constructor_args():
+    sig = inspect.signature(arduino_Ligar_Vermelho.__init__)
     params = list(sig.parameters.keys())
     assert "nome" in params, "Missing parameter 'nome'"
 
-def test_arduino::ligar::verde_has_nome():
-    assert hasattr(arduino::Ligar::Verde, "nome")
+def test_arduino_ligar_vermelho_has_nome():
+    assert hasattr(arduino_Ligar_Vermelho, "nome")
     descriptor = None
-    for klass in arduino::Ligar::Verde.__mro__:
+    for klass in arduino_Ligar_Vermelho.__mro__:
         if "nome" in klass.__dict__:
             descriptor = klass.__dict__["nome"]
             break
@@ -436,37 +436,37 @@ def test_led_constructor_args():
 
 
 
-def test_arduino::tricolor_is_not_abstract():
-    assert not inspect.isabstract(arduino::Tricolor)
+def test_arduino_tricolor_is_not_abstract():
+    assert not inspect.isabstract(arduino_Tricolor)
 
 
-def test_arduino::tricolor_constructor_exists():
-    assert callable(arduino::Tricolor.__init__)
+def test_arduino_tricolor_constructor_exists():
+    assert callable(arduino_Tricolor.__init__)
 
 
-def test_arduino::tricolor_constructor_args():
-    sig = inspect.signature(arduino::Tricolor.__init__)
+def test_arduino_tricolor_constructor_args():
+    sig = inspect.signature(arduino_Tricolor.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_arduino::ligar::azul_is_not_abstract():
-    assert not inspect.isabstract(arduino::Ligar::Azul)
+def test_arduino_ligar_azul_is_not_abstract():
+    assert not inspect.isabstract(arduino_Ligar_Azul)
 
 
-def test_arduino::ligar::azul_constructor_exists():
-    assert callable(arduino::Ligar::Azul.__init__)
+def test_arduino_ligar_azul_constructor_exists():
+    assert callable(arduino_Ligar_Azul.__init__)
 
 
-def test_arduino::ligar::azul_constructor_args():
-    sig = inspect.signature(arduino::Ligar::Azul.__init__)
+def test_arduino_ligar_azul_constructor_args():
+    sig = inspect.signature(arduino_Ligar_Azul.__init__)
     params = list(sig.parameters.keys())
     assert "nome" in params, "Missing parameter 'nome'"
 
-def test_arduino::ligar::azul_has_nome():
-    assert hasattr(arduino::Ligar::Azul, "nome")
+def test_arduino_ligar_azul_has_nome():
+    assert hasattr(arduino_Ligar_Azul, "nome")
     descriptor = None
-    for klass in arduino::Ligar::Azul.__mro__:
+    for klass in arduino_Ligar_Azul.__mro__:
         if "nome" in klass.__dict__:
             descriptor = klass.__dict__["nome"]
             break
@@ -474,51 +474,51 @@ def test_arduino::ligar::azul_has_nome():
 
 
 
-def test_arduino::verde_is_not_abstract():
-    assert not inspect.isabstract(arduino::Verde)
+def test_arduino_verde_is_not_abstract():
+    assert not inspect.isabstract(arduino_Verde)
 
 
-def test_arduino::verde_constructor_exists():
-    assert callable(arduino::Verde.__init__)
+def test_arduino_verde_constructor_exists():
+    assert callable(arduino_Verde.__init__)
 
 
-def test_arduino::verde_constructor_args():
-    sig = inspect.signature(arduino::Verde.__init__)
+def test_arduino_verde_constructor_args():
+    sig = inspect.signature(arduino_Verde.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_varias::cores_is_not_abstract():
-    assert not inspect.isabstract(Varias::Cores)
+def test_varias_cores_is_not_abstract():
+    assert not inspect.isabstract(Varias_Cores)
 
 
-def test_varias::cores_constructor_exists():
-    assert callable(Varias::Cores.__init__)
+def test_varias_cores_constructor_exists():
+    assert callable(Varias_Cores.__init__)
 
 
-def test_varias::cores_constructor_args():
-    sig = inspect.signature(Varias::Cores.__init__)
+def test_varias_cores_constructor_args():
+    sig = inspect.signature(Varias_Cores.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_arduino::ligar::cores::arco::iris_is_not_abstract():
-    assert not inspect.isabstract(arduino::Ligar::Cores::Arco::Iris)
+def test_arduino_ligar_cores_arco_iris_is_not_abstract():
+    assert not inspect.isabstract(arduino_Ligar_Cores_Arco_Iris)
 
 
-def test_arduino::ligar::cores::arco::iris_constructor_exists():
-    assert callable(arduino::Ligar::Cores::Arco::Iris.__init__)
+def test_arduino_ligar_cores_arco_iris_constructor_exists():
+    assert callable(arduino_Ligar_Cores_Arco_Iris.__init__)
 
 
-def test_arduino::ligar::cores::arco::iris_constructor_args():
-    sig = inspect.signature(arduino::Ligar::Cores::Arco::Iris.__init__)
+def test_arduino_ligar_cores_arco_iris_constructor_args():
+    sig = inspect.signature(arduino_Ligar_Cores_Arco_Iris.__init__)
     params = list(sig.parameters.keys())
     assert "nome" in params, "Missing parameter 'nome'"
 
-def test_arduino::ligar::cores::arco::iris_has_nome():
-    assert hasattr(arduino::Ligar::Cores::Arco::Iris, "nome")
+def test_arduino_ligar_cores_arco_iris_has_nome():
+    assert hasattr(arduino_Ligar_Cores_Arco_Iris, "nome")
     descriptor = None
-    for klass in arduino::Ligar::Cores::Arco::Iris.__mro__:
+    for klass in arduino_Ligar_Cores_Arco_Iris.__mro__:
         if "nome" in klass.__dict__:
             descriptor = klass.__dict__["nome"]
             break
@@ -526,23 +526,23 @@ def test_arduino::ligar::cores::arco::iris_has_nome():
 
 
 
-def test_arduino::desligar::cores_is_not_abstract():
-    assert not inspect.isabstract(arduino::Desligar::Cores)
+def test_arduino_desligar_cores_is_not_abstract():
+    assert not inspect.isabstract(arduino_Desligar_Cores)
 
 
-def test_arduino::desligar::cores_constructor_exists():
-    assert callable(arduino::Desligar::Cores.__init__)
+def test_arduino_desligar_cores_constructor_exists():
+    assert callable(arduino_Desligar_Cores.__init__)
 
 
-def test_arduino::desligar::cores_constructor_args():
-    sig = inspect.signature(arduino::Desligar::Cores.__init__)
+def test_arduino_desligar_cores_constructor_args():
+    sig = inspect.signature(arduino_Desligar_Cores.__init__)
     params = list(sig.parameters.keys())
     assert "nome" in params, "Missing parameter 'nome'"
 
-def test_arduino::desligar::cores_has_nome():
-    assert hasattr(arduino::Desligar::Cores, "nome")
+def test_arduino_desligar_cores_has_nome():
+    assert hasattr(arduino_Desligar_Cores, "nome")
     descriptor = None
-    for klass in arduino::Desligar::Cores.__mro__:
+    for klass in arduino_Desligar_Cores.__mro__:
         if "nome" in klass.__dict__:
             descriptor = klass.__dict__["nome"]
             break
@@ -550,23 +550,23 @@ def test_arduino::desligar::cores_has_nome():
 
 
 
-def test_arduino::ligar::cores::policia_is_not_abstract():
-    assert not inspect.isabstract(arduino::Ligar::Cores::Policia)
+def test_arduino_ligar_cores_policia_is_not_abstract():
+    assert not inspect.isabstract(arduino_Ligar_Cores_Policia)
 
 
-def test_arduino::ligar::cores::policia_constructor_exists():
-    assert callable(arduino::Ligar::Cores::Policia.__init__)
+def test_arduino_ligar_cores_policia_constructor_exists():
+    assert callable(arduino_Ligar_Cores_Policia.__init__)
 
 
-def test_arduino::ligar::cores::policia_constructor_args():
-    sig = inspect.signature(arduino::Ligar::Cores::Policia.__init__)
+def test_arduino_ligar_cores_policia_constructor_args():
+    sig = inspect.signature(arduino_Ligar_Cores_Policia.__init__)
     params = list(sig.parameters.keys())
     assert "nome" in params, "Missing parameter 'nome'"
 
-def test_arduino::ligar::cores::policia_has_nome():
-    assert hasattr(arduino::Ligar::Cores::Policia, "nome")
+def test_arduino_ligar_cores_policia_has_nome():
+    assert hasattr(arduino_Ligar_Cores_Policia, "nome")
     descriptor = None
-    for klass in arduino::Ligar::Cores::Policia.__mro__:
+    for klass in arduino_Ligar_Cores_Policia.__mro__:
         if "nome" in klass.__dict__:
             descriptor = klass.__dict__["nome"]
             break
@@ -588,51 +588,51 @@ def test_tricolor_constructor_args():
 
 
 
-def test_arduino::unica::cor_is_not_abstract():
-    assert not inspect.isabstract(arduino::Unica::Cor)
+def test_arduino_unica_cor_is_not_abstract():
+    assert not inspect.isabstract(arduino_Unica_Cor)
 
 
-def test_arduino::unica::cor_constructor_exists():
-    assert callable(arduino::Unica::Cor.__init__)
+def test_arduino_unica_cor_constructor_exists():
+    assert callable(arduino_Unica_Cor.__init__)
 
 
-def test_arduino::unica::cor_constructor_args():
-    sig = inspect.signature(arduino::Unica::Cor.__init__)
+def test_arduino_unica_cor_constructor_args():
+    sig = inspect.signature(arduino_Unica_Cor.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_arduino::varias::cores_is_not_abstract():
-    assert not inspect.isabstract(arduino::Varias::Cores)
+def test_arduino_varias_cores_is_not_abstract():
+    assert not inspect.isabstract(arduino_Varias_Cores)
 
 
-def test_arduino::varias::cores_constructor_exists():
-    assert callable(arduino::Varias::Cores.__init__)
+def test_arduino_varias_cores_constructor_exists():
+    assert callable(arduino_Varias_Cores.__init__)
 
 
-def test_arduino::varias::cores_constructor_args():
-    sig = inspect.signature(arduino::Varias::Cores.__init__)
+def test_arduino_varias_cores_constructor_args():
+    sig = inspect.signature(arduino_Varias_Cores.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_arduino::desligar::intermitencia_is_not_abstract():
-    assert not inspect.isabstract(arduino::Desligar::Intermitencia)
+def test_arduino_desligar_intermitencia_is_not_abstract():
+    assert not inspect.isabstract(arduino_Desligar_Intermitencia)
 
 
-def test_arduino::desligar::intermitencia_constructor_exists():
-    assert callable(arduino::Desligar::Intermitencia.__init__)
+def test_arduino_desligar_intermitencia_constructor_exists():
+    assert callable(arduino_Desligar_Intermitencia.__init__)
 
 
-def test_arduino::desligar::intermitencia_constructor_args():
-    sig = inspect.signature(arduino::Desligar::Intermitencia.__init__)
+def test_arduino_desligar_intermitencia_constructor_args():
+    sig = inspect.signature(arduino_Desligar_Intermitencia.__init__)
     params = list(sig.parameters.keys())
     assert "nome" in params, "Missing parameter 'nome'"
 
-def test_arduino::desligar::intermitencia_has_nome():
-    assert hasattr(arduino::Desligar::Intermitencia, "nome")
+def test_arduino_desligar_intermitencia_has_nome():
+    assert hasattr(arduino_Desligar_Intermitencia, "nome")
     descriptor = None
-    for klass in arduino::Desligar::Intermitencia.__mro__:
+    for klass in arduino_Desligar_Intermitencia.__mro__:
         if "nome" in klass.__dict__:
             descriptor = klass.__dict__["nome"]
             break
@@ -640,23 +640,23 @@ def test_arduino::desligar::intermitencia_has_nome():
 
 
 
-def test_arduino::ligar::intermitencia_is_not_abstract():
-    assert not inspect.isabstract(arduino::Ligar::Intermitencia)
+def test_arduino_ligar_intermitencia_is_not_abstract():
+    assert not inspect.isabstract(arduino_Ligar_Intermitencia)
 
 
-def test_arduino::ligar::intermitencia_constructor_exists():
-    assert callable(arduino::Ligar::Intermitencia.__init__)
+def test_arduino_ligar_intermitencia_constructor_exists():
+    assert callable(arduino_Ligar_Intermitencia.__init__)
 
 
-def test_arduino::ligar::intermitencia_constructor_args():
-    sig = inspect.signature(arduino::Ligar::Intermitencia.__init__)
+def test_arduino_ligar_intermitencia_constructor_args():
+    sig = inspect.signature(arduino_Ligar_Intermitencia.__init__)
     params = list(sig.parameters.keys())
     assert "nome" in params, "Missing parameter 'nome'"
 
-def test_arduino::ligar::intermitencia_has_nome():
-    assert hasattr(arduino::Ligar::Intermitencia, "nome")
+def test_arduino_ligar_intermitencia_has_nome():
+    assert hasattr(arduino_Ligar_Intermitencia, "nome")
     descriptor = None
-    for klass in arduino::Ligar::Intermitencia.__mro__:
+    for klass in arduino_Ligar_Intermitencia.__mro__:
         if "nome" in klass.__dict__:
             descriptor = klass.__dict__["nome"]
             break
@@ -678,23 +678,23 @@ def test_cabeca_constructor_args():
 
 
 
-def test_arduino::virar::max::esq_is_not_abstract():
-    assert not inspect.isabstract(arduino::Virar::Max::Esq)
+def test_arduino_virar_max_esq_is_not_abstract():
+    assert not inspect.isabstract(arduino_Virar_Max_Esq)
 
 
-def test_arduino::virar::max::esq_constructor_exists():
-    assert callable(arduino::Virar::Max::Esq.__init__)
+def test_arduino_virar_max_esq_constructor_exists():
+    assert callable(arduino_Virar_Max_Esq.__init__)
 
 
-def test_arduino::virar::max::esq_constructor_args():
-    sig = inspect.signature(arduino::Virar::Max::Esq.__init__)
+def test_arduino_virar_max_esq_constructor_args():
+    sig = inspect.signature(arduino_Virar_Max_Esq.__init__)
     params = list(sig.parameters.keys())
     assert "nome" in params, "Missing parameter 'nome'"
 
-def test_arduino::virar::max::esq_has_nome():
-    assert hasattr(arduino::Virar::Max::Esq, "nome")
+def test_arduino_virar_max_esq_has_nome():
+    assert hasattr(arduino_Virar_Max_Esq, "nome")
     descriptor = None
-    for klass in arduino::Virar::Max::Esq.__mro__:
+    for klass in arduino_Virar_Max_Esq.__mro__:
         if "nome" in klass.__dict__:
             descriptor = klass.__dict__["nome"]
             break
@@ -702,23 +702,23 @@ def test_arduino::virar::max::esq_has_nome():
 
 
 
-def test_arduino::virar::max::drt_is_not_abstract():
-    assert not inspect.isabstract(arduino::Virar::Max::Drt)
+def test_arduino_virar_max_drt_is_not_abstract():
+    assert not inspect.isabstract(arduino_Virar_Max_Drt)
 
 
-def test_arduino::virar::max::drt_constructor_exists():
-    assert callable(arduino::Virar::Max::Drt.__init__)
+def test_arduino_virar_max_drt_constructor_exists():
+    assert callable(arduino_Virar_Max_Drt.__init__)
 
 
-def test_arduino::virar::max::drt_constructor_args():
-    sig = inspect.signature(arduino::Virar::Max::Drt.__init__)
+def test_arduino_virar_max_drt_constructor_args():
+    sig = inspect.signature(arduino_Virar_Max_Drt.__init__)
     params = list(sig.parameters.keys())
     assert "nome" in params, "Missing parameter 'nome'"
 
-def test_arduino::virar::max::drt_has_nome():
-    assert hasattr(arduino::Virar::Max::Drt, "nome")
+def test_arduino_virar_max_drt_has_nome():
+    assert hasattr(arduino_Virar_Max_Drt, "nome")
     descriptor = None
-    for klass in arduino::Virar::Max::Drt.__mro__:
+    for klass in arduino_Virar_Max_Drt.__mro__:
         if "nome" in klass.__dict__:
             descriptor = klass.__dict__["nome"]
             break
@@ -726,51 +726,37 @@ def test_arduino::virar::max::drt_has_nome():
 
 
 
-def test_acoes::predefinidas_is_not_abstract():
-    assert not inspect.isabstract(Acoes::Predefinidas)
+def test_acoes_predefinidas_is_not_abstract():
+    assert not inspect.isabstract(Acoes_Predefinidas)
 
 
-def test_acoes::predefinidas_constructor_exists():
-    assert callable(Acoes::Predefinidas.__init__)
+def test_acoes_predefinidas_constructor_exists():
+    assert callable(Acoes_Predefinidas.__init__)
 
 
-def test_acoes::predefinidas_constructor_args():
-    sig = inspect.signature(Acoes::Predefinidas.__init__)
+def test_acoes_predefinidas_constructor_args():
+    sig = inspect.signature(Acoes_Predefinidas.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_arduino::cabeca_is_not_abstract():
-    assert not inspect.isabstract(arduino::Cabeca)
+def test_arduino_corpo_is_not_abstract():
+    assert not inspect.isabstract(arduino_Corpo)
 
 
-def test_arduino::cabeca_constructor_exists():
-    assert callable(arduino::Cabeca.__init__)
+def test_arduino_corpo_constructor_exists():
+    assert callable(arduino_Corpo.__init__)
 
 
-def test_arduino::cabeca_constructor_args():
-    sig = inspect.signature(arduino::Cabeca.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_arduino::corpo_is_not_abstract():
-    assert not inspect.isabstract(arduino::Corpo)
-
-
-def test_arduino::corpo_constructor_exists():
-    assert callable(arduino::Corpo.__init__)
-
-
-def test_arduino::corpo_constructor_args():
-    sig = inspect.signature(arduino::Corpo.__init__)
+def test_arduino_corpo_constructor_args():
+    sig = inspect.signature(arduino_Corpo.__init__)
     params = list(sig.parameters.keys())
     assert "evitarObstaculo" in params, "Missing parameter 'evitarObstaculo'"
 
-def test_arduino::corpo_has_evitarObstaculo():
-    assert hasattr(arduino::Corpo, "evitarObstaculo")
+def test_arduino_corpo_has_evitarObstaculo():
+    assert hasattr(arduino_Corpo, "evitarObstaculo")
     descriptor = None
-    for klass in arduino::Corpo.__mro__:
+    for klass in arduino_Corpo.__mro__:
         if "evitarObstaculo" in klass.__dict__:
             descriptor = klass.__dict__["evitarObstaculo"]
             break
@@ -778,37 +764,51 @@ def test_arduino::corpo_has_evitarObstaculo():
 
 
 
-def test_arduino::led_is_not_abstract():
-    assert not inspect.isabstract(arduino::LED)
+def test_arduino_cabeca_is_not_abstract():
+    assert not inspect.isabstract(arduino_Cabeca)
 
 
-def test_arduino::led_constructor_exists():
-    assert callable(arduino::LED.__init__)
+def test_arduino_cabeca_constructor_exists():
+    assert callable(arduino_Cabeca.__init__)
 
 
-def test_arduino::led_constructor_args():
-    sig = inspect.signature(arduino::LED.__init__)
+def test_arduino_cabeca_constructor_args():
+    sig = inspect.signature(arduino_Cabeca.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_arduino::virar::45::drt_is_not_abstract():
-    assert not inspect.isabstract(arduino::Virar::45::Drt)
+def test_arduino_led_is_not_abstract():
+    assert not inspect.isabstract(arduino_LED)
 
 
-def test_arduino::virar::45::drt_constructor_exists():
-    assert callable(arduino::Virar::45::Drt.__init__)
+def test_arduino_led_constructor_exists():
+    assert callable(arduino_LED.__init__)
 
 
-def test_arduino::virar::45::drt_constructor_args():
-    sig = inspect.signature(arduino::Virar::45::Drt.__init__)
+def test_arduino_led_constructor_args():
+    sig = inspect.signature(arduino_LED.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_arduino_virar_45_drt_is_not_abstract():
+    assert not inspect.isabstract(arduino_Virar_45_Drt)
+
+
+def test_arduino_virar_45_drt_constructor_exists():
+    assert callable(arduino_Virar_45_Drt.__init__)
+
+
+def test_arduino_virar_45_drt_constructor_args():
+    sig = inspect.signature(arduino_Virar_45_Drt.__init__)
     params = list(sig.parameters.keys())
     assert "nome" in params, "Missing parameter 'nome'"
 
-def test_arduino::virar::45::drt_has_nome():
-    assert hasattr(arduino::Virar::45::Drt, "nome")
+def test_arduino_virar_45_drt_has_nome():
+    assert hasattr(arduino_Virar_45_Drt, "nome")
     descriptor = None
-    for klass in arduino::Virar::45::Drt.__mro__:
+    for klass in arduino_Virar_45_Drt.__mro__:
         if "nome" in klass.__dict__:
             descriptor = klass.__dict__["nome"]
             break
@@ -816,23 +816,23 @@ def test_arduino::virar::45::drt_has_nome():
 
 
 
-def test_arduino::virar::45::esq_is_not_abstract():
-    assert not inspect.isabstract(arduino::Virar::45::Esq)
+def test_arduino_virar_45_esq_is_not_abstract():
+    assert not inspect.isabstract(arduino_Virar_45_Esq)
 
 
-def test_arduino::virar::45::esq_constructor_exists():
-    assert callable(arduino::Virar::45::Esq.__init__)
+def test_arduino_virar_45_esq_constructor_exists():
+    assert callable(arduino_Virar_45_Esq.__init__)
 
 
-def test_arduino::virar::45::esq_constructor_args():
-    sig = inspect.signature(arduino::Virar::45::Esq.__init__)
+def test_arduino_virar_45_esq_constructor_args():
+    sig = inspect.signature(arduino_Virar_45_Esq.__init__)
     params = list(sig.parameters.keys())
     assert "nome" in params, "Missing parameter 'nome'"
 
-def test_arduino::virar::45::esq_has_nome():
-    assert hasattr(arduino::Virar::45::Esq, "nome")
+def test_arduino_virar_45_esq_has_nome():
+    assert hasattr(arduino_Virar_45_Esq, "nome")
     descriptor = None
-    for klass in arduino::Virar::45::Esq.__mro__:
+    for klass in arduino_Virar_45_Esq.__mro__:
         if "nome" in klass.__dict__:
             descriptor = klass.__dict__["nome"]
             break
@@ -840,23 +840,23 @@ def test_arduino::virar::45::esq_has_nome():
 
 
 
-def test_arduino::centrar_is_not_abstract():
-    assert not inspect.isabstract(arduino::Centrar)
+def test_arduino_centrar_is_not_abstract():
+    assert not inspect.isabstract(arduino_Centrar)
 
 
-def test_arduino::centrar_constructor_exists():
-    assert callable(arduino::Centrar.__init__)
+def test_arduino_centrar_constructor_exists():
+    assert callable(arduino_Centrar.__init__)
 
 
-def test_arduino::centrar_constructor_args():
-    sig = inspect.signature(arduino::Centrar.__init__)
+def test_arduino_centrar_constructor_args():
+    sig = inspect.signature(arduino_Centrar.__init__)
     params = list(sig.parameters.keys())
     assert "nome" in params, "Missing parameter 'nome'"
 
-def test_arduino::centrar_has_nome():
-    assert hasattr(arduino::Centrar, "nome")
+def test_arduino_centrar_has_nome():
+    assert hasattr(arduino_Centrar, "nome")
     descriptor = None
-    for klass in arduino::Centrar.__mro__:
+    for klass in arduino_Centrar.__mro__:
         if "nome" in klass.__dict__:
             descriptor = klass.__dict__["nome"]
             break
@@ -864,30 +864,30 @@ def test_arduino::centrar_has_nome():
 
 
 
-def test_cabeca::modificavel_is_not_abstract():
-    assert not inspect.isabstract(Cabeca::Modificavel)
+def test_cabeca_modificavel_is_not_abstract():
+    assert not inspect.isabstract(Cabeca_Modificavel)
 
 
-def test_cabeca::modificavel_constructor_exists():
-    assert callable(Cabeca::Modificavel.__init__)
+def test_cabeca_modificavel_constructor_exists():
+    assert callable(Cabeca_Modificavel.__init__)
 
 
-def test_cabeca::modificavel_constructor_args():
-    sig = inspect.signature(Cabeca::Modificavel.__init__)
+def test_cabeca_modificavel_constructor_args():
+    sig = inspect.signature(Cabeca_Modificavel.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_arduino::virar::para::x::graus_is_not_abstract():
-    assert not inspect.isabstract(arduino::Virar::para::X::Graus)
+def test_arduino_virar_para_x_graus_is_not_abstract():
+    assert not inspect.isabstract(arduino_Virar_para_X_Graus)
 
 
-def test_arduino::virar::para::x::graus_constructor_exists():
-    assert callable(arduino::Virar::para::X::Graus.__init__)
+def test_arduino_virar_para_x_graus_constructor_exists():
+    assert callable(arduino_Virar_para_X_Graus.__init__)
 
 
-def test_arduino::virar::para::x::graus_constructor_args():
-    sig = inspect.signature(arduino::Virar::para::X::Graus.__init__)
+def test_arduino_virar_para_x_graus_constructor_args():
+    sig = inspect.signature(arduino_Virar_para_X_Graus.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -906,186 +906,186 @@ def test_acao_constructor_args():
 
 
 
-def test_arduino::acoes::modificaveis_is_not_abstract():
-    assert not inspect.isabstract(arduino::Acoes::Modificaveis)
+def test_arduino_acoes_modificaveis_is_not_abstract():
+    assert not inspect.isabstract(arduino_Acoes_Modificaveis)
 
 
-def test_arduino::acoes::modificaveis_constructor_exists():
-    assert callable(arduino::Acoes::Modificaveis.__init__)
+def test_arduino_acoes_modificaveis_constructor_exists():
+    assert callable(arduino_Acoes_Modificaveis.__init__)
 
 
-def test_arduino::acoes::modificaveis_constructor_args():
-    sig = inspect.signature(arduino::Acoes::Modificaveis.__init__)
+def test_arduino_acoes_modificaveis_constructor_args():
+    sig = inspect.signature(arduino_Acoes_Modificaveis.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_arduino::inicio_is_not_abstract():
-    assert not inspect.isabstract(arduino::Inicio)
+def test_arduino_fim_is_not_abstract():
+    assert not inspect.isabstract(arduino_Fim)
 
 
-def test_arduino::inicio_constructor_exists():
-    assert callable(arduino::Inicio.__init__)
+def test_arduino_fim_constructor_exists():
+    assert callable(arduino_Fim.__init__)
 
 
-def test_arduino::inicio_constructor_args():
-    sig = inspect.signature(arduino::Inicio.__init__)
+def test_arduino_fim_constructor_args():
+    sig = inspect.signature(arduino_Fim.__init__)
     params = list(sig.parameters.keys())
-    assert "evitarObstaculo" in params, "Missing parameter 'evitarObstaculo'"
     assert "nome" in params, "Missing parameter 'nome'"
 
-def test_arduino::inicio_has_evitarObstaculo():
-    assert hasattr(arduino::Inicio, "evitarObstaculo")
+def test_arduino_fim_has_nome():
+    assert hasattr(arduino_Fim, "nome")
     descriptor = None
-    for klass in arduino::Inicio.__mro__:
+    for klass in arduino_Fim.__mro__:
+        if "nome" in klass.__dict__:
+            descriptor = klass.__dict__["nome"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_arduino_acoes_condicionais_is_not_abstract():
+    assert not inspect.isabstract(arduino_Acoes_Condicionais)
+
+
+def test_arduino_acoes_condicionais_constructor_exists():
+    assert callable(arduino_Acoes_Condicionais.__init__)
+
+
+def test_arduino_acoes_condicionais_constructor_args():
+    sig = inspect.signature(arduino_Acoes_Condicionais.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_arduino_inicio_is_not_abstract():
+    assert not inspect.isabstract(arduino_Inicio)
+
+
+def test_arduino_inicio_constructor_exists():
+    assert callable(arduino_Inicio.__init__)
+
+
+def test_arduino_inicio_constructor_args():
+    sig = inspect.signature(arduino_Inicio.__init__)
+    params = list(sig.parameters.keys())
+    assert "nome" in params, "Missing parameter 'nome'"
+    assert "evitarObstaculo" in params, "Missing parameter 'evitarObstaculo'"
+
+def test_arduino_inicio_has_nome():
+    assert hasattr(arduino_Inicio, "nome")
+    descriptor = None
+    for klass in arduino_Inicio.__mro__:
+        if "nome" in klass.__dict__:
+            descriptor = klass.__dict__["nome"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_arduino_inicio_has_evitarObstaculo():
+    assert hasattr(arduino_Inicio, "evitarObstaculo")
+    descriptor = None
+    for klass in arduino_Inicio.__mro__:
         if "evitarObstaculo" in klass.__dict__:
             descriptor = klass.__dict__["evitarObstaculo"]
             break
     assert isinstance(descriptor, property)
 
-def test_arduino::inicio_has_nome():
-    assert hasattr(arduino::Inicio, "nome")
-    descriptor = None
-    for klass in arduino::Inicio.__mro__:
-        if "nome" in klass.__dict__:
-            descriptor = klass.__dict__["nome"]
-            break
-    assert isinstance(descriptor, property)
 
 
-
-def test_arduino::fim_is_not_abstract():
-    assert not inspect.isabstract(arduino::Fim)
-
-
-def test_arduino::fim_constructor_exists():
-    assert callable(arduino::Fim.__init__)
+def test_arduino_acoes_predefinidas_is_not_abstract():
+    assert not inspect.isabstract(arduino_Acoes_Predefinidas)
 
 
-def test_arduino::fim_constructor_args():
-    sig = inspect.signature(arduino::Fim.__init__)
-    params = list(sig.parameters.keys())
-    assert "nome" in params, "Missing parameter 'nome'"
-
-def test_arduino::fim_has_nome():
-    assert hasattr(arduino::Fim, "nome")
-    descriptor = None
-    for klass in arduino::Fim.__mro__:
-        if "nome" in klass.__dict__:
-            descriptor = klass.__dict__["nome"]
-            break
-    assert isinstance(descriptor, property)
+def test_arduino_acoes_predefinidas_constructor_exists():
+    assert callable(arduino_Acoes_Predefinidas.__init__)
 
 
-
-def test_arduino::acoes::condicionais_is_not_abstract():
-    assert not inspect.isabstract(arduino::Acoes::Condicionais)
-
-
-def test_arduino::acoes::condicionais_constructor_exists():
-    assert callable(arduino::Acoes::Condicionais.__init__)
-
-
-def test_arduino::acoes::condicionais_constructor_args():
-    sig = inspect.signature(arduino::Acoes::Condicionais.__init__)
+def test_arduino_acoes_predefinidas_constructor_args():
+    sig = inspect.signature(arduino_Acoes_Predefinidas.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_arduino::acoes::predefinidas_is_not_abstract():
-    assert not inspect.isabstract(arduino::Acoes::Predefinidas)
+def test_corpo_modificavel_is_not_abstract():
+    assert not inspect.isabstract(Corpo_Modificavel)
 
 
-def test_arduino::acoes::predefinidas_constructor_exists():
-    assert callable(arduino::Acoes::Predefinidas.__init__)
+def test_corpo_modificavel_constructor_exists():
+    assert callable(Corpo_Modificavel.__init__)
 
 
-def test_arduino::acoes::predefinidas_constructor_args():
-    sig = inspect.signature(arduino::Acoes::Predefinidas.__init__)
+def test_corpo_modificavel_constructor_args():
+    sig = inspect.signature(Corpo_Modificavel.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_corpo::modificavel_is_not_abstract():
-    assert not inspect.isabstract(Corpo::Modificavel)
+def test_arduino_parar_tempo_is_not_abstract():
+    assert not inspect.isabstract(arduino_Parar_Tempo)
 
 
-def test_corpo::modificavel_constructor_exists():
-    assert callable(Corpo::Modificavel.__init__)
+def test_arduino_parar_tempo_constructor_exists():
+    assert callable(arduino_Parar_Tempo.__init__)
 
 
-def test_corpo::modificavel_constructor_args():
-    sig = inspect.signature(Corpo::Modificavel.__init__)
+def test_arduino_parar_tempo_constructor_args():
+    sig = inspect.signature(arduino_Parar_Tempo.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_arduino::rodar::direita::tempo_is_not_abstract():
-    assert not inspect.isabstract(arduino::Rodar::Direita::Tempo)
+def test_arduino_mover_frente_tempo_is_not_abstract():
+    assert not inspect.isabstract(arduino_Mover_Frente_Tempo)
 
 
-def test_arduino::rodar::direita::tempo_constructor_exists():
-    assert callable(arduino::Rodar::Direita::Tempo.__init__)
+def test_arduino_mover_frente_tempo_constructor_exists():
+    assert callable(arduino_Mover_Frente_Tempo.__init__)
 
 
-def test_arduino::rodar::direita::tempo_constructor_args():
-    sig = inspect.signature(arduino::Rodar::Direita::Tempo.__init__)
+def test_arduino_mover_frente_tempo_constructor_args():
+    sig = inspect.signature(arduino_Mover_Frente_Tempo.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_arduino::mover::tras::tempo_is_not_abstract():
-    assert not inspect.isabstract(arduino::Mover::Tras::Tempo)
+def test_arduino_mover_tras_tempo_is_not_abstract():
+    assert not inspect.isabstract(arduino_Mover_Tras_Tempo)
 
 
-def test_arduino::mover::tras::tempo_constructor_exists():
-    assert callable(arduino::Mover::Tras::Tempo.__init__)
+def test_arduino_mover_tras_tempo_constructor_exists():
+    assert callable(arduino_Mover_Tras_Tempo.__init__)
 
 
-def test_arduino::mover::tras::tempo_constructor_args():
-    sig = inspect.signature(arduino::Mover::Tras::Tempo.__init__)
+def test_arduino_mover_tras_tempo_constructor_args():
+    sig = inspect.signature(arduino_Mover_Tras_Tempo.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_arduino::parar::tempo_is_not_abstract():
-    assert not inspect.isabstract(arduino::Parar::Tempo)
+def test_arduino_rodar_direita_tempo_is_not_abstract():
+    assert not inspect.isabstract(arduino_Rodar_Direita_Tempo)
 
 
-def test_arduino::parar::tempo_constructor_exists():
-    assert callable(arduino::Parar::Tempo.__init__)
+def test_arduino_rodar_direita_tempo_constructor_exists():
+    assert callable(arduino_Rodar_Direita_Tempo.__init__)
 
 
-def test_arduino::parar::tempo_constructor_args():
-    sig = inspect.signature(arduino::Parar::Tempo.__init__)
+def test_arduino_rodar_direita_tempo_constructor_args():
+    sig = inspect.signature(arduino_Rodar_Direita_Tempo.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_arduino::mover::frente::tempo_is_not_abstract():
-    assert not inspect.isabstract(arduino::Mover::Frente::Tempo)
+def test_arduino_rodar_esquerda_tempo_is_not_abstract():
+    assert not inspect.isabstract(arduino_Rodar_Esquerda_Tempo)
 
 
-def test_arduino::mover::frente::tempo_constructor_exists():
-    assert callable(arduino::Mover::Frente::Tempo.__init__)
+def test_arduino_rodar_esquerda_tempo_constructor_exists():
+    assert callable(arduino_Rodar_Esquerda_Tempo.__init__)
 
 
-def test_arduino::mover::frente::tempo_constructor_args():
-    sig = inspect.signature(arduino::Mover::Frente::Tempo.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_arduino::rodar::esquerda::tempo_is_not_abstract():
-    assert not inspect.isabstract(arduino::Rodar::Esquerda::Tempo)
-
-
-def test_arduino::rodar::esquerda::tempo_constructor_exists():
-    assert callable(arduino::Rodar::Esquerda::Tempo.__init__)
-
-
-def test_arduino::rodar::esquerda::tempo_constructor_args():
-    sig = inspect.signature(arduino::Rodar::Esquerda::Tempo.__init__)
+def test_arduino_rodar_esquerda_tempo_constructor_args():
+    sig = inspect.signature(arduino_Rodar_Esquerda_Tempo.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1104,23 +1104,23 @@ def test_corpo_constructor_args():
 
 
 
-def test_arduino::parar_is_not_abstract():
-    assert not inspect.isabstract(arduino::Parar)
+def test_arduino_mover_frente_is_not_abstract():
+    assert not inspect.isabstract(arduino_Mover_Frente)
 
 
-def test_arduino::parar_constructor_exists():
-    assert callable(arduino::Parar.__init__)
+def test_arduino_mover_frente_constructor_exists():
+    assert callable(arduino_Mover_Frente.__init__)
 
 
-def test_arduino::parar_constructor_args():
-    sig = inspect.signature(arduino::Parar.__init__)
+def test_arduino_mover_frente_constructor_args():
+    sig = inspect.signature(arduino_Mover_Frente.__init__)
     params = list(sig.parameters.keys())
     assert "nome" in params, "Missing parameter 'nome'"
 
-def test_arduino::parar_has_nome():
-    assert hasattr(arduino::Parar, "nome")
+def test_arduino_mover_frente_has_nome():
+    assert hasattr(arduino_Mover_Frente, "nome")
     descriptor = None
-    for klass in arduino::Parar.__mro__:
+    for klass in arduino_Mover_Frente.__mro__:
         if "nome" in klass.__dict__:
             descriptor = klass.__dict__["nome"]
             break
@@ -1128,23 +1128,23 @@ def test_arduino::parar_has_nome():
 
 
 
-def test_arduino::mover::tras_is_not_abstract():
-    assert not inspect.isabstract(arduino::Mover::Tras)
+def test_arduino_parar_is_not_abstract():
+    assert not inspect.isabstract(arduino_Parar)
 
 
-def test_arduino::mover::tras_constructor_exists():
-    assert callable(arduino::Mover::Tras.__init__)
+def test_arduino_parar_constructor_exists():
+    assert callable(arduino_Parar.__init__)
 
 
-def test_arduino::mover::tras_constructor_args():
-    sig = inspect.signature(arduino::Mover::Tras.__init__)
+def test_arduino_parar_constructor_args():
+    sig = inspect.signature(arduino_Parar.__init__)
     params = list(sig.parameters.keys())
     assert "nome" in params, "Missing parameter 'nome'"
 
-def test_arduino::mover::tras_has_nome():
-    assert hasattr(arduino::Mover::Tras, "nome")
+def test_arduino_parar_has_nome():
+    assert hasattr(arduino_Parar, "nome")
     descriptor = None
-    for klass in arduino::Mover::Tras.__mro__:
+    for klass in arduino_Parar.__mro__:
         if "nome" in klass.__dict__:
             descriptor = klass.__dict__["nome"]
             break
@@ -1152,23 +1152,23 @@ def test_arduino::mover::tras_has_nome():
 
 
 
-def test_arduino::virar::direita_is_not_abstract():
-    assert not inspect.isabstract(arduino::Virar::Direita)
+def test_arduino_mover_aleatoriamente_is_not_abstract():
+    assert not inspect.isabstract(arduino_Mover_Aleatoriamente)
 
 
-def test_arduino::virar::direita_constructor_exists():
-    assert callable(arduino::Virar::Direita.__init__)
+def test_arduino_mover_aleatoriamente_constructor_exists():
+    assert callable(arduino_Mover_Aleatoriamente.__init__)
 
 
-def test_arduino::virar::direita_constructor_args():
-    sig = inspect.signature(arduino::Virar::Direita.__init__)
+def test_arduino_mover_aleatoriamente_constructor_args():
+    sig = inspect.signature(arduino_Mover_Aleatoriamente.__init__)
     params = list(sig.parameters.keys())
     assert "nome" in params, "Missing parameter 'nome'"
 
-def test_arduino::virar::direita_has_nome():
-    assert hasattr(arduino::Virar::Direita, "nome")
+def test_arduino_mover_aleatoriamente_has_nome():
+    assert hasattr(arduino_Mover_Aleatoriamente, "nome")
     descriptor = None
-    for klass in arduino::Virar::Direita.__mro__:
+    for klass in arduino_Mover_Aleatoriamente.__mro__:
         if "nome" in klass.__dict__:
             descriptor = klass.__dict__["nome"]
             break
@@ -1176,23 +1176,23 @@ def test_arduino::virar::direita_has_nome():
 
 
 
-def test_arduino::mover::frente_is_not_abstract():
-    assert not inspect.isabstract(arduino::Mover::Frente)
+def test_arduino_mover_tras_is_not_abstract():
+    assert not inspect.isabstract(arduino_Mover_Tras)
 
 
-def test_arduino::mover::frente_constructor_exists():
-    assert callable(arduino::Mover::Frente.__init__)
+def test_arduino_mover_tras_constructor_exists():
+    assert callable(arduino_Mover_Tras.__init__)
 
 
-def test_arduino::mover::frente_constructor_args():
-    sig = inspect.signature(arduino::Mover::Frente.__init__)
+def test_arduino_mover_tras_constructor_args():
+    sig = inspect.signature(arduino_Mover_Tras.__init__)
     params = list(sig.parameters.keys())
     assert "nome" in params, "Missing parameter 'nome'"
 
-def test_arduino::mover::frente_has_nome():
-    assert hasattr(arduino::Mover::Frente, "nome")
+def test_arduino_mover_tras_has_nome():
+    assert hasattr(arduino_Mover_Tras, "nome")
     descriptor = None
-    for klass in arduino::Mover::Frente.__mro__:
+    for klass in arduino_Mover_Tras.__mro__:
         if "nome" in klass.__dict__:
             descriptor = klass.__dict__["nome"]
             break
@@ -1200,23 +1200,23 @@ def test_arduino::mover::frente_has_nome():
 
 
 
-def test_arduino::mover::aleatoriamente_is_not_abstract():
-    assert not inspect.isabstract(arduino::Mover::Aleatoriamente)
+def test_arduino_virar_direita_is_not_abstract():
+    assert not inspect.isabstract(arduino_Virar_Direita)
 
 
-def test_arduino::mover::aleatoriamente_constructor_exists():
-    assert callable(arduino::Mover::Aleatoriamente.__init__)
+def test_arduino_virar_direita_constructor_exists():
+    assert callable(arduino_Virar_Direita.__init__)
 
 
-def test_arduino::mover::aleatoriamente_constructor_args():
-    sig = inspect.signature(arduino::Mover::Aleatoriamente.__init__)
+def test_arduino_virar_direita_constructor_args():
+    sig = inspect.signature(arduino_Virar_Direita.__init__)
     params = list(sig.parameters.keys())
     assert "nome" in params, "Missing parameter 'nome'"
 
-def test_arduino::mover::aleatoriamente_has_nome():
-    assert hasattr(arduino::Mover::Aleatoriamente, "nome")
+def test_arduino_virar_direita_has_nome():
+    assert hasattr(arduino_Virar_Direita, "nome")
     descriptor = None
-    for klass in arduino::Mover::Aleatoriamente.__mro__:
+    for klass in arduino_Virar_Direita.__mro__:
         if "nome" in klass.__dict__:
             descriptor = klass.__dict__["nome"]
             break
@@ -1224,23 +1224,23 @@ def test_arduino::mover::aleatoriamente_has_nome():
 
 
 
-def test_arduino::virar::esquerda_is_not_abstract():
-    assert not inspect.isabstract(arduino::Virar::Esquerda)
+def test_arduino_virar_esquerda_is_not_abstract():
+    assert not inspect.isabstract(arduino_Virar_Esquerda)
 
 
-def test_arduino::virar::esquerda_constructor_exists():
-    assert callable(arduino::Virar::Esquerda.__init__)
+def test_arduino_virar_esquerda_constructor_exists():
+    assert callable(arduino_Virar_Esquerda.__init__)
 
 
-def test_arduino::virar::esquerda_constructor_args():
-    sig = inspect.signature(arduino::Virar::Esquerda.__init__)
+def test_arduino_virar_esquerda_constructor_args():
+    sig = inspect.signature(arduino_Virar_Esquerda.__init__)
     params = list(sig.parameters.keys())
     assert "nome" in params, "Missing parameter 'nome'"
 
-def test_arduino::virar::esquerda_has_nome():
-    assert hasattr(arduino::Virar::Esquerda, "nome")
+def test_arduino_virar_esquerda_has_nome():
+    assert hasattr(arduino_Virar_Esquerda, "nome")
     descriptor = None
-    for klass in arduino::Virar::Esquerda.__mro__:
+    for klass in arduino_Virar_Esquerda.__mro__:
         if "nome" in klass.__dict__:
             descriptor = klass.__dict__["nome"]
             break
@@ -1248,65 +1248,65 @@ def test_arduino::virar::esquerda_has_nome():
 
 
 
-def test_arduino::condicao_is_not_abstract():
-    assert not inspect.isabstract(arduino::Condicao)
+def test_arduino_condicao_is_not_abstract():
+    assert not inspect.isabstract(arduino_Condicao)
 
 
-def test_arduino::condicao_constructor_exists():
-    assert callable(arduino::Condicao.__init__)
+def test_arduino_condicao_constructor_exists():
+    assert callable(arduino_Condicao.__init__)
 
 
-def test_arduino::condicao_constructor_args():
-    sig = inspect.signature(arduino::Condicao.__init__)
+def test_arduino_condicao_constructor_args():
+    sig = inspect.signature(arduino_Condicao.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_arduino::transicoes_is_not_abstract():
-    assert not inspect.isabstract(arduino::Transicoes)
+def test_arduino_transicoes_is_not_abstract():
+    assert not inspect.isabstract(arduino_Transicoes)
 
 
-def test_arduino::transicoes_constructor_exists():
-    assert callable(arduino::Transicoes.__init__)
+def test_arduino_transicoes_constructor_exists():
+    assert callable(arduino_Transicoes.__init__)
 
 
-def test_arduino::transicoes_constructor_args():
-    sig = inspect.signature(arduino::Transicoes.__init__)
+def test_arduino_transicoes_constructor_args():
+    sig = inspect.signature(arduino_Transicoes.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_arduino::acao_is_not_abstract():
-    assert not inspect.isabstract(arduino::Acao)
+def test_arduino_acao_is_not_abstract():
+    assert not inspect.isabstract(arduino_Acao)
 
 
-def test_arduino::acao_constructor_exists():
-    assert callable(arduino::Acao.__init__)
+def test_arduino_acao_constructor_exists():
+    assert callable(arduino_Acao.__init__)
 
 
-def test_arduino::acao_constructor_args():
-    sig = inspect.signature(arduino::Acao.__init__)
+def test_arduino_acao_constructor_args():
+    sig = inspect.signature(arduino_Acao.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_arduino::robo_is_not_abstract():
-    assert not inspect.isabstract(arduino::Robo)
+def test_arduino_robo_is_not_abstract():
+    assert not inspect.isabstract(arduino_Robo)
 
 
-def test_arduino::robo_constructor_exists():
-    assert callable(arduino::Robo.__init__)
+def test_arduino_robo_constructor_exists():
+    assert callable(arduino_Robo.__init__)
 
 
-def test_arduino::robo_constructor_args():
-    sig = inspect.signature(arduino::Robo.__init__)
+def test_arduino_robo_constructor_args():
+    sig = inspect.signature(arduino_Robo.__init__)
     params = list(sig.parameters.keys())
     assert "Nome" in params, "Missing parameter 'Nome'"
 
-def test_arduino::robo_has_Nome():
-    assert hasattr(arduino::Robo, "Nome")
+def test_arduino_robo_has_Nome():
+    assert hasattr(arduino_Robo, "Nome")
     descriptor = None
-    for klass in arduino::Robo.__mro__:
+    for klass in arduino_Robo.__mro__:
         if "Nome" in klass.__dict__:
             descriptor = klass.__dict__["Nome"]
             break
@@ -1324,16 +1324,16 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-Acoes::Modificaveis_strategy = st.builds(
-    Acoes::Modificaveis,
+Acoes_Modificaveis_strategy = st.builds(
+    Acoes_Modificaveis,
 )
-arduino::Cabeca::Modificavel_strategy = st.builds(
-    arduino::Cabeca::Modificavel,
+arduino_Cabeca_Modificavel_strategy = st.builds(
+    arduino_Cabeca_Modificavel,
     graus=
         st.integers()
 )
-arduino::Corpo::Modificavel_strategy = st.builds(
-    arduino::Corpo::Modificavel,
+arduino_Corpo_Modificavel_strategy = st.builds(
+    arduino_Corpo_Modificavel,
     tempo=
         st.integers(),
     evitarObstaculo=
@@ -1342,293 +1342,284 @@ arduino::Corpo::Modificavel_strategy = st.builds(
 Condicao_strategy = st.builds(
     Condicao,
 )
-arduino::Distancia::Infra::Vermelhos_strategy = st.builds(
-    arduino::Distancia::Infra::Vermelhos,
+arduino_Distancia_Infra_Vermelhos_strategy = st.builds(
+    arduino_Distancia_Infra_Vermelhos,
     distancia=
         st.integers()
 )
-arduino::Bumper::Pressionado_strategy = st.builds(
-    arduino::Bumper::Pressionado,
+arduino_Bumper_Pressionado_strategy = st.builds(
+    arduino_Bumper_Pressionado,
     nome=
         safe_text
 )
-Acoes::Condicionais_strategy = st.builds(
-    Acoes::Condicionais,
+Acoes_Condicionais_strategy = st.builds(
+    Acoes_Condicionais,
 )
-arduino::If_strategy = st.builds(
-    arduino::If,
+arduino_If_strategy = st.builds(
+    arduino_If,
     nome=
         safe_text
 )
-arduino::While_strategy = st.builds(
-    arduino::While,
+arduino_While_strategy = st.builds(
+    arduino_While,
     nome=
         safe_text
 )
 Verde_strategy = st.builds(
     Verde,
 )
-arduino::Desligar::LED::Verde_strategy = st.builds(
-    arduino::Desligar::LED::Verde,
+arduino_Desligar_LED_Verde_strategy = st.builds(
+    arduino_Desligar_LED_Verde,
     nome=
         safe_text
 )
-arduino::Ligar::LED::Verde_strategy = st.builds(
-    arduino::Ligar::LED::Verde,
+arduino_Ligar_LED_Verde_strategy = st.builds(
+    arduino_Ligar_LED_Verde,
     nome=
         safe_text
 )
-Unica::Cor_strategy = st.builds(
-    Unica::Cor,
+Unica_Cor_strategy = st.builds(
+    Unica_Cor,
 )
-arduino::Ligar::Vermelho_strategy = st.builds(
-    arduino::Ligar::Vermelho,
+arduino_Ligar_Verde_strategy = st.builds(
+    arduino_Ligar_Verde,
     nome=
         safe_text
 )
-arduino::Desligar::Cor_strategy = st.builds(
-    arduino::Desligar::Cor,
+arduino_Desligar_Cor_strategy = st.builds(
+    arduino_Desligar_Cor,
     nome=
         safe_text
 )
-arduino::Ligar::Verde_strategy = st.builds(
-    arduino::Ligar::Verde,
+arduino_Ligar_Vermelho_strategy = st.builds(
+    arduino_Ligar_Vermelho,
     nome=
         safe_text
 )
 LED_strategy = st.builds(
     LED,
 )
-arduino::Tricolor_strategy = st.builds(
-    arduino::Tricolor,
+arduino_Tricolor_strategy = st.builds(
+    arduino_Tricolor,
 )
-arduino::Ligar::Azul_strategy = st.builds(
-    arduino::Ligar::Azul,
+arduino_Ligar_Azul_strategy = st.builds(
+    arduino_Ligar_Azul,
     nome=
         safe_text
 )
-arduino::Verde_strategy = st.builds(
-    arduino::Verde,
+arduino_Verde_strategy = st.builds(
+    arduino_Verde,
 )
-Varias::Cores_strategy = st.builds(
-    Varias::Cores,
+Varias_Cores_strategy = st.builds(
+    Varias_Cores,
 )
-arduino::Ligar::Cores::Arco::Iris_strategy = st.builds(
-    arduino::Ligar::Cores::Arco::Iris,
+arduino_Ligar_Cores_Arco_Iris_strategy = st.builds(
+    arduino_Ligar_Cores_Arco_Iris,
     nome=
         safe_text
 )
-arduino::Desligar::Cores_strategy = st.builds(
-    arduino::Desligar::Cores,
+arduino_Desligar_Cores_strategy = st.builds(
+    arduino_Desligar_Cores,
     nome=
         safe_text
 )
-arduino::Ligar::Cores::Policia_strategy = st.builds(
-    arduino::Ligar::Cores::Policia,
+arduino_Ligar_Cores_Policia_strategy = st.builds(
+    arduino_Ligar_Cores_Policia,
     nome=
         safe_text
 )
 Tricolor_strategy = st.builds(
     Tricolor,
 )
-arduino::Unica::Cor_strategy = st.builds(
-    arduino::Unica::Cor,
+arduino_Unica_Cor_strategy = st.builds(
+    arduino_Unica_Cor,
 )
-arduino::Varias::Cores_strategy = st.builds(
-    arduino::Varias::Cores,
+arduino_Varias_Cores_strategy = st.builds(
+    arduino_Varias_Cores,
 )
-arduino::Desligar::Intermitencia_strategy = st.builds(
-    arduino::Desligar::Intermitencia,
+arduino_Desligar_Intermitencia_strategy = st.builds(
+    arduino_Desligar_Intermitencia,
     nome=
         safe_text
 )
-arduino::Ligar::Intermitencia_strategy = st.builds(
-    arduino::Ligar::Intermitencia,
+arduino_Ligar_Intermitencia_strategy = st.builds(
+    arduino_Ligar_Intermitencia,
     nome=
         safe_text
 )
 Cabeca_strategy = st.builds(
     Cabeca,
 )
-arduino::Virar::Max::Esq_strategy = st.builds(
-    arduino::Virar::Max::Esq,
+arduino_Virar_Max_Esq_strategy = st.builds(
+    arduino_Virar_Max_Esq,
     nome=
         safe_text
 )
-arduino::Virar::Max::Drt_strategy = st.builds(
-    arduino::Virar::Max::Drt,
+arduino_Virar_Max_Drt_strategy = st.builds(
+    arduino_Virar_Max_Drt,
     nome=
         safe_text
 )
-Acoes::Predefinidas_strategy = st.builds(
-    Acoes::Predefinidas,
+Acoes_Predefinidas_strategy = st.builds(
+    Acoes_Predefinidas,
 )
-arduino::Cabeca_strategy = st.builds(
-    arduino::Cabeca,
-)
-arduino::Corpo_strategy = st.builds(
-    arduino::Corpo,
+arduino_Corpo_strategy = st.builds(
+    arduino_Corpo,
     evitarObstaculo=
         st.booleans()
 )
-arduino::LED_strategy = st.builds(
-    arduino::LED,
+arduino_Cabeca_strategy = st.builds(
+    arduino_Cabeca,
 )
-arduino::Virar::45::Drt_strategy = st.builds(
-    arduino::Virar::45::Drt,
+arduino_LED_strategy = st.builds(
+    arduino_LED,
+)
+arduino_Virar_45_Drt_strategy = st.builds(
+    arduino_Virar_45_Drt,
     nome=
         safe_text
 )
-arduino::Virar::45::Esq_strategy = st.builds(
-    arduino::Virar::45::Esq,
+arduino_Virar_45_Esq_strategy = st.builds(
+    arduino_Virar_45_Esq,
     nome=
         safe_text
 )
-arduino::Centrar_strategy = st.builds(
-    arduino::Centrar,
+arduino_Centrar_strategy = st.builds(
+    arduino_Centrar,
     nome=
         safe_text
 )
-Cabeca::Modificavel_strategy = st.builds(
-    Cabeca::Modificavel,
+Cabeca_Modificavel_strategy = st.builds(
+    Cabeca_Modificavel,
 )
-arduino::Virar::para::X::Graus_strategy = st.builds(
-    arduino::Virar::para::X::Graus,
+arduino_Virar_para_X_Graus_strategy = st.builds(
+    arduino_Virar_para_X_Graus,
 )
 Acao_strategy = st.builds(
     Acao,
 )
-arduino::Acoes::Modificaveis_strategy = st.builds(
-    arduino::Acoes::Modificaveis,
+arduino_Acoes_Modificaveis_strategy = st.builds(
+    arduino_Acoes_Modificaveis,
 )
-arduino::Inicio_strategy = st.builds(
-    arduino::Inicio,
+arduino_Fim_strategy = st.builds(
+    arduino_Fim,
+    nome=
+        safe_text
+)
+arduino_Acoes_Condicionais_strategy = st.builds(
+    arduino_Acoes_Condicionais,
+)
+arduino_Inicio_strategy = st.builds(
+    arduino_Inicio,
+    nome=
+        safe_text,
     evitarObstaculo=
-        st.booleans(),
-    nome=
-        safe_text
+        st.booleans()
 )
-arduino::Fim_strategy = st.builds(
-    arduino::Fim,
-    nome=
-        safe_text
+arduino_Acoes_Predefinidas_strategy = st.builds(
+    arduino_Acoes_Predefinidas,
 )
-arduino::Acoes::Condicionais_strategy = st.builds(
-    arduino::Acoes::Condicionais,
+Corpo_Modificavel_strategy = st.builds(
+    Corpo_Modificavel,
 )
-arduino::Acoes::Predefinidas_strategy = st.builds(
-    arduino::Acoes::Predefinidas,
+arduino_Parar_Tempo_strategy = st.builds(
+    arduino_Parar_Tempo,
 )
-Corpo::Modificavel_strategy = st.builds(
-    Corpo::Modificavel,
+arduino_Mover_Frente_Tempo_strategy = st.builds(
+    arduino_Mover_Frente_Tempo,
 )
-arduino::Rodar::Direita::Tempo_strategy = st.builds(
-    arduino::Rodar::Direita::Tempo,
+arduino_Mover_Tras_Tempo_strategy = st.builds(
+    arduino_Mover_Tras_Tempo,
 )
-arduino::Mover::Tras::Tempo_strategy = st.builds(
-    arduino::Mover::Tras::Tempo,
+arduino_Rodar_Direita_Tempo_strategy = st.builds(
+    arduino_Rodar_Direita_Tempo,
 )
-arduino::Parar::Tempo_strategy = st.builds(
-    arduino::Parar::Tempo,
-)
-arduino::Mover::Frente::Tempo_strategy = st.builds(
-    arduino::Mover::Frente::Tempo,
-)
-arduino::Rodar::Esquerda::Tempo_strategy = st.builds(
-    arduino::Rodar::Esquerda::Tempo,
+arduino_Rodar_Esquerda_Tempo_strategy = st.builds(
+    arduino_Rodar_Esquerda_Tempo,
 )
 Corpo_strategy = st.builds(
     Corpo,
 )
-arduino::Parar_strategy = st.builds(
-    arduino::Parar,
+arduino_Mover_Frente_strategy = st.builds(
+    arduino_Mover_Frente,
     nome=
         safe_text
 )
-arduino::Mover::Tras_strategy = st.builds(
-    arduino::Mover::Tras,
+arduino_Parar_strategy = st.builds(
+    arduino_Parar,
     nome=
         safe_text
 )
-arduino::Virar::Direita_strategy = st.builds(
-    arduino::Virar::Direita,
+arduino_Mover_Aleatoriamente_strategy = st.builds(
+    arduino_Mover_Aleatoriamente,
     nome=
         safe_text
 )
-arduino::Mover::Frente_strategy = st.builds(
-    arduino::Mover::Frente,
+arduino_Mover_Tras_strategy = st.builds(
+    arduino_Mover_Tras,
     nome=
         safe_text
 )
-arduino::Mover::Aleatoriamente_strategy = st.builds(
-    arduino::Mover::Aleatoriamente,
+arduino_Virar_Direita_strategy = st.builds(
+    arduino_Virar_Direita,
     nome=
         safe_text
 )
-arduino::Virar::Esquerda_strategy = st.builds(
-    arduino::Virar::Esquerda,
+arduino_Virar_Esquerda_strategy = st.builds(
+    arduino_Virar_Esquerda,
     nome=
         safe_text
 )
-arduino::Condicao_strategy = st.builds(
-    arduino::Condicao,
+arduino_Condicao_strategy = st.builds(
+    arduino_Condicao,
 )
-arduino::Transicoes_strategy = st.builds(
-    arduino::Transicoes,
+arduino_Transicoes_strategy = st.builds(
+    arduino_Transicoes,
 )
-arduino::Acao_strategy = st.builds(
-    arduino::Acao,
+arduino_Acao_strategy = st.builds(
+    arduino_Acao,
 )
-arduino::Robo_strategy = st.builds(
-    arduino::Robo,
+arduino_Robo_strategy = st.builds(
+    arduino_Robo,
     Nome=
         safe_text
 )
 
-@given(instance=Acoes::Modificaveis_strategy)
+@given(instance=Acoes_Modificaveis_strategy)
 @settings(max_examples=50)
-def test_acoes::modificaveis_instantiation(instance):
-    assert isinstance(instance, Acoes::Modificaveis)
+def test_acoes_modificaveis_instantiation(instance):
+    assert isinstance(instance, Acoes_Modificaveis)
 
-@given(instance=arduino::Cabeca::Modificavel_strategy)
+@given(instance=arduino_Cabeca_Modificavel_strategy)
 @settings(max_examples=50)
-def test_arduino::cabeca::modificavel_instantiation(instance):
-    assert isinstance(instance, arduino::Cabeca::Modificavel)
-
-@given(instance=arduino::Cabeca::Modificavel_strategy)
-def test_arduino::cabeca::modificavel_graus_type(instance):
-    assert isinstance(instance.graus, int)
+def test_arduino_cabeca_modificavel_instantiation(instance):
+    assert isinstance(instance, arduino_Cabeca_Modificavel)
 
 
-@given(instance=arduino::Cabeca::Modificavel_strategy)
-def test_arduino::cabeca::modificavel_graus_setter(instance):
+
+@given(instance=arduino_Cabeca_Modificavel_strategy)
+def test_arduino_cabeca_modificavel_graus_setter(instance):
     original = instance.graus
     instance.graus = original
     assert instance.graus == original
 
-@given(instance=arduino::Corpo::Modificavel_strategy)
+@given(instance=arduino_Corpo_Modificavel_strategy)
 @settings(max_examples=50)
-def test_arduino::corpo::modificavel_instantiation(instance):
-    assert isinstance(instance, arduino::Corpo::Modificavel)
-
-@given(instance=arduino::Corpo::Modificavel_strategy)
-def test_arduino::corpo::modificavel_tempo_type(instance):
-    assert isinstance(instance.tempo, int)
+def test_arduino_corpo_modificavel_instantiation(instance):
+    assert isinstance(instance, arduino_Corpo_Modificavel)
 
 
-@given(instance=arduino::Corpo::Modificavel_strategy)
-def test_arduino::corpo::modificavel_tempo_setter(instance):
+
+@given(instance=arduino_Corpo_Modificavel_strategy)
+def test_arduino_corpo_modificavel_tempo_setter(instance):
     original = instance.tempo
     instance.tempo = original
     assert instance.tempo == original
 
-@given(instance=arduino::Corpo::Modificavel_strategy)
-def test_arduino::corpo::modificavel_evitarObstaculo_type(instance):
-    assert isinstance(instance.evitarObstaculo, bool)
 
 
-@given(instance=arduino::Corpo::Modificavel_strategy)
-def test_arduino::corpo::modificavel_evitarObstaculo_setter(instance):
+@given(instance=arduino_Corpo_Modificavel_strategy)
+def test_arduino_corpo_modificavel_evitarObstaculo_setter(instance):
     original = instance.evitarObstaculo
     instance.evitarObstaculo = original
     assert instance.evitarObstaculo == original
@@ -1638,71 +1629,59 @@ def test_arduino::corpo::modificavel_evitarObstaculo_setter(instance):
 def test_condicao_instantiation(instance):
     assert isinstance(instance, Condicao)
 
-@given(instance=arduino::Distancia::Infra::Vermelhos_strategy)
+@given(instance=arduino_Distancia_Infra_Vermelhos_strategy)
 @settings(max_examples=50)
-def test_arduino::distancia::infra::vermelhos_instantiation(instance):
-    assert isinstance(instance, arduino::Distancia::Infra::Vermelhos)
-
-@given(instance=arduino::Distancia::Infra::Vermelhos_strategy)
-def test_arduino::distancia::infra::vermelhos_distancia_type(instance):
-    assert isinstance(instance.distancia, int)
+def test_arduino_distancia_infra_vermelhos_instantiation(instance):
+    assert isinstance(instance, arduino_Distancia_Infra_Vermelhos)
 
 
-@given(instance=arduino::Distancia::Infra::Vermelhos_strategy)
-def test_arduino::distancia::infra::vermelhos_distancia_setter(instance):
+
+@given(instance=arduino_Distancia_Infra_Vermelhos_strategy)
+def test_arduino_distancia_infra_vermelhos_distancia_setter(instance):
     original = instance.distancia
     instance.distancia = original
     assert instance.distancia == original
 
-@given(instance=arduino::Bumper::Pressionado_strategy)
+@given(instance=arduino_Bumper_Pressionado_strategy)
 @settings(max_examples=50)
-def test_arduino::bumper::pressionado_instantiation(instance):
-    assert isinstance(instance, arduino::Bumper::Pressionado)
-
-@given(instance=arduino::Bumper::Pressionado_strategy)
-def test_arduino::bumper::pressionado_nome_type(instance):
-    assert isinstance(instance.nome, str)
+def test_arduino_bumper_pressionado_instantiation(instance):
+    assert isinstance(instance, arduino_Bumper_Pressionado)
 
 
-@given(instance=arduino::Bumper::Pressionado_strategy)
-def test_arduino::bumper::pressionado_nome_setter(instance):
+
+@given(instance=arduino_Bumper_Pressionado_strategy)
+def test_arduino_bumper_pressionado_nome_setter(instance):
     original = instance.nome
     instance.nome = original
     assert instance.nome == original
 
-@given(instance=Acoes::Condicionais_strategy)
+@given(instance=Acoes_Condicionais_strategy)
 @settings(max_examples=50)
-def test_acoes::condicionais_instantiation(instance):
-    assert isinstance(instance, Acoes::Condicionais)
+def test_acoes_condicionais_instantiation(instance):
+    assert isinstance(instance, Acoes_Condicionais)
 
-@given(instance=arduino::If_strategy)
+@given(instance=arduino_If_strategy)
 @settings(max_examples=50)
-def test_arduino::if_instantiation(instance):
-    assert isinstance(instance, arduino::If)
-
-@given(instance=arduino::If_strategy)
-def test_arduino::if_nome_type(instance):
-    assert isinstance(instance.nome, str)
+def test_arduino_if_instantiation(instance):
+    assert isinstance(instance, arduino_If)
 
 
-@given(instance=arduino::If_strategy)
-def test_arduino::if_nome_setter(instance):
+
+@given(instance=arduino_If_strategy)
+def test_arduino_if_nome_setter(instance):
     original = instance.nome
     instance.nome = original
     assert instance.nome == original
 
-@given(instance=arduino::While_strategy)
+@given(instance=arduino_While_strategy)
 @settings(max_examples=50)
-def test_arduino::while_instantiation(instance):
-    assert isinstance(instance, arduino::While)
-
-@given(instance=arduino::While_strategy)
-def test_arduino::while_nome_type(instance):
-    assert isinstance(instance.nome, str)
+def test_arduino_while_instantiation(instance):
+    assert isinstance(instance, arduino_While)
 
 
-@given(instance=arduino::While_strategy)
-def test_arduino::while_nome_setter(instance):
+
+@given(instance=arduino_While_strategy)
+def test_arduino_while_nome_setter(instance):
     original = instance.nome
     instance.nome = original
     assert instance.nome == original
@@ -1712,87 +1691,72 @@ def test_arduino::while_nome_setter(instance):
 def test_verde_instantiation(instance):
     assert isinstance(instance, Verde)
 
-@given(instance=arduino::Desligar::LED::Verde_strategy)
+@given(instance=arduino_Desligar_LED_Verde_strategy)
 @settings(max_examples=50)
-def test_arduino::desligar::led::verde_instantiation(instance):
-    assert isinstance(instance, arduino::Desligar::LED::Verde)
-
-@given(instance=arduino::Desligar::LED::Verde_strategy)
-def test_arduino::desligar::led::verde_nome_type(instance):
-    assert isinstance(instance.nome, str)
+def test_arduino_desligar_led_verde_instantiation(instance):
+    assert isinstance(instance, arduino_Desligar_LED_Verde)
 
 
-@given(instance=arduino::Desligar::LED::Verde_strategy)
-def test_arduino::desligar::led::verde_nome_setter(instance):
+
+@given(instance=arduino_Desligar_LED_Verde_strategy)
+def test_arduino_desligar_led_verde_nome_setter(instance):
     original = instance.nome
     instance.nome = original
     assert instance.nome == original
 
-@given(instance=arduino::Ligar::LED::Verde_strategy)
+@given(instance=arduino_Ligar_LED_Verde_strategy)
 @settings(max_examples=50)
-def test_arduino::ligar::led::verde_instantiation(instance):
-    assert isinstance(instance, arduino::Ligar::LED::Verde)
-
-@given(instance=arduino::Ligar::LED::Verde_strategy)
-def test_arduino::ligar::led::verde_nome_type(instance):
-    assert isinstance(instance.nome, str)
+def test_arduino_ligar_led_verde_instantiation(instance):
+    assert isinstance(instance, arduino_Ligar_LED_Verde)
 
 
-@given(instance=arduino::Ligar::LED::Verde_strategy)
-def test_arduino::ligar::led::verde_nome_setter(instance):
+
+@given(instance=arduino_Ligar_LED_Verde_strategy)
+def test_arduino_ligar_led_verde_nome_setter(instance):
     original = instance.nome
     instance.nome = original
     assert instance.nome == original
 
-@given(instance=Unica::Cor_strategy)
+@given(instance=Unica_Cor_strategy)
 @settings(max_examples=50)
-def test_unica::cor_instantiation(instance):
-    assert isinstance(instance, Unica::Cor)
+def test_unica_cor_instantiation(instance):
+    assert isinstance(instance, Unica_Cor)
 
-@given(instance=arduino::Ligar::Vermelho_strategy)
+@given(instance=arduino_Ligar_Verde_strategy)
 @settings(max_examples=50)
-def test_arduino::ligar::vermelho_instantiation(instance):
-    assert isinstance(instance, arduino::Ligar::Vermelho)
-
-@given(instance=arduino::Ligar::Vermelho_strategy)
-def test_arduino::ligar::vermelho_nome_type(instance):
-    assert isinstance(instance.nome, str)
+def test_arduino_ligar_verde_instantiation(instance):
+    assert isinstance(instance, arduino_Ligar_Verde)
 
 
-@given(instance=arduino::Ligar::Vermelho_strategy)
-def test_arduino::ligar::vermelho_nome_setter(instance):
+
+@given(instance=arduino_Ligar_Verde_strategy)
+def test_arduino_ligar_verde_nome_setter(instance):
     original = instance.nome
     instance.nome = original
     assert instance.nome == original
 
-@given(instance=arduino::Desligar::Cor_strategy)
+@given(instance=arduino_Desligar_Cor_strategy)
 @settings(max_examples=50)
-def test_arduino::desligar::cor_instantiation(instance):
-    assert isinstance(instance, arduino::Desligar::Cor)
-
-@given(instance=arduino::Desligar::Cor_strategy)
-def test_arduino::desligar::cor_nome_type(instance):
-    assert isinstance(instance.nome, str)
+def test_arduino_desligar_cor_instantiation(instance):
+    assert isinstance(instance, arduino_Desligar_Cor)
 
 
-@given(instance=arduino::Desligar::Cor_strategy)
-def test_arduino::desligar::cor_nome_setter(instance):
+
+@given(instance=arduino_Desligar_Cor_strategy)
+def test_arduino_desligar_cor_nome_setter(instance):
     original = instance.nome
     instance.nome = original
     assert instance.nome == original
 
-@given(instance=arduino::Ligar::Verde_strategy)
+@given(instance=arduino_Ligar_Vermelho_strategy)
 @settings(max_examples=50)
-def test_arduino::ligar::verde_instantiation(instance):
-    assert isinstance(instance, arduino::Ligar::Verde)
-
-@given(instance=arduino::Ligar::Verde_strategy)
-def test_arduino::ligar::verde_nome_type(instance):
-    assert isinstance(instance.nome, str)
+def test_arduino_ligar_vermelho_instantiation(instance):
+    assert isinstance(instance, arduino_Ligar_Vermelho)
 
 
-@given(instance=arduino::Ligar::Verde_strategy)
-def test_arduino::ligar::verde_nome_setter(instance):
+
+@given(instance=arduino_Ligar_Vermelho_strategy)
+def test_arduino_ligar_vermelho_nome_setter(instance):
     original = instance.nome
     instance.nome = original
     assert instance.nome == original
@@ -1802,81 +1766,69 @@ def test_arduino::ligar::verde_nome_setter(instance):
 def test_led_instantiation(instance):
     assert isinstance(instance, LED)
 
-@given(instance=arduino::Tricolor_strategy)
+@given(instance=arduino_Tricolor_strategy)
 @settings(max_examples=50)
-def test_arduino::tricolor_instantiation(instance):
-    assert isinstance(instance, arduino::Tricolor)
+def test_arduino_tricolor_instantiation(instance):
+    assert isinstance(instance, arduino_Tricolor)
 
-@given(instance=arduino::Ligar::Azul_strategy)
+@given(instance=arduino_Ligar_Azul_strategy)
 @settings(max_examples=50)
-def test_arduino::ligar::azul_instantiation(instance):
-    assert isinstance(instance, arduino::Ligar::Azul)
-
-@given(instance=arduino::Ligar::Azul_strategy)
-def test_arduino::ligar::azul_nome_type(instance):
-    assert isinstance(instance.nome, str)
+def test_arduino_ligar_azul_instantiation(instance):
+    assert isinstance(instance, arduino_Ligar_Azul)
 
 
-@given(instance=arduino::Ligar::Azul_strategy)
-def test_arduino::ligar::azul_nome_setter(instance):
+
+@given(instance=arduino_Ligar_Azul_strategy)
+def test_arduino_ligar_azul_nome_setter(instance):
     original = instance.nome
     instance.nome = original
     assert instance.nome == original
 
-@given(instance=arduino::Verde_strategy)
+@given(instance=arduino_Verde_strategy)
 @settings(max_examples=50)
-def test_arduino::verde_instantiation(instance):
-    assert isinstance(instance, arduino::Verde)
+def test_arduino_verde_instantiation(instance):
+    assert isinstance(instance, arduino_Verde)
 
-@given(instance=Varias::Cores_strategy)
+@given(instance=Varias_Cores_strategy)
 @settings(max_examples=50)
-def test_varias::cores_instantiation(instance):
-    assert isinstance(instance, Varias::Cores)
+def test_varias_cores_instantiation(instance):
+    assert isinstance(instance, Varias_Cores)
 
-@given(instance=arduino::Ligar::Cores::Arco::Iris_strategy)
+@given(instance=arduino_Ligar_Cores_Arco_Iris_strategy)
 @settings(max_examples=50)
-def test_arduino::ligar::cores::arco::iris_instantiation(instance):
-    assert isinstance(instance, arduino::Ligar::Cores::Arco::Iris)
-
-@given(instance=arduino::Ligar::Cores::Arco::Iris_strategy)
-def test_arduino::ligar::cores::arco::iris_nome_type(instance):
-    assert isinstance(instance.nome, str)
+def test_arduino_ligar_cores_arco_iris_instantiation(instance):
+    assert isinstance(instance, arduino_Ligar_Cores_Arco_Iris)
 
 
-@given(instance=arduino::Ligar::Cores::Arco::Iris_strategy)
-def test_arduino::ligar::cores::arco::iris_nome_setter(instance):
+
+@given(instance=arduino_Ligar_Cores_Arco_Iris_strategy)
+def test_arduino_ligar_cores_arco_iris_nome_setter(instance):
     original = instance.nome
     instance.nome = original
     assert instance.nome == original
 
-@given(instance=arduino::Desligar::Cores_strategy)
+@given(instance=arduino_Desligar_Cores_strategy)
 @settings(max_examples=50)
-def test_arduino::desligar::cores_instantiation(instance):
-    assert isinstance(instance, arduino::Desligar::Cores)
-
-@given(instance=arduino::Desligar::Cores_strategy)
-def test_arduino::desligar::cores_nome_type(instance):
-    assert isinstance(instance.nome, str)
+def test_arduino_desligar_cores_instantiation(instance):
+    assert isinstance(instance, arduino_Desligar_Cores)
 
 
-@given(instance=arduino::Desligar::Cores_strategy)
-def test_arduino::desligar::cores_nome_setter(instance):
+
+@given(instance=arduino_Desligar_Cores_strategy)
+def test_arduino_desligar_cores_nome_setter(instance):
     original = instance.nome
     instance.nome = original
     assert instance.nome == original
 
-@given(instance=arduino::Ligar::Cores::Policia_strategy)
+@given(instance=arduino_Ligar_Cores_Policia_strategy)
 @settings(max_examples=50)
-def test_arduino::ligar::cores::policia_instantiation(instance):
-    assert isinstance(instance, arduino::Ligar::Cores::Policia)
-
-@given(instance=arduino::Ligar::Cores::Policia_strategy)
-def test_arduino::ligar::cores::policia_nome_type(instance):
-    assert isinstance(instance.nome, str)
+def test_arduino_ligar_cores_policia_instantiation(instance):
+    assert isinstance(instance, arduino_Ligar_Cores_Policia)
 
 
-@given(instance=arduino::Ligar::Cores::Policia_strategy)
-def test_arduino::ligar::cores::policia_nome_setter(instance):
+
+@given(instance=arduino_Ligar_Cores_Policia_strategy)
+def test_arduino_ligar_cores_policia_nome_setter(instance):
     original = instance.nome
     instance.nome = original
     assert instance.nome == original
@@ -1886,44 +1838,38 @@ def test_arduino::ligar::cores::policia_nome_setter(instance):
 def test_tricolor_instantiation(instance):
     assert isinstance(instance, Tricolor)
 
-@given(instance=arduino::Unica::Cor_strategy)
+@given(instance=arduino_Unica_Cor_strategy)
 @settings(max_examples=50)
-def test_arduino::unica::cor_instantiation(instance):
-    assert isinstance(instance, arduino::Unica::Cor)
+def test_arduino_unica_cor_instantiation(instance):
+    assert isinstance(instance, arduino_Unica_Cor)
 
-@given(instance=arduino::Varias::Cores_strategy)
+@given(instance=arduino_Varias_Cores_strategy)
 @settings(max_examples=50)
-def test_arduino::varias::cores_instantiation(instance):
-    assert isinstance(instance, arduino::Varias::Cores)
+def test_arduino_varias_cores_instantiation(instance):
+    assert isinstance(instance, arduino_Varias_Cores)
 
-@given(instance=arduino::Desligar::Intermitencia_strategy)
+@given(instance=arduino_Desligar_Intermitencia_strategy)
 @settings(max_examples=50)
-def test_arduino::desligar::intermitencia_instantiation(instance):
-    assert isinstance(instance, arduino::Desligar::Intermitencia)
-
-@given(instance=arduino::Desligar::Intermitencia_strategy)
-def test_arduino::desligar::intermitencia_nome_type(instance):
-    assert isinstance(instance.nome, str)
+def test_arduino_desligar_intermitencia_instantiation(instance):
+    assert isinstance(instance, arduino_Desligar_Intermitencia)
 
 
-@given(instance=arduino::Desligar::Intermitencia_strategy)
-def test_arduino::desligar::intermitencia_nome_setter(instance):
+
+@given(instance=arduino_Desligar_Intermitencia_strategy)
+def test_arduino_desligar_intermitencia_nome_setter(instance):
     original = instance.nome
     instance.nome = original
     assert instance.nome == original
 
-@given(instance=arduino::Ligar::Intermitencia_strategy)
+@given(instance=arduino_Ligar_Intermitencia_strategy)
 @settings(max_examples=50)
-def test_arduino::ligar::intermitencia_instantiation(instance):
-    assert isinstance(instance, arduino::Ligar::Intermitencia)
-
-@given(instance=arduino::Ligar::Intermitencia_strategy)
-def test_arduino::ligar::intermitencia_nome_type(instance):
-    assert isinstance(instance.nome, str)
+def test_arduino_ligar_intermitencia_instantiation(instance):
+    assert isinstance(instance, arduino_Ligar_Intermitencia)
 
 
-@given(instance=arduino::Ligar::Intermitencia_strategy)
-def test_arduino::ligar::intermitencia_nome_setter(instance):
+
+@given(instance=arduino_Ligar_Intermitencia_strategy)
+def test_arduino_ligar_intermitencia_nome_setter(instance):
     original = instance.nome
     instance.nome = original
     assert instance.nome == original
@@ -1933,348 +1879,300 @@ def test_arduino::ligar::intermitencia_nome_setter(instance):
 def test_cabeca_instantiation(instance):
     assert isinstance(instance, Cabeca)
 
-@given(instance=arduino::Virar::Max::Esq_strategy)
+@given(instance=arduino_Virar_Max_Esq_strategy)
 @settings(max_examples=50)
-def test_arduino::virar::max::esq_instantiation(instance):
-    assert isinstance(instance, arduino::Virar::Max::Esq)
-
-@given(instance=arduino::Virar::Max::Esq_strategy)
-def test_arduino::virar::max::esq_nome_type(instance):
-    assert isinstance(instance.nome, str)
+def test_arduino_virar_max_esq_instantiation(instance):
+    assert isinstance(instance, arduino_Virar_Max_Esq)
 
 
-@given(instance=arduino::Virar::Max::Esq_strategy)
-def test_arduino::virar::max::esq_nome_setter(instance):
+
+@given(instance=arduino_Virar_Max_Esq_strategy)
+def test_arduino_virar_max_esq_nome_setter(instance):
     original = instance.nome
     instance.nome = original
     assert instance.nome == original
 
-@given(instance=arduino::Virar::Max::Drt_strategy)
+@given(instance=arduino_Virar_Max_Drt_strategy)
 @settings(max_examples=50)
-def test_arduino::virar::max::drt_instantiation(instance):
-    assert isinstance(instance, arduino::Virar::Max::Drt)
-
-@given(instance=arduino::Virar::Max::Drt_strategy)
-def test_arduino::virar::max::drt_nome_type(instance):
-    assert isinstance(instance.nome, str)
+def test_arduino_virar_max_drt_instantiation(instance):
+    assert isinstance(instance, arduino_Virar_Max_Drt)
 
 
-@given(instance=arduino::Virar::Max::Drt_strategy)
-def test_arduino::virar::max::drt_nome_setter(instance):
+
+@given(instance=arduino_Virar_Max_Drt_strategy)
+def test_arduino_virar_max_drt_nome_setter(instance):
     original = instance.nome
     instance.nome = original
     assert instance.nome == original
 
-@given(instance=Acoes::Predefinidas_strategy)
+@given(instance=Acoes_Predefinidas_strategy)
 @settings(max_examples=50)
-def test_acoes::predefinidas_instantiation(instance):
-    assert isinstance(instance, Acoes::Predefinidas)
+def test_acoes_predefinidas_instantiation(instance):
+    assert isinstance(instance, Acoes_Predefinidas)
 
-@given(instance=arduino::Cabeca_strategy)
+@given(instance=arduino_Corpo_strategy)
 @settings(max_examples=50)
-def test_arduino::cabeca_instantiation(instance):
-    assert isinstance(instance, arduino::Cabeca)
-
-@given(instance=arduino::Corpo_strategy)
-@settings(max_examples=50)
-def test_arduino::corpo_instantiation(instance):
-    assert isinstance(instance, arduino::Corpo)
-
-@given(instance=arduino::Corpo_strategy)
-def test_arduino::corpo_evitarObstaculo_type(instance):
-    assert isinstance(instance.evitarObstaculo, bool)
+def test_arduino_corpo_instantiation(instance):
+    assert isinstance(instance, arduino_Corpo)
 
 
-@given(instance=arduino::Corpo_strategy)
-def test_arduino::corpo_evitarObstaculo_setter(instance):
+
+@given(instance=arduino_Corpo_strategy)
+def test_arduino_corpo_evitarObstaculo_setter(instance):
     original = instance.evitarObstaculo
     instance.evitarObstaculo = original
     assert instance.evitarObstaculo == original
 
-@given(instance=arduino::LED_strategy)
+@given(instance=arduino_Cabeca_strategy)
 @settings(max_examples=50)
-def test_arduino::led_instantiation(instance):
-    assert isinstance(instance, arduino::LED)
+def test_arduino_cabeca_instantiation(instance):
+    assert isinstance(instance, arduino_Cabeca)
 
-@given(instance=arduino::Virar::45::Drt_strategy)
+@given(instance=arduino_LED_strategy)
 @settings(max_examples=50)
-def test_arduino::virar::45::drt_instantiation(instance):
-    assert isinstance(instance, arduino::Virar::45::Drt)
+def test_arduino_led_instantiation(instance):
+    assert isinstance(instance, arduino_LED)
 
-@given(instance=arduino::Virar::45::Drt_strategy)
-def test_arduino::virar::45::drt_nome_type(instance):
-    assert isinstance(instance.nome, str)
+@given(instance=arduino_Virar_45_Drt_strategy)
+@settings(max_examples=50)
+def test_arduino_virar_45_drt_instantiation(instance):
+    assert isinstance(instance, arduino_Virar_45_Drt)
 
 
-@given(instance=arduino::Virar::45::Drt_strategy)
-def test_arduino::virar::45::drt_nome_setter(instance):
+
+@given(instance=arduino_Virar_45_Drt_strategy)
+def test_arduino_virar_45_drt_nome_setter(instance):
     original = instance.nome
     instance.nome = original
     assert instance.nome == original
 
-@given(instance=arduino::Virar::45::Esq_strategy)
+@given(instance=arduino_Virar_45_Esq_strategy)
 @settings(max_examples=50)
-def test_arduino::virar::45::esq_instantiation(instance):
-    assert isinstance(instance, arduino::Virar::45::Esq)
-
-@given(instance=arduino::Virar::45::Esq_strategy)
-def test_arduino::virar::45::esq_nome_type(instance):
-    assert isinstance(instance.nome, str)
+def test_arduino_virar_45_esq_instantiation(instance):
+    assert isinstance(instance, arduino_Virar_45_Esq)
 
 
-@given(instance=arduino::Virar::45::Esq_strategy)
-def test_arduino::virar::45::esq_nome_setter(instance):
+
+@given(instance=arduino_Virar_45_Esq_strategy)
+def test_arduino_virar_45_esq_nome_setter(instance):
     original = instance.nome
     instance.nome = original
     assert instance.nome == original
 
-@given(instance=arduino::Centrar_strategy)
+@given(instance=arduino_Centrar_strategy)
 @settings(max_examples=50)
-def test_arduino::centrar_instantiation(instance):
-    assert isinstance(instance, arduino::Centrar)
-
-@given(instance=arduino::Centrar_strategy)
-def test_arduino::centrar_nome_type(instance):
-    assert isinstance(instance.nome, str)
+def test_arduino_centrar_instantiation(instance):
+    assert isinstance(instance, arduino_Centrar)
 
 
-@given(instance=arduino::Centrar_strategy)
-def test_arduino::centrar_nome_setter(instance):
+
+@given(instance=arduino_Centrar_strategy)
+def test_arduino_centrar_nome_setter(instance):
     original = instance.nome
     instance.nome = original
     assert instance.nome == original
 
-@given(instance=Cabeca::Modificavel_strategy)
+@given(instance=Cabeca_Modificavel_strategy)
 @settings(max_examples=50)
-def test_cabeca::modificavel_instantiation(instance):
-    assert isinstance(instance, Cabeca::Modificavel)
+def test_cabeca_modificavel_instantiation(instance):
+    assert isinstance(instance, Cabeca_Modificavel)
 
-@given(instance=arduino::Virar::para::X::Graus_strategy)
+@given(instance=arduino_Virar_para_X_Graus_strategy)
 @settings(max_examples=50)
-def test_arduino::virar::para::x::graus_instantiation(instance):
-    assert isinstance(instance, arduino::Virar::para::X::Graus)
+def test_arduino_virar_para_x_graus_instantiation(instance):
+    assert isinstance(instance, arduino_Virar_para_X_Graus)
 
 @given(instance=Acao_strategy)
 @settings(max_examples=50)
 def test_acao_instantiation(instance):
     assert isinstance(instance, Acao)
 
-@given(instance=arduino::Acoes::Modificaveis_strategy)
+@given(instance=arduino_Acoes_Modificaveis_strategy)
 @settings(max_examples=50)
-def test_arduino::acoes::modificaveis_instantiation(instance):
-    assert isinstance(instance, arduino::Acoes::Modificaveis)
+def test_arduino_acoes_modificaveis_instantiation(instance):
+    assert isinstance(instance, arduino_Acoes_Modificaveis)
 
-@given(instance=arduino::Inicio_strategy)
+@given(instance=arduino_Fim_strategy)
 @settings(max_examples=50)
-def test_arduino::inicio_instantiation(instance):
-    assert isinstance(instance, arduino::Inicio)
-
-@given(instance=arduino::Inicio_strategy)
-def test_arduino::inicio_evitarObstaculo_type(instance):
-    assert isinstance(instance.evitarObstaculo, bool)
+def test_arduino_fim_instantiation(instance):
+    assert isinstance(instance, arduino_Fim)
 
 
-@given(instance=arduino::Inicio_strategy)
-def test_arduino::inicio_evitarObstaculo_setter(instance):
+
+@given(instance=arduino_Fim_strategy)
+def test_arduino_fim_nome_setter(instance):
+    original = instance.nome
+    instance.nome = original
+    assert instance.nome == original
+
+@given(instance=arduino_Acoes_Condicionais_strategy)
+@settings(max_examples=50)
+def test_arduino_acoes_condicionais_instantiation(instance):
+    assert isinstance(instance, arduino_Acoes_Condicionais)
+
+@given(instance=arduino_Inicio_strategy)
+@settings(max_examples=50)
+def test_arduino_inicio_instantiation(instance):
+    assert isinstance(instance, arduino_Inicio)
+
+
+
+@given(instance=arduino_Inicio_strategy)
+def test_arduino_inicio_nome_setter(instance):
+    original = instance.nome
+    instance.nome = original
+    assert instance.nome == original
+
+
+
+@given(instance=arduino_Inicio_strategy)
+def test_arduino_inicio_evitarObstaculo_setter(instance):
     original = instance.evitarObstaculo
     instance.evitarObstaculo = original
     assert instance.evitarObstaculo == original
 
-@given(instance=arduino::Inicio_strategy)
-def test_arduino::inicio_nome_type(instance):
-    assert isinstance(instance.nome, str)
-
-
-@given(instance=arduino::Inicio_strategy)
-def test_arduino::inicio_nome_setter(instance):
-    original = instance.nome
-    instance.nome = original
-    assert instance.nome == original
-
-@given(instance=arduino::Fim_strategy)
+@given(instance=arduino_Acoes_Predefinidas_strategy)
 @settings(max_examples=50)
-def test_arduino::fim_instantiation(instance):
-    assert isinstance(instance, arduino::Fim)
+def test_arduino_acoes_predefinidas_instantiation(instance):
+    assert isinstance(instance, arduino_Acoes_Predefinidas)
 
-@given(instance=arduino::Fim_strategy)
-def test_arduino::fim_nome_type(instance):
-    assert isinstance(instance.nome, str)
-
-
-@given(instance=arduino::Fim_strategy)
-def test_arduino::fim_nome_setter(instance):
-    original = instance.nome
-    instance.nome = original
-    assert instance.nome == original
-
-@given(instance=arduino::Acoes::Condicionais_strategy)
+@given(instance=Corpo_Modificavel_strategy)
 @settings(max_examples=50)
-def test_arduino::acoes::condicionais_instantiation(instance):
-    assert isinstance(instance, arduino::Acoes::Condicionais)
+def test_corpo_modificavel_instantiation(instance):
+    assert isinstance(instance, Corpo_Modificavel)
 
-@given(instance=arduino::Acoes::Predefinidas_strategy)
+@given(instance=arduino_Parar_Tempo_strategy)
 @settings(max_examples=50)
-def test_arduino::acoes::predefinidas_instantiation(instance):
-    assert isinstance(instance, arduino::Acoes::Predefinidas)
+def test_arduino_parar_tempo_instantiation(instance):
+    assert isinstance(instance, arduino_Parar_Tempo)
 
-@given(instance=Corpo::Modificavel_strategy)
+@given(instance=arduino_Mover_Frente_Tempo_strategy)
 @settings(max_examples=50)
-def test_corpo::modificavel_instantiation(instance):
-    assert isinstance(instance, Corpo::Modificavel)
+def test_arduino_mover_frente_tempo_instantiation(instance):
+    assert isinstance(instance, arduino_Mover_Frente_Tempo)
 
-@given(instance=arduino::Rodar::Direita::Tempo_strategy)
+@given(instance=arduino_Mover_Tras_Tempo_strategy)
 @settings(max_examples=50)
-def test_arduino::rodar::direita::tempo_instantiation(instance):
-    assert isinstance(instance, arduino::Rodar::Direita::Tempo)
+def test_arduino_mover_tras_tempo_instantiation(instance):
+    assert isinstance(instance, arduino_Mover_Tras_Tempo)
 
-@given(instance=arduino::Mover::Tras::Tempo_strategy)
+@given(instance=arduino_Rodar_Direita_Tempo_strategy)
 @settings(max_examples=50)
-def test_arduino::mover::tras::tempo_instantiation(instance):
-    assert isinstance(instance, arduino::Mover::Tras::Tempo)
+def test_arduino_rodar_direita_tempo_instantiation(instance):
+    assert isinstance(instance, arduino_Rodar_Direita_Tempo)
 
-@given(instance=arduino::Parar::Tempo_strategy)
+@given(instance=arduino_Rodar_Esquerda_Tempo_strategy)
 @settings(max_examples=50)
-def test_arduino::parar::tempo_instantiation(instance):
-    assert isinstance(instance, arduino::Parar::Tempo)
-
-@given(instance=arduino::Mover::Frente::Tempo_strategy)
-@settings(max_examples=50)
-def test_arduino::mover::frente::tempo_instantiation(instance):
-    assert isinstance(instance, arduino::Mover::Frente::Tempo)
-
-@given(instance=arduino::Rodar::Esquerda::Tempo_strategy)
-@settings(max_examples=50)
-def test_arduino::rodar::esquerda::tempo_instantiation(instance):
-    assert isinstance(instance, arduino::Rodar::Esquerda::Tempo)
+def test_arduino_rodar_esquerda_tempo_instantiation(instance):
+    assert isinstance(instance, arduino_Rodar_Esquerda_Tempo)
 
 @given(instance=Corpo_strategy)
 @settings(max_examples=50)
 def test_corpo_instantiation(instance):
     assert isinstance(instance, Corpo)
 
-@given(instance=arduino::Parar_strategy)
+@given(instance=arduino_Mover_Frente_strategy)
 @settings(max_examples=50)
-def test_arduino::parar_instantiation(instance):
-    assert isinstance(instance, arduino::Parar)
-
-@given(instance=arduino::Parar_strategy)
-def test_arduino::parar_nome_type(instance):
-    assert isinstance(instance.nome, str)
+def test_arduino_mover_frente_instantiation(instance):
+    assert isinstance(instance, arduino_Mover_Frente)
 
 
-@given(instance=arduino::Parar_strategy)
-def test_arduino::parar_nome_setter(instance):
+
+@given(instance=arduino_Mover_Frente_strategy)
+def test_arduino_mover_frente_nome_setter(instance):
     original = instance.nome
     instance.nome = original
     assert instance.nome == original
 
-@given(instance=arduino::Mover::Tras_strategy)
+@given(instance=arduino_Parar_strategy)
 @settings(max_examples=50)
-def test_arduino::mover::tras_instantiation(instance):
-    assert isinstance(instance, arduino::Mover::Tras)
-
-@given(instance=arduino::Mover::Tras_strategy)
-def test_arduino::mover::tras_nome_type(instance):
-    assert isinstance(instance.nome, str)
+def test_arduino_parar_instantiation(instance):
+    assert isinstance(instance, arduino_Parar)
 
 
-@given(instance=arduino::Mover::Tras_strategy)
-def test_arduino::mover::tras_nome_setter(instance):
+
+@given(instance=arduino_Parar_strategy)
+def test_arduino_parar_nome_setter(instance):
     original = instance.nome
     instance.nome = original
     assert instance.nome == original
 
-@given(instance=arduino::Virar::Direita_strategy)
+@given(instance=arduino_Mover_Aleatoriamente_strategy)
 @settings(max_examples=50)
-def test_arduino::virar::direita_instantiation(instance):
-    assert isinstance(instance, arduino::Virar::Direita)
-
-@given(instance=arduino::Virar::Direita_strategy)
-def test_arduino::virar::direita_nome_type(instance):
-    assert isinstance(instance.nome, str)
+def test_arduino_mover_aleatoriamente_instantiation(instance):
+    assert isinstance(instance, arduino_Mover_Aleatoriamente)
 
 
-@given(instance=arduino::Virar::Direita_strategy)
-def test_arduino::virar::direita_nome_setter(instance):
+
+@given(instance=arduino_Mover_Aleatoriamente_strategy)
+def test_arduino_mover_aleatoriamente_nome_setter(instance):
     original = instance.nome
     instance.nome = original
     assert instance.nome == original
 
-@given(instance=arduino::Mover::Frente_strategy)
+@given(instance=arduino_Mover_Tras_strategy)
 @settings(max_examples=50)
-def test_arduino::mover::frente_instantiation(instance):
-    assert isinstance(instance, arduino::Mover::Frente)
-
-@given(instance=arduino::Mover::Frente_strategy)
-def test_arduino::mover::frente_nome_type(instance):
-    assert isinstance(instance.nome, str)
+def test_arduino_mover_tras_instantiation(instance):
+    assert isinstance(instance, arduino_Mover_Tras)
 
 
-@given(instance=arduino::Mover::Frente_strategy)
-def test_arduino::mover::frente_nome_setter(instance):
+
+@given(instance=arduino_Mover_Tras_strategy)
+def test_arduino_mover_tras_nome_setter(instance):
     original = instance.nome
     instance.nome = original
     assert instance.nome == original
 
-@given(instance=arduino::Mover::Aleatoriamente_strategy)
+@given(instance=arduino_Virar_Direita_strategy)
 @settings(max_examples=50)
-def test_arduino::mover::aleatoriamente_instantiation(instance):
-    assert isinstance(instance, arduino::Mover::Aleatoriamente)
-
-@given(instance=arduino::Mover::Aleatoriamente_strategy)
-def test_arduino::mover::aleatoriamente_nome_type(instance):
-    assert isinstance(instance.nome, str)
+def test_arduino_virar_direita_instantiation(instance):
+    assert isinstance(instance, arduino_Virar_Direita)
 
 
-@given(instance=arduino::Mover::Aleatoriamente_strategy)
-def test_arduino::mover::aleatoriamente_nome_setter(instance):
+
+@given(instance=arduino_Virar_Direita_strategy)
+def test_arduino_virar_direita_nome_setter(instance):
     original = instance.nome
     instance.nome = original
     assert instance.nome == original
 
-@given(instance=arduino::Virar::Esquerda_strategy)
+@given(instance=arduino_Virar_Esquerda_strategy)
 @settings(max_examples=50)
-def test_arduino::virar::esquerda_instantiation(instance):
-    assert isinstance(instance, arduino::Virar::Esquerda)
-
-@given(instance=arduino::Virar::Esquerda_strategy)
-def test_arduino::virar::esquerda_nome_type(instance):
-    assert isinstance(instance.nome, str)
+def test_arduino_virar_esquerda_instantiation(instance):
+    assert isinstance(instance, arduino_Virar_Esquerda)
 
 
-@given(instance=arduino::Virar::Esquerda_strategy)
-def test_arduino::virar::esquerda_nome_setter(instance):
+
+@given(instance=arduino_Virar_Esquerda_strategy)
+def test_arduino_virar_esquerda_nome_setter(instance):
     original = instance.nome
     instance.nome = original
     assert instance.nome == original
 
-@given(instance=arduino::Condicao_strategy)
+@given(instance=arduino_Condicao_strategy)
 @settings(max_examples=50)
-def test_arduino::condicao_instantiation(instance):
-    assert isinstance(instance, arduino::Condicao)
+def test_arduino_condicao_instantiation(instance):
+    assert isinstance(instance, arduino_Condicao)
 
-@given(instance=arduino::Transicoes_strategy)
+@given(instance=arduino_Transicoes_strategy)
 @settings(max_examples=50)
-def test_arduino::transicoes_instantiation(instance):
-    assert isinstance(instance, arduino::Transicoes)
+def test_arduino_transicoes_instantiation(instance):
+    assert isinstance(instance, arduino_Transicoes)
 
-@given(instance=arduino::Acao_strategy)
+@given(instance=arduino_Acao_strategy)
 @settings(max_examples=50)
-def test_arduino::acao_instantiation(instance):
-    assert isinstance(instance, arduino::Acao)
+def test_arduino_acao_instantiation(instance):
+    assert isinstance(instance, arduino_Acao)
 
-@given(instance=arduino::Robo_strategy)
+@given(instance=arduino_Robo_strategy)
 @settings(max_examples=50)
-def test_arduino::robo_instantiation(instance):
-    assert isinstance(instance, arduino::Robo)
-
-@given(instance=arduino::Robo_strategy)
-def test_arduino::robo_Nome_type(instance):
-    assert isinstance(instance.Nome, str)
+def test_arduino_robo_instantiation(instance):
+    assert isinstance(instance, arduino_Robo)
 
 
-@given(instance=arduino::Robo_strategy)
-def test_arduino::robo_Nome_setter(instance):
+
+@given(instance=arduino_Robo_strategy)
+def test_arduino_robo_Nome_setter(instance):
     original = instance.Nome
     instance.Nome = original
     assert instance.Nome == original

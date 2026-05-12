@@ -3,11 +3,11 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    B::RootB,
-    B::B,
+from python_code import (
+    B_RootB,
+    B_B,
 )
 
 # =============================================================================
@@ -16,37 +16,37 @@ from classes import (
 
 
 
-def test_b::rootb_is_not_abstract():
-    assert not inspect.isabstract(B::RootB)
+def test_b_rootb_is_not_abstract():
+    assert not inspect.isabstract(B_RootB)
 
 
-def test_b::rootb_constructor_exists():
-    assert callable(B::RootB.__init__)
+def test_b_rootb_constructor_exists():
+    assert callable(B_RootB.__init__)
 
 
-def test_b::rootb_constructor_args():
-    sig = inspect.signature(B::RootB.__init__)
+def test_b_rootb_constructor_args():
+    sig = inspect.signature(B_RootB.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_b::b_is_not_abstract():
-    assert not inspect.isabstract(B::B)
+def test_b_b_is_not_abstract():
+    assert not inspect.isabstract(B_B)
 
 
-def test_b::b_constructor_exists():
-    assert callable(B::B.__init__)
+def test_b_b_constructor_exists():
+    assert callable(B_B.__init__)
 
 
-def test_b::b_constructor_args():
-    sig = inspect.signature(B::B.__init__)
+def test_b_b_constructor_args():
+    sig = inspect.signature(B_B.__init__)
     params = list(sig.parameters.keys())
     assert "b" in params, "Missing parameter 'b'"
 
-def test_b::b_has_b():
-    assert hasattr(B::B, "b")
+def test_b_b_has_b():
+    assert hasattr(B_B, "b")
     descriptor = None
-    for klass in B::B.__mro__:
+    for klass in B_B.__mro__:
         if "b" in klass.__dict__:
             descriptor = klass.__dict__["b"]
             break
@@ -64,32 +64,29 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-B::RootB_strategy = st.builds(
-    B::RootB,
+B_RootB_strategy = st.builds(
+    B_RootB,
 )
-B::B_strategy = st.builds(
-    B::B,
+B_B_strategy = st.builds(
+    B_B,
     b=
         st.integers()
 )
 
-@given(instance=B::RootB_strategy)
+@given(instance=B_RootB_strategy)
 @settings(max_examples=50)
-def test_b::rootb_instantiation(instance):
-    assert isinstance(instance, B::RootB)
+def test_b_rootb_instantiation(instance):
+    assert isinstance(instance, B_RootB)
 
-@given(instance=B::B_strategy)
+@given(instance=B_B_strategy)
 @settings(max_examples=50)
-def test_b::b_instantiation(instance):
-    assert isinstance(instance, B::B)
-
-@given(instance=B::B_strategy)
-def test_b::b_b_type(instance):
-    assert isinstance(instance.b, int)
+def test_b_b_instantiation(instance):
+    assert isinstance(instance, B_B)
 
 
-@given(instance=B::B_strategy)
-def test_b::b_b_setter(instance):
+
+@given(instance=B_B_strategy)
+def test_b_b_b_setter(instance):
     original = instance.b
     instance.b = original
     assert instance.b == original

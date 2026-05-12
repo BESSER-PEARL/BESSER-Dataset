@@ -3,58 +3,58 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     TypeDef,
-    jkind::AbbreviationType,
+    jkind_AbbreviationType,
     Type,
-    jkind::UserType,
-    jkind::IntType,
-    jkind::BoolType,
-    jkind::SubrangeType,
-    jkind::RealType,
-    jkind::ArrayType,
-    jkind::EnumType,
-    jkind::RecordType,
-    jkind::RealizabilityInputs,
-    jkind::IdRef,
-    jkind::Callable,
+    jkind_RealType,
+    jkind_UserType,
+    jkind_IntType,
+    jkind_BoolType,
+    jkind_SubrangeType,
+    jkind_ArrayType,
+    jkind_EnumType,
+    jkind_RecordType,
+    jkind_RealizabilityInputs,
+    jkind_IdRef,
+    jkind_Callable,
     Expr,
-    jkind::BoolExpr,
-    jkind::IfThenElseExpr,
-    jkind::BinaryExpr,
-    jkind::ArrayExpr,
-    jkind::IdExpr,
-    jkind::ArrayUpdateExpr,
-    jkind::RecordAccessExpr,
-    jkind::UnaryExpr,
-    jkind::CastExpr,
-    jkind::ArrayAccessExpr,
-    jkind::CondactExpr,
-    jkind::RecordUpdateExpr,
-    jkind::TupleExpr,
-    jkind::IntExpr,
-    jkind::RealExpr,
-    jkind::RecordExpr,
-    jkind::CallExpr,
-    jkind::TypeDef,
-    jkind::File,
-    jkind::Ivc,
-    jkind::Property,
-    jkind::Assertion,
-    jkind::Equation,
-    jkind::VariableGroup,
+    jkind_RecordUpdateExpr,
+    jkind_RecordExpr,
+    jkind_ArrayUpdateExpr,
+    jkind_RealExpr,
+    jkind_RecordAccessExpr,
+    jkind_IfThenElseExpr,
+    jkind_TupleExpr,
+    jkind_ArrayExpr,
+    jkind_CondactExpr,
+    jkind_IntExpr,
+    jkind_UnaryExpr,
+    jkind_CastExpr,
+    jkind_BoolExpr,
+    jkind_BinaryExpr,
+    jkind_IdExpr,
+    jkind_ArrayAccessExpr,
+    jkind_CallExpr,
+    jkind_TypeDef,
+    jkind_File,
+    jkind_Ivc,
+    jkind_Property,
+    jkind_Assertion,
+    jkind_Equation,
+    jkind_VariableGroup,
     Callable,
-    jkind::Expr,
-    jkind::Field,
-    jkind::Type,
+    jkind_Expr,
+    jkind_Field,
+    jkind_Type,
     IdRef,
-    jkind::Variable,
-    jkind::EnumValue,
-    jkind::Node,
-    jkind::Function,
-    jkind::Constant,
+    jkind_Variable,
+    jkind_EnumValue,
+    jkind_Node,
+    jkind_Function,
+    jkind_Constant,
 )
 
 # =============================================================================
@@ -77,16 +77,16 @@ def test_typedef_constructor_args():
 
 
 
-def test_jkind::abbreviationtype_is_not_abstract():
-    assert not inspect.isabstract(jkind::AbbreviationType)
+def test_jkind_abbreviationtype_is_not_abstract():
+    assert not inspect.isabstract(jkind_AbbreviationType)
 
 
-def test_jkind::abbreviationtype_constructor_exists():
-    assert callable(jkind::AbbreviationType.__init__)
+def test_jkind_abbreviationtype_constructor_exists():
+    assert callable(jkind_AbbreviationType.__init__)
 
 
-def test_jkind::abbreviationtype_constructor_args():
-    sig = inspect.signature(jkind::AbbreviationType.__init__)
+def test_jkind_abbreviationtype_constructor_args():
+    sig = inspect.signature(jkind_AbbreviationType.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -105,75 +105,89 @@ def test_type_constructor_args():
 
 
 
-def test_jkind::usertype_is_not_abstract():
-    assert not inspect.isabstract(jkind::UserType)
+def test_jkind_realtype_is_not_abstract():
+    assert not inspect.isabstract(jkind_RealType)
 
 
-def test_jkind::usertype_constructor_exists():
-    assert callable(jkind::UserType.__init__)
+def test_jkind_realtype_constructor_exists():
+    assert callable(jkind_RealType.__init__)
 
 
-def test_jkind::usertype_constructor_args():
-    sig = inspect.signature(jkind::UserType.__init__)
+def test_jkind_realtype_constructor_args():
+    sig = inspect.signature(jkind_RealType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_jkind::inttype_is_not_abstract():
-    assert not inspect.isabstract(jkind::IntType)
+def test_jkind_usertype_is_not_abstract():
+    assert not inspect.isabstract(jkind_UserType)
 
 
-def test_jkind::inttype_constructor_exists():
-    assert callable(jkind::IntType.__init__)
+def test_jkind_usertype_constructor_exists():
+    assert callable(jkind_UserType.__init__)
 
 
-def test_jkind::inttype_constructor_args():
-    sig = inspect.signature(jkind::IntType.__init__)
+def test_jkind_usertype_constructor_args():
+    sig = inspect.signature(jkind_UserType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_jkind::booltype_is_not_abstract():
-    assert not inspect.isabstract(jkind::BoolType)
+def test_jkind_inttype_is_not_abstract():
+    assert not inspect.isabstract(jkind_IntType)
 
 
-def test_jkind::booltype_constructor_exists():
-    assert callable(jkind::BoolType.__init__)
+def test_jkind_inttype_constructor_exists():
+    assert callable(jkind_IntType.__init__)
 
 
-def test_jkind::booltype_constructor_args():
-    sig = inspect.signature(jkind::BoolType.__init__)
+def test_jkind_inttype_constructor_args():
+    sig = inspect.signature(jkind_IntType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_jkind::subrangetype_is_not_abstract():
-    assert not inspect.isabstract(jkind::SubrangeType)
+def test_jkind_booltype_is_not_abstract():
+    assert not inspect.isabstract(jkind_BoolType)
 
 
-def test_jkind::subrangetype_constructor_exists():
-    assert callable(jkind::SubrangeType.__init__)
+def test_jkind_booltype_constructor_exists():
+    assert callable(jkind_BoolType.__init__)
 
 
-def test_jkind::subrangetype_constructor_args():
-    sig = inspect.signature(jkind::SubrangeType.__init__)
+def test_jkind_booltype_constructor_args():
+    sig = inspect.signature(jkind_BoolType.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_jkind_subrangetype_is_not_abstract():
+    assert not inspect.isabstract(jkind_SubrangeType)
+
+
+def test_jkind_subrangetype_constructor_exists():
+    assert callable(jkind_SubrangeType.__init__)
+
+
+def test_jkind_subrangetype_constructor_args():
+    sig = inspect.signature(jkind_SubrangeType.__init__)
     params = list(sig.parameters.keys())
     assert "high" in params, "Missing parameter 'high'"
     assert "low" in params, "Missing parameter 'low'"
 
-def test_jkind::subrangetype_has_high():
-    assert hasattr(jkind::SubrangeType, "high")
+def test_jkind_subrangetype_has_high():
+    assert hasattr(jkind_SubrangeType, "high")
     descriptor = None
-    for klass in jkind::SubrangeType.__mro__:
+    for klass in jkind_SubrangeType.__mro__:
         if "high" in klass.__dict__:
             descriptor = klass.__dict__["high"]
             break
     assert isinstance(descriptor, property)
 
-def test_jkind::subrangetype_has_low():
-    assert hasattr(jkind::SubrangeType, "low")
+def test_jkind_subrangetype_has_low():
+    assert hasattr(jkind_SubrangeType, "low")
     descriptor = None
-    for klass in jkind::SubrangeType.__mro__:
+    for klass in jkind_SubrangeType.__mro__:
         if "low" in klass.__dict__:
             descriptor = klass.__dict__["low"]
             break
@@ -181,37 +195,23 @@ def test_jkind::subrangetype_has_low():
 
 
 
-def test_jkind::realtype_is_not_abstract():
-    assert not inspect.isabstract(jkind::RealType)
+def test_jkind_arraytype_is_not_abstract():
+    assert not inspect.isabstract(jkind_ArrayType)
 
 
-def test_jkind::realtype_constructor_exists():
-    assert callable(jkind::RealType.__init__)
+def test_jkind_arraytype_constructor_exists():
+    assert callable(jkind_ArrayType.__init__)
 
 
-def test_jkind::realtype_constructor_args():
-    sig = inspect.signature(jkind::RealType.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_jkind::arraytype_is_not_abstract():
-    assert not inspect.isabstract(jkind::ArrayType)
-
-
-def test_jkind::arraytype_constructor_exists():
-    assert callable(jkind::ArrayType.__init__)
-
-
-def test_jkind::arraytype_constructor_args():
-    sig = inspect.signature(jkind::ArrayType.__init__)
+def test_jkind_arraytype_constructor_args():
+    sig = inspect.signature(jkind_ArrayType.__init__)
     params = list(sig.parameters.keys())
     assert "size" in params, "Missing parameter 'size'"
 
-def test_jkind::arraytype_has_size():
-    assert hasattr(jkind::ArrayType, "size")
+def test_jkind_arraytype_has_size():
+    assert hasattr(jkind_ArrayType, "size")
     descriptor = None
-    for klass in jkind::ArrayType.__mro__:
+    for klass in jkind_ArrayType.__mro__:
         if "size" in klass.__dict__:
             descriptor = klass.__dict__["size"]
             break
@@ -219,65 +219,65 @@ def test_jkind::arraytype_has_size():
 
 
 
-def test_jkind::enumtype_is_not_abstract():
-    assert not inspect.isabstract(jkind::EnumType)
+def test_jkind_enumtype_is_not_abstract():
+    assert not inspect.isabstract(jkind_EnumType)
 
 
-def test_jkind::enumtype_constructor_exists():
-    assert callable(jkind::EnumType.__init__)
+def test_jkind_enumtype_constructor_exists():
+    assert callable(jkind_EnumType.__init__)
 
 
-def test_jkind::enumtype_constructor_args():
-    sig = inspect.signature(jkind::EnumType.__init__)
+def test_jkind_enumtype_constructor_args():
+    sig = inspect.signature(jkind_EnumType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_jkind::recordtype_is_not_abstract():
-    assert not inspect.isabstract(jkind::RecordType)
+def test_jkind_recordtype_is_not_abstract():
+    assert not inspect.isabstract(jkind_RecordType)
 
 
-def test_jkind::recordtype_constructor_exists():
-    assert callable(jkind::RecordType.__init__)
+def test_jkind_recordtype_constructor_exists():
+    assert callable(jkind_RecordType.__init__)
 
 
-def test_jkind::recordtype_constructor_args():
-    sig = inspect.signature(jkind::RecordType.__init__)
+def test_jkind_recordtype_constructor_args():
+    sig = inspect.signature(jkind_RecordType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_jkind::realizabilityinputs_is_not_abstract():
-    assert not inspect.isabstract(jkind::RealizabilityInputs)
+def test_jkind_realizabilityinputs_is_not_abstract():
+    assert not inspect.isabstract(jkind_RealizabilityInputs)
 
 
-def test_jkind::realizabilityinputs_constructor_exists():
-    assert callable(jkind::RealizabilityInputs.__init__)
+def test_jkind_realizabilityinputs_constructor_exists():
+    assert callable(jkind_RealizabilityInputs.__init__)
 
 
-def test_jkind::realizabilityinputs_constructor_args():
-    sig = inspect.signature(jkind::RealizabilityInputs.__init__)
+def test_jkind_realizabilityinputs_constructor_args():
+    sig = inspect.signature(jkind_RealizabilityInputs.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_jkind::idref_is_not_abstract():
-    assert not inspect.isabstract(jkind::IdRef)
+def test_jkind_idref_is_not_abstract():
+    assert not inspect.isabstract(jkind_IdRef)
 
 
-def test_jkind::idref_constructor_exists():
-    assert callable(jkind::IdRef.__init__)
+def test_jkind_idref_constructor_exists():
+    assert callable(jkind_IdRef.__init__)
 
 
-def test_jkind::idref_constructor_args():
-    sig = inspect.signature(jkind::IdRef.__init__)
+def test_jkind_idref_constructor_args():
+    sig = inspect.signature(jkind_IdRef.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_jkind::idref_has_name():
-    assert hasattr(jkind::IdRef, "name")
+def test_jkind_idref_has_name():
+    assert hasattr(jkind_IdRef, "name")
     descriptor = None
-    for klass in jkind::IdRef.__mro__:
+    for klass in jkind_IdRef.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -285,23 +285,23 @@ def test_jkind::idref_has_name():
 
 
 
-def test_jkind::callable_is_not_abstract():
-    assert not inspect.isabstract(jkind::Callable)
+def test_jkind_callable_is_not_abstract():
+    assert not inspect.isabstract(jkind_Callable)
 
 
-def test_jkind::callable_constructor_exists():
-    assert callable(jkind::Callable.__init__)
+def test_jkind_callable_constructor_exists():
+    assert callable(jkind_Callable.__init__)
 
 
-def test_jkind::callable_constructor_args():
-    sig = inspect.signature(jkind::Callable.__init__)
+def test_jkind_callable_constructor_args():
+    sig = inspect.signature(jkind_Callable.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_jkind::callable_has_name():
-    assert hasattr(jkind::Callable, "name")
+def test_jkind_callable_has_name():
+    assert hasattr(jkind_Callable, "name")
     descriptor = None
-    for klass in jkind::Callable.__mro__:
+    for klass in jkind_Callable.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -323,23 +323,65 @@ def test_expr_constructor_args():
 
 
 
-def test_jkind::boolexpr_is_not_abstract():
-    assert not inspect.isabstract(jkind::BoolExpr)
+def test_jkind_recordupdateexpr_is_not_abstract():
+    assert not inspect.isabstract(jkind_RecordUpdateExpr)
 
 
-def test_jkind::boolexpr_constructor_exists():
-    assert callable(jkind::BoolExpr.__init__)
+def test_jkind_recordupdateexpr_constructor_exists():
+    assert callable(jkind_RecordUpdateExpr.__init__)
 
 
-def test_jkind::boolexpr_constructor_args():
-    sig = inspect.signature(jkind::BoolExpr.__init__)
+def test_jkind_recordupdateexpr_constructor_args():
+    sig = inspect.signature(jkind_RecordUpdateExpr.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_jkind_recordexpr_is_not_abstract():
+    assert not inspect.isabstract(jkind_RecordExpr)
+
+
+def test_jkind_recordexpr_constructor_exists():
+    assert callable(jkind_RecordExpr.__init__)
+
+
+def test_jkind_recordexpr_constructor_args():
+    sig = inspect.signature(jkind_RecordExpr.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_jkind_arrayupdateexpr_is_not_abstract():
+    assert not inspect.isabstract(jkind_ArrayUpdateExpr)
+
+
+def test_jkind_arrayupdateexpr_constructor_exists():
+    assert callable(jkind_ArrayUpdateExpr.__init__)
+
+
+def test_jkind_arrayupdateexpr_constructor_args():
+    sig = inspect.signature(jkind_ArrayUpdateExpr.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_jkind_realexpr_is_not_abstract():
+    assert not inspect.isabstract(jkind_RealExpr)
+
+
+def test_jkind_realexpr_constructor_exists():
+    assert callable(jkind_RealExpr.__init__)
+
+
+def test_jkind_realexpr_constructor_args():
+    sig = inspect.signature(jkind_RealExpr.__init__)
     params = list(sig.parameters.keys())
     assert "val" in params, "Missing parameter 'val'"
 
-def test_jkind::boolexpr_has_val():
-    assert hasattr(jkind::BoolExpr, "val")
+def test_jkind_realexpr_has_val():
+    assert hasattr(jkind_RealExpr, "val")
     descriptor = None
-    for klass in jkind::BoolExpr.__mro__:
+    for klass in jkind_RealExpr.__mro__:
         if "val" in klass.__dict__:
             descriptor = klass.__dict__["val"]
             break
@@ -347,221 +389,93 @@ def test_jkind::boolexpr_has_val():
 
 
 
-def test_jkind::ifthenelseexpr_is_not_abstract():
-    assert not inspect.isabstract(jkind::IfThenElseExpr)
+def test_jkind_recordaccessexpr_is_not_abstract():
+    assert not inspect.isabstract(jkind_RecordAccessExpr)
 
 
-def test_jkind::ifthenelseexpr_constructor_exists():
-    assert callable(jkind::IfThenElseExpr.__init__)
+def test_jkind_recordaccessexpr_constructor_exists():
+    assert callable(jkind_RecordAccessExpr.__init__)
 
 
-def test_jkind::ifthenelseexpr_constructor_args():
-    sig = inspect.signature(jkind::IfThenElseExpr.__init__)
+def test_jkind_recordaccessexpr_constructor_args():
+    sig = inspect.signature(jkind_RecordAccessExpr.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_jkind::binaryexpr_is_not_abstract():
-    assert not inspect.isabstract(jkind::BinaryExpr)
+def test_jkind_ifthenelseexpr_is_not_abstract():
+    assert not inspect.isabstract(jkind_IfThenElseExpr)
 
 
-def test_jkind::binaryexpr_constructor_exists():
-    assert callable(jkind::BinaryExpr.__init__)
+def test_jkind_ifthenelseexpr_constructor_exists():
+    assert callable(jkind_IfThenElseExpr.__init__)
 
 
-def test_jkind::binaryexpr_constructor_args():
-    sig = inspect.signature(jkind::BinaryExpr.__init__)
-    params = list(sig.parameters.keys())
-    assert "op" in params, "Missing parameter 'op'"
-
-def test_jkind::binaryexpr_has_op():
-    assert hasattr(jkind::BinaryExpr, "op")
-    descriptor = None
-    for klass in jkind::BinaryExpr.__mro__:
-        if "op" in klass.__dict__:
-            descriptor = klass.__dict__["op"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_jkind::arrayexpr_is_not_abstract():
-    assert not inspect.isabstract(jkind::ArrayExpr)
-
-
-def test_jkind::arrayexpr_constructor_exists():
-    assert callable(jkind::ArrayExpr.__init__)
-
-
-def test_jkind::arrayexpr_constructor_args():
-    sig = inspect.signature(jkind::ArrayExpr.__init__)
+def test_jkind_ifthenelseexpr_constructor_args():
+    sig = inspect.signature(jkind_IfThenElseExpr.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_jkind::idexpr_is_not_abstract():
-    assert not inspect.isabstract(jkind::IdExpr)
+def test_jkind_tupleexpr_is_not_abstract():
+    assert not inspect.isabstract(jkind_TupleExpr)
 
 
-def test_jkind::idexpr_constructor_exists():
-    assert callable(jkind::IdExpr.__init__)
+def test_jkind_tupleexpr_constructor_exists():
+    assert callable(jkind_TupleExpr.__init__)
 
 
-def test_jkind::idexpr_constructor_args():
-    sig = inspect.signature(jkind::IdExpr.__init__)
+def test_jkind_tupleexpr_constructor_args():
+    sig = inspect.signature(jkind_TupleExpr.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_jkind::arrayupdateexpr_is_not_abstract():
-    assert not inspect.isabstract(jkind::ArrayUpdateExpr)
+def test_jkind_arrayexpr_is_not_abstract():
+    assert not inspect.isabstract(jkind_ArrayExpr)
 
 
-def test_jkind::arrayupdateexpr_constructor_exists():
-    assert callable(jkind::ArrayUpdateExpr.__init__)
+def test_jkind_arrayexpr_constructor_exists():
+    assert callable(jkind_ArrayExpr.__init__)
 
 
-def test_jkind::arrayupdateexpr_constructor_args():
-    sig = inspect.signature(jkind::ArrayUpdateExpr.__init__)
+def test_jkind_arrayexpr_constructor_args():
+    sig = inspect.signature(jkind_ArrayExpr.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_jkind::recordaccessexpr_is_not_abstract():
-    assert not inspect.isabstract(jkind::RecordAccessExpr)
+def test_jkind_condactexpr_is_not_abstract():
+    assert not inspect.isabstract(jkind_CondactExpr)
 
 
-def test_jkind::recordaccessexpr_constructor_exists():
-    assert callable(jkind::RecordAccessExpr.__init__)
+def test_jkind_condactexpr_constructor_exists():
+    assert callable(jkind_CondactExpr.__init__)
 
 
-def test_jkind::recordaccessexpr_constructor_args():
-    sig = inspect.signature(jkind::RecordAccessExpr.__init__)
+def test_jkind_condactexpr_constructor_args():
+    sig = inspect.signature(jkind_CondactExpr.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_jkind::unaryexpr_is_not_abstract():
-    assert not inspect.isabstract(jkind::UnaryExpr)
+def test_jkind_intexpr_is_not_abstract():
+    assert not inspect.isabstract(jkind_IntExpr)
 
 
-def test_jkind::unaryexpr_constructor_exists():
-    assert callable(jkind::UnaryExpr.__init__)
+def test_jkind_intexpr_constructor_exists():
+    assert callable(jkind_IntExpr.__init__)
 
 
-def test_jkind::unaryexpr_constructor_args():
-    sig = inspect.signature(jkind::UnaryExpr.__init__)
-    params = list(sig.parameters.keys())
-    assert "op" in params, "Missing parameter 'op'"
-
-def test_jkind::unaryexpr_has_op():
-    assert hasattr(jkind::UnaryExpr, "op")
-    descriptor = None
-    for klass in jkind::UnaryExpr.__mro__:
-        if "op" in klass.__dict__:
-            descriptor = klass.__dict__["op"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_jkind::castexpr_is_not_abstract():
-    assert not inspect.isabstract(jkind::CastExpr)
-
-
-def test_jkind::castexpr_constructor_exists():
-    assert callable(jkind::CastExpr.__init__)
-
-
-def test_jkind::castexpr_constructor_args():
-    sig = inspect.signature(jkind::CastExpr.__init__)
-    params = list(sig.parameters.keys())
-    assert "op" in params, "Missing parameter 'op'"
-
-def test_jkind::castexpr_has_op():
-    assert hasattr(jkind::CastExpr, "op")
-    descriptor = None
-    for klass in jkind::CastExpr.__mro__:
-        if "op" in klass.__dict__:
-            descriptor = klass.__dict__["op"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_jkind::arrayaccessexpr_is_not_abstract():
-    assert not inspect.isabstract(jkind::ArrayAccessExpr)
-
-
-def test_jkind::arrayaccessexpr_constructor_exists():
-    assert callable(jkind::ArrayAccessExpr.__init__)
-
-
-def test_jkind::arrayaccessexpr_constructor_args():
-    sig = inspect.signature(jkind::ArrayAccessExpr.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_jkind::condactexpr_is_not_abstract():
-    assert not inspect.isabstract(jkind::CondactExpr)
-
-
-def test_jkind::condactexpr_constructor_exists():
-    assert callable(jkind::CondactExpr.__init__)
-
-
-def test_jkind::condactexpr_constructor_args():
-    sig = inspect.signature(jkind::CondactExpr.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_jkind::recordupdateexpr_is_not_abstract():
-    assert not inspect.isabstract(jkind::RecordUpdateExpr)
-
-
-def test_jkind::recordupdateexpr_constructor_exists():
-    assert callable(jkind::RecordUpdateExpr.__init__)
-
-
-def test_jkind::recordupdateexpr_constructor_args():
-    sig = inspect.signature(jkind::RecordUpdateExpr.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_jkind::tupleexpr_is_not_abstract():
-    assert not inspect.isabstract(jkind::TupleExpr)
-
-
-def test_jkind::tupleexpr_constructor_exists():
-    assert callable(jkind::TupleExpr.__init__)
-
-
-def test_jkind::tupleexpr_constructor_args():
-    sig = inspect.signature(jkind::TupleExpr.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_jkind::intexpr_is_not_abstract():
-    assert not inspect.isabstract(jkind::IntExpr)
-
-
-def test_jkind::intexpr_constructor_exists():
-    assert callable(jkind::IntExpr.__init__)
-
-
-def test_jkind::intexpr_constructor_args():
-    sig = inspect.signature(jkind::IntExpr.__init__)
+def test_jkind_intexpr_constructor_args():
+    sig = inspect.signature(jkind_IntExpr.__init__)
     params = list(sig.parameters.keys())
     assert "val" in params, "Missing parameter 'val'"
 
-def test_jkind::intexpr_has_val():
-    assert hasattr(jkind::IntExpr, "val")
+def test_jkind_intexpr_has_val():
+    assert hasattr(jkind_IntExpr, "val")
     descriptor = None
-    for klass in jkind::IntExpr.__mro__:
+    for klass in jkind_IntExpr.__mro__:
         if "val" in klass.__dict__:
             descriptor = klass.__dict__["val"]
             break
@@ -569,23 +483,71 @@ def test_jkind::intexpr_has_val():
 
 
 
-def test_jkind::realexpr_is_not_abstract():
-    assert not inspect.isabstract(jkind::RealExpr)
+def test_jkind_unaryexpr_is_not_abstract():
+    assert not inspect.isabstract(jkind_UnaryExpr)
 
 
-def test_jkind::realexpr_constructor_exists():
-    assert callable(jkind::RealExpr.__init__)
+def test_jkind_unaryexpr_constructor_exists():
+    assert callable(jkind_UnaryExpr.__init__)
 
 
-def test_jkind::realexpr_constructor_args():
-    sig = inspect.signature(jkind::RealExpr.__init__)
+def test_jkind_unaryexpr_constructor_args():
+    sig = inspect.signature(jkind_UnaryExpr.__init__)
+    params = list(sig.parameters.keys())
+    assert "op" in params, "Missing parameter 'op'"
+
+def test_jkind_unaryexpr_has_op():
+    assert hasattr(jkind_UnaryExpr, "op")
+    descriptor = None
+    for klass in jkind_UnaryExpr.__mro__:
+        if "op" in klass.__dict__:
+            descriptor = klass.__dict__["op"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_jkind_castexpr_is_not_abstract():
+    assert not inspect.isabstract(jkind_CastExpr)
+
+
+def test_jkind_castexpr_constructor_exists():
+    assert callable(jkind_CastExpr.__init__)
+
+
+def test_jkind_castexpr_constructor_args():
+    sig = inspect.signature(jkind_CastExpr.__init__)
+    params = list(sig.parameters.keys())
+    assert "op" in params, "Missing parameter 'op'"
+
+def test_jkind_castexpr_has_op():
+    assert hasattr(jkind_CastExpr, "op")
+    descriptor = None
+    for klass in jkind_CastExpr.__mro__:
+        if "op" in klass.__dict__:
+            descriptor = klass.__dict__["op"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_jkind_boolexpr_is_not_abstract():
+    assert not inspect.isabstract(jkind_BoolExpr)
+
+
+def test_jkind_boolexpr_constructor_exists():
+    assert callable(jkind_BoolExpr.__init__)
+
+
+def test_jkind_boolexpr_constructor_args():
+    sig = inspect.signature(jkind_BoolExpr.__init__)
     params = list(sig.parameters.keys())
     assert "val" in params, "Missing parameter 'val'"
 
-def test_jkind::realexpr_has_val():
-    assert hasattr(jkind::RealExpr, "val")
+def test_jkind_boolexpr_has_val():
+    assert hasattr(jkind_BoolExpr, "val")
     descriptor = None
-    for klass in jkind::RealExpr.__mro__:
+    for klass in jkind_BoolExpr.__mro__:
         if "val" in klass.__dict__:
             descriptor = klass.__dict__["val"]
             break
@@ -593,51 +555,89 @@ def test_jkind::realexpr_has_val():
 
 
 
-def test_jkind::recordexpr_is_not_abstract():
-    assert not inspect.isabstract(jkind::RecordExpr)
+def test_jkind_binaryexpr_is_not_abstract():
+    assert not inspect.isabstract(jkind_BinaryExpr)
 
 
-def test_jkind::recordexpr_constructor_exists():
-    assert callable(jkind::RecordExpr.__init__)
+def test_jkind_binaryexpr_constructor_exists():
+    assert callable(jkind_BinaryExpr.__init__)
 
 
-def test_jkind::recordexpr_constructor_args():
-    sig = inspect.signature(jkind::RecordExpr.__init__)
+def test_jkind_binaryexpr_constructor_args():
+    sig = inspect.signature(jkind_BinaryExpr.__init__)
+    params = list(sig.parameters.keys())
+    assert "op" in params, "Missing parameter 'op'"
+
+def test_jkind_binaryexpr_has_op():
+    assert hasattr(jkind_BinaryExpr, "op")
+    descriptor = None
+    for klass in jkind_BinaryExpr.__mro__:
+        if "op" in klass.__dict__:
+            descriptor = klass.__dict__["op"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_jkind_idexpr_is_not_abstract():
+    assert not inspect.isabstract(jkind_IdExpr)
+
+
+def test_jkind_idexpr_constructor_exists():
+    assert callable(jkind_IdExpr.__init__)
+
+
+def test_jkind_idexpr_constructor_args():
+    sig = inspect.signature(jkind_IdExpr.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_jkind::callexpr_is_not_abstract():
-    assert not inspect.isabstract(jkind::CallExpr)
+def test_jkind_arrayaccessexpr_is_not_abstract():
+    assert not inspect.isabstract(jkind_ArrayAccessExpr)
 
 
-def test_jkind::callexpr_constructor_exists():
-    assert callable(jkind::CallExpr.__init__)
+def test_jkind_arrayaccessexpr_constructor_exists():
+    assert callable(jkind_ArrayAccessExpr.__init__)
 
 
-def test_jkind::callexpr_constructor_args():
-    sig = inspect.signature(jkind::CallExpr.__init__)
+def test_jkind_arrayaccessexpr_constructor_args():
+    sig = inspect.signature(jkind_ArrayAccessExpr.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_jkind::typedef_is_not_abstract():
-    assert not inspect.isabstract(jkind::TypeDef)
+def test_jkind_callexpr_is_not_abstract():
+    assert not inspect.isabstract(jkind_CallExpr)
 
 
-def test_jkind::typedef_constructor_exists():
-    assert callable(jkind::TypeDef.__init__)
+def test_jkind_callexpr_constructor_exists():
+    assert callable(jkind_CallExpr.__init__)
 
 
-def test_jkind::typedef_constructor_args():
-    sig = inspect.signature(jkind::TypeDef.__init__)
+def test_jkind_callexpr_constructor_args():
+    sig = inspect.signature(jkind_CallExpr.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_jkind_typedef_is_not_abstract():
+    assert not inspect.isabstract(jkind_TypeDef)
+
+
+def test_jkind_typedef_constructor_exists():
+    assert callable(jkind_TypeDef.__init__)
+
+
+def test_jkind_typedef_constructor_args():
+    sig = inspect.signature(jkind_TypeDef.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_jkind::typedef_has_name():
-    assert hasattr(jkind::TypeDef, "name")
+def test_jkind_typedef_has_name():
+    assert hasattr(jkind_TypeDef, "name")
     descriptor = None
-    for klass in jkind::TypeDef.__mro__:
+    for klass in jkind_TypeDef.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -645,86 +645,86 @@ def test_jkind::typedef_has_name():
 
 
 
-def test_jkind::file_is_not_abstract():
-    assert not inspect.isabstract(jkind::File)
+def test_jkind_file_is_not_abstract():
+    assert not inspect.isabstract(jkind_File)
 
 
-def test_jkind::file_constructor_exists():
-    assert callable(jkind::File.__init__)
+def test_jkind_file_constructor_exists():
+    assert callable(jkind_File.__init__)
 
 
-def test_jkind::file_constructor_args():
-    sig = inspect.signature(jkind::File.__init__)
+def test_jkind_file_constructor_args():
+    sig = inspect.signature(jkind_File.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_jkind::ivc_is_not_abstract():
-    assert not inspect.isabstract(jkind::Ivc)
+def test_jkind_ivc_is_not_abstract():
+    assert not inspect.isabstract(jkind_Ivc)
 
 
-def test_jkind::ivc_constructor_exists():
-    assert callable(jkind::Ivc.__init__)
+def test_jkind_ivc_constructor_exists():
+    assert callable(jkind_Ivc.__init__)
 
 
-def test_jkind::ivc_constructor_args():
-    sig = inspect.signature(jkind::Ivc.__init__)
+def test_jkind_ivc_constructor_args():
+    sig = inspect.signature(jkind_Ivc.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_jkind::property_is_not_abstract():
-    assert not inspect.isabstract(jkind::Property)
+def test_jkind_property_is_not_abstract():
+    assert not inspect.isabstract(jkind_Property)
 
 
-def test_jkind::property_constructor_exists():
-    assert callable(jkind::Property.__init__)
+def test_jkind_property_constructor_exists():
+    assert callable(jkind_Property.__init__)
 
 
-def test_jkind::property_constructor_args():
-    sig = inspect.signature(jkind::Property.__init__)
+def test_jkind_property_constructor_args():
+    sig = inspect.signature(jkind_Property.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_jkind::assertion_is_not_abstract():
-    assert not inspect.isabstract(jkind::Assertion)
+def test_jkind_assertion_is_not_abstract():
+    assert not inspect.isabstract(jkind_Assertion)
 
 
-def test_jkind::assertion_constructor_exists():
-    assert callable(jkind::Assertion.__init__)
+def test_jkind_assertion_constructor_exists():
+    assert callable(jkind_Assertion.__init__)
 
 
-def test_jkind::assertion_constructor_args():
-    sig = inspect.signature(jkind::Assertion.__init__)
+def test_jkind_assertion_constructor_args():
+    sig = inspect.signature(jkind_Assertion.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_jkind::equation_is_not_abstract():
-    assert not inspect.isabstract(jkind::Equation)
+def test_jkind_equation_is_not_abstract():
+    assert not inspect.isabstract(jkind_Equation)
 
 
-def test_jkind::equation_constructor_exists():
-    assert callable(jkind::Equation.__init__)
+def test_jkind_equation_constructor_exists():
+    assert callable(jkind_Equation.__init__)
 
 
-def test_jkind::equation_constructor_args():
-    sig = inspect.signature(jkind::Equation.__init__)
+def test_jkind_equation_constructor_args():
+    sig = inspect.signature(jkind_Equation.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_jkind::variablegroup_is_not_abstract():
-    assert not inspect.isabstract(jkind::VariableGroup)
+def test_jkind_variablegroup_is_not_abstract():
+    assert not inspect.isabstract(jkind_VariableGroup)
 
 
-def test_jkind::variablegroup_constructor_exists():
-    assert callable(jkind::VariableGroup.__init__)
+def test_jkind_variablegroup_constructor_exists():
+    assert callable(jkind_VariableGroup.__init__)
 
 
-def test_jkind::variablegroup_constructor_args():
-    sig = inspect.signature(jkind::VariableGroup.__init__)
+def test_jkind_variablegroup_constructor_args():
+    sig = inspect.signature(jkind_VariableGroup.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -743,37 +743,37 @@ def test_callable_constructor_args():
 
 
 
-def test_jkind::expr_is_not_abstract():
-    assert not inspect.isabstract(jkind::Expr)
+def test_jkind_expr_is_not_abstract():
+    assert not inspect.isabstract(jkind_Expr)
 
 
-def test_jkind::expr_constructor_exists():
-    assert callable(jkind::Expr.__init__)
+def test_jkind_expr_constructor_exists():
+    assert callable(jkind_Expr.__init__)
 
 
-def test_jkind::expr_constructor_args():
-    sig = inspect.signature(jkind::Expr.__init__)
+def test_jkind_expr_constructor_args():
+    sig = inspect.signature(jkind_Expr.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_jkind::field_is_not_abstract():
-    assert not inspect.isabstract(jkind::Field)
+def test_jkind_field_is_not_abstract():
+    assert not inspect.isabstract(jkind_Field)
 
 
-def test_jkind::field_constructor_exists():
-    assert callable(jkind::Field.__init__)
+def test_jkind_field_constructor_exists():
+    assert callable(jkind_Field.__init__)
 
 
-def test_jkind::field_constructor_args():
-    sig = inspect.signature(jkind::Field.__init__)
+def test_jkind_field_constructor_args():
+    sig = inspect.signature(jkind_Field.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_jkind::field_has_name():
-    assert hasattr(jkind::Field, "name")
+def test_jkind_field_has_name():
+    assert hasattr(jkind_Field, "name")
     descriptor = None
-    for klass in jkind::Field.__mro__:
+    for klass in jkind_Field.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -781,16 +781,16 @@ def test_jkind::field_has_name():
 
 
 
-def test_jkind::type_is_not_abstract():
-    assert not inspect.isabstract(jkind::Type)
+def test_jkind_type_is_not_abstract():
+    assert not inspect.isabstract(jkind_Type)
 
 
-def test_jkind::type_constructor_exists():
-    assert callable(jkind::Type.__init__)
+def test_jkind_type_constructor_exists():
+    assert callable(jkind_Type.__init__)
 
 
-def test_jkind::type_constructor_args():
-    sig = inspect.signature(jkind::Type.__init__)
+def test_jkind_type_constructor_args():
+    sig = inspect.signature(jkind_Type.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -809,51 +809,51 @@ def test_idref_constructor_args():
 
 
 
-def test_jkind::variable_is_not_abstract():
-    assert not inspect.isabstract(jkind::Variable)
+def test_jkind_variable_is_not_abstract():
+    assert not inspect.isabstract(jkind_Variable)
 
 
-def test_jkind::variable_constructor_exists():
-    assert callable(jkind::Variable.__init__)
+def test_jkind_variable_constructor_exists():
+    assert callable(jkind_Variable.__init__)
 
 
-def test_jkind::variable_constructor_args():
-    sig = inspect.signature(jkind::Variable.__init__)
+def test_jkind_variable_constructor_args():
+    sig = inspect.signature(jkind_Variable.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_jkind::enumvalue_is_not_abstract():
-    assert not inspect.isabstract(jkind::EnumValue)
+def test_jkind_enumvalue_is_not_abstract():
+    assert not inspect.isabstract(jkind_EnumValue)
 
 
-def test_jkind::enumvalue_constructor_exists():
-    assert callable(jkind::EnumValue.__init__)
+def test_jkind_enumvalue_constructor_exists():
+    assert callable(jkind_EnumValue.__init__)
 
 
-def test_jkind::enumvalue_constructor_args():
-    sig = inspect.signature(jkind::EnumValue.__init__)
+def test_jkind_enumvalue_constructor_args():
+    sig = inspect.signature(jkind_EnumValue.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_jkind::node_is_not_abstract():
-    assert not inspect.isabstract(jkind::Node)
+def test_jkind_node_is_not_abstract():
+    assert not inspect.isabstract(jkind_Node)
 
 
-def test_jkind::node_constructor_exists():
-    assert callable(jkind::Node.__init__)
+def test_jkind_node_constructor_exists():
+    assert callable(jkind_Node.__init__)
 
 
-def test_jkind::node_constructor_args():
-    sig = inspect.signature(jkind::Node.__init__)
+def test_jkind_node_constructor_args():
+    sig = inspect.signature(jkind_Node.__init__)
     params = list(sig.parameters.keys())
     assert "main" in params, "Missing parameter 'main'"
 
-def test_jkind::node_has_main():
-    assert hasattr(jkind::Node, "main")
+def test_jkind_node_has_main():
+    assert hasattr(jkind_Node, "main")
     descriptor = None
-    for klass in jkind::Node.__mro__:
+    for klass in jkind_Node.__mro__:
         if "main" in klass.__dict__:
             descriptor = klass.__dict__["main"]
             break
@@ -861,30 +861,30 @@ def test_jkind::node_has_main():
 
 
 
-def test_jkind::function_is_not_abstract():
-    assert not inspect.isabstract(jkind::Function)
+def test_jkind_function_is_not_abstract():
+    assert not inspect.isabstract(jkind_Function)
 
 
-def test_jkind::function_constructor_exists():
-    assert callable(jkind::Function.__init__)
+def test_jkind_function_constructor_exists():
+    assert callable(jkind_Function.__init__)
 
 
-def test_jkind::function_constructor_args():
-    sig = inspect.signature(jkind::Function.__init__)
+def test_jkind_function_constructor_args():
+    sig = inspect.signature(jkind_Function.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_jkind::constant_is_not_abstract():
-    assert not inspect.isabstract(jkind::Constant)
+def test_jkind_constant_is_not_abstract():
+    assert not inspect.isabstract(jkind_Constant)
 
 
-def test_jkind::constant_constructor_exists():
-    assert callable(jkind::Constant.__init__)
+def test_jkind_constant_constructor_exists():
+    assert callable(jkind_Constant.__init__)
 
 
-def test_jkind::constant_constructor_args():
-    sig = inspect.signature(jkind::Constant.__init__)
+def test_jkind_constant_constructor_args():
+    sig = inspect.signature(jkind_Constant.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -902,177 +902,177 @@ safe_text = st.text(
 TypeDef_strategy = st.builds(
     TypeDef,
 )
-jkind::AbbreviationType_strategy = st.builds(
-    jkind::AbbreviationType,
+jkind_AbbreviationType_strategy = st.builds(
+    jkind_AbbreviationType,
 )
 Type_strategy = st.builds(
     Type,
 )
-jkind::UserType_strategy = st.builds(
-    jkind::UserType,
+jkind_RealType_strategy = st.builds(
+    jkind_RealType,
 )
-jkind::IntType_strategy = st.builds(
-    jkind::IntType,
+jkind_UserType_strategy = st.builds(
+    jkind_UserType,
 )
-jkind::BoolType_strategy = st.builds(
-    jkind::BoolType,
+jkind_IntType_strategy = st.builds(
+    jkind_IntType,
 )
-jkind::SubrangeType_strategy = st.builds(
-    jkind::SubrangeType,
+jkind_BoolType_strategy = st.builds(
+    jkind_BoolType,
+)
+jkind_SubrangeType_strategy = st.builds(
+    jkind_SubrangeType,
     high=
         safe_text,
     low=
         safe_text
 )
-jkind::RealType_strategy = st.builds(
-    jkind::RealType,
-)
-jkind::ArrayType_strategy = st.builds(
-    jkind::ArrayType,
+jkind_ArrayType_strategy = st.builds(
+    jkind_ArrayType,
     size=
         safe_text
 )
-jkind::EnumType_strategy = st.builds(
-    jkind::EnumType,
+jkind_EnumType_strategy = st.builds(
+    jkind_EnumType,
 )
-jkind::RecordType_strategy = st.builds(
-    jkind::RecordType,
+jkind_RecordType_strategy = st.builds(
+    jkind_RecordType,
 )
-jkind::RealizabilityInputs_strategy = st.builds(
-    jkind::RealizabilityInputs,
+jkind_RealizabilityInputs_strategy = st.builds(
+    jkind_RealizabilityInputs,
 )
-jkind::IdRef_strategy = st.builds(
-    jkind::IdRef,
+jkind_IdRef_strategy = st.builds(
+    jkind_IdRef,
     name=
         safe_text
 )
-jkind::Callable_strategy = st.builds(
-    jkind::Callable,
+jkind_Callable_strategy = st.builds(
+    jkind_Callable,
     name=
         safe_text
 )
 Expr_strategy = st.builds(
     Expr,
 )
-jkind::BoolExpr_strategy = st.builds(
-    jkind::BoolExpr,
+jkind_RecordUpdateExpr_strategy = st.builds(
+    jkind_RecordUpdateExpr,
+)
+jkind_RecordExpr_strategy = st.builds(
+    jkind_RecordExpr,
+)
+jkind_ArrayUpdateExpr_strategy = st.builds(
+    jkind_ArrayUpdateExpr,
+)
+jkind_RealExpr_strategy = st.builds(
+    jkind_RealExpr,
     val=
         safe_text
 )
-jkind::IfThenElseExpr_strategy = st.builds(
-    jkind::IfThenElseExpr,
+jkind_RecordAccessExpr_strategy = st.builds(
+    jkind_RecordAccessExpr,
 )
-jkind::BinaryExpr_strategy = st.builds(
-    jkind::BinaryExpr,
-    op=
-        safe_text
+jkind_IfThenElseExpr_strategy = st.builds(
+    jkind_IfThenElseExpr,
 )
-jkind::ArrayExpr_strategy = st.builds(
-    jkind::ArrayExpr,
+jkind_TupleExpr_strategy = st.builds(
+    jkind_TupleExpr,
 )
-jkind::IdExpr_strategy = st.builds(
-    jkind::IdExpr,
+jkind_ArrayExpr_strategy = st.builds(
+    jkind_ArrayExpr,
 )
-jkind::ArrayUpdateExpr_strategy = st.builds(
-    jkind::ArrayUpdateExpr,
+jkind_CondactExpr_strategy = st.builds(
+    jkind_CondactExpr,
 )
-jkind::RecordAccessExpr_strategy = st.builds(
-    jkind::RecordAccessExpr,
-)
-jkind::UnaryExpr_strategy = st.builds(
-    jkind::UnaryExpr,
-    op=
-        safe_text
-)
-jkind::CastExpr_strategy = st.builds(
-    jkind::CastExpr,
-    op=
-        safe_text
-)
-jkind::ArrayAccessExpr_strategy = st.builds(
-    jkind::ArrayAccessExpr,
-)
-jkind::CondactExpr_strategy = st.builds(
-    jkind::CondactExpr,
-)
-jkind::RecordUpdateExpr_strategy = st.builds(
-    jkind::RecordUpdateExpr,
-)
-jkind::TupleExpr_strategy = st.builds(
-    jkind::TupleExpr,
-)
-jkind::IntExpr_strategy = st.builds(
-    jkind::IntExpr,
+jkind_IntExpr_strategy = st.builds(
+    jkind_IntExpr,
     val=
         safe_text
 )
-jkind::RealExpr_strategy = st.builds(
-    jkind::RealExpr,
+jkind_UnaryExpr_strategy = st.builds(
+    jkind_UnaryExpr,
+    op=
+        safe_text
+)
+jkind_CastExpr_strategy = st.builds(
+    jkind_CastExpr,
+    op=
+        safe_text
+)
+jkind_BoolExpr_strategy = st.builds(
+    jkind_BoolExpr,
     val=
         safe_text
 )
-jkind::RecordExpr_strategy = st.builds(
-    jkind::RecordExpr,
+jkind_BinaryExpr_strategy = st.builds(
+    jkind_BinaryExpr,
+    op=
+        safe_text
 )
-jkind::CallExpr_strategy = st.builds(
-    jkind::CallExpr,
+jkind_IdExpr_strategy = st.builds(
+    jkind_IdExpr,
 )
-jkind::TypeDef_strategy = st.builds(
-    jkind::TypeDef,
+jkind_ArrayAccessExpr_strategy = st.builds(
+    jkind_ArrayAccessExpr,
+)
+jkind_CallExpr_strategy = st.builds(
+    jkind_CallExpr,
+)
+jkind_TypeDef_strategy = st.builds(
+    jkind_TypeDef,
     name=
         safe_text
 )
-jkind::File_strategy = st.builds(
-    jkind::File,
+jkind_File_strategy = st.builds(
+    jkind_File,
 )
-jkind::Ivc_strategy = st.builds(
-    jkind::Ivc,
+jkind_Ivc_strategy = st.builds(
+    jkind_Ivc,
 )
-jkind::Property_strategy = st.builds(
-    jkind::Property,
+jkind_Property_strategy = st.builds(
+    jkind_Property,
 )
-jkind::Assertion_strategy = st.builds(
-    jkind::Assertion,
+jkind_Assertion_strategy = st.builds(
+    jkind_Assertion,
 )
-jkind::Equation_strategy = st.builds(
-    jkind::Equation,
+jkind_Equation_strategy = st.builds(
+    jkind_Equation,
 )
-jkind::VariableGroup_strategy = st.builds(
-    jkind::VariableGroup,
+jkind_VariableGroup_strategy = st.builds(
+    jkind_VariableGroup,
 )
 Callable_strategy = st.builds(
     Callable,
 )
-jkind::Expr_strategy = st.builds(
-    jkind::Expr,
+jkind_Expr_strategy = st.builds(
+    jkind_Expr,
 )
-jkind::Field_strategy = st.builds(
-    jkind::Field,
+jkind_Field_strategy = st.builds(
+    jkind_Field,
     name=
         safe_text
 )
-jkind::Type_strategy = st.builds(
-    jkind::Type,
+jkind_Type_strategy = st.builds(
+    jkind_Type,
 )
 IdRef_strategy = st.builds(
     IdRef,
 )
-jkind::Variable_strategy = st.builds(
-    jkind::Variable,
+jkind_Variable_strategy = st.builds(
+    jkind_Variable,
 )
-jkind::EnumValue_strategy = st.builds(
-    jkind::EnumValue,
+jkind_EnumValue_strategy = st.builds(
+    jkind_EnumValue,
 )
-jkind::Node_strategy = st.builds(
-    jkind::Node,
+jkind_Node_strategy = st.builds(
+    jkind_Node,
     main=
         safe_text
 )
-jkind::Function_strategy = st.builds(
-    jkind::Function,
+jkind_Function_strategy = st.builds(
+    jkind_Function,
 )
-jkind::Constant_strategy = st.builds(
-    jkind::Constant,
+jkind_Constant_strategy = st.builds(
+    jkind_Constant,
 )
 
 @given(instance=TypeDef_strategy)
@@ -1080,122 +1080,107 @@ jkind::Constant_strategy = st.builds(
 def test_typedef_instantiation(instance):
     assert isinstance(instance, TypeDef)
 
-@given(instance=jkind::AbbreviationType_strategy)
+@given(instance=jkind_AbbreviationType_strategy)
 @settings(max_examples=50)
-def test_jkind::abbreviationtype_instantiation(instance):
-    assert isinstance(instance, jkind::AbbreviationType)
+def test_jkind_abbreviationtype_instantiation(instance):
+    assert isinstance(instance, jkind_AbbreviationType)
 
 @given(instance=Type_strategy)
 @settings(max_examples=50)
 def test_type_instantiation(instance):
     assert isinstance(instance, Type)
 
-@given(instance=jkind::UserType_strategy)
+@given(instance=jkind_RealType_strategy)
 @settings(max_examples=50)
-def test_jkind::usertype_instantiation(instance):
-    assert isinstance(instance, jkind::UserType)
+def test_jkind_realtype_instantiation(instance):
+    assert isinstance(instance, jkind_RealType)
 
-@given(instance=jkind::IntType_strategy)
+@given(instance=jkind_UserType_strategy)
 @settings(max_examples=50)
-def test_jkind::inttype_instantiation(instance):
-    assert isinstance(instance, jkind::IntType)
+def test_jkind_usertype_instantiation(instance):
+    assert isinstance(instance, jkind_UserType)
 
-@given(instance=jkind::BoolType_strategy)
+@given(instance=jkind_IntType_strategy)
 @settings(max_examples=50)
-def test_jkind::booltype_instantiation(instance):
-    assert isinstance(instance, jkind::BoolType)
+def test_jkind_inttype_instantiation(instance):
+    assert isinstance(instance, jkind_IntType)
 
-@given(instance=jkind::SubrangeType_strategy)
+@given(instance=jkind_BoolType_strategy)
 @settings(max_examples=50)
-def test_jkind::subrangetype_instantiation(instance):
-    assert isinstance(instance, jkind::SubrangeType)
+def test_jkind_booltype_instantiation(instance):
+    assert isinstance(instance, jkind_BoolType)
 
-@given(instance=jkind::SubrangeType_strategy)
-def test_jkind::subrangetype_high_type(instance):
-    assert isinstance(instance.high, str)
+@given(instance=jkind_SubrangeType_strategy)
+@settings(max_examples=50)
+def test_jkind_subrangetype_instantiation(instance):
+    assert isinstance(instance, jkind_SubrangeType)
 
 
-@given(instance=jkind::SubrangeType_strategy)
-def test_jkind::subrangetype_high_setter(instance):
+
+@given(instance=jkind_SubrangeType_strategy)
+def test_jkind_subrangetype_high_setter(instance):
     original = instance.high
     instance.high = original
     assert instance.high == original
 
-@given(instance=jkind::SubrangeType_strategy)
-def test_jkind::subrangetype_low_type(instance):
-    assert isinstance(instance.low, str)
 
 
-@given(instance=jkind::SubrangeType_strategy)
-def test_jkind::subrangetype_low_setter(instance):
+@given(instance=jkind_SubrangeType_strategy)
+def test_jkind_subrangetype_low_setter(instance):
     original = instance.low
     instance.low = original
     assert instance.low == original
 
-@given(instance=jkind::RealType_strategy)
+@given(instance=jkind_ArrayType_strategy)
 @settings(max_examples=50)
-def test_jkind::realtype_instantiation(instance):
-    assert isinstance(instance, jkind::RealType)
-
-@given(instance=jkind::ArrayType_strategy)
-@settings(max_examples=50)
-def test_jkind::arraytype_instantiation(instance):
-    assert isinstance(instance, jkind::ArrayType)
-
-@given(instance=jkind::ArrayType_strategy)
-def test_jkind::arraytype_size_type(instance):
-    assert isinstance(instance.size, str)
+def test_jkind_arraytype_instantiation(instance):
+    assert isinstance(instance, jkind_ArrayType)
 
 
-@given(instance=jkind::ArrayType_strategy)
-def test_jkind::arraytype_size_setter(instance):
+
+@given(instance=jkind_ArrayType_strategy)
+def test_jkind_arraytype_size_setter(instance):
     original = instance.size
     instance.size = original
     assert instance.size == original
 
-@given(instance=jkind::EnumType_strategy)
+@given(instance=jkind_EnumType_strategy)
 @settings(max_examples=50)
-def test_jkind::enumtype_instantiation(instance):
-    assert isinstance(instance, jkind::EnumType)
+def test_jkind_enumtype_instantiation(instance):
+    assert isinstance(instance, jkind_EnumType)
 
-@given(instance=jkind::RecordType_strategy)
+@given(instance=jkind_RecordType_strategy)
 @settings(max_examples=50)
-def test_jkind::recordtype_instantiation(instance):
-    assert isinstance(instance, jkind::RecordType)
+def test_jkind_recordtype_instantiation(instance):
+    assert isinstance(instance, jkind_RecordType)
 
-@given(instance=jkind::RealizabilityInputs_strategy)
+@given(instance=jkind_RealizabilityInputs_strategy)
 @settings(max_examples=50)
-def test_jkind::realizabilityinputs_instantiation(instance):
-    assert isinstance(instance, jkind::RealizabilityInputs)
+def test_jkind_realizabilityinputs_instantiation(instance):
+    assert isinstance(instance, jkind_RealizabilityInputs)
 
-@given(instance=jkind::IdRef_strategy)
+@given(instance=jkind_IdRef_strategy)
 @settings(max_examples=50)
-def test_jkind::idref_instantiation(instance):
-    assert isinstance(instance, jkind::IdRef)
-
-@given(instance=jkind::IdRef_strategy)
-def test_jkind::idref_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_jkind_idref_instantiation(instance):
+    assert isinstance(instance, jkind_IdRef)
 
 
-@given(instance=jkind::IdRef_strategy)
-def test_jkind::idref_name_setter(instance):
+
+@given(instance=jkind_IdRef_strategy)
+def test_jkind_idref_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=jkind::Callable_strategy)
+@given(instance=jkind_Callable_strategy)
 @settings(max_examples=50)
-def test_jkind::callable_instantiation(instance):
-    assert isinstance(instance, jkind::Callable)
-
-@given(instance=jkind::Callable_strategy)
-def test_jkind::callable_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_jkind_callable_instantiation(instance):
+    assert isinstance(instance, jkind_Callable)
 
 
-@given(instance=jkind::Callable_strategy)
-def test_jkind::callable_name_setter(instance):
+
+@given(instance=jkind_Callable_strategy)
+def test_jkind_callable_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
@@ -1205,271 +1190,244 @@ def test_jkind::callable_name_setter(instance):
 def test_expr_instantiation(instance):
     assert isinstance(instance, Expr)
 
-@given(instance=jkind::BoolExpr_strategy)
+@given(instance=jkind_RecordUpdateExpr_strategy)
 @settings(max_examples=50)
-def test_jkind::boolexpr_instantiation(instance):
-    assert isinstance(instance, jkind::BoolExpr)
+def test_jkind_recordupdateexpr_instantiation(instance):
+    assert isinstance(instance, jkind_RecordUpdateExpr)
 
-@given(instance=jkind::BoolExpr_strategy)
-def test_jkind::boolexpr_val_type(instance):
-    assert isinstance(instance.val, str)
+@given(instance=jkind_RecordExpr_strategy)
+@settings(max_examples=50)
+def test_jkind_recordexpr_instantiation(instance):
+    assert isinstance(instance, jkind_RecordExpr)
+
+@given(instance=jkind_ArrayUpdateExpr_strategy)
+@settings(max_examples=50)
+def test_jkind_arrayupdateexpr_instantiation(instance):
+    assert isinstance(instance, jkind_ArrayUpdateExpr)
+
+@given(instance=jkind_RealExpr_strategy)
+@settings(max_examples=50)
+def test_jkind_realexpr_instantiation(instance):
+    assert isinstance(instance, jkind_RealExpr)
 
 
-@given(instance=jkind::BoolExpr_strategy)
-def test_jkind::boolexpr_val_setter(instance):
+
+@given(instance=jkind_RealExpr_strategy)
+def test_jkind_realexpr_val_setter(instance):
     original = instance.val
     instance.val = original
     assert instance.val == original
 
-@given(instance=jkind::IfThenElseExpr_strategy)
+@given(instance=jkind_RecordAccessExpr_strategy)
 @settings(max_examples=50)
-def test_jkind::ifthenelseexpr_instantiation(instance):
-    assert isinstance(instance, jkind::IfThenElseExpr)
+def test_jkind_recordaccessexpr_instantiation(instance):
+    assert isinstance(instance, jkind_RecordAccessExpr)
 
-@given(instance=jkind::BinaryExpr_strategy)
+@given(instance=jkind_IfThenElseExpr_strategy)
 @settings(max_examples=50)
-def test_jkind::binaryexpr_instantiation(instance):
-    assert isinstance(instance, jkind::BinaryExpr)
+def test_jkind_ifthenelseexpr_instantiation(instance):
+    assert isinstance(instance, jkind_IfThenElseExpr)
 
-@given(instance=jkind::BinaryExpr_strategy)
-def test_jkind::binaryexpr_op_type(instance):
-    assert isinstance(instance.op, str)
-
-
-@given(instance=jkind::BinaryExpr_strategy)
-def test_jkind::binaryexpr_op_setter(instance):
-    original = instance.op
-    instance.op = original
-    assert instance.op == original
-
-@given(instance=jkind::ArrayExpr_strategy)
+@given(instance=jkind_TupleExpr_strategy)
 @settings(max_examples=50)
-def test_jkind::arrayexpr_instantiation(instance):
-    assert isinstance(instance, jkind::ArrayExpr)
+def test_jkind_tupleexpr_instantiation(instance):
+    assert isinstance(instance, jkind_TupleExpr)
 
-@given(instance=jkind::IdExpr_strategy)
+@given(instance=jkind_ArrayExpr_strategy)
 @settings(max_examples=50)
-def test_jkind::idexpr_instantiation(instance):
-    assert isinstance(instance, jkind::IdExpr)
+def test_jkind_arrayexpr_instantiation(instance):
+    assert isinstance(instance, jkind_ArrayExpr)
 
-@given(instance=jkind::ArrayUpdateExpr_strategy)
+@given(instance=jkind_CondactExpr_strategy)
 @settings(max_examples=50)
-def test_jkind::arrayupdateexpr_instantiation(instance):
-    assert isinstance(instance, jkind::ArrayUpdateExpr)
+def test_jkind_condactexpr_instantiation(instance):
+    assert isinstance(instance, jkind_CondactExpr)
 
-@given(instance=jkind::RecordAccessExpr_strategy)
+@given(instance=jkind_IntExpr_strategy)
 @settings(max_examples=50)
-def test_jkind::recordaccessexpr_instantiation(instance):
-    assert isinstance(instance, jkind::RecordAccessExpr)
-
-@given(instance=jkind::UnaryExpr_strategy)
-@settings(max_examples=50)
-def test_jkind::unaryexpr_instantiation(instance):
-    assert isinstance(instance, jkind::UnaryExpr)
-
-@given(instance=jkind::UnaryExpr_strategy)
-def test_jkind::unaryexpr_op_type(instance):
-    assert isinstance(instance.op, str)
+def test_jkind_intexpr_instantiation(instance):
+    assert isinstance(instance, jkind_IntExpr)
 
 
-@given(instance=jkind::UnaryExpr_strategy)
-def test_jkind::unaryexpr_op_setter(instance):
-    original = instance.op
-    instance.op = original
-    assert instance.op == original
 
-@given(instance=jkind::CastExpr_strategy)
-@settings(max_examples=50)
-def test_jkind::castexpr_instantiation(instance):
-    assert isinstance(instance, jkind::CastExpr)
-
-@given(instance=jkind::CastExpr_strategy)
-def test_jkind::castexpr_op_type(instance):
-    assert isinstance(instance.op, str)
-
-
-@given(instance=jkind::CastExpr_strategy)
-def test_jkind::castexpr_op_setter(instance):
-    original = instance.op
-    instance.op = original
-    assert instance.op == original
-
-@given(instance=jkind::ArrayAccessExpr_strategy)
-@settings(max_examples=50)
-def test_jkind::arrayaccessexpr_instantiation(instance):
-    assert isinstance(instance, jkind::ArrayAccessExpr)
-
-@given(instance=jkind::CondactExpr_strategy)
-@settings(max_examples=50)
-def test_jkind::condactexpr_instantiation(instance):
-    assert isinstance(instance, jkind::CondactExpr)
-
-@given(instance=jkind::RecordUpdateExpr_strategy)
-@settings(max_examples=50)
-def test_jkind::recordupdateexpr_instantiation(instance):
-    assert isinstance(instance, jkind::RecordUpdateExpr)
-
-@given(instance=jkind::TupleExpr_strategy)
-@settings(max_examples=50)
-def test_jkind::tupleexpr_instantiation(instance):
-    assert isinstance(instance, jkind::TupleExpr)
-
-@given(instance=jkind::IntExpr_strategy)
-@settings(max_examples=50)
-def test_jkind::intexpr_instantiation(instance):
-    assert isinstance(instance, jkind::IntExpr)
-
-@given(instance=jkind::IntExpr_strategy)
-def test_jkind::intexpr_val_type(instance):
-    assert isinstance(instance.val, str)
-
-
-@given(instance=jkind::IntExpr_strategy)
-def test_jkind::intexpr_val_setter(instance):
+@given(instance=jkind_IntExpr_strategy)
+def test_jkind_intexpr_val_setter(instance):
     original = instance.val
     instance.val = original
     assert instance.val == original
 
-@given(instance=jkind::RealExpr_strategy)
+@given(instance=jkind_UnaryExpr_strategy)
 @settings(max_examples=50)
-def test_jkind::realexpr_instantiation(instance):
-    assert isinstance(instance, jkind::RealExpr)
-
-@given(instance=jkind::RealExpr_strategy)
-def test_jkind::realexpr_val_type(instance):
-    assert isinstance(instance.val, str)
+def test_jkind_unaryexpr_instantiation(instance):
+    assert isinstance(instance, jkind_UnaryExpr)
 
 
-@given(instance=jkind::RealExpr_strategy)
-def test_jkind::realexpr_val_setter(instance):
+
+@given(instance=jkind_UnaryExpr_strategy)
+def test_jkind_unaryexpr_op_setter(instance):
+    original = instance.op
+    instance.op = original
+    assert instance.op == original
+
+@given(instance=jkind_CastExpr_strategy)
+@settings(max_examples=50)
+def test_jkind_castexpr_instantiation(instance):
+    assert isinstance(instance, jkind_CastExpr)
+
+
+
+@given(instance=jkind_CastExpr_strategy)
+def test_jkind_castexpr_op_setter(instance):
+    original = instance.op
+    instance.op = original
+    assert instance.op == original
+
+@given(instance=jkind_BoolExpr_strategy)
+@settings(max_examples=50)
+def test_jkind_boolexpr_instantiation(instance):
+    assert isinstance(instance, jkind_BoolExpr)
+
+
+
+@given(instance=jkind_BoolExpr_strategy)
+def test_jkind_boolexpr_val_setter(instance):
     original = instance.val
     instance.val = original
     assert instance.val == original
 
-@given(instance=jkind::RecordExpr_strategy)
+@given(instance=jkind_BinaryExpr_strategy)
 @settings(max_examples=50)
-def test_jkind::recordexpr_instantiation(instance):
-    assert isinstance(instance, jkind::RecordExpr)
+def test_jkind_binaryexpr_instantiation(instance):
+    assert isinstance(instance, jkind_BinaryExpr)
 
-@given(instance=jkind::CallExpr_strategy)
+
+
+@given(instance=jkind_BinaryExpr_strategy)
+def test_jkind_binaryexpr_op_setter(instance):
+    original = instance.op
+    instance.op = original
+    assert instance.op == original
+
+@given(instance=jkind_IdExpr_strategy)
 @settings(max_examples=50)
-def test_jkind::callexpr_instantiation(instance):
-    assert isinstance(instance, jkind::CallExpr)
+def test_jkind_idexpr_instantiation(instance):
+    assert isinstance(instance, jkind_IdExpr)
 
-@given(instance=jkind::TypeDef_strategy)
+@given(instance=jkind_ArrayAccessExpr_strategy)
 @settings(max_examples=50)
-def test_jkind::typedef_instantiation(instance):
-    assert isinstance(instance, jkind::TypeDef)
+def test_jkind_arrayaccessexpr_instantiation(instance):
+    assert isinstance(instance, jkind_ArrayAccessExpr)
 
-@given(instance=jkind::TypeDef_strategy)
-def test_jkind::typedef_name_type(instance):
-    assert isinstance(instance.name, str)
+@given(instance=jkind_CallExpr_strategy)
+@settings(max_examples=50)
+def test_jkind_callexpr_instantiation(instance):
+    assert isinstance(instance, jkind_CallExpr)
+
+@given(instance=jkind_TypeDef_strategy)
+@settings(max_examples=50)
+def test_jkind_typedef_instantiation(instance):
+    assert isinstance(instance, jkind_TypeDef)
 
 
-@given(instance=jkind::TypeDef_strategy)
-def test_jkind::typedef_name_setter(instance):
+
+@given(instance=jkind_TypeDef_strategy)
+def test_jkind_typedef_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=jkind::File_strategy)
+@given(instance=jkind_File_strategy)
 @settings(max_examples=50)
-def test_jkind::file_instantiation(instance):
-    assert isinstance(instance, jkind::File)
+def test_jkind_file_instantiation(instance):
+    assert isinstance(instance, jkind_File)
 
-@given(instance=jkind::Ivc_strategy)
+@given(instance=jkind_Ivc_strategy)
 @settings(max_examples=50)
-def test_jkind::ivc_instantiation(instance):
-    assert isinstance(instance, jkind::Ivc)
+def test_jkind_ivc_instantiation(instance):
+    assert isinstance(instance, jkind_Ivc)
 
-@given(instance=jkind::Property_strategy)
+@given(instance=jkind_Property_strategy)
 @settings(max_examples=50)
-def test_jkind::property_instantiation(instance):
-    assert isinstance(instance, jkind::Property)
+def test_jkind_property_instantiation(instance):
+    assert isinstance(instance, jkind_Property)
 
-@given(instance=jkind::Assertion_strategy)
+@given(instance=jkind_Assertion_strategy)
 @settings(max_examples=50)
-def test_jkind::assertion_instantiation(instance):
-    assert isinstance(instance, jkind::Assertion)
+def test_jkind_assertion_instantiation(instance):
+    assert isinstance(instance, jkind_Assertion)
 
-@given(instance=jkind::Equation_strategy)
+@given(instance=jkind_Equation_strategy)
 @settings(max_examples=50)
-def test_jkind::equation_instantiation(instance):
-    assert isinstance(instance, jkind::Equation)
+def test_jkind_equation_instantiation(instance):
+    assert isinstance(instance, jkind_Equation)
 
-@given(instance=jkind::VariableGroup_strategy)
+@given(instance=jkind_VariableGroup_strategy)
 @settings(max_examples=50)
-def test_jkind::variablegroup_instantiation(instance):
-    assert isinstance(instance, jkind::VariableGroup)
+def test_jkind_variablegroup_instantiation(instance):
+    assert isinstance(instance, jkind_VariableGroup)
 
 @given(instance=Callable_strategy)
 @settings(max_examples=50)
 def test_callable_instantiation(instance):
     assert isinstance(instance, Callable)
 
-@given(instance=jkind::Expr_strategy)
+@given(instance=jkind_Expr_strategy)
 @settings(max_examples=50)
-def test_jkind::expr_instantiation(instance):
-    assert isinstance(instance, jkind::Expr)
+def test_jkind_expr_instantiation(instance):
+    assert isinstance(instance, jkind_Expr)
 
-@given(instance=jkind::Field_strategy)
+@given(instance=jkind_Field_strategy)
 @settings(max_examples=50)
-def test_jkind::field_instantiation(instance):
-    assert isinstance(instance, jkind::Field)
-
-@given(instance=jkind::Field_strategy)
-def test_jkind::field_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_jkind_field_instantiation(instance):
+    assert isinstance(instance, jkind_Field)
 
 
-@given(instance=jkind::Field_strategy)
-def test_jkind::field_name_setter(instance):
+
+@given(instance=jkind_Field_strategy)
+def test_jkind_field_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=jkind::Type_strategy)
+@given(instance=jkind_Type_strategy)
 @settings(max_examples=50)
-def test_jkind::type_instantiation(instance):
-    assert isinstance(instance, jkind::Type)
+def test_jkind_type_instantiation(instance):
+    assert isinstance(instance, jkind_Type)
 
 @given(instance=IdRef_strategy)
 @settings(max_examples=50)
 def test_idref_instantiation(instance):
     assert isinstance(instance, IdRef)
 
-@given(instance=jkind::Variable_strategy)
+@given(instance=jkind_Variable_strategy)
 @settings(max_examples=50)
-def test_jkind::variable_instantiation(instance):
-    assert isinstance(instance, jkind::Variable)
+def test_jkind_variable_instantiation(instance):
+    assert isinstance(instance, jkind_Variable)
 
-@given(instance=jkind::EnumValue_strategy)
+@given(instance=jkind_EnumValue_strategy)
 @settings(max_examples=50)
-def test_jkind::enumvalue_instantiation(instance):
-    assert isinstance(instance, jkind::EnumValue)
+def test_jkind_enumvalue_instantiation(instance):
+    assert isinstance(instance, jkind_EnumValue)
 
-@given(instance=jkind::Node_strategy)
+@given(instance=jkind_Node_strategy)
 @settings(max_examples=50)
-def test_jkind::node_instantiation(instance):
-    assert isinstance(instance, jkind::Node)
-
-@given(instance=jkind::Node_strategy)
-def test_jkind::node_main_type(instance):
-    assert isinstance(instance.main, str)
+def test_jkind_node_instantiation(instance):
+    assert isinstance(instance, jkind_Node)
 
 
-@given(instance=jkind::Node_strategy)
-def test_jkind::node_main_setter(instance):
+
+@given(instance=jkind_Node_strategy)
+def test_jkind_node_main_setter(instance):
     original = instance.main
     instance.main = original
     assert instance.main == original
 
-@given(instance=jkind::Function_strategy)
+@given(instance=jkind_Function_strategy)
 @settings(max_examples=50)
-def test_jkind::function_instantiation(instance):
-    assert isinstance(instance, jkind::Function)
+def test_jkind_function_instantiation(instance):
+    assert isinstance(instance, jkind_Function)
 
-@given(instance=jkind::Constant_strategy)
+@given(instance=jkind_Constant_strategy)
 @settings(max_examples=50)
-def test_jkind::constant_instantiation(instance):
-    assert isinstance(instance, jkind::Constant)
+def test_jkind_constant_instantiation(instance):
+    assert isinstance(instance, jkind_Constant)

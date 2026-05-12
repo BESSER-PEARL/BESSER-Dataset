@@ -3,28 +3,28 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    errorkref::K,
+from python_code import (
+    errorkref_K,
     M,
-    errorkref::Q,
+    errorkref_Q,
     E,
-    errorkref::J,
+    errorkref_J,
     D,
-    errorkref::E,
-    errorkref::N,
-    errorkref::M,
-    errorkref::I,
-    errorkref::C,
-    errorkref::F,
+    errorkref_E,
+    errorkref_N,
+    errorkref_M,
+    errorkref_I,
+    errorkref_C,
+    errorkref_F,
     G,
-    errorkref::G,
-    errorkref::B,
+    errorkref_G,
+    errorkref_B,
     B,
-    errorkref::A,
-    errorkref::L1,
-    errorkref::D,
+    errorkref_A,
+    errorkref_L1,
+    errorkref_D,
 )
 
 # =============================================================================
@@ -33,23 +33,23 @@ from classes import (
 
 
 
-def test_errorkref::k_is_not_abstract():
-    assert not inspect.isabstract(errorkref::K)
+def test_errorkref_k_is_not_abstract():
+    assert not inspect.isabstract(errorkref_K)
 
 
-def test_errorkref::k_constructor_exists():
-    assert callable(errorkref::K.__init__)
+def test_errorkref_k_constructor_exists():
+    assert callable(errorkref_K.__init__)
 
 
-def test_errorkref::k_constructor_args():
-    sig = inspect.signature(errorkref::K.__init__)
+def test_errorkref_k_constructor_args():
+    sig = inspect.signature(errorkref_K.__init__)
     params = list(sig.parameters.keys())
     assert "ids" in params, "Missing parameter 'ids'"
 
-def test_errorkref::k_has_ids():
-    assert hasattr(errorkref::K, "ids")
+def test_errorkref_k_has_ids():
+    assert hasattr(errorkref_K, "ids")
     descriptor = None
-    for klass in errorkref::K.__mro__:
+    for klass in errorkref_K.__mro__:
         if "ids" in klass.__dict__:
             descriptor = klass.__dict__["ids"]
             break
@@ -71,23 +71,23 @@ def test_m_constructor_args():
 
 
 
-def test_errorkref::q_is_not_abstract():
-    assert not inspect.isabstract(errorkref::Q)
+def test_errorkref_q_is_not_abstract():
+    assert not inspect.isabstract(errorkref_Q)
 
 
-def test_errorkref::q_constructor_exists():
-    assert callable(errorkref::Q.__init__)
+def test_errorkref_q_constructor_exists():
+    assert callable(errorkref_Q.__init__)
 
 
-def test_errorkref::q_constructor_args():
-    sig = inspect.signature(errorkref::Q.__init__)
+def test_errorkref_q_constructor_args():
+    sig = inspect.signature(errorkref_Q.__init__)
     params = list(sig.parameters.keys())
     assert "id" in params, "Missing parameter 'id'"
 
-def test_errorkref::q_has_id():
-    assert hasattr(errorkref::Q, "id")
+def test_errorkref_q_has_id():
+    assert hasattr(errorkref_Q, "id")
     descriptor = None
-    for klass in errorkref::Q.__mro__:
+    for klass in errorkref_Q.__mro__:
         if "id" in klass.__dict__:
             descriptor = klass.__dict__["id"]
             break
@@ -109,23 +109,23 @@ def test_e_constructor_args():
 
 
 
-def test_errorkref::j_is_not_abstract():
-    assert not inspect.isabstract(errorkref::J)
+def test_errorkref_j_is_not_abstract():
+    assert not inspect.isabstract(errorkref_J)
 
 
-def test_errorkref::j_constructor_exists():
-    assert callable(errorkref::J.__init__)
+def test_errorkref_j_constructor_exists():
+    assert callable(errorkref_J.__init__)
 
 
-def test_errorkref::j_constructor_args():
-    sig = inspect.signature(errorkref::J.__init__)
+def test_errorkref_j_constructor_args():
+    sig = inspect.signature(errorkref_J.__init__)
     params = list(sig.parameters.keys())
     assert "id" in params, "Missing parameter 'id'"
 
-def test_errorkref::j_has_id():
-    assert hasattr(errorkref::J, "id")
+def test_errorkref_j_has_id():
+    assert hasattr(errorkref_J, "id")
     descriptor = None
-    for klass in errorkref::J.__mro__:
+    for klass in errorkref_J.__mro__:
         if "id" in klass.__dict__:
             descriptor = klass.__dict__["id"]
             break
@@ -147,37 +147,37 @@ def test_d_constructor_args():
 
 
 
-def test_errorkref::e_is_not_abstract():
-    assert not inspect.isabstract(errorkref::E)
+def test_errorkref_e_is_not_abstract():
+    assert not inspect.isabstract(errorkref_E)
 
 
-def test_errorkref::e_constructor_exists():
-    assert callable(errorkref::E.__init__)
+def test_errorkref_e_constructor_exists():
+    assert callable(errorkref_E.__init__)
 
 
-def test_errorkref::e_constructor_args():
-    sig = inspect.signature(errorkref::E.__init__)
+def test_errorkref_e_constructor_args():
+    sig = inspect.signature(errorkref_E.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_errorkref::n_is_not_abstract():
-    assert not inspect.isabstract(errorkref::N)
+def test_errorkref_n_is_not_abstract():
+    assert not inspect.isabstract(errorkref_N)
 
 
-def test_errorkref::n_constructor_exists():
-    assert callable(errorkref::N.__init__)
+def test_errorkref_n_constructor_exists():
+    assert callable(errorkref_N.__init__)
 
 
-def test_errorkref::n_constructor_args():
-    sig = inspect.signature(errorkref::N.__init__)
+def test_errorkref_n_constructor_args():
+    sig = inspect.signature(errorkref_N.__init__)
     params = list(sig.parameters.keys())
     assert "id" in params, "Missing parameter 'id'"
 
-def test_errorkref::n_has_id():
-    assert hasattr(errorkref::N, "id")
+def test_errorkref_n_has_id():
+    assert hasattr(errorkref_N, "id")
     descriptor = None
-    for klass in errorkref::N.__mro__:
+    for klass in errorkref_N.__mro__:
         if "id" in klass.__dict__:
             descriptor = klass.__dict__["id"]
             break
@@ -185,23 +185,23 @@ def test_errorkref::n_has_id():
 
 
 
-def test_errorkref::m_is_not_abstract():
-    assert not inspect.isabstract(errorkref::M)
+def test_errorkref_m_is_not_abstract():
+    assert not inspect.isabstract(errorkref_M)
 
 
-def test_errorkref::m_constructor_exists():
-    assert callable(errorkref::M.__init__)
+def test_errorkref_m_constructor_exists():
+    assert callable(errorkref_M.__init__)
 
 
-def test_errorkref::m_constructor_args():
-    sig = inspect.signature(errorkref::M.__init__)
+def test_errorkref_m_constructor_args():
+    sig = inspect.signature(errorkref_M.__init__)
     params = list(sig.parameters.keys())
     assert "id" in params, "Missing parameter 'id'"
 
-def test_errorkref::m_has_id():
-    assert hasattr(errorkref::M, "id")
+def test_errorkref_m_has_id():
+    assert hasattr(errorkref_M, "id")
     descriptor = None
-    for klass in errorkref::M.__mro__:
+    for klass in errorkref_M.__mro__:
         if "id" in klass.__dict__:
             descriptor = klass.__dict__["id"]
             break
@@ -209,23 +209,23 @@ def test_errorkref::m_has_id():
 
 
 
-def test_errorkref::i_is_not_abstract():
-    assert not inspect.isabstract(errorkref::I)
+def test_errorkref_i_is_not_abstract():
+    assert not inspect.isabstract(errorkref_I)
 
 
-def test_errorkref::i_constructor_exists():
-    assert callable(errorkref::I.__init__)
+def test_errorkref_i_constructor_exists():
+    assert callable(errorkref_I.__init__)
 
 
-def test_errorkref::i_constructor_args():
-    sig = inspect.signature(errorkref::I.__init__)
+def test_errorkref_i_constructor_args():
+    sig = inspect.signature(errorkref_I.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_errorkref::i_has_name():
-    assert hasattr(errorkref::I, "name")
+def test_errorkref_i_has_name():
+    assert hasattr(errorkref_I, "name")
     descriptor = None
-    for klass in errorkref::I.__mro__:
+    for klass in errorkref_I.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -233,30 +233,30 @@ def test_errorkref::i_has_name():
 
 
 
-def test_errorkref::c_is_not_abstract():
-    assert not inspect.isabstract(errorkref::C)
+def test_errorkref_c_is_not_abstract():
+    assert not inspect.isabstract(errorkref_C)
 
 
-def test_errorkref::c_constructor_exists():
-    assert callable(errorkref::C.__init__)
+def test_errorkref_c_constructor_exists():
+    assert callable(errorkref_C.__init__)
 
 
-def test_errorkref::c_constructor_args():
-    sig = inspect.signature(errorkref::C.__init__)
+def test_errorkref_c_constructor_args():
+    sig = inspect.signature(errorkref_C.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_errorkref::f_is_not_abstract():
-    assert not inspect.isabstract(errorkref::F)
+def test_errorkref_f_is_not_abstract():
+    assert not inspect.isabstract(errorkref_F)
 
 
-def test_errorkref::f_constructor_exists():
-    assert callable(errorkref::F.__init__)
+def test_errorkref_f_constructor_exists():
+    assert callable(errorkref_F.__init__)
 
 
-def test_errorkref::f_constructor_args():
-    sig = inspect.signature(errorkref::F.__init__)
+def test_errorkref_f_constructor_args():
+    sig = inspect.signature(errorkref_F.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -275,37 +275,37 @@ def test_g_constructor_args():
 
 
 
-def test_errorkref::g_is_not_abstract():
-    assert not inspect.isabstract(errorkref::G)
+def test_errorkref_g_is_not_abstract():
+    assert not inspect.isabstract(errorkref_G)
 
 
-def test_errorkref::g_constructor_exists():
-    assert callable(errorkref::G.__init__)
+def test_errorkref_g_constructor_exists():
+    assert callable(errorkref_G.__init__)
 
 
-def test_errorkref::g_constructor_args():
-    sig = inspect.signature(errorkref::G.__init__)
+def test_errorkref_g_constructor_args():
+    sig = inspect.signature(errorkref_G.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_errorkref::b_is_not_abstract():
-    assert not inspect.isabstract(errorkref::B)
+def test_errorkref_b_is_not_abstract():
+    assert not inspect.isabstract(errorkref_B)
 
 
-def test_errorkref::b_constructor_exists():
-    assert callable(errorkref::B.__init__)
+def test_errorkref_b_constructor_exists():
+    assert callable(errorkref_B.__init__)
 
 
-def test_errorkref::b_constructor_args():
-    sig = inspect.signature(errorkref::B.__init__)
+def test_errorkref_b_constructor_args():
+    sig = inspect.signature(errorkref_B.__init__)
     params = list(sig.parameters.keys())
     assert "id" in params, "Missing parameter 'id'"
 
-def test_errorkref::b_has_id():
-    assert hasattr(errorkref::B, "id")
+def test_errorkref_b_has_id():
+    assert hasattr(errorkref_B, "id")
     descriptor = None
-    for klass in errorkref::B.__mro__:
+    for klass in errorkref_B.__mro__:
         if "id" in klass.__dict__:
             descriptor = klass.__dict__["id"]
             break
@@ -327,23 +327,23 @@ def test_b_constructor_args():
 
 
 
-def test_errorkref::a_is_not_abstract():
-    assert not inspect.isabstract(errorkref::A)
+def test_errorkref_a_is_not_abstract():
+    assert not inspect.isabstract(errorkref_A)
 
 
-def test_errorkref::a_constructor_exists():
-    assert callable(errorkref::A.__init__)
+def test_errorkref_a_constructor_exists():
+    assert callable(errorkref_A.__init__)
 
 
-def test_errorkref::a_constructor_args():
-    sig = inspect.signature(errorkref::A.__init__)
+def test_errorkref_a_constructor_args():
+    sig = inspect.signature(errorkref_A.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_errorkref::a_has_name():
-    assert hasattr(errorkref::A, "name")
+def test_errorkref_a_has_name():
+    assert hasattr(errorkref_A, "name")
     descriptor = None
-    for klass in errorkref::A.__mro__:
+    for klass in errorkref_A.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -351,23 +351,23 @@ def test_errorkref::a_has_name():
 
 
 
-def test_errorkref::l1_is_not_abstract():
-    assert not inspect.isabstract(errorkref::L1)
+def test_errorkref_l1_is_not_abstract():
+    assert not inspect.isabstract(errorkref_L1)
 
 
-def test_errorkref::l1_constructor_exists():
-    assert callable(errorkref::L1.__init__)
+def test_errorkref_l1_constructor_exists():
+    assert callable(errorkref_L1.__init__)
 
 
-def test_errorkref::l1_constructor_args():
-    sig = inspect.signature(errorkref::L1.__init__)
+def test_errorkref_l1_constructor_args():
+    sig = inspect.signature(errorkref_L1.__init__)
     params = list(sig.parameters.keys())
     assert "since" in params, "Missing parameter 'since'"
 
-def test_errorkref::l1_has_since():
-    assert hasattr(errorkref::L1, "since")
+def test_errorkref_l1_has_since():
+    assert hasattr(errorkref_L1, "since")
     descriptor = None
-    for klass in errorkref::L1.__mro__:
+    for klass in errorkref_L1.__mro__:
         if "since" in klass.__dict__:
             descriptor = klass.__dict__["since"]
             break
@@ -375,16 +375,16 @@ def test_errorkref::l1_has_since():
 
 
 
-def test_errorkref::d_is_not_abstract():
-    assert not inspect.isabstract(errorkref::D)
+def test_errorkref_d_is_not_abstract():
+    assert not inspect.isabstract(errorkref_D)
 
 
-def test_errorkref::d_constructor_exists():
-    assert callable(errorkref::D.__init__)
+def test_errorkref_d_constructor_exists():
+    assert callable(errorkref_D.__init__)
 
 
-def test_errorkref::d_constructor_args():
-    sig = inspect.signature(errorkref::D.__init__)
+def test_errorkref_d_constructor_args():
+    sig = inspect.signature(errorkref_D.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -399,94 +399,91 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-errorkref::K_strategy = st.builds(
-    errorkref::K,
+errorkref_K_strategy = st.builds(
+    errorkref_K,
     ids=
         safe_text
 )
 M_strategy = st.builds(
     M,
 )
-errorkref::Q_strategy = st.builds(
-    errorkref::Q,
+errorkref_Q_strategy = st.builds(
+    errorkref_Q,
     id=
         safe_text
 )
 E_strategy = st.builds(
     E,
 )
-errorkref::J_strategy = st.builds(
-    errorkref::J,
+errorkref_J_strategy = st.builds(
+    errorkref_J,
     id=
         safe_text
 )
 D_strategy = st.builds(
     D,
 )
-errorkref::E_strategy = st.builds(
-    errorkref::E,
+errorkref_E_strategy = st.builds(
+    errorkref_E,
 )
-errorkref::N_strategy = st.builds(
-    errorkref::N,
+errorkref_N_strategy = st.builds(
+    errorkref_N,
     id=
         safe_text
 )
-errorkref::M_strategy = st.builds(
-    errorkref::M,
+errorkref_M_strategy = st.builds(
+    errorkref_M,
     id=
         safe_text
 )
-errorkref::I_strategy = st.builds(
-    errorkref::I,
+errorkref_I_strategy = st.builds(
+    errorkref_I,
     name=
         safe_text
 )
-errorkref::C_strategy = st.builds(
-    errorkref::C,
+errorkref_C_strategy = st.builds(
+    errorkref_C,
 )
-errorkref::F_strategy = st.builds(
-    errorkref::F,
+errorkref_F_strategy = st.builds(
+    errorkref_F,
 )
 G_strategy = st.builds(
     G,
 )
-errorkref::G_strategy = st.builds(
-    errorkref::G,
+errorkref_G_strategy = st.builds(
+    errorkref_G,
 )
-errorkref::B_strategy = st.builds(
-    errorkref::B,
+errorkref_B_strategy = st.builds(
+    errorkref_B,
     id=
         safe_text
 )
 B_strategy = st.builds(
     B,
 )
-errorkref::A_strategy = st.builds(
-    errorkref::A,
+errorkref_A_strategy = st.builds(
+    errorkref_A,
     name=
         safe_text
 )
-errorkref::L1_strategy = st.builds(
-    errorkref::L1,
+errorkref_L1_strategy = st.builds(
+    errorkref_L1,
     since=
         safe_text
 )
-errorkref::D_strategy = st.builds(
-    errorkref::D,
+errorkref_D_strategy = st.builds(
+    errorkref_D,
 )
 
-@given(instance=errorkref::K_strategy)
+@given(instance=errorkref_K_strategy)
 @settings(max_examples=50)
-def test_errorkref::k_instantiation(instance):
-    assert isinstance(instance, errorkref::K)
-
-@given(instance=errorkref::K_strategy)
-def test_errorkref::k_ids_type(instance):
-    assert isinstance(instance.ids, str)
+def test_errorkref_k_instantiation(instance):
+    assert isinstance(instance, errorkref_K)
 
 
-@given(instance=errorkref::K_strategy)
-def test_errorkref::k_ids_setter(instance):
+
+@given(instance=errorkref_K_strategy)
+def test_errorkref_k_ids_setter(instance):
     original = instance.ids
     instance.ids = original
     assert instance.ids == original
@@ -496,18 +493,15 @@ def test_errorkref::k_ids_setter(instance):
 def test_m_instantiation(instance):
     assert isinstance(instance, M)
 
-@given(instance=errorkref::Q_strategy)
+@given(instance=errorkref_Q_strategy)
 @settings(max_examples=50)
-def test_errorkref::q_instantiation(instance):
-    assert isinstance(instance, errorkref::Q)
-
-@given(instance=errorkref::Q_strategy)
-def test_errorkref::q_id_type(instance):
-    assert isinstance(instance.id, str)
+def test_errorkref_q_instantiation(instance):
+    assert isinstance(instance, errorkref_Q)
 
 
-@given(instance=errorkref::Q_strategy)
-def test_errorkref::q_id_setter(instance):
+
+@given(instance=errorkref_Q_strategy)
+def test_errorkref_q_id_setter(instance):
     original = instance.id
     instance.id = original
     assert instance.id == original
@@ -517,18 +511,15 @@ def test_errorkref::q_id_setter(instance):
 def test_e_instantiation(instance):
     assert isinstance(instance, E)
 
-@given(instance=errorkref::J_strategy)
+@given(instance=errorkref_J_strategy)
 @settings(max_examples=50)
-def test_errorkref::j_instantiation(instance):
-    assert isinstance(instance, errorkref::J)
-
-@given(instance=errorkref::J_strategy)
-def test_errorkref::j_id_type(instance):
-    assert isinstance(instance.id, str)
+def test_errorkref_j_instantiation(instance):
+    assert isinstance(instance, errorkref_J)
 
 
-@given(instance=errorkref::J_strategy)
-def test_errorkref::j_id_setter(instance):
+
+@given(instance=errorkref_J_strategy)
+def test_errorkref_j_id_setter(instance):
     original = instance.id
     instance.id = original
     assert instance.id == original
@@ -538,91 +529,79 @@ def test_errorkref::j_id_setter(instance):
 def test_d_instantiation(instance):
     assert isinstance(instance, D)
 
-@given(instance=errorkref::E_strategy)
+@given(instance=errorkref_E_strategy)
 @settings(max_examples=50)
-def test_errorkref::e_instantiation(instance):
-    assert isinstance(instance, errorkref::E)
+def test_errorkref_e_instantiation(instance):
+    assert isinstance(instance, errorkref_E)
 
-@given(instance=errorkref::N_strategy)
+@given(instance=errorkref_N_strategy)
 @settings(max_examples=50)
-def test_errorkref::n_instantiation(instance):
-    assert isinstance(instance, errorkref::N)
-
-@given(instance=errorkref::N_strategy)
-def test_errorkref::n_id_type(instance):
-    assert isinstance(instance.id, str)
+def test_errorkref_n_instantiation(instance):
+    assert isinstance(instance, errorkref_N)
 
 
-@given(instance=errorkref::N_strategy)
-def test_errorkref::n_id_setter(instance):
+
+@given(instance=errorkref_N_strategy)
+def test_errorkref_n_id_setter(instance):
     original = instance.id
     instance.id = original
     assert instance.id == original
 
-@given(instance=errorkref::M_strategy)
+@given(instance=errorkref_M_strategy)
 @settings(max_examples=50)
-def test_errorkref::m_instantiation(instance):
-    assert isinstance(instance, errorkref::M)
-
-@given(instance=errorkref::M_strategy)
-def test_errorkref::m_id_type(instance):
-    assert isinstance(instance.id, str)
+def test_errorkref_m_instantiation(instance):
+    assert isinstance(instance, errorkref_M)
 
 
-@given(instance=errorkref::M_strategy)
-def test_errorkref::m_id_setter(instance):
+
+@given(instance=errorkref_M_strategy)
+def test_errorkref_m_id_setter(instance):
     original = instance.id
     instance.id = original
     assert instance.id == original
 
-@given(instance=errorkref::I_strategy)
+@given(instance=errorkref_I_strategy)
 @settings(max_examples=50)
-def test_errorkref::i_instantiation(instance):
-    assert isinstance(instance, errorkref::I)
-
-@given(instance=errorkref::I_strategy)
-def test_errorkref::i_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_errorkref_i_instantiation(instance):
+    assert isinstance(instance, errorkref_I)
 
 
-@given(instance=errorkref::I_strategy)
-def test_errorkref::i_name_setter(instance):
+
+@given(instance=errorkref_I_strategy)
+def test_errorkref_i_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=errorkref::C_strategy)
+@given(instance=errorkref_C_strategy)
 @settings(max_examples=50)
-def test_errorkref::c_instantiation(instance):
-    assert isinstance(instance, errorkref::C)
+def test_errorkref_c_instantiation(instance):
+    assert isinstance(instance, errorkref_C)
 
-@given(instance=errorkref::F_strategy)
+@given(instance=errorkref_F_strategy)
 @settings(max_examples=50)
-def test_errorkref::f_instantiation(instance):
-    assert isinstance(instance, errorkref::F)
+def test_errorkref_f_instantiation(instance):
+    assert isinstance(instance, errorkref_F)
 
 @given(instance=G_strategy)
 @settings(max_examples=50)
 def test_g_instantiation(instance):
     assert isinstance(instance, G)
 
-@given(instance=errorkref::G_strategy)
+@given(instance=errorkref_G_strategy)
 @settings(max_examples=50)
-def test_errorkref::g_instantiation(instance):
-    assert isinstance(instance, errorkref::G)
+def test_errorkref_g_instantiation(instance):
+    assert isinstance(instance, errorkref_G)
 
-@given(instance=errorkref::B_strategy)
+@given(instance=errorkref_B_strategy)
 @settings(max_examples=50)
-def test_errorkref::b_instantiation(instance):
-    assert isinstance(instance, errorkref::B)
-
-@given(instance=errorkref::B_strategy)
-def test_errorkref::b_id_type(instance):
-    assert isinstance(instance.id, str)
+def test_errorkref_b_instantiation(instance):
+    assert isinstance(instance, errorkref_B)
 
 
-@given(instance=errorkref::B_strategy)
-def test_errorkref::b_id_setter(instance):
+
+@given(instance=errorkref_B_strategy)
+def test_errorkref_b_id_setter(instance):
     original = instance.id
     instance.id = original
     assert instance.id == original
@@ -632,39 +611,33 @@ def test_errorkref::b_id_setter(instance):
 def test_b_instantiation(instance):
     assert isinstance(instance, B)
 
-@given(instance=errorkref::A_strategy)
+@given(instance=errorkref_A_strategy)
 @settings(max_examples=50)
-def test_errorkref::a_instantiation(instance):
-    assert isinstance(instance, errorkref::A)
-
-@given(instance=errorkref::A_strategy)
-def test_errorkref::a_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_errorkref_a_instantiation(instance):
+    assert isinstance(instance, errorkref_A)
 
 
-@given(instance=errorkref::A_strategy)
-def test_errorkref::a_name_setter(instance):
+
+@given(instance=errorkref_A_strategy)
+def test_errorkref_a_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=errorkref::L1_strategy)
+@given(instance=errorkref_L1_strategy)
 @settings(max_examples=50)
-def test_errorkref::l1_instantiation(instance):
-    assert isinstance(instance, errorkref::L1)
-
-@given(instance=errorkref::L1_strategy)
-def test_errorkref::l1_since_type(instance):
-    assert isinstance(instance.since, str)
+def test_errorkref_l1_instantiation(instance):
+    assert isinstance(instance, errorkref_L1)
 
 
-@given(instance=errorkref::L1_strategy)
-def test_errorkref::l1_since_setter(instance):
+
+@given(instance=errorkref_L1_strategy)
+def test_errorkref_l1_since_setter(instance):
     original = instance.since
     instance.since = original
     assert instance.since == original
 
-@given(instance=errorkref::D_strategy)
+@given(instance=errorkref_D_strategy)
 @settings(max_examples=50)
-def test_errorkref::d_instantiation(instance):
-    assert isinstance(instance, errorkref::D)
+def test_errorkref_d_instantiation(instance):
+    assert isinstance(instance, errorkref_D)

@@ -3,12 +3,12 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    databaseMetamodel::Relation,
-    databaseMetamodel::Database,
-    databaseMetamodel::Column,
+from python_code import (
+    databaseMetamodel_Relation,
+    databaseMetamodel_Database,
+    databaseMetamodel_Column,
 )
 
 # =============================================================================
@@ -17,43 +17,43 @@ from classes import (
 
 
 
-def test_databasemetamodel::relation_is_not_abstract():
-    assert not inspect.isabstract(databaseMetamodel::Relation)
+def test_databasemetamodel_relation_is_not_abstract():
+    assert not inspect.isabstract(databaseMetamodel_Relation)
 
 
-def test_databasemetamodel::relation_constructor_exists():
-    assert callable(databaseMetamodel::Relation.__init__)
+def test_databasemetamodel_relation_constructor_exists():
+    assert callable(databaseMetamodel_Relation.__init__)
 
 
-def test_databasemetamodel::relation_constructor_args():
-    sig = inspect.signature(databaseMetamodel::Relation.__init__)
+def test_databasemetamodel_relation_constructor_args():
+    sig = inspect.signature(databaseMetamodel_Relation.__init__)
     params = list(sig.parameters.keys())
-    assert "isSelfJoinTable" in params, "Missing parameter 'isSelfJoinTable'"
     assert "isJoinTable" in params, "Missing parameter 'isJoinTable'"
+    assert "isSelfJoinTable" in params, "Missing parameter 'isSelfJoinTable'"
     assert "name" in params, "Missing parameter 'name'"
 
-def test_databasemetamodel::relation_has_isSelfJoinTable():
-    assert hasattr(databaseMetamodel::Relation, "isSelfJoinTable")
+def test_databasemetamodel_relation_has_isJoinTable():
+    assert hasattr(databaseMetamodel_Relation, "isJoinTable")
     descriptor = None
-    for klass in databaseMetamodel::Relation.__mro__:
-        if "isSelfJoinTable" in klass.__dict__:
-            descriptor = klass.__dict__["isSelfJoinTable"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_databasemetamodel::relation_has_isJoinTable():
-    assert hasattr(databaseMetamodel::Relation, "isJoinTable")
-    descriptor = None
-    for klass in databaseMetamodel::Relation.__mro__:
+    for klass in databaseMetamodel_Relation.__mro__:
         if "isJoinTable" in klass.__dict__:
             descriptor = klass.__dict__["isJoinTable"]
             break
     assert isinstance(descriptor, property)
 
-def test_databasemetamodel::relation_has_name():
-    assert hasattr(databaseMetamodel::Relation, "name")
+def test_databasemetamodel_relation_has_isSelfJoinTable():
+    assert hasattr(databaseMetamodel_Relation, "isSelfJoinTable")
     descriptor = None
-    for klass in databaseMetamodel::Relation.__mro__:
+    for klass in databaseMetamodel_Relation.__mro__:
+        if "isSelfJoinTable" in klass.__dict__:
+            descriptor = klass.__dict__["isSelfJoinTable"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_databasemetamodel_relation_has_name():
+    assert hasattr(databaseMetamodel_Relation, "name")
+    descriptor = None
+    for klass in databaseMetamodel_Relation.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -61,69 +61,69 @@ def test_databasemetamodel::relation_has_name():
 
 
 
-def test_databasemetamodel::database_is_not_abstract():
-    assert not inspect.isabstract(databaseMetamodel::Database)
+def test_databasemetamodel_database_is_not_abstract():
+    assert not inspect.isabstract(databaseMetamodel_Database)
 
 
-def test_databasemetamodel::database_constructor_exists():
-    assert callable(databaseMetamodel::Database.__init__)
+def test_databasemetamodel_database_constructor_exists():
+    assert callable(databaseMetamodel_Database.__init__)
 
 
-def test_databasemetamodel::database_constructor_args():
-    sig = inspect.signature(databaseMetamodel::Database.__init__)
+def test_databasemetamodel_database_constructor_args():
+    sig = inspect.signature(databaseMetamodel_Database.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_databasemetamodel::column_is_not_abstract():
-    assert not inspect.isabstract(databaseMetamodel::Column)
+def test_databasemetamodel_column_is_not_abstract():
+    assert not inspect.isabstract(databaseMetamodel_Column)
 
 
-def test_databasemetamodel::column_constructor_exists():
-    assert callable(databaseMetamodel::Column.__init__)
+def test_databasemetamodel_column_constructor_exists():
+    assert callable(databaseMetamodel_Column.__init__)
 
 
-def test_databasemetamodel::column_constructor_args():
-    sig = inspect.signature(databaseMetamodel::Column.__init__)
+def test_databasemetamodel_column_constructor_args():
+    sig = inspect.signature(databaseMetamodel_Column.__init__)
     params = list(sig.parameters.keys())
-    assert "hasFKOrder" in params, "Missing parameter 'hasFKOrder'"
+    assert "hasPKOrder" in params, "Missing parameter 'hasPKOrder'"
     assert "type" in params, "Missing parameter 'type'"
     assert "name" in params, "Missing parameter 'name'"
-    assert "hasPKOrder" in params, "Missing parameter 'hasPKOrder'"
+    assert "hasFKOrder" in params, "Missing parameter 'hasFKOrder'"
 
-def test_databasemetamodel::column_has_hasFKOrder():
-    assert hasattr(databaseMetamodel::Column, "hasFKOrder")
+def test_databasemetamodel_column_has_hasPKOrder():
+    assert hasattr(databaseMetamodel_Column, "hasPKOrder")
     descriptor = None
-    for klass in databaseMetamodel::Column.__mro__:
-        if "hasFKOrder" in klass.__dict__:
-            descriptor = klass.__dict__["hasFKOrder"]
+    for klass in databaseMetamodel_Column.__mro__:
+        if "hasPKOrder" in klass.__dict__:
+            descriptor = klass.__dict__["hasPKOrder"]
             break
     assert isinstance(descriptor, property)
 
-def test_databasemetamodel::column_has_type():
-    assert hasattr(databaseMetamodel::Column, "type")
+def test_databasemetamodel_column_has_type():
+    assert hasattr(databaseMetamodel_Column, "type")
     descriptor = None
-    for klass in databaseMetamodel::Column.__mro__:
+    for klass in databaseMetamodel_Column.__mro__:
         if "type" in klass.__dict__:
             descriptor = klass.__dict__["type"]
             break
     assert isinstance(descriptor, property)
 
-def test_databasemetamodel::column_has_name():
-    assert hasattr(databaseMetamodel::Column, "name")
+def test_databasemetamodel_column_has_name():
+    assert hasattr(databaseMetamodel_Column, "name")
     descriptor = None
-    for klass in databaseMetamodel::Column.__mro__:
+    for klass in databaseMetamodel_Column.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
-def test_databasemetamodel::column_has_hasPKOrder():
-    assert hasattr(databaseMetamodel::Column, "hasPKOrder")
+def test_databasemetamodel_column_has_hasFKOrder():
+    assert hasattr(databaseMetamodel_Column, "hasFKOrder")
     descriptor = None
-    for klass in databaseMetamodel::Column.__mro__:
-        if "hasPKOrder" in klass.__dict__:
-            descriptor = klass.__dict__["hasPKOrder"]
+    for klass in databaseMetamodel_Column.__mro__:
+        if "hasFKOrder" in klass.__dict__:
+            descriptor = klass.__dict__["hasFKOrder"]
             break
     assert isinstance(descriptor, property)
 
@@ -139,118 +139,97 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-databaseMetamodel::Relation_strategy = st.builds(
-    databaseMetamodel::Relation,
-    isSelfJoinTable=
-        st.booleans(),
+databaseMetamodel_Relation_strategy = st.builds(
+    databaseMetamodel_Relation,
     isJoinTable=
+        st.booleans(),
+    isSelfJoinTable=
         st.booleans(),
     name=
         safe_text
 )
-databaseMetamodel::Database_strategy = st.builds(
-    databaseMetamodel::Database,
+databaseMetamodel_Database_strategy = st.builds(
+    databaseMetamodel_Database,
 )
-databaseMetamodel::Column_strategy = st.builds(
-    databaseMetamodel::Column,
-    hasFKOrder=
+databaseMetamodel_Column_strategy = st.builds(
+    databaseMetamodel_Column,
+    hasPKOrder=
         st.integers(),
     type=
         safe_text,
     name=
         safe_text,
-    hasPKOrder=
+    hasFKOrder=
         st.integers()
 )
 
-@given(instance=databaseMetamodel::Relation_strategy)
+@given(instance=databaseMetamodel_Relation_strategy)
 @settings(max_examples=50)
-def test_databasemetamodel::relation_instantiation(instance):
-    assert isinstance(instance, databaseMetamodel::Relation)
-
-@given(instance=databaseMetamodel::Relation_strategy)
-def test_databasemetamodel::relation_isSelfJoinTable_type(instance):
-    assert isinstance(instance.isSelfJoinTable, bool)
+def test_databasemetamodel_relation_instantiation(instance):
+    assert isinstance(instance, databaseMetamodel_Relation)
 
 
-@given(instance=databaseMetamodel::Relation_strategy)
-def test_databasemetamodel::relation_isSelfJoinTable_setter(instance):
-    original = instance.isSelfJoinTable
-    instance.isSelfJoinTable = original
-    assert instance.isSelfJoinTable == original
 
-@given(instance=databaseMetamodel::Relation_strategy)
-def test_databasemetamodel::relation_isJoinTable_type(instance):
-    assert isinstance(instance.isJoinTable, bool)
-
-
-@given(instance=databaseMetamodel::Relation_strategy)
-def test_databasemetamodel::relation_isJoinTable_setter(instance):
+@given(instance=databaseMetamodel_Relation_strategy)
+def test_databasemetamodel_relation_isJoinTable_setter(instance):
     original = instance.isJoinTable
     instance.isJoinTable = original
     assert instance.isJoinTable == original
 
-@given(instance=databaseMetamodel::Relation_strategy)
-def test_databasemetamodel::relation_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
-@given(instance=databaseMetamodel::Relation_strategy)
-def test_databasemetamodel::relation_name_setter(instance):
+@given(instance=databaseMetamodel_Relation_strategy)
+def test_databasemetamodel_relation_isSelfJoinTable_setter(instance):
+    original = instance.isSelfJoinTable
+    instance.isSelfJoinTable = original
+    assert instance.isSelfJoinTable == original
+
+
+
+@given(instance=databaseMetamodel_Relation_strategy)
+def test_databasemetamodel_relation_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=databaseMetamodel::Database_strategy)
+@given(instance=databaseMetamodel_Database_strategy)
 @settings(max_examples=50)
-def test_databasemetamodel::database_instantiation(instance):
-    assert isinstance(instance, databaseMetamodel::Database)
+def test_databasemetamodel_database_instantiation(instance):
+    assert isinstance(instance, databaseMetamodel_Database)
 
-@given(instance=databaseMetamodel::Column_strategy)
+@given(instance=databaseMetamodel_Column_strategy)
 @settings(max_examples=50)
-def test_databasemetamodel::column_instantiation(instance):
-    assert isinstance(instance, databaseMetamodel::Column)
-
-@given(instance=databaseMetamodel::Column_strategy)
-def test_databasemetamodel::column_hasFKOrder_type(instance):
-    assert isinstance(instance.hasFKOrder, int)
+def test_databasemetamodel_column_instantiation(instance):
+    assert isinstance(instance, databaseMetamodel_Column)
 
 
-@given(instance=databaseMetamodel::Column_strategy)
-def test_databasemetamodel::column_hasFKOrder_setter(instance):
-    original = instance.hasFKOrder
-    instance.hasFKOrder = original
-    assert instance.hasFKOrder == original
 
-@given(instance=databaseMetamodel::Column_strategy)
-def test_databasemetamodel::column_type_type(instance):
-    assert isinstance(instance.type, str)
+@given(instance=databaseMetamodel_Column_strategy)
+def test_databasemetamodel_column_hasPKOrder_setter(instance):
+    original = instance.hasPKOrder
+    instance.hasPKOrder = original
+    assert instance.hasPKOrder == original
 
 
-@given(instance=databaseMetamodel::Column_strategy)
-def test_databasemetamodel::column_type_setter(instance):
+
+@given(instance=databaseMetamodel_Column_strategy)
+def test_databasemetamodel_column_type_setter(instance):
     original = instance.type
     instance.type = original
     assert instance.type == original
 
-@given(instance=databaseMetamodel::Column_strategy)
-def test_databasemetamodel::column_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
-@given(instance=databaseMetamodel::Column_strategy)
-def test_databasemetamodel::column_name_setter(instance):
+@given(instance=databaseMetamodel_Column_strategy)
+def test_databasemetamodel_column_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=databaseMetamodel::Column_strategy)
-def test_databasemetamodel::column_hasPKOrder_type(instance):
-    assert isinstance(instance.hasPKOrder, int)
 
 
-@given(instance=databaseMetamodel::Column_strategy)
-def test_databasemetamodel::column_hasPKOrder_setter(instance):
-    original = instance.hasPKOrder
-    instance.hasPKOrder = original
-    assert instance.hasPKOrder == original
+@given(instance=databaseMetamodel_Column_strategy)
+def test_databasemetamodel_column_hasFKOrder_setter(instance):
+    original = instance.hasFKOrder
+    instance.hasFKOrder = original
+    assert instance.hasFKOrder == original

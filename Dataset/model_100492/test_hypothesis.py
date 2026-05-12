@@ -3,17 +3,17 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    umlState::ExitRule,
-    umlState::DoRule,
-    umlState::Namespace,
-    umlState::StateMachine,
-    umlState::QualifiedName,
-    umlState::EntryRule,
-    umlState::SubmachineRule,
-    umlState::StateRule,
+from python_code import (
+    umlState_ExitRule,
+    umlState_DoRule,
+    umlState_Namespace,
+    umlState_StateMachine,
+    umlState_QualifiedName,
+    umlState_EntryRule,
+    umlState_SubmachineRule,
+    umlState_StateRule,
     BehaviorKind,
 )
 
@@ -23,33 +23,33 @@ from classes import (
 
 
 
-def test_umlstate::exitrule_is_not_abstract():
-    assert not inspect.isabstract(umlState::ExitRule)
+def test_umlstate_exitrule_is_not_abstract():
+    assert not inspect.isabstract(umlState_ExitRule)
 
 
-def test_umlstate::exitrule_constructor_exists():
-    assert callable(umlState::ExitRule.__init__)
+def test_umlstate_exitrule_constructor_exists():
+    assert callable(umlState_ExitRule.__init__)
 
 
-def test_umlstate::exitrule_constructor_args():
-    sig = inspect.signature(umlState::ExitRule.__init__)
+def test_umlstate_exitrule_constructor_args():
+    sig = inspect.signature(umlState_ExitRule.__init__)
     params = list(sig.parameters.keys())
     assert "kind" in params, "Missing parameter 'kind'"
     assert "behaviorName" in params, "Missing parameter 'behaviorName'"
 
-def test_umlstate::exitrule_has_kind():
-    assert hasattr(umlState::ExitRule, "kind")
+def test_umlstate_exitrule_has_kind():
+    assert hasattr(umlState_ExitRule, "kind")
     descriptor = None
-    for klass in umlState::ExitRule.__mro__:
+    for klass in umlState_ExitRule.__mro__:
         if "kind" in klass.__dict__:
             descriptor = klass.__dict__["kind"]
             break
     assert isinstance(descriptor, property)
 
-def test_umlstate::exitrule_has_behaviorName():
-    assert hasattr(umlState::ExitRule, "behaviorName")
+def test_umlstate_exitrule_has_behaviorName():
+    assert hasattr(umlState_ExitRule, "behaviorName")
     descriptor = None
-    for klass in umlState::ExitRule.__mro__:
+    for klass in umlState_ExitRule.__mro__:
         if "behaviorName" in klass.__dict__:
             descriptor = klass.__dict__["behaviorName"]
             break
@@ -57,33 +57,33 @@ def test_umlstate::exitrule_has_behaviorName():
 
 
 
-def test_umlstate::dorule_is_not_abstract():
-    assert not inspect.isabstract(umlState::DoRule)
+def test_umlstate_dorule_is_not_abstract():
+    assert not inspect.isabstract(umlState_DoRule)
 
 
-def test_umlstate::dorule_constructor_exists():
-    assert callable(umlState::DoRule.__init__)
+def test_umlstate_dorule_constructor_exists():
+    assert callable(umlState_DoRule.__init__)
 
 
-def test_umlstate::dorule_constructor_args():
-    sig = inspect.signature(umlState::DoRule.__init__)
+def test_umlstate_dorule_constructor_args():
+    sig = inspect.signature(umlState_DoRule.__init__)
     params = list(sig.parameters.keys())
     assert "kind" in params, "Missing parameter 'kind'"
     assert "behaviorName" in params, "Missing parameter 'behaviorName'"
 
-def test_umlstate::dorule_has_kind():
-    assert hasattr(umlState::DoRule, "kind")
+def test_umlstate_dorule_has_kind():
+    assert hasattr(umlState_DoRule, "kind")
     descriptor = None
-    for klass in umlState::DoRule.__mro__:
+    for klass in umlState_DoRule.__mro__:
         if "kind" in klass.__dict__:
             descriptor = klass.__dict__["kind"]
             break
     assert isinstance(descriptor, property)
 
-def test_umlstate::dorule_has_behaviorName():
-    assert hasattr(umlState::DoRule, "behaviorName")
+def test_umlstate_dorule_has_behaviorName():
+    assert hasattr(umlState_DoRule, "behaviorName")
     descriptor = None
-    for klass in umlState::DoRule.__mro__:
+    for klass in umlState_DoRule.__mro__:
         if "behaviorName" in klass.__dict__:
             descriptor = klass.__dict__["behaviorName"]
             break
@@ -91,75 +91,75 @@ def test_umlstate::dorule_has_behaviorName():
 
 
 
-def test_umlstate::namespace_is_not_abstract():
-    assert not inspect.isabstract(umlState::Namespace)
+def test_umlstate_namespace_is_not_abstract():
+    assert not inspect.isabstract(umlState_Namespace)
 
 
-def test_umlstate::namespace_constructor_exists():
-    assert callable(umlState::Namespace.__init__)
+def test_umlstate_namespace_constructor_exists():
+    assert callable(umlState_Namespace.__init__)
 
 
-def test_umlstate::namespace_constructor_args():
-    sig = inspect.signature(umlState::Namespace.__init__)
+def test_umlstate_namespace_constructor_args():
+    sig = inspect.signature(umlState_Namespace.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_umlstate::statemachine_is_not_abstract():
-    assert not inspect.isabstract(umlState::StateMachine)
+def test_umlstate_statemachine_is_not_abstract():
+    assert not inspect.isabstract(umlState_StateMachine)
 
 
-def test_umlstate::statemachine_constructor_exists():
-    assert callable(umlState::StateMachine.__init__)
+def test_umlstate_statemachine_constructor_exists():
+    assert callable(umlState_StateMachine.__init__)
 
 
-def test_umlstate::statemachine_constructor_args():
-    sig = inspect.signature(umlState::StateMachine.__init__)
+def test_umlstate_statemachine_constructor_args():
+    sig = inspect.signature(umlState_StateMachine.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_umlstate::qualifiedname_is_not_abstract():
-    assert not inspect.isabstract(umlState::QualifiedName)
+def test_umlstate_qualifiedname_is_not_abstract():
+    assert not inspect.isabstract(umlState_QualifiedName)
 
 
-def test_umlstate::qualifiedname_constructor_exists():
-    assert callable(umlState::QualifiedName.__init__)
+def test_umlstate_qualifiedname_constructor_exists():
+    assert callable(umlState_QualifiedName.__init__)
 
 
-def test_umlstate::qualifiedname_constructor_args():
-    sig = inspect.signature(umlState::QualifiedName.__init__)
+def test_umlstate_qualifiedname_constructor_args():
+    sig = inspect.signature(umlState_QualifiedName.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_umlstate::entryrule_is_not_abstract():
-    assert not inspect.isabstract(umlState::EntryRule)
+def test_umlstate_entryrule_is_not_abstract():
+    assert not inspect.isabstract(umlState_EntryRule)
 
 
-def test_umlstate::entryrule_constructor_exists():
-    assert callable(umlState::EntryRule.__init__)
+def test_umlstate_entryrule_constructor_exists():
+    assert callable(umlState_EntryRule.__init__)
 
 
-def test_umlstate::entryrule_constructor_args():
-    sig = inspect.signature(umlState::EntryRule.__init__)
+def test_umlstate_entryrule_constructor_args():
+    sig = inspect.signature(umlState_EntryRule.__init__)
     params = list(sig.parameters.keys())
     assert "kind" in params, "Missing parameter 'kind'"
     assert "behaviorName" in params, "Missing parameter 'behaviorName'"
 
-def test_umlstate::entryrule_has_kind():
-    assert hasattr(umlState::EntryRule, "kind")
+def test_umlstate_entryrule_has_kind():
+    assert hasattr(umlState_EntryRule, "kind")
     descriptor = None
-    for klass in umlState::EntryRule.__mro__:
+    for klass in umlState_EntryRule.__mro__:
         if "kind" in klass.__dict__:
             descriptor = klass.__dict__["kind"]
             break
     assert isinstance(descriptor, property)
 
-def test_umlstate::entryrule_has_behaviorName():
-    assert hasattr(umlState::EntryRule, "behaviorName")
+def test_umlstate_entryrule_has_behaviorName():
+    assert hasattr(umlState_EntryRule, "behaviorName")
     descriptor = None
-    for klass in umlState::EntryRule.__mro__:
+    for klass in umlState_EntryRule.__mro__:
         if "behaviorName" in klass.__dict__:
             descriptor = klass.__dict__["behaviorName"]
             break
@@ -167,37 +167,37 @@ def test_umlstate::entryrule_has_behaviorName():
 
 
 
-def test_umlstate::submachinerule_is_not_abstract():
-    assert not inspect.isabstract(umlState::SubmachineRule)
+def test_umlstate_submachinerule_is_not_abstract():
+    assert not inspect.isabstract(umlState_SubmachineRule)
 
 
-def test_umlstate::submachinerule_constructor_exists():
-    assert callable(umlState::SubmachineRule.__init__)
+def test_umlstate_submachinerule_constructor_exists():
+    assert callable(umlState_SubmachineRule.__init__)
 
 
-def test_umlstate::submachinerule_constructor_args():
-    sig = inspect.signature(umlState::SubmachineRule.__init__)
+def test_umlstate_submachinerule_constructor_args():
+    sig = inspect.signature(umlState_SubmachineRule.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_umlstate::staterule_is_not_abstract():
-    assert not inspect.isabstract(umlState::StateRule)
+def test_umlstate_staterule_is_not_abstract():
+    assert not inspect.isabstract(umlState_StateRule)
 
 
-def test_umlstate::staterule_constructor_exists():
-    assert callable(umlState::StateRule.__init__)
+def test_umlstate_staterule_constructor_exists():
+    assert callable(umlState_StateRule.__init__)
 
 
-def test_umlstate::staterule_constructor_args():
-    sig = inspect.signature(umlState::StateRule.__init__)
+def test_umlstate_staterule_constructor_args():
+    sig = inspect.signature(umlState_StateRule.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_umlstate::staterule_has_name():
-    assert hasattr(umlState::StateRule, "name")
+def test_umlstate_staterule_has_name():
+    assert hasattr(umlState_StateRule, "name")
     descriptor = None
-    for klass in umlState::StateRule.__mro__:
+    for klass in umlState_StateRule.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -231,158 +231,137 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-umlState::ExitRule_strategy = st.builds(
-    umlState::ExitRule,
+umlState_ExitRule_strategy = st.builds(
+    umlState_ExitRule,
     kind=
         safe_text,
     behaviorName=
         safe_text
 )
-umlState::DoRule_strategy = st.builds(
-    umlState::DoRule,
+umlState_DoRule_strategy = st.builds(
+    umlState_DoRule,
     kind=
         safe_text,
     behaviorName=
         safe_text
 )
-umlState::Namespace_strategy = st.builds(
-    umlState::Namespace,
+umlState_Namespace_strategy = st.builds(
+    umlState_Namespace,
 )
-umlState::StateMachine_strategy = st.builds(
-    umlState::StateMachine,
+umlState_StateMachine_strategy = st.builds(
+    umlState_StateMachine,
 )
-umlState::QualifiedName_strategy = st.builds(
-    umlState::QualifiedName,
+umlState_QualifiedName_strategy = st.builds(
+    umlState_QualifiedName,
 )
-umlState::EntryRule_strategy = st.builds(
-    umlState::EntryRule,
+umlState_EntryRule_strategy = st.builds(
+    umlState_EntryRule,
     kind=
         safe_text,
     behaviorName=
         safe_text
 )
-umlState::SubmachineRule_strategy = st.builds(
-    umlState::SubmachineRule,
+umlState_SubmachineRule_strategy = st.builds(
+    umlState_SubmachineRule,
 )
-umlState::StateRule_strategy = st.builds(
-    umlState::StateRule,
+umlState_StateRule_strategy = st.builds(
+    umlState_StateRule,
     name=
         safe_text
 )
 
-@given(instance=umlState::ExitRule_strategy)
+@given(instance=umlState_ExitRule_strategy)
 @settings(max_examples=50)
-def test_umlstate::exitrule_instantiation(instance):
-    assert isinstance(instance, umlState::ExitRule)
-
-@given(instance=umlState::ExitRule_strategy)
-def test_umlstate::exitrule_kind_type(instance):
-    assert isinstance(instance.kind, str)
+def test_umlstate_exitrule_instantiation(instance):
+    assert isinstance(instance, umlState_ExitRule)
 
 
-@given(instance=umlState::ExitRule_strategy)
-def test_umlstate::exitrule_kind_setter(instance):
+
+@given(instance=umlState_ExitRule_strategy)
+def test_umlstate_exitrule_kind_setter(instance):
     original = instance.kind
     instance.kind = original
     assert instance.kind == original
 
-@given(instance=umlState::ExitRule_strategy)
-def test_umlstate::exitrule_behaviorName_type(instance):
-    assert isinstance(instance.behaviorName, str)
 
 
-@given(instance=umlState::ExitRule_strategy)
-def test_umlstate::exitrule_behaviorName_setter(instance):
+@given(instance=umlState_ExitRule_strategy)
+def test_umlstate_exitrule_behaviorName_setter(instance):
     original = instance.behaviorName
     instance.behaviorName = original
     assert instance.behaviorName == original
 
-@given(instance=umlState::DoRule_strategy)
+@given(instance=umlState_DoRule_strategy)
 @settings(max_examples=50)
-def test_umlstate::dorule_instantiation(instance):
-    assert isinstance(instance, umlState::DoRule)
-
-@given(instance=umlState::DoRule_strategy)
-def test_umlstate::dorule_kind_type(instance):
-    assert isinstance(instance.kind, str)
+def test_umlstate_dorule_instantiation(instance):
+    assert isinstance(instance, umlState_DoRule)
 
 
-@given(instance=umlState::DoRule_strategy)
-def test_umlstate::dorule_kind_setter(instance):
+
+@given(instance=umlState_DoRule_strategy)
+def test_umlstate_dorule_kind_setter(instance):
     original = instance.kind
     instance.kind = original
     assert instance.kind == original
 
-@given(instance=umlState::DoRule_strategy)
-def test_umlstate::dorule_behaviorName_type(instance):
-    assert isinstance(instance.behaviorName, str)
 
 
-@given(instance=umlState::DoRule_strategy)
-def test_umlstate::dorule_behaviorName_setter(instance):
+@given(instance=umlState_DoRule_strategy)
+def test_umlstate_dorule_behaviorName_setter(instance):
     original = instance.behaviorName
     instance.behaviorName = original
     assert instance.behaviorName == original
 
-@given(instance=umlState::Namespace_strategy)
+@given(instance=umlState_Namespace_strategy)
 @settings(max_examples=50)
-def test_umlstate::namespace_instantiation(instance):
-    assert isinstance(instance, umlState::Namespace)
+def test_umlstate_namespace_instantiation(instance):
+    assert isinstance(instance, umlState_Namespace)
 
-@given(instance=umlState::StateMachine_strategy)
+@given(instance=umlState_StateMachine_strategy)
 @settings(max_examples=50)
-def test_umlstate::statemachine_instantiation(instance):
-    assert isinstance(instance, umlState::StateMachine)
+def test_umlstate_statemachine_instantiation(instance):
+    assert isinstance(instance, umlState_StateMachine)
 
-@given(instance=umlState::QualifiedName_strategy)
+@given(instance=umlState_QualifiedName_strategy)
 @settings(max_examples=50)
-def test_umlstate::qualifiedname_instantiation(instance):
-    assert isinstance(instance, umlState::QualifiedName)
+def test_umlstate_qualifiedname_instantiation(instance):
+    assert isinstance(instance, umlState_QualifiedName)
 
-@given(instance=umlState::EntryRule_strategy)
+@given(instance=umlState_EntryRule_strategy)
 @settings(max_examples=50)
-def test_umlstate::entryrule_instantiation(instance):
-    assert isinstance(instance, umlState::EntryRule)
-
-@given(instance=umlState::EntryRule_strategy)
-def test_umlstate::entryrule_kind_type(instance):
-    assert isinstance(instance.kind, str)
+def test_umlstate_entryrule_instantiation(instance):
+    assert isinstance(instance, umlState_EntryRule)
 
 
-@given(instance=umlState::EntryRule_strategy)
-def test_umlstate::entryrule_kind_setter(instance):
+
+@given(instance=umlState_EntryRule_strategy)
+def test_umlstate_entryrule_kind_setter(instance):
     original = instance.kind
     instance.kind = original
     assert instance.kind == original
 
-@given(instance=umlState::EntryRule_strategy)
-def test_umlstate::entryrule_behaviorName_type(instance):
-    assert isinstance(instance.behaviorName, str)
 
 
-@given(instance=umlState::EntryRule_strategy)
-def test_umlstate::entryrule_behaviorName_setter(instance):
+@given(instance=umlState_EntryRule_strategy)
+def test_umlstate_entryrule_behaviorName_setter(instance):
     original = instance.behaviorName
     instance.behaviorName = original
     assert instance.behaviorName == original
 
-@given(instance=umlState::SubmachineRule_strategy)
+@given(instance=umlState_SubmachineRule_strategy)
 @settings(max_examples=50)
-def test_umlstate::submachinerule_instantiation(instance):
-    assert isinstance(instance, umlState::SubmachineRule)
+def test_umlstate_submachinerule_instantiation(instance):
+    assert isinstance(instance, umlState_SubmachineRule)
 
-@given(instance=umlState::StateRule_strategy)
+@given(instance=umlState_StateRule_strategy)
 @settings(max_examples=50)
-def test_umlstate::staterule_instantiation(instance):
-    assert isinstance(instance, umlState::StateRule)
-
-@given(instance=umlState::StateRule_strategy)
-def test_umlstate::staterule_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_umlstate_staterule_instantiation(instance):
+    assert isinstance(instance, umlState_StateRule)
 
 
-@given(instance=umlState::StateRule_strategy)
-def test_umlstate::staterule_name_setter(instance):
+
+@given(instance=umlState_StateRule_strategy)
+def test_umlstate_staterule_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original

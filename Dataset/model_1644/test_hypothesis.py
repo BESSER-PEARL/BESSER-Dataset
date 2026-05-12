@@ -3,14 +3,14 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     Node,
-    kiamaas::Num,
-    kiamaas::Plus,
-    kiamaas::Node,
-    kiamaas::Top,
+    kiamaas_Num,
+    kiamaas_Plus,
+    kiamaas_Node,
+    kiamaas_Top,
 )
 
 # =============================================================================
@@ -33,23 +33,23 @@ def test_node_constructor_args():
 
 
 
-def test_kiamaas::num_is_not_abstract():
-    assert not inspect.isabstract(kiamaas::Num)
+def test_kiamaas_num_is_not_abstract():
+    assert not inspect.isabstract(kiamaas_Num)
 
 
-def test_kiamaas::num_constructor_exists():
-    assert callable(kiamaas::Num.__init__)
+def test_kiamaas_num_constructor_exists():
+    assert callable(kiamaas_Num.__init__)
 
 
-def test_kiamaas::num_constructor_args():
-    sig = inspect.signature(kiamaas::Num.__init__)
+def test_kiamaas_num_constructor_args():
+    sig = inspect.signature(kiamaas_Num.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
 
-def test_kiamaas::num_has_value():
-    assert hasattr(kiamaas::Num, "value")
+def test_kiamaas_num_has_value():
+    assert hasattr(kiamaas_Num, "value")
     descriptor = None
-    for klass in kiamaas::Num.__mro__:
+    for klass in kiamaas_Num.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -57,64 +57,64 @@ def test_kiamaas::num_has_value():
 
 
 
-def test_kiamaas::plus_is_not_abstract():
-    assert not inspect.isabstract(kiamaas::Plus)
+def test_kiamaas_plus_is_not_abstract():
+    assert not inspect.isabstract(kiamaas_Plus)
 
 
-def test_kiamaas::plus_constructor_exists():
-    assert callable(kiamaas::Plus.__init__)
+def test_kiamaas_plus_constructor_exists():
+    assert callable(kiamaas_Plus.__init__)
 
 
-def test_kiamaas::plus_constructor_args():
-    sig = inspect.signature(kiamaas::Plus.__init__)
+def test_kiamaas_plus_constructor_args():
+    sig = inspect.signature(kiamaas_Plus.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_kiamaas::node_is_not_abstract():
-    assert not inspect.isabstract(kiamaas::Node)
+def test_kiamaas_node_is_not_abstract():
+    assert not inspect.isabstract(kiamaas_Node)
 
 
-def test_kiamaas::node_constructor_exists():
-    assert callable(kiamaas::Node.__init__)
+def test_kiamaas_node_constructor_exists():
+    assert callable(kiamaas_Node.__init__)
 
 
-def test_kiamaas::node_constructor_args():
-    sig = inspect.signature(kiamaas::Node.__init__)
+def test_kiamaas_node_constructor_args():
+    sig = inspect.signature(kiamaas_Node.__init__)
     params = list(sig.parameters.keys())
-    assert "depth" in params, "Missing parameter 'depth'"
     assert "height" in params, "Missing parameter 'height'"
+    assert "depth" in params, "Missing parameter 'depth'"
 
-def test_kiamaas::node_has_depth():
-    assert hasattr(kiamaas::Node, "depth")
+def test_kiamaas_node_has_height():
+    assert hasattr(kiamaas_Node, "height")
     descriptor = None
-    for klass in kiamaas::Node.__mro__:
-        if "depth" in klass.__dict__:
-            descriptor = klass.__dict__["depth"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_kiamaas::node_has_height():
-    assert hasattr(kiamaas::Node, "height")
-    descriptor = None
-    for klass in kiamaas::Node.__mro__:
+    for klass in kiamaas_Node.__mro__:
         if "height" in klass.__dict__:
             descriptor = klass.__dict__["height"]
             break
     assert isinstance(descriptor, property)
 
+def test_kiamaas_node_has_depth():
+    assert hasattr(kiamaas_Node, "depth")
+    descriptor = None
+    for klass in kiamaas_Node.__mro__:
+        if "depth" in klass.__dict__:
+            descriptor = klass.__dict__["depth"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_kiamaas::top_is_not_abstract():
-    assert not inspect.isabstract(kiamaas::Top)
+
+def test_kiamaas_top_is_not_abstract():
+    assert not inspect.isabstract(kiamaas_Top)
 
 
-def test_kiamaas::top_constructor_exists():
-    assert callable(kiamaas::Top.__init__)
+def test_kiamaas_top_constructor_exists():
+    assert callable(kiamaas_Top.__init__)
 
 
-def test_kiamaas::top_constructor_args():
-    sig = inspect.signature(kiamaas::Top.__init__)
+def test_kiamaas_top_constructor_args():
+    sig = inspect.signature(kiamaas_Top.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -132,23 +132,23 @@ safe_text = st.text(
 Node_strategy = st.builds(
     Node,
 )
-kiamaas::Num_strategy = st.builds(
-    kiamaas::Num,
+kiamaas_Num_strategy = st.builds(
+    kiamaas_Num,
     value=
         st.integers()
 )
-kiamaas::Plus_strategy = st.builds(
-    kiamaas::Plus,
+kiamaas_Plus_strategy = st.builds(
+    kiamaas_Plus,
 )
-kiamaas::Node_strategy = st.builds(
-    kiamaas::Node,
-    depth=
-        safe_text,
+kiamaas_Node_strategy = st.builds(
+    kiamaas_Node,
     height=
+        safe_text,
+    depth=
         safe_text
 )
-kiamaas::Top_strategy = st.builds(
-    kiamaas::Top,
+kiamaas_Top_strategy = st.builds(
+    kiamaas_Top,
 )
 
 @given(instance=Node_strategy)
@@ -156,55 +156,46 @@ kiamaas::Top_strategy = st.builds(
 def test_node_instantiation(instance):
     assert isinstance(instance, Node)
 
-@given(instance=kiamaas::Num_strategy)
+@given(instance=kiamaas_Num_strategy)
 @settings(max_examples=50)
-def test_kiamaas::num_instantiation(instance):
-    assert isinstance(instance, kiamaas::Num)
-
-@given(instance=kiamaas::Num_strategy)
-def test_kiamaas::num_value_type(instance):
-    assert isinstance(instance.value, int)
+def test_kiamaas_num_instantiation(instance):
+    assert isinstance(instance, kiamaas_Num)
 
 
-@given(instance=kiamaas::Num_strategy)
-def test_kiamaas::num_value_setter(instance):
+
+@given(instance=kiamaas_Num_strategy)
+def test_kiamaas_num_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
 
-@given(instance=kiamaas::Plus_strategy)
+@given(instance=kiamaas_Plus_strategy)
 @settings(max_examples=50)
-def test_kiamaas::plus_instantiation(instance):
-    assert isinstance(instance, kiamaas::Plus)
+def test_kiamaas_plus_instantiation(instance):
+    assert isinstance(instance, kiamaas_Plus)
 
-@given(instance=kiamaas::Node_strategy)
+@given(instance=kiamaas_Node_strategy)
 @settings(max_examples=50)
-def test_kiamaas::node_instantiation(instance):
-    assert isinstance(instance, kiamaas::Node)
-
-@given(instance=kiamaas::Node_strategy)
-def test_kiamaas::node_depth_type(instance):
-    assert isinstance(instance.depth, str)
+def test_kiamaas_node_instantiation(instance):
+    assert isinstance(instance, kiamaas_Node)
 
 
-@given(instance=kiamaas::Node_strategy)
-def test_kiamaas::node_depth_setter(instance):
-    original = instance.depth
-    instance.depth = original
-    assert instance.depth == original
 
-@given(instance=kiamaas::Node_strategy)
-def test_kiamaas::node_height_type(instance):
-    assert isinstance(instance.height, str)
-
-
-@given(instance=kiamaas::Node_strategy)
-def test_kiamaas::node_height_setter(instance):
+@given(instance=kiamaas_Node_strategy)
+def test_kiamaas_node_height_setter(instance):
     original = instance.height
     instance.height = original
     assert instance.height == original
 
-@given(instance=kiamaas::Top_strategy)
+
+
+@given(instance=kiamaas_Node_strategy)
+def test_kiamaas_node_depth_setter(instance):
+    original = instance.depth
+    instance.depth = original
+    assert instance.depth == original
+
+@given(instance=kiamaas_Top_strategy)
 @settings(max_examples=50)
-def test_kiamaas::top_instantiation(instance):
-    assert isinstance(instance, kiamaas::Top)
+def test_kiamaas_top_instantiation(instance):
+    assert isinstance(instance, kiamaas_Top)

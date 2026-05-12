@@ -3,20 +3,20 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    fl::Function,
-    fl::ProgramType,
-    fl::EStringToStringMapEntry,
-    fl::DocumentRoot,
-    fl::Expr,
+from python_code import (
+    fl_Function,
+    fl_ProgramType,
+    fl_EStringToStringMapEntry,
+    fl_DocumentRoot,
+    fl_Expr,
     Expr,
-    fl::Literal,
-    fl::Argument,
-    fl::IfThenElse,
-    fl::Apply,
-    fl::Binary,
+    fl_Argument,
+    fl_Literal,
+    fl_IfThenElse,
+    fl_Apply,
+    fl_Binary,
     Ops,
 )
 
@@ -26,33 +26,33 @@ from classes import (
 
 
 
-def test_fl::function_is_not_abstract():
-    assert not inspect.isabstract(fl::Function)
+def test_fl_function_is_not_abstract():
+    assert not inspect.isabstract(fl_Function)
 
 
-def test_fl::function_constructor_exists():
-    assert callable(fl::Function.__init__)
+def test_fl_function_constructor_exists():
+    assert callable(fl_Function.__init__)
 
 
-def test_fl::function_constructor_args():
-    sig = inspect.signature(fl::Function.__init__)
+def test_fl_function_constructor_args():
+    sig = inspect.signature(fl_Function.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
     assert "arg" in params, "Missing parameter 'arg'"
 
-def test_fl::function_has_name():
-    assert hasattr(fl::Function, "name")
+def test_fl_function_has_name():
+    assert hasattr(fl_Function, "name")
     descriptor = None
-    for klass in fl::Function.__mro__:
+    for klass in fl_Function.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
-def test_fl::function_has_arg():
-    assert hasattr(fl::Function, "arg")
+def test_fl_function_has_arg():
+    assert hasattr(fl_Function, "arg")
     descriptor = None
-    for klass in fl::Function.__mro__:
+    for klass in fl_Function.__mro__:
         if "arg" in klass.__dict__:
             descriptor = klass.__dict__["arg"]
             break
@@ -60,51 +60,51 @@ def test_fl::function_has_arg():
 
 
 
-def test_fl::programtype_is_not_abstract():
-    assert not inspect.isabstract(fl::ProgramType)
+def test_fl_programtype_is_not_abstract():
+    assert not inspect.isabstract(fl_ProgramType)
 
 
-def test_fl::programtype_constructor_exists():
-    assert callable(fl::ProgramType.__init__)
+def test_fl_programtype_constructor_exists():
+    assert callable(fl_ProgramType.__init__)
 
 
-def test_fl::programtype_constructor_args():
-    sig = inspect.signature(fl::ProgramType.__init__)
+def test_fl_programtype_constructor_args():
+    sig = inspect.signature(fl_ProgramType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_fl::estringtostringmapentry_is_not_abstract():
-    assert not inspect.isabstract(fl::EStringToStringMapEntry)
+def test_fl_estringtostringmapentry_is_not_abstract():
+    assert not inspect.isabstract(fl_EStringToStringMapEntry)
 
 
-def test_fl::estringtostringmapentry_constructor_exists():
-    assert callable(fl::EStringToStringMapEntry.__init__)
+def test_fl_estringtostringmapentry_constructor_exists():
+    assert callable(fl_EStringToStringMapEntry.__init__)
 
 
-def test_fl::estringtostringmapentry_constructor_args():
-    sig = inspect.signature(fl::EStringToStringMapEntry.__init__)
+def test_fl_estringtostringmapentry_constructor_args():
+    sig = inspect.signature(fl_EStringToStringMapEntry.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_fl::documentroot_is_not_abstract():
-    assert not inspect.isabstract(fl::DocumentRoot)
+def test_fl_documentroot_is_not_abstract():
+    assert not inspect.isabstract(fl_DocumentRoot)
 
 
-def test_fl::documentroot_constructor_exists():
-    assert callable(fl::DocumentRoot.__init__)
+def test_fl_documentroot_constructor_exists():
+    assert callable(fl_DocumentRoot.__init__)
 
 
-def test_fl::documentroot_constructor_args():
-    sig = inspect.signature(fl::DocumentRoot.__init__)
+def test_fl_documentroot_constructor_args():
+    sig = inspect.signature(fl_DocumentRoot.__init__)
     params = list(sig.parameters.keys())
     assert "mixed" in params, "Missing parameter 'mixed'"
 
-def test_fl::documentroot_has_mixed():
-    assert hasattr(fl::DocumentRoot, "mixed")
+def test_fl_documentroot_has_mixed():
+    assert hasattr(fl_DocumentRoot, "mixed")
     descriptor = None
-    for klass in fl::DocumentRoot.__mro__:
+    for klass in fl_DocumentRoot.__mro__:
         if "mixed" in klass.__dict__:
             descriptor = klass.__dict__["mixed"]
             break
@@ -112,16 +112,16 @@ def test_fl::documentroot_has_mixed():
 
 
 
-def test_fl::expr_is_not_abstract():
-    assert not inspect.isabstract(fl::Expr)
+def test_fl_expr_is_not_abstract():
+    assert not inspect.isabstract(fl_Expr)
 
 
-def test_fl::expr_constructor_exists():
-    assert callable(fl::Expr.__init__)
+def test_fl_expr_constructor_exists():
+    assert callable(fl_Expr.__init__)
 
 
-def test_fl::expr_constructor_args():
-    sig = inspect.signature(fl::Expr.__init__)
+def test_fl_expr_constructor_args():
+    sig = inspect.signature(fl_Expr.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -140,23 +140,47 @@ def test_expr_constructor_args():
 
 
 
-def test_fl::literal_is_not_abstract():
-    assert not inspect.isabstract(fl::Literal)
+def test_fl_argument_is_not_abstract():
+    assert not inspect.isabstract(fl_Argument)
 
 
-def test_fl::literal_constructor_exists():
-    assert callable(fl::Literal.__init__)
+def test_fl_argument_constructor_exists():
+    assert callable(fl_Argument.__init__)
 
 
-def test_fl::literal_constructor_args():
-    sig = inspect.signature(fl::Literal.__init__)
+def test_fl_argument_constructor_args():
+    sig = inspect.signature(fl_Argument.__init__)
+    params = list(sig.parameters.keys())
+    assert "name" in params, "Missing parameter 'name'"
+
+def test_fl_argument_has_name():
+    assert hasattr(fl_Argument, "name")
+    descriptor = None
+    for klass in fl_Argument.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_fl_literal_is_not_abstract():
+    assert not inspect.isabstract(fl_Literal)
+
+
+def test_fl_literal_constructor_exists():
+    assert callable(fl_Literal.__init__)
+
+
+def test_fl_literal_constructor_args():
+    sig = inspect.signature(fl_Literal.__init__)
     params = list(sig.parameters.keys())
     assert "info" in params, "Missing parameter 'info'"
 
-def test_fl::literal_has_info():
-    assert hasattr(fl::Literal, "info")
+def test_fl_literal_has_info():
+    assert hasattr(fl_Literal, "info")
     descriptor = None
-    for klass in fl::Literal.__mro__:
+    for klass in fl_Literal.__mro__:
         if "info" in klass.__dict__:
             descriptor = klass.__dict__["info"]
             break
@@ -164,23 +188,37 @@ def test_fl::literal_has_info():
 
 
 
-def test_fl::argument_is_not_abstract():
-    assert not inspect.isabstract(fl::Argument)
+def test_fl_ifthenelse_is_not_abstract():
+    assert not inspect.isabstract(fl_IfThenElse)
 
 
-def test_fl::argument_constructor_exists():
-    assert callable(fl::Argument.__init__)
+def test_fl_ifthenelse_constructor_exists():
+    assert callable(fl_IfThenElse.__init__)
 
 
-def test_fl::argument_constructor_args():
-    sig = inspect.signature(fl::Argument.__init__)
+def test_fl_ifthenelse_constructor_args():
+    sig = inspect.signature(fl_IfThenElse.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_fl_apply_is_not_abstract():
+    assert not inspect.isabstract(fl_Apply)
+
+
+def test_fl_apply_constructor_exists():
+    assert callable(fl_Apply.__init__)
+
+
+def test_fl_apply_constructor_args():
+    sig = inspect.signature(fl_Apply.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_fl::argument_has_name():
-    assert hasattr(fl::Argument, "name")
+def test_fl_apply_has_name():
+    assert hasattr(fl_Apply, "name")
     descriptor = None
-    for klass in fl::Argument.__mro__:
+    for klass in fl_Apply.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -188,61 +226,23 @@ def test_fl::argument_has_name():
 
 
 
-def test_fl::ifthenelse_is_not_abstract():
-    assert not inspect.isabstract(fl::IfThenElse)
+def test_fl_binary_is_not_abstract():
+    assert not inspect.isabstract(fl_Binary)
 
 
-def test_fl::ifthenelse_constructor_exists():
-    assert callable(fl::IfThenElse.__init__)
+def test_fl_binary_constructor_exists():
+    assert callable(fl_Binary.__init__)
 
 
-def test_fl::ifthenelse_constructor_args():
-    sig = inspect.signature(fl::IfThenElse.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_fl::apply_is_not_abstract():
-    assert not inspect.isabstract(fl::Apply)
-
-
-def test_fl::apply_constructor_exists():
-    assert callable(fl::Apply.__init__)
-
-
-def test_fl::apply_constructor_args():
-    sig = inspect.signature(fl::Apply.__init__)
-    params = list(sig.parameters.keys())
-    assert "name" in params, "Missing parameter 'name'"
-
-def test_fl::apply_has_name():
-    assert hasattr(fl::Apply, "name")
-    descriptor = None
-    for klass in fl::Apply.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_fl::binary_is_not_abstract():
-    assert not inspect.isabstract(fl::Binary)
-
-
-def test_fl::binary_constructor_exists():
-    assert callable(fl::Binary.__init__)
-
-
-def test_fl::binary_constructor_args():
-    sig = inspect.signature(fl::Binary.__init__)
+def test_fl_binary_constructor_args():
+    sig = inspect.signature(fl_Binary.__init__)
     params = list(sig.parameters.keys())
     assert "ops" in params, "Missing parameter 'ops'"
 
-def test_fl::binary_has_ops():
-    assert hasattr(fl::Binary, "ops")
+def test_fl_binary_has_ops():
+    assert hasattr(fl_Binary, "ops")
     descriptor = None
-    for klass in fl::Binary.__mro__:
+    for klass in fl_Binary.__mro__:
         if "ops" in klass.__dict__:
             descriptor = klass.__dict__["ops"]
             break
@@ -256,9 +256,9 @@ def test_ops_has_all_literals():
     # Collect the names of literals in this Enumeration
     enum_literals = [lit.name for lit in Ops]
     expected_literals = [
-        "Minus",
-        "Plus",
         "Equal",
+        "Plus",
+        "Minus",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
@@ -276,182 +276,161 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-fl::Function_strategy = st.builds(
-    fl::Function,
+fl_Function_strategy = st.builds(
+    fl_Function,
     name=
         safe_text,
     arg=
         safe_text
 )
-fl::ProgramType_strategy = st.builds(
-    fl::ProgramType,
+fl_ProgramType_strategy = st.builds(
+    fl_ProgramType,
 )
-fl::EStringToStringMapEntry_strategy = st.builds(
-    fl::EStringToStringMapEntry,
+fl_EStringToStringMapEntry_strategy = st.builds(
+    fl_EStringToStringMapEntry,
 )
-fl::DocumentRoot_strategy = st.builds(
-    fl::DocumentRoot,
+fl_DocumentRoot_strategy = st.builds(
+    fl_DocumentRoot,
     mixed=
         safe_text
 )
-fl::Expr_strategy = st.builds(
-    fl::Expr,
+fl_Expr_strategy = st.builds(
+    fl_Expr,
 )
 Expr_strategy = st.builds(
     Expr,
 )
-fl::Literal_strategy = st.builds(
-    fl::Literal,
+fl_Argument_strategy = st.builds(
+    fl_Argument,
+    name=
+        safe_text
+)
+fl_Literal_strategy = st.builds(
+    fl_Literal,
     info=
         safe_text
 )
-fl::Argument_strategy = st.builds(
-    fl::Argument,
+fl_IfThenElse_strategy = st.builds(
+    fl_IfThenElse,
+)
+fl_Apply_strategy = st.builds(
+    fl_Apply,
     name=
         safe_text
 )
-fl::IfThenElse_strategy = st.builds(
-    fl::IfThenElse,
-)
-fl::Apply_strategy = st.builds(
-    fl::Apply,
-    name=
-        safe_text
-)
-fl::Binary_strategy = st.builds(
-    fl::Binary,
+fl_Binary_strategy = st.builds(
+    fl_Binary,
     ops=
         safe_text
 )
 
-@given(instance=fl::Function_strategy)
+@given(instance=fl_Function_strategy)
 @settings(max_examples=50)
-def test_fl::function_instantiation(instance):
-    assert isinstance(instance, fl::Function)
-
-@given(instance=fl::Function_strategy)
-def test_fl::function_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_fl_function_instantiation(instance):
+    assert isinstance(instance, fl_Function)
 
 
-@given(instance=fl::Function_strategy)
-def test_fl::function_name_setter(instance):
+
+@given(instance=fl_Function_strategy)
+def test_fl_function_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=fl::Function_strategy)
-def test_fl::function_arg_type(instance):
-    assert isinstance(instance.arg, str)
 
 
-@given(instance=fl::Function_strategy)
-def test_fl::function_arg_setter(instance):
+@given(instance=fl_Function_strategy)
+def test_fl_function_arg_setter(instance):
     original = instance.arg
     instance.arg = original
     assert instance.arg == original
 
-@given(instance=fl::ProgramType_strategy)
+@given(instance=fl_ProgramType_strategy)
 @settings(max_examples=50)
-def test_fl::programtype_instantiation(instance):
-    assert isinstance(instance, fl::ProgramType)
+def test_fl_programtype_instantiation(instance):
+    assert isinstance(instance, fl_ProgramType)
 
-@given(instance=fl::EStringToStringMapEntry_strategy)
+@given(instance=fl_EStringToStringMapEntry_strategy)
 @settings(max_examples=50)
-def test_fl::estringtostringmapentry_instantiation(instance):
-    assert isinstance(instance, fl::EStringToStringMapEntry)
+def test_fl_estringtostringmapentry_instantiation(instance):
+    assert isinstance(instance, fl_EStringToStringMapEntry)
 
-@given(instance=fl::DocumentRoot_strategy)
+@given(instance=fl_DocumentRoot_strategy)
 @settings(max_examples=50)
-def test_fl::documentroot_instantiation(instance):
-    assert isinstance(instance, fl::DocumentRoot)
-
-@given(instance=fl::DocumentRoot_strategy)
-def test_fl::documentroot_mixed_type(instance):
-    assert isinstance(instance.mixed, str)
+def test_fl_documentroot_instantiation(instance):
+    assert isinstance(instance, fl_DocumentRoot)
 
 
-@given(instance=fl::DocumentRoot_strategy)
-def test_fl::documentroot_mixed_setter(instance):
+
+@given(instance=fl_DocumentRoot_strategy)
+def test_fl_documentroot_mixed_setter(instance):
     original = instance.mixed
     instance.mixed = original
     assert instance.mixed == original
 
-@given(instance=fl::Expr_strategy)
+@given(instance=fl_Expr_strategy)
 @settings(max_examples=50)
-def test_fl::expr_instantiation(instance):
-    assert isinstance(instance, fl::Expr)
+def test_fl_expr_instantiation(instance):
+    assert isinstance(instance, fl_Expr)
 
 @given(instance=Expr_strategy)
 @settings(max_examples=50)
 def test_expr_instantiation(instance):
     assert isinstance(instance, Expr)
 
-@given(instance=fl::Literal_strategy)
+@given(instance=fl_Argument_strategy)
 @settings(max_examples=50)
-def test_fl::literal_instantiation(instance):
-    assert isinstance(instance, fl::Literal)
-
-@given(instance=fl::Literal_strategy)
-def test_fl::literal_info_type(instance):
-    assert isinstance(instance.info, str)
+def test_fl_argument_instantiation(instance):
+    assert isinstance(instance, fl_Argument)
 
 
-@given(instance=fl::Literal_strategy)
-def test_fl::literal_info_setter(instance):
+
+@given(instance=fl_Argument_strategy)
+def test_fl_argument_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+@given(instance=fl_Literal_strategy)
+@settings(max_examples=50)
+def test_fl_literal_instantiation(instance):
+    assert isinstance(instance, fl_Literal)
+
+
+
+@given(instance=fl_Literal_strategy)
+def test_fl_literal_info_setter(instance):
     original = instance.info
     instance.info = original
     assert instance.info == original
 
-@given(instance=fl::Argument_strategy)
+@given(instance=fl_IfThenElse_strategy)
 @settings(max_examples=50)
-def test_fl::argument_instantiation(instance):
-    assert isinstance(instance, fl::Argument)
+def test_fl_ifthenelse_instantiation(instance):
+    assert isinstance(instance, fl_IfThenElse)
 
-@given(instance=fl::Argument_strategy)
-def test_fl::argument_name_type(instance):
-    assert isinstance(instance.name, str)
+@given(instance=fl_Apply_strategy)
+@settings(max_examples=50)
+def test_fl_apply_instantiation(instance):
+    assert isinstance(instance, fl_Apply)
 
 
-@given(instance=fl::Argument_strategy)
-def test_fl::argument_name_setter(instance):
+
+@given(instance=fl_Apply_strategy)
+def test_fl_apply_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=fl::IfThenElse_strategy)
+@given(instance=fl_Binary_strategy)
 @settings(max_examples=50)
-def test_fl::ifthenelse_instantiation(instance):
-    assert isinstance(instance, fl::IfThenElse)
-
-@given(instance=fl::Apply_strategy)
-@settings(max_examples=50)
-def test_fl::apply_instantiation(instance):
-    assert isinstance(instance, fl::Apply)
-
-@given(instance=fl::Apply_strategy)
-def test_fl::apply_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_fl_binary_instantiation(instance):
+    assert isinstance(instance, fl_Binary)
 
 
-@given(instance=fl::Apply_strategy)
-def test_fl::apply_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
 
-@given(instance=fl::Binary_strategy)
-@settings(max_examples=50)
-def test_fl::binary_instantiation(instance):
-    assert isinstance(instance, fl::Binary)
-
-@given(instance=fl::Binary_strategy)
-def test_fl::binary_ops_type(instance):
-    assert isinstance(instance.ops, str)
-
-
-@given(instance=fl::Binary_strategy)
-def test_fl::binary_ops_setter(instance):
+@given(instance=fl_Binary_strategy)
+def test_fl_binary_ops_setter(instance):
     original = instance.ops
     instance.ops = original
     assert instance.ops == original

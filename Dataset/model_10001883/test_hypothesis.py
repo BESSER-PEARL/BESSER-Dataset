@@ -3,7 +3,7 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
 from python_code import (
     Test,
@@ -69,16 +69,16 @@ def test_m6_constructor_exists():
 def test_m6_constructor_args():
     sig = inspect.signature(M6.__init__)
     params = list(sig.parameters.keys())
-    assert "engine" in params, "Missing parameter 'engine'"
-    assert "color" in params, "Missing parameter 'color'"
     assert "manufacturer" in params, "Missing parameter 'manufacturer'"
+    assert "color" in params, "Missing parameter 'color'"
+    assert "engine" in params, "Missing parameter 'engine'"
 
-def test_m6_has_engine():
-    assert hasattr(M6, "engine")
+def test_m6_has_manufacturer():
+    assert hasattr(M6, "manufacturer")
     descriptor = None
     for klass in M6.__mro__:
-        if "engine" in klass.__dict__:
-            descriptor = klass.__dict__["engine"]
+        if "manufacturer" in klass.__dict__:
+            descriptor = klass.__dict__["manufacturer"]
             break
     assert isinstance(descriptor, property)
 
@@ -91,12 +91,12 @@ def test_m6_has_color():
             break
     assert isinstance(descriptor, property)
 
-def test_m6_has_manufacturer():
-    assert hasattr(M6, "manufacturer")
+def test_m6_has_engine():
+    assert hasattr(M6, "engine")
     descriptor = None
     for klass in M6.__mro__:
-        if "manufacturer" in klass.__dict__:
-            descriptor = klass.__dict__["manufacturer"]
+        if "engine" in klass.__dict__:
+            descriptor = klass.__dict__["engine"]
             break
     assert isinstance(descriptor, property)
 
@@ -113,18 +113,9 @@ def test_engine_constructor_exists():
 def test_engine_constructor_args():
     sig = inspect.signature(Engine.__init__)
     params = list(sig.parameters.keys())
-    assert "type" in params, "Missing parameter 'type'"
     assert "engineSpeed" in params, "Missing parameter 'engineSpeed'"
     assert "efficiencyCoefficient" in params, "Missing parameter 'efficiencyCoefficient'"
-
-def test_engine_has_type():
-    assert hasattr(Engine, "type")
-    descriptor = None
-    for klass in Engine.__mro__:
-        if "type" in klass.__dict__:
-            descriptor = klass.__dict__["type"]
-            break
-    assert isinstance(descriptor, property)
+    assert "type" in params, "Missing parameter 'type'"
 
 def test_engine_has_engineSpeed():
     assert hasattr(Engine, "engineSpeed")
@@ -144,6 +135,15 @@ def test_engine_has_efficiencyCoefficient():
             break
     assert isinstance(descriptor, property)
 
+def test_engine_has_type():
+    assert hasattr(Engine, "type")
+    descriptor = None
+    for klass in Engine.__mro__:
+        if "type" in klass.__dict__:
+            descriptor = klass.__dict__["type"]
+            break
+    assert isinstance(descriptor, property)
+
 
 
 def test_tennis_is_not_abstract():
@@ -157,9 +157,18 @@ def test_tennis_constructor_exists():
 def test_tennis_constructor_args():
     sig = inspect.signature(Tennis.__init__)
     params = list(sig.parameters.keys())
+    assert "manufacturer" in params, "Missing parameter 'manufacturer'"
     assert "color" in params, "Missing parameter 'color'"
     assert "engine" in params, "Missing parameter 'engine'"
-    assert "manufacturer" in params, "Missing parameter 'manufacturer'"
+
+def test_tennis_has_manufacturer():
+    assert hasattr(Tennis, "manufacturer")
+    descriptor = None
+    for klass in Tennis.__mro__:
+        if "manufacturer" in klass.__dict__:
+            descriptor = klass.__dict__["manufacturer"]
+            break
+    assert isinstance(descriptor, property)
 
 def test_tennis_has_color():
     assert hasattr(Tennis, "color")
@@ -176,15 +185,6 @@ def test_tennis_has_engine():
     for klass in Tennis.__mro__:
         if "engine" in klass.__dict__:
             descriptor = klass.__dict__["engine"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_tennis_has_manufacturer():
-    assert hasattr(Tennis, "manufacturer")
-    descriptor = None
-    for klass in Tennis.__mro__:
-        if "manufacturer" in klass.__dict__:
-            descriptor = klass.__dict__["manufacturer"]
             break
     assert isinstance(descriptor, property)
 
@@ -224,30 +224,30 @@ TestStand_strategy = st.builds(
 )
 M6_strategy = st.builds(
     M6,
-    engine=
-        st.none(),
+    manufacturer=
+        safe_text,
     color=
         safe_text,
-    manufacturer=
-        safe_text
+    engine=
+        st.none()
 )
 Engine_strategy = st.builds(
     Engine,
-    type=
-        safe_text,
     engineSpeed=
         st.integers(),
     efficiencyCoefficient=
-        st.integers()
+        st.integers(),
+    type=
+        safe_text
 )
 Tennis_strategy = st.builds(
     Tennis,
+    manufacturer=
+        safe_text,
     color=
         safe_text,
     engine=
-        st.none(),
-    manufacturer=
-        safe_text
+        st.none()
 )
 Car_strategy = st.builds(
     Car,
@@ -263,9 +263,6 @@ def test_test_instantiation(instance):
 def test_teststand_instantiation(instance):
     assert isinstance(instance, TestStand)
 
-@given(instance=TestStand_strategy)
-def test_teststand_carToBeTested_type(instance):
-    assert isinstance(instance.carToBeTested, car)
 
 
 @given(instance=TestStand_strategy)
@@ -279,31 +276,6 @@ def test_teststand_carToBeTested_setter(instance):
 def test_m6_instantiation(instance):
     assert isinstance(instance, M6)
 
-@given(instance=M6_strategy)
-def test_m6_engine_type(instance):
-    assert isinstance(instance.engine, engine)
-
-
-@given(instance=M6_strategy)
-def test_m6_engine_setter(instance):
-    original = instance.engine
-    instance.engine = original
-    assert instance.engine == original
-
-@given(instance=M6_strategy)
-def test_m6_color_type(instance):
-    assert isinstance(instance.color, str)
-
-
-@given(instance=M6_strategy)
-def test_m6_color_setter(instance):
-    original = instance.color
-    instance.color = original
-    assert instance.color == original
-
-@given(instance=M6_strategy)
-def test_m6_manufacturer_type(instance):
-    assert isinstance(instance.manufacturer, str)
 
 
 @given(instance=M6_strategy)
@@ -312,25 +284,27 @@ def test_m6_manufacturer_setter(instance):
     instance.manufacturer = original
     assert instance.manufacturer == original
 
+
+
+@given(instance=M6_strategy)
+def test_m6_color_setter(instance):
+    original = instance.color
+    instance.color = original
+    assert instance.color == original
+
+
+
+@given(instance=M6_strategy)
+def test_m6_engine_setter(instance):
+    original = instance.engine
+    instance.engine = original
+    assert instance.engine == original
+
 @given(instance=Engine_strategy)
 @settings(max_examples=50)
 def test_engine_instantiation(instance):
     assert isinstance(instance, Engine)
 
-@given(instance=Engine_strategy)
-def test_engine_type_type(instance):
-    assert isinstance(instance.type, str)
-
-
-@given(instance=Engine_strategy)
-def test_engine_type_setter(instance):
-    original = instance.type
-    instance.type = original
-    assert instance.type == original
-
-@given(instance=Engine_strategy)
-def test_engine_engineSpeed_type(instance):
-    assert isinstance(instance.engineSpeed, int)
 
 
 @given(instance=Engine_strategy)
@@ -339,9 +313,6 @@ def test_engine_engineSpeed_setter(instance):
     instance.engineSpeed = original
     assert instance.engineSpeed == original
 
-@given(instance=Engine_strategy)
-def test_engine_efficiencyCoefficient_type(instance):
-    assert isinstance(instance.efficiencyCoefficient, int)
 
 
 @given(instance=Engine_strategy)
@@ -350,14 +321,27 @@ def test_engine_efficiencyCoefficient_setter(instance):
     instance.efficiencyCoefficient = original
     assert instance.efficiencyCoefficient == original
 
+
+
+@given(instance=Engine_strategy)
+def test_engine_type_setter(instance):
+    original = instance.type
+    instance.type = original
+    assert instance.type == original
+
 @given(instance=Tennis_strategy)
 @settings(max_examples=50)
 def test_tennis_instantiation(instance):
     assert isinstance(instance, Tennis)
 
+
+
 @given(instance=Tennis_strategy)
-def test_tennis_color_type(instance):
-    assert isinstance(instance.color, str)
+def test_tennis_manufacturer_setter(instance):
+    original = instance.manufacturer
+    instance.manufacturer = original
+    assert instance.manufacturer == original
+
 
 
 @given(instance=Tennis_strategy)
@@ -366,9 +350,6 @@ def test_tennis_color_setter(instance):
     instance.color = original
     assert instance.color == original
 
-@given(instance=Tennis_strategy)
-def test_tennis_engine_type(instance):
-    assert isinstance(instance.engine, engine)
 
 
 @given(instance=Tennis_strategy)
@@ -376,17 +357,6 @@ def test_tennis_engine_setter(instance):
     original = instance.engine
     instance.engine = original
     assert instance.engine == original
-
-@given(instance=Tennis_strategy)
-def test_tennis_manufacturer_type(instance):
-    assert isinstance(instance.manufacturer, str)
-
-
-@given(instance=Tennis_strategy)
-def test_tennis_manufacturer_setter(instance):
-    original = instance.manufacturer
-    instance.manufacturer = original
-    assert instance.manufacturer == original
 
 @given(instance=Car_strategy)
 @settings(max_examples=50)

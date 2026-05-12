@@ -3,16 +3,16 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    rcd::ClassModel,
+from python_code import (
+    rcd_ClassModel,
     Classifier,
-    rcd::PrimitiveDataType,
-    rcd::Attribute,
-    rcd::Class,
-    rcd::Association,
-    rcd::Classifier,
+    rcd_PrimitiveDataType,
+    rcd_Attribute,
+    rcd_Class,
+    rcd_Association,
+    rcd_Classifier,
 )
 
 # =============================================================================
@@ -21,23 +21,23 @@ from classes import (
 
 
 
-def test_rcd::classmodel_is_not_abstract():
-    assert not inspect.isabstract(rcd::ClassModel)
+def test_rcd_classmodel_is_not_abstract():
+    assert not inspect.isabstract(rcd_ClassModel)
 
 
-def test_rcd::classmodel_constructor_exists():
-    assert callable(rcd::ClassModel.__init__)
+def test_rcd_classmodel_constructor_exists():
+    assert callable(rcd_ClassModel.__init__)
 
 
-def test_rcd::classmodel_constructor_args():
-    sig = inspect.signature(rcd::ClassModel.__init__)
+def test_rcd_classmodel_constructor_args():
+    sig = inspect.signature(rcd_ClassModel.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_rcd::classmodel_has_name():
-    assert hasattr(rcd::ClassModel, "name")
+def test_rcd_classmodel_has_name():
+    assert hasattr(rcd_ClassModel, "name")
     descriptor = None
-    for klass in rcd::ClassModel.__mro__:
+    for klass in rcd_ClassModel.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -59,91 +59,91 @@ def test_classifier_constructor_args():
 
 
 
-def test_rcd::primitivedatatype_is_not_abstract():
-    assert not inspect.isabstract(rcd::PrimitiveDataType)
+def test_rcd_primitivedatatype_is_not_abstract():
+    assert not inspect.isabstract(rcd_PrimitiveDataType)
 
 
-def test_rcd::primitivedatatype_constructor_exists():
-    assert callable(rcd::PrimitiveDataType.__init__)
+def test_rcd_primitivedatatype_constructor_exists():
+    assert callable(rcd_PrimitiveDataType.__init__)
 
 
-def test_rcd::primitivedatatype_constructor_args():
-    sig = inspect.signature(rcd::PrimitiveDataType.__init__)
+def test_rcd_primitivedatatype_constructor_args():
+    sig = inspect.signature(rcd_PrimitiveDataType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_rcd::attribute_is_not_abstract():
-    assert not inspect.isabstract(rcd::Attribute)
+def test_rcd_attribute_is_not_abstract():
+    assert not inspect.isabstract(rcd_Attribute)
 
 
-def test_rcd::attribute_constructor_exists():
-    assert callable(rcd::Attribute.__init__)
+def test_rcd_attribute_constructor_exists():
+    assert callable(rcd_Attribute.__init__)
 
 
-def test_rcd::attribute_constructor_args():
-    sig = inspect.signature(rcd::Attribute.__init__)
+def test_rcd_attribute_constructor_args():
+    sig = inspect.signature(rcd_Attribute.__init__)
     params = list(sig.parameters.keys())
-    assert "lower" in params, "Missing parameter 'lower'"
     assert "upper" in params, "Missing parameter 'upper'"
-    assert "is_primary" in params, "Missing parameter 'is_primary'"
     assert "name" in params, "Missing parameter 'name'"
+    assert "lower" in params, "Missing parameter 'lower'"
+    assert "is_primary" in params, "Missing parameter 'is_primary'"
 
-def test_rcd::attribute_has_lower():
-    assert hasattr(rcd::Attribute, "lower")
+def test_rcd_attribute_has_upper():
+    assert hasattr(rcd_Attribute, "upper")
     descriptor = None
-    for klass in rcd::Attribute.__mro__:
-        if "lower" in klass.__dict__:
-            descriptor = klass.__dict__["lower"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_rcd::attribute_has_upper():
-    assert hasattr(rcd::Attribute, "upper")
-    descriptor = None
-    for klass in rcd::Attribute.__mro__:
+    for klass in rcd_Attribute.__mro__:
         if "upper" in klass.__dict__:
             descriptor = klass.__dict__["upper"]
             break
     assert isinstance(descriptor, property)
 
-def test_rcd::attribute_has_is_primary():
-    assert hasattr(rcd::Attribute, "is_primary")
+def test_rcd_attribute_has_name():
+    assert hasattr(rcd_Attribute, "name")
     descriptor = None
-    for klass in rcd::Attribute.__mro__:
-        if "is_primary" in klass.__dict__:
-            descriptor = klass.__dict__["is_primary"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_rcd::attribute_has_name():
-    assert hasattr(rcd::Attribute, "name")
-    descriptor = None
-    for klass in rcd::Attribute.__mro__:
+    for klass in rcd_Attribute.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
+def test_rcd_attribute_has_lower():
+    assert hasattr(rcd_Attribute, "lower")
+    descriptor = None
+    for klass in rcd_Attribute.__mro__:
+        if "lower" in klass.__dict__:
+            descriptor = klass.__dict__["lower"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_rcd_attribute_has_is_primary():
+    assert hasattr(rcd_Attribute, "is_primary")
+    descriptor = None
+    for klass in rcd_Attribute.__mro__:
+        if "is_primary" in klass.__dict__:
+            descriptor = klass.__dict__["is_primary"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_rcd::class_is_not_abstract():
-    assert not inspect.isabstract(rcd::Class)
+
+def test_rcd_class_is_not_abstract():
+    assert not inspect.isabstract(rcd_Class)
 
 
-def test_rcd::class_constructor_exists():
-    assert callable(rcd::Class.__init__)
+def test_rcd_class_constructor_exists():
+    assert callable(rcd_Class.__init__)
 
 
-def test_rcd::class_constructor_args():
-    sig = inspect.signature(rcd::Class.__init__)
+def test_rcd_class_constructor_args():
+    sig = inspect.signature(rcd_Class.__init__)
     params = list(sig.parameters.keys())
     assert "is_persistent" in params, "Missing parameter 'is_persistent'"
 
-def test_rcd::class_has_is_persistent():
-    assert hasattr(rcd::Class, "is_persistent")
+def test_rcd_class_has_is_persistent():
+    assert hasattr(rcd_Class, "is_persistent")
     descriptor = None
-    for klass in rcd::Class.__mro__:
+    for klass in rcd_Class.__mro__:
         if "is_persistent" in klass.__dict__:
             descriptor = klass.__dict__["is_persistent"]
             break
@@ -151,43 +151,43 @@ def test_rcd::class_has_is_persistent():
 
 
 
-def test_rcd::association_is_not_abstract():
-    assert not inspect.isabstract(rcd::Association)
+def test_rcd_association_is_not_abstract():
+    assert not inspect.isabstract(rcd_Association)
 
 
-def test_rcd::association_constructor_exists():
-    assert callable(rcd::Association.__init__)
+def test_rcd_association_constructor_exists():
+    assert callable(rcd_Association.__init__)
 
 
-def test_rcd::association_constructor_args():
-    sig = inspect.signature(rcd::Association.__init__)
+def test_rcd_association_constructor_args():
+    sig = inspect.signature(rcd_Association.__init__)
     params = list(sig.parameters.keys())
-    assert "lower" in params, "Missing parameter 'lower'"
     assert "name" in params, "Missing parameter 'name'"
+    assert "lower" in params, "Missing parameter 'lower'"
     assert "upper" in params, "Missing parameter 'upper'"
 
-def test_rcd::association_has_lower():
-    assert hasattr(rcd::Association, "lower")
+def test_rcd_association_has_name():
+    assert hasattr(rcd_Association, "name")
     descriptor = None
-    for klass in rcd::Association.__mro__:
-        if "lower" in klass.__dict__:
-            descriptor = klass.__dict__["lower"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_rcd::association_has_name():
-    assert hasattr(rcd::Association, "name")
-    descriptor = None
-    for klass in rcd::Association.__mro__:
+    for klass in rcd_Association.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
-def test_rcd::association_has_upper():
-    assert hasattr(rcd::Association, "upper")
+def test_rcd_association_has_lower():
+    assert hasattr(rcd_Association, "lower")
     descriptor = None
-    for klass in rcd::Association.__mro__:
+    for klass in rcd_Association.__mro__:
+        if "lower" in klass.__dict__:
+            descriptor = klass.__dict__["lower"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_rcd_association_has_upper():
+    assert hasattr(rcd_Association, "upper")
+    descriptor = None
+    for klass in rcd_Association.__mro__:
         if "upper" in klass.__dict__:
             descriptor = klass.__dict__["upper"]
             break
@@ -195,23 +195,23 @@ def test_rcd::association_has_upper():
 
 
 
-def test_rcd::classifier_is_not_abstract():
-    assert not inspect.isabstract(rcd::Classifier)
+def test_rcd_classifier_is_not_abstract():
+    assert not inspect.isabstract(rcd_Classifier)
 
 
-def test_rcd::classifier_constructor_exists():
-    assert callable(rcd::Classifier.__init__)
+def test_rcd_classifier_constructor_exists():
+    assert callable(rcd_Classifier.__init__)
 
 
-def test_rcd::classifier_constructor_args():
-    sig = inspect.signature(rcd::Classifier.__init__)
+def test_rcd_classifier_constructor_args():
+    sig = inspect.signature(rcd_Classifier.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_rcd::classifier_has_name():
-    assert hasattr(rcd::Classifier, "name")
+def test_rcd_classifier_has_name():
+    assert hasattr(rcd_Classifier, "name")
     descriptor = None
-    for klass in rcd::Classifier.__mro__:
+    for klass in rcd_Classifier.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -229,60 +229,57 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-rcd::ClassModel_strategy = st.builds(
-    rcd::ClassModel,
+rcd_ClassModel_strategy = st.builds(
+    rcd_ClassModel,
     name=
         safe_text
 )
 Classifier_strategy = st.builds(
     Classifier,
 )
-rcd::PrimitiveDataType_strategy = st.builds(
-    rcd::PrimitiveDataType,
+rcd_PrimitiveDataType_strategy = st.builds(
+    rcd_PrimitiveDataType,
 )
-rcd::Attribute_strategy = st.builds(
-    rcd::Attribute,
-    lower=
-        safe_text,
+rcd_Attribute_strategy = st.builds(
+    rcd_Attribute,
     upper=
         safe_text,
-    is_primary=
-        st.booleans(),
     name=
-        safe_text
+        safe_text,
+    lower=
+        safe_text,
+    is_primary=
+        st.booleans()
 )
-rcd::Class_strategy = st.builds(
-    rcd::Class,
+rcd_Class_strategy = st.builds(
+    rcd_Class,
     is_persistent=
         st.booleans()
 )
-rcd::Association_strategy = st.builds(
-    rcd::Association,
-    lower=
-        safe_text,
+rcd_Association_strategy = st.builds(
+    rcd_Association,
     name=
+        safe_text,
+    lower=
         safe_text,
     upper=
         safe_text
 )
-rcd::Classifier_strategy = st.builds(
-    rcd::Classifier,
+rcd_Classifier_strategy = st.builds(
+    rcd_Classifier,
     name=
         safe_text
 )
 
-@given(instance=rcd::ClassModel_strategy)
+@given(instance=rcd_ClassModel_strategy)
 @settings(max_examples=50)
-def test_rcd::classmodel_instantiation(instance):
-    assert isinstance(instance, rcd::ClassModel)
-
-@given(instance=rcd::ClassModel_strategy)
-def test_rcd::classmodel_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_rcd_classmodel_instantiation(instance):
+    assert isinstance(instance, rcd_ClassModel)
 
 
-@given(instance=rcd::ClassModel_strategy)
-def test_rcd::classmodel_name_setter(instance):
+
+@given(instance=rcd_ClassModel_strategy)
+def test_rcd_classmodel_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
@@ -292,126 +289,99 @@ def test_rcd::classmodel_name_setter(instance):
 def test_classifier_instantiation(instance):
     assert isinstance(instance, Classifier)
 
-@given(instance=rcd::PrimitiveDataType_strategy)
+@given(instance=rcd_PrimitiveDataType_strategy)
 @settings(max_examples=50)
-def test_rcd::primitivedatatype_instantiation(instance):
-    assert isinstance(instance, rcd::PrimitiveDataType)
+def test_rcd_primitivedatatype_instantiation(instance):
+    assert isinstance(instance, rcd_PrimitiveDataType)
 
-@given(instance=rcd::Attribute_strategy)
+@given(instance=rcd_Attribute_strategy)
 @settings(max_examples=50)
-def test_rcd::attribute_instantiation(instance):
-    assert isinstance(instance, rcd::Attribute)
-
-@given(instance=rcd::Attribute_strategy)
-def test_rcd::attribute_lower_type(instance):
-    assert isinstance(instance.lower, str)
+def test_rcd_attribute_instantiation(instance):
+    assert isinstance(instance, rcd_Attribute)
 
 
-@given(instance=rcd::Attribute_strategy)
-def test_rcd::attribute_lower_setter(instance):
-    original = instance.lower
-    instance.lower = original
-    assert instance.lower == original
 
-@given(instance=rcd::Attribute_strategy)
-def test_rcd::attribute_upper_type(instance):
-    assert isinstance(instance.upper, str)
-
-
-@given(instance=rcd::Attribute_strategy)
-def test_rcd::attribute_upper_setter(instance):
+@given(instance=rcd_Attribute_strategy)
+def test_rcd_attribute_upper_setter(instance):
     original = instance.upper
     instance.upper = original
     assert instance.upper == original
 
-@given(instance=rcd::Attribute_strategy)
-def test_rcd::attribute_is_primary_type(instance):
-    assert isinstance(instance.is_primary, bool)
 
 
-@given(instance=rcd::Attribute_strategy)
-def test_rcd::attribute_is_primary_setter(instance):
+@given(instance=rcd_Attribute_strategy)
+def test_rcd_attribute_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+
+
+@given(instance=rcd_Attribute_strategy)
+def test_rcd_attribute_lower_setter(instance):
+    original = instance.lower
+    instance.lower = original
+    assert instance.lower == original
+
+
+
+@given(instance=rcd_Attribute_strategy)
+def test_rcd_attribute_is_primary_setter(instance):
     original = instance.is_primary
     instance.is_primary = original
     assert instance.is_primary == original
 
-@given(instance=rcd::Attribute_strategy)
-def test_rcd::attribute_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=rcd::Attribute_strategy)
-def test_rcd::attribute_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
-
-@given(instance=rcd::Class_strategy)
+@given(instance=rcd_Class_strategy)
 @settings(max_examples=50)
-def test_rcd::class_instantiation(instance):
-    assert isinstance(instance, rcd::Class)
-
-@given(instance=rcd::Class_strategy)
-def test_rcd::class_is_persistent_type(instance):
-    assert isinstance(instance.is_persistent, bool)
+def test_rcd_class_instantiation(instance):
+    assert isinstance(instance, rcd_Class)
 
 
-@given(instance=rcd::Class_strategy)
-def test_rcd::class_is_persistent_setter(instance):
+
+@given(instance=rcd_Class_strategy)
+def test_rcd_class_is_persistent_setter(instance):
     original = instance.is_persistent
     instance.is_persistent = original
     assert instance.is_persistent == original
 
-@given(instance=rcd::Association_strategy)
+@given(instance=rcd_Association_strategy)
 @settings(max_examples=50)
-def test_rcd::association_instantiation(instance):
-    assert isinstance(instance, rcd::Association)
-
-@given(instance=rcd::Association_strategy)
-def test_rcd::association_lower_type(instance):
-    assert isinstance(instance.lower, str)
+def test_rcd_association_instantiation(instance):
+    assert isinstance(instance, rcd_Association)
 
 
-@given(instance=rcd::Association_strategy)
-def test_rcd::association_lower_setter(instance):
-    original = instance.lower
-    instance.lower = original
-    assert instance.lower == original
 
-@given(instance=rcd::Association_strategy)
-def test_rcd::association_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=rcd::Association_strategy)
-def test_rcd::association_name_setter(instance):
+@given(instance=rcd_Association_strategy)
+def test_rcd_association_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=rcd::Association_strategy)
-def test_rcd::association_upper_type(instance):
-    assert isinstance(instance.upper, str)
 
 
-@given(instance=rcd::Association_strategy)
-def test_rcd::association_upper_setter(instance):
+@given(instance=rcd_Association_strategy)
+def test_rcd_association_lower_setter(instance):
+    original = instance.lower
+    instance.lower = original
+    assert instance.lower == original
+
+
+
+@given(instance=rcd_Association_strategy)
+def test_rcd_association_upper_setter(instance):
     original = instance.upper
     instance.upper = original
     assert instance.upper == original
 
-@given(instance=rcd::Classifier_strategy)
+@given(instance=rcd_Classifier_strategy)
 @settings(max_examples=50)
-def test_rcd::classifier_instantiation(instance):
-    assert isinstance(instance, rcd::Classifier)
-
-@given(instance=rcd::Classifier_strategy)
-def test_rcd::classifier_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_rcd_classifier_instantiation(instance):
+    assert isinstance(instance, rcd_Classifier)
 
 
-@given(instance=rcd::Classifier_strategy)
-def test_rcd::classifier_name_setter(instance):
+
+@given(instance=rcd_Classifier_strategy)
+def test_rcd_classifier_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original

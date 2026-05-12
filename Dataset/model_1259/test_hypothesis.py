@@ -3,69 +3,69 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    qvtoperational::Element,
+from python_code import (
+    qvtoperational_Element,
     Parameter,
     Variable,
-    qvtoperational::VarParameter,
+    qvtoperational_VarParameter,
     ResolveExp,
-    qvtoperational::ResolveInExp,
+    qvtoperational_ResolveInExp,
     CallExp,
     Dummy2,
     Class,
-    qvtoperational::ModelType,
+    qvtoperational_ModelType,
     DummyRelationDomain,
     ModelParameter,
     ConstructorBody,
     InstantiationExp,
-    qvtoperational::ObjectExp,
+    qvtoperational_ObjectExp,
     ModelType,
-    qvtoperational::Variable,
-    qvtoperational::TemplateableElement,
+    qvtoperational_Variable,
+    qvtoperational_TemplateableElement,
     ModuleImport,
     EntryOperation,
-    qvtoperational::Module,
-    qvtoperational::Package,
+    qvtoperational_Module,
+    qvtoperational_Package,
     VarParameter,
-    qvtoperational::MappingParameter,
-    qvtoperational::ModelParameter,
+    qvtoperational_ModelParameter,
+    qvtoperational_MappingParameter,
     DummyRelation,
     MappingOperation,
     ImperativeCallExp,
-    qvtoperational::MappingCallExp,
+    qvtoperational_MappingCallExp,
     Module,
-    qvtoperational::OperationalTransformation,
-    qvtoperational::Library,
+    qvtoperational_OperationalTransformation,
+    qvtoperational_Library,
     Operation,
-    qvtoperational::ImperativeOperation,
+    qvtoperational_ImperativeOperation,
     ImperativeExpression,
-    qvtoperational::ResolveExp,
+    qvtoperational_ResolveExp,
     OperationCallExp,
-    qvtoperational::ImperativeCallExp,
+    qvtoperational_ImperativeCallExp,
     Element,
-    qvtoperational::DummyRelationDomain,
-    qvtoperational::Tag,
-    qvtoperational::DummyRelationalTransformation,
-    qvtoperational::OperationBody,
-    qvtoperational::ModuleImport,
-    qvtoperational::DummyRelation,
-    qvtoperational::Property,
-    qvtoperational::OCLExpression,
-    qvtoperational::Class,
+    qvtoperational_DummyRelationalTransformation,
+    qvtoperational_OperationBody,
+    qvtoperational_Tag,
+    qvtoperational_ModuleImport,
+    qvtoperational_DummyRelationDomain,
+    qvtoperational_DummyRelation,
+    qvtoperational_Property,
+    qvtoperational_OCLExpression,
+    qvtoperational_Class,
     Property,
-    qvtoperational::ContextualProperty,
+    qvtoperational_ContextualProperty,
     OperationBody,
-    qvtoperational::MappingBody,
-    qvtoperational::ConstructorBody,
+    qvtoperational_MappingBody,
+    qvtoperational_ConstructorBody,
     ImperativeOperation,
-    qvtoperational::EntryOperation,
-    qvtoperational::Helper,
-    qvtoperational::MappingOperation,
-    qvtoperational::Constructor,
-    DirectionKind,
+    qvtoperational_MappingOperation,
+    qvtoperational_Helper,
+    qvtoperational_EntryOperation,
+    qvtoperational_Constructor,
     ImportKind,
+    DirectionKind,
 )
 
 # =============================================================================
@@ -74,16 +74,16 @@ from classes import (
 
 
 
-def test_qvtoperational::element_is_not_abstract():
-    assert not inspect.isabstract(qvtoperational::Element)
+def test_qvtoperational_element_is_not_abstract():
+    assert not inspect.isabstract(qvtoperational_Element)
 
 
-def test_qvtoperational::element_constructor_exists():
-    assert callable(qvtoperational::Element.__init__)
+def test_qvtoperational_element_constructor_exists():
+    assert callable(qvtoperational_Element.__init__)
 
 
-def test_qvtoperational::element_constructor_args():
-    sig = inspect.signature(qvtoperational::Element.__init__)
+def test_qvtoperational_element_constructor_args():
+    sig = inspect.signature(qvtoperational_Element.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -116,23 +116,23 @@ def test_variable_constructor_args():
 
 
 
-def test_qvtoperational::varparameter_is_not_abstract():
-    assert not inspect.isabstract(qvtoperational::VarParameter)
+def test_qvtoperational_varparameter_is_not_abstract():
+    assert not inspect.isabstract(qvtoperational_VarParameter)
 
 
-def test_qvtoperational::varparameter_constructor_exists():
-    assert callable(qvtoperational::VarParameter.__init__)
+def test_qvtoperational_varparameter_constructor_exists():
+    assert callable(qvtoperational_VarParameter.__init__)
 
 
-def test_qvtoperational::varparameter_constructor_args():
-    sig = inspect.signature(qvtoperational::VarParameter.__init__)
+def test_qvtoperational_varparameter_constructor_args():
+    sig = inspect.signature(qvtoperational_VarParameter.__init__)
     params = list(sig.parameters.keys())
     assert "kind" in params, "Missing parameter 'kind'"
 
-def test_qvtoperational::varparameter_has_kind():
-    assert hasattr(qvtoperational::VarParameter, "kind")
+def test_qvtoperational_varparameter_has_kind():
+    assert hasattr(qvtoperational_VarParameter, "kind")
     descriptor = None
-    for klass in qvtoperational::VarParameter.__mro__:
+    for klass in qvtoperational_VarParameter.__mro__:
         if "kind" in klass.__dict__:
             descriptor = klass.__dict__["kind"]
             break
@@ -154,16 +154,16 @@ def test_resolveexp_constructor_args():
 
 
 
-def test_qvtoperational::resolveinexp_is_not_abstract():
-    assert not inspect.isabstract(qvtoperational::ResolveInExp)
+def test_qvtoperational_resolveinexp_is_not_abstract():
+    assert not inspect.isabstract(qvtoperational_ResolveInExp)
 
 
-def test_qvtoperational::resolveinexp_constructor_exists():
-    assert callable(qvtoperational::ResolveInExp.__init__)
+def test_qvtoperational_resolveinexp_constructor_exists():
+    assert callable(qvtoperational_ResolveInExp.__init__)
 
 
-def test_qvtoperational::resolveinexp_constructor_args():
-    sig = inspect.signature(qvtoperational::ResolveInExp.__init__)
+def test_qvtoperational_resolveinexp_constructor_args():
+    sig = inspect.signature(qvtoperational_ResolveInExp.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -210,23 +210,23 @@ def test_class_constructor_args():
 
 
 
-def test_qvtoperational::modeltype_is_not_abstract():
-    assert not inspect.isabstract(qvtoperational::ModelType)
+def test_qvtoperational_modeltype_is_not_abstract():
+    assert not inspect.isabstract(qvtoperational_ModelType)
 
 
-def test_qvtoperational::modeltype_constructor_exists():
-    assert callable(qvtoperational::ModelType.__init__)
+def test_qvtoperational_modeltype_constructor_exists():
+    assert callable(qvtoperational_ModelType.__init__)
 
 
-def test_qvtoperational::modeltype_constructor_args():
-    sig = inspect.signature(qvtoperational::ModelType.__init__)
+def test_qvtoperational_modeltype_constructor_args():
+    sig = inspect.signature(qvtoperational_ModelType.__init__)
     params = list(sig.parameters.keys())
     assert "conformanceKind" in params, "Missing parameter 'conformanceKind'"
 
-def test_qvtoperational::modeltype_has_conformanceKind():
-    assert hasattr(qvtoperational::ModelType, "conformanceKind")
+def test_qvtoperational_modeltype_has_conformanceKind():
+    assert hasattr(qvtoperational_ModelType, "conformanceKind")
     descriptor = None
-    for klass in qvtoperational::ModelType.__mro__:
+    for klass in qvtoperational_ModelType.__mro__:
         if "conformanceKind" in klass.__dict__:
             descriptor = klass.__dict__["conformanceKind"]
             break
@@ -290,16 +290,16 @@ def test_instantiationexp_constructor_args():
 
 
 
-def test_qvtoperational::objectexp_is_not_abstract():
-    assert not inspect.isabstract(qvtoperational::ObjectExp)
+def test_qvtoperational_objectexp_is_not_abstract():
+    assert not inspect.isabstract(qvtoperational_ObjectExp)
 
 
-def test_qvtoperational::objectexp_constructor_exists():
-    assert callable(qvtoperational::ObjectExp.__init__)
+def test_qvtoperational_objectexp_constructor_exists():
+    assert callable(qvtoperational_ObjectExp.__init__)
 
 
-def test_qvtoperational::objectexp_constructor_args():
-    sig = inspect.signature(qvtoperational::ObjectExp.__init__)
+def test_qvtoperational_objectexp_constructor_args():
+    sig = inspect.signature(qvtoperational_ObjectExp.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -318,30 +318,30 @@ def test_modeltype_constructor_args():
 
 
 
-def test_qvtoperational::variable_is_not_abstract():
-    assert not inspect.isabstract(qvtoperational::Variable)
+def test_qvtoperational_variable_is_not_abstract():
+    assert not inspect.isabstract(qvtoperational_Variable)
 
 
-def test_qvtoperational::variable_constructor_exists():
-    assert callable(qvtoperational::Variable.__init__)
+def test_qvtoperational_variable_constructor_exists():
+    assert callable(qvtoperational_Variable.__init__)
 
 
-def test_qvtoperational::variable_constructor_args():
-    sig = inspect.signature(qvtoperational::Variable.__init__)
+def test_qvtoperational_variable_constructor_args():
+    sig = inspect.signature(qvtoperational_Variable.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_qvtoperational::templateableelement_is_not_abstract():
-    assert not inspect.isabstract(qvtoperational::TemplateableElement)
+def test_qvtoperational_templateableelement_is_not_abstract():
+    assert not inspect.isabstract(qvtoperational_TemplateableElement)
 
 
-def test_qvtoperational::templateableelement_constructor_exists():
-    assert callable(qvtoperational::TemplateableElement.__init__)
+def test_qvtoperational_templateableelement_constructor_exists():
+    assert callable(qvtoperational_TemplateableElement.__init__)
 
 
-def test_qvtoperational::templateableelement_constructor_args():
-    sig = inspect.signature(qvtoperational::TemplateableElement.__init__)
+def test_qvtoperational_templateableelement_constructor_args():
+    sig = inspect.signature(qvtoperational_TemplateableElement.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -374,23 +374,23 @@ def test_entryoperation_constructor_args():
 
 
 
-def test_qvtoperational::module_is_not_abstract():
-    assert not inspect.isabstract(qvtoperational::Module)
+def test_qvtoperational_module_is_not_abstract():
+    assert not inspect.isabstract(qvtoperational_Module)
 
 
-def test_qvtoperational::module_constructor_exists():
-    assert callable(qvtoperational::Module.__init__)
+def test_qvtoperational_module_constructor_exists():
+    assert callable(qvtoperational_Module.__init__)
 
 
-def test_qvtoperational::module_constructor_args():
-    sig = inspect.signature(qvtoperational::Module.__init__)
+def test_qvtoperational_module_constructor_args():
+    sig = inspect.signature(qvtoperational_Module.__init__)
     params = list(sig.parameters.keys())
     assert "isBlackbox" in params, "Missing parameter 'isBlackbox'"
 
-def test_qvtoperational::module_has_isBlackbox():
-    assert hasattr(qvtoperational::Module, "isBlackbox")
+def test_qvtoperational_module_has_isBlackbox():
+    assert hasattr(qvtoperational_Module, "isBlackbox")
     descriptor = None
-    for klass in qvtoperational::Module.__mro__:
+    for klass in qvtoperational_Module.__mro__:
         if "isBlackbox" in klass.__dict__:
             descriptor = klass.__dict__["isBlackbox"]
             break
@@ -398,16 +398,16 @@ def test_qvtoperational::module_has_isBlackbox():
 
 
 
-def test_qvtoperational::package_is_not_abstract():
-    assert not inspect.isabstract(qvtoperational::Package)
+def test_qvtoperational_package_is_not_abstract():
+    assert not inspect.isabstract(qvtoperational_Package)
 
 
-def test_qvtoperational::package_constructor_exists():
-    assert callable(qvtoperational::Package.__init__)
+def test_qvtoperational_package_constructor_exists():
+    assert callable(qvtoperational_Package.__init__)
 
 
-def test_qvtoperational::package_constructor_args():
-    sig = inspect.signature(qvtoperational::Package.__init__)
+def test_qvtoperational_package_constructor_args():
+    sig = inspect.signature(qvtoperational_Package.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -426,30 +426,30 @@ def test_varparameter_constructor_args():
 
 
 
-def test_qvtoperational::mappingparameter_is_not_abstract():
-    assert not inspect.isabstract(qvtoperational::MappingParameter)
+def test_qvtoperational_modelparameter_is_not_abstract():
+    assert not inspect.isabstract(qvtoperational_ModelParameter)
 
 
-def test_qvtoperational::mappingparameter_constructor_exists():
-    assert callable(qvtoperational::MappingParameter.__init__)
+def test_qvtoperational_modelparameter_constructor_exists():
+    assert callable(qvtoperational_ModelParameter.__init__)
 
 
-def test_qvtoperational::mappingparameter_constructor_args():
-    sig = inspect.signature(qvtoperational::MappingParameter.__init__)
+def test_qvtoperational_modelparameter_constructor_args():
+    sig = inspect.signature(qvtoperational_ModelParameter.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_qvtoperational::modelparameter_is_not_abstract():
-    assert not inspect.isabstract(qvtoperational::ModelParameter)
+def test_qvtoperational_mappingparameter_is_not_abstract():
+    assert not inspect.isabstract(qvtoperational_MappingParameter)
 
 
-def test_qvtoperational::modelparameter_constructor_exists():
-    assert callable(qvtoperational::ModelParameter.__init__)
+def test_qvtoperational_mappingparameter_constructor_exists():
+    assert callable(qvtoperational_MappingParameter.__init__)
 
 
-def test_qvtoperational::modelparameter_constructor_args():
-    sig = inspect.signature(qvtoperational::ModelParameter.__init__)
+def test_qvtoperational_mappingparameter_constructor_args():
+    sig = inspect.signature(qvtoperational_MappingParameter.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -496,23 +496,23 @@ def test_imperativecallexp_constructor_args():
 
 
 
-def test_qvtoperational::mappingcallexp_is_not_abstract():
-    assert not inspect.isabstract(qvtoperational::MappingCallExp)
+def test_qvtoperational_mappingcallexp_is_not_abstract():
+    assert not inspect.isabstract(qvtoperational_MappingCallExp)
 
 
-def test_qvtoperational::mappingcallexp_constructor_exists():
-    assert callable(qvtoperational::MappingCallExp.__init__)
+def test_qvtoperational_mappingcallexp_constructor_exists():
+    assert callable(qvtoperational_MappingCallExp.__init__)
 
 
-def test_qvtoperational::mappingcallexp_constructor_args():
-    sig = inspect.signature(qvtoperational::MappingCallExp.__init__)
+def test_qvtoperational_mappingcallexp_constructor_args():
+    sig = inspect.signature(qvtoperational_MappingCallExp.__init__)
     params = list(sig.parameters.keys())
     assert "isStrict" in params, "Missing parameter 'isStrict'"
 
-def test_qvtoperational::mappingcallexp_has_isStrict():
-    assert hasattr(qvtoperational::MappingCallExp, "isStrict")
+def test_qvtoperational_mappingcallexp_has_isStrict():
+    assert hasattr(qvtoperational_MappingCallExp, "isStrict")
     descriptor = None
-    for klass in qvtoperational::MappingCallExp.__mro__:
+    for klass in qvtoperational_MappingCallExp.__mro__:
         if "isStrict" in klass.__dict__:
             descriptor = klass.__dict__["isStrict"]
             break
@@ -534,30 +534,30 @@ def test_module_constructor_args():
 
 
 
-def test_qvtoperational::operationaltransformation_is_not_abstract():
-    assert not inspect.isabstract(qvtoperational::OperationalTransformation)
+def test_qvtoperational_operationaltransformation_is_not_abstract():
+    assert not inspect.isabstract(qvtoperational_OperationalTransformation)
 
 
-def test_qvtoperational::operationaltransformation_constructor_exists():
-    assert callable(qvtoperational::OperationalTransformation.__init__)
+def test_qvtoperational_operationaltransformation_constructor_exists():
+    assert callable(qvtoperational_OperationalTransformation.__init__)
 
 
-def test_qvtoperational::operationaltransformation_constructor_args():
-    sig = inspect.signature(qvtoperational::OperationalTransformation.__init__)
+def test_qvtoperational_operationaltransformation_constructor_args():
+    sig = inspect.signature(qvtoperational_OperationalTransformation.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_qvtoperational::library_is_not_abstract():
-    assert not inspect.isabstract(qvtoperational::Library)
+def test_qvtoperational_library_is_not_abstract():
+    assert not inspect.isabstract(qvtoperational_Library)
 
 
-def test_qvtoperational::library_constructor_exists():
-    assert callable(qvtoperational::Library.__init__)
+def test_qvtoperational_library_constructor_exists():
+    assert callable(qvtoperational_Library.__init__)
 
 
-def test_qvtoperational::library_constructor_args():
-    sig = inspect.signature(qvtoperational::Library.__init__)
+def test_qvtoperational_library_constructor_args():
+    sig = inspect.signature(qvtoperational_Library.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -576,23 +576,23 @@ def test_operation_constructor_args():
 
 
 
-def test_qvtoperational::imperativeoperation_is_not_abstract():
-    assert not inspect.isabstract(qvtoperational::ImperativeOperation)
+def test_qvtoperational_imperativeoperation_is_not_abstract():
+    assert not inspect.isabstract(qvtoperational_ImperativeOperation)
 
 
-def test_qvtoperational::imperativeoperation_constructor_exists():
-    assert callable(qvtoperational::ImperativeOperation.__init__)
+def test_qvtoperational_imperativeoperation_constructor_exists():
+    assert callable(qvtoperational_ImperativeOperation.__init__)
 
 
-def test_qvtoperational::imperativeoperation_constructor_args():
-    sig = inspect.signature(qvtoperational::ImperativeOperation.__init__)
+def test_qvtoperational_imperativeoperation_constructor_args():
+    sig = inspect.signature(qvtoperational_ImperativeOperation.__init__)
     params = list(sig.parameters.keys())
     assert "isBlackbox" in params, "Missing parameter 'isBlackbox'"
 
-def test_qvtoperational::imperativeoperation_has_isBlackbox():
-    assert hasattr(qvtoperational::ImperativeOperation, "isBlackbox")
+def test_qvtoperational_imperativeoperation_has_isBlackbox():
+    assert hasattr(qvtoperational_ImperativeOperation, "isBlackbox")
     descriptor = None
-    for klass in qvtoperational::ImperativeOperation.__mro__:
+    for klass in qvtoperational_ImperativeOperation.__mro__:
         if "isBlackbox" in klass.__dict__:
             descriptor = klass.__dict__["isBlackbox"]
             break
@@ -614,45 +614,45 @@ def test_imperativeexpression_constructor_args():
 
 
 
-def test_qvtoperational::resolveexp_is_not_abstract():
-    assert not inspect.isabstract(qvtoperational::ResolveExp)
+def test_qvtoperational_resolveexp_is_not_abstract():
+    assert not inspect.isabstract(qvtoperational_ResolveExp)
 
 
-def test_qvtoperational::resolveexp_constructor_exists():
-    assert callable(qvtoperational::ResolveExp.__init__)
+def test_qvtoperational_resolveexp_constructor_exists():
+    assert callable(qvtoperational_ResolveExp.__init__)
 
 
-def test_qvtoperational::resolveexp_constructor_args():
-    sig = inspect.signature(qvtoperational::ResolveExp.__init__)
+def test_qvtoperational_resolveexp_constructor_args():
+    sig = inspect.signature(qvtoperational_ResolveExp.__init__)
     params = list(sig.parameters.keys())
-    assert "isInverse" in params, "Missing parameter 'isInverse'"
-    assert "one" in params, "Missing parameter 'one'"
     assert "isDeferred" in params, "Missing parameter 'isDeferred'"
+    assert "one" in params, "Missing parameter 'one'"
+    assert "isInverse" in params, "Missing parameter 'isInverse'"
 
-def test_qvtoperational::resolveexp_has_isInverse():
-    assert hasattr(qvtoperational::ResolveExp, "isInverse")
+def test_qvtoperational_resolveexp_has_isDeferred():
+    assert hasattr(qvtoperational_ResolveExp, "isDeferred")
     descriptor = None
-    for klass in qvtoperational::ResolveExp.__mro__:
-        if "isInverse" in klass.__dict__:
-            descriptor = klass.__dict__["isInverse"]
+    for klass in qvtoperational_ResolveExp.__mro__:
+        if "isDeferred" in klass.__dict__:
+            descriptor = klass.__dict__["isDeferred"]
             break
     assert isinstance(descriptor, property)
 
-def test_qvtoperational::resolveexp_has_one():
-    assert hasattr(qvtoperational::ResolveExp, "one")
+def test_qvtoperational_resolveexp_has_one():
+    assert hasattr(qvtoperational_ResolveExp, "one")
     descriptor = None
-    for klass in qvtoperational::ResolveExp.__mro__:
+    for klass in qvtoperational_ResolveExp.__mro__:
         if "one" in klass.__dict__:
             descriptor = klass.__dict__["one"]
             break
     assert isinstance(descriptor, property)
 
-def test_qvtoperational::resolveexp_has_isDeferred():
-    assert hasattr(qvtoperational::ResolveExp, "isDeferred")
+def test_qvtoperational_resolveexp_has_isInverse():
+    assert hasattr(qvtoperational_ResolveExp, "isInverse")
     descriptor = None
-    for klass in qvtoperational::ResolveExp.__mro__:
-        if "isDeferred" in klass.__dict__:
-            descriptor = klass.__dict__["isDeferred"]
+    for klass in qvtoperational_ResolveExp.__mro__:
+        if "isInverse" in klass.__dict__:
+            descriptor = klass.__dict__["isInverse"]
             break
     assert isinstance(descriptor, property)
 
@@ -672,23 +672,23 @@ def test_operationcallexp_constructor_args():
 
 
 
-def test_qvtoperational::imperativecallexp_is_not_abstract():
-    assert not inspect.isabstract(qvtoperational::ImperativeCallExp)
+def test_qvtoperational_imperativecallexp_is_not_abstract():
+    assert not inspect.isabstract(qvtoperational_ImperativeCallExp)
 
 
-def test_qvtoperational::imperativecallexp_constructor_exists():
-    assert callable(qvtoperational::ImperativeCallExp.__init__)
+def test_qvtoperational_imperativecallexp_constructor_exists():
+    assert callable(qvtoperational_ImperativeCallExp.__init__)
 
 
-def test_qvtoperational::imperativecallexp_constructor_args():
-    sig = inspect.signature(qvtoperational::ImperativeCallExp.__init__)
+def test_qvtoperational_imperativecallexp_constructor_args():
+    sig = inspect.signature(qvtoperational_ImperativeCallExp.__init__)
     params = list(sig.parameters.keys())
     assert "isVirtual" in params, "Missing parameter 'isVirtual'"
 
-def test_qvtoperational::imperativecallexp_has_isVirtual():
-    assert hasattr(qvtoperational::ImperativeCallExp, "isVirtual")
+def test_qvtoperational_imperativecallexp_has_isVirtual():
+    assert hasattr(qvtoperational_ImperativeCallExp, "isVirtual")
     descriptor = None
-    for klass in qvtoperational::ImperativeCallExp.__mro__:
+    for klass in qvtoperational_ImperativeCallExp.__mro__:
         if "isVirtual" in klass.__dict__:
             descriptor = klass.__dict__["isVirtual"]
             break
@@ -710,99 +710,85 @@ def test_element_constructor_args():
 
 
 
-def test_qvtoperational::dummyrelationdomain_is_not_abstract():
-    assert not inspect.isabstract(qvtoperational::DummyRelationDomain)
+def test_qvtoperational_dummyrelationaltransformation_is_not_abstract():
+    assert not inspect.isabstract(qvtoperational_DummyRelationalTransformation)
 
 
-def test_qvtoperational::dummyrelationdomain_constructor_exists():
-    assert callable(qvtoperational::DummyRelationDomain.__init__)
+def test_qvtoperational_dummyrelationaltransformation_constructor_exists():
+    assert callable(qvtoperational_DummyRelationalTransformation.__init__)
 
 
-def test_qvtoperational::dummyrelationdomain_constructor_args():
-    sig = inspect.signature(qvtoperational::DummyRelationDomain.__init__)
+def test_qvtoperational_dummyrelationaltransformation_constructor_args():
+    sig = inspect.signature(qvtoperational_DummyRelationalTransformation.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_qvtoperational::tag_is_not_abstract():
-    assert not inspect.isabstract(qvtoperational::Tag)
+def test_qvtoperational_operationbody_is_not_abstract():
+    assert not inspect.isabstract(qvtoperational_OperationBody)
 
 
-def test_qvtoperational::tag_constructor_exists():
-    assert callable(qvtoperational::Tag.__init__)
+def test_qvtoperational_operationbody_constructor_exists():
+    assert callable(qvtoperational_OperationBody.__init__)
 
 
-def test_qvtoperational::tag_constructor_args():
-    sig = inspect.signature(qvtoperational::Tag.__init__)
+def test_qvtoperational_operationbody_constructor_args():
+    sig = inspect.signature(qvtoperational_OperationBody.__init__)
     params = list(sig.parameters.keys())
-    assert "value" in params, "Missing parameter 'value'"
+
+
+
+def test_qvtoperational_tag_is_not_abstract():
+    assert not inspect.isabstract(qvtoperational_Tag)
+
+
+def test_qvtoperational_tag_constructor_exists():
+    assert callable(qvtoperational_Tag.__init__)
+
+
+def test_qvtoperational_tag_constructor_args():
+    sig = inspect.signature(qvtoperational_Tag.__init__)
+    params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
+    assert "value" in params, "Missing parameter 'value'"
 
-def test_qvtoperational::tag_has_value():
-    assert hasattr(qvtoperational::Tag, "value")
+def test_qvtoperational_tag_has_name():
+    assert hasattr(qvtoperational_Tag, "name")
     descriptor = None
-    for klass in qvtoperational::Tag.__mro__:
-        if "value" in klass.__dict__:
-            descriptor = klass.__dict__["value"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_qvtoperational::tag_has_name():
-    assert hasattr(qvtoperational::Tag, "name")
-    descriptor = None
-    for klass in qvtoperational::Tag.__mro__:
+    for klass in qvtoperational_Tag.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
-
-
-def test_qvtoperational::dummyrelationaltransformation_is_not_abstract():
-    assert not inspect.isabstract(qvtoperational::DummyRelationalTransformation)
-
-
-def test_qvtoperational::dummyrelationaltransformation_constructor_exists():
-    assert callable(qvtoperational::DummyRelationalTransformation.__init__)
-
-
-def test_qvtoperational::dummyrelationaltransformation_constructor_args():
-    sig = inspect.signature(qvtoperational::DummyRelationalTransformation.__init__)
-    params = list(sig.parameters.keys())
+def test_qvtoperational_tag_has_value():
+    assert hasattr(qvtoperational_Tag, "value")
+    descriptor = None
+    for klass in qvtoperational_Tag.__mro__:
+        if "value" in klass.__dict__:
+            descriptor = klass.__dict__["value"]
+            break
+    assert isinstance(descriptor, property)
 
 
 
-def test_qvtoperational::operationbody_is_not_abstract():
-    assert not inspect.isabstract(qvtoperational::OperationBody)
+def test_qvtoperational_moduleimport_is_not_abstract():
+    assert not inspect.isabstract(qvtoperational_ModuleImport)
 
 
-def test_qvtoperational::operationbody_constructor_exists():
-    assert callable(qvtoperational::OperationBody.__init__)
+def test_qvtoperational_moduleimport_constructor_exists():
+    assert callable(qvtoperational_ModuleImport.__init__)
 
 
-def test_qvtoperational::operationbody_constructor_args():
-    sig = inspect.signature(qvtoperational::OperationBody.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_qvtoperational::moduleimport_is_not_abstract():
-    assert not inspect.isabstract(qvtoperational::ModuleImport)
-
-
-def test_qvtoperational::moduleimport_constructor_exists():
-    assert callable(qvtoperational::ModuleImport.__init__)
-
-
-def test_qvtoperational::moduleimport_constructor_args():
-    sig = inspect.signature(qvtoperational::ModuleImport.__init__)
+def test_qvtoperational_moduleimport_constructor_args():
+    sig = inspect.signature(qvtoperational_ModuleImport.__init__)
     params = list(sig.parameters.keys())
     assert "kind" in params, "Missing parameter 'kind'"
 
-def test_qvtoperational::moduleimport_has_kind():
-    assert hasattr(qvtoperational::ModuleImport, "kind")
+def test_qvtoperational_moduleimport_has_kind():
+    assert hasattr(qvtoperational_ModuleImport, "kind")
     descriptor = None
-    for klass in qvtoperational::ModuleImport.__mro__:
+    for klass in qvtoperational_ModuleImport.__mro__:
         if "kind" in klass.__dict__:
             descriptor = klass.__dict__["kind"]
             break
@@ -810,58 +796,72 @@ def test_qvtoperational::moduleimport_has_kind():
 
 
 
-def test_qvtoperational::dummyrelation_is_not_abstract():
-    assert not inspect.isabstract(qvtoperational::DummyRelation)
+def test_qvtoperational_dummyrelationdomain_is_not_abstract():
+    assert not inspect.isabstract(qvtoperational_DummyRelationDomain)
 
 
-def test_qvtoperational::dummyrelation_constructor_exists():
-    assert callable(qvtoperational::DummyRelation.__init__)
+def test_qvtoperational_dummyrelationdomain_constructor_exists():
+    assert callable(qvtoperational_DummyRelationDomain.__init__)
 
 
-def test_qvtoperational::dummyrelation_constructor_args():
-    sig = inspect.signature(qvtoperational::DummyRelation.__init__)
+def test_qvtoperational_dummyrelationdomain_constructor_args():
+    sig = inspect.signature(qvtoperational_DummyRelationDomain.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_qvtoperational::property_is_not_abstract():
-    assert not inspect.isabstract(qvtoperational::Property)
+def test_qvtoperational_dummyrelation_is_not_abstract():
+    assert not inspect.isabstract(qvtoperational_DummyRelation)
 
 
-def test_qvtoperational::property_constructor_exists():
-    assert callable(qvtoperational::Property.__init__)
+def test_qvtoperational_dummyrelation_constructor_exists():
+    assert callable(qvtoperational_DummyRelation.__init__)
 
 
-def test_qvtoperational::property_constructor_args():
-    sig = inspect.signature(qvtoperational::Property.__init__)
+def test_qvtoperational_dummyrelation_constructor_args():
+    sig = inspect.signature(qvtoperational_DummyRelation.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_qvtoperational::oclexpression_is_not_abstract():
-    assert not inspect.isabstract(qvtoperational::OCLExpression)
+def test_qvtoperational_property_is_not_abstract():
+    assert not inspect.isabstract(qvtoperational_Property)
 
 
-def test_qvtoperational::oclexpression_constructor_exists():
-    assert callable(qvtoperational::OCLExpression.__init__)
+def test_qvtoperational_property_constructor_exists():
+    assert callable(qvtoperational_Property.__init__)
 
 
-def test_qvtoperational::oclexpression_constructor_args():
-    sig = inspect.signature(qvtoperational::OCLExpression.__init__)
+def test_qvtoperational_property_constructor_args():
+    sig = inspect.signature(qvtoperational_Property.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_qvtoperational::class_is_not_abstract():
-    assert not inspect.isabstract(qvtoperational::Class)
+def test_qvtoperational_oclexpression_is_not_abstract():
+    assert not inspect.isabstract(qvtoperational_OCLExpression)
 
 
-def test_qvtoperational::class_constructor_exists():
-    assert callable(qvtoperational::Class.__init__)
+def test_qvtoperational_oclexpression_constructor_exists():
+    assert callable(qvtoperational_OCLExpression.__init__)
 
 
-def test_qvtoperational::class_constructor_args():
-    sig = inspect.signature(qvtoperational::Class.__init__)
+def test_qvtoperational_oclexpression_constructor_args():
+    sig = inspect.signature(qvtoperational_OCLExpression.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_qvtoperational_class_is_not_abstract():
+    assert not inspect.isabstract(qvtoperational_Class)
+
+
+def test_qvtoperational_class_constructor_exists():
+    assert callable(qvtoperational_Class.__init__)
+
+
+def test_qvtoperational_class_constructor_args():
+    sig = inspect.signature(qvtoperational_Class.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -880,16 +880,16 @@ def test_property_constructor_args():
 
 
 
-def test_qvtoperational::contextualproperty_is_not_abstract():
-    assert not inspect.isabstract(qvtoperational::ContextualProperty)
+def test_qvtoperational_contextualproperty_is_not_abstract():
+    assert not inspect.isabstract(qvtoperational_ContextualProperty)
 
 
-def test_qvtoperational::contextualproperty_constructor_exists():
-    assert callable(qvtoperational::ContextualProperty.__init__)
+def test_qvtoperational_contextualproperty_constructor_exists():
+    assert callable(qvtoperational_ContextualProperty.__init__)
 
 
-def test_qvtoperational::contextualproperty_constructor_args():
-    sig = inspect.signature(qvtoperational::ContextualProperty.__init__)
+def test_qvtoperational_contextualproperty_constructor_args():
+    sig = inspect.signature(qvtoperational_ContextualProperty.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -908,30 +908,30 @@ def test_operationbody_constructor_args():
 
 
 
-def test_qvtoperational::mappingbody_is_not_abstract():
-    assert not inspect.isabstract(qvtoperational::MappingBody)
+def test_qvtoperational_mappingbody_is_not_abstract():
+    assert not inspect.isabstract(qvtoperational_MappingBody)
 
 
-def test_qvtoperational::mappingbody_constructor_exists():
-    assert callable(qvtoperational::MappingBody.__init__)
+def test_qvtoperational_mappingbody_constructor_exists():
+    assert callable(qvtoperational_MappingBody.__init__)
 
 
-def test_qvtoperational::mappingbody_constructor_args():
-    sig = inspect.signature(qvtoperational::MappingBody.__init__)
+def test_qvtoperational_mappingbody_constructor_args():
+    sig = inspect.signature(qvtoperational_MappingBody.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_qvtoperational::constructorbody_is_not_abstract():
-    assert not inspect.isabstract(qvtoperational::ConstructorBody)
+def test_qvtoperational_constructorbody_is_not_abstract():
+    assert not inspect.isabstract(qvtoperational_ConstructorBody)
 
 
-def test_qvtoperational::constructorbody_constructor_exists():
-    assert callable(qvtoperational::ConstructorBody.__init__)
+def test_qvtoperational_constructorbody_constructor_exists():
+    assert callable(qvtoperational_ConstructorBody.__init__)
 
 
-def test_qvtoperational::constructorbody_constructor_args():
-    sig = inspect.signature(qvtoperational::ConstructorBody.__init__)
+def test_qvtoperational_constructorbody_constructor_args():
+    sig = inspect.signature(qvtoperational_ConstructorBody.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -950,37 +950,37 @@ def test_imperativeoperation_constructor_args():
 
 
 
-def test_qvtoperational::entryoperation_is_not_abstract():
-    assert not inspect.isabstract(qvtoperational::EntryOperation)
+def test_qvtoperational_mappingoperation_is_not_abstract():
+    assert not inspect.isabstract(qvtoperational_MappingOperation)
 
 
-def test_qvtoperational::entryoperation_constructor_exists():
-    assert callable(qvtoperational::EntryOperation.__init__)
+def test_qvtoperational_mappingoperation_constructor_exists():
+    assert callable(qvtoperational_MappingOperation.__init__)
 
 
-def test_qvtoperational::entryoperation_constructor_args():
-    sig = inspect.signature(qvtoperational::EntryOperation.__init__)
+def test_qvtoperational_mappingoperation_constructor_args():
+    sig = inspect.signature(qvtoperational_MappingOperation.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_qvtoperational::helper_is_not_abstract():
-    assert not inspect.isabstract(qvtoperational::Helper)
+def test_qvtoperational_helper_is_not_abstract():
+    assert not inspect.isabstract(qvtoperational_Helper)
 
 
-def test_qvtoperational::helper_constructor_exists():
-    assert callable(qvtoperational::Helper.__init__)
+def test_qvtoperational_helper_constructor_exists():
+    assert callable(qvtoperational_Helper.__init__)
 
 
-def test_qvtoperational::helper_constructor_args():
-    sig = inspect.signature(qvtoperational::Helper.__init__)
+def test_qvtoperational_helper_constructor_args():
+    sig = inspect.signature(qvtoperational_Helper.__init__)
     params = list(sig.parameters.keys())
     assert "isQuery" in params, "Missing parameter 'isQuery'"
 
-def test_qvtoperational::helper_has_isQuery():
-    assert hasattr(qvtoperational::Helper, "isQuery")
+def test_qvtoperational_helper_has_isQuery():
+    assert hasattr(qvtoperational_Helper, "isQuery")
     descriptor = None
-    for klass in qvtoperational::Helper.__mro__:
+    for klass in qvtoperational_Helper.__mro__:
         if "isQuery" in klass.__dict__:
             descriptor = klass.__dict__["isQuery"]
             break
@@ -988,47 +988,31 @@ def test_qvtoperational::helper_has_isQuery():
 
 
 
-def test_qvtoperational::mappingoperation_is_not_abstract():
-    assert not inspect.isabstract(qvtoperational::MappingOperation)
+def test_qvtoperational_entryoperation_is_not_abstract():
+    assert not inspect.isabstract(qvtoperational_EntryOperation)
 
 
-def test_qvtoperational::mappingoperation_constructor_exists():
-    assert callable(qvtoperational::MappingOperation.__init__)
+def test_qvtoperational_entryoperation_constructor_exists():
+    assert callable(qvtoperational_EntryOperation.__init__)
 
 
-def test_qvtoperational::mappingoperation_constructor_args():
-    sig = inspect.signature(qvtoperational::MappingOperation.__init__)
+def test_qvtoperational_entryoperation_constructor_args():
+    sig = inspect.signature(qvtoperational_EntryOperation.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_qvtoperational::constructor_is_not_abstract():
-    assert not inspect.isabstract(qvtoperational::Constructor)
+def test_qvtoperational_constructor_is_not_abstract():
+    assert not inspect.isabstract(qvtoperational_Constructor)
 
 
-def test_qvtoperational::constructor_constructor_exists():
-    assert callable(qvtoperational::Constructor.__init__)
+def test_qvtoperational_constructor_constructor_exists():
+    assert callable(qvtoperational_Constructor.__init__)
 
 
-def test_qvtoperational::constructor_constructor_args():
-    sig = inspect.signature(qvtoperational::Constructor.__init__)
+def test_qvtoperational_constructor_constructor_args():
+    sig = inspect.signature(qvtoperational_Constructor.__init__)
     params = list(sig.parameters.keys())
-
-def test_directionkind_exists():
-    # Check that the Enumeration exists
-    assert DirectionKind is not None
-
-def test_directionkind_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in DirectionKind]
-    expected_literals = [
-        "out",
-        "inout",
-        "in_",
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in DirectionKind"
 
 def test_importkind_exists():
     # Check that the Enumeration exists
@@ -1045,6 +1029,22 @@ def test_importkind_has_all_literals():
     for lit_name in expected_literals:
         assert lit_name in enum_literals, f"Literal '' missing in ImportKind"
 
+def test_directionkind_exists():
+    # Check that the Enumeration exists
+    assert DirectionKind is not None
+
+def test_directionkind_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in DirectionKind]
+    expected_literals = [
+        "in_",
+        "out",
+        "inout",
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in DirectionKind"
+
 
 # =============================================================================
 # HYPOTHESIS STRATEGIES
@@ -1057,8 +1057,8 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-qvtoperational::Element_strategy = st.builds(
-    qvtoperational::Element,
+qvtoperational_Element_strategy = st.builds(
+    qvtoperational_Element,
 )
 Parameter_strategy = st.builds(
     Parameter,
@@ -1066,16 +1066,16 @@ Parameter_strategy = st.builds(
 Variable_strategy = st.builds(
     Variable,
 )
-qvtoperational::VarParameter_strategy = st.builds(
-    qvtoperational::VarParameter,
+qvtoperational_VarParameter_strategy = st.builds(
+    qvtoperational_VarParameter,
     kind=
         safe_text
 )
 ResolveExp_strategy = st.builds(
     ResolveExp,
 )
-qvtoperational::ResolveInExp_strategy = st.builds(
-    qvtoperational::ResolveInExp,
+qvtoperational_ResolveInExp_strategy = st.builds(
+    qvtoperational_ResolveInExp,
 )
 CallExp_strategy = st.builds(
     CallExp,
@@ -1086,8 +1086,8 @@ Dummy2_strategy = st.builds(
 Class_strategy = st.builds(
     Class,
 )
-qvtoperational::ModelType_strategy = st.builds(
-    qvtoperational::ModelType,
+qvtoperational_ModelType_strategy = st.builds(
+    qvtoperational_ModelType,
     conformanceKind=
         safe_text
 )
@@ -1103,17 +1103,17 @@ ConstructorBody_strategy = st.builds(
 InstantiationExp_strategy = st.builds(
     InstantiationExp,
 )
-qvtoperational::ObjectExp_strategy = st.builds(
-    qvtoperational::ObjectExp,
+qvtoperational_ObjectExp_strategy = st.builds(
+    qvtoperational_ObjectExp,
 )
 ModelType_strategy = st.builds(
     ModelType,
 )
-qvtoperational::Variable_strategy = st.builds(
-    qvtoperational::Variable,
+qvtoperational_Variable_strategy = st.builds(
+    qvtoperational_Variable,
 )
-qvtoperational::TemplateableElement_strategy = st.builds(
-    qvtoperational::TemplateableElement,
+qvtoperational_TemplateableElement_strategy = st.builds(
+    qvtoperational_TemplateableElement,
 )
 ModuleImport_strategy = st.builds(
     ModuleImport,
@@ -1121,22 +1121,22 @@ ModuleImport_strategy = st.builds(
 EntryOperation_strategy = st.builds(
     EntryOperation,
 )
-qvtoperational::Module_strategy = st.builds(
-    qvtoperational::Module,
+qvtoperational_Module_strategy = st.builds(
+    qvtoperational_Module,
     isBlackbox=
         safe_text
 )
-qvtoperational::Package_strategy = st.builds(
-    qvtoperational::Package,
+qvtoperational_Package_strategy = st.builds(
+    qvtoperational_Package,
 )
 VarParameter_strategy = st.builds(
     VarParameter,
 )
-qvtoperational::MappingParameter_strategy = st.builds(
-    qvtoperational::MappingParameter,
+qvtoperational_ModelParameter_strategy = st.builds(
+    qvtoperational_ModelParameter,
 )
-qvtoperational::ModelParameter_strategy = st.builds(
-    qvtoperational::ModelParameter,
+qvtoperational_MappingParameter_strategy = st.builds(
+    qvtoperational_MappingParameter,
 )
 DummyRelation_strategy = st.builds(
     DummyRelation,
@@ -1147,121 +1147,121 @@ MappingOperation_strategy = st.builds(
 ImperativeCallExp_strategy = st.builds(
     ImperativeCallExp,
 )
-qvtoperational::MappingCallExp_strategy = st.builds(
-    qvtoperational::MappingCallExp,
+qvtoperational_MappingCallExp_strategy = st.builds(
+    qvtoperational_MappingCallExp,
     isStrict=
         safe_text
 )
 Module_strategy = st.builds(
     Module,
 )
-qvtoperational::OperationalTransformation_strategy = st.builds(
-    qvtoperational::OperationalTransformation,
+qvtoperational_OperationalTransformation_strategy = st.builds(
+    qvtoperational_OperationalTransformation,
 )
-qvtoperational::Library_strategy = st.builds(
-    qvtoperational::Library,
+qvtoperational_Library_strategy = st.builds(
+    qvtoperational_Library,
 )
 Operation_strategy = st.builds(
     Operation,
 )
-qvtoperational::ImperativeOperation_strategy = st.builds(
-    qvtoperational::ImperativeOperation,
+qvtoperational_ImperativeOperation_strategy = st.builds(
+    qvtoperational_ImperativeOperation,
     isBlackbox=
         safe_text
 )
 ImperativeExpression_strategy = st.builds(
     ImperativeExpression,
 )
-qvtoperational::ResolveExp_strategy = st.builds(
-    qvtoperational::ResolveExp,
-    isInverse=
+qvtoperational_ResolveExp_strategy = st.builds(
+    qvtoperational_ResolveExp,
+    isDeferred=
         safe_text,
     one=
         safe_text,
-    isDeferred=
+    isInverse=
         safe_text
 )
 OperationCallExp_strategy = st.builds(
     OperationCallExp,
 )
-qvtoperational::ImperativeCallExp_strategy = st.builds(
-    qvtoperational::ImperativeCallExp,
+qvtoperational_ImperativeCallExp_strategy = st.builds(
+    qvtoperational_ImperativeCallExp,
     isVirtual=
         safe_text
 )
 Element_strategy = st.builds(
     Element,
 )
-qvtoperational::DummyRelationDomain_strategy = st.builds(
-    qvtoperational::DummyRelationDomain,
+qvtoperational_DummyRelationalTransformation_strategy = st.builds(
+    qvtoperational_DummyRelationalTransformation,
 )
-qvtoperational::Tag_strategy = st.builds(
-    qvtoperational::Tag,
-    value=
-        safe_text,
+qvtoperational_OperationBody_strategy = st.builds(
+    qvtoperational_OperationBody,
+)
+qvtoperational_Tag_strategy = st.builds(
+    qvtoperational_Tag,
     name=
+        safe_text,
+    value=
         safe_text
 )
-qvtoperational::DummyRelationalTransformation_strategy = st.builds(
-    qvtoperational::DummyRelationalTransformation,
-)
-qvtoperational::OperationBody_strategy = st.builds(
-    qvtoperational::OperationBody,
-)
-qvtoperational::ModuleImport_strategy = st.builds(
-    qvtoperational::ModuleImport,
+qvtoperational_ModuleImport_strategy = st.builds(
+    qvtoperational_ModuleImport,
     kind=
         safe_text
 )
-qvtoperational::DummyRelation_strategy = st.builds(
-    qvtoperational::DummyRelation,
+qvtoperational_DummyRelationDomain_strategy = st.builds(
+    qvtoperational_DummyRelationDomain,
 )
-qvtoperational::Property_strategy = st.builds(
-    qvtoperational::Property,
+qvtoperational_DummyRelation_strategy = st.builds(
+    qvtoperational_DummyRelation,
 )
-qvtoperational::OCLExpression_strategy = st.builds(
-    qvtoperational::OCLExpression,
+qvtoperational_Property_strategy = st.builds(
+    qvtoperational_Property,
 )
-qvtoperational::Class_strategy = st.builds(
-    qvtoperational::Class,
+qvtoperational_OCLExpression_strategy = st.builds(
+    qvtoperational_OCLExpression,
+)
+qvtoperational_Class_strategy = st.builds(
+    qvtoperational_Class,
 )
 Property_strategy = st.builds(
     Property,
 )
-qvtoperational::ContextualProperty_strategy = st.builds(
-    qvtoperational::ContextualProperty,
+qvtoperational_ContextualProperty_strategy = st.builds(
+    qvtoperational_ContextualProperty,
 )
 OperationBody_strategy = st.builds(
     OperationBody,
 )
-qvtoperational::MappingBody_strategy = st.builds(
-    qvtoperational::MappingBody,
+qvtoperational_MappingBody_strategy = st.builds(
+    qvtoperational_MappingBody,
 )
-qvtoperational::ConstructorBody_strategy = st.builds(
-    qvtoperational::ConstructorBody,
+qvtoperational_ConstructorBody_strategy = st.builds(
+    qvtoperational_ConstructorBody,
 )
 ImperativeOperation_strategy = st.builds(
     ImperativeOperation,
 )
-qvtoperational::EntryOperation_strategy = st.builds(
-    qvtoperational::EntryOperation,
+qvtoperational_MappingOperation_strategy = st.builds(
+    qvtoperational_MappingOperation,
 )
-qvtoperational::Helper_strategy = st.builds(
-    qvtoperational::Helper,
+qvtoperational_Helper_strategy = st.builds(
+    qvtoperational_Helper,
     isQuery=
         safe_text
 )
-qvtoperational::MappingOperation_strategy = st.builds(
-    qvtoperational::MappingOperation,
+qvtoperational_EntryOperation_strategy = st.builds(
+    qvtoperational_EntryOperation,
 )
-qvtoperational::Constructor_strategy = st.builds(
-    qvtoperational::Constructor,
+qvtoperational_Constructor_strategy = st.builds(
+    qvtoperational_Constructor,
 )
 
-@given(instance=qvtoperational::Element_strategy)
+@given(instance=qvtoperational_Element_strategy)
 @settings(max_examples=50)
-def test_qvtoperational::element_instantiation(instance):
-    assert isinstance(instance, qvtoperational::Element)
+def test_qvtoperational_element_instantiation(instance):
+    assert isinstance(instance, qvtoperational_Element)
 
 @given(instance=Parameter_strategy)
 @settings(max_examples=50)
@@ -1273,18 +1273,15 @@ def test_parameter_instantiation(instance):
 def test_variable_instantiation(instance):
     assert isinstance(instance, Variable)
 
-@given(instance=qvtoperational::VarParameter_strategy)
+@given(instance=qvtoperational_VarParameter_strategy)
 @settings(max_examples=50)
-def test_qvtoperational::varparameter_instantiation(instance):
-    assert isinstance(instance, qvtoperational::VarParameter)
-
-@given(instance=qvtoperational::VarParameter_strategy)
-def test_qvtoperational::varparameter_kind_type(instance):
-    assert isinstance(instance.kind, str)
+def test_qvtoperational_varparameter_instantiation(instance):
+    assert isinstance(instance, qvtoperational_VarParameter)
 
 
-@given(instance=qvtoperational::VarParameter_strategy)
-def test_qvtoperational::varparameter_kind_setter(instance):
+
+@given(instance=qvtoperational_VarParameter_strategy)
+def test_qvtoperational_varparameter_kind_setter(instance):
     original = instance.kind
     instance.kind = original
     assert instance.kind == original
@@ -1294,10 +1291,10 @@ def test_qvtoperational::varparameter_kind_setter(instance):
 def test_resolveexp_instantiation(instance):
     assert isinstance(instance, ResolveExp)
 
-@given(instance=qvtoperational::ResolveInExp_strategy)
+@given(instance=qvtoperational_ResolveInExp_strategy)
 @settings(max_examples=50)
-def test_qvtoperational::resolveinexp_instantiation(instance):
-    assert isinstance(instance, qvtoperational::ResolveInExp)
+def test_qvtoperational_resolveinexp_instantiation(instance):
+    assert isinstance(instance, qvtoperational_ResolveInExp)
 
 @given(instance=CallExp_strategy)
 @settings(max_examples=50)
@@ -1314,18 +1311,15 @@ def test_dummy2_instantiation(instance):
 def test_class_instantiation(instance):
     assert isinstance(instance, Class)
 
-@given(instance=qvtoperational::ModelType_strategy)
+@given(instance=qvtoperational_ModelType_strategy)
 @settings(max_examples=50)
-def test_qvtoperational::modeltype_instantiation(instance):
-    assert isinstance(instance, qvtoperational::ModelType)
-
-@given(instance=qvtoperational::ModelType_strategy)
-def test_qvtoperational::modeltype_conformanceKind_type(instance):
-    assert isinstance(instance.conformanceKind, str)
+def test_qvtoperational_modeltype_instantiation(instance):
+    assert isinstance(instance, qvtoperational_ModelType)
 
 
-@given(instance=qvtoperational::ModelType_strategy)
-def test_qvtoperational::modeltype_conformanceKind_setter(instance):
+
+@given(instance=qvtoperational_ModelType_strategy)
+def test_qvtoperational_modeltype_conformanceKind_setter(instance):
     original = instance.conformanceKind
     instance.conformanceKind = original
     assert instance.conformanceKind == original
@@ -1350,25 +1344,25 @@ def test_constructorbody_instantiation(instance):
 def test_instantiationexp_instantiation(instance):
     assert isinstance(instance, InstantiationExp)
 
-@given(instance=qvtoperational::ObjectExp_strategy)
+@given(instance=qvtoperational_ObjectExp_strategy)
 @settings(max_examples=50)
-def test_qvtoperational::objectexp_instantiation(instance):
-    assert isinstance(instance, qvtoperational::ObjectExp)
+def test_qvtoperational_objectexp_instantiation(instance):
+    assert isinstance(instance, qvtoperational_ObjectExp)
 
 @given(instance=ModelType_strategy)
 @settings(max_examples=50)
 def test_modeltype_instantiation(instance):
     assert isinstance(instance, ModelType)
 
-@given(instance=qvtoperational::Variable_strategy)
+@given(instance=qvtoperational_Variable_strategy)
 @settings(max_examples=50)
-def test_qvtoperational::variable_instantiation(instance):
-    assert isinstance(instance, qvtoperational::Variable)
+def test_qvtoperational_variable_instantiation(instance):
+    assert isinstance(instance, qvtoperational_Variable)
 
-@given(instance=qvtoperational::TemplateableElement_strategy)
+@given(instance=qvtoperational_TemplateableElement_strategy)
 @settings(max_examples=50)
-def test_qvtoperational::templateableelement_instantiation(instance):
-    assert isinstance(instance, qvtoperational::TemplateableElement)
+def test_qvtoperational_templateableelement_instantiation(instance):
+    assert isinstance(instance, qvtoperational_TemplateableElement)
 
 @given(instance=ModuleImport_strategy)
 @settings(max_examples=50)
@@ -1380,41 +1374,38 @@ def test_moduleimport_instantiation(instance):
 def test_entryoperation_instantiation(instance):
     assert isinstance(instance, EntryOperation)
 
-@given(instance=qvtoperational::Module_strategy)
+@given(instance=qvtoperational_Module_strategy)
 @settings(max_examples=50)
-def test_qvtoperational::module_instantiation(instance):
-    assert isinstance(instance, qvtoperational::Module)
-
-@given(instance=qvtoperational::Module_strategy)
-def test_qvtoperational::module_isBlackbox_type(instance):
-    assert isinstance(instance.isBlackbox, str)
+def test_qvtoperational_module_instantiation(instance):
+    assert isinstance(instance, qvtoperational_Module)
 
 
-@given(instance=qvtoperational::Module_strategy)
-def test_qvtoperational::module_isBlackbox_setter(instance):
+
+@given(instance=qvtoperational_Module_strategy)
+def test_qvtoperational_module_isBlackbox_setter(instance):
     original = instance.isBlackbox
     instance.isBlackbox = original
     assert instance.isBlackbox == original
 
-@given(instance=qvtoperational::Package_strategy)
+@given(instance=qvtoperational_Package_strategy)
 @settings(max_examples=50)
-def test_qvtoperational::package_instantiation(instance):
-    assert isinstance(instance, qvtoperational::Package)
+def test_qvtoperational_package_instantiation(instance):
+    assert isinstance(instance, qvtoperational_Package)
 
 @given(instance=VarParameter_strategy)
 @settings(max_examples=50)
 def test_varparameter_instantiation(instance):
     assert isinstance(instance, VarParameter)
 
-@given(instance=qvtoperational::MappingParameter_strategy)
+@given(instance=qvtoperational_ModelParameter_strategy)
 @settings(max_examples=50)
-def test_qvtoperational::mappingparameter_instantiation(instance):
-    assert isinstance(instance, qvtoperational::MappingParameter)
+def test_qvtoperational_modelparameter_instantiation(instance):
+    assert isinstance(instance, qvtoperational_ModelParameter)
 
-@given(instance=qvtoperational::ModelParameter_strategy)
+@given(instance=qvtoperational_MappingParameter_strategy)
 @settings(max_examples=50)
-def test_qvtoperational::modelparameter_instantiation(instance):
-    assert isinstance(instance, qvtoperational::ModelParameter)
+def test_qvtoperational_mappingparameter_instantiation(instance):
+    assert isinstance(instance, qvtoperational_MappingParameter)
 
 @given(instance=DummyRelation_strategy)
 @settings(max_examples=50)
@@ -1431,18 +1422,15 @@ def test_mappingoperation_instantiation(instance):
 def test_imperativecallexp_instantiation(instance):
     assert isinstance(instance, ImperativeCallExp)
 
-@given(instance=qvtoperational::MappingCallExp_strategy)
+@given(instance=qvtoperational_MappingCallExp_strategy)
 @settings(max_examples=50)
-def test_qvtoperational::mappingcallexp_instantiation(instance):
-    assert isinstance(instance, qvtoperational::MappingCallExp)
-
-@given(instance=qvtoperational::MappingCallExp_strategy)
-def test_qvtoperational::mappingcallexp_isStrict_type(instance):
-    assert isinstance(instance.isStrict, str)
+def test_qvtoperational_mappingcallexp_instantiation(instance):
+    assert isinstance(instance, qvtoperational_MappingCallExp)
 
 
-@given(instance=qvtoperational::MappingCallExp_strategy)
-def test_qvtoperational::mappingcallexp_isStrict_setter(instance):
+
+@given(instance=qvtoperational_MappingCallExp_strategy)
+def test_qvtoperational_mappingcallexp_isStrict_setter(instance):
     original = instance.isStrict
     instance.isStrict = original
     assert instance.isStrict == original
@@ -1452,33 +1440,30 @@ def test_qvtoperational::mappingcallexp_isStrict_setter(instance):
 def test_module_instantiation(instance):
     assert isinstance(instance, Module)
 
-@given(instance=qvtoperational::OperationalTransformation_strategy)
+@given(instance=qvtoperational_OperationalTransformation_strategy)
 @settings(max_examples=50)
-def test_qvtoperational::operationaltransformation_instantiation(instance):
-    assert isinstance(instance, qvtoperational::OperationalTransformation)
+def test_qvtoperational_operationaltransformation_instantiation(instance):
+    assert isinstance(instance, qvtoperational_OperationalTransformation)
 
-@given(instance=qvtoperational::Library_strategy)
+@given(instance=qvtoperational_Library_strategy)
 @settings(max_examples=50)
-def test_qvtoperational::library_instantiation(instance):
-    assert isinstance(instance, qvtoperational::Library)
+def test_qvtoperational_library_instantiation(instance):
+    assert isinstance(instance, qvtoperational_Library)
 
 @given(instance=Operation_strategy)
 @settings(max_examples=50)
 def test_operation_instantiation(instance):
     assert isinstance(instance, Operation)
 
-@given(instance=qvtoperational::ImperativeOperation_strategy)
+@given(instance=qvtoperational_ImperativeOperation_strategy)
 @settings(max_examples=50)
-def test_qvtoperational::imperativeoperation_instantiation(instance):
-    assert isinstance(instance, qvtoperational::ImperativeOperation)
-
-@given(instance=qvtoperational::ImperativeOperation_strategy)
-def test_qvtoperational::imperativeoperation_isBlackbox_type(instance):
-    assert isinstance(instance.isBlackbox, str)
+def test_qvtoperational_imperativeoperation_instantiation(instance):
+    assert isinstance(instance, qvtoperational_ImperativeOperation)
 
 
-@given(instance=qvtoperational::ImperativeOperation_strategy)
-def test_qvtoperational::imperativeoperation_isBlackbox_setter(instance):
+
+@given(instance=qvtoperational_ImperativeOperation_strategy)
+def test_qvtoperational_imperativeoperation_isBlackbox_setter(instance):
     original = instance.isBlackbox
     instance.isBlackbox = original
     assert instance.isBlackbox == original
@@ -1488,61 +1473,49 @@ def test_qvtoperational::imperativeoperation_isBlackbox_setter(instance):
 def test_imperativeexpression_instantiation(instance):
     assert isinstance(instance, ImperativeExpression)
 
-@given(instance=qvtoperational::ResolveExp_strategy)
+@given(instance=qvtoperational_ResolveExp_strategy)
 @settings(max_examples=50)
-def test_qvtoperational::resolveexp_instantiation(instance):
-    assert isinstance(instance, qvtoperational::ResolveExp)
-
-@given(instance=qvtoperational::ResolveExp_strategy)
-def test_qvtoperational::resolveexp_isInverse_type(instance):
-    assert isinstance(instance.isInverse, str)
+def test_qvtoperational_resolveexp_instantiation(instance):
+    assert isinstance(instance, qvtoperational_ResolveExp)
 
 
-@given(instance=qvtoperational::ResolveExp_strategy)
-def test_qvtoperational::resolveexp_isInverse_setter(instance):
-    original = instance.isInverse
-    instance.isInverse = original
-    assert instance.isInverse == original
 
-@given(instance=qvtoperational::ResolveExp_strategy)
-def test_qvtoperational::resolveexp_one_type(instance):
-    assert isinstance(instance.one, str)
+@given(instance=qvtoperational_ResolveExp_strategy)
+def test_qvtoperational_resolveexp_isDeferred_setter(instance):
+    original = instance.isDeferred
+    instance.isDeferred = original
+    assert instance.isDeferred == original
 
 
-@given(instance=qvtoperational::ResolveExp_strategy)
-def test_qvtoperational::resolveexp_one_setter(instance):
+
+@given(instance=qvtoperational_ResolveExp_strategy)
+def test_qvtoperational_resolveexp_one_setter(instance):
     original = instance.one
     instance.one = original
     assert instance.one == original
 
-@given(instance=qvtoperational::ResolveExp_strategy)
-def test_qvtoperational::resolveexp_isDeferred_type(instance):
-    assert isinstance(instance.isDeferred, str)
 
 
-@given(instance=qvtoperational::ResolveExp_strategy)
-def test_qvtoperational::resolveexp_isDeferred_setter(instance):
-    original = instance.isDeferred
-    instance.isDeferred = original
-    assert instance.isDeferred == original
+@given(instance=qvtoperational_ResolveExp_strategy)
+def test_qvtoperational_resolveexp_isInverse_setter(instance):
+    original = instance.isInverse
+    instance.isInverse = original
+    assert instance.isInverse == original
 
 @given(instance=OperationCallExp_strategy)
 @settings(max_examples=50)
 def test_operationcallexp_instantiation(instance):
     assert isinstance(instance, OperationCallExp)
 
-@given(instance=qvtoperational::ImperativeCallExp_strategy)
+@given(instance=qvtoperational_ImperativeCallExp_strategy)
 @settings(max_examples=50)
-def test_qvtoperational::imperativecallexp_instantiation(instance):
-    assert isinstance(instance, qvtoperational::ImperativeCallExp)
-
-@given(instance=qvtoperational::ImperativeCallExp_strategy)
-def test_qvtoperational::imperativecallexp_isVirtual_type(instance):
-    assert isinstance(instance.isVirtual, str)
+def test_qvtoperational_imperativecallexp_instantiation(instance):
+    assert isinstance(instance, qvtoperational_ImperativeCallExp)
 
 
-@given(instance=qvtoperational::ImperativeCallExp_strategy)
-def test_qvtoperational::imperativecallexp_isVirtual_setter(instance):
+
+@given(instance=qvtoperational_ImperativeCallExp_strategy)
+def test_qvtoperational_imperativecallexp_isVirtual_setter(instance):
     original = instance.isVirtual
     instance.isVirtual = original
     assert instance.isVirtual == original
@@ -1552,141 +1525,129 @@ def test_qvtoperational::imperativecallexp_isVirtual_setter(instance):
 def test_element_instantiation(instance):
     assert isinstance(instance, Element)
 
-@given(instance=qvtoperational::DummyRelationDomain_strategy)
+@given(instance=qvtoperational_DummyRelationalTransformation_strategy)
 @settings(max_examples=50)
-def test_qvtoperational::dummyrelationdomain_instantiation(instance):
-    assert isinstance(instance, qvtoperational::DummyRelationDomain)
+def test_qvtoperational_dummyrelationaltransformation_instantiation(instance):
+    assert isinstance(instance, qvtoperational_DummyRelationalTransformation)
 
-@given(instance=qvtoperational::Tag_strategy)
+@given(instance=qvtoperational_OperationBody_strategy)
 @settings(max_examples=50)
-def test_qvtoperational::tag_instantiation(instance):
-    assert isinstance(instance, qvtoperational::Tag)
+def test_qvtoperational_operationbody_instantiation(instance):
+    assert isinstance(instance, qvtoperational_OperationBody)
 
-@given(instance=qvtoperational::Tag_strategy)
-def test_qvtoperational::tag_value_type(instance):
-    assert isinstance(instance.value, str)
-
-
-@given(instance=qvtoperational::Tag_strategy)
-def test_qvtoperational::tag_value_setter(instance):
-    original = instance.value
-    instance.value = original
-    assert instance.value == original
-
-@given(instance=qvtoperational::Tag_strategy)
-def test_qvtoperational::tag_name_type(instance):
-    assert isinstance(instance.name, str)
+@given(instance=qvtoperational_Tag_strategy)
+@settings(max_examples=50)
+def test_qvtoperational_tag_instantiation(instance):
+    assert isinstance(instance, qvtoperational_Tag)
 
 
-@given(instance=qvtoperational::Tag_strategy)
-def test_qvtoperational::tag_name_setter(instance):
+
+@given(instance=qvtoperational_Tag_strategy)
+def test_qvtoperational_tag_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=qvtoperational::DummyRelationalTransformation_strategy)
+
+
+@given(instance=qvtoperational_Tag_strategy)
+def test_qvtoperational_tag_value_setter(instance):
+    original = instance.value
+    instance.value = original
+    assert instance.value == original
+
+@given(instance=qvtoperational_ModuleImport_strategy)
 @settings(max_examples=50)
-def test_qvtoperational::dummyrelationaltransformation_instantiation(instance):
-    assert isinstance(instance, qvtoperational::DummyRelationalTransformation)
-
-@given(instance=qvtoperational::OperationBody_strategy)
-@settings(max_examples=50)
-def test_qvtoperational::operationbody_instantiation(instance):
-    assert isinstance(instance, qvtoperational::OperationBody)
-
-@given(instance=qvtoperational::ModuleImport_strategy)
-@settings(max_examples=50)
-def test_qvtoperational::moduleimport_instantiation(instance):
-    assert isinstance(instance, qvtoperational::ModuleImport)
-
-@given(instance=qvtoperational::ModuleImport_strategy)
-def test_qvtoperational::moduleimport_kind_type(instance):
-    assert isinstance(instance.kind, str)
+def test_qvtoperational_moduleimport_instantiation(instance):
+    assert isinstance(instance, qvtoperational_ModuleImport)
 
 
-@given(instance=qvtoperational::ModuleImport_strategy)
-def test_qvtoperational::moduleimport_kind_setter(instance):
+
+@given(instance=qvtoperational_ModuleImport_strategy)
+def test_qvtoperational_moduleimport_kind_setter(instance):
     original = instance.kind
     instance.kind = original
     assert instance.kind == original
 
-@given(instance=qvtoperational::DummyRelation_strategy)
+@given(instance=qvtoperational_DummyRelationDomain_strategy)
 @settings(max_examples=50)
-def test_qvtoperational::dummyrelation_instantiation(instance):
-    assert isinstance(instance, qvtoperational::DummyRelation)
+def test_qvtoperational_dummyrelationdomain_instantiation(instance):
+    assert isinstance(instance, qvtoperational_DummyRelationDomain)
 
-@given(instance=qvtoperational::Property_strategy)
+@given(instance=qvtoperational_DummyRelation_strategy)
 @settings(max_examples=50)
-def test_qvtoperational::property_instantiation(instance):
-    assert isinstance(instance, qvtoperational::Property)
+def test_qvtoperational_dummyrelation_instantiation(instance):
+    assert isinstance(instance, qvtoperational_DummyRelation)
 
-@given(instance=qvtoperational::OCLExpression_strategy)
+@given(instance=qvtoperational_Property_strategy)
 @settings(max_examples=50)
-def test_qvtoperational::oclexpression_instantiation(instance):
-    assert isinstance(instance, qvtoperational::OCLExpression)
+def test_qvtoperational_property_instantiation(instance):
+    assert isinstance(instance, qvtoperational_Property)
 
-@given(instance=qvtoperational::Class_strategy)
+@given(instance=qvtoperational_OCLExpression_strategy)
 @settings(max_examples=50)
-def test_qvtoperational::class_instantiation(instance):
-    assert isinstance(instance, qvtoperational::Class)
+def test_qvtoperational_oclexpression_instantiation(instance):
+    assert isinstance(instance, qvtoperational_OCLExpression)
+
+@given(instance=qvtoperational_Class_strategy)
+@settings(max_examples=50)
+def test_qvtoperational_class_instantiation(instance):
+    assert isinstance(instance, qvtoperational_Class)
 
 @given(instance=Property_strategy)
 @settings(max_examples=50)
 def test_property_instantiation(instance):
     assert isinstance(instance, Property)
 
-@given(instance=qvtoperational::ContextualProperty_strategy)
+@given(instance=qvtoperational_ContextualProperty_strategy)
 @settings(max_examples=50)
-def test_qvtoperational::contextualproperty_instantiation(instance):
-    assert isinstance(instance, qvtoperational::ContextualProperty)
+def test_qvtoperational_contextualproperty_instantiation(instance):
+    assert isinstance(instance, qvtoperational_ContextualProperty)
 
 @given(instance=OperationBody_strategy)
 @settings(max_examples=50)
 def test_operationbody_instantiation(instance):
     assert isinstance(instance, OperationBody)
 
-@given(instance=qvtoperational::MappingBody_strategy)
+@given(instance=qvtoperational_MappingBody_strategy)
 @settings(max_examples=50)
-def test_qvtoperational::mappingbody_instantiation(instance):
-    assert isinstance(instance, qvtoperational::MappingBody)
+def test_qvtoperational_mappingbody_instantiation(instance):
+    assert isinstance(instance, qvtoperational_MappingBody)
 
-@given(instance=qvtoperational::ConstructorBody_strategy)
+@given(instance=qvtoperational_ConstructorBody_strategy)
 @settings(max_examples=50)
-def test_qvtoperational::constructorbody_instantiation(instance):
-    assert isinstance(instance, qvtoperational::ConstructorBody)
+def test_qvtoperational_constructorbody_instantiation(instance):
+    assert isinstance(instance, qvtoperational_ConstructorBody)
 
 @given(instance=ImperativeOperation_strategy)
 @settings(max_examples=50)
 def test_imperativeoperation_instantiation(instance):
     assert isinstance(instance, ImperativeOperation)
 
-@given(instance=qvtoperational::EntryOperation_strategy)
+@given(instance=qvtoperational_MappingOperation_strategy)
 @settings(max_examples=50)
-def test_qvtoperational::entryoperation_instantiation(instance):
-    assert isinstance(instance, qvtoperational::EntryOperation)
+def test_qvtoperational_mappingoperation_instantiation(instance):
+    assert isinstance(instance, qvtoperational_MappingOperation)
 
-@given(instance=qvtoperational::Helper_strategy)
+@given(instance=qvtoperational_Helper_strategy)
 @settings(max_examples=50)
-def test_qvtoperational::helper_instantiation(instance):
-    assert isinstance(instance, qvtoperational::Helper)
-
-@given(instance=qvtoperational::Helper_strategy)
-def test_qvtoperational::helper_isQuery_type(instance):
-    assert isinstance(instance.isQuery, str)
+def test_qvtoperational_helper_instantiation(instance):
+    assert isinstance(instance, qvtoperational_Helper)
 
 
-@given(instance=qvtoperational::Helper_strategy)
-def test_qvtoperational::helper_isQuery_setter(instance):
+
+@given(instance=qvtoperational_Helper_strategy)
+def test_qvtoperational_helper_isQuery_setter(instance):
     original = instance.isQuery
     instance.isQuery = original
     assert instance.isQuery == original
 
-@given(instance=qvtoperational::MappingOperation_strategy)
+@given(instance=qvtoperational_EntryOperation_strategy)
 @settings(max_examples=50)
-def test_qvtoperational::mappingoperation_instantiation(instance):
-    assert isinstance(instance, qvtoperational::MappingOperation)
+def test_qvtoperational_entryoperation_instantiation(instance):
+    assert isinstance(instance, qvtoperational_EntryOperation)
 
-@given(instance=qvtoperational::Constructor_strategy)
+@given(instance=qvtoperational_Constructor_strategy)
 @settings(max_examples=50)
-def test_qvtoperational::constructor_instantiation(instance):
-    assert isinstance(instance, qvtoperational::Constructor)
+def test_qvtoperational_constructor_instantiation(instance):
+    assert isinstance(instance, qvtoperational_Constructor)

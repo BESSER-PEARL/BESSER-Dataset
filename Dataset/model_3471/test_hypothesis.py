@@ -3,55 +3,31 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    featureDiagram::FeatureDiagram,
+from python_code import (
     Constraint,
-    featureDiagram::Mutex,
-    featureDiagram::Require,
-    featureDiagram::Operator,
-    featureDiagram::ConstraintEdge,
+    featureDiagram_Mutex,
+    featureDiagram_Require,
+    featureDiagram_Operator,
+    featureDiagram_ConstraintEdge,
     Operator,
-    featureDiagram::And,
-    featureDiagram::Or,
-    featureDiagram::Xor,
-    featureDiagram::Card,
-    featureDiagram::Opt,
-    featureDiagram::Constraint,
+    featureDiagram_Or,
+    featureDiagram_And,
+    featureDiagram_Xor,
+    featureDiagram_Card,
+    featureDiagram_Opt,
+    featureDiagram_Constraint,
     Feature,
-    featureDiagram::PrimitiveFeature,
-    featureDiagram::Model,
-    featureDiagram::Feature,
+    featureDiagram_PrimitiveFeature,
+    featureDiagram_Model,
+    featureDiagram_Feature,
+    featureDiagram_FeatureDiagram,
 )
 
 # =============================================================================
 # SECTION 1 — STRUCTURAL TESTS
 # =============================================================================
-
-
-
-def test_featurediagram::featurediagram_is_not_abstract():
-    assert not inspect.isabstract(featureDiagram::FeatureDiagram)
-
-
-def test_featurediagram::featurediagram_constructor_exists():
-    assert callable(featureDiagram::FeatureDiagram.__init__)
-
-
-def test_featurediagram::featurediagram_constructor_args():
-    sig = inspect.signature(featureDiagram::FeatureDiagram.__init__)
-    params = list(sig.parameters.keys())
-    assert "graphTypeTree" in params, "Missing parameter 'graphTypeTree'"
-
-def test_featurediagram::featurediagram_has_graphTypeTree():
-    assert hasattr(featureDiagram::FeatureDiagram, "graphTypeTree")
-    descriptor = None
-    for klass in featureDiagram::FeatureDiagram.__mro__:
-        if "graphTypeTree" in klass.__dict__:
-            descriptor = klass.__dict__["graphTypeTree"]
-            break
-    assert isinstance(descriptor, property)
 
 
 
@@ -69,58 +45,58 @@ def test_constraint_constructor_args():
 
 
 
-def test_featurediagram::mutex_is_not_abstract():
-    assert not inspect.isabstract(featureDiagram::Mutex)
+def test_featurediagram_mutex_is_not_abstract():
+    assert not inspect.isabstract(featureDiagram_Mutex)
 
 
-def test_featurediagram::mutex_constructor_exists():
-    assert callable(featureDiagram::Mutex.__init__)
+def test_featurediagram_mutex_constructor_exists():
+    assert callable(featureDiagram_Mutex.__init__)
 
 
-def test_featurediagram::mutex_constructor_args():
-    sig = inspect.signature(featureDiagram::Mutex.__init__)
+def test_featurediagram_mutex_constructor_args():
+    sig = inspect.signature(featureDiagram_Mutex.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_featurediagram::require_is_not_abstract():
-    assert not inspect.isabstract(featureDiagram::Require)
+def test_featurediagram_require_is_not_abstract():
+    assert not inspect.isabstract(featureDiagram_Require)
 
 
-def test_featurediagram::require_constructor_exists():
-    assert callable(featureDiagram::Require.__init__)
+def test_featurediagram_require_constructor_exists():
+    assert callable(featureDiagram_Require.__init__)
 
 
-def test_featurediagram::require_constructor_args():
-    sig = inspect.signature(featureDiagram::Require.__init__)
+def test_featurediagram_require_constructor_args():
+    sig = inspect.signature(featureDiagram_Require.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_featurediagram::operator_is_not_abstract():
-    assert not inspect.isabstract(featureDiagram::Operator)
+def test_featurediagram_operator_is_not_abstract():
+    assert not inspect.isabstract(featureDiagram_Operator)
 
 
-def test_featurediagram::operator_constructor_exists():
-    assert callable(featureDiagram::Operator.__init__)
+def test_featurediagram_operator_constructor_exists():
+    assert callable(featureDiagram_Operator.__init__)
 
 
-def test_featurediagram::operator_constructor_args():
-    sig = inspect.signature(featureDiagram::Operator.__init__)
+def test_featurediagram_operator_constructor_args():
+    sig = inspect.signature(featureDiagram_Operator.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_featurediagram::constraintedge_is_not_abstract():
-    assert not inspect.isabstract(featureDiagram::ConstraintEdge)
+def test_featurediagram_constraintedge_is_not_abstract():
+    assert not inspect.isabstract(featureDiagram_ConstraintEdge)
 
 
-def test_featurediagram::constraintedge_constructor_exists():
-    assert callable(featureDiagram::ConstraintEdge.__init__)
+def test_featurediagram_constraintedge_constructor_exists():
+    assert callable(featureDiagram_ConstraintEdge.__init__)
 
 
-def test_featurediagram::constraintedge_constructor_args():
-    sig = inspect.signature(featureDiagram::ConstraintEdge.__init__)
+def test_featurediagram_constraintedge_constructor_args():
+    sig = inspect.signature(featureDiagram_ConstraintEdge.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -139,86 +115,86 @@ def test_operator_constructor_args():
 
 
 
-def test_featurediagram::and_is_not_abstract():
-    assert not inspect.isabstract(featureDiagram::And)
+def test_featurediagram_or_is_not_abstract():
+    assert not inspect.isabstract(featureDiagram_Or)
 
 
-def test_featurediagram::and_constructor_exists():
-    assert callable(featureDiagram::And.__init__)
+def test_featurediagram_or_constructor_exists():
+    assert callable(featureDiagram_Or.__init__)
 
 
-def test_featurediagram::and_constructor_args():
-    sig = inspect.signature(featureDiagram::And.__init__)
+def test_featurediagram_or_constructor_args():
+    sig = inspect.signature(featureDiagram_Or.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_featurediagram::or_is_not_abstract():
-    assert not inspect.isabstract(featureDiagram::Or)
+def test_featurediagram_and_is_not_abstract():
+    assert not inspect.isabstract(featureDiagram_And)
 
 
-def test_featurediagram::or_constructor_exists():
-    assert callable(featureDiagram::Or.__init__)
+def test_featurediagram_and_constructor_exists():
+    assert callable(featureDiagram_And.__init__)
 
 
-def test_featurediagram::or_constructor_args():
-    sig = inspect.signature(featureDiagram::Or.__init__)
+def test_featurediagram_and_constructor_args():
+    sig = inspect.signature(featureDiagram_And.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_featurediagram::xor_is_not_abstract():
-    assert not inspect.isabstract(featureDiagram::Xor)
+def test_featurediagram_xor_is_not_abstract():
+    assert not inspect.isabstract(featureDiagram_Xor)
 
 
-def test_featurediagram::xor_constructor_exists():
-    assert callable(featureDiagram::Xor.__init__)
+def test_featurediagram_xor_constructor_exists():
+    assert callable(featureDiagram_Xor.__init__)
 
 
-def test_featurediagram::xor_constructor_args():
-    sig = inspect.signature(featureDiagram::Xor.__init__)
+def test_featurediagram_xor_constructor_args():
+    sig = inspect.signature(featureDiagram_Xor.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_featurediagram::card_is_not_abstract():
-    assert not inspect.isabstract(featureDiagram::Card)
+def test_featurediagram_card_is_not_abstract():
+    assert not inspect.isabstract(featureDiagram_Card)
 
 
-def test_featurediagram::card_constructor_exists():
-    assert callable(featureDiagram::Card.__init__)
+def test_featurediagram_card_constructor_exists():
+    assert callable(featureDiagram_Card.__init__)
 
 
-def test_featurediagram::card_constructor_args():
-    sig = inspect.signature(featureDiagram::Card.__init__)
+def test_featurediagram_card_constructor_args():
+    sig = inspect.signature(featureDiagram_Card.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_featurediagram::opt_is_not_abstract():
-    assert not inspect.isabstract(featureDiagram::Opt)
+def test_featurediagram_opt_is_not_abstract():
+    assert not inspect.isabstract(featureDiagram_Opt)
 
 
-def test_featurediagram::opt_constructor_exists():
-    assert callable(featureDiagram::Opt.__init__)
+def test_featurediagram_opt_constructor_exists():
+    assert callable(featureDiagram_Opt.__init__)
 
 
-def test_featurediagram::opt_constructor_args():
-    sig = inspect.signature(featureDiagram::Opt.__init__)
+def test_featurediagram_opt_constructor_args():
+    sig = inspect.signature(featureDiagram_Opt.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_featurediagram::constraint_is_not_abstract():
-    assert not inspect.isabstract(featureDiagram::Constraint)
+def test_featurediagram_constraint_is_not_abstract():
+    assert not inspect.isabstract(featureDiagram_Constraint)
 
 
-def test_featurediagram::constraint_constructor_exists():
-    assert callable(featureDiagram::Constraint.__init__)
+def test_featurediagram_constraint_constructor_exists():
+    assert callable(featureDiagram_Constraint.__init__)
 
 
-def test_featurediagram::constraint_constructor_args():
-    sig = inspect.signature(featureDiagram::Constraint.__init__)
+def test_featurediagram_constraint_constructor_args():
+    sig = inspect.signature(featureDiagram_Constraint.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -237,37 +213,37 @@ def test_feature_constructor_args():
 
 
 
-def test_featurediagram::primitivefeature_is_not_abstract():
-    assert not inspect.isabstract(featureDiagram::PrimitiveFeature)
+def test_featurediagram_primitivefeature_is_not_abstract():
+    assert not inspect.isabstract(featureDiagram_PrimitiveFeature)
 
 
-def test_featurediagram::primitivefeature_constructor_exists():
-    assert callable(featureDiagram::PrimitiveFeature.__init__)
+def test_featurediagram_primitivefeature_constructor_exists():
+    assert callable(featureDiagram_PrimitiveFeature.__init__)
 
 
-def test_featurediagram::primitivefeature_constructor_args():
-    sig = inspect.signature(featureDiagram::PrimitiveFeature.__init__)
+def test_featurediagram_primitivefeature_constructor_args():
+    sig = inspect.signature(featureDiagram_PrimitiveFeature.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_featurediagram::model_is_not_abstract():
-    assert not inspect.isabstract(featureDiagram::Model)
+def test_featurediagram_model_is_not_abstract():
+    assert not inspect.isabstract(featureDiagram_Model)
 
 
-def test_featurediagram::model_constructor_exists():
-    assert callable(featureDiagram::Model.__init__)
+def test_featurediagram_model_constructor_exists():
+    assert callable(featureDiagram_Model.__init__)
 
 
-def test_featurediagram::model_constructor_args():
-    sig = inspect.signature(featureDiagram::Model.__init__)
+def test_featurediagram_model_constructor_args():
+    sig = inspect.signature(featureDiagram_Model.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_featurediagram::model_has_name():
-    assert hasattr(featureDiagram::Model, "name")
+def test_featurediagram_model_has_name():
+    assert hasattr(featureDiagram_Model, "name")
     descriptor = None
-    for klass in featureDiagram::Model.__mro__:
+    for klass in featureDiagram_Model.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -275,45 +251,69 @@ def test_featurediagram::model_has_name():
 
 
 
-def test_featurediagram::feature_is_not_abstract():
-    assert not inspect.isabstract(featureDiagram::Feature)
+def test_featurediagram_feature_is_not_abstract():
+    assert not inspect.isabstract(featureDiagram_Feature)
 
 
-def test_featurediagram::feature_constructor_exists():
-    assert callable(featureDiagram::Feature.__init__)
+def test_featurediagram_feature_constructor_exists():
+    assert callable(featureDiagram_Feature.__init__)
 
 
-def test_featurediagram::feature_constructor_args():
-    sig = inspect.signature(featureDiagram::Feature.__init__)
+def test_featurediagram_feature_constructor_args():
+    sig = inspect.signature(featureDiagram_Feature.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
     assert "selected" in params, "Missing parameter 'selected'"
     assert "optional" in params, "Missing parameter 'optional'"
 
-def test_featurediagram::feature_has_name():
-    assert hasattr(featureDiagram::Feature, "name")
+def test_featurediagram_feature_has_name():
+    assert hasattr(featureDiagram_Feature, "name")
     descriptor = None
-    for klass in featureDiagram::Feature.__mro__:
+    for klass in featureDiagram_Feature.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
-def test_featurediagram::feature_has_selected():
-    assert hasattr(featureDiagram::Feature, "selected")
+def test_featurediagram_feature_has_selected():
+    assert hasattr(featureDiagram_Feature, "selected")
     descriptor = None
-    for klass in featureDiagram::Feature.__mro__:
+    for klass in featureDiagram_Feature.__mro__:
         if "selected" in klass.__dict__:
             descriptor = klass.__dict__["selected"]
             break
     assert isinstance(descriptor, property)
 
-def test_featurediagram::feature_has_optional():
-    assert hasattr(featureDiagram::Feature, "optional")
+def test_featurediagram_feature_has_optional():
+    assert hasattr(featureDiagram_Feature, "optional")
     descriptor = None
-    for klass in featureDiagram::Feature.__mro__:
+    for klass in featureDiagram_Feature.__mro__:
         if "optional" in klass.__dict__:
             descriptor = klass.__dict__["optional"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_featurediagram_featurediagram_is_not_abstract():
+    assert not inspect.isabstract(featureDiagram_FeatureDiagram)
+
+
+def test_featurediagram_featurediagram_constructor_exists():
+    assert callable(featureDiagram_FeatureDiagram.__init__)
+
+
+def test_featurediagram_featurediagram_constructor_args():
+    sig = inspect.signature(featureDiagram_FeatureDiagram.__init__)
+    params = list(sig.parameters.keys())
+    assert "graphTypeTree" in params, "Missing parameter 'graphTypeTree'"
+
+def test_featurediagram_featurediagram_has_graphTypeTree():
+    assert hasattr(featureDiagram_FeatureDiagram, "graphTypeTree")
+    descriptor = None
+    for klass in featureDiagram_FeatureDiagram.__mro__:
+        if "graphTypeTree" in klass.__dict__:
+            descriptor = klass.__dict__["graphTypeTree"]
             break
     assert isinstance(descriptor, property)
 
@@ -329,60 +329,55 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-featureDiagram::FeatureDiagram_strategy = st.builds(
-    featureDiagram::FeatureDiagram,
-    graphTypeTree=
-        safe_text
-)
 Constraint_strategy = st.builds(
     Constraint,
 )
-featureDiagram::Mutex_strategy = st.builds(
-    featureDiagram::Mutex,
+featureDiagram_Mutex_strategy = st.builds(
+    featureDiagram_Mutex,
 )
-featureDiagram::Require_strategy = st.builds(
-    featureDiagram::Require,
+featureDiagram_Require_strategy = st.builds(
+    featureDiagram_Require,
 )
-featureDiagram::Operator_strategy = st.builds(
-    featureDiagram::Operator,
+featureDiagram_Operator_strategy = st.builds(
+    featureDiagram_Operator,
 )
-featureDiagram::ConstraintEdge_strategy = st.builds(
-    featureDiagram::ConstraintEdge,
+featureDiagram_ConstraintEdge_strategy = st.builds(
+    featureDiagram_ConstraintEdge,
 )
 Operator_strategy = st.builds(
     Operator,
 )
-featureDiagram::And_strategy = st.builds(
-    featureDiagram::And,
+featureDiagram_Or_strategy = st.builds(
+    featureDiagram_Or,
 )
-featureDiagram::Or_strategy = st.builds(
-    featureDiagram::Or,
+featureDiagram_And_strategy = st.builds(
+    featureDiagram_And,
 )
-featureDiagram::Xor_strategy = st.builds(
-    featureDiagram::Xor,
+featureDiagram_Xor_strategy = st.builds(
+    featureDiagram_Xor,
 )
-featureDiagram::Card_strategy = st.builds(
-    featureDiagram::Card,
+featureDiagram_Card_strategy = st.builds(
+    featureDiagram_Card,
 )
-featureDiagram::Opt_strategy = st.builds(
-    featureDiagram::Opt,
+featureDiagram_Opt_strategy = st.builds(
+    featureDiagram_Opt,
 )
-featureDiagram::Constraint_strategy = st.builds(
-    featureDiagram::Constraint,
+featureDiagram_Constraint_strategy = st.builds(
+    featureDiagram_Constraint,
 )
 Feature_strategy = st.builds(
     Feature,
 )
-featureDiagram::PrimitiveFeature_strategy = st.builds(
-    featureDiagram::PrimitiveFeature,
+featureDiagram_PrimitiveFeature_strategy = st.builds(
+    featureDiagram_PrimitiveFeature,
 )
-featureDiagram::Model_strategy = st.builds(
-    featureDiagram::Model,
+featureDiagram_Model_strategy = st.builds(
+    featureDiagram_Model,
     name=
         safe_text
 )
-featureDiagram::Feature_strategy = st.builds(
-    featureDiagram::Feature,
+featureDiagram_Feature_strategy = st.builds(
+    featureDiagram_Feature,
     name=
         safe_text,
     selected=
@@ -390,143 +385,133 @@ featureDiagram::Feature_strategy = st.builds(
     optional=
         safe_text
 )
-
-@given(instance=featureDiagram::FeatureDiagram_strategy)
-@settings(max_examples=50)
-def test_featurediagram::featurediagram_instantiation(instance):
-    assert isinstance(instance, featureDiagram::FeatureDiagram)
-
-@given(instance=featureDiagram::FeatureDiagram_strategy)
-def test_featurediagram::featurediagram_graphTypeTree_type(instance):
-    assert isinstance(instance.graphTypeTree, str)
-
-
-@given(instance=featureDiagram::FeatureDiagram_strategy)
-def test_featurediagram::featurediagram_graphTypeTree_setter(instance):
-    original = instance.graphTypeTree
-    instance.graphTypeTree = original
-    assert instance.graphTypeTree == original
+featureDiagram_FeatureDiagram_strategy = st.builds(
+    featureDiagram_FeatureDiagram,
+    graphTypeTree=
+        safe_text
+)
 
 @given(instance=Constraint_strategy)
 @settings(max_examples=50)
 def test_constraint_instantiation(instance):
     assert isinstance(instance, Constraint)
 
-@given(instance=featureDiagram::Mutex_strategy)
+@given(instance=featureDiagram_Mutex_strategy)
 @settings(max_examples=50)
-def test_featurediagram::mutex_instantiation(instance):
-    assert isinstance(instance, featureDiagram::Mutex)
+def test_featurediagram_mutex_instantiation(instance):
+    assert isinstance(instance, featureDiagram_Mutex)
 
-@given(instance=featureDiagram::Require_strategy)
+@given(instance=featureDiagram_Require_strategy)
 @settings(max_examples=50)
-def test_featurediagram::require_instantiation(instance):
-    assert isinstance(instance, featureDiagram::Require)
+def test_featurediagram_require_instantiation(instance):
+    assert isinstance(instance, featureDiagram_Require)
 
-@given(instance=featureDiagram::Operator_strategy)
+@given(instance=featureDiagram_Operator_strategy)
 @settings(max_examples=50)
-def test_featurediagram::operator_instantiation(instance):
-    assert isinstance(instance, featureDiagram::Operator)
+def test_featurediagram_operator_instantiation(instance):
+    assert isinstance(instance, featureDiagram_Operator)
 
-@given(instance=featureDiagram::ConstraintEdge_strategy)
+@given(instance=featureDiagram_ConstraintEdge_strategy)
 @settings(max_examples=50)
-def test_featurediagram::constraintedge_instantiation(instance):
-    assert isinstance(instance, featureDiagram::ConstraintEdge)
+def test_featurediagram_constraintedge_instantiation(instance):
+    assert isinstance(instance, featureDiagram_ConstraintEdge)
 
 @given(instance=Operator_strategy)
 @settings(max_examples=50)
 def test_operator_instantiation(instance):
     assert isinstance(instance, Operator)
 
-@given(instance=featureDiagram::And_strategy)
+@given(instance=featureDiagram_Or_strategy)
 @settings(max_examples=50)
-def test_featurediagram::and_instantiation(instance):
-    assert isinstance(instance, featureDiagram::And)
+def test_featurediagram_or_instantiation(instance):
+    assert isinstance(instance, featureDiagram_Or)
 
-@given(instance=featureDiagram::Or_strategy)
+@given(instance=featureDiagram_And_strategy)
 @settings(max_examples=50)
-def test_featurediagram::or_instantiation(instance):
-    assert isinstance(instance, featureDiagram::Or)
+def test_featurediagram_and_instantiation(instance):
+    assert isinstance(instance, featureDiagram_And)
 
-@given(instance=featureDiagram::Xor_strategy)
+@given(instance=featureDiagram_Xor_strategy)
 @settings(max_examples=50)
-def test_featurediagram::xor_instantiation(instance):
-    assert isinstance(instance, featureDiagram::Xor)
+def test_featurediagram_xor_instantiation(instance):
+    assert isinstance(instance, featureDiagram_Xor)
 
-@given(instance=featureDiagram::Card_strategy)
+@given(instance=featureDiagram_Card_strategy)
 @settings(max_examples=50)
-def test_featurediagram::card_instantiation(instance):
-    assert isinstance(instance, featureDiagram::Card)
+def test_featurediagram_card_instantiation(instance):
+    assert isinstance(instance, featureDiagram_Card)
 
-@given(instance=featureDiagram::Opt_strategy)
+@given(instance=featureDiagram_Opt_strategy)
 @settings(max_examples=50)
-def test_featurediagram::opt_instantiation(instance):
-    assert isinstance(instance, featureDiagram::Opt)
+def test_featurediagram_opt_instantiation(instance):
+    assert isinstance(instance, featureDiagram_Opt)
 
-@given(instance=featureDiagram::Constraint_strategy)
+@given(instance=featureDiagram_Constraint_strategy)
 @settings(max_examples=50)
-def test_featurediagram::constraint_instantiation(instance):
-    assert isinstance(instance, featureDiagram::Constraint)
+def test_featurediagram_constraint_instantiation(instance):
+    assert isinstance(instance, featureDiagram_Constraint)
 
 @given(instance=Feature_strategy)
 @settings(max_examples=50)
 def test_feature_instantiation(instance):
     assert isinstance(instance, Feature)
 
-@given(instance=featureDiagram::PrimitiveFeature_strategy)
+@given(instance=featureDiagram_PrimitiveFeature_strategy)
 @settings(max_examples=50)
-def test_featurediagram::primitivefeature_instantiation(instance):
-    assert isinstance(instance, featureDiagram::PrimitiveFeature)
+def test_featurediagram_primitivefeature_instantiation(instance):
+    assert isinstance(instance, featureDiagram_PrimitiveFeature)
 
-@given(instance=featureDiagram::Model_strategy)
+@given(instance=featureDiagram_Model_strategy)
 @settings(max_examples=50)
-def test_featurediagram::model_instantiation(instance):
-    assert isinstance(instance, featureDiagram::Model)
-
-@given(instance=featureDiagram::Model_strategy)
-def test_featurediagram::model_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_featurediagram_model_instantiation(instance):
+    assert isinstance(instance, featureDiagram_Model)
 
 
-@given(instance=featureDiagram::Model_strategy)
-def test_featurediagram::model_name_setter(instance):
+
+@given(instance=featureDiagram_Model_strategy)
+def test_featurediagram_model_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=featureDiagram::Feature_strategy)
+@given(instance=featureDiagram_Feature_strategy)
 @settings(max_examples=50)
-def test_featurediagram::feature_instantiation(instance):
-    assert isinstance(instance, featureDiagram::Feature)
-
-@given(instance=featureDiagram::Feature_strategy)
-def test_featurediagram::feature_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_featurediagram_feature_instantiation(instance):
+    assert isinstance(instance, featureDiagram_Feature)
 
 
-@given(instance=featureDiagram::Feature_strategy)
-def test_featurediagram::feature_name_setter(instance):
+
+@given(instance=featureDiagram_Feature_strategy)
+def test_featurediagram_feature_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=featureDiagram::Feature_strategy)
-def test_featurediagram::feature_selected_type(instance):
-    assert isinstance(instance.selected, str)
 
 
-@given(instance=featureDiagram::Feature_strategy)
-def test_featurediagram::feature_selected_setter(instance):
+@given(instance=featureDiagram_Feature_strategy)
+def test_featurediagram_feature_selected_setter(instance):
     original = instance.selected
     instance.selected = original
     assert instance.selected == original
 
-@given(instance=featureDiagram::Feature_strategy)
-def test_featurediagram::feature_optional_type(instance):
-    assert isinstance(instance.optional, str)
 
 
-@given(instance=featureDiagram::Feature_strategy)
-def test_featurediagram::feature_optional_setter(instance):
+@given(instance=featureDiagram_Feature_strategy)
+def test_featurediagram_feature_optional_setter(instance):
     original = instance.optional
     instance.optional = original
     assert instance.optional == original
+
+@given(instance=featureDiagram_FeatureDiagram_strategy)
+@settings(max_examples=50)
+def test_featurediagram_featurediagram_instantiation(instance):
+    assert isinstance(instance, featureDiagram_FeatureDiagram)
+
+
+
+@given(instance=featureDiagram_FeatureDiagram_strategy)
+def test_featurediagram_featurediagram_graphTypeTree_setter(instance):
+    original = instance.graphTypeTree
+    instance.graphTypeTree = original
+    assert instance.graphTypeTree == original

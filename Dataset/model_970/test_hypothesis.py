@@ -3,14 +3,14 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    simplegraph::Graph,
-    simplegraph::Element,
+from python_code import (
+    simplegraph_Graph,
+    simplegraph_Element,
     Element,
-    simplegraph::Edge,
-    simplegraph::Node,
+    simplegraph_Edge,
+    simplegraph_Node,
 )
 
 # =============================================================================
@@ -19,23 +19,23 @@ from classes import (
 
 
 
-def test_simplegraph::graph_is_not_abstract():
-    assert not inspect.isabstract(simplegraph::Graph)
+def test_simplegraph_graph_is_not_abstract():
+    assert not inspect.isabstract(simplegraph_Graph)
 
 
-def test_simplegraph::graph_constructor_exists():
-    assert callable(simplegraph::Graph.__init__)
+def test_simplegraph_graph_constructor_exists():
+    assert callable(simplegraph_Graph.__init__)
 
 
-def test_simplegraph::graph_constructor_args():
-    sig = inspect.signature(simplegraph::Graph.__init__)
+def test_simplegraph_graph_constructor_args():
+    sig = inspect.signature(simplegraph_Graph.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_simplegraph::graph_has_name():
-    assert hasattr(simplegraph::Graph, "name")
+def test_simplegraph_graph_has_name():
+    assert hasattr(simplegraph_Graph, "name")
     descriptor = None
-    for klass in simplegraph::Graph.__mro__:
+    for klass in simplegraph_Graph.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -43,16 +43,16 @@ def test_simplegraph::graph_has_name():
 
 
 
-def test_simplegraph::element_is_not_abstract():
-    assert not inspect.isabstract(simplegraph::Element)
+def test_simplegraph_element_is_not_abstract():
+    assert not inspect.isabstract(simplegraph_Element)
 
 
-def test_simplegraph::element_constructor_exists():
-    assert callable(simplegraph::Element.__init__)
+def test_simplegraph_element_constructor_exists():
+    assert callable(simplegraph_Element.__init__)
 
 
-def test_simplegraph::element_constructor_args():
-    sig = inspect.signature(simplegraph::Element.__init__)
+def test_simplegraph_element_constructor_args():
+    sig = inspect.signature(simplegraph_Element.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -71,37 +71,37 @@ def test_element_constructor_args():
 
 
 
-def test_simplegraph::edge_is_not_abstract():
-    assert not inspect.isabstract(simplegraph::Edge)
+def test_simplegraph_edge_is_not_abstract():
+    assert not inspect.isabstract(simplegraph_Edge)
 
 
-def test_simplegraph::edge_constructor_exists():
-    assert callable(simplegraph::Edge.__init__)
+def test_simplegraph_edge_constructor_exists():
+    assert callable(simplegraph_Edge.__init__)
 
 
-def test_simplegraph::edge_constructor_args():
-    sig = inspect.signature(simplegraph::Edge.__init__)
+def test_simplegraph_edge_constructor_args():
+    sig = inspect.signature(simplegraph_Edge.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_simplegraph::node_is_not_abstract():
-    assert not inspect.isabstract(simplegraph::Node)
+def test_simplegraph_node_is_not_abstract():
+    assert not inspect.isabstract(simplegraph_Node)
 
 
-def test_simplegraph::node_constructor_exists():
-    assert callable(simplegraph::Node.__init__)
+def test_simplegraph_node_constructor_exists():
+    assert callable(simplegraph_Node.__init__)
 
 
-def test_simplegraph::node_constructor_args():
-    sig = inspect.signature(simplegraph::Node.__init__)
+def test_simplegraph_node_constructor_args():
+    sig = inspect.signature(simplegraph_Node.__init__)
     params = list(sig.parameters.keys())
     assert "label" in params, "Missing parameter 'label'"
 
-def test_simplegraph::node_has_label():
-    assert hasattr(simplegraph::Node, "label")
+def test_simplegraph_node_has_label():
+    assert hasattr(simplegraph_Node, "label")
     descriptor = None
-    for klass in simplegraph::Node.__mro__:
+    for klass in simplegraph_Node.__mro__:
         if "label" in klass.__dict__:
             descriptor = klass.__dict__["label"]
             break
@@ -119,69 +119,63 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-simplegraph::Graph_strategy = st.builds(
-    simplegraph::Graph,
+simplegraph_Graph_strategy = st.builds(
+    simplegraph_Graph,
     name=
         safe_text
 )
-simplegraph::Element_strategy = st.builds(
-    simplegraph::Element,
+simplegraph_Element_strategy = st.builds(
+    simplegraph_Element,
 )
 Element_strategy = st.builds(
     Element,
 )
-simplegraph::Edge_strategy = st.builds(
-    simplegraph::Edge,
+simplegraph_Edge_strategy = st.builds(
+    simplegraph_Edge,
 )
-simplegraph::Node_strategy = st.builds(
-    simplegraph::Node,
+simplegraph_Node_strategy = st.builds(
+    simplegraph_Node,
     label=
         safe_text
 )
 
-@given(instance=simplegraph::Graph_strategy)
+@given(instance=simplegraph_Graph_strategy)
 @settings(max_examples=50)
-def test_simplegraph::graph_instantiation(instance):
-    assert isinstance(instance, simplegraph::Graph)
-
-@given(instance=simplegraph::Graph_strategy)
-def test_simplegraph::graph_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_simplegraph_graph_instantiation(instance):
+    assert isinstance(instance, simplegraph_Graph)
 
 
-@given(instance=simplegraph::Graph_strategy)
-def test_simplegraph::graph_name_setter(instance):
+
+@given(instance=simplegraph_Graph_strategy)
+def test_simplegraph_graph_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=simplegraph::Element_strategy)
+@given(instance=simplegraph_Element_strategy)
 @settings(max_examples=50)
-def test_simplegraph::element_instantiation(instance):
-    assert isinstance(instance, simplegraph::Element)
+def test_simplegraph_element_instantiation(instance):
+    assert isinstance(instance, simplegraph_Element)
 
 @given(instance=Element_strategy)
 @settings(max_examples=50)
 def test_element_instantiation(instance):
     assert isinstance(instance, Element)
 
-@given(instance=simplegraph::Edge_strategy)
+@given(instance=simplegraph_Edge_strategy)
 @settings(max_examples=50)
-def test_simplegraph::edge_instantiation(instance):
-    assert isinstance(instance, simplegraph::Edge)
+def test_simplegraph_edge_instantiation(instance):
+    assert isinstance(instance, simplegraph_Edge)
 
-@given(instance=simplegraph::Node_strategy)
+@given(instance=simplegraph_Node_strategy)
 @settings(max_examples=50)
-def test_simplegraph::node_instantiation(instance):
-    assert isinstance(instance, simplegraph::Node)
-
-@given(instance=simplegraph::Node_strategy)
-def test_simplegraph::node_label_type(instance):
-    assert isinstance(instance.label, str)
+def test_simplegraph_node_instantiation(instance):
+    assert isinstance(instance, simplegraph_Node)
 
 
-@given(instance=simplegraph::Node_strategy)
-def test_simplegraph::node_label_setter(instance):
+
+@given(instance=simplegraph_Node_strategy)
+def test_simplegraph_node_label_setter(instance):
     original = instance.label
     instance.label = original
     assert instance.label == original

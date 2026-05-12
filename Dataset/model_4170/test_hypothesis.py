@@ -3,11 +3,11 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    docl::Greeting,
-    docl::Model,
+from python_code import (
+    docl_Greeting,
+    docl_Model,
 )
 
 # =============================================================================
@@ -16,23 +16,23 @@ from classes import (
 
 
 
-def test_docl::greeting_is_not_abstract():
-    assert not inspect.isabstract(docl::Greeting)
+def test_docl_greeting_is_not_abstract():
+    assert not inspect.isabstract(docl_Greeting)
 
 
-def test_docl::greeting_constructor_exists():
-    assert callable(docl::Greeting.__init__)
+def test_docl_greeting_constructor_exists():
+    assert callable(docl_Greeting.__init__)
 
 
-def test_docl::greeting_constructor_args():
-    sig = inspect.signature(docl::Greeting.__init__)
+def test_docl_greeting_constructor_args():
+    sig = inspect.signature(docl_Greeting.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_docl::greeting_has_name():
-    assert hasattr(docl::Greeting, "name")
+def test_docl_greeting_has_name():
+    assert hasattr(docl_Greeting, "name")
     descriptor = None
-    for klass in docl::Greeting.__mro__:
+    for klass in docl_Greeting.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -40,16 +40,16 @@ def test_docl::greeting_has_name():
 
 
 
-def test_docl::model_is_not_abstract():
-    assert not inspect.isabstract(docl::Model)
+def test_docl_model_is_not_abstract():
+    assert not inspect.isabstract(docl_Model)
 
 
-def test_docl::model_constructor_exists():
-    assert callable(docl::Model.__init__)
+def test_docl_model_constructor_exists():
+    assert callable(docl_Model.__init__)
 
 
-def test_docl::model_constructor_args():
-    sig = inspect.signature(docl::Model.__init__)
+def test_docl_model_constructor_args():
+    sig = inspect.signature(docl_Model.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -64,32 +64,29 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-docl::Greeting_strategy = st.builds(
-    docl::Greeting,
+docl_Greeting_strategy = st.builds(
+    docl_Greeting,
     name=
         safe_text
 )
-docl::Model_strategy = st.builds(
-    docl::Model,
+docl_Model_strategy = st.builds(
+    docl_Model,
 )
 
-@given(instance=docl::Greeting_strategy)
+@given(instance=docl_Greeting_strategy)
 @settings(max_examples=50)
-def test_docl::greeting_instantiation(instance):
-    assert isinstance(instance, docl::Greeting)
-
-@given(instance=docl::Greeting_strategy)
-def test_docl::greeting_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_docl_greeting_instantiation(instance):
+    assert isinstance(instance, docl_Greeting)
 
 
-@given(instance=docl::Greeting_strategy)
-def test_docl::greeting_name_setter(instance):
+
+@given(instance=docl_Greeting_strategy)
+def test_docl_greeting_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=docl::Model_strategy)
+@given(instance=docl_Model_strategy)
 @settings(max_examples=50)
-def test_docl::model_instantiation(instance):
-    assert isinstance(instance, docl::Model)
+def test_docl_model_instantiation(instance):
+    assert isinstance(instance, docl_Model)

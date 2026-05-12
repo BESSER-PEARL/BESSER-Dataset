@@ -3,20 +3,20 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    link::Named,
+from python_code import (
+    link_Named,
     Named,
-    link::M,
-    link::W,
-    link::B,
-    link::C,
-    link::K,
-    link::X,
-    link::D,
-    link::N99,
-    link::A,
+    link_D,
+    link_W,
+    link_K,
+    link_N99,
+    link_C,
+    link_M,
+    link_B,
+    link_X,
+    link_A,
 )
 
 # =============================================================================
@@ -25,23 +25,23 @@ from classes import (
 
 
 
-def test_link::named_is_not_abstract():
-    assert not inspect.isabstract(link::Named)
+def test_link_named_is_not_abstract():
+    assert not inspect.isabstract(link_Named)
 
 
-def test_link::named_constructor_exists():
-    assert callable(link::Named.__init__)
+def test_link_named_constructor_exists():
+    assert callable(link_Named.__init__)
 
 
-def test_link::named_constructor_args():
-    sig = inspect.signature(link::Named.__init__)
+def test_link_named_constructor_args():
+    sig = inspect.signature(link_Named.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_link::named_has_name():
-    assert hasattr(link::Named, "name")
+def test_link_named_has_name():
+    assert hasattr(link_Named, "name")
     descriptor = None
-    for klass in link::Named.__mro__:
+    for klass in link_Named.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -63,128 +63,128 @@ def test_named_constructor_args():
 
 
 
-def test_link::m_is_not_abstract():
-    assert not inspect.isabstract(link::M)
+def test_link_d_is_not_abstract():
+    assert not inspect.isabstract(link_D)
 
 
-def test_link::m_constructor_exists():
-    assert callable(link::M.__init__)
+def test_link_d_constructor_exists():
+    assert callable(link_D.__init__)
 
 
-def test_link::m_constructor_args():
-    sig = inspect.signature(link::M.__init__)
+def test_link_d_constructor_args():
+    sig = inspect.signature(link_D.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_link::w_is_not_abstract():
-    assert not inspect.isabstract(link::W)
+def test_link_w_is_not_abstract():
+    assert not inspect.isabstract(link_W)
 
 
-def test_link::w_constructor_exists():
-    assert callable(link::W.__init__)
+def test_link_w_constructor_exists():
+    assert callable(link_W.__init__)
 
 
-def test_link::w_constructor_args():
-    sig = inspect.signature(link::W.__init__)
+def test_link_w_constructor_args():
+    sig = inspect.signature(link_W.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_link::b_is_not_abstract():
-    assert not inspect.isabstract(link::B)
+def test_link_k_is_not_abstract():
+    assert not inspect.isabstract(link_K)
 
 
-def test_link::b_constructor_exists():
-    assert callable(link::B.__init__)
+def test_link_k_constructor_exists():
+    assert callable(link_K.__init__)
 
 
-def test_link::b_constructor_args():
-    sig = inspect.signature(link::B.__init__)
+def test_link_k_constructor_args():
+    sig = inspect.signature(link_K.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_link::c_is_not_abstract():
-    assert not inspect.isabstract(link::C)
+def test_link_n99_is_not_abstract():
+    assert not inspect.isabstract(link_N99)
 
 
-def test_link::c_constructor_exists():
-    assert callable(link::C.__init__)
+def test_link_n99_constructor_exists():
+    assert callable(link_N99.__init__)
 
 
-def test_link::c_constructor_args():
-    sig = inspect.signature(link::C.__init__)
+def test_link_n99_constructor_args():
+    sig = inspect.signature(link_N99.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_link::k_is_not_abstract():
-    assert not inspect.isabstract(link::K)
+def test_link_c_is_not_abstract():
+    assert not inspect.isabstract(link_C)
 
 
-def test_link::k_constructor_exists():
-    assert callable(link::K.__init__)
+def test_link_c_constructor_exists():
+    assert callable(link_C.__init__)
 
 
-def test_link::k_constructor_args():
-    sig = inspect.signature(link::K.__init__)
+def test_link_c_constructor_args():
+    sig = inspect.signature(link_C.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_link::x_is_not_abstract():
-    assert not inspect.isabstract(link::X)
+def test_link_m_is_not_abstract():
+    assert not inspect.isabstract(link_M)
 
 
-def test_link::x_constructor_exists():
-    assert callable(link::X.__init__)
+def test_link_m_constructor_exists():
+    assert callable(link_M.__init__)
 
 
-def test_link::x_constructor_args():
-    sig = inspect.signature(link::X.__init__)
+def test_link_m_constructor_args():
+    sig = inspect.signature(link_M.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_link::d_is_not_abstract():
-    assert not inspect.isabstract(link::D)
+def test_link_b_is_not_abstract():
+    assert not inspect.isabstract(link_B)
 
 
-def test_link::d_constructor_exists():
-    assert callable(link::D.__init__)
+def test_link_b_constructor_exists():
+    assert callable(link_B.__init__)
 
 
-def test_link::d_constructor_args():
-    sig = inspect.signature(link::D.__init__)
+def test_link_b_constructor_args():
+    sig = inspect.signature(link_B.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_link::n99_is_not_abstract():
-    assert not inspect.isabstract(link::N99)
+def test_link_x_is_not_abstract():
+    assert not inspect.isabstract(link_X)
 
 
-def test_link::n99_constructor_exists():
-    assert callable(link::N99.__init__)
+def test_link_x_constructor_exists():
+    assert callable(link_X.__init__)
 
 
-def test_link::n99_constructor_args():
-    sig = inspect.signature(link::N99.__init__)
+def test_link_x_constructor_args():
+    sig = inspect.signature(link_X.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_link::a_is_not_abstract():
-    assert not inspect.isabstract(link::A)
+def test_link_a_is_not_abstract():
+    assert not inspect.isabstract(link_A)
 
 
-def test_link::a_constructor_exists():
-    assert callable(link::A.__init__)
+def test_link_a_constructor_exists():
+    assert callable(link_A.__init__)
 
 
-def test_link::a_constructor_args():
-    sig = inspect.signature(link::A.__init__)
+def test_link_a_constructor_args():
+    sig = inspect.signature(link_A.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -199,54 +199,51 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-link::Named_strategy = st.builds(
-    link::Named,
+link_Named_strategy = st.builds(
+    link_Named,
     name=
         safe_text
 )
 Named_strategy = st.builds(
     Named,
 )
-link::M_strategy = st.builds(
-    link::M,
+link_D_strategy = st.builds(
+    link_D,
 )
-link::W_strategy = st.builds(
-    link::W,
+link_W_strategy = st.builds(
+    link_W,
 )
-link::B_strategy = st.builds(
-    link::B,
+link_K_strategy = st.builds(
+    link_K,
 )
-link::C_strategy = st.builds(
-    link::C,
+link_N99_strategy = st.builds(
+    link_N99,
 )
-link::K_strategy = st.builds(
-    link::K,
+link_C_strategy = st.builds(
+    link_C,
 )
-link::X_strategy = st.builds(
-    link::X,
+link_M_strategy = st.builds(
+    link_M,
 )
-link::D_strategy = st.builds(
-    link::D,
+link_B_strategy = st.builds(
+    link_B,
 )
-link::N99_strategy = st.builds(
-    link::N99,
+link_X_strategy = st.builds(
+    link_X,
 )
-link::A_strategy = st.builds(
-    link::A,
+link_A_strategy = st.builds(
+    link_A,
 )
 
-@given(instance=link::Named_strategy)
+@given(instance=link_Named_strategy)
 @settings(max_examples=50)
-def test_link::named_instantiation(instance):
-    assert isinstance(instance, link::Named)
-
-@given(instance=link::Named_strategy)
-def test_link::named_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_link_named_instantiation(instance):
+    assert isinstance(instance, link_Named)
 
 
-@given(instance=link::Named_strategy)
-def test_link::named_name_setter(instance):
+
+@given(instance=link_Named_strategy)
+def test_link_named_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
@@ -256,47 +253,47 @@ def test_link::named_name_setter(instance):
 def test_named_instantiation(instance):
     assert isinstance(instance, Named)
 
-@given(instance=link::M_strategy)
+@given(instance=link_D_strategy)
 @settings(max_examples=50)
-def test_link::m_instantiation(instance):
-    assert isinstance(instance, link::M)
+def test_link_d_instantiation(instance):
+    assert isinstance(instance, link_D)
 
-@given(instance=link::W_strategy)
+@given(instance=link_W_strategy)
 @settings(max_examples=50)
-def test_link::w_instantiation(instance):
-    assert isinstance(instance, link::W)
+def test_link_w_instantiation(instance):
+    assert isinstance(instance, link_W)
 
-@given(instance=link::B_strategy)
+@given(instance=link_K_strategy)
 @settings(max_examples=50)
-def test_link::b_instantiation(instance):
-    assert isinstance(instance, link::B)
+def test_link_k_instantiation(instance):
+    assert isinstance(instance, link_K)
 
-@given(instance=link::C_strategy)
+@given(instance=link_N99_strategy)
 @settings(max_examples=50)
-def test_link::c_instantiation(instance):
-    assert isinstance(instance, link::C)
+def test_link_n99_instantiation(instance):
+    assert isinstance(instance, link_N99)
 
-@given(instance=link::K_strategy)
+@given(instance=link_C_strategy)
 @settings(max_examples=50)
-def test_link::k_instantiation(instance):
-    assert isinstance(instance, link::K)
+def test_link_c_instantiation(instance):
+    assert isinstance(instance, link_C)
 
-@given(instance=link::X_strategy)
+@given(instance=link_M_strategy)
 @settings(max_examples=50)
-def test_link::x_instantiation(instance):
-    assert isinstance(instance, link::X)
+def test_link_m_instantiation(instance):
+    assert isinstance(instance, link_M)
 
-@given(instance=link::D_strategy)
+@given(instance=link_B_strategy)
 @settings(max_examples=50)
-def test_link::d_instantiation(instance):
-    assert isinstance(instance, link::D)
+def test_link_b_instantiation(instance):
+    assert isinstance(instance, link_B)
 
-@given(instance=link::N99_strategy)
+@given(instance=link_X_strategy)
 @settings(max_examples=50)
-def test_link::n99_instantiation(instance):
-    assert isinstance(instance, link::N99)
+def test_link_x_instantiation(instance):
+    assert isinstance(instance, link_X)
 
-@given(instance=link::A_strategy)
+@given(instance=link_A_strategy)
 @settings(max_examples=50)
-def test_link::a_instantiation(instance):
-    assert isinstance(instance, link::A)
+def test_link_a_instantiation(instance):
+    assert isinstance(instance, link_A)

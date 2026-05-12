@@ -3,12 +3,12 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    extlibrary::Borrower,
-    extlibrary::Borrowable,
-    extlibrary::Book,
+from python_code import (
+    extlibrary_Borrower,
+    extlibrary_Borrowable,
+    extlibrary_Book,
     BookCategory,
 )
 
@@ -18,51 +18,51 @@ from classes import (
 
 
 
-def test_extlibrary::borrower_is_not_abstract():
-    assert not inspect.isabstract(extlibrary::Borrower)
+def test_extlibrary_borrower_is_not_abstract():
+    assert not inspect.isabstract(extlibrary_Borrower)
 
 
-def test_extlibrary::borrower_constructor_exists():
-    assert callable(extlibrary::Borrower.__init__)
+def test_extlibrary_borrower_constructor_exists():
+    assert callable(extlibrary_Borrower.__init__)
 
 
-def test_extlibrary::borrower_constructor_args():
-    sig = inspect.signature(extlibrary::Borrower.__init__)
+def test_extlibrary_borrower_constructor_args():
+    sig = inspect.signature(extlibrary_Borrower.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_extlibrary::borrowable_is_not_abstract():
-    assert not inspect.isabstract(extlibrary::Borrowable)
+def test_extlibrary_borrowable_is_not_abstract():
+    assert not inspect.isabstract(extlibrary_Borrowable)
 
 
-def test_extlibrary::borrowable_constructor_exists():
-    assert callable(extlibrary::Borrowable.__init__)
+def test_extlibrary_borrowable_constructor_exists():
+    assert callable(extlibrary_Borrowable.__init__)
 
 
-def test_extlibrary::borrowable_constructor_args():
-    sig = inspect.signature(extlibrary::Borrowable.__init__)
+def test_extlibrary_borrowable_constructor_args():
+    sig = inspect.signature(extlibrary_Borrowable.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_extlibrary::book_is_not_abstract():
-    assert not inspect.isabstract(extlibrary::Book)
+def test_extlibrary_book_is_not_abstract():
+    assert not inspect.isabstract(extlibrary_Book)
 
 
-def test_extlibrary::book_constructor_exists():
-    assert callable(extlibrary::Book.__init__)
+def test_extlibrary_book_constructor_exists():
+    assert callable(extlibrary_Book.__init__)
 
 
-def test_extlibrary::book_constructor_args():
-    sig = inspect.signature(extlibrary::Book.__init__)
+def test_extlibrary_book_constructor_args():
+    sig = inspect.signature(extlibrary_Book.__init__)
     params = list(sig.parameters.keys())
     assert "title" in params, "Missing parameter 'title'"
 
-def test_extlibrary::book_has_title():
-    assert hasattr(extlibrary::Book, "title")
+def test_extlibrary_book_has_title():
+    assert hasattr(extlibrary_Book, "title")
     descriptor = None
-    for klass in extlibrary::Book.__mro__:
+    for klass in extlibrary_Book.__mro__:
         if "title" in klass.__dict__:
             descriptor = klass.__dict__["title"]
             break
@@ -95,40 +95,37 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-extlibrary::Borrower_strategy = st.builds(
-    extlibrary::Borrower,
+extlibrary_Borrower_strategy = st.builds(
+    extlibrary_Borrower,
 )
-extlibrary::Borrowable_strategy = st.builds(
-    extlibrary::Borrowable,
+extlibrary_Borrowable_strategy = st.builds(
+    extlibrary_Borrowable,
 )
-extlibrary::Book_strategy = st.builds(
-    extlibrary::Book,
+extlibrary_Book_strategy = st.builds(
+    extlibrary_Book,
     title=
         safe_text
 )
 
-@given(instance=extlibrary::Borrower_strategy)
+@given(instance=extlibrary_Borrower_strategy)
 @settings(max_examples=50)
-def test_extlibrary::borrower_instantiation(instance):
-    assert isinstance(instance, extlibrary::Borrower)
+def test_extlibrary_borrower_instantiation(instance):
+    assert isinstance(instance, extlibrary_Borrower)
 
-@given(instance=extlibrary::Borrowable_strategy)
+@given(instance=extlibrary_Borrowable_strategy)
 @settings(max_examples=50)
-def test_extlibrary::borrowable_instantiation(instance):
-    assert isinstance(instance, extlibrary::Borrowable)
+def test_extlibrary_borrowable_instantiation(instance):
+    assert isinstance(instance, extlibrary_Borrowable)
 
-@given(instance=extlibrary::Book_strategy)
+@given(instance=extlibrary_Book_strategy)
 @settings(max_examples=50)
-def test_extlibrary::book_instantiation(instance):
-    assert isinstance(instance, extlibrary::Book)
-
-@given(instance=extlibrary::Book_strategy)
-def test_extlibrary::book_title_type(instance):
-    assert isinstance(instance.title, str)
+def test_extlibrary_book_instantiation(instance):
+    assert isinstance(instance, extlibrary_Book)
 
 
-@given(instance=extlibrary::Book_strategy)
-def test_extlibrary::book_title_setter(instance):
+
+@given(instance=extlibrary_Book_strategy)
+def test_extlibrary_book_title_setter(instance):
     original = instance.title
     instance.title = original
     assert instance.title == original

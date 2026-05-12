@@ -3,34 +3,34 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    ref::unsettable::EU,
-    ref::unsettable::C3U,
-    ref::unsettable::C4U,
+from python_code import (
+    ref_unsettable_EU,
+    ref_unsettable_C3U,
+    ref_unsettable_C4U,
     EU,
-    ref::unsettable::DU,
+    ref_unsettable_DU,
     C4U,
-    ref::unsettable::CU,
+    ref_unsettable_CU,
     DU,
-    ref::unsettable::BU,
+    ref_unsettable_BU,
     CU,
     C2U,
-    ref::unsettable::AU,
-    ref::unsettable::C2U,
+    ref_unsettable_AU,
+    ref_unsettable_C2U,
     BU,
     AU,
-    ref::unsettable::C1U,
-    ref::C3,
-    ref::E,
-    ref::C4,
-    ref::C1,
-    ref::D,
-    ref::C,
-    ref::C2,
-    ref::B,
-    ref::A,
+    ref_unsettable_C1U,
+    ref_C3,
+    ref_E,
+    ref_C4,
+    ref_C1,
+    ref_D,
+    ref_C,
+    ref_C2,
+    ref_B,
+    ref_A,
 )
 
 # =============================================================================
@@ -39,74 +39,74 @@ from classes import (
 
 
 
-def test_ref::unsettable::eu_is_not_abstract():
-    assert not inspect.isabstract(ref::unsettable::EU)
+def test_ref_unsettable_eu_is_not_abstract():
+    assert not inspect.isabstract(ref_unsettable_EU)
 
 
-def test_ref::unsettable::eu_constructor_exists():
-    assert callable(ref::unsettable::EU.__init__)
+def test_ref_unsettable_eu_constructor_exists():
+    assert callable(ref_unsettable_EU.__init__)
 
 
-def test_ref::unsettable::eu_constructor_args():
-    sig = inspect.signature(ref::unsettable::EU.__init__)
+def test_ref_unsettable_eu_constructor_args():
+    sig = inspect.signature(ref_unsettable_EU.__init__)
     params = list(sig.parameters.keys())
-    assert "ids" in params, "Missing parameter 'ids'"
     assert "labels" in params, "Missing parameter 'labels'"
     assert "name" in params, "Missing parameter 'name'"
+    assert "ids" in params, "Missing parameter 'ids'"
 
-def test_ref::unsettable::eu_has_ids():
-    assert hasattr(ref::unsettable::EU, "ids")
+def test_ref_unsettable_eu_has_labels():
+    assert hasattr(ref_unsettable_EU, "labels")
     descriptor = None
-    for klass in ref::unsettable::EU.__mro__:
-        if "ids" in klass.__dict__:
-            descriptor = klass.__dict__["ids"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_ref::unsettable::eu_has_labels():
-    assert hasattr(ref::unsettable::EU, "labels")
-    descriptor = None
-    for klass in ref::unsettable::EU.__mro__:
+    for klass in ref_unsettable_EU.__mro__:
         if "labels" in klass.__dict__:
             descriptor = klass.__dict__["labels"]
             break
     assert isinstance(descriptor, property)
 
-def test_ref::unsettable::eu_has_name():
-    assert hasattr(ref::unsettable::EU, "name")
+def test_ref_unsettable_eu_has_name():
+    assert hasattr(ref_unsettable_EU, "name")
     descriptor = None
-    for klass in ref::unsettable::EU.__mro__:
+    for klass in ref_unsettable_EU.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
+def test_ref_unsettable_eu_has_ids():
+    assert hasattr(ref_unsettable_EU, "ids")
+    descriptor = None
+    for klass in ref_unsettable_EU.__mro__:
+        if "ids" in klass.__dict__:
+            descriptor = klass.__dict__["ids"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_ref::unsettable::c3u_is_not_abstract():
-    assert not inspect.isabstract(ref::unsettable::C3U)
+
+def test_ref_unsettable_c3u_is_not_abstract():
+    assert not inspect.isabstract(ref_unsettable_C3U)
 
 
-def test_ref::unsettable::c3u_constructor_exists():
-    assert callable(ref::unsettable::C3U.__init__)
+def test_ref_unsettable_c3u_constructor_exists():
+    assert callable(ref_unsettable_C3U.__init__)
 
 
-def test_ref::unsettable::c3u_constructor_args():
-    sig = inspect.signature(ref::unsettable::C3U.__init__)
+def test_ref_unsettable_c3u_constructor_args():
+    sig = inspect.signature(ref_unsettable_C3U.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ref::unsettable::c4u_is_not_abstract():
-    assert not inspect.isabstract(ref::unsettable::C4U)
+def test_ref_unsettable_c4u_is_not_abstract():
+    assert not inspect.isabstract(ref_unsettable_C4U)
 
 
-def test_ref::unsettable::c4u_constructor_exists():
-    assert callable(ref::unsettable::C4U.__init__)
+def test_ref_unsettable_c4u_constructor_exists():
+    assert callable(ref_unsettable_C4U.__init__)
 
 
-def test_ref::unsettable::c4u_constructor_args():
-    sig = inspect.signature(ref::unsettable::C4U.__init__)
+def test_ref_unsettable_c4u_constructor_args():
+    sig = inspect.signature(ref_unsettable_C4U.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -125,16 +125,16 @@ def test_eu_constructor_args():
 
 
 
-def test_ref::unsettable::du_is_not_abstract():
-    assert not inspect.isabstract(ref::unsettable::DU)
+def test_ref_unsettable_du_is_not_abstract():
+    assert not inspect.isabstract(ref_unsettable_DU)
 
 
-def test_ref::unsettable::du_constructor_exists():
-    assert callable(ref::unsettable::DU.__init__)
+def test_ref_unsettable_du_constructor_exists():
+    assert callable(ref_unsettable_DU.__init__)
 
 
-def test_ref::unsettable::du_constructor_args():
-    sig = inspect.signature(ref::unsettable::DU.__init__)
+def test_ref_unsettable_du_constructor_args():
+    sig = inspect.signature(ref_unsettable_DU.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -153,16 +153,16 @@ def test_c4u_constructor_args():
 
 
 
-def test_ref::unsettable::cu_is_not_abstract():
-    assert not inspect.isabstract(ref::unsettable::CU)
+def test_ref_unsettable_cu_is_not_abstract():
+    assert not inspect.isabstract(ref_unsettable_CU)
 
 
-def test_ref::unsettable::cu_constructor_exists():
-    assert callable(ref::unsettable::CU.__init__)
+def test_ref_unsettable_cu_constructor_exists():
+    assert callable(ref_unsettable_CU.__init__)
 
 
-def test_ref::unsettable::cu_constructor_args():
-    sig = inspect.signature(ref::unsettable::CU.__init__)
+def test_ref_unsettable_cu_constructor_args():
+    sig = inspect.signature(ref_unsettable_CU.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -181,16 +181,16 @@ def test_du_constructor_args():
 
 
 
-def test_ref::unsettable::bu_is_not_abstract():
-    assert not inspect.isabstract(ref::unsettable::BU)
+def test_ref_unsettable_bu_is_not_abstract():
+    assert not inspect.isabstract(ref_unsettable_BU)
 
 
-def test_ref::unsettable::bu_constructor_exists():
-    assert callable(ref::unsettable::BU.__init__)
+def test_ref_unsettable_bu_constructor_exists():
+    assert callable(ref_unsettable_BU.__init__)
 
 
-def test_ref::unsettable::bu_constructor_args():
-    sig = inspect.signature(ref::unsettable::BU.__init__)
+def test_ref_unsettable_bu_constructor_args():
+    sig = inspect.signature(ref_unsettable_BU.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -223,30 +223,30 @@ def test_c2u_constructor_args():
 
 
 
-def test_ref::unsettable::au_is_not_abstract():
-    assert not inspect.isabstract(ref::unsettable::AU)
+def test_ref_unsettable_au_is_not_abstract():
+    assert not inspect.isabstract(ref_unsettable_AU)
 
 
-def test_ref::unsettable::au_constructor_exists():
-    assert callable(ref::unsettable::AU.__init__)
+def test_ref_unsettable_au_constructor_exists():
+    assert callable(ref_unsettable_AU.__init__)
 
 
-def test_ref::unsettable::au_constructor_args():
-    sig = inspect.signature(ref::unsettable::AU.__init__)
+def test_ref_unsettable_au_constructor_args():
+    sig = inspect.signature(ref_unsettable_AU.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ref::unsettable::c2u_is_not_abstract():
-    assert not inspect.isabstract(ref::unsettable::C2U)
+def test_ref_unsettable_c2u_is_not_abstract():
+    assert not inspect.isabstract(ref_unsettable_C2U)
 
 
-def test_ref::unsettable::c2u_constructor_exists():
-    assert callable(ref::unsettable::C2U.__init__)
+def test_ref_unsettable_c2u_constructor_exists():
+    assert callable(ref_unsettable_C2U.__init__)
 
 
-def test_ref::unsettable::c2u_constructor_args():
-    sig = inspect.signature(ref::unsettable::C2U.__init__)
+def test_ref_unsettable_c2u_constructor_args():
+    sig = inspect.signature(ref_unsettable_C2U.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -279,71 +279,71 @@ def test_au_constructor_args():
 
 
 
-def test_ref::unsettable::c1u_is_not_abstract():
-    assert not inspect.isabstract(ref::unsettable::C1U)
+def test_ref_unsettable_c1u_is_not_abstract():
+    assert not inspect.isabstract(ref_unsettable_C1U)
 
 
-def test_ref::unsettable::c1u_constructor_exists():
-    assert callable(ref::unsettable::C1U.__init__)
+def test_ref_unsettable_c1u_constructor_exists():
+    assert callable(ref_unsettable_C1U.__init__)
 
 
-def test_ref::unsettable::c1u_constructor_args():
-    sig = inspect.signature(ref::unsettable::C1U.__init__)
+def test_ref_unsettable_c1u_constructor_args():
+    sig = inspect.signature(ref_unsettable_C1U.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ref::c3_is_not_abstract():
-    assert not inspect.isabstract(ref::C3)
+def test_ref_c3_is_not_abstract():
+    assert not inspect.isabstract(ref_C3)
 
 
-def test_ref::c3_constructor_exists():
-    assert callable(ref::C3.__init__)
+def test_ref_c3_constructor_exists():
+    assert callable(ref_C3.__init__)
 
 
-def test_ref::c3_constructor_args():
-    sig = inspect.signature(ref::C3.__init__)
+def test_ref_c3_constructor_args():
+    sig = inspect.signature(ref_C3.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ref::e_is_not_abstract():
-    assert not inspect.isabstract(ref::E)
+def test_ref_e_is_not_abstract():
+    assert not inspect.isabstract(ref_E)
 
 
-def test_ref::e_constructor_exists():
-    assert callable(ref::E.__init__)
+def test_ref_e_constructor_exists():
+    assert callable(ref_E.__init__)
 
 
-def test_ref::e_constructor_args():
-    sig = inspect.signature(ref::E.__init__)
+def test_ref_e_constructor_args():
+    sig = inspect.signature(ref_E.__init__)
     params = list(sig.parameters.keys())
-    assert "labels" in params, "Missing parameter 'labels'"
     assert "ids" in params, "Missing parameter 'ids'"
+    assert "labels" in params, "Missing parameter 'labels'"
     assert "name" in params, "Missing parameter 'name'"
 
-def test_ref::e_has_labels():
-    assert hasattr(ref::E, "labels")
+def test_ref_e_has_ids():
+    assert hasattr(ref_E, "ids")
     descriptor = None
-    for klass in ref::E.__mro__:
-        if "labels" in klass.__dict__:
-            descriptor = klass.__dict__["labels"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_ref::e_has_ids():
-    assert hasattr(ref::E, "ids")
-    descriptor = None
-    for klass in ref::E.__mro__:
+    for klass in ref_E.__mro__:
         if "ids" in klass.__dict__:
             descriptor = klass.__dict__["ids"]
             break
     assert isinstance(descriptor, property)
 
-def test_ref::e_has_name():
-    assert hasattr(ref::E, "name")
+def test_ref_e_has_labels():
+    assert hasattr(ref_E, "labels")
     descriptor = None
-    for klass in ref::E.__mro__:
+    for klass in ref_E.__mro__:
+        if "labels" in klass.__dict__:
+            descriptor = klass.__dict__["labels"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_ref_e_has_name():
+    assert hasattr(ref_E, "name")
+    descriptor = None
+    for klass in ref_E.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -351,100 +351,100 @@ def test_ref::e_has_name():
 
 
 
-def test_ref::c4_is_not_abstract():
-    assert not inspect.isabstract(ref::C4)
+def test_ref_c4_is_not_abstract():
+    assert not inspect.isabstract(ref_C4)
 
 
-def test_ref::c4_constructor_exists():
-    assert callable(ref::C4.__init__)
+def test_ref_c4_constructor_exists():
+    assert callable(ref_C4.__init__)
 
 
-def test_ref::c4_constructor_args():
-    sig = inspect.signature(ref::C4.__init__)
+def test_ref_c4_constructor_args():
+    sig = inspect.signature(ref_C4.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ref::c1_is_not_abstract():
-    assert not inspect.isabstract(ref::C1)
+def test_ref_c1_is_not_abstract():
+    assert not inspect.isabstract(ref_C1)
 
 
-def test_ref::c1_constructor_exists():
-    assert callable(ref::C1.__init__)
+def test_ref_c1_constructor_exists():
+    assert callable(ref_C1.__init__)
 
 
-def test_ref::c1_constructor_args():
-    sig = inspect.signature(ref::C1.__init__)
+def test_ref_c1_constructor_args():
+    sig = inspect.signature(ref_C1.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ref::d_is_not_abstract():
-    assert not inspect.isabstract(ref::D)
+def test_ref_d_is_not_abstract():
+    assert not inspect.isabstract(ref_D)
 
 
-def test_ref::d_constructor_exists():
-    assert callable(ref::D.__init__)
+def test_ref_d_constructor_exists():
+    assert callable(ref_D.__init__)
 
 
-def test_ref::d_constructor_args():
-    sig = inspect.signature(ref::D.__init__)
+def test_ref_d_constructor_args():
+    sig = inspect.signature(ref_D.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ref::c_is_not_abstract():
-    assert not inspect.isabstract(ref::C)
+def test_ref_c_is_not_abstract():
+    assert not inspect.isabstract(ref_C)
 
 
-def test_ref::c_constructor_exists():
-    assert callable(ref::C.__init__)
+def test_ref_c_constructor_exists():
+    assert callable(ref_C.__init__)
 
 
-def test_ref::c_constructor_args():
-    sig = inspect.signature(ref::C.__init__)
+def test_ref_c_constructor_args():
+    sig = inspect.signature(ref_C.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ref::c2_is_not_abstract():
-    assert not inspect.isabstract(ref::C2)
+def test_ref_c2_is_not_abstract():
+    assert not inspect.isabstract(ref_C2)
 
 
-def test_ref::c2_constructor_exists():
-    assert callable(ref::C2.__init__)
+def test_ref_c2_constructor_exists():
+    assert callable(ref_C2.__init__)
 
 
-def test_ref::c2_constructor_args():
-    sig = inspect.signature(ref::C2.__init__)
+def test_ref_c2_constructor_args():
+    sig = inspect.signature(ref_C2.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ref::b_is_not_abstract():
-    assert not inspect.isabstract(ref::B)
+def test_ref_b_is_not_abstract():
+    assert not inspect.isabstract(ref_B)
 
 
-def test_ref::b_constructor_exists():
-    assert callable(ref::B.__init__)
+def test_ref_b_constructor_exists():
+    assert callable(ref_B.__init__)
 
 
-def test_ref::b_constructor_args():
-    sig = inspect.signature(ref::B.__init__)
+def test_ref_b_constructor_args():
+    sig = inspect.signature(ref_B.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ref::a_is_not_abstract():
-    assert not inspect.isabstract(ref::A)
+def test_ref_a_is_not_abstract():
+    assert not inspect.isabstract(ref_A)
 
 
-def test_ref::a_constructor_exists():
-    assert callable(ref::A.__init__)
+def test_ref_a_constructor_exists():
+    assert callable(ref_A.__init__)
 
 
-def test_ref::a_constructor_args():
-    sig = inspect.signature(ref::A.__init__)
+def test_ref_a_constructor_args():
+    sig = inspect.signature(ref_A.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -459,38 +459,38 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-ref::unsettable::EU_strategy = st.builds(
-    ref::unsettable::EU,
-    ids=
-        safe_text,
+ref_unsettable_EU_strategy = st.builds(
+    ref_unsettable_EU,
     labels=
         safe_text,
     name=
+        safe_text,
+    ids=
         safe_text
 )
-ref::unsettable::C3U_strategy = st.builds(
-    ref::unsettable::C3U,
+ref_unsettable_C3U_strategy = st.builds(
+    ref_unsettable_C3U,
 )
-ref::unsettable::C4U_strategy = st.builds(
-    ref::unsettable::C4U,
+ref_unsettable_C4U_strategy = st.builds(
+    ref_unsettable_C4U,
 )
 EU_strategy = st.builds(
     EU,
 )
-ref::unsettable::DU_strategy = st.builds(
-    ref::unsettable::DU,
+ref_unsettable_DU_strategy = st.builds(
+    ref_unsettable_DU,
 )
 C4U_strategy = st.builds(
     C4U,
 )
-ref::unsettable::CU_strategy = st.builds(
-    ref::unsettable::CU,
+ref_unsettable_CU_strategy = st.builds(
+    ref_unsettable_CU,
 )
 DU_strategy = st.builds(
     DU,
 )
-ref::unsettable::BU_strategy = st.builds(
-    ref::unsettable::BU,
+ref_unsettable_BU_strategy = st.builds(
+    ref_unsettable_BU,
 )
 CU_strategy = st.builds(
     CU,
@@ -498,11 +498,11 @@ CU_strategy = st.builds(
 C2U_strategy = st.builds(
     C2U,
 )
-ref::unsettable::AU_strategy = st.builds(
-    ref::unsettable::AU,
+ref_unsettable_AU_strategy = st.builds(
+    ref_unsettable_AU,
 )
-ref::unsettable::C2U_strategy = st.builds(
-    ref::unsettable::C2U,
+ref_unsettable_C2U_strategy = st.builds(
+    ref_unsettable_C2U,
 )
 BU_strategy = st.builds(
     BU,
@@ -510,120 +510,111 @@ BU_strategy = st.builds(
 AU_strategy = st.builds(
     AU,
 )
-ref::unsettable::C1U_strategy = st.builds(
-    ref::unsettable::C1U,
+ref_unsettable_C1U_strategy = st.builds(
+    ref_unsettable_C1U,
 )
-ref::C3_strategy = st.builds(
-    ref::C3,
+ref_C3_strategy = st.builds(
+    ref_C3,
 )
-ref::E_strategy = st.builds(
-    ref::E,
-    labels=
-        safe_text,
+ref_E_strategy = st.builds(
+    ref_E,
     ids=
+        safe_text,
+    labels=
         safe_text,
     name=
         safe_text
 )
-ref::C4_strategy = st.builds(
-    ref::C4,
+ref_C4_strategy = st.builds(
+    ref_C4,
 )
-ref::C1_strategy = st.builds(
-    ref::C1,
+ref_C1_strategy = st.builds(
+    ref_C1,
 )
-ref::D_strategy = st.builds(
-    ref::D,
+ref_D_strategy = st.builds(
+    ref_D,
 )
-ref::C_strategy = st.builds(
-    ref::C,
+ref_C_strategy = st.builds(
+    ref_C,
 )
-ref::C2_strategy = st.builds(
-    ref::C2,
+ref_C2_strategy = st.builds(
+    ref_C2,
 )
-ref::B_strategy = st.builds(
-    ref::B,
+ref_B_strategy = st.builds(
+    ref_B,
 )
-ref::A_strategy = st.builds(
-    ref::A,
+ref_A_strategy = st.builds(
+    ref_A,
 )
 
-@given(instance=ref::unsettable::EU_strategy)
+@given(instance=ref_unsettable_EU_strategy)
 @settings(max_examples=50)
-def test_ref::unsettable::eu_instantiation(instance):
-    assert isinstance(instance, ref::unsettable::EU)
-
-@given(instance=ref::unsettable::EU_strategy)
-def test_ref::unsettable::eu_ids_type(instance):
-    assert isinstance(instance.ids, str)
+def test_ref_unsettable_eu_instantiation(instance):
+    assert isinstance(instance, ref_unsettable_EU)
 
 
-@given(instance=ref::unsettable::EU_strategy)
-def test_ref::unsettable::eu_ids_setter(instance):
-    original = instance.ids
-    instance.ids = original
-    assert instance.ids == original
 
-@given(instance=ref::unsettable::EU_strategy)
-def test_ref::unsettable::eu_labels_type(instance):
-    assert isinstance(instance.labels, str)
-
-
-@given(instance=ref::unsettable::EU_strategy)
-def test_ref::unsettable::eu_labels_setter(instance):
+@given(instance=ref_unsettable_EU_strategy)
+def test_ref_unsettable_eu_labels_setter(instance):
     original = instance.labels
     instance.labels = original
     assert instance.labels == original
 
-@given(instance=ref::unsettable::EU_strategy)
-def test_ref::unsettable::eu_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
-@given(instance=ref::unsettable::EU_strategy)
-def test_ref::unsettable::eu_name_setter(instance):
+@given(instance=ref_unsettable_EU_strategy)
+def test_ref_unsettable_eu_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=ref::unsettable::C3U_strategy)
-@settings(max_examples=50)
-def test_ref::unsettable::c3u_instantiation(instance):
-    assert isinstance(instance, ref::unsettable::C3U)
 
-@given(instance=ref::unsettable::C4U_strategy)
+
+@given(instance=ref_unsettable_EU_strategy)
+def test_ref_unsettable_eu_ids_setter(instance):
+    original = instance.ids
+    instance.ids = original
+    assert instance.ids == original
+
+@given(instance=ref_unsettable_C3U_strategy)
 @settings(max_examples=50)
-def test_ref::unsettable::c4u_instantiation(instance):
-    assert isinstance(instance, ref::unsettable::C4U)
+def test_ref_unsettable_c3u_instantiation(instance):
+    assert isinstance(instance, ref_unsettable_C3U)
+
+@given(instance=ref_unsettable_C4U_strategy)
+@settings(max_examples=50)
+def test_ref_unsettable_c4u_instantiation(instance):
+    assert isinstance(instance, ref_unsettable_C4U)
 
 @given(instance=EU_strategy)
 @settings(max_examples=50)
 def test_eu_instantiation(instance):
     assert isinstance(instance, EU)
 
-@given(instance=ref::unsettable::DU_strategy)
+@given(instance=ref_unsettable_DU_strategy)
 @settings(max_examples=50)
-def test_ref::unsettable::du_instantiation(instance):
-    assert isinstance(instance, ref::unsettable::DU)
+def test_ref_unsettable_du_instantiation(instance):
+    assert isinstance(instance, ref_unsettable_DU)
 
 @given(instance=C4U_strategy)
 @settings(max_examples=50)
 def test_c4u_instantiation(instance):
     assert isinstance(instance, C4U)
 
-@given(instance=ref::unsettable::CU_strategy)
+@given(instance=ref_unsettable_CU_strategy)
 @settings(max_examples=50)
-def test_ref::unsettable::cu_instantiation(instance):
-    assert isinstance(instance, ref::unsettable::CU)
+def test_ref_unsettable_cu_instantiation(instance):
+    assert isinstance(instance, ref_unsettable_CU)
 
 @given(instance=DU_strategy)
 @settings(max_examples=50)
 def test_du_instantiation(instance):
     assert isinstance(instance, DU)
 
-@given(instance=ref::unsettable::BU_strategy)
+@given(instance=ref_unsettable_BU_strategy)
 @settings(max_examples=50)
-def test_ref::unsettable::bu_instantiation(instance):
-    assert isinstance(instance, ref::unsettable::BU)
+def test_ref_unsettable_bu_instantiation(instance):
+    assert isinstance(instance, ref_unsettable_BU)
 
 @given(instance=CU_strategy)
 @settings(max_examples=50)
@@ -635,15 +626,15 @@ def test_cu_instantiation(instance):
 def test_c2u_instantiation(instance):
     assert isinstance(instance, C2U)
 
-@given(instance=ref::unsettable::AU_strategy)
+@given(instance=ref_unsettable_AU_strategy)
 @settings(max_examples=50)
-def test_ref::unsettable::au_instantiation(instance):
-    assert isinstance(instance, ref::unsettable::AU)
+def test_ref_unsettable_au_instantiation(instance):
+    assert isinstance(instance, ref_unsettable_AU)
 
-@given(instance=ref::unsettable::C2U_strategy)
+@given(instance=ref_unsettable_C2U_strategy)
 @settings(max_examples=50)
-def test_ref::unsettable::c2u_instantiation(instance):
-    assert isinstance(instance, ref::unsettable::C2U)
+def test_ref_unsettable_c2u_instantiation(instance):
+    assert isinstance(instance, ref_unsettable_C2U)
 
 @given(instance=BU_strategy)
 @settings(max_examples=50)
@@ -655,85 +646,76 @@ def test_bu_instantiation(instance):
 def test_au_instantiation(instance):
     assert isinstance(instance, AU)
 
-@given(instance=ref::unsettable::C1U_strategy)
+@given(instance=ref_unsettable_C1U_strategy)
 @settings(max_examples=50)
-def test_ref::unsettable::c1u_instantiation(instance):
-    assert isinstance(instance, ref::unsettable::C1U)
+def test_ref_unsettable_c1u_instantiation(instance):
+    assert isinstance(instance, ref_unsettable_C1U)
 
-@given(instance=ref::C3_strategy)
+@given(instance=ref_C3_strategy)
 @settings(max_examples=50)
-def test_ref::c3_instantiation(instance):
-    assert isinstance(instance, ref::C3)
+def test_ref_c3_instantiation(instance):
+    assert isinstance(instance, ref_C3)
 
-@given(instance=ref::E_strategy)
+@given(instance=ref_E_strategy)
 @settings(max_examples=50)
-def test_ref::e_instantiation(instance):
-    assert isinstance(instance, ref::E)
-
-@given(instance=ref::E_strategy)
-def test_ref::e_labels_type(instance):
-    assert isinstance(instance.labels, str)
+def test_ref_e_instantiation(instance):
+    assert isinstance(instance, ref_E)
 
 
-@given(instance=ref::E_strategy)
-def test_ref::e_labels_setter(instance):
-    original = instance.labels
-    instance.labels = original
-    assert instance.labels == original
 
-@given(instance=ref::E_strategy)
-def test_ref::e_ids_type(instance):
-    assert isinstance(instance.ids, str)
-
-
-@given(instance=ref::E_strategy)
-def test_ref::e_ids_setter(instance):
+@given(instance=ref_E_strategy)
+def test_ref_e_ids_setter(instance):
     original = instance.ids
     instance.ids = original
     assert instance.ids == original
 
-@given(instance=ref::E_strategy)
-def test_ref::e_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
-@given(instance=ref::E_strategy)
-def test_ref::e_name_setter(instance):
+@given(instance=ref_E_strategy)
+def test_ref_e_labels_setter(instance):
+    original = instance.labels
+    instance.labels = original
+    assert instance.labels == original
+
+
+
+@given(instance=ref_E_strategy)
+def test_ref_e_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=ref::C4_strategy)
+@given(instance=ref_C4_strategy)
 @settings(max_examples=50)
-def test_ref::c4_instantiation(instance):
-    assert isinstance(instance, ref::C4)
+def test_ref_c4_instantiation(instance):
+    assert isinstance(instance, ref_C4)
 
-@given(instance=ref::C1_strategy)
+@given(instance=ref_C1_strategy)
 @settings(max_examples=50)
-def test_ref::c1_instantiation(instance):
-    assert isinstance(instance, ref::C1)
+def test_ref_c1_instantiation(instance):
+    assert isinstance(instance, ref_C1)
 
-@given(instance=ref::D_strategy)
+@given(instance=ref_D_strategy)
 @settings(max_examples=50)
-def test_ref::d_instantiation(instance):
-    assert isinstance(instance, ref::D)
+def test_ref_d_instantiation(instance):
+    assert isinstance(instance, ref_D)
 
-@given(instance=ref::C_strategy)
+@given(instance=ref_C_strategy)
 @settings(max_examples=50)
-def test_ref::c_instantiation(instance):
-    assert isinstance(instance, ref::C)
+def test_ref_c_instantiation(instance):
+    assert isinstance(instance, ref_C)
 
-@given(instance=ref::C2_strategy)
+@given(instance=ref_C2_strategy)
 @settings(max_examples=50)
-def test_ref::c2_instantiation(instance):
-    assert isinstance(instance, ref::C2)
+def test_ref_c2_instantiation(instance):
+    assert isinstance(instance, ref_C2)
 
-@given(instance=ref::B_strategy)
+@given(instance=ref_B_strategy)
 @settings(max_examples=50)
-def test_ref::b_instantiation(instance):
-    assert isinstance(instance, ref::B)
+def test_ref_b_instantiation(instance):
+    assert isinstance(instance, ref_B)
 
-@given(instance=ref::A_strategy)
+@given(instance=ref_A_strategy)
 @settings(max_examples=50)
-def test_ref::a_instantiation(instance):
-    assert isinstance(instance, ref::A)
+def test_ref_a_instantiation(instance):
+    assert isinstance(instance, ref_A)

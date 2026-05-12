@@ -3,7 +3,7 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
 from python_code import (
     Class,
@@ -45,17 +45,8 @@ def test_class_constructor_exists():
 def test_class_constructor_args():
     sig = inspect.signature(Class.__init__)
     params = list(sig.parameters.keys())
-    assert "test" in params, "Missing parameter 'test'"
     assert "attribute" in params, "Missing parameter 'attribute'"
-
-def test_class_has_test():
-    assert hasattr(Class, "test")
-    descriptor = None
-    for klass in Class.__mro__:
-        if "test" in klass.__dict__:
-            descriptor = klass.__dict__["test"]
-            break
-    assert isinstance(descriptor, property)
+    assert "test" in params, "Missing parameter 'test'"
 
 def test_class_has_attribute():
     assert hasattr(Class, "attribute")
@@ -63,6 +54,15 @@ def test_class_has_attribute():
     for klass in Class.__mro__:
         if "attribute" in klass.__dict__:
             descriptor = klass.__dict__["attribute"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_class_has_test():
+    assert hasattr(Class, "test")
+    descriptor = None
+    for klass in Class.__mro__:
+        if "test" in klass.__dict__:
+            descriptor = klass.__dict__["test"]
             break
     assert isinstance(descriptor, property)
 
@@ -366,9 +366,9 @@ safe_text = st.text(
 ).filter(lambda s: s[0].isalpha())
 Class_strategy = st.builds(
     Class,
-    test=
-        safe_text,
     attribute=
+        safe_text,
+    test=
         safe_text
 )
 FastCard_strategy = st.builds(
@@ -438,20 +438,6 @@ CPU_strategy = st.builds(
 def test_class_instantiation(instance):
     assert isinstance(instance, Class)
 
-@given(instance=Class_strategy)
-def test_class_test_type(instance):
-    assert isinstance(instance.test, str)
-
-
-@given(instance=Class_strategy)
-def test_class_test_setter(instance):
-    original = instance.test
-    instance.test = original
-    assert instance.test == original
-
-@given(instance=Class_strategy)
-def test_class_attribute_type(instance):
-    assert isinstance(instance.attribute, str)
 
 
 @given(instance=Class_strategy)
@@ -459,6 +445,14 @@ def test_class_attribute_setter(instance):
     original = instance.attribute
     instance.attribute = original
     assert instance.attribute == original
+
+
+
+@given(instance=Class_strategy)
+def test_class_test_setter(instance):
+    original = instance.test
+    instance.test = original
+    assert instance.test == original
 
 @given(instance=FastCard_strategy)
 @settings(max_examples=50)
@@ -525,9 +519,6 @@ def test_instruction_instantiation(instance):
 def test_program_instantiation(instance):
     assert isinstance(instance, Program)
 
-@given(instance=Program_strategy)
-def test_program_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
 @given(instance=Program_strategy)
@@ -551,9 +542,6 @@ def test_ram_instantiation(instance):
 def test_cache_instantiation(instance):
     assert isinstance(instance, Cache)
 
-@given(instance=Cache_strategy)
-def test_cache_chunck_type(instance):
-    assert isinstance(instance.chunck, str)
 
 
 @given(instance=Cache_strategy)

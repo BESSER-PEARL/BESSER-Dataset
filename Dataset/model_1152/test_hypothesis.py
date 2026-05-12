@@ -3,12 +3,12 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    simpleStateMachineMetaModel::Transition,
-    simpleStateMachineMetaModel::State,
-    simpleStateMachineMetaModel::SimpleStateMachine,
+from python_code import (
+    simpleStateMachineMetaModel_Transition,
+    simpleStateMachineMetaModel_State,
+    simpleStateMachineMetaModel_SimpleStateMachine,
 )
 
 # =============================================================================
@@ -17,23 +17,23 @@ from classes import (
 
 
 
-def test_simplestatemachinemetamodel::transition_is_not_abstract():
-    assert not inspect.isabstract(simpleStateMachineMetaModel::Transition)
+def test_simplestatemachinemetamodel_transition_is_not_abstract():
+    assert not inspect.isabstract(simpleStateMachineMetaModel_Transition)
 
 
-def test_simplestatemachinemetamodel::transition_constructor_exists():
-    assert callable(simpleStateMachineMetaModel::Transition.__init__)
+def test_simplestatemachinemetamodel_transition_constructor_exists():
+    assert callable(simpleStateMachineMetaModel_Transition.__init__)
 
 
-def test_simplestatemachinemetamodel::transition_constructor_args():
-    sig = inspect.signature(simpleStateMachineMetaModel::Transition.__init__)
+def test_simplestatemachinemetamodel_transition_constructor_args():
+    sig = inspect.signature(simpleStateMachineMetaModel_Transition.__init__)
     params = list(sig.parameters.keys())
     assert "Name" in params, "Missing parameter 'Name'"
 
-def test_simplestatemachinemetamodel::transition_has_Name():
-    assert hasattr(simpleStateMachineMetaModel::Transition, "Name")
+def test_simplestatemachinemetamodel_transition_has_Name():
+    assert hasattr(simpleStateMachineMetaModel_Transition, "Name")
     descriptor = None
-    for klass in simpleStateMachineMetaModel::Transition.__mro__:
+    for klass in simpleStateMachineMetaModel_Transition.__mro__:
         if "Name" in klass.__dict__:
             descriptor = klass.__dict__["Name"]
             break
@@ -41,23 +41,23 @@ def test_simplestatemachinemetamodel::transition_has_Name():
 
 
 
-def test_simplestatemachinemetamodel::state_is_not_abstract():
-    assert not inspect.isabstract(simpleStateMachineMetaModel::State)
+def test_simplestatemachinemetamodel_state_is_not_abstract():
+    assert not inspect.isabstract(simpleStateMachineMetaModel_State)
 
 
-def test_simplestatemachinemetamodel::state_constructor_exists():
-    assert callable(simpleStateMachineMetaModel::State.__init__)
+def test_simplestatemachinemetamodel_state_constructor_exists():
+    assert callable(simpleStateMachineMetaModel_State.__init__)
 
 
-def test_simplestatemachinemetamodel::state_constructor_args():
-    sig = inspect.signature(simpleStateMachineMetaModel::State.__init__)
+def test_simplestatemachinemetamodel_state_constructor_args():
+    sig = inspect.signature(simpleStateMachineMetaModel_State.__init__)
     params = list(sig.parameters.keys())
     assert "Name" in params, "Missing parameter 'Name'"
 
-def test_simplestatemachinemetamodel::state_has_Name():
-    assert hasattr(simpleStateMachineMetaModel::State, "Name")
+def test_simplestatemachinemetamodel_state_has_Name():
+    assert hasattr(simpleStateMachineMetaModel_State, "Name")
     descriptor = None
-    for klass in simpleStateMachineMetaModel::State.__mro__:
+    for klass in simpleStateMachineMetaModel_State.__mro__:
         if "Name" in klass.__dict__:
             descriptor = klass.__dict__["Name"]
             break
@@ -65,23 +65,23 @@ def test_simplestatemachinemetamodel::state_has_Name():
 
 
 
-def test_simplestatemachinemetamodel::simplestatemachine_is_not_abstract():
-    assert not inspect.isabstract(simpleStateMachineMetaModel::SimpleStateMachine)
+def test_simplestatemachinemetamodel_simplestatemachine_is_not_abstract():
+    assert not inspect.isabstract(simpleStateMachineMetaModel_SimpleStateMachine)
 
 
-def test_simplestatemachinemetamodel::simplestatemachine_constructor_exists():
-    assert callable(simpleStateMachineMetaModel::SimpleStateMachine.__init__)
+def test_simplestatemachinemetamodel_simplestatemachine_constructor_exists():
+    assert callable(simpleStateMachineMetaModel_SimpleStateMachine.__init__)
 
 
-def test_simplestatemachinemetamodel::simplestatemachine_constructor_args():
-    sig = inspect.signature(simpleStateMachineMetaModel::SimpleStateMachine.__init__)
+def test_simplestatemachinemetamodel_simplestatemachine_constructor_args():
+    sig = inspect.signature(simpleStateMachineMetaModel_SimpleStateMachine.__init__)
     params = list(sig.parameters.keys())
     assert "Name" in params, "Missing parameter 'Name'"
 
-def test_simplestatemachinemetamodel::simplestatemachine_has_Name():
-    assert hasattr(simpleStateMachineMetaModel::SimpleStateMachine, "Name")
+def test_simplestatemachinemetamodel_simplestatemachine_has_Name():
+    assert hasattr(simpleStateMachineMetaModel_SimpleStateMachine, "Name")
     descriptor = None
-    for klass in simpleStateMachineMetaModel::SimpleStateMachine.__mro__:
+    for klass in simpleStateMachineMetaModel_SimpleStateMachine.__mro__:
         if "Name" in klass.__dict__:
             descriptor = klass.__dict__["Name"]
             break
@@ -99,66 +99,57 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-simpleStateMachineMetaModel::Transition_strategy = st.builds(
-    simpleStateMachineMetaModel::Transition,
+simpleStateMachineMetaModel_Transition_strategy = st.builds(
+    simpleStateMachineMetaModel_Transition,
     Name=
         safe_text
 )
-simpleStateMachineMetaModel::State_strategy = st.builds(
-    simpleStateMachineMetaModel::State,
+simpleStateMachineMetaModel_State_strategy = st.builds(
+    simpleStateMachineMetaModel_State,
     Name=
         safe_text
 )
-simpleStateMachineMetaModel::SimpleStateMachine_strategy = st.builds(
-    simpleStateMachineMetaModel::SimpleStateMachine,
+simpleStateMachineMetaModel_SimpleStateMachine_strategy = st.builds(
+    simpleStateMachineMetaModel_SimpleStateMachine,
     Name=
         safe_text
 )
 
-@given(instance=simpleStateMachineMetaModel::Transition_strategy)
+@given(instance=simpleStateMachineMetaModel_Transition_strategy)
 @settings(max_examples=50)
-def test_simplestatemachinemetamodel::transition_instantiation(instance):
-    assert isinstance(instance, simpleStateMachineMetaModel::Transition)
-
-@given(instance=simpleStateMachineMetaModel::Transition_strategy)
-def test_simplestatemachinemetamodel::transition_Name_type(instance):
-    assert isinstance(instance.Name, str)
+def test_simplestatemachinemetamodel_transition_instantiation(instance):
+    assert isinstance(instance, simpleStateMachineMetaModel_Transition)
 
 
-@given(instance=simpleStateMachineMetaModel::Transition_strategy)
-def test_simplestatemachinemetamodel::transition_Name_setter(instance):
+
+@given(instance=simpleStateMachineMetaModel_Transition_strategy)
+def test_simplestatemachinemetamodel_transition_Name_setter(instance):
     original = instance.Name
     instance.Name = original
     assert instance.Name == original
 
-@given(instance=simpleStateMachineMetaModel::State_strategy)
+@given(instance=simpleStateMachineMetaModel_State_strategy)
 @settings(max_examples=50)
-def test_simplestatemachinemetamodel::state_instantiation(instance):
-    assert isinstance(instance, simpleStateMachineMetaModel::State)
-
-@given(instance=simpleStateMachineMetaModel::State_strategy)
-def test_simplestatemachinemetamodel::state_Name_type(instance):
-    assert isinstance(instance.Name, str)
+def test_simplestatemachinemetamodel_state_instantiation(instance):
+    assert isinstance(instance, simpleStateMachineMetaModel_State)
 
 
-@given(instance=simpleStateMachineMetaModel::State_strategy)
-def test_simplestatemachinemetamodel::state_Name_setter(instance):
+
+@given(instance=simpleStateMachineMetaModel_State_strategy)
+def test_simplestatemachinemetamodel_state_Name_setter(instance):
     original = instance.Name
     instance.Name = original
     assert instance.Name == original
 
-@given(instance=simpleStateMachineMetaModel::SimpleStateMachine_strategy)
+@given(instance=simpleStateMachineMetaModel_SimpleStateMachine_strategy)
 @settings(max_examples=50)
-def test_simplestatemachinemetamodel::simplestatemachine_instantiation(instance):
-    assert isinstance(instance, simpleStateMachineMetaModel::SimpleStateMachine)
-
-@given(instance=simpleStateMachineMetaModel::SimpleStateMachine_strategy)
-def test_simplestatemachinemetamodel::simplestatemachine_Name_type(instance):
-    assert isinstance(instance.Name, str)
+def test_simplestatemachinemetamodel_simplestatemachine_instantiation(instance):
+    assert isinstance(instance, simpleStateMachineMetaModel_SimpleStateMachine)
 
 
-@given(instance=simpleStateMachineMetaModel::SimpleStateMachine_strategy)
-def test_simplestatemachinemetamodel::simplestatemachine_Name_setter(instance):
+
+@given(instance=simpleStateMachineMetaModel_SimpleStateMachine_strategy)
+def test_simplestatemachinemetamodel_simplestatemachine_Name_setter(instance):
     original = instance.Name
     instance.Name = original
     assert instance.Name == original

@@ -3,12 +3,12 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    library::Library,
-    library::Book,
-    library::Author,
+from python_code import (
+    library_Library,
+    library_Book,
+    library_Author,
     Rating,
 )
 
@@ -18,23 +18,23 @@ from classes import (
 
 
 
-def test_library::library_is_not_abstract():
-    assert not inspect.isabstract(library::Library)
+def test_library_library_is_not_abstract():
+    assert not inspect.isabstract(library_Library)
 
 
-def test_library::library_constructor_exists():
-    assert callable(library::Library.__init__)
+def test_library_library_constructor_exists():
+    assert callable(library_Library.__init__)
 
 
-def test_library::library_constructor_args():
-    sig = inspect.signature(library::Library.__init__)
+def test_library_library_constructor_args():
+    sig = inspect.signature(library_Library.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_library::library_has_name():
-    assert hasattr(library::Library, "name")
+def test_library_library_has_name():
+    assert hasattr(library_Library, "name")
     descriptor = None
-    for klass in library::Library.__mro__:
+    for klass in library_Library.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -42,57 +42,57 @@ def test_library::library_has_name():
 
 
 
-def test_library::book_is_not_abstract():
-    assert not inspect.isabstract(library::Book)
+def test_library_book_is_not_abstract():
+    assert not inspect.isabstract(library_Book)
 
 
-def test_library::book_constructor_exists():
-    assert callable(library::Book.__init__)
+def test_library_book_constructor_exists():
+    assert callable(library_Book.__init__)
 
 
-def test_library::book_constructor_args():
-    sig = inspect.signature(library::Book.__init__)
+def test_library_book_constructor_args():
+    sig = inspect.signature(library_Book.__init__)
     params = list(sig.parameters.keys())
-    assert "rating" in params, "Missing parameter 'rating'"
     assert "name" in params, "Missing parameter 'name'"
+    assert "rating" in params, "Missing parameter 'rating'"
 
-def test_library::book_has_rating():
-    assert hasattr(library::Book, "rating")
+def test_library_book_has_name():
+    assert hasattr(library_Book, "name")
     descriptor = None
-    for klass in library::Book.__mro__:
+    for klass in library_Book.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_library_book_has_rating():
+    assert hasattr(library_Book, "rating")
+    descriptor = None
+    for klass in library_Book.__mro__:
         if "rating" in klass.__dict__:
             descriptor = klass.__dict__["rating"]
             break
     assert isinstance(descriptor, property)
 
-def test_library::book_has_name():
-    assert hasattr(library::Book, "name")
-    descriptor = None
-    for klass in library::Book.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
 
 
-
-def test_library::author_is_not_abstract():
-    assert not inspect.isabstract(library::Author)
-
-
-def test_library::author_constructor_exists():
-    assert callable(library::Author.__init__)
+def test_library_author_is_not_abstract():
+    assert not inspect.isabstract(library_Author)
 
 
-def test_library::author_constructor_args():
-    sig = inspect.signature(library::Author.__init__)
+def test_library_author_constructor_exists():
+    assert callable(library_Author.__init__)
+
+
+def test_library_author_constructor_args():
+    sig = inspect.signature(library_Author.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_library::author_has_name():
-    assert hasattr(library::Author, "name")
+def test_library_author_has_name():
+    assert hasattr(library_Author, "name")
     descriptor = None
-    for klass in library::Author.__mro__:
+    for klass in library_Author.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -106,8 +106,8 @@ def test_rating_has_all_literals():
     # Collect the names of literals in this Enumeration
     enum_literals = [lit.name for lit in Rating]
     expected_literals = [
-        "GOOD",
         "NO_RATING",
+        "GOOD",
         "BAD",
         "MEDIUM",
     ]
@@ -127,79 +127,67 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-library::Library_strategy = st.builds(
-    library::Library,
+library_Library_strategy = st.builds(
+    library_Library,
     name=
         safe_text
 )
-library::Book_strategy = st.builds(
-    library::Book,
-    rating=
+library_Book_strategy = st.builds(
+    library_Book,
+    name=
         safe_text,
-    name=
+    rating=
         safe_text
 )
-library::Author_strategy = st.builds(
-    library::Author,
+library_Author_strategy = st.builds(
+    library_Author,
     name=
         safe_text
 )
 
-@given(instance=library::Library_strategy)
+@given(instance=library_Library_strategy)
 @settings(max_examples=50)
-def test_library::library_instantiation(instance):
-    assert isinstance(instance, library::Library)
-
-@given(instance=library::Library_strategy)
-def test_library::library_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_library_library_instantiation(instance):
+    assert isinstance(instance, library_Library)
 
 
-@given(instance=library::Library_strategy)
-def test_library::library_name_setter(instance):
+
+@given(instance=library_Library_strategy)
+def test_library_library_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=library::Book_strategy)
+@given(instance=library_Book_strategy)
 @settings(max_examples=50)
-def test_library::book_instantiation(instance):
-    assert isinstance(instance, library::Book)
-
-@given(instance=library::Book_strategy)
-def test_library::book_rating_type(instance):
-    assert isinstance(instance.rating, str)
+def test_library_book_instantiation(instance):
+    assert isinstance(instance, library_Book)
 
 
-@given(instance=library::Book_strategy)
-def test_library::book_rating_setter(instance):
+
+@given(instance=library_Book_strategy)
+def test_library_book_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+
+
+@given(instance=library_Book_strategy)
+def test_library_book_rating_setter(instance):
     original = instance.rating
     instance.rating = original
     assert instance.rating == original
 
-@given(instance=library::Book_strategy)
-def test_library::book_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=library::Book_strategy)
-def test_library::book_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
-
-@given(instance=library::Author_strategy)
+@given(instance=library_Author_strategy)
 @settings(max_examples=50)
-def test_library::author_instantiation(instance):
-    assert isinstance(instance, library::Author)
-
-@given(instance=library::Author_strategy)
-def test_library::author_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_library_author_instantiation(instance):
+    assert isinstance(instance, library_Author)
 
 
-@given(instance=library::Author_strategy)
-def test_library::author_name_setter(instance):
+
+@given(instance=library_Author_strategy)
+def test_library_author_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original

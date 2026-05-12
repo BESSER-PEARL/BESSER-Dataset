@@ -3,9 +3,19 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
 from python_code import (
+    Use_Case_Diagram_for_Proposed_System_Set_Leave_status_UseCase,
+    Use_Case_Diagram_for_Proposed_System_Set_advances_status_UseCase,
+    Use_Case_Diagram_for_Proposed_System_Request_Loan_and_advances_UseCase,
+    Use_Case_Diagram_for_Proposed_System_Request_Leaves_UseCase,
+    Use_Case_Diagram_for_Proposed_System_View_Reports_UseCase,
+    Use_Case_Diagram_for_Proposed_System_View_Personal_Time_Records_UseCase,
+    Use_Case_Diagram_for_Proposed_System_View_Leave_status_UseCase,
+    Use_Case_Diagram_for_Proposed_System_View_Personal_Salary_History_UseCase,
+    Use_Case_Diagram_for_Proposed_System_View_personal_detais_UseCase,
+    Employee_Actor,
     Presentation_StaffUI,
     Package2_ETF,
     Package2_User_Permissions,
@@ -71,16 +81,6 @@ from python_code import (
     Use_Case_Diagram_for_Proposed_System_View_Pay_Sheet_History_UseCase,
     Use_Case_Diagram_for_Proposed_System_View_leave_Rquest_UseCase,
     Use_Case_Diagram_for_Proposed_System_View_Employee_Time_Records_UseCase,
-    Use_Case_Diagram_for_Proposed_System_Set_Leave_status_UseCase,
-    Use_Case_Diagram_for_Proposed_System_Set_advances_status_UseCase,
-    Use_Case_Diagram_for_Proposed_System_Request_Loan_and_advances_UseCase,
-    Use_Case_Diagram_for_Proposed_System_Request_Leaves_UseCase,
-    Use_Case_Diagram_for_Proposed_System_View_Reports_UseCase,
-    Use_Case_Diagram_for_Proposed_System_View_Personal_Time_Records_UseCase,
-    Use_Case_Diagram_for_Proposed_System_View_Leave_status_UseCase,
-    Use_Case_Diagram_for_Proposed_System_View_Personal_Salary_History_UseCase,
-    Use_Case_Diagram_for_Proposed_System_View_personal_detais_UseCase,
-    Employee_Actor,
     date,
     ot_Type,
 )
@@ -88,6 +88,146 @@ from python_code import (
 # =============================================================================
 # SECTION 1 — STRUCTURAL TESTS
 # =============================================================================
+
+
+
+def test_use_case_diagram_for_proposed_system_set_leave_status_usecase_is_not_abstract():
+    assert not inspect.isabstract(Use_Case_Diagram_for_Proposed_System_Set_Leave_status_UseCase)
+
+
+def test_use_case_diagram_for_proposed_system_set_leave_status_usecase_constructor_exists():
+    assert callable(Use_Case_Diagram_for_Proposed_System_Set_Leave_status_UseCase.__init__)
+
+
+def test_use_case_diagram_for_proposed_system_set_leave_status_usecase_constructor_args():
+    sig = inspect.signature(Use_Case_Diagram_for_Proposed_System_Set_Leave_status_UseCase.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_use_case_diagram_for_proposed_system_set_advances_status_usecase_is_not_abstract():
+    assert not inspect.isabstract(Use_Case_Diagram_for_Proposed_System_Set_advances_status_UseCase)
+
+
+def test_use_case_diagram_for_proposed_system_set_advances_status_usecase_constructor_exists():
+    assert callable(Use_Case_Diagram_for_Proposed_System_Set_advances_status_UseCase.__init__)
+
+
+def test_use_case_diagram_for_proposed_system_set_advances_status_usecase_constructor_args():
+    sig = inspect.signature(Use_Case_Diagram_for_Proposed_System_Set_advances_status_UseCase.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_use_case_diagram_for_proposed_system_request_loan_and_advances_usecase_is_not_abstract():
+    assert not inspect.isabstract(Use_Case_Diagram_for_Proposed_System_Request_Loan_and_advances_UseCase)
+
+
+def test_use_case_diagram_for_proposed_system_request_loan_and_advances_usecase_constructor_exists():
+    assert callable(Use_Case_Diagram_for_Proposed_System_Request_Loan_and_advances_UseCase.__init__)
+
+
+def test_use_case_diagram_for_proposed_system_request_loan_and_advances_usecase_constructor_args():
+    sig = inspect.signature(Use_Case_Diagram_for_Proposed_System_Request_Loan_and_advances_UseCase.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_use_case_diagram_for_proposed_system_request_leaves_usecase_is_not_abstract():
+    assert not inspect.isabstract(Use_Case_Diagram_for_Proposed_System_Request_Leaves_UseCase)
+
+
+def test_use_case_diagram_for_proposed_system_request_leaves_usecase_constructor_exists():
+    assert callable(Use_Case_Diagram_for_Proposed_System_Request_Leaves_UseCase.__init__)
+
+
+def test_use_case_diagram_for_proposed_system_request_leaves_usecase_constructor_args():
+    sig = inspect.signature(Use_Case_Diagram_for_Proposed_System_Request_Leaves_UseCase.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_use_case_diagram_for_proposed_system_view_reports_usecase_is_not_abstract():
+    assert not inspect.isabstract(Use_Case_Diagram_for_Proposed_System_View_Reports_UseCase)
+
+
+def test_use_case_diagram_for_proposed_system_view_reports_usecase_constructor_exists():
+    assert callable(Use_Case_Diagram_for_Proposed_System_View_Reports_UseCase.__init__)
+
+
+def test_use_case_diagram_for_proposed_system_view_reports_usecase_constructor_args():
+    sig = inspect.signature(Use_Case_Diagram_for_Proposed_System_View_Reports_UseCase.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_use_case_diagram_for_proposed_system_view_personal_time_records_usecase_is_not_abstract():
+    assert not inspect.isabstract(Use_Case_Diagram_for_Proposed_System_View_Personal_Time_Records_UseCase)
+
+
+def test_use_case_diagram_for_proposed_system_view_personal_time_records_usecase_constructor_exists():
+    assert callable(Use_Case_Diagram_for_Proposed_System_View_Personal_Time_Records_UseCase.__init__)
+
+
+def test_use_case_diagram_for_proposed_system_view_personal_time_records_usecase_constructor_args():
+    sig = inspect.signature(Use_Case_Diagram_for_Proposed_System_View_Personal_Time_Records_UseCase.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_use_case_diagram_for_proposed_system_view_leave_status_usecase_is_not_abstract():
+    assert not inspect.isabstract(Use_Case_Diagram_for_Proposed_System_View_Leave_status_UseCase)
+
+
+def test_use_case_diagram_for_proposed_system_view_leave_status_usecase_constructor_exists():
+    assert callable(Use_Case_Diagram_for_Proposed_System_View_Leave_status_UseCase.__init__)
+
+
+def test_use_case_diagram_for_proposed_system_view_leave_status_usecase_constructor_args():
+    sig = inspect.signature(Use_Case_Diagram_for_Proposed_System_View_Leave_status_UseCase.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_use_case_diagram_for_proposed_system_view_personal_salary_history_usecase_is_not_abstract():
+    assert not inspect.isabstract(Use_Case_Diagram_for_Proposed_System_View_Personal_Salary_History_UseCase)
+
+
+def test_use_case_diagram_for_proposed_system_view_personal_salary_history_usecase_constructor_exists():
+    assert callable(Use_Case_Diagram_for_Proposed_System_View_Personal_Salary_History_UseCase.__init__)
+
+
+def test_use_case_diagram_for_proposed_system_view_personal_salary_history_usecase_constructor_args():
+    sig = inspect.signature(Use_Case_Diagram_for_Proposed_System_View_Personal_Salary_History_UseCase.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_use_case_diagram_for_proposed_system_view_personal_detais_usecase_is_not_abstract():
+    assert not inspect.isabstract(Use_Case_Diagram_for_Proposed_System_View_personal_detais_UseCase)
+
+
+def test_use_case_diagram_for_proposed_system_view_personal_detais_usecase_constructor_exists():
+    assert callable(Use_Case_Diagram_for_Proposed_System_View_personal_detais_UseCase.__init__)
+
+
+def test_use_case_diagram_for_proposed_system_view_personal_detais_usecase_constructor_args():
+    sig = inspect.signature(Use_Case_Diagram_for_Proposed_System_View_personal_detais_UseCase.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_employee_actor_is_not_abstract():
+    assert not inspect.isabstract(Employee_Actor)
+
+
+def test_employee_actor_constructor_exists():
+    assert callable(Employee_Actor.__init__)
+
+
+def test_employee_actor_constructor_args():
+    sig = inspect.signature(Employee_Actor.__init__)
+    params = list(sig.parameters.keys())
 
 
 
@@ -206,11 +346,29 @@ def test_package2_users_constructor_exists():
 def test_package2_users_constructor_args():
     sig = inspect.signature(Package2_Users.__init__)
     params = list(sig.parameters.keys())
+    assert "email" in params, "Missing parameter 'email'"
+    assert "firstname" in params, "Missing parameter 'firstname'"
     assert "password" in params, "Missing parameter 'password'"
     assert "id" in params, "Missing parameter 'id'"
-    assert "email" in params, "Missing parameter 'email'"
     assert "lastname" in params, "Missing parameter 'lastname'"
-    assert "firstname" in params, "Missing parameter 'firstname'"
+
+def test_package2_users_has_email():
+    assert hasattr(Package2_Users, "email")
+    descriptor = None
+    for klass in Package2_Users.__mro__:
+        if "email" in klass.__dict__:
+            descriptor = klass.__dict__["email"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_package2_users_has_firstname():
+    assert hasattr(Package2_Users, "firstname")
+    descriptor = None
+    for klass in Package2_Users.__mro__:
+        if "firstname" in klass.__dict__:
+            descriptor = klass.__dict__["firstname"]
+            break
+    assert isinstance(descriptor, property)
 
 def test_package2_users_has_password():
     assert hasattr(Package2_Users, "password")
@@ -230,30 +388,12 @@ def test_package2_users_has_id():
             break
     assert isinstance(descriptor, property)
 
-def test_package2_users_has_email():
-    assert hasattr(Package2_Users, "email")
-    descriptor = None
-    for klass in Package2_Users.__mro__:
-        if "email" in klass.__dict__:
-            descriptor = klass.__dict__["email"]
-            break
-    assert isinstance(descriptor, property)
-
 def test_package2_users_has_lastname():
     assert hasattr(Package2_Users, "lastname")
     descriptor = None
     for klass in Package2_Users.__mro__:
         if "lastname" in klass.__dict__:
             descriptor = klass.__dict__["lastname"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_package2_users_has_firstname():
-    assert hasattr(Package2_Users, "firstname")
-    descriptor = None
-    for klass in Package2_Users.__mro__:
-        if "firstname" in klass.__dict__:
-            descriptor = klass.__dict__["firstname"]
             break
     assert isinstance(descriptor, property)
 
@@ -270,9 +410,18 @@ def test_package2_user_groups_constructor_exists():
 def test_package2_user_groups_constructor_args():
     sig = inspect.signature(Package2_User_groups.__init__)
     params = list(sig.parameters.keys())
+    assert "attribute2" in params, "Missing parameter 'attribute2'"
     assert "attribute" in params, "Missing parameter 'attribute'"
     assert "attribute3" in params, "Missing parameter 'attribute3'"
-    assert "attribute2" in params, "Missing parameter 'attribute2'"
+
+def test_package2_user_groups_has_attribute2():
+    assert hasattr(Package2_User_groups, "attribute2")
+    descriptor = None
+    for klass in Package2_User_groups.__mro__:
+        if "attribute2" in klass.__dict__:
+            descriptor = klass.__dict__["attribute2"]
+            break
+    assert isinstance(descriptor, property)
 
 def test_package2_user_groups_has_attribute():
     assert hasattr(Package2_User_groups, "attribute")
@@ -292,15 +441,6 @@ def test_package2_user_groups_has_attribute3():
             break
     assert isinstance(descriptor, property)
 
-def test_package2_user_groups_has_attribute2():
-    assert hasattr(Package2_User_groups, "attribute2")
-    descriptor = None
-    for klass in Package2_User_groups.__mro__:
-        if "attribute2" in klass.__dict__:
-            descriptor = klass.__dict__["attribute2"]
-            break
-    assert isinstance(descriptor, property)
-
 
 
 def test_package2_ot_requests_is_not_abstract():
@@ -314,10 +454,19 @@ def test_package2_ot_requests_constructor_exists():
 def test_package2_ot_requests_constructor_args():
     sig = inspect.signature(Package2_OT_Requests.__init__)
     params = list(sig.parameters.keys())
+    assert "EmpID" in params, "Missing parameter 'EmpID'"
     assert "OtDay" in params, "Missing parameter 'OtDay'"
     assert "id" in params, "Missing parameter 'id'"
-    assert "EmpID" in params, "Missing parameter 'EmpID'"
     assert "OTType" in params, "Missing parameter 'OTType'"
+
+def test_package2_ot_requests_has_EmpID():
+    assert hasattr(Package2_OT_Requests, "EmpID")
+    descriptor = None
+    for klass in Package2_OT_Requests.__mro__:
+        if "EmpID" in klass.__dict__:
+            descriptor = klass.__dict__["EmpID"]
+            break
+    assert isinstance(descriptor, property)
 
 def test_package2_ot_requests_has_OtDay():
     assert hasattr(Package2_OT_Requests, "OtDay")
@@ -334,15 +483,6 @@ def test_package2_ot_requests_has_id():
     for klass in Package2_OT_Requests.__mro__:
         if "id" in klass.__dict__:
             descriptor = klass.__dict__["id"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_package2_ot_requests_has_EmpID():
-    assert hasattr(Package2_OT_Requests, "EmpID")
-    descriptor = None
-    for klass in Package2_OT_Requests.__mro__:
-        if "EmpID" in klass.__dict__:
-            descriptor = klass.__dict__["EmpID"]
             break
     assert isinstance(descriptor, property)
 
@@ -470,16 +610,16 @@ def test_package2_epf_constructor_exists():
 def test_package2_epf_constructor_args():
     sig = inspect.signature(Package2_EPF.__init__)
     params = list(sig.parameters.keys())
-    assert "id" in params, "Missing parameter 'id'"
-    assert "effectve_date" in params, "Missing parameter 'effectve_date'"
     assert "precentage" in params, "Missing parameter 'precentage'"
+    assert "effectve_date" in params, "Missing parameter 'effectve_date'"
+    assert "id" in params, "Missing parameter 'id'"
 
-def test_package2_epf_has_id():
-    assert hasattr(Package2_EPF, "id")
+def test_package2_epf_has_precentage():
+    assert hasattr(Package2_EPF, "precentage")
     descriptor = None
     for klass in Package2_EPF.__mro__:
-        if "id" in klass.__dict__:
-            descriptor = klass.__dict__["id"]
+        if "precentage" in klass.__dict__:
+            descriptor = klass.__dict__["precentage"]
             break
     assert isinstance(descriptor, property)
 
@@ -492,12 +632,12 @@ def test_package2_epf_has_effectve_date():
             break
     assert isinstance(descriptor, property)
 
-def test_package2_epf_has_precentage():
-    assert hasattr(Package2_EPF, "precentage")
+def test_package2_epf_has_id():
+    assert hasattr(Package2_EPF, "id")
     descriptor = None
     for klass in Package2_EPF.__mro__:
-        if "precentage" in klass.__dict__:
-            descriptor = klass.__dict__["precentage"]
+        if "id" in klass.__dict__:
+            descriptor = klass.__dict__["id"]
             break
     assert isinstance(descriptor, property)
 
@@ -514,17 +654,8 @@ def test_package2_employeesalary_constructor_exists():
 def test_package2_employeesalary_constructor_args():
     sig = inspect.signature(Package2_EmployeeSalary.__init__)
     params = list(sig.parameters.keys())
-    assert "attribute" in params, "Missing parameter 'attribute'"
     assert "attribute2" in params, "Missing parameter 'attribute2'"
-
-def test_package2_employeesalary_has_attribute():
-    assert hasattr(Package2_EmployeeSalary, "attribute")
-    descriptor = None
-    for klass in Package2_EmployeeSalary.__mro__:
-        if "attribute" in klass.__dict__:
-            descriptor = klass.__dict__["attribute"]
-            break
-    assert isinstance(descriptor, property)
+    assert "attribute" in params, "Missing parameter 'attribute'"
 
 def test_package2_employeesalary_has_attribute2():
     assert hasattr(Package2_EmployeeSalary, "attribute2")
@@ -532,6 +663,15 @@ def test_package2_employeesalary_has_attribute2():
     for klass in Package2_EmployeeSalary.__mro__:
         if "attribute2" in klass.__dict__:
             descriptor = klass.__dict__["attribute2"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_package2_employeesalary_has_attribute():
+    assert hasattr(Package2_EmployeeSalary, "attribute")
+    descriptor = None
+    for klass in Package2_EmployeeSalary.__mro__:
+        if "attribute" in klass.__dict__:
+            descriptor = klass.__dict__["attribute"]
             break
     assert isinstance(descriptor, property)
 
@@ -548,14 +688,32 @@ def test_package2_employeeparoll_constructor_exists():
 def test_package2_employeeparoll_constructor_args():
     sig = inspect.signature(Package2_EmployeeParoll.__init__)
     params = list(sig.parameters.keys())
+    assert "id" in params, "Missing parameter 'id'"
+    assert "otamount" in params, "Missing parameter 'otamount'"
     assert "epf" in params, "Missing parameter 'epf'"
     assert "etf" in params, "Missing parameter 'etf'"
-    assert "otamount" in params, "Missing parameter 'otamount'"
-    assert "empid" in params, "Missing parameter 'empid'"
-    assert "id" in params, "Missing parameter 'id'"
-    assert "doyamount" in params, "Missing parameter 'doyamount'"
     assert "basicslaray" in params, "Missing parameter 'basicslaray'"
     assert "empid3" in params, "Missing parameter 'empid3'"
+    assert "doyamount" in params, "Missing parameter 'doyamount'"
+    assert "empid" in params, "Missing parameter 'empid'"
+
+def test_package2_employeeparoll_has_id():
+    assert hasattr(Package2_EmployeeParoll, "id")
+    descriptor = None
+    for klass in Package2_EmployeeParoll.__mro__:
+        if "id" in klass.__dict__:
+            descriptor = klass.__dict__["id"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_package2_employeeparoll_has_otamount():
+    assert hasattr(Package2_EmployeeParoll, "otamount")
+    descriptor = None
+    for klass in Package2_EmployeeParoll.__mro__:
+        if "otamount" in klass.__dict__:
+            descriptor = klass.__dict__["otamount"]
+            break
+    assert isinstance(descriptor, property)
 
 def test_package2_employeeparoll_has_epf():
     assert hasattr(Package2_EmployeeParoll, "epf")
@@ -572,42 +730,6 @@ def test_package2_employeeparoll_has_etf():
     for klass in Package2_EmployeeParoll.__mro__:
         if "etf" in klass.__dict__:
             descriptor = klass.__dict__["etf"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_package2_employeeparoll_has_otamount():
-    assert hasattr(Package2_EmployeeParoll, "otamount")
-    descriptor = None
-    for klass in Package2_EmployeeParoll.__mro__:
-        if "otamount" in klass.__dict__:
-            descriptor = klass.__dict__["otamount"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_package2_employeeparoll_has_empid():
-    assert hasattr(Package2_EmployeeParoll, "empid")
-    descriptor = None
-    for klass in Package2_EmployeeParoll.__mro__:
-        if "empid" in klass.__dict__:
-            descriptor = klass.__dict__["empid"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_package2_employeeparoll_has_id():
-    assert hasattr(Package2_EmployeeParoll, "id")
-    descriptor = None
-    for klass in Package2_EmployeeParoll.__mro__:
-        if "id" in klass.__dict__:
-            descriptor = klass.__dict__["id"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_package2_employeeparoll_has_doyamount():
-    assert hasattr(Package2_EmployeeParoll, "doyamount")
-    descriptor = None
-    for klass in Package2_EmployeeParoll.__mro__:
-        if "doyamount" in klass.__dict__:
-            descriptor = klass.__dict__["doyamount"]
             break
     assert isinstance(descriptor, property)
 
@@ -629,6 +751,24 @@ def test_package2_employeeparoll_has_empid3():
             break
     assert isinstance(descriptor, property)
 
+def test_package2_employeeparoll_has_doyamount():
+    assert hasattr(Package2_EmployeeParoll, "doyamount")
+    descriptor = None
+    for klass in Package2_EmployeeParoll.__mro__:
+        if "doyamount" in klass.__dict__:
+            descriptor = klass.__dict__["doyamount"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_package2_employeeparoll_has_empid():
+    assert hasattr(Package2_EmployeeParoll, "empid")
+    descriptor = None
+    for klass in Package2_EmployeeParoll.__mro__:
+        if "empid" in klass.__dict__:
+            descriptor = klass.__dict__["empid"]
+            break
+    assert isinstance(descriptor, property)
+
 
 
 def test_package2_employee_is_not_abstract():
@@ -642,20 +782,20 @@ def test_package2_employee_constructor_exists():
 def test_package2_employee_constructor_args():
     sig = inspect.signature(Package2_Employee.__init__)
     params = list(sig.parameters.keys())
-    assert "post" in params, "Missing parameter 'post'"
-    assert "usergroup" in params, "Missing parameter 'usergroup'"
-    assert "leavegroup" in params, "Missing parameter 'leavegroup'"
     assert "id" in params, "Missing parameter 'id'"
-    assert "shift" in params, "Missing parameter 'shift'"
-    assert "depid" in params, "Missing parameter 'depid'"
+    assert "usergroup" in params, "Missing parameter 'usergroup'"
     assert "empid" in params, "Missing parameter 'empid'"
+    assert "shift" in params, "Missing parameter 'shift'"
+    assert "leavegroup" in params, "Missing parameter 'leavegroup'"
+    assert "post" in params, "Missing parameter 'post'"
+    assert "depid" in params, "Missing parameter 'depid'"
 
-def test_package2_employee_has_post():
-    assert hasattr(Package2_Employee, "post")
+def test_package2_employee_has_id():
+    assert hasattr(Package2_Employee, "id")
     descriptor = None
     for klass in Package2_Employee.__mro__:
-        if "post" in klass.__dict__:
-            descriptor = klass.__dict__["post"]
+        if "id" in klass.__dict__:
+            descriptor = klass.__dict__["id"]
             break
     assert isinstance(descriptor, property)
 
@@ -668,21 +808,12 @@ def test_package2_employee_has_usergroup():
             break
     assert isinstance(descriptor, property)
 
-def test_package2_employee_has_leavegroup():
-    assert hasattr(Package2_Employee, "leavegroup")
+def test_package2_employee_has_empid():
+    assert hasattr(Package2_Employee, "empid")
     descriptor = None
     for klass in Package2_Employee.__mro__:
-        if "leavegroup" in klass.__dict__:
-            descriptor = klass.__dict__["leavegroup"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_package2_employee_has_id():
-    assert hasattr(Package2_Employee, "id")
-    descriptor = None
-    for klass in Package2_Employee.__mro__:
-        if "id" in klass.__dict__:
-            descriptor = klass.__dict__["id"]
+        if "empid" in klass.__dict__:
+            descriptor = klass.__dict__["empid"]
             break
     assert isinstance(descriptor, property)
 
@@ -695,21 +826,30 @@ def test_package2_employee_has_shift():
             break
     assert isinstance(descriptor, property)
 
+def test_package2_employee_has_leavegroup():
+    assert hasattr(Package2_Employee, "leavegroup")
+    descriptor = None
+    for klass in Package2_Employee.__mro__:
+        if "leavegroup" in klass.__dict__:
+            descriptor = klass.__dict__["leavegroup"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_package2_employee_has_post():
+    assert hasattr(Package2_Employee, "post")
+    descriptor = None
+    for klass in Package2_Employee.__mro__:
+        if "post" in klass.__dict__:
+            descriptor = klass.__dict__["post"]
+            break
+    assert isinstance(descriptor, property)
+
 def test_package2_employee_has_depid():
     assert hasattr(Package2_Employee, "depid")
     descriptor = None
     for klass in Package2_Employee.__mro__:
         if "depid" in klass.__dict__:
             descriptor = klass.__dict__["depid"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_package2_employee_has_empid():
-    assert hasattr(Package2_Employee, "empid")
-    descriptor = None
-    for klass in Package2_Employee.__mro__:
-        if "empid" in klass.__dict__:
-            descriptor = klass.__dict__["empid"]
             break
     assert isinstance(descriptor, property)
 
@@ -760,19 +900,10 @@ def test_package2_shifts_constructor_exists():
 def test_package2_shifts_constructor_args():
     sig = inspect.signature(Package2_Shifts.__init__)
     params = list(sig.parameters.keys())
-    assert "endtime" in params, "Missing parameter 'endtime'"
     assert "shiftaname" in params, "Missing parameter 'shiftaname'"
     assert "starttime" in params, "Missing parameter 'starttime'"
     assert "id" in params, "Missing parameter 'id'"
-
-def test_package2_shifts_has_endtime():
-    assert hasattr(Package2_Shifts, "endtime")
-    descriptor = None
-    for klass in Package2_Shifts.__mro__:
-        if "endtime" in klass.__dict__:
-            descriptor = klass.__dict__["endtime"]
-            break
-    assert isinstance(descriptor, property)
+    assert "endtime" in params, "Missing parameter 'endtime'"
 
 def test_package2_shifts_has_shiftaname():
     assert hasattr(Package2_Shifts, "shiftaname")
@@ -801,6 +932,15 @@ def test_package2_shifts_has_id():
             break
     assert isinstance(descriptor, property)
 
+def test_package2_shifts_has_endtime():
+    assert hasattr(Package2_Shifts, "endtime")
+    descriptor = None
+    for klass in Package2_Shifts.__mro__:
+        if "endtime" in klass.__dict__:
+            descriptor = klass.__dict__["endtime"]
+            break
+    assert isinstance(descriptor, property)
+
 
 
 def test_package2_departments_is_not_abstract():
@@ -814,17 +954,8 @@ def test_package2_departments_constructor_exists():
 def test_package2_departments_constructor_args():
     sig = inspect.signature(Package2_Departments.__init__)
     params = list(sig.parameters.keys())
-    assert "id" in params, "Missing parameter 'id'"
     assert "depname" in params, "Missing parameter 'depname'"
-
-def test_package2_departments_has_id():
-    assert hasattr(Package2_Departments, "id")
-    descriptor = None
-    for klass in Package2_Departments.__mro__:
-        if "id" in klass.__dict__:
-            descriptor = klass.__dict__["id"]
-            break
-    assert isinstance(descriptor, property)
+    assert "id" in params, "Missing parameter 'id'"
 
 def test_package2_departments_has_depname():
     assert hasattr(Package2_Departments, "depname")
@@ -832,6 +963,15 @@ def test_package2_departments_has_depname():
     for klass in Package2_Departments.__mro__:
         if "depname" in klass.__dict__:
             descriptor = klass.__dict__["depname"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_package2_departments_has_id():
+    assert hasattr(Package2_Departments, "id")
+    descriptor = None
+    for klass in Package2_Departments.__mro__:
+        if "id" in klass.__dict__:
+            descriptor = klass.__dict__["id"]
             break
     assert isinstance(descriptor, property)
 
@@ -910,26 +1050,17 @@ def test_package2_attendance_constructor_exists():
 def test_package2_attendance_constructor_args():
     sig = inspect.signature(Package2_Attendance.__init__)
     params = list(sig.parameters.keys())
-    assert "empid" in params, "Missing parameter 'empid'"
-    assert "timein" in params, "Missing parameter 'timein'"
-    assert "timeout" in params, "Missing parameter 'timeout'"
     assert "id" in params, "Missing parameter 'id'"
+    assert "timeout" in params, "Missing parameter 'timeout'"
+    assert "timein" in params, "Missing parameter 'timein'"
+    assert "empid" in params, "Missing parameter 'empid'"
 
-def test_package2_attendance_has_empid():
-    assert hasattr(Package2_Attendance, "empid")
+def test_package2_attendance_has_id():
+    assert hasattr(Package2_Attendance, "id")
     descriptor = None
     for klass in Package2_Attendance.__mro__:
-        if "empid" in klass.__dict__:
-            descriptor = klass.__dict__["empid"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_package2_attendance_has_timein():
-    assert hasattr(Package2_Attendance, "timein")
-    descriptor = None
-    for klass in Package2_Attendance.__mro__:
-        if "timein" in klass.__dict__:
-            descriptor = klass.__dict__["timein"]
+        if "id" in klass.__dict__:
+            descriptor = klass.__dict__["id"]
             break
     assert isinstance(descriptor, property)
 
@@ -942,12 +1073,21 @@ def test_package2_attendance_has_timeout():
             break
     assert isinstance(descriptor, property)
 
-def test_package2_attendance_has_id():
-    assert hasattr(Package2_Attendance, "id")
+def test_package2_attendance_has_timein():
+    assert hasattr(Package2_Attendance, "timein")
     descriptor = None
     for klass in Package2_Attendance.__mro__:
-        if "id" in klass.__dict__:
-            descriptor = klass.__dict__["id"]
+        if "timein" in klass.__dict__:
+            descriptor = klass.__dict__["timein"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_package2_attendance_has_empid():
+    assert hasattr(Package2_Attendance, "empid")
+    descriptor = None
+    for klass in Package2_Attendance.__mro__:
+        if "empid" in klass.__dict__:
+            descriptor = klass.__dict__["empid"]
             break
     assert isinstance(descriptor, property)
 
@@ -964,16 +1104,16 @@ def test_package2_allowance_constructor_exists():
 def test_package2_allowance_constructor_args():
     sig = inspect.signature(Package2_Allowance.__init__)
     params = list(sig.parameters.keys())
-    assert "emp_id" in params, "Missing parameter 'emp_id'"
-    assert "Effectivedate" in params, "Missing parameter 'Effectivedate'"
     assert "id" in params, "Missing parameter 'id'"
+    assert "Effectivedate" in params, "Missing parameter 'Effectivedate'"
+    assert "emp_id" in params, "Missing parameter 'emp_id'"
 
-def test_package2_allowance_has_emp_id():
-    assert hasattr(Package2_Allowance, "emp_id")
+def test_package2_allowance_has_id():
+    assert hasattr(Package2_Allowance, "id")
     descriptor = None
     for klass in Package2_Allowance.__mro__:
-        if "emp_id" in klass.__dict__:
-            descriptor = klass.__dict__["emp_id"]
+        if "id" in klass.__dict__:
+            descriptor = klass.__dict__["id"]
             break
     assert isinstance(descriptor, property)
 
@@ -986,12 +1126,12 @@ def test_package2_allowance_has_Effectivedate():
             break
     assert isinstance(descriptor, property)
 
-def test_package2_allowance_has_id():
-    assert hasattr(Package2_Allowance, "id")
+def test_package2_allowance_has_emp_id():
+    assert hasattr(Package2_Allowance, "emp_id")
     descriptor = None
     for klass in Package2_Allowance.__mro__:
-        if "id" in klass.__dict__:
-            descriptor = klass.__dict__["id"]
+        if "emp_id" in klass.__dict__:
+            descriptor = klass.__dict__["emp_id"]
             break
     assert isinstance(descriptor, property)
 
@@ -1022,17 +1162,8 @@ def test_package_user_permissions_constructor_exists():
 def test_package_user_permissions_constructor_args():
     sig = inspect.signature(Package_User_Permissions.__init__)
     params = list(sig.parameters.keys())
-    assert "attribute" in params, "Missing parameter 'attribute'"
     assert "attribute2" in params, "Missing parameter 'attribute2'"
-
-def test_package_user_permissions_has_attribute():
-    assert hasattr(Package_User_Permissions, "attribute")
-    descriptor = None
-    for klass in Package_User_Permissions.__mro__:
-        if "attribute" in klass.__dict__:
-            descriptor = klass.__dict__["attribute"]
-            break
-    assert isinstance(descriptor, property)
+    assert "attribute" in params, "Missing parameter 'attribute'"
 
 def test_package_user_permissions_has_attribute2():
     assert hasattr(Package_User_Permissions, "attribute2")
@@ -1040,6 +1171,15 @@ def test_package_user_permissions_has_attribute2():
     for klass in Package_User_Permissions.__mro__:
         if "attribute2" in klass.__dict__:
             descriptor = klass.__dict__["attribute2"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_package_user_permissions_has_attribute():
+    assert hasattr(Package_User_Permissions, "attribute")
+    descriptor = None
+    for klass in Package_User_Permissions.__mro__:
+        if "attribute" in klass.__dict__:
+            descriptor = klass.__dict__["attribute"]
             break
     assert isinstance(descriptor, property)
 
@@ -1098,18 +1238,18 @@ def test_package_users_constructor_exists():
 def test_package_users_constructor_args():
     sig = inspect.signature(Package_Users.__init__)
     params = list(sig.parameters.keys())
-    assert "id" in params, "Missing parameter 'id'"
-    assert "password" in params, "Missing parameter 'password'"
-    assert "lastname" in params, "Missing parameter 'lastname'"
-    assert "email" in params, "Missing parameter 'email'"
     assert "firstname" in params, "Missing parameter 'firstname'"
+    assert "password" in params, "Missing parameter 'password'"
+    assert "email" in params, "Missing parameter 'email'"
+    assert "lastname" in params, "Missing parameter 'lastname'"
+    assert "id" in params, "Missing parameter 'id'"
 
-def test_package_users_has_id():
-    assert hasattr(Package_Users, "id")
+def test_package_users_has_firstname():
+    assert hasattr(Package_Users, "firstname")
     descriptor = None
     for klass in Package_Users.__mro__:
-        if "id" in klass.__dict__:
-            descriptor = klass.__dict__["id"]
+        if "firstname" in klass.__dict__:
+            descriptor = klass.__dict__["firstname"]
             break
     assert isinstance(descriptor, property)
 
@@ -1122,15 +1262,6 @@ def test_package_users_has_password():
             break
     assert isinstance(descriptor, property)
 
-def test_package_users_has_lastname():
-    assert hasattr(Package_Users, "lastname")
-    descriptor = None
-    for klass in Package_Users.__mro__:
-        if "lastname" in klass.__dict__:
-            descriptor = klass.__dict__["lastname"]
-            break
-    assert isinstance(descriptor, property)
-
 def test_package_users_has_email():
     assert hasattr(Package_Users, "email")
     descriptor = None
@@ -1140,12 +1271,21 @@ def test_package_users_has_email():
             break
     assert isinstance(descriptor, property)
 
-def test_package_users_has_firstname():
-    assert hasattr(Package_Users, "firstname")
+def test_package_users_has_lastname():
+    assert hasattr(Package_Users, "lastname")
     descriptor = None
     for klass in Package_Users.__mro__:
-        if "firstname" in klass.__dict__:
-            descriptor = klass.__dict__["firstname"]
+        if "lastname" in klass.__dict__:
+            descriptor = klass.__dict__["lastname"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_package_users_has_id():
+    assert hasattr(Package_Users, "id")
+    descriptor = None
+    for klass in Package_Users.__mro__:
+        if "id" in klass.__dict__:
+            descriptor = klass.__dict__["id"]
             break
     assert isinstance(descriptor, property)
 
@@ -1162,18 +1302,9 @@ def test_package_user_groups_constructor_exists():
 def test_package_user_groups_constructor_args():
     sig = inspect.signature(Package_User_groups.__init__)
     params = list(sig.parameters.keys())
-    assert "attribute3" in params, "Missing parameter 'attribute3'"
     assert "attribute" in params, "Missing parameter 'attribute'"
     assert "attribute2" in params, "Missing parameter 'attribute2'"
-
-def test_package_user_groups_has_attribute3():
-    assert hasattr(Package_User_groups, "attribute3")
-    descriptor = None
-    for klass in Package_User_groups.__mro__:
-        if "attribute3" in klass.__dict__:
-            descriptor = klass.__dict__["attribute3"]
-            break
-    assert isinstance(descriptor, property)
+    assert "attribute3" in params, "Missing parameter 'attribute3'"
 
 def test_package_user_groups_has_attribute():
     assert hasattr(Package_User_groups, "attribute")
@@ -1193,6 +1324,15 @@ def test_package_user_groups_has_attribute2():
             break
     assert isinstance(descriptor, property)
 
+def test_package_user_groups_has_attribute3():
+    assert hasattr(Package_User_groups, "attribute3")
+    descriptor = None
+    for klass in Package_User_groups.__mro__:
+        if "attribute3" in klass.__dict__:
+            descriptor = klass.__dict__["attribute3"]
+            break
+    assert isinstance(descriptor, property)
+
 
 
 def test_package_ot_requests_is_not_abstract():
@@ -1206,28 +1346,10 @@ def test_package_ot_requests_constructor_exists():
 def test_package_ot_requests_constructor_args():
     sig = inspect.signature(Package_OT_Requests.__init__)
     params = list(sig.parameters.keys())
-    assert "EmpID" in params, "Missing parameter 'EmpID'"
-    assert "OTType" in params, "Missing parameter 'OTType'"
     assert "id" in params, "Missing parameter 'id'"
+    assert "EmpID" in params, "Missing parameter 'EmpID'"
     assert "OtDay" in params, "Missing parameter 'OtDay'"
-
-def test_package_ot_requests_has_EmpID():
-    assert hasattr(Package_OT_Requests, "EmpID")
-    descriptor = None
-    for klass in Package_OT_Requests.__mro__:
-        if "EmpID" in klass.__dict__:
-            descriptor = klass.__dict__["EmpID"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_package_ot_requests_has_OTType():
-    assert hasattr(Package_OT_Requests, "OTType")
-    descriptor = None
-    for klass in Package_OT_Requests.__mro__:
-        if "OTType" in klass.__dict__:
-            descriptor = klass.__dict__["OTType"]
-            break
-    assert isinstance(descriptor, property)
+    assert "OTType" in params, "Missing parameter 'OTType'"
 
 def test_package_ot_requests_has_id():
     assert hasattr(Package_OT_Requests, "id")
@@ -1238,12 +1360,30 @@ def test_package_ot_requests_has_id():
             break
     assert isinstance(descriptor, property)
 
+def test_package_ot_requests_has_EmpID():
+    assert hasattr(Package_OT_Requests, "EmpID")
+    descriptor = None
+    for klass in Package_OT_Requests.__mro__:
+        if "EmpID" in klass.__dict__:
+            descriptor = klass.__dict__["EmpID"]
+            break
+    assert isinstance(descriptor, property)
+
 def test_package_ot_requests_has_OtDay():
     assert hasattr(Package_OT_Requests, "OtDay")
     descriptor = None
     for klass in Package_OT_Requests.__mro__:
         if "OtDay" in klass.__dict__:
             descriptor = klass.__dict__["OtDay"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_package_ot_requests_has_OTType():
+    assert hasattr(Package_OT_Requests, "OTType")
+    descriptor = None
+    for klass in Package_OT_Requests.__mro__:
+        if "OTType" in klass.__dict__:
+            descriptor = klass.__dict__["OTType"]
             break
     assert isinstance(descriptor, property)
 
@@ -1342,18 +1482,9 @@ def test_package_epf_constructor_exists():
 def test_package_epf_constructor_args():
     sig = inspect.signature(Package_EPF.__init__)
     params = list(sig.parameters.keys())
-    assert "precentage" in params, "Missing parameter 'precentage'"
     assert "effectve_date" in params, "Missing parameter 'effectve_date'"
     assert "id" in params, "Missing parameter 'id'"
-
-def test_package_epf_has_precentage():
-    assert hasattr(Package_EPF, "precentage")
-    descriptor = None
-    for klass in Package_EPF.__mro__:
-        if "precentage" in klass.__dict__:
-            descriptor = klass.__dict__["precentage"]
-            break
-    assert isinstance(descriptor, property)
+    assert "precentage" in params, "Missing parameter 'precentage'"
 
 def test_package_epf_has_effectve_date():
     assert hasattr(Package_EPF, "effectve_date")
@@ -1373,6 +1504,15 @@ def test_package_epf_has_id():
             break
     assert isinstance(descriptor, property)
 
+def test_package_epf_has_precentage():
+    assert hasattr(Package_EPF, "precentage")
+    descriptor = None
+    for klass in Package_EPF.__mro__:
+        if "precentage" in klass.__dict__:
+            descriptor = klass.__dict__["precentage"]
+            break
+    assert isinstance(descriptor, property)
+
 
 
 def test_package_employeesalary_is_not_abstract():
@@ -1386,17 +1526,8 @@ def test_package_employeesalary_constructor_exists():
 def test_package_employeesalary_constructor_args():
     sig = inspect.signature(Package_EmployeeSalary.__init__)
     params = list(sig.parameters.keys())
-    assert "attribute2" in params, "Missing parameter 'attribute2'"
     assert "attribute" in params, "Missing parameter 'attribute'"
-
-def test_package_employeesalary_has_attribute2():
-    assert hasattr(Package_EmployeeSalary, "attribute2")
-    descriptor = None
-    for klass in Package_EmployeeSalary.__mro__:
-        if "attribute2" in klass.__dict__:
-            descriptor = klass.__dict__["attribute2"]
-            break
-    assert isinstance(descriptor, property)
+    assert "attribute2" in params, "Missing parameter 'attribute2'"
 
 def test_package_employeesalary_has_attribute():
     assert hasattr(Package_EmployeeSalary, "attribute")
@@ -1404,6 +1535,15 @@ def test_package_employeesalary_has_attribute():
     for klass in Package_EmployeeSalary.__mro__:
         if "attribute" in klass.__dict__:
             descriptor = klass.__dict__["attribute"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_package_employeesalary_has_attribute2():
+    assert hasattr(Package_EmployeeSalary, "attribute2")
+    descriptor = None
+    for klass in Package_EmployeeSalary.__mro__:
+        if "attribute2" in klass.__dict__:
+            descriptor = klass.__dict__["attribute2"]
             break
     assert isinstance(descriptor, property)
 
@@ -1454,47 +1594,20 @@ def test_package_employee_constructor_exists():
 def test_package_employee_constructor_args():
     sig = inspect.signature(Package_Employee.__init__)
     params = list(sig.parameters.keys())
-    assert "shift" in params, "Missing parameter 'shift'"
-    assert "leavegroup" in params, "Missing parameter 'leavegroup'"
-    assert "usergroup" in params, "Missing parameter 'usergroup'"
-    assert "depid" in params, "Missing parameter 'depid'"
-    assert "post" in params, "Missing parameter 'post'"
     assert "empid" in params, "Missing parameter 'empid'"
+    assert "post" in params, "Missing parameter 'post'"
+    assert "depid" in params, "Missing parameter 'depid'"
+    assert "usergroup" in params, "Missing parameter 'usergroup'"
+    assert "leavegroup" in params, "Missing parameter 'leavegroup'"
+    assert "shift" in params, "Missing parameter 'shift'"
     assert "id" in params, "Missing parameter 'id'"
 
-def test_package_employee_has_shift():
-    assert hasattr(Package_Employee, "shift")
+def test_package_employee_has_empid():
+    assert hasattr(Package_Employee, "empid")
     descriptor = None
     for klass in Package_Employee.__mro__:
-        if "shift" in klass.__dict__:
-            descriptor = klass.__dict__["shift"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_package_employee_has_leavegroup():
-    assert hasattr(Package_Employee, "leavegroup")
-    descriptor = None
-    for klass in Package_Employee.__mro__:
-        if "leavegroup" in klass.__dict__:
-            descriptor = klass.__dict__["leavegroup"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_package_employee_has_usergroup():
-    assert hasattr(Package_Employee, "usergroup")
-    descriptor = None
-    for klass in Package_Employee.__mro__:
-        if "usergroup" in klass.__dict__:
-            descriptor = klass.__dict__["usergroup"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_package_employee_has_depid():
-    assert hasattr(Package_Employee, "depid")
-    descriptor = None
-    for klass in Package_Employee.__mro__:
-        if "depid" in klass.__dict__:
-            descriptor = klass.__dict__["depid"]
+        if "empid" in klass.__dict__:
+            descriptor = klass.__dict__["empid"]
             break
     assert isinstance(descriptor, property)
 
@@ -1507,12 +1620,39 @@ def test_package_employee_has_post():
             break
     assert isinstance(descriptor, property)
 
-def test_package_employee_has_empid():
-    assert hasattr(Package_Employee, "empid")
+def test_package_employee_has_depid():
+    assert hasattr(Package_Employee, "depid")
     descriptor = None
     for klass in Package_Employee.__mro__:
-        if "empid" in klass.__dict__:
-            descriptor = klass.__dict__["empid"]
+        if "depid" in klass.__dict__:
+            descriptor = klass.__dict__["depid"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_package_employee_has_usergroup():
+    assert hasattr(Package_Employee, "usergroup")
+    descriptor = None
+    for klass in Package_Employee.__mro__:
+        if "usergroup" in klass.__dict__:
+            descriptor = klass.__dict__["usergroup"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_package_employee_has_leavegroup():
+    assert hasattr(Package_Employee, "leavegroup")
+    descriptor = None
+    for klass in Package_Employee.__mro__:
+        if "leavegroup" in klass.__dict__:
+            descriptor = klass.__dict__["leavegroup"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_package_employee_has_shift():
+    assert hasattr(Package_Employee, "shift")
+    descriptor = None
+    for klass in Package_Employee.__mro__:
+        if "shift" in klass.__dict__:
+            descriptor = klass.__dict__["shift"]
             break
     assert isinstance(descriptor, property)
 
@@ -1538,17 +1678,8 @@ def test_package_posts_constructor_exists():
 def test_package_posts_constructor_args():
     sig = inspect.signature(Package_Posts.__init__)
     params = list(sig.parameters.keys())
-    assert "attribute2" in params, "Missing parameter 'attribute2'"
     assert "attribute" in params, "Missing parameter 'attribute'"
-
-def test_package_posts_has_attribute2():
-    assert hasattr(Package_Posts, "attribute2")
-    descriptor = None
-    for klass in Package_Posts.__mro__:
-        if "attribute2" in klass.__dict__:
-            descriptor = klass.__dict__["attribute2"]
-            break
-    assert isinstance(descriptor, property)
+    assert "attribute2" in params, "Missing parameter 'attribute2'"
 
 def test_package_posts_has_attribute():
     assert hasattr(Package_Posts, "attribute")
@@ -1556,6 +1687,15 @@ def test_package_posts_has_attribute():
     for klass in Package_Posts.__mro__:
         if "attribute" in klass.__dict__:
             descriptor = klass.__dict__["attribute"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_package_posts_has_attribute2():
+    assert hasattr(Package_Posts, "attribute2")
+    descriptor = None
+    for klass in Package_Posts.__mro__:
+        if "attribute2" in klass.__dict__:
+            descriptor = klass.__dict__["attribute2"]
             break
     assert isinstance(descriptor, property)
 
@@ -1630,17 +1770,8 @@ def test_package_deductions_constructor_exists():
 def test_package_deductions_constructor_args():
     sig = inspect.signature(Package_Deductions.__init__)
     params = list(sig.parameters.keys())
-    assert "attribute2" in params, "Missing parameter 'attribute2'"
     assert "attribute" in params, "Missing parameter 'attribute'"
-
-def test_package_deductions_has_attribute2():
-    assert hasattr(Package_Deductions, "attribute2")
-    descriptor = None
-    for klass in Package_Deductions.__mro__:
-        if "attribute2" in klass.__dict__:
-            descriptor = klass.__dict__["attribute2"]
-            break
-    assert isinstance(descriptor, property)
+    assert "attribute2" in params, "Missing parameter 'attribute2'"
 
 def test_package_deductions_has_attribute():
     assert hasattr(Package_Deductions, "attribute")
@@ -1648,6 +1779,15 @@ def test_package_deductions_has_attribute():
     for klass in Package_Deductions.__mro__:
         if "attribute" in klass.__dict__:
             descriptor = klass.__dict__["attribute"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_package_deductions_has_attribute2():
+    assert hasattr(Package_Deductions, "attribute2")
+    descriptor = None
+    for klass in Package_Deductions.__mro__:
+        if "attribute2" in klass.__dict__:
+            descriptor = klass.__dict__["attribute2"]
             break
     assert isinstance(descriptor, property)
 
@@ -1693,9 +1833,9 @@ def test_package_attendance_constructor_args():
     sig = inspect.signature(Package_Attendance.__init__)
     params = list(sig.parameters.keys())
     assert "timeout" in params, "Missing parameter 'timeout'"
-    assert "id" in params, "Missing parameter 'id'"
     assert "timein" in params, "Missing parameter 'timein'"
     assert "empid" in params, "Missing parameter 'empid'"
+    assert "id" in params, "Missing parameter 'id'"
 
 def test_package_attendance_has_timeout():
     assert hasattr(Package_Attendance, "timeout")
@@ -1703,15 +1843,6 @@ def test_package_attendance_has_timeout():
     for klass in Package_Attendance.__mro__:
         if "timeout" in klass.__dict__:
             descriptor = klass.__dict__["timeout"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_package_attendance_has_id():
-    assert hasattr(Package_Attendance, "id")
-    descriptor = None
-    for klass in Package_Attendance.__mro__:
-        if "id" in klass.__dict__:
-            descriptor = klass.__dict__["id"]
             break
     assert isinstance(descriptor, property)
 
@@ -1730,6 +1861,15 @@ def test_package_attendance_has_empid():
     for klass in Package_Attendance.__mro__:
         if "empid" in klass.__dict__:
             descriptor = klass.__dict__["empid"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_package_attendance_has_id():
+    assert hasattr(Package_Attendance, "id")
+    descriptor = None
+    for klass in Package_Attendance.__mro__:
+        if "id" in klass.__dict__:
+            descriptor = klass.__dict__["id"]
             break
     assert isinstance(descriptor, property)
 
@@ -2029,146 +2169,6 @@ def test_use_case_diagram_for_proposed_system_view_employee_time_records_usecase
     sig = inspect.signature(Use_Case_Diagram_for_Proposed_System_View_Employee_Time_Records_UseCase.__init__)
     params = list(sig.parameters.keys())
 
-
-
-def test_use_case_diagram_for_proposed_system_set_leave_status_usecase_is_not_abstract():
-    assert not inspect.isabstract(Use_Case_Diagram_for_Proposed_System_Set_Leave_status_UseCase)
-
-
-def test_use_case_diagram_for_proposed_system_set_leave_status_usecase_constructor_exists():
-    assert callable(Use_Case_Diagram_for_Proposed_System_Set_Leave_status_UseCase.__init__)
-
-
-def test_use_case_diagram_for_proposed_system_set_leave_status_usecase_constructor_args():
-    sig = inspect.signature(Use_Case_Diagram_for_Proposed_System_Set_Leave_status_UseCase.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_use_case_diagram_for_proposed_system_set_advances_status_usecase_is_not_abstract():
-    assert not inspect.isabstract(Use_Case_Diagram_for_Proposed_System_Set_advances_status_UseCase)
-
-
-def test_use_case_diagram_for_proposed_system_set_advances_status_usecase_constructor_exists():
-    assert callable(Use_Case_Diagram_for_Proposed_System_Set_advances_status_UseCase.__init__)
-
-
-def test_use_case_diagram_for_proposed_system_set_advances_status_usecase_constructor_args():
-    sig = inspect.signature(Use_Case_Diagram_for_Proposed_System_Set_advances_status_UseCase.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_use_case_diagram_for_proposed_system_request_loan_and_advances_usecase_is_not_abstract():
-    assert not inspect.isabstract(Use_Case_Diagram_for_Proposed_System_Request_Loan_and_advances_UseCase)
-
-
-def test_use_case_diagram_for_proposed_system_request_loan_and_advances_usecase_constructor_exists():
-    assert callable(Use_Case_Diagram_for_Proposed_System_Request_Loan_and_advances_UseCase.__init__)
-
-
-def test_use_case_diagram_for_proposed_system_request_loan_and_advances_usecase_constructor_args():
-    sig = inspect.signature(Use_Case_Diagram_for_Proposed_System_Request_Loan_and_advances_UseCase.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_use_case_diagram_for_proposed_system_request_leaves_usecase_is_not_abstract():
-    assert not inspect.isabstract(Use_Case_Diagram_for_Proposed_System_Request_Leaves_UseCase)
-
-
-def test_use_case_diagram_for_proposed_system_request_leaves_usecase_constructor_exists():
-    assert callable(Use_Case_Diagram_for_Proposed_System_Request_Leaves_UseCase.__init__)
-
-
-def test_use_case_diagram_for_proposed_system_request_leaves_usecase_constructor_args():
-    sig = inspect.signature(Use_Case_Diagram_for_Proposed_System_Request_Leaves_UseCase.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_use_case_diagram_for_proposed_system_view_reports_usecase_is_not_abstract():
-    assert not inspect.isabstract(Use_Case_Diagram_for_Proposed_System_View_Reports_UseCase)
-
-
-def test_use_case_diagram_for_proposed_system_view_reports_usecase_constructor_exists():
-    assert callable(Use_Case_Diagram_for_Proposed_System_View_Reports_UseCase.__init__)
-
-
-def test_use_case_diagram_for_proposed_system_view_reports_usecase_constructor_args():
-    sig = inspect.signature(Use_Case_Diagram_for_Proposed_System_View_Reports_UseCase.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_use_case_diagram_for_proposed_system_view_personal_time_records_usecase_is_not_abstract():
-    assert not inspect.isabstract(Use_Case_Diagram_for_Proposed_System_View_Personal_Time_Records_UseCase)
-
-
-def test_use_case_diagram_for_proposed_system_view_personal_time_records_usecase_constructor_exists():
-    assert callable(Use_Case_Diagram_for_Proposed_System_View_Personal_Time_Records_UseCase.__init__)
-
-
-def test_use_case_diagram_for_proposed_system_view_personal_time_records_usecase_constructor_args():
-    sig = inspect.signature(Use_Case_Diagram_for_Proposed_System_View_Personal_Time_Records_UseCase.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_use_case_diagram_for_proposed_system_view_leave_status_usecase_is_not_abstract():
-    assert not inspect.isabstract(Use_Case_Diagram_for_Proposed_System_View_Leave_status_UseCase)
-
-
-def test_use_case_diagram_for_proposed_system_view_leave_status_usecase_constructor_exists():
-    assert callable(Use_Case_Diagram_for_Proposed_System_View_Leave_status_UseCase.__init__)
-
-
-def test_use_case_diagram_for_proposed_system_view_leave_status_usecase_constructor_args():
-    sig = inspect.signature(Use_Case_Diagram_for_Proposed_System_View_Leave_status_UseCase.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_use_case_diagram_for_proposed_system_view_personal_salary_history_usecase_is_not_abstract():
-    assert not inspect.isabstract(Use_Case_Diagram_for_Proposed_System_View_Personal_Salary_History_UseCase)
-
-
-def test_use_case_diagram_for_proposed_system_view_personal_salary_history_usecase_constructor_exists():
-    assert callable(Use_Case_Diagram_for_Proposed_System_View_Personal_Salary_History_UseCase.__init__)
-
-
-def test_use_case_diagram_for_proposed_system_view_personal_salary_history_usecase_constructor_args():
-    sig = inspect.signature(Use_Case_Diagram_for_Proposed_System_View_Personal_Salary_History_UseCase.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_use_case_diagram_for_proposed_system_view_personal_detais_usecase_is_not_abstract():
-    assert not inspect.isabstract(Use_Case_Diagram_for_Proposed_System_View_personal_detais_UseCase)
-
-
-def test_use_case_diagram_for_proposed_system_view_personal_detais_usecase_constructor_exists():
-    assert callable(Use_Case_Diagram_for_Proposed_System_View_personal_detais_UseCase.__init__)
-
-
-def test_use_case_diagram_for_proposed_system_view_personal_detais_usecase_constructor_args():
-    sig = inspect.signature(Use_Case_Diagram_for_Proposed_System_View_personal_detais_UseCase.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_employee_actor_is_not_abstract():
-    assert not inspect.isabstract(Employee_Actor)
-
-
-def test_employee_actor_constructor_exists():
-    assert callable(Employee_Actor.__init__)
-
-
-def test_employee_actor_constructor_args():
-    sig = inspect.signature(Employee_Actor.__init__)
-    params = list(sig.parameters.keys())
-
 def test_date_exists():
     # Check that the Enumeration exists
     assert date is not None
@@ -2207,6 +2207,36 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
+Use_Case_Diagram_for_Proposed_System_Set_Leave_status_UseCase_strategy = st.builds(
+    Use_Case_Diagram_for_Proposed_System_Set_Leave_status_UseCase,
+)
+Use_Case_Diagram_for_Proposed_System_Set_advances_status_UseCase_strategy = st.builds(
+    Use_Case_Diagram_for_Proposed_System_Set_advances_status_UseCase,
+)
+Use_Case_Diagram_for_Proposed_System_Request_Loan_and_advances_UseCase_strategy = st.builds(
+    Use_Case_Diagram_for_Proposed_System_Request_Loan_and_advances_UseCase,
+)
+Use_Case_Diagram_for_Proposed_System_Request_Leaves_UseCase_strategy = st.builds(
+    Use_Case_Diagram_for_Proposed_System_Request_Leaves_UseCase,
+)
+Use_Case_Diagram_for_Proposed_System_View_Reports_UseCase_strategy = st.builds(
+    Use_Case_Diagram_for_Proposed_System_View_Reports_UseCase,
+)
+Use_Case_Diagram_for_Proposed_System_View_Personal_Time_Records_UseCase_strategy = st.builds(
+    Use_Case_Diagram_for_Proposed_System_View_Personal_Time_Records_UseCase,
+)
+Use_Case_Diagram_for_Proposed_System_View_Leave_status_UseCase_strategy = st.builds(
+    Use_Case_Diagram_for_Proposed_System_View_Leave_status_UseCase,
+)
+Use_Case_Diagram_for_Proposed_System_View_Personal_Salary_History_UseCase_strategy = st.builds(
+    Use_Case_Diagram_for_Proposed_System_View_Personal_Salary_History_UseCase,
+)
+Use_Case_Diagram_for_Proposed_System_View_personal_detais_UseCase_strategy = st.builds(
+    Use_Case_Diagram_for_Proposed_System_View_personal_detais_UseCase,
+)
+Employee_Actor_strategy = st.builds(
+    Employee_Actor,
+)
 Presentation_StaffUI_strategy = st.builds(
     Presentation_StaffUI,
 )
@@ -2231,33 +2261,33 @@ Package2_UserUpdates_strategy = st.builds(
 )
 Package2_Users_strategy = st.builds(
     Package2_Users,
+    email=
+        st.integers(),
+    firstname=
+        st.integers(),
     password=
         st.integers(),
     id=
         st.integers(),
-    email=
-        st.integers(),
     lastname=
-        st.integers(),
-    firstname=
         st.integers()
 )
 Package2_User_groups_strategy = st.builds(
     Package2_User_groups,
+    attribute2=
+        safe_text,
     attribute=
         safe_text,
     attribute3=
-        safe_text,
-    attribute2=
         safe_text
 )
 Package2_OT_Requests_strategy = st.builds(
     Package2_OT_Requests,
+    EmpID=
+        st.integers(),
     OtDay=
         st.dates(),
     id=
-        st.integers(),
-    EmpID=
         st.integers(),
     OTType=
         st.integers()
@@ -2285,55 +2315,55 @@ Package2_Event_strategy = st.builds(
 )
 Package2_EPF_strategy = st.builds(
     Package2_EPF,
-    id=
+    precentage=
         st.integers(),
     effectve_date=
         st.none(),
-    precentage=
+    id=
         st.integers()
 )
 Package2_EmployeeSalary_strategy = st.builds(
     Package2_EmployeeSalary,
-    attribute=
-        safe_text,
     attribute2=
+        safe_text,
+    attribute=
         safe_text
 )
 Package2_EmployeeParoll_strategy = st.builds(
     Package2_EmployeeParoll,
+    id=
+        st.integers(),
+    otamount=
+        st.integers(),
     epf=
         st.integers(),
     etf=
         safe_text,
-    otamount=
-        st.integers(),
-    empid=
-        st.integers(),
-    id=
-        st.integers(),
-    doyamount=
-        st.integers(),
     basicslaray=
         st.integers(),
     empid3=
+        st.integers(),
+    doyamount=
+        st.integers(),
+    empid=
         st.integers()
 )
 Package2_Employee_strategy = st.builds(
     Package2_Employee,
-    post=
+    id=
         safe_text,
     usergroup=
         st.integers(),
-    leavegroup=
-        st.integers(),
-    id=
+    empid=
         safe_text,
     shift=
         safe_text,
-    depid=
+    leavegroup=
         st.integers(),
-    empid=
-        safe_text
+    post=
+        safe_text,
+    depid=
+        st.integers()
 )
 Package2_Posts_strategy = st.builds(
     Package2_Posts,
@@ -2344,21 +2374,21 @@ Package2_Posts_strategy = st.builds(
 )
 Package2_Shifts_strategy = st.builds(
     Package2_Shifts,
-    endtime=
-        safe_text,
     shiftaname=
         safe_text,
     starttime=
         safe_text,
     id=
+        safe_text,
+    endtime=
         safe_text
 )
 Package2_Departments_strategy = st.builds(
     Package2_Departments,
-    id=
-        st.integers(),
     depname=
-        safe_text
+        safe_text,
+    id=
+        st.integers()
 )
 Package2_Deductions_strategy = st.builds(
     Package2_Deductions,
@@ -2375,32 +2405,32 @@ Package2_DeuctionTypes_strategy = st.builds(
 )
 Package2_Attendance_strategy = st.builds(
     Package2_Attendance,
-    empid=
+    id=
         st.integers(),
-    timein=
-        safe_text,
     timeout=
         safe_text,
-    id=
+    timein=
+        safe_text,
+    empid=
         st.integers()
 )
 Package2_Allowance_strategy = st.builds(
     Package2_Allowance,
-    emp_id=
-        safe_text,
+    id=
+        st.integers(),
     Effectivedate=
         safe_text,
-    id=
-        st.integers()
+    emp_id=
+        safe_text
 )
 Package_ETF_strategy = st.builds(
     Package_ETF,
 )
 Package_User_Permissions_strategy = st.builds(
     Package_User_Permissions,
-    attribute=
-        safe_text,
     attribute2=
+        safe_text,
+    attribute=
         safe_text
 )
 Package_Messages_strategy = st.builds(
@@ -2414,36 +2444,36 @@ Package_UserUpdates_strategy = st.builds(
 )
 Package_Users_strategy = st.builds(
     Package_Users,
-    id=
+    firstname=
         st.integers(),
     password=
         st.integers(),
-    lastname=
-        st.integers(),
     email=
         st.integers(),
-    firstname=
+    lastname=
+        st.integers(),
+    id=
         st.integers()
 )
 Package_User_groups_strategy = st.builds(
     Package_User_groups,
-    attribute3=
-        safe_text,
     attribute=
         safe_text,
     attribute2=
+        safe_text,
+    attribute3=
         safe_text
 )
 Package_OT_Requests_strategy = st.builds(
     Package_OT_Requests,
-    EmpID=
-        st.integers(),
-    OTType=
-        st.integers(),
     id=
         st.integers(),
+    EmpID=
+        st.integers(),
     OtDay=
-        st.dates()
+        st.dates(),
+    OTType=
+        st.integers()
 )
 Package_LeaveProfiles_strategy = st.builds(
     Package_LeaveProfiles,
@@ -2464,18 +2494,18 @@ Package_Event_strategy = st.builds(
 )
 Package_EPF_strategy = st.builds(
     Package_EPF,
-    precentage=
-        st.integers(),
     effectve_date=
         st.none(),
     id=
+        st.integers(),
+    precentage=
         st.integers()
 )
 Package_EmployeeSalary_strategy = st.builds(
     Package_EmployeeSalary,
-    attribute2=
-        safe_text,
     attribute=
+        safe_text,
+    attribute2=
         safe_text
 )
 Package_EmployeeParoll_strategy = st.builds(
@@ -2487,26 +2517,26 @@ Package_EmployeeParoll_strategy = st.builds(
 )
 Package_Employee_strategy = st.builds(
     Package_Employee,
-    shift=
+    empid=
         safe_text,
-    leavegroup=
+    post=
+        safe_text,
+    depid=
         st.integers(),
     usergroup=
         st.integers(),
-    depid=
+    leavegroup=
         st.integers(),
-    post=
-        safe_text,
-    empid=
+    shift=
         safe_text,
     id=
         safe_text
 )
 Package_Posts_strategy = st.builds(
     Package_Posts,
-    attribute2=
-        safe_text,
     attribute=
+        safe_text,
+    attribute2=
         safe_text
 )
 Package_Shifts_strategy = st.builds(
@@ -2523,9 +2553,9 @@ Package_Departments_strategy = st.builds(
 )
 Package_Deductions_strategy = st.builds(
     Package_Deductions,
-    attribute2=
-        safe_text,
     attribute=
+        safe_text,
+    attribute2=
         safe_text
 )
 Package_AllowanceTypes_strategy = st.builds(
@@ -2538,11 +2568,11 @@ Package_Attendance_strategy = st.builds(
     Package_Attendance,
     timeout=
         safe_text,
-    id=
-        st.integers(),
     timein=
         safe_text,
     empid=
+        st.integers(),
+    id=
         st.integers()
 )
 Package_Allowance_strategy = st.builds(
@@ -2608,36 +2638,56 @@ Use_Case_Diagram_for_Proposed_System_View_leave_Rquest_UseCase_strategy = st.bui
 Use_Case_Diagram_for_Proposed_System_View_Employee_Time_Records_UseCase_strategy = st.builds(
     Use_Case_Diagram_for_Proposed_System_View_Employee_Time_Records_UseCase,
 )
-Use_Case_Diagram_for_Proposed_System_Set_Leave_status_UseCase_strategy = st.builds(
-    Use_Case_Diagram_for_Proposed_System_Set_Leave_status_UseCase,
-)
-Use_Case_Diagram_for_Proposed_System_Set_advances_status_UseCase_strategy = st.builds(
-    Use_Case_Diagram_for_Proposed_System_Set_advances_status_UseCase,
-)
-Use_Case_Diagram_for_Proposed_System_Request_Loan_and_advances_UseCase_strategy = st.builds(
-    Use_Case_Diagram_for_Proposed_System_Request_Loan_and_advances_UseCase,
-)
-Use_Case_Diagram_for_Proposed_System_Request_Leaves_UseCase_strategy = st.builds(
-    Use_Case_Diagram_for_Proposed_System_Request_Leaves_UseCase,
-)
-Use_Case_Diagram_for_Proposed_System_View_Reports_UseCase_strategy = st.builds(
-    Use_Case_Diagram_for_Proposed_System_View_Reports_UseCase,
-)
-Use_Case_Diagram_for_Proposed_System_View_Personal_Time_Records_UseCase_strategy = st.builds(
-    Use_Case_Diagram_for_Proposed_System_View_Personal_Time_Records_UseCase,
-)
-Use_Case_Diagram_for_Proposed_System_View_Leave_status_UseCase_strategy = st.builds(
-    Use_Case_Diagram_for_Proposed_System_View_Leave_status_UseCase,
-)
-Use_Case_Diagram_for_Proposed_System_View_Personal_Salary_History_UseCase_strategy = st.builds(
-    Use_Case_Diagram_for_Proposed_System_View_Personal_Salary_History_UseCase,
-)
-Use_Case_Diagram_for_Proposed_System_View_personal_detais_UseCase_strategy = st.builds(
-    Use_Case_Diagram_for_Proposed_System_View_personal_detais_UseCase,
-)
-Employee_Actor_strategy = st.builds(
-    Employee_Actor,
-)
+
+@given(instance=Use_Case_Diagram_for_Proposed_System_Set_Leave_status_UseCase_strategy)
+@settings(max_examples=50)
+def test_use_case_diagram_for_proposed_system_set_leave_status_usecase_instantiation(instance):
+    assert isinstance(instance, Use_Case_Diagram_for_Proposed_System_Set_Leave_status_UseCase)
+
+@given(instance=Use_Case_Diagram_for_Proposed_System_Set_advances_status_UseCase_strategy)
+@settings(max_examples=50)
+def test_use_case_diagram_for_proposed_system_set_advances_status_usecase_instantiation(instance):
+    assert isinstance(instance, Use_Case_Diagram_for_Proposed_System_Set_advances_status_UseCase)
+
+@given(instance=Use_Case_Diagram_for_Proposed_System_Request_Loan_and_advances_UseCase_strategy)
+@settings(max_examples=50)
+def test_use_case_diagram_for_proposed_system_request_loan_and_advances_usecase_instantiation(instance):
+    assert isinstance(instance, Use_Case_Diagram_for_Proposed_System_Request_Loan_and_advances_UseCase)
+
+@given(instance=Use_Case_Diagram_for_Proposed_System_Request_Leaves_UseCase_strategy)
+@settings(max_examples=50)
+def test_use_case_diagram_for_proposed_system_request_leaves_usecase_instantiation(instance):
+    assert isinstance(instance, Use_Case_Diagram_for_Proposed_System_Request_Leaves_UseCase)
+
+@given(instance=Use_Case_Diagram_for_Proposed_System_View_Reports_UseCase_strategy)
+@settings(max_examples=50)
+def test_use_case_diagram_for_proposed_system_view_reports_usecase_instantiation(instance):
+    assert isinstance(instance, Use_Case_Diagram_for_Proposed_System_View_Reports_UseCase)
+
+@given(instance=Use_Case_Diagram_for_Proposed_System_View_Personal_Time_Records_UseCase_strategy)
+@settings(max_examples=50)
+def test_use_case_diagram_for_proposed_system_view_personal_time_records_usecase_instantiation(instance):
+    assert isinstance(instance, Use_Case_Diagram_for_Proposed_System_View_Personal_Time_Records_UseCase)
+
+@given(instance=Use_Case_Diagram_for_Proposed_System_View_Leave_status_UseCase_strategy)
+@settings(max_examples=50)
+def test_use_case_diagram_for_proposed_system_view_leave_status_usecase_instantiation(instance):
+    assert isinstance(instance, Use_Case_Diagram_for_Proposed_System_View_Leave_status_UseCase)
+
+@given(instance=Use_Case_Diagram_for_Proposed_System_View_Personal_Salary_History_UseCase_strategy)
+@settings(max_examples=50)
+def test_use_case_diagram_for_proposed_system_view_personal_salary_history_usecase_instantiation(instance):
+    assert isinstance(instance, Use_Case_Diagram_for_Proposed_System_View_Personal_Salary_History_UseCase)
+
+@given(instance=Use_Case_Diagram_for_Proposed_System_View_personal_detais_UseCase_strategy)
+@settings(max_examples=50)
+def test_use_case_diagram_for_proposed_system_view_personal_detais_usecase_instantiation(instance):
+    assert isinstance(instance, Use_Case_Diagram_for_Proposed_System_View_personal_detais_UseCase)
+
+@given(instance=Employee_Actor_strategy)
+@settings(max_examples=50)
+def test_employee_actor_instantiation(instance):
+    assert isinstance(instance, Employee_Actor)
 
 @given(instance=Presentation_StaffUI_strategy)
 @settings(max_examples=50)
@@ -2654,9 +2704,6 @@ def test_package2_etf_instantiation(instance):
 def test_package2_user_permissions_instantiation(instance):
     assert isinstance(instance, Package2_User_Permissions)
 
-@given(instance=Package2_User_Permissions_strategy)
-def test_package2_user_permissions_attribute2_type(instance):
-    assert isinstance(instance.attribute2, str)
 
 
 @given(instance=Package2_User_Permissions_strategy)
@@ -2665,9 +2712,6 @@ def test_package2_user_permissions_attribute2_setter(instance):
     instance.attribute2 = original
     assert instance.attribute2 == original
 
-@given(instance=Package2_User_Permissions_strategy)
-def test_package2_user_permissions_attribute_type(instance):
-    assert isinstance(instance.attribute, str)
 
 
 @given(instance=Package2_User_Permissions_strategy)
@@ -2696,31 +2740,6 @@ def test_package2_userupdates_instantiation(instance):
 def test_package2_users_instantiation(instance):
     assert isinstance(instance, Package2_Users)
 
-@given(instance=Package2_Users_strategy)
-def test_package2_users_password_type(instance):
-    assert isinstance(instance.password, int)
-
-
-@given(instance=Package2_Users_strategy)
-def test_package2_users_password_setter(instance):
-    original = instance.password
-    instance.password = original
-    assert instance.password == original
-
-@given(instance=Package2_Users_strategy)
-def test_package2_users_id_type(instance):
-    assert isinstance(instance.id, int)
-
-
-@given(instance=Package2_Users_strategy)
-def test_package2_users_id_setter(instance):
-    original = instance.id
-    instance.id = original
-    assert instance.id == original
-
-@given(instance=Package2_Users_strategy)
-def test_package2_users_email_type(instance):
-    assert isinstance(instance.email, int)
 
 
 @given(instance=Package2_Users_strategy)
@@ -2729,20 +2748,6 @@ def test_package2_users_email_setter(instance):
     instance.email = original
     assert instance.email == original
 
-@given(instance=Package2_Users_strategy)
-def test_package2_users_lastname_type(instance):
-    assert isinstance(instance.lastname, int)
-
-
-@given(instance=Package2_Users_strategy)
-def test_package2_users_lastname_setter(instance):
-    original = instance.lastname
-    instance.lastname = original
-    assert instance.lastname == original
-
-@given(instance=Package2_Users_strategy)
-def test_package2_users_firstname_type(instance):
-    assert isinstance(instance.firstname, int)
 
 
 @given(instance=Package2_Users_strategy)
@@ -2751,36 +2756,35 @@ def test_package2_users_firstname_setter(instance):
     instance.firstname = original
     assert instance.firstname == original
 
+
+
+@given(instance=Package2_Users_strategy)
+def test_package2_users_password_setter(instance):
+    original = instance.password
+    instance.password = original
+    assert instance.password == original
+
+
+
+@given(instance=Package2_Users_strategy)
+def test_package2_users_id_setter(instance):
+    original = instance.id
+    instance.id = original
+    assert instance.id == original
+
+
+
+@given(instance=Package2_Users_strategy)
+def test_package2_users_lastname_setter(instance):
+    original = instance.lastname
+    instance.lastname = original
+    assert instance.lastname == original
+
 @given(instance=Package2_User_groups_strategy)
 @settings(max_examples=50)
 def test_package2_user_groups_instantiation(instance):
     assert isinstance(instance, Package2_User_groups)
 
-@given(instance=Package2_User_groups_strategy)
-def test_package2_user_groups_attribute_type(instance):
-    assert isinstance(instance.attribute, str)
-
-
-@given(instance=Package2_User_groups_strategy)
-def test_package2_user_groups_attribute_setter(instance):
-    original = instance.attribute
-    instance.attribute = original
-    assert instance.attribute == original
-
-@given(instance=Package2_User_groups_strategy)
-def test_package2_user_groups_attribute3_type(instance):
-    assert isinstance(instance.attribute3, str)
-
-
-@given(instance=Package2_User_groups_strategy)
-def test_package2_user_groups_attribute3_setter(instance):
-    original = instance.attribute3
-    instance.attribute3 = original
-    assert instance.attribute3 == original
-
-@given(instance=Package2_User_groups_strategy)
-def test_package2_user_groups_attribute2_type(instance):
-    assert isinstance(instance.attribute2, str)
 
 
 @given(instance=Package2_User_groups_strategy)
@@ -2789,36 +2793,27 @@ def test_package2_user_groups_attribute2_setter(instance):
     instance.attribute2 = original
     assert instance.attribute2 == original
 
+
+
+@given(instance=Package2_User_groups_strategy)
+def test_package2_user_groups_attribute_setter(instance):
+    original = instance.attribute
+    instance.attribute = original
+    assert instance.attribute == original
+
+
+
+@given(instance=Package2_User_groups_strategy)
+def test_package2_user_groups_attribute3_setter(instance):
+    original = instance.attribute3
+    instance.attribute3 = original
+    assert instance.attribute3 == original
+
 @given(instance=Package2_OT_Requests_strategy)
 @settings(max_examples=50)
 def test_package2_ot_requests_instantiation(instance):
     assert isinstance(instance, Package2_OT_Requests)
 
-@given(instance=Package2_OT_Requests_strategy)
-def test_package2_ot_requests_OtDay_type(instance):
-    assert isinstance(instance.OtDay, date)
-
-
-@given(instance=Package2_OT_Requests_strategy)
-def test_package2_ot_requests_OtDay_setter(instance):
-    original = instance.OtDay
-    instance.OtDay = original
-    assert instance.OtDay == original
-
-@given(instance=Package2_OT_Requests_strategy)
-def test_package2_ot_requests_id_type(instance):
-    assert isinstance(instance.id, int)
-
-
-@given(instance=Package2_OT_Requests_strategy)
-def test_package2_ot_requests_id_setter(instance):
-    original = instance.id
-    instance.id = original
-    assert instance.id == original
-
-@given(instance=Package2_OT_Requests_strategy)
-def test_package2_ot_requests_EmpID_type(instance):
-    assert isinstance(instance.EmpID, int)
 
 
 @given(instance=Package2_OT_Requests_strategy)
@@ -2827,9 +2822,22 @@ def test_package2_ot_requests_EmpID_setter(instance):
     instance.EmpID = original
     assert instance.EmpID == original
 
+
+
 @given(instance=Package2_OT_Requests_strategy)
-def test_package2_ot_requests_OTType_type(instance):
-    assert isinstance(instance.OTType, int)
+def test_package2_ot_requests_OtDay_setter(instance):
+    original = instance.OtDay
+    instance.OtDay = original
+    assert instance.OtDay == original
+
+
+
+@given(instance=Package2_OT_Requests_strategy)
+def test_package2_ot_requests_id_setter(instance):
+    original = instance.id
+    instance.id = original
+    assert instance.id == original
+
 
 
 @given(instance=Package2_OT_Requests_strategy)
@@ -2843,9 +2851,6 @@ def test_package2_ot_requests_OTType_setter(instance):
 def test_package2_leaveprofiles_instantiation(instance):
     assert isinstance(instance, Package2_LeaveProfiles)
 
-@given(instance=Package2_LeaveProfiles_strategy)
-def test_package2_leaveprofiles_id_type(instance):
-    assert isinstance(instance.id, int)
 
 
 @given(instance=Package2_LeaveProfiles_strategy)
@@ -2854,9 +2859,6 @@ def test_package2_leaveprofiles_id_setter(instance):
     instance.id = original
     assert instance.id == original
 
-@given(instance=Package2_LeaveProfiles_strategy)
-def test_package2_leaveprofiles_anual_type(instance):
-    assert isinstance(instance.anual, int)
 
 
 @given(instance=Package2_LeaveProfiles_strategy)
@@ -2865,9 +2867,6 @@ def test_package2_leaveprofiles_anual_setter(instance):
     instance.anual = original
     assert instance.anual == original
 
-@given(instance=Package2_LeaveProfiles_strategy)
-def test_package2_leaveprofiles_casual_type(instance):
-    assert isinstance(instance.casual, int)
 
 
 @given(instance=Package2_LeaveProfiles_strategy)
@@ -2876,9 +2875,6 @@ def test_package2_leaveprofiles_casual_setter(instance):
     instance.casual = original
     assert instance.casual == original
 
-@given(instance=Package2_LeaveProfiles_strategy)
-def test_package2_leaveprofiles_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
 @given(instance=Package2_LeaveProfiles_strategy)
@@ -2892,9 +2888,6 @@ def test_package2_leaveprofiles_name_setter(instance):
 def test_package2_leave_taken_instantiation(instance):
     assert isinstance(instance, Package2_Leave_Taken)
 
-@given(instance=Package2_Leave_Taken_strategy)
-def test_package2_leave_taken_attribute2_type(instance):
-    assert isinstance(instance.attribute2, str)
 
 
 @given(instance=Package2_Leave_Taken_strategy)
@@ -2903,9 +2896,6 @@ def test_package2_leave_taken_attribute2_setter(instance):
     instance.attribute2 = original
     assert instance.attribute2 == original
 
-@given(instance=Package2_Leave_Taken_strategy)
-def test_package2_leave_taken_attribute_type(instance):
-    assert isinstance(instance.attribute, str)
 
 
 @given(instance=Package2_Leave_Taken_strategy)
@@ -2924,31 +2914,6 @@ def test_package2_event_instantiation(instance):
 def test_package2_epf_instantiation(instance):
     assert isinstance(instance, Package2_EPF)
 
-@given(instance=Package2_EPF_strategy)
-def test_package2_epf_id_type(instance):
-    assert isinstance(instance.id, int)
-
-
-@given(instance=Package2_EPF_strategy)
-def test_package2_epf_id_setter(instance):
-    original = instance.id
-    instance.id = original
-    assert instance.id == original
-
-@given(instance=Package2_EPF_strategy)
-def test_package2_epf_effectve_date_type(instance):
-    assert isinstance(instance.effectve_date, package2_userupdates)
-
-
-@given(instance=Package2_EPF_strategy)
-def test_package2_epf_effectve_date_setter(instance):
-    original = instance.effectve_date
-    instance.effectve_date = original
-    assert instance.effectve_date == original
-
-@given(instance=Package2_EPF_strategy)
-def test_package2_epf_precentage_type(instance):
-    assert isinstance(instance.precentage, int)
 
 
 @given(instance=Package2_EPF_strategy)
@@ -2957,25 +2922,27 @@ def test_package2_epf_precentage_setter(instance):
     instance.precentage = original
     assert instance.precentage == original
 
+
+
+@given(instance=Package2_EPF_strategy)
+def test_package2_epf_effectve_date_setter(instance):
+    original = instance.effectve_date
+    instance.effectve_date = original
+    assert instance.effectve_date == original
+
+
+
+@given(instance=Package2_EPF_strategy)
+def test_package2_epf_id_setter(instance):
+    original = instance.id
+    instance.id = original
+    assert instance.id == original
+
 @given(instance=Package2_EmployeeSalary_strategy)
 @settings(max_examples=50)
 def test_package2_employeesalary_instantiation(instance):
     assert isinstance(instance, Package2_EmployeeSalary)
 
-@given(instance=Package2_EmployeeSalary_strategy)
-def test_package2_employeesalary_attribute_type(instance):
-    assert isinstance(instance.attribute, str)
-
-
-@given(instance=Package2_EmployeeSalary_strategy)
-def test_package2_employeesalary_attribute_setter(instance):
-    original = instance.attribute
-    instance.attribute = original
-    assert instance.attribute == original
-
-@given(instance=Package2_EmployeeSalary_strategy)
-def test_package2_employeesalary_attribute2_type(instance):
-    assert isinstance(instance.attribute2, str)
 
 
 @given(instance=Package2_EmployeeSalary_strategy)
@@ -2984,58 +2951,19 @@ def test_package2_employeesalary_attribute2_setter(instance):
     instance.attribute2 = original
     assert instance.attribute2 == original
 
+
+
+@given(instance=Package2_EmployeeSalary_strategy)
+def test_package2_employeesalary_attribute_setter(instance):
+    original = instance.attribute
+    instance.attribute = original
+    assert instance.attribute == original
+
 @given(instance=Package2_EmployeeParoll_strategy)
 @settings(max_examples=50)
 def test_package2_employeeparoll_instantiation(instance):
     assert isinstance(instance, Package2_EmployeeParoll)
 
-@given(instance=Package2_EmployeeParoll_strategy)
-def test_package2_employeeparoll_epf_type(instance):
-    assert isinstance(instance.epf, int)
-
-
-@given(instance=Package2_EmployeeParoll_strategy)
-def test_package2_employeeparoll_epf_setter(instance):
-    original = instance.epf
-    instance.epf = original
-    assert instance.epf == original
-
-@given(instance=Package2_EmployeeParoll_strategy)
-def test_package2_employeeparoll_etf_type(instance):
-    assert isinstance(instance.etf, str)
-
-
-@given(instance=Package2_EmployeeParoll_strategy)
-def test_package2_employeeparoll_etf_setter(instance):
-    original = instance.etf
-    instance.etf = original
-    assert instance.etf == original
-
-@given(instance=Package2_EmployeeParoll_strategy)
-def test_package2_employeeparoll_otamount_type(instance):
-    assert isinstance(instance.otamount, int)
-
-
-@given(instance=Package2_EmployeeParoll_strategy)
-def test_package2_employeeparoll_otamount_setter(instance):
-    original = instance.otamount
-    instance.otamount = original
-    assert instance.otamount == original
-
-@given(instance=Package2_EmployeeParoll_strategy)
-def test_package2_employeeparoll_empid_type(instance):
-    assert isinstance(instance.empid, int)
-
-
-@given(instance=Package2_EmployeeParoll_strategy)
-def test_package2_employeeparoll_empid_setter(instance):
-    original = instance.empid
-    instance.empid = original
-    assert instance.empid == original
-
-@given(instance=Package2_EmployeeParoll_strategy)
-def test_package2_employeeparoll_id_type(instance):
-    assert isinstance(instance.id, int)
 
 
 @given(instance=Package2_EmployeeParoll_strategy)
@@ -3044,20 +2972,30 @@ def test_package2_employeeparoll_id_setter(instance):
     instance.id = original
     assert instance.id == original
 
-@given(instance=Package2_EmployeeParoll_strategy)
-def test_package2_employeeparoll_doyamount_type(instance):
-    assert isinstance(instance.doyamount, int)
 
 
 @given(instance=Package2_EmployeeParoll_strategy)
-def test_package2_employeeparoll_doyamount_setter(instance):
-    original = instance.doyamount
-    instance.doyamount = original
-    assert instance.doyamount == original
+def test_package2_employeeparoll_otamount_setter(instance):
+    original = instance.otamount
+    instance.otamount = original
+    assert instance.otamount == original
+
+
 
 @given(instance=Package2_EmployeeParoll_strategy)
-def test_package2_employeeparoll_basicslaray_type(instance):
-    assert isinstance(instance.basicslaray, int)
+def test_package2_employeeparoll_epf_setter(instance):
+    original = instance.epf
+    instance.epf = original
+    assert instance.epf == original
+
+
+
+@given(instance=Package2_EmployeeParoll_strategy)
+def test_package2_employeeparoll_etf_setter(instance):
+    original = instance.etf
+    instance.etf = original
+    assert instance.etf == original
+
 
 
 @given(instance=Package2_EmployeeParoll_strategy)
@@ -3066,9 +3004,6 @@ def test_package2_employeeparoll_basicslaray_setter(instance):
     instance.basicslaray = original
     assert instance.basicslaray == original
 
-@given(instance=Package2_EmployeeParoll_strategy)
-def test_package2_employeeparoll_empid3_type(instance):
-    assert isinstance(instance.empid3, int)
 
 
 @given(instance=Package2_EmployeeParoll_strategy)
@@ -3077,47 +3012,27 @@ def test_package2_employeeparoll_empid3_setter(instance):
     instance.empid3 = original
     assert instance.empid3 == original
 
+
+
+@given(instance=Package2_EmployeeParoll_strategy)
+def test_package2_employeeparoll_doyamount_setter(instance):
+    original = instance.doyamount
+    instance.doyamount = original
+    assert instance.doyamount == original
+
+
+
+@given(instance=Package2_EmployeeParoll_strategy)
+def test_package2_employeeparoll_empid_setter(instance):
+    original = instance.empid
+    instance.empid = original
+    assert instance.empid == original
+
 @given(instance=Package2_Employee_strategy)
 @settings(max_examples=50)
 def test_package2_employee_instantiation(instance):
     assert isinstance(instance, Package2_Employee)
 
-@given(instance=Package2_Employee_strategy)
-def test_package2_employee_post_type(instance):
-    assert isinstance(instance.post, str)
-
-
-@given(instance=Package2_Employee_strategy)
-def test_package2_employee_post_setter(instance):
-    original = instance.post
-    instance.post = original
-    assert instance.post == original
-
-@given(instance=Package2_Employee_strategy)
-def test_package2_employee_usergroup_type(instance):
-    assert isinstance(instance.usergroup, int)
-
-
-@given(instance=Package2_Employee_strategy)
-def test_package2_employee_usergroup_setter(instance):
-    original = instance.usergroup
-    instance.usergroup = original
-    assert instance.usergroup == original
-
-@given(instance=Package2_Employee_strategy)
-def test_package2_employee_leavegroup_type(instance):
-    assert isinstance(instance.leavegroup, int)
-
-
-@given(instance=Package2_Employee_strategy)
-def test_package2_employee_leavegroup_setter(instance):
-    original = instance.leavegroup
-    instance.leavegroup = original
-    assert instance.leavegroup == original
-
-@given(instance=Package2_Employee_strategy)
-def test_package2_employee_id_type(instance):
-    assert isinstance(instance.id, str)
 
 
 @given(instance=Package2_Employee_strategy)
@@ -3126,31 +3041,14 @@ def test_package2_employee_id_setter(instance):
     instance.id = original
     assert instance.id == original
 
-@given(instance=Package2_Employee_strategy)
-def test_package2_employee_shift_type(instance):
-    assert isinstance(instance.shift, str)
 
 
 @given(instance=Package2_Employee_strategy)
-def test_package2_employee_shift_setter(instance):
-    original = instance.shift
-    instance.shift = original
-    assert instance.shift == original
+def test_package2_employee_usergroup_setter(instance):
+    original = instance.usergroup
+    instance.usergroup = original
+    assert instance.usergroup == original
 
-@given(instance=Package2_Employee_strategy)
-def test_package2_employee_depid_type(instance):
-    assert isinstance(instance.depid, int)
-
-
-@given(instance=Package2_Employee_strategy)
-def test_package2_employee_depid_setter(instance):
-    original = instance.depid
-    instance.depid = original
-    assert instance.depid == original
-
-@given(instance=Package2_Employee_strategy)
-def test_package2_employee_empid_type(instance):
-    assert isinstance(instance.empid, str)
 
 
 @given(instance=Package2_Employee_strategy)
@@ -3159,14 +3057,43 @@ def test_package2_employee_empid_setter(instance):
     instance.empid = original
     assert instance.empid == original
 
+
+
+@given(instance=Package2_Employee_strategy)
+def test_package2_employee_shift_setter(instance):
+    original = instance.shift
+    instance.shift = original
+    assert instance.shift == original
+
+
+
+@given(instance=Package2_Employee_strategy)
+def test_package2_employee_leavegroup_setter(instance):
+    original = instance.leavegroup
+    instance.leavegroup = original
+    assert instance.leavegroup == original
+
+
+
+@given(instance=Package2_Employee_strategy)
+def test_package2_employee_post_setter(instance):
+    original = instance.post
+    instance.post = original
+    assert instance.post == original
+
+
+
+@given(instance=Package2_Employee_strategy)
+def test_package2_employee_depid_setter(instance):
+    original = instance.depid
+    instance.depid = original
+    assert instance.depid == original
+
 @given(instance=Package2_Posts_strategy)
 @settings(max_examples=50)
 def test_package2_posts_instantiation(instance):
     assert isinstance(instance, Package2_Posts)
 
-@given(instance=Package2_Posts_strategy)
-def test_package2_posts_attribute2_type(instance):
-    assert isinstance(instance.attribute2, str)
 
 
 @given(instance=Package2_Posts_strategy)
@@ -3175,9 +3102,6 @@ def test_package2_posts_attribute2_setter(instance):
     instance.attribute2 = original
     assert instance.attribute2 == original
 
-@given(instance=Package2_Posts_strategy)
-def test_package2_posts_id_type(instance):
-    assert isinstance(instance.id, int)
 
 
 @given(instance=Package2_Posts_strategy)
@@ -3191,20 +3115,6 @@ def test_package2_posts_id_setter(instance):
 def test_package2_shifts_instantiation(instance):
     assert isinstance(instance, Package2_Shifts)
 
-@given(instance=Package2_Shifts_strategy)
-def test_package2_shifts_endtime_type(instance):
-    assert isinstance(instance.endtime, str)
-
-
-@given(instance=Package2_Shifts_strategy)
-def test_package2_shifts_endtime_setter(instance):
-    original = instance.endtime
-    instance.endtime = original
-    assert instance.endtime == original
-
-@given(instance=Package2_Shifts_strategy)
-def test_package2_shifts_shiftaname_type(instance):
-    assert isinstance(instance.shiftaname, str)
 
 
 @given(instance=Package2_Shifts_strategy)
@@ -3213,9 +3123,6 @@ def test_package2_shifts_shiftaname_setter(instance):
     instance.shiftaname = original
     assert instance.shiftaname == original
 
-@given(instance=Package2_Shifts_strategy)
-def test_package2_shifts_starttime_type(instance):
-    assert isinstance(instance.starttime, str)
 
 
 @given(instance=Package2_Shifts_strategy)
@@ -3224,9 +3131,6 @@ def test_package2_shifts_starttime_setter(instance):
     instance.starttime = original
     assert instance.starttime == original
 
-@given(instance=Package2_Shifts_strategy)
-def test_package2_shifts_id_type(instance):
-    assert isinstance(instance.id, str)
 
 
 @given(instance=Package2_Shifts_strategy)
@@ -3235,25 +3139,19 @@ def test_package2_shifts_id_setter(instance):
     instance.id = original
     assert instance.id == original
 
+
+
+@given(instance=Package2_Shifts_strategy)
+def test_package2_shifts_endtime_setter(instance):
+    original = instance.endtime
+    instance.endtime = original
+    assert instance.endtime == original
+
 @given(instance=Package2_Departments_strategy)
 @settings(max_examples=50)
 def test_package2_departments_instantiation(instance):
     assert isinstance(instance, Package2_Departments)
 
-@given(instance=Package2_Departments_strategy)
-def test_package2_departments_id_type(instance):
-    assert isinstance(instance.id, int)
-
-
-@given(instance=Package2_Departments_strategy)
-def test_package2_departments_id_setter(instance):
-    original = instance.id
-    instance.id = original
-    assert instance.id == original
-
-@given(instance=Package2_Departments_strategy)
-def test_package2_departments_depname_type(instance):
-    assert isinstance(instance.depname, str)
 
 
 @given(instance=Package2_Departments_strategy)
@@ -3262,14 +3160,19 @@ def test_package2_departments_depname_setter(instance):
     instance.depname = original
     assert instance.depname == original
 
+
+
+@given(instance=Package2_Departments_strategy)
+def test_package2_departments_id_setter(instance):
+    original = instance.id
+    instance.id = original
+    assert instance.id == original
+
 @given(instance=Package2_Deductions_strategy)
 @settings(max_examples=50)
 def test_package2_deductions_instantiation(instance):
     assert isinstance(instance, Package2_Deductions)
 
-@given(instance=Package2_Deductions_strategy)
-def test_package2_deductions_attribute_type(instance):
-    assert isinstance(instance.attribute, str)
 
 
 @given(instance=Package2_Deductions_strategy)
@@ -3278,9 +3181,6 @@ def test_package2_deductions_attribute_setter(instance):
     instance.attribute = original
     assert instance.attribute == original
 
-@given(instance=Package2_Deductions_strategy)
-def test_package2_deductions_attribute2_type(instance):
-    assert isinstance(instance.attribute2, str)
 
 
 @given(instance=Package2_Deductions_strategy)
@@ -3304,42 +3204,6 @@ def test_package2_deuctiontypes_instantiation(instance):
 def test_package2_attendance_instantiation(instance):
     assert isinstance(instance, Package2_Attendance)
 
-@given(instance=Package2_Attendance_strategy)
-def test_package2_attendance_empid_type(instance):
-    assert isinstance(instance.empid, int)
-
-
-@given(instance=Package2_Attendance_strategy)
-def test_package2_attendance_empid_setter(instance):
-    original = instance.empid
-    instance.empid = original
-    assert instance.empid == original
-
-@given(instance=Package2_Attendance_strategy)
-def test_package2_attendance_timein_type(instance):
-    assert isinstance(instance.timein, str)
-
-
-@given(instance=Package2_Attendance_strategy)
-def test_package2_attendance_timein_setter(instance):
-    original = instance.timein
-    instance.timein = original
-    assert instance.timein == original
-
-@given(instance=Package2_Attendance_strategy)
-def test_package2_attendance_timeout_type(instance):
-    assert isinstance(instance.timeout, str)
-
-
-@given(instance=Package2_Attendance_strategy)
-def test_package2_attendance_timeout_setter(instance):
-    original = instance.timeout
-    instance.timeout = original
-    assert instance.timeout == original
-
-@given(instance=Package2_Attendance_strategy)
-def test_package2_attendance_id_type(instance):
-    assert isinstance(instance.id, int)
 
 
 @given(instance=Package2_Attendance_strategy)
@@ -3348,25 +3212,43 @@ def test_package2_attendance_id_setter(instance):
     instance.id = original
     assert instance.id == original
 
+
+
+@given(instance=Package2_Attendance_strategy)
+def test_package2_attendance_timeout_setter(instance):
+    original = instance.timeout
+    instance.timeout = original
+    assert instance.timeout == original
+
+
+
+@given(instance=Package2_Attendance_strategy)
+def test_package2_attendance_timein_setter(instance):
+    original = instance.timein
+    instance.timein = original
+    assert instance.timein == original
+
+
+
+@given(instance=Package2_Attendance_strategy)
+def test_package2_attendance_empid_setter(instance):
+    original = instance.empid
+    instance.empid = original
+    assert instance.empid == original
+
 @given(instance=Package2_Allowance_strategy)
 @settings(max_examples=50)
 def test_package2_allowance_instantiation(instance):
     assert isinstance(instance, Package2_Allowance)
 
-@given(instance=Package2_Allowance_strategy)
-def test_package2_allowance_emp_id_type(instance):
-    assert isinstance(instance.emp_id, str)
 
 
 @given(instance=Package2_Allowance_strategy)
-def test_package2_allowance_emp_id_setter(instance):
-    original = instance.emp_id
-    instance.emp_id = original
-    assert instance.emp_id == original
+def test_package2_allowance_id_setter(instance):
+    original = instance.id
+    instance.id = original
+    assert instance.id == original
 
-@given(instance=Package2_Allowance_strategy)
-def test_package2_allowance_Effectivedate_type(instance):
-    assert isinstance(instance.Effectivedate, str)
 
 
 @given(instance=Package2_Allowance_strategy)
@@ -3375,16 +3257,13 @@ def test_package2_allowance_Effectivedate_setter(instance):
     instance.Effectivedate = original
     assert instance.Effectivedate == original
 
-@given(instance=Package2_Allowance_strategy)
-def test_package2_allowance_id_type(instance):
-    assert isinstance(instance.id, int)
 
 
 @given(instance=Package2_Allowance_strategy)
-def test_package2_allowance_id_setter(instance):
-    original = instance.id
-    instance.id = original
-    assert instance.id == original
+def test_package2_allowance_emp_id_setter(instance):
+    original = instance.emp_id
+    instance.emp_id = original
+    assert instance.emp_id == original
 
 @given(instance=Package_ETF_strategy)
 @settings(max_examples=50)
@@ -3396,20 +3275,6 @@ def test_package_etf_instantiation(instance):
 def test_package_user_permissions_instantiation(instance):
     assert isinstance(instance, Package_User_Permissions)
 
-@given(instance=Package_User_Permissions_strategy)
-def test_package_user_permissions_attribute_type(instance):
-    assert isinstance(instance.attribute, str)
-
-
-@given(instance=Package_User_Permissions_strategy)
-def test_package_user_permissions_attribute_setter(instance):
-    original = instance.attribute
-    instance.attribute = original
-    assert instance.attribute == original
-
-@given(instance=Package_User_Permissions_strategy)
-def test_package_user_permissions_attribute2_type(instance):
-    assert isinstance(instance.attribute2, str)
 
 
 @given(instance=Package_User_Permissions_strategy)
@@ -3417,6 +3282,14 @@ def test_package_user_permissions_attribute2_setter(instance):
     original = instance.attribute2
     instance.attribute2 = original
     assert instance.attribute2 == original
+
+
+
+@given(instance=Package_User_Permissions_strategy)
+def test_package_user_permissions_attribute_setter(instance):
+    original = instance.attribute
+    instance.attribute = original
+    assert instance.attribute == original
 
 @given(instance=Package_Messages_strategy)
 @settings(max_examples=50)
@@ -3438,53 +3311,6 @@ def test_package_userupdates_instantiation(instance):
 def test_package_users_instantiation(instance):
     assert isinstance(instance, Package_Users)
 
-@given(instance=Package_Users_strategy)
-def test_package_users_id_type(instance):
-    assert isinstance(instance.id, int)
-
-
-@given(instance=Package_Users_strategy)
-def test_package_users_id_setter(instance):
-    original = instance.id
-    instance.id = original
-    assert instance.id == original
-
-@given(instance=Package_Users_strategy)
-def test_package_users_password_type(instance):
-    assert isinstance(instance.password, int)
-
-
-@given(instance=Package_Users_strategy)
-def test_package_users_password_setter(instance):
-    original = instance.password
-    instance.password = original
-    assert instance.password == original
-
-@given(instance=Package_Users_strategy)
-def test_package_users_lastname_type(instance):
-    assert isinstance(instance.lastname, int)
-
-
-@given(instance=Package_Users_strategy)
-def test_package_users_lastname_setter(instance):
-    original = instance.lastname
-    instance.lastname = original
-    assert instance.lastname == original
-
-@given(instance=Package_Users_strategy)
-def test_package_users_email_type(instance):
-    assert isinstance(instance.email, int)
-
-
-@given(instance=Package_Users_strategy)
-def test_package_users_email_setter(instance):
-    original = instance.email
-    instance.email = original
-    assert instance.email == original
-
-@given(instance=Package_Users_strategy)
-def test_package_users_firstname_type(instance):
-    assert isinstance(instance.firstname, int)
 
 
 @given(instance=Package_Users_strategy)
@@ -3493,25 +3319,43 @@ def test_package_users_firstname_setter(instance):
     instance.firstname = original
     assert instance.firstname == original
 
+
+
+@given(instance=Package_Users_strategy)
+def test_package_users_password_setter(instance):
+    original = instance.password
+    instance.password = original
+    assert instance.password == original
+
+
+
+@given(instance=Package_Users_strategy)
+def test_package_users_email_setter(instance):
+    original = instance.email
+    instance.email = original
+    assert instance.email == original
+
+
+
+@given(instance=Package_Users_strategy)
+def test_package_users_lastname_setter(instance):
+    original = instance.lastname
+    instance.lastname = original
+    assert instance.lastname == original
+
+
+
+@given(instance=Package_Users_strategy)
+def test_package_users_id_setter(instance):
+    original = instance.id
+    instance.id = original
+    assert instance.id == original
+
 @given(instance=Package_User_groups_strategy)
 @settings(max_examples=50)
 def test_package_user_groups_instantiation(instance):
     assert isinstance(instance, Package_User_groups)
 
-@given(instance=Package_User_groups_strategy)
-def test_package_user_groups_attribute3_type(instance):
-    assert isinstance(instance.attribute3, str)
-
-
-@given(instance=Package_User_groups_strategy)
-def test_package_user_groups_attribute3_setter(instance):
-    original = instance.attribute3
-    instance.attribute3 = original
-    assert instance.attribute3 == original
-
-@given(instance=Package_User_groups_strategy)
-def test_package_user_groups_attribute_type(instance):
-    assert isinstance(instance.attribute, str)
 
 
 @given(instance=Package_User_groups_strategy)
@@ -3520,9 +3364,6 @@ def test_package_user_groups_attribute_setter(instance):
     instance.attribute = original
     assert instance.attribute == original
 
-@given(instance=Package_User_groups_strategy)
-def test_package_user_groups_attribute2_type(instance):
-    assert isinstance(instance.attribute2, str)
 
 
 @given(instance=Package_User_groups_strategy)
@@ -3531,36 +3372,19 @@ def test_package_user_groups_attribute2_setter(instance):
     instance.attribute2 = original
     assert instance.attribute2 == original
 
+
+
+@given(instance=Package_User_groups_strategy)
+def test_package_user_groups_attribute3_setter(instance):
+    original = instance.attribute3
+    instance.attribute3 = original
+    assert instance.attribute3 == original
+
 @given(instance=Package_OT_Requests_strategy)
 @settings(max_examples=50)
 def test_package_ot_requests_instantiation(instance):
     assert isinstance(instance, Package_OT_Requests)
 
-@given(instance=Package_OT_Requests_strategy)
-def test_package_ot_requests_EmpID_type(instance):
-    assert isinstance(instance.EmpID, int)
-
-
-@given(instance=Package_OT_Requests_strategy)
-def test_package_ot_requests_EmpID_setter(instance):
-    original = instance.EmpID
-    instance.EmpID = original
-    assert instance.EmpID == original
-
-@given(instance=Package_OT_Requests_strategy)
-def test_package_ot_requests_OTType_type(instance):
-    assert isinstance(instance.OTType, int)
-
-
-@given(instance=Package_OT_Requests_strategy)
-def test_package_ot_requests_OTType_setter(instance):
-    original = instance.OTType
-    instance.OTType = original
-    assert instance.OTType == original
-
-@given(instance=Package_OT_Requests_strategy)
-def test_package_ot_requests_id_type(instance):
-    assert isinstance(instance.id, int)
 
 
 @given(instance=Package_OT_Requests_strategy)
@@ -3569,9 +3393,14 @@ def test_package_ot_requests_id_setter(instance):
     instance.id = original
     assert instance.id == original
 
+
+
 @given(instance=Package_OT_Requests_strategy)
-def test_package_ot_requests_OtDay_type(instance):
-    assert isinstance(instance.OtDay, date)
+def test_package_ot_requests_EmpID_setter(instance):
+    original = instance.EmpID
+    instance.EmpID = original
+    assert instance.EmpID == original
+
 
 
 @given(instance=Package_OT_Requests_strategy)
@@ -3580,14 +3409,19 @@ def test_package_ot_requests_OtDay_setter(instance):
     instance.OtDay = original
     assert instance.OtDay == original
 
+
+
+@given(instance=Package_OT_Requests_strategy)
+def test_package_ot_requests_OTType_setter(instance):
+    original = instance.OTType
+    instance.OTType = original
+    assert instance.OTType == original
+
 @given(instance=Package_LeaveProfiles_strategy)
 @settings(max_examples=50)
 def test_package_leaveprofiles_instantiation(instance):
     assert isinstance(instance, Package_LeaveProfiles)
 
-@given(instance=Package_LeaveProfiles_strategy)
-def test_package_leaveprofiles_attribute_type(instance):
-    assert isinstance(instance.attribute, str)
 
 
 @given(instance=Package_LeaveProfiles_strategy)
@@ -3596,9 +3430,6 @@ def test_package_leaveprofiles_attribute_setter(instance):
     instance.attribute = original
     assert instance.attribute == original
 
-@given(instance=Package_LeaveProfiles_strategy)
-def test_package_leaveprofiles_attribute2_type(instance):
-    assert isinstance(instance.attribute2, str)
 
 
 @given(instance=Package_LeaveProfiles_strategy)
@@ -3612,9 +3443,6 @@ def test_package_leaveprofiles_attribute2_setter(instance):
 def test_package_leave_taken_instantiation(instance):
     assert isinstance(instance, Package_Leave_Taken)
 
-@given(instance=Package_Leave_Taken_strategy)
-def test_package_leave_taken_attribute_type(instance):
-    assert isinstance(instance.attribute, str)
 
 
 @given(instance=Package_Leave_Taken_strategy)
@@ -3623,9 +3451,6 @@ def test_package_leave_taken_attribute_setter(instance):
     instance.attribute = original
     assert instance.attribute == original
 
-@given(instance=Package_Leave_Taken_strategy)
-def test_package_leave_taken_attribute2_type(instance):
-    assert isinstance(instance.attribute2, str)
 
 
 @given(instance=Package_Leave_Taken_strategy)
@@ -3644,20 +3469,6 @@ def test_package_event_instantiation(instance):
 def test_package_epf_instantiation(instance):
     assert isinstance(instance, Package_EPF)
 
-@given(instance=Package_EPF_strategy)
-def test_package_epf_precentage_type(instance):
-    assert isinstance(instance.precentage, int)
-
-
-@given(instance=Package_EPF_strategy)
-def test_package_epf_precentage_setter(instance):
-    original = instance.precentage
-    instance.precentage = original
-    assert instance.precentage == original
-
-@given(instance=Package_EPF_strategy)
-def test_package_epf_effectve_date_type(instance):
-    assert isinstance(instance.effectve_date, package_userupdates)
 
 
 @given(instance=Package_EPF_strategy)
@@ -3666,9 +3477,6 @@ def test_package_epf_effectve_date_setter(instance):
     instance.effectve_date = original
     assert instance.effectve_date == original
 
-@given(instance=Package_EPF_strategy)
-def test_package_epf_id_type(instance):
-    assert isinstance(instance.id, int)
 
 
 @given(instance=Package_EPF_strategy)
@@ -3677,25 +3485,19 @@ def test_package_epf_id_setter(instance):
     instance.id = original
     assert instance.id == original
 
+
+
+@given(instance=Package_EPF_strategy)
+def test_package_epf_precentage_setter(instance):
+    original = instance.precentage
+    instance.precentage = original
+    assert instance.precentage == original
+
 @given(instance=Package_EmployeeSalary_strategy)
 @settings(max_examples=50)
 def test_package_employeesalary_instantiation(instance):
     assert isinstance(instance, Package_EmployeeSalary)
 
-@given(instance=Package_EmployeeSalary_strategy)
-def test_package_employeesalary_attribute2_type(instance):
-    assert isinstance(instance.attribute2, str)
-
-
-@given(instance=Package_EmployeeSalary_strategy)
-def test_package_employeesalary_attribute2_setter(instance):
-    original = instance.attribute2
-    instance.attribute2 = original
-    assert instance.attribute2 == original
-
-@given(instance=Package_EmployeeSalary_strategy)
-def test_package_employeesalary_attribute_type(instance):
-    assert isinstance(instance.attribute, str)
 
 
 @given(instance=Package_EmployeeSalary_strategy)
@@ -3704,14 +3506,19 @@ def test_package_employeesalary_attribute_setter(instance):
     instance.attribute = original
     assert instance.attribute == original
 
+
+
+@given(instance=Package_EmployeeSalary_strategy)
+def test_package_employeesalary_attribute2_setter(instance):
+    original = instance.attribute2
+    instance.attribute2 = original
+    assert instance.attribute2 == original
+
 @given(instance=Package_EmployeeParoll_strategy)
 @settings(max_examples=50)
 def test_package_employeeparoll_instantiation(instance):
     assert isinstance(instance, Package_EmployeeParoll)
 
-@given(instance=Package_EmployeeParoll_strategy)
-def test_package_employeeparoll_attribute_type(instance):
-    assert isinstance(instance.attribute, str)
 
 
 @given(instance=Package_EmployeeParoll_strategy)
@@ -3720,9 +3527,6 @@ def test_package_employeeparoll_attribute_setter(instance):
     instance.attribute = original
     assert instance.attribute == original
 
-@given(instance=Package_EmployeeParoll_strategy)
-def test_package_employeeparoll_attribute2_type(instance):
-    assert isinstance(instance.attribute2, str)
 
 
 @given(instance=Package_EmployeeParoll_strategy)
@@ -3736,64 +3540,6 @@ def test_package_employeeparoll_attribute2_setter(instance):
 def test_package_employee_instantiation(instance):
     assert isinstance(instance, Package_Employee)
 
-@given(instance=Package_Employee_strategy)
-def test_package_employee_shift_type(instance):
-    assert isinstance(instance.shift, str)
-
-
-@given(instance=Package_Employee_strategy)
-def test_package_employee_shift_setter(instance):
-    original = instance.shift
-    instance.shift = original
-    assert instance.shift == original
-
-@given(instance=Package_Employee_strategy)
-def test_package_employee_leavegroup_type(instance):
-    assert isinstance(instance.leavegroup, int)
-
-
-@given(instance=Package_Employee_strategy)
-def test_package_employee_leavegroup_setter(instance):
-    original = instance.leavegroup
-    instance.leavegroup = original
-    assert instance.leavegroup == original
-
-@given(instance=Package_Employee_strategy)
-def test_package_employee_usergroup_type(instance):
-    assert isinstance(instance.usergroup, int)
-
-
-@given(instance=Package_Employee_strategy)
-def test_package_employee_usergroup_setter(instance):
-    original = instance.usergroup
-    instance.usergroup = original
-    assert instance.usergroup == original
-
-@given(instance=Package_Employee_strategy)
-def test_package_employee_depid_type(instance):
-    assert isinstance(instance.depid, int)
-
-
-@given(instance=Package_Employee_strategy)
-def test_package_employee_depid_setter(instance):
-    original = instance.depid
-    instance.depid = original
-    assert instance.depid == original
-
-@given(instance=Package_Employee_strategy)
-def test_package_employee_post_type(instance):
-    assert isinstance(instance.post, str)
-
-
-@given(instance=Package_Employee_strategy)
-def test_package_employee_post_setter(instance):
-    original = instance.post
-    instance.post = original
-    assert instance.post == original
-
-@given(instance=Package_Employee_strategy)
-def test_package_employee_empid_type(instance):
-    assert isinstance(instance.empid, str)
 
 
 @given(instance=Package_Employee_strategy)
@@ -3802,9 +3548,46 @@ def test_package_employee_empid_setter(instance):
     instance.empid = original
     assert instance.empid == original
 
+
+
 @given(instance=Package_Employee_strategy)
-def test_package_employee_id_type(instance):
-    assert isinstance(instance.id, str)
+def test_package_employee_post_setter(instance):
+    original = instance.post
+    instance.post = original
+    assert instance.post == original
+
+
+
+@given(instance=Package_Employee_strategy)
+def test_package_employee_depid_setter(instance):
+    original = instance.depid
+    instance.depid = original
+    assert instance.depid == original
+
+
+
+@given(instance=Package_Employee_strategy)
+def test_package_employee_usergroup_setter(instance):
+    original = instance.usergroup
+    instance.usergroup = original
+    assert instance.usergroup == original
+
+
+
+@given(instance=Package_Employee_strategy)
+def test_package_employee_leavegroup_setter(instance):
+    original = instance.leavegroup
+    instance.leavegroup = original
+    assert instance.leavegroup == original
+
+
+
+@given(instance=Package_Employee_strategy)
+def test_package_employee_shift_setter(instance):
+    original = instance.shift
+    instance.shift = original
+    assert instance.shift == original
+
 
 
 @given(instance=Package_Employee_strategy)
@@ -3818,20 +3601,6 @@ def test_package_employee_id_setter(instance):
 def test_package_posts_instantiation(instance):
     assert isinstance(instance, Package_Posts)
 
-@given(instance=Package_Posts_strategy)
-def test_package_posts_attribute2_type(instance):
-    assert isinstance(instance.attribute2, str)
-
-
-@given(instance=Package_Posts_strategy)
-def test_package_posts_attribute2_setter(instance):
-    original = instance.attribute2
-    instance.attribute2 = original
-    assert instance.attribute2 == original
-
-@given(instance=Package_Posts_strategy)
-def test_package_posts_attribute_type(instance):
-    assert isinstance(instance.attribute, str)
 
 
 @given(instance=Package_Posts_strategy)
@@ -3840,14 +3609,19 @@ def test_package_posts_attribute_setter(instance):
     instance.attribute = original
     assert instance.attribute == original
 
+
+
+@given(instance=Package_Posts_strategy)
+def test_package_posts_attribute2_setter(instance):
+    original = instance.attribute2
+    instance.attribute2 = original
+    assert instance.attribute2 == original
+
 @given(instance=Package_Shifts_strategy)
 @settings(max_examples=50)
 def test_package_shifts_instantiation(instance):
     assert isinstance(instance, Package_Shifts)
 
-@given(instance=Package_Shifts_strategy)
-def test_package_shifts_attribute_type(instance):
-    assert isinstance(instance.attribute, str)
 
 
 @given(instance=Package_Shifts_strategy)
@@ -3856,9 +3630,6 @@ def test_package_shifts_attribute_setter(instance):
     instance.attribute = original
     assert instance.attribute == original
 
-@given(instance=Package_Shifts_strategy)
-def test_package_shifts_attribute2_type(instance):
-    assert isinstance(instance.attribute2, str)
 
 
 @given(instance=Package_Shifts_strategy)
@@ -3872,9 +3643,6 @@ def test_package_shifts_attribute2_setter(instance):
 def test_package_departments_instantiation(instance):
     assert isinstance(instance, Package_Departments)
 
-@given(instance=Package_Departments_strategy)
-def test_package_departments_id_type(instance):
-    assert isinstance(instance.id, int)
 
 
 @given(instance=Package_Departments_strategy)
@@ -3888,20 +3656,6 @@ def test_package_departments_id_setter(instance):
 def test_package_deductions_instantiation(instance):
     assert isinstance(instance, Package_Deductions)
 
-@given(instance=Package_Deductions_strategy)
-def test_package_deductions_attribute2_type(instance):
-    assert isinstance(instance.attribute2, str)
-
-
-@given(instance=Package_Deductions_strategy)
-def test_package_deductions_attribute2_setter(instance):
-    original = instance.attribute2
-    instance.attribute2 = original
-    assert instance.attribute2 == original
-
-@given(instance=Package_Deductions_strategy)
-def test_package_deductions_attribute_type(instance):
-    assert isinstance(instance.attribute, str)
 
 
 @given(instance=Package_Deductions_strategy)
@@ -3909,6 +3663,14 @@ def test_package_deductions_attribute_setter(instance):
     original = instance.attribute
     instance.attribute = original
     assert instance.attribute == original
+
+
+
+@given(instance=Package_Deductions_strategy)
+def test_package_deductions_attribute2_setter(instance):
+    original = instance.attribute2
+    instance.attribute2 = original
+    assert instance.attribute2 == original
 
 @given(instance=Package_AllowanceTypes_strategy)
 @settings(max_examples=50)
@@ -3925,9 +3687,6 @@ def test_package_deuctiontypes_instantiation(instance):
 def test_package_attendance_instantiation(instance):
     assert isinstance(instance, Package_Attendance)
 
-@given(instance=Package_Attendance_strategy)
-def test_package_attendance_timeout_type(instance):
-    assert isinstance(instance.timeout, str)
 
 
 @given(instance=Package_Attendance_strategy)
@@ -3936,20 +3695,6 @@ def test_package_attendance_timeout_setter(instance):
     instance.timeout = original
     assert instance.timeout == original
 
-@given(instance=Package_Attendance_strategy)
-def test_package_attendance_id_type(instance):
-    assert isinstance(instance.id, int)
-
-
-@given(instance=Package_Attendance_strategy)
-def test_package_attendance_id_setter(instance):
-    original = instance.id
-    instance.id = original
-    assert instance.id == original
-
-@given(instance=Package_Attendance_strategy)
-def test_package_attendance_timein_type(instance):
-    assert isinstance(instance.timein, str)
 
 
 @given(instance=Package_Attendance_strategy)
@@ -3958,9 +3703,6 @@ def test_package_attendance_timein_setter(instance):
     instance.timein = original
     assert instance.timein == original
 
-@given(instance=Package_Attendance_strategy)
-def test_package_attendance_empid_type(instance):
-    assert isinstance(instance.empid, int)
 
 
 @given(instance=Package_Attendance_strategy)
@@ -3969,14 +3711,19 @@ def test_package_attendance_empid_setter(instance):
     instance.empid = original
     assert instance.empid == original
 
+
+
+@given(instance=Package_Attendance_strategy)
+def test_package_attendance_id_setter(instance):
+    original = instance.id
+    instance.id = original
+    assert instance.id == original
+
 @given(instance=Package_Allowance_strategy)
 @settings(max_examples=50)
 def test_package_allowance_instantiation(instance):
     assert isinstance(instance, Package_Allowance)
 
-@given(instance=Package_Allowance_strategy)
-def test_package_allowance_emp_id_type(instance):
-    assert isinstance(instance.emp_id, str)
 
 
 @given(instance=Package_Allowance_strategy)
@@ -3985,9 +3732,6 @@ def test_package_allowance_emp_id_setter(instance):
     instance.emp_id = original
     assert instance.emp_id == original
 
-@given(instance=Package_Allowance_strategy)
-def test_package_allowance_id_type(instance):
-    assert isinstance(instance.id, int)
 
 
 @given(instance=Package_Allowance_strategy)
@@ -3996,9 +3740,6 @@ def test_package_allowance_id_setter(instance):
     instance.id = original
     assert instance.id == original
 
-@given(instance=Package_Allowance_strategy)
-def test_package_allowance_Effectivedate_type(instance):
-    assert isinstance(instance.Effectivedate, str)
 
 
 @given(instance=Package_Allowance_strategy)
@@ -4096,53 +3837,3 @@ def test_use_case_diagram_for_proposed_system_view_leave_rquest_usecase_instanti
 @settings(max_examples=50)
 def test_use_case_diagram_for_proposed_system_view_employee_time_records_usecase_instantiation(instance):
     assert isinstance(instance, Use_Case_Diagram_for_Proposed_System_View_Employee_Time_Records_UseCase)
-
-@given(instance=Use_Case_Diagram_for_Proposed_System_Set_Leave_status_UseCase_strategy)
-@settings(max_examples=50)
-def test_use_case_diagram_for_proposed_system_set_leave_status_usecase_instantiation(instance):
-    assert isinstance(instance, Use_Case_Diagram_for_Proposed_System_Set_Leave_status_UseCase)
-
-@given(instance=Use_Case_Diagram_for_Proposed_System_Set_advances_status_UseCase_strategy)
-@settings(max_examples=50)
-def test_use_case_diagram_for_proposed_system_set_advances_status_usecase_instantiation(instance):
-    assert isinstance(instance, Use_Case_Diagram_for_Proposed_System_Set_advances_status_UseCase)
-
-@given(instance=Use_Case_Diagram_for_Proposed_System_Request_Loan_and_advances_UseCase_strategy)
-@settings(max_examples=50)
-def test_use_case_diagram_for_proposed_system_request_loan_and_advances_usecase_instantiation(instance):
-    assert isinstance(instance, Use_Case_Diagram_for_Proposed_System_Request_Loan_and_advances_UseCase)
-
-@given(instance=Use_Case_Diagram_for_Proposed_System_Request_Leaves_UseCase_strategy)
-@settings(max_examples=50)
-def test_use_case_diagram_for_proposed_system_request_leaves_usecase_instantiation(instance):
-    assert isinstance(instance, Use_Case_Diagram_for_Proposed_System_Request_Leaves_UseCase)
-
-@given(instance=Use_Case_Diagram_for_Proposed_System_View_Reports_UseCase_strategy)
-@settings(max_examples=50)
-def test_use_case_diagram_for_proposed_system_view_reports_usecase_instantiation(instance):
-    assert isinstance(instance, Use_Case_Diagram_for_Proposed_System_View_Reports_UseCase)
-
-@given(instance=Use_Case_Diagram_for_Proposed_System_View_Personal_Time_Records_UseCase_strategy)
-@settings(max_examples=50)
-def test_use_case_diagram_for_proposed_system_view_personal_time_records_usecase_instantiation(instance):
-    assert isinstance(instance, Use_Case_Diagram_for_Proposed_System_View_Personal_Time_Records_UseCase)
-
-@given(instance=Use_Case_Diagram_for_Proposed_System_View_Leave_status_UseCase_strategy)
-@settings(max_examples=50)
-def test_use_case_diagram_for_proposed_system_view_leave_status_usecase_instantiation(instance):
-    assert isinstance(instance, Use_Case_Diagram_for_Proposed_System_View_Leave_status_UseCase)
-
-@given(instance=Use_Case_Diagram_for_Proposed_System_View_Personal_Salary_History_UseCase_strategy)
-@settings(max_examples=50)
-def test_use_case_diagram_for_proposed_system_view_personal_salary_history_usecase_instantiation(instance):
-    assert isinstance(instance, Use_Case_Diagram_for_Proposed_System_View_Personal_Salary_History_UseCase)
-
-@given(instance=Use_Case_Diagram_for_Proposed_System_View_personal_detais_UseCase_strategy)
-@settings(max_examples=50)
-def test_use_case_diagram_for_proposed_system_view_personal_detais_usecase_instantiation(instance):
-    assert isinstance(instance, Use_Case_Diagram_for_Proposed_System_View_personal_detais_UseCase)
-
-@given(instance=Employee_Actor_strategy)
-@settings(max_examples=50)
-def test_employee_actor_instantiation(instance):
-    assert isinstance(instance, Employee_Actor)

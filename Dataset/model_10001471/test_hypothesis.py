@@ -3,9 +3,25 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
 from python_code import (
+    RazredK,
+    RazredH,
+    RazredJ,
+    RazredG,
+    RazredF,
+    RazredE,
+    RazredD,
+    RazredC,
+    RazredB,
+    RazredA,
+    BancniRacun,
+    Lik3_Interface,
+    Pravokotnik3,
+    PravokotniLik,
+    RazredB2,
+    RazredA2,
     Stanovanje,
     Soba2,
     Objekt,
@@ -85,27 +101,395 @@ from python_code import (
     Class_N,
     RazredM,
     RazredL,
-    RazredK,
-    RazredH,
-    RazredJ,
-    RazredG,
-    RazredF,
-    RazredE,
-    RazredD,
-    RazredC,
-    RazredB,
-    RazredA,
-    BancniRacun,
-    Lik3_Interface,
-    Pravokotnik3,
-    PravokotniLik,
-    RazredB2,
-    RazredA2,
 )
 
 # =============================================================================
 # SECTION 1 — STRUCTURAL TESTS
 # =============================================================================
+
+
+
+def test_razredk_is_not_abstract():
+    assert not inspect.isabstract(RazredK)
+
+
+def test_razredk_constructor_exists():
+    assert callable(RazredK.__init__)
+
+
+def test_razredk_constructor_args():
+    sig = inspect.signature(RazredK.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_razredh_is_not_abstract():
+    assert not inspect.isabstract(RazredH)
+
+
+def test_razredh_constructor_exists():
+    assert callable(RazredH.__init__)
+
+
+def test_razredh_constructor_args():
+    sig = inspect.signature(RazredH.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_razredj_is_not_abstract():
+    assert not inspect.isabstract(RazredJ)
+
+
+def test_razredj_constructor_exists():
+    assert callable(RazredJ.__init__)
+
+
+def test_razredj_constructor_args():
+    sig = inspect.signature(RazredJ.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_razredg_is_not_abstract():
+    assert not inspect.isabstract(RazredG)
+
+
+def test_razredg_constructor_exists():
+    assert callable(RazredG.__init__)
+
+
+def test_razredg_constructor_args():
+    sig = inspect.signature(RazredG.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_razredf_is_not_abstract():
+    assert not inspect.isabstract(RazredF)
+
+
+def test_razredf_constructor_exists():
+    assert callable(RazredF.__init__)
+
+
+def test_razredf_constructor_args():
+    sig = inspect.signature(RazredF.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_razrede_is_not_abstract():
+    assert not inspect.isabstract(RazredE)
+
+
+def test_razrede_constructor_exists():
+    assert callable(RazredE.__init__)
+
+
+def test_razrede_constructor_args():
+    sig = inspect.signature(RazredE.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_razredd_is_not_abstract():
+    assert not inspect.isabstract(RazredD)
+
+
+def test_razredd_constructor_exists():
+    assert callable(RazredD.__init__)
+
+
+def test_razredd_constructor_args():
+    sig = inspect.signature(RazredD.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_razredc_is_not_abstract():
+    assert not inspect.isabstract(RazredC)
+
+
+def test_razredc_constructor_exists():
+    assert callable(RazredC.__init__)
+
+
+def test_razredc_constructor_args():
+    sig = inspect.signature(RazredC.__init__)
+    params = list(sig.parameters.keys())
+    assert "protectedAtribut" in params, "Missing parameter 'protectedAtribut'"
+    assert "packageAtribut" in params, "Missing parameter 'packageAtribut'"
+    assert "publicAtribut" in params, "Missing parameter 'publicAtribut'"
+    assert "privateAtribut" in params, "Missing parameter 'privateAtribut'"
+
+def test_razredc_has_protectedAtribut():
+    assert hasattr(RazredC, "protectedAtribut")
+    descriptor = None
+    for klass in RazredC.__mro__:
+        if "protectedAtribut" in klass.__dict__:
+            descriptor = klass.__dict__["protectedAtribut"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_razredc_has_packageAtribut():
+    assert hasattr(RazredC, "packageAtribut")
+    descriptor = None
+    for klass in RazredC.__mro__:
+        if "packageAtribut" in klass.__dict__:
+            descriptor = klass.__dict__["packageAtribut"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_razredc_has_publicAtribut():
+    assert hasattr(RazredC, "publicAtribut")
+    descriptor = None
+    for klass in RazredC.__mro__:
+        if "publicAtribut" in klass.__dict__:
+            descriptor = klass.__dict__["publicAtribut"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_razredc_has_privateAtribut():
+    assert hasattr(RazredC, "privateAtribut")
+    descriptor = None
+    for klass in RazredC.__mro__:
+        if "privateAtribut" in klass.__dict__:
+            descriptor = klass.__dict__["privateAtribut"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_razredb_is_not_abstract():
+    assert not inspect.isabstract(RazredB)
+
+
+def test_razredb_constructor_exists():
+    assert callable(RazredB.__init__)
+
+
+def test_razredb_constructor_args():
+    sig = inspect.signature(RazredB.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_razreda_is_not_abstract():
+    assert not inspect.isabstract(RazredA)
+
+
+def test_razreda_constructor_exists():
+    assert callable(RazredA.__init__)
+
+
+def test_razreda_constructor_args():
+    sig = inspect.signature(RazredA.__init__)
+    params = list(sig.parameters.keys())
+    assert "publicAtribut" in params, "Missing parameter 'publicAtribut'"
+    assert "protectedAtribut" in params, "Missing parameter 'protectedAtribut'"
+    assert "privateAtribut" in params, "Missing parameter 'privateAtribut'"
+    assert "packageAtribut" in params, "Missing parameter 'packageAtribut'"
+
+def test_razreda_has_publicAtribut():
+    assert hasattr(RazredA, "publicAtribut")
+    descriptor = None
+    for klass in RazredA.__mro__:
+        if "publicAtribut" in klass.__dict__:
+            descriptor = klass.__dict__["publicAtribut"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_razreda_has_protectedAtribut():
+    assert hasattr(RazredA, "protectedAtribut")
+    descriptor = None
+    for klass in RazredA.__mro__:
+        if "protectedAtribut" in klass.__dict__:
+            descriptor = klass.__dict__["protectedAtribut"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_razreda_has_privateAtribut():
+    assert hasattr(RazredA, "privateAtribut")
+    descriptor = None
+    for klass in RazredA.__mro__:
+        if "privateAtribut" in klass.__dict__:
+            descriptor = klass.__dict__["privateAtribut"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_razreda_has_packageAtribut():
+    assert hasattr(RazredA, "packageAtribut")
+    descriptor = None
+    for klass in RazredA.__mro__:
+        if "packageAtribut" in klass.__dict__:
+            descriptor = klass.__dict__["packageAtribut"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_bancniracun_is_not_abstract():
+    assert not inspect.isabstract(BancniRacun)
+
+
+def test_bancniracun_constructor_exists():
+    assert callable(BancniRacun.__init__)
+
+
+def test_bancniracun_constructor_args():
+    sig = inspect.signature(BancniRacun.__init__)
+    params = list(sig.parameters.keys())
+    assert "aktiven" in params, "Missing parameter 'aktiven'"
+    assert "lastnik" in params, "Missing parameter 'lastnik'"
+    assert "stanje" in params, "Missing parameter 'stanje'"
+
+def test_bancniracun_has_aktiven():
+    assert hasattr(BancniRacun, "aktiven")
+    descriptor = None
+    for klass in BancniRacun.__mro__:
+        if "aktiven" in klass.__dict__:
+            descriptor = klass.__dict__["aktiven"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_bancniracun_has_lastnik():
+    assert hasattr(BancniRacun, "lastnik")
+    descriptor = None
+    for klass in BancniRacun.__mro__:
+        if "lastnik" in klass.__dict__:
+            descriptor = klass.__dict__["lastnik"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_bancniracun_has_stanje():
+    assert hasattr(BancniRacun, "stanje")
+    descriptor = None
+    for klass in BancniRacun.__mro__:
+        if "stanje" in klass.__dict__:
+            descriptor = klass.__dict__["stanje"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_lik3_interface_is_not_abstract():
+    assert not inspect.isabstract(Lik3_Interface)
+
+
+def test_lik3_interface_constructor_exists():
+    assert callable(Lik3_Interface.__init__)
+
+
+def test_lik3_interface_constructor_args():
+    sig = inspect.signature(Lik3_Interface.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_pravokotnik3_is_not_abstract():
+    assert not inspect.isabstract(Pravokotnik3)
+
+
+def test_pravokotnik3_constructor_exists():
+    assert callable(Pravokotnik3.__init__)
+
+
+def test_pravokotnik3_constructor_args():
+    sig = inspect.signature(Pravokotnik3.__init__)
+    params = list(sig.parameters.keys())
+    assert "koordinataX" in params, "Missing parameter 'koordinataX'"
+    assert "koordinataY" in params, "Missing parameter 'koordinataY'"
+
+def test_pravokotnik3_has_koordinataX():
+    assert hasattr(Pravokotnik3, "koordinataX")
+    descriptor = None
+    for klass in Pravokotnik3.__mro__:
+        if "koordinataX" in klass.__dict__:
+            descriptor = klass.__dict__["koordinataX"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_pravokotnik3_has_koordinataY():
+    assert hasattr(Pravokotnik3, "koordinataY")
+    descriptor = None
+    for klass in Pravokotnik3.__mro__:
+        if "koordinataY" in klass.__dict__:
+            descriptor = klass.__dict__["koordinataY"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_pravokotnilik_is_not_abstract():
+    assert not inspect.isabstract(PravokotniLik)
+
+
+def test_pravokotnilik_constructor_exists():
+    assert callable(PravokotniLik.__init__)
+
+
+def test_pravokotnilik_constructor_args():
+    sig = inspect.signature(PravokotniLik.__init__)
+    params = list(sig.parameters.keys())
+    assert "sirina" in params, "Missing parameter 'sirina'"
+    assert "visina" in params, "Missing parameter 'visina'"
+
+def test_pravokotnilik_has_sirina():
+    assert hasattr(PravokotniLik, "sirina")
+    descriptor = None
+    for klass in PravokotniLik.__mro__:
+        if "sirina" in klass.__dict__:
+            descriptor = klass.__dict__["sirina"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_pravokotnilik_has_visina():
+    assert hasattr(PravokotniLik, "visina")
+    descriptor = None
+    for klass in PravokotniLik.__mro__:
+        if "visina" in klass.__dict__:
+            descriptor = klass.__dict__["visina"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_razredb2_is_not_abstract():
+    assert not inspect.isabstract(RazredB2)
+
+
+def test_razredb2_constructor_exists():
+    assert callable(RazredB2.__init__)
+
+
+def test_razredb2_constructor_args():
+    sig = inspect.signature(RazredB2.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_razreda2_is_not_abstract():
+    assert not inspect.isabstract(RazredA2)
+
+
+def test_razreda2_constructor_exists():
+    assert callable(RazredA2.__init__)
+
+
+def test_razreda2_constructor_args():
+    sig = inspect.signature(RazredA2.__init__)
+    params = list(sig.parameters.keys())
+    assert "objektB" in params, "Missing parameter 'objektB'"
+
+def test_razreda2_has_objektB():
+    assert hasattr(RazredA2, "objektB")
+    descriptor = None
+    for klass in RazredA2.__mro__:
+        if "objektB" in klass.__dict__:
+            descriptor = klass.__dict__["objektB"]
+            break
+    assert isinstance(descriptor, property)
 
 
 
@@ -386,16 +770,16 @@ def test_lik3_constructor_exists():
 def test_lik3_constructor_args():
     sig = inspect.signature(Lik3.__init__)
     params = list(sig.parameters.keys())
-    assert "barva" in params, "Missing parameter 'barva'"
-    assert "x" in params, "Missing parameter 'x'"
     assert "x1" in params, "Missing parameter 'x1'"
+    assert "x" in params, "Missing parameter 'x'"
+    assert "barva" in params, "Missing parameter 'barva'"
 
-def test_lik3_has_barva():
-    assert hasattr(Lik3, "barva")
+def test_lik3_has_x1():
+    assert hasattr(Lik3, "x1")
     descriptor = None
     for klass in Lik3.__mro__:
-        if "barva" in klass.__dict__:
-            descriptor = klass.__dict__["barva"]
+        if "x1" in klass.__dict__:
+            descriptor = klass.__dict__["x1"]
             break
     assert isinstance(descriptor, property)
 
@@ -408,12 +792,12 @@ def test_lik3_has_x():
             break
     assert isinstance(descriptor, property)
 
-def test_lik3_has_x1():
-    assert hasattr(Lik3, "x1")
+def test_lik3_has_barva():
+    assert hasattr(Lik3, "barva")
     descriptor = None
     for klass in Lik3.__mro__:
-        if "x1" in klass.__dict__:
-            descriptor = klass.__dict__["x1"]
+        if "barva" in klass.__dict__:
+            descriptor = klass.__dict__["barva"]
             break
     assert isinstance(descriptor, property)
 
@@ -430,17 +814,8 @@ def test_pravokotnik1_constructor_exists():
 def test_pravokotnik1_constructor_args():
     sig = inspect.signature(Pravokotnik1.__init__)
     params = list(sig.parameters.keys())
-    assert "stranicaB" in params, "Missing parameter 'stranicaB'"
     assert "stranicaA" in params, "Missing parameter 'stranicaA'"
-
-def test_pravokotnik1_has_stranicaB():
-    assert hasattr(Pravokotnik1, "stranicaB")
-    descriptor = None
-    for klass in Pravokotnik1.__mro__:
-        if "stranicaB" in klass.__dict__:
-            descriptor = klass.__dict__["stranicaB"]
-            break
-    assert isinstance(descriptor, property)
+    assert "stranicaB" in params, "Missing parameter 'stranicaB'"
 
 def test_pravokotnik1_has_stranicaA():
     assert hasattr(Pravokotnik1, "stranicaA")
@@ -448,6 +823,15 @@ def test_pravokotnik1_has_stranicaA():
     for klass in Pravokotnik1.__mro__:
         if "stranicaA" in klass.__dict__:
             descriptor = klass.__dict__["stranicaA"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_pravokotnik1_has_stranicaB():
+    assert hasattr(Pravokotnik1, "stranicaB")
+    descriptor = None
+    for klass in Pravokotnik1.__mro__:
+        if "stranicaB" in klass.__dict__:
+            descriptor = klass.__dict__["stranicaB"]
             break
     assert isinstance(descriptor, property)
 
@@ -464,18 +848,9 @@ def test_bancniracun1_constructor_exists():
 def test_bancniracun1_constructor_args():
     sig = inspect.signature(BancniRacun1.__init__)
     params = list(sig.parameters.keys())
-    assert "stanje" in params, "Missing parameter 'stanje'"
     assert "aktiven" in params, "Missing parameter 'aktiven'"
     assert "lastnik" in params, "Missing parameter 'lastnik'"
-
-def test_bancniracun1_has_stanje():
-    assert hasattr(BancniRacun1, "stanje")
-    descriptor = None
-    for klass in BancniRacun1.__mro__:
-        if "stanje" in klass.__dict__:
-            descriptor = klass.__dict__["stanje"]
-            break
-    assert isinstance(descriptor, property)
+    assert "stanje" in params, "Missing parameter 'stanje'"
 
 def test_bancniracun1_has_aktiven():
     assert hasattr(BancniRacun1, "aktiven")
@@ -495,6 +870,15 @@ def test_bancniracun1_has_lastnik():
             break
     assert isinstance(descriptor, property)
 
+def test_bancniracun1_has_stanje():
+    assert hasattr(BancniRacun1, "stanje")
+    descriptor = None
+    for klass in BancniRacun1.__mro__:
+        if "stanje" in klass.__dict__:
+            descriptor = klass.__dict__["stanje"]
+            break
+    assert isinstance(descriptor, property)
+
 
 
 def test_oseba2_is_not_abstract():
@@ -508,9 +892,18 @@ def test_oseba2_constructor_exists():
 def test_oseba2_constructor_args():
     sig = inspect.signature(Oseba2.__init__)
     params = list(sig.parameters.keys())
+    assert "priimek" in params, "Missing parameter 'priimek'"
     assert "datumRojstva" in params, "Missing parameter 'datumRojstva'"
     assert "ime" in params, "Missing parameter 'ime'"
-    assert "priimek" in params, "Missing parameter 'priimek'"
+
+def test_oseba2_has_priimek():
+    assert hasattr(Oseba2, "priimek")
+    descriptor = None
+    for klass in Oseba2.__mro__:
+        if "priimek" in klass.__dict__:
+            descriptor = klass.__dict__["priimek"]
+            break
+    assert isinstance(descriptor, property)
 
 def test_oseba2_has_datumRojstva():
     assert hasattr(Oseba2, "datumRojstva")
@@ -527,15 +920,6 @@ def test_oseba2_has_ime():
     for klass in Oseba2.__mro__:
         if "ime" in klass.__dict__:
             descriptor = klass.__dict__["ime"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_oseba2_has_priimek():
-    assert hasattr(Oseba2, "priimek")
-    descriptor = None
-    for klass in Oseba2.__mro__:
-        if "priimek" in klass.__dict__:
-            descriptor = klass.__dict__["priimek"]
             break
     assert isinstance(descriptor, property)
 
@@ -803,10 +1187,10 @@ def test_lik1_constructor_args():
     sig = inspect.signature(Lik1.__init__)
     params = list(sig.parameters.keys())
     assert "visina" in params, "Missing parameter 'visina'"
-    assert "sirina" in params, "Missing parameter 'sirina'"
     assert "barva" in params, "Missing parameter 'barva'"
-    assert "x" in params, "Missing parameter 'x'"
     assert "x1" in params, "Missing parameter 'x1'"
+    assert "x" in params, "Missing parameter 'x'"
+    assert "sirina" in params, "Missing parameter 'sirina'"
 
 def test_lik1_has_visina():
     assert hasattr(Lik1, "visina")
@@ -814,15 +1198,6 @@ def test_lik1_has_visina():
     for klass in Lik1.__mro__:
         if "visina" in klass.__dict__:
             descriptor = klass.__dict__["visina"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_lik1_has_sirina():
-    assert hasattr(Lik1, "sirina")
-    descriptor = None
-    for klass in Lik1.__mro__:
-        if "sirina" in klass.__dict__:
-            descriptor = klass.__dict__["sirina"]
             break
     assert isinstance(descriptor, property)
 
@@ -835,6 +1210,15 @@ def test_lik1_has_barva():
             break
     assert isinstance(descriptor, property)
 
+def test_lik1_has_x1():
+    assert hasattr(Lik1, "x1")
+    descriptor = None
+    for klass in Lik1.__mro__:
+        if "x1" in klass.__dict__:
+            descriptor = klass.__dict__["x1"]
+            break
+    assert isinstance(descriptor, property)
+
 def test_lik1_has_x():
     assert hasattr(Lik1, "x")
     descriptor = None
@@ -844,12 +1228,12 @@ def test_lik1_has_x():
             break
     assert isinstance(descriptor, property)
 
-def test_lik1_has_x1():
-    assert hasattr(Lik1, "x1")
+def test_lik1_has_sirina():
+    assert hasattr(Lik1, "sirina")
     descriptor = None
     for klass in Lik1.__mro__:
-        if "x1" in klass.__dict__:
-            descriptor = klass.__dict__["x1"]
+        if "sirina" in klass.__dict__:
+            descriptor = klass.__dict__["sirina"]
             break
     assert isinstance(descriptor, property)
 
@@ -1076,27 +1460,18 @@ def test_lik2_constructor_exists():
 def test_lik2_constructor_args():
     sig = inspect.signature(Lik2.__init__)
     params = list(sig.parameters.keys())
-    assert "x1" in params, "Missing parameter 'x1'"
-    assert "barva" in params, "Missing parameter 'barva'"
-    assert "sirina" in params, "Missing parameter 'sirina'"
     assert "visina" in params, "Missing parameter 'visina'"
+    assert "sirina" in params, "Missing parameter 'sirina'"
     assert "x" in params, "Missing parameter 'x'"
+    assert "barva" in params, "Missing parameter 'barva'"
+    assert "x1" in params, "Missing parameter 'x1'"
 
-def test_lik2_has_x1():
-    assert hasattr(Lik2, "x1")
+def test_lik2_has_visina():
+    assert hasattr(Lik2, "visina")
     descriptor = None
     for klass in Lik2.__mro__:
-        if "x1" in klass.__dict__:
-            descriptor = klass.__dict__["x1"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_lik2_has_barva():
-    assert hasattr(Lik2, "barva")
-    descriptor = None
-    for klass in Lik2.__mro__:
-        if "barva" in klass.__dict__:
-            descriptor = klass.__dict__["barva"]
+        if "visina" in klass.__dict__:
+            descriptor = klass.__dict__["visina"]
             break
     assert isinstance(descriptor, property)
 
@@ -1109,21 +1484,30 @@ def test_lik2_has_sirina():
             break
     assert isinstance(descriptor, property)
 
-def test_lik2_has_visina():
-    assert hasattr(Lik2, "visina")
-    descriptor = None
-    for klass in Lik2.__mro__:
-        if "visina" in klass.__dict__:
-            descriptor = klass.__dict__["visina"]
-            break
-    assert isinstance(descriptor, property)
-
 def test_lik2_has_x():
     assert hasattr(Lik2, "x")
     descriptor = None
     for klass in Lik2.__mro__:
         if "x" in klass.__dict__:
             descriptor = klass.__dict__["x"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_lik2_has_barva():
+    assert hasattr(Lik2, "barva")
+    descriptor = None
+    for klass in Lik2.__mro__:
+        if "barva" in klass.__dict__:
+            descriptor = klass.__dict__["barva"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_lik2_has_x1():
+    assert hasattr(Lik2, "x1")
+    descriptor = None
+    for klass in Lik2.__mro__:
+        if "x1" in klass.__dict__:
+            descriptor = klass.__dict__["x1"]
             break
     assert isinstance(descriptor, property)
 
@@ -1203,8 +1587,8 @@ def test_lik_constructor_args():
     sig = inspect.signature(Lik.__init__)
     params = list(sig.parameters.keys())
     assert "x1" in params, "Missing parameter 'x1'"
-    assert "barva" in params, "Missing parameter 'barva'"
     assert "x" in params, "Missing parameter 'x'"
+    assert "barva" in params, "Missing parameter 'barva'"
 
 def test_lik_has_x1():
     assert hasattr(Lik, "x1")
@@ -1215,21 +1599,21 @@ def test_lik_has_x1():
             break
     assert isinstance(descriptor, property)
 
-def test_lik_has_barva():
-    assert hasattr(Lik, "barva")
-    descriptor = None
-    for klass in Lik.__mro__:
-        if "barva" in klass.__dict__:
-            descriptor = klass.__dict__["barva"]
-            break
-    assert isinstance(descriptor, property)
-
 def test_lik_has_x():
     assert hasattr(Lik, "x")
     descriptor = None
     for klass in Lik.__mro__:
         if "x" in klass.__dict__:
             descriptor = klass.__dict__["x"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_lik_has_barva():
+    assert hasattr(Lik, "barva")
+    descriptor = None
+    for klass in Lik.__mro__:
+        if "barva" in klass.__dict__:
+            descriptor = klass.__dict__["barva"]
             break
     assert isinstance(descriptor, property)
 
@@ -1322,9 +1706,18 @@ def test_student_constructor_exists():
 def test_student_constructor_args():
     sig = inspect.signature(Student.__init__)
     params = list(sig.parameters.keys())
+    assert "vpisnaStevilka" in params, "Missing parameter 'vpisnaStevilka'"
     assert "studijskiProgram" in params, "Missing parameter 'studijskiProgram'"
     assert "datumVpisa" in params, "Missing parameter 'datumVpisa'"
-    assert "vpisnaStevilka" in params, "Missing parameter 'vpisnaStevilka'"
+
+def test_student_has_vpisnaStevilka():
+    assert hasattr(Student, "vpisnaStevilka")
+    descriptor = None
+    for klass in Student.__mro__:
+        if "vpisnaStevilka" in klass.__dict__:
+            descriptor = klass.__dict__["vpisnaStevilka"]
+            break
+    assert isinstance(descriptor, property)
 
 def test_student_has_studijskiProgram():
     assert hasattr(Student, "studijskiProgram")
@@ -1344,15 +1737,6 @@ def test_student_has_datumVpisa():
             break
     assert isinstance(descriptor, property)
 
-def test_student_has_vpisnaStevilka():
-    assert hasattr(Student, "vpisnaStevilka")
-    descriptor = None
-    for klass in Student.__mro__:
-        if "vpisnaStevilka" in klass.__dict__:
-            descriptor = klass.__dict__["vpisnaStevilka"]
-            break
-    assert isinstance(descriptor, property)
-
 
 
 def test_zaposlen_is_not_abstract():
@@ -1366,17 +1750,8 @@ def test_zaposlen_constructor_exists():
 def test_zaposlen_constructor_args():
     sig = inspect.signature(Zaposlen.__init__)
     params = list(sig.parameters.keys())
-    assert "urnaPostavka" in params, "Missing parameter 'urnaPostavka'"
     assert "izobrazba" in params, "Missing parameter 'izobrazba'"
-
-def test_zaposlen_has_urnaPostavka():
-    assert hasattr(Zaposlen, "urnaPostavka")
-    descriptor = None
-    for klass in Zaposlen.__mro__:
-        if "urnaPostavka" in klass.__dict__:
-            descriptor = klass.__dict__["urnaPostavka"]
-            break
-    assert isinstance(descriptor, property)
+    assert "urnaPostavka" in params, "Missing parameter 'urnaPostavka'"
 
 def test_zaposlen_has_izobrazba():
     assert hasattr(Zaposlen, "izobrazba")
@@ -1384,6 +1759,15 @@ def test_zaposlen_has_izobrazba():
     for klass in Zaposlen.__mro__:
         if "izobrazba" in klass.__dict__:
             descriptor = klass.__dict__["izobrazba"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_zaposlen_has_urnaPostavka():
+    assert hasattr(Zaposlen, "urnaPostavka")
+    descriptor = None
+    for klass in Zaposlen.__mro__:
+        if "urnaPostavka" in klass.__dict__:
+            descriptor = klass.__dict__["urnaPostavka"]
             break
     assert isinstance(descriptor, property)
 
@@ -1414,10 +1798,19 @@ def test_oseba_constructor_exists():
 def test_oseba_constructor_args():
     sig = inspect.signature(Oseba.__init__)
     params = list(sig.parameters.keys())
+    assert "spol" in params, "Missing parameter 'spol'"
     assert "ime" in params, "Missing parameter 'ime'"
     assert "priimek" in params, "Missing parameter 'priimek'"
-    assert "spol" in params, "Missing parameter 'spol'"
     assert "datumRojstva" in params, "Missing parameter 'datumRojstva'"
+
+def test_oseba_has_spol():
+    assert hasattr(Oseba, "spol")
+    descriptor = None
+    for klass in Oseba.__mro__:
+        if "spol" in klass.__dict__:
+            descriptor = klass.__dict__["spol"]
+            break
+    assert isinstance(descriptor, property)
 
 def test_oseba_has_ime():
     assert hasattr(Oseba, "ime")
@@ -1434,15 +1827,6 @@ def test_oseba_has_priimek():
     for klass in Oseba.__mro__:
         if "priimek" in klass.__dict__:
             descriptor = klass.__dict__["priimek"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_oseba_has_spol():
-    assert hasattr(Oseba, "spol")
-    descriptor = None
-    for klass in Oseba.__mro__:
-        if "spol" in klass.__dict__:
-            descriptor = klass.__dict__["spol"]
             break
     assert isinstance(descriptor, property)
 
@@ -1468,16 +1852,16 @@ def test_pes_constructor_exists():
 def test_pes_constructor_args():
     sig = inspect.signature(Pes.__init__)
     params = list(sig.parameters.keys())
-    assert "vzdevek" in params, "Missing parameter 'vzdevek'"
-    assert "pasma" in params, "Missing parameter 'pasma'"
     assert "visina" in params, "Missing parameter 'visina'"
+    assert "pasma" in params, "Missing parameter 'pasma'"
+    assert "vzdevek" in params, "Missing parameter 'vzdevek'"
 
-def test_pes_has_vzdevek():
-    assert hasattr(Pes, "vzdevek")
+def test_pes_has_visina():
+    assert hasattr(Pes, "visina")
     descriptor = None
     for klass in Pes.__mro__:
-        if "vzdevek" in klass.__dict__:
-            descriptor = klass.__dict__["vzdevek"]
+        if "visina" in klass.__dict__:
+            descriptor = klass.__dict__["visina"]
             break
     assert isinstance(descriptor, property)
 
@@ -1490,12 +1874,12 @@ def test_pes_has_pasma():
             break
     assert isinstance(descriptor, property)
 
-def test_pes_has_visina():
-    assert hasattr(Pes, "visina")
+def test_pes_has_vzdevek():
+    assert hasattr(Pes, "vzdevek")
     descriptor = None
     for klass in Pes.__mro__:
-        if "visina" in klass.__dict__:
-            descriptor = klass.__dict__["visina"]
+        if "vzdevek" in klass.__dict__:
+            descriptor = klass.__dict__["vzdevek"]
             break
     assert isinstance(descriptor, property)
 
@@ -1654,390 +2038,6 @@ def test_razredl_constructor_args():
     params = list(sig.parameters.keys())
 
 
-
-def test_razredk_is_not_abstract():
-    assert not inspect.isabstract(RazredK)
-
-
-def test_razredk_constructor_exists():
-    assert callable(RazredK.__init__)
-
-
-def test_razredk_constructor_args():
-    sig = inspect.signature(RazredK.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_razredh_is_not_abstract():
-    assert not inspect.isabstract(RazredH)
-
-
-def test_razredh_constructor_exists():
-    assert callable(RazredH.__init__)
-
-
-def test_razredh_constructor_args():
-    sig = inspect.signature(RazredH.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_razredj_is_not_abstract():
-    assert not inspect.isabstract(RazredJ)
-
-
-def test_razredj_constructor_exists():
-    assert callable(RazredJ.__init__)
-
-
-def test_razredj_constructor_args():
-    sig = inspect.signature(RazredJ.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_razredg_is_not_abstract():
-    assert not inspect.isabstract(RazredG)
-
-
-def test_razredg_constructor_exists():
-    assert callable(RazredG.__init__)
-
-
-def test_razredg_constructor_args():
-    sig = inspect.signature(RazredG.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_razredf_is_not_abstract():
-    assert not inspect.isabstract(RazredF)
-
-
-def test_razredf_constructor_exists():
-    assert callable(RazredF.__init__)
-
-
-def test_razredf_constructor_args():
-    sig = inspect.signature(RazredF.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_razrede_is_not_abstract():
-    assert not inspect.isabstract(RazredE)
-
-
-def test_razrede_constructor_exists():
-    assert callable(RazredE.__init__)
-
-
-def test_razrede_constructor_args():
-    sig = inspect.signature(RazredE.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_razredd_is_not_abstract():
-    assert not inspect.isabstract(RazredD)
-
-
-def test_razredd_constructor_exists():
-    assert callable(RazredD.__init__)
-
-
-def test_razredd_constructor_args():
-    sig = inspect.signature(RazredD.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_razredc_is_not_abstract():
-    assert not inspect.isabstract(RazredC)
-
-
-def test_razredc_constructor_exists():
-    assert callable(RazredC.__init__)
-
-
-def test_razredc_constructor_args():
-    sig = inspect.signature(RazredC.__init__)
-    params = list(sig.parameters.keys())
-    assert "protectedAtribut" in params, "Missing parameter 'protectedAtribut'"
-    assert "packageAtribut" in params, "Missing parameter 'packageAtribut'"
-    assert "privateAtribut" in params, "Missing parameter 'privateAtribut'"
-    assert "publicAtribut" in params, "Missing parameter 'publicAtribut'"
-
-def test_razredc_has_protectedAtribut():
-    assert hasattr(RazredC, "protectedAtribut")
-    descriptor = None
-    for klass in RazredC.__mro__:
-        if "protectedAtribut" in klass.__dict__:
-            descriptor = klass.__dict__["protectedAtribut"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_razredc_has_packageAtribut():
-    assert hasattr(RazredC, "packageAtribut")
-    descriptor = None
-    for klass in RazredC.__mro__:
-        if "packageAtribut" in klass.__dict__:
-            descriptor = klass.__dict__["packageAtribut"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_razredc_has_privateAtribut():
-    assert hasattr(RazredC, "privateAtribut")
-    descriptor = None
-    for klass in RazredC.__mro__:
-        if "privateAtribut" in klass.__dict__:
-            descriptor = klass.__dict__["privateAtribut"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_razredc_has_publicAtribut():
-    assert hasattr(RazredC, "publicAtribut")
-    descriptor = None
-    for klass in RazredC.__mro__:
-        if "publicAtribut" in klass.__dict__:
-            descriptor = klass.__dict__["publicAtribut"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_razredb_is_not_abstract():
-    assert not inspect.isabstract(RazredB)
-
-
-def test_razredb_constructor_exists():
-    assert callable(RazredB.__init__)
-
-
-def test_razredb_constructor_args():
-    sig = inspect.signature(RazredB.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_razreda_is_not_abstract():
-    assert not inspect.isabstract(RazredA)
-
-
-def test_razreda_constructor_exists():
-    assert callable(RazredA.__init__)
-
-
-def test_razreda_constructor_args():
-    sig = inspect.signature(RazredA.__init__)
-    params = list(sig.parameters.keys())
-    assert "packageAtribut" in params, "Missing parameter 'packageAtribut'"
-    assert "privateAtribut" in params, "Missing parameter 'privateAtribut'"
-    assert "publicAtribut" in params, "Missing parameter 'publicAtribut'"
-    assert "protectedAtribut" in params, "Missing parameter 'protectedAtribut'"
-
-def test_razreda_has_packageAtribut():
-    assert hasattr(RazredA, "packageAtribut")
-    descriptor = None
-    for klass in RazredA.__mro__:
-        if "packageAtribut" in klass.__dict__:
-            descriptor = klass.__dict__["packageAtribut"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_razreda_has_privateAtribut():
-    assert hasattr(RazredA, "privateAtribut")
-    descriptor = None
-    for klass in RazredA.__mro__:
-        if "privateAtribut" in klass.__dict__:
-            descriptor = klass.__dict__["privateAtribut"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_razreda_has_publicAtribut():
-    assert hasattr(RazredA, "publicAtribut")
-    descriptor = None
-    for klass in RazredA.__mro__:
-        if "publicAtribut" in klass.__dict__:
-            descriptor = klass.__dict__["publicAtribut"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_razreda_has_protectedAtribut():
-    assert hasattr(RazredA, "protectedAtribut")
-    descriptor = None
-    for klass in RazredA.__mro__:
-        if "protectedAtribut" in klass.__dict__:
-            descriptor = klass.__dict__["protectedAtribut"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_bancniracun_is_not_abstract():
-    assert not inspect.isabstract(BancniRacun)
-
-
-def test_bancniracun_constructor_exists():
-    assert callable(BancniRacun.__init__)
-
-
-def test_bancniracun_constructor_args():
-    sig = inspect.signature(BancniRacun.__init__)
-    params = list(sig.parameters.keys())
-    assert "lastnik" in params, "Missing parameter 'lastnik'"
-    assert "aktiven" in params, "Missing parameter 'aktiven'"
-    assert "stanje" in params, "Missing parameter 'stanje'"
-
-def test_bancniracun_has_lastnik():
-    assert hasattr(BancniRacun, "lastnik")
-    descriptor = None
-    for klass in BancniRacun.__mro__:
-        if "lastnik" in klass.__dict__:
-            descriptor = klass.__dict__["lastnik"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_bancniracun_has_aktiven():
-    assert hasattr(BancniRacun, "aktiven")
-    descriptor = None
-    for klass in BancniRacun.__mro__:
-        if "aktiven" in klass.__dict__:
-            descriptor = klass.__dict__["aktiven"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_bancniracun_has_stanje():
-    assert hasattr(BancniRacun, "stanje")
-    descriptor = None
-    for klass in BancniRacun.__mro__:
-        if "stanje" in klass.__dict__:
-            descriptor = klass.__dict__["stanje"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_lik3_interface_is_not_abstract():
-    assert not inspect.isabstract(Lik3_Interface)
-
-
-def test_lik3_interface_constructor_exists():
-    assert callable(Lik3_Interface.__init__)
-
-
-def test_lik3_interface_constructor_args():
-    sig = inspect.signature(Lik3_Interface.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_pravokotnik3_is_not_abstract():
-    assert not inspect.isabstract(Pravokotnik3)
-
-
-def test_pravokotnik3_constructor_exists():
-    assert callable(Pravokotnik3.__init__)
-
-
-def test_pravokotnik3_constructor_args():
-    sig = inspect.signature(Pravokotnik3.__init__)
-    params = list(sig.parameters.keys())
-    assert "koordinataY" in params, "Missing parameter 'koordinataY'"
-    assert "koordinataX" in params, "Missing parameter 'koordinataX'"
-
-def test_pravokotnik3_has_koordinataY():
-    assert hasattr(Pravokotnik3, "koordinataY")
-    descriptor = None
-    for klass in Pravokotnik3.__mro__:
-        if "koordinataY" in klass.__dict__:
-            descriptor = klass.__dict__["koordinataY"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_pravokotnik3_has_koordinataX():
-    assert hasattr(Pravokotnik3, "koordinataX")
-    descriptor = None
-    for klass in Pravokotnik3.__mro__:
-        if "koordinataX" in klass.__dict__:
-            descriptor = klass.__dict__["koordinataX"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_pravokotnilik_is_not_abstract():
-    assert not inspect.isabstract(PravokotniLik)
-
-
-def test_pravokotnilik_constructor_exists():
-    assert callable(PravokotniLik.__init__)
-
-
-def test_pravokotnilik_constructor_args():
-    sig = inspect.signature(PravokotniLik.__init__)
-    params = list(sig.parameters.keys())
-    assert "visina" in params, "Missing parameter 'visina'"
-    assert "sirina" in params, "Missing parameter 'sirina'"
-
-def test_pravokotnilik_has_visina():
-    assert hasattr(PravokotniLik, "visina")
-    descriptor = None
-    for klass in PravokotniLik.__mro__:
-        if "visina" in klass.__dict__:
-            descriptor = klass.__dict__["visina"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_pravokotnilik_has_sirina():
-    assert hasattr(PravokotniLik, "sirina")
-    descriptor = None
-    for klass in PravokotniLik.__mro__:
-        if "sirina" in klass.__dict__:
-            descriptor = klass.__dict__["sirina"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_razredb2_is_not_abstract():
-    assert not inspect.isabstract(RazredB2)
-
-
-def test_razredb2_constructor_exists():
-    assert callable(RazredB2.__init__)
-
-
-def test_razredb2_constructor_args():
-    sig = inspect.signature(RazredB2.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_razreda2_is_not_abstract():
-    assert not inspect.isabstract(RazredA2)
-
-
-def test_razreda2_constructor_exists():
-    assert callable(RazredA2.__init__)
-
-
-def test_razreda2_constructor_args():
-    sig = inspect.signature(RazredA2.__init__)
-    params = list(sig.parameters.keys())
-    assert "objektB" in params, "Missing parameter 'objektB'"
-
-def test_razreda2_has_objektB():
-    assert hasattr(RazredA2, "objektB")
-    descriptor = None
-    for klass in RazredA2.__mro__:
-        if "objektB" in klass.__dict__:
-            descriptor = klass.__dict__["objektB"]
-            break
-    assert isinstance(descriptor, property)
-
-
 # =============================================================================
 # HYPOTHESIS STRATEGIES
 # =============================================================================
@@ -2049,6 +2049,86 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
+RazredK_strategy = st.builds(
+    RazredK,
+)
+RazredH_strategy = st.builds(
+    RazredH,
+)
+RazredJ_strategy = st.builds(
+    RazredJ,
+)
+RazredG_strategy = st.builds(
+    RazredG,
+)
+RazredF_strategy = st.builds(
+    RazredF,
+)
+RazredE_strategy = st.builds(
+    RazredE,
+)
+RazredD_strategy = st.builds(
+    RazredD,
+)
+RazredC_strategy = st.builds(
+    RazredC,
+    protectedAtribut=
+        safe_text,
+    packageAtribut=
+        safe_text,
+    publicAtribut=
+        st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False),
+    privateAtribut=
+        st.integers()
+)
+RazredB_strategy = st.builds(
+    RazredB,
+)
+RazredA_strategy = st.builds(
+    RazredA,
+    publicAtribut=
+        st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False),
+    protectedAtribut=
+        safe_text,
+    privateAtribut=
+        st.integers(),
+    packageAtribut=
+        safe_text
+)
+BancniRacun_strategy = st.builds(
+    BancniRacun,
+    aktiven=
+        st.booleans(),
+    lastnik=
+        safe_text,
+    stanje=
+        st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False)
+)
+Lik3_Interface_strategy = st.builds(
+    Lik3_Interface,
+)
+Pravokotnik3_strategy = st.builds(
+    Pravokotnik3,
+    koordinataX=
+        safe_text,
+    koordinataY=
+        safe_text
+)
+PravokotniLik_strategy = st.builds(
+    PravokotniLik,
+    sirina=
+        safe_text,
+    visina=
+        safe_text
+)
+RazredB2_strategy = st.builds(
+    RazredB2,
+)
+RazredA2_strategy = st.builds(
+    RazredA2,
+    objektB=
+        st.none()
+)
 Stanovanje_strategy = st.builds(
     Stanovanje,
 )
@@ -2108,36 +2188,36 @@ Interface_Interface_strategy = st.builds(
 )
 Lik3_strategy = st.builds(
     Lik3,
-    barva=
-        st.none(),
+    x1=
+        safe_text,
     x=
         safe_text,
-    x1=
-        safe_text
+    barva=
+        st.none()
 )
 Pravokotnik1_strategy = st.builds(
     Pravokotnik1,
-    stranicaB=
-        safe_text,
     stranicaA=
+        safe_text,
+    stranicaB=
         safe_text
 )
 BancniRacun1_strategy = st.builds(
     BancniRacun1,
-    stanje=
-        st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False),
     aktiven=
         st.booleans(),
     lastnik=
-        safe_text
+        safe_text,
+    stanje=
+        st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False)
 )
 Oseba2_strategy = st.builds(
     Oseba2,
+    priimek=
+        safe_text,
     datumRojstva=
         st.dates(),
     ime=
-        safe_text,
-    priimek=
         safe_text
 )
 Oseba1_strategy = st.builds(
@@ -2197,13 +2277,13 @@ Lik1_strategy = st.builds(
     Lik1,
     visina=
         safe_text,
-    sirina=
-        safe_text,
     barva=
         st.none(),
+    x1=
+        safe_text,
     x=
         safe_text,
-    x1=
+    sirina=
         safe_text
 )
 FileNotFoundException_strategy = st.builds(
@@ -2253,15 +2333,15 @@ Krog2_strategy = st.builds(
 )
 Lik2_strategy = st.builds(
     Lik2,
-    x1=
+    visina=
+        safe_text,
+    sirina=
+        safe_text,
+    x=
         safe_text,
     barva=
         st.none(),
-    sirina=
-        safe_text,
-    visina=
-        safe_text,
-    x=
+    x1=
         safe_text
 )
 Pravokotnik2_strategy = st.builds(
@@ -2281,10 +2361,10 @@ Lik_strategy = st.builds(
     Lik,
     x1=
         safe_text,
-    barva=
-        st.none(),
     x=
-        safe_text
+        safe_text,
+    barva=
+        st.none()
 )
 RazredB1_strategy = st.builds(
     RazredB1,
@@ -2304,41 +2384,41 @@ LocalDate1_strategy = st.builds(
 )
 Student_strategy = st.builds(
     Student,
+    vpisnaStevilka=
+        safe_text,
     studijskiProgram=
         safe_text,
     datumVpisa=
-        st.none(),
-    vpisnaStevilka=
-        safe_text
+        st.none()
 )
 Zaposlen_strategy = st.builds(
     Zaposlen,
-    urnaPostavka=
-        st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False),
     izobrazba=
-        safe_text
+        safe_text,
+    urnaPostavka=
+        st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False)
 )
 LocalDate_strategy = st.builds(
     LocalDate,
 )
 Oseba_strategy = st.builds(
     Oseba,
+    spol=
+        safe_text,
     ime=
         safe_text,
     priimek=
-        safe_text,
-    spol=
         safe_text,
     datumRojstva=
         st.none()
 )
 Pes_strategy = st.builds(
     Pes,
-    vzdevek=
+    visina=
         safe_text,
     pasma=
         safe_text,
-    visina=
+    vzdevek=
         safe_text
 )
 ClassV_strategy = st.builds(
@@ -2374,86 +2454,214 @@ RazredM_strategy = st.builds(
 RazredL_strategy = st.builds(
     RazredL,
 )
-RazredK_strategy = st.builds(
-    RazredK,
-)
-RazredH_strategy = st.builds(
-    RazredH,
-)
-RazredJ_strategy = st.builds(
-    RazredJ,
-)
-RazredG_strategy = st.builds(
-    RazredG,
-)
-RazredF_strategy = st.builds(
-    RazredF,
-)
-RazredE_strategy = st.builds(
-    RazredE,
-)
-RazredD_strategy = st.builds(
-    RazredD,
-)
-RazredC_strategy = st.builds(
-    RazredC,
-    protectedAtribut=
-        safe_text,
-    packageAtribut=
-        safe_text,
-    privateAtribut=
-        st.integers(),
-    publicAtribut=
-        st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False)
-)
-RazredB_strategy = st.builds(
-    RazredB,
-)
-RazredA_strategy = st.builds(
-    RazredA,
-    packageAtribut=
-        safe_text,
-    privateAtribut=
-        st.integers(),
-    publicAtribut=
-        st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False),
-    protectedAtribut=
-        safe_text
-)
-BancniRacun_strategy = st.builds(
-    BancniRacun,
-    lastnik=
-        safe_text,
-    aktiven=
-        st.booleans(),
-    stanje=
-        st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False)
-)
-Lik3_Interface_strategy = st.builds(
-    Lik3_Interface,
-)
-Pravokotnik3_strategy = st.builds(
-    Pravokotnik3,
-    koordinataY=
-        safe_text,
-    koordinataX=
-        safe_text
-)
-PravokotniLik_strategy = st.builds(
-    PravokotniLik,
-    visina=
-        safe_text,
-    sirina=
-        safe_text
-)
-RazredB2_strategy = st.builds(
-    RazredB2,
-)
-RazredA2_strategy = st.builds(
-    RazredA2,
-    objektB=
-        st.none()
-)
+
+@given(instance=RazredK_strategy)
+@settings(max_examples=50)
+def test_razredk_instantiation(instance):
+    assert isinstance(instance, RazredK)
+
+@given(instance=RazredH_strategy)
+@settings(max_examples=50)
+def test_razredh_instantiation(instance):
+    assert isinstance(instance, RazredH)
+
+@given(instance=RazredJ_strategy)
+@settings(max_examples=50)
+def test_razredj_instantiation(instance):
+    assert isinstance(instance, RazredJ)
+
+@given(instance=RazredG_strategy)
+@settings(max_examples=50)
+def test_razredg_instantiation(instance):
+    assert isinstance(instance, RazredG)
+
+@given(instance=RazredF_strategy)
+@settings(max_examples=50)
+def test_razredf_instantiation(instance):
+    assert isinstance(instance, RazredF)
+
+@given(instance=RazredE_strategy)
+@settings(max_examples=50)
+def test_razrede_instantiation(instance):
+    assert isinstance(instance, RazredE)
+
+@given(instance=RazredD_strategy)
+@settings(max_examples=50)
+def test_razredd_instantiation(instance):
+    assert isinstance(instance, RazredD)
+
+@given(instance=RazredC_strategy)
+@settings(max_examples=50)
+def test_razredc_instantiation(instance):
+    assert isinstance(instance, RazredC)
+
+
+
+@given(instance=RazredC_strategy)
+def test_razredc_protectedAtribut_setter(instance):
+    original = instance.protectedAtribut
+    instance.protectedAtribut = original
+    assert instance.protectedAtribut == original
+
+
+
+@given(instance=RazredC_strategy)
+def test_razredc_packageAtribut_setter(instance):
+    original = instance.packageAtribut
+    instance.packageAtribut = original
+    assert instance.packageAtribut == original
+
+
+
+@given(instance=RazredC_strategy)
+def test_razredc_publicAtribut_setter(instance):
+    original = instance.publicAtribut
+    instance.publicAtribut = original
+    assert instance.publicAtribut == original
+
+
+
+@given(instance=RazredC_strategy)
+def test_razredc_privateAtribut_setter(instance):
+    original = instance.privateAtribut
+    instance.privateAtribut = original
+    assert instance.privateAtribut == original
+
+@given(instance=RazredB_strategy)
+@settings(max_examples=50)
+def test_razredb_instantiation(instance):
+    assert isinstance(instance, RazredB)
+
+@given(instance=RazredA_strategy)
+@settings(max_examples=50)
+def test_razreda_instantiation(instance):
+    assert isinstance(instance, RazredA)
+
+
+
+@given(instance=RazredA_strategy)
+def test_razreda_publicAtribut_setter(instance):
+    original = instance.publicAtribut
+    instance.publicAtribut = original
+    assert instance.publicAtribut == original
+
+
+
+@given(instance=RazredA_strategy)
+def test_razreda_protectedAtribut_setter(instance):
+    original = instance.protectedAtribut
+    instance.protectedAtribut = original
+    assert instance.protectedAtribut == original
+
+
+
+@given(instance=RazredA_strategy)
+def test_razreda_privateAtribut_setter(instance):
+    original = instance.privateAtribut
+    instance.privateAtribut = original
+    assert instance.privateAtribut == original
+
+
+
+@given(instance=RazredA_strategy)
+def test_razreda_packageAtribut_setter(instance):
+    original = instance.packageAtribut
+    instance.packageAtribut = original
+    assert instance.packageAtribut == original
+
+@given(instance=BancniRacun_strategy)
+@settings(max_examples=50)
+def test_bancniracun_instantiation(instance):
+    assert isinstance(instance, BancniRacun)
+
+
+
+@given(instance=BancniRacun_strategy)
+def test_bancniracun_aktiven_setter(instance):
+    original = instance.aktiven
+    instance.aktiven = original
+    assert instance.aktiven == original
+
+
+
+@given(instance=BancniRacun_strategy)
+def test_bancniracun_lastnik_setter(instance):
+    original = instance.lastnik
+    instance.lastnik = original
+    assert instance.lastnik == original
+
+
+
+@given(instance=BancniRacun_strategy)
+def test_bancniracun_stanje_setter(instance):
+    original = instance.stanje
+    instance.stanje = original
+    assert instance.stanje == original
+
+@given(instance=Lik3_Interface_strategy)
+@settings(max_examples=50)
+def test_lik3_interface_instantiation(instance):
+    assert isinstance(instance, Lik3_Interface)
+
+@given(instance=Pravokotnik3_strategy)
+@settings(max_examples=50)
+def test_pravokotnik3_instantiation(instance):
+    assert isinstance(instance, Pravokotnik3)
+
+
+
+@given(instance=Pravokotnik3_strategy)
+def test_pravokotnik3_koordinataX_setter(instance):
+    original = instance.koordinataX
+    instance.koordinataX = original
+    assert instance.koordinataX == original
+
+
+
+@given(instance=Pravokotnik3_strategy)
+def test_pravokotnik3_koordinataY_setter(instance):
+    original = instance.koordinataY
+    instance.koordinataY = original
+    assert instance.koordinataY == original
+
+@given(instance=PravokotniLik_strategy)
+@settings(max_examples=50)
+def test_pravokotnilik_instantiation(instance):
+    assert isinstance(instance, PravokotniLik)
+
+
+
+@given(instance=PravokotniLik_strategy)
+def test_pravokotnilik_sirina_setter(instance):
+    original = instance.sirina
+    instance.sirina = original
+    assert instance.sirina == original
+
+
+
+@given(instance=PravokotniLik_strategy)
+def test_pravokotnilik_visina_setter(instance):
+    original = instance.visina
+    instance.visina = original
+    assert instance.visina == original
+
+@given(instance=RazredB2_strategy)
+@settings(max_examples=50)
+def test_razredb2_instantiation(instance):
+    assert isinstance(instance, RazredB2)
+
+@given(instance=RazredA2_strategy)
+@settings(max_examples=50)
+def test_razreda2_instantiation(instance):
+    assert isinstance(instance, RazredA2)
+
+
+
+@given(instance=RazredA2_strategy)
+def test_razreda2_objektB_setter(instance):
+    original = instance.objektB
+    instance.objektB = original
+    assert instance.objektB == original
 
 @given(instance=Stanovanje_strategy)
 @settings(max_examples=50)
@@ -2555,31 +2763,6 @@ def test_interface_interface_instantiation(instance):
 def test_lik3_instantiation(instance):
     assert isinstance(instance, Lik3)
 
-@given(instance=Lik3_strategy)
-def test_lik3_barva_type(instance):
-    assert isinstance(instance.barva, color)
-
-
-@given(instance=Lik3_strategy)
-def test_lik3_barva_setter(instance):
-    original = instance.barva
-    instance.barva = original
-    assert instance.barva == original
-
-@given(instance=Lik3_strategy)
-def test_lik3_x_type(instance):
-    assert isinstance(instance.x, str)
-
-
-@given(instance=Lik3_strategy)
-def test_lik3_x_setter(instance):
-    original = instance.x
-    instance.x = original
-    assert instance.x == original
-
-@given(instance=Lik3_strategy)
-def test_lik3_x1_type(instance):
-    assert isinstance(instance.x1, str)
 
 
 @given(instance=Lik3_strategy)
@@ -2588,25 +2771,27 @@ def test_lik3_x1_setter(instance):
     instance.x1 = original
     assert instance.x1 == original
 
+
+
+@given(instance=Lik3_strategy)
+def test_lik3_x_setter(instance):
+    original = instance.x
+    instance.x = original
+    assert instance.x == original
+
+
+
+@given(instance=Lik3_strategy)
+def test_lik3_barva_setter(instance):
+    original = instance.barva
+    instance.barva = original
+    assert instance.barva == original
+
 @given(instance=Pravokotnik1_strategy)
 @settings(max_examples=50)
 def test_pravokotnik1_instantiation(instance):
     assert isinstance(instance, Pravokotnik1)
 
-@given(instance=Pravokotnik1_strategy)
-def test_pravokotnik1_stranicaB_type(instance):
-    assert isinstance(instance.stranicaB, str)
-
-
-@given(instance=Pravokotnik1_strategy)
-def test_pravokotnik1_stranicaB_setter(instance):
-    original = instance.stranicaB
-    instance.stranicaB = original
-    assert instance.stranicaB == original
-
-@given(instance=Pravokotnik1_strategy)
-def test_pravokotnik1_stranicaA_type(instance):
-    assert isinstance(instance.stranicaA, str)
 
 
 @given(instance=Pravokotnik1_strategy)
@@ -2615,25 +2800,19 @@ def test_pravokotnik1_stranicaA_setter(instance):
     instance.stranicaA = original
     assert instance.stranicaA == original
 
+
+
+@given(instance=Pravokotnik1_strategy)
+def test_pravokotnik1_stranicaB_setter(instance):
+    original = instance.stranicaB
+    instance.stranicaB = original
+    assert instance.stranicaB == original
+
 @given(instance=BancniRacun1_strategy)
 @settings(max_examples=50)
 def test_bancniracun1_instantiation(instance):
     assert isinstance(instance, BancniRacun1)
 
-@given(instance=BancniRacun1_strategy)
-def test_bancniracun1_stanje_type(instance):
-    assert isinstance(instance.stanje, float)
-
-
-@given(instance=BancniRacun1_strategy)
-def test_bancniracun1_stanje_setter(instance):
-    original = instance.stanje
-    instance.stanje = original
-    assert instance.stanje == original
-
-@given(instance=BancniRacun1_strategy)
-def test_bancniracun1_aktiven_type(instance):
-    assert isinstance(instance.aktiven, bool)
 
 
 @given(instance=BancniRacun1_strategy)
@@ -2642,9 +2821,6 @@ def test_bancniracun1_aktiven_setter(instance):
     instance.aktiven = original
     assert instance.aktiven == original
 
-@given(instance=BancniRacun1_strategy)
-def test_bancniracun1_lastnik_type(instance):
-    assert isinstance(instance.lastnik, str)
 
 
 @given(instance=BancniRacun1_strategy)
@@ -2653,36 +2829,19 @@ def test_bancniracun1_lastnik_setter(instance):
     instance.lastnik = original
     assert instance.lastnik == original
 
+
+
+@given(instance=BancniRacun1_strategy)
+def test_bancniracun1_stanje_setter(instance):
+    original = instance.stanje
+    instance.stanje = original
+    assert instance.stanje == original
+
 @given(instance=Oseba2_strategy)
 @settings(max_examples=50)
 def test_oseba2_instantiation(instance):
     assert isinstance(instance, Oseba2)
 
-@given(instance=Oseba2_strategy)
-def test_oseba2_datumRojstva_type(instance):
-    assert isinstance(instance.datumRojstva, date)
-
-
-@given(instance=Oseba2_strategy)
-def test_oseba2_datumRojstva_setter(instance):
-    original = instance.datumRojstva
-    instance.datumRojstva = original
-    assert instance.datumRojstva == original
-
-@given(instance=Oseba2_strategy)
-def test_oseba2_ime_type(instance):
-    assert isinstance(instance.ime, str)
-
-
-@given(instance=Oseba2_strategy)
-def test_oseba2_ime_setter(instance):
-    original = instance.ime
-    instance.ime = original
-    assert instance.ime == original
-
-@given(instance=Oseba2_strategy)
-def test_oseba2_priimek_type(instance):
-    assert isinstance(instance.priimek, str)
 
 
 @given(instance=Oseba2_strategy)
@@ -2691,14 +2850,27 @@ def test_oseba2_priimek_setter(instance):
     instance.priimek = original
     assert instance.priimek == original
 
+
+
+@given(instance=Oseba2_strategy)
+def test_oseba2_datumRojstva_setter(instance):
+    original = instance.datumRojstva
+    instance.datumRojstva = original
+    assert instance.datumRojstva == original
+
+
+
+@given(instance=Oseba2_strategy)
+def test_oseba2_ime_setter(instance):
+    original = instance.ime
+    instance.ime = original
+    assert instance.ime == original
+
 @given(instance=Oseba1_strategy)
 @settings(max_examples=50)
 def test_oseba1_instantiation(instance):
     assert isinstance(instance, Oseba1)
 
-@given(instance=Oseba1_strategy)
-def test_oseba1_emso_type(instance):
-    assert isinstance(instance.emso, str)
 
 
 @given(instance=Oseba1_strategy)
@@ -2707,9 +2879,6 @@ def test_oseba1_emso_setter(instance):
     instance.emso = original
     assert instance.emso == original
 
-@given(instance=Oseba1_strategy)
-def test_oseba1_ime_type(instance):
-    assert isinstance(instance.ime, str)
 
 
 @given(instance=Oseba1_strategy)
@@ -2718,9 +2887,6 @@ def test_oseba1_ime_setter(instance):
     instance.ime = original
     assert instance.ime == original
 
-@given(instance=Oseba1_strategy)
-def test_oseba1_priimek_type(instance):
-    assert isinstance(instance.priimek, str)
 
 
 @given(instance=Oseba1_strategy)
@@ -2734,9 +2900,6 @@ def test_oseba1_priimek_setter(instance):
 def test_razred_instantiation(instance):
     assert isinstance(instance, Razred)
 
-@given(instance=Razred_strategy)
-def test_razred_attribute_type(instance):
-    assert isinstance(instance.attribute, str)
 
 
 @given(instance=Razred_strategy)
@@ -2815,9 +2978,6 @@ def test_pravokotnik_instantiation(instance):
 def test_lik1_instantiation(instance):
     assert isinstance(instance, Lik1)
 
-@given(instance=Lik1_strategy)
-def test_lik1_visina_type(instance):
-    assert isinstance(instance.visina, str)
 
 
 @given(instance=Lik1_strategy)
@@ -2826,20 +2986,6 @@ def test_lik1_visina_setter(instance):
     instance.visina = original
     assert instance.visina == original
 
-@given(instance=Lik1_strategy)
-def test_lik1_sirina_type(instance):
-    assert isinstance(instance.sirina, str)
-
-
-@given(instance=Lik1_strategy)
-def test_lik1_sirina_setter(instance):
-    original = instance.sirina
-    instance.sirina = original
-    assert instance.sirina == original
-
-@given(instance=Lik1_strategy)
-def test_lik1_barva_type(instance):
-    assert isinstance(instance.barva, color)
 
 
 @given(instance=Lik1_strategy)
@@ -2848,9 +2994,14 @@ def test_lik1_barva_setter(instance):
     instance.barva = original
     assert instance.barva == original
 
+
+
 @given(instance=Lik1_strategy)
-def test_lik1_x_type(instance):
-    assert isinstance(instance.x, str)
+def test_lik1_x1_setter(instance):
+    original = instance.x1
+    instance.x1 = original
+    assert instance.x1 == original
+
 
 
 @given(instance=Lik1_strategy)
@@ -2859,16 +3010,13 @@ def test_lik1_x_setter(instance):
     instance.x = original
     assert instance.x == original
 
-@given(instance=Lik1_strategy)
-def test_lik1_x1_type(instance):
-    assert isinstance(instance.x1, str)
 
 
 @given(instance=Lik1_strategy)
-def test_lik1_x1_setter(instance):
-    original = instance.x1
-    instance.x1 = original
-    assert instance.x1 == original
+def test_lik1_sirina_setter(instance):
+    original = instance.sirina
+    instance.sirina = original
+    assert instance.sirina == original
 
 @given(instance=FileNotFoundException_strategy)
 @settings(max_examples=50)
@@ -2950,42 +3098,6 @@ def test_krog2_instantiation(instance):
 def test_lik2_instantiation(instance):
     assert isinstance(instance, Lik2)
 
-@given(instance=Lik2_strategy)
-def test_lik2_x1_type(instance):
-    assert isinstance(instance.x1, str)
-
-
-@given(instance=Lik2_strategy)
-def test_lik2_x1_setter(instance):
-    original = instance.x1
-    instance.x1 = original
-    assert instance.x1 == original
-
-@given(instance=Lik2_strategy)
-def test_lik2_barva_type(instance):
-    assert isinstance(instance.barva, color)
-
-
-@given(instance=Lik2_strategy)
-def test_lik2_barva_setter(instance):
-    original = instance.barva
-    instance.barva = original
-    assert instance.barva == original
-
-@given(instance=Lik2_strategy)
-def test_lik2_sirina_type(instance):
-    assert isinstance(instance.sirina, str)
-
-
-@given(instance=Lik2_strategy)
-def test_lik2_sirina_setter(instance):
-    original = instance.sirina
-    instance.sirina = original
-    assert instance.sirina == original
-
-@given(instance=Lik2_strategy)
-def test_lik2_visina_type(instance):
-    assert isinstance(instance.visina, str)
 
 
 @given(instance=Lik2_strategy)
@@ -2994,9 +3106,14 @@ def test_lik2_visina_setter(instance):
     instance.visina = original
     assert instance.visina == original
 
+
+
 @given(instance=Lik2_strategy)
-def test_lik2_x_type(instance):
-    assert isinstance(instance.x, str)
+def test_lik2_sirina_setter(instance):
+    original = instance.sirina
+    instance.sirina = original
+    assert instance.sirina == original
+
 
 
 @given(instance=Lik2_strategy)
@@ -3004,6 +3121,22 @@ def test_lik2_x_setter(instance):
     original = instance.x
     instance.x = original
     assert instance.x == original
+
+
+
+@given(instance=Lik2_strategy)
+def test_lik2_barva_setter(instance):
+    original = instance.barva
+    instance.barva = original
+    assert instance.barva == original
+
+
+
+@given(instance=Lik2_strategy)
+def test_lik2_x1_setter(instance):
+    original = instance.x1
+    instance.x1 = original
+    assert instance.x1 == original
 
 @given(instance=Pravokotnik2_strategy)
 @settings(max_examples=50)
@@ -3015,9 +3148,6 @@ def test_pravokotnik2_instantiation(instance):
 def test_pravokotnika_instantiation(instance):
     assert isinstance(instance, PravokotnikA)
 
-@given(instance=PravokotnikA_strategy)
-def test_pravokotnika_stranicaB_type(instance):
-    assert isinstance(instance.stranicaB, str)
 
 
 @given(instance=PravokotnikA_strategy)
@@ -3026,9 +3156,6 @@ def test_pravokotnika_stranicaB_setter(instance):
     instance.stranicaB = original
     assert instance.stranicaB == original
 
-@given(instance=PravokotnikA_strategy)
-def test_pravokotnika_stranicaA_type(instance):
-    assert isinstance(instance.stranicaA, str)
 
 
 @given(instance=PravokotnikA_strategy)
@@ -3047,9 +3174,6 @@ def test_color_instantiation(instance):
 def test_lik_instantiation(instance):
     assert isinstance(instance, Lik)
 
-@given(instance=Lik_strategy)
-def test_lik_x1_type(instance):
-    assert isinstance(instance.x1, str)
 
 
 @given(instance=Lik_strategy)
@@ -3058,20 +3182,6 @@ def test_lik_x1_setter(instance):
     instance.x1 = original
     assert instance.x1 == original
 
-@given(instance=Lik_strategy)
-def test_lik_barva_type(instance):
-    assert isinstance(instance.barva, color)
-
-
-@given(instance=Lik_strategy)
-def test_lik_barva_setter(instance):
-    original = instance.barva
-    instance.barva = original
-    assert instance.barva == original
-
-@given(instance=Lik_strategy)
-def test_lik_x_type(instance):
-    assert isinstance(instance.x, str)
 
 
 @given(instance=Lik_strategy)
@@ -3079,6 +3189,14 @@ def test_lik_x_setter(instance):
     original = instance.x
     instance.x = original
     assert instance.x == original
+
+
+
+@given(instance=Lik_strategy)
+def test_lik_barva_setter(instance):
+    original = instance.barva
+    instance.barva = original
+    assert instance.barva == original
 
 @given(instance=RazredB1_strategy)
 @settings(max_examples=50)
@@ -3090,9 +3208,6 @@ def test_razredb1_instantiation(instance):
 def test_razredc1_instantiation(instance):
     assert isinstance(instance, RazredC1)
 
-@given(instance=RazredC1_strategy)
-def test_razredc1_stevilo_type(instance):
-    assert isinstance(instance.stevilo, str)
 
 
 @given(instance=RazredC1_strategy)
@@ -3106,9 +3221,6 @@ def test_razredc1_stevilo_setter(instance):
 def test_razreda1_instantiation(instance):
     assert isinstance(instance, RazredA1)
 
-@given(instance=RazredA1_strategy)
-def test_razreda1_stevilo_type(instance):
-    assert isinstance(instance.stevilo, str)
 
 
 @given(instance=RazredA1_strategy)
@@ -3127,31 +3239,6 @@ def test_localdate1_instantiation(instance):
 def test_student_instantiation(instance):
     assert isinstance(instance, Student)
 
-@given(instance=Student_strategy)
-def test_student_studijskiProgram_type(instance):
-    assert isinstance(instance.studijskiProgram, str)
-
-
-@given(instance=Student_strategy)
-def test_student_studijskiProgram_setter(instance):
-    original = instance.studijskiProgram
-    instance.studijskiProgram = original
-    assert instance.studijskiProgram == original
-
-@given(instance=Student_strategy)
-def test_student_datumVpisa_type(instance):
-    assert isinstance(instance.datumVpisa, localdate1)
-
-
-@given(instance=Student_strategy)
-def test_student_datumVpisa_setter(instance):
-    original = instance.datumVpisa
-    instance.datumVpisa = original
-    assert instance.datumVpisa == original
-
-@given(instance=Student_strategy)
-def test_student_vpisnaStevilka_type(instance):
-    assert isinstance(instance.vpisnaStevilka, str)
 
 
 @given(instance=Student_strategy)
@@ -3160,25 +3247,27 @@ def test_student_vpisnaStevilka_setter(instance):
     instance.vpisnaStevilka = original
     assert instance.vpisnaStevilka == original
 
+
+
+@given(instance=Student_strategy)
+def test_student_studijskiProgram_setter(instance):
+    original = instance.studijskiProgram
+    instance.studijskiProgram = original
+    assert instance.studijskiProgram == original
+
+
+
+@given(instance=Student_strategy)
+def test_student_datumVpisa_setter(instance):
+    original = instance.datumVpisa
+    instance.datumVpisa = original
+    assert instance.datumVpisa == original
+
 @given(instance=Zaposlen_strategy)
 @settings(max_examples=50)
 def test_zaposlen_instantiation(instance):
     assert isinstance(instance, Zaposlen)
 
-@given(instance=Zaposlen_strategy)
-def test_zaposlen_urnaPostavka_type(instance):
-    assert isinstance(instance.urnaPostavka, float)
-
-
-@given(instance=Zaposlen_strategy)
-def test_zaposlen_urnaPostavka_setter(instance):
-    original = instance.urnaPostavka
-    instance.urnaPostavka = original
-    assert instance.urnaPostavka == original
-
-@given(instance=Zaposlen_strategy)
-def test_zaposlen_izobrazba_type(instance):
-    assert isinstance(instance.izobrazba, str)
 
 
 @given(instance=Zaposlen_strategy)
@@ -3186,6 +3275,14 @@ def test_zaposlen_izobrazba_setter(instance):
     original = instance.izobrazba
     instance.izobrazba = original
     assert instance.izobrazba == original
+
+
+
+@given(instance=Zaposlen_strategy)
+def test_zaposlen_urnaPostavka_setter(instance):
+    original = instance.urnaPostavka
+    instance.urnaPostavka = original
+    assert instance.urnaPostavka == original
 
 @given(instance=LocalDate_strategy)
 @settings(max_examples=50)
@@ -3197,31 +3294,6 @@ def test_localdate_instantiation(instance):
 def test_oseba_instantiation(instance):
     assert isinstance(instance, Oseba)
 
-@given(instance=Oseba_strategy)
-def test_oseba_ime_type(instance):
-    assert isinstance(instance.ime, str)
-
-
-@given(instance=Oseba_strategy)
-def test_oseba_ime_setter(instance):
-    original = instance.ime
-    instance.ime = original
-    assert instance.ime == original
-
-@given(instance=Oseba_strategy)
-def test_oseba_priimek_type(instance):
-    assert isinstance(instance.priimek, str)
-
-
-@given(instance=Oseba_strategy)
-def test_oseba_priimek_setter(instance):
-    original = instance.priimek
-    instance.priimek = original
-    assert instance.priimek == original
-
-@given(instance=Oseba_strategy)
-def test_oseba_spol_type(instance):
-    assert isinstance(instance.spol, str)
 
 
 @given(instance=Oseba_strategy)
@@ -3230,9 +3302,22 @@ def test_oseba_spol_setter(instance):
     instance.spol = original
     assert instance.spol == original
 
+
+
 @given(instance=Oseba_strategy)
-def test_oseba_datumRojstva_type(instance):
-    assert isinstance(instance.datumRojstva, localdate)
+def test_oseba_ime_setter(instance):
+    original = instance.ime
+    instance.ime = original
+    assert instance.ime == original
+
+
+
+@given(instance=Oseba_strategy)
+def test_oseba_priimek_setter(instance):
+    original = instance.priimek
+    instance.priimek = original
+    assert instance.priimek == original
+
 
 
 @given(instance=Oseba_strategy)
@@ -3246,20 +3331,14 @@ def test_oseba_datumRojstva_setter(instance):
 def test_pes_instantiation(instance):
     assert isinstance(instance, Pes)
 
-@given(instance=Pes_strategy)
-def test_pes_vzdevek_type(instance):
-    assert isinstance(instance.vzdevek, str)
 
 
 @given(instance=Pes_strategy)
-def test_pes_vzdevek_setter(instance):
-    original = instance.vzdevek
-    instance.vzdevek = original
-    assert instance.vzdevek == original
+def test_pes_visina_setter(instance):
+    original = instance.visina
+    instance.visina = original
+    assert instance.visina == original
 
-@given(instance=Pes_strategy)
-def test_pes_pasma_type(instance):
-    assert isinstance(instance.pasma, str)
 
 
 @given(instance=Pes_strategy)
@@ -3268,16 +3347,13 @@ def test_pes_pasma_setter(instance):
     instance.pasma = original
     assert instance.pasma == original
 
-@given(instance=Pes_strategy)
-def test_pes_visina_type(instance):
-    assert isinstance(instance.visina, str)
 
 
 @given(instance=Pes_strategy)
-def test_pes_visina_setter(instance):
-    original = instance.visina
-    instance.visina = original
-    assert instance.visina == original
+def test_pes_vzdevek_setter(instance):
+    original = instance.vzdevek
+    instance.vzdevek = original
+    assert instance.vzdevek == original
 
 @given(instance=ClassV_strategy)
 @settings(max_examples=50)
@@ -3333,259 +3409,3 @@ def test_razredm_instantiation(instance):
 @settings(max_examples=50)
 def test_razredl_instantiation(instance):
     assert isinstance(instance, RazredL)
-
-@given(instance=RazredK_strategy)
-@settings(max_examples=50)
-def test_razredk_instantiation(instance):
-    assert isinstance(instance, RazredK)
-
-@given(instance=RazredH_strategy)
-@settings(max_examples=50)
-def test_razredh_instantiation(instance):
-    assert isinstance(instance, RazredH)
-
-@given(instance=RazredJ_strategy)
-@settings(max_examples=50)
-def test_razredj_instantiation(instance):
-    assert isinstance(instance, RazredJ)
-
-@given(instance=RazredG_strategy)
-@settings(max_examples=50)
-def test_razredg_instantiation(instance):
-    assert isinstance(instance, RazredG)
-
-@given(instance=RazredF_strategy)
-@settings(max_examples=50)
-def test_razredf_instantiation(instance):
-    assert isinstance(instance, RazredF)
-
-@given(instance=RazredE_strategy)
-@settings(max_examples=50)
-def test_razrede_instantiation(instance):
-    assert isinstance(instance, RazredE)
-
-@given(instance=RazredD_strategy)
-@settings(max_examples=50)
-def test_razredd_instantiation(instance):
-    assert isinstance(instance, RazredD)
-
-@given(instance=RazredC_strategy)
-@settings(max_examples=50)
-def test_razredc_instantiation(instance):
-    assert isinstance(instance, RazredC)
-
-@given(instance=RazredC_strategy)
-def test_razredc_protectedAtribut_type(instance):
-    assert isinstance(instance.protectedAtribut, str)
-
-
-@given(instance=RazredC_strategy)
-def test_razredc_protectedAtribut_setter(instance):
-    original = instance.protectedAtribut
-    instance.protectedAtribut = original
-    assert instance.protectedAtribut == original
-
-@given(instance=RazredC_strategy)
-def test_razredc_packageAtribut_type(instance):
-    assert isinstance(instance.packageAtribut, str)
-
-
-@given(instance=RazredC_strategy)
-def test_razredc_packageAtribut_setter(instance):
-    original = instance.packageAtribut
-    instance.packageAtribut = original
-    assert instance.packageAtribut == original
-
-@given(instance=RazredC_strategy)
-def test_razredc_privateAtribut_type(instance):
-    assert isinstance(instance.privateAtribut, int)
-
-
-@given(instance=RazredC_strategy)
-def test_razredc_privateAtribut_setter(instance):
-    original = instance.privateAtribut
-    instance.privateAtribut = original
-    assert instance.privateAtribut == original
-
-@given(instance=RazredC_strategy)
-def test_razredc_publicAtribut_type(instance):
-    assert isinstance(instance.publicAtribut, float)
-
-
-@given(instance=RazredC_strategy)
-def test_razredc_publicAtribut_setter(instance):
-    original = instance.publicAtribut
-    instance.publicAtribut = original
-    assert instance.publicAtribut == original
-
-@given(instance=RazredB_strategy)
-@settings(max_examples=50)
-def test_razredb_instantiation(instance):
-    assert isinstance(instance, RazredB)
-
-@given(instance=RazredA_strategy)
-@settings(max_examples=50)
-def test_razreda_instantiation(instance):
-    assert isinstance(instance, RazredA)
-
-@given(instance=RazredA_strategy)
-def test_razreda_packageAtribut_type(instance):
-    assert isinstance(instance.packageAtribut, str)
-
-
-@given(instance=RazredA_strategy)
-def test_razreda_packageAtribut_setter(instance):
-    original = instance.packageAtribut
-    instance.packageAtribut = original
-    assert instance.packageAtribut == original
-
-@given(instance=RazredA_strategy)
-def test_razreda_privateAtribut_type(instance):
-    assert isinstance(instance.privateAtribut, int)
-
-
-@given(instance=RazredA_strategy)
-def test_razreda_privateAtribut_setter(instance):
-    original = instance.privateAtribut
-    instance.privateAtribut = original
-    assert instance.privateAtribut == original
-
-@given(instance=RazredA_strategy)
-def test_razreda_publicAtribut_type(instance):
-    assert isinstance(instance.publicAtribut, float)
-
-
-@given(instance=RazredA_strategy)
-def test_razreda_publicAtribut_setter(instance):
-    original = instance.publicAtribut
-    instance.publicAtribut = original
-    assert instance.publicAtribut == original
-
-@given(instance=RazredA_strategy)
-def test_razreda_protectedAtribut_type(instance):
-    assert isinstance(instance.protectedAtribut, str)
-
-
-@given(instance=RazredA_strategy)
-def test_razreda_protectedAtribut_setter(instance):
-    original = instance.protectedAtribut
-    instance.protectedAtribut = original
-    assert instance.protectedAtribut == original
-
-@given(instance=BancniRacun_strategy)
-@settings(max_examples=50)
-def test_bancniracun_instantiation(instance):
-    assert isinstance(instance, BancniRacun)
-
-@given(instance=BancniRacun_strategy)
-def test_bancniracun_lastnik_type(instance):
-    assert isinstance(instance.lastnik, str)
-
-
-@given(instance=BancniRacun_strategy)
-def test_bancniracun_lastnik_setter(instance):
-    original = instance.lastnik
-    instance.lastnik = original
-    assert instance.lastnik == original
-
-@given(instance=BancniRacun_strategy)
-def test_bancniracun_aktiven_type(instance):
-    assert isinstance(instance.aktiven, bool)
-
-
-@given(instance=BancniRacun_strategy)
-def test_bancniracun_aktiven_setter(instance):
-    original = instance.aktiven
-    instance.aktiven = original
-    assert instance.aktiven == original
-
-@given(instance=BancniRacun_strategy)
-def test_bancniracun_stanje_type(instance):
-    assert isinstance(instance.stanje, float)
-
-
-@given(instance=BancniRacun_strategy)
-def test_bancniracun_stanje_setter(instance):
-    original = instance.stanje
-    instance.stanje = original
-    assert instance.stanje == original
-
-@given(instance=Lik3_Interface_strategy)
-@settings(max_examples=50)
-def test_lik3_interface_instantiation(instance):
-    assert isinstance(instance, Lik3_Interface)
-
-@given(instance=Pravokotnik3_strategy)
-@settings(max_examples=50)
-def test_pravokotnik3_instantiation(instance):
-    assert isinstance(instance, Pravokotnik3)
-
-@given(instance=Pravokotnik3_strategy)
-def test_pravokotnik3_koordinataY_type(instance):
-    assert isinstance(instance.koordinataY, str)
-
-
-@given(instance=Pravokotnik3_strategy)
-def test_pravokotnik3_koordinataY_setter(instance):
-    original = instance.koordinataY
-    instance.koordinataY = original
-    assert instance.koordinataY == original
-
-@given(instance=Pravokotnik3_strategy)
-def test_pravokotnik3_koordinataX_type(instance):
-    assert isinstance(instance.koordinataX, str)
-
-
-@given(instance=Pravokotnik3_strategy)
-def test_pravokotnik3_koordinataX_setter(instance):
-    original = instance.koordinataX
-    instance.koordinataX = original
-    assert instance.koordinataX == original
-
-@given(instance=PravokotniLik_strategy)
-@settings(max_examples=50)
-def test_pravokotnilik_instantiation(instance):
-    assert isinstance(instance, PravokotniLik)
-
-@given(instance=PravokotniLik_strategy)
-def test_pravokotnilik_visina_type(instance):
-    assert isinstance(instance.visina, str)
-
-
-@given(instance=PravokotniLik_strategy)
-def test_pravokotnilik_visina_setter(instance):
-    original = instance.visina
-    instance.visina = original
-    assert instance.visina == original
-
-@given(instance=PravokotniLik_strategy)
-def test_pravokotnilik_sirina_type(instance):
-    assert isinstance(instance.sirina, str)
-
-
-@given(instance=PravokotniLik_strategy)
-def test_pravokotnilik_sirina_setter(instance):
-    original = instance.sirina
-    instance.sirina = original
-    assert instance.sirina == original
-
-@given(instance=RazredB2_strategy)
-@settings(max_examples=50)
-def test_razredb2_instantiation(instance):
-    assert isinstance(instance, RazredB2)
-
-@given(instance=RazredA2_strategy)
-@settings(max_examples=50)
-def test_razreda2_instantiation(instance):
-    assert isinstance(instance, RazredA2)
-
-@given(instance=RazredA2_strategy)
-def test_razreda2_objektB_type(instance):
-    assert isinstance(instance.objektB, razredb2)
-
-
-@given(instance=RazredA2_strategy)
-def test_razreda2_objektB_setter(instance):
-    original = instance.objektB
-    instance.objektB = original
-    assert instance.objektB == original

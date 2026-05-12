@@ -3,54 +3,54 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     IntegerExpression,
-    adwithoutruntime::IntegerCalculationExpression,
+    adwithoutruntime_IntegerCalculationExpression,
     BooleanExpression,
-    adwithoutruntime::BooleanBinaryExpression,
-    adwithoutruntime::BooleanUnaryExpression,
-    adwithoutruntime::IntegerComparisonExpression,
-    adwithoutruntime::Expression,
+    adwithoutruntime_BooleanBinaryExpression,
+    adwithoutruntime_BooleanUnaryExpression,
+    adwithoutruntime_IntegerComparisonExpression,
+    adwithoutruntime_Expression,
     Action,
-    adwithoutruntime::OpaqueAction,
+    adwithoutruntime_OpaqueAction,
     Expression,
-    adwithoutruntime::BooleanExpression,
-    adwithoutruntime::IntegerExpression,
+    adwithoutruntime_BooleanExpression,
+    adwithoutruntime_IntegerExpression,
     Value,
-    adwithoutruntime::IntegerValue,
-    adwithoutruntime::BooleanValue,
+    adwithoutruntime_IntegerValue,
+    adwithoutruntime_BooleanValue,
     Variable,
-    adwithoutruntime::IntegerVariable,
-    adwithoutruntime::Value,
+    adwithoutruntime_IntegerVariable,
+    adwithoutruntime_Value,
     FinalNode,
-    adwithoutruntime::ActivityFinalNode,
+    adwithoutruntime_ActivityFinalNode,
     ControlNode,
-    adwithoutruntime::JoinNode,
-    adwithoutruntime::MergeNode,
-    adwithoutruntime::FinalNode,
-    adwithoutruntime::DecisionNode,
-    adwithoutruntime::ForkNode,
-    adwithoutruntime::InitialNode,
-    adwithoutruntime::NamedElement,
+    adwithoutruntime_JoinNode,
+    adwithoutruntime_DecisionNode,
+    adwithoutruntime_ForkNode,
+    adwithoutruntime_FinalNode,
+    adwithoutruntime_MergeNode,
+    adwithoutruntime_InitialNode,
+    adwithoutruntime_NamedElement,
     NamedElement,
-    adwithoutruntime::Activity,
+    adwithoutruntime_Activity,
     ExecutableNode,
-    adwithoutruntime::Action,
+    adwithoutruntime_Action,
     ActivityNode,
-    adwithoutruntime::ExecutableNode,
-    adwithoutruntime::ControlNode,
-    adwithoutruntime::BooleanVariable,
+    adwithoutruntime_ExecutableNode,
+    adwithoutruntime_ControlNode,
+    adwithoutruntime_BooleanVariable,
     ActivityEdge,
-    adwithoutruntime::ControlFlow,
-    adwithoutruntime::Variable,
-    adwithoutruntime::ActivityEdge,
-    adwithoutruntime::ActivityNode,
-    BooleanUnaryOperator,
-    IntegerComparisonOperator,
+    adwithoutruntime_ControlFlow,
+    adwithoutruntime_Variable,
+    adwithoutruntime_ActivityEdge,
+    adwithoutruntime_ActivityNode,
     BooleanBinaryOperator,
     IntegerCalculationOperator,
+    BooleanUnaryOperator,
+    IntegerComparisonOperator,
 )
 
 # =============================================================================
@@ -73,23 +73,23 @@ def test_integerexpression_constructor_args():
 
 
 
-def test_adwithoutruntime::integercalculationexpression_is_not_abstract():
-    assert not inspect.isabstract(adwithoutruntime::IntegerCalculationExpression)
+def test_adwithoutruntime_integercalculationexpression_is_not_abstract():
+    assert not inspect.isabstract(adwithoutruntime_IntegerCalculationExpression)
 
 
-def test_adwithoutruntime::integercalculationexpression_constructor_exists():
-    assert callable(adwithoutruntime::IntegerCalculationExpression.__init__)
+def test_adwithoutruntime_integercalculationexpression_constructor_exists():
+    assert callable(adwithoutruntime_IntegerCalculationExpression.__init__)
 
 
-def test_adwithoutruntime::integercalculationexpression_constructor_args():
-    sig = inspect.signature(adwithoutruntime::IntegerCalculationExpression.__init__)
+def test_adwithoutruntime_integercalculationexpression_constructor_args():
+    sig = inspect.signature(adwithoutruntime_IntegerCalculationExpression.__init__)
     params = list(sig.parameters.keys())
     assert "operator" in params, "Missing parameter 'operator'"
 
-def test_adwithoutruntime::integercalculationexpression_has_operator():
-    assert hasattr(adwithoutruntime::IntegerCalculationExpression, "operator")
+def test_adwithoutruntime_integercalculationexpression_has_operator():
+    assert hasattr(adwithoutruntime_IntegerCalculationExpression, "operator")
     descriptor = None
-    for klass in adwithoutruntime::IntegerCalculationExpression.__mro__:
+    for klass in adwithoutruntime_IntegerCalculationExpression.__mro__:
         if "operator" in klass.__dict__:
             descriptor = klass.__dict__["operator"]
             break
@@ -111,23 +111,23 @@ def test_booleanexpression_constructor_args():
 
 
 
-def test_adwithoutruntime::booleanbinaryexpression_is_not_abstract():
-    assert not inspect.isabstract(adwithoutruntime::BooleanBinaryExpression)
+def test_adwithoutruntime_booleanbinaryexpression_is_not_abstract():
+    assert not inspect.isabstract(adwithoutruntime_BooleanBinaryExpression)
 
 
-def test_adwithoutruntime::booleanbinaryexpression_constructor_exists():
-    assert callable(adwithoutruntime::BooleanBinaryExpression.__init__)
+def test_adwithoutruntime_booleanbinaryexpression_constructor_exists():
+    assert callable(adwithoutruntime_BooleanBinaryExpression.__init__)
 
 
-def test_adwithoutruntime::booleanbinaryexpression_constructor_args():
-    sig = inspect.signature(adwithoutruntime::BooleanBinaryExpression.__init__)
+def test_adwithoutruntime_booleanbinaryexpression_constructor_args():
+    sig = inspect.signature(adwithoutruntime_BooleanBinaryExpression.__init__)
     params = list(sig.parameters.keys())
     assert "operator" in params, "Missing parameter 'operator'"
 
-def test_adwithoutruntime::booleanbinaryexpression_has_operator():
-    assert hasattr(adwithoutruntime::BooleanBinaryExpression, "operator")
+def test_adwithoutruntime_booleanbinaryexpression_has_operator():
+    assert hasattr(adwithoutruntime_BooleanBinaryExpression, "operator")
     descriptor = None
-    for klass in adwithoutruntime::BooleanBinaryExpression.__mro__:
+    for klass in adwithoutruntime_BooleanBinaryExpression.__mro__:
         if "operator" in klass.__dict__:
             descriptor = klass.__dict__["operator"]
             break
@@ -135,23 +135,23 @@ def test_adwithoutruntime::booleanbinaryexpression_has_operator():
 
 
 
-def test_adwithoutruntime::booleanunaryexpression_is_not_abstract():
-    assert not inspect.isabstract(adwithoutruntime::BooleanUnaryExpression)
+def test_adwithoutruntime_booleanunaryexpression_is_not_abstract():
+    assert not inspect.isabstract(adwithoutruntime_BooleanUnaryExpression)
 
 
-def test_adwithoutruntime::booleanunaryexpression_constructor_exists():
-    assert callable(adwithoutruntime::BooleanUnaryExpression.__init__)
+def test_adwithoutruntime_booleanunaryexpression_constructor_exists():
+    assert callable(adwithoutruntime_BooleanUnaryExpression.__init__)
 
 
-def test_adwithoutruntime::booleanunaryexpression_constructor_args():
-    sig = inspect.signature(adwithoutruntime::BooleanUnaryExpression.__init__)
+def test_adwithoutruntime_booleanunaryexpression_constructor_args():
+    sig = inspect.signature(adwithoutruntime_BooleanUnaryExpression.__init__)
     params = list(sig.parameters.keys())
     assert "operator" in params, "Missing parameter 'operator'"
 
-def test_adwithoutruntime::booleanunaryexpression_has_operator():
-    assert hasattr(adwithoutruntime::BooleanUnaryExpression, "operator")
+def test_adwithoutruntime_booleanunaryexpression_has_operator():
+    assert hasattr(adwithoutruntime_BooleanUnaryExpression, "operator")
     descriptor = None
-    for klass in adwithoutruntime::BooleanUnaryExpression.__mro__:
+    for klass in adwithoutruntime_BooleanUnaryExpression.__mro__:
         if "operator" in klass.__dict__:
             descriptor = klass.__dict__["operator"]
             break
@@ -159,23 +159,23 @@ def test_adwithoutruntime::booleanunaryexpression_has_operator():
 
 
 
-def test_adwithoutruntime::integercomparisonexpression_is_not_abstract():
-    assert not inspect.isabstract(adwithoutruntime::IntegerComparisonExpression)
+def test_adwithoutruntime_integercomparisonexpression_is_not_abstract():
+    assert not inspect.isabstract(adwithoutruntime_IntegerComparisonExpression)
 
 
-def test_adwithoutruntime::integercomparisonexpression_constructor_exists():
-    assert callable(adwithoutruntime::IntegerComparisonExpression.__init__)
+def test_adwithoutruntime_integercomparisonexpression_constructor_exists():
+    assert callable(adwithoutruntime_IntegerComparisonExpression.__init__)
 
 
-def test_adwithoutruntime::integercomparisonexpression_constructor_args():
-    sig = inspect.signature(adwithoutruntime::IntegerComparisonExpression.__init__)
+def test_adwithoutruntime_integercomparisonexpression_constructor_args():
+    sig = inspect.signature(adwithoutruntime_IntegerComparisonExpression.__init__)
     params = list(sig.parameters.keys())
     assert "operator" in params, "Missing parameter 'operator'"
 
-def test_adwithoutruntime::integercomparisonexpression_has_operator():
-    assert hasattr(adwithoutruntime::IntegerComparisonExpression, "operator")
+def test_adwithoutruntime_integercomparisonexpression_has_operator():
+    assert hasattr(adwithoutruntime_IntegerComparisonExpression, "operator")
     descriptor = None
-    for klass in adwithoutruntime::IntegerComparisonExpression.__mro__:
+    for klass in adwithoutruntime_IntegerComparisonExpression.__mro__:
         if "operator" in klass.__dict__:
             descriptor = klass.__dict__["operator"]
             break
@@ -183,16 +183,16 @@ def test_adwithoutruntime::integercomparisonexpression_has_operator():
 
 
 
-def test_adwithoutruntime::expression_is_not_abstract():
-    assert not inspect.isabstract(adwithoutruntime::Expression)
+def test_adwithoutruntime_expression_is_not_abstract():
+    assert not inspect.isabstract(adwithoutruntime_Expression)
 
 
-def test_adwithoutruntime::expression_constructor_exists():
-    assert callable(adwithoutruntime::Expression.__init__)
+def test_adwithoutruntime_expression_constructor_exists():
+    assert callable(adwithoutruntime_Expression.__init__)
 
 
-def test_adwithoutruntime::expression_constructor_args():
-    sig = inspect.signature(adwithoutruntime::Expression.__init__)
+def test_adwithoutruntime_expression_constructor_args():
+    sig = inspect.signature(adwithoutruntime_Expression.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -211,16 +211,16 @@ def test_action_constructor_args():
 
 
 
-def test_adwithoutruntime::opaqueaction_is_not_abstract():
-    assert not inspect.isabstract(adwithoutruntime::OpaqueAction)
+def test_adwithoutruntime_opaqueaction_is_not_abstract():
+    assert not inspect.isabstract(adwithoutruntime_OpaqueAction)
 
 
-def test_adwithoutruntime::opaqueaction_constructor_exists():
-    assert callable(adwithoutruntime::OpaqueAction.__init__)
+def test_adwithoutruntime_opaqueaction_constructor_exists():
+    assert callable(adwithoutruntime_OpaqueAction.__init__)
 
 
-def test_adwithoutruntime::opaqueaction_constructor_args():
-    sig = inspect.signature(adwithoutruntime::OpaqueAction.__init__)
+def test_adwithoutruntime_opaqueaction_constructor_args():
+    sig = inspect.signature(adwithoutruntime_OpaqueAction.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -239,30 +239,30 @@ def test_expression_constructor_args():
 
 
 
-def test_adwithoutruntime::booleanexpression_is_not_abstract():
-    assert not inspect.isabstract(adwithoutruntime::BooleanExpression)
+def test_adwithoutruntime_booleanexpression_is_not_abstract():
+    assert not inspect.isabstract(adwithoutruntime_BooleanExpression)
 
 
-def test_adwithoutruntime::booleanexpression_constructor_exists():
-    assert callable(adwithoutruntime::BooleanExpression.__init__)
+def test_adwithoutruntime_booleanexpression_constructor_exists():
+    assert callable(adwithoutruntime_BooleanExpression.__init__)
 
 
-def test_adwithoutruntime::booleanexpression_constructor_args():
-    sig = inspect.signature(adwithoutruntime::BooleanExpression.__init__)
+def test_adwithoutruntime_booleanexpression_constructor_args():
+    sig = inspect.signature(adwithoutruntime_BooleanExpression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_adwithoutruntime::integerexpression_is_not_abstract():
-    assert not inspect.isabstract(adwithoutruntime::IntegerExpression)
+def test_adwithoutruntime_integerexpression_is_not_abstract():
+    assert not inspect.isabstract(adwithoutruntime_IntegerExpression)
 
 
-def test_adwithoutruntime::integerexpression_constructor_exists():
-    assert callable(adwithoutruntime::IntegerExpression.__init__)
+def test_adwithoutruntime_integerexpression_constructor_exists():
+    assert callable(adwithoutruntime_IntegerExpression.__init__)
 
 
-def test_adwithoutruntime::integerexpression_constructor_args():
-    sig = inspect.signature(adwithoutruntime::IntegerExpression.__init__)
+def test_adwithoutruntime_integerexpression_constructor_args():
+    sig = inspect.signature(adwithoutruntime_IntegerExpression.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -281,23 +281,23 @@ def test_value_constructor_args():
 
 
 
-def test_adwithoutruntime::integervalue_is_not_abstract():
-    assert not inspect.isabstract(adwithoutruntime::IntegerValue)
+def test_adwithoutruntime_integervalue_is_not_abstract():
+    assert not inspect.isabstract(adwithoutruntime_IntegerValue)
 
 
-def test_adwithoutruntime::integervalue_constructor_exists():
-    assert callable(adwithoutruntime::IntegerValue.__init__)
+def test_adwithoutruntime_integervalue_constructor_exists():
+    assert callable(adwithoutruntime_IntegerValue.__init__)
 
 
-def test_adwithoutruntime::integervalue_constructor_args():
-    sig = inspect.signature(adwithoutruntime::IntegerValue.__init__)
+def test_adwithoutruntime_integervalue_constructor_args():
+    sig = inspect.signature(adwithoutruntime_IntegerValue.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
 
-def test_adwithoutruntime::integervalue_has_value():
-    assert hasattr(adwithoutruntime::IntegerValue, "value")
+def test_adwithoutruntime_integervalue_has_value():
+    assert hasattr(adwithoutruntime_IntegerValue, "value")
     descriptor = None
-    for klass in adwithoutruntime::IntegerValue.__mro__:
+    for klass in adwithoutruntime_IntegerValue.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -305,23 +305,23 @@ def test_adwithoutruntime::integervalue_has_value():
 
 
 
-def test_adwithoutruntime::booleanvalue_is_not_abstract():
-    assert not inspect.isabstract(adwithoutruntime::BooleanValue)
+def test_adwithoutruntime_booleanvalue_is_not_abstract():
+    assert not inspect.isabstract(adwithoutruntime_BooleanValue)
 
 
-def test_adwithoutruntime::booleanvalue_constructor_exists():
-    assert callable(adwithoutruntime::BooleanValue.__init__)
+def test_adwithoutruntime_booleanvalue_constructor_exists():
+    assert callable(adwithoutruntime_BooleanValue.__init__)
 
 
-def test_adwithoutruntime::booleanvalue_constructor_args():
-    sig = inspect.signature(adwithoutruntime::BooleanValue.__init__)
+def test_adwithoutruntime_booleanvalue_constructor_args():
+    sig = inspect.signature(adwithoutruntime_BooleanValue.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
 
-def test_adwithoutruntime::booleanvalue_has_value():
-    assert hasattr(adwithoutruntime::BooleanValue, "value")
+def test_adwithoutruntime_booleanvalue_has_value():
+    assert hasattr(adwithoutruntime_BooleanValue, "value")
     descriptor = None
-    for klass in adwithoutruntime::BooleanValue.__mro__:
+    for klass in adwithoutruntime_BooleanValue.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -343,30 +343,30 @@ def test_variable_constructor_args():
 
 
 
-def test_adwithoutruntime::integervariable_is_not_abstract():
-    assert not inspect.isabstract(adwithoutruntime::IntegerVariable)
+def test_adwithoutruntime_integervariable_is_not_abstract():
+    assert not inspect.isabstract(adwithoutruntime_IntegerVariable)
 
 
-def test_adwithoutruntime::integervariable_constructor_exists():
-    assert callable(adwithoutruntime::IntegerVariable.__init__)
+def test_adwithoutruntime_integervariable_constructor_exists():
+    assert callable(adwithoutruntime_IntegerVariable.__init__)
 
 
-def test_adwithoutruntime::integervariable_constructor_args():
-    sig = inspect.signature(adwithoutruntime::IntegerVariable.__init__)
+def test_adwithoutruntime_integervariable_constructor_args():
+    sig = inspect.signature(adwithoutruntime_IntegerVariable.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_adwithoutruntime::value_is_not_abstract():
-    assert not inspect.isabstract(adwithoutruntime::Value)
+def test_adwithoutruntime_value_is_not_abstract():
+    assert not inspect.isabstract(adwithoutruntime_Value)
 
 
-def test_adwithoutruntime::value_constructor_exists():
-    assert callable(adwithoutruntime::Value.__init__)
+def test_adwithoutruntime_value_constructor_exists():
+    assert callable(adwithoutruntime_Value.__init__)
 
 
-def test_adwithoutruntime::value_constructor_args():
-    sig = inspect.signature(adwithoutruntime::Value.__init__)
+def test_adwithoutruntime_value_constructor_args():
+    sig = inspect.signature(adwithoutruntime_Value.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -385,16 +385,16 @@ def test_finalnode_constructor_args():
 
 
 
-def test_adwithoutruntime::activityfinalnode_is_not_abstract():
-    assert not inspect.isabstract(adwithoutruntime::ActivityFinalNode)
+def test_adwithoutruntime_activityfinalnode_is_not_abstract():
+    assert not inspect.isabstract(adwithoutruntime_ActivityFinalNode)
 
 
-def test_adwithoutruntime::activityfinalnode_constructor_exists():
-    assert callable(adwithoutruntime::ActivityFinalNode.__init__)
+def test_adwithoutruntime_activityfinalnode_constructor_exists():
+    assert callable(adwithoutruntime_ActivityFinalNode.__init__)
 
 
-def test_adwithoutruntime::activityfinalnode_constructor_args():
-    sig = inspect.signature(adwithoutruntime::ActivityFinalNode.__init__)
+def test_adwithoutruntime_activityfinalnode_constructor_args():
+    sig = inspect.signature(adwithoutruntime_ActivityFinalNode.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -413,107 +413,107 @@ def test_controlnode_constructor_args():
 
 
 
-def test_adwithoutruntime::joinnode_is_not_abstract():
-    assert not inspect.isabstract(adwithoutruntime::JoinNode)
+def test_adwithoutruntime_joinnode_is_not_abstract():
+    assert not inspect.isabstract(adwithoutruntime_JoinNode)
 
 
-def test_adwithoutruntime::joinnode_constructor_exists():
-    assert callable(adwithoutruntime::JoinNode.__init__)
+def test_adwithoutruntime_joinnode_constructor_exists():
+    assert callable(adwithoutruntime_JoinNode.__init__)
 
 
-def test_adwithoutruntime::joinnode_constructor_args():
-    sig = inspect.signature(adwithoutruntime::JoinNode.__init__)
+def test_adwithoutruntime_joinnode_constructor_args():
+    sig = inspect.signature(adwithoutruntime_JoinNode.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_adwithoutruntime::mergenode_is_not_abstract():
-    assert not inspect.isabstract(adwithoutruntime::MergeNode)
+def test_adwithoutruntime_decisionnode_is_not_abstract():
+    assert not inspect.isabstract(adwithoutruntime_DecisionNode)
 
 
-def test_adwithoutruntime::mergenode_constructor_exists():
-    assert callable(adwithoutruntime::MergeNode.__init__)
+def test_adwithoutruntime_decisionnode_constructor_exists():
+    assert callable(adwithoutruntime_DecisionNode.__init__)
 
 
-def test_adwithoutruntime::mergenode_constructor_args():
-    sig = inspect.signature(adwithoutruntime::MergeNode.__init__)
+def test_adwithoutruntime_decisionnode_constructor_args():
+    sig = inspect.signature(adwithoutruntime_DecisionNode.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_adwithoutruntime::finalnode_is_not_abstract():
-    assert not inspect.isabstract(adwithoutruntime::FinalNode)
+def test_adwithoutruntime_forknode_is_not_abstract():
+    assert not inspect.isabstract(adwithoutruntime_ForkNode)
 
 
-def test_adwithoutruntime::finalnode_constructor_exists():
-    assert callable(adwithoutruntime::FinalNode.__init__)
+def test_adwithoutruntime_forknode_constructor_exists():
+    assert callable(adwithoutruntime_ForkNode.__init__)
 
 
-def test_adwithoutruntime::finalnode_constructor_args():
-    sig = inspect.signature(adwithoutruntime::FinalNode.__init__)
+def test_adwithoutruntime_forknode_constructor_args():
+    sig = inspect.signature(adwithoutruntime_ForkNode.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_adwithoutruntime::decisionnode_is_not_abstract():
-    assert not inspect.isabstract(adwithoutruntime::DecisionNode)
+def test_adwithoutruntime_finalnode_is_not_abstract():
+    assert not inspect.isabstract(adwithoutruntime_FinalNode)
 
 
-def test_adwithoutruntime::decisionnode_constructor_exists():
-    assert callable(adwithoutruntime::DecisionNode.__init__)
+def test_adwithoutruntime_finalnode_constructor_exists():
+    assert callable(adwithoutruntime_FinalNode.__init__)
 
 
-def test_adwithoutruntime::decisionnode_constructor_args():
-    sig = inspect.signature(adwithoutruntime::DecisionNode.__init__)
+def test_adwithoutruntime_finalnode_constructor_args():
+    sig = inspect.signature(adwithoutruntime_FinalNode.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_adwithoutruntime::forknode_is_not_abstract():
-    assert not inspect.isabstract(adwithoutruntime::ForkNode)
+def test_adwithoutruntime_mergenode_is_not_abstract():
+    assert not inspect.isabstract(adwithoutruntime_MergeNode)
 
 
-def test_adwithoutruntime::forknode_constructor_exists():
-    assert callable(adwithoutruntime::ForkNode.__init__)
+def test_adwithoutruntime_mergenode_constructor_exists():
+    assert callable(adwithoutruntime_MergeNode.__init__)
 
 
-def test_adwithoutruntime::forknode_constructor_args():
-    sig = inspect.signature(adwithoutruntime::ForkNode.__init__)
+def test_adwithoutruntime_mergenode_constructor_args():
+    sig = inspect.signature(adwithoutruntime_MergeNode.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_adwithoutruntime::initialnode_is_not_abstract():
-    assert not inspect.isabstract(adwithoutruntime::InitialNode)
+def test_adwithoutruntime_initialnode_is_not_abstract():
+    assert not inspect.isabstract(adwithoutruntime_InitialNode)
 
 
-def test_adwithoutruntime::initialnode_constructor_exists():
-    assert callable(adwithoutruntime::InitialNode.__init__)
+def test_adwithoutruntime_initialnode_constructor_exists():
+    assert callable(adwithoutruntime_InitialNode.__init__)
 
 
-def test_adwithoutruntime::initialnode_constructor_args():
-    sig = inspect.signature(adwithoutruntime::InitialNode.__init__)
+def test_adwithoutruntime_initialnode_constructor_args():
+    sig = inspect.signature(adwithoutruntime_InitialNode.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_adwithoutruntime::namedelement_is_not_abstract():
-    assert not inspect.isabstract(adwithoutruntime::NamedElement)
+def test_adwithoutruntime_namedelement_is_not_abstract():
+    assert not inspect.isabstract(adwithoutruntime_NamedElement)
 
 
-def test_adwithoutruntime::namedelement_constructor_exists():
-    assert callable(adwithoutruntime::NamedElement.__init__)
+def test_adwithoutruntime_namedelement_constructor_exists():
+    assert callable(adwithoutruntime_NamedElement.__init__)
 
 
-def test_adwithoutruntime::namedelement_constructor_args():
-    sig = inspect.signature(adwithoutruntime::NamedElement.__init__)
+def test_adwithoutruntime_namedelement_constructor_args():
+    sig = inspect.signature(adwithoutruntime_NamedElement.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_adwithoutruntime::namedelement_has_name():
-    assert hasattr(adwithoutruntime::NamedElement, "name")
+def test_adwithoutruntime_namedelement_has_name():
+    assert hasattr(adwithoutruntime_NamedElement, "name")
     descriptor = None
-    for klass in adwithoutruntime::NamedElement.__mro__:
+    for klass in adwithoutruntime_NamedElement.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -535,16 +535,16 @@ def test_namedelement_constructor_args():
 
 
 
-def test_adwithoutruntime::activity_is_not_abstract():
-    assert not inspect.isabstract(adwithoutruntime::Activity)
+def test_adwithoutruntime_activity_is_not_abstract():
+    assert not inspect.isabstract(adwithoutruntime_Activity)
 
 
-def test_adwithoutruntime::activity_constructor_exists():
-    assert callable(adwithoutruntime::Activity.__init__)
+def test_adwithoutruntime_activity_constructor_exists():
+    assert callable(adwithoutruntime_Activity.__init__)
 
 
-def test_adwithoutruntime::activity_constructor_args():
-    sig = inspect.signature(adwithoutruntime::Activity.__init__)
+def test_adwithoutruntime_activity_constructor_args():
+    sig = inspect.signature(adwithoutruntime_Activity.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -563,16 +563,16 @@ def test_executablenode_constructor_args():
 
 
 
-def test_adwithoutruntime::action_is_not_abstract():
-    assert not inspect.isabstract(adwithoutruntime::Action)
+def test_adwithoutruntime_action_is_not_abstract():
+    assert not inspect.isabstract(adwithoutruntime_Action)
 
 
-def test_adwithoutruntime::action_constructor_exists():
-    assert callable(adwithoutruntime::Action.__init__)
+def test_adwithoutruntime_action_constructor_exists():
+    assert callable(adwithoutruntime_Action.__init__)
 
 
-def test_adwithoutruntime::action_constructor_args():
-    sig = inspect.signature(adwithoutruntime::Action.__init__)
+def test_adwithoutruntime_action_constructor_args():
+    sig = inspect.signature(adwithoutruntime_Action.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -591,44 +591,44 @@ def test_activitynode_constructor_args():
 
 
 
-def test_adwithoutruntime::executablenode_is_not_abstract():
-    assert not inspect.isabstract(adwithoutruntime::ExecutableNode)
+def test_adwithoutruntime_executablenode_is_not_abstract():
+    assert not inspect.isabstract(adwithoutruntime_ExecutableNode)
 
 
-def test_adwithoutruntime::executablenode_constructor_exists():
-    assert callable(adwithoutruntime::ExecutableNode.__init__)
+def test_adwithoutruntime_executablenode_constructor_exists():
+    assert callable(adwithoutruntime_ExecutableNode.__init__)
 
 
-def test_adwithoutruntime::executablenode_constructor_args():
-    sig = inspect.signature(adwithoutruntime::ExecutableNode.__init__)
+def test_adwithoutruntime_executablenode_constructor_args():
+    sig = inspect.signature(adwithoutruntime_ExecutableNode.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_adwithoutruntime::controlnode_is_not_abstract():
-    assert not inspect.isabstract(adwithoutruntime::ControlNode)
+def test_adwithoutruntime_controlnode_is_not_abstract():
+    assert not inspect.isabstract(adwithoutruntime_ControlNode)
 
 
-def test_adwithoutruntime::controlnode_constructor_exists():
-    assert callable(adwithoutruntime::ControlNode.__init__)
+def test_adwithoutruntime_controlnode_constructor_exists():
+    assert callable(adwithoutruntime_ControlNode.__init__)
 
 
-def test_adwithoutruntime::controlnode_constructor_args():
-    sig = inspect.signature(adwithoutruntime::ControlNode.__init__)
+def test_adwithoutruntime_controlnode_constructor_args():
+    sig = inspect.signature(adwithoutruntime_ControlNode.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_adwithoutruntime::booleanvariable_is_not_abstract():
-    assert not inspect.isabstract(adwithoutruntime::BooleanVariable)
+def test_adwithoutruntime_booleanvariable_is_not_abstract():
+    assert not inspect.isabstract(adwithoutruntime_BooleanVariable)
 
 
-def test_adwithoutruntime::booleanvariable_constructor_exists():
-    assert callable(adwithoutruntime::BooleanVariable.__init__)
+def test_adwithoutruntime_booleanvariable_constructor_exists():
+    assert callable(adwithoutruntime_BooleanVariable.__init__)
 
 
-def test_adwithoutruntime::booleanvariable_constructor_args():
-    sig = inspect.signature(adwithoutruntime::BooleanVariable.__init__)
+def test_adwithoutruntime_booleanvariable_constructor_args():
+    sig = inspect.signature(adwithoutruntime_BooleanVariable.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -647,37 +647,37 @@ def test_activityedge_constructor_args():
 
 
 
-def test_adwithoutruntime::controlflow_is_not_abstract():
-    assert not inspect.isabstract(adwithoutruntime::ControlFlow)
+def test_adwithoutruntime_controlflow_is_not_abstract():
+    assert not inspect.isabstract(adwithoutruntime_ControlFlow)
 
 
-def test_adwithoutruntime::controlflow_constructor_exists():
-    assert callable(adwithoutruntime::ControlFlow.__init__)
+def test_adwithoutruntime_controlflow_constructor_exists():
+    assert callable(adwithoutruntime_ControlFlow.__init__)
 
 
-def test_adwithoutruntime::controlflow_constructor_args():
-    sig = inspect.signature(adwithoutruntime::ControlFlow.__init__)
+def test_adwithoutruntime_controlflow_constructor_args():
+    sig = inspect.signature(adwithoutruntime_ControlFlow.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_adwithoutruntime::variable_is_not_abstract():
-    assert not inspect.isabstract(adwithoutruntime::Variable)
+def test_adwithoutruntime_variable_is_not_abstract():
+    assert not inspect.isabstract(adwithoutruntime_Variable)
 
 
-def test_adwithoutruntime::variable_constructor_exists():
-    assert callable(adwithoutruntime::Variable.__init__)
+def test_adwithoutruntime_variable_constructor_exists():
+    assert callable(adwithoutruntime_Variable.__init__)
 
 
-def test_adwithoutruntime::variable_constructor_args():
-    sig = inspect.signature(adwithoutruntime::Variable.__init__)
+def test_adwithoutruntime_variable_constructor_args():
+    sig = inspect.signature(adwithoutruntime_Variable.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_adwithoutruntime::variable_has_name():
-    assert hasattr(adwithoutruntime::Variable, "name")
+def test_adwithoutruntime_variable_has_name():
+    assert hasattr(adwithoutruntime_Variable, "name")
     descriptor = None
-    for klass in adwithoutruntime::Variable.__mro__:
+    for klass in adwithoutruntime_Variable.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -685,31 +685,61 @@ def test_adwithoutruntime::variable_has_name():
 
 
 
-def test_adwithoutruntime::activityedge_is_not_abstract():
-    assert not inspect.isabstract(adwithoutruntime::ActivityEdge)
+def test_adwithoutruntime_activityedge_is_not_abstract():
+    assert not inspect.isabstract(adwithoutruntime_ActivityEdge)
 
 
-def test_adwithoutruntime::activityedge_constructor_exists():
-    assert callable(adwithoutruntime::ActivityEdge.__init__)
+def test_adwithoutruntime_activityedge_constructor_exists():
+    assert callable(adwithoutruntime_ActivityEdge.__init__)
 
 
-def test_adwithoutruntime::activityedge_constructor_args():
-    sig = inspect.signature(adwithoutruntime::ActivityEdge.__init__)
+def test_adwithoutruntime_activityedge_constructor_args():
+    sig = inspect.signature(adwithoutruntime_ActivityEdge.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_adwithoutruntime::activitynode_is_not_abstract():
-    assert not inspect.isabstract(adwithoutruntime::ActivityNode)
+def test_adwithoutruntime_activitynode_is_not_abstract():
+    assert not inspect.isabstract(adwithoutruntime_ActivityNode)
 
 
-def test_adwithoutruntime::activitynode_constructor_exists():
-    assert callable(adwithoutruntime::ActivityNode.__init__)
+def test_adwithoutruntime_activitynode_constructor_exists():
+    assert callable(adwithoutruntime_ActivityNode.__init__)
 
 
-def test_adwithoutruntime::activitynode_constructor_args():
-    sig = inspect.signature(adwithoutruntime::ActivityNode.__init__)
+def test_adwithoutruntime_activitynode_constructor_args():
+    sig = inspect.signature(adwithoutruntime_ActivityNode.__init__)
     params = list(sig.parameters.keys())
+
+def test_booleanbinaryoperator_exists():
+    # Check that the Enumeration exists
+    assert BooleanBinaryOperator is not None
+
+def test_booleanbinaryoperator_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in BooleanBinaryOperator]
+    expected_literals = [
+        "OR",
+        "AND",
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in BooleanBinaryOperator"
+
+def test_integercalculationoperator_exists():
+    # Check that the Enumeration exists
+    assert IntegerCalculationOperator is not None
+
+def test_integercalculationoperator_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in IntegerCalculationOperator]
+    expected_literals = [
+        "ADD",
+        "SUBRACT",
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in IntegerCalculationOperator"
 
 def test_booleanunaryoperator_exists():
     # Check that the Enumeration exists
@@ -733,45 +763,15 @@ def test_integercomparisonoperator_has_all_literals():
     # Collect the names of literals in this Enumeration
     enum_literals = [lit.name for lit in IntegerComparisonOperator]
     expected_literals = [
+        "EQUALS",
         "SMALLER",
         "SMALLER_EQUALS",
-        "EQUALS",
         "GREATER",
         "GREATER_EQUALS",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
         assert lit_name in enum_literals, f"Literal '' missing in IntegerComparisonOperator"
-
-def test_booleanbinaryoperator_exists():
-    # Check that the Enumeration exists
-    assert BooleanBinaryOperator is not None
-
-def test_booleanbinaryoperator_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in BooleanBinaryOperator]
-    expected_literals = [
-        "AND",
-        "OR",
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in BooleanBinaryOperator"
-
-def test_integercalculationoperator_exists():
-    # Check that the Enumeration exists
-    assert IntegerCalculationOperator is not None
-
-def test_integercalculationoperator_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in IntegerCalculationOperator]
-    expected_literals = [
-        "ADD",
-        "SUBRACT",
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in IntegerCalculationOperator"
 
 
 # =============================================================================
@@ -788,141 +788,141 @@ safe_text = st.text(
 IntegerExpression_strategy = st.builds(
     IntegerExpression,
 )
-adwithoutruntime::IntegerCalculationExpression_strategy = st.builds(
-    adwithoutruntime::IntegerCalculationExpression,
+adwithoutruntime_IntegerCalculationExpression_strategy = st.builds(
+    adwithoutruntime_IntegerCalculationExpression,
     operator=
         safe_text
 )
 BooleanExpression_strategy = st.builds(
     BooleanExpression,
 )
-adwithoutruntime::BooleanBinaryExpression_strategy = st.builds(
-    adwithoutruntime::BooleanBinaryExpression,
+adwithoutruntime_BooleanBinaryExpression_strategy = st.builds(
+    adwithoutruntime_BooleanBinaryExpression,
     operator=
         safe_text
 )
-adwithoutruntime::BooleanUnaryExpression_strategy = st.builds(
-    adwithoutruntime::BooleanUnaryExpression,
+adwithoutruntime_BooleanUnaryExpression_strategy = st.builds(
+    adwithoutruntime_BooleanUnaryExpression,
     operator=
         safe_text
 )
-adwithoutruntime::IntegerComparisonExpression_strategy = st.builds(
-    adwithoutruntime::IntegerComparisonExpression,
+adwithoutruntime_IntegerComparisonExpression_strategy = st.builds(
+    adwithoutruntime_IntegerComparisonExpression,
     operator=
         safe_text
 )
-adwithoutruntime::Expression_strategy = st.builds(
-    adwithoutruntime::Expression,
+adwithoutruntime_Expression_strategy = st.builds(
+    adwithoutruntime_Expression,
 )
 Action_strategy = st.builds(
     Action,
 )
-adwithoutruntime::OpaqueAction_strategy = st.builds(
-    adwithoutruntime::OpaqueAction,
+adwithoutruntime_OpaqueAction_strategy = st.builds(
+    adwithoutruntime_OpaqueAction,
 )
 Expression_strategy = st.builds(
     Expression,
 )
-adwithoutruntime::BooleanExpression_strategy = st.builds(
-    adwithoutruntime::BooleanExpression,
+adwithoutruntime_BooleanExpression_strategy = st.builds(
+    adwithoutruntime_BooleanExpression,
 )
-adwithoutruntime::IntegerExpression_strategy = st.builds(
-    adwithoutruntime::IntegerExpression,
+adwithoutruntime_IntegerExpression_strategy = st.builds(
+    adwithoutruntime_IntegerExpression,
 )
 Value_strategy = st.builds(
     Value,
 )
-adwithoutruntime::IntegerValue_strategy = st.builds(
-    adwithoutruntime::IntegerValue,
+adwithoutruntime_IntegerValue_strategy = st.builds(
+    adwithoutruntime_IntegerValue,
     value=
         st.integers()
 )
-adwithoutruntime::BooleanValue_strategy = st.builds(
-    adwithoutruntime::BooleanValue,
+adwithoutruntime_BooleanValue_strategy = st.builds(
+    adwithoutruntime_BooleanValue,
     value=
         st.booleans()
 )
 Variable_strategy = st.builds(
     Variable,
 )
-adwithoutruntime::IntegerVariable_strategy = st.builds(
-    adwithoutruntime::IntegerVariable,
+adwithoutruntime_IntegerVariable_strategy = st.builds(
+    adwithoutruntime_IntegerVariable,
 )
-adwithoutruntime::Value_strategy = st.builds(
-    adwithoutruntime::Value,
+adwithoutruntime_Value_strategy = st.builds(
+    adwithoutruntime_Value,
 )
 FinalNode_strategy = st.builds(
     FinalNode,
 )
-adwithoutruntime::ActivityFinalNode_strategy = st.builds(
-    adwithoutruntime::ActivityFinalNode,
+adwithoutruntime_ActivityFinalNode_strategy = st.builds(
+    adwithoutruntime_ActivityFinalNode,
 )
 ControlNode_strategy = st.builds(
     ControlNode,
 )
-adwithoutruntime::JoinNode_strategy = st.builds(
-    adwithoutruntime::JoinNode,
+adwithoutruntime_JoinNode_strategy = st.builds(
+    adwithoutruntime_JoinNode,
 )
-adwithoutruntime::MergeNode_strategy = st.builds(
-    adwithoutruntime::MergeNode,
+adwithoutruntime_DecisionNode_strategy = st.builds(
+    adwithoutruntime_DecisionNode,
 )
-adwithoutruntime::FinalNode_strategy = st.builds(
-    adwithoutruntime::FinalNode,
+adwithoutruntime_ForkNode_strategy = st.builds(
+    adwithoutruntime_ForkNode,
 )
-adwithoutruntime::DecisionNode_strategy = st.builds(
-    adwithoutruntime::DecisionNode,
+adwithoutruntime_FinalNode_strategy = st.builds(
+    adwithoutruntime_FinalNode,
 )
-adwithoutruntime::ForkNode_strategy = st.builds(
-    adwithoutruntime::ForkNode,
+adwithoutruntime_MergeNode_strategy = st.builds(
+    adwithoutruntime_MergeNode,
 )
-adwithoutruntime::InitialNode_strategy = st.builds(
-    adwithoutruntime::InitialNode,
+adwithoutruntime_InitialNode_strategy = st.builds(
+    adwithoutruntime_InitialNode,
 )
-adwithoutruntime::NamedElement_strategy = st.builds(
-    adwithoutruntime::NamedElement,
+adwithoutruntime_NamedElement_strategy = st.builds(
+    adwithoutruntime_NamedElement,
     name=
         safe_text
 )
 NamedElement_strategy = st.builds(
     NamedElement,
 )
-adwithoutruntime::Activity_strategy = st.builds(
-    adwithoutruntime::Activity,
+adwithoutruntime_Activity_strategy = st.builds(
+    adwithoutruntime_Activity,
 )
 ExecutableNode_strategy = st.builds(
     ExecutableNode,
 )
-adwithoutruntime::Action_strategy = st.builds(
-    adwithoutruntime::Action,
+adwithoutruntime_Action_strategy = st.builds(
+    adwithoutruntime_Action,
 )
 ActivityNode_strategy = st.builds(
     ActivityNode,
 )
-adwithoutruntime::ExecutableNode_strategy = st.builds(
-    adwithoutruntime::ExecutableNode,
+adwithoutruntime_ExecutableNode_strategy = st.builds(
+    adwithoutruntime_ExecutableNode,
 )
-adwithoutruntime::ControlNode_strategy = st.builds(
-    adwithoutruntime::ControlNode,
+adwithoutruntime_ControlNode_strategy = st.builds(
+    adwithoutruntime_ControlNode,
 )
-adwithoutruntime::BooleanVariable_strategy = st.builds(
-    adwithoutruntime::BooleanVariable,
+adwithoutruntime_BooleanVariable_strategy = st.builds(
+    adwithoutruntime_BooleanVariable,
 )
 ActivityEdge_strategy = st.builds(
     ActivityEdge,
 )
-adwithoutruntime::ControlFlow_strategy = st.builds(
-    adwithoutruntime::ControlFlow,
+adwithoutruntime_ControlFlow_strategy = st.builds(
+    adwithoutruntime_ControlFlow,
 )
-adwithoutruntime::Variable_strategy = st.builds(
-    adwithoutruntime::Variable,
+adwithoutruntime_Variable_strategy = st.builds(
+    adwithoutruntime_Variable,
     name=
         safe_text
 )
-adwithoutruntime::ActivityEdge_strategy = st.builds(
-    adwithoutruntime::ActivityEdge,
+adwithoutruntime_ActivityEdge_strategy = st.builds(
+    adwithoutruntime_ActivityEdge,
 )
-adwithoutruntime::ActivityNode_strategy = st.builds(
-    adwithoutruntime::ActivityNode,
+adwithoutruntime_ActivityNode_strategy = st.builds(
+    adwithoutruntime_ActivityNode,
 )
 
 @given(instance=IntegerExpression_strategy)
@@ -930,18 +930,15 @@ adwithoutruntime::ActivityNode_strategy = st.builds(
 def test_integerexpression_instantiation(instance):
     assert isinstance(instance, IntegerExpression)
 
-@given(instance=adwithoutruntime::IntegerCalculationExpression_strategy)
+@given(instance=adwithoutruntime_IntegerCalculationExpression_strategy)
 @settings(max_examples=50)
-def test_adwithoutruntime::integercalculationexpression_instantiation(instance):
-    assert isinstance(instance, adwithoutruntime::IntegerCalculationExpression)
-
-@given(instance=adwithoutruntime::IntegerCalculationExpression_strategy)
-def test_adwithoutruntime::integercalculationexpression_operator_type(instance):
-    assert isinstance(instance.operator, str)
+def test_adwithoutruntime_integercalculationexpression_instantiation(instance):
+    assert isinstance(instance, adwithoutruntime_IntegerCalculationExpression)
 
 
-@given(instance=adwithoutruntime::IntegerCalculationExpression_strategy)
-def test_adwithoutruntime::integercalculationexpression_operator_setter(instance):
+
+@given(instance=adwithoutruntime_IntegerCalculationExpression_strategy)
+def test_adwithoutruntime_integercalculationexpression_operator_setter(instance):
     original = instance.operator
     instance.operator = original
     assert instance.operator == original
@@ -951,117 +948,102 @@ def test_adwithoutruntime::integercalculationexpression_operator_setter(instance
 def test_booleanexpression_instantiation(instance):
     assert isinstance(instance, BooleanExpression)
 
-@given(instance=adwithoutruntime::BooleanBinaryExpression_strategy)
+@given(instance=adwithoutruntime_BooleanBinaryExpression_strategy)
 @settings(max_examples=50)
-def test_adwithoutruntime::booleanbinaryexpression_instantiation(instance):
-    assert isinstance(instance, adwithoutruntime::BooleanBinaryExpression)
-
-@given(instance=adwithoutruntime::BooleanBinaryExpression_strategy)
-def test_adwithoutruntime::booleanbinaryexpression_operator_type(instance):
-    assert isinstance(instance.operator, str)
+def test_adwithoutruntime_booleanbinaryexpression_instantiation(instance):
+    assert isinstance(instance, adwithoutruntime_BooleanBinaryExpression)
 
 
-@given(instance=adwithoutruntime::BooleanBinaryExpression_strategy)
-def test_adwithoutruntime::booleanbinaryexpression_operator_setter(instance):
+
+@given(instance=adwithoutruntime_BooleanBinaryExpression_strategy)
+def test_adwithoutruntime_booleanbinaryexpression_operator_setter(instance):
     original = instance.operator
     instance.operator = original
     assert instance.operator == original
 
-@given(instance=adwithoutruntime::BooleanUnaryExpression_strategy)
+@given(instance=adwithoutruntime_BooleanUnaryExpression_strategy)
 @settings(max_examples=50)
-def test_adwithoutruntime::booleanunaryexpression_instantiation(instance):
-    assert isinstance(instance, adwithoutruntime::BooleanUnaryExpression)
-
-@given(instance=adwithoutruntime::BooleanUnaryExpression_strategy)
-def test_adwithoutruntime::booleanunaryexpression_operator_type(instance):
-    assert isinstance(instance.operator, str)
+def test_adwithoutruntime_booleanunaryexpression_instantiation(instance):
+    assert isinstance(instance, adwithoutruntime_BooleanUnaryExpression)
 
 
-@given(instance=adwithoutruntime::BooleanUnaryExpression_strategy)
-def test_adwithoutruntime::booleanunaryexpression_operator_setter(instance):
+
+@given(instance=adwithoutruntime_BooleanUnaryExpression_strategy)
+def test_adwithoutruntime_booleanunaryexpression_operator_setter(instance):
     original = instance.operator
     instance.operator = original
     assert instance.operator == original
 
-@given(instance=adwithoutruntime::IntegerComparisonExpression_strategy)
+@given(instance=adwithoutruntime_IntegerComparisonExpression_strategy)
 @settings(max_examples=50)
-def test_adwithoutruntime::integercomparisonexpression_instantiation(instance):
-    assert isinstance(instance, adwithoutruntime::IntegerComparisonExpression)
-
-@given(instance=adwithoutruntime::IntegerComparisonExpression_strategy)
-def test_adwithoutruntime::integercomparisonexpression_operator_type(instance):
-    assert isinstance(instance.operator, str)
+def test_adwithoutruntime_integercomparisonexpression_instantiation(instance):
+    assert isinstance(instance, adwithoutruntime_IntegerComparisonExpression)
 
 
-@given(instance=adwithoutruntime::IntegerComparisonExpression_strategy)
-def test_adwithoutruntime::integercomparisonexpression_operator_setter(instance):
+
+@given(instance=adwithoutruntime_IntegerComparisonExpression_strategy)
+def test_adwithoutruntime_integercomparisonexpression_operator_setter(instance):
     original = instance.operator
     instance.operator = original
     assert instance.operator == original
 
-@given(instance=adwithoutruntime::Expression_strategy)
+@given(instance=adwithoutruntime_Expression_strategy)
 @settings(max_examples=50)
-def test_adwithoutruntime::expression_instantiation(instance):
-    assert isinstance(instance, adwithoutruntime::Expression)
+def test_adwithoutruntime_expression_instantiation(instance):
+    assert isinstance(instance, adwithoutruntime_Expression)
 
 @given(instance=Action_strategy)
 @settings(max_examples=50)
 def test_action_instantiation(instance):
     assert isinstance(instance, Action)
 
-@given(instance=adwithoutruntime::OpaqueAction_strategy)
+@given(instance=adwithoutruntime_OpaqueAction_strategy)
 @settings(max_examples=50)
-def test_adwithoutruntime::opaqueaction_instantiation(instance):
-    assert isinstance(instance, adwithoutruntime::OpaqueAction)
+def test_adwithoutruntime_opaqueaction_instantiation(instance):
+    assert isinstance(instance, adwithoutruntime_OpaqueAction)
 
 @given(instance=Expression_strategy)
 @settings(max_examples=50)
 def test_expression_instantiation(instance):
     assert isinstance(instance, Expression)
 
-@given(instance=adwithoutruntime::BooleanExpression_strategy)
+@given(instance=adwithoutruntime_BooleanExpression_strategy)
 @settings(max_examples=50)
-def test_adwithoutruntime::booleanexpression_instantiation(instance):
-    assert isinstance(instance, adwithoutruntime::BooleanExpression)
+def test_adwithoutruntime_booleanexpression_instantiation(instance):
+    assert isinstance(instance, adwithoutruntime_BooleanExpression)
 
-@given(instance=adwithoutruntime::IntegerExpression_strategy)
+@given(instance=adwithoutruntime_IntegerExpression_strategy)
 @settings(max_examples=50)
-def test_adwithoutruntime::integerexpression_instantiation(instance):
-    assert isinstance(instance, adwithoutruntime::IntegerExpression)
+def test_adwithoutruntime_integerexpression_instantiation(instance):
+    assert isinstance(instance, adwithoutruntime_IntegerExpression)
 
 @given(instance=Value_strategy)
 @settings(max_examples=50)
 def test_value_instantiation(instance):
     assert isinstance(instance, Value)
 
-@given(instance=adwithoutruntime::IntegerValue_strategy)
+@given(instance=adwithoutruntime_IntegerValue_strategy)
 @settings(max_examples=50)
-def test_adwithoutruntime::integervalue_instantiation(instance):
-    assert isinstance(instance, adwithoutruntime::IntegerValue)
-
-@given(instance=adwithoutruntime::IntegerValue_strategy)
-def test_adwithoutruntime::integervalue_value_type(instance):
-    assert isinstance(instance.value, int)
+def test_adwithoutruntime_integervalue_instantiation(instance):
+    assert isinstance(instance, adwithoutruntime_IntegerValue)
 
 
-@given(instance=adwithoutruntime::IntegerValue_strategy)
-def test_adwithoutruntime::integervalue_value_setter(instance):
+
+@given(instance=adwithoutruntime_IntegerValue_strategy)
+def test_adwithoutruntime_integervalue_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
 
-@given(instance=adwithoutruntime::BooleanValue_strategy)
+@given(instance=adwithoutruntime_BooleanValue_strategy)
 @settings(max_examples=50)
-def test_adwithoutruntime::booleanvalue_instantiation(instance):
-    assert isinstance(instance, adwithoutruntime::BooleanValue)
-
-@given(instance=adwithoutruntime::BooleanValue_strategy)
-def test_adwithoutruntime::booleanvalue_value_type(instance):
-    assert isinstance(instance.value, bool)
+def test_adwithoutruntime_booleanvalue_instantiation(instance):
+    assert isinstance(instance, adwithoutruntime_BooleanValue)
 
 
-@given(instance=adwithoutruntime::BooleanValue_strategy)
-def test_adwithoutruntime::booleanvalue_value_setter(instance):
+
+@given(instance=adwithoutruntime_BooleanValue_strategy)
+def test_adwithoutruntime_booleanvalue_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
@@ -1071,73 +1053,70 @@ def test_adwithoutruntime::booleanvalue_value_setter(instance):
 def test_variable_instantiation(instance):
     assert isinstance(instance, Variable)
 
-@given(instance=adwithoutruntime::IntegerVariable_strategy)
+@given(instance=adwithoutruntime_IntegerVariable_strategy)
 @settings(max_examples=50)
-def test_adwithoutruntime::integervariable_instantiation(instance):
-    assert isinstance(instance, adwithoutruntime::IntegerVariable)
+def test_adwithoutruntime_integervariable_instantiation(instance):
+    assert isinstance(instance, adwithoutruntime_IntegerVariable)
 
-@given(instance=adwithoutruntime::Value_strategy)
+@given(instance=adwithoutruntime_Value_strategy)
 @settings(max_examples=50)
-def test_adwithoutruntime::value_instantiation(instance):
-    assert isinstance(instance, adwithoutruntime::Value)
+def test_adwithoutruntime_value_instantiation(instance):
+    assert isinstance(instance, adwithoutruntime_Value)
 
 @given(instance=FinalNode_strategy)
 @settings(max_examples=50)
 def test_finalnode_instantiation(instance):
     assert isinstance(instance, FinalNode)
 
-@given(instance=adwithoutruntime::ActivityFinalNode_strategy)
+@given(instance=adwithoutruntime_ActivityFinalNode_strategy)
 @settings(max_examples=50)
-def test_adwithoutruntime::activityfinalnode_instantiation(instance):
-    assert isinstance(instance, adwithoutruntime::ActivityFinalNode)
+def test_adwithoutruntime_activityfinalnode_instantiation(instance):
+    assert isinstance(instance, adwithoutruntime_ActivityFinalNode)
 
 @given(instance=ControlNode_strategy)
 @settings(max_examples=50)
 def test_controlnode_instantiation(instance):
     assert isinstance(instance, ControlNode)
 
-@given(instance=adwithoutruntime::JoinNode_strategy)
+@given(instance=adwithoutruntime_JoinNode_strategy)
 @settings(max_examples=50)
-def test_adwithoutruntime::joinnode_instantiation(instance):
-    assert isinstance(instance, adwithoutruntime::JoinNode)
+def test_adwithoutruntime_joinnode_instantiation(instance):
+    assert isinstance(instance, adwithoutruntime_JoinNode)
 
-@given(instance=adwithoutruntime::MergeNode_strategy)
+@given(instance=adwithoutruntime_DecisionNode_strategy)
 @settings(max_examples=50)
-def test_adwithoutruntime::mergenode_instantiation(instance):
-    assert isinstance(instance, adwithoutruntime::MergeNode)
+def test_adwithoutruntime_decisionnode_instantiation(instance):
+    assert isinstance(instance, adwithoutruntime_DecisionNode)
 
-@given(instance=adwithoutruntime::FinalNode_strategy)
+@given(instance=adwithoutruntime_ForkNode_strategy)
 @settings(max_examples=50)
-def test_adwithoutruntime::finalnode_instantiation(instance):
-    assert isinstance(instance, adwithoutruntime::FinalNode)
+def test_adwithoutruntime_forknode_instantiation(instance):
+    assert isinstance(instance, adwithoutruntime_ForkNode)
 
-@given(instance=adwithoutruntime::DecisionNode_strategy)
+@given(instance=adwithoutruntime_FinalNode_strategy)
 @settings(max_examples=50)
-def test_adwithoutruntime::decisionnode_instantiation(instance):
-    assert isinstance(instance, adwithoutruntime::DecisionNode)
+def test_adwithoutruntime_finalnode_instantiation(instance):
+    assert isinstance(instance, adwithoutruntime_FinalNode)
 
-@given(instance=adwithoutruntime::ForkNode_strategy)
+@given(instance=adwithoutruntime_MergeNode_strategy)
 @settings(max_examples=50)
-def test_adwithoutruntime::forknode_instantiation(instance):
-    assert isinstance(instance, adwithoutruntime::ForkNode)
+def test_adwithoutruntime_mergenode_instantiation(instance):
+    assert isinstance(instance, adwithoutruntime_MergeNode)
 
-@given(instance=adwithoutruntime::InitialNode_strategy)
+@given(instance=adwithoutruntime_InitialNode_strategy)
 @settings(max_examples=50)
-def test_adwithoutruntime::initialnode_instantiation(instance):
-    assert isinstance(instance, adwithoutruntime::InitialNode)
+def test_adwithoutruntime_initialnode_instantiation(instance):
+    assert isinstance(instance, adwithoutruntime_InitialNode)
 
-@given(instance=adwithoutruntime::NamedElement_strategy)
+@given(instance=adwithoutruntime_NamedElement_strategy)
 @settings(max_examples=50)
-def test_adwithoutruntime::namedelement_instantiation(instance):
-    assert isinstance(instance, adwithoutruntime::NamedElement)
-
-@given(instance=adwithoutruntime::NamedElement_strategy)
-def test_adwithoutruntime::namedelement_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_adwithoutruntime_namedelement_instantiation(instance):
+    assert isinstance(instance, adwithoutruntime_NamedElement)
 
 
-@given(instance=adwithoutruntime::NamedElement_strategy)
-def test_adwithoutruntime::namedelement_name_setter(instance):
+
+@given(instance=adwithoutruntime_NamedElement_strategy)
+def test_adwithoutruntime_namedelement_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
@@ -1147,73 +1126,70 @@ def test_adwithoutruntime::namedelement_name_setter(instance):
 def test_namedelement_instantiation(instance):
     assert isinstance(instance, NamedElement)
 
-@given(instance=adwithoutruntime::Activity_strategy)
+@given(instance=adwithoutruntime_Activity_strategy)
 @settings(max_examples=50)
-def test_adwithoutruntime::activity_instantiation(instance):
-    assert isinstance(instance, adwithoutruntime::Activity)
+def test_adwithoutruntime_activity_instantiation(instance):
+    assert isinstance(instance, adwithoutruntime_Activity)
 
 @given(instance=ExecutableNode_strategy)
 @settings(max_examples=50)
 def test_executablenode_instantiation(instance):
     assert isinstance(instance, ExecutableNode)
 
-@given(instance=adwithoutruntime::Action_strategy)
+@given(instance=adwithoutruntime_Action_strategy)
 @settings(max_examples=50)
-def test_adwithoutruntime::action_instantiation(instance):
-    assert isinstance(instance, adwithoutruntime::Action)
+def test_adwithoutruntime_action_instantiation(instance):
+    assert isinstance(instance, adwithoutruntime_Action)
 
 @given(instance=ActivityNode_strategy)
 @settings(max_examples=50)
 def test_activitynode_instantiation(instance):
     assert isinstance(instance, ActivityNode)
 
-@given(instance=adwithoutruntime::ExecutableNode_strategy)
+@given(instance=adwithoutruntime_ExecutableNode_strategy)
 @settings(max_examples=50)
-def test_adwithoutruntime::executablenode_instantiation(instance):
-    assert isinstance(instance, adwithoutruntime::ExecutableNode)
+def test_adwithoutruntime_executablenode_instantiation(instance):
+    assert isinstance(instance, adwithoutruntime_ExecutableNode)
 
-@given(instance=adwithoutruntime::ControlNode_strategy)
+@given(instance=adwithoutruntime_ControlNode_strategy)
 @settings(max_examples=50)
-def test_adwithoutruntime::controlnode_instantiation(instance):
-    assert isinstance(instance, adwithoutruntime::ControlNode)
+def test_adwithoutruntime_controlnode_instantiation(instance):
+    assert isinstance(instance, adwithoutruntime_ControlNode)
 
-@given(instance=adwithoutruntime::BooleanVariable_strategy)
+@given(instance=adwithoutruntime_BooleanVariable_strategy)
 @settings(max_examples=50)
-def test_adwithoutruntime::booleanvariable_instantiation(instance):
-    assert isinstance(instance, adwithoutruntime::BooleanVariable)
+def test_adwithoutruntime_booleanvariable_instantiation(instance):
+    assert isinstance(instance, adwithoutruntime_BooleanVariable)
 
 @given(instance=ActivityEdge_strategy)
 @settings(max_examples=50)
 def test_activityedge_instantiation(instance):
     assert isinstance(instance, ActivityEdge)
 
-@given(instance=adwithoutruntime::ControlFlow_strategy)
+@given(instance=adwithoutruntime_ControlFlow_strategy)
 @settings(max_examples=50)
-def test_adwithoutruntime::controlflow_instantiation(instance):
-    assert isinstance(instance, adwithoutruntime::ControlFlow)
+def test_adwithoutruntime_controlflow_instantiation(instance):
+    assert isinstance(instance, adwithoutruntime_ControlFlow)
 
-@given(instance=adwithoutruntime::Variable_strategy)
+@given(instance=adwithoutruntime_Variable_strategy)
 @settings(max_examples=50)
-def test_adwithoutruntime::variable_instantiation(instance):
-    assert isinstance(instance, adwithoutruntime::Variable)
-
-@given(instance=adwithoutruntime::Variable_strategy)
-def test_adwithoutruntime::variable_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_adwithoutruntime_variable_instantiation(instance):
+    assert isinstance(instance, adwithoutruntime_Variable)
 
 
-@given(instance=adwithoutruntime::Variable_strategy)
-def test_adwithoutruntime::variable_name_setter(instance):
+
+@given(instance=adwithoutruntime_Variable_strategy)
+def test_adwithoutruntime_variable_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=adwithoutruntime::ActivityEdge_strategy)
+@given(instance=adwithoutruntime_ActivityEdge_strategy)
 @settings(max_examples=50)
-def test_adwithoutruntime::activityedge_instantiation(instance):
-    assert isinstance(instance, adwithoutruntime::ActivityEdge)
+def test_adwithoutruntime_activityedge_instantiation(instance):
+    assert isinstance(instance, adwithoutruntime_ActivityEdge)
 
-@given(instance=adwithoutruntime::ActivityNode_strategy)
+@given(instance=adwithoutruntime_ActivityNode_strategy)
 @settings(max_examples=50)
-def test_adwithoutruntime::activitynode_instantiation(instance):
-    assert isinstance(instance, adwithoutruntime::ActivityNode)
+def test_adwithoutruntime_activitynode_instantiation(instance):
+    assert isinstance(instance, adwithoutruntime_ActivityNode)

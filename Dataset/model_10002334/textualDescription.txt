@@ -1,0 +1,21 @@
+The model has 12 class(es).
+The class 'GSM_Module' has the following attributes: 'Update' of type float; 'CmdMatch' of type str; 'Status' of type str.
+The class 'Fan' has the following attributes: 'FanID' of type str.
+The class 'Light' has the following attributes: 'LightID' of type str.
+The class 'Camera' has the following attributes: 'CameraID' of type int.
+The class 'Microcontroller' has the following attributes: 'Status' of type str; 'Update' of type float.
+The class 'Speakers' has the following attributes: 'SpeakerID' of type int.
+The class 'Door' has the following attributes: 'DoorID' of type int.
+The class 'Entertainment_System' has the following attributes: 'DeviceID' of type int.
+The class 'User__SMS_' has the following attributes: 'Status' of type str.
+The class 'Geyser' has the following attributes: 'GeyserID' of type str.
+The class 'TV' has the following attributes: 'TVID' of type int.
+The class 'HomeTheatre' has the following attributes: 'HTID' of type str.
+'Camera' (role 'door1', cardinality 0..*) is associated with 'Door' (role 'camera0', cardinality 0..*).
+'TV' (role 'homeTheatre3', cardinality 0..*) is associated with 'HomeTheatre' (role 'tV2', cardinality 0..*).
+'HomeTheatre' (role 'entertainment10', cardinality 0..*) is associated with 'Entertainment_System' (role 'homeTheatre11', cardinality 0..*).
+'Speakers' (role 'homeTheatre5', cardinality 0..*) is associated with 'HomeTheatre' (role 'speakers4', cardinality 0..*).
+'Entertainment_System' (role 'tV7', cardinality 0..*) is associated with 'TV' (role 'entertainment6', cardinality 0..*).
+'Light' (role 'fan14', cardinality 0..*) is associated with 'Fan' (role 'light15', cardinality 0..*).
+'Entertainment_System' (role 'speakers9', cardinality 0..*) is associated with 'Speakers' (role 'entertainment8', cardinality 0..*).
+'GSM_Module' (role 'microcontroller12', cardinality 0..*) is associated with 'Microcontroller' (role 'gSM_Module13', cardinality 0..*).

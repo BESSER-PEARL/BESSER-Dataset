@@ -3,49 +3,49 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     Expression,
-    javasimplified::BooleanLiteral,
-    javasimplified::ArrayCreation,
-    javasimplified::StringLiteral,
-    javasimplified::NullLiteral,
-    javasimplified::ThisExpression,
-    javasimplified::VariableAccess,
-    javasimplified::InstanceOfExpression,
-    javasimplified::ClassInstanceCreation,
-    javasimplified::NumberLiteral,
-    javasimplified::ArrayAccess,
-    javasimplified::CastExpression,
-    javasimplified::Assignment,
-    javasimplified::Expression,
-    javasimplified::NamedElement,
-    javasimplified::ImportDeclaration,
+    javasimplified_InstanceOfExpression,
+    javasimplified_BooleanLiteral,
+    javasimplified_ArrayCreation,
+    javasimplified_NullLiteral,
+    javasimplified_VariableAccess,
+    javasimplified_ThisExpression,
+    javasimplified_NumberLiteral,
+    javasimplified_ArrayAccess,
+    javasimplified_CastExpression,
+    javasimplified_ClassInstanceCreation,
+    javasimplified_StringLiteral,
+    javasimplified_Assignment,
+    javasimplified_Expression,
+    javasimplified_NamedElement,
+    javasimplified_ImportDeclaration,
     Type,
-    javasimplified::Interface,
-    javasimplified::PrimitiveType,
-    javasimplified::Comment,
+    javasimplified_Interface,
+    javasimplified_PrimitiveType,
+    javasimplified_Comment,
     Statement,
-    javasimplified::TryStatement,
-    javasimplified::ThrowStatement,
-    javasimplified::CatchStatment,
-    javasimplified::IfStatement,
-    javasimplified::ForStatement,
-    javasimplified::Block,
-    javasimplified::ReturnStatement,
-    javasimplified::WhileStatement,
-    javasimplified::ExpressionStatement,
-    javasimplified::Variable,
-    javasimplified::Statement,
-    javasimplified::Modifier,
-    javasimplified::Class,
+    javasimplified_TryStatement,
+    javasimplified_ExpressionStatement,
+    javasimplified_WhileStatement,
+    javasimplified_CatchStatment,
+    javasimplified_IfStatement,
+    javasimplified_Block,
+    javasimplified_ReturnStatement,
+    javasimplified_ForStatement,
+    javasimplified_ThrowStatement,
+    javasimplified_Variable,
+    javasimplified_Statement,
+    javasimplified_Modifier,
+    javasimplified_Class,
     NamedElement,
-    javasimplified::Parameter,
-    javasimplified::Package,
-    javasimplified::Model,
-    javasimplified::Type,
-    javasimplified::Method,
+    javasimplified_Type,
+    javasimplified_Model,
+    javasimplified_Parameter,
+    javasimplified_Package,
+    javasimplified_Method,
     VisibilityKind,
 )
 
@@ -69,23 +69,37 @@ def test_expression_constructor_args():
 
 
 
-def test_javasimplified::booleanliteral_is_not_abstract():
-    assert not inspect.isabstract(javasimplified::BooleanLiteral)
+def test_javasimplified_instanceofexpression_is_not_abstract():
+    assert not inspect.isabstract(javasimplified_InstanceOfExpression)
 
 
-def test_javasimplified::booleanliteral_constructor_exists():
-    assert callable(javasimplified::BooleanLiteral.__init__)
+def test_javasimplified_instanceofexpression_constructor_exists():
+    assert callable(javasimplified_InstanceOfExpression.__init__)
 
 
-def test_javasimplified::booleanliteral_constructor_args():
-    sig = inspect.signature(javasimplified::BooleanLiteral.__init__)
+def test_javasimplified_instanceofexpression_constructor_args():
+    sig = inspect.signature(javasimplified_InstanceOfExpression.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_javasimplified_booleanliteral_is_not_abstract():
+    assert not inspect.isabstract(javasimplified_BooleanLiteral)
+
+
+def test_javasimplified_booleanliteral_constructor_exists():
+    assert callable(javasimplified_BooleanLiteral.__init__)
+
+
+def test_javasimplified_booleanliteral_constructor_args():
+    sig = inspect.signature(javasimplified_BooleanLiteral.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
 
-def test_javasimplified::booleanliteral_has_value():
-    assert hasattr(javasimplified::BooleanLiteral, "value")
+def test_javasimplified_booleanliteral_has_value():
+    assert hasattr(javasimplified_BooleanLiteral, "value")
     descriptor = None
-    for klass in javasimplified::BooleanLiteral.__mro__:
+    for klass in javasimplified_BooleanLiteral.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -93,37 +107,79 @@ def test_javasimplified::booleanliteral_has_value():
 
 
 
-def test_javasimplified::arraycreation_is_not_abstract():
-    assert not inspect.isabstract(javasimplified::ArrayCreation)
+def test_javasimplified_arraycreation_is_not_abstract():
+    assert not inspect.isabstract(javasimplified_ArrayCreation)
 
 
-def test_javasimplified::arraycreation_constructor_exists():
-    assert callable(javasimplified::ArrayCreation.__init__)
+def test_javasimplified_arraycreation_constructor_exists():
+    assert callable(javasimplified_ArrayCreation.__init__)
 
 
-def test_javasimplified::arraycreation_constructor_args():
-    sig = inspect.signature(javasimplified::ArrayCreation.__init__)
+def test_javasimplified_arraycreation_constructor_args():
+    sig = inspect.signature(javasimplified_ArrayCreation.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_javasimplified::stringliteral_is_not_abstract():
-    assert not inspect.isabstract(javasimplified::StringLiteral)
+def test_javasimplified_nullliteral_is_not_abstract():
+    assert not inspect.isabstract(javasimplified_NullLiteral)
 
 
-def test_javasimplified::stringliteral_constructor_exists():
-    assert callable(javasimplified::StringLiteral.__init__)
+def test_javasimplified_nullliteral_constructor_exists():
+    assert callable(javasimplified_NullLiteral.__init__)
 
 
-def test_javasimplified::stringliteral_constructor_args():
-    sig = inspect.signature(javasimplified::StringLiteral.__init__)
+def test_javasimplified_nullliteral_constructor_args():
+    sig = inspect.signature(javasimplified_NullLiteral.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_javasimplified_variableaccess_is_not_abstract():
+    assert not inspect.isabstract(javasimplified_VariableAccess)
+
+
+def test_javasimplified_variableaccess_constructor_exists():
+    assert callable(javasimplified_VariableAccess.__init__)
+
+
+def test_javasimplified_variableaccess_constructor_args():
+    sig = inspect.signature(javasimplified_VariableAccess.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_javasimplified_thisexpression_is_not_abstract():
+    assert not inspect.isabstract(javasimplified_ThisExpression)
+
+
+def test_javasimplified_thisexpression_constructor_exists():
+    assert callable(javasimplified_ThisExpression.__init__)
+
+
+def test_javasimplified_thisexpression_constructor_args():
+    sig = inspect.signature(javasimplified_ThisExpression.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_javasimplified_numberliteral_is_not_abstract():
+    assert not inspect.isabstract(javasimplified_NumberLiteral)
+
+
+def test_javasimplified_numberliteral_constructor_exists():
+    assert callable(javasimplified_NumberLiteral.__init__)
+
+
+def test_javasimplified_numberliteral_constructor_args():
+    sig = inspect.signature(javasimplified_NumberLiteral.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
 
-def test_javasimplified::stringliteral_has_value():
-    assert hasattr(javasimplified::StringLiteral, "value")
+def test_javasimplified_numberliteral_has_value():
+    assert hasattr(javasimplified_NumberLiteral, "value")
     descriptor = None
-    for klass in javasimplified::StringLiteral.__mro__:
+    for klass in javasimplified_NumberLiteral.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -131,93 +187,65 @@ def test_javasimplified::stringliteral_has_value():
 
 
 
-def test_javasimplified::nullliteral_is_not_abstract():
-    assert not inspect.isabstract(javasimplified::NullLiteral)
+def test_javasimplified_arrayaccess_is_not_abstract():
+    assert not inspect.isabstract(javasimplified_ArrayAccess)
 
 
-def test_javasimplified::nullliteral_constructor_exists():
-    assert callable(javasimplified::NullLiteral.__init__)
+def test_javasimplified_arrayaccess_constructor_exists():
+    assert callable(javasimplified_ArrayAccess.__init__)
 
 
-def test_javasimplified::nullliteral_constructor_args():
-    sig = inspect.signature(javasimplified::NullLiteral.__init__)
+def test_javasimplified_arrayaccess_constructor_args():
+    sig = inspect.signature(javasimplified_ArrayAccess.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_javasimplified::thisexpression_is_not_abstract():
-    assert not inspect.isabstract(javasimplified::ThisExpression)
+def test_javasimplified_castexpression_is_not_abstract():
+    assert not inspect.isabstract(javasimplified_CastExpression)
 
 
-def test_javasimplified::thisexpression_constructor_exists():
-    assert callable(javasimplified::ThisExpression.__init__)
+def test_javasimplified_castexpression_constructor_exists():
+    assert callable(javasimplified_CastExpression.__init__)
 
 
-def test_javasimplified::thisexpression_constructor_args():
-    sig = inspect.signature(javasimplified::ThisExpression.__init__)
+def test_javasimplified_castexpression_constructor_args():
+    sig = inspect.signature(javasimplified_CastExpression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_javasimplified::variableaccess_is_not_abstract():
-    assert not inspect.isabstract(javasimplified::VariableAccess)
+def test_javasimplified_classinstancecreation_is_not_abstract():
+    assert not inspect.isabstract(javasimplified_ClassInstanceCreation)
 
 
-def test_javasimplified::variableaccess_constructor_exists():
-    assert callable(javasimplified::VariableAccess.__init__)
+def test_javasimplified_classinstancecreation_constructor_exists():
+    assert callable(javasimplified_ClassInstanceCreation.__init__)
 
 
-def test_javasimplified::variableaccess_constructor_args():
-    sig = inspect.signature(javasimplified::VariableAccess.__init__)
+def test_javasimplified_classinstancecreation_constructor_args():
+    sig = inspect.signature(javasimplified_ClassInstanceCreation.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_javasimplified::instanceofexpression_is_not_abstract():
-    assert not inspect.isabstract(javasimplified::InstanceOfExpression)
+def test_javasimplified_stringliteral_is_not_abstract():
+    assert not inspect.isabstract(javasimplified_StringLiteral)
 
 
-def test_javasimplified::instanceofexpression_constructor_exists():
-    assert callable(javasimplified::InstanceOfExpression.__init__)
+def test_javasimplified_stringliteral_constructor_exists():
+    assert callable(javasimplified_StringLiteral.__init__)
 
 
-def test_javasimplified::instanceofexpression_constructor_args():
-    sig = inspect.signature(javasimplified::InstanceOfExpression.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_javasimplified::classinstancecreation_is_not_abstract():
-    assert not inspect.isabstract(javasimplified::ClassInstanceCreation)
-
-
-def test_javasimplified::classinstancecreation_constructor_exists():
-    assert callable(javasimplified::ClassInstanceCreation.__init__)
-
-
-def test_javasimplified::classinstancecreation_constructor_args():
-    sig = inspect.signature(javasimplified::ClassInstanceCreation.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_javasimplified::numberliteral_is_not_abstract():
-    assert not inspect.isabstract(javasimplified::NumberLiteral)
-
-
-def test_javasimplified::numberliteral_constructor_exists():
-    assert callable(javasimplified::NumberLiteral.__init__)
-
-
-def test_javasimplified::numberliteral_constructor_args():
-    sig = inspect.signature(javasimplified::NumberLiteral.__init__)
+def test_javasimplified_stringliteral_constructor_args():
+    sig = inspect.signature(javasimplified_StringLiteral.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
 
-def test_javasimplified::numberliteral_has_value():
-    assert hasattr(javasimplified::NumberLiteral, "value")
+def test_javasimplified_stringliteral_has_value():
+    assert hasattr(javasimplified_StringLiteral, "value")
     descriptor = None
-    for klass in javasimplified::NumberLiteral.__mro__:
+    for klass in javasimplified_StringLiteral.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -225,79 +253,51 @@ def test_javasimplified::numberliteral_has_value():
 
 
 
-def test_javasimplified::arrayaccess_is_not_abstract():
-    assert not inspect.isabstract(javasimplified::ArrayAccess)
+def test_javasimplified_assignment_is_not_abstract():
+    assert not inspect.isabstract(javasimplified_Assignment)
 
 
-def test_javasimplified::arrayaccess_constructor_exists():
-    assert callable(javasimplified::ArrayAccess.__init__)
+def test_javasimplified_assignment_constructor_exists():
+    assert callable(javasimplified_Assignment.__init__)
 
 
-def test_javasimplified::arrayaccess_constructor_args():
-    sig = inspect.signature(javasimplified::ArrayAccess.__init__)
+def test_javasimplified_assignment_constructor_args():
+    sig = inspect.signature(javasimplified_Assignment.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_javasimplified::castexpression_is_not_abstract():
-    assert not inspect.isabstract(javasimplified::CastExpression)
+def test_javasimplified_expression_is_not_abstract():
+    assert not inspect.isabstract(javasimplified_Expression)
 
 
-def test_javasimplified::castexpression_constructor_exists():
-    assert callable(javasimplified::CastExpression.__init__)
+def test_javasimplified_expression_constructor_exists():
+    assert callable(javasimplified_Expression.__init__)
 
 
-def test_javasimplified::castexpression_constructor_args():
-    sig = inspect.signature(javasimplified::CastExpression.__init__)
+def test_javasimplified_expression_constructor_args():
+    sig = inspect.signature(javasimplified_Expression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_javasimplified::assignment_is_not_abstract():
-    assert not inspect.isabstract(javasimplified::Assignment)
+def test_javasimplified_namedelement_is_not_abstract():
+    assert not inspect.isabstract(javasimplified_NamedElement)
 
 
-def test_javasimplified::assignment_constructor_exists():
-    assert callable(javasimplified::Assignment.__init__)
+def test_javasimplified_namedelement_constructor_exists():
+    assert callable(javasimplified_NamedElement.__init__)
 
 
-def test_javasimplified::assignment_constructor_args():
-    sig = inspect.signature(javasimplified::Assignment.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_javasimplified::expression_is_not_abstract():
-    assert not inspect.isabstract(javasimplified::Expression)
-
-
-def test_javasimplified::expression_constructor_exists():
-    assert callable(javasimplified::Expression.__init__)
-
-
-def test_javasimplified::expression_constructor_args():
-    sig = inspect.signature(javasimplified::Expression.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_javasimplified::namedelement_is_not_abstract():
-    assert not inspect.isabstract(javasimplified::NamedElement)
-
-
-def test_javasimplified::namedelement_constructor_exists():
-    assert callable(javasimplified::NamedElement.__init__)
-
-
-def test_javasimplified::namedelement_constructor_args():
-    sig = inspect.signature(javasimplified::NamedElement.__init__)
+def test_javasimplified_namedelement_constructor_args():
+    sig = inspect.signature(javasimplified_NamedElement.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_javasimplified::namedelement_has_name():
-    assert hasattr(javasimplified::NamedElement, "name")
+def test_javasimplified_namedelement_has_name():
+    assert hasattr(javasimplified_NamedElement, "name")
     descriptor = None
-    for klass in javasimplified::NamedElement.__mro__:
+    for klass in javasimplified_NamedElement.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -305,16 +305,16 @@ def test_javasimplified::namedelement_has_name():
 
 
 
-def test_javasimplified::importdeclaration_is_not_abstract():
-    assert not inspect.isabstract(javasimplified::ImportDeclaration)
+def test_javasimplified_importdeclaration_is_not_abstract():
+    assert not inspect.isabstract(javasimplified_ImportDeclaration)
 
 
-def test_javasimplified::importdeclaration_constructor_exists():
-    assert callable(javasimplified::ImportDeclaration.__init__)
+def test_javasimplified_importdeclaration_constructor_exists():
+    assert callable(javasimplified_ImportDeclaration.__init__)
 
 
-def test_javasimplified::importdeclaration_constructor_args():
-    sig = inspect.signature(javasimplified::ImportDeclaration.__init__)
+def test_javasimplified_importdeclaration_constructor_args():
+    sig = inspect.signature(javasimplified_ImportDeclaration.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -333,44 +333,44 @@ def test_type_constructor_args():
 
 
 
-def test_javasimplified::interface_is_not_abstract():
-    assert not inspect.isabstract(javasimplified::Interface)
+def test_javasimplified_interface_is_not_abstract():
+    assert not inspect.isabstract(javasimplified_Interface)
 
 
-def test_javasimplified::interface_constructor_exists():
-    assert callable(javasimplified::Interface.__init__)
+def test_javasimplified_interface_constructor_exists():
+    assert callable(javasimplified_Interface.__init__)
 
 
-def test_javasimplified::interface_constructor_args():
-    sig = inspect.signature(javasimplified::Interface.__init__)
+def test_javasimplified_interface_constructor_args():
+    sig = inspect.signature(javasimplified_Interface.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_javasimplified::primitivetype_is_not_abstract():
-    assert not inspect.isabstract(javasimplified::PrimitiveType)
+def test_javasimplified_primitivetype_is_not_abstract():
+    assert not inspect.isabstract(javasimplified_PrimitiveType)
 
 
-def test_javasimplified::primitivetype_constructor_exists():
-    assert callable(javasimplified::PrimitiveType.__init__)
+def test_javasimplified_primitivetype_constructor_exists():
+    assert callable(javasimplified_PrimitiveType.__init__)
 
 
-def test_javasimplified::primitivetype_constructor_args():
-    sig = inspect.signature(javasimplified::PrimitiveType.__init__)
+def test_javasimplified_primitivetype_constructor_args():
+    sig = inspect.signature(javasimplified_PrimitiveType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_javasimplified::comment_is_not_abstract():
-    assert not inspect.isabstract(javasimplified::Comment)
+def test_javasimplified_comment_is_not_abstract():
+    assert not inspect.isabstract(javasimplified_Comment)
 
 
-def test_javasimplified::comment_constructor_exists():
-    assert callable(javasimplified::Comment.__init__)
+def test_javasimplified_comment_constructor_exists():
+    assert callable(javasimplified_Comment.__init__)
 
 
-def test_javasimplified::comment_constructor_args():
-    sig = inspect.signature(javasimplified::Comment.__init__)
+def test_javasimplified_comment_constructor_args():
+    sig = inspect.signature(javasimplified_Comment.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -389,149 +389,149 @@ def test_statement_constructor_args():
 
 
 
-def test_javasimplified::trystatement_is_not_abstract():
-    assert not inspect.isabstract(javasimplified::TryStatement)
+def test_javasimplified_trystatement_is_not_abstract():
+    assert not inspect.isabstract(javasimplified_TryStatement)
 
 
-def test_javasimplified::trystatement_constructor_exists():
-    assert callable(javasimplified::TryStatement.__init__)
+def test_javasimplified_trystatement_constructor_exists():
+    assert callable(javasimplified_TryStatement.__init__)
 
 
-def test_javasimplified::trystatement_constructor_args():
-    sig = inspect.signature(javasimplified::TryStatement.__init__)
+def test_javasimplified_trystatement_constructor_args():
+    sig = inspect.signature(javasimplified_TryStatement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_javasimplified::throwstatement_is_not_abstract():
-    assert not inspect.isabstract(javasimplified::ThrowStatement)
+def test_javasimplified_expressionstatement_is_not_abstract():
+    assert not inspect.isabstract(javasimplified_ExpressionStatement)
 
 
-def test_javasimplified::throwstatement_constructor_exists():
-    assert callable(javasimplified::ThrowStatement.__init__)
+def test_javasimplified_expressionstatement_constructor_exists():
+    assert callable(javasimplified_ExpressionStatement.__init__)
 
 
-def test_javasimplified::throwstatement_constructor_args():
-    sig = inspect.signature(javasimplified::ThrowStatement.__init__)
+def test_javasimplified_expressionstatement_constructor_args():
+    sig = inspect.signature(javasimplified_ExpressionStatement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_javasimplified::catchstatment_is_not_abstract():
-    assert not inspect.isabstract(javasimplified::CatchStatment)
+def test_javasimplified_whilestatement_is_not_abstract():
+    assert not inspect.isabstract(javasimplified_WhileStatement)
 
 
-def test_javasimplified::catchstatment_constructor_exists():
-    assert callable(javasimplified::CatchStatment.__init__)
+def test_javasimplified_whilestatement_constructor_exists():
+    assert callable(javasimplified_WhileStatement.__init__)
 
 
-def test_javasimplified::catchstatment_constructor_args():
-    sig = inspect.signature(javasimplified::CatchStatment.__init__)
+def test_javasimplified_whilestatement_constructor_args():
+    sig = inspect.signature(javasimplified_WhileStatement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_javasimplified::ifstatement_is_not_abstract():
-    assert not inspect.isabstract(javasimplified::IfStatement)
+def test_javasimplified_catchstatment_is_not_abstract():
+    assert not inspect.isabstract(javasimplified_CatchStatment)
 
 
-def test_javasimplified::ifstatement_constructor_exists():
-    assert callable(javasimplified::IfStatement.__init__)
+def test_javasimplified_catchstatment_constructor_exists():
+    assert callable(javasimplified_CatchStatment.__init__)
 
 
-def test_javasimplified::ifstatement_constructor_args():
-    sig = inspect.signature(javasimplified::IfStatement.__init__)
+def test_javasimplified_catchstatment_constructor_args():
+    sig = inspect.signature(javasimplified_CatchStatment.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_javasimplified::forstatement_is_not_abstract():
-    assert not inspect.isabstract(javasimplified::ForStatement)
+def test_javasimplified_ifstatement_is_not_abstract():
+    assert not inspect.isabstract(javasimplified_IfStatement)
 
 
-def test_javasimplified::forstatement_constructor_exists():
-    assert callable(javasimplified::ForStatement.__init__)
+def test_javasimplified_ifstatement_constructor_exists():
+    assert callable(javasimplified_IfStatement.__init__)
 
 
-def test_javasimplified::forstatement_constructor_args():
-    sig = inspect.signature(javasimplified::ForStatement.__init__)
+def test_javasimplified_ifstatement_constructor_args():
+    sig = inspect.signature(javasimplified_IfStatement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_javasimplified::block_is_not_abstract():
-    assert not inspect.isabstract(javasimplified::Block)
+def test_javasimplified_block_is_not_abstract():
+    assert not inspect.isabstract(javasimplified_Block)
 
 
-def test_javasimplified::block_constructor_exists():
-    assert callable(javasimplified::Block.__init__)
+def test_javasimplified_block_constructor_exists():
+    assert callable(javasimplified_Block.__init__)
 
 
-def test_javasimplified::block_constructor_args():
-    sig = inspect.signature(javasimplified::Block.__init__)
+def test_javasimplified_block_constructor_args():
+    sig = inspect.signature(javasimplified_Block.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_javasimplified::returnstatement_is_not_abstract():
-    assert not inspect.isabstract(javasimplified::ReturnStatement)
+def test_javasimplified_returnstatement_is_not_abstract():
+    assert not inspect.isabstract(javasimplified_ReturnStatement)
 
 
-def test_javasimplified::returnstatement_constructor_exists():
-    assert callable(javasimplified::ReturnStatement.__init__)
+def test_javasimplified_returnstatement_constructor_exists():
+    assert callable(javasimplified_ReturnStatement.__init__)
 
 
-def test_javasimplified::returnstatement_constructor_args():
-    sig = inspect.signature(javasimplified::ReturnStatement.__init__)
+def test_javasimplified_returnstatement_constructor_args():
+    sig = inspect.signature(javasimplified_ReturnStatement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_javasimplified::whilestatement_is_not_abstract():
-    assert not inspect.isabstract(javasimplified::WhileStatement)
+def test_javasimplified_forstatement_is_not_abstract():
+    assert not inspect.isabstract(javasimplified_ForStatement)
 
 
-def test_javasimplified::whilestatement_constructor_exists():
-    assert callable(javasimplified::WhileStatement.__init__)
+def test_javasimplified_forstatement_constructor_exists():
+    assert callable(javasimplified_ForStatement.__init__)
 
 
-def test_javasimplified::whilestatement_constructor_args():
-    sig = inspect.signature(javasimplified::WhileStatement.__init__)
+def test_javasimplified_forstatement_constructor_args():
+    sig = inspect.signature(javasimplified_ForStatement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_javasimplified::expressionstatement_is_not_abstract():
-    assert not inspect.isabstract(javasimplified::ExpressionStatement)
+def test_javasimplified_throwstatement_is_not_abstract():
+    assert not inspect.isabstract(javasimplified_ThrowStatement)
 
 
-def test_javasimplified::expressionstatement_constructor_exists():
-    assert callable(javasimplified::ExpressionStatement.__init__)
+def test_javasimplified_throwstatement_constructor_exists():
+    assert callable(javasimplified_ThrowStatement.__init__)
 
 
-def test_javasimplified::expressionstatement_constructor_args():
-    sig = inspect.signature(javasimplified::ExpressionStatement.__init__)
+def test_javasimplified_throwstatement_constructor_args():
+    sig = inspect.signature(javasimplified_ThrowStatement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_javasimplified::variable_is_not_abstract():
-    assert not inspect.isabstract(javasimplified::Variable)
+def test_javasimplified_variable_is_not_abstract():
+    assert not inspect.isabstract(javasimplified_Variable)
 
 
-def test_javasimplified::variable_constructor_exists():
-    assert callable(javasimplified::Variable.__init__)
+def test_javasimplified_variable_constructor_exists():
+    assert callable(javasimplified_Variable.__init__)
 
 
-def test_javasimplified::variable_constructor_args():
-    sig = inspect.signature(javasimplified::Variable.__init__)
+def test_javasimplified_variable_constructor_args():
+    sig = inspect.signature(javasimplified_Variable.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_javasimplified::variable_has_name():
-    assert hasattr(javasimplified::Variable, "name")
+def test_javasimplified_variable_has_name():
+    assert hasattr(javasimplified_Variable, "name")
     descriptor = None
-    for klass in javasimplified::Variable.__mro__:
+    for klass in javasimplified_Variable.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -539,101 +539,101 @@ def test_javasimplified::variable_has_name():
 
 
 
-def test_javasimplified::statement_is_not_abstract():
-    assert not inspect.isabstract(javasimplified::Statement)
+def test_javasimplified_statement_is_not_abstract():
+    assert not inspect.isabstract(javasimplified_Statement)
 
 
-def test_javasimplified::statement_constructor_exists():
-    assert callable(javasimplified::Statement.__init__)
+def test_javasimplified_statement_constructor_exists():
+    assert callable(javasimplified_Statement.__init__)
 
 
-def test_javasimplified::statement_constructor_args():
-    sig = inspect.signature(javasimplified::Statement.__init__)
+def test_javasimplified_statement_constructor_args():
+    sig = inspect.signature(javasimplified_Statement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_javasimplified::modifier_is_not_abstract():
-    assert not inspect.isabstract(javasimplified::Modifier)
+def test_javasimplified_modifier_is_not_abstract():
+    assert not inspect.isabstract(javasimplified_Modifier)
 
 
-def test_javasimplified::modifier_constructor_exists():
-    assert callable(javasimplified::Modifier.__init__)
+def test_javasimplified_modifier_constructor_exists():
+    assert callable(javasimplified_Modifier.__init__)
 
 
-def test_javasimplified::modifier_constructor_args():
-    sig = inspect.signature(javasimplified::Modifier.__init__)
+def test_javasimplified_modifier_constructor_args():
+    sig = inspect.signature(javasimplified_Modifier.__init__)
     params = list(sig.parameters.keys())
-    assert "isVolatile" in params, "Missing parameter 'isVolatile'"
-    assert "visibility" in params, "Missing parameter 'visibility'"
+    assert "isFinal" in params, "Missing parameter 'isFinal'"
     assert "isStatic" in params, "Missing parameter 'isStatic'"
     assert "isSynchronized" in params, "Missing parameter 'isSynchronized'"
-    assert "isFinal" in params, "Missing parameter 'isFinal'"
+    assert "visibility" in params, "Missing parameter 'visibility'"
+    assert "isVolatile" in params, "Missing parameter 'isVolatile'"
 
-def test_javasimplified::modifier_has_isVolatile():
-    assert hasattr(javasimplified::Modifier, "isVolatile")
+def test_javasimplified_modifier_has_isFinal():
+    assert hasattr(javasimplified_Modifier, "isFinal")
     descriptor = None
-    for klass in javasimplified::Modifier.__mro__:
-        if "isVolatile" in klass.__dict__:
-            descriptor = klass.__dict__["isVolatile"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_javasimplified::modifier_has_visibility():
-    assert hasattr(javasimplified::Modifier, "visibility")
-    descriptor = None
-    for klass in javasimplified::Modifier.__mro__:
-        if "visibility" in klass.__dict__:
-            descriptor = klass.__dict__["visibility"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_javasimplified::modifier_has_isStatic():
-    assert hasattr(javasimplified::Modifier, "isStatic")
-    descriptor = None
-    for klass in javasimplified::Modifier.__mro__:
-        if "isStatic" in klass.__dict__:
-            descriptor = klass.__dict__["isStatic"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_javasimplified::modifier_has_isSynchronized():
-    assert hasattr(javasimplified::Modifier, "isSynchronized")
-    descriptor = None
-    for klass in javasimplified::Modifier.__mro__:
-        if "isSynchronized" in klass.__dict__:
-            descriptor = klass.__dict__["isSynchronized"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_javasimplified::modifier_has_isFinal():
-    assert hasattr(javasimplified::Modifier, "isFinal")
-    descriptor = None
-    for klass in javasimplified::Modifier.__mro__:
+    for klass in javasimplified_Modifier.__mro__:
         if "isFinal" in klass.__dict__:
             descriptor = klass.__dict__["isFinal"]
             break
     assert isinstance(descriptor, property)
 
+def test_javasimplified_modifier_has_isStatic():
+    assert hasattr(javasimplified_Modifier, "isStatic")
+    descriptor = None
+    for klass in javasimplified_Modifier.__mro__:
+        if "isStatic" in klass.__dict__:
+            descriptor = klass.__dict__["isStatic"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_javasimplified_modifier_has_isSynchronized():
+    assert hasattr(javasimplified_Modifier, "isSynchronized")
+    descriptor = None
+    for klass in javasimplified_Modifier.__mro__:
+        if "isSynchronized" in klass.__dict__:
+            descriptor = klass.__dict__["isSynchronized"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_javasimplified_modifier_has_visibility():
+    assert hasattr(javasimplified_Modifier, "visibility")
+    descriptor = None
+    for klass in javasimplified_Modifier.__mro__:
+        if "visibility" in klass.__dict__:
+            descriptor = klass.__dict__["visibility"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_javasimplified_modifier_has_isVolatile():
+    assert hasattr(javasimplified_Modifier, "isVolatile")
+    descriptor = None
+    for klass in javasimplified_Modifier.__mro__:
+        if "isVolatile" in klass.__dict__:
+            descriptor = klass.__dict__["isVolatile"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_javasimplified::class_is_not_abstract():
-    assert not inspect.isabstract(javasimplified::Class)
+
+def test_javasimplified_class_is_not_abstract():
+    assert not inspect.isabstract(javasimplified_Class)
 
 
-def test_javasimplified::class_constructor_exists():
-    assert callable(javasimplified::Class.__init__)
+def test_javasimplified_class_constructor_exists():
+    assert callable(javasimplified_Class.__init__)
 
 
-def test_javasimplified::class_constructor_args():
-    sig = inspect.signature(javasimplified::Class.__init__)
+def test_javasimplified_class_constructor_args():
+    sig = inspect.signature(javasimplified_Class.__init__)
     params = list(sig.parameters.keys())
     assert "isAbstract" in params, "Missing parameter 'isAbstract'"
 
-def test_javasimplified::class_has_isAbstract():
-    assert hasattr(javasimplified::Class, "isAbstract")
+def test_javasimplified_class_has_isAbstract():
+    assert hasattr(javasimplified_Class, "isAbstract")
     descriptor = None
-    for klass in javasimplified::Class.__mro__:
+    for klass in javasimplified_Class.__mro__:
         if "isAbstract" in klass.__dict__:
             descriptor = klass.__dict__["isAbstract"]
             break
@@ -655,79 +655,79 @@ def test_namedelement_constructor_args():
 
 
 
-def test_javasimplified::parameter_is_not_abstract():
-    assert not inspect.isabstract(javasimplified::Parameter)
+def test_javasimplified_type_is_not_abstract():
+    assert not inspect.isabstract(javasimplified_Type)
 
 
-def test_javasimplified::parameter_constructor_exists():
-    assert callable(javasimplified::Parameter.__init__)
+def test_javasimplified_type_constructor_exists():
+    assert callable(javasimplified_Type.__init__)
 
 
-def test_javasimplified::parameter_constructor_args():
-    sig = inspect.signature(javasimplified::Parameter.__init__)
+def test_javasimplified_type_constructor_args():
+    sig = inspect.signature(javasimplified_Type.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_javasimplified::package_is_not_abstract():
-    assert not inspect.isabstract(javasimplified::Package)
+def test_javasimplified_model_is_not_abstract():
+    assert not inspect.isabstract(javasimplified_Model)
 
 
-def test_javasimplified::package_constructor_exists():
-    assert callable(javasimplified::Package.__init__)
+def test_javasimplified_model_constructor_exists():
+    assert callable(javasimplified_Model.__init__)
 
 
-def test_javasimplified::package_constructor_args():
-    sig = inspect.signature(javasimplified::Package.__init__)
+def test_javasimplified_model_constructor_args():
+    sig = inspect.signature(javasimplified_Model.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_javasimplified::model_is_not_abstract():
-    assert not inspect.isabstract(javasimplified::Model)
+def test_javasimplified_parameter_is_not_abstract():
+    assert not inspect.isabstract(javasimplified_Parameter)
 
 
-def test_javasimplified::model_constructor_exists():
-    assert callable(javasimplified::Model.__init__)
+def test_javasimplified_parameter_constructor_exists():
+    assert callable(javasimplified_Parameter.__init__)
 
 
-def test_javasimplified::model_constructor_args():
-    sig = inspect.signature(javasimplified::Model.__init__)
+def test_javasimplified_parameter_constructor_args():
+    sig = inspect.signature(javasimplified_Parameter.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_javasimplified::type_is_not_abstract():
-    assert not inspect.isabstract(javasimplified::Type)
+def test_javasimplified_package_is_not_abstract():
+    assert not inspect.isabstract(javasimplified_Package)
 
 
-def test_javasimplified::type_constructor_exists():
-    assert callable(javasimplified::Type.__init__)
+def test_javasimplified_package_constructor_exists():
+    assert callable(javasimplified_Package.__init__)
 
 
-def test_javasimplified::type_constructor_args():
-    sig = inspect.signature(javasimplified::Type.__init__)
+def test_javasimplified_package_constructor_args():
+    sig = inspect.signature(javasimplified_Package.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_javasimplified::method_is_not_abstract():
-    assert not inspect.isabstract(javasimplified::Method)
+def test_javasimplified_method_is_not_abstract():
+    assert not inspect.isabstract(javasimplified_Method)
 
 
-def test_javasimplified::method_constructor_exists():
-    assert callable(javasimplified::Method.__init__)
+def test_javasimplified_method_constructor_exists():
+    assert callable(javasimplified_Method.__init__)
 
 
-def test_javasimplified::method_constructor_args():
-    sig = inspect.signature(javasimplified::Method.__init__)
+def test_javasimplified_method_constructor_args():
+    sig = inspect.signature(javasimplified_Method.__init__)
     params = list(sig.parameters.keys())
     assert "visibility" in params, "Missing parameter 'visibility'"
 
-def test_javasimplified::method_has_visibility():
-    assert hasattr(javasimplified::Method, "visibility")
+def test_javasimplified_method_has_visibility():
+    assert hasattr(javasimplified_Method, "visibility")
     descriptor = None
-    for klass in javasimplified::Method.__mro__:
+    for klass in javasimplified_Method.__mro__:
         if "visibility" in klass.__dict__:
             descriptor = klass.__dict__["visibility"]
             break
@@ -742,9 +742,9 @@ def test_visibilitykind_has_all_literals():
     enum_literals = [lit.name for lit in VisibilityKind]
     expected_literals = [
         "private",
+        "protected",
         "none",
         "public",
-        "protected",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
@@ -765,144 +765,144 @@ safe_text = st.text(
 Expression_strategy = st.builds(
     Expression,
 )
-javasimplified::BooleanLiteral_strategy = st.builds(
-    javasimplified::BooleanLiteral,
+javasimplified_InstanceOfExpression_strategy = st.builds(
+    javasimplified_InstanceOfExpression,
+)
+javasimplified_BooleanLiteral_strategy = st.builds(
+    javasimplified_BooleanLiteral,
     value=
         st.booleans()
 )
-javasimplified::ArrayCreation_strategy = st.builds(
-    javasimplified::ArrayCreation,
+javasimplified_ArrayCreation_strategy = st.builds(
+    javasimplified_ArrayCreation,
 )
-javasimplified::StringLiteral_strategy = st.builds(
-    javasimplified::StringLiteral,
+javasimplified_NullLiteral_strategy = st.builds(
+    javasimplified_NullLiteral,
+)
+javasimplified_VariableAccess_strategy = st.builds(
+    javasimplified_VariableAccess,
+)
+javasimplified_ThisExpression_strategy = st.builds(
+    javasimplified_ThisExpression,
+)
+javasimplified_NumberLiteral_strategy = st.builds(
+    javasimplified_NumberLiteral,
     value=
         safe_text
 )
-javasimplified::NullLiteral_strategy = st.builds(
-    javasimplified::NullLiteral,
+javasimplified_ArrayAccess_strategy = st.builds(
+    javasimplified_ArrayAccess,
 )
-javasimplified::ThisExpression_strategy = st.builds(
-    javasimplified::ThisExpression,
+javasimplified_CastExpression_strategy = st.builds(
+    javasimplified_CastExpression,
 )
-javasimplified::VariableAccess_strategy = st.builds(
-    javasimplified::VariableAccess,
+javasimplified_ClassInstanceCreation_strategy = st.builds(
+    javasimplified_ClassInstanceCreation,
 )
-javasimplified::InstanceOfExpression_strategy = st.builds(
-    javasimplified::InstanceOfExpression,
-)
-javasimplified::ClassInstanceCreation_strategy = st.builds(
-    javasimplified::ClassInstanceCreation,
-)
-javasimplified::NumberLiteral_strategy = st.builds(
-    javasimplified::NumberLiteral,
+javasimplified_StringLiteral_strategy = st.builds(
+    javasimplified_StringLiteral,
     value=
         safe_text
 )
-javasimplified::ArrayAccess_strategy = st.builds(
-    javasimplified::ArrayAccess,
+javasimplified_Assignment_strategy = st.builds(
+    javasimplified_Assignment,
 )
-javasimplified::CastExpression_strategy = st.builds(
-    javasimplified::CastExpression,
+javasimplified_Expression_strategy = st.builds(
+    javasimplified_Expression,
 )
-javasimplified::Assignment_strategy = st.builds(
-    javasimplified::Assignment,
-)
-javasimplified::Expression_strategy = st.builds(
-    javasimplified::Expression,
-)
-javasimplified::NamedElement_strategy = st.builds(
-    javasimplified::NamedElement,
+javasimplified_NamedElement_strategy = st.builds(
+    javasimplified_NamedElement,
     name=
         safe_text
 )
-javasimplified::ImportDeclaration_strategy = st.builds(
-    javasimplified::ImportDeclaration,
+javasimplified_ImportDeclaration_strategy = st.builds(
+    javasimplified_ImportDeclaration,
 )
 Type_strategy = st.builds(
     Type,
 )
-javasimplified::Interface_strategy = st.builds(
-    javasimplified::Interface,
+javasimplified_Interface_strategy = st.builds(
+    javasimplified_Interface,
 )
-javasimplified::PrimitiveType_strategy = st.builds(
-    javasimplified::PrimitiveType,
+javasimplified_PrimitiveType_strategy = st.builds(
+    javasimplified_PrimitiveType,
 )
-javasimplified::Comment_strategy = st.builds(
-    javasimplified::Comment,
+javasimplified_Comment_strategy = st.builds(
+    javasimplified_Comment,
 )
 Statement_strategy = st.builds(
     Statement,
 )
-javasimplified::TryStatement_strategy = st.builds(
-    javasimplified::TryStatement,
+javasimplified_TryStatement_strategy = st.builds(
+    javasimplified_TryStatement,
 )
-javasimplified::ThrowStatement_strategy = st.builds(
-    javasimplified::ThrowStatement,
+javasimplified_ExpressionStatement_strategy = st.builds(
+    javasimplified_ExpressionStatement,
 )
-javasimplified::CatchStatment_strategy = st.builds(
-    javasimplified::CatchStatment,
+javasimplified_WhileStatement_strategy = st.builds(
+    javasimplified_WhileStatement,
 )
-javasimplified::IfStatement_strategy = st.builds(
-    javasimplified::IfStatement,
+javasimplified_CatchStatment_strategy = st.builds(
+    javasimplified_CatchStatment,
 )
-javasimplified::ForStatement_strategy = st.builds(
-    javasimplified::ForStatement,
+javasimplified_IfStatement_strategy = st.builds(
+    javasimplified_IfStatement,
 )
-javasimplified::Block_strategy = st.builds(
-    javasimplified::Block,
+javasimplified_Block_strategy = st.builds(
+    javasimplified_Block,
 )
-javasimplified::ReturnStatement_strategy = st.builds(
-    javasimplified::ReturnStatement,
+javasimplified_ReturnStatement_strategy = st.builds(
+    javasimplified_ReturnStatement,
 )
-javasimplified::WhileStatement_strategy = st.builds(
-    javasimplified::WhileStatement,
+javasimplified_ForStatement_strategy = st.builds(
+    javasimplified_ForStatement,
 )
-javasimplified::ExpressionStatement_strategy = st.builds(
-    javasimplified::ExpressionStatement,
+javasimplified_ThrowStatement_strategy = st.builds(
+    javasimplified_ThrowStatement,
 )
-javasimplified::Variable_strategy = st.builds(
-    javasimplified::Variable,
+javasimplified_Variable_strategy = st.builds(
+    javasimplified_Variable,
     name=
         safe_text
 )
-javasimplified::Statement_strategy = st.builds(
-    javasimplified::Statement,
+javasimplified_Statement_strategy = st.builds(
+    javasimplified_Statement,
 )
-javasimplified::Modifier_strategy = st.builds(
-    javasimplified::Modifier,
-    isVolatile=
+javasimplified_Modifier_strategy = st.builds(
+    javasimplified_Modifier,
+    isFinal=
         st.booleans(),
-    visibility=
-        safe_text,
     isStatic=
         st.booleans(),
     isSynchronized=
         st.booleans(),
-    isFinal=
+    visibility=
+        safe_text,
+    isVolatile=
         st.booleans()
 )
-javasimplified::Class_strategy = st.builds(
-    javasimplified::Class,
+javasimplified_Class_strategy = st.builds(
+    javasimplified_Class,
     isAbstract=
         st.booleans()
 )
 NamedElement_strategy = st.builds(
     NamedElement,
 )
-javasimplified::Parameter_strategy = st.builds(
-    javasimplified::Parameter,
+javasimplified_Type_strategy = st.builds(
+    javasimplified_Type,
 )
-javasimplified::Package_strategy = st.builds(
-    javasimplified::Package,
+javasimplified_Model_strategy = st.builds(
+    javasimplified_Model,
 )
-javasimplified::Model_strategy = st.builds(
-    javasimplified::Model,
+javasimplified_Parameter_strategy = st.builds(
+    javasimplified_Parameter,
 )
-javasimplified::Type_strategy = st.builds(
-    javasimplified::Type,
+javasimplified_Package_strategy = st.builds(
+    javasimplified_Package,
 )
-javasimplified::Method_strategy = st.builds(
-    javasimplified::Method,
+javasimplified_Method_strategy = st.builds(
+    javasimplified_Method,
     visibility=
         safe_text
 )
@@ -912,288 +912,255 @@ javasimplified::Method_strategy = st.builds(
 def test_expression_instantiation(instance):
     assert isinstance(instance, Expression)
 
-@given(instance=javasimplified::BooleanLiteral_strategy)
+@given(instance=javasimplified_InstanceOfExpression_strategy)
 @settings(max_examples=50)
-def test_javasimplified::booleanliteral_instantiation(instance):
-    assert isinstance(instance, javasimplified::BooleanLiteral)
+def test_javasimplified_instanceofexpression_instantiation(instance):
+    assert isinstance(instance, javasimplified_InstanceOfExpression)
 
-@given(instance=javasimplified::BooleanLiteral_strategy)
-def test_javasimplified::booleanliteral_value_type(instance):
-    assert isinstance(instance.value, bool)
+@given(instance=javasimplified_BooleanLiteral_strategy)
+@settings(max_examples=50)
+def test_javasimplified_booleanliteral_instantiation(instance):
+    assert isinstance(instance, javasimplified_BooleanLiteral)
 
 
-@given(instance=javasimplified::BooleanLiteral_strategy)
-def test_javasimplified::booleanliteral_value_setter(instance):
+
+@given(instance=javasimplified_BooleanLiteral_strategy)
+def test_javasimplified_booleanliteral_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
 
-@given(instance=javasimplified::ArrayCreation_strategy)
+@given(instance=javasimplified_ArrayCreation_strategy)
 @settings(max_examples=50)
-def test_javasimplified::arraycreation_instantiation(instance):
-    assert isinstance(instance, javasimplified::ArrayCreation)
+def test_javasimplified_arraycreation_instantiation(instance):
+    assert isinstance(instance, javasimplified_ArrayCreation)
 
-@given(instance=javasimplified::StringLiteral_strategy)
+@given(instance=javasimplified_NullLiteral_strategy)
 @settings(max_examples=50)
-def test_javasimplified::stringliteral_instantiation(instance):
-    assert isinstance(instance, javasimplified::StringLiteral)
+def test_javasimplified_nullliteral_instantiation(instance):
+    assert isinstance(instance, javasimplified_NullLiteral)
 
-@given(instance=javasimplified::StringLiteral_strategy)
-def test_javasimplified::stringliteral_value_type(instance):
-    assert isinstance(instance.value, str)
+@given(instance=javasimplified_VariableAccess_strategy)
+@settings(max_examples=50)
+def test_javasimplified_variableaccess_instantiation(instance):
+    assert isinstance(instance, javasimplified_VariableAccess)
+
+@given(instance=javasimplified_ThisExpression_strategy)
+@settings(max_examples=50)
+def test_javasimplified_thisexpression_instantiation(instance):
+    assert isinstance(instance, javasimplified_ThisExpression)
+
+@given(instance=javasimplified_NumberLiteral_strategy)
+@settings(max_examples=50)
+def test_javasimplified_numberliteral_instantiation(instance):
+    assert isinstance(instance, javasimplified_NumberLiteral)
 
 
-@given(instance=javasimplified::StringLiteral_strategy)
-def test_javasimplified::stringliteral_value_setter(instance):
+
+@given(instance=javasimplified_NumberLiteral_strategy)
+def test_javasimplified_numberliteral_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
 
-@given(instance=javasimplified::NullLiteral_strategy)
+@given(instance=javasimplified_ArrayAccess_strategy)
 @settings(max_examples=50)
-def test_javasimplified::nullliteral_instantiation(instance):
-    assert isinstance(instance, javasimplified::NullLiteral)
+def test_javasimplified_arrayaccess_instantiation(instance):
+    assert isinstance(instance, javasimplified_ArrayAccess)
 
-@given(instance=javasimplified::ThisExpression_strategy)
+@given(instance=javasimplified_CastExpression_strategy)
 @settings(max_examples=50)
-def test_javasimplified::thisexpression_instantiation(instance):
-    assert isinstance(instance, javasimplified::ThisExpression)
+def test_javasimplified_castexpression_instantiation(instance):
+    assert isinstance(instance, javasimplified_CastExpression)
 
-@given(instance=javasimplified::VariableAccess_strategy)
+@given(instance=javasimplified_ClassInstanceCreation_strategy)
 @settings(max_examples=50)
-def test_javasimplified::variableaccess_instantiation(instance):
-    assert isinstance(instance, javasimplified::VariableAccess)
+def test_javasimplified_classinstancecreation_instantiation(instance):
+    assert isinstance(instance, javasimplified_ClassInstanceCreation)
 
-@given(instance=javasimplified::InstanceOfExpression_strategy)
+@given(instance=javasimplified_StringLiteral_strategy)
 @settings(max_examples=50)
-def test_javasimplified::instanceofexpression_instantiation(instance):
-    assert isinstance(instance, javasimplified::InstanceOfExpression)
-
-@given(instance=javasimplified::ClassInstanceCreation_strategy)
-@settings(max_examples=50)
-def test_javasimplified::classinstancecreation_instantiation(instance):
-    assert isinstance(instance, javasimplified::ClassInstanceCreation)
-
-@given(instance=javasimplified::NumberLiteral_strategy)
-@settings(max_examples=50)
-def test_javasimplified::numberliteral_instantiation(instance):
-    assert isinstance(instance, javasimplified::NumberLiteral)
-
-@given(instance=javasimplified::NumberLiteral_strategy)
-def test_javasimplified::numberliteral_value_type(instance):
-    assert isinstance(instance.value, str)
+def test_javasimplified_stringliteral_instantiation(instance):
+    assert isinstance(instance, javasimplified_StringLiteral)
 
 
-@given(instance=javasimplified::NumberLiteral_strategy)
-def test_javasimplified::numberliteral_value_setter(instance):
+
+@given(instance=javasimplified_StringLiteral_strategy)
+def test_javasimplified_stringliteral_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
 
-@given(instance=javasimplified::ArrayAccess_strategy)
+@given(instance=javasimplified_Assignment_strategy)
 @settings(max_examples=50)
-def test_javasimplified::arrayaccess_instantiation(instance):
-    assert isinstance(instance, javasimplified::ArrayAccess)
+def test_javasimplified_assignment_instantiation(instance):
+    assert isinstance(instance, javasimplified_Assignment)
 
-@given(instance=javasimplified::CastExpression_strategy)
+@given(instance=javasimplified_Expression_strategy)
 @settings(max_examples=50)
-def test_javasimplified::castexpression_instantiation(instance):
-    assert isinstance(instance, javasimplified::CastExpression)
+def test_javasimplified_expression_instantiation(instance):
+    assert isinstance(instance, javasimplified_Expression)
 
-@given(instance=javasimplified::Assignment_strategy)
+@given(instance=javasimplified_NamedElement_strategy)
 @settings(max_examples=50)
-def test_javasimplified::assignment_instantiation(instance):
-    assert isinstance(instance, javasimplified::Assignment)
-
-@given(instance=javasimplified::Expression_strategy)
-@settings(max_examples=50)
-def test_javasimplified::expression_instantiation(instance):
-    assert isinstance(instance, javasimplified::Expression)
-
-@given(instance=javasimplified::NamedElement_strategy)
-@settings(max_examples=50)
-def test_javasimplified::namedelement_instantiation(instance):
-    assert isinstance(instance, javasimplified::NamedElement)
-
-@given(instance=javasimplified::NamedElement_strategy)
-def test_javasimplified::namedelement_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_javasimplified_namedelement_instantiation(instance):
+    assert isinstance(instance, javasimplified_NamedElement)
 
 
-@given(instance=javasimplified::NamedElement_strategy)
-def test_javasimplified::namedelement_name_setter(instance):
+
+@given(instance=javasimplified_NamedElement_strategy)
+def test_javasimplified_namedelement_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=javasimplified::ImportDeclaration_strategy)
+@given(instance=javasimplified_ImportDeclaration_strategy)
 @settings(max_examples=50)
-def test_javasimplified::importdeclaration_instantiation(instance):
-    assert isinstance(instance, javasimplified::ImportDeclaration)
+def test_javasimplified_importdeclaration_instantiation(instance):
+    assert isinstance(instance, javasimplified_ImportDeclaration)
 
 @given(instance=Type_strategy)
 @settings(max_examples=50)
 def test_type_instantiation(instance):
     assert isinstance(instance, Type)
 
-@given(instance=javasimplified::Interface_strategy)
+@given(instance=javasimplified_Interface_strategy)
 @settings(max_examples=50)
-def test_javasimplified::interface_instantiation(instance):
-    assert isinstance(instance, javasimplified::Interface)
+def test_javasimplified_interface_instantiation(instance):
+    assert isinstance(instance, javasimplified_Interface)
 
-@given(instance=javasimplified::PrimitiveType_strategy)
+@given(instance=javasimplified_PrimitiveType_strategy)
 @settings(max_examples=50)
-def test_javasimplified::primitivetype_instantiation(instance):
-    assert isinstance(instance, javasimplified::PrimitiveType)
+def test_javasimplified_primitivetype_instantiation(instance):
+    assert isinstance(instance, javasimplified_PrimitiveType)
 
-@given(instance=javasimplified::Comment_strategy)
+@given(instance=javasimplified_Comment_strategy)
 @settings(max_examples=50)
-def test_javasimplified::comment_instantiation(instance):
-    assert isinstance(instance, javasimplified::Comment)
+def test_javasimplified_comment_instantiation(instance):
+    assert isinstance(instance, javasimplified_Comment)
 
 @given(instance=Statement_strategy)
 @settings(max_examples=50)
 def test_statement_instantiation(instance):
     assert isinstance(instance, Statement)
 
-@given(instance=javasimplified::TryStatement_strategy)
+@given(instance=javasimplified_TryStatement_strategy)
 @settings(max_examples=50)
-def test_javasimplified::trystatement_instantiation(instance):
-    assert isinstance(instance, javasimplified::TryStatement)
+def test_javasimplified_trystatement_instantiation(instance):
+    assert isinstance(instance, javasimplified_TryStatement)
 
-@given(instance=javasimplified::ThrowStatement_strategy)
+@given(instance=javasimplified_ExpressionStatement_strategy)
 @settings(max_examples=50)
-def test_javasimplified::throwstatement_instantiation(instance):
-    assert isinstance(instance, javasimplified::ThrowStatement)
+def test_javasimplified_expressionstatement_instantiation(instance):
+    assert isinstance(instance, javasimplified_ExpressionStatement)
 
-@given(instance=javasimplified::CatchStatment_strategy)
+@given(instance=javasimplified_WhileStatement_strategy)
 @settings(max_examples=50)
-def test_javasimplified::catchstatment_instantiation(instance):
-    assert isinstance(instance, javasimplified::CatchStatment)
+def test_javasimplified_whilestatement_instantiation(instance):
+    assert isinstance(instance, javasimplified_WhileStatement)
 
-@given(instance=javasimplified::IfStatement_strategy)
+@given(instance=javasimplified_CatchStatment_strategy)
 @settings(max_examples=50)
-def test_javasimplified::ifstatement_instantiation(instance):
-    assert isinstance(instance, javasimplified::IfStatement)
+def test_javasimplified_catchstatment_instantiation(instance):
+    assert isinstance(instance, javasimplified_CatchStatment)
 
-@given(instance=javasimplified::ForStatement_strategy)
+@given(instance=javasimplified_IfStatement_strategy)
 @settings(max_examples=50)
-def test_javasimplified::forstatement_instantiation(instance):
-    assert isinstance(instance, javasimplified::ForStatement)
+def test_javasimplified_ifstatement_instantiation(instance):
+    assert isinstance(instance, javasimplified_IfStatement)
 
-@given(instance=javasimplified::Block_strategy)
+@given(instance=javasimplified_Block_strategy)
 @settings(max_examples=50)
-def test_javasimplified::block_instantiation(instance):
-    assert isinstance(instance, javasimplified::Block)
+def test_javasimplified_block_instantiation(instance):
+    assert isinstance(instance, javasimplified_Block)
 
-@given(instance=javasimplified::ReturnStatement_strategy)
+@given(instance=javasimplified_ReturnStatement_strategy)
 @settings(max_examples=50)
-def test_javasimplified::returnstatement_instantiation(instance):
-    assert isinstance(instance, javasimplified::ReturnStatement)
+def test_javasimplified_returnstatement_instantiation(instance):
+    assert isinstance(instance, javasimplified_ReturnStatement)
 
-@given(instance=javasimplified::WhileStatement_strategy)
+@given(instance=javasimplified_ForStatement_strategy)
 @settings(max_examples=50)
-def test_javasimplified::whilestatement_instantiation(instance):
-    assert isinstance(instance, javasimplified::WhileStatement)
+def test_javasimplified_forstatement_instantiation(instance):
+    assert isinstance(instance, javasimplified_ForStatement)
 
-@given(instance=javasimplified::ExpressionStatement_strategy)
+@given(instance=javasimplified_ThrowStatement_strategy)
 @settings(max_examples=50)
-def test_javasimplified::expressionstatement_instantiation(instance):
-    assert isinstance(instance, javasimplified::ExpressionStatement)
+def test_javasimplified_throwstatement_instantiation(instance):
+    assert isinstance(instance, javasimplified_ThrowStatement)
 
-@given(instance=javasimplified::Variable_strategy)
+@given(instance=javasimplified_Variable_strategy)
 @settings(max_examples=50)
-def test_javasimplified::variable_instantiation(instance):
-    assert isinstance(instance, javasimplified::Variable)
-
-@given(instance=javasimplified::Variable_strategy)
-def test_javasimplified::variable_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_javasimplified_variable_instantiation(instance):
+    assert isinstance(instance, javasimplified_Variable)
 
 
-@given(instance=javasimplified::Variable_strategy)
-def test_javasimplified::variable_name_setter(instance):
+
+@given(instance=javasimplified_Variable_strategy)
+def test_javasimplified_variable_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=javasimplified::Statement_strategy)
+@given(instance=javasimplified_Statement_strategy)
 @settings(max_examples=50)
-def test_javasimplified::statement_instantiation(instance):
-    assert isinstance(instance, javasimplified::Statement)
+def test_javasimplified_statement_instantiation(instance):
+    assert isinstance(instance, javasimplified_Statement)
 
-@given(instance=javasimplified::Modifier_strategy)
+@given(instance=javasimplified_Modifier_strategy)
 @settings(max_examples=50)
-def test_javasimplified::modifier_instantiation(instance):
-    assert isinstance(instance, javasimplified::Modifier)
-
-@given(instance=javasimplified::Modifier_strategy)
-def test_javasimplified::modifier_isVolatile_type(instance):
-    assert isinstance(instance.isVolatile, bool)
+def test_javasimplified_modifier_instantiation(instance):
+    assert isinstance(instance, javasimplified_Modifier)
 
 
-@given(instance=javasimplified::Modifier_strategy)
-def test_javasimplified::modifier_isVolatile_setter(instance):
-    original = instance.isVolatile
-    instance.isVolatile = original
-    assert instance.isVolatile == original
 
-@given(instance=javasimplified::Modifier_strategy)
-def test_javasimplified::modifier_visibility_type(instance):
-    assert isinstance(instance.visibility, str)
-
-
-@given(instance=javasimplified::Modifier_strategy)
-def test_javasimplified::modifier_visibility_setter(instance):
-    original = instance.visibility
-    instance.visibility = original
-    assert instance.visibility == original
-
-@given(instance=javasimplified::Modifier_strategy)
-def test_javasimplified::modifier_isStatic_type(instance):
-    assert isinstance(instance.isStatic, bool)
-
-
-@given(instance=javasimplified::Modifier_strategy)
-def test_javasimplified::modifier_isStatic_setter(instance):
-    original = instance.isStatic
-    instance.isStatic = original
-    assert instance.isStatic == original
-
-@given(instance=javasimplified::Modifier_strategy)
-def test_javasimplified::modifier_isSynchronized_type(instance):
-    assert isinstance(instance.isSynchronized, bool)
-
-
-@given(instance=javasimplified::Modifier_strategy)
-def test_javasimplified::modifier_isSynchronized_setter(instance):
-    original = instance.isSynchronized
-    instance.isSynchronized = original
-    assert instance.isSynchronized == original
-
-@given(instance=javasimplified::Modifier_strategy)
-def test_javasimplified::modifier_isFinal_type(instance):
-    assert isinstance(instance.isFinal, bool)
-
-
-@given(instance=javasimplified::Modifier_strategy)
-def test_javasimplified::modifier_isFinal_setter(instance):
+@given(instance=javasimplified_Modifier_strategy)
+def test_javasimplified_modifier_isFinal_setter(instance):
     original = instance.isFinal
     instance.isFinal = original
     assert instance.isFinal == original
 
-@given(instance=javasimplified::Class_strategy)
+
+
+@given(instance=javasimplified_Modifier_strategy)
+def test_javasimplified_modifier_isStatic_setter(instance):
+    original = instance.isStatic
+    instance.isStatic = original
+    assert instance.isStatic == original
+
+
+
+@given(instance=javasimplified_Modifier_strategy)
+def test_javasimplified_modifier_isSynchronized_setter(instance):
+    original = instance.isSynchronized
+    instance.isSynchronized = original
+    assert instance.isSynchronized == original
+
+
+
+@given(instance=javasimplified_Modifier_strategy)
+def test_javasimplified_modifier_visibility_setter(instance):
+    original = instance.visibility
+    instance.visibility = original
+    assert instance.visibility == original
+
+
+
+@given(instance=javasimplified_Modifier_strategy)
+def test_javasimplified_modifier_isVolatile_setter(instance):
+    original = instance.isVolatile
+    instance.isVolatile = original
+    assert instance.isVolatile == original
+
+@given(instance=javasimplified_Class_strategy)
 @settings(max_examples=50)
-def test_javasimplified::class_instantiation(instance):
-    assert isinstance(instance, javasimplified::Class)
-
-@given(instance=javasimplified::Class_strategy)
-def test_javasimplified::class_isAbstract_type(instance):
-    assert isinstance(instance.isAbstract, bool)
+def test_javasimplified_class_instantiation(instance):
+    assert isinstance(instance, javasimplified_Class)
 
 
-@given(instance=javasimplified::Class_strategy)
-def test_javasimplified::class_isAbstract_setter(instance):
+
+@given(instance=javasimplified_Class_strategy)
+def test_javasimplified_class_isAbstract_setter(instance):
     original = instance.isAbstract
     instance.isAbstract = original
     assert instance.isAbstract == original
@@ -1203,38 +1170,35 @@ def test_javasimplified::class_isAbstract_setter(instance):
 def test_namedelement_instantiation(instance):
     assert isinstance(instance, NamedElement)
 
-@given(instance=javasimplified::Parameter_strategy)
+@given(instance=javasimplified_Type_strategy)
 @settings(max_examples=50)
-def test_javasimplified::parameter_instantiation(instance):
-    assert isinstance(instance, javasimplified::Parameter)
+def test_javasimplified_type_instantiation(instance):
+    assert isinstance(instance, javasimplified_Type)
 
-@given(instance=javasimplified::Package_strategy)
+@given(instance=javasimplified_Model_strategy)
 @settings(max_examples=50)
-def test_javasimplified::package_instantiation(instance):
-    assert isinstance(instance, javasimplified::Package)
+def test_javasimplified_model_instantiation(instance):
+    assert isinstance(instance, javasimplified_Model)
 
-@given(instance=javasimplified::Model_strategy)
+@given(instance=javasimplified_Parameter_strategy)
 @settings(max_examples=50)
-def test_javasimplified::model_instantiation(instance):
-    assert isinstance(instance, javasimplified::Model)
+def test_javasimplified_parameter_instantiation(instance):
+    assert isinstance(instance, javasimplified_Parameter)
 
-@given(instance=javasimplified::Type_strategy)
+@given(instance=javasimplified_Package_strategy)
 @settings(max_examples=50)
-def test_javasimplified::type_instantiation(instance):
-    assert isinstance(instance, javasimplified::Type)
+def test_javasimplified_package_instantiation(instance):
+    assert isinstance(instance, javasimplified_Package)
 
-@given(instance=javasimplified::Method_strategy)
+@given(instance=javasimplified_Method_strategy)
 @settings(max_examples=50)
-def test_javasimplified::method_instantiation(instance):
-    assert isinstance(instance, javasimplified::Method)
-
-@given(instance=javasimplified::Method_strategy)
-def test_javasimplified::method_visibility_type(instance):
-    assert isinstance(instance.visibility, str)
+def test_javasimplified_method_instantiation(instance):
+    assert isinstance(instance, javasimplified_Method)
 
 
-@given(instance=javasimplified::Method_strategy)
-def test_javasimplified::method_visibility_setter(instance):
+
+@given(instance=javasimplified_Method_strategy)
+def test_javasimplified_method_visibility_setter(instance):
     original = instance.visibility
     instance.visibility = original
     assert instance.visibility == original

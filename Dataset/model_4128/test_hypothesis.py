@@ -3,20 +3,20 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     ExpOp,
-    mathAssignmentLanguage::Mult,
-    mathAssignmentLanguage::ExpOp,
+    mathAssignmentLanguage_Mult,
+    mathAssignmentLanguage_ExpOp,
     Exp,
-    mathAssignmentLanguage::Parenthesis,
-    mathAssignmentLanguage::Number,
-    mathAssignmentLanguage::Minus,
-    mathAssignmentLanguage::Plus,
-    mathAssignmentLanguage::Div,
-    mathAssignmentLanguage::Exp,
-    mathAssignmentLanguage::MathExp,
+    mathAssignmentLanguage_Parenthesis,
+    mathAssignmentLanguage_Number,
+    mathAssignmentLanguage_Minus,
+    mathAssignmentLanguage_Plus,
+    mathAssignmentLanguage_Div,
+    mathAssignmentLanguage_Exp,
+    mathAssignmentLanguage_MathExp,
 )
 
 # =============================================================================
@@ -39,30 +39,30 @@ def test_expop_constructor_args():
 
 
 
-def test_mathassignmentlanguage::mult_is_not_abstract():
-    assert not inspect.isabstract(mathAssignmentLanguage::Mult)
+def test_mathassignmentlanguage_mult_is_not_abstract():
+    assert not inspect.isabstract(mathAssignmentLanguage_Mult)
 
 
-def test_mathassignmentlanguage::mult_constructor_exists():
-    assert callable(mathAssignmentLanguage::Mult.__init__)
+def test_mathassignmentlanguage_mult_constructor_exists():
+    assert callable(mathAssignmentLanguage_Mult.__init__)
 
 
-def test_mathassignmentlanguage::mult_constructor_args():
-    sig = inspect.signature(mathAssignmentLanguage::Mult.__init__)
+def test_mathassignmentlanguage_mult_constructor_args():
+    sig = inspect.signature(mathAssignmentLanguage_Mult.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_mathassignmentlanguage::expop_is_not_abstract():
-    assert not inspect.isabstract(mathAssignmentLanguage::ExpOp)
+def test_mathassignmentlanguage_expop_is_not_abstract():
+    assert not inspect.isabstract(mathAssignmentLanguage_ExpOp)
 
 
-def test_mathassignmentlanguage::expop_constructor_exists():
-    assert callable(mathAssignmentLanguage::ExpOp.__init__)
+def test_mathassignmentlanguage_expop_constructor_exists():
+    assert callable(mathAssignmentLanguage_ExpOp.__init__)
 
 
-def test_mathassignmentlanguage::expop_constructor_args():
-    sig = inspect.signature(mathAssignmentLanguage::ExpOp.__init__)
+def test_mathassignmentlanguage_expop_constructor_args():
+    sig = inspect.signature(mathAssignmentLanguage_ExpOp.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -81,37 +81,37 @@ def test_exp_constructor_args():
 
 
 
-def test_mathassignmentlanguage::parenthesis_is_not_abstract():
-    assert not inspect.isabstract(mathAssignmentLanguage::Parenthesis)
+def test_mathassignmentlanguage_parenthesis_is_not_abstract():
+    assert not inspect.isabstract(mathAssignmentLanguage_Parenthesis)
 
 
-def test_mathassignmentlanguage::parenthesis_constructor_exists():
-    assert callable(mathAssignmentLanguage::Parenthesis.__init__)
+def test_mathassignmentlanguage_parenthesis_constructor_exists():
+    assert callable(mathAssignmentLanguage_Parenthesis.__init__)
 
 
-def test_mathassignmentlanguage::parenthesis_constructor_args():
-    sig = inspect.signature(mathAssignmentLanguage::Parenthesis.__init__)
+def test_mathassignmentlanguage_parenthesis_constructor_args():
+    sig = inspect.signature(mathAssignmentLanguage_Parenthesis.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_mathassignmentlanguage::number_is_not_abstract():
-    assert not inspect.isabstract(mathAssignmentLanguage::Number)
+def test_mathassignmentlanguage_number_is_not_abstract():
+    assert not inspect.isabstract(mathAssignmentLanguage_Number)
 
 
-def test_mathassignmentlanguage::number_constructor_exists():
-    assert callable(mathAssignmentLanguage::Number.__init__)
+def test_mathassignmentlanguage_number_constructor_exists():
+    assert callable(mathAssignmentLanguage_Number.__init__)
 
 
-def test_mathassignmentlanguage::number_constructor_args():
-    sig = inspect.signature(mathAssignmentLanguage::Number.__init__)
+def test_mathassignmentlanguage_number_constructor_args():
+    sig = inspect.signature(mathAssignmentLanguage_Number.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
 
-def test_mathassignmentlanguage::number_has_value():
-    assert hasattr(mathAssignmentLanguage::Number, "value")
+def test_mathassignmentlanguage_number_has_value():
+    assert hasattr(mathAssignmentLanguage_Number, "value")
     descriptor = None
-    for klass in mathAssignmentLanguage::Number.__mro__:
+    for klass in mathAssignmentLanguage_Number.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -119,72 +119,72 @@ def test_mathassignmentlanguage::number_has_value():
 
 
 
-def test_mathassignmentlanguage::minus_is_not_abstract():
-    assert not inspect.isabstract(mathAssignmentLanguage::Minus)
+def test_mathassignmentlanguage_minus_is_not_abstract():
+    assert not inspect.isabstract(mathAssignmentLanguage_Minus)
 
 
-def test_mathassignmentlanguage::minus_constructor_exists():
-    assert callable(mathAssignmentLanguage::Minus.__init__)
+def test_mathassignmentlanguage_minus_constructor_exists():
+    assert callable(mathAssignmentLanguage_Minus.__init__)
 
 
-def test_mathassignmentlanguage::minus_constructor_args():
-    sig = inspect.signature(mathAssignmentLanguage::Minus.__init__)
+def test_mathassignmentlanguage_minus_constructor_args():
+    sig = inspect.signature(mathAssignmentLanguage_Minus.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_mathassignmentlanguage::plus_is_not_abstract():
-    assert not inspect.isabstract(mathAssignmentLanguage::Plus)
+def test_mathassignmentlanguage_plus_is_not_abstract():
+    assert not inspect.isabstract(mathAssignmentLanguage_Plus)
 
 
-def test_mathassignmentlanguage::plus_constructor_exists():
-    assert callable(mathAssignmentLanguage::Plus.__init__)
+def test_mathassignmentlanguage_plus_constructor_exists():
+    assert callable(mathAssignmentLanguage_Plus.__init__)
 
 
-def test_mathassignmentlanguage::plus_constructor_args():
-    sig = inspect.signature(mathAssignmentLanguage::Plus.__init__)
+def test_mathassignmentlanguage_plus_constructor_args():
+    sig = inspect.signature(mathAssignmentLanguage_Plus.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_mathassignmentlanguage::div_is_not_abstract():
-    assert not inspect.isabstract(mathAssignmentLanguage::Div)
+def test_mathassignmentlanguage_div_is_not_abstract():
+    assert not inspect.isabstract(mathAssignmentLanguage_Div)
 
 
-def test_mathassignmentlanguage::div_constructor_exists():
-    assert callable(mathAssignmentLanguage::Div.__init__)
+def test_mathassignmentlanguage_div_constructor_exists():
+    assert callable(mathAssignmentLanguage_Div.__init__)
 
 
-def test_mathassignmentlanguage::div_constructor_args():
-    sig = inspect.signature(mathAssignmentLanguage::Div.__init__)
+def test_mathassignmentlanguage_div_constructor_args():
+    sig = inspect.signature(mathAssignmentLanguage_Div.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_mathassignmentlanguage::exp_is_not_abstract():
-    assert not inspect.isabstract(mathAssignmentLanguage::Exp)
+def test_mathassignmentlanguage_exp_is_not_abstract():
+    assert not inspect.isabstract(mathAssignmentLanguage_Exp)
 
 
-def test_mathassignmentlanguage::exp_constructor_exists():
-    assert callable(mathAssignmentLanguage::Exp.__init__)
+def test_mathassignmentlanguage_exp_constructor_exists():
+    assert callable(mathAssignmentLanguage_Exp.__init__)
 
 
-def test_mathassignmentlanguage::exp_constructor_args():
-    sig = inspect.signature(mathAssignmentLanguage::Exp.__init__)
+def test_mathassignmentlanguage_exp_constructor_args():
+    sig = inspect.signature(mathAssignmentLanguage_Exp.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_mathassignmentlanguage::mathexp_is_not_abstract():
-    assert not inspect.isabstract(mathAssignmentLanguage::MathExp)
+def test_mathassignmentlanguage_mathexp_is_not_abstract():
+    assert not inspect.isabstract(mathAssignmentLanguage_MathExp)
 
 
-def test_mathassignmentlanguage::mathexp_constructor_exists():
-    assert callable(mathAssignmentLanguage::MathExp.__init__)
+def test_mathassignmentlanguage_mathexp_constructor_exists():
+    assert callable(mathAssignmentLanguage_MathExp.__init__)
 
 
-def test_mathassignmentlanguage::mathexp_constructor_args():
-    sig = inspect.signature(mathAssignmentLanguage::MathExp.__init__)
+def test_mathassignmentlanguage_mathexp_constructor_args():
+    sig = inspect.signature(mathAssignmentLanguage_MathExp.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -202,37 +202,37 @@ safe_text = st.text(
 ExpOp_strategy = st.builds(
     ExpOp,
 )
-mathAssignmentLanguage::Mult_strategy = st.builds(
-    mathAssignmentLanguage::Mult,
+mathAssignmentLanguage_Mult_strategy = st.builds(
+    mathAssignmentLanguage_Mult,
 )
-mathAssignmentLanguage::ExpOp_strategy = st.builds(
-    mathAssignmentLanguage::ExpOp,
+mathAssignmentLanguage_ExpOp_strategy = st.builds(
+    mathAssignmentLanguage_ExpOp,
 )
 Exp_strategy = st.builds(
     Exp,
 )
-mathAssignmentLanguage::Parenthesis_strategy = st.builds(
-    mathAssignmentLanguage::Parenthesis,
+mathAssignmentLanguage_Parenthesis_strategy = st.builds(
+    mathAssignmentLanguage_Parenthesis,
 )
-mathAssignmentLanguage::Number_strategy = st.builds(
-    mathAssignmentLanguage::Number,
+mathAssignmentLanguage_Number_strategy = st.builds(
+    mathAssignmentLanguage_Number,
     value=
         st.integers()
 )
-mathAssignmentLanguage::Minus_strategy = st.builds(
-    mathAssignmentLanguage::Minus,
+mathAssignmentLanguage_Minus_strategy = st.builds(
+    mathAssignmentLanguage_Minus,
 )
-mathAssignmentLanguage::Plus_strategy = st.builds(
-    mathAssignmentLanguage::Plus,
+mathAssignmentLanguage_Plus_strategy = st.builds(
+    mathAssignmentLanguage_Plus,
 )
-mathAssignmentLanguage::Div_strategy = st.builds(
-    mathAssignmentLanguage::Div,
+mathAssignmentLanguage_Div_strategy = st.builds(
+    mathAssignmentLanguage_Div,
 )
-mathAssignmentLanguage::Exp_strategy = st.builds(
-    mathAssignmentLanguage::Exp,
+mathAssignmentLanguage_Exp_strategy = st.builds(
+    mathAssignmentLanguage_Exp,
 )
-mathAssignmentLanguage::MathExp_strategy = st.builds(
-    mathAssignmentLanguage::MathExp,
+mathAssignmentLanguage_MathExp_strategy = st.builds(
+    mathAssignmentLanguage_MathExp,
 )
 
 @given(instance=ExpOp_strategy)
@@ -240,63 +240,60 @@ mathAssignmentLanguage::MathExp_strategy = st.builds(
 def test_expop_instantiation(instance):
     assert isinstance(instance, ExpOp)
 
-@given(instance=mathAssignmentLanguage::Mult_strategy)
+@given(instance=mathAssignmentLanguage_Mult_strategy)
 @settings(max_examples=50)
-def test_mathassignmentlanguage::mult_instantiation(instance):
-    assert isinstance(instance, mathAssignmentLanguage::Mult)
+def test_mathassignmentlanguage_mult_instantiation(instance):
+    assert isinstance(instance, mathAssignmentLanguage_Mult)
 
-@given(instance=mathAssignmentLanguage::ExpOp_strategy)
+@given(instance=mathAssignmentLanguage_ExpOp_strategy)
 @settings(max_examples=50)
-def test_mathassignmentlanguage::expop_instantiation(instance):
-    assert isinstance(instance, mathAssignmentLanguage::ExpOp)
+def test_mathassignmentlanguage_expop_instantiation(instance):
+    assert isinstance(instance, mathAssignmentLanguage_ExpOp)
 
 @given(instance=Exp_strategy)
 @settings(max_examples=50)
 def test_exp_instantiation(instance):
     assert isinstance(instance, Exp)
 
-@given(instance=mathAssignmentLanguage::Parenthesis_strategy)
+@given(instance=mathAssignmentLanguage_Parenthesis_strategy)
 @settings(max_examples=50)
-def test_mathassignmentlanguage::parenthesis_instantiation(instance):
-    assert isinstance(instance, mathAssignmentLanguage::Parenthesis)
+def test_mathassignmentlanguage_parenthesis_instantiation(instance):
+    assert isinstance(instance, mathAssignmentLanguage_Parenthesis)
 
-@given(instance=mathAssignmentLanguage::Number_strategy)
+@given(instance=mathAssignmentLanguage_Number_strategy)
 @settings(max_examples=50)
-def test_mathassignmentlanguage::number_instantiation(instance):
-    assert isinstance(instance, mathAssignmentLanguage::Number)
-
-@given(instance=mathAssignmentLanguage::Number_strategy)
-def test_mathassignmentlanguage::number_value_type(instance):
-    assert isinstance(instance.value, int)
+def test_mathassignmentlanguage_number_instantiation(instance):
+    assert isinstance(instance, mathAssignmentLanguage_Number)
 
 
-@given(instance=mathAssignmentLanguage::Number_strategy)
-def test_mathassignmentlanguage::number_value_setter(instance):
+
+@given(instance=mathAssignmentLanguage_Number_strategy)
+def test_mathassignmentlanguage_number_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
 
-@given(instance=mathAssignmentLanguage::Minus_strategy)
+@given(instance=mathAssignmentLanguage_Minus_strategy)
 @settings(max_examples=50)
-def test_mathassignmentlanguage::minus_instantiation(instance):
-    assert isinstance(instance, mathAssignmentLanguage::Minus)
+def test_mathassignmentlanguage_minus_instantiation(instance):
+    assert isinstance(instance, mathAssignmentLanguage_Minus)
 
-@given(instance=mathAssignmentLanguage::Plus_strategy)
+@given(instance=mathAssignmentLanguage_Plus_strategy)
 @settings(max_examples=50)
-def test_mathassignmentlanguage::plus_instantiation(instance):
-    assert isinstance(instance, mathAssignmentLanguage::Plus)
+def test_mathassignmentlanguage_plus_instantiation(instance):
+    assert isinstance(instance, mathAssignmentLanguage_Plus)
 
-@given(instance=mathAssignmentLanguage::Div_strategy)
+@given(instance=mathAssignmentLanguage_Div_strategy)
 @settings(max_examples=50)
-def test_mathassignmentlanguage::div_instantiation(instance):
-    assert isinstance(instance, mathAssignmentLanguage::Div)
+def test_mathassignmentlanguage_div_instantiation(instance):
+    assert isinstance(instance, mathAssignmentLanguage_Div)
 
-@given(instance=mathAssignmentLanguage::Exp_strategy)
+@given(instance=mathAssignmentLanguage_Exp_strategy)
 @settings(max_examples=50)
-def test_mathassignmentlanguage::exp_instantiation(instance):
-    assert isinstance(instance, mathAssignmentLanguage::Exp)
+def test_mathassignmentlanguage_exp_instantiation(instance):
+    assert isinstance(instance, mathAssignmentLanguage_Exp)
 
-@given(instance=mathAssignmentLanguage::MathExp_strategy)
+@given(instance=mathAssignmentLanguage_MathExp_strategy)
 @settings(max_examples=50)
-def test_mathassignmentlanguage::mathexp_instantiation(instance):
-    assert isinstance(instance, mathAssignmentLanguage::MathExp)
+def test_mathassignmentlanguage_mathexp_instantiation(instance):
+    assert isinstance(instance, mathAssignmentLanguage_MathExp)

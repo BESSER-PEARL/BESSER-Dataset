@@ -3,21 +3,21 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    ComponentLanguageDeep::Connector,
-    ComponentLanguageDeep::Port,
-    ComponentLanguageDeep::ConnectorInstance,
-    ComponentLanguageDeep::PortInstance,
-    ComponentLanguageDeep::ComponentInstance,
+from python_code import (
+    ComponentLanguageDeep_Connector,
+    ComponentLanguageDeep_Port,
+    ComponentLanguageDeep_ConnectorInstance,
+    ComponentLanguageDeep_PortInstance,
+    ComponentLanguageDeep_ComponentInstance,
     PortInstance,
-    ComponentLanguageDeep::OutPortInstance,
-    ComponentLanguageDeep::InPortInstance,
+    ComponentLanguageDeep_OutPortInstance,
+    ComponentLanguageDeep_InPortInstance,
     Port,
-    ComponentLanguageDeep::OutPort,
-    ComponentLanguageDeep::InPort,
-    ComponentLanguageDeep::Component,
+    ComponentLanguageDeep_OutPort,
+    ComponentLanguageDeep_InPort,
+    ComponentLanguageDeep_Component,
 )
 
 # =============================================================================
@@ -26,72 +26,72 @@ from classes import (
 
 
 
-def test_componentlanguagedeep::connector_is_not_abstract():
-    assert not inspect.isabstract(ComponentLanguageDeep::Connector)
+def test_componentlanguagedeep_connector_is_not_abstract():
+    assert not inspect.isabstract(ComponentLanguageDeep_Connector)
 
 
-def test_componentlanguagedeep::connector_constructor_exists():
-    assert callable(ComponentLanguageDeep::Connector.__init__)
+def test_componentlanguagedeep_connector_constructor_exists():
+    assert callable(ComponentLanguageDeep_Connector.__init__)
 
 
-def test_componentlanguagedeep::connector_constructor_args():
-    sig = inspect.signature(ComponentLanguageDeep::Connector.__init__)
+def test_componentlanguagedeep_connector_constructor_args():
+    sig = inspect.signature(ComponentLanguageDeep_Connector.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_componentlanguagedeep::port_is_not_abstract():
-    assert not inspect.isabstract(ComponentLanguageDeep::Port)
+def test_componentlanguagedeep_port_is_not_abstract():
+    assert not inspect.isabstract(ComponentLanguageDeep_Port)
 
 
-def test_componentlanguagedeep::port_constructor_exists():
-    assert callable(ComponentLanguageDeep::Port.__init__)
+def test_componentlanguagedeep_port_constructor_exists():
+    assert callable(ComponentLanguageDeep_Port.__init__)
 
 
-def test_componentlanguagedeep::port_constructor_args():
-    sig = inspect.signature(ComponentLanguageDeep::Port.__init__)
+def test_componentlanguagedeep_port_constructor_args():
+    sig = inspect.signature(ComponentLanguageDeep_Port.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_componentlanguagedeep::connectorinstance_is_not_abstract():
-    assert not inspect.isabstract(ComponentLanguageDeep::ConnectorInstance)
+def test_componentlanguagedeep_connectorinstance_is_not_abstract():
+    assert not inspect.isabstract(ComponentLanguageDeep_ConnectorInstance)
 
 
-def test_componentlanguagedeep::connectorinstance_constructor_exists():
-    assert callable(ComponentLanguageDeep::ConnectorInstance.__init__)
+def test_componentlanguagedeep_connectorinstance_constructor_exists():
+    assert callable(ComponentLanguageDeep_ConnectorInstance.__init__)
 
 
-def test_componentlanguagedeep::connectorinstance_constructor_args():
-    sig = inspect.signature(ComponentLanguageDeep::ConnectorInstance.__init__)
+def test_componentlanguagedeep_connectorinstance_constructor_args():
+    sig = inspect.signature(ComponentLanguageDeep_ConnectorInstance.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_componentlanguagedeep::portinstance_is_not_abstract():
-    assert not inspect.isabstract(ComponentLanguageDeep::PortInstance)
+def test_componentlanguagedeep_portinstance_is_not_abstract():
+    assert not inspect.isabstract(ComponentLanguageDeep_PortInstance)
 
 
-def test_componentlanguagedeep::portinstance_constructor_exists():
-    assert callable(ComponentLanguageDeep::PortInstance.__init__)
+def test_componentlanguagedeep_portinstance_constructor_exists():
+    assert callable(ComponentLanguageDeep_PortInstance.__init__)
 
 
-def test_componentlanguagedeep::portinstance_constructor_args():
-    sig = inspect.signature(ComponentLanguageDeep::PortInstance.__init__)
+def test_componentlanguagedeep_portinstance_constructor_args():
+    sig = inspect.signature(ComponentLanguageDeep_PortInstance.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_componentlanguagedeep::componentinstance_is_not_abstract():
-    assert not inspect.isabstract(ComponentLanguageDeep::ComponentInstance)
+def test_componentlanguagedeep_componentinstance_is_not_abstract():
+    assert not inspect.isabstract(ComponentLanguageDeep_ComponentInstance)
 
 
-def test_componentlanguagedeep::componentinstance_constructor_exists():
-    assert callable(ComponentLanguageDeep::ComponentInstance.__init__)
+def test_componentlanguagedeep_componentinstance_constructor_exists():
+    assert callable(ComponentLanguageDeep_ComponentInstance.__init__)
 
 
-def test_componentlanguagedeep::componentinstance_constructor_args():
-    sig = inspect.signature(ComponentLanguageDeep::ComponentInstance.__init__)
+def test_componentlanguagedeep_componentinstance_constructor_args():
+    sig = inspect.signature(ComponentLanguageDeep_ComponentInstance.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -110,30 +110,30 @@ def test_portinstance_constructor_args():
 
 
 
-def test_componentlanguagedeep::outportinstance_is_not_abstract():
-    assert not inspect.isabstract(ComponentLanguageDeep::OutPortInstance)
+def test_componentlanguagedeep_outportinstance_is_not_abstract():
+    assert not inspect.isabstract(ComponentLanguageDeep_OutPortInstance)
 
 
-def test_componentlanguagedeep::outportinstance_constructor_exists():
-    assert callable(ComponentLanguageDeep::OutPortInstance.__init__)
+def test_componentlanguagedeep_outportinstance_constructor_exists():
+    assert callable(ComponentLanguageDeep_OutPortInstance.__init__)
 
 
-def test_componentlanguagedeep::outportinstance_constructor_args():
-    sig = inspect.signature(ComponentLanguageDeep::OutPortInstance.__init__)
+def test_componentlanguagedeep_outportinstance_constructor_args():
+    sig = inspect.signature(ComponentLanguageDeep_OutPortInstance.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_componentlanguagedeep::inportinstance_is_not_abstract():
-    assert not inspect.isabstract(ComponentLanguageDeep::InPortInstance)
+def test_componentlanguagedeep_inportinstance_is_not_abstract():
+    assert not inspect.isabstract(ComponentLanguageDeep_InPortInstance)
 
 
-def test_componentlanguagedeep::inportinstance_constructor_exists():
-    assert callable(ComponentLanguageDeep::InPortInstance.__init__)
+def test_componentlanguagedeep_inportinstance_constructor_exists():
+    assert callable(ComponentLanguageDeep_InPortInstance.__init__)
 
 
-def test_componentlanguagedeep::inportinstance_constructor_args():
-    sig = inspect.signature(ComponentLanguageDeep::InPortInstance.__init__)
+def test_componentlanguagedeep_inportinstance_constructor_args():
+    sig = inspect.signature(ComponentLanguageDeep_InPortInstance.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -152,44 +152,44 @@ def test_port_constructor_args():
 
 
 
-def test_componentlanguagedeep::outport_is_not_abstract():
-    assert not inspect.isabstract(ComponentLanguageDeep::OutPort)
+def test_componentlanguagedeep_outport_is_not_abstract():
+    assert not inspect.isabstract(ComponentLanguageDeep_OutPort)
 
 
-def test_componentlanguagedeep::outport_constructor_exists():
-    assert callable(ComponentLanguageDeep::OutPort.__init__)
+def test_componentlanguagedeep_outport_constructor_exists():
+    assert callable(ComponentLanguageDeep_OutPort.__init__)
 
 
-def test_componentlanguagedeep::outport_constructor_args():
-    sig = inspect.signature(ComponentLanguageDeep::OutPort.__init__)
+def test_componentlanguagedeep_outport_constructor_args():
+    sig = inspect.signature(ComponentLanguageDeep_OutPort.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_componentlanguagedeep::inport_is_not_abstract():
-    assert not inspect.isabstract(ComponentLanguageDeep::InPort)
+def test_componentlanguagedeep_inport_is_not_abstract():
+    assert not inspect.isabstract(ComponentLanguageDeep_InPort)
 
 
-def test_componentlanguagedeep::inport_constructor_exists():
-    assert callable(ComponentLanguageDeep::InPort.__init__)
+def test_componentlanguagedeep_inport_constructor_exists():
+    assert callable(ComponentLanguageDeep_InPort.__init__)
 
 
-def test_componentlanguagedeep::inport_constructor_args():
-    sig = inspect.signature(ComponentLanguageDeep::InPort.__init__)
+def test_componentlanguagedeep_inport_constructor_args():
+    sig = inspect.signature(ComponentLanguageDeep_InPort.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_componentlanguagedeep::component_is_not_abstract():
-    assert not inspect.isabstract(ComponentLanguageDeep::Component)
+def test_componentlanguagedeep_component_is_not_abstract():
+    assert not inspect.isabstract(ComponentLanguageDeep_Component)
 
 
-def test_componentlanguagedeep::component_constructor_exists():
-    assert callable(ComponentLanguageDeep::Component.__init__)
+def test_componentlanguagedeep_component_constructor_exists():
+    assert callable(ComponentLanguageDeep_Component.__init__)
 
 
-def test_componentlanguagedeep::component_constructor_args():
-    sig = inspect.signature(ComponentLanguageDeep::Component.__init__)
+def test_componentlanguagedeep_component_constructor_args():
+    sig = inspect.signature(ComponentLanguageDeep_Component.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -204,99 +204,99 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-ComponentLanguageDeep::Connector_strategy = st.builds(
-    ComponentLanguageDeep::Connector,
+ComponentLanguageDeep_Connector_strategy = st.builds(
+    ComponentLanguageDeep_Connector,
 )
-ComponentLanguageDeep::Port_strategy = st.builds(
-    ComponentLanguageDeep::Port,
+ComponentLanguageDeep_Port_strategy = st.builds(
+    ComponentLanguageDeep_Port,
 )
-ComponentLanguageDeep::ConnectorInstance_strategy = st.builds(
-    ComponentLanguageDeep::ConnectorInstance,
+ComponentLanguageDeep_ConnectorInstance_strategy = st.builds(
+    ComponentLanguageDeep_ConnectorInstance,
 )
-ComponentLanguageDeep::PortInstance_strategy = st.builds(
-    ComponentLanguageDeep::PortInstance,
+ComponentLanguageDeep_PortInstance_strategy = st.builds(
+    ComponentLanguageDeep_PortInstance,
 )
-ComponentLanguageDeep::ComponentInstance_strategy = st.builds(
-    ComponentLanguageDeep::ComponentInstance,
+ComponentLanguageDeep_ComponentInstance_strategy = st.builds(
+    ComponentLanguageDeep_ComponentInstance,
 )
 PortInstance_strategy = st.builds(
     PortInstance,
 )
-ComponentLanguageDeep::OutPortInstance_strategy = st.builds(
-    ComponentLanguageDeep::OutPortInstance,
+ComponentLanguageDeep_OutPortInstance_strategy = st.builds(
+    ComponentLanguageDeep_OutPortInstance,
 )
-ComponentLanguageDeep::InPortInstance_strategy = st.builds(
-    ComponentLanguageDeep::InPortInstance,
+ComponentLanguageDeep_InPortInstance_strategy = st.builds(
+    ComponentLanguageDeep_InPortInstance,
 )
 Port_strategy = st.builds(
     Port,
 )
-ComponentLanguageDeep::OutPort_strategy = st.builds(
-    ComponentLanguageDeep::OutPort,
+ComponentLanguageDeep_OutPort_strategy = st.builds(
+    ComponentLanguageDeep_OutPort,
 )
-ComponentLanguageDeep::InPort_strategy = st.builds(
-    ComponentLanguageDeep::InPort,
+ComponentLanguageDeep_InPort_strategy = st.builds(
+    ComponentLanguageDeep_InPort,
 )
-ComponentLanguageDeep::Component_strategy = st.builds(
-    ComponentLanguageDeep::Component,
+ComponentLanguageDeep_Component_strategy = st.builds(
+    ComponentLanguageDeep_Component,
 )
 
-@given(instance=ComponentLanguageDeep::Connector_strategy)
+@given(instance=ComponentLanguageDeep_Connector_strategy)
 @settings(max_examples=50)
-def test_componentlanguagedeep::connector_instantiation(instance):
-    assert isinstance(instance, ComponentLanguageDeep::Connector)
+def test_componentlanguagedeep_connector_instantiation(instance):
+    assert isinstance(instance, ComponentLanguageDeep_Connector)
 
-@given(instance=ComponentLanguageDeep::Port_strategy)
+@given(instance=ComponentLanguageDeep_Port_strategy)
 @settings(max_examples=50)
-def test_componentlanguagedeep::port_instantiation(instance):
-    assert isinstance(instance, ComponentLanguageDeep::Port)
+def test_componentlanguagedeep_port_instantiation(instance):
+    assert isinstance(instance, ComponentLanguageDeep_Port)
 
-@given(instance=ComponentLanguageDeep::ConnectorInstance_strategy)
+@given(instance=ComponentLanguageDeep_ConnectorInstance_strategy)
 @settings(max_examples=50)
-def test_componentlanguagedeep::connectorinstance_instantiation(instance):
-    assert isinstance(instance, ComponentLanguageDeep::ConnectorInstance)
+def test_componentlanguagedeep_connectorinstance_instantiation(instance):
+    assert isinstance(instance, ComponentLanguageDeep_ConnectorInstance)
 
-@given(instance=ComponentLanguageDeep::PortInstance_strategy)
+@given(instance=ComponentLanguageDeep_PortInstance_strategy)
 @settings(max_examples=50)
-def test_componentlanguagedeep::portinstance_instantiation(instance):
-    assert isinstance(instance, ComponentLanguageDeep::PortInstance)
+def test_componentlanguagedeep_portinstance_instantiation(instance):
+    assert isinstance(instance, ComponentLanguageDeep_PortInstance)
 
-@given(instance=ComponentLanguageDeep::ComponentInstance_strategy)
+@given(instance=ComponentLanguageDeep_ComponentInstance_strategy)
 @settings(max_examples=50)
-def test_componentlanguagedeep::componentinstance_instantiation(instance):
-    assert isinstance(instance, ComponentLanguageDeep::ComponentInstance)
+def test_componentlanguagedeep_componentinstance_instantiation(instance):
+    assert isinstance(instance, ComponentLanguageDeep_ComponentInstance)
 
 @given(instance=PortInstance_strategy)
 @settings(max_examples=50)
 def test_portinstance_instantiation(instance):
     assert isinstance(instance, PortInstance)
 
-@given(instance=ComponentLanguageDeep::OutPortInstance_strategy)
+@given(instance=ComponentLanguageDeep_OutPortInstance_strategy)
 @settings(max_examples=50)
-def test_componentlanguagedeep::outportinstance_instantiation(instance):
-    assert isinstance(instance, ComponentLanguageDeep::OutPortInstance)
+def test_componentlanguagedeep_outportinstance_instantiation(instance):
+    assert isinstance(instance, ComponentLanguageDeep_OutPortInstance)
 
-@given(instance=ComponentLanguageDeep::InPortInstance_strategy)
+@given(instance=ComponentLanguageDeep_InPortInstance_strategy)
 @settings(max_examples=50)
-def test_componentlanguagedeep::inportinstance_instantiation(instance):
-    assert isinstance(instance, ComponentLanguageDeep::InPortInstance)
+def test_componentlanguagedeep_inportinstance_instantiation(instance):
+    assert isinstance(instance, ComponentLanguageDeep_InPortInstance)
 
 @given(instance=Port_strategy)
 @settings(max_examples=50)
 def test_port_instantiation(instance):
     assert isinstance(instance, Port)
 
-@given(instance=ComponentLanguageDeep::OutPort_strategy)
+@given(instance=ComponentLanguageDeep_OutPort_strategy)
 @settings(max_examples=50)
-def test_componentlanguagedeep::outport_instantiation(instance):
-    assert isinstance(instance, ComponentLanguageDeep::OutPort)
+def test_componentlanguagedeep_outport_instantiation(instance):
+    assert isinstance(instance, ComponentLanguageDeep_OutPort)
 
-@given(instance=ComponentLanguageDeep::InPort_strategy)
+@given(instance=ComponentLanguageDeep_InPort_strategy)
 @settings(max_examples=50)
-def test_componentlanguagedeep::inport_instantiation(instance):
-    assert isinstance(instance, ComponentLanguageDeep::InPort)
+def test_componentlanguagedeep_inport_instantiation(instance):
+    assert isinstance(instance, ComponentLanguageDeep_InPort)
 
-@given(instance=ComponentLanguageDeep::Component_strategy)
+@given(instance=ComponentLanguageDeep_Component_strategy)
 @settings(max_examples=50)
-def test_componentlanguagedeep::component_instantiation(instance):
-    assert isinstance(instance, ComponentLanguageDeep::Component)
+def test_componentlanguagedeep_component_instantiation(instance):
+    assert isinstance(instance, ComponentLanguageDeep_Component)

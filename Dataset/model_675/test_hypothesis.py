@@ -3,30 +3,30 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    oclstdlib::UniqueCollection,
-    oclstdlib::Set,
-    oclstdlib::Sequence,
-    oclstdlib::OrderedSet,
-    oclstdlib::OrderedCollection,
+from python_code import (
+    oclstdlib_UniqueCollection,
+    oclstdlib_Set,
+    oclstdlib_Sequence,
+    oclstdlib_OrderedSet,
+    oclstdlib_OrderedCollection,
     OclElement,
-    oclstdlib::OclType,
-    oclstdlib::OclAny,
+    oclstdlib_OclType,
+    oclstdlib_OclAny,
     OclAny,
-    oclstdlib::OclComparable,
-    oclstdlib::OclElement,
-    oclstdlib::OclVoid,
-    oclstdlib::OclSummable,
-    oclstdlib::OclState,
-    oclstdlib::OclMessage,
-    oclstdlib::OclTuple,
-    oclstdlib::Collection,
-    oclstdlib::Bag,
-    oclstdlib::OclLambda,
+    oclstdlib_OclElement,
+    oclstdlib_OclState,
+    oclstdlib_OclMessage,
+    oclstdlib_OclSummable,
+    oclstdlib_OclTuple,
+    oclstdlib_OclComparable,
+    oclstdlib_OclVoid,
+    oclstdlib_Collection,
+    oclstdlib_Bag,
+    oclstdlib_OclLambda,
     OclVoid,
-    oclstdlib::OclInvalid,
+    oclstdlib_OclInvalid,
 )
 
 # =============================================================================
@@ -35,72 +35,72 @@ from classes import (
 
 
 
-def test_oclstdlib::uniquecollection_is_not_abstract():
-    assert not inspect.isabstract(oclstdlib::UniqueCollection)
+def test_oclstdlib_uniquecollection_is_not_abstract():
+    assert not inspect.isabstract(oclstdlib_UniqueCollection)
 
 
-def test_oclstdlib::uniquecollection_constructor_exists():
-    assert callable(oclstdlib::UniqueCollection.__init__)
+def test_oclstdlib_uniquecollection_constructor_exists():
+    assert callable(oclstdlib_UniqueCollection.__init__)
 
 
-def test_oclstdlib::uniquecollection_constructor_args():
-    sig = inspect.signature(oclstdlib::UniqueCollection.__init__)
+def test_oclstdlib_uniquecollection_constructor_args():
+    sig = inspect.signature(oclstdlib_UniqueCollection.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_oclstdlib::set_is_not_abstract():
-    assert not inspect.isabstract(oclstdlib::Set)
+def test_oclstdlib_set_is_not_abstract():
+    assert not inspect.isabstract(oclstdlib_Set)
 
 
-def test_oclstdlib::set_constructor_exists():
-    assert callable(oclstdlib::Set.__init__)
+def test_oclstdlib_set_constructor_exists():
+    assert callable(oclstdlib_Set.__init__)
 
 
-def test_oclstdlib::set_constructor_args():
-    sig = inspect.signature(oclstdlib::Set.__init__)
+def test_oclstdlib_set_constructor_args():
+    sig = inspect.signature(oclstdlib_Set.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_oclstdlib::sequence_is_not_abstract():
-    assert not inspect.isabstract(oclstdlib::Sequence)
+def test_oclstdlib_sequence_is_not_abstract():
+    assert not inspect.isabstract(oclstdlib_Sequence)
 
 
-def test_oclstdlib::sequence_constructor_exists():
-    assert callable(oclstdlib::Sequence.__init__)
+def test_oclstdlib_sequence_constructor_exists():
+    assert callable(oclstdlib_Sequence.__init__)
 
 
-def test_oclstdlib::sequence_constructor_args():
-    sig = inspect.signature(oclstdlib::Sequence.__init__)
+def test_oclstdlib_sequence_constructor_args():
+    sig = inspect.signature(oclstdlib_Sequence.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_oclstdlib::orderedset_is_not_abstract():
-    assert not inspect.isabstract(oclstdlib::OrderedSet)
+def test_oclstdlib_orderedset_is_not_abstract():
+    assert not inspect.isabstract(oclstdlib_OrderedSet)
 
 
-def test_oclstdlib::orderedset_constructor_exists():
-    assert callable(oclstdlib::OrderedSet.__init__)
+def test_oclstdlib_orderedset_constructor_exists():
+    assert callable(oclstdlib_OrderedSet.__init__)
 
 
-def test_oclstdlib::orderedset_constructor_args():
-    sig = inspect.signature(oclstdlib::OrderedSet.__init__)
+def test_oclstdlib_orderedset_constructor_args():
+    sig = inspect.signature(oclstdlib_OrderedSet.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_oclstdlib::orderedcollection_is_not_abstract():
-    assert not inspect.isabstract(oclstdlib::OrderedCollection)
+def test_oclstdlib_orderedcollection_is_not_abstract():
+    assert not inspect.isabstract(oclstdlib_OrderedCollection)
 
 
-def test_oclstdlib::orderedcollection_constructor_exists():
-    assert callable(oclstdlib::OrderedCollection.__init__)
+def test_oclstdlib_orderedcollection_constructor_exists():
+    assert callable(oclstdlib_OrderedCollection.__init__)
 
 
-def test_oclstdlib::orderedcollection_constructor_args():
-    sig = inspect.signature(oclstdlib::OrderedCollection.__init__)
+def test_oclstdlib_orderedcollection_constructor_args():
+    sig = inspect.signature(oclstdlib_OrderedCollection.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -119,30 +119,30 @@ def test_oclelement_constructor_args():
 
 
 
-def test_oclstdlib::ocltype_is_not_abstract():
-    assert not inspect.isabstract(oclstdlib::OclType)
+def test_oclstdlib_ocltype_is_not_abstract():
+    assert not inspect.isabstract(oclstdlib_OclType)
 
 
-def test_oclstdlib::ocltype_constructor_exists():
-    assert callable(oclstdlib::OclType.__init__)
+def test_oclstdlib_ocltype_constructor_exists():
+    assert callable(oclstdlib_OclType.__init__)
 
 
-def test_oclstdlib::ocltype_constructor_args():
-    sig = inspect.signature(oclstdlib::OclType.__init__)
+def test_oclstdlib_ocltype_constructor_args():
+    sig = inspect.signature(oclstdlib_OclType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_oclstdlib::oclany_is_not_abstract():
-    assert not inspect.isabstract(oclstdlib::OclAny)
+def test_oclstdlib_oclany_is_not_abstract():
+    assert not inspect.isabstract(oclstdlib_OclAny)
 
 
-def test_oclstdlib::oclany_constructor_exists():
-    assert callable(oclstdlib::OclAny.__init__)
+def test_oclstdlib_oclany_constructor_exists():
+    assert callable(oclstdlib_OclAny.__init__)
 
 
-def test_oclstdlib::oclany_constructor_args():
-    sig = inspect.signature(oclstdlib::OclAny.__init__)
+def test_oclstdlib_oclany_constructor_args():
+    sig = inspect.signature(oclstdlib_OclAny.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -161,131 +161,131 @@ def test_oclany_constructor_args():
 
 
 
-def test_oclstdlib::oclcomparable_is_not_abstract():
-    assert not inspect.isabstract(oclstdlib::OclComparable)
+def test_oclstdlib_oclelement_is_not_abstract():
+    assert not inspect.isabstract(oclstdlib_OclElement)
 
 
-def test_oclstdlib::oclcomparable_constructor_exists():
-    assert callable(oclstdlib::OclComparable.__init__)
+def test_oclstdlib_oclelement_constructor_exists():
+    assert callable(oclstdlib_OclElement.__init__)
 
 
-def test_oclstdlib::oclcomparable_constructor_args():
-    sig = inspect.signature(oclstdlib::OclComparable.__init__)
+def test_oclstdlib_oclelement_constructor_args():
+    sig = inspect.signature(oclstdlib_OclElement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_oclstdlib::oclelement_is_not_abstract():
-    assert not inspect.isabstract(oclstdlib::OclElement)
+def test_oclstdlib_oclstate_is_not_abstract():
+    assert not inspect.isabstract(oclstdlib_OclState)
 
 
-def test_oclstdlib::oclelement_constructor_exists():
-    assert callable(oclstdlib::OclElement.__init__)
+def test_oclstdlib_oclstate_constructor_exists():
+    assert callable(oclstdlib_OclState.__init__)
 
 
-def test_oclstdlib::oclelement_constructor_args():
-    sig = inspect.signature(oclstdlib::OclElement.__init__)
+def test_oclstdlib_oclstate_constructor_args():
+    sig = inspect.signature(oclstdlib_OclState.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_oclstdlib::oclvoid_is_not_abstract():
-    assert not inspect.isabstract(oclstdlib::OclVoid)
+def test_oclstdlib_oclmessage_is_not_abstract():
+    assert not inspect.isabstract(oclstdlib_OclMessage)
 
 
-def test_oclstdlib::oclvoid_constructor_exists():
-    assert callable(oclstdlib::OclVoid.__init__)
+def test_oclstdlib_oclmessage_constructor_exists():
+    assert callable(oclstdlib_OclMessage.__init__)
 
 
-def test_oclstdlib::oclvoid_constructor_args():
-    sig = inspect.signature(oclstdlib::OclVoid.__init__)
+def test_oclstdlib_oclmessage_constructor_args():
+    sig = inspect.signature(oclstdlib_OclMessage.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_oclstdlib::oclsummable_is_not_abstract():
-    assert not inspect.isabstract(oclstdlib::OclSummable)
+def test_oclstdlib_oclsummable_is_not_abstract():
+    assert not inspect.isabstract(oclstdlib_OclSummable)
 
 
-def test_oclstdlib::oclsummable_constructor_exists():
-    assert callable(oclstdlib::OclSummable.__init__)
+def test_oclstdlib_oclsummable_constructor_exists():
+    assert callable(oclstdlib_OclSummable.__init__)
 
 
-def test_oclstdlib::oclsummable_constructor_args():
-    sig = inspect.signature(oclstdlib::OclSummable.__init__)
+def test_oclstdlib_oclsummable_constructor_args():
+    sig = inspect.signature(oclstdlib_OclSummable.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_oclstdlib::oclstate_is_not_abstract():
-    assert not inspect.isabstract(oclstdlib::OclState)
+def test_oclstdlib_ocltuple_is_not_abstract():
+    assert not inspect.isabstract(oclstdlib_OclTuple)
 
 
-def test_oclstdlib::oclstate_constructor_exists():
-    assert callable(oclstdlib::OclState.__init__)
+def test_oclstdlib_ocltuple_constructor_exists():
+    assert callable(oclstdlib_OclTuple.__init__)
 
 
-def test_oclstdlib::oclstate_constructor_args():
-    sig = inspect.signature(oclstdlib::OclState.__init__)
+def test_oclstdlib_ocltuple_constructor_args():
+    sig = inspect.signature(oclstdlib_OclTuple.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_oclstdlib::oclmessage_is_not_abstract():
-    assert not inspect.isabstract(oclstdlib::OclMessage)
+def test_oclstdlib_oclcomparable_is_not_abstract():
+    assert not inspect.isabstract(oclstdlib_OclComparable)
 
 
-def test_oclstdlib::oclmessage_constructor_exists():
-    assert callable(oclstdlib::OclMessage.__init__)
+def test_oclstdlib_oclcomparable_constructor_exists():
+    assert callable(oclstdlib_OclComparable.__init__)
 
 
-def test_oclstdlib::oclmessage_constructor_args():
-    sig = inspect.signature(oclstdlib::OclMessage.__init__)
+def test_oclstdlib_oclcomparable_constructor_args():
+    sig = inspect.signature(oclstdlib_OclComparable.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_oclstdlib::ocltuple_is_not_abstract():
-    assert not inspect.isabstract(oclstdlib::OclTuple)
+def test_oclstdlib_oclvoid_is_not_abstract():
+    assert not inspect.isabstract(oclstdlib_OclVoid)
 
 
-def test_oclstdlib::ocltuple_constructor_exists():
-    assert callable(oclstdlib::OclTuple.__init__)
+def test_oclstdlib_oclvoid_constructor_exists():
+    assert callable(oclstdlib_OclVoid.__init__)
 
 
-def test_oclstdlib::ocltuple_constructor_args():
-    sig = inspect.signature(oclstdlib::OclTuple.__init__)
+def test_oclstdlib_oclvoid_constructor_args():
+    sig = inspect.signature(oclstdlib_OclVoid.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_oclstdlib::collection_is_not_abstract():
-    assert not inspect.isabstract(oclstdlib::Collection)
+def test_oclstdlib_collection_is_not_abstract():
+    assert not inspect.isabstract(oclstdlib_Collection)
 
 
-def test_oclstdlib::collection_constructor_exists():
-    assert callable(oclstdlib::Collection.__init__)
+def test_oclstdlib_collection_constructor_exists():
+    assert callable(oclstdlib_Collection.__init__)
 
 
-def test_oclstdlib::collection_constructor_args():
-    sig = inspect.signature(oclstdlib::Collection.__init__)
+def test_oclstdlib_collection_constructor_args():
+    sig = inspect.signature(oclstdlib_Collection.__init__)
     params = list(sig.parameters.keys())
     assert "upper" in params, "Missing parameter 'upper'"
     assert "lower" in params, "Missing parameter 'lower'"
 
-def test_oclstdlib::collection_has_upper():
-    assert hasattr(oclstdlib::Collection, "upper")
+def test_oclstdlib_collection_has_upper():
+    assert hasattr(oclstdlib_Collection, "upper")
     descriptor = None
-    for klass in oclstdlib::Collection.__mro__:
+    for klass in oclstdlib_Collection.__mro__:
         if "upper" in klass.__dict__:
             descriptor = klass.__dict__["upper"]
             break
     assert isinstance(descriptor, property)
 
-def test_oclstdlib::collection_has_lower():
-    assert hasattr(oclstdlib::Collection, "lower")
+def test_oclstdlib_collection_has_lower():
+    assert hasattr(oclstdlib_Collection, "lower")
     descriptor = None
-    for klass in oclstdlib::Collection.__mro__:
+    for klass in oclstdlib_Collection.__mro__:
         if "lower" in klass.__dict__:
             descriptor = klass.__dict__["lower"]
             break
@@ -293,30 +293,30 @@ def test_oclstdlib::collection_has_lower():
 
 
 
-def test_oclstdlib::bag_is_not_abstract():
-    assert not inspect.isabstract(oclstdlib::Bag)
+def test_oclstdlib_bag_is_not_abstract():
+    assert not inspect.isabstract(oclstdlib_Bag)
 
 
-def test_oclstdlib::bag_constructor_exists():
-    assert callable(oclstdlib::Bag.__init__)
+def test_oclstdlib_bag_constructor_exists():
+    assert callable(oclstdlib_Bag.__init__)
 
 
-def test_oclstdlib::bag_constructor_args():
-    sig = inspect.signature(oclstdlib::Bag.__init__)
+def test_oclstdlib_bag_constructor_args():
+    sig = inspect.signature(oclstdlib_Bag.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_oclstdlib::ocllambda_is_not_abstract():
-    assert not inspect.isabstract(oclstdlib::OclLambda)
+def test_oclstdlib_ocllambda_is_not_abstract():
+    assert not inspect.isabstract(oclstdlib_OclLambda)
 
 
-def test_oclstdlib::ocllambda_constructor_exists():
-    assert callable(oclstdlib::OclLambda.__init__)
+def test_oclstdlib_ocllambda_constructor_exists():
+    assert callable(oclstdlib_OclLambda.__init__)
 
 
-def test_oclstdlib::ocllambda_constructor_args():
-    sig = inspect.signature(oclstdlib::OclLambda.__init__)
+def test_oclstdlib_ocllambda_constructor_args():
+    sig = inspect.signature(oclstdlib_OclLambda.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -335,16 +335,16 @@ def test_oclvoid_constructor_args():
 
 
 
-def test_oclstdlib::oclinvalid_is_not_abstract():
-    assert not inspect.isabstract(oclstdlib::OclInvalid)
+def test_oclstdlib_oclinvalid_is_not_abstract():
+    assert not inspect.isabstract(oclstdlib_OclInvalid)
 
 
-def test_oclstdlib::oclinvalid_constructor_exists():
-    assert callable(oclstdlib::OclInvalid.__init__)
+def test_oclstdlib_oclinvalid_constructor_exists():
+    assert callable(oclstdlib_OclInvalid.__init__)
 
 
-def test_oclstdlib::oclinvalid_constructor_args():
-    sig = inspect.signature(oclstdlib::OclInvalid.__init__)
+def test_oclstdlib_oclinvalid_constructor_args():
+    sig = inspect.signature(oclstdlib_OclInvalid.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -359,197 +359,191 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-oclstdlib::UniqueCollection_strategy = st.builds(
-    oclstdlib::UniqueCollection,
+oclstdlib_UniqueCollection_strategy = st.builds(
+    oclstdlib_UniqueCollection,
 )
-oclstdlib::Set_strategy = st.builds(
-    oclstdlib::Set,
+oclstdlib_Set_strategy = st.builds(
+    oclstdlib_Set,
 )
-oclstdlib::Sequence_strategy = st.builds(
-    oclstdlib::Sequence,
+oclstdlib_Sequence_strategy = st.builds(
+    oclstdlib_Sequence,
 )
-oclstdlib::OrderedSet_strategy = st.builds(
-    oclstdlib::OrderedSet,
+oclstdlib_OrderedSet_strategy = st.builds(
+    oclstdlib_OrderedSet,
 )
-oclstdlib::OrderedCollection_strategy = st.builds(
-    oclstdlib::OrderedCollection,
+oclstdlib_OrderedCollection_strategy = st.builds(
+    oclstdlib_OrderedCollection,
 )
 OclElement_strategy = st.builds(
     OclElement,
 )
-oclstdlib::OclType_strategy = st.builds(
-    oclstdlib::OclType,
+oclstdlib_OclType_strategy = st.builds(
+    oclstdlib_OclType,
 )
-oclstdlib::OclAny_strategy = st.builds(
-    oclstdlib::OclAny,
+oclstdlib_OclAny_strategy = st.builds(
+    oclstdlib_OclAny,
 )
 OclAny_strategy = st.builds(
     OclAny,
 )
-oclstdlib::OclComparable_strategy = st.builds(
-    oclstdlib::OclComparable,
+oclstdlib_OclElement_strategy = st.builds(
+    oclstdlib_OclElement,
 )
-oclstdlib::OclElement_strategy = st.builds(
-    oclstdlib::OclElement,
+oclstdlib_OclState_strategy = st.builds(
+    oclstdlib_OclState,
 )
-oclstdlib::OclVoid_strategy = st.builds(
-    oclstdlib::OclVoid,
+oclstdlib_OclMessage_strategy = st.builds(
+    oclstdlib_OclMessage,
 )
-oclstdlib::OclSummable_strategy = st.builds(
-    oclstdlib::OclSummable,
+oclstdlib_OclSummable_strategy = st.builds(
+    oclstdlib_OclSummable,
 )
-oclstdlib::OclState_strategy = st.builds(
-    oclstdlib::OclState,
+oclstdlib_OclTuple_strategy = st.builds(
+    oclstdlib_OclTuple,
 )
-oclstdlib::OclMessage_strategy = st.builds(
-    oclstdlib::OclMessage,
+oclstdlib_OclComparable_strategy = st.builds(
+    oclstdlib_OclComparable,
 )
-oclstdlib::OclTuple_strategy = st.builds(
-    oclstdlib::OclTuple,
+oclstdlib_OclVoid_strategy = st.builds(
+    oclstdlib_OclVoid,
 )
-oclstdlib::Collection_strategy = st.builds(
-    oclstdlib::Collection,
+oclstdlib_Collection_strategy = st.builds(
+    oclstdlib_Collection,
     upper=
         safe_text,
     lower=
         safe_text
 )
-oclstdlib::Bag_strategy = st.builds(
-    oclstdlib::Bag,
+oclstdlib_Bag_strategy = st.builds(
+    oclstdlib_Bag,
 )
-oclstdlib::OclLambda_strategy = st.builds(
-    oclstdlib::OclLambda,
+oclstdlib_OclLambda_strategy = st.builds(
+    oclstdlib_OclLambda,
 )
 OclVoid_strategy = st.builds(
     OclVoid,
 )
-oclstdlib::OclInvalid_strategy = st.builds(
-    oclstdlib::OclInvalid,
+oclstdlib_OclInvalid_strategy = st.builds(
+    oclstdlib_OclInvalid,
 )
 
-@given(instance=oclstdlib::UniqueCollection_strategy)
+@given(instance=oclstdlib_UniqueCollection_strategy)
 @settings(max_examples=50)
-def test_oclstdlib::uniquecollection_instantiation(instance):
-    assert isinstance(instance, oclstdlib::UniqueCollection)
+def test_oclstdlib_uniquecollection_instantiation(instance):
+    assert isinstance(instance, oclstdlib_UniqueCollection)
 
-@given(instance=oclstdlib::Set_strategy)
+@given(instance=oclstdlib_Set_strategy)
 @settings(max_examples=50)
-def test_oclstdlib::set_instantiation(instance):
-    assert isinstance(instance, oclstdlib::Set)
+def test_oclstdlib_set_instantiation(instance):
+    assert isinstance(instance, oclstdlib_Set)
 
-@given(instance=oclstdlib::Sequence_strategy)
+@given(instance=oclstdlib_Sequence_strategy)
 @settings(max_examples=50)
-def test_oclstdlib::sequence_instantiation(instance):
-    assert isinstance(instance, oclstdlib::Sequence)
+def test_oclstdlib_sequence_instantiation(instance):
+    assert isinstance(instance, oclstdlib_Sequence)
 
-@given(instance=oclstdlib::OrderedSet_strategy)
+@given(instance=oclstdlib_OrderedSet_strategy)
 @settings(max_examples=50)
-def test_oclstdlib::orderedset_instantiation(instance):
-    assert isinstance(instance, oclstdlib::OrderedSet)
+def test_oclstdlib_orderedset_instantiation(instance):
+    assert isinstance(instance, oclstdlib_OrderedSet)
 
-@given(instance=oclstdlib::OrderedCollection_strategy)
+@given(instance=oclstdlib_OrderedCollection_strategy)
 @settings(max_examples=50)
-def test_oclstdlib::orderedcollection_instantiation(instance):
-    assert isinstance(instance, oclstdlib::OrderedCollection)
+def test_oclstdlib_orderedcollection_instantiation(instance):
+    assert isinstance(instance, oclstdlib_OrderedCollection)
 
 @given(instance=OclElement_strategy)
 @settings(max_examples=50)
 def test_oclelement_instantiation(instance):
     assert isinstance(instance, OclElement)
 
-@given(instance=oclstdlib::OclType_strategy)
+@given(instance=oclstdlib_OclType_strategy)
 @settings(max_examples=50)
-def test_oclstdlib::ocltype_instantiation(instance):
-    assert isinstance(instance, oclstdlib::OclType)
+def test_oclstdlib_ocltype_instantiation(instance):
+    assert isinstance(instance, oclstdlib_OclType)
 
-@given(instance=oclstdlib::OclAny_strategy)
+@given(instance=oclstdlib_OclAny_strategy)
 @settings(max_examples=50)
-def test_oclstdlib::oclany_instantiation(instance):
-    assert isinstance(instance, oclstdlib::OclAny)
+def test_oclstdlib_oclany_instantiation(instance):
+    assert isinstance(instance, oclstdlib_OclAny)
 
 @given(instance=OclAny_strategy)
 @settings(max_examples=50)
 def test_oclany_instantiation(instance):
     assert isinstance(instance, OclAny)
 
-@given(instance=oclstdlib::OclComparable_strategy)
+@given(instance=oclstdlib_OclElement_strategy)
 @settings(max_examples=50)
-def test_oclstdlib::oclcomparable_instantiation(instance):
-    assert isinstance(instance, oclstdlib::OclComparable)
+def test_oclstdlib_oclelement_instantiation(instance):
+    assert isinstance(instance, oclstdlib_OclElement)
 
-@given(instance=oclstdlib::OclElement_strategy)
+@given(instance=oclstdlib_OclState_strategy)
 @settings(max_examples=50)
-def test_oclstdlib::oclelement_instantiation(instance):
-    assert isinstance(instance, oclstdlib::OclElement)
+def test_oclstdlib_oclstate_instantiation(instance):
+    assert isinstance(instance, oclstdlib_OclState)
 
-@given(instance=oclstdlib::OclVoid_strategy)
+@given(instance=oclstdlib_OclMessage_strategy)
 @settings(max_examples=50)
-def test_oclstdlib::oclvoid_instantiation(instance):
-    assert isinstance(instance, oclstdlib::OclVoid)
+def test_oclstdlib_oclmessage_instantiation(instance):
+    assert isinstance(instance, oclstdlib_OclMessage)
 
-@given(instance=oclstdlib::OclSummable_strategy)
+@given(instance=oclstdlib_OclSummable_strategy)
 @settings(max_examples=50)
-def test_oclstdlib::oclsummable_instantiation(instance):
-    assert isinstance(instance, oclstdlib::OclSummable)
+def test_oclstdlib_oclsummable_instantiation(instance):
+    assert isinstance(instance, oclstdlib_OclSummable)
 
-@given(instance=oclstdlib::OclState_strategy)
+@given(instance=oclstdlib_OclTuple_strategy)
 @settings(max_examples=50)
-def test_oclstdlib::oclstate_instantiation(instance):
-    assert isinstance(instance, oclstdlib::OclState)
+def test_oclstdlib_ocltuple_instantiation(instance):
+    assert isinstance(instance, oclstdlib_OclTuple)
 
-@given(instance=oclstdlib::OclMessage_strategy)
+@given(instance=oclstdlib_OclComparable_strategy)
 @settings(max_examples=50)
-def test_oclstdlib::oclmessage_instantiation(instance):
-    assert isinstance(instance, oclstdlib::OclMessage)
+def test_oclstdlib_oclcomparable_instantiation(instance):
+    assert isinstance(instance, oclstdlib_OclComparable)
 
-@given(instance=oclstdlib::OclTuple_strategy)
+@given(instance=oclstdlib_OclVoid_strategy)
 @settings(max_examples=50)
-def test_oclstdlib::ocltuple_instantiation(instance):
-    assert isinstance(instance, oclstdlib::OclTuple)
+def test_oclstdlib_oclvoid_instantiation(instance):
+    assert isinstance(instance, oclstdlib_OclVoid)
 
-@given(instance=oclstdlib::Collection_strategy)
+@given(instance=oclstdlib_Collection_strategy)
 @settings(max_examples=50)
-def test_oclstdlib::collection_instantiation(instance):
-    assert isinstance(instance, oclstdlib::Collection)
-
-@given(instance=oclstdlib::Collection_strategy)
-def test_oclstdlib::collection_upper_type(instance):
-    assert isinstance(instance.upper, str)
+def test_oclstdlib_collection_instantiation(instance):
+    assert isinstance(instance, oclstdlib_Collection)
 
 
-@given(instance=oclstdlib::Collection_strategy)
-def test_oclstdlib::collection_upper_setter(instance):
+
+@given(instance=oclstdlib_Collection_strategy)
+def test_oclstdlib_collection_upper_setter(instance):
     original = instance.upper
     instance.upper = original
     assert instance.upper == original
 
-@given(instance=oclstdlib::Collection_strategy)
-def test_oclstdlib::collection_lower_type(instance):
-    assert isinstance(instance.lower, str)
 
 
-@given(instance=oclstdlib::Collection_strategy)
-def test_oclstdlib::collection_lower_setter(instance):
+@given(instance=oclstdlib_Collection_strategy)
+def test_oclstdlib_collection_lower_setter(instance):
     original = instance.lower
     instance.lower = original
     assert instance.lower == original
 
-@given(instance=oclstdlib::Bag_strategy)
+@given(instance=oclstdlib_Bag_strategy)
 @settings(max_examples=50)
-def test_oclstdlib::bag_instantiation(instance):
-    assert isinstance(instance, oclstdlib::Bag)
+def test_oclstdlib_bag_instantiation(instance):
+    assert isinstance(instance, oclstdlib_Bag)
 
-@given(instance=oclstdlib::OclLambda_strategy)
+@given(instance=oclstdlib_OclLambda_strategy)
 @settings(max_examples=50)
-def test_oclstdlib::ocllambda_instantiation(instance):
-    assert isinstance(instance, oclstdlib::OclLambda)
+def test_oclstdlib_ocllambda_instantiation(instance):
+    assert isinstance(instance, oclstdlib_OclLambda)
 
 @given(instance=OclVoid_strategy)
 @settings(max_examples=50)
 def test_oclvoid_instantiation(instance):
     assert isinstance(instance, OclVoid)
 
-@given(instance=oclstdlib::OclInvalid_strategy)
+@given(instance=oclstdlib_OclInvalid_strategy)
 @settings(max_examples=50)
-def test_oclstdlib::oclinvalid_instantiation(instance):
-    assert isinstance(instance, oclstdlib::OclInvalid)
+def test_oclstdlib_oclinvalid_instantiation(instance):
+    assert isinstance(instance, oclstdlib_OclInvalid)

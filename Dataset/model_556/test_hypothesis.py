@@ -3,27 +3,27 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     Source,
-    gedcoml::PersonRef,
-    gedcoml::Others,
-    gedcoml::Address,
-    gedcoml::Source,
-    gedcoml::Note,
-    gedcoml::Married,
+    gedcoml_PersonRef,
+    gedcoml_Others,
+    gedcoml_Address,
+    gedcoml_Source,
+    gedcoml_Note,
+    gedcoml_Married,
     Person,
-    gedcoml::UnbekanntePerson,
-    gedcoml::BekanntePerson,
-    gedcoml::Person,
-    gedcoml::Family,
-    gedcoml::Author,
-    gedcoml::FamilyImport,
+    gedcoml_UnbekanntePerson,
+    gedcoml_BekanntePerson,
+    gedcoml_Person,
+    gedcoml_Family,
+    gedcoml_Author,
+    gedcoml_FamilyImport,
     Address,
-    gedcoml::PostAddress,
-    gedcoml::FamilyBook,
-    gedcoml::Projectdescription,
+    gedcoml_PostAddress,
+    gedcoml_FamilyBook,
+    gedcoml_Projectdescription,
     Sexus,
 )
 
@@ -47,37 +47,37 @@ def test_source_constructor_args():
 
 
 
-def test_gedcoml::personref_is_not_abstract():
-    assert not inspect.isabstract(gedcoml::PersonRef)
+def test_gedcoml_personref_is_not_abstract():
+    assert not inspect.isabstract(gedcoml_PersonRef)
 
 
-def test_gedcoml::personref_constructor_exists():
-    assert callable(gedcoml::PersonRef.__init__)
+def test_gedcoml_personref_constructor_exists():
+    assert callable(gedcoml_PersonRef.__init__)
 
 
-def test_gedcoml::personref_constructor_args():
-    sig = inspect.signature(gedcoml::PersonRef.__init__)
+def test_gedcoml_personref_constructor_args():
+    sig = inspect.signature(gedcoml_PersonRef.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_gedcoml::others_is_not_abstract():
-    assert not inspect.isabstract(gedcoml::Others)
+def test_gedcoml_others_is_not_abstract():
+    assert not inspect.isabstract(gedcoml_Others)
 
 
-def test_gedcoml::others_constructor_exists():
-    assert callable(gedcoml::Others.__init__)
+def test_gedcoml_others_constructor_exists():
+    assert callable(gedcoml_Others.__init__)
 
 
-def test_gedcoml::others_constructor_args():
-    sig = inspect.signature(gedcoml::Others.__init__)
+def test_gedcoml_others_constructor_args():
+    sig = inspect.signature(gedcoml_Others.__init__)
     params = list(sig.parameters.keys())
     assert "description" in params, "Missing parameter 'description'"
 
-def test_gedcoml::others_has_description():
-    assert hasattr(gedcoml::Others, "description")
+def test_gedcoml_others_has_description():
+    assert hasattr(gedcoml_Others, "description")
     descriptor = None
-    for klass in gedcoml::Others.__mro__:
+    for klass in gedcoml_Others.__mro__:
         if "description" in klass.__dict__:
             descriptor = klass.__dict__["description"]
             break
@@ -85,33 +85,33 @@ def test_gedcoml::others_has_description():
 
 
 
-def test_gedcoml::address_is_not_abstract():
-    assert not inspect.isabstract(gedcoml::Address)
+def test_gedcoml_address_is_not_abstract():
+    assert not inspect.isabstract(gedcoml_Address)
 
 
-def test_gedcoml::address_constructor_exists():
-    assert callable(gedcoml::Address.__init__)
+def test_gedcoml_address_constructor_exists():
+    assert callable(gedcoml_Address.__init__)
 
 
-def test_gedcoml::address_constructor_args():
-    sig = inspect.signature(gedcoml::Address.__init__)
+def test_gedcoml_address_constructor_args():
+    sig = inspect.signature(gedcoml_Address.__init__)
     params = list(sig.parameters.keys())
     assert "exodus" in params, "Missing parameter 'exodus'"
     assert "entry" in params, "Missing parameter 'entry'"
 
-def test_gedcoml::address_has_exodus():
-    assert hasattr(gedcoml::Address, "exodus")
+def test_gedcoml_address_has_exodus():
+    assert hasattr(gedcoml_Address, "exodus")
     descriptor = None
-    for klass in gedcoml::Address.__mro__:
+    for klass in gedcoml_Address.__mro__:
         if "exodus" in klass.__dict__:
             descriptor = klass.__dict__["exodus"]
             break
     assert isinstance(descriptor, property)
 
-def test_gedcoml::address_has_entry():
-    assert hasattr(gedcoml::Address, "entry")
+def test_gedcoml_address_has_entry():
+    assert hasattr(gedcoml_Address, "entry")
     descriptor = None
-    for klass in gedcoml::Address.__mro__:
+    for klass in gedcoml_Address.__mro__:
         if "entry" in klass.__dict__:
             descriptor = klass.__dict__["entry"]
             break
@@ -119,37 +119,37 @@ def test_gedcoml::address_has_entry():
 
 
 
-def test_gedcoml::source_is_not_abstract():
-    assert not inspect.isabstract(gedcoml::Source)
+def test_gedcoml_source_is_not_abstract():
+    assert not inspect.isabstract(gedcoml_Source)
 
 
-def test_gedcoml::source_constructor_exists():
-    assert callable(gedcoml::Source.__init__)
+def test_gedcoml_source_constructor_exists():
+    assert callable(gedcoml_Source.__init__)
 
 
-def test_gedcoml::source_constructor_args():
-    sig = inspect.signature(gedcoml::Source.__init__)
+def test_gedcoml_source_constructor_args():
+    sig = inspect.signature(gedcoml_Source.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_gedcoml::note_is_not_abstract():
-    assert not inspect.isabstract(gedcoml::Note)
+def test_gedcoml_note_is_not_abstract():
+    assert not inspect.isabstract(gedcoml_Note)
 
 
-def test_gedcoml::note_constructor_exists():
-    assert callable(gedcoml::Note.__init__)
+def test_gedcoml_note_constructor_exists():
+    assert callable(gedcoml_Note.__init__)
 
 
-def test_gedcoml::note_constructor_args():
-    sig = inspect.signature(gedcoml::Note.__init__)
+def test_gedcoml_note_constructor_args():
+    sig = inspect.signature(gedcoml_Note.__init__)
     params = list(sig.parameters.keys())
     assert "content" in params, "Missing parameter 'content'"
 
-def test_gedcoml::note_has_content():
-    assert hasattr(gedcoml::Note, "content")
+def test_gedcoml_note_has_content():
+    assert hasattr(gedcoml_Note, "content")
     descriptor = None
-    for klass in gedcoml::Note.__mro__:
+    for klass in gedcoml_Note.__mro__:
         if "content" in klass.__dict__:
             descriptor = klass.__dict__["content"]
             break
@@ -157,35 +157,35 @@ def test_gedcoml::note_has_content():
 
 
 
-def test_gedcoml::married_is_not_abstract():
-    assert not inspect.isabstract(gedcoml::Married)
+def test_gedcoml_married_is_not_abstract():
+    assert not inspect.isabstract(gedcoml_Married)
 
 
-def test_gedcoml::married_constructor_exists():
-    assert callable(gedcoml::Married.__init__)
+def test_gedcoml_married_constructor_exists():
+    assert callable(gedcoml_Married.__init__)
 
 
-def test_gedcoml::married_constructor_args():
-    sig = inspect.signature(gedcoml::Married.__init__)
+def test_gedcoml_married_constructor_args():
+    sig = inspect.signature(gedcoml_Married.__init__)
     params = list(sig.parameters.keys())
-    assert "separationDay" in params, "Missing parameter 'separationDay'"
     assert "weddingDay" in params, "Missing parameter 'weddingDay'"
+    assert "separationDay" in params, "Missing parameter 'separationDay'"
 
-def test_gedcoml::married_has_separationDay():
-    assert hasattr(gedcoml::Married, "separationDay")
+def test_gedcoml_married_has_weddingDay():
+    assert hasattr(gedcoml_Married, "weddingDay")
     descriptor = None
-    for klass in gedcoml::Married.__mro__:
-        if "separationDay" in klass.__dict__:
-            descriptor = klass.__dict__["separationDay"]
+    for klass in gedcoml_Married.__mro__:
+        if "weddingDay" in klass.__dict__:
+            descriptor = klass.__dict__["weddingDay"]
             break
     assert isinstance(descriptor, property)
 
-def test_gedcoml::married_has_weddingDay():
-    assert hasattr(gedcoml::Married, "weddingDay")
+def test_gedcoml_married_has_separationDay():
+    assert hasattr(gedcoml_Married, "separationDay")
     descriptor = None
-    for klass in gedcoml::Married.__mro__:
-        if "weddingDay" in klass.__dict__:
-            descriptor = klass.__dict__["weddingDay"]
+    for klass in gedcoml_Married.__mro__:
+        if "separationDay" in klass.__dict__:
+            descriptor = klass.__dict__["separationDay"]
             break
     assert isinstance(descriptor, property)
 
@@ -205,145 +205,145 @@ def test_person_constructor_args():
 
 
 
-def test_gedcoml::unbekannteperson_is_not_abstract():
-    assert not inspect.isabstract(gedcoml::UnbekanntePerson)
+def test_gedcoml_unbekannteperson_is_not_abstract():
+    assert not inspect.isabstract(gedcoml_UnbekanntePerson)
 
 
-def test_gedcoml::unbekannteperson_constructor_exists():
-    assert callable(gedcoml::UnbekanntePerson.__init__)
+def test_gedcoml_unbekannteperson_constructor_exists():
+    assert callable(gedcoml_UnbekanntePerson.__init__)
 
 
-def test_gedcoml::unbekannteperson_constructor_args():
-    sig = inspect.signature(gedcoml::UnbekanntePerson.__init__)
+def test_gedcoml_unbekannteperson_constructor_args():
+    sig = inspect.signature(gedcoml_UnbekanntePerson.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_gedcoml::bekannteperson_is_not_abstract():
-    assert not inspect.isabstract(gedcoml::BekanntePerson)
+def test_gedcoml_bekannteperson_is_not_abstract():
+    assert not inspect.isabstract(gedcoml_BekanntePerson)
 
 
-def test_gedcoml::bekannteperson_constructor_exists():
-    assert callable(gedcoml::BekanntePerson.__init__)
+def test_gedcoml_bekannteperson_constructor_exists():
+    assert callable(gedcoml_BekanntePerson.__init__)
 
 
-def test_gedcoml::bekannteperson_constructor_args():
-    sig = inspect.signature(gedcoml::BekanntePerson.__init__)
+def test_gedcoml_bekannteperson_constructor_args():
+    sig = inspect.signature(gedcoml_BekanntePerson.__init__)
     params = list(sig.parameters.keys())
     assert "lastName" in params, "Missing parameter 'lastName'"
     assert "birthName" in params, "Missing parameter 'birthName'"
-    assert "firstName" in params, "Missing parameter 'firstName'"
-    assert "deathDay" in params, "Missing parameter 'deathDay'"
     assert "middleName" in params, "Missing parameter 'middleName'"
     assert "birthDay" in params, "Missing parameter 'birthDay'"
+    assert "deathDay" in params, "Missing parameter 'deathDay'"
+    assert "firstName" in params, "Missing parameter 'firstName'"
 
-def test_gedcoml::bekannteperson_has_lastName():
-    assert hasattr(gedcoml::BekanntePerson, "lastName")
+def test_gedcoml_bekannteperson_has_lastName():
+    assert hasattr(gedcoml_BekanntePerson, "lastName")
     descriptor = None
-    for klass in gedcoml::BekanntePerson.__mro__:
+    for klass in gedcoml_BekanntePerson.__mro__:
         if "lastName" in klass.__dict__:
             descriptor = klass.__dict__["lastName"]
             break
     assert isinstance(descriptor, property)
 
-def test_gedcoml::bekannteperson_has_birthName():
-    assert hasattr(gedcoml::BekanntePerson, "birthName")
+def test_gedcoml_bekannteperson_has_birthName():
+    assert hasattr(gedcoml_BekanntePerson, "birthName")
     descriptor = None
-    for klass in gedcoml::BekanntePerson.__mro__:
+    for klass in gedcoml_BekanntePerson.__mro__:
         if "birthName" in klass.__dict__:
             descriptor = klass.__dict__["birthName"]
             break
     assert isinstance(descriptor, property)
 
-def test_gedcoml::bekannteperson_has_firstName():
-    assert hasattr(gedcoml::BekanntePerson, "firstName")
+def test_gedcoml_bekannteperson_has_middleName():
+    assert hasattr(gedcoml_BekanntePerson, "middleName")
     descriptor = None
-    for klass in gedcoml::BekanntePerson.__mro__:
-        if "firstName" in klass.__dict__:
-            descriptor = klass.__dict__["firstName"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_gedcoml::bekannteperson_has_deathDay():
-    assert hasattr(gedcoml::BekanntePerson, "deathDay")
-    descriptor = None
-    for klass in gedcoml::BekanntePerson.__mro__:
-        if "deathDay" in klass.__dict__:
-            descriptor = klass.__dict__["deathDay"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_gedcoml::bekannteperson_has_middleName():
-    assert hasattr(gedcoml::BekanntePerson, "middleName")
-    descriptor = None
-    for klass in gedcoml::BekanntePerson.__mro__:
+    for klass in gedcoml_BekanntePerson.__mro__:
         if "middleName" in klass.__dict__:
             descriptor = klass.__dict__["middleName"]
             break
     assert isinstance(descriptor, property)
 
-def test_gedcoml::bekannteperson_has_birthDay():
-    assert hasattr(gedcoml::BekanntePerson, "birthDay")
+def test_gedcoml_bekannteperson_has_birthDay():
+    assert hasattr(gedcoml_BekanntePerson, "birthDay")
     descriptor = None
-    for klass in gedcoml::BekanntePerson.__mro__:
+    for klass in gedcoml_BekanntePerson.__mro__:
         if "birthDay" in klass.__dict__:
             descriptor = klass.__dict__["birthDay"]
             break
     assert isinstance(descriptor, property)
 
-
-
-def test_gedcoml::person_is_not_abstract():
-    assert not inspect.isabstract(gedcoml::Person)
-
-
-def test_gedcoml::person_constructor_exists():
-    assert callable(gedcoml::Person.__init__)
-
-
-def test_gedcoml::person_constructor_args():
-    sig = inspect.signature(gedcoml::Person.__init__)
-    params = list(sig.parameters.keys())
-    assert "id" in params, "Missing parameter 'id'"
-    assert "sex" in params, "Missing parameter 'sex'"
-
-def test_gedcoml::person_has_id():
-    assert hasattr(gedcoml::Person, "id")
+def test_gedcoml_bekannteperson_has_deathDay():
+    assert hasattr(gedcoml_BekanntePerson, "deathDay")
     descriptor = None
-    for klass in gedcoml::Person.__mro__:
-        if "id" in klass.__dict__:
-            descriptor = klass.__dict__["id"]
+    for klass in gedcoml_BekanntePerson.__mro__:
+        if "deathDay" in klass.__dict__:
+            descriptor = klass.__dict__["deathDay"]
             break
     assert isinstance(descriptor, property)
 
-def test_gedcoml::person_has_sex():
-    assert hasattr(gedcoml::Person, "sex")
+def test_gedcoml_bekannteperson_has_firstName():
+    assert hasattr(gedcoml_BekanntePerson, "firstName")
     descriptor = None
-    for klass in gedcoml::Person.__mro__:
+    for klass in gedcoml_BekanntePerson.__mro__:
+        if "firstName" in klass.__dict__:
+            descriptor = klass.__dict__["firstName"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_gedcoml_person_is_not_abstract():
+    assert not inspect.isabstract(gedcoml_Person)
+
+
+def test_gedcoml_person_constructor_exists():
+    assert callable(gedcoml_Person.__init__)
+
+
+def test_gedcoml_person_constructor_args():
+    sig = inspect.signature(gedcoml_Person.__init__)
+    params = list(sig.parameters.keys())
+    assert "sex" in params, "Missing parameter 'sex'"
+    assert "id" in params, "Missing parameter 'id'"
+
+def test_gedcoml_person_has_sex():
+    assert hasattr(gedcoml_Person, "sex")
+    descriptor = None
+    for klass in gedcoml_Person.__mro__:
         if "sex" in klass.__dict__:
             descriptor = klass.__dict__["sex"]
             break
     assert isinstance(descriptor, property)
 
+def test_gedcoml_person_has_id():
+    assert hasattr(gedcoml_Person, "id")
+    descriptor = None
+    for klass in gedcoml_Person.__mro__:
+        if "id" in klass.__dict__:
+            descriptor = klass.__dict__["id"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_gedcoml::family_is_not_abstract():
-    assert not inspect.isabstract(gedcoml::Family)
+
+def test_gedcoml_family_is_not_abstract():
+    assert not inspect.isabstract(gedcoml_Family)
 
 
-def test_gedcoml::family_constructor_exists():
-    assert callable(gedcoml::Family.__init__)
+def test_gedcoml_family_constructor_exists():
+    assert callable(gedcoml_Family.__init__)
 
 
-def test_gedcoml::family_constructor_args():
-    sig = inspect.signature(gedcoml::Family.__init__)
+def test_gedcoml_family_constructor_args():
+    sig = inspect.signature(gedcoml_Family.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_gedcoml::family_has_name():
-    assert hasattr(gedcoml::Family, "name")
+def test_gedcoml_family_has_name():
+    assert hasattr(gedcoml_Family, "name")
     descriptor = None
-    for klass in gedcoml::Family.__mro__:
+    for klass in gedcoml_Family.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -351,50 +351,50 @@ def test_gedcoml::family_has_name():
 
 
 
-def test_gedcoml::author_is_not_abstract():
-    assert not inspect.isabstract(gedcoml::Author)
+def test_gedcoml_author_is_not_abstract():
+    assert not inspect.isabstract(gedcoml_Author)
 
 
-def test_gedcoml::author_constructor_exists():
-    assert callable(gedcoml::Author.__init__)
+def test_gedcoml_author_constructor_exists():
+    assert callable(gedcoml_Author.__init__)
 
 
-def test_gedcoml::author_constructor_args():
-    sig = inspect.signature(gedcoml::Author.__init__)
+def test_gedcoml_author_constructor_args():
+    sig = inspect.signature(gedcoml_Author.__init__)
     params = list(sig.parameters.keys())
-    assert "firstName" in params, "Missing parameter 'firstName'"
     assert "lastName" in params, "Missing parameter 'lastName'"
+    assert "firstName" in params, "Missing parameter 'firstName'"
 
-def test_gedcoml::author_has_firstName():
-    assert hasattr(gedcoml::Author, "firstName")
+def test_gedcoml_author_has_lastName():
+    assert hasattr(gedcoml_Author, "lastName")
     descriptor = None
-    for klass in gedcoml::Author.__mro__:
-        if "firstName" in klass.__dict__:
-            descriptor = klass.__dict__["firstName"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_gedcoml::author_has_lastName():
-    assert hasattr(gedcoml::Author, "lastName")
-    descriptor = None
-    for klass in gedcoml::Author.__mro__:
+    for klass in gedcoml_Author.__mro__:
         if "lastName" in klass.__dict__:
             descriptor = klass.__dict__["lastName"]
             break
     assert isinstance(descriptor, property)
 
+def test_gedcoml_author_has_firstName():
+    assert hasattr(gedcoml_Author, "firstName")
+    descriptor = None
+    for klass in gedcoml_Author.__mro__:
+        if "firstName" in klass.__dict__:
+            descriptor = klass.__dict__["firstName"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_gedcoml::familyimport_is_not_abstract():
-    assert not inspect.isabstract(gedcoml::FamilyImport)
+
+def test_gedcoml_familyimport_is_not_abstract():
+    assert not inspect.isabstract(gedcoml_FamilyImport)
 
 
-def test_gedcoml::familyimport_constructor_exists():
-    assert callable(gedcoml::FamilyImport.__init__)
+def test_gedcoml_familyimport_constructor_exists():
+    assert callable(gedcoml_FamilyImport.__init__)
 
 
-def test_gedcoml::familyimport_constructor_args():
-    sig = inspect.signature(gedcoml::FamilyImport.__init__)
+def test_gedcoml_familyimport_constructor_args():
+    sig = inspect.signature(gedcoml_FamilyImport.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -413,113 +413,113 @@ def test_address_constructor_args():
 
 
 
-def test_gedcoml::postaddress_is_not_abstract():
-    assert not inspect.isabstract(gedcoml::PostAddress)
+def test_gedcoml_postaddress_is_not_abstract():
+    assert not inspect.isabstract(gedcoml_PostAddress)
 
 
-def test_gedcoml::postaddress_constructor_exists():
-    assert callable(gedcoml::PostAddress.__init__)
+def test_gedcoml_postaddress_constructor_exists():
+    assert callable(gedcoml_PostAddress.__init__)
 
 
-def test_gedcoml::postaddress_constructor_args():
-    sig = inspect.signature(gedcoml::PostAddress.__init__)
+def test_gedcoml_postaddress_constructor_args():
+    sig = inspect.signature(gedcoml_PostAddress.__init__)
     params = list(sig.parameters.keys())
     assert "city" in params, "Missing parameter 'city'"
-    assert "street" in params, "Missing parameter 'street'"
     assert "postcode" in params, "Missing parameter 'postcode'"
+    assert "street" in params, "Missing parameter 'street'"
 
-def test_gedcoml::postaddress_has_city():
-    assert hasattr(gedcoml::PostAddress, "city")
+def test_gedcoml_postaddress_has_city():
+    assert hasattr(gedcoml_PostAddress, "city")
     descriptor = None
-    for klass in gedcoml::PostAddress.__mro__:
+    for klass in gedcoml_PostAddress.__mro__:
         if "city" in klass.__dict__:
             descriptor = klass.__dict__["city"]
             break
     assert isinstance(descriptor, property)
 
-def test_gedcoml::postaddress_has_street():
-    assert hasattr(gedcoml::PostAddress, "street")
+def test_gedcoml_postaddress_has_postcode():
+    assert hasattr(gedcoml_PostAddress, "postcode")
     descriptor = None
-    for klass in gedcoml::PostAddress.__mro__:
-        if "street" in klass.__dict__:
-            descriptor = klass.__dict__["street"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_gedcoml::postaddress_has_postcode():
-    assert hasattr(gedcoml::PostAddress, "postcode")
-    descriptor = None
-    for klass in gedcoml::PostAddress.__mro__:
+    for klass in gedcoml_PostAddress.__mro__:
         if "postcode" in klass.__dict__:
             descriptor = klass.__dict__["postcode"]
             break
     assert isinstance(descriptor, property)
 
+def test_gedcoml_postaddress_has_street():
+    assert hasattr(gedcoml_PostAddress, "street")
+    descriptor = None
+    for klass in gedcoml_PostAddress.__mro__:
+        if "street" in klass.__dict__:
+            descriptor = klass.__dict__["street"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_gedcoml::familybook_is_not_abstract():
-    assert not inspect.isabstract(gedcoml::FamilyBook)
+
+def test_gedcoml_familybook_is_not_abstract():
+    assert not inspect.isabstract(gedcoml_FamilyBook)
 
 
-def test_gedcoml::familybook_constructor_exists():
-    assert callable(gedcoml::FamilyBook.__init__)
+def test_gedcoml_familybook_constructor_exists():
+    assert callable(gedcoml_FamilyBook.__init__)
 
 
-def test_gedcoml::familybook_constructor_args():
-    sig = inspect.signature(gedcoml::FamilyBook.__init__)
+def test_gedcoml_familybook_constructor_args():
+    sig = inspect.signature(gedcoml_FamilyBook.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_gedcoml::projectdescription_is_not_abstract():
-    assert not inspect.isabstract(gedcoml::Projectdescription)
+def test_gedcoml_projectdescription_is_not_abstract():
+    assert not inspect.isabstract(gedcoml_Projectdescription)
 
 
-def test_gedcoml::projectdescription_constructor_exists():
-    assert callable(gedcoml::Projectdescription.__init__)
+def test_gedcoml_projectdescription_constructor_exists():
+    assert callable(gedcoml_Projectdescription.__init__)
 
 
-def test_gedcoml::projectdescription_constructor_args():
-    sig = inspect.signature(gedcoml::Projectdescription.__init__)
+def test_gedcoml_projectdescription_constructor_args():
+    sig = inspect.signature(gedcoml_Projectdescription.__init__)
     params = list(sig.parameters.keys())
+    assert "artifactId" in params, "Missing parameter 'artifactId'"
     assert "groupId" in params, "Missing parameter 'groupId'"
     assert "publishingDate" in params, "Missing parameter 'publishingDate'"
     assert "version" in params, "Missing parameter 'version'"
-    assert "artifactId" in params, "Missing parameter 'artifactId'"
 
-def test_gedcoml::projectdescription_has_groupId():
-    assert hasattr(gedcoml::Projectdescription, "groupId")
+def test_gedcoml_projectdescription_has_artifactId():
+    assert hasattr(gedcoml_Projectdescription, "artifactId")
     descriptor = None
-    for klass in gedcoml::Projectdescription.__mro__:
+    for klass in gedcoml_Projectdescription.__mro__:
+        if "artifactId" in klass.__dict__:
+            descriptor = klass.__dict__["artifactId"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_gedcoml_projectdescription_has_groupId():
+    assert hasattr(gedcoml_Projectdescription, "groupId")
+    descriptor = None
+    for klass in gedcoml_Projectdescription.__mro__:
         if "groupId" in klass.__dict__:
             descriptor = klass.__dict__["groupId"]
             break
     assert isinstance(descriptor, property)
 
-def test_gedcoml::projectdescription_has_publishingDate():
-    assert hasattr(gedcoml::Projectdescription, "publishingDate")
+def test_gedcoml_projectdescription_has_publishingDate():
+    assert hasattr(gedcoml_Projectdescription, "publishingDate")
     descriptor = None
-    for klass in gedcoml::Projectdescription.__mro__:
+    for klass in gedcoml_Projectdescription.__mro__:
         if "publishingDate" in klass.__dict__:
             descriptor = klass.__dict__["publishingDate"]
             break
     assert isinstance(descriptor, property)
 
-def test_gedcoml::projectdescription_has_version():
-    assert hasattr(gedcoml::Projectdescription, "version")
+def test_gedcoml_projectdescription_has_version():
+    assert hasattr(gedcoml_Projectdescription, "version")
     descriptor = None
-    for klass in gedcoml::Projectdescription.__mro__:
+    for klass in gedcoml_Projectdescription.__mro__:
         if "version" in klass.__dict__:
             descriptor = klass.__dict__["version"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_gedcoml::projectdescription_has_artifactId():
-    assert hasattr(gedcoml::Projectdescription, "artifactId")
-    descriptor = None
-    for klass in gedcoml::Projectdescription.__mro__:
-        if "artifactId" in klass.__dict__:
-            descriptor = klass.__dict__["artifactId"]
             break
     assert isinstance(descriptor, property)
 
@@ -531,8 +531,8 @@ def test_sexus_has_all_literals():
     # Collect the names of literals in this Enumeration
     enum_literals = [lit.name for lit in Sexus]
     expected_literals = [
-        "undefined",
         "male",
+        "undefined",
         "female",
     ]
     # Check that all expected literals exist
@@ -554,103 +554,103 @@ safe_text = st.text(
 Source_strategy = st.builds(
     Source,
 )
-gedcoml::PersonRef_strategy = st.builds(
-    gedcoml::PersonRef,
+gedcoml_PersonRef_strategy = st.builds(
+    gedcoml_PersonRef,
 )
-gedcoml::Others_strategy = st.builds(
-    gedcoml::Others,
+gedcoml_Others_strategy = st.builds(
+    gedcoml_Others,
     description=
         safe_text
 )
-gedcoml::Address_strategy = st.builds(
-    gedcoml::Address,
+gedcoml_Address_strategy = st.builds(
+    gedcoml_Address,
     exodus=
         safe_text,
     entry=
         safe_text
 )
-gedcoml::Source_strategy = st.builds(
-    gedcoml::Source,
+gedcoml_Source_strategy = st.builds(
+    gedcoml_Source,
 )
-gedcoml::Note_strategy = st.builds(
-    gedcoml::Note,
+gedcoml_Note_strategy = st.builds(
+    gedcoml_Note,
     content=
         safe_text
 )
-gedcoml::Married_strategy = st.builds(
-    gedcoml::Married,
-    separationDay=
-        safe_text,
+gedcoml_Married_strategy = st.builds(
+    gedcoml_Married,
     weddingDay=
+        safe_text,
+    separationDay=
         safe_text
 )
 Person_strategy = st.builds(
     Person,
 )
-gedcoml::UnbekanntePerson_strategy = st.builds(
-    gedcoml::UnbekanntePerson,
+gedcoml_UnbekanntePerson_strategy = st.builds(
+    gedcoml_UnbekanntePerson,
 )
-gedcoml::BekanntePerson_strategy = st.builds(
-    gedcoml::BekanntePerson,
+gedcoml_BekanntePerson_strategy = st.builds(
+    gedcoml_BekanntePerson,
     lastName=
         safe_text,
     birthName=
         safe_text,
-    firstName=
-        safe_text,
-    deathDay=
-        safe_text,
     middleName=
         safe_text,
     birthDay=
-        safe_text
-)
-gedcoml::Person_strategy = st.builds(
-    gedcoml::Person,
-    id=
         safe_text,
-    sex=
+    deathDay=
+        safe_text,
+    firstName=
         safe_text
 )
-gedcoml::Family_strategy = st.builds(
-    gedcoml::Family,
+gedcoml_Person_strategy = st.builds(
+    gedcoml_Person,
+    sex=
+        safe_text,
+    id=
+        safe_text
+)
+gedcoml_Family_strategy = st.builds(
+    gedcoml_Family,
     name=
         safe_text
 )
-gedcoml::Author_strategy = st.builds(
-    gedcoml::Author,
-    firstName=
-        safe_text,
+gedcoml_Author_strategy = st.builds(
+    gedcoml_Author,
     lastName=
+        safe_text,
+    firstName=
         safe_text
 )
-gedcoml::FamilyImport_strategy = st.builds(
-    gedcoml::FamilyImport,
+gedcoml_FamilyImport_strategy = st.builds(
+    gedcoml_FamilyImport,
 )
 Address_strategy = st.builds(
     Address,
 )
-gedcoml::PostAddress_strategy = st.builds(
-    gedcoml::PostAddress,
+gedcoml_PostAddress_strategy = st.builds(
+    gedcoml_PostAddress,
     city=
         safe_text,
-    street=
-        safe_text,
     postcode=
+        safe_text,
+    street=
         safe_text
 )
-gedcoml::FamilyBook_strategy = st.builds(
-    gedcoml::FamilyBook,
+gedcoml_FamilyBook_strategy = st.builds(
+    gedcoml_FamilyBook,
 )
-gedcoml::Projectdescription_strategy = st.builds(
-    gedcoml::Projectdescription,
+gedcoml_Projectdescription_strategy = st.builds(
+    gedcoml_Projectdescription,
+    artifactId=
+        safe_text,
     groupId=
         safe_text,
     publishingDate=
         safe_text,
     version=
-        safe_text,
-    artifactId=
         safe_text
 )
 
@@ -659,351 +659,279 @@ gedcoml::Projectdescription_strategy = st.builds(
 def test_source_instantiation(instance):
     assert isinstance(instance, Source)
 
-@given(instance=gedcoml::PersonRef_strategy)
+@given(instance=gedcoml_PersonRef_strategy)
 @settings(max_examples=50)
-def test_gedcoml::personref_instantiation(instance):
-    assert isinstance(instance, gedcoml::PersonRef)
+def test_gedcoml_personref_instantiation(instance):
+    assert isinstance(instance, gedcoml_PersonRef)
 
-@given(instance=gedcoml::Others_strategy)
+@given(instance=gedcoml_Others_strategy)
 @settings(max_examples=50)
-def test_gedcoml::others_instantiation(instance):
-    assert isinstance(instance, gedcoml::Others)
-
-@given(instance=gedcoml::Others_strategy)
-def test_gedcoml::others_description_type(instance):
-    assert isinstance(instance.description, str)
+def test_gedcoml_others_instantiation(instance):
+    assert isinstance(instance, gedcoml_Others)
 
 
-@given(instance=gedcoml::Others_strategy)
-def test_gedcoml::others_description_setter(instance):
+
+@given(instance=gedcoml_Others_strategy)
+def test_gedcoml_others_description_setter(instance):
     original = instance.description
     instance.description = original
     assert instance.description == original
 
-@given(instance=gedcoml::Address_strategy)
+@given(instance=gedcoml_Address_strategy)
 @settings(max_examples=50)
-def test_gedcoml::address_instantiation(instance):
-    assert isinstance(instance, gedcoml::Address)
-
-@given(instance=gedcoml::Address_strategy)
-def test_gedcoml::address_exodus_type(instance):
-    assert isinstance(instance.exodus, str)
+def test_gedcoml_address_instantiation(instance):
+    assert isinstance(instance, gedcoml_Address)
 
 
-@given(instance=gedcoml::Address_strategy)
-def test_gedcoml::address_exodus_setter(instance):
+
+@given(instance=gedcoml_Address_strategy)
+def test_gedcoml_address_exodus_setter(instance):
     original = instance.exodus
     instance.exodus = original
     assert instance.exodus == original
 
-@given(instance=gedcoml::Address_strategy)
-def test_gedcoml::address_entry_type(instance):
-    assert isinstance(instance.entry, str)
 
 
-@given(instance=gedcoml::Address_strategy)
-def test_gedcoml::address_entry_setter(instance):
+@given(instance=gedcoml_Address_strategy)
+def test_gedcoml_address_entry_setter(instance):
     original = instance.entry
     instance.entry = original
     assert instance.entry == original
 
-@given(instance=gedcoml::Source_strategy)
+@given(instance=gedcoml_Source_strategy)
 @settings(max_examples=50)
-def test_gedcoml::source_instantiation(instance):
-    assert isinstance(instance, gedcoml::Source)
+def test_gedcoml_source_instantiation(instance):
+    assert isinstance(instance, gedcoml_Source)
 
-@given(instance=gedcoml::Note_strategy)
+@given(instance=gedcoml_Note_strategy)
 @settings(max_examples=50)
-def test_gedcoml::note_instantiation(instance):
-    assert isinstance(instance, gedcoml::Note)
-
-@given(instance=gedcoml::Note_strategy)
-def test_gedcoml::note_content_type(instance):
-    assert isinstance(instance.content, str)
+def test_gedcoml_note_instantiation(instance):
+    assert isinstance(instance, gedcoml_Note)
 
 
-@given(instance=gedcoml::Note_strategy)
-def test_gedcoml::note_content_setter(instance):
+
+@given(instance=gedcoml_Note_strategy)
+def test_gedcoml_note_content_setter(instance):
     original = instance.content
     instance.content = original
     assert instance.content == original
 
-@given(instance=gedcoml::Married_strategy)
+@given(instance=gedcoml_Married_strategy)
 @settings(max_examples=50)
-def test_gedcoml::married_instantiation(instance):
-    assert isinstance(instance, gedcoml::Married)
-
-@given(instance=gedcoml::Married_strategy)
-def test_gedcoml::married_separationDay_type(instance):
-    assert isinstance(instance.separationDay, str)
+def test_gedcoml_married_instantiation(instance):
+    assert isinstance(instance, gedcoml_Married)
 
 
-@given(instance=gedcoml::Married_strategy)
-def test_gedcoml::married_separationDay_setter(instance):
-    original = instance.separationDay
-    instance.separationDay = original
-    assert instance.separationDay == original
 
-@given(instance=gedcoml::Married_strategy)
-def test_gedcoml::married_weddingDay_type(instance):
-    assert isinstance(instance.weddingDay, str)
-
-
-@given(instance=gedcoml::Married_strategy)
-def test_gedcoml::married_weddingDay_setter(instance):
+@given(instance=gedcoml_Married_strategy)
+def test_gedcoml_married_weddingDay_setter(instance):
     original = instance.weddingDay
     instance.weddingDay = original
     assert instance.weddingDay == original
+
+
+
+@given(instance=gedcoml_Married_strategy)
+def test_gedcoml_married_separationDay_setter(instance):
+    original = instance.separationDay
+    instance.separationDay = original
+    assert instance.separationDay == original
 
 @given(instance=Person_strategy)
 @settings(max_examples=50)
 def test_person_instantiation(instance):
     assert isinstance(instance, Person)
 
-@given(instance=gedcoml::UnbekanntePerson_strategy)
+@given(instance=gedcoml_UnbekanntePerson_strategy)
 @settings(max_examples=50)
-def test_gedcoml::unbekannteperson_instantiation(instance):
-    assert isinstance(instance, gedcoml::UnbekanntePerson)
+def test_gedcoml_unbekannteperson_instantiation(instance):
+    assert isinstance(instance, gedcoml_UnbekanntePerson)
 
-@given(instance=gedcoml::BekanntePerson_strategy)
+@given(instance=gedcoml_BekanntePerson_strategy)
 @settings(max_examples=50)
-def test_gedcoml::bekannteperson_instantiation(instance):
-    assert isinstance(instance, gedcoml::BekanntePerson)
-
-@given(instance=gedcoml::BekanntePerson_strategy)
-def test_gedcoml::bekannteperson_lastName_type(instance):
-    assert isinstance(instance.lastName, str)
+def test_gedcoml_bekannteperson_instantiation(instance):
+    assert isinstance(instance, gedcoml_BekanntePerson)
 
 
-@given(instance=gedcoml::BekanntePerson_strategy)
-def test_gedcoml::bekannteperson_lastName_setter(instance):
+
+@given(instance=gedcoml_BekanntePerson_strategy)
+def test_gedcoml_bekannteperson_lastName_setter(instance):
     original = instance.lastName
     instance.lastName = original
     assert instance.lastName == original
 
-@given(instance=gedcoml::BekanntePerson_strategy)
-def test_gedcoml::bekannteperson_birthName_type(instance):
-    assert isinstance(instance.birthName, str)
 
 
-@given(instance=gedcoml::BekanntePerson_strategy)
-def test_gedcoml::bekannteperson_birthName_setter(instance):
+@given(instance=gedcoml_BekanntePerson_strategy)
+def test_gedcoml_bekannteperson_birthName_setter(instance):
     original = instance.birthName
     instance.birthName = original
     assert instance.birthName == original
 
-@given(instance=gedcoml::BekanntePerson_strategy)
-def test_gedcoml::bekannteperson_firstName_type(instance):
-    assert isinstance(instance.firstName, str)
 
 
-@given(instance=gedcoml::BekanntePerson_strategy)
-def test_gedcoml::bekannteperson_firstName_setter(instance):
-    original = instance.firstName
-    instance.firstName = original
-    assert instance.firstName == original
-
-@given(instance=gedcoml::BekanntePerson_strategy)
-def test_gedcoml::bekannteperson_deathDay_type(instance):
-    assert isinstance(instance.deathDay, str)
-
-
-@given(instance=gedcoml::BekanntePerson_strategy)
-def test_gedcoml::bekannteperson_deathDay_setter(instance):
-    original = instance.deathDay
-    instance.deathDay = original
-    assert instance.deathDay == original
-
-@given(instance=gedcoml::BekanntePerson_strategy)
-def test_gedcoml::bekannteperson_middleName_type(instance):
-    assert isinstance(instance.middleName, str)
-
-
-@given(instance=gedcoml::BekanntePerson_strategy)
-def test_gedcoml::bekannteperson_middleName_setter(instance):
+@given(instance=gedcoml_BekanntePerson_strategy)
+def test_gedcoml_bekannteperson_middleName_setter(instance):
     original = instance.middleName
     instance.middleName = original
     assert instance.middleName == original
 
-@given(instance=gedcoml::BekanntePerson_strategy)
-def test_gedcoml::bekannteperson_birthDay_type(instance):
-    assert isinstance(instance.birthDay, str)
 
 
-@given(instance=gedcoml::BekanntePerson_strategy)
-def test_gedcoml::bekannteperson_birthDay_setter(instance):
+@given(instance=gedcoml_BekanntePerson_strategy)
+def test_gedcoml_bekannteperson_birthDay_setter(instance):
     original = instance.birthDay
     instance.birthDay = original
     assert instance.birthDay == original
 
-@given(instance=gedcoml::Person_strategy)
-@settings(max_examples=50)
-def test_gedcoml::person_instantiation(instance):
-    assert isinstance(instance, gedcoml::Person)
-
-@given(instance=gedcoml::Person_strategy)
-def test_gedcoml::person_id_type(instance):
-    assert isinstance(instance.id, str)
 
 
-@given(instance=gedcoml::Person_strategy)
-def test_gedcoml::person_id_setter(instance):
-    original = instance.id
-    instance.id = original
-    assert instance.id == original
-
-@given(instance=gedcoml::Person_strategy)
-def test_gedcoml::person_sex_type(instance):
-    assert isinstance(instance.sex, str)
+@given(instance=gedcoml_BekanntePerson_strategy)
+def test_gedcoml_bekannteperson_deathDay_setter(instance):
+    original = instance.deathDay
+    instance.deathDay = original
+    assert instance.deathDay == original
 
 
-@given(instance=gedcoml::Person_strategy)
-def test_gedcoml::person_sex_setter(instance):
-    original = instance.sex
-    instance.sex = original
-    assert instance.sex == original
 
-@given(instance=gedcoml::Family_strategy)
-@settings(max_examples=50)
-def test_gedcoml::family_instantiation(instance):
-    assert isinstance(instance, gedcoml::Family)
-
-@given(instance=gedcoml::Family_strategy)
-def test_gedcoml::family_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=gedcoml::Family_strategy)
-def test_gedcoml::family_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
-
-@given(instance=gedcoml::Author_strategy)
-@settings(max_examples=50)
-def test_gedcoml::author_instantiation(instance):
-    assert isinstance(instance, gedcoml::Author)
-
-@given(instance=gedcoml::Author_strategy)
-def test_gedcoml::author_firstName_type(instance):
-    assert isinstance(instance.firstName, str)
-
-
-@given(instance=gedcoml::Author_strategy)
-def test_gedcoml::author_firstName_setter(instance):
+@given(instance=gedcoml_BekanntePerson_strategy)
+def test_gedcoml_bekannteperson_firstName_setter(instance):
     original = instance.firstName
     instance.firstName = original
     assert instance.firstName == original
 
-@given(instance=gedcoml::Author_strategy)
-def test_gedcoml::author_lastName_type(instance):
-    assert isinstance(instance.lastName, str)
+@given(instance=gedcoml_Person_strategy)
+@settings(max_examples=50)
+def test_gedcoml_person_instantiation(instance):
+    assert isinstance(instance, gedcoml_Person)
 
 
-@given(instance=gedcoml::Author_strategy)
-def test_gedcoml::author_lastName_setter(instance):
+
+@given(instance=gedcoml_Person_strategy)
+def test_gedcoml_person_sex_setter(instance):
+    original = instance.sex
+    instance.sex = original
+    assert instance.sex == original
+
+
+
+@given(instance=gedcoml_Person_strategy)
+def test_gedcoml_person_id_setter(instance):
+    original = instance.id
+    instance.id = original
+    assert instance.id == original
+
+@given(instance=gedcoml_Family_strategy)
+@settings(max_examples=50)
+def test_gedcoml_family_instantiation(instance):
+    assert isinstance(instance, gedcoml_Family)
+
+
+
+@given(instance=gedcoml_Family_strategy)
+def test_gedcoml_family_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+@given(instance=gedcoml_Author_strategy)
+@settings(max_examples=50)
+def test_gedcoml_author_instantiation(instance):
+    assert isinstance(instance, gedcoml_Author)
+
+
+
+@given(instance=gedcoml_Author_strategy)
+def test_gedcoml_author_lastName_setter(instance):
     original = instance.lastName
     instance.lastName = original
     assert instance.lastName == original
 
-@given(instance=gedcoml::FamilyImport_strategy)
+
+
+@given(instance=gedcoml_Author_strategy)
+def test_gedcoml_author_firstName_setter(instance):
+    original = instance.firstName
+    instance.firstName = original
+    assert instance.firstName == original
+
+@given(instance=gedcoml_FamilyImport_strategy)
 @settings(max_examples=50)
-def test_gedcoml::familyimport_instantiation(instance):
-    assert isinstance(instance, gedcoml::FamilyImport)
+def test_gedcoml_familyimport_instantiation(instance):
+    assert isinstance(instance, gedcoml_FamilyImport)
 
 @given(instance=Address_strategy)
 @settings(max_examples=50)
 def test_address_instantiation(instance):
     assert isinstance(instance, Address)
 
-@given(instance=gedcoml::PostAddress_strategy)
+@given(instance=gedcoml_PostAddress_strategy)
 @settings(max_examples=50)
-def test_gedcoml::postaddress_instantiation(instance):
-    assert isinstance(instance, gedcoml::PostAddress)
-
-@given(instance=gedcoml::PostAddress_strategy)
-def test_gedcoml::postaddress_city_type(instance):
-    assert isinstance(instance.city, str)
+def test_gedcoml_postaddress_instantiation(instance):
+    assert isinstance(instance, gedcoml_PostAddress)
 
 
-@given(instance=gedcoml::PostAddress_strategy)
-def test_gedcoml::postaddress_city_setter(instance):
+
+@given(instance=gedcoml_PostAddress_strategy)
+def test_gedcoml_postaddress_city_setter(instance):
     original = instance.city
     instance.city = original
     assert instance.city == original
 
-@given(instance=gedcoml::PostAddress_strategy)
-def test_gedcoml::postaddress_street_type(instance):
-    assert isinstance(instance.street, str)
 
 
-@given(instance=gedcoml::PostAddress_strategy)
-def test_gedcoml::postaddress_street_setter(instance):
-    original = instance.street
-    instance.street = original
-    assert instance.street == original
-
-@given(instance=gedcoml::PostAddress_strategy)
-def test_gedcoml::postaddress_postcode_type(instance):
-    assert isinstance(instance.postcode, str)
-
-
-@given(instance=gedcoml::PostAddress_strategy)
-def test_gedcoml::postaddress_postcode_setter(instance):
+@given(instance=gedcoml_PostAddress_strategy)
+def test_gedcoml_postaddress_postcode_setter(instance):
     original = instance.postcode
     instance.postcode = original
     assert instance.postcode == original
 
-@given(instance=gedcoml::FamilyBook_strategy)
+
+
+@given(instance=gedcoml_PostAddress_strategy)
+def test_gedcoml_postaddress_street_setter(instance):
+    original = instance.street
+    instance.street = original
+    assert instance.street == original
+
+@given(instance=gedcoml_FamilyBook_strategy)
 @settings(max_examples=50)
-def test_gedcoml::familybook_instantiation(instance):
-    assert isinstance(instance, gedcoml::FamilyBook)
+def test_gedcoml_familybook_instantiation(instance):
+    assert isinstance(instance, gedcoml_FamilyBook)
 
-@given(instance=gedcoml::Projectdescription_strategy)
+@given(instance=gedcoml_Projectdescription_strategy)
 @settings(max_examples=50)
-def test_gedcoml::projectdescription_instantiation(instance):
-    assert isinstance(instance, gedcoml::Projectdescription)
-
-@given(instance=gedcoml::Projectdescription_strategy)
-def test_gedcoml::projectdescription_groupId_type(instance):
-    assert isinstance(instance.groupId, str)
+def test_gedcoml_projectdescription_instantiation(instance):
+    assert isinstance(instance, gedcoml_Projectdescription)
 
 
-@given(instance=gedcoml::Projectdescription_strategy)
-def test_gedcoml::projectdescription_groupId_setter(instance):
+
+@given(instance=gedcoml_Projectdescription_strategy)
+def test_gedcoml_projectdescription_artifactId_setter(instance):
+    original = instance.artifactId
+    instance.artifactId = original
+    assert instance.artifactId == original
+
+
+
+@given(instance=gedcoml_Projectdescription_strategy)
+def test_gedcoml_projectdescription_groupId_setter(instance):
     original = instance.groupId
     instance.groupId = original
     assert instance.groupId == original
 
-@given(instance=gedcoml::Projectdescription_strategy)
-def test_gedcoml::projectdescription_publishingDate_type(instance):
-    assert isinstance(instance.publishingDate, str)
 
 
-@given(instance=gedcoml::Projectdescription_strategy)
-def test_gedcoml::projectdescription_publishingDate_setter(instance):
+@given(instance=gedcoml_Projectdescription_strategy)
+def test_gedcoml_projectdescription_publishingDate_setter(instance):
     original = instance.publishingDate
     instance.publishingDate = original
     assert instance.publishingDate == original
 
-@given(instance=gedcoml::Projectdescription_strategy)
-def test_gedcoml::projectdescription_version_type(instance):
-    assert isinstance(instance.version, str)
 
 
-@given(instance=gedcoml::Projectdescription_strategy)
-def test_gedcoml::projectdescription_version_setter(instance):
+@given(instance=gedcoml_Projectdescription_strategy)
+def test_gedcoml_projectdescription_version_setter(instance):
     original = instance.version
     instance.version = original
     assert instance.version == original
-
-@given(instance=gedcoml::Projectdescription_strategy)
-def test_gedcoml::projectdescription_artifactId_type(instance):
-    assert isinstance(instance.artifactId, str)
-
-
-@given(instance=gedcoml::Projectdescription_strategy)
-def test_gedcoml::projectdescription_artifactId_setter(instance):
-    original = instance.artifactId
-    instance.artifactId = original
-    assert instance.artifactId == original

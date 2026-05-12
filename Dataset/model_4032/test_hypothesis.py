@@ -3,22 +3,22 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    uml::UML,
-    uml::packages,
-    uml::package::,
-    uml::EStringToStringMapEntry,
-    uml::DocumentRoot,
-    uml::primitiveDataType,
-    uml::generalClass,
-    uml::class::,
-    uml::attributes,
-    uml::classifiersAndAssociations,
-    uml::association,
-    uml::ownerClassifier,
-    uml::attribute,
+from python_code import (
+    uml_UML,
+    uml_packages,
+    uml_package_,
+    uml_EStringToStringMapEntry,
+    uml_DocumentRoot,
+    uml_primitiveDataType,
+    uml_generalClass,
+    uml_class_,
+    uml_attributes,
+    uml_classifiersAndAssociations,
+    uml_association,
+    uml_ownerClassifier,
+    uml_attribute,
 )
 
 # =============================================================================
@@ -27,37 +27,37 @@ from classes import (
 
 
 
-def test_uml::uml_is_not_abstract():
-    assert not inspect.isabstract(uml::UML)
+def test_uml_uml_is_not_abstract():
+    assert not inspect.isabstract(uml_UML)
 
 
-def test_uml::uml_constructor_exists():
-    assert callable(uml::UML.__init__)
+def test_uml_uml_constructor_exists():
+    assert callable(uml_UML.__init__)
 
 
-def test_uml::uml_constructor_args():
-    sig = inspect.signature(uml::UML.__init__)
+def test_uml_uml_constructor_args():
+    sig = inspect.signature(uml_UML.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_uml::packages_is_not_abstract():
-    assert not inspect.isabstract(uml::packages)
+def test_uml_packages_is_not_abstract():
+    assert not inspect.isabstract(uml_packages)
 
 
-def test_uml::packages_constructor_exists():
-    assert callable(uml::packages.__init__)
+def test_uml_packages_constructor_exists():
+    assert callable(uml_packages.__init__)
 
 
-def test_uml::packages_constructor_args():
-    sig = inspect.signature(uml::packages.__init__)
+def test_uml_packages_constructor_args():
+    sig = inspect.signature(uml_packages.__init__)
     params = list(sig.parameters.keys())
     assert "group" in params, "Missing parameter 'group'"
 
-def test_uml::packages_has_group():
-    assert hasattr(uml::packages, "group")
+def test_uml_packages_has_group():
+    assert hasattr(uml_packages, "group")
     descriptor = None
-    for klass in uml::packages.__mro__:
+    for klass in uml_packages.__mro__:
         if "group" in klass.__dict__:
             descriptor = klass.__dict__["group"]
             break
@@ -65,81 +65,81 @@ def test_uml::packages_has_group():
 
 
 
-def test_uml::package::_is_not_abstract():
-    assert not inspect.isabstract(uml::package::)
+def test_uml_package__is_not_abstract():
+    assert not inspect.isabstract(uml_package_)
 
 
-def test_uml::package::_constructor_exists():
-    assert callable(uml::package::.__init__)
+def test_uml_package__constructor_exists():
+    assert callable(uml_package_.__init__)
 
 
-def test_uml::package::_constructor_args():
-    sig = inspect.signature(uml::package::.__init__)
+def test_uml_package__constructor_args():
+    sig = inspect.signature(uml_package_.__init__)
     params = list(sig.parameters.keys())
-    assert "oID" in params, "Missing parameter 'oID'"
-    assert "name" in params, "Missing parameter 'name'"
     assert "kind" in params, "Missing parameter 'kind'"
+    assert "name" in params, "Missing parameter 'name'"
+    assert "oID" in params, "Missing parameter 'oID'"
 
-def test_uml::package::_has_oID():
-    assert hasattr(uml::package::, "oID")
+def test_uml_package__has_kind():
+    assert hasattr(uml_package_, "kind")
     descriptor = None
-    for klass in uml::package::.__mro__:
-        if "oID" in klass.__dict__:
-            descriptor = klass.__dict__["oID"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_uml::package::_has_name():
-    assert hasattr(uml::package::, "name")
-    descriptor = None
-    for klass in uml::package::.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_uml::package::_has_kind():
-    assert hasattr(uml::package::, "kind")
-    descriptor = None
-    for klass in uml::package::.__mro__:
+    for klass in uml_package_.__mro__:
         if "kind" in klass.__dict__:
             descriptor = klass.__dict__["kind"]
             break
     assert isinstance(descriptor, property)
 
+def test_uml_package__has_name():
+    assert hasattr(uml_package_, "name")
+    descriptor = None
+    for klass in uml_package_.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_uml_package__has_oID():
+    assert hasattr(uml_package_, "oID")
+    descriptor = None
+    for klass in uml_package_.__mro__:
+        if "oID" in klass.__dict__:
+            descriptor = klass.__dict__["oID"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_uml::estringtostringmapentry_is_not_abstract():
-    assert not inspect.isabstract(uml::EStringToStringMapEntry)
+
+def test_uml_estringtostringmapentry_is_not_abstract():
+    assert not inspect.isabstract(uml_EStringToStringMapEntry)
 
 
-def test_uml::estringtostringmapentry_constructor_exists():
-    assert callable(uml::EStringToStringMapEntry.__init__)
+def test_uml_estringtostringmapentry_constructor_exists():
+    assert callable(uml_EStringToStringMapEntry.__init__)
 
 
-def test_uml::estringtostringmapentry_constructor_args():
-    sig = inspect.signature(uml::EStringToStringMapEntry.__init__)
+def test_uml_estringtostringmapentry_constructor_args():
+    sig = inspect.signature(uml_EStringToStringMapEntry.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_uml::documentroot_is_not_abstract():
-    assert not inspect.isabstract(uml::DocumentRoot)
+def test_uml_documentroot_is_not_abstract():
+    assert not inspect.isabstract(uml_DocumentRoot)
 
 
-def test_uml::documentroot_constructor_exists():
-    assert callable(uml::DocumentRoot.__init__)
+def test_uml_documentroot_constructor_exists():
+    assert callable(uml_DocumentRoot.__init__)
 
 
-def test_uml::documentroot_constructor_args():
-    sig = inspect.signature(uml::DocumentRoot.__init__)
+def test_uml_documentroot_constructor_args():
+    sig = inspect.signature(uml_DocumentRoot.__init__)
     params = list(sig.parameters.keys())
     assert "mixed" in params, "Missing parameter 'mixed'"
 
-def test_uml::documentroot_has_mixed():
-    assert hasattr(uml::DocumentRoot, "mixed")
+def test_uml_documentroot_has_mixed():
+    assert hasattr(uml_DocumentRoot, "mixed")
     descriptor = None
-    for klass in uml::DocumentRoot.__mro__:
+    for klass in uml_DocumentRoot.__mro__:
         if "mixed" in klass.__dict__:
             descriptor = klass.__dict__["mixed"]
             break
@@ -147,43 +147,43 @@ def test_uml::documentroot_has_mixed():
 
 
 
-def test_uml::primitivedatatype_is_not_abstract():
-    assert not inspect.isabstract(uml::primitiveDataType)
+def test_uml_primitivedatatype_is_not_abstract():
+    assert not inspect.isabstract(uml_primitiveDataType)
 
 
-def test_uml::primitivedatatype_constructor_exists():
-    assert callable(uml::primitiveDataType.__init__)
+def test_uml_primitivedatatype_constructor_exists():
+    assert callable(uml_primitiveDataType.__init__)
 
 
-def test_uml::primitivedatatype_constructor_args():
-    sig = inspect.signature(uml::primitiveDataType.__init__)
+def test_uml_primitivedatatype_constructor_args():
+    sig = inspect.signature(uml_primitiveDataType.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
     assert "oID" in params, "Missing parameter 'oID'"
     assert "kind" in params, "Missing parameter 'kind'"
 
-def test_uml::primitivedatatype_has_name():
-    assert hasattr(uml::primitiveDataType, "name")
+def test_uml_primitivedatatype_has_name():
+    assert hasattr(uml_primitiveDataType, "name")
     descriptor = None
-    for klass in uml::primitiveDataType.__mro__:
+    for klass in uml_primitiveDataType.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
-def test_uml::primitivedatatype_has_oID():
-    assert hasattr(uml::primitiveDataType, "oID")
+def test_uml_primitivedatatype_has_oID():
+    assert hasattr(uml_primitiveDataType, "oID")
     descriptor = None
-    for klass in uml::primitiveDataType.__mro__:
+    for klass in uml_primitiveDataType.__mro__:
         if "oID" in klass.__dict__:
             descriptor = klass.__dict__["oID"]
             break
     assert isinstance(descriptor, property)
 
-def test_uml::primitivedatatype_has_kind():
-    assert hasattr(uml::primitiveDataType, "kind")
+def test_uml_primitivedatatype_has_kind():
+    assert hasattr(uml_primitiveDataType, "kind")
     descriptor = None
-    for klass in uml::primitiveDataType.__mro__:
+    for klass in uml_primitiveDataType.__mro__:
         if "kind" in klass.__dict__:
             descriptor = klass.__dict__["kind"]
             break
@@ -191,81 +191,81 @@ def test_uml::primitivedatatype_has_kind():
 
 
 
-def test_uml::generalclass_is_not_abstract():
-    assert not inspect.isabstract(uml::generalClass)
+def test_uml_generalclass_is_not_abstract():
+    assert not inspect.isabstract(uml_generalClass)
 
 
-def test_uml::generalclass_constructor_exists():
-    assert callable(uml::generalClass.__init__)
+def test_uml_generalclass_constructor_exists():
+    assert callable(uml_generalClass.__init__)
 
 
-def test_uml::generalclass_constructor_args():
-    sig = inspect.signature(uml::generalClass.__init__)
+def test_uml_generalclass_constructor_args():
+    sig = inspect.signature(uml_generalClass.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_uml::class::_is_not_abstract():
-    assert not inspect.isabstract(uml::class::)
+def test_uml_class__is_not_abstract():
+    assert not inspect.isabstract(uml_class_)
 
 
-def test_uml::class::_constructor_exists():
-    assert callable(uml::class::.__init__)
+def test_uml_class__constructor_exists():
+    assert callable(uml_class_.__init__)
 
 
-def test_uml::class::_constructor_args():
-    sig = inspect.signature(uml::class::.__init__)
+def test_uml_class__constructor_args():
+    sig = inspect.signature(uml_class_.__init__)
     params = list(sig.parameters.keys())
-    assert "kind" in params, "Missing parameter 'kind'"
     assert "oID" in params, "Missing parameter 'oID'"
     assert "name" in params, "Missing parameter 'name'"
+    assert "kind" in params, "Missing parameter 'kind'"
 
-def test_uml::class::_has_kind():
-    assert hasattr(uml::class::, "kind")
+def test_uml_class__has_oID():
+    assert hasattr(uml_class_, "oID")
     descriptor = None
-    for klass in uml::class::.__mro__:
-        if "kind" in klass.__dict__:
-            descriptor = klass.__dict__["kind"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_uml::class::_has_oID():
-    assert hasattr(uml::class::, "oID")
-    descriptor = None
-    for klass in uml::class::.__mro__:
+    for klass in uml_class_.__mro__:
         if "oID" in klass.__dict__:
             descriptor = klass.__dict__["oID"]
             break
     assert isinstance(descriptor, property)
 
-def test_uml::class::_has_name():
-    assert hasattr(uml::class::, "name")
+def test_uml_class__has_name():
+    assert hasattr(uml_class_, "name")
     descriptor = None
-    for klass in uml::class::.__mro__:
+    for klass in uml_class_.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
+def test_uml_class__has_kind():
+    assert hasattr(uml_class_, "kind")
+    descriptor = None
+    for klass in uml_class_.__mro__:
+        if "kind" in klass.__dict__:
+            descriptor = klass.__dict__["kind"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_uml::attributes_is_not_abstract():
-    assert not inspect.isabstract(uml::attributes)
+
+def test_uml_attributes_is_not_abstract():
+    assert not inspect.isabstract(uml_attributes)
 
 
-def test_uml::attributes_constructor_exists():
-    assert callable(uml::attributes.__init__)
+def test_uml_attributes_constructor_exists():
+    assert callable(uml_attributes.__init__)
 
 
-def test_uml::attributes_constructor_args():
-    sig = inspect.signature(uml::attributes.__init__)
+def test_uml_attributes_constructor_args():
+    sig = inspect.signature(uml_attributes.__init__)
     params = list(sig.parameters.keys())
     assert "group" in params, "Missing parameter 'group'"
 
-def test_uml::attributes_has_group():
-    assert hasattr(uml::attributes, "group")
+def test_uml_attributes_has_group():
+    assert hasattr(uml_attributes, "group")
     descriptor = None
-    for klass in uml::attributes.__mro__:
+    for klass in uml_attributes.__mro__:
         if "group" in klass.__dict__:
             descriptor = klass.__dict__["group"]
             break
@@ -273,23 +273,23 @@ def test_uml::attributes_has_group():
 
 
 
-def test_uml::classifiersandassociations_is_not_abstract():
-    assert not inspect.isabstract(uml::classifiersAndAssociations)
+def test_uml_classifiersandassociations_is_not_abstract():
+    assert not inspect.isabstract(uml_classifiersAndAssociations)
 
 
-def test_uml::classifiersandassociations_constructor_exists():
-    assert callable(uml::classifiersAndAssociations.__init__)
+def test_uml_classifiersandassociations_constructor_exists():
+    assert callable(uml_classifiersAndAssociations.__init__)
 
 
-def test_uml::classifiersandassociations_constructor_args():
-    sig = inspect.signature(uml::classifiersAndAssociations.__init__)
+def test_uml_classifiersandassociations_constructor_args():
+    sig = inspect.signature(uml_classifiersAndAssociations.__init__)
     params = list(sig.parameters.keys())
     assert "group" in params, "Missing parameter 'group'"
 
-def test_uml::classifiersandassociations_has_group():
-    assert hasattr(uml::classifiersAndAssociations, "group")
+def test_uml_classifiersandassociations_has_group():
+    assert hasattr(uml_classifiersAndAssociations, "group")
     descriptor = None
-    for klass in uml::classifiersAndAssociations.__mro__:
+    for klass in uml_classifiersAndAssociations.__mro__:
         if "group" in klass.__dict__:
             descriptor = klass.__dict__["group"]
             break
@@ -297,63 +297,63 @@ def test_uml::classifiersandassociations_has_group():
 
 
 
-def test_uml::association_is_not_abstract():
-    assert not inspect.isabstract(uml::association)
+def test_uml_association_is_not_abstract():
+    assert not inspect.isabstract(uml_association)
 
 
-def test_uml::association_constructor_exists():
-    assert callable(uml::association.__init__)
+def test_uml_association_constructor_exists():
+    assert callable(uml_association.__init__)
 
 
-def test_uml::association_constructor_args():
-    sig = inspect.signature(uml::association.__init__)
+def test_uml_association_constructor_args():
+    sig = inspect.signature(uml_association.__init__)
     params = list(sig.parameters.keys())
     assert "kind" in params, "Missing parameter 'kind'"
+    assert "oID" in params, "Missing parameter 'oID'"
+    assert "name" in params, "Missing parameter 'name'"
     assert "destination" in params, "Missing parameter 'destination'"
-    assert "oID" in params, "Missing parameter 'oID'"
-    assert "name" in params, "Missing parameter 'name'"
     assert "source" in params, "Missing parameter 'source'"
 
-def test_uml::association_has_kind():
-    assert hasattr(uml::association, "kind")
+def test_uml_association_has_kind():
+    assert hasattr(uml_association, "kind")
     descriptor = None
-    for klass in uml::association.__mro__:
+    for klass in uml_association.__mro__:
         if "kind" in klass.__dict__:
             descriptor = klass.__dict__["kind"]
             break
     assert isinstance(descriptor, property)
 
-def test_uml::association_has_destination():
-    assert hasattr(uml::association, "destination")
+def test_uml_association_has_oID():
+    assert hasattr(uml_association, "oID")
     descriptor = None
-    for klass in uml::association.__mro__:
+    for klass in uml_association.__mro__:
+        if "oID" in klass.__dict__:
+            descriptor = klass.__dict__["oID"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_uml_association_has_name():
+    assert hasattr(uml_association, "name")
+    descriptor = None
+    for klass in uml_association.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_uml_association_has_destination():
+    assert hasattr(uml_association, "destination")
+    descriptor = None
+    for klass in uml_association.__mro__:
         if "destination" in klass.__dict__:
             descriptor = klass.__dict__["destination"]
             break
     assert isinstance(descriptor, property)
 
-def test_uml::association_has_oID():
-    assert hasattr(uml::association, "oID")
+def test_uml_association_has_source():
+    assert hasattr(uml_association, "source")
     descriptor = None
-    for klass in uml::association.__mro__:
-        if "oID" in klass.__dict__:
-            descriptor = klass.__dict__["oID"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_uml::association_has_name():
-    assert hasattr(uml::association, "name")
-    descriptor = None
-    for klass in uml::association.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_uml::association_has_source():
-    assert hasattr(uml::association, "source")
-    descriptor = None
-    for klass in uml::association.__mro__:
+    for klass in uml_association.__mro__:
         if "source" in klass.__dict__:
             descriptor = klass.__dict__["source"]
             break
@@ -361,59 +361,59 @@ def test_uml::association_has_source():
 
 
 
-def test_uml::ownerclassifier_is_not_abstract():
-    assert not inspect.isabstract(uml::ownerClassifier)
+def test_uml_ownerclassifier_is_not_abstract():
+    assert not inspect.isabstract(uml_ownerClassifier)
 
 
-def test_uml::ownerclassifier_constructor_exists():
-    assert callable(uml::ownerClassifier.__init__)
+def test_uml_ownerclassifier_constructor_exists():
+    assert callable(uml_ownerClassifier.__init__)
 
 
-def test_uml::ownerclassifier_constructor_args():
-    sig = inspect.signature(uml::ownerClassifier.__init__)
+def test_uml_ownerclassifier_constructor_args():
+    sig = inspect.signature(uml_ownerClassifier.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_uml::attribute_is_not_abstract():
-    assert not inspect.isabstract(uml::attribute)
+def test_uml_attribute_is_not_abstract():
+    assert not inspect.isabstract(uml_attribute)
 
 
-def test_uml::attribute_constructor_exists():
-    assert callable(uml::attribute.__init__)
+def test_uml_attribute_constructor_exists():
+    assert callable(uml_attribute.__init__)
 
 
-def test_uml::attribute_constructor_args():
-    sig = inspect.signature(uml::attribute.__init__)
+def test_uml_attribute_constructor_args():
+    sig = inspect.signature(uml_attribute.__init__)
     params = list(sig.parameters.keys())
+    assert "kind" in params, "Missing parameter 'kind'"
     assert "name" in params, "Missing parameter 'name'"
     assert "oID" in params, "Missing parameter 'oID'"
-    assert "kind" in params, "Missing parameter 'kind'"
 
-def test_uml::attribute_has_name():
-    assert hasattr(uml::attribute, "name")
+def test_uml_attribute_has_kind():
+    assert hasattr(uml_attribute, "kind")
     descriptor = None
-    for klass in uml::attribute.__mro__:
+    for klass in uml_attribute.__mro__:
+        if "kind" in klass.__dict__:
+            descriptor = klass.__dict__["kind"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_uml_attribute_has_name():
+    assert hasattr(uml_attribute, "name")
+    descriptor = None
+    for klass in uml_attribute.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
-def test_uml::attribute_has_oID():
-    assert hasattr(uml::attribute, "oID")
+def test_uml_attribute_has_oID():
+    assert hasattr(uml_attribute, "oID")
     descriptor = None
-    for klass in uml::attribute.__mro__:
+    for klass in uml_attribute.__mro__:
         if "oID" in klass.__dict__:
             descriptor = klass.__dict__["oID"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_uml::attribute_has_kind():
-    assert hasattr(uml::attribute, "kind")
-    descriptor = None
-    for klass in uml::attribute.__mro__:
-        if "kind" in klass.__dict__:
-            descriptor = klass.__dict__["kind"]
             break
     assert isinstance(descriptor, property)
 
@@ -429,33 +429,33 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-uml::UML_strategy = st.builds(
-    uml::UML,
+uml_UML_strategy = st.builds(
+    uml_UML,
 )
-uml::packages_strategy = st.builds(
-    uml::packages,
+uml_packages_strategy = st.builds(
+    uml_packages,
     group=
         safe_text
 )
-uml::package::_strategy = st.builds(
-    uml::package::,
-    oID=
+uml_package__strategy = st.builds(
+    uml_package_,
+    kind=
         safe_text,
     name=
         safe_text,
-    kind=
+    oID=
         safe_text
 )
-uml::EStringToStringMapEntry_strategy = st.builds(
-    uml::EStringToStringMapEntry,
+uml_EStringToStringMapEntry_strategy = st.builds(
+    uml_EStringToStringMapEntry,
 )
-uml::DocumentRoot_strategy = st.builds(
-    uml::DocumentRoot,
+uml_DocumentRoot_strategy = st.builds(
+    uml_DocumentRoot,
     mixed=
         safe_text
 )
-uml::primitiveDataType_strategy = st.builds(
-    uml::primitiveDataType,
+uml_primitiveDataType_strategy = st.builds(
+    uml_primitiveDataType,
     name=
         safe_text,
     oID=
@@ -463,346 +463,283 @@ uml::primitiveDataType_strategy = st.builds(
     kind=
         safe_text
 )
-uml::generalClass_strategy = st.builds(
-    uml::generalClass,
+uml_generalClass_strategy = st.builds(
+    uml_generalClass,
 )
-uml::class::_strategy = st.builds(
-    uml::class::,
+uml_class__strategy = st.builds(
+    uml_class_,
+    oID=
+        safe_text,
+    name=
+        safe_text,
+    kind=
+        safe_text
+)
+uml_attributes_strategy = st.builds(
+    uml_attributes,
+    group=
+        safe_text
+)
+uml_classifiersAndAssociations_strategy = st.builds(
+    uml_classifiersAndAssociations,
+    group=
+        safe_text
+)
+uml_association_strategy = st.builds(
+    uml_association,
     kind=
         safe_text,
     oID=
         safe_text,
     name=
-        safe_text
-)
-uml::attributes_strategy = st.builds(
-    uml::attributes,
-    group=
-        safe_text
-)
-uml::classifiersAndAssociations_strategy = st.builds(
-    uml::classifiersAndAssociations,
-    group=
-        safe_text
-)
-uml::association_strategy = st.builds(
-    uml::association,
-    kind=
         safe_text,
     destination=
-        safe_text,
-    oID=
-        safe_text,
-    name=
         safe_text,
     source=
         safe_text
 )
-uml::ownerClassifier_strategy = st.builds(
-    uml::ownerClassifier,
+uml_ownerClassifier_strategy = st.builds(
+    uml_ownerClassifier,
 )
-uml::attribute_strategy = st.builds(
-    uml::attribute,
+uml_attribute_strategy = st.builds(
+    uml_attribute,
+    kind=
+        safe_text,
     name=
         safe_text,
     oID=
-        safe_text,
-    kind=
         safe_text
 )
 
-@given(instance=uml::UML_strategy)
+@given(instance=uml_UML_strategy)
 @settings(max_examples=50)
-def test_uml::uml_instantiation(instance):
-    assert isinstance(instance, uml::UML)
+def test_uml_uml_instantiation(instance):
+    assert isinstance(instance, uml_UML)
 
-@given(instance=uml::packages_strategy)
+@given(instance=uml_packages_strategy)
 @settings(max_examples=50)
-def test_uml::packages_instantiation(instance):
-    assert isinstance(instance, uml::packages)
-
-@given(instance=uml::packages_strategy)
-def test_uml::packages_group_type(instance):
-    assert isinstance(instance.group, str)
+def test_uml_packages_instantiation(instance):
+    assert isinstance(instance, uml_packages)
 
 
-@given(instance=uml::packages_strategy)
-def test_uml::packages_group_setter(instance):
+
+@given(instance=uml_packages_strategy)
+def test_uml_packages_group_setter(instance):
     original = instance.group
     instance.group = original
     assert instance.group == original
 
-@given(instance=uml::package::_strategy)
+@given(instance=uml_package__strategy)
 @settings(max_examples=50)
-def test_uml::package::_instantiation(instance):
-    assert isinstance(instance, uml::package::)
-
-@given(instance=uml::package::_strategy)
-def test_uml::package::_oID_type(instance):
-    assert isinstance(instance.oID, str)
+def test_uml_package__instantiation(instance):
+    assert isinstance(instance, uml_package_)
 
 
-@given(instance=uml::package::_strategy)
-def test_uml::package::_oID_setter(instance):
-    original = instance.oID
-    instance.oID = original
-    assert instance.oID == original
 
-@given(instance=uml::package::_strategy)
-def test_uml::package::_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=uml::package::_strategy)
-def test_uml::package::_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
-
-@given(instance=uml::package::_strategy)
-def test_uml::package::_kind_type(instance):
-    assert isinstance(instance.kind, str)
-
-
-@given(instance=uml::package::_strategy)
-def test_uml::package::_kind_setter(instance):
+@given(instance=uml_package__strategy)
+def test_uml_package__kind_setter(instance):
     original = instance.kind
     instance.kind = original
     assert instance.kind == original
 
-@given(instance=uml::EStringToStringMapEntry_strategy)
+
+
+@given(instance=uml_package__strategy)
+def test_uml_package__name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+
+
+@given(instance=uml_package__strategy)
+def test_uml_package__oID_setter(instance):
+    original = instance.oID
+    instance.oID = original
+    assert instance.oID == original
+
+@given(instance=uml_EStringToStringMapEntry_strategy)
 @settings(max_examples=50)
-def test_uml::estringtostringmapentry_instantiation(instance):
-    assert isinstance(instance, uml::EStringToStringMapEntry)
+def test_uml_estringtostringmapentry_instantiation(instance):
+    assert isinstance(instance, uml_EStringToStringMapEntry)
 
-@given(instance=uml::DocumentRoot_strategy)
+@given(instance=uml_DocumentRoot_strategy)
 @settings(max_examples=50)
-def test_uml::documentroot_instantiation(instance):
-    assert isinstance(instance, uml::DocumentRoot)
-
-@given(instance=uml::DocumentRoot_strategy)
-def test_uml::documentroot_mixed_type(instance):
-    assert isinstance(instance.mixed, str)
+def test_uml_documentroot_instantiation(instance):
+    assert isinstance(instance, uml_DocumentRoot)
 
 
-@given(instance=uml::DocumentRoot_strategy)
-def test_uml::documentroot_mixed_setter(instance):
+
+@given(instance=uml_DocumentRoot_strategy)
+def test_uml_documentroot_mixed_setter(instance):
     original = instance.mixed
     instance.mixed = original
     assert instance.mixed == original
 
-@given(instance=uml::primitiveDataType_strategy)
+@given(instance=uml_primitiveDataType_strategy)
 @settings(max_examples=50)
-def test_uml::primitivedatatype_instantiation(instance):
-    assert isinstance(instance, uml::primitiveDataType)
-
-@given(instance=uml::primitiveDataType_strategy)
-def test_uml::primitivedatatype_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_uml_primitivedatatype_instantiation(instance):
+    assert isinstance(instance, uml_primitiveDataType)
 
 
-@given(instance=uml::primitiveDataType_strategy)
-def test_uml::primitivedatatype_name_setter(instance):
+
+@given(instance=uml_primitiveDataType_strategy)
+def test_uml_primitivedatatype_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=uml::primitiveDataType_strategy)
-def test_uml::primitivedatatype_oID_type(instance):
-    assert isinstance(instance.oID, str)
 
 
-@given(instance=uml::primitiveDataType_strategy)
-def test_uml::primitivedatatype_oID_setter(instance):
+@given(instance=uml_primitiveDataType_strategy)
+def test_uml_primitivedatatype_oID_setter(instance):
     original = instance.oID
     instance.oID = original
     assert instance.oID == original
 
-@given(instance=uml::primitiveDataType_strategy)
-def test_uml::primitivedatatype_kind_type(instance):
-    assert isinstance(instance.kind, str)
 
 
-@given(instance=uml::primitiveDataType_strategy)
-def test_uml::primitivedatatype_kind_setter(instance):
+@given(instance=uml_primitiveDataType_strategy)
+def test_uml_primitivedatatype_kind_setter(instance):
     original = instance.kind
     instance.kind = original
     assert instance.kind == original
 
-@given(instance=uml::generalClass_strategy)
+@given(instance=uml_generalClass_strategy)
 @settings(max_examples=50)
-def test_uml::generalclass_instantiation(instance):
-    assert isinstance(instance, uml::generalClass)
+def test_uml_generalclass_instantiation(instance):
+    assert isinstance(instance, uml_generalClass)
 
-@given(instance=uml::class::_strategy)
+@given(instance=uml_class__strategy)
 @settings(max_examples=50)
-def test_uml::class::_instantiation(instance):
-    assert isinstance(instance, uml::class::)
-
-@given(instance=uml::class::_strategy)
-def test_uml::class::_kind_type(instance):
-    assert isinstance(instance.kind, str)
+def test_uml_class__instantiation(instance):
+    assert isinstance(instance, uml_class_)
 
 
-@given(instance=uml::class::_strategy)
-def test_uml::class::_kind_setter(instance):
-    original = instance.kind
-    instance.kind = original
-    assert instance.kind == original
 
-@given(instance=uml::class::_strategy)
-def test_uml::class::_oID_type(instance):
-    assert isinstance(instance.oID, str)
-
-
-@given(instance=uml::class::_strategy)
-def test_uml::class::_oID_setter(instance):
+@given(instance=uml_class__strategy)
+def test_uml_class__oID_setter(instance):
     original = instance.oID
     instance.oID = original
     assert instance.oID == original
 
-@given(instance=uml::class::_strategy)
-def test_uml::class::_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
-@given(instance=uml::class::_strategy)
-def test_uml::class::_name_setter(instance):
+@given(instance=uml_class__strategy)
+def test_uml_class__name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=uml::attributes_strategy)
-@settings(max_examples=50)
-def test_uml::attributes_instantiation(instance):
-    assert isinstance(instance, uml::attributes)
-
-@given(instance=uml::attributes_strategy)
-def test_uml::attributes_group_type(instance):
-    assert isinstance(instance.group, str)
 
 
-@given(instance=uml::attributes_strategy)
-def test_uml::attributes_group_setter(instance):
-    original = instance.group
-    instance.group = original
-    assert instance.group == original
-
-@given(instance=uml::classifiersAndAssociations_strategy)
-@settings(max_examples=50)
-def test_uml::classifiersandassociations_instantiation(instance):
-    assert isinstance(instance, uml::classifiersAndAssociations)
-
-@given(instance=uml::classifiersAndAssociations_strategy)
-def test_uml::classifiersandassociations_group_type(instance):
-    assert isinstance(instance.group, str)
-
-
-@given(instance=uml::classifiersAndAssociations_strategy)
-def test_uml::classifiersandassociations_group_setter(instance):
-    original = instance.group
-    instance.group = original
-    assert instance.group == original
-
-@given(instance=uml::association_strategy)
-@settings(max_examples=50)
-def test_uml::association_instantiation(instance):
-    assert isinstance(instance, uml::association)
-
-@given(instance=uml::association_strategy)
-def test_uml::association_kind_type(instance):
-    assert isinstance(instance.kind, str)
-
-
-@given(instance=uml::association_strategy)
-def test_uml::association_kind_setter(instance):
+@given(instance=uml_class__strategy)
+def test_uml_class__kind_setter(instance):
     original = instance.kind
     instance.kind = original
     assert instance.kind == original
 
-@given(instance=uml::association_strategy)
-def test_uml::association_destination_type(instance):
-    assert isinstance(instance.destination, str)
+@given(instance=uml_attributes_strategy)
+@settings(max_examples=50)
+def test_uml_attributes_instantiation(instance):
+    assert isinstance(instance, uml_attributes)
 
 
-@given(instance=uml::association_strategy)
-def test_uml::association_destination_setter(instance):
+
+@given(instance=uml_attributes_strategy)
+def test_uml_attributes_group_setter(instance):
+    original = instance.group
+    instance.group = original
+    assert instance.group == original
+
+@given(instance=uml_classifiersAndAssociations_strategy)
+@settings(max_examples=50)
+def test_uml_classifiersandassociations_instantiation(instance):
+    assert isinstance(instance, uml_classifiersAndAssociations)
+
+
+
+@given(instance=uml_classifiersAndAssociations_strategy)
+def test_uml_classifiersandassociations_group_setter(instance):
+    original = instance.group
+    instance.group = original
+    assert instance.group == original
+
+@given(instance=uml_association_strategy)
+@settings(max_examples=50)
+def test_uml_association_instantiation(instance):
+    assert isinstance(instance, uml_association)
+
+
+
+@given(instance=uml_association_strategy)
+def test_uml_association_kind_setter(instance):
+    original = instance.kind
+    instance.kind = original
+    assert instance.kind == original
+
+
+
+@given(instance=uml_association_strategy)
+def test_uml_association_oID_setter(instance):
+    original = instance.oID
+    instance.oID = original
+    assert instance.oID == original
+
+
+
+@given(instance=uml_association_strategy)
+def test_uml_association_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+
+
+@given(instance=uml_association_strategy)
+def test_uml_association_destination_setter(instance):
     original = instance.destination
     instance.destination = original
     assert instance.destination == original
 
-@given(instance=uml::association_strategy)
-def test_uml::association_oID_type(instance):
-    assert isinstance(instance.oID, str)
 
 
-@given(instance=uml::association_strategy)
-def test_uml::association_oID_setter(instance):
-    original = instance.oID
-    instance.oID = original
-    assert instance.oID == original
-
-@given(instance=uml::association_strategy)
-def test_uml::association_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=uml::association_strategy)
-def test_uml::association_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
-
-@given(instance=uml::association_strategy)
-def test_uml::association_source_type(instance):
-    assert isinstance(instance.source, str)
-
-
-@given(instance=uml::association_strategy)
-def test_uml::association_source_setter(instance):
+@given(instance=uml_association_strategy)
+def test_uml_association_source_setter(instance):
     original = instance.source
     instance.source = original
     assert instance.source == original
 
-@given(instance=uml::ownerClassifier_strategy)
+@given(instance=uml_ownerClassifier_strategy)
 @settings(max_examples=50)
-def test_uml::ownerclassifier_instantiation(instance):
-    assert isinstance(instance, uml::ownerClassifier)
+def test_uml_ownerclassifier_instantiation(instance):
+    assert isinstance(instance, uml_ownerClassifier)
 
-@given(instance=uml::attribute_strategy)
+@given(instance=uml_attribute_strategy)
 @settings(max_examples=50)
-def test_uml::attribute_instantiation(instance):
-    assert isinstance(instance, uml::attribute)
-
-@given(instance=uml::attribute_strategy)
-def test_uml::attribute_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_uml_attribute_instantiation(instance):
+    assert isinstance(instance, uml_attribute)
 
 
-@given(instance=uml::attribute_strategy)
-def test_uml::attribute_name_setter(instance):
+
+@given(instance=uml_attribute_strategy)
+def test_uml_attribute_kind_setter(instance):
+    original = instance.kind
+    instance.kind = original
+    assert instance.kind == original
+
+
+
+@given(instance=uml_attribute_strategy)
+def test_uml_attribute_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=uml::attribute_strategy)
-def test_uml::attribute_oID_type(instance):
-    assert isinstance(instance.oID, str)
 
 
-@given(instance=uml::attribute_strategy)
-def test_uml::attribute_oID_setter(instance):
+@given(instance=uml_attribute_strategy)
+def test_uml_attribute_oID_setter(instance):
     original = instance.oID
     instance.oID = original
     assert instance.oID == original
-
-@given(instance=uml::attribute_strategy)
-def test_uml::attribute_kind_type(instance):
-    assert isinstance(instance.kind, str)
-
-
-@given(instance=uml::attribute_strategy)
-def test_uml::attribute_kind_setter(instance):
-    original = instance.kind
-    instance.kind = original
-    assert instance.kind == original

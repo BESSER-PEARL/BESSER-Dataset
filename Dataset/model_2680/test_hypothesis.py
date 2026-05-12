@@ -3,15 +3,15 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    formalmetamodel::AA,
-    formalmetamodel::C,
-    formalmetamodel::B,
+from python_code import (
+    formalmetamodel_AA,
+    formalmetamodel_C,
+    formalmetamodel_B,
     AA,
-    formalmetamodel::A,
-    formalmetamodel::FormalModel,
+    formalmetamodel_A,
+    formalmetamodel_FormalModel,
 )
 
 # =============================================================================
@@ -20,37 +20,37 @@ from classes import (
 
 
 
-def test_formalmetamodel::aa_is_not_abstract():
-    assert not inspect.isabstract(formalmetamodel::AA)
+def test_formalmetamodel_aa_is_not_abstract():
+    assert not inspect.isabstract(formalmetamodel_AA)
 
 
-def test_formalmetamodel::aa_constructor_exists():
-    assert callable(formalmetamodel::AA.__init__)
+def test_formalmetamodel_aa_constructor_exists():
+    assert callable(formalmetamodel_AA.__init__)
 
 
-def test_formalmetamodel::aa_constructor_args():
-    sig = inspect.signature(formalmetamodel::AA.__init__)
+def test_formalmetamodel_aa_constructor_args():
+    sig = inspect.signature(formalmetamodel_AA.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_formalmetamodel::c_is_not_abstract():
-    assert not inspect.isabstract(formalmetamodel::C)
+def test_formalmetamodel_c_is_not_abstract():
+    assert not inspect.isabstract(formalmetamodel_C)
 
 
-def test_formalmetamodel::c_constructor_exists():
-    assert callable(formalmetamodel::C.__init__)
+def test_formalmetamodel_c_constructor_exists():
+    assert callable(formalmetamodel_C.__init__)
 
 
-def test_formalmetamodel::c_constructor_args():
-    sig = inspect.signature(formalmetamodel::C.__init__)
+def test_formalmetamodel_c_constructor_args():
+    sig = inspect.signature(formalmetamodel_C.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_formalmetamodel::c_has_name():
-    assert hasattr(formalmetamodel::C, "name")
+def test_formalmetamodel_c_has_name():
+    assert hasattr(formalmetamodel_C, "name")
     descriptor = None
-    for klass in formalmetamodel::C.__mro__:
+    for klass in formalmetamodel_C.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -58,23 +58,23 @@ def test_formalmetamodel::c_has_name():
 
 
 
-def test_formalmetamodel::b_is_not_abstract():
-    assert not inspect.isabstract(formalmetamodel::B)
+def test_formalmetamodel_b_is_not_abstract():
+    assert not inspect.isabstract(formalmetamodel_B)
 
 
-def test_formalmetamodel::b_constructor_exists():
-    assert callable(formalmetamodel::B.__init__)
+def test_formalmetamodel_b_constructor_exists():
+    assert callable(formalmetamodel_B.__init__)
 
 
-def test_formalmetamodel::b_constructor_args():
-    sig = inspect.signature(formalmetamodel::B.__init__)
+def test_formalmetamodel_b_constructor_args():
+    sig = inspect.signature(formalmetamodel_B.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_formalmetamodel::b_has_name():
-    assert hasattr(formalmetamodel::B, "name")
+def test_formalmetamodel_b_has_name():
+    assert hasattr(formalmetamodel_B, "name")
     descriptor = None
-    for klass in formalmetamodel::B.__mro__:
+    for klass in formalmetamodel_B.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -96,23 +96,23 @@ def test_aa_constructor_args():
 
 
 
-def test_formalmetamodel::a_is_not_abstract():
-    assert not inspect.isabstract(formalmetamodel::A)
+def test_formalmetamodel_a_is_not_abstract():
+    assert not inspect.isabstract(formalmetamodel_A)
 
 
-def test_formalmetamodel::a_constructor_exists():
-    assert callable(formalmetamodel::A.__init__)
+def test_formalmetamodel_a_constructor_exists():
+    assert callable(formalmetamodel_A.__init__)
 
 
-def test_formalmetamodel::a_constructor_args():
-    sig = inspect.signature(formalmetamodel::A.__init__)
+def test_formalmetamodel_a_constructor_args():
+    sig = inspect.signature(formalmetamodel_A.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_formalmetamodel::a_has_name():
-    assert hasattr(formalmetamodel::A, "name")
+def test_formalmetamodel_a_has_name():
+    assert hasattr(formalmetamodel_A, "name")
     descriptor = None
-    for klass in formalmetamodel::A.__mro__:
+    for klass in formalmetamodel_A.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -120,16 +120,16 @@ def test_formalmetamodel::a_has_name():
 
 
 
-def test_formalmetamodel::formalmodel_is_not_abstract():
-    assert not inspect.isabstract(formalmetamodel::FormalModel)
+def test_formalmetamodel_formalmodel_is_not_abstract():
+    assert not inspect.isabstract(formalmetamodel_FormalModel)
 
 
-def test_formalmetamodel::formalmodel_constructor_exists():
-    assert callable(formalmetamodel::FormalModel.__init__)
+def test_formalmetamodel_formalmodel_constructor_exists():
+    assert callable(formalmetamodel_FormalModel.__init__)
 
 
-def test_formalmetamodel::formalmodel_constructor_args():
-    sig = inspect.signature(formalmetamodel::FormalModel.__init__)
+def test_formalmetamodel_formalmodel_constructor_args():
+    sig = inspect.signature(formalmetamodel_FormalModel.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -144,64 +144,58 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-formalmetamodel::AA_strategy = st.builds(
-    formalmetamodel::AA,
+formalmetamodel_AA_strategy = st.builds(
+    formalmetamodel_AA,
 )
-formalmetamodel::C_strategy = st.builds(
-    formalmetamodel::C,
+formalmetamodel_C_strategy = st.builds(
+    formalmetamodel_C,
     name=
         safe_text
 )
-formalmetamodel::B_strategy = st.builds(
-    formalmetamodel::B,
+formalmetamodel_B_strategy = st.builds(
+    formalmetamodel_B,
     name=
         safe_text
 )
 AA_strategy = st.builds(
     AA,
 )
-formalmetamodel::A_strategy = st.builds(
-    formalmetamodel::A,
+formalmetamodel_A_strategy = st.builds(
+    formalmetamodel_A,
     name=
         safe_text
 )
-formalmetamodel::FormalModel_strategy = st.builds(
-    formalmetamodel::FormalModel,
+formalmetamodel_FormalModel_strategy = st.builds(
+    formalmetamodel_FormalModel,
 )
 
-@given(instance=formalmetamodel::AA_strategy)
+@given(instance=formalmetamodel_AA_strategy)
 @settings(max_examples=50)
-def test_formalmetamodel::aa_instantiation(instance):
-    assert isinstance(instance, formalmetamodel::AA)
+def test_formalmetamodel_aa_instantiation(instance):
+    assert isinstance(instance, formalmetamodel_AA)
 
-@given(instance=formalmetamodel::C_strategy)
+@given(instance=formalmetamodel_C_strategy)
 @settings(max_examples=50)
-def test_formalmetamodel::c_instantiation(instance):
-    assert isinstance(instance, formalmetamodel::C)
-
-@given(instance=formalmetamodel::C_strategy)
-def test_formalmetamodel::c_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_formalmetamodel_c_instantiation(instance):
+    assert isinstance(instance, formalmetamodel_C)
 
 
-@given(instance=formalmetamodel::C_strategy)
-def test_formalmetamodel::c_name_setter(instance):
+
+@given(instance=formalmetamodel_C_strategy)
+def test_formalmetamodel_c_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=formalmetamodel::B_strategy)
+@given(instance=formalmetamodel_B_strategy)
 @settings(max_examples=50)
-def test_formalmetamodel::b_instantiation(instance):
-    assert isinstance(instance, formalmetamodel::B)
-
-@given(instance=formalmetamodel::B_strategy)
-def test_formalmetamodel::b_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_formalmetamodel_b_instantiation(instance):
+    assert isinstance(instance, formalmetamodel_B)
 
 
-@given(instance=formalmetamodel::B_strategy)
-def test_formalmetamodel::b_name_setter(instance):
+
+@given(instance=formalmetamodel_B_strategy)
+def test_formalmetamodel_b_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
@@ -211,23 +205,20 @@ def test_formalmetamodel::b_name_setter(instance):
 def test_aa_instantiation(instance):
     assert isinstance(instance, AA)
 
-@given(instance=formalmetamodel::A_strategy)
+@given(instance=formalmetamodel_A_strategy)
 @settings(max_examples=50)
-def test_formalmetamodel::a_instantiation(instance):
-    assert isinstance(instance, formalmetamodel::A)
-
-@given(instance=formalmetamodel::A_strategy)
-def test_formalmetamodel::a_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_formalmetamodel_a_instantiation(instance):
+    assert isinstance(instance, formalmetamodel_A)
 
 
-@given(instance=formalmetamodel::A_strategy)
-def test_formalmetamodel::a_name_setter(instance):
+
+@given(instance=formalmetamodel_A_strategy)
+def test_formalmetamodel_a_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=formalmetamodel::FormalModel_strategy)
+@given(instance=formalmetamodel_FormalModel_strategy)
 @settings(max_examples=50)
-def test_formalmetamodel::formalmodel_instantiation(instance):
-    assert isinstance(instance, formalmetamodel::FormalModel)
+def test_formalmetamodel_formalmodel_instantiation(instance):
+    assert isinstance(instance, formalmetamodel_FormalModel)

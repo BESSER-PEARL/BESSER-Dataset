@@ -3,398 +3,398 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    TMethodCall,
-    TUnaryOperator,
-    simTL4J::simTL::TUnaryOperatorNOT,
-    simTL::TPlaceholder,
-    simTL4J::simTL::TPlaceholder,
-    simTL::TIf,
-    simTL::TFor,
-    simTL4J::simTL::TAbstractMethodStatement,
-    simTL4J::simTL::TMethodCall,
-    simTL4J::simTL::TModelImport,
-    TModelImport,
-    simTL4J::simTL::TemplateHeader,
-    TemplateHeader,
-    simTL4J::simTL::Template,
-    simTL4J::simTL::TForVariable,
-    TForVariable,
-    simTL4J::simTL::TFor,
-    TAbstractMethodStatement,
-    simTL4J::simTL::TMethodStatementImpl,
-    simTL4J::simTL::TUnaryOperator,
-    simTL4J::simTL::TIf,
-    AdditionalLocalVariable,
-    statements::ForLoopInitializer,
-    ClassifierReference,
-    types::TypeReference,
-    Block,
-    CatchBlock,
-    statements::SwitchCase,
-    LocalVariable,
-    JumpLabel,
-    statements::Conditional,
-    simTL4J::statements::NormalSwitchCase,
-    StatementListContainer,
-    simTL4J::statements::SwitchCase,
-    WhileLoop,
-    simTL4J::statements::DoWhileLoop,
-    SwitchCase,
-    simTL4J::statements::DefaultSwitchCase,
-    statements::StatementContainer,
-    OrdinaryParameter,
-    simTL4J::statements::CatchBlock,
-    modifiers::Modifiable,
-    Jump,
-    simTL4J::statements::Continue,
-    simTL4J::statements::Break,
-    references::ElementReference,
-    Statement,
-    simTL4J::statements::LocalVariableStatement,
-    simTL4J::statements::Throw,
-    simTL4J::statements::Jump,
-    simTL4J::statements::Switch,
-    simTL4J::statements::Return,
-    simTL4J::statements::ExpressionStatement,
-    simTL4J::statements::EmptyStatement,
-    PrimitiveType,
-    simTL4J::types::Void,
-    simTL4J::types::Char,
-    simTL4J::types::Boolean,
-    simTL4J::types::Long,
-    simTL4J::types::Int,
-    simTL4J::types::Double,
-    simTL4J::types::Short,
-    simTL4J::types::Byte,
-    simTL4J::types::Float,
-    ElementReference,
-    simTL4J::references::IdentifierReference,
-    ArraySelector,
-    expressions::PrimaryExpression,
-    simTL4J::simTL::TPlaceholder::PrimaryExpression,
-    Parameter,
-    simTL4J::parameters::VariableLengthParameter,
-    simTL4J::parameters::OrdinaryParameter,
-    operators::UnaryOperator,
-    operators::AdditiveOperator,
-    simTL4J::operators::Subtraction,
-    simTL4J::operators::Addition,
-    Operator,
-    simTL4J::operators::MultiplicativeOperator,
-    simTL4J::operators::UnaryModificationOperator,
-    simTL4J::operators::EqualityOperator,
-    simTL4J::operators::RelationOperator,
-    simTL4J::operators::AssignmentOperator,
-    simTL4J::operators::UnaryOperator,
-    simTL4J::operators::ShiftOperator,
-    simTL4J::operators::AdditiveOperator,
-    AnnotationInstanceOrModifier,
-    simTL4J::modifiers::Modifier,
-    Modifier,
-    simTL4J::modifiers::Synchronized,
-    simTL4J::modifiers::Private,
-    simTL4J::modifiers::Static,
-    simTL4J::modifiers::Strictfp,
-    simTL4J::modifiers::Transient,
-    simTL4J::modifiers::Abstract,
-    simTL4J::modifiers::Volatile,
-    simTL4J::modifiers::Native,
-    simTL4J::modifiers::Protected,
-    simTL4J::modifiers::Public,
-    simTL4J::modifiers::Final,
-    members::Method,
-    Method,
-    simTL4J::members::InterfaceMethod,
-    AdditionalField,
-    variables::Variable,
-    members::ExceptionThrower,
-    parameters::Parametrizable,
-    statements::StatementListContainer,
-    simTL4J::members::ClassMethod,
-    instantiations::Initializable,
+from python_code import (
+    members_ExceptionThrower,
+    parameters_Parametrizable,
+    statements_StatementListContainer,
+    instantiations_Initializable,
     Member,
-    simTL4J::members::EmptyMember,
     NamedElement,
-    simTL4J::references::ReferenceableElement,
-    simTL4J::members::Member,
+    simTL4J_members_Member,
     NamespaceClassifierReference,
     LongLiteral,
-    simTL4J::literals::OctalLongLiteral,
-    simTL4J::literals::HexLongLiteral,
-    simTL4J::literals::DecimalLongLiteral,
+    simTL4J_literals_HexLongLiteral,
+    simTL4J_literals_OctalLongLiteral,
+    simTL4J_literals_DecimalLongLiteral,
     IntegerLiteral,
-    simTL4J::literals::HexIntegerLiteral,
-    simTL4J::literals::OctalIntegerLiteral,
-    simTL4J::literals::DecimalIntegerLiteral,
+    simTL4J_literals_OctalIntegerLiteral,
+    simTL4J_literals_HexIntegerLiteral,
+    simTL4J_literals_DecimalIntegerLiteral,
     DoubleLiteral,
-    simTL4J::literals::HexDoubleLiteral,
-    simTL4J::literals::DecimalDoubleLiteral,
+    simTL4J_literals_HexDoubleLiteral,
+    simTL4J_literals_DecimalDoubleLiteral,
     FloatLiteral,
-    simTL4J::literals::HexFloatLiteral,
-    simTL4J::literals::DecimalFloatLiteral,
+    simTL4J_literals_HexFloatLiteral,
+    simTL4J_literals_DecimalFloatLiteral,
+    TMethodCall,
+    TUnaryOperator,
+    simTL4J_simTL_TUnaryOperatorNOT,
+    simTL_TPlaceholder,
+    simTL4J_simTL_TPlaceholder,
+    simTL_TIf,
+    simTL_TFor,
+    simTL4J_simTL_TAbstractMethodStatement,
+    simTL4J_simTL_TMethodCall,
+    simTL4J_simTL_TModelImport,
+    TModelImport,
+    simTL4J_simTL_TemplateHeader,
+    TemplateHeader,
+    simTL4J_simTL_Template,
+    simTL4J_simTL_TForVariable,
+    TForVariable,
+    simTL4J_simTL_TFor,
+    TAbstractMethodStatement,
+    simTL4J_simTL_TUnaryOperator,
+    simTL4J_simTL_TMethodStatementImpl,
+    simTL4J_simTL_TIf,
+    AdditionalLocalVariable,
+    statements_ForLoopInitializer,
+    ClassifierReference,
+    types_TypeReference,
+    Block,
+    CatchBlock,
+    statements_SwitchCase,
+    LocalVariable,
+    JumpLabel,
+    statements_Conditional,
+    simTL4J_statements_NormalSwitchCase,
+    StatementListContainer,
+    simTL4J_statements_SwitchCase,
+    WhileLoop,
+    simTL4J_statements_DoWhileLoop,
+    SwitchCase,
+    simTL4J_statements_DefaultSwitchCase,
+    statements_StatementContainer,
+    OrdinaryParameter,
+    simTL4J_statements_CatchBlock,
+    modifiers_Modifiable,
+    Jump,
+    simTL4J_statements_Continue,
+    simTL4J_statements_Break,
+    references_ElementReference,
+    Statement,
+    simTL4J_statements_EmptyStatement,
+    simTL4J_statements_ExpressionStatement,
+    simTL4J_statements_Switch,
+    simTL4J_statements_Jump,
+    simTL4J_statements_LocalVariableStatement,
+    simTL4J_statements_Return,
+    simTL4J_statements_Throw,
+    PrimitiveType,
+    simTL4J_types_Long,
+    simTL4J_types_Short,
+    simTL4J_types_Boolean,
+    simTL4J_types_Float,
+    simTL4J_types_Double,
+    simTL4J_types_Int,
+    simTL4J_types_Void,
+    simTL4J_types_Char,
+    simTL4J_types_Byte,
+    ElementReference,
+    simTL4J_references_IdentifierReference,
+    simTL4J_references_ReferenceableElement,
+    ArraySelector,
+    expressions_PrimaryExpression,
+    simTL4J_simTL_TPlaceholder_PrimaryExpression,
+    Parameter,
+    simTL4J_parameters_OrdinaryParameter,
+    simTL4J_parameters_VariableLengthParameter,
+    operators_UnaryOperator,
+    operators_AdditiveOperator,
+    simTL4J_operators_Subtraction,
+    simTL4J_operators_Addition,
+    Operator,
+    simTL4J_operators_ShiftOperator,
+    simTL4J_operators_UnaryModificationOperator,
+    simTL4J_operators_UnaryOperator,
+    simTL4J_operators_EqualityOperator,
+    simTL4J_operators_RelationOperator,
+    simTL4J_operators_AssignmentOperator,
+    simTL4J_operators_MultiplicativeOperator,
+    simTL4J_operators_AdditiveOperator,
+    AnnotationInstanceOrModifier,
+    simTL4J_modifiers_Modifier,
+    Modifier,
+    simTL4J_modifiers_Native,
+    simTL4J_modifiers_Strictfp,
+    simTL4J_modifiers_Volatile,
+    simTL4J_modifiers_Private,
+    simTL4J_modifiers_Static,
+    simTL4J_modifiers_Transient,
+    simTL4J_modifiers_Synchronized,
+    simTL4J_modifiers_Abstract,
+    simTL4J_modifiers_Final,
+    simTL4J_modifiers_Protected,
+    simTL4J_modifiers_Public,
+    members_Method,
+    simTL4J_members_ClassMethod,
+    Method,
+    simTL4J_members_InterfaceMethod,
+    AdditionalField,
+    variables_Variable,
+    simTL4J_members_EmptyMember,
     Literal,
-    simTL4J::literals::CharacterLiteral,
-    simTL4J::literals::FloatLiteral,
-    simTL4J::literals::NullLiteral,
-    simTL4J::literals::DoubleLiteral,
-    simTL4J::literals::LongLiteral,
-    simTL4J::literals::IntegerLiteral,
-    simTL4J::literals::BooleanLiteral,
+    simTL4J_literals_FloatLiteral,
+    simTL4J_literals_CharacterLiteral,
+    simTL4J_literals_IntegerLiteral,
+    simTL4J_literals_LongLiteral,
+    simTL4J_literals_DoubleLiteral,
+    simTL4J_literals_NullLiteral,
+    simTL4J_literals_BooleanLiteral,
     PrimaryExpression,
-    simTL4J::literals::Literal,
+    simTL4J_literals_Literal,
     Self,
-    simTL4J::literals::This,
-    simTL4J::literals::Super,
+    simTL4J_literals_Super,
+    simTL4J_literals_This,
     Instantiation,
-    simTL4J::instantiations::ExplicitConstructorCall,
+    simTL4J_instantiations_ExplicitConstructorCall,
     AnonymousClass,
-    generics::CallTypeArgumentable,
-    instantiations::Instantiation,
-    simTL4J::instantiations::NewConstructorCall,
-    generics::TypeArgumentable,
-    simTL4J::references::Reference,
-    simTL4J::types::ClassifierReference,
-    references::Argumentable,
-    simTL4J::references::MethodCall,
+    generics_CallTypeArgumentable,
+    instantiations_Instantiation,
+    simTL4J_instantiations_NewConstructorCall,
+    generics_TypeArgumentable,
+    simTL4J_types_ClassifierReference,
+    simTL4J_references_Reference,
+    references_Argumentable,
+    simTL4J_references_MethodCall,
     ReferenceableElement,
     StaticImport,
-    simTL4J::imports::StaticMemberImport,
-    simTL4J::imports::StaticClassifierImport,
+    simTL4J_imports_StaticMemberImport,
+    simTL4J_imports_StaticClassifierImport,
     Static,
     Import,
-    simTL4J::imports::StaticImport,
-    simTL4J::imports::PackageImport,
-    simTL4J::imports::ClassifierImport,
+    simTL4J_imports_StaticImport,
+    simTL4J_imports_ClassifierImport,
+    simTL4J_imports_PackageImport,
     NamespaceAwareElement,
-    simTL4J::imports::Import,
+    simTL4J_imports_Import,
     TypeParameter,
-    generics::TypeArgument,
-    expressions::UnaryModificationExpressionChild,
+    generics_TypeArgument,
+    expressions_UnaryModificationExpressionChild,
+    UnaryModificationExpression,
+    simTL4J_expressions_SuffixUnaryModificationExpression,
+    simTL4J_expressions_PrefixUnaryModificationExpression,
+    TypeArgument,
+    simTL4J_generics_ExtendsTypeArgument,
+    simTL4J_generics_SuperTypeArgument,
+    simTL4J_generics_UnknownTypeArgument,
+    ArrayTypeable,
+    simTL4J_generics_TypeArgument,
+    Reference,
+    simTL4J_references_PrimitiveTypeReference,
+    simTL4J_references_StringReference,
+    simTL4J_references_SelfReference,
+    simTL4J_references_ReflectiveClassReference,
+    simTL4J_references_ElementReference,
+    simTL4J_expressions_NestedExpression,
+    ShiftOperator,
+    simTL4J_operators_LeftShift,
+    simTL4J_operators_RightShift,
+    simTL4J_operators_UnsignedRightShift,
+    ShiftExpressionChild,
+    RelationOperator,
+    simTL4J_operators_GreaterThan,
+    simTL4J_operators_LessThan,
+    simTL4J_operators_GreaterThanOrEqual,
+    simTL4J_operators_LessThanOrEqual,
+    UnaryModificationOperator,
+    simTL4J_operators_PlusPlus,
+    simTL4J_operators_MinusMinus,
+    UnaryModificationExpressionChild,
+    simTL4J_expressions_PrimaryExpression,
+    UnaryExpressionChild,
+    simTL4J_expressions_UnaryModificationExpressionChild,
+    simTL4J_expressions_UnaryModificationExpression,
+    UnaryOperator,
+    simTL4J_operators_Negate,
+    simTL4J_operators_Complement,
     MultiplicativeOperator,
-    simTL4J::operators::Multiplication,
-    simTL4J::operators::Division,
-    simTL4J::operators::Remainder,
+    simTL4J_operators_Remainder,
+    simTL4J_operators_Multiplication,
+    simTL4J_operators_Division,
     MultiplicativeExpressionChild,
-    simTL4J::expressions::UnaryExpression,
+    simTL4J_expressions_UnaryExpression,
+    simTL4J_expressions_UnaryExpressionChild,
+    simTL4J_expressions_AdditiveExpressionChild,
     AdditiveOperator,
     AdditiveExpressionChild,
-    simTL4J::expressions::MultiplicativeExpressionChild,
-    simTL4J::expressions::MultiplicativeExpression,
+    simTL4J_expressions_MultiplicativeExpression,
+    simTL4J_expressions_MultiplicativeExpressionChild,
+    simTL4J_expressions_AdditiveExpression,
     ConditionalAndExpressionChild,
-    simTL4J::expressions::InclusiveOrExpression,
+    simTL4J_expressions_InclusiveOrExpression,
     ConditionalOrExpressionChild,
-    simTL4J::expressions::ConditionalAndExpression,
-    simTL4J::expressions::ConditionalAndExpressionChild,
+    simTL4J_expressions_ConditionalAndExpression,
+    simTL4J_expressions_ConditionalAndExpressionChild,
     RelationExpressionChild,
-    simTL4J::expressions::ShiftExpressionChild,
+    simTL4J_expressions_ShiftExpression,
+    simTL4J_expressions_ShiftExpressionChild,
     InstanceOfExpressionChild,
-    simTL4J::expressions::RelationExpression,
-    expressions::EqualityExpressionChild,
+    simTL4J_expressions_RelationExpression,
+    simTL4J_expressions_RelationExpressionChild,
+    expressions_EqualityExpressionChild,
     EqualityExpressionChild,
-    simTL4J::expressions::InstanceOfExpressionChild,
+    simTL4J_expressions_InstanceOfExpressionChild,
     EqualityOperator,
-    simTL4J::operators::NotEqual,
-    simTL4J::operators::Equal,
+    simTL4J_operators_Equal,
+    simTL4J_operators_NotEqual,
     AndExpressionChild,
-    simTL4J::expressions::EqualityExpression,
-    simTL4J::expressions::EqualityExpressionChild,
+    simTL4J_expressions_EqualityExpressionChild,
+    simTL4J_expressions_EqualityExpression,
     ExclusiveOrExpressionChild,
-    simTL4J::expressions::AndExpression,
-    simTL4J::expressions::AndExpressionChild,
-    simTL4J::expressions::InclusiveOrExpressionChild,
+    simTL4J_expressions_AndExpressionChild,
+    simTL4J_expressions_AndExpression,
+    simTL4J_expressions_InclusiveOrExpressionChild,
     InclusiveOrExpressionChild,
-    simTL4J::expressions::ExclusiveOrExpression,
-    simTL4J::expressions::ExclusiveOrExpressionChild,
+    simTL4J_expressions_ExclusiveOrExpression,
+    simTL4J_expressions_ExclusiveOrExpressionChild,
     Package,
     CompilationUnit,
-    annotations::Annotable,
-    containers::JavaRoot,
+    annotations_Annotable,
+    containers_JavaRoot,
     ConditionalExpressionChild,
-    simTL4J::expressions::ConditionalOrExpressionChild,
-    simTL4J::expressions::ConditionalOrExpression,
+    simTL4J_expressions_ConditionalOrExpression,
+    simTL4J_expressions_ConditionalOrExpressionChild,
     AssignmentOperator,
-    simTL4J::operators::AssignmentExclusiveOr,
-    simTL4J::operators::AssignmentRightShift,
-    simTL4J::operators::AssignmentUnsignedRightShift,
-    simTL4J::operators::AssignmentMinus,
-    simTL4J::operators::AssignmentAnd,
-    simTL4J::operators::AssignmentMultiplication,
-    simTL4J::operators::AssignmentOr,
-    simTL4J::operators::AssignmentDivision,
-    simTL4J::operators::AssignmentPlus,
-    simTL4J::operators::AssignmentLeftShift,
-    simTL4J::operators::AssignmentModulo,
-    simTL4J::operators::Assignment,
+    simTL4J_operators_AssignmentMinus,
+    simTL4J_operators_AssignmentMultiplication,
+    simTL4J_operators_AssignmentRightShift,
+    simTL4J_operators_AssignmentPlus,
+    simTL4J_operators_AssignmentOr,
+    simTL4J_operators_AssignmentExclusiveOr,
+    simTL4J_operators_Assignment,
+    simTL4J_operators_AssignmentModulo,
+    simTL4J_operators_AssignmentDivision,
+    simTL4J_operators_AssignmentAnd,
+    simTL4J_operators_AssignmentUnsignedRightShift,
+    simTL4J_operators_AssignmentLeftShift,
     AssignmentExpressionChild,
-    simTL4J::expressions::ConditionalExpressionChild,
-    simTL4J::expressions::ConditionalExpression,
+    simTL4J_expressions_ConditionalExpressionChild,
+    simTL4J_expressions_ConditionalExpression,
     ForLoopInitializer,
-    simTL4J::expressions::ExpressionList,
+    simTL4J_expressions_ExpressionList,
     JavaRoot,
-    simTL4J::containers::EmptyModel,
-    simTL4J::containers::CompilationUnit,
-    imports::ImportingElement,
-    commons::NamedElement,
+    simTL4J_containers_EmptyModel,
+    simTL4J_containers_CompilationUnit,
+    imports_ImportingElement,
+    commons_NamedElement,
     TPlaceholder,
-    simTL4J::commons::Commentable,
-    classifiers::Implementor,
-    classifiers::ConcreteClassifier,
-    simTL4J::classifiers::Class,
+    simTL4J_commons_Commentable,
+    classifiers_Implementor,
+    classifiers_ConcreteClassifier,
+    simTL4J_classifiers_Class,
     TypeReference,
     EnumConstant,
-    simTL4J::classifiers::Enumeration,
+    simTL4J_classifiers_Enumeration,
     ConcreteClassifier,
-    simTL4J::classifiers::Annotation,
-    simTL4J::classifiers::Interface,
-    arrays::ArrayTypeable,
-    types::TypedElement,
-    simTL4J::expressions::CastExpression,
-    simTL4J::expressions::InstanceOfExpression,
-    simTL4J::generics::QualifiedTypeArgument,
-    expressions::Expression,
+    simTL4J_classifiers_Annotation,
+    simTL4J_classifiers_Interface,
+    arrays_ArrayTypeable,
+    types_TypedElement,
+    simTL4J_expressions_CastExpression,
+    simTL4J_expressions_InstanceOfExpression,
+    simTL4J_generics_QualifiedTypeArgument,
+    expressions_Expression,
     ArrayInitializationValue,
-    annotations::AnnotationValue,
-    arrays::ArrayInitializationValue,
-    simTL4J::expressions::Expression,
-    simTL4J::arrays::ArrayInitializer,
-    modifiers::AnnotableAndModifiable,
-    simTL4J::variables::LocalVariable,
-    simTL4J::parameters::Parameter,
-    statements::Statement,
-    simTL4J::simTL::TFor::StatementListContainer,
-    simTL4J::statements::ForLoop,
-    simTL4J::statements::ForEachLoop,
-    simTL4J::statements::Assert,
-    simTL4J::statements::TryBlock,
-    simTL4J::statements::Condition,
-    simTL4J::statements::SynchronizedBlock,
-    simTL4J::simTL::TIf::StatementListContainer,
-    simTL4J::statements::WhileLoop,
-    simTL4J::statements::JumpLabel,
-    members::Member,
-    simTL4J::statements::Block,
-    members::MemberContainer,
-    simTL4J::simTL::TFor::MemberContainer,
-    simTL4J::simTL::TIf::MemberContainer,
-    generics::TypeParametrizable,
-    simTL4J::members::Constructor,
-    classifiers::Classifier,
-    simTL4J::classifiers::ConcreteClassifier,
-    references::ReferenceableElement,
-    simTL4J::members::Method,
-    simTL4J::members::EnumConstant,
-    simTL4J::members::Field,
-    simTL4J::containers::Package,
-    simTL4J::members::AdditionalField,
-    simTL4J::variables::AdditionalLocalVariable,
-    simTL4J::variables::Variable,
-    types::Type,
-    simTL4J::types::PrimitiveType,
-    simTL4J::classifiers::AnonymousClass,
-    simTL4J::classifiers::Classifier,
+    annotations_AnnotationValue,
+    arrays_ArrayInitializationValue,
+    simTL4J_expressions_Expression,
+    simTL4J_arrays_ArrayInitializer,
+    modifiers_AnnotableAndModifiable,
+    simTL4J_variables_LocalVariable,
+    simTL4J_parameters_Parameter,
+    statements_Statement,
+    simTL4J_statements_Assert,
+    simTL4J_simTL_TFor_StatementListContainer,
+    simTL4J_statements_WhileLoop,
+    simTL4J_statements_SynchronizedBlock,
+    simTL4J_simTL_TIf_StatementListContainer,
+    simTL4J_statements_JumpLabel,
+    simTL4J_statements_Condition,
+    simTL4J_statements_ForEachLoop,
+    simTL4J_statements_ForLoop,
+    simTL4J_statements_TryBlock,
+    members_Member,
+    simTL4J_statements_Block,
+    members_MemberContainer,
+    simTL4J_simTL_TIf_MemberContainer,
+    simTL4J_simTL_TFor_MemberContainer,
+    generics_TypeParametrizable,
+    simTL4J_members_Constructor,
+    classifiers_Classifier,
+    simTL4J_classifiers_ConcreteClassifier,
+    references_ReferenceableElement,
+    simTL4J_members_AdditionalField,
+    simTL4J_variables_Variable,
+    simTL4J_variables_AdditionalLocalVariable,
+    simTL4J_members_Method,
+    simTL4J_containers_Package,
+    simTL4J_members_Field,
+    simTL4J_members_EnumConstant,
+    types_Type,
+    simTL4J_types_PrimitiveType,
+    simTL4J_classifiers_AnonymousClass,
+    simTL4J_classifiers_Classifier,
     ArrayInitializer,
-    modifiers::AnnotationInstanceOrModifier,
-    references::Reference,
-    simTL4J::instantiations::Instantiation,
-    simTL4J::arrays::ArrayInstantiationBySize,
-    simTL4J::arrays::ArrayInstantiationByValues,
+    modifiers_AnnotationInstanceOrModifier,
+    references_Reference,
+    simTL4J_arrays_ArrayInstantiationBySize,
+    simTL4J_instantiations_Instantiation,
+    simTL4J_arrays_ArrayInstantiationByValues,
     AnnotationInstance,
     Commentable,
-    simTL4J::members::MemberContainer,
-    simTL4J::modifiers::AnnotationInstanceOrModifier,
-    simTL4J::references::Argumentable,
-    simTL4J::statements::StatementContainer,
-    simTL4J::arrays::ArrayDimension,
-    simTL4J::instantiations::Initializable,
-    simTL4J::operators::Operator,
-    simTL4J::commons::NamespaceAwareElement,
-    simTL4J::arrays::ArrayInitializationValue,
-    simTL4J::statements::StatementListContainer,
-    simTL4J::types::TypedElement,
-    simTL4J::parameters::Parametrizable,
-    simTL4J::commons::NamedElement,
-    simTL4J::classifiers::Implementor,
-    simTL4J::arrays::ArraySelector,
-    simTL4J::imports::ImportingElement,
-    simTL4J::types::Type,
-    simTL4J::generics::TypeParametrizable,
-    simTL4J::modifiers::AnnotableAndModifiable,
-    simTL4J::literals::Self,
-    simTL4J::members::ExceptionThrower,
-    simTL4J::statements::Statement,
-    simTL4J::statements::Conditional,
-    simTL4J::types::TypeReference,
-    simTL4J::statements::ForLoopInitializer,
-    simTL4J::modifiers::Modifiable,
-    simTL4J::annotations::Annotable,
+    simTL4J_modifiers_AnnotationInstanceOrModifier,
+    simTL4J_modifiers_AnnotableAndModifiable,
+    simTL4J_generics_TypeParametrizable,
+    simTL4J_instantiations_Initializable,
+    simTL4J_types_TypeReference,
+    simTL4J_statements_Statement,
+    simTL4J_statements_StatementContainer,
+    simTL4J_commons_NamespaceAwareElement,
+    simTL4J_types_TypedElement,
+    simTL4J_imports_ImportingElement,
+    simTL4J_arrays_ArraySelector,
+    simTL4J_commons_NamedElement,
+    simTL4J_classifiers_Implementor,
+    simTL4J_generics_TypeArgumentable,
+    simTL4J_generics_CallTypeArgumentable,
+    simTL4J_statements_ForLoopInitializer,
+    simTL4J_statements_StatementListContainer,
+    simTL4J_references_Argumentable,
+    simTL4J_members_ExceptionThrower,
+    simTL4J_modifiers_Modifiable,
+    simTL4J_arrays_ArrayDimension,
+    simTL4J_members_MemberContainer,
+    simTL4J_literals_Self,
+    simTL4J_operators_Operator,
+    simTL4J_parameters_Parametrizable,
+    simTL4J_statements_Conditional,
+    simTL4J_arrays_ArrayInitializationValue,
+    simTL4J_types_Type,
+    simTL4J_annotations_Annotable,
     ArrayDimension,
-    simTL4J::arrays::ArrayTypeable,
+    simTL4J_arrays_ArrayTypeable,
     Expression,
-    simTL4J::expressions::AssignmentExpressionChild,
-    simTL4J::expressions::AssignmentExpression,
-    simTL4J::annotations::AnnotationValue,
+    simTL4J_expressions_AssignmentExpressionChild,
+    simTL4J_expressions_AssignmentExpression,
+    simTL4J_annotations_AnnotationValue,
     InterfaceMethod,
-    simTL4J::annotations::AnnotationAttribute,
-    simTL4J::annotations::AnnotationAttributeSetting,
+    simTL4J_annotations_AnnotationAttribute,
+    simTL4J_annotations_AnnotationAttributeSetting,
     AnnotationAttributeSetting,
     AnnotationValue,
-    simTL4J::annotations::AnnotationParameter,
+    simTL4J_annotations_AnnotationParameter,
     AnnotationParameter,
-    simTL4J::annotations::AnnotationParameterList,
-    simTL4J::annotations::SingleAnnotationParameter,
+    simTL4J_annotations_SingleAnnotationParameter,
+    simTL4J_annotations_AnnotationParameterList,
     Classifier,
-    simTL4J::generics::TypeParameter,
-    commons::NamespaceAwareElement,
-    simTL4J::annotations::AnnotationInstance,
-    simTL4J::types::NamespaceClassifierReference,
-    simTL4J::containers::JavaRoot,
-    UnaryModificationExpression,
-    simTL4J::expressions::SuffixUnaryModificationExpression,
-    simTL4J::expressions::PrefixUnaryModificationExpression,
-    simTL4J::generics::CallTypeArgumentable,
-    TypeArgument,
-    simTL4J::generics::ExtendsTypeArgument,
-    simTL4J::generics::SuperTypeArgument,
-    simTL4J::generics::UnknownTypeArgument,
-    simTL4J::generics::TypeArgumentable,
-    ArrayTypeable,
-    simTL4J::generics::TypeArgument,
-    Reference,
-    simTL4J::references::SelfReference,
-    simTL4J::references::ReflectiveClassReference,
-    simTL4J::references::ElementReference,
-    simTL4J::references::StringReference,
-    simTL4J::references::PrimitiveTypeReference,
-    simTL4J::expressions::NestedExpression,
-    ShiftOperator,
-    simTL4J::operators::RightShift,
-    simTL4J::operators::LeftShift,
-    simTL4J::operators::UnsignedRightShift,
-    ShiftExpressionChild,
-    simTL4J::expressions::AdditiveExpressionChild,
-    simTL4J::expressions::AdditiveExpression,
-    simTL4J::expressions::ShiftExpression,
-    simTL4J::expressions::RelationExpressionChild,
-    RelationOperator,
-    simTL4J::operators::LessThanOrEqual,
-    simTL4J::operators::GreaterThan,
-    simTL4J::operators::GreaterThanOrEqual,
-    simTL4J::operators::LessThan,
-    UnaryModificationOperator,
-    simTL4J::operators::PlusPlus,
-    simTL4J::operators::MinusMinus,
-    UnaryModificationExpressionChild,
-    simTL4J::expressions::PrimaryExpression,
-    simTL4J::expressions::UnaryExpressionChild,
-    UnaryExpressionChild,
-    simTL4J::expressions::UnaryModificationExpressionChild,
-    simTL4J::expressions::UnaryModificationExpression,
-    UnaryOperator,
-    simTL4J::operators::Complement,
-    simTL4J::operators::Negate,
+    simTL4J_generics_TypeParameter,
+    commons_NamespaceAwareElement,
+    simTL4J_containers_JavaRoot,
+    simTL4J_annotations_AnnotationInstance,
+    simTL4J_types_NamespaceClassifierReference,
 )
 
 # =============================================================================
@@ -403,1588 +403,58 @@ from classes import (
 
 
 
-def test_tmethodcall_is_not_abstract():
-    assert not inspect.isabstract(TMethodCall)
+def test_members_exceptionthrower_is_not_abstract():
+    assert not inspect.isabstract(members_ExceptionThrower)
 
 
-def test_tmethodcall_constructor_exists():
-    assert callable(TMethodCall.__init__)
+def test_members_exceptionthrower_constructor_exists():
+    assert callable(members_ExceptionThrower.__init__)
 
 
-def test_tmethodcall_constructor_args():
-    sig = inspect.signature(TMethodCall.__init__)
+def test_members_exceptionthrower_constructor_args():
+    sig = inspect.signature(members_ExceptionThrower.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_tunaryoperator_is_not_abstract():
-    assert not inspect.isabstract(TUnaryOperator)
+def test_parameters_parametrizable_is_not_abstract():
+    assert not inspect.isabstract(parameters_Parametrizable)
 
 
-def test_tunaryoperator_constructor_exists():
-    assert callable(TUnaryOperator.__init__)
+def test_parameters_parametrizable_constructor_exists():
+    assert callable(parameters_Parametrizable.__init__)
 
 
-def test_tunaryoperator_constructor_args():
-    sig = inspect.signature(TUnaryOperator.__init__)
+def test_parameters_parametrizable_constructor_args():
+    sig = inspect.signature(parameters_Parametrizable.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_simtl4j::simtl::tunaryoperatornot_is_not_abstract():
-    assert not inspect.isabstract(simTL4J::simTL::TUnaryOperatorNOT)
+def test_statements_statementlistcontainer_is_not_abstract():
+    assert not inspect.isabstract(statements_StatementListContainer)
 
 
-def test_simtl4j::simtl::tunaryoperatornot_constructor_exists():
-    assert callable(simTL4J::simTL::TUnaryOperatorNOT.__init__)
+def test_statements_statementlistcontainer_constructor_exists():
+    assert callable(statements_StatementListContainer.__init__)
 
 
-def test_simtl4j::simtl::tunaryoperatornot_constructor_args():
-    sig = inspect.signature(simTL4J::simTL::TUnaryOperatorNOT.__init__)
+def test_statements_statementlistcontainer_constructor_args():
+    sig = inspect.signature(statements_StatementListContainer.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_simtl::tplaceholder_is_not_abstract():
-    assert not inspect.isabstract(simTL::TPlaceholder)
+def test_instantiations_initializable_is_not_abstract():
+    assert not inspect.isabstract(instantiations_Initializable)
 
 
-def test_simtl::tplaceholder_constructor_exists():
-    assert callable(simTL::TPlaceholder.__init__)
+def test_instantiations_initializable_constructor_exists():
+    assert callable(instantiations_Initializable.__init__)
 
 
-def test_simtl::tplaceholder_constructor_args():
-    sig = inspect.signature(simTL::TPlaceholder.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_simtl4j::simtl::tplaceholder_is_not_abstract():
-    assert not inspect.isabstract(simTL4J::simTL::TPlaceholder)
-
-
-def test_simtl4j::simtl::tplaceholder_constructor_exists():
-    assert callable(simTL4J::simTL::TPlaceholder.__init__)
-
-
-def test_simtl4j::simtl::tplaceholder_constructor_args():
-    sig = inspect.signature(simTL4J::simTL::TPlaceholder.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_simtl::tif_is_not_abstract():
-    assert not inspect.isabstract(simTL::TIf)
-
-
-def test_simtl::tif_constructor_exists():
-    assert callable(simTL::TIf.__init__)
-
-
-def test_simtl::tif_constructor_args():
-    sig = inspect.signature(simTL::TIf.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_simtl::tfor_is_not_abstract():
-    assert not inspect.isabstract(simTL::TFor)
-
-
-def test_simtl::tfor_constructor_exists():
-    assert callable(simTL::TFor.__init__)
-
-
-def test_simtl::tfor_constructor_args():
-    sig = inspect.signature(simTL::TFor.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_simtl4j::simtl::tabstractmethodstatement_is_not_abstract():
-    assert not inspect.isabstract(simTL4J::simTL::TAbstractMethodStatement)
-
-
-def test_simtl4j::simtl::tabstractmethodstatement_constructor_exists():
-    assert callable(simTL4J::simTL::TAbstractMethodStatement.__init__)
-
-
-def test_simtl4j::simtl::tabstractmethodstatement_constructor_args():
-    sig = inspect.signature(simTL4J::simTL::TAbstractMethodStatement.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_simtl4j::simtl::tmethodcall_is_not_abstract():
-    assert not inspect.isabstract(simTL4J::simTL::TMethodCall)
-
-
-def test_simtl4j::simtl::tmethodcall_constructor_exists():
-    assert callable(simTL4J::simTL::TMethodCall.__init__)
-
-
-def test_simtl4j::simtl::tmethodcall_constructor_args():
-    sig = inspect.signature(simTL4J::simTL::TMethodCall.__init__)
-    params = list(sig.parameters.keys())
-    assert "params" in params, "Missing parameter 'params'"
-    assert "methodName" in params, "Missing parameter 'methodName'"
-
-def test_simtl4j::simtl::tmethodcall_has_params():
-    assert hasattr(simTL4J::simTL::TMethodCall, "params")
-    descriptor = None
-    for klass in simTL4J::simTL::TMethodCall.__mro__:
-        if "params" in klass.__dict__:
-            descriptor = klass.__dict__["params"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_simtl4j::simtl::tmethodcall_has_methodName():
-    assert hasattr(simTL4J::simTL::TMethodCall, "methodName")
-    descriptor = None
-    for klass in simTL4J::simTL::TMethodCall.__mro__:
-        if "methodName" in klass.__dict__:
-            descriptor = klass.__dict__["methodName"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_simtl4j::simtl::tmodelimport_is_not_abstract():
-    assert not inspect.isabstract(simTL4J::simTL::TModelImport)
-
-
-def test_simtl4j::simtl::tmodelimport_constructor_exists():
-    assert callable(simTL4J::simTL::TModelImport.__init__)
-
-
-def test_simtl4j::simtl::tmodelimport_constructor_args():
-    sig = inspect.signature(simTL4J::simTL::TModelImport.__init__)
-    params = list(sig.parameters.keys())
-    assert "name" in params, "Missing parameter 'name'"
-    assert "uri" in params, "Missing parameter 'uri'"
-
-def test_simtl4j::simtl::tmodelimport_has_name():
-    assert hasattr(simTL4J::simTL::TModelImport, "name")
-    descriptor = None
-    for klass in simTL4J::simTL::TModelImport.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_simtl4j::simtl::tmodelimport_has_uri():
-    assert hasattr(simTL4J::simTL::TModelImport, "uri")
-    descriptor = None
-    for klass in simTL4J::simTL::TModelImport.__mro__:
-        if "uri" in klass.__dict__:
-            descriptor = klass.__dict__["uri"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_tmodelimport_is_not_abstract():
-    assert not inspect.isabstract(TModelImport)
-
-
-def test_tmodelimport_constructor_exists():
-    assert callable(TModelImport.__init__)
-
-
-def test_tmodelimport_constructor_args():
-    sig = inspect.signature(TModelImport.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_simtl4j::simtl::templateheader_is_not_abstract():
-    assert not inspect.isabstract(simTL4J::simTL::TemplateHeader)
-
-
-def test_simtl4j::simtl::templateheader_constructor_exists():
-    assert callable(simTL4J::simTL::TemplateHeader.__init__)
-
-
-def test_simtl4j::simtl::templateheader_constructor_args():
-    sig = inspect.signature(simTL4J::simTL::TemplateHeader.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_templateheader_is_not_abstract():
-    assert not inspect.isabstract(TemplateHeader)
-
-
-def test_templateheader_constructor_exists():
-    assert callable(TemplateHeader.__init__)
-
-
-def test_templateheader_constructor_args():
-    sig = inspect.signature(TemplateHeader.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_simtl4j::simtl::template_is_not_abstract():
-    assert not inspect.isabstract(simTL4J::simTL::Template)
-
-
-def test_simtl4j::simtl::template_constructor_exists():
-    assert callable(simTL4J::simTL::Template.__init__)
-
-
-def test_simtl4j::simtl::template_constructor_args():
-    sig = inspect.signature(simTL4J::simTL::Template.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_simtl4j::simtl::tforvariable_is_not_abstract():
-    assert not inspect.isabstract(simTL4J::simTL::TForVariable)
-
-
-def test_simtl4j::simtl::tforvariable_constructor_exists():
-    assert callable(simTL4J::simTL::TForVariable.__init__)
-
-
-def test_simtl4j::simtl::tforvariable_constructor_args():
-    sig = inspect.signature(simTL4J::simTL::TForVariable.__init__)
-    params = list(sig.parameters.keys())
-    assert "name" in params, "Missing parameter 'name'"
-
-def test_simtl4j::simtl::tforvariable_has_name():
-    assert hasattr(simTL4J::simTL::TForVariable, "name")
-    descriptor = None
-    for klass in simTL4J::simTL::TForVariable.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_tforvariable_is_not_abstract():
-    assert not inspect.isabstract(TForVariable)
-
-
-def test_tforvariable_constructor_exists():
-    assert callable(TForVariable.__init__)
-
-
-def test_tforvariable_constructor_args():
-    sig = inspect.signature(TForVariable.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_simtl4j::simtl::tfor_is_not_abstract():
-    assert not inspect.isabstract(simTL4J::simTL::TFor)
-
-
-def test_simtl4j::simtl::tfor_constructor_exists():
-    assert callable(simTL4J::simTL::TFor.__init__)
-
-
-def test_simtl4j::simtl::tfor_constructor_args():
-    sig = inspect.signature(simTL4J::simTL::TFor.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_tabstractmethodstatement_is_not_abstract():
-    assert not inspect.isabstract(TAbstractMethodStatement)
-
-
-def test_tabstractmethodstatement_constructor_exists():
-    assert callable(TAbstractMethodStatement.__init__)
-
-
-def test_tabstractmethodstatement_constructor_args():
-    sig = inspect.signature(TAbstractMethodStatement.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_simtl4j::simtl::tmethodstatementimpl_is_not_abstract():
-    assert not inspect.isabstract(simTL4J::simTL::TMethodStatementImpl)
-
-
-def test_simtl4j::simtl::tmethodstatementimpl_constructor_exists():
-    assert callable(simTL4J::simTL::TMethodStatementImpl.__init__)
-
-
-def test_simtl4j::simtl::tmethodstatementimpl_constructor_args():
-    sig = inspect.signature(simTL4J::simTL::TMethodStatementImpl.__init__)
-    params = list(sig.parameters.keys())
-    assert "caller" in params, "Missing parameter 'caller'"
-
-def test_simtl4j::simtl::tmethodstatementimpl_has_caller():
-    assert hasattr(simTL4J::simTL::TMethodStatementImpl, "caller")
-    descriptor = None
-    for klass in simTL4J::simTL::TMethodStatementImpl.__mro__:
-        if "caller" in klass.__dict__:
-            descriptor = klass.__dict__["caller"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_simtl4j::simtl::tunaryoperator_is_not_abstract():
-    assert not inspect.isabstract(simTL4J::simTL::TUnaryOperator)
-
-
-def test_simtl4j::simtl::tunaryoperator_constructor_exists():
-    assert callable(simTL4J::simTL::TUnaryOperator.__init__)
-
-
-def test_simtl4j::simtl::tunaryoperator_constructor_args():
-    sig = inspect.signature(simTL4J::simTL::TUnaryOperator.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_simtl4j::simtl::tif_is_not_abstract():
-    assert not inspect.isabstract(simTL4J::simTL::TIf)
-
-
-def test_simtl4j::simtl::tif_constructor_exists():
-    assert callable(simTL4J::simTL::TIf.__init__)
-
-
-def test_simtl4j::simtl::tif_constructor_args():
-    sig = inspect.signature(simTL4J::simTL::TIf.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_additionallocalvariable_is_not_abstract():
-    assert not inspect.isabstract(AdditionalLocalVariable)
-
-
-def test_additionallocalvariable_constructor_exists():
-    assert callable(AdditionalLocalVariable.__init__)
-
-
-def test_additionallocalvariable_constructor_args():
-    sig = inspect.signature(AdditionalLocalVariable.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_statements::forloopinitializer_is_not_abstract():
-    assert not inspect.isabstract(statements::ForLoopInitializer)
-
-
-def test_statements::forloopinitializer_constructor_exists():
-    assert callable(statements::ForLoopInitializer.__init__)
-
-
-def test_statements::forloopinitializer_constructor_args():
-    sig = inspect.signature(statements::ForLoopInitializer.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_classifierreference_is_not_abstract():
-    assert not inspect.isabstract(ClassifierReference)
-
-
-def test_classifierreference_constructor_exists():
-    assert callable(ClassifierReference.__init__)
-
-
-def test_classifierreference_constructor_args():
-    sig = inspect.signature(ClassifierReference.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_types::typereference_is_not_abstract():
-    assert not inspect.isabstract(types::TypeReference)
-
-
-def test_types::typereference_constructor_exists():
-    assert callable(types::TypeReference.__init__)
-
-
-def test_types::typereference_constructor_args():
-    sig = inspect.signature(types::TypeReference.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_block_is_not_abstract():
-    assert not inspect.isabstract(Block)
-
-
-def test_block_constructor_exists():
-    assert callable(Block.__init__)
-
-
-def test_block_constructor_args():
-    sig = inspect.signature(Block.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_catchblock_is_not_abstract():
-    assert not inspect.isabstract(CatchBlock)
-
-
-def test_catchblock_constructor_exists():
-    assert callable(CatchBlock.__init__)
-
-
-def test_catchblock_constructor_args():
-    sig = inspect.signature(CatchBlock.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_statements::switchcase_is_not_abstract():
-    assert not inspect.isabstract(statements::SwitchCase)
-
-
-def test_statements::switchcase_constructor_exists():
-    assert callable(statements::SwitchCase.__init__)
-
-
-def test_statements::switchcase_constructor_args():
-    sig = inspect.signature(statements::SwitchCase.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_localvariable_is_not_abstract():
-    assert not inspect.isabstract(LocalVariable)
-
-
-def test_localvariable_constructor_exists():
-    assert callable(LocalVariable.__init__)
-
-
-def test_localvariable_constructor_args():
-    sig = inspect.signature(LocalVariable.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_jumplabel_is_not_abstract():
-    assert not inspect.isabstract(JumpLabel)
-
-
-def test_jumplabel_constructor_exists():
-    assert callable(JumpLabel.__init__)
-
-
-def test_jumplabel_constructor_args():
-    sig = inspect.signature(JumpLabel.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_statements::conditional_is_not_abstract():
-    assert not inspect.isabstract(statements::Conditional)
-
-
-def test_statements::conditional_constructor_exists():
-    assert callable(statements::Conditional.__init__)
-
-
-def test_statements::conditional_constructor_args():
-    sig = inspect.signature(statements::Conditional.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_simtl4j::statements::normalswitchcase_is_not_abstract():
-    assert not inspect.isabstract(simTL4J::statements::NormalSwitchCase)
-
-
-def test_simtl4j::statements::normalswitchcase_constructor_exists():
-    assert callable(simTL4J::statements::NormalSwitchCase.__init__)
-
-
-def test_simtl4j::statements::normalswitchcase_constructor_args():
-    sig = inspect.signature(simTL4J::statements::NormalSwitchCase.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_statementlistcontainer_is_not_abstract():
-    assert not inspect.isabstract(StatementListContainer)
-
-
-def test_statementlistcontainer_constructor_exists():
-    assert callable(StatementListContainer.__init__)
-
-
-def test_statementlistcontainer_constructor_args():
-    sig = inspect.signature(StatementListContainer.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_simtl4j::statements::switchcase_is_not_abstract():
-    assert not inspect.isabstract(simTL4J::statements::SwitchCase)
-
-
-def test_simtl4j::statements::switchcase_constructor_exists():
-    assert callable(simTL4J::statements::SwitchCase.__init__)
-
-
-def test_simtl4j::statements::switchcase_constructor_args():
-    sig = inspect.signature(simTL4J::statements::SwitchCase.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_whileloop_is_not_abstract():
-    assert not inspect.isabstract(WhileLoop)
-
-
-def test_whileloop_constructor_exists():
-    assert callable(WhileLoop.__init__)
-
-
-def test_whileloop_constructor_args():
-    sig = inspect.signature(WhileLoop.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_simtl4j::statements::dowhileloop_is_not_abstract():
-    assert not inspect.isabstract(simTL4J::statements::DoWhileLoop)
-
-
-def test_simtl4j::statements::dowhileloop_constructor_exists():
-    assert callable(simTL4J::statements::DoWhileLoop.__init__)
-
-
-def test_simtl4j::statements::dowhileloop_constructor_args():
-    sig = inspect.signature(simTL4J::statements::DoWhileLoop.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_switchcase_is_not_abstract():
-    assert not inspect.isabstract(SwitchCase)
-
-
-def test_switchcase_constructor_exists():
-    assert callable(SwitchCase.__init__)
-
-
-def test_switchcase_constructor_args():
-    sig = inspect.signature(SwitchCase.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_simtl4j::statements::defaultswitchcase_is_not_abstract():
-    assert not inspect.isabstract(simTL4J::statements::DefaultSwitchCase)
-
-
-def test_simtl4j::statements::defaultswitchcase_constructor_exists():
-    assert callable(simTL4J::statements::DefaultSwitchCase.__init__)
-
-
-def test_simtl4j::statements::defaultswitchcase_constructor_args():
-    sig = inspect.signature(simTL4J::statements::DefaultSwitchCase.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_statements::statementcontainer_is_not_abstract():
-    assert not inspect.isabstract(statements::StatementContainer)
-
-
-def test_statements::statementcontainer_constructor_exists():
-    assert callable(statements::StatementContainer.__init__)
-
-
-def test_statements::statementcontainer_constructor_args():
-    sig = inspect.signature(statements::StatementContainer.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_ordinaryparameter_is_not_abstract():
-    assert not inspect.isabstract(OrdinaryParameter)
-
-
-def test_ordinaryparameter_constructor_exists():
-    assert callable(OrdinaryParameter.__init__)
-
-
-def test_ordinaryparameter_constructor_args():
-    sig = inspect.signature(OrdinaryParameter.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_simtl4j::statements::catchblock_is_not_abstract():
-    assert not inspect.isabstract(simTL4J::statements::CatchBlock)
-
-
-def test_simtl4j::statements::catchblock_constructor_exists():
-    assert callable(simTL4J::statements::CatchBlock.__init__)
-
-
-def test_simtl4j::statements::catchblock_constructor_args():
-    sig = inspect.signature(simTL4J::statements::CatchBlock.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_modifiers::modifiable_is_not_abstract():
-    assert not inspect.isabstract(modifiers::Modifiable)
-
-
-def test_modifiers::modifiable_constructor_exists():
-    assert callable(modifiers::Modifiable.__init__)
-
-
-def test_modifiers::modifiable_constructor_args():
-    sig = inspect.signature(modifiers::Modifiable.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_jump_is_not_abstract():
-    assert not inspect.isabstract(Jump)
-
-
-def test_jump_constructor_exists():
-    assert callable(Jump.__init__)
-
-
-def test_jump_constructor_args():
-    sig = inspect.signature(Jump.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_simtl4j::statements::continue_is_not_abstract():
-    assert not inspect.isabstract(simTL4J::statements::Continue)
-
-
-def test_simtl4j::statements::continue_constructor_exists():
-    assert callable(simTL4J::statements::Continue.__init__)
-
-
-def test_simtl4j::statements::continue_constructor_args():
-    sig = inspect.signature(simTL4J::statements::Continue.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_simtl4j::statements::break_is_not_abstract():
-    assert not inspect.isabstract(simTL4J::statements::Break)
-
-
-def test_simtl4j::statements::break_constructor_exists():
-    assert callable(simTL4J::statements::Break.__init__)
-
-
-def test_simtl4j::statements::break_constructor_args():
-    sig = inspect.signature(simTL4J::statements::Break.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_references::elementreference_is_not_abstract():
-    assert not inspect.isabstract(references::ElementReference)
-
-
-def test_references::elementreference_constructor_exists():
-    assert callable(references::ElementReference.__init__)
-
-
-def test_references::elementreference_constructor_args():
-    sig = inspect.signature(references::ElementReference.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_statement_is_not_abstract():
-    assert not inspect.isabstract(Statement)
-
-
-def test_statement_constructor_exists():
-    assert callable(Statement.__init__)
-
-
-def test_statement_constructor_args():
-    sig = inspect.signature(Statement.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_simtl4j::statements::localvariablestatement_is_not_abstract():
-    assert not inspect.isabstract(simTL4J::statements::LocalVariableStatement)
-
-
-def test_simtl4j::statements::localvariablestatement_constructor_exists():
-    assert callable(simTL4J::statements::LocalVariableStatement.__init__)
-
-
-def test_simtl4j::statements::localvariablestatement_constructor_args():
-    sig = inspect.signature(simTL4J::statements::LocalVariableStatement.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_simtl4j::statements::throw_is_not_abstract():
-    assert not inspect.isabstract(simTL4J::statements::Throw)
-
-
-def test_simtl4j::statements::throw_constructor_exists():
-    assert callable(simTL4J::statements::Throw.__init__)
-
-
-def test_simtl4j::statements::throw_constructor_args():
-    sig = inspect.signature(simTL4J::statements::Throw.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_simtl4j::statements::jump_is_not_abstract():
-    assert not inspect.isabstract(simTL4J::statements::Jump)
-
-
-def test_simtl4j::statements::jump_constructor_exists():
-    assert callable(simTL4J::statements::Jump.__init__)
-
-
-def test_simtl4j::statements::jump_constructor_args():
-    sig = inspect.signature(simTL4J::statements::Jump.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_simtl4j::statements::switch_is_not_abstract():
-    assert not inspect.isabstract(simTL4J::statements::Switch)
-
-
-def test_simtl4j::statements::switch_constructor_exists():
-    assert callable(simTL4J::statements::Switch.__init__)
-
-
-def test_simtl4j::statements::switch_constructor_args():
-    sig = inspect.signature(simTL4J::statements::Switch.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_simtl4j::statements::return_is_not_abstract():
-    assert not inspect.isabstract(simTL4J::statements::Return)
-
-
-def test_simtl4j::statements::return_constructor_exists():
-    assert callable(simTL4J::statements::Return.__init__)
-
-
-def test_simtl4j::statements::return_constructor_args():
-    sig = inspect.signature(simTL4J::statements::Return.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_simtl4j::statements::expressionstatement_is_not_abstract():
-    assert not inspect.isabstract(simTL4J::statements::ExpressionStatement)
-
-
-def test_simtl4j::statements::expressionstatement_constructor_exists():
-    assert callable(simTL4J::statements::ExpressionStatement.__init__)
-
-
-def test_simtl4j::statements::expressionstatement_constructor_args():
-    sig = inspect.signature(simTL4J::statements::ExpressionStatement.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_simtl4j::statements::emptystatement_is_not_abstract():
-    assert not inspect.isabstract(simTL4J::statements::EmptyStatement)
-
-
-def test_simtl4j::statements::emptystatement_constructor_exists():
-    assert callable(simTL4J::statements::EmptyStatement.__init__)
-
-
-def test_simtl4j::statements::emptystatement_constructor_args():
-    sig = inspect.signature(simTL4J::statements::EmptyStatement.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_primitivetype_is_not_abstract():
-    assert not inspect.isabstract(PrimitiveType)
-
-
-def test_primitivetype_constructor_exists():
-    assert callable(PrimitiveType.__init__)
-
-
-def test_primitivetype_constructor_args():
-    sig = inspect.signature(PrimitiveType.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_simtl4j::types::void_is_not_abstract():
-    assert not inspect.isabstract(simTL4J::types::Void)
-
-
-def test_simtl4j::types::void_constructor_exists():
-    assert callable(simTL4J::types::Void.__init__)
-
-
-def test_simtl4j::types::void_constructor_args():
-    sig = inspect.signature(simTL4J::types::Void.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_simtl4j::types::char_is_not_abstract():
-    assert not inspect.isabstract(simTL4J::types::Char)
-
-
-def test_simtl4j::types::char_constructor_exists():
-    assert callable(simTL4J::types::Char.__init__)
-
-
-def test_simtl4j::types::char_constructor_args():
-    sig = inspect.signature(simTL4J::types::Char.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_simtl4j::types::boolean_is_not_abstract():
-    assert not inspect.isabstract(simTL4J::types::Boolean)
-
-
-def test_simtl4j::types::boolean_constructor_exists():
-    assert callable(simTL4J::types::Boolean.__init__)
-
-
-def test_simtl4j::types::boolean_constructor_args():
-    sig = inspect.signature(simTL4J::types::Boolean.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_simtl4j::types::long_is_not_abstract():
-    assert not inspect.isabstract(simTL4J::types::Long)
-
-
-def test_simtl4j::types::long_constructor_exists():
-    assert callable(simTL4J::types::Long.__init__)
-
-
-def test_simtl4j::types::long_constructor_args():
-    sig = inspect.signature(simTL4J::types::Long.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_simtl4j::types::int_is_not_abstract():
-    assert not inspect.isabstract(simTL4J::types::Int)
-
-
-def test_simtl4j::types::int_constructor_exists():
-    assert callable(simTL4J::types::Int.__init__)
-
-
-def test_simtl4j::types::int_constructor_args():
-    sig = inspect.signature(simTL4J::types::Int.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_simtl4j::types::double_is_not_abstract():
-    assert not inspect.isabstract(simTL4J::types::Double)
-
-
-def test_simtl4j::types::double_constructor_exists():
-    assert callable(simTL4J::types::Double.__init__)
-
-
-def test_simtl4j::types::double_constructor_args():
-    sig = inspect.signature(simTL4J::types::Double.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_simtl4j::types::short_is_not_abstract():
-    assert not inspect.isabstract(simTL4J::types::Short)
-
-
-def test_simtl4j::types::short_constructor_exists():
-    assert callable(simTL4J::types::Short.__init__)
-
-
-def test_simtl4j::types::short_constructor_args():
-    sig = inspect.signature(simTL4J::types::Short.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_simtl4j::types::byte_is_not_abstract():
-    assert not inspect.isabstract(simTL4J::types::Byte)
-
-
-def test_simtl4j::types::byte_constructor_exists():
-    assert callable(simTL4J::types::Byte.__init__)
-
-
-def test_simtl4j::types::byte_constructor_args():
-    sig = inspect.signature(simTL4J::types::Byte.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_simtl4j::types::float_is_not_abstract():
-    assert not inspect.isabstract(simTL4J::types::Float)
-
-
-def test_simtl4j::types::float_constructor_exists():
-    assert callable(simTL4J::types::Float.__init__)
-
-
-def test_simtl4j::types::float_constructor_args():
-    sig = inspect.signature(simTL4J::types::Float.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_elementreference_is_not_abstract():
-    assert not inspect.isabstract(ElementReference)
-
-
-def test_elementreference_constructor_exists():
-    assert callable(ElementReference.__init__)
-
-
-def test_elementreference_constructor_args():
-    sig = inspect.signature(ElementReference.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_simtl4j::references::identifierreference_is_not_abstract():
-    assert not inspect.isabstract(simTL4J::references::IdentifierReference)
-
-
-def test_simtl4j::references::identifierreference_constructor_exists():
-    assert callable(simTL4J::references::IdentifierReference.__init__)
-
-
-def test_simtl4j::references::identifierreference_constructor_args():
-    sig = inspect.signature(simTL4J::references::IdentifierReference.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_arrayselector_is_not_abstract():
-    assert not inspect.isabstract(ArraySelector)
-
-
-def test_arrayselector_constructor_exists():
-    assert callable(ArraySelector.__init__)
-
-
-def test_arrayselector_constructor_args():
-    sig = inspect.signature(ArraySelector.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_expressions::primaryexpression_is_not_abstract():
-    assert not inspect.isabstract(expressions::PrimaryExpression)
-
-
-def test_expressions::primaryexpression_constructor_exists():
-    assert callable(expressions::PrimaryExpression.__init__)
-
-
-def test_expressions::primaryexpression_constructor_args():
-    sig = inspect.signature(expressions::PrimaryExpression.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_simtl4j::simtl::tplaceholder::primaryexpression_is_not_abstract():
-    assert not inspect.isabstract(simTL4J::simTL::TPlaceholder::PrimaryExpression)
-
-
-def test_simtl4j::simtl::tplaceholder::primaryexpression_constructor_exists():
-    assert callable(simTL4J::simTL::TPlaceholder::PrimaryExpression.__init__)
-
-
-def test_simtl4j::simtl::tplaceholder::primaryexpression_constructor_args():
-    sig = inspect.signature(simTL4J::simTL::TPlaceholder::PrimaryExpression.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_parameter_is_not_abstract():
-    assert not inspect.isabstract(Parameter)
-
-
-def test_parameter_constructor_exists():
-    assert callable(Parameter.__init__)
-
-
-def test_parameter_constructor_args():
-    sig = inspect.signature(Parameter.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_simtl4j::parameters::variablelengthparameter_is_not_abstract():
-    assert not inspect.isabstract(simTL4J::parameters::VariableLengthParameter)
-
-
-def test_simtl4j::parameters::variablelengthparameter_constructor_exists():
-    assert callable(simTL4J::parameters::VariableLengthParameter.__init__)
-
-
-def test_simtl4j::parameters::variablelengthparameter_constructor_args():
-    sig = inspect.signature(simTL4J::parameters::VariableLengthParameter.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_simtl4j::parameters::ordinaryparameter_is_not_abstract():
-    assert not inspect.isabstract(simTL4J::parameters::OrdinaryParameter)
-
-
-def test_simtl4j::parameters::ordinaryparameter_constructor_exists():
-    assert callable(simTL4J::parameters::OrdinaryParameter.__init__)
-
-
-def test_simtl4j::parameters::ordinaryparameter_constructor_args():
-    sig = inspect.signature(simTL4J::parameters::OrdinaryParameter.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_operators::unaryoperator_is_not_abstract():
-    assert not inspect.isabstract(operators::UnaryOperator)
-
-
-def test_operators::unaryoperator_constructor_exists():
-    assert callable(operators::UnaryOperator.__init__)
-
-
-def test_operators::unaryoperator_constructor_args():
-    sig = inspect.signature(operators::UnaryOperator.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_operators::additiveoperator_is_not_abstract():
-    assert not inspect.isabstract(operators::AdditiveOperator)
-
-
-def test_operators::additiveoperator_constructor_exists():
-    assert callable(operators::AdditiveOperator.__init__)
-
-
-def test_operators::additiveoperator_constructor_args():
-    sig = inspect.signature(operators::AdditiveOperator.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_simtl4j::operators::subtraction_is_not_abstract():
-    assert not inspect.isabstract(simTL4J::operators::Subtraction)
-
-
-def test_simtl4j::operators::subtraction_constructor_exists():
-    assert callable(simTL4J::operators::Subtraction.__init__)
-
-
-def test_simtl4j::operators::subtraction_constructor_args():
-    sig = inspect.signature(simTL4J::operators::Subtraction.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_simtl4j::operators::addition_is_not_abstract():
-    assert not inspect.isabstract(simTL4J::operators::Addition)
-
-
-def test_simtl4j::operators::addition_constructor_exists():
-    assert callable(simTL4J::operators::Addition.__init__)
-
-
-def test_simtl4j::operators::addition_constructor_args():
-    sig = inspect.signature(simTL4J::operators::Addition.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_operator_is_not_abstract():
-    assert not inspect.isabstract(Operator)
-
-
-def test_operator_constructor_exists():
-    assert callable(Operator.__init__)
-
-
-def test_operator_constructor_args():
-    sig = inspect.signature(Operator.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_simtl4j::operators::multiplicativeoperator_is_not_abstract():
-    assert not inspect.isabstract(simTL4J::operators::MultiplicativeOperator)
-
-
-def test_simtl4j::operators::multiplicativeoperator_constructor_exists():
-    assert callable(simTL4J::operators::MultiplicativeOperator.__init__)
-
-
-def test_simtl4j::operators::multiplicativeoperator_constructor_args():
-    sig = inspect.signature(simTL4J::operators::MultiplicativeOperator.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_simtl4j::operators::unarymodificationoperator_is_not_abstract():
-    assert not inspect.isabstract(simTL4J::operators::UnaryModificationOperator)
-
-
-def test_simtl4j::operators::unarymodificationoperator_constructor_exists():
-    assert callable(simTL4J::operators::UnaryModificationOperator.__init__)
-
-
-def test_simtl4j::operators::unarymodificationoperator_constructor_args():
-    sig = inspect.signature(simTL4J::operators::UnaryModificationOperator.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_simtl4j::operators::equalityoperator_is_not_abstract():
-    assert not inspect.isabstract(simTL4J::operators::EqualityOperator)
-
-
-def test_simtl4j::operators::equalityoperator_constructor_exists():
-    assert callable(simTL4J::operators::EqualityOperator.__init__)
-
-
-def test_simtl4j::operators::equalityoperator_constructor_args():
-    sig = inspect.signature(simTL4J::operators::EqualityOperator.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_simtl4j::operators::relationoperator_is_not_abstract():
-    assert not inspect.isabstract(simTL4J::operators::RelationOperator)
-
-
-def test_simtl4j::operators::relationoperator_constructor_exists():
-    assert callable(simTL4J::operators::RelationOperator.__init__)
-
-
-def test_simtl4j::operators::relationoperator_constructor_args():
-    sig = inspect.signature(simTL4J::operators::RelationOperator.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_simtl4j::operators::assignmentoperator_is_not_abstract():
-    assert not inspect.isabstract(simTL4J::operators::AssignmentOperator)
-
-
-def test_simtl4j::operators::assignmentoperator_constructor_exists():
-    assert callable(simTL4J::operators::AssignmentOperator.__init__)
-
-
-def test_simtl4j::operators::assignmentoperator_constructor_args():
-    sig = inspect.signature(simTL4J::operators::AssignmentOperator.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_simtl4j::operators::unaryoperator_is_not_abstract():
-    assert not inspect.isabstract(simTL4J::operators::UnaryOperator)
-
-
-def test_simtl4j::operators::unaryoperator_constructor_exists():
-    assert callable(simTL4J::operators::UnaryOperator.__init__)
-
-
-def test_simtl4j::operators::unaryoperator_constructor_args():
-    sig = inspect.signature(simTL4J::operators::UnaryOperator.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_simtl4j::operators::shiftoperator_is_not_abstract():
-    assert not inspect.isabstract(simTL4J::operators::ShiftOperator)
-
-
-def test_simtl4j::operators::shiftoperator_constructor_exists():
-    assert callable(simTL4J::operators::ShiftOperator.__init__)
-
-
-def test_simtl4j::operators::shiftoperator_constructor_args():
-    sig = inspect.signature(simTL4J::operators::ShiftOperator.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_simtl4j::operators::additiveoperator_is_not_abstract():
-    assert not inspect.isabstract(simTL4J::operators::AdditiveOperator)
-
-
-def test_simtl4j::operators::additiveoperator_constructor_exists():
-    assert callable(simTL4J::operators::AdditiveOperator.__init__)
-
-
-def test_simtl4j::operators::additiveoperator_constructor_args():
-    sig = inspect.signature(simTL4J::operators::AdditiveOperator.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_annotationinstanceormodifier_is_not_abstract():
-    assert not inspect.isabstract(AnnotationInstanceOrModifier)
-
-
-def test_annotationinstanceormodifier_constructor_exists():
-    assert callable(AnnotationInstanceOrModifier.__init__)
-
-
-def test_annotationinstanceormodifier_constructor_args():
-    sig = inspect.signature(AnnotationInstanceOrModifier.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_simtl4j::modifiers::modifier_is_not_abstract():
-    assert not inspect.isabstract(simTL4J::modifiers::Modifier)
-
-
-def test_simtl4j::modifiers::modifier_constructor_exists():
-    assert callable(simTL4J::modifiers::Modifier.__init__)
-
-
-def test_simtl4j::modifiers::modifier_constructor_args():
-    sig = inspect.signature(simTL4J::modifiers::Modifier.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_modifier_is_not_abstract():
-    assert not inspect.isabstract(Modifier)
-
-
-def test_modifier_constructor_exists():
-    assert callable(Modifier.__init__)
-
-
-def test_modifier_constructor_args():
-    sig = inspect.signature(Modifier.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_simtl4j::modifiers::synchronized_is_not_abstract():
-    assert not inspect.isabstract(simTL4J::modifiers::Synchronized)
-
-
-def test_simtl4j::modifiers::synchronized_constructor_exists():
-    assert callable(simTL4J::modifiers::Synchronized.__init__)
-
-
-def test_simtl4j::modifiers::synchronized_constructor_args():
-    sig = inspect.signature(simTL4J::modifiers::Synchronized.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_simtl4j::modifiers::private_is_not_abstract():
-    assert not inspect.isabstract(simTL4J::modifiers::Private)
-
-
-def test_simtl4j::modifiers::private_constructor_exists():
-    assert callable(simTL4J::modifiers::Private.__init__)
-
-
-def test_simtl4j::modifiers::private_constructor_args():
-    sig = inspect.signature(simTL4J::modifiers::Private.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_simtl4j::modifiers::static_is_not_abstract():
-    assert not inspect.isabstract(simTL4J::modifiers::Static)
-
-
-def test_simtl4j::modifiers::static_constructor_exists():
-    assert callable(simTL4J::modifiers::Static.__init__)
-
-
-def test_simtl4j::modifiers::static_constructor_args():
-    sig = inspect.signature(simTL4J::modifiers::Static.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_simtl4j::modifiers::strictfp_is_not_abstract():
-    assert not inspect.isabstract(simTL4J::modifiers::Strictfp)
-
-
-def test_simtl4j::modifiers::strictfp_constructor_exists():
-    assert callable(simTL4J::modifiers::Strictfp.__init__)
-
-
-def test_simtl4j::modifiers::strictfp_constructor_args():
-    sig = inspect.signature(simTL4J::modifiers::Strictfp.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_simtl4j::modifiers::transient_is_not_abstract():
-    assert not inspect.isabstract(simTL4J::modifiers::Transient)
-
-
-def test_simtl4j::modifiers::transient_constructor_exists():
-    assert callable(simTL4J::modifiers::Transient.__init__)
-
-
-def test_simtl4j::modifiers::transient_constructor_args():
-    sig = inspect.signature(simTL4J::modifiers::Transient.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_simtl4j::modifiers::abstract_is_not_abstract():
-    assert not inspect.isabstract(simTL4J::modifiers::Abstract)
-
-
-def test_simtl4j::modifiers::abstract_constructor_exists():
-    assert callable(simTL4J::modifiers::Abstract.__init__)
-
-
-def test_simtl4j::modifiers::abstract_constructor_args():
-    sig = inspect.signature(simTL4J::modifiers::Abstract.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_simtl4j::modifiers::volatile_is_not_abstract():
-    assert not inspect.isabstract(simTL4J::modifiers::Volatile)
-
-
-def test_simtl4j::modifiers::volatile_constructor_exists():
-    assert callable(simTL4J::modifiers::Volatile.__init__)
-
-
-def test_simtl4j::modifiers::volatile_constructor_args():
-    sig = inspect.signature(simTL4J::modifiers::Volatile.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_simtl4j::modifiers::native_is_not_abstract():
-    assert not inspect.isabstract(simTL4J::modifiers::Native)
-
-
-def test_simtl4j::modifiers::native_constructor_exists():
-    assert callable(simTL4J::modifiers::Native.__init__)
-
-
-def test_simtl4j::modifiers::native_constructor_args():
-    sig = inspect.signature(simTL4J::modifiers::Native.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_simtl4j::modifiers::protected_is_not_abstract():
-    assert not inspect.isabstract(simTL4J::modifiers::Protected)
-
-
-def test_simtl4j::modifiers::protected_constructor_exists():
-    assert callable(simTL4J::modifiers::Protected.__init__)
-
-
-def test_simtl4j::modifiers::protected_constructor_args():
-    sig = inspect.signature(simTL4J::modifiers::Protected.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_simtl4j::modifiers::public_is_not_abstract():
-    assert not inspect.isabstract(simTL4J::modifiers::Public)
-
-
-def test_simtl4j::modifiers::public_constructor_exists():
-    assert callable(simTL4J::modifiers::Public.__init__)
-
-
-def test_simtl4j::modifiers::public_constructor_args():
-    sig = inspect.signature(simTL4J::modifiers::Public.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_simtl4j::modifiers::final_is_not_abstract():
-    assert not inspect.isabstract(simTL4J::modifiers::Final)
-
-
-def test_simtl4j::modifiers::final_constructor_exists():
-    assert callable(simTL4J::modifiers::Final.__init__)
-
-
-def test_simtl4j::modifiers::final_constructor_args():
-    sig = inspect.signature(simTL4J::modifiers::Final.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_members::method_is_not_abstract():
-    assert not inspect.isabstract(members::Method)
-
-
-def test_members::method_constructor_exists():
-    assert callable(members::Method.__init__)
-
-
-def test_members::method_constructor_args():
-    sig = inspect.signature(members::Method.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_method_is_not_abstract():
-    assert not inspect.isabstract(Method)
-
-
-def test_method_constructor_exists():
-    assert callable(Method.__init__)
-
-
-def test_method_constructor_args():
-    sig = inspect.signature(Method.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_simtl4j::members::interfacemethod_is_not_abstract():
-    assert not inspect.isabstract(simTL4J::members::InterfaceMethod)
-
-
-def test_simtl4j::members::interfacemethod_constructor_exists():
-    assert callable(simTL4J::members::InterfaceMethod.__init__)
-
-
-def test_simtl4j::members::interfacemethod_constructor_args():
-    sig = inspect.signature(simTL4J::members::InterfaceMethod.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_additionalfield_is_not_abstract():
-    assert not inspect.isabstract(AdditionalField)
-
-
-def test_additionalfield_constructor_exists():
-    assert callable(AdditionalField.__init__)
-
-
-def test_additionalfield_constructor_args():
-    sig = inspect.signature(AdditionalField.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_variables::variable_is_not_abstract():
-    assert not inspect.isabstract(variables::Variable)
-
-
-def test_variables::variable_constructor_exists():
-    assert callable(variables::Variable.__init__)
-
-
-def test_variables::variable_constructor_args():
-    sig = inspect.signature(variables::Variable.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_members::exceptionthrower_is_not_abstract():
-    assert not inspect.isabstract(members::ExceptionThrower)
-
-
-def test_members::exceptionthrower_constructor_exists():
-    assert callable(members::ExceptionThrower.__init__)
-
-
-def test_members::exceptionthrower_constructor_args():
-    sig = inspect.signature(members::ExceptionThrower.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_parameters::parametrizable_is_not_abstract():
-    assert not inspect.isabstract(parameters::Parametrizable)
-
-
-def test_parameters::parametrizable_constructor_exists():
-    assert callable(parameters::Parametrizable.__init__)
-
-
-def test_parameters::parametrizable_constructor_args():
-    sig = inspect.signature(parameters::Parametrizable.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_statements::statementlistcontainer_is_not_abstract():
-    assert not inspect.isabstract(statements::StatementListContainer)
-
-
-def test_statements::statementlistcontainer_constructor_exists():
-    assert callable(statements::StatementListContainer.__init__)
-
-
-def test_statements::statementlistcontainer_constructor_args():
-    sig = inspect.signature(statements::StatementListContainer.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_simtl4j::members::classmethod_is_not_abstract():
-    assert not inspect.isabstract(simTL4J::members::ClassMethod)
-
-
-def test_simtl4j::members::classmethod_constructor_exists():
-    assert callable(simTL4J::members::ClassMethod.__init__)
-
-
-def test_simtl4j::members::classmethod_constructor_args():
-    sig = inspect.signature(simTL4J::members::ClassMethod.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_instantiations::initializable_is_not_abstract():
-    assert not inspect.isabstract(instantiations::Initializable)
-
-
-def test_instantiations::initializable_constructor_exists():
-    assert callable(instantiations::Initializable.__init__)
-
-
-def test_instantiations::initializable_constructor_args():
-    sig = inspect.signature(instantiations::Initializable.__init__)
+def test_instantiations_initializable_constructor_args():
+    sig = inspect.signature(instantiations_Initializable.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -2003,20 +473,6 @@ def test_member_constructor_args():
 
 
 
-def test_simtl4j::members::emptymember_is_not_abstract():
-    assert not inspect.isabstract(simTL4J::members::EmptyMember)
-
-
-def test_simtl4j::members::emptymember_constructor_exists():
-    assert callable(simTL4J::members::EmptyMember.__init__)
-
-
-def test_simtl4j::members::emptymember_constructor_args():
-    sig = inspect.signature(simTL4J::members::EmptyMember.__init__)
-    params = list(sig.parameters.keys())
-
-
-
 def test_namedelement_is_not_abstract():
     assert not inspect.isabstract(NamedElement)
 
@@ -2031,30 +487,16 @@ def test_namedelement_constructor_args():
 
 
 
-def test_simtl4j::references::referenceableelement_is_not_abstract():
-    assert not inspect.isabstract(simTL4J::references::ReferenceableElement)
+def test_simtl4j_members_member_is_not_abstract():
+    assert not inspect.isabstract(simTL4J_members_Member)
 
 
-def test_simtl4j::references::referenceableelement_constructor_exists():
-    assert callable(simTL4J::references::ReferenceableElement.__init__)
+def test_simtl4j_members_member_constructor_exists():
+    assert callable(simTL4J_members_Member.__init__)
 
 
-def test_simtl4j::references::referenceableelement_constructor_args():
-    sig = inspect.signature(simTL4J::references::ReferenceableElement.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_simtl4j::members::member_is_not_abstract():
-    assert not inspect.isabstract(simTL4J::members::Member)
-
-
-def test_simtl4j::members::member_constructor_exists():
-    assert callable(simTL4J::members::Member.__init__)
-
-
-def test_simtl4j::members::member_constructor_args():
-    sig = inspect.signature(simTL4J::members::Member.__init__)
+def test_simtl4j_members_member_constructor_args():
+    sig = inspect.signature(simTL4J_members_Member.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -2087,47 +529,23 @@ def test_longliteral_constructor_args():
 
 
 
-def test_simtl4j::literals::octallongliteral_is_not_abstract():
-    assert not inspect.isabstract(simTL4J::literals::OctalLongLiteral)
+def test_simtl4j_literals_hexlongliteral_is_not_abstract():
+    assert not inspect.isabstract(simTL4J_literals_HexLongLiteral)
 
 
-def test_simtl4j::literals::octallongliteral_constructor_exists():
-    assert callable(simTL4J::literals::OctalLongLiteral.__init__)
+def test_simtl4j_literals_hexlongliteral_constructor_exists():
+    assert callable(simTL4J_literals_HexLongLiteral.__init__)
 
 
-def test_simtl4j::literals::octallongliteral_constructor_args():
-    sig = inspect.signature(simTL4J::literals::OctalLongLiteral.__init__)
-    params = list(sig.parameters.keys())
-    assert "octalValue" in params, "Missing parameter 'octalValue'"
-
-def test_simtl4j::literals::octallongliteral_has_octalValue():
-    assert hasattr(simTL4J::literals::OctalLongLiteral, "octalValue")
-    descriptor = None
-    for klass in simTL4J::literals::OctalLongLiteral.__mro__:
-        if "octalValue" in klass.__dict__:
-            descriptor = klass.__dict__["octalValue"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_simtl4j::literals::hexlongliteral_is_not_abstract():
-    assert not inspect.isabstract(simTL4J::literals::HexLongLiteral)
-
-
-def test_simtl4j::literals::hexlongliteral_constructor_exists():
-    assert callable(simTL4J::literals::HexLongLiteral.__init__)
-
-
-def test_simtl4j::literals::hexlongliteral_constructor_args():
-    sig = inspect.signature(simTL4J::literals::HexLongLiteral.__init__)
+def test_simtl4j_literals_hexlongliteral_constructor_args():
+    sig = inspect.signature(simTL4J_literals_HexLongLiteral.__init__)
     params = list(sig.parameters.keys())
     assert "hexValue" in params, "Missing parameter 'hexValue'"
 
-def test_simtl4j::literals::hexlongliteral_has_hexValue():
-    assert hasattr(simTL4J::literals::HexLongLiteral, "hexValue")
+def test_simtl4j_literals_hexlongliteral_has_hexValue():
+    assert hasattr(simTL4J_literals_HexLongLiteral, "hexValue")
     descriptor = None
-    for klass in simTL4J::literals::HexLongLiteral.__mro__:
+    for klass in simTL4J_literals_HexLongLiteral.__mro__:
         if "hexValue" in klass.__dict__:
             descriptor = klass.__dict__["hexValue"]
             break
@@ -2135,23 +553,47 @@ def test_simtl4j::literals::hexlongliteral_has_hexValue():
 
 
 
-def test_simtl4j::literals::decimallongliteral_is_not_abstract():
-    assert not inspect.isabstract(simTL4J::literals::DecimalLongLiteral)
+def test_simtl4j_literals_octallongliteral_is_not_abstract():
+    assert not inspect.isabstract(simTL4J_literals_OctalLongLiteral)
 
 
-def test_simtl4j::literals::decimallongliteral_constructor_exists():
-    assert callable(simTL4J::literals::DecimalLongLiteral.__init__)
+def test_simtl4j_literals_octallongliteral_constructor_exists():
+    assert callable(simTL4J_literals_OctalLongLiteral.__init__)
 
 
-def test_simtl4j::literals::decimallongliteral_constructor_args():
-    sig = inspect.signature(simTL4J::literals::DecimalLongLiteral.__init__)
+def test_simtl4j_literals_octallongliteral_constructor_args():
+    sig = inspect.signature(simTL4J_literals_OctalLongLiteral.__init__)
+    params = list(sig.parameters.keys())
+    assert "octalValue" in params, "Missing parameter 'octalValue'"
+
+def test_simtl4j_literals_octallongliteral_has_octalValue():
+    assert hasattr(simTL4J_literals_OctalLongLiteral, "octalValue")
+    descriptor = None
+    for klass in simTL4J_literals_OctalLongLiteral.__mro__:
+        if "octalValue" in klass.__dict__:
+            descriptor = klass.__dict__["octalValue"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_simtl4j_literals_decimallongliteral_is_not_abstract():
+    assert not inspect.isabstract(simTL4J_literals_DecimalLongLiteral)
+
+
+def test_simtl4j_literals_decimallongliteral_constructor_exists():
+    assert callable(simTL4J_literals_DecimalLongLiteral.__init__)
+
+
+def test_simtl4j_literals_decimallongliteral_constructor_args():
+    sig = inspect.signature(simTL4J_literals_DecimalLongLiteral.__init__)
     params = list(sig.parameters.keys())
     assert "decimalValue" in params, "Missing parameter 'decimalValue'"
 
-def test_simtl4j::literals::decimallongliteral_has_decimalValue():
-    assert hasattr(simTL4J::literals::DecimalLongLiteral, "decimalValue")
+def test_simtl4j_literals_decimallongliteral_has_decimalValue():
+    assert hasattr(simTL4J_literals_DecimalLongLiteral, "decimalValue")
     descriptor = None
-    for klass in simTL4J::literals::DecimalLongLiteral.__mro__:
+    for klass in simTL4J_literals_DecimalLongLiteral.__mro__:
         if "decimalValue" in klass.__dict__:
             descriptor = klass.__dict__["decimalValue"]
             break
@@ -2173,47 +615,23 @@ def test_integerliteral_constructor_args():
 
 
 
-def test_simtl4j::literals::hexintegerliteral_is_not_abstract():
-    assert not inspect.isabstract(simTL4J::literals::HexIntegerLiteral)
+def test_simtl4j_literals_octalintegerliteral_is_not_abstract():
+    assert not inspect.isabstract(simTL4J_literals_OctalIntegerLiteral)
 
 
-def test_simtl4j::literals::hexintegerliteral_constructor_exists():
-    assert callable(simTL4J::literals::HexIntegerLiteral.__init__)
+def test_simtl4j_literals_octalintegerliteral_constructor_exists():
+    assert callable(simTL4J_literals_OctalIntegerLiteral.__init__)
 
 
-def test_simtl4j::literals::hexintegerliteral_constructor_args():
-    sig = inspect.signature(simTL4J::literals::HexIntegerLiteral.__init__)
-    params = list(sig.parameters.keys())
-    assert "hexValue" in params, "Missing parameter 'hexValue'"
-
-def test_simtl4j::literals::hexintegerliteral_has_hexValue():
-    assert hasattr(simTL4J::literals::HexIntegerLiteral, "hexValue")
-    descriptor = None
-    for klass in simTL4J::literals::HexIntegerLiteral.__mro__:
-        if "hexValue" in klass.__dict__:
-            descriptor = klass.__dict__["hexValue"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_simtl4j::literals::octalintegerliteral_is_not_abstract():
-    assert not inspect.isabstract(simTL4J::literals::OctalIntegerLiteral)
-
-
-def test_simtl4j::literals::octalintegerliteral_constructor_exists():
-    assert callable(simTL4J::literals::OctalIntegerLiteral.__init__)
-
-
-def test_simtl4j::literals::octalintegerliteral_constructor_args():
-    sig = inspect.signature(simTL4J::literals::OctalIntegerLiteral.__init__)
+def test_simtl4j_literals_octalintegerliteral_constructor_args():
+    sig = inspect.signature(simTL4J_literals_OctalIntegerLiteral.__init__)
     params = list(sig.parameters.keys())
     assert "octalValue" in params, "Missing parameter 'octalValue'"
 
-def test_simtl4j::literals::octalintegerliteral_has_octalValue():
-    assert hasattr(simTL4J::literals::OctalIntegerLiteral, "octalValue")
+def test_simtl4j_literals_octalintegerliteral_has_octalValue():
+    assert hasattr(simTL4J_literals_OctalIntegerLiteral, "octalValue")
     descriptor = None
-    for klass in simTL4J::literals::OctalIntegerLiteral.__mro__:
+    for klass in simTL4J_literals_OctalIntegerLiteral.__mro__:
         if "octalValue" in klass.__dict__:
             descriptor = klass.__dict__["octalValue"]
             break
@@ -2221,23 +639,47 @@ def test_simtl4j::literals::octalintegerliteral_has_octalValue():
 
 
 
-def test_simtl4j::literals::decimalintegerliteral_is_not_abstract():
-    assert not inspect.isabstract(simTL4J::literals::DecimalIntegerLiteral)
+def test_simtl4j_literals_hexintegerliteral_is_not_abstract():
+    assert not inspect.isabstract(simTL4J_literals_HexIntegerLiteral)
 
 
-def test_simtl4j::literals::decimalintegerliteral_constructor_exists():
-    assert callable(simTL4J::literals::DecimalIntegerLiteral.__init__)
+def test_simtl4j_literals_hexintegerliteral_constructor_exists():
+    assert callable(simTL4J_literals_HexIntegerLiteral.__init__)
 
 
-def test_simtl4j::literals::decimalintegerliteral_constructor_args():
-    sig = inspect.signature(simTL4J::literals::DecimalIntegerLiteral.__init__)
+def test_simtl4j_literals_hexintegerliteral_constructor_args():
+    sig = inspect.signature(simTL4J_literals_HexIntegerLiteral.__init__)
+    params = list(sig.parameters.keys())
+    assert "hexValue" in params, "Missing parameter 'hexValue'"
+
+def test_simtl4j_literals_hexintegerliteral_has_hexValue():
+    assert hasattr(simTL4J_literals_HexIntegerLiteral, "hexValue")
+    descriptor = None
+    for klass in simTL4J_literals_HexIntegerLiteral.__mro__:
+        if "hexValue" in klass.__dict__:
+            descriptor = klass.__dict__["hexValue"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_simtl4j_literals_decimalintegerliteral_is_not_abstract():
+    assert not inspect.isabstract(simTL4J_literals_DecimalIntegerLiteral)
+
+
+def test_simtl4j_literals_decimalintegerliteral_constructor_exists():
+    assert callable(simTL4J_literals_DecimalIntegerLiteral.__init__)
+
+
+def test_simtl4j_literals_decimalintegerliteral_constructor_args():
+    sig = inspect.signature(simTL4J_literals_DecimalIntegerLiteral.__init__)
     params = list(sig.parameters.keys())
     assert "decimalValue" in params, "Missing parameter 'decimalValue'"
 
-def test_simtl4j::literals::decimalintegerliteral_has_decimalValue():
-    assert hasattr(simTL4J::literals::DecimalIntegerLiteral, "decimalValue")
+def test_simtl4j_literals_decimalintegerliteral_has_decimalValue():
+    assert hasattr(simTL4J_literals_DecimalIntegerLiteral, "decimalValue")
     descriptor = None
-    for klass in simTL4J::literals::DecimalIntegerLiteral.__mro__:
+    for klass in simTL4J_literals_DecimalIntegerLiteral.__mro__:
         if "decimalValue" in klass.__dict__:
             descriptor = klass.__dict__["decimalValue"]
             break
@@ -2259,23 +701,23 @@ def test_doubleliteral_constructor_args():
 
 
 
-def test_simtl4j::literals::hexdoubleliteral_is_not_abstract():
-    assert not inspect.isabstract(simTL4J::literals::HexDoubleLiteral)
+def test_simtl4j_literals_hexdoubleliteral_is_not_abstract():
+    assert not inspect.isabstract(simTL4J_literals_HexDoubleLiteral)
 
 
-def test_simtl4j::literals::hexdoubleliteral_constructor_exists():
-    assert callable(simTL4J::literals::HexDoubleLiteral.__init__)
+def test_simtl4j_literals_hexdoubleliteral_constructor_exists():
+    assert callable(simTL4J_literals_HexDoubleLiteral.__init__)
 
 
-def test_simtl4j::literals::hexdoubleliteral_constructor_args():
-    sig = inspect.signature(simTL4J::literals::HexDoubleLiteral.__init__)
+def test_simtl4j_literals_hexdoubleliteral_constructor_args():
+    sig = inspect.signature(simTL4J_literals_HexDoubleLiteral.__init__)
     params = list(sig.parameters.keys())
     assert "hexValue" in params, "Missing parameter 'hexValue'"
 
-def test_simtl4j::literals::hexdoubleliteral_has_hexValue():
-    assert hasattr(simTL4J::literals::HexDoubleLiteral, "hexValue")
+def test_simtl4j_literals_hexdoubleliteral_has_hexValue():
+    assert hasattr(simTL4J_literals_HexDoubleLiteral, "hexValue")
     descriptor = None
-    for klass in simTL4J::literals::HexDoubleLiteral.__mro__:
+    for klass in simTL4J_literals_HexDoubleLiteral.__mro__:
         if "hexValue" in klass.__dict__:
             descriptor = klass.__dict__["hexValue"]
             break
@@ -2283,23 +725,23 @@ def test_simtl4j::literals::hexdoubleliteral_has_hexValue():
 
 
 
-def test_simtl4j::literals::decimaldoubleliteral_is_not_abstract():
-    assert not inspect.isabstract(simTL4J::literals::DecimalDoubleLiteral)
+def test_simtl4j_literals_decimaldoubleliteral_is_not_abstract():
+    assert not inspect.isabstract(simTL4J_literals_DecimalDoubleLiteral)
 
 
-def test_simtl4j::literals::decimaldoubleliteral_constructor_exists():
-    assert callable(simTL4J::literals::DecimalDoubleLiteral.__init__)
+def test_simtl4j_literals_decimaldoubleliteral_constructor_exists():
+    assert callable(simTL4J_literals_DecimalDoubleLiteral.__init__)
 
 
-def test_simtl4j::literals::decimaldoubleliteral_constructor_args():
-    sig = inspect.signature(simTL4J::literals::DecimalDoubleLiteral.__init__)
+def test_simtl4j_literals_decimaldoubleliteral_constructor_args():
+    sig = inspect.signature(simTL4J_literals_DecimalDoubleLiteral.__init__)
     params = list(sig.parameters.keys())
     assert "decimalValue" in params, "Missing parameter 'decimalValue'"
 
-def test_simtl4j::literals::decimaldoubleliteral_has_decimalValue():
-    assert hasattr(simTL4J::literals::DecimalDoubleLiteral, "decimalValue")
+def test_simtl4j_literals_decimaldoubleliteral_has_decimalValue():
+    assert hasattr(simTL4J_literals_DecimalDoubleLiteral, "decimalValue")
     descriptor = None
-    for klass in simTL4J::literals::DecimalDoubleLiteral.__mro__:
+    for klass in simTL4J_literals_DecimalDoubleLiteral.__mro__:
         if "decimalValue" in klass.__dict__:
             descriptor = klass.__dict__["decimalValue"]
             break
@@ -2321,23 +763,23 @@ def test_floatliteral_constructor_args():
 
 
 
-def test_simtl4j::literals::hexfloatliteral_is_not_abstract():
-    assert not inspect.isabstract(simTL4J::literals::HexFloatLiteral)
+def test_simtl4j_literals_hexfloatliteral_is_not_abstract():
+    assert not inspect.isabstract(simTL4J_literals_HexFloatLiteral)
 
 
-def test_simtl4j::literals::hexfloatliteral_constructor_exists():
-    assert callable(simTL4J::literals::HexFloatLiteral.__init__)
+def test_simtl4j_literals_hexfloatliteral_constructor_exists():
+    assert callable(simTL4J_literals_HexFloatLiteral.__init__)
 
 
-def test_simtl4j::literals::hexfloatliteral_constructor_args():
-    sig = inspect.signature(simTL4J::literals::HexFloatLiteral.__init__)
+def test_simtl4j_literals_hexfloatliteral_constructor_args():
+    sig = inspect.signature(simTL4J_literals_HexFloatLiteral.__init__)
     params = list(sig.parameters.keys())
     assert "hexValue" in params, "Missing parameter 'hexValue'"
 
-def test_simtl4j::literals::hexfloatliteral_has_hexValue():
-    assert hasattr(simTL4J::literals::HexFloatLiteral, "hexValue")
+def test_simtl4j_literals_hexfloatliteral_has_hexValue():
+    assert hasattr(simTL4J_literals_HexFloatLiteral, "hexValue")
     descriptor = None
-    for klass in simTL4J::literals::HexFloatLiteral.__mro__:
+    for klass in simTL4J_literals_HexFloatLiteral.__mro__:
         if "hexValue" in klass.__dict__:
             descriptor = klass.__dict__["hexValue"]
             break
@@ -2345,27 +787,1585 @@ def test_simtl4j::literals::hexfloatliteral_has_hexValue():
 
 
 
-def test_simtl4j::literals::decimalfloatliteral_is_not_abstract():
-    assert not inspect.isabstract(simTL4J::literals::DecimalFloatLiteral)
+def test_simtl4j_literals_decimalfloatliteral_is_not_abstract():
+    assert not inspect.isabstract(simTL4J_literals_DecimalFloatLiteral)
 
 
-def test_simtl4j::literals::decimalfloatliteral_constructor_exists():
-    assert callable(simTL4J::literals::DecimalFloatLiteral.__init__)
+def test_simtl4j_literals_decimalfloatliteral_constructor_exists():
+    assert callable(simTL4J_literals_DecimalFloatLiteral.__init__)
 
 
-def test_simtl4j::literals::decimalfloatliteral_constructor_args():
-    sig = inspect.signature(simTL4J::literals::DecimalFloatLiteral.__init__)
+def test_simtl4j_literals_decimalfloatliteral_constructor_args():
+    sig = inspect.signature(simTL4J_literals_DecimalFloatLiteral.__init__)
     params = list(sig.parameters.keys())
     assert "decimalValue" in params, "Missing parameter 'decimalValue'"
 
-def test_simtl4j::literals::decimalfloatliteral_has_decimalValue():
-    assert hasattr(simTL4J::literals::DecimalFloatLiteral, "decimalValue")
+def test_simtl4j_literals_decimalfloatliteral_has_decimalValue():
+    assert hasattr(simTL4J_literals_DecimalFloatLiteral, "decimalValue")
     descriptor = None
-    for klass in simTL4J::literals::DecimalFloatLiteral.__mro__:
+    for klass in simTL4J_literals_DecimalFloatLiteral.__mro__:
         if "decimalValue" in klass.__dict__:
             descriptor = klass.__dict__["decimalValue"]
             break
     assert isinstance(descriptor, property)
+
+
+
+def test_tmethodcall_is_not_abstract():
+    assert not inspect.isabstract(TMethodCall)
+
+
+def test_tmethodcall_constructor_exists():
+    assert callable(TMethodCall.__init__)
+
+
+def test_tmethodcall_constructor_args():
+    sig = inspect.signature(TMethodCall.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_tunaryoperator_is_not_abstract():
+    assert not inspect.isabstract(TUnaryOperator)
+
+
+def test_tunaryoperator_constructor_exists():
+    assert callable(TUnaryOperator.__init__)
+
+
+def test_tunaryoperator_constructor_args():
+    sig = inspect.signature(TUnaryOperator.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_simtl4j_simtl_tunaryoperatornot_is_not_abstract():
+    assert not inspect.isabstract(simTL4J_simTL_TUnaryOperatorNOT)
+
+
+def test_simtl4j_simtl_tunaryoperatornot_constructor_exists():
+    assert callable(simTL4J_simTL_TUnaryOperatorNOT.__init__)
+
+
+def test_simtl4j_simtl_tunaryoperatornot_constructor_args():
+    sig = inspect.signature(simTL4J_simTL_TUnaryOperatorNOT.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_simtl_tplaceholder_is_not_abstract():
+    assert not inspect.isabstract(simTL_TPlaceholder)
+
+
+def test_simtl_tplaceholder_constructor_exists():
+    assert callable(simTL_TPlaceholder.__init__)
+
+
+def test_simtl_tplaceholder_constructor_args():
+    sig = inspect.signature(simTL_TPlaceholder.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_simtl4j_simtl_tplaceholder_is_not_abstract():
+    assert not inspect.isabstract(simTL4J_simTL_TPlaceholder)
+
+
+def test_simtl4j_simtl_tplaceholder_constructor_exists():
+    assert callable(simTL4J_simTL_TPlaceholder.__init__)
+
+
+def test_simtl4j_simtl_tplaceholder_constructor_args():
+    sig = inspect.signature(simTL4J_simTL_TPlaceholder.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_simtl_tif_is_not_abstract():
+    assert not inspect.isabstract(simTL_TIf)
+
+
+def test_simtl_tif_constructor_exists():
+    assert callable(simTL_TIf.__init__)
+
+
+def test_simtl_tif_constructor_args():
+    sig = inspect.signature(simTL_TIf.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_simtl_tfor_is_not_abstract():
+    assert not inspect.isabstract(simTL_TFor)
+
+
+def test_simtl_tfor_constructor_exists():
+    assert callable(simTL_TFor.__init__)
+
+
+def test_simtl_tfor_constructor_args():
+    sig = inspect.signature(simTL_TFor.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_simtl4j_simtl_tabstractmethodstatement_is_not_abstract():
+    assert not inspect.isabstract(simTL4J_simTL_TAbstractMethodStatement)
+
+
+def test_simtl4j_simtl_tabstractmethodstatement_constructor_exists():
+    assert callable(simTL4J_simTL_TAbstractMethodStatement.__init__)
+
+
+def test_simtl4j_simtl_tabstractmethodstatement_constructor_args():
+    sig = inspect.signature(simTL4J_simTL_TAbstractMethodStatement.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_simtl4j_simtl_tmethodcall_is_not_abstract():
+    assert not inspect.isabstract(simTL4J_simTL_TMethodCall)
+
+
+def test_simtl4j_simtl_tmethodcall_constructor_exists():
+    assert callable(simTL4J_simTL_TMethodCall.__init__)
+
+
+def test_simtl4j_simtl_tmethodcall_constructor_args():
+    sig = inspect.signature(simTL4J_simTL_TMethodCall.__init__)
+    params = list(sig.parameters.keys())
+    assert "params" in params, "Missing parameter 'params'"
+    assert "methodName" in params, "Missing parameter 'methodName'"
+
+def test_simtl4j_simtl_tmethodcall_has_params():
+    assert hasattr(simTL4J_simTL_TMethodCall, "params")
+    descriptor = None
+    for klass in simTL4J_simTL_TMethodCall.__mro__:
+        if "params" in klass.__dict__:
+            descriptor = klass.__dict__["params"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_simtl4j_simtl_tmethodcall_has_methodName():
+    assert hasattr(simTL4J_simTL_TMethodCall, "methodName")
+    descriptor = None
+    for klass in simTL4J_simTL_TMethodCall.__mro__:
+        if "methodName" in klass.__dict__:
+            descriptor = klass.__dict__["methodName"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_simtl4j_simtl_tmodelimport_is_not_abstract():
+    assert not inspect.isabstract(simTL4J_simTL_TModelImport)
+
+
+def test_simtl4j_simtl_tmodelimport_constructor_exists():
+    assert callable(simTL4J_simTL_TModelImport.__init__)
+
+
+def test_simtl4j_simtl_tmodelimport_constructor_args():
+    sig = inspect.signature(simTL4J_simTL_TModelImport.__init__)
+    params = list(sig.parameters.keys())
+    assert "name" in params, "Missing parameter 'name'"
+    assert "uri" in params, "Missing parameter 'uri'"
+
+def test_simtl4j_simtl_tmodelimport_has_name():
+    assert hasattr(simTL4J_simTL_TModelImport, "name")
+    descriptor = None
+    for klass in simTL4J_simTL_TModelImport.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_simtl4j_simtl_tmodelimport_has_uri():
+    assert hasattr(simTL4J_simTL_TModelImport, "uri")
+    descriptor = None
+    for klass in simTL4J_simTL_TModelImport.__mro__:
+        if "uri" in klass.__dict__:
+            descriptor = klass.__dict__["uri"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_tmodelimport_is_not_abstract():
+    assert not inspect.isabstract(TModelImport)
+
+
+def test_tmodelimport_constructor_exists():
+    assert callable(TModelImport.__init__)
+
+
+def test_tmodelimport_constructor_args():
+    sig = inspect.signature(TModelImport.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_simtl4j_simtl_templateheader_is_not_abstract():
+    assert not inspect.isabstract(simTL4J_simTL_TemplateHeader)
+
+
+def test_simtl4j_simtl_templateheader_constructor_exists():
+    assert callable(simTL4J_simTL_TemplateHeader.__init__)
+
+
+def test_simtl4j_simtl_templateheader_constructor_args():
+    sig = inspect.signature(simTL4J_simTL_TemplateHeader.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_templateheader_is_not_abstract():
+    assert not inspect.isabstract(TemplateHeader)
+
+
+def test_templateheader_constructor_exists():
+    assert callable(TemplateHeader.__init__)
+
+
+def test_templateheader_constructor_args():
+    sig = inspect.signature(TemplateHeader.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_simtl4j_simtl_template_is_not_abstract():
+    assert not inspect.isabstract(simTL4J_simTL_Template)
+
+
+def test_simtl4j_simtl_template_constructor_exists():
+    assert callable(simTL4J_simTL_Template.__init__)
+
+
+def test_simtl4j_simtl_template_constructor_args():
+    sig = inspect.signature(simTL4J_simTL_Template.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_simtl4j_simtl_tforvariable_is_not_abstract():
+    assert not inspect.isabstract(simTL4J_simTL_TForVariable)
+
+
+def test_simtl4j_simtl_tforvariable_constructor_exists():
+    assert callable(simTL4J_simTL_TForVariable.__init__)
+
+
+def test_simtl4j_simtl_tforvariable_constructor_args():
+    sig = inspect.signature(simTL4J_simTL_TForVariable.__init__)
+    params = list(sig.parameters.keys())
+    assert "name" in params, "Missing parameter 'name'"
+
+def test_simtl4j_simtl_tforvariable_has_name():
+    assert hasattr(simTL4J_simTL_TForVariable, "name")
+    descriptor = None
+    for klass in simTL4J_simTL_TForVariable.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_tforvariable_is_not_abstract():
+    assert not inspect.isabstract(TForVariable)
+
+
+def test_tforvariable_constructor_exists():
+    assert callable(TForVariable.__init__)
+
+
+def test_tforvariable_constructor_args():
+    sig = inspect.signature(TForVariable.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_simtl4j_simtl_tfor_is_not_abstract():
+    assert not inspect.isabstract(simTL4J_simTL_TFor)
+
+
+def test_simtl4j_simtl_tfor_constructor_exists():
+    assert callable(simTL4J_simTL_TFor.__init__)
+
+
+def test_simtl4j_simtl_tfor_constructor_args():
+    sig = inspect.signature(simTL4J_simTL_TFor.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_tabstractmethodstatement_is_not_abstract():
+    assert not inspect.isabstract(TAbstractMethodStatement)
+
+
+def test_tabstractmethodstatement_constructor_exists():
+    assert callable(TAbstractMethodStatement.__init__)
+
+
+def test_tabstractmethodstatement_constructor_args():
+    sig = inspect.signature(TAbstractMethodStatement.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_simtl4j_simtl_tunaryoperator_is_not_abstract():
+    assert not inspect.isabstract(simTL4J_simTL_TUnaryOperator)
+
+
+def test_simtl4j_simtl_tunaryoperator_constructor_exists():
+    assert callable(simTL4J_simTL_TUnaryOperator.__init__)
+
+
+def test_simtl4j_simtl_tunaryoperator_constructor_args():
+    sig = inspect.signature(simTL4J_simTL_TUnaryOperator.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_simtl4j_simtl_tmethodstatementimpl_is_not_abstract():
+    assert not inspect.isabstract(simTL4J_simTL_TMethodStatementImpl)
+
+
+def test_simtl4j_simtl_tmethodstatementimpl_constructor_exists():
+    assert callable(simTL4J_simTL_TMethodStatementImpl.__init__)
+
+
+def test_simtl4j_simtl_tmethodstatementimpl_constructor_args():
+    sig = inspect.signature(simTL4J_simTL_TMethodStatementImpl.__init__)
+    params = list(sig.parameters.keys())
+    assert "caller" in params, "Missing parameter 'caller'"
+
+def test_simtl4j_simtl_tmethodstatementimpl_has_caller():
+    assert hasattr(simTL4J_simTL_TMethodStatementImpl, "caller")
+    descriptor = None
+    for klass in simTL4J_simTL_TMethodStatementImpl.__mro__:
+        if "caller" in klass.__dict__:
+            descriptor = klass.__dict__["caller"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_simtl4j_simtl_tif_is_not_abstract():
+    assert not inspect.isabstract(simTL4J_simTL_TIf)
+
+
+def test_simtl4j_simtl_tif_constructor_exists():
+    assert callable(simTL4J_simTL_TIf.__init__)
+
+
+def test_simtl4j_simtl_tif_constructor_args():
+    sig = inspect.signature(simTL4J_simTL_TIf.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_additionallocalvariable_is_not_abstract():
+    assert not inspect.isabstract(AdditionalLocalVariable)
+
+
+def test_additionallocalvariable_constructor_exists():
+    assert callable(AdditionalLocalVariable.__init__)
+
+
+def test_additionallocalvariable_constructor_args():
+    sig = inspect.signature(AdditionalLocalVariable.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_statements_forloopinitializer_is_not_abstract():
+    assert not inspect.isabstract(statements_ForLoopInitializer)
+
+
+def test_statements_forloopinitializer_constructor_exists():
+    assert callable(statements_ForLoopInitializer.__init__)
+
+
+def test_statements_forloopinitializer_constructor_args():
+    sig = inspect.signature(statements_ForLoopInitializer.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_classifierreference_is_not_abstract():
+    assert not inspect.isabstract(ClassifierReference)
+
+
+def test_classifierreference_constructor_exists():
+    assert callable(ClassifierReference.__init__)
+
+
+def test_classifierreference_constructor_args():
+    sig = inspect.signature(ClassifierReference.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_types_typereference_is_not_abstract():
+    assert not inspect.isabstract(types_TypeReference)
+
+
+def test_types_typereference_constructor_exists():
+    assert callable(types_TypeReference.__init__)
+
+
+def test_types_typereference_constructor_args():
+    sig = inspect.signature(types_TypeReference.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_block_is_not_abstract():
+    assert not inspect.isabstract(Block)
+
+
+def test_block_constructor_exists():
+    assert callable(Block.__init__)
+
+
+def test_block_constructor_args():
+    sig = inspect.signature(Block.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_catchblock_is_not_abstract():
+    assert not inspect.isabstract(CatchBlock)
+
+
+def test_catchblock_constructor_exists():
+    assert callable(CatchBlock.__init__)
+
+
+def test_catchblock_constructor_args():
+    sig = inspect.signature(CatchBlock.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_statements_switchcase_is_not_abstract():
+    assert not inspect.isabstract(statements_SwitchCase)
+
+
+def test_statements_switchcase_constructor_exists():
+    assert callable(statements_SwitchCase.__init__)
+
+
+def test_statements_switchcase_constructor_args():
+    sig = inspect.signature(statements_SwitchCase.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_localvariable_is_not_abstract():
+    assert not inspect.isabstract(LocalVariable)
+
+
+def test_localvariable_constructor_exists():
+    assert callable(LocalVariable.__init__)
+
+
+def test_localvariable_constructor_args():
+    sig = inspect.signature(LocalVariable.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_jumplabel_is_not_abstract():
+    assert not inspect.isabstract(JumpLabel)
+
+
+def test_jumplabel_constructor_exists():
+    assert callable(JumpLabel.__init__)
+
+
+def test_jumplabel_constructor_args():
+    sig = inspect.signature(JumpLabel.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_statements_conditional_is_not_abstract():
+    assert not inspect.isabstract(statements_Conditional)
+
+
+def test_statements_conditional_constructor_exists():
+    assert callable(statements_Conditional.__init__)
+
+
+def test_statements_conditional_constructor_args():
+    sig = inspect.signature(statements_Conditional.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_simtl4j_statements_normalswitchcase_is_not_abstract():
+    assert not inspect.isabstract(simTL4J_statements_NormalSwitchCase)
+
+
+def test_simtl4j_statements_normalswitchcase_constructor_exists():
+    assert callable(simTL4J_statements_NormalSwitchCase.__init__)
+
+
+def test_simtl4j_statements_normalswitchcase_constructor_args():
+    sig = inspect.signature(simTL4J_statements_NormalSwitchCase.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_statementlistcontainer_is_not_abstract():
+    assert not inspect.isabstract(StatementListContainer)
+
+
+def test_statementlistcontainer_constructor_exists():
+    assert callable(StatementListContainer.__init__)
+
+
+def test_statementlistcontainer_constructor_args():
+    sig = inspect.signature(StatementListContainer.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_simtl4j_statements_switchcase_is_not_abstract():
+    assert not inspect.isabstract(simTL4J_statements_SwitchCase)
+
+
+def test_simtl4j_statements_switchcase_constructor_exists():
+    assert callable(simTL4J_statements_SwitchCase.__init__)
+
+
+def test_simtl4j_statements_switchcase_constructor_args():
+    sig = inspect.signature(simTL4J_statements_SwitchCase.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_whileloop_is_not_abstract():
+    assert not inspect.isabstract(WhileLoop)
+
+
+def test_whileloop_constructor_exists():
+    assert callable(WhileLoop.__init__)
+
+
+def test_whileloop_constructor_args():
+    sig = inspect.signature(WhileLoop.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_simtl4j_statements_dowhileloop_is_not_abstract():
+    assert not inspect.isabstract(simTL4J_statements_DoWhileLoop)
+
+
+def test_simtl4j_statements_dowhileloop_constructor_exists():
+    assert callable(simTL4J_statements_DoWhileLoop.__init__)
+
+
+def test_simtl4j_statements_dowhileloop_constructor_args():
+    sig = inspect.signature(simTL4J_statements_DoWhileLoop.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_switchcase_is_not_abstract():
+    assert not inspect.isabstract(SwitchCase)
+
+
+def test_switchcase_constructor_exists():
+    assert callable(SwitchCase.__init__)
+
+
+def test_switchcase_constructor_args():
+    sig = inspect.signature(SwitchCase.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_simtl4j_statements_defaultswitchcase_is_not_abstract():
+    assert not inspect.isabstract(simTL4J_statements_DefaultSwitchCase)
+
+
+def test_simtl4j_statements_defaultswitchcase_constructor_exists():
+    assert callable(simTL4J_statements_DefaultSwitchCase.__init__)
+
+
+def test_simtl4j_statements_defaultswitchcase_constructor_args():
+    sig = inspect.signature(simTL4J_statements_DefaultSwitchCase.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_statements_statementcontainer_is_not_abstract():
+    assert not inspect.isabstract(statements_StatementContainer)
+
+
+def test_statements_statementcontainer_constructor_exists():
+    assert callable(statements_StatementContainer.__init__)
+
+
+def test_statements_statementcontainer_constructor_args():
+    sig = inspect.signature(statements_StatementContainer.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_ordinaryparameter_is_not_abstract():
+    assert not inspect.isabstract(OrdinaryParameter)
+
+
+def test_ordinaryparameter_constructor_exists():
+    assert callable(OrdinaryParameter.__init__)
+
+
+def test_ordinaryparameter_constructor_args():
+    sig = inspect.signature(OrdinaryParameter.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_simtl4j_statements_catchblock_is_not_abstract():
+    assert not inspect.isabstract(simTL4J_statements_CatchBlock)
+
+
+def test_simtl4j_statements_catchblock_constructor_exists():
+    assert callable(simTL4J_statements_CatchBlock.__init__)
+
+
+def test_simtl4j_statements_catchblock_constructor_args():
+    sig = inspect.signature(simTL4J_statements_CatchBlock.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_modifiers_modifiable_is_not_abstract():
+    assert not inspect.isabstract(modifiers_Modifiable)
+
+
+def test_modifiers_modifiable_constructor_exists():
+    assert callable(modifiers_Modifiable.__init__)
+
+
+def test_modifiers_modifiable_constructor_args():
+    sig = inspect.signature(modifiers_Modifiable.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_jump_is_not_abstract():
+    assert not inspect.isabstract(Jump)
+
+
+def test_jump_constructor_exists():
+    assert callable(Jump.__init__)
+
+
+def test_jump_constructor_args():
+    sig = inspect.signature(Jump.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_simtl4j_statements_continue_is_not_abstract():
+    assert not inspect.isabstract(simTL4J_statements_Continue)
+
+
+def test_simtl4j_statements_continue_constructor_exists():
+    assert callable(simTL4J_statements_Continue.__init__)
+
+
+def test_simtl4j_statements_continue_constructor_args():
+    sig = inspect.signature(simTL4J_statements_Continue.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_simtl4j_statements_break_is_not_abstract():
+    assert not inspect.isabstract(simTL4J_statements_Break)
+
+
+def test_simtl4j_statements_break_constructor_exists():
+    assert callable(simTL4J_statements_Break.__init__)
+
+
+def test_simtl4j_statements_break_constructor_args():
+    sig = inspect.signature(simTL4J_statements_Break.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_references_elementreference_is_not_abstract():
+    assert not inspect.isabstract(references_ElementReference)
+
+
+def test_references_elementreference_constructor_exists():
+    assert callable(references_ElementReference.__init__)
+
+
+def test_references_elementreference_constructor_args():
+    sig = inspect.signature(references_ElementReference.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_statement_is_not_abstract():
+    assert not inspect.isabstract(Statement)
+
+
+def test_statement_constructor_exists():
+    assert callable(Statement.__init__)
+
+
+def test_statement_constructor_args():
+    sig = inspect.signature(Statement.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_simtl4j_statements_emptystatement_is_not_abstract():
+    assert not inspect.isabstract(simTL4J_statements_EmptyStatement)
+
+
+def test_simtl4j_statements_emptystatement_constructor_exists():
+    assert callable(simTL4J_statements_EmptyStatement.__init__)
+
+
+def test_simtl4j_statements_emptystatement_constructor_args():
+    sig = inspect.signature(simTL4J_statements_EmptyStatement.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_simtl4j_statements_expressionstatement_is_not_abstract():
+    assert not inspect.isabstract(simTL4J_statements_ExpressionStatement)
+
+
+def test_simtl4j_statements_expressionstatement_constructor_exists():
+    assert callable(simTL4J_statements_ExpressionStatement.__init__)
+
+
+def test_simtl4j_statements_expressionstatement_constructor_args():
+    sig = inspect.signature(simTL4J_statements_ExpressionStatement.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_simtl4j_statements_switch_is_not_abstract():
+    assert not inspect.isabstract(simTL4J_statements_Switch)
+
+
+def test_simtl4j_statements_switch_constructor_exists():
+    assert callable(simTL4J_statements_Switch.__init__)
+
+
+def test_simtl4j_statements_switch_constructor_args():
+    sig = inspect.signature(simTL4J_statements_Switch.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_simtl4j_statements_jump_is_not_abstract():
+    assert not inspect.isabstract(simTL4J_statements_Jump)
+
+
+def test_simtl4j_statements_jump_constructor_exists():
+    assert callable(simTL4J_statements_Jump.__init__)
+
+
+def test_simtl4j_statements_jump_constructor_args():
+    sig = inspect.signature(simTL4J_statements_Jump.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_simtl4j_statements_localvariablestatement_is_not_abstract():
+    assert not inspect.isabstract(simTL4J_statements_LocalVariableStatement)
+
+
+def test_simtl4j_statements_localvariablestatement_constructor_exists():
+    assert callable(simTL4J_statements_LocalVariableStatement.__init__)
+
+
+def test_simtl4j_statements_localvariablestatement_constructor_args():
+    sig = inspect.signature(simTL4J_statements_LocalVariableStatement.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_simtl4j_statements_return_is_not_abstract():
+    assert not inspect.isabstract(simTL4J_statements_Return)
+
+
+def test_simtl4j_statements_return_constructor_exists():
+    assert callable(simTL4J_statements_Return.__init__)
+
+
+def test_simtl4j_statements_return_constructor_args():
+    sig = inspect.signature(simTL4J_statements_Return.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_simtl4j_statements_throw_is_not_abstract():
+    assert not inspect.isabstract(simTL4J_statements_Throw)
+
+
+def test_simtl4j_statements_throw_constructor_exists():
+    assert callable(simTL4J_statements_Throw.__init__)
+
+
+def test_simtl4j_statements_throw_constructor_args():
+    sig = inspect.signature(simTL4J_statements_Throw.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_primitivetype_is_not_abstract():
+    assert not inspect.isabstract(PrimitiveType)
+
+
+def test_primitivetype_constructor_exists():
+    assert callable(PrimitiveType.__init__)
+
+
+def test_primitivetype_constructor_args():
+    sig = inspect.signature(PrimitiveType.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_simtl4j_types_long_is_not_abstract():
+    assert not inspect.isabstract(simTL4J_types_Long)
+
+
+def test_simtl4j_types_long_constructor_exists():
+    assert callable(simTL4J_types_Long.__init__)
+
+
+def test_simtl4j_types_long_constructor_args():
+    sig = inspect.signature(simTL4J_types_Long.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_simtl4j_types_short_is_not_abstract():
+    assert not inspect.isabstract(simTL4J_types_Short)
+
+
+def test_simtl4j_types_short_constructor_exists():
+    assert callable(simTL4J_types_Short.__init__)
+
+
+def test_simtl4j_types_short_constructor_args():
+    sig = inspect.signature(simTL4J_types_Short.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_simtl4j_types_boolean_is_not_abstract():
+    assert not inspect.isabstract(simTL4J_types_Boolean)
+
+
+def test_simtl4j_types_boolean_constructor_exists():
+    assert callable(simTL4J_types_Boolean.__init__)
+
+
+def test_simtl4j_types_boolean_constructor_args():
+    sig = inspect.signature(simTL4J_types_Boolean.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_simtl4j_types_float_is_not_abstract():
+    assert not inspect.isabstract(simTL4J_types_Float)
+
+
+def test_simtl4j_types_float_constructor_exists():
+    assert callable(simTL4J_types_Float.__init__)
+
+
+def test_simtl4j_types_float_constructor_args():
+    sig = inspect.signature(simTL4J_types_Float.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_simtl4j_types_double_is_not_abstract():
+    assert not inspect.isabstract(simTL4J_types_Double)
+
+
+def test_simtl4j_types_double_constructor_exists():
+    assert callable(simTL4J_types_Double.__init__)
+
+
+def test_simtl4j_types_double_constructor_args():
+    sig = inspect.signature(simTL4J_types_Double.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_simtl4j_types_int_is_not_abstract():
+    assert not inspect.isabstract(simTL4J_types_Int)
+
+
+def test_simtl4j_types_int_constructor_exists():
+    assert callable(simTL4J_types_Int.__init__)
+
+
+def test_simtl4j_types_int_constructor_args():
+    sig = inspect.signature(simTL4J_types_Int.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_simtl4j_types_void_is_not_abstract():
+    assert not inspect.isabstract(simTL4J_types_Void)
+
+
+def test_simtl4j_types_void_constructor_exists():
+    assert callable(simTL4J_types_Void.__init__)
+
+
+def test_simtl4j_types_void_constructor_args():
+    sig = inspect.signature(simTL4J_types_Void.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_simtl4j_types_char_is_not_abstract():
+    assert not inspect.isabstract(simTL4J_types_Char)
+
+
+def test_simtl4j_types_char_constructor_exists():
+    assert callable(simTL4J_types_Char.__init__)
+
+
+def test_simtl4j_types_char_constructor_args():
+    sig = inspect.signature(simTL4J_types_Char.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_simtl4j_types_byte_is_not_abstract():
+    assert not inspect.isabstract(simTL4J_types_Byte)
+
+
+def test_simtl4j_types_byte_constructor_exists():
+    assert callable(simTL4J_types_Byte.__init__)
+
+
+def test_simtl4j_types_byte_constructor_args():
+    sig = inspect.signature(simTL4J_types_Byte.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_elementreference_is_not_abstract():
+    assert not inspect.isabstract(ElementReference)
+
+
+def test_elementreference_constructor_exists():
+    assert callable(ElementReference.__init__)
+
+
+def test_elementreference_constructor_args():
+    sig = inspect.signature(ElementReference.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_simtl4j_references_identifierreference_is_not_abstract():
+    assert not inspect.isabstract(simTL4J_references_IdentifierReference)
+
+
+def test_simtl4j_references_identifierreference_constructor_exists():
+    assert callable(simTL4J_references_IdentifierReference.__init__)
+
+
+def test_simtl4j_references_identifierreference_constructor_args():
+    sig = inspect.signature(simTL4J_references_IdentifierReference.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_simtl4j_references_referenceableelement_is_not_abstract():
+    assert not inspect.isabstract(simTL4J_references_ReferenceableElement)
+
+
+def test_simtl4j_references_referenceableelement_constructor_exists():
+    assert callable(simTL4J_references_ReferenceableElement.__init__)
+
+
+def test_simtl4j_references_referenceableelement_constructor_args():
+    sig = inspect.signature(simTL4J_references_ReferenceableElement.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_arrayselector_is_not_abstract():
+    assert not inspect.isabstract(ArraySelector)
+
+
+def test_arrayselector_constructor_exists():
+    assert callable(ArraySelector.__init__)
+
+
+def test_arrayselector_constructor_args():
+    sig = inspect.signature(ArraySelector.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_expressions_primaryexpression_is_not_abstract():
+    assert not inspect.isabstract(expressions_PrimaryExpression)
+
+
+def test_expressions_primaryexpression_constructor_exists():
+    assert callable(expressions_PrimaryExpression.__init__)
+
+
+def test_expressions_primaryexpression_constructor_args():
+    sig = inspect.signature(expressions_PrimaryExpression.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_simtl4j_simtl_tplaceholder_primaryexpression_is_not_abstract():
+    assert not inspect.isabstract(simTL4J_simTL_TPlaceholder_PrimaryExpression)
+
+
+def test_simtl4j_simtl_tplaceholder_primaryexpression_constructor_exists():
+    assert callable(simTL4J_simTL_TPlaceholder_PrimaryExpression.__init__)
+
+
+def test_simtl4j_simtl_tplaceholder_primaryexpression_constructor_args():
+    sig = inspect.signature(simTL4J_simTL_TPlaceholder_PrimaryExpression.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_parameter_is_not_abstract():
+    assert not inspect.isabstract(Parameter)
+
+
+def test_parameter_constructor_exists():
+    assert callable(Parameter.__init__)
+
+
+def test_parameter_constructor_args():
+    sig = inspect.signature(Parameter.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_simtl4j_parameters_ordinaryparameter_is_not_abstract():
+    assert not inspect.isabstract(simTL4J_parameters_OrdinaryParameter)
+
+
+def test_simtl4j_parameters_ordinaryparameter_constructor_exists():
+    assert callable(simTL4J_parameters_OrdinaryParameter.__init__)
+
+
+def test_simtl4j_parameters_ordinaryparameter_constructor_args():
+    sig = inspect.signature(simTL4J_parameters_OrdinaryParameter.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_simtl4j_parameters_variablelengthparameter_is_not_abstract():
+    assert not inspect.isabstract(simTL4J_parameters_VariableLengthParameter)
+
+
+def test_simtl4j_parameters_variablelengthparameter_constructor_exists():
+    assert callable(simTL4J_parameters_VariableLengthParameter.__init__)
+
+
+def test_simtl4j_parameters_variablelengthparameter_constructor_args():
+    sig = inspect.signature(simTL4J_parameters_VariableLengthParameter.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_operators_unaryoperator_is_not_abstract():
+    assert not inspect.isabstract(operators_UnaryOperator)
+
+
+def test_operators_unaryoperator_constructor_exists():
+    assert callable(operators_UnaryOperator.__init__)
+
+
+def test_operators_unaryoperator_constructor_args():
+    sig = inspect.signature(operators_UnaryOperator.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_operators_additiveoperator_is_not_abstract():
+    assert not inspect.isabstract(operators_AdditiveOperator)
+
+
+def test_operators_additiveoperator_constructor_exists():
+    assert callable(operators_AdditiveOperator.__init__)
+
+
+def test_operators_additiveoperator_constructor_args():
+    sig = inspect.signature(operators_AdditiveOperator.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_simtl4j_operators_subtraction_is_not_abstract():
+    assert not inspect.isabstract(simTL4J_operators_Subtraction)
+
+
+def test_simtl4j_operators_subtraction_constructor_exists():
+    assert callable(simTL4J_operators_Subtraction.__init__)
+
+
+def test_simtl4j_operators_subtraction_constructor_args():
+    sig = inspect.signature(simTL4J_operators_Subtraction.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_simtl4j_operators_addition_is_not_abstract():
+    assert not inspect.isabstract(simTL4J_operators_Addition)
+
+
+def test_simtl4j_operators_addition_constructor_exists():
+    assert callable(simTL4J_operators_Addition.__init__)
+
+
+def test_simtl4j_operators_addition_constructor_args():
+    sig = inspect.signature(simTL4J_operators_Addition.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_operator_is_not_abstract():
+    assert not inspect.isabstract(Operator)
+
+
+def test_operator_constructor_exists():
+    assert callable(Operator.__init__)
+
+
+def test_operator_constructor_args():
+    sig = inspect.signature(Operator.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_simtl4j_operators_shiftoperator_is_not_abstract():
+    assert not inspect.isabstract(simTL4J_operators_ShiftOperator)
+
+
+def test_simtl4j_operators_shiftoperator_constructor_exists():
+    assert callable(simTL4J_operators_ShiftOperator.__init__)
+
+
+def test_simtl4j_operators_shiftoperator_constructor_args():
+    sig = inspect.signature(simTL4J_operators_ShiftOperator.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_simtl4j_operators_unarymodificationoperator_is_not_abstract():
+    assert not inspect.isabstract(simTL4J_operators_UnaryModificationOperator)
+
+
+def test_simtl4j_operators_unarymodificationoperator_constructor_exists():
+    assert callable(simTL4J_operators_UnaryModificationOperator.__init__)
+
+
+def test_simtl4j_operators_unarymodificationoperator_constructor_args():
+    sig = inspect.signature(simTL4J_operators_UnaryModificationOperator.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_simtl4j_operators_unaryoperator_is_not_abstract():
+    assert not inspect.isabstract(simTL4J_operators_UnaryOperator)
+
+
+def test_simtl4j_operators_unaryoperator_constructor_exists():
+    assert callable(simTL4J_operators_UnaryOperator.__init__)
+
+
+def test_simtl4j_operators_unaryoperator_constructor_args():
+    sig = inspect.signature(simTL4J_operators_UnaryOperator.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_simtl4j_operators_equalityoperator_is_not_abstract():
+    assert not inspect.isabstract(simTL4J_operators_EqualityOperator)
+
+
+def test_simtl4j_operators_equalityoperator_constructor_exists():
+    assert callable(simTL4J_operators_EqualityOperator.__init__)
+
+
+def test_simtl4j_operators_equalityoperator_constructor_args():
+    sig = inspect.signature(simTL4J_operators_EqualityOperator.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_simtl4j_operators_relationoperator_is_not_abstract():
+    assert not inspect.isabstract(simTL4J_operators_RelationOperator)
+
+
+def test_simtl4j_operators_relationoperator_constructor_exists():
+    assert callable(simTL4J_operators_RelationOperator.__init__)
+
+
+def test_simtl4j_operators_relationoperator_constructor_args():
+    sig = inspect.signature(simTL4J_operators_RelationOperator.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_simtl4j_operators_assignmentoperator_is_not_abstract():
+    assert not inspect.isabstract(simTL4J_operators_AssignmentOperator)
+
+
+def test_simtl4j_operators_assignmentoperator_constructor_exists():
+    assert callable(simTL4J_operators_AssignmentOperator.__init__)
+
+
+def test_simtl4j_operators_assignmentoperator_constructor_args():
+    sig = inspect.signature(simTL4J_operators_AssignmentOperator.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_simtl4j_operators_multiplicativeoperator_is_not_abstract():
+    assert not inspect.isabstract(simTL4J_operators_MultiplicativeOperator)
+
+
+def test_simtl4j_operators_multiplicativeoperator_constructor_exists():
+    assert callable(simTL4J_operators_MultiplicativeOperator.__init__)
+
+
+def test_simtl4j_operators_multiplicativeoperator_constructor_args():
+    sig = inspect.signature(simTL4J_operators_MultiplicativeOperator.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_simtl4j_operators_additiveoperator_is_not_abstract():
+    assert not inspect.isabstract(simTL4J_operators_AdditiveOperator)
+
+
+def test_simtl4j_operators_additiveoperator_constructor_exists():
+    assert callable(simTL4J_operators_AdditiveOperator.__init__)
+
+
+def test_simtl4j_operators_additiveoperator_constructor_args():
+    sig = inspect.signature(simTL4J_operators_AdditiveOperator.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_annotationinstanceormodifier_is_not_abstract():
+    assert not inspect.isabstract(AnnotationInstanceOrModifier)
+
+
+def test_annotationinstanceormodifier_constructor_exists():
+    assert callable(AnnotationInstanceOrModifier.__init__)
+
+
+def test_annotationinstanceormodifier_constructor_args():
+    sig = inspect.signature(AnnotationInstanceOrModifier.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_simtl4j_modifiers_modifier_is_not_abstract():
+    assert not inspect.isabstract(simTL4J_modifiers_Modifier)
+
+
+def test_simtl4j_modifiers_modifier_constructor_exists():
+    assert callable(simTL4J_modifiers_Modifier.__init__)
+
+
+def test_simtl4j_modifiers_modifier_constructor_args():
+    sig = inspect.signature(simTL4J_modifiers_Modifier.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_modifier_is_not_abstract():
+    assert not inspect.isabstract(Modifier)
+
+
+def test_modifier_constructor_exists():
+    assert callable(Modifier.__init__)
+
+
+def test_modifier_constructor_args():
+    sig = inspect.signature(Modifier.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_simtl4j_modifiers_native_is_not_abstract():
+    assert not inspect.isabstract(simTL4J_modifiers_Native)
+
+
+def test_simtl4j_modifiers_native_constructor_exists():
+    assert callable(simTL4J_modifiers_Native.__init__)
+
+
+def test_simtl4j_modifiers_native_constructor_args():
+    sig = inspect.signature(simTL4J_modifiers_Native.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_simtl4j_modifiers_strictfp_is_not_abstract():
+    assert not inspect.isabstract(simTL4J_modifiers_Strictfp)
+
+
+def test_simtl4j_modifiers_strictfp_constructor_exists():
+    assert callable(simTL4J_modifiers_Strictfp.__init__)
+
+
+def test_simtl4j_modifiers_strictfp_constructor_args():
+    sig = inspect.signature(simTL4J_modifiers_Strictfp.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_simtl4j_modifiers_volatile_is_not_abstract():
+    assert not inspect.isabstract(simTL4J_modifiers_Volatile)
+
+
+def test_simtl4j_modifiers_volatile_constructor_exists():
+    assert callable(simTL4J_modifiers_Volatile.__init__)
+
+
+def test_simtl4j_modifiers_volatile_constructor_args():
+    sig = inspect.signature(simTL4J_modifiers_Volatile.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_simtl4j_modifiers_private_is_not_abstract():
+    assert not inspect.isabstract(simTL4J_modifiers_Private)
+
+
+def test_simtl4j_modifiers_private_constructor_exists():
+    assert callable(simTL4J_modifiers_Private.__init__)
+
+
+def test_simtl4j_modifiers_private_constructor_args():
+    sig = inspect.signature(simTL4J_modifiers_Private.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_simtl4j_modifiers_static_is_not_abstract():
+    assert not inspect.isabstract(simTL4J_modifiers_Static)
+
+
+def test_simtl4j_modifiers_static_constructor_exists():
+    assert callable(simTL4J_modifiers_Static.__init__)
+
+
+def test_simtl4j_modifiers_static_constructor_args():
+    sig = inspect.signature(simTL4J_modifiers_Static.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_simtl4j_modifiers_transient_is_not_abstract():
+    assert not inspect.isabstract(simTL4J_modifiers_Transient)
+
+
+def test_simtl4j_modifiers_transient_constructor_exists():
+    assert callable(simTL4J_modifiers_Transient.__init__)
+
+
+def test_simtl4j_modifiers_transient_constructor_args():
+    sig = inspect.signature(simTL4J_modifiers_Transient.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_simtl4j_modifiers_synchronized_is_not_abstract():
+    assert not inspect.isabstract(simTL4J_modifiers_Synchronized)
+
+
+def test_simtl4j_modifiers_synchronized_constructor_exists():
+    assert callable(simTL4J_modifiers_Synchronized.__init__)
+
+
+def test_simtl4j_modifiers_synchronized_constructor_args():
+    sig = inspect.signature(simTL4J_modifiers_Synchronized.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_simtl4j_modifiers_abstract_is_not_abstract():
+    assert not inspect.isabstract(simTL4J_modifiers_Abstract)
+
+
+def test_simtl4j_modifiers_abstract_constructor_exists():
+    assert callable(simTL4J_modifiers_Abstract.__init__)
+
+
+def test_simtl4j_modifiers_abstract_constructor_args():
+    sig = inspect.signature(simTL4J_modifiers_Abstract.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_simtl4j_modifiers_final_is_not_abstract():
+    assert not inspect.isabstract(simTL4J_modifiers_Final)
+
+
+def test_simtl4j_modifiers_final_constructor_exists():
+    assert callable(simTL4J_modifiers_Final.__init__)
+
+
+def test_simtl4j_modifiers_final_constructor_args():
+    sig = inspect.signature(simTL4J_modifiers_Final.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_simtl4j_modifiers_protected_is_not_abstract():
+    assert not inspect.isabstract(simTL4J_modifiers_Protected)
+
+
+def test_simtl4j_modifiers_protected_constructor_exists():
+    assert callable(simTL4J_modifiers_Protected.__init__)
+
+
+def test_simtl4j_modifiers_protected_constructor_args():
+    sig = inspect.signature(simTL4J_modifiers_Protected.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_simtl4j_modifiers_public_is_not_abstract():
+    assert not inspect.isabstract(simTL4J_modifiers_Public)
+
+
+def test_simtl4j_modifiers_public_constructor_exists():
+    assert callable(simTL4J_modifiers_Public.__init__)
+
+
+def test_simtl4j_modifiers_public_constructor_args():
+    sig = inspect.signature(simTL4J_modifiers_Public.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_members_method_is_not_abstract():
+    assert not inspect.isabstract(members_Method)
+
+
+def test_members_method_constructor_exists():
+    assert callable(members_Method.__init__)
+
+
+def test_members_method_constructor_args():
+    sig = inspect.signature(members_Method.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_simtl4j_members_classmethod_is_not_abstract():
+    assert not inspect.isabstract(simTL4J_members_ClassMethod)
+
+
+def test_simtl4j_members_classmethod_constructor_exists():
+    assert callable(simTL4J_members_ClassMethod.__init__)
+
+
+def test_simtl4j_members_classmethod_constructor_args():
+    sig = inspect.signature(simTL4J_members_ClassMethod.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_method_is_not_abstract():
+    assert not inspect.isabstract(Method)
+
+
+def test_method_constructor_exists():
+    assert callable(Method.__init__)
+
+
+def test_method_constructor_args():
+    sig = inspect.signature(Method.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_simtl4j_members_interfacemethod_is_not_abstract():
+    assert not inspect.isabstract(simTL4J_members_InterfaceMethod)
+
+
+def test_simtl4j_members_interfacemethod_constructor_exists():
+    assert callable(simTL4J_members_InterfaceMethod.__init__)
+
+
+def test_simtl4j_members_interfacemethod_constructor_args():
+    sig = inspect.signature(simTL4J_members_InterfaceMethod.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_additionalfield_is_not_abstract():
+    assert not inspect.isabstract(AdditionalField)
+
+
+def test_additionalfield_constructor_exists():
+    assert callable(AdditionalField.__init__)
+
+
+def test_additionalfield_constructor_args():
+    sig = inspect.signature(AdditionalField.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_variables_variable_is_not_abstract():
+    assert not inspect.isabstract(variables_Variable)
+
+
+def test_variables_variable_constructor_exists():
+    assert callable(variables_Variable.__init__)
+
+
+def test_variables_variable_constructor_args():
+    sig = inspect.signature(variables_Variable.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_simtl4j_members_emptymember_is_not_abstract():
+    assert not inspect.isabstract(simTL4J_members_EmptyMember)
+
+
+def test_simtl4j_members_emptymember_constructor_exists():
+    assert callable(simTL4J_members_EmptyMember.__init__)
+
+
+def test_simtl4j_members_emptymember_constructor_args():
+    sig = inspect.signature(simTL4J_members_EmptyMember.__init__)
+    params = list(sig.parameters.keys())
 
 
 
@@ -2383,23 +2383,37 @@ def test_literal_constructor_args():
 
 
 
-def test_simtl4j::literals::characterliteral_is_not_abstract():
-    assert not inspect.isabstract(simTL4J::literals::CharacterLiteral)
+def test_simtl4j_literals_floatliteral_is_not_abstract():
+    assert not inspect.isabstract(simTL4J_literals_FloatLiteral)
 
 
-def test_simtl4j::literals::characterliteral_constructor_exists():
-    assert callable(simTL4J::literals::CharacterLiteral.__init__)
+def test_simtl4j_literals_floatliteral_constructor_exists():
+    assert callable(simTL4J_literals_FloatLiteral.__init__)
 
 
-def test_simtl4j::literals::characterliteral_constructor_args():
-    sig = inspect.signature(simTL4J::literals::CharacterLiteral.__init__)
+def test_simtl4j_literals_floatliteral_constructor_args():
+    sig = inspect.signature(simTL4J_literals_FloatLiteral.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_simtl4j_literals_characterliteral_is_not_abstract():
+    assert not inspect.isabstract(simTL4J_literals_CharacterLiteral)
+
+
+def test_simtl4j_literals_characterliteral_constructor_exists():
+    assert callable(simTL4J_literals_CharacterLiteral.__init__)
+
+
+def test_simtl4j_literals_characterliteral_constructor_args():
+    sig = inspect.signature(simTL4J_literals_CharacterLiteral.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
 
-def test_simtl4j::literals::characterliteral_has_value():
-    assert hasattr(simTL4J::literals::CharacterLiteral, "value")
+def test_simtl4j_literals_characterliteral_has_value():
+    assert hasattr(simTL4J_literals_CharacterLiteral, "value")
     descriptor = None
-    for klass in simTL4J::literals::CharacterLiteral.__mro__:
+    for klass in simTL4J_literals_CharacterLiteral.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -2407,93 +2421,79 @@ def test_simtl4j::literals::characterliteral_has_value():
 
 
 
-def test_simtl4j::literals::floatliteral_is_not_abstract():
-    assert not inspect.isabstract(simTL4J::literals::FloatLiteral)
+def test_simtl4j_literals_integerliteral_is_not_abstract():
+    assert not inspect.isabstract(simTL4J_literals_IntegerLiteral)
 
 
-def test_simtl4j::literals::floatliteral_constructor_exists():
-    assert callable(simTL4J::literals::FloatLiteral.__init__)
+def test_simtl4j_literals_integerliteral_constructor_exists():
+    assert callable(simTL4J_literals_IntegerLiteral.__init__)
 
 
-def test_simtl4j::literals::floatliteral_constructor_args():
-    sig = inspect.signature(simTL4J::literals::FloatLiteral.__init__)
+def test_simtl4j_literals_integerliteral_constructor_args():
+    sig = inspect.signature(simTL4J_literals_IntegerLiteral.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_simtl4j::literals::nullliteral_is_not_abstract():
-    assert not inspect.isabstract(simTL4J::literals::NullLiteral)
+def test_simtl4j_literals_longliteral_is_not_abstract():
+    assert not inspect.isabstract(simTL4J_literals_LongLiteral)
 
 
-def test_simtl4j::literals::nullliteral_constructor_exists():
-    assert callable(simTL4J::literals::NullLiteral.__init__)
+def test_simtl4j_literals_longliteral_constructor_exists():
+    assert callable(simTL4J_literals_LongLiteral.__init__)
 
 
-def test_simtl4j::literals::nullliteral_constructor_args():
-    sig = inspect.signature(simTL4J::literals::NullLiteral.__init__)
+def test_simtl4j_literals_longliteral_constructor_args():
+    sig = inspect.signature(simTL4J_literals_LongLiteral.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_simtl4j::literals::doubleliteral_is_not_abstract():
-    assert not inspect.isabstract(simTL4J::literals::DoubleLiteral)
+def test_simtl4j_literals_doubleliteral_is_not_abstract():
+    assert not inspect.isabstract(simTL4J_literals_DoubleLiteral)
 
 
-def test_simtl4j::literals::doubleliteral_constructor_exists():
-    assert callable(simTL4J::literals::DoubleLiteral.__init__)
+def test_simtl4j_literals_doubleliteral_constructor_exists():
+    assert callable(simTL4J_literals_DoubleLiteral.__init__)
 
 
-def test_simtl4j::literals::doubleliteral_constructor_args():
-    sig = inspect.signature(simTL4J::literals::DoubleLiteral.__init__)
+def test_simtl4j_literals_doubleliteral_constructor_args():
+    sig = inspect.signature(simTL4J_literals_DoubleLiteral.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_simtl4j::literals::longliteral_is_not_abstract():
-    assert not inspect.isabstract(simTL4J::literals::LongLiteral)
+def test_simtl4j_literals_nullliteral_is_not_abstract():
+    assert not inspect.isabstract(simTL4J_literals_NullLiteral)
 
 
-def test_simtl4j::literals::longliteral_constructor_exists():
-    assert callable(simTL4J::literals::LongLiteral.__init__)
+def test_simtl4j_literals_nullliteral_constructor_exists():
+    assert callable(simTL4J_literals_NullLiteral.__init__)
 
 
-def test_simtl4j::literals::longliteral_constructor_args():
-    sig = inspect.signature(simTL4J::literals::LongLiteral.__init__)
+def test_simtl4j_literals_nullliteral_constructor_args():
+    sig = inspect.signature(simTL4J_literals_NullLiteral.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_simtl4j::literals::integerliteral_is_not_abstract():
-    assert not inspect.isabstract(simTL4J::literals::IntegerLiteral)
+def test_simtl4j_literals_booleanliteral_is_not_abstract():
+    assert not inspect.isabstract(simTL4J_literals_BooleanLiteral)
 
 
-def test_simtl4j::literals::integerliteral_constructor_exists():
-    assert callable(simTL4J::literals::IntegerLiteral.__init__)
+def test_simtl4j_literals_booleanliteral_constructor_exists():
+    assert callable(simTL4J_literals_BooleanLiteral.__init__)
 
 
-def test_simtl4j::literals::integerliteral_constructor_args():
-    sig = inspect.signature(simTL4J::literals::IntegerLiteral.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_simtl4j::literals::booleanliteral_is_not_abstract():
-    assert not inspect.isabstract(simTL4J::literals::BooleanLiteral)
-
-
-def test_simtl4j::literals::booleanliteral_constructor_exists():
-    assert callable(simTL4J::literals::BooleanLiteral.__init__)
-
-
-def test_simtl4j::literals::booleanliteral_constructor_args():
-    sig = inspect.signature(simTL4J::literals::BooleanLiteral.__init__)
+def test_simtl4j_literals_booleanliteral_constructor_args():
+    sig = inspect.signature(simTL4J_literals_BooleanLiteral.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
 
-def test_simtl4j::literals::booleanliteral_has_value():
-    assert hasattr(simTL4J::literals::BooleanLiteral, "value")
+def test_simtl4j_literals_booleanliteral_has_value():
+    assert hasattr(simTL4J_literals_BooleanLiteral, "value")
     descriptor = None
-    for klass in simTL4J::literals::BooleanLiteral.__mro__:
+    for klass in simTL4J_literals_BooleanLiteral.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -2515,16 +2515,16 @@ def test_primaryexpression_constructor_args():
 
 
 
-def test_simtl4j::literals::literal_is_not_abstract():
-    assert not inspect.isabstract(simTL4J::literals::Literal)
+def test_simtl4j_literals_literal_is_not_abstract():
+    assert not inspect.isabstract(simTL4J_literals_Literal)
 
 
-def test_simtl4j::literals::literal_constructor_exists():
-    assert callable(simTL4J::literals::Literal.__init__)
+def test_simtl4j_literals_literal_constructor_exists():
+    assert callable(simTL4J_literals_Literal.__init__)
 
 
-def test_simtl4j::literals::literal_constructor_args():
-    sig = inspect.signature(simTL4J::literals::Literal.__init__)
+def test_simtl4j_literals_literal_constructor_args():
+    sig = inspect.signature(simTL4J_literals_Literal.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -2543,30 +2543,30 @@ def test_self_constructor_args():
 
 
 
-def test_simtl4j::literals::this_is_not_abstract():
-    assert not inspect.isabstract(simTL4J::literals::This)
+def test_simtl4j_literals_super_is_not_abstract():
+    assert not inspect.isabstract(simTL4J_literals_Super)
 
 
-def test_simtl4j::literals::this_constructor_exists():
-    assert callable(simTL4J::literals::This.__init__)
+def test_simtl4j_literals_super_constructor_exists():
+    assert callable(simTL4J_literals_Super.__init__)
 
 
-def test_simtl4j::literals::this_constructor_args():
-    sig = inspect.signature(simTL4J::literals::This.__init__)
+def test_simtl4j_literals_super_constructor_args():
+    sig = inspect.signature(simTL4J_literals_Super.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_simtl4j::literals::super_is_not_abstract():
-    assert not inspect.isabstract(simTL4J::literals::Super)
+def test_simtl4j_literals_this_is_not_abstract():
+    assert not inspect.isabstract(simTL4J_literals_This)
 
 
-def test_simtl4j::literals::super_constructor_exists():
-    assert callable(simTL4J::literals::Super.__init__)
+def test_simtl4j_literals_this_constructor_exists():
+    assert callable(simTL4J_literals_This.__init__)
 
 
-def test_simtl4j::literals::super_constructor_args():
-    sig = inspect.signature(simTL4J::literals::Super.__init__)
+def test_simtl4j_literals_this_constructor_args():
+    sig = inspect.signature(simTL4J_literals_This.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -2585,16 +2585,16 @@ def test_instantiation_constructor_args():
 
 
 
-def test_simtl4j::instantiations::explicitconstructorcall_is_not_abstract():
-    assert not inspect.isabstract(simTL4J::instantiations::ExplicitConstructorCall)
+def test_simtl4j_instantiations_explicitconstructorcall_is_not_abstract():
+    assert not inspect.isabstract(simTL4J_instantiations_ExplicitConstructorCall)
 
 
-def test_simtl4j::instantiations::explicitconstructorcall_constructor_exists():
-    assert callable(simTL4J::instantiations::ExplicitConstructorCall.__init__)
+def test_simtl4j_instantiations_explicitconstructorcall_constructor_exists():
+    assert callable(simTL4J_instantiations_ExplicitConstructorCall.__init__)
 
 
-def test_simtl4j::instantiations::explicitconstructorcall_constructor_args():
-    sig = inspect.signature(simTL4J::instantiations::ExplicitConstructorCall.__init__)
+def test_simtl4j_instantiations_explicitconstructorcall_constructor_args():
+    sig = inspect.signature(simTL4J_instantiations_ExplicitConstructorCall.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -2613,114 +2613,114 @@ def test_anonymousclass_constructor_args():
 
 
 
-def test_generics::calltypeargumentable_is_not_abstract():
-    assert not inspect.isabstract(generics::CallTypeArgumentable)
+def test_generics_calltypeargumentable_is_not_abstract():
+    assert not inspect.isabstract(generics_CallTypeArgumentable)
 
 
-def test_generics::calltypeargumentable_constructor_exists():
-    assert callable(generics::CallTypeArgumentable.__init__)
+def test_generics_calltypeargumentable_constructor_exists():
+    assert callable(generics_CallTypeArgumentable.__init__)
 
 
-def test_generics::calltypeargumentable_constructor_args():
-    sig = inspect.signature(generics::CallTypeArgumentable.__init__)
+def test_generics_calltypeargumentable_constructor_args():
+    sig = inspect.signature(generics_CallTypeArgumentable.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_instantiations::instantiation_is_not_abstract():
-    assert not inspect.isabstract(instantiations::Instantiation)
+def test_instantiations_instantiation_is_not_abstract():
+    assert not inspect.isabstract(instantiations_Instantiation)
 
 
-def test_instantiations::instantiation_constructor_exists():
-    assert callable(instantiations::Instantiation.__init__)
+def test_instantiations_instantiation_constructor_exists():
+    assert callable(instantiations_Instantiation.__init__)
 
 
-def test_instantiations::instantiation_constructor_args():
-    sig = inspect.signature(instantiations::Instantiation.__init__)
+def test_instantiations_instantiation_constructor_args():
+    sig = inspect.signature(instantiations_Instantiation.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_simtl4j::instantiations::newconstructorcall_is_not_abstract():
-    assert not inspect.isabstract(simTL4J::instantiations::NewConstructorCall)
+def test_simtl4j_instantiations_newconstructorcall_is_not_abstract():
+    assert not inspect.isabstract(simTL4J_instantiations_NewConstructorCall)
 
 
-def test_simtl4j::instantiations::newconstructorcall_constructor_exists():
-    assert callable(simTL4J::instantiations::NewConstructorCall.__init__)
+def test_simtl4j_instantiations_newconstructorcall_constructor_exists():
+    assert callable(simTL4J_instantiations_NewConstructorCall.__init__)
 
 
-def test_simtl4j::instantiations::newconstructorcall_constructor_args():
-    sig = inspect.signature(simTL4J::instantiations::NewConstructorCall.__init__)
+def test_simtl4j_instantiations_newconstructorcall_constructor_args():
+    sig = inspect.signature(simTL4J_instantiations_NewConstructorCall.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_generics::typeargumentable_is_not_abstract():
-    assert not inspect.isabstract(generics::TypeArgumentable)
+def test_generics_typeargumentable_is_not_abstract():
+    assert not inspect.isabstract(generics_TypeArgumentable)
 
 
-def test_generics::typeargumentable_constructor_exists():
-    assert callable(generics::TypeArgumentable.__init__)
+def test_generics_typeargumentable_constructor_exists():
+    assert callable(generics_TypeArgumentable.__init__)
 
 
-def test_generics::typeargumentable_constructor_args():
-    sig = inspect.signature(generics::TypeArgumentable.__init__)
+def test_generics_typeargumentable_constructor_args():
+    sig = inspect.signature(generics_TypeArgumentable.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_simtl4j::references::reference_is_not_abstract():
-    assert not inspect.isabstract(simTL4J::references::Reference)
+def test_simtl4j_types_classifierreference_is_not_abstract():
+    assert not inspect.isabstract(simTL4J_types_ClassifierReference)
 
 
-def test_simtl4j::references::reference_constructor_exists():
-    assert callable(simTL4J::references::Reference.__init__)
+def test_simtl4j_types_classifierreference_constructor_exists():
+    assert callable(simTL4J_types_ClassifierReference.__init__)
 
 
-def test_simtl4j::references::reference_constructor_args():
-    sig = inspect.signature(simTL4J::references::Reference.__init__)
+def test_simtl4j_types_classifierreference_constructor_args():
+    sig = inspect.signature(simTL4J_types_ClassifierReference.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_simtl4j::types::classifierreference_is_not_abstract():
-    assert not inspect.isabstract(simTL4J::types::ClassifierReference)
+def test_simtl4j_references_reference_is_not_abstract():
+    assert not inspect.isabstract(simTL4J_references_Reference)
 
 
-def test_simtl4j::types::classifierreference_constructor_exists():
-    assert callable(simTL4J::types::ClassifierReference.__init__)
+def test_simtl4j_references_reference_constructor_exists():
+    assert callable(simTL4J_references_Reference.__init__)
 
 
-def test_simtl4j::types::classifierreference_constructor_args():
-    sig = inspect.signature(simTL4J::types::ClassifierReference.__init__)
+def test_simtl4j_references_reference_constructor_args():
+    sig = inspect.signature(simTL4J_references_Reference.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_references::argumentable_is_not_abstract():
-    assert not inspect.isabstract(references::Argumentable)
+def test_references_argumentable_is_not_abstract():
+    assert not inspect.isabstract(references_Argumentable)
 
 
-def test_references::argumentable_constructor_exists():
-    assert callable(references::Argumentable.__init__)
+def test_references_argumentable_constructor_exists():
+    assert callable(references_Argumentable.__init__)
 
 
-def test_references::argumentable_constructor_args():
-    sig = inspect.signature(references::Argumentable.__init__)
+def test_references_argumentable_constructor_args():
+    sig = inspect.signature(references_Argumentable.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_simtl4j::references::methodcall_is_not_abstract():
-    assert not inspect.isabstract(simTL4J::references::MethodCall)
+def test_simtl4j_references_methodcall_is_not_abstract():
+    assert not inspect.isabstract(simTL4J_references_MethodCall)
 
 
-def test_simtl4j::references::methodcall_constructor_exists():
-    assert callable(simTL4J::references::MethodCall.__init__)
+def test_simtl4j_references_methodcall_constructor_exists():
+    assert callable(simTL4J_references_MethodCall.__init__)
 
 
-def test_simtl4j::references::methodcall_constructor_args():
-    sig = inspect.signature(simTL4J::references::MethodCall.__init__)
+def test_simtl4j_references_methodcall_constructor_args():
+    sig = inspect.signature(simTL4J_references_MethodCall.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -2753,30 +2753,30 @@ def test_staticimport_constructor_args():
 
 
 
-def test_simtl4j::imports::staticmemberimport_is_not_abstract():
-    assert not inspect.isabstract(simTL4J::imports::StaticMemberImport)
+def test_simtl4j_imports_staticmemberimport_is_not_abstract():
+    assert not inspect.isabstract(simTL4J_imports_StaticMemberImport)
 
 
-def test_simtl4j::imports::staticmemberimport_constructor_exists():
-    assert callable(simTL4J::imports::StaticMemberImport.__init__)
+def test_simtl4j_imports_staticmemberimport_constructor_exists():
+    assert callable(simTL4J_imports_StaticMemberImport.__init__)
 
 
-def test_simtl4j::imports::staticmemberimport_constructor_args():
-    sig = inspect.signature(simTL4J::imports::StaticMemberImport.__init__)
+def test_simtl4j_imports_staticmemberimport_constructor_args():
+    sig = inspect.signature(simTL4J_imports_StaticMemberImport.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_simtl4j::imports::staticclassifierimport_is_not_abstract():
-    assert not inspect.isabstract(simTL4J::imports::StaticClassifierImport)
+def test_simtl4j_imports_staticclassifierimport_is_not_abstract():
+    assert not inspect.isabstract(simTL4J_imports_StaticClassifierImport)
 
 
-def test_simtl4j::imports::staticclassifierimport_constructor_exists():
-    assert callable(simTL4J::imports::StaticClassifierImport.__init__)
+def test_simtl4j_imports_staticclassifierimport_constructor_exists():
+    assert callable(simTL4J_imports_StaticClassifierImport.__init__)
 
 
-def test_simtl4j::imports::staticclassifierimport_constructor_args():
-    sig = inspect.signature(simTL4J::imports::StaticClassifierImport.__init__)
+def test_simtl4j_imports_staticclassifierimport_constructor_args():
+    sig = inspect.signature(simTL4J_imports_StaticClassifierImport.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -2809,44 +2809,44 @@ def test_import_constructor_args():
 
 
 
-def test_simtl4j::imports::staticimport_is_not_abstract():
-    assert not inspect.isabstract(simTL4J::imports::StaticImport)
+def test_simtl4j_imports_staticimport_is_not_abstract():
+    assert not inspect.isabstract(simTL4J_imports_StaticImport)
 
 
-def test_simtl4j::imports::staticimport_constructor_exists():
-    assert callable(simTL4J::imports::StaticImport.__init__)
+def test_simtl4j_imports_staticimport_constructor_exists():
+    assert callable(simTL4J_imports_StaticImport.__init__)
 
 
-def test_simtl4j::imports::staticimport_constructor_args():
-    sig = inspect.signature(simTL4J::imports::StaticImport.__init__)
+def test_simtl4j_imports_staticimport_constructor_args():
+    sig = inspect.signature(simTL4J_imports_StaticImport.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_simtl4j::imports::packageimport_is_not_abstract():
-    assert not inspect.isabstract(simTL4J::imports::PackageImport)
+def test_simtl4j_imports_classifierimport_is_not_abstract():
+    assert not inspect.isabstract(simTL4J_imports_ClassifierImport)
 
 
-def test_simtl4j::imports::packageimport_constructor_exists():
-    assert callable(simTL4J::imports::PackageImport.__init__)
+def test_simtl4j_imports_classifierimport_constructor_exists():
+    assert callable(simTL4J_imports_ClassifierImport.__init__)
 
 
-def test_simtl4j::imports::packageimport_constructor_args():
-    sig = inspect.signature(simTL4J::imports::PackageImport.__init__)
+def test_simtl4j_imports_classifierimport_constructor_args():
+    sig = inspect.signature(simTL4J_imports_ClassifierImport.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_simtl4j::imports::classifierimport_is_not_abstract():
-    assert not inspect.isabstract(simTL4J::imports::ClassifierImport)
+def test_simtl4j_imports_packageimport_is_not_abstract():
+    assert not inspect.isabstract(simTL4J_imports_PackageImport)
 
 
-def test_simtl4j::imports::classifierimport_constructor_exists():
-    assert callable(simTL4J::imports::ClassifierImport.__init__)
+def test_simtl4j_imports_packageimport_constructor_exists():
+    assert callable(simTL4J_imports_PackageImport.__init__)
 
 
-def test_simtl4j::imports::classifierimport_constructor_args():
-    sig = inspect.signature(simTL4J::imports::ClassifierImport.__init__)
+def test_simtl4j_imports_packageimport_constructor_args():
+    sig = inspect.signature(simTL4J_imports_PackageImport.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -2865,16 +2865,16 @@ def test_namespaceawareelement_constructor_args():
 
 
 
-def test_simtl4j::imports::import_is_not_abstract():
-    assert not inspect.isabstract(simTL4J::imports::Import)
+def test_simtl4j_imports_import_is_not_abstract():
+    assert not inspect.isabstract(simTL4J_imports_Import)
 
 
-def test_simtl4j::imports::import_constructor_exists():
-    assert callable(simTL4J::imports::Import.__init__)
+def test_simtl4j_imports_import_constructor_exists():
+    assert callable(simTL4J_imports_Import.__init__)
 
 
-def test_simtl4j::imports::import_constructor_args():
-    sig = inspect.signature(simTL4J::imports::Import.__init__)
+def test_simtl4j_imports_import_constructor_args():
+    sig = inspect.signature(simTL4J_imports_Import.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -2893,30 +2893,558 @@ def test_typeparameter_constructor_args():
 
 
 
-def test_generics::typeargument_is_not_abstract():
-    assert not inspect.isabstract(generics::TypeArgument)
+def test_generics_typeargument_is_not_abstract():
+    assert not inspect.isabstract(generics_TypeArgument)
 
 
-def test_generics::typeargument_constructor_exists():
-    assert callable(generics::TypeArgument.__init__)
+def test_generics_typeargument_constructor_exists():
+    assert callable(generics_TypeArgument.__init__)
 
 
-def test_generics::typeargument_constructor_args():
-    sig = inspect.signature(generics::TypeArgument.__init__)
+def test_generics_typeargument_constructor_args():
+    sig = inspect.signature(generics_TypeArgument.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_expressions::unarymodificationexpressionchild_is_not_abstract():
-    assert not inspect.isabstract(expressions::UnaryModificationExpressionChild)
+def test_expressions_unarymodificationexpressionchild_is_not_abstract():
+    assert not inspect.isabstract(expressions_UnaryModificationExpressionChild)
 
 
-def test_expressions::unarymodificationexpressionchild_constructor_exists():
-    assert callable(expressions::UnaryModificationExpressionChild.__init__)
+def test_expressions_unarymodificationexpressionchild_constructor_exists():
+    assert callable(expressions_UnaryModificationExpressionChild.__init__)
 
 
-def test_expressions::unarymodificationexpressionchild_constructor_args():
-    sig = inspect.signature(expressions::UnaryModificationExpressionChild.__init__)
+def test_expressions_unarymodificationexpressionchild_constructor_args():
+    sig = inspect.signature(expressions_UnaryModificationExpressionChild.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_unarymodificationexpression_is_not_abstract():
+    assert not inspect.isabstract(UnaryModificationExpression)
+
+
+def test_unarymodificationexpression_constructor_exists():
+    assert callable(UnaryModificationExpression.__init__)
+
+
+def test_unarymodificationexpression_constructor_args():
+    sig = inspect.signature(UnaryModificationExpression.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_simtl4j_expressions_suffixunarymodificationexpression_is_not_abstract():
+    assert not inspect.isabstract(simTL4J_expressions_SuffixUnaryModificationExpression)
+
+
+def test_simtl4j_expressions_suffixunarymodificationexpression_constructor_exists():
+    assert callable(simTL4J_expressions_SuffixUnaryModificationExpression.__init__)
+
+
+def test_simtl4j_expressions_suffixunarymodificationexpression_constructor_args():
+    sig = inspect.signature(simTL4J_expressions_SuffixUnaryModificationExpression.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_simtl4j_expressions_prefixunarymodificationexpression_is_not_abstract():
+    assert not inspect.isabstract(simTL4J_expressions_PrefixUnaryModificationExpression)
+
+
+def test_simtl4j_expressions_prefixunarymodificationexpression_constructor_exists():
+    assert callable(simTL4J_expressions_PrefixUnaryModificationExpression.__init__)
+
+
+def test_simtl4j_expressions_prefixunarymodificationexpression_constructor_args():
+    sig = inspect.signature(simTL4J_expressions_PrefixUnaryModificationExpression.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_typeargument_is_not_abstract():
+    assert not inspect.isabstract(TypeArgument)
+
+
+def test_typeargument_constructor_exists():
+    assert callable(TypeArgument.__init__)
+
+
+def test_typeargument_constructor_args():
+    sig = inspect.signature(TypeArgument.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_simtl4j_generics_extendstypeargument_is_not_abstract():
+    assert not inspect.isabstract(simTL4J_generics_ExtendsTypeArgument)
+
+
+def test_simtl4j_generics_extendstypeargument_constructor_exists():
+    assert callable(simTL4J_generics_ExtendsTypeArgument.__init__)
+
+
+def test_simtl4j_generics_extendstypeargument_constructor_args():
+    sig = inspect.signature(simTL4J_generics_ExtendsTypeArgument.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_simtl4j_generics_supertypeargument_is_not_abstract():
+    assert not inspect.isabstract(simTL4J_generics_SuperTypeArgument)
+
+
+def test_simtl4j_generics_supertypeargument_constructor_exists():
+    assert callable(simTL4J_generics_SuperTypeArgument.__init__)
+
+
+def test_simtl4j_generics_supertypeargument_constructor_args():
+    sig = inspect.signature(simTL4J_generics_SuperTypeArgument.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_simtl4j_generics_unknowntypeargument_is_not_abstract():
+    assert not inspect.isabstract(simTL4J_generics_UnknownTypeArgument)
+
+
+def test_simtl4j_generics_unknowntypeargument_constructor_exists():
+    assert callable(simTL4J_generics_UnknownTypeArgument.__init__)
+
+
+def test_simtl4j_generics_unknowntypeargument_constructor_args():
+    sig = inspect.signature(simTL4J_generics_UnknownTypeArgument.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_arraytypeable_is_not_abstract():
+    assert not inspect.isabstract(ArrayTypeable)
+
+
+def test_arraytypeable_constructor_exists():
+    assert callable(ArrayTypeable.__init__)
+
+
+def test_arraytypeable_constructor_args():
+    sig = inspect.signature(ArrayTypeable.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_simtl4j_generics_typeargument_is_not_abstract():
+    assert not inspect.isabstract(simTL4J_generics_TypeArgument)
+
+
+def test_simtl4j_generics_typeargument_constructor_exists():
+    assert callable(simTL4J_generics_TypeArgument.__init__)
+
+
+def test_simtl4j_generics_typeargument_constructor_args():
+    sig = inspect.signature(simTL4J_generics_TypeArgument.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_reference_is_not_abstract():
+    assert not inspect.isabstract(Reference)
+
+
+def test_reference_constructor_exists():
+    assert callable(Reference.__init__)
+
+
+def test_reference_constructor_args():
+    sig = inspect.signature(Reference.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_simtl4j_references_primitivetypereference_is_not_abstract():
+    assert not inspect.isabstract(simTL4J_references_PrimitiveTypeReference)
+
+
+def test_simtl4j_references_primitivetypereference_constructor_exists():
+    assert callable(simTL4J_references_PrimitiveTypeReference.__init__)
+
+
+def test_simtl4j_references_primitivetypereference_constructor_args():
+    sig = inspect.signature(simTL4J_references_PrimitiveTypeReference.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_simtl4j_references_stringreference_is_not_abstract():
+    assert not inspect.isabstract(simTL4J_references_StringReference)
+
+
+def test_simtl4j_references_stringreference_constructor_exists():
+    assert callable(simTL4J_references_StringReference.__init__)
+
+
+def test_simtl4j_references_stringreference_constructor_args():
+    sig = inspect.signature(simTL4J_references_StringReference.__init__)
+    params = list(sig.parameters.keys())
+    assert "value" in params, "Missing parameter 'value'"
+
+def test_simtl4j_references_stringreference_has_value():
+    assert hasattr(simTL4J_references_StringReference, "value")
+    descriptor = None
+    for klass in simTL4J_references_StringReference.__mro__:
+        if "value" in klass.__dict__:
+            descriptor = klass.__dict__["value"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_simtl4j_references_selfreference_is_not_abstract():
+    assert not inspect.isabstract(simTL4J_references_SelfReference)
+
+
+def test_simtl4j_references_selfreference_constructor_exists():
+    assert callable(simTL4J_references_SelfReference.__init__)
+
+
+def test_simtl4j_references_selfreference_constructor_args():
+    sig = inspect.signature(simTL4J_references_SelfReference.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_simtl4j_references_reflectiveclassreference_is_not_abstract():
+    assert not inspect.isabstract(simTL4J_references_ReflectiveClassReference)
+
+
+def test_simtl4j_references_reflectiveclassreference_constructor_exists():
+    assert callable(simTL4J_references_ReflectiveClassReference.__init__)
+
+
+def test_simtl4j_references_reflectiveclassreference_constructor_args():
+    sig = inspect.signature(simTL4J_references_ReflectiveClassReference.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_simtl4j_references_elementreference_is_not_abstract():
+    assert not inspect.isabstract(simTL4J_references_ElementReference)
+
+
+def test_simtl4j_references_elementreference_constructor_exists():
+    assert callable(simTL4J_references_ElementReference.__init__)
+
+
+def test_simtl4j_references_elementreference_constructor_args():
+    sig = inspect.signature(simTL4J_references_ElementReference.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_simtl4j_expressions_nestedexpression_is_not_abstract():
+    assert not inspect.isabstract(simTL4J_expressions_NestedExpression)
+
+
+def test_simtl4j_expressions_nestedexpression_constructor_exists():
+    assert callable(simTL4J_expressions_NestedExpression.__init__)
+
+
+def test_simtl4j_expressions_nestedexpression_constructor_args():
+    sig = inspect.signature(simTL4J_expressions_NestedExpression.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_shiftoperator_is_not_abstract():
+    assert not inspect.isabstract(ShiftOperator)
+
+
+def test_shiftoperator_constructor_exists():
+    assert callable(ShiftOperator.__init__)
+
+
+def test_shiftoperator_constructor_args():
+    sig = inspect.signature(ShiftOperator.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_simtl4j_operators_leftshift_is_not_abstract():
+    assert not inspect.isabstract(simTL4J_operators_LeftShift)
+
+
+def test_simtl4j_operators_leftshift_constructor_exists():
+    assert callable(simTL4J_operators_LeftShift.__init__)
+
+
+def test_simtl4j_operators_leftshift_constructor_args():
+    sig = inspect.signature(simTL4J_operators_LeftShift.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_simtl4j_operators_rightshift_is_not_abstract():
+    assert not inspect.isabstract(simTL4J_operators_RightShift)
+
+
+def test_simtl4j_operators_rightshift_constructor_exists():
+    assert callable(simTL4J_operators_RightShift.__init__)
+
+
+def test_simtl4j_operators_rightshift_constructor_args():
+    sig = inspect.signature(simTL4J_operators_RightShift.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_simtl4j_operators_unsignedrightshift_is_not_abstract():
+    assert not inspect.isabstract(simTL4J_operators_UnsignedRightShift)
+
+
+def test_simtl4j_operators_unsignedrightshift_constructor_exists():
+    assert callable(simTL4J_operators_UnsignedRightShift.__init__)
+
+
+def test_simtl4j_operators_unsignedrightshift_constructor_args():
+    sig = inspect.signature(simTL4J_operators_UnsignedRightShift.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_shiftexpressionchild_is_not_abstract():
+    assert not inspect.isabstract(ShiftExpressionChild)
+
+
+def test_shiftexpressionchild_constructor_exists():
+    assert callable(ShiftExpressionChild.__init__)
+
+
+def test_shiftexpressionchild_constructor_args():
+    sig = inspect.signature(ShiftExpressionChild.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_relationoperator_is_not_abstract():
+    assert not inspect.isabstract(RelationOperator)
+
+
+def test_relationoperator_constructor_exists():
+    assert callable(RelationOperator.__init__)
+
+
+def test_relationoperator_constructor_args():
+    sig = inspect.signature(RelationOperator.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_simtl4j_operators_greaterthan_is_not_abstract():
+    assert not inspect.isabstract(simTL4J_operators_GreaterThan)
+
+
+def test_simtl4j_operators_greaterthan_constructor_exists():
+    assert callable(simTL4J_operators_GreaterThan.__init__)
+
+
+def test_simtl4j_operators_greaterthan_constructor_args():
+    sig = inspect.signature(simTL4J_operators_GreaterThan.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_simtl4j_operators_lessthan_is_not_abstract():
+    assert not inspect.isabstract(simTL4J_operators_LessThan)
+
+
+def test_simtl4j_operators_lessthan_constructor_exists():
+    assert callable(simTL4J_operators_LessThan.__init__)
+
+
+def test_simtl4j_operators_lessthan_constructor_args():
+    sig = inspect.signature(simTL4J_operators_LessThan.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_simtl4j_operators_greaterthanorequal_is_not_abstract():
+    assert not inspect.isabstract(simTL4J_operators_GreaterThanOrEqual)
+
+
+def test_simtl4j_operators_greaterthanorequal_constructor_exists():
+    assert callable(simTL4J_operators_GreaterThanOrEqual.__init__)
+
+
+def test_simtl4j_operators_greaterthanorequal_constructor_args():
+    sig = inspect.signature(simTL4J_operators_GreaterThanOrEqual.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_simtl4j_operators_lessthanorequal_is_not_abstract():
+    assert not inspect.isabstract(simTL4J_operators_LessThanOrEqual)
+
+
+def test_simtl4j_operators_lessthanorequal_constructor_exists():
+    assert callable(simTL4J_operators_LessThanOrEqual.__init__)
+
+
+def test_simtl4j_operators_lessthanorequal_constructor_args():
+    sig = inspect.signature(simTL4J_operators_LessThanOrEqual.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_unarymodificationoperator_is_not_abstract():
+    assert not inspect.isabstract(UnaryModificationOperator)
+
+
+def test_unarymodificationoperator_constructor_exists():
+    assert callable(UnaryModificationOperator.__init__)
+
+
+def test_unarymodificationoperator_constructor_args():
+    sig = inspect.signature(UnaryModificationOperator.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_simtl4j_operators_plusplus_is_not_abstract():
+    assert not inspect.isabstract(simTL4J_operators_PlusPlus)
+
+
+def test_simtl4j_operators_plusplus_constructor_exists():
+    assert callable(simTL4J_operators_PlusPlus.__init__)
+
+
+def test_simtl4j_operators_plusplus_constructor_args():
+    sig = inspect.signature(simTL4J_operators_PlusPlus.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_simtl4j_operators_minusminus_is_not_abstract():
+    assert not inspect.isabstract(simTL4J_operators_MinusMinus)
+
+
+def test_simtl4j_operators_minusminus_constructor_exists():
+    assert callable(simTL4J_operators_MinusMinus.__init__)
+
+
+def test_simtl4j_operators_minusminus_constructor_args():
+    sig = inspect.signature(simTL4J_operators_MinusMinus.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_unarymodificationexpressionchild_is_not_abstract():
+    assert not inspect.isabstract(UnaryModificationExpressionChild)
+
+
+def test_unarymodificationexpressionchild_constructor_exists():
+    assert callable(UnaryModificationExpressionChild.__init__)
+
+
+def test_unarymodificationexpressionchild_constructor_args():
+    sig = inspect.signature(UnaryModificationExpressionChild.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_simtl4j_expressions_primaryexpression_is_not_abstract():
+    assert not inspect.isabstract(simTL4J_expressions_PrimaryExpression)
+
+
+def test_simtl4j_expressions_primaryexpression_constructor_exists():
+    assert callable(simTL4J_expressions_PrimaryExpression.__init__)
+
+
+def test_simtl4j_expressions_primaryexpression_constructor_args():
+    sig = inspect.signature(simTL4J_expressions_PrimaryExpression.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_unaryexpressionchild_is_not_abstract():
+    assert not inspect.isabstract(UnaryExpressionChild)
+
+
+def test_unaryexpressionchild_constructor_exists():
+    assert callable(UnaryExpressionChild.__init__)
+
+
+def test_unaryexpressionchild_constructor_args():
+    sig = inspect.signature(UnaryExpressionChild.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_simtl4j_expressions_unarymodificationexpressionchild_is_not_abstract():
+    assert not inspect.isabstract(simTL4J_expressions_UnaryModificationExpressionChild)
+
+
+def test_simtl4j_expressions_unarymodificationexpressionchild_constructor_exists():
+    assert callable(simTL4J_expressions_UnaryModificationExpressionChild.__init__)
+
+
+def test_simtl4j_expressions_unarymodificationexpressionchild_constructor_args():
+    sig = inspect.signature(simTL4J_expressions_UnaryModificationExpressionChild.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_simtl4j_expressions_unarymodificationexpression_is_not_abstract():
+    assert not inspect.isabstract(simTL4J_expressions_UnaryModificationExpression)
+
+
+def test_simtl4j_expressions_unarymodificationexpression_constructor_exists():
+    assert callable(simTL4J_expressions_UnaryModificationExpression.__init__)
+
+
+def test_simtl4j_expressions_unarymodificationexpression_constructor_args():
+    sig = inspect.signature(simTL4J_expressions_UnaryModificationExpression.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_unaryoperator_is_not_abstract():
+    assert not inspect.isabstract(UnaryOperator)
+
+
+def test_unaryoperator_constructor_exists():
+    assert callable(UnaryOperator.__init__)
+
+
+def test_unaryoperator_constructor_args():
+    sig = inspect.signature(UnaryOperator.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_simtl4j_operators_negate_is_not_abstract():
+    assert not inspect.isabstract(simTL4J_operators_Negate)
+
+
+def test_simtl4j_operators_negate_constructor_exists():
+    assert callable(simTL4J_operators_Negate.__init__)
+
+
+def test_simtl4j_operators_negate_constructor_args():
+    sig = inspect.signature(simTL4J_operators_Negate.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_simtl4j_operators_complement_is_not_abstract():
+    assert not inspect.isabstract(simTL4J_operators_Complement)
+
+
+def test_simtl4j_operators_complement_constructor_exists():
+    assert callable(simTL4J_operators_Complement.__init__)
+
+
+def test_simtl4j_operators_complement_constructor_args():
+    sig = inspect.signature(simTL4J_operators_Complement.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -2935,44 +3463,44 @@ def test_multiplicativeoperator_constructor_args():
 
 
 
-def test_simtl4j::operators::multiplication_is_not_abstract():
-    assert not inspect.isabstract(simTL4J::operators::Multiplication)
+def test_simtl4j_operators_remainder_is_not_abstract():
+    assert not inspect.isabstract(simTL4J_operators_Remainder)
 
 
-def test_simtl4j::operators::multiplication_constructor_exists():
-    assert callable(simTL4J::operators::Multiplication.__init__)
+def test_simtl4j_operators_remainder_constructor_exists():
+    assert callable(simTL4J_operators_Remainder.__init__)
 
 
-def test_simtl4j::operators::multiplication_constructor_args():
-    sig = inspect.signature(simTL4J::operators::Multiplication.__init__)
+def test_simtl4j_operators_remainder_constructor_args():
+    sig = inspect.signature(simTL4J_operators_Remainder.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_simtl4j::operators::division_is_not_abstract():
-    assert not inspect.isabstract(simTL4J::operators::Division)
+def test_simtl4j_operators_multiplication_is_not_abstract():
+    assert not inspect.isabstract(simTL4J_operators_Multiplication)
 
 
-def test_simtl4j::operators::division_constructor_exists():
-    assert callable(simTL4J::operators::Division.__init__)
+def test_simtl4j_operators_multiplication_constructor_exists():
+    assert callable(simTL4J_operators_Multiplication.__init__)
 
 
-def test_simtl4j::operators::division_constructor_args():
-    sig = inspect.signature(simTL4J::operators::Division.__init__)
+def test_simtl4j_operators_multiplication_constructor_args():
+    sig = inspect.signature(simTL4J_operators_Multiplication.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_simtl4j::operators::remainder_is_not_abstract():
-    assert not inspect.isabstract(simTL4J::operators::Remainder)
+def test_simtl4j_operators_division_is_not_abstract():
+    assert not inspect.isabstract(simTL4J_operators_Division)
 
 
-def test_simtl4j::operators::remainder_constructor_exists():
-    assert callable(simTL4J::operators::Remainder.__init__)
+def test_simtl4j_operators_division_constructor_exists():
+    assert callable(simTL4J_operators_Division.__init__)
 
 
-def test_simtl4j::operators::remainder_constructor_args():
-    sig = inspect.signature(simTL4J::operators::Remainder.__init__)
+def test_simtl4j_operators_division_constructor_args():
+    sig = inspect.signature(simTL4J_operators_Division.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -2991,16 +3519,44 @@ def test_multiplicativeexpressionchild_constructor_args():
 
 
 
-def test_simtl4j::expressions::unaryexpression_is_not_abstract():
-    assert not inspect.isabstract(simTL4J::expressions::UnaryExpression)
+def test_simtl4j_expressions_unaryexpression_is_not_abstract():
+    assert not inspect.isabstract(simTL4J_expressions_UnaryExpression)
 
 
-def test_simtl4j::expressions::unaryexpression_constructor_exists():
-    assert callable(simTL4J::expressions::UnaryExpression.__init__)
+def test_simtl4j_expressions_unaryexpression_constructor_exists():
+    assert callable(simTL4J_expressions_UnaryExpression.__init__)
 
 
-def test_simtl4j::expressions::unaryexpression_constructor_args():
-    sig = inspect.signature(simTL4J::expressions::UnaryExpression.__init__)
+def test_simtl4j_expressions_unaryexpression_constructor_args():
+    sig = inspect.signature(simTL4J_expressions_UnaryExpression.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_simtl4j_expressions_unaryexpressionchild_is_not_abstract():
+    assert not inspect.isabstract(simTL4J_expressions_UnaryExpressionChild)
+
+
+def test_simtl4j_expressions_unaryexpressionchild_constructor_exists():
+    assert callable(simTL4J_expressions_UnaryExpressionChild.__init__)
+
+
+def test_simtl4j_expressions_unaryexpressionchild_constructor_args():
+    sig = inspect.signature(simTL4J_expressions_UnaryExpressionChild.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_simtl4j_expressions_additiveexpressionchild_is_not_abstract():
+    assert not inspect.isabstract(simTL4J_expressions_AdditiveExpressionChild)
+
+
+def test_simtl4j_expressions_additiveexpressionchild_constructor_exists():
+    assert callable(simTL4J_expressions_AdditiveExpressionChild.__init__)
+
+
+def test_simtl4j_expressions_additiveexpressionchild_constructor_args():
+    sig = inspect.signature(simTL4J_expressions_AdditiveExpressionChild.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -3033,30 +3589,44 @@ def test_additiveexpressionchild_constructor_args():
 
 
 
-def test_simtl4j::expressions::multiplicativeexpressionchild_is_not_abstract():
-    assert not inspect.isabstract(simTL4J::expressions::MultiplicativeExpressionChild)
+def test_simtl4j_expressions_multiplicativeexpression_is_not_abstract():
+    assert not inspect.isabstract(simTL4J_expressions_MultiplicativeExpression)
 
 
-def test_simtl4j::expressions::multiplicativeexpressionchild_constructor_exists():
-    assert callable(simTL4J::expressions::MultiplicativeExpressionChild.__init__)
+def test_simtl4j_expressions_multiplicativeexpression_constructor_exists():
+    assert callable(simTL4J_expressions_MultiplicativeExpression.__init__)
 
 
-def test_simtl4j::expressions::multiplicativeexpressionchild_constructor_args():
-    sig = inspect.signature(simTL4J::expressions::MultiplicativeExpressionChild.__init__)
+def test_simtl4j_expressions_multiplicativeexpression_constructor_args():
+    sig = inspect.signature(simTL4J_expressions_MultiplicativeExpression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_simtl4j::expressions::multiplicativeexpression_is_not_abstract():
-    assert not inspect.isabstract(simTL4J::expressions::MultiplicativeExpression)
+def test_simtl4j_expressions_multiplicativeexpressionchild_is_not_abstract():
+    assert not inspect.isabstract(simTL4J_expressions_MultiplicativeExpressionChild)
 
 
-def test_simtl4j::expressions::multiplicativeexpression_constructor_exists():
-    assert callable(simTL4J::expressions::MultiplicativeExpression.__init__)
+def test_simtl4j_expressions_multiplicativeexpressionchild_constructor_exists():
+    assert callable(simTL4J_expressions_MultiplicativeExpressionChild.__init__)
 
 
-def test_simtl4j::expressions::multiplicativeexpression_constructor_args():
-    sig = inspect.signature(simTL4J::expressions::MultiplicativeExpression.__init__)
+def test_simtl4j_expressions_multiplicativeexpressionchild_constructor_args():
+    sig = inspect.signature(simTL4J_expressions_MultiplicativeExpressionChild.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_simtl4j_expressions_additiveexpression_is_not_abstract():
+    assert not inspect.isabstract(simTL4J_expressions_AdditiveExpression)
+
+
+def test_simtl4j_expressions_additiveexpression_constructor_exists():
+    assert callable(simTL4J_expressions_AdditiveExpression.__init__)
+
+
+def test_simtl4j_expressions_additiveexpression_constructor_args():
+    sig = inspect.signature(simTL4J_expressions_AdditiveExpression.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -3075,16 +3645,16 @@ def test_conditionalandexpressionchild_constructor_args():
 
 
 
-def test_simtl4j::expressions::inclusiveorexpression_is_not_abstract():
-    assert not inspect.isabstract(simTL4J::expressions::InclusiveOrExpression)
+def test_simtl4j_expressions_inclusiveorexpression_is_not_abstract():
+    assert not inspect.isabstract(simTL4J_expressions_InclusiveOrExpression)
 
 
-def test_simtl4j::expressions::inclusiveorexpression_constructor_exists():
-    assert callable(simTL4J::expressions::InclusiveOrExpression.__init__)
+def test_simtl4j_expressions_inclusiveorexpression_constructor_exists():
+    assert callable(simTL4J_expressions_InclusiveOrExpression.__init__)
 
 
-def test_simtl4j::expressions::inclusiveorexpression_constructor_args():
-    sig = inspect.signature(simTL4J::expressions::InclusiveOrExpression.__init__)
+def test_simtl4j_expressions_inclusiveorexpression_constructor_args():
+    sig = inspect.signature(simTL4J_expressions_InclusiveOrExpression.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -3103,30 +3673,30 @@ def test_conditionalorexpressionchild_constructor_args():
 
 
 
-def test_simtl4j::expressions::conditionalandexpression_is_not_abstract():
-    assert not inspect.isabstract(simTL4J::expressions::ConditionalAndExpression)
+def test_simtl4j_expressions_conditionalandexpression_is_not_abstract():
+    assert not inspect.isabstract(simTL4J_expressions_ConditionalAndExpression)
 
 
-def test_simtl4j::expressions::conditionalandexpression_constructor_exists():
-    assert callable(simTL4J::expressions::ConditionalAndExpression.__init__)
+def test_simtl4j_expressions_conditionalandexpression_constructor_exists():
+    assert callable(simTL4J_expressions_ConditionalAndExpression.__init__)
 
 
-def test_simtl4j::expressions::conditionalandexpression_constructor_args():
-    sig = inspect.signature(simTL4J::expressions::ConditionalAndExpression.__init__)
+def test_simtl4j_expressions_conditionalandexpression_constructor_args():
+    sig = inspect.signature(simTL4J_expressions_ConditionalAndExpression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_simtl4j::expressions::conditionalandexpressionchild_is_not_abstract():
-    assert not inspect.isabstract(simTL4J::expressions::ConditionalAndExpressionChild)
+def test_simtl4j_expressions_conditionalandexpressionchild_is_not_abstract():
+    assert not inspect.isabstract(simTL4J_expressions_ConditionalAndExpressionChild)
 
 
-def test_simtl4j::expressions::conditionalandexpressionchild_constructor_exists():
-    assert callable(simTL4J::expressions::ConditionalAndExpressionChild.__init__)
+def test_simtl4j_expressions_conditionalandexpressionchild_constructor_exists():
+    assert callable(simTL4J_expressions_ConditionalAndExpressionChild.__init__)
 
 
-def test_simtl4j::expressions::conditionalandexpressionchild_constructor_args():
-    sig = inspect.signature(simTL4J::expressions::ConditionalAndExpressionChild.__init__)
+def test_simtl4j_expressions_conditionalandexpressionchild_constructor_args():
+    sig = inspect.signature(simTL4J_expressions_ConditionalAndExpressionChild.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -3145,16 +3715,30 @@ def test_relationexpressionchild_constructor_args():
 
 
 
-def test_simtl4j::expressions::shiftexpressionchild_is_not_abstract():
-    assert not inspect.isabstract(simTL4J::expressions::ShiftExpressionChild)
+def test_simtl4j_expressions_shiftexpression_is_not_abstract():
+    assert not inspect.isabstract(simTL4J_expressions_ShiftExpression)
 
 
-def test_simtl4j::expressions::shiftexpressionchild_constructor_exists():
-    assert callable(simTL4J::expressions::ShiftExpressionChild.__init__)
+def test_simtl4j_expressions_shiftexpression_constructor_exists():
+    assert callable(simTL4J_expressions_ShiftExpression.__init__)
 
 
-def test_simtl4j::expressions::shiftexpressionchild_constructor_args():
-    sig = inspect.signature(simTL4J::expressions::ShiftExpressionChild.__init__)
+def test_simtl4j_expressions_shiftexpression_constructor_args():
+    sig = inspect.signature(simTL4J_expressions_ShiftExpression.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_simtl4j_expressions_shiftexpressionchild_is_not_abstract():
+    assert not inspect.isabstract(simTL4J_expressions_ShiftExpressionChild)
+
+
+def test_simtl4j_expressions_shiftexpressionchild_constructor_exists():
+    assert callable(simTL4J_expressions_ShiftExpressionChild.__init__)
+
+
+def test_simtl4j_expressions_shiftexpressionchild_constructor_args():
+    sig = inspect.signature(simTL4J_expressions_ShiftExpressionChild.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -3173,30 +3757,44 @@ def test_instanceofexpressionchild_constructor_args():
 
 
 
-def test_simtl4j::expressions::relationexpression_is_not_abstract():
-    assert not inspect.isabstract(simTL4J::expressions::RelationExpression)
+def test_simtl4j_expressions_relationexpression_is_not_abstract():
+    assert not inspect.isabstract(simTL4J_expressions_RelationExpression)
 
 
-def test_simtl4j::expressions::relationexpression_constructor_exists():
-    assert callable(simTL4J::expressions::RelationExpression.__init__)
+def test_simtl4j_expressions_relationexpression_constructor_exists():
+    assert callable(simTL4J_expressions_RelationExpression.__init__)
 
 
-def test_simtl4j::expressions::relationexpression_constructor_args():
-    sig = inspect.signature(simTL4J::expressions::RelationExpression.__init__)
+def test_simtl4j_expressions_relationexpression_constructor_args():
+    sig = inspect.signature(simTL4J_expressions_RelationExpression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_expressions::equalityexpressionchild_is_not_abstract():
-    assert not inspect.isabstract(expressions::EqualityExpressionChild)
+def test_simtl4j_expressions_relationexpressionchild_is_not_abstract():
+    assert not inspect.isabstract(simTL4J_expressions_RelationExpressionChild)
 
 
-def test_expressions::equalityexpressionchild_constructor_exists():
-    assert callable(expressions::EqualityExpressionChild.__init__)
+def test_simtl4j_expressions_relationexpressionchild_constructor_exists():
+    assert callable(simTL4J_expressions_RelationExpressionChild.__init__)
 
 
-def test_expressions::equalityexpressionchild_constructor_args():
-    sig = inspect.signature(expressions::EqualityExpressionChild.__init__)
+def test_simtl4j_expressions_relationexpressionchild_constructor_args():
+    sig = inspect.signature(simTL4J_expressions_RelationExpressionChild.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_expressions_equalityexpressionchild_is_not_abstract():
+    assert not inspect.isabstract(expressions_EqualityExpressionChild)
+
+
+def test_expressions_equalityexpressionchild_constructor_exists():
+    assert callable(expressions_EqualityExpressionChild.__init__)
+
+
+def test_expressions_equalityexpressionchild_constructor_args():
+    sig = inspect.signature(expressions_EqualityExpressionChild.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -3215,16 +3813,16 @@ def test_equalityexpressionchild_constructor_args():
 
 
 
-def test_simtl4j::expressions::instanceofexpressionchild_is_not_abstract():
-    assert not inspect.isabstract(simTL4J::expressions::InstanceOfExpressionChild)
+def test_simtl4j_expressions_instanceofexpressionchild_is_not_abstract():
+    assert not inspect.isabstract(simTL4J_expressions_InstanceOfExpressionChild)
 
 
-def test_simtl4j::expressions::instanceofexpressionchild_constructor_exists():
-    assert callable(simTL4J::expressions::InstanceOfExpressionChild.__init__)
+def test_simtl4j_expressions_instanceofexpressionchild_constructor_exists():
+    assert callable(simTL4J_expressions_InstanceOfExpressionChild.__init__)
 
 
-def test_simtl4j::expressions::instanceofexpressionchild_constructor_args():
-    sig = inspect.signature(simTL4J::expressions::InstanceOfExpressionChild.__init__)
+def test_simtl4j_expressions_instanceofexpressionchild_constructor_args():
+    sig = inspect.signature(simTL4J_expressions_InstanceOfExpressionChild.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -3243,30 +3841,30 @@ def test_equalityoperator_constructor_args():
 
 
 
-def test_simtl4j::operators::notequal_is_not_abstract():
-    assert not inspect.isabstract(simTL4J::operators::NotEqual)
+def test_simtl4j_operators_equal_is_not_abstract():
+    assert not inspect.isabstract(simTL4J_operators_Equal)
 
 
-def test_simtl4j::operators::notequal_constructor_exists():
-    assert callable(simTL4J::operators::NotEqual.__init__)
+def test_simtl4j_operators_equal_constructor_exists():
+    assert callable(simTL4J_operators_Equal.__init__)
 
 
-def test_simtl4j::operators::notequal_constructor_args():
-    sig = inspect.signature(simTL4J::operators::NotEqual.__init__)
+def test_simtl4j_operators_equal_constructor_args():
+    sig = inspect.signature(simTL4J_operators_Equal.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_simtl4j::operators::equal_is_not_abstract():
-    assert not inspect.isabstract(simTL4J::operators::Equal)
+def test_simtl4j_operators_notequal_is_not_abstract():
+    assert not inspect.isabstract(simTL4J_operators_NotEqual)
 
 
-def test_simtl4j::operators::equal_constructor_exists():
-    assert callable(simTL4J::operators::Equal.__init__)
+def test_simtl4j_operators_notequal_constructor_exists():
+    assert callable(simTL4J_operators_NotEqual.__init__)
 
 
-def test_simtl4j::operators::equal_constructor_args():
-    sig = inspect.signature(simTL4J::operators::Equal.__init__)
+def test_simtl4j_operators_notequal_constructor_args():
+    sig = inspect.signature(simTL4J_operators_NotEqual.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -3285,30 +3883,30 @@ def test_andexpressionchild_constructor_args():
 
 
 
-def test_simtl4j::expressions::equalityexpression_is_not_abstract():
-    assert not inspect.isabstract(simTL4J::expressions::EqualityExpression)
+def test_simtl4j_expressions_equalityexpressionchild_is_not_abstract():
+    assert not inspect.isabstract(simTL4J_expressions_EqualityExpressionChild)
 
 
-def test_simtl4j::expressions::equalityexpression_constructor_exists():
-    assert callable(simTL4J::expressions::EqualityExpression.__init__)
+def test_simtl4j_expressions_equalityexpressionchild_constructor_exists():
+    assert callable(simTL4J_expressions_EqualityExpressionChild.__init__)
 
 
-def test_simtl4j::expressions::equalityexpression_constructor_args():
-    sig = inspect.signature(simTL4J::expressions::EqualityExpression.__init__)
+def test_simtl4j_expressions_equalityexpressionchild_constructor_args():
+    sig = inspect.signature(simTL4J_expressions_EqualityExpressionChild.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_simtl4j::expressions::equalityexpressionchild_is_not_abstract():
-    assert not inspect.isabstract(simTL4J::expressions::EqualityExpressionChild)
+def test_simtl4j_expressions_equalityexpression_is_not_abstract():
+    assert not inspect.isabstract(simTL4J_expressions_EqualityExpression)
 
 
-def test_simtl4j::expressions::equalityexpressionchild_constructor_exists():
-    assert callable(simTL4J::expressions::EqualityExpressionChild.__init__)
+def test_simtl4j_expressions_equalityexpression_constructor_exists():
+    assert callable(simTL4J_expressions_EqualityExpression.__init__)
 
 
-def test_simtl4j::expressions::equalityexpressionchild_constructor_args():
-    sig = inspect.signature(simTL4J::expressions::EqualityExpressionChild.__init__)
+def test_simtl4j_expressions_equalityexpression_constructor_args():
+    sig = inspect.signature(simTL4J_expressions_EqualityExpression.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -3327,44 +3925,44 @@ def test_exclusiveorexpressionchild_constructor_args():
 
 
 
-def test_simtl4j::expressions::andexpression_is_not_abstract():
-    assert not inspect.isabstract(simTL4J::expressions::AndExpression)
+def test_simtl4j_expressions_andexpressionchild_is_not_abstract():
+    assert not inspect.isabstract(simTL4J_expressions_AndExpressionChild)
 
 
-def test_simtl4j::expressions::andexpression_constructor_exists():
-    assert callable(simTL4J::expressions::AndExpression.__init__)
+def test_simtl4j_expressions_andexpressionchild_constructor_exists():
+    assert callable(simTL4J_expressions_AndExpressionChild.__init__)
 
 
-def test_simtl4j::expressions::andexpression_constructor_args():
-    sig = inspect.signature(simTL4J::expressions::AndExpression.__init__)
+def test_simtl4j_expressions_andexpressionchild_constructor_args():
+    sig = inspect.signature(simTL4J_expressions_AndExpressionChild.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_simtl4j::expressions::andexpressionchild_is_not_abstract():
-    assert not inspect.isabstract(simTL4J::expressions::AndExpressionChild)
+def test_simtl4j_expressions_andexpression_is_not_abstract():
+    assert not inspect.isabstract(simTL4J_expressions_AndExpression)
 
 
-def test_simtl4j::expressions::andexpressionchild_constructor_exists():
-    assert callable(simTL4J::expressions::AndExpressionChild.__init__)
+def test_simtl4j_expressions_andexpression_constructor_exists():
+    assert callable(simTL4J_expressions_AndExpression.__init__)
 
 
-def test_simtl4j::expressions::andexpressionchild_constructor_args():
-    sig = inspect.signature(simTL4J::expressions::AndExpressionChild.__init__)
+def test_simtl4j_expressions_andexpression_constructor_args():
+    sig = inspect.signature(simTL4J_expressions_AndExpression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_simtl4j::expressions::inclusiveorexpressionchild_is_not_abstract():
-    assert not inspect.isabstract(simTL4J::expressions::InclusiveOrExpressionChild)
+def test_simtl4j_expressions_inclusiveorexpressionchild_is_not_abstract():
+    assert not inspect.isabstract(simTL4J_expressions_InclusiveOrExpressionChild)
 
 
-def test_simtl4j::expressions::inclusiveorexpressionchild_constructor_exists():
-    assert callable(simTL4J::expressions::InclusiveOrExpressionChild.__init__)
+def test_simtl4j_expressions_inclusiveorexpressionchild_constructor_exists():
+    assert callable(simTL4J_expressions_InclusiveOrExpressionChild.__init__)
 
 
-def test_simtl4j::expressions::inclusiveorexpressionchild_constructor_args():
-    sig = inspect.signature(simTL4J::expressions::InclusiveOrExpressionChild.__init__)
+def test_simtl4j_expressions_inclusiveorexpressionchild_constructor_args():
+    sig = inspect.signature(simTL4J_expressions_InclusiveOrExpressionChild.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -3383,30 +3981,30 @@ def test_inclusiveorexpressionchild_constructor_args():
 
 
 
-def test_simtl4j::expressions::exclusiveorexpression_is_not_abstract():
-    assert not inspect.isabstract(simTL4J::expressions::ExclusiveOrExpression)
+def test_simtl4j_expressions_exclusiveorexpression_is_not_abstract():
+    assert not inspect.isabstract(simTL4J_expressions_ExclusiveOrExpression)
 
 
-def test_simtl4j::expressions::exclusiveorexpression_constructor_exists():
-    assert callable(simTL4J::expressions::ExclusiveOrExpression.__init__)
+def test_simtl4j_expressions_exclusiveorexpression_constructor_exists():
+    assert callable(simTL4J_expressions_ExclusiveOrExpression.__init__)
 
 
-def test_simtl4j::expressions::exclusiveorexpression_constructor_args():
-    sig = inspect.signature(simTL4J::expressions::ExclusiveOrExpression.__init__)
+def test_simtl4j_expressions_exclusiveorexpression_constructor_args():
+    sig = inspect.signature(simTL4J_expressions_ExclusiveOrExpression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_simtl4j::expressions::exclusiveorexpressionchild_is_not_abstract():
-    assert not inspect.isabstract(simTL4J::expressions::ExclusiveOrExpressionChild)
+def test_simtl4j_expressions_exclusiveorexpressionchild_is_not_abstract():
+    assert not inspect.isabstract(simTL4J_expressions_ExclusiveOrExpressionChild)
 
 
-def test_simtl4j::expressions::exclusiveorexpressionchild_constructor_exists():
-    assert callable(simTL4J::expressions::ExclusiveOrExpressionChild.__init__)
+def test_simtl4j_expressions_exclusiveorexpressionchild_constructor_exists():
+    assert callable(simTL4J_expressions_ExclusiveOrExpressionChild.__init__)
 
 
-def test_simtl4j::expressions::exclusiveorexpressionchild_constructor_args():
-    sig = inspect.signature(simTL4J::expressions::ExclusiveOrExpressionChild.__init__)
+def test_simtl4j_expressions_exclusiveorexpressionchild_constructor_args():
+    sig = inspect.signature(simTL4J_expressions_ExclusiveOrExpressionChild.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -3439,30 +4037,30 @@ def test_compilationunit_constructor_args():
 
 
 
-def test_annotations::annotable_is_not_abstract():
-    assert not inspect.isabstract(annotations::Annotable)
+def test_annotations_annotable_is_not_abstract():
+    assert not inspect.isabstract(annotations_Annotable)
 
 
-def test_annotations::annotable_constructor_exists():
-    assert callable(annotations::Annotable.__init__)
+def test_annotations_annotable_constructor_exists():
+    assert callable(annotations_Annotable.__init__)
 
 
-def test_annotations::annotable_constructor_args():
-    sig = inspect.signature(annotations::Annotable.__init__)
+def test_annotations_annotable_constructor_args():
+    sig = inspect.signature(annotations_Annotable.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_containers::javaroot_is_not_abstract():
-    assert not inspect.isabstract(containers::JavaRoot)
+def test_containers_javaroot_is_not_abstract():
+    assert not inspect.isabstract(containers_JavaRoot)
 
 
-def test_containers::javaroot_constructor_exists():
-    assert callable(containers::JavaRoot.__init__)
+def test_containers_javaroot_constructor_exists():
+    assert callable(containers_JavaRoot.__init__)
 
 
-def test_containers::javaroot_constructor_args():
-    sig = inspect.signature(containers::JavaRoot.__init__)
+def test_containers_javaroot_constructor_args():
+    sig = inspect.signature(containers_JavaRoot.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -3481,30 +4079,30 @@ def test_conditionalexpressionchild_constructor_args():
 
 
 
-def test_simtl4j::expressions::conditionalorexpressionchild_is_not_abstract():
-    assert not inspect.isabstract(simTL4J::expressions::ConditionalOrExpressionChild)
+def test_simtl4j_expressions_conditionalorexpression_is_not_abstract():
+    assert not inspect.isabstract(simTL4J_expressions_ConditionalOrExpression)
 
 
-def test_simtl4j::expressions::conditionalorexpressionchild_constructor_exists():
-    assert callable(simTL4J::expressions::ConditionalOrExpressionChild.__init__)
+def test_simtl4j_expressions_conditionalorexpression_constructor_exists():
+    assert callable(simTL4J_expressions_ConditionalOrExpression.__init__)
 
 
-def test_simtl4j::expressions::conditionalorexpressionchild_constructor_args():
-    sig = inspect.signature(simTL4J::expressions::ConditionalOrExpressionChild.__init__)
+def test_simtl4j_expressions_conditionalorexpression_constructor_args():
+    sig = inspect.signature(simTL4J_expressions_ConditionalOrExpression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_simtl4j::expressions::conditionalorexpression_is_not_abstract():
-    assert not inspect.isabstract(simTL4J::expressions::ConditionalOrExpression)
+def test_simtl4j_expressions_conditionalorexpressionchild_is_not_abstract():
+    assert not inspect.isabstract(simTL4J_expressions_ConditionalOrExpressionChild)
 
 
-def test_simtl4j::expressions::conditionalorexpression_constructor_exists():
-    assert callable(simTL4J::expressions::ConditionalOrExpression.__init__)
+def test_simtl4j_expressions_conditionalorexpressionchild_constructor_exists():
+    assert callable(simTL4J_expressions_ConditionalOrExpressionChild.__init__)
 
 
-def test_simtl4j::expressions::conditionalorexpression_constructor_args():
-    sig = inspect.signature(simTL4J::expressions::ConditionalOrExpression.__init__)
+def test_simtl4j_expressions_conditionalorexpressionchild_constructor_args():
+    sig = inspect.signature(simTL4J_expressions_ConditionalOrExpressionChild.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -3523,170 +4121,170 @@ def test_assignmentoperator_constructor_args():
 
 
 
-def test_simtl4j::operators::assignmentexclusiveor_is_not_abstract():
-    assert not inspect.isabstract(simTL4J::operators::AssignmentExclusiveOr)
+def test_simtl4j_operators_assignmentminus_is_not_abstract():
+    assert not inspect.isabstract(simTL4J_operators_AssignmentMinus)
 
 
-def test_simtl4j::operators::assignmentexclusiveor_constructor_exists():
-    assert callable(simTL4J::operators::AssignmentExclusiveOr.__init__)
+def test_simtl4j_operators_assignmentminus_constructor_exists():
+    assert callable(simTL4J_operators_AssignmentMinus.__init__)
 
 
-def test_simtl4j::operators::assignmentexclusiveor_constructor_args():
-    sig = inspect.signature(simTL4J::operators::AssignmentExclusiveOr.__init__)
+def test_simtl4j_operators_assignmentminus_constructor_args():
+    sig = inspect.signature(simTL4J_operators_AssignmentMinus.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_simtl4j::operators::assignmentrightshift_is_not_abstract():
-    assert not inspect.isabstract(simTL4J::operators::AssignmentRightShift)
+def test_simtl4j_operators_assignmentmultiplication_is_not_abstract():
+    assert not inspect.isabstract(simTL4J_operators_AssignmentMultiplication)
 
 
-def test_simtl4j::operators::assignmentrightshift_constructor_exists():
-    assert callable(simTL4J::operators::AssignmentRightShift.__init__)
+def test_simtl4j_operators_assignmentmultiplication_constructor_exists():
+    assert callable(simTL4J_operators_AssignmentMultiplication.__init__)
 
 
-def test_simtl4j::operators::assignmentrightshift_constructor_args():
-    sig = inspect.signature(simTL4J::operators::AssignmentRightShift.__init__)
+def test_simtl4j_operators_assignmentmultiplication_constructor_args():
+    sig = inspect.signature(simTL4J_operators_AssignmentMultiplication.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_simtl4j::operators::assignmentunsignedrightshift_is_not_abstract():
-    assert not inspect.isabstract(simTL4J::operators::AssignmentUnsignedRightShift)
+def test_simtl4j_operators_assignmentrightshift_is_not_abstract():
+    assert not inspect.isabstract(simTL4J_operators_AssignmentRightShift)
 
 
-def test_simtl4j::operators::assignmentunsignedrightshift_constructor_exists():
-    assert callable(simTL4J::operators::AssignmentUnsignedRightShift.__init__)
+def test_simtl4j_operators_assignmentrightshift_constructor_exists():
+    assert callable(simTL4J_operators_AssignmentRightShift.__init__)
 
 
-def test_simtl4j::operators::assignmentunsignedrightshift_constructor_args():
-    sig = inspect.signature(simTL4J::operators::AssignmentUnsignedRightShift.__init__)
+def test_simtl4j_operators_assignmentrightshift_constructor_args():
+    sig = inspect.signature(simTL4J_operators_AssignmentRightShift.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_simtl4j::operators::assignmentminus_is_not_abstract():
-    assert not inspect.isabstract(simTL4J::operators::AssignmentMinus)
+def test_simtl4j_operators_assignmentplus_is_not_abstract():
+    assert not inspect.isabstract(simTL4J_operators_AssignmentPlus)
 
 
-def test_simtl4j::operators::assignmentminus_constructor_exists():
-    assert callable(simTL4J::operators::AssignmentMinus.__init__)
+def test_simtl4j_operators_assignmentplus_constructor_exists():
+    assert callable(simTL4J_operators_AssignmentPlus.__init__)
 
 
-def test_simtl4j::operators::assignmentminus_constructor_args():
-    sig = inspect.signature(simTL4J::operators::AssignmentMinus.__init__)
+def test_simtl4j_operators_assignmentplus_constructor_args():
+    sig = inspect.signature(simTL4J_operators_AssignmentPlus.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_simtl4j::operators::assignmentand_is_not_abstract():
-    assert not inspect.isabstract(simTL4J::operators::AssignmentAnd)
+def test_simtl4j_operators_assignmentor_is_not_abstract():
+    assert not inspect.isabstract(simTL4J_operators_AssignmentOr)
 
 
-def test_simtl4j::operators::assignmentand_constructor_exists():
-    assert callable(simTL4J::operators::AssignmentAnd.__init__)
+def test_simtl4j_operators_assignmentor_constructor_exists():
+    assert callable(simTL4J_operators_AssignmentOr.__init__)
 
 
-def test_simtl4j::operators::assignmentand_constructor_args():
-    sig = inspect.signature(simTL4J::operators::AssignmentAnd.__init__)
+def test_simtl4j_operators_assignmentor_constructor_args():
+    sig = inspect.signature(simTL4J_operators_AssignmentOr.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_simtl4j::operators::assignmentmultiplication_is_not_abstract():
-    assert not inspect.isabstract(simTL4J::operators::AssignmentMultiplication)
+def test_simtl4j_operators_assignmentexclusiveor_is_not_abstract():
+    assert not inspect.isabstract(simTL4J_operators_AssignmentExclusiveOr)
 
 
-def test_simtl4j::operators::assignmentmultiplication_constructor_exists():
-    assert callable(simTL4J::operators::AssignmentMultiplication.__init__)
+def test_simtl4j_operators_assignmentexclusiveor_constructor_exists():
+    assert callable(simTL4J_operators_AssignmentExclusiveOr.__init__)
 
 
-def test_simtl4j::operators::assignmentmultiplication_constructor_args():
-    sig = inspect.signature(simTL4J::operators::AssignmentMultiplication.__init__)
+def test_simtl4j_operators_assignmentexclusiveor_constructor_args():
+    sig = inspect.signature(simTL4J_operators_AssignmentExclusiveOr.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_simtl4j::operators::assignmentor_is_not_abstract():
-    assert not inspect.isabstract(simTL4J::operators::AssignmentOr)
+def test_simtl4j_operators_assignment_is_not_abstract():
+    assert not inspect.isabstract(simTL4J_operators_Assignment)
 
 
-def test_simtl4j::operators::assignmentor_constructor_exists():
-    assert callable(simTL4J::operators::AssignmentOr.__init__)
+def test_simtl4j_operators_assignment_constructor_exists():
+    assert callable(simTL4J_operators_Assignment.__init__)
 
 
-def test_simtl4j::operators::assignmentor_constructor_args():
-    sig = inspect.signature(simTL4J::operators::AssignmentOr.__init__)
+def test_simtl4j_operators_assignment_constructor_args():
+    sig = inspect.signature(simTL4J_operators_Assignment.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_simtl4j::operators::assignmentdivision_is_not_abstract():
-    assert not inspect.isabstract(simTL4J::operators::AssignmentDivision)
+def test_simtl4j_operators_assignmentmodulo_is_not_abstract():
+    assert not inspect.isabstract(simTL4J_operators_AssignmentModulo)
 
 
-def test_simtl4j::operators::assignmentdivision_constructor_exists():
-    assert callable(simTL4J::operators::AssignmentDivision.__init__)
+def test_simtl4j_operators_assignmentmodulo_constructor_exists():
+    assert callable(simTL4J_operators_AssignmentModulo.__init__)
 
 
-def test_simtl4j::operators::assignmentdivision_constructor_args():
-    sig = inspect.signature(simTL4J::operators::AssignmentDivision.__init__)
+def test_simtl4j_operators_assignmentmodulo_constructor_args():
+    sig = inspect.signature(simTL4J_operators_AssignmentModulo.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_simtl4j::operators::assignmentplus_is_not_abstract():
-    assert not inspect.isabstract(simTL4J::operators::AssignmentPlus)
+def test_simtl4j_operators_assignmentdivision_is_not_abstract():
+    assert not inspect.isabstract(simTL4J_operators_AssignmentDivision)
 
 
-def test_simtl4j::operators::assignmentplus_constructor_exists():
-    assert callable(simTL4J::operators::AssignmentPlus.__init__)
+def test_simtl4j_operators_assignmentdivision_constructor_exists():
+    assert callable(simTL4J_operators_AssignmentDivision.__init__)
 
 
-def test_simtl4j::operators::assignmentplus_constructor_args():
-    sig = inspect.signature(simTL4J::operators::AssignmentPlus.__init__)
+def test_simtl4j_operators_assignmentdivision_constructor_args():
+    sig = inspect.signature(simTL4J_operators_AssignmentDivision.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_simtl4j::operators::assignmentleftshift_is_not_abstract():
-    assert not inspect.isabstract(simTL4J::operators::AssignmentLeftShift)
+def test_simtl4j_operators_assignmentand_is_not_abstract():
+    assert not inspect.isabstract(simTL4J_operators_AssignmentAnd)
 
 
-def test_simtl4j::operators::assignmentleftshift_constructor_exists():
-    assert callable(simTL4J::operators::AssignmentLeftShift.__init__)
+def test_simtl4j_operators_assignmentand_constructor_exists():
+    assert callable(simTL4J_operators_AssignmentAnd.__init__)
 
 
-def test_simtl4j::operators::assignmentleftshift_constructor_args():
-    sig = inspect.signature(simTL4J::operators::AssignmentLeftShift.__init__)
+def test_simtl4j_operators_assignmentand_constructor_args():
+    sig = inspect.signature(simTL4J_operators_AssignmentAnd.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_simtl4j::operators::assignmentmodulo_is_not_abstract():
-    assert not inspect.isabstract(simTL4J::operators::AssignmentModulo)
+def test_simtl4j_operators_assignmentunsignedrightshift_is_not_abstract():
+    assert not inspect.isabstract(simTL4J_operators_AssignmentUnsignedRightShift)
 
 
-def test_simtl4j::operators::assignmentmodulo_constructor_exists():
-    assert callable(simTL4J::operators::AssignmentModulo.__init__)
+def test_simtl4j_operators_assignmentunsignedrightshift_constructor_exists():
+    assert callable(simTL4J_operators_AssignmentUnsignedRightShift.__init__)
 
 
-def test_simtl4j::operators::assignmentmodulo_constructor_args():
-    sig = inspect.signature(simTL4J::operators::AssignmentModulo.__init__)
+def test_simtl4j_operators_assignmentunsignedrightshift_constructor_args():
+    sig = inspect.signature(simTL4J_operators_AssignmentUnsignedRightShift.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_simtl4j::operators::assignment_is_not_abstract():
-    assert not inspect.isabstract(simTL4J::operators::Assignment)
+def test_simtl4j_operators_assignmentleftshift_is_not_abstract():
+    assert not inspect.isabstract(simTL4J_operators_AssignmentLeftShift)
 
 
-def test_simtl4j::operators::assignment_constructor_exists():
-    assert callable(simTL4J::operators::Assignment.__init__)
+def test_simtl4j_operators_assignmentleftshift_constructor_exists():
+    assert callable(simTL4J_operators_AssignmentLeftShift.__init__)
 
 
-def test_simtl4j::operators::assignment_constructor_args():
-    sig = inspect.signature(simTL4J::operators::Assignment.__init__)
+def test_simtl4j_operators_assignmentleftshift_constructor_args():
+    sig = inspect.signature(simTL4J_operators_AssignmentLeftShift.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -3705,30 +4303,30 @@ def test_assignmentexpressionchild_constructor_args():
 
 
 
-def test_simtl4j::expressions::conditionalexpressionchild_is_not_abstract():
-    assert not inspect.isabstract(simTL4J::expressions::ConditionalExpressionChild)
+def test_simtl4j_expressions_conditionalexpressionchild_is_not_abstract():
+    assert not inspect.isabstract(simTL4J_expressions_ConditionalExpressionChild)
 
 
-def test_simtl4j::expressions::conditionalexpressionchild_constructor_exists():
-    assert callable(simTL4J::expressions::ConditionalExpressionChild.__init__)
+def test_simtl4j_expressions_conditionalexpressionchild_constructor_exists():
+    assert callable(simTL4J_expressions_ConditionalExpressionChild.__init__)
 
 
-def test_simtl4j::expressions::conditionalexpressionchild_constructor_args():
-    sig = inspect.signature(simTL4J::expressions::ConditionalExpressionChild.__init__)
+def test_simtl4j_expressions_conditionalexpressionchild_constructor_args():
+    sig = inspect.signature(simTL4J_expressions_ConditionalExpressionChild.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_simtl4j::expressions::conditionalexpression_is_not_abstract():
-    assert not inspect.isabstract(simTL4J::expressions::ConditionalExpression)
+def test_simtl4j_expressions_conditionalexpression_is_not_abstract():
+    assert not inspect.isabstract(simTL4J_expressions_ConditionalExpression)
 
 
-def test_simtl4j::expressions::conditionalexpression_constructor_exists():
-    assert callable(simTL4J::expressions::ConditionalExpression.__init__)
+def test_simtl4j_expressions_conditionalexpression_constructor_exists():
+    assert callable(simTL4J_expressions_ConditionalExpression.__init__)
 
 
-def test_simtl4j::expressions::conditionalexpression_constructor_args():
-    sig = inspect.signature(simTL4J::expressions::ConditionalExpression.__init__)
+def test_simtl4j_expressions_conditionalexpression_constructor_args():
+    sig = inspect.signature(simTL4J_expressions_ConditionalExpression.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -3747,16 +4345,16 @@ def test_forloopinitializer_constructor_args():
 
 
 
-def test_simtl4j::expressions::expressionlist_is_not_abstract():
-    assert not inspect.isabstract(simTL4J::expressions::ExpressionList)
+def test_simtl4j_expressions_expressionlist_is_not_abstract():
+    assert not inspect.isabstract(simTL4J_expressions_ExpressionList)
 
 
-def test_simtl4j::expressions::expressionlist_constructor_exists():
-    assert callable(simTL4J::expressions::ExpressionList.__init__)
+def test_simtl4j_expressions_expressionlist_constructor_exists():
+    assert callable(simTL4J_expressions_ExpressionList.__init__)
 
 
-def test_simtl4j::expressions::expressionlist_constructor_args():
-    sig = inspect.signature(simTL4J::expressions::ExpressionList.__init__)
+def test_simtl4j_expressions_expressionlist_constructor_args():
+    sig = inspect.signature(simTL4J_expressions_ExpressionList.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -3775,58 +4373,58 @@ def test_javaroot_constructor_args():
 
 
 
-def test_simtl4j::containers::emptymodel_is_not_abstract():
-    assert not inspect.isabstract(simTL4J::containers::EmptyModel)
+def test_simtl4j_containers_emptymodel_is_not_abstract():
+    assert not inspect.isabstract(simTL4J_containers_EmptyModel)
 
 
-def test_simtl4j::containers::emptymodel_constructor_exists():
-    assert callable(simTL4J::containers::EmptyModel.__init__)
+def test_simtl4j_containers_emptymodel_constructor_exists():
+    assert callable(simTL4J_containers_EmptyModel.__init__)
 
 
-def test_simtl4j::containers::emptymodel_constructor_args():
-    sig = inspect.signature(simTL4J::containers::EmptyModel.__init__)
+def test_simtl4j_containers_emptymodel_constructor_args():
+    sig = inspect.signature(simTL4J_containers_EmptyModel.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_simtl4j::containers::compilationunit_is_not_abstract():
-    assert not inspect.isabstract(simTL4J::containers::CompilationUnit)
+def test_simtl4j_containers_compilationunit_is_not_abstract():
+    assert not inspect.isabstract(simTL4J_containers_CompilationUnit)
 
 
-def test_simtl4j::containers::compilationunit_constructor_exists():
-    assert callable(simTL4J::containers::CompilationUnit.__init__)
+def test_simtl4j_containers_compilationunit_constructor_exists():
+    assert callable(simTL4J_containers_CompilationUnit.__init__)
 
 
-def test_simtl4j::containers::compilationunit_constructor_args():
-    sig = inspect.signature(simTL4J::containers::CompilationUnit.__init__)
+def test_simtl4j_containers_compilationunit_constructor_args():
+    sig = inspect.signature(simTL4J_containers_CompilationUnit.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_imports::importingelement_is_not_abstract():
-    assert not inspect.isabstract(imports::ImportingElement)
+def test_imports_importingelement_is_not_abstract():
+    assert not inspect.isabstract(imports_ImportingElement)
 
 
-def test_imports::importingelement_constructor_exists():
-    assert callable(imports::ImportingElement.__init__)
+def test_imports_importingelement_constructor_exists():
+    assert callable(imports_ImportingElement.__init__)
 
 
-def test_imports::importingelement_constructor_args():
-    sig = inspect.signature(imports::ImportingElement.__init__)
+def test_imports_importingelement_constructor_args():
+    sig = inspect.signature(imports_ImportingElement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_commons::namedelement_is_not_abstract():
-    assert not inspect.isabstract(commons::NamedElement)
+def test_commons_namedelement_is_not_abstract():
+    assert not inspect.isabstract(commons_NamedElement)
 
 
-def test_commons::namedelement_constructor_exists():
-    assert callable(commons::NamedElement.__init__)
+def test_commons_namedelement_constructor_exists():
+    assert callable(commons_NamedElement.__init__)
 
 
-def test_commons::namedelement_constructor_args():
-    sig = inspect.signature(commons::NamedElement.__init__)
+def test_commons_namedelement_constructor_args():
+    sig = inspect.signature(commons_NamedElement.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -3845,23 +4443,23 @@ def test_tplaceholder_constructor_args():
 
 
 
-def test_simtl4j::commons::commentable_is_not_abstract():
-    assert not inspect.isabstract(simTL4J::commons::Commentable)
+def test_simtl4j_commons_commentable_is_not_abstract():
+    assert not inspect.isabstract(simTL4J_commons_Commentable)
 
 
-def test_simtl4j::commons::commentable_constructor_exists():
-    assert callable(simTL4J::commons::Commentable.__init__)
+def test_simtl4j_commons_commentable_constructor_exists():
+    assert callable(simTL4J_commons_Commentable.__init__)
 
 
-def test_simtl4j::commons::commentable_constructor_args():
-    sig = inspect.signature(simTL4J::commons::Commentable.__init__)
+def test_simtl4j_commons_commentable_constructor_args():
+    sig = inspect.signature(simTL4J_commons_Commentable.__init__)
     params = list(sig.parameters.keys())
     assert "comments" in params, "Missing parameter 'comments'"
 
-def test_simtl4j::commons::commentable_has_comments():
-    assert hasattr(simTL4J::commons::Commentable, "comments")
+def test_simtl4j_commons_commentable_has_comments():
+    assert hasattr(simTL4J_commons_Commentable, "comments")
     descriptor = None
-    for klass in simTL4J::commons::Commentable.__mro__:
+    for klass in simTL4J_commons_Commentable.__mro__:
         if "comments" in klass.__dict__:
             descriptor = klass.__dict__["comments"]
             break
@@ -3869,44 +4467,44 @@ def test_simtl4j::commons::commentable_has_comments():
 
 
 
-def test_classifiers::implementor_is_not_abstract():
-    assert not inspect.isabstract(classifiers::Implementor)
+def test_classifiers_implementor_is_not_abstract():
+    assert not inspect.isabstract(classifiers_Implementor)
 
 
-def test_classifiers::implementor_constructor_exists():
-    assert callable(classifiers::Implementor.__init__)
+def test_classifiers_implementor_constructor_exists():
+    assert callable(classifiers_Implementor.__init__)
 
 
-def test_classifiers::implementor_constructor_args():
-    sig = inspect.signature(classifiers::Implementor.__init__)
+def test_classifiers_implementor_constructor_args():
+    sig = inspect.signature(classifiers_Implementor.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_classifiers::concreteclassifier_is_not_abstract():
-    assert not inspect.isabstract(classifiers::ConcreteClassifier)
+def test_classifiers_concreteclassifier_is_not_abstract():
+    assert not inspect.isabstract(classifiers_ConcreteClassifier)
 
 
-def test_classifiers::concreteclassifier_constructor_exists():
-    assert callable(classifiers::ConcreteClassifier.__init__)
+def test_classifiers_concreteclassifier_constructor_exists():
+    assert callable(classifiers_ConcreteClassifier.__init__)
 
 
-def test_classifiers::concreteclassifier_constructor_args():
-    sig = inspect.signature(classifiers::ConcreteClassifier.__init__)
+def test_classifiers_concreteclassifier_constructor_args():
+    sig = inspect.signature(classifiers_ConcreteClassifier.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_simtl4j::classifiers::class_is_not_abstract():
-    assert not inspect.isabstract(simTL4J::classifiers::Class)
+def test_simtl4j_classifiers_class_is_not_abstract():
+    assert not inspect.isabstract(simTL4J_classifiers_Class)
 
 
-def test_simtl4j::classifiers::class_constructor_exists():
-    assert callable(simTL4J::classifiers::Class.__init__)
+def test_simtl4j_classifiers_class_constructor_exists():
+    assert callable(simTL4J_classifiers_Class.__init__)
 
 
-def test_simtl4j::classifiers::class_constructor_args():
-    sig = inspect.signature(simTL4J::classifiers::Class.__init__)
+def test_simtl4j_classifiers_class_constructor_args():
+    sig = inspect.signature(simTL4J_classifiers_Class.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -3939,16 +4537,16 @@ def test_enumconstant_constructor_args():
 
 
 
-def test_simtl4j::classifiers::enumeration_is_not_abstract():
-    assert not inspect.isabstract(simTL4J::classifiers::Enumeration)
+def test_simtl4j_classifiers_enumeration_is_not_abstract():
+    assert not inspect.isabstract(simTL4J_classifiers_Enumeration)
 
 
-def test_simtl4j::classifiers::enumeration_constructor_exists():
-    assert callable(simTL4J::classifiers::Enumeration.__init__)
+def test_simtl4j_classifiers_enumeration_constructor_exists():
+    assert callable(simTL4J_classifiers_Enumeration.__init__)
 
 
-def test_simtl4j::classifiers::enumeration_constructor_args():
-    sig = inspect.signature(simTL4J::classifiers::Enumeration.__init__)
+def test_simtl4j_classifiers_enumeration_constructor_args():
+    sig = inspect.signature(simTL4J_classifiers_Enumeration.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -3967,114 +4565,114 @@ def test_concreteclassifier_constructor_args():
 
 
 
-def test_simtl4j::classifiers::annotation_is_not_abstract():
-    assert not inspect.isabstract(simTL4J::classifiers::Annotation)
+def test_simtl4j_classifiers_annotation_is_not_abstract():
+    assert not inspect.isabstract(simTL4J_classifiers_Annotation)
 
 
-def test_simtl4j::classifiers::annotation_constructor_exists():
-    assert callable(simTL4J::classifiers::Annotation.__init__)
+def test_simtl4j_classifiers_annotation_constructor_exists():
+    assert callable(simTL4J_classifiers_Annotation.__init__)
 
 
-def test_simtl4j::classifiers::annotation_constructor_args():
-    sig = inspect.signature(simTL4J::classifiers::Annotation.__init__)
+def test_simtl4j_classifiers_annotation_constructor_args():
+    sig = inspect.signature(simTL4J_classifiers_Annotation.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_simtl4j::classifiers::interface_is_not_abstract():
-    assert not inspect.isabstract(simTL4J::classifiers::Interface)
+def test_simtl4j_classifiers_interface_is_not_abstract():
+    assert not inspect.isabstract(simTL4J_classifiers_Interface)
 
 
-def test_simtl4j::classifiers::interface_constructor_exists():
-    assert callable(simTL4J::classifiers::Interface.__init__)
+def test_simtl4j_classifiers_interface_constructor_exists():
+    assert callable(simTL4J_classifiers_Interface.__init__)
 
 
-def test_simtl4j::classifiers::interface_constructor_args():
-    sig = inspect.signature(simTL4J::classifiers::Interface.__init__)
+def test_simtl4j_classifiers_interface_constructor_args():
+    sig = inspect.signature(simTL4J_classifiers_Interface.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_arrays::arraytypeable_is_not_abstract():
-    assert not inspect.isabstract(arrays::ArrayTypeable)
+def test_arrays_arraytypeable_is_not_abstract():
+    assert not inspect.isabstract(arrays_ArrayTypeable)
 
 
-def test_arrays::arraytypeable_constructor_exists():
-    assert callable(arrays::ArrayTypeable.__init__)
+def test_arrays_arraytypeable_constructor_exists():
+    assert callable(arrays_ArrayTypeable.__init__)
 
 
-def test_arrays::arraytypeable_constructor_args():
-    sig = inspect.signature(arrays::ArrayTypeable.__init__)
+def test_arrays_arraytypeable_constructor_args():
+    sig = inspect.signature(arrays_ArrayTypeable.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_types::typedelement_is_not_abstract():
-    assert not inspect.isabstract(types::TypedElement)
+def test_types_typedelement_is_not_abstract():
+    assert not inspect.isabstract(types_TypedElement)
 
 
-def test_types::typedelement_constructor_exists():
-    assert callable(types::TypedElement.__init__)
+def test_types_typedelement_constructor_exists():
+    assert callable(types_TypedElement.__init__)
 
 
-def test_types::typedelement_constructor_args():
-    sig = inspect.signature(types::TypedElement.__init__)
+def test_types_typedelement_constructor_args():
+    sig = inspect.signature(types_TypedElement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_simtl4j::expressions::castexpression_is_not_abstract():
-    assert not inspect.isabstract(simTL4J::expressions::CastExpression)
+def test_simtl4j_expressions_castexpression_is_not_abstract():
+    assert not inspect.isabstract(simTL4J_expressions_CastExpression)
 
 
-def test_simtl4j::expressions::castexpression_constructor_exists():
-    assert callable(simTL4J::expressions::CastExpression.__init__)
+def test_simtl4j_expressions_castexpression_constructor_exists():
+    assert callable(simTL4J_expressions_CastExpression.__init__)
 
 
-def test_simtl4j::expressions::castexpression_constructor_args():
-    sig = inspect.signature(simTL4J::expressions::CastExpression.__init__)
+def test_simtl4j_expressions_castexpression_constructor_args():
+    sig = inspect.signature(simTL4J_expressions_CastExpression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_simtl4j::expressions::instanceofexpression_is_not_abstract():
-    assert not inspect.isabstract(simTL4J::expressions::InstanceOfExpression)
+def test_simtl4j_expressions_instanceofexpression_is_not_abstract():
+    assert not inspect.isabstract(simTL4J_expressions_InstanceOfExpression)
 
 
-def test_simtl4j::expressions::instanceofexpression_constructor_exists():
-    assert callable(simTL4J::expressions::InstanceOfExpression.__init__)
+def test_simtl4j_expressions_instanceofexpression_constructor_exists():
+    assert callable(simTL4J_expressions_InstanceOfExpression.__init__)
 
 
-def test_simtl4j::expressions::instanceofexpression_constructor_args():
-    sig = inspect.signature(simTL4J::expressions::InstanceOfExpression.__init__)
+def test_simtl4j_expressions_instanceofexpression_constructor_args():
+    sig = inspect.signature(simTL4J_expressions_InstanceOfExpression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_simtl4j::generics::qualifiedtypeargument_is_not_abstract():
-    assert not inspect.isabstract(simTL4J::generics::QualifiedTypeArgument)
+def test_simtl4j_generics_qualifiedtypeargument_is_not_abstract():
+    assert not inspect.isabstract(simTL4J_generics_QualifiedTypeArgument)
 
 
-def test_simtl4j::generics::qualifiedtypeargument_constructor_exists():
-    assert callable(simTL4J::generics::QualifiedTypeArgument.__init__)
+def test_simtl4j_generics_qualifiedtypeargument_constructor_exists():
+    assert callable(simTL4J_generics_QualifiedTypeArgument.__init__)
 
 
-def test_simtl4j::generics::qualifiedtypeargument_constructor_args():
-    sig = inspect.signature(simTL4J::generics::QualifiedTypeArgument.__init__)
+def test_simtl4j_generics_qualifiedtypeargument_constructor_args():
+    sig = inspect.signature(simTL4J_generics_QualifiedTypeArgument.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_expressions::expression_is_not_abstract():
-    assert not inspect.isabstract(expressions::Expression)
+def test_expressions_expression_is_not_abstract():
+    assert not inspect.isabstract(expressions_Expression)
 
 
-def test_expressions::expression_constructor_exists():
-    assert callable(expressions::Expression.__init__)
+def test_expressions_expression_constructor_exists():
+    assert callable(expressions_Expression.__init__)
 
 
-def test_expressions::expression_constructor_args():
-    sig = inspect.signature(expressions::Expression.__init__)
+def test_expressions_expression_constructor_args():
+    sig = inspect.signature(expressions_Expression.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -4093,387 +4691,387 @@ def test_arrayinitializationvalue_constructor_args():
 
 
 
-def test_annotations::annotationvalue_is_not_abstract():
-    assert not inspect.isabstract(annotations::AnnotationValue)
+def test_annotations_annotationvalue_is_not_abstract():
+    assert not inspect.isabstract(annotations_AnnotationValue)
 
 
-def test_annotations::annotationvalue_constructor_exists():
-    assert callable(annotations::AnnotationValue.__init__)
+def test_annotations_annotationvalue_constructor_exists():
+    assert callable(annotations_AnnotationValue.__init__)
 
 
-def test_annotations::annotationvalue_constructor_args():
-    sig = inspect.signature(annotations::AnnotationValue.__init__)
+def test_annotations_annotationvalue_constructor_args():
+    sig = inspect.signature(annotations_AnnotationValue.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_arrays::arrayinitializationvalue_is_not_abstract():
-    assert not inspect.isabstract(arrays::ArrayInitializationValue)
+def test_arrays_arrayinitializationvalue_is_not_abstract():
+    assert not inspect.isabstract(arrays_ArrayInitializationValue)
 
 
-def test_arrays::arrayinitializationvalue_constructor_exists():
-    assert callable(arrays::ArrayInitializationValue.__init__)
+def test_arrays_arrayinitializationvalue_constructor_exists():
+    assert callable(arrays_ArrayInitializationValue.__init__)
 
 
-def test_arrays::arrayinitializationvalue_constructor_args():
-    sig = inspect.signature(arrays::ArrayInitializationValue.__init__)
+def test_arrays_arrayinitializationvalue_constructor_args():
+    sig = inspect.signature(arrays_ArrayInitializationValue.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_simtl4j::expressions::expression_is_not_abstract():
-    assert not inspect.isabstract(simTL4J::expressions::Expression)
+def test_simtl4j_expressions_expression_is_not_abstract():
+    assert not inspect.isabstract(simTL4J_expressions_Expression)
 
 
-def test_simtl4j::expressions::expression_constructor_exists():
-    assert callable(simTL4J::expressions::Expression.__init__)
+def test_simtl4j_expressions_expression_constructor_exists():
+    assert callable(simTL4J_expressions_Expression.__init__)
 
 
-def test_simtl4j::expressions::expression_constructor_args():
-    sig = inspect.signature(simTL4J::expressions::Expression.__init__)
+def test_simtl4j_expressions_expression_constructor_args():
+    sig = inspect.signature(simTL4J_expressions_Expression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_simtl4j::arrays::arrayinitializer_is_not_abstract():
-    assert not inspect.isabstract(simTL4J::arrays::ArrayInitializer)
+def test_simtl4j_arrays_arrayinitializer_is_not_abstract():
+    assert not inspect.isabstract(simTL4J_arrays_ArrayInitializer)
 
 
-def test_simtl4j::arrays::arrayinitializer_constructor_exists():
-    assert callable(simTL4J::arrays::ArrayInitializer.__init__)
+def test_simtl4j_arrays_arrayinitializer_constructor_exists():
+    assert callable(simTL4J_arrays_ArrayInitializer.__init__)
 
 
-def test_simtl4j::arrays::arrayinitializer_constructor_args():
-    sig = inspect.signature(simTL4J::arrays::ArrayInitializer.__init__)
+def test_simtl4j_arrays_arrayinitializer_constructor_args():
+    sig = inspect.signature(simTL4J_arrays_ArrayInitializer.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_modifiers::annotableandmodifiable_is_not_abstract():
-    assert not inspect.isabstract(modifiers::AnnotableAndModifiable)
+def test_modifiers_annotableandmodifiable_is_not_abstract():
+    assert not inspect.isabstract(modifiers_AnnotableAndModifiable)
 
 
-def test_modifiers::annotableandmodifiable_constructor_exists():
-    assert callable(modifiers::AnnotableAndModifiable.__init__)
+def test_modifiers_annotableandmodifiable_constructor_exists():
+    assert callable(modifiers_AnnotableAndModifiable.__init__)
 
 
-def test_modifiers::annotableandmodifiable_constructor_args():
-    sig = inspect.signature(modifiers::AnnotableAndModifiable.__init__)
+def test_modifiers_annotableandmodifiable_constructor_args():
+    sig = inspect.signature(modifiers_AnnotableAndModifiable.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_simtl4j::variables::localvariable_is_not_abstract():
-    assert not inspect.isabstract(simTL4J::variables::LocalVariable)
+def test_simtl4j_variables_localvariable_is_not_abstract():
+    assert not inspect.isabstract(simTL4J_variables_LocalVariable)
 
 
-def test_simtl4j::variables::localvariable_constructor_exists():
-    assert callable(simTL4J::variables::LocalVariable.__init__)
+def test_simtl4j_variables_localvariable_constructor_exists():
+    assert callable(simTL4J_variables_LocalVariable.__init__)
 
 
-def test_simtl4j::variables::localvariable_constructor_args():
-    sig = inspect.signature(simTL4J::variables::LocalVariable.__init__)
+def test_simtl4j_variables_localvariable_constructor_args():
+    sig = inspect.signature(simTL4J_variables_LocalVariable.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_simtl4j::parameters::parameter_is_not_abstract():
-    assert not inspect.isabstract(simTL4J::parameters::Parameter)
+def test_simtl4j_parameters_parameter_is_not_abstract():
+    assert not inspect.isabstract(simTL4J_parameters_Parameter)
 
 
-def test_simtl4j::parameters::parameter_constructor_exists():
-    assert callable(simTL4J::parameters::Parameter.__init__)
+def test_simtl4j_parameters_parameter_constructor_exists():
+    assert callable(simTL4J_parameters_Parameter.__init__)
 
 
-def test_simtl4j::parameters::parameter_constructor_args():
-    sig = inspect.signature(simTL4J::parameters::Parameter.__init__)
+def test_simtl4j_parameters_parameter_constructor_args():
+    sig = inspect.signature(simTL4J_parameters_Parameter.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_statements::statement_is_not_abstract():
-    assert not inspect.isabstract(statements::Statement)
+def test_statements_statement_is_not_abstract():
+    assert not inspect.isabstract(statements_Statement)
 
 
-def test_statements::statement_constructor_exists():
-    assert callable(statements::Statement.__init__)
+def test_statements_statement_constructor_exists():
+    assert callable(statements_Statement.__init__)
 
 
-def test_statements::statement_constructor_args():
-    sig = inspect.signature(statements::Statement.__init__)
+def test_statements_statement_constructor_args():
+    sig = inspect.signature(statements_Statement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_simtl4j::simtl::tfor::statementlistcontainer_is_not_abstract():
-    assert not inspect.isabstract(simTL4J::simTL::TFor::StatementListContainer)
+def test_simtl4j_statements_assert_is_not_abstract():
+    assert not inspect.isabstract(simTL4J_statements_Assert)
 
 
-def test_simtl4j::simtl::tfor::statementlistcontainer_constructor_exists():
-    assert callable(simTL4J::simTL::TFor::StatementListContainer.__init__)
+def test_simtl4j_statements_assert_constructor_exists():
+    assert callable(simTL4J_statements_Assert.__init__)
 
 
-def test_simtl4j::simtl::tfor::statementlistcontainer_constructor_args():
-    sig = inspect.signature(simTL4J::simTL::TFor::StatementListContainer.__init__)
+def test_simtl4j_statements_assert_constructor_args():
+    sig = inspect.signature(simTL4J_statements_Assert.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_simtl4j::statements::forloop_is_not_abstract():
-    assert not inspect.isabstract(simTL4J::statements::ForLoop)
+def test_simtl4j_simtl_tfor_statementlistcontainer_is_not_abstract():
+    assert not inspect.isabstract(simTL4J_simTL_TFor_StatementListContainer)
 
 
-def test_simtl4j::statements::forloop_constructor_exists():
-    assert callable(simTL4J::statements::ForLoop.__init__)
+def test_simtl4j_simtl_tfor_statementlistcontainer_constructor_exists():
+    assert callable(simTL4J_simTL_TFor_StatementListContainer.__init__)
 
 
-def test_simtl4j::statements::forloop_constructor_args():
-    sig = inspect.signature(simTL4J::statements::ForLoop.__init__)
+def test_simtl4j_simtl_tfor_statementlistcontainer_constructor_args():
+    sig = inspect.signature(simTL4J_simTL_TFor_StatementListContainer.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_simtl4j::statements::foreachloop_is_not_abstract():
-    assert not inspect.isabstract(simTL4J::statements::ForEachLoop)
+def test_simtl4j_statements_whileloop_is_not_abstract():
+    assert not inspect.isabstract(simTL4J_statements_WhileLoop)
 
 
-def test_simtl4j::statements::foreachloop_constructor_exists():
-    assert callable(simTL4J::statements::ForEachLoop.__init__)
+def test_simtl4j_statements_whileloop_constructor_exists():
+    assert callable(simTL4J_statements_WhileLoop.__init__)
 
 
-def test_simtl4j::statements::foreachloop_constructor_args():
-    sig = inspect.signature(simTL4J::statements::ForEachLoop.__init__)
+def test_simtl4j_statements_whileloop_constructor_args():
+    sig = inspect.signature(simTL4J_statements_WhileLoop.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_simtl4j::statements::assert_is_not_abstract():
-    assert not inspect.isabstract(simTL4J::statements::Assert)
+def test_simtl4j_statements_synchronizedblock_is_not_abstract():
+    assert not inspect.isabstract(simTL4J_statements_SynchronizedBlock)
 
 
-def test_simtl4j::statements::assert_constructor_exists():
-    assert callable(simTL4J::statements::Assert.__init__)
+def test_simtl4j_statements_synchronizedblock_constructor_exists():
+    assert callable(simTL4J_statements_SynchronizedBlock.__init__)
 
 
-def test_simtl4j::statements::assert_constructor_args():
-    sig = inspect.signature(simTL4J::statements::Assert.__init__)
+def test_simtl4j_statements_synchronizedblock_constructor_args():
+    sig = inspect.signature(simTL4J_statements_SynchronizedBlock.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_simtl4j::statements::tryblock_is_not_abstract():
-    assert not inspect.isabstract(simTL4J::statements::TryBlock)
+def test_simtl4j_simtl_tif_statementlistcontainer_is_not_abstract():
+    assert not inspect.isabstract(simTL4J_simTL_TIf_StatementListContainer)
 
 
-def test_simtl4j::statements::tryblock_constructor_exists():
-    assert callable(simTL4J::statements::TryBlock.__init__)
+def test_simtl4j_simtl_tif_statementlistcontainer_constructor_exists():
+    assert callable(simTL4J_simTL_TIf_StatementListContainer.__init__)
 
 
-def test_simtl4j::statements::tryblock_constructor_args():
-    sig = inspect.signature(simTL4J::statements::TryBlock.__init__)
+def test_simtl4j_simtl_tif_statementlistcontainer_constructor_args():
+    sig = inspect.signature(simTL4J_simTL_TIf_StatementListContainer.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_simtl4j::statements::condition_is_not_abstract():
-    assert not inspect.isabstract(simTL4J::statements::Condition)
+def test_simtl4j_statements_jumplabel_is_not_abstract():
+    assert not inspect.isabstract(simTL4J_statements_JumpLabel)
 
 
-def test_simtl4j::statements::condition_constructor_exists():
-    assert callable(simTL4J::statements::Condition.__init__)
+def test_simtl4j_statements_jumplabel_constructor_exists():
+    assert callable(simTL4J_statements_JumpLabel.__init__)
 
 
-def test_simtl4j::statements::condition_constructor_args():
-    sig = inspect.signature(simTL4J::statements::Condition.__init__)
+def test_simtl4j_statements_jumplabel_constructor_args():
+    sig = inspect.signature(simTL4J_statements_JumpLabel.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_simtl4j::statements::synchronizedblock_is_not_abstract():
-    assert not inspect.isabstract(simTL4J::statements::SynchronizedBlock)
+def test_simtl4j_statements_condition_is_not_abstract():
+    assert not inspect.isabstract(simTL4J_statements_Condition)
 
 
-def test_simtl4j::statements::synchronizedblock_constructor_exists():
-    assert callable(simTL4J::statements::SynchronizedBlock.__init__)
+def test_simtl4j_statements_condition_constructor_exists():
+    assert callable(simTL4J_statements_Condition.__init__)
 
 
-def test_simtl4j::statements::synchronizedblock_constructor_args():
-    sig = inspect.signature(simTL4J::statements::SynchronizedBlock.__init__)
+def test_simtl4j_statements_condition_constructor_args():
+    sig = inspect.signature(simTL4J_statements_Condition.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_simtl4j::simtl::tif::statementlistcontainer_is_not_abstract():
-    assert not inspect.isabstract(simTL4J::simTL::TIf::StatementListContainer)
+def test_simtl4j_statements_foreachloop_is_not_abstract():
+    assert not inspect.isabstract(simTL4J_statements_ForEachLoop)
 
 
-def test_simtl4j::simtl::tif::statementlistcontainer_constructor_exists():
-    assert callable(simTL4J::simTL::TIf::StatementListContainer.__init__)
+def test_simtl4j_statements_foreachloop_constructor_exists():
+    assert callable(simTL4J_statements_ForEachLoop.__init__)
 
 
-def test_simtl4j::simtl::tif::statementlistcontainer_constructor_args():
-    sig = inspect.signature(simTL4J::simTL::TIf::StatementListContainer.__init__)
+def test_simtl4j_statements_foreachloop_constructor_args():
+    sig = inspect.signature(simTL4J_statements_ForEachLoop.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_simtl4j::statements::whileloop_is_not_abstract():
-    assert not inspect.isabstract(simTL4J::statements::WhileLoop)
+def test_simtl4j_statements_forloop_is_not_abstract():
+    assert not inspect.isabstract(simTL4J_statements_ForLoop)
 
 
-def test_simtl4j::statements::whileloop_constructor_exists():
-    assert callable(simTL4J::statements::WhileLoop.__init__)
+def test_simtl4j_statements_forloop_constructor_exists():
+    assert callable(simTL4J_statements_ForLoop.__init__)
 
 
-def test_simtl4j::statements::whileloop_constructor_args():
-    sig = inspect.signature(simTL4J::statements::WhileLoop.__init__)
+def test_simtl4j_statements_forloop_constructor_args():
+    sig = inspect.signature(simTL4J_statements_ForLoop.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_simtl4j::statements::jumplabel_is_not_abstract():
-    assert not inspect.isabstract(simTL4J::statements::JumpLabel)
+def test_simtl4j_statements_tryblock_is_not_abstract():
+    assert not inspect.isabstract(simTL4J_statements_TryBlock)
 
 
-def test_simtl4j::statements::jumplabel_constructor_exists():
-    assert callable(simTL4J::statements::JumpLabel.__init__)
+def test_simtl4j_statements_tryblock_constructor_exists():
+    assert callable(simTL4J_statements_TryBlock.__init__)
 
 
-def test_simtl4j::statements::jumplabel_constructor_args():
-    sig = inspect.signature(simTL4J::statements::JumpLabel.__init__)
+def test_simtl4j_statements_tryblock_constructor_args():
+    sig = inspect.signature(simTL4J_statements_TryBlock.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_members::member_is_not_abstract():
-    assert not inspect.isabstract(members::Member)
+def test_members_member_is_not_abstract():
+    assert not inspect.isabstract(members_Member)
 
 
-def test_members::member_constructor_exists():
-    assert callable(members::Member.__init__)
+def test_members_member_constructor_exists():
+    assert callable(members_Member.__init__)
 
 
-def test_members::member_constructor_args():
-    sig = inspect.signature(members::Member.__init__)
+def test_members_member_constructor_args():
+    sig = inspect.signature(members_Member.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_simtl4j::statements::block_is_not_abstract():
-    assert not inspect.isabstract(simTL4J::statements::Block)
+def test_simtl4j_statements_block_is_not_abstract():
+    assert not inspect.isabstract(simTL4J_statements_Block)
 
 
-def test_simtl4j::statements::block_constructor_exists():
-    assert callable(simTL4J::statements::Block.__init__)
+def test_simtl4j_statements_block_constructor_exists():
+    assert callable(simTL4J_statements_Block.__init__)
 
 
-def test_simtl4j::statements::block_constructor_args():
-    sig = inspect.signature(simTL4J::statements::Block.__init__)
+def test_simtl4j_statements_block_constructor_args():
+    sig = inspect.signature(simTL4J_statements_Block.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_members::membercontainer_is_not_abstract():
-    assert not inspect.isabstract(members::MemberContainer)
+def test_members_membercontainer_is_not_abstract():
+    assert not inspect.isabstract(members_MemberContainer)
 
 
-def test_members::membercontainer_constructor_exists():
-    assert callable(members::MemberContainer.__init__)
+def test_members_membercontainer_constructor_exists():
+    assert callable(members_MemberContainer.__init__)
 
 
-def test_members::membercontainer_constructor_args():
-    sig = inspect.signature(members::MemberContainer.__init__)
+def test_members_membercontainer_constructor_args():
+    sig = inspect.signature(members_MemberContainer.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_simtl4j::simtl::tfor::membercontainer_is_not_abstract():
-    assert not inspect.isabstract(simTL4J::simTL::TFor::MemberContainer)
+def test_simtl4j_simtl_tif_membercontainer_is_not_abstract():
+    assert not inspect.isabstract(simTL4J_simTL_TIf_MemberContainer)
 
 
-def test_simtl4j::simtl::tfor::membercontainer_constructor_exists():
-    assert callable(simTL4J::simTL::TFor::MemberContainer.__init__)
+def test_simtl4j_simtl_tif_membercontainer_constructor_exists():
+    assert callable(simTL4J_simTL_TIf_MemberContainer.__init__)
 
 
-def test_simtl4j::simtl::tfor::membercontainer_constructor_args():
-    sig = inspect.signature(simTL4J::simTL::TFor::MemberContainer.__init__)
+def test_simtl4j_simtl_tif_membercontainer_constructor_args():
+    sig = inspect.signature(simTL4J_simTL_TIf_MemberContainer.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_simtl4j::simtl::tif::membercontainer_is_not_abstract():
-    assert not inspect.isabstract(simTL4J::simTL::TIf::MemberContainer)
+def test_simtl4j_simtl_tfor_membercontainer_is_not_abstract():
+    assert not inspect.isabstract(simTL4J_simTL_TFor_MemberContainer)
 
 
-def test_simtl4j::simtl::tif::membercontainer_constructor_exists():
-    assert callable(simTL4J::simTL::TIf::MemberContainer.__init__)
+def test_simtl4j_simtl_tfor_membercontainer_constructor_exists():
+    assert callable(simTL4J_simTL_TFor_MemberContainer.__init__)
 
 
-def test_simtl4j::simtl::tif::membercontainer_constructor_args():
-    sig = inspect.signature(simTL4J::simTL::TIf::MemberContainer.__init__)
+def test_simtl4j_simtl_tfor_membercontainer_constructor_args():
+    sig = inspect.signature(simTL4J_simTL_TFor_MemberContainer.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_generics::typeparametrizable_is_not_abstract():
-    assert not inspect.isabstract(generics::TypeParametrizable)
+def test_generics_typeparametrizable_is_not_abstract():
+    assert not inspect.isabstract(generics_TypeParametrizable)
 
 
-def test_generics::typeparametrizable_constructor_exists():
-    assert callable(generics::TypeParametrizable.__init__)
+def test_generics_typeparametrizable_constructor_exists():
+    assert callable(generics_TypeParametrizable.__init__)
 
 
-def test_generics::typeparametrizable_constructor_args():
-    sig = inspect.signature(generics::TypeParametrizable.__init__)
+def test_generics_typeparametrizable_constructor_args():
+    sig = inspect.signature(generics_TypeParametrizable.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_simtl4j::members::constructor_is_not_abstract():
-    assert not inspect.isabstract(simTL4J::members::Constructor)
+def test_simtl4j_members_constructor_is_not_abstract():
+    assert not inspect.isabstract(simTL4J_members_Constructor)
 
 
-def test_simtl4j::members::constructor_constructor_exists():
-    assert callable(simTL4J::members::Constructor.__init__)
+def test_simtl4j_members_constructor_constructor_exists():
+    assert callable(simTL4J_members_Constructor.__init__)
 
 
-def test_simtl4j::members::constructor_constructor_args():
-    sig = inspect.signature(simTL4J::members::Constructor.__init__)
+def test_simtl4j_members_constructor_constructor_args():
+    sig = inspect.signature(simTL4J_members_Constructor.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_classifiers::classifier_is_not_abstract():
-    assert not inspect.isabstract(classifiers::Classifier)
+def test_classifiers_classifier_is_not_abstract():
+    assert not inspect.isabstract(classifiers_Classifier)
 
 
-def test_classifiers::classifier_constructor_exists():
-    assert callable(classifiers::Classifier.__init__)
+def test_classifiers_classifier_constructor_exists():
+    assert callable(classifiers_Classifier.__init__)
 
 
-def test_classifiers::classifier_constructor_args():
-    sig = inspect.signature(classifiers::Classifier.__init__)
+def test_classifiers_classifier_constructor_args():
+    sig = inspect.signature(classifiers_Classifier.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_simtl4j::classifiers::concreteclassifier_is_not_abstract():
-    assert not inspect.isabstract(simTL4J::classifiers::ConcreteClassifier)
+def test_simtl4j_classifiers_concreteclassifier_is_not_abstract():
+    assert not inspect.isabstract(simTL4J_classifiers_ConcreteClassifier)
 
 
-def test_simtl4j::classifiers::concreteclassifier_constructor_exists():
-    assert callable(simTL4J::classifiers::ConcreteClassifier.__init__)
+def test_simtl4j_classifiers_concreteclassifier_constructor_exists():
+    assert callable(simTL4J_classifiers_ConcreteClassifier.__init__)
 
 
-def test_simtl4j::classifiers::concreteclassifier_constructor_args():
-    sig = inspect.signature(simTL4J::classifiers::ConcreteClassifier.__init__)
+def test_simtl4j_classifiers_concreteclassifier_constructor_args():
+    sig = inspect.signature(simTL4J_classifiers_ConcreteClassifier.__init__)
     params = list(sig.parameters.keys())
     assert "fullName" in params, "Missing parameter 'fullName'"
 
-def test_simtl4j::classifiers::concreteclassifier_has_fullName():
-    assert hasattr(simTL4J::classifiers::ConcreteClassifier, "fullName")
+def test_simtl4j_classifiers_concreteclassifier_has_fullName():
+    assert hasattr(simTL4J_classifiers_ConcreteClassifier, "fullName")
     descriptor = None
-    for klass in simTL4J::classifiers::ConcreteClassifier.__mro__:
+    for klass in simTL4J_classifiers_ConcreteClassifier.__mro__:
         if "fullName" in klass.__dict__:
             descriptor = klass.__dict__["fullName"]
             break
@@ -4481,170 +5079,170 @@ def test_simtl4j::classifiers::concreteclassifier_has_fullName():
 
 
 
-def test_references::referenceableelement_is_not_abstract():
-    assert not inspect.isabstract(references::ReferenceableElement)
+def test_references_referenceableelement_is_not_abstract():
+    assert not inspect.isabstract(references_ReferenceableElement)
 
 
-def test_references::referenceableelement_constructor_exists():
-    assert callable(references::ReferenceableElement.__init__)
+def test_references_referenceableelement_constructor_exists():
+    assert callable(references_ReferenceableElement.__init__)
 
 
-def test_references::referenceableelement_constructor_args():
-    sig = inspect.signature(references::ReferenceableElement.__init__)
+def test_references_referenceableelement_constructor_args():
+    sig = inspect.signature(references_ReferenceableElement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_simtl4j::members::method_is_not_abstract():
-    assert not inspect.isabstract(simTL4J::members::Method)
+def test_simtl4j_members_additionalfield_is_not_abstract():
+    assert not inspect.isabstract(simTL4J_members_AdditionalField)
 
 
-def test_simtl4j::members::method_constructor_exists():
-    assert callable(simTL4J::members::Method.__init__)
+def test_simtl4j_members_additionalfield_constructor_exists():
+    assert callable(simTL4J_members_AdditionalField.__init__)
 
 
-def test_simtl4j::members::method_constructor_args():
-    sig = inspect.signature(simTL4J::members::Method.__init__)
+def test_simtl4j_members_additionalfield_constructor_args():
+    sig = inspect.signature(simTL4J_members_AdditionalField.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_simtl4j::members::enumconstant_is_not_abstract():
-    assert not inspect.isabstract(simTL4J::members::EnumConstant)
+def test_simtl4j_variables_variable_is_not_abstract():
+    assert not inspect.isabstract(simTL4J_variables_Variable)
 
 
-def test_simtl4j::members::enumconstant_constructor_exists():
-    assert callable(simTL4J::members::EnumConstant.__init__)
+def test_simtl4j_variables_variable_constructor_exists():
+    assert callable(simTL4J_variables_Variable.__init__)
 
 
-def test_simtl4j::members::enumconstant_constructor_args():
-    sig = inspect.signature(simTL4J::members::EnumConstant.__init__)
+def test_simtl4j_variables_variable_constructor_args():
+    sig = inspect.signature(simTL4J_variables_Variable.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_simtl4j::members::field_is_not_abstract():
-    assert not inspect.isabstract(simTL4J::members::Field)
+def test_simtl4j_variables_additionallocalvariable_is_not_abstract():
+    assert not inspect.isabstract(simTL4J_variables_AdditionalLocalVariable)
 
 
-def test_simtl4j::members::field_constructor_exists():
-    assert callable(simTL4J::members::Field.__init__)
+def test_simtl4j_variables_additionallocalvariable_constructor_exists():
+    assert callable(simTL4J_variables_AdditionalLocalVariable.__init__)
 
 
-def test_simtl4j::members::field_constructor_args():
-    sig = inspect.signature(simTL4J::members::Field.__init__)
+def test_simtl4j_variables_additionallocalvariable_constructor_args():
+    sig = inspect.signature(simTL4J_variables_AdditionalLocalVariable.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_simtl4j::containers::package_is_not_abstract():
-    assert not inspect.isabstract(simTL4J::containers::Package)
+def test_simtl4j_members_method_is_not_abstract():
+    assert not inspect.isabstract(simTL4J_members_Method)
 
 
-def test_simtl4j::containers::package_constructor_exists():
-    assert callable(simTL4J::containers::Package.__init__)
+def test_simtl4j_members_method_constructor_exists():
+    assert callable(simTL4J_members_Method.__init__)
 
 
-def test_simtl4j::containers::package_constructor_args():
-    sig = inspect.signature(simTL4J::containers::Package.__init__)
+def test_simtl4j_members_method_constructor_args():
+    sig = inspect.signature(simTL4J_members_Method.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_simtl4j::members::additionalfield_is_not_abstract():
-    assert not inspect.isabstract(simTL4J::members::AdditionalField)
+def test_simtl4j_containers_package_is_not_abstract():
+    assert not inspect.isabstract(simTL4J_containers_Package)
 
 
-def test_simtl4j::members::additionalfield_constructor_exists():
-    assert callable(simTL4J::members::AdditionalField.__init__)
+def test_simtl4j_containers_package_constructor_exists():
+    assert callable(simTL4J_containers_Package.__init__)
 
 
-def test_simtl4j::members::additionalfield_constructor_args():
-    sig = inspect.signature(simTL4J::members::AdditionalField.__init__)
+def test_simtl4j_containers_package_constructor_args():
+    sig = inspect.signature(simTL4J_containers_Package.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_simtl4j::variables::additionallocalvariable_is_not_abstract():
-    assert not inspect.isabstract(simTL4J::variables::AdditionalLocalVariable)
+def test_simtl4j_members_field_is_not_abstract():
+    assert not inspect.isabstract(simTL4J_members_Field)
 
 
-def test_simtl4j::variables::additionallocalvariable_constructor_exists():
-    assert callable(simTL4J::variables::AdditionalLocalVariable.__init__)
+def test_simtl4j_members_field_constructor_exists():
+    assert callable(simTL4J_members_Field.__init__)
 
 
-def test_simtl4j::variables::additionallocalvariable_constructor_args():
-    sig = inspect.signature(simTL4J::variables::AdditionalLocalVariable.__init__)
+def test_simtl4j_members_field_constructor_args():
+    sig = inspect.signature(simTL4J_members_Field.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_simtl4j::variables::variable_is_not_abstract():
-    assert not inspect.isabstract(simTL4J::variables::Variable)
+def test_simtl4j_members_enumconstant_is_not_abstract():
+    assert not inspect.isabstract(simTL4J_members_EnumConstant)
 
 
-def test_simtl4j::variables::variable_constructor_exists():
-    assert callable(simTL4J::variables::Variable.__init__)
+def test_simtl4j_members_enumconstant_constructor_exists():
+    assert callable(simTL4J_members_EnumConstant.__init__)
 
 
-def test_simtl4j::variables::variable_constructor_args():
-    sig = inspect.signature(simTL4J::variables::Variable.__init__)
+def test_simtl4j_members_enumconstant_constructor_args():
+    sig = inspect.signature(simTL4J_members_EnumConstant.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_types::type_is_not_abstract():
-    assert not inspect.isabstract(types::Type)
+def test_types_type_is_not_abstract():
+    assert not inspect.isabstract(types_Type)
 
 
-def test_types::type_constructor_exists():
-    assert callable(types::Type.__init__)
+def test_types_type_constructor_exists():
+    assert callable(types_Type.__init__)
 
 
-def test_types::type_constructor_args():
-    sig = inspect.signature(types::Type.__init__)
+def test_types_type_constructor_args():
+    sig = inspect.signature(types_Type.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_simtl4j::types::primitivetype_is_not_abstract():
-    assert not inspect.isabstract(simTL4J::types::PrimitiveType)
+def test_simtl4j_types_primitivetype_is_not_abstract():
+    assert not inspect.isabstract(simTL4J_types_PrimitiveType)
 
 
-def test_simtl4j::types::primitivetype_constructor_exists():
-    assert callable(simTL4J::types::PrimitiveType.__init__)
+def test_simtl4j_types_primitivetype_constructor_exists():
+    assert callable(simTL4J_types_PrimitiveType.__init__)
 
 
-def test_simtl4j::types::primitivetype_constructor_args():
-    sig = inspect.signature(simTL4J::types::PrimitiveType.__init__)
+def test_simtl4j_types_primitivetype_constructor_args():
+    sig = inspect.signature(simTL4J_types_PrimitiveType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_simtl4j::classifiers::anonymousclass_is_not_abstract():
-    assert not inspect.isabstract(simTL4J::classifiers::AnonymousClass)
+def test_simtl4j_classifiers_anonymousclass_is_not_abstract():
+    assert not inspect.isabstract(simTL4J_classifiers_AnonymousClass)
 
 
-def test_simtl4j::classifiers::anonymousclass_constructor_exists():
-    assert callable(simTL4J::classifiers::AnonymousClass.__init__)
+def test_simtl4j_classifiers_anonymousclass_constructor_exists():
+    assert callable(simTL4J_classifiers_AnonymousClass.__init__)
 
 
-def test_simtl4j::classifiers::anonymousclass_constructor_args():
-    sig = inspect.signature(simTL4J::classifiers::AnonymousClass.__init__)
+def test_simtl4j_classifiers_anonymousclass_constructor_args():
+    sig = inspect.signature(simTL4J_classifiers_AnonymousClass.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_simtl4j::classifiers::classifier_is_not_abstract():
-    assert not inspect.isabstract(simTL4J::classifiers::Classifier)
+def test_simtl4j_classifiers_classifier_is_not_abstract():
+    assert not inspect.isabstract(simTL4J_classifiers_Classifier)
 
 
-def test_simtl4j::classifiers::classifier_constructor_exists():
-    assert callable(simTL4J::classifiers::Classifier.__init__)
+def test_simtl4j_classifiers_classifier_constructor_exists():
+    assert callable(simTL4J_classifiers_Classifier.__init__)
 
 
-def test_simtl4j::classifiers::classifier_constructor_args():
-    sig = inspect.signature(simTL4J::classifiers::Classifier.__init__)
+def test_simtl4j_classifiers_classifier_constructor_args():
+    sig = inspect.signature(simTL4J_classifiers_Classifier.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -4663,72 +5261,72 @@ def test_arrayinitializer_constructor_args():
 
 
 
-def test_modifiers::annotationinstanceormodifier_is_not_abstract():
-    assert not inspect.isabstract(modifiers::AnnotationInstanceOrModifier)
+def test_modifiers_annotationinstanceormodifier_is_not_abstract():
+    assert not inspect.isabstract(modifiers_AnnotationInstanceOrModifier)
 
 
-def test_modifiers::annotationinstanceormodifier_constructor_exists():
-    assert callable(modifiers::AnnotationInstanceOrModifier.__init__)
+def test_modifiers_annotationinstanceormodifier_constructor_exists():
+    assert callable(modifiers_AnnotationInstanceOrModifier.__init__)
 
 
-def test_modifiers::annotationinstanceormodifier_constructor_args():
-    sig = inspect.signature(modifiers::AnnotationInstanceOrModifier.__init__)
+def test_modifiers_annotationinstanceormodifier_constructor_args():
+    sig = inspect.signature(modifiers_AnnotationInstanceOrModifier.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_references::reference_is_not_abstract():
-    assert not inspect.isabstract(references::Reference)
+def test_references_reference_is_not_abstract():
+    assert not inspect.isabstract(references_Reference)
 
 
-def test_references::reference_constructor_exists():
-    assert callable(references::Reference.__init__)
+def test_references_reference_constructor_exists():
+    assert callable(references_Reference.__init__)
 
 
-def test_references::reference_constructor_args():
-    sig = inspect.signature(references::Reference.__init__)
+def test_references_reference_constructor_args():
+    sig = inspect.signature(references_Reference.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_simtl4j::instantiations::instantiation_is_not_abstract():
-    assert not inspect.isabstract(simTL4J::instantiations::Instantiation)
+def test_simtl4j_arrays_arrayinstantiationbysize_is_not_abstract():
+    assert not inspect.isabstract(simTL4J_arrays_ArrayInstantiationBySize)
 
 
-def test_simtl4j::instantiations::instantiation_constructor_exists():
-    assert callable(simTL4J::instantiations::Instantiation.__init__)
+def test_simtl4j_arrays_arrayinstantiationbysize_constructor_exists():
+    assert callable(simTL4J_arrays_ArrayInstantiationBySize.__init__)
 
 
-def test_simtl4j::instantiations::instantiation_constructor_args():
-    sig = inspect.signature(simTL4J::instantiations::Instantiation.__init__)
+def test_simtl4j_arrays_arrayinstantiationbysize_constructor_args():
+    sig = inspect.signature(simTL4J_arrays_ArrayInstantiationBySize.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_simtl4j::arrays::arrayinstantiationbysize_is_not_abstract():
-    assert not inspect.isabstract(simTL4J::arrays::ArrayInstantiationBySize)
+def test_simtl4j_instantiations_instantiation_is_not_abstract():
+    assert not inspect.isabstract(simTL4J_instantiations_Instantiation)
 
 
-def test_simtl4j::arrays::arrayinstantiationbysize_constructor_exists():
-    assert callable(simTL4J::arrays::ArrayInstantiationBySize.__init__)
+def test_simtl4j_instantiations_instantiation_constructor_exists():
+    assert callable(simTL4J_instantiations_Instantiation.__init__)
 
 
-def test_simtl4j::arrays::arrayinstantiationbysize_constructor_args():
-    sig = inspect.signature(simTL4J::arrays::ArrayInstantiationBySize.__init__)
+def test_simtl4j_instantiations_instantiation_constructor_args():
+    sig = inspect.signature(simTL4J_instantiations_Instantiation.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_simtl4j::arrays::arrayinstantiationbyvalues_is_not_abstract():
-    assert not inspect.isabstract(simTL4J::arrays::ArrayInstantiationByValues)
+def test_simtl4j_arrays_arrayinstantiationbyvalues_is_not_abstract():
+    assert not inspect.isabstract(simTL4J_arrays_ArrayInstantiationByValues)
 
 
-def test_simtl4j::arrays::arrayinstantiationbyvalues_constructor_exists():
-    assert callable(simTL4J::arrays::ArrayInstantiationByValues.__init__)
+def test_simtl4j_arrays_arrayinstantiationbyvalues_constructor_exists():
+    assert callable(simTL4J_arrays_ArrayInstantiationByValues.__init__)
 
 
-def test_simtl4j::arrays::arrayinstantiationbyvalues_constructor_args():
-    sig = inspect.signature(simTL4J::arrays::ArrayInstantiationByValues.__init__)
+def test_simtl4j_arrays_arrayinstantiationbyvalues_constructor_args():
+    sig = inspect.signature(simTL4J_arrays_ArrayInstantiationByValues.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -4761,121 +5359,121 @@ def test_commentable_constructor_args():
 
 
 
-def test_simtl4j::members::membercontainer_is_not_abstract():
-    assert not inspect.isabstract(simTL4J::members::MemberContainer)
+def test_simtl4j_modifiers_annotationinstanceormodifier_is_not_abstract():
+    assert not inspect.isabstract(simTL4J_modifiers_AnnotationInstanceOrModifier)
 
 
-def test_simtl4j::members::membercontainer_constructor_exists():
-    assert callable(simTL4J::members::MemberContainer.__init__)
+def test_simtl4j_modifiers_annotationinstanceormodifier_constructor_exists():
+    assert callable(simTL4J_modifiers_AnnotationInstanceOrModifier.__init__)
 
 
-def test_simtl4j::members::membercontainer_constructor_args():
-    sig = inspect.signature(simTL4J::members::MemberContainer.__init__)
+def test_simtl4j_modifiers_annotationinstanceormodifier_constructor_args():
+    sig = inspect.signature(simTL4J_modifiers_AnnotationInstanceOrModifier.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_simtl4j::modifiers::annotationinstanceormodifier_is_not_abstract():
-    assert not inspect.isabstract(simTL4J::modifiers::AnnotationInstanceOrModifier)
+def test_simtl4j_modifiers_annotableandmodifiable_is_not_abstract():
+    assert not inspect.isabstract(simTL4J_modifiers_AnnotableAndModifiable)
 
 
-def test_simtl4j::modifiers::annotationinstanceormodifier_constructor_exists():
-    assert callable(simTL4J::modifiers::AnnotationInstanceOrModifier.__init__)
+def test_simtl4j_modifiers_annotableandmodifiable_constructor_exists():
+    assert callable(simTL4J_modifiers_AnnotableAndModifiable.__init__)
 
 
-def test_simtl4j::modifiers::annotationinstanceormodifier_constructor_args():
-    sig = inspect.signature(simTL4J::modifiers::AnnotationInstanceOrModifier.__init__)
+def test_simtl4j_modifiers_annotableandmodifiable_constructor_args():
+    sig = inspect.signature(simTL4J_modifiers_AnnotableAndModifiable.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_simtl4j::references::argumentable_is_not_abstract():
-    assert not inspect.isabstract(simTL4J::references::Argumentable)
+def test_simtl4j_generics_typeparametrizable_is_not_abstract():
+    assert not inspect.isabstract(simTL4J_generics_TypeParametrizable)
 
 
-def test_simtl4j::references::argumentable_constructor_exists():
-    assert callable(simTL4J::references::Argumentable.__init__)
+def test_simtl4j_generics_typeparametrizable_constructor_exists():
+    assert callable(simTL4J_generics_TypeParametrizable.__init__)
 
 
-def test_simtl4j::references::argumentable_constructor_args():
-    sig = inspect.signature(simTL4J::references::Argumentable.__init__)
+def test_simtl4j_generics_typeparametrizable_constructor_args():
+    sig = inspect.signature(simTL4J_generics_TypeParametrizable.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_simtl4j::statements::statementcontainer_is_not_abstract():
-    assert not inspect.isabstract(simTL4J::statements::StatementContainer)
+def test_simtl4j_instantiations_initializable_is_not_abstract():
+    assert not inspect.isabstract(simTL4J_instantiations_Initializable)
 
 
-def test_simtl4j::statements::statementcontainer_constructor_exists():
-    assert callable(simTL4J::statements::StatementContainer.__init__)
+def test_simtl4j_instantiations_initializable_constructor_exists():
+    assert callable(simTL4J_instantiations_Initializable.__init__)
 
 
-def test_simtl4j::statements::statementcontainer_constructor_args():
-    sig = inspect.signature(simTL4J::statements::StatementContainer.__init__)
+def test_simtl4j_instantiations_initializable_constructor_args():
+    sig = inspect.signature(simTL4J_instantiations_Initializable.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_simtl4j::arrays::arraydimension_is_not_abstract():
-    assert not inspect.isabstract(simTL4J::arrays::ArrayDimension)
+def test_simtl4j_types_typereference_is_not_abstract():
+    assert not inspect.isabstract(simTL4J_types_TypeReference)
 
 
-def test_simtl4j::arrays::arraydimension_constructor_exists():
-    assert callable(simTL4J::arrays::ArrayDimension.__init__)
+def test_simtl4j_types_typereference_constructor_exists():
+    assert callable(simTL4J_types_TypeReference.__init__)
 
 
-def test_simtl4j::arrays::arraydimension_constructor_args():
-    sig = inspect.signature(simTL4J::arrays::ArrayDimension.__init__)
+def test_simtl4j_types_typereference_constructor_args():
+    sig = inspect.signature(simTL4J_types_TypeReference.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_simtl4j::instantiations::initializable_is_not_abstract():
-    assert not inspect.isabstract(simTL4J::instantiations::Initializable)
+def test_simtl4j_statements_statement_is_not_abstract():
+    assert not inspect.isabstract(simTL4J_statements_Statement)
 
 
-def test_simtl4j::instantiations::initializable_constructor_exists():
-    assert callable(simTL4J::instantiations::Initializable.__init__)
+def test_simtl4j_statements_statement_constructor_exists():
+    assert callable(simTL4J_statements_Statement.__init__)
 
 
-def test_simtl4j::instantiations::initializable_constructor_args():
-    sig = inspect.signature(simTL4J::instantiations::Initializable.__init__)
+def test_simtl4j_statements_statement_constructor_args():
+    sig = inspect.signature(simTL4J_statements_Statement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_simtl4j::operators::operator_is_not_abstract():
-    assert not inspect.isabstract(simTL4J::operators::Operator)
+def test_simtl4j_statements_statementcontainer_is_not_abstract():
+    assert not inspect.isabstract(simTL4J_statements_StatementContainer)
 
 
-def test_simtl4j::operators::operator_constructor_exists():
-    assert callable(simTL4J::operators::Operator.__init__)
+def test_simtl4j_statements_statementcontainer_constructor_exists():
+    assert callable(simTL4J_statements_StatementContainer.__init__)
 
 
-def test_simtl4j::operators::operator_constructor_args():
-    sig = inspect.signature(simTL4J::operators::Operator.__init__)
+def test_simtl4j_statements_statementcontainer_constructor_args():
+    sig = inspect.signature(simTL4J_statements_StatementContainer.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_simtl4j::commons::namespaceawareelement_is_not_abstract():
-    assert not inspect.isabstract(simTL4J::commons::NamespaceAwareElement)
+def test_simtl4j_commons_namespaceawareelement_is_not_abstract():
+    assert not inspect.isabstract(simTL4J_commons_NamespaceAwareElement)
 
 
-def test_simtl4j::commons::namespaceawareelement_constructor_exists():
-    assert callable(simTL4J::commons::NamespaceAwareElement.__init__)
+def test_simtl4j_commons_namespaceawareelement_constructor_exists():
+    assert callable(simTL4J_commons_NamespaceAwareElement.__init__)
 
 
-def test_simtl4j::commons::namespaceawareelement_constructor_args():
-    sig = inspect.signature(simTL4J::commons::NamespaceAwareElement.__init__)
+def test_simtl4j_commons_namespaceawareelement_constructor_args():
+    sig = inspect.signature(simTL4J_commons_NamespaceAwareElement.__init__)
     params = list(sig.parameters.keys())
     assert "namespaces" in params, "Missing parameter 'namespaces'"
 
-def test_simtl4j::commons::namespaceawareelement_has_namespaces():
-    assert hasattr(simTL4J::commons::NamespaceAwareElement, "namespaces")
+def test_simtl4j_commons_namespaceawareelement_has_namespaces():
+    assert hasattr(simTL4J_commons_NamespaceAwareElement, "namespaces")
     descriptor = None
-    for klass in simTL4J::commons::NamespaceAwareElement.__mro__:
+    for klass in simTL4J_commons_NamespaceAwareElement.__mro__:
         if "namespaces" in klass.__dict__:
             descriptor = klass.__dict__["namespaces"]
             break
@@ -4883,79 +5481,65 @@ def test_simtl4j::commons::namespaceawareelement_has_namespaces():
 
 
 
-def test_simtl4j::arrays::arrayinitializationvalue_is_not_abstract():
-    assert not inspect.isabstract(simTL4J::arrays::ArrayInitializationValue)
+def test_simtl4j_types_typedelement_is_not_abstract():
+    assert not inspect.isabstract(simTL4J_types_TypedElement)
 
 
-def test_simtl4j::arrays::arrayinitializationvalue_constructor_exists():
-    assert callable(simTL4J::arrays::ArrayInitializationValue.__init__)
+def test_simtl4j_types_typedelement_constructor_exists():
+    assert callable(simTL4J_types_TypedElement.__init__)
 
 
-def test_simtl4j::arrays::arrayinitializationvalue_constructor_args():
-    sig = inspect.signature(simTL4J::arrays::ArrayInitializationValue.__init__)
+def test_simtl4j_types_typedelement_constructor_args():
+    sig = inspect.signature(simTL4J_types_TypedElement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_simtl4j::statements::statementlistcontainer_is_not_abstract():
-    assert not inspect.isabstract(simTL4J::statements::StatementListContainer)
+def test_simtl4j_imports_importingelement_is_not_abstract():
+    assert not inspect.isabstract(simTL4J_imports_ImportingElement)
 
 
-def test_simtl4j::statements::statementlistcontainer_constructor_exists():
-    assert callable(simTL4J::statements::StatementListContainer.__init__)
+def test_simtl4j_imports_importingelement_constructor_exists():
+    assert callable(simTL4J_imports_ImportingElement.__init__)
 
 
-def test_simtl4j::statements::statementlistcontainer_constructor_args():
-    sig = inspect.signature(simTL4J::statements::StatementListContainer.__init__)
+def test_simtl4j_imports_importingelement_constructor_args():
+    sig = inspect.signature(simTL4J_imports_ImportingElement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_simtl4j::types::typedelement_is_not_abstract():
-    assert not inspect.isabstract(simTL4J::types::TypedElement)
+def test_simtl4j_arrays_arrayselector_is_not_abstract():
+    assert not inspect.isabstract(simTL4J_arrays_ArraySelector)
 
 
-def test_simtl4j::types::typedelement_constructor_exists():
-    assert callable(simTL4J::types::TypedElement.__init__)
+def test_simtl4j_arrays_arrayselector_constructor_exists():
+    assert callable(simTL4J_arrays_ArraySelector.__init__)
 
 
-def test_simtl4j::types::typedelement_constructor_args():
-    sig = inspect.signature(simTL4J::types::TypedElement.__init__)
+def test_simtl4j_arrays_arrayselector_constructor_args():
+    sig = inspect.signature(simTL4J_arrays_ArraySelector.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_simtl4j::parameters::parametrizable_is_not_abstract():
-    assert not inspect.isabstract(simTL4J::parameters::Parametrizable)
+def test_simtl4j_commons_namedelement_is_not_abstract():
+    assert not inspect.isabstract(simTL4J_commons_NamedElement)
 
 
-def test_simtl4j::parameters::parametrizable_constructor_exists():
-    assert callable(simTL4J::parameters::Parametrizable.__init__)
+def test_simtl4j_commons_namedelement_constructor_exists():
+    assert callable(simTL4J_commons_NamedElement.__init__)
 
 
-def test_simtl4j::parameters::parametrizable_constructor_args():
-    sig = inspect.signature(simTL4J::parameters::Parametrizable.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_simtl4j::commons::namedelement_is_not_abstract():
-    assert not inspect.isabstract(simTL4J::commons::NamedElement)
-
-
-def test_simtl4j::commons::namedelement_constructor_exists():
-    assert callable(simTL4J::commons::NamedElement.__init__)
-
-
-def test_simtl4j::commons::namedelement_constructor_args():
-    sig = inspect.signature(simTL4J::commons::NamedElement.__init__)
+def test_simtl4j_commons_namedelement_constructor_args():
+    sig = inspect.signature(simTL4J_commons_NamedElement.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_simtl4j::commons::namedelement_has_name():
-    assert hasattr(simTL4J::commons::NamedElement, "name")
+def test_simtl4j_commons_namedelement_has_name():
+    assert hasattr(simTL4J_commons_NamedElement, "name")
     descriptor = None
-    for klass in simTL4J::commons::NamedElement.__mro__:
+    for klass in simTL4J_commons_NamedElement.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -4963,198 +5547,240 @@ def test_simtl4j::commons::namedelement_has_name():
 
 
 
-def test_simtl4j::classifiers::implementor_is_not_abstract():
-    assert not inspect.isabstract(simTL4J::classifiers::Implementor)
+def test_simtl4j_classifiers_implementor_is_not_abstract():
+    assert not inspect.isabstract(simTL4J_classifiers_Implementor)
 
 
-def test_simtl4j::classifiers::implementor_constructor_exists():
-    assert callable(simTL4J::classifiers::Implementor.__init__)
+def test_simtl4j_classifiers_implementor_constructor_exists():
+    assert callable(simTL4J_classifiers_Implementor.__init__)
 
 
-def test_simtl4j::classifiers::implementor_constructor_args():
-    sig = inspect.signature(simTL4J::classifiers::Implementor.__init__)
+def test_simtl4j_classifiers_implementor_constructor_args():
+    sig = inspect.signature(simTL4J_classifiers_Implementor.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_simtl4j::arrays::arrayselector_is_not_abstract():
-    assert not inspect.isabstract(simTL4J::arrays::ArraySelector)
+def test_simtl4j_generics_typeargumentable_is_not_abstract():
+    assert not inspect.isabstract(simTL4J_generics_TypeArgumentable)
 
 
-def test_simtl4j::arrays::arrayselector_constructor_exists():
-    assert callable(simTL4J::arrays::ArraySelector.__init__)
+def test_simtl4j_generics_typeargumentable_constructor_exists():
+    assert callable(simTL4J_generics_TypeArgumentable.__init__)
 
 
-def test_simtl4j::arrays::arrayselector_constructor_args():
-    sig = inspect.signature(simTL4J::arrays::ArraySelector.__init__)
+def test_simtl4j_generics_typeargumentable_constructor_args():
+    sig = inspect.signature(simTL4J_generics_TypeArgumentable.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_simtl4j::imports::importingelement_is_not_abstract():
-    assert not inspect.isabstract(simTL4J::imports::ImportingElement)
+def test_simtl4j_generics_calltypeargumentable_is_not_abstract():
+    assert not inspect.isabstract(simTL4J_generics_CallTypeArgumentable)
 
 
-def test_simtl4j::imports::importingelement_constructor_exists():
-    assert callable(simTL4J::imports::ImportingElement.__init__)
+def test_simtl4j_generics_calltypeargumentable_constructor_exists():
+    assert callable(simTL4J_generics_CallTypeArgumentable.__init__)
 
 
-def test_simtl4j::imports::importingelement_constructor_args():
-    sig = inspect.signature(simTL4J::imports::ImportingElement.__init__)
+def test_simtl4j_generics_calltypeargumentable_constructor_args():
+    sig = inspect.signature(simTL4J_generics_CallTypeArgumentable.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_simtl4j::types::type_is_not_abstract():
-    assert not inspect.isabstract(simTL4J::types::Type)
+def test_simtl4j_statements_forloopinitializer_is_not_abstract():
+    assert not inspect.isabstract(simTL4J_statements_ForLoopInitializer)
 
 
-def test_simtl4j::types::type_constructor_exists():
-    assert callable(simTL4J::types::Type.__init__)
+def test_simtl4j_statements_forloopinitializer_constructor_exists():
+    assert callable(simTL4J_statements_ForLoopInitializer.__init__)
 
 
-def test_simtl4j::types::type_constructor_args():
-    sig = inspect.signature(simTL4J::types::Type.__init__)
+def test_simtl4j_statements_forloopinitializer_constructor_args():
+    sig = inspect.signature(simTL4J_statements_ForLoopInitializer.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_simtl4j::generics::typeparametrizable_is_not_abstract():
-    assert not inspect.isabstract(simTL4J::generics::TypeParametrizable)
+def test_simtl4j_statements_statementlistcontainer_is_not_abstract():
+    assert not inspect.isabstract(simTL4J_statements_StatementListContainer)
 
 
-def test_simtl4j::generics::typeparametrizable_constructor_exists():
-    assert callable(simTL4J::generics::TypeParametrizable.__init__)
+def test_simtl4j_statements_statementlistcontainer_constructor_exists():
+    assert callable(simTL4J_statements_StatementListContainer.__init__)
 
 
-def test_simtl4j::generics::typeparametrizable_constructor_args():
-    sig = inspect.signature(simTL4J::generics::TypeParametrizable.__init__)
+def test_simtl4j_statements_statementlistcontainer_constructor_args():
+    sig = inspect.signature(simTL4J_statements_StatementListContainer.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_simtl4j::modifiers::annotableandmodifiable_is_not_abstract():
-    assert not inspect.isabstract(simTL4J::modifiers::AnnotableAndModifiable)
+def test_simtl4j_references_argumentable_is_not_abstract():
+    assert not inspect.isabstract(simTL4J_references_Argumentable)
 
 
-def test_simtl4j::modifiers::annotableandmodifiable_constructor_exists():
-    assert callable(simTL4J::modifiers::AnnotableAndModifiable.__init__)
+def test_simtl4j_references_argumentable_constructor_exists():
+    assert callable(simTL4J_references_Argumentable.__init__)
 
 
-def test_simtl4j::modifiers::annotableandmodifiable_constructor_args():
-    sig = inspect.signature(simTL4J::modifiers::AnnotableAndModifiable.__init__)
+def test_simtl4j_references_argumentable_constructor_args():
+    sig = inspect.signature(simTL4J_references_Argumentable.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_simtl4j::literals::self_is_not_abstract():
-    assert not inspect.isabstract(simTL4J::literals::Self)
+def test_simtl4j_members_exceptionthrower_is_not_abstract():
+    assert not inspect.isabstract(simTL4J_members_ExceptionThrower)
 
 
-def test_simtl4j::literals::self_constructor_exists():
-    assert callable(simTL4J::literals::Self.__init__)
+def test_simtl4j_members_exceptionthrower_constructor_exists():
+    assert callable(simTL4J_members_ExceptionThrower.__init__)
 
 
-def test_simtl4j::literals::self_constructor_args():
-    sig = inspect.signature(simTL4J::literals::Self.__init__)
+def test_simtl4j_members_exceptionthrower_constructor_args():
+    sig = inspect.signature(simTL4J_members_ExceptionThrower.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_simtl4j::members::exceptionthrower_is_not_abstract():
-    assert not inspect.isabstract(simTL4J::members::ExceptionThrower)
+def test_simtl4j_modifiers_modifiable_is_not_abstract():
+    assert not inspect.isabstract(simTL4J_modifiers_Modifiable)
 
 
-def test_simtl4j::members::exceptionthrower_constructor_exists():
-    assert callable(simTL4J::members::ExceptionThrower.__init__)
+def test_simtl4j_modifiers_modifiable_constructor_exists():
+    assert callable(simTL4J_modifiers_Modifiable.__init__)
 
 
-def test_simtl4j::members::exceptionthrower_constructor_args():
-    sig = inspect.signature(simTL4J::members::ExceptionThrower.__init__)
+def test_simtl4j_modifiers_modifiable_constructor_args():
+    sig = inspect.signature(simTL4J_modifiers_Modifiable.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_simtl4j::statements::statement_is_not_abstract():
-    assert not inspect.isabstract(simTL4J::statements::Statement)
+def test_simtl4j_arrays_arraydimension_is_not_abstract():
+    assert not inspect.isabstract(simTL4J_arrays_ArrayDimension)
 
 
-def test_simtl4j::statements::statement_constructor_exists():
-    assert callable(simTL4J::statements::Statement.__init__)
+def test_simtl4j_arrays_arraydimension_constructor_exists():
+    assert callable(simTL4J_arrays_ArrayDimension.__init__)
 
 
-def test_simtl4j::statements::statement_constructor_args():
-    sig = inspect.signature(simTL4J::statements::Statement.__init__)
+def test_simtl4j_arrays_arraydimension_constructor_args():
+    sig = inspect.signature(simTL4J_arrays_ArrayDimension.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_simtl4j::statements::conditional_is_not_abstract():
-    assert not inspect.isabstract(simTL4J::statements::Conditional)
+def test_simtl4j_members_membercontainer_is_not_abstract():
+    assert not inspect.isabstract(simTL4J_members_MemberContainer)
 
 
-def test_simtl4j::statements::conditional_constructor_exists():
-    assert callable(simTL4J::statements::Conditional.__init__)
+def test_simtl4j_members_membercontainer_constructor_exists():
+    assert callable(simTL4J_members_MemberContainer.__init__)
 
 
-def test_simtl4j::statements::conditional_constructor_args():
-    sig = inspect.signature(simTL4J::statements::Conditional.__init__)
+def test_simtl4j_members_membercontainer_constructor_args():
+    sig = inspect.signature(simTL4J_members_MemberContainer.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_simtl4j::types::typereference_is_not_abstract():
-    assert not inspect.isabstract(simTL4J::types::TypeReference)
+def test_simtl4j_literals_self_is_not_abstract():
+    assert not inspect.isabstract(simTL4J_literals_Self)
 
 
-def test_simtl4j::types::typereference_constructor_exists():
-    assert callable(simTL4J::types::TypeReference.__init__)
+def test_simtl4j_literals_self_constructor_exists():
+    assert callable(simTL4J_literals_Self.__init__)
 
 
-def test_simtl4j::types::typereference_constructor_args():
-    sig = inspect.signature(simTL4J::types::TypeReference.__init__)
+def test_simtl4j_literals_self_constructor_args():
+    sig = inspect.signature(simTL4J_literals_Self.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_simtl4j::statements::forloopinitializer_is_not_abstract():
-    assert not inspect.isabstract(simTL4J::statements::ForLoopInitializer)
+def test_simtl4j_operators_operator_is_not_abstract():
+    assert not inspect.isabstract(simTL4J_operators_Operator)
 
 
-def test_simtl4j::statements::forloopinitializer_constructor_exists():
-    assert callable(simTL4J::statements::ForLoopInitializer.__init__)
+def test_simtl4j_operators_operator_constructor_exists():
+    assert callable(simTL4J_operators_Operator.__init__)
 
 
-def test_simtl4j::statements::forloopinitializer_constructor_args():
-    sig = inspect.signature(simTL4J::statements::ForLoopInitializer.__init__)
+def test_simtl4j_operators_operator_constructor_args():
+    sig = inspect.signature(simTL4J_operators_Operator.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_simtl4j::modifiers::modifiable_is_not_abstract():
-    assert not inspect.isabstract(simTL4J::modifiers::Modifiable)
+def test_simtl4j_parameters_parametrizable_is_not_abstract():
+    assert not inspect.isabstract(simTL4J_parameters_Parametrizable)
 
 
-def test_simtl4j::modifiers::modifiable_constructor_exists():
-    assert callable(simTL4J::modifiers::Modifiable.__init__)
+def test_simtl4j_parameters_parametrizable_constructor_exists():
+    assert callable(simTL4J_parameters_Parametrizable.__init__)
 
 
-def test_simtl4j::modifiers::modifiable_constructor_args():
-    sig = inspect.signature(simTL4J::modifiers::Modifiable.__init__)
+def test_simtl4j_parameters_parametrizable_constructor_args():
+    sig = inspect.signature(simTL4J_parameters_Parametrizable.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_simtl4j::annotations::annotable_is_not_abstract():
-    assert not inspect.isabstract(simTL4J::annotations::Annotable)
+def test_simtl4j_statements_conditional_is_not_abstract():
+    assert not inspect.isabstract(simTL4J_statements_Conditional)
 
 
-def test_simtl4j::annotations::annotable_constructor_exists():
-    assert callable(simTL4J::annotations::Annotable.__init__)
+def test_simtl4j_statements_conditional_constructor_exists():
+    assert callable(simTL4J_statements_Conditional.__init__)
 
 
-def test_simtl4j::annotations::annotable_constructor_args():
-    sig = inspect.signature(simTL4J::annotations::Annotable.__init__)
+def test_simtl4j_statements_conditional_constructor_args():
+    sig = inspect.signature(simTL4J_statements_Conditional.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_simtl4j_arrays_arrayinitializationvalue_is_not_abstract():
+    assert not inspect.isabstract(simTL4J_arrays_ArrayInitializationValue)
+
+
+def test_simtl4j_arrays_arrayinitializationvalue_constructor_exists():
+    assert callable(simTL4J_arrays_ArrayInitializationValue.__init__)
+
+
+def test_simtl4j_arrays_arrayinitializationvalue_constructor_args():
+    sig = inspect.signature(simTL4J_arrays_ArrayInitializationValue.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_simtl4j_types_type_is_not_abstract():
+    assert not inspect.isabstract(simTL4J_types_Type)
+
+
+def test_simtl4j_types_type_constructor_exists():
+    assert callable(simTL4J_types_Type.__init__)
+
+
+def test_simtl4j_types_type_constructor_args():
+    sig = inspect.signature(simTL4J_types_Type.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_simtl4j_annotations_annotable_is_not_abstract():
+    assert not inspect.isabstract(simTL4J_annotations_Annotable)
+
+
+def test_simtl4j_annotations_annotable_constructor_exists():
+    assert callable(simTL4J_annotations_Annotable.__init__)
+
+
+def test_simtl4j_annotations_annotable_constructor_args():
+    sig = inspect.signature(simTL4J_annotations_Annotable.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -5173,16 +5799,16 @@ def test_arraydimension_constructor_args():
 
 
 
-def test_simtl4j::arrays::arraytypeable_is_not_abstract():
-    assert not inspect.isabstract(simTL4J::arrays::ArrayTypeable)
+def test_simtl4j_arrays_arraytypeable_is_not_abstract():
+    assert not inspect.isabstract(simTL4J_arrays_ArrayTypeable)
 
 
-def test_simtl4j::arrays::arraytypeable_constructor_exists():
-    assert callable(simTL4J::arrays::ArrayTypeable.__init__)
+def test_simtl4j_arrays_arraytypeable_constructor_exists():
+    assert callable(simTL4J_arrays_ArrayTypeable.__init__)
 
 
-def test_simtl4j::arrays::arraytypeable_constructor_args():
-    sig = inspect.signature(simTL4J::arrays::ArrayTypeable.__init__)
+def test_simtl4j_arrays_arraytypeable_constructor_args():
+    sig = inspect.signature(simTL4J_arrays_ArrayTypeable.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -5201,44 +5827,44 @@ def test_expression_constructor_args():
 
 
 
-def test_simtl4j::expressions::assignmentexpressionchild_is_not_abstract():
-    assert not inspect.isabstract(simTL4J::expressions::AssignmentExpressionChild)
+def test_simtl4j_expressions_assignmentexpressionchild_is_not_abstract():
+    assert not inspect.isabstract(simTL4J_expressions_AssignmentExpressionChild)
 
 
-def test_simtl4j::expressions::assignmentexpressionchild_constructor_exists():
-    assert callable(simTL4J::expressions::AssignmentExpressionChild.__init__)
+def test_simtl4j_expressions_assignmentexpressionchild_constructor_exists():
+    assert callable(simTL4J_expressions_AssignmentExpressionChild.__init__)
 
 
-def test_simtl4j::expressions::assignmentexpressionchild_constructor_args():
-    sig = inspect.signature(simTL4J::expressions::AssignmentExpressionChild.__init__)
+def test_simtl4j_expressions_assignmentexpressionchild_constructor_args():
+    sig = inspect.signature(simTL4J_expressions_AssignmentExpressionChild.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_simtl4j::expressions::assignmentexpression_is_not_abstract():
-    assert not inspect.isabstract(simTL4J::expressions::AssignmentExpression)
+def test_simtl4j_expressions_assignmentexpression_is_not_abstract():
+    assert not inspect.isabstract(simTL4J_expressions_AssignmentExpression)
 
 
-def test_simtl4j::expressions::assignmentexpression_constructor_exists():
-    assert callable(simTL4J::expressions::AssignmentExpression.__init__)
+def test_simtl4j_expressions_assignmentexpression_constructor_exists():
+    assert callable(simTL4J_expressions_AssignmentExpression.__init__)
 
 
-def test_simtl4j::expressions::assignmentexpression_constructor_args():
-    sig = inspect.signature(simTL4J::expressions::AssignmentExpression.__init__)
+def test_simtl4j_expressions_assignmentexpression_constructor_args():
+    sig = inspect.signature(simTL4J_expressions_AssignmentExpression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_simtl4j::annotations::annotationvalue_is_not_abstract():
-    assert not inspect.isabstract(simTL4J::annotations::AnnotationValue)
+def test_simtl4j_annotations_annotationvalue_is_not_abstract():
+    assert not inspect.isabstract(simTL4J_annotations_AnnotationValue)
 
 
-def test_simtl4j::annotations::annotationvalue_constructor_exists():
-    assert callable(simTL4J::annotations::AnnotationValue.__init__)
+def test_simtl4j_annotations_annotationvalue_constructor_exists():
+    assert callable(simTL4J_annotations_AnnotationValue.__init__)
 
 
-def test_simtl4j::annotations::annotationvalue_constructor_args():
-    sig = inspect.signature(simTL4J::annotations::AnnotationValue.__init__)
+def test_simtl4j_annotations_annotationvalue_constructor_args():
+    sig = inspect.signature(simTL4J_annotations_AnnotationValue.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -5257,30 +5883,30 @@ def test_interfacemethod_constructor_args():
 
 
 
-def test_simtl4j::annotations::annotationattribute_is_not_abstract():
-    assert not inspect.isabstract(simTL4J::annotations::AnnotationAttribute)
+def test_simtl4j_annotations_annotationattribute_is_not_abstract():
+    assert not inspect.isabstract(simTL4J_annotations_AnnotationAttribute)
 
 
-def test_simtl4j::annotations::annotationattribute_constructor_exists():
-    assert callable(simTL4J::annotations::AnnotationAttribute.__init__)
+def test_simtl4j_annotations_annotationattribute_constructor_exists():
+    assert callable(simTL4J_annotations_AnnotationAttribute.__init__)
 
 
-def test_simtl4j::annotations::annotationattribute_constructor_args():
-    sig = inspect.signature(simTL4J::annotations::AnnotationAttribute.__init__)
+def test_simtl4j_annotations_annotationattribute_constructor_args():
+    sig = inspect.signature(simTL4J_annotations_AnnotationAttribute.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_simtl4j::annotations::annotationattributesetting_is_not_abstract():
-    assert not inspect.isabstract(simTL4J::annotations::AnnotationAttributeSetting)
+def test_simtl4j_annotations_annotationattributesetting_is_not_abstract():
+    assert not inspect.isabstract(simTL4J_annotations_AnnotationAttributeSetting)
 
 
-def test_simtl4j::annotations::annotationattributesetting_constructor_exists():
-    assert callable(simTL4J::annotations::AnnotationAttributeSetting.__init__)
+def test_simtl4j_annotations_annotationattributesetting_constructor_exists():
+    assert callable(simTL4J_annotations_AnnotationAttributeSetting.__init__)
 
 
-def test_simtl4j::annotations::annotationattributesetting_constructor_args():
-    sig = inspect.signature(simTL4J::annotations::AnnotationAttributeSetting.__init__)
+def test_simtl4j_annotations_annotationattributesetting_constructor_args():
+    sig = inspect.signature(simTL4J_annotations_AnnotationAttributeSetting.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -5313,16 +5939,16 @@ def test_annotationvalue_constructor_args():
 
 
 
-def test_simtl4j::annotations::annotationparameter_is_not_abstract():
-    assert not inspect.isabstract(simTL4J::annotations::AnnotationParameter)
+def test_simtl4j_annotations_annotationparameter_is_not_abstract():
+    assert not inspect.isabstract(simTL4J_annotations_AnnotationParameter)
 
 
-def test_simtl4j::annotations::annotationparameter_constructor_exists():
-    assert callable(simTL4J::annotations::AnnotationParameter.__init__)
+def test_simtl4j_annotations_annotationparameter_constructor_exists():
+    assert callable(simTL4J_annotations_AnnotationParameter.__init__)
 
 
-def test_simtl4j::annotations::annotationparameter_constructor_args():
-    sig = inspect.signature(simTL4J::annotations::AnnotationParameter.__init__)
+def test_simtl4j_annotations_annotationparameter_constructor_args():
+    sig = inspect.signature(simTL4J_annotations_AnnotationParameter.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -5341,30 +5967,30 @@ def test_annotationparameter_constructor_args():
 
 
 
-def test_simtl4j::annotations::annotationparameterlist_is_not_abstract():
-    assert not inspect.isabstract(simTL4J::annotations::AnnotationParameterList)
+def test_simtl4j_annotations_singleannotationparameter_is_not_abstract():
+    assert not inspect.isabstract(simTL4J_annotations_SingleAnnotationParameter)
 
 
-def test_simtl4j::annotations::annotationparameterlist_constructor_exists():
-    assert callable(simTL4J::annotations::AnnotationParameterList.__init__)
+def test_simtl4j_annotations_singleannotationparameter_constructor_exists():
+    assert callable(simTL4J_annotations_SingleAnnotationParameter.__init__)
 
 
-def test_simtl4j::annotations::annotationparameterlist_constructor_args():
-    sig = inspect.signature(simTL4J::annotations::AnnotationParameterList.__init__)
+def test_simtl4j_annotations_singleannotationparameter_constructor_args():
+    sig = inspect.signature(simTL4J_annotations_SingleAnnotationParameter.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_simtl4j::annotations::singleannotationparameter_is_not_abstract():
-    assert not inspect.isabstract(simTL4J::annotations::SingleAnnotationParameter)
+def test_simtl4j_annotations_annotationparameterlist_is_not_abstract():
+    assert not inspect.isabstract(simTL4J_annotations_AnnotationParameterList)
 
 
-def test_simtl4j::annotations::singleannotationparameter_constructor_exists():
-    assert callable(simTL4J::annotations::SingleAnnotationParameter.__init__)
+def test_simtl4j_annotations_annotationparameterlist_constructor_exists():
+    assert callable(simTL4J_annotations_AnnotationParameterList.__init__)
 
 
-def test_simtl4j::annotations::singleannotationparameter_constructor_args():
-    sig = inspect.signature(simTL4J::annotations::SingleAnnotationParameter.__init__)
+def test_simtl4j_annotations_annotationparameterlist_constructor_args():
+    sig = inspect.signature(simTL4J_annotations_AnnotationParameterList.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -5383,698 +6009,72 @@ def test_classifier_constructor_args():
 
 
 
-def test_simtl4j::generics::typeparameter_is_not_abstract():
-    assert not inspect.isabstract(simTL4J::generics::TypeParameter)
+def test_simtl4j_generics_typeparameter_is_not_abstract():
+    assert not inspect.isabstract(simTL4J_generics_TypeParameter)
 
 
-def test_simtl4j::generics::typeparameter_constructor_exists():
-    assert callable(simTL4J::generics::TypeParameter.__init__)
+def test_simtl4j_generics_typeparameter_constructor_exists():
+    assert callable(simTL4J_generics_TypeParameter.__init__)
 
 
-def test_simtl4j::generics::typeparameter_constructor_args():
-    sig = inspect.signature(simTL4J::generics::TypeParameter.__init__)
+def test_simtl4j_generics_typeparameter_constructor_args():
+    sig = inspect.signature(simTL4J_generics_TypeParameter.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_commons::namespaceawareelement_is_not_abstract():
-    assert not inspect.isabstract(commons::NamespaceAwareElement)
+def test_commons_namespaceawareelement_is_not_abstract():
+    assert not inspect.isabstract(commons_NamespaceAwareElement)
 
 
-def test_commons::namespaceawareelement_constructor_exists():
-    assert callable(commons::NamespaceAwareElement.__init__)
+def test_commons_namespaceawareelement_constructor_exists():
+    assert callable(commons_NamespaceAwareElement.__init__)
 
 
-def test_commons::namespaceawareelement_constructor_args():
-    sig = inspect.signature(commons::NamespaceAwareElement.__init__)
+def test_commons_namespaceawareelement_constructor_args():
+    sig = inspect.signature(commons_NamespaceAwareElement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_simtl4j::annotations::annotationinstance_is_not_abstract():
-    assert not inspect.isabstract(simTL4J::annotations::AnnotationInstance)
+def test_simtl4j_containers_javaroot_is_not_abstract():
+    assert not inspect.isabstract(simTL4J_containers_JavaRoot)
 
 
-def test_simtl4j::annotations::annotationinstance_constructor_exists():
-    assert callable(simTL4J::annotations::AnnotationInstance.__init__)
+def test_simtl4j_containers_javaroot_constructor_exists():
+    assert callable(simTL4J_containers_JavaRoot.__init__)
 
 
-def test_simtl4j::annotations::annotationinstance_constructor_args():
-    sig = inspect.signature(simTL4J::annotations::AnnotationInstance.__init__)
+def test_simtl4j_containers_javaroot_constructor_args():
+    sig = inspect.signature(simTL4J_containers_JavaRoot.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_simtl4j::types::namespaceclassifierreference_is_not_abstract():
-    assert not inspect.isabstract(simTL4J::types::NamespaceClassifierReference)
+def test_simtl4j_annotations_annotationinstance_is_not_abstract():
+    assert not inspect.isabstract(simTL4J_annotations_AnnotationInstance)
 
 
-def test_simtl4j::types::namespaceclassifierreference_constructor_exists():
-    assert callable(simTL4J::types::NamespaceClassifierReference.__init__)
+def test_simtl4j_annotations_annotationinstance_constructor_exists():
+    assert callable(simTL4J_annotations_AnnotationInstance.__init__)
 
 
-def test_simtl4j::types::namespaceclassifierreference_constructor_args():
-    sig = inspect.signature(simTL4J::types::NamespaceClassifierReference.__init__)
+def test_simtl4j_annotations_annotationinstance_constructor_args():
+    sig = inspect.signature(simTL4J_annotations_AnnotationInstance.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_simtl4j::containers::javaroot_is_not_abstract():
-    assert not inspect.isabstract(simTL4J::containers::JavaRoot)
+def test_simtl4j_types_namespaceclassifierreference_is_not_abstract():
+    assert not inspect.isabstract(simTL4J_types_NamespaceClassifierReference)
 
 
-def test_simtl4j::containers::javaroot_constructor_exists():
-    assert callable(simTL4J::containers::JavaRoot.__init__)
+def test_simtl4j_types_namespaceclassifierreference_constructor_exists():
+    assert callable(simTL4J_types_NamespaceClassifierReference.__init__)
 
 
-def test_simtl4j::containers::javaroot_constructor_args():
-    sig = inspect.signature(simTL4J::containers::JavaRoot.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_unarymodificationexpression_is_not_abstract():
-    assert not inspect.isabstract(UnaryModificationExpression)
-
-
-def test_unarymodificationexpression_constructor_exists():
-    assert callable(UnaryModificationExpression.__init__)
-
-
-def test_unarymodificationexpression_constructor_args():
-    sig = inspect.signature(UnaryModificationExpression.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_simtl4j::expressions::suffixunarymodificationexpression_is_not_abstract():
-    assert not inspect.isabstract(simTL4J::expressions::SuffixUnaryModificationExpression)
-
-
-def test_simtl4j::expressions::suffixunarymodificationexpression_constructor_exists():
-    assert callable(simTL4J::expressions::SuffixUnaryModificationExpression.__init__)
-
-
-def test_simtl4j::expressions::suffixunarymodificationexpression_constructor_args():
-    sig = inspect.signature(simTL4J::expressions::SuffixUnaryModificationExpression.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_simtl4j::expressions::prefixunarymodificationexpression_is_not_abstract():
-    assert not inspect.isabstract(simTL4J::expressions::PrefixUnaryModificationExpression)
-
-
-def test_simtl4j::expressions::prefixunarymodificationexpression_constructor_exists():
-    assert callable(simTL4J::expressions::PrefixUnaryModificationExpression.__init__)
-
-
-def test_simtl4j::expressions::prefixunarymodificationexpression_constructor_args():
-    sig = inspect.signature(simTL4J::expressions::PrefixUnaryModificationExpression.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_simtl4j::generics::calltypeargumentable_is_not_abstract():
-    assert not inspect.isabstract(simTL4J::generics::CallTypeArgumentable)
-
-
-def test_simtl4j::generics::calltypeargumentable_constructor_exists():
-    assert callable(simTL4J::generics::CallTypeArgumentable.__init__)
-
-
-def test_simtl4j::generics::calltypeargumentable_constructor_args():
-    sig = inspect.signature(simTL4J::generics::CallTypeArgumentable.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_typeargument_is_not_abstract():
-    assert not inspect.isabstract(TypeArgument)
-
-
-def test_typeargument_constructor_exists():
-    assert callable(TypeArgument.__init__)
-
-
-def test_typeargument_constructor_args():
-    sig = inspect.signature(TypeArgument.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_simtl4j::generics::extendstypeargument_is_not_abstract():
-    assert not inspect.isabstract(simTL4J::generics::ExtendsTypeArgument)
-
-
-def test_simtl4j::generics::extendstypeargument_constructor_exists():
-    assert callable(simTL4J::generics::ExtendsTypeArgument.__init__)
-
-
-def test_simtl4j::generics::extendstypeargument_constructor_args():
-    sig = inspect.signature(simTL4J::generics::ExtendsTypeArgument.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_simtl4j::generics::supertypeargument_is_not_abstract():
-    assert not inspect.isabstract(simTL4J::generics::SuperTypeArgument)
-
-
-def test_simtl4j::generics::supertypeargument_constructor_exists():
-    assert callable(simTL4J::generics::SuperTypeArgument.__init__)
-
-
-def test_simtl4j::generics::supertypeargument_constructor_args():
-    sig = inspect.signature(simTL4J::generics::SuperTypeArgument.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_simtl4j::generics::unknowntypeargument_is_not_abstract():
-    assert not inspect.isabstract(simTL4J::generics::UnknownTypeArgument)
-
-
-def test_simtl4j::generics::unknowntypeargument_constructor_exists():
-    assert callable(simTL4J::generics::UnknownTypeArgument.__init__)
-
-
-def test_simtl4j::generics::unknowntypeargument_constructor_args():
-    sig = inspect.signature(simTL4J::generics::UnknownTypeArgument.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_simtl4j::generics::typeargumentable_is_not_abstract():
-    assert not inspect.isabstract(simTL4J::generics::TypeArgumentable)
-
-
-def test_simtl4j::generics::typeargumentable_constructor_exists():
-    assert callable(simTL4J::generics::TypeArgumentable.__init__)
-
-
-def test_simtl4j::generics::typeargumentable_constructor_args():
-    sig = inspect.signature(simTL4J::generics::TypeArgumentable.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_arraytypeable_is_not_abstract():
-    assert not inspect.isabstract(ArrayTypeable)
-
-
-def test_arraytypeable_constructor_exists():
-    assert callable(ArrayTypeable.__init__)
-
-
-def test_arraytypeable_constructor_args():
-    sig = inspect.signature(ArrayTypeable.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_simtl4j::generics::typeargument_is_not_abstract():
-    assert not inspect.isabstract(simTL4J::generics::TypeArgument)
-
-
-def test_simtl4j::generics::typeargument_constructor_exists():
-    assert callable(simTL4J::generics::TypeArgument.__init__)
-
-
-def test_simtl4j::generics::typeargument_constructor_args():
-    sig = inspect.signature(simTL4J::generics::TypeArgument.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_reference_is_not_abstract():
-    assert not inspect.isabstract(Reference)
-
-
-def test_reference_constructor_exists():
-    assert callable(Reference.__init__)
-
-
-def test_reference_constructor_args():
-    sig = inspect.signature(Reference.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_simtl4j::references::selfreference_is_not_abstract():
-    assert not inspect.isabstract(simTL4J::references::SelfReference)
-
-
-def test_simtl4j::references::selfreference_constructor_exists():
-    assert callable(simTL4J::references::SelfReference.__init__)
-
-
-def test_simtl4j::references::selfreference_constructor_args():
-    sig = inspect.signature(simTL4J::references::SelfReference.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_simtl4j::references::reflectiveclassreference_is_not_abstract():
-    assert not inspect.isabstract(simTL4J::references::ReflectiveClassReference)
-
-
-def test_simtl4j::references::reflectiveclassreference_constructor_exists():
-    assert callable(simTL4J::references::ReflectiveClassReference.__init__)
-
-
-def test_simtl4j::references::reflectiveclassreference_constructor_args():
-    sig = inspect.signature(simTL4J::references::ReflectiveClassReference.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_simtl4j::references::elementreference_is_not_abstract():
-    assert not inspect.isabstract(simTL4J::references::ElementReference)
-
-
-def test_simtl4j::references::elementreference_constructor_exists():
-    assert callable(simTL4J::references::ElementReference.__init__)
-
-
-def test_simtl4j::references::elementreference_constructor_args():
-    sig = inspect.signature(simTL4J::references::ElementReference.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_simtl4j::references::stringreference_is_not_abstract():
-    assert not inspect.isabstract(simTL4J::references::StringReference)
-
-
-def test_simtl4j::references::stringreference_constructor_exists():
-    assert callable(simTL4J::references::StringReference.__init__)
-
-
-def test_simtl4j::references::stringreference_constructor_args():
-    sig = inspect.signature(simTL4J::references::StringReference.__init__)
-    params = list(sig.parameters.keys())
-    assert "value" in params, "Missing parameter 'value'"
-
-def test_simtl4j::references::stringreference_has_value():
-    assert hasattr(simTL4J::references::StringReference, "value")
-    descriptor = None
-    for klass in simTL4J::references::StringReference.__mro__:
-        if "value" in klass.__dict__:
-            descriptor = klass.__dict__["value"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_simtl4j::references::primitivetypereference_is_not_abstract():
-    assert not inspect.isabstract(simTL4J::references::PrimitiveTypeReference)
-
-
-def test_simtl4j::references::primitivetypereference_constructor_exists():
-    assert callable(simTL4J::references::PrimitiveTypeReference.__init__)
-
-
-def test_simtl4j::references::primitivetypereference_constructor_args():
-    sig = inspect.signature(simTL4J::references::PrimitiveTypeReference.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_simtl4j::expressions::nestedexpression_is_not_abstract():
-    assert not inspect.isabstract(simTL4J::expressions::NestedExpression)
-
-
-def test_simtl4j::expressions::nestedexpression_constructor_exists():
-    assert callable(simTL4J::expressions::NestedExpression.__init__)
-
-
-def test_simtl4j::expressions::nestedexpression_constructor_args():
-    sig = inspect.signature(simTL4J::expressions::NestedExpression.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_shiftoperator_is_not_abstract():
-    assert not inspect.isabstract(ShiftOperator)
-
-
-def test_shiftoperator_constructor_exists():
-    assert callable(ShiftOperator.__init__)
-
-
-def test_shiftoperator_constructor_args():
-    sig = inspect.signature(ShiftOperator.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_simtl4j::operators::rightshift_is_not_abstract():
-    assert not inspect.isabstract(simTL4J::operators::RightShift)
-
-
-def test_simtl4j::operators::rightshift_constructor_exists():
-    assert callable(simTL4J::operators::RightShift.__init__)
-
-
-def test_simtl4j::operators::rightshift_constructor_args():
-    sig = inspect.signature(simTL4J::operators::RightShift.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_simtl4j::operators::leftshift_is_not_abstract():
-    assert not inspect.isabstract(simTL4J::operators::LeftShift)
-
-
-def test_simtl4j::operators::leftshift_constructor_exists():
-    assert callable(simTL4J::operators::LeftShift.__init__)
-
-
-def test_simtl4j::operators::leftshift_constructor_args():
-    sig = inspect.signature(simTL4J::operators::LeftShift.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_simtl4j::operators::unsignedrightshift_is_not_abstract():
-    assert not inspect.isabstract(simTL4J::operators::UnsignedRightShift)
-
-
-def test_simtl4j::operators::unsignedrightshift_constructor_exists():
-    assert callable(simTL4J::operators::UnsignedRightShift.__init__)
-
-
-def test_simtl4j::operators::unsignedrightshift_constructor_args():
-    sig = inspect.signature(simTL4J::operators::UnsignedRightShift.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_shiftexpressionchild_is_not_abstract():
-    assert not inspect.isabstract(ShiftExpressionChild)
-
-
-def test_shiftexpressionchild_constructor_exists():
-    assert callable(ShiftExpressionChild.__init__)
-
-
-def test_shiftexpressionchild_constructor_args():
-    sig = inspect.signature(ShiftExpressionChild.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_simtl4j::expressions::additiveexpressionchild_is_not_abstract():
-    assert not inspect.isabstract(simTL4J::expressions::AdditiveExpressionChild)
-
-
-def test_simtl4j::expressions::additiveexpressionchild_constructor_exists():
-    assert callable(simTL4J::expressions::AdditiveExpressionChild.__init__)
-
-
-def test_simtl4j::expressions::additiveexpressionchild_constructor_args():
-    sig = inspect.signature(simTL4J::expressions::AdditiveExpressionChild.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_simtl4j::expressions::additiveexpression_is_not_abstract():
-    assert not inspect.isabstract(simTL4J::expressions::AdditiveExpression)
-
-
-def test_simtl4j::expressions::additiveexpression_constructor_exists():
-    assert callable(simTL4J::expressions::AdditiveExpression.__init__)
-
-
-def test_simtl4j::expressions::additiveexpression_constructor_args():
-    sig = inspect.signature(simTL4J::expressions::AdditiveExpression.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_simtl4j::expressions::shiftexpression_is_not_abstract():
-    assert not inspect.isabstract(simTL4J::expressions::ShiftExpression)
-
-
-def test_simtl4j::expressions::shiftexpression_constructor_exists():
-    assert callable(simTL4J::expressions::ShiftExpression.__init__)
-
-
-def test_simtl4j::expressions::shiftexpression_constructor_args():
-    sig = inspect.signature(simTL4J::expressions::ShiftExpression.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_simtl4j::expressions::relationexpressionchild_is_not_abstract():
-    assert not inspect.isabstract(simTL4J::expressions::RelationExpressionChild)
-
-
-def test_simtl4j::expressions::relationexpressionchild_constructor_exists():
-    assert callable(simTL4J::expressions::RelationExpressionChild.__init__)
-
-
-def test_simtl4j::expressions::relationexpressionchild_constructor_args():
-    sig = inspect.signature(simTL4J::expressions::RelationExpressionChild.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_relationoperator_is_not_abstract():
-    assert not inspect.isabstract(RelationOperator)
-
-
-def test_relationoperator_constructor_exists():
-    assert callable(RelationOperator.__init__)
-
-
-def test_relationoperator_constructor_args():
-    sig = inspect.signature(RelationOperator.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_simtl4j::operators::lessthanorequal_is_not_abstract():
-    assert not inspect.isabstract(simTL4J::operators::LessThanOrEqual)
-
-
-def test_simtl4j::operators::lessthanorequal_constructor_exists():
-    assert callable(simTL4J::operators::LessThanOrEqual.__init__)
-
-
-def test_simtl4j::operators::lessthanorequal_constructor_args():
-    sig = inspect.signature(simTL4J::operators::LessThanOrEqual.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_simtl4j::operators::greaterthan_is_not_abstract():
-    assert not inspect.isabstract(simTL4J::operators::GreaterThan)
-
-
-def test_simtl4j::operators::greaterthan_constructor_exists():
-    assert callable(simTL4J::operators::GreaterThan.__init__)
-
-
-def test_simtl4j::operators::greaterthan_constructor_args():
-    sig = inspect.signature(simTL4J::operators::GreaterThan.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_simtl4j::operators::greaterthanorequal_is_not_abstract():
-    assert not inspect.isabstract(simTL4J::operators::GreaterThanOrEqual)
-
-
-def test_simtl4j::operators::greaterthanorequal_constructor_exists():
-    assert callable(simTL4J::operators::GreaterThanOrEqual.__init__)
-
-
-def test_simtl4j::operators::greaterthanorequal_constructor_args():
-    sig = inspect.signature(simTL4J::operators::GreaterThanOrEqual.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_simtl4j::operators::lessthan_is_not_abstract():
-    assert not inspect.isabstract(simTL4J::operators::LessThan)
-
-
-def test_simtl4j::operators::lessthan_constructor_exists():
-    assert callable(simTL4J::operators::LessThan.__init__)
-
-
-def test_simtl4j::operators::lessthan_constructor_args():
-    sig = inspect.signature(simTL4J::operators::LessThan.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_unarymodificationoperator_is_not_abstract():
-    assert not inspect.isabstract(UnaryModificationOperator)
-
-
-def test_unarymodificationoperator_constructor_exists():
-    assert callable(UnaryModificationOperator.__init__)
-
-
-def test_unarymodificationoperator_constructor_args():
-    sig = inspect.signature(UnaryModificationOperator.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_simtl4j::operators::plusplus_is_not_abstract():
-    assert not inspect.isabstract(simTL4J::operators::PlusPlus)
-
-
-def test_simtl4j::operators::plusplus_constructor_exists():
-    assert callable(simTL4J::operators::PlusPlus.__init__)
-
-
-def test_simtl4j::operators::plusplus_constructor_args():
-    sig = inspect.signature(simTL4J::operators::PlusPlus.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_simtl4j::operators::minusminus_is_not_abstract():
-    assert not inspect.isabstract(simTL4J::operators::MinusMinus)
-
-
-def test_simtl4j::operators::minusminus_constructor_exists():
-    assert callable(simTL4J::operators::MinusMinus.__init__)
-
-
-def test_simtl4j::operators::minusminus_constructor_args():
-    sig = inspect.signature(simTL4J::operators::MinusMinus.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_unarymodificationexpressionchild_is_not_abstract():
-    assert not inspect.isabstract(UnaryModificationExpressionChild)
-
-
-def test_unarymodificationexpressionchild_constructor_exists():
-    assert callable(UnaryModificationExpressionChild.__init__)
-
-
-def test_unarymodificationexpressionchild_constructor_args():
-    sig = inspect.signature(UnaryModificationExpressionChild.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_simtl4j::expressions::primaryexpression_is_not_abstract():
-    assert not inspect.isabstract(simTL4J::expressions::PrimaryExpression)
-
-
-def test_simtl4j::expressions::primaryexpression_constructor_exists():
-    assert callable(simTL4J::expressions::PrimaryExpression.__init__)
-
-
-def test_simtl4j::expressions::primaryexpression_constructor_args():
-    sig = inspect.signature(simTL4J::expressions::PrimaryExpression.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_simtl4j::expressions::unaryexpressionchild_is_not_abstract():
-    assert not inspect.isabstract(simTL4J::expressions::UnaryExpressionChild)
-
-
-def test_simtl4j::expressions::unaryexpressionchild_constructor_exists():
-    assert callable(simTL4J::expressions::UnaryExpressionChild.__init__)
-
-
-def test_simtl4j::expressions::unaryexpressionchild_constructor_args():
-    sig = inspect.signature(simTL4J::expressions::UnaryExpressionChild.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_unaryexpressionchild_is_not_abstract():
-    assert not inspect.isabstract(UnaryExpressionChild)
-
-
-def test_unaryexpressionchild_constructor_exists():
-    assert callable(UnaryExpressionChild.__init__)
-
-
-def test_unaryexpressionchild_constructor_args():
-    sig = inspect.signature(UnaryExpressionChild.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_simtl4j::expressions::unarymodificationexpressionchild_is_not_abstract():
-    assert not inspect.isabstract(simTL4J::expressions::UnaryModificationExpressionChild)
-
-
-def test_simtl4j::expressions::unarymodificationexpressionchild_constructor_exists():
-    assert callable(simTL4J::expressions::UnaryModificationExpressionChild.__init__)
-
-
-def test_simtl4j::expressions::unarymodificationexpressionchild_constructor_args():
-    sig = inspect.signature(simTL4J::expressions::UnaryModificationExpressionChild.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_simtl4j::expressions::unarymodificationexpression_is_not_abstract():
-    assert not inspect.isabstract(simTL4J::expressions::UnaryModificationExpression)
-
-
-def test_simtl4j::expressions::unarymodificationexpression_constructor_exists():
-    assert callable(simTL4J::expressions::UnaryModificationExpression.__init__)
-
-
-def test_simtl4j::expressions::unarymodificationexpression_constructor_args():
-    sig = inspect.signature(simTL4J::expressions::UnaryModificationExpression.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_unaryoperator_is_not_abstract():
-    assert not inspect.isabstract(UnaryOperator)
-
-
-def test_unaryoperator_constructor_exists():
-    assert callable(UnaryOperator.__init__)
-
-
-def test_unaryoperator_constructor_args():
-    sig = inspect.signature(UnaryOperator.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_simtl4j::operators::complement_is_not_abstract():
-    assert not inspect.isabstract(simTL4J::operators::Complement)
-
-
-def test_simtl4j::operators::complement_constructor_exists():
-    assert callable(simTL4J::operators::Complement.__init__)
-
-
-def test_simtl4j::operators::complement_constructor_args():
-    sig = inspect.signature(simTL4J::operators::Complement.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_simtl4j::operators::negate_is_not_abstract():
-    assert not inspect.isabstract(simTL4J::operators::Negate)
-
-
-def test_simtl4j::operators::negate_constructor_exists():
-    assert callable(simTL4J::operators::Negate.__init__)
-
-
-def test_simtl4j::operators::negate_constructor_args():
-    sig = inspect.signature(simTL4J::operators::Negate.__init__)
+def test_simtl4j_types_namespaceclassifierreference_constructor_args():
+    sig = inspect.signature(simTL4J_types_NamespaceClassifierReference.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -6089,39 +6089,125 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
+members_ExceptionThrower_strategy = st.builds(
+    members_ExceptionThrower,
+)
+parameters_Parametrizable_strategy = st.builds(
+    parameters_Parametrizable,
+)
+statements_StatementListContainer_strategy = st.builds(
+    statements_StatementListContainer,
+)
+instantiations_Initializable_strategy = st.builds(
+    instantiations_Initializable,
+)
+Member_strategy = st.builds(
+    Member,
+)
+NamedElement_strategy = st.builds(
+    NamedElement,
+)
+simTL4J_members_Member_strategy = st.builds(
+    simTL4J_members_Member,
+)
+NamespaceClassifierReference_strategy = st.builds(
+    NamespaceClassifierReference,
+)
+LongLiteral_strategy = st.builds(
+    LongLiteral,
+)
+simTL4J_literals_HexLongLiteral_strategy = st.builds(
+    simTL4J_literals_HexLongLiteral,
+    hexValue=
+        safe_text
+)
+simTL4J_literals_OctalLongLiteral_strategy = st.builds(
+    simTL4J_literals_OctalLongLiteral,
+    octalValue=
+        safe_text
+)
+simTL4J_literals_DecimalLongLiteral_strategy = st.builds(
+    simTL4J_literals_DecimalLongLiteral,
+    decimalValue=
+        safe_text
+)
+IntegerLiteral_strategy = st.builds(
+    IntegerLiteral,
+)
+simTL4J_literals_OctalIntegerLiteral_strategy = st.builds(
+    simTL4J_literals_OctalIntegerLiteral,
+    octalValue=
+        safe_text
+)
+simTL4J_literals_HexIntegerLiteral_strategy = st.builds(
+    simTL4J_literals_HexIntegerLiteral,
+    hexValue=
+        safe_text
+)
+simTL4J_literals_DecimalIntegerLiteral_strategy = st.builds(
+    simTL4J_literals_DecimalIntegerLiteral,
+    decimalValue=
+        safe_text
+)
+DoubleLiteral_strategy = st.builds(
+    DoubleLiteral,
+)
+simTL4J_literals_HexDoubleLiteral_strategy = st.builds(
+    simTL4J_literals_HexDoubleLiteral,
+    hexValue=
+        st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False)
+)
+simTL4J_literals_DecimalDoubleLiteral_strategy = st.builds(
+    simTL4J_literals_DecimalDoubleLiteral,
+    decimalValue=
+        st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False)
+)
+FloatLiteral_strategy = st.builds(
+    FloatLiteral,
+)
+simTL4J_literals_HexFloatLiteral_strategy = st.builds(
+    simTL4J_literals_HexFloatLiteral,
+    hexValue=
+        st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False)
+)
+simTL4J_literals_DecimalFloatLiteral_strategy = st.builds(
+    simTL4J_literals_DecimalFloatLiteral,
+    decimalValue=
+        st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False)
+)
 TMethodCall_strategy = st.builds(
     TMethodCall,
 )
 TUnaryOperator_strategy = st.builds(
     TUnaryOperator,
 )
-simTL4J::simTL::TUnaryOperatorNOT_strategy = st.builds(
-    simTL4J::simTL::TUnaryOperatorNOT,
+simTL4J_simTL_TUnaryOperatorNOT_strategy = st.builds(
+    simTL4J_simTL_TUnaryOperatorNOT,
 )
-simTL::TPlaceholder_strategy = st.builds(
-    simTL::TPlaceholder,
+simTL_TPlaceholder_strategy = st.builds(
+    simTL_TPlaceholder,
 )
-simTL4J::simTL::TPlaceholder_strategy = st.builds(
-    simTL4J::simTL::TPlaceholder,
+simTL4J_simTL_TPlaceholder_strategy = st.builds(
+    simTL4J_simTL_TPlaceholder,
 )
-simTL::TIf_strategy = st.builds(
-    simTL::TIf,
+simTL_TIf_strategy = st.builds(
+    simTL_TIf,
 )
-simTL::TFor_strategy = st.builds(
-    simTL::TFor,
+simTL_TFor_strategy = st.builds(
+    simTL_TFor,
 )
-simTL4J::simTL::TAbstractMethodStatement_strategy = st.builds(
-    simTL4J::simTL::TAbstractMethodStatement,
+simTL4J_simTL_TAbstractMethodStatement_strategy = st.builds(
+    simTL4J_simTL_TAbstractMethodStatement,
 )
-simTL4J::simTL::TMethodCall_strategy = st.builds(
-    simTL4J::simTL::TMethodCall,
+simTL4J_simTL_TMethodCall_strategy = st.builds(
+    simTL4J_simTL_TMethodCall,
     params=
         safe_text,
     methodName=
         safe_text
 )
-simTL4J::simTL::TModelImport_strategy = st.builds(
-    simTL4J::simTL::TModelImport,
+simTL4J_simTL_TModelImport_strategy = st.builds(
+    simTL4J_simTL_TModelImport,
     name=
         safe_text,
     uri=
@@ -6130,51 +6216,51 @@ simTL4J::simTL::TModelImport_strategy = st.builds(
 TModelImport_strategy = st.builds(
     TModelImport,
 )
-simTL4J::simTL::TemplateHeader_strategy = st.builds(
-    simTL4J::simTL::TemplateHeader,
+simTL4J_simTL_TemplateHeader_strategy = st.builds(
+    simTL4J_simTL_TemplateHeader,
 )
 TemplateHeader_strategy = st.builds(
     TemplateHeader,
 )
-simTL4J::simTL::Template_strategy = st.builds(
-    simTL4J::simTL::Template,
+simTL4J_simTL_Template_strategy = st.builds(
+    simTL4J_simTL_Template,
 )
-simTL4J::simTL::TForVariable_strategy = st.builds(
-    simTL4J::simTL::TForVariable,
+simTL4J_simTL_TForVariable_strategy = st.builds(
+    simTL4J_simTL_TForVariable,
     name=
         safe_text
 )
 TForVariable_strategy = st.builds(
     TForVariable,
 )
-simTL4J::simTL::TFor_strategy = st.builds(
-    simTL4J::simTL::TFor,
+simTL4J_simTL_TFor_strategy = st.builds(
+    simTL4J_simTL_TFor,
 )
 TAbstractMethodStatement_strategy = st.builds(
     TAbstractMethodStatement,
 )
-simTL4J::simTL::TMethodStatementImpl_strategy = st.builds(
-    simTL4J::simTL::TMethodStatementImpl,
+simTL4J_simTL_TUnaryOperator_strategy = st.builds(
+    simTL4J_simTL_TUnaryOperator,
+)
+simTL4J_simTL_TMethodStatementImpl_strategy = st.builds(
+    simTL4J_simTL_TMethodStatementImpl,
     caller=
         safe_text
 )
-simTL4J::simTL::TUnaryOperator_strategy = st.builds(
-    simTL4J::simTL::TUnaryOperator,
-)
-simTL4J::simTL::TIf_strategy = st.builds(
-    simTL4J::simTL::TIf,
+simTL4J_simTL_TIf_strategy = st.builds(
+    simTL4J_simTL_TIf,
 )
 AdditionalLocalVariable_strategy = st.builds(
     AdditionalLocalVariable,
 )
-statements::ForLoopInitializer_strategy = st.builds(
-    statements::ForLoopInitializer,
+statements_ForLoopInitializer_strategy = st.builds(
+    statements_ForLoopInitializer,
 )
 ClassifierReference_strategy = st.builds(
     ClassifierReference,
 )
-types::TypeReference_strategy = st.builds(
-    types::TypeReference,
+types_TypeReference_strategy = st.builds(
+    types_TypeReference,
 )
 Block_strategy = st.builds(
     Block,
@@ -6182,8 +6268,8 @@ Block_strategy = st.builds(
 CatchBlock_strategy = st.builds(
     CatchBlock,
 )
-statements::SwitchCase_strategy = st.builds(
-    statements::SwitchCase,
+statements_SwitchCase_strategy = st.builds(
+    statements_SwitchCase,
 )
 LocalVariable_strategy = st.builds(
     LocalVariable,
@@ -6191,398 +6277,312 @@ LocalVariable_strategy = st.builds(
 JumpLabel_strategy = st.builds(
     JumpLabel,
 )
-statements::Conditional_strategy = st.builds(
-    statements::Conditional,
+statements_Conditional_strategy = st.builds(
+    statements_Conditional,
 )
-simTL4J::statements::NormalSwitchCase_strategy = st.builds(
-    simTL4J::statements::NormalSwitchCase,
+simTL4J_statements_NormalSwitchCase_strategy = st.builds(
+    simTL4J_statements_NormalSwitchCase,
 )
 StatementListContainer_strategy = st.builds(
     StatementListContainer,
 )
-simTL4J::statements::SwitchCase_strategy = st.builds(
-    simTL4J::statements::SwitchCase,
+simTL4J_statements_SwitchCase_strategy = st.builds(
+    simTL4J_statements_SwitchCase,
 )
 WhileLoop_strategy = st.builds(
     WhileLoop,
 )
-simTL4J::statements::DoWhileLoop_strategy = st.builds(
-    simTL4J::statements::DoWhileLoop,
+simTL4J_statements_DoWhileLoop_strategy = st.builds(
+    simTL4J_statements_DoWhileLoop,
 )
 SwitchCase_strategy = st.builds(
     SwitchCase,
 )
-simTL4J::statements::DefaultSwitchCase_strategy = st.builds(
-    simTL4J::statements::DefaultSwitchCase,
+simTL4J_statements_DefaultSwitchCase_strategy = st.builds(
+    simTL4J_statements_DefaultSwitchCase,
 )
-statements::StatementContainer_strategy = st.builds(
-    statements::StatementContainer,
+statements_StatementContainer_strategy = st.builds(
+    statements_StatementContainer,
 )
 OrdinaryParameter_strategy = st.builds(
     OrdinaryParameter,
 )
-simTL4J::statements::CatchBlock_strategy = st.builds(
-    simTL4J::statements::CatchBlock,
+simTL4J_statements_CatchBlock_strategy = st.builds(
+    simTL4J_statements_CatchBlock,
 )
-modifiers::Modifiable_strategy = st.builds(
-    modifiers::Modifiable,
+modifiers_Modifiable_strategy = st.builds(
+    modifiers_Modifiable,
 )
 Jump_strategy = st.builds(
     Jump,
 )
-simTL4J::statements::Continue_strategy = st.builds(
-    simTL4J::statements::Continue,
+simTL4J_statements_Continue_strategy = st.builds(
+    simTL4J_statements_Continue,
 )
-simTL4J::statements::Break_strategy = st.builds(
-    simTL4J::statements::Break,
+simTL4J_statements_Break_strategy = st.builds(
+    simTL4J_statements_Break,
 )
-references::ElementReference_strategy = st.builds(
-    references::ElementReference,
+references_ElementReference_strategy = st.builds(
+    references_ElementReference,
 )
 Statement_strategy = st.builds(
     Statement,
 )
-simTL4J::statements::LocalVariableStatement_strategy = st.builds(
-    simTL4J::statements::LocalVariableStatement,
+simTL4J_statements_EmptyStatement_strategy = st.builds(
+    simTL4J_statements_EmptyStatement,
 )
-simTL4J::statements::Throw_strategy = st.builds(
-    simTL4J::statements::Throw,
+simTL4J_statements_ExpressionStatement_strategy = st.builds(
+    simTL4J_statements_ExpressionStatement,
 )
-simTL4J::statements::Jump_strategy = st.builds(
-    simTL4J::statements::Jump,
+simTL4J_statements_Switch_strategy = st.builds(
+    simTL4J_statements_Switch,
 )
-simTL4J::statements::Switch_strategy = st.builds(
-    simTL4J::statements::Switch,
+simTL4J_statements_Jump_strategy = st.builds(
+    simTL4J_statements_Jump,
 )
-simTL4J::statements::Return_strategy = st.builds(
-    simTL4J::statements::Return,
+simTL4J_statements_LocalVariableStatement_strategy = st.builds(
+    simTL4J_statements_LocalVariableStatement,
 )
-simTL4J::statements::ExpressionStatement_strategy = st.builds(
-    simTL4J::statements::ExpressionStatement,
+simTL4J_statements_Return_strategy = st.builds(
+    simTL4J_statements_Return,
 )
-simTL4J::statements::EmptyStatement_strategy = st.builds(
-    simTL4J::statements::EmptyStatement,
+simTL4J_statements_Throw_strategy = st.builds(
+    simTL4J_statements_Throw,
 )
 PrimitiveType_strategy = st.builds(
     PrimitiveType,
 )
-simTL4J::types::Void_strategy = st.builds(
-    simTL4J::types::Void,
+simTL4J_types_Long_strategy = st.builds(
+    simTL4J_types_Long,
 )
-simTL4J::types::Char_strategy = st.builds(
-    simTL4J::types::Char,
+simTL4J_types_Short_strategy = st.builds(
+    simTL4J_types_Short,
 )
-simTL4J::types::Boolean_strategy = st.builds(
-    simTL4J::types::Boolean,
+simTL4J_types_Boolean_strategy = st.builds(
+    simTL4J_types_Boolean,
 )
-simTL4J::types::Long_strategy = st.builds(
-    simTL4J::types::Long,
+simTL4J_types_Float_strategy = st.builds(
+    simTL4J_types_Float,
 )
-simTL4J::types::Int_strategy = st.builds(
-    simTL4J::types::Int,
+simTL4J_types_Double_strategy = st.builds(
+    simTL4J_types_Double,
 )
-simTL4J::types::Double_strategy = st.builds(
-    simTL4J::types::Double,
+simTL4J_types_Int_strategy = st.builds(
+    simTL4J_types_Int,
 )
-simTL4J::types::Short_strategy = st.builds(
-    simTL4J::types::Short,
+simTL4J_types_Void_strategy = st.builds(
+    simTL4J_types_Void,
 )
-simTL4J::types::Byte_strategy = st.builds(
-    simTL4J::types::Byte,
+simTL4J_types_Char_strategy = st.builds(
+    simTL4J_types_Char,
 )
-simTL4J::types::Float_strategy = st.builds(
-    simTL4J::types::Float,
+simTL4J_types_Byte_strategy = st.builds(
+    simTL4J_types_Byte,
 )
 ElementReference_strategy = st.builds(
     ElementReference,
 )
-simTL4J::references::IdentifierReference_strategy = st.builds(
-    simTL4J::references::IdentifierReference,
+simTL4J_references_IdentifierReference_strategy = st.builds(
+    simTL4J_references_IdentifierReference,
+)
+simTL4J_references_ReferenceableElement_strategy = st.builds(
+    simTL4J_references_ReferenceableElement,
 )
 ArraySelector_strategy = st.builds(
     ArraySelector,
 )
-expressions::PrimaryExpression_strategy = st.builds(
-    expressions::PrimaryExpression,
+expressions_PrimaryExpression_strategy = st.builds(
+    expressions_PrimaryExpression,
 )
-simTL4J::simTL::TPlaceholder::PrimaryExpression_strategy = st.builds(
-    simTL4J::simTL::TPlaceholder::PrimaryExpression,
+simTL4J_simTL_TPlaceholder_PrimaryExpression_strategy = st.builds(
+    simTL4J_simTL_TPlaceholder_PrimaryExpression,
 )
 Parameter_strategy = st.builds(
     Parameter,
 )
-simTL4J::parameters::VariableLengthParameter_strategy = st.builds(
-    simTL4J::parameters::VariableLengthParameter,
+simTL4J_parameters_OrdinaryParameter_strategy = st.builds(
+    simTL4J_parameters_OrdinaryParameter,
 )
-simTL4J::parameters::OrdinaryParameter_strategy = st.builds(
-    simTL4J::parameters::OrdinaryParameter,
+simTL4J_parameters_VariableLengthParameter_strategy = st.builds(
+    simTL4J_parameters_VariableLengthParameter,
 )
-operators::UnaryOperator_strategy = st.builds(
-    operators::UnaryOperator,
+operators_UnaryOperator_strategy = st.builds(
+    operators_UnaryOperator,
 )
-operators::AdditiveOperator_strategy = st.builds(
-    operators::AdditiveOperator,
+operators_AdditiveOperator_strategy = st.builds(
+    operators_AdditiveOperator,
 )
-simTL4J::operators::Subtraction_strategy = st.builds(
-    simTL4J::operators::Subtraction,
+simTL4J_operators_Subtraction_strategy = st.builds(
+    simTL4J_operators_Subtraction,
 )
-simTL4J::operators::Addition_strategy = st.builds(
-    simTL4J::operators::Addition,
+simTL4J_operators_Addition_strategy = st.builds(
+    simTL4J_operators_Addition,
 )
 Operator_strategy = st.builds(
     Operator,
 )
-simTL4J::operators::MultiplicativeOperator_strategy = st.builds(
-    simTL4J::operators::MultiplicativeOperator,
+simTL4J_operators_ShiftOperator_strategy = st.builds(
+    simTL4J_operators_ShiftOperator,
 )
-simTL4J::operators::UnaryModificationOperator_strategy = st.builds(
-    simTL4J::operators::UnaryModificationOperator,
+simTL4J_operators_UnaryModificationOperator_strategy = st.builds(
+    simTL4J_operators_UnaryModificationOperator,
 )
-simTL4J::operators::EqualityOperator_strategy = st.builds(
-    simTL4J::operators::EqualityOperator,
+simTL4J_operators_UnaryOperator_strategy = st.builds(
+    simTL4J_operators_UnaryOperator,
 )
-simTL4J::operators::RelationOperator_strategy = st.builds(
-    simTL4J::operators::RelationOperator,
+simTL4J_operators_EqualityOperator_strategy = st.builds(
+    simTL4J_operators_EqualityOperator,
 )
-simTL4J::operators::AssignmentOperator_strategy = st.builds(
-    simTL4J::operators::AssignmentOperator,
+simTL4J_operators_RelationOperator_strategy = st.builds(
+    simTL4J_operators_RelationOperator,
 )
-simTL4J::operators::UnaryOperator_strategy = st.builds(
-    simTL4J::operators::UnaryOperator,
+simTL4J_operators_AssignmentOperator_strategy = st.builds(
+    simTL4J_operators_AssignmentOperator,
 )
-simTL4J::operators::ShiftOperator_strategy = st.builds(
-    simTL4J::operators::ShiftOperator,
+simTL4J_operators_MultiplicativeOperator_strategy = st.builds(
+    simTL4J_operators_MultiplicativeOperator,
 )
-simTL4J::operators::AdditiveOperator_strategy = st.builds(
-    simTL4J::operators::AdditiveOperator,
+simTL4J_operators_AdditiveOperator_strategy = st.builds(
+    simTL4J_operators_AdditiveOperator,
 )
 AnnotationInstanceOrModifier_strategy = st.builds(
     AnnotationInstanceOrModifier,
 )
-simTL4J::modifiers::Modifier_strategy = st.builds(
-    simTL4J::modifiers::Modifier,
+simTL4J_modifiers_Modifier_strategy = st.builds(
+    simTL4J_modifiers_Modifier,
 )
 Modifier_strategy = st.builds(
     Modifier,
 )
-simTL4J::modifiers::Synchronized_strategy = st.builds(
-    simTL4J::modifiers::Synchronized,
+simTL4J_modifiers_Native_strategy = st.builds(
+    simTL4J_modifiers_Native,
 )
-simTL4J::modifiers::Private_strategy = st.builds(
-    simTL4J::modifiers::Private,
+simTL4J_modifiers_Strictfp_strategy = st.builds(
+    simTL4J_modifiers_Strictfp,
 )
-simTL4J::modifiers::Static_strategy = st.builds(
-    simTL4J::modifiers::Static,
+simTL4J_modifiers_Volatile_strategy = st.builds(
+    simTL4J_modifiers_Volatile,
 )
-simTL4J::modifiers::Strictfp_strategy = st.builds(
-    simTL4J::modifiers::Strictfp,
+simTL4J_modifiers_Private_strategy = st.builds(
+    simTL4J_modifiers_Private,
 )
-simTL4J::modifiers::Transient_strategy = st.builds(
-    simTL4J::modifiers::Transient,
+simTL4J_modifiers_Static_strategy = st.builds(
+    simTL4J_modifiers_Static,
 )
-simTL4J::modifiers::Abstract_strategy = st.builds(
-    simTL4J::modifiers::Abstract,
+simTL4J_modifiers_Transient_strategy = st.builds(
+    simTL4J_modifiers_Transient,
 )
-simTL4J::modifiers::Volatile_strategy = st.builds(
-    simTL4J::modifiers::Volatile,
+simTL4J_modifiers_Synchronized_strategy = st.builds(
+    simTL4J_modifiers_Synchronized,
 )
-simTL4J::modifiers::Native_strategy = st.builds(
-    simTL4J::modifiers::Native,
+simTL4J_modifiers_Abstract_strategy = st.builds(
+    simTL4J_modifiers_Abstract,
 )
-simTL4J::modifiers::Protected_strategy = st.builds(
-    simTL4J::modifiers::Protected,
+simTL4J_modifiers_Final_strategy = st.builds(
+    simTL4J_modifiers_Final,
 )
-simTL4J::modifiers::Public_strategy = st.builds(
-    simTL4J::modifiers::Public,
+simTL4J_modifiers_Protected_strategy = st.builds(
+    simTL4J_modifiers_Protected,
 )
-simTL4J::modifiers::Final_strategy = st.builds(
-    simTL4J::modifiers::Final,
+simTL4J_modifiers_Public_strategy = st.builds(
+    simTL4J_modifiers_Public,
 )
-members::Method_strategy = st.builds(
-    members::Method,
+members_Method_strategy = st.builds(
+    members_Method,
+)
+simTL4J_members_ClassMethod_strategy = st.builds(
+    simTL4J_members_ClassMethod,
 )
 Method_strategy = st.builds(
     Method,
 )
-simTL4J::members::InterfaceMethod_strategy = st.builds(
-    simTL4J::members::InterfaceMethod,
+simTL4J_members_InterfaceMethod_strategy = st.builds(
+    simTL4J_members_InterfaceMethod,
 )
 AdditionalField_strategy = st.builds(
     AdditionalField,
 )
-variables::Variable_strategy = st.builds(
-    variables::Variable,
+variables_Variable_strategy = st.builds(
+    variables_Variable,
 )
-members::ExceptionThrower_strategy = st.builds(
-    members::ExceptionThrower,
-)
-parameters::Parametrizable_strategy = st.builds(
-    parameters::Parametrizable,
-)
-statements::StatementListContainer_strategy = st.builds(
-    statements::StatementListContainer,
-)
-simTL4J::members::ClassMethod_strategy = st.builds(
-    simTL4J::members::ClassMethod,
-)
-instantiations::Initializable_strategy = st.builds(
-    instantiations::Initializable,
-)
-Member_strategy = st.builds(
-    Member,
-)
-simTL4J::members::EmptyMember_strategy = st.builds(
-    simTL4J::members::EmptyMember,
-)
-NamedElement_strategy = st.builds(
-    NamedElement,
-)
-simTL4J::references::ReferenceableElement_strategy = st.builds(
-    simTL4J::references::ReferenceableElement,
-)
-simTL4J::members::Member_strategy = st.builds(
-    simTL4J::members::Member,
-)
-NamespaceClassifierReference_strategy = st.builds(
-    NamespaceClassifierReference,
-)
-LongLiteral_strategy = st.builds(
-    LongLiteral,
-)
-simTL4J::literals::OctalLongLiteral_strategy = st.builds(
-    simTL4J::literals::OctalLongLiteral,
-    octalValue=
-        safe_text
-)
-simTL4J::literals::HexLongLiteral_strategy = st.builds(
-    simTL4J::literals::HexLongLiteral,
-    hexValue=
-        safe_text
-)
-simTL4J::literals::DecimalLongLiteral_strategy = st.builds(
-    simTL4J::literals::DecimalLongLiteral,
-    decimalValue=
-        safe_text
-)
-IntegerLiteral_strategy = st.builds(
-    IntegerLiteral,
-)
-simTL4J::literals::HexIntegerLiteral_strategy = st.builds(
-    simTL4J::literals::HexIntegerLiteral,
-    hexValue=
-        safe_text
-)
-simTL4J::literals::OctalIntegerLiteral_strategy = st.builds(
-    simTL4J::literals::OctalIntegerLiteral,
-    octalValue=
-        safe_text
-)
-simTL4J::literals::DecimalIntegerLiteral_strategy = st.builds(
-    simTL4J::literals::DecimalIntegerLiteral,
-    decimalValue=
-        safe_text
-)
-DoubleLiteral_strategy = st.builds(
-    DoubleLiteral,
-)
-simTL4J::literals::HexDoubleLiteral_strategy = st.builds(
-    simTL4J::literals::HexDoubleLiteral,
-    hexValue=
-        st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False)
-)
-simTL4J::literals::DecimalDoubleLiteral_strategy = st.builds(
-    simTL4J::literals::DecimalDoubleLiteral,
-    decimalValue=
-        st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False)
-)
-FloatLiteral_strategy = st.builds(
-    FloatLiteral,
-)
-simTL4J::literals::HexFloatLiteral_strategy = st.builds(
-    simTL4J::literals::HexFloatLiteral,
-    hexValue=
-        st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False)
-)
-simTL4J::literals::DecimalFloatLiteral_strategy = st.builds(
-    simTL4J::literals::DecimalFloatLiteral,
-    decimalValue=
-        st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False)
+simTL4J_members_EmptyMember_strategy = st.builds(
+    simTL4J_members_EmptyMember,
 )
 Literal_strategy = st.builds(
     Literal,
 )
-simTL4J::literals::CharacterLiteral_strategy = st.builds(
-    simTL4J::literals::CharacterLiteral,
+simTL4J_literals_FloatLiteral_strategy = st.builds(
+    simTL4J_literals_FloatLiteral,
+)
+simTL4J_literals_CharacterLiteral_strategy = st.builds(
+    simTL4J_literals_CharacterLiteral,
     value=
         safe_text
 )
-simTL4J::literals::FloatLiteral_strategy = st.builds(
-    simTL4J::literals::FloatLiteral,
+simTL4J_literals_IntegerLiteral_strategy = st.builds(
+    simTL4J_literals_IntegerLiteral,
 )
-simTL4J::literals::NullLiteral_strategy = st.builds(
-    simTL4J::literals::NullLiteral,
+simTL4J_literals_LongLiteral_strategy = st.builds(
+    simTL4J_literals_LongLiteral,
 )
-simTL4J::literals::DoubleLiteral_strategy = st.builds(
-    simTL4J::literals::DoubleLiteral,
+simTL4J_literals_DoubleLiteral_strategy = st.builds(
+    simTL4J_literals_DoubleLiteral,
 )
-simTL4J::literals::LongLiteral_strategy = st.builds(
-    simTL4J::literals::LongLiteral,
+simTL4J_literals_NullLiteral_strategy = st.builds(
+    simTL4J_literals_NullLiteral,
 )
-simTL4J::literals::IntegerLiteral_strategy = st.builds(
-    simTL4J::literals::IntegerLiteral,
-)
-simTL4J::literals::BooleanLiteral_strategy = st.builds(
-    simTL4J::literals::BooleanLiteral,
+simTL4J_literals_BooleanLiteral_strategy = st.builds(
+    simTL4J_literals_BooleanLiteral,
     value=
         st.booleans()
 )
 PrimaryExpression_strategy = st.builds(
     PrimaryExpression,
 )
-simTL4J::literals::Literal_strategy = st.builds(
-    simTL4J::literals::Literal,
+simTL4J_literals_Literal_strategy = st.builds(
+    simTL4J_literals_Literal,
 )
 Self_strategy = st.builds(
     Self,
 )
-simTL4J::literals::This_strategy = st.builds(
-    simTL4J::literals::This,
+simTL4J_literals_Super_strategy = st.builds(
+    simTL4J_literals_Super,
 )
-simTL4J::literals::Super_strategy = st.builds(
-    simTL4J::literals::Super,
+simTL4J_literals_This_strategy = st.builds(
+    simTL4J_literals_This,
 )
 Instantiation_strategy = st.builds(
     Instantiation,
 )
-simTL4J::instantiations::ExplicitConstructorCall_strategy = st.builds(
-    simTL4J::instantiations::ExplicitConstructorCall,
+simTL4J_instantiations_ExplicitConstructorCall_strategy = st.builds(
+    simTL4J_instantiations_ExplicitConstructorCall,
 )
 AnonymousClass_strategy = st.builds(
     AnonymousClass,
 )
-generics::CallTypeArgumentable_strategy = st.builds(
-    generics::CallTypeArgumentable,
+generics_CallTypeArgumentable_strategy = st.builds(
+    generics_CallTypeArgumentable,
 )
-instantiations::Instantiation_strategy = st.builds(
-    instantiations::Instantiation,
+instantiations_Instantiation_strategy = st.builds(
+    instantiations_Instantiation,
 )
-simTL4J::instantiations::NewConstructorCall_strategy = st.builds(
-    simTL4J::instantiations::NewConstructorCall,
+simTL4J_instantiations_NewConstructorCall_strategy = st.builds(
+    simTL4J_instantiations_NewConstructorCall,
 )
-generics::TypeArgumentable_strategy = st.builds(
-    generics::TypeArgumentable,
+generics_TypeArgumentable_strategy = st.builds(
+    generics_TypeArgumentable,
 )
-simTL4J::references::Reference_strategy = st.builds(
-    simTL4J::references::Reference,
+simTL4J_types_ClassifierReference_strategy = st.builds(
+    simTL4J_types_ClassifierReference,
 )
-simTL4J::types::ClassifierReference_strategy = st.builds(
-    simTL4J::types::ClassifierReference,
+simTL4J_references_Reference_strategy = st.builds(
+    simTL4J_references_Reference,
 )
-references::Argumentable_strategy = st.builds(
-    references::Argumentable,
+references_Argumentable_strategy = st.builds(
+    references_Argumentable,
 )
-simTL4J::references::MethodCall_strategy = st.builds(
-    simTL4J::references::MethodCall,
+simTL4J_references_MethodCall_strategy = st.builds(
+    simTL4J_references_MethodCall,
 )
 ReferenceableElement_strategy = st.builds(
     ReferenceableElement,
@@ -6590,11 +6590,11 @@ ReferenceableElement_strategy = st.builds(
 StaticImport_strategy = st.builds(
     StaticImport,
 )
-simTL4J::imports::StaticMemberImport_strategy = st.builds(
-    simTL4J::imports::StaticMemberImport,
+simTL4J_imports_StaticMemberImport_strategy = st.builds(
+    simTL4J_imports_StaticMemberImport,
 )
-simTL4J::imports::StaticClassifierImport_strategy = st.builds(
-    simTL4J::imports::StaticClassifierImport,
+simTL4J_imports_StaticClassifierImport_strategy = st.builds(
+    simTL4J_imports_StaticClassifierImport,
 )
 Static_strategy = st.builds(
     Static,
@@ -6602,47 +6602,166 @@ Static_strategy = st.builds(
 Import_strategy = st.builds(
     Import,
 )
-simTL4J::imports::StaticImport_strategy = st.builds(
-    simTL4J::imports::StaticImport,
+simTL4J_imports_StaticImport_strategy = st.builds(
+    simTL4J_imports_StaticImport,
 )
-simTL4J::imports::PackageImport_strategy = st.builds(
-    simTL4J::imports::PackageImport,
+simTL4J_imports_ClassifierImport_strategy = st.builds(
+    simTL4J_imports_ClassifierImport,
 )
-simTL4J::imports::ClassifierImport_strategy = st.builds(
-    simTL4J::imports::ClassifierImport,
+simTL4J_imports_PackageImport_strategy = st.builds(
+    simTL4J_imports_PackageImport,
 )
 NamespaceAwareElement_strategy = st.builds(
     NamespaceAwareElement,
 )
-simTL4J::imports::Import_strategy = st.builds(
-    simTL4J::imports::Import,
+simTL4J_imports_Import_strategy = st.builds(
+    simTL4J_imports_Import,
 )
 TypeParameter_strategy = st.builds(
     TypeParameter,
 )
-generics::TypeArgument_strategy = st.builds(
-    generics::TypeArgument,
+generics_TypeArgument_strategy = st.builds(
+    generics_TypeArgument,
 )
-expressions::UnaryModificationExpressionChild_strategy = st.builds(
-    expressions::UnaryModificationExpressionChild,
+expressions_UnaryModificationExpressionChild_strategy = st.builds(
+    expressions_UnaryModificationExpressionChild,
+)
+UnaryModificationExpression_strategy = st.builds(
+    UnaryModificationExpression,
+)
+simTL4J_expressions_SuffixUnaryModificationExpression_strategy = st.builds(
+    simTL4J_expressions_SuffixUnaryModificationExpression,
+)
+simTL4J_expressions_PrefixUnaryModificationExpression_strategy = st.builds(
+    simTL4J_expressions_PrefixUnaryModificationExpression,
+)
+TypeArgument_strategy = st.builds(
+    TypeArgument,
+)
+simTL4J_generics_ExtendsTypeArgument_strategy = st.builds(
+    simTL4J_generics_ExtendsTypeArgument,
+)
+simTL4J_generics_SuperTypeArgument_strategy = st.builds(
+    simTL4J_generics_SuperTypeArgument,
+)
+simTL4J_generics_UnknownTypeArgument_strategy = st.builds(
+    simTL4J_generics_UnknownTypeArgument,
+)
+ArrayTypeable_strategy = st.builds(
+    ArrayTypeable,
+)
+simTL4J_generics_TypeArgument_strategy = st.builds(
+    simTL4J_generics_TypeArgument,
+)
+Reference_strategy = st.builds(
+    Reference,
+)
+simTL4J_references_PrimitiveTypeReference_strategy = st.builds(
+    simTL4J_references_PrimitiveTypeReference,
+)
+simTL4J_references_StringReference_strategy = st.builds(
+    simTL4J_references_StringReference,
+    value=
+        safe_text
+)
+simTL4J_references_SelfReference_strategy = st.builds(
+    simTL4J_references_SelfReference,
+)
+simTL4J_references_ReflectiveClassReference_strategy = st.builds(
+    simTL4J_references_ReflectiveClassReference,
+)
+simTL4J_references_ElementReference_strategy = st.builds(
+    simTL4J_references_ElementReference,
+)
+simTL4J_expressions_NestedExpression_strategy = st.builds(
+    simTL4J_expressions_NestedExpression,
+)
+ShiftOperator_strategy = st.builds(
+    ShiftOperator,
+)
+simTL4J_operators_LeftShift_strategy = st.builds(
+    simTL4J_operators_LeftShift,
+)
+simTL4J_operators_RightShift_strategy = st.builds(
+    simTL4J_operators_RightShift,
+)
+simTL4J_operators_UnsignedRightShift_strategy = st.builds(
+    simTL4J_operators_UnsignedRightShift,
+)
+ShiftExpressionChild_strategy = st.builds(
+    ShiftExpressionChild,
+)
+RelationOperator_strategy = st.builds(
+    RelationOperator,
+)
+simTL4J_operators_GreaterThan_strategy = st.builds(
+    simTL4J_operators_GreaterThan,
+)
+simTL4J_operators_LessThan_strategy = st.builds(
+    simTL4J_operators_LessThan,
+)
+simTL4J_operators_GreaterThanOrEqual_strategy = st.builds(
+    simTL4J_operators_GreaterThanOrEqual,
+)
+simTL4J_operators_LessThanOrEqual_strategy = st.builds(
+    simTL4J_operators_LessThanOrEqual,
+)
+UnaryModificationOperator_strategy = st.builds(
+    UnaryModificationOperator,
+)
+simTL4J_operators_PlusPlus_strategy = st.builds(
+    simTL4J_operators_PlusPlus,
+)
+simTL4J_operators_MinusMinus_strategy = st.builds(
+    simTL4J_operators_MinusMinus,
+)
+UnaryModificationExpressionChild_strategy = st.builds(
+    UnaryModificationExpressionChild,
+)
+simTL4J_expressions_PrimaryExpression_strategy = st.builds(
+    simTL4J_expressions_PrimaryExpression,
+)
+UnaryExpressionChild_strategy = st.builds(
+    UnaryExpressionChild,
+)
+simTL4J_expressions_UnaryModificationExpressionChild_strategy = st.builds(
+    simTL4J_expressions_UnaryModificationExpressionChild,
+)
+simTL4J_expressions_UnaryModificationExpression_strategy = st.builds(
+    simTL4J_expressions_UnaryModificationExpression,
+)
+UnaryOperator_strategy = st.builds(
+    UnaryOperator,
+)
+simTL4J_operators_Negate_strategy = st.builds(
+    simTL4J_operators_Negate,
+)
+simTL4J_operators_Complement_strategy = st.builds(
+    simTL4J_operators_Complement,
 )
 MultiplicativeOperator_strategy = st.builds(
     MultiplicativeOperator,
 )
-simTL4J::operators::Multiplication_strategy = st.builds(
-    simTL4J::operators::Multiplication,
+simTL4J_operators_Remainder_strategy = st.builds(
+    simTL4J_operators_Remainder,
 )
-simTL4J::operators::Division_strategy = st.builds(
-    simTL4J::operators::Division,
+simTL4J_operators_Multiplication_strategy = st.builds(
+    simTL4J_operators_Multiplication,
 )
-simTL4J::operators::Remainder_strategy = st.builds(
-    simTL4J::operators::Remainder,
+simTL4J_operators_Division_strategy = st.builds(
+    simTL4J_operators_Division,
 )
 MultiplicativeExpressionChild_strategy = st.builds(
     MultiplicativeExpressionChild,
 )
-simTL4J::expressions::UnaryExpression_strategy = st.builds(
-    simTL4J::expressions::UnaryExpression,
+simTL4J_expressions_UnaryExpression_strategy = st.builds(
+    simTL4J_expressions_UnaryExpression,
+)
+simTL4J_expressions_UnaryExpressionChild_strategy = st.builds(
+    simTL4J_expressions_UnaryExpressionChild,
+)
+simTL4J_expressions_AdditiveExpressionChild_strategy = st.builds(
+    simTL4J_expressions_AdditiveExpressionChild,
 )
 AdditiveOperator_strategy = st.builds(
     AdditiveOperator,
@@ -6650,86 +6769,95 @@ AdditiveOperator_strategy = st.builds(
 AdditiveExpressionChild_strategy = st.builds(
     AdditiveExpressionChild,
 )
-simTL4J::expressions::MultiplicativeExpressionChild_strategy = st.builds(
-    simTL4J::expressions::MultiplicativeExpressionChild,
+simTL4J_expressions_MultiplicativeExpression_strategy = st.builds(
+    simTL4J_expressions_MultiplicativeExpression,
 )
-simTL4J::expressions::MultiplicativeExpression_strategy = st.builds(
-    simTL4J::expressions::MultiplicativeExpression,
+simTL4J_expressions_MultiplicativeExpressionChild_strategy = st.builds(
+    simTL4J_expressions_MultiplicativeExpressionChild,
+)
+simTL4J_expressions_AdditiveExpression_strategy = st.builds(
+    simTL4J_expressions_AdditiveExpression,
 )
 ConditionalAndExpressionChild_strategy = st.builds(
     ConditionalAndExpressionChild,
 )
-simTL4J::expressions::InclusiveOrExpression_strategy = st.builds(
-    simTL4J::expressions::InclusiveOrExpression,
+simTL4J_expressions_InclusiveOrExpression_strategy = st.builds(
+    simTL4J_expressions_InclusiveOrExpression,
 )
 ConditionalOrExpressionChild_strategy = st.builds(
     ConditionalOrExpressionChild,
 )
-simTL4J::expressions::ConditionalAndExpression_strategy = st.builds(
-    simTL4J::expressions::ConditionalAndExpression,
+simTL4J_expressions_ConditionalAndExpression_strategy = st.builds(
+    simTL4J_expressions_ConditionalAndExpression,
 )
-simTL4J::expressions::ConditionalAndExpressionChild_strategy = st.builds(
-    simTL4J::expressions::ConditionalAndExpressionChild,
+simTL4J_expressions_ConditionalAndExpressionChild_strategy = st.builds(
+    simTL4J_expressions_ConditionalAndExpressionChild,
 )
 RelationExpressionChild_strategy = st.builds(
     RelationExpressionChild,
 )
-simTL4J::expressions::ShiftExpressionChild_strategy = st.builds(
-    simTL4J::expressions::ShiftExpressionChild,
+simTL4J_expressions_ShiftExpression_strategy = st.builds(
+    simTL4J_expressions_ShiftExpression,
+)
+simTL4J_expressions_ShiftExpressionChild_strategy = st.builds(
+    simTL4J_expressions_ShiftExpressionChild,
 )
 InstanceOfExpressionChild_strategy = st.builds(
     InstanceOfExpressionChild,
 )
-simTL4J::expressions::RelationExpression_strategy = st.builds(
-    simTL4J::expressions::RelationExpression,
+simTL4J_expressions_RelationExpression_strategy = st.builds(
+    simTL4J_expressions_RelationExpression,
 )
-expressions::EqualityExpressionChild_strategy = st.builds(
-    expressions::EqualityExpressionChild,
+simTL4J_expressions_RelationExpressionChild_strategy = st.builds(
+    simTL4J_expressions_RelationExpressionChild,
+)
+expressions_EqualityExpressionChild_strategy = st.builds(
+    expressions_EqualityExpressionChild,
 )
 EqualityExpressionChild_strategy = st.builds(
     EqualityExpressionChild,
 )
-simTL4J::expressions::InstanceOfExpressionChild_strategy = st.builds(
-    simTL4J::expressions::InstanceOfExpressionChild,
+simTL4J_expressions_InstanceOfExpressionChild_strategy = st.builds(
+    simTL4J_expressions_InstanceOfExpressionChild,
 )
 EqualityOperator_strategy = st.builds(
     EqualityOperator,
 )
-simTL4J::operators::NotEqual_strategy = st.builds(
-    simTL4J::operators::NotEqual,
+simTL4J_operators_Equal_strategy = st.builds(
+    simTL4J_operators_Equal,
 )
-simTL4J::operators::Equal_strategy = st.builds(
-    simTL4J::operators::Equal,
+simTL4J_operators_NotEqual_strategy = st.builds(
+    simTL4J_operators_NotEqual,
 )
 AndExpressionChild_strategy = st.builds(
     AndExpressionChild,
 )
-simTL4J::expressions::EqualityExpression_strategy = st.builds(
-    simTL4J::expressions::EqualityExpression,
+simTL4J_expressions_EqualityExpressionChild_strategy = st.builds(
+    simTL4J_expressions_EqualityExpressionChild,
 )
-simTL4J::expressions::EqualityExpressionChild_strategy = st.builds(
-    simTL4J::expressions::EqualityExpressionChild,
+simTL4J_expressions_EqualityExpression_strategy = st.builds(
+    simTL4J_expressions_EqualityExpression,
 )
 ExclusiveOrExpressionChild_strategy = st.builds(
     ExclusiveOrExpressionChild,
 )
-simTL4J::expressions::AndExpression_strategy = st.builds(
-    simTL4J::expressions::AndExpression,
+simTL4J_expressions_AndExpressionChild_strategy = st.builds(
+    simTL4J_expressions_AndExpressionChild,
 )
-simTL4J::expressions::AndExpressionChild_strategy = st.builds(
-    simTL4J::expressions::AndExpressionChild,
+simTL4J_expressions_AndExpression_strategy = st.builds(
+    simTL4J_expressions_AndExpression,
 )
-simTL4J::expressions::InclusiveOrExpressionChild_strategy = st.builds(
-    simTL4J::expressions::InclusiveOrExpressionChild,
+simTL4J_expressions_InclusiveOrExpressionChild_strategy = st.builds(
+    simTL4J_expressions_InclusiveOrExpressionChild,
 )
 InclusiveOrExpressionChild_strategy = st.builds(
     InclusiveOrExpressionChild,
 )
-simTL4J::expressions::ExclusiveOrExpression_strategy = st.builds(
-    simTL4J::expressions::ExclusiveOrExpression,
+simTL4J_expressions_ExclusiveOrExpression_strategy = st.builds(
+    simTL4J_expressions_ExclusiveOrExpression,
 )
-simTL4J::expressions::ExclusiveOrExpressionChild_strategy = st.builds(
-    simTL4J::expressions::ExclusiveOrExpressionChild,
+simTL4J_expressions_ExclusiveOrExpressionChild_strategy = st.builds(
+    simTL4J_expressions_ExclusiveOrExpressionChild,
 )
 Package_strategy = st.builds(
     Package,
@@ -6737,106 +6865,106 @@ Package_strategy = st.builds(
 CompilationUnit_strategy = st.builds(
     CompilationUnit,
 )
-annotations::Annotable_strategy = st.builds(
-    annotations::Annotable,
+annotations_Annotable_strategy = st.builds(
+    annotations_Annotable,
 )
-containers::JavaRoot_strategy = st.builds(
-    containers::JavaRoot,
+containers_JavaRoot_strategy = st.builds(
+    containers_JavaRoot,
 )
 ConditionalExpressionChild_strategy = st.builds(
     ConditionalExpressionChild,
 )
-simTL4J::expressions::ConditionalOrExpressionChild_strategy = st.builds(
-    simTL4J::expressions::ConditionalOrExpressionChild,
+simTL4J_expressions_ConditionalOrExpression_strategy = st.builds(
+    simTL4J_expressions_ConditionalOrExpression,
 )
-simTL4J::expressions::ConditionalOrExpression_strategy = st.builds(
-    simTL4J::expressions::ConditionalOrExpression,
+simTL4J_expressions_ConditionalOrExpressionChild_strategy = st.builds(
+    simTL4J_expressions_ConditionalOrExpressionChild,
 )
 AssignmentOperator_strategy = st.builds(
     AssignmentOperator,
 )
-simTL4J::operators::AssignmentExclusiveOr_strategy = st.builds(
-    simTL4J::operators::AssignmentExclusiveOr,
+simTL4J_operators_AssignmentMinus_strategy = st.builds(
+    simTL4J_operators_AssignmentMinus,
 )
-simTL4J::operators::AssignmentRightShift_strategy = st.builds(
-    simTL4J::operators::AssignmentRightShift,
+simTL4J_operators_AssignmentMultiplication_strategy = st.builds(
+    simTL4J_operators_AssignmentMultiplication,
 )
-simTL4J::operators::AssignmentUnsignedRightShift_strategy = st.builds(
-    simTL4J::operators::AssignmentUnsignedRightShift,
+simTL4J_operators_AssignmentRightShift_strategy = st.builds(
+    simTL4J_operators_AssignmentRightShift,
 )
-simTL4J::operators::AssignmentMinus_strategy = st.builds(
-    simTL4J::operators::AssignmentMinus,
+simTL4J_operators_AssignmentPlus_strategy = st.builds(
+    simTL4J_operators_AssignmentPlus,
 )
-simTL4J::operators::AssignmentAnd_strategy = st.builds(
-    simTL4J::operators::AssignmentAnd,
+simTL4J_operators_AssignmentOr_strategy = st.builds(
+    simTL4J_operators_AssignmentOr,
 )
-simTL4J::operators::AssignmentMultiplication_strategy = st.builds(
-    simTL4J::operators::AssignmentMultiplication,
+simTL4J_operators_AssignmentExclusiveOr_strategy = st.builds(
+    simTL4J_operators_AssignmentExclusiveOr,
 )
-simTL4J::operators::AssignmentOr_strategy = st.builds(
-    simTL4J::operators::AssignmentOr,
+simTL4J_operators_Assignment_strategy = st.builds(
+    simTL4J_operators_Assignment,
 )
-simTL4J::operators::AssignmentDivision_strategy = st.builds(
-    simTL4J::operators::AssignmentDivision,
+simTL4J_operators_AssignmentModulo_strategy = st.builds(
+    simTL4J_operators_AssignmentModulo,
 )
-simTL4J::operators::AssignmentPlus_strategy = st.builds(
-    simTL4J::operators::AssignmentPlus,
+simTL4J_operators_AssignmentDivision_strategy = st.builds(
+    simTL4J_operators_AssignmentDivision,
 )
-simTL4J::operators::AssignmentLeftShift_strategy = st.builds(
-    simTL4J::operators::AssignmentLeftShift,
+simTL4J_operators_AssignmentAnd_strategy = st.builds(
+    simTL4J_operators_AssignmentAnd,
 )
-simTL4J::operators::AssignmentModulo_strategy = st.builds(
-    simTL4J::operators::AssignmentModulo,
+simTL4J_operators_AssignmentUnsignedRightShift_strategy = st.builds(
+    simTL4J_operators_AssignmentUnsignedRightShift,
 )
-simTL4J::operators::Assignment_strategy = st.builds(
-    simTL4J::operators::Assignment,
+simTL4J_operators_AssignmentLeftShift_strategy = st.builds(
+    simTL4J_operators_AssignmentLeftShift,
 )
 AssignmentExpressionChild_strategy = st.builds(
     AssignmentExpressionChild,
 )
-simTL4J::expressions::ConditionalExpressionChild_strategy = st.builds(
-    simTL4J::expressions::ConditionalExpressionChild,
+simTL4J_expressions_ConditionalExpressionChild_strategy = st.builds(
+    simTL4J_expressions_ConditionalExpressionChild,
 )
-simTL4J::expressions::ConditionalExpression_strategy = st.builds(
-    simTL4J::expressions::ConditionalExpression,
+simTL4J_expressions_ConditionalExpression_strategy = st.builds(
+    simTL4J_expressions_ConditionalExpression,
 )
 ForLoopInitializer_strategy = st.builds(
     ForLoopInitializer,
 )
-simTL4J::expressions::ExpressionList_strategy = st.builds(
-    simTL4J::expressions::ExpressionList,
+simTL4J_expressions_ExpressionList_strategy = st.builds(
+    simTL4J_expressions_ExpressionList,
 )
 JavaRoot_strategy = st.builds(
     JavaRoot,
 )
-simTL4J::containers::EmptyModel_strategy = st.builds(
-    simTL4J::containers::EmptyModel,
+simTL4J_containers_EmptyModel_strategy = st.builds(
+    simTL4J_containers_EmptyModel,
 )
-simTL4J::containers::CompilationUnit_strategy = st.builds(
-    simTL4J::containers::CompilationUnit,
+simTL4J_containers_CompilationUnit_strategy = st.builds(
+    simTL4J_containers_CompilationUnit,
 )
-imports::ImportingElement_strategy = st.builds(
-    imports::ImportingElement,
+imports_ImportingElement_strategy = st.builds(
+    imports_ImportingElement,
 )
-commons::NamedElement_strategy = st.builds(
-    commons::NamedElement,
+commons_NamedElement_strategy = st.builds(
+    commons_NamedElement,
 )
 TPlaceholder_strategy = st.builds(
     TPlaceholder,
 )
-simTL4J::commons::Commentable_strategy = st.builds(
-    simTL4J::commons::Commentable,
+simTL4J_commons_Commentable_strategy = st.builds(
+    simTL4J_commons_Commentable,
     comments=
         safe_text
 )
-classifiers::Implementor_strategy = st.builds(
-    classifiers::Implementor,
+classifiers_Implementor_strategy = st.builds(
+    classifiers_Implementor,
 )
-classifiers::ConcreteClassifier_strategy = st.builds(
-    classifiers::ConcreteClassifier,
+classifiers_ConcreteClassifier_strategy = st.builds(
+    classifiers_ConcreteClassifier,
 )
-simTL4J::classifiers::Class_strategy = st.builds(
-    simTL4J::classifiers::Class,
+simTL4J_classifiers_Class_strategy = st.builds(
+    simTL4J_classifiers_Class,
 )
 TypeReference_strategy = st.builds(
     TypeReference,
@@ -6844,175 +6972,175 @@ TypeReference_strategy = st.builds(
 EnumConstant_strategy = st.builds(
     EnumConstant,
 )
-simTL4J::classifiers::Enumeration_strategy = st.builds(
-    simTL4J::classifiers::Enumeration,
+simTL4J_classifiers_Enumeration_strategy = st.builds(
+    simTL4J_classifiers_Enumeration,
 )
 ConcreteClassifier_strategy = st.builds(
     ConcreteClassifier,
 )
-simTL4J::classifiers::Annotation_strategy = st.builds(
-    simTL4J::classifiers::Annotation,
+simTL4J_classifiers_Annotation_strategy = st.builds(
+    simTL4J_classifiers_Annotation,
 )
-simTL4J::classifiers::Interface_strategy = st.builds(
-    simTL4J::classifiers::Interface,
+simTL4J_classifiers_Interface_strategy = st.builds(
+    simTL4J_classifiers_Interface,
 )
-arrays::ArrayTypeable_strategy = st.builds(
-    arrays::ArrayTypeable,
+arrays_ArrayTypeable_strategy = st.builds(
+    arrays_ArrayTypeable,
 )
-types::TypedElement_strategy = st.builds(
-    types::TypedElement,
+types_TypedElement_strategy = st.builds(
+    types_TypedElement,
 )
-simTL4J::expressions::CastExpression_strategy = st.builds(
-    simTL4J::expressions::CastExpression,
+simTL4J_expressions_CastExpression_strategy = st.builds(
+    simTL4J_expressions_CastExpression,
 )
-simTL4J::expressions::InstanceOfExpression_strategy = st.builds(
-    simTL4J::expressions::InstanceOfExpression,
+simTL4J_expressions_InstanceOfExpression_strategy = st.builds(
+    simTL4J_expressions_InstanceOfExpression,
 )
-simTL4J::generics::QualifiedTypeArgument_strategy = st.builds(
-    simTL4J::generics::QualifiedTypeArgument,
+simTL4J_generics_QualifiedTypeArgument_strategy = st.builds(
+    simTL4J_generics_QualifiedTypeArgument,
 )
-expressions::Expression_strategy = st.builds(
-    expressions::Expression,
+expressions_Expression_strategy = st.builds(
+    expressions_Expression,
 )
 ArrayInitializationValue_strategy = st.builds(
     ArrayInitializationValue,
 )
-annotations::AnnotationValue_strategy = st.builds(
-    annotations::AnnotationValue,
+annotations_AnnotationValue_strategy = st.builds(
+    annotations_AnnotationValue,
 )
-arrays::ArrayInitializationValue_strategy = st.builds(
-    arrays::ArrayInitializationValue,
+arrays_ArrayInitializationValue_strategy = st.builds(
+    arrays_ArrayInitializationValue,
 )
-simTL4J::expressions::Expression_strategy = st.builds(
-    simTL4J::expressions::Expression,
+simTL4J_expressions_Expression_strategy = st.builds(
+    simTL4J_expressions_Expression,
 )
-simTL4J::arrays::ArrayInitializer_strategy = st.builds(
-    simTL4J::arrays::ArrayInitializer,
+simTL4J_arrays_ArrayInitializer_strategy = st.builds(
+    simTL4J_arrays_ArrayInitializer,
 )
-modifiers::AnnotableAndModifiable_strategy = st.builds(
-    modifiers::AnnotableAndModifiable,
+modifiers_AnnotableAndModifiable_strategy = st.builds(
+    modifiers_AnnotableAndModifiable,
 )
-simTL4J::variables::LocalVariable_strategy = st.builds(
-    simTL4J::variables::LocalVariable,
+simTL4J_variables_LocalVariable_strategy = st.builds(
+    simTL4J_variables_LocalVariable,
 )
-simTL4J::parameters::Parameter_strategy = st.builds(
-    simTL4J::parameters::Parameter,
+simTL4J_parameters_Parameter_strategy = st.builds(
+    simTL4J_parameters_Parameter,
 )
-statements::Statement_strategy = st.builds(
-    statements::Statement,
+statements_Statement_strategy = st.builds(
+    statements_Statement,
 )
-simTL4J::simTL::TFor::StatementListContainer_strategy = st.builds(
-    simTL4J::simTL::TFor::StatementListContainer,
+simTL4J_statements_Assert_strategy = st.builds(
+    simTL4J_statements_Assert,
 )
-simTL4J::statements::ForLoop_strategy = st.builds(
-    simTL4J::statements::ForLoop,
+simTL4J_simTL_TFor_StatementListContainer_strategy = st.builds(
+    simTL4J_simTL_TFor_StatementListContainer,
 )
-simTL4J::statements::ForEachLoop_strategy = st.builds(
-    simTL4J::statements::ForEachLoop,
+simTL4J_statements_WhileLoop_strategy = st.builds(
+    simTL4J_statements_WhileLoop,
 )
-simTL4J::statements::Assert_strategy = st.builds(
-    simTL4J::statements::Assert,
+simTL4J_statements_SynchronizedBlock_strategy = st.builds(
+    simTL4J_statements_SynchronizedBlock,
 )
-simTL4J::statements::TryBlock_strategy = st.builds(
-    simTL4J::statements::TryBlock,
+simTL4J_simTL_TIf_StatementListContainer_strategy = st.builds(
+    simTL4J_simTL_TIf_StatementListContainer,
 )
-simTL4J::statements::Condition_strategy = st.builds(
-    simTL4J::statements::Condition,
+simTL4J_statements_JumpLabel_strategy = st.builds(
+    simTL4J_statements_JumpLabel,
 )
-simTL4J::statements::SynchronizedBlock_strategy = st.builds(
-    simTL4J::statements::SynchronizedBlock,
+simTL4J_statements_Condition_strategy = st.builds(
+    simTL4J_statements_Condition,
 )
-simTL4J::simTL::TIf::StatementListContainer_strategy = st.builds(
-    simTL4J::simTL::TIf::StatementListContainer,
+simTL4J_statements_ForEachLoop_strategy = st.builds(
+    simTL4J_statements_ForEachLoop,
 )
-simTL4J::statements::WhileLoop_strategy = st.builds(
-    simTL4J::statements::WhileLoop,
+simTL4J_statements_ForLoop_strategy = st.builds(
+    simTL4J_statements_ForLoop,
 )
-simTL4J::statements::JumpLabel_strategy = st.builds(
-    simTL4J::statements::JumpLabel,
+simTL4J_statements_TryBlock_strategy = st.builds(
+    simTL4J_statements_TryBlock,
 )
-members::Member_strategy = st.builds(
-    members::Member,
+members_Member_strategy = st.builds(
+    members_Member,
 )
-simTL4J::statements::Block_strategy = st.builds(
-    simTL4J::statements::Block,
+simTL4J_statements_Block_strategy = st.builds(
+    simTL4J_statements_Block,
 )
-members::MemberContainer_strategy = st.builds(
-    members::MemberContainer,
+members_MemberContainer_strategy = st.builds(
+    members_MemberContainer,
 )
-simTL4J::simTL::TFor::MemberContainer_strategy = st.builds(
-    simTL4J::simTL::TFor::MemberContainer,
+simTL4J_simTL_TIf_MemberContainer_strategy = st.builds(
+    simTL4J_simTL_TIf_MemberContainer,
 )
-simTL4J::simTL::TIf::MemberContainer_strategy = st.builds(
-    simTL4J::simTL::TIf::MemberContainer,
+simTL4J_simTL_TFor_MemberContainer_strategy = st.builds(
+    simTL4J_simTL_TFor_MemberContainer,
 )
-generics::TypeParametrizable_strategy = st.builds(
-    generics::TypeParametrizable,
+generics_TypeParametrizable_strategy = st.builds(
+    generics_TypeParametrizable,
 )
-simTL4J::members::Constructor_strategy = st.builds(
-    simTL4J::members::Constructor,
+simTL4J_members_Constructor_strategy = st.builds(
+    simTL4J_members_Constructor,
 )
-classifiers::Classifier_strategy = st.builds(
-    classifiers::Classifier,
+classifiers_Classifier_strategy = st.builds(
+    classifiers_Classifier,
 )
-simTL4J::classifiers::ConcreteClassifier_strategy = st.builds(
-    simTL4J::classifiers::ConcreteClassifier,
+simTL4J_classifiers_ConcreteClassifier_strategy = st.builds(
+    simTL4J_classifiers_ConcreteClassifier,
     fullName=
         safe_text
 )
-references::ReferenceableElement_strategy = st.builds(
-    references::ReferenceableElement,
+references_ReferenceableElement_strategy = st.builds(
+    references_ReferenceableElement,
 )
-simTL4J::members::Method_strategy = st.builds(
-    simTL4J::members::Method,
+simTL4J_members_AdditionalField_strategy = st.builds(
+    simTL4J_members_AdditionalField,
 )
-simTL4J::members::EnumConstant_strategy = st.builds(
-    simTL4J::members::EnumConstant,
+simTL4J_variables_Variable_strategy = st.builds(
+    simTL4J_variables_Variable,
 )
-simTL4J::members::Field_strategy = st.builds(
-    simTL4J::members::Field,
+simTL4J_variables_AdditionalLocalVariable_strategy = st.builds(
+    simTL4J_variables_AdditionalLocalVariable,
 )
-simTL4J::containers::Package_strategy = st.builds(
-    simTL4J::containers::Package,
+simTL4J_members_Method_strategy = st.builds(
+    simTL4J_members_Method,
 )
-simTL4J::members::AdditionalField_strategy = st.builds(
-    simTL4J::members::AdditionalField,
+simTL4J_containers_Package_strategy = st.builds(
+    simTL4J_containers_Package,
 )
-simTL4J::variables::AdditionalLocalVariable_strategy = st.builds(
-    simTL4J::variables::AdditionalLocalVariable,
+simTL4J_members_Field_strategy = st.builds(
+    simTL4J_members_Field,
 )
-simTL4J::variables::Variable_strategy = st.builds(
-    simTL4J::variables::Variable,
+simTL4J_members_EnumConstant_strategy = st.builds(
+    simTL4J_members_EnumConstant,
 )
-types::Type_strategy = st.builds(
-    types::Type,
+types_Type_strategy = st.builds(
+    types_Type,
 )
-simTL4J::types::PrimitiveType_strategy = st.builds(
-    simTL4J::types::PrimitiveType,
+simTL4J_types_PrimitiveType_strategy = st.builds(
+    simTL4J_types_PrimitiveType,
 )
-simTL4J::classifiers::AnonymousClass_strategy = st.builds(
-    simTL4J::classifiers::AnonymousClass,
+simTL4J_classifiers_AnonymousClass_strategy = st.builds(
+    simTL4J_classifiers_AnonymousClass,
 )
-simTL4J::classifiers::Classifier_strategy = st.builds(
-    simTL4J::classifiers::Classifier,
+simTL4J_classifiers_Classifier_strategy = st.builds(
+    simTL4J_classifiers_Classifier,
 )
 ArrayInitializer_strategy = st.builds(
     ArrayInitializer,
 )
-modifiers::AnnotationInstanceOrModifier_strategy = st.builds(
-    modifiers::AnnotationInstanceOrModifier,
+modifiers_AnnotationInstanceOrModifier_strategy = st.builds(
+    modifiers_AnnotationInstanceOrModifier,
 )
-references::Reference_strategy = st.builds(
-    references::Reference,
+references_Reference_strategy = st.builds(
+    references_Reference,
 )
-simTL4J::instantiations::Instantiation_strategy = st.builds(
-    simTL4J::instantiations::Instantiation,
+simTL4J_arrays_ArrayInstantiationBySize_strategy = st.builds(
+    simTL4J_arrays_ArrayInstantiationBySize,
 )
-simTL4J::arrays::ArrayInstantiationBySize_strategy = st.builds(
-    simTL4J::arrays::ArrayInstantiationBySize,
+simTL4J_instantiations_Instantiation_strategy = st.builds(
+    simTL4J_instantiations_Instantiation,
 )
-simTL4J::arrays::ArrayInstantiationByValues_strategy = st.builds(
-    simTL4J::arrays::ArrayInstantiationByValues,
+simTL4J_arrays_ArrayInstantiationByValues_strategy = st.builds(
+    simTL4J_arrays_ArrayInstantiationByValues,
 )
 AnnotationInstance_strategy = st.builds(
     AnnotationInstance,
@@ -7020,117 +7148,123 @@ AnnotationInstance_strategy = st.builds(
 Commentable_strategy = st.builds(
     Commentable,
 )
-simTL4J::members::MemberContainer_strategy = st.builds(
-    simTL4J::members::MemberContainer,
+simTL4J_modifiers_AnnotationInstanceOrModifier_strategy = st.builds(
+    simTL4J_modifiers_AnnotationInstanceOrModifier,
 )
-simTL4J::modifiers::AnnotationInstanceOrModifier_strategy = st.builds(
-    simTL4J::modifiers::AnnotationInstanceOrModifier,
+simTL4J_modifiers_AnnotableAndModifiable_strategy = st.builds(
+    simTL4J_modifiers_AnnotableAndModifiable,
 )
-simTL4J::references::Argumentable_strategy = st.builds(
-    simTL4J::references::Argumentable,
+simTL4J_generics_TypeParametrizable_strategy = st.builds(
+    simTL4J_generics_TypeParametrizable,
 )
-simTL4J::statements::StatementContainer_strategy = st.builds(
-    simTL4J::statements::StatementContainer,
+simTL4J_instantiations_Initializable_strategy = st.builds(
+    simTL4J_instantiations_Initializable,
 )
-simTL4J::arrays::ArrayDimension_strategy = st.builds(
-    simTL4J::arrays::ArrayDimension,
+simTL4J_types_TypeReference_strategy = st.builds(
+    simTL4J_types_TypeReference,
 )
-simTL4J::instantiations::Initializable_strategy = st.builds(
-    simTL4J::instantiations::Initializable,
+simTL4J_statements_Statement_strategy = st.builds(
+    simTL4J_statements_Statement,
 )
-simTL4J::operators::Operator_strategy = st.builds(
-    simTL4J::operators::Operator,
+simTL4J_statements_StatementContainer_strategy = st.builds(
+    simTL4J_statements_StatementContainer,
 )
-simTL4J::commons::NamespaceAwareElement_strategy = st.builds(
-    simTL4J::commons::NamespaceAwareElement,
+simTL4J_commons_NamespaceAwareElement_strategy = st.builds(
+    simTL4J_commons_NamespaceAwareElement,
     namespaces=
         safe_text
 )
-simTL4J::arrays::ArrayInitializationValue_strategy = st.builds(
-    simTL4J::arrays::ArrayInitializationValue,
+simTL4J_types_TypedElement_strategy = st.builds(
+    simTL4J_types_TypedElement,
 )
-simTL4J::statements::StatementListContainer_strategy = st.builds(
-    simTL4J::statements::StatementListContainer,
+simTL4J_imports_ImportingElement_strategy = st.builds(
+    simTL4J_imports_ImportingElement,
 )
-simTL4J::types::TypedElement_strategy = st.builds(
-    simTL4J::types::TypedElement,
+simTL4J_arrays_ArraySelector_strategy = st.builds(
+    simTL4J_arrays_ArraySelector,
 )
-simTL4J::parameters::Parametrizable_strategy = st.builds(
-    simTL4J::parameters::Parametrizable,
-)
-simTL4J::commons::NamedElement_strategy = st.builds(
-    simTL4J::commons::NamedElement,
+simTL4J_commons_NamedElement_strategy = st.builds(
+    simTL4J_commons_NamedElement,
     name=
         safe_text
 )
-simTL4J::classifiers::Implementor_strategy = st.builds(
-    simTL4J::classifiers::Implementor,
+simTL4J_classifiers_Implementor_strategy = st.builds(
+    simTL4J_classifiers_Implementor,
 )
-simTL4J::arrays::ArraySelector_strategy = st.builds(
-    simTL4J::arrays::ArraySelector,
+simTL4J_generics_TypeArgumentable_strategy = st.builds(
+    simTL4J_generics_TypeArgumentable,
 )
-simTL4J::imports::ImportingElement_strategy = st.builds(
-    simTL4J::imports::ImportingElement,
+simTL4J_generics_CallTypeArgumentable_strategy = st.builds(
+    simTL4J_generics_CallTypeArgumentable,
 )
-simTL4J::types::Type_strategy = st.builds(
-    simTL4J::types::Type,
+simTL4J_statements_ForLoopInitializer_strategy = st.builds(
+    simTL4J_statements_ForLoopInitializer,
 )
-simTL4J::generics::TypeParametrizable_strategy = st.builds(
-    simTL4J::generics::TypeParametrizable,
+simTL4J_statements_StatementListContainer_strategy = st.builds(
+    simTL4J_statements_StatementListContainer,
 )
-simTL4J::modifiers::AnnotableAndModifiable_strategy = st.builds(
-    simTL4J::modifiers::AnnotableAndModifiable,
+simTL4J_references_Argumentable_strategy = st.builds(
+    simTL4J_references_Argumentable,
 )
-simTL4J::literals::Self_strategy = st.builds(
-    simTL4J::literals::Self,
+simTL4J_members_ExceptionThrower_strategy = st.builds(
+    simTL4J_members_ExceptionThrower,
 )
-simTL4J::members::ExceptionThrower_strategy = st.builds(
-    simTL4J::members::ExceptionThrower,
+simTL4J_modifiers_Modifiable_strategy = st.builds(
+    simTL4J_modifiers_Modifiable,
 )
-simTL4J::statements::Statement_strategy = st.builds(
-    simTL4J::statements::Statement,
+simTL4J_arrays_ArrayDimension_strategy = st.builds(
+    simTL4J_arrays_ArrayDimension,
 )
-simTL4J::statements::Conditional_strategy = st.builds(
-    simTL4J::statements::Conditional,
+simTL4J_members_MemberContainer_strategy = st.builds(
+    simTL4J_members_MemberContainer,
 )
-simTL4J::types::TypeReference_strategy = st.builds(
-    simTL4J::types::TypeReference,
+simTL4J_literals_Self_strategy = st.builds(
+    simTL4J_literals_Self,
 )
-simTL4J::statements::ForLoopInitializer_strategy = st.builds(
-    simTL4J::statements::ForLoopInitializer,
+simTL4J_operators_Operator_strategy = st.builds(
+    simTL4J_operators_Operator,
 )
-simTL4J::modifiers::Modifiable_strategy = st.builds(
-    simTL4J::modifiers::Modifiable,
+simTL4J_parameters_Parametrizable_strategy = st.builds(
+    simTL4J_parameters_Parametrizable,
 )
-simTL4J::annotations::Annotable_strategy = st.builds(
-    simTL4J::annotations::Annotable,
+simTL4J_statements_Conditional_strategy = st.builds(
+    simTL4J_statements_Conditional,
+)
+simTL4J_arrays_ArrayInitializationValue_strategy = st.builds(
+    simTL4J_arrays_ArrayInitializationValue,
+)
+simTL4J_types_Type_strategy = st.builds(
+    simTL4J_types_Type,
+)
+simTL4J_annotations_Annotable_strategy = st.builds(
+    simTL4J_annotations_Annotable,
 )
 ArrayDimension_strategy = st.builds(
     ArrayDimension,
 )
-simTL4J::arrays::ArrayTypeable_strategy = st.builds(
-    simTL4J::arrays::ArrayTypeable,
+simTL4J_arrays_ArrayTypeable_strategy = st.builds(
+    simTL4J_arrays_ArrayTypeable,
 )
 Expression_strategy = st.builds(
     Expression,
 )
-simTL4J::expressions::AssignmentExpressionChild_strategy = st.builds(
-    simTL4J::expressions::AssignmentExpressionChild,
+simTL4J_expressions_AssignmentExpressionChild_strategy = st.builds(
+    simTL4J_expressions_AssignmentExpressionChild,
 )
-simTL4J::expressions::AssignmentExpression_strategy = st.builds(
-    simTL4J::expressions::AssignmentExpression,
+simTL4J_expressions_AssignmentExpression_strategy = st.builds(
+    simTL4J_expressions_AssignmentExpression,
 )
-simTL4J::annotations::AnnotationValue_strategy = st.builds(
-    simTL4J::annotations::AnnotationValue,
+simTL4J_annotations_AnnotationValue_strategy = st.builds(
+    simTL4J_annotations_AnnotationValue,
 )
 InterfaceMethod_strategy = st.builds(
     InterfaceMethod,
 )
-simTL4J::annotations::AnnotationAttribute_strategy = st.builds(
-    simTL4J::annotations::AnnotationAttribute,
+simTL4J_annotations_AnnotationAttribute_strategy = st.builds(
+    simTL4J_annotations_AnnotationAttribute,
 )
-simTL4J::annotations::AnnotationAttributeSetting_strategy = st.builds(
-    simTL4J::annotations::AnnotationAttributeSetting,
+simTL4J_annotations_AnnotationAttributeSetting_strategy = st.builds(
+    simTL4J_annotations_AnnotationAttributeSetting,
 )
 AnnotationAttributeSetting_strategy = st.builds(
     AnnotationAttributeSetting,
@@ -7138,806 +7272,71 @@ AnnotationAttributeSetting_strategy = st.builds(
 AnnotationValue_strategy = st.builds(
     AnnotationValue,
 )
-simTL4J::annotations::AnnotationParameter_strategy = st.builds(
-    simTL4J::annotations::AnnotationParameter,
+simTL4J_annotations_AnnotationParameter_strategy = st.builds(
+    simTL4J_annotations_AnnotationParameter,
 )
 AnnotationParameter_strategy = st.builds(
     AnnotationParameter,
 )
-simTL4J::annotations::AnnotationParameterList_strategy = st.builds(
-    simTL4J::annotations::AnnotationParameterList,
+simTL4J_annotations_SingleAnnotationParameter_strategy = st.builds(
+    simTL4J_annotations_SingleAnnotationParameter,
 )
-simTL4J::annotations::SingleAnnotationParameter_strategy = st.builds(
-    simTL4J::annotations::SingleAnnotationParameter,
+simTL4J_annotations_AnnotationParameterList_strategy = st.builds(
+    simTL4J_annotations_AnnotationParameterList,
 )
 Classifier_strategy = st.builds(
     Classifier,
 )
-simTL4J::generics::TypeParameter_strategy = st.builds(
-    simTL4J::generics::TypeParameter,
+simTL4J_generics_TypeParameter_strategy = st.builds(
+    simTL4J_generics_TypeParameter,
 )
-commons::NamespaceAwareElement_strategy = st.builds(
-    commons::NamespaceAwareElement,
+commons_NamespaceAwareElement_strategy = st.builds(
+    commons_NamespaceAwareElement,
 )
-simTL4J::annotations::AnnotationInstance_strategy = st.builds(
-    simTL4J::annotations::AnnotationInstance,
+simTL4J_containers_JavaRoot_strategy = st.builds(
+    simTL4J_containers_JavaRoot,
 )
-simTL4J::types::NamespaceClassifierReference_strategy = st.builds(
-    simTL4J::types::NamespaceClassifierReference,
+simTL4J_annotations_AnnotationInstance_strategy = st.builds(
+    simTL4J_annotations_AnnotationInstance,
 )
-simTL4J::containers::JavaRoot_strategy = st.builds(
-    simTL4J::containers::JavaRoot,
-)
-UnaryModificationExpression_strategy = st.builds(
-    UnaryModificationExpression,
-)
-simTL4J::expressions::SuffixUnaryModificationExpression_strategy = st.builds(
-    simTL4J::expressions::SuffixUnaryModificationExpression,
-)
-simTL4J::expressions::PrefixUnaryModificationExpression_strategy = st.builds(
-    simTL4J::expressions::PrefixUnaryModificationExpression,
-)
-simTL4J::generics::CallTypeArgumentable_strategy = st.builds(
-    simTL4J::generics::CallTypeArgumentable,
-)
-TypeArgument_strategy = st.builds(
-    TypeArgument,
-)
-simTL4J::generics::ExtendsTypeArgument_strategy = st.builds(
-    simTL4J::generics::ExtendsTypeArgument,
-)
-simTL4J::generics::SuperTypeArgument_strategy = st.builds(
-    simTL4J::generics::SuperTypeArgument,
-)
-simTL4J::generics::UnknownTypeArgument_strategy = st.builds(
-    simTL4J::generics::UnknownTypeArgument,
-)
-simTL4J::generics::TypeArgumentable_strategy = st.builds(
-    simTL4J::generics::TypeArgumentable,
-)
-ArrayTypeable_strategy = st.builds(
-    ArrayTypeable,
-)
-simTL4J::generics::TypeArgument_strategy = st.builds(
-    simTL4J::generics::TypeArgument,
-)
-Reference_strategy = st.builds(
-    Reference,
-)
-simTL4J::references::SelfReference_strategy = st.builds(
-    simTL4J::references::SelfReference,
-)
-simTL4J::references::ReflectiveClassReference_strategy = st.builds(
-    simTL4J::references::ReflectiveClassReference,
-)
-simTL4J::references::ElementReference_strategy = st.builds(
-    simTL4J::references::ElementReference,
-)
-simTL4J::references::StringReference_strategy = st.builds(
-    simTL4J::references::StringReference,
-    value=
-        safe_text
-)
-simTL4J::references::PrimitiveTypeReference_strategy = st.builds(
-    simTL4J::references::PrimitiveTypeReference,
-)
-simTL4J::expressions::NestedExpression_strategy = st.builds(
-    simTL4J::expressions::NestedExpression,
-)
-ShiftOperator_strategy = st.builds(
-    ShiftOperator,
-)
-simTL4J::operators::RightShift_strategy = st.builds(
-    simTL4J::operators::RightShift,
-)
-simTL4J::operators::LeftShift_strategy = st.builds(
-    simTL4J::operators::LeftShift,
-)
-simTL4J::operators::UnsignedRightShift_strategy = st.builds(
-    simTL4J::operators::UnsignedRightShift,
-)
-ShiftExpressionChild_strategy = st.builds(
-    ShiftExpressionChild,
-)
-simTL4J::expressions::AdditiveExpressionChild_strategy = st.builds(
-    simTL4J::expressions::AdditiveExpressionChild,
-)
-simTL4J::expressions::AdditiveExpression_strategy = st.builds(
-    simTL4J::expressions::AdditiveExpression,
-)
-simTL4J::expressions::ShiftExpression_strategy = st.builds(
-    simTL4J::expressions::ShiftExpression,
-)
-simTL4J::expressions::RelationExpressionChild_strategy = st.builds(
-    simTL4J::expressions::RelationExpressionChild,
-)
-RelationOperator_strategy = st.builds(
-    RelationOperator,
-)
-simTL4J::operators::LessThanOrEqual_strategy = st.builds(
-    simTL4J::operators::LessThanOrEqual,
-)
-simTL4J::operators::GreaterThan_strategy = st.builds(
-    simTL4J::operators::GreaterThan,
-)
-simTL4J::operators::GreaterThanOrEqual_strategy = st.builds(
-    simTL4J::operators::GreaterThanOrEqual,
-)
-simTL4J::operators::LessThan_strategy = st.builds(
-    simTL4J::operators::LessThan,
-)
-UnaryModificationOperator_strategy = st.builds(
-    UnaryModificationOperator,
-)
-simTL4J::operators::PlusPlus_strategy = st.builds(
-    simTL4J::operators::PlusPlus,
-)
-simTL4J::operators::MinusMinus_strategy = st.builds(
-    simTL4J::operators::MinusMinus,
-)
-UnaryModificationExpressionChild_strategy = st.builds(
-    UnaryModificationExpressionChild,
-)
-simTL4J::expressions::PrimaryExpression_strategy = st.builds(
-    simTL4J::expressions::PrimaryExpression,
-)
-simTL4J::expressions::UnaryExpressionChild_strategy = st.builds(
-    simTL4J::expressions::UnaryExpressionChild,
-)
-UnaryExpressionChild_strategy = st.builds(
-    UnaryExpressionChild,
-)
-simTL4J::expressions::UnaryModificationExpressionChild_strategy = st.builds(
-    simTL4J::expressions::UnaryModificationExpressionChild,
-)
-simTL4J::expressions::UnaryModificationExpression_strategy = st.builds(
-    simTL4J::expressions::UnaryModificationExpression,
-)
-UnaryOperator_strategy = st.builds(
-    UnaryOperator,
-)
-simTL4J::operators::Complement_strategy = st.builds(
-    simTL4J::operators::Complement,
-)
-simTL4J::operators::Negate_strategy = st.builds(
-    simTL4J::operators::Negate,
+simTL4J_types_NamespaceClassifierReference_strategy = st.builds(
+    simTL4J_types_NamespaceClassifierReference,
 )
 
-@given(instance=TMethodCall_strategy)
+@given(instance=members_ExceptionThrower_strategy)
 @settings(max_examples=50)
-def test_tmethodcall_instantiation(instance):
-    assert isinstance(instance, TMethodCall)
+def test_members_exceptionthrower_instantiation(instance):
+    assert isinstance(instance, members_ExceptionThrower)
 
-@given(instance=TUnaryOperator_strategy)
+@given(instance=parameters_Parametrizable_strategy)
 @settings(max_examples=50)
-def test_tunaryoperator_instantiation(instance):
-    assert isinstance(instance, TUnaryOperator)
+def test_parameters_parametrizable_instantiation(instance):
+    assert isinstance(instance, parameters_Parametrizable)
 
-@given(instance=simTL4J::simTL::TUnaryOperatorNOT_strategy)
+@given(instance=statements_StatementListContainer_strategy)
 @settings(max_examples=50)
-def test_simtl4j::simtl::tunaryoperatornot_instantiation(instance):
-    assert isinstance(instance, simTL4J::simTL::TUnaryOperatorNOT)
+def test_statements_statementlistcontainer_instantiation(instance):
+    assert isinstance(instance, statements_StatementListContainer)
 
-@given(instance=simTL::TPlaceholder_strategy)
+@given(instance=instantiations_Initializable_strategy)
 @settings(max_examples=50)
-def test_simtl::tplaceholder_instantiation(instance):
-    assert isinstance(instance, simTL::TPlaceholder)
-
-@given(instance=simTL4J::simTL::TPlaceholder_strategy)
-@settings(max_examples=50)
-def test_simtl4j::simtl::tplaceholder_instantiation(instance):
-    assert isinstance(instance, simTL4J::simTL::TPlaceholder)
-
-@given(instance=simTL::TIf_strategy)
-@settings(max_examples=50)
-def test_simtl::tif_instantiation(instance):
-    assert isinstance(instance, simTL::TIf)
-
-@given(instance=simTL::TFor_strategy)
-@settings(max_examples=50)
-def test_simtl::tfor_instantiation(instance):
-    assert isinstance(instance, simTL::TFor)
-
-@given(instance=simTL4J::simTL::TAbstractMethodStatement_strategy)
-@settings(max_examples=50)
-def test_simtl4j::simtl::tabstractmethodstatement_instantiation(instance):
-    assert isinstance(instance, simTL4J::simTL::TAbstractMethodStatement)
-
-@given(instance=simTL4J::simTL::TMethodCall_strategy)
-@settings(max_examples=50)
-def test_simtl4j::simtl::tmethodcall_instantiation(instance):
-    assert isinstance(instance, simTL4J::simTL::TMethodCall)
-
-@given(instance=simTL4J::simTL::TMethodCall_strategy)
-def test_simtl4j::simtl::tmethodcall_params_type(instance):
-    assert isinstance(instance.params, str)
-
-
-@given(instance=simTL4J::simTL::TMethodCall_strategy)
-def test_simtl4j::simtl::tmethodcall_params_setter(instance):
-    original = instance.params
-    instance.params = original
-    assert instance.params == original
-
-@given(instance=simTL4J::simTL::TMethodCall_strategy)
-def test_simtl4j::simtl::tmethodcall_methodName_type(instance):
-    assert isinstance(instance.methodName, str)
-
-
-@given(instance=simTL4J::simTL::TMethodCall_strategy)
-def test_simtl4j::simtl::tmethodcall_methodName_setter(instance):
-    original = instance.methodName
-    instance.methodName = original
-    assert instance.methodName == original
-
-@given(instance=simTL4J::simTL::TModelImport_strategy)
-@settings(max_examples=50)
-def test_simtl4j::simtl::tmodelimport_instantiation(instance):
-    assert isinstance(instance, simTL4J::simTL::TModelImport)
-
-@given(instance=simTL4J::simTL::TModelImport_strategy)
-def test_simtl4j::simtl::tmodelimport_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=simTL4J::simTL::TModelImport_strategy)
-def test_simtl4j::simtl::tmodelimport_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
-
-@given(instance=simTL4J::simTL::TModelImport_strategy)
-def test_simtl4j::simtl::tmodelimport_uri_type(instance):
-    assert isinstance(instance.uri, str)
-
-
-@given(instance=simTL4J::simTL::TModelImport_strategy)
-def test_simtl4j::simtl::tmodelimport_uri_setter(instance):
-    original = instance.uri
-    instance.uri = original
-    assert instance.uri == original
-
-@given(instance=TModelImport_strategy)
-@settings(max_examples=50)
-def test_tmodelimport_instantiation(instance):
-    assert isinstance(instance, TModelImport)
-
-@given(instance=simTL4J::simTL::TemplateHeader_strategy)
-@settings(max_examples=50)
-def test_simtl4j::simtl::templateheader_instantiation(instance):
-    assert isinstance(instance, simTL4J::simTL::TemplateHeader)
-
-@given(instance=TemplateHeader_strategy)
-@settings(max_examples=50)
-def test_templateheader_instantiation(instance):
-    assert isinstance(instance, TemplateHeader)
-
-@given(instance=simTL4J::simTL::Template_strategy)
-@settings(max_examples=50)
-def test_simtl4j::simtl::template_instantiation(instance):
-    assert isinstance(instance, simTL4J::simTL::Template)
-
-@given(instance=simTL4J::simTL::TForVariable_strategy)
-@settings(max_examples=50)
-def test_simtl4j::simtl::tforvariable_instantiation(instance):
-    assert isinstance(instance, simTL4J::simTL::TForVariable)
-
-@given(instance=simTL4J::simTL::TForVariable_strategy)
-def test_simtl4j::simtl::tforvariable_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=simTL4J::simTL::TForVariable_strategy)
-def test_simtl4j::simtl::tforvariable_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
-
-@given(instance=TForVariable_strategy)
-@settings(max_examples=50)
-def test_tforvariable_instantiation(instance):
-    assert isinstance(instance, TForVariable)
-
-@given(instance=simTL4J::simTL::TFor_strategy)
-@settings(max_examples=50)
-def test_simtl4j::simtl::tfor_instantiation(instance):
-    assert isinstance(instance, simTL4J::simTL::TFor)
-
-@given(instance=TAbstractMethodStatement_strategy)
-@settings(max_examples=50)
-def test_tabstractmethodstatement_instantiation(instance):
-    assert isinstance(instance, TAbstractMethodStatement)
-
-@given(instance=simTL4J::simTL::TMethodStatementImpl_strategy)
-@settings(max_examples=50)
-def test_simtl4j::simtl::tmethodstatementimpl_instantiation(instance):
-    assert isinstance(instance, simTL4J::simTL::TMethodStatementImpl)
-
-@given(instance=simTL4J::simTL::TMethodStatementImpl_strategy)
-def test_simtl4j::simtl::tmethodstatementimpl_caller_type(instance):
-    assert isinstance(instance.caller, str)
-
-
-@given(instance=simTL4J::simTL::TMethodStatementImpl_strategy)
-def test_simtl4j::simtl::tmethodstatementimpl_caller_setter(instance):
-    original = instance.caller
-    instance.caller = original
-    assert instance.caller == original
-
-@given(instance=simTL4J::simTL::TUnaryOperator_strategy)
-@settings(max_examples=50)
-def test_simtl4j::simtl::tunaryoperator_instantiation(instance):
-    assert isinstance(instance, simTL4J::simTL::TUnaryOperator)
-
-@given(instance=simTL4J::simTL::TIf_strategy)
-@settings(max_examples=50)
-def test_simtl4j::simtl::tif_instantiation(instance):
-    assert isinstance(instance, simTL4J::simTL::TIf)
-
-@given(instance=AdditionalLocalVariable_strategy)
-@settings(max_examples=50)
-def test_additionallocalvariable_instantiation(instance):
-    assert isinstance(instance, AdditionalLocalVariable)
-
-@given(instance=statements::ForLoopInitializer_strategy)
-@settings(max_examples=50)
-def test_statements::forloopinitializer_instantiation(instance):
-    assert isinstance(instance, statements::ForLoopInitializer)
-
-@given(instance=ClassifierReference_strategy)
-@settings(max_examples=50)
-def test_classifierreference_instantiation(instance):
-    assert isinstance(instance, ClassifierReference)
-
-@given(instance=types::TypeReference_strategy)
-@settings(max_examples=50)
-def test_types::typereference_instantiation(instance):
-    assert isinstance(instance, types::TypeReference)
-
-@given(instance=Block_strategy)
-@settings(max_examples=50)
-def test_block_instantiation(instance):
-    assert isinstance(instance, Block)
-
-@given(instance=CatchBlock_strategy)
-@settings(max_examples=50)
-def test_catchblock_instantiation(instance):
-    assert isinstance(instance, CatchBlock)
-
-@given(instance=statements::SwitchCase_strategy)
-@settings(max_examples=50)
-def test_statements::switchcase_instantiation(instance):
-    assert isinstance(instance, statements::SwitchCase)
-
-@given(instance=LocalVariable_strategy)
-@settings(max_examples=50)
-def test_localvariable_instantiation(instance):
-    assert isinstance(instance, LocalVariable)
-
-@given(instance=JumpLabel_strategy)
-@settings(max_examples=50)
-def test_jumplabel_instantiation(instance):
-    assert isinstance(instance, JumpLabel)
-
-@given(instance=statements::Conditional_strategy)
-@settings(max_examples=50)
-def test_statements::conditional_instantiation(instance):
-    assert isinstance(instance, statements::Conditional)
-
-@given(instance=simTL4J::statements::NormalSwitchCase_strategy)
-@settings(max_examples=50)
-def test_simtl4j::statements::normalswitchcase_instantiation(instance):
-    assert isinstance(instance, simTL4J::statements::NormalSwitchCase)
-
-@given(instance=StatementListContainer_strategy)
-@settings(max_examples=50)
-def test_statementlistcontainer_instantiation(instance):
-    assert isinstance(instance, StatementListContainer)
-
-@given(instance=simTL4J::statements::SwitchCase_strategy)
-@settings(max_examples=50)
-def test_simtl4j::statements::switchcase_instantiation(instance):
-    assert isinstance(instance, simTL4J::statements::SwitchCase)
-
-@given(instance=WhileLoop_strategy)
-@settings(max_examples=50)
-def test_whileloop_instantiation(instance):
-    assert isinstance(instance, WhileLoop)
-
-@given(instance=simTL4J::statements::DoWhileLoop_strategy)
-@settings(max_examples=50)
-def test_simtl4j::statements::dowhileloop_instantiation(instance):
-    assert isinstance(instance, simTL4J::statements::DoWhileLoop)
-
-@given(instance=SwitchCase_strategy)
-@settings(max_examples=50)
-def test_switchcase_instantiation(instance):
-    assert isinstance(instance, SwitchCase)
-
-@given(instance=simTL4J::statements::DefaultSwitchCase_strategy)
-@settings(max_examples=50)
-def test_simtl4j::statements::defaultswitchcase_instantiation(instance):
-    assert isinstance(instance, simTL4J::statements::DefaultSwitchCase)
-
-@given(instance=statements::StatementContainer_strategy)
-@settings(max_examples=50)
-def test_statements::statementcontainer_instantiation(instance):
-    assert isinstance(instance, statements::StatementContainer)
-
-@given(instance=OrdinaryParameter_strategy)
-@settings(max_examples=50)
-def test_ordinaryparameter_instantiation(instance):
-    assert isinstance(instance, OrdinaryParameter)
-
-@given(instance=simTL4J::statements::CatchBlock_strategy)
-@settings(max_examples=50)
-def test_simtl4j::statements::catchblock_instantiation(instance):
-    assert isinstance(instance, simTL4J::statements::CatchBlock)
-
-@given(instance=modifiers::Modifiable_strategy)
-@settings(max_examples=50)
-def test_modifiers::modifiable_instantiation(instance):
-    assert isinstance(instance, modifiers::Modifiable)
-
-@given(instance=Jump_strategy)
-@settings(max_examples=50)
-def test_jump_instantiation(instance):
-    assert isinstance(instance, Jump)
-
-@given(instance=simTL4J::statements::Continue_strategy)
-@settings(max_examples=50)
-def test_simtl4j::statements::continue_instantiation(instance):
-    assert isinstance(instance, simTL4J::statements::Continue)
-
-@given(instance=simTL4J::statements::Break_strategy)
-@settings(max_examples=50)
-def test_simtl4j::statements::break_instantiation(instance):
-    assert isinstance(instance, simTL4J::statements::Break)
-
-@given(instance=references::ElementReference_strategy)
-@settings(max_examples=50)
-def test_references::elementreference_instantiation(instance):
-    assert isinstance(instance, references::ElementReference)
-
-@given(instance=Statement_strategy)
-@settings(max_examples=50)
-def test_statement_instantiation(instance):
-    assert isinstance(instance, Statement)
-
-@given(instance=simTL4J::statements::LocalVariableStatement_strategy)
-@settings(max_examples=50)
-def test_simtl4j::statements::localvariablestatement_instantiation(instance):
-    assert isinstance(instance, simTL4J::statements::LocalVariableStatement)
-
-@given(instance=simTL4J::statements::Throw_strategy)
-@settings(max_examples=50)
-def test_simtl4j::statements::throw_instantiation(instance):
-    assert isinstance(instance, simTL4J::statements::Throw)
-
-@given(instance=simTL4J::statements::Jump_strategy)
-@settings(max_examples=50)
-def test_simtl4j::statements::jump_instantiation(instance):
-    assert isinstance(instance, simTL4J::statements::Jump)
-
-@given(instance=simTL4J::statements::Switch_strategy)
-@settings(max_examples=50)
-def test_simtl4j::statements::switch_instantiation(instance):
-    assert isinstance(instance, simTL4J::statements::Switch)
-
-@given(instance=simTL4J::statements::Return_strategy)
-@settings(max_examples=50)
-def test_simtl4j::statements::return_instantiation(instance):
-    assert isinstance(instance, simTL4J::statements::Return)
-
-@given(instance=simTL4J::statements::ExpressionStatement_strategy)
-@settings(max_examples=50)
-def test_simtl4j::statements::expressionstatement_instantiation(instance):
-    assert isinstance(instance, simTL4J::statements::ExpressionStatement)
-
-@given(instance=simTL4J::statements::EmptyStatement_strategy)
-@settings(max_examples=50)
-def test_simtl4j::statements::emptystatement_instantiation(instance):
-    assert isinstance(instance, simTL4J::statements::EmptyStatement)
-
-@given(instance=PrimitiveType_strategy)
-@settings(max_examples=50)
-def test_primitivetype_instantiation(instance):
-    assert isinstance(instance, PrimitiveType)
-
-@given(instance=simTL4J::types::Void_strategy)
-@settings(max_examples=50)
-def test_simtl4j::types::void_instantiation(instance):
-    assert isinstance(instance, simTL4J::types::Void)
-
-@given(instance=simTL4J::types::Char_strategy)
-@settings(max_examples=50)
-def test_simtl4j::types::char_instantiation(instance):
-    assert isinstance(instance, simTL4J::types::Char)
-
-@given(instance=simTL4J::types::Boolean_strategy)
-@settings(max_examples=50)
-def test_simtl4j::types::boolean_instantiation(instance):
-    assert isinstance(instance, simTL4J::types::Boolean)
-
-@given(instance=simTL4J::types::Long_strategy)
-@settings(max_examples=50)
-def test_simtl4j::types::long_instantiation(instance):
-    assert isinstance(instance, simTL4J::types::Long)
-
-@given(instance=simTL4J::types::Int_strategy)
-@settings(max_examples=50)
-def test_simtl4j::types::int_instantiation(instance):
-    assert isinstance(instance, simTL4J::types::Int)
-
-@given(instance=simTL4J::types::Double_strategy)
-@settings(max_examples=50)
-def test_simtl4j::types::double_instantiation(instance):
-    assert isinstance(instance, simTL4J::types::Double)
-
-@given(instance=simTL4J::types::Short_strategy)
-@settings(max_examples=50)
-def test_simtl4j::types::short_instantiation(instance):
-    assert isinstance(instance, simTL4J::types::Short)
-
-@given(instance=simTL4J::types::Byte_strategy)
-@settings(max_examples=50)
-def test_simtl4j::types::byte_instantiation(instance):
-    assert isinstance(instance, simTL4J::types::Byte)
-
-@given(instance=simTL4J::types::Float_strategy)
-@settings(max_examples=50)
-def test_simtl4j::types::float_instantiation(instance):
-    assert isinstance(instance, simTL4J::types::Float)
-
-@given(instance=ElementReference_strategy)
-@settings(max_examples=50)
-def test_elementreference_instantiation(instance):
-    assert isinstance(instance, ElementReference)
-
-@given(instance=simTL4J::references::IdentifierReference_strategy)
-@settings(max_examples=50)
-def test_simtl4j::references::identifierreference_instantiation(instance):
-    assert isinstance(instance, simTL4J::references::IdentifierReference)
-
-@given(instance=ArraySelector_strategy)
-@settings(max_examples=50)
-def test_arrayselector_instantiation(instance):
-    assert isinstance(instance, ArraySelector)
-
-@given(instance=expressions::PrimaryExpression_strategy)
-@settings(max_examples=50)
-def test_expressions::primaryexpression_instantiation(instance):
-    assert isinstance(instance, expressions::PrimaryExpression)
-
-@given(instance=simTL4J::simTL::TPlaceholder::PrimaryExpression_strategy)
-@settings(max_examples=50)
-def test_simtl4j::simtl::tplaceholder::primaryexpression_instantiation(instance):
-    assert isinstance(instance, simTL4J::simTL::TPlaceholder::PrimaryExpression)
-
-@given(instance=Parameter_strategy)
-@settings(max_examples=50)
-def test_parameter_instantiation(instance):
-    assert isinstance(instance, Parameter)
-
-@given(instance=simTL4J::parameters::VariableLengthParameter_strategy)
-@settings(max_examples=50)
-def test_simtl4j::parameters::variablelengthparameter_instantiation(instance):
-    assert isinstance(instance, simTL4J::parameters::VariableLengthParameter)
-
-@given(instance=simTL4J::parameters::OrdinaryParameter_strategy)
-@settings(max_examples=50)
-def test_simtl4j::parameters::ordinaryparameter_instantiation(instance):
-    assert isinstance(instance, simTL4J::parameters::OrdinaryParameter)
-
-@given(instance=operators::UnaryOperator_strategy)
-@settings(max_examples=50)
-def test_operators::unaryoperator_instantiation(instance):
-    assert isinstance(instance, operators::UnaryOperator)
-
-@given(instance=operators::AdditiveOperator_strategy)
-@settings(max_examples=50)
-def test_operators::additiveoperator_instantiation(instance):
-    assert isinstance(instance, operators::AdditiveOperator)
-
-@given(instance=simTL4J::operators::Subtraction_strategy)
-@settings(max_examples=50)
-def test_simtl4j::operators::subtraction_instantiation(instance):
-    assert isinstance(instance, simTL4J::operators::Subtraction)
-
-@given(instance=simTL4J::operators::Addition_strategy)
-@settings(max_examples=50)
-def test_simtl4j::operators::addition_instantiation(instance):
-    assert isinstance(instance, simTL4J::operators::Addition)
-
-@given(instance=Operator_strategy)
-@settings(max_examples=50)
-def test_operator_instantiation(instance):
-    assert isinstance(instance, Operator)
-
-@given(instance=simTL4J::operators::MultiplicativeOperator_strategy)
-@settings(max_examples=50)
-def test_simtl4j::operators::multiplicativeoperator_instantiation(instance):
-    assert isinstance(instance, simTL4J::operators::MultiplicativeOperator)
-
-@given(instance=simTL4J::operators::UnaryModificationOperator_strategy)
-@settings(max_examples=50)
-def test_simtl4j::operators::unarymodificationoperator_instantiation(instance):
-    assert isinstance(instance, simTL4J::operators::UnaryModificationOperator)
-
-@given(instance=simTL4J::operators::EqualityOperator_strategy)
-@settings(max_examples=50)
-def test_simtl4j::operators::equalityoperator_instantiation(instance):
-    assert isinstance(instance, simTL4J::operators::EqualityOperator)
-
-@given(instance=simTL4J::operators::RelationOperator_strategy)
-@settings(max_examples=50)
-def test_simtl4j::operators::relationoperator_instantiation(instance):
-    assert isinstance(instance, simTL4J::operators::RelationOperator)
-
-@given(instance=simTL4J::operators::AssignmentOperator_strategy)
-@settings(max_examples=50)
-def test_simtl4j::operators::assignmentoperator_instantiation(instance):
-    assert isinstance(instance, simTL4J::operators::AssignmentOperator)
-
-@given(instance=simTL4J::operators::UnaryOperator_strategy)
-@settings(max_examples=50)
-def test_simtl4j::operators::unaryoperator_instantiation(instance):
-    assert isinstance(instance, simTL4J::operators::UnaryOperator)
-
-@given(instance=simTL4J::operators::ShiftOperator_strategy)
-@settings(max_examples=50)
-def test_simtl4j::operators::shiftoperator_instantiation(instance):
-    assert isinstance(instance, simTL4J::operators::ShiftOperator)
-
-@given(instance=simTL4J::operators::AdditiveOperator_strategy)
-@settings(max_examples=50)
-def test_simtl4j::operators::additiveoperator_instantiation(instance):
-    assert isinstance(instance, simTL4J::operators::AdditiveOperator)
-
-@given(instance=AnnotationInstanceOrModifier_strategy)
-@settings(max_examples=50)
-def test_annotationinstanceormodifier_instantiation(instance):
-    assert isinstance(instance, AnnotationInstanceOrModifier)
-
-@given(instance=simTL4J::modifiers::Modifier_strategy)
-@settings(max_examples=50)
-def test_simtl4j::modifiers::modifier_instantiation(instance):
-    assert isinstance(instance, simTL4J::modifiers::Modifier)
-
-@given(instance=Modifier_strategy)
-@settings(max_examples=50)
-def test_modifier_instantiation(instance):
-    assert isinstance(instance, Modifier)
-
-@given(instance=simTL4J::modifiers::Synchronized_strategy)
-@settings(max_examples=50)
-def test_simtl4j::modifiers::synchronized_instantiation(instance):
-    assert isinstance(instance, simTL4J::modifiers::Synchronized)
-
-@given(instance=simTL4J::modifiers::Private_strategy)
-@settings(max_examples=50)
-def test_simtl4j::modifiers::private_instantiation(instance):
-    assert isinstance(instance, simTL4J::modifiers::Private)
-
-@given(instance=simTL4J::modifiers::Static_strategy)
-@settings(max_examples=50)
-def test_simtl4j::modifiers::static_instantiation(instance):
-    assert isinstance(instance, simTL4J::modifiers::Static)
-
-@given(instance=simTL4J::modifiers::Strictfp_strategy)
-@settings(max_examples=50)
-def test_simtl4j::modifiers::strictfp_instantiation(instance):
-    assert isinstance(instance, simTL4J::modifiers::Strictfp)
-
-@given(instance=simTL4J::modifiers::Transient_strategy)
-@settings(max_examples=50)
-def test_simtl4j::modifiers::transient_instantiation(instance):
-    assert isinstance(instance, simTL4J::modifiers::Transient)
-
-@given(instance=simTL4J::modifiers::Abstract_strategy)
-@settings(max_examples=50)
-def test_simtl4j::modifiers::abstract_instantiation(instance):
-    assert isinstance(instance, simTL4J::modifiers::Abstract)
-
-@given(instance=simTL4J::modifiers::Volatile_strategy)
-@settings(max_examples=50)
-def test_simtl4j::modifiers::volatile_instantiation(instance):
-    assert isinstance(instance, simTL4J::modifiers::Volatile)
-
-@given(instance=simTL4J::modifiers::Native_strategy)
-@settings(max_examples=50)
-def test_simtl4j::modifiers::native_instantiation(instance):
-    assert isinstance(instance, simTL4J::modifiers::Native)
-
-@given(instance=simTL4J::modifiers::Protected_strategy)
-@settings(max_examples=50)
-def test_simtl4j::modifiers::protected_instantiation(instance):
-    assert isinstance(instance, simTL4J::modifiers::Protected)
-
-@given(instance=simTL4J::modifiers::Public_strategy)
-@settings(max_examples=50)
-def test_simtl4j::modifiers::public_instantiation(instance):
-    assert isinstance(instance, simTL4J::modifiers::Public)
-
-@given(instance=simTL4J::modifiers::Final_strategy)
-@settings(max_examples=50)
-def test_simtl4j::modifiers::final_instantiation(instance):
-    assert isinstance(instance, simTL4J::modifiers::Final)
-
-@given(instance=members::Method_strategy)
-@settings(max_examples=50)
-def test_members::method_instantiation(instance):
-    assert isinstance(instance, members::Method)
-
-@given(instance=Method_strategy)
-@settings(max_examples=50)
-def test_method_instantiation(instance):
-    assert isinstance(instance, Method)
-
-@given(instance=simTL4J::members::InterfaceMethod_strategy)
-@settings(max_examples=50)
-def test_simtl4j::members::interfacemethod_instantiation(instance):
-    assert isinstance(instance, simTL4J::members::InterfaceMethod)
-
-@given(instance=AdditionalField_strategy)
-@settings(max_examples=50)
-def test_additionalfield_instantiation(instance):
-    assert isinstance(instance, AdditionalField)
-
-@given(instance=variables::Variable_strategy)
-@settings(max_examples=50)
-def test_variables::variable_instantiation(instance):
-    assert isinstance(instance, variables::Variable)
-
-@given(instance=members::ExceptionThrower_strategy)
-@settings(max_examples=50)
-def test_members::exceptionthrower_instantiation(instance):
-    assert isinstance(instance, members::ExceptionThrower)
-
-@given(instance=parameters::Parametrizable_strategy)
-@settings(max_examples=50)
-def test_parameters::parametrizable_instantiation(instance):
-    assert isinstance(instance, parameters::Parametrizable)
-
-@given(instance=statements::StatementListContainer_strategy)
-@settings(max_examples=50)
-def test_statements::statementlistcontainer_instantiation(instance):
-    assert isinstance(instance, statements::StatementListContainer)
-
-@given(instance=simTL4J::members::ClassMethod_strategy)
-@settings(max_examples=50)
-def test_simtl4j::members::classmethod_instantiation(instance):
-    assert isinstance(instance, simTL4J::members::ClassMethod)
-
-@given(instance=instantiations::Initializable_strategy)
-@settings(max_examples=50)
-def test_instantiations::initializable_instantiation(instance):
-    assert isinstance(instance, instantiations::Initializable)
+def test_instantiations_initializable_instantiation(instance):
+    assert isinstance(instance, instantiations_Initializable)
 
 @given(instance=Member_strategy)
 @settings(max_examples=50)
 def test_member_instantiation(instance):
     assert isinstance(instance, Member)
 
-@given(instance=simTL4J::members::EmptyMember_strategy)
-@settings(max_examples=50)
-def test_simtl4j::members::emptymember_instantiation(instance):
-    assert isinstance(instance, simTL4J::members::EmptyMember)
-
 @given(instance=NamedElement_strategy)
 @settings(max_examples=50)
 def test_namedelement_instantiation(instance):
     assert isinstance(instance, NamedElement)
 
-@given(instance=simTL4J::references::ReferenceableElement_strategy)
+@given(instance=simTL4J_members_Member_strategy)
 @settings(max_examples=50)
-def test_simtl4j::references::referenceableelement_instantiation(instance):
-    assert isinstance(instance, simTL4J::references::ReferenceableElement)
-
-@given(instance=simTL4J::members::Member_strategy)
-@settings(max_examples=50)
-def test_simtl4j::members::member_instantiation(instance):
-    assert isinstance(instance, simTL4J::members::Member)
+def test_simtl4j_members_member_instantiation(instance):
+    assert isinstance(instance, simTL4J_members_Member)
 
 @given(instance=NamespaceClassifierReference_strategy)
 @settings(max_examples=50)
@@ -7949,50 +7348,41 @@ def test_namespaceclassifierreference_instantiation(instance):
 def test_longliteral_instantiation(instance):
     assert isinstance(instance, LongLiteral)
 
-@given(instance=simTL4J::literals::OctalLongLiteral_strategy)
+@given(instance=simTL4J_literals_HexLongLiteral_strategy)
 @settings(max_examples=50)
-def test_simtl4j::literals::octallongliteral_instantiation(instance):
-    assert isinstance(instance, simTL4J::literals::OctalLongLiteral)
-
-@given(instance=simTL4J::literals::OctalLongLiteral_strategy)
-def test_simtl4j::literals::octallongliteral_octalValue_type(instance):
-    assert isinstance(instance.octalValue, str)
+def test_simtl4j_literals_hexlongliteral_instantiation(instance):
+    assert isinstance(instance, simTL4J_literals_HexLongLiteral)
 
 
-@given(instance=simTL4J::literals::OctalLongLiteral_strategy)
-def test_simtl4j::literals::octallongliteral_octalValue_setter(instance):
-    original = instance.octalValue
-    instance.octalValue = original
-    assert instance.octalValue == original
 
-@given(instance=simTL4J::literals::HexLongLiteral_strategy)
-@settings(max_examples=50)
-def test_simtl4j::literals::hexlongliteral_instantiation(instance):
-    assert isinstance(instance, simTL4J::literals::HexLongLiteral)
-
-@given(instance=simTL4J::literals::HexLongLiteral_strategy)
-def test_simtl4j::literals::hexlongliteral_hexValue_type(instance):
-    assert isinstance(instance.hexValue, str)
-
-
-@given(instance=simTL4J::literals::HexLongLiteral_strategy)
-def test_simtl4j::literals::hexlongliteral_hexValue_setter(instance):
+@given(instance=simTL4J_literals_HexLongLiteral_strategy)
+def test_simtl4j_literals_hexlongliteral_hexValue_setter(instance):
     original = instance.hexValue
     instance.hexValue = original
     assert instance.hexValue == original
 
-@given(instance=simTL4J::literals::DecimalLongLiteral_strategy)
+@given(instance=simTL4J_literals_OctalLongLiteral_strategy)
 @settings(max_examples=50)
-def test_simtl4j::literals::decimallongliteral_instantiation(instance):
-    assert isinstance(instance, simTL4J::literals::DecimalLongLiteral)
-
-@given(instance=simTL4J::literals::DecimalLongLiteral_strategy)
-def test_simtl4j::literals::decimallongliteral_decimalValue_type(instance):
-    assert isinstance(instance.decimalValue, str)
+def test_simtl4j_literals_octallongliteral_instantiation(instance):
+    assert isinstance(instance, simTL4J_literals_OctalLongLiteral)
 
 
-@given(instance=simTL4J::literals::DecimalLongLiteral_strategy)
-def test_simtl4j::literals::decimallongliteral_decimalValue_setter(instance):
+
+@given(instance=simTL4J_literals_OctalLongLiteral_strategy)
+def test_simtl4j_literals_octallongliteral_octalValue_setter(instance):
+    original = instance.octalValue
+    instance.octalValue = original
+    assert instance.octalValue == original
+
+@given(instance=simTL4J_literals_DecimalLongLiteral_strategy)
+@settings(max_examples=50)
+def test_simtl4j_literals_decimallongliteral_instantiation(instance):
+    assert isinstance(instance, simTL4J_literals_DecimalLongLiteral)
+
+
+
+@given(instance=simTL4J_literals_DecimalLongLiteral_strategy)
+def test_simtl4j_literals_decimallongliteral_decimalValue_setter(instance):
     original = instance.decimalValue
     instance.decimalValue = original
     assert instance.decimalValue == original
@@ -8002,50 +7392,41 @@ def test_simtl4j::literals::decimallongliteral_decimalValue_setter(instance):
 def test_integerliteral_instantiation(instance):
     assert isinstance(instance, IntegerLiteral)
 
-@given(instance=simTL4J::literals::HexIntegerLiteral_strategy)
+@given(instance=simTL4J_literals_OctalIntegerLiteral_strategy)
 @settings(max_examples=50)
-def test_simtl4j::literals::hexintegerliteral_instantiation(instance):
-    assert isinstance(instance, simTL4J::literals::HexIntegerLiteral)
-
-@given(instance=simTL4J::literals::HexIntegerLiteral_strategy)
-def test_simtl4j::literals::hexintegerliteral_hexValue_type(instance):
-    assert isinstance(instance.hexValue, str)
+def test_simtl4j_literals_octalintegerliteral_instantiation(instance):
+    assert isinstance(instance, simTL4J_literals_OctalIntegerLiteral)
 
 
-@given(instance=simTL4J::literals::HexIntegerLiteral_strategy)
-def test_simtl4j::literals::hexintegerliteral_hexValue_setter(instance):
-    original = instance.hexValue
-    instance.hexValue = original
-    assert instance.hexValue == original
 
-@given(instance=simTL4J::literals::OctalIntegerLiteral_strategy)
-@settings(max_examples=50)
-def test_simtl4j::literals::octalintegerliteral_instantiation(instance):
-    assert isinstance(instance, simTL4J::literals::OctalIntegerLiteral)
-
-@given(instance=simTL4J::literals::OctalIntegerLiteral_strategy)
-def test_simtl4j::literals::octalintegerliteral_octalValue_type(instance):
-    assert isinstance(instance.octalValue, str)
-
-
-@given(instance=simTL4J::literals::OctalIntegerLiteral_strategy)
-def test_simtl4j::literals::octalintegerliteral_octalValue_setter(instance):
+@given(instance=simTL4J_literals_OctalIntegerLiteral_strategy)
+def test_simtl4j_literals_octalintegerliteral_octalValue_setter(instance):
     original = instance.octalValue
     instance.octalValue = original
     assert instance.octalValue == original
 
-@given(instance=simTL4J::literals::DecimalIntegerLiteral_strategy)
+@given(instance=simTL4J_literals_HexIntegerLiteral_strategy)
 @settings(max_examples=50)
-def test_simtl4j::literals::decimalintegerliteral_instantiation(instance):
-    assert isinstance(instance, simTL4J::literals::DecimalIntegerLiteral)
-
-@given(instance=simTL4J::literals::DecimalIntegerLiteral_strategy)
-def test_simtl4j::literals::decimalintegerliteral_decimalValue_type(instance):
-    assert isinstance(instance.decimalValue, str)
+def test_simtl4j_literals_hexintegerliteral_instantiation(instance):
+    assert isinstance(instance, simTL4J_literals_HexIntegerLiteral)
 
 
-@given(instance=simTL4J::literals::DecimalIntegerLiteral_strategy)
-def test_simtl4j::literals::decimalintegerliteral_decimalValue_setter(instance):
+
+@given(instance=simTL4J_literals_HexIntegerLiteral_strategy)
+def test_simtl4j_literals_hexintegerliteral_hexValue_setter(instance):
+    original = instance.hexValue
+    instance.hexValue = original
+    assert instance.hexValue == original
+
+@given(instance=simTL4J_literals_DecimalIntegerLiteral_strategy)
+@settings(max_examples=50)
+def test_simtl4j_literals_decimalintegerliteral_instantiation(instance):
+    assert isinstance(instance, simTL4J_literals_DecimalIntegerLiteral)
+
+
+
+@given(instance=simTL4J_literals_DecimalIntegerLiteral_strategy)
+def test_simtl4j_literals_decimalintegerliteral_decimalValue_setter(instance):
     original = instance.decimalValue
     instance.decimalValue = original
     assert instance.decimalValue == original
@@ -8055,34 +7436,28 @@ def test_simtl4j::literals::decimalintegerliteral_decimalValue_setter(instance):
 def test_doubleliteral_instantiation(instance):
     assert isinstance(instance, DoubleLiteral)
 
-@given(instance=simTL4J::literals::HexDoubleLiteral_strategy)
+@given(instance=simTL4J_literals_HexDoubleLiteral_strategy)
 @settings(max_examples=50)
-def test_simtl4j::literals::hexdoubleliteral_instantiation(instance):
-    assert isinstance(instance, simTL4J::literals::HexDoubleLiteral)
-
-@given(instance=simTL4J::literals::HexDoubleLiteral_strategy)
-def test_simtl4j::literals::hexdoubleliteral_hexValue_type(instance):
-    assert isinstance(instance.hexValue, float)
+def test_simtl4j_literals_hexdoubleliteral_instantiation(instance):
+    assert isinstance(instance, simTL4J_literals_HexDoubleLiteral)
 
 
-@given(instance=simTL4J::literals::HexDoubleLiteral_strategy)
-def test_simtl4j::literals::hexdoubleliteral_hexValue_setter(instance):
+
+@given(instance=simTL4J_literals_HexDoubleLiteral_strategy)
+def test_simtl4j_literals_hexdoubleliteral_hexValue_setter(instance):
     original = instance.hexValue
     instance.hexValue = original
     assert instance.hexValue == original
 
-@given(instance=simTL4J::literals::DecimalDoubleLiteral_strategy)
+@given(instance=simTL4J_literals_DecimalDoubleLiteral_strategy)
 @settings(max_examples=50)
-def test_simtl4j::literals::decimaldoubleliteral_instantiation(instance):
-    assert isinstance(instance, simTL4J::literals::DecimalDoubleLiteral)
-
-@given(instance=simTL4J::literals::DecimalDoubleLiteral_strategy)
-def test_simtl4j::literals::decimaldoubleliteral_decimalValue_type(instance):
-    assert isinstance(instance.decimalValue, float)
+def test_simtl4j_literals_decimaldoubleliteral_instantiation(instance):
+    assert isinstance(instance, simTL4J_literals_DecimalDoubleLiteral)
 
 
-@given(instance=simTL4J::literals::DecimalDoubleLiteral_strategy)
-def test_simtl4j::literals::decimaldoubleliteral_decimalValue_setter(instance):
+
+@given(instance=simTL4J_literals_DecimalDoubleLiteral_strategy)
+def test_simtl4j_literals_decimaldoubleliteral_decimalValue_setter(instance):
     original = instance.decimalValue
     instance.decimalValue = original
     assert instance.decimalValue == original
@@ -8092,96 +7467,667 @@ def test_simtl4j::literals::decimaldoubleliteral_decimalValue_setter(instance):
 def test_floatliteral_instantiation(instance):
     assert isinstance(instance, FloatLiteral)
 
-@given(instance=simTL4J::literals::HexFloatLiteral_strategy)
+@given(instance=simTL4J_literals_HexFloatLiteral_strategy)
 @settings(max_examples=50)
-def test_simtl4j::literals::hexfloatliteral_instantiation(instance):
-    assert isinstance(instance, simTL4J::literals::HexFloatLiteral)
-
-@given(instance=simTL4J::literals::HexFloatLiteral_strategy)
-def test_simtl4j::literals::hexfloatliteral_hexValue_type(instance):
-    assert isinstance(instance.hexValue, float)
+def test_simtl4j_literals_hexfloatliteral_instantiation(instance):
+    assert isinstance(instance, simTL4J_literals_HexFloatLiteral)
 
 
-@given(instance=simTL4J::literals::HexFloatLiteral_strategy)
-def test_simtl4j::literals::hexfloatliteral_hexValue_setter(instance):
+
+@given(instance=simTL4J_literals_HexFloatLiteral_strategy)
+def test_simtl4j_literals_hexfloatliteral_hexValue_setter(instance):
     original = instance.hexValue
     instance.hexValue = original
     assert instance.hexValue == original
 
-@given(instance=simTL4J::literals::DecimalFloatLiteral_strategy)
+@given(instance=simTL4J_literals_DecimalFloatLiteral_strategy)
 @settings(max_examples=50)
-def test_simtl4j::literals::decimalfloatliteral_instantiation(instance):
-    assert isinstance(instance, simTL4J::literals::DecimalFloatLiteral)
-
-@given(instance=simTL4J::literals::DecimalFloatLiteral_strategy)
-def test_simtl4j::literals::decimalfloatliteral_decimalValue_type(instance):
-    assert isinstance(instance.decimalValue, float)
+def test_simtl4j_literals_decimalfloatliteral_instantiation(instance):
+    assert isinstance(instance, simTL4J_literals_DecimalFloatLiteral)
 
 
-@given(instance=simTL4J::literals::DecimalFloatLiteral_strategy)
-def test_simtl4j::literals::decimalfloatliteral_decimalValue_setter(instance):
+
+@given(instance=simTL4J_literals_DecimalFloatLiteral_strategy)
+def test_simtl4j_literals_decimalfloatliteral_decimalValue_setter(instance):
     original = instance.decimalValue
     instance.decimalValue = original
     assert instance.decimalValue == original
+
+@given(instance=TMethodCall_strategy)
+@settings(max_examples=50)
+def test_tmethodcall_instantiation(instance):
+    assert isinstance(instance, TMethodCall)
+
+@given(instance=TUnaryOperator_strategy)
+@settings(max_examples=50)
+def test_tunaryoperator_instantiation(instance):
+    assert isinstance(instance, TUnaryOperator)
+
+@given(instance=simTL4J_simTL_TUnaryOperatorNOT_strategy)
+@settings(max_examples=50)
+def test_simtl4j_simtl_tunaryoperatornot_instantiation(instance):
+    assert isinstance(instance, simTL4J_simTL_TUnaryOperatorNOT)
+
+@given(instance=simTL_TPlaceholder_strategy)
+@settings(max_examples=50)
+def test_simtl_tplaceholder_instantiation(instance):
+    assert isinstance(instance, simTL_TPlaceholder)
+
+@given(instance=simTL4J_simTL_TPlaceholder_strategy)
+@settings(max_examples=50)
+def test_simtl4j_simtl_tplaceholder_instantiation(instance):
+    assert isinstance(instance, simTL4J_simTL_TPlaceholder)
+
+@given(instance=simTL_TIf_strategy)
+@settings(max_examples=50)
+def test_simtl_tif_instantiation(instance):
+    assert isinstance(instance, simTL_TIf)
+
+@given(instance=simTL_TFor_strategy)
+@settings(max_examples=50)
+def test_simtl_tfor_instantiation(instance):
+    assert isinstance(instance, simTL_TFor)
+
+@given(instance=simTL4J_simTL_TAbstractMethodStatement_strategy)
+@settings(max_examples=50)
+def test_simtl4j_simtl_tabstractmethodstatement_instantiation(instance):
+    assert isinstance(instance, simTL4J_simTL_TAbstractMethodStatement)
+
+@given(instance=simTL4J_simTL_TMethodCall_strategy)
+@settings(max_examples=50)
+def test_simtl4j_simtl_tmethodcall_instantiation(instance):
+    assert isinstance(instance, simTL4J_simTL_TMethodCall)
+
+
+
+@given(instance=simTL4J_simTL_TMethodCall_strategy)
+def test_simtl4j_simtl_tmethodcall_params_setter(instance):
+    original = instance.params
+    instance.params = original
+    assert instance.params == original
+
+
+
+@given(instance=simTL4J_simTL_TMethodCall_strategy)
+def test_simtl4j_simtl_tmethodcall_methodName_setter(instance):
+    original = instance.methodName
+    instance.methodName = original
+    assert instance.methodName == original
+
+@given(instance=simTL4J_simTL_TModelImport_strategy)
+@settings(max_examples=50)
+def test_simtl4j_simtl_tmodelimport_instantiation(instance):
+    assert isinstance(instance, simTL4J_simTL_TModelImport)
+
+
+
+@given(instance=simTL4J_simTL_TModelImport_strategy)
+def test_simtl4j_simtl_tmodelimport_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+
+
+@given(instance=simTL4J_simTL_TModelImport_strategy)
+def test_simtl4j_simtl_tmodelimport_uri_setter(instance):
+    original = instance.uri
+    instance.uri = original
+    assert instance.uri == original
+
+@given(instance=TModelImport_strategy)
+@settings(max_examples=50)
+def test_tmodelimport_instantiation(instance):
+    assert isinstance(instance, TModelImport)
+
+@given(instance=simTL4J_simTL_TemplateHeader_strategy)
+@settings(max_examples=50)
+def test_simtl4j_simtl_templateheader_instantiation(instance):
+    assert isinstance(instance, simTL4J_simTL_TemplateHeader)
+
+@given(instance=TemplateHeader_strategy)
+@settings(max_examples=50)
+def test_templateheader_instantiation(instance):
+    assert isinstance(instance, TemplateHeader)
+
+@given(instance=simTL4J_simTL_Template_strategy)
+@settings(max_examples=50)
+def test_simtl4j_simtl_template_instantiation(instance):
+    assert isinstance(instance, simTL4J_simTL_Template)
+
+@given(instance=simTL4J_simTL_TForVariable_strategy)
+@settings(max_examples=50)
+def test_simtl4j_simtl_tforvariable_instantiation(instance):
+    assert isinstance(instance, simTL4J_simTL_TForVariable)
+
+
+
+@given(instance=simTL4J_simTL_TForVariable_strategy)
+def test_simtl4j_simtl_tforvariable_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+@given(instance=TForVariable_strategy)
+@settings(max_examples=50)
+def test_tforvariable_instantiation(instance):
+    assert isinstance(instance, TForVariable)
+
+@given(instance=simTL4J_simTL_TFor_strategy)
+@settings(max_examples=50)
+def test_simtl4j_simtl_tfor_instantiation(instance):
+    assert isinstance(instance, simTL4J_simTL_TFor)
+
+@given(instance=TAbstractMethodStatement_strategy)
+@settings(max_examples=50)
+def test_tabstractmethodstatement_instantiation(instance):
+    assert isinstance(instance, TAbstractMethodStatement)
+
+@given(instance=simTL4J_simTL_TUnaryOperator_strategy)
+@settings(max_examples=50)
+def test_simtl4j_simtl_tunaryoperator_instantiation(instance):
+    assert isinstance(instance, simTL4J_simTL_TUnaryOperator)
+
+@given(instance=simTL4J_simTL_TMethodStatementImpl_strategy)
+@settings(max_examples=50)
+def test_simtl4j_simtl_tmethodstatementimpl_instantiation(instance):
+    assert isinstance(instance, simTL4J_simTL_TMethodStatementImpl)
+
+
+
+@given(instance=simTL4J_simTL_TMethodStatementImpl_strategy)
+def test_simtl4j_simtl_tmethodstatementimpl_caller_setter(instance):
+    original = instance.caller
+    instance.caller = original
+    assert instance.caller == original
+
+@given(instance=simTL4J_simTL_TIf_strategy)
+@settings(max_examples=50)
+def test_simtl4j_simtl_tif_instantiation(instance):
+    assert isinstance(instance, simTL4J_simTL_TIf)
+
+@given(instance=AdditionalLocalVariable_strategy)
+@settings(max_examples=50)
+def test_additionallocalvariable_instantiation(instance):
+    assert isinstance(instance, AdditionalLocalVariable)
+
+@given(instance=statements_ForLoopInitializer_strategy)
+@settings(max_examples=50)
+def test_statements_forloopinitializer_instantiation(instance):
+    assert isinstance(instance, statements_ForLoopInitializer)
+
+@given(instance=ClassifierReference_strategy)
+@settings(max_examples=50)
+def test_classifierreference_instantiation(instance):
+    assert isinstance(instance, ClassifierReference)
+
+@given(instance=types_TypeReference_strategy)
+@settings(max_examples=50)
+def test_types_typereference_instantiation(instance):
+    assert isinstance(instance, types_TypeReference)
+
+@given(instance=Block_strategy)
+@settings(max_examples=50)
+def test_block_instantiation(instance):
+    assert isinstance(instance, Block)
+
+@given(instance=CatchBlock_strategy)
+@settings(max_examples=50)
+def test_catchblock_instantiation(instance):
+    assert isinstance(instance, CatchBlock)
+
+@given(instance=statements_SwitchCase_strategy)
+@settings(max_examples=50)
+def test_statements_switchcase_instantiation(instance):
+    assert isinstance(instance, statements_SwitchCase)
+
+@given(instance=LocalVariable_strategy)
+@settings(max_examples=50)
+def test_localvariable_instantiation(instance):
+    assert isinstance(instance, LocalVariable)
+
+@given(instance=JumpLabel_strategy)
+@settings(max_examples=50)
+def test_jumplabel_instantiation(instance):
+    assert isinstance(instance, JumpLabel)
+
+@given(instance=statements_Conditional_strategy)
+@settings(max_examples=50)
+def test_statements_conditional_instantiation(instance):
+    assert isinstance(instance, statements_Conditional)
+
+@given(instance=simTL4J_statements_NormalSwitchCase_strategy)
+@settings(max_examples=50)
+def test_simtl4j_statements_normalswitchcase_instantiation(instance):
+    assert isinstance(instance, simTL4J_statements_NormalSwitchCase)
+
+@given(instance=StatementListContainer_strategy)
+@settings(max_examples=50)
+def test_statementlistcontainer_instantiation(instance):
+    assert isinstance(instance, StatementListContainer)
+
+@given(instance=simTL4J_statements_SwitchCase_strategy)
+@settings(max_examples=50)
+def test_simtl4j_statements_switchcase_instantiation(instance):
+    assert isinstance(instance, simTL4J_statements_SwitchCase)
+
+@given(instance=WhileLoop_strategy)
+@settings(max_examples=50)
+def test_whileloop_instantiation(instance):
+    assert isinstance(instance, WhileLoop)
+
+@given(instance=simTL4J_statements_DoWhileLoop_strategy)
+@settings(max_examples=50)
+def test_simtl4j_statements_dowhileloop_instantiation(instance):
+    assert isinstance(instance, simTL4J_statements_DoWhileLoop)
+
+@given(instance=SwitchCase_strategy)
+@settings(max_examples=50)
+def test_switchcase_instantiation(instance):
+    assert isinstance(instance, SwitchCase)
+
+@given(instance=simTL4J_statements_DefaultSwitchCase_strategy)
+@settings(max_examples=50)
+def test_simtl4j_statements_defaultswitchcase_instantiation(instance):
+    assert isinstance(instance, simTL4J_statements_DefaultSwitchCase)
+
+@given(instance=statements_StatementContainer_strategy)
+@settings(max_examples=50)
+def test_statements_statementcontainer_instantiation(instance):
+    assert isinstance(instance, statements_StatementContainer)
+
+@given(instance=OrdinaryParameter_strategy)
+@settings(max_examples=50)
+def test_ordinaryparameter_instantiation(instance):
+    assert isinstance(instance, OrdinaryParameter)
+
+@given(instance=simTL4J_statements_CatchBlock_strategy)
+@settings(max_examples=50)
+def test_simtl4j_statements_catchblock_instantiation(instance):
+    assert isinstance(instance, simTL4J_statements_CatchBlock)
+
+@given(instance=modifiers_Modifiable_strategy)
+@settings(max_examples=50)
+def test_modifiers_modifiable_instantiation(instance):
+    assert isinstance(instance, modifiers_Modifiable)
+
+@given(instance=Jump_strategy)
+@settings(max_examples=50)
+def test_jump_instantiation(instance):
+    assert isinstance(instance, Jump)
+
+@given(instance=simTL4J_statements_Continue_strategy)
+@settings(max_examples=50)
+def test_simtl4j_statements_continue_instantiation(instance):
+    assert isinstance(instance, simTL4J_statements_Continue)
+
+@given(instance=simTL4J_statements_Break_strategy)
+@settings(max_examples=50)
+def test_simtl4j_statements_break_instantiation(instance):
+    assert isinstance(instance, simTL4J_statements_Break)
+
+@given(instance=references_ElementReference_strategy)
+@settings(max_examples=50)
+def test_references_elementreference_instantiation(instance):
+    assert isinstance(instance, references_ElementReference)
+
+@given(instance=Statement_strategy)
+@settings(max_examples=50)
+def test_statement_instantiation(instance):
+    assert isinstance(instance, Statement)
+
+@given(instance=simTL4J_statements_EmptyStatement_strategy)
+@settings(max_examples=50)
+def test_simtl4j_statements_emptystatement_instantiation(instance):
+    assert isinstance(instance, simTL4J_statements_EmptyStatement)
+
+@given(instance=simTL4J_statements_ExpressionStatement_strategy)
+@settings(max_examples=50)
+def test_simtl4j_statements_expressionstatement_instantiation(instance):
+    assert isinstance(instance, simTL4J_statements_ExpressionStatement)
+
+@given(instance=simTL4J_statements_Switch_strategy)
+@settings(max_examples=50)
+def test_simtl4j_statements_switch_instantiation(instance):
+    assert isinstance(instance, simTL4J_statements_Switch)
+
+@given(instance=simTL4J_statements_Jump_strategy)
+@settings(max_examples=50)
+def test_simtl4j_statements_jump_instantiation(instance):
+    assert isinstance(instance, simTL4J_statements_Jump)
+
+@given(instance=simTL4J_statements_LocalVariableStatement_strategy)
+@settings(max_examples=50)
+def test_simtl4j_statements_localvariablestatement_instantiation(instance):
+    assert isinstance(instance, simTL4J_statements_LocalVariableStatement)
+
+@given(instance=simTL4J_statements_Return_strategy)
+@settings(max_examples=50)
+def test_simtl4j_statements_return_instantiation(instance):
+    assert isinstance(instance, simTL4J_statements_Return)
+
+@given(instance=simTL4J_statements_Throw_strategy)
+@settings(max_examples=50)
+def test_simtl4j_statements_throw_instantiation(instance):
+    assert isinstance(instance, simTL4J_statements_Throw)
+
+@given(instance=PrimitiveType_strategy)
+@settings(max_examples=50)
+def test_primitivetype_instantiation(instance):
+    assert isinstance(instance, PrimitiveType)
+
+@given(instance=simTL4J_types_Long_strategy)
+@settings(max_examples=50)
+def test_simtl4j_types_long_instantiation(instance):
+    assert isinstance(instance, simTL4J_types_Long)
+
+@given(instance=simTL4J_types_Short_strategy)
+@settings(max_examples=50)
+def test_simtl4j_types_short_instantiation(instance):
+    assert isinstance(instance, simTL4J_types_Short)
+
+@given(instance=simTL4J_types_Boolean_strategy)
+@settings(max_examples=50)
+def test_simtl4j_types_boolean_instantiation(instance):
+    assert isinstance(instance, simTL4J_types_Boolean)
+
+@given(instance=simTL4J_types_Float_strategy)
+@settings(max_examples=50)
+def test_simtl4j_types_float_instantiation(instance):
+    assert isinstance(instance, simTL4J_types_Float)
+
+@given(instance=simTL4J_types_Double_strategy)
+@settings(max_examples=50)
+def test_simtl4j_types_double_instantiation(instance):
+    assert isinstance(instance, simTL4J_types_Double)
+
+@given(instance=simTL4J_types_Int_strategy)
+@settings(max_examples=50)
+def test_simtl4j_types_int_instantiation(instance):
+    assert isinstance(instance, simTL4J_types_Int)
+
+@given(instance=simTL4J_types_Void_strategy)
+@settings(max_examples=50)
+def test_simtl4j_types_void_instantiation(instance):
+    assert isinstance(instance, simTL4J_types_Void)
+
+@given(instance=simTL4J_types_Char_strategy)
+@settings(max_examples=50)
+def test_simtl4j_types_char_instantiation(instance):
+    assert isinstance(instance, simTL4J_types_Char)
+
+@given(instance=simTL4J_types_Byte_strategy)
+@settings(max_examples=50)
+def test_simtl4j_types_byte_instantiation(instance):
+    assert isinstance(instance, simTL4J_types_Byte)
+
+@given(instance=ElementReference_strategy)
+@settings(max_examples=50)
+def test_elementreference_instantiation(instance):
+    assert isinstance(instance, ElementReference)
+
+@given(instance=simTL4J_references_IdentifierReference_strategy)
+@settings(max_examples=50)
+def test_simtl4j_references_identifierreference_instantiation(instance):
+    assert isinstance(instance, simTL4J_references_IdentifierReference)
+
+@given(instance=simTL4J_references_ReferenceableElement_strategy)
+@settings(max_examples=50)
+def test_simtl4j_references_referenceableelement_instantiation(instance):
+    assert isinstance(instance, simTL4J_references_ReferenceableElement)
+
+@given(instance=ArraySelector_strategy)
+@settings(max_examples=50)
+def test_arrayselector_instantiation(instance):
+    assert isinstance(instance, ArraySelector)
+
+@given(instance=expressions_PrimaryExpression_strategy)
+@settings(max_examples=50)
+def test_expressions_primaryexpression_instantiation(instance):
+    assert isinstance(instance, expressions_PrimaryExpression)
+
+@given(instance=simTL4J_simTL_TPlaceholder_PrimaryExpression_strategy)
+@settings(max_examples=50)
+def test_simtl4j_simtl_tplaceholder_primaryexpression_instantiation(instance):
+    assert isinstance(instance, simTL4J_simTL_TPlaceholder_PrimaryExpression)
+
+@given(instance=Parameter_strategy)
+@settings(max_examples=50)
+def test_parameter_instantiation(instance):
+    assert isinstance(instance, Parameter)
+
+@given(instance=simTL4J_parameters_OrdinaryParameter_strategy)
+@settings(max_examples=50)
+def test_simtl4j_parameters_ordinaryparameter_instantiation(instance):
+    assert isinstance(instance, simTL4J_parameters_OrdinaryParameter)
+
+@given(instance=simTL4J_parameters_VariableLengthParameter_strategy)
+@settings(max_examples=50)
+def test_simtl4j_parameters_variablelengthparameter_instantiation(instance):
+    assert isinstance(instance, simTL4J_parameters_VariableLengthParameter)
+
+@given(instance=operators_UnaryOperator_strategy)
+@settings(max_examples=50)
+def test_operators_unaryoperator_instantiation(instance):
+    assert isinstance(instance, operators_UnaryOperator)
+
+@given(instance=operators_AdditiveOperator_strategy)
+@settings(max_examples=50)
+def test_operators_additiveoperator_instantiation(instance):
+    assert isinstance(instance, operators_AdditiveOperator)
+
+@given(instance=simTL4J_operators_Subtraction_strategy)
+@settings(max_examples=50)
+def test_simtl4j_operators_subtraction_instantiation(instance):
+    assert isinstance(instance, simTL4J_operators_Subtraction)
+
+@given(instance=simTL4J_operators_Addition_strategy)
+@settings(max_examples=50)
+def test_simtl4j_operators_addition_instantiation(instance):
+    assert isinstance(instance, simTL4J_operators_Addition)
+
+@given(instance=Operator_strategy)
+@settings(max_examples=50)
+def test_operator_instantiation(instance):
+    assert isinstance(instance, Operator)
+
+@given(instance=simTL4J_operators_ShiftOperator_strategy)
+@settings(max_examples=50)
+def test_simtl4j_operators_shiftoperator_instantiation(instance):
+    assert isinstance(instance, simTL4J_operators_ShiftOperator)
+
+@given(instance=simTL4J_operators_UnaryModificationOperator_strategy)
+@settings(max_examples=50)
+def test_simtl4j_operators_unarymodificationoperator_instantiation(instance):
+    assert isinstance(instance, simTL4J_operators_UnaryModificationOperator)
+
+@given(instance=simTL4J_operators_UnaryOperator_strategy)
+@settings(max_examples=50)
+def test_simtl4j_operators_unaryoperator_instantiation(instance):
+    assert isinstance(instance, simTL4J_operators_UnaryOperator)
+
+@given(instance=simTL4J_operators_EqualityOperator_strategy)
+@settings(max_examples=50)
+def test_simtl4j_operators_equalityoperator_instantiation(instance):
+    assert isinstance(instance, simTL4J_operators_EqualityOperator)
+
+@given(instance=simTL4J_operators_RelationOperator_strategy)
+@settings(max_examples=50)
+def test_simtl4j_operators_relationoperator_instantiation(instance):
+    assert isinstance(instance, simTL4J_operators_RelationOperator)
+
+@given(instance=simTL4J_operators_AssignmentOperator_strategy)
+@settings(max_examples=50)
+def test_simtl4j_operators_assignmentoperator_instantiation(instance):
+    assert isinstance(instance, simTL4J_operators_AssignmentOperator)
+
+@given(instance=simTL4J_operators_MultiplicativeOperator_strategy)
+@settings(max_examples=50)
+def test_simtl4j_operators_multiplicativeoperator_instantiation(instance):
+    assert isinstance(instance, simTL4J_operators_MultiplicativeOperator)
+
+@given(instance=simTL4J_operators_AdditiveOperator_strategy)
+@settings(max_examples=50)
+def test_simtl4j_operators_additiveoperator_instantiation(instance):
+    assert isinstance(instance, simTL4J_operators_AdditiveOperator)
+
+@given(instance=AnnotationInstanceOrModifier_strategy)
+@settings(max_examples=50)
+def test_annotationinstanceormodifier_instantiation(instance):
+    assert isinstance(instance, AnnotationInstanceOrModifier)
+
+@given(instance=simTL4J_modifiers_Modifier_strategy)
+@settings(max_examples=50)
+def test_simtl4j_modifiers_modifier_instantiation(instance):
+    assert isinstance(instance, simTL4J_modifiers_Modifier)
+
+@given(instance=Modifier_strategy)
+@settings(max_examples=50)
+def test_modifier_instantiation(instance):
+    assert isinstance(instance, Modifier)
+
+@given(instance=simTL4J_modifiers_Native_strategy)
+@settings(max_examples=50)
+def test_simtl4j_modifiers_native_instantiation(instance):
+    assert isinstance(instance, simTL4J_modifiers_Native)
+
+@given(instance=simTL4J_modifiers_Strictfp_strategy)
+@settings(max_examples=50)
+def test_simtl4j_modifiers_strictfp_instantiation(instance):
+    assert isinstance(instance, simTL4J_modifiers_Strictfp)
+
+@given(instance=simTL4J_modifiers_Volatile_strategy)
+@settings(max_examples=50)
+def test_simtl4j_modifiers_volatile_instantiation(instance):
+    assert isinstance(instance, simTL4J_modifiers_Volatile)
+
+@given(instance=simTL4J_modifiers_Private_strategy)
+@settings(max_examples=50)
+def test_simtl4j_modifiers_private_instantiation(instance):
+    assert isinstance(instance, simTL4J_modifiers_Private)
+
+@given(instance=simTL4J_modifiers_Static_strategy)
+@settings(max_examples=50)
+def test_simtl4j_modifiers_static_instantiation(instance):
+    assert isinstance(instance, simTL4J_modifiers_Static)
+
+@given(instance=simTL4J_modifiers_Transient_strategy)
+@settings(max_examples=50)
+def test_simtl4j_modifiers_transient_instantiation(instance):
+    assert isinstance(instance, simTL4J_modifiers_Transient)
+
+@given(instance=simTL4J_modifiers_Synchronized_strategy)
+@settings(max_examples=50)
+def test_simtl4j_modifiers_synchronized_instantiation(instance):
+    assert isinstance(instance, simTL4J_modifiers_Synchronized)
+
+@given(instance=simTL4J_modifiers_Abstract_strategy)
+@settings(max_examples=50)
+def test_simtl4j_modifiers_abstract_instantiation(instance):
+    assert isinstance(instance, simTL4J_modifiers_Abstract)
+
+@given(instance=simTL4J_modifiers_Final_strategy)
+@settings(max_examples=50)
+def test_simtl4j_modifiers_final_instantiation(instance):
+    assert isinstance(instance, simTL4J_modifiers_Final)
+
+@given(instance=simTL4J_modifiers_Protected_strategy)
+@settings(max_examples=50)
+def test_simtl4j_modifiers_protected_instantiation(instance):
+    assert isinstance(instance, simTL4J_modifiers_Protected)
+
+@given(instance=simTL4J_modifiers_Public_strategy)
+@settings(max_examples=50)
+def test_simtl4j_modifiers_public_instantiation(instance):
+    assert isinstance(instance, simTL4J_modifiers_Public)
+
+@given(instance=members_Method_strategy)
+@settings(max_examples=50)
+def test_members_method_instantiation(instance):
+    assert isinstance(instance, members_Method)
+
+@given(instance=simTL4J_members_ClassMethod_strategy)
+@settings(max_examples=50)
+def test_simtl4j_members_classmethod_instantiation(instance):
+    assert isinstance(instance, simTL4J_members_ClassMethod)
+
+@given(instance=Method_strategy)
+@settings(max_examples=50)
+def test_method_instantiation(instance):
+    assert isinstance(instance, Method)
+
+@given(instance=simTL4J_members_InterfaceMethod_strategy)
+@settings(max_examples=50)
+def test_simtl4j_members_interfacemethod_instantiation(instance):
+    assert isinstance(instance, simTL4J_members_InterfaceMethod)
+
+@given(instance=AdditionalField_strategy)
+@settings(max_examples=50)
+def test_additionalfield_instantiation(instance):
+    assert isinstance(instance, AdditionalField)
+
+@given(instance=variables_Variable_strategy)
+@settings(max_examples=50)
+def test_variables_variable_instantiation(instance):
+    assert isinstance(instance, variables_Variable)
+
+@given(instance=simTL4J_members_EmptyMember_strategy)
+@settings(max_examples=50)
+def test_simtl4j_members_emptymember_instantiation(instance):
+    assert isinstance(instance, simTL4J_members_EmptyMember)
 
 @given(instance=Literal_strategy)
 @settings(max_examples=50)
 def test_literal_instantiation(instance):
     assert isinstance(instance, Literal)
 
-@given(instance=simTL4J::literals::CharacterLiteral_strategy)
+@given(instance=simTL4J_literals_FloatLiteral_strategy)
 @settings(max_examples=50)
-def test_simtl4j::literals::characterliteral_instantiation(instance):
-    assert isinstance(instance, simTL4J::literals::CharacterLiteral)
+def test_simtl4j_literals_floatliteral_instantiation(instance):
+    assert isinstance(instance, simTL4J_literals_FloatLiteral)
 
-@given(instance=simTL4J::literals::CharacterLiteral_strategy)
-def test_simtl4j::literals::characterliteral_value_type(instance):
-    assert isinstance(instance.value, str)
+@given(instance=simTL4J_literals_CharacterLiteral_strategy)
+@settings(max_examples=50)
+def test_simtl4j_literals_characterliteral_instantiation(instance):
+    assert isinstance(instance, simTL4J_literals_CharacterLiteral)
 
 
-@given(instance=simTL4J::literals::CharacterLiteral_strategy)
-def test_simtl4j::literals::characterliteral_value_setter(instance):
+
+@given(instance=simTL4J_literals_CharacterLiteral_strategy)
+def test_simtl4j_literals_characterliteral_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
 
-@given(instance=simTL4J::literals::FloatLiteral_strategy)
+@given(instance=simTL4J_literals_IntegerLiteral_strategy)
 @settings(max_examples=50)
-def test_simtl4j::literals::floatliteral_instantiation(instance):
-    assert isinstance(instance, simTL4J::literals::FloatLiteral)
+def test_simtl4j_literals_integerliteral_instantiation(instance):
+    assert isinstance(instance, simTL4J_literals_IntegerLiteral)
 
-@given(instance=simTL4J::literals::NullLiteral_strategy)
+@given(instance=simTL4J_literals_LongLiteral_strategy)
 @settings(max_examples=50)
-def test_simtl4j::literals::nullliteral_instantiation(instance):
-    assert isinstance(instance, simTL4J::literals::NullLiteral)
+def test_simtl4j_literals_longliteral_instantiation(instance):
+    assert isinstance(instance, simTL4J_literals_LongLiteral)
 
-@given(instance=simTL4J::literals::DoubleLiteral_strategy)
+@given(instance=simTL4J_literals_DoubleLiteral_strategy)
 @settings(max_examples=50)
-def test_simtl4j::literals::doubleliteral_instantiation(instance):
-    assert isinstance(instance, simTL4J::literals::DoubleLiteral)
+def test_simtl4j_literals_doubleliteral_instantiation(instance):
+    assert isinstance(instance, simTL4J_literals_DoubleLiteral)
 
-@given(instance=simTL4J::literals::LongLiteral_strategy)
+@given(instance=simTL4J_literals_NullLiteral_strategy)
 @settings(max_examples=50)
-def test_simtl4j::literals::longliteral_instantiation(instance):
-    assert isinstance(instance, simTL4J::literals::LongLiteral)
+def test_simtl4j_literals_nullliteral_instantiation(instance):
+    assert isinstance(instance, simTL4J_literals_NullLiteral)
 
-@given(instance=simTL4J::literals::IntegerLiteral_strategy)
+@given(instance=simTL4J_literals_BooleanLiteral_strategy)
 @settings(max_examples=50)
-def test_simtl4j::literals::integerliteral_instantiation(instance):
-    assert isinstance(instance, simTL4J::literals::IntegerLiteral)
-
-@given(instance=simTL4J::literals::BooleanLiteral_strategy)
-@settings(max_examples=50)
-def test_simtl4j::literals::booleanliteral_instantiation(instance):
-    assert isinstance(instance, simTL4J::literals::BooleanLiteral)
-
-@given(instance=simTL4J::literals::BooleanLiteral_strategy)
-def test_simtl4j::literals::booleanliteral_value_type(instance):
-    assert isinstance(instance.value, bool)
+def test_simtl4j_literals_booleanliteral_instantiation(instance):
+    assert isinstance(instance, simTL4J_literals_BooleanLiteral)
 
 
-@given(instance=simTL4J::literals::BooleanLiteral_strategy)
-def test_simtl4j::literals::booleanliteral_value_setter(instance):
+
+@given(instance=simTL4J_literals_BooleanLiteral_strategy)
+def test_simtl4j_literals_booleanliteral_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
@@ -8191,80 +8137,80 @@ def test_simtl4j::literals::booleanliteral_value_setter(instance):
 def test_primaryexpression_instantiation(instance):
     assert isinstance(instance, PrimaryExpression)
 
-@given(instance=simTL4J::literals::Literal_strategy)
+@given(instance=simTL4J_literals_Literal_strategy)
 @settings(max_examples=50)
-def test_simtl4j::literals::literal_instantiation(instance):
-    assert isinstance(instance, simTL4J::literals::Literal)
+def test_simtl4j_literals_literal_instantiation(instance):
+    assert isinstance(instance, simTL4J_literals_Literal)
 
 @given(instance=Self_strategy)
 @settings(max_examples=50)
 def test_self_instantiation(instance):
     assert isinstance(instance, Self)
 
-@given(instance=simTL4J::literals::This_strategy)
+@given(instance=simTL4J_literals_Super_strategy)
 @settings(max_examples=50)
-def test_simtl4j::literals::this_instantiation(instance):
-    assert isinstance(instance, simTL4J::literals::This)
+def test_simtl4j_literals_super_instantiation(instance):
+    assert isinstance(instance, simTL4J_literals_Super)
 
-@given(instance=simTL4J::literals::Super_strategy)
+@given(instance=simTL4J_literals_This_strategy)
 @settings(max_examples=50)
-def test_simtl4j::literals::super_instantiation(instance):
-    assert isinstance(instance, simTL4J::literals::Super)
+def test_simtl4j_literals_this_instantiation(instance):
+    assert isinstance(instance, simTL4J_literals_This)
 
 @given(instance=Instantiation_strategy)
 @settings(max_examples=50)
 def test_instantiation_instantiation(instance):
     assert isinstance(instance, Instantiation)
 
-@given(instance=simTL4J::instantiations::ExplicitConstructorCall_strategy)
+@given(instance=simTL4J_instantiations_ExplicitConstructorCall_strategy)
 @settings(max_examples=50)
-def test_simtl4j::instantiations::explicitconstructorcall_instantiation(instance):
-    assert isinstance(instance, simTL4J::instantiations::ExplicitConstructorCall)
+def test_simtl4j_instantiations_explicitconstructorcall_instantiation(instance):
+    assert isinstance(instance, simTL4J_instantiations_ExplicitConstructorCall)
 
 @given(instance=AnonymousClass_strategy)
 @settings(max_examples=50)
 def test_anonymousclass_instantiation(instance):
     assert isinstance(instance, AnonymousClass)
 
-@given(instance=generics::CallTypeArgumentable_strategy)
+@given(instance=generics_CallTypeArgumentable_strategy)
 @settings(max_examples=50)
-def test_generics::calltypeargumentable_instantiation(instance):
-    assert isinstance(instance, generics::CallTypeArgumentable)
+def test_generics_calltypeargumentable_instantiation(instance):
+    assert isinstance(instance, generics_CallTypeArgumentable)
 
-@given(instance=instantiations::Instantiation_strategy)
+@given(instance=instantiations_Instantiation_strategy)
 @settings(max_examples=50)
-def test_instantiations::instantiation_instantiation(instance):
-    assert isinstance(instance, instantiations::Instantiation)
+def test_instantiations_instantiation_instantiation(instance):
+    assert isinstance(instance, instantiations_Instantiation)
 
-@given(instance=simTL4J::instantiations::NewConstructorCall_strategy)
+@given(instance=simTL4J_instantiations_NewConstructorCall_strategy)
 @settings(max_examples=50)
-def test_simtl4j::instantiations::newconstructorcall_instantiation(instance):
-    assert isinstance(instance, simTL4J::instantiations::NewConstructorCall)
+def test_simtl4j_instantiations_newconstructorcall_instantiation(instance):
+    assert isinstance(instance, simTL4J_instantiations_NewConstructorCall)
 
-@given(instance=generics::TypeArgumentable_strategy)
+@given(instance=generics_TypeArgumentable_strategy)
 @settings(max_examples=50)
-def test_generics::typeargumentable_instantiation(instance):
-    assert isinstance(instance, generics::TypeArgumentable)
+def test_generics_typeargumentable_instantiation(instance):
+    assert isinstance(instance, generics_TypeArgumentable)
 
-@given(instance=simTL4J::references::Reference_strategy)
+@given(instance=simTL4J_types_ClassifierReference_strategy)
 @settings(max_examples=50)
-def test_simtl4j::references::reference_instantiation(instance):
-    assert isinstance(instance, simTL4J::references::Reference)
+def test_simtl4j_types_classifierreference_instantiation(instance):
+    assert isinstance(instance, simTL4J_types_ClassifierReference)
 
-@given(instance=simTL4J::types::ClassifierReference_strategy)
+@given(instance=simTL4J_references_Reference_strategy)
 @settings(max_examples=50)
-def test_simtl4j::types::classifierreference_instantiation(instance):
-    assert isinstance(instance, simTL4J::types::ClassifierReference)
+def test_simtl4j_references_reference_instantiation(instance):
+    assert isinstance(instance, simTL4J_references_Reference)
 
-@given(instance=references::Argumentable_strategy)
+@given(instance=references_Argumentable_strategy)
 @settings(max_examples=50)
-def test_references::argumentable_instantiation(instance):
-    assert isinstance(instance, references::Argumentable)
+def test_references_argumentable_instantiation(instance):
+    assert isinstance(instance, references_Argumentable)
 
-@given(instance=simTL4J::references::MethodCall_strategy)
+@given(instance=simTL4J_references_MethodCall_strategy)
 @settings(max_examples=50)
-def test_simtl4j::references::methodcall_instantiation(instance):
-    assert isinstance(instance, simTL4J::references::MethodCall)
+def test_simtl4j_references_methodcall_instantiation(instance):
+    assert isinstance(instance, simTL4J_references_MethodCall)
 
 @given(instance=ReferenceableElement_strategy)
 @settings(max_examples=50)
@@ -8276,15 +8222,15 @@ def test_referenceableelement_instantiation(instance):
 def test_staticimport_instantiation(instance):
     assert isinstance(instance, StaticImport)
 
-@given(instance=simTL4J::imports::StaticMemberImport_strategy)
+@given(instance=simTL4J_imports_StaticMemberImport_strategy)
 @settings(max_examples=50)
-def test_simtl4j::imports::staticmemberimport_instantiation(instance):
-    assert isinstance(instance, simTL4J::imports::StaticMemberImport)
+def test_simtl4j_imports_staticmemberimport_instantiation(instance):
+    assert isinstance(instance, simTL4J_imports_StaticMemberImport)
 
-@given(instance=simTL4J::imports::StaticClassifierImport_strategy)
+@given(instance=simTL4J_imports_StaticClassifierImport_strategy)
 @settings(max_examples=50)
-def test_simtl4j::imports::staticclassifierimport_instantiation(instance):
-    assert isinstance(instance, simTL4J::imports::StaticClassifierImport)
+def test_simtl4j_imports_staticclassifierimport_instantiation(instance):
+    assert isinstance(instance, simTL4J_imports_StaticClassifierImport)
 
 @given(instance=Static_strategy)
 @settings(max_examples=50)
@@ -8296,75 +8242,278 @@ def test_static_instantiation(instance):
 def test_import_instantiation(instance):
     assert isinstance(instance, Import)
 
-@given(instance=simTL4J::imports::StaticImport_strategy)
+@given(instance=simTL4J_imports_StaticImport_strategy)
 @settings(max_examples=50)
-def test_simtl4j::imports::staticimport_instantiation(instance):
-    assert isinstance(instance, simTL4J::imports::StaticImport)
+def test_simtl4j_imports_staticimport_instantiation(instance):
+    assert isinstance(instance, simTL4J_imports_StaticImport)
 
-@given(instance=simTL4J::imports::PackageImport_strategy)
+@given(instance=simTL4J_imports_ClassifierImport_strategy)
 @settings(max_examples=50)
-def test_simtl4j::imports::packageimport_instantiation(instance):
-    assert isinstance(instance, simTL4J::imports::PackageImport)
+def test_simtl4j_imports_classifierimport_instantiation(instance):
+    assert isinstance(instance, simTL4J_imports_ClassifierImport)
 
-@given(instance=simTL4J::imports::ClassifierImport_strategy)
+@given(instance=simTL4J_imports_PackageImport_strategy)
 @settings(max_examples=50)
-def test_simtl4j::imports::classifierimport_instantiation(instance):
-    assert isinstance(instance, simTL4J::imports::ClassifierImport)
+def test_simtl4j_imports_packageimport_instantiation(instance):
+    assert isinstance(instance, simTL4J_imports_PackageImport)
 
 @given(instance=NamespaceAwareElement_strategy)
 @settings(max_examples=50)
 def test_namespaceawareelement_instantiation(instance):
     assert isinstance(instance, NamespaceAwareElement)
 
-@given(instance=simTL4J::imports::Import_strategy)
+@given(instance=simTL4J_imports_Import_strategy)
 @settings(max_examples=50)
-def test_simtl4j::imports::import_instantiation(instance):
-    assert isinstance(instance, simTL4J::imports::Import)
+def test_simtl4j_imports_import_instantiation(instance):
+    assert isinstance(instance, simTL4J_imports_Import)
 
 @given(instance=TypeParameter_strategy)
 @settings(max_examples=50)
 def test_typeparameter_instantiation(instance):
     assert isinstance(instance, TypeParameter)
 
-@given(instance=generics::TypeArgument_strategy)
+@given(instance=generics_TypeArgument_strategy)
 @settings(max_examples=50)
-def test_generics::typeargument_instantiation(instance):
-    assert isinstance(instance, generics::TypeArgument)
+def test_generics_typeargument_instantiation(instance):
+    assert isinstance(instance, generics_TypeArgument)
 
-@given(instance=expressions::UnaryModificationExpressionChild_strategy)
+@given(instance=expressions_UnaryModificationExpressionChild_strategy)
 @settings(max_examples=50)
-def test_expressions::unarymodificationexpressionchild_instantiation(instance):
-    assert isinstance(instance, expressions::UnaryModificationExpressionChild)
+def test_expressions_unarymodificationexpressionchild_instantiation(instance):
+    assert isinstance(instance, expressions_UnaryModificationExpressionChild)
+
+@given(instance=UnaryModificationExpression_strategy)
+@settings(max_examples=50)
+def test_unarymodificationexpression_instantiation(instance):
+    assert isinstance(instance, UnaryModificationExpression)
+
+@given(instance=simTL4J_expressions_SuffixUnaryModificationExpression_strategy)
+@settings(max_examples=50)
+def test_simtl4j_expressions_suffixunarymodificationexpression_instantiation(instance):
+    assert isinstance(instance, simTL4J_expressions_SuffixUnaryModificationExpression)
+
+@given(instance=simTL4J_expressions_PrefixUnaryModificationExpression_strategy)
+@settings(max_examples=50)
+def test_simtl4j_expressions_prefixunarymodificationexpression_instantiation(instance):
+    assert isinstance(instance, simTL4J_expressions_PrefixUnaryModificationExpression)
+
+@given(instance=TypeArgument_strategy)
+@settings(max_examples=50)
+def test_typeargument_instantiation(instance):
+    assert isinstance(instance, TypeArgument)
+
+@given(instance=simTL4J_generics_ExtendsTypeArgument_strategy)
+@settings(max_examples=50)
+def test_simtl4j_generics_extendstypeargument_instantiation(instance):
+    assert isinstance(instance, simTL4J_generics_ExtendsTypeArgument)
+
+@given(instance=simTL4J_generics_SuperTypeArgument_strategy)
+@settings(max_examples=50)
+def test_simtl4j_generics_supertypeargument_instantiation(instance):
+    assert isinstance(instance, simTL4J_generics_SuperTypeArgument)
+
+@given(instance=simTL4J_generics_UnknownTypeArgument_strategy)
+@settings(max_examples=50)
+def test_simtl4j_generics_unknowntypeargument_instantiation(instance):
+    assert isinstance(instance, simTL4J_generics_UnknownTypeArgument)
+
+@given(instance=ArrayTypeable_strategy)
+@settings(max_examples=50)
+def test_arraytypeable_instantiation(instance):
+    assert isinstance(instance, ArrayTypeable)
+
+@given(instance=simTL4J_generics_TypeArgument_strategy)
+@settings(max_examples=50)
+def test_simtl4j_generics_typeargument_instantiation(instance):
+    assert isinstance(instance, simTL4J_generics_TypeArgument)
+
+@given(instance=Reference_strategy)
+@settings(max_examples=50)
+def test_reference_instantiation(instance):
+    assert isinstance(instance, Reference)
+
+@given(instance=simTL4J_references_PrimitiveTypeReference_strategy)
+@settings(max_examples=50)
+def test_simtl4j_references_primitivetypereference_instantiation(instance):
+    assert isinstance(instance, simTL4J_references_PrimitiveTypeReference)
+
+@given(instance=simTL4J_references_StringReference_strategy)
+@settings(max_examples=50)
+def test_simtl4j_references_stringreference_instantiation(instance):
+    assert isinstance(instance, simTL4J_references_StringReference)
+
+
+
+@given(instance=simTL4J_references_StringReference_strategy)
+def test_simtl4j_references_stringreference_value_setter(instance):
+    original = instance.value
+    instance.value = original
+    assert instance.value == original
+
+@given(instance=simTL4J_references_SelfReference_strategy)
+@settings(max_examples=50)
+def test_simtl4j_references_selfreference_instantiation(instance):
+    assert isinstance(instance, simTL4J_references_SelfReference)
+
+@given(instance=simTL4J_references_ReflectiveClassReference_strategy)
+@settings(max_examples=50)
+def test_simtl4j_references_reflectiveclassreference_instantiation(instance):
+    assert isinstance(instance, simTL4J_references_ReflectiveClassReference)
+
+@given(instance=simTL4J_references_ElementReference_strategy)
+@settings(max_examples=50)
+def test_simtl4j_references_elementreference_instantiation(instance):
+    assert isinstance(instance, simTL4J_references_ElementReference)
+
+@given(instance=simTL4J_expressions_NestedExpression_strategy)
+@settings(max_examples=50)
+def test_simtl4j_expressions_nestedexpression_instantiation(instance):
+    assert isinstance(instance, simTL4J_expressions_NestedExpression)
+
+@given(instance=ShiftOperator_strategy)
+@settings(max_examples=50)
+def test_shiftoperator_instantiation(instance):
+    assert isinstance(instance, ShiftOperator)
+
+@given(instance=simTL4J_operators_LeftShift_strategy)
+@settings(max_examples=50)
+def test_simtl4j_operators_leftshift_instantiation(instance):
+    assert isinstance(instance, simTL4J_operators_LeftShift)
+
+@given(instance=simTL4J_operators_RightShift_strategy)
+@settings(max_examples=50)
+def test_simtl4j_operators_rightshift_instantiation(instance):
+    assert isinstance(instance, simTL4J_operators_RightShift)
+
+@given(instance=simTL4J_operators_UnsignedRightShift_strategy)
+@settings(max_examples=50)
+def test_simtl4j_operators_unsignedrightshift_instantiation(instance):
+    assert isinstance(instance, simTL4J_operators_UnsignedRightShift)
+
+@given(instance=ShiftExpressionChild_strategy)
+@settings(max_examples=50)
+def test_shiftexpressionchild_instantiation(instance):
+    assert isinstance(instance, ShiftExpressionChild)
+
+@given(instance=RelationOperator_strategy)
+@settings(max_examples=50)
+def test_relationoperator_instantiation(instance):
+    assert isinstance(instance, RelationOperator)
+
+@given(instance=simTL4J_operators_GreaterThan_strategy)
+@settings(max_examples=50)
+def test_simtl4j_operators_greaterthan_instantiation(instance):
+    assert isinstance(instance, simTL4J_operators_GreaterThan)
+
+@given(instance=simTL4J_operators_LessThan_strategy)
+@settings(max_examples=50)
+def test_simtl4j_operators_lessthan_instantiation(instance):
+    assert isinstance(instance, simTL4J_operators_LessThan)
+
+@given(instance=simTL4J_operators_GreaterThanOrEqual_strategy)
+@settings(max_examples=50)
+def test_simtl4j_operators_greaterthanorequal_instantiation(instance):
+    assert isinstance(instance, simTL4J_operators_GreaterThanOrEqual)
+
+@given(instance=simTL4J_operators_LessThanOrEqual_strategy)
+@settings(max_examples=50)
+def test_simtl4j_operators_lessthanorequal_instantiation(instance):
+    assert isinstance(instance, simTL4J_operators_LessThanOrEqual)
+
+@given(instance=UnaryModificationOperator_strategy)
+@settings(max_examples=50)
+def test_unarymodificationoperator_instantiation(instance):
+    assert isinstance(instance, UnaryModificationOperator)
+
+@given(instance=simTL4J_operators_PlusPlus_strategy)
+@settings(max_examples=50)
+def test_simtl4j_operators_plusplus_instantiation(instance):
+    assert isinstance(instance, simTL4J_operators_PlusPlus)
+
+@given(instance=simTL4J_operators_MinusMinus_strategy)
+@settings(max_examples=50)
+def test_simtl4j_operators_minusminus_instantiation(instance):
+    assert isinstance(instance, simTL4J_operators_MinusMinus)
+
+@given(instance=UnaryModificationExpressionChild_strategy)
+@settings(max_examples=50)
+def test_unarymodificationexpressionchild_instantiation(instance):
+    assert isinstance(instance, UnaryModificationExpressionChild)
+
+@given(instance=simTL4J_expressions_PrimaryExpression_strategy)
+@settings(max_examples=50)
+def test_simtl4j_expressions_primaryexpression_instantiation(instance):
+    assert isinstance(instance, simTL4J_expressions_PrimaryExpression)
+
+@given(instance=UnaryExpressionChild_strategy)
+@settings(max_examples=50)
+def test_unaryexpressionchild_instantiation(instance):
+    assert isinstance(instance, UnaryExpressionChild)
+
+@given(instance=simTL4J_expressions_UnaryModificationExpressionChild_strategy)
+@settings(max_examples=50)
+def test_simtl4j_expressions_unarymodificationexpressionchild_instantiation(instance):
+    assert isinstance(instance, simTL4J_expressions_UnaryModificationExpressionChild)
+
+@given(instance=simTL4J_expressions_UnaryModificationExpression_strategy)
+@settings(max_examples=50)
+def test_simtl4j_expressions_unarymodificationexpression_instantiation(instance):
+    assert isinstance(instance, simTL4J_expressions_UnaryModificationExpression)
+
+@given(instance=UnaryOperator_strategy)
+@settings(max_examples=50)
+def test_unaryoperator_instantiation(instance):
+    assert isinstance(instance, UnaryOperator)
+
+@given(instance=simTL4J_operators_Negate_strategy)
+@settings(max_examples=50)
+def test_simtl4j_operators_negate_instantiation(instance):
+    assert isinstance(instance, simTL4J_operators_Negate)
+
+@given(instance=simTL4J_operators_Complement_strategy)
+@settings(max_examples=50)
+def test_simtl4j_operators_complement_instantiation(instance):
+    assert isinstance(instance, simTL4J_operators_Complement)
 
 @given(instance=MultiplicativeOperator_strategy)
 @settings(max_examples=50)
 def test_multiplicativeoperator_instantiation(instance):
     assert isinstance(instance, MultiplicativeOperator)
 
-@given(instance=simTL4J::operators::Multiplication_strategy)
+@given(instance=simTL4J_operators_Remainder_strategy)
 @settings(max_examples=50)
-def test_simtl4j::operators::multiplication_instantiation(instance):
-    assert isinstance(instance, simTL4J::operators::Multiplication)
+def test_simtl4j_operators_remainder_instantiation(instance):
+    assert isinstance(instance, simTL4J_operators_Remainder)
 
-@given(instance=simTL4J::operators::Division_strategy)
+@given(instance=simTL4J_operators_Multiplication_strategy)
 @settings(max_examples=50)
-def test_simtl4j::operators::division_instantiation(instance):
-    assert isinstance(instance, simTL4J::operators::Division)
+def test_simtl4j_operators_multiplication_instantiation(instance):
+    assert isinstance(instance, simTL4J_operators_Multiplication)
 
-@given(instance=simTL4J::operators::Remainder_strategy)
+@given(instance=simTL4J_operators_Division_strategy)
 @settings(max_examples=50)
-def test_simtl4j::operators::remainder_instantiation(instance):
-    assert isinstance(instance, simTL4J::operators::Remainder)
+def test_simtl4j_operators_division_instantiation(instance):
+    assert isinstance(instance, simTL4J_operators_Division)
 
 @given(instance=MultiplicativeExpressionChild_strategy)
 @settings(max_examples=50)
 def test_multiplicativeexpressionchild_instantiation(instance):
     assert isinstance(instance, MultiplicativeExpressionChild)
 
-@given(instance=simTL4J::expressions::UnaryExpression_strategy)
+@given(instance=simTL4J_expressions_UnaryExpression_strategy)
 @settings(max_examples=50)
-def test_simtl4j::expressions::unaryexpression_instantiation(instance):
-    assert isinstance(instance, simTL4J::expressions::UnaryExpression)
+def test_simtl4j_expressions_unaryexpression_instantiation(instance):
+    assert isinstance(instance, simTL4J_expressions_UnaryExpression)
+
+@given(instance=simTL4J_expressions_UnaryExpressionChild_strategy)
+@settings(max_examples=50)
+def test_simtl4j_expressions_unaryexpressionchild_instantiation(instance):
+    assert isinstance(instance, simTL4J_expressions_UnaryExpressionChild)
+
+@given(instance=simTL4J_expressions_AdditiveExpressionChild_strategy)
+@settings(max_examples=50)
+def test_simtl4j_expressions_additiveexpressionchild_instantiation(instance):
+    assert isinstance(instance, simTL4J_expressions_AdditiveExpressionChild)
 
 @given(instance=AdditiveOperator_strategy)
 @settings(max_examples=50)
@@ -8376,140 +8525,155 @@ def test_additiveoperator_instantiation(instance):
 def test_additiveexpressionchild_instantiation(instance):
     assert isinstance(instance, AdditiveExpressionChild)
 
-@given(instance=simTL4J::expressions::MultiplicativeExpressionChild_strategy)
+@given(instance=simTL4J_expressions_MultiplicativeExpression_strategy)
 @settings(max_examples=50)
-def test_simtl4j::expressions::multiplicativeexpressionchild_instantiation(instance):
-    assert isinstance(instance, simTL4J::expressions::MultiplicativeExpressionChild)
+def test_simtl4j_expressions_multiplicativeexpression_instantiation(instance):
+    assert isinstance(instance, simTL4J_expressions_MultiplicativeExpression)
 
-@given(instance=simTL4J::expressions::MultiplicativeExpression_strategy)
+@given(instance=simTL4J_expressions_MultiplicativeExpressionChild_strategy)
 @settings(max_examples=50)
-def test_simtl4j::expressions::multiplicativeexpression_instantiation(instance):
-    assert isinstance(instance, simTL4J::expressions::MultiplicativeExpression)
+def test_simtl4j_expressions_multiplicativeexpressionchild_instantiation(instance):
+    assert isinstance(instance, simTL4J_expressions_MultiplicativeExpressionChild)
+
+@given(instance=simTL4J_expressions_AdditiveExpression_strategy)
+@settings(max_examples=50)
+def test_simtl4j_expressions_additiveexpression_instantiation(instance):
+    assert isinstance(instance, simTL4J_expressions_AdditiveExpression)
 
 @given(instance=ConditionalAndExpressionChild_strategy)
 @settings(max_examples=50)
 def test_conditionalandexpressionchild_instantiation(instance):
     assert isinstance(instance, ConditionalAndExpressionChild)
 
-@given(instance=simTL4J::expressions::InclusiveOrExpression_strategy)
+@given(instance=simTL4J_expressions_InclusiveOrExpression_strategy)
 @settings(max_examples=50)
-def test_simtl4j::expressions::inclusiveorexpression_instantiation(instance):
-    assert isinstance(instance, simTL4J::expressions::InclusiveOrExpression)
+def test_simtl4j_expressions_inclusiveorexpression_instantiation(instance):
+    assert isinstance(instance, simTL4J_expressions_InclusiveOrExpression)
 
 @given(instance=ConditionalOrExpressionChild_strategy)
 @settings(max_examples=50)
 def test_conditionalorexpressionchild_instantiation(instance):
     assert isinstance(instance, ConditionalOrExpressionChild)
 
-@given(instance=simTL4J::expressions::ConditionalAndExpression_strategy)
+@given(instance=simTL4J_expressions_ConditionalAndExpression_strategy)
 @settings(max_examples=50)
-def test_simtl4j::expressions::conditionalandexpression_instantiation(instance):
-    assert isinstance(instance, simTL4J::expressions::ConditionalAndExpression)
+def test_simtl4j_expressions_conditionalandexpression_instantiation(instance):
+    assert isinstance(instance, simTL4J_expressions_ConditionalAndExpression)
 
-@given(instance=simTL4J::expressions::ConditionalAndExpressionChild_strategy)
+@given(instance=simTL4J_expressions_ConditionalAndExpressionChild_strategy)
 @settings(max_examples=50)
-def test_simtl4j::expressions::conditionalandexpressionchild_instantiation(instance):
-    assert isinstance(instance, simTL4J::expressions::ConditionalAndExpressionChild)
+def test_simtl4j_expressions_conditionalandexpressionchild_instantiation(instance):
+    assert isinstance(instance, simTL4J_expressions_ConditionalAndExpressionChild)
 
 @given(instance=RelationExpressionChild_strategy)
 @settings(max_examples=50)
 def test_relationexpressionchild_instantiation(instance):
     assert isinstance(instance, RelationExpressionChild)
 
-@given(instance=simTL4J::expressions::ShiftExpressionChild_strategy)
+@given(instance=simTL4J_expressions_ShiftExpression_strategy)
 @settings(max_examples=50)
-def test_simtl4j::expressions::shiftexpressionchild_instantiation(instance):
-    assert isinstance(instance, simTL4J::expressions::ShiftExpressionChild)
+def test_simtl4j_expressions_shiftexpression_instantiation(instance):
+    assert isinstance(instance, simTL4J_expressions_ShiftExpression)
+
+@given(instance=simTL4J_expressions_ShiftExpressionChild_strategy)
+@settings(max_examples=50)
+def test_simtl4j_expressions_shiftexpressionchild_instantiation(instance):
+    assert isinstance(instance, simTL4J_expressions_ShiftExpressionChild)
 
 @given(instance=InstanceOfExpressionChild_strategy)
 @settings(max_examples=50)
 def test_instanceofexpressionchild_instantiation(instance):
     assert isinstance(instance, InstanceOfExpressionChild)
 
-@given(instance=simTL4J::expressions::RelationExpression_strategy)
+@given(instance=simTL4J_expressions_RelationExpression_strategy)
 @settings(max_examples=50)
-def test_simtl4j::expressions::relationexpression_instantiation(instance):
-    assert isinstance(instance, simTL4J::expressions::RelationExpression)
+def test_simtl4j_expressions_relationexpression_instantiation(instance):
+    assert isinstance(instance, simTL4J_expressions_RelationExpression)
 
-@given(instance=expressions::EqualityExpressionChild_strategy)
+@given(instance=simTL4J_expressions_RelationExpressionChild_strategy)
 @settings(max_examples=50)
-def test_expressions::equalityexpressionchild_instantiation(instance):
-    assert isinstance(instance, expressions::EqualityExpressionChild)
+def test_simtl4j_expressions_relationexpressionchild_instantiation(instance):
+    assert isinstance(instance, simTL4J_expressions_RelationExpressionChild)
+
+@given(instance=expressions_EqualityExpressionChild_strategy)
+@settings(max_examples=50)
+def test_expressions_equalityexpressionchild_instantiation(instance):
+    assert isinstance(instance, expressions_EqualityExpressionChild)
 
 @given(instance=EqualityExpressionChild_strategy)
 @settings(max_examples=50)
 def test_equalityexpressionchild_instantiation(instance):
     assert isinstance(instance, EqualityExpressionChild)
 
-@given(instance=simTL4J::expressions::InstanceOfExpressionChild_strategy)
+@given(instance=simTL4J_expressions_InstanceOfExpressionChild_strategy)
 @settings(max_examples=50)
-def test_simtl4j::expressions::instanceofexpressionchild_instantiation(instance):
-    assert isinstance(instance, simTL4J::expressions::InstanceOfExpressionChild)
+def test_simtl4j_expressions_instanceofexpressionchild_instantiation(instance):
+    assert isinstance(instance, simTL4J_expressions_InstanceOfExpressionChild)
 
 @given(instance=EqualityOperator_strategy)
 @settings(max_examples=50)
 def test_equalityoperator_instantiation(instance):
     assert isinstance(instance, EqualityOperator)
 
-@given(instance=simTL4J::operators::NotEqual_strategy)
+@given(instance=simTL4J_operators_Equal_strategy)
 @settings(max_examples=50)
-def test_simtl4j::operators::notequal_instantiation(instance):
-    assert isinstance(instance, simTL4J::operators::NotEqual)
+def test_simtl4j_operators_equal_instantiation(instance):
+    assert isinstance(instance, simTL4J_operators_Equal)
 
-@given(instance=simTL4J::operators::Equal_strategy)
+@given(instance=simTL4J_operators_NotEqual_strategy)
 @settings(max_examples=50)
-def test_simtl4j::operators::equal_instantiation(instance):
-    assert isinstance(instance, simTL4J::operators::Equal)
+def test_simtl4j_operators_notequal_instantiation(instance):
+    assert isinstance(instance, simTL4J_operators_NotEqual)
 
 @given(instance=AndExpressionChild_strategy)
 @settings(max_examples=50)
 def test_andexpressionchild_instantiation(instance):
     assert isinstance(instance, AndExpressionChild)
 
-@given(instance=simTL4J::expressions::EqualityExpression_strategy)
+@given(instance=simTL4J_expressions_EqualityExpressionChild_strategy)
 @settings(max_examples=50)
-def test_simtl4j::expressions::equalityexpression_instantiation(instance):
-    assert isinstance(instance, simTL4J::expressions::EqualityExpression)
+def test_simtl4j_expressions_equalityexpressionchild_instantiation(instance):
+    assert isinstance(instance, simTL4J_expressions_EqualityExpressionChild)
 
-@given(instance=simTL4J::expressions::EqualityExpressionChild_strategy)
+@given(instance=simTL4J_expressions_EqualityExpression_strategy)
 @settings(max_examples=50)
-def test_simtl4j::expressions::equalityexpressionchild_instantiation(instance):
-    assert isinstance(instance, simTL4J::expressions::EqualityExpressionChild)
+def test_simtl4j_expressions_equalityexpression_instantiation(instance):
+    assert isinstance(instance, simTL4J_expressions_EqualityExpression)
 
 @given(instance=ExclusiveOrExpressionChild_strategy)
 @settings(max_examples=50)
 def test_exclusiveorexpressionchild_instantiation(instance):
     assert isinstance(instance, ExclusiveOrExpressionChild)
 
-@given(instance=simTL4J::expressions::AndExpression_strategy)
+@given(instance=simTL4J_expressions_AndExpressionChild_strategy)
 @settings(max_examples=50)
-def test_simtl4j::expressions::andexpression_instantiation(instance):
-    assert isinstance(instance, simTL4J::expressions::AndExpression)
+def test_simtl4j_expressions_andexpressionchild_instantiation(instance):
+    assert isinstance(instance, simTL4J_expressions_AndExpressionChild)
 
-@given(instance=simTL4J::expressions::AndExpressionChild_strategy)
+@given(instance=simTL4J_expressions_AndExpression_strategy)
 @settings(max_examples=50)
-def test_simtl4j::expressions::andexpressionchild_instantiation(instance):
-    assert isinstance(instance, simTL4J::expressions::AndExpressionChild)
+def test_simtl4j_expressions_andexpression_instantiation(instance):
+    assert isinstance(instance, simTL4J_expressions_AndExpression)
 
-@given(instance=simTL4J::expressions::InclusiveOrExpressionChild_strategy)
+@given(instance=simTL4J_expressions_InclusiveOrExpressionChild_strategy)
 @settings(max_examples=50)
-def test_simtl4j::expressions::inclusiveorexpressionchild_instantiation(instance):
-    assert isinstance(instance, simTL4J::expressions::InclusiveOrExpressionChild)
+def test_simtl4j_expressions_inclusiveorexpressionchild_instantiation(instance):
+    assert isinstance(instance, simTL4J_expressions_InclusiveOrExpressionChild)
 
 @given(instance=InclusiveOrExpressionChild_strategy)
 @settings(max_examples=50)
 def test_inclusiveorexpressionchild_instantiation(instance):
     assert isinstance(instance, InclusiveOrExpressionChild)
 
-@given(instance=simTL4J::expressions::ExclusiveOrExpression_strategy)
+@given(instance=simTL4J_expressions_ExclusiveOrExpression_strategy)
 @settings(max_examples=50)
-def test_simtl4j::expressions::exclusiveorexpression_instantiation(instance):
-    assert isinstance(instance, simTL4J::expressions::ExclusiveOrExpression)
+def test_simtl4j_expressions_exclusiveorexpression_instantiation(instance):
+    assert isinstance(instance, simTL4J_expressions_ExclusiveOrExpression)
 
-@given(instance=simTL4J::expressions::ExclusiveOrExpressionChild_strategy)
+@given(instance=simTL4J_expressions_ExclusiveOrExpressionChild_strategy)
 @settings(max_examples=50)
-def test_simtl4j::expressions::exclusiveorexpressionchild_instantiation(instance):
-    assert isinstance(instance, simTL4J::expressions::ExclusiveOrExpressionChild)
+def test_simtl4j_expressions_exclusiveorexpressionchild_instantiation(instance):
+    assert isinstance(instance, simTL4J_expressions_ExclusiveOrExpressionChild)
 
 @given(instance=Package_strategy)
 @settings(max_examples=50)
@@ -8521,181 +8685,178 @@ def test_package_instantiation(instance):
 def test_compilationunit_instantiation(instance):
     assert isinstance(instance, CompilationUnit)
 
-@given(instance=annotations::Annotable_strategy)
+@given(instance=annotations_Annotable_strategy)
 @settings(max_examples=50)
-def test_annotations::annotable_instantiation(instance):
-    assert isinstance(instance, annotations::Annotable)
+def test_annotations_annotable_instantiation(instance):
+    assert isinstance(instance, annotations_Annotable)
 
-@given(instance=containers::JavaRoot_strategy)
+@given(instance=containers_JavaRoot_strategy)
 @settings(max_examples=50)
-def test_containers::javaroot_instantiation(instance):
-    assert isinstance(instance, containers::JavaRoot)
+def test_containers_javaroot_instantiation(instance):
+    assert isinstance(instance, containers_JavaRoot)
 
 @given(instance=ConditionalExpressionChild_strategy)
 @settings(max_examples=50)
 def test_conditionalexpressionchild_instantiation(instance):
     assert isinstance(instance, ConditionalExpressionChild)
 
-@given(instance=simTL4J::expressions::ConditionalOrExpressionChild_strategy)
+@given(instance=simTL4J_expressions_ConditionalOrExpression_strategy)
 @settings(max_examples=50)
-def test_simtl4j::expressions::conditionalorexpressionchild_instantiation(instance):
-    assert isinstance(instance, simTL4J::expressions::ConditionalOrExpressionChild)
+def test_simtl4j_expressions_conditionalorexpression_instantiation(instance):
+    assert isinstance(instance, simTL4J_expressions_ConditionalOrExpression)
 
-@given(instance=simTL4J::expressions::ConditionalOrExpression_strategy)
+@given(instance=simTL4J_expressions_ConditionalOrExpressionChild_strategy)
 @settings(max_examples=50)
-def test_simtl4j::expressions::conditionalorexpression_instantiation(instance):
-    assert isinstance(instance, simTL4J::expressions::ConditionalOrExpression)
+def test_simtl4j_expressions_conditionalorexpressionchild_instantiation(instance):
+    assert isinstance(instance, simTL4J_expressions_ConditionalOrExpressionChild)
 
 @given(instance=AssignmentOperator_strategy)
 @settings(max_examples=50)
 def test_assignmentoperator_instantiation(instance):
     assert isinstance(instance, AssignmentOperator)
 
-@given(instance=simTL4J::operators::AssignmentExclusiveOr_strategy)
+@given(instance=simTL4J_operators_AssignmentMinus_strategy)
 @settings(max_examples=50)
-def test_simtl4j::operators::assignmentexclusiveor_instantiation(instance):
-    assert isinstance(instance, simTL4J::operators::AssignmentExclusiveOr)
+def test_simtl4j_operators_assignmentminus_instantiation(instance):
+    assert isinstance(instance, simTL4J_operators_AssignmentMinus)
 
-@given(instance=simTL4J::operators::AssignmentRightShift_strategy)
+@given(instance=simTL4J_operators_AssignmentMultiplication_strategy)
 @settings(max_examples=50)
-def test_simtl4j::operators::assignmentrightshift_instantiation(instance):
-    assert isinstance(instance, simTL4J::operators::AssignmentRightShift)
+def test_simtl4j_operators_assignmentmultiplication_instantiation(instance):
+    assert isinstance(instance, simTL4J_operators_AssignmentMultiplication)
 
-@given(instance=simTL4J::operators::AssignmentUnsignedRightShift_strategy)
+@given(instance=simTL4J_operators_AssignmentRightShift_strategy)
 @settings(max_examples=50)
-def test_simtl4j::operators::assignmentunsignedrightshift_instantiation(instance):
-    assert isinstance(instance, simTL4J::operators::AssignmentUnsignedRightShift)
+def test_simtl4j_operators_assignmentrightshift_instantiation(instance):
+    assert isinstance(instance, simTL4J_operators_AssignmentRightShift)
 
-@given(instance=simTL4J::operators::AssignmentMinus_strategy)
+@given(instance=simTL4J_operators_AssignmentPlus_strategy)
 @settings(max_examples=50)
-def test_simtl4j::operators::assignmentminus_instantiation(instance):
-    assert isinstance(instance, simTL4J::operators::AssignmentMinus)
+def test_simtl4j_operators_assignmentplus_instantiation(instance):
+    assert isinstance(instance, simTL4J_operators_AssignmentPlus)
 
-@given(instance=simTL4J::operators::AssignmentAnd_strategy)
+@given(instance=simTL4J_operators_AssignmentOr_strategy)
 @settings(max_examples=50)
-def test_simtl4j::operators::assignmentand_instantiation(instance):
-    assert isinstance(instance, simTL4J::operators::AssignmentAnd)
+def test_simtl4j_operators_assignmentor_instantiation(instance):
+    assert isinstance(instance, simTL4J_operators_AssignmentOr)
 
-@given(instance=simTL4J::operators::AssignmentMultiplication_strategy)
+@given(instance=simTL4J_operators_AssignmentExclusiveOr_strategy)
 @settings(max_examples=50)
-def test_simtl4j::operators::assignmentmultiplication_instantiation(instance):
-    assert isinstance(instance, simTL4J::operators::AssignmentMultiplication)
+def test_simtl4j_operators_assignmentexclusiveor_instantiation(instance):
+    assert isinstance(instance, simTL4J_operators_AssignmentExclusiveOr)
 
-@given(instance=simTL4J::operators::AssignmentOr_strategy)
+@given(instance=simTL4J_operators_Assignment_strategy)
 @settings(max_examples=50)
-def test_simtl4j::operators::assignmentor_instantiation(instance):
-    assert isinstance(instance, simTL4J::operators::AssignmentOr)
+def test_simtl4j_operators_assignment_instantiation(instance):
+    assert isinstance(instance, simTL4J_operators_Assignment)
 
-@given(instance=simTL4J::operators::AssignmentDivision_strategy)
+@given(instance=simTL4J_operators_AssignmentModulo_strategy)
 @settings(max_examples=50)
-def test_simtl4j::operators::assignmentdivision_instantiation(instance):
-    assert isinstance(instance, simTL4J::operators::AssignmentDivision)
+def test_simtl4j_operators_assignmentmodulo_instantiation(instance):
+    assert isinstance(instance, simTL4J_operators_AssignmentModulo)
 
-@given(instance=simTL4J::operators::AssignmentPlus_strategy)
+@given(instance=simTL4J_operators_AssignmentDivision_strategy)
 @settings(max_examples=50)
-def test_simtl4j::operators::assignmentplus_instantiation(instance):
-    assert isinstance(instance, simTL4J::operators::AssignmentPlus)
+def test_simtl4j_operators_assignmentdivision_instantiation(instance):
+    assert isinstance(instance, simTL4J_operators_AssignmentDivision)
 
-@given(instance=simTL4J::operators::AssignmentLeftShift_strategy)
+@given(instance=simTL4J_operators_AssignmentAnd_strategy)
 @settings(max_examples=50)
-def test_simtl4j::operators::assignmentleftshift_instantiation(instance):
-    assert isinstance(instance, simTL4J::operators::AssignmentLeftShift)
+def test_simtl4j_operators_assignmentand_instantiation(instance):
+    assert isinstance(instance, simTL4J_operators_AssignmentAnd)
 
-@given(instance=simTL4J::operators::AssignmentModulo_strategy)
+@given(instance=simTL4J_operators_AssignmentUnsignedRightShift_strategy)
 @settings(max_examples=50)
-def test_simtl4j::operators::assignmentmodulo_instantiation(instance):
-    assert isinstance(instance, simTL4J::operators::AssignmentModulo)
+def test_simtl4j_operators_assignmentunsignedrightshift_instantiation(instance):
+    assert isinstance(instance, simTL4J_operators_AssignmentUnsignedRightShift)
 
-@given(instance=simTL4J::operators::Assignment_strategy)
+@given(instance=simTL4J_operators_AssignmentLeftShift_strategy)
 @settings(max_examples=50)
-def test_simtl4j::operators::assignment_instantiation(instance):
-    assert isinstance(instance, simTL4J::operators::Assignment)
+def test_simtl4j_operators_assignmentleftshift_instantiation(instance):
+    assert isinstance(instance, simTL4J_operators_AssignmentLeftShift)
 
 @given(instance=AssignmentExpressionChild_strategy)
 @settings(max_examples=50)
 def test_assignmentexpressionchild_instantiation(instance):
     assert isinstance(instance, AssignmentExpressionChild)
 
-@given(instance=simTL4J::expressions::ConditionalExpressionChild_strategy)
+@given(instance=simTL4J_expressions_ConditionalExpressionChild_strategy)
 @settings(max_examples=50)
-def test_simtl4j::expressions::conditionalexpressionchild_instantiation(instance):
-    assert isinstance(instance, simTL4J::expressions::ConditionalExpressionChild)
+def test_simtl4j_expressions_conditionalexpressionchild_instantiation(instance):
+    assert isinstance(instance, simTL4J_expressions_ConditionalExpressionChild)
 
-@given(instance=simTL4J::expressions::ConditionalExpression_strategy)
+@given(instance=simTL4J_expressions_ConditionalExpression_strategy)
 @settings(max_examples=50)
-def test_simtl4j::expressions::conditionalexpression_instantiation(instance):
-    assert isinstance(instance, simTL4J::expressions::ConditionalExpression)
+def test_simtl4j_expressions_conditionalexpression_instantiation(instance):
+    assert isinstance(instance, simTL4J_expressions_ConditionalExpression)
 
 @given(instance=ForLoopInitializer_strategy)
 @settings(max_examples=50)
 def test_forloopinitializer_instantiation(instance):
     assert isinstance(instance, ForLoopInitializer)
 
-@given(instance=simTL4J::expressions::ExpressionList_strategy)
+@given(instance=simTL4J_expressions_ExpressionList_strategy)
 @settings(max_examples=50)
-def test_simtl4j::expressions::expressionlist_instantiation(instance):
-    assert isinstance(instance, simTL4J::expressions::ExpressionList)
+def test_simtl4j_expressions_expressionlist_instantiation(instance):
+    assert isinstance(instance, simTL4J_expressions_ExpressionList)
 
 @given(instance=JavaRoot_strategy)
 @settings(max_examples=50)
 def test_javaroot_instantiation(instance):
     assert isinstance(instance, JavaRoot)
 
-@given(instance=simTL4J::containers::EmptyModel_strategy)
+@given(instance=simTL4J_containers_EmptyModel_strategy)
 @settings(max_examples=50)
-def test_simtl4j::containers::emptymodel_instantiation(instance):
-    assert isinstance(instance, simTL4J::containers::EmptyModel)
+def test_simtl4j_containers_emptymodel_instantiation(instance):
+    assert isinstance(instance, simTL4J_containers_EmptyModel)
 
-@given(instance=simTL4J::containers::CompilationUnit_strategy)
+@given(instance=simTL4J_containers_CompilationUnit_strategy)
 @settings(max_examples=50)
-def test_simtl4j::containers::compilationunit_instantiation(instance):
-    assert isinstance(instance, simTL4J::containers::CompilationUnit)
+def test_simtl4j_containers_compilationunit_instantiation(instance):
+    assert isinstance(instance, simTL4J_containers_CompilationUnit)
 
-@given(instance=imports::ImportingElement_strategy)
+@given(instance=imports_ImportingElement_strategy)
 @settings(max_examples=50)
-def test_imports::importingelement_instantiation(instance):
-    assert isinstance(instance, imports::ImportingElement)
+def test_imports_importingelement_instantiation(instance):
+    assert isinstance(instance, imports_ImportingElement)
 
-@given(instance=commons::NamedElement_strategy)
+@given(instance=commons_NamedElement_strategy)
 @settings(max_examples=50)
-def test_commons::namedelement_instantiation(instance):
-    assert isinstance(instance, commons::NamedElement)
+def test_commons_namedelement_instantiation(instance):
+    assert isinstance(instance, commons_NamedElement)
 
 @given(instance=TPlaceholder_strategy)
 @settings(max_examples=50)
 def test_tplaceholder_instantiation(instance):
     assert isinstance(instance, TPlaceholder)
 
-@given(instance=simTL4J::commons::Commentable_strategy)
+@given(instance=simTL4J_commons_Commentable_strategy)
 @settings(max_examples=50)
-def test_simtl4j::commons::commentable_instantiation(instance):
-    assert isinstance(instance, simTL4J::commons::Commentable)
-
-@given(instance=simTL4J::commons::Commentable_strategy)
-def test_simtl4j::commons::commentable_comments_type(instance):
-    assert isinstance(instance.comments, str)
+def test_simtl4j_commons_commentable_instantiation(instance):
+    assert isinstance(instance, simTL4J_commons_Commentable)
 
 
-@given(instance=simTL4J::commons::Commentable_strategy)
-def test_simtl4j::commons::commentable_comments_setter(instance):
+
+@given(instance=simTL4J_commons_Commentable_strategy)
+def test_simtl4j_commons_commentable_comments_setter(instance):
     original = instance.comments
     instance.comments = original
     assert instance.comments == original
 
-@given(instance=classifiers::Implementor_strategy)
+@given(instance=classifiers_Implementor_strategy)
 @settings(max_examples=50)
-def test_classifiers::implementor_instantiation(instance):
-    assert isinstance(instance, classifiers::Implementor)
+def test_classifiers_implementor_instantiation(instance):
+    assert isinstance(instance, classifiers_Implementor)
 
-@given(instance=classifiers::ConcreteClassifier_strategy)
+@given(instance=classifiers_ConcreteClassifier_strategy)
 @settings(max_examples=50)
-def test_classifiers::concreteclassifier_instantiation(instance):
-    assert isinstance(instance, classifiers::ConcreteClassifier)
+def test_classifiers_concreteclassifier_instantiation(instance):
+    assert isinstance(instance, classifiers_ConcreteClassifier)
 
-@given(instance=simTL4J::classifiers::Class_strategy)
+@given(instance=simTL4J_classifiers_Class_strategy)
 @settings(max_examples=50)
-def test_simtl4j::classifiers::class_instantiation(instance):
-    assert isinstance(instance, simTL4J::classifiers::Class)
+def test_simtl4j_classifiers_class_instantiation(instance):
+    assert isinstance(instance, simTL4J_classifiers_Class)
 
 import warnings
 import copy
@@ -8703,9 +8864,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=simTL4J::classifiers::Class_strategy)
+@given(instance=simTL4J_classifiers_Class_strategy)
 @settings(max_examples=30)
-def test_simtl4j::classifiers::class_unwrapprimitivetype_changes_state(instance):
+def test_simtl4j_classifiers_class_unwrapprimitivetype_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -8717,14 +8878,14 @@ def test_simtl4j::classifiers::class_unwrapprimitivetype_changes_state(instance)
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'unWrapPrimitiveType' in simTL4J::classifiers::Class is empty"
+        assert has_statements, f"Function 'unWrapPrimitiveType' in simTL4J_classifiers_Class is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'unWrapPrimitiveType' in simTL4J::classifiers::Class did not change state; check implementation")
+            warnings.warn(f"Operation 'unWrapPrimitiveType' in simTL4J_classifiers_Class did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'unWrapPrimitiveType' in simTL4J::classifiers::Class is not implemented or raised an error")
+        warnings.warn(f"Operation 'unWrapPrimitiveType' in simTL4J_classifiers_Class is not implemented or raised an error")
 
 @given(instance=TypeReference_strategy)
 @settings(max_examples=50)
@@ -8736,216 +8897,228 @@ def test_typereference_instantiation(instance):
 def test_enumconstant_instantiation(instance):
     assert isinstance(instance, EnumConstant)
 
-@given(instance=simTL4J::classifiers::Enumeration_strategy)
+@given(instance=simTL4J_classifiers_Enumeration_strategy)
 @settings(max_examples=50)
-def test_simtl4j::classifiers::enumeration_instantiation(instance):
-    assert isinstance(instance, simTL4J::classifiers::Enumeration)
+def test_simtl4j_classifiers_enumeration_instantiation(instance):
+    assert isinstance(instance, simTL4J_classifiers_Enumeration)
 
 @given(instance=ConcreteClassifier_strategy)
 @settings(max_examples=50)
 def test_concreteclassifier_instantiation(instance):
     assert isinstance(instance, ConcreteClassifier)
 
-@given(instance=simTL4J::classifiers::Annotation_strategy)
+@given(instance=simTL4J_classifiers_Annotation_strategy)
 @settings(max_examples=50)
-def test_simtl4j::classifiers::annotation_instantiation(instance):
-    assert isinstance(instance, simTL4J::classifiers::Annotation)
+def test_simtl4j_classifiers_annotation_instantiation(instance):
+    assert isinstance(instance, simTL4J_classifiers_Annotation)
 
-@given(instance=simTL4J::classifiers::Interface_strategy)
+@given(instance=simTL4J_classifiers_Interface_strategy)
 @settings(max_examples=50)
-def test_simtl4j::classifiers::interface_instantiation(instance):
-    assert isinstance(instance, simTL4J::classifiers::Interface)
+def test_simtl4j_classifiers_interface_instantiation(instance):
+    assert isinstance(instance, simTL4J_classifiers_Interface)
 
-@given(instance=arrays::ArrayTypeable_strategy)
+@given(instance=arrays_ArrayTypeable_strategy)
 @settings(max_examples=50)
-def test_arrays::arraytypeable_instantiation(instance):
-    assert isinstance(instance, arrays::ArrayTypeable)
+def test_arrays_arraytypeable_instantiation(instance):
+    assert isinstance(instance, arrays_ArrayTypeable)
 
-@given(instance=types::TypedElement_strategy)
+@given(instance=types_TypedElement_strategy)
 @settings(max_examples=50)
-def test_types::typedelement_instantiation(instance):
-    assert isinstance(instance, types::TypedElement)
+def test_types_typedelement_instantiation(instance):
+    assert isinstance(instance, types_TypedElement)
 
-@given(instance=simTL4J::expressions::CastExpression_strategy)
+@given(instance=simTL4J_expressions_CastExpression_strategy)
 @settings(max_examples=50)
-def test_simtl4j::expressions::castexpression_instantiation(instance):
-    assert isinstance(instance, simTL4J::expressions::CastExpression)
+def test_simtl4j_expressions_castexpression_instantiation(instance):
+    assert isinstance(instance, simTL4J_expressions_CastExpression)
 
-@given(instance=simTL4J::expressions::InstanceOfExpression_strategy)
+@given(instance=simTL4J_expressions_InstanceOfExpression_strategy)
 @settings(max_examples=50)
-def test_simtl4j::expressions::instanceofexpression_instantiation(instance):
-    assert isinstance(instance, simTL4J::expressions::InstanceOfExpression)
+def test_simtl4j_expressions_instanceofexpression_instantiation(instance):
+    assert isinstance(instance, simTL4J_expressions_InstanceOfExpression)
 
-@given(instance=simTL4J::generics::QualifiedTypeArgument_strategy)
+@given(instance=simTL4J_generics_QualifiedTypeArgument_strategy)
 @settings(max_examples=50)
-def test_simtl4j::generics::qualifiedtypeargument_instantiation(instance):
-    assert isinstance(instance, simTL4J::generics::QualifiedTypeArgument)
+def test_simtl4j_generics_qualifiedtypeargument_instantiation(instance):
+    assert isinstance(instance, simTL4J_generics_QualifiedTypeArgument)
 
-@given(instance=expressions::Expression_strategy)
+@given(instance=expressions_Expression_strategy)
 @settings(max_examples=50)
-def test_expressions::expression_instantiation(instance):
-    assert isinstance(instance, expressions::Expression)
+def test_expressions_expression_instantiation(instance):
+    assert isinstance(instance, expressions_Expression)
 
 @given(instance=ArrayInitializationValue_strategy)
 @settings(max_examples=50)
 def test_arrayinitializationvalue_instantiation(instance):
     assert isinstance(instance, ArrayInitializationValue)
 
-@given(instance=annotations::AnnotationValue_strategy)
+@given(instance=annotations_AnnotationValue_strategy)
 @settings(max_examples=50)
-def test_annotations::annotationvalue_instantiation(instance):
-    assert isinstance(instance, annotations::AnnotationValue)
+def test_annotations_annotationvalue_instantiation(instance):
+    assert isinstance(instance, annotations_AnnotationValue)
 
-@given(instance=arrays::ArrayInitializationValue_strategy)
+@given(instance=arrays_ArrayInitializationValue_strategy)
 @settings(max_examples=50)
-def test_arrays::arrayinitializationvalue_instantiation(instance):
-    assert isinstance(instance, arrays::ArrayInitializationValue)
+def test_arrays_arrayinitializationvalue_instantiation(instance):
+    assert isinstance(instance, arrays_ArrayInitializationValue)
 
-@given(instance=simTL4J::expressions::Expression_strategy)
+@given(instance=simTL4J_expressions_Expression_strategy)
 @settings(max_examples=50)
-def test_simtl4j::expressions::expression_instantiation(instance):
-    assert isinstance(instance, simTL4J::expressions::Expression)
+def test_simtl4j_expressions_expression_instantiation(instance):
+    assert isinstance(instance, simTL4J_expressions_Expression)
 
-@given(instance=simTL4J::arrays::ArrayInitializer_strategy)
+@given(instance=simTL4J_arrays_ArrayInitializer_strategy)
 @settings(max_examples=50)
-def test_simtl4j::arrays::arrayinitializer_instantiation(instance):
-    assert isinstance(instance, simTL4J::arrays::ArrayInitializer)
+def test_simtl4j_arrays_arrayinitializer_instantiation(instance):
+    assert isinstance(instance, simTL4J_arrays_ArrayInitializer)
 
-@given(instance=modifiers::AnnotableAndModifiable_strategy)
+@given(instance=modifiers_AnnotableAndModifiable_strategy)
 @settings(max_examples=50)
-def test_modifiers::annotableandmodifiable_instantiation(instance):
-    assert isinstance(instance, modifiers::AnnotableAndModifiable)
+def test_modifiers_annotableandmodifiable_instantiation(instance):
+    assert isinstance(instance, modifiers_AnnotableAndModifiable)
 
-@given(instance=simTL4J::variables::LocalVariable_strategy)
+@given(instance=simTL4J_variables_LocalVariable_strategy)
 @settings(max_examples=50)
-def test_simtl4j::variables::localvariable_instantiation(instance):
-    assert isinstance(instance, simTL4J::variables::LocalVariable)
+def test_simtl4j_variables_localvariable_instantiation(instance):
+    assert isinstance(instance, simTL4J_variables_LocalVariable)
 
-@given(instance=simTL4J::parameters::Parameter_strategy)
+@given(instance=simTL4J_parameters_Parameter_strategy)
 @settings(max_examples=50)
-def test_simtl4j::parameters::parameter_instantiation(instance):
-    assert isinstance(instance, simTL4J::parameters::Parameter)
+def test_simtl4j_parameters_parameter_instantiation(instance):
+    assert isinstance(instance, simTL4J_parameters_Parameter)
 
-@given(instance=statements::Statement_strategy)
+@given(instance=statements_Statement_strategy)
 @settings(max_examples=50)
-def test_statements::statement_instantiation(instance):
-    assert isinstance(instance, statements::Statement)
+def test_statements_statement_instantiation(instance):
+    assert isinstance(instance, statements_Statement)
 
-@given(instance=simTL4J::simTL::TFor::StatementListContainer_strategy)
+@given(instance=simTL4J_statements_Assert_strategy)
 @settings(max_examples=50)
-def test_simtl4j::simtl::tfor::statementlistcontainer_instantiation(instance):
-    assert isinstance(instance, simTL4J::simTL::TFor::StatementListContainer)
+def test_simtl4j_statements_assert_instantiation(instance):
+    assert isinstance(instance, simTL4J_statements_Assert)
 
-@given(instance=simTL4J::statements::ForLoop_strategy)
+@given(instance=simTL4J_simTL_TFor_StatementListContainer_strategy)
 @settings(max_examples=50)
-def test_simtl4j::statements::forloop_instantiation(instance):
-    assert isinstance(instance, simTL4J::statements::ForLoop)
+def test_simtl4j_simtl_tfor_statementlistcontainer_instantiation(instance):
+    assert isinstance(instance, simTL4J_simTL_TFor_StatementListContainer)
 
-@given(instance=simTL4J::statements::ForEachLoop_strategy)
+@given(instance=simTL4J_statements_WhileLoop_strategy)
 @settings(max_examples=50)
-def test_simtl4j::statements::foreachloop_instantiation(instance):
-    assert isinstance(instance, simTL4J::statements::ForEachLoop)
+def test_simtl4j_statements_whileloop_instantiation(instance):
+    assert isinstance(instance, simTL4J_statements_WhileLoop)
 
-@given(instance=simTL4J::statements::Assert_strategy)
+@given(instance=simTL4J_statements_SynchronizedBlock_strategy)
 @settings(max_examples=50)
-def test_simtl4j::statements::assert_instantiation(instance):
-    assert isinstance(instance, simTL4J::statements::Assert)
+def test_simtl4j_statements_synchronizedblock_instantiation(instance):
+    assert isinstance(instance, simTL4J_statements_SynchronizedBlock)
 
-@given(instance=simTL4J::statements::TryBlock_strategy)
+@given(instance=simTL4J_simTL_TIf_StatementListContainer_strategy)
 @settings(max_examples=50)
-def test_simtl4j::statements::tryblock_instantiation(instance):
-    assert isinstance(instance, simTL4J::statements::TryBlock)
+def test_simtl4j_simtl_tif_statementlistcontainer_instantiation(instance):
+    assert isinstance(instance, simTL4J_simTL_TIf_StatementListContainer)
 
-@given(instance=simTL4J::statements::Condition_strategy)
+@given(instance=simTL4J_statements_JumpLabel_strategy)
 @settings(max_examples=50)
-def test_simtl4j::statements::condition_instantiation(instance):
-    assert isinstance(instance, simTL4J::statements::Condition)
+def test_simtl4j_statements_jumplabel_instantiation(instance):
+    assert isinstance(instance, simTL4J_statements_JumpLabel)
 
-@given(instance=simTL4J::statements::SynchronizedBlock_strategy)
+@given(instance=simTL4J_statements_Condition_strategy)
 @settings(max_examples=50)
-def test_simtl4j::statements::synchronizedblock_instantiation(instance):
-    assert isinstance(instance, simTL4J::statements::SynchronizedBlock)
+def test_simtl4j_statements_condition_instantiation(instance):
+    assert isinstance(instance, simTL4J_statements_Condition)
 
-@given(instance=simTL4J::simTL::TIf::StatementListContainer_strategy)
+@given(instance=simTL4J_statements_ForEachLoop_strategy)
 @settings(max_examples=50)
-def test_simtl4j::simtl::tif::statementlistcontainer_instantiation(instance):
-    assert isinstance(instance, simTL4J::simTL::TIf::StatementListContainer)
+def test_simtl4j_statements_foreachloop_instantiation(instance):
+    assert isinstance(instance, simTL4J_statements_ForEachLoop)
 
-@given(instance=simTL4J::statements::WhileLoop_strategy)
+@given(instance=simTL4J_statements_ForLoop_strategy)
 @settings(max_examples=50)
-def test_simtl4j::statements::whileloop_instantiation(instance):
-    assert isinstance(instance, simTL4J::statements::WhileLoop)
+def test_simtl4j_statements_forloop_instantiation(instance):
+    assert isinstance(instance, simTL4J_statements_ForLoop)
 
-@given(instance=simTL4J::statements::JumpLabel_strategy)
+@given(instance=simTL4J_statements_TryBlock_strategy)
 @settings(max_examples=50)
-def test_simtl4j::statements::jumplabel_instantiation(instance):
-    assert isinstance(instance, simTL4J::statements::JumpLabel)
+def test_simtl4j_statements_tryblock_instantiation(instance):
+    assert isinstance(instance, simTL4J_statements_TryBlock)
 
-@given(instance=members::Member_strategy)
+@given(instance=members_Member_strategy)
 @settings(max_examples=50)
-def test_members::member_instantiation(instance):
-    assert isinstance(instance, members::Member)
+def test_members_member_instantiation(instance):
+    assert isinstance(instance, members_Member)
 
-@given(instance=simTL4J::statements::Block_strategy)
+@given(instance=simTL4J_statements_Block_strategy)
 @settings(max_examples=50)
-def test_simtl4j::statements::block_instantiation(instance):
-    assert isinstance(instance, simTL4J::statements::Block)
+def test_simtl4j_statements_block_instantiation(instance):
+    assert isinstance(instance, simTL4J_statements_Block)
 
-@given(instance=members::MemberContainer_strategy)
+@given(instance=members_MemberContainer_strategy)
 @settings(max_examples=50)
-def test_members::membercontainer_instantiation(instance):
-    assert isinstance(instance, members::MemberContainer)
+def test_members_membercontainer_instantiation(instance):
+    assert isinstance(instance, members_MemberContainer)
 
-@given(instance=simTL4J::simTL::TFor::MemberContainer_strategy)
+@given(instance=simTL4J_simTL_TIf_MemberContainer_strategy)
 @settings(max_examples=50)
-def test_simtl4j::simtl::tfor::membercontainer_instantiation(instance):
-    assert isinstance(instance, simTL4J::simTL::TFor::MemberContainer)
+def test_simtl4j_simtl_tif_membercontainer_instantiation(instance):
+    assert isinstance(instance, simTL4J_simTL_TIf_MemberContainer)
 
-@given(instance=simTL4J::simTL::TIf::MemberContainer_strategy)
+@given(instance=simTL4J_simTL_TFor_MemberContainer_strategy)
 @settings(max_examples=50)
-def test_simtl4j::simtl::tif::membercontainer_instantiation(instance):
-    assert isinstance(instance, simTL4J::simTL::TIf::MemberContainer)
+def test_simtl4j_simtl_tfor_membercontainer_instantiation(instance):
+    assert isinstance(instance, simTL4J_simTL_TFor_MemberContainer)
 
-@given(instance=generics::TypeParametrizable_strategy)
+@given(instance=generics_TypeParametrizable_strategy)
 @settings(max_examples=50)
-def test_generics::typeparametrizable_instantiation(instance):
-    assert isinstance(instance, generics::TypeParametrizable)
+def test_generics_typeparametrizable_instantiation(instance):
+    assert isinstance(instance, generics_TypeParametrizable)
 
-@given(instance=simTL4J::members::Constructor_strategy)
+@given(instance=simTL4J_members_Constructor_strategy)
 @settings(max_examples=50)
-def test_simtl4j::members::constructor_instantiation(instance):
-    assert isinstance(instance, simTL4J::members::Constructor)
+def test_simtl4j_members_constructor_instantiation(instance):
+    assert isinstance(instance, simTL4J_members_Constructor)
 
-@given(instance=classifiers::Classifier_strategy)
+@given(instance=classifiers_Classifier_strategy)
 @settings(max_examples=50)
-def test_classifiers::classifier_instantiation(instance):
-    assert isinstance(instance, classifiers::Classifier)
+def test_classifiers_classifier_instantiation(instance):
+    assert isinstance(instance, classifiers_Classifier)
 
-@given(instance=simTL4J::classifiers::ConcreteClassifier_strategy)
+@given(instance=simTL4J_classifiers_ConcreteClassifier_strategy)
 @settings(max_examples=50)
-def test_simtl4j::classifiers::concreteclassifier_instantiation(instance):
-    assert isinstance(instance, simTL4J::classifiers::ConcreteClassifier)
-
-@given(instance=simTL4J::classifiers::ConcreteClassifier_strategy)
-def test_simtl4j::classifiers::concreteclassifier_fullName_type(instance):
-    assert isinstance(instance.fullName, str)
+def test_simtl4j_classifiers_concreteclassifier_instantiation(instance):
+    assert isinstance(instance, simTL4J_classifiers_ConcreteClassifier)
 
 
-@given(instance=simTL4J::classifiers::ConcreteClassifier_strategy)
-def test_simtl4j::classifiers::concreteclassifier_fullName_setter(instance):
+
+@given(instance=simTL4J_classifiers_ConcreteClassifier_strategy)
+def test_simtl4j_classifiers_concreteclassifier_fullName_setter(instance):
     original = instance.fullName
     instance.fullName = original
     assert instance.fullName == original
 
-@given(instance=references::ReferenceableElement_strategy)
+@given(instance=references_ReferenceableElement_strategy)
 @settings(max_examples=50)
-def test_references::referenceableelement_instantiation(instance):
-    assert isinstance(instance, references::ReferenceableElement)
+def test_references_referenceableelement_instantiation(instance):
+    assert isinstance(instance, references_ReferenceableElement)
 
-@given(instance=simTL4J::members::Method_strategy)
+@given(instance=simTL4J_members_AdditionalField_strategy)
 @settings(max_examples=50)
-def test_simtl4j::members::method_instantiation(instance):
-    assert isinstance(instance, simTL4J::members::Method)
+def test_simtl4j_members_additionalfield_instantiation(instance):
+    assert isinstance(instance, simTL4J_members_AdditionalField)
+
+@given(instance=simTL4J_variables_Variable_strategy)
+@settings(max_examples=50)
+def test_simtl4j_variables_variable_instantiation(instance):
+    assert isinstance(instance, simTL4J_variables_Variable)
+
+@given(instance=simTL4J_variables_AdditionalLocalVariable_strategy)
+@settings(max_examples=50)
+def test_simtl4j_variables_additionallocalvariable_instantiation(instance):
+    assert isinstance(instance, simTL4J_variables_AdditionalLocalVariable)
+
+@given(instance=simTL4J_members_Method_strategy)
+@settings(max_examples=50)
+def test_simtl4j_members_method_instantiation(instance):
+    assert isinstance(instance, simTL4J_members_Method)
 
 import warnings
 import copy
@@ -8953,9 +9126,40 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=simTL4J::members::Method_strategy)
+@given(instance=simTL4J_members_Method_strategy)
 @settings(max_examples=30)
-def test_simtl4j::members::method_ismethodforcall_changes_state(instance):
+def test_simtl4j_members_method_issomemethodforcall_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.isSomeMethodForCall(
+            "test"
+        )
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.isSomeMethodForCall).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'isSomeMethodForCall' in simTL4J_members_Method is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'isSomeMethodForCall' in simTL4J_members_Method did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'isSomeMethodForCall' in simTL4J_members_Method is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=simTL4J_members_Method_strategy)
+@settings(max_examples=30)
+def test_simtl4j_members_method_ismethodforcall_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -8970,14 +9174,14 @@ def test_simtl4j::members::method_ismethodforcall_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'isMethodForCall' in simTL4J::members::Method is empty"
+        assert has_statements, f"Function 'isMethodForCall' in simTL4J_members_Method is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'isMethodForCall' in simTL4J::members::Method did not change state; check implementation")
+            warnings.warn(f"Operation 'isMethodForCall' in simTL4J_members_Method did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'isMethodForCall' in simTL4J::members::Method is not implemented or raised an error")
+        warnings.warn(f"Operation 'isMethodForCall' in simTL4J_members_Method is not implemented or raised an error")
 
 import warnings
 import copy
@@ -8985,40 +9189,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=simTL4J::members::Method_strategy)
+@given(instance=simTL4J_members_Method_strategy)
 @settings(max_examples=30)
-def test_simtl4j::members::method_issomemethodforcall_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.isSomeMethodForCall(
-            "test"
-        )
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.isSomeMethodForCall).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'isSomeMethodForCall' in simTL4J::members::Method is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'isSomeMethodForCall' in simTL4J::members::Method did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'isSomeMethodForCall' in simTL4J::members::Method is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=simTL4J::members::Method_strategy)
-@settings(max_examples=30)
-def test_simtl4j::members::method_isbettermethodforcall_changes_state(instance):
+def test_simtl4j_members_method_isbettermethodforcall_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -9033,54 +9206,39 @@ def test_simtl4j::members::method_isbettermethodforcall_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'isBetterMethodForCall' in simTL4J::members::Method is empty"
+        assert has_statements, f"Function 'isBetterMethodForCall' in simTL4J_members_Method is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'isBetterMethodForCall' in simTL4J::members::Method did not change state; check implementation")
+            warnings.warn(f"Operation 'isBetterMethodForCall' in simTL4J_members_Method did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'isBetterMethodForCall' in simTL4J::members::Method is not implemented or raised an error")
+        warnings.warn(f"Operation 'isBetterMethodForCall' in simTL4J_members_Method is not implemented or raised an error")
 
-@given(instance=simTL4J::members::EnumConstant_strategy)
+@given(instance=simTL4J_containers_Package_strategy)
 @settings(max_examples=50)
-def test_simtl4j::members::enumconstant_instantiation(instance):
-    assert isinstance(instance, simTL4J::members::EnumConstant)
+def test_simtl4j_containers_package_instantiation(instance):
+    assert isinstance(instance, simTL4J_containers_Package)
 
-@given(instance=simTL4J::members::Field_strategy)
+@given(instance=simTL4J_members_Field_strategy)
 @settings(max_examples=50)
-def test_simtl4j::members::field_instantiation(instance):
-    assert isinstance(instance, simTL4J::members::Field)
+def test_simtl4j_members_field_instantiation(instance):
+    assert isinstance(instance, simTL4J_members_Field)
 
-@given(instance=simTL4J::containers::Package_strategy)
+@given(instance=simTL4J_members_EnumConstant_strategy)
 @settings(max_examples=50)
-def test_simtl4j::containers::package_instantiation(instance):
-    assert isinstance(instance, simTL4J::containers::Package)
+def test_simtl4j_members_enumconstant_instantiation(instance):
+    assert isinstance(instance, simTL4J_members_EnumConstant)
 
-@given(instance=simTL4J::members::AdditionalField_strategy)
+@given(instance=types_Type_strategy)
 @settings(max_examples=50)
-def test_simtl4j::members::additionalfield_instantiation(instance):
-    assert isinstance(instance, simTL4J::members::AdditionalField)
+def test_types_type_instantiation(instance):
+    assert isinstance(instance, types_Type)
 
-@given(instance=simTL4J::variables::AdditionalLocalVariable_strategy)
+@given(instance=simTL4J_types_PrimitiveType_strategy)
 @settings(max_examples=50)
-def test_simtl4j::variables::additionallocalvariable_instantiation(instance):
-    assert isinstance(instance, simTL4J::variables::AdditionalLocalVariable)
-
-@given(instance=simTL4J::variables::Variable_strategy)
-@settings(max_examples=50)
-def test_simtl4j::variables::variable_instantiation(instance):
-    assert isinstance(instance, simTL4J::variables::Variable)
-
-@given(instance=types::Type_strategy)
-@settings(max_examples=50)
-def test_types::type_instantiation(instance):
-    assert isinstance(instance, types::Type)
-
-@given(instance=simTL4J::types::PrimitiveType_strategy)
-@settings(max_examples=50)
-def test_simtl4j::types::primitivetype_instantiation(instance):
-    assert isinstance(instance, simTL4J::types::PrimitiveType)
+def test_simtl4j_types_primitivetype_instantiation(instance):
+    assert isinstance(instance, simTL4J_types_PrimitiveType)
 
 import warnings
 import copy
@@ -9088,9 +9246,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=simTL4J::types::PrimitiveType_strategy)
+@given(instance=simTL4J_types_PrimitiveType_strategy)
 @settings(max_examples=30)
-def test_simtl4j::types::primitivetype_wrapprimitivetype_changes_state(instance):
+def test_simtl4j_types_primitivetype_wrapprimitivetype_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -9102,54 +9260,54 @@ def test_simtl4j::types::primitivetype_wrapprimitivetype_changes_state(instance)
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'wrapPrimitiveType' in simTL4J::types::PrimitiveType is empty"
+        assert has_statements, f"Function 'wrapPrimitiveType' in simTL4J_types_PrimitiveType is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'wrapPrimitiveType' in simTL4J::types::PrimitiveType did not change state; check implementation")
+            warnings.warn(f"Operation 'wrapPrimitiveType' in simTL4J_types_PrimitiveType did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'wrapPrimitiveType' in simTL4J::types::PrimitiveType is not implemented or raised an error")
+        warnings.warn(f"Operation 'wrapPrimitiveType' in simTL4J_types_PrimitiveType is not implemented or raised an error")
 
-@given(instance=simTL4J::classifiers::AnonymousClass_strategy)
+@given(instance=simTL4J_classifiers_AnonymousClass_strategy)
 @settings(max_examples=50)
-def test_simtl4j::classifiers::anonymousclass_instantiation(instance):
-    assert isinstance(instance, simTL4J::classifiers::AnonymousClass)
+def test_simtl4j_classifiers_anonymousclass_instantiation(instance):
+    assert isinstance(instance, simTL4J_classifiers_AnonymousClass)
 
-@given(instance=simTL4J::classifiers::Classifier_strategy)
+@given(instance=simTL4J_classifiers_Classifier_strategy)
 @settings(max_examples=50)
-def test_simtl4j::classifiers::classifier_instantiation(instance):
-    assert isinstance(instance, simTL4J::classifiers::Classifier)
+def test_simtl4j_classifiers_classifier_instantiation(instance):
+    assert isinstance(instance, simTL4J_classifiers_Classifier)
 
 @given(instance=ArrayInitializer_strategy)
 @settings(max_examples=50)
 def test_arrayinitializer_instantiation(instance):
     assert isinstance(instance, ArrayInitializer)
 
-@given(instance=modifiers::AnnotationInstanceOrModifier_strategy)
+@given(instance=modifiers_AnnotationInstanceOrModifier_strategy)
 @settings(max_examples=50)
-def test_modifiers::annotationinstanceormodifier_instantiation(instance):
-    assert isinstance(instance, modifiers::AnnotationInstanceOrModifier)
+def test_modifiers_annotationinstanceormodifier_instantiation(instance):
+    assert isinstance(instance, modifiers_AnnotationInstanceOrModifier)
 
-@given(instance=references::Reference_strategy)
+@given(instance=references_Reference_strategy)
 @settings(max_examples=50)
-def test_references::reference_instantiation(instance):
-    assert isinstance(instance, references::Reference)
+def test_references_reference_instantiation(instance):
+    assert isinstance(instance, references_Reference)
 
-@given(instance=simTL4J::instantiations::Instantiation_strategy)
+@given(instance=simTL4J_arrays_ArrayInstantiationBySize_strategy)
 @settings(max_examples=50)
-def test_simtl4j::instantiations::instantiation_instantiation(instance):
-    assert isinstance(instance, simTL4J::instantiations::Instantiation)
+def test_simtl4j_arrays_arrayinstantiationbysize_instantiation(instance):
+    assert isinstance(instance, simTL4J_arrays_ArrayInstantiationBySize)
 
-@given(instance=simTL4J::arrays::ArrayInstantiationBySize_strategy)
+@given(instance=simTL4J_instantiations_Instantiation_strategy)
 @settings(max_examples=50)
-def test_simtl4j::arrays::arrayinstantiationbysize_instantiation(instance):
-    assert isinstance(instance, simTL4J::arrays::ArrayInstantiationBySize)
+def test_simtl4j_instantiations_instantiation_instantiation(instance):
+    assert isinstance(instance, simTL4J_instantiations_Instantiation)
 
-@given(instance=simTL4J::arrays::ArrayInstantiationByValues_strategy)
+@given(instance=simTL4J_arrays_ArrayInstantiationByValues_strategy)
 @settings(max_examples=50)
-def test_simtl4j::arrays::arrayinstantiationbyvalues_instantiation(instance):
-    assert isinstance(instance, simTL4J::arrays::ArrayInstantiationByValues)
+def test_simtl4j_arrays_arrayinstantiationbyvalues_instantiation(instance):
+    assert isinstance(instance, simTL4J_arrays_ArrayInstantiationByValues)
 
 @given(instance=AnnotationInstance_strategy)
 @settings(max_examples=50)
@@ -9161,112 +9319,15 @@ def test_annotationinstance_instantiation(instance):
 def test_commentable_instantiation(instance):
     assert isinstance(instance, Commentable)
 
-@given(instance=simTL4J::members::MemberContainer_strategy)
+@given(instance=simTL4J_modifiers_AnnotationInstanceOrModifier_strategy)
 @settings(max_examples=50)
-def test_simtl4j::members::membercontainer_instantiation(instance):
-    assert isinstance(instance, simTL4J::members::MemberContainer)
+def test_simtl4j_modifiers_annotationinstanceormodifier_instantiation(instance):
+    assert isinstance(instance, simTL4J_modifiers_AnnotationInstanceOrModifier)
 
-@given(instance=simTL4J::modifiers::AnnotationInstanceOrModifier_strategy)
+@given(instance=simTL4J_modifiers_AnnotableAndModifiable_strategy)
 @settings(max_examples=50)
-def test_simtl4j::modifiers::annotationinstanceormodifier_instantiation(instance):
-    assert isinstance(instance, simTL4J::modifiers::AnnotationInstanceOrModifier)
-
-@given(instance=simTL4J::references::Argumentable_strategy)
-@settings(max_examples=50)
-def test_simtl4j::references::argumentable_instantiation(instance):
-    assert isinstance(instance, simTL4J::references::Argumentable)
-
-@given(instance=simTL4J::statements::StatementContainer_strategy)
-@settings(max_examples=50)
-def test_simtl4j::statements::statementcontainer_instantiation(instance):
-    assert isinstance(instance, simTL4J::statements::StatementContainer)
-
-@given(instance=simTL4J::arrays::ArrayDimension_strategy)
-@settings(max_examples=50)
-def test_simtl4j::arrays::arraydimension_instantiation(instance):
-    assert isinstance(instance, simTL4J::arrays::ArrayDimension)
-
-@given(instance=simTL4J::instantiations::Initializable_strategy)
-@settings(max_examples=50)
-def test_simtl4j::instantiations::initializable_instantiation(instance):
-    assert isinstance(instance, simTL4J::instantiations::Initializable)
-
-@given(instance=simTL4J::operators::Operator_strategy)
-@settings(max_examples=50)
-def test_simtl4j::operators::operator_instantiation(instance):
-    assert isinstance(instance, simTL4J::operators::Operator)
-
-@given(instance=simTL4J::commons::NamespaceAwareElement_strategy)
-@settings(max_examples=50)
-def test_simtl4j::commons::namespaceawareelement_instantiation(instance):
-    assert isinstance(instance, simTL4J::commons::NamespaceAwareElement)
-
-@given(instance=simTL4J::commons::NamespaceAwareElement_strategy)
-def test_simtl4j::commons::namespaceawareelement_namespaces_type(instance):
-    assert isinstance(instance.namespaces, str)
-
-
-@given(instance=simTL4J::commons::NamespaceAwareElement_strategy)
-def test_simtl4j::commons::namespaceawareelement_namespaces_setter(instance):
-    original = instance.namespaces
-    instance.namespaces = original
-    assert instance.namespaces == original
-
-@given(instance=simTL4J::arrays::ArrayInitializationValue_strategy)
-@settings(max_examples=50)
-def test_simtl4j::arrays::arrayinitializationvalue_instantiation(instance):
-    assert isinstance(instance, simTL4J::arrays::ArrayInitializationValue)
-
-@given(instance=simTL4J::statements::StatementListContainer_strategy)
-@settings(max_examples=50)
-def test_simtl4j::statements::statementlistcontainer_instantiation(instance):
-    assert isinstance(instance, simTL4J::statements::StatementListContainer)
-
-@given(instance=simTL4J::types::TypedElement_strategy)
-@settings(max_examples=50)
-def test_simtl4j::types::typedelement_instantiation(instance):
-    assert isinstance(instance, simTL4J::types::TypedElement)
-
-@given(instance=simTL4J::parameters::Parametrizable_strategy)
-@settings(max_examples=50)
-def test_simtl4j::parameters::parametrizable_instantiation(instance):
-    assert isinstance(instance, simTL4J::parameters::Parametrizable)
-
-@given(instance=simTL4J::commons::NamedElement_strategy)
-@settings(max_examples=50)
-def test_simtl4j::commons::namedelement_instantiation(instance):
-    assert isinstance(instance, simTL4J::commons::NamedElement)
-
-@given(instance=simTL4J::commons::NamedElement_strategy)
-def test_simtl4j::commons::namedelement_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=simTL4J::commons::NamedElement_strategy)
-def test_simtl4j::commons::namedelement_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
-
-@given(instance=simTL4J::classifiers::Implementor_strategy)
-@settings(max_examples=50)
-def test_simtl4j::classifiers::implementor_instantiation(instance):
-    assert isinstance(instance, simTL4J::classifiers::Implementor)
-
-@given(instance=simTL4J::arrays::ArraySelector_strategy)
-@settings(max_examples=50)
-def test_simtl4j::arrays::arrayselector_instantiation(instance):
-    assert isinstance(instance, simTL4J::arrays::ArraySelector)
-
-@given(instance=simTL4J::imports::ImportingElement_strategy)
-@settings(max_examples=50)
-def test_simtl4j::imports::importingelement_instantiation(instance):
-    assert isinstance(instance, simTL4J::imports::ImportingElement)
-
-@given(instance=simTL4J::types::Type_strategy)
-@settings(max_examples=50)
-def test_simtl4j::types::type_instantiation(instance):
-    assert isinstance(instance, simTL4J::types::Type)
+def test_simtl4j_modifiers_annotableandmodifiable_instantiation(instance):
+    assert isinstance(instance, simTL4J_modifiers_AnnotableAndModifiable)
 
 import warnings
 import copy
@@ -9274,32 +9335,30 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=simTL4J::types::Type_strategy)
+@given(instance=simTL4J_modifiers_AnnotableAndModifiable_strategy)
 @settings(max_examples=30)
-def test_simtl4j::types::type_equalstype_changes_state(instance):
+def test_simtl4j_modifiers_annotableandmodifiable_ishidden_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
-        instance.equalsType(
-            "test", 
-            "test", 
+        instance.isHidden(
             "test"
         )
         if instance.__dict__ != before.__dict__:
             return  # test passes
         # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.equalsType).strip()
+        source = inspect.getsource(instance.isHidden).strip()
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'equalsType' in simTL4J::types::Type is empty"
+        assert has_statements, f"Function 'isHidden' in simTL4J_modifiers_AnnotableAndModifiable is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'equalsType' in simTL4J::types::Type did not change state; check implementation")
+            warnings.warn(f"Operation 'isHidden' in simTL4J_modifiers_AnnotableAndModifiable did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'equalsType' in simTL4J::types::Type is not implemented or raised an error")
+        warnings.warn(f"Operation 'isHidden' in simTL4J_modifiers_AnnotableAndModifiable is not implemented or raised an error")
 
 import warnings
 import copy
@@ -9307,9 +9366,184 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=simTL4J::types::Type_strategy)
+@given(instance=simTL4J_modifiers_AnnotableAndModifiable_strategy)
 @settings(max_examples=30)
-def test_simtl4j::types::type_issupertype_changes_state(instance):
+def test_simtl4j_modifiers_annotableandmodifiable_isstatic_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.isStatic()
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.isStatic).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'isStatic' in simTL4J_modifiers_AnnotableAndModifiable is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'isStatic' in simTL4J_modifiers_AnnotableAndModifiable did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'isStatic' in simTL4J_modifiers_AnnotableAndModifiable is not implemented or raised an error")
+
+@given(instance=simTL4J_generics_TypeParametrizable_strategy)
+@settings(max_examples=50)
+def test_simtl4j_generics_typeparametrizable_instantiation(instance):
+    assert isinstance(instance, simTL4J_generics_TypeParametrizable)
+
+@given(instance=simTL4J_instantiations_Initializable_strategy)
+@settings(max_examples=50)
+def test_simtl4j_instantiations_initializable_instantiation(instance):
+    assert isinstance(instance, simTL4J_instantiations_Initializable)
+
+@given(instance=simTL4J_types_TypeReference_strategy)
+@settings(max_examples=50)
+def test_simtl4j_types_typereference_instantiation(instance):
+    assert isinstance(instance, simTL4J_types_TypeReference)
+
+@given(instance=simTL4J_statements_Statement_strategy)
+@settings(max_examples=50)
+def test_simtl4j_statements_statement_instantiation(instance):
+    assert isinstance(instance, simTL4J_statements_Statement)
+
+@given(instance=simTL4J_statements_StatementContainer_strategy)
+@settings(max_examples=50)
+def test_simtl4j_statements_statementcontainer_instantiation(instance):
+    assert isinstance(instance, simTL4J_statements_StatementContainer)
+
+@given(instance=simTL4J_commons_NamespaceAwareElement_strategy)
+@settings(max_examples=50)
+def test_simtl4j_commons_namespaceawareelement_instantiation(instance):
+    assert isinstance(instance, simTL4J_commons_NamespaceAwareElement)
+
+
+
+@given(instance=simTL4J_commons_NamespaceAwareElement_strategy)
+def test_simtl4j_commons_namespaceawareelement_namespaces_setter(instance):
+    original = instance.namespaces
+    instance.namespaces = original
+    assert instance.namespaces == original
+
+@given(instance=simTL4J_types_TypedElement_strategy)
+@settings(max_examples=50)
+def test_simtl4j_types_typedelement_instantiation(instance):
+    assert isinstance(instance, simTL4J_types_TypedElement)
+
+@given(instance=simTL4J_imports_ImportingElement_strategy)
+@settings(max_examples=50)
+def test_simtl4j_imports_importingelement_instantiation(instance):
+    assert isinstance(instance, simTL4J_imports_ImportingElement)
+
+@given(instance=simTL4J_arrays_ArraySelector_strategy)
+@settings(max_examples=50)
+def test_simtl4j_arrays_arrayselector_instantiation(instance):
+    assert isinstance(instance, simTL4J_arrays_ArraySelector)
+
+@given(instance=simTL4J_commons_NamedElement_strategy)
+@settings(max_examples=50)
+def test_simtl4j_commons_namedelement_instantiation(instance):
+    assert isinstance(instance, simTL4J_commons_NamedElement)
+
+
+
+@given(instance=simTL4J_commons_NamedElement_strategy)
+def test_simtl4j_commons_namedelement_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+@given(instance=simTL4J_classifiers_Implementor_strategy)
+@settings(max_examples=50)
+def test_simtl4j_classifiers_implementor_instantiation(instance):
+    assert isinstance(instance, simTL4J_classifiers_Implementor)
+
+@given(instance=simTL4J_generics_TypeArgumentable_strategy)
+@settings(max_examples=50)
+def test_simtl4j_generics_typeargumentable_instantiation(instance):
+    assert isinstance(instance, simTL4J_generics_TypeArgumentable)
+
+@given(instance=simTL4J_generics_CallTypeArgumentable_strategy)
+@settings(max_examples=50)
+def test_simtl4j_generics_calltypeargumentable_instantiation(instance):
+    assert isinstance(instance, simTL4J_generics_CallTypeArgumentable)
+
+@given(instance=simTL4J_statements_ForLoopInitializer_strategy)
+@settings(max_examples=50)
+def test_simtl4j_statements_forloopinitializer_instantiation(instance):
+    assert isinstance(instance, simTL4J_statements_ForLoopInitializer)
+
+@given(instance=simTL4J_statements_StatementListContainer_strategy)
+@settings(max_examples=50)
+def test_simtl4j_statements_statementlistcontainer_instantiation(instance):
+    assert isinstance(instance, simTL4J_statements_StatementListContainer)
+
+@given(instance=simTL4J_references_Argumentable_strategy)
+@settings(max_examples=50)
+def test_simtl4j_references_argumentable_instantiation(instance):
+    assert isinstance(instance, simTL4J_references_Argumentable)
+
+@given(instance=simTL4J_members_ExceptionThrower_strategy)
+@settings(max_examples=50)
+def test_simtl4j_members_exceptionthrower_instantiation(instance):
+    assert isinstance(instance, simTL4J_members_ExceptionThrower)
+
+@given(instance=simTL4J_modifiers_Modifiable_strategy)
+@settings(max_examples=50)
+def test_simtl4j_modifiers_modifiable_instantiation(instance):
+    assert isinstance(instance, simTL4J_modifiers_Modifiable)
+
+@given(instance=simTL4J_arrays_ArrayDimension_strategy)
+@settings(max_examples=50)
+def test_simtl4j_arrays_arraydimension_instantiation(instance):
+    assert isinstance(instance, simTL4J_arrays_ArrayDimension)
+
+@given(instance=simTL4J_members_MemberContainer_strategy)
+@settings(max_examples=50)
+def test_simtl4j_members_membercontainer_instantiation(instance):
+    assert isinstance(instance, simTL4J_members_MemberContainer)
+
+@given(instance=simTL4J_literals_Self_strategy)
+@settings(max_examples=50)
+def test_simtl4j_literals_self_instantiation(instance):
+    assert isinstance(instance, simTL4J_literals_Self)
+
+@given(instance=simTL4J_operators_Operator_strategy)
+@settings(max_examples=50)
+def test_simtl4j_operators_operator_instantiation(instance):
+    assert isinstance(instance, simTL4J_operators_Operator)
+
+@given(instance=simTL4J_parameters_Parametrizable_strategy)
+@settings(max_examples=50)
+def test_simtl4j_parameters_parametrizable_instantiation(instance):
+    assert isinstance(instance, simTL4J_parameters_Parametrizable)
+
+@given(instance=simTL4J_statements_Conditional_strategy)
+@settings(max_examples=50)
+def test_simtl4j_statements_conditional_instantiation(instance):
+    assert isinstance(instance, simTL4J_statements_Conditional)
+
+@given(instance=simTL4J_arrays_ArrayInitializationValue_strategy)
+@settings(max_examples=50)
+def test_simtl4j_arrays_arrayinitializationvalue_instantiation(instance):
+    assert isinstance(instance, simTL4J_arrays_ArrayInitializationValue)
+
+@given(instance=simTL4J_types_Type_strategy)
+@settings(max_examples=50)
+def test_simtl4j_types_type_instantiation(instance):
+    assert isinstance(instance, simTL4J_types_Type)
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=simTL4J_types_Type_strategy)
+@settings(max_examples=30)
+def test_simtl4j_types_type_issupertype_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -9325,24 +9559,14 @@ def test_simtl4j::types::type_issupertype_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'isSuperType' in simTL4J::types::Type is empty"
+        assert has_statements, f"Function 'isSuperType' in simTL4J_types_Type is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'isSuperType' in simTL4J::types::Type did not change state; check implementation")
+            warnings.warn(f"Operation 'isSuperType' in simTL4J_types_Type did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'isSuperType' in simTL4J::types::Type is not implemented or raised an error")
-
-@given(instance=simTL4J::generics::TypeParametrizable_strategy)
-@settings(max_examples=50)
-def test_simtl4j::generics::typeparametrizable_instantiation(instance):
-    assert isinstance(instance, simTL4J::generics::TypeParametrizable)
-
-@given(instance=simTL4J::modifiers::AnnotableAndModifiable_strategy)
-@settings(max_examples=50)
-def test_simtl4j::modifiers::annotableandmodifiable_instantiation(instance):
-    assert isinstance(instance, simTL4J::modifiers::AnnotableAndModifiable)
+        warnings.warn(f"Operation 'isSuperType' in simTL4J_types_Type is not implemented or raised an error")
 
 import warnings
 import copy
@@ -9350,144 +9574,82 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=simTL4J::modifiers::AnnotableAndModifiable_strategy)
+@given(instance=simTL4J_types_Type_strategy)
 @settings(max_examples=30)
-def test_simtl4j::modifiers::annotableandmodifiable_ishidden_changes_state(instance):
+def test_simtl4j_types_type_equalstype_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
-        instance.isHidden(
+        instance.equalsType(
+            "test", 
+            "test", 
             "test"
         )
         if instance.__dict__ != before.__dict__:
             return  # test passes
         # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.isHidden).strip()
+        source = inspect.getsource(instance.equalsType).strip()
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'isHidden' in simTL4J::modifiers::AnnotableAndModifiable is empty"
+        assert has_statements, f"Function 'equalsType' in simTL4J_types_Type is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'isHidden' in simTL4J::modifiers::AnnotableAndModifiable did not change state; check implementation")
+            warnings.warn(f"Operation 'equalsType' in simTL4J_types_Type did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'isHidden' in simTL4J::modifiers::AnnotableAndModifiable is not implemented or raised an error")
+        warnings.warn(f"Operation 'equalsType' in simTL4J_types_Type is not implemented or raised an error")
 
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=simTL4J::modifiers::AnnotableAndModifiable_strategy)
-@settings(max_examples=30)
-def test_simtl4j::modifiers::annotableandmodifiable_isstatic_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.isStatic()
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.isStatic).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'isStatic' in simTL4J::modifiers::AnnotableAndModifiable is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'isStatic' in simTL4J::modifiers::AnnotableAndModifiable did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'isStatic' in simTL4J::modifiers::AnnotableAndModifiable is not implemented or raised an error")
-
-@given(instance=simTL4J::literals::Self_strategy)
+@given(instance=simTL4J_annotations_Annotable_strategy)
 @settings(max_examples=50)
-def test_simtl4j::literals::self_instantiation(instance):
-    assert isinstance(instance, simTL4J::literals::Self)
-
-@given(instance=simTL4J::members::ExceptionThrower_strategy)
-@settings(max_examples=50)
-def test_simtl4j::members::exceptionthrower_instantiation(instance):
-    assert isinstance(instance, simTL4J::members::ExceptionThrower)
-
-@given(instance=simTL4J::statements::Statement_strategy)
-@settings(max_examples=50)
-def test_simtl4j::statements::statement_instantiation(instance):
-    assert isinstance(instance, simTL4J::statements::Statement)
-
-@given(instance=simTL4J::statements::Conditional_strategy)
-@settings(max_examples=50)
-def test_simtl4j::statements::conditional_instantiation(instance):
-    assert isinstance(instance, simTL4J::statements::Conditional)
-
-@given(instance=simTL4J::types::TypeReference_strategy)
-@settings(max_examples=50)
-def test_simtl4j::types::typereference_instantiation(instance):
-    assert isinstance(instance, simTL4J::types::TypeReference)
-
-@given(instance=simTL4J::statements::ForLoopInitializer_strategy)
-@settings(max_examples=50)
-def test_simtl4j::statements::forloopinitializer_instantiation(instance):
-    assert isinstance(instance, simTL4J::statements::ForLoopInitializer)
-
-@given(instance=simTL4J::modifiers::Modifiable_strategy)
-@settings(max_examples=50)
-def test_simtl4j::modifiers::modifiable_instantiation(instance):
-    assert isinstance(instance, simTL4J::modifiers::Modifiable)
-
-@given(instance=simTL4J::annotations::Annotable_strategy)
-@settings(max_examples=50)
-def test_simtl4j::annotations::annotable_instantiation(instance):
-    assert isinstance(instance, simTL4J::annotations::Annotable)
+def test_simtl4j_annotations_annotable_instantiation(instance):
+    assert isinstance(instance, simTL4J_annotations_Annotable)
 
 @given(instance=ArrayDimension_strategy)
 @settings(max_examples=50)
 def test_arraydimension_instantiation(instance):
     assert isinstance(instance, ArrayDimension)
 
-@given(instance=simTL4J::arrays::ArrayTypeable_strategy)
+@given(instance=simTL4J_arrays_ArrayTypeable_strategy)
 @settings(max_examples=50)
-def test_simtl4j::arrays::arraytypeable_instantiation(instance):
-    assert isinstance(instance, simTL4J::arrays::ArrayTypeable)
+def test_simtl4j_arrays_arraytypeable_instantiation(instance):
+    assert isinstance(instance, simTL4J_arrays_ArrayTypeable)
 
 @given(instance=Expression_strategy)
 @settings(max_examples=50)
 def test_expression_instantiation(instance):
     assert isinstance(instance, Expression)
 
-@given(instance=simTL4J::expressions::AssignmentExpressionChild_strategy)
+@given(instance=simTL4J_expressions_AssignmentExpressionChild_strategy)
 @settings(max_examples=50)
-def test_simtl4j::expressions::assignmentexpressionchild_instantiation(instance):
-    assert isinstance(instance, simTL4J::expressions::AssignmentExpressionChild)
+def test_simtl4j_expressions_assignmentexpressionchild_instantiation(instance):
+    assert isinstance(instance, simTL4J_expressions_AssignmentExpressionChild)
 
-@given(instance=simTL4J::expressions::AssignmentExpression_strategy)
+@given(instance=simTL4J_expressions_AssignmentExpression_strategy)
 @settings(max_examples=50)
-def test_simtl4j::expressions::assignmentexpression_instantiation(instance):
-    assert isinstance(instance, simTL4J::expressions::AssignmentExpression)
+def test_simtl4j_expressions_assignmentexpression_instantiation(instance):
+    assert isinstance(instance, simTL4J_expressions_AssignmentExpression)
 
-@given(instance=simTL4J::annotations::AnnotationValue_strategy)
+@given(instance=simTL4J_annotations_AnnotationValue_strategy)
 @settings(max_examples=50)
-def test_simtl4j::annotations::annotationvalue_instantiation(instance):
-    assert isinstance(instance, simTL4J::annotations::AnnotationValue)
+def test_simtl4j_annotations_annotationvalue_instantiation(instance):
+    assert isinstance(instance, simTL4J_annotations_AnnotationValue)
 
 @given(instance=InterfaceMethod_strategy)
 @settings(max_examples=50)
 def test_interfacemethod_instantiation(instance):
     assert isinstance(instance, InterfaceMethod)
 
-@given(instance=simTL4J::annotations::AnnotationAttribute_strategy)
+@given(instance=simTL4J_annotations_AnnotationAttribute_strategy)
 @settings(max_examples=50)
-def test_simtl4j::annotations::annotationattribute_instantiation(instance):
-    assert isinstance(instance, simTL4J::annotations::AnnotationAttribute)
+def test_simtl4j_annotations_annotationattribute_instantiation(instance):
+    assert isinstance(instance, simTL4J_annotations_AnnotationAttribute)
 
-@given(instance=simTL4J::annotations::AnnotationAttributeSetting_strategy)
+@given(instance=simTL4J_annotations_AnnotationAttributeSetting_strategy)
 @settings(max_examples=50)
-def test_simtl4j::annotations::annotationattributesetting_instantiation(instance):
-    assert isinstance(instance, simTL4J::annotations::AnnotationAttributeSetting)
+def test_simtl4j_annotations_annotationattributesetting_instantiation(instance):
+    assert isinstance(instance, simTL4J_annotations_AnnotationAttributeSetting)
 
 @given(instance=AnnotationAttributeSetting_strategy)
 @settings(max_examples=50)
@@ -9499,283 +9661,52 @@ def test_annotationattributesetting_instantiation(instance):
 def test_annotationvalue_instantiation(instance):
     assert isinstance(instance, AnnotationValue)
 
-@given(instance=simTL4J::annotations::AnnotationParameter_strategy)
+@given(instance=simTL4J_annotations_AnnotationParameter_strategy)
 @settings(max_examples=50)
-def test_simtl4j::annotations::annotationparameter_instantiation(instance):
-    assert isinstance(instance, simTL4J::annotations::AnnotationParameter)
+def test_simtl4j_annotations_annotationparameter_instantiation(instance):
+    assert isinstance(instance, simTL4J_annotations_AnnotationParameter)
 
 @given(instance=AnnotationParameter_strategy)
 @settings(max_examples=50)
 def test_annotationparameter_instantiation(instance):
     assert isinstance(instance, AnnotationParameter)
 
-@given(instance=simTL4J::annotations::AnnotationParameterList_strategy)
+@given(instance=simTL4J_annotations_SingleAnnotationParameter_strategy)
 @settings(max_examples=50)
-def test_simtl4j::annotations::annotationparameterlist_instantiation(instance):
-    assert isinstance(instance, simTL4J::annotations::AnnotationParameterList)
+def test_simtl4j_annotations_singleannotationparameter_instantiation(instance):
+    assert isinstance(instance, simTL4J_annotations_SingleAnnotationParameter)
 
-@given(instance=simTL4J::annotations::SingleAnnotationParameter_strategy)
+@given(instance=simTL4J_annotations_AnnotationParameterList_strategy)
 @settings(max_examples=50)
-def test_simtl4j::annotations::singleannotationparameter_instantiation(instance):
-    assert isinstance(instance, simTL4J::annotations::SingleAnnotationParameter)
+def test_simtl4j_annotations_annotationparameterlist_instantiation(instance):
+    assert isinstance(instance, simTL4J_annotations_AnnotationParameterList)
 
 @given(instance=Classifier_strategy)
 @settings(max_examples=50)
 def test_classifier_instantiation(instance):
     assert isinstance(instance, Classifier)
 
-@given(instance=simTL4J::generics::TypeParameter_strategy)
+@given(instance=simTL4J_generics_TypeParameter_strategy)
 @settings(max_examples=50)
-def test_simtl4j::generics::typeparameter_instantiation(instance):
-    assert isinstance(instance, simTL4J::generics::TypeParameter)
+def test_simtl4j_generics_typeparameter_instantiation(instance):
+    assert isinstance(instance, simTL4J_generics_TypeParameter)
 
-@given(instance=commons::NamespaceAwareElement_strategy)
+@given(instance=commons_NamespaceAwareElement_strategy)
 @settings(max_examples=50)
-def test_commons::namespaceawareelement_instantiation(instance):
-    assert isinstance(instance, commons::NamespaceAwareElement)
+def test_commons_namespaceawareelement_instantiation(instance):
+    assert isinstance(instance, commons_NamespaceAwareElement)
 
-@given(instance=simTL4J::annotations::AnnotationInstance_strategy)
+@given(instance=simTL4J_containers_JavaRoot_strategy)
 @settings(max_examples=50)
-def test_simtl4j::annotations::annotationinstance_instantiation(instance):
-    assert isinstance(instance, simTL4J::annotations::AnnotationInstance)
+def test_simtl4j_containers_javaroot_instantiation(instance):
+    assert isinstance(instance, simTL4J_containers_JavaRoot)
 
-@given(instance=simTL4J::types::NamespaceClassifierReference_strategy)
+@given(instance=simTL4J_annotations_AnnotationInstance_strategy)
 @settings(max_examples=50)
-def test_simtl4j::types::namespaceclassifierreference_instantiation(instance):
-    assert isinstance(instance, simTL4J::types::NamespaceClassifierReference)
+def test_simtl4j_annotations_annotationinstance_instantiation(instance):
+    assert isinstance(instance, simTL4J_annotations_AnnotationInstance)
 
-@given(instance=simTL4J::containers::JavaRoot_strategy)
+@given(instance=simTL4J_types_NamespaceClassifierReference_strategy)
 @settings(max_examples=50)
-def test_simtl4j::containers::javaroot_instantiation(instance):
-    assert isinstance(instance, simTL4J::containers::JavaRoot)
-
-@given(instance=UnaryModificationExpression_strategy)
-@settings(max_examples=50)
-def test_unarymodificationexpression_instantiation(instance):
-    assert isinstance(instance, UnaryModificationExpression)
-
-@given(instance=simTL4J::expressions::SuffixUnaryModificationExpression_strategy)
-@settings(max_examples=50)
-def test_simtl4j::expressions::suffixunarymodificationexpression_instantiation(instance):
-    assert isinstance(instance, simTL4J::expressions::SuffixUnaryModificationExpression)
-
-@given(instance=simTL4J::expressions::PrefixUnaryModificationExpression_strategy)
-@settings(max_examples=50)
-def test_simtl4j::expressions::prefixunarymodificationexpression_instantiation(instance):
-    assert isinstance(instance, simTL4J::expressions::PrefixUnaryModificationExpression)
-
-@given(instance=simTL4J::generics::CallTypeArgumentable_strategy)
-@settings(max_examples=50)
-def test_simtl4j::generics::calltypeargumentable_instantiation(instance):
-    assert isinstance(instance, simTL4J::generics::CallTypeArgumentable)
-
-@given(instance=TypeArgument_strategy)
-@settings(max_examples=50)
-def test_typeargument_instantiation(instance):
-    assert isinstance(instance, TypeArgument)
-
-@given(instance=simTL4J::generics::ExtendsTypeArgument_strategy)
-@settings(max_examples=50)
-def test_simtl4j::generics::extendstypeargument_instantiation(instance):
-    assert isinstance(instance, simTL4J::generics::ExtendsTypeArgument)
-
-@given(instance=simTL4J::generics::SuperTypeArgument_strategy)
-@settings(max_examples=50)
-def test_simtl4j::generics::supertypeargument_instantiation(instance):
-    assert isinstance(instance, simTL4J::generics::SuperTypeArgument)
-
-@given(instance=simTL4J::generics::UnknownTypeArgument_strategy)
-@settings(max_examples=50)
-def test_simtl4j::generics::unknowntypeargument_instantiation(instance):
-    assert isinstance(instance, simTL4J::generics::UnknownTypeArgument)
-
-@given(instance=simTL4J::generics::TypeArgumentable_strategy)
-@settings(max_examples=50)
-def test_simtl4j::generics::typeargumentable_instantiation(instance):
-    assert isinstance(instance, simTL4J::generics::TypeArgumentable)
-
-@given(instance=ArrayTypeable_strategy)
-@settings(max_examples=50)
-def test_arraytypeable_instantiation(instance):
-    assert isinstance(instance, ArrayTypeable)
-
-@given(instance=simTL4J::generics::TypeArgument_strategy)
-@settings(max_examples=50)
-def test_simtl4j::generics::typeargument_instantiation(instance):
-    assert isinstance(instance, simTL4J::generics::TypeArgument)
-
-@given(instance=Reference_strategy)
-@settings(max_examples=50)
-def test_reference_instantiation(instance):
-    assert isinstance(instance, Reference)
-
-@given(instance=simTL4J::references::SelfReference_strategy)
-@settings(max_examples=50)
-def test_simtl4j::references::selfreference_instantiation(instance):
-    assert isinstance(instance, simTL4J::references::SelfReference)
-
-@given(instance=simTL4J::references::ReflectiveClassReference_strategy)
-@settings(max_examples=50)
-def test_simtl4j::references::reflectiveclassreference_instantiation(instance):
-    assert isinstance(instance, simTL4J::references::ReflectiveClassReference)
-
-@given(instance=simTL4J::references::ElementReference_strategy)
-@settings(max_examples=50)
-def test_simtl4j::references::elementreference_instantiation(instance):
-    assert isinstance(instance, simTL4J::references::ElementReference)
-
-@given(instance=simTL4J::references::StringReference_strategy)
-@settings(max_examples=50)
-def test_simtl4j::references::stringreference_instantiation(instance):
-    assert isinstance(instance, simTL4J::references::StringReference)
-
-@given(instance=simTL4J::references::StringReference_strategy)
-def test_simtl4j::references::stringreference_value_type(instance):
-    assert isinstance(instance.value, str)
-
-
-@given(instance=simTL4J::references::StringReference_strategy)
-def test_simtl4j::references::stringreference_value_setter(instance):
-    original = instance.value
-    instance.value = original
-    assert instance.value == original
-
-@given(instance=simTL4J::references::PrimitiveTypeReference_strategy)
-@settings(max_examples=50)
-def test_simtl4j::references::primitivetypereference_instantiation(instance):
-    assert isinstance(instance, simTL4J::references::PrimitiveTypeReference)
-
-@given(instance=simTL4J::expressions::NestedExpression_strategy)
-@settings(max_examples=50)
-def test_simtl4j::expressions::nestedexpression_instantiation(instance):
-    assert isinstance(instance, simTL4J::expressions::NestedExpression)
-
-@given(instance=ShiftOperator_strategy)
-@settings(max_examples=50)
-def test_shiftoperator_instantiation(instance):
-    assert isinstance(instance, ShiftOperator)
-
-@given(instance=simTL4J::operators::RightShift_strategy)
-@settings(max_examples=50)
-def test_simtl4j::operators::rightshift_instantiation(instance):
-    assert isinstance(instance, simTL4J::operators::RightShift)
-
-@given(instance=simTL4J::operators::LeftShift_strategy)
-@settings(max_examples=50)
-def test_simtl4j::operators::leftshift_instantiation(instance):
-    assert isinstance(instance, simTL4J::operators::LeftShift)
-
-@given(instance=simTL4J::operators::UnsignedRightShift_strategy)
-@settings(max_examples=50)
-def test_simtl4j::operators::unsignedrightshift_instantiation(instance):
-    assert isinstance(instance, simTL4J::operators::UnsignedRightShift)
-
-@given(instance=ShiftExpressionChild_strategy)
-@settings(max_examples=50)
-def test_shiftexpressionchild_instantiation(instance):
-    assert isinstance(instance, ShiftExpressionChild)
-
-@given(instance=simTL4J::expressions::AdditiveExpressionChild_strategy)
-@settings(max_examples=50)
-def test_simtl4j::expressions::additiveexpressionchild_instantiation(instance):
-    assert isinstance(instance, simTL4J::expressions::AdditiveExpressionChild)
-
-@given(instance=simTL4J::expressions::AdditiveExpression_strategy)
-@settings(max_examples=50)
-def test_simtl4j::expressions::additiveexpression_instantiation(instance):
-    assert isinstance(instance, simTL4J::expressions::AdditiveExpression)
-
-@given(instance=simTL4J::expressions::ShiftExpression_strategy)
-@settings(max_examples=50)
-def test_simtl4j::expressions::shiftexpression_instantiation(instance):
-    assert isinstance(instance, simTL4J::expressions::ShiftExpression)
-
-@given(instance=simTL4J::expressions::RelationExpressionChild_strategy)
-@settings(max_examples=50)
-def test_simtl4j::expressions::relationexpressionchild_instantiation(instance):
-    assert isinstance(instance, simTL4J::expressions::RelationExpressionChild)
-
-@given(instance=RelationOperator_strategy)
-@settings(max_examples=50)
-def test_relationoperator_instantiation(instance):
-    assert isinstance(instance, RelationOperator)
-
-@given(instance=simTL4J::operators::LessThanOrEqual_strategy)
-@settings(max_examples=50)
-def test_simtl4j::operators::lessthanorequal_instantiation(instance):
-    assert isinstance(instance, simTL4J::operators::LessThanOrEqual)
-
-@given(instance=simTL4J::operators::GreaterThan_strategy)
-@settings(max_examples=50)
-def test_simtl4j::operators::greaterthan_instantiation(instance):
-    assert isinstance(instance, simTL4J::operators::GreaterThan)
-
-@given(instance=simTL4J::operators::GreaterThanOrEqual_strategy)
-@settings(max_examples=50)
-def test_simtl4j::operators::greaterthanorequal_instantiation(instance):
-    assert isinstance(instance, simTL4J::operators::GreaterThanOrEqual)
-
-@given(instance=simTL4J::operators::LessThan_strategy)
-@settings(max_examples=50)
-def test_simtl4j::operators::lessthan_instantiation(instance):
-    assert isinstance(instance, simTL4J::operators::LessThan)
-
-@given(instance=UnaryModificationOperator_strategy)
-@settings(max_examples=50)
-def test_unarymodificationoperator_instantiation(instance):
-    assert isinstance(instance, UnaryModificationOperator)
-
-@given(instance=simTL4J::operators::PlusPlus_strategy)
-@settings(max_examples=50)
-def test_simtl4j::operators::plusplus_instantiation(instance):
-    assert isinstance(instance, simTL4J::operators::PlusPlus)
-
-@given(instance=simTL4J::operators::MinusMinus_strategy)
-@settings(max_examples=50)
-def test_simtl4j::operators::minusminus_instantiation(instance):
-    assert isinstance(instance, simTL4J::operators::MinusMinus)
-
-@given(instance=UnaryModificationExpressionChild_strategy)
-@settings(max_examples=50)
-def test_unarymodificationexpressionchild_instantiation(instance):
-    assert isinstance(instance, UnaryModificationExpressionChild)
-
-@given(instance=simTL4J::expressions::PrimaryExpression_strategy)
-@settings(max_examples=50)
-def test_simtl4j::expressions::primaryexpression_instantiation(instance):
-    assert isinstance(instance, simTL4J::expressions::PrimaryExpression)
-
-@given(instance=simTL4J::expressions::UnaryExpressionChild_strategy)
-@settings(max_examples=50)
-def test_simtl4j::expressions::unaryexpressionchild_instantiation(instance):
-    assert isinstance(instance, simTL4J::expressions::UnaryExpressionChild)
-
-@given(instance=UnaryExpressionChild_strategy)
-@settings(max_examples=50)
-def test_unaryexpressionchild_instantiation(instance):
-    assert isinstance(instance, UnaryExpressionChild)
-
-@given(instance=simTL4J::expressions::UnaryModificationExpressionChild_strategy)
-@settings(max_examples=50)
-def test_simtl4j::expressions::unarymodificationexpressionchild_instantiation(instance):
-    assert isinstance(instance, simTL4J::expressions::UnaryModificationExpressionChild)
-
-@given(instance=simTL4J::expressions::UnaryModificationExpression_strategy)
-@settings(max_examples=50)
-def test_simtl4j::expressions::unarymodificationexpression_instantiation(instance):
-    assert isinstance(instance, simTL4J::expressions::UnaryModificationExpression)
-
-@given(instance=UnaryOperator_strategy)
-@settings(max_examples=50)
-def test_unaryoperator_instantiation(instance):
-    assert isinstance(instance, UnaryOperator)
-
-@given(instance=simTL4J::operators::Complement_strategy)
-@settings(max_examples=50)
-def test_simtl4j::operators::complement_instantiation(instance):
-    assert isinstance(instance, simTL4J::operators::Complement)
-
-@given(instance=simTL4J::operators::Negate_strategy)
-@settings(max_examples=50)
-def test_simtl4j::operators::negate_instantiation(instance):
-    assert isinstance(instance, simTL4J::operators::Negate)
+def test_simtl4j_types_namespaceclassifierreference_instantiation(instance):
+    assert isinstance(instance, simTL4J_types_NamespaceClassifierReference)

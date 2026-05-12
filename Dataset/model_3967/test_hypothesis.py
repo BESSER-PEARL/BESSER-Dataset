@@ -3,52 +3,52 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    StandardProfile::SystemModel,
-    StandardProfile::Model,
-    StandardProfile::Metamodel,
-    StandardProfile::BuildComponent,
-    StandardProfile::Utility,
-    StandardProfile::Service,
-    StandardProfile::Send,
-    StandardProfile::Responsibility,
-    StandardProfile::Refine,
-    StandardProfile::Classifier,
-    StandardProfile::Realization,
-    StandardProfile::Process,
-    StandardProfile::ModelLibrary,
-    StandardProfile::Type,
-    StandardProfile::Trace,
-    StandardProfile::Subsystem,
-    StandardProfile::Artifact,
-    StandardProfile::Specification,
-    StandardProfile::File,
+from python_code import (
+    StandardProfile_SystemModel,
+    StandardProfile_Model,
+    StandardProfile_Metamodel,
+    StandardProfile_BuildComponent,
+    StandardProfile_Utility,
+    StandardProfile_Service,
+    StandardProfile_Send,
+    StandardProfile_Responsibility,
+    StandardProfile_Refine,
+    StandardProfile_Classifier,
+    StandardProfile_Realization,
+    StandardProfile_Process,
+    StandardProfile_ModelLibrary,
+    StandardProfile_Type,
+    StandardProfile_Trace,
+    StandardProfile_Subsystem,
+    StandardProfile_Artifact,
+    StandardProfile_Specification,
+    StandardProfile_File,
     File,
-    StandardProfile::Script,
-    StandardProfile::Source,
-    StandardProfile::Document,
-    StandardProfile::Destroy,
-    StandardProfile::Abstraction,
-    StandardProfile::Derive,
-    StandardProfile::BehavioralFeature,
-    StandardProfile::Create,
-    StandardProfile::Usage,
-    StandardProfile::Call,
-    StandardProfile::Metaclass,
-    StandardProfile::Library,
-    StandardProfile::Instantiate,
-    StandardProfile::ImplementationClass,
-    StandardProfile::Implement,
-    StandardProfile::Package,
-    StandardProfile::Framework,
-    StandardProfile::Focus,
-    StandardProfile::Executable,
-    StandardProfile::Component,
-    StandardProfile::Entity,
-    StandardProfile::Class,
-    StandardProfile::Auxiliary,
+    StandardProfile_Source,
+    StandardProfile_Script,
+    StandardProfile_Document,
+    StandardProfile_Destroy,
+    StandardProfile_Abstraction,
+    StandardProfile_Derive,
+    StandardProfile_BehavioralFeature,
+    StandardProfile_Create,
+    StandardProfile_Usage,
+    StandardProfile_Call,
+    StandardProfile_Metaclass,
+    StandardProfile_Library,
+    StandardProfile_Instantiate,
+    StandardProfile_ImplementationClass,
+    StandardProfile_Implement,
+    StandardProfile_Package,
+    StandardProfile_Framework,
+    StandardProfile_Focus,
+    StandardProfile_Executable,
+    StandardProfile_Component,
+    StandardProfile_Entity,
+    StandardProfile_Class,
+    StandardProfile_Auxiliary,
 )
 
 # =============================================================================
@@ -57,268 +57,268 @@ from classes import (
 
 
 
-def test_standardprofile::systemmodel_is_not_abstract():
-    assert not inspect.isabstract(StandardProfile::SystemModel)
+def test_standardprofile_systemmodel_is_not_abstract():
+    assert not inspect.isabstract(StandardProfile_SystemModel)
 
 
-def test_standardprofile::systemmodel_constructor_exists():
-    assert callable(StandardProfile::SystemModel.__init__)
+def test_standardprofile_systemmodel_constructor_exists():
+    assert callable(StandardProfile_SystemModel.__init__)
 
 
-def test_standardprofile::systemmodel_constructor_args():
-    sig = inspect.signature(StandardProfile::SystemModel.__init__)
+def test_standardprofile_systemmodel_constructor_args():
+    sig = inspect.signature(StandardProfile_SystemModel.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_standardprofile::model_is_not_abstract():
-    assert not inspect.isabstract(StandardProfile::Model)
+def test_standardprofile_model_is_not_abstract():
+    assert not inspect.isabstract(StandardProfile_Model)
 
 
-def test_standardprofile::model_constructor_exists():
-    assert callable(StandardProfile::Model.__init__)
+def test_standardprofile_model_constructor_exists():
+    assert callable(StandardProfile_Model.__init__)
 
 
-def test_standardprofile::model_constructor_args():
-    sig = inspect.signature(StandardProfile::Model.__init__)
+def test_standardprofile_model_constructor_args():
+    sig = inspect.signature(StandardProfile_Model.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_standardprofile::metamodel_is_not_abstract():
-    assert not inspect.isabstract(StandardProfile::Metamodel)
+def test_standardprofile_metamodel_is_not_abstract():
+    assert not inspect.isabstract(StandardProfile_Metamodel)
 
 
-def test_standardprofile::metamodel_constructor_exists():
-    assert callable(StandardProfile::Metamodel.__init__)
+def test_standardprofile_metamodel_constructor_exists():
+    assert callable(StandardProfile_Metamodel.__init__)
 
 
-def test_standardprofile::metamodel_constructor_args():
-    sig = inspect.signature(StandardProfile::Metamodel.__init__)
+def test_standardprofile_metamodel_constructor_args():
+    sig = inspect.signature(StandardProfile_Metamodel.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_standardprofile::buildcomponent_is_not_abstract():
-    assert not inspect.isabstract(StandardProfile::BuildComponent)
+def test_standardprofile_buildcomponent_is_not_abstract():
+    assert not inspect.isabstract(StandardProfile_BuildComponent)
 
 
-def test_standardprofile::buildcomponent_constructor_exists():
-    assert callable(StandardProfile::BuildComponent.__init__)
+def test_standardprofile_buildcomponent_constructor_exists():
+    assert callable(StandardProfile_BuildComponent.__init__)
 
 
-def test_standardprofile::buildcomponent_constructor_args():
-    sig = inspect.signature(StandardProfile::BuildComponent.__init__)
+def test_standardprofile_buildcomponent_constructor_args():
+    sig = inspect.signature(StandardProfile_BuildComponent.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_standardprofile::utility_is_not_abstract():
-    assert not inspect.isabstract(StandardProfile::Utility)
+def test_standardprofile_utility_is_not_abstract():
+    assert not inspect.isabstract(StandardProfile_Utility)
 
 
-def test_standardprofile::utility_constructor_exists():
-    assert callable(StandardProfile::Utility.__init__)
+def test_standardprofile_utility_constructor_exists():
+    assert callable(StandardProfile_Utility.__init__)
 
 
-def test_standardprofile::utility_constructor_args():
-    sig = inspect.signature(StandardProfile::Utility.__init__)
+def test_standardprofile_utility_constructor_args():
+    sig = inspect.signature(StandardProfile_Utility.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_standardprofile::service_is_not_abstract():
-    assert not inspect.isabstract(StandardProfile::Service)
+def test_standardprofile_service_is_not_abstract():
+    assert not inspect.isabstract(StandardProfile_Service)
 
 
-def test_standardprofile::service_constructor_exists():
-    assert callable(StandardProfile::Service.__init__)
+def test_standardprofile_service_constructor_exists():
+    assert callable(StandardProfile_Service.__init__)
 
 
-def test_standardprofile::service_constructor_args():
-    sig = inspect.signature(StandardProfile::Service.__init__)
+def test_standardprofile_service_constructor_args():
+    sig = inspect.signature(StandardProfile_Service.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_standardprofile::send_is_not_abstract():
-    assert not inspect.isabstract(StandardProfile::Send)
+def test_standardprofile_send_is_not_abstract():
+    assert not inspect.isabstract(StandardProfile_Send)
 
 
-def test_standardprofile::send_constructor_exists():
-    assert callable(StandardProfile::Send.__init__)
+def test_standardprofile_send_constructor_exists():
+    assert callable(StandardProfile_Send.__init__)
 
 
-def test_standardprofile::send_constructor_args():
-    sig = inspect.signature(StandardProfile::Send.__init__)
+def test_standardprofile_send_constructor_args():
+    sig = inspect.signature(StandardProfile_Send.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_standardprofile::responsibility_is_not_abstract():
-    assert not inspect.isabstract(StandardProfile::Responsibility)
+def test_standardprofile_responsibility_is_not_abstract():
+    assert not inspect.isabstract(StandardProfile_Responsibility)
 
 
-def test_standardprofile::responsibility_constructor_exists():
-    assert callable(StandardProfile::Responsibility.__init__)
+def test_standardprofile_responsibility_constructor_exists():
+    assert callable(StandardProfile_Responsibility.__init__)
 
 
-def test_standardprofile::responsibility_constructor_args():
-    sig = inspect.signature(StandardProfile::Responsibility.__init__)
+def test_standardprofile_responsibility_constructor_args():
+    sig = inspect.signature(StandardProfile_Responsibility.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_standardprofile::refine_is_not_abstract():
-    assert not inspect.isabstract(StandardProfile::Refine)
+def test_standardprofile_refine_is_not_abstract():
+    assert not inspect.isabstract(StandardProfile_Refine)
 
 
-def test_standardprofile::refine_constructor_exists():
-    assert callable(StandardProfile::Refine.__init__)
+def test_standardprofile_refine_constructor_exists():
+    assert callable(StandardProfile_Refine.__init__)
 
 
-def test_standardprofile::refine_constructor_args():
-    sig = inspect.signature(StandardProfile::Refine.__init__)
+def test_standardprofile_refine_constructor_args():
+    sig = inspect.signature(StandardProfile_Refine.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_standardprofile::classifier_is_not_abstract():
-    assert not inspect.isabstract(StandardProfile::Classifier)
+def test_standardprofile_classifier_is_not_abstract():
+    assert not inspect.isabstract(StandardProfile_Classifier)
 
 
-def test_standardprofile::classifier_constructor_exists():
-    assert callable(StandardProfile::Classifier.__init__)
+def test_standardprofile_classifier_constructor_exists():
+    assert callable(StandardProfile_Classifier.__init__)
 
 
-def test_standardprofile::classifier_constructor_args():
-    sig = inspect.signature(StandardProfile::Classifier.__init__)
+def test_standardprofile_classifier_constructor_args():
+    sig = inspect.signature(StandardProfile_Classifier.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_standardprofile::realization_is_not_abstract():
-    assert not inspect.isabstract(StandardProfile::Realization)
+def test_standardprofile_realization_is_not_abstract():
+    assert not inspect.isabstract(StandardProfile_Realization)
 
 
-def test_standardprofile::realization_constructor_exists():
-    assert callable(StandardProfile::Realization.__init__)
+def test_standardprofile_realization_constructor_exists():
+    assert callable(StandardProfile_Realization.__init__)
 
 
-def test_standardprofile::realization_constructor_args():
-    sig = inspect.signature(StandardProfile::Realization.__init__)
+def test_standardprofile_realization_constructor_args():
+    sig = inspect.signature(StandardProfile_Realization.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_standardprofile::process_is_not_abstract():
-    assert not inspect.isabstract(StandardProfile::Process)
+def test_standardprofile_process_is_not_abstract():
+    assert not inspect.isabstract(StandardProfile_Process)
 
 
-def test_standardprofile::process_constructor_exists():
-    assert callable(StandardProfile::Process.__init__)
+def test_standardprofile_process_constructor_exists():
+    assert callable(StandardProfile_Process.__init__)
 
 
-def test_standardprofile::process_constructor_args():
-    sig = inspect.signature(StandardProfile::Process.__init__)
+def test_standardprofile_process_constructor_args():
+    sig = inspect.signature(StandardProfile_Process.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_standardprofile::modellibrary_is_not_abstract():
-    assert not inspect.isabstract(StandardProfile::ModelLibrary)
+def test_standardprofile_modellibrary_is_not_abstract():
+    assert not inspect.isabstract(StandardProfile_ModelLibrary)
 
 
-def test_standardprofile::modellibrary_constructor_exists():
-    assert callable(StandardProfile::ModelLibrary.__init__)
+def test_standardprofile_modellibrary_constructor_exists():
+    assert callable(StandardProfile_ModelLibrary.__init__)
 
 
-def test_standardprofile::modellibrary_constructor_args():
-    sig = inspect.signature(StandardProfile::ModelLibrary.__init__)
+def test_standardprofile_modellibrary_constructor_args():
+    sig = inspect.signature(StandardProfile_ModelLibrary.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_standardprofile::type_is_not_abstract():
-    assert not inspect.isabstract(StandardProfile::Type)
+def test_standardprofile_type_is_not_abstract():
+    assert not inspect.isabstract(StandardProfile_Type)
 
 
-def test_standardprofile::type_constructor_exists():
-    assert callable(StandardProfile::Type.__init__)
+def test_standardprofile_type_constructor_exists():
+    assert callable(StandardProfile_Type.__init__)
 
 
-def test_standardprofile::type_constructor_args():
-    sig = inspect.signature(StandardProfile::Type.__init__)
+def test_standardprofile_type_constructor_args():
+    sig = inspect.signature(StandardProfile_Type.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_standardprofile::trace_is_not_abstract():
-    assert not inspect.isabstract(StandardProfile::Trace)
+def test_standardprofile_trace_is_not_abstract():
+    assert not inspect.isabstract(StandardProfile_Trace)
 
 
-def test_standardprofile::trace_constructor_exists():
-    assert callable(StandardProfile::Trace.__init__)
+def test_standardprofile_trace_constructor_exists():
+    assert callable(StandardProfile_Trace.__init__)
 
 
-def test_standardprofile::trace_constructor_args():
-    sig = inspect.signature(StandardProfile::Trace.__init__)
+def test_standardprofile_trace_constructor_args():
+    sig = inspect.signature(StandardProfile_Trace.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_standardprofile::subsystem_is_not_abstract():
-    assert not inspect.isabstract(StandardProfile::Subsystem)
+def test_standardprofile_subsystem_is_not_abstract():
+    assert not inspect.isabstract(StandardProfile_Subsystem)
 
 
-def test_standardprofile::subsystem_constructor_exists():
-    assert callable(StandardProfile::Subsystem.__init__)
+def test_standardprofile_subsystem_constructor_exists():
+    assert callable(StandardProfile_Subsystem.__init__)
 
 
-def test_standardprofile::subsystem_constructor_args():
-    sig = inspect.signature(StandardProfile::Subsystem.__init__)
+def test_standardprofile_subsystem_constructor_args():
+    sig = inspect.signature(StandardProfile_Subsystem.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_standardprofile::artifact_is_not_abstract():
-    assert not inspect.isabstract(StandardProfile::Artifact)
+def test_standardprofile_artifact_is_not_abstract():
+    assert not inspect.isabstract(StandardProfile_Artifact)
 
 
-def test_standardprofile::artifact_constructor_exists():
-    assert callable(StandardProfile::Artifact.__init__)
+def test_standardprofile_artifact_constructor_exists():
+    assert callable(StandardProfile_Artifact.__init__)
 
 
-def test_standardprofile::artifact_constructor_args():
-    sig = inspect.signature(StandardProfile::Artifact.__init__)
+def test_standardprofile_artifact_constructor_args():
+    sig = inspect.signature(StandardProfile_Artifact.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_standardprofile::specification_is_not_abstract():
-    assert not inspect.isabstract(StandardProfile::Specification)
+def test_standardprofile_specification_is_not_abstract():
+    assert not inspect.isabstract(StandardProfile_Specification)
 
 
-def test_standardprofile::specification_constructor_exists():
-    assert callable(StandardProfile::Specification.__init__)
+def test_standardprofile_specification_constructor_exists():
+    assert callable(StandardProfile_Specification.__init__)
 
 
-def test_standardprofile::specification_constructor_args():
-    sig = inspect.signature(StandardProfile::Specification.__init__)
+def test_standardprofile_specification_constructor_args():
+    sig = inspect.signature(StandardProfile_Specification.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_standardprofile::file_is_not_abstract():
-    assert not inspect.isabstract(StandardProfile::File)
+def test_standardprofile_file_is_not_abstract():
+    assert not inspect.isabstract(StandardProfile_File)
 
 
-def test_standardprofile::file_constructor_exists():
-    assert callable(StandardProfile::File.__init__)
+def test_standardprofile_file_constructor_exists():
+    assert callable(StandardProfile_File.__init__)
 
 
-def test_standardprofile::file_constructor_args():
-    sig = inspect.signature(StandardProfile::File.__init__)
+def test_standardprofile_file_constructor_args():
+    sig = inspect.signature(StandardProfile_File.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -337,324 +337,324 @@ def test_file_constructor_args():
 
 
 
-def test_standardprofile::script_is_not_abstract():
-    assert not inspect.isabstract(StandardProfile::Script)
+def test_standardprofile_source_is_not_abstract():
+    assert not inspect.isabstract(StandardProfile_Source)
 
 
-def test_standardprofile::script_constructor_exists():
-    assert callable(StandardProfile::Script.__init__)
+def test_standardprofile_source_constructor_exists():
+    assert callable(StandardProfile_Source.__init__)
 
 
-def test_standardprofile::script_constructor_args():
-    sig = inspect.signature(StandardProfile::Script.__init__)
+def test_standardprofile_source_constructor_args():
+    sig = inspect.signature(StandardProfile_Source.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_standardprofile::source_is_not_abstract():
-    assert not inspect.isabstract(StandardProfile::Source)
+def test_standardprofile_script_is_not_abstract():
+    assert not inspect.isabstract(StandardProfile_Script)
 
 
-def test_standardprofile::source_constructor_exists():
-    assert callable(StandardProfile::Source.__init__)
+def test_standardprofile_script_constructor_exists():
+    assert callable(StandardProfile_Script.__init__)
 
 
-def test_standardprofile::source_constructor_args():
-    sig = inspect.signature(StandardProfile::Source.__init__)
+def test_standardprofile_script_constructor_args():
+    sig = inspect.signature(StandardProfile_Script.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_standardprofile::document_is_not_abstract():
-    assert not inspect.isabstract(StandardProfile::Document)
+def test_standardprofile_document_is_not_abstract():
+    assert not inspect.isabstract(StandardProfile_Document)
 
 
-def test_standardprofile::document_constructor_exists():
-    assert callable(StandardProfile::Document.__init__)
+def test_standardprofile_document_constructor_exists():
+    assert callable(StandardProfile_Document.__init__)
 
 
-def test_standardprofile::document_constructor_args():
-    sig = inspect.signature(StandardProfile::Document.__init__)
+def test_standardprofile_document_constructor_args():
+    sig = inspect.signature(StandardProfile_Document.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_standardprofile::destroy_is_not_abstract():
-    assert not inspect.isabstract(StandardProfile::Destroy)
+def test_standardprofile_destroy_is_not_abstract():
+    assert not inspect.isabstract(StandardProfile_Destroy)
 
 
-def test_standardprofile::destroy_constructor_exists():
-    assert callable(StandardProfile::Destroy.__init__)
+def test_standardprofile_destroy_constructor_exists():
+    assert callable(StandardProfile_Destroy.__init__)
 
 
-def test_standardprofile::destroy_constructor_args():
-    sig = inspect.signature(StandardProfile::Destroy.__init__)
+def test_standardprofile_destroy_constructor_args():
+    sig = inspect.signature(StandardProfile_Destroy.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_standardprofile::abstraction_is_not_abstract():
-    assert not inspect.isabstract(StandardProfile::Abstraction)
+def test_standardprofile_abstraction_is_not_abstract():
+    assert not inspect.isabstract(StandardProfile_Abstraction)
 
 
-def test_standardprofile::abstraction_constructor_exists():
-    assert callable(StandardProfile::Abstraction.__init__)
+def test_standardprofile_abstraction_constructor_exists():
+    assert callable(StandardProfile_Abstraction.__init__)
 
 
-def test_standardprofile::abstraction_constructor_args():
-    sig = inspect.signature(StandardProfile::Abstraction.__init__)
+def test_standardprofile_abstraction_constructor_args():
+    sig = inspect.signature(StandardProfile_Abstraction.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_standardprofile::derive_is_not_abstract():
-    assert not inspect.isabstract(StandardProfile::Derive)
+def test_standardprofile_derive_is_not_abstract():
+    assert not inspect.isabstract(StandardProfile_Derive)
 
 
-def test_standardprofile::derive_constructor_exists():
-    assert callable(StandardProfile::Derive.__init__)
+def test_standardprofile_derive_constructor_exists():
+    assert callable(StandardProfile_Derive.__init__)
 
 
-def test_standardprofile::derive_constructor_args():
-    sig = inspect.signature(StandardProfile::Derive.__init__)
+def test_standardprofile_derive_constructor_args():
+    sig = inspect.signature(StandardProfile_Derive.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_standardprofile::behavioralfeature_is_not_abstract():
-    assert not inspect.isabstract(StandardProfile::BehavioralFeature)
+def test_standardprofile_behavioralfeature_is_not_abstract():
+    assert not inspect.isabstract(StandardProfile_BehavioralFeature)
 
 
-def test_standardprofile::behavioralfeature_constructor_exists():
-    assert callable(StandardProfile::BehavioralFeature.__init__)
+def test_standardprofile_behavioralfeature_constructor_exists():
+    assert callable(StandardProfile_BehavioralFeature.__init__)
 
 
-def test_standardprofile::behavioralfeature_constructor_args():
-    sig = inspect.signature(StandardProfile::BehavioralFeature.__init__)
+def test_standardprofile_behavioralfeature_constructor_args():
+    sig = inspect.signature(StandardProfile_BehavioralFeature.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_standardprofile::create_is_not_abstract():
-    assert not inspect.isabstract(StandardProfile::Create)
+def test_standardprofile_create_is_not_abstract():
+    assert not inspect.isabstract(StandardProfile_Create)
 
 
-def test_standardprofile::create_constructor_exists():
-    assert callable(StandardProfile::Create.__init__)
+def test_standardprofile_create_constructor_exists():
+    assert callable(StandardProfile_Create.__init__)
 
 
-def test_standardprofile::create_constructor_args():
-    sig = inspect.signature(StandardProfile::Create.__init__)
+def test_standardprofile_create_constructor_args():
+    sig = inspect.signature(StandardProfile_Create.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_standardprofile::usage_is_not_abstract():
-    assert not inspect.isabstract(StandardProfile::Usage)
+def test_standardprofile_usage_is_not_abstract():
+    assert not inspect.isabstract(StandardProfile_Usage)
 
 
-def test_standardprofile::usage_constructor_exists():
-    assert callable(StandardProfile::Usage.__init__)
+def test_standardprofile_usage_constructor_exists():
+    assert callable(StandardProfile_Usage.__init__)
 
 
-def test_standardprofile::usage_constructor_args():
-    sig = inspect.signature(StandardProfile::Usage.__init__)
+def test_standardprofile_usage_constructor_args():
+    sig = inspect.signature(StandardProfile_Usage.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_standardprofile::call_is_not_abstract():
-    assert not inspect.isabstract(StandardProfile::Call)
+def test_standardprofile_call_is_not_abstract():
+    assert not inspect.isabstract(StandardProfile_Call)
 
 
-def test_standardprofile::call_constructor_exists():
-    assert callable(StandardProfile::Call.__init__)
+def test_standardprofile_call_constructor_exists():
+    assert callable(StandardProfile_Call.__init__)
 
 
-def test_standardprofile::call_constructor_args():
-    sig = inspect.signature(StandardProfile::Call.__init__)
+def test_standardprofile_call_constructor_args():
+    sig = inspect.signature(StandardProfile_Call.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_standardprofile::metaclass_is_not_abstract():
-    assert not inspect.isabstract(StandardProfile::Metaclass)
+def test_standardprofile_metaclass_is_not_abstract():
+    assert not inspect.isabstract(StandardProfile_Metaclass)
 
 
-def test_standardprofile::metaclass_constructor_exists():
-    assert callable(StandardProfile::Metaclass.__init__)
+def test_standardprofile_metaclass_constructor_exists():
+    assert callable(StandardProfile_Metaclass.__init__)
 
 
-def test_standardprofile::metaclass_constructor_args():
-    sig = inspect.signature(StandardProfile::Metaclass.__init__)
+def test_standardprofile_metaclass_constructor_args():
+    sig = inspect.signature(StandardProfile_Metaclass.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_standardprofile::library_is_not_abstract():
-    assert not inspect.isabstract(StandardProfile::Library)
+def test_standardprofile_library_is_not_abstract():
+    assert not inspect.isabstract(StandardProfile_Library)
 
 
-def test_standardprofile::library_constructor_exists():
-    assert callable(StandardProfile::Library.__init__)
+def test_standardprofile_library_constructor_exists():
+    assert callable(StandardProfile_Library.__init__)
 
 
-def test_standardprofile::library_constructor_args():
-    sig = inspect.signature(StandardProfile::Library.__init__)
+def test_standardprofile_library_constructor_args():
+    sig = inspect.signature(StandardProfile_Library.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_standardprofile::instantiate_is_not_abstract():
-    assert not inspect.isabstract(StandardProfile::Instantiate)
+def test_standardprofile_instantiate_is_not_abstract():
+    assert not inspect.isabstract(StandardProfile_Instantiate)
 
 
-def test_standardprofile::instantiate_constructor_exists():
-    assert callable(StandardProfile::Instantiate.__init__)
+def test_standardprofile_instantiate_constructor_exists():
+    assert callable(StandardProfile_Instantiate.__init__)
 
 
-def test_standardprofile::instantiate_constructor_args():
-    sig = inspect.signature(StandardProfile::Instantiate.__init__)
+def test_standardprofile_instantiate_constructor_args():
+    sig = inspect.signature(StandardProfile_Instantiate.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_standardprofile::implementationclass_is_not_abstract():
-    assert not inspect.isabstract(StandardProfile::ImplementationClass)
+def test_standardprofile_implementationclass_is_not_abstract():
+    assert not inspect.isabstract(StandardProfile_ImplementationClass)
 
 
-def test_standardprofile::implementationclass_constructor_exists():
-    assert callable(StandardProfile::ImplementationClass.__init__)
+def test_standardprofile_implementationclass_constructor_exists():
+    assert callable(StandardProfile_ImplementationClass.__init__)
 
 
-def test_standardprofile::implementationclass_constructor_args():
-    sig = inspect.signature(StandardProfile::ImplementationClass.__init__)
+def test_standardprofile_implementationclass_constructor_args():
+    sig = inspect.signature(StandardProfile_ImplementationClass.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_standardprofile::implement_is_not_abstract():
-    assert not inspect.isabstract(StandardProfile::Implement)
+def test_standardprofile_implement_is_not_abstract():
+    assert not inspect.isabstract(StandardProfile_Implement)
 
 
-def test_standardprofile::implement_constructor_exists():
-    assert callable(StandardProfile::Implement.__init__)
+def test_standardprofile_implement_constructor_exists():
+    assert callable(StandardProfile_Implement.__init__)
 
 
-def test_standardprofile::implement_constructor_args():
-    sig = inspect.signature(StandardProfile::Implement.__init__)
+def test_standardprofile_implement_constructor_args():
+    sig = inspect.signature(StandardProfile_Implement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_standardprofile::package_is_not_abstract():
-    assert not inspect.isabstract(StandardProfile::Package)
+def test_standardprofile_package_is_not_abstract():
+    assert not inspect.isabstract(StandardProfile_Package)
 
 
-def test_standardprofile::package_constructor_exists():
-    assert callable(StandardProfile::Package.__init__)
+def test_standardprofile_package_constructor_exists():
+    assert callable(StandardProfile_Package.__init__)
 
 
-def test_standardprofile::package_constructor_args():
-    sig = inspect.signature(StandardProfile::Package.__init__)
+def test_standardprofile_package_constructor_args():
+    sig = inspect.signature(StandardProfile_Package.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_standardprofile::framework_is_not_abstract():
-    assert not inspect.isabstract(StandardProfile::Framework)
+def test_standardprofile_framework_is_not_abstract():
+    assert not inspect.isabstract(StandardProfile_Framework)
 
 
-def test_standardprofile::framework_constructor_exists():
-    assert callable(StandardProfile::Framework.__init__)
+def test_standardprofile_framework_constructor_exists():
+    assert callable(StandardProfile_Framework.__init__)
 
 
-def test_standardprofile::framework_constructor_args():
-    sig = inspect.signature(StandardProfile::Framework.__init__)
+def test_standardprofile_framework_constructor_args():
+    sig = inspect.signature(StandardProfile_Framework.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_standardprofile::focus_is_not_abstract():
-    assert not inspect.isabstract(StandardProfile::Focus)
+def test_standardprofile_focus_is_not_abstract():
+    assert not inspect.isabstract(StandardProfile_Focus)
 
 
-def test_standardprofile::focus_constructor_exists():
-    assert callable(StandardProfile::Focus.__init__)
+def test_standardprofile_focus_constructor_exists():
+    assert callable(StandardProfile_Focus.__init__)
 
 
-def test_standardprofile::focus_constructor_args():
-    sig = inspect.signature(StandardProfile::Focus.__init__)
+def test_standardprofile_focus_constructor_args():
+    sig = inspect.signature(StandardProfile_Focus.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_standardprofile::executable_is_not_abstract():
-    assert not inspect.isabstract(StandardProfile::Executable)
+def test_standardprofile_executable_is_not_abstract():
+    assert not inspect.isabstract(StandardProfile_Executable)
 
 
-def test_standardprofile::executable_constructor_exists():
-    assert callable(StandardProfile::Executable.__init__)
+def test_standardprofile_executable_constructor_exists():
+    assert callable(StandardProfile_Executable.__init__)
 
 
-def test_standardprofile::executable_constructor_args():
-    sig = inspect.signature(StandardProfile::Executable.__init__)
+def test_standardprofile_executable_constructor_args():
+    sig = inspect.signature(StandardProfile_Executable.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_standardprofile::component_is_not_abstract():
-    assert not inspect.isabstract(StandardProfile::Component)
+def test_standardprofile_component_is_not_abstract():
+    assert not inspect.isabstract(StandardProfile_Component)
 
 
-def test_standardprofile::component_constructor_exists():
-    assert callable(StandardProfile::Component.__init__)
+def test_standardprofile_component_constructor_exists():
+    assert callable(StandardProfile_Component.__init__)
 
 
-def test_standardprofile::component_constructor_args():
-    sig = inspect.signature(StandardProfile::Component.__init__)
+def test_standardprofile_component_constructor_args():
+    sig = inspect.signature(StandardProfile_Component.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_standardprofile::entity_is_not_abstract():
-    assert not inspect.isabstract(StandardProfile::Entity)
+def test_standardprofile_entity_is_not_abstract():
+    assert not inspect.isabstract(StandardProfile_Entity)
 
 
-def test_standardprofile::entity_constructor_exists():
-    assert callable(StandardProfile::Entity.__init__)
+def test_standardprofile_entity_constructor_exists():
+    assert callable(StandardProfile_Entity.__init__)
 
 
-def test_standardprofile::entity_constructor_args():
-    sig = inspect.signature(StandardProfile::Entity.__init__)
+def test_standardprofile_entity_constructor_args():
+    sig = inspect.signature(StandardProfile_Entity.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_standardprofile::class_is_not_abstract():
-    assert not inspect.isabstract(StandardProfile::Class)
+def test_standardprofile_class_is_not_abstract():
+    assert not inspect.isabstract(StandardProfile_Class)
 
 
-def test_standardprofile::class_constructor_exists():
-    assert callable(StandardProfile::Class.__init__)
+def test_standardprofile_class_constructor_exists():
+    assert callable(StandardProfile_Class.__init__)
 
 
-def test_standardprofile::class_constructor_args():
-    sig = inspect.signature(StandardProfile::Class.__init__)
+def test_standardprofile_class_constructor_args():
+    sig = inspect.signature(StandardProfile_Class.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_standardprofile::auxiliary_is_not_abstract():
-    assert not inspect.isabstract(StandardProfile::Auxiliary)
+def test_standardprofile_auxiliary_is_not_abstract():
+    assert not inspect.isabstract(StandardProfile_Auxiliary)
 
 
-def test_standardprofile::auxiliary_constructor_exists():
-    assert callable(StandardProfile::Auxiliary.__init__)
+def test_standardprofile_auxiliary_constructor_exists():
+    assert callable(StandardProfile_Auxiliary.__init__)
 
 
-def test_standardprofile::auxiliary_constructor_args():
-    sig = inspect.signature(StandardProfile::Auxiliary.__init__)
+def test_standardprofile_auxiliary_constructor_args():
+    sig = inspect.signature(StandardProfile_Auxiliary.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -669,347 +669,347 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-StandardProfile::SystemModel_strategy = st.builds(
-    StandardProfile::SystemModel,
+StandardProfile_SystemModel_strategy = st.builds(
+    StandardProfile_SystemModel,
 )
-StandardProfile::Model_strategy = st.builds(
-    StandardProfile::Model,
+StandardProfile_Model_strategy = st.builds(
+    StandardProfile_Model,
 )
-StandardProfile::Metamodel_strategy = st.builds(
-    StandardProfile::Metamodel,
+StandardProfile_Metamodel_strategy = st.builds(
+    StandardProfile_Metamodel,
 )
-StandardProfile::BuildComponent_strategy = st.builds(
-    StandardProfile::BuildComponent,
+StandardProfile_BuildComponent_strategy = st.builds(
+    StandardProfile_BuildComponent,
 )
-StandardProfile::Utility_strategy = st.builds(
-    StandardProfile::Utility,
+StandardProfile_Utility_strategy = st.builds(
+    StandardProfile_Utility,
 )
-StandardProfile::Service_strategy = st.builds(
-    StandardProfile::Service,
+StandardProfile_Service_strategy = st.builds(
+    StandardProfile_Service,
 )
-StandardProfile::Send_strategy = st.builds(
-    StandardProfile::Send,
+StandardProfile_Send_strategy = st.builds(
+    StandardProfile_Send,
 )
-StandardProfile::Responsibility_strategy = st.builds(
-    StandardProfile::Responsibility,
+StandardProfile_Responsibility_strategy = st.builds(
+    StandardProfile_Responsibility,
 )
-StandardProfile::Refine_strategy = st.builds(
-    StandardProfile::Refine,
+StandardProfile_Refine_strategy = st.builds(
+    StandardProfile_Refine,
 )
-StandardProfile::Classifier_strategy = st.builds(
-    StandardProfile::Classifier,
+StandardProfile_Classifier_strategy = st.builds(
+    StandardProfile_Classifier,
 )
-StandardProfile::Realization_strategy = st.builds(
-    StandardProfile::Realization,
+StandardProfile_Realization_strategy = st.builds(
+    StandardProfile_Realization,
 )
-StandardProfile::Process_strategy = st.builds(
-    StandardProfile::Process,
+StandardProfile_Process_strategy = st.builds(
+    StandardProfile_Process,
 )
-StandardProfile::ModelLibrary_strategy = st.builds(
-    StandardProfile::ModelLibrary,
+StandardProfile_ModelLibrary_strategy = st.builds(
+    StandardProfile_ModelLibrary,
 )
-StandardProfile::Type_strategy = st.builds(
-    StandardProfile::Type,
+StandardProfile_Type_strategy = st.builds(
+    StandardProfile_Type,
 )
-StandardProfile::Trace_strategy = st.builds(
-    StandardProfile::Trace,
+StandardProfile_Trace_strategy = st.builds(
+    StandardProfile_Trace,
 )
-StandardProfile::Subsystem_strategy = st.builds(
-    StandardProfile::Subsystem,
+StandardProfile_Subsystem_strategy = st.builds(
+    StandardProfile_Subsystem,
 )
-StandardProfile::Artifact_strategy = st.builds(
-    StandardProfile::Artifact,
+StandardProfile_Artifact_strategy = st.builds(
+    StandardProfile_Artifact,
 )
-StandardProfile::Specification_strategy = st.builds(
-    StandardProfile::Specification,
+StandardProfile_Specification_strategy = st.builds(
+    StandardProfile_Specification,
 )
-StandardProfile::File_strategy = st.builds(
-    StandardProfile::File,
+StandardProfile_File_strategy = st.builds(
+    StandardProfile_File,
 )
 File_strategy = st.builds(
     File,
 )
-StandardProfile::Script_strategy = st.builds(
-    StandardProfile::Script,
+StandardProfile_Source_strategy = st.builds(
+    StandardProfile_Source,
 )
-StandardProfile::Source_strategy = st.builds(
-    StandardProfile::Source,
+StandardProfile_Script_strategy = st.builds(
+    StandardProfile_Script,
 )
-StandardProfile::Document_strategy = st.builds(
-    StandardProfile::Document,
+StandardProfile_Document_strategy = st.builds(
+    StandardProfile_Document,
 )
-StandardProfile::Destroy_strategy = st.builds(
-    StandardProfile::Destroy,
+StandardProfile_Destroy_strategy = st.builds(
+    StandardProfile_Destroy,
 )
-StandardProfile::Abstraction_strategy = st.builds(
-    StandardProfile::Abstraction,
+StandardProfile_Abstraction_strategy = st.builds(
+    StandardProfile_Abstraction,
 )
-StandardProfile::Derive_strategy = st.builds(
-    StandardProfile::Derive,
+StandardProfile_Derive_strategy = st.builds(
+    StandardProfile_Derive,
 )
-StandardProfile::BehavioralFeature_strategy = st.builds(
-    StandardProfile::BehavioralFeature,
+StandardProfile_BehavioralFeature_strategy = st.builds(
+    StandardProfile_BehavioralFeature,
 )
-StandardProfile::Create_strategy = st.builds(
-    StandardProfile::Create,
+StandardProfile_Create_strategy = st.builds(
+    StandardProfile_Create,
 )
-StandardProfile::Usage_strategy = st.builds(
-    StandardProfile::Usage,
+StandardProfile_Usage_strategy = st.builds(
+    StandardProfile_Usage,
 )
-StandardProfile::Call_strategy = st.builds(
-    StandardProfile::Call,
+StandardProfile_Call_strategy = st.builds(
+    StandardProfile_Call,
 )
-StandardProfile::Metaclass_strategy = st.builds(
-    StandardProfile::Metaclass,
+StandardProfile_Metaclass_strategy = st.builds(
+    StandardProfile_Metaclass,
 )
-StandardProfile::Library_strategy = st.builds(
-    StandardProfile::Library,
+StandardProfile_Library_strategy = st.builds(
+    StandardProfile_Library,
 )
-StandardProfile::Instantiate_strategy = st.builds(
-    StandardProfile::Instantiate,
+StandardProfile_Instantiate_strategy = st.builds(
+    StandardProfile_Instantiate,
 )
-StandardProfile::ImplementationClass_strategy = st.builds(
-    StandardProfile::ImplementationClass,
+StandardProfile_ImplementationClass_strategy = st.builds(
+    StandardProfile_ImplementationClass,
 )
-StandardProfile::Implement_strategy = st.builds(
-    StandardProfile::Implement,
+StandardProfile_Implement_strategy = st.builds(
+    StandardProfile_Implement,
 )
-StandardProfile::Package_strategy = st.builds(
-    StandardProfile::Package,
+StandardProfile_Package_strategy = st.builds(
+    StandardProfile_Package,
 )
-StandardProfile::Framework_strategy = st.builds(
-    StandardProfile::Framework,
+StandardProfile_Framework_strategy = st.builds(
+    StandardProfile_Framework,
 )
-StandardProfile::Focus_strategy = st.builds(
-    StandardProfile::Focus,
+StandardProfile_Focus_strategy = st.builds(
+    StandardProfile_Focus,
 )
-StandardProfile::Executable_strategy = st.builds(
-    StandardProfile::Executable,
+StandardProfile_Executable_strategy = st.builds(
+    StandardProfile_Executable,
 )
-StandardProfile::Component_strategy = st.builds(
-    StandardProfile::Component,
+StandardProfile_Component_strategy = st.builds(
+    StandardProfile_Component,
 )
-StandardProfile::Entity_strategy = st.builds(
-    StandardProfile::Entity,
+StandardProfile_Entity_strategy = st.builds(
+    StandardProfile_Entity,
 )
-StandardProfile::Class_strategy = st.builds(
-    StandardProfile::Class,
+StandardProfile_Class_strategy = st.builds(
+    StandardProfile_Class,
 )
-StandardProfile::Auxiliary_strategy = st.builds(
-    StandardProfile::Auxiliary,
+StandardProfile_Auxiliary_strategy = st.builds(
+    StandardProfile_Auxiliary,
 )
 
-@given(instance=StandardProfile::SystemModel_strategy)
+@given(instance=StandardProfile_SystemModel_strategy)
 @settings(max_examples=50)
-def test_standardprofile::systemmodel_instantiation(instance):
-    assert isinstance(instance, StandardProfile::SystemModel)
+def test_standardprofile_systemmodel_instantiation(instance):
+    assert isinstance(instance, StandardProfile_SystemModel)
 
-@given(instance=StandardProfile::Model_strategy)
+@given(instance=StandardProfile_Model_strategy)
 @settings(max_examples=50)
-def test_standardprofile::model_instantiation(instance):
-    assert isinstance(instance, StandardProfile::Model)
+def test_standardprofile_model_instantiation(instance):
+    assert isinstance(instance, StandardProfile_Model)
 
-@given(instance=StandardProfile::Metamodel_strategy)
+@given(instance=StandardProfile_Metamodel_strategy)
 @settings(max_examples=50)
-def test_standardprofile::metamodel_instantiation(instance):
-    assert isinstance(instance, StandardProfile::Metamodel)
+def test_standardprofile_metamodel_instantiation(instance):
+    assert isinstance(instance, StandardProfile_Metamodel)
 
-@given(instance=StandardProfile::BuildComponent_strategy)
+@given(instance=StandardProfile_BuildComponent_strategy)
 @settings(max_examples=50)
-def test_standardprofile::buildcomponent_instantiation(instance):
-    assert isinstance(instance, StandardProfile::BuildComponent)
+def test_standardprofile_buildcomponent_instantiation(instance):
+    assert isinstance(instance, StandardProfile_BuildComponent)
 
-@given(instance=StandardProfile::Utility_strategy)
+@given(instance=StandardProfile_Utility_strategy)
 @settings(max_examples=50)
-def test_standardprofile::utility_instantiation(instance):
-    assert isinstance(instance, StandardProfile::Utility)
+def test_standardprofile_utility_instantiation(instance):
+    assert isinstance(instance, StandardProfile_Utility)
 
-@given(instance=StandardProfile::Service_strategy)
+@given(instance=StandardProfile_Service_strategy)
 @settings(max_examples=50)
-def test_standardprofile::service_instantiation(instance):
-    assert isinstance(instance, StandardProfile::Service)
+def test_standardprofile_service_instantiation(instance):
+    assert isinstance(instance, StandardProfile_Service)
 
-@given(instance=StandardProfile::Send_strategy)
+@given(instance=StandardProfile_Send_strategy)
 @settings(max_examples=50)
-def test_standardprofile::send_instantiation(instance):
-    assert isinstance(instance, StandardProfile::Send)
+def test_standardprofile_send_instantiation(instance):
+    assert isinstance(instance, StandardProfile_Send)
 
-@given(instance=StandardProfile::Responsibility_strategy)
+@given(instance=StandardProfile_Responsibility_strategy)
 @settings(max_examples=50)
-def test_standardprofile::responsibility_instantiation(instance):
-    assert isinstance(instance, StandardProfile::Responsibility)
+def test_standardprofile_responsibility_instantiation(instance):
+    assert isinstance(instance, StandardProfile_Responsibility)
 
-@given(instance=StandardProfile::Refine_strategy)
+@given(instance=StandardProfile_Refine_strategy)
 @settings(max_examples=50)
-def test_standardprofile::refine_instantiation(instance):
-    assert isinstance(instance, StandardProfile::Refine)
+def test_standardprofile_refine_instantiation(instance):
+    assert isinstance(instance, StandardProfile_Refine)
 
-@given(instance=StandardProfile::Classifier_strategy)
+@given(instance=StandardProfile_Classifier_strategy)
 @settings(max_examples=50)
-def test_standardprofile::classifier_instantiation(instance):
-    assert isinstance(instance, StandardProfile::Classifier)
+def test_standardprofile_classifier_instantiation(instance):
+    assert isinstance(instance, StandardProfile_Classifier)
 
-@given(instance=StandardProfile::Realization_strategy)
+@given(instance=StandardProfile_Realization_strategy)
 @settings(max_examples=50)
-def test_standardprofile::realization_instantiation(instance):
-    assert isinstance(instance, StandardProfile::Realization)
+def test_standardprofile_realization_instantiation(instance):
+    assert isinstance(instance, StandardProfile_Realization)
 
-@given(instance=StandardProfile::Process_strategy)
+@given(instance=StandardProfile_Process_strategy)
 @settings(max_examples=50)
-def test_standardprofile::process_instantiation(instance):
-    assert isinstance(instance, StandardProfile::Process)
+def test_standardprofile_process_instantiation(instance):
+    assert isinstance(instance, StandardProfile_Process)
 
-@given(instance=StandardProfile::ModelLibrary_strategy)
+@given(instance=StandardProfile_ModelLibrary_strategy)
 @settings(max_examples=50)
-def test_standardprofile::modellibrary_instantiation(instance):
-    assert isinstance(instance, StandardProfile::ModelLibrary)
+def test_standardprofile_modellibrary_instantiation(instance):
+    assert isinstance(instance, StandardProfile_ModelLibrary)
 
-@given(instance=StandardProfile::Type_strategy)
+@given(instance=StandardProfile_Type_strategy)
 @settings(max_examples=50)
-def test_standardprofile::type_instantiation(instance):
-    assert isinstance(instance, StandardProfile::Type)
+def test_standardprofile_type_instantiation(instance):
+    assert isinstance(instance, StandardProfile_Type)
 
-@given(instance=StandardProfile::Trace_strategy)
+@given(instance=StandardProfile_Trace_strategy)
 @settings(max_examples=50)
-def test_standardprofile::trace_instantiation(instance):
-    assert isinstance(instance, StandardProfile::Trace)
+def test_standardprofile_trace_instantiation(instance):
+    assert isinstance(instance, StandardProfile_Trace)
 
-@given(instance=StandardProfile::Subsystem_strategy)
+@given(instance=StandardProfile_Subsystem_strategy)
 @settings(max_examples=50)
-def test_standardprofile::subsystem_instantiation(instance):
-    assert isinstance(instance, StandardProfile::Subsystem)
+def test_standardprofile_subsystem_instantiation(instance):
+    assert isinstance(instance, StandardProfile_Subsystem)
 
-@given(instance=StandardProfile::Artifact_strategy)
+@given(instance=StandardProfile_Artifact_strategy)
 @settings(max_examples=50)
-def test_standardprofile::artifact_instantiation(instance):
-    assert isinstance(instance, StandardProfile::Artifact)
+def test_standardprofile_artifact_instantiation(instance):
+    assert isinstance(instance, StandardProfile_Artifact)
 
-@given(instance=StandardProfile::Specification_strategy)
+@given(instance=StandardProfile_Specification_strategy)
 @settings(max_examples=50)
-def test_standardprofile::specification_instantiation(instance):
-    assert isinstance(instance, StandardProfile::Specification)
+def test_standardprofile_specification_instantiation(instance):
+    assert isinstance(instance, StandardProfile_Specification)
 
-@given(instance=StandardProfile::File_strategy)
+@given(instance=StandardProfile_File_strategy)
 @settings(max_examples=50)
-def test_standardprofile::file_instantiation(instance):
-    assert isinstance(instance, StandardProfile::File)
+def test_standardprofile_file_instantiation(instance):
+    assert isinstance(instance, StandardProfile_File)
 
 @given(instance=File_strategy)
 @settings(max_examples=50)
 def test_file_instantiation(instance):
     assert isinstance(instance, File)
 
-@given(instance=StandardProfile::Script_strategy)
+@given(instance=StandardProfile_Source_strategy)
 @settings(max_examples=50)
-def test_standardprofile::script_instantiation(instance):
-    assert isinstance(instance, StandardProfile::Script)
+def test_standardprofile_source_instantiation(instance):
+    assert isinstance(instance, StandardProfile_Source)
 
-@given(instance=StandardProfile::Source_strategy)
+@given(instance=StandardProfile_Script_strategy)
 @settings(max_examples=50)
-def test_standardprofile::source_instantiation(instance):
-    assert isinstance(instance, StandardProfile::Source)
+def test_standardprofile_script_instantiation(instance):
+    assert isinstance(instance, StandardProfile_Script)
 
-@given(instance=StandardProfile::Document_strategy)
+@given(instance=StandardProfile_Document_strategy)
 @settings(max_examples=50)
-def test_standardprofile::document_instantiation(instance):
-    assert isinstance(instance, StandardProfile::Document)
+def test_standardprofile_document_instantiation(instance):
+    assert isinstance(instance, StandardProfile_Document)
 
-@given(instance=StandardProfile::Destroy_strategy)
+@given(instance=StandardProfile_Destroy_strategy)
 @settings(max_examples=50)
-def test_standardprofile::destroy_instantiation(instance):
-    assert isinstance(instance, StandardProfile::Destroy)
+def test_standardprofile_destroy_instantiation(instance):
+    assert isinstance(instance, StandardProfile_Destroy)
 
-@given(instance=StandardProfile::Abstraction_strategy)
+@given(instance=StandardProfile_Abstraction_strategy)
 @settings(max_examples=50)
-def test_standardprofile::abstraction_instantiation(instance):
-    assert isinstance(instance, StandardProfile::Abstraction)
+def test_standardprofile_abstraction_instantiation(instance):
+    assert isinstance(instance, StandardProfile_Abstraction)
 
-@given(instance=StandardProfile::Derive_strategy)
+@given(instance=StandardProfile_Derive_strategy)
 @settings(max_examples=50)
-def test_standardprofile::derive_instantiation(instance):
-    assert isinstance(instance, StandardProfile::Derive)
+def test_standardprofile_derive_instantiation(instance):
+    assert isinstance(instance, StandardProfile_Derive)
 
-@given(instance=StandardProfile::BehavioralFeature_strategy)
+@given(instance=StandardProfile_BehavioralFeature_strategy)
 @settings(max_examples=50)
-def test_standardprofile::behavioralfeature_instantiation(instance):
-    assert isinstance(instance, StandardProfile::BehavioralFeature)
+def test_standardprofile_behavioralfeature_instantiation(instance):
+    assert isinstance(instance, StandardProfile_BehavioralFeature)
 
-@given(instance=StandardProfile::Create_strategy)
+@given(instance=StandardProfile_Create_strategy)
 @settings(max_examples=50)
-def test_standardprofile::create_instantiation(instance):
-    assert isinstance(instance, StandardProfile::Create)
+def test_standardprofile_create_instantiation(instance):
+    assert isinstance(instance, StandardProfile_Create)
 
-@given(instance=StandardProfile::Usage_strategy)
+@given(instance=StandardProfile_Usage_strategy)
 @settings(max_examples=50)
-def test_standardprofile::usage_instantiation(instance):
-    assert isinstance(instance, StandardProfile::Usage)
+def test_standardprofile_usage_instantiation(instance):
+    assert isinstance(instance, StandardProfile_Usage)
 
-@given(instance=StandardProfile::Call_strategy)
+@given(instance=StandardProfile_Call_strategy)
 @settings(max_examples=50)
-def test_standardprofile::call_instantiation(instance):
-    assert isinstance(instance, StandardProfile::Call)
+def test_standardprofile_call_instantiation(instance):
+    assert isinstance(instance, StandardProfile_Call)
 
-@given(instance=StandardProfile::Metaclass_strategy)
+@given(instance=StandardProfile_Metaclass_strategy)
 @settings(max_examples=50)
-def test_standardprofile::metaclass_instantiation(instance):
-    assert isinstance(instance, StandardProfile::Metaclass)
+def test_standardprofile_metaclass_instantiation(instance):
+    assert isinstance(instance, StandardProfile_Metaclass)
 
-@given(instance=StandardProfile::Library_strategy)
+@given(instance=StandardProfile_Library_strategy)
 @settings(max_examples=50)
-def test_standardprofile::library_instantiation(instance):
-    assert isinstance(instance, StandardProfile::Library)
+def test_standardprofile_library_instantiation(instance):
+    assert isinstance(instance, StandardProfile_Library)
 
-@given(instance=StandardProfile::Instantiate_strategy)
+@given(instance=StandardProfile_Instantiate_strategy)
 @settings(max_examples=50)
-def test_standardprofile::instantiate_instantiation(instance):
-    assert isinstance(instance, StandardProfile::Instantiate)
+def test_standardprofile_instantiate_instantiation(instance):
+    assert isinstance(instance, StandardProfile_Instantiate)
 
-@given(instance=StandardProfile::ImplementationClass_strategy)
+@given(instance=StandardProfile_ImplementationClass_strategy)
 @settings(max_examples=50)
-def test_standardprofile::implementationclass_instantiation(instance):
-    assert isinstance(instance, StandardProfile::ImplementationClass)
+def test_standardprofile_implementationclass_instantiation(instance):
+    assert isinstance(instance, StandardProfile_ImplementationClass)
 
-@given(instance=StandardProfile::Implement_strategy)
+@given(instance=StandardProfile_Implement_strategy)
 @settings(max_examples=50)
-def test_standardprofile::implement_instantiation(instance):
-    assert isinstance(instance, StandardProfile::Implement)
+def test_standardprofile_implement_instantiation(instance):
+    assert isinstance(instance, StandardProfile_Implement)
 
-@given(instance=StandardProfile::Package_strategy)
+@given(instance=StandardProfile_Package_strategy)
 @settings(max_examples=50)
-def test_standardprofile::package_instantiation(instance):
-    assert isinstance(instance, StandardProfile::Package)
+def test_standardprofile_package_instantiation(instance):
+    assert isinstance(instance, StandardProfile_Package)
 
-@given(instance=StandardProfile::Framework_strategy)
+@given(instance=StandardProfile_Framework_strategy)
 @settings(max_examples=50)
-def test_standardprofile::framework_instantiation(instance):
-    assert isinstance(instance, StandardProfile::Framework)
+def test_standardprofile_framework_instantiation(instance):
+    assert isinstance(instance, StandardProfile_Framework)
 
-@given(instance=StandardProfile::Focus_strategy)
+@given(instance=StandardProfile_Focus_strategy)
 @settings(max_examples=50)
-def test_standardprofile::focus_instantiation(instance):
-    assert isinstance(instance, StandardProfile::Focus)
+def test_standardprofile_focus_instantiation(instance):
+    assert isinstance(instance, StandardProfile_Focus)
 
-@given(instance=StandardProfile::Executable_strategy)
+@given(instance=StandardProfile_Executable_strategy)
 @settings(max_examples=50)
-def test_standardprofile::executable_instantiation(instance):
-    assert isinstance(instance, StandardProfile::Executable)
+def test_standardprofile_executable_instantiation(instance):
+    assert isinstance(instance, StandardProfile_Executable)
 
-@given(instance=StandardProfile::Component_strategy)
+@given(instance=StandardProfile_Component_strategy)
 @settings(max_examples=50)
-def test_standardprofile::component_instantiation(instance):
-    assert isinstance(instance, StandardProfile::Component)
+def test_standardprofile_component_instantiation(instance):
+    assert isinstance(instance, StandardProfile_Component)
 
-@given(instance=StandardProfile::Entity_strategy)
+@given(instance=StandardProfile_Entity_strategy)
 @settings(max_examples=50)
-def test_standardprofile::entity_instantiation(instance):
-    assert isinstance(instance, StandardProfile::Entity)
+def test_standardprofile_entity_instantiation(instance):
+    assert isinstance(instance, StandardProfile_Entity)
 
-@given(instance=StandardProfile::Class_strategy)
+@given(instance=StandardProfile_Class_strategy)
 @settings(max_examples=50)
-def test_standardprofile::class_instantiation(instance):
-    assert isinstance(instance, StandardProfile::Class)
+def test_standardprofile_class_instantiation(instance):
+    assert isinstance(instance, StandardProfile_Class)
 
-@given(instance=StandardProfile::Auxiliary_strategy)
+@given(instance=StandardProfile_Auxiliary_strategy)
 @settings(max_examples=50)
-def test_standardprofile::auxiliary_instantiation(instance):
-    assert isinstance(instance, StandardProfile::Auxiliary)
+def test_standardprofile_auxiliary_instantiation(instance):
+    assert isinstance(instance, StandardProfile_Auxiliary)

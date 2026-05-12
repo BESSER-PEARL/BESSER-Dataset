@@ -3,25 +3,25 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     ControlTask,
-    mission::Join,
-    mission::Fork,
+    mission_Join,
+    mission_Fork,
     Task,
-    mission::PolygonTask,
-    mission::PointTask,
-    mission::LineTask,
-    mission::ControlTask,
-    mission::Coordinate,
-    mission::Swarm,
+    mission_PointTask,
+    mission_PolygonTask,
+    mission_LineTask,
+    mission_ControlTask,
+    mission_Coordinate,
+    mission_Swarm,
     NamedElement,
-    mission::Drone,
-    mission::Task,
-    mission::TaskDependency,
-    mission::Mission,
-    mission::NamedElement,
+    mission_TaskDependency,
+    mission_Drone,
+    mission_Task,
+    mission_Mission,
+    mission_NamedElement,
 )
 
 # =============================================================================
@@ -44,30 +44,30 @@ def test_controltask_constructor_args():
 
 
 
-def test_mission::join_is_not_abstract():
-    assert not inspect.isabstract(mission::Join)
+def test_mission_join_is_not_abstract():
+    assert not inspect.isabstract(mission_Join)
 
 
-def test_mission::join_constructor_exists():
-    assert callable(mission::Join.__init__)
+def test_mission_join_constructor_exists():
+    assert callable(mission_Join.__init__)
 
 
-def test_mission::join_constructor_args():
-    sig = inspect.signature(mission::Join.__init__)
+def test_mission_join_constructor_args():
+    sig = inspect.signature(mission_Join.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_mission::fork_is_not_abstract():
-    assert not inspect.isabstract(mission::Fork)
+def test_mission_fork_is_not_abstract():
+    assert not inspect.isabstract(mission_Fork)
 
 
-def test_mission::fork_constructor_exists():
-    assert callable(mission::Fork.__init__)
+def test_mission_fork_constructor_exists():
+    assert callable(mission_Fork.__init__)
 
 
-def test_mission::fork_constructor_args():
-    sig = inspect.signature(mission::Fork.__init__)
+def test_mission_fork_constructor_args():
+    sig = inspect.signature(mission_Fork.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -86,99 +86,99 @@ def test_task_constructor_args():
 
 
 
-def test_mission::polygontask_is_not_abstract():
-    assert not inspect.isabstract(mission::PolygonTask)
+def test_mission_pointtask_is_not_abstract():
+    assert not inspect.isabstract(mission_PointTask)
 
 
-def test_mission::polygontask_constructor_exists():
-    assert callable(mission::PolygonTask.__init__)
+def test_mission_pointtask_constructor_exists():
+    assert callable(mission_PointTask.__init__)
 
 
-def test_mission::polygontask_constructor_args():
-    sig = inspect.signature(mission::PolygonTask.__init__)
+def test_mission_pointtask_constructor_args():
+    sig = inspect.signature(mission_PointTask.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_mission::pointtask_is_not_abstract():
-    assert not inspect.isabstract(mission::PointTask)
+def test_mission_polygontask_is_not_abstract():
+    assert not inspect.isabstract(mission_PolygonTask)
 
 
-def test_mission::pointtask_constructor_exists():
-    assert callable(mission::PointTask.__init__)
+def test_mission_polygontask_constructor_exists():
+    assert callable(mission_PolygonTask.__init__)
 
 
-def test_mission::pointtask_constructor_args():
-    sig = inspect.signature(mission::PointTask.__init__)
+def test_mission_polygontask_constructor_args():
+    sig = inspect.signature(mission_PolygonTask.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_mission::linetask_is_not_abstract():
-    assert not inspect.isabstract(mission::LineTask)
+def test_mission_linetask_is_not_abstract():
+    assert not inspect.isabstract(mission_LineTask)
 
 
-def test_mission::linetask_constructor_exists():
-    assert callable(mission::LineTask.__init__)
+def test_mission_linetask_constructor_exists():
+    assert callable(mission_LineTask.__init__)
 
 
-def test_mission::linetask_constructor_args():
-    sig = inspect.signature(mission::LineTask.__init__)
+def test_mission_linetask_constructor_args():
+    sig = inspect.signature(mission_LineTask.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_mission::controltask_is_not_abstract():
-    assert not inspect.isabstract(mission::ControlTask)
+def test_mission_controltask_is_not_abstract():
+    assert not inspect.isabstract(mission_ControlTask)
 
 
-def test_mission::controltask_constructor_exists():
-    assert callable(mission::ControlTask.__init__)
+def test_mission_controltask_constructor_exists():
+    assert callable(mission_ControlTask.__init__)
 
 
-def test_mission::controltask_constructor_args():
-    sig = inspect.signature(mission::ControlTask.__init__)
+def test_mission_controltask_constructor_args():
+    sig = inspect.signature(mission_ControlTask.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_mission::coordinate_is_not_abstract():
-    assert not inspect.isabstract(mission::Coordinate)
+def test_mission_coordinate_is_not_abstract():
+    assert not inspect.isabstract(mission_Coordinate)
 
 
-def test_mission::coordinate_constructor_exists():
-    assert callable(mission::Coordinate.__init__)
+def test_mission_coordinate_constructor_exists():
+    assert callable(mission_Coordinate.__init__)
 
 
-def test_mission::coordinate_constructor_args():
-    sig = inspect.signature(mission::Coordinate.__init__)
+def test_mission_coordinate_constructor_args():
+    sig = inspect.signature(mission_Coordinate.__init__)
     params = list(sig.parameters.keys())
     assert "latitude" in params, "Missing parameter 'latitude'"
     assert "longitude" in params, "Missing parameter 'longitude'"
     assert "altitude" in params, "Missing parameter 'altitude'"
 
-def test_mission::coordinate_has_latitude():
-    assert hasattr(mission::Coordinate, "latitude")
+def test_mission_coordinate_has_latitude():
+    assert hasattr(mission_Coordinate, "latitude")
     descriptor = None
-    for klass in mission::Coordinate.__mro__:
+    for klass in mission_Coordinate.__mro__:
         if "latitude" in klass.__dict__:
             descriptor = klass.__dict__["latitude"]
             break
     assert isinstance(descriptor, property)
 
-def test_mission::coordinate_has_longitude():
-    assert hasattr(mission::Coordinate, "longitude")
+def test_mission_coordinate_has_longitude():
+    assert hasattr(mission_Coordinate, "longitude")
     descriptor = None
-    for klass in mission::Coordinate.__mro__:
+    for klass in mission_Coordinate.__mro__:
         if "longitude" in klass.__dict__:
             descriptor = klass.__dict__["longitude"]
             break
     assert isinstance(descriptor, property)
 
-def test_mission::coordinate_has_altitude():
-    assert hasattr(mission::Coordinate, "altitude")
+def test_mission_coordinate_has_altitude():
+    assert hasattr(mission_Coordinate, "altitude")
     descriptor = None
-    for klass in mission::Coordinate.__mro__:
+    for klass in mission_Coordinate.__mro__:
         if "altitude" in klass.__dict__:
             descriptor = klass.__dict__["altitude"]
             break
@@ -186,16 +186,16 @@ def test_mission::coordinate_has_altitude():
 
 
 
-def test_mission::swarm_is_not_abstract():
-    assert not inspect.isabstract(mission::Swarm)
+def test_mission_swarm_is_not_abstract():
+    assert not inspect.isabstract(mission_Swarm)
 
 
-def test_mission::swarm_constructor_exists():
-    assert callable(mission::Swarm.__init__)
+def test_mission_swarm_constructor_exists():
+    assert callable(mission_Swarm.__init__)
 
 
-def test_mission::swarm_constructor_args():
-    sig = inspect.signature(mission::Swarm.__init__)
+def test_mission_swarm_constructor_args():
+    sig = inspect.signature(mission_Swarm.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -214,85 +214,85 @@ def test_namedelement_constructor_args():
 
 
 
-def test_mission::drone_is_not_abstract():
-    assert not inspect.isabstract(mission::Drone)
+def test_mission_taskdependency_is_not_abstract():
+    assert not inspect.isabstract(mission_TaskDependency)
 
 
-def test_mission::drone_constructor_exists():
-    assert callable(mission::Drone.__init__)
+def test_mission_taskdependency_constructor_exists():
+    assert callable(mission_TaskDependency.__init__)
 
 
-def test_mission::drone_constructor_args():
-    sig = inspect.signature(mission::Drone.__init__)
+def test_mission_taskdependency_constructor_args():
+    sig = inspect.signature(mission_TaskDependency.__init__)
     params = list(sig.parameters.keys())
-    assert "returnHome" in params, "Missing parameter 'returnHome'"
+
+
+
+def test_mission_drone_is_not_abstract():
+    assert not inspect.isabstract(mission_Drone)
+
+
+def test_mission_drone_constructor_exists():
+    assert callable(mission_Drone.__init__)
+
+
+def test_mission_drone_constructor_args():
+    sig = inspect.signature(mission_Drone.__init__)
+    params = list(sig.parameters.keys())
     assert "type" in params, "Missing parameter 'type'"
+    assert "returnHome" in params, "Missing parameter 'returnHome'"
 
-def test_mission::drone_has_returnHome():
-    assert hasattr(mission::Drone, "returnHome")
+def test_mission_drone_has_type():
+    assert hasattr(mission_Drone, "type")
     descriptor = None
-    for klass in mission::Drone.__mro__:
-        if "returnHome" in klass.__dict__:
-            descriptor = klass.__dict__["returnHome"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_mission::drone_has_type():
-    assert hasattr(mission::Drone, "type")
-    descriptor = None
-    for klass in mission::Drone.__mro__:
+    for klass in mission_Drone.__mro__:
         if "type" in klass.__dict__:
             descriptor = klass.__dict__["type"]
             break
     assert isinstance(descriptor, property)
 
+def test_mission_drone_has_returnHome():
+    assert hasattr(mission_Drone, "returnHome")
+    descriptor = None
+    for klass in mission_Drone.__mro__:
+        if "returnHome" in klass.__dict__:
+            descriptor = klass.__dict__["returnHome"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_mission::task_is_not_abstract():
-    assert not inspect.isabstract(mission::Task)
+
+def test_mission_task_is_not_abstract():
+    assert not inspect.isabstract(mission_Task)
 
 
-def test_mission::task_constructor_exists():
-    assert callable(mission::Task.__init__)
+def test_mission_task_constructor_exists():
+    assert callable(mission_Task.__init__)
 
 
-def test_mission::task_constructor_args():
-    sig = inspect.signature(mission::Task.__init__)
+def test_mission_task_constructor_args():
+    sig = inspect.signature(mission_Task.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_mission::taskdependency_is_not_abstract():
-    assert not inspect.isabstract(mission::TaskDependency)
+def test_mission_mission_is_not_abstract():
+    assert not inspect.isabstract(mission_Mission)
 
 
-def test_mission::taskdependency_constructor_exists():
-    assert callable(mission::TaskDependency.__init__)
+def test_mission_mission_constructor_exists():
+    assert callable(mission_Mission.__init__)
 
 
-def test_mission::taskdependency_constructor_args():
-    sig = inspect.signature(mission::TaskDependency.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_mission::mission_is_not_abstract():
-    assert not inspect.isabstract(mission::Mission)
-
-
-def test_mission::mission_constructor_exists():
-    assert callable(mission::Mission.__init__)
-
-
-def test_mission::mission_constructor_args():
-    sig = inspect.signature(mission::Mission.__init__)
+def test_mission_mission_constructor_args():
+    sig = inspect.signature(mission_Mission.__init__)
     params = list(sig.parameters.keys())
     assert "crs" in params, "Missing parameter 'crs'"
 
-def test_mission::mission_has_crs():
-    assert hasattr(mission::Mission, "crs")
+def test_mission_mission_has_crs():
+    assert hasattr(mission_Mission, "crs")
     descriptor = None
-    for klass in mission::Mission.__mro__:
+    for klass in mission_Mission.__mro__:
         if "crs" in klass.__dict__:
             descriptor = klass.__dict__["crs"]
             break
@@ -300,23 +300,23 @@ def test_mission::mission_has_crs():
 
 
 
-def test_mission::namedelement_is_not_abstract():
-    assert not inspect.isabstract(mission::NamedElement)
+def test_mission_namedelement_is_not_abstract():
+    assert not inspect.isabstract(mission_NamedElement)
 
 
-def test_mission::namedelement_constructor_exists():
-    assert callable(mission::NamedElement.__init__)
+def test_mission_namedelement_constructor_exists():
+    assert callable(mission_NamedElement.__init__)
 
 
-def test_mission::namedelement_constructor_args():
-    sig = inspect.signature(mission::NamedElement.__init__)
+def test_mission_namedelement_constructor_args():
+    sig = inspect.signature(mission_NamedElement.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_mission::namedelement_has_name():
-    assert hasattr(mission::NamedElement, "name")
+def test_mission_namedelement_has_name():
+    assert hasattr(mission_NamedElement, "name")
     descriptor = None
-    for klass in mission::NamedElement.__mro__:
+    for klass in mission_NamedElement.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -337,29 +337,29 @@ safe_text = st.text(
 ControlTask_strategy = st.builds(
     ControlTask,
 )
-mission::Join_strategy = st.builds(
-    mission::Join,
+mission_Join_strategy = st.builds(
+    mission_Join,
 )
-mission::Fork_strategy = st.builds(
-    mission::Fork,
+mission_Fork_strategy = st.builds(
+    mission_Fork,
 )
 Task_strategy = st.builds(
     Task,
 )
-mission::PolygonTask_strategy = st.builds(
-    mission::PolygonTask,
+mission_PointTask_strategy = st.builds(
+    mission_PointTask,
 )
-mission::PointTask_strategy = st.builds(
-    mission::PointTask,
+mission_PolygonTask_strategy = st.builds(
+    mission_PolygonTask,
 )
-mission::LineTask_strategy = st.builds(
-    mission::LineTask,
+mission_LineTask_strategy = st.builds(
+    mission_LineTask,
 )
-mission::ControlTask_strategy = st.builds(
-    mission::ControlTask,
+mission_ControlTask_strategy = st.builds(
+    mission_ControlTask,
 )
-mission::Coordinate_strategy = st.builds(
-    mission::Coordinate,
+mission_Coordinate_strategy = st.builds(
+    mission_Coordinate,
     latitude=
         st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False),
     longitude=
@@ -367,32 +367,32 @@ mission::Coordinate_strategy = st.builds(
     altitude=
         st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False)
 )
-mission::Swarm_strategy = st.builds(
-    mission::Swarm,
+mission_Swarm_strategy = st.builds(
+    mission_Swarm,
 )
 NamedElement_strategy = st.builds(
     NamedElement,
 )
-mission::Drone_strategy = st.builds(
-    mission::Drone,
-    returnHome=
-        st.booleans(),
+mission_TaskDependency_strategy = st.builds(
+    mission_TaskDependency,
+)
+mission_Drone_strategy = st.builds(
+    mission_Drone,
     type=
-        safe_text
+        safe_text,
+    returnHome=
+        st.booleans()
 )
-mission::Task_strategy = st.builds(
-    mission::Task,
+mission_Task_strategy = st.builds(
+    mission_Task,
 )
-mission::TaskDependency_strategy = st.builds(
-    mission::TaskDependency,
-)
-mission::Mission_strategy = st.builds(
-    mission::Mission,
+mission_Mission_strategy = st.builds(
+    mission_Mission,
     crs=
         safe_text
 )
-mission::NamedElement_strategy = st.builds(
-    mission::NamedElement,
+mission_NamedElement_strategy = st.builds(
+    mission_NamedElement,
     name=
         safe_text
 )
@@ -402,154 +402,133 @@ mission::NamedElement_strategy = st.builds(
 def test_controltask_instantiation(instance):
     assert isinstance(instance, ControlTask)
 
-@given(instance=mission::Join_strategy)
+@given(instance=mission_Join_strategy)
 @settings(max_examples=50)
-def test_mission::join_instantiation(instance):
-    assert isinstance(instance, mission::Join)
+def test_mission_join_instantiation(instance):
+    assert isinstance(instance, mission_Join)
 
-@given(instance=mission::Fork_strategy)
+@given(instance=mission_Fork_strategy)
 @settings(max_examples=50)
-def test_mission::fork_instantiation(instance):
-    assert isinstance(instance, mission::Fork)
+def test_mission_fork_instantiation(instance):
+    assert isinstance(instance, mission_Fork)
 
 @given(instance=Task_strategy)
 @settings(max_examples=50)
 def test_task_instantiation(instance):
     assert isinstance(instance, Task)
 
-@given(instance=mission::PolygonTask_strategy)
+@given(instance=mission_PointTask_strategy)
 @settings(max_examples=50)
-def test_mission::polygontask_instantiation(instance):
-    assert isinstance(instance, mission::PolygonTask)
+def test_mission_pointtask_instantiation(instance):
+    assert isinstance(instance, mission_PointTask)
 
-@given(instance=mission::PointTask_strategy)
+@given(instance=mission_PolygonTask_strategy)
 @settings(max_examples=50)
-def test_mission::pointtask_instantiation(instance):
-    assert isinstance(instance, mission::PointTask)
+def test_mission_polygontask_instantiation(instance):
+    assert isinstance(instance, mission_PolygonTask)
 
-@given(instance=mission::LineTask_strategy)
+@given(instance=mission_LineTask_strategy)
 @settings(max_examples=50)
-def test_mission::linetask_instantiation(instance):
-    assert isinstance(instance, mission::LineTask)
+def test_mission_linetask_instantiation(instance):
+    assert isinstance(instance, mission_LineTask)
 
-@given(instance=mission::ControlTask_strategy)
+@given(instance=mission_ControlTask_strategy)
 @settings(max_examples=50)
-def test_mission::controltask_instantiation(instance):
-    assert isinstance(instance, mission::ControlTask)
+def test_mission_controltask_instantiation(instance):
+    assert isinstance(instance, mission_ControlTask)
 
-@given(instance=mission::Coordinate_strategy)
+@given(instance=mission_Coordinate_strategy)
 @settings(max_examples=50)
-def test_mission::coordinate_instantiation(instance):
-    assert isinstance(instance, mission::Coordinate)
-
-@given(instance=mission::Coordinate_strategy)
-def test_mission::coordinate_latitude_type(instance):
-    assert isinstance(instance.latitude, float)
+def test_mission_coordinate_instantiation(instance):
+    assert isinstance(instance, mission_Coordinate)
 
 
-@given(instance=mission::Coordinate_strategy)
-def test_mission::coordinate_latitude_setter(instance):
+
+@given(instance=mission_Coordinate_strategy)
+def test_mission_coordinate_latitude_setter(instance):
     original = instance.latitude
     instance.latitude = original
     assert instance.latitude == original
 
-@given(instance=mission::Coordinate_strategy)
-def test_mission::coordinate_longitude_type(instance):
-    assert isinstance(instance.longitude, float)
 
 
-@given(instance=mission::Coordinate_strategy)
-def test_mission::coordinate_longitude_setter(instance):
+@given(instance=mission_Coordinate_strategy)
+def test_mission_coordinate_longitude_setter(instance):
     original = instance.longitude
     instance.longitude = original
     assert instance.longitude == original
 
-@given(instance=mission::Coordinate_strategy)
-def test_mission::coordinate_altitude_type(instance):
-    assert isinstance(instance.altitude, float)
 
 
-@given(instance=mission::Coordinate_strategy)
-def test_mission::coordinate_altitude_setter(instance):
+@given(instance=mission_Coordinate_strategy)
+def test_mission_coordinate_altitude_setter(instance):
     original = instance.altitude
     instance.altitude = original
     assert instance.altitude == original
 
-@given(instance=mission::Swarm_strategy)
+@given(instance=mission_Swarm_strategy)
 @settings(max_examples=50)
-def test_mission::swarm_instantiation(instance):
-    assert isinstance(instance, mission::Swarm)
+def test_mission_swarm_instantiation(instance):
+    assert isinstance(instance, mission_Swarm)
 
 @given(instance=NamedElement_strategy)
 @settings(max_examples=50)
 def test_namedelement_instantiation(instance):
     assert isinstance(instance, NamedElement)
 
-@given(instance=mission::Drone_strategy)
+@given(instance=mission_TaskDependency_strategy)
 @settings(max_examples=50)
-def test_mission::drone_instantiation(instance):
-    assert isinstance(instance, mission::Drone)
+def test_mission_taskdependency_instantiation(instance):
+    assert isinstance(instance, mission_TaskDependency)
 
-@given(instance=mission::Drone_strategy)
-def test_mission::drone_returnHome_type(instance):
-    assert isinstance(instance.returnHome, bool)
-
-
-@given(instance=mission::Drone_strategy)
-def test_mission::drone_returnHome_setter(instance):
-    original = instance.returnHome
-    instance.returnHome = original
-    assert instance.returnHome == original
-
-@given(instance=mission::Drone_strategy)
-def test_mission::drone_type_type(instance):
-    assert isinstance(instance.type, str)
+@given(instance=mission_Drone_strategy)
+@settings(max_examples=50)
+def test_mission_drone_instantiation(instance):
+    assert isinstance(instance, mission_Drone)
 
 
-@given(instance=mission::Drone_strategy)
-def test_mission::drone_type_setter(instance):
+
+@given(instance=mission_Drone_strategy)
+def test_mission_drone_type_setter(instance):
     original = instance.type
     instance.type = original
     assert instance.type == original
 
-@given(instance=mission::Task_strategy)
+
+
+@given(instance=mission_Drone_strategy)
+def test_mission_drone_returnHome_setter(instance):
+    original = instance.returnHome
+    instance.returnHome = original
+    assert instance.returnHome == original
+
+@given(instance=mission_Task_strategy)
 @settings(max_examples=50)
-def test_mission::task_instantiation(instance):
-    assert isinstance(instance, mission::Task)
+def test_mission_task_instantiation(instance):
+    assert isinstance(instance, mission_Task)
 
-@given(instance=mission::TaskDependency_strategy)
+@given(instance=mission_Mission_strategy)
 @settings(max_examples=50)
-def test_mission::taskdependency_instantiation(instance):
-    assert isinstance(instance, mission::TaskDependency)
-
-@given(instance=mission::Mission_strategy)
-@settings(max_examples=50)
-def test_mission::mission_instantiation(instance):
-    assert isinstance(instance, mission::Mission)
-
-@given(instance=mission::Mission_strategy)
-def test_mission::mission_crs_type(instance):
-    assert isinstance(instance.crs, str)
+def test_mission_mission_instantiation(instance):
+    assert isinstance(instance, mission_Mission)
 
 
-@given(instance=mission::Mission_strategy)
-def test_mission::mission_crs_setter(instance):
+
+@given(instance=mission_Mission_strategy)
+def test_mission_mission_crs_setter(instance):
     original = instance.crs
     instance.crs = original
     assert instance.crs == original
 
-@given(instance=mission::NamedElement_strategy)
+@given(instance=mission_NamedElement_strategy)
 @settings(max_examples=50)
-def test_mission::namedelement_instantiation(instance):
-    assert isinstance(instance, mission::NamedElement)
-
-@given(instance=mission::NamedElement_strategy)
-def test_mission::namedelement_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_mission_namedelement_instantiation(instance):
+    assert isinstance(instance, mission_NamedElement)
 
 
-@given(instance=mission::NamedElement_strategy)
-def test_mission::namedelement_name_setter(instance):
+
+@given(instance=mission_NamedElement_strategy)
+def test_mission_namedelement_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original

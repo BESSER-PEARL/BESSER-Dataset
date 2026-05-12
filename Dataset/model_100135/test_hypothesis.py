@@ -3,54 +3,54 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     Attribute,
     Form,
-    dbca::CustomForm,
-    dbca::EntityContainmentForm,
-    dbca::EntityForm,
+    dbca_CustomForm,
+    dbca_EntityContainmentForm,
+    dbca_EntityForm,
     ClientElement,
-    dbca::Form,
+    dbca_Form,
     Service,
-    dbca::QueryService,
-    dbca::OperationService,
-    dbca::CustomService,
-    dbca::EntityService,
+    dbca_QueryService,
+    dbca_OperationService,
+    dbca_CustomService,
+    dbca_EntityService,
     Parameter,
-    dbca::EntityParameter,
-    dbca::DataParameter,
+    dbca_EntityParameter,
+    dbca_DataParameter,
     Entity,
-    dbca::ComputedEntity,
-    dbca::PersistentEntity,
-    dbca::AbstractEntity,
+    dbca_ComputedEntity,
+    dbca_PersistentEntity,
+    dbca_AbstractEntity,
     ServerElement,
-    dbca::Service,
+    dbca_Service,
     NamedElement,
-    dbca::Server,
-    dbca::DatabaseElement,
-    dbca::Database,
-    dbca::Relationship,
-    dbca::ServerElement,
-    dbca::Client,
-    dbca::ClientElement,
-    dbca::Parameter,
-    dbca::Attribute,
-    dbca::Application,
+    dbca_DatabaseElement,
+    dbca_Database,
+    dbca_Client,
+    dbca_Attribute,
+    dbca_Parameter,
+    dbca_ServerElement,
+    dbca_Relationship,
+    dbca_Server,
+    dbca_ClientElement,
+    dbca_Application,
     CommentedElement,
-    dbca::NamedElement,
+    dbca_NamedElement,
     Element,
-    dbca::CommentedElement,
-    dbca::Element,
-    dbca::Property,
-    dbca::PrimaryProperty,
+    dbca_CommentedElement,
+    dbca_Element,
+    dbca_Property,
+    dbca_PrimaryProperty,
     DatabaseElement,
-    dbca::Query,
-    dbca::Operation,
-    dbca::Function,
-    dbca::Event,
-    dbca::Entity,
+    dbca_Function,
+    dbca_Query,
+    dbca_Operation,
+    dbca_Event,
+    dbca_Entity,
     DataType,
     RelationshipType,
     EntityFormType,
@@ -90,51 +90,51 @@ def test_form_constructor_args():
 
 
 
-def test_dbca::customform_is_not_abstract():
-    assert not inspect.isabstract(dbca::CustomForm)
+def test_dbca_customform_is_not_abstract():
+    assert not inspect.isabstract(dbca_CustomForm)
 
 
-def test_dbca::customform_constructor_exists():
-    assert callable(dbca::CustomForm.__init__)
+def test_dbca_customform_constructor_exists():
+    assert callable(dbca_CustomForm.__init__)
 
 
-def test_dbca::customform_constructor_args():
-    sig = inspect.signature(dbca::CustomForm.__init__)
+def test_dbca_customform_constructor_args():
+    sig = inspect.signature(dbca_CustomForm.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_dbca::entitycontainmentform_is_not_abstract():
-    assert not inspect.isabstract(dbca::EntityContainmentForm)
+def test_dbca_entitycontainmentform_is_not_abstract():
+    assert not inspect.isabstract(dbca_EntityContainmentForm)
 
 
-def test_dbca::entitycontainmentform_constructor_exists():
-    assert callable(dbca::EntityContainmentForm.__init__)
+def test_dbca_entitycontainmentform_constructor_exists():
+    assert callable(dbca_EntityContainmentForm.__init__)
 
 
-def test_dbca::entitycontainmentform_constructor_args():
-    sig = inspect.signature(dbca::EntityContainmentForm.__init__)
+def test_dbca_entitycontainmentform_constructor_args():
+    sig = inspect.signature(dbca_EntityContainmentForm.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_dbca::entityform_is_not_abstract():
-    assert not inspect.isabstract(dbca::EntityForm)
+def test_dbca_entityform_is_not_abstract():
+    assert not inspect.isabstract(dbca_EntityForm)
 
 
-def test_dbca::entityform_constructor_exists():
-    assert callable(dbca::EntityForm.__init__)
+def test_dbca_entityform_constructor_exists():
+    assert callable(dbca_EntityForm.__init__)
 
 
-def test_dbca::entityform_constructor_args():
-    sig = inspect.signature(dbca::EntityForm.__init__)
+def test_dbca_entityform_constructor_args():
+    sig = inspect.signature(dbca_EntityForm.__init__)
     params = list(sig.parameters.keys())
     assert "type" in params, "Missing parameter 'type'"
 
-def test_dbca::entityform_has_type():
-    assert hasattr(dbca::EntityForm, "type")
+def test_dbca_entityform_has_type():
+    assert hasattr(dbca_EntityForm, "type")
     descriptor = None
-    for klass in dbca::EntityForm.__mro__:
+    for klass in dbca_EntityForm.__mro__:
         if "type" in klass.__dict__:
             descriptor = klass.__dict__["type"]
             break
@@ -156,16 +156,16 @@ def test_clientelement_constructor_args():
 
 
 
-def test_dbca::form_is_not_abstract():
-    assert not inspect.isabstract(dbca::Form)
+def test_dbca_form_is_not_abstract():
+    assert not inspect.isabstract(dbca_Form)
 
 
-def test_dbca::form_constructor_exists():
-    assert callable(dbca::Form.__init__)
+def test_dbca_form_constructor_exists():
+    assert callable(dbca_Form.__init__)
 
 
-def test_dbca::form_constructor_args():
-    sig = inspect.signature(dbca::Form.__init__)
+def test_dbca_form_constructor_args():
+    sig = inspect.signature(dbca_Form.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -184,58 +184,58 @@ def test_service_constructor_args():
 
 
 
-def test_dbca::queryservice_is_not_abstract():
-    assert not inspect.isabstract(dbca::QueryService)
+def test_dbca_queryservice_is_not_abstract():
+    assert not inspect.isabstract(dbca_QueryService)
 
 
-def test_dbca::queryservice_constructor_exists():
-    assert callable(dbca::QueryService.__init__)
+def test_dbca_queryservice_constructor_exists():
+    assert callable(dbca_QueryService.__init__)
 
 
-def test_dbca::queryservice_constructor_args():
-    sig = inspect.signature(dbca::QueryService.__init__)
+def test_dbca_queryservice_constructor_args():
+    sig = inspect.signature(dbca_QueryService.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_dbca::operationservice_is_not_abstract():
-    assert not inspect.isabstract(dbca::OperationService)
+def test_dbca_operationservice_is_not_abstract():
+    assert not inspect.isabstract(dbca_OperationService)
 
 
-def test_dbca::operationservice_constructor_exists():
-    assert callable(dbca::OperationService.__init__)
+def test_dbca_operationservice_constructor_exists():
+    assert callable(dbca_OperationService.__init__)
 
 
-def test_dbca::operationservice_constructor_args():
-    sig = inspect.signature(dbca::OperationService.__init__)
+def test_dbca_operationservice_constructor_args():
+    sig = inspect.signature(dbca_OperationService.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_dbca::customservice_is_not_abstract():
-    assert not inspect.isabstract(dbca::CustomService)
+def test_dbca_customservice_is_not_abstract():
+    assert not inspect.isabstract(dbca_CustomService)
 
 
-def test_dbca::customservice_constructor_exists():
-    assert callable(dbca::CustomService.__init__)
+def test_dbca_customservice_constructor_exists():
+    assert callable(dbca_CustomService.__init__)
 
 
-def test_dbca::customservice_constructor_args():
-    sig = inspect.signature(dbca::CustomService.__init__)
+def test_dbca_customservice_constructor_args():
+    sig = inspect.signature(dbca_CustomService.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_dbca::entityservice_is_not_abstract():
-    assert not inspect.isabstract(dbca::EntityService)
+def test_dbca_entityservice_is_not_abstract():
+    assert not inspect.isabstract(dbca_EntityService)
 
 
-def test_dbca::entityservice_constructor_exists():
-    assert callable(dbca::EntityService.__init__)
+def test_dbca_entityservice_constructor_exists():
+    assert callable(dbca_EntityService.__init__)
 
 
-def test_dbca::entityservice_constructor_args():
-    sig = inspect.signature(dbca::EntityService.__init__)
+def test_dbca_entityservice_constructor_args():
+    sig = inspect.signature(dbca_EntityService.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -254,37 +254,37 @@ def test_parameter_constructor_args():
 
 
 
-def test_dbca::entityparameter_is_not_abstract():
-    assert not inspect.isabstract(dbca::EntityParameter)
+def test_dbca_entityparameter_is_not_abstract():
+    assert not inspect.isabstract(dbca_EntityParameter)
 
 
-def test_dbca::entityparameter_constructor_exists():
-    assert callable(dbca::EntityParameter.__init__)
+def test_dbca_entityparameter_constructor_exists():
+    assert callable(dbca_EntityParameter.__init__)
 
 
-def test_dbca::entityparameter_constructor_args():
-    sig = inspect.signature(dbca::EntityParameter.__init__)
+def test_dbca_entityparameter_constructor_args():
+    sig = inspect.signature(dbca_EntityParameter.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_dbca::dataparameter_is_not_abstract():
-    assert not inspect.isabstract(dbca::DataParameter)
+def test_dbca_dataparameter_is_not_abstract():
+    assert not inspect.isabstract(dbca_DataParameter)
 
 
-def test_dbca::dataparameter_constructor_exists():
-    assert callable(dbca::DataParameter.__init__)
+def test_dbca_dataparameter_constructor_exists():
+    assert callable(dbca_DataParameter.__init__)
 
 
-def test_dbca::dataparameter_constructor_args():
-    sig = inspect.signature(dbca::DataParameter.__init__)
+def test_dbca_dataparameter_constructor_args():
+    sig = inspect.signature(dbca_DataParameter.__init__)
     params = list(sig.parameters.keys())
     assert "type" in params, "Missing parameter 'type'"
 
-def test_dbca::dataparameter_has_type():
-    assert hasattr(dbca::DataParameter, "type")
+def test_dbca_dataparameter_has_type():
+    assert hasattr(dbca_DataParameter, "type")
     descriptor = None
-    for klass in dbca::DataParameter.__mro__:
+    for klass in dbca_DataParameter.__mro__:
         if "type" in klass.__dict__:
             descriptor = klass.__dict__["type"]
             break
@@ -306,44 +306,44 @@ def test_entity_constructor_args():
 
 
 
-def test_dbca::computedentity_is_not_abstract():
-    assert not inspect.isabstract(dbca::ComputedEntity)
+def test_dbca_computedentity_is_not_abstract():
+    assert not inspect.isabstract(dbca_ComputedEntity)
 
 
-def test_dbca::computedentity_constructor_exists():
-    assert callable(dbca::ComputedEntity.__init__)
+def test_dbca_computedentity_constructor_exists():
+    assert callable(dbca_ComputedEntity.__init__)
 
 
-def test_dbca::computedentity_constructor_args():
-    sig = inspect.signature(dbca::ComputedEntity.__init__)
+def test_dbca_computedentity_constructor_args():
+    sig = inspect.signature(dbca_ComputedEntity.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_dbca::persistententity_is_not_abstract():
-    assert not inspect.isabstract(dbca::PersistentEntity)
+def test_dbca_persistententity_is_not_abstract():
+    assert not inspect.isabstract(dbca_PersistentEntity)
 
 
-def test_dbca::persistententity_constructor_exists():
-    assert callable(dbca::PersistentEntity.__init__)
+def test_dbca_persistententity_constructor_exists():
+    assert callable(dbca_PersistentEntity.__init__)
 
 
-def test_dbca::persistententity_constructor_args():
-    sig = inspect.signature(dbca::PersistentEntity.__init__)
+def test_dbca_persistententity_constructor_args():
+    sig = inspect.signature(dbca_PersistentEntity.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_dbca::abstractentity_is_not_abstract():
-    assert not inspect.isabstract(dbca::AbstractEntity)
+def test_dbca_abstractentity_is_not_abstract():
+    assert not inspect.isabstract(dbca_AbstractEntity)
 
 
-def test_dbca::abstractentity_constructor_exists():
-    assert callable(dbca::AbstractEntity.__init__)
+def test_dbca_abstractentity_constructor_exists():
+    assert callable(dbca_AbstractEntity.__init__)
 
 
-def test_dbca::abstractentity_constructor_args():
-    sig = inspect.signature(dbca::AbstractEntity.__init__)
+def test_dbca_abstractentity_constructor_args():
+    sig = inspect.signature(dbca_AbstractEntity.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -362,16 +362,16 @@ def test_serverelement_constructor_args():
 
 
 
-def test_dbca::service_is_not_abstract():
-    assert not inspect.isabstract(dbca::Service)
+def test_dbca_service_is_not_abstract():
+    assert not inspect.isabstract(dbca_Service)
 
 
-def test_dbca::service_constructor_exists():
-    assert callable(dbca::Service.__init__)
+def test_dbca_service_constructor_exists():
+    assert callable(dbca_Service.__init__)
 
 
-def test_dbca::service_constructor_args():
-    sig = inspect.signature(dbca::Service.__init__)
+def test_dbca_service_constructor_args():
+    sig = inspect.signature(dbca_Service.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -390,175 +390,75 @@ def test_namedelement_constructor_args():
 
 
 
-def test_dbca::server_is_not_abstract():
-    assert not inspect.isabstract(dbca::Server)
+def test_dbca_databaseelement_is_not_abstract():
+    assert not inspect.isabstract(dbca_DatabaseElement)
 
 
-def test_dbca::server_constructor_exists():
-    assert callable(dbca::Server.__init__)
+def test_dbca_databaseelement_constructor_exists():
+    assert callable(dbca_DatabaseElement.__init__)
 
 
-def test_dbca::server_constructor_args():
-    sig = inspect.signature(dbca::Server.__init__)
+def test_dbca_databaseelement_constructor_args():
+    sig = inspect.signature(dbca_DatabaseElement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_dbca::databaseelement_is_not_abstract():
-    assert not inspect.isabstract(dbca::DatabaseElement)
+def test_dbca_database_is_not_abstract():
+    assert not inspect.isabstract(dbca_Database)
 
 
-def test_dbca::databaseelement_constructor_exists():
-    assert callable(dbca::DatabaseElement.__init__)
+def test_dbca_database_constructor_exists():
+    assert callable(dbca_Database.__init__)
 
 
-def test_dbca::databaseelement_constructor_args():
-    sig = inspect.signature(dbca::DatabaseElement.__init__)
+def test_dbca_database_constructor_args():
+    sig = inspect.signature(dbca_Database.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_dbca::database_is_not_abstract():
-    assert not inspect.isabstract(dbca::Database)
+def test_dbca_client_is_not_abstract():
+    assert not inspect.isabstract(dbca_Client)
 
 
-def test_dbca::database_constructor_exists():
-    assert callable(dbca::Database.__init__)
+def test_dbca_client_constructor_exists():
+    assert callable(dbca_Client.__init__)
 
 
-def test_dbca::database_constructor_args():
-    sig = inspect.signature(dbca::Database.__init__)
+def test_dbca_client_constructor_args():
+    sig = inspect.signature(dbca_Client.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_dbca::relationship_is_not_abstract():
-    assert not inspect.isabstract(dbca::Relationship)
+def test_dbca_attribute_is_not_abstract():
+    assert not inspect.isabstract(dbca_Attribute)
 
 
-def test_dbca::relationship_constructor_exists():
-    assert callable(dbca::Relationship.__init__)
+def test_dbca_attribute_constructor_exists():
+    assert callable(dbca_Attribute.__init__)
 
 
-def test_dbca::relationship_constructor_args():
-    sig = inspect.signature(dbca::Relationship.__init__)
-    params = list(sig.parameters.keys())
-    assert "isNullable" in params, "Missing parameter 'isNullable'"
-    assert "isContainment" in params, "Missing parameter 'isContainment'"
-    assert "type" in params, "Missing parameter 'type'"
-
-def test_dbca::relationship_has_isNullable():
-    assert hasattr(dbca::Relationship, "isNullable")
-    descriptor = None
-    for klass in dbca::Relationship.__mro__:
-        if "isNullable" in klass.__dict__:
-            descriptor = klass.__dict__["isNullable"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_dbca::relationship_has_isContainment():
-    assert hasattr(dbca::Relationship, "isContainment")
-    descriptor = None
-    for klass in dbca::Relationship.__mro__:
-        if "isContainment" in klass.__dict__:
-            descriptor = klass.__dict__["isContainment"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_dbca::relationship_has_type():
-    assert hasattr(dbca::Relationship, "type")
-    descriptor = None
-    for klass in dbca::Relationship.__mro__:
-        if "type" in klass.__dict__:
-            descriptor = klass.__dict__["type"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_dbca::serverelement_is_not_abstract():
-    assert not inspect.isabstract(dbca::ServerElement)
-
-
-def test_dbca::serverelement_constructor_exists():
-    assert callable(dbca::ServerElement.__init__)
-
-
-def test_dbca::serverelement_constructor_args():
-    sig = inspect.signature(dbca::ServerElement.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_dbca::client_is_not_abstract():
-    assert not inspect.isabstract(dbca::Client)
-
-
-def test_dbca::client_constructor_exists():
-    assert callable(dbca::Client.__init__)
-
-
-def test_dbca::client_constructor_args():
-    sig = inspect.signature(dbca::Client.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_dbca::clientelement_is_not_abstract():
-    assert not inspect.isabstract(dbca::ClientElement)
-
-
-def test_dbca::clientelement_constructor_exists():
-    assert callable(dbca::ClientElement.__init__)
-
-
-def test_dbca::clientelement_constructor_args():
-    sig = inspect.signature(dbca::ClientElement.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_dbca::parameter_is_not_abstract():
-    assert not inspect.isabstract(dbca::Parameter)
-
-
-def test_dbca::parameter_constructor_exists():
-    assert callable(dbca::Parameter.__init__)
-
-
-def test_dbca::parameter_constructor_args():
-    sig = inspect.signature(dbca::Parameter.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_dbca::attribute_is_not_abstract():
-    assert not inspect.isabstract(dbca::Attribute)
-
-
-def test_dbca::attribute_constructor_exists():
-    assert callable(dbca::Attribute.__init__)
-
-
-def test_dbca::attribute_constructor_args():
-    sig = inspect.signature(dbca::Attribute.__init__)
+def test_dbca_attribute_constructor_args():
+    sig = inspect.signature(dbca_Attribute.__init__)
     params = list(sig.parameters.keys())
     assert "maxLength" in params, "Missing parameter 'maxLength'"
     assert "type" in params, "Missing parameter 'type'"
 
-def test_dbca::attribute_has_maxLength():
-    assert hasattr(dbca::Attribute, "maxLength")
+def test_dbca_attribute_has_maxLength():
+    assert hasattr(dbca_Attribute, "maxLength")
     descriptor = None
-    for klass in dbca::Attribute.__mro__:
+    for klass in dbca_Attribute.__mro__:
         if "maxLength" in klass.__dict__:
             descriptor = klass.__dict__["maxLength"]
             break
     assert isinstance(descriptor, property)
 
-def test_dbca::attribute_has_type():
-    assert hasattr(dbca::Attribute, "type")
+def test_dbca_attribute_has_type():
+    assert hasattr(dbca_Attribute, "type")
     descriptor = None
-    for klass in dbca::Attribute.__mro__:
+    for klass in dbca_Attribute.__mro__:
         if "type" in klass.__dict__:
             descriptor = klass.__dict__["type"]
             break
@@ -566,16 +466,116 @@ def test_dbca::attribute_has_type():
 
 
 
-def test_dbca::application_is_not_abstract():
-    assert not inspect.isabstract(dbca::Application)
+def test_dbca_parameter_is_not_abstract():
+    assert not inspect.isabstract(dbca_Parameter)
 
 
-def test_dbca::application_constructor_exists():
-    assert callable(dbca::Application.__init__)
+def test_dbca_parameter_constructor_exists():
+    assert callable(dbca_Parameter.__init__)
 
 
-def test_dbca::application_constructor_args():
-    sig = inspect.signature(dbca::Application.__init__)
+def test_dbca_parameter_constructor_args():
+    sig = inspect.signature(dbca_Parameter.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_dbca_serverelement_is_not_abstract():
+    assert not inspect.isabstract(dbca_ServerElement)
+
+
+def test_dbca_serverelement_constructor_exists():
+    assert callable(dbca_ServerElement.__init__)
+
+
+def test_dbca_serverelement_constructor_args():
+    sig = inspect.signature(dbca_ServerElement.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_dbca_relationship_is_not_abstract():
+    assert not inspect.isabstract(dbca_Relationship)
+
+
+def test_dbca_relationship_constructor_exists():
+    assert callable(dbca_Relationship.__init__)
+
+
+def test_dbca_relationship_constructor_args():
+    sig = inspect.signature(dbca_Relationship.__init__)
+    params = list(sig.parameters.keys())
+    assert "isNullable" in params, "Missing parameter 'isNullable'"
+    assert "type" in params, "Missing parameter 'type'"
+    assert "isContainment" in params, "Missing parameter 'isContainment'"
+
+def test_dbca_relationship_has_isNullable():
+    assert hasattr(dbca_Relationship, "isNullable")
+    descriptor = None
+    for klass in dbca_Relationship.__mro__:
+        if "isNullable" in klass.__dict__:
+            descriptor = klass.__dict__["isNullable"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_dbca_relationship_has_type():
+    assert hasattr(dbca_Relationship, "type")
+    descriptor = None
+    for klass in dbca_Relationship.__mro__:
+        if "type" in klass.__dict__:
+            descriptor = klass.__dict__["type"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_dbca_relationship_has_isContainment():
+    assert hasattr(dbca_Relationship, "isContainment")
+    descriptor = None
+    for klass in dbca_Relationship.__mro__:
+        if "isContainment" in klass.__dict__:
+            descriptor = klass.__dict__["isContainment"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_dbca_server_is_not_abstract():
+    assert not inspect.isabstract(dbca_Server)
+
+
+def test_dbca_server_constructor_exists():
+    assert callable(dbca_Server.__init__)
+
+
+def test_dbca_server_constructor_args():
+    sig = inspect.signature(dbca_Server.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_dbca_clientelement_is_not_abstract():
+    assert not inspect.isabstract(dbca_ClientElement)
+
+
+def test_dbca_clientelement_constructor_exists():
+    assert callable(dbca_ClientElement.__init__)
+
+
+def test_dbca_clientelement_constructor_args():
+    sig = inspect.signature(dbca_ClientElement.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_dbca_application_is_not_abstract():
+    assert not inspect.isabstract(dbca_Application)
+
+
+def test_dbca_application_constructor_exists():
+    assert callable(dbca_Application.__init__)
+
+
+def test_dbca_application_constructor_args():
+    sig = inspect.signature(dbca_Application.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -594,23 +594,23 @@ def test_commentedelement_constructor_args():
 
 
 
-def test_dbca::namedelement_is_not_abstract():
-    assert not inspect.isabstract(dbca::NamedElement)
+def test_dbca_namedelement_is_not_abstract():
+    assert not inspect.isabstract(dbca_NamedElement)
 
 
-def test_dbca::namedelement_constructor_exists():
-    assert callable(dbca::NamedElement.__init__)
+def test_dbca_namedelement_constructor_exists():
+    assert callable(dbca_NamedElement.__init__)
 
 
-def test_dbca::namedelement_constructor_args():
-    sig = inspect.signature(dbca::NamedElement.__init__)
+def test_dbca_namedelement_constructor_args():
+    sig = inspect.signature(dbca_NamedElement.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_dbca::namedelement_has_name():
-    assert hasattr(dbca::NamedElement, "name")
+def test_dbca_namedelement_has_name():
+    assert hasattr(dbca_NamedElement, "name")
     descriptor = None
-    for klass in dbca::NamedElement.__mro__:
+    for klass in dbca_NamedElement.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -632,23 +632,23 @@ def test_element_constructor_args():
 
 
 
-def test_dbca::commentedelement_is_not_abstract():
-    assert not inspect.isabstract(dbca::CommentedElement)
+def test_dbca_commentedelement_is_not_abstract():
+    assert not inspect.isabstract(dbca_CommentedElement)
 
 
-def test_dbca::commentedelement_constructor_exists():
-    assert callable(dbca::CommentedElement.__init__)
+def test_dbca_commentedelement_constructor_exists():
+    assert callable(dbca_CommentedElement.__init__)
 
 
-def test_dbca::commentedelement_constructor_args():
-    sig = inspect.signature(dbca::CommentedElement.__init__)
+def test_dbca_commentedelement_constructor_args():
+    sig = inspect.signature(dbca_CommentedElement.__init__)
     params = list(sig.parameters.keys())
     assert "comment" in params, "Missing parameter 'comment'"
 
-def test_dbca::commentedelement_has_comment():
-    assert hasattr(dbca::CommentedElement, "comment")
+def test_dbca_commentedelement_has_comment():
+    assert hasattr(dbca_CommentedElement, "comment")
     descriptor = None
-    for klass in dbca::CommentedElement.__mro__:
+    for klass in dbca_CommentedElement.__mro__:
         if "comment" in klass.__dict__:
             descriptor = klass.__dict__["comment"]
             break
@@ -656,47 +656,47 @@ def test_dbca::commentedelement_has_comment():
 
 
 
-def test_dbca::element_is_not_abstract():
-    assert not inspect.isabstract(dbca::Element)
+def test_dbca_element_is_not_abstract():
+    assert not inspect.isabstract(dbca_Element)
 
 
-def test_dbca::element_constructor_exists():
-    assert callable(dbca::Element.__init__)
+def test_dbca_element_constructor_exists():
+    assert callable(dbca_Element.__init__)
 
 
-def test_dbca::element_constructor_args():
-    sig = inspect.signature(dbca::Element.__init__)
+def test_dbca_element_constructor_args():
+    sig = inspect.signature(dbca_Element.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_dbca::property_is_not_abstract():
-    assert not inspect.isabstract(dbca::Property)
+def test_dbca_property_is_not_abstract():
+    assert not inspect.isabstract(dbca_Property)
 
 
-def test_dbca::property_constructor_exists():
-    assert callable(dbca::Property.__init__)
+def test_dbca_property_constructor_exists():
+    assert callable(dbca_Property.__init__)
 
 
-def test_dbca::property_constructor_args():
-    sig = inspect.signature(dbca::Property.__init__)
+def test_dbca_property_constructor_args():
+    sig = inspect.signature(dbca_Property.__init__)
     params = list(sig.parameters.keys())
     assert "isNullable" in params, "Missing parameter 'isNullable'"
     assert "defaultValue" in params, "Missing parameter 'defaultValue'"
 
-def test_dbca::property_has_isNullable():
-    assert hasattr(dbca::Property, "isNullable")
+def test_dbca_property_has_isNullable():
+    assert hasattr(dbca_Property, "isNullable")
     descriptor = None
-    for klass in dbca::Property.__mro__:
+    for klass in dbca_Property.__mro__:
         if "isNullable" in klass.__dict__:
             descriptor = klass.__dict__["isNullable"]
             break
     assert isinstance(descriptor, property)
 
-def test_dbca::property_has_defaultValue():
-    assert hasattr(dbca::Property, "defaultValue")
+def test_dbca_property_has_defaultValue():
+    assert hasattr(dbca_Property, "defaultValue")
     descriptor = None
-    for klass in dbca::Property.__mro__:
+    for klass in dbca_Property.__mro__:
         if "defaultValue" in klass.__dict__:
             descriptor = klass.__dict__["defaultValue"]
             break
@@ -704,16 +704,16 @@ def test_dbca::property_has_defaultValue():
 
 
 
-def test_dbca::primaryproperty_is_not_abstract():
-    assert not inspect.isabstract(dbca::PrimaryProperty)
+def test_dbca_primaryproperty_is_not_abstract():
+    assert not inspect.isabstract(dbca_PrimaryProperty)
 
 
-def test_dbca::primaryproperty_constructor_exists():
-    assert callable(dbca::PrimaryProperty.__init__)
+def test_dbca_primaryproperty_constructor_exists():
+    assert callable(dbca_PrimaryProperty.__init__)
 
 
-def test_dbca::primaryproperty_constructor_args():
-    sig = inspect.signature(dbca::PrimaryProperty.__init__)
+def test_dbca_primaryproperty_constructor_args():
+    sig = inspect.signature(dbca_PrimaryProperty.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -732,51 +732,23 @@ def test_databaseelement_constructor_args():
 
 
 
-def test_dbca::query_is_not_abstract():
-    assert not inspect.isabstract(dbca::Query)
+def test_dbca_function_is_not_abstract():
+    assert not inspect.isabstract(dbca_Function)
 
 
-def test_dbca::query_constructor_exists():
-    assert callable(dbca::Query.__init__)
+def test_dbca_function_constructor_exists():
+    assert callable(dbca_Function.__init__)
 
 
-def test_dbca::query_constructor_args():
-    sig = inspect.signature(dbca::Query.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_dbca::operation_is_not_abstract():
-    assert not inspect.isabstract(dbca::Operation)
-
-
-def test_dbca::operation_constructor_exists():
-    assert callable(dbca::Operation.__init__)
-
-
-def test_dbca::operation_constructor_args():
-    sig = inspect.signature(dbca::Operation.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_dbca::function_is_not_abstract():
-    assert not inspect.isabstract(dbca::Function)
-
-
-def test_dbca::function_constructor_exists():
-    assert callable(dbca::Function.__init__)
-
-
-def test_dbca::function_constructor_args():
-    sig = inspect.signature(dbca::Function.__init__)
+def test_dbca_function_constructor_args():
+    sig = inspect.signature(dbca_Function.__init__)
     params = list(sig.parameters.keys())
     assert "returnType" in params, "Missing parameter 'returnType'"
 
-def test_dbca::function_has_returnType():
-    assert hasattr(dbca::Function, "returnType")
+def test_dbca_function_has_returnType():
+    assert hasattr(dbca_Function, "returnType")
     descriptor = None
-    for klass in dbca::Function.__mro__:
+    for klass in dbca_Function.__mro__:
         if "returnType" in klass.__dict__:
             descriptor = klass.__dict__["returnType"]
             break
@@ -784,30 +756,58 @@ def test_dbca::function_has_returnType():
 
 
 
-def test_dbca::event_is_not_abstract():
-    assert not inspect.isabstract(dbca::Event)
+def test_dbca_query_is_not_abstract():
+    assert not inspect.isabstract(dbca_Query)
 
 
-def test_dbca::event_constructor_exists():
-    assert callable(dbca::Event.__init__)
+def test_dbca_query_constructor_exists():
+    assert callable(dbca_Query.__init__)
 
 
-def test_dbca::event_constructor_args():
-    sig = inspect.signature(dbca::Event.__init__)
+def test_dbca_query_constructor_args():
+    sig = inspect.signature(dbca_Query.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_dbca::entity_is_not_abstract():
-    assert not inspect.isabstract(dbca::Entity)
+def test_dbca_operation_is_not_abstract():
+    assert not inspect.isabstract(dbca_Operation)
 
 
-def test_dbca::entity_constructor_exists():
-    assert callable(dbca::Entity.__init__)
+def test_dbca_operation_constructor_exists():
+    assert callable(dbca_Operation.__init__)
 
 
-def test_dbca::entity_constructor_args():
-    sig = inspect.signature(dbca::Entity.__init__)
+def test_dbca_operation_constructor_args():
+    sig = inspect.signature(dbca_Operation.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_dbca_event_is_not_abstract():
+    assert not inspect.isabstract(dbca_Event)
+
+
+def test_dbca_event_constructor_exists():
+    assert callable(dbca_Event.__init__)
+
+
+def test_dbca_event_constructor_args():
+    sig = inspect.signature(dbca_Event.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_dbca_entity_is_not_abstract():
+    assert not inspect.isabstract(dbca_Entity)
+
+
+def test_dbca_entity_constructor_exists():
+    assert callable(dbca_Entity.__init__)
+
+
+def test_dbca_entity_constructor_args():
+    sig = inspect.signature(dbca_Entity.__init__)
     params = list(sig.parameters.keys())
 
 def test_datatype_exists():
@@ -818,16 +818,16 @@ def test_datatype_has_all_literals():
     # Collect the names of literals in this Enumeration
     enum_literals = [lit.name for lit in DataType]
     expected_literals = [
-        "Date",
-        "Blob",
-        "GUID",
-        "Bool",
-        "String",
         "Real",
         "Char",
         "DateTime",
+        "Blob",
+        "Date",
         "Time",
+        "String",
         "Integer",
+        "Bool",
+        "GUID",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
@@ -841,10 +841,10 @@ def test_relationshiptype_has_all_literals():
     # Collect the names of literals in this Enumeration
     enum_literals = [lit.name for lit in RelationshipType]
     expected_literals = [
-        "ManyToMany",
         "OneToOne",
         "ManyToOne",
         "OneToMany",
+        "ManyToMany",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
@@ -858,10 +858,10 @@ def test_entityformtype_has_all_literals():
     # Collect the names of literals in this Enumeration
     enum_literals = [lit.name for lit in EntityFormType]
     expected_literals = [
-        "Insert",
-        "Delete",
-        "Select",
         "Update",
+        "Select",
+        "Delete",
+        "Insert",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
@@ -885,158 +885,158 @@ Attribute_strategy = st.builds(
 Form_strategy = st.builds(
     Form,
 )
-dbca::CustomForm_strategy = st.builds(
-    dbca::CustomForm,
+dbca_CustomForm_strategy = st.builds(
+    dbca_CustomForm,
 )
-dbca::EntityContainmentForm_strategy = st.builds(
-    dbca::EntityContainmentForm,
+dbca_EntityContainmentForm_strategy = st.builds(
+    dbca_EntityContainmentForm,
 )
-dbca::EntityForm_strategy = st.builds(
-    dbca::EntityForm,
+dbca_EntityForm_strategy = st.builds(
+    dbca_EntityForm,
     type=
         safe_text
 )
 ClientElement_strategy = st.builds(
     ClientElement,
 )
-dbca::Form_strategy = st.builds(
-    dbca::Form,
+dbca_Form_strategy = st.builds(
+    dbca_Form,
 )
 Service_strategy = st.builds(
     Service,
 )
-dbca::QueryService_strategy = st.builds(
-    dbca::QueryService,
+dbca_QueryService_strategy = st.builds(
+    dbca_QueryService,
 )
-dbca::OperationService_strategy = st.builds(
-    dbca::OperationService,
+dbca_OperationService_strategy = st.builds(
+    dbca_OperationService,
 )
-dbca::CustomService_strategy = st.builds(
-    dbca::CustomService,
+dbca_CustomService_strategy = st.builds(
+    dbca_CustomService,
 )
-dbca::EntityService_strategy = st.builds(
-    dbca::EntityService,
+dbca_EntityService_strategy = st.builds(
+    dbca_EntityService,
 )
 Parameter_strategy = st.builds(
     Parameter,
 )
-dbca::EntityParameter_strategy = st.builds(
-    dbca::EntityParameter,
+dbca_EntityParameter_strategy = st.builds(
+    dbca_EntityParameter,
 )
-dbca::DataParameter_strategy = st.builds(
-    dbca::DataParameter,
+dbca_DataParameter_strategy = st.builds(
+    dbca_DataParameter,
     type=
         safe_text
 )
 Entity_strategy = st.builds(
     Entity,
 )
-dbca::ComputedEntity_strategy = st.builds(
-    dbca::ComputedEntity,
+dbca_ComputedEntity_strategy = st.builds(
+    dbca_ComputedEntity,
 )
-dbca::PersistentEntity_strategy = st.builds(
-    dbca::PersistentEntity,
+dbca_PersistentEntity_strategy = st.builds(
+    dbca_PersistentEntity,
 )
-dbca::AbstractEntity_strategy = st.builds(
-    dbca::AbstractEntity,
+dbca_AbstractEntity_strategy = st.builds(
+    dbca_AbstractEntity,
 )
 ServerElement_strategy = st.builds(
     ServerElement,
 )
-dbca::Service_strategy = st.builds(
-    dbca::Service,
+dbca_Service_strategy = st.builds(
+    dbca_Service,
 )
 NamedElement_strategy = st.builds(
     NamedElement,
 )
-dbca::Server_strategy = st.builds(
-    dbca::Server,
+dbca_DatabaseElement_strategy = st.builds(
+    dbca_DatabaseElement,
 )
-dbca::DatabaseElement_strategy = st.builds(
-    dbca::DatabaseElement,
+dbca_Database_strategy = st.builds(
+    dbca_Database,
 )
-dbca::Database_strategy = st.builds(
-    dbca::Database,
+dbca_Client_strategy = st.builds(
+    dbca_Client,
 )
-dbca::Relationship_strategy = st.builds(
-    dbca::Relationship,
-    isNullable=
-        st.booleans(),
-    isContainment=
-        safe_text,
-    type=
-        safe_text
-)
-dbca::ServerElement_strategy = st.builds(
-    dbca::ServerElement,
-)
-dbca::Client_strategy = st.builds(
-    dbca::Client,
-)
-dbca::ClientElement_strategy = st.builds(
-    dbca::ClientElement,
-)
-dbca::Parameter_strategy = st.builds(
-    dbca::Parameter,
-)
-dbca::Attribute_strategy = st.builds(
-    dbca::Attribute,
+dbca_Attribute_strategy = st.builds(
+    dbca_Attribute,
     maxLength=
         st.integers(),
     type=
         safe_text
 )
-dbca::Application_strategy = st.builds(
-    dbca::Application,
+dbca_Parameter_strategy = st.builds(
+    dbca_Parameter,
+)
+dbca_ServerElement_strategy = st.builds(
+    dbca_ServerElement,
+)
+dbca_Relationship_strategy = st.builds(
+    dbca_Relationship,
+    isNullable=
+        st.booleans(),
+    type=
+        safe_text,
+    isContainment=
+        safe_text
+)
+dbca_Server_strategy = st.builds(
+    dbca_Server,
+)
+dbca_ClientElement_strategy = st.builds(
+    dbca_ClientElement,
+)
+dbca_Application_strategy = st.builds(
+    dbca_Application,
 )
 CommentedElement_strategy = st.builds(
     CommentedElement,
 )
-dbca::NamedElement_strategy = st.builds(
-    dbca::NamedElement,
+dbca_NamedElement_strategy = st.builds(
+    dbca_NamedElement,
     name=
         safe_text
 )
 Element_strategy = st.builds(
     Element,
 )
-dbca::CommentedElement_strategy = st.builds(
-    dbca::CommentedElement,
+dbca_CommentedElement_strategy = st.builds(
+    dbca_CommentedElement,
     comment=
         safe_text
 )
-dbca::Element_strategy = st.builds(
-    dbca::Element,
+dbca_Element_strategy = st.builds(
+    dbca_Element,
 )
-dbca::Property_strategy = st.builds(
-    dbca::Property,
+dbca_Property_strategy = st.builds(
+    dbca_Property,
     isNullable=
         st.booleans(),
     defaultValue=
         safe_text
 )
-dbca::PrimaryProperty_strategy = st.builds(
-    dbca::PrimaryProperty,
+dbca_PrimaryProperty_strategy = st.builds(
+    dbca_PrimaryProperty,
 )
 DatabaseElement_strategy = st.builds(
     DatabaseElement,
 )
-dbca::Query_strategy = st.builds(
-    dbca::Query,
-)
-dbca::Operation_strategy = st.builds(
-    dbca::Operation,
-)
-dbca::Function_strategy = st.builds(
-    dbca::Function,
+dbca_Function_strategy = st.builds(
+    dbca_Function,
     returnType=
         safe_text
 )
-dbca::Event_strategy = st.builds(
-    dbca::Event,
+dbca_Query_strategy = st.builds(
+    dbca_Query,
 )
-dbca::Entity_strategy = st.builds(
-    dbca::Entity,
+dbca_Operation_strategy = st.builds(
+    dbca_Operation,
+)
+dbca_Event_strategy = st.builds(
+    dbca_Event,
+)
+dbca_Entity_strategy = st.builds(
+    dbca_Entity,
 )
 
 @given(instance=Attribute_strategy)
@@ -1049,28 +1049,25 @@ def test_attribute_instantiation(instance):
 def test_form_instantiation(instance):
     assert isinstance(instance, Form)
 
-@given(instance=dbca::CustomForm_strategy)
+@given(instance=dbca_CustomForm_strategy)
 @settings(max_examples=50)
-def test_dbca::customform_instantiation(instance):
-    assert isinstance(instance, dbca::CustomForm)
+def test_dbca_customform_instantiation(instance):
+    assert isinstance(instance, dbca_CustomForm)
 
-@given(instance=dbca::EntityContainmentForm_strategy)
+@given(instance=dbca_EntityContainmentForm_strategy)
 @settings(max_examples=50)
-def test_dbca::entitycontainmentform_instantiation(instance):
-    assert isinstance(instance, dbca::EntityContainmentForm)
+def test_dbca_entitycontainmentform_instantiation(instance):
+    assert isinstance(instance, dbca_EntityContainmentForm)
 
-@given(instance=dbca::EntityForm_strategy)
+@given(instance=dbca_EntityForm_strategy)
 @settings(max_examples=50)
-def test_dbca::entityform_instantiation(instance):
-    assert isinstance(instance, dbca::EntityForm)
-
-@given(instance=dbca::EntityForm_strategy)
-def test_dbca::entityform_type_type(instance):
-    assert isinstance(instance.type, str)
+def test_dbca_entityform_instantiation(instance):
+    assert isinstance(instance, dbca_EntityForm)
 
 
-@given(instance=dbca::EntityForm_strategy)
-def test_dbca::entityform_type_setter(instance):
+
+@given(instance=dbca_EntityForm_strategy)
+def test_dbca_entityform_type_setter(instance):
     original = instance.type
     instance.type = original
     assert instance.type == original
@@ -1080,58 +1077,55 @@ def test_dbca::entityform_type_setter(instance):
 def test_clientelement_instantiation(instance):
     assert isinstance(instance, ClientElement)
 
-@given(instance=dbca::Form_strategy)
+@given(instance=dbca_Form_strategy)
 @settings(max_examples=50)
-def test_dbca::form_instantiation(instance):
-    assert isinstance(instance, dbca::Form)
+def test_dbca_form_instantiation(instance):
+    assert isinstance(instance, dbca_Form)
 
 @given(instance=Service_strategy)
 @settings(max_examples=50)
 def test_service_instantiation(instance):
     assert isinstance(instance, Service)
 
-@given(instance=dbca::QueryService_strategy)
+@given(instance=dbca_QueryService_strategy)
 @settings(max_examples=50)
-def test_dbca::queryservice_instantiation(instance):
-    assert isinstance(instance, dbca::QueryService)
+def test_dbca_queryservice_instantiation(instance):
+    assert isinstance(instance, dbca_QueryService)
 
-@given(instance=dbca::OperationService_strategy)
+@given(instance=dbca_OperationService_strategy)
 @settings(max_examples=50)
-def test_dbca::operationservice_instantiation(instance):
-    assert isinstance(instance, dbca::OperationService)
+def test_dbca_operationservice_instantiation(instance):
+    assert isinstance(instance, dbca_OperationService)
 
-@given(instance=dbca::CustomService_strategy)
+@given(instance=dbca_CustomService_strategy)
 @settings(max_examples=50)
-def test_dbca::customservice_instantiation(instance):
-    assert isinstance(instance, dbca::CustomService)
+def test_dbca_customservice_instantiation(instance):
+    assert isinstance(instance, dbca_CustomService)
 
-@given(instance=dbca::EntityService_strategy)
+@given(instance=dbca_EntityService_strategy)
 @settings(max_examples=50)
-def test_dbca::entityservice_instantiation(instance):
-    assert isinstance(instance, dbca::EntityService)
+def test_dbca_entityservice_instantiation(instance):
+    assert isinstance(instance, dbca_EntityService)
 
 @given(instance=Parameter_strategy)
 @settings(max_examples=50)
 def test_parameter_instantiation(instance):
     assert isinstance(instance, Parameter)
 
-@given(instance=dbca::EntityParameter_strategy)
+@given(instance=dbca_EntityParameter_strategy)
 @settings(max_examples=50)
-def test_dbca::entityparameter_instantiation(instance):
-    assert isinstance(instance, dbca::EntityParameter)
+def test_dbca_entityparameter_instantiation(instance):
+    assert isinstance(instance, dbca_EntityParameter)
 
-@given(instance=dbca::DataParameter_strategy)
+@given(instance=dbca_DataParameter_strategy)
 @settings(max_examples=50)
-def test_dbca::dataparameter_instantiation(instance):
-    assert isinstance(instance, dbca::DataParameter)
-
-@given(instance=dbca::DataParameter_strategy)
-def test_dbca::dataparameter_type_type(instance):
-    assert isinstance(instance.type, str)
+def test_dbca_dataparameter_instantiation(instance):
+    assert isinstance(instance, dbca_DataParameter)
 
 
-@given(instance=dbca::DataParameter_strategy)
-def test_dbca::dataparameter_type_setter(instance):
+
+@given(instance=dbca_DataParameter_strategy)
+def test_dbca_dataparameter_type_setter(instance):
     original = instance.type
     instance.type = original
     assert instance.type == original
@@ -1141,158 +1135,140 @@ def test_dbca::dataparameter_type_setter(instance):
 def test_entity_instantiation(instance):
     assert isinstance(instance, Entity)
 
-@given(instance=dbca::ComputedEntity_strategy)
+@given(instance=dbca_ComputedEntity_strategy)
 @settings(max_examples=50)
-def test_dbca::computedentity_instantiation(instance):
-    assert isinstance(instance, dbca::ComputedEntity)
+def test_dbca_computedentity_instantiation(instance):
+    assert isinstance(instance, dbca_ComputedEntity)
 
-@given(instance=dbca::PersistentEntity_strategy)
+@given(instance=dbca_PersistentEntity_strategy)
 @settings(max_examples=50)
-def test_dbca::persistententity_instantiation(instance):
-    assert isinstance(instance, dbca::PersistentEntity)
+def test_dbca_persistententity_instantiation(instance):
+    assert isinstance(instance, dbca_PersistentEntity)
 
-@given(instance=dbca::AbstractEntity_strategy)
+@given(instance=dbca_AbstractEntity_strategy)
 @settings(max_examples=50)
-def test_dbca::abstractentity_instantiation(instance):
-    assert isinstance(instance, dbca::AbstractEntity)
+def test_dbca_abstractentity_instantiation(instance):
+    assert isinstance(instance, dbca_AbstractEntity)
 
 @given(instance=ServerElement_strategy)
 @settings(max_examples=50)
 def test_serverelement_instantiation(instance):
     assert isinstance(instance, ServerElement)
 
-@given(instance=dbca::Service_strategy)
+@given(instance=dbca_Service_strategy)
 @settings(max_examples=50)
-def test_dbca::service_instantiation(instance):
-    assert isinstance(instance, dbca::Service)
+def test_dbca_service_instantiation(instance):
+    assert isinstance(instance, dbca_Service)
 
 @given(instance=NamedElement_strategy)
 @settings(max_examples=50)
 def test_namedelement_instantiation(instance):
     assert isinstance(instance, NamedElement)
 
-@given(instance=dbca::Server_strategy)
+@given(instance=dbca_DatabaseElement_strategy)
 @settings(max_examples=50)
-def test_dbca::server_instantiation(instance):
-    assert isinstance(instance, dbca::Server)
+def test_dbca_databaseelement_instantiation(instance):
+    assert isinstance(instance, dbca_DatabaseElement)
 
-@given(instance=dbca::DatabaseElement_strategy)
+@given(instance=dbca_Database_strategy)
 @settings(max_examples=50)
-def test_dbca::databaseelement_instantiation(instance):
-    assert isinstance(instance, dbca::DatabaseElement)
+def test_dbca_database_instantiation(instance):
+    assert isinstance(instance, dbca_Database)
 
-@given(instance=dbca::Database_strategy)
+@given(instance=dbca_Client_strategy)
 @settings(max_examples=50)
-def test_dbca::database_instantiation(instance):
-    assert isinstance(instance, dbca::Database)
+def test_dbca_client_instantiation(instance):
+    assert isinstance(instance, dbca_Client)
 
-@given(instance=dbca::Relationship_strategy)
+@given(instance=dbca_Attribute_strategy)
 @settings(max_examples=50)
-def test_dbca::relationship_instantiation(instance):
-    assert isinstance(instance, dbca::Relationship)
-
-@given(instance=dbca::Relationship_strategy)
-def test_dbca::relationship_isNullable_type(instance):
-    assert isinstance(instance.isNullable, bool)
+def test_dbca_attribute_instantiation(instance):
+    assert isinstance(instance, dbca_Attribute)
 
 
-@given(instance=dbca::Relationship_strategy)
-def test_dbca::relationship_isNullable_setter(instance):
-    original = instance.isNullable
-    instance.isNullable = original
-    assert instance.isNullable == original
 
-@given(instance=dbca::Relationship_strategy)
-def test_dbca::relationship_isContainment_type(instance):
-    assert isinstance(instance.isContainment, str)
-
-
-@given(instance=dbca::Relationship_strategy)
-def test_dbca::relationship_isContainment_setter(instance):
-    original = instance.isContainment
-    instance.isContainment = original
-    assert instance.isContainment == original
-
-@given(instance=dbca::Relationship_strategy)
-def test_dbca::relationship_type_type(instance):
-    assert isinstance(instance.type, str)
-
-
-@given(instance=dbca::Relationship_strategy)
-def test_dbca::relationship_type_setter(instance):
-    original = instance.type
-    instance.type = original
-    assert instance.type == original
-
-@given(instance=dbca::ServerElement_strategy)
-@settings(max_examples=50)
-def test_dbca::serverelement_instantiation(instance):
-    assert isinstance(instance, dbca::ServerElement)
-
-@given(instance=dbca::Client_strategy)
-@settings(max_examples=50)
-def test_dbca::client_instantiation(instance):
-    assert isinstance(instance, dbca::Client)
-
-@given(instance=dbca::ClientElement_strategy)
-@settings(max_examples=50)
-def test_dbca::clientelement_instantiation(instance):
-    assert isinstance(instance, dbca::ClientElement)
-
-@given(instance=dbca::Parameter_strategy)
-@settings(max_examples=50)
-def test_dbca::parameter_instantiation(instance):
-    assert isinstance(instance, dbca::Parameter)
-
-@given(instance=dbca::Attribute_strategy)
-@settings(max_examples=50)
-def test_dbca::attribute_instantiation(instance):
-    assert isinstance(instance, dbca::Attribute)
-
-@given(instance=dbca::Attribute_strategy)
-def test_dbca::attribute_maxLength_type(instance):
-    assert isinstance(instance.maxLength, int)
-
-
-@given(instance=dbca::Attribute_strategy)
-def test_dbca::attribute_maxLength_setter(instance):
+@given(instance=dbca_Attribute_strategy)
+def test_dbca_attribute_maxLength_setter(instance):
     original = instance.maxLength
     instance.maxLength = original
     assert instance.maxLength == original
 
-@given(instance=dbca::Attribute_strategy)
-def test_dbca::attribute_type_type(instance):
-    assert isinstance(instance.type, str)
 
 
-@given(instance=dbca::Attribute_strategy)
-def test_dbca::attribute_type_setter(instance):
+@given(instance=dbca_Attribute_strategy)
+def test_dbca_attribute_type_setter(instance):
     original = instance.type
     instance.type = original
     assert instance.type == original
 
-@given(instance=dbca::Application_strategy)
+@given(instance=dbca_Parameter_strategy)
 @settings(max_examples=50)
-def test_dbca::application_instantiation(instance):
-    assert isinstance(instance, dbca::Application)
+def test_dbca_parameter_instantiation(instance):
+    assert isinstance(instance, dbca_Parameter)
+
+@given(instance=dbca_ServerElement_strategy)
+@settings(max_examples=50)
+def test_dbca_serverelement_instantiation(instance):
+    assert isinstance(instance, dbca_ServerElement)
+
+@given(instance=dbca_Relationship_strategy)
+@settings(max_examples=50)
+def test_dbca_relationship_instantiation(instance):
+    assert isinstance(instance, dbca_Relationship)
+
+
+
+@given(instance=dbca_Relationship_strategy)
+def test_dbca_relationship_isNullable_setter(instance):
+    original = instance.isNullable
+    instance.isNullable = original
+    assert instance.isNullable == original
+
+
+
+@given(instance=dbca_Relationship_strategy)
+def test_dbca_relationship_type_setter(instance):
+    original = instance.type
+    instance.type = original
+    assert instance.type == original
+
+
+
+@given(instance=dbca_Relationship_strategy)
+def test_dbca_relationship_isContainment_setter(instance):
+    original = instance.isContainment
+    instance.isContainment = original
+    assert instance.isContainment == original
+
+@given(instance=dbca_Server_strategy)
+@settings(max_examples=50)
+def test_dbca_server_instantiation(instance):
+    assert isinstance(instance, dbca_Server)
+
+@given(instance=dbca_ClientElement_strategy)
+@settings(max_examples=50)
+def test_dbca_clientelement_instantiation(instance):
+    assert isinstance(instance, dbca_ClientElement)
+
+@given(instance=dbca_Application_strategy)
+@settings(max_examples=50)
+def test_dbca_application_instantiation(instance):
+    assert isinstance(instance, dbca_Application)
 
 @given(instance=CommentedElement_strategy)
 @settings(max_examples=50)
 def test_commentedelement_instantiation(instance):
     assert isinstance(instance, CommentedElement)
 
-@given(instance=dbca::NamedElement_strategy)
+@given(instance=dbca_NamedElement_strategy)
 @settings(max_examples=50)
-def test_dbca::namedelement_instantiation(instance):
-    assert isinstance(instance, dbca::NamedElement)
-
-@given(instance=dbca::NamedElement_strategy)
-def test_dbca::namedelement_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_dbca_namedelement_instantiation(instance):
+    assert isinstance(instance, dbca_NamedElement)
 
 
-@given(instance=dbca::NamedElement_strategy)
-def test_dbca::namedelement_name_setter(instance):
+
+@given(instance=dbca_NamedElement_strategy)
+def test_dbca_namedelement_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
@@ -1302,96 +1278,84 @@ def test_dbca::namedelement_name_setter(instance):
 def test_element_instantiation(instance):
     assert isinstance(instance, Element)
 
-@given(instance=dbca::CommentedElement_strategy)
+@given(instance=dbca_CommentedElement_strategy)
 @settings(max_examples=50)
-def test_dbca::commentedelement_instantiation(instance):
-    assert isinstance(instance, dbca::CommentedElement)
-
-@given(instance=dbca::CommentedElement_strategy)
-def test_dbca::commentedelement_comment_type(instance):
-    assert isinstance(instance.comment, str)
+def test_dbca_commentedelement_instantiation(instance):
+    assert isinstance(instance, dbca_CommentedElement)
 
 
-@given(instance=dbca::CommentedElement_strategy)
-def test_dbca::commentedelement_comment_setter(instance):
+
+@given(instance=dbca_CommentedElement_strategy)
+def test_dbca_commentedelement_comment_setter(instance):
     original = instance.comment
     instance.comment = original
     assert instance.comment == original
 
-@given(instance=dbca::Element_strategy)
+@given(instance=dbca_Element_strategy)
 @settings(max_examples=50)
-def test_dbca::element_instantiation(instance):
-    assert isinstance(instance, dbca::Element)
+def test_dbca_element_instantiation(instance):
+    assert isinstance(instance, dbca_Element)
 
-@given(instance=dbca::Property_strategy)
+@given(instance=dbca_Property_strategy)
 @settings(max_examples=50)
-def test_dbca::property_instantiation(instance):
-    assert isinstance(instance, dbca::Property)
-
-@given(instance=dbca::Property_strategy)
-def test_dbca::property_isNullable_type(instance):
-    assert isinstance(instance.isNullable, bool)
+def test_dbca_property_instantiation(instance):
+    assert isinstance(instance, dbca_Property)
 
 
-@given(instance=dbca::Property_strategy)
-def test_dbca::property_isNullable_setter(instance):
+
+@given(instance=dbca_Property_strategy)
+def test_dbca_property_isNullable_setter(instance):
     original = instance.isNullable
     instance.isNullable = original
     assert instance.isNullable == original
 
-@given(instance=dbca::Property_strategy)
-def test_dbca::property_defaultValue_type(instance):
-    assert isinstance(instance.defaultValue, str)
 
 
-@given(instance=dbca::Property_strategy)
-def test_dbca::property_defaultValue_setter(instance):
+@given(instance=dbca_Property_strategy)
+def test_dbca_property_defaultValue_setter(instance):
     original = instance.defaultValue
     instance.defaultValue = original
     assert instance.defaultValue == original
 
-@given(instance=dbca::PrimaryProperty_strategy)
+@given(instance=dbca_PrimaryProperty_strategy)
 @settings(max_examples=50)
-def test_dbca::primaryproperty_instantiation(instance):
-    assert isinstance(instance, dbca::PrimaryProperty)
+def test_dbca_primaryproperty_instantiation(instance):
+    assert isinstance(instance, dbca_PrimaryProperty)
 
 @given(instance=DatabaseElement_strategy)
 @settings(max_examples=50)
 def test_databaseelement_instantiation(instance):
     assert isinstance(instance, DatabaseElement)
 
-@given(instance=dbca::Query_strategy)
+@given(instance=dbca_Function_strategy)
 @settings(max_examples=50)
-def test_dbca::query_instantiation(instance):
-    assert isinstance(instance, dbca::Query)
-
-@given(instance=dbca::Operation_strategy)
-@settings(max_examples=50)
-def test_dbca::operation_instantiation(instance):
-    assert isinstance(instance, dbca::Operation)
-
-@given(instance=dbca::Function_strategy)
-@settings(max_examples=50)
-def test_dbca::function_instantiation(instance):
-    assert isinstance(instance, dbca::Function)
-
-@given(instance=dbca::Function_strategy)
-def test_dbca::function_returnType_type(instance):
-    assert isinstance(instance.returnType, str)
+def test_dbca_function_instantiation(instance):
+    assert isinstance(instance, dbca_Function)
 
 
-@given(instance=dbca::Function_strategy)
-def test_dbca::function_returnType_setter(instance):
+
+@given(instance=dbca_Function_strategy)
+def test_dbca_function_returnType_setter(instance):
     original = instance.returnType
     instance.returnType = original
     assert instance.returnType == original
 
-@given(instance=dbca::Event_strategy)
+@given(instance=dbca_Query_strategy)
 @settings(max_examples=50)
-def test_dbca::event_instantiation(instance):
-    assert isinstance(instance, dbca::Event)
+def test_dbca_query_instantiation(instance):
+    assert isinstance(instance, dbca_Query)
 
-@given(instance=dbca::Entity_strategy)
+@given(instance=dbca_Operation_strategy)
 @settings(max_examples=50)
-def test_dbca::entity_instantiation(instance):
-    assert isinstance(instance, dbca::Entity)
+def test_dbca_operation_instantiation(instance):
+    assert isinstance(instance, dbca_Operation)
+
+@given(instance=dbca_Event_strategy)
+@settings(max_examples=50)
+def test_dbca_event_instantiation(instance):
+    assert isinstance(instance, dbca_Event)
+
+@given(instance=dbca_Entity_strategy)
+@settings(max_examples=50)
+def test_dbca_entity_instantiation(instance):
+    assert isinstance(instance, dbca_Entity)

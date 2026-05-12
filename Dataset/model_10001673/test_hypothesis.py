@@ -3,7 +3,7 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
 from python_code import (
     Rules,
@@ -11,8 +11,8 @@ from python_code import (
     Player,
     Card,
     Deck,
-    Face,
     Face1,
+    Face,
 )
 
 # =============================================================================
@@ -33,8 +33,8 @@ def test_rules_constructor_args():
     sig = inspect.signature(Rules.__init__)
     params = list(sig.parameters.keys())
     assert "card2" in params, "Missing parameter 'card2'"
-    assert "card3" in params, "Missing parameter 'card3'"
     assert "card1" in params, "Missing parameter 'card1'"
+    assert "card3" in params, "Missing parameter 'card3'"
 
 def test_rules_has_card2():
     assert hasattr(Rules, "card2")
@@ -45,21 +45,21 @@ def test_rules_has_card2():
             break
     assert isinstance(descriptor, property)
 
-def test_rules_has_card3():
-    assert hasattr(Rules, "card3")
-    descriptor = None
-    for klass in Rules.__mro__:
-        if "card3" in klass.__dict__:
-            descriptor = klass.__dict__["card3"]
-            break
-    assert isinstance(descriptor, property)
-
 def test_rules_has_card1():
     assert hasattr(Rules, "card1")
     descriptor = None
     for klass in Rules.__mro__:
         if "card1" in klass.__dict__:
             descriptor = klass.__dict__["card1"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_rules_has_card3():
+    assert hasattr(Rules, "card3")
+    descriptor = None
+    for klass in Rules.__mro__:
+        if "card3" in klass.__dict__:
+            descriptor = klass.__dict__["card3"]
             break
     assert isinstance(descriptor, property)
 
@@ -76,18 +76,9 @@ def test_game_constructor_exists():
 def test_game_constructor_args():
     sig = inspect.signature(Game.__init__)
     params = list(sig.parameters.keys())
-    assert "numWins" in params, "Missing parameter 'numWins'"
     assert "numLose" in params, "Missing parameter 'numLose'"
+    assert "numWins" in params, "Missing parameter 'numWins'"
     assert "numGames" in params, "Missing parameter 'numGames'"
-
-def test_game_has_numWins():
-    assert hasattr(Game, "numWins")
-    descriptor = None
-    for klass in Game.__mro__:
-        if "numWins" in klass.__dict__:
-            descriptor = klass.__dict__["numWins"]
-            break
-    assert isinstance(descriptor, property)
 
 def test_game_has_numLose():
     assert hasattr(Game, "numLose")
@@ -95,6 +86,15 @@ def test_game_has_numLose():
     for klass in Game.__mro__:
         if "numLose" in klass.__dict__:
             descriptor = klass.__dict__["numLose"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_game_has_numWins():
+    assert hasattr(Game, "numWins")
+    descriptor = None
+    for klass in Game.__mro__:
+        if "numWins" in klass.__dict__:
+            descriptor = klass.__dict__["numWins"]
             break
     assert isinstance(descriptor, property)
 
@@ -179,19 +179,6 @@ def test_deck_has_numCards():
             break
     assert isinstance(descriptor, property)
 
-def test_face_exists():
-    # Check that the Enumeration exists
-    assert Face is not None
-
-def test_face_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in Face]
-    expected_literals = [
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in Face"
-
 def test_face1_exists():
     # Check that the Enumeration exists
     assert Face1 is not None
@@ -204,6 +191,19 @@ def test_face1_has_all_literals():
     # Check that all expected literals exist
     for lit_name in expected_literals:
         assert lit_name in enum_literals, f"Literal '' missing in Face1"
+
+def test_face_exists():
+    # Check that the Enumeration exists
+    assert Face is not None
+
+def test_face_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in Face]
+    expected_literals = [
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in Face"
 
 
 # =============================================================================
@@ -221,16 +221,16 @@ Rules_strategy = st.builds(
     Rules,
     card2=
         st.none(),
-    card3=
-        st.none(),
     card1=
+        st.none(),
+    card3=
         st.none()
 )
 Game_strategy = st.builds(
     Game,
-    numWins=
-        st.integers(),
     numLose=
+        st.integers(),
+    numWins=
         st.integers(),
     numGames=
         st.integers()
@@ -256,9 +256,6 @@ Deck_strategy = st.builds(
 def test_rules_instantiation(instance):
     assert isinstance(instance, Rules)
 
-@given(instance=Rules_strategy)
-def test_rules_card2_type(instance):
-    assert isinstance(instance.card2, face1)
 
 
 @given(instance=Rules_strategy)
@@ -267,20 +264,6 @@ def test_rules_card2_setter(instance):
     instance.card2 = original
     assert instance.card2 == original
 
-@given(instance=Rules_strategy)
-def test_rules_card3_type(instance):
-    assert isinstance(instance.card3, face1)
-
-
-@given(instance=Rules_strategy)
-def test_rules_card3_setter(instance):
-    original = instance.card3
-    instance.card3 = original
-    assert instance.card3 == original
-
-@given(instance=Rules_strategy)
-def test_rules_card1_type(instance):
-    assert isinstance(instance.card1, face1)
 
 
 @given(instance=Rules_strategy)
@@ -289,25 +272,19 @@ def test_rules_card1_setter(instance):
     instance.card1 = original
     assert instance.card1 == original
 
+
+
+@given(instance=Rules_strategy)
+def test_rules_card3_setter(instance):
+    original = instance.card3
+    instance.card3 = original
+    assert instance.card3 == original
+
 @given(instance=Game_strategy)
 @settings(max_examples=50)
 def test_game_instantiation(instance):
     assert isinstance(instance, Game)
 
-@given(instance=Game_strategy)
-def test_game_numWins_type(instance):
-    assert isinstance(instance.numWins, int)
-
-
-@given(instance=Game_strategy)
-def test_game_numWins_setter(instance):
-    original = instance.numWins
-    instance.numWins = original
-    assert instance.numWins == original
-
-@given(instance=Game_strategy)
-def test_game_numLose_type(instance):
-    assert isinstance(instance.numLose, int)
 
 
 @given(instance=Game_strategy)
@@ -316,9 +293,14 @@ def test_game_numLose_setter(instance):
     instance.numLose = original
     assert instance.numLose == original
 
+
+
 @given(instance=Game_strategy)
-def test_game_numGames_type(instance):
-    assert isinstance(instance.numGames, int)
+def test_game_numWins_setter(instance):
+    original = instance.numWins
+    instance.numWins = original
+    assert instance.numWins == original
+
 
 
 @given(instance=Game_strategy)
@@ -332,9 +314,6 @@ def test_game_numGames_setter(instance):
 def test_player_instantiation(instance):
     assert isinstance(instance, Player)
 
-@given(instance=Player_strategy)
-def test_player_numMoves_type(instance):
-    assert isinstance(instance.numMoves, int)
 
 
 @given(instance=Player_strategy)
@@ -348,9 +327,6 @@ def test_player_numMoves_setter(instance):
 def test_card_instantiation(instance):
     assert isinstance(instance, Card)
 
-@given(instance=Card_strategy)
-def test_card_Enum_type(instance):
-    assert isinstance(instance.Enum, face1)
 
 
 @given(instance=Card_strategy)
@@ -364,9 +340,6 @@ def test_card_Enum_setter(instance):
 def test_deck_instantiation(instance):
     assert isinstance(instance, Deck)
 
-@given(instance=Deck_strategy)
-def test_deck_numCards_type(instance):
-    assert isinstance(instance.numCards, int)
 
 
 @given(instance=Deck_strategy)

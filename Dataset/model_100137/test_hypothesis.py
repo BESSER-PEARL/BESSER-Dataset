@@ -3,69 +3,69 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    PrimaryKeyChange,
-    dbevolution::RemovePrimaryKey,
-    dbevolution::AddPrimaryKey,
-    dbevolution::PrimaryKey,
-    ConstraintChange,
-    dbevolution::RemoveConstraint,
-    dbevolution::UpdateConstraint,
-    dbevolution::AddConstraint,
-    dbevolution::Constraint,
-    TableChange,
-    dbevolution::RemoveTable,
-    dbevolution::RenameTableChange,
-    dbevolution::UpdateTableCommentChange,
-    dbevolution::AlterTable,
-    dbevolution::AddTable,
-    dbevolution::Table,
-    DBDiff,
-    dbevolution::PrimaryKeyChange,
-    dbevolution::ConstraintChange,
-    dbevolution::ColumnChange,
-    dbevolution::TableChange,
-    Comparison,
-    dbevolution::DatabaseChangeSet,
-    ColumnChange,
-    dbevolution::UpdateColumnChange,
-    dbevolution::RemoveColumnChange,
-    dbevolution::UpdateColumnCommentChange,
-    dbevolution::RenameColumnChange,
-    dbevolution::AddColumnChange,
-    dbevolution::Column,
-    dbevolution::EObject,
+from python_code import (
+    dbevolution_EObject,
     Diff,
-    dbevolution::DBDiff,
+    dbevolution_DBDiff,
     SchemaChange,
-    dbevolution::RemoveSchema,
-    dbevolution::AlterSchema,
-    dbevolution::UpdateSchemaCommentChange,
-    dbevolution::RenameSchemaChange,
-    dbevolution::AddSchema,
-    dbevolution::Schema,
-    dbevolution::SchemaChange,
+    dbevolution_RemoveSchema,
+    dbevolution_UpdateSchemaCommentChange,
+    dbevolution_AlterSchema,
+    dbevolution_RenameSchemaChange,
+    dbevolution_AddSchema,
+    dbevolution_Schema,
     SequenceChange,
-    dbevolution::RemoveSequence,
-    dbevolution::UpdateSequence,
-    dbevolution::AddSequence,
-    dbevolution::Sequence,
-    dbevolution::SequenceChange,
+    dbevolution_RemoveSequence,
+    dbevolution_UpdateSequence,
+    dbevolution_AddSequence,
+    dbevolution_Sequence,
     ForeignKeyChange,
-    dbevolution::UpdateForeignKey,
-    dbevolution::RemoveForeignKey,
-    dbevolution::AddForeignKey,
-    dbevolution::ForeignKey,
-    dbevolution::ForeignKeyChange,
+    dbevolution_UpdateForeignKey,
+    dbevolution_AddForeignKey,
+    dbevolution_ForeignKey,
     IndexChange,
-    dbevolution::UpdateIndex,
-    dbevolution::RemoveIndex,
-    dbevolution::AddIndex,
-    dbevolution::Index,
-    dbevolution::IndexChange,
-    dbevolution::UpdatePrimaryKey,
+    dbevolution_UpdateIndex,
+    dbevolution_RemoveIndex,
+    dbevolution_AddIndex,
+    dbevolution_Index,
+    PrimaryKeyChange,
+    dbevolution_RemovePrimaryKey,
+    dbevolution_UpdatePrimaryKey,
+    dbevolution_AddPrimaryKey,
+    dbevolution_PrimaryKey,
+    ConstraintChange,
+    dbevolution_UpdateConstraint,
+    dbevolution_RemoveConstraint,
+    dbevolution_AddConstraint,
+    dbevolution_Constraint,
+    TableChange,
+    dbevolution_RemoveTable,
+    dbevolution_RenameTableChange,
+    dbevolution_UpdateTableCommentChange,
+    dbevolution_AlterTable,
+    dbevolution_AddTable,
+    dbevolution_Table,
+    DBDiff,
+    dbevolution_SequenceChange,
+    dbevolution_ConstraintChange,
+    dbevolution_ForeignKeyChange,
+    dbevolution_IndexChange,
+    dbevolution_SchemaChange,
+    dbevolution_PrimaryKeyChange,
+    dbevolution_ColumnChange,
+    dbevolution_TableChange,
+    Comparison,
+    dbevolution_DatabaseChangeSet,
+    ColumnChange,
+    dbevolution_UpdateColumnChange,
+    dbevolution_RemoveColumnChange,
+    dbevolution_UpdateColumnCommentChange,
+    dbevolution_RenameColumnChange,
+    dbevolution_AddColumnChange,
+    dbevolution_Column,
+    dbevolution_RemoveForeignKey,
 )
 
 # =============================================================================
@@ -74,436 +74,16 @@ from classes import (
 
 
 
-def test_primarykeychange_is_not_abstract():
-    assert not inspect.isabstract(PrimaryKeyChange)
+def test_dbevolution_eobject_is_not_abstract():
+    assert not inspect.isabstract(dbevolution_EObject)
 
 
-def test_primarykeychange_constructor_exists():
-    assert callable(PrimaryKeyChange.__init__)
+def test_dbevolution_eobject_constructor_exists():
+    assert callable(dbevolution_EObject.__init__)
 
 
-def test_primarykeychange_constructor_args():
-    sig = inspect.signature(PrimaryKeyChange.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_dbevolution::removeprimarykey_is_not_abstract():
-    assert not inspect.isabstract(dbevolution::RemovePrimaryKey)
-
-
-def test_dbevolution::removeprimarykey_constructor_exists():
-    assert callable(dbevolution::RemovePrimaryKey.__init__)
-
-
-def test_dbevolution::removeprimarykey_constructor_args():
-    sig = inspect.signature(dbevolution::RemovePrimaryKey.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_dbevolution::addprimarykey_is_not_abstract():
-    assert not inspect.isabstract(dbevolution::AddPrimaryKey)
-
-
-def test_dbevolution::addprimarykey_constructor_exists():
-    assert callable(dbevolution::AddPrimaryKey.__init__)
-
-
-def test_dbevolution::addprimarykey_constructor_args():
-    sig = inspect.signature(dbevolution::AddPrimaryKey.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_dbevolution::primarykey_is_not_abstract():
-    assert not inspect.isabstract(dbevolution::PrimaryKey)
-
-
-def test_dbevolution::primarykey_constructor_exists():
-    assert callable(dbevolution::PrimaryKey.__init__)
-
-
-def test_dbevolution::primarykey_constructor_args():
-    sig = inspect.signature(dbevolution::PrimaryKey.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_constraintchange_is_not_abstract():
-    assert not inspect.isabstract(ConstraintChange)
-
-
-def test_constraintchange_constructor_exists():
-    assert callable(ConstraintChange.__init__)
-
-
-def test_constraintchange_constructor_args():
-    sig = inspect.signature(ConstraintChange.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_dbevolution::removeconstraint_is_not_abstract():
-    assert not inspect.isabstract(dbevolution::RemoveConstraint)
-
-
-def test_dbevolution::removeconstraint_constructor_exists():
-    assert callable(dbevolution::RemoveConstraint.__init__)
-
-
-def test_dbevolution::removeconstraint_constructor_args():
-    sig = inspect.signature(dbevolution::RemoveConstraint.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_dbevolution::updateconstraint_is_not_abstract():
-    assert not inspect.isabstract(dbevolution::UpdateConstraint)
-
-
-def test_dbevolution::updateconstraint_constructor_exists():
-    assert callable(dbevolution::UpdateConstraint.__init__)
-
-
-def test_dbevolution::updateconstraint_constructor_args():
-    sig = inspect.signature(dbevolution::UpdateConstraint.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_dbevolution::addconstraint_is_not_abstract():
-    assert not inspect.isabstract(dbevolution::AddConstraint)
-
-
-def test_dbevolution::addconstraint_constructor_exists():
-    assert callable(dbevolution::AddConstraint.__init__)
-
-
-def test_dbevolution::addconstraint_constructor_args():
-    sig = inspect.signature(dbevolution::AddConstraint.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_dbevolution::constraint_is_not_abstract():
-    assert not inspect.isabstract(dbevolution::Constraint)
-
-
-def test_dbevolution::constraint_constructor_exists():
-    assert callable(dbevolution::Constraint.__init__)
-
-
-def test_dbevolution::constraint_constructor_args():
-    sig = inspect.signature(dbevolution::Constraint.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_tablechange_is_not_abstract():
-    assert not inspect.isabstract(TableChange)
-
-
-def test_tablechange_constructor_exists():
-    assert callable(TableChange.__init__)
-
-
-def test_tablechange_constructor_args():
-    sig = inspect.signature(TableChange.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_dbevolution::removetable_is_not_abstract():
-    assert not inspect.isabstract(dbevolution::RemoveTable)
-
-
-def test_dbevolution::removetable_constructor_exists():
-    assert callable(dbevolution::RemoveTable.__init__)
-
-
-def test_dbevolution::removetable_constructor_args():
-    sig = inspect.signature(dbevolution::RemoveTable.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_dbevolution::renametablechange_is_not_abstract():
-    assert not inspect.isabstract(dbevolution::RenameTableChange)
-
-
-def test_dbevolution::renametablechange_constructor_exists():
-    assert callable(dbevolution::RenameTableChange.__init__)
-
-
-def test_dbevolution::renametablechange_constructor_args():
-    sig = inspect.signature(dbevolution::RenameTableChange.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_dbevolution::updatetablecommentchange_is_not_abstract():
-    assert not inspect.isabstract(dbevolution::UpdateTableCommentChange)
-
-
-def test_dbevolution::updatetablecommentchange_constructor_exists():
-    assert callable(dbevolution::UpdateTableCommentChange.__init__)
-
-
-def test_dbevolution::updatetablecommentchange_constructor_args():
-    sig = inspect.signature(dbevolution::UpdateTableCommentChange.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_dbevolution::altertable_is_not_abstract():
-    assert not inspect.isabstract(dbevolution::AlterTable)
-
-
-def test_dbevolution::altertable_constructor_exists():
-    assert callable(dbevolution::AlterTable.__init__)
-
-
-def test_dbevolution::altertable_constructor_args():
-    sig = inspect.signature(dbevolution::AlterTable.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_dbevolution::addtable_is_not_abstract():
-    assert not inspect.isabstract(dbevolution::AddTable)
-
-
-def test_dbevolution::addtable_constructor_exists():
-    assert callable(dbevolution::AddTable.__init__)
-
-
-def test_dbevolution::addtable_constructor_args():
-    sig = inspect.signature(dbevolution::AddTable.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_dbevolution::table_is_not_abstract():
-    assert not inspect.isabstract(dbevolution::Table)
-
-
-def test_dbevolution::table_constructor_exists():
-    assert callable(dbevolution::Table.__init__)
-
-
-def test_dbevolution::table_constructor_args():
-    sig = inspect.signature(dbevolution::Table.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_dbdiff_is_not_abstract():
-    assert not inspect.isabstract(DBDiff)
-
-
-def test_dbdiff_constructor_exists():
-    assert callable(DBDiff.__init__)
-
-
-def test_dbdiff_constructor_args():
-    sig = inspect.signature(DBDiff.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_dbevolution::primarykeychange_is_not_abstract():
-    assert not inspect.isabstract(dbevolution::PrimaryKeyChange)
-
-
-def test_dbevolution::primarykeychange_constructor_exists():
-    assert callable(dbevolution::PrimaryKeyChange.__init__)
-
-
-def test_dbevolution::primarykeychange_constructor_args():
-    sig = inspect.signature(dbevolution::PrimaryKeyChange.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_dbevolution::constraintchange_is_not_abstract():
-    assert not inspect.isabstract(dbevolution::ConstraintChange)
-
-
-def test_dbevolution::constraintchange_constructor_exists():
-    assert callable(dbevolution::ConstraintChange.__init__)
-
-
-def test_dbevolution::constraintchange_constructor_args():
-    sig = inspect.signature(dbevolution::ConstraintChange.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_dbevolution::columnchange_is_not_abstract():
-    assert not inspect.isabstract(dbevolution::ColumnChange)
-
-
-def test_dbevolution::columnchange_constructor_exists():
-    assert callable(dbevolution::ColumnChange.__init__)
-
-
-def test_dbevolution::columnchange_constructor_args():
-    sig = inspect.signature(dbevolution::ColumnChange.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_dbevolution::tablechange_is_not_abstract():
-    assert not inspect.isabstract(dbevolution::TableChange)
-
-
-def test_dbevolution::tablechange_constructor_exists():
-    assert callable(dbevolution::TableChange.__init__)
-
-
-def test_dbevolution::tablechange_constructor_args():
-    sig = inspect.signature(dbevolution::TableChange.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_comparison_is_not_abstract():
-    assert not inspect.isabstract(Comparison)
-
-
-def test_comparison_constructor_exists():
-    assert callable(Comparison.__init__)
-
-
-def test_comparison_constructor_args():
-    sig = inspect.signature(Comparison.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_dbevolution::databasechangeset_is_not_abstract():
-    assert not inspect.isabstract(dbevolution::DatabaseChangeSet)
-
-
-def test_dbevolution::databasechangeset_constructor_exists():
-    assert callable(dbevolution::DatabaseChangeSet.__init__)
-
-
-def test_dbevolution::databasechangeset_constructor_args():
-    sig = inspect.signature(dbevolution::DatabaseChangeSet.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_columnchange_is_not_abstract():
-    assert not inspect.isabstract(ColumnChange)
-
-
-def test_columnchange_constructor_exists():
-    assert callable(ColumnChange.__init__)
-
-
-def test_columnchange_constructor_args():
-    sig = inspect.signature(ColumnChange.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_dbevolution::updatecolumnchange_is_not_abstract():
-    assert not inspect.isabstract(dbevolution::UpdateColumnChange)
-
-
-def test_dbevolution::updatecolumnchange_constructor_exists():
-    assert callable(dbevolution::UpdateColumnChange.__init__)
-
-
-def test_dbevolution::updatecolumnchange_constructor_args():
-    sig = inspect.signature(dbevolution::UpdateColumnChange.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_dbevolution::removecolumnchange_is_not_abstract():
-    assert not inspect.isabstract(dbevolution::RemoveColumnChange)
-
-
-def test_dbevolution::removecolumnchange_constructor_exists():
-    assert callable(dbevolution::RemoveColumnChange.__init__)
-
-
-def test_dbevolution::removecolumnchange_constructor_args():
-    sig = inspect.signature(dbevolution::RemoveColumnChange.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_dbevolution::updatecolumncommentchange_is_not_abstract():
-    assert not inspect.isabstract(dbevolution::UpdateColumnCommentChange)
-
-
-def test_dbevolution::updatecolumncommentchange_constructor_exists():
-    assert callable(dbevolution::UpdateColumnCommentChange.__init__)
-
-
-def test_dbevolution::updatecolumncommentchange_constructor_args():
-    sig = inspect.signature(dbevolution::UpdateColumnCommentChange.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_dbevolution::renamecolumnchange_is_not_abstract():
-    assert not inspect.isabstract(dbevolution::RenameColumnChange)
-
-
-def test_dbevolution::renamecolumnchange_constructor_exists():
-    assert callable(dbevolution::RenameColumnChange.__init__)
-
-
-def test_dbevolution::renamecolumnchange_constructor_args():
-    sig = inspect.signature(dbevolution::RenameColumnChange.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_dbevolution::addcolumnchange_is_not_abstract():
-    assert not inspect.isabstract(dbevolution::AddColumnChange)
-
-
-def test_dbevolution::addcolumnchange_constructor_exists():
-    assert callable(dbevolution::AddColumnChange.__init__)
-
-
-def test_dbevolution::addcolumnchange_constructor_args():
-    sig = inspect.signature(dbevolution::AddColumnChange.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_dbevolution::column_is_not_abstract():
-    assert not inspect.isabstract(dbevolution::Column)
-
-
-def test_dbevolution::column_constructor_exists():
-    assert callable(dbevolution::Column.__init__)
-
-
-def test_dbevolution::column_constructor_args():
-    sig = inspect.signature(dbevolution::Column.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_dbevolution::eobject_is_not_abstract():
-    assert not inspect.isabstract(dbevolution::EObject)
-
-
-def test_dbevolution::eobject_constructor_exists():
-    assert callable(dbevolution::EObject.__init__)
-
-
-def test_dbevolution::eobject_constructor_args():
-    sig = inspect.signature(dbevolution::EObject.__init__)
+def test_dbevolution_eobject_constructor_args():
+    sig = inspect.signature(dbevolution_EObject.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -522,16 +102,16 @@ def test_diff_constructor_args():
 
 
 
-def test_dbevolution::dbdiff_is_not_abstract():
-    assert not inspect.isabstract(dbevolution::DBDiff)
+def test_dbevolution_dbdiff_is_not_abstract():
+    assert not inspect.isabstract(dbevolution_DBDiff)
 
 
-def test_dbevolution::dbdiff_constructor_exists():
-    assert callable(dbevolution::DBDiff.__init__)
+def test_dbevolution_dbdiff_constructor_exists():
+    assert callable(dbevolution_DBDiff.__init__)
 
 
-def test_dbevolution::dbdiff_constructor_args():
-    sig = inspect.signature(dbevolution::DBDiff.__init__)
+def test_dbevolution_dbdiff_constructor_args():
+    sig = inspect.signature(dbevolution_DBDiff.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -550,100 +130,86 @@ def test_schemachange_constructor_args():
 
 
 
-def test_dbevolution::removeschema_is_not_abstract():
-    assert not inspect.isabstract(dbevolution::RemoveSchema)
+def test_dbevolution_removeschema_is_not_abstract():
+    assert not inspect.isabstract(dbevolution_RemoveSchema)
 
 
-def test_dbevolution::removeschema_constructor_exists():
-    assert callable(dbevolution::RemoveSchema.__init__)
+def test_dbevolution_removeschema_constructor_exists():
+    assert callable(dbevolution_RemoveSchema.__init__)
 
 
-def test_dbevolution::removeschema_constructor_args():
-    sig = inspect.signature(dbevolution::RemoveSchema.__init__)
+def test_dbevolution_removeschema_constructor_args():
+    sig = inspect.signature(dbevolution_RemoveSchema.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_dbevolution::alterschema_is_not_abstract():
-    assert not inspect.isabstract(dbevolution::AlterSchema)
+def test_dbevolution_updateschemacommentchange_is_not_abstract():
+    assert not inspect.isabstract(dbevolution_UpdateSchemaCommentChange)
 
 
-def test_dbevolution::alterschema_constructor_exists():
-    assert callable(dbevolution::AlterSchema.__init__)
+def test_dbevolution_updateschemacommentchange_constructor_exists():
+    assert callable(dbevolution_UpdateSchemaCommentChange.__init__)
 
 
-def test_dbevolution::alterschema_constructor_args():
-    sig = inspect.signature(dbevolution::AlterSchema.__init__)
+def test_dbevolution_updateschemacommentchange_constructor_args():
+    sig = inspect.signature(dbevolution_UpdateSchemaCommentChange.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_dbevolution::updateschemacommentchange_is_not_abstract():
-    assert not inspect.isabstract(dbevolution::UpdateSchemaCommentChange)
+def test_dbevolution_alterschema_is_not_abstract():
+    assert not inspect.isabstract(dbevolution_AlterSchema)
 
 
-def test_dbevolution::updateschemacommentchange_constructor_exists():
-    assert callable(dbevolution::UpdateSchemaCommentChange.__init__)
+def test_dbevolution_alterschema_constructor_exists():
+    assert callable(dbevolution_AlterSchema.__init__)
 
 
-def test_dbevolution::updateschemacommentchange_constructor_args():
-    sig = inspect.signature(dbevolution::UpdateSchemaCommentChange.__init__)
+def test_dbevolution_alterschema_constructor_args():
+    sig = inspect.signature(dbevolution_AlterSchema.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_dbevolution::renameschemachange_is_not_abstract():
-    assert not inspect.isabstract(dbevolution::RenameSchemaChange)
+def test_dbevolution_renameschemachange_is_not_abstract():
+    assert not inspect.isabstract(dbevolution_RenameSchemaChange)
 
 
-def test_dbevolution::renameschemachange_constructor_exists():
-    assert callable(dbevolution::RenameSchemaChange.__init__)
+def test_dbevolution_renameschemachange_constructor_exists():
+    assert callable(dbevolution_RenameSchemaChange.__init__)
 
 
-def test_dbevolution::renameschemachange_constructor_args():
-    sig = inspect.signature(dbevolution::RenameSchemaChange.__init__)
+def test_dbevolution_renameschemachange_constructor_args():
+    sig = inspect.signature(dbevolution_RenameSchemaChange.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_dbevolution::addschema_is_not_abstract():
-    assert not inspect.isabstract(dbevolution::AddSchema)
+def test_dbevolution_addschema_is_not_abstract():
+    assert not inspect.isabstract(dbevolution_AddSchema)
 
 
-def test_dbevolution::addschema_constructor_exists():
-    assert callable(dbevolution::AddSchema.__init__)
+def test_dbevolution_addschema_constructor_exists():
+    assert callable(dbevolution_AddSchema.__init__)
 
 
-def test_dbevolution::addschema_constructor_args():
-    sig = inspect.signature(dbevolution::AddSchema.__init__)
+def test_dbevolution_addschema_constructor_args():
+    sig = inspect.signature(dbevolution_AddSchema.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_dbevolution::schema_is_not_abstract():
-    assert not inspect.isabstract(dbevolution::Schema)
+def test_dbevolution_schema_is_not_abstract():
+    assert not inspect.isabstract(dbevolution_Schema)
 
 
-def test_dbevolution::schema_constructor_exists():
-    assert callable(dbevolution::Schema.__init__)
+def test_dbevolution_schema_constructor_exists():
+    assert callable(dbevolution_Schema.__init__)
 
 
-def test_dbevolution::schema_constructor_args():
-    sig = inspect.signature(dbevolution::Schema.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_dbevolution::schemachange_is_not_abstract():
-    assert not inspect.isabstract(dbevolution::SchemaChange)
-
-
-def test_dbevolution::schemachange_constructor_exists():
-    assert callable(dbevolution::SchemaChange.__init__)
-
-
-def test_dbevolution::schemachange_constructor_args():
-    sig = inspect.signature(dbevolution::SchemaChange.__init__)
+def test_dbevolution_schema_constructor_args():
+    sig = inspect.signature(dbevolution_Schema.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -662,72 +228,58 @@ def test_sequencechange_constructor_args():
 
 
 
-def test_dbevolution::removesequence_is_not_abstract():
-    assert not inspect.isabstract(dbevolution::RemoveSequence)
+def test_dbevolution_removesequence_is_not_abstract():
+    assert not inspect.isabstract(dbevolution_RemoveSequence)
 
 
-def test_dbevolution::removesequence_constructor_exists():
-    assert callable(dbevolution::RemoveSequence.__init__)
+def test_dbevolution_removesequence_constructor_exists():
+    assert callable(dbevolution_RemoveSequence.__init__)
 
 
-def test_dbevolution::removesequence_constructor_args():
-    sig = inspect.signature(dbevolution::RemoveSequence.__init__)
+def test_dbevolution_removesequence_constructor_args():
+    sig = inspect.signature(dbevolution_RemoveSequence.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_dbevolution::updatesequence_is_not_abstract():
-    assert not inspect.isabstract(dbevolution::UpdateSequence)
+def test_dbevolution_updatesequence_is_not_abstract():
+    assert not inspect.isabstract(dbevolution_UpdateSequence)
 
 
-def test_dbevolution::updatesequence_constructor_exists():
-    assert callable(dbevolution::UpdateSequence.__init__)
+def test_dbevolution_updatesequence_constructor_exists():
+    assert callable(dbevolution_UpdateSequence.__init__)
 
 
-def test_dbevolution::updatesequence_constructor_args():
-    sig = inspect.signature(dbevolution::UpdateSequence.__init__)
+def test_dbevolution_updatesequence_constructor_args():
+    sig = inspect.signature(dbevolution_UpdateSequence.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_dbevolution::addsequence_is_not_abstract():
-    assert not inspect.isabstract(dbevolution::AddSequence)
+def test_dbevolution_addsequence_is_not_abstract():
+    assert not inspect.isabstract(dbevolution_AddSequence)
 
 
-def test_dbevolution::addsequence_constructor_exists():
-    assert callable(dbevolution::AddSequence.__init__)
+def test_dbevolution_addsequence_constructor_exists():
+    assert callable(dbevolution_AddSequence.__init__)
 
 
-def test_dbevolution::addsequence_constructor_args():
-    sig = inspect.signature(dbevolution::AddSequence.__init__)
+def test_dbevolution_addsequence_constructor_args():
+    sig = inspect.signature(dbevolution_AddSequence.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_dbevolution::sequence_is_not_abstract():
-    assert not inspect.isabstract(dbevolution::Sequence)
+def test_dbevolution_sequence_is_not_abstract():
+    assert not inspect.isabstract(dbevolution_Sequence)
 
 
-def test_dbevolution::sequence_constructor_exists():
-    assert callable(dbevolution::Sequence.__init__)
+def test_dbevolution_sequence_constructor_exists():
+    assert callable(dbevolution_Sequence.__init__)
 
 
-def test_dbevolution::sequence_constructor_args():
-    sig = inspect.signature(dbevolution::Sequence.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_dbevolution::sequencechange_is_not_abstract():
-    assert not inspect.isabstract(dbevolution::SequenceChange)
-
-
-def test_dbevolution::sequencechange_constructor_exists():
-    assert callable(dbevolution::SequenceChange.__init__)
-
-
-def test_dbevolution::sequencechange_constructor_args():
-    sig = inspect.signature(dbevolution::SequenceChange.__init__)
+def test_dbevolution_sequence_constructor_args():
+    sig = inspect.signature(dbevolution_Sequence.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -746,72 +298,44 @@ def test_foreignkeychange_constructor_args():
 
 
 
-def test_dbevolution::updateforeignkey_is_not_abstract():
-    assert not inspect.isabstract(dbevolution::UpdateForeignKey)
+def test_dbevolution_updateforeignkey_is_not_abstract():
+    assert not inspect.isabstract(dbevolution_UpdateForeignKey)
 
 
-def test_dbevolution::updateforeignkey_constructor_exists():
-    assert callable(dbevolution::UpdateForeignKey.__init__)
+def test_dbevolution_updateforeignkey_constructor_exists():
+    assert callable(dbevolution_UpdateForeignKey.__init__)
 
 
-def test_dbevolution::updateforeignkey_constructor_args():
-    sig = inspect.signature(dbevolution::UpdateForeignKey.__init__)
+def test_dbevolution_updateforeignkey_constructor_args():
+    sig = inspect.signature(dbevolution_UpdateForeignKey.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_dbevolution::removeforeignkey_is_not_abstract():
-    assert not inspect.isabstract(dbevolution::RemoveForeignKey)
+def test_dbevolution_addforeignkey_is_not_abstract():
+    assert not inspect.isabstract(dbevolution_AddForeignKey)
 
 
-def test_dbevolution::removeforeignkey_constructor_exists():
-    assert callable(dbevolution::RemoveForeignKey.__init__)
+def test_dbevolution_addforeignkey_constructor_exists():
+    assert callable(dbevolution_AddForeignKey.__init__)
 
 
-def test_dbevolution::removeforeignkey_constructor_args():
-    sig = inspect.signature(dbevolution::RemoveForeignKey.__init__)
+def test_dbevolution_addforeignkey_constructor_args():
+    sig = inspect.signature(dbevolution_AddForeignKey.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_dbevolution::addforeignkey_is_not_abstract():
-    assert not inspect.isabstract(dbevolution::AddForeignKey)
+def test_dbevolution_foreignkey_is_not_abstract():
+    assert not inspect.isabstract(dbevolution_ForeignKey)
 
 
-def test_dbevolution::addforeignkey_constructor_exists():
-    assert callable(dbevolution::AddForeignKey.__init__)
+def test_dbevolution_foreignkey_constructor_exists():
+    assert callable(dbevolution_ForeignKey.__init__)
 
 
-def test_dbevolution::addforeignkey_constructor_args():
-    sig = inspect.signature(dbevolution::AddForeignKey.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_dbevolution::foreignkey_is_not_abstract():
-    assert not inspect.isabstract(dbevolution::ForeignKey)
-
-
-def test_dbevolution::foreignkey_constructor_exists():
-    assert callable(dbevolution::ForeignKey.__init__)
-
-
-def test_dbevolution::foreignkey_constructor_args():
-    sig = inspect.signature(dbevolution::ForeignKey.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_dbevolution::foreignkeychange_is_not_abstract():
-    assert not inspect.isabstract(dbevolution::ForeignKeyChange)
-
-
-def test_dbevolution::foreignkeychange_constructor_exists():
-    assert callable(dbevolution::ForeignKeyChange.__init__)
-
-
-def test_dbevolution::foreignkeychange_constructor_args():
-    sig = inspect.signature(dbevolution::ForeignKeyChange.__init__)
+def test_dbevolution_foreignkey_constructor_args():
+    sig = inspect.signature(dbevolution_ForeignKey.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -830,86 +354,562 @@ def test_indexchange_constructor_args():
 
 
 
-def test_dbevolution::updateindex_is_not_abstract():
-    assert not inspect.isabstract(dbevolution::UpdateIndex)
+def test_dbevolution_updateindex_is_not_abstract():
+    assert not inspect.isabstract(dbevolution_UpdateIndex)
 
 
-def test_dbevolution::updateindex_constructor_exists():
-    assert callable(dbevolution::UpdateIndex.__init__)
+def test_dbevolution_updateindex_constructor_exists():
+    assert callable(dbevolution_UpdateIndex.__init__)
 
 
-def test_dbevolution::updateindex_constructor_args():
-    sig = inspect.signature(dbevolution::UpdateIndex.__init__)
+def test_dbevolution_updateindex_constructor_args():
+    sig = inspect.signature(dbevolution_UpdateIndex.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_dbevolution::removeindex_is_not_abstract():
-    assert not inspect.isabstract(dbevolution::RemoveIndex)
+def test_dbevolution_removeindex_is_not_abstract():
+    assert not inspect.isabstract(dbevolution_RemoveIndex)
 
 
-def test_dbevolution::removeindex_constructor_exists():
-    assert callable(dbevolution::RemoveIndex.__init__)
+def test_dbevolution_removeindex_constructor_exists():
+    assert callable(dbevolution_RemoveIndex.__init__)
 
 
-def test_dbevolution::removeindex_constructor_args():
-    sig = inspect.signature(dbevolution::RemoveIndex.__init__)
+def test_dbevolution_removeindex_constructor_args():
+    sig = inspect.signature(dbevolution_RemoveIndex.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_dbevolution::addindex_is_not_abstract():
-    assert not inspect.isabstract(dbevolution::AddIndex)
+def test_dbevolution_addindex_is_not_abstract():
+    assert not inspect.isabstract(dbevolution_AddIndex)
 
 
-def test_dbevolution::addindex_constructor_exists():
-    assert callable(dbevolution::AddIndex.__init__)
+def test_dbevolution_addindex_constructor_exists():
+    assert callable(dbevolution_AddIndex.__init__)
 
 
-def test_dbevolution::addindex_constructor_args():
-    sig = inspect.signature(dbevolution::AddIndex.__init__)
+def test_dbevolution_addindex_constructor_args():
+    sig = inspect.signature(dbevolution_AddIndex.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_dbevolution::index_is_not_abstract():
-    assert not inspect.isabstract(dbevolution::Index)
+def test_dbevolution_index_is_not_abstract():
+    assert not inspect.isabstract(dbevolution_Index)
 
 
-def test_dbevolution::index_constructor_exists():
-    assert callable(dbevolution::Index.__init__)
+def test_dbevolution_index_constructor_exists():
+    assert callable(dbevolution_Index.__init__)
 
 
-def test_dbevolution::index_constructor_args():
-    sig = inspect.signature(dbevolution::Index.__init__)
+def test_dbevolution_index_constructor_args():
+    sig = inspect.signature(dbevolution_Index.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_dbevolution::indexchange_is_not_abstract():
-    assert not inspect.isabstract(dbevolution::IndexChange)
+def test_primarykeychange_is_not_abstract():
+    assert not inspect.isabstract(PrimaryKeyChange)
 
 
-def test_dbevolution::indexchange_constructor_exists():
-    assert callable(dbevolution::IndexChange.__init__)
+def test_primarykeychange_constructor_exists():
+    assert callable(PrimaryKeyChange.__init__)
 
 
-def test_dbevolution::indexchange_constructor_args():
-    sig = inspect.signature(dbevolution::IndexChange.__init__)
+def test_primarykeychange_constructor_args():
+    sig = inspect.signature(PrimaryKeyChange.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_dbevolution::updateprimarykey_is_not_abstract():
-    assert not inspect.isabstract(dbevolution::UpdatePrimaryKey)
+def test_dbevolution_removeprimarykey_is_not_abstract():
+    assert not inspect.isabstract(dbevolution_RemovePrimaryKey)
 
 
-def test_dbevolution::updateprimarykey_constructor_exists():
-    assert callable(dbevolution::UpdatePrimaryKey.__init__)
+def test_dbevolution_removeprimarykey_constructor_exists():
+    assert callable(dbevolution_RemovePrimaryKey.__init__)
 
 
-def test_dbevolution::updateprimarykey_constructor_args():
-    sig = inspect.signature(dbevolution::UpdatePrimaryKey.__init__)
+def test_dbevolution_removeprimarykey_constructor_args():
+    sig = inspect.signature(dbevolution_RemovePrimaryKey.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_dbevolution_updateprimarykey_is_not_abstract():
+    assert not inspect.isabstract(dbevolution_UpdatePrimaryKey)
+
+
+def test_dbevolution_updateprimarykey_constructor_exists():
+    assert callable(dbevolution_UpdatePrimaryKey.__init__)
+
+
+def test_dbevolution_updateprimarykey_constructor_args():
+    sig = inspect.signature(dbevolution_UpdatePrimaryKey.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_dbevolution_addprimarykey_is_not_abstract():
+    assert not inspect.isabstract(dbevolution_AddPrimaryKey)
+
+
+def test_dbevolution_addprimarykey_constructor_exists():
+    assert callable(dbevolution_AddPrimaryKey.__init__)
+
+
+def test_dbevolution_addprimarykey_constructor_args():
+    sig = inspect.signature(dbevolution_AddPrimaryKey.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_dbevolution_primarykey_is_not_abstract():
+    assert not inspect.isabstract(dbevolution_PrimaryKey)
+
+
+def test_dbevolution_primarykey_constructor_exists():
+    assert callable(dbevolution_PrimaryKey.__init__)
+
+
+def test_dbevolution_primarykey_constructor_args():
+    sig = inspect.signature(dbevolution_PrimaryKey.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_constraintchange_is_not_abstract():
+    assert not inspect.isabstract(ConstraintChange)
+
+
+def test_constraintchange_constructor_exists():
+    assert callable(ConstraintChange.__init__)
+
+
+def test_constraintchange_constructor_args():
+    sig = inspect.signature(ConstraintChange.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_dbevolution_updateconstraint_is_not_abstract():
+    assert not inspect.isabstract(dbevolution_UpdateConstraint)
+
+
+def test_dbevolution_updateconstraint_constructor_exists():
+    assert callable(dbevolution_UpdateConstraint.__init__)
+
+
+def test_dbevolution_updateconstraint_constructor_args():
+    sig = inspect.signature(dbevolution_UpdateConstraint.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_dbevolution_removeconstraint_is_not_abstract():
+    assert not inspect.isabstract(dbevolution_RemoveConstraint)
+
+
+def test_dbevolution_removeconstraint_constructor_exists():
+    assert callable(dbevolution_RemoveConstraint.__init__)
+
+
+def test_dbevolution_removeconstraint_constructor_args():
+    sig = inspect.signature(dbevolution_RemoveConstraint.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_dbevolution_addconstraint_is_not_abstract():
+    assert not inspect.isabstract(dbevolution_AddConstraint)
+
+
+def test_dbevolution_addconstraint_constructor_exists():
+    assert callable(dbevolution_AddConstraint.__init__)
+
+
+def test_dbevolution_addconstraint_constructor_args():
+    sig = inspect.signature(dbevolution_AddConstraint.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_dbevolution_constraint_is_not_abstract():
+    assert not inspect.isabstract(dbevolution_Constraint)
+
+
+def test_dbevolution_constraint_constructor_exists():
+    assert callable(dbevolution_Constraint.__init__)
+
+
+def test_dbevolution_constraint_constructor_args():
+    sig = inspect.signature(dbevolution_Constraint.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_tablechange_is_not_abstract():
+    assert not inspect.isabstract(TableChange)
+
+
+def test_tablechange_constructor_exists():
+    assert callable(TableChange.__init__)
+
+
+def test_tablechange_constructor_args():
+    sig = inspect.signature(TableChange.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_dbevolution_removetable_is_not_abstract():
+    assert not inspect.isabstract(dbevolution_RemoveTable)
+
+
+def test_dbevolution_removetable_constructor_exists():
+    assert callable(dbevolution_RemoveTable.__init__)
+
+
+def test_dbevolution_removetable_constructor_args():
+    sig = inspect.signature(dbevolution_RemoveTable.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_dbevolution_renametablechange_is_not_abstract():
+    assert not inspect.isabstract(dbevolution_RenameTableChange)
+
+
+def test_dbevolution_renametablechange_constructor_exists():
+    assert callable(dbevolution_RenameTableChange.__init__)
+
+
+def test_dbevolution_renametablechange_constructor_args():
+    sig = inspect.signature(dbevolution_RenameTableChange.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_dbevolution_updatetablecommentchange_is_not_abstract():
+    assert not inspect.isabstract(dbevolution_UpdateTableCommentChange)
+
+
+def test_dbevolution_updatetablecommentchange_constructor_exists():
+    assert callable(dbevolution_UpdateTableCommentChange.__init__)
+
+
+def test_dbevolution_updatetablecommentchange_constructor_args():
+    sig = inspect.signature(dbevolution_UpdateTableCommentChange.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_dbevolution_altertable_is_not_abstract():
+    assert not inspect.isabstract(dbevolution_AlterTable)
+
+
+def test_dbevolution_altertable_constructor_exists():
+    assert callable(dbevolution_AlterTable.__init__)
+
+
+def test_dbevolution_altertable_constructor_args():
+    sig = inspect.signature(dbevolution_AlterTable.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_dbevolution_addtable_is_not_abstract():
+    assert not inspect.isabstract(dbevolution_AddTable)
+
+
+def test_dbevolution_addtable_constructor_exists():
+    assert callable(dbevolution_AddTable.__init__)
+
+
+def test_dbevolution_addtable_constructor_args():
+    sig = inspect.signature(dbevolution_AddTable.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_dbevolution_table_is_not_abstract():
+    assert not inspect.isabstract(dbevolution_Table)
+
+
+def test_dbevolution_table_constructor_exists():
+    assert callable(dbevolution_Table.__init__)
+
+
+def test_dbevolution_table_constructor_args():
+    sig = inspect.signature(dbevolution_Table.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_dbdiff_is_not_abstract():
+    assert not inspect.isabstract(DBDiff)
+
+
+def test_dbdiff_constructor_exists():
+    assert callable(DBDiff.__init__)
+
+
+def test_dbdiff_constructor_args():
+    sig = inspect.signature(DBDiff.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_dbevolution_sequencechange_is_not_abstract():
+    assert not inspect.isabstract(dbevolution_SequenceChange)
+
+
+def test_dbevolution_sequencechange_constructor_exists():
+    assert callable(dbevolution_SequenceChange.__init__)
+
+
+def test_dbevolution_sequencechange_constructor_args():
+    sig = inspect.signature(dbevolution_SequenceChange.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_dbevolution_constraintchange_is_not_abstract():
+    assert not inspect.isabstract(dbevolution_ConstraintChange)
+
+
+def test_dbevolution_constraintchange_constructor_exists():
+    assert callable(dbevolution_ConstraintChange.__init__)
+
+
+def test_dbevolution_constraintchange_constructor_args():
+    sig = inspect.signature(dbevolution_ConstraintChange.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_dbevolution_foreignkeychange_is_not_abstract():
+    assert not inspect.isabstract(dbevolution_ForeignKeyChange)
+
+
+def test_dbevolution_foreignkeychange_constructor_exists():
+    assert callable(dbevolution_ForeignKeyChange.__init__)
+
+
+def test_dbevolution_foreignkeychange_constructor_args():
+    sig = inspect.signature(dbevolution_ForeignKeyChange.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_dbevolution_indexchange_is_not_abstract():
+    assert not inspect.isabstract(dbevolution_IndexChange)
+
+
+def test_dbevolution_indexchange_constructor_exists():
+    assert callable(dbevolution_IndexChange.__init__)
+
+
+def test_dbevolution_indexchange_constructor_args():
+    sig = inspect.signature(dbevolution_IndexChange.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_dbevolution_schemachange_is_not_abstract():
+    assert not inspect.isabstract(dbevolution_SchemaChange)
+
+
+def test_dbevolution_schemachange_constructor_exists():
+    assert callable(dbevolution_SchemaChange.__init__)
+
+
+def test_dbevolution_schemachange_constructor_args():
+    sig = inspect.signature(dbevolution_SchemaChange.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_dbevolution_primarykeychange_is_not_abstract():
+    assert not inspect.isabstract(dbevolution_PrimaryKeyChange)
+
+
+def test_dbevolution_primarykeychange_constructor_exists():
+    assert callable(dbevolution_PrimaryKeyChange.__init__)
+
+
+def test_dbevolution_primarykeychange_constructor_args():
+    sig = inspect.signature(dbevolution_PrimaryKeyChange.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_dbevolution_columnchange_is_not_abstract():
+    assert not inspect.isabstract(dbevolution_ColumnChange)
+
+
+def test_dbevolution_columnchange_constructor_exists():
+    assert callable(dbevolution_ColumnChange.__init__)
+
+
+def test_dbevolution_columnchange_constructor_args():
+    sig = inspect.signature(dbevolution_ColumnChange.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_dbevolution_tablechange_is_not_abstract():
+    assert not inspect.isabstract(dbevolution_TableChange)
+
+
+def test_dbevolution_tablechange_constructor_exists():
+    assert callable(dbevolution_TableChange.__init__)
+
+
+def test_dbevolution_tablechange_constructor_args():
+    sig = inspect.signature(dbevolution_TableChange.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_comparison_is_not_abstract():
+    assert not inspect.isabstract(Comparison)
+
+
+def test_comparison_constructor_exists():
+    assert callable(Comparison.__init__)
+
+
+def test_comparison_constructor_args():
+    sig = inspect.signature(Comparison.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_dbevolution_databasechangeset_is_not_abstract():
+    assert not inspect.isabstract(dbevolution_DatabaseChangeSet)
+
+
+def test_dbevolution_databasechangeset_constructor_exists():
+    assert callable(dbevolution_DatabaseChangeSet.__init__)
+
+
+def test_dbevolution_databasechangeset_constructor_args():
+    sig = inspect.signature(dbevolution_DatabaseChangeSet.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_columnchange_is_not_abstract():
+    assert not inspect.isabstract(ColumnChange)
+
+
+def test_columnchange_constructor_exists():
+    assert callable(ColumnChange.__init__)
+
+
+def test_columnchange_constructor_args():
+    sig = inspect.signature(ColumnChange.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_dbevolution_updatecolumnchange_is_not_abstract():
+    assert not inspect.isabstract(dbevolution_UpdateColumnChange)
+
+
+def test_dbevolution_updatecolumnchange_constructor_exists():
+    assert callable(dbevolution_UpdateColumnChange.__init__)
+
+
+def test_dbevolution_updatecolumnchange_constructor_args():
+    sig = inspect.signature(dbevolution_UpdateColumnChange.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_dbevolution_removecolumnchange_is_not_abstract():
+    assert not inspect.isabstract(dbevolution_RemoveColumnChange)
+
+
+def test_dbevolution_removecolumnchange_constructor_exists():
+    assert callable(dbevolution_RemoveColumnChange.__init__)
+
+
+def test_dbevolution_removecolumnchange_constructor_args():
+    sig = inspect.signature(dbevolution_RemoveColumnChange.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_dbevolution_updatecolumncommentchange_is_not_abstract():
+    assert not inspect.isabstract(dbevolution_UpdateColumnCommentChange)
+
+
+def test_dbevolution_updatecolumncommentchange_constructor_exists():
+    assert callable(dbevolution_UpdateColumnCommentChange.__init__)
+
+
+def test_dbevolution_updatecolumncommentchange_constructor_args():
+    sig = inspect.signature(dbevolution_UpdateColumnCommentChange.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_dbevolution_renamecolumnchange_is_not_abstract():
+    assert not inspect.isabstract(dbevolution_RenameColumnChange)
+
+
+def test_dbevolution_renamecolumnchange_constructor_exists():
+    assert callable(dbevolution_RenameColumnChange.__init__)
+
+
+def test_dbevolution_renamecolumnchange_constructor_args():
+    sig = inspect.signature(dbevolution_RenameColumnChange.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_dbevolution_addcolumnchange_is_not_abstract():
+    assert not inspect.isabstract(dbevolution_AddColumnChange)
+
+
+def test_dbevolution_addcolumnchange_constructor_exists():
+    assert callable(dbevolution_AddColumnChange.__init__)
+
+
+def test_dbevolution_addcolumnchange_constructor_args():
+    sig = inspect.signature(dbevolution_AddColumnChange.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_dbevolution_column_is_not_abstract():
+    assert not inspect.isabstract(dbevolution_Column)
+
+
+def test_dbevolution_column_constructor_exists():
+    assert callable(dbevolution_Column.__init__)
+
+
+def test_dbevolution_column_constructor_args():
+    sig = inspect.signature(dbevolution_Column.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_dbevolution_removeforeignkey_is_not_abstract():
+    assert not inspect.isabstract(dbevolution_RemoveForeignKey)
+
+
+def test_dbevolution_removeforeignkey_constructor_exists():
+    assert callable(dbevolution_RemoveForeignKey.__init__)
+
+
+def test_dbevolution_removeforeignkey_constructor_args():
+    sig = inspect.signature(dbevolution_RemoveForeignKey.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -924,483 +924,483 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-PrimaryKeyChange_strategy = st.builds(
-    PrimaryKeyChange,
-)
-dbevolution::RemovePrimaryKey_strategy = st.builds(
-    dbevolution::RemovePrimaryKey,
-)
-dbevolution::AddPrimaryKey_strategy = st.builds(
-    dbevolution::AddPrimaryKey,
-)
-dbevolution::PrimaryKey_strategy = st.builds(
-    dbevolution::PrimaryKey,
-)
-ConstraintChange_strategy = st.builds(
-    ConstraintChange,
-)
-dbevolution::RemoveConstraint_strategy = st.builds(
-    dbevolution::RemoveConstraint,
-)
-dbevolution::UpdateConstraint_strategy = st.builds(
-    dbevolution::UpdateConstraint,
-)
-dbevolution::AddConstraint_strategy = st.builds(
-    dbevolution::AddConstraint,
-)
-dbevolution::Constraint_strategy = st.builds(
-    dbevolution::Constraint,
-)
-TableChange_strategy = st.builds(
-    TableChange,
-)
-dbevolution::RemoveTable_strategy = st.builds(
-    dbevolution::RemoveTable,
-)
-dbevolution::RenameTableChange_strategy = st.builds(
-    dbevolution::RenameTableChange,
-)
-dbevolution::UpdateTableCommentChange_strategy = st.builds(
-    dbevolution::UpdateTableCommentChange,
-)
-dbevolution::AlterTable_strategy = st.builds(
-    dbevolution::AlterTable,
-)
-dbevolution::AddTable_strategy = st.builds(
-    dbevolution::AddTable,
-)
-dbevolution::Table_strategy = st.builds(
-    dbevolution::Table,
-)
-DBDiff_strategy = st.builds(
-    DBDiff,
-)
-dbevolution::PrimaryKeyChange_strategy = st.builds(
-    dbevolution::PrimaryKeyChange,
-)
-dbevolution::ConstraintChange_strategy = st.builds(
-    dbevolution::ConstraintChange,
-)
-dbevolution::ColumnChange_strategy = st.builds(
-    dbevolution::ColumnChange,
-)
-dbevolution::TableChange_strategy = st.builds(
-    dbevolution::TableChange,
-)
-Comparison_strategy = st.builds(
-    Comparison,
-)
-dbevolution::DatabaseChangeSet_strategy = st.builds(
-    dbevolution::DatabaseChangeSet,
-)
-ColumnChange_strategy = st.builds(
-    ColumnChange,
-)
-dbevolution::UpdateColumnChange_strategy = st.builds(
-    dbevolution::UpdateColumnChange,
-)
-dbevolution::RemoveColumnChange_strategy = st.builds(
-    dbevolution::RemoveColumnChange,
-)
-dbevolution::UpdateColumnCommentChange_strategy = st.builds(
-    dbevolution::UpdateColumnCommentChange,
-)
-dbevolution::RenameColumnChange_strategy = st.builds(
-    dbevolution::RenameColumnChange,
-)
-dbevolution::AddColumnChange_strategy = st.builds(
-    dbevolution::AddColumnChange,
-)
-dbevolution::Column_strategy = st.builds(
-    dbevolution::Column,
-)
-dbevolution::EObject_strategy = st.builds(
-    dbevolution::EObject,
+dbevolution_EObject_strategy = st.builds(
+    dbevolution_EObject,
 )
 Diff_strategy = st.builds(
     Diff,
 )
-dbevolution::DBDiff_strategy = st.builds(
-    dbevolution::DBDiff,
+dbevolution_DBDiff_strategy = st.builds(
+    dbevolution_DBDiff,
 )
 SchemaChange_strategy = st.builds(
     SchemaChange,
 )
-dbevolution::RemoveSchema_strategy = st.builds(
-    dbevolution::RemoveSchema,
+dbevolution_RemoveSchema_strategy = st.builds(
+    dbevolution_RemoveSchema,
 )
-dbevolution::AlterSchema_strategy = st.builds(
-    dbevolution::AlterSchema,
+dbevolution_UpdateSchemaCommentChange_strategy = st.builds(
+    dbevolution_UpdateSchemaCommentChange,
 )
-dbevolution::UpdateSchemaCommentChange_strategy = st.builds(
-    dbevolution::UpdateSchemaCommentChange,
+dbevolution_AlterSchema_strategy = st.builds(
+    dbevolution_AlterSchema,
 )
-dbevolution::RenameSchemaChange_strategy = st.builds(
-    dbevolution::RenameSchemaChange,
+dbevolution_RenameSchemaChange_strategy = st.builds(
+    dbevolution_RenameSchemaChange,
 )
-dbevolution::AddSchema_strategy = st.builds(
-    dbevolution::AddSchema,
+dbevolution_AddSchema_strategy = st.builds(
+    dbevolution_AddSchema,
 )
-dbevolution::Schema_strategy = st.builds(
-    dbevolution::Schema,
-)
-dbevolution::SchemaChange_strategy = st.builds(
-    dbevolution::SchemaChange,
+dbevolution_Schema_strategy = st.builds(
+    dbevolution_Schema,
 )
 SequenceChange_strategy = st.builds(
     SequenceChange,
 )
-dbevolution::RemoveSequence_strategy = st.builds(
-    dbevolution::RemoveSequence,
+dbevolution_RemoveSequence_strategy = st.builds(
+    dbevolution_RemoveSequence,
 )
-dbevolution::UpdateSequence_strategy = st.builds(
-    dbevolution::UpdateSequence,
+dbevolution_UpdateSequence_strategy = st.builds(
+    dbevolution_UpdateSequence,
 )
-dbevolution::AddSequence_strategy = st.builds(
-    dbevolution::AddSequence,
+dbevolution_AddSequence_strategy = st.builds(
+    dbevolution_AddSequence,
 )
-dbevolution::Sequence_strategy = st.builds(
-    dbevolution::Sequence,
-)
-dbevolution::SequenceChange_strategy = st.builds(
-    dbevolution::SequenceChange,
+dbevolution_Sequence_strategy = st.builds(
+    dbevolution_Sequence,
 )
 ForeignKeyChange_strategy = st.builds(
     ForeignKeyChange,
 )
-dbevolution::UpdateForeignKey_strategy = st.builds(
-    dbevolution::UpdateForeignKey,
+dbevolution_UpdateForeignKey_strategy = st.builds(
+    dbevolution_UpdateForeignKey,
 )
-dbevolution::RemoveForeignKey_strategy = st.builds(
-    dbevolution::RemoveForeignKey,
+dbevolution_AddForeignKey_strategy = st.builds(
+    dbevolution_AddForeignKey,
 )
-dbevolution::AddForeignKey_strategy = st.builds(
-    dbevolution::AddForeignKey,
-)
-dbevolution::ForeignKey_strategy = st.builds(
-    dbevolution::ForeignKey,
-)
-dbevolution::ForeignKeyChange_strategy = st.builds(
-    dbevolution::ForeignKeyChange,
+dbevolution_ForeignKey_strategy = st.builds(
+    dbevolution_ForeignKey,
 )
 IndexChange_strategy = st.builds(
     IndexChange,
 )
-dbevolution::UpdateIndex_strategy = st.builds(
-    dbevolution::UpdateIndex,
+dbevolution_UpdateIndex_strategy = st.builds(
+    dbevolution_UpdateIndex,
 )
-dbevolution::RemoveIndex_strategy = st.builds(
-    dbevolution::RemoveIndex,
+dbevolution_RemoveIndex_strategy = st.builds(
+    dbevolution_RemoveIndex,
 )
-dbevolution::AddIndex_strategy = st.builds(
-    dbevolution::AddIndex,
+dbevolution_AddIndex_strategy = st.builds(
+    dbevolution_AddIndex,
 )
-dbevolution::Index_strategy = st.builds(
-    dbevolution::Index,
+dbevolution_Index_strategy = st.builds(
+    dbevolution_Index,
 )
-dbevolution::IndexChange_strategy = st.builds(
-    dbevolution::IndexChange,
+PrimaryKeyChange_strategy = st.builds(
+    PrimaryKeyChange,
 )
-dbevolution::UpdatePrimaryKey_strategy = st.builds(
-    dbevolution::UpdatePrimaryKey,
+dbevolution_RemovePrimaryKey_strategy = st.builds(
+    dbevolution_RemovePrimaryKey,
+)
+dbevolution_UpdatePrimaryKey_strategy = st.builds(
+    dbevolution_UpdatePrimaryKey,
+)
+dbevolution_AddPrimaryKey_strategy = st.builds(
+    dbevolution_AddPrimaryKey,
+)
+dbevolution_PrimaryKey_strategy = st.builds(
+    dbevolution_PrimaryKey,
+)
+ConstraintChange_strategy = st.builds(
+    ConstraintChange,
+)
+dbevolution_UpdateConstraint_strategy = st.builds(
+    dbevolution_UpdateConstraint,
+)
+dbevolution_RemoveConstraint_strategy = st.builds(
+    dbevolution_RemoveConstraint,
+)
+dbevolution_AddConstraint_strategy = st.builds(
+    dbevolution_AddConstraint,
+)
+dbevolution_Constraint_strategy = st.builds(
+    dbevolution_Constraint,
+)
+TableChange_strategy = st.builds(
+    TableChange,
+)
+dbevolution_RemoveTable_strategy = st.builds(
+    dbevolution_RemoveTable,
+)
+dbevolution_RenameTableChange_strategy = st.builds(
+    dbevolution_RenameTableChange,
+)
+dbevolution_UpdateTableCommentChange_strategy = st.builds(
+    dbevolution_UpdateTableCommentChange,
+)
+dbevolution_AlterTable_strategy = st.builds(
+    dbevolution_AlterTable,
+)
+dbevolution_AddTable_strategy = st.builds(
+    dbevolution_AddTable,
+)
+dbevolution_Table_strategy = st.builds(
+    dbevolution_Table,
+)
+DBDiff_strategy = st.builds(
+    DBDiff,
+)
+dbevolution_SequenceChange_strategy = st.builds(
+    dbevolution_SequenceChange,
+)
+dbevolution_ConstraintChange_strategy = st.builds(
+    dbevolution_ConstraintChange,
+)
+dbevolution_ForeignKeyChange_strategy = st.builds(
+    dbevolution_ForeignKeyChange,
+)
+dbevolution_IndexChange_strategy = st.builds(
+    dbevolution_IndexChange,
+)
+dbevolution_SchemaChange_strategy = st.builds(
+    dbevolution_SchemaChange,
+)
+dbevolution_PrimaryKeyChange_strategy = st.builds(
+    dbevolution_PrimaryKeyChange,
+)
+dbevolution_ColumnChange_strategy = st.builds(
+    dbevolution_ColumnChange,
+)
+dbevolution_TableChange_strategy = st.builds(
+    dbevolution_TableChange,
+)
+Comparison_strategy = st.builds(
+    Comparison,
+)
+dbevolution_DatabaseChangeSet_strategy = st.builds(
+    dbevolution_DatabaseChangeSet,
+)
+ColumnChange_strategy = st.builds(
+    ColumnChange,
+)
+dbevolution_UpdateColumnChange_strategy = st.builds(
+    dbevolution_UpdateColumnChange,
+)
+dbevolution_RemoveColumnChange_strategy = st.builds(
+    dbevolution_RemoveColumnChange,
+)
+dbevolution_UpdateColumnCommentChange_strategy = st.builds(
+    dbevolution_UpdateColumnCommentChange,
+)
+dbevolution_RenameColumnChange_strategy = st.builds(
+    dbevolution_RenameColumnChange,
+)
+dbevolution_AddColumnChange_strategy = st.builds(
+    dbevolution_AddColumnChange,
+)
+dbevolution_Column_strategy = st.builds(
+    dbevolution_Column,
+)
+dbevolution_RemoveForeignKey_strategy = st.builds(
+    dbevolution_RemoveForeignKey,
 )
 
-@given(instance=PrimaryKeyChange_strategy)
+@given(instance=dbevolution_EObject_strategy)
 @settings(max_examples=50)
-def test_primarykeychange_instantiation(instance):
-    assert isinstance(instance, PrimaryKeyChange)
-
-@given(instance=dbevolution::RemovePrimaryKey_strategy)
-@settings(max_examples=50)
-def test_dbevolution::removeprimarykey_instantiation(instance):
-    assert isinstance(instance, dbevolution::RemovePrimaryKey)
-
-@given(instance=dbevolution::AddPrimaryKey_strategy)
-@settings(max_examples=50)
-def test_dbevolution::addprimarykey_instantiation(instance):
-    assert isinstance(instance, dbevolution::AddPrimaryKey)
-
-@given(instance=dbevolution::PrimaryKey_strategy)
-@settings(max_examples=50)
-def test_dbevolution::primarykey_instantiation(instance):
-    assert isinstance(instance, dbevolution::PrimaryKey)
-
-@given(instance=ConstraintChange_strategy)
-@settings(max_examples=50)
-def test_constraintchange_instantiation(instance):
-    assert isinstance(instance, ConstraintChange)
-
-@given(instance=dbevolution::RemoveConstraint_strategy)
-@settings(max_examples=50)
-def test_dbevolution::removeconstraint_instantiation(instance):
-    assert isinstance(instance, dbevolution::RemoveConstraint)
-
-@given(instance=dbevolution::UpdateConstraint_strategy)
-@settings(max_examples=50)
-def test_dbevolution::updateconstraint_instantiation(instance):
-    assert isinstance(instance, dbevolution::UpdateConstraint)
-
-@given(instance=dbevolution::AddConstraint_strategy)
-@settings(max_examples=50)
-def test_dbevolution::addconstraint_instantiation(instance):
-    assert isinstance(instance, dbevolution::AddConstraint)
-
-@given(instance=dbevolution::Constraint_strategy)
-@settings(max_examples=50)
-def test_dbevolution::constraint_instantiation(instance):
-    assert isinstance(instance, dbevolution::Constraint)
-
-@given(instance=TableChange_strategy)
-@settings(max_examples=50)
-def test_tablechange_instantiation(instance):
-    assert isinstance(instance, TableChange)
-
-@given(instance=dbevolution::RemoveTable_strategy)
-@settings(max_examples=50)
-def test_dbevolution::removetable_instantiation(instance):
-    assert isinstance(instance, dbevolution::RemoveTable)
-
-@given(instance=dbevolution::RenameTableChange_strategy)
-@settings(max_examples=50)
-def test_dbevolution::renametablechange_instantiation(instance):
-    assert isinstance(instance, dbevolution::RenameTableChange)
-
-@given(instance=dbevolution::UpdateTableCommentChange_strategy)
-@settings(max_examples=50)
-def test_dbevolution::updatetablecommentchange_instantiation(instance):
-    assert isinstance(instance, dbevolution::UpdateTableCommentChange)
-
-@given(instance=dbevolution::AlterTable_strategy)
-@settings(max_examples=50)
-def test_dbevolution::altertable_instantiation(instance):
-    assert isinstance(instance, dbevolution::AlterTable)
-
-@given(instance=dbevolution::AddTable_strategy)
-@settings(max_examples=50)
-def test_dbevolution::addtable_instantiation(instance):
-    assert isinstance(instance, dbevolution::AddTable)
-
-@given(instance=dbevolution::Table_strategy)
-@settings(max_examples=50)
-def test_dbevolution::table_instantiation(instance):
-    assert isinstance(instance, dbevolution::Table)
-
-@given(instance=DBDiff_strategy)
-@settings(max_examples=50)
-def test_dbdiff_instantiation(instance):
-    assert isinstance(instance, DBDiff)
-
-@given(instance=dbevolution::PrimaryKeyChange_strategy)
-@settings(max_examples=50)
-def test_dbevolution::primarykeychange_instantiation(instance):
-    assert isinstance(instance, dbevolution::PrimaryKeyChange)
-
-@given(instance=dbevolution::ConstraintChange_strategy)
-@settings(max_examples=50)
-def test_dbevolution::constraintchange_instantiation(instance):
-    assert isinstance(instance, dbevolution::ConstraintChange)
-
-@given(instance=dbevolution::ColumnChange_strategy)
-@settings(max_examples=50)
-def test_dbevolution::columnchange_instantiation(instance):
-    assert isinstance(instance, dbevolution::ColumnChange)
-
-@given(instance=dbevolution::TableChange_strategy)
-@settings(max_examples=50)
-def test_dbevolution::tablechange_instantiation(instance):
-    assert isinstance(instance, dbevolution::TableChange)
-
-@given(instance=Comparison_strategy)
-@settings(max_examples=50)
-def test_comparison_instantiation(instance):
-    assert isinstance(instance, Comparison)
-
-@given(instance=dbevolution::DatabaseChangeSet_strategy)
-@settings(max_examples=50)
-def test_dbevolution::databasechangeset_instantiation(instance):
-    assert isinstance(instance, dbevolution::DatabaseChangeSet)
-
-@given(instance=ColumnChange_strategy)
-@settings(max_examples=50)
-def test_columnchange_instantiation(instance):
-    assert isinstance(instance, ColumnChange)
-
-@given(instance=dbevolution::UpdateColumnChange_strategy)
-@settings(max_examples=50)
-def test_dbevolution::updatecolumnchange_instantiation(instance):
-    assert isinstance(instance, dbevolution::UpdateColumnChange)
-
-@given(instance=dbevolution::RemoveColumnChange_strategy)
-@settings(max_examples=50)
-def test_dbevolution::removecolumnchange_instantiation(instance):
-    assert isinstance(instance, dbevolution::RemoveColumnChange)
-
-@given(instance=dbevolution::UpdateColumnCommentChange_strategy)
-@settings(max_examples=50)
-def test_dbevolution::updatecolumncommentchange_instantiation(instance):
-    assert isinstance(instance, dbevolution::UpdateColumnCommentChange)
-
-@given(instance=dbevolution::RenameColumnChange_strategy)
-@settings(max_examples=50)
-def test_dbevolution::renamecolumnchange_instantiation(instance):
-    assert isinstance(instance, dbevolution::RenameColumnChange)
-
-@given(instance=dbevolution::AddColumnChange_strategy)
-@settings(max_examples=50)
-def test_dbevolution::addcolumnchange_instantiation(instance):
-    assert isinstance(instance, dbevolution::AddColumnChange)
-
-@given(instance=dbevolution::Column_strategy)
-@settings(max_examples=50)
-def test_dbevolution::column_instantiation(instance):
-    assert isinstance(instance, dbevolution::Column)
-
-@given(instance=dbevolution::EObject_strategy)
-@settings(max_examples=50)
-def test_dbevolution::eobject_instantiation(instance):
-    assert isinstance(instance, dbevolution::EObject)
+def test_dbevolution_eobject_instantiation(instance):
+    assert isinstance(instance, dbevolution_EObject)
 
 @given(instance=Diff_strategy)
 @settings(max_examples=50)
 def test_diff_instantiation(instance):
     assert isinstance(instance, Diff)
 
-@given(instance=dbevolution::DBDiff_strategy)
+@given(instance=dbevolution_DBDiff_strategy)
 @settings(max_examples=50)
-def test_dbevolution::dbdiff_instantiation(instance):
-    assert isinstance(instance, dbevolution::DBDiff)
+def test_dbevolution_dbdiff_instantiation(instance):
+    assert isinstance(instance, dbevolution_DBDiff)
 
 @given(instance=SchemaChange_strategy)
 @settings(max_examples=50)
 def test_schemachange_instantiation(instance):
     assert isinstance(instance, SchemaChange)
 
-@given(instance=dbevolution::RemoveSchema_strategy)
+@given(instance=dbevolution_RemoveSchema_strategy)
 @settings(max_examples=50)
-def test_dbevolution::removeschema_instantiation(instance):
-    assert isinstance(instance, dbevolution::RemoveSchema)
+def test_dbevolution_removeschema_instantiation(instance):
+    assert isinstance(instance, dbevolution_RemoveSchema)
 
-@given(instance=dbevolution::AlterSchema_strategy)
+@given(instance=dbevolution_UpdateSchemaCommentChange_strategy)
 @settings(max_examples=50)
-def test_dbevolution::alterschema_instantiation(instance):
-    assert isinstance(instance, dbevolution::AlterSchema)
+def test_dbevolution_updateschemacommentchange_instantiation(instance):
+    assert isinstance(instance, dbevolution_UpdateSchemaCommentChange)
 
-@given(instance=dbevolution::UpdateSchemaCommentChange_strategy)
+@given(instance=dbevolution_AlterSchema_strategy)
 @settings(max_examples=50)
-def test_dbevolution::updateschemacommentchange_instantiation(instance):
-    assert isinstance(instance, dbevolution::UpdateSchemaCommentChange)
+def test_dbevolution_alterschema_instantiation(instance):
+    assert isinstance(instance, dbevolution_AlterSchema)
 
-@given(instance=dbevolution::RenameSchemaChange_strategy)
+@given(instance=dbevolution_RenameSchemaChange_strategy)
 @settings(max_examples=50)
-def test_dbevolution::renameschemachange_instantiation(instance):
-    assert isinstance(instance, dbevolution::RenameSchemaChange)
+def test_dbevolution_renameschemachange_instantiation(instance):
+    assert isinstance(instance, dbevolution_RenameSchemaChange)
 
-@given(instance=dbevolution::AddSchema_strategy)
+@given(instance=dbevolution_AddSchema_strategy)
 @settings(max_examples=50)
-def test_dbevolution::addschema_instantiation(instance):
-    assert isinstance(instance, dbevolution::AddSchema)
+def test_dbevolution_addschema_instantiation(instance):
+    assert isinstance(instance, dbevolution_AddSchema)
 
-@given(instance=dbevolution::Schema_strategy)
+@given(instance=dbevolution_Schema_strategy)
 @settings(max_examples=50)
-def test_dbevolution::schema_instantiation(instance):
-    assert isinstance(instance, dbevolution::Schema)
-
-@given(instance=dbevolution::SchemaChange_strategy)
-@settings(max_examples=50)
-def test_dbevolution::schemachange_instantiation(instance):
-    assert isinstance(instance, dbevolution::SchemaChange)
+def test_dbevolution_schema_instantiation(instance):
+    assert isinstance(instance, dbevolution_Schema)
 
 @given(instance=SequenceChange_strategy)
 @settings(max_examples=50)
 def test_sequencechange_instantiation(instance):
     assert isinstance(instance, SequenceChange)
 
-@given(instance=dbevolution::RemoveSequence_strategy)
+@given(instance=dbevolution_RemoveSequence_strategy)
 @settings(max_examples=50)
-def test_dbevolution::removesequence_instantiation(instance):
-    assert isinstance(instance, dbevolution::RemoveSequence)
+def test_dbevolution_removesequence_instantiation(instance):
+    assert isinstance(instance, dbevolution_RemoveSequence)
 
-@given(instance=dbevolution::UpdateSequence_strategy)
+@given(instance=dbevolution_UpdateSequence_strategy)
 @settings(max_examples=50)
-def test_dbevolution::updatesequence_instantiation(instance):
-    assert isinstance(instance, dbevolution::UpdateSequence)
+def test_dbevolution_updatesequence_instantiation(instance):
+    assert isinstance(instance, dbevolution_UpdateSequence)
 
-@given(instance=dbevolution::AddSequence_strategy)
+@given(instance=dbevolution_AddSequence_strategy)
 @settings(max_examples=50)
-def test_dbevolution::addsequence_instantiation(instance):
-    assert isinstance(instance, dbevolution::AddSequence)
+def test_dbevolution_addsequence_instantiation(instance):
+    assert isinstance(instance, dbevolution_AddSequence)
 
-@given(instance=dbevolution::Sequence_strategy)
+@given(instance=dbevolution_Sequence_strategy)
 @settings(max_examples=50)
-def test_dbevolution::sequence_instantiation(instance):
-    assert isinstance(instance, dbevolution::Sequence)
-
-@given(instance=dbevolution::SequenceChange_strategy)
-@settings(max_examples=50)
-def test_dbevolution::sequencechange_instantiation(instance):
-    assert isinstance(instance, dbevolution::SequenceChange)
+def test_dbevolution_sequence_instantiation(instance):
+    assert isinstance(instance, dbevolution_Sequence)
 
 @given(instance=ForeignKeyChange_strategy)
 @settings(max_examples=50)
 def test_foreignkeychange_instantiation(instance):
     assert isinstance(instance, ForeignKeyChange)
 
-@given(instance=dbevolution::UpdateForeignKey_strategy)
+@given(instance=dbevolution_UpdateForeignKey_strategy)
 @settings(max_examples=50)
-def test_dbevolution::updateforeignkey_instantiation(instance):
-    assert isinstance(instance, dbevolution::UpdateForeignKey)
+def test_dbevolution_updateforeignkey_instantiation(instance):
+    assert isinstance(instance, dbevolution_UpdateForeignKey)
 
-@given(instance=dbevolution::RemoveForeignKey_strategy)
+@given(instance=dbevolution_AddForeignKey_strategy)
 @settings(max_examples=50)
-def test_dbevolution::removeforeignkey_instantiation(instance):
-    assert isinstance(instance, dbevolution::RemoveForeignKey)
+def test_dbevolution_addforeignkey_instantiation(instance):
+    assert isinstance(instance, dbevolution_AddForeignKey)
 
-@given(instance=dbevolution::AddForeignKey_strategy)
+@given(instance=dbevolution_ForeignKey_strategy)
 @settings(max_examples=50)
-def test_dbevolution::addforeignkey_instantiation(instance):
-    assert isinstance(instance, dbevolution::AddForeignKey)
-
-@given(instance=dbevolution::ForeignKey_strategy)
-@settings(max_examples=50)
-def test_dbevolution::foreignkey_instantiation(instance):
-    assert isinstance(instance, dbevolution::ForeignKey)
-
-@given(instance=dbevolution::ForeignKeyChange_strategy)
-@settings(max_examples=50)
-def test_dbevolution::foreignkeychange_instantiation(instance):
-    assert isinstance(instance, dbevolution::ForeignKeyChange)
+def test_dbevolution_foreignkey_instantiation(instance):
+    assert isinstance(instance, dbevolution_ForeignKey)
 
 @given(instance=IndexChange_strategy)
 @settings(max_examples=50)
 def test_indexchange_instantiation(instance):
     assert isinstance(instance, IndexChange)
 
-@given(instance=dbevolution::UpdateIndex_strategy)
+@given(instance=dbevolution_UpdateIndex_strategy)
 @settings(max_examples=50)
-def test_dbevolution::updateindex_instantiation(instance):
-    assert isinstance(instance, dbevolution::UpdateIndex)
+def test_dbevolution_updateindex_instantiation(instance):
+    assert isinstance(instance, dbevolution_UpdateIndex)
 
-@given(instance=dbevolution::RemoveIndex_strategy)
+@given(instance=dbevolution_RemoveIndex_strategy)
 @settings(max_examples=50)
-def test_dbevolution::removeindex_instantiation(instance):
-    assert isinstance(instance, dbevolution::RemoveIndex)
+def test_dbevolution_removeindex_instantiation(instance):
+    assert isinstance(instance, dbevolution_RemoveIndex)
 
-@given(instance=dbevolution::AddIndex_strategy)
+@given(instance=dbevolution_AddIndex_strategy)
 @settings(max_examples=50)
-def test_dbevolution::addindex_instantiation(instance):
-    assert isinstance(instance, dbevolution::AddIndex)
+def test_dbevolution_addindex_instantiation(instance):
+    assert isinstance(instance, dbevolution_AddIndex)
 
-@given(instance=dbevolution::Index_strategy)
+@given(instance=dbevolution_Index_strategy)
 @settings(max_examples=50)
-def test_dbevolution::index_instantiation(instance):
-    assert isinstance(instance, dbevolution::Index)
+def test_dbevolution_index_instantiation(instance):
+    assert isinstance(instance, dbevolution_Index)
 
-@given(instance=dbevolution::IndexChange_strategy)
+@given(instance=PrimaryKeyChange_strategy)
 @settings(max_examples=50)
-def test_dbevolution::indexchange_instantiation(instance):
-    assert isinstance(instance, dbevolution::IndexChange)
+def test_primarykeychange_instantiation(instance):
+    assert isinstance(instance, PrimaryKeyChange)
 
-@given(instance=dbevolution::UpdatePrimaryKey_strategy)
+@given(instance=dbevolution_RemovePrimaryKey_strategy)
 @settings(max_examples=50)
-def test_dbevolution::updateprimarykey_instantiation(instance):
-    assert isinstance(instance, dbevolution::UpdatePrimaryKey)
+def test_dbevolution_removeprimarykey_instantiation(instance):
+    assert isinstance(instance, dbevolution_RemovePrimaryKey)
+
+@given(instance=dbevolution_UpdatePrimaryKey_strategy)
+@settings(max_examples=50)
+def test_dbevolution_updateprimarykey_instantiation(instance):
+    assert isinstance(instance, dbevolution_UpdatePrimaryKey)
+
+@given(instance=dbevolution_AddPrimaryKey_strategy)
+@settings(max_examples=50)
+def test_dbevolution_addprimarykey_instantiation(instance):
+    assert isinstance(instance, dbevolution_AddPrimaryKey)
+
+@given(instance=dbevolution_PrimaryKey_strategy)
+@settings(max_examples=50)
+def test_dbevolution_primarykey_instantiation(instance):
+    assert isinstance(instance, dbevolution_PrimaryKey)
+
+@given(instance=ConstraintChange_strategy)
+@settings(max_examples=50)
+def test_constraintchange_instantiation(instance):
+    assert isinstance(instance, ConstraintChange)
+
+@given(instance=dbevolution_UpdateConstraint_strategy)
+@settings(max_examples=50)
+def test_dbevolution_updateconstraint_instantiation(instance):
+    assert isinstance(instance, dbevolution_UpdateConstraint)
+
+@given(instance=dbevolution_RemoveConstraint_strategy)
+@settings(max_examples=50)
+def test_dbevolution_removeconstraint_instantiation(instance):
+    assert isinstance(instance, dbevolution_RemoveConstraint)
+
+@given(instance=dbevolution_AddConstraint_strategy)
+@settings(max_examples=50)
+def test_dbevolution_addconstraint_instantiation(instance):
+    assert isinstance(instance, dbevolution_AddConstraint)
+
+@given(instance=dbevolution_Constraint_strategy)
+@settings(max_examples=50)
+def test_dbevolution_constraint_instantiation(instance):
+    assert isinstance(instance, dbevolution_Constraint)
+
+@given(instance=TableChange_strategy)
+@settings(max_examples=50)
+def test_tablechange_instantiation(instance):
+    assert isinstance(instance, TableChange)
+
+@given(instance=dbevolution_RemoveTable_strategy)
+@settings(max_examples=50)
+def test_dbevolution_removetable_instantiation(instance):
+    assert isinstance(instance, dbevolution_RemoveTable)
+
+@given(instance=dbevolution_RenameTableChange_strategy)
+@settings(max_examples=50)
+def test_dbevolution_renametablechange_instantiation(instance):
+    assert isinstance(instance, dbevolution_RenameTableChange)
+
+@given(instance=dbevolution_UpdateTableCommentChange_strategy)
+@settings(max_examples=50)
+def test_dbevolution_updatetablecommentchange_instantiation(instance):
+    assert isinstance(instance, dbevolution_UpdateTableCommentChange)
+
+@given(instance=dbevolution_AlterTable_strategy)
+@settings(max_examples=50)
+def test_dbevolution_altertable_instantiation(instance):
+    assert isinstance(instance, dbevolution_AlterTable)
+
+@given(instance=dbevolution_AddTable_strategy)
+@settings(max_examples=50)
+def test_dbevolution_addtable_instantiation(instance):
+    assert isinstance(instance, dbevolution_AddTable)
+
+@given(instance=dbevolution_Table_strategy)
+@settings(max_examples=50)
+def test_dbevolution_table_instantiation(instance):
+    assert isinstance(instance, dbevolution_Table)
+
+@given(instance=DBDiff_strategy)
+@settings(max_examples=50)
+def test_dbdiff_instantiation(instance):
+    assert isinstance(instance, DBDiff)
+
+@given(instance=dbevolution_SequenceChange_strategy)
+@settings(max_examples=50)
+def test_dbevolution_sequencechange_instantiation(instance):
+    assert isinstance(instance, dbevolution_SequenceChange)
+
+@given(instance=dbevolution_ConstraintChange_strategy)
+@settings(max_examples=50)
+def test_dbevolution_constraintchange_instantiation(instance):
+    assert isinstance(instance, dbevolution_ConstraintChange)
+
+@given(instance=dbevolution_ForeignKeyChange_strategy)
+@settings(max_examples=50)
+def test_dbevolution_foreignkeychange_instantiation(instance):
+    assert isinstance(instance, dbevolution_ForeignKeyChange)
+
+@given(instance=dbevolution_IndexChange_strategy)
+@settings(max_examples=50)
+def test_dbevolution_indexchange_instantiation(instance):
+    assert isinstance(instance, dbevolution_IndexChange)
+
+@given(instance=dbevolution_SchemaChange_strategy)
+@settings(max_examples=50)
+def test_dbevolution_schemachange_instantiation(instance):
+    assert isinstance(instance, dbevolution_SchemaChange)
+
+@given(instance=dbevolution_PrimaryKeyChange_strategy)
+@settings(max_examples=50)
+def test_dbevolution_primarykeychange_instantiation(instance):
+    assert isinstance(instance, dbevolution_PrimaryKeyChange)
+
+@given(instance=dbevolution_ColumnChange_strategy)
+@settings(max_examples=50)
+def test_dbevolution_columnchange_instantiation(instance):
+    assert isinstance(instance, dbevolution_ColumnChange)
+
+@given(instance=dbevolution_TableChange_strategy)
+@settings(max_examples=50)
+def test_dbevolution_tablechange_instantiation(instance):
+    assert isinstance(instance, dbevolution_TableChange)
+
+@given(instance=Comparison_strategy)
+@settings(max_examples=50)
+def test_comparison_instantiation(instance):
+    assert isinstance(instance, Comparison)
+
+@given(instance=dbevolution_DatabaseChangeSet_strategy)
+@settings(max_examples=50)
+def test_dbevolution_databasechangeset_instantiation(instance):
+    assert isinstance(instance, dbevolution_DatabaseChangeSet)
+
+@given(instance=ColumnChange_strategy)
+@settings(max_examples=50)
+def test_columnchange_instantiation(instance):
+    assert isinstance(instance, ColumnChange)
+
+@given(instance=dbevolution_UpdateColumnChange_strategy)
+@settings(max_examples=50)
+def test_dbevolution_updatecolumnchange_instantiation(instance):
+    assert isinstance(instance, dbevolution_UpdateColumnChange)
+
+@given(instance=dbevolution_RemoveColumnChange_strategy)
+@settings(max_examples=50)
+def test_dbevolution_removecolumnchange_instantiation(instance):
+    assert isinstance(instance, dbevolution_RemoveColumnChange)
+
+@given(instance=dbevolution_UpdateColumnCommentChange_strategy)
+@settings(max_examples=50)
+def test_dbevolution_updatecolumncommentchange_instantiation(instance):
+    assert isinstance(instance, dbevolution_UpdateColumnCommentChange)
+
+@given(instance=dbevolution_RenameColumnChange_strategy)
+@settings(max_examples=50)
+def test_dbevolution_renamecolumnchange_instantiation(instance):
+    assert isinstance(instance, dbevolution_RenameColumnChange)
+
+@given(instance=dbevolution_AddColumnChange_strategy)
+@settings(max_examples=50)
+def test_dbevolution_addcolumnchange_instantiation(instance):
+    assert isinstance(instance, dbevolution_AddColumnChange)
+
+@given(instance=dbevolution_Column_strategy)
+@settings(max_examples=50)
+def test_dbevolution_column_instantiation(instance):
+    assert isinstance(instance, dbevolution_Column)
+
+@given(instance=dbevolution_RemoveForeignKey_strategy)
+@settings(max_examples=50)
+def test_dbevolution_removeforeignkey_instantiation(instance):
+    assert isinstance(instance, dbevolution_RemoveForeignKey)

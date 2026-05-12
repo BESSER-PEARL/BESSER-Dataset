@@ -3,10 +3,10 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    empty::Existing,
+from python_code import (
+    empty_Existing,
 )
 
 # =============================================================================
@@ -15,16 +15,16 @@ from classes import (
 
 
 
-def test_empty::existing_is_not_abstract():
-    assert not inspect.isabstract(empty::Existing)
+def test_empty_existing_is_not_abstract():
+    assert not inspect.isabstract(empty_Existing)
 
 
-def test_empty::existing_constructor_exists():
-    assert callable(empty::Existing.__init__)
+def test_empty_existing_constructor_exists():
+    assert callable(empty_Existing.__init__)
 
 
-def test_empty::existing_constructor_args():
-    sig = inspect.signature(empty::Existing.__init__)
+def test_empty_existing_constructor_args():
+    sig = inspect.signature(empty_Existing.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -39,11 +39,11 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-empty::Existing_strategy = st.builds(
-    empty::Existing,
+empty_Existing_strategy = st.builds(
+    empty_Existing,
 )
 
-@given(instance=empty::Existing_strategy)
+@given(instance=empty_Existing_strategy)
 @settings(max_examples=50)
-def test_empty::existing_instantiation(instance):
-    assert isinstance(instance, empty::Existing)
+def test_empty_existing_instantiation(instance):
+    assert isinstance(instance, empty_Existing)

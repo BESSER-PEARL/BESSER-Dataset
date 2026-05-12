@@ -3,7 +3,7 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
 from python_code import (
     zutaten,
@@ -69,49 +69,22 @@ def test_backstrasse_constructor_exists():
 def test_backstrasse_constructor_args():
     sig = inspect.signature(backstrasse.__init__)
     params = list(sig.parameters.keys())
-    assert "ofenlaenge" in params, "Missing parameter 'ofenlaenge'"
-    assert "BLECHLAENGE" in params, "Missing parameter 'BLECHLAENGE'"
-    assert "gestoppt" in params, "Missing parameter 'gestoppt'"
-    assert "geschwindigkeit" in params, "Missing parameter 'geschwindigkeit'"
-    assert "temperatur" in params, "Missing parameter 'temperatur'"
     assert "zutatenVorrat" in params, "Missing parameter 'zutatenVorrat'"
-    assert "eingabeAusgabe" in params, "Missing parameter 'eingabeAusgabe'"
+    assert "temperatur" in params, "Missing parameter 'temperatur'"
     assert "backAuftrag" in params, "Missing parameter 'backAuftrag'"
+    assert "gestoppt" in params, "Missing parameter 'gestoppt'"
+    assert "ofenlaenge" in params, "Missing parameter 'ofenlaenge'"
     assert "BLECHBREITE" in params, "Missing parameter 'BLECHBREITE'"
+    assert "BLECHLAENGE" in params, "Missing parameter 'BLECHLAENGE'"
+    assert "eingabeAusgabe" in params, "Missing parameter 'eingabeAusgabe'"
+    assert "geschwindigkeit" in params, "Missing parameter 'geschwindigkeit'"
 
-def test_backstrasse_has_ofenlaenge():
-    assert hasattr(backstrasse, "ofenlaenge")
+def test_backstrasse_has_zutatenVorrat():
+    assert hasattr(backstrasse, "zutatenVorrat")
     descriptor = None
     for klass in backstrasse.__mro__:
-        if "ofenlaenge" in klass.__dict__:
-            descriptor = klass.__dict__["ofenlaenge"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_backstrasse_has_BLECHLAENGE():
-    assert hasattr(backstrasse, "BLECHLAENGE")
-    descriptor = None
-    for klass in backstrasse.__mro__:
-        if "BLECHLAENGE" in klass.__dict__:
-            descriptor = klass.__dict__["BLECHLAENGE"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_backstrasse_has_gestoppt():
-    assert hasattr(backstrasse, "gestoppt")
-    descriptor = None
-    for klass in backstrasse.__mro__:
-        if "gestoppt" in klass.__dict__:
-            descriptor = klass.__dict__["gestoppt"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_backstrasse_has_geschwindigkeit():
-    assert hasattr(backstrasse, "geschwindigkeit")
-    descriptor = None
-    for klass in backstrasse.__mro__:
-        if "geschwindigkeit" in klass.__dict__:
-            descriptor = klass.__dict__["geschwindigkeit"]
+        if "zutatenVorrat" in klass.__dict__:
+            descriptor = klass.__dict__["zutatenVorrat"]
             break
     assert isinstance(descriptor, property)
 
@@ -124,12 +97,48 @@ def test_backstrasse_has_temperatur():
             break
     assert isinstance(descriptor, property)
 
-def test_backstrasse_has_zutatenVorrat():
-    assert hasattr(backstrasse, "zutatenVorrat")
+def test_backstrasse_has_backAuftrag():
+    assert hasattr(backstrasse, "backAuftrag")
     descriptor = None
     for klass in backstrasse.__mro__:
-        if "zutatenVorrat" in klass.__dict__:
-            descriptor = klass.__dict__["zutatenVorrat"]
+        if "backAuftrag" in klass.__dict__:
+            descriptor = klass.__dict__["backAuftrag"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_backstrasse_has_gestoppt():
+    assert hasattr(backstrasse, "gestoppt")
+    descriptor = None
+    for klass in backstrasse.__mro__:
+        if "gestoppt" in klass.__dict__:
+            descriptor = klass.__dict__["gestoppt"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_backstrasse_has_ofenlaenge():
+    assert hasattr(backstrasse, "ofenlaenge")
+    descriptor = None
+    for klass in backstrasse.__mro__:
+        if "ofenlaenge" in klass.__dict__:
+            descriptor = klass.__dict__["ofenlaenge"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_backstrasse_has_BLECHBREITE():
+    assert hasattr(backstrasse, "BLECHBREITE")
+    descriptor = None
+    for klass in backstrasse.__mro__:
+        if "BLECHBREITE" in klass.__dict__:
+            descriptor = klass.__dict__["BLECHBREITE"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_backstrasse_has_BLECHLAENGE():
+    assert hasattr(backstrasse, "BLECHLAENGE")
+    descriptor = None
+    for klass in backstrasse.__mro__:
+        if "BLECHLAENGE" in klass.__dict__:
+            descriptor = klass.__dict__["BLECHLAENGE"]
             break
     assert isinstance(descriptor, property)
 
@@ -142,21 +151,12 @@ def test_backstrasse_has_eingabeAusgabe():
             break
     assert isinstance(descriptor, property)
 
-def test_backstrasse_has_backAuftrag():
-    assert hasattr(backstrasse, "backAuftrag")
+def test_backstrasse_has_geschwindigkeit():
+    assert hasattr(backstrasse, "geschwindigkeit")
     descriptor = None
     for klass in backstrasse.__mro__:
-        if "backAuftrag" in klass.__dict__:
-            descriptor = klass.__dict__["backAuftrag"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_backstrasse_has_BLECHBREITE():
-    assert hasattr(backstrasse, "BLECHBREITE")
-    descriptor = None
-    for klass in backstrasse.__mro__:
-        if "BLECHBREITE" in klass.__dict__:
-            descriptor = klass.__dict__["BLECHBREITE"]
+        if "geschwindigkeit" in klass.__dict__:
+            descriptor = klass.__dict__["geschwindigkeit"]
             break
     assert isinstance(descriptor, property)
 
@@ -174,8 +174,8 @@ def test_auftrag_constructor_args():
     sig = inspect.signature(auftrag.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
-    assert "auftragsPlaetzchen" in params, "Missing parameter 'auftragsPlaetzchen'"
     assert "anzahl" in params, "Missing parameter 'anzahl'"
+    assert "auftragsPlaetzchen" in params, "Missing parameter 'auftragsPlaetzchen'"
 
 def test_auftrag_has_name():
     assert hasattr(auftrag, "name")
@@ -186,21 +186,21 @@ def test_auftrag_has_name():
             break
     assert isinstance(descriptor, property)
 
-def test_auftrag_has_auftragsPlaetzchen():
-    assert hasattr(auftrag, "auftragsPlaetzchen")
-    descriptor = None
-    for klass in auftrag.__mro__:
-        if "auftragsPlaetzchen" in klass.__dict__:
-            descriptor = klass.__dict__["auftragsPlaetzchen"]
-            break
-    assert isinstance(descriptor, property)
-
 def test_auftrag_has_anzahl():
     assert hasattr(auftrag, "anzahl")
     descriptor = None
     for klass in auftrag.__mro__:
         if "anzahl" in klass.__dict__:
             descriptor = klass.__dict__["anzahl"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_auftrag_has_auftragsPlaetzchen():
+    assert hasattr(auftrag, "auftragsPlaetzchen")
+    descriptor = None
+    for klass in auftrag.__mro__:
+        if "auftragsPlaetzchen" in klass.__dict__:
+            descriptor = klass.__dict__["auftragsPlaetzchen"]
             break
     assert isinstance(descriptor, property)
 
@@ -217,16 +217,16 @@ def test_zutat_constructor_exists():
 def test_zutat_constructor_args():
     sig = inspect.signature(zutat.__init__)
     params = list(sig.parameters.keys())
-    assert "menge" in params, "Missing parameter 'menge'"
-    assert "name" in params, "Missing parameter 'name'"
     assert "einheit" in params, "Missing parameter 'einheit'"
+    assert "name" in params, "Missing parameter 'name'"
+    assert "menge" in params, "Missing parameter 'menge'"
 
-def test_zutat_has_menge():
-    assert hasattr(zutat, "menge")
+def test_zutat_has_einheit():
+    assert hasattr(zutat, "einheit")
     descriptor = None
     for klass in zutat.__mro__:
-        if "menge" in klass.__dict__:
-            descriptor = klass.__dict__["menge"]
+        if "einheit" in klass.__dict__:
+            descriptor = klass.__dict__["einheit"]
             break
     assert isinstance(descriptor, property)
 
@@ -239,12 +239,12 @@ def test_zutat_has_name():
             break
     assert isinstance(descriptor, property)
 
-def test_zutat_has_einheit():
-    assert hasattr(zutat, "einheit")
+def test_zutat_has_menge():
+    assert hasattr(zutat, "menge")
     descriptor = None
     for klass in zutat.__mro__:
-        if "einheit" in klass.__dict__:
-            descriptor = klass.__dict__["einheit"]
+        if "menge" in klass.__dict__:
+            descriptor = klass.__dict__["menge"]
             break
     assert isinstance(descriptor, property)
 
@@ -261,20 +261,29 @@ def test_plaetzchen_constructor_exists():
 def test_plaetzchen_constructor_args():
     sig = inspect.signature(plaetzchen.__init__)
     params = list(sig.parameters.keys())
-    assert "teig" in params, "Missing parameter 'teig'"
+    assert "breite" in params, "Missing parameter 'breite'"
+    assert "form" in params, "Missing parameter 'form'"
     assert "temperatur" in params, "Missing parameter 'temperatur'"
     assert "laenge" in params, "Missing parameter 'laenge'"
     assert "belag" in params, "Missing parameter 'belag'"
-    assert "breite" in params, "Missing parameter 'breite'"
-    assert "form" in params, "Missing parameter 'form'"
+    assert "teig" in params, "Missing parameter 'teig'"
     assert "backzeit" in params, "Missing parameter 'backzeit'"
 
-def test_plaetzchen_has_teig():
-    assert hasattr(plaetzchen, "teig")
+def test_plaetzchen_has_breite():
+    assert hasattr(plaetzchen, "breite")
     descriptor = None
     for klass in plaetzchen.__mro__:
-        if "teig" in klass.__dict__:
-            descriptor = klass.__dict__["teig"]
+        if "breite" in klass.__dict__:
+            descriptor = klass.__dict__["breite"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_plaetzchen_has_form():
+    assert hasattr(plaetzchen, "form")
+    descriptor = None
+    for klass in plaetzchen.__mro__:
+        if "form" in klass.__dict__:
+            descriptor = klass.__dict__["form"]
             break
     assert isinstance(descriptor, property)
 
@@ -305,21 +314,12 @@ def test_plaetzchen_has_belag():
             break
     assert isinstance(descriptor, property)
 
-def test_plaetzchen_has_breite():
-    assert hasattr(plaetzchen, "breite")
+def test_plaetzchen_has_teig():
+    assert hasattr(plaetzchen, "teig")
     descriptor = None
     for klass in plaetzchen.__mro__:
-        if "breite" in klass.__dict__:
-            descriptor = klass.__dict__["breite"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_plaetzchen_has_form():
-    assert hasattr(plaetzchen, "form")
-    descriptor = None
-    for klass in plaetzchen.__mro__:
-        if "form" in klass.__dict__:
-            descriptor = klass.__dict__["form"]
+        if "teig" in klass.__dict__:
+            descriptor = klass.__dict__["teig"]
             break
     assert isinstance(descriptor, property)
 
@@ -354,46 +354,48 @@ ea_helfer_strategy = st.builds(
 )
 backstrasse_strategy = st.builds(
     backstrasse,
-    ofenlaenge=
-        safe_text,
-    BLECHLAENGE=
-        safe_text,
-    gestoppt=
-        safe_text,
-    geschwindigkeit=
+    zutatenVorrat=
         safe_text,
     temperatur=
         safe_text,
-    zutatenVorrat=
+    backAuftrag=
+        safe_text,
+    gestoppt=
+        safe_text,
+    ofenlaenge=
+        safe_text,
+    BLECHBREITE=
+        safe_text,
+    BLECHLAENGE=
         safe_text,
     eingabeAusgabe=
         safe_text,
-    backAuftrag=
-        safe_text,
-    BLECHBREITE=
+    geschwindigkeit=
         safe_text
 )
 auftrag_strategy = st.builds(
     auftrag,
     name=
         safe_text,
-    auftragsPlaetzchen=
-        safe_text,
     anzahl=
+        safe_text,
+    auftragsPlaetzchen=
         safe_text
 )
 zutat_strategy = st.builds(
     zutat,
-    menge=
+    einheit=
         safe_text,
     name=
         safe_text,
-    einheit=
+    menge=
         safe_text
 )
 plaetzchen_strategy = st.builds(
     plaetzchen,
-    teig=
+    breite=
+        safe_text,
+    form=
         safe_text,
     temperatur=
         safe_text,
@@ -401,9 +403,7 @@ plaetzchen_strategy = st.builds(
         safe_text,
     belag=
         safe_text,
-    breite=
-        safe_text,
-    form=
+    teig=
         safe_text,
     backzeit=
         safe_text
@@ -414,9 +414,6 @@ plaetzchen_strategy = st.builds(
 def test_zutaten_instantiation(instance):
     assert isinstance(instance, zutaten)
 
-@given(instance=zutaten_strategy)
-def test_zutaten_zutatenListe_type(instance):
-    assert isinstance(instance.zutatenListe, str)
 
 
 @given(instance=zutaten_strategy)
@@ -435,64 +432,6 @@ def test_ea_helfer_instantiation(instance):
 def test_backstrasse_instantiation(instance):
     assert isinstance(instance, backstrasse)
 
-@given(instance=backstrasse_strategy)
-def test_backstrasse_ofenlaenge_type(instance):
-    assert isinstance(instance.ofenlaenge, str)
-
-
-@given(instance=backstrasse_strategy)
-def test_backstrasse_ofenlaenge_setter(instance):
-    original = instance.ofenlaenge
-    instance.ofenlaenge = original
-    assert instance.ofenlaenge == original
-
-@given(instance=backstrasse_strategy)
-def test_backstrasse_BLECHLAENGE_type(instance):
-    assert isinstance(instance.BLECHLAENGE, str)
-
-
-@given(instance=backstrasse_strategy)
-def test_backstrasse_BLECHLAENGE_setter(instance):
-    original = instance.BLECHLAENGE
-    instance.BLECHLAENGE = original
-    assert instance.BLECHLAENGE == original
-
-@given(instance=backstrasse_strategy)
-def test_backstrasse_gestoppt_type(instance):
-    assert isinstance(instance.gestoppt, str)
-
-
-@given(instance=backstrasse_strategy)
-def test_backstrasse_gestoppt_setter(instance):
-    original = instance.gestoppt
-    instance.gestoppt = original
-    assert instance.gestoppt == original
-
-@given(instance=backstrasse_strategy)
-def test_backstrasse_geschwindigkeit_type(instance):
-    assert isinstance(instance.geschwindigkeit, str)
-
-
-@given(instance=backstrasse_strategy)
-def test_backstrasse_geschwindigkeit_setter(instance):
-    original = instance.geschwindigkeit
-    instance.geschwindigkeit = original
-    assert instance.geschwindigkeit == original
-
-@given(instance=backstrasse_strategy)
-def test_backstrasse_temperatur_type(instance):
-    assert isinstance(instance.temperatur, str)
-
-
-@given(instance=backstrasse_strategy)
-def test_backstrasse_temperatur_setter(instance):
-    original = instance.temperatur
-    instance.temperatur = original
-    assert instance.temperatur == original
-
-@given(instance=backstrasse_strategy)
-def test_backstrasse_zutatenVorrat_type(instance):
-    assert isinstance(instance.zutatenVorrat, str)
 
 
 @given(instance=backstrasse_strategy)
@@ -501,20 +440,14 @@ def test_backstrasse_zutatenVorrat_setter(instance):
     instance.zutatenVorrat = original
     assert instance.zutatenVorrat == original
 
-@given(instance=backstrasse_strategy)
-def test_backstrasse_eingabeAusgabe_type(instance):
-    assert isinstance(instance.eingabeAusgabe, str)
 
 
 @given(instance=backstrasse_strategy)
-def test_backstrasse_eingabeAusgabe_setter(instance):
-    original = instance.eingabeAusgabe
-    instance.eingabeAusgabe = original
-    assert instance.eingabeAusgabe == original
+def test_backstrasse_temperatur_setter(instance):
+    original = instance.temperatur
+    instance.temperatur = original
+    assert instance.temperatur == original
 
-@given(instance=backstrasse_strategy)
-def test_backstrasse_backAuftrag_type(instance):
-    assert isinstance(instance.backAuftrag, str)
 
 
 @given(instance=backstrasse_strategy)
@@ -523,9 +456,22 @@ def test_backstrasse_backAuftrag_setter(instance):
     instance.backAuftrag = original
     assert instance.backAuftrag == original
 
+
+
 @given(instance=backstrasse_strategy)
-def test_backstrasse_BLECHBREITE_type(instance):
-    assert isinstance(instance.BLECHBREITE, str)
+def test_backstrasse_gestoppt_setter(instance):
+    original = instance.gestoppt
+    instance.gestoppt = original
+    assert instance.gestoppt == original
+
+
+
+@given(instance=backstrasse_strategy)
+def test_backstrasse_ofenlaenge_setter(instance):
+    original = instance.ofenlaenge
+    instance.ofenlaenge = original
+    assert instance.ofenlaenge == original
+
 
 
 @given(instance=backstrasse_strategy)
@@ -534,14 +480,35 @@ def test_backstrasse_BLECHBREITE_setter(instance):
     instance.BLECHBREITE = original
     assert instance.BLECHBREITE == original
 
+
+
+@given(instance=backstrasse_strategy)
+def test_backstrasse_BLECHLAENGE_setter(instance):
+    original = instance.BLECHLAENGE
+    instance.BLECHLAENGE = original
+    assert instance.BLECHLAENGE == original
+
+
+
+@given(instance=backstrasse_strategy)
+def test_backstrasse_eingabeAusgabe_setter(instance):
+    original = instance.eingabeAusgabe
+    instance.eingabeAusgabe = original
+    assert instance.eingabeAusgabe == original
+
+
+
+@given(instance=backstrasse_strategy)
+def test_backstrasse_geschwindigkeit_setter(instance):
+    original = instance.geschwindigkeit
+    instance.geschwindigkeit = original
+    assert instance.geschwindigkeit == original
+
 @given(instance=auftrag_strategy)
 @settings(max_examples=50)
 def test_auftrag_instantiation(instance):
     assert isinstance(instance, auftrag)
 
-@given(instance=auftrag_strategy)
-def test_auftrag_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
 @given(instance=auftrag_strategy)
@@ -550,20 +517,6 @@ def test_auftrag_name_setter(instance):
     instance.name = original
     assert instance.name == original
 
-@given(instance=auftrag_strategy)
-def test_auftrag_auftragsPlaetzchen_type(instance):
-    assert isinstance(instance.auftragsPlaetzchen, str)
-
-
-@given(instance=auftrag_strategy)
-def test_auftrag_auftragsPlaetzchen_setter(instance):
-    original = instance.auftragsPlaetzchen
-    instance.auftragsPlaetzchen = original
-    assert instance.auftragsPlaetzchen == original
-
-@given(instance=auftrag_strategy)
-def test_auftrag_anzahl_type(instance):
-    assert isinstance(instance.anzahl, str)
 
 
 @given(instance=auftrag_strategy)
@@ -572,36 +525,19 @@ def test_auftrag_anzahl_setter(instance):
     instance.anzahl = original
     assert instance.anzahl == original
 
+
+
+@given(instance=auftrag_strategy)
+def test_auftrag_auftragsPlaetzchen_setter(instance):
+    original = instance.auftragsPlaetzchen
+    instance.auftragsPlaetzchen = original
+    assert instance.auftragsPlaetzchen == original
+
 @given(instance=zutat_strategy)
 @settings(max_examples=50)
 def test_zutat_instantiation(instance):
     assert isinstance(instance, zutat)
 
-@given(instance=zutat_strategy)
-def test_zutat_menge_type(instance):
-    assert isinstance(instance.menge, str)
-
-
-@given(instance=zutat_strategy)
-def test_zutat_menge_setter(instance):
-    original = instance.menge
-    instance.menge = original
-    assert instance.menge == original
-
-@given(instance=zutat_strategy)
-def test_zutat_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=zutat_strategy)
-def test_zutat_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
-
-@given(instance=zutat_strategy)
-def test_zutat_einheit_type(instance):
-    assert isinstance(instance.einheit, str)
 
 
 @given(instance=zutat_strategy)
@@ -610,58 +546,27 @@ def test_zutat_einheit_setter(instance):
     instance.einheit = original
     assert instance.einheit == original
 
+
+
+@given(instance=zutat_strategy)
+def test_zutat_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+
+
+@given(instance=zutat_strategy)
+def test_zutat_menge_setter(instance):
+    original = instance.menge
+    instance.menge = original
+    assert instance.menge == original
+
 @given(instance=plaetzchen_strategy)
 @settings(max_examples=50)
 def test_plaetzchen_instantiation(instance):
     assert isinstance(instance, plaetzchen)
 
-@given(instance=plaetzchen_strategy)
-def test_plaetzchen_teig_type(instance):
-    assert isinstance(instance.teig, str)
-
-
-@given(instance=plaetzchen_strategy)
-def test_plaetzchen_teig_setter(instance):
-    original = instance.teig
-    instance.teig = original
-    assert instance.teig == original
-
-@given(instance=plaetzchen_strategy)
-def test_plaetzchen_temperatur_type(instance):
-    assert isinstance(instance.temperatur, str)
-
-
-@given(instance=plaetzchen_strategy)
-def test_plaetzchen_temperatur_setter(instance):
-    original = instance.temperatur
-    instance.temperatur = original
-    assert instance.temperatur == original
-
-@given(instance=plaetzchen_strategy)
-def test_plaetzchen_laenge_type(instance):
-    assert isinstance(instance.laenge, str)
-
-
-@given(instance=plaetzchen_strategy)
-def test_plaetzchen_laenge_setter(instance):
-    original = instance.laenge
-    instance.laenge = original
-    assert instance.laenge == original
-
-@given(instance=plaetzchen_strategy)
-def test_plaetzchen_belag_type(instance):
-    assert isinstance(instance.belag, str)
-
-
-@given(instance=plaetzchen_strategy)
-def test_plaetzchen_belag_setter(instance):
-    original = instance.belag
-    instance.belag = original
-    assert instance.belag == original
-
-@given(instance=plaetzchen_strategy)
-def test_plaetzchen_breite_type(instance):
-    assert isinstance(instance.breite, str)
 
 
 @given(instance=plaetzchen_strategy)
@@ -670,9 +575,6 @@ def test_plaetzchen_breite_setter(instance):
     instance.breite = original
     assert instance.breite == original
 
-@given(instance=plaetzchen_strategy)
-def test_plaetzchen_form_type(instance):
-    assert isinstance(instance.form, str)
 
 
 @given(instance=plaetzchen_strategy)
@@ -681,9 +583,38 @@ def test_plaetzchen_form_setter(instance):
     instance.form = original
     assert instance.form == original
 
+
+
 @given(instance=plaetzchen_strategy)
-def test_plaetzchen_backzeit_type(instance):
-    assert isinstance(instance.backzeit, str)
+def test_plaetzchen_temperatur_setter(instance):
+    original = instance.temperatur
+    instance.temperatur = original
+    assert instance.temperatur == original
+
+
+
+@given(instance=plaetzchen_strategy)
+def test_plaetzchen_laenge_setter(instance):
+    original = instance.laenge
+    instance.laenge = original
+    assert instance.laenge == original
+
+
+
+@given(instance=plaetzchen_strategy)
+def test_plaetzchen_belag_setter(instance):
+    original = instance.belag
+    instance.belag = original
+    assert instance.belag == original
+
+
+
+@given(instance=plaetzchen_strategy)
+def test_plaetzchen_teig_setter(instance):
+    original = instance.teig
+    instance.teig = original
+    assert instance.teig == original
+
 
 
 @given(instance=plaetzchen_strategy)

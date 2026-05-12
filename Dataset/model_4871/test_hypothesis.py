@@ -3,50 +3,50 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     Ranking,
     Attachment,
     MetaInformation,
-    data::Email,
-    data::Event,
-    data::WebAccount,
-    data::Location,
-    data::IndoorLocation,
-    data::InstantMessenger,
-    data::Phone,
+    data_Event,
+    data_WebAccount,
+    data_IndoorLocation,
+    data_Email,
+    data_Location,
+    data_InstantMessenger,
+    data_Phone,
     Extension,
-    data::Attachment,
-    data::Ranking,
-    data::WebSite,
+    data_Attachment,
+    data_WebSite,
     Classification,
-    data::Mashup,
-    data::Item,
-    data::Transformation,
-    data::Document,
-    data::DataSet,
-    data::Video,
-    data::Connection,
-    data::ViewRanking,
-    data::ThumbRanking,
-    data::StarRanking,
-    data::Image,
-    data::Tag,
-    data::Category,
-    data::MetaInformation,
-    data::Binary,
+    data_Mashup,
+    data_Item,
+    data_Transformation,
+    data_Document,
+    data_DataSet,
+    data_Video,
+    data_Connection,
+    data_ViewRanking,
+    data_ThumbRanking,
+    data_StarRanking,
+    data_Image,
+    data_Tag,
+    data_Category,
+    data_MetaInformation,
+    data_Binary,
     Item,
-    data::Extension,
-    data::DeletedItem,
-    data::MetaTag,
-    data::Identifier,
-    data::Classification,
-    data::InformationObject,
+    data_DeletedItem,
+    data_Classification,
+    data_Extension,
+    data_MetaTag,
+    data_Identifier,
+    data_InformationObject,
     InformationObject,
-    data::Content,
-    data::Organisation,
-    data::Person,
+    data_Organisation,
+    data_Content,
+    data_Person,
+    data_Ranking,
 )
 
 # =============================================================================
@@ -97,47 +97,23 @@ def test_metainformation_constructor_args():
 
 
 
-def test_data::email_is_not_abstract():
-    assert not inspect.isabstract(data::Email)
+def test_data_event_is_not_abstract():
+    assert not inspect.isabstract(data_Event)
 
 
-def test_data::email_constructor_exists():
-    assert callable(data::Email.__init__)
+def test_data_event_constructor_exists():
+    assert callable(data_Event.__init__)
 
 
-def test_data::email_constructor_args():
-    sig = inspect.signature(data::Email.__init__)
-    params = list(sig.parameters.keys())
-    assert "adress" in params, "Missing parameter 'adress'"
-
-def test_data::email_has_adress():
-    assert hasattr(data::Email, "adress")
-    descriptor = None
-    for klass in data::Email.__mro__:
-        if "adress" in klass.__dict__:
-            descriptor = klass.__dict__["adress"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_data::event_is_not_abstract():
-    assert not inspect.isabstract(data::Event)
-
-
-def test_data::event_constructor_exists():
-    assert callable(data::Event.__init__)
-
-
-def test_data::event_constructor_args():
-    sig = inspect.signature(data::Event.__init__)
+def test_data_event_constructor_args():
+    sig = inspect.signature(data_Event.__init__)
     params = list(sig.parameters.keys())
     assert "date" in params, "Missing parameter 'date'"
 
-def test_data::event_has_date():
-    assert hasattr(data::Event, "date")
+def test_data_event_has_date():
+    assert hasattr(data_Event, "date")
     descriptor = None
-    for klass in data::Event.__mro__:
+    for klass in data_Event.__mro__:
         if "date" in klass.__dict__:
             descriptor = klass.__dict__["date"]
             break
@@ -145,33 +121,33 @@ def test_data::event_has_date():
 
 
 
-def test_data::webaccount_is_not_abstract():
-    assert not inspect.isabstract(data::WebAccount)
+def test_data_webaccount_is_not_abstract():
+    assert not inspect.isabstract(data_WebAccount)
 
 
-def test_data::webaccount_constructor_exists():
-    assert callable(data::WebAccount.__init__)
+def test_data_webaccount_constructor_exists():
+    assert callable(data_WebAccount.__init__)
 
 
-def test_data::webaccount_constructor_args():
-    sig = inspect.signature(data::WebAccount.__init__)
+def test_data_webaccount_constructor_args():
+    sig = inspect.signature(data_WebAccount.__init__)
     params = list(sig.parameters.keys())
     assert "service" in params, "Missing parameter 'service'"
     assert "username" in params, "Missing parameter 'username'"
 
-def test_data::webaccount_has_service():
-    assert hasattr(data::WebAccount, "service")
+def test_data_webaccount_has_service():
+    assert hasattr(data_WebAccount, "service")
     descriptor = None
-    for klass in data::WebAccount.__mro__:
+    for klass in data_WebAccount.__mro__:
         if "service" in klass.__dict__:
             descriptor = klass.__dict__["service"]
             break
     assert isinstance(descriptor, property)
 
-def test_data::webaccount_has_username():
-    assert hasattr(data::WebAccount, "username")
+def test_data_webaccount_has_username():
+    assert hasattr(data_WebAccount, "username")
     descriptor = None
-    for klass in data::WebAccount.__mro__:
+    for klass in data_WebAccount.__mro__:
         if "username" in klass.__dict__:
             descriptor = klass.__dict__["username"]
             break
@@ -179,117 +155,23 @@ def test_data::webaccount_has_username():
 
 
 
-def test_data::location_is_not_abstract():
-    assert not inspect.isabstract(data::Location)
+def test_data_indoorlocation_is_not_abstract():
+    assert not inspect.isabstract(data_IndoorLocation)
 
 
-def test_data::location_constructor_exists():
-    assert callable(data::Location.__init__)
+def test_data_indoorlocation_constructor_exists():
+    assert callable(data_IndoorLocation.__init__)
 
 
-def test_data::location_constructor_args():
-    sig = inspect.signature(data::Location.__init__)
-    params = list(sig.parameters.keys())
-    assert "country" in params, "Missing parameter 'country'"
-    assert "city" in params, "Missing parameter 'city'"
-    assert "longitude" in params, "Missing parameter 'longitude'"
-    assert "state" in params, "Missing parameter 'state'"
-    assert "latitude" in params, "Missing parameter 'latitude'"
-    assert "houseNumber" in params, "Missing parameter 'houseNumber'"
-    assert "zipCode" in params, "Missing parameter 'zipCode'"
-    assert "street" in params, "Missing parameter 'street'"
-
-def test_data::location_has_country():
-    assert hasattr(data::Location, "country")
-    descriptor = None
-    for klass in data::Location.__mro__:
-        if "country" in klass.__dict__:
-            descriptor = klass.__dict__["country"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_data::location_has_city():
-    assert hasattr(data::Location, "city")
-    descriptor = None
-    for klass in data::Location.__mro__:
-        if "city" in klass.__dict__:
-            descriptor = klass.__dict__["city"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_data::location_has_longitude():
-    assert hasattr(data::Location, "longitude")
-    descriptor = None
-    for klass in data::Location.__mro__:
-        if "longitude" in klass.__dict__:
-            descriptor = klass.__dict__["longitude"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_data::location_has_state():
-    assert hasattr(data::Location, "state")
-    descriptor = None
-    for klass in data::Location.__mro__:
-        if "state" in klass.__dict__:
-            descriptor = klass.__dict__["state"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_data::location_has_latitude():
-    assert hasattr(data::Location, "latitude")
-    descriptor = None
-    for klass in data::Location.__mro__:
-        if "latitude" in klass.__dict__:
-            descriptor = klass.__dict__["latitude"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_data::location_has_houseNumber():
-    assert hasattr(data::Location, "houseNumber")
-    descriptor = None
-    for klass in data::Location.__mro__:
-        if "houseNumber" in klass.__dict__:
-            descriptor = klass.__dict__["houseNumber"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_data::location_has_zipCode():
-    assert hasattr(data::Location, "zipCode")
-    descriptor = None
-    for klass in data::Location.__mro__:
-        if "zipCode" in klass.__dict__:
-            descriptor = klass.__dict__["zipCode"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_data::location_has_street():
-    assert hasattr(data::Location, "street")
-    descriptor = None
-    for klass in data::Location.__mro__:
-        if "street" in klass.__dict__:
-            descriptor = klass.__dict__["street"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_data::indoorlocation_is_not_abstract():
-    assert not inspect.isabstract(data::IndoorLocation)
-
-
-def test_data::indoorlocation_constructor_exists():
-    assert callable(data::IndoorLocation.__init__)
-
-
-def test_data::indoorlocation_constructor_args():
-    sig = inspect.signature(data::IndoorLocation.__init__)
+def test_data_indoorlocation_constructor_args():
+    sig = inspect.signature(data_IndoorLocation.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_data::indoorlocation_has_name():
-    assert hasattr(data::IndoorLocation, "name")
+def test_data_indoorlocation_has_name():
+    assert hasattr(data_IndoorLocation, "name")
     descriptor = None
-    for klass in data::IndoorLocation.__mro__:
+    for klass in data_IndoorLocation.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -297,23 +179,141 @@ def test_data::indoorlocation_has_name():
 
 
 
-def test_data::instantmessenger_is_not_abstract():
-    assert not inspect.isabstract(data::InstantMessenger)
+def test_data_email_is_not_abstract():
+    assert not inspect.isabstract(data_Email)
 
 
-def test_data::instantmessenger_constructor_exists():
-    assert callable(data::InstantMessenger.__init__)
+def test_data_email_constructor_exists():
+    assert callable(data_Email.__init__)
 
 
-def test_data::instantmessenger_constructor_args():
-    sig = inspect.signature(data::InstantMessenger.__init__)
+def test_data_email_constructor_args():
+    sig = inspect.signature(data_Email.__init__)
+    params = list(sig.parameters.keys())
+    assert "adress" in params, "Missing parameter 'adress'"
+
+def test_data_email_has_adress():
+    assert hasattr(data_Email, "adress")
+    descriptor = None
+    for klass in data_Email.__mro__:
+        if "adress" in klass.__dict__:
+            descriptor = klass.__dict__["adress"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_data_location_is_not_abstract():
+    assert not inspect.isabstract(data_Location)
+
+
+def test_data_location_constructor_exists():
+    assert callable(data_Location.__init__)
+
+
+def test_data_location_constructor_args():
+    sig = inspect.signature(data_Location.__init__)
+    params = list(sig.parameters.keys())
+    assert "state" in params, "Missing parameter 'state'"
+    assert "city" in params, "Missing parameter 'city'"
+    assert "houseNumber" in params, "Missing parameter 'houseNumber'"
+    assert "zipCode" in params, "Missing parameter 'zipCode'"
+    assert "street" in params, "Missing parameter 'street'"
+    assert "country" in params, "Missing parameter 'country'"
+    assert "latitude" in params, "Missing parameter 'latitude'"
+    assert "longitude" in params, "Missing parameter 'longitude'"
+
+def test_data_location_has_state():
+    assert hasattr(data_Location, "state")
+    descriptor = None
+    for klass in data_Location.__mro__:
+        if "state" in klass.__dict__:
+            descriptor = klass.__dict__["state"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_data_location_has_city():
+    assert hasattr(data_Location, "city")
+    descriptor = None
+    for klass in data_Location.__mro__:
+        if "city" in klass.__dict__:
+            descriptor = klass.__dict__["city"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_data_location_has_houseNumber():
+    assert hasattr(data_Location, "houseNumber")
+    descriptor = None
+    for klass in data_Location.__mro__:
+        if "houseNumber" in klass.__dict__:
+            descriptor = klass.__dict__["houseNumber"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_data_location_has_zipCode():
+    assert hasattr(data_Location, "zipCode")
+    descriptor = None
+    for klass in data_Location.__mro__:
+        if "zipCode" in klass.__dict__:
+            descriptor = klass.__dict__["zipCode"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_data_location_has_street():
+    assert hasattr(data_Location, "street")
+    descriptor = None
+    for klass in data_Location.__mro__:
+        if "street" in klass.__dict__:
+            descriptor = klass.__dict__["street"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_data_location_has_country():
+    assert hasattr(data_Location, "country")
+    descriptor = None
+    for klass in data_Location.__mro__:
+        if "country" in klass.__dict__:
+            descriptor = klass.__dict__["country"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_data_location_has_latitude():
+    assert hasattr(data_Location, "latitude")
+    descriptor = None
+    for klass in data_Location.__mro__:
+        if "latitude" in klass.__dict__:
+            descriptor = klass.__dict__["latitude"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_data_location_has_longitude():
+    assert hasattr(data_Location, "longitude")
+    descriptor = None
+    for klass in data_Location.__mro__:
+        if "longitude" in klass.__dict__:
+            descriptor = klass.__dict__["longitude"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_data_instantmessenger_is_not_abstract():
+    assert not inspect.isabstract(data_InstantMessenger)
+
+
+def test_data_instantmessenger_constructor_exists():
+    assert callable(data_InstantMessenger.__init__)
+
+
+def test_data_instantmessenger_constructor_args():
+    sig = inspect.signature(data_InstantMessenger.__init__)
     params = list(sig.parameters.keys())
     assert "username" in params, "Missing parameter 'username'"
 
-def test_data::instantmessenger_has_username():
-    assert hasattr(data::InstantMessenger, "username")
+def test_data_instantmessenger_has_username():
+    assert hasattr(data_InstantMessenger, "username")
     descriptor = None
-    for klass in data::InstantMessenger.__mro__:
+    for klass in data_InstantMessenger.__mro__:
         if "username" in klass.__dict__:
             descriptor = klass.__dict__["username"]
             break
@@ -321,45 +321,45 @@ def test_data::instantmessenger_has_username():
 
 
 
-def test_data::phone_is_not_abstract():
-    assert not inspect.isabstract(data::Phone)
+def test_data_phone_is_not_abstract():
+    assert not inspect.isabstract(data_Phone)
 
 
-def test_data::phone_constructor_exists():
-    assert callable(data::Phone.__init__)
+def test_data_phone_constructor_exists():
+    assert callable(data_Phone.__init__)
 
 
-def test_data::phone_constructor_args():
-    sig = inspect.signature(data::Phone.__init__)
+def test_data_phone_constructor_args():
+    sig = inspect.signature(data_Phone.__init__)
     params = list(sig.parameters.keys())
-    assert "countryCode" in params, "Missing parameter 'countryCode'"
-    assert "number" in params, "Missing parameter 'number'"
     assert "areaCode" in params, "Missing parameter 'areaCode'"
+    assert "number" in params, "Missing parameter 'number'"
+    assert "countryCode" in params, "Missing parameter 'countryCode'"
 
-def test_data::phone_has_countryCode():
-    assert hasattr(data::Phone, "countryCode")
+def test_data_phone_has_areaCode():
+    assert hasattr(data_Phone, "areaCode")
     descriptor = None
-    for klass in data::Phone.__mro__:
-        if "countryCode" in klass.__dict__:
-            descriptor = klass.__dict__["countryCode"]
+    for klass in data_Phone.__mro__:
+        if "areaCode" in klass.__dict__:
+            descriptor = klass.__dict__["areaCode"]
             break
     assert isinstance(descriptor, property)
 
-def test_data::phone_has_number():
-    assert hasattr(data::Phone, "number")
+def test_data_phone_has_number():
+    assert hasattr(data_Phone, "number")
     descriptor = None
-    for klass in data::Phone.__mro__:
+    for klass in data_Phone.__mro__:
         if "number" in klass.__dict__:
             descriptor = klass.__dict__["number"]
             break
     assert isinstance(descriptor, property)
 
-def test_data::phone_has_areaCode():
-    assert hasattr(data::Phone, "areaCode")
+def test_data_phone_has_countryCode():
+    assert hasattr(data_Phone, "countryCode")
     descriptor = None
-    for klass in data::Phone.__mro__:
-        if "areaCode" in klass.__dict__:
-            descriptor = klass.__dict__["areaCode"]
+    for klass in data_Phone.__mro__:
+        if "countryCode" in klass.__dict__:
+            descriptor = klass.__dict__["countryCode"]
             break
     assert isinstance(descriptor, property)
 
@@ -379,153 +379,129 @@ def test_extension_constructor_args():
 
 
 
-def test_data::attachment_is_not_abstract():
-    assert not inspect.isabstract(data::Attachment)
+def test_data_attachment_is_not_abstract():
+    assert not inspect.isabstract(data_Attachment)
 
 
-def test_data::attachment_constructor_exists():
-    assert callable(data::Attachment.__init__)
+def test_data_attachment_constructor_exists():
+    assert callable(data_Attachment.__init__)
 
 
-def test_data::attachment_constructor_args():
-    sig = inspect.signature(data::Attachment.__init__)
+def test_data_attachment_constructor_args():
+    sig = inspect.signature(data_Attachment.__init__)
     params = list(sig.parameters.keys())
-    assert "cachedFileName" in params, "Missing parameter 'cachedFileName'"
-    assert "noCache" in params, "Missing parameter 'noCache'"
-    assert "cachedOnly" in params, "Missing parameter 'cachedOnly'"
-    assert "fileIdentifier" in params, "Missing parameter 'fileIdentifier'"
-    assert "fileExtension" in params, "Missing parameter 'fileExtension'"
     assert "cachedFileUrl" in params, "Missing parameter 'cachedFileUrl'"
+    assert "fileExtension" in params, "Missing parameter 'fileExtension'"
+    assert "fileIdentifier" in params, "Missing parameter 'fileIdentifier'"
+    assert "noCache" in params, "Missing parameter 'noCache'"
     assert "fileUrl" in params, "Missing parameter 'fileUrl'"
+    assert "cachedOnly" in params, "Missing parameter 'cachedOnly'"
+    assert "cachedFileName" in params, "Missing parameter 'cachedFileName'"
 
-def test_data::attachment_has_cachedFileName():
-    assert hasattr(data::Attachment, "cachedFileName")
+def test_data_attachment_has_cachedFileUrl():
+    assert hasattr(data_Attachment, "cachedFileUrl")
     descriptor = None
-    for klass in data::Attachment.__mro__:
-        if "cachedFileName" in klass.__dict__:
-            descriptor = klass.__dict__["cachedFileName"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_data::attachment_has_noCache():
-    assert hasattr(data::Attachment, "noCache")
-    descriptor = None
-    for klass in data::Attachment.__mro__:
-        if "noCache" in klass.__dict__:
-            descriptor = klass.__dict__["noCache"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_data::attachment_has_cachedOnly():
-    assert hasattr(data::Attachment, "cachedOnly")
-    descriptor = None
-    for klass in data::Attachment.__mro__:
-        if "cachedOnly" in klass.__dict__:
-            descriptor = klass.__dict__["cachedOnly"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_data::attachment_has_fileIdentifier():
-    assert hasattr(data::Attachment, "fileIdentifier")
-    descriptor = None
-    for klass in data::Attachment.__mro__:
-        if "fileIdentifier" in klass.__dict__:
-            descriptor = klass.__dict__["fileIdentifier"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_data::attachment_has_fileExtension():
-    assert hasattr(data::Attachment, "fileExtension")
-    descriptor = None
-    for klass in data::Attachment.__mro__:
-        if "fileExtension" in klass.__dict__:
-            descriptor = klass.__dict__["fileExtension"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_data::attachment_has_cachedFileUrl():
-    assert hasattr(data::Attachment, "cachedFileUrl")
-    descriptor = None
-    for klass in data::Attachment.__mro__:
+    for klass in data_Attachment.__mro__:
         if "cachedFileUrl" in klass.__dict__:
             descriptor = klass.__dict__["cachedFileUrl"]
             break
     assert isinstance(descriptor, property)
 
-def test_data::attachment_has_fileUrl():
-    assert hasattr(data::Attachment, "fileUrl")
+def test_data_attachment_has_fileExtension():
+    assert hasattr(data_Attachment, "fileExtension")
     descriptor = None
-    for klass in data::Attachment.__mro__:
+    for klass in data_Attachment.__mro__:
+        if "fileExtension" in klass.__dict__:
+            descriptor = klass.__dict__["fileExtension"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_data_attachment_has_fileIdentifier():
+    assert hasattr(data_Attachment, "fileIdentifier")
+    descriptor = None
+    for klass in data_Attachment.__mro__:
+        if "fileIdentifier" in klass.__dict__:
+            descriptor = klass.__dict__["fileIdentifier"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_data_attachment_has_noCache():
+    assert hasattr(data_Attachment, "noCache")
+    descriptor = None
+    for klass in data_Attachment.__mro__:
+        if "noCache" in klass.__dict__:
+            descriptor = klass.__dict__["noCache"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_data_attachment_has_fileUrl():
+    assert hasattr(data_Attachment, "fileUrl")
+    descriptor = None
+    for klass in data_Attachment.__mro__:
         if "fileUrl" in klass.__dict__:
             descriptor = klass.__dict__["fileUrl"]
             break
     assert isinstance(descriptor, property)
 
-
-
-def test_data::ranking_is_not_abstract():
-    assert not inspect.isabstract(data::Ranking)
-
-
-def test_data::ranking_constructor_exists():
-    assert callable(data::Ranking.__init__)
-
-
-def test_data::ranking_constructor_args():
-    sig = inspect.signature(data::Ranking.__init__)
-    params = list(sig.parameters.keys())
-    assert "date" in params, "Missing parameter 'date'"
-
-def test_data::ranking_has_date():
-    assert hasattr(data::Ranking, "date")
+def test_data_attachment_has_cachedOnly():
+    assert hasattr(data_Attachment, "cachedOnly")
     descriptor = None
-    for klass in data::Ranking.__mro__:
-        if "date" in klass.__dict__:
-            descriptor = klass.__dict__["date"]
+    for klass in data_Attachment.__mro__:
+        if "cachedOnly" in klass.__dict__:
+            descriptor = klass.__dict__["cachedOnly"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_data_attachment_has_cachedFileName():
+    assert hasattr(data_Attachment, "cachedFileName")
+    descriptor = None
+    for klass in data_Attachment.__mro__:
+        if "cachedFileName" in klass.__dict__:
+            descriptor = klass.__dict__["cachedFileName"]
             break
     assert isinstance(descriptor, property)
 
 
 
-def test_data::website_is_not_abstract():
-    assert not inspect.isabstract(data::WebSite)
+def test_data_website_is_not_abstract():
+    assert not inspect.isabstract(data_WebSite)
 
 
-def test_data::website_constructor_exists():
-    assert callable(data::WebSite.__init__)
+def test_data_website_constructor_exists():
+    assert callable(data_WebSite.__init__)
 
 
-def test_data::website_constructor_args():
-    sig = inspect.signature(data::WebSite.__init__)
+def test_data_website_constructor_args():
+    sig = inspect.signature(data_WebSite.__init__)
     params = list(sig.parameters.keys())
     assert "shortenedUrl" in params, "Missing parameter 'shortenedUrl'"
-    assert "adress" in params, "Missing parameter 'adress'"
     assert "title" in params, "Missing parameter 'title'"
+    assert "adress" in params, "Missing parameter 'adress'"
 
-def test_data::website_has_shortenedUrl():
-    assert hasattr(data::WebSite, "shortenedUrl")
+def test_data_website_has_shortenedUrl():
+    assert hasattr(data_WebSite, "shortenedUrl")
     descriptor = None
-    for klass in data::WebSite.__mro__:
+    for klass in data_WebSite.__mro__:
         if "shortenedUrl" in klass.__dict__:
             descriptor = klass.__dict__["shortenedUrl"]
             break
     assert isinstance(descriptor, property)
 
-def test_data::website_has_adress():
-    assert hasattr(data::WebSite, "adress")
+def test_data_website_has_title():
+    assert hasattr(data_WebSite, "title")
     descriptor = None
-    for klass in data::WebSite.__mro__:
-        if "adress" in klass.__dict__:
-            descriptor = klass.__dict__["adress"]
+    for klass in data_WebSite.__mro__:
+        if "title" in klass.__dict__:
+            descriptor = klass.__dict__["title"]
             break
     assert isinstance(descriptor, property)
 
-def test_data::website_has_title():
-    assert hasattr(data::WebSite, "title")
+def test_data_website_has_adress():
+    assert hasattr(data_WebSite, "adress")
     descriptor = None
-    for klass in data::WebSite.__mro__:
-        if "title" in klass.__dict__:
-            descriptor = klass.__dict__["title"]
+    for klass in data_WebSite.__mro__:
+        if "adress" in klass.__dict__:
+            descriptor = klass.__dict__["adress"]
             break
     assert isinstance(descriptor, property)
 
@@ -545,209 +521,209 @@ def test_classification_constructor_args():
 
 
 
-def test_data::mashup_is_not_abstract():
-    assert not inspect.isabstract(data::Mashup)
+def test_data_mashup_is_not_abstract():
+    assert not inspect.isabstract(data_Mashup)
 
 
-def test_data::mashup_constructor_exists():
-    assert callable(data::Mashup.__init__)
+def test_data_mashup_constructor_exists():
+    assert callable(data_Mashup.__init__)
 
 
-def test_data::mashup_constructor_args():
-    sig = inspect.signature(data::Mashup.__init__)
+def test_data_mashup_constructor_args():
+    sig = inspect.signature(data_Mashup.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_data::item_is_not_abstract():
-    assert not inspect.isabstract(data::Item)
+def test_data_item_is_not_abstract():
+    assert not inspect.isabstract(data_Item)
 
 
-def test_data::item_constructor_exists():
-    assert callable(data::Item.__init__)
+def test_data_item_constructor_exists():
+    assert callable(data_Item.__init__)
 
 
-def test_data::item_constructor_args():
-    sig = inspect.signature(data::Item.__init__)
+def test_data_item_constructor_args():
+    sig = inspect.signature(data_Item.__init__)
     params = list(sig.parameters.keys())
-    assert "ident" in params, "Missing parameter 'ident'"
     assert "uri" in params, "Missing parameter 'uri'"
-    assert "created" in params, "Missing parameter 'created'"
+    assert "ident" in params, "Missing parameter 'ident'"
     assert "lastModified" in params, "Missing parameter 'lastModified'"
-    assert "stringValue" in params, "Missing parameter 'stringValue'"
+    assert "created" in params, "Missing parameter 'created'"
     assert "stringXML" in params, "Missing parameter 'stringXML'"
+    assert "stringValue" in params, "Missing parameter 'stringValue'"
 
-def test_data::item_has_ident():
-    assert hasattr(data::Item, "ident")
+def test_data_item_has_uri():
+    assert hasattr(data_Item, "uri")
     descriptor = None
-    for klass in data::Item.__mro__:
-        if "ident" in klass.__dict__:
-            descriptor = klass.__dict__["ident"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_data::item_has_uri():
-    assert hasattr(data::Item, "uri")
-    descriptor = None
-    for klass in data::Item.__mro__:
+    for klass in data_Item.__mro__:
         if "uri" in klass.__dict__:
             descriptor = klass.__dict__["uri"]
             break
     assert isinstance(descriptor, property)
 
-def test_data::item_has_created():
-    assert hasattr(data::Item, "created")
+def test_data_item_has_ident():
+    assert hasattr(data_Item, "ident")
     descriptor = None
-    for klass in data::Item.__mro__:
-        if "created" in klass.__dict__:
-            descriptor = klass.__dict__["created"]
+    for klass in data_Item.__mro__:
+        if "ident" in klass.__dict__:
+            descriptor = klass.__dict__["ident"]
             break
     assert isinstance(descriptor, property)
 
-def test_data::item_has_lastModified():
-    assert hasattr(data::Item, "lastModified")
+def test_data_item_has_lastModified():
+    assert hasattr(data_Item, "lastModified")
     descriptor = None
-    for klass in data::Item.__mro__:
+    for klass in data_Item.__mro__:
         if "lastModified" in klass.__dict__:
             descriptor = klass.__dict__["lastModified"]
             break
     assert isinstance(descriptor, property)
 
-def test_data::item_has_stringValue():
-    assert hasattr(data::Item, "stringValue")
+def test_data_item_has_created():
+    assert hasattr(data_Item, "created")
     descriptor = None
-    for klass in data::Item.__mro__:
-        if "stringValue" in klass.__dict__:
-            descriptor = klass.__dict__["stringValue"]
+    for klass in data_Item.__mro__:
+        if "created" in klass.__dict__:
+            descriptor = klass.__dict__["created"]
             break
     assert isinstance(descriptor, property)
 
-def test_data::item_has_stringXML():
-    assert hasattr(data::Item, "stringXML")
+def test_data_item_has_stringXML():
+    assert hasattr(data_Item, "stringXML")
     descriptor = None
-    for klass in data::Item.__mro__:
+    for klass in data_Item.__mro__:
         if "stringXML" in klass.__dict__:
             descriptor = klass.__dict__["stringXML"]
             break
     assert isinstance(descriptor, property)
 
+def test_data_item_has_stringValue():
+    assert hasattr(data_Item, "stringValue")
+    descriptor = None
+    for klass in data_Item.__mro__:
+        if "stringValue" in klass.__dict__:
+            descriptor = klass.__dict__["stringValue"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_data::transformation_is_not_abstract():
-    assert not inspect.isabstract(data::Transformation)
+
+def test_data_transformation_is_not_abstract():
+    assert not inspect.isabstract(data_Transformation)
 
 
-def test_data::transformation_constructor_exists():
-    assert callable(data::Transformation.__init__)
+def test_data_transformation_constructor_exists():
+    assert callable(data_Transformation.__init__)
 
 
-def test_data::transformation_constructor_args():
-    sig = inspect.signature(data::Transformation.__init__)
+def test_data_transformation_constructor_args():
+    sig = inspect.signature(data_Transformation.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_data::document_is_not_abstract():
-    assert not inspect.isabstract(data::Document)
+def test_data_document_is_not_abstract():
+    assert not inspect.isabstract(data_Document)
 
 
-def test_data::document_constructor_exists():
-    assert callable(data::Document.__init__)
+def test_data_document_constructor_exists():
+    assert callable(data_Document.__init__)
 
 
-def test_data::document_constructor_args():
-    sig = inspect.signature(data::Document.__init__)
+def test_data_document_constructor_args():
+    sig = inspect.signature(data_Document.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_data::dataset_is_not_abstract():
-    assert not inspect.isabstract(data::DataSet)
+def test_data_dataset_is_not_abstract():
+    assert not inspect.isabstract(data_DataSet)
 
 
-def test_data::dataset_constructor_exists():
-    assert callable(data::DataSet.__init__)
+def test_data_dataset_constructor_exists():
+    assert callable(data_DataSet.__init__)
 
 
-def test_data::dataset_constructor_args():
-    sig = inspect.signature(data::DataSet.__init__)
+def test_data_dataset_constructor_args():
+    sig = inspect.signature(data_DataSet.__init__)
     params = list(sig.parameters.keys())
     assert "identPrefix" in params, "Missing parameter 'identPrefix'"
     assert "lastModified" in params, "Missing parameter 'lastModified'"
-    assert "created" in params, "Missing parameter 'created'"
-    assert "logLevel" in params, "Missing parameter 'logLevel'"
-    assert "identCounter" in params, "Missing parameter 'identCounter'"
     assert "cacheFolder" in params, "Missing parameter 'cacheFolder'"
+    assert "created" in params, "Missing parameter 'created'"
+    assert "identCounter" in params, "Missing parameter 'identCounter'"
     assert "cacheFileAttachements" in params, "Missing parameter 'cacheFileAttachements'"
+    assert "logLevel" in params, "Missing parameter 'logLevel'"
     assert "keepDeletedItemsList" in params, "Missing parameter 'keepDeletedItemsList'"
 
-def test_data::dataset_has_identPrefix():
-    assert hasattr(data::DataSet, "identPrefix")
+def test_data_dataset_has_identPrefix():
+    assert hasattr(data_DataSet, "identPrefix")
     descriptor = None
-    for klass in data::DataSet.__mro__:
+    for klass in data_DataSet.__mro__:
         if "identPrefix" in klass.__dict__:
             descriptor = klass.__dict__["identPrefix"]
             break
     assert isinstance(descriptor, property)
 
-def test_data::dataset_has_lastModified():
-    assert hasattr(data::DataSet, "lastModified")
+def test_data_dataset_has_lastModified():
+    assert hasattr(data_DataSet, "lastModified")
     descriptor = None
-    for klass in data::DataSet.__mro__:
+    for klass in data_DataSet.__mro__:
         if "lastModified" in klass.__dict__:
             descriptor = klass.__dict__["lastModified"]
             break
     assert isinstance(descriptor, property)
 
-def test_data::dataset_has_created():
-    assert hasattr(data::DataSet, "created")
+def test_data_dataset_has_cacheFolder():
+    assert hasattr(data_DataSet, "cacheFolder")
     descriptor = None
-    for klass in data::DataSet.__mro__:
-        if "created" in klass.__dict__:
-            descriptor = klass.__dict__["created"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_data::dataset_has_logLevel():
-    assert hasattr(data::DataSet, "logLevel")
-    descriptor = None
-    for klass in data::DataSet.__mro__:
-        if "logLevel" in klass.__dict__:
-            descriptor = klass.__dict__["logLevel"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_data::dataset_has_identCounter():
-    assert hasattr(data::DataSet, "identCounter")
-    descriptor = None
-    for klass in data::DataSet.__mro__:
-        if "identCounter" in klass.__dict__:
-            descriptor = klass.__dict__["identCounter"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_data::dataset_has_cacheFolder():
-    assert hasattr(data::DataSet, "cacheFolder")
-    descriptor = None
-    for klass in data::DataSet.__mro__:
+    for klass in data_DataSet.__mro__:
         if "cacheFolder" in klass.__dict__:
             descriptor = klass.__dict__["cacheFolder"]
             break
     assert isinstance(descriptor, property)
 
-def test_data::dataset_has_cacheFileAttachements():
-    assert hasattr(data::DataSet, "cacheFileAttachements")
+def test_data_dataset_has_created():
+    assert hasattr(data_DataSet, "created")
     descriptor = None
-    for klass in data::DataSet.__mro__:
+    for klass in data_DataSet.__mro__:
+        if "created" in klass.__dict__:
+            descriptor = klass.__dict__["created"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_data_dataset_has_identCounter():
+    assert hasattr(data_DataSet, "identCounter")
+    descriptor = None
+    for klass in data_DataSet.__mro__:
+        if "identCounter" in klass.__dict__:
+            descriptor = klass.__dict__["identCounter"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_data_dataset_has_cacheFileAttachements():
+    assert hasattr(data_DataSet, "cacheFileAttachements")
+    descriptor = None
+    for klass in data_DataSet.__mro__:
         if "cacheFileAttachements" in klass.__dict__:
             descriptor = klass.__dict__["cacheFileAttachements"]
             break
     assert isinstance(descriptor, property)
 
-def test_data::dataset_has_keepDeletedItemsList():
-    assert hasattr(data::DataSet, "keepDeletedItemsList")
+def test_data_dataset_has_logLevel():
+    assert hasattr(data_DataSet, "logLevel")
     descriptor = None
-    for klass in data::DataSet.__mro__:
+    for klass in data_DataSet.__mro__:
+        if "logLevel" in klass.__dict__:
+            descriptor = klass.__dict__["logLevel"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_data_dataset_has_keepDeletedItemsList():
+    assert hasattr(data_DataSet, "keepDeletedItemsList")
+    descriptor = None
+    for klass in data_DataSet.__mro__:
         if "keepDeletedItemsList" in klass.__dict__:
             descriptor = klass.__dict__["keepDeletedItemsList"]
             break
@@ -755,79 +731,79 @@ def test_data::dataset_has_keepDeletedItemsList():
 
 
 
-def test_data::video_is_not_abstract():
-    assert not inspect.isabstract(data::Video)
+def test_data_video_is_not_abstract():
+    assert not inspect.isabstract(data_Video)
 
 
-def test_data::video_constructor_exists():
-    assert callable(data::Video.__init__)
+def test_data_video_constructor_exists():
+    assert callable(data_Video.__init__)
 
 
-def test_data::video_constructor_args():
-    sig = inspect.signature(data::Video.__init__)
+def test_data_video_constructor_args():
+    sig = inspect.signature(data_Video.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_data::connection_is_not_abstract():
-    assert not inspect.isabstract(data::Connection)
+def test_data_connection_is_not_abstract():
+    assert not inspect.isabstract(data_Connection)
 
 
-def test_data::connection_constructor_exists():
-    assert callable(data::Connection.__init__)
+def test_data_connection_constructor_exists():
+    assert callable(data_Connection.__init__)
 
 
-def test_data::connection_constructor_args():
-    sig = inspect.signature(data::Connection.__init__)
+def test_data_connection_constructor_args():
+    sig = inspect.signature(data_Connection.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_data::viewranking_is_not_abstract():
-    assert not inspect.isabstract(data::ViewRanking)
+def test_data_viewranking_is_not_abstract():
+    assert not inspect.isabstract(data_ViewRanking)
 
 
-def test_data::viewranking_constructor_exists():
-    assert callable(data::ViewRanking.__init__)
+def test_data_viewranking_constructor_exists():
+    assert callable(data_ViewRanking.__init__)
 
 
-def test_data::viewranking_constructor_args():
-    sig = inspect.signature(data::ViewRanking.__init__)
+def test_data_viewranking_constructor_args():
+    sig = inspect.signature(data_ViewRanking.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_data::thumbranking_is_not_abstract():
-    assert not inspect.isabstract(data::ThumbRanking)
+def test_data_thumbranking_is_not_abstract():
+    assert not inspect.isabstract(data_ThumbRanking)
 
 
-def test_data::thumbranking_constructor_exists():
-    assert callable(data::ThumbRanking.__init__)
+def test_data_thumbranking_constructor_exists():
+    assert callable(data_ThumbRanking.__init__)
 
 
-def test_data::thumbranking_constructor_args():
-    sig = inspect.signature(data::ThumbRanking.__init__)
+def test_data_thumbranking_constructor_args():
+    sig = inspect.signature(data_ThumbRanking.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_data::starranking_is_not_abstract():
-    assert not inspect.isabstract(data::StarRanking)
+def test_data_starranking_is_not_abstract():
+    assert not inspect.isabstract(data_StarRanking)
 
 
-def test_data::starranking_constructor_exists():
-    assert callable(data::StarRanking.__init__)
+def test_data_starranking_constructor_exists():
+    assert callable(data_StarRanking.__init__)
 
 
-def test_data::starranking_constructor_args():
-    sig = inspect.signature(data::StarRanking.__init__)
+def test_data_starranking_constructor_args():
+    sig = inspect.signature(data_StarRanking.__init__)
     params = list(sig.parameters.keys())
     assert "normalizedValue" in params, "Missing parameter 'normalizedValue'"
 
-def test_data::starranking_has_normalizedValue():
-    assert hasattr(data::StarRanking, "normalizedValue")
+def test_data_starranking_has_normalizedValue():
+    assert hasattr(data_StarRanking, "normalizedValue")
     descriptor = None
-    for klass in data::StarRanking.__mro__:
+    for klass in data_StarRanking.__mro__:
         if "normalizedValue" in klass.__dict__:
             descriptor = klass.__dict__["normalizedValue"]
             break
@@ -835,33 +811,33 @@ def test_data::starranking_has_normalizedValue():
 
 
 
-def test_data::image_is_not_abstract():
-    assert not inspect.isabstract(data::Image)
+def test_data_image_is_not_abstract():
+    assert not inspect.isabstract(data_Image)
 
 
-def test_data::image_constructor_exists():
-    assert callable(data::Image.__init__)
+def test_data_image_constructor_exists():
+    assert callable(data_Image.__init__)
 
 
-def test_data::image_constructor_args():
-    sig = inspect.signature(data::Image.__init__)
+def test_data_image_constructor_args():
+    sig = inspect.signature(data_Image.__init__)
     params = list(sig.parameters.keys())
     assert "width" in params, "Missing parameter 'width'"
     assert "height" in params, "Missing parameter 'height'"
 
-def test_data::image_has_width():
-    assert hasattr(data::Image, "width")
+def test_data_image_has_width():
+    assert hasattr(data_Image, "width")
     descriptor = None
-    for klass in data::Image.__mro__:
+    for klass in data_Image.__mro__:
         if "width" in klass.__dict__:
             descriptor = klass.__dict__["width"]
             break
     assert isinstance(descriptor, property)
 
-def test_data::image_has_height():
-    assert hasattr(data::Image, "height")
+def test_data_image_has_height():
+    assert hasattr(data_Image, "height")
     descriptor = None
-    for klass in data::Image.__mro__:
+    for klass in data_Image.__mro__:
         if "height" in klass.__dict__:
             descriptor = klass.__dict__["height"]
             break
@@ -869,65 +845,65 @@ def test_data::image_has_height():
 
 
 
-def test_data::tag_is_not_abstract():
-    assert not inspect.isabstract(data::Tag)
+def test_data_tag_is_not_abstract():
+    assert not inspect.isabstract(data_Tag)
 
 
-def test_data::tag_constructor_exists():
-    assert callable(data::Tag.__init__)
+def test_data_tag_constructor_exists():
+    assert callable(data_Tag.__init__)
 
 
-def test_data::tag_constructor_args():
-    sig = inspect.signature(data::Tag.__init__)
+def test_data_tag_constructor_args():
+    sig = inspect.signature(data_Tag.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_data::category_is_not_abstract():
-    assert not inspect.isabstract(data::Category)
+def test_data_category_is_not_abstract():
+    assert not inspect.isabstract(data_Category)
 
 
-def test_data::category_constructor_exists():
-    assert callable(data::Category.__init__)
+def test_data_category_constructor_exists():
+    assert callable(data_Category.__init__)
 
 
-def test_data::category_constructor_args():
-    sig = inspect.signature(data::Category.__init__)
+def test_data_category_constructor_args():
+    sig = inspect.signature(data_Category.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_data::metainformation_is_not_abstract():
-    assert not inspect.isabstract(data::MetaInformation)
+def test_data_metainformation_is_not_abstract():
+    assert not inspect.isabstract(data_MetaInformation)
 
 
-def test_data::metainformation_constructor_exists():
-    assert callable(data::MetaInformation.__init__)
+def test_data_metainformation_constructor_exists():
+    assert callable(data_MetaInformation.__init__)
 
 
-def test_data::metainformation_constructor_args():
-    sig = inspect.signature(data::MetaInformation.__init__)
+def test_data_metainformation_constructor_args():
+    sig = inspect.signature(data_MetaInformation.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_data::binary_is_not_abstract():
-    assert not inspect.isabstract(data::Binary)
+def test_data_binary_is_not_abstract():
+    assert not inspect.isabstract(data_Binary)
 
 
-def test_data::binary_constructor_exists():
-    assert callable(data::Binary.__init__)
+def test_data_binary_constructor_exists():
+    assert callable(data_Binary.__init__)
 
 
-def test_data::binary_constructor_args():
-    sig = inspect.signature(data::Binary.__init__)
+def test_data_binary_constructor_args():
+    sig = inspect.signature(data_Binary.__init__)
     params = list(sig.parameters.keys())
     assert "bytes" in params, "Missing parameter 'bytes'"
 
-def test_data::binary_has_bytes():
-    assert hasattr(data::Binary, "bytes")
+def test_data_binary_has_bytes():
+    assert hasattr(data_Binary, "bytes")
     descriptor = None
-    for klass in data::Binary.__mro__:
+    for klass in data_Binary.__mro__:
         if "bytes" in klass.__dict__:
             descriptor = klass.__dict__["bytes"]
             break
@@ -949,71 +925,57 @@ def test_item_constructor_args():
 
 
 
-def test_data::extension_is_not_abstract():
-    assert not inspect.isabstract(data::Extension)
+def test_data_deleteditem_is_not_abstract():
+    assert not inspect.isabstract(data_DeletedItem)
 
 
-def test_data::extension_constructor_exists():
-    assert callable(data::Extension.__init__)
+def test_data_deleteditem_constructor_exists():
+    assert callable(data_DeletedItem.__init__)
 
 
-def test_data::extension_constructor_args():
-    sig = inspect.signature(data::Extension.__init__)
+def test_data_deleteditem_constructor_args():
+    sig = inspect.signature(data_DeletedItem.__init__)
     params = list(sig.parameters.keys())
-
-
-
-def test_data::deleteditem_is_not_abstract():
-    assert not inspect.isabstract(data::DeletedItem)
-
-
-def test_data::deleteditem_constructor_exists():
-    assert callable(data::DeletedItem.__init__)
-
-
-def test_data::deleteditem_constructor_args():
-    sig = inspect.signature(data::DeletedItem.__init__)
-    params = list(sig.parameters.keys())
-    assert "deleted" in params, "Missing parameter 'deleted'"
     assert "identOfDeleted" in params, "Missing parameter 'identOfDeleted'"
+    assert "deleted" in params, "Missing parameter 'deleted'"
 
-def test_data::deleteditem_has_deleted():
-    assert hasattr(data::DeletedItem, "deleted")
+def test_data_deleteditem_has_identOfDeleted():
+    assert hasattr(data_DeletedItem, "identOfDeleted")
     descriptor = None
-    for klass in data::DeletedItem.__mro__:
-        if "deleted" in klass.__dict__:
-            descriptor = klass.__dict__["deleted"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_data::deleteditem_has_identOfDeleted():
-    assert hasattr(data::DeletedItem, "identOfDeleted")
-    descriptor = None
-    for klass in data::DeletedItem.__mro__:
+    for klass in data_DeletedItem.__mro__:
         if "identOfDeleted" in klass.__dict__:
             descriptor = klass.__dict__["identOfDeleted"]
             break
     assert isinstance(descriptor, property)
 
+def test_data_deleteditem_has_deleted():
+    assert hasattr(data_DeletedItem, "deleted")
+    descriptor = None
+    for klass in data_DeletedItem.__mro__:
+        if "deleted" in klass.__dict__:
+            descriptor = klass.__dict__["deleted"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_data::metatag_is_not_abstract():
-    assert not inspect.isabstract(data::MetaTag)
+
+def test_data_classification_is_not_abstract():
+    assert not inspect.isabstract(data_Classification)
 
 
-def test_data::metatag_constructor_exists():
-    assert callable(data::MetaTag.__init__)
+def test_data_classification_constructor_exists():
+    assert callable(data_Classification.__init__)
 
 
-def test_data::metatag_constructor_args():
-    sig = inspect.signature(data::MetaTag.__init__)
+def test_data_classification_constructor_args():
+    sig = inspect.signature(data_Classification.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_data::metatag_has_name():
-    assert hasattr(data::MetaTag, "name")
+def test_data_classification_has_name():
+    assert hasattr(data_Classification, "name")
     descriptor = None
-    for klass in data::MetaTag.__mro__:
+    for klass in data_Classification.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -1021,33 +983,71 @@ def test_data::metatag_has_name():
 
 
 
-def test_data::identifier_is_not_abstract():
-    assert not inspect.isabstract(data::Identifier)
+def test_data_extension_is_not_abstract():
+    assert not inspect.isabstract(data_Extension)
 
 
-def test_data::identifier_constructor_exists():
-    assert callable(data::Identifier.__init__)
+def test_data_extension_constructor_exists():
+    assert callable(data_Extension.__init__)
 
 
-def test_data::identifier_constructor_args():
-    sig = inspect.signature(data::Identifier.__init__)
+def test_data_extension_constructor_args():
+    sig = inspect.signature(data_Extension.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_data_metatag_is_not_abstract():
+    assert not inspect.isabstract(data_MetaTag)
+
+
+def test_data_metatag_constructor_exists():
+    assert callable(data_MetaTag.__init__)
+
+
+def test_data_metatag_constructor_args():
+    sig = inspect.signature(data_MetaTag.__init__)
+    params = list(sig.parameters.keys())
+    assert "name" in params, "Missing parameter 'name'"
+
+def test_data_metatag_has_name():
+    assert hasattr(data_MetaTag, "name")
+    descriptor = None
+    for klass in data_MetaTag.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_data_identifier_is_not_abstract():
+    assert not inspect.isabstract(data_Identifier)
+
+
+def test_data_identifier_constructor_exists():
+    assert callable(data_Identifier.__init__)
+
+
+def test_data_identifier_constructor_args():
+    sig = inspect.signature(data_Identifier.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
     assert "key" in params, "Missing parameter 'key'"
 
-def test_data::identifier_has_value():
-    assert hasattr(data::Identifier, "value")
+def test_data_identifier_has_value():
+    assert hasattr(data_Identifier, "value")
     descriptor = None
-    for klass in data::Identifier.__mro__:
+    for klass in data_Identifier.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
     assert isinstance(descriptor, property)
 
-def test_data::identifier_has_key():
-    assert hasattr(data::Identifier, "key")
+def test_data_identifier_has_key():
+    assert hasattr(data_Identifier, "key")
     descriptor = None
-    for klass in data::Identifier.__mro__:
+    for klass in data_Identifier.__mro__:
         if "key" in klass.__dict__:
             descriptor = klass.__dict__["key"]
             break
@@ -1055,67 +1055,43 @@ def test_data::identifier_has_key():
 
 
 
-def test_data::classification_is_not_abstract():
-    assert not inspect.isabstract(data::Classification)
+def test_data_informationobject_is_not_abstract():
+    assert not inspect.isabstract(data_InformationObject)
 
 
-def test_data::classification_constructor_exists():
-    assert callable(data::Classification.__init__)
+def test_data_informationobject_constructor_exists():
+    assert callable(data_InformationObject.__init__)
 
 
-def test_data::classification_constructor_args():
-    sig = inspect.signature(data::Classification.__init__)
+def test_data_informationobject_constructor_args():
+    sig = inspect.signature(data_InformationObject.__init__)
     params = list(sig.parameters.keys())
-    assert "name" in params, "Missing parameter 'name'"
-
-def test_data::classification_has_name():
-    assert hasattr(data::Classification, "name")
-    descriptor = None
-    for klass in data::Classification.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_data::informationobject_is_not_abstract():
-    assert not inspect.isabstract(data::InformationObject)
-
-
-def test_data::informationobject_constructor_exists():
-    assert callable(data::InformationObject.__init__)
-
-
-def test_data::informationobject_constructor_args():
-    sig = inspect.signature(data::InformationObject.__init__)
-    params = list(sig.parameters.keys())
-    assert "alternativeNames" in params, "Missing parameter 'alternativeNames'"
     assert "verifiedName" in params, "Missing parameter 'verifiedName'"
+    assert "alternativeNames" in params, "Missing parameter 'alternativeNames'"
     assert "name" in params, "Missing parameter 'name'"
 
-def test_data::informationobject_has_alternativeNames():
-    assert hasattr(data::InformationObject, "alternativeNames")
+def test_data_informationobject_has_verifiedName():
+    assert hasattr(data_InformationObject, "verifiedName")
     descriptor = None
-    for klass in data::InformationObject.__mro__:
-        if "alternativeNames" in klass.__dict__:
-            descriptor = klass.__dict__["alternativeNames"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_data::informationobject_has_verifiedName():
-    assert hasattr(data::InformationObject, "verifiedName")
-    descriptor = None
-    for klass in data::InformationObject.__mro__:
+    for klass in data_InformationObject.__mro__:
         if "verifiedName" in klass.__dict__:
             descriptor = klass.__dict__["verifiedName"]
             break
     assert isinstance(descriptor, property)
 
-def test_data::informationobject_has_name():
-    assert hasattr(data::InformationObject, "name")
+def test_data_informationobject_has_alternativeNames():
+    assert hasattr(data_InformationObject, "alternativeNames")
     descriptor = None
-    for klass in data::InformationObject.__mro__:
+    for klass in data_InformationObject.__mro__:
+        if "alternativeNames" in klass.__dict__:
+            descriptor = klass.__dict__["alternativeNames"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_data_informationobject_has_name():
+    assert hasattr(data_InformationObject, "name")
+    descriptor = None
+    for klass in data_InformationObject.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -1137,23 +1113,37 @@ def test_informationobject_constructor_args():
 
 
 
-def test_data::content_is_not_abstract():
-    assert not inspect.isabstract(data::Content)
+def test_data_organisation_is_not_abstract():
+    assert not inspect.isabstract(data_Organisation)
 
 
-def test_data::content_constructor_exists():
-    assert callable(data::Content.__init__)
+def test_data_organisation_constructor_exists():
+    assert callable(data_Organisation.__init__)
 
 
-def test_data::content_constructor_args():
-    sig = inspect.signature(data::Content.__init__)
+def test_data_organisation_constructor_args():
+    sig = inspect.signature(data_Organisation.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_data_content_is_not_abstract():
+    assert not inspect.isabstract(data_Content)
+
+
+def test_data_content_constructor_exists():
+    assert callable(data_Content.__init__)
+
+
+def test_data_content_constructor_args():
+    sig = inspect.signature(data_Content.__init__)
     params = list(sig.parameters.keys())
     assert "locale" in params, "Missing parameter 'locale'"
 
-def test_data::content_has_locale():
-    assert hasattr(data::Content, "locale")
+def test_data_content_has_locale():
+    assert hasattr(data_Content, "locale")
     descriptor = None
-    for klass in data::Content.__mro__:
+    for klass in data_Content.__mro__:
         if "locale" in klass.__dict__:
             descriptor = klass.__dict__["locale"]
             break
@@ -1161,69 +1151,79 @@ def test_data::content_has_locale():
 
 
 
-def test_data::organisation_is_not_abstract():
-    assert not inspect.isabstract(data::Organisation)
+def test_data_person_is_not_abstract():
+    assert not inspect.isabstract(data_Person)
 
 
-def test_data::organisation_constructor_exists():
-    assert callable(data::Organisation.__init__)
+def test_data_person_constructor_exists():
+    assert callable(data_Person.__init__)
 
 
-def test_data::organisation_constructor_args():
-    sig = inspect.signature(data::Organisation.__init__)
+def test_data_person_constructor_args():
+    sig = inspect.signature(data_Person.__init__)
     params = list(sig.parameters.keys())
-
-
-
-def test_data::person_is_not_abstract():
-    assert not inspect.isabstract(data::Person)
-
-
-def test_data::person_constructor_exists():
-    assert callable(data::Person.__init__)
-
-
-def test_data::person_constructor_args():
-    sig = inspect.signature(data::Person.__init__)
-    params = list(sig.parameters.keys())
-    assert "dateOfBirth" in params, "Missing parameter 'dateOfBirth'"
     assert "lastname" in params, "Missing parameter 'lastname'"
+    assert "dateOfBirth" in params, "Missing parameter 'dateOfBirth'"
     assert "title" in params, "Missing parameter 'title'"
     assert "firstname" in params, "Missing parameter 'firstname'"
 
-def test_data::person_has_dateOfBirth():
-    assert hasattr(data::Person, "dateOfBirth")
+def test_data_person_has_lastname():
+    assert hasattr(data_Person, "lastname")
     descriptor = None
-    for klass in data::Person.__mro__:
-        if "dateOfBirth" in klass.__dict__:
-            descriptor = klass.__dict__["dateOfBirth"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_data::person_has_lastname():
-    assert hasattr(data::Person, "lastname")
-    descriptor = None
-    for klass in data::Person.__mro__:
+    for klass in data_Person.__mro__:
         if "lastname" in klass.__dict__:
             descriptor = klass.__dict__["lastname"]
             break
     assert isinstance(descriptor, property)
 
-def test_data::person_has_title():
-    assert hasattr(data::Person, "title")
+def test_data_person_has_dateOfBirth():
+    assert hasattr(data_Person, "dateOfBirth")
     descriptor = None
-    for klass in data::Person.__mro__:
+    for klass in data_Person.__mro__:
+        if "dateOfBirth" in klass.__dict__:
+            descriptor = klass.__dict__["dateOfBirth"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_data_person_has_title():
+    assert hasattr(data_Person, "title")
+    descriptor = None
+    for klass in data_Person.__mro__:
         if "title" in klass.__dict__:
             descriptor = klass.__dict__["title"]
             break
     assert isinstance(descriptor, property)
 
-def test_data::person_has_firstname():
-    assert hasattr(data::Person, "firstname")
+def test_data_person_has_firstname():
+    assert hasattr(data_Person, "firstname")
     descriptor = None
-    for klass in data::Person.__mro__:
+    for klass in data_Person.__mro__:
         if "firstname" in klass.__dict__:
             descriptor = klass.__dict__["firstname"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_data_ranking_is_not_abstract():
+    assert not inspect.isabstract(data_Ranking)
+
+
+def test_data_ranking_constructor_exists():
+    assert callable(data_Ranking.__init__)
+
+
+def test_data_ranking_constructor_args():
+    sig = inspect.signature(data_Ranking.__init__)
+    params = list(sig.parameters.keys())
+    assert "date" in params, "Missing parameter 'date'"
+
+def test_data_ranking_has_date():
+    assert hasattr(data_Ranking, "date")
+    descriptor = None
+    for klass in data_Ranking.__mro__:
+        if "date" in klass.__dict__:
+            descriptor = klass.__dict__["date"]
             break
     assert isinstance(descriptor, property)
 
@@ -1248,214 +1248,209 @@ Attachment_strategy = st.builds(
 MetaInformation_strategy = st.builds(
     MetaInformation,
 )
-data::Email_strategy = st.builds(
-    data::Email,
-    adress=
-        safe_text
-)
-data::Event_strategy = st.builds(
-    data::Event,
+data_Event_strategy = st.builds(
+    data_Event,
     date=
         st.dates()
 )
-data::WebAccount_strategy = st.builds(
-    data::WebAccount,
+data_WebAccount_strategy = st.builds(
+    data_WebAccount,
     service=
         safe_text,
     username=
         safe_text
 )
-data::Location_strategy = st.builds(
-    data::Location,
-    country=
-        safe_text,
-    city=
-        safe_text,
-    longitude=
-        safe_text,
+data_IndoorLocation_strategy = st.builds(
+    data_IndoorLocation,
+    name=
+        safe_text
+)
+data_Email_strategy = st.builds(
+    data_Email,
+    adress=
+        safe_text
+)
+data_Location_strategy = st.builds(
+    data_Location,
     state=
         safe_text,
-    latitude=
+    city=
         safe_text,
     houseNumber=
         safe_text,
     zipCode=
         safe_text,
     street=
+        safe_text,
+    country=
+        safe_text,
+    latitude=
+        safe_text,
+    longitude=
         safe_text
 )
-data::IndoorLocation_strategy = st.builds(
-    data::IndoorLocation,
-    name=
-        safe_text
-)
-data::InstantMessenger_strategy = st.builds(
-    data::InstantMessenger,
+data_InstantMessenger_strategy = st.builds(
+    data_InstantMessenger,
     username=
         safe_text
 )
-data::Phone_strategy = st.builds(
-    data::Phone,
-    countryCode=
+data_Phone_strategy = st.builds(
+    data_Phone,
+    areaCode=
         safe_text,
     number=
         safe_text,
-    areaCode=
+    countryCode=
         safe_text
 )
 Extension_strategy = st.builds(
     Extension,
 )
-data::Attachment_strategy = st.builds(
-    data::Attachment,
-    cachedFileName=
-        safe_text,
-    noCache=
-        safe_text,
-    cachedOnly=
-        safe_text,
-    fileIdentifier=
+data_Attachment_strategy = st.builds(
+    data_Attachment,
+    cachedFileUrl=
         safe_text,
     fileExtension=
         safe_text,
-    cachedFileUrl=
+    fileIdentifier=
+        safe_text,
+    noCache=
         safe_text,
     fileUrl=
+        safe_text,
+    cachedOnly=
+        safe_text,
+    cachedFileName=
         safe_text
 )
-data::Ranking_strategy = st.builds(
-    data::Ranking,
-    date=
-        st.dates()
-)
-data::WebSite_strategy = st.builds(
-    data::WebSite,
+data_WebSite_strategy = st.builds(
+    data_WebSite,
     shortenedUrl=
         safe_text,
-    adress=
-        safe_text,
     title=
+        safe_text,
+    adress=
         safe_text
 )
 Classification_strategy = st.builds(
     Classification,
 )
-data::Mashup_strategy = st.builds(
-    data::Mashup,
+data_Mashup_strategy = st.builds(
+    data_Mashup,
 )
-data::Item_strategy = st.builds(
-    data::Item,
-    ident=
-        safe_text,
+data_Item_strategy = st.builds(
+    data_Item,
     uri=
         safe_text,
-    created=
-        st.dates(),
+    ident=
+        safe_text,
     lastModified=
         st.dates(),
-    stringValue=
-        safe_text,
+    created=
+        st.dates(),
     stringXML=
+        safe_text,
+    stringValue=
         safe_text
 )
-data::Transformation_strategy = st.builds(
-    data::Transformation,
+data_Transformation_strategy = st.builds(
+    data_Transformation,
 )
-data::Document_strategy = st.builds(
-    data::Document,
+data_Document_strategy = st.builds(
+    data_Document,
 )
-data::DataSet_strategy = st.builds(
-    data::DataSet,
+data_DataSet_strategy = st.builds(
+    data_DataSet,
     identPrefix=
         safe_text,
     lastModified=
         st.dates(),
-    created=
-        st.dates(),
-    logLevel=
-        safe_text,
-    identCounter=
-        safe_text,
     cacheFolder=
         safe_text,
+    created=
+        st.dates(),
+    identCounter=
+        safe_text,
     cacheFileAttachements=
+        safe_text,
+    logLevel=
         safe_text,
     keepDeletedItemsList=
         safe_text
 )
-data::Video_strategy = st.builds(
-    data::Video,
+data_Video_strategy = st.builds(
+    data_Video,
 )
-data::Connection_strategy = st.builds(
-    data::Connection,
+data_Connection_strategy = st.builds(
+    data_Connection,
 )
-data::ViewRanking_strategy = st.builds(
-    data::ViewRanking,
+data_ViewRanking_strategy = st.builds(
+    data_ViewRanking,
 )
-data::ThumbRanking_strategy = st.builds(
-    data::ThumbRanking,
+data_ThumbRanking_strategy = st.builds(
+    data_ThumbRanking,
 )
-data::StarRanking_strategy = st.builds(
-    data::StarRanking,
+data_StarRanking_strategy = st.builds(
+    data_StarRanking,
     normalizedValue=
         safe_text
 )
-data::Image_strategy = st.builds(
-    data::Image,
+data_Image_strategy = st.builds(
+    data_Image,
     width=
         safe_text,
     height=
         safe_text
 )
-data::Tag_strategy = st.builds(
-    data::Tag,
+data_Tag_strategy = st.builds(
+    data_Tag,
 )
-data::Category_strategy = st.builds(
-    data::Category,
+data_Category_strategy = st.builds(
+    data_Category,
 )
-data::MetaInformation_strategy = st.builds(
-    data::MetaInformation,
+data_MetaInformation_strategy = st.builds(
+    data_MetaInformation,
 )
-data::Binary_strategy = st.builds(
-    data::Binary,
+data_Binary_strategy = st.builds(
+    data_Binary,
     bytes=
         safe_text
 )
 Item_strategy = st.builds(
     Item,
 )
-data::Extension_strategy = st.builds(
-    data::Extension,
-)
-data::DeletedItem_strategy = st.builds(
-    data::DeletedItem,
-    deleted=
-        st.dates(),
+data_DeletedItem_strategy = st.builds(
+    data_DeletedItem,
     identOfDeleted=
-        safe_text
+        safe_text,
+    deleted=
+        st.dates()
 )
-data::MetaTag_strategy = st.builds(
-    data::MetaTag,
+data_Classification_strategy = st.builds(
+    data_Classification,
     name=
         safe_text
 )
-data::Identifier_strategy = st.builds(
-    data::Identifier,
+data_Extension_strategy = st.builds(
+    data_Extension,
+)
+data_MetaTag_strategy = st.builds(
+    data_MetaTag,
+    name=
+        safe_text
+)
+data_Identifier_strategy = st.builds(
+    data_Identifier,
     value=
         safe_text,
     key=
         safe_text
 )
-data::Classification_strategy = st.builds(
-    data::Classification,
-    name=
-        safe_text
-)
-data::InformationObject_strategy = st.builds(
-    data::InformationObject,
-    alternativeNames=
-        safe_text,
+data_InformationObject_strategy = st.builds(
+    data_InformationObject,
     verifiedName=
+        safe_text,
+    alternativeNames=
         safe_text,
     name=
         safe_text
@@ -1463,24 +1458,29 @@ data::InformationObject_strategy = st.builds(
 InformationObject_strategy = st.builds(
     InformationObject,
 )
-data::Content_strategy = st.builds(
-    data::Content,
+data_Organisation_strategy = st.builds(
+    data_Organisation,
+)
+data_Content_strategy = st.builds(
+    data_Content,
     locale=
         safe_text
 )
-data::Organisation_strategy = st.builds(
-    data::Organisation,
-)
-data::Person_strategy = st.builds(
-    data::Person,
-    dateOfBirth=
-        st.dates(),
+data_Person_strategy = st.builds(
+    data_Person,
     lastname=
         safe_text,
+    dateOfBirth=
+        st.dates(),
     title=
         safe_text,
     firstname=
         safe_text
+)
+data_Ranking_strategy = st.builds(
+    data_Ranking,
+    date=
+        st.dates()
 )
 
 @given(instance=Ranking_strategy)
@@ -1498,314 +1498,242 @@ def test_attachment_instantiation(instance):
 def test_metainformation_instantiation(instance):
     assert isinstance(instance, MetaInformation)
 
-@given(instance=data::Email_strategy)
+@given(instance=data_Event_strategy)
 @settings(max_examples=50)
-def test_data::email_instantiation(instance):
-    assert isinstance(instance, data::Email)
-
-@given(instance=data::Email_strategy)
-def test_data::email_adress_type(instance):
-    assert isinstance(instance.adress, str)
+def test_data_event_instantiation(instance):
+    assert isinstance(instance, data_Event)
 
 
-@given(instance=data::Email_strategy)
-def test_data::email_adress_setter(instance):
-    original = instance.adress
-    instance.adress = original
-    assert instance.adress == original
 
-@given(instance=data::Event_strategy)
-@settings(max_examples=50)
-def test_data::event_instantiation(instance):
-    assert isinstance(instance, data::Event)
-
-@given(instance=data::Event_strategy)
-def test_data::event_date_type(instance):
-    assert isinstance(instance.date, date)
-
-
-@given(instance=data::Event_strategy)
-def test_data::event_date_setter(instance):
+@given(instance=data_Event_strategy)
+def test_data_event_date_setter(instance):
     original = instance.date
     instance.date = original
     assert instance.date == original
 
-@given(instance=data::WebAccount_strategy)
+@given(instance=data_WebAccount_strategy)
 @settings(max_examples=50)
-def test_data::webaccount_instantiation(instance):
-    assert isinstance(instance, data::WebAccount)
-
-@given(instance=data::WebAccount_strategy)
-def test_data::webaccount_service_type(instance):
-    assert isinstance(instance.service, str)
+def test_data_webaccount_instantiation(instance):
+    assert isinstance(instance, data_WebAccount)
 
 
-@given(instance=data::WebAccount_strategy)
-def test_data::webaccount_service_setter(instance):
+
+@given(instance=data_WebAccount_strategy)
+def test_data_webaccount_service_setter(instance):
     original = instance.service
     instance.service = original
     assert instance.service == original
 
-@given(instance=data::WebAccount_strategy)
-def test_data::webaccount_username_type(instance):
-    assert isinstance(instance.username, str)
 
 
-@given(instance=data::WebAccount_strategy)
-def test_data::webaccount_username_setter(instance):
+@given(instance=data_WebAccount_strategy)
+def test_data_webaccount_username_setter(instance):
     original = instance.username
     instance.username = original
     assert instance.username == original
 
-@given(instance=data::Location_strategy)
+@given(instance=data_IndoorLocation_strategy)
 @settings(max_examples=50)
-def test_data::location_instantiation(instance):
-    assert isinstance(instance, data::Location)
-
-@given(instance=data::Location_strategy)
-def test_data::location_country_type(instance):
-    assert isinstance(instance.country, str)
+def test_data_indoorlocation_instantiation(instance):
+    assert isinstance(instance, data_IndoorLocation)
 
 
-@given(instance=data::Location_strategy)
-def test_data::location_country_setter(instance):
-    original = instance.country
-    instance.country = original
-    assert instance.country == original
 
-@given(instance=data::Location_strategy)
-def test_data::location_city_type(instance):
-    assert isinstance(instance.city, str)
-
-
-@given(instance=data::Location_strategy)
-def test_data::location_city_setter(instance):
-    original = instance.city
-    instance.city = original
-    assert instance.city == original
-
-@given(instance=data::Location_strategy)
-def test_data::location_longitude_type(instance):
-    assert isinstance(instance.longitude, str)
-
-
-@given(instance=data::Location_strategy)
-def test_data::location_longitude_setter(instance):
-    original = instance.longitude
-    instance.longitude = original
-    assert instance.longitude == original
-
-@given(instance=data::Location_strategy)
-def test_data::location_state_type(instance):
-    assert isinstance(instance.state, str)
-
-
-@given(instance=data::Location_strategy)
-def test_data::location_state_setter(instance):
-    original = instance.state
-    instance.state = original
-    assert instance.state == original
-
-@given(instance=data::Location_strategy)
-def test_data::location_latitude_type(instance):
-    assert isinstance(instance.latitude, str)
-
-
-@given(instance=data::Location_strategy)
-def test_data::location_latitude_setter(instance):
-    original = instance.latitude
-    instance.latitude = original
-    assert instance.latitude == original
-
-@given(instance=data::Location_strategy)
-def test_data::location_houseNumber_type(instance):
-    assert isinstance(instance.houseNumber, str)
-
-
-@given(instance=data::Location_strategy)
-def test_data::location_houseNumber_setter(instance):
-    original = instance.houseNumber
-    instance.houseNumber = original
-    assert instance.houseNumber == original
-
-@given(instance=data::Location_strategy)
-def test_data::location_zipCode_type(instance):
-    assert isinstance(instance.zipCode, str)
-
-
-@given(instance=data::Location_strategy)
-def test_data::location_zipCode_setter(instance):
-    original = instance.zipCode
-    instance.zipCode = original
-    assert instance.zipCode == original
-
-@given(instance=data::Location_strategy)
-def test_data::location_street_type(instance):
-    assert isinstance(instance.street, str)
-
-
-@given(instance=data::Location_strategy)
-def test_data::location_street_setter(instance):
-    original = instance.street
-    instance.street = original
-    assert instance.street == original
-
-@given(instance=data::IndoorLocation_strategy)
-@settings(max_examples=50)
-def test_data::indoorlocation_instantiation(instance):
-    assert isinstance(instance, data::IndoorLocation)
-
-@given(instance=data::IndoorLocation_strategy)
-def test_data::indoorlocation_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=data::IndoorLocation_strategy)
-def test_data::indoorlocation_name_setter(instance):
+@given(instance=data_IndoorLocation_strategy)
+def test_data_indoorlocation_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=data::InstantMessenger_strategy)
+@given(instance=data_Email_strategy)
 @settings(max_examples=50)
-def test_data::instantmessenger_instantiation(instance):
-    assert isinstance(instance, data::InstantMessenger)
-
-@given(instance=data::InstantMessenger_strategy)
-def test_data::instantmessenger_username_type(instance):
-    assert isinstance(instance.username, str)
+def test_data_email_instantiation(instance):
+    assert isinstance(instance, data_Email)
 
 
-@given(instance=data::InstantMessenger_strategy)
-def test_data::instantmessenger_username_setter(instance):
+
+@given(instance=data_Email_strategy)
+def test_data_email_adress_setter(instance):
+    original = instance.adress
+    instance.adress = original
+    assert instance.adress == original
+
+@given(instance=data_Location_strategy)
+@settings(max_examples=50)
+def test_data_location_instantiation(instance):
+    assert isinstance(instance, data_Location)
+
+
+
+@given(instance=data_Location_strategy)
+def test_data_location_state_setter(instance):
+    original = instance.state
+    instance.state = original
+    assert instance.state == original
+
+
+
+@given(instance=data_Location_strategy)
+def test_data_location_city_setter(instance):
+    original = instance.city
+    instance.city = original
+    assert instance.city == original
+
+
+
+@given(instance=data_Location_strategy)
+def test_data_location_houseNumber_setter(instance):
+    original = instance.houseNumber
+    instance.houseNumber = original
+    assert instance.houseNumber == original
+
+
+
+@given(instance=data_Location_strategy)
+def test_data_location_zipCode_setter(instance):
+    original = instance.zipCode
+    instance.zipCode = original
+    assert instance.zipCode == original
+
+
+
+@given(instance=data_Location_strategy)
+def test_data_location_street_setter(instance):
+    original = instance.street
+    instance.street = original
+    assert instance.street == original
+
+
+
+@given(instance=data_Location_strategy)
+def test_data_location_country_setter(instance):
+    original = instance.country
+    instance.country = original
+    assert instance.country == original
+
+
+
+@given(instance=data_Location_strategy)
+def test_data_location_latitude_setter(instance):
+    original = instance.latitude
+    instance.latitude = original
+    assert instance.latitude == original
+
+
+
+@given(instance=data_Location_strategy)
+def test_data_location_longitude_setter(instance):
+    original = instance.longitude
+    instance.longitude = original
+    assert instance.longitude == original
+
+@given(instance=data_InstantMessenger_strategy)
+@settings(max_examples=50)
+def test_data_instantmessenger_instantiation(instance):
+    assert isinstance(instance, data_InstantMessenger)
+
+
+
+@given(instance=data_InstantMessenger_strategy)
+def test_data_instantmessenger_username_setter(instance):
     original = instance.username
     instance.username = original
     assert instance.username == original
 
-@given(instance=data::Phone_strategy)
+@given(instance=data_Phone_strategy)
 @settings(max_examples=50)
-def test_data::phone_instantiation(instance):
-    assert isinstance(instance, data::Phone)
-
-@given(instance=data::Phone_strategy)
-def test_data::phone_countryCode_type(instance):
-    assert isinstance(instance.countryCode, str)
+def test_data_phone_instantiation(instance):
+    assert isinstance(instance, data_Phone)
 
 
-@given(instance=data::Phone_strategy)
-def test_data::phone_countryCode_setter(instance):
-    original = instance.countryCode
-    instance.countryCode = original
-    assert instance.countryCode == original
 
-@given(instance=data::Phone_strategy)
-def test_data::phone_number_type(instance):
-    assert isinstance(instance.number, str)
+@given(instance=data_Phone_strategy)
+def test_data_phone_areaCode_setter(instance):
+    original = instance.areaCode
+    instance.areaCode = original
+    assert instance.areaCode == original
 
 
-@given(instance=data::Phone_strategy)
-def test_data::phone_number_setter(instance):
+
+@given(instance=data_Phone_strategy)
+def test_data_phone_number_setter(instance):
     original = instance.number
     instance.number = original
     assert instance.number == original
 
-@given(instance=data::Phone_strategy)
-def test_data::phone_areaCode_type(instance):
-    assert isinstance(instance.areaCode, str)
 
 
-@given(instance=data::Phone_strategy)
-def test_data::phone_areaCode_setter(instance):
-    original = instance.areaCode
-    instance.areaCode = original
-    assert instance.areaCode == original
+@given(instance=data_Phone_strategy)
+def test_data_phone_countryCode_setter(instance):
+    original = instance.countryCode
+    instance.countryCode = original
+    assert instance.countryCode == original
 
 @given(instance=Extension_strategy)
 @settings(max_examples=50)
 def test_extension_instantiation(instance):
     assert isinstance(instance, Extension)
 
-@given(instance=data::Attachment_strategy)
+@given(instance=data_Attachment_strategy)
 @settings(max_examples=50)
-def test_data::attachment_instantiation(instance):
-    assert isinstance(instance, data::Attachment)
-
-@given(instance=data::Attachment_strategy)
-def test_data::attachment_cachedFileName_type(instance):
-    assert isinstance(instance.cachedFileName, str)
+def test_data_attachment_instantiation(instance):
+    assert isinstance(instance, data_Attachment)
 
 
-@given(instance=data::Attachment_strategy)
-def test_data::attachment_cachedFileName_setter(instance):
-    original = instance.cachedFileName
-    instance.cachedFileName = original
-    assert instance.cachedFileName == original
 
-@given(instance=data::Attachment_strategy)
-def test_data::attachment_noCache_type(instance):
-    assert isinstance(instance.noCache, str)
-
-
-@given(instance=data::Attachment_strategy)
-def test_data::attachment_noCache_setter(instance):
-    original = instance.noCache
-    instance.noCache = original
-    assert instance.noCache == original
-
-@given(instance=data::Attachment_strategy)
-def test_data::attachment_cachedOnly_type(instance):
-    assert isinstance(instance.cachedOnly, str)
-
-
-@given(instance=data::Attachment_strategy)
-def test_data::attachment_cachedOnly_setter(instance):
-    original = instance.cachedOnly
-    instance.cachedOnly = original
-    assert instance.cachedOnly == original
-
-@given(instance=data::Attachment_strategy)
-def test_data::attachment_fileIdentifier_type(instance):
-    assert isinstance(instance.fileIdentifier, str)
-
-
-@given(instance=data::Attachment_strategy)
-def test_data::attachment_fileIdentifier_setter(instance):
-    original = instance.fileIdentifier
-    instance.fileIdentifier = original
-    assert instance.fileIdentifier == original
-
-@given(instance=data::Attachment_strategy)
-def test_data::attachment_fileExtension_type(instance):
-    assert isinstance(instance.fileExtension, str)
-
-
-@given(instance=data::Attachment_strategy)
-def test_data::attachment_fileExtension_setter(instance):
-    original = instance.fileExtension
-    instance.fileExtension = original
-    assert instance.fileExtension == original
-
-@given(instance=data::Attachment_strategy)
-def test_data::attachment_cachedFileUrl_type(instance):
-    assert isinstance(instance.cachedFileUrl, str)
-
-
-@given(instance=data::Attachment_strategy)
-def test_data::attachment_cachedFileUrl_setter(instance):
+@given(instance=data_Attachment_strategy)
+def test_data_attachment_cachedFileUrl_setter(instance):
     original = instance.cachedFileUrl
     instance.cachedFileUrl = original
     assert instance.cachedFileUrl == original
 
-@given(instance=data::Attachment_strategy)
-def test_data::attachment_fileUrl_type(instance):
-    assert isinstance(instance.fileUrl, str)
 
 
-@given(instance=data::Attachment_strategy)
-def test_data::attachment_fileUrl_setter(instance):
+@given(instance=data_Attachment_strategy)
+def test_data_attachment_fileExtension_setter(instance):
+    original = instance.fileExtension
+    instance.fileExtension = original
+    assert instance.fileExtension == original
+
+
+
+@given(instance=data_Attachment_strategy)
+def test_data_attachment_fileIdentifier_setter(instance):
+    original = instance.fileIdentifier
+    instance.fileIdentifier = original
+    assert instance.fileIdentifier == original
+
+
+
+@given(instance=data_Attachment_strategy)
+def test_data_attachment_noCache_setter(instance):
+    original = instance.noCache
+    instance.noCache = original
+    assert instance.noCache == original
+
+
+
+@given(instance=data_Attachment_strategy)
+def test_data_attachment_fileUrl_setter(instance):
     original = instance.fileUrl
     instance.fileUrl = original
     assert instance.fileUrl == original
+
+
+
+@given(instance=data_Attachment_strategy)
+def test_data_attachment_cachedOnly_setter(instance):
+    original = instance.cachedOnly
+    instance.cachedOnly = original
+    assert instance.cachedOnly == original
+
+
+
+@given(instance=data_Attachment_strategy)
+def test_data_attachment_cachedFileName_setter(instance):
+    original = instance.cachedFileName
+    instance.cachedFileName = original
+    assert instance.cachedFileName == original
 
 import warnings
 import copy
@@ -1813,9 +1741,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=data::Attachment_strategy)
+@given(instance=data_Attachment_strategy)
 @settings(max_examples=30)
-def test_data::attachment_reloadfile_changes_state(instance):
+def test_data_attachment_reloadfile_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -1827,180 +1755,137 @@ def test_data::attachment_reloadfile_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'reloadFile' in data::Attachment is empty"
+        assert has_statements, f"Function 'reloadFile' in data_Attachment is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'reloadFile' in data::Attachment did not change state; check implementation")
+            warnings.warn(f"Operation 'reloadFile' in data_Attachment did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'reloadFile' in data::Attachment is not implemented or raised an error")
+        warnings.warn(f"Operation 'reloadFile' in data_Attachment is not implemented or raised an error")
 
-@given(instance=data::Ranking_strategy)
+@given(instance=data_WebSite_strategy)
 @settings(max_examples=50)
-def test_data::ranking_instantiation(instance):
-    assert isinstance(instance, data::Ranking)
-
-@given(instance=data::Ranking_strategy)
-def test_data::ranking_date_type(instance):
-    assert isinstance(instance.date, date)
+def test_data_website_instantiation(instance):
+    assert isinstance(instance, data_WebSite)
 
 
-@given(instance=data::Ranking_strategy)
-def test_data::ranking_date_setter(instance):
-    original = instance.date
-    instance.date = original
-    assert instance.date == original
 
-@given(instance=data::WebSite_strategy)
-@settings(max_examples=50)
-def test_data::website_instantiation(instance):
-    assert isinstance(instance, data::WebSite)
-
-@given(instance=data::WebSite_strategy)
-def test_data::website_shortenedUrl_type(instance):
-    assert isinstance(instance.shortenedUrl, str)
-
-
-@given(instance=data::WebSite_strategy)
-def test_data::website_shortenedUrl_setter(instance):
+@given(instance=data_WebSite_strategy)
+def test_data_website_shortenedUrl_setter(instance):
     original = instance.shortenedUrl
     instance.shortenedUrl = original
     assert instance.shortenedUrl == original
 
-@given(instance=data::WebSite_strategy)
-def test_data::website_adress_type(instance):
-    assert isinstance(instance.adress, str)
 
 
-@given(instance=data::WebSite_strategy)
-def test_data::website_adress_setter(instance):
-    original = instance.adress
-    instance.adress = original
-    assert instance.adress == original
-
-@given(instance=data::WebSite_strategy)
-def test_data::website_title_type(instance):
-    assert isinstance(instance.title, str)
-
-
-@given(instance=data::WebSite_strategy)
-def test_data::website_title_setter(instance):
+@given(instance=data_WebSite_strategy)
+def test_data_website_title_setter(instance):
     original = instance.title
     instance.title = original
     assert instance.title == original
+
+
+
+@given(instance=data_WebSite_strategy)
+def test_data_website_adress_setter(instance):
+    original = instance.adress
+    instance.adress = original
+    assert instance.adress == original
 
 @given(instance=Classification_strategy)
 @settings(max_examples=50)
 def test_classification_instantiation(instance):
     assert isinstance(instance, Classification)
 
-@given(instance=data::Mashup_strategy)
+@given(instance=data_Mashup_strategy)
 @settings(max_examples=50)
-def test_data::mashup_instantiation(instance):
-    assert isinstance(instance, data::Mashup)
+def test_data_mashup_instantiation(instance):
+    assert isinstance(instance, data_Mashup)
 
-@given(instance=data::Item_strategy)
+@given(instance=data_Item_strategy)
 @settings(max_examples=50)
-def test_data::item_instantiation(instance):
-    assert isinstance(instance, data::Item)
-
-@given(instance=data::Item_strategy)
-def test_data::item_ident_type(instance):
-    assert isinstance(instance.ident, str)
+def test_data_item_instantiation(instance):
+    assert isinstance(instance, data_Item)
 
 
-@given(instance=data::Item_strategy)
-def test_data::item_ident_setter(instance):
-    original = instance.ident
-    instance.ident = original
-    assert instance.ident == original
 
-@given(instance=data::Item_strategy)
-def test_data::item_uri_type(instance):
-    assert isinstance(instance.uri, str)
-
-
-@given(instance=data::Item_strategy)
-def test_data::item_uri_setter(instance):
+@given(instance=data_Item_strategy)
+def test_data_item_uri_setter(instance):
     original = instance.uri
     instance.uri = original
     assert instance.uri == original
 
-@given(instance=data::Item_strategy)
-def test_data::item_created_type(instance):
-    assert isinstance(instance.created, date)
 
 
-@given(instance=data::Item_strategy)
-def test_data::item_created_setter(instance):
-    original = instance.created
-    instance.created = original
-    assert instance.created == original
-
-@given(instance=data::Item_strategy)
-def test_data::item_lastModified_type(instance):
-    assert isinstance(instance.lastModified, date)
+@given(instance=data_Item_strategy)
+def test_data_item_ident_setter(instance):
+    original = instance.ident
+    instance.ident = original
+    assert instance.ident == original
 
 
-@given(instance=data::Item_strategy)
-def test_data::item_lastModified_setter(instance):
+
+@given(instance=data_Item_strategy)
+def test_data_item_lastModified_setter(instance):
     original = instance.lastModified
     instance.lastModified = original
     assert instance.lastModified == original
 
-@given(instance=data::Item_strategy)
-def test_data::item_stringValue_type(instance):
-    assert isinstance(instance.stringValue, str)
 
 
-@given(instance=data::Item_strategy)
-def test_data::item_stringValue_setter(instance):
-    original = instance.stringValue
-    instance.stringValue = original
-    assert instance.stringValue == original
-
-@given(instance=data::Item_strategy)
-def test_data::item_stringXML_type(instance):
-    assert isinstance(instance.stringXML, str)
+@given(instance=data_Item_strategy)
+def test_data_item_created_setter(instance):
+    original = instance.created
+    instance.created = original
+    assert instance.created == original
 
 
-@given(instance=data::Item_strategy)
-def test_data::item_stringXML_setter(instance):
+
+@given(instance=data_Item_strategy)
+def test_data_item_stringXML_setter(instance):
     original = instance.stringXML
     instance.stringXML = original
     assert instance.stringXML == original
 
+
+
+@given(instance=data_Item_strategy)
+def test_data_item_stringValue_setter(instance):
+    original = instance.stringValue
+    instance.stringValue = original
+    assert instance.stringValue == original
+
 import warnings
 import copy
 import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=data::Item_strategy)
+@given(instance=data_Item_strategy)
 @settings(max_examples=30)
-def test_data::item_update_changes_state(instance):
+def test_data_item_metatag_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
-        instance.update(
+        instance.metaTag(
             "test"
         )
         if instance.__dict__ != before.__dict__:
             return  # test passes
         # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.update).strip()
+        source = inspect.getsource(instance.metaTag).strip()
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'update' in data::Item is empty"
+        assert has_statements, f"Function 'metaTag' in data_Item is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'update' in data::Item did not change state; check implementation")
+            warnings.warn(f"Operation 'metaTag' in data_Item did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'update' in data::Item is not implemented or raised an error")
+        warnings.warn(f"Operation 'metaTag' in data_Item is not implemented or raised an error")
 
 import warnings
 import copy
@@ -2008,30 +1893,30 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=data::Item_strategy)
+@given(instance=data_Item_strategy)
 @settings(max_examples=30)
-def test_data::item_removeidentifier_changes_state(instance):
+def test_data_item_isequalitem_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
-        instance.removeIdentifier(
+        instance.isEqualItem(
             "test"
         )
         if instance.__dict__ != before.__dict__:
             return  # test passes
         # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.removeIdentifier).strip()
+        source = inspect.getsource(instance.isEqualItem).strip()
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'removeIdentifier' in data::Item is empty"
+        assert has_statements, f"Function 'isEqualItem' in data_Item is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'removeIdentifier' in data::Item did not change state; check implementation")
+            warnings.warn(f"Operation 'isEqualItem' in data_Item did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'removeIdentifier' in data::Item is not implemented or raised an error")
+        warnings.warn(f"Operation 'isEqualItem' in data_Item is not implemented or raised an error")
 
 import warnings
 import copy
@@ -2039,9 +1924,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=data::Item_strategy)
+@given(instance=data_Item_strategy)
 @settings(max_examples=30)
-def test_data::item_deleteondeleteof_changes_state(instance):
+def test_data_item_deleteondeleteof_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -2055,14 +1940,14 @@ def test_data::item_deleteondeleteof_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'deleteOnDeleteOf' in data::Item is empty"
+        assert has_statements, f"Function 'deleteOnDeleteOf' in data_Item is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'deleteOnDeleteOf' in data::Item did not change state; check implementation")
+            warnings.warn(f"Operation 'deleteOnDeleteOf' in data_Item did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'deleteOnDeleteOf' in data::Item is not implemented or raised an error")
+        warnings.warn(f"Operation 'deleteOnDeleteOf' in data_Item is not implemented or raised an error")
 
 import warnings
 import copy
@@ -2070,9 +1955,71 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=data::Item_strategy)
+@given(instance=data_Item_strategy)
 @settings(max_examples=30)
-def test_data::item_hasmetatag_changes_state(instance):
+def test_data_item_removeidentifier_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.removeIdentifier(
+            "test"
+        )
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.removeIdentifier).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'removeIdentifier' in data_Item is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'removeIdentifier' in data_Item did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'removeIdentifier' in data_Item is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=data_Item_strategy)
+@settings(max_examples=30)
+def test_data_item_forcedeleteondeleteof_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.forceDeleteOnDeleteOf(
+            "test"
+        )
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.forceDeleteOnDeleteOf).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'forceDeleteOnDeleteOf' in data_Item is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'forceDeleteOnDeleteOf' in data_Item did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'forceDeleteOnDeleteOf' in data_Item is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=data_Item_strategy)
+@settings(max_examples=30)
+def test_data_item_hasmetatag_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -2086,14 +2033,14 @@ def test_data::item_hasmetatag_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'hasMetaTag' in data::Item is empty"
+        assert has_statements, f"Function 'hasMetaTag' in data_Item is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'hasMetaTag' in data::Item did not change state; check implementation")
+            warnings.warn(f"Operation 'hasMetaTag' in data_Item did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'hasMetaTag' in data::Item is not implemented or raised an error")
+        warnings.warn(f"Operation 'hasMetaTag' in data_Item is not implemented or raised an error")
 
 import warnings
 import copy
@@ -2101,9 +2048,40 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=data::Item_strategy)
+@given(instance=data_Item_strategy)
 @settings(max_examples=30)
-def test_data::item_log_changes_state(instance):
+def test_data_item_unmetatag_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.unMetaTag(
+            "test"
+        )
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.unMetaTag).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'unMetaTag' in data_Item is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'unMetaTag' in data_Item did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'unMetaTag' in data_Item is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=data_Item_strategy)
+@settings(max_examples=30)
+def test_data_item_log_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -2118,14 +2096,14 @@ def test_data::item_log_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'log' in data::Item is empty"
+        assert has_statements, f"Function 'log' in data_Item is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'log' in data::Item did not change state; check implementation")
+            warnings.warn(f"Operation 'log' in data_Item did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'log' in data::Item is not implemented or raised an error")
+        warnings.warn(f"Operation 'log' in data_Item is not implemented or raised an error")
 
 import warnings
 import copy
@@ -2133,69 +2111,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=data::Item_strategy)
+@given(instance=data_Item_strategy)
 @settings(max_examples=30)
-def test_data::item_unmetatag_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.unMetaTag(
-            "test"
-        )
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.unMetaTag).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'unMetaTag' in data::Item is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'unMetaTag' in data::Item did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'unMetaTag' in data::Item is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=data::Item_strategy)
-@settings(max_examples=30)
-def test_data::item_deleteifemptyondelete_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.deleteIfEmptyOnDelete()
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.deleteIfEmptyOnDelete).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'deleteIfEmptyOnDelete' in data::Item is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'deleteIfEmptyOnDelete' in data::Item did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'deleteIfEmptyOnDelete' in data::Item is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=data::Item_strategy)
-@settings(max_examples=30)
-def test_data::item_forceupdate_changes_state(instance):
+def test_data_item_forceupdate_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -2209,14 +2127,14 @@ def test_data::item_forceupdate_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'forceUpdate' in data::Item is empty"
+        assert has_statements, f"Function 'forceUpdate' in data_Item is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'forceUpdate' in data::Item did not change state; check implementation")
+            warnings.warn(f"Operation 'forceUpdate' in data_Item did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'forceUpdate' in data::Item is not implemented or raised an error")
+        warnings.warn(f"Operation 'forceUpdate' in data_Item is not implemented or raised an error")
 
 import warnings
 import copy
@@ -2224,30 +2142,59 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=data::Item_strategy)
+@given(instance=data_Item_strategy)
 @settings(max_examples=30)
-def test_data::item_isequalitem_changes_state(instance):
+def test_data_item_delete_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
-        instance.isEqualItem(
+        instance.delete()
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.delete).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'delete' in data_Item is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'delete' in data_Item did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'delete' in data_Item is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=data_Item_strategy)
+@settings(max_examples=30)
+def test_data_item_update_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.update(
             "test"
         )
         if instance.__dict__ != before.__dict__:
             return  # test passes
         # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.isEqualItem).strip()
+        source = inspect.getsource(instance.update).strip()
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'isEqualItem' in data::Item is empty"
+        assert has_statements, f"Function 'update' in data_Item is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'isEqualItem' in data::Item did not change state; check implementation")
+            warnings.warn(f"Operation 'update' in data_Item did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'isEqualItem' in data::Item is not implemented or raised an error")
+        warnings.warn(f"Operation 'update' in data_Item is not implemented or raised an error")
 
 import warnings
 import copy
@@ -2255,30 +2202,59 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=data::Item_strategy)
+@given(instance=data_Item_strategy)
 @settings(max_examples=30)
-def test_data::item_metatag_changes_state(instance):
+def test_data_item_deleteifemptyondelete_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
-        instance.metaTag(
+        instance.deleteIfEmptyOnDelete()
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.deleteIfEmptyOnDelete).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'deleteIfEmptyOnDelete' in data_Item is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'deleteIfEmptyOnDelete' in data_Item did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'deleteIfEmptyOnDelete' in data_Item is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=data_Item_strategy)
+@settings(max_examples=30)
+def test_data_item_matchessearch_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.matchesSearch(
             "test"
         )
         if instance.__dict__ != before.__dict__:
             return  # test passes
         # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.metaTag).strip()
+        source = inspect.getsource(instance.matchesSearch).strip()
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'metaTag' in data::Item is empty"
+        assert has_statements, f"Function 'matchesSearch' in data_Item is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'metaTag' in data::Item did not change state; check implementation")
+            warnings.warn(f"Operation 'matchesSearch' in data_Item did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'metaTag' in data::Item is not implemented or raised an error")
+        warnings.warn(f"Operation 'matchesSearch' in data_Item is not implemented or raised an error")
 
 import warnings
 import copy
@@ -2286,9 +2262,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=data::Item_strategy)
+@given(instance=data_Item_strategy)
 @settings(max_examples=30)
-def test_data::item_identifyby_changes_state(instance):
+def test_data_item_identifyby_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -2303,205 +2279,90 @@ def test_data::item_identifyby_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'identifyBy' in data::Item is empty"
+        assert has_statements, f"Function 'identifyBy' in data_Item is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'identifyBy' in data::Item did not change state; check implementation")
+            warnings.warn(f"Operation 'identifyBy' in data_Item did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'identifyBy' in data::Item is not implemented or raised an error")
+        warnings.warn(f"Operation 'identifyBy' in data_Item is not implemented or raised an error")
 
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=data::Item_strategy)
-@settings(max_examples=30)
-def test_data::item_matchessearch_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.matchesSearch(
-            "test"
-        )
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.matchesSearch).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'matchesSearch' in data::Item is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'matchesSearch' in data::Item did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'matchesSearch' in data::Item is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=data::Item_strategy)
-@settings(max_examples=30)
-def test_data::item_delete_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.delete()
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.delete).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'delete' in data::Item is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'delete' in data::Item did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'delete' in data::Item is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=data::Item_strategy)
-@settings(max_examples=30)
-def test_data::item_forcedeleteondeleteof_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.forceDeleteOnDeleteOf(
-            "test"
-        )
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.forceDeleteOnDeleteOf).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'forceDeleteOnDeleteOf' in data::Item is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'forceDeleteOnDeleteOf' in data::Item did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'forceDeleteOnDeleteOf' in data::Item is not implemented or raised an error")
-
-@given(instance=data::Transformation_strategy)
+@given(instance=data_Transformation_strategy)
 @settings(max_examples=50)
-def test_data::transformation_instantiation(instance):
-    assert isinstance(instance, data::Transformation)
+def test_data_transformation_instantiation(instance):
+    assert isinstance(instance, data_Transformation)
 
-@given(instance=data::Document_strategy)
+@given(instance=data_Document_strategy)
 @settings(max_examples=50)
-def test_data::document_instantiation(instance):
-    assert isinstance(instance, data::Document)
+def test_data_document_instantiation(instance):
+    assert isinstance(instance, data_Document)
 
-@given(instance=data::DataSet_strategy)
+@given(instance=data_DataSet_strategy)
 @settings(max_examples=50)
-def test_data::dataset_instantiation(instance):
-    assert isinstance(instance, data::DataSet)
-
-@given(instance=data::DataSet_strategy)
-def test_data::dataset_identPrefix_type(instance):
-    assert isinstance(instance.identPrefix, str)
+def test_data_dataset_instantiation(instance):
+    assert isinstance(instance, data_DataSet)
 
 
-@given(instance=data::DataSet_strategy)
-def test_data::dataset_identPrefix_setter(instance):
+
+@given(instance=data_DataSet_strategy)
+def test_data_dataset_identPrefix_setter(instance):
     original = instance.identPrefix
     instance.identPrefix = original
     assert instance.identPrefix == original
 
-@given(instance=data::DataSet_strategy)
-def test_data::dataset_lastModified_type(instance):
-    assert isinstance(instance.lastModified, date)
 
 
-@given(instance=data::DataSet_strategy)
-def test_data::dataset_lastModified_setter(instance):
+@given(instance=data_DataSet_strategy)
+def test_data_dataset_lastModified_setter(instance):
     original = instance.lastModified
     instance.lastModified = original
     assert instance.lastModified == original
 
-@given(instance=data::DataSet_strategy)
-def test_data::dataset_created_type(instance):
-    assert isinstance(instance.created, date)
 
 
-@given(instance=data::DataSet_strategy)
-def test_data::dataset_created_setter(instance):
-    original = instance.created
-    instance.created = original
-    assert instance.created == original
-
-@given(instance=data::DataSet_strategy)
-def test_data::dataset_logLevel_type(instance):
-    assert isinstance(instance.logLevel, str)
-
-
-@given(instance=data::DataSet_strategy)
-def test_data::dataset_logLevel_setter(instance):
-    original = instance.logLevel
-    instance.logLevel = original
-    assert instance.logLevel == original
-
-@given(instance=data::DataSet_strategy)
-def test_data::dataset_identCounter_type(instance):
-    assert isinstance(instance.identCounter, str)
-
-
-@given(instance=data::DataSet_strategy)
-def test_data::dataset_identCounter_setter(instance):
-    original = instance.identCounter
-    instance.identCounter = original
-    assert instance.identCounter == original
-
-@given(instance=data::DataSet_strategy)
-def test_data::dataset_cacheFolder_type(instance):
-    assert isinstance(instance.cacheFolder, str)
-
-
-@given(instance=data::DataSet_strategy)
-def test_data::dataset_cacheFolder_setter(instance):
+@given(instance=data_DataSet_strategy)
+def test_data_dataset_cacheFolder_setter(instance):
     original = instance.cacheFolder
     instance.cacheFolder = original
     assert instance.cacheFolder == original
 
-@given(instance=data::DataSet_strategy)
-def test_data::dataset_cacheFileAttachements_type(instance):
-    assert isinstance(instance.cacheFileAttachements, str)
 
 
-@given(instance=data::DataSet_strategy)
-def test_data::dataset_cacheFileAttachements_setter(instance):
+@given(instance=data_DataSet_strategy)
+def test_data_dataset_created_setter(instance):
+    original = instance.created
+    instance.created = original
+    assert instance.created == original
+
+
+
+@given(instance=data_DataSet_strategy)
+def test_data_dataset_identCounter_setter(instance):
+    original = instance.identCounter
+    instance.identCounter = original
+    assert instance.identCounter == original
+
+
+
+@given(instance=data_DataSet_strategy)
+def test_data_dataset_cacheFileAttachements_setter(instance):
     original = instance.cacheFileAttachements
     instance.cacheFileAttachements = original
     assert instance.cacheFileAttachements == original
 
-@given(instance=data::DataSet_strategy)
-def test_data::dataset_keepDeletedItemsList_type(instance):
-    assert isinstance(instance.keepDeletedItemsList, str)
 
 
-@given(instance=data::DataSet_strategy)
-def test_data::dataset_keepDeletedItemsList_setter(instance):
+@given(instance=data_DataSet_strategy)
+def test_data_dataset_logLevel_setter(instance):
+    original = instance.logLevel
+    instance.logLevel = original
+    assert instance.logLevel == original
+
+
+
+@given(instance=data_DataSet_strategy)
+def test_data_dataset_keepDeletedItemsList_setter(instance):
     original = instance.keepDeletedItemsList
     instance.keepDeletedItemsList = original
     assert instance.keepDeletedItemsList == original
@@ -2512,40 +2373,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=data::DataSet_strategy)
+@given(instance=data_DataSet_strategy)
 @settings(max_examples=30)
-def test_data::dataset_add_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.add(
-            "test"
-        )
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.add).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'add' in data::DataSet is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'add' in data::DataSet did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'add' in data::DataSet is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=data::DataSet_strategy)
-@settings(max_examples=30)
-def test_data::dataset_searchitems_changes_state(instance):
+def test_data_dataset_searchitems_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -2559,14 +2389,14 @@ def test_data::dataset_searchitems_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'searchItems' in data::DataSet is empty"
+        assert has_statements, f"Function 'searchItems' in data_DataSet is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'searchItems' in data::DataSet did not change state; check implementation")
+            warnings.warn(f"Operation 'searchItems' in data_DataSet did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'searchItems' in data::DataSet is not implemented or raised an error")
+        warnings.warn(f"Operation 'searchItems' in data_DataSet is not implemented or raised an error")
 
 import warnings
 import copy
@@ -2574,129 +2404,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=data::DataSet_strategy)
+@given(instance=data_DataSet_strategy)
 @settings(max_examples=30)
-def test_data::dataset_cleardeleteditemslist_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.clearDeletedItemsList()
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.clearDeletedItemsList).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'clearDeletedItemsList' in data::DataSet is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'clearDeletedItemsList' in data::DataSet did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'clearDeletedItemsList' in data::DataSet is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=data::DataSet_strategy)
-@settings(max_examples=30)
-def test_data::dataset_searchinformationobjects_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.searchInformationObjects(
-            "test"
-        )
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.searchInformationObjects).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'searchInformationObjects' in data::DataSet is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'searchInformationObjects' in data::DataSet did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'searchInformationObjects' in data::DataSet is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=data::DataSet_strategy)
-@settings(max_examples=30)
-def test_data::dataset_searchbyquery_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.searchByQuery(
-            "test"
-        )
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.searchByQuery).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'searchByQuery' in data::DataSet is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'searchByQuery' in data::DataSet did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'searchByQuery' in data::DataSet is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=data::DataSet_strategy)
-@settings(max_examples=30)
-def test_data::dataset_reloadallattachmentfiles_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.reloadAllAttachmentFiles()
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.reloadAllAttachmentFiles).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'reloadAllAttachmentFiles' in data::DataSet is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'reloadAllAttachmentFiles' in data::DataSet did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'reloadAllAttachmentFiles' in data::DataSet is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=data::DataSet_strategy)
-@settings(max_examples=30)
-def test_data::dataset_log_changes_state(instance):
+def test_data_dataset_log_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -2711,14 +2421,14 @@ def test_data::dataset_log_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'log' in data::DataSet is empty"
+        assert has_statements, f"Function 'log' in data_DataSet is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'log' in data::DataSet did not change state; check implementation")
+            warnings.warn(f"Operation 'log' in data_DataSet did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'log' in data::DataSet is not implemented or raised an error")
+        warnings.warn(f"Operation 'log' in data_DataSet is not implemented or raised an error")
 
 import warnings
 import copy
@@ -2726,69 +2436,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=data::DataSet_strategy)
+@given(instance=data_DataSet_strategy)
 @settings(max_examples=30)
-def test_data::dataset_rebuildindexes_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.rebuildIndexes()
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.rebuildIndexes).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'rebuildIndexes' in data::DataSet is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'rebuildIndexes' in data::DataSet did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'rebuildIndexes' in data::DataSet is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=data::DataSet_strategy)
-@settings(max_examples=30)
-def test_data::dataset_forceadd_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.forceAdd(
-            "test"
-        )
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.forceAdd).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'forceAdd' in data::DataSet is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'forceAdd' in data::DataSet did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'forceAdd' in data::DataSet is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=data::DataSet_strategy)
-@settings(max_examples=30)
-def test_data::dataset_hasequalitem_changes_state(instance):
+def test_data_dataset_hasequalitem_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -2802,34 +2452,14 @@ def test_data::dataset_hasequalitem_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'hasEqualItem' in data::DataSet is empty"
+        assert has_statements, f"Function 'hasEqualItem' in data_DataSet is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'hasEqualItem' in data::DataSet did not change state; check implementation")
+            warnings.warn(f"Operation 'hasEqualItem' in data_DataSet did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'hasEqualItem' in data::DataSet is not implemented or raised an error")
-
-@given(instance=data::Video_strategy)
-@settings(max_examples=50)
-def test_data::video_instantiation(instance):
-    assert isinstance(instance, data::Video)
-
-@given(instance=data::Connection_strategy)
-@settings(max_examples=50)
-def test_data::connection_instantiation(instance):
-    assert isinstance(instance, data::Connection)
-
-@given(instance=data::ViewRanking_strategy)
-@settings(max_examples=50)
-def test_data::viewranking_instantiation(instance):
-    assert isinstance(instance, data::ViewRanking)
-
-@given(instance=data::ThumbRanking_strategy)
-@settings(max_examples=50)
-def test_data::thumbranking_instantiation(instance):
-    assert isinstance(instance, data::ThumbRanking)
+        warnings.warn(f"Operation 'hasEqualItem' in data_DataSet is not implemented or raised an error")
 
 import warnings
 import copy
@@ -2837,9 +2467,240 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=data::ThumbRanking_strategy)
+@given(instance=data_DataSet_strategy)
 @settings(max_examples=30)
-def test_data::thumbranking_isthumbup_changes_state(instance):
+def test_data_dataset_reloadallattachmentfiles_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.reloadAllAttachmentFiles()
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.reloadAllAttachmentFiles).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'reloadAllAttachmentFiles' in data_DataSet is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'reloadAllAttachmentFiles' in data_DataSet did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'reloadAllAttachmentFiles' in data_DataSet is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=data_DataSet_strategy)
+@settings(max_examples=30)
+def test_data_dataset_searchbyquery_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.searchByQuery(
+            "test"
+        )
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.searchByQuery).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'searchByQuery' in data_DataSet is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'searchByQuery' in data_DataSet did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'searchByQuery' in data_DataSet is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=data_DataSet_strategy)
+@settings(max_examples=30)
+def test_data_dataset_add_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.add(
+            "test"
+        )
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.add).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'add' in data_DataSet is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'add' in data_DataSet did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'add' in data_DataSet is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=data_DataSet_strategy)
+@settings(max_examples=30)
+def test_data_dataset_rebuildindexes_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.rebuildIndexes()
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.rebuildIndexes).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'rebuildIndexes' in data_DataSet is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'rebuildIndexes' in data_DataSet did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'rebuildIndexes' in data_DataSet is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=data_DataSet_strategy)
+@settings(max_examples=30)
+def test_data_dataset_searchinformationobjects_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.searchInformationObjects(
+            "test"
+        )
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.searchInformationObjects).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'searchInformationObjects' in data_DataSet is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'searchInformationObjects' in data_DataSet did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'searchInformationObjects' in data_DataSet is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=data_DataSet_strategy)
+@settings(max_examples=30)
+def test_data_dataset_cleardeleteditemslist_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.clearDeletedItemsList()
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.clearDeletedItemsList).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'clearDeletedItemsList' in data_DataSet is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'clearDeletedItemsList' in data_DataSet did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'clearDeletedItemsList' in data_DataSet is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=data_DataSet_strategy)
+@settings(max_examples=30)
+def test_data_dataset_forceadd_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.forceAdd(
+            "test"
+        )
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.forceAdd).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'forceAdd' in data_DataSet is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'forceAdd' in data_DataSet did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'forceAdd' in data_DataSet is not implemented or raised an error")
+
+@given(instance=data_Video_strategy)
+@settings(max_examples=50)
+def test_data_video_instantiation(instance):
+    assert isinstance(instance, data_Video)
+
+@given(instance=data_Connection_strategy)
+@settings(max_examples=50)
+def test_data_connection_instantiation(instance):
+    assert isinstance(instance, data_Connection)
+
+@given(instance=data_ViewRanking_strategy)
+@settings(max_examples=50)
+def test_data_viewranking_instantiation(instance):
+    assert isinstance(instance, data_ViewRanking)
+
+@given(instance=data_ThumbRanking_strategy)
+@settings(max_examples=50)
+def test_data_thumbranking_instantiation(instance):
+    assert isinstance(instance, data_ThumbRanking)
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=data_ThumbRanking_strategy)
+@settings(max_examples=30)
+def test_data_thumbranking_isthumbup_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -2851,14 +2712,14 @@ def test_data::thumbranking_isthumbup_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'isThumbUp' in data::ThumbRanking is empty"
+        assert has_statements, f"Function 'isThumbUp' in data_ThumbRanking is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'isThumbUp' in data::ThumbRanking did not change state; check implementation")
+            warnings.warn(f"Operation 'isThumbUp' in data_ThumbRanking did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'isThumbUp' in data::ThumbRanking is not implemented or raised an error")
+        warnings.warn(f"Operation 'isThumbUp' in data_ThumbRanking is not implemented or raised an error")
 
 import warnings
 import copy
@@ -2866,9 +2727,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=data::ThumbRanking_strategy)
+@given(instance=data_ThumbRanking_strategy)
 @settings(max_examples=30)
-def test_data::thumbranking_isthumbdown_changes_state(instance):
+def test_data_thumbranking_isthumbdown_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -2880,85 +2741,73 @@ def test_data::thumbranking_isthumbdown_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'isThumbDown' in data::ThumbRanking is empty"
+        assert has_statements, f"Function 'isThumbDown' in data_ThumbRanking is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'isThumbDown' in data::ThumbRanking did not change state; check implementation")
+            warnings.warn(f"Operation 'isThumbDown' in data_ThumbRanking did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'isThumbDown' in data::ThumbRanking is not implemented or raised an error")
+        warnings.warn(f"Operation 'isThumbDown' in data_ThumbRanking is not implemented or raised an error")
 
-@given(instance=data::StarRanking_strategy)
+@given(instance=data_StarRanking_strategy)
 @settings(max_examples=50)
-def test_data::starranking_instantiation(instance):
-    assert isinstance(instance, data::StarRanking)
-
-@given(instance=data::StarRanking_strategy)
-def test_data::starranking_normalizedValue_type(instance):
-    assert isinstance(instance.normalizedValue, str)
+def test_data_starranking_instantiation(instance):
+    assert isinstance(instance, data_StarRanking)
 
 
-@given(instance=data::StarRanking_strategy)
-def test_data::starranking_normalizedValue_setter(instance):
+
+@given(instance=data_StarRanking_strategy)
+def test_data_starranking_normalizedValue_setter(instance):
     original = instance.normalizedValue
     instance.normalizedValue = original
     assert instance.normalizedValue == original
 
-@given(instance=data::Image_strategy)
+@given(instance=data_Image_strategy)
 @settings(max_examples=50)
-def test_data::image_instantiation(instance):
-    assert isinstance(instance, data::Image)
-
-@given(instance=data::Image_strategy)
-def test_data::image_width_type(instance):
-    assert isinstance(instance.width, str)
+def test_data_image_instantiation(instance):
+    assert isinstance(instance, data_Image)
 
 
-@given(instance=data::Image_strategy)
-def test_data::image_width_setter(instance):
+
+@given(instance=data_Image_strategy)
+def test_data_image_width_setter(instance):
     original = instance.width
     instance.width = original
     assert instance.width == original
 
-@given(instance=data::Image_strategy)
-def test_data::image_height_type(instance):
-    assert isinstance(instance.height, str)
 
 
-@given(instance=data::Image_strategy)
-def test_data::image_height_setter(instance):
+@given(instance=data_Image_strategy)
+def test_data_image_height_setter(instance):
     original = instance.height
     instance.height = original
     assert instance.height == original
 
-@given(instance=data::Tag_strategy)
+@given(instance=data_Tag_strategy)
 @settings(max_examples=50)
-def test_data::tag_instantiation(instance):
-    assert isinstance(instance, data::Tag)
+def test_data_tag_instantiation(instance):
+    assert isinstance(instance, data_Tag)
 
-@given(instance=data::Category_strategy)
+@given(instance=data_Category_strategy)
 @settings(max_examples=50)
-def test_data::category_instantiation(instance):
-    assert isinstance(instance, data::Category)
+def test_data_category_instantiation(instance):
+    assert isinstance(instance, data_Category)
 
-@given(instance=data::MetaInformation_strategy)
+@given(instance=data_MetaInformation_strategy)
 @settings(max_examples=50)
-def test_data::metainformation_instantiation(instance):
-    assert isinstance(instance, data::MetaInformation)
+def test_data_metainformation_instantiation(instance):
+    assert isinstance(instance, data_MetaInformation)
 
-@given(instance=data::Binary_strategy)
+@given(instance=data_Binary_strategy)
 @settings(max_examples=50)
-def test_data::binary_instantiation(instance):
-    assert isinstance(instance, data::Binary)
-
-@given(instance=data::Binary_strategy)
-def test_data::binary_bytes_type(instance):
-    assert isinstance(instance.bytes, str)
+def test_data_binary_instantiation(instance):
+    assert isinstance(instance, data_Binary)
 
 
-@given(instance=data::Binary_strategy)
-def test_data::binary_bytes_setter(instance):
+
+@given(instance=data_Binary_strategy)
+def test_data_binary_bytes_setter(instance):
     original = instance.bytes
     instance.bytes = original
     assert instance.bytes == original
@@ -2968,165 +2817,44 @@ def test_data::binary_bytes_setter(instance):
 def test_item_instantiation(instance):
     assert isinstance(instance, Item)
 
-@given(instance=data::Extension_strategy)
+@given(instance=data_DeletedItem_strategy)
 @settings(max_examples=50)
-def test_data::extension_instantiation(instance):
-    assert isinstance(instance, data::Extension)
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=data::Extension_strategy)
-@settings(max_examples=30)
-def test_data::extension_tag_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.tag(
-            "test"
-        )
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.tag).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'tag' in data::Extension is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'tag' in data::Extension did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'tag' in data::Extension is not implemented or raised an error")
-
-@given(instance=data::DeletedItem_strategy)
-@settings(max_examples=50)
-def test_data::deleteditem_instantiation(instance):
-    assert isinstance(instance, data::DeletedItem)
-
-@given(instance=data::DeletedItem_strategy)
-def test_data::deleteditem_deleted_type(instance):
-    assert isinstance(instance.deleted, date)
+def test_data_deleteditem_instantiation(instance):
+    assert isinstance(instance, data_DeletedItem)
 
 
-@given(instance=data::DeletedItem_strategy)
-def test_data::deleteditem_deleted_setter(instance):
-    original = instance.deleted
-    instance.deleted = original
-    assert instance.deleted == original
 
-@given(instance=data::DeletedItem_strategy)
-def test_data::deleteditem_identOfDeleted_type(instance):
-    assert isinstance(instance.identOfDeleted, str)
-
-
-@given(instance=data::DeletedItem_strategy)
-def test_data::deleteditem_identOfDeleted_setter(instance):
+@given(instance=data_DeletedItem_strategy)
+def test_data_deleteditem_identOfDeleted_setter(instance):
     original = instance.identOfDeleted
     instance.identOfDeleted = original
     assert instance.identOfDeleted == original
 
-@given(instance=data::MetaTag_strategy)
+
+
+@given(instance=data_DeletedItem_strategy)
+def test_data_deleteditem_deleted_setter(instance):
+    original = instance.deleted
+    instance.deleted = original
+    assert instance.deleted == original
+
+@given(instance=data_Classification_strategy)
 @settings(max_examples=50)
-def test_data::metatag_instantiation(instance):
-    assert isinstance(instance, data::MetaTag)
-
-@given(instance=data::MetaTag_strategy)
-def test_data::metatag_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_data_classification_instantiation(instance):
+    assert isinstance(instance, data_Classification)
 
 
-@given(instance=data::MetaTag_strategy)
-def test_data::metatag_name_setter(instance):
+
+@given(instance=data_Classification_strategy)
+def test_data_classification_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=data::Identifier_strategy)
+@given(instance=data_Extension_strategy)
 @settings(max_examples=50)
-def test_data::identifier_instantiation(instance):
-    assert isinstance(instance, data::Identifier)
-
-@given(instance=data::Identifier_strategy)
-def test_data::identifier_value_type(instance):
-    assert isinstance(instance.value, str)
-
-
-@given(instance=data::Identifier_strategy)
-def test_data::identifier_value_setter(instance):
-    original = instance.value
-    instance.value = original
-    assert instance.value == original
-
-@given(instance=data::Identifier_strategy)
-def test_data::identifier_key_type(instance):
-    assert isinstance(instance.key, str)
-
-
-@given(instance=data::Identifier_strategy)
-def test_data::identifier_key_setter(instance):
-    original = instance.key
-    instance.key = original
-    assert instance.key == original
-
-@given(instance=data::Classification_strategy)
-@settings(max_examples=50)
-def test_data::classification_instantiation(instance):
-    assert isinstance(instance, data::Classification)
-
-@given(instance=data::Classification_strategy)
-def test_data::classification_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=data::Classification_strategy)
-def test_data::classification_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
-
-@given(instance=data::InformationObject_strategy)
-@settings(max_examples=50)
-def test_data::informationobject_instantiation(instance):
-    assert isinstance(instance, data::InformationObject)
-
-@given(instance=data::InformationObject_strategy)
-def test_data::informationobject_alternativeNames_type(instance):
-    assert isinstance(instance.alternativeNames, str)
-
-
-@given(instance=data::InformationObject_strategy)
-def test_data::informationobject_alternativeNames_setter(instance):
-    original = instance.alternativeNames
-    instance.alternativeNames = original
-    assert instance.alternativeNames == original
-
-@given(instance=data::InformationObject_strategy)
-def test_data::informationobject_verifiedName_type(instance):
-    assert isinstance(instance.verifiedName, str)
-
-
-@given(instance=data::InformationObject_strategy)
-def test_data::informationobject_verifiedName_setter(instance):
-    original = instance.verifiedName
-    instance.verifiedName = original
-    assert instance.verifiedName == original
-
-@given(instance=data::InformationObject_strategy)
-def test_data::informationobject_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=data::InformationObject_strategy)
-def test_data::informationobject_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
+def test_data_extension_instantiation(instance):
+    assert isinstance(instance, data_Extension)
 
 import warnings
 import copy
@@ -3134,441 +2862,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=data::InformationObject_strategy)
+@given(instance=data_Extension_strategy)
 @settings(max_examples=30)
-def test_data::informationobject_connectto_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.connectTo(
-            "test"
-        )
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.connectTo).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'connectTo' in data::InformationObject is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'connectTo' in data::InformationObject did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'connectTo' in data::InformationObject is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=data::InformationObject_strategy)
-@settings(max_examples=30)
-def test_data::informationobject_addwebaccount_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.addWebAccount(
-            "test"
-        )
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.addWebAccount).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'addWebAccount' in data::InformationObject is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'addWebAccount' in data::InformationObject did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'addWebAccount' in data::InformationObject is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=data::InformationObject_strategy)
-@settings(max_examples=30)
-def test_data::informationobject_hasimages_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.hasImages()
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.hasImages).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'hasImages' in data::InformationObject is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'hasImages' in data::InformationObject did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'hasImages' in data::InformationObject is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=data::InformationObject_strategy)
-@settings(max_examples=30)
-def test_data::informationobject_starrank_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.starRank(
-            "test", 
-            "test"
-        )
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.starRank).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'starRank' in data::InformationObject is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'starRank' in data::InformationObject did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'starRank' in data::InformationObject is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=data::InformationObject_strategy)
-@settings(max_examples=30)
-def test_data::informationobject_connecttowithvalueandmetatag_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.connectToWithValueAndMetaTag(
-            "test", 
-            "test", 
-            "test"
-        )
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.connectToWithValueAndMetaTag).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'connectToWithValueAndMetaTag' in data::InformationObject is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'connectToWithValueAndMetaTag' in data::InformationObject did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'connectToWithValueAndMetaTag' in data::InformationObject is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=data::InformationObject_strategy)
-@settings(max_examples=30)
-def test_data::informationobject_attachimage_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.attachImage(
-            "test"
-        )
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.attachImage).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'attachImage' in data::InformationObject is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'attachImage' in data::InformationObject did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'attachImage' in data::InformationObject is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=data::InformationObject_strategy)
-@settings(max_examples=30)
-def test_data::informationobject_thumbsup_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.thumbsUp()
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.thumbsUp).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'thumbsUp' in data::InformationObject is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'thumbsUp' in data::InformationObject did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'thumbsUp' in data::InformationObject is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=data::InformationObject_strategy)
-@settings(max_examples=30)
-def test_data::informationobject_categorize_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.categorize(
-            "test"
-        )
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.categorize).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'categorize' in data::InformationObject is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'categorize' in data::InformationObject did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'categorize' in data::InformationObject is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=data::InformationObject_strategy)
-@settings(max_examples=30)
-def test_data::informationobject_addphone_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.addPhone(
-            "test"
-        )
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.addPhone).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'addPhone' in data::InformationObject is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'addPhone' in data::InformationObject did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'addPhone' in data::InformationObject is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=data::InformationObject_strategy)
-@settings(max_examples=30)
-def test_data::informationobject_connecttowithmetatag_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.connectToWithMetaTag(
-            "test", 
-            "test"
-        )
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.connectToWithMetaTag).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'connectToWithMetaTag' in data::InformationObject is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'connectToWithMetaTag' in data::InformationObject did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'connectToWithMetaTag' in data::InformationObject is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=data::InformationObject_strategy)
-@settings(max_examples=30)
-def test_data::informationobject_addwebsite_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.addWebSite(
-            "test"
-        )
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.addWebSite).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'addWebSite' in data::InformationObject is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'addWebSite' in data::InformationObject did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'addWebSite' in data::InformationObject is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=data::InformationObject_strategy)
-@settings(max_examples=30)
-def test_data::informationobject_addemailaddress_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.addEmailAddress(
-            "test"
-        )
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.addEmailAddress).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'addEmailAddress' in data::InformationObject is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'addEmailAddress' in data::InformationObject did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'addEmailAddress' in data::InformationObject is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=data::InformationObject_strategy)
-@settings(max_examples=30)
-def test_data::informationobject_view_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.view()
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.view).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'view' in data::InformationObject is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'view' in data::InformationObject did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'view' in data::InformationObject is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=data::InformationObject_strategy)
-@settings(max_examples=30)
-def test_data::informationobject_addalternativename_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.addAlternativeName(
-            "test"
-        )
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.addAlternativeName).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'addAlternativeName' in data::InformationObject is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'addAlternativeName' in data::InformationObject did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'addAlternativeName' in data::InformationObject is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=data::InformationObject_strategy)
-@settings(max_examples=30)
-def test_data::informationobject_tag_changes_state(instance):
+def test_data_extension_tag_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -3582,14 +2878,77 @@ def test_data::informationobject_tag_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'tag' in data::InformationObject is empty"
+        assert has_statements, f"Function 'tag' in data_Extension is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'tag' in data::InformationObject did not change state; check implementation")
+            warnings.warn(f"Operation 'tag' in data_Extension did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'tag' in data::InformationObject is not implemented or raised an error")
+        warnings.warn(f"Operation 'tag' in data_Extension is not implemented or raised an error")
+
+@given(instance=data_MetaTag_strategy)
+@settings(max_examples=50)
+def test_data_metatag_instantiation(instance):
+    assert isinstance(instance, data_MetaTag)
+
+
+
+@given(instance=data_MetaTag_strategy)
+def test_data_metatag_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+@given(instance=data_Identifier_strategy)
+@settings(max_examples=50)
+def test_data_identifier_instantiation(instance):
+    assert isinstance(instance, data_Identifier)
+
+
+
+@given(instance=data_Identifier_strategy)
+def test_data_identifier_value_setter(instance):
+    original = instance.value
+    instance.value = original
+    assert instance.value == original
+
+
+
+@given(instance=data_Identifier_strategy)
+def test_data_identifier_key_setter(instance):
+    original = instance.key
+    instance.key = original
+    assert instance.key == original
+
+@given(instance=data_InformationObject_strategy)
+@settings(max_examples=50)
+def test_data_informationobject_instantiation(instance):
+    assert isinstance(instance, data_InformationObject)
+
+
+
+@given(instance=data_InformationObject_strategy)
+def test_data_informationobject_verifiedName_setter(instance):
+    original = instance.verifiedName
+    instance.verifiedName = original
+    assert instance.verifiedName == original
+
+
+
+@given(instance=data_InformationObject_strategy)
+def test_data_informationobject_alternativeNames_setter(instance):
+    original = instance.alternativeNames
+    instance.alternativeNames = original
+    assert instance.alternativeNames == original
+
+
+
+@given(instance=data_InformationObject_strategy)
+def test_data_informationobject_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
 
 import warnings
 import copy
@@ -3597,9 +2956,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=data::InformationObject_strategy)
+@given(instance=data_InformationObject_strategy)
 @settings(max_examples=30)
-def test_data::informationobject_starrankwithmetataglist_changes_state(instance):
+def test_data_informationobject_starrankwithmetataglist_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -3615,14 +2974,14 @@ def test_data::informationobject_starrankwithmetataglist_changes_state(instance)
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'starRankWithMetaTagList' in data::InformationObject is empty"
+        assert has_statements, f"Function 'starRankWithMetaTagList' in data_InformationObject is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'starRankWithMetaTagList' in data::InformationObject did not change state; check implementation")
+            warnings.warn(f"Operation 'starRankWithMetaTagList' in data_InformationObject did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'starRankWithMetaTagList' in data::InformationObject is not implemented or raised an error")
+        warnings.warn(f"Operation 'starRankWithMetaTagList' in data_InformationObject is not implemented or raised an error")
 
 import warnings
 import copy
@@ -3630,30 +2989,59 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=data::InformationObject_strategy)
+@given(instance=data_InformationObject_strategy)
 @settings(max_examples=30)
-def test_data::informationobject_untag_changes_state(instance):
+def test_data_informationobject_thumbsdown_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
-        instance.unTag(
+        instance.thumbsDown()
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.thumbsDown).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'thumbsDown' in data_InformationObject is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'thumbsDown' in data_InformationObject did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'thumbsDown' in data_InformationObject is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=data_InformationObject_strategy)
+@settings(max_examples=30)
+def test_data_informationobject_addwebaccount_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.addWebAccount(
             "test"
         )
         if instance.__dict__ != before.__dict__:
             return  # test passes
         # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.unTag).strip()
+        source = inspect.getsource(instance.addWebAccount).strip()
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'unTag' in data::InformationObject is empty"
+        assert has_statements, f"Function 'addWebAccount' in data_InformationObject is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'unTag' in data::InformationObject did not change state; check implementation")
+            warnings.warn(f"Operation 'addWebAccount' in data_InformationObject did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'unTag' in data::InformationObject is not implemented or raised an error")
+        warnings.warn(f"Operation 'addWebAccount' in data_InformationObject is not implemented or raised an error")
 
 import warnings
 import copy
@@ -3661,31 +3049,62 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=data::InformationObject_strategy)
+@given(instance=data_InformationObject_strategy)
 @settings(max_examples=30)
-def test_data::informationobject_addwebaccountforservice_changes_state(instance):
+def test_data_informationobject_addwebsite_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
-        instance.addWebAccountForService(
+        instance.addWebSite(
+            "test"
+        )
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.addWebSite).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'addWebSite' in data_InformationObject is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'addWebSite' in data_InformationObject did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'addWebSite' in data_InformationObject is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=data_InformationObject_strategy)
+@settings(max_examples=30)
+def test_data_informationobject_starrank_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.starRank(
             "test", 
             "test"
         )
         if instance.__dict__ != before.__dict__:
             return  # test passes
         # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.addWebAccountForService).strip()
+        source = inspect.getsource(instance.starRank).strip()
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'addWebAccountForService' in data::InformationObject is empty"
+        assert has_statements, f"Function 'starRank' in data_InformationObject is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'addWebAccountForService' in data::InformationObject did not change state; check implementation")
+            warnings.warn(f"Operation 'starRank' in data_InformationObject did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'addWebAccountForService' in data::InformationObject is not implemented or raised an error")
+        warnings.warn(f"Operation 'starRank' in data_InformationObject is not implemented or raised an error")
 
 import warnings
 import copy
@@ -3693,30 +3112,30 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=data::InformationObject_strategy)
+@given(instance=data_InformationObject_strategy)
 @settings(max_examples=30)
-def test_data::informationobject_extend_changes_state(instance):
+def test_data_informationobject_connectto_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
-        instance.extend(
+        instance.connectTo(
             "test"
         )
         if instance.__dict__ != before.__dict__:
             return  # test passes
         # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.extend).strip()
+        source = inspect.getsource(instance.connectTo).strip()
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'extend' in data::InformationObject is empty"
+        assert has_statements, f"Function 'connectTo' in data_InformationObject is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'extend' in data::InformationObject did not change state; check implementation")
+            warnings.warn(f"Operation 'connectTo' in data_InformationObject did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'extend' in data::InformationObject is not implemented or raised an error")
+        warnings.warn(f"Operation 'connectTo' in data_InformationObject is not implemented or raised an error")
 
 import warnings
 import copy
@@ -3724,9 +3143,131 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=data::InformationObject_strategy)
+@given(instance=data_InformationObject_strategy)
 @settings(max_examples=30)
-def test_data::informationobject_starrankwithmetatag_changes_state(instance):
+def test_data_informationobject_uncategorize_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.unCategorize(
+            "test"
+        )
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.unCategorize).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'unCategorize' in data_InformationObject is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'unCategorize' in data_InformationObject did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'unCategorize' in data_InformationObject is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=data_InformationObject_strategy)
+@settings(max_examples=30)
+def test_data_informationobject_categorize_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.categorize(
+            "test"
+        )
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.categorize).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'categorize' in data_InformationObject is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'categorize' in data_InformationObject did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'categorize' in data_InformationObject is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=data_InformationObject_strategy)
+@settings(max_examples=30)
+def test_data_informationobject_tag_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.tag(
+            "test"
+        )
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.tag).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'tag' in data_InformationObject is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'tag' in data_InformationObject did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'tag' in data_InformationObject is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=data_InformationObject_strategy)
+@settings(max_examples=30)
+def test_data_informationobject_view_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.view()
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.view).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'view' in data_InformationObject is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'view' in data_InformationObject did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'view' in data_InformationObject is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=data_InformationObject_strategy)
+@settings(max_examples=30)
+def test_data_informationobject_starrankwithmetatag_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -3742,14 +3283,14 @@ def test_data::informationobject_starrankwithmetatag_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'starRankWithMetaTag' in data::InformationObject is empty"
+        assert has_statements, f"Function 'starRankWithMetaTag' in data_InformationObject is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'starRankWithMetaTag' in data::InformationObject did not change state; check implementation")
+            warnings.warn(f"Operation 'starRankWithMetaTag' in data_InformationObject did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'starRankWithMetaTag' in data::InformationObject is not implemented or raised an error")
+        warnings.warn(f"Operation 'starRankWithMetaTag' in data_InformationObject is not implemented or raised an error")
 
 import warnings
 import copy
@@ -3757,77 +3298,391 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=data::InformationObject_strategy)
+@given(instance=data_InformationObject_strategy)
 @settings(max_examples=30)
-def test_data::informationobject_thumbsdown_changes_state(instance):
+def test_data_informationobject_addemailaddress_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
-        instance.thumbsDown()
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.thumbsDown).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'thumbsDown' in data::InformationObject is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'thumbsDown' in data::InformationObject did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'thumbsDown' in data::InformationObject is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=data::InformationObject_strategy)
-@settings(max_examples=30)
-def test_data::informationobject_uncategorize_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.unCategorize(
+        instance.addEmailAddress(
             "test"
         )
         if instance.__dict__ != before.__dict__:
             return  # test passes
         # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.unCategorize).strip()
+        source = inspect.getsource(instance.addEmailAddress).strip()
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'unCategorize' in data::InformationObject is empty"
+        assert has_statements, f"Function 'addEmailAddress' in data_InformationObject is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'unCategorize' in data::InformationObject did not change state; check implementation")
+            warnings.warn(f"Operation 'addEmailAddress' in data_InformationObject did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'unCategorize' in data::InformationObject is not implemented or raised an error")
+        warnings.warn(f"Operation 'addEmailAddress' in data_InformationObject is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=data_InformationObject_strategy)
+@settings(max_examples=30)
+def test_data_informationobject_connecttowithvalueandmetatag_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.connectToWithValueAndMetaTag(
+            "test", 
+            "test", 
+            "test"
+        )
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.connectToWithValueAndMetaTag).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'connectToWithValueAndMetaTag' in data_InformationObject is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'connectToWithValueAndMetaTag' in data_InformationObject did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'connectToWithValueAndMetaTag' in data_InformationObject is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=data_InformationObject_strategy)
+@settings(max_examples=30)
+def test_data_informationobject_attachimage_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.attachImage(
+            "test"
+        )
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.attachImage).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'attachImage' in data_InformationObject is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'attachImage' in data_InformationObject did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'attachImage' in data_InformationObject is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=data_InformationObject_strategy)
+@settings(max_examples=30)
+def test_data_informationobject_extend_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.extend(
+            "test"
+        )
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.extend).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'extend' in data_InformationObject is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'extend' in data_InformationObject did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'extend' in data_InformationObject is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=data_InformationObject_strategy)
+@settings(max_examples=30)
+def test_data_informationobject_addwebaccountforservice_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.addWebAccountForService(
+            "test", 
+            "test"
+        )
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.addWebAccountForService).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'addWebAccountForService' in data_InformationObject is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'addWebAccountForService' in data_InformationObject did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'addWebAccountForService' in data_InformationObject is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=data_InformationObject_strategy)
+@settings(max_examples=30)
+def test_data_informationobject_hasimages_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.hasImages()
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.hasImages).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'hasImages' in data_InformationObject is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'hasImages' in data_InformationObject did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'hasImages' in data_InformationObject is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=data_InformationObject_strategy)
+@settings(max_examples=30)
+def test_data_informationobject_thumbsup_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.thumbsUp()
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.thumbsUp).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'thumbsUp' in data_InformationObject is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'thumbsUp' in data_InformationObject did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'thumbsUp' in data_InformationObject is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=data_InformationObject_strategy)
+@settings(max_examples=30)
+def test_data_informationobject_addphone_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.addPhone(
+            "test"
+        )
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.addPhone).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'addPhone' in data_InformationObject is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'addPhone' in data_InformationObject did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'addPhone' in data_InformationObject is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=data_InformationObject_strategy)
+@settings(max_examples=30)
+def test_data_informationobject_addalternativename_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.addAlternativeName(
+            "test"
+        )
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.addAlternativeName).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'addAlternativeName' in data_InformationObject is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'addAlternativeName' in data_InformationObject did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'addAlternativeName' in data_InformationObject is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=data_InformationObject_strategy)
+@settings(max_examples=30)
+def test_data_informationobject_connecttowithmetatag_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.connectToWithMetaTag(
+            "test", 
+            "test"
+        )
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.connectToWithMetaTag).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'connectToWithMetaTag' in data_InformationObject is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'connectToWithMetaTag' in data_InformationObject did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'connectToWithMetaTag' in data_InformationObject is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=data_InformationObject_strategy)
+@settings(max_examples=30)
+def test_data_informationobject_untag_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.unTag(
+            "test"
+        )
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.unTag).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'unTag' in data_InformationObject is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'unTag' in data_InformationObject did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'unTag' in data_InformationObject is not implemented or raised an error")
 
 @given(instance=InformationObject_strategy)
 @settings(max_examples=50)
 def test_informationobject_instantiation(instance):
     assert isinstance(instance, InformationObject)
 
-@given(instance=data::Content_strategy)
+@given(instance=data_Organisation_strategy)
 @settings(max_examples=50)
-def test_data::content_instantiation(instance):
-    assert isinstance(instance, data::Content)
+def test_data_organisation_instantiation(instance):
+    assert isinstance(instance, data_Organisation)
 
-@given(instance=data::Content_strategy)
-def test_data::content_locale_type(instance):
-    assert isinstance(instance.locale, str)
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=data_Organisation_strategy)
+@settings(max_examples=30)
+def test_data_organisation_addparticipant_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.addParticipant(
+            "test"
+        )
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.addParticipant).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'addParticipant' in data_Organisation is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'addParticipant' in data_Organisation did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'addParticipant' in data_Organisation is not implemented or raised an error")
+
+@given(instance=data_Content_strategy)
+@settings(max_examples=50)
+def test_data_content_instantiation(instance):
+    assert isinstance(instance, data_Content)
 
 
-@given(instance=data::Content_strategy)
-def test_data::content_locale_setter(instance):
+
+@given(instance=data_Content_strategy)
+def test_data_content_locale_setter(instance):
     original = instance.locale
     instance.locale = original
     assert instance.locale == original
@@ -3838,9 +3693,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=data::Content_strategy)
+@given(instance=data_Content_strategy)
 @settings(max_examples=30)
-def test_data::content_attachdocument_changes_state(instance):
+def test_data_content_attachdocument_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -3854,14 +3709,14 @@ def test_data::content_attachdocument_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'attachDocument' in data::Content is empty"
+        assert has_statements, f"Function 'attachDocument' in data_Content is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'attachDocument' in data::Content did not change state; check implementation")
+            warnings.warn(f"Operation 'attachDocument' in data_Content did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'attachDocument' in data::Content is not implemented or raised an error")
+        warnings.warn(f"Operation 'attachDocument' in data_Content is not implemented or raised an error")
 
 import warnings
 import copy
@@ -3869,9 +3724,71 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=data::Content_strategy)
+@given(instance=data_Content_strategy)
 @settings(max_examples=30)
-def test_data::content_commentwithmetataglist_changes_state(instance):
+def test_data_content_comment_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.comment(
+            "test"
+        )
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.comment).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'comment' in data_Content is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'comment' in data_Content did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'comment' in data_Content is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=data_Content_strategy)
+@settings(max_examples=30)
+def test_data_content_addcontributor_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.addContributor(
+            "test"
+        )
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.addContributor).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'addContributor' in data_Content is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'addContributor' in data_Content did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'addContributor' in data_Content is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=data_Content_strategy)
+@settings(max_examples=30)
+def test_data_content_commentwithmetataglist_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -3886,158 +3803,48 @@ def test_data::content_commentwithmetataglist_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'commentWithMetaTagList' in data::Content is empty"
+        assert has_statements, f"Function 'commentWithMetaTagList' in data_Content is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'commentWithMetaTagList' in data::Content did not change state; check implementation")
+            warnings.warn(f"Operation 'commentWithMetaTagList' in data_Content did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'commentWithMetaTagList' in data::Content is not implemented or raised an error")
+        warnings.warn(f"Operation 'commentWithMetaTagList' in data_Content is not implemented or raised an error")
 
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=data::Content_strategy)
-@settings(max_examples=30)
-def test_data::content_addcontributor_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.addContributor(
-            "test"
-        )
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.addContributor).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'addContributor' in data::Content is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'addContributor' in data::Content did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'addContributor' in data::Content is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=data::Content_strategy)
-@settings(max_examples=30)
-def test_data::content_comment_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.comment(
-            "test"
-        )
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.comment).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'comment' in data::Content is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'comment' in data::Content did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'comment' in data::Content is not implemented or raised an error")
-
-@given(instance=data::Organisation_strategy)
+@given(instance=data_Person_strategy)
 @settings(max_examples=50)
-def test_data::organisation_instantiation(instance):
-    assert isinstance(instance, data::Organisation)
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=data::Organisation_strategy)
-@settings(max_examples=30)
-def test_data::organisation_addparticipant_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.addParticipant(
-            "test"
-        )
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.addParticipant).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'addParticipant' in data::Organisation is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'addParticipant' in data::Organisation did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'addParticipant' in data::Organisation is not implemented or raised an error")
-
-@given(instance=data::Person_strategy)
-@settings(max_examples=50)
-def test_data::person_instantiation(instance):
-    assert isinstance(instance, data::Person)
-
-@given(instance=data::Person_strategy)
-def test_data::person_dateOfBirth_type(instance):
-    assert isinstance(instance.dateOfBirth, date)
+def test_data_person_instantiation(instance):
+    assert isinstance(instance, data_Person)
 
 
-@given(instance=data::Person_strategy)
-def test_data::person_dateOfBirth_setter(instance):
-    original = instance.dateOfBirth
-    instance.dateOfBirth = original
-    assert instance.dateOfBirth == original
 
-@given(instance=data::Person_strategy)
-def test_data::person_lastname_type(instance):
-    assert isinstance(instance.lastname, str)
-
-
-@given(instance=data::Person_strategy)
-def test_data::person_lastname_setter(instance):
+@given(instance=data_Person_strategy)
+def test_data_person_lastname_setter(instance):
     original = instance.lastname
     instance.lastname = original
     assert instance.lastname == original
 
-@given(instance=data::Person_strategy)
-def test_data::person_title_type(instance):
-    assert isinstance(instance.title, str)
 
 
-@given(instance=data::Person_strategy)
-def test_data::person_title_setter(instance):
+@given(instance=data_Person_strategy)
+def test_data_person_dateOfBirth_setter(instance):
+    original = instance.dateOfBirth
+    instance.dateOfBirth = original
+    assert instance.dateOfBirth == original
+
+
+
+@given(instance=data_Person_strategy)
+def test_data_person_title_setter(instance):
     original = instance.title
     instance.title = original
     assert instance.title == original
 
-@given(instance=data::Person_strategy)
-def test_data::person_firstname_type(instance):
-    assert isinstance(instance.firstname, str)
 
 
-@given(instance=data::Person_strategy)
-def test_data::person_firstname_setter(instance):
+@given(instance=data_Person_strategy)
+def test_data_person_firstname_setter(instance):
     original = instance.firstname
     instance.firstname = original
     assert instance.firstname == original
@@ -4048,9 +3855,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=data::Person_strategy)
+@given(instance=data_Person_strategy)
 @settings(max_examples=30)
-def test_data::person_parselastname_changes_state(instance):
+def test_data_person_parselastname_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -4062,14 +3869,14 @@ def test_data::person_parselastname_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'parseLastName' in data::Person is empty"
+        assert has_statements, f"Function 'parseLastName' in data_Person is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'parseLastName' in data::Person did not change state; check implementation")
+            warnings.warn(f"Operation 'parseLastName' in data_Person did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'parseLastName' in data::Person is not implemented or raised an error")
+        warnings.warn(f"Operation 'parseLastName' in data_Person is not implemented or raised an error")
 
 import warnings
 import copy
@@ -4077,38 +3884,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=data::Person_strategy)
+@given(instance=data_Person_strategy)
 @settings(max_examples=30)
-def test_data::person_parsefirstname_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.parseFirstName()
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.parseFirstName).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'parseFirstName' in data::Person is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'parseFirstName' in data::Person did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'parseFirstName' in data::Person is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=data::Person_strategy)
-@settings(max_examples=30)
-def test_data::person_addauthoredcontent_changes_state(instance):
+def test_data_person_addauthoredcontent_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -4122,14 +3900,14 @@ def test_data::person_addauthoredcontent_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'addAuthoredContent' in data::Person is empty"
+        assert has_statements, f"Function 'addAuthoredContent' in data_Person is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'addAuthoredContent' in data::Person did not change state; check implementation")
+            warnings.warn(f"Operation 'addAuthoredContent' in data_Person did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'addAuthoredContent' in data::Person is not implemented or raised an error")
+        warnings.warn(f"Operation 'addAuthoredContent' in data_Person is not implemented or raised an error")
 
 import warnings
 import copy
@@ -4137,9 +3915,38 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=data::Person_strategy)
+@given(instance=data_Person_strategy)
 @settings(max_examples=30)
-def test_data::person_addcontributedcontent_changes_state(instance):
+def test_data_person_parsefirstname_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.parseFirstName()
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.parseFirstName).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'parseFirstName' in data_Person is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'parseFirstName' in data_Person did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'parseFirstName' in data_Person is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=data_Person_strategy)
+@settings(max_examples=30)
+def test_data_person_addcontributedcontent_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -4153,11 +3960,24 @@ def test_data::person_addcontributedcontent_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'addContributedContent' in data::Person is empty"
+        assert has_statements, f"Function 'addContributedContent' in data_Person is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'addContributedContent' in data::Person did not change state; check implementation")
+            warnings.warn(f"Operation 'addContributedContent' in data_Person did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'addContributedContent' in data::Person is not implemented or raised an error")
+        warnings.warn(f"Operation 'addContributedContent' in data_Person is not implemented or raised an error")
+
+@given(instance=data_Ranking_strategy)
+@settings(max_examples=50)
+def test_data_ranking_instantiation(instance):
+    assert isinstance(instance, data_Ranking)
+
+
+
+@given(instance=data_Ranking_strategy)
+def test_data_ranking_date_setter(instance):
+    original = instance.date
+    instance.date = original
+    assert instance.date == original

@@ -3,21 +3,21 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     LocatedElement,
-    p2::FeatureMetadata,
+    p2_FeatureMetadata,
     Bundle,
     FeatureMetadata,
-    p2::Plugin,
-    p2::Vendor,
-    p2::License,
-    p2::DiscoverySite,
-    p2::Description,
-    p2::Copyright,
+    p2_Plugin,
+    p2_Vendor,
+    p2_License,
+    p2_DiscoverySite,
+    p2_Description,
+    p2_Copyright,
     Tool,
-    p2::Feature,
+    p2_Feature,
 )
 
 # =============================================================================
@@ -40,33 +40,33 @@ def test_locatedelement_constructor_args():
 
 
 
-def test_p2::featuremetadata_is_not_abstract():
-    assert not inspect.isabstract(p2::FeatureMetadata)
+def test_p2_featuremetadata_is_not_abstract():
+    assert not inspect.isabstract(p2_FeatureMetadata)
 
 
-def test_p2::featuremetadata_constructor_exists():
-    assert callable(p2::FeatureMetadata.__init__)
+def test_p2_featuremetadata_constructor_exists():
+    assert callable(p2_FeatureMetadata.__init__)
 
 
-def test_p2::featuremetadata_constructor_args():
-    sig = inspect.signature(p2::FeatureMetadata.__init__)
+def test_p2_featuremetadata_constructor_args():
+    sig = inspect.signature(p2_FeatureMetadata.__init__)
     params = list(sig.parameters.keys())
     assert "text" in params, "Missing parameter 'text'"
     assert "name" in params, "Missing parameter 'name'"
 
-def test_p2::featuremetadata_has_text():
-    assert hasattr(p2::FeatureMetadata, "text")
+def test_p2_featuremetadata_has_text():
+    assert hasattr(p2_FeatureMetadata, "text")
     descriptor = None
-    for klass in p2::FeatureMetadata.__mro__:
+    for klass in p2_FeatureMetadata.__mro__:
         if "text" in klass.__dict__:
             descriptor = klass.__dict__["text"]
             break
     assert isinstance(descriptor, property)
 
-def test_p2::featuremetadata_has_name():
-    assert hasattr(p2::FeatureMetadata, "name")
+def test_p2_featuremetadata_has_name():
+    assert hasattr(p2_FeatureMetadata, "name")
     descriptor = None
-    for klass in p2::FeatureMetadata.__mro__:
+    for klass in p2_FeatureMetadata.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -102,86 +102,86 @@ def test_featuremetadata_constructor_args():
 
 
 
-def test_p2::plugin_is_not_abstract():
-    assert not inspect.isabstract(p2::Plugin)
+def test_p2_plugin_is_not_abstract():
+    assert not inspect.isabstract(p2_Plugin)
 
 
-def test_p2::plugin_constructor_exists():
-    assert callable(p2::Plugin.__init__)
+def test_p2_plugin_constructor_exists():
+    assert callable(p2_Plugin.__init__)
 
 
-def test_p2::plugin_constructor_args():
-    sig = inspect.signature(p2::Plugin.__init__)
+def test_p2_plugin_constructor_args():
+    sig = inspect.signature(p2_Plugin.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_p2::vendor_is_not_abstract():
-    assert not inspect.isabstract(p2::Vendor)
+def test_p2_vendor_is_not_abstract():
+    assert not inspect.isabstract(p2_Vendor)
 
 
-def test_p2::vendor_constructor_exists():
-    assert callable(p2::Vendor.__init__)
+def test_p2_vendor_constructor_exists():
+    assert callable(p2_Vendor.__init__)
 
 
-def test_p2::vendor_constructor_args():
-    sig = inspect.signature(p2::Vendor.__init__)
+def test_p2_vendor_constructor_args():
+    sig = inspect.signature(p2_Vendor.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_p2::license_is_not_abstract():
-    assert not inspect.isabstract(p2::License)
+def test_p2_license_is_not_abstract():
+    assert not inspect.isabstract(p2_License)
 
 
-def test_p2::license_constructor_exists():
-    assert callable(p2::License.__init__)
+def test_p2_license_constructor_exists():
+    assert callable(p2_License.__init__)
 
 
-def test_p2::license_constructor_args():
-    sig = inspect.signature(p2::License.__init__)
+def test_p2_license_constructor_args():
+    sig = inspect.signature(p2_License.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_p2::discoverysite_is_not_abstract():
-    assert not inspect.isabstract(p2::DiscoverySite)
+def test_p2_discoverysite_is_not_abstract():
+    assert not inspect.isabstract(p2_DiscoverySite)
 
 
-def test_p2::discoverysite_constructor_exists():
-    assert callable(p2::DiscoverySite.__init__)
+def test_p2_discoverysite_constructor_exists():
+    assert callable(p2_DiscoverySite.__init__)
 
 
-def test_p2::discoverysite_constructor_args():
-    sig = inspect.signature(p2::DiscoverySite.__init__)
+def test_p2_discoverysite_constructor_args():
+    sig = inspect.signature(p2_DiscoverySite.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_p2::description_is_not_abstract():
-    assert not inspect.isabstract(p2::Description)
+def test_p2_description_is_not_abstract():
+    assert not inspect.isabstract(p2_Description)
 
 
-def test_p2::description_constructor_exists():
-    assert callable(p2::Description.__init__)
+def test_p2_description_constructor_exists():
+    assert callable(p2_Description.__init__)
 
 
-def test_p2::description_constructor_args():
-    sig = inspect.signature(p2::Description.__init__)
+def test_p2_description_constructor_args():
+    sig = inspect.signature(p2_Description.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_p2::copyright_is_not_abstract():
-    assert not inspect.isabstract(p2::Copyright)
+def test_p2_copyright_is_not_abstract():
+    assert not inspect.isabstract(p2_Copyright)
 
 
-def test_p2::copyright_constructor_exists():
-    assert callable(p2::Copyright.__init__)
+def test_p2_copyright_constructor_exists():
+    assert callable(p2_Copyright.__init__)
 
 
-def test_p2::copyright_constructor_args():
-    sig = inspect.signature(p2::Copyright.__init__)
+def test_p2_copyright_constructor_args():
+    sig = inspect.signature(p2_Copyright.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -200,23 +200,23 @@ def test_tool_constructor_args():
 
 
 
-def test_p2::feature_is_not_abstract():
-    assert not inspect.isabstract(p2::Feature)
+def test_p2_feature_is_not_abstract():
+    assert not inspect.isabstract(p2_Feature)
 
 
-def test_p2::feature_constructor_exists():
-    assert callable(p2::Feature.__init__)
+def test_p2_feature_constructor_exists():
+    assert callable(p2_Feature.__init__)
 
 
-def test_p2::feature_constructor_args():
-    sig = inspect.signature(p2::Feature.__init__)
+def test_p2_feature_constructor_args():
+    sig = inspect.signature(p2_Feature.__init__)
     params = list(sig.parameters.keys())
     assert "application" in params, "Missing parameter 'application'"
 
-def test_p2::feature_has_application():
-    assert hasattr(p2::Feature, "application")
+def test_p2_feature_has_application():
+    assert hasattr(p2_Feature, "application")
     descriptor = None
-    for klass in p2::Feature.__mro__:
+    for klass in p2_Feature.__mro__:
         if "application" in klass.__dict__:
             descriptor = klass.__dict__["application"]
             break
@@ -237,8 +237,8 @@ safe_text = st.text(
 LocatedElement_strategy = st.builds(
     LocatedElement,
 )
-p2::FeatureMetadata_strategy = st.builds(
-    p2::FeatureMetadata,
+p2_FeatureMetadata_strategy = st.builds(
+    p2_FeatureMetadata,
     text=
         safe_text,
     name=
@@ -250,29 +250,29 @@ Bundle_strategy = st.builds(
 FeatureMetadata_strategy = st.builds(
     FeatureMetadata,
 )
-p2::Plugin_strategy = st.builds(
-    p2::Plugin,
+p2_Plugin_strategy = st.builds(
+    p2_Plugin,
 )
-p2::Vendor_strategy = st.builds(
-    p2::Vendor,
+p2_Vendor_strategy = st.builds(
+    p2_Vendor,
 )
-p2::License_strategy = st.builds(
-    p2::License,
+p2_License_strategy = st.builds(
+    p2_License,
 )
-p2::DiscoverySite_strategy = st.builds(
-    p2::DiscoverySite,
+p2_DiscoverySite_strategy = st.builds(
+    p2_DiscoverySite,
 )
-p2::Description_strategy = st.builds(
-    p2::Description,
+p2_Description_strategy = st.builds(
+    p2_Description,
 )
-p2::Copyright_strategy = st.builds(
-    p2::Copyright,
+p2_Copyright_strategy = st.builds(
+    p2_Copyright,
 )
 Tool_strategy = st.builds(
     Tool,
 )
-p2::Feature_strategy = st.builds(
-    p2::Feature,
+p2_Feature_strategy = st.builds(
+    p2_Feature,
     application=
         safe_text
 )
@@ -282,29 +282,23 @@ p2::Feature_strategy = st.builds(
 def test_locatedelement_instantiation(instance):
     assert isinstance(instance, LocatedElement)
 
-@given(instance=p2::FeatureMetadata_strategy)
+@given(instance=p2_FeatureMetadata_strategy)
 @settings(max_examples=50)
-def test_p2::featuremetadata_instantiation(instance):
-    assert isinstance(instance, p2::FeatureMetadata)
-
-@given(instance=p2::FeatureMetadata_strategy)
-def test_p2::featuremetadata_text_type(instance):
-    assert isinstance(instance.text, str)
+def test_p2_featuremetadata_instantiation(instance):
+    assert isinstance(instance, p2_FeatureMetadata)
 
 
-@given(instance=p2::FeatureMetadata_strategy)
-def test_p2::featuremetadata_text_setter(instance):
+
+@given(instance=p2_FeatureMetadata_strategy)
+def test_p2_featuremetadata_text_setter(instance):
     original = instance.text
     instance.text = original
     assert instance.text == original
 
-@given(instance=p2::FeatureMetadata_strategy)
-def test_p2::featuremetadata_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
-@given(instance=p2::FeatureMetadata_strategy)
-def test_p2::featuremetadata_name_setter(instance):
+@given(instance=p2_FeatureMetadata_strategy)
+def test_p2_featuremetadata_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
@@ -319,53 +313,50 @@ def test_bundle_instantiation(instance):
 def test_featuremetadata_instantiation(instance):
     assert isinstance(instance, FeatureMetadata)
 
-@given(instance=p2::Plugin_strategy)
+@given(instance=p2_Plugin_strategy)
 @settings(max_examples=50)
-def test_p2::plugin_instantiation(instance):
-    assert isinstance(instance, p2::Plugin)
+def test_p2_plugin_instantiation(instance):
+    assert isinstance(instance, p2_Plugin)
 
-@given(instance=p2::Vendor_strategy)
+@given(instance=p2_Vendor_strategy)
 @settings(max_examples=50)
-def test_p2::vendor_instantiation(instance):
-    assert isinstance(instance, p2::Vendor)
+def test_p2_vendor_instantiation(instance):
+    assert isinstance(instance, p2_Vendor)
 
-@given(instance=p2::License_strategy)
+@given(instance=p2_License_strategy)
 @settings(max_examples=50)
-def test_p2::license_instantiation(instance):
-    assert isinstance(instance, p2::License)
+def test_p2_license_instantiation(instance):
+    assert isinstance(instance, p2_License)
 
-@given(instance=p2::DiscoverySite_strategy)
+@given(instance=p2_DiscoverySite_strategy)
 @settings(max_examples=50)
-def test_p2::discoverysite_instantiation(instance):
-    assert isinstance(instance, p2::DiscoverySite)
+def test_p2_discoverysite_instantiation(instance):
+    assert isinstance(instance, p2_DiscoverySite)
 
-@given(instance=p2::Description_strategy)
+@given(instance=p2_Description_strategy)
 @settings(max_examples=50)
-def test_p2::description_instantiation(instance):
-    assert isinstance(instance, p2::Description)
+def test_p2_description_instantiation(instance):
+    assert isinstance(instance, p2_Description)
 
-@given(instance=p2::Copyright_strategy)
+@given(instance=p2_Copyright_strategy)
 @settings(max_examples=50)
-def test_p2::copyright_instantiation(instance):
-    assert isinstance(instance, p2::Copyright)
+def test_p2_copyright_instantiation(instance):
+    assert isinstance(instance, p2_Copyright)
 
 @given(instance=Tool_strategy)
 @settings(max_examples=50)
 def test_tool_instantiation(instance):
     assert isinstance(instance, Tool)
 
-@given(instance=p2::Feature_strategy)
+@given(instance=p2_Feature_strategy)
 @settings(max_examples=50)
-def test_p2::feature_instantiation(instance):
-    assert isinstance(instance, p2::Feature)
-
-@given(instance=p2::Feature_strategy)
-def test_p2::feature_application_type(instance):
-    assert isinstance(instance.application, str)
+def test_p2_feature_instantiation(instance):
+    assert isinstance(instance, p2_Feature)
 
 
-@given(instance=p2::Feature_strategy)
-def test_p2::feature_application_setter(instance):
+
+@given(instance=p2_Feature_strategy)
+def test_p2_feature_application_setter(instance):
     original = instance.application
     instance.application = original
     assert instance.application == original

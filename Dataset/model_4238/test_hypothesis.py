@@ -3,11 +3,11 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    company::Person,
-    company::Company,
+from python_code import (
+    company_Person,
+    company_Company,
     Gender,
 )
 
@@ -17,73 +17,73 @@ from classes import (
 
 
 
-def test_company::person_is_not_abstract():
-    assert not inspect.isabstract(company::Person)
+def test_company_person_is_not_abstract():
+    assert not inspect.isabstract(company_Person)
 
 
-def test_company::person_constructor_exists():
-    assert callable(company::Person.__init__)
+def test_company_person_constructor_exists():
+    assert callable(company_Person.__init__)
 
 
-def test_company::person_constructor_args():
-    sig = inspect.signature(company::Person.__init__)
+def test_company_person_constructor_args():
+    sig = inspect.signature(company_Person.__init__)
     params = list(sig.parameters.keys())
-    assert "name" in params, "Missing parameter 'name'"
-    assert "age" in params, "Missing parameter 'age'"
-    assert "isUnemployed" in params, "Missing parameter 'isUnemployed'"
     assert "gender" in params, "Missing parameter 'gender'"
     assert "salary" in params, "Missing parameter 'salary'"
+    assert "age" in params, "Missing parameter 'age'"
+    assert "name" in params, "Missing parameter 'name'"
+    assert "isUnemployed" in params, "Missing parameter 'isUnemployed'"
     assert "lastname" in params, "Missing parameter 'lastname'"
 
-def test_company::person_has_name():
-    assert hasattr(company::Person, "name")
+def test_company_person_has_gender():
+    assert hasattr(company_Person, "gender")
     descriptor = None
-    for klass in company::Person.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_company::person_has_age():
-    assert hasattr(company::Person, "age")
-    descriptor = None
-    for klass in company::Person.__mro__:
-        if "age" in klass.__dict__:
-            descriptor = klass.__dict__["age"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_company::person_has_isUnemployed():
-    assert hasattr(company::Person, "isUnemployed")
-    descriptor = None
-    for klass in company::Person.__mro__:
-        if "isUnemployed" in klass.__dict__:
-            descriptor = klass.__dict__["isUnemployed"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_company::person_has_gender():
-    assert hasattr(company::Person, "gender")
-    descriptor = None
-    for klass in company::Person.__mro__:
+    for klass in company_Person.__mro__:
         if "gender" in klass.__dict__:
             descriptor = klass.__dict__["gender"]
             break
     assert isinstance(descriptor, property)
 
-def test_company::person_has_salary():
-    assert hasattr(company::Person, "salary")
+def test_company_person_has_salary():
+    assert hasattr(company_Person, "salary")
     descriptor = None
-    for klass in company::Person.__mro__:
+    for klass in company_Person.__mro__:
         if "salary" in klass.__dict__:
             descriptor = klass.__dict__["salary"]
             break
     assert isinstance(descriptor, property)
 
-def test_company::person_has_lastname():
-    assert hasattr(company::Person, "lastname")
+def test_company_person_has_age():
+    assert hasattr(company_Person, "age")
     descriptor = None
-    for klass in company::Person.__mro__:
+    for klass in company_Person.__mro__:
+        if "age" in klass.__dict__:
+            descriptor = klass.__dict__["age"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_company_person_has_name():
+    assert hasattr(company_Person, "name")
+    descriptor = None
+    for klass in company_Person.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_company_person_has_isUnemployed():
+    assert hasattr(company_Person, "isUnemployed")
+    descriptor = None
+    for klass in company_Person.__mro__:
+        if "isUnemployed" in klass.__dict__:
+            descriptor = klass.__dict__["isUnemployed"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_company_person_has_lastname():
+    assert hasattr(company_Person, "lastname")
+    descriptor = None
+    for klass in company_Person.__mro__:
         if "lastname" in klass.__dict__:
             descriptor = klass.__dict__["lastname"]
             break
@@ -91,33 +91,33 @@ def test_company::person_has_lastname():
 
 
 
-def test_company::company_is_not_abstract():
-    assert not inspect.isabstract(company::Company)
+def test_company_company_is_not_abstract():
+    assert not inspect.isabstract(company_Company)
 
 
-def test_company::company_constructor_exists():
-    assert callable(company::Company.__init__)
+def test_company_company_constructor_exists():
+    assert callable(company_Company.__init__)
 
 
-def test_company::company_constructor_args():
-    sig = inspect.signature(company::Company.__init__)
+def test_company_company_constructor_args():
+    sig = inspect.signature(company_Company.__init__)
     params = list(sig.parameters.keys())
     assert "numberOfManager" in params, "Missing parameter 'numberOfManager'"
     assert "name" in params, "Missing parameter 'name'"
 
-def test_company::company_has_numberOfManager():
-    assert hasattr(company::Company, "numberOfManager")
+def test_company_company_has_numberOfManager():
+    assert hasattr(company_Company, "numberOfManager")
     descriptor = None
-    for klass in company::Company.__mro__:
+    for klass in company_Company.__mro__:
         if "numberOfManager" in klass.__dict__:
             descriptor = klass.__dict__["numberOfManager"]
             break
     assert isinstance(descriptor, property)
 
-def test_company::company_has_name():
-    assert hasattr(company::Company, "name")
+def test_company_company_has_name():
+    assert hasattr(company_Company, "name")
     descriptor = None
-    for klass in company::Company.__mro__:
+    for klass in company_Company.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -150,123 +150,99 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-company::Person_strategy = st.builds(
-    company::Person,
-    name=
-        safe_text,
-    age=
-        st.integers(),
-    isUnemployed=
-        st.booleans(),
+company_Person_strategy = st.builds(
+    company_Person,
     gender=
         safe_text,
     salary=
         st.integers(),
+    age=
+        st.integers(),
+    name=
+        safe_text,
+    isUnemployed=
+        st.booleans(),
     lastname=
         safe_text
 )
-company::Company_strategy = st.builds(
-    company::Company,
+company_Company_strategy = st.builds(
+    company_Company,
     numberOfManager=
         st.integers(),
     name=
         safe_text
 )
 
-@given(instance=company::Person_strategy)
+@given(instance=company_Person_strategy)
 @settings(max_examples=50)
-def test_company::person_instantiation(instance):
-    assert isinstance(instance, company::Person)
-
-@given(instance=company::Person_strategy)
-def test_company::person_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_company_person_instantiation(instance):
+    assert isinstance(instance, company_Person)
 
 
-@given(instance=company::Person_strategy)
-def test_company::person_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
 
-@given(instance=company::Person_strategy)
-def test_company::person_age_type(instance):
-    assert isinstance(instance.age, int)
-
-
-@given(instance=company::Person_strategy)
-def test_company::person_age_setter(instance):
-    original = instance.age
-    instance.age = original
-    assert instance.age == original
-
-@given(instance=company::Person_strategy)
-def test_company::person_isUnemployed_type(instance):
-    assert isinstance(instance.isUnemployed, bool)
-
-
-@given(instance=company::Person_strategy)
-def test_company::person_isUnemployed_setter(instance):
-    original = instance.isUnemployed
-    instance.isUnemployed = original
-    assert instance.isUnemployed == original
-
-@given(instance=company::Person_strategy)
-def test_company::person_gender_type(instance):
-    assert isinstance(instance.gender, str)
-
-
-@given(instance=company::Person_strategy)
-def test_company::person_gender_setter(instance):
+@given(instance=company_Person_strategy)
+def test_company_person_gender_setter(instance):
     original = instance.gender
     instance.gender = original
     assert instance.gender == original
 
-@given(instance=company::Person_strategy)
-def test_company::person_salary_type(instance):
-    assert isinstance(instance.salary, int)
 
 
-@given(instance=company::Person_strategy)
-def test_company::person_salary_setter(instance):
+@given(instance=company_Person_strategy)
+def test_company_person_salary_setter(instance):
     original = instance.salary
     instance.salary = original
     assert instance.salary == original
 
-@given(instance=company::Person_strategy)
-def test_company::person_lastname_type(instance):
-    assert isinstance(instance.lastname, str)
 
 
-@given(instance=company::Person_strategy)
-def test_company::person_lastname_setter(instance):
+@given(instance=company_Person_strategy)
+def test_company_person_age_setter(instance):
+    original = instance.age
+    instance.age = original
+    assert instance.age == original
+
+
+
+@given(instance=company_Person_strategy)
+def test_company_person_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+
+
+@given(instance=company_Person_strategy)
+def test_company_person_isUnemployed_setter(instance):
+    original = instance.isUnemployed
+    instance.isUnemployed = original
+    assert instance.isUnemployed == original
+
+
+
+@given(instance=company_Person_strategy)
+def test_company_person_lastname_setter(instance):
     original = instance.lastname
     instance.lastname = original
     assert instance.lastname == original
 
-@given(instance=company::Company_strategy)
+@given(instance=company_Company_strategy)
 @settings(max_examples=50)
-def test_company::company_instantiation(instance):
-    assert isinstance(instance, company::Company)
-
-@given(instance=company::Company_strategy)
-def test_company::company_numberOfManager_type(instance):
-    assert isinstance(instance.numberOfManager, int)
+def test_company_company_instantiation(instance):
+    assert isinstance(instance, company_Company)
 
 
-@given(instance=company::Company_strategy)
-def test_company::company_numberOfManager_setter(instance):
+
+@given(instance=company_Company_strategy)
+def test_company_company_numberOfManager_setter(instance):
     original = instance.numberOfManager
     instance.numberOfManager = original
     assert instance.numberOfManager == original
 
-@given(instance=company::Company_strategy)
-def test_company::company_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
-@given(instance=company::Company_strategy)
-def test_company::company_name_setter(instance):
+@given(instance=company_Company_strategy)
+def test_company_company_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original

@@ -3,18 +3,18 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    dot::Attribute,
-    dot::Node,
-    dot::DirectedEdge,
-    dot::UnDirectedEdge,
+from python_code import (
+    dot_Attribute,
+    dot_Node,
+    dot_DirectedEdge,
+    dot_UnDirectedEdge,
     Graph,
-    dot::DirectedGraph,
-    dot::UndirectedGraph,
-    dot::Graph,
-    dot::GraphModel,
+    dot_DirectedGraph,
+    dot_UndirectedGraph,
+    dot_Graph,
+    dot_GraphModel,
 )
 
 # =============================================================================
@@ -23,23 +23,23 @@ from classes import (
 
 
 
-def test_dot::attribute_is_not_abstract():
-    assert not inspect.isabstract(dot::Attribute)
+def test_dot_attribute_is_not_abstract():
+    assert not inspect.isabstract(dot_Attribute)
 
 
-def test_dot::attribute_constructor_exists():
-    assert callable(dot::Attribute.__init__)
+def test_dot_attribute_constructor_exists():
+    assert callable(dot_Attribute.__init__)
 
 
-def test_dot::attribute_constructor_args():
-    sig = inspect.signature(dot::Attribute.__init__)
+def test_dot_attribute_constructor_args():
+    sig = inspect.signature(dot_Attribute.__init__)
     params = list(sig.parameters.keys())
     assert "weight" in params, "Missing parameter 'weight'"
 
-def test_dot::attribute_has_weight():
-    assert hasattr(dot::Attribute, "weight")
+def test_dot_attribute_has_weight():
+    assert hasattr(dot_Attribute, "weight")
     descriptor = None
-    for klass in dot::Attribute.__mro__:
+    for klass in dot_Attribute.__mro__:
         if "weight" in klass.__dict__:
             descriptor = klass.__dict__["weight"]
             break
@@ -47,23 +47,23 @@ def test_dot::attribute_has_weight():
 
 
 
-def test_dot::node_is_not_abstract():
-    assert not inspect.isabstract(dot::Node)
+def test_dot_node_is_not_abstract():
+    assert not inspect.isabstract(dot_Node)
 
 
-def test_dot::node_constructor_exists():
-    assert callable(dot::Node.__init__)
+def test_dot_node_constructor_exists():
+    assert callable(dot_Node.__init__)
 
 
-def test_dot::node_constructor_args():
-    sig = inspect.signature(dot::Node.__init__)
+def test_dot_node_constructor_args():
+    sig = inspect.signature(dot_Node.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_dot::node_has_name():
-    assert hasattr(dot::Node, "name")
+def test_dot_node_has_name():
+    assert hasattr(dot_Node, "name")
     descriptor = None
-    for klass in dot::Node.__mro__:
+    for klass in dot_Node.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -71,30 +71,30 @@ def test_dot::node_has_name():
 
 
 
-def test_dot::directededge_is_not_abstract():
-    assert not inspect.isabstract(dot::DirectedEdge)
+def test_dot_directededge_is_not_abstract():
+    assert not inspect.isabstract(dot_DirectedEdge)
 
 
-def test_dot::directededge_constructor_exists():
-    assert callable(dot::DirectedEdge.__init__)
+def test_dot_directededge_constructor_exists():
+    assert callable(dot_DirectedEdge.__init__)
 
 
-def test_dot::directededge_constructor_args():
-    sig = inspect.signature(dot::DirectedEdge.__init__)
+def test_dot_directededge_constructor_args():
+    sig = inspect.signature(dot_DirectedEdge.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_dot::undirectededge_is_not_abstract():
-    assert not inspect.isabstract(dot::UnDirectedEdge)
+def test_dot_undirectededge_is_not_abstract():
+    assert not inspect.isabstract(dot_UnDirectedEdge)
 
 
-def test_dot::undirectededge_constructor_exists():
-    assert callable(dot::UnDirectedEdge.__init__)
+def test_dot_undirectededge_constructor_exists():
+    assert callable(dot_UnDirectedEdge.__init__)
 
 
-def test_dot::undirectededge_constructor_args():
-    sig = inspect.signature(dot::UnDirectedEdge.__init__)
+def test_dot_undirectededge_constructor_args():
+    sig = inspect.signature(dot_UnDirectedEdge.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -113,51 +113,51 @@ def test_graph_constructor_args():
 
 
 
-def test_dot::directedgraph_is_not_abstract():
-    assert not inspect.isabstract(dot::DirectedGraph)
+def test_dot_directedgraph_is_not_abstract():
+    assert not inspect.isabstract(dot_DirectedGraph)
 
 
-def test_dot::directedgraph_constructor_exists():
-    assert callable(dot::DirectedGraph.__init__)
+def test_dot_directedgraph_constructor_exists():
+    assert callable(dot_DirectedGraph.__init__)
 
 
-def test_dot::directedgraph_constructor_args():
-    sig = inspect.signature(dot::DirectedGraph.__init__)
+def test_dot_directedgraph_constructor_args():
+    sig = inspect.signature(dot_DirectedGraph.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_dot::undirectedgraph_is_not_abstract():
-    assert not inspect.isabstract(dot::UndirectedGraph)
+def test_dot_undirectedgraph_is_not_abstract():
+    assert not inspect.isabstract(dot_UndirectedGraph)
 
 
-def test_dot::undirectedgraph_constructor_exists():
-    assert callable(dot::UndirectedGraph.__init__)
+def test_dot_undirectedgraph_constructor_exists():
+    assert callable(dot_UndirectedGraph.__init__)
 
 
-def test_dot::undirectedgraph_constructor_args():
-    sig = inspect.signature(dot::UndirectedGraph.__init__)
+def test_dot_undirectedgraph_constructor_args():
+    sig = inspect.signature(dot_UndirectedGraph.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_dot::graph_is_not_abstract():
-    assert not inspect.isabstract(dot::Graph)
+def test_dot_graph_is_not_abstract():
+    assert not inspect.isabstract(dot_Graph)
 
 
-def test_dot::graph_constructor_exists():
-    assert callable(dot::Graph.__init__)
+def test_dot_graph_constructor_exists():
+    assert callable(dot_Graph.__init__)
 
 
-def test_dot::graph_constructor_args():
-    sig = inspect.signature(dot::Graph.__init__)
+def test_dot_graph_constructor_args():
+    sig = inspect.signature(dot_Graph.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_dot::graph_has_name():
-    assert hasattr(dot::Graph, "name")
+def test_dot_graph_has_name():
+    assert hasattr(dot_Graph, "name")
     descriptor = None
-    for klass in dot::Graph.__mro__:
+    for klass in dot_Graph.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -165,16 +165,16 @@ def test_dot::graph_has_name():
 
 
 
-def test_dot::graphmodel_is_not_abstract():
-    assert not inspect.isabstract(dot::GraphModel)
+def test_dot_graphmodel_is_not_abstract():
+    assert not inspect.isabstract(dot_GraphModel)
 
 
-def test_dot::graphmodel_constructor_exists():
-    assert callable(dot::GraphModel.__init__)
+def test_dot_graphmodel_constructor_exists():
+    assert callable(dot_GraphModel.__init__)
 
 
-def test_dot::graphmodel_constructor_args():
-    sig = inspect.signature(dot::GraphModel.__init__)
+def test_dot_graphmodel_constructor_args():
+    sig = inspect.signature(dot_GraphModel.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -189,114 +189,105 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-dot::Attribute_strategy = st.builds(
-    dot::Attribute,
+dot_Attribute_strategy = st.builds(
+    dot_Attribute,
     weight=
         st.integers()
 )
-dot::Node_strategy = st.builds(
-    dot::Node,
+dot_Node_strategy = st.builds(
+    dot_Node,
     name=
         safe_text
 )
-dot::DirectedEdge_strategy = st.builds(
-    dot::DirectedEdge,
+dot_DirectedEdge_strategy = st.builds(
+    dot_DirectedEdge,
 )
-dot::UnDirectedEdge_strategy = st.builds(
-    dot::UnDirectedEdge,
+dot_UnDirectedEdge_strategy = st.builds(
+    dot_UnDirectedEdge,
 )
 Graph_strategy = st.builds(
     Graph,
 )
-dot::DirectedGraph_strategy = st.builds(
-    dot::DirectedGraph,
+dot_DirectedGraph_strategy = st.builds(
+    dot_DirectedGraph,
 )
-dot::UndirectedGraph_strategy = st.builds(
-    dot::UndirectedGraph,
+dot_UndirectedGraph_strategy = st.builds(
+    dot_UndirectedGraph,
 )
-dot::Graph_strategy = st.builds(
-    dot::Graph,
+dot_Graph_strategy = st.builds(
+    dot_Graph,
     name=
         safe_text
 )
-dot::GraphModel_strategy = st.builds(
-    dot::GraphModel,
+dot_GraphModel_strategy = st.builds(
+    dot_GraphModel,
 )
 
-@given(instance=dot::Attribute_strategy)
+@given(instance=dot_Attribute_strategy)
 @settings(max_examples=50)
-def test_dot::attribute_instantiation(instance):
-    assert isinstance(instance, dot::Attribute)
-
-@given(instance=dot::Attribute_strategy)
-def test_dot::attribute_weight_type(instance):
-    assert isinstance(instance.weight, int)
+def test_dot_attribute_instantiation(instance):
+    assert isinstance(instance, dot_Attribute)
 
 
-@given(instance=dot::Attribute_strategy)
-def test_dot::attribute_weight_setter(instance):
+
+@given(instance=dot_Attribute_strategy)
+def test_dot_attribute_weight_setter(instance):
     original = instance.weight
     instance.weight = original
     assert instance.weight == original
 
-@given(instance=dot::Node_strategy)
+@given(instance=dot_Node_strategy)
 @settings(max_examples=50)
-def test_dot::node_instantiation(instance):
-    assert isinstance(instance, dot::Node)
-
-@given(instance=dot::Node_strategy)
-def test_dot::node_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_dot_node_instantiation(instance):
+    assert isinstance(instance, dot_Node)
 
 
-@given(instance=dot::Node_strategy)
-def test_dot::node_name_setter(instance):
+
+@given(instance=dot_Node_strategy)
+def test_dot_node_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=dot::DirectedEdge_strategy)
+@given(instance=dot_DirectedEdge_strategy)
 @settings(max_examples=50)
-def test_dot::directededge_instantiation(instance):
-    assert isinstance(instance, dot::DirectedEdge)
+def test_dot_directededge_instantiation(instance):
+    assert isinstance(instance, dot_DirectedEdge)
 
-@given(instance=dot::UnDirectedEdge_strategy)
+@given(instance=dot_UnDirectedEdge_strategy)
 @settings(max_examples=50)
-def test_dot::undirectededge_instantiation(instance):
-    assert isinstance(instance, dot::UnDirectedEdge)
+def test_dot_undirectededge_instantiation(instance):
+    assert isinstance(instance, dot_UnDirectedEdge)
 
 @given(instance=Graph_strategy)
 @settings(max_examples=50)
 def test_graph_instantiation(instance):
     assert isinstance(instance, Graph)
 
-@given(instance=dot::DirectedGraph_strategy)
+@given(instance=dot_DirectedGraph_strategy)
 @settings(max_examples=50)
-def test_dot::directedgraph_instantiation(instance):
-    assert isinstance(instance, dot::DirectedGraph)
+def test_dot_directedgraph_instantiation(instance):
+    assert isinstance(instance, dot_DirectedGraph)
 
-@given(instance=dot::UndirectedGraph_strategy)
+@given(instance=dot_UndirectedGraph_strategy)
 @settings(max_examples=50)
-def test_dot::undirectedgraph_instantiation(instance):
-    assert isinstance(instance, dot::UndirectedGraph)
+def test_dot_undirectedgraph_instantiation(instance):
+    assert isinstance(instance, dot_UndirectedGraph)
 
-@given(instance=dot::Graph_strategy)
+@given(instance=dot_Graph_strategy)
 @settings(max_examples=50)
-def test_dot::graph_instantiation(instance):
-    assert isinstance(instance, dot::Graph)
-
-@given(instance=dot::Graph_strategy)
-def test_dot::graph_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_dot_graph_instantiation(instance):
+    assert isinstance(instance, dot_Graph)
 
 
-@given(instance=dot::Graph_strategy)
-def test_dot::graph_name_setter(instance):
+
+@given(instance=dot_Graph_strategy)
+def test_dot_graph_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=dot::GraphModel_strategy)
+@given(instance=dot_GraphModel_strategy)
 @settings(max_examples=50)
-def test_dot::graphmodel_instantiation(instance):
-    assert isinstance(instance, dot::GraphModel)
+def test_dot_graphmodel_instantiation(instance):
+    assert isinstance(instance, dot_GraphModel)

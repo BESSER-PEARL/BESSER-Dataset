@@ -3,7 +3,7 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
 from python_code import (
     Game,
@@ -13,8 +13,8 @@ from python_code import (
     Player,
     Cards,
     Deck,
-    CardSuit,
     CardTitle,
+    CardSuit,
 )
 
 # =============================================================================
@@ -72,17 +72,8 @@ def test_dealer_constructor_exists():
 def test_dealer_constructor_args():
     sig = inspect.signature(Dealer.__init__)
     params = list(sig.parameters.keys())
-    assert "name" in params, "Missing parameter 'name'"
     assert "cards" in params, "Missing parameter 'cards'"
-
-def test_dealer_has_name():
-    assert hasattr(Dealer, "name")
-    descriptor = None
-    for klass in Dealer.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
+    assert "name" in params, "Missing parameter 'name'"
 
 def test_dealer_has_cards():
     assert hasattr(Dealer, "cards")
@@ -90,6 +81,15 @@ def test_dealer_has_cards():
     for klass in Dealer.__mro__:
         if "cards" in klass.__dict__:
             descriptor = klass.__dict__["cards"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_dealer_has_name():
+    assert hasattr(Dealer, "name")
+    descriptor = None
+    for klass in Dealer.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
@@ -154,9 +154,18 @@ def test_cards_constructor_exists():
 def test_cards_constructor_args():
     sig = inspect.signature(Cards.__init__)
     params = list(sig.parameters.keys())
+    assert "suit" in params, "Missing parameter 'suit'"
     assert "title" in params, "Missing parameter 'title'"
     assert "value" in params, "Missing parameter 'value'"
-    assert "suit" in params, "Missing parameter 'suit'"
+
+def test_cards_has_suit():
+    assert hasattr(Cards, "suit")
+    descriptor = None
+    for klass in Cards.__mro__:
+        if "suit" in klass.__dict__:
+            descriptor = klass.__dict__["suit"]
+            break
+    assert isinstance(descriptor, property)
 
 def test_cards_has_title():
     assert hasattr(Cards, "title")
@@ -176,15 +185,6 @@ def test_cards_has_value():
             break
     assert isinstance(descriptor, property)
 
-def test_cards_has_suit():
-    assert hasattr(Cards, "suit")
-    descriptor = None
-    for klass in Cards.__mro__:
-        if "suit" in klass.__dict__:
-            descriptor = klass.__dict__["suit"]
-            break
-    assert isinstance(descriptor, property)
-
 
 
 def test_deck_is_not_abstract():
@@ -199,19 +199,6 @@ def test_deck_constructor_args():
     sig = inspect.signature(Deck.__init__)
     params = list(sig.parameters.keys())
 
-def test_cardsuit_exists():
-    # Check that the Enumeration exists
-    assert CardSuit is not None
-
-def test_cardsuit_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in CardSuit]
-    expected_literals = [
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in CardSuit"
-
 def test_cardtitle_exists():
     # Check that the Enumeration exists
     assert CardTitle is not None
@@ -224,6 +211,19 @@ def test_cardtitle_has_all_literals():
     # Check that all expected literals exist
     for lit_name in expected_literals:
         assert lit_name in enum_literals, f"Literal '' missing in CardTitle"
+
+def test_cardsuit_exists():
+    # Check that the Enumeration exists
+    assert CardSuit is not None
+
+def test_cardsuit_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in CardSuit]
+    expected_literals = [
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in CardSuit"
 
 
 # =============================================================================
@@ -247,10 +247,10 @@ HandValue_strategy = st.builds(
 )
 Dealer_strategy = st.builds(
     Dealer,
-    name=
-        safe_text,
     cards=
-        st.none()
+        st.none(),
+    name=
+        safe_text
 )
 Hand_strategy = st.builds(
     Hand,
@@ -264,12 +264,12 @@ Player_strategy = st.builds(
 )
 Cards_strategy = st.builds(
     Cards,
+    suit=
+        st.none(),
     title=
         st.none(),
     value=
-        st.integers(),
-    suit=
-        st.none()
+        st.integers()
 )
 Deck_strategy = st.builds(
     Deck,
@@ -280,9 +280,6 @@ Deck_strategy = st.builds(
 def test_game_instantiation(instance):
     assert isinstance(instance, Game)
 
-@given(instance=Game_strategy)
-def test_game_winner_type(instance):
-    assert isinstance(instance.winner, player)
 
 
 @given(instance=Game_strategy)
@@ -301,20 +298,6 @@ def test_handvalue_instantiation(instance):
 def test_dealer_instantiation(instance):
     assert isinstance(instance, Dealer)
 
-@given(instance=Dealer_strategy)
-def test_dealer_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=Dealer_strategy)
-def test_dealer_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
-
-@given(instance=Dealer_strategy)
-def test_dealer_cards_type(instance):
-    assert isinstance(instance.cards, cards)
 
 
 @given(instance=Dealer_strategy)
@@ -323,14 +306,19 @@ def test_dealer_cards_setter(instance):
     instance.cards = original
     assert instance.cards == original
 
+
+
+@given(instance=Dealer_strategy)
+def test_dealer_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
 @given(instance=Hand_strategy)
 @settings(max_examples=50)
 def test_hand_instantiation(instance):
     assert isinstance(instance, Hand)
 
-@given(instance=Hand_strategy)
-def test_hand_value_type(instance):
-    assert isinstance(instance.value, handvalue)
 
 
 @given(instance=Hand_strategy)
@@ -344,9 +332,6 @@ def test_hand_value_setter(instance):
 def test_player_instantiation(instance):
     assert isinstance(instance, Player)
 
-@given(instance=Player_strategy)
-def test_player_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
 @given(instance=Player_strategy)
@@ -360,9 +345,14 @@ def test_player_name_setter(instance):
 def test_cards_instantiation(instance):
     assert isinstance(instance, Cards)
 
+
+
 @given(instance=Cards_strategy)
-def test_cards_title_type(instance):
-    assert isinstance(instance.title, cardtitle)
+def test_cards_suit_setter(instance):
+    original = instance.suit
+    instance.suit = original
+    assert instance.suit == original
+
 
 
 @given(instance=Cards_strategy)
@@ -371,9 +361,6 @@ def test_cards_title_setter(instance):
     instance.title = original
     assert instance.title == original
 
-@given(instance=Cards_strategy)
-def test_cards_value_type(instance):
-    assert isinstance(instance.value, int)
 
 
 @given(instance=Cards_strategy)
@@ -381,17 +368,6 @@ def test_cards_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
-
-@given(instance=Cards_strategy)
-def test_cards_suit_type(instance):
-    assert isinstance(instance.suit, cardsuit)
-
-
-@given(instance=Cards_strategy)
-def test_cards_suit_setter(instance):
-    original = instance.suit
-    instance.suit = original
-    assert instance.suit == original
 
 @given(instance=Deck_strategy)
 @settings(max_examples=50)

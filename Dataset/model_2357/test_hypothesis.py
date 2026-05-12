@@ -3,14 +3,14 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    ER::Key,
-    ER::Column,
-    ER::ForeignKey,
-    ER::Table,
-    ER::Schema,
+from python_code import (
+    ER_Key,
+    ER_Column,
+    ER_ForeignKey,
+    ER_Table,
+    ER_Schema,
 )
 
 # =============================================================================
@@ -19,23 +19,23 @@ from classes import (
 
 
 
-def test_er::key_is_not_abstract():
-    assert not inspect.isabstract(ER::Key)
+def test_er_key_is_not_abstract():
+    assert not inspect.isabstract(ER_Key)
 
 
-def test_er::key_constructor_exists():
-    assert callable(ER::Key.__init__)
+def test_er_key_constructor_exists():
+    assert callable(ER_Key.__init__)
 
 
-def test_er::key_constructor_args():
-    sig = inspect.signature(ER::Key.__init__)
+def test_er_key_constructor_args():
+    sig = inspect.signature(ER_Key.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_er::key_has_name():
-    assert hasattr(ER::Key, "name")
+def test_er_key_has_name():
+    assert hasattr(ER_Key, "name")
     descriptor = None
-    for klass in ER::Key.__mro__:
+    for klass in ER_Key.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -43,33 +43,33 @@ def test_er::key_has_name():
 
 
 
-def test_er::column_is_not_abstract():
-    assert not inspect.isabstract(ER::Column)
+def test_er_column_is_not_abstract():
+    assert not inspect.isabstract(ER_Column)
 
 
-def test_er::column_constructor_exists():
-    assert callable(ER::Column.__init__)
+def test_er_column_constructor_exists():
+    assert callable(ER_Column.__init__)
 
 
-def test_er::column_constructor_args():
-    sig = inspect.signature(ER::Column.__init__)
+def test_er_column_constructor_args():
+    sig = inspect.signature(ER_Column.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
     assert "type" in params, "Missing parameter 'type'"
 
-def test_er::column_has_name():
-    assert hasattr(ER::Column, "name")
+def test_er_column_has_name():
+    assert hasattr(ER_Column, "name")
     descriptor = None
-    for klass in ER::Column.__mro__:
+    for klass in ER_Column.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
-def test_er::column_has_type():
-    assert hasattr(ER::Column, "type")
+def test_er_column_has_type():
+    assert hasattr(ER_Column, "type")
     descriptor = None
-    for klass in ER::Column.__mro__:
+    for klass in ER_Column.__mro__:
         if "type" in klass.__dict__:
             descriptor = klass.__dict__["type"]
             break
@@ -77,23 +77,23 @@ def test_er::column_has_type():
 
 
 
-def test_er::foreignkey_is_not_abstract():
-    assert not inspect.isabstract(ER::ForeignKey)
+def test_er_foreignkey_is_not_abstract():
+    assert not inspect.isabstract(ER_ForeignKey)
 
 
-def test_er::foreignkey_constructor_exists():
-    assert callable(ER::ForeignKey.__init__)
+def test_er_foreignkey_constructor_exists():
+    assert callable(ER_ForeignKey.__init__)
 
 
-def test_er::foreignkey_constructor_args():
-    sig = inspect.signature(ER::ForeignKey.__init__)
+def test_er_foreignkey_constructor_args():
+    sig = inspect.signature(ER_ForeignKey.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_er::foreignkey_has_name():
-    assert hasattr(ER::ForeignKey, "name")
+def test_er_foreignkey_has_name():
+    assert hasattr(ER_ForeignKey, "name")
     descriptor = None
-    for klass in ER::ForeignKey.__mro__:
+    for klass in ER_ForeignKey.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -101,23 +101,23 @@ def test_er::foreignkey_has_name():
 
 
 
-def test_er::table_is_not_abstract():
-    assert not inspect.isabstract(ER::Table)
+def test_er_table_is_not_abstract():
+    assert not inspect.isabstract(ER_Table)
 
 
-def test_er::table_constructor_exists():
-    assert callable(ER::Table.__init__)
+def test_er_table_constructor_exists():
+    assert callable(ER_Table.__init__)
 
 
-def test_er::table_constructor_args():
-    sig = inspect.signature(ER::Table.__init__)
+def test_er_table_constructor_args():
+    sig = inspect.signature(ER_Table.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_er::table_has_name():
-    assert hasattr(ER::Table, "name")
+def test_er_table_has_name():
+    assert hasattr(ER_Table, "name")
     descriptor = None
-    for klass in ER::Table.__mro__:
+    for klass in ER_Table.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -125,23 +125,23 @@ def test_er::table_has_name():
 
 
 
-def test_er::schema_is_not_abstract():
-    assert not inspect.isabstract(ER::Schema)
+def test_er_schema_is_not_abstract():
+    assert not inspect.isabstract(ER_Schema)
 
 
-def test_er::schema_constructor_exists():
-    assert callable(ER::Schema.__init__)
+def test_er_schema_constructor_exists():
+    assert callable(ER_Schema.__init__)
 
 
-def test_er::schema_constructor_args():
-    sig = inspect.signature(ER::Schema.__init__)
+def test_er_schema_constructor_args():
+    sig = inspect.signature(ER_Schema.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_er::schema_has_name():
-    assert hasattr(ER::Schema, "name")
+def test_er_schema_has_name():
+    assert hasattr(ER_Schema, "name")
     descriptor = None
-    for klass in ER::Schema.__mro__:
+    for klass in ER_Schema.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -159,121 +159,103 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-ER::Key_strategy = st.builds(
-    ER::Key,
+ER_Key_strategy = st.builds(
+    ER_Key,
     name=
         safe_text
 )
-ER::Column_strategy = st.builds(
-    ER::Column,
+ER_Column_strategy = st.builds(
+    ER_Column,
     name=
         safe_text,
     type=
         safe_text
 )
-ER::ForeignKey_strategy = st.builds(
-    ER::ForeignKey,
+ER_ForeignKey_strategy = st.builds(
+    ER_ForeignKey,
     name=
         safe_text
 )
-ER::Table_strategy = st.builds(
-    ER::Table,
+ER_Table_strategy = st.builds(
+    ER_Table,
     name=
         safe_text
 )
-ER::Schema_strategy = st.builds(
-    ER::Schema,
+ER_Schema_strategy = st.builds(
+    ER_Schema,
     name=
         safe_text
 )
 
-@given(instance=ER::Key_strategy)
+@given(instance=ER_Key_strategy)
 @settings(max_examples=50)
-def test_er::key_instantiation(instance):
-    assert isinstance(instance, ER::Key)
-
-@given(instance=ER::Key_strategy)
-def test_er::key_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_er_key_instantiation(instance):
+    assert isinstance(instance, ER_Key)
 
 
-@given(instance=ER::Key_strategy)
-def test_er::key_name_setter(instance):
+
+@given(instance=ER_Key_strategy)
+def test_er_key_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=ER::Column_strategy)
+@given(instance=ER_Column_strategy)
 @settings(max_examples=50)
-def test_er::column_instantiation(instance):
-    assert isinstance(instance, ER::Column)
-
-@given(instance=ER::Column_strategy)
-def test_er::column_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_er_column_instantiation(instance):
+    assert isinstance(instance, ER_Column)
 
 
-@given(instance=ER::Column_strategy)
-def test_er::column_name_setter(instance):
+
+@given(instance=ER_Column_strategy)
+def test_er_column_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=ER::Column_strategy)
-def test_er::column_type_type(instance):
-    assert isinstance(instance.type, str)
 
 
-@given(instance=ER::Column_strategy)
-def test_er::column_type_setter(instance):
+@given(instance=ER_Column_strategy)
+def test_er_column_type_setter(instance):
     original = instance.type
     instance.type = original
     assert instance.type == original
 
-@given(instance=ER::ForeignKey_strategy)
+@given(instance=ER_ForeignKey_strategy)
 @settings(max_examples=50)
-def test_er::foreignkey_instantiation(instance):
-    assert isinstance(instance, ER::ForeignKey)
-
-@given(instance=ER::ForeignKey_strategy)
-def test_er::foreignkey_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_er_foreignkey_instantiation(instance):
+    assert isinstance(instance, ER_ForeignKey)
 
 
-@given(instance=ER::ForeignKey_strategy)
-def test_er::foreignkey_name_setter(instance):
+
+@given(instance=ER_ForeignKey_strategy)
+def test_er_foreignkey_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=ER::Table_strategy)
+@given(instance=ER_Table_strategy)
 @settings(max_examples=50)
-def test_er::table_instantiation(instance):
-    assert isinstance(instance, ER::Table)
-
-@given(instance=ER::Table_strategy)
-def test_er::table_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_er_table_instantiation(instance):
+    assert isinstance(instance, ER_Table)
 
 
-@given(instance=ER::Table_strategy)
-def test_er::table_name_setter(instance):
+
+@given(instance=ER_Table_strategy)
+def test_er_table_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=ER::Schema_strategy)
+@given(instance=ER_Schema_strategy)
 @settings(max_examples=50)
-def test_er::schema_instantiation(instance):
-    assert isinstance(instance, ER::Schema)
-
-@given(instance=ER::Schema_strategy)
-def test_er::schema_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_er_schema_instantiation(instance):
+    assert isinstance(instance, ER_Schema)
 
 
-@given(instance=ER::Schema_strategy)
-def test_er::schema_name_setter(instance):
+
+@given(instance=ER_Schema_strategy)
+def test_er_schema_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original

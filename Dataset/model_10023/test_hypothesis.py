@@ -3,30 +3,30 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    EA::Model::Vehicle,
+from python_code import (
+    EA_Model_Vehicle,
     Vehicle,
-    EA::Model::TravelingVehicle,
-    EA::Model::Travel,
+    EA_Model_TravelingVehicle,
+    EA_Model_Travel,
     Roadway,
-    EA::Model::Roadway,
+    EA_Model_Roadway,
     RoadTrafficAccident,
-    EA::Model::RearEndCollision,
-    EA::Model::Person,
+    EA_Model_RearEndCollision,
+    EA_Model_Person,
     Traveler,
-    EA::Model::Passenger,
-    EA::Model::Victim,
-    EA::Model::Driver,
+    EA_Model_Victim,
+    EA_Model_Passenger,
+    EA_Model_Driver,
     Person,
-    EA::Model::Traveler,
-    EA::Model::LivingPerson,
-    EA::Model::DeceasedPerson,
-    EA::Model::RoadTrafficAccident,
+    EA_Model_Traveler,
+    EA_Model_LivingPerson,
+    EA_Model_DeceasedPerson,
+    EA_Model_RoadTrafficAccident,
     TravelingVehicle,
-    EA::Model::CrashedVehicle,
-    EA::Model::RoadwayWithAccident,
+    EA_Model_CrashedVehicle,
+    EA_Model_RoadwayWithAccident,
 )
 
 # =============================================================================
@@ -35,16 +35,16 @@ from classes import (
 
 
 
-def test_ea::model::vehicle_is_not_abstract():
-    assert not inspect.isabstract(EA::Model::Vehicle)
+def test_ea_model_vehicle_is_not_abstract():
+    assert not inspect.isabstract(EA_Model_Vehicle)
 
 
-def test_ea::model::vehicle_constructor_exists():
-    assert callable(EA::Model::Vehicle.__init__)
+def test_ea_model_vehicle_constructor_exists():
+    assert callable(EA_Model_Vehicle.__init__)
 
 
-def test_ea::model::vehicle_constructor_args():
-    sig = inspect.signature(EA::Model::Vehicle.__init__)
+def test_ea_model_vehicle_constructor_args():
+    sig = inspect.signature(EA_Model_Vehicle.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -63,30 +63,30 @@ def test_vehicle_constructor_args():
 
 
 
-def test_ea::model::travelingvehicle_is_not_abstract():
-    assert not inspect.isabstract(EA::Model::TravelingVehicle)
+def test_ea_model_travelingvehicle_is_not_abstract():
+    assert not inspect.isabstract(EA_Model_TravelingVehicle)
 
 
-def test_ea::model::travelingvehicle_constructor_exists():
-    assert callable(EA::Model::TravelingVehicle.__init__)
+def test_ea_model_travelingvehicle_constructor_exists():
+    assert callable(EA_Model_TravelingVehicle.__init__)
 
 
-def test_ea::model::travelingvehicle_constructor_args():
-    sig = inspect.signature(EA::Model::TravelingVehicle.__init__)
+def test_ea_model_travelingvehicle_constructor_args():
+    sig = inspect.signature(EA_Model_TravelingVehicle.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ea::model::travel_is_not_abstract():
-    assert not inspect.isabstract(EA::Model::Travel)
+def test_ea_model_travel_is_not_abstract():
+    assert not inspect.isabstract(EA_Model_Travel)
 
 
-def test_ea::model::travel_constructor_exists():
-    assert callable(EA::Model::Travel.__init__)
+def test_ea_model_travel_constructor_exists():
+    assert callable(EA_Model_Travel.__init__)
 
 
-def test_ea::model::travel_constructor_args():
-    sig = inspect.signature(EA::Model::Travel.__init__)
+def test_ea_model_travel_constructor_args():
+    sig = inspect.signature(EA_Model_Travel.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -105,16 +105,16 @@ def test_roadway_constructor_args():
 
 
 
-def test_ea::model::roadway_is_not_abstract():
-    assert not inspect.isabstract(EA::Model::Roadway)
+def test_ea_model_roadway_is_not_abstract():
+    assert not inspect.isabstract(EA_Model_Roadway)
 
 
-def test_ea::model::roadway_constructor_exists():
-    assert callable(EA::Model::Roadway.__init__)
+def test_ea_model_roadway_constructor_exists():
+    assert callable(EA_Model_Roadway.__init__)
 
 
-def test_ea::model::roadway_constructor_args():
-    sig = inspect.signature(EA::Model::Roadway.__init__)
+def test_ea_model_roadway_constructor_args():
+    sig = inspect.signature(EA_Model_Roadway.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -133,30 +133,30 @@ def test_roadtrafficaccident_constructor_args():
 
 
 
-def test_ea::model::rearendcollision_is_not_abstract():
-    assert not inspect.isabstract(EA::Model::RearEndCollision)
+def test_ea_model_rearendcollision_is_not_abstract():
+    assert not inspect.isabstract(EA_Model_RearEndCollision)
 
 
-def test_ea::model::rearendcollision_constructor_exists():
-    assert callable(EA::Model::RearEndCollision.__init__)
+def test_ea_model_rearendcollision_constructor_exists():
+    assert callable(EA_Model_RearEndCollision.__init__)
 
 
-def test_ea::model::rearendcollision_constructor_args():
-    sig = inspect.signature(EA::Model::RearEndCollision.__init__)
+def test_ea_model_rearendcollision_constructor_args():
+    sig = inspect.signature(EA_Model_RearEndCollision.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ea::model::person_is_not_abstract():
-    assert not inspect.isabstract(EA::Model::Person)
+def test_ea_model_person_is_not_abstract():
+    assert not inspect.isabstract(EA_Model_Person)
 
 
-def test_ea::model::person_constructor_exists():
-    assert callable(EA::Model::Person.__init__)
+def test_ea_model_person_constructor_exists():
+    assert callable(EA_Model_Person.__init__)
 
 
-def test_ea::model::person_constructor_args():
-    sig = inspect.signature(EA::Model::Person.__init__)
+def test_ea_model_person_constructor_args():
+    sig = inspect.signature(EA_Model_Person.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -175,44 +175,44 @@ def test_traveler_constructor_args():
 
 
 
-def test_ea::model::passenger_is_not_abstract():
-    assert not inspect.isabstract(EA::Model::Passenger)
+def test_ea_model_victim_is_not_abstract():
+    assert not inspect.isabstract(EA_Model_Victim)
 
 
-def test_ea::model::passenger_constructor_exists():
-    assert callable(EA::Model::Passenger.__init__)
+def test_ea_model_victim_constructor_exists():
+    assert callable(EA_Model_Victim.__init__)
 
 
-def test_ea::model::passenger_constructor_args():
-    sig = inspect.signature(EA::Model::Passenger.__init__)
+def test_ea_model_victim_constructor_args():
+    sig = inspect.signature(EA_Model_Victim.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ea::model::victim_is_not_abstract():
-    assert not inspect.isabstract(EA::Model::Victim)
+def test_ea_model_passenger_is_not_abstract():
+    assert not inspect.isabstract(EA_Model_Passenger)
 
 
-def test_ea::model::victim_constructor_exists():
-    assert callable(EA::Model::Victim.__init__)
+def test_ea_model_passenger_constructor_exists():
+    assert callable(EA_Model_Passenger.__init__)
 
 
-def test_ea::model::victim_constructor_args():
-    sig = inspect.signature(EA::Model::Victim.__init__)
+def test_ea_model_passenger_constructor_args():
+    sig = inspect.signature(EA_Model_Passenger.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ea::model::driver_is_not_abstract():
-    assert not inspect.isabstract(EA::Model::Driver)
+def test_ea_model_driver_is_not_abstract():
+    assert not inspect.isabstract(EA_Model_Driver)
 
 
-def test_ea::model::driver_constructor_exists():
-    assert callable(EA::Model::Driver.__init__)
+def test_ea_model_driver_constructor_exists():
+    assert callable(EA_Model_Driver.__init__)
 
 
-def test_ea::model::driver_constructor_args():
-    sig = inspect.signature(EA::Model::Driver.__init__)
+def test_ea_model_driver_constructor_args():
+    sig = inspect.signature(EA_Model_Driver.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -231,65 +231,65 @@ def test_person_constructor_args():
 
 
 
-def test_ea::model::traveler_is_not_abstract():
-    assert not inspect.isabstract(EA::Model::Traveler)
+def test_ea_model_traveler_is_not_abstract():
+    assert not inspect.isabstract(EA_Model_Traveler)
 
 
-def test_ea::model::traveler_constructor_exists():
-    assert callable(EA::Model::Traveler.__init__)
+def test_ea_model_traveler_constructor_exists():
+    assert callable(EA_Model_Traveler.__init__)
 
 
-def test_ea::model::traveler_constructor_args():
-    sig = inspect.signature(EA::Model::Traveler.__init__)
+def test_ea_model_traveler_constructor_args():
+    sig = inspect.signature(EA_Model_Traveler.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ea::model::livingperson_is_not_abstract():
-    assert not inspect.isabstract(EA::Model::LivingPerson)
+def test_ea_model_livingperson_is_not_abstract():
+    assert not inspect.isabstract(EA_Model_LivingPerson)
 
 
-def test_ea::model::livingperson_constructor_exists():
-    assert callable(EA::Model::LivingPerson.__init__)
+def test_ea_model_livingperson_constructor_exists():
+    assert callable(EA_Model_LivingPerson.__init__)
 
 
-def test_ea::model::livingperson_constructor_args():
-    sig = inspect.signature(EA::Model::LivingPerson.__init__)
+def test_ea_model_livingperson_constructor_args():
+    sig = inspect.signature(EA_Model_LivingPerson.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ea::model::deceasedperson_is_not_abstract():
-    assert not inspect.isabstract(EA::Model::DeceasedPerson)
+def test_ea_model_deceasedperson_is_not_abstract():
+    assert not inspect.isabstract(EA_Model_DeceasedPerson)
 
 
-def test_ea::model::deceasedperson_constructor_exists():
-    assert callable(EA::Model::DeceasedPerson.__init__)
+def test_ea_model_deceasedperson_constructor_exists():
+    assert callable(EA_Model_DeceasedPerson.__init__)
 
 
-def test_ea::model::deceasedperson_constructor_args():
-    sig = inspect.signature(EA::Model::DeceasedPerson.__init__)
+def test_ea_model_deceasedperson_constructor_args():
+    sig = inspect.signature(EA_Model_DeceasedPerson.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ea::model::roadtrafficaccident_is_not_abstract():
-    assert not inspect.isabstract(EA::Model::RoadTrafficAccident)
+def test_ea_model_roadtrafficaccident_is_not_abstract():
+    assert not inspect.isabstract(EA_Model_RoadTrafficAccident)
 
 
-def test_ea::model::roadtrafficaccident_constructor_exists():
-    assert callable(EA::Model::RoadTrafficAccident.__init__)
+def test_ea_model_roadtrafficaccident_constructor_exists():
+    assert callable(EA_Model_RoadTrafficAccident.__init__)
 
 
-def test_ea::model::roadtrafficaccident_constructor_args():
-    sig = inspect.signature(EA::Model::RoadTrafficAccident.__init__)
+def test_ea_model_roadtrafficaccident_constructor_args():
+    sig = inspect.signature(EA_Model_RoadTrafficAccident.__init__)
     params = list(sig.parameters.keys())
     assert "fatalvictims" in params, "Missing parameter 'fatalvictims'"
 
-def test_ea::model::roadtrafficaccident_has_fatalvictims():
-    assert hasattr(EA::Model::RoadTrafficAccident, "fatalvictims")
+def test_ea_model_roadtrafficaccident_has_fatalvictims():
+    assert hasattr(EA_Model_RoadTrafficAccident, "fatalvictims")
     descriptor = None
-    for klass in EA::Model::RoadTrafficAccident.__mro__:
+    for klass in EA_Model_RoadTrafficAccident.__mro__:
         if "fatalvictims" in klass.__dict__:
             descriptor = klass.__dict__["fatalvictims"]
             break
@@ -311,30 +311,30 @@ def test_travelingvehicle_constructor_args():
 
 
 
-def test_ea::model::crashedvehicle_is_not_abstract():
-    assert not inspect.isabstract(EA::Model::CrashedVehicle)
+def test_ea_model_crashedvehicle_is_not_abstract():
+    assert not inspect.isabstract(EA_Model_CrashedVehicle)
 
 
-def test_ea::model::crashedvehicle_constructor_exists():
-    assert callable(EA::Model::CrashedVehicle.__init__)
+def test_ea_model_crashedvehicle_constructor_exists():
+    assert callable(EA_Model_CrashedVehicle.__init__)
 
 
-def test_ea::model::crashedvehicle_constructor_args():
-    sig = inspect.signature(EA::Model::CrashedVehicle.__init__)
+def test_ea_model_crashedvehicle_constructor_args():
+    sig = inspect.signature(EA_Model_CrashedVehicle.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ea::model::roadwaywithaccident_is_not_abstract():
-    assert not inspect.isabstract(EA::Model::RoadwayWithAccident)
+def test_ea_model_roadwaywithaccident_is_not_abstract():
+    assert not inspect.isabstract(EA_Model_RoadwayWithAccident)
 
 
-def test_ea::model::roadwaywithaccident_constructor_exists():
-    assert callable(EA::Model::RoadwayWithAccident.__init__)
+def test_ea_model_roadwaywithaccident_constructor_exists():
+    assert callable(EA_Model_RoadwayWithAccident.__init__)
 
 
-def test_ea::model::roadwaywithaccident_constructor_args():
-    sig = inspect.signature(EA::Model::RoadwayWithAccident.__init__)
+def test_ea_model_roadwaywithaccident_constructor_args():
+    sig = inspect.signature(EA_Model_RoadwayWithAccident.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -349,169 +349,166 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-EA::Model::Vehicle_strategy = st.builds(
-    EA::Model::Vehicle,
+EA_Model_Vehicle_strategy = st.builds(
+    EA_Model_Vehicle,
 )
 Vehicle_strategy = st.builds(
     Vehicle,
 )
-EA::Model::TravelingVehicle_strategy = st.builds(
-    EA::Model::TravelingVehicle,
+EA_Model_TravelingVehicle_strategy = st.builds(
+    EA_Model_TravelingVehicle,
 )
-EA::Model::Travel_strategy = st.builds(
-    EA::Model::Travel,
+EA_Model_Travel_strategy = st.builds(
+    EA_Model_Travel,
 )
 Roadway_strategy = st.builds(
     Roadway,
 )
-EA::Model::Roadway_strategy = st.builds(
-    EA::Model::Roadway,
+EA_Model_Roadway_strategy = st.builds(
+    EA_Model_Roadway,
 )
 RoadTrafficAccident_strategy = st.builds(
     RoadTrafficAccident,
 )
-EA::Model::RearEndCollision_strategy = st.builds(
-    EA::Model::RearEndCollision,
+EA_Model_RearEndCollision_strategy = st.builds(
+    EA_Model_RearEndCollision,
 )
-EA::Model::Person_strategy = st.builds(
-    EA::Model::Person,
+EA_Model_Person_strategy = st.builds(
+    EA_Model_Person,
 )
 Traveler_strategy = st.builds(
     Traveler,
 )
-EA::Model::Passenger_strategy = st.builds(
-    EA::Model::Passenger,
+EA_Model_Victim_strategy = st.builds(
+    EA_Model_Victim,
 )
-EA::Model::Victim_strategy = st.builds(
-    EA::Model::Victim,
+EA_Model_Passenger_strategy = st.builds(
+    EA_Model_Passenger,
 )
-EA::Model::Driver_strategy = st.builds(
-    EA::Model::Driver,
+EA_Model_Driver_strategy = st.builds(
+    EA_Model_Driver,
 )
 Person_strategy = st.builds(
     Person,
 )
-EA::Model::Traveler_strategy = st.builds(
-    EA::Model::Traveler,
+EA_Model_Traveler_strategy = st.builds(
+    EA_Model_Traveler,
 )
-EA::Model::LivingPerson_strategy = st.builds(
-    EA::Model::LivingPerson,
+EA_Model_LivingPerson_strategy = st.builds(
+    EA_Model_LivingPerson,
 )
-EA::Model::DeceasedPerson_strategy = st.builds(
-    EA::Model::DeceasedPerson,
+EA_Model_DeceasedPerson_strategy = st.builds(
+    EA_Model_DeceasedPerson,
 )
-EA::Model::RoadTrafficAccident_strategy = st.builds(
-    EA::Model::RoadTrafficAccident,
+EA_Model_RoadTrafficAccident_strategy = st.builds(
+    EA_Model_RoadTrafficAccident,
     fatalvictims=
         st.integers()
 )
 TravelingVehicle_strategy = st.builds(
     TravelingVehicle,
 )
-EA::Model::CrashedVehicle_strategy = st.builds(
-    EA::Model::CrashedVehicle,
+EA_Model_CrashedVehicle_strategy = st.builds(
+    EA_Model_CrashedVehicle,
 )
-EA::Model::RoadwayWithAccident_strategy = st.builds(
-    EA::Model::RoadwayWithAccident,
+EA_Model_RoadwayWithAccident_strategy = st.builds(
+    EA_Model_RoadwayWithAccident,
 )
 
-@given(instance=EA::Model::Vehicle_strategy)
+@given(instance=EA_Model_Vehicle_strategy)
 @settings(max_examples=50)
-def test_ea::model::vehicle_instantiation(instance):
-    assert isinstance(instance, EA::Model::Vehicle)
+def test_ea_model_vehicle_instantiation(instance):
+    assert isinstance(instance, EA_Model_Vehicle)
 
 @given(instance=Vehicle_strategy)
 @settings(max_examples=50)
 def test_vehicle_instantiation(instance):
     assert isinstance(instance, Vehicle)
 
-@given(instance=EA::Model::TravelingVehicle_strategy)
+@given(instance=EA_Model_TravelingVehicle_strategy)
 @settings(max_examples=50)
-def test_ea::model::travelingvehicle_instantiation(instance):
-    assert isinstance(instance, EA::Model::TravelingVehicle)
+def test_ea_model_travelingvehicle_instantiation(instance):
+    assert isinstance(instance, EA_Model_TravelingVehicle)
 
-@given(instance=EA::Model::Travel_strategy)
+@given(instance=EA_Model_Travel_strategy)
 @settings(max_examples=50)
-def test_ea::model::travel_instantiation(instance):
-    assert isinstance(instance, EA::Model::Travel)
+def test_ea_model_travel_instantiation(instance):
+    assert isinstance(instance, EA_Model_Travel)
 
 @given(instance=Roadway_strategy)
 @settings(max_examples=50)
 def test_roadway_instantiation(instance):
     assert isinstance(instance, Roadway)
 
-@given(instance=EA::Model::Roadway_strategy)
+@given(instance=EA_Model_Roadway_strategy)
 @settings(max_examples=50)
-def test_ea::model::roadway_instantiation(instance):
-    assert isinstance(instance, EA::Model::Roadway)
+def test_ea_model_roadway_instantiation(instance):
+    assert isinstance(instance, EA_Model_Roadway)
 
 @given(instance=RoadTrafficAccident_strategy)
 @settings(max_examples=50)
 def test_roadtrafficaccident_instantiation(instance):
     assert isinstance(instance, RoadTrafficAccident)
 
-@given(instance=EA::Model::RearEndCollision_strategy)
+@given(instance=EA_Model_RearEndCollision_strategy)
 @settings(max_examples=50)
-def test_ea::model::rearendcollision_instantiation(instance):
-    assert isinstance(instance, EA::Model::RearEndCollision)
+def test_ea_model_rearendcollision_instantiation(instance):
+    assert isinstance(instance, EA_Model_RearEndCollision)
 
-@given(instance=EA::Model::Person_strategy)
+@given(instance=EA_Model_Person_strategy)
 @settings(max_examples=50)
-def test_ea::model::person_instantiation(instance):
-    assert isinstance(instance, EA::Model::Person)
+def test_ea_model_person_instantiation(instance):
+    assert isinstance(instance, EA_Model_Person)
 
 @given(instance=Traveler_strategy)
 @settings(max_examples=50)
 def test_traveler_instantiation(instance):
     assert isinstance(instance, Traveler)
 
-@given(instance=EA::Model::Passenger_strategy)
+@given(instance=EA_Model_Victim_strategy)
 @settings(max_examples=50)
-def test_ea::model::passenger_instantiation(instance):
-    assert isinstance(instance, EA::Model::Passenger)
+def test_ea_model_victim_instantiation(instance):
+    assert isinstance(instance, EA_Model_Victim)
 
-@given(instance=EA::Model::Victim_strategy)
+@given(instance=EA_Model_Passenger_strategy)
 @settings(max_examples=50)
-def test_ea::model::victim_instantiation(instance):
-    assert isinstance(instance, EA::Model::Victim)
+def test_ea_model_passenger_instantiation(instance):
+    assert isinstance(instance, EA_Model_Passenger)
 
-@given(instance=EA::Model::Driver_strategy)
+@given(instance=EA_Model_Driver_strategy)
 @settings(max_examples=50)
-def test_ea::model::driver_instantiation(instance):
-    assert isinstance(instance, EA::Model::Driver)
+def test_ea_model_driver_instantiation(instance):
+    assert isinstance(instance, EA_Model_Driver)
 
 @given(instance=Person_strategy)
 @settings(max_examples=50)
 def test_person_instantiation(instance):
     assert isinstance(instance, Person)
 
-@given(instance=EA::Model::Traveler_strategy)
+@given(instance=EA_Model_Traveler_strategy)
 @settings(max_examples=50)
-def test_ea::model::traveler_instantiation(instance):
-    assert isinstance(instance, EA::Model::Traveler)
+def test_ea_model_traveler_instantiation(instance):
+    assert isinstance(instance, EA_Model_Traveler)
 
-@given(instance=EA::Model::LivingPerson_strategy)
+@given(instance=EA_Model_LivingPerson_strategy)
 @settings(max_examples=50)
-def test_ea::model::livingperson_instantiation(instance):
-    assert isinstance(instance, EA::Model::LivingPerson)
+def test_ea_model_livingperson_instantiation(instance):
+    assert isinstance(instance, EA_Model_LivingPerson)
 
-@given(instance=EA::Model::DeceasedPerson_strategy)
+@given(instance=EA_Model_DeceasedPerson_strategy)
 @settings(max_examples=50)
-def test_ea::model::deceasedperson_instantiation(instance):
-    assert isinstance(instance, EA::Model::DeceasedPerson)
+def test_ea_model_deceasedperson_instantiation(instance):
+    assert isinstance(instance, EA_Model_DeceasedPerson)
 
-@given(instance=EA::Model::RoadTrafficAccident_strategy)
+@given(instance=EA_Model_RoadTrafficAccident_strategy)
 @settings(max_examples=50)
-def test_ea::model::roadtrafficaccident_instantiation(instance):
-    assert isinstance(instance, EA::Model::RoadTrafficAccident)
-
-@given(instance=EA::Model::RoadTrafficAccident_strategy)
-def test_ea::model::roadtrafficaccident_fatalvictims_type(instance):
-    assert isinstance(instance.fatalvictims, int)
+def test_ea_model_roadtrafficaccident_instantiation(instance):
+    assert isinstance(instance, EA_Model_RoadTrafficAccident)
 
 
-@given(instance=EA::Model::RoadTrafficAccident_strategy)
-def test_ea::model::roadtrafficaccident_fatalvictims_setter(instance):
+
+@given(instance=EA_Model_RoadTrafficAccident_strategy)
+def test_ea_model_roadtrafficaccident_fatalvictims_setter(instance):
     original = instance.fatalvictims
     instance.fatalvictims = original
     assert instance.fatalvictims == original
@@ -521,12 +518,12 @@ def test_ea::model::roadtrafficaccident_fatalvictims_setter(instance):
 def test_travelingvehicle_instantiation(instance):
     assert isinstance(instance, TravelingVehicle)
 
-@given(instance=EA::Model::CrashedVehicle_strategy)
+@given(instance=EA_Model_CrashedVehicle_strategy)
 @settings(max_examples=50)
-def test_ea::model::crashedvehicle_instantiation(instance):
-    assert isinstance(instance, EA::Model::CrashedVehicle)
+def test_ea_model_crashedvehicle_instantiation(instance):
+    assert isinstance(instance, EA_Model_CrashedVehicle)
 
-@given(instance=EA::Model::RoadwayWithAccident_strategy)
+@given(instance=EA_Model_RoadwayWithAccident_strategy)
 @settings(max_examples=50)
-def test_ea::model::roadwaywithaccident_instantiation(instance):
-    assert isinstance(instance, EA::Model::RoadwayWithAccident)
+def test_ea_model_roadwaywithaccident_instantiation(instance):
+    assert isinstance(instance, EA_Model_RoadwayWithAccident)

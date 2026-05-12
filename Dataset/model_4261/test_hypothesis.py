@@ -3,14 +3,14 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    organizationchart::Location,
-    organizationchart::OrganizationalStructure,
-    organizationchart::Employee,
-    organizationchart::Organization,
-    organizationchart::Function,
+from python_code import (
+    organizationchart_Location,
+    organizationchart_OrganizationalStructure,
+    organizationchart_Employee,
+    organizationchart_Organization,
+    organizationchart_Function,
     StructureType,
 )
 
@@ -20,23 +20,23 @@ from classes import (
 
 
 
-def test_organizationchart::location_is_not_abstract():
-    assert not inspect.isabstract(organizationchart::Location)
+def test_organizationchart_location_is_not_abstract():
+    assert not inspect.isabstract(organizationchart_Location)
 
 
-def test_organizationchart::location_constructor_exists():
-    assert callable(organizationchart::Location.__init__)
+def test_organizationchart_location_constructor_exists():
+    assert callable(organizationchart_Location.__init__)
 
 
-def test_organizationchart::location_constructor_args():
-    sig = inspect.signature(organizationchart::Location.__init__)
+def test_organizationchart_location_constructor_args():
+    sig = inspect.signature(organizationchart_Location.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_organizationchart::location_has_name():
-    assert hasattr(organizationchart::Location, "name")
+def test_organizationchart_location_has_name():
+    assert hasattr(organizationchart_Location, "name")
     descriptor = None
-    for klass in organizationchart::Location.__mro__:
+    for klass in organizationchart_Location.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -44,33 +44,33 @@ def test_organizationchart::location_has_name():
 
 
 
-def test_organizationchart::organizationalstructure_is_not_abstract():
-    assert not inspect.isabstract(organizationchart::OrganizationalStructure)
+def test_organizationchart_organizationalstructure_is_not_abstract():
+    assert not inspect.isabstract(organizationchart_OrganizationalStructure)
 
 
-def test_organizationchart::organizationalstructure_constructor_exists():
-    assert callable(organizationchart::OrganizationalStructure.__init__)
+def test_organizationchart_organizationalstructure_constructor_exists():
+    assert callable(organizationchart_OrganizationalStructure.__init__)
 
 
-def test_organizationchart::organizationalstructure_constructor_args():
-    sig = inspect.signature(organizationchart::OrganizationalStructure.__init__)
+def test_organizationchart_organizationalstructure_constructor_args():
+    sig = inspect.signature(organizationchart_OrganizationalStructure.__init__)
     params = list(sig.parameters.keys())
     assert "type" in params, "Missing parameter 'type'"
     assert "name" in params, "Missing parameter 'name'"
 
-def test_organizationchart::organizationalstructure_has_type():
-    assert hasattr(organizationchart::OrganizationalStructure, "type")
+def test_organizationchart_organizationalstructure_has_type():
+    assert hasattr(organizationchart_OrganizationalStructure, "type")
     descriptor = None
-    for klass in organizationchart::OrganizationalStructure.__mro__:
+    for klass in organizationchart_OrganizationalStructure.__mro__:
         if "type" in klass.__dict__:
             descriptor = klass.__dict__["type"]
             break
     assert isinstance(descriptor, property)
 
-def test_organizationchart::organizationalstructure_has_name():
-    assert hasattr(organizationchart::OrganizationalStructure, "name")
+def test_organizationchart_organizationalstructure_has_name():
+    assert hasattr(organizationchart_OrganizationalStructure, "name")
     descriptor = None
-    for klass in organizationchart::OrganizationalStructure.__mro__:
+    for klass in organizationchart_OrganizationalStructure.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -78,77 +78,77 @@ def test_organizationchart::organizationalstructure_has_name():
 
 
 
-def test_organizationchart::employee_is_not_abstract():
-    assert not inspect.isabstract(organizationchart::Employee)
+def test_organizationchart_employee_is_not_abstract():
+    assert not inspect.isabstract(organizationchart_Employee)
 
 
-def test_organizationchart::employee_constructor_exists():
-    assert callable(organizationchart::Employee.__init__)
+def test_organizationchart_employee_constructor_exists():
+    assert callable(organizationchart_Employee.__init__)
 
 
-def test_organizationchart::employee_constructor_args():
-    sig = inspect.signature(organizationchart::Employee.__init__)
+def test_organizationchart_employee_constructor_args():
+    sig = inspect.signature(organizationchart_Employee.__init__)
     params = list(sig.parameters.keys())
     assert "trigraph" in params, "Missing parameter 'trigraph'"
-    assert "firstname" in params, "Missing parameter 'firstname'"
     assert "lastname" in params, "Missing parameter 'lastname'"
     assert "title" in params, "Missing parameter 'title'"
+    assert "firstname" in params, "Missing parameter 'firstname'"
 
-def test_organizationchart::employee_has_trigraph():
-    assert hasattr(organizationchart::Employee, "trigraph")
+def test_organizationchart_employee_has_trigraph():
+    assert hasattr(organizationchart_Employee, "trigraph")
     descriptor = None
-    for klass in organizationchart::Employee.__mro__:
+    for klass in organizationchart_Employee.__mro__:
         if "trigraph" in klass.__dict__:
             descriptor = klass.__dict__["trigraph"]
             break
     assert isinstance(descriptor, property)
 
-def test_organizationchart::employee_has_firstname():
-    assert hasattr(organizationchart::Employee, "firstname")
+def test_organizationchart_employee_has_lastname():
+    assert hasattr(organizationchart_Employee, "lastname")
     descriptor = None
-    for klass in organizationchart::Employee.__mro__:
-        if "firstname" in klass.__dict__:
-            descriptor = klass.__dict__["firstname"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_organizationchart::employee_has_lastname():
-    assert hasattr(organizationchart::Employee, "lastname")
-    descriptor = None
-    for klass in organizationchart::Employee.__mro__:
+    for klass in organizationchart_Employee.__mro__:
         if "lastname" in klass.__dict__:
             descriptor = klass.__dict__["lastname"]
             break
     assert isinstance(descriptor, property)
 
-def test_organizationchart::employee_has_title():
-    assert hasattr(organizationchart::Employee, "title")
+def test_organizationchart_employee_has_title():
+    assert hasattr(organizationchart_Employee, "title")
     descriptor = None
-    for klass in organizationchart::Employee.__mro__:
+    for klass in organizationchart_Employee.__mro__:
         if "title" in klass.__dict__:
             descriptor = klass.__dict__["title"]
             break
     assert isinstance(descriptor, property)
 
+def test_organizationchart_employee_has_firstname():
+    assert hasattr(organizationchart_Employee, "firstname")
+    descriptor = None
+    for klass in organizationchart_Employee.__mro__:
+        if "firstname" in klass.__dict__:
+            descriptor = klass.__dict__["firstname"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_organizationchart::organization_is_not_abstract():
-    assert not inspect.isabstract(organizationchart::Organization)
+
+def test_organizationchart_organization_is_not_abstract():
+    assert not inspect.isabstract(organizationchart_Organization)
 
 
-def test_organizationchart::organization_constructor_exists():
-    assert callable(organizationchart::Organization.__init__)
+def test_organizationchart_organization_constructor_exists():
+    assert callable(organizationchart_Organization.__init__)
 
 
-def test_organizationchart::organization_constructor_args():
-    sig = inspect.signature(organizationchart::Organization.__init__)
+def test_organizationchart_organization_constructor_args():
+    sig = inspect.signature(organizationchart_Organization.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_organizationchart::organization_has_name():
-    assert hasattr(organizationchart::Organization, "name")
+def test_organizationchart_organization_has_name():
+    assert hasattr(organizationchart_Organization, "name")
     descriptor = None
-    for klass in organizationchart::Organization.__mro__:
+    for klass in organizationchart_Organization.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -156,23 +156,23 @@ def test_organizationchart::organization_has_name():
 
 
 
-def test_organizationchart::function_is_not_abstract():
-    assert not inspect.isabstract(organizationchart::Function)
+def test_organizationchart_function_is_not_abstract():
+    assert not inspect.isabstract(organizationchart_Function)
 
 
-def test_organizationchart::function_constructor_exists():
-    assert callable(organizationchart::Function.__init__)
+def test_organizationchart_function_constructor_exists():
+    assert callable(organizationchart_Function.__init__)
 
 
-def test_organizationchart::function_constructor_args():
-    sig = inspect.signature(organizationchart::Function.__init__)
+def test_organizationchart_function_constructor_args():
+    sig = inspect.signature(organizationchart_Function.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_organizationchart::function_has_name():
-    assert hasattr(organizationchart::Function, "name")
+def test_organizationchart_function_has_name():
+    assert hasattr(organizationchart_Function, "name")
     descriptor = None
-    for klass in organizationchart::Function.__mro__:
+    for klass in organizationchart_Function.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -186,11 +186,11 @@ def test_structuretype_has_all_literals():
     # Collect the names of literals in this Enumeration
     enum_literals = [lit.name for lit in StructureType]
     expected_literals = [
-        "department",
-        "businessUnit",
-        "division",
         "team",
         "service",
+        "businessUnit",
+        "division",
+        "department",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
@@ -208,160 +208,133 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-organizationchart::Location_strategy = st.builds(
-    organizationchart::Location,
+organizationchart_Location_strategy = st.builds(
+    organizationchart_Location,
     name=
         safe_text
 )
-organizationchart::OrganizationalStructure_strategy = st.builds(
-    organizationchart::OrganizationalStructure,
+organizationchart_OrganizationalStructure_strategy = st.builds(
+    organizationchart_OrganizationalStructure,
     type=
         safe_text,
     name=
         safe_text
 )
-organizationchart::Employee_strategy = st.builds(
-    organizationchart::Employee,
+organizationchart_Employee_strategy = st.builds(
+    organizationchart_Employee,
     trigraph=
-        safe_text,
-    firstname=
         safe_text,
     lastname=
         safe_text,
     title=
+        safe_text,
+    firstname=
         safe_text
 )
-organizationchart::Organization_strategy = st.builds(
-    organizationchart::Organization,
+organizationchart_Organization_strategy = st.builds(
+    organizationchart_Organization,
     name=
         safe_text
 )
-organizationchart::Function_strategy = st.builds(
-    organizationchart::Function,
+organizationchart_Function_strategy = st.builds(
+    organizationchart_Function,
     name=
         safe_text
 )
 
-@given(instance=organizationchart::Location_strategy)
+@given(instance=organizationchart_Location_strategy)
 @settings(max_examples=50)
-def test_organizationchart::location_instantiation(instance):
-    assert isinstance(instance, organizationchart::Location)
-
-@given(instance=organizationchart::Location_strategy)
-def test_organizationchart::location_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_organizationchart_location_instantiation(instance):
+    assert isinstance(instance, organizationchart_Location)
 
 
-@given(instance=organizationchart::Location_strategy)
-def test_organizationchart::location_name_setter(instance):
+
+@given(instance=organizationchart_Location_strategy)
+def test_organizationchart_location_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=organizationchart::OrganizationalStructure_strategy)
+@given(instance=organizationchart_OrganizationalStructure_strategy)
 @settings(max_examples=50)
-def test_organizationchart::organizationalstructure_instantiation(instance):
-    assert isinstance(instance, organizationchart::OrganizationalStructure)
-
-@given(instance=organizationchart::OrganizationalStructure_strategy)
-def test_organizationchart::organizationalstructure_type_type(instance):
-    assert isinstance(instance.type, str)
+def test_organizationchart_organizationalstructure_instantiation(instance):
+    assert isinstance(instance, organizationchart_OrganizationalStructure)
 
 
-@given(instance=organizationchart::OrganizationalStructure_strategy)
-def test_organizationchart::organizationalstructure_type_setter(instance):
+
+@given(instance=organizationchart_OrganizationalStructure_strategy)
+def test_organizationchart_organizationalstructure_type_setter(instance):
     original = instance.type
     instance.type = original
     assert instance.type == original
 
-@given(instance=organizationchart::OrganizationalStructure_strategy)
-def test_organizationchart::organizationalstructure_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
-@given(instance=organizationchart::OrganizationalStructure_strategy)
-def test_organizationchart::organizationalstructure_name_setter(instance):
+@given(instance=organizationchart_OrganizationalStructure_strategy)
+def test_organizationchart_organizationalstructure_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=organizationchart::Employee_strategy)
+@given(instance=organizationchart_Employee_strategy)
 @settings(max_examples=50)
-def test_organizationchart::employee_instantiation(instance):
-    assert isinstance(instance, organizationchart::Employee)
-
-@given(instance=organizationchart::Employee_strategy)
-def test_organizationchart::employee_trigraph_type(instance):
-    assert isinstance(instance.trigraph, str)
+def test_organizationchart_employee_instantiation(instance):
+    assert isinstance(instance, organizationchart_Employee)
 
 
-@given(instance=organizationchart::Employee_strategy)
-def test_organizationchart::employee_trigraph_setter(instance):
+
+@given(instance=organizationchart_Employee_strategy)
+def test_organizationchart_employee_trigraph_setter(instance):
     original = instance.trigraph
     instance.trigraph = original
     assert instance.trigraph == original
 
-@given(instance=organizationchart::Employee_strategy)
-def test_organizationchart::employee_firstname_type(instance):
-    assert isinstance(instance.firstname, str)
 
 
-@given(instance=organizationchart::Employee_strategy)
-def test_organizationchart::employee_firstname_setter(instance):
-    original = instance.firstname
-    instance.firstname = original
-    assert instance.firstname == original
-
-@given(instance=organizationchart::Employee_strategy)
-def test_organizationchart::employee_lastname_type(instance):
-    assert isinstance(instance.lastname, str)
-
-
-@given(instance=organizationchart::Employee_strategy)
-def test_organizationchart::employee_lastname_setter(instance):
+@given(instance=organizationchart_Employee_strategy)
+def test_organizationchart_employee_lastname_setter(instance):
     original = instance.lastname
     instance.lastname = original
     assert instance.lastname == original
 
-@given(instance=organizationchart::Employee_strategy)
-def test_organizationchart::employee_title_type(instance):
-    assert isinstance(instance.title, str)
 
 
-@given(instance=organizationchart::Employee_strategy)
-def test_organizationchart::employee_title_setter(instance):
+@given(instance=organizationchart_Employee_strategy)
+def test_organizationchart_employee_title_setter(instance):
     original = instance.title
     instance.title = original
     assert instance.title == original
 
-@given(instance=organizationchart::Organization_strategy)
+
+
+@given(instance=organizationchart_Employee_strategy)
+def test_organizationchart_employee_firstname_setter(instance):
+    original = instance.firstname
+    instance.firstname = original
+    assert instance.firstname == original
+
+@given(instance=organizationchart_Organization_strategy)
 @settings(max_examples=50)
-def test_organizationchart::organization_instantiation(instance):
-    assert isinstance(instance, organizationchart::Organization)
-
-@given(instance=organizationchart::Organization_strategy)
-def test_organizationchart::organization_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_organizationchart_organization_instantiation(instance):
+    assert isinstance(instance, organizationchart_Organization)
 
 
-@given(instance=organizationchart::Organization_strategy)
-def test_organizationchart::organization_name_setter(instance):
+
+@given(instance=organizationchart_Organization_strategy)
+def test_organizationchart_organization_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=organizationchart::Function_strategy)
+@given(instance=organizationchart_Function_strategy)
 @settings(max_examples=50)
-def test_organizationchart::function_instantiation(instance):
-    assert isinstance(instance, organizationchart::Function)
-
-@given(instance=organizationchart::Function_strategy)
-def test_organizationchart::function_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_organizationchart_function_instantiation(instance):
+    assert isinstance(instance, organizationchart_Function)
 
 
-@given(instance=organizationchart::Function_strategy)
-def test_organizationchart::function_name_setter(instance):
+
+@given(instance=organizationchart_Function_strategy)
+def test_organizationchart_function_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original

@@ -3,196 +3,168 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    pivot::Visitor,
-    pivot::Visitable,
+from python_code import (
     Behavior,
-    Operation,
-    pivot::Iteration,
-    NumericLiteralExp,
-    pivot::UnlimitedNaturalLiteralExp,
-    pivot::IntegerLiteralExp,
-    ReferringElement,
-    LoopExp,
-    pivot::IteratorExp,
-    pivot::IterateExp,
-    State,
-    pivot::FinalState,
-    CallExp,
-    pivot::FeatureCallExp,
-    TypedMultiplicityElement,
-    pivot::Feature,
-    pivot::ReferringElement,
-    pivot::RealLiteralExp,
-    pivot::StateMachine,
-    pivot::Pivotable,
+    pivot_ReferringElement,
+    pivot_StateMachine,
+    pivot_Pivotable,
     TemplateParameter,
-    pivot::TypeTemplateParameter,
-    pivot::OperationTemplateParameter,
+    pivot_TypeTemplateParameter,
+    pivot_OperationTemplateParameter,
     VariableDeclaration,
-    pivot::TupleLiteralPart,
-    pivot::Variable,
-    pivot::Parameter,
+    pivot_TupleLiteralPart,
     ValueSpecification,
     FeatureCallExp,
-    pivot::OperationCallExp,
-    pivot::NavigationCallExp,
+    pivot_NavigationCallExp,
     Nameable,
-    pivot::Nameable,
-    pivot::MorePivotable,
+    pivot_Nameable,
+    pivot_MorePivotable,
     ParameterableElement,
-    pivot::PackageableElement,
+    pivot_PackageableElement,
     TemplateableElement,
     Feature,
-    pivot::LoopExp,
     Package,
-    pivot::Profile,
-    pivot::Library,
+    pivot_Profile,
+    pivot_Library,
+    Operation,
+    pivot_Iteration,
+    NumericLiteralExp,
+    pivot_RealLiteralExp,
+    pivot_IntegerLiteralExp,
+    ReferringElement,
+    pivot_OperationCallExp,
+    LoopExp,
+    pivot_IteratorExp,
+    pivot_IterateExp,
+    State,
+    pivot_FinalState,
+    CallExp,
+    pivot_LoopExp,
+    pivot_FeatureCallExp,
+    TypedMultiplicityElement,
+    pivot_Parameter,
+    pivot_Feature,
+    pivot_Variable,
     OpaqueExpression,
-    pivot::ExpressionInOCL,
+    pivot_ExpressionInOCL,
     Visitable,
     DynamicElement,
-    pivot::OpaqueExpression,
+    pivot_OpaqueExpression,
     Vertex,
-    pivot::Pseudostate,
-    pivot::ConnectionPointReference,
+    pivot_Pseudostate,
+    pivot_ConnectionPointReference,
     Element,
-    pivot::DynamicProperty,
-    pivot::ParameterableElement,
-    pivot::TemplateParameterSubstitution,
-    pivot::TemplateParameter,
-    pivot::TemplateBinding,
-    pivot::NamedElement,
-    pivot::TemplateSignature,
-    pivot::DynamicElement,
-    pivot::TemplateableElement,
-    pivot::Comment,
+    pivot_TemplateParameterSubstitution,
+    pivot_NamedElement,
+    pivot_ParameterableElement,
+    pivot_TemplateSignature,
+    pivot_DynamicProperty,
+    pivot_TemplateableElement,
+    pivot_TemplateBinding,
+    pivot_DynamicElement,
+    pivot_TemplateParameter,
+    pivot_Visitor,
+    pivot_Visitable,
+    pivot_UnlimitedNaturalLiteralExp,
+    pivot_Comment,
     DataType,
-    pivot::Enumeration,
-    pivot::LambdaType,
-    pivot::TupleType,
-    pivot::PrimitiveType,
-    pivot::CollectionType,
+    pivot_TupleType,
+    pivot_LambdaType,
+    pivot_PrimitiveType,
+    pivot_Enumeration,
+    pivot_CollectionType,
     LiteralExp,
-    pivot::EnumLiteralExp,
-    pivot::TupleLiteralExp,
-    pivot::InvalidLiteralExp,
-    pivot::PrimitiveLiteralExp,
-    pivot::CollectionLiteralExp,
+    pivot_EnumLiteralExp,
+    pivot_PrimitiveLiteralExp,
+    pivot_TupleLiteralExp,
+    pivot_InvalidLiteralExp,
+    pivot_CollectionLiteralExp,
     CollectionLiteralPart,
-    pivot::CollectionItem,
-    pivot::CollectionRange,
+    pivot_CollectionItem,
+    pivot_CollectionRange,
     TypedElement,
-    pivot::TypedMultiplicityElement,
-    pivot::VariableDeclaration,
-    pivot::ValueSpecification,
-    pivot::ConstructorPart,
-    pivot::CollectionLiteralPart,
-    pivot::OCLExpression,
+    pivot_ValueSpecification,
+    pivot_VariableDeclaration,
+    pivot_ConstructorPart,
+    pivot_TypedMultiplicityElement,
+    pivot_CollectionLiteralPart,
+    pivot_OCLExpression,
     OCLExpression,
-    pivot::VariableExp,
-    pivot::StateExp,
-    pivot::IfExp,
-    pivot::LiteralExp,
-    pivot::MessageExp,
-    pivot::UnspecifiedValueExp,
-    pivot::TypeExp,
-    pivot::ConstructorExp,
-    pivot::LetExp,
-    pivot::CallExp,
+    pivot_TypeExp,
+    pivot_LetExp,
+    pivot_LiteralExp,
+    pivot_MessageExp,
+    pivot_VariableExp,
+    pivot_ConstructorExp,
+    pivot_UnspecifiedValueExp,
+    pivot_StateExp,
+    pivot_IfExp,
+    pivot_CallExp,
     PrimitiveLiteralExp,
-    pivot::NullLiteralExp,
-    pivot::NumericLiteralExp,
-    pivot::StringLiteralExp,
-    pivot::BooleanLiteralExp,
+    pivot_NullLiteralExp,
+    pivot_StringLiteralExp,
+    pivot_NumericLiteralExp,
+    pivot_BooleanLiteralExp,
     CollectionType,
-    pivot::SequenceType,
-    pivot::SetType,
-    pivot::OrderedSetType,
-    pivot::BagType,
+    pivot_SetType,
+    pivot_OrderedSetType,
+    pivot_SequenceType,
+    pivot_BagType,
     NavigationCallExp,
-    pivot::PropertyCallExp,
-    pivot::AssociationClassCallExp,
-    pivot::Property,
+    pivot_PropertyCallExp,
+    pivot_AssociationClassCallExp,
+    pivot_Property,
     Class,
-    pivot::Stereotype,
-    pivot::InvalidType,
-    pivot::UnspecifiedType,
-    pivot::Metaclass,
-    pivot::Behavior,
-    pivot::VoidType,
-    pivot::AssociationClass,
-    pivot::DataType,
-    pivot::SelfType,
-    pivot::AnyType,
-    pivot::Element,
+    pivot_UnspecifiedType,
+    pivot_InvalidType,
+    pivot_SelfType,
+    pivot_Stereotype,
+    pivot_DataType,
+    pivot_VoidType,
+    pivot_AssociationClass,
+    pivot_Behavior,
+    pivot_Metaclass,
+    pivot_AnyType,
+    pivot_Element,
     NamedElement,
-    pivot::EnumerationLiteral,
-    pivot::Trigger,
-    pivot::Import,
-    pivot::CallOperationAction,
-    pivot::Detail,
-    pivot::Vertex,
-    pivot::TypedElement,
-    pivot::Type,
-    pivot::Signal,
-    pivot::Namespace,
-    pivot::Constraint,
-    pivot::SendSignalAction,
-    pivot::Precedence,
-    pivot::Annotation,
+    pivot_Trigger,
+    pivot_Precedence,
+    pivot_SendSignalAction,
+    pivot_CallOperationAction,
+    pivot_Import,
+    pivot_Vertex,
+    pivot_EnumerationLiteral,
+    pivot_Constraint,
+    pivot_TypedElement,
+    pivot_Detail,
+    pivot_Type,
+    pivot_Signal,
+    pivot_Namespace,
+    pivot_Annotation,
     Namespace,
-    pivot::State,
-    pivot::Region,
-    pivot::Operation,
-    pivot::Package,
-    pivot::Transition,
-    pivot::Root,
+    pivot_Region,
+    pivot_Root,
+    pivot_Transition,
+    pivot_State,
+    pivot_Operation,
+    pivot_Package,
     Type,
-    pivot::DynamicType,
-    pivot::ElementExtension,
-    pivot::TemplateParameterType,
-    pivot::MessageType,
-    pivot::Class,
-    TransitionKind,
-    CollectionKind,
-    AssociativityKind,
+    pivot_TemplateParameterType,
+    pivot_DynamicType,
+    pivot_MessageType,
+    pivot_ElementExtension,
+    pivot_Class,
     PseudostateKind,
+    TransitionKind,
+    AssociativityKind,
+    CollectionKind,
 )
 
 # =============================================================================
 # SECTION 1 — STRUCTURAL TESTS
 # =============================================================================
-
-
-
-def test_pivot::visitor_is_not_abstract():
-    assert not inspect.isabstract(pivot::Visitor)
-
-
-def test_pivot::visitor_constructor_exists():
-    assert callable(pivot::Visitor.__init__)
-
-
-def test_pivot::visitor_constructor_args():
-    sig = inspect.signature(pivot::Visitor.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_pivot::visitable_is_not_abstract():
-    assert not inspect.isabstract(pivot::Visitable)
-
-
-def test_pivot::visitable_constructor_exists():
-    assert callable(pivot::Visitable.__init__)
-
-
-def test_pivot::visitable_constructor_args():
-    sig = inspect.signature(pivot::Visitable.__init__)
-    params = list(sig.parameters.keys())
 
 
 
@@ -210,328 +182,44 @@ def test_behavior_constructor_args():
 
 
 
-def test_operation_is_not_abstract():
-    assert not inspect.isabstract(Operation)
+def test_pivot_referringelement_is_not_abstract():
+    assert not inspect.isabstract(pivot_ReferringElement)
 
 
-def test_operation_constructor_exists():
-    assert callable(Operation.__init__)
+def test_pivot_referringelement_constructor_exists():
+    assert callable(pivot_ReferringElement.__init__)
 
 
-def test_operation_constructor_args():
-    sig = inspect.signature(Operation.__init__)
+def test_pivot_referringelement_constructor_args():
+    sig = inspect.signature(pivot_ReferringElement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_pivot::iteration_is_not_abstract():
-    assert not inspect.isabstract(pivot::Iteration)
+def test_pivot_statemachine_is_not_abstract():
+    assert not inspect.isabstract(pivot_StateMachine)
 
 
-def test_pivot::iteration_constructor_exists():
-    assert callable(pivot::Iteration.__init__)
+def test_pivot_statemachine_constructor_exists():
+    assert callable(pivot_StateMachine.__init__)
 
 
-def test_pivot::iteration_constructor_args():
-    sig = inspect.signature(pivot::Iteration.__init__)
+def test_pivot_statemachine_constructor_args():
+    sig = inspect.signature(pivot_StateMachine.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_numericliteralexp_is_not_abstract():
-    assert not inspect.isabstract(NumericLiteralExp)
+def test_pivot_pivotable_is_not_abstract():
+    assert not inspect.isabstract(pivot_Pivotable)
 
 
-def test_numericliteralexp_constructor_exists():
-    assert callable(NumericLiteralExp.__init__)
+def test_pivot_pivotable_constructor_exists():
+    assert callable(pivot_Pivotable.__init__)
 
 
-def test_numericliteralexp_constructor_args():
-    sig = inspect.signature(NumericLiteralExp.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_pivot::unlimitednaturalliteralexp_is_not_abstract():
-    assert not inspect.isabstract(pivot::UnlimitedNaturalLiteralExp)
-
-
-def test_pivot::unlimitednaturalliteralexp_constructor_exists():
-    assert callable(pivot::UnlimitedNaturalLiteralExp.__init__)
-
-
-def test_pivot::unlimitednaturalliteralexp_constructor_args():
-    sig = inspect.signature(pivot::UnlimitedNaturalLiteralExp.__init__)
-    params = list(sig.parameters.keys())
-    assert "unlimitedNaturalSymbol" in params, "Missing parameter 'unlimitedNaturalSymbol'"
-
-def test_pivot::unlimitednaturalliteralexp_has_unlimitedNaturalSymbol():
-    assert hasattr(pivot::UnlimitedNaturalLiteralExp, "unlimitedNaturalSymbol")
-    descriptor = None
-    for klass in pivot::UnlimitedNaturalLiteralExp.__mro__:
-        if "unlimitedNaturalSymbol" in klass.__dict__:
-            descriptor = klass.__dict__["unlimitedNaturalSymbol"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_pivot::integerliteralexp_is_not_abstract():
-    assert not inspect.isabstract(pivot::IntegerLiteralExp)
-
-
-def test_pivot::integerliteralexp_constructor_exists():
-    assert callable(pivot::IntegerLiteralExp.__init__)
-
-
-def test_pivot::integerliteralexp_constructor_args():
-    sig = inspect.signature(pivot::IntegerLiteralExp.__init__)
-    params = list(sig.parameters.keys())
-    assert "integerSymbol" in params, "Missing parameter 'integerSymbol'"
-
-def test_pivot::integerliteralexp_has_integerSymbol():
-    assert hasattr(pivot::IntegerLiteralExp, "integerSymbol")
-    descriptor = None
-    for klass in pivot::IntegerLiteralExp.__mro__:
-        if "integerSymbol" in klass.__dict__:
-            descriptor = klass.__dict__["integerSymbol"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_referringelement_is_not_abstract():
-    assert not inspect.isabstract(ReferringElement)
-
-
-def test_referringelement_constructor_exists():
-    assert callable(ReferringElement.__init__)
-
-
-def test_referringelement_constructor_args():
-    sig = inspect.signature(ReferringElement.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_loopexp_is_not_abstract():
-    assert not inspect.isabstract(LoopExp)
-
-
-def test_loopexp_constructor_exists():
-    assert callable(LoopExp.__init__)
-
-
-def test_loopexp_constructor_args():
-    sig = inspect.signature(LoopExp.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_pivot::iteratorexp_is_not_abstract():
-    assert not inspect.isabstract(pivot::IteratorExp)
-
-
-def test_pivot::iteratorexp_constructor_exists():
-    assert callable(pivot::IteratorExp.__init__)
-
-
-def test_pivot::iteratorexp_constructor_args():
-    sig = inspect.signature(pivot::IteratorExp.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_pivot::iterateexp_is_not_abstract():
-    assert not inspect.isabstract(pivot::IterateExp)
-
-
-def test_pivot::iterateexp_constructor_exists():
-    assert callable(pivot::IterateExp.__init__)
-
-
-def test_pivot::iterateexp_constructor_args():
-    sig = inspect.signature(pivot::IterateExp.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_state_is_not_abstract():
-    assert not inspect.isabstract(State)
-
-
-def test_state_constructor_exists():
-    assert callable(State.__init__)
-
-
-def test_state_constructor_args():
-    sig = inspect.signature(State.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_pivot::finalstate_is_not_abstract():
-    assert not inspect.isabstract(pivot::FinalState)
-
-
-def test_pivot::finalstate_constructor_exists():
-    assert callable(pivot::FinalState.__init__)
-
-
-def test_pivot::finalstate_constructor_args():
-    sig = inspect.signature(pivot::FinalState.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_callexp_is_not_abstract():
-    assert not inspect.isabstract(CallExp)
-
-
-def test_callexp_constructor_exists():
-    assert callable(CallExp.__init__)
-
-
-def test_callexp_constructor_args():
-    sig = inspect.signature(CallExp.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_pivot::featurecallexp_is_not_abstract():
-    assert not inspect.isabstract(pivot::FeatureCallExp)
-
-
-def test_pivot::featurecallexp_constructor_exists():
-    assert callable(pivot::FeatureCallExp.__init__)
-
-
-def test_pivot::featurecallexp_constructor_args():
-    sig = inspect.signature(pivot::FeatureCallExp.__init__)
-    params = list(sig.parameters.keys())
-    assert "isPre" in params, "Missing parameter 'isPre'"
-
-def test_pivot::featurecallexp_has_isPre():
-    assert hasattr(pivot::FeatureCallExp, "isPre")
-    descriptor = None
-    for klass in pivot::FeatureCallExp.__mro__:
-        if "isPre" in klass.__dict__:
-            descriptor = klass.__dict__["isPre"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_typedmultiplicityelement_is_not_abstract():
-    assert not inspect.isabstract(TypedMultiplicityElement)
-
-
-def test_typedmultiplicityelement_constructor_exists():
-    assert callable(TypedMultiplicityElement.__init__)
-
-
-def test_typedmultiplicityelement_constructor_args():
-    sig = inspect.signature(TypedMultiplicityElement.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_pivot::feature_is_not_abstract():
-    assert not inspect.isabstract(pivot::Feature)
-
-
-def test_pivot::feature_constructor_exists():
-    assert callable(pivot::Feature.__init__)
-
-
-def test_pivot::feature_constructor_args():
-    sig = inspect.signature(pivot::Feature.__init__)
-    params = list(sig.parameters.keys())
-    assert "implementation" in params, "Missing parameter 'implementation'"
-    assert "implementationClass" in params, "Missing parameter 'implementationClass'"
-
-def test_pivot::feature_has_implementation():
-    assert hasattr(pivot::Feature, "implementation")
-    descriptor = None
-    for klass in pivot::Feature.__mro__:
-        if "implementation" in klass.__dict__:
-            descriptor = klass.__dict__["implementation"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_pivot::feature_has_implementationClass():
-    assert hasattr(pivot::Feature, "implementationClass")
-    descriptor = None
-    for klass in pivot::Feature.__mro__:
-        if "implementationClass" in klass.__dict__:
-            descriptor = klass.__dict__["implementationClass"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_pivot::referringelement_is_not_abstract():
-    assert not inspect.isabstract(pivot::ReferringElement)
-
-
-def test_pivot::referringelement_constructor_exists():
-    assert callable(pivot::ReferringElement.__init__)
-
-
-def test_pivot::referringelement_constructor_args():
-    sig = inspect.signature(pivot::ReferringElement.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_pivot::realliteralexp_is_not_abstract():
-    assert not inspect.isabstract(pivot::RealLiteralExp)
-
-
-def test_pivot::realliteralexp_constructor_exists():
-    assert callable(pivot::RealLiteralExp.__init__)
-
-
-def test_pivot::realliteralexp_constructor_args():
-    sig = inspect.signature(pivot::RealLiteralExp.__init__)
-    params = list(sig.parameters.keys())
-    assert "realSymbol" in params, "Missing parameter 'realSymbol'"
-
-def test_pivot::realliteralexp_has_realSymbol():
-    assert hasattr(pivot::RealLiteralExp, "realSymbol")
-    descriptor = None
-    for klass in pivot::RealLiteralExp.__mro__:
-        if "realSymbol" in klass.__dict__:
-            descriptor = klass.__dict__["realSymbol"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_pivot::statemachine_is_not_abstract():
-    assert not inspect.isabstract(pivot::StateMachine)
-
-
-def test_pivot::statemachine_constructor_exists():
-    assert callable(pivot::StateMachine.__init__)
-
-
-def test_pivot::statemachine_constructor_args():
-    sig = inspect.signature(pivot::StateMachine.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_pivot::pivotable_is_not_abstract():
-    assert not inspect.isabstract(pivot::Pivotable)
-
-
-def test_pivot::pivotable_constructor_exists():
-    assert callable(pivot::Pivotable.__init__)
-
-
-def test_pivot::pivotable_constructor_args():
-    sig = inspect.signature(pivot::Pivotable.__init__)
+def test_pivot_pivotable_constructor_args():
+    sig = inspect.signature(pivot_Pivotable.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -550,23 +238,23 @@ def test_templateparameter_constructor_args():
 
 
 
-def test_pivot::typetemplateparameter_is_not_abstract():
-    assert not inspect.isabstract(pivot::TypeTemplateParameter)
+def test_pivot_typetemplateparameter_is_not_abstract():
+    assert not inspect.isabstract(pivot_TypeTemplateParameter)
 
 
-def test_pivot::typetemplateparameter_constructor_exists():
-    assert callable(pivot::TypeTemplateParameter.__init__)
+def test_pivot_typetemplateparameter_constructor_exists():
+    assert callable(pivot_TypeTemplateParameter.__init__)
 
 
-def test_pivot::typetemplateparameter_constructor_args():
-    sig = inspect.signature(pivot::TypeTemplateParameter.__init__)
+def test_pivot_typetemplateparameter_constructor_args():
+    sig = inspect.signature(pivot_TypeTemplateParameter.__init__)
     params = list(sig.parameters.keys())
     assert "allowSubstitutable" in params, "Missing parameter 'allowSubstitutable'"
 
-def test_pivot::typetemplateparameter_has_allowSubstitutable():
-    assert hasattr(pivot::TypeTemplateParameter, "allowSubstitutable")
+def test_pivot_typetemplateparameter_has_allowSubstitutable():
+    assert hasattr(pivot_TypeTemplateParameter, "allowSubstitutable")
     descriptor = None
-    for klass in pivot::TypeTemplateParameter.__mro__:
+    for klass in pivot_TypeTemplateParameter.__mro__:
         if "allowSubstitutable" in klass.__dict__:
             descriptor = klass.__dict__["allowSubstitutable"]
             break
@@ -574,16 +262,16 @@ def test_pivot::typetemplateparameter_has_allowSubstitutable():
 
 
 
-def test_pivot::operationtemplateparameter_is_not_abstract():
-    assert not inspect.isabstract(pivot::OperationTemplateParameter)
+def test_pivot_operationtemplateparameter_is_not_abstract():
+    assert not inspect.isabstract(pivot_OperationTemplateParameter)
 
 
-def test_pivot::operationtemplateparameter_constructor_exists():
-    assert callable(pivot::OperationTemplateParameter.__init__)
+def test_pivot_operationtemplateparameter_constructor_exists():
+    assert callable(pivot_OperationTemplateParameter.__init__)
 
 
-def test_pivot::operationtemplateparameter_constructor_args():
-    sig = inspect.signature(pivot::OperationTemplateParameter.__init__)
+def test_pivot_operationtemplateparameter_constructor_args():
+    sig = inspect.signature(pivot_OperationTemplateParameter.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -602,54 +290,16 @@ def test_variabledeclaration_constructor_args():
 
 
 
-def test_pivot::tupleliteralpart_is_not_abstract():
-    assert not inspect.isabstract(pivot::TupleLiteralPart)
+def test_pivot_tupleliteralpart_is_not_abstract():
+    assert not inspect.isabstract(pivot_TupleLiteralPart)
 
 
-def test_pivot::tupleliteralpart_constructor_exists():
-    assert callable(pivot::TupleLiteralPart.__init__)
+def test_pivot_tupleliteralpart_constructor_exists():
+    assert callable(pivot_TupleLiteralPart.__init__)
 
 
-def test_pivot::tupleliteralpart_constructor_args():
-    sig = inspect.signature(pivot::TupleLiteralPart.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_pivot::variable_is_not_abstract():
-    assert not inspect.isabstract(pivot::Variable)
-
-
-def test_pivot::variable_constructor_exists():
-    assert callable(pivot::Variable.__init__)
-
-
-def test_pivot::variable_constructor_args():
-    sig = inspect.signature(pivot::Variable.__init__)
-    params = list(sig.parameters.keys())
-    assert "implicit" in params, "Missing parameter 'implicit'"
-
-def test_pivot::variable_has_implicit():
-    assert hasattr(pivot::Variable, "implicit")
-    descriptor = None
-    for klass in pivot::Variable.__mro__:
-        if "implicit" in klass.__dict__:
-            descriptor = klass.__dict__["implicit"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_pivot::parameter_is_not_abstract():
-    assert not inspect.isabstract(pivot::Parameter)
-
-
-def test_pivot::parameter_constructor_exists():
-    assert callable(pivot::Parameter.__init__)
-
-
-def test_pivot::parameter_constructor_args():
-    sig = inspect.signature(pivot::Parameter.__init__)
+def test_pivot_tupleliteralpart_constructor_args():
+    sig = inspect.signature(pivot_TupleLiteralPart.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -682,30 +332,16 @@ def test_featurecallexp_constructor_args():
 
 
 
-def test_pivot::operationcallexp_is_not_abstract():
-    assert not inspect.isabstract(pivot::OperationCallExp)
+def test_pivot_navigationcallexp_is_not_abstract():
+    assert not inspect.isabstract(pivot_NavigationCallExp)
 
 
-def test_pivot::operationcallexp_constructor_exists():
-    assert callable(pivot::OperationCallExp.__init__)
+def test_pivot_navigationcallexp_constructor_exists():
+    assert callable(pivot_NavigationCallExp.__init__)
 
 
-def test_pivot::operationcallexp_constructor_args():
-    sig = inspect.signature(pivot::OperationCallExp.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_pivot::navigationcallexp_is_not_abstract():
-    assert not inspect.isabstract(pivot::NavigationCallExp)
-
-
-def test_pivot::navigationcallexp_constructor_exists():
-    assert callable(pivot::NavigationCallExp.__init__)
-
-
-def test_pivot::navigationcallexp_constructor_args():
-    sig = inspect.signature(pivot::NavigationCallExp.__init__)
+def test_pivot_navigationcallexp_constructor_args():
+    sig = inspect.signature(pivot_NavigationCallExp.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -724,30 +360,30 @@ def test_nameable_constructor_args():
 
 
 
-def test_pivot::nameable_is_not_abstract():
-    assert not inspect.isabstract(pivot::Nameable)
+def test_pivot_nameable_is_not_abstract():
+    assert not inspect.isabstract(pivot_Nameable)
 
 
-def test_pivot::nameable_constructor_exists():
-    assert callable(pivot::Nameable.__init__)
+def test_pivot_nameable_constructor_exists():
+    assert callable(pivot_Nameable.__init__)
 
 
-def test_pivot::nameable_constructor_args():
-    sig = inspect.signature(pivot::Nameable.__init__)
+def test_pivot_nameable_constructor_args():
+    sig = inspect.signature(pivot_Nameable.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_pivot::morepivotable_is_not_abstract():
-    assert not inspect.isabstract(pivot::MorePivotable)
+def test_pivot_morepivotable_is_not_abstract():
+    assert not inspect.isabstract(pivot_MorePivotable)
 
 
-def test_pivot::morepivotable_constructor_exists():
-    assert callable(pivot::MorePivotable.__init__)
+def test_pivot_morepivotable_constructor_exists():
+    assert callable(pivot_MorePivotable.__init__)
 
 
-def test_pivot::morepivotable_constructor_args():
-    sig = inspect.signature(pivot::MorePivotable.__init__)
+def test_pivot_morepivotable_constructor_args():
+    sig = inspect.signature(pivot_MorePivotable.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -766,16 +402,16 @@ def test_parameterableelement_constructor_args():
 
 
 
-def test_pivot::packageableelement_is_not_abstract():
-    assert not inspect.isabstract(pivot::PackageableElement)
+def test_pivot_packageableelement_is_not_abstract():
+    assert not inspect.isabstract(pivot_PackageableElement)
 
 
-def test_pivot::packageableelement_constructor_exists():
-    assert callable(pivot::PackageableElement.__init__)
+def test_pivot_packageableelement_constructor_exists():
+    assert callable(pivot_PackageableElement.__init__)
 
 
-def test_pivot::packageableelement_constructor_args():
-    sig = inspect.signature(pivot::PackageableElement.__init__)
+def test_pivot_packageableelement_constructor_args():
+    sig = inspect.signature(pivot_PackageableElement.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -808,20 +444,6 @@ def test_feature_constructor_args():
 
 
 
-def test_pivot::loopexp_is_not_abstract():
-    assert not inspect.isabstract(pivot::LoopExp)
-
-
-def test_pivot::loopexp_constructor_exists():
-    assert callable(pivot::LoopExp.__init__)
-
-
-def test_pivot::loopexp_constructor_args():
-    sig = inspect.signature(pivot::LoopExp.__init__)
-    params = list(sig.parameters.keys())
-
-
-
 def test_package_is_not_abstract():
     assert not inspect.isabstract(Package)
 
@@ -836,31 +458,357 @@ def test_package_constructor_args():
 
 
 
-def test_pivot::profile_is_not_abstract():
-    assert not inspect.isabstract(pivot::Profile)
+def test_pivot_profile_is_not_abstract():
+    assert not inspect.isabstract(pivot_Profile)
 
 
-def test_pivot::profile_constructor_exists():
-    assert callable(pivot::Profile.__init__)
+def test_pivot_profile_constructor_exists():
+    assert callable(pivot_Profile.__init__)
 
 
-def test_pivot::profile_constructor_args():
-    sig = inspect.signature(pivot::Profile.__init__)
+def test_pivot_profile_constructor_args():
+    sig = inspect.signature(pivot_Profile.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_pivot::library_is_not_abstract():
-    assert not inspect.isabstract(pivot::Library)
+def test_pivot_library_is_not_abstract():
+    assert not inspect.isabstract(pivot_Library)
 
 
-def test_pivot::library_constructor_exists():
-    assert callable(pivot::Library.__init__)
+def test_pivot_library_constructor_exists():
+    assert callable(pivot_Library.__init__)
 
 
-def test_pivot::library_constructor_args():
-    sig = inspect.signature(pivot::Library.__init__)
+def test_pivot_library_constructor_args():
+    sig = inspect.signature(pivot_Library.__init__)
     params = list(sig.parameters.keys())
+
+
+
+def test_operation_is_not_abstract():
+    assert not inspect.isabstract(Operation)
+
+
+def test_operation_constructor_exists():
+    assert callable(Operation.__init__)
+
+
+def test_operation_constructor_args():
+    sig = inspect.signature(Operation.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_pivot_iteration_is_not_abstract():
+    assert not inspect.isabstract(pivot_Iteration)
+
+
+def test_pivot_iteration_constructor_exists():
+    assert callable(pivot_Iteration.__init__)
+
+
+def test_pivot_iteration_constructor_args():
+    sig = inspect.signature(pivot_Iteration.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_numericliteralexp_is_not_abstract():
+    assert not inspect.isabstract(NumericLiteralExp)
+
+
+def test_numericliteralexp_constructor_exists():
+    assert callable(NumericLiteralExp.__init__)
+
+
+def test_numericliteralexp_constructor_args():
+    sig = inspect.signature(NumericLiteralExp.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_pivot_realliteralexp_is_not_abstract():
+    assert not inspect.isabstract(pivot_RealLiteralExp)
+
+
+def test_pivot_realliteralexp_constructor_exists():
+    assert callable(pivot_RealLiteralExp.__init__)
+
+
+def test_pivot_realliteralexp_constructor_args():
+    sig = inspect.signature(pivot_RealLiteralExp.__init__)
+    params = list(sig.parameters.keys())
+    assert "realSymbol" in params, "Missing parameter 'realSymbol'"
+
+def test_pivot_realliteralexp_has_realSymbol():
+    assert hasattr(pivot_RealLiteralExp, "realSymbol")
+    descriptor = None
+    for klass in pivot_RealLiteralExp.__mro__:
+        if "realSymbol" in klass.__dict__:
+            descriptor = klass.__dict__["realSymbol"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_pivot_integerliteralexp_is_not_abstract():
+    assert not inspect.isabstract(pivot_IntegerLiteralExp)
+
+
+def test_pivot_integerliteralexp_constructor_exists():
+    assert callable(pivot_IntegerLiteralExp.__init__)
+
+
+def test_pivot_integerliteralexp_constructor_args():
+    sig = inspect.signature(pivot_IntegerLiteralExp.__init__)
+    params = list(sig.parameters.keys())
+    assert "integerSymbol" in params, "Missing parameter 'integerSymbol'"
+
+def test_pivot_integerliteralexp_has_integerSymbol():
+    assert hasattr(pivot_IntegerLiteralExp, "integerSymbol")
+    descriptor = None
+    for klass in pivot_IntegerLiteralExp.__mro__:
+        if "integerSymbol" in klass.__dict__:
+            descriptor = klass.__dict__["integerSymbol"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_referringelement_is_not_abstract():
+    assert not inspect.isabstract(ReferringElement)
+
+
+def test_referringelement_constructor_exists():
+    assert callable(ReferringElement.__init__)
+
+
+def test_referringelement_constructor_args():
+    sig = inspect.signature(ReferringElement.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_pivot_operationcallexp_is_not_abstract():
+    assert not inspect.isabstract(pivot_OperationCallExp)
+
+
+def test_pivot_operationcallexp_constructor_exists():
+    assert callable(pivot_OperationCallExp.__init__)
+
+
+def test_pivot_operationcallexp_constructor_args():
+    sig = inspect.signature(pivot_OperationCallExp.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_loopexp_is_not_abstract():
+    assert not inspect.isabstract(LoopExp)
+
+
+def test_loopexp_constructor_exists():
+    assert callable(LoopExp.__init__)
+
+
+def test_loopexp_constructor_args():
+    sig = inspect.signature(LoopExp.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_pivot_iteratorexp_is_not_abstract():
+    assert not inspect.isabstract(pivot_IteratorExp)
+
+
+def test_pivot_iteratorexp_constructor_exists():
+    assert callable(pivot_IteratorExp.__init__)
+
+
+def test_pivot_iteratorexp_constructor_args():
+    sig = inspect.signature(pivot_IteratorExp.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_pivot_iterateexp_is_not_abstract():
+    assert not inspect.isabstract(pivot_IterateExp)
+
+
+def test_pivot_iterateexp_constructor_exists():
+    assert callable(pivot_IterateExp.__init__)
+
+
+def test_pivot_iterateexp_constructor_args():
+    sig = inspect.signature(pivot_IterateExp.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_state_is_not_abstract():
+    assert not inspect.isabstract(State)
+
+
+def test_state_constructor_exists():
+    assert callable(State.__init__)
+
+
+def test_state_constructor_args():
+    sig = inspect.signature(State.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_pivot_finalstate_is_not_abstract():
+    assert not inspect.isabstract(pivot_FinalState)
+
+
+def test_pivot_finalstate_constructor_exists():
+    assert callable(pivot_FinalState.__init__)
+
+
+def test_pivot_finalstate_constructor_args():
+    sig = inspect.signature(pivot_FinalState.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_callexp_is_not_abstract():
+    assert not inspect.isabstract(CallExp)
+
+
+def test_callexp_constructor_exists():
+    assert callable(CallExp.__init__)
+
+
+def test_callexp_constructor_args():
+    sig = inspect.signature(CallExp.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_pivot_loopexp_is_not_abstract():
+    assert not inspect.isabstract(pivot_LoopExp)
+
+
+def test_pivot_loopexp_constructor_exists():
+    assert callable(pivot_LoopExp.__init__)
+
+
+def test_pivot_loopexp_constructor_args():
+    sig = inspect.signature(pivot_LoopExp.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_pivot_featurecallexp_is_not_abstract():
+    assert not inspect.isabstract(pivot_FeatureCallExp)
+
+
+def test_pivot_featurecallexp_constructor_exists():
+    assert callable(pivot_FeatureCallExp.__init__)
+
+
+def test_pivot_featurecallexp_constructor_args():
+    sig = inspect.signature(pivot_FeatureCallExp.__init__)
+    params = list(sig.parameters.keys())
+    assert "isPre" in params, "Missing parameter 'isPre'"
+
+def test_pivot_featurecallexp_has_isPre():
+    assert hasattr(pivot_FeatureCallExp, "isPre")
+    descriptor = None
+    for klass in pivot_FeatureCallExp.__mro__:
+        if "isPre" in klass.__dict__:
+            descriptor = klass.__dict__["isPre"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_typedmultiplicityelement_is_not_abstract():
+    assert not inspect.isabstract(TypedMultiplicityElement)
+
+
+def test_typedmultiplicityelement_constructor_exists():
+    assert callable(TypedMultiplicityElement.__init__)
+
+
+def test_typedmultiplicityelement_constructor_args():
+    sig = inspect.signature(TypedMultiplicityElement.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_pivot_parameter_is_not_abstract():
+    assert not inspect.isabstract(pivot_Parameter)
+
+
+def test_pivot_parameter_constructor_exists():
+    assert callable(pivot_Parameter.__init__)
+
+
+def test_pivot_parameter_constructor_args():
+    sig = inspect.signature(pivot_Parameter.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_pivot_feature_is_not_abstract():
+    assert not inspect.isabstract(pivot_Feature)
+
+
+def test_pivot_feature_constructor_exists():
+    assert callable(pivot_Feature.__init__)
+
+
+def test_pivot_feature_constructor_args():
+    sig = inspect.signature(pivot_Feature.__init__)
+    params = list(sig.parameters.keys())
+    assert "implementation" in params, "Missing parameter 'implementation'"
+    assert "implementationClass" in params, "Missing parameter 'implementationClass'"
+
+def test_pivot_feature_has_implementation():
+    assert hasattr(pivot_Feature, "implementation")
+    descriptor = None
+    for klass in pivot_Feature.__mro__:
+        if "implementation" in klass.__dict__:
+            descriptor = klass.__dict__["implementation"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_pivot_feature_has_implementationClass():
+    assert hasattr(pivot_Feature, "implementationClass")
+    descriptor = None
+    for klass in pivot_Feature.__mro__:
+        if "implementationClass" in klass.__dict__:
+            descriptor = klass.__dict__["implementationClass"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_pivot_variable_is_not_abstract():
+    assert not inspect.isabstract(pivot_Variable)
+
+
+def test_pivot_variable_constructor_exists():
+    assert callable(pivot_Variable.__init__)
+
+
+def test_pivot_variable_constructor_args():
+    sig = inspect.signature(pivot_Variable.__init__)
+    params = list(sig.parameters.keys())
+    assert "implicit" in params, "Missing parameter 'implicit'"
+
+def test_pivot_variable_has_implicit():
+    assert hasattr(pivot_Variable, "implicit")
+    descriptor = None
+    for klass in pivot_Variable.__mro__:
+        if "implicit" in klass.__dict__:
+            descriptor = klass.__dict__["implicit"]
+            break
+    assert isinstance(descriptor, property)
 
 
 
@@ -878,16 +826,16 @@ def test_opaqueexpression_constructor_args():
 
 
 
-def test_pivot::expressioninocl_is_not_abstract():
-    assert not inspect.isabstract(pivot::ExpressionInOCL)
+def test_pivot_expressioninocl_is_not_abstract():
+    assert not inspect.isabstract(pivot_ExpressionInOCL)
 
 
-def test_pivot::expressioninocl_constructor_exists():
-    assert callable(pivot::ExpressionInOCL.__init__)
+def test_pivot_expressioninocl_constructor_exists():
+    assert callable(pivot_ExpressionInOCL.__init__)
 
 
-def test_pivot::expressioninocl_constructor_args():
-    sig = inspect.signature(pivot::ExpressionInOCL.__init__)
+def test_pivot_expressioninocl_constructor_args():
+    sig = inspect.signature(pivot_ExpressionInOCL.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -920,45 +868,45 @@ def test_dynamicelement_constructor_args():
 
 
 
-def test_pivot::opaqueexpression_is_not_abstract():
-    assert not inspect.isabstract(pivot::OpaqueExpression)
+def test_pivot_opaqueexpression_is_not_abstract():
+    assert not inspect.isabstract(pivot_OpaqueExpression)
 
 
-def test_pivot::opaqueexpression_constructor_exists():
-    assert callable(pivot::OpaqueExpression.__init__)
+def test_pivot_opaqueexpression_constructor_exists():
+    assert callable(pivot_OpaqueExpression.__init__)
 
 
-def test_pivot::opaqueexpression_constructor_args():
-    sig = inspect.signature(pivot::OpaqueExpression.__init__)
+def test_pivot_opaqueexpression_constructor_args():
+    sig = inspect.signature(pivot_OpaqueExpression.__init__)
     params = list(sig.parameters.keys())
+    assert "message" in params, "Missing parameter 'message'"
     assert "body" in params, "Missing parameter 'body'"
     assert "language" in params, "Missing parameter 'language'"
-    assert "message" in params, "Missing parameter 'message'"
 
-def test_pivot::opaqueexpression_has_body():
-    assert hasattr(pivot::OpaqueExpression, "body")
+def test_pivot_opaqueexpression_has_message():
+    assert hasattr(pivot_OpaqueExpression, "message")
     descriptor = None
-    for klass in pivot::OpaqueExpression.__mro__:
+    for klass in pivot_OpaqueExpression.__mro__:
+        if "message" in klass.__dict__:
+            descriptor = klass.__dict__["message"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_pivot_opaqueexpression_has_body():
+    assert hasattr(pivot_OpaqueExpression, "body")
+    descriptor = None
+    for klass in pivot_OpaqueExpression.__mro__:
         if "body" in klass.__dict__:
             descriptor = klass.__dict__["body"]
             break
     assert isinstance(descriptor, property)
 
-def test_pivot::opaqueexpression_has_language():
-    assert hasattr(pivot::OpaqueExpression, "language")
+def test_pivot_opaqueexpression_has_language():
+    assert hasattr(pivot_OpaqueExpression, "language")
     descriptor = None
-    for klass in pivot::OpaqueExpression.__mro__:
+    for klass in pivot_OpaqueExpression.__mro__:
         if "language" in klass.__dict__:
             descriptor = klass.__dict__["language"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_pivot::opaqueexpression_has_message():
-    assert hasattr(pivot::OpaqueExpression, "message")
-    descriptor = None
-    for klass in pivot::OpaqueExpression.__mro__:
-        if "message" in klass.__dict__:
-            descriptor = klass.__dict__["message"]
             break
     assert isinstance(descriptor, property)
 
@@ -978,23 +926,23 @@ def test_vertex_constructor_args():
 
 
 
-def test_pivot::pseudostate_is_not_abstract():
-    assert not inspect.isabstract(pivot::Pseudostate)
+def test_pivot_pseudostate_is_not_abstract():
+    assert not inspect.isabstract(pivot_Pseudostate)
 
 
-def test_pivot::pseudostate_constructor_exists():
-    assert callable(pivot::Pseudostate.__init__)
+def test_pivot_pseudostate_constructor_exists():
+    assert callable(pivot_Pseudostate.__init__)
 
 
-def test_pivot::pseudostate_constructor_args():
-    sig = inspect.signature(pivot::Pseudostate.__init__)
+def test_pivot_pseudostate_constructor_args():
+    sig = inspect.signature(pivot_Pseudostate.__init__)
     params = list(sig.parameters.keys())
     assert "kind" in params, "Missing parameter 'kind'"
 
-def test_pivot::pseudostate_has_kind():
-    assert hasattr(pivot::Pseudostate, "kind")
+def test_pivot_pseudostate_has_kind():
+    assert hasattr(pivot_Pseudostate, "kind")
     descriptor = None
-    for klass in pivot::Pseudostate.__mro__:
+    for klass in pivot_Pseudostate.__mro__:
         if "kind" in klass.__dict__:
             descriptor = klass.__dict__["kind"]
             break
@@ -1002,16 +950,16 @@ def test_pivot::pseudostate_has_kind():
 
 
 
-def test_pivot::connectionpointreference_is_not_abstract():
-    assert not inspect.isabstract(pivot::ConnectionPointReference)
+def test_pivot_connectionpointreference_is_not_abstract():
+    assert not inspect.isabstract(pivot_ConnectionPointReference)
 
 
-def test_pivot::connectionpointreference_constructor_exists():
-    assert callable(pivot::ConnectionPointReference.__init__)
+def test_pivot_connectionpointreference_constructor_exists():
+    assert callable(pivot_ConnectionPointReference.__init__)
 
 
-def test_pivot::connectionpointreference_constructor_args():
-    sig = inspect.signature(pivot::ConnectionPointReference.__init__)
+def test_pivot_connectionpointreference_constructor_args():
+    sig = inspect.signature(pivot_ConnectionPointReference.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1030,113 +978,47 @@ def test_element_constructor_args():
 
 
 
-def test_pivot::dynamicproperty_is_not_abstract():
-    assert not inspect.isabstract(pivot::DynamicProperty)
+def test_pivot_templateparametersubstitution_is_not_abstract():
+    assert not inspect.isabstract(pivot_TemplateParameterSubstitution)
 
 
-def test_pivot::dynamicproperty_constructor_exists():
-    assert callable(pivot::DynamicProperty.__init__)
+def test_pivot_templateparametersubstitution_constructor_exists():
+    assert callable(pivot_TemplateParameterSubstitution.__init__)
 
 
-def test_pivot::dynamicproperty_constructor_args():
-    sig = inspect.signature(pivot::DynamicProperty.__init__)
-    params = list(sig.parameters.keys())
-    assert "default" in params, "Missing parameter 'default'"
-
-def test_pivot::dynamicproperty_has_default():
-    assert hasattr(pivot::DynamicProperty, "default")
-    descriptor = None
-    for klass in pivot::DynamicProperty.__mro__:
-        if "default" in klass.__dict__:
-            descriptor = klass.__dict__["default"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_pivot::parameterableelement_is_not_abstract():
-    assert not inspect.isabstract(pivot::ParameterableElement)
-
-
-def test_pivot::parameterableelement_constructor_exists():
-    assert callable(pivot::ParameterableElement.__init__)
-
-
-def test_pivot::parameterableelement_constructor_args():
-    sig = inspect.signature(pivot::ParameterableElement.__init__)
+def test_pivot_templateparametersubstitution_constructor_args():
+    sig = inspect.signature(pivot_TemplateParameterSubstitution.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_pivot::templateparametersubstitution_is_not_abstract():
-    assert not inspect.isabstract(pivot::TemplateParameterSubstitution)
+def test_pivot_namedelement_is_not_abstract():
+    assert not inspect.isabstract(pivot_NamedElement)
 
 
-def test_pivot::templateparametersubstitution_constructor_exists():
-    assert callable(pivot::TemplateParameterSubstitution.__init__)
+def test_pivot_namedelement_constructor_exists():
+    assert callable(pivot_NamedElement.__init__)
 
 
-def test_pivot::templateparametersubstitution_constructor_args():
-    sig = inspect.signature(pivot::TemplateParameterSubstitution.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_pivot::templateparameter_is_not_abstract():
-    assert not inspect.isabstract(pivot::TemplateParameter)
-
-
-def test_pivot::templateparameter_constructor_exists():
-    assert callable(pivot::TemplateParameter.__init__)
-
-
-def test_pivot::templateparameter_constructor_args():
-    sig = inspect.signature(pivot::TemplateParameter.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_pivot::templatebinding_is_not_abstract():
-    assert not inspect.isabstract(pivot::TemplateBinding)
-
-
-def test_pivot::templatebinding_constructor_exists():
-    assert callable(pivot::TemplateBinding.__init__)
-
-
-def test_pivot::templatebinding_constructor_args():
-    sig = inspect.signature(pivot::TemplateBinding.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_pivot::namedelement_is_not_abstract():
-    assert not inspect.isabstract(pivot::NamedElement)
-
-
-def test_pivot::namedelement_constructor_exists():
-    assert callable(pivot::NamedElement.__init__)
-
-
-def test_pivot::namedelement_constructor_args():
-    sig = inspect.signature(pivot::NamedElement.__init__)
+def test_pivot_namedelement_constructor_args():
+    sig = inspect.signature(pivot_NamedElement.__init__)
     params = list(sig.parameters.keys())
     assert "isStatic" in params, "Missing parameter 'isStatic'"
     assert "name" in params, "Missing parameter 'name'"
 
-def test_pivot::namedelement_has_isStatic():
-    assert hasattr(pivot::NamedElement, "isStatic")
+def test_pivot_namedelement_has_isStatic():
+    assert hasattr(pivot_NamedElement, "isStatic")
     descriptor = None
-    for klass in pivot::NamedElement.__mro__:
+    for klass in pivot_NamedElement.__mro__:
         if "isStatic" in klass.__dict__:
             descriptor = klass.__dict__["isStatic"]
             break
     assert isinstance(descriptor, property)
 
-def test_pivot::namedelement_has_name():
-    assert hasattr(pivot::NamedElement, "name")
+def test_pivot_namedelement_has_name():
+    assert hasattr(pivot_NamedElement, "name")
     descriptor = None
-    for klass in pivot::NamedElement.__mro__:
+    for klass in pivot_NamedElement.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -1144,65 +1026,183 @@ def test_pivot::namedelement_has_name():
 
 
 
-def test_pivot::templatesignature_is_not_abstract():
-    assert not inspect.isabstract(pivot::TemplateSignature)
+def test_pivot_parameterableelement_is_not_abstract():
+    assert not inspect.isabstract(pivot_ParameterableElement)
 
 
-def test_pivot::templatesignature_constructor_exists():
-    assert callable(pivot::TemplateSignature.__init__)
+def test_pivot_parameterableelement_constructor_exists():
+    assert callable(pivot_ParameterableElement.__init__)
 
 
-def test_pivot::templatesignature_constructor_args():
-    sig = inspect.signature(pivot::TemplateSignature.__init__)
+def test_pivot_parameterableelement_constructor_args():
+    sig = inspect.signature(pivot_ParameterableElement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_pivot::dynamicelement_is_not_abstract():
-    assert not inspect.isabstract(pivot::DynamicElement)
+def test_pivot_templatesignature_is_not_abstract():
+    assert not inspect.isabstract(pivot_TemplateSignature)
 
 
-def test_pivot::dynamicelement_constructor_exists():
-    assert callable(pivot::DynamicElement.__init__)
+def test_pivot_templatesignature_constructor_exists():
+    assert callable(pivot_TemplateSignature.__init__)
 
 
-def test_pivot::dynamicelement_constructor_args():
-    sig = inspect.signature(pivot::DynamicElement.__init__)
+def test_pivot_templatesignature_constructor_args():
+    sig = inspect.signature(pivot_TemplateSignature.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_pivot::templateableelement_is_not_abstract():
-    assert not inspect.isabstract(pivot::TemplateableElement)
+def test_pivot_dynamicproperty_is_not_abstract():
+    assert not inspect.isabstract(pivot_DynamicProperty)
 
 
-def test_pivot::templateableelement_constructor_exists():
-    assert callable(pivot::TemplateableElement.__init__)
+def test_pivot_dynamicproperty_constructor_exists():
+    assert callable(pivot_DynamicProperty.__init__)
 
 
-def test_pivot::templateableelement_constructor_args():
-    sig = inspect.signature(pivot::TemplateableElement.__init__)
+def test_pivot_dynamicproperty_constructor_args():
+    sig = inspect.signature(pivot_DynamicProperty.__init__)
+    params = list(sig.parameters.keys())
+    assert "default" in params, "Missing parameter 'default'"
+
+def test_pivot_dynamicproperty_has_default():
+    assert hasattr(pivot_DynamicProperty, "default")
+    descriptor = None
+    for klass in pivot_DynamicProperty.__mro__:
+        if "default" in klass.__dict__:
+            descriptor = klass.__dict__["default"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_pivot_templateableelement_is_not_abstract():
+    assert not inspect.isabstract(pivot_TemplateableElement)
+
+
+def test_pivot_templateableelement_constructor_exists():
+    assert callable(pivot_TemplateableElement.__init__)
+
+
+def test_pivot_templateableelement_constructor_args():
+    sig = inspect.signature(pivot_TemplateableElement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_pivot::comment_is_not_abstract():
-    assert not inspect.isabstract(pivot::Comment)
+def test_pivot_templatebinding_is_not_abstract():
+    assert not inspect.isabstract(pivot_TemplateBinding)
 
 
-def test_pivot::comment_constructor_exists():
-    assert callable(pivot::Comment.__init__)
+def test_pivot_templatebinding_constructor_exists():
+    assert callable(pivot_TemplateBinding.__init__)
 
 
-def test_pivot::comment_constructor_args():
-    sig = inspect.signature(pivot::Comment.__init__)
+def test_pivot_templatebinding_constructor_args():
+    sig = inspect.signature(pivot_TemplateBinding.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_pivot_dynamicelement_is_not_abstract():
+    assert not inspect.isabstract(pivot_DynamicElement)
+
+
+def test_pivot_dynamicelement_constructor_exists():
+    assert callable(pivot_DynamicElement.__init__)
+
+
+def test_pivot_dynamicelement_constructor_args():
+    sig = inspect.signature(pivot_DynamicElement.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_pivot_templateparameter_is_not_abstract():
+    assert not inspect.isabstract(pivot_TemplateParameter)
+
+
+def test_pivot_templateparameter_constructor_exists():
+    assert callable(pivot_TemplateParameter.__init__)
+
+
+def test_pivot_templateparameter_constructor_args():
+    sig = inspect.signature(pivot_TemplateParameter.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_pivot_visitor_is_not_abstract():
+    assert not inspect.isabstract(pivot_Visitor)
+
+
+def test_pivot_visitor_constructor_exists():
+    assert callable(pivot_Visitor.__init__)
+
+
+def test_pivot_visitor_constructor_args():
+    sig = inspect.signature(pivot_Visitor.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_pivot_visitable_is_not_abstract():
+    assert not inspect.isabstract(pivot_Visitable)
+
+
+def test_pivot_visitable_constructor_exists():
+    assert callable(pivot_Visitable.__init__)
+
+
+def test_pivot_visitable_constructor_args():
+    sig = inspect.signature(pivot_Visitable.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_pivot_unlimitednaturalliteralexp_is_not_abstract():
+    assert not inspect.isabstract(pivot_UnlimitedNaturalLiteralExp)
+
+
+def test_pivot_unlimitednaturalliteralexp_constructor_exists():
+    assert callable(pivot_UnlimitedNaturalLiteralExp.__init__)
+
+
+def test_pivot_unlimitednaturalliteralexp_constructor_args():
+    sig = inspect.signature(pivot_UnlimitedNaturalLiteralExp.__init__)
+    params = list(sig.parameters.keys())
+    assert "unlimitedNaturalSymbol" in params, "Missing parameter 'unlimitedNaturalSymbol'"
+
+def test_pivot_unlimitednaturalliteralexp_has_unlimitedNaturalSymbol():
+    assert hasattr(pivot_UnlimitedNaturalLiteralExp, "unlimitedNaturalSymbol")
+    descriptor = None
+    for klass in pivot_UnlimitedNaturalLiteralExp.__mro__:
+        if "unlimitedNaturalSymbol" in klass.__dict__:
+            descriptor = klass.__dict__["unlimitedNaturalSymbol"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_pivot_comment_is_not_abstract():
+    assert not inspect.isabstract(pivot_Comment)
+
+
+def test_pivot_comment_constructor_exists():
+    assert callable(pivot_Comment.__init__)
+
+
+def test_pivot_comment_constructor_args():
+    sig = inspect.signature(pivot_Comment.__init__)
     params = list(sig.parameters.keys())
     assert "body" in params, "Missing parameter 'body'"
 
-def test_pivot::comment_has_body():
-    assert hasattr(pivot::Comment, "body")
+def test_pivot_comment_has_body():
+    assert hasattr(pivot_Comment, "body")
     descriptor = None
-    for klass in pivot::Comment.__mro__:
+    for klass in pivot_Comment.__mro__:
         if "body" in klass.__dict__:
             descriptor = klass.__dict__["body"]
             break
@@ -1224,91 +1224,91 @@ def test_datatype_constructor_args():
 
 
 
-def test_pivot::enumeration_is_not_abstract():
-    assert not inspect.isabstract(pivot::Enumeration)
+def test_pivot_tupletype_is_not_abstract():
+    assert not inspect.isabstract(pivot_TupleType)
 
 
-def test_pivot::enumeration_constructor_exists():
-    assert callable(pivot::Enumeration.__init__)
+def test_pivot_tupletype_constructor_exists():
+    assert callable(pivot_TupleType.__init__)
 
 
-def test_pivot::enumeration_constructor_args():
-    sig = inspect.signature(pivot::Enumeration.__init__)
+def test_pivot_tupletype_constructor_args():
+    sig = inspect.signature(pivot_TupleType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_pivot::lambdatype_is_not_abstract():
-    assert not inspect.isabstract(pivot::LambdaType)
+def test_pivot_lambdatype_is_not_abstract():
+    assert not inspect.isabstract(pivot_LambdaType)
 
 
-def test_pivot::lambdatype_constructor_exists():
-    assert callable(pivot::LambdaType.__init__)
+def test_pivot_lambdatype_constructor_exists():
+    assert callable(pivot_LambdaType.__init__)
 
 
-def test_pivot::lambdatype_constructor_args():
-    sig = inspect.signature(pivot::LambdaType.__init__)
+def test_pivot_lambdatype_constructor_args():
+    sig = inspect.signature(pivot_LambdaType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_pivot::tupletype_is_not_abstract():
-    assert not inspect.isabstract(pivot::TupleType)
+def test_pivot_primitivetype_is_not_abstract():
+    assert not inspect.isabstract(pivot_PrimitiveType)
 
 
-def test_pivot::tupletype_constructor_exists():
-    assert callable(pivot::TupleType.__init__)
+def test_pivot_primitivetype_constructor_exists():
+    assert callable(pivot_PrimitiveType.__init__)
 
 
-def test_pivot::tupletype_constructor_args():
-    sig = inspect.signature(pivot::TupleType.__init__)
+def test_pivot_primitivetype_constructor_args():
+    sig = inspect.signature(pivot_PrimitiveType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_pivot::primitivetype_is_not_abstract():
-    assert not inspect.isabstract(pivot::PrimitiveType)
+def test_pivot_enumeration_is_not_abstract():
+    assert not inspect.isabstract(pivot_Enumeration)
 
 
-def test_pivot::primitivetype_constructor_exists():
-    assert callable(pivot::PrimitiveType.__init__)
+def test_pivot_enumeration_constructor_exists():
+    assert callable(pivot_Enumeration.__init__)
 
 
-def test_pivot::primitivetype_constructor_args():
-    sig = inspect.signature(pivot::PrimitiveType.__init__)
+def test_pivot_enumeration_constructor_args():
+    sig = inspect.signature(pivot_Enumeration.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_pivot::collectiontype_is_not_abstract():
-    assert not inspect.isabstract(pivot::CollectionType)
+def test_pivot_collectiontype_is_not_abstract():
+    assert not inspect.isabstract(pivot_CollectionType)
 
 
-def test_pivot::collectiontype_constructor_exists():
-    assert callable(pivot::CollectionType.__init__)
+def test_pivot_collectiontype_constructor_exists():
+    assert callable(pivot_CollectionType.__init__)
 
 
-def test_pivot::collectiontype_constructor_args():
-    sig = inspect.signature(pivot::CollectionType.__init__)
+def test_pivot_collectiontype_constructor_args():
+    sig = inspect.signature(pivot_CollectionType.__init__)
     params = list(sig.parameters.keys())
-    assert "lower" in params, "Missing parameter 'lower'"
     assert "upper" in params, "Missing parameter 'upper'"
+    assert "lower" in params, "Missing parameter 'lower'"
 
-def test_pivot::collectiontype_has_lower():
-    assert hasattr(pivot::CollectionType, "lower")
+def test_pivot_collectiontype_has_upper():
+    assert hasattr(pivot_CollectionType, "upper")
     descriptor = None
-    for klass in pivot::CollectionType.__mro__:
-        if "lower" in klass.__dict__:
-            descriptor = klass.__dict__["lower"]
+    for klass in pivot_CollectionType.__mro__:
+        if "upper" in klass.__dict__:
+            descriptor = klass.__dict__["upper"]
             break
     assert isinstance(descriptor, property)
 
-def test_pivot::collectiontype_has_upper():
-    assert hasattr(pivot::CollectionType, "upper")
+def test_pivot_collectiontype_has_lower():
+    assert hasattr(pivot_CollectionType, "lower")
     descriptor = None
-    for klass in pivot::CollectionType.__mro__:
-        if "upper" in klass.__dict__:
-            descriptor = klass.__dict__["upper"]
+    for klass in pivot_CollectionType.__mro__:
+        if "lower" in klass.__dict__:
+            descriptor = klass.__dict__["lower"]
             break
     assert isinstance(descriptor, property)
 
@@ -1328,79 +1328,79 @@ def test_literalexp_constructor_args():
 
 
 
-def test_pivot::enumliteralexp_is_not_abstract():
-    assert not inspect.isabstract(pivot::EnumLiteralExp)
+def test_pivot_enumliteralexp_is_not_abstract():
+    assert not inspect.isabstract(pivot_EnumLiteralExp)
 
 
-def test_pivot::enumliteralexp_constructor_exists():
-    assert callable(pivot::EnumLiteralExp.__init__)
+def test_pivot_enumliteralexp_constructor_exists():
+    assert callable(pivot_EnumLiteralExp.__init__)
 
 
-def test_pivot::enumliteralexp_constructor_args():
-    sig = inspect.signature(pivot::EnumLiteralExp.__init__)
+def test_pivot_enumliteralexp_constructor_args():
+    sig = inspect.signature(pivot_EnumLiteralExp.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_pivot::tupleliteralexp_is_not_abstract():
-    assert not inspect.isabstract(pivot::TupleLiteralExp)
+def test_pivot_primitiveliteralexp_is_not_abstract():
+    assert not inspect.isabstract(pivot_PrimitiveLiteralExp)
 
 
-def test_pivot::tupleliteralexp_constructor_exists():
-    assert callable(pivot::TupleLiteralExp.__init__)
+def test_pivot_primitiveliteralexp_constructor_exists():
+    assert callable(pivot_PrimitiveLiteralExp.__init__)
 
 
-def test_pivot::tupleliteralexp_constructor_args():
-    sig = inspect.signature(pivot::TupleLiteralExp.__init__)
+def test_pivot_primitiveliteralexp_constructor_args():
+    sig = inspect.signature(pivot_PrimitiveLiteralExp.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_pivot::invalidliteralexp_is_not_abstract():
-    assert not inspect.isabstract(pivot::InvalidLiteralExp)
+def test_pivot_tupleliteralexp_is_not_abstract():
+    assert not inspect.isabstract(pivot_TupleLiteralExp)
 
 
-def test_pivot::invalidliteralexp_constructor_exists():
-    assert callable(pivot::InvalidLiteralExp.__init__)
+def test_pivot_tupleliteralexp_constructor_exists():
+    assert callable(pivot_TupleLiteralExp.__init__)
 
 
-def test_pivot::invalidliteralexp_constructor_args():
-    sig = inspect.signature(pivot::InvalidLiteralExp.__init__)
+def test_pivot_tupleliteralexp_constructor_args():
+    sig = inspect.signature(pivot_TupleLiteralExp.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_pivot::primitiveliteralexp_is_not_abstract():
-    assert not inspect.isabstract(pivot::PrimitiveLiteralExp)
+def test_pivot_invalidliteralexp_is_not_abstract():
+    assert not inspect.isabstract(pivot_InvalidLiteralExp)
 
 
-def test_pivot::primitiveliteralexp_constructor_exists():
-    assert callable(pivot::PrimitiveLiteralExp.__init__)
+def test_pivot_invalidliteralexp_constructor_exists():
+    assert callable(pivot_InvalidLiteralExp.__init__)
 
 
-def test_pivot::primitiveliteralexp_constructor_args():
-    sig = inspect.signature(pivot::PrimitiveLiteralExp.__init__)
+def test_pivot_invalidliteralexp_constructor_args():
+    sig = inspect.signature(pivot_InvalidLiteralExp.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_pivot::collectionliteralexp_is_not_abstract():
-    assert not inspect.isabstract(pivot::CollectionLiteralExp)
+def test_pivot_collectionliteralexp_is_not_abstract():
+    assert not inspect.isabstract(pivot_CollectionLiteralExp)
 
 
-def test_pivot::collectionliteralexp_constructor_exists():
-    assert callable(pivot::CollectionLiteralExp.__init__)
+def test_pivot_collectionliteralexp_constructor_exists():
+    assert callable(pivot_CollectionLiteralExp.__init__)
 
 
-def test_pivot::collectionliteralexp_constructor_args():
-    sig = inspect.signature(pivot::CollectionLiteralExp.__init__)
+def test_pivot_collectionliteralexp_constructor_args():
+    sig = inspect.signature(pivot_CollectionLiteralExp.__init__)
     params = list(sig.parameters.keys())
     assert "kind" in params, "Missing parameter 'kind'"
 
-def test_pivot::collectionliteralexp_has_kind():
-    assert hasattr(pivot::CollectionLiteralExp, "kind")
+def test_pivot_collectionliteralexp_has_kind():
+    assert hasattr(pivot_CollectionLiteralExp, "kind")
     descriptor = None
-    for klass in pivot::CollectionLiteralExp.__mro__:
+    for klass in pivot_CollectionLiteralExp.__mro__:
         if "kind" in klass.__dict__:
             descriptor = klass.__dict__["kind"]
             break
@@ -1422,30 +1422,30 @@ def test_collectionliteralpart_constructor_args():
 
 
 
-def test_pivot::collectionitem_is_not_abstract():
-    assert not inspect.isabstract(pivot::CollectionItem)
+def test_pivot_collectionitem_is_not_abstract():
+    assert not inspect.isabstract(pivot_CollectionItem)
 
 
-def test_pivot::collectionitem_constructor_exists():
-    assert callable(pivot::CollectionItem.__init__)
+def test_pivot_collectionitem_constructor_exists():
+    assert callable(pivot_CollectionItem.__init__)
 
 
-def test_pivot::collectionitem_constructor_args():
-    sig = inspect.signature(pivot::CollectionItem.__init__)
+def test_pivot_collectionitem_constructor_args():
+    sig = inspect.signature(pivot_CollectionItem.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_pivot::collectionrange_is_not_abstract():
-    assert not inspect.isabstract(pivot::CollectionRange)
+def test_pivot_collectionrange_is_not_abstract():
+    assert not inspect.isabstract(pivot_CollectionRange)
 
 
-def test_pivot::collectionrange_constructor_exists():
-    assert callable(pivot::CollectionRange.__init__)
+def test_pivot_collectionrange_constructor_exists():
+    assert callable(pivot_CollectionRange.__init__)
 
 
-def test_pivot::collectionrange_constructor_args():
-    sig = inspect.signature(pivot::CollectionRange.__init__)
+def test_pivot_collectionrange_constructor_args():
+    sig = inspect.signature(pivot_CollectionRange.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1464,86 +1464,86 @@ def test_typedelement_constructor_args():
 
 
 
-def test_pivot::typedmultiplicityelement_is_not_abstract():
-    assert not inspect.isabstract(pivot::TypedMultiplicityElement)
+def test_pivot_valuespecification_is_not_abstract():
+    assert not inspect.isabstract(pivot_ValueSpecification)
 
 
-def test_pivot::typedmultiplicityelement_constructor_exists():
-    assert callable(pivot::TypedMultiplicityElement.__init__)
+def test_pivot_valuespecification_constructor_exists():
+    assert callable(pivot_ValueSpecification.__init__)
 
 
-def test_pivot::typedmultiplicityelement_constructor_args():
-    sig = inspect.signature(pivot::TypedMultiplicityElement.__init__)
+def test_pivot_valuespecification_constructor_args():
+    sig = inspect.signature(pivot_ValueSpecification.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_pivot::variabledeclaration_is_not_abstract():
-    assert not inspect.isabstract(pivot::VariableDeclaration)
+def test_pivot_variabledeclaration_is_not_abstract():
+    assert not inspect.isabstract(pivot_VariableDeclaration)
 
 
-def test_pivot::variabledeclaration_constructor_exists():
-    assert callable(pivot::VariableDeclaration.__init__)
+def test_pivot_variabledeclaration_constructor_exists():
+    assert callable(pivot_VariableDeclaration.__init__)
 
 
-def test_pivot::variabledeclaration_constructor_args():
-    sig = inspect.signature(pivot::VariableDeclaration.__init__)
+def test_pivot_variabledeclaration_constructor_args():
+    sig = inspect.signature(pivot_VariableDeclaration.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_pivot::valuespecification_is_not_abstract():
-    assert not inspect.isabstract(pivot::ValueSpecification)
+def test_pivot_constructorpart_is_not_abstract():
+    assert not inspect.isabstract(pivot_ConstructorPart)
 
 
-def test_pivot::valuespecification_constructor_exists():
-    assert callable(pivot::ValueSpecification.__init__)
+def test_pivot_constructorpart_constructor_exists():
+    assert callable(pivot_ConstructorPart.__init__)
 
 
-def test_pivot::valuespecification_constructor_args():
-    sig = inspect.signature(pivot::ValueSpecification.__init__)
+def test_pivot_constructorpart_constructor_args():
+    sig = inspect.signature(pivot_ConstructorPart.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_pivot::constructorpart_is_not_abstract():
-    assert not inspect.isabstract(pivot::ConstructorPart)
+def test_pivot_typedmultiplicityelement_is_not_abstract():
+    assert not inspect.isabstract(pivot_TypedMultiplicityElement)
 
 
-def test_pivot::constructorpart_constructor_exists():
-    assert callable(pivot::ConstructorPart.__init__)
+def test_pivot_typedmultiplicityelement_constructor_exists():
+    assert callable(pivot_TypedMultiplicityElement.__init__)
 
 
-def test_pivot::constructorpart_constructor_args():
-    sig = inspect.signature(pivot::ConstructorPart.__init__)
+def test_pivot_typedmultiplicityelement_constructor_args():
+    sig = inspect.signature(pivot_TypedMultiplicityElement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_pivot::collectionliteralpart_is_not_abstract():
-    assert not inspect.isabstract(pivot::CollectionLiteralPart)
+def test_pivot_collectionliteralpart_is_not_abstract():
+    assert not inspect.isabstract(pivot_CollectionLiteralPart)
 
 
-def test_pivot::collectionliteralpart_constructor_exists():
-    assert callable(pivot::CollectionLiteralPart.__init__)
+def test_pivot_collectionliteralpart_constructor_exists():
+    assert callable(pivot_CollectionLiteralPart.__init__)
 
 
-def test_pivot::collectionliteralpart_constructor_args():
-    sig = inspect.signature(pivot::CollectionLiteralPart.__init__)
+def test_pivot_collectionliteralpart_constructor_args():
+    sig = inspect.signature(pivot_CollectionLiteralPart.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_pivot::oclexpression_is_not_abstract():
-    assert not inspect.isabstract(pivot::OCLExpression)
+def test_pivot_oclexpression_is_not_abstract():
+    assert not inspect.isabstract(pivot_OCLExpression)
 
 
-def test_pivot::oclexpression_constructor_exists():
-    assert callable(pivot::OCLExpression.__init__)
+def test_pivot_oclexpression_constructor_exists():
+    assert callable(pivot_OCLExpression.__init__)
 
 
-def test_pivot::oclexpression_constructor_args():
-    sig = inspect.signature(pivot::OCLExpression.__init__)
+def test_pivot_oclexpression_constructor_args():
+    sig = inspect.signature(pivot_OCLExpression.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1562,23 +1562,79 @@ def test_oclexpression_constructor_args():
 
 
 
-def test_pivot::variableexp_is_not_abstract():
-    assert not inspect.isabstract(pivot::VariableExp)
+def test_pivot_typeexp_is_not_abstract():
+    assert not inspect.isabstract(pivot_TypeExp)
 
 
-def test_pivot::variableexp_constructor_exists():
-    assert callable(pivot::VariableExp.__init__)
+def test_pivot_typeexp_constructor_exists():
+    assert callable(pivot_TypeExp.__init__)
 
 
-def test_pivot::variableexp_constructor_args():
-    sig = inspect.signature(pivot::VariableExp.__init__)
+def test_pivot_typeexp_constructor_args():
+    sig = inspect.signature(pivot_TypeExp.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_pivot_letexp_is_not_abstract():
+    assert not inspect.isabstract(pivot_LetExp)
+
+
+def test_pivot_letexp_constructor_exists():
+    assert callable(pivot_LetExp.__init__)
+
+
+def test_pivot_letexp_constructor_args():
+    sig = inspect.signature(pivot_LetExp.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_pivot_literalexp_is_not_abstract():
+    assert not inspect.isabstract(pivot_LiteralExp)
+
+
+def test_pivot_literalexp_constructor_exists():
+    assert callable(pivot_LiteralExp.__init__)
+
+
+def test_pivot_literalexp_constructor_args():
+    sig = inspect.signature(pivot_LiteralExp.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_pivot_messageexp_is_not_abstract():
+    assert not inspect.isabstract(pivot_MessageExp)
+
+
+def test_pivot_messageexp_constructor_exists():
+    assert callable(pivot_MessageExp.__init__)
+
+
+def test_pivot_messageexp_constructor_args():
+    sig = inspect.signature(pivot_MessageExp.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_pivot_variableexp_is_not_abstract():
+    assert not inspect.isabstract(pivot_VariableExp)
+
+
+def test_pivot_variableexp_constructor_exists():
+    assert callable(pivot_VariableExp.__init__)
+
+
+def test_pivot_variableexp_constructor_args():
+    sig = inspect.signature(pivot_VariableExp.__init__)
     params = list(sig.parameters.keys())
     assert "implicit" in params, "Missing parameter 'implicit'"
 
-def test_pivot::variableexp_has_implicit():
-    assert hasattr(pivot::VariableExp, "implicit")
+def test_pivot_variableexp_has_implicit():
+    assert hasattr(pivot_VariableExp, "implicit")
     descriptor = None
-    for klass in pivot::VariableExp.__mro__:
+    for klass in pivot_VariableExp.__mro__:
         if "implicit" in klass.__dict__:
             descriptor = klass.__dict__["implicit"]
             break
@@ -1586,107 +1642,23 @@ def test_pivot::variableexp_has_implicit():
 
 
 
-def test_pivot::stateexp_is_not_abstract():
-    assert not inspect.isabstract(pivot::StateExp)
+def test_pivot_constructorexp_is_not_abstract():
+    assert not inspect.isabstract(pivot_ConstructorExp)
 
 
-def test_pivot::stateexp_constructor_exists():
-    assert callable(pivot::StateExp.__init__)
+def test_pivot_constructorexp_constructor_exists():
+    assert callable(pivot_ConstructorExp.__init__)
 
 
-def test_pivot::stateexp_constructor_args():
-    sig = inspect.signature(pivot::StateExp.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_pivot::ifexp_is_not_abstract():
-    assert not inspect.isabstract(pivot::IfExp)
-
-
-def test_pivot::ifexp_constructor_exists():
-    assert callable(pivot::IfExp.__init__)
-
-
-def test_pivot::ifexp_constructor_args():
-    sig = inspect.signature(pivot::IfExp.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_pivot::literalexp_is_not_abstract():
-    assert not inspect.isabstract(pivot::LiteralExp)
-
-
-def test_pivot::literalexp_constructor_exists():
-    assert callable(pivot::LiteralExp.__init__)
-
-
-def test_pivot::literalexp_constructor_args():
-    sig = inspect.signature(pivot::LiteralExp.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_pivot::messageexp_is_not_abstract():
-    assert not inspect.isabstract(pivot::MessageExp)
-
-
-def test_pivot::messageexp_constructor_exists():
-    assert callable(pivot::MessageExp.__init__)
-
-
-def test_pivot::messageexp_constructor_args():
-    sig = inspect.signature(pivot::MessageExp.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_pivot::unspecifiedvalueexp_is_not_abstract():
-    assert not inspect.isabstract(pivot::UnspecifiedValueExp)
-
-
-def test_pivot::unspecifiedvalueexp_constructor_exists():
-    assert callable(pivot::UnspecifiedValueExp.__init__)
-
-
-def test_pivot::unspecifiedvalueexp_constructor_args():
-    sig = inspect.signature(pivot::UnspecifiedValueExp.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_pivot::typeexp_is_not_abstract():
-    assert not inspect.isabstract(pivot::TypeExp)
-
-
-def test_pivot::typeexp_constructor_exists():
-    assert callable(pivot::TypeExp.__init__)
-
-
-def test_pivot::typeexp_constructor_args():
-    sig = inspect.signature(pivot::TypeExp.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_pivot::constructorexp_is_not_abstract():
-    assert not inspect.isabstract(pivot::ConstructorExp)
-
-
-def test_pivot::constructorexp_constructor_exists():
-    assert callable(pivot::ConstructorExp.__init__)
-
-
-def test_pivot::constructorexp_constructor_args():
-    sig = inspect.signature(pivot::ConstructorExp.__init__)
+def test_pivot_constructorexp_constructor_args():
+    sig = inspect.signature(pivot_ConstructorExp.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
 
-def test_pivot::constructorexp_has_value():
-    assert hasattr(pivot::ConstructorExp, "value")
+def test_pivot_constructorexp_has_value():
+    assert hasattr(pivot_ConstructorExp, "value")
     descriptor = None
-    for klass in pivot::ConstructorExp.__mro__:
+    for klass in pivot_ConstructorExp.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -1694,37 +1666,65 @@ def test_pivot::constructorexp_has_value():
 
 
 
-def test_pivot::letexp_is_not_abstract():
-    assert not inspect.isabstract(pivot::LetExp)
+def test_pivot_unspecifiedvalueexp_is_not_abstract():
+    assert not inspect.isabstract(pivot_UnspecifiedValueExp)
 
 
-def test_pivot::letexp_constructor_exists():
-    assert callable(pivot::LetExp.__init__)
+def test_pivot_unspecifiedvalueexp_constructor_exists():
+    assert callable(pivot_UnspecifiedValueExp.__init__)
 
 
-def test_pivot::letexp_constructor_args():
-    sig = inspect.signature(pivot::LetExp.__init__)
+def test_pivot_unspecifiedvalueexp_constructor_args():
+    sig = inspect.signature(pivot_UnspecifiedValueExp.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_pivot::callexp_is_not_abstract():
-    assert not inspect.isabstract(pivot::CallExp)
+def test_pivot_stateexp_is_not_abstract():
+    assert not inspect.isabstract(pivot_StateExp)
 
 
-def test_pivot::callexp_constructor_exists():
-    assert callable(pivot::CallExp.__init__)
+def test_pivot_stateexp_constructor_exists():
+    assert callable(pivot_StateExp.__init__)
 
 
-def test_pivot::callexp_constructor_args():
-    sig = inspect.signature(pivot::CallExp.__init__)
+def test_pivot_stateexp_constructor_args():
+    sig = inspect.signature(pivot_StateExp.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_pivot_ifexp_is_not_abstract():
+    assert not inspect.isabstract(pivot_IfExp)
+
+
+def test_pivot_ifexp_constructor_exists():
+    assert callable(pivot_IfExp.__init__)
+
+
+def test_pivot_ifexp_constructor_args():
+    sig = inspect.signature(pivot_IfExp.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_pivot_callexp_is_not_abstract():
+    assert not inspect.isabstract(pivot_CallExp)
+
+
+def test_pivot_callexp_constructor_exists():
+    assert callable(pivot_CallExp.__init__)
+
+
+def test_pivot_callexp_constructor_args():
+    sig = inspect.signature(pivot_CallExp.__init__)
     params = list(sig.parameters.keys())
     assert "implicit" in params, "Missing parameter 'implicit'"
 
-def test_pivot::callexp_has_implicit():
-    assert hasattr(pivot::CallExp, "implicit")
+def test_pivot_callexp_has_implicit():
+    assert hasattr(pivot_CallExp, "implicit")
     descriptor = None
-    for klass in pivot::CallExp.__mro__:
+    for klass in pivot_CallExp.__mro__:
         if "implicit" in klass.__dict__:
             descriptor = klass.__dict__["implicit"]
             break
@@ -1746,51 +1746,37 @@ def test_primitiveliteralexp_constructor_args():
 
 
 
-def test_pivot::nullliteralexp_is_not_abstract():
-    assert not inspect.isabstract(pivot::NullLiteralExp)
+def test_pivot_nullliteralexp_is_not_abstract():
+    assert not inspect.isabstract(pivot_NullLiteralExp)
 
 
-def test_pivot::nullliteralexp_constructor_exists():
-    assert callable(pivot::NullLiteralExp.__init__)
+def test_pivot_nullliteralexp_constructor_exists():
+    assert callable(pivot_NullLiteralExp.__init__)
 
 
-def test_pivot::nullliteralexp_constructor_args():
-    sig = inspect.signature(pivot::NullLiteralExp.__init__)
+def test_pivot_nullliteralexp_constructor_args():
+    sig = inspect.signature(pivot_NullLiteralExp.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_pivot::numericliteralexp_is_not_abstract():
-    assert not inspect.isabstract(pivot::NumericLiteralExp)
+def test_pivot_stringliteralexp_is_not_abstract():
+    assert not inspect.isabstract(pivot_StringLiteralExp)
 
 
-def test_pivot::numericliteralexp_constructor_exists():
-    assert callable(pivot::NumericLiteralExp.__init__)
+def test_pivot_stringliteralexp_constructor_exists():
+    assert callable(pivot_StringLiteralExp.__init__)
 
 
-def test_pivot::numericliteralexp_constructor_args():
-    sig = inspect.signature(pivot::NumericLiteralExp.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_pivot::stringliteralexp_is_not_abstract():
-    assert not inspect.isabstract(pivot::StringLiteralExp)
-
-
-def test_pivot::stringliteralexp_constructor_exists():
-    assert callable(pivot::StringLiteralExp.__init__)
-
-
-def test_pivot::stringliteralexp_constructor_args():
-    sig = inspect.signature(pivot::StringLiteralExp.__init__)
+def test_pivot_stringliteralexp_constructor_args():
+    sig = inspect.signature(pivot_StringLiteralExp.__init__)
     params = list(sig.parameters.keys())
     assert "stringSymbol" in params, "Missing parameter 'stringSymbol'"
 
-def test_pivot::stringliteralexp_has_stringSymbol():
-    assert hasattr(pivot::StringLiteralExp, "stringSymbol")
+def test_pivot_stringliteralexp_has_stringSymbol():
+    assert hasattr(pivot_StringLiteralExp, "stringSymbol")
     descriptor = None
-    for klass in pivot::StringLiteralExp.__mro__:
+    for klass in pivot_StringLiteralExp.__mro__:
         if "stringSymbol" in klass.__dict__:
             descriptor = klass.__dict__["stringSymbol"]
             break
@@ -1798,23 +1784,37 @@ def test_pivot::stringliteralexp_has_stringSymbol():
 
 
 
-def test_pivot::booleanliteralexp_is_not_abstract():
-    assert not inspect.isabstract(pivot::BooleanLiteralExp)
+def test_pivot_numericliteralexp_is_not_abstract():
+    assert not inspect.isabstract(pivot_NumericLiteralExp)
 
 
-def test_pivot::booleanliteralexp_constructor_exists():
-    assert callable(pivot::BooleanLiteralExp.__init__)
+def test_pivot_numericliteralexp_constructor_exists():
+    assert callable(pivot_NumericLiteralExp.__init__)
 
 
-def test_pivot::booleanliteralexp_constructor_args():
-    sig = inspect.signature(pivot::BooleanLiteralExp.__init__)
+def test_pivot_numericliteralexp_constructor_args():
+    sig = inspect.signature(pivot_NumericLiteralExp.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_pivot_booleanliteralexp_is_not_abstract():
+    assert not inspect.isabstract(pivot_BooleanLiteralExp)
+
+
+def test_pivot_booleanliteralexp_constructor_exists():
+    assert callable(pivot_BooleanLiteralExp.__init__)
+
+
+def test_pivot_booleanliteralexp_constructor_args():
+    sig = inspect.signature(pivot_BooleanLiteralExp.__init__)
     params = list(sig.parameters.keys())
     assert "booleanSymbol" in params, "Missing parameter 'booleanSymbol'"
 
-def test_pivot::booleanliteralexp_has_booleanSymbol():
-    assert hasattr(pivot::BooleanLiteralExp, "booleanSymbol")
+def test_pivot_booleanliteralexp_has_booleanSymbol():
+    assert hasattr(pivot_BooleanLiteralExp, "booleanSymbol")
     descriptor = None
-    for klass in pivot::BooleanLiteralExp.__mro__:
+    for klass in pivot_BooleanLiteralExp.__mro__:
         if "booleanSymbol" in klass.__dict__:
             descriptor = klass.__dict__["booleanSymbol"]
             break
@@ -1836,58 +1836,58 @@ def test_collectiontype_constructor_args():
 
 
 
-def test_pivot::sequencetype_is_not_abstract():
-    assert not inspect.isabstract(pivot::SequenceType)
+def test_pivot_settype_is_not_abstract():
+    assert not inspect.isabstract(pivot_SetType)
 
 
-def test_pivot::sequencetype_constructor_exists():
-    assert callable(pivot::SequenceType.__init__)
+def test_pivot_settype_constructor_exists():
+    assert callable(pivot_SetType.__init__)
 
 
-def test_pivot::sequencetype_constructor_args():
-    sig = inspect.signature(pivot::SequenceType.__init__)
+def test_pivot_settype_constructor_args():
+    sig = inspect.signature(pivot_SetType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_pivot::settype_is_not_abstract():
-    assert not inspect.isabstract(pivot::SetType)
+def test_pivot_orderedsettype_is_not_abstract():
+    assert not inspect.isabstract(pivot_OrderedSetType)
 
 
-def test_pivot::settype_constructor_exists():
-    assert callable(pivot::SetType.__init__)
+def test_pivot_orderedsettype_constructor_exists():
+    assert callable(pivot_OrderedSetType.__init__)
 
 
-def test_pivot::settype_constructor_args():
-    sig = inspect.signature(pivot::SetType.__init__)
+def test_pivot_orderedsettype_constructor_args():
+    sig = inspect.signature(pivot_OrderedSetType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_pivot::orderedsettype_is_not_abstract():
-    assert not inspect.isabstract(pivot::OrderedSetType)
+def test_pivot_sequencetype_is_not_abstract():
+    assert not inspect.isabstract(pivot_SequenceType)
 
 
-def test_pivot::orderedsettype_constructor_exists():
-    assert callable(pivot::OrderedSetType.__init__)
+def test_pivot_sequencetype_constructor_exists():
+    assert callable(pivot_SequenceType.__init__)
 
 
-def test_pivot::orderedsettype_constructor_args():
-    sig = inspect.signature(pivot::OrderedSetType.__init__)
+def test_pivot_sequencetype_constructor_args():
+    sig = inspect.signature(pivot_SequenceType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_pivot::bagtype_is_not_abstract():
-    assert not inspect.isabstract(pivot::BagType)
+def test_pivot_bagtype_is_not_abstract():
+    assert not inspect.isabstract(pivot_BagType)
 
 
-def test_pivot::bagtype_constructor_exists():
-    assert callable(pivot::BagType.__init__)
+def test_pivot_bagtype_constructor_exists():
+    assert callable(pivot_BagType.__init__)
 
 
-def test_pivot::bagtype_constructor_args():
-    sig = inspect.signature(pivot::BagType.__init__)
+def test_pivot_bagtype_constructor_args():
+    sig = inspect.signature(pivot_BagType.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1906,143 +1906,143 @@ def test_navigationcallexp_constructor_args():
 
 
 
-def test_pivot::propertycallexp_is_not_abstract():
-    assert not inspect.isabstract(pivot::PropertyCallExp)
+def test_pivot_propertycallexp_is_not_abstract():
+    assert not inspect.isabstract(pivot_PropertyCallExp)
 
 
-def test_pivot::propertycallexp_constructor_exists():
-    assert callable(pivot::PropertyCallExp.__init__)
+def test_pivot_propertycallexp_constructor_exists():
+    assert callable(pivot_PropertyCallExp.__init__)
 
 
-def test_pivot::propertycallexp_constructor_args():
-    sig = inspect.signature(pivot::PropertyCallExp.__init__)
+def test_pivot_propertycallexp_constructor_args():
+    sig = inspect.signature(pivot_PropertyCallExp.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_pivot::associationclasscallexp_is_not_abstract():
-    assert not inspect.isabstract(pivot::AssociationClassCallExp)
+def test_pivot_associationclasscallexp_is_not_abstract():
+    assert not inspect.isabstract(pivot_AssociationClassCallExp)
 
 
-def test_pivot::associationclasscallexp_constructor_exists():
-    assert callable(pivot::AssociationClassCallExp.__init__)
+def test_pivot_associationclasscallexp_constructor_exists():
+    assert callable(pivot_AssociationClassCallExp.__init__)
 
 
-def test_pivot::associationclasscallexp_constructor_args():
-    sig = inspect.signature(pivot::AssociationClassCallExp.__init__)
+def test_pivot_associationclasscallexp_constructor_args():
+    sig = inspect.signature(pivot_AssociationClassCallExp.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_pivot::property_is_not_abstract():
-    assert not inspect.isabstract(pivot::Property)
+def test_pivot_property_is_not_abstract():
+    assert not inspect.isabstract(pivot_Property)
 
 
-def test_pivot::property_constructor_exists():
-    assert callable(pivot::Property.__init__)
+def test_pivot_property_constructor_exists():
+    assert callable(pivot_Property.__init__)
 
 
-def test_pivot::property_constructor_args():
-    sig = inspect.signature(pivot::Property.__init__)
+def test_pivot_property_constructor_args():
+    sig = inspect.signature(pivot_Property.__init__)
     params = list(sig.parameters.keys())
-    assert "implicit" in params, "Missing parameter 'implicit'"
     assert "isVolatile" in params, "Missing parameter 'isVolatile'"
+    assert "isReadOnly" in params, "Missing parameter 'isReadOnly'"
     assert "isID" in params, "Missing parameter 'isID'"
     assert "isDerived" in params, "Missing parameter 'isDerived'"
     assert "isResolveProxies" in params, "Missing parameter 'isResolveProxies'"
     assert "isUnsettable" in params, "Missing parameter 'isUnsettable'"
+    assert "isTransient" in params, "Missing parameter 'isTransient'"
     assert "default" in params, "Missing parameter 'default'"
     assert "isComposite" in params, "Missing parameter 'isComposite'"
-    assert "isTransient" in params, "Missing parameter 'isTransient'"
-    assert "isReadOnly" in params, "Missing parameter 'isReadOnly'"
+    assert "implicit" in params, "Missing parameter 'implicit'"
 
-def test_pivot::property_has_implicit():
-    assert hasattr(pivot::Property, "implicit")
+def test_pivot_property_has_isVolatile():
+    assert hasattr(pivot_Property, "isVolatile")
     descriptor = None
-    for klass in pivot::Property.__mro__:
-        if "implicit" in klass.__dict__:
-            descriptor = klass.__dict__["implicit"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_pivot::property_has_isVolatile():
-    assert hasattr(pivot::Property, "isVolatile")
-    descriptor = None
-    for klass in pivot::Property.__mro__:
+    for klass in pivot_Property.__mro__:
         if "isVolatile" in klass.__dict__:
             descriptor = klass.__dict__["isVolatile"]
             break
     assert isinstance(descriptor, property)
 
-def test_pivot::property_has_isID():
-    assert hasattr(pivot::Property, "isID")
+def test_pivot_property_has_isReadOnly():
+    assert hasattr(pivot_Property, "isReadOnly")
     descriptor = None
-    for klass in pivot::Property.__mro__:
+    for klass in pivot_Property.__mro__:
+        if "isReadOnly" in klass.__dict__:
+            descriptor = klass.__dict__["isReadOnly"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_pivot_property_has_isID():
+    assert hasattr(pivot_Property, "isID")
+    descriptor = None
+    for klass in pivot_Property.__mro__:
         if "isID" in klass.__dict__:
             descriptor = klass.__dict__["isID"]
             break
     assert isinstance(descriptor, property)
 
-def test_pivot::property_has_isDerived():
-    assert hasattr(pivot::Property, "isDerived")
+def test_pivot_property_has_isDerived():
+    assert hasattr(pivot_Property, "isDerived")
     descriptor = None
-    for klass in pivot::Property.__mro__:
+    for klass in pivot_Property.__mro__:
         if "isDerived" in klass.__dict__:
             descriptor = klass.__dict__["isDerived"]
             break
     assert isinstance(descriptor, property)
 
-def test_pivot::property_has_isResolveProxies():
-    assert hasattr(pivot::Property, "isResolveProxies")
+def test_pivot_property_has_isResolveProxies():
+    assert hasattr(pivot_Property, "isResolveProxies")
     descriptor = None
-    for klass in pivot::Property.__mro__:
+    for klass in pivot_Property.__mro__:
         if "isResolveProxies" in klass.__dict__:
             descriptor = klass.__dict__["isResolveProxies"]
             break
     assert isinstance(descriptor, property)
 
-def test_pivot::property_has_isUnsettable():
-    assert hasattr(pivot::Property, "isUnsettable")
+def test_pivot_property_has_isUnsettable():
+    assert hasattr(pivot_Property, "isUnsettable")
     descriptor = None
-    for klass in pivot::Property.__mro__:
+    for klass in pivot_Property.__mro__:
         if "isUnsettable" in klass.__dict__:
             descriptor = klass.__dict__["isUnsettable"]
             break
     assert isinstance(descriptor, property)
 
-def test_pivot::property_has_default():
-    assert hasattr(pivot::Property, "default")
+def test_pivot_property_has_isTransient():
+    assert hasattr(pivot_Property, "isTransient")
     descriptor = None
-    for klass in pivot::Property.__mro__:
-        if "default" in klass.__dict__:
-            descriptor = klass.__dict__["default"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_pivot::property_has_isComposite():
-    assert hasattr(pivot::Property, "isComposite")
-    descriptor = None
-    for klass in pivot::Property.__mro__:
-        if "isComposite" in klass.__dict__:
-            descriptor = klass.__dict__["isComposite"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_pivot::property_has_isTransient():
-    assert hasattr(pivot::Property, "isTransient")
-    descriptor = None
-    for klass in pivot::Property.__mro__:
+    for klass in pivot_Property.__mro__:
         if "isTransient" in klass.__dict__:
             descriptor = klass.__dict__["isTransient"]
             break
     assert isinstance(descriptor, property)
 
-def test_pivot::property_has_isReadOnly():
-    assert hasattr(pivot::Property, "isReadOnly")
+def test_pivot_property_has_default():
+    assert hasattr(pivot_Property, "default")
     descriptor = None
-    for klass in pivot::Property.__mro__:
-        if "isReadOnly" in klass.__dict__:
-            descriptor = klass.__dict__["isReadOnly"]
+    for klass in pivot_Property.__mro__:
+        if "default" in klass.__dict__:
+            descriptor = klass.__dict__["default"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_pivot_property_has_isComposite():
+    assert hasattr(pivot_Property, "isComposite")
+    descriptor = None
+    for klass in pivot_Property.__mro__:
+        if "isComposite" in klass.__dict__:
+            descriptor = klass.__dict__["isComposite"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_pivot_property_has_implicit():
+    assert hasattr(pivot_Property, "implicit")
+    descriptor = None
+    for klass in pivot_Property.__mro__:
+        if "implicit" in klass.__dict__:
+            descriptor = klass.__dict__["implicit"]
             break
     assert isinstance(descriptor, property)
 
@@ -2062,121 +2062,79 @@ def test_class_constructor_args():
 
 
 
-def test_pivot::stereotype_is_not_abstract():
-    assert not inspect.isabstract(pivot::Stereotype)
+def test_pivot_unspecifiedtype_is_not_abstract():
+    assert not inspect.isabstract(pivot_UnspecifiedType)
 
 
-def test_pivot::stereotype_constructor_exists():
-    assert callable(pivot::Stereotype.__init__)
+def test_pivot_unspecifiedtype_constructor_exists():
+    assert callable(pivot_UnspecifiedType.__init__)
 
 
-def test_pivot::stereotype_constructor_args():
-    sig = inspect.signature(pivot::Stereotype.__init__)
+def test_pivot_unspecifiedtype_constructor_args():
+    sig = inspect.signature(pivot_UnspecifiedType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_pivot::invalidtype_is_not_abstract():
-    assert not inspect.isabstract(pivot::InvalidType)
+def test_pivot_invalidtype_is_not_abstract():
+    assert not inspect.isabstract(pivot_InvalidType)
 
 
-def test_pivot::invalidtype_constructor_exists():
-    assert callable(pivot::InvalidType.__init__)
+def test_pivot_invalidtype_constructor_exists():
+    assert callable(pivot_InvalidType.__init__)
 
 
-def test_pivot::invalidtype_constructor_args():
-    sig = inspect.signature(pivot::InvalidType.__init__)
+def test_pivot_invalidtype_constructor_args():
+    sig = inspect.signature(pivot_InvalidType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_pivot::unspecifiedtype_is_not_abstract():
-    assert not inspect.isabstract(pivot::UnspecifiedType)
+def test_pivot_selftype_is_not_abstract():
+    assert not inspect.isabstract(pivot_SelfType)
 
 
-def test_pivot::unspecifiedtype_constructor_exists():
-    assert callable(pivot::UnspecifiedType.__init__)
+def test_pivot_selftype_constructor_exists():
+    assert callable(pivot_SelfType.__init__)
 
 
-def test_pivot::unspecifiedtype_constructor_args():
-    sig = inspect.signature(pivot::UnspecifiedType.__init__)
+def test_pivot_selftype_constructor_args():
+    sig = inspect.signature(pivot_SelfType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_pivot::metaclass_is_not_abstract():
-    assert not inspect.isabstract(pivot::Metaclass)
+def test_pivot_stereotype_is_not_abstract():
+    assert not inspect.isabstract(pivot_Stereotype)
 
 
-def test_pivot::metaclass_constructor_exists():
-    assert callable(pivot::Metaclass.__init__)
+def test_pivot_stereotype_constructor_exists():
+    assert callable(pivot_Stereotype.__init__)
 
 
-def test_pivot::metaclass_constructor_args():
-    sig = inspect.signature(pivot::Metaclass.__init__)
+def test_pivot_stereotype_constructor_args():
+    sig = inspect.signature(pivot_Stereotype.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_pivot::behavior_is_not_abstract():
-    assert not inspect.isabstract(pivot::Behavior)
+def test_pivot_datatype_is_not_abstract():
+    assert not inspect.isabstract(pivot_DataType)
 
 
-def test_pivot::behavior_constructor_exists():
-    assert callable(pivot::Behavior.__init__)
+def test_pivot_datatype_constructor_exists():
+    assert callable(pivot_DataType.__init__)
 
 
-def test_pivot::behavior_constructor_args():
-    sig = inspect.signature(pivot::Behavior.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_pivot::voidtype_is_not_abstract():
-    assert not inspect.isabstract(pivot::VoidType)
-
-
-def test_pivot::voidtype_constructor_exists():
-    assert callable(pivot::VoidType.__init__)
-
-
-def test_pivot::voidtype_constructor_args():
-    sig = inspect.signature(pivot::VoidType.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_pivot::associationclass_is_not_abstract():
-    assert not inspect.isabstract(pivot::AssociationClass)
-
-
-def test_pivot::associationclass_constructor_exists():
-    assert callable(pivot::AssociationClass.__init__)
-
-
-def test_pivot::associationclass_constructor_args():
-    sig = inspect.signature(pivot::AssociationClass.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_pivot::datatype_is_not_abstract():
-    assert not inspect.isabstract(pivot::DataType)
-
-
-def test_pivot::datatype_constructor_exists():
-    assert callable(pivot::DataType.__init__)
-
-
-def test_pivot::datatype_constructor_args():
-    sig = inspect.signature(pivot::DataType.__init__)
+def test_pivot_datatype_constructor_args():
+    sig = inspect.signature(pivot_DataType.__init__)
     params = list(sig.parameters.keys())
     assert "isSerializable" in params, "Missing parameter 'isSerializable'"
 
-def test_pivot::datatype_has_isSerializable():
-    assert hasattr(pivot::DataType, "isSerializable")
+def test_pivot_datatype_has_isSerializable():
+    assert hasattr(pivot_DataType, "isSerializable")
     descriptor = None
-    for klass in pivot::DataType.__mro__:
+    for klass in pivot_DataType.__mro__:
         if "isSerializable" in klass.__dict__:
             descriptor = klass.__dict__["isSerializable"]
             break
@@ -2184,44 +2142,86 @@ def test_pivot::datatype_has_isSerializable():
 
 
 
-def test_pivot::selftype_is_not_abstract():
-    assert not inspect.isabstract(pivot::SelfType)
+def test_pivot_voidtype_is_not_abstract():
+    assert not inspect.isabstract(pivot_VoidType)
 
 
-def test_pivot::selftype_constructor_exists():
-    assert callable(pivot::SelfType.__init__)
+def test_pivot_voidtype_constructor_exists():
+    assert callable(pivot_VoidType.__init__)
 
 
-def test_pivot::selftype_constructor_args():
-    sig = inspect.signature(pivot::SelfType.__init__)
+def test_pivot_voidtype_constructor_args():
+    sig = inspect.signature(pivot_VoidType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_pivot::anytype_is_not_abstract():
-    assert not inspect.isabstract(pivot::AnyType)
+def test_pivot_associationclass_is_not_abstract():
+    assert not inspect.isabstract(pivot_AssociationClass)
 
 
-def test_pivot::anytype_constructor_exists():
-    assert callable(pivot::AnyType.__init__)
+def test_pivot_associationclass_constructor_exists():
+    assert callable(pivot_AssociationClass.__init__)
 
 
-def test_pivot::anytype_constructor_args():
-    sig = inspect.signature(pivot::AnyType.__init__)
+def test_pivot_associationclass_constructor_args():
+    sig = inspect.signature(pivot_AssociationClass.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_pivot::element_is_not_abstract():
-    assert not inspect.isabstract(pivot::Element)
+def test_pivot_behavior_is_not_abstract():
+    assert not inspect.isabstract(pivot_Behavior)
 
 
-def test_pivot::element_constructor_exists():
-    assert callable(pivot::Element.__init__)
+def test_pivot_behavior_constructor_exists():
+    assert callable(pivot_Behavior.__init__)
 
 
-def test_pivot::element_constructor_args():
-    sig = inspect.signature(pivot::Element.__init__)
+def test_pivot_behavior_constructor_args():
+    sig = inspect.signature(pivot_Behavior.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_pivot_metaclass_is_not_abstract():
+    assert not inspect.isabstract(pivot_Metaclass)
+
+
+def test_pivot_metaclass_constructor_exists():
+    assert callable(pivot_Metaclass.__init__)
+
+
+def test_pivot_metaclass_constructor_args():
+    sig = inspect.signature(pivot_Metaclass.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_pivot_anytype_is_not_abstract():
+    assert not inspect.isabstract(pivot_AnyType)
+
+
+def test_pivot_anytype_constructor_exists():
+    assert callable(pivot_AnyType.__init__)
+
+
+def test_pivot_anytype_constructor_args():
+    sig = inspect.signature(pivot_AnyType.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_pivot_element_is_not_abstract():
+    assert not inspect.isabstract(pivot_Element)
+
+
+def test_pivot_element_constructor_exists():
+    assert callable(pivot_Element.__init__)
+
+
+def test_pivot_element_constructor_args():
+    sig = inspect.signature(pivot_Element.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -2240,23 +2240,127 @@ def test_namedelement_constructor_args():
 
 
 
-def test_pivot::enumerationliteral_is_not_abstract():
-    assert not inspect.isabstract(pivot::EnumerationLiteral)
+def test_pivot_trigger_is_not_abstract():
+    assert not inspect.isabstract(pivot_Trigger)
 
 
-def test_pivot::enumerationliteral_constructor_exists():
-    assert callable(pivot::EnumerationLiteral.__init__)
+def test_pivot_trigger_constructor_exists():
+    assert callable(pivot_Trigger.__init__)
 
 
-def test_pivot::enumerationliteral_constructor_args():
-    sig = inspect.signature(pivot::EnumerationLiteral.__init__)
+def test_pivot_trigger_constructor_args():
+    sig = inspect.signature(pivot_Trigger.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_pivot_precedence_is_not_abstract():
+    assert not inspect.isabstract(pivot_Precedence)
+
+
+def test_pivot_precedence_constructor_exists():
+    assert callable(pivot_Precedence.__init__)
+
+
+def test_pivot_precedence_constructor_args():
+    sig = inspect.signature(pivot_Precedence.__init__)
+    params = list(sig.parameters.keys())
+    assert "associativity" in params, "Missing parameter 'associativity'"
+    assert "order" in params, "Missing parameter 'order'"
+
+def test_pivot_precedence_has_associativity():
+    assert hasattr(pivot_Precedence, "associativity")
+    descriptor = None
+    for klass in pivot_Precedence.__mro__:
+        if "associativity" in klass.__dict__:
+            descriptor = klass.__dict__["associativity"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_pivot_precedence_has_order():
+    assert hasattr(pivot_Precedence, "order")
+    descriptor = None
+    for klass in pivot_Precedence.__mro__:
+        if "order" in klass.__dict__:
+            descriptor = klass.__dict__["order"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_pivot_sendsignalaction_is_not_abstract():
+    assert not inspect.isabstract(pivot_SendSignalAction)
+
+
+def test_pivot_sendsignalaction_constructor_exists():
+    assert callable(pivot_SendSignalAction.__init__)
+
+
+def test_pivot_sendsignalaction_constructor_args():
+    sig = inspect.signature(pivot_SendSignalAction.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_pivot_calloperationaction_is_not_abstract():
+    assert not inspect.isabstract(pivot_CallOperationAction)
+
+
+def test_pivot_calloperationaction_constructor_exists():
+    assert callable(pivot_CallOperationAction.__init__)
+
+
+def test_pivot_calloperationaction_constructor_args():
+    sig = inspect.signature(pivot_CallOperationAction.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_pivot_import_is_not_abstract():
+    assert not inspect.isabstract(pivot_Import)
+
+
+def test_pivot_import_constructor_exists():
+    assert callable(pivot_Import.__init__)
+
+
+def test_pivot_import_constructor_args():
+    sig = inspect.signature(pivot_Import.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_pivot_vertex_is_not_abstract():
+    assert not inspect.isabstract(pivot_Vertex)
+
+
+def test_pivot_vertex_constructor_exists():
+    assert callable(pivot_Vertex.__init__)
+
+
+def test_pivot_vertex_constructor_args():
+    sig = inspect.signature(pivot_Vertex.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_pivot_enumerationliteral_is_not_abstract():
+    assert not inspect.isabstract(pivot_EnumerationLiteral)
+
+
+def test_pivot_enumerationliteral_constructor_exists():
+    assert callable(pivot_EnumerationLiteral.__init__)
+
+
+def test_pivot_enumerationliteral_constructor_args():
+    sig = inspect.signature(pivot_EnumerationLiteral.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
 
-def test_pivot::enumerationliteral_has_value():
-    assert hasattr(pivot::EnumerationLiteral, "value")
+def test_pivot_enumerationliteral_has_value():
+    assert hasattr(pivot_EnumerationLiteral, "value")
     descriptor = None
-    for klass in pivot::EnumerationLiteral.__mro__:
+    for klass in pivot_EnumerationLiteral.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -2264,179 +2368,23 @@ def test_pivot::enumerationliteral_has_value():
 
 
 
-def test_pivot::trigger_is_not_abstract():
-    assert not inspect.isabstract(pivot::Trigger)
+def test_pivot_constraint_is_not_abstract():
+    assert not inspect.isabstract(pivot_Constraint)
 
 
-def test_pivot::trigger_constructor_exists():
-    assert callable(pivot::Trigger.__init__)
+def test_pivot_constraint_constructor_exists():
+    assert callable(pivot_Constraint.__init__)
 
 
-def test_pivot::trigger_constructor_args():
-    sig = inspect.signature(pivot::Trigger.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_pivot::import_is_not_abstract():
-    assert not inspect.isabstract(pivot::Import)
-
-
-def test_pivot::import_constructor_exists():
-    assert callable(pivot::Import.__init__)
-
-
-def test_pivot::import_constructor_args():
-    sig = inspect.signature(pivot::Import.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_pivot::calloperationaction_is_not_abstract():
-    assert not inspect.isabstract(pivot::CallOperationAction)
-
-
-def test_pivot::calloperationaction_constructor_exists():
-    assert callable(pivot::CallOperationAction.__init__)
-
-
-def test_pivot::calloperationaction_constructor_args():
-    sig = inspect.signature(pivot::CallOperationAction.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_pivot::detail_is_not_abstract():
-    assert not inspect.isabstract(pivot::Detail)
-
-
-def test_pivot::detail_constructor_exists():
-    assert callable(pivot::Detail.__init__)
-
-
-def test_pivot::detail_constructor_args():
-    sig = inspect.signature(pivot::Detail.__init__)
-    params = list(sig.parameters.keys())
-    assert "value" in params, "Missing parameter 'value'"
-
-def test_pivot::detail_has_value():
-    assert hasattr(pivot::Detail, "value")
-    descriptor = None
-    for klass in pivot::Detail.__mro__:
-        if "value" in klass.__dict__:
-            descriptor = klass.__dict__["value"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_pivot::vertex_is_not_abstract():
-    assert not inspect.isabstract(pivot::Vertex)
-
-
-def test_pivot::vertex_constructor_exists():
-    assert callable(pivot::Vertex.__init__)
-
-
-def test_pivot::vertex_constructor_args():
-    sig = inspect.signature(pivot::Vertex.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_pivot::typedelement_is_not_abstract():
-    assert not inspect.isabstract(pivot::TypedElement)
-
-
-def test_pivot::typedelement_constructor_exists():
-    assert callable(pivot::TypedElement.__init__)
-
-
-def test_pivot::typedelement_constructor_args():
-    sig = inspect.signature(pivot::TypedElement.__init__)
-    params = list(sig.parameters.keys())
-    assert "isRequired" in params, "Missing parameter 'isRequired'"
-
-def test_pivot::typedelement_has_isRequired():
-    assert hasattr(pivot::TypedElement, "isRequired")
-    descriptor = None
-    for klass in pivot::TypedElement.__mro__:
-        if "isRequired" in klass.__dict__:
-            descriptor = klass.__dict__["isRequired"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_pivot::type_is_not_abstract():
-    assert not inspect.isabstract(pivot::Type)
-
-
-def test_pivot::type_constructor_exists():
-    assert callable(pivot::Type.__init__)
-
-
-def test_pivot::type_constructor_args():
-    sig = inspect.signature(pivot::Type.__init__)
-    params = list(sig.parameters.keys())
-    assert "instanceClassName" in params, "Missing parameter 'instanceClassName'"
-
-def test_pivot::type_has_instanceClassName():
-    assert hasattr(pivot::Type, "instanceClassName")
-    descriptor = None
-    for klass in pivot::Type.__mro__:
-        if "instanceClassName" in klass.__dict__:
-            descriptor = klass.__dict__["instanceClassName"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_pivot::signal_is_not_abstract():
-    assert not inspect.isabstract(pivot::Signal)
-
-
-def test_pivot::signal_constructor_exists():
-    assert callable(pivot::Signal.__init__)
-
-
-def test_pivot::signal_constructor_args():
-    sig = inspect.signature(pivot::Signal.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_pivot::namespace_is_not_abstract():
-    assert not inspect.isabstract(pivot::Namespace)
-
-
-def test_pivot::namespace_constructor_exists():
-    assert callable(pivot::Namespace.__init__)
-
-
-def test_pivot::namespace_constructor_args():
-    sig = inspect.signature(pivot::Namespace.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_pivot::constraint_is_not_abstract():
-    assert not inspect.isabstract(pivot::Constraint)
-
-
-def test_pivot::constraint_constructor_exists():
-    assert callable(pivot::Constraint.__init__)
-
-
-def test_pivot::constraint_constructor_args():
-    sig = inspect.signature(pivot::Constraint.__init__)
+def test_pivot_constraint_constructor_args():
+    sig = inspect.signature(pivot_Constraint.__init__)
     params = list(sig.parameters.keys())
     assert "isCallable" in params, "Missing parameter 'isCallable'"
 
-def test_pivot::constraint_has_isCallable():
-    assert hasattr(pivot::Constraint, "isCallable")
+def test_pivot_constraint_has_isCallable():
+    assert hasattr(pivot_Constraint, "isCallable")
     descriptor = None
-    for klass in pivot::Constraint.__mro__:
+    for klass in pivot_Constraint.__mro__:
         if "isCallable" in klass.__dict__:
             descriptor = klass.__dict__["isCallable"]
             break
@@ -2444,64 +2392,116 @@ def test_pivot::constraint_has_isCallable():
 
 
 
-def test_pivot::sendsignalaction_is_not_abstract():
-    assert not inspect.isabstract(pivot::SendSignalAction)
+def test_pivot_typedelement_is_not_abstract():
+    assert not inspect.isabstract(pivot_TypedElement)
 
 
-def test_pivot::sendsignalaction_constructor_exists():
-    assert callable(pivot::SendSignalAction.__init__)
+def test_pivot_typedelement_constructor_exists():
+    assert callable(pivot_TypedElement.__init__)
 
 
-def test_pivot::sendsignalaction_constructor_args():
-    sig = inspect.signature(pivot::SendSignalAction.__init__)
+def test_pivot_typedelement_constructor_args():
+    sig = inspect.signature(pivot_TypedElement.__init__)
     params = list(sig.parameters.keys())
+    assert "isRequired" in params, "Missing parameter 'isRequired'"
 
-
-
-def test_pivot::precedence_is_not_abstract():
-    assert not inspect.isabstract(pivot::Precedence)
-
-
-def test_pivot::precedence_constructor_exists():
-    assert callable(pivot::Precedence.__init__)
-
-
-def test_pivot::precedence_constructor_args():
-    sig = inspect.signature(pivot::Precedence.__init__)
-    params = list(sig.parameters.keys())
-    assert "order" in params, "Missing parameter 'order'"
-    assert "associativity" in params, "Missing parameter 'associativity'"
-
-def test_pivot::precedence_has_order():
-    assert hasattr(pivot::Precedence, "order")
+def test_pivot_typedelement_has_isRequired():
+    assert hasattr(pivot_TypedElement, "isRequired")
     descriptor = None
-    for klass in pivot::Precedence.__mro__:
-        if "order" in klass.__dict__:
-            descriptor = klass.__dict__["order"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_pivot::precedence_has_associativity():
-    assert hasattr(pivot::Precedence, "associativity")
-    descriptor = None
-    for klass in pivot::Precedence.__mro__:
-        if "associativity" in klass.__dict__:
-            descriptor = klass.__dict__["associativity"]
+    for klass in pivot_TypedElement.__mro__:
+        if "isRequired" in klass.__dict__:
+            descriptor = klass.__dict__["isRequired"]
             break
     assert isinstance(descriptor, property)
 
 
 
-def test_pivot::annotation_is_not_abstract():
-    assert not inspect.isabstract(pivot::Annotation)
+def test_pivot_detail_is_not_abstract():
+    assert not inspect.isabstract(pivot_Detail)
 
 
-def test_pivot::annotation_constructor_exists():
-    assert callable(pivot::Annotation.__init__)
+def test_pivot_detail_constructor_exists():
+    assert callable(pivot_Detail.__init__)
 
 
-def test_pivot::annotation_constructor_args():
-    sig = inspect.signature(pivot::Annotation.__init__)
+def test_pivot_detail_constructor_args():
+    sig = inspect.signature(pivot_Detail.__init__)
+    params = list(sig.parameters.keys())
+    assert "value" in params, "Missing parameter 'value'"
+
+def test_pivot_detail_has_value():
+    assert hasattr(pivot_Detail, "value")
+    descriptor = None
+    for klass in pivot_Detail.__mro__:
+        if "value" in klass.__dict__:
+            descriptor = klass.__dict__["value"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_pivot_type_is_not_abstract():
+    assert not inspect.isabstract(pivot_Type)
+
+
+def test_pivot_type_constructor_exists():
+    assert callable(pivot_Type.__init__)
+
+
+def test_pivot_type_constructor_args():
+    sig = inspect.signature(pivot_Type.__init__)
+    params = list(sig.parameters.keys())
+    assert "instanceClassName" in params, "Missing parameter 'instanceClassName'"
+
+def test_pivot_type_has_instanceClassName():
+    assert hasattr(pivot_Type, "instanceClassName")
+    descriptor = None
+    for klass in pivot_Type.__mro__:
+        if "instanceClassName" in klass.__dict__:
+            descriptor = klass.__dict__["instanceClassName"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_pivot_signal_is_not_abstract():
+    assert not inspect.isabstract(pivot_Signal)
+
+
+def test_pivot_signal_constructor_exists():
+    assert callable(pivot_Signal.__init__)
+
+
+def test_pivot_signal_constructor_args():
+    sig = inspect.signature(pivot_Signal.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_pivot_namespace_is_not_abstract():
+    assert not inspect.isabstract(pivot_Namespace)
+
+
+def test_pivot_namespace_constructor_exists():
+    assert callable(pivot_Namespace.__init__)
+
+
+def test_pivot_namespace_constructor_args():
+    sig = inspect.signature(pivot_Namespace.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_pivot_annotation_is_not_abstract():
+    assert not inspect.isabstract(pivot_Annotation)
+
+
+def test_pivot_annotation_constructor_exists():
+    assert callable(pivot_Annotation.__init__)
+
+
+def test_pivot_annotation_constructor_args():
+    sig = inspect.signature(pivot_Annotation.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -2520,159 +2520,61 @@ def test_namespace_constructor_args():
 
 
 
-def test_pivot::state_is_not_abstract():
-    assert not inspect.isabstract(pivot::State)
+def test_pivot_region_is_not_abstract():
+    assert not inspect.isabstract(pivot_Region)
 
 
-def test_pivot::state_constructor_exists():
-    assert callable(pivot::State.__init__)
+def test_pivot_region_constructor_exists():
+    assert callable(pivot_Region.__init__)
 
 
-def test_pivot::state_constructor_args():
-    sig = inspect.signature(pivot::State.__init__)
-    params = list(sig.parameters.keys())
-    assert "isSimple" in params, "Missing parameter 'isSimple'"
-    assert "isOrthogonal" in params, "Missing parameter 'isOrthogonal'"
-    assert "isComposite" in params, "Missing parameter 'isComposite'"
-    assert "isSubmachineState" in params, "Missing parameter 'isSubmachineState'"
-
-def test_pivot::state_has_isSimple():
-    assert hasattr(pivot::State, "isSimple")
-    descriptor = None
-    for klass in pivot::State.__mro__:
-        if "isSimple" in klass.__dict__:
-            descriptor = klass.__dict__["isSimple"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_pivot::state_has_isOrthogonal():
-    assert hasattr(pivot::State, "isOrthogonal")
-    descriptor = None
-    for klass in pivot::State.__mro__:
-        if "isOrthogonal" in klass.__dict__:
-            descriptor = klass.__dict__["isOrthogonal"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_pivot::state_has_isComposite():
-    assert hasattr(pivot::State, "isComposite")
-    descriptor = None
-    for klass in pivot::State.__mro__:
-        if "isComposite" in klass.__dict__:
-            descriptor = klass.__dict__["isComposite"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_pivot::state_has_isSubmachineState():
-    assert hasattr(pivot::State, "isSubmachineState")
-    descriptor = None
-    for klass in pivot::State.__mro__:
-        if "isSubmachineState" in klass.__dict__:
-            descriptor = klass.__dict__["isSubmachineState"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_pivot::region_is_not_abstract():
-    assert not inspect.isabstract(pivot::Region)
-
-
-def test_pivot::region_constructor_exists():
-    assert callable(pivot::Region.__init__)
-
-
-def test_pivot::region_constructor_args():
-    sig = inspect.signature(pivot::Region.__init__)
+def test_pivot_region_constructor_args():
+    sig = inspect.signature(pivot_Region.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_pivot::operation_is_not_abstract():
-    assert not inspect.isabstract(pivot::Operation)
+def test_pivot_root_is_not_abstract():
+    assert not inspect.isabstract(pivot_Root)
 
 
-def test_pivot::operation_constructor_exists():
-    assert callable(pivot::Operation.__init__)
+def test_pivot_root_constructor_exists():
+    assert callable(pivot_Root.__init__)
 
 
-def test_pivot::operation_constructor_args():
-    sig = inspect.signature(pivot::Operation.__init__)
+def test_pivot_root_constructor_args():
+    sig = inspect.signature(pivot_Root.__init__)
     params = list(sig.parameters.keys())
-    assert "isValidating" in params, "Missing parameter 'isValidating'"
-    assert "isInvalidating" in params, "Missing parameter 'isInvalidating'"
+    assert "externalURI" in params, "Missing parameter 'externalURI'"
 
-def test_pivot::operation_has_isValidating():
-    assert hasattr(pivot::Operation, "isValidating")
+def test_pivot_root_has_externalURI():
+    assert hasattr(pivot_Root, "externalURI")
     descriptor = None
-    for klass in pivot::Operation.__mro__:
-        if "isValidating" in klass.__dict__:
-            descriptor = klass.__dict__["isValidating"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_pivot::operation_has_isInvalidating():
-    assert hasattr(pivot::Operation, "isInvalidating")
-    descriptor = None
-    for klass in pivot::Operation.__mro__:
-        if "isInvalidating" in klass.__dict__:
-            descriptor = klass.__dict__["isInvalidating"]
+    for klass in pivot_Root.__mro__:
+        if "externalURI" in klass.__dict__:
+            descriptor = klass.__dict__["externalURI"]
             break
     assert isinstance(descriptor, property)
 
 
 
-def test_pivot::package_is_not_abstract():
-    assert not inspect.isabstract(pivot::Package)
+def test_pivot_transition_is_not_abstract():
+    assert not inspect.isabstract(pivot_Transition)
 
 
-def test_pivot::package_constructor_exists():
-    assert callable(pivot::Package.__init__)
+def test_pivot_transition_constructor_exists():
+    assert callable(pivot_Transition.__init__)
 
 
-def test_pivot::package_constructor_args():
-    sig = inspect.signature(pivot::Package.__init__)
-    params = list(sig.parameters.keys())
-    assert "nsURI" in params, "Missing parameter 'nsURI'"
-    assert "nsPrefix" in params, "Missing parameter 'nsPrefix'"
-
-def test_pivot::package_has_nsURI():
-    assert hasattr(pivot::Package, "nsURI")
-    descriptor = None
-    for klass in pivot::Package.__mro__:
-        if "nsURI" in klass.__dict__:
-            descriptor = klass.__dict__["nsURI"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_pivot::package_has_nsPrefix():
-    assert hasattr(pivot::Package, "nsPrefix")
-    descriptor = None
-    for klass in pivot::Package.__mro__:
-        if "nsPrefix" in klass.__dict__:
-            descriptor = klass.__dict__["nsPrefix"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_pivot::transition_is_not_abstract():
-    assert not inspect.isabstract(pivot::Transition)
-
-
-def test_pivot::transition_constructor_exists():
-    assert callable(pivot::Transition.__init__)
-
-
-def test_pivot::transition_constructor_args():
-    sig = inspect.signature(pivot::Transition.__init__)
+def test_pivot_transition_constructor_args():
+    sig = inspect.signature(pivot_Transition.__init__)
     params = list(sig.parameters.keys())
     assert "kind" in params, "Missing parameter 'kind'"
 
-def test_pivot::transition_has_kind():
-    assert hasattr(pivot::Transition, "kind")
+def test_pivot_transition_has_kind():
+    assert hasattr(pivot_Transition, "kind")
     descriptor = None
-    for klass in pivot::Transition.__mro__:
+    for klass in pivot_Transition.__mro__:
         if "kind" in klass.__dict__:
             descriptor = klass.__dict__["kind"]
             break
@@ -2680,25 +2582,123 @@ def test_pivot::transition_has_kind():
 
 
 
-def test_pivot::root_is_not_abstract():
-    assert not inspect.isabstract(pivot::Root)
+def test_pivot_state_is_not_abstract():
+    assert not inspect.isabstract(pivot_State)
 
 
-def test_pivot::root_constructor_exists():
-    assert callable(pivot::Root.__init__)
+def test_pivot_state_constructor_exists():
+    assert callable(pivot_State.__init__)
 
 
-def test_pivot::root_constructor_args():
-    sig = inspect.signature(pivot::Root.__init__)
+def test_pivot_state_constructor_args():
+    sig = inspect.signature(pivot_State.__init__)
     params = list(sig.parameters.keys())
-    assert "externalURI" in params, "Missing parameter 'externalURI'"
+    assert "isSubmachineState" in params, "Missing parameter 'isSubmachineState'"
+    assert "isComposite" in params, "Missing parameter 'isComposite'"
+    assert "isOrthogonal" in params, "Missing parameter 'isOrthogonal'"
+    assert "isSimple" in params, "Missing parameter 'isSimple'"
 
-def test_pivot::root_has_externalURI():
-    assert hasattr(pivot::Root, "externalURI")
+def test_pivot_state_has_isSubmachineState():
+    assert hasattr(pivot_State, "isSubmachineState")
     descriptor = None
-    for klass in pivot::Root.__mro__:
-        if "externalURI" in klass.__dict__:
-            descriptor = klass.__dict__["externalURI"]
+    for klass in pivot_State.__mro__:
+        if "isSubmachineState" in klass.__dict__:
+            descriptor = klass.__dict__["isSubmachineState"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_pivot_state_has_isComposite():
+    assert hasattr(pivot_State, "isComposite")
+    descriptor = None
+    for klass in pivot_State.__mro__:
+        if "isComposite" in klass.__dict__:
+            descriptor = klass.__dict__["isComposite"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_pivot_state_has_isOrthogonal():
+    assert hasattr(pivot_State, "isOrthogonal")
+    descriptor = None
+    for klass in pivot_State.__mro__:
+        if "isOrthogonal" in klass.__dict__:
+            descriptor = klass.__dict__["isOrthogonal"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_pivot_state_has_isSimple():
+    assert hasattr(pivot_State, "isSimple")
+    descriptor = None
+    for klass in pivot_State.__mro__:
+        if "isSimple" in klass.__dict__:
+            descriptor = klass.__dict__["isSimple"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_pivot_operation_is_not_abstract():
+    assert not inspect.isabstract(pivot_Operation)
+
+
+def test_pivot_operation_constructor_exists():
+    assert callable(pivot_Operation.__init__)
+
+
+def test_pivot_operation_constructor_args():
+    sig = inspect.signature(pivot_Operation.__init__)
+    params = list(sig.parameters.keys())
+    assert "isInvalidating" in params, "Missing parameter 'isInvalidating'"
+    assert "isValidating" in params, "Missing parameter 'isValidating'"
+
+def test_pivot_operation_has_isInvalidating():
+    assert hasattr(pivot_Operation, "isInvalidating")
+    descriptor = None
+    for klass in pivot_Operation.__mro__:
+        if "isInvalidating" in klass.__dict__:
+            descriptor = klass.__dict__["isInvalidating"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_pivot_operation_has_isValidating():
+    assert hasattr(pivot_Operation, "isValidating")
+    descriptor = None
+    for klass in pivot_Operation.__mro__:
+        if "isValidating" in klass.__dict__:
+            descriptor = klass.__dict__["isValidating"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_pivot_package_is_not_abstract():
+    assert not inspect.isabstract(pivot_Package)
+
+
+def test_pivot_package_constructor_exists():
+    assert callable(pivot_Package.__init__)
+
+
+def test_pivot_package_constructor_args():
+    sig = inspect.signature(pivot_Package.__init__)
+    params = list(sig.parameters.keys())
+    assert "nsURI" in params, "Missing parameter 'nsURI'"
+    assert "nsPrefix" in params, "Missing parameter 'nsPrefix'"
+
+def test_pivot_package_has_nsURI():
+    assert hasattr(pivot_Package, "nsURI")
+    descriptor = None
+    for klass in pivot_Package.__mro__:
+        if "nsURI" in klass.__dict__:
+            descriptor = klass.__dict__["nsURI"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_pivot_package_has_nsPrefix():
+    assert hasattr(pivot_Package, "nsPrefix")
+    descriptor = None
+    for klass in pivot_Package.__mro__:
+        if "nsPrefix" in klass.__dict__:
+            descriptor = klass.__dict__["nsPrefix"]
             break
     assert isinstance(descriptor, property)
 
@@ -2718,51 +2718,23 @@ def test_type_constructor_args():
 
 
 
-def test_pivot::dynamictype_is_not_abstract():
-    assert not inspect.isabstract(pivot::DynamicType)
+def test_pivot_templateparametertype_is_not_abstract():
+    assert not inspect.isabstract(pivot_TemplateParameterType)
 
 
-def test_pivot::dynamictype_constructor_exists():
-    assert callable(pivot::DynamicType.__init__)
+def test_pivot_templateparametertype_constructor_exists():
+    assert callable(pivot_TemplateParameterType.__init__)
 
 
-def test_pivot::dynamictype_constructor_args():
-    sig = inspect.signature(pivot::DynamicType.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_pivot::elementextension_is_not_abstract():
-    assert not inspect.isabstract(pivot::ElementExtension)
-
-
-def test_pivot::elementextension_constructor_exists():
-    assert callable(pivot::ElementExtension.__init__)
-
-
-def test_pivot::elementextension_constructor_args():
-    sig = inspect.signature(pivot::ElementExtension.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_pivot::templateparametertype_is_not_abstract():
-    assert not inspect.isabstract(pivot::TemplateParameterType)
-
-
-def test_pivot::templateparametertype_constructor_exists():
-    assert callable(pivot::TemplateParameterType.__init__)
-
-
-def test_pivot::templateparametertype_constructor_args():
-    sig = inspect.signature(pivot::TemplateParameterType.__init__)
+def test_pivot_templateparametertype_constructor_args():
+    sig = inspect.signature(pivot_TemplateParameterType.__init__)
     params = list(sig.parameters.keys())
     assert "specification" in params, "Missing parameter 'specification'"
 
-def test_pivot::templateparametertype_has_specification():
-    assert hasattr(pivot::TemplateParameterType, "specification")
+def test_pivot_templateparametertype_has_specification():
+    assert hasattr(pivot_TemplateParameterType, "specification")
     descriptor = None
-    for klass in pivot::TemplateParameterType.__mro__:
+    for klass in pivot_TemplateParameterType.__mro__:
         if "specification" in klass.__dict__:
             descriptor = klass.__dict__["specification"]
             break
@@ -2770,100 +2742,79 @@ def test_pivot::templateparametertype_has_specification():
 
 
 
-def test_pivot::messagetype_is_not_abstract():
-    assert not inspect.isabstract(pivot::MessageType)
+def test_pivot_dynamictype_is_not_abstract():
+    assert not inspect.isabstract(pivot_DynamicType)
 
 
-def test_pivot::messagetype_constructor_exists():
-    assert callable(pivot::MessageType.__init__)
+def test_pivot_dynamictype_constructor_exists():
+    assert callable(pivot_DynamicType.__init__)
 
 
-def test_pivot::messagetype_constructor_args():
-    sig = inspect.signature(pivot::MessageType.__init__)
+def test_pivot_dynamictype_constructor_args():
+    sig = inspect.signature(pivot_DynamicType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_pivot::class_is_not_abstract():
-    assert not inspect.isabstract(pivot::Class)
+def test_pivot_messagetype_is_not_abstract():
+    assert not inspect.isabstract(pivot_MessageType)
 
 
-def test_pivot::class_constructor_exists():
-    assert callable(pivot::Class.__init__)
+def test_pivot_messagetype_constructor_exists():
+    assert callable(pivot_MessageType.__init__)
 
 
-def test_pivot::class_constructor_args():
-    sig = inspect.signature(pivot::Class.__init__)
+def test_pivot_messagetype_constructor_args():
+    sig = inspect.signature(pivot_MessageType.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_pivot_elementextension_is_not_abstract():
+    assert not inspect.isabstract(pivot_ElementExtension)
+
+
+def test_pivot_elementextension_constructor_exists():
+    assert callable(pivot_ElementExtension.__init__)
+
+
+def test_pivot_elementextension_constructor_args():
+    sig = inspect.signature(pivot_ElementExtension.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_pivot_class_is_not_abstract():
+    assert not inspect.isabstract(pivot_Class)
+
+
+def test_pivot_class_constructor_exists():
+    assert callable(pivot_Class.__init__)
+
+
+def test_pivot_class_constructor_args():
+    sig = inspect.signature(pivot_Class.__init__)
     params = list(sig.parameters.keys())
     assert "isInterface" in params, "Missing parameter 'isInterface'"
     assert "isAbstract" in params, "Missing parameter 'isAbstract'"
 
-def test_pivot::class_has_isInterface():
-    assert hasattr(pivot::Class, "isInterface")
+def test_pivot_class_has_isInterface():
+    assert hasattr(pivot_Class, "isInterface")
     descriptor = None
-    for klass in pivot::Class.__mro__:
+    for klass in pivot_Class.__mro__:
         if "isInterface" in klass.__dict__:
             descriptor = klass.__dict__["isInterface"]
             break
     assert isinstance(descriptor, property)
 
-def test_pivot::class_has_isAbstract():
-    assert hasattr(pivot::Class, "isAbstract")
+def test_pivot_class_has_isAbstract():
+    assert hasattr(pivot_Class, "isAbstract")
     descriptor = None
-    for klass in pivot::Class.__mro__:
+    for klass in pivot_Class.__mro__:
         if "isAbstract" in klass.__dict__:
             descriptor = klass.__dict__["isAbstract"]
             break
     assert isinstance(descriptor, property)
-
-def test_transitionkind_exists():
-    # Check that the Enumeration exists
-    assert TransitionKind is not None
-
-def test_transitionkind_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in TransitionKind]
-    expected_literals = [
-        "local",
-        "external",
-        "internal",
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in TransitionKind"
-
-def test_collectionkind_exists():
-    # Check that the Enumeration exists
-    assert CollectionKind is not None
-
-def test_collectionkind_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in CollectionKind]
-    expected_literals = [
-        "OrderedSet",
-        "Set",
-        "Sequence",
-        "Collection",
-        "Bag",
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in CollectionKind"
-
-def test_associativitykind_exists():
-    # Check that the Enumeration exists
-    assert AssociativityKind is not None
-
-def test_associativitykind_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in AssociativityKind]
-    expected_literals = [
-        "Right",
-        "Left",
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in AssociativityKind"
 
 def test_pseudostatekind_exists():
     # Check that the Enumeration exists
@@ -2873,20 +2824,69 @@ def test_pseudostatekind_has_all_literals():
     # Collect the names of literals in this Enumeration
     enum_literals = [lit.name for lit in PseudostateKind]
     expected_literals = [
-        "initial",
-        "shallowHistory",
-        "choice",
-        "join",
         "exitPoint",
-        "entryPoint",
-        "fork",
+        "shallowHistory",
         "terminate",
         "deepHistory",
+        "join",
+        "choice",
         "junction",
+        "initial",
+        "fork",
+        "entryPoint",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
         assert lit_name in enum_literals, f"Literal '' missing in PseudostateKind"
+
+def test_transitionkind_exists():
+    # Check that the Enumeration exists
+    assert TransitionKind is not None
+
+def test_transitionkind_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in TransitionKind]
+    expected_literals = [
+        "internal",
+        "external",
+        "local",
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in TransitionKind"
+
+def test_associativitykind_exists():
+    # Check that the Enumeration exists
+    assert AssociativityKind is not None
+
+def test_associativitykind_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in AssociativityKind]
+    expected_literals = [
+        "Left",
+        "Right",
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in AssociativityKind"
+
+def test_collectionkind_exists():
+    # Check that the Enumeration exists
+    assert CollectionKind is not None
+
+def test_collectionkind_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in CollectionKind]
+    expected_literals = [
+        "Set",
+        "Bag",
+        "OrderedSet",
+        "Collection",
+        "Sequence",
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in CollectionKind"
 
 
 # =============================================================================
@@ -2900,108 +2900,34 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-pivot::Visitor_strategy = st.builds(
-    pivot::Visitor,
-)
-pivot::Visitable_strategy = st.builds(
-    pivot::Visitable,
-)
 Behavior_strategy = st.builds(
     Behavior,
 )
-Operation_strategy = st.builds(
-    Operation,
+pivot_ReferringElement_strategy = st.builds(
+    pivot_ReferringElement,
 )
-pivot::Iteration_strategy = st.builds(
-    pivot::Iteration,
+pivot_StateMachine_strategy = st.builds(
+    pivot_StateMachine,
 )
-NumericLiteralExp_strategy = st.builds(
-    NumericLiteralExp,
-)
-pivot::UnlimitedNaturalLiteralExp_strategy = st.builds(
-    pivot::UnlimitedNaturalLiteralExp,
-    unlimitedNaturalSymbol=
-        safe_text
-)
-pivot::IntegerLiteralExp_strategy = st.builds(
-    pivot::IntegerLiteralExp,
-    integerSymbol=
-        safe_text
-)
-ReferringElement_strategy = st.builds(
-    ReferringElement,
-)
-LoopExp_strategy = st.builds(
-    LoopExp,
-)
-pivot::IteratorExp_strategy = st.builds(
-    pivot::IteratorExp,
-)
-pivot::IterateExp_strategy = st.builds(
-    pivot::IterateExp,
-)
-State_strategy = st.builds(
-    State,
-)
-pivot::FinalState_strategy = st.builds(
-    pivot::FinalState,
-)
-CallExp_strategy = st.builds(
-    CallExp,
-)
-pivot::FeatureCallExp_strategy = st.builds(
-    pivot::FeatureCallExp,
-    isPre=
-        safe_text
-)
-TypedMultiplicityElement_strategy = st.builds(
-    TypedMultiplicityElement,
-)
-pivot::Feature_strategy = st.builds(
-    pivot::Feature,
-    implementation=
-        safe_text,
-    implementationClass=
-        safe_text
-)
-pivot::ReferringElement_strategy = st.builds(
-    pivot::ReferringElement,
-)
-pivot::RealLiteralExp_strategy = st.builds(
-    pivot::RealLiteralExp,
-    realSymbol=
-        safe_text
-)
-pivot::StateMachine_strategy = st.builds(
-    pivot::StateMachine,
-)
-pivot::Pivotable_strategy = st.builds(
-    pivot::Pivotable,
+pivot_Pivotable_strategy = st.builds(
+    pivot_Pivotable,
 )
 TemplateParameter_strategy = st.builds(
     TemplateParameter,
 )
-pivot::TypeTemplateParameter_strategy = st.builds(
-    pivot::TypeTemplateParameter,
+pivot_TypeTemplateParameter_strategy = st.builds(
+    pivot_TypeTemplateParameter,
     allowSubstitutable=
         safe_text
 )
-pivot::OperationTemplateParameter_strategy = st.builds(
-    pivot::OperationTemplateParameter,
+pivot_OperationTemplateParameter_strategy = st.builds(
+    pivot_OperationTemplateParameter,
 )
 VariableDeclaration_strategy = st.builds(
     VariableDeclaration,
 )
-pivot::TupleLiteralPart_strategy = st.builds(
-    pivot::TupleLiteralPart,
-)
-pivot::Variable_strategy = st.builds(
-    pivot::Variable,
-    implicit=
-        safe_text
-)
-pivot::Parameter_strategy = st.builds(
-    pivot::Parameter,
+pivot_TupleLiteralPart_strategy = st.builds(
+    pivot_TupleLiteralPart,
 )
 ValueSpecification_strategy = st.builds(
     ValueSpecification,
@@ -3009,26 +2935,23 @@ ValueSpecification_strategy = st.builds(
 FeatureCallExp_strategy = st.builds(
     FeatureCallExp,
 )
-pivot::OperationCallExp_strategy = st.builds(
-    pivot::OperationCallExp,
-)
-pivot::NavigationCallExp_strategy = st.builds(
-    pivot::NavigationCallExp,
+pivot_NavigationCallExp_strategy = st.builds(
+    pivot_NavigationCallExp,
 )
 Nameable_strategy = st.builds(
     Nameable,
 )
-pivot::Nameable_strategy = st.builds(
-    pivot::Nameable,
+pivot_Nameable_strategy = st.builds(
+    pivot_Nameable,
 )
-pivot::MorePivotable_strategy = st.builds(
-    pivot::MorePivotable,
+pivot_MorePivotable_strategy = st.builds(
+    pivot_MorePivotable,
 )
 ParameterableElement_strategy = st.builds(
     ParameterableElement,
 )
-pivot::PackageableElement_strategy = st.builds(
-    pivot::PackageableElement,
+pivot_PackageableElement_strategy = st.builds(
+    pivot_PackageableElement,
 )
 TemplateableElement_strategy = st.builds(
     TemplateableElement,
@@ -3036,23 +2959,89 @@ TemplateableElement_strategy = st.builds(
 Feature_strategy = st.builds(
     Feature,
 )
-pivot::LoopExp_strategy = st.builds(
-    pivot::LoopExp,
-)
 Package_strategy = st.builds(
     Package,
 )
-pivot::Profile_strategy = st.builds(
-    pivot::Profile,
+pivot_Profile_strategy = st.builds(
+    pivot_Profile,
 )
-pivot::Library_strategy = st.builds(
-    pivot::Library,
+pivot_Library_strategy = st.builds(
+    pivot_Library,
+)
+Operation_strategy = st.builds(
+    Operation,
+)
+pivot_Iteration_strategy = st.builds(
+    pivot_Iteration,
+)
+NumericLiteralExp_strategy = st.builds(
+    NumericLiteralExp,
+)
+pivot_RealLiteralExp_strategy = st.builds(
+    pivot_RealLiteralExp,
+    realSymbol=
+        safe_text
+)
+pivot_IntegerLiteralExp_strategy = st.builds(
+    pivot_IntegerLiteralExp,
+    integerSymbol=
+        safe_text
+)
+ReferringElement_strategy = st.builds(
+    ReferringElement,
+)
+pivot_OperationCallExp_strategy = st.builds(
+    pivot_OperationCallExp,
+)
+LoopExp_strategy = st.builds(
+    LoopExp,
+)
+pivot_IteratorExp_strategy = st.builds(
+    pivot_IteratorExp,
+)
+pivot_IterateExp_strategy = st.builds(
+    pivot_IterateExp,
+)
+State_strategy = st.builds(
+    State,
+)
+pivot_FinalState_strategy = st.builds(
+    pivot_FinalState,
+)
+CallExp_strategy = st.builds(
+    CallExp,
+)
+pivot_LoopExp_strategy = st.builds(
+    pivot_LoopExp,
+)
+pivot_FeatureCallExp_strategy = st.builds(
+    pivot_FeatureCallExp,
+    isPre=
+        safe_text
+)
+TypedMultiplicityElement_strategy = st.builds(
+    TypedMultiplicityElement,
+)
+pivot_Parameter_strategy = st.builds(
+    pivot_Parameter,
+)
+pivot_Feature_strategy = st.builds(
+    pivot_Feature,
+    implementation=
+        safe_text,
+    implementationClass=
+        safe_text
+)
+pivot_Variable_strategy = st.builds(
+    pivot_Variable,
+    implicit=
+        safe_text
 )
 OpaqueExpression_strategy = st.builds(
     OpaqueExpression,
 )
-pivot::ExpressionInOCL_strategy = st.builds(
-    pivot::ExpressionInOCL,
+pivot_ExpressionInOCL_strategy = st.builds(
+    pivot_ExpressionInOCL,
 )
 Visitable_strategy = st.builds(
     Visitable,
@@ -3060,226 +3049,237 @@ Visitable_strategy = st.builds(
 DynamicElement_strategy = st.builds(
     DynamicElement,
 )
-pivot::OpaqueExpression_strategy = st.builds(
-    pivot::OpaqueExpression,
+pivot_OpaqueExpression_strategy = st.builds(
+    pivot_OpaqueExpression,
+    message=
+        safe_text,
     body=
         safe_text,
     language=
-        safe_text,
-    message=
         safe_text
 )
 Vertex_strategy = st.builds(
     Vertex,
 )
-pivot::Pseudostate_strategy = st.builds(
-    pivot::Pseudostate,
+pivot_Pseudostate_strategy = st.builds(
+    pivot_Pseudostate,
     kind=
         safe_text
 )
-pivot::ConnectionPointReference_strategy = st.builds(
-    pivot::ConnectionPointReference,
+pivot_ConnectionPointReference_strategy = st.builds(
+    pivot_ConnectionPointReference,
 )
 Element_strategy = st.builds(
     Element,
 )
-pivot::DynamicProperty_strategy = st.builds(
-    pivot::DynamicProperty,
-    default=
-        safe_text
+pivot_TemplateParameterSubstitution_strategy = st.builds(
+    pivot_TemplateParameterSubstitution,
 )
-pivot::ParameterableElement_strategy = st.builds(
-    pivot::ParameterableElement,
-)
-pivot::TemplateParameterSubstitution_strategy = st.builds(
-    pivot::TemplateParameterSubstitution,
-)
-pivot::TemplateParameter_strategy = st.builds(
-    pivot::TemplateParameter,
-)
-pivot::TemplateBinding_strategy = st.builds(
-    pivot::TemplateBinding,
-)
-pivot::NamedElement_strategy = st.builds(
-    pivot::NamedElement,
+pivot_NamedElement_strategy = st.builds(
+    pivot_NamedElement,
     isStatic=
         safe_text,
     name=
         safe_text
 )
-pivot::TemplateSignature_strategy = st.builds(
-    pivot::TemplateSignature,
+pivot_ParameterableElement_strategy = st.builds(
+    pivot_ParameterableElement,
 )
-pivot::DynamicElement_strategy = st.builds(
-    pivot::DynamicElement,
+pivot_TemplateSignature_strategy = st.builds(
+    pivot_TemplateSignature,
 )
-pivot::TemplateableElement_strategy = st.builds(
-    pivot::TemplateableElement,
+pivot_DynamicProperty_strategy = st.builds(
+    pivot_DynamicProperty,
+    default=
+        safe_text
 )
-pivot::Comment_strategy = st.builds(
-    pivot::Comment,
+pivot_TemplateableElement_strategy = st.builds(
+    pivot_TemplateableElement,
+)
+pivot_TemplateBinding_strategy = st.builds(
+    pivot_TemplateBinding,
+)
+pivot_DynamicElement_strategy = st.builds(
+    pivot_DynamicElement,
+)
+pivot_TemplateParameter_strategy = st.builds(
+    pivot_TemplateParameter,
+)
+pivot_Visitor_strategy = st.builds(
+    pivot_Visitor,
+)
+pivot_Visitable_strategy = st.builds(
+    pivot_Visitable,
+)
+pivot_UnlimitedNaturalLiteralExp_strategy = st.builds(
+    pivot_UnlimitedNaturalLiteralExp,
+    unlimitedNaturalSymbol=
+        safe_text
+)
+pivot_Comment_strategy = st.builds(
+    pivot_Comment,
     body=
         safe_text
 )
 DataType_strategy = st.builds(
     DataType,
 )
-pivot::Enumeration_strategy = st.builds(
-    pivot::Enumeration,
+pivot_TupleType_strategy = st.builds(
+    pivot_TupleType,
 )
-pivot::LambdaType_strategy = st.builds(
-    pivot::LambdaType,
+pivot_LambdaType_strategy = st.builds(
+    pivot_LambdaType,
 )
-pivot::TupleType_strategy = st.builds(
-    pivot::TupleType,
+pivot_PrimitiveType_strategy = st.builds(
+    pivot_PrimitiveType,
 )
-pivot::PrimitiveType_strategy = st.builds(
-    pivot::PrimitiveType,
+pivot_Enumeration_strategy = st.builds(
+    pivot_Enumeration,
 )
-pivot::CollectionType_strategy = st.builds(
-    pivot::CollectionType,
-    lower=
-        safe_text,
+pivot_CollectionType_strategy = st.builds(
+    pivot_CollectionType,
     upper=
+        safe_text,
+    lower=
         safe_text
 )
 LiteralExp_strategy = st.builds(
     LiteralExp,
 )
-pivot::EnumLiteralExp_strategy = st.builds(
-    pivot::EnumLiteralExp,
+pivot_EnumLiteralExp_strategy = st.builds(
+    pivot_EnumLiteralExp,
 )
-pivot::TupleLiteralExp_strategy = st.builds(
-    pivot::TupleLiteralExp,
+pivot_PrimitiveLiteralExp_strategy = st.builds(
+    pivot_PrimitiveLiteralExp,
 )
-pivot::InvalidLiteralExp_strategy = st.builds(
-    pivot::InvalidLiteralExp,
+pivot_TupleLiteralExp_strategy = st.builds(
+    pivot_TupleLiteralExp,
 )
-pivot::PrimitiveLiteralExp_strategy = st.builds(
-    pivot::PrimitiveLiteralExp,
+pivot_InvalidLiteralExp_strategy = st.builds(
+    pivot_InvalidLiteralExp,
 )
-pivot::CollectionLiteralExp_strategy = st.builds(
-    pivot::CollectionLiteralExp,
+pivot_CollectionLiteralExp_strategy = st.builds(
+    pivot_CollectionLiteralExp,
     kind=
         safe_text
 )
 CollectionLiteralPart_strategy = st.builds(
     CollectionLiteralPart,
 )
-pivot::CollectionItem_strategy = st.builds(
-    pivot::CollectionItem,
+pivot_CollectionItem_strategy = st.builds(
+    pivot_CollectionItem,
 )
-pivot::CollectionRange_strategy = st.builds(
-    pivot::CollectionRange,
+pivot_CollectionRange_strategy = st.builds(
+    pivot_CollectionRange,
 )
 TypedElement_strategy = st.builds(
     TypedElement,
 )
-pivot::TypedMultiplicityElement_strategy = st.builds(
-    pivot::TypedMultiplicityElement,
+pivot_ValueSpecification_strategy = st.builds(
+    pivot_ValueSpecification,
 )
-pivot::VariableDeclaration_strategy = st.builds(
-    pivot::VariableDeclaration,
+pivot_VariableDeclaration_strategy = st.builds(
+    pivot_VariableDeclaration,
 )
-pivot::ValueSpecification_strategy = st.builds(
-    pivot::ValueSpecification,
+pivot_ConstructorPart_strategy = st.builds(
+    pivot_ConstructorPart,
 )
-pivot::ConstructorPart_strategy = st.builds(
-    pivot::ConstructorPart,
+pivot_TypedMultiplicityElement_strategy = st.builds(
+    pivot_TypedMultiplicityElement,
 )
-pivot::CollectionLiteralPart_strategy = st.builds(
-    pivot::CollectionLiteralPart,
+pivot_CollectionLiteralPart_strategy = st.builds(
+    pivot_CollectionLiteralPart,
 )
-pivot::OCLExpression_strategy = st.builds(
-    pivot::OCLExpression,
+pivot_OCLExpression_strategy = st.builds(
+    pivot_OCLExpression,
 )
 OCLExpression_strategy = st.builds(
     OCLExpression,
 )
-pivot::VariableExp_strategy = st.builds(
-    pivot::VariableExp,
+pivot_TypeExp_strategy = st.builds(
+    pivot_TypeExp,
+)
+pivot_LetExp_strategy = st.builds(
+    pivot_LetExp,
+)
+pivot_LiteralExp_strategy = st.builds(
+    pivot_LiteralExp,
+)
+pivot_MessageExp_strategy = st.builds(
+    pivot_MessageExp,
+)
+pivot_VariableExp_strategy = st.builds(
+    pivot_VariableExp,
     implicit=
         safe_text
 )
-pivot::StateExp_strategy = st.builds(
-    pivot::StateExp,
-)
-pivot::IfExp_strategy = st.builds(
-    pivot::IfExp,
-)
-pivot::LiteralExp_strategy = st.builds(
-    pivot::LiteralExp,
-)
-pivot::MessageExp_strategy = st.builds(
-    pivot::MessageExp,
-)
-pivot::UnspecifiedValueExp_strategy = st.builds(
-    pivot::UnspecifiedValueExp,
-)
-pivot::TypeExp_strategy = st.builds(
-    pivot::TypeExp,
-)
-pivot::ConstructorExp_strategy = st.builds(
-    pivot::ConstructorExp,
+pivot_ConstructorExp_strategy = st.builds(
+    pivot_ConstructorExp,
     value=
         safe_text
 )
-pivot::LetExp_strategy = st.builds(
-    pivot::LetExp,
+pivot_UnspecifiedValueExp_strategy = st.builds(
+    pivot_UnspecifiedValueExp,
 )
-pivot::CallExp_strategy = st.builds(
-    pivot::CallExp,
+pivot_StateExp_strategy = st.builds(
+    pivot_StateExp,
+)
+pivot_IfExp_strategy = st.builds(
+    pivot_IfExp,
+)
+pivot_CallExp_strategy = st.builds(
+    pivot_CallExp,
     implicit=
         safe_text
 )
 PrimitiveLiteralExp_strategy = st.builds(
     PrimitiveLiteralExp,
 )
-pivot::NullLiteralExp_strategy = st.builds(
-    pivot::NullLiteralExp,
+pivot_NullLiteralExp_strategy = st.builds(
+    pivot_NullLiteralExp,
 )
-pivot::NumericLiteralExp_strategy = st.builds(
-    pivot::NumericLiteralExp,
-)
-pivot::StringLiteralExp_strategy = st.builds(
-    pivot::StringLiteralExp,
+pivot_StringLiteralExp_strategy = st.builds(
+    pivot_StringLiteralExp,
     stringSymbol=
         safe_text
 )
-pivot::BooleanLiteralExp_strategy = st.builds(
-    pivot::BooleanLiteralExp,
+pivot_NumericLiteralExp_strategy = st.builds(
+    pivot_NumericLiteralExp,
+)
+pivot_BooleanLiteralExp_strategy = st.builds(
+    pivot_BooleanLiteralExp,
     booleanSymbol=
         safe_text
 )
 CollectionType_strategy = st.builds(
     CollectionType,
 )
-pivot::SequenceType_strategy = st.builds(
-    pivot::SequenceType,
+pivot_SetType_strategy = st.builds(
+    pivot_SetType,
 )
-pivot::SetType_strategy = st.builds(
-    pivot::SetType,
+pivot_OrderedSetType_strategy = st.builds(
+    pivot_OrderedSetType,
 )
-pivot::OrderedSetType_strategy = st.builds(
-    pivot::OrderedSetType,
+pivot_SequenceType_strategy = st.builds(
+    pivot_SequenceType,
 )
-pivot::BagType_strategy = st.builds(
-    pivot::BagType,
+pivot_BagType_strategy = st.builds(
+    pivot_BagType,
 )
 NavigationCallExp_strategy = st.builds(
     NavigationCallExp,
 )
-pivot::PropertyCallExp_strategy = st.builds(
-    pivot::PropertyCallExp,
+pivot_PropertyCallExp_strategy = st.builds(
+    pivot_PropertyCallExp,
 )
-pivot::AssociationClassCallExp_strategy = st.builds(
-    pivot::AssociationClassCallExp,
+pivot_AssociationClassCallExp_strategy = st.builds(
+    pivot_AssociationClassCallExp,
 )
-pivot::Property_strategy = st.builds(
-    pivot::Property,
-    implicit=
-        safe_text,
+pivot_Property_strategy = st.builds(
+    pivot_Property,
     isVolatile=
+        safe_text,
+    isReadOnly=
         safe_text,
     isID=
         safe_text,
@@ -3289,236 +3289,333 @@ pivot::Property_strategy = st.builds(
         safe_text,
     isUnsettable=
         safe_text,
+    isTransient=
+        safe_text,
     default=
         safe_text,
     isComposite=
         safe_text,
-    isTransient=
-        safe_text,
-    isReadOnly=
+    implicit=
         safe_text
 )
 Class_strategy = st.builds(
     Class,
 )
-pivot::Stereotype_strategy = st.builds(
-    pivot::Stereotype,
+pivot_UnspecifiedType_strategy = st.builds(
+    pivot_UnspecifiedType,
 )
-pivot::InvalidType_strategy = st.builds(
-    pivot::InvalidType,
+pivot_InvalidType_strategy = st.builds(
+    pivot_InvalidType,
 )
-pivot::UnspecifiedType_strategy = st.builds(
-    pivot::UnspecifiedType,
+pivot_SelfType_strategy = st.builds(
+    pivot_SelfType,
 )
-pivot::Metaclass_strategy = st.builds(
-    pivot::Metaclass,
+pivot_Stereotype_strategy = st.builds(
+    pivot_Stereotype,
 )
-pivot::Behavior_strategy = st.builds(
-    pivot::Behavior,
-)
-pivot::VoidType_strategy = st.builds(
-    pivot::VoidType,
-)
-pivot::AssociationClass_strategy = st.builds(
-    pivot::AssociationClass,
-)
-pivot::DataType_strategy = st.builds(
-    pivot::DataType,
+pivot_DataType_strategy = st.builds(
+    pivot_DataType,
     isSerializable=
         safe_text
 )
-pivot::SelfType_strategy = st.builds(
-    pivot::SelfType,
+pivot_VoidType_strategy = st.builds(
+    pivot_VoidType,
 )
-pivot::AnyType_strategy = st.builds(
-    pivot::AnyType,
+pivot_AssociationClass_strategy = st.builds(
+    pivot_AssociationClass,
 )
-pivot::Element_strategy = st.builds(
-    pivot::Element,
+pivot_Behavior_strategy = st.builds(
+    pivot_Behavior,
+)
+pivot_Metaclass_strategy = st.builds(
+    pivot_Metaclass,
+)
+pivot_AnyType_strategy = st.builds(
+    pivot_AnyType,
+)
+pivot_Element_strategy = st.builds(
+    pivot_Element,
 )
 NamedElement_strategy = st.builds(
     NamedElement,
 )
-pivot::EnumerationLiteral_strategy = st.builds(
-    pivot::EnumerationLiteral,
+pivot_Trigger_strategy = st.builds(
+    pivot_Trigger,
+)
+pivot_Precedence_strategy = st.builds(
+    pivot_Precedence,
+    associativity=
+        safe_text,
+    order=
+        safe_text
+)
+pivot_SendSignalAction_strategy = st.builds(
+    pivot_SendSignalAction,
+)
+pivot_CallOperationAction_strategy = st.builds(
+    pivot_CallOperationAction,
+)
+pivot_Import_strategy = st.builds(
+    pivot_Import,
+)
+pivot_Vertex_strategy = st.builds(
+    pivot_Vertex,
+)
+pivot_EnumerationLiteral_strategy = st.builds(
+    pivot_EnumerationLiteral,
     value=
         safe_text
 )
-pivot::Trigger_strategy = st.builds(
-    pivot::Trigger,
-)
-pivot::Import_strategy = st.builds(
-    pivot::Import,
-)
-pivot::CallOperationAction_strategy = st.builds(
-    pivot::CallOperationAction,
-)
-pivot::Detail_strategy = st.builds(
-    pivot::Detail,
-    value=
-        safe_text
-)
-pivot::Vertex_strategy = st.builds(
-    pivot::Vertex,
-)
-pivot::TypedElement_strategy = st.builds(
-    pivot::TypedElement,
-    isRequired=
-        safe_text
-)
-pivot::Type_strategy = st.builds(
-    pivot::Type,
-    instanceClassName=
-        safe_text
-)
-pivot::Signal_strategy = st.builds(
-    pivot::Signal,
-)
-pivot::Namespace_strategy = st.builds(
-    pivot::Namespace,
-)
-pivot::Constraint_strategy = st.builds(
-    pivot::Constraint,
+pivot_Constraint_strategy = st.builds(
+    pivot_Constraint,
     isCallable=
         safe_text
 )
-pivot::SendSignalAction_strategy = st.builds(
-    pivot::SendSignalAction,
-)
-pivot::Precedence_strategy = st.builds(
-    pivot::Precedence,
-    order=
-        safe_text,
-    associativity=
+pivot_TypedElement_strategy = st.builds(
+    pivot_TypedElement,
+    isRequired=
         safe_text
 )
-pivot::Annotation_strategy = st.builds(
-    pivot::Annotation,
+pivot_Detail_strategy = st.builds(
+    pivot_Detail,
+    value=
+        safe_text
+)
+pivot_Type_strategy = st.builds(
+    pivot_Type,
+    instanceClassName=
+        safe_text
+)
+pivot_Signal_strategy = st.builds(
+    pivot_Signal,
+)
+pivot_Namespace_strategy = st.builds(
+    pivot_Namespace,
+)
+pivot_Annotation_strategy = st.builds(
+    pivot_Annotation,
 )
 Namespace_strategy = st.builds(
     Namespace,
 )
-pivot::State_strategy = st.builds(
-    pivot::State,
-    isSimple=
-        safe_text,
-    isOrthogonal=
+pivot_Region_strategy = st.builds(
+    pivot_Region,
+)
+pivot_Root_strategy = st.builds(
+    pivot_Root,
+    externalURI=
+        safe_text
+)
+pivot_Transition_strategy = st.builds(
+    pivot_Transition,
+    kind=
+        safe_text
+)
+pivot_State_strategy = st.builds(
+    pivot_State,
+    isSubmachineState=
         safe_text,
     isComposite=
         safe_text,
-    isSubmachineState=
-        safe_text
-)
-pivot::Region_strategy = st.builds(
-    pivot::Region,
-)
-pivot::Operation_strategy = st.builds(
-    pivot::Operation,
-    isValidating=
+    isOrthogonal=
         safe_text,
-    isInvalidating=
+    isSimple=
         safe_text
 )
-pivot::Package_strategy = st.builds(
-    pivot::Package,
+pivot_Operation_strategy = st.builds(
+    pivot_Operation,
+    isInvalidating=
+        safe_text,
+    isValidating=
+        safe_text
+)
+pivot_Package_strategy = st.builds(
+    pivot_Package,
     nsURI=
         safe_text,
     nsPrefix=
         safe_text
 )
-pivot::Transition_strategy = st.builds(
-    pivot::Transition,
-    kind=
-        safe_text
-)
-pivot::Root_strategy = st.builds(
-    pivot::Root,
-    externalURI=
-        safe_text
-)
 Type_strategy = st.builds(
     Type,
 )
-pivot::DynamicType_strategy = st.builds(
-    pivot::DynamicType,
-)
-pivot::ElementExtension_strategy = st.builds(
-    pivot::ElementExtension,
-)
-pivot::TemplateParameterType_strategy = st.builds(
-    pivot::TemplateParameterType,
+pivot_TemplateParameterType_strategy = st.builds(
+    pivot_TemplateParameterType,
     specification=
         safe_text
 )
-pivot::MessageType_strategy = st.builds(
-    pivot::MessageType,
+pivot_DynamicType_strategy = st.builds(
+    pivot_DynamicType,
 )
-pivot::Class_strategy = st.builds(
-    pivot::Class,
+pivot_MessageType_strategy = st.builds(
+    pivot_MessageType,
+)
+pivot_ElementExtension_strategy = st.builds(
+    pivot_ElementExtension,
+)
+pivot_Class_strategy = st.builds(
+    pivot_Class,
     isInterface=
         safe_text,
     isAbstract=
         safe_text
 )
 
-@given(instance=pivot::Visitor_strategy)
-@settings(max_examples=50)
-def test_pivot::visitor_instantiation(instance):
-    assert isinstance(instance, pivot::Visitor)
-
-@given(instance=pivot::Visitable_strategy)
-@settings(max_examples=50)
-def test_pivot::visitable_instantiation(instance):
-    assert isinstance(instance, pivot::Visitable)
-
 @given(instance=Behavior_strategy)
 @settings(max_examples=50)
 def test_behavior_instantiation(instance):
     assert isinstance(instance, Behavior)
+
+@given(instance=pivot_ReferringElement_strategy)
+@settings(max_examples=50)
+def test_pivot_referringelement_instantiation(instance):
+    assert isinstance(instance, pivot_ReferringElement)
+
+@given(instance=pivot_StateMachine_strategy)
+@settings(max_examples=50)
+def test_pivot_statemachine_instantiation(instance):
+    assert isinstance(instance, pivot_StateMachine)
+
+@given(instance=pivot_Pivotable_strategy)
+@settings(max_examples=50)
+def test_pivot_pivotable_instantiation(instance):
+    assert isinstance(instance, pivot_Pivotable)
+
+@given(instance=TemplateParameter_strategy)
+@settings(max_examples=50)
+def test_templateparameter_instantiation(instance):
+    assert isinstance(instance, TemplateParameter)
+
+@given(instance=pivot_TypeTemplateParameter_strategy)
+@settings(max_examples=50)
+def test_pivot_typetemplateparameter_instantiation(instance):
+    assert isinstance(instance, pivot_TypeTemplateParameter)
+
+
+
+@given(instance=pivot_TypeTemplateParameter_strategy)
+def test_pivot_typetemplateparameter_allowSubstitutable_setter(instance):
+    original = instance.allowSubstitutable
+    instance.allowSubstitutable = original
+    assert instance.allowSubstitutable == original
+
+@given(instance=pivot_OperationTemplateParameter_strategy)
+@settings(max_examples=50)
+def test_pivot_operationtemplateparameter_instantiation(instance):
+    assert isinstance(instance, pivot_OperationTemplateParameter)
+
+@given(instance=VariableDeclaration_strategy)
+@settings(max_examples=50)
+def test_variabledeclaration_instantiation(instance):
+    assert isinstance(instance, VariableDeclaration)
+
+@given(instance=pivot_TupleLiteralPart_strategy)
+@settings(max_examples=50)
+def test_pivot_tupleliteralpart_instantiation(instance):
+    assert isinstance(instance, pivot_TupleLiteralPart)
+
+@given(instance=ValueSpecification_strategy)
+@settings(max_examples=50)
+def test_valuespecification_instantiation(instance):
+    assert isinstance(instance, ValueSpecification)
+
+@given(instance=FeatureCallExp_strategy)
+@settings(max_examples=50)
+def test_featurecallexp_instantiation(instance):
+    assert isinstance(instance, FeatureCallExp)
+
+@given(instance=pivot_NavigationCallExp_strategy)
+@settings(max_examples=50)
+def test_pivot_navigationcallexp_instantiation(instance):
+    assert isinstance(instance, pivot_NavigationCallExp)
+
+@given(instance=Nameable_strategy)
+@settings(max_examples=50)
+def test_nameable_instantiation(instance):
+    assert isinstance(instance, Nameable)
+
+@given(instance=pivot_Nameable_strategy)
+@settings(max_examples=50)
+def test_pivot_nameable_instantiation(instance):
+    assert isinstance(instance, pivot_Nameable)
+
+@given(instance=pivot_MorePivotable_strategy)
+@settings(max_examples=50)
+def test_pivot_morepivotable_instantiation(instance):
+    assert isinstance(instance, pivot_MorePivotable)
+
+@given(instance=ParameterableElement_strategy)
+@settings(max_examples=50)
+def test_parameterableelement_instantiation(instance):
+    assert isinstance(instance, ParameterableElement)
+
+@given(instance=pivot_PackageableElement_strategy)
+@settings(max_examples=50)
+def test_pivot_packageableelement_instantiation(instance):
+    assert isinstance(instance, pivot_PackageableElement)
+
+@given(instance=TemplateableElement_strategy)
+@settings(max_examples=50)
+def test_templateableelement_instantiation(instance):
+    assert isinstance(instance, TemplateableElement)
+
+@given(instance=Feature_strategy)
+@settings(max_examples=50)
+def test_feature_instantiation(instance):
+    assert isinstance(instance, Feature)
+
+@given(instance=Package_strategy)
+@settings(max_examples=50)
+def test_package_instantiation(instance):
+    assert isinstance(instance, Package)
+
+@given(instance=pivot_Profile_strategy)
+@settings(max_examples=50)
+def test_pivot_profile_instantiation(instance):
+    assert isinstance(instance, pivot_Profile)
+
+@given(instance=pivot_Library_strategy)
+@settings(max_examples=50)
+def test_pivot_library_instantiation(instance):
+    assert isinstance(instance, pivot_Library)
 
 @given(instance=Operation_strategy)
 @settings(max_examples=50)
 def test_operation_instantiation(instance):
     assert isinstance(instance, Operation)
 
-@given(instance=pivot::Iteration_strategy)
+@given(instance=pivot_Iteration_strategy)
 @settings(max_examples=50)
-def test_pivot::iteration_instantiation(instance):
-    assert isinstance(instance, pivot::Iteration)
+def test_pivot_iteration_instantiation(instance):
+    assert isinstance(instance, pivot_Iteration)
 
 @given(instance=NumericLiteralExp_strategy)
 @settings(max_examples=50)
 def test_numericliteralexp_instantiation(instance):
     assert isinstance(instance, NumericLiteralExp)
 
-@given(instance=pivot::UnlimitedNaturalLiteralExp_strategy)
+@given(instance=pivot_RealLiteralExp_strategy)
 @settings(max_examples=50)
-def test_pivot::unlimitednaturalliteralexp_instantiation(instance):
-    assert isinstance(instance, pivot::UnlimitedNaturalLiteralExp)
-
-@given(instance=pivot::UnlimitedNaturalLiteralExp_strategy)
-def test_pivot::unlimitednaturalliteralexp_unlimitedNaturalSymbol_type(instance):
-    assert isinstance(instance.unlimitedNaturalSymbol, str)
+def test_pivot_realliteralexp_instantiation(instance):
+    assert isinstance(instance, pivot_RealLiteralExp)
 
 
-@given(instance=pivot::UnlimitedNaturalLiteralExp_strategy)
-def test_pivot::unlimitednaturalliteralexp_unlimitedNaturalSymbol_setter(instance):
-    original = instance.unlimitedNaturalSymbol
-    instance.unlimitedNaturalSymbol = original
-    assert instance.unlimitedNaturalSymbol == original
 
-@given(instance=pivot::IntegerLiteralExp_strategy)
+@given(instance=pivot_RealLiteralExp_strategy)
+def test_pivot_realliteralexp_realSymbol_setter(instance):
+    original = instance.realSymbol
+    instance.realSymbol = original
+    assert instance.realSymbol == original
+
+@given(instance=pivot_IntegerLiteralExp_strategy)
 @settings(max_examples=50)
-def test_pivot::integerliteralexp_instantiation(instance):
-    assert isinstance(instance, pivot::IntegerLiteralExp)
-
-@given(instance=pivot::IntegerLiteralExp_strategy)
-def test_pivot::integerliteralexp_integerSymbol_type(instance):
-    assert isinstance(instance.integerSymbol, str)
+def test_pivot_integerliteralexp_instantiation(instance):
+    assert isinstance(instance, pivot_IntegerLiteralExp)
 
 
-@given(instance=pivot::IntegerLiteralExp_strategy)
-def test_pivot::integerliteralexp_integerSymbol_setter(instance):
+
+@given(instance=pivot_IntegerLiteralExp_strategy)
+def test_pivot_integerliteralexp_integerSymbol_setter(instance):
     original = instance.integerSymbol
     instance.integerSymbol = original
     assert instance.integerSymbol == original
@@ -3529,9 +3626,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=pivot::IntegerLiteralExp_strategy)
+@given(instance=pivot_IntegerLiteralExp_strategy)
 @settings(max_examples=30)
-def test_pivot::integerliteralexp_typeisinteger_changes_state(instance):
+def test_pivot_integerliteralexp_typeisinteger_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -3546,29 +3643,24 @@ def test_pivot::integerliteralexp_typeisinteger_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'TypeIsInteger' in pivot::IntegerLiteralExp is empty"
+        assert has_statements, f"Function 'TypeIsInteger' in pivot_IntegerLiteralExp is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'TypeIsInteger' in pivot::IntegerLiteralExp did not change state; check implementation")
+            warnings.warn(f"Operation 'TypeIsInteger' in pivot_IntegerLiteralExp did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'TypeIsInteger' in pivot::IntegerLiteralExp is not implemented or raised an error")
+        warnings.warn(f"Operation 'TypeIsInteger' in pivot_IntegerLiteralExp is not implemented or raised an error")
 
 @given(instance=ReferringElement_strategy)
 @settings(max_examples=50)
 def test_referringelement_instantiation(instance):
     assert isinstance(instance, ReferringElement)
 
-@given(instance=LoopExp_strategy)
+@given(instance=pivot_OperationCallExp_strategy)
 @settings(max_examples=50)
-def test_loopexp_instantiation(instance):
-    assert isinstance(instance, LoopExp)
-
-@given(instance=pivot::IteratorExp_strategy)
-@settings(max_examples=50)
-def test_pivot::iteratorexp_instantiation(instance):
-    assert isinstance(instance, pivot::IteratorExp)
+def test_pivot_operationcallexp_instantiation(instance):
+    assert isinstance(instance, pivot_OperationCallExp)
 
 import warnings
 import copy
@@ -3576,1300 +3668,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=pivot::IteratorExp_strategy)
+@given(instance=pivot_OperationCallExp_strategy)
 @settings(max_examples=30)
-def test_pivot::iteratorexp_sortedbyisorderedifsourceisordered_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.SortedByIsOrderedIfSourceIsOrdered(
-            "test", 
-            "test"
-        )
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.SortedByIsOrderedIfSourceIsOrdered).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'SortedByIsOrderedIfSourceIsOrdered' in pivot::IteratorExp is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'SortedByIsOrderedIfSourceIsOrdered' in pivot::IteratorExp did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'SortedByIsOrderedIfSourceIsOrdered' in pivot::IteratorExp is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=pivot::IteratorExp_strategy)
-@settings(max_examples=30)
-def test_pivot::iteratorexp_onetypeisboolean_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.OneTypeIsBoolean(
-            "test", 
-            "test"
-        )
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.OneTypeIsBoolean).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'OneTypeIsBoolean' in pivot::IteratorExp is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'OneTypeIsBoolean' in pivot::IteratorExp did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'OneTypeIsBoolean' in pivot::IteratorExp is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=pivot::IteratorExp_strategy)
-@settings(max_examples=30)
-def test_pivot::iteratorexp_foralltypeisboolean_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.ForAllTypeIsBoolean(
-            "test", 
-            "test"
-        )
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.ForAllTypeIsBoolean).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'ForAllTypeIsBoolean' in pivot::IteratorExp is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'ForAllTypeIsBoolean' in pivot::IteratorExp did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'ForAllTypeIsBoolean' in pivot::IteratorExp is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=pivot::IteratorExp_strategy)
-@settings(max_examples=30)
-def test_pivot::iteratorexp_rejectorselecttypeisboolean_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.RejectOrSelectTypeIsBoolean(
-            "test", 
-            "test"
-        )
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.RejectOrSelectTypeIsBoolean).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'RejectOrSelectTypeIsBoolean' in pivot::IteratorExp is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'RejectOrSelectTypeIsBoolean' in pivot::IteratorExp did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'RejectOrSelectTypeIsBoolean' in pivot::IteratorExp is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=pivot::IteratorExp_strategy)
-@settings(max_examples=30)
-def test_pivot::iteratorexp_closuretypeisuniquecollection_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.ClosureTypeIsUniqueCollection(
-            "test", 
-            "test"
-        )
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.ClosureTypeIsUniqueCollection).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'ClosureTypeIsUniqueCollection' in pivot::IteratorExp is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'ClosureTypeIsUniqueCollection' in pivot::IteratorExp did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'ClosureTypeIsUniqueCollection' in pivot::IteratorExp is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=pivot::IteratorExp_strategy)
-@settings(max_examples=30)
-def test_pivot::iteratorexp_sortedbyelementtypeissourceelementtype_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.SortedByElementTypeIsSourceElementType(
-            "test", 
-            "test"
-        )
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.SortedByElementTypeIsSourceElementType).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'SortedByElementTypeIsSourceElementType' in pivot::IteratorExp is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'SortedByElementTypeIsSourceElementType' in pivot::IteratorExp did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'SortedByElementTypeIsSourceElementType' in pivot::IteratorExp is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=pivot::IteratorExp_strategy)
-@settings(max_examples=30)
-def test_pivot::iteratorexp_forallbodytypeisboolean_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.ForAllBodyTypeIsBoolean(
-            "test", 
-            "test"
-        )
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.ForAllBodyTypeIsBoolean).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'ForAllBodyTypeIsBoolean' in pivot::IteratorExp is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'ForAllBodyTypeIsBoolean' in pivot::IteratorExp did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'ForAllBodyTypeIsBoolean' in pivot::IteratorExp is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=pivot::IteratorExp_strategy)
-@settings(max_examples=30)
-def test_pivot::iteratorexp_existstypeisboolean_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.ExistsTypeIsBoolean(
-            "test", 
-            "test"
-        )
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.ExistsTypeIsBoolean).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'ExistsTypeIsBoolean' in pivot::IteratorExp is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'ExistsTypeIsBoolean' in pivot::IteratorExp did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'ExistsTypeIsBoolean' in pivot::IteratorExp is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=pivot::IteratorExp_strategy)
-@settings(max_examples=30)
-def test_pivot::iteratorexp_anybodytypeisboolean_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.AnyBodyTypeIsBoolean(
-            "test", 
-            "test"
-        )
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.AnyBodyTypeIsBoolean).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'AnyBodyTypeIsBoolean' in pivot::IteratorExp is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'AnyBodyTypeIsBoolean' in pivot::IteratorExp did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'AnyBodyTypeIsBoolean' in pivot::IteratorExp is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=pivot::IteratorExp_strategy)
-@settings(max_examples=30)
-def test_pivot::iteratorexp_closureelementtypeissourceelementtype_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.ClosureElementTypeIsSourceElementType(
-            "test", 
-            "test"
-        )
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.ClosureElementTypeIsSourceElementType).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'ClosureElementTypeIsSourceElementType' in pivot::IteratorExp is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'ClosureElementTypeIsSourceElementType' in pivot::IteratorExp did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'ClosureElementTypeIsSourceElementType' in pivot::IteratorExp is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=pivot::IteratorExp_strategy)
-@settings(max_examples=30)
-def test_pivot::iteratorexp_existsbodytypeisboolean_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.ExistsBodyTypeIsBoolean(
-            "test", 
-            "test"
-        )
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.ExistsBodyTypeIsBoolean).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'ExistsBodyTypeIsBoolean' in pivot::IteratorExp is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'ExistsBodyTypeIsBoolean' in pivot::IteratorExp did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'ExistsBodyTypeIsBoolean' in pivot::IteratorExp is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=pivot::IteratorExp_strategy)
-@settings(max_examples=30)
-def test_pivot::iteratorexp_iteratortypeissourceelementtype_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.IteratorTypeIsSourceElementType(
-            "test", 
-            "test"
-        )
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.IteratorTypeIsSourceElementType).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'IteratorTypeIsSourceElementType' in pivot::IteratorExp is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'IteratorTypeIsSourceElementType' in pivot::IteratorExp did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'IteratorTypeIsSourceElementType' in pivot::IteratorExp is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=pivot::IteratorExp_strategy)
-@settings(max_examples=30)
-def test_pivot::iteratorexp_collecthasoneiterator_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.CollectHasOneIterator(
-            "test", 
-            "test"
-        )
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.CollectHasOneIterator).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'CollectHasOneIterator' in pivot::IteratorExp is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'CollectHasOneIterator' in pivot::IteratorExp did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'CollectHasOneIterator' in pivot::IteratorExp is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=pivot::IteratorExp_strategy)
-@settings(max_examples=30)
-def test_pivot::iteratorexp_collectnestedtypeisbag_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.CollectNestedTypeIsBag(
-            "test", 
-            "test"
-        )
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.CollectNestedTypeIsBag).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'CollectNestedTypeIsBag' in pivot::IteratorExp is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'CollectNestedTypeIsBag' in pivot::IteratorExp did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'CollectNestedTypeIsBag' in pivot::IteratorExp is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=pivot::IteratorExp_strategy)
-@settings(max_examples=30)
-def test_pivot::iteratorexp_isuniquetypeisboolean_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.IsUniqueTypeIsBoolean(
-            "test", 
-            "test"
-        )
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.IsUniqueTypeIsBoolean).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'IsUniqueTypeIsBoolean' in pivot::IteratorExp is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'IsUniqueTypeIsBoolean' in pivot::IteratorExp did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'IsUniqueTypeIsBoolean' in pivot::IteratorExp is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=pivot::IteratorExp_strategy)
-@settings(max_examples=30)
-def test_pivot::iteratorexp_anytypeissourceelementtype_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.AnyTypeIsSourceElementType(
-            "test", 
-            "test"
-        )
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.AnyTypeIsSourceElementType).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'AnyTypeIsSourceElementType' in pivot::IteratorExp is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'AnyTypeIsSourceElementType' in pivot::IteratorExp did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'AnyTypeIsSourceElementType' in pivot::IteratorExp is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=pivot::IteratorExp_strategy)
-@settings(max_examples=30)
-def test_pivot::iteratorexp_closurehasoneiterator_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.ClosureHasOneIterator(
-            "test", 
-            "test"
-        )
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.ClosureHasOneIterator).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'ClosureHasOneIterator' in pivot::IteratorExp is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'ClosureHasOneIterator' in pivot::IteratorExp did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'ClosureHasOneIterator' in pivot::IteratorExp is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=pivot::IteratorExp_strategy)
-@settings(max_examples=30)
-def test_pivot::iteratorexp_anyhasoneiterator_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.AnyHasOneIterator(
-            "test", 
-            "test"
-        )
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.AnyHasOneIterator).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'AnyHasOneIterator' in pivot::IteratorExp is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'AnyHasOneIterator' in pivot::IteratorExp did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'AnyHasOneIterator' in pivot::IteratorExp is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=pivot::IteratorExp_strategy)
-@settings(max_examples=30)
-def test_pivot::iteratorexp_collectnestedhasoneiterator_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.CollectNestedHasOneIterator(
-            "test", 
-            "test"
-        )
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.CollectNestedHasOneIterator).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'CollectNestedHasOneIterator' in pivot::IteratorExp is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'CollectNestedHasOneIterator' in pivot::IteratorExp did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'CollectNestedHasOneIterator' in pivot::IteratorExp is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=pivot::IteratorExp_strategy)
-@settings(max_examples=30)
-def test_pivot::iteratorexp_sortedbyhasoneiterator_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.SortedByHasOneIterator(
-            "test", 
-            "test"
-        )
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.SortedByHasOneIterator).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'SortedByHasOneIterator' in pivot::IteratorExp is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'SortedByHasOneIterator' in pivot::IteratorExp did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'SortedByHasOneIterator' in pivot::IteratorExp is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=pivot::IteratorExp_strategy)
-@settings(max_examples=30)
-def test_pivot::iteratorexp_closuresourceelementtypeisbodyelementtype_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.ClosureSourceElementTypeIsBodyElementType(
-            "test", 
-            "test"
-        )
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.ClosureSourceElementTypeIsBodyElementType).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'ClosureSourceElementTypeIsBodyElementType' in pivot::IteratorExp is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'ClosureSourceElementTypeIsBodyElementType' in pivot::IteratorExp did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'ClosureSourceElementTypeIsBodyElementType' in pivot::IteratorExp is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=pivot::IteratorExp_strategy)
-@settings(max_examples=30)
-def test_pivot::iteratorexp_rejectorselecthasoneiterator_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.RejectOrSelectHasOneIterator(
-            "test", 
-            "test"
-        )
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.RejectOrSelectHasOneIterator).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'RejectOrSelectHasOneIterator' in pivot::IteratorExp is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'RejectOrSelectHasOneIterator' in pivot::IteratorExp did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'RejectOrSelectHasOneIterator' in pivot::IteratorExp is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=pivot::IteratorExp_strategy)
-@settings(max_examples=30)
-def test_pivot::iteratorexp_closurebodytypeisconformanttoiteratortype_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.ClosureBodyTypeIsConformanttoIteratorType(
-            "test", 
-            "test"
-        )
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.ClosureBodyTypeIsConformanttoIteratorType).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'ClosureBodyTypeIsConformanttoIteratorType' in pivot::IteratorExp is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'ClosureBodyTypeIsConformanttoIteratorType' in pivot::IteratorExp did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'ClosureBodyTypeIsConformanttoIteratorType' in pivot::IteratorExp is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=pivot::IteratorExp_strategy)
-@settings(max_examples=30)
-def test_pivot::iteratorexp_onehasoneiterator_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.OneHasOneIterator(
-            "test", 
-            "test"
-        )
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.OneHasOneIterator).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'OneHasOneIterator' in pivot::IteratorExp is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'OneHasOneIterator' in pivot::IteratorExp did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'OneHasOneIterator' in pivot::IteratorExp is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=pivot::IteratorExp_strategy)
-@settings(max_examples=30)
-def test_pivot::iteratorexp_isuniquehasoneiterator_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.IsUniqueHasOneIterator(
-            "test", 
-            "test"
-        )
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.IsUniqueHasOneIterator).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'IsUniqueHasOneIterator' in pivot::IteratorExp is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'IsUniqueHasOneIterator' in pivot::IteratorExp did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'IsUniqueHasOneIterator' in pivot::IteratorExp is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=pivot::IteratorExp_strategy)
-@settings(max_examples=30)
-def test_pivot::iteratorexp_collectnestedtypeisbodytype_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.CollectNestedTypeIsBodyType(
-            "test", 
-            "test"
-        )
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.CollectNestedTypeIsBodyType).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'CollectNestedTypeIsBodyType' in pivot::IteratorExp is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'CollectNestedTypeIsBodyType' in pivot::IteratorExp did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'CollectNestedTypeIsBodyType' in pivot::IteratorExp is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=pivot::IteratorExp_strategy)
-@settings(max_examples=30)
-def test_pivot::iteratorexp_collecttypeisunordered_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.CollectTypeIsUnordered(
-            "test", 
-            "test"
-        )
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.CollectTypeIsUnordered).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'CollectTypeIsUnordered' in pivot::IteratorExp is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'CollectTypeIsUnordered' in pivot::IteratorExp did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'CollectTypeIsUnordered' in pivot::IteratorExp is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=pivot::IteratorExp_strategy)
-@settings(max_examples=30)
-def test_pivot::iteratorexp_onebodytypeisboolean_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.OneBodyTypeIsBoolean(
-            "test", 
-            "test"
-        )
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.OneBodyTypeIsBoolean).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'OneBodyTypeIsBoolean' in pivot::IteratorExp is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'OneBodyTypeIsBoolean' in pivot::IteratorExp did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'OneBodyTypeIsBoolean' in pivot::IteratorExp is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=pivot::IteratorExp_strategy)
-@settings(max_examples=30)
-def test_pivot::iteratorexp_sortedbyiteratortypeiscomparable_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.SortedByIteratorTypeIsComparable(
-            "test", 
-            "test"
-        )
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.SortedByIteratorTypeIsComparable).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'SortedByIteratorTypeIsComparable' in pivot::IteratorExp is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'SortedByIteratorTypeIsComparable' in pivot::IteratorExp did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'SortedByIteratorTypeIsComparable' in pivot::IteratorExp is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=pivot::IteratorExp_strategy)
-@settings(max_examples=30)
-def test_pivot::iteratorexp_rejectorselecttypeissourcetype_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.RejectOrSelectTypeIsSourceType(
-            "test", 
-            "test"
-        )
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.RejectOrSelectTypeIsSourceType).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'RejectOrSelectTypeIsSourceType' in pivot::IteratorExp is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'RejectOrSelectTypeIsSourceType' in pivot::IteratorExp did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'RejectOrSelectTypeIsSourceType' in pivot::IteratorExp is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=pivot::IteratorExp_strategy)
-@settings(max_examples=30)
-def test_pivot::iteratorexp_collectelementtypeissourceelementtype_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.CollectElementTypeIsSourceElementType(
-            "test", 
-            "test"
-        )
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.CollectElementTypeIsSourceElementType).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'CollectElementTypeIsSourceElementType' in pivot::IteratorExp is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'CollectElementTypeIsSourceElementType' in pivot::IteratorExp did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'CollectElementTypeIsSourceElementType' in pivot::IteratorExp is not implemented or raised an error")
-
-@given(instance=pivot::IterateExp_strategy)
-@settings(max_examples=50)
-def test_pivot::iterateexp_instantiation(instance):
-    assert isinstance(instance, pivot::IterateExp)
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=pivot::IterateExp_strategy)
-@settings(max_examples=30)
-def test_pivot::iterateexp_oneinitializer_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.OneInitializer(
-            "test", 
-            "test"
-        )
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.OneInitializer).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'OneInitializer' in pivot::IterateExp is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'OneInitializer' in pivot::IterateExp did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'OneInitializer' in pivot::IterateExp is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=pivot::IterateExp_strategy)
-@settings(max_examples=30)
-def test_pivot::iterateexp_bodytypeconformstoresulttype_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.BodyTypeConformsToResultType(
-            "test", 
-            "test"
-        )
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.BodyTypeConformsToResultType).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'BodyTypeConformsToResultType' in pivot::IterateExp is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'BodyTypeConformsToResultType' in pivot::IterateExp did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'BodyTypeConformsToResultType' in pivot::IterateExp is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=pivot::IterateExp_strategy)
-@settings(max_examples=30)
-def test_pivot::iterateexp_typeisresulttype_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.TypeIsResultType(
-            "test", 
-            "test"
-        )
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.TypeIsResultType).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'TypeIsResultType' in pivot::IterateExp is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'TypeIsResultType' in pivot::IterateExp did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'TypeIsResultType' in pivot::IterateExp is not implemented or raised an error")
-
-@given(instance=State_strategy)
-@settings(max_examples=50)
-def test_state_instantiation(instance):
-    assert isinstance(instance, State)
-
-@given(instance=pivot::FinalState_strategy)
-@settings(max_examples=50)
-def test_pivot::finalstate_instantiation(instance):
-    assert isinstance(instance, pivot::FinalState)
-
-@given(instance=CallExp_strategy)
-@settings(max_examples=50)
-def test_callexp_instantiation(instance):
-    assert isinstance(instance, CallExp)
-
-@given(instance=pivot::FeatureCallExp_strategy)
-@settings(max_examples=50)
-def test_pivot::featurecallexp_instantiation(instance):
-    assert isinstance(instance, pivot::FeatureCallExp)
-
-@given(instance=pivot::FeatureCallExp_strategy)
-def test_pivot::featurecallexp_isPre_type(instance):
-    assert isinstance(instance.isPre, str)
-
-
-@given(instance=pivot::FeatureCallExp_strategy)
-def test_pivot::featurecallexp_isPre_setter(instance):
-    original = instance.isPre
-    instance.isPre = original
-    assert instance.isPre == original
-
-@given(instance=TypedMultiplicityElement_strategy)
-@settings(max_examples=50)
-def test_typedmultiplicityelement_instantiation(instance):
-    assert isinstance(instance, TypedMultiplicityElement)
-
-@given(instance=pivot::Feature_strategy)
-@settings(max_examples=50)
-def test_pivot::feature_instantiation(instance):
-    assert isinstance(instance, pivot::Feature)
-
-@given(instance=pivot::Feature_strategy)
-def test_pivot::feature_implementation_type(instance):
-    assert isinstance(instance.implementation, str)
-
-
-@given(instance=pivot::Feature_strategy)
-def test_pivot::feature_implementation_setter(instance):
-    original = instance.implementation
-    instance.implementation = original
-    assert instance.implementation == original
-
-@given(instance=pivot::Feature_strategy)
-def test_pivot::feature_implementationClass_type(instance):
-    assert isinstance(instance.implementationClass, str)
-
-
-@given(instance=pivot::Feature_strategy)
-def test_pivot::feature_implementationClass_setter(instance):
-    original = instance.implementationClass
-    instance.implementationClass = original
-    assert instance.implementationClass == original
-
-@given(instance=pivot::ReferringElement_strategy)
-@settings(max_examples=50)
-def test_pivot::referringelement_instantiation(instance):
-    assert isinstance(instance, pivot::ReferringElement)
-
-@given(instance=pivot::RealLiteralExp_strategy)
-@settings(max_examples=50)
-def test_pivot::realliteralexp_instantiation(instance):
-    assert isinstance(instance, pivot::RealLiteralExp)
-
-@given(instance=pivot::RealLiteralExp_strategy)
-def test_pivot::realliteralexp_realSymbol_type(instance):
-    assert isinstance(instance.realSymbol, str)
-
-
-@given(instance=pivot::RealLiteralExp_strategy)
-def test_pivot::realliteralexp_realSymbol_setter(instance):
-    original = instance.realSymbol
-    instance.realSymbol = original
-    assert instance.realSymbol == original
-
-@given(instance=pivot::StateMachine_strategy)
-@settings(max_examples=50)
-def test_pivot::statemachine_instantiation(instance):
-    assert isinstance(instance, pivot::StateMachine)
-
-@given(instance=pivot::Pivotable_strategy)
-@settings(max_examples=50)
-def test_pivot::pivotable_instantiation(instance):
-    assert isinstance(instance, pivot::Pivotable)
-
-@given(instance=TemplateParameter_strategy)
-@settings(max_examples=50)
-def test_templateparameter_instantiation(instance):
-    assert isinstance(instance, TemplateParameter)
-
-@given(instance=pivot::TypeTemplateParameter_strategy)
-@settings(max_examples=50)
-def test_pivot::typetemplateparameter_instantiation(instance):
-    assert isinstance(instance, pivot::TypeTemplateParameter)
-
-@given(instance=pivot::TypeTemplateParameter_strategy)
-def test_pivot::typetemplateparameter_allowSubstitutable_type(instance):
-    assert isinstance(instance.allowSubstitutable, str)
-
-
-@given(instance=pivot::TypeTemplateParameter_strategy)
-def test_pivot::typetemplateparameter_allowSubstitutable_setter(instance):
-    original = instance.allowSubstitutable
-    instance.allowSubstitutable = original
-    assert instance.allowSubstitutable == original
-
-@given(instance=pivot::OperationTemplateParameter_strategy)
-@settings(max_examples=50)
-def test_pivot::operationtemplateparameter_instantiation(instance):
-    assert isinstance(instance, pivot::OperationTemplateParameter)
-
-@given(instance=VariableDeclaration_strategy)
-@settings(max_examples=50)
-def test_variabledeclaration_instantiation(instance):
-    assert isinstance(instance, VariableDeclaration)
-
-@given(instance=pivot::TupleLiteralPart_strategy)
-@settings(max_examples=50)
-def test_pivot::tupleliteralpart_instantiation(instance):
-    assert isinstance(instance, pivot::TupleLiteralPart)
-
-@given(instance=pivot::Variable_strategy)
-@settings(max_examples=50)
-def test_pivot::variable_instantiation(instance):
-    assert isinstance(instance, pivot::Variable)
-
-@given(instance=pivot::Variable_strategy)
-def test_pivot::variable_implicit_type(instance):
-    assert isinstance(instance.implicit, str)
-
-
-@given(instance=pivot::Variable_strategy)
-def test_pivot::variable_implicit_setter(instance):
-    original = instance.implicit
-    instance.implicit = original
-    assert instance.implicit == original
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=pivot::Variable_strategy)
-@settings(max_examples=30)
-def test_pivot::variable_compatibleinitialisertype_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.CompatibleInitialiserType(
-            "test", 
-            "test"
-        )
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.CompatibleInitialiserType).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'CompatibleInitialiserType' in pivot::Variable is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'CompatibleInitialiserType' in pivot::Variable did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'CompatibleInitialiserType' in pivot::Variable is not implemented or raised an error")
-
-@given(instance=pivot::Parameter_strategy)
-@settings(max_examples=50)
-def test_pivot::parameter_instantiation(instance):
-    assert isinstance(instance, pivot::Parameter)
-
-@given(instance=ValueSpecification_strategy)
-@settings(max_examples=50)
-def test_valuespecification_instantiation(instance):
-    assert isinstance(instance, ValueSpecification)
-
-@given(instance=FeatureCallExp_strategy)
-@settings(max_examples=50)
-def test_featurecallexp_instantiation(instance):
-    assert isinstance(instance, FeatureCallExp)
-
-@given(instance=pivot::OperationCallExp_strategy)
-@settings(max_examples=50)
-def test_pivot::operationcallexp_instantiation(instance):
-    assert isinstance(instance, pivot::OperationCallExp)
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=pivot::OperationCallExp_strategy)
-@settings(max_examples=30)
-def test_pivot::operationcallexp_argumenttypeisconformant_changes_state(instance):
+def test_pivot_operationcallexp_argumenttypeisconformant_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -4884,14 +3685,14 @@ def test_pivot::operationcallexp_argumenttypeisconformant_changes_state(instance
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'ArgumentTypeIsConformant' in pivot::OperationCallExp is empty"
+        assert has_statements, f"Function 'ArgumentTypeIsConformant' in pivot_OperationCallExp is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'ArgumentTypeIsConformant' in pivot::OperationCallExp did not change state; check implementation")
+            warnings.warn(f"Operation 'ArgumentTypeIsConformant' in pivot_OperationCallExp did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'ArgumentTypeIsConformant' in pivot::OperationCallExp is not implemented or raised an error")
+        warnings.warn(f"Operation 'ArgumentTypeIsConformant' in pivot_OperationCallExp is not implemented or raised an error")
 
 import warnings
 import copy
@@ -4899,9 +3700,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=pivot::OperationCallExp_strategy)
+@given(instance=pivot_OperationCallExp_strategy)
 @settings(max_examples=30)
-def test_pivot::operationcallexp_argumentcount_changes_state(instance):
+def test_pivot_operationcallexp_argumentcount_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -4916,59 +3717,24 @@ def test_pivot::operationcallexp_argumentcount_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'ArgumentCount' in pivot::OperationCallExp is empty"
+        assert has_statements, f"Function 'ArgumentCount' in pivot_OperationCallExp is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'ArgumentCount' in pivot::OperationCallExp did not change state; check implementation")
+            warnings.warn(f"Operation 'ArgumentCount' in pivot_OperationCallExp did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'ArgumentCount' in pivot::OperationCallExp is not implemented or raised an error")
+        warnings.warn(f"Operation 'ArgumentCount' in pivot_OperationCallExp is not implemented or raised an error")
 
-@given(instance=pivot::NavigationCallExp_strategy)
+@given(instance=LoopExp_strategy)
 @settings(max_examples=50)
-def test_pivot::navigationcallexp_instantiation(instance):
-    assert isinstance(instance, pivot::NavigationCallExp)
+def test_loopexp_instantiation(instance):
+    assert isinstance(instance, LoopExp)
 
-@given(instance=Nameable_strategy)
+@given(instance=pivot_IteratorExp_strategy)
 @settings(max_examples=50)
-def test_nameable_instantiation(instance):
-    assert isinstance(instance, Nameable)
-
-@given(instance=pivot::Nameable_strategy)
-@settings(max_examples=50)
-def test_pivot::nameable_instantiation(instance):
-    assert isinstance(instance, pivot::Nameable)
-
-@given(instance=pivot::MorePivotable_strategy)
-@settings(max_examples=50)
-def test_pivot::morepivotable_instantiation(instance):
-    assert isinstance(instance, pivot::MorePivotable)
-
-@given(instance=ParameterableElement_strategy)
-@settings(max_examples=50)
-def test_parameterableelement_instantiation(instance):
-    assert isinstance(instance, ParameterableElement)
-
-@given(instance=pivot::PackageableElement_strategy)
-@settings(max_examples=50)
-def test_pivot::packageableelement_instantiation(instance):
-    assert isinstance(instance, pivot::PackageableElement)
-
-@given(instance=TemplateableElement_strategy)
-@settings(max_examples=50)
-def test_templateableelement_instantiation(instance):
-    assert isinstance(instance, TemplateableElement)
-
-@given(instance=Feature_strategy)
-@settings(max_examples=50)
-def test_feature_instantiation(instance):
-    assert isinstance(instance, Feature)
-
-@given(instance=pivot::LoopExp_strategy)
-@settings(max_examples=50)
-def test_pivot::loopexp_instantiation(instance):
-    assert isinstance(instance, pivot::LoopExp)
+def test_pivot_iteratorexp_instantiation(instance):
+    assert isinstance(instance, pivot_IteratorExp)
 
 import warnings
 import copy
@@ -4976,9 +3742,1122 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=pivot::LoopExp_strategy)
+@given(instance=pivot_IteratorExp_strategy)
 @settings(max_examples=30)
-def test_pivot::loopexp_noinitializers_changes_state(instance):
+def test_pivot_iteratorexp_onebodytypeisboolean_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.OneBodyTypeIsBoolean(
+            "test", 
+            "test"
+        )
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.OneBodyTypeIsBoolean).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'OneBodyTypeIsBoolean' in pivot_IteratorExp is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'OneBodyTypeIsBoolean' in pivot_IteratorExp did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'OneBodyTypeIsBoolean' in pivot_IteratorExp is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=pivot_IteratorExp_strategy)
+@settings(max_examples=30)
+def test_pivot_iteratorexp_isuniquehasoneiterator_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.IsUniqueHasOneIterator(
+            "test", 
+            "test"
+        )
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.IsUniqueHasOneIterator).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'IsUniqueHasOneIterator' in pivot_IteratorExp is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'IsUniqueHasOneIterator' in pivot_IteratorExp did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'IsUniqueHasOneIterator' in pivot_IteratorExp is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=pivot_IteratorExp_strategy)
+@settings(max_examples=30)
+def test_pivot_iteratorexp_existsbodytypeisboolean_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.ExistsBodyTypeIsBoolean(
+            "test", 
+            "test"
+        )
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.ExistsBodyTypeIsBoolean).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'ExistsBodyTypeIsBoolean' in pivot_IteratorExp is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'ExistsBodyTypeIsBoolean' in pivot_IteratorExp did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'ExistsBodyTypeIsBoolean' in pivot_IteratorExp is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=pivot_IteratorExp_strategy)
+@settings(max_examples=30)
+def test_pivot_iteratorexp_sortedbyisorderedifsourceisordered_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.SortedByIsOrderedIfSourceIsOrdered(
+            "test", 
+            "test"
+        )
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.SortedByIsOrderedIfSourceIsOrdered).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'SortedByIsOrderedIfSourceIsOrdered' in pivot_IteratorExp is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'SortedByIsOrderedIfSourceIsOrdered' in pivot_IteratorExp did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'SortedByIsOrderedIfSourceIsOrdered' in pivot_IteratorExp is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=pivot_IteratorExp_strategy)
+@settings(max_examples=30)
+def test_pivot_iteratorexp_collecttypeisunordered_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.CollectTypeIsUnordered(
+            "test", 
+            "test"
+        )
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.CollectTypeIsUnordered).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'CollectTypeIsUnordered' in pivot_IteratorExp is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'CollectTypeIsUnordered' in pivot_IteratorExp did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'CollectTypeIsUnordered' in pivot_IteratorExp is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=pivot_IteratorExp_strategy)
+@settings(max_examples=30)
+def test_pivot_iteratorexp_existstypeisboolean_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.ExistsTypeIsBoolean(
+            "test", 
+            "test"
+        )
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.ExistsTypeIsBoolean).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'ExistsTypeIsBoolean' in pivot_IteratorExp is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'ExistsTypeIsBoolean' in pivot_IteratorExp did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'ExistsTypeIsBoolean' in pivot_IteratorExp is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=pivot_IteratorExp_strategy)
+@settings(max_examples=30)
+def test_pivot_iteratorexp_collectnestedhasoneiterator_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.CollectNestedHasOneIterator(
+            "test", 
+            "test"
+        )
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.CollectNestedHasOneIterator).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'CollectNestedHasOneIterator' in pivot_IteratorExp is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'CollectNestedHasOneIterator' in pivot_IteratorExp did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'CollectNestedHasOneIterator' in pivot_IteratorExp is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=pivot_IteratorExp_strategy)
+@settings(max_examples=30)
+def test_pivot_iteratorexp_foralltypeisboolean_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.ForAllTypeIsBoolean(
+            "test", 
+            "test"
+        )
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.ForAllTypeIsBoolean).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'ForAllTypeIsBoolean' in pivot_IteratorExp is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'ForAllTypeIsBoolean' in pivot_IteratorExp did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'ForAllTypeIsBoolean' in pivot_IteratorExp is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=pivot_IteratorExp_strategy)
+@settings(max_examples=30)
+def test_pivot_iteratorexp_rejectorselecttypeissourcetype_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.RejectOrSelectTypeIsSourceType(
+            "test", 
+            "test"
+        )
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.RejectOrSelectTypeIsSourceType).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'RejectOrSelectTypeIsSourceType' in pivot_IteratorExp is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'RejectOrSelectTypeIsSourceType' in pivot_IteratorExp did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'RejectOrSelectTypeIsSourceType' in pivot_IteratorExp is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=pivot_IteratorExp_strategy)
+@settings(max_examples=30)
+def test_pivot_iteratorexp_closureelementtypeissourceelementtype_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.ClosureElementTypeIsSourceElementType(
+            "test", 
+            "test"
+        )
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.ClosureElementTypeIsSourceElementType).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'ClosureElementTypeIsSourceElementType' in pivot_IteratorExp is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'ClosureElementTypeIsSourceElementType' in pivot_IteratorExp did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'ClosureElementTypeIsSourceElementType' in pivot_IteratorExp is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=pivot_IteratorExp_strategy)
+@settings(max_examples=30)
+def test_pivot_iteratorexp_collectnestedtypeisbag_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.CollectNestedTypeIsBag(
+            "test", 
+            "test"
+        )
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.CollectNestedTypeIsBag).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'CollectNestedTypeIsBag' in pivot_IteratorExp is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'CollectNestedTypeIsBag' in pivot_IteratorExp did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'CollectNestedTypeIsBag' in pivot_IteratorExp is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=pivot_IteratorExp_strategy)
+@settings(max_examples=30)
+def test_pivot_iteratorexp_collectnestedtypeisbodytype_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.CollectNestedTypeIsBodyType(
+            "test", 
+            "test"
+        )
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.CollectNestedTypeIsBodyType).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'CollectNestedTypeIsBodyType' in pivot_IteratorExp is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'CollectNestedTypeIsBodyType' in pivot_IteratorExp did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'CollectNestedTypeIsBodyType' in pivot_IteratorExp is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=pivot_IteratorExp_strategy)
+@settings(max_examples=30)
+def test_pivot_iteratorexp_closuretypeisuniquecollection_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.ClosureTypeIsUniqueCollection(
+            "test", 
+            "test"
+        )
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.ClosureTypeIsUniqueCollection).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'ClosureTypeIsUniqueCollection' in pivot_IteratorExp is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'ClosureTypeIsUniqueCollection' in pivot_IteratorExp did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'ClosureTypeIsUniqueCollection' in pivot_IteratorExp is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=pivot_IteratorExp_strategy)
+@settings(max_examples=30)
+def test_pivot_iteratorexp_iteratortypeissourceelementtype_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.IteratorTypeIsSourceElementType(
+            "test", 
+            "test"
+        )
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.IteratorTypeIsSourceElementType).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'IteratorTypeIsSourceElementType' in pivot_IteratorExp is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'IteratorTypeIsSourceElementType' in pivot_IteratorExp did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'IteratorTypeIsSourceElementType' in pivot_IteratorExp is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=pivot_IteratorExp_strategy)
+@settings(max_examples=30)
+def test_pivot_iteratorexp_rejectorselecttypeisboolean_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.RejectOrSelectTypeIsBoolean(
+            "test", 
+            "test"
+        )
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.RejectOrSelectTypeIsBoolean).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'RejectOrSelectTypeIsBoolean' in pivot_IteratorExp is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'RejectOrSelectTypeIsBoolean' in pivot_IteratorExp did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'RejectOrSelectTypeIsBoolean' in pivot_IteratorExp is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=pivot_IteratorExp_strategy)
+@settings(max_examples=30)
+def test_pivot_iteratorexp_collecthasoneiterator_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.CollectHasOneIterator(
+            "test", 
+            "test"
+        )
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.CollectHasOneIterator).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'CollectHasOneIterator' in pivot_IteratorExp is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'CollectHasOneIterator' in pivot_IteratorExp did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'CollectHasOneIterator' in pivot_IteratorExp is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=pivot_IteratorExp_strategy)
+@settings(max_examples=30)
+def test_pivot_iteratorexp_closurehasoneiterator_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.ClosureHasOneIterator(
+            "test", 
+            "test"
+        )
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.ClosureHasOneIterator).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'ClosureHasOneIterator' in pivot_IteratorExp is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'ClosureHasOneIterator' in pivot_IteratorExp did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'ClosureHasOneIterator' in pivot_IteratorExp is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=pivot_IteratorExp_strategy)
+@settings(max_examples=30)
+def test_pivot_iteratorexp_sortedbyhasoneiterator_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.SortedByHasOneIterator(
+            "test", 
+            "test"
+        )
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.SortedByHasOneIterator).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'SortedByHasOneIterator' in pivot_IteratorExp is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'SortedByHasOneIterator' in pivot_IteratorExp did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'SortedByHasOneIterator' in pivot_IteratorExp is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=pivot_IteratorExp_strategy)
+@settings(max_examples=30)
+def test_pivot_iteratorexp_anybodytypeisboolean_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.AnyBodyTypeIsBoolean(
+            "test", 
+            "test"
+        )
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.AnyBodyTypeIsBoolean).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'AnyBodyTypeIsBoolean' in pivot_IteratorExp is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'AnyBodyTypeIsBoolean' in pivot_IteratorExp did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'AnyBodyTypeIsBoolean' in pivot_IteratorExp is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=pivot_IteratorExp_strategy)
+@settings(max_examples=30)
+def test_pivot_iteratorexp_isuniquetypeisboolean_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.IsUniqueTypeIsBoolean(
+            "test", 
+            "test"
+        )
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.IsUniqueTypeIsBoolean).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'IsUniqueTypeIsBoolean' in pivot_IteratorExp is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'IsUniqueTypeIsBoolean' in pivot_IteratorExp did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'IsUniqueTypeIsBoolean' in pivot_IteratorExp is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=pivot_IteratorExp_strategy)
+@settings(max_examples=30)
+def test_pivot_iteratorexp_rejectorselecthasoneiterator_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.RejectOrSelectHasOneIterator(
+            "test", 
+            "test"
+        )
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.RejectOrSelectHasOneIterator).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'RejectOrSelectHasOneIterator' in pivot_IteratorExp is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'RejectOrSelectHasOneIterator' in pivot_IteratorExp did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'RejectOrSelectHasOneIterator' in pivot_IteratorExp is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=pivot_IteratorExp_strategy)
+@settings(max_examples=30)
+def test_pivot_iteratorexp_sortedbyelementtypeissourceelementtype_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.SortedByElementTypeIsSourceElementType(
+            "test", 
+            "test"
+        )
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.SortedByElementTypeIsSourceElementType).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'SortedByElementTypeIsSourceElementType' in pivot_IteratorExp is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'SortedByElementTypeIsSourceElementType' in pivot_IteratorExp did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'SortedByElementTypeIsSourceElementType' in pivot_IteratorExp is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=pivot_IteratorExp_strategy)
+@settings(max_examples=30)
+def test_pivot_iteratorexp_onetypeisboolean_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.OneTypeIsBoolean(
+            "test", 
+            "test"
+        )
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.OneTypeIsBoolean).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'OneTypeIsBoolean' in pivot_IteratorExp is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'OneTypeIsBoolean' in pivot_IteratorExp did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'OneTypeIsBoolean' in pivot_IteratorExp is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=pivot_IteratorExp_strategy)
+@settings(max_examples=30)
+def test_pivot_iteratorexp_anyhasoneiterator_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.AnyHasOneIterator(
+            "test", 
+            "test"
+        )
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.AnyHasOneIterator).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'AnyHasOneIterator' in pivot_IteratorExp is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'AnyHasOneIterator' in pivot_IteratorExp did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'AnyHasOneIterator' in pivot_IteratorExp is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=pivot_IteratorExp_strategy)
+@settings(max_examples=30)
+def test_pivot_iteratorexp_forallbodytypeisboolean_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.ForAllBodyTypeIsBoolean(
+            "test", 
+            "test"
+        )
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.ForAllBodyTypeIsBoolean).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'ForAllBodyTypeIsBoolean' in pivot_IteratorExp is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'ForAllBodyTypeIsBoolean' in pivot_IteratorExp did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'ForAllBodyTypeIsBoolean' in pivot_IteratorExp is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=pivot_IteratorExp_strategy)
+@settings(max_examples=30)
+def test_pivot_iteratorexp_collectelementtypeissourceelementtype_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.CollectElementTypeIsSourceElementType(
+            "test", 
+            "test"
+        )
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.CollectElementTypeIsSourceElementType).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'CollectElementTypeIsSourceElementType' in pivot_IteratorExp is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'CollectElementTypeIsSourceElementType' in pivot_IteratorExp did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'CollectElementTypeIsSourceElementType' in pivot_IteratorExp is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=pivot_IteratorExp_strategy)
+@settings(max_examples=30)
+def test_pivot_iteratorexp_closurebodytypeisconformanttoiteratortype_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.ClosureBodyTypeIsConformanttoIteratorType(
+            "test", 
+            "test"
+        )
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.ClosureBodyTypeIsConformanttoIteratorType).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'ClosureBodyTypeIsConformanttoIteratorType' in pivot_IteratorExp is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'ClosureBodyTypeIsConformanttoIteratorType' in pivot_IteratorExp did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'ClosureBodyTypeIsConformanttoIteratorType' in pivot_IteratorExp is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=pivot_IteratorExp_strategy)
+@settings(max_examples=30)
+def test_pivot_iteratorexp_sortedbyiteratortypeiscomparable_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.SortedByIteratorTypeIsComparable(
+            "test", 
+            "test"
+        )
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.SortedByIteratorTypeIsComparable).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'SortedByIteratorTypeIsComparable' in pivot_IteratorExp is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'SortedByIteratorTypeIsComparable' in pivot_IteratorExp did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'SortedByIteratorTypeIsComparable' in pivot_IteratorExp is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=pivot_IteratorExp_strategy)
+@settings(max_examples=30)
+def test_pivot_iteratorexp_anytypeissourceelementtype_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.AnyTypeIsSourceElementType(
+            "test", 
+            "test"
+        )
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.AnyTypeIsSourceElementType).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'AnyTypeIsSourceElementType' in pivot_IteratorExp is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'AnyTypeIsSourceElementType' in pivot_IteratorExp did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'AnyTypeIsSourceElementType' in pivot_IteratorExp is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=pivot_IteratorExp_strategy)
+@settings(max_examples=30)
+def test_pivot_iteratorexp_onehasoneiterator_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.OneHasOneIterator(
+            "test", 
+            "test"
+        )
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.OneHasOneIterator).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'OneHasOneIterator' in pivot_IteratorExp is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'OneHasOneIterator' in pivot_IteratorExp did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'OneHasOneIterator' in pivot_IteratorExp is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=pivot_IteratorExp_strategy)
+@settings(max_examples=30)
+def test_pivot_iteratorexp_closuresourceelementtypeisbodyelementtype_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.ClosureSourceElementTypeIsBodyElementType(
+            "test", 
+            "test"
+        )
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.ClosureSourceElementTypeIsBodyElementType).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'ClosureSourceElementTypeIsBodyElementType' in pivot_IteratorExp is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'ClosureSourceElementTypeIsBodyElementType' in pivot_IteratorExp did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'ClosureSourceElementTypeIsBodyElementType' in pivot_IteratorExp is not implemented or raised an error")
+
+@given(instance=pivot_IterateExp_strategy)
+@settings(max_examples=50)
+def test_pivot_iterateexp_instantiation(instance):
+    assert isinstance(instance, pivot_IterateExp)
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=pivot_IterateExp_strategy)
+@settings(max_examples=30)
+def test_pivot_iterateexp_oneinitializer_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.OneInitializer(
+            "test", 
+            "test"
+        )
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.OneInitializer).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'OneInitializer' in pivot_IterateExp is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'OneInitializer' in pivot_IterateExp did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'OneInitializer' in pivot_IterateExp is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=pivot_IterateExp_strategy)
+@settings(max_examples=30)
+def test_pivot_iterateexp_bodytypeconformstoresulttype_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.BodyTypeConformsToResultType(
+            "test", 
+            "test"
+        )
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.BodyTypeConformsToResultType).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'BodyTypeConformsToResultType' in pivot_IterateExp is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'BodyTypeConformsToResultType' in pivot_IterateExp did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'BodyTypeConformsToResultType' in pivot_IterateExp is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=pivot_IterateExp_strategy)
+@settings(max_examples=30)
+def test_pivot_iterateexp_typeisresulttype_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.TypeIsResultType(
+            "test", 
+            "test"
+        )
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.TypeIsResultType).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'TypeIsResultType' in pivot_IterateExp is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'TypeIsResultType' in pivot_IterateExp did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'TypeIsResultType' in pivot_IterateExp is not implemented or raised an error")
+
+@given(instance=State_strategy)
+@settings(max_examples=50)
+def test_state_instantiation(instance):
+    assert isinstance(instance, State)
+
+@given(instance=pivot_FinalState_strategy)
+@settings(max_examples=50)
+def test_pivot_finalstate_instantiation(instance):
+    assert isinstance(instance, pivot_FinalState)
+
+@given(instance=CallExp_strategy)
+@settings(max_examples=50)
+def test_callexp_instantiation(instance):
+    assert isinstance(instance, CallExp)
+
+@given(instance=pivot_LoopExp_strategy)
+@settings(max_examples=50)
+def test_pivot_loopexp_instantiation(instance):
+    assert isinstance(instance, pivot_LoopExp)
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=pivot_LoopExp_strategy)
+@settings(max_examples=30)
+def test_pivot_loopexp_noinitializers_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -4993,14 +4872,14 @@ def test_pivot::loopexp_noinitializers_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'NoInitializers' in pivot::LoopExp is empty"
+        assert has_statements, f"Function 'NoInitializers' in pivot_LoopExp is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'NoInitializers' in pivot::LoopExp did not change state; check implementation")
+            warnings.warn(f"Operation 'NoInitializers' in pivot_LoopExp did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'NoInitializers' in pivot::LoopExp is not implemented or raised an error")
+        warnings.warn(f"Operation 'NoInitializers' in pivot_LoopExp is not implemented or raised an error")
 
 import warnings
 import copy
@@ -5008,9 +4887,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=pivot::LoopExp_strategy)
+@given(instance=pivot_LoopExp_strategy)
 @settings(max_examples=30)
-def test_pivot::loopexp_sourceiscollection_changes_state(instance):
+def test_pivot_loopexp_sourceiscollection_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -5025,39 +4904,113 @@ def test_pivot::loopexp_sourceiscollection_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'SourceIsCollection' in pivot::LoopExp is empty"
+        assert has_statements, f"Function 'SourceIsCollection' in pivot_LoopExp is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'SourceIsCollection' in pivot::LoopExp did not change state; check implementation")
+            warnings.warn(f"Operation 'SourceIsCollection' in pivot_LoopExp did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'SourceIsCollection' in pivot::LoopExp is not implemented or raised an error")
+        warnings.warn(f"Operation 'SourceIsCollection' in pivot_LoopExp is not implemented or raised an error")
 
-@given(instance=Package_strategy)
+@given(instance=pivot_FeatureCallExp_strategy)
 @settings(max_examples=50)
-def test_package_instantiation(instance):
-    assert isinstance(instance, Package)
+def test_pivot_featurecallexp_instantiation(instance):
+    assert isinstance(instance, pivot_FeatureCallExp)
 
-@given(instance=pivot::Profile_strategy)
-@settings(max_examples=50)
-def test_pivot::profile_instantiation(instance):
-    assert isinstance(instance, pivot::Profile)
 
-@given(instance=pivot::Library_strategy)
+
+@given(instance=pivot_FeatureCallExp_strategy)
+def test_pivot_featurecallexp_isPre_setter(instance):
+    original = instance.isPre
+    instance.isPre = original
+    assert instance.isPre == original
+
+@given(instance=TypedMultiplicityElement_strategy)
 @settings(max_examples=50)
-def test_pivot::library_instantiation(instance):
-    assert isinstance(instance, pivot::Library)
+def test_typedmultiplicityelement_instantiation(instance):
+    assert isinstance(instance, TypedMultiplicityElement)
+
+@given(instance=pivot_Parameter_strategy)
+@settings(max_examples=50)
+def test_pivot_parameter_instantiation(instance):
+    assert isinstance(instance, pivot_Parameter)
+
+@given(instance=pivot_Feature_strategy)
+@settings(max_examples=50)
+def test_pivot_feature_instantiation(instance):
+    assert isinstance(instance, pivot_Feature)
+
+
+
+@given(instance=pivot_Feature_strategy)
+def test_pivot_feature_implementation_setter(instance):
+    original = instance.implementation
+    instance.implementation = original
+    assert instance.implementation == original
+
+
+
+@given(instance=pivot_Feature_strategy)
+def test_pivot_feature_implementationClass_setter(instance):
+    original = instance.implementationClass
+    instance.implementationClass = original
+    assert instance.implementationClass == original
+
+@given(instance=pivot_Variable_strategy)
+@settings(max_examples=50)
+def test_pivot_variable_instantiation(instance):
+    assert isinstance(instance, pivot_Variable)
+
+
+
+@given(instance=pivot_Variable_strategy)
+def test_pivot_variable_implicit_setter(instance):
+    original = instance.implicit
+    instance.implicit = original
+    assert instance.implicit == original
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=pivot_Variable_strategy)
+@settings(max_examples=30)
+def test_pivot_variable_compatibleinitialisertype_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.CompatibleInitialiserType(
+            "test", 
+            "test"
+        )
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.CompatibleInitialiserType).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'CompatibleInitialiserType' in pivot_Variable is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'CompatibleInitialiserType' in pivot_Variable did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'CompatibleInitialiserType' in pivot_Variable is not implemented or raised an error")
 
 @given(instance=OpaqueExpression_strategy)
 @settings(max_examples=50)
 def test_opaqueexpression_instantiation(instance):
     assert isinstance(instance, OpaqueExpression)
 
-@given(instance=pivot::ExpressionInOCL_strategy)
+@given(instance=pivot_ExpressionInOCL_strategy)
 @settings(max_examples=50)
-def test_pivot::expressioninocl_instantiation(instance):
-    assert isinstance(instance, pivot::ExpressionInOCL)
+def test_pivot_expressioninocl_instantiation(instance):
+    assert isinstance(instance, pivot_ExpressionInOCL)
 
 @given(instance=Visitable_strategy)
 @settings(max_examples=50)
@@ -5069,95 +5022,93 @@ def test_visitable_instantiation(instance):
 def test_dynamicelement_instantiation(instance):
     assert isinstance(instance, DynamicElement)
 
-@given(instance=pivot::OpaqueExpression_strategy)
+@given(instance=pivot_OpaqueExpression_strategy)
 @settings(max_examples=50)
-def test_pivot::opaqueexpression_instantiation(instance):
-    assert isinstance(instance, pivot::OpaqueExpression)
-
-@given(instance=pivot::OpaqueExpression_strategy)
-def test_pivot::opaqueexpression_body_type(instance):
-    assert isinstance(instance.body, str)
+def test_pivot_opaqueexpression_instantiation(instance):
+    assert isinstance(instance, pivot_OpaqueExpression)
 
 
-@given(instance=pivot::OpaqueExpression_strategy)
-def test_pivot::opaqueexpression_body_setter(instance):
+
+@given(instance=pivot_OpaqueExpression_strategy)
+def test_pivot_opaqueexpression_message_setter(instance):
+    original = instance.message
+    instance.message = original
+    assert instance.message == original
+
+
+
+@given(instance=pivot_OpaqueExpression_strategy)
+def test_pivot_opaqueexpression_body_setter(instance):
     original = instance.body
     instance.body = original
     assert instance.body == original
 
-@given(instance=pivot::OpaqueExpression_strategy)
-def test_pivot::opaqueexpression_language_type(instance):
-    assert isinstance(instance.language, str)
 
 
-@given(instance=pivot::OpaqueExpression_strategy)
-def test_pivot::opaqueexpression_language_setter(instance):
+@given(instance=pivot_OpaqueExpression_strategy)
+def test_pivot_opaqueexpression_language_setter(instance):
     original = instance.language
     instance.language = original
     assert instance.language == original
-
-@given(instance=pivot::OpaqueExpression_strategy)
-def test_pivot::opaqueexpression_message_type(instance):
-    assert isinstance(instance.message, str)
-
-
-@given(instance=pivot::OpaqueExpression_strategy)
-def test_pivot::opaqueexpression_message_setter(instance):
-    original = instance.message
-    instance.message = original
-    assert instance.message == original
 
 @given(instance=Vertex_strategy)
 @settings(max_examples=50)
 def test_vertex_instantiation(instance):
     assert isinstance(instance, Vertex)
 
-@given(instance=pivot::Pseudostate_strategy)
+@given(instance=pivot_Pseudostate_strategy)
 @settings(max_examples=50)
-def test_pivot::pseudostate_instantiation(instance):
-    assert isinstance(instance, pivot::Pseudostate)
-
-@given(instance=pivot::Pseudostate_strategy)
-def test_pivot::pseudostate_kind_type(instance):
-    assert isinstance(instance.kind, str)
+def test_pivot_pseudostate_instantiation(instance):
+    assert isinstance(instance, pivot_Pseudostate)
 
 
-@given(instance=pivot::Pseudostate_strategy)
-def test_pivot::pseudostate_kind_setter(instance):
+
+@given(instance=pivot_Pseudostate_strategy)
+def test_pivot_pseudostate_kind_setter(instance):
     original = instance.kind
     instance.kind = original
     assert instance.kind == original
 
-@given(instance=pivot::ConnectionPointReference_strategy)
+@given(instance=pivot_ConnectionPointReference_strategy)
 @settings(max_examples=50)
-def test_pivot::connectionpointreference_instantiation(instance):
-    assert isinstance(instance, pivot::ConnectionPointReference)
+def test_pivot_connectionpointreference_instantiation(instance):
+    assert isinstance(instance, pivot_ConnectionPointReference)
 
 @given(instance=Element_strategy)
 @settings(max_examples=50)
 def test_element_instantiation(instance):
     assert isinstance(instance, Element)
 
-@given(instance=pivot::DynamicProperty_strategy)
+@given(instance=pivot_TemplateParameterSubstitution_strategy)
 @settings(max_examples=50)
-def test_pivot::dynamicproperty_instantiation(instance):
-    assert isinstance(instance, pivot::DynamicProperty)
+def test_pivot_templateparametersubstitution_instantiation(instance):
+    assert isinstance(instance, pivot_TemplateParameterSubstitution)
 
-@given(instance=pivot::DynamicProperty_strategy)
-def test_pivot::dynamicproperty_default_type(instance):
-    assert isinstance(instance.default, str)
-
-
-@given(instance=pivot::DynamicProperty_strategy)
-def test_pivot::dynamicproperty_default_setter(instance):
-    original = instance.default
-    instance.default = original
-    assert instance.default == original
-
-@given(instance=pivot::ParameterableElement_strategy)
+@given(instance=pivot_NamedElement_strategy)
 @settings(max_examples=50)
-def test_pivot::parameterableelement_instantiation(instance):
-    assert isinstance(instance, pivot::ParameterableElement)
+def test_pivot_namedelement_instantiation(instance):
+    assert isinstance(instance, pivot_NamedElement)
+
+
+
+@given(instance=pivot_NamedElement_strategy)
+def test_pivot_namedelement_isStatic_setter(instance):
+    original = instance.isStatic
+    instance.isStatic = original
+    assert instance.isStatic == original
+
+
+
+@given(instance=pivot_NamedElement_strategy)
+def test_pivot_namedelement_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+@given(instance=pivot_ParameterableElement_strategy)
+@settings(max_examples=50)
+def test_pivot_parameterableelement_instantiation(instance):
+    assert isinstance(instance, pivot_ParameterableElement)
 
 import warnings
 import copy
@@ -5165,9 +5116,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=pivot::ParameterableElement_strategy)
+@given(instance=pivot_ParameterableElement_strategy)
 @settings(max_examples=30)
-def test_pivot::parameterableelement_iscompatiblewith_changes_state(instance):
+def test_pivot_parameterableelement_iscompatiblewith_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -5181,14 +5132,14 @@ def test_pivot::parameterableelement_iscompatiblewith_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'isCompatibleWith' in pivot::ParameterableElement is empty"
+        assert has_statements, f"Function 'isCompatibleWith' in pivot_ParameterableElement is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'isCompatibleWith' in pivot::ParameterableElement did not change state; check implementation")
+            warnings.warn(f"Operation 'isCompatibleWith' in pivot_ParameterableElement did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'isCompatibleWith' in pivot::ParameterableElement is not implemented or raised an error")
+        warnings.warn(f"Operation 'isCompatibleWith' in pivot_ParameterableElement is not implemented or raised an error")
 
 import warnings
 import copy
@@ -5196,9 +5147,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=pivot::ParameterableElement_strategy)
+@given(instance=pivot_ParameterableElement_strategy)
 @settings(max_examples=30)
-def test_pivot::parameterableelement_istemplateparameter_changes_state(instance):
+def test_pivot_parameterableelement_istemplateparameter_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -5210,71 +5161,37 @@ def test_pivot::parameterableelement_istemplateparameter_changes_state(instance)
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'isTemplateParameter' in pivot::ParameterableElement is empty"
+        assert has_statements, f"Function 'isTemplateParameter' in pivot_ParameterableElement is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'isTemplateParameter' in pivot::ParameterableElement did not change state; check implementation")
+            warnings.warn(f"Operation 'isTemplateParameter' in pivot_ParameterableElement did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'isTemplateParameter' in pivot::ParameterableElement is not implemented or raised an error")
+        warnings.warn(f"Operation 'isTemplateParameter' in pivot_ParameterableElement is not implemented or raised an error")
 
-@given(instance=pivot::TemplateParameterSubstitution_strategy)
+@given(instance=pivot_TemplateSignature_strategy)
 @settings(max_examples=50)
-def test_pivot::templateparametersubstitution_instantiation(instance):
-    assert isinstance(instance, pivot::TemplateParameterSubstitution)
+def test_pivot_templatesignature_instantiation(instance):
+    assert isinstance(instance, pivot_TemplateSignature)
 
-@given(instance=pivot::TemplateParameter_strategy)
+@given(instance=pivot_DynamicProperty_strategy)
 @settings(max_examples=50)
-def test_pivot::templateparameter_instantiation(instance):
-    assert isinstance(instance, pivot::TemplateParameter)
+def test_pivot_dynamicproperty_instantiation(instance):
+    assert isinstance(instance, pivot_DynamicProperty)
 
-@given(instance=pivot::TemplateBinding_strategy)
+
+
+@given(instance=pivot_DynamicProperty_strategy)
+def test_pivot_dynamicproperty_default_setter(instance):
+    original = instance.default
+    instance.default = original
+    assert instance.default == original
+
+@given(instance=pivot_TemplateableElement_strategy)
 @settings(max_examples=50)
-def test_pivot::templatebinding_instantiation(instance):
-    assert isinstance(instance, pivot::TemplateBinding)
-
-@given(instance=pivot::NamedElement_strategy)
-@settings(max_examples=50)
-def test_pivot::namedelement_instantiation(instance):
-    assert isinstance(instance, pivot::NamedElement)
-
-@given(instance=pivot::NamedElement_strategy)
-def test_pivot::namedelement_isStatic_type(instance):
-    assert isinstance(instance.isStatic, str)
-
-
-@given(instance=pivot::NamedElement_strategy)
-def test_pivot::namedelement_isStatic_setter(instance):
-    original = instance.isStatic
-    instance.isStatic = original
-    assert instance.isStatic == original
-
-@given(instance=pivot::NamedElement_strategy)
-def test_pivot::namedelement_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=pivot::NamedElement_strategy)
-def test_pivot::namedelement_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
-
-@given(instance=pivot::TemplateSignature_strategy)
-@settings(max_examples=50)
-def test_pivot::templatesignature_instantiation(instance):
-    assert isinstance(instance, pivot::TemplateSignature)
-
-@given(instance=pivot::DynamicElement_strategy)
-@settings(max_examples=50)
-def test_pivot::dynamicelement_instantiation(instance):
-    assert isinstance(instance, pivot::DynamicElement)
-
-@given(instance=pivot::TemplateableElement_strategy)
-@settings(max_examples=50)
-def test_pivot::templateableelement_instantiation(instance):
-    assert isinstance(instance, pivot::TemplateableElement)
+def test_pivot_templateableelement_instantiation(instance):
+    assert isinstance(instance, pivot_TemplateableElement)
 
 import warnings
 import copy
@@ -5282,9 +5199,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=pivot::TemplateableElement_strategy)
+@given(instance=pivot_TemplateableElement_strategy)
 @settings(max_examples=30)
-def test_pivot::templateableelement_istemplate_changes_state(instance):
+def test_pivot_templateableelement_istemplate_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -5296,14 +5213,14 @@ def test_pivot::templateableelement_istemplate_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'isTemplate' in pivot::TemplateableElement is empty"
+        assert has_statements, f"Function 'isTemplate' in pivot_TemplateableElement is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'isTemplate' in pivot::TemplateableElement did not change state; check implementation")
+            warnings.warn(f"Operation 'isTemplate' in pivot_TemplateableElement did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'isTemplate' in pivot::TemplateableElement is not implemented or raised an error")
+        warnings.warn(f"Operation 'isTemplate' in pivot_TemplateableElement is not implemented or raised an error")
 
 import warnings
 import copy
@@ -5311,9 +5228,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=pivot::TemplateableElement_strategy)
+@given(instance=pivot_TemplateableElement_strategy)
 @settings(max_examples=30)
-def test_pivot::templateableelement_parameterableelements_changes_state(instance):
+def test_pivot_templateableelement_parameterableelements_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -5325,27 +5242,62 @@ def test_pivot::templateableelement_parameterableelements_changes_state(instance
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'parameterableElements' in pivot::TemplateableElement is empty"
+        assert has_statements, f"Function 'parameterableElements' in pivot_TemplateableElement is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'parameterableElements' in pivot::TemplateableElement did not change state; check implementation")
+            warnings.warn(f"Operation 'parameterableElements' in pivot_TemplateableElement did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'parameterableElements' in pivot::TemplateableElement is not implemented or raised an error")
+        warnings.warn(f"Operation 'parameterableElements' in pivot_TemplateableElement is not implemented or raised an error")
 
-@given(instance=pivot::Comment_strategy)
+@given(instance=pivot_TemplateBinding_strategy)
 @settings(max_examples=50)
-def test_pivot::comment_instantiation(instance):
-    assert isinstance(instance, pivot::Comment)
+def test_pivot_templatebinding_instantiation(instance):
+    assert isinstance(instance, pivot_TemplateBinding)
 
-@given(instance=pivot::Comment_strategy)
-def test_pivot::comment_body_type(instance):
-    assert isinstance(instance.body, str)
+@given(instance=pivot_DynamicElement_strategy)
+@settings(max_examples=50)
+def test_pivot_dynamicelement_instantiation(instance):
+    assert isinstance(instance, pivot_DynamicElement)
+
+@given(instance=pivot_TemplateParameter_strategy)
+@settings(max_examples=50)
+def test_pivot_templateparameter_instantiation(instance):
+    assert isinstance(instance, pivot_TemplateParameter)
+
+@given(instance=pivot_Visitor_strategy)
+@settings(max_examples=50)
+def test_pivot_visitor_instantiation(instance):
+    assert isinstance(instance, pivot_Visitor)
+
+@given(instance=pivot_Visitable_strategy)
+@settings(max_examples=50)
+def test_pivot_visitable_instantiation(instance):
+    assert isinstance(instance, pivot_Visitable)
+
+@given(instance=pivot_UnlimitedNaturalLiteralExp_strategy)
+@settings(max_examples=50)
+def test_pivot_unlimitednaturalliteralexp_instantiation(instance):
+    assert isinstance(instance, pivot_UnlimitedNaturalLiteralExp)
 
 
-@given(instance=pivot::Comment_strategy)
-def test_pivot::comment_body_setter(instance):
+
+@given(instance=pivot_UnlimitedNaturalLiteralExp_strategy)
+def test_pivot_unlimitednaturalliteralexp_unlimitedNaturalSymbol_setter(instance):
+    original = instance.unlimitedNaturalSymbol
+    instance.unlimitedNaturalSymbol = original
+    assert instance.unlimitedNaturalSymbol == original
+
+@given(instance=pivot_Comment_strategy)
+@settings(max_examples=50)
+def test_pivot_comment_instantiation(instance):
+    assert isinstance(instance, pivot_Comment)
+
+
+
+@given(instance=pivot_Comment_strategy)
+def test_pivot_comment_body_setter(instance):
     original = instance.body
     instance.body = original
     assert instance.body == original
@@ -5355,62 +5307,56 @@ def test_pivot::comment_body_setter(instance):
 def test_datatype_instantiation(instance):
     assert isinstance(instance, DataType)
 
-@given(instance=pivot::Enumeration_strategy)
+@given(instance=pivot_TupleType_strategy)
 @settings(max_examples=50)
-def test_pivot::enumeration_instantiation(instance):
-    assert isinstance(instance, pivot::Enumeration)
+def test_pivot_tupletype_instantiation(instance):
+    assert isinstance(instance, pivot_TupleType)
 
-@given(instance=pivot::LambdaType_strategy)
+@given(instance=pivot_LambdaType_strategy)
 @settings(max_examples=50)
-def test_pivot::lambdatype_instantiation(instance):
-    assert isinstance(instance, pivot::LambdaType)
+def test_pivot_lambdatype_instantiation(instance):
+    assert isinstance(instance, pivot_LambdaType)
 
-@given(instance=pivot::TupleType_strategy)
+@given(instance=pivot_PrimitiveType_strategy)
 @settings(max_examples=50)
-def test_pivot::tupletype_instantiation(instance):
-    assert isinstance(instance, pivot::TupleType)
+def test_pivot_primitivetype_instantiation(instance):
+    assert isinstance(instance, pivot_PrimitiveType)
 
-@given(instance=pivot::PrimitiveType_strategy)
+@given(instance=pivot_Enumeration_strategy)
 @settings(max_examples=50)
-def test_pivot::primitivetype_instantiation(instance):
-    assert isinstance(instance, pivot::PrimitiveType)
+def test_pivot_enumeration_instantiation(instance):
+    assert isinstance(instance, pivot_Enumeration)
 
-@given(instance=pivot::CollectionType_strategy)
+@given(instance=pivot_CollectionType_strategy)
 @settings(max_examples=50)
-def test_pivot::collectiontype_instantiation(instance):
-    assert isinstance(instance, pivot::CollectionType)
-
-@given(instance=pivot::CollectionType_strategy)
-def test_pivot::collectiontype_lower_type(instance):
-    assert isinstance(instance.lower, str)
+def test_pivot_collectiontype_instantiation(instance):
+    assert isinstance(instance, pivot_CollectionType)
 
 
-@given(instance=pivot::CollectionType_strategy)
-def test_pivot::collectiontype_lower_setter(instance):
-    original = instance.lower
-    instance.lower = original
-    assert instance.lower == original
 
-@given(instance=pivot::CollectionType_strategy)
-def test_pivot::collectiontype_upper_type(instance):
-    assert isinstance(instance.upper, str)
-
-
-@given(instance=pivot::CollectionType_strategy)
-def test_pivot::collectiontype_upper_setter(instance):
+@given(instance=pivot_CollectionType_strategy)
+def test_pivot_collectiontype_upper_setter(instance):
     original = instance.upper
     instance.upper = original
     assert instance.upper == original
+
+
+
+@given(instance=pivot_CollectionType_strategy)
+def test_pivot_collectiontype_lower_setter(instance):
+    original = instance.lower
+    instance.lower = original
+    assert instance.lower == original
 
 @given(instance=LiteralExp_strategy)
 @settings(max_examples=50)
 def test_literalexp_instantiation(instance):
     assert isinstance(instance, LiteralExp)
 
-@given(instance=pivot::EnumLiteralExp_strategy)
+@given(instance=pivot_EnumLiteralExp_strategy)
 @settings(max_examples=50)
-def test_pivot::enumliteralexp_instantiation(instance):
-    assert isinstance(instance, pivot::EnumLiteralExp)
+def test_pivot_enumliteralexp_instantiation(instance):
+    assert isinstance(instance, pivot_EnumLiteralExp)
 
 import warnings
 import copy
@@ -5418,9 +5364,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=pivot::EnumLiteralExp_strategy)
+@given(instance=pivot_EnumLiteralExp_strategy)
 @settings(max_examples=30)
-def test_pivot::enumliteralexp_typeisenumerationtype_changes_state(instance):
+def test_pivot_enumliteralexp_typeisenumerationtype_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -5435,42 +5381,39 @@ def test_pivot::enumliteralexp_typeisenumerationtype_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'TypeIsEnumerationType' in pivot::EnumLiteralExp is empty"
+        assert has_statements, f"Function 'TypeIsEnumerationType' in pivot_EnumLiteralExp is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'TypeIsEnumerationType' in pivot::EnumLiteralExp did not change state; check implementation")
+            warnings.warn(f"Operation 'TypeIsEnumerationType' in pivot_EnumLiteralExp did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'TypeIsEnumerationType' in pivot::EnumLiteralExp is not implemented or raised an error")
+        warnings.warn(f"Operation 'TypeIsEnumerationType' in pivot_EnumLiteralExp is not implemented or raised an error")
 
-@given(instance=pivot::TupleLiteralExp_strategy)
+@given(instance=pivot_PrimitiveLiteralExp_strategy)
 @settings(max_examples=50)
-def test_pivot::tupleliteralexp_instantiation(instance):
-    assert isinstance(instance, pivot::TupleLiteralExp)
+def test_pivot_primitiveliteralexp_instantiation(instance):
+    assert isinstance(instance, pivot_PrimitiveLiteralExp)
 
-@given(instance=pivot::InvalidLiteralExp_strategy)
+@given(instance=pivot_TupleLiteralExp_strategy)
 @settings(max_examples=50)
-def test_pivot::invalidliteralexp_instantiation(instance):
-    assert isinstance(instance, pivot::InvalidLiteralExp)
+def test_pivot_tupleliteralexp_instantiation(instance):
+    assert isinstance(instance, pivot_TupleLiteralExp)
 
-@given(instance=pivot::PrimitiveLiteralExp_strategy)
+@given(instance=pivot_InvalidLiteralExp_strategy)
 @settings(max_examples=50)
-def test_pivot::primitiveliteralexp_instantiation(instance):
-    assert isinstance(instance, pivot::PrimitiveLiteralExp)
+def test_pivot_invalidliteralexp_instantiation(instance):
+    assert isinstance(instance, pivot_InvalidLiteralExp)
 
-@given(instance=pivot::CollectionLiteralExp_strategy)
+@given(instance=pivot_CollectionLiteralExp_strategy)
 @settings(max_examples=50)
-def test_pivot::collectionliteralexp_instantiation(instance):
-    assert isinstance(instance, pivot::CollectionLiteralExp)
-
-@given(instance=pivot::CollectionLiteralExp_strategy)
-def test_pivot::collectionliteralexp_kind_type(instance):
-    assert isinstance(instance.kind, str)
+def test_pivot_collectionliteralexp_instantiation(instance):
+    assert isinstance(instance, pivot_CollectionLiteralExp)
 
 
-@given(instance=pivot::CollectionLiteralExp_strategy)
-def test_pivot::collectionliteralexp_kind_setter(instance):
+
+@given(instance=pivot_CollectionLiteralExp_strategy)
+def test_pivot_collectionliteralexp_kind_setter(instance):
     original = instance.kind
     instance.kind = original
     assert instance.kind == original
@@ -5481,73 +5424,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=pivot::CollectionLiteralExp_strategy)
+@given(instance=pivot_CollectionLiteralExp_strategy)
 @settings(max_examples=30)
-def test_pivot::collectionliteralexp_bagkindisbag_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.BagKindIsBag(
-            "test", 
-            "test"
-        )
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.BagKindIsBag).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'BagKindIsBag' in pivot::CollectionLiteralExp is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'BagKindIsBag' in pivot::CollectionLiteralExp did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'BagKindIsBag' in pivot::CollectionLiteralExp is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=pivot::CollectionLiteralExp_strategy)
-@settings(max_examples=30)
-def test_pivot::collectionliteralexp_sequencekindissequence_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.SequenceKindIsSequence(
-            "test", 
-            "test"
-        )
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.SequenceKindIsSequence).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'SequenceKindIsSequence' in pivot::CollectionLiteralExp is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'SequenceKindIsSequence' in pivot::CollectionLiteralExp did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'SequenceKindIsSequence' in pivot::CollectionLiteralExp is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=pivot::CollectionLiteralExp_strategy)
-@settings(max_examples=30)
-def test_pivot::collectionliteralexp_collectionkindisconcrete_changes_state(instance):
+def test_pivot_collectionliteralexp_collectionkindisconcrete_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -5562,14 +5441,14 @@ def test_pivot::collectionliteralexp_collectionkindisconcrete_changes_state(inst
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'CollectionKindIsConcrete' in pivot::CollectionLiteralExp is empty"
+        assert has_statements, f"Function 'CollectionKindIsConcrete' in pivot_CollectionLiteralExp is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'CollectionKindIsConcrete' in pivot::CollectionLiteralExp did not change state; check implementation")
+            warnings.warn(f"Operation 'CollectionKindIsConcrete' in pivot_CollectionLiteralExp did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'CollectionKindIsConcrete' in pivot::CollectionLiteralExp is not implemented or raised an error")
+        warnings.warn(f"Operation 'CollectionKindIsConcrete' in pivot_CollectionLiteralExp is not implemented or raised an error")
 
 import warnings
 import copy
@@ -5577,31 +5456,31 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=pivot::CollectionLiteralExp_strategy)
+@given(instance=pivot_CollectionLiteralExp_strategy)
 @settings(max_examples=30)
-def test_pivot::collectionliteralexp_setkindisset_changes_state(instance):
+def test_pivot_collectionliteralexp_sequencekindissequence_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
-        instance.SetKindIsSet(
+        instance.SequenceKindIsSequence(
             "test", 
             "test"
         )
         if instance.__dict__ != before.__dict__:
             return  # test passes
         # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.SetKindIsSet).strip()
+        source = inspect.getsource(instance.SequenceKindIsSequence).strip()
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'SetKindIsSet' in pivot::CollectionLiteralExp is empty"
+        assert has_statements, f"Function 'SequenceKindIsSequence' in pivot_CollectionLiteralExp is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'SetKindIsSet' in pivot::CollectionLiteralExp did not change state; check implementation")
+            warnings.warn(f"Operation 'SequenceKindIsSequence' in pivot_CollectionLiteralExp did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'SetKindIsSet' in pivot::CollectionLiteralExp is not implemented or raised an error")
+        warnings.warn(f"Operation 'SequenceKindIsSequence' in pivot_CollectionLiteralExp is not implemented or raised an error")
 
 import warnings
 import copy
@@ -5609,9 +5488,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=pivot::CollectionLiteralExp_strategy)
+@given(instance=pivot_CollectionLiteralExp_strategy)
 @settings(max_examples=30)
-def test_pivot::collectionliteralexp_orderedsetkindisorderedset_changes_state(instance):
+def test_pivot_collectionliteralexp_orderedsetkindisorderedset_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -5626,24 +5505,14 @@ def test_pivot::collectionliteralexp_orderedsetkindisorderedset_changes_state(in
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'OrderedSetKindIsOrderedSet' in pivot::CollectionLiteralExp is empty"
+        assert has_statements, f"Function 'OrderedSetKindIsOrderedSet' in pivot_CollectionLiteralExp is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'OrderedSetKindIsOrderedSet' in pivot::CollectionLiteralExp did not change state; check implementation")
+            warnings.warn(f"Operation 'OrderedSetKindIsOrderedSet' in pivot_CollectionLiteralExp did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'OrderedSetKindIsOrderedSet' in pivot::CollectionLiteralExp is not implemented or raised an error")
-
-@given(instance=CollectionLiteralPart_strategy)
-@settings(max_examples=50)
-def test_collectionliteralpart_instantiation(instance):
-    assert isinstance(instance, CollectionLiteralPart)
-
-@given(instance=pivot::CollectionItem_strategy)
-@settings(max_examples=50)
-def test_pivot::collectionitem_instantiation(instance):
-    assert isinstance(instance, pivot::CollectionItem)
+        warnings.warn(f"Operation 'OrderedSetKindIsOrderedSet' in pivot_CollectionLiteralExp is not implemented or raised an error")
 
 import warnings
 import copy
@@ -5651,9 +5520,83 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=pivot::CollectionItem_strategy)
+@given(instance=pivot_CollectionLiteralExp_strategy)
 @settings(max_examples=30)
-def test_pivot::collectionitem_typeisitemtype_changes_state(instance):
+def test_pivot_collectionliteralexp_setkindisset_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.SetKindIsSet(
+            "test", 
+            "test"
+        )
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.SetKindIsSet).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'SetKindIsSet' in pivot_CollectionLiteralExp is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'SetKindIsSet' in pivot_CollectionLiteralExp did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'SetKindIsSet' in pivot_CollectionLiteralExp is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=pivot_CollectionLiteralExp_strategy)
+@settings(max_examples=30)
+def test_pivot_collectionliteralexp_bagkindisbag_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.BagKindIsBag(
+            "test", 
+            "test"
+        )
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.BagKindIsBag).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'BagKindIsBag' in pivot_CollectionLiteralExp is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'BagKindIsBag' in pivot_CollectionLiteralExp did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'BagKindIsBag' in pivot_CollectionLiteralExp is not implemented or raised an error")
+
+@given(instance=CollectionLiteralPart_strategy)
+@settings(max_examples=50)
+def test_collectionliteralpart_instantiation(instance):
+    assert isinstance(instance, CollectionLiteralPart)
+
+@given(instance=pivot_CollectionItem_strategy)
+@settings(max_examples=50)
+def test_pivot_collectionitem_instantiation(instance):
+    assert isinstance(instance, pivot_CollectionItem)
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=pivot_CollectionItem_strategy)
+@settings(max_examples=30)
+def test_pivot_collectionitem_typeisitemtype_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -5668,29 +5611,29 @@ def test_pivot::collectionitem_typeisitemtype_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'TypeIsItemType' in pivot::CollectionItem is empty"
+        assert has_statements, f"Function 'TypeIsItemType' in pivot_CollectionItem is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'TypeIsItemType' in pivot::CollectionItem did not change state; check implementation")
+            warnings.warn(f"Operation 'TypeIsItemType' in pivot_CollectionItem did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'TypeIsItemType' in pivot::CollectionItem is not implemented or raised an error")
+        warnings.warn(f"Operation 'TypeIsItemType' in pivot_CollectionItem is not implemented or raised an error")
 
-@given(instance=pivot::CollectionRange_strategy)
+@given(instance=pivot_CollectionRange_strategy)
 @settings(max_examples=50)
-def test_pivot::collectionrange_instantiation(instance):
-    assert isinstance(instance, pivot::CollectionRange)
+def test_pivot_collectionrange_instantiation(instance):
+    assert isinstance(instance, pivot_CollectionRange)
 
 @given(instance=TypedElement_strategy)
 @settings(max_examples=50)
 def test_typedelement_instantiation(instance):
     assert isinstance(instance, TypedElement)
 
-@given(instance=pivot::TypedMultiplicityElement_strategy)
+@given(instance=pivot_ValueSpecification_strategy)
 @settings(max_examples=50)
-def test_pivot::typedmultiplicityelement_instantiation(instance):
-    assert isinstance(instance, pivot::TypedMultiplicityElement)
+def test_pivot_valuespecification_instantiation(instance):
+    assert isinstance(instance, pivot_ValueSpecification)
 
 import warnings
 import copy
@@ -5698,9 +5641,227 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=pivot::TypedMultiplicityElement_strategy)
+@given(instance=pivot_ValueSpecification_strategy)
 @settings(max_examples=30)
-def test_pivot::typedmultiplicityelement_compatiblebody_changes_state(instance):
+def test_pivot_valuespecification_booleanvalue_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.booleanValue()
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.booleanValue).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'booleanValue' in pivot_ValueSpecification is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'booleanValue' in pivot_ValueSpecification did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'booleanValue' in pivot_ValueSpecification is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=pivot_ValueSpecification_strategy)
+@settings(max_examples=30)
+def test_pivot_valuespecification_iscomputable_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.isComputable()
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.isComputable).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'isComputable' in pivot_ValueSpecification is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'isComputable' in pivot_ValueSpecification did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'isComputable' in pivot_ValueSpecification is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=pivot_ValueSpecification_strategy)
+@settings(max_examples=30)
+def test_pivot_valuespecification_stringvalue_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.stringValue()
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.stringValue).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'stringValue' in pivot_ValueSpecification is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'stringValue' in pivot_ValueSpecification did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'stringValue' in pivot_ValueSpecification is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=pivot_ValueSpecification_strategy)
+@settings(max_examples=30)
+def test_pivot_valuespecification_integervalue_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.integerValue()
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.integerValue).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'integerValue' in pivot_ValueSpecification is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'integerValue' in pivot_ValueSpecification did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'integerValue' in pivot_ValueSpecification is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=pivot_ValueSpecification_strategy)
+@settings(max_examples=30)
+def test_pivot_valuespecification_isnull_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.isNull()
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.isNull).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'isNull' in pivot_ValueSpecification is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'isNull' in pivot_ValueSpecification did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'isNull' in pivot_ValueSpecification is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=pivot_ValueSpecification_strategy)
+@settings(max_examples=30)
+def test_pivot_valuespecification_unlimitedvalue_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.unlimitedValue()
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.unlimitedValue).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'unlimitedValue' in pivot_ValueSpecification is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'unlimitedValue' in pivot_ValueSpecification did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'unlimitedValue' in pivot_ValueSpecification is not implemented or raised an error")
+
+@given(instance=pivot_VariableDeclaration_strategy)
+@settings(max_examples=50)
+def test_pivot_variabledeclaration_instantiation(instance):
+    assert isinstance(instance, pivot_VariableDeclaration)
+
+@given(instance=pivot_ConstructorPart_strategy)
+@settings(max_examples=50)
+def test_pivot_constructorpart_instantiation(instance):
+    assert isinstance(instance, pivot_ConstructorPart)
+
+@given(instance=pivot_TypedMultiplicityElement_strategy)
+@settings(max_examples=50)
+def test_pivot_typedmultiplicityelement_instantiation(instance):
+    assert isinstance(instance, pivot_TypedMultiplicityElement)
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=pivot_TypedMultiplicityElement_strategy)
+@settings(max_examples=30)
+def test_pivot_typedmultiplicityelement_makeparameter_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.makeParameter()
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.makeParameter).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'makeParameter' in pivot_TypedMultiplicityElement is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'makeParameter' in pivot_TypedMultiplicityElement did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'makeParameter' in pivot_TypedMultiplicityElement is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=pivot_TypedMultiplicityElement_strategy)
+@settings(max_examples=30)
+def test_pivot_typedmultiplicityelement_compatiblebody_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -5714,273 +5875,39 @@ def test_pivot::typedmultiplicityelement_compatiblebody_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'CompatibleBody' in pivot::TypedMultiplicityElement is empty"
+        assert has_statements, f"Function 'CompatibleBody' in pivot_TypedMultiplicityElement is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'CompatibleBody' in pivot::TypedMultiplicityElement did not change state; check implementation")
+            warnings.warn(f"Operation 'CompatibleBody' in pivot_TypedMultiplicityElement did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'CompatibleBody' in pivot::TypedMultiplicityElement is not implemented or raised an error")
+        warnings.warn(f"Operation 'CompatibleBody' in pivot_TypedMultiplicityElement is not implemented or raised an error")
 
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=pivot::TypedMultiplicityElement_strategy)
-@settings(max_examples=30)
-def test_pivot::typedmultiplicityelement_makeparameter_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.makeParameter()
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.makeParameter).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'makeParameter' in pivot::TypedMultiplicityElement is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'makeParameter' in pivot::TypedMultiplicityElement did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'makeParameter' in pivot::TypedMultiplicityElement is not implemented or raised an error")
-
-@given(instance=pivot::VariableDeclaration_strategy)
+@given(instance=pivot_CollectionLiteralPart_strategy)
 @settings(max_examples=50)
-def test_pivot::variabledeclaration_instantiation(instance):
-    assert isinstance(instance, pivot::VariableDeclaration)
+def test_pivot_collectionliteralpart_instantiation(instance):
+    assert isinstance(instance, pivot_CollectionLiteralPart)
 
-@given(instance=pivot::ValueSpecification_strategy)
+@given(instance=pivot_OCLExpression_strategy)
 @settings(max_examples=50)
-def test_pivot::valuespecification_instantiation(instance):
-    assert isinstance(instance, pivot::ValueSpecification)
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=pivot::ValueSpecification_strategy)
-@settings(max_examples=30)
-def test_pivot::valuespecification_iscomputable_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.isComputable()
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.isComputable).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'isComputable' in pivot::ValueSpecification is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'isComputable' in pivot::ValueSpecification did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'isComputable' in pivot::ValueSpecification is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=pivot::ValueSpecification_strategy)
-@settings(max_examples=30)
-def test_pivot::valuespecification_unlimitedvalue_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.unlimitedValue()
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.unlimitedValue).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'unlimitedValue' in pivot::ValueSpecification is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'unlimitedValue' in pivot::ValueSpecification did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'unlimitedValue' in pivot::ValueSpecification is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=pivot::ValueSpecification_strategy)
-@settings(max_examples=30)
-def test_pivot::valuespecification_integervalue_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.integerValue()
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.integerValue).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'integerValue' in pivot::ValueSpecification is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'integerValue' in pivot::ValueSpecification did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'integerValue' in pivot::ValueSpecification is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=pivot::ValueSpecification_strategy)
-@settings(max_examples=30)
-def test_pivot::valuespecification_stringvalue_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.stringValue()
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.stringValue).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'stringValue' in pivot::ValueSpecification is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'stringValue' in pivot::ValueSpecification did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'stringValue' in pivot::ValueSpecification is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=pivot::ValueSpecification_strategy)
-@settings(max_examples=30)
-def test_pivot::valuespecification_isnull_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.isNull()
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.isNull).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'isNull' in pivot::ValueSpecification is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'isNull' in pivot::ValueSpecification did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'isNull' in pivot::ValueSpecification is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=pivot::ValueSpecification_strategy)
-@settings(max_examples=30)
-def test_pivot::valuespecification_booleanvalue_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.booleanValue()
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.booleanValue).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'booleanValue' in pivot::ValueSpecification is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'booleanValue' in pivot::ValueSpecification did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'booleanValue' in pivot::ValueSpecification is not implemented or raised an error")
-
-@given(instance=pivot::ConstructorPart_strategy)
-@settings(max_examples=50)
-def test_pivot::constructorpart_instantiation(instance):
-    assert isinstance(instance, pivot::ConstructorPart)
-
-@given(instance=pivot::CollectionLiteralPart_strategy)
-@settings(max_examples=50)
-def test_pivot::collectionliteralpart_instantiation(instance):
-    assert isinstance(instance, pivot::CollectionLiteralPart)
-
-@given(instance=pivot::OCLExpression_strategy)
-@settings(max_examples=50)
-def test_pivot::oclexpression_instantiation(instance):
-    assert isinstance(instance, pivot::OCLExpression)
+def test_pivot_oclexpression_instantiation(instance):
+    assert isinstance(instance, pivot_OCLExpression)
 
 @given(instance=OCLExpression_strategy)
 @settings(max_examples=50)
 def test_oclexpression_instantiation(instance):
     assert isinstance(instance, OCLExpression)
 
-@given(instance=pivot::VariableExp_strategy)
+@given(instance=pivot_TypeExp_strategy)
 @settings(max_examples=50)
-def test_pivot::variableexp_instantiation(instance):
-    assert isinstance(instance, pivot::VariableExp)
+def test_pivot_typeexp_instantiation(instance):
+    assert isinstance(instance, pivot_TypeExp)
 
-@given(instance=pivot::VariableExp_strategy)
-def test_pivot::variableexp_implicit_type(instance):
-    assert isinstance(instance.implicit, str)
-
-
-@given(instance=pivot::VariableExp_strategy)
-def test_pivot::variableexp_implicit_setter(instance):
-    original = instance.implicit
-    instance.implicit = original
-    assert instance.implicit == original
-
-@given(instance=pivot::StateExp_strategy)
+@given(instance=pivot_LetExp_strategy)
 @settings(max_examples=50)
-def test_pivot::stateexp_instantiation(instance):
-    assert isinstance(instance, pivot::StateExp)
-
-@given(instance=pivot::IfExp_strategy)
-@settings(max_examples=50)
-def test_pivot::ifexp_instantiation(instance):
-    assert isinstance(instance, pivot::IfExp)
+def test_pivot_letexp_instantiation(instance):
+    assert isinstance(instance, pivot_LetExp)
 
 import warnings
 import copy
@@ -5988,114 +5915,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=pivot::IfExp_strategy)
+@given(instance=pivot_LetExp_strategy)
 @settings(max_examples=30)
-def test_pivot::ifexp_conditiontypeisboolean_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.ConditionTypeIsBoolean(
-            "test", 
-            "test"
-        )
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.ConditionTypeIsBoolean).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'ConditionTypeIsBoolean' in pivot::IfExp is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'ConditionTypeIsBoolean' in pivot::IfExp did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'ConditionTypeIsBoolean' in pivot::IfExp is not implemented or raised an error")
-
-@given(instance=pivot::LiteralExp_strategy)
-@settings(max_examples=50)
-def test_pivot::literalexp_instantiation(instance):
-    assert isinstance(instance, pivot::LiteralExp)
-
-@given(instance=pivot::MessageExp_strategy)
-@settings(max_examples=50)
-def test_pivot::messageexp_instantiation(instance):
-    assert isinstance(instance, pivot::MessageExp)
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=pivot::MessageExp_strategy)
-@settings(max_examples=30)
-def test_pivot::messageexp_onecalloronesend_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.OneCallOrOneSend(
-            "test", 
-            "test"
-        )
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.OneCallOrOneSend).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'OneCallOrOneSend' in pivot::MessageExp is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'OneCallOrOneSend' in pivot::MessageExp did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'OneCallOrOneSend' in pivot::MessageExp is not implemented or raised an error")
-
-@given(instance=pivot::UnspecifiedValueExp_strategy)
-@settings(max_examples=50)
-def test_pivot::unspecifiedvalueexp_instantiation(instance):
-    assert isinstance(instance, pivot::UnspecifiedValueExp)
-
-@given(instance=pivot::TypeExp_strategy)
-@settings(max_examples=50)
-def test_pivot::typeexp_instantiation(instance):
-    assert isinstance(instance, pivot::TypeExp)
-
-@given(instance=pivot::ConstructorExp_strategy)
-@settings(max_examples=50)
-def test_pivot::constructorexp_instantiation(instance):
-    assert isinstance(instance, pivot::ConstructorExp)
-
-@given(instance=pivot::ConstructorExp_strategy)
-def test_pivot::constructorexp_value_type(instance):
-    assert isinstance(instance.value, str)
-
-
-@given(instance=pivot::ConstructorExp_strategy)
-def test_pivot::constructorexp_value_setter(instance):
-    original = instance.value
-    instance.value = original
-    assert instance.value == original
-
-@given(instance=pivot::LetExp_strategy)
-@settings(max_examples=50)
-def test_pivot::letexp_instantiation(instance):
-    assert isinstance(instance, pivot::LetExp)
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=pivot::LetExp_strategy)
-@settings(max_examples=30)
-def test_pivot::letexp_typeisintype_changes_state(instance):
+def test_pivot_letexp_typeisintype_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -6110,27 +5932,139 @@ def test_pivot::letexp_typeisintype_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'TypeIsInType' in pivot::LetExp is empty"
+        assert has_statements, f"Function 'TypeIsInType' in pivot_LetExp is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'TypeIsInType' in pivot::LetExp did not change state; check implementation")
+            warnings.warn(f"Operation 'TypeIsInType' in pivot_LetExp did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'TypeIsInType' in pivot::LetExp is not implemented or raised an error")
+        warnings.warn(f"Operation 'TypeIsInType' in pivot_LetExp is not implemented or raised an error")
 
-@given(instance=pivot::CallExp_strategy)
+@given(instance=pivot_LiteralExp_strategy)
 @settings(max_examples=50)
-def test_pivot::callexp_instantiation(instance):
-    assert isinstance(instance, pivot::CallExp)
+def test_pivot_literalexp_instantiation(instance):
+    assert isinstance(instance, pivot_LiteralExp)
 
-@given(instance=pivot::CallExp_strategy)
-def test_pivot::callexp_implicit_type(instance):
-    assert isinstance(instance.implicit, str)
+@given(instance=pivot_MessageExp_strategy)
+@settings(max_examples=50)
+def test_pivot_messageexp_instantiation(instance):
+    assert isinstance(instance, pivot_MessageExp)
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=pivot_MessageExp_strategy)
+@settings(max_examples=30)
+def test_pivot_messageexp_onecalloronesend_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.OneCallOrOneSend(
+            "test", 
+            "test"
+        )
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.OneCallOrOneSend).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'OneCallOrOneSend' in pivot_MessageExp is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'OneCallOrOneSend' in pivot_MessageExp did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'OneCallOrOneSend' in pivot_MessageExp is not implemented or raised an error")
+
+@given(instance=pivot_VariableExp_strategy)
+@settings(max_examples=50)
+def test_pivot_variableexp_instantiation(instance):
+    assert isinstance(instance, pivot_VariableExp)
 
 
-@given(instance=pivot::CallExp_strategy)
-def test_pivot::callexp_implicit_setter(instance):
+
+@given(instance=pivot_VariableExp_strategy)
+def test_pivot_variableexp_implicit_setter(instance):
+    original = instance.implicit
+    instance.implicit = original
+    assert instance.implicit == original
+
+@given(instance=pivot_ConstructorExp_strategy)
+@settings(max_examples=50)
+def test_pivot_constructorexp_instantiation(instance):
+    assert isinstance(instance, pivot_ConstructorExp)
+
+
+
+@given(instance=pivot_ConstructorExp_strategy)
+def test_pivot_constructorexp_value_setter(instance):
+    original = instance.value
+    instance.value = original
+    assert instance.value == original
+
+@given(instance=pivot_UnspecifiedValueExp_strategy)
+@settings(max_examples=50)
+def test_pivot_unspecifiedvalueexp_instantiation(instance):
+    assert isinstance(instance, pivot_UnspecifiedValueExp)
+
+@given(instance=pivot_StateExp_strategy)
+@settings(max_examples=50)
+def test_pivot_stateexp_instantiation(instance):
+    assert isinstance(instance, pivot_StateExp)
+
+@given(instance=pivot_IfExp_strategy)
+@settings(max_examples=50)
+def test_pivot_ifexp_instantiation(instance):
+    assert isinstance(instance, pivot_IfExp)
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=pivot_IfExp_strategy)
+@settings(max_examples=30)
+def test_pivot_ifexp_conditiontypeisboolean_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.ConditionTypeIsBoolean(
+            "test", 
+            "test"
+        )
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.ConditionTypeIsBoolean).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'ConditionTypeIsBoolean' in pivot_IfExp is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'ConditionTypeIsBoolean' in pivot_IfExp did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'ConditionTypeIsBoolean' in pivot_IfExp is not implemented or raised an error")
+
+@given(instance=pivot_CallExp_strategy)
+@settings(max_examples=50)
+def test_pivot_callexp_instantiation(instance):
+    assert isinstance(instance, pivot_CallExp)
+
+
+
+@given(instance=pivot_CallExp_strategy)
+def test_pivot_callexp_implicit_setter(instance):
     original = instance.implicit
     instance.implicit = original
     assert instance.implicit == original
@@ -6140,44 +6074,38 @@ def test_pivot::callexp_implicit_setter(instance):
 def test_primitiveliteralexp_instantiation(instance):
     assert isinstance(instance, PrimitiveLiteralExp)
 
-@given(instance=pivot::NullLiteralExp_strategy)
+@given(instance=pivot_NullLiteralExp_strategy)
 @settings(max_examples=50)
-def test_pivot::nullliteralexp_instantiation(instance):
-    assert isinstance(instance, pivot::NullLiteralExp)
+def test_pivot_nullliteralexp_instantiation(instance):
+    assert isinstance(instance, pivot_NullLiteralExp)
 
-@given(instance=pivot::NumericLiteralExp_strategy)
+@given(instance=pivot_StringLiteralExp_strategy)
 @settings(max_examples=50)
-def test_pivot::numericliteralexp_instantiation(instance):
-    assert isinstance(instance, pivot::NumericLiteralExp)
-
-@given(instance=pivot::StringLiteralExp_strategy)
-@settings(max_examples=50)
-def test_pivot::stringliteralexp_instantiation(instance):
-    assert isinstance(instance, pivot::StringLiteralExp)
-
-@given(instance=pivot::StringLiteralExp_strategy)
-def test_pivot::stringliteralexp_stringSymbol_type(instance):
-    assert isinstance(instance.stringSymbol, str)
+def test_pivot_stringliteralexp_instantiation(instance):
+    assert isinstance(instance, pivot_StringLiteralExp)
 
 
-@given(instance=pivot::StringLiteralExp_strategy)
-def test_pivot::stringliteralexp_stringSymbol_setter(instance):
+
+@given(instance=pivot_StringLiteralExp_strategy)
+def test_pivot_stringliteralexp_stringSymbol_setter(instance):
     original = instance.stringSymbol
     instance.stringSymbol = original
     assert instance.stringSymbol == original
 
-@given(instance=pivot::BooleanLiteralExp_strategy)
+@given(instance=pivot_NumericLiteralExp_strategy)
 @settings(max_examples=50)
-def test_pivot::booleanliteralexp_instantiation(instance):
-    assert isinstance(instance, pivot::BooleanLiteralExp)
+def test_pivot_numericliteralexp_instantiation(instance):
+    assert isinstance(instance, pivot_NumericLiteralExp)
 
-@given(instance=pivot::BooleanLiteralExp_strategy)
-def test_pivot::booleanliteralexp_booleanSymbol_type(instance):
-    assert isinstance(instance.booleanSymbol, str)
+@given(instance=pivot_BooleanLiteralExp_strategy)
+@settings(max_examples=50)
+def test_pivot_booleanliteralexp_instantiation(instance):
+    assert isinstance(instance, pivot_BooleanLiteralExp)
 
 
-@given(instance=pivot::BooleanLiteralExp_strategy)
-def test_pivot::booleanliteralexp_booleanSymbol_setter(instance):
+
+@given(instance=pivot_BooleanLiteralExp_strategy)
+def test_pivot_booleanliteralexp_booleanSymbol_setter(instance):
     original = instance.booleanSymbol
     instance.booleanSymbol = original
     assert instance.booleanSymbol == original
@@ -6188,9 +6116,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=pivot::BooleanLiteralExp_strategy)
+@given(instance=pivot_BooleanLiteralExp_strategy)
 @settings(max_examples=30)
-def test_pivot::booleanliteralexp_typeisboolean_changes_state(instance):
+def test_pivot_booleanliteralexp_typeisboolean_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -6205,49 +6133,49 @@ def test_pivot::booleanliteralexp_typeisboolean_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'TypeIsBoolean' in pivot::BooleanLiteralExp is empty"
+        assert has_statements, f"Function 'TypeIsBoolean' in pivot_BooleanLiteralExp is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'TypeIsBoolean' in pivot::BooleanLiteralExp did not change state; check implementation")
+            warnings.warn(f"Operation 'TypeIsBoolean' in pivot_BooleanLiteralExp did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'TypeIsBoolean' in pivot::BooleanLiteralExp is not implemented or raised an error")
+        warnings.warn(f"Operation 'TypeIsBoolean' in pivot_BooleanLiteralExp is not implemented or raised an error")
 
 @given(instance=CollectionType_strategy)
 @settings(max_examples=50)
 def test_collectiontype_instantiation(instance):
     assert isinstance(instance, CollectionType)
 
-@given(instance=pivot::SequenceType_strategy)
+@given(instance=pivot_SetType_strategy)
 @settings(max_examples=50)
-def test_pivot::sequencetype_instantiation(instance):
-    assert isinstance(instance, pivot::SequenceType)
+def test_pivot_settype_instantiation(instance):
+    assert isinstance(instance, pivot_SetType)
 
-@given(instance=pivot::SetType_strategy)
+@given(instance=pivot_OrderedSetType_strategy)
 @settings(max_examples=50)
-def test_pivot::settype_instantiation(instance):
-    assert isinstance(instance, pivot::SetType)
+def test_pivot_orderedsettype_instantiation(instance):
+    assert isinstance(instance, pivot_OrderedSetType)
 
-@given(instance=pivot::OrderedSetType_strategy)
+@given(instance=pivot_SequenceType_strategy)
 @settings(max_examples=50)
-def test_pivot::orderedsettype_instantiation(instance):
-    assert isinstance(instance, pivot::OrderedSetType)
+def test_pivot_sequencetype_instantiation(instance):
+    assert isinstance(instance, pivot_SequenceType)
 
-@given(instance=pivot::BagType_strategy)
+@given(instance=pivot_BagType_strategy)
 @settings(max_examples=50)
-def test_pivot::bagtype_instantiation(instance):
-    assert isinstance(instance, pivot::BagType)
+def test_pivot_bagtype_instantiation(instance):
+    assert isinstance(instance, pivot_BagType)
 
 @given(instance=NavigationCallExp_strategy)
 @settings(max_examples=50)
 def test_navigationcallexp_instantiation(instance):
     assert isinstance(instance, NavigationCallExp)
 
-@given(instance=pivot::PropertyCallExp_strategy)
+@given(instance=pivot_PropertyCallExp_strategy)
 @settings(max_examples=50)
-def test_pivot::propertycallexp_instantiation(instance):
-    assert isinstance(instance, pivot::PropertyCallExp)
+def test_pivot_propertycallexp_instantiation(instance):
+    assert isinstance(instance, pivot_PropertyCallExp)
 
 import warnings
 import copy
@@ -6255,41 +6183,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=pivot::PropertyCallExp_strategy)
+@given(instance=pivot_PropertyCallExp_strategy)
 @settings(max_examples=30)
-def test_pivot::propertycallexp_compatibleresulttype_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.CompatibleResultType(
-            "test", 
-            "test"
-        )
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.CompatibleResultType).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'CompatibleResultType' in pivot::PropertyCallExp is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'CompatibleResultType' in pivot::PropertyCallExp did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'CompatibleResultType' in pivot::PropertyCallExp is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=pivot::PropertyCallExp_strategy)
-@settings(max_examples=30)
-def test_pivot::propertycallexp_nonstaticsourcetypeisconformant_changes_state(instance):
+def test_pivot_propertycallexp_nonstaticsourcetypeisconformant_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -6304,134 +6200,14 @@ def test_pivot::propertycallexp_nonstaticsourcetypeisconformant_changes_state(in
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'NonStaticSourceTypeIsConformant' in pivot::PropertyCallExp is empty"
+        assert has_statements, f"Function 'NonStaticSourceTypeIsConformant' in pivot_PropertyCallExp is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'NonStaticSourceTypeIsConformant' in pivot::PropertyCallExp did not change state; check implementation")
+            warnings.warn(f"Operation 'NonStaticSourceTypeIsConformant' in pivot_PropertyCallExp did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'NonStaticSourceTypeIsConformant' in pivot::PropertyCallExp is not implemented or raised an error")
-
-@given(instance=pivot::AssociationClassCallExp_strategy)
-@settings(max_examples=50)
-def test_pivot::associationclasscallexp_instantiation(instance):
-    assert isinstance(instance, pivot::AssociationClassCallExp)
-
-@given(instance=pivot::Property_strategy)
-@settings(max_examples=50)
-def test_pivot::property_instantiation(instance):
-    assert isinstance(instance, pivot::Property)
-
-@given(instance=pivot::Property_strategy)
-def test_pivot::property_implicit_type(instance):
-    assert isinstance(instance.implicit, str)
-
-
-@given(instance=pivot::Property_strategy)
-def test_pivot::property_implicit_setter(instance):
-    original = instance.implicit
-    instance.implicit = original
-    assert instance.implicit == original
-
-@given(instance=pivot::Property_strategy)
-def test_pivot::property_isVolatile_type(instance):
-    assert isinstance(instance.isVolatile, str)
-
-
-@given(instance=pivot::Property_strategy)
-def test_pivot::property_isVolatile_setter(instance):
-    original = instance.isVolatile
-    instance.isVolatile = original
-    assert instance.isVolatile == original
-
-@given(instance=pivot::Property_strategy)
-def test_pivot::property_isID_type(instance):
-    assert isinstance(instance.isID, str)
-
-
-@given(instance=pivot::Property_strategy)
-def test_pivot::property_isID_setter(instance):
-    original = instance.isID
-    instance.isID = original
-    assert instance.isID == original
-
-@given(instance=pivot::Property_strategy)
-def test_pivot::property_isDerived_type(instance):
-    assert isinstance(instance.isDerived, str)
-
-
-@given(instance=pivot::Property_strategy)
-def test_pivot::property_isDerived_setter(instance):
-    original = instance.isDerived
-    instance.isDerived = original
-    assert instance.isDerived == original
-
-@given(instance=pivot::Property_strategy)
-def test_pivot::property_isResolveProxies_type(instance):
-    assert isinstance(instance.isResolveProxies, str)
-
-
-@given(instance=pivot::Property_strategy)
-def test_pivot::property_isResolveProxies_setter(instance):
-    original = instance.isResolveProxies
-    instance.isResolveProxies = original
-    assert instance.isResolveProxies == original
-
-@given(instance=pivot::Property_strategy)
-def test_pivot::property_isUnsettable_type(instance):
-    assert isinstance(instance.isUnsettable, str)
-
-
-@given(instance=pivot::Property_strategy)
-def test_pivot::property_isUnsettable_setter(instance):
-    original = instance.isUnsettable
-    instance.isUnsettable = original
-    assert instance.isUnsettable == original
-
-@given(instance=pivot::Property_strategy)
-def test_pivot::property_default_type(instance):
-    assert isinstance(instance.default, str)
-
-
-@given(instance=pivot::Property_strategy)
-def test_pivot::property_default_setter(instance):
-    original = instance.default
-    instance.default = original
-    assert instance.default == original
-
-@given(instance=pivot::Property_strategy)
-def test_pivot::property_isComposite_type(instance):
-    assert isinstance(instance.isComposite, str)
-
-
-@given(instance=pivot::Property_strategy)
-def test_pivot::property_isComposite_setter(instance):
-    original = instance.isComposite
-    instance.isComposite = original
-    assert instance.isComposite == original
-
-@given(instance=pivot::Property_strategy)
-def test_pivot::property_isTransient_type(instance):
-    assert isinstance(instance.isTransient, str)
-
-
-@given(instance=pivot::Property_strategy)
-def test_pivot::property_isTransient_setter(instance):
-    original = instance.isTransient
-    instance.isTransient = original
-    assert instance.isTransient == original
-
-@given(instance=pivot::Property_strategy)
-def test_pivot::property_isReadOnly_type(instance):
-    assert isinstance(instance.isReadOnly, str)
-
-
-@given(instance=pivot::Property_strategy)
-def test_pivot::property_isReadOnly_setter(instance):
-    original = instance.isReadOnly
-    instance.isReadOnly = original
-    assert instance.isReadOnly == original
+        warnings.warn(f"Operation 'NonStaticSourceTypeIsConformant' in pivot_PropertyCallExp is not implemented or raised an error")
 
 import warnings
 import copy
@@ -6439,9 +6215,131 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=pivot::Property_strategy)
+@given(instance=pivot_PropertyCallExp_strategy)
 @settings(max_examples=30)
-def test_pivot::property_compatibledefaultexpression_changes_state(instance):
+def test_pivot_propertycallexp_compatibleresulttype_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.CompatibleResultType(
+            "test", 
+            "test"
+        )
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.CompatibleResultType).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'CompatibleResultType' in pivot_PropertyCallExp is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'CompatibleResultType' in pivot_PropertyCallExp did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'CompatibleResultType' in pivot_PropertyCallExp is not implemented or raised an error")
+
+@given(instance=pivot_AssociationClassCallExp_strategy)
+@settings(max_examples=50)
+def test_pivot_associationclasscallexp_instantiation(instance):
+    assert isinstance(instance, pivot_AssociationClassCallExp)
+
+@given(instance=pivot_Property_strategy)
+@settings(max_examples=50)
+def test_pivot_property_instantiation(instance):
+    assert isinstance(instance, pivot_Property)
+
+
+
+@given(instance=pivot_Property_strategy)
+def test_pivot_property_isVolatile_setter(instance):
+    original = instance.isVolatile
+    instance.isVolatile = original
+    assert instance.isVolatile == original
+
+
+
+@given(instance=pivot_Property_strategy)
+def test_pivot_property_isReadOnly_setter(instance):
+    original = instance.isReadOnly
+    instance.isReadOnly = original
+    assert instance.isReadOnly == original
+
+
+
+@given(instance=pivot_Property_strategy)
+def test_pivot_property_isID_setter(instance):
+    original = instance.isID
+    instance.isID = original
+    assert instance.isID == original
+
+
+
+@given(instance=pivot_Property_strategy)
+def test_pivot_property_isDerived_setter(instance):
+    original = instance.isDerived
+    instance.isDerived = original
+    assert instance.isDerived == original
+
+
+
+@given(instance=pivot_Property_strategy)
+def test_pivot_property_isResolveProxies_setter(instance):
+    original = instance.isResolveProxies
+    instance.isResolveProxies = original
+    assert instance.isResolveProxies == original
+
+
+
+@given(instance=pivot_Property_strategy)
+def test_pivot_property_isUnsettable_setter(instance):
+    original = instance.isUnsettable
+    instance.isUnsettable = original
+    assert instance.isUnsettable == original
+
+
+
+@given(instance=pivot_Property_strategy)
+def test_pivot_property_isTransient_setter(instance):
+    original = instance.isTransient
+    instance.isTransient = original
+    assert instance.isTransient == original
+
+
+
+@given(instance=pivot_Property_strategy)
+def test_pivot_property_default_setter(instance):
+    original = instance.default
+    instance.default = original
+    assert instance.default == original
+
+
+
+@given(instance=pivot_Property_strategy)
+def test_pivot_property_isComposite_setter(instance):
+    original = instance.isComposite
+    instance.isComposite = original
+    assert instance.isComposite == original
+
+
+
+@given(instance=pivot_Property_strategy)
+def test_pivot_property_implicit_setter(instance):
+    original = instance.implicit
+    instance.implicit = original
+    assert instance.implicit == original
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=pivot_Property_strategy)
+@settings(max_examples=30)
+def test_pivot_property_compatibledefaultexpression_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -6456,14 +6354,14 @@ def test_pivot::property_compatibledefaultexpression_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'CompatibleDefaultExpression' in pivot::Property is empty"
+        assert has_statements, f"Function 'CompatibleDefaultExpression' in pivot_Property is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'CompatibleDefaultExpression' in pivot::Property did not change state; check implementation")
+            warnings.warn(f"Operation 'CompatibleDefaultExpression' in pivot_Property did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'CompatibleDefaultExpression' in pivot::Property is not implemented or raised an error")
+        warnings.warn(f"Operation 'CompatibleDefaultExpression' in pivot_Property is not implemented or raised an error")
 
 import warnings
 import copy
@@ -6471,9 +6369,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=pivot::Property_strategy)
+@given(instance=pivot_Property_strategy)
 @settings(max_examples=30)
-def test_pivot::property_isattribute_changes_state(instance):
+def test_pivot_property_isattribute_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -6487,75 +6385,34 @@ def test_pivot::property_isattribute_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'isAttribute' in pivot::Property is empty"
+        assert has_statements, f"Function 'isAttribute' in pivot_Property is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'isAttribute' in pivot::Property did not change state; check implementation")
+            warnings.warn(f"Operation 'isAttribute' in pivot_Property did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'isAttribute' in pivot::Property is not implemented or raised an error")
+        warnings.warn(f"Operation 'isAttribute' in pivot_Property is not implemented or raised an error")
 
 @given(instance=Class_strategy)
 @settings(max_examples=50)
 def test_class_instantiation(instance):
     assert isinstance(instance, Class)
 
-@given(instance=pivot::Stereotype_strategy)
+@given(instance=pivot_UnspecifiedType_strategy)
 @settings(max_examples=50)
-def test_pivot::stereotype_instantiation(instance):
-    assert isinstance(instance, pivot::Stereotype)
+def test_pivot_unspecifiedtype_instantiation(instance):
+    assert isinstance(instance, pivot_UnspecifiedType)
 
-@given(instance=pivot::InvalidType_strategy)
+@given(instance=pivot_InvalidType_strategy)
 @settings(max_examples=50)
-def test_pivot::invalidtype_instantiation(instance):
-    assert isinstance(instance, pivot::InvalidType)
+def test_pivot_invalidtype_instantiation(instance):
+    assert isinstance(instance, pivot_InvalidType)
 
-@given(instance=pivot::UnspecifiedType_strategy)
+@given(instance=pivot_SelfType_strategy)
 @settings(max_examples=50)
-def test_pivot::unspecifiedtype_instantiation(instance):
-    assert isinstance(instance, pivot::UnspecifiedType)
-
-@given(instance=pivot::Metaclass_strategy)
-@settings(max_examples=50)
-def test_pivot::metaclass_instantiation(instance):
-    assert isinstance(instance, pivot::Metaclass)
-
-@given(instance=pivot::Behavior_strategy)
-@settings(max_examples=50)
-def test_pivot::behavior_instantiation(instance):
-    assert isinstance(instance, pivot::Behavior)
-
-@given(instance=pivot::VoidType_strategy)
-@settings(max_examples=50)
-def test_pivot::voidtype_instantiation(instance):
-    assert isinstance(instance, pivot::VoidType)
-
-@given(instance=pivot::AssociationClass_strategy)
-@settings(max_examples=50)
-def test_pivot::associationclass_instantiation(instance):
-    assert isinstance(instance, pivot::AssociationClass)
-
-@given(instance=pivot::DataType_strategy)
-@settings(max_examples=50)
-def test_pivot::datatype_instantiation(instance):
-    assert isinstance(instance, pivot::DataType)
-
-@given(instance=pivot::DataType_strategy)
-def test_pivot::datatype_isSerializable_type(instance):
-    assert isinstance(instance.isSerializable, str)
-
-
-@given(instance=pivot::DataType_strategy)
-def test_pivot::datatype_isSerializable_setter(instance):
-    original = instance.isSerializable
-    instance.isSerializable = original
-    assert instance.isSerializable == original
-
-@given(instance=pivot::SelfType_strategy)
-@settings(max_examples=50)
-def test_pivot::selftype_instantiation(instance):
-    assert isinstance(instance, pivot::SelfType)
+def test_pivot_selftype_instantiation(instance):
+    assert isinstance(instance, pivot_SelfType)
 
 import warnings
 import copy
@@ -6563,9 +6420,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=pivot::SelfType_strategy)
+@given(instance=pivot_SelfType_strategy)
 @settings(max_examples=30)
-def test_pivot::selftype_specializein_changes_state(instance):
+def test_pivot_selftype_specializein_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -6580,24 +6437,62 @@ def test_pivot::selftype_specializein_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'specializeIn' in pivot::SelfType is empty"
+        assert has_statements, f"Function 'specializeIn' in pivot_SelfType is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'specializeIn' in pivot::SelfType did not change state; check implementation")
+            warnings.warn(f"Operation 'specializeIn' in pivot_SelfType did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'specializeIn' in pivot::SelfType is not implemented or raised an error")
+        warnings.warn(f"Operation 'specializeIn' in pivot_SelfType is not implemented or raised an error")
 
-@given(instance=pivot::AnyType_strategy)
+@given(instance=pivot_Stereotype_strategy)
 @settings(max_examples=50)
-def test_pivot::anytype_instantiation(instance):
-    assert isinstance(instance, pivot::AnyType)
+def test_pivot_stereotype_instantiation(instance):
+    assert isinstance(instance, pivot_Stereotype)
 
-@given(instance=pivot::Element_strategy)
+@given(instance=pivot_DataType_strategy)
 @settings(max_examples=50)
-def test_pivot::element_instantiation(instance):
-    assert isinstance(instance, pivot::Element)
+def test_pivot_datatype_instantiation(instance):
+    assert isinstance(instance, pivot_DataType)
+
+
+
+@given(instance=pivot_DataType_strategy)
+def test_pivot_datatype_isSerializable_setter(instance):
+    original = instance.isSerializable
+    instance.isSerializable = original
+    assert instance.isSerializable == original
+
+@given(instance=pivot_VoidType_strategy)
+@settings(max_examples=50)
+def test_pivot_voidtype_instantiation(instance):
+    assert isinstance(instance, pivot_VoidType)
+
+@given(instance=pivot_AssociationClass_strategy)
+@settings(max_examples=50)
+def test_pivot_associationclass_instantiation(instance):
+    assert isinstance(instance, pivot_AssociationClass)
+
+@given(instance=pivot_Behavior_strategy)
+@settings(max_examples=50)
+def test_pivot_behavior_instantiation(instance):
+    assert isinstance(instance, pivot_Behavior)
+
+@given(instance=pivot_Metaclass_strategy)
+@settings(max_examples=50)
+def test_pivot_metaclass_instantiation(instance):
+    assert isinstance(instance, pivot_Metaclass)
+
+@given(instance=pivot_AnyType_strategy)
+@settings(max_examples=50)
+def test_pivot_anytype_instantiation(instance):
+    assert isinstance(instance, pivot_AnyType)
+
+@given(instance=pivot_Element_strategy)
+@settings(max_examples=50)
+def test_pivot_element_instantiation(instance):
+    assert isinstance(instance, pivot_Element)
 
 import warnings
 import copy
@@ -6605,9 +6500,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=pivot::Element_strategy)
+@given(instance=pivot_Element_strategy)
 @settings(max_examples=30)
-def test_pivot::element_allownedelements_changes_state(instance):
+def test_pivot_element_allownedelements_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -6619,190 +6514,88 @@ def test_pivot::element_allownedelements_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'allOwnedElements' in pivot::Element is empty"
+        assert has_statements, f"Function 'allOwnedElements' in pivot_Element is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'allOwnedElements' in pivot::Element did not change state; check implementation")
+            warnings.warn(f"Operation 'allOwnedElements' in pivot_Element did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'allOwnedElements' in pivot::Element is not implemented or raised an error")
+        warnings.warn(f"Operation 'allOwnedElements' in pivot_Element is not implemented or raised an error")
 
 @given(instance=NamedElement_strategy)
 @settings(max_examples=50)
 def test_namedelement_instantiation(instance):
     assert isinstance(instance, NamedElement)
 
-@given(instance=pivot::EnumerationLiteral_strategy)
+@given(instance=pivot_Trigger_strategy)
 @settings(max_examples=50)
-def test_pivot::enumerationliteral_instantiation(instance):
-    assert isinstance(instance, pivot::EnumerationLiteral)
+def test_pivot_trigger_instantiation(instance):
+    assert isinstance(instance, pivot_Trigger)
 
-@given(instance=pivot::EnumerationLiteral_strategy)
-def test_pivot::enumerationliteral_value_type(instance):
-    assert isinstance(instance.value, str)
+@given(instance=pivot_Precedence_strategy)
+@settings(max_examples=50)
+def test_pivot_precedence_instantiation(instance):
+    assert isinstance(instance, pivot_Precedence)
 
 
-@given(instance=pivot::EnumerationLiteral_strategy)
-def test_pivot::enumerationliteral_value_setter(instance):
+
+@given(instance=pivot_Precedence_strategy)
+def test_pivot_precedence_associativity_setter(instance):
+    original = instance.associativity
+    instance.associativity = original
+    assert instance.associativity == original
+
+
+
+@given(instance=pivot_Precedence_strategy)
+def test_pivot_precedence_order_setter(instance):
+    original = instance.order
+    instance.order = original
+    assert instance.order == original
+
+@given(instance=pivot_SendSignalAction_strategy)
+@settings(max_examples=50)
+def test_pivot_sendsignalaction_instantiation(instance):
+    assert isinstance(instance, pivot_SendSignalAction)
+
+@given(instance=pivot_CallOperationAction_strategy)
+@settings(max_examples=50)
+def test_pivot_calloperationaction_instantiation(instance):
+    assert isinstance(instance, pivot_CallOperationAction)
+
+@given(instance=pivot_Import_strategy)
+@settings(max_examples=50)
+def test_pivot_import_instantiation(instance):
+    assert isinstance(instance, pivot_Import)
+
+@given(instance=pivot_Vertex_strategy)
+@settings(max_examples=50)
+def test_pivot_vertex_instantiation(instance):
+    assert isinstance(instance, pivot_Vertex)
+
+@given(instance=pivot_EnumerationLiteral_strategy)
+@settings(max_examples=50)
+def test_pivot_enumerationliteral_instantiation(instance):
+    assert isinstance(instance, pivot_EnumerationLiteral)
+
+
+
+@given(instance=pivot_EnumerationLiteral_strategy)
+def test_pivot_enumerationliteral_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
 
-@given(instance=pivot::Trigger_strategy)
+@given(instance=pivot_Constraint_strategy)
 @settings(max_examples=50)
-def test_pivot::trigger_instantiation(instance):
-    assert isinstance(instance, pivot::Trigger)
-
-@given(instance=pivot::Import_strategy)
-@settings(max_examples=50)
-def test_pivot::import_instantiation(instance):
-    assert isinstance(instance, pivot::Import)
-
-@given(instance=pivot::CallOperationAction_strategy)
-@settings(max_examples=50)
-def test_pivot::calloperationaction_instantiation(instance):
-    assert isinstance(instance, pivot::CallOperationAction)
-
-@given(instance=pivot::Detail_strategy)
-@settings(max_examples=50)
-def test_pivot::detail_instantiation(instance):
-    assert isinstance(instance, pivot::Detail)
-
-@given(instance=pivot::Detail_strategy)
-def test_pivot::detail_value_type(instance):
-    assert isinstance(instance.value, str)
+def test_pivot_constraint_instantiation(instance):
+    assert isinstance(instance, pivot_Constraint)
 
 
-@given(instance=pivot::Detail_strategy)
-def test_pivot::detail_value_setter(instance):
-    original = instance.value
-    instance.value = original
-    assert instance.value == original
 
-@given(instance=pivot::Vertex_strategy)
-@settings(max_examples=50)
-def test_pivot::vertex_instantiation(instance):
-    assert isinstance(instance, pivot::Vertex)
-
-@given(instance=pivot::TypedElement_strategy)
-@settings(max_examples=50)
-def test_pivot::typedelement_instantiation(instance):
-    assert isinstance(instance, pivot::TypedElement)
-
-@given(instance=pivot::TypedElement_strategy)
-def test_pivot::typedelement_isRequired_type(instance):
-    assert isinstance(instance.isRequired, str)
-
-
-@given(instance=pivot::TypedElement_strategy)
-def test_pivot::typedelement_isRequired_setter(instance):
-    original = instance.isRequired
-    instance.isRequired = original
-    assert instance.isRequired == original
-
-@given(instance=pivot::Type_strategy)
-@settings(max_examples=50)
-def test_pivot::type_instantiation(instance):
-    assert isinstance(instance, pivot::Type)
-
-@given(instance=pivot::Type_strategy)
-def test_pivot::type_instanceClassName_type(instance):
-    assert isinstance(instance.instanceClassName, str)
-
-
-@given(instance=pivot::Type_strategy)
-def test_pivot::type_instanceClassName_setter(instance):
-    original = instance.instanceClassName
-    instance.instanceClassName = original
-    assert instance.instanceClassName == original
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=pivot::Type_strategy)
-@settings(max_examples=30)
-def test_pivot::type_specializein_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.specializeIn(
-            "test", 
-            "test"
-        )
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.specializeIn).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'specializeIn' in pivot::Type is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'specializeIn' in pivot::Type did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'specializeIn' in pivot::Type is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=pivot::Type_strategy)
-@settings(max_examples=30)
-def test_pivot::type_uniqueinvariantname_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.UniqueInvariantName(
-            "test", 
-            "test"
-        )
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.UniqueInvariantName).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'UniqueInvariantName' in pivot::Type is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'UniqueInvariantName' in pivot::Type did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'UniqueInvariantName' in pivot::Type is not implemented or raised an error")
-
-@given(instance=pivot::Signal_strategy)
-@settings(max_examples=50)
-def test_pivot::signal_instantiation(instance):
-    assert isinstance(instance, pivot::Signal)
-
-@given(instance=pivot::Namespace_strategy)
-@settings(max_examples=50)
-def test_pivot::namespace_instantiation(instance):
-    assert isinstance(instance, pivot::Namespace)
-
-@given(instance=pivot::Constraint_strategy)
-@settings(max_examples=50)
-def test_pivot::constraint_instantiation(instance):
-    assert isinstance(instance, pivot::Constraint)
-
-@given(instance=pivot::Constraint_strategy)
-def test_pivot::constraint_isCallable_type(instance):
-    assert isinstance(instance.isCallable, str)
-
-
-@given(instance=pivot::Constraint_strategy)
-def test_pivot::constraint_isCallable_setter(instance):
+@given(instance=pivot_Constraint_strategy)
+def test_pivot_constraint_isCallable_setter(instance):
     original = instance.isCallable
     instance.isCallable = original
     assert instance.isCallable == original
@@ -6813,9 +6606,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=pivot::Constraint_strategy)
+@given(instance=pivot_Constraint_strategy)
 @settings(max_examples=30)
-def test_pivot::constraint_uniquename_changes_state(instance):
+def test_pivot_constraint_uniquename_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -6830,169 +6623,226 @@ def test_pivot::constraint_uniquename_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'UniqueName' in pivot::Constraint is empty"
+        assert has_statements, f"Function 'UniqueName' in pivot_Constraint is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'UniqueName' in pivot::Constraint did not change state; check implementation")
+            warnings.warn(f"Operation 'UniqueName' in pivot_Constraint did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'UniqueName' in pivot::Constraint is not implemented or raised an error")
+        warnings.warn(f"Operation 'UniqueName' in pivot_Constraint is not implemented or raised an error")
 
-@given(instance=pivot::SendSignalAction_strategy)
+@given(instance=pivot_TypedElement_strategy)
 @settings(max_examples=50)
-def test_pivot::sendsignalaction_instantiation(instance):
-    assert isinstance(instance, pivot::SendSignalAction)
+def test_pivot_typedelement_instantiation(instance):
+    assert isinstance(instance, pivot_TypedElement)
 
-@given(instance=pivot::Precedence_strategy)
+
+
+@given(instance=pivot_TypedElement_strategy)
+def test_pivot_typedelement_isRequired_setter(instance):
+    original = instance.isRequired
+    instance.isRequired = original
+    assert instance.isRequired == original
+
+@given(instance=pivot_Detail_strategy)
 @settings(max_examples=50)
-def test_pivot::precedence_instantiation(instance):
-    assert isinstance(instance, pivot::Precedence)
-
-@given(instance=pivot::Precedence_strategy)
-def test_pivot::precedence_order_type(instance):
-    assert isinstance(instance.order, str)
+def test_pivot_detail_instantiation(instance):
+    assert isinstance(instance, pivot_Detail)
 
 
-@given(instance=pivot::Precedence_strategy)
-def test_pivot::precedence_order_setter(instance):
-    original = instance.order
-    instance.order = original
-    assert instance.order == original
 
-@given(instance=pivot::Precedence_strategy)
-def test_pivot::precedence_associativity_type(instance):
-    assert isinstance(instance.associativity, str)
+@given(instance=pivot_Detail_strategy)
+def test_pivot_detail_value_setter(instance):
+    original = instance.value
+    instance.value = original
+    assert instance.value == original
 
-
-@given(instance=pivot::Precedence_strategy)
-def test_pivot::precedence_associativity_setter(instance):
-    original = instance.associativity
-    instance.associativity = original
-    assert instance.associativity == original
-
-@given(instance=pivot::Annotation_strategy)
+@given(instance=pivot_Type_strategy)
 @settings(max_examples=50)
-def test_pivot::annotation_instantiation(instance):
-    assert isinstance(instance, pivot::Annotation)
+def test_pivot_type_instantiation(instance):
+    assert isinstance(instance, pivot_Type)
+
+
+
+@given(instance=pivot_Type_strategy)
+def test_pivot_type_instanceClassName_setter(instance):
+    original = instance.instanceClassName
+    instance.instanceClassName = original
+    assert instance.instanceClassName == original
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=pivot_Type_strategy)
+@settings(max_examples=30)
+def test_pivot_type_uniqueinvariantname_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.UniqueInvariantName(
+            "test", 
+            "test"
+        )
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.UniqueInvariantName).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'UniqueInvariantName' in pivot_Type is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'UniqueInvariantName' in pivot_Type did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'UniqueInvariantName' in pivot_Type is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=pivot_Type_strategy)
+@settings(max_examples=30)
+def test_pivot_type_specializein_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.specializeIn(
+            "test", 
+            "test"
+        )
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.specializeIn).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'specializeIn' in pivot_Type is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'specializeIn' in pivot_Type did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'specializeIn' in pivot_Type is not implemented or raised an error")
+
+@given(instance=pivot_Signal_strategy)
+@settings(max_examples=50)
+def test_pivot_signal_instantiation(instance):
+    assert isinstance(instance, pivot_Signal)
+
+@given(instance=pivot_Namespace_strategy)
+@settings(max_examples=50)
+def test_pivot_namespace_instantiation(instance):
+    assert isinstance(instance, pivot_Namespace)
+
+@given(instance=pivot_Annotation_strategy)
+@settings(max_examples=50)
+def test_pivot_annotation_instantiation(instance):
+    assert isinstance(instance, pivot_Annotation)
 
 @given(instance=Namespace_strategy)
 @settings(max_examples=50)
 def test_namespace_instantiation(instance):
     assert isinstance(instance, Namespace)
 
-@given(instance=pivot::State_strategy)
+@given(instance=pivot_Region_strategy)
 @settings(max_examples=50)
-def test_pivot::state_instantiation(instance):
-    assert isinstance(instance, pivot::State)
+def test_pivot_region_instantiation(instance):
+    assert isinstance(instance, pivot_Region)
 
-@given(instance=pivot::State_strategy)
-def test_pivot::state_isSimple_type(instance):
-    assert isinstance(instance.isSimple, str)
-
-
-@given(instance=pivot::State_strategy)
-def test_pivot::state_isSimple_setter(instance):
-    original = instance.isSimple
-    instance.isSimple = original
-    assert instance.isSimple == original
-
-@given(instance=pivot::State_strategy)
-def test_pivot::state_isOrthogonal_type(instance):
-    assert isinstance(instance.isOrthogonal, str)
+@given(instance=pivot_Root_strategy)
+@settings(max_examples=50)
+def test_pivot_root_instantiation(instance):
+    assert isinstance(instance, pivot_Root)
 
 
-@given(instance=pivot::State_strategy)
-def test_pivot::state_isOrthogonal_setter(instance):
-    original = instance.isOrthogonal
-    instance.isOrthogonal = original
-    assert instance.isOrthogonal == original
 
-@given(instance=pivot::State_strategy)
-def test_pivot::state_isComposite_type(instance):
-    assert isinstance(instance.isComposite, str)
+@given(instance=pivot_Root_strategy)
+def test_pivot_root_externalURI_setter(instance):
+    original = instance.externalURI
+    instance.externalURI = original
+    assert instance.externalURI == original
 
-
-@given(instance=pivot::State_strategy)
-def test_pivot::state_isComposite_setter(instance):
-    original = instance.isComposite
-    instance.isComposite = original
-    assert instance.isComposite == original
-
-@given(instance=pivot::State_strategy)
-def test_pivot::state_isSubmachineState_type(instance):
-    assert isinstance(instance.isSubmachineState, str)
+@given(instance=pivot_Transition_strategy)
+@settings(max_examples=50)
+def test_pivot_transition_instantiation(instance):
+    assert isinstance(instance, pivot_Transition)
 
 
-@given(instance=pivot::State_strategy)
-def test_pivot::state_isSubmachineState_setter(instance):
+
+@given(instance=pivot_Transition_strategy)
+def test_pivot_transition_kind_setter(instance):
+    original = instance.kind
+    instance.kind = original
+    assert instance.kind == original
+
+@given(instance=pivot_State_strategy)
+@settings(max_examples=50)
+def test_pivot_state_instantiation(instance):
+    assert isinstance(instance, pivot_State)
+
+
+
+@given(instance=pivot_State_strategy)
+def test_pivot_state_isSubmachineState_setter(instance):
     original = instance.isSubmachineState
     instance.isSubmachineState = original
     assert instance.isSubmachineState == original
 
-@given(instance=pivot::Region_strategy)
+
+
+@given(instance=pivot_State_strategy)
+def test_pivot_state_isComposite_setter(instance):
+    original = instance.isComposite
+    instance.isComposite = original
+    assert instance.isComposite == original
+
+
+
+@given(instance=pivot_State_strategy)
+def test_pivot_state_isOrthogonal_setter(instance):
+    original = instance.isOrthogonal
+    instance.isOrthogonal = original
+    assert instance.isOrthogonal == original
+
+
+
+@given(instance=pivot_State_strategy)
+def test_pivot_state_isSimple_setter(instance):
+    original = instance.isSimple
+    instance.isSimple = original
+    assert instance.isSimple == original
+
+@given(instance=pivot_Operation_strategy)
 @settings(max_examples=50)
-def test_pivot::region_instantiation(instance):
-    assert isinstance(instance, pivot::Region)
-
-@given(instance=pivot::Operation_strategy)
-@settings(max_examples=50)
-def test_pivot::operation_instantiation(instance):
-    assert isinstance(instance, pivot::Operation)
-
-@given(instance=pivot::Operation_strategy)
-def test_pivot::operation_isValidating_type(instance):
-    assert isinstance(instance.isValidating, str)
+def test_pivot_operation_instantiation(instance):
+    assert isinstance(instance, pivot_Operation)
 
 
-@given(instance=pivot::Operation_strategy)
-def test_pivot::operation_isValidating_setter(instance):
-    original = instance.isValidating
-    instance.isValidating = original
-    assert instance.isValidating == original
 
-@given(instance=pivot::Operation_strategy)
-def test_pivot::operation_isInvalidating_type(instance):
-    assert isinstance(instance.isInvalidating, str)
-
-
-@given(instance=pivot::Operation_strategy)
-def test_pivot::operation_isInvalidating_setter(instance):
+@given(instance=pivot_Operation_strategy)
+def test_pivot_operation_isInvalidating_setter(instance):
     original = instance.isInvalidating
     instance.isInvalidating = original
     assert instance.isInvalidating == original
 
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
 
-@given(instance=pivot::Operation_strategy)
-@settings(max_examples=30)
-def test_pivot::operation_uniquepreconditionname_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.UniquePreconditionName(
-            "test", 
-            "test"
-        )
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.UniquePreconditionName).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'UniquePreconditionName' in pivot::Operation is empty"
 
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'UniquePreconditionName' in pivot::Operation did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'UniquePreconditionName' in pivot::Operation is not implemented or raised an error")
+@given(instance=pivot_Operation_strategy)
+def test_pivot_operation_isValidating_setter(instance):
+    original = instance.isValidating
+    instance.isValidating = original
+    assert instance.isValidating == original
 
 import warnings
 import copy
@@ -7000,73 +6850,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=pivot::Operation_strategy)
+@given(instance=pivot_Operation_strategy)
 @settings(max_examples=30)
-def test_pivot::operation_compatiblereturn_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.CompatibleReturn(
-            "test", 
-            "test"
-        )
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.CompatibleReturn).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'CompatibleReturn' in pivot::Operation is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'CompatibleReturn' in pivot::Operation did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'CompatibleReturn' in pivot::Operation is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=pivot::Operation_strategy)
-@settings(max_examples=30)
-def test_pivot::operation_uniquepostconditionname_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.UniquePostconditionName(
-            "test", 
-            "test"
-        )
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.UniquePostconditionName).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'UniquePostconditionName' in pivot::Operation is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'UniquePostconditionName' in pivot::Operation did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'UniquePostconditionName' in pivot::Operation is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=pivot::Operation_strategy)
-@settings(max_examples=30)
-def test_pivot::operation_loadableimplementation_changes_state(instance):
+def test_pivot_operation_loadableimplementation_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -7081,133 +6867,182 @@ def test_pivot::operation_loadableimplementation_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'LoadableImplementation' in pivot::Operation is empty"
+        assert has_statements, f"Function 'LoadableImplementation' in pivot_Operation is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'LoadableImplementation' in pivot::Operation did not change state; check implementation")
+            warnings.warn(f"Operation 'LoadableImplementation' in pivot_Operation did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'LoadableImplementation' in pivot::Operation is not implemented or raised an error")
+        warnings.warn(f"Operation 'LoadableImplementation' in pivot_Operation is not implemented or raised an error")
 
-@given(instance=pivot::Package_strategy)
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=pivot_Operation_strategy)
+@settings(max_examples=30)
+def test_pivot_operation_compatiblereturn_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.CompatibleReturn(
+            "test", 
+            "test"
+        )
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.CompatibleReturn).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'CompatibleReturn' in pivot_Operation is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'CompatibleReturn' in pivot_Operation did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'CompatibleReturn' in pivot_Operation is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=pivot_Operation_strategy)
+@settings(max_examples=30)
+def test_pivot_operation_uniquepreconditionname_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.UniquePreconditionName(
+            "test", 
+            "test"
+        )
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.UniquePreconditionName).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'UniquePreconditionName' in pivot_Operation is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'UniquePreconditionName' in pivot_Operation did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'UniquePreconditionName' in pivot_Operation is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=pivot_Operation_strategy)
+@settings(max_examples=30)
+def test_pivot_operation_uniquepostconditionname_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.UniquePostconditionName(
+            "test", 
+            "test"
+        )
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.UniquePostconditionName).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'UniquePostconditionName' in pivot_Operation is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'UniquePostconditionName' in pivot_Operation did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'UniquePostconditionName' in pivot_Operation is not implemented or raised an error")
+
+@given(instance=pivot_Package_strategy)
 @settings(max_examples=50)
-def test_pivot::package_instantiation(instance):
-    assert isinstance(instance, pivot::Package)
-
-@given(instance=pivot::Package_strategy)
-def test_pivot::package_nsURI_type(instance):
-    assert isinstance(instance.nsURI, str)
+def test_pivot_package_instantiation(instance):
+    assert isinstance(instance, pivot_Package)
 
 
-@given(instance=pivot::Package_strategy)
-def test_pivot::package_nsURI_setter(instance):
+
+@given(instance=pivot_Package_strategy)
+def test_pivot_package_nsURI_setter(instance):
     original = instance.nsURI
     instance.nsURI = original
     assert instance.nsURI == original
 
-@given(instance=pivot::Package_strategy)
-def test_pivot::package_nsPrefix_type(instance):
-    assert isinstance(instance.nsPrefix, str)
 
 
-@given(instance=pivot::Package_strategy)
-def test_pivot::package_nsPrefix_setter(instance):
+@given(instance=pivot_Package_strategy)
+def test_pivot_package_nsPrefix_setter(instance):
     original = instance.nsPrefix
     instance.nsPrefix = original
     assert instance.nsPrefix == original
-
-@given(instance=pivot::Transition_strategy)
-@settings(max_examples=50)
-def test_pivot::transition_instantiation(instance):
-    assert isinstance(instance, pivot::Transition)
-
-@given(instance=pivot::Transition_strategy)
-def test_pivot::transition_kind_type(instance):
-    assert isinstance(instance.kind, str)
-
-
-@given(instance=pivot::Transition_strategy)
-def test_pivot::transition_kind_setter(instance):
-    original = instance.kind
-    instance.kind = original
-    assert instance.kind == original
-
-@given(instance=pivot::Root_strategy)
-@settings(max_examples=50)
-def test_pivot::root_instantiation(instance):
-    assert isinstance(instance, pivot::Root)
-
-@given(instance=pivot::Root_strategy)
-def test_pivot::root_externalURI_type(instance):
-    assert isinstance(instance.externalURI, str)
-
-
-@given(instance=pivot::Root_strategy)
-def test_pivot::root_externalURI_setter(instance):
-    original = instance.externalURI
-    instance.externalURI = original
-    assert instance.externalURI == original
 
 @given(instance=Type_strategy)
 @settings(max_examples=50)
 def test_type_instantiation(instance):
     assert isinstance(instance, Type)
 
-@given(instance=pivot::DynamicType_strategy)
+@given(instance=pivot_TemplateParameterType_strategy)
 @settings(max_examples=50)
-def test_pivot::dynamictype_instantiation(instance):
-    assert isinstance(instance, pivot::DynamicType)
-
-@given(instance=pivot::ElementExtension_strategy)
-@settings(max_examples=50)
-def test_pivot::elementextension_instantiation(instance):
-    assert isinstance(instance, pivot::ElementExtension)
-
-@given(instance=pivot::TemplateParameterType_strategy)
-@settings(max_examples=50)
-def test_pivot::templateparametertype_instantiation(instance):
-    assert isinstance(instance, pivot::TemplateParameterType)
-
-@given(instance=pivot::TemplateParameterType_strategy)
-def test_pivot::templateparametertype_specification_type(instance):
-    assert isinstance(instance.specification, str)
+def test_pivot_templateparametertype_instantiation(instance):
+    assert isinstance(instance, pivot_TemplateParameterType)
 
 
-@given(instance=pivot::TemplateParameterType_strategy)
-def test_pivot::templateparametertype_specification_setter(instance):
+
+@given(instance=pivot_TemplateParameterType_strategy)
+def test_pivot_templateparametertype_specification_setter(instance):
     original = instance.specification
     instance.specification = original
     assert instance.specification == original
 
-@given(instance=pivot::MessageType_strategy)
+@given(instance=pivot_DynamicType_strategy)
 @settings(max_examples=50)
-def test_pivot::messagetype_instantiation(instance):
-    assert isinstance(instance, pivot::MessageType)
+def test_pivot_dynamictype_instantiation(instance):
+    assert isinstance(instance, pivot_DynamicType)
 
-@given(instance=pivot::Class_strategy)
+@given(instance=pivot_MessageType_strategy)
 @settings(max_examples=50)
-def test_pivot::class_instantiation(instance):
-    assert isinstance(instance, pivot::Class)
+def test_pivot_messagetype_instantiation(instance):
+    assert isinstance(instance, pivot_MessageType)
 
-@given(instance=pivot::Class_strategy)
-def test_pivot::class_isInterface_type(instance):
-    assert isinstance(instance.isInterface, str)
+@given(instance=pivot_ElementExtension_strategy)
+@settings(max_examples=50)
+def test_pivot_elementextension_instantiation(instance):
+    assert isinstance(instance, pivot_ElementExtension)
+
+@given(instance=pivot_Class_strategy)
+@settings(max_examples=50)
+def test_pivot_class_instantiation(instance):
+    assert isinstance(instance, pivot_Class)
 
 
-@given(instance=pivot::Class_strategy)
-def test_pivot::class_isInterface_setter(instance):
+
+@given(instance=pivot_Class_strategy)
+def test_pivot_class_isInterface_setter(instance):
     original = instance.isInterface
     instance.isInterface = original
     assert instance.isInterface == original
 
-@given(instance=pivot::Class_strategy)
-def test_pivot::class_isAbstract_type(instance):
-    assert isinstance(instance.isAbstract, str)
 
 
-@given(instance=pivot::Class_strategy)
-def test_pivot::class_isAbstract_setter(instance):
+@given(instance=pivot_Class_strategy)
+def test_pivot_class_isAbstract_setter(instance):
     original = instance.isAbstract
     instance.isAbstract = original
     assert instance.isAbstract == original

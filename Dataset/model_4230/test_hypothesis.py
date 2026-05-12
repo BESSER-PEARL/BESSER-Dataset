@@ -3,13 +3,13 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    CompanyLanguage::Company,
-    CompanyLanguage::Employee,
-    CompanyLanguage::CEO,
-    CompanyLanguage::Admin,
+from python_code import (
+    CompanyLanguage_Company,
+    CompanyLanguage_Employee,
+    CompanyLanguage_CEO,
+    CompanyLanguage_Admin,
 )
 
 # =============================================================================
@@ -18,23 +18,23 @@ from classes import (
 
 
 
-def test_companylanguage::company_is_not_abstract():
-    assert not inspect.isabstract(CompanyLanguage::Company)
+def test_companylanguage_company_is_not_abstract():
+    assert not inspect.isabstract(CompanyLanguage_Company)
 
 
-def test_companylanguage::company_constructor_exists():
-    assert callable(CompanyLanguage::Company.__init__)
+def test_companylanguage_company_constructor_exists():
+    assert callable(CompanyLanguage_Company.__init__)
 
 
-def test_companylanguage::company_constructor_args():
-    sig = inspect.signature(CompanyLanguage::Company.__init__)
+def test_companylanguage_company_constructor_args():
+    sig = inspect.signature(CompanyLanguage_Company.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_companylanguage::company_has_name():
-    assert hasattr(CompanyLanguage::Company, "name")
+def test_companylanguage_company_has_name():
+    assert hasattr(CompanyLanguage_Company, "name")
     descriptor = None
-    for klass in CompanyLanguage::Company.__mro__:
+    for klass in CompanyLanguage_Company.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -42,23 +42,23 @@ def test_companylanguage::company_has_name():
 
 
 
-def test_companylanguage::employee_is_not_abstract():
-    assert not inspect.isabstract(CompanyLanguage::Employee)
+def test_companylanguage_employee_is_not_abstract():
+    assert not inspect.isabstract(CompanyLanguage_Employee)
 
 
-def test_companylanguage::employee_constructor_exists():
-    assert callable(CompanyLanguage::Employee.__init__)
+def test_companylanguage_employee_constructor_exists():
+    assert callable(CompanyLanguage_Employee.__init__)
 
 
-def test_companylanguage::employee_constructor_args():
-    sig = inspect.signature(CompanyLanguage::Employee.__init__)
+def test_companylanguage_employee_constructor_args():
+    sig = inspect.signature(CompanyLanguage_Employee.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_companylanguage::employee_has_name():
-    assert hasattr(CompanyLanguage::Employee, "name")
+def test_companylanguage_employee_has_name():
+    assert hasattr(CompanyLanguage_Employee, "name")
     descriptor = None
-    for klass in CompanyLanguage::Employee.__mro__:
+    for klass in CompanyLanguage_Employee.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -66,23 +66,23 @@ def test_companylanguage::employee_has_name():
 
 
 
-def test_companylanguage::ceo_is_not_abstract():
-    assert not inspect.isabstract(CompanyLanguage::CEO)
+def test_companylanguage_ceo_is_not_abstract():
+    assert not inspect.isabstract(CompanyLanguage_CEO)
 
 
-def test_companylanguage::ceo_constructor_exists():
-    assert callable(CompanyLanguage::CEO.__init__)
+def test_companylanguage_ceo_constructor_exists():
+    assert callable(CompanyLanguage_CEO.__init__)
 
 
-def test_companylanguage::ceo_constructor_args():
-    sig = inspect.signature(CompanyLanguage::CEO.__init__)
+def test_companylanguage_ceo_constructor_args():
+    sig = inspect.signature(CompanyLanguage_CEO.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_companylanguage::ceo_has_name():
-    assert hasattr(CompanyLanguage::CEO, "name")
+def test_companylanguage_ceo_has_name():
+    assert hasattr(CompanyLanguage_CEO, "name")
     descriptor = None
-    for klass in CompanyLanguage::CEO.__mro__:
+    for klass in CompanyLanguage_CEO.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -90,23 +90,23 @@ def test_companylanguage::ceo_has_name():
 
 
 
-def test_companylanguage::admin_is_not_abstract():
-    assert not inspect.isabstract(CompanyLanguage::Admin)
+def test_companylanguage_admin_is_not_abstract():
+    assert not inspect.isabstract(CompanyLanguage_Admin)
 
 
-def test_companylanguage::admin_constructor_exists():
-    assert callable(CompanyLanguage::Admin.__init__)
+def test_companylanguage_admin_constructor_exists():
+    assert callable(CompanyLanguage_Admin.__init__)
 
 
-def test_companylanguage::admin_constructor_args():
-    sig = inspect.signature(CompanyLanguage::Admin.__init__)
+def test_companylanguage_admin_constructor_args():
+    sig = inspect.signature(CompanyLanguage_Admin.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_companylanguage::admin_has_name():
-    assert hasattr(CompanyLanguage::Admin, "name")
+def test_companylanguage_admin_has_name():
+    assert hasattr(CompanyLanguage_Admin, "name")
     descriptor = None
-    for klass in CompanyLanguage::Admin.__mro__:
+    for klass in CompanyLanguage_Admin.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -124,87 +124,75 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-CompanyLanguage::Company_strategy = st.builds(
-    CompanyLanguage::Company,
+CompanyLanguage_Company_strategy = st.builds(
+    CompanyLanguage_Company,
     name=
         safe_text
 )
-CompanyLanguage::Employee_strategy = st.builds(
-    CompanyLanguage::Employee,
+CompanyLanguage_Employee_strategy = st.builds(
+    CompanyLanguage_Employee,
     name=
         safe_text
 )
-CompanyLanguage::CEO_strategy = st.builds(
-    CompanyLanguage::CEO,
+CompanyLanguage_CEO_strategy = st.builds(
+    CompanyLanguage_CEO,
     name=
         safe_text
 )
-CompanyLanguage::Admin_strategy = st.builds(
-    CompanyLanguage::Admin,
+CompanyLanguage_Admin_strategy = st.builds(
+    CompanyLanguage_Admin,
     name=
         safe_text
 )
 
-@given(instance=CompanyLanguage::Company_strategy)
+@given(instance=CompanyLanguage_Company_strategy)
 @settings(max_examples=50)
-def test_companylanguage::company_instantiation(instance):
-    assert isinstance(instance, CompanyLanguage::Company)
-
-@given(instance=CompanyLanguage::Company_strategy)
-def test_companylanguage::company_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_companylanguage_company_instantiation(instance):
+    assert isinstance(instance, CompanyLanguage_Company)
 
 
-@given(instance=CompanyLanguage::Company_strategy)
-def test_companylanguage::company_name_setter(instance):
+
+@given(instance=CompanyLanguage_Company_strategy)
+def test_companylanguage_company_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=CompanyLanguage::Employee_strategy)
+@given(instance=CompanyLanguage_Employee_strategy)
 @settings(max_examples=50)
-def test_companylanguage::employee_instantiation(instance):
-    assert isinstance(instance, CompanyLanguage::Employee)
-
-@given(instance=CompanyLanguage::Employee_strategy)
-def test_companylanguage::employee_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_companylanguage_employee_instantiation(instance):
+    assert isinstance(instance, CompanyLanguage_Employee)
 
 
-@given(instance=CompanyLanguage::Employee_strategy)
-def test_companylanguage::employee_name_setter(instance):
+
+@given(instance=CompanyLanguage_Employee_strategy)
+def test_companylanguage_employee_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=CompanyLanguage::CEO_strategy)
+@given(instance=CompanyLanguage_CEO_strategy)
 @settings(max_examples=50)
-def test_companylanguage::ceo_instantiation(instance):
-    assert isinstance(instance, CompanyLanguage::CEO)
-
-@given(instance=CompanyLanguage::CEO_strategy)
-def test_companylanguage::ceo_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_companylanguage_ceo_instantiation(instance):
+    assert isinstance(instance, CompanyLanguage_CEO)
 
 
-@given(instance=CompanyLanguage::CEO_strategy)
-def test_companylanguage::ceo_name_setter(instance):
+
+@given(instance=CompanyLanguage_CEO_strategy)
+def test_companylanguage_ceo_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=CompanyLanguage::Admin_strategy)
+@given(instance=CompanyLanguage_Admin_strategy)
 @settings(max_examples=50)
-def test_companylanguage::admin_instantiation(instance):
-    assert isinstance(instance, CompanyLanguage::Admin)
-
-@given(instance=CompanyLanguage::Admin_strategy)
-def test_companylanguage::admin_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_companylanguage_admin_instantiation(instance):
+    assert isinstance(instance, CompanyLanguage_Admin)
 
 
-@given(instance=CompanyLanguage::Admin_strategy)
-def test_companylanguage::admin_name_setter(instance):
+
+@given(instance=CompanyLanguage_Admin_strategy)
+def test_companylanguage_admin_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original

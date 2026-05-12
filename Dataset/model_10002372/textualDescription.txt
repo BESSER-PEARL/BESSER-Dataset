@@ -1,0 +1,20 @@
+The model has 12 class(es).
+The class 'Vegetarian' has the following attributes: 'name' of type str.
+The class 'Drinks' has the following attributes: 'name' of type str.
+The class 'Bio_Info' has the following attributes: 'age' of type str; 'average_ratings' of type int; 'favourite_cuisine' of type str; 'name' of type str.
+The class 'Dessert' has the following attributes: 'name' of type str.
+The class 'Return' has no attributes.
+The class 'Profile_Page' has the following attributes: 'password' of type str; 'username' of type str.
+The class 'Social_Media' has the following attributes: 'name' of type str.
+The class 'Browse_Recipes' has the following attributes: 'description' of type str; 'name' of type str.
+The class 'Main_Course' has the following attributes: 'name' of type str.
+The class 'Visitor_Comment' has no attributes.
+The class 'Login' has the following attributes: 'username' of type str; 'password' of type str.
+The class 'User' has the following attributes: 'name' of type str.
+'User' (role 'post2', cardinality 0..*) is associated with 'Return' (role 'user3', cardinality 0..*).
+'Login' (role 'user5', cardinality 0..*) is associated with 'User' (role 'login4', cardinality 0..*).
+'User' (role 'pages12', cardinality 0..*) is associated with 'Bio_Info' (role 'user13', cardinality 0..*).
+'Profile_Page' (role 'user1', cardinality 0..*) is associated with 'User' (role 'myprofile0', cardinality 0..*).
+'User' (role 'friends8', cardinality 0..*) is associated with 'Visitor_Comment' (role 'user9', cardinality 0..*).
+'User' (role 'group6', cardinality 0..*) is associated with 'Browse_Recipes' (role 'user7', cardinality 0..*).
+'User' (role 'hashtag10', cardinality 0..*) is associated with 'Social_Media' (role 'user11', cardinality 0..*).

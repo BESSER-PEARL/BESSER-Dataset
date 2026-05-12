@@ -3,19 +3,19 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     NamedElementCS,
-    classescs::PackageCS,
+    classescs_PackageCS,
     ElementCS,
-    classescs::RootCS,
-    classescs::NamedElementCS,
-    classescs::Element,
-    classescs::ElementCS,
-    classescs::PathElementCS,
-    classescs::PathNameCS,
-    classescs::ClassCS,
+    classescs_RootCS,
+    classescs_NamedElementCS,
+    classescs_Element,
+    classescs_ElementCS,
+    classescs_PathElementCS,
+    classescs_PathNameCS,
+    classescs_ClassCS,
 )
 
 # =============================================================================
@@ -38,16 +38,16 @@ def test_namedelementcs_constructor_args():
 
 
 
-def test_classescs::packagecs_is_not_abstract():
-    assert not inspect.isabstract(classescs::PackageCS)
+def test_classescs_packagecs_is_not_abstract():
+    assert not inspect.isabstract(classescs_PackageCS)
 
 
-def test_classescs::packagecs_constructor_exists():
-    assert callable(classescs::PackageCS.__init__)
+def test_classescs_packagecs_constructor_exists():
+    assert callable(classescs_PackageCS.__init__)
 
 
-def test_classescs::packagecs_constructor_args():
-    sig = inspect.signature(classescs::PackageCS.__init__)
+def test_classescs_packagecs_constructor_args():
+    sig = inspect.signature(classescs_PackageCS.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -66,37 +66,37 @@ def test_elementcs_constructor_args():
 
 
 
-def test_classescs::rootcs_is_not_abstract():
-    assert not inspect.isabstract(classescs::RootCS)
+def test_classescs_rootcs_is_not_abstract():
+    assert not inspect.isabstract(classescs_RootCS)
 
 
-def test_classescs::rootcs_constructor_exists():
-    assert callable(classescs::RootCS.__init__)
+def test_classescs_rootcs_constructor_exists():
+    assert callable(classescs_RootCS.__init__)
 
 
-def test_classescs::rootcs_constructor_args():
-    sig = inspect.signature(classescs::RootCS.__init__)
+def test_classescs_rootcs_constructor_args():
+    sig = inspect.signature(classescs_RootCS.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_classescs::namedelementcs_is_not_abstract():
-    assert not inspect.isabstract(classescs::NamedElementCS)
+def test_classescs_namedelementcs_is_not_abstract():
+    assert not inspect.isabstract(classescs_NamedElementCS)
 
 
-def test_classescs::namedelementcs_constructor_exists():
-    assert callable(classescs::NamedElementCS.__init__)
+def test_classescs_namedelementcs_constructor_exists():
+    assert callable(classescs_NamedElementCS.__init__)
 
 
-def test_classescs::namedelementcs_constructor_args():
-    sig = inspect.signature(classescs::NamedElementCS.__init__)
+def test_classescs_namedelementcs_constructor_args():
+    sig = inspect.signature(classescs_NamedElementCS.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_classescs::namedelementcs_has_name():
-    assert hasattr(classescs::NamedElementCS, "name")
+def test_classescs_namedelementcs_has_name():
+    assert hasattr(classescs_NamedElementCS, "name")
     descriptor = None
-    for klass in classescs::NamedElementCS.__mro__:
+    for klass in classescs_NamedElementCS.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -104,72 +104,72 @@ def test_classescs::namedelementcs_has_name():
 
 
 
-def test_classescs::element_is_not_abstract():
-    assert not inspect.isabstract(classescs::Element)
+def test_classescs_element_is_not_abstract():
+    assert not inspect.isabstract(classescs_Element)
 
 
-def test_classescs::element_constructor_exists():
-    assert callable(classescs::Element.__init__)
+def test_classescs_element_constructor_exists():
+    assert callable(classescs_Element.__init__)
 
 
-def test_classescs::element_constructor_args():
-    sig = inspect.signature(classescs::Element.__init__)
+def test_classescs_element_constructor_args():
+    sig = inspect.signature(classescs_Element.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_classescs::elementcs_is_not_abstract():
-    assert not inspect.isabstract(classescs::ElementCS)
+def test_classescs_elementcs_is_not_abstract():
+    assert not inspect.isabstract(classescs_ElementCS)
 
 
-def test_classescs::elementcs_constructor_exists():
-    assert callable(classescs::ElementCS.__init__)
+def test_classescs_elementcs_constructor_exists():
+    assert callable(classescs_ElementCS.__init__)
 
 
-def test_classescs::elementcs_constructor_args():
-    sig = inspect.signature(classescs::ElementCS.__init__)
+def test_classescs_elementcs_constructor_args():
+    sig = inspect.signature(classescs_ElementCS.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_classescs::pathelementcs_is_not_abstract():
-    assert not inspect.isabstract(classescs::PathElementCS)
+def test_classescs_pathelementcs_is_not_abstract():
+    assert not inspect.isabstract(classescs_PathElementCS)
 
 
-def test_classescs::pathelementcs_constructor_exists():
-    assert callable(classescs::PathElementCS.__init__)
+def test_classescs_pathelementcs_constructor_exists():
+    assert callable(classescs_PathElementCS.__init__)
 
 
-def test_classescs::pathelementcs_constructor_args():
-    sig = inspect.signature(classescs::PathElementCS.__init__)
+def test_classescs_pathelementcs_constructor_args():
+    sig = inspect.signature(classescs_PathElementCS.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_classescs::pathnamecs_is_not_abstract():
-    assert not inspect.isabstract(classescs::PathNameCS)
+def test_classescs_pathnamecs_is_not_abstract():
+    assert not inspect.isabstract(classescs_PathNameCS)
 
 
-def test_classescs::pathnamecs_constructor_exists():
-    assert callable(classescs::PathNameCS.__init__)
+def test_classescs_pathnamecs_constructor_exists():
+    assert callable(classescs_PathNameCS.__init__)
 
 
-def test_classescs::pathnamecs_constructor_args():
-    sig = inspect.signature(classescs::PathNameCS.__init__)
+def test_classescs_pathnamecs_constructor_args():
+    sig = inspect.signature(classescs_PathNameCS.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_classescs::classcs_is_not_abstract():
-    assert not inspect.isabstract(classescs::ClassCS)
+def test_classescs_classcs_is_not_abstract():
+    assert not inspect.isabstract(classescs_ClassCS)
 
 
-def test_classescs::classcs_constructor_exists():
-    assert callable(classescs::ClassCS.__init__)
+def test_classescs_classcs_constructor_exists():
+    assert callable(classescs_ClassCS.__init__)
 
 
-def test_classescs::classcs_constructor_args():
-    sig = inspect.signature(classescs::ClassCS.__init__)
+def test_classescs_classcs_constructor_args():
+    sig = inspect.signature(classescs_ClassCS.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -187,34 +187,34 @@ safe_text = st.text(
 NamedElementCS_strategy = st.builds(
     NamedElementCS,
 )
-classescs::PackageCS_strategy = st.builds(
-    classescs::PackageCS,
+classescs_PackageCS_strategy = st.builds(
+    classescs_PackageCS,
 )
 ElementCS_strategy = st.builds(
     ElementCS,
 )
-classescs::RootCS_strategy = st.builds(
-    classescs::RootCS,
+classescs_RootCS_strategy = st.builds(
+    classescs_RootCS,
 )
-classescs::NamedElementCS_strategy = st.builds(
-    classescs::NamedElementCS,
+classescs_NamedElementCS_strategy = st.builds(
+    classescs_NamedElementCS,
     name=
         safe_text
 )
-classescs::Element_strategy = st.builds(
-    classescs::Element,
+classescs_Element_strategy = st.builds(
+    classescs_Element,
 )
-classescs::ElementCS_strategy = st.builds(
-    classescs::ElementCS,
+classescs_ElementCS_strategy = st.builds(
+    classescs_ElementCS,
 )
-classescs::PathElementCS_strategy = st.builds(
-    classescs::PathElementCS,
+classescs_PathElementCS_strategy = st.builds(
+    classescs_PathElementCS,
 )
-classescs::PathNameCS_strategy = st.builds(
-    classescs::PathNameCS,
+classescs_PathNameCS_strategy = st.builds(
+    classescs_PathNameCS,
 )
-classescs::ClassCS_strategy = st.builds(
-    classescs::ClassCS,
+classescs_ClassCS_strategy = st.builds(
+    classescs_ClassCS,
 )
 
 @given(instance=NamedElementCS_strategy)
@@ -222,58 +222,55 @@ classescs::ClassCS_strategy = st.builds(
 def test_namedelementcs_instantiation(instance):
     assert isinstance(instance, NamedElementCS)
 
-@given(instance=classescs::PackageCS_strategy)
+@given(instance=classescs_PackageCS_strategy)
 @settings(max_examples=50)
-def test_classescs::packagecs_instantiation(instance):
-    assert isinstance(instance, classescs::PackageCS)
+def test_classescs_packagecs_instantiation(instance):
+    assert isinstance(instance, classescs_PackageCS)
 
 @given(instance=ElementCS_strategy)
 @settings(max_examples=50)
 def test_elementcs_instantiation(instance):
     assert isinstance(instance, ElementCS)
 
-@given(instance=classescs::RootCS_strategy)
+@given(instance=classescs_RootCS_strategy)
 @settings(max_examples=50)
-def test_classescs::rootcs_instantiation(instance):
-    assert isinstance(instance, classescs::RootCS)
+def test_classescs_rootcs_instantiation(instance):
+    assert isinstance(instance, classescs_RootCS)
 
-@given(instance=classescs::NamedElementCS_strategy)
+@given(instance=classescs_NamedElementCS_strategy)
 @settings(max_examples=50)
-def test_classescs::namedelementcs_instantiation(instance):
-    assert isinstance(instance, classescs::NamedElementCS)
-
-@given(instance=classescs::NamedElementCS_strategy)
-def test_classescs::namedelementcs_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_classescs_namedelementcs_instantiation(instance):
+    assert isinstance(instance, classescs_NamedElementCS)
 
 
-@given(instance=classescs::NamedElementCS_strategy)
-def test_classescs::namedelementcs_name_setter(instance):
+
+@given(instance=classescs_NamedElementCS_strategy)
+def test_classescs_namedelementcs_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=classescs::Element_strategy)
+@given(instance=classescs_Element_strategy)
 @settings(max_examples=50)
-def test_classescs::element_instantiation(instance):
-    assert isinstance(instance, classescs::Element)
+def test_classescs_element_instantiation(instance):
+    assert isinstance(instance, classescs_Element)
 
-@given(instance=classescs::ElementCS_strategy)
+@given(instance=classescs_ElementCS_strategy)
 @settings(max_examples=50)
-def test_classescs::elementcs_instantiation(instance):
-    assert isinstance(instance, classescs::ElementCS)
+def test_classescs_elementcs_instantiation(instance):
+    assert isinstance(instance, classescs_ElementCS)
 
-@given(instance=classescs::PathElementCS_strategy)
+@given(instance=classescs_PathElementCS_strategy)
 @settings(max_examples=50)
-def test_classescs::pathelementcs_instantiation(instance):
-    assert isinstance(instance, classescs::PathElementCS)
+def test_classescs_pathelementcs_instantiation(instance):
+    assert isinstance(instance, classescs_PathElementCS)
 
-@given(instance=classescs::PathNameCS_strategy)
+@given(instance=classescs_PathNameCS_strategy)
 @settings(max_examples=50)
-def test_classescs::pathnamecs_instantiation(instance):
-    assert isinstance(instance, classescs::PathNameCS)
+def test_classescs_pathnamecs_instantiation(instance):
+    assert isinstance(instance, classescs_PathNameCS)
 
-@given(instance=classescs::ClassCS_strategy)
+@given(instance=classescs_ClassCS_strategy)
 @settings(max_examples=50)
-def test_classescs::classcs_instantiation(instance):
-    assert isinstance(instance, classescs::ClassCS)
+def test_classescs_classcs_instantiation(instance):
+    assert isinstance(instance, classescs_ClassCS)

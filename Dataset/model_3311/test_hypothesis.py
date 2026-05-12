@@ -3,18 +3,18 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    grammar::Graph,
-    grammar::Node,
-    grammar::ConnexionInstruction,
-    grammar::Embedding,
-    grammar::RHS,
-    grammar::LHS,
-    grammar::Rule,
+from python_code import (
+    grammar_Graph,
+    grammar_Node,
+    grammar_ConnexionInstruction,
+    grammar_Embedding,
+    grammar_RHS,
+    grammar_LHS,
+    grammar_Rule,
     Named,
-    grammar::Grammar,
+    grammar_Grammar,
 )
 
 # =============================================================================
@@ -23,51 +23,51 @@ from classes import (
 
 
 
-def test_grammar::graph_is_not_abstract():
-    assert not inspect.isabstract(grammar::Graph)
+def test_grammar_graph_is_not_abstract():
+    assert not inspect.isabstract(grammar_Graph)
 
 
-def test_grammar::graph_constructor_exists():
-    assert callable(grammar::Graph.__init__)
+def test_grammar_graph_constructor_exists():
+    assert callable(grammar_Graph.__init__)
 
 
-def test_grammar::graph_constructor_args():
-    sig = inspect.signature(grammar::Graph.__init__)
+def test_grammar_graph_constructor_args():
+    sig = inspect.signature(grammar_Graph.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_grammar::node_is_not_abstract():
-    assert not inspect.isabstract(grammar::Node)
+def test_grammar_node_is_not_abstract():
+    assert not inspect.isabstract(grammar_Node)
 
 
-def test_grammar::node_constructor_exists():
-    assert callable(grammar::Node.__init__)
+def test_grammar_node_constructor_exists():
+    assert callable(grammar_Node.__init__)
 
 
-def test_grammar::node_constructor_args():
-    sig = inspect.signature(grammar::Node.__init__)
+def test_grammar_node_constructor_args():
+    sig = inspect.signature(grammar_Node.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_grammar::connexioninstruction_is_not_abstract():
-    assert not inspect.isabstract(grammar::ConnexionInstruction)
+def test_grammar_connexioninstruction_is_not_abstract():
+    assert not inspect.isabstract(grammar_ConnexionInstruction)
 
 
-def test_grammar::connexioninstruction_constructor_exists():
-    assert callable(grammar::ConnexionInstruction.__init__)
+def test_grammar_connexioninstruction_constructor_exists():
+    assert callable(grammar_ConnexionInstruction.__init__)
 
 
-def test_grammar::connexioninstruction_constructor_args():
-    sig = inspect.signature(grammar::ConnexionInstruction.__init__)
+def test_grammar_connexioninstruction_constructor_args():
+    sig = inspect.signature(grammar_ConnexionInstruction.__init__)
     params = list(sig.parameters.keys())
     assert "m" in params, "Missing parameter 'm'"
 
-def test_grammar::connexioninstruction_has_m():
-    assert hasattr(grammar::ConnexionInstruction, "m")
+def test_grammar_connexioninstruction_has_m():
+    assert hasattr(grammar_ConnexionInstruction, "m")
     descriptor = None
-    for klass in grammar::ConnexionInstruction.__mro__:
+    for klass in grammar_ConnexionInstruction.__mro__:
         if "m" in klass.__dict__:
             descriptor = klass.__dict__["m"]
             break
@@ -75,75 +75,75 @@ def test_grammar::connexioninstruction_has_m():
 
 
 
-def test_grammar::embedding_is_not_abstract():
-    assert not inspect.isabstract(grammar::Embedding)
+def test_grammar_embedding_is_not_abstract():
+    assert not inspect.isabstract(grammar_Embedding)
 
 
-def test_grammar::embedding_constructor_exists():
-    assert callable(grammar::Embedding.__init__)
+def test_grammar_embedding_constructor_exists():
+    assert callable(grammar_Embedding.__init__)
 
 
-def test_grammar::embedding_constructor_args():
-    sig = inspect.signature(grammar::Embedding.__init__)
+def test_grammar_embedding_constructor_args():
+    sig = inspect.signature(grammar_Embedding.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_grammar::rhs_is_not_abstract():
-    assert not inspect.isabstract(grammar::RHS)
+def test_grammar_rhs_is_not_abstract():
+    assert not inspect.isabstract(grammar_RHS)
 
 
-def test_grammar::rhs_constructor_exists():
-    assert callable(grammar::RHS.__init__)
+def test_grammar_rhs_constructor_exists():
+    assert callable(grammar_RHS.__init__)
 
 
-def test_grammar::rhs_constructor_args():
-    sig = inspect.signature(grammar::RHS.__init__)
+def test_grammar_rhs_constructor_args():
+    sig = inspect.signature(grammar_RHS.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_grammar::lhs_is_not_abstract():
-    assert not inspect.isabstract(grammar::LHS)
+def test_grammar_lhs_is_not_abstract():
+    assert not inspect.isabstract(grammar_LHS)
 
 
-def test_grammar::lhs_constructor_exists():
-    assert callable(grammar::LHS.__init__)
+def test_grammar_lhs_constructor_exists():
+    assert callable(grammar_LHS.__init__)
 
 
-def test_grammar::lhs_constructor_args():
-    sig = inspect.signature(grammar::LHS.__init__)
+def test_grammar_lhs_constructor_args():
+    sig = inspect.signature(grammar_LHS.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_grammar::rule_is_not_abstract():
-    assert not inspect.isabstract(grammar::Rule)
+def test_grammar_rule_is_not_abstract():
+    assert not inspect.isabstract(grammar_Rule)
 
 
-def test_grammar::rule_constructor_exists():
-    assert callable(grammar::Rule.__init__)
+def test_grammar_rule_constructor_exists():
+    assert callable(grammar_Rule.__init__)
 
 
-def test_grammar::rule_constructor_args():
-    sig = inspect.signature(grammar::Rule.__init__)
+def test_grammar_rule_constructor_args():
+    sig = inspect.signature(grammar_Rule.__init__)
     params = list(sig.parameters.keys())
     assert "priority" in params, "Missing parameter 'priority'"
     assert "name" in params, "Missing parameter 'name'"
 
-def test_grammar::rule_has_priority():
-    assert hasattr(grammar::Rule, "priority")
+def test_grammar_rule_has_priority():
+    assert hasattr(grammar_Rule, "priority")
     descriptor = None
-    for klass in grammar::Rule.__mro__:
+    for klass in grammar_Rule.__mro__:
         if "priority" in klass.__dict__:
             descriptor = klass.__dict__["priority"]
             break
     assert isinstance(descriptor, property)
 
-def test_grammar::rule_has_name():
-    assert hasattr(grammar::Rule, "name")
+def test_grammar_rule_has_name():
+    assert hasattr(grammar_Rule, "name")
     descriptor = None
-    for klass in grammar::Rule.__mro__:
+    for klass in grammar_Rule.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -165,16 +165,16 @@ def test_named_constructor_args():
 
 
 
-def test_grammar::grammar_is_not_abstract():
-    assert not inspect.isabstract(grammar::Grammar)
+def test_grammar_grammar_is_not_abstract():
+    assert not inspect.isabstract(grammar_Grammar)
 
 
-def test_grammar::grammar_constructor_exists():
-    assert callable(grammar::Grammar.__init__)
+def test_grammar_grammar_constructor_exists():
+    assert callable(grammar_Grammar.__init__)
 
 
-def test_grammar::grammar_constructor_args():
-    sig = inspect.signature(grammar::Grammar.__init__)
+def test_grammar_grammar_constructor_args():
+    sig = inspect.signature(grammar_Grammar.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -189,28 +189,28 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-grammar::Graph_strategy = st.builds(
-    grammar::Graph,
+grammar_Graph_strategy = st.builds(
+    grammar_Graph,
 )
-grammar::Node_strategy = st.builds(
-    grammar::Node,
+grammar_Node_strategy = st.builds(
+    grammar_Node,
 )
-grammar::ConnexionInstruction_strategy = st.builds(
-    grammar::ConnexionInstruction,
+grammar_ConnexionInstruction_strategy = st.builds(
+    grammar_ConnexionInstruction,
     m=
         safe_text
 )
-grammar::Embedding_strategy = st.builds(
-    grammar::Embedding,
+grammar_Embedding_strategy = st.builds(
+    grammar_Embedding,
 )
-grammar::RHS_strategy = st.builds(
-    grammar::RHS,
+grammar_RHS_strategy = st.builds(
+    grammar_RHS,
 )
-grammar::LHS_strategy = st.builds(
-    grammar::LHS,
+grammar_LHS_strategy = st.builds(
+    grammar_LHS,
 )
-grammar::Rule_strategy = st.builds(
-    grammar::Rule,
+grammar_Rule_strategy = st.builds(
+    grammar_Rule,
     priority=
         st.integers(),
     name=
@@ -219,74 +219,65 @@ grammar::Rule_strategy = st.builds(
 Named_strategy = st.builds(
     Named,
 )
-grammar::Grammar_strategy = st.builds(
-    grammar::Grammar,
+grammar_Grammar_strategy = st.builds(
+    grammar_Grammar,
 )
 
-@given(instance=grammar::Graph_strategy)
+@given(instance=grammar_Graph_strategy)
 @settings(max_examples=50)
-def test_grammar::graph_instantiation(instance):
-    assert isinstance(instance, grammar::Graph)
+def test_grammar_graph_instantiation(instance):
+    assert isinstance(instance, grammar_Graph)
 
-@given(instance=grammar::Node_strategy)
+@given(instance=grammar_Node_strategy)
 @settings(max_examples=50)
-def test_grammar::node_instantiation(instance):
-    assert isinstance(instance, grammar::Node)
+def test_grammar_node_instantiation(instance):
+    assert isinstance(instance, grammar_Node)
 
-@given(instance=grammar::ConnexionInstruction_strategy)
+@given(instance=grammar_ConnexionInstruction_strategy)
 @settings(max_examples=50)
-def test_grammar::connexioninstruction_instantiation(instance):
-    assert isinstance(instance, grammar::ConnexionInstruction)
-
-@given(instance=grammar::ConnexionInstruction_strategy)
-def test_grammar::connexioninstruction_m_type(instance):
-    assert isinstance(instance.m, str)
+def test_grammar_connexioninstruction_instantiation(instance):
+    assert isinstance(instance, grammar_ConnexionInstruction)
 
 
-@given(instance=grammar::ConnexionInstruction_strategy)
-def test_grammar::connexioninstruction_m_setter(instance):
+
+@given(instance=grammar_ConnexionInstruction_strategy)
+def test_grammar_connexioninstruction_m_setter(instance):
     original = instance.m
     instance.m = original
     assert instance.m == original
 
-@given(instance=grammar::Embedding_strategy)
+@given(instance=grammar_Embedding_strategy)
 @settings(max_examples=50)
-def test_grammar::embedding_instantiation(instance):
-    assert isinstance(instance, grammar::Embedding)
+def test_grammar_embedding_instantiation(instance):
+    assert isinstance(instance, grammar_Embedding)
 
-@given(instance=grammar::RHS_strategy)
+@given(instance=grammar_RHS_strategy)
 @settings(max_examples=50)
-def test_grammar::rhs_instantiation(instance):
-    assert isinstance(instance, grammar::RHS)
+def test_grammar_rhs_instantiation(instance):
+    assert isinstance(instance, grammar_RHS)
 
-@given(instance=grammar::LHS_strategy)
+@given(instance=grammar_LHS_strategy)
 @settings(max_examples=50)
-def test_grammar::lhs_instantiation(instance):
-    assert isinstance(instance, grammar::LHS)
+def test_grammar_lhs_instantiation(instance):
+    assert isinstance(instance, grammar_LHS)
 
-@given(instance=grammar::Rule_strategy)
+@given(instance=grammar_Rule_strategy)
 @settings(max_examples=50)
-def test_grammar::rule_instantiation(instance):
-    assert isinstance(instance, grammar::Rule)
-
-@given(instance=grammar::Rule_strategy)
-def test_grammar::rule_priority_type(instance):
-    assert isinstance(instance.priority, int)
+def test_grammar_rule_instantiation(instance):
+    assert isinstance(instance, grammar_Rule)
 
 
-@given(instance=grammar::Rule_strategy)
-def test_grammar::rule_priority_setter(instance):
+
+@given(instance=grammar_Rule_strategy)
+def test_grammar_rule_priority_setter(instance):
     original = instance.priority
     instance.priority = original
     assert instance.priority == original
 
-@given(instance=grammar::Rule_strategy)
-def test_grammar::rule_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
-@given(instance=grammar::Rule_strategy)
-def test_grammar::rule_name_setter(instance):
+@given(instance=grammar_Rule_strategy)
+def test_grammar_rule_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
@@ -296,7 +287,7 @@ def test_grammar::rule_name_setter(instance):
 def test_named_instantiation(instance):
     assert isinstance(instance, Named)
 
-@given(instance=grammar::Grammar_strategy)
+@given(instance=grammar_Grammar_strategy)
 @settings(max_examples=50)
-def test_grammar::grammar_instantiation(instance):
-    assert isinstance(instance, grammar::Grammar)
+def test_grammar_grammar_instantiation(instance):
+    assert isinstance(instance, grammar_Grammar)

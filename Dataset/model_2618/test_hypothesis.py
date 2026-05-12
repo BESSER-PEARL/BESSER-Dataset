@@ -3,29 +3,29 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     DNodeEdgeStyle,
-    diastyle::DEdgeStyle,
-    diastyle::DNodeStyle,
-    diastyle::DGraphElement,
-    diastyle::DStyleBridge,
-    diastyle::DGraph,
-    diastyle::DBaseStyle,
+    diastyle_DEdgeStyle,
+    diastyle_DNodeStyle,
+    diastyle_DGraphElement,
+    diastyle_DStyleBridge,
+    diastyle_DGraph,
+    diastyle_DBaseStyle,
     DBaseStyle,
-    diastyle::DNestingEdgeStyle,
+    diastyle_DNestingEdgeStyle,
     EModelElement,
-    diastyle::DStyle,
-    diastyle::DNodeEdgeStyle,
+    diastyle_DStyle,
+    diastyle_DNodeEdgeStyle,
     DDirection,
-    DShape,
-    DAlignment,
-    DLayout,
     DColor,
-    DFontStyle,
+    DLayout,
     DLine,
+    DShape,
+    DFontStyle,
     DFontName,
+    DAlignment,
 )
 
 # =============================================================================
@@ -48,127 +48,127 @@ def test_dnodeedgestyle_constructor_args():
 
 
 
-def test_diastyle::dedgestyle_is_not_abstract():
-    assert not inspect.isabstract(diastyle::DEdgeStyle)
+def test_diastyle_dedgestyle_is_not_abstract():
+    assert not inspect.isabstract(diastyle_DEdgeStyle)
 
 
-def test_diastyle::dedgestyle_constructor_exists():
-    assert callable(diastyle::DEdgeStyle.__init__)
+def test_diastyle_dedgestyle_constructor_exists():
+    assert callable(diastyle_DEdgeStyle.__init__)
 
 
-def test_diastyle::dedgestyle_constructor_args():
-    sig = inspect.signature(diastyle::DEdgeStyle.__init__)
+def test_diastyle_dedgestyle_constructor_args():
+    sig = inspect.signature(diastyle_DEdgeStyle.__init__)
     params = list(sig.parameters.keys())
     assert "arrowDirection" in params, "Missing parameter 'arrowDirection'"
-    assert "arrowSize" in params, "Missing parameter 'arrowSize'"
     assert "shape" in params, "Missing parameter 'shape'"
+    assert "arrowSize" in params, "Missing parameter 'arrowSize'"
 
-def test_diastyle::dedgestyle_has_arrowDirection():
-    assert hasattr(diastyle::DEdgeStyle, "arrowDirection")
+def test_diastyle_dedgestyle_has_arrowDirection():
+    assert hasattr(diastyle_DEdgeStyle, "arrowDirection")
     descriptor = None
-    for klass in diastyle::DEdgeStyle.__mro__:
+    for klass in diastyle_DEdgeStyle.__mro__:
         if "arrowDirection" in klass.__dict__:
             descriptor = klass.__dict__["arrowDirection"]
             break
     assert isinstance(descriptor, property)
 
-def test_diastyle::dedgestyle_has_arrowSize():
-    assert hasattr(diastyle::DEdgeStyle, "arrowSize")
+def test_diastyle_dedgestyle_has_shape():
+    assert hasattr(diastyle_DEdgeStyle, "shape")
     descriptor = None
-    for klass in diastyle::DEdgeStyle.__mro__:
+    for klass in diastyle_DEdgeStyle.__mro__:
+        if "shape" in klass.__dict__:
+            descriptor = klass.__dict__["shape"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_diastyle_dedgestyle_has_arrowSize():
+    assert hasattr(diastyle_DEdgeStyle, "arrowSize")
+    descriptor = None
+    for klass in diastyle_DEdgeStyle.__mro__:
         if "arrowSize" in klass.__dict__:
             descriptor = klass.__dict__["arrowSize"]
             break
     assert isinstance(descriptor, property)
 
-def test_diastyle::dedgestyle_has_shape():
-    assert hasattr(diastyle::DEdgeStyle, "shape")
-    descriptor = None
-    for klass in diastyle::DEdgeStyle.__mro__:
-        if "shape" in klass.__dict__:
-            descriptor = klass.__dict__["shape"]
-            break
-    assert isinstance(descriptor, property)
 
 
-
-def test_diastyle::dnodestyle_is_not_abstract():
-    assert not inspect.isabstract(diastyle::DNodeStyle)
-
-
-def test_diastyle::dnodestyle_constructor_exists():
-    assert callable(diastyle::DNodeStyle.__init__)
+def test_diastyle_dnodestyle_is_not_abstract():
+    assert not inspect.isabstract(diastyle_DNodeStyle)
 
 
-def test_diastyle::dnodestyle_constructor_args():
-    sig = inspect.signature(diastyle::DNodeStyle.__init__)
+def test_diastyle_dnodestyle_constructor_exists():
+    assert callable(diastyle_DNodeStyle.__init__)
+
+
+def test_diastyle_dnodestyle_constructor_args():
+    sig = inspect.signature(diastyle_DNodeStyle.__init__)
     params = list(sig.parameters.keys())
-    assert "figure" in params, "Missing parameter 'figure'"
-    assert "layout" in params, "Missing parameter 'layout'"
     assert "shape" in params, "Missing parameter 'shape'"
+    assert "radius" in params, "Missing parameter 'radius'"
     assert "shapeData" in params, "Missing parameter 'shapeData'"
     assert "sizeX" in params, "Missing parameter 'sizeX'"
-    assert "radius" in params, "Missing parameter 'radius'"
+    assert "figure" in params, "Missing parameter 'figure'"
+    assert "layout" in params, "Missing parameter 'layout'"
     assert "sizeY" in params, "Missing parameter 'sizeY'"
 
-def test_diastyle::dnodestyle_has_figure():
-    assert hasattr(diastyle::DNodeStyle, "figure")
+def test_diastyle_dnodestyle_has_shape():
+    assert hasattr(diastyle_DNodeStyle, "shape")
     descriptor = None
-    for klass in diastyle::DNodeStyle.__mro__:
-        if "figure" in klass.__dict__:
-            descriptor = klass.__dict__["figure"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_diastyle::dnodestyle_has_layout():
-    assert hasattr(diastyle::DNodeStyle, "layout")
-    descriptor = None
-    for klass in diastyle::DNodeStyle.__mro__:
-        if "layout" in klass.__dict__:
-            descriptor = klass.__dict__["layout"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_diastyle::dnodestyle_has_shape():
-    assert hasattr(diastyle::DNodeStyle, "shape")
-    descriptor = None
-    for klass in diastyle::DNodeStyle.__mro__:
+    for klass in diastyle_DNodeStyle.__mro__:
         if "shape" in klass.__dict__:
             descriptor = klass.__dict__["shape"]
             break
     assert isinstance(descriptor, property)
 
-def test_diastyle::dnodestyle_has_shapeData():
-    assert hasattr(diastyle::DNodeStyle, "shapeData")
+def test_diastyle_dnodestyle_has_radius():
+    assert hasattr(diastyle_DNodeStyle, "radius")
     descriptor = None
-    for klass in diastyle::DNodeStyle.__mro__:
-        if "shapeData" in klass.__dict__:
-            descriptor = klass.__dict__["shapeData"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_diastyle::dnodestyle_has_sizeX():
-    assert hasattr(diastyle::DNodeStyle, "sizeX")
-    descriptor = None
-    for klass in diastyle::DNodeStyle.__mro__:
-        if "sizeX" in klass.__dict__:
-            descriptor = klass.__dict__["sizeX"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_diastyle::dnodestyle_has_radius():
-    assert hasattr(diastyle::DNodeStyle, "radius")
-    descriptor = None
-    for klass in diastyle::DNodeStyle.__mro__:
+    for klass in diastyle_DNodeStyle.__mro__:
         if "radius" in klass.__dict__:
             descriptor = klass.__dict__["radius"]
             break
     assert isinstance(descriptor, property)
 
-def test_diastyle::dnodestyle_has_sizeY():
-    assert hasattr(diastyle::DNodeStyle, "sizeY")
+def test_diastyle_dnodestyle_has_shapeData():
+    assert hasattr(diastyle_DNodeStyle, "shapeData")
     descriptor = None
-    for klass in diastyle::DNodeStyle.__mro__:
+    for klass in diastyle_DNodeStyle.__mro__:
+        if "shapeData" in klass.__dict__:
+            descriptor = klass.__dict__["shapeData"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_diastyle_dnodestyle_has_sizeX():
+    assert hasattr(diastyle_DNodeStyle, "sizeX")
+    descriptor = None
+    for klass in diastyle_DNodeStyle.__mro__:
+        if "sizeX" in klass.__dict__:
+            descriptor = klass.__dict__["sizeX"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_diastyle_dnodestyle_has_figure():
+    assert hasattr(diastyle_DNodeStyle, "figure")
+    descriptor = None
+    for klass in diastyle_DNodeStyle.__mro__:
+        if "figure" in klass.__dict__:
+            descriptor = klass.__dict__["figure"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_diastyle_dnodestyle_has_layout():
+    assert hasattr(diastyle_DNodeStyle, "layout")
+    descriptor = None
+    for klass in diastyle_DNodeStyle.__mro__:
+        if "layout" in klass.__dict__:
+            descriptor = klass.__dict__["layout"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_diastyle_dnodestyle_has_sizeY():
+    assert hasattr(diastyle_DNodeStyle, "sizeY")
+    descriptor = None
+    for klass in diastyle_DNodeStyle.__mro__:
         if "sizeY" in klass.__dict__:
             descriptor = klass.__dict__["sizeY"]
             break
@@ -176,37 +176,37 @@ def test_diastyle::dnodestyle_has_sizeY():
 
 
 
-def test_diastyle::dgraphelement_is_not_abstract():
-    assert not inspect.isabstract(diastyle::DGraphElement)
+def test_diastyle_dgraphelement_is_not_abstract():
+    assert not inspect.isabstract(diastyle_DGraphElement)
 
 
-def test_diastyle::dgraphelement_constructor_exists():
-    assert callable(diastyle::DGraphElement.__init__)
+def test_diastyle_dgraphelement_constructor_exists():
+    assert callable(diastyle_DGraphElement.__init__)
 
 
-def test_diastyle::dgraphelement_constructor_args():
-    sig = inspect.signature(diastyle::DGraphElement.__init__)
+def test_diastyle_dgraphelement_constructor_args():
+    sig = inspect.signature(diastyle_DGraphElement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_diastyle::dstylebridge_is_not_abstract():
-    assert not inspect.isabstract(diastyle::DStyleBridge)
+def test_diastyle_dstylebridge_is_not_abstract():
+    assert not inspect.isabstract(diastyle_DStyleBridge)
 
 
-def test_diastyle::dstylebridge_constructor_exists():
-    assert callable(diastyle::DStyleBridge.__init__)
+def test_diastyle_dstylebridge_constructor_exists():
+    assert callable(diastyle_DStyleBridge.__init__)
 
 
-def test_diastyle::dstylebridge_constructor_args():
-    sig = inspect.signature(diastyle::DStyleBridge.__init__)
+def test_diastyle_dstylebridge_constructor_args():
+    sig = inspect.signature(diastyle_DStyleBridge.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_diastyle::dstylebridge_has_name():
-    assert hasattr(diastyle::DStyleBridge, "name")
+def test_diastyle_dstylebridge_has_name():
+    assert hasattr(diastyle_DStyleBridge, "name")
     descriptor = None
-    for klass in diastyle::DStyleBridge.__mro__:
+    for klass in diastyle_DStyleBridge.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -214,59 +214,59 @@ def test_diastyle::dstylebridge_has_name():
 
 
 
-def test_diastyle::dgraph_is_not_abstract():
-    assert not inspect.isabstract(diastyle::DGraph)
+def test_diastyle_dgraph_is_not_abstract():
+    assert not inspect.isabstract(diastyle_DGraph)
 
 
-def test_diastyle::dgraph_constructor_exists():
-    assert callable(diastyle::DGraph.__init__)
+def test_diastyle_dgraph_constructor_exists():
+    assert callable(diastyle_DGraph.__init__)
 
 
-def test_diastyle::dgraph_constructor_args():
-    sig = inspect.signature(diastyle::DGraph.__init__)
+def test_diastyle_dgraph_constructor_args():
+    sig = inspect.signature(diastyle_DGraph.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_diastyle::dbasestyle_is_not_abstract():
-    assert not inspect.isabstract(diastyle::DBaseStyle)
+def test_diastyle_dbasestyle_is_not_abstract():
+    assert not inspect.isabstract(diastyle_DBaseStyle)
 
 
-def test_diastyle::dbasestyle_constructor_exists():
-    assert callable(diastyle::DBaseStyle.__init__)
+def test_diastyle_dbasestyle_constructor_exists():
+    assert callable(diastyle_DBaseStyle.__init__)
 
 
-def test_diastyle::dbasestyle_constructor_args():
-    sig = inspect.signature(diastyle::DBaseStyle.__init__)
+def test_diastyle_dbasestyle_constructor_args():
+    sig = inspect.signature(diastyle_DBaseStyle.__init__)
     params = list(sig.parameters.keys())
-    assert "parentName" in params, "Missing parameter 'parentName'"
     assert "name" in params, "Missing parameter 'name'"
     assert "color" in params, "Missing parameter 'color'"
+    assert "parentName" in params, "Missing parameter 'parentName'"
 
-def test_diastyle::dbasestyle_has_parentName():
-    assert hasattr(diastyle::DBaseStyle, "parentName")
+def test_diastyle_dbasestyle_has_name():
+    assert hasattr(diastyle_DBaseStyle, "name")
     descriptor = None
-    for klass in diastyle::DBaseStyle.__mro__:
-        if "parentName" in klass.__dict__:
-            descriptor = klass.__dict__["parentName"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_diastyle::dbasestyle_has_name():
-    assert hasattr(diastyle::DBaseStyle, "name")
-    descriptor = None
-    for klass in diastyle::DBaseStyle.__mro__:
+    for klass in diastyle_DBaseStyle.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
-def test_diastyle::dbasestyle_has_color():
-    assert hasattr(diastyle::DBaseStyle, "color")
+def test_diastyle_dbasestyle_has_color():
+    assert hasattr(diastyle_DBaseStyle, "color")
     descriptor = None
-    for klass in diastyle::DBaseStyle.__mro__:
+    for klass in diastyle_DBaseStyle.__mro__:
         if "color" in klass.__dict__:
             descriptor = klass.__dict__["color"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_diastyle_dbasestyle_has_parentName():
+    assert hasattr(diastyle_DBaseStyle, "parentName")
+    descriptor = None
+    for klass in diastyle_DBaseStyle.__mro__:
+        if "parentName" in klass.__dict__:
+            descriptor = klass.__dict__["parentName"]
             break
     assert isinstance(descriptor, property)
 
@@ -286,16 +286,16 @@ def test_dbasestyle_constructor_args():
 
 
 
-def test_diastyle::dnestingedgestyle_is_not_abstract():
-    assert not inspect.isabstract(diastyle::DNestingEdgeStyle)
+def test_diastyle_dnestingedgestyle_is_not_abstract():
+    assert not inspect.isabstract(diastyle_DNestingEdgeStyle)
 
 
-def test_diastyle::dnestingedgestyle_constructor_exists():
-    assert callable(diastyle::DNestingEdgeStyle.__init__)
+def test_diastyle_dnestingedgestyle_constructor_exists():
+    assert callable(diastyle_DNestingEdgeStyle.__init__)
 
 
-def test_diastyle::dnestingedgestyle_constructor_args():
-    sig = inspect.signature(diastyle::DNestingEdgeStyle.__init__)
+def test_diastyle_dnestingedgestyle_constructor_args():
+    sig = inspect.signature(diastyle_DNestingEdgeStyle.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -314,23 +314,23 @@ def test_emodelelement_constructor_args():
 
 
 
-def test_diastyle::dstyle_is_not_abstract():
-    assert not inspect.isabstract(diastyle::DStyle)
+def test_diastyle_dstyle_is_not_abstract():
+    assert not inspect.isabstract(diastyle_DStyle)
 
 
-def test_diastyle::dstyle_constructor_exists():
-    assert callable(diastyle::DStyle.__init__)
+def test_diastyle_dstyle_constructor_exists():
+    assert callable(diastyle_DStyle.__init__)
 
 
-def test_diastyle::dstyle_constructor_args():
-    sig = inspect.signature(diastyle::DStyle.__init__)
+def test_diastyle_dstyle_constructor_args():
+    sig = inspect.signature(diastyle_DStyle.__init__)
     params = list(sig.parameters.keys())
     assert "styleHandler" in params, "Missing parameter 'styleHandler'"
 
-def test_diastyle::dstyle_has_styleHandler():
-    assert hasattr(diastyle::DStyle, "styleHandler")
+def test_diastyle_dstyle_has_styleHandler():
+    assert hasattr(diastyle_DStyle, "styleHandler")
     descriptor = None
-    for klass in diastyle::DStyle.__mro__:
+    for klass in diastyle_DStyle.__mro__:
         if "styleHandler" in klass.__dict__:
             descriptor = klass.__dict__["styleHandler"]
             break
@@ -338,95 +338,95 @@ def test_diastyle::dstyle_has_styleHandler():
 
 
 
-def test_diastyle::dnodeedgestyle_is_not_abstract():
-    assert not inspect.isabstract(diastyle::DNodeEdgeStyle)
+def test_diastyle_dnodeedgestyle_is_not_abstract():
+    assert not inspect.isabstract(diastyle_DNodeEdgeStyle)
 
 
-def test_diastyle::dnodeedgestyle_constructor_exists():
-    assert callable(diastyle::DNodeEdgeStyle.__init__)
+def test_diastyle_dnodeedgestyle_constructor_exists():
+    assert callable(diastyle_DNodeEdgeStyle.__init__)
 
 
-def test_diastyle::dnodeedgestyle_constructor_args():
-    sig = inspect.signature(diastyle::DNodeEdgeStyle.__init__)
+def test_diastyle_dnodeedgestyle_constructor_args():
+    sig = inspect.signature(diastyle_DNodeEdgeStyle.__init__)
     params = list(sig.parameters.keys())
-    assert "line" in params, "Missing parameter 'line'"
+    assert "fontStyle" in params, "Missing parameter 'fontStyle'"
+    assert "lineWidth" in params, "Missing parameter 'lineWidth'"
+    assert "textAlignment" in params, "Missing parameter 'textAlignment'"
     assert "icon" in params, "Missing parameter 'icon'"
     assert "fontColor" in params, "Missing parameter 'fontColor'"
-    assert "lineWidth" in params, "Missing parameter 'lineWidth'"
     assert "fontName" in params, "Missing parameter 'fontName'"
-    assert "textAlignment" in params, "Missing parameter 'textAlignment'"
-    assert "fontStyle" in params, "Missing parameter 'fontStyle'"
     assert "fontSize" in params, "Missing parameter 'fontSize'"
+    assert "line" in params, "Missing parameter 'line'"
 
-def test_diastyle::dnodeedgestyle_has_line():
-    assert hasattr(diastyle::DNodeEdgeStyle, "line")
+def test_diastyle_dnodeedgestyle_has_fontStyle():
+    assert hasattr(diastyle_DNodeEdgeStyle, "fontStyle")
     descriptor = None
-    for klass in diastyle::DNodeEdgeStyle.__mro__:
-        if "line" in klass.__dict__:
-            descriptor = klass.__dict__["line"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_diastyle::dnodeedgestyle_has_icon():
-    assert hasattr(diastyle::DNodeEdgeStyle, "icon")
-    descriptor = None
-    for klass in diastyle::DNodeEdgeStyle.__mro__:
-        if "icon" in klass.__dict__:
-            descriptor = klass.__dict__["icon"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_diastyle::dnodeedgestyle_has_fontColor():
-    assert hasattr(diastyle::DNodeEdgeStyle, "fontColor")
-    descriptor = None
-    for klass in diastyle::DNodeEdgeStyle.__mro__:
-        if "fontColor" in klass.__dict__:
-            descriptor = klass.__dict__["fontColor"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_diastyle::dnodeedgestyle_has_lineWidth():
-    assert hasattr(diastyle::DNodeEdgeStyle, "lineWidth")
-    descriptor = None
-    for klass in diastyle::DNodeEdgeStyle.__mro__:
-        if "lineWidth" in klass.__dict__:
-            descriptor = klass.__dict__["lineWidth"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_diastyle::dnodeedgestyle_has_fontName():
-    assert hasattr(diastyle::DNodeEdgeStyle, "fontName")
-    descriptor = None
-    for klass in diastyle::DNodeEdgeStyle.__mro__:
-        if "fontName" in klass.__dict__:
-            descriptor = klass.__dict__["fontName"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_diastyle::dnodeedgestyle_has_textAlignment():
-    assert hasattr(diastyle::DNodeEdgeStyle, "textAlignment")
-    descriptor = None
-    for klass in diastyle::DNodeEdgeStyle.__mro__:
-        if "textAlignment" in klass.__dict__:
-            descriptor = klass.__dict__["textAlignment"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_diastyle::dnodeedgestyle_has_fontStyle():
-    assert hasattr(diastyle::DNodeEdgeStyle, "fontStyle")
-    descriptor = None
-    for klass in diastyle::DNodeEdgeStyle.__mro__:
+    for klass in diastyle_DNodeEdgeStyle.__mro__:
         if "fontStyle" in klass.__dict__:
             descriptor = klass.__dict__["fontStyle"]
             break
     assert isinstance(descriptor, property)
 
-def test_diastyle::dnodeedgestyle_has_fontSize():
-    assert hasattr(diastyle::DNodeEdgeStyle, "fontSize")
+def test_diastyle_dnodeedgestyle_has_lineWidth():
+    assert hasattr(diastyle_DNodeEdgeStyle, "lineWidth")
     descriptor = None
-    for klass in diastyle::DNodeEdgeStyle.__mro__:
+    for klass in diastyle_DNodeEdgeStyle.__mro__:
+        if "lineWidth" in klass.__dict__:
+            descriptor = klass.__dict__["lineWidth"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_diastyle_dnodeedgestyle_has_textAlignment():
+    assert hasattr(diastyle_DNodeEdgeStyle, "textAlignment")
+    descriptor = None
+    for klass in diastyle_DNodeEdgeStyle.__mro__:
+        if "textAlignment" in klass.__dict__:
+            descriptor = klass.__dict__["textAlignment"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_diastyle_dnodeedgestyle_has_icon():
+    assert hasattr(diastyle_DNodeEdgeStyle, "icon")
+    descriptor = None
+    for klass in diastyle_DNodeEdgeStyle.__mro__:
+        if "icon" in klass.__dict__:
+            descriptor = klass.__dict__["icon"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_diastyle_dnodeedgestyle_has_fontColor():
+    assert hasattr(diastyle_DNodeEdgeStyle, "fontColor")
+    descriptor = None
+    for klass in diastyle_DNodeEdgeStyle.__mro__:
+        if "fontColor" in klass.__dict__:
+            descriptor = klass.__dict__["fontColor"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_diastyle_dnodeedgestyle_has_fontName():
+    assert hasattr(diastyle_DNodeEdgeStyle, "fontName")
+    descriptor = None
+    for klass in diastyle_DNodeEdgeStyle.__mro__:
+        if "fontName" in klass.__dict__:
+            descriptor = klass.__dict__["fontName"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_diastyle_dnodeedgestyle_has_fontSize():
+    assert hasattr(diastyle_DNodeEdgeStyle, "fontSize")
+    descriptor = None
+    for klass in diastyle_DNodeEdgeStyle.__mro__:
         if "fontSize" in klass.__dict__:
             descriptor = klass.__dict__["fontSize"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_diastyle_dnodeedgestyle_has_line():
+    assert hasattr(diastyle_DNodeEdgeStyle, "line")
+    descriptor = None
+    for klass in diastyle_DNodeEdgeStyle.__mro__:
+        if "line" in klass.__dict__:
+            descriptor = klass.__dict__["line"]
             break
     assert isinstance(descriptor, property)
 
@@ -439,13 +439,77 @@ def test_ddirection_has_all_literals():
     enum_literals = [lit.name for lit in DDirection]
     expected_literals = [
         "right",
-        "left",
-        "none",
         "bidirectional",
+        "none",
+        "left",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
         assert lit_name in enum_literals, f"Literal '' missing in DDirection"
+
+def test_dcolor_exists():
+    # Check that the Enumeration exists
+    assert DColor is not None
+
+def test_dcolor_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in DColor]
+    expected_literals = [
+        "lightGreen",
+        "gray",
+        "darkBlue",
+        "darkGreen",
+        "darkGray",
+        "green",
+        "white",
+        "black",
+        "cyan",
+        "orange",
+        "lightBlue",
+        "blue",
+        "red",
+        "yellow",
+        "lightGray",
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in DColor"
+
+def test_dlayout_exists():
+    # Check that the Enumeration exists
+    assert DLayout is not None
+
+def test_dlayout_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in DLayout]
+    expected_literals = [
+        "free",
+        "none",
+        "vertical",
+        "horizontal",
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in DLayout"
+
+def test_dline_exists():
+    # Check that the Enumeration exists
+    assert DLine is not None
+
+def test_dline_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in DLine]
+    expected_literals = [
+        "solid",
+        "dashdot",
+        "custom",
+        "dot",
+        "dash",
+        "dashdotdot",
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in DLine"
 
 def test_dshape_exists():
     # Check that the Enumeration exists
@@ -456,78 +520,16 @@ def test_dshape_has_all_literals():
     enum_literals = [lit.name for lit in DShape]
     expected_literals = [
         "rectangle",
-        "ellipse",
-        "arrow",
+        "roundedRectangle",
+        "custom",
         "dot",
         "triangle",
-        "custom",
-        "roundedRectangle",
+        "ellipse",
+        "arrow",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
         assert lit_name in enum_literals, f"Literal '' missing in DShape"
-
-def test_dalignment_exists():
-    # Check that the Enumeration exists
-    assert DAlignment is not None
-
-def test_dalignment_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in DAlignment]
-    expected_literals = [
-        "fill",
-        "end",
-        "center",
-        "beginning",
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in DAlignment"
-
-def test_dlayout_exists():
-    # Check that the Enumeration exists
-    assert DLayout is not None
-
-def test_dlayout_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in DLayout]
-    expected_literals = [
-        "vertical",
-        "none",
-        "free",
-        "horizontal",
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in DLayout"
-
-def test_dcolor_exists():
-    # Check that the Enumeration exists
-    assert DColor is not None
-
-def test_dcolor_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in DColor]
-    expected_literals = [
-        "black",
-        "darkBlue",
-        "blue",
-        "red",
-        "lightBlue",
-        "lightGray",
-        "yellow",
-        "gray",
-        "cyan",
-        "orange",
-        "white",
-        "darkGreen",
-        "lightGreen",
-        "darkGray",
-        "green",
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in DColor"
 
 def test_dfontstyle_exists():
     # Check that the Enumeration exists
@@ -537,32 +539,13 @@ def test_dfontstyle_has_all_literals():
     # Collect the names of literals in this Enumeration
     enum_literals = [lit.name for lit in DFontStyle]
     expected_literals = [
+        "italic",
         "bold",
         "normal",
-        "italic",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
         assert lit_name in enum_literals, f"Literal '' missing in DFontStyle"
-
-def test_dline_exists():
-    # Check that the Enumeration exists
-    assert DLine is not None
-
-def test_dline_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in DLine]
-    expected_literals = [
-        "dashdotdot",
-        "dashdot",
-        "solid",
-        "dash",
-        "custom",
-        "dot",
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in DLine"
 
 def test_dfontname_exists():
     # Check that the Enumeration exists
@@ -572,13 +555,30 @@ def test_dfontname_has_all_literals():
     # Collect the names of literals in this Enumeration
     enum_literals = [lit.name for lit in DFontName]
     expected_literals = [
-        "courier",
         "times",
         "arial",
+        "courier",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
         assert lit_name in enum_literals, f"Literal '' missing in DFontName"
+
+def test_dalignment_exists():
+    # Check that the Enumeration exists
+    assert DAlignment is not None
+
+def test_dalignment_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in DAlignment]
+    expected_literals = [
+        "beginning",
+        "center",
+        "fill",
+        "end",
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in DAlignment"
 
 
 # =============================================================================
@@ -595,84 +595,84 @@ safe_text = st.text(
 DNodeEdgeStyle_strategy = st.builds(
     DNodeEdgeStyle,
 )
-diastyle::DEdgeStyle_strategy = st.builds(
-    diastyle::DEdgeStyle,
+diastyle_DEdgeStyle_strategy = st.builds(
+    diastyle_DEdgeStyle,
     arrowDirection=
         safe_text,
+    shape=
+        safe_text,
     arrowSize=
-        st.integers(),
-    shape=
-        safe_text
+        st.integers()
 )
-diastyle::DNodeStyle_strategy = st.builds(
-    diastyle::DNodeStyle,
-    figure=
-        safe_text,
-    layout=
-        safe_text,
+diastyle_DNodeStyle_strategy = st.builds(
+    diastyle_DNodeStyle,
     shape=
         safe_text,
+    radius=
+        st.integers(),
     shapeData=
         safe_text,
     sizeX=
         st.integers(),
-    radius=
-        st.integers(),
+    figure=
+        safe_text,
+    layout=
+        safe_text,
     sizeY=
         st.integers()
 )
-diastyle::DGraphElement_strategy = st.builds(
-    diastyle::DGraphElement,
+diastyle_DGraphElement_strategy = st.builds(
+    diastyle_DGraphElement,
 )
-diastyle::DStyleBridge_strategy = st.builds(
-    diastyle::DStyleBridge,
+diastyle_DStyleBridge_strategy = st.builds(
+    diastyle_DStyleBridge,
     name=
         safe_text
 )
-diastyle::DGraph_strategy = st.builds(
-    diastyle::DGraph,
+diastyle_DGraph_strategy = st.builds(
+    diastyle_DGraph,
 )
-diastyle::DBaseStyle_strategy = st.builds(
-    diastyle::DBaseStyle,
-    parentName=
-        safe_text,
+diastyle_DBaseStyle_strategy = st.builds(
+    diastyle_DBaseStyle,
     name=
         safe_text,
     color=
+        safe_text,
+    parentName=
         safe_text
 )
 DBaseStyle_strategy = st.builds(
     DBaseStyle,
 )
-diastyle::DNestingEdgeStyle_strategy = st.builds(
-    diastyle::DNestingEdgeStyle,
+diastyle_DNestingEdgeStyle_strategy = st.builds(
+    diastyle_DNestingEdgeStyle,
 )
 EModelElement_strategy = st.builds(
     EModelElement,
 )
-diastyle::DStyle_strategy = st.builds(
-    diastyle::DStyle,
+diastyle_DStyle_strategy = st.builds(
+    diastyle_DStyle,
     styleHandler=
         safe_text
 )
-diastyle::DNodeEdgeStyle_strategy = st.builds(
-    diastyle::DNodeEdgeStyle,
-    line=
+diastyle_DNodeEdgeStyle_strategy = st.builds(
+    diastyle_DNodeEdgeStyle,
+    fontStyle=
+        safe_text,
+    lineWidth=
+        st.integers(),
+    textAlignment=
         safe_text,
     icon=
         safe_text,
     fontColor=
         safe_text,
-    lineWidth=
-        st.integers(),
     fontName=
         safe_text,
-    textAlignment=
-        safe_text,
-    fontStyle=
-        safe_text,
     fontSize=
-        st.integers()
+        st.integers(),
+    line=
+        safe_text
 )
 
 @given(instance=DNodeEdgeStyle_strategy)
@@ -680,310 +680,241 @@ diastyle::DNodeEdgeStyle_strategy = st.builds(
 def test_dnodeedgestyle_instantiation(instance):
     assert isinstance(instance, DNodeEdgeStyle)
 
-@given(instance=diastyle::DEdgeStyle_strategy)
+@given(instance=diastyle_DEdgeStyle_strategy)
 @settings(max_examples=50)
-def test_diastyle::dedgestyle_instantiation(instance):
-    assert isinstance(instance, diastyle::DEdgeStyle)
-
-@given(instance=diastyle::DEdgeStyle_strategy)
-def test_diastyle::dedgestyle_arrowDirection_type(instance):
-    assert isinstance(instance.arrowDirection, str)
+def test_diastyle_dedgestyle_instantiation(instance):
+    assert isinstance(instance, diastyle_DEdgeStyle)
 
 
-@given(instance=diastyle::DEdgeStyle_strategy)
-def test_diastyle::dedgestyle_arrowDirection_setter(instance):
+
+@given(instance=diastyle_DEdgeStyle_strategy)
+def test_diastyle_dedgestyle_arrowDirection_setter(instance):
     original = instance.arrowDirection
     instance.arrowDirection = original
     assert instance.arrowDirection == original
 
-@given(instance=diastyle::DEdgeStyle_strategy)
-def test_diastyle::dedgestyle_arrowSize_type(instance):
-    assert isinstance(instance.arrowSize, int)
 
 
-@given(instance=diastyle::DEdgeStyle_strategy)
-def test_diastyle::dedgestyle_arrowSize_setter(instance):
+@given(instance=diastyle_DEdgeStyle_strategy)
+def test_diastyle_dedgestyle_shape_setter(instance):
+    original = instance.shape
+    instance.shape = original
+    assert instance.shape == original
+
+
+
+@given(instance=diastyle_DEdgeStyle_strategy)
+def test_diastyle_dedgestyle_arrowSize_setter(instance):
     original = instance.arrowSize
     instance.arrowSize = original
     assert instance.arrowSize == original
 
-@given(instance=diastyle::DEdgeStyle_strategy)
-def test_diastyle::dedgestyle_shape_type(instance):
-    assert isinstance(instance.shape, str)
-
-
-@given(instance=diastyle::DEdgeStyle_strategy)
-def test_diastyle::dedgestyle_shape_setter(instance):
-    original = instance.shape
-    instance.shape = original
-    assert instance.shape == original
-
-@given(instance=diastyle::DNodeStyle_strategy)
+@given(instance=diastyle_DNodeStyle_strategy)
 @settings(max_examples=50)
-def test_diastyle::dnodestyle_instantiation(instance):
-    assert isinstance(instance, diastyle::DNodeStyle)
-
-@given(instance=diastyle::DNodeStyle_strategy)
-def test_diastyle::dnodestyle_figure_type(instance):
-    assert isinstance(instance.figure, str)
+def test_diastyle_dnodestyle_instantiation(instance):
+    assert isinstance(instance, diastyle_DNodeStyle)
 
 
-@given(instance=diastyle::DNodeStyle_strategy)
-def test_diastyle::dnodestyle_figure_setter(instance):
-    original = instance.figure
-    instance.figure = original
-    assert instance.figure == original
 
-@given(instance=diastyle::DNodeStyle_strategy)
-def test_diastyle::dnodestyle_layout_type(instance):
-    assert isinstance(instance.layout, str)
-
-
-@given(instance=diastyle::DNodeStyle_strategy)
-def test_diastyle::dnodestyle_layout_setter(instance):
-    original = instance.layout
-    instance.layout = original
-    assert instance.layout == original
-
-@given(instance=diastyle::DNodeStyle_strategy)
-def test_diastyle::dnodestyle_shape_type(instance):
-    assert isinstance(instance.shape, str)
-
-
-@given(instance=diastyle::DNodeStyle_strategy)
-def test_diastyle::dnodestyle_shape_setter(instance):
+@given(instance=diastyle_DNodeStyle_strategy)
+def test_diastyle_dnodestyle_shape_setter(instance):
     original = instance.shape
     instance.shape = original
     assert instance.shape == original
 
-@given(instance=diastyle::DNodeStyle_strategy)
-def test_diastyle::dnodestyle_shapeData_type(instance):
-    assert isinstance(instance.shapeData, str)
 
 
-@given(instance=diastyle::DNodeStyle_strategy)
-def test_diastyle::dnodestyle_shapeData_setter(instance):
-    original = instance.shapeData
-    instance.shapeData = original
-    assert instance.shapeData == original
-
-@given(instance=diastyle::DNodeStyle_strategy)
-def test_diastyle::dnodestyle_sizeX_type(instance):
-    assert isinstance(instance.sizeX, int)
-
-
-@given(instance=diastyle::DNodeStyle_strategy)
-def test_diastyle::dnodestyle_sizeX_setter(instance):
-    original = instance.sizeX
-    instance.sizeX = original
-    assert instance.sizeX == original
-
-@given(instance=diastyle::DNodeStyle_strategy)
-def test_diastyle::dnodestyle_radius_type(instance):
-    assert isinstance(instance.radius, int)
-
-
-@given(instance=diastyle::DNodeStyle_strategy)
-def test_diastyle::dnodestyle_radius_setter(instance):
+@given(instance=diastyle_DNodeStyle_strategy)
+def test_diastyle_dnodestyle_radius_setter(instance):
     original = instance.radius
     instance.radius = original
     assert instance.radius == original
 
-@given(instance=diastyle::DNodeStyle_strategy)
-def test_diastyle::dnodestyle_sizeY_type(instance):
-    assert isinstance(instance.sizeY, int)
 
 
-@given(instance=diastyle::DNodeStyle_strategy)
-def test_diastyle::dnodestyle_sizeY_setter(instance):
+@given(instance=diastyle_DNodeStyle_strategy)
+def test_diastyle_dnodestyle_shapeData_setter(instance):
+    original = instance.shapeData
+    instance.shapeData = original
+    assert instance.shapeData == original
+
+
+
+@given(instance=diastyle_DNodeStyle_strategy)
+def test_diastyle_dnodestyle_sizeX_setter(instance):
+    original = instance.sizeX
+    instance.sizeX = original
+    assert instance.sizeX == original
+
+
+
+@given(instance=diastyle_DNodeStyle_strategy)
+def test_diastyle_dnodestyle_figure_setter(instance):
+    original = instance.figure
+    instance.figure = original
+    assert instance.figure == original
+
+
+
+@given(instance=diastyle_DNodeStyle_strategy)
+def test_diastyle_dnodestyle_layout_setter(instance):
+    original = instance.layout
+    instance.layout = original
+    assert instance.layout == original
+
+
+
+@given(instance=diastyle_DNodeStyle_strategy)
+def test_diastyle_dnodestyle_sizeY_setter(instance):
     original = instance.sizeY
     instance.sizeY = original
     assert instance.sizeY == original
 
-@given(instance=diastyle::DGraphElement_strategy)
+@given(instance=diastyle_DGraphElement_strategy)
 @settings(max_examples=50)
-def test_diastyle::dgraphelement_instantiation(instance):
-    assert isinstance(instance, diastyle::DGraphElement)
+def test_diastyle_dgraphelement_instantiation(instance):
+    assert isinstance(instance, diastyle_DGraphElement)
 
-@given(instance=diastyle::DStyleBridge_strategy)
+@given(instance=diastyle_DStyleBridge_strategy)
 @settings(max_examples=50)
-def test_diastyle::dstylebridge_instantiation(instance):
-    assert isinstance(instance, diastyle::DStyleBridge)
-
-@given(instance=diastyle::DStyleBridge_strategy)
-def test_diastyle::dstylebridge_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_diastyle_dstylebridge_instantiation(instance):
+    assert isinstance(instance, diastyle_DStyleBridge)
 
 
-@given(instance=diastyle::DStyleBridge_strategy)
-def test_diastyle::dstylebridge_name_setter(instance):
+
+@given(instance=diastyle_DStyleBridge_strategy)
+def test_diastyle_dstylebridge_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=diastyle::DGraph_strategy)
+@given(instance=diastyle_DGraph_strategy)
 @settings(max_examples=50)
-def test_diastyle::dgraph_instantiation(instance):
-    assert isinstance(instance, diastyle::DGraph)
+def test_diastyle_dgraph_instantiation(instance):
+    assert isinstance(instance, diastyle_DGraph)
 
-@given(instance=diastyle::DBaseStyle_strategy)
+@given(instance=diastyle_DBaseStyle_strategy)
 @settings(max_examples=50)
-def test_diastyle::dbasestyle_instantiation(instance):
-    assert isinstance(instance, diastyle::DBaseStyle)
-
-@given(instance=diastyle::DBaseStyle_strategy)
-def test_diastyle::dbasestyle_parentName_type(instance):
-    assert isinstance(instance.parentName, str)
+def test_diastyle_dbasestyle_instantiation(instance):
+    assert isinstance(instance, diastyle_DBaseStyle)
 
 
-@given(instance=diastyle::DBaseStyle_strategy)
-def test_diastyle::dbasestyle_parentName_setter(instance):
-    original = instance.parentName
-    instance.parentName = original
-    assert instance.parentName == original
 
-@given(instance=diastyle::DBaseStyle_strategy)
-def test_diastyle::dbasestyle_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=diastyle::DBaseStyle_strategy)
-def test_diastyle::dbasestyle_name_setter(instance):
+@given(instance=diastyle_DBaseStyle_strategy)
+def test_diastyle_dbasestyle_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=diastyle::DBaseStyle_strategy)
-def test_diastyle::dbasestyle_color_type(instance):
-    assert isinstance(instance.color, str)
 
 
-@given(instance=diastyle::DBaseStyle_strategy)
-def test_diastyle::dbasestyle_color_setter(instance):
+@given(instance=diastyle_DBaseStyle_strategy)
+def test_diastyle_dbasestyle_color_setter(instance):
     original = instance.color
     instance.color = original
     assert instance.color == original
+
+
+
+@given(instance=diastyle_DBaseStyle_strategy)
+def test_diastyle_dbasestyle_parentName_setter(instance):
+    original = instance.parentName
+    instance.parentName = original
+    assert instance.parentName == original
 
 @given(instance=DBaseStyle_strategy)
 @settings(max_examples=50)
 def test_dbasestyle_instantiation(instance):
     assert isinstance(instance, DBaseStyle)
 
-@given(instance=diastyle::DNestingEdgeStyle_strategy)
+@given(instance=diastyle_DNestingEdgeStyle_strategy)
 @settings(max_examples=50)
-def test_diastyle::dnestingedgestyle_instantiation(instance):
-    assert isinstance(instance, diastyle::DNestingEdgeStyle)
+def test_diastyle_dnestingedgestyle_instantiation(instance):
+    assert isinstance(instance, diastyle_DNestingEdgeStyle)
 
 @given(instance=EModelElement_strategy)
 @settings(max_examples=50)
 def test_emodelelement_instantiation(instance):
     assert isinstance(instance, EModelElement)
 
-@given(instance=diastyle::DStyle_strategy)
+@given(instance=diastyle_DStyle_strategy)
 @settings(max_examples=50)
-def test_diastyle::dstyle_instantiation(instance):
-    assert isinstance(instance, diastyle::DStyle)
-
-@given(instance=diastyle::DStyle_strategy)
-def test_diastyle::dstyle_styleHandler_type(instance):
-    assert isinstance(instance.styleHandler, str)
+def test_diastyle_dstyle_instantiation(instance):
+    assert isinstance(instance, diastyle_DStyle)
 
 
-@given(instance=diastyle::DStyle_strategy)
-def test_diastyle::dstyle_styleHandler_setter(instance):
+
+@given(instance=diastyle_DStyle_strategy)
+def test_diastyle_dstyle_styleHandler_setter(instance):
     original = instance.styleHandler
     instance.styleHandler = original
     assert instance.styleHandler == original
 
-@given(instance=diastyle::DNodeEdgeStyle_strategy)
+@given(instance=diastyle_DNodeEdgeStyle_strategy)
 @settings(max_examples=50)
-def test_diastyle::dnodeedgestyle_instantiation(instance):
-    assert isinstance(instance, diastyle::DNodeEdgeStyle)
-
-@given(instance=diastyle::DNodeEdgeStyle_strategy)
-def test_diastyle::dnodeedgestyle_line_type(instance):
-    assert isinstance(instance.line, str)
+def test_diastyle_dnodeedgestyle_instantiation(instance):
+    assert isinstance(instance, diastyle_DNodeEdgeStyle)
 
 
-@given(instance=diastyle::DNodeEdgeStyle_strategy)
-def test_diastyle::dnodeedgestyle_line_setter(instance):
-    original = instance.line
-    instance.line = original
-    assert instance.line == original
 
-@given(instance=diastyle::DNodeEdgeStyle_strategy)
-def test_diastyle::dnodeedgestyle_icon_type(instance):
-    assert isinstance(instance.icon, str)
-
-
-@given(instance=diastyle::DNodeEdgeStyle_strategy)
-def test_diastyle::dnodeedgestyle_icon_setter(instance):
-    original = instance.icon
-    instance.icon = original
-    assert instance.icon == original
-
-@given(instance=diastyle::DNodeEdgeStyle_strategy)
-def test_diastyle::dnodeedgestyle_fontColor_type(instance):
-    assert isinstance(instance.fontColor, str)
-
-
-@given(instance=diastyle::DNodeEdgeStyle_strategy)
-def test_diastyle::dnodeedgestyle_fontColor_setter(instance):
-    original = instance.fontColor
-    instance.fontColor = original
-    assert instance.fontColor == original
-
-@given(instance=diastyle::DNodeEdgeStyle_strategy)
-def test_diastyle::dnodeedgestyle_lineWidth_type(instance):
-    assert isinstance(instance.lineWidth, int)
-
-
-@given(instance=diastyle::DNodeEdgeStyle_strategy)
-def test_diastyle::dnodeedgestyle_lineWidth_setter(instance):
-    original = instance.lineWidth
-    instance.lineWidth = original
-    assert instance.lineWidth == original
-
-@given(instance=diastyle::DNodeEdgeStyle_strategy)
-def test_diastyle::dnodeedgestyle_fontName_type(instance):
-    assert isinstance(instance.fontName, str)
-
-
-@given(instance=diastyle::DNodeEdgeStyle_strategy)
-def test_diastyle::dnodeedgestyle_fontName_setter(instance):
-    original = instance.fontName
-    instance.fontName = original
-    assert instance.fontName == original
-
-@given(instance=diastyle::DNodeEdgeStyle_strategy)
-def test_diastyle::dnodeedgestyle_textAlignment_type(instance):
-    assert isinstance(instance.textAlignment, str)
-
-
-@given(instance=diastyle::DNodeEdgeStyle_strategy)
-def test_diastyle::dnodeedgestyle_textAlignment_setter(instance):
-    original = instance.textAlignment
-    instance.textAlignment = original
-    assert instance.textAlignment == original
-
-@given(instance=diastyle::DNodeEdgeStyle_strategy)
-def test_diastyle::dnodeedgestyle_fontStyle_type(instance):
-    assert isinstance(instance.fontStyle, str)
-
-
-@given(instance=diastyle::DNodeEdgeStyle_strategy)
-def test_diastyle::dnodeedgestyle_fontStyle_setter(instance):
+@given(instance=diastyle_DNodeEdgeStyle_strategy)
+def test_diastyle_dnodeedgestyle_fontStyle_setter(instance):
     original = instance.fontStyle
     instance.fontStyle = original
     assert instance.fontStyle == original
 
-@given(instance=diastyle::DNodeEdgeStyle_strategy)
-def test_diastyle::dnodeedgestyle_fontSize_type(instance):
-    assert isinstance(instance.fontSize, int)
 
 
-@given(instance=diastyle::DNodeEdgeStyle_strategy)
-def test_diastyle::dnodeedgestyle_fontSize_setter(instance):
+@given(instance=diastyle_DNodeEdgeStyle_strategy)
+def test_diastyle_dnodeedgestyle_lineWidth_setter(instance):
+    original = instance.lineWidth
+    instance.lineWidth = original
+    assert instance.lineWidth == original
+
+
+
+@given(instance=diastyle_DNodeEdgeStyle_strategy)
+def test_diastyle_dnodeedgestyle_textAlignment_setter(instance):
+    original = instance.textAlignment
+    instance.textAlignment = original
+    assert instance.textAlignment == original
+
+
+
+@given(instance=diastyle_DNodeEdgeStyle_strategy)
+def test_diastyle_dnodeedgestyle_icon_setter(instance):
+    original = instance.icon
+    instance.icon = original
+    assert instance.icon == original
+
+
+
+@given(instance=diastyle_DNodeEdgeStyle_strategy)
+def test_diastyle_dnodeedgestyle_fontColor_setter(instance):
+    original = instance.fontColor
+    instance.fontColor = original
+    assert instance.fontColor == original
+
+
+
+@given(instance=diastyle_DNodeEdgeStyle_strategy)
+def test_diastyle_dnodeedgestyle_fontName_setter(instance):
+    original = instance.fontName
+    instance.fontName = original
+    assert instance.fontName == original
+
+
+
+@given(instance=diastyle_DNodeEdgeStyle_strategy)
+def test_diastyle_dnodeedgestyle_fontSize_setter(instance):
     original = instance.fontSize
     instance.fontSize = original
     assert instance.fontSize == original
+
+
+
+@given(instance=diastyle_DNodeEdgeStyle_strategy)
+def test_diastyle_dnodeedgestyle_line_setter(instance):
+    original = instance.line
+    instance.line = original
+    assert instance.line == original

@@ -3,13 +3,13 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    testmerge::SuperA3,
-    testmerge::B3,
+from python_code import (
+    testmerge_SuperA3,
+    testmerge_B3,
     SuperA3,
-    testmerge::A3,
+    testmerge_A3,
 )
 
 # =============================================================================
@@ -18,30 +18,30 @@ from classes import (
 
 
 
-def test_testmerge::supera3_is_not_abstract():
-    assert not inspect.isabstract(testmerge::SuperA3)
+def test_testmerge_supera3_is_not_abstract():
+    assert not inspect.isabstract(testmerge_SuperA3)
 
 
-def test_testmerge::supera3_constructor_exists():
-    assert callable(testmerge::SuperA3.__init__)
+def test_testmerge_supera3_constructor_exists():
+    assert callable(testmerge_SuperA3.__init__)
 
 
-def test_testmerge::supera3_constructor_args():
-    sig = inspect.signature(testmerge::SuperA3.__init__)
+def test_testmerge_supera3_constructor_args():
+    sig = inspect.signature(testmerge_SuperA3.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_testmerge::b3_is_not_abstract():
-    assert not inspect.isabstract(testmerge::B3)
+def test_testmerge_b3_is_not_abstract():
+    assert not inspect.isabstract(testmerge_B3)
 
 
-def test_testmerge::b3_constructor_exists():
-    assert callable(testmerge::B3.__init__)
+def test_testmerge_b3_constructor_exists():
+    assert callable(testmerge_B3.__init__)
 
 
-def test_testmerge::b3_constructor_args():
-    sig = inspect.signature(testmerge::B3.__init__)
+def test_testmerge_b3_constructor_args():
+    sig = inspect.signature(testmerge_B3.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -60,16 +60,16 @@ def test_supera3_constructor_args():
 
 
 
-def test_testmerge::a3_is_not_abstract():
-    assert not inspect.isabstract(testmerge::A3)
+def test_testmerge_a3_is_not_abstract():
+    assert not inspect.isabstract(testmerge_A3)
 
 
-def test_testmerge::a3_constructor_exists():
-    assert callable(testmerge::A3.__init__)
+def test_testmerge_a3_constructor_exists():
+    assert callable(testmerge_A3.__init__)
 
 
-def test_testmerge::a3_constructor_args():
-    sig = inspect.signature(testmerge::A3.__init__)
+def test_testmerge_a3_constructor_args():
+    sig = inspect.signature(testmerge_A3.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -84,35 +84,35 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-testmerge::SuperA3_strategy = st.builds(
-    testmerge::SuperA3,
+testmerge_SuperA3_strategy = st.builds(
+    testmerge_SuperA3,
 )
-testmerge::B3_strategy = st.builds(
-    testmerge::B3,
+testmerge_B3_strategy = st.builds(
+    testmerge_B3,
 )
 SuperA3_strategy = st.builds(
     SuperA3,
 )
-testmerge::A3_strategy = st.builds(
-    testmerge::A3,
+testmerge_A3_strategy = st.builds(
+    testmerge_A3,
 )
 
-@given(instance=testmerge::SuperA3_strategy)
+@given(instance=testmerge_SuperA3_strategy)
 @settings(max_examples=50)
-def test_testmerge::supera3_instantiation(instance):
-    assert isinstance(instance, testmerge::SuperA3)
+def test_testmerge_supera3_instantiation(instance):
+    assert isinstance(instance, testmerge_SuperA3)
 
-@given(instance=testmerge::B3_strategy)
+@given(instance=testmerge_B3_strategy)
 @settings(max_examples=50)
-def test_testmerge::b3_instantiation(instance):
-    assert isinstance(instance, testmerge::B3)
+def test_testmerge_b3_instantiation(instance):
+    assert isinstance(instance, testmerge_B3)
 
 @given(instance=SuperA3_strategy)
 @settings(max_examples=50)
 def test_supera3_instantiation(instance):
     assert isinstance(instance, SuperA3)
 
-@given(instance=testmerge::A3_strategy)
+@given(instance=testmerge_A3_strategy)
 @settings(max_examples=50)
-def test_testmerge::a3_instantiation(instance):
-    assert isinstance(instance, testmerge::A3)
+def test_testmerge_a3_instantiation(instance):
+    assert isinstance(instance, testmerge_A3)

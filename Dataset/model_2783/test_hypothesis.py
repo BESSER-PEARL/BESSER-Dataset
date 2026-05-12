@@ -3,18 +3,18 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    BoemTest::NamedElement,
+from python_code import (
+    BoemTest_NamedElement,
     NamedElement,
-    BoemTest::Node,
-    BoemTest::A,
+    BoemTest_Node,
+    BoemTest_A,
     B,
-    BoemTest::C,
-    BoemTest::BNode,
+    BoemTest_C,
+    BoemTest_BNode,
     A,
-    BoemTest::B,
+    BoemTest_B,
     AnEnumeration,
 )
 
@@ -24,23 +24,23 @@ from classes import (
 
 
 
-def test_boemtest::namedelement_is_not_abstract():
-    assert not inspect.isabstract(BoemTest::NamedElement)
+def test_boemtest_namedelement_is_not_abstract():
+    assert not inspect.isabstract(BoemTest_NamedElement)
 
 
-def test_boemtest::namedelement_constructor_exists():
-    assert callable(BoemTest::NamedElement.__init__)
+def test_boemtest_namedelement_constructor_exists():
+    assert callable(BoemTest_NamedElement.__init__)
 
 
-def test_boemtest::namedelement_constructor_args():
-    sig = inspect.signature(BoemTest::NamedElement.__init__)
+def test_boemtest_namedelement_constructor_args():
+    sig = inspect.signature(BoemTest_NamedElement.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_boemtest::namedelement_has_name():
-    assert hasattr(BoemTest::NamedElement, "name")
+def test_boemtest_namedelement_has_name():
+    assert hasattr(BoemTest_NamedElement, "name")
     descriptor = None
-    for klass in BoemTest::NamedElement.__mro__:
+    for klass in BoemTest_NamedElement.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -62,30 +62,30 @@ def test_namedelement_constructor_args():
 
 
 
-def test_boemtest::node_is_not_abstract():
-    assert not inspect.isabstract(BoemTest::Node)
+def test_boemtest_node_is_not_abstract():
+    assert not inspect.isabstract(BoemTest_Node)
 
 
-def test_boemtest::node_constructor_exists():
-    assert callable(BoemTest::Node.__init__)
+def test_boemtest_node_constructor_exists():
+    assert callable(BoemTest_Node.__init__)
 
 
-def test_boemtest::node_constructor_args():
-    sig = inspect.signature(BoemTest::Node.__init__)
+def test_boemtest_node_constructor_args():
+    sig = inspect.signature(BoemTest_Node.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_boemtest::a_is_not_abstract():
-    assert not inspect.isabstract(BoemTest::A)
+def test_boemtest_a_is_not_abstract():
+    assert not inspect.isabstract(BoemTest_A)
 
 
-def test_boemtest::a_constructor_exists():
-    assert callable(BoemTest::A.__init__)
+def test_boemtest_a_constructor_exists():
+    assert callable(BoemTest_A.__init__)
 
 
-def test_boemtest::a_constructor_args():
-    sig = inspect.signature(BoemTest::A.__init__)
+def test_boemtest_a_constructor_args():
+    sig = inspect.signature(BoemTest_A.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -104,30 +104,30 @@ def test_b_constructor_args():
 
 
 
-def test_boemtest::c_is_not_abstract():
-    assert not inspect.isabstract(BoemTest::C)
+def test_boemtest_c_is_not_abstract():
+    assert not inspect.isabstract(BoemTest_C)
 
 
-def test_boemtest::c_constructor_exists():
-    assert callable(BoemTest::C.__init__)
+def test_boemtest_c_constructor_exists():
+    assert callable(BoemTest_C.__init__)
 
 
-def test_boemtest::c_constructor_args():
-    sig = inspect.signature(BoemTest::C.__init__)
+def test_boemtest_c_constructor_args():
+    sig = inspect.signature(BoemTest_C.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_boemtest::bnode_is_not_abstract():
-    assert not inspect.isabstract(BoemTest::BNode)
+def test_boemtest_bnode_is_not_abstract():
+    assert not inspect.isabstract(BoemTest_BNode)
 
 
-def test_boemtest::bnode_constructor_exists():
-    assert callable(BoemTest::BNode.__init__)
+def test_boemtest_bnode_constructor_exists():
+    assert callable(BoemTest_BNode.__init__)
 
 
-def test_boemtest::bnode_constructor_args():
-    sig = inspect.signature(BoemTest::BNode.__init__)
+def test_boemtest_bnode_constructor_args():
+    sig = inspect.signature(BoemTest_BNode.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -146,23 +146,23 @@ def test_a_constructor_args():
 
 
 
-def test_boemtest::b_is_not_abstract():
-    assert not inspect.isabstract(BoemTest::B)
+def test_boemtest_b_is_not_abstract():
+    assert not inspect.isabstract(BoemTest_B)
 
 
-def test_boemtest::b_constructor_exists():
-    assert callable(BoemTest::B.__init__)
+def test_boemtest_b_constructor_exists():
+    assert callable(BoemTest_B.__init__)
 
 
-def test_boemtest::b_constructor_args():
-    sig = inspect.signature(BoemTest::B.__init__)
+def test_boemtest_b_constructor_args():
+    sig = inspect.signature(BoemTest_B.__init__)
     params = list(sig.parameters.keys())
     assert "enumAttr" in params, "Missing parameter 'enumAttr'"
 
-def test_boemtest::b_has_enumAttr():
-    assert hasattr(BoemTest::B, "enumAttr")
+def test_boemtest_b_has_enumAttr():
+    assert hasattr(BoemTest_B, "enumAttr")
     descriptor = None
-    for klass in BoemTest::B.__mro__:
+    for klass in BoemTest_B.__mro__:
         if "enumAttr" in klass.__dict__:
             descriptor = klass.__dict__["enumAttr"]
             break
@@ -176,8 +176,8 @@ def test_anenumeration_has_all_literals():
     # Collect the names of literals in this Enumeration
     enum_literals = [lit.name for lit in AnEnumeration]
     expected_literals = [
-        "LITERAL2",
         "LITERAL1",
+        "LITERAL2",
         "LITERAL0",
     ]
     # Check that all expected literals exist
@@ -196,50 +196,47 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-BoemTest::NamedElement_strategy = st.builds(
-    BoemTest::NamedElement,
+BoemTest_NamedElement_strategy = st.builds(
+    BoemTest_NamedElement,
     name=
         safe_text
 )
 NamedElement_strategy = st.builds(
     NamedElement,
 )
-BoemTest::Node_strategy = st.builds(
-    BoemTest::Node,
+BoemTest_Node_strategy = st.builds(
+    BoemTest_Node,
 )
-BoemTest::A_strategy = st.builds(
-    BoemTest::A,
+BoemTest_A_strategy = st.builds(
+    BoemTest_A,
 )
 B_strategy = st.builds(
     B,
 )
-BoemTest::C_strategy = st.builds(
-    BoemTest::C,
+BoemTest_C_strategy = st.builds(
+    BoemTest_C,
 )
-BoemTest::BNode_strategy = st.builds(
-    BoemTest::BNode,
+BoemTest_BNode_strategy = st.builds(
+    BoemTest_BNode,
 )
 A_strategy = st.builds(
     A,
 )
-BoemTest::B_strategy = st.builds(
-    BoemTest::B,
+BoemTest_B_strategy = st.builds(
+    BoemTest_B,
     enumAttr=
         safe_text
 )
 
-@given(instance=BoemTest::NamedElement_strategy)
+@given(instance=BoemTest_NamedElement_strategy)
 @settings(max_examples=50)
-def test_boemtest::namedelement_instantiation(instance):
-    assert isinstance(instance, BoemTest::NamedElement)
-
-@given(instance=BoemTest::NamedElement_strategy)
-def test_boemtest::namedelement_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_boemtest_namedelement_instantiation(instance):
+    assert isinstance(instance, BoemTest_NamedElement)
 
 
-@given(instance=BoemTest::NamedElement_strategy)
-def test_boemtest::namedelement_name_setter(instance):
+
+@given(instance=BoemTest_NamedElement_strategy)
+def test_boemtest_namedelement_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
@@ -249,48 +246,45 @@ def test_boemtest::namedelement_name_setter(instance):
 def test_namedelement_instantiation(instance):
     assert isinstance(instance, NamedElement)
 
-@given(instance=BoemTest::Node_strategy)
+@given(instance=BoemTest_Node_strategy)
 @settings(max_examples=50)
-def test_boemtest::node_instantiation(instance):
-    assert isinstance(instance, BoemTest::Node)
+def test_boemtest_node_instantiation(instance):
+    assert isinstance(instance, BoemTest_Node)
 
-@given(instance=BoemTest::A_strategy)
+@given(instance=BoemTest_A_strategy)
 @settings(max_examples=50)
-def test_boemtest::a_instantiation(instance):
-    assert isinstance(instance, BoemTest::A)
+def test_boemtest_a_instantiation(instance):
+    assert isinstance(instance, BoemTest_A)
 
 @given(instance=B_strategy)
 @settings(max_examples=50)
 def test_b_instantiation(instance):
     assert isinstance(instance, B)
 
-@given(instance=BoemTest::C_strategy)
+@given(instance=BoemTest_C_strategy)
 @settings(max_examples=50)
-def test_boemtest::c_instantiation(instance):
-    assert isinstance(instance, BoemTest::C)
+def test_boemtest_c_instantiation(instance):
+    assert isinstance(instance, BoemTest_C)
 
-@given(instance=BoemTest::BNode_strategy)
+@given(instance=BoemTest_BNode_strategy)
 @settings(max_examples=50)
-def test_boemtest::bnode_instantiation(instance):
-    assert isinstance(instance, BoemTest::BNode)
+def test_boemtest_bnode_instantiation(instance):
+    assert isinstance(instance, BoemTest_BNode)
 
 @given(instance=A_strategy)
 @settings(max_examples=50)
 def test_a_instantiation(instance):
     assert isinstance(instance, A)
 
-@given(instance=BoemTest::B_strategy)
+@given(instance=BoemTest_B_strategy)
 @settings(max_examples=50)
-def test_boemtest::b_instantiation(instance):
-    assert isinstance(instance, BoemTest::B)
-
-@given(instance=BoemTest::B_strategy)
-def test_boemtest::b_enumAttr_type(instance):
-    assert isinstance(instance.enumAttr, str)
+def test_boemtest_b_instantiation(instance):
+    assert isinstance(instance, BoemTest_B)
 
 
-@given(instance=BoemTest::B_strategy)
-def test_boemtest::b_enumAttr_setter(instance):
+
+@given(instance=BoemTest_B_strategy)
+def test_boemtest_b_enumAttr_setter(instance):
     original = instance.enumAttr
     instance.enumAttr = original
     assert instance.enumAttr == original

@@ -3,51 +3,51 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     If,
     Call,
-    mt::core::Parameter,
+    mt_core_Parameter,
     Parameter,
     Literal,
-    mt::expressions::IntegerLiteral,
-    mt::expressions::BooleanLiteral,
-    mt::expressions::DoubleLiteral,
-    mt::expressions::NullLiteral,
-    mt::expressions::StringLiteral,
+    mt_expressions_NullLiteral,
+    mt_expressions_IntegerLiteral,
+    mt_expressions_DoubleLiteral,
+    mt_expressions_BooleanLiteral,
+    mt_expressions_StringLiteral,
     FilePath,
     Statement,
-    mt::statements::For,
-    mt::statements::If,
-    mt::statements::Text,
-    mt::statements::Comment,
-    mt::statements::Feature,
+    mt_statements_Feature,
+    mt_statements_Comment,
+    mt_statements_For,
+    mt_statements_If,
+    mt_statements_Text,
     ScriptDescriptor,
     ASTNode,
-    mt::statements::Statement,
-    mt::expressions::Call,
-    mt::core::ScriptDescriptor,
-    mt::expressions::Expression,
-    mt::core::Script,
+    mt_expressions_Expression,
+    mt_expressions_Call,
+    mt_statements_Statement,
+    mt_core_ScriptDescriptor,
+    mt_core_Script,
     Script,
-    core::mt::Resource,
+    core_mt_Resource,
     Resource,
-    mt::core::Template,
-    mt::core::ASTNode,
-    mt::core::Method,
+    mt_core_Template,
+    mt_core_ASTNode,
+    mt_core_Method,
     Method,
-    mt::core::Service,
-    mt::core::Metamodel,
-    mt::core::FilePath,
+    mt_core_Service,
+    mt_core_Metamodel,
+    mt_core_FilePath,
     Expression,
-    mt::expressions::Not,
-    mt::expressions::Operator,
-    mt::expressions::CallSet,
-    mt::expressions::Parenthesis,
-    mt::expressions::Literal,
-    mt::Resource,
-    mt::ResourceSet,
+    mt_expressions_Literal,
+    mt_expressions_Operator,
+    mt_expressions_Not,
+    mt_expressions_CallSet,
+    mt_expressions_Parenthesis,
+    mt_Resource,
+    mt_ResourceSet,
 )
 
 # =============================================================================
@@ -84,23 +84,23 @@ def test_call_constructor_args():
 
 
 
-def test_mt::core::parameter_is_not_abstract():
-    assert not inspect.isabstract(mt::core::Parameter)
+def test_mt_core_parameter_is_not_abstract():
+    assert not inspect.isabstract(mt_core_Parameter)
 
 
-def test_mt::core::parameter_constructor_exists():
-    assert callable(mt::core::Parameter.__init__)
+def test_mt_core_parameter_constructor_exists():
+    assert callable(mt_core_Parameter.__init__)
 
 
-def test_mt::core::parameter_constructor_args():
-    sig = inspect.signature(mt::core::Parameter.__init__)
+def test_mt_core_parameter_constructor_args():
+    sig = inspect.signature(mt_core_Parameter.__init__)
     params = list(sig.parameters.keys())
     assert "type" in params, "Missing parameter 'type'"
 
-def test_mt::core::parameter_has_type():
-    assert hasattr(mt::core::Parameter, "type")
+def test_mt_core_parameter_has_type():
+    assert hasattr(mt_core_Parameter, "type")
     descriptor = None
-    for klass in mt::core::Parameter.__mro__:
+    for klass in mt_core_Parameter.__mro__:
         if "type" in klass.__dict__:
             descriptor = klass.__dict__["type"]
             break
@@ -136,23 +136,37 @@ def test_literal_constructor_args():
 
 
 
-def test_mt::expressions::integerliteral_is_not_abstract():
-    assert not inspect.isabstract(mt::expressions::IntegerLiteral)
+def test_mt_expressions_nullliteral_is_not_abstract():
+    assert not inspect.isabstract(mt_expressions_NullLiteral)
 
 
-def test_mt::expressions::integerliteral_constructor_exists():
-    assert callable(mt::expressions::IntegerLiteral.__init__)
+def test_mt_expressions_nullliteral_constructor_exists():
+    assert callable(mt_expressions_NullLiteral.__init__)
 
 
-def test_mt::expressions::integerliteral_constructor_args():
-    sig = inspect.signature(mt::expressions::IntegerLiteral.__init__)
+def test_mt_expressions_nullliteral_constructor_args():
+    sig = inspect.signature(mt_expressions_NullLiteral.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_mt_expressions_integerliteral_is_not_abstract():
+    assert not inspect.isabstract(mt_expressions_IntegerLiteral)
+
+
+def test_mt_expressions_integerliteral_constructor_exists():
+    assert callable(mt_expressions_IntegerLiteral.__init__)
+
+
+def test_mt_expressions_integerliteral_constructor_args():
+    sig = inspect.signature(mt_expressions_IntegerLiteral.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
 
-def test_mt::expressions::integerliteral_has_value():
-    assert hasattr(mt::expressions::IntegerLiteral, "value")
+def test_mt_expressions_integerliteral_has_value():
+    assert hasattr(mt_expressions_IntegerLiteral, "value")
     descriptor = None
-    for klass in mt::expressions::IntegerLiteral.__mro__:
+    for klass in mt_expressions_IntegerLiteral.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -160,23 +174,23 @@ def test_mt::expressions::integerliteral_has_value():
 
 
 
-def test_mt::expressions::booleanliteral_is_not_abstract():
-    assert not inspect.isabstract(mt::expressions::BooleanLiteral)
+def test_mt_expressions_doubleliteral_is_not_abstract():
+    assert not inspect.isabstract(mt_expressions_DoubleLiteral)
 
 
-def test_mt::expressions::booleanliteral_constructor_exists():
-    assert callable(mt::expressions::BooleanLiteral.__init__)
+def test_mt_expressions_doubleliteral_constructor_exists():
+    assert callable(mt_expressions_DoubleLiteral.__init__)
 
 
-def test_mt::expressions::booleanliteral_constructor_args():
-    sig = inspect.signature(mt::expressions::BooleanLiteral.__init__)
+def test_mt_expressions_doubleliteral_constructor_args():
+    sig = inspect.signature(mt_expressions_DoubleLiteral.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
 
-def test_mt::expressions::booleanliteral_has_value():
-    assert hasattr(mt::expressions::BooleanLiteral, "value")
+def test_mt_expressions_doubleliteral_has_value():
+    assert hasattr(mt_expressions_DoubleLiteral, "value")
     descriptor = None
-    for klass in mt::expressions::BooleanLiteral.__mro__:
+    for klass in mt_expressions_DoubleLiteral.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -184,23 +198,23 @@ def test_mt::expressions::booleanliteral_has_value():
 
 
 
-def test_mt::expressions::doubleliteral_is_not_abstract():
-    assert not inspect.isabstract(mt::expressions::DoubleLiteral)
+def test_mt_expressions_booleanliteral_is_not_abstract():
+    assert not inspect.isabstract(mt_expressions_BooleanLiteral)
 
 
-def test_mt::expressions::doubleliteral_constructor_exists():
-    assert callable(mt::expressions::DoubleLiteral.__init__)
+def test_mt_expressions_booleanliteral_constructor_exists():
+    assert callable(mt_expressions_BooleanLiteral.__init__)
 
 
-def test_mt::expressions::doubleliteral_constructor_args():
-    sig = inspect.signature(mt::expressions::DoubleLiteral.__init__)
+def test_mt_expressions_booleanliteral_constructor_args():
+    sig = inspect.signature(mt_expressions_BooleanLiteral.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
 
-def test_mt::expressions::doubleliteral_has_value():
-    assert hasattr(mt::expressions::DoubleLiteral, "value")
+def test_mt_expressions_booleanliteral_has_value():
+    assert hasattr(mt_expressions_BooleanLiteral, "value")
     descriptor = None
-    for klass in mt::expressions::DoubleLiteral.__mro__:
+    for klass in mt_expressions_BooleanLiteral.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -208,37 +222,23 @@ def test_mt::expressions::doubleliteral_has_value():
 
 
 
-def test_mt::expressions::nullliteral_is_not_abstract():
-    assert not inspect.isabstract(mt::expressions::NullLiteral)
+def test_mt_expressions_stringliteral_is_not_abstract():
+    assert not inspect.isabstract(mt_expressions_StringLiteral)
 
 
-def test_mt::expressions::nullliteral_constructor_exists():
-    assert callable(mt::expressions::NullLiteral.__init__)
+def test_mt_expressions_stringliteral_constructor_exists():
+    assert callable(mt_expressions_StringLiteral.__init__)
 
 
-def test_mt::expressions::nullliteral_constructor_args():
-    sig = inspect.signature(mt::expressions::NullLiteral.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_mt::expressions::stringliteral_is_not_abstract():
-    assert not inspect.isabstract(mt::expressions::StringLiteral)
-
-
-def test_mt::expressions::stringliteral_constructor_exists():
-    assert callable(mt::expressions::StringLiteral.__init__)
-
-
-def test_mt::expressions::stringliteral_constructor_args():
-    sig = inspect.signature(mt::expressions::StringLiteral.__init__)
+def test_mt_expressions_stringliteral_constructor_args():
+    sig = inspect.signature(mt_expressions_StringLiteral.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
 
-def test_mt::expressions::stringliteral_has_value():
-    assert hasattr(mt::expressions::StringLiteral, "value")
+def test_mt_expressions_stringliteral_has_value():
+    assert hasattr(mt_expressions_StringLiteral, "value")
     descriptor = None
-    for klass in mt::expressions::StringLiteral.__mro__:
+    for klass in mt_expressions_StringLiteral.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -274,51 +274,37 @@ def test_statement_constructor_args():
 
 
 
-def test_mt::statements::for_is_not_abstract():
-    assert not inspect.isabstract(mt::statements::For)
+def test_mt_statements_feature_is_not_abstract():
+    assert not inspect.isabstract(mt_statements_Feature)
 
 
-def test_mt::statements::for_constructor_exists():
-    assert callable(mt::statements::For.__init__)
+def test_mt_statements_feature_constructor_exists():
+    assert callable(mt_statements_Feature.__init__)
 
 
-def test_mt::statements::for_constructor_args():
-    sig = inspect.signature(mt::statements::For.__init__)
+def test_mt_statements_feature_constructor_args():
+    sig = inspect.signature(mt_statements_Feature.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_mt::statements::if_is_not_abstract():
-    assert not inspect.isabstract(mt::statements::If)
+def test_mt_statements_comment_is_not_abstract():
+    assert not inspect.isabstract(mt_statements_Comment)
 
 
-def test_mt::statements::if_constructor_exists():
-    assert callable(mt::statements::If.__init__)
+def test_mt_statements_comment_constructor_exists():
+    assert callable(mt_statements_Comment.__init__)
 
 
-def test_mt::statements::if_constructor_args():
-    sig = inspect.signature(mt::statements::If.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_mt::statements::text_is_not_abstract():
-    assert not inspect.isabstract(mt::statements::Text)
-
-
-def test_mt::statements::text_constructor_exists():
-    assert callable(mt::statements::Text.__init__)
-
-
-def test_mt::statements::text_constructor_args():
-    sig = inspect.signature(mt::statements::Text.__init__)
+def test_mt_statements_comment_constructor_args():
+    sig = inspect.signature(mt_statements_Comment.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
 
-def test_mt::statements::text_has_value():
-    assert hasattr(mt::statements::Text, "value")
+def test_mt_statements_comment_has_value():
+    assert hasattr(mt_statements_Comment, "value")
     descriptor = None
-    for klass in mt::statements::Text.__mro__:
+    for klass in mt_statements_Comment.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -326,41 +312,55 @@ def test_mt::statements::text_has_value():
 
 
 
-def test_mt::statements::comment_is_not_abstract():
-    assert not inspect.isabstract(mt::statements::Comment)
+def test_mt_statements_for_is_not_abstract():
+    assert not inspect.isabstract(mt_statements_For)
 
 
-def test_mt::statements::comment_constructor_exists():
-    assert callable(mt::statements::Comment.__init__)
+def test_mt_statements_for_constructor_exists():
+    assert callable(mt_statements_For.__init__)
 
 
-def test_mt::statements::comment_constructor_args():
-    sig = inspect.signature(mt::statements::Comment.__init__)
+def test_mt_statements_for_constructor_args():
+    sig = inspect.signature(mt_statements_For.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_mt_statements_if_is_not_abstract():
+    assert not inspect.isabstract(mt_statements_If)
+
+
+def test_mt_statements_if_constructor_exists():
+    assert callable(mt_statements_If.__init__)
+
+
+def test_mt_statements_if_constructor_args():
+    sig = inspect.signature(mt_statements_If.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_mt_statements_text_is_not_abstract():
+    assert not inspect.isabstract(mt_statements_Text)
+
+
+def test_mt_statements_text_constructor_exists():
+    assert callable(mt_statements_Text.__init__)
+
+
+def test_mt_statements_text_constructor_args():
+    sig = inspect.signature(mt_statements_Text.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
 
-def test_mt::statements::comment_has_value():
-    assert hasattr(mt::statements::Comment, "value")
+def test_mt_statements_text_has_value():
+    assert hasattr(mt_statements_Text, "value")
     descriptor = None
-    for klass in mt::statements::Comment.__mro__:
+    for klass in mt_statements_Text.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
     assert isinstance(descriptor, property)
-
-
-
-def test_mt::statements::feature_is_not_abstract():
-    assert not inspect.isabstract(mt::statements::Feature)
-
-
-def test_mt::statements::feature_constructor_exists():
-    assert callable(mt::statements::Feature.__init__)
-
-
-def test_mt::statements::feature_constructor_args():
-    sig = inspect.signature(mt::statements::Feature.__init__)
-    params = list(sig.parameters.keys())
 
 
 
@@ -392,47 +392,47 @@ def test_astnode_constructor_args():
 
 
 
-def test_mt::statements::statement_is_not_abstract():
-    assert not inspect.isabstract(mt::statements::Statement)
+def test_mt_expressions_expression_is_not_abstract():
+    assert not inspect.isabstract(mt_expressions_Expression)
 
 
-def test_mt::statements::statement_constructor_exists():
-    assert callable(mt::statements::Statement.__init__)
+def test_mt_expressions_expression_constructor_exists():
+    assert callable(mt_expressions_Expression.__init__)
 
 
-def test_mt::statements::statement_constructor_args():
-    sig = inspect.signature(mt::statements::Statement.__init__)
+def test_mt_expressions_expression_constructor_args():
+    sig = inspect.signature(mt_expressions_Expression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_mt::expressions::call_is_not_abstract():
-    assert not inspect.isabstract(mt::expressions::Call)
+def test_mt_expressions_call_is_not_abstract():
+    assert not inspect.isabstract(mt_expressions_Call)
 
 
-def test_mt::expressions::call_constructor_exists():
-    assert callable(mt::expressions::Call.__init__)
+def test_mt_expressions_call_constructor_exists():
+    assert callable(mt_expressions_Call.__init__)
 
 
-def test_mt::expressions::call_constructor_args():
-    sig = inspect.signature(mt::expressions::Call.__init__)
+def test_mt_expressions_call_constructor_args():
+    sig = inspect.signature(mt_expressions_Call.__init__)
     params = list(sig.parameters.keys())
     assert "prefix" in params, "Missing parameter 'prefix'"
     assert "name" in params, "Missing parameter 'name'"
 
-def test_mt::expressions::call_has_prefix():
-    assert hasattr(mt::expressions::Call, "prefix")
+def test_mt_expressions_call_has_prefix():
+    assert hasattr(mt_expressions_Call, "prefix")
     descriptor = None
-    for klass in mt::expressions::Call.__mro__:
+    for klass in mt_expressions_Call.__mro__:
         if "prefix" in klass.__dict__:
             descriptor = klass.__dict__["prefix"]
             break
     assert isinstance(descriptor, property)
 
-def test_mt::expressions::call_has_name():
-    assert hasattr(mt::expressions::Call, "name")
+def test_mt_expressions_call_has_name():
+    assert hasattr(mt_expressions_Call, "name")
     descriptor = None
-    for klass in mt::expressions::Call.__mro__:
+    for klass in mt_expressions_Call.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -440,74 +440,74 @@ def test_mt::expressions::call_has_name():
 
 
 
-def test_mt::core::scriptdescriptor_is_not_abstract():
-    assert not inspect.isabstract(mt::core::ScriptDescriptor)
+def test_mt_statements_statement_is_not_abstract():
+    assert not inspect.isabstract(mt_statements_Statement)
 
 
-def test_mt::core::scriptdescriptor_constructor_exists():
-    assert callable(mt::core::ScriptDescriptor.__init__)
+def test_mt_statements_statement_constructor_exists():
+    assert callable(mt_statements_Statement.__init__)
 
 
-def test_mt::core::scriptdescriptor_constructor_args():
-    sig = inspect.signature(mt::core::ScriptDescriptor.__init__)
+def test_mt_statements_statement_constructor_args():
+    sig = inspect.signature(mt_statements_Statement.__init__)
     params = list(sig.parameters.keys())
-    assert "description" in params, "Missing parameter 'description'"
+
+
+
+def test_mt_core_scriptdescriptor_is_not_abstract():
+    assert not inspect.isabstract(mt_core_ScriptDescriptor)
+
+
+def test_mt_core_scriptdescriptor_constructor_exists():
+    assert callable(mt_core_ScriptDescriptor.__init__)
+
+
+def test_mt_core_scriptdescriptor_constructor_args():
+    sig = inspect.signature(mt_core_ScriptDescriptor.__init__)
+    params = list(sig.parameters.keys())
     assert "type" in params, "Missing parameter 'type'"
     assert "name" in params, "Missing parameter 'name'"
+    assert "description" in params, "Missing parameter 'description'"
 
-def test_mt::core::scriptdescriptor_has_description():
-    assert hasattr(mt::core::ScriptDescriptor, "description")
+def test_mt_core_scriptdescriptor_has_type():
+    assert hasattr(mt_core_ScriptDescriptor, "type")
     descriptor = None
-    for klass in mt::core::ScriptDescriptor.__mro__:
-        if "description" in klass.__dict__:
-            descriptor = klass.__dict__["description"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_mt::core::scriptdescriptor_has_type():
-    assert hasattr(mt::core::ScriptDescriptor, "type")
-    descriptor = None
-    for klass in mt::core::ScriptDescriptor.__mro__:
+    for klass in mt_core_ScriptDescriptor.__mro__:
         if "type" in klass.__dict__:
             descriptor = klass.__dict__["type"]
             break
     assert isinstance(descriptor, property)
 
-def test_mt::core::scriptdescriptor_has_name():
-    assert hasattr(mt::core::ScriptDescriptor, "name")
+def test_mt_core_scriptdescriptor_has_name():
+    assert hasattr(mt_core_ScriptDescriptor, "name")
     descriptor = None
-    for klass in mt::core::ScriptDescriptor.__mro__:
+    for klass in mt_core_ScriptDescriptor.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
-
-
-def test_mt::expressions::expression_is_not_abstract():
-    assert not inspect.isabstract(mt::expressions::Expression)
-
-
-def test_mt::expressions::expression_constructor_exists():
-    assert callable(mt::expressions::Expression.__init__)
-
-
-def test_mt::expressions::expression_constructor_args():
-    sig = inspect.signature(mt::expressions::Expression.__init__)
-    params = list(sig.parameters.keys())
+def test_mt_core_scriptdescriptor_has_description():
+    assert hasattr(mt_core_ScriptDescriptor, "description")
+    descriptor = None
+    for klass in mt_core_ScriptDescriptor.__mro__:
+        if "description" in klass.__dict__:
+            descriptor = klass.__dict__["description"]
+            break
+    assert isinstance(descriptor, property)
 
 
 
-def test_mt::core::script_is_not_abstract():
-    assert not inspect.isabstract(mt::core::Script)
+def test_mt_core_script_is_not_abstract():
+    assert not inspect.isabstract(mt_core_Script)
 
 
-def test_mt::core::script_constructor_exists():
-    assert callable(mt::core::Script.__init__)
+def test_mt_core_script_constructor_exists():
+    assert callable(mt_core_Script.__init__)
 
 
-def test_mt::core::script_constructor_args():
-    sig = inspect.signature(mt::core::Script.__init__)
+def test_mt_core_script_constructor_args():
+    sig = inspect.signature(mt_core_Script.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -526,16 +526,16 @@ def test_script_constructor_args():
 
 
 
-def test_core::mt::resource_is_not_abstract():
-    assert not inspect.isabstract(core::mt::Resource)
+def test_core_mt_resource_is_not_abstract():
+    assert not inspect.isabstract(core_mt_Resource)
 
 
-def test_core::mt::resource_constructor_exists():
-    assert callable(core::mt::Resource.__init__)
+def test_core_mt_resource_constructor_exists():
+    assert callable(core_mt_Resource.__init__)
 
 
-def test_core::mt::resource_constructor_args():
-    sig = inspect.signature(core::mt::Resource.__init__)
+def test_core_mt_resource_constructor_args():
+    sig = inspect.signature(core_mt_Resource.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -554,67 +554,67 @@ def test_resource_constructor_args():
 
 
 
-def test_mt::core::template_is_not_abstract():
-    assert not inspect.isabstract(mt::core::Template)
+def test_mt_core_template_is_not_abstract():
+    assert not inspect.isabstract(mt_core_Template)
 
 
-def test_mt::core::template_constructor_exists():
-    assert callable(mt::core::Template.__init__)
+def test_mt_core_template_constructor_exists():
+    assert callable(mt_core_Template.__init__)
 
 
-def test_mt::core::template_constructor_args():
-    sig = inspect.signature(mt::core::Template.__init__)
+def test_mt_core_template_constructor_args():
+    sig = inspect.signature(mt_core_Template.__init__)
     params = list(sig.parameters.keys())
-    assert "endTag" in params, "Missing parameter 'endTag'"
     assert "beginTag" in params, "Missing parameter 'beginTag'"
+    assert "endTag" in params, "Missing parameter 'endTag'"
 
-def test_mt::core::template_has_endTag():
-    assert hasattr(mt::core::Template, "endTag")
+def test_mt_core_template_has_beginTag():
+    assert hasattr(mt_core_Template, "beginTag")
     descriptor = None
-    for klass in mt::core::Template.__mro__:
-        if "endTag" in klass.__dict__:
-            descriptor = klass.__dict__["endTag"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_mt::core::template_has_beginTag():
-    assert hasattr(mt::core::Template, "beginTag")
-    descriptor = None
-    for klass in mt::core::Template.__mro__:
+    for klass in mt_core_Template.__mro__:
         if "beginTag" in klass.__dict__:
             descriptor = klass.__dict__["beginTag"]
             break
     assert isinstance(descriptor, property)
 
+def test_mt_core_template_has_endTag():
+    assert hasattr(mt_core_Template, "endTag")
+    descriptor = None
+    for klass in mt_core_Template.__mro__:
+        if "endTag" in klass.__dict__:
+            descriptor = klass.__dict__["endTag"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_mt::core::astnode_is_not_abstract():
-    assert not inspect.isabstract(mt::core::ASTNode)
+
+def test_mt_core_astnode_is_not_abstract():
+    assert not inspect.isabstract(mt_core_ASTNode)
 
 
-def test_mt::core::astnode_constructor_exists():
-    assert callable(mt::core::ASTNode.__init__)
+def test_mt_core_astnode_constructor_exists():
+    assert callable(mt_core_ASTNode.__init__)
 
 
-def test_mt::core::astnode_constructor_args():
-    sig = inspect.signature(mt::core::ASTNode.__init__)
+def test_mt_core_astnode_constructor_args():
+    sig = inspect.signature(mt_core_ASTNode.__init__)
     params = list(sig.parameters.keys())
     assert "end" in params, "Missing parameter 'end'"
     assert "begin" in params, "Missing parameter 'begin'"
 
-def test_mt::core::astnode_has_end():
-    assert hasattr(mt::core::ASTNode, "end")
+def test_mt_core_astnode_has_end():
+    assert hasattr(mt_core_ASTNode, "end")
     descriptor = None
-    for klass in mt::core::ASTNode.__mro__:
+    for klass in mt_core_ASTNode.__mro__:
         if "end" in klass.__dict__:
             descriptor = klass.__dict__["end"]
             break
     assert isinstance(descriptor, property)
 
-def test_mt::core::astnode_has_begin():
-    assert hasattr(mt::core::ASTNode, "begin")
+def test_mt_core_astnode_has_begin():
+    assert hasattr(mt_core_ASTNode, "begin")
     descriptor = None
-    for klass in mt::core::ASTNode.__mro__:
+    for klass in mt_core_ASTNode.__mro__:
         if "begin" in klass.__dict__:
             descriptor = klass.__dict__["begin"]
             break
@@ -622,35 +622,35 @@ def test_mt::core::astnode_has_begin():
 
 
 
-def test_mt::core::method_is_not_abstract():
-    assert not inspect.isabstract(mt::core::Method)
+def test_mt_core_method_is_not_abstract():
+    assert not inspect.isabstract(mt_core_Method)
 
 
-def test_mt::core::method_constructor_exists():
-    assert callable(mt::core::Method.__init__)
+def test_mt_core_method_constructor_exists():
+    assert callable(mt_core_Method.__init__)
 
 
-def test_mt::core::method_constructor_args():
-    sig = inspect.signature(mt::core::Method.__init__)
+def test_mt_core_method_constructor_args():
+    sig = inspect.signature(mt_core_Method.__init__)
     params = list(sig.parameters.keys())
-    assert "return_" in params, "Missing parameter 'return_'"
     assert "name" in params, "Missing parameter 'name'"
+    assert "return_" in params, "Missing parameter 'return_'"
 
-def test_mt::core::method_has_return_():
-    assert hasattr(mt::core::Method, "return_")
+def test_mt_core_method_has_name():
+    assert hasattr(mt_core_Method, "name")
     descriptor = None
-    for klass in mt::core::Method.__mro__:
-        if "return_" in klass.__dict__:
-            descriptor = klass.__dict__["return_"]
+    for klass in mt_core_Method.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
-def test_mt::core::method_has_name():
-    assert hasattr(mt::core::Method, "name")
+def test_mt_core_method_has_return_():
+    assert hasattr(mt_core_Method, "return_")
     descriptor = None
-    for klass in mt::core::Method.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
+    for klass in mt_core_Method.__mro__:
+        if "return_" in klass.__dict__:
+            descriptor = klass.__dict__["return_"]
             break
     assert isinstance(descriptor, property)
 
@@ -670,37 +670,37 @@ def test_method_constructor_args():
 
 
 
-def test_mt::core::service_is_not_abstract():
-    assert not inspect.isabstract(mt::core::Service)
+def test_mt_core_service_is_not_abstract():
+    assert not inspect.isabstract(mt_core_Service)
 
 
-def test_mt::core::service_constructor_exists():
-    assert callable(mt::core::Service.__init__)
+def test_mt_core_service_constructor_exists():
+    assert callable(mt_core_Service.__init__)
 
 
-def test_mt::core::service_constructor_args():
-    sig = inspect.signature(mt::core::Service.__init__)
+def test_mt_core_service_constructor_args():
+    sig = inspect.signature(mt_core_Service.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_mt::core::metamodel_is_not_abstract():
-    assert not inspect.isabstract(mt::core::Metamodel)
+def test_mt_core_metamodel_is_not_abstract():
+    assert not inspect.isabstract(mt_core_Metamodel)
 
 
-def test_mt::core::metamodel_constructor_exists():
-    assert callable(mt::core::Metamodel.__init__)
+def test_mt_core_metamodel_constructor_exists():
+    assert callable(mt_core_Metamodel.__init__)
 
 
-def test_mt::core::metamodel_constructor_args():
-    sig = inspect.signature(mt::core::Metamodel.__init__)
+def test_mt_core_metamodel_constructor_args():
+    sig = inspect.signature(mt_core_Metamodel.__init__)
     params = list(sig.parameters.keys())
     assert "packageClass" in params, "Missing parameter 'packageClass'"
 
-def test_mt::core::metamodel_has_packageClass():
-    assert hasattr(mt::core::Metamodel, "packageClass")
+def test_mt_core_metamodel_has_packageClass():
+    assert hasattr(mt_core_Metamodel, "packageClass")
     descriptor = None
-    for klass in mt::core::Metamodel.__mro__:
+    for klass in mt_core_Metamodel.__mro__:
         if "packageClass" in klass.__dict__:
             descriptor = klass.__dict__["packageClass"]
             break
@@ -708,16 +708,16 @@ def test_mt::core::metamodel_has_packageClass():
 
 
 
-def test_mt::core::filepath_is_not_abstract():
-    assert not inspect.isabstract(mt::core::FilePath)
+def test_mt_core_filepath_is_not_abstract():
+    assert not inspect.isabstract(mt_core_FilePath)
 
 
-def test_mt::core::filepath_constructor_exists():
-    assert callable(mt::core::FilePath.__init__)
+def test_mt_core_filepath_constructor_exists():
+    assert callable(mt_core_FilePath.__init__)
 
 
-def test_mt::core::filepath_constructor_args():
-    sig = inspect.signature(mt::core::FilePath.__init__)
+def test_mt_core_filepath_constructor_args():
+    sig = inspect.signature(mt_core_FilePath.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -736,37 +736,37 @@ def test_expression_constructor_args():
 
 
 
-def test_mt::expressions::not_is_not_abstract():
-    assert not inspect.isabstract(mt::expressions::Not)
+def test_mt_expressions_literal_is_not_abstract():
+    assert not inspect.isabstract(mt_expressions_Literal)
 
 
-def test_mt::expressions::not_constructor_exists():
-    assert callable(mt::expressions::Not.__init__)
+def test_mt_expressions_literal_constructor_exists():
+    assert callable(mt_expressions_Literal.__init__)
 
 
-def test_mt::expressions::not_constructor_args():
-    sig = inspect.signature(mt::expressions::Not.__init__)
+def test_mt_expressions_literal_constructor_args():
+    sig = inspect.signature(mt_expressions_Literal.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_mt::expressions::operator_is_not_abstract():
-    assert not inspect.isabstract(mt::expressions::Operator)
+def test_mt_expressions_operator_is_not_abstract():
+    assert not inspect.isabstract(mt_expressions_Operator)
 
 
-def test_mt::expressions::operator_constructor_exists():
-    assert callable(mt::expressions::Operator.__init__)
+def test_mt_expressions_operator_constructor_exists():
+    assert callable(mt_expressions_Operator.__init__)
 
 
-def test_mt::expressions::operator_constructor_args():
-    sig = inspect.signature(mt::expressions::Operator.__init__)
+def test_mt_expressions_operator_constructor_args():
+    sig = inspect.signature(mt_expressions_Operator.__init__)
     params = list(sig.parameters.keys())
     assert "operator" in params, "Missing parameter 'operator'"
 
-def test_mt::expressions::operator_has_operator():
-    assert hasattr(mt::expressions::Operator, "operator")
+def test_mt_expressions_operator_has_operator():
+    assert hasattr(mt_expressions_Operator, "operator")
     descriptor = None
-    for klass in mt::expressions::Operator.__mro__:
+    for klass in mt_expressions_Operator.__mro__:
         if "operator" in klass.__dict__:
             descriptor = klass.__dict__["operator"]
             break
@@ -774,65 +774,65 @@ def test_mt::expressions::operator_has_operator():
 
 
 
-def test_mt::expressions::callset_is_not_abstract():
-    assert not inspect.isabstract(mt::expressions::CallSet)
+def test_mt_expressions_not_is_not_abstract():
+    assert not inspect.isabstract(mt_expressions_Not)
 
 
-def test_mt::expressions::callset_constructor_exists():
-    assert callable(mt::expressions::CallSet.__init__)
+def test_mt_expressions_not_constructor_exists():
+    assert callable(mt_expressions_Not.__init__)
 
 
-def test_mt::expressions::callset_constructor_args():
-    sig = inspect.signature(mt::expressions::CallSet.__init__)
+def test_mt_expressions_not_constructor_args():
+    sig = inspect.signature(mt_expressions_Not.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_mt::expressions::parenthesis_is_not_abstract():
-    assert not inspect.isabstract(mt::expressions::Parenthesis)
+def test_mt_expressions_callset_is_not_abstract():
+    assert not inspect.isabstract(mt_expressions_CallSet)
 
 
-def test_mt::expressions::parenthesis_constructor_exists():
-    assert callable(mt::expressions::Parenthesis.__init__)
+def test_mt_expressions_callset_constructor_exists():
+    assert callable(mt_expressions_CallSet.__init__)
 
 
-def test_mt::expressions::parenthesis_constructor_args():
-    sig = inspect.signature(mt::expressions::Parenthesis.__init__)
+def test_mt_expressions_callset_constructor_args():
+    sig = inspect.signature(mt_expressions_CallSet.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_mt::expressions::literal_is_not_abstract():
-    assert not inspect.isabstract(mt::expressions::Literal)
+def test_mt_expressions_parenthesis_is_not_abstract():
+    assert not inspect.isabstract(mt_expressions_Parenthesis)
 
 
-def test_mt::expressions::literal_constructor_exists():
-    assert callable(mt::expressions::Literal.__init__)
+def test_mt_expressions_parenthesis_constructor_exists():
+    assert callable(mt_expressions_Parenthesis.__init__)
 
 
-def test_mt::expressions::literal_constructor_args():
-    sig = inspect.signature(mt::expressions::Literal.__init__)
+def test_mt_expressions_parenthesis_constructor_args():
+    sig = inspect.signature(mt_expressions_Parenthesis.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_mt::resource_is_not_abstract():
-    assert not inspect.isabstract(mt::Resource)
+def test_mt_resource_is_not_abstract():
+    assert not inspect.isabstract(mt_Resource)
 
 
-def test_mt::resource_constructor_exists():
-    assert callable(mt::Resource.__init__)
+def test_mt_resource_constructor_exists():
+    assert callable(mt_Resource.__init__)
 
 
-def test_mt::resource_constructor_args():
-    sig = inspect.signature(mt::Resource.__init__)
+def test_mt_resource_constructor_args():
+    sig = inspect.signature(mt_Resource.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_mt::resource_has_name():
-    assert hasattr(mt::Resource, "name")
+def test_mt_resource_has_name():
+    assert hasattr(mt_Resource, "name")
     descriptor = None
-    for klass in mt::Resource.__mro__:
+    for klass in mt_Resource.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -840,16 +840,16 @@ def test_mt::resource_has_name():
 
 
 
-def test_mt::resourceset_is_not_abstract():
-    assert not inspect.isabstract(mt::ResourceSet)
+def test_mt_resourceset_is_not_abstract():
+    assert not inspect.isabstract(mt_ResourceSet)
 
 
-def test_mt::resourceset_constructor_exists():
-    assert callable(mt::ResourceSet.__init__)
+def test_mt_resourceset_constructor_exists():
+    assert callable(mt_ResourceSet.__init__)
 
 
-def test_mt::resourceset_constructor_args():
-    sig = inspect.signature(mt::ResourceSet.__init__)
+def test_mt_resourceset_constructor_args():
+    sig = inspect.signature(mt_ResourceSet.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -870,8 +870,8 @@ If_strategy = st.builds(
 Call_strategy = st.builds(
     Call,
 )
-mt::core::Parameter_strategy = st.builds(
-    mt::core::Parameter,
+mt_core_Parameter_strategy = st.builds(
+    mt_core_Parameter,
     type=
         safe_text
 )
@@ -881,26 +881,26 @@ Parameter_strategy = st.builds(
 Literal_strategy = st.builds(
     Literal,
 )
-mt::expressions::IntegerLiteral_strategy = st.builds(
-    mt::expressions::IntegerLiteral,
+mt_expressions_NullLiteral_strategy = st.builds(
+    mt_expressions_NullLiteral,
+)
+mt_expressions_IntegerLiteral_strategy = st.builds(
+    mt_expressions_IntegerLiteral,
     value=
         st.integers()
 )
-mt::expressions::BooleanLiteral_strategy = st.builds(
-    mt::expressions::BooleanLiteral,
-    value=
-        st.booleans()
-)
-mt::expressions::DoubleLiteral_strategy = st.builds(
-    mt::expressions::DoubleLiteral,
+mt_expressions_DoubleLiteral_strategy = st.builds(
+    mt_expressions_DoubleLiteral,
     value=
         st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False)
 )
-mt::expressions::NullLiteral_strategy = st.builds(
-    mt::expressions::NullLiteral,
+mt_expressions_BooleanLiteral_strategy = st.builds(
+    mt_expressions_BooleanLiteral,
+    value=
+        st.booleans()
 )
-mt::expressions::StringLiteral_strategy = st.builds(
-    mt::expressions::StringLiteral,
+mt_expressions_StringLiteral_strategy = st.builds(
+    mt_expressions_StringLiteral,
     value=
         safe_text
 )
@@ -910,24 +910,24 @@ FilePath_strategy = st.builds(
 Statement_strategy = st.builds(
     Statement,
 )
-mt::statements::For_strategy = st.builds(
-    mt::statements::For,
+mt_statements_Feature_strategy = st.builds(
+    mt_statements_Feature,
 )
-mt::statements::If_strategy = st.builds(
-    mt::statements::If,
-)
-mt::statements::Text_strategy = st.builds(
-    mt::statements::Text,
+mt_statements_Comment_strategy = st.builds(
+    mt_statements_Comment,
     value=
         safe_text
 )
-mt::statements::Comment_strategy = st.builds(
-    mt::statements::Comment,
+mt_statements_For_strategy = st.builds(
+    mt_statements_For,
+)
+mt_statements_If_strategy = st.builds(
+    mt_statements_If,
+)
+mt_statements_Text_strategy = st.builds(
+    mt_statements_Text,
     value=
         safe_text
-)
-mt::statements::Feature_strategy = st.builds(
-    mt::statements::Feature,
 )
 ScriptDescriptor_strategy = st.builds(
     ScriptDescriptor,
@@ -935,102 +935,102 @@ ScriptDescriptor_strategy = st.builds(
 ASTNode_strategy = st.builds(
     ASTNode,
 )
-mt::statements::Statement_strategy = st.builds(
-    mt::statements::Statement,
+mt_expressions_Expression_strategy = st.builds(
+    mt_expressions_Expression,
 )
-mt::expressions::Call_strategy = st.builds(
-    mt::expressions::Call,
+mt_expressions_Call_strategy = st.builds(
+    mt_expressions_Call,
     prefix=
         safe_text,
     name=
         safe_text
 )
-mt::core::ScriptDescriptor_strategy = st.builds(
-    mt::core::ScriptDescriptor,
-    description=
-        safe_text,
+mt_statements_Statement_strategy = st.builds(
+    mt_statements_Statement,
+)
+mt_core_ScriptDescriptor_strategy = st.builds(
+    mt_core_ScriptDescriptor,
     type=
         safe_text,
     name=
+        safe_text,
+    description=
         safe_text
 )
-mt::expressions::Expression_strategy = st.builds(
-    mt::expressions::Expression,
-)
-mt::core::Script_strategy = st.builds(
-    mt::core::Script,
+mt_core_Script_strategy = st.builds(
+    mt_core_Script,
 )
 Script_strategy = st.builds(
     Script,
 )
-core::mt::Resource_strategy = st.builds(
-    core::mt::Resource,
+core_mt_Resource_strategy = st.builds(
+    core_mt_Resource,
 )
 Resource_strategy = st.builds(
     Resource,
 )
-mt::core::Template_strategy = st.builds(
-    mt::core::Template,
-    endTag=
-        safe_text,
+mt_core_Template_strategy = st.builds(
+    mt_core_Template,
     beginTag=
+        safe_text,
+    endTag=
         safe_text
 )
-mt::core::ASTNode_strategy = st.builds(
-    mt::core::ASTNode,
+mt_core_ASTNode_strategy = st.builds(
+    mt_core_ASTNode,
     end=
         st.integers(),
     begin=
         st.integers()
 )
-mt::core::Method_strategy = st.builds(
-    mt::core::Method,
-    return_=
-        safe_text,
+mt_core_Method_strategy = st.builds(
+    mt_core_Method,
     name=
+        safe_text,
+    return_=
         safe_text
 )
 Method_strategy = st.builds(
     Method,
 )
-mt::core::Service_strategy = st.builds(
-    mt::core::Service,
+mt_core_Service_strategy = st.builds(
+    mt_core_Service,
 )
-mt::core::Metamodel_strategy = st.builds(
-    mt::core::Metamodel,
+mt_core_Metamodel_strategy = st.builds(
+    mt_core_Metamodel,
     packageClass=
         safe_text
 )
-mt::core::FilePath_strategy = st.builds(
-    mt::core::FilePath,
+mt_core_FilePath_strategy = st.builds(
+    mt_core_FilePath,
 )
 Expression_strategy = st.builds(
     Expression,
 )
-mt::expressions::Not_strategy = st.builds(
-    mt::expressions::Not,
+mt_expressions_Literal_strategy = st.builds(
+    mt_expressions_Literal,
 )
-mt::expressions::Operator_strategy = st.builds(
-    mt::expressions::Operator,
+mt_expressions_Operator_strategy = st.builds(
+    mt_expressions_Operator,
     operator=
         safe_text
 )
-mt::expressions::CallSet_strategy = st.builds(
-    mt::expressions::CallSet,
+mt_expressions_Not_strategy = st.builds(
+    mt_expressions_Not,
 )
-mt::expressions::Parenthesis_strategy = st.builds(
-    mt::expressions::Parenthesis,
+mt_expressions_CallSet_strategy = st.builds(
+    mt_expressions_CallSet,
 )
-mt::expressions::Literal_strategy = st.builds(
-    mt::expressions::Literal,
+mt_expressions_Parenthesis_strategy = st.builds(
+    mt_expressions_Parenthesis,
 )
-mt::Resource_strategy = st.builds(
-    mt::Resource,
+mt_Resource_strategy = st.builds(
+    mt_Resource,
     name=
         safe_text
 )
-mt::ResourceSet_strategy = st.builds(
-    mt::ResourceSet,
+mt_ResourceSet_strategy = st.builds(
+    mt_ResourceSet,
 )
 
 @given(instance=If_strategy)
@@ -1043,18 +1043,15 @@ def test_if_instantiation(instance):
 def test_call_instantiation(instance):
     assert isinstance(instance, Call)
 
-@given(instance=mt::core::Parameter_strategy)
+@given(instance=mt_core_Parameter_strategy)
 @settings(max_examples=50)
-def test_mt::core::parameter_instantiation(instance):
-    assert isinstance(instance, mt::core::Parameter)
-
-@given(instance=mt::core::Parameter_strategy)
-def test_mt::core::parameter_type_type(instance):
-    assert isinstance(instance.type, str)
+def test_mt_core_parameter_instantiation(instance):
+    assert isinstance(instance, mt_core_Parameter)
 
 
-@given(instance=mt::core::Parameter_strategy)
-def test_mt::core::parameter_type_setter(instance):
+
+@given(instance=mt_core_Parameter_strategy)
+def test_mt_core_parameter_type_setter(instance):
     original = instance.type
     instance.type = original
     assert instance.type == original
@@ -1069,71 +1066,59 @@ def test_parameter_instantiation(instance):
 def test_literal_instantiation(instance):
     assert isinstance(instance, Literal)
 
-@given(instance=mt::expressions::IntegerLiteral_strategy)
+@given(instance=mt_expressions_NullLiteral_strategy)
 @settings(max_examples=50)
-def test_mt::expressions::integerliteral_instantiation(instance):
-    assert isinstance(instance, mt::expressions::IntegerLiteral)
+def test_mt_expressions_nullliteral_instantiation(instance):
+    assert isinstance(instance, mt_expressions_NullLiteral)
 
-@given(instance=mt::expressions::IntegerLiteral_strategy)
-def test_mt::expressions::integerliteral_value_type(instance):
-    assert isinstance(instance.value, int)
+@given(instance=mt_expressions_IntegerLiteral_strategy)
+@settings(max_examples=50)
+def test_mt_expressions_integerliteral_instantiation(instance):
+    assert isinstance(instance, mt_expressions_IntegerLiteral)
 
 
-@given(instance=mt::expressions::IntegerLiteral_strategy)
-def test_mt::expressions::integerliteral_value_setter(instance):
+
+@given(instance=mt_expressions_IntegerLiteral_strategy)
+def test_mt_expressions_integerliteral_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
 
-@given(instance=mt::expressions::BooleanLiteral_strategy)
+@given(instance=mt_expressions_DoubleLiteral_strategy)
 @settings(max_examples=50)
-def test_mt::expressions::booleanliteral_instantiation(instance):
-    assert isinstance(instance, mt::expressions::BooleanLiteral)
-
-@given(instance=mt::expressions::BooleanLiteral_strategy)
-def test_mt::expressions::booleanliteral_value_type(instance):
-    assert isinstance(instance.value, bool)
+def test_mt_expressions_doubleliteral_instantiation(instance):
+    assert isinstance(instance, mt_expressions_DoubleLiteral)
 
 
-@given(instance=mt::expressions::BooleanLiteral_strategy)
-def test_mt::expressions::booleanliteral_value_setter(instance):
+
+@given(instance=mt_expressions_DoubleLiteral_strategy)
+def test_mt_expressions_doubleliteral_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
 
-@given(instance=mt::expressions::DoubleLiteral_strategy)
+@given(instance=mt_expressions_BooleanLiteral_strategy)
 @settings(max_examples=50)
-def test_mt::expressions::doubleliteral_instantiation(instance):
-    assert isinstance(instance, mt::expressions::DoubleLiteral)
-
-@given(instance=mt::expressions::DoubleLiteral_strategy)
-def test_mt::expressions::doubleliteral_value_type(instance):
-    assert isinstance(instance.value, float)
+def test_mt_expressions_booleanliteral_instantiation(instance):
+    assert isinstance(instance, mt_expressions_BooleanLiteral)
 
 
-@given(instance=mt::expressions::DoubleLiteral_strategy)
-def test_mt::expressions::doubleliteral_value_setter(instance):
+
+@given(instance=mt_expressions_BooleanLiteral_strategy)
+def test_mt_expressions_booleanliteral_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
 
-@given(instance=mt::expressions::NullLiteral_strategy)
+@given(instance=mt_expressions_StringLiteral_strategy)
 @settings(max_examples=50)
-def test_mt::expressions::nullliteral_instantiation(instance):
-    assert isinstance(instance, mt::expressions::NullLiteral)
-
-@given(instance=mt::expressions::StringLiteral_strategy)
-@settings(max_examples=50)
-def test_mt::expressions::stringliteral_instantiation(instance):
-    assert isinstance(instance, mt::expressions::StringLiteral)
-
-@given(instance=mt::expressions::StringLiteral_strategy)
-def test_mt::expressions::stringliteral_value_type(instance):
-    assert isinstance(instance.value, str)
+def test_mt_expressions_stringliteral_instantiation(instance):
+    assert isinstance(instance, mt_expressions_StringLiteral)
 
 
-@given(instance=mt::expressions::StringLiteral_strategy)
-def test_mt::expressions::stringliteral_value_setter(instance):
+
+@given(instance=mt_expressions_StringLiteral_strategy)
+def test_mt_expressions_stringliteral_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
@@ -1148,52 +1133,46 @@ def test_filepath_instantiation(instance):
 def test_statement_instantiation(instance):
     assert isinstance(instance, Statement)
 
-@given(instance=mt::statements::For_strategy)
+@given(instance=mt_statements_Feature_strategy)
 @settings(max_examples=50)
-def test_mt::statements::for_instantiation(instance):
-    assert isinstance(instance, mt::statements::For)
+def test_mt_statements_feature_instantiation(instance):
+    assert isinstance(instance, mt_statements_Feature)
 
-@given(instance=mt::statements::If_strategy)
+@given(instance=mt_statements_Comment_strategy)
 @settings(max_examples=50)
-def test_mt::statements::if_instantiation(instance):
-    assert isinstance(instance, mt::statements::If)
-
-@given(instance=mt::statements::Text_strategy)
-@settings(max_examples=50)
-def test_mt::statements::text_instantiation(instance):
-    assert isinstance(instance, mt::statements::Text)
-
-@given(instance=mt::statements::Text_strategy)
-def test_mt::statements::text_value_type(instance):
-    assert isinstance(instance.value, str)
+def test_mt_statements_comment_instantiation(instance):
+    assert isinstance(instance, mt_statements_Comment)
 
 
-@given(instance=mt::statements::Text_strategy)
-def test_mt::statements::text_value_setter(instance):
+
+@given(instance=mt_statements_Comment_strategy)
+def test_mt_statements_comment_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
 
-@given(instance=mt::statements::Comment_strategy)
+@given(instance=mt_statements_For_strategy)
 @settings(max_examples=50)
-def test_mt::statements::comment_instantiation(instance):
-    assert isinstance(instance, mt::statements::Comment)
+def test_mt_statements_for_instantiation(instance):
+    assert isinstance(instance, mt_statements_For)
 
-@given(instance=mt::statements::Comment_strategy)
-def test_mt::statements::comment_value_type(instance):
-    assert isinstance(instance.value, str)
+@given(instance=mt_statements_If_strategy)
+@settings(max_examples=50)
+def test_mt_statements_if_instantiation(instance):
+    assert isinstance(instance, mt_statements_If)
+
+@given(instance=mt_statements_Text_strategy)
+@settings(max_examples=50)
+def test_mt_statements_text_instantiation(instance):
+    assert isinstance(instance, mt_statements_Text)
 
 
-@given(instance=mt::statements::Comment_strategy)
-def test_mt::statements::comment_value_setter(instance):
+
+@given(instance=mt_statements_Text_strategy)
+def test_mt_statements_text_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
-
-@given(instance=mt::statements::Feature_strategy)
-@settings(max_examples=50)
-def test_mt::statements::feature_instantiation(instance):
-    assert isinstance(instance, mt::statements::Feature)
 
 @given(instance=ScriptDescriptor_strategy)
 @settings(max_examples=50)
@@ -1205,271 +1184,229 @@ def test_scriptdescriptor_instantiation(instance):
 def test_astnode_instantiation(instance):
     assert isinstance(instance, ASTNode)
 
-@given(instance=mt::statements::Statement_strategy)
+@given(instance=mt_expressions_Expression_strategy)
 @settings(max_examples=50)
-def test_mt::statements::statement_instantiation(instance):
-    assert isinstance(instance, mt::statements::Statement)
+def test_mt_expressions_expression_instantiation(instance):
+    assert isinstance(instance, mt_expressions_Expression)
 
-@given(instance=mt::expressions::Call_strategy)
+@given(instance=mt_expressions_Call_strategy)
 @settings(max_examples=50)
-def test_mt::expressions::call_instantiation(instance):
-    assert isinstance(instance, mt::expressions::Call)
-
-@given(instance=mt::expressions::Call_strategy)
-def test_mt::expressions::call_prefix_type(instance):
-    assert isinstance(instance.prefix, str)
+def test_mt_expressions_call_instantiation(instance):
+    assert isinstance(instance, mt_expressions_Call)
 
 
-@given(instance=mt::expressions::Call_strategy)
-def test_mt::expressions::call_prefix_setter(instance):
+
+@given(instance=mt_expressions_Call_strategy)
+def test_mt_expressions_call_prefix_setter(instance):
     original = instance.prefix
     instance.prefix = original
     assert instance.prefix == original
 
-@given(instance=mt::expressions::Call_strategy)
-def test_mt::expressions::call_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
-@given(instance=mt::expressions::Call_strategy)
-def test_mt::expressions::call_name_setter(instance):
+@given(instance=mt_expressions_Call_strategy)
+def test_mt_expressions_call_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=mt::core::ScriptDescriptor_strategy)
+@given(instance=mt_statements_Statement_strategy)
 @settings(max_examples=50)
-def test_mt::core::scriptdescriptor_instantiation(instance):
-    assert isinstance(instance, mt::core::ScriptDescriptor)
+def test_mt_statements_statement_instantiation(instance):
+    assert isinstance(instance, mt_statements_Statement)
 
-@given(instance=mt::core::ScriptDescriptor_strategy)
-def test_mt::core::scriptdescriptor_description_type(instance):
-    assert isinstance(instance.description, str)
-
-
-@given(instance=mt::core::ScriptDescriptor_strategy)
-def test_mt::core::scriptdescriptor_description_setter(instance):
-    original = instance.description
-    instance.description = original
-    assert instance.description == original
-
-@given(instance=mt::core::ScriptDescriptor_strategy)
-def test_mt::core::scriptdescriptor_type_type(instance):
-    assert isinstance(instance.type, str)
+@given(instance=mt_core_ScriptDescriptor_strategy)
+@settings(max_examples=50)
+def test_mt_core_scriptdescriptor_instantiation(instance):
+    assert isinstance(instance, mt_core_ScriptDescriptor)
 
 
-@given(instance=mt::core::ScriptDescriptor_strategy)
-def test_mt::core::scriptdescriptor_type_setter(instance):
+
+@given(instance=mt_core_ScriptDescriptor_strategy)
+def test_mt_core_scriptdescriptor_type_setter(instance):
     original = instance.type
     instance.type = original
     assert instance.type == original
 
-@given(instance=mt::core::ScriptDescriptor_strategy)
-def test_mt::core::scriptdescriptor_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
-@given(instance=mt::core::ScriptDescriptor_strategy)
-def test_mt::core::scriptdescriptor_name_setter(instance):
+@given(instance=mt_core_ScriptDescriptor_strategy)
+def test_mt_core_scriptdescriptor_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=mt::expressions::Expression_strategy)
-@settings(max_examples=50)
-def test_mt::expressions::expression_instantiation(instance):
-    assert isinstance(instance, mt::expressions::Expression)
 
-@given(instance=mt::core::Script_strategy)
+
+@given(instance=mt_core_ScriptDescriptor_strategy)
+def test_mt_core_scriptdescriptor_description_setter(instance):
+    original = instance.description
+    instance.description = original
+    assert instance.description == original
+
+@given(instance=mt_core_Script_strategy)
 @settings(max_examples=50)
-def test_mt::core::script_instantiation(instance):
-    assert isinstance(instance, mt::core::Script)
+def test_mt_core_script_instantiation(instance):
+    assert isinstance(instance, mt_core_Script)
 
 @given(instance=Script_strategy)
 @settings(max_examples=50)
 def test_script_instantiation(instance):
     assert isinstance(instance, Script)
 
-@given(instance=core::mt::Resource_strategy)
+@given(instance=core_mt_Resource_strategy)
 @settings(max_examples=50)
-def test_core::mt::resource_instantiation(instance):
-    assert isinstance(instance, core::mt::Resource)
+def test_core_mt_resource_instantiation(instance):
+    assert isinstance(instance, core_mt_Resource)
 
 @given(instance=Resource_strategy)
 @settings(max_examples=50)
 def test_resource_instantiation(instance):
     assert isinstance(instance, Resource)
 
-@given(instance=mt::core::Template_strategy)
+@given(instance=mt_core_Template_strategy)
 @settings(max_examples=50)
-def test_mt::core::template_instantiation(instance):
-    assert isinstance(instance, mt::core::Template)
-
-@given(instance=mt::core::Template_strategy)
-def test_mt::core::template_endTag_type(instance):
-    assert isinstance(instance.endTag, str)
+def test_mt_core_template_instantiation(instance):
+    assert isinstance(instance, mt_core_Template)
 
 
-@given(instance=mt::core::Template_strategy)
-def test_mt::core::template_endTag_setter(instance):
-    original = instance.endTag
-    instance.endTag = original
-    assert instance.endTag == original
 
-@given(instance=mt::core::Template_strategy)
-def test_mt::core::template_beginTag_type(instance):
-    assert isinstance(instance.beginTag, str)
-
-
-@given(instance=mt::core::Template_strategy)
-def test_mt::core::template_beginTag_setter(instance):
+@given(instance=mt_core_Template_strategy)
+def test_mt_core_template_beginTag_setter(instance):
     original = instance.beginTag
     instance.beginTag = original
     assert instance.beginTag == original
 
-@given(instance=mt::core::ASTNode_strategy)
+
+
+@given(instance=mt_core_Template_strategy)
+def test_mt_core_template_endTag_setter(instance):
+    original = instance.endTag
+    instance.endTag = original
+    assert instance.endTag == original
+
+@given(instance=mt_core_ASTNode_strategy)
 @settings(max_examples=50)
-def test_mt::core::astnode_instantiation(instance):
-    assert isinstance(instance, mt::core::ASTNode)
-
-@given(instance=mt::core::ASTNode_strategy)
-def test_mt::core::astnode_end_type(instance):
-    assert isinstance(instance.end, int)
+def test_mt_core_astnode_instantiation(instance):
+    assert isinstance(instance, mt_core_ASTNode)
 
 
-@given(instance=mt::core::ASTNode_strategy)
-def test_mt::core::astnode_end_setter(instance):
+
+@given(instance=mt_core_ASTNode_strategy)
+def test_mt_core_astnode_end_setter(instance):
     original = instance.end
     instance.end = original
     assert instance.end == original
 
-@given(instance=mt::core::ASTNode_strategy)
-def test_mt::core::astnode_begin_type(instance):
-    assert isinstance(instance.begin, int)
 
 
-@given(instance=mt::core::ASTNode_strategy)
-def test_mt::core::astnode_begin_setter(instance):
+@given(instance=mt_core_ASTNode_strategy)
+def test_mt_core_astnode_begin_setter(instance):
     original = instance.begin
     instance.begin = original
     assert instance.begin == original
 
-@given(instance=mt::core::Method_strategy)
+@given(instance=mt_core_Method_strategy)
 @settings(max_examples=50)
-def test_mt::core::method_instantiation(instance):
-    assert isinstance(instance, mt::core::Method)
-
-@given(instance=mt::core::Method_strategy)
-def test_mt::core::method_return__type(instance):
-    assert isinstance(instance.return_, str)
+def test_mt_core_method_instantiation(instance):
+    assert isinstance(instance, mt_core_Method)
 
 
-@given(instance=mt::core::Method_strategy)
-def test_mt::core::method_return__setter(instance):
-    original = instance.return_
-    instance.return_ = original
-    assert instance.return_ == original
 
-@given(instance=mt::core::Method_strategy)
-def test_mt::core::method_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=mt::core::Method_strategy)
-def test_mt::core::method_name_setter(instance):
+@given(instance=mt_core_Method_strategy)
+def test_mt_core_method_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
+
+
+
+@given(instance=mt_core_Method_strategy)
+def test_mt_core_method_return__setter(instance):
+    original = instance.return_
+    instance.return_ = original
+    assert instance.return_ == original
 
 @given(instance=Method_strategy)
 @settings(max_examples=50)
 def test_method_instantiation(instance):
     assert isinstance(instance, Method)
 
-@given(instance=mt::core::Service_strategy)
+@given(instance=mt_core_Service_strategy)
 @settings(max_examples=50)
-def test_mt::core::service_instantiation(instance):
-    assert isinstance(instance, mt::core::Service)
+def test_mt_core_service_instantiation(instance):
+    assert isinstance(instance, mt_core_Service)
 
-@given(instance=mt::core::Metamodel_strategy)
+@given(instance=mt_core_Metamodel_strategy)
 @settings(max_examples=50)
-def test_mt::core::metamodel_instantiation(instance):
-    assert isinstance(instance, mt::core::Metamodel)
-
-@given(instance=mt::core::Metamodel_strategy)
-def test_mt::core::metamodel_packageClass_type(instance):
-    assert isinstance(instance.packageClass, str)
+def test_mt_core_metamodel_instantiation(instance):
+    assert isinstance(instance, mt_core_Metamodel)
 
 
-@given(instance=mt::core::Metamodel_strategy)
-def test_mt::core::metamodel_packageClass_setter(instance):
+
+@given(instance=mt_core_Metamodel_strategy)
+def test_mt_core_metamodel_packageClass_setter(instance):
     original = instance.packageClass
     instance.packageClass = original
     assert instance.packageClass == original
 
-@given(instance=mt::core::FilePath_strategy)
+@given(instance=mt_core_FilePath_strategy)
 @settings(max_examples=50)
-def test_mt::core::filepath_instantiation(instance):
-    assert isinstance(instance, mt::core::FilePath)
+def test_mt_core_filepath_instantiation(instance):
+    assert isinstance(instance, mt_core_FilePath)
 
 @given(instance=Expression_strategy)
 @settings(max_examples=50)
 def test_expression_instantiation(instance):
     assert isinstance(instance, Expression)
 
-@given(instance=mt::expressions::Not_strategy)
+@given(instance=mt_expressions_Literal_strategy)
 @settings(max_examples=50)
-def test_mt::expressions::not_instantiation(instance):
-    assert isinstance(instance, mt::expressions::Not)
+def test_mt_expressions_literal_instantiation(instance):
+    assert isinstance(instance, mt_expressions_Literal)
 
-@given(instance=mt::expressions::Operator_strategy)
+@given(instance=mt_expressions_Operator_strategy)
 @settings(max_examples=50)
-def test_mt::expressions::operator_instantiation(instance):
-    assert isinstance(instance, mt::expressions::Operator)
-
-@given(instance=mt::expressions::Operator_strategy)
-def test_mt::expressions::operator_operator_type(instance):
-    assert isinstance(instance.operator, str)
+def test_mt_expressions_operator_instantiation(instance):
+    assert isinstance(instance, mt_expressions_Operator)
 
 
-@given(instance=mt::expressions::Operator_strategy)
-def test_mt::expressions::operator_operator_setter(instance):
+
+@given(instance=mt_expressions_Operator_strategy)
+def test_mt_expressions_operator_operator_setter(instance):
     original = instance.operator
     instance.operator = original
     assert instance.operator == original
 
-@given(instance=mt::expressions::CallSet_strategy)
+@given(instance=mt_expressions_Not_strategy)
 @settings(max_examples=50)
-def test_mt::expressions::callset_instantiation(instance):
-    assert isinstance(instance, mt::expressions::CallSet)
+def test_mt_expressions_not_instantiation(instance):
+    assert isinstance(instance, mt_expressions_Not)
 
-@given(instance=mt::expressions::Parenthesis_strategy)
+@given(instance=mt_expressions_CallSet_strategy)
 @settings(max_examples=50)
-def test_mt::expressions::parenthesis_instantiation(instance):
-    assert isinstance(instance, mt::expressions::Parenthesis)
+def test_mt_expressions_callset_instantiation(instance):
+    assert isinstance(instance, mt_expressions_CallSet)
 
-@given(instance=mt::expressions::Literal_strategy)
+@given(instance=mt_expressions_Parenthesis_strategy)
 @settings(max_examples=50)
-def test_mt::expressions::literal_instantiation(instance):
-    assert isinstance(instance, mt::expressions::Literal)
+def test_mt_expressions_parenthesis_instantiation(instance):
+    assert isinstance(instance, mt_expressions_Parenthesis)
 
-@given(instance=mt::Resource_strategy)
+@given(instance=mt_Resource_strategy)
 @settings(max_examples=50)
-def test_mt::resource_instantiation(instance):
-    assert isinstance(instance, mt::Resource)
-
-@given(instance=mt::Resource_strategy)
-def test_mt::resource_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_mt_resource_instantiation(instance):
+    assert isinstance(instance, mt_Resource)
 
 
-@given(instance=mt::Resource_strategy)
-def test_mt::resource_name_setter(instance):
+
+@given(instance=mt_Resource_strategy)
+def test_mt_resource_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=mt::ResourceSet_strategy)
+@given(instance=mt_ResourceSet_strategy)
 @settings(max_examples=50)
-def test_mt::resourceset_instantiation(instance):
-    assert isinstance(instance, mt::ResourceSet)
+def test_mt_resourceset_instantiation(instance):
+    assert isinstance(instance, mt_ResourceSet)

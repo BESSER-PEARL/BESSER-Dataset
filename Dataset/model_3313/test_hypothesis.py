@@ -3,15 +3,15 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    viatraTraceability::Identification,
-    viatraTraceability::AbstractElement,
-    viatraTraceability::DepToGSPNTrace,
-    viatraTraceability::DepModel,
-    viatraTraceability::PetriNet,
-    viatraTraceability::DepToGSPN,
+from python_code import (
+    viatraTraceability_Identification,
+    viatraTraceability_AbstractElement,
+    viatraTraceability_DepToGSPNTrace,
+    viatraTraceability_DepModel,
+    viatraTraceability_PetriNet,
+    viatraTraceability_DepToGSPN,
 )
 
 # =============================================================================
@@ -20,86 +20,86 @@ from classes import (
 
 
 
-def test_viatratraceability::identification_is_not_abstract():
-    assert not inspect.isabstract(viatraTraceability::Identification)
+def test_viatratraceability_identification_is_not_abstract():
+    assert not inspect.isabstract(viatraTraceability_Identification)
 
 
-def test_viatratraceability::identification_constructor_exists():
-    assert callable(viatraTraceability::Identification.__init__)
+def test_viatratraceability_identification_constructor_exists():
+    assert callable(viatraTraceability_Identification.__init__)
 
 
-def test_viatratraceability::identification_constructor_args():
-    sig = inspect.signature(viatraTraceability::Identification.__init__)
+def test_viatratraceability_identification_constructor_args():
+    sig = inspect.signature(viatraTraceability_Identification.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_viatratraceability::abstractelement_is_not_abstract():
-    assert not inspect.isabstract(viatraTraceability::AbstractElement)
+def test_viatratraceability_abstractelement_is_not_abstract():
+    assert not inspect.isabstract(viatraTraceability_AbstractElement)
 
 
-def test_viatratraceability::abstractelement_constructor_exists():
-    assert callable(viatraTraceability::AbstractElement.__init__)
+def test_viatratraceability_abstractelement_constructor_exists():
+    assert callable(viatraTraceability_AbstractElement.__init__)
 
 
-def test_viatratraceability::abstractelement_constructor_args():
-    sig = inspect.signature(viatraTraceability::AbstractElement.__init__)
+def test_viatratraceability_abstractelement_constructor_args():
+    sig = inspect.signature(viatraTraceability_AbstractElement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_viatratraceability::deptogspntrace_is_not_abstract():
-    assert not inspect.isabstract(viatraTraceability::DepToGSPNTrace)
+def test_viatratraceability_deptogspntrace_is_not_abstract():
+    assert not inspect.isabstract(viatraTraceability_DepToGSPNTrace)
 
 
-def test_viatratraceability::deptogspntrace_constructor_exists():
-    assert callable(viatraTraceability::DepToGSPNTrace.__init__)
+def test_viatratraceability_deptogspntrace_constructor_exists():
+    assert callable(viatraTraceability_DepToGSPNTrace.__init__)
 
 
-def test_viatratraceability::deptogspntrace_constructor_args():
-    sig = inspect.signature(viatraTraceability::DepToGSPNTrace.__init__)
+def test_viatratraceability_deptogspntrace_constructor_args():
+    sig = inspect.signature(viatraTraceability_DepToGSPNTrace.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_viatratraceability::depmodel_is_not_abstract():
-    assert not inspect.isabstract(viatraTraceability::DepModel)
+def test_viatratraceability_depmodel_is_not_abstract():
+    assert not inspect.isabstract(viatraTraceability_DepModel)
 
 
-def test_viatratraceability::depmodel_constructor_exists():
-    assert callable(viatraTraceability::DepModel.__init__)
+def test_viatratraceability_depmodel_constructor_exists():
+    assert callable(viatraTraceability_DepModel.__init__)
 
 
-def test_viatratraceability::depmodel_constructor_args():
-    sig = inspect.signature(viatraTraceability::DepModel.__init__)
+def test_viatratraceability_depmodel_constructor_args():
+    sig = inspect.signature(viatraTraceability_DepModel.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_viatratraceability::petrinet_is_not_abstract():
-    assert not inspect.isabstract(viatraTraceability::PetriNet)
+def test_viatratraceability_petrinet_is_not_abstract():
+    assert not inspect.isabstract(viatraTraceability_PetriNet)
 
 
-def test_viatratraceability::petrinet_constructor_exists():
-    assert callable(viatraTraceability::PetriNet.__init__)
+def test_viatratraceability_petrinet_constructor_exists():
+    assert callable(viatraTraceability_PetriNet.__init__)
 
 
-def test_viatratraceability::petrinet_constructor_args():
-    sig = inspect.signature(viatraTraceability::PetriNet.__init__)
+def test_viatratraceability_petrinet_constructor_args():
+    sig = inspect.signature(viatraTraceability_PetriNet.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_viatratraceability::deptogspn_is_not_abstract():
-    assert not inspect.isabstract(viatraTraceability::DepToGSPN)
+def test_viatratraceability_deptogspn_is_not_abstract():
+    assert not inspect.isabstract(viatraTraceability_DepToGSPN)
 
 
-def test_viatratraceability::deptogspn_constructor_exists():
-    assert callable(viatraTraceability::DepToGSPN.__init__)
+def test_viatratraceability_deptogspn_constructor_exists():
+    assert callable(viatraTraceability_DepToGSPN.__init__)
 
 
-def test_viatratraceability::deptogspn_constructor_args():
-    sig = inspect.signature(viatraTraceability::DepToGSPN.__init__)
+def test_viatratraceability_deptogspn_constructor_args():
+    sig = inspect.signature(viatraTraceability_DepToGSPN.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -114,51 +114,51 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-viatraTraceability::Identification_strategy = st.builds(
-    viatraTraceability::Identification,
+viatraTraceability_Identification_strategy = st.builds(
+    viatraTraceability_Identification,
 )
-viatraTraceability::AbstractElement_strategy = st.builds(
-    viatraTraceability::AbstractElement,
+viatraTraceability_AbstractElement_strategy = st.builds(
+    viatraTraceability_AbstractElement,
 )
-viatraTraceability::DepToGSPNTrace_strategy = st.builds(
-    viatraTraceability::DepToGSPNTrace,
+viatraTraceability_DepToGSPNTrace_strategy = st.builds(
+    viatraTraceability_DepToGSPNTrace,
 )
-viatraTraceability::DepModel_strategy = st.builds(
-    viatraTraceability::DepModel,
+viatraTraceability_DepModel_strategy = st.builds(
+    viatraTraceability_DepModel,
 )
-viatraTraceability::PetriNet_strategy = st.builds(
-    viatraTraceability::PetriNet,
+viatraTraceability_PetriNet_strategy = st.builds(
+    viatraTraceability_PetriNet,
 )
-viatraTraceability::DepToGSPN_strategy = st.builds(
-    viatraTraceability::DepToGSPN,
+viatraTraceability_DepToGSPN_strategy = st.builds(
+    viatraTraceability_DepToGSPN,
 )
 
-@given(instance=viatraTraceability::Identification_strategy)
+@given(instance=viatraTraceability_Identification_strategy)
 @settings(max_examples=50)
-def test_viatratraceability::identification_instantiation(instance):
-    assert isinstance(instance, viatraTraceability::Identification)
+def test_viatratraceability_identification_instantiation(instance):
+    assert isinstance(instance, viatraTraceability_Identification)
 
-@given(instance=viatraTraceability::AbstractElement_strategy)
+@given(instance=viatraTraceability_AbstractElement_strategy)
 @settings(max_examples=50)
-def test_viatratraceability::abstractelement_instantiation(instance):
-    assert isinstance(instance, viatraTraceability::AbstractElement)
+def test_viatratraceability_abstractelement_instantiation(instance):
+    assert isinstance(instance, viatraTraceability_AbstractElement)
 
-@given(instance=viatraTraceability::DepToGSPNTrace_strategy)
+@given(instance=viatraTraceability_DepToGSPNTrace_strategy)
 @settings(max_examples=50)
-def test_viatratraceability::deptogspntrace_instantiation(instance):
-    assert isinstance(instance, viatraTraceability::DepToGSPNTrace)
+def test_viatratraceability_deptogspntrace_instantiation(instance):
+    assert isinstance(instance, viatraTraceability_DepToGSPNTrace)
 
-@given(instance=viatraTraceability::DepModel_strategy)
+@given(instance=viatraTraceability_DepModel_strategy)
 @settings(max_examples=50)
-def test_viatratraceability::depmodel_instantiation(instance):
-    assert isinstance(instance, viatraTraceability::DepModel)
+def test_viatratraceability_depmodel_instantiation(instance):
+    assert isinstance(instance, viatraTraceability_DepModel)
 
-@given(instance=viatraTraceability::PetriNet_strategy)
+@given(instance=viatraTraceability_PetriNet_strategy)
 @settings(max_examples=50)
-def test_viatratraceability::petrinet_instantiation(instance):
-    assert isinstance(instance, viatraTraceability::PetriNet)
+def test_viatratraceability_petrinet_instantiation(instance):
+    assert isinstance(instance, viatraTraceability_PetriNet)
 
-@given(instance=viatraTraceability::DepToGSPN_strategy)
+@given(instance=viatraTraceability_DepToGSPN_strategy)
 @settings(max_examples=50)
-def test_viatratraceability::deptogspn_instantiation(instance):
-    assert isinstance(instance, viatraTraceability::DepToGSPN)
+def test_viatratraceability_deptogspn_instantiation(instance):
+    assert isinstance(instance, viatraTraceability_DepToGSPN)

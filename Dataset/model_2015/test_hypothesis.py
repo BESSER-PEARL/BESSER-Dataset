@@ -3,11 +3,11 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    trace::DebugTraceRegion,
-    trace::DebugLocationData,
+from python_code import (
+    trace_DebugTraceRegion,
+    trace_DebugLocationData,
 )
 
 # =============================================================================
@@ -16,159 +16,159 @@ from classes import (
 
 
 
-def test_trace::debugtraceregion_is_not_abstract():
-    assert not inspect.isabstract(trace::DebugTraceRegion)
+def test_trace_debugtraceregion_is_not_abstract():
+    assert not inspect.isabstract(trace_DebugTraceRegion)
 
 
-def test_trace::debugtraceregion_constructor_exists():
-    assert callable(trace::DebugTraceRegion.__init__)
+def test_trace_debugtraceregion_constructor_exists():
+    assert callable(trace_DebugTraceRegion.__init__)
 
 
-def test_trace::debugtraceregion_constructor_args():
-    sig = inspect.signature(trace::DebugTraceRegion.__init__)
+def test_trace_debugtraceregion_constructor_args():
+    sig = inspect.signature(trace_DebugTraceRegion.__init__)
     params = list(sig.parameters.keys())
-    assert "myEndLineNumber" in params, "Missing parameter 'myEndLineNumber'"
-    assert "myLength" in params, "Missing parameter 'myLength'"
-    assert "myLineNumber" in params, "Missing parameter 'myLineNumber'"
-    assert "myOffset" in params, "Missing parameter 'myOffset'"
-    assert "label" in params, "Missing parameter 'label'"
     assert "myEndOffset" in params, "Missing parameter 'myEndOffset'"
+    assert "myLength" in params, "Missing parameter 'myLength'"
+    assert "label" in params, "Missing parameter 'label'"
+    assert "myOffset" in params, "Missing parameter 'myOffset'"
+    assert "myEndLineNumber" in params, "Missing parameter 'myEndLineNumber'"
+    assert "myLineNumber" in params, "Missing parameter 'myLineNumber'"
 
-def test_trace::debugtraceregion_has_myEndLineNumber():
-    assert hasattr(trace::DebugTraceRegion, "myEndLineNumber")
+def test_trace_debugtraceregion_has_myEndOffset():
+    assert hasattr(trace_DebugTraceRegion, "myEndOffset")
     descriptor = None
-    for klass in trace::DebugTraceRegion.__mro__:
-        if "myEndLineNumber" in klass.__dict__:
-            descriptor = klass.__dict__["myEndLineNumber"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_trace::debugtraceregion_has_myLength():
-    assert hasattr(trace::DebugTraceRegion, "myLength")
-    descriptor = None
-    for klass in trace::DebugTraceRegion.__mro__:
-        if "myLength" in klass.__dict__:
-            descriptor = klass.__dict__["myLength"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_trace::debugtraceregion_has_myLineNumber():
-    assert hasattr(trace::DebugTraceRegion, "myLineNumber")
-    descriptor = None
-    for klass in trace::DebugTraceRegion.__mro__:
-        if "myLineNumber" in klass.__dict__:
-            descriptor = klass.__dict__["myLineNumber"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_trace::debugtraceregion_has_myOffset():
-    assert hasattr(trace::DebugTraceRegion, "myOffset")
-    descriptor = None
-    for klass in trace::DebugTraceRegion.__mro__:
-        if "myOffset" in klass.__dict__:
-            descriptor = klass.__dict__["myOffset"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_trace::debugtraceregion_has_label():
-    assert hasattr(trace::DebugTraceRegion, "label")
-    descriptor = None
-    for klass in trace::DebugTraceRegion.__mro__:
-        if "label" in klass.__dict__:
-            descriptor = klass.__dict__["label"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_trace::debugtraceregion_has_myEndOffset():
-    assert hasattr(trace::DebugTraceRegion, "myEndOffset")
-    descriptor = None
-    for klass in trace::DebugTraceRegion.__mro__:
+    for klass in trace_DebugTraceRegion.__mro__:
         if "myEndOffset" in klass.__dict__:
             descriptor = klass.__dict__["myEndOffset"]
             break
     assert isinstance(descriptor, property)
 
-
-
-def test_trace::debuglocationdata_is_not_abstract():
-    assert not inspect.isabstract(trace::DebugLocationData)
-
-
-def test_trace::debuglocationdata_constructor_exists():
-    assert callable(trace::DebugLocationData.__init__)
-
-
-def test_trace::debuglocationdata_constructor_args():
-    sig = inspect.signature(trace::DebugLocationData.__init__)
-    params = list(sig.parameters.keys())
-    assert "length" in params, "Missing parameter 'length'"
-    assert "offset" in params, "Missing parameter 'offset'"
-    assert "endOffset" in params, "Missing parameter 'endOffset'"
-    assert "lineNumber" in params, "Missing parameter 'lineNumber'"
-    assert "label" in params, "Missing parameter 'label'"
-    assert "endLineNumber" in params, "Missing parameter 'endLineNumber'"
-    assert "path" in params, "Missing parameter 'path'"
-
-def test_trace::debuglocationdata_has_length():
-    assert hasattr(trace::DebugLocationData, "length")
+def test_trace_debugtraceregion_has_myLength():
+    assert hasattr(trace_DebugTraceRegion, "myLength")
     descriptor = None
-    for klass in trace::DebugLocationData.__mro__:
-        if "length" in klass.__dict__:
-            descriptor = klass.__dict__["length"]
+    for klass in trace_DebugTraceRegion.__mro__:
+        if "myLength" in klass.__dict__:
+            descriptor = klass.__dict__["myLength"]
             break
     assert isinstance(descriptor, property)
 
-def test_trace::debuglocationdata_has_offset():
-    assert hasattr(trace::DebugLocationData, "offset")
+def test_trace_debugtraceregion_has_label():
+    assert hasattr(trace_DebugTraceRegion, "label")
     descriptor = None
-    for klass in trace::DebugLocationData.__mro__:
-        if "offset" in klass.__dict__:
-            descriptor = klass.__dict__["offset"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_trace::debuglocationdata_has_endOffset():
-    assert hasattr(trace::DebugLocationData, "endOffset")
-    descriptor = None
-    for klass in trace::DebugLocationData.__mro__:
-        if "endOffset" in klass.__dict__:
-            descriptor = klass.__dict__["endOffset"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_trace::debuglocationdata_has_lineNumber():
-    assert hasattr(trace::DebugLocationData, "lineNumber")
-    descriptor = None
-    for klass in trace::DebugLocationData.__mro__:
-        if "lineNumber" in klass.__dict__:
-            descriptor = klass.__dict__["lineNumber"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_trace::debuglocationdata_has_label():
-    assert hasattr(trace::DebugLocationData, "label")
-    descriptor = None
-    for klass in trace::DebugLocationData.__mro__:
+    for klass in trace_DebugTraceRegion.__mro__:
         if "label" in klass.__dict__:
             descriptor = klass.__dict__["label"]
             break
     assert isinstance(descriptor, property)
 
-def test_trace::debuglocationdata_has_endLineNumber():
-    assert hasattr(trace::DebugLocationData, "endLineNumber")
+def test_trace_debugtraceregion_has_myOffset():
+    assert hasattr(trace_DebugTraceRegion, "myOffset")
     descriptor = None
-    for klass in trace::DebugLocationData.__mro__:
+    for klass in trace_DebugTraceRegion.__mro__:
+        if "myOffset" in klass.__dict__:
+            descriptor = klass.__dict__["myOffset"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_trace_debugtraceregion_has_myEndLineNumber():
+    assert hasattr(trace_DebugTraceRegion, "myEndLineNumber")
+    descriptor = None
+    for klass in trace_DebugTraceRegion.__mro__:
+        if "myEndLineNumber" in klass.__dict__:
+            descriptor = klass.__dict__["myEndLineNumber"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_trace_debugtraceregion_has_myLineNumber():
+    assert hasattr(trace_DebugTraceRegion, "myLineNumber")
+    descriptor = None
+    for klass in trace_DebugTraceRegion.__mro__:
+        if "myLineNumber" in klass.__dict__:
+            descriptor = klass.__dict__["myLineNumber"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_trace_debuglocationdata_is_not_abstract():
+    assert not inspect.isabstract(trace_DebugLocationData)
+
+
+def test_trace_debuglocationdata_constructor_exists():
+    assert callable(trace_DebugLocationData.__init__)
+
+
+def test_trace_debuglocationdata_constructor_args():
+    sig = inspect.signature(trace_DebugLocationData.__init__)
+    params = list(sig.parameters.keys())
+    assert "offset" in params, "Missing parameter 'offset'"
+    assert "path" in params, "Missing parameter 'path'"
+    assert "endLineNumber" in params, "Missing parameter 'endLineNumber'"
+    assert "length" in params, "Missing parameter 'length'"
+    assert "endOffset" in params, "Missing parameter 'endOffset'"
+    assert "label" in params, "Missing parameter 'label'"
+    assert "lineNumber" in params, "Missing parameter 'lineNumber'"
+
+def test_trace_debuglocationdata_has_offset():
+    assert hasattr(trace_DebugLocationData, "offset")
+    descriptor = None
+    for klass in trace_DebugLocationData.__mro__:
+        if "offset" in klass.__dict__:
+            descriptor = klass.__dict__["offset"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_trace_debuglocationdata_has_path():
+    assert hasattr(trace_DebugLocationData, "path")
+    descriptor = None
+    for klass in trace_DebugLocationData.__mro__:
+        if "path" in klass.__dict__:
+            descriptor = klass.__dict__["path"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_trace_debuglocationdata_has_endLineNumber():
+    assert hasattr(trace_DebugLocationData, "endLineNumber")
+    descriptor = None
+    for klass in trace_DebugLocationData.__mro__:
         if "endLineNumber" in klass.__dict__:
             descriptor = klass.__dict__["endLineNumber"]
             break
     assert isinstance(descriptor, property)
 
-def test_trace::debuglocationdata_has_path():
-    assert hasattr(trace::DebugLocationData, "path")
+def test_trace_debuglocationdata_has_length():
+    assert hasattr(trace_DebugLocationData, "length")
     descriptor = None
-    for klass in trace::DebugLocationData.__mro__:
-        if "path" in klass.__dict__:
-            descriptor = klass.__dict__["path"]
+    for klass in trace_DebugLocationData.__mro__:
+        if "length" in klass.__dict__:
+            descriptor = klass.__dict__["length"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_trace_debuglocationdata_has_endOffset():
+    assert hasattr(trace_DebugLocationData, "endOffset")
+    descriptor = None
+    for klass in trace_DebugLocationData.__mro__:
+        if "endOffset" in klass.__dict__:
+            descriptor = klass.__dict__["endOffset"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_trace_debuglocationdata_has_label():
+    assert hasattr(trace_DebugLocationData, "label")
+    descriptor = None
+    for klass in trace_DebugLocationData.__mro__:
+        if "label" in klass.__dict__:
+            descriptor = klass.__dict__["label"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_trace_debuglocationdata_has_lineNumber():
+    assert hasattr(trace_DebugLocationData, "lineNumber")
+    descriptor = None
+    for klass in trace_DebugLocationData.__mro__:
+        if "lineNumber" in klass.__dict__:
+            descriptor = klass.__dict__["lineNumber"]
             break
     assert isinstance(descriptor, property)
 
@@ -184,188 +184,149 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-trace::DebugTraceRegion_strategy = st.builds(
-    trace::DebugTraceRegion,
-    myEndLineNumber=
+trace_DebugTraceRegion_strategy = st.builds(
+    trace_DebugTraceRegion,
+    myEndOffset=
         st.integers(),
     myLength=
         st.integers(),
-    myLineNumber=
-        st.integers(),
-    myOffset=
-        st.integers(),
     label=
         safe_text,
-    myEndOffset=
+    myOffset=
+        st.integers(),
+    myEndLineNumber=
+        st.integers(),
+    myLineNumber=
         st.integers()
 )
-trace::DebugLocationData_strategy = st.builds(
-    trace::DebugLocationData,
-    length=
-        st.integers(),
+trace_DebugLocationData_strategy = st.builds(
+    trace_DebugLocationData,
     offset=
         st.integers(),
-    endOffset=
-        st.integers(),
-    lineNumber=
-        st.integers(),
-    label=
+    path=
         safe_text,
     endLineNumber=
         st.integers(),
-    path=
-        safe_text
+    length=
+        st.integers(),
+    endOffset=
+        st.integers(),
+    label=
+        safe_text,
+    lineNumber=
+        st.integers()
 )
 
-@given(instance=trace::DebugTraceRegion_strategy)
+@given(instance=trace_DebugTraceRegion_strategy)
 @settings(max_examples=50)
-def test_trace::debugtraceregion_instantiation(instance):
-    assert isinstance(instance, trace::DebugTraceRegion)
-
-@given(instance=trace::DebugTraceRegion_strategy)
-def test_trace::debugtraceregion_myEndLineNumber_type(instance):
-    assert isinstance(instance.myEndLineNumber, int)
+def test_trace_debugtraceregion_instantiation(instance):
+    assert isinstance(instance, trace_DebugTraceRegion)
 
 
-@given(instance=trace::DebugTraceRegion_strategy)
-def test_trace::debugtraceregion_myEndLineNumber_setter(instance):
-    original = instance.myEndLineNumber
-    instance.myEndLineNumber = original
-    assert instance.myEndLineNumber == original
 
-@given(instance=trace::DebugTraceRegion_strategy)
-def test_trace::debugtraceregion_myLength_type(instance):
-    assert isinstance(instance.myLength, int)
-
-
-@given(instance=trace::DebugTraceRegion_strategy)
-def test_trace::debugtraceregion_myLength_setter(instance):
-    original = instance.myLength
-    instance.myLength = original
-    assert instance.myLength == original
-
-@given(instance=trace::DebugTraceRegion_strategy)
-def test_trace::debugtraceregion_myLineNumber_type(instance):
-    assert isinstance(instance.myLineNumber, int)
-
-
-@given(instance=trace::DebugTraceRegion_strategy)
-def test_trace::debugtraceregion_myLineNumber_setter(instance):
-    original = instance.myLineNumber
-    instance.myLineNumber = original
-    assert instance.myLineNumber == original
-
-@given(instance=trace::DebugTraceRegion_strategy)
-def test_trace::debugtraceregion_myOffset_type(instance):
-    assert isinstance(instance.myOffset, int)
-
-
-@given(instance=trace::DebugTraceRegion_strategy)
-def test_trace::debugtraceregion_myOffset_setter(instance):
-    original = instance.myOffset
-    instance.myOffset = original
-    assert instance.myOffset == original
-
-@given(instance=trace::DebugTraceRegion_strategy)
-def test_trace::debugtraceregion_label_type(instance):
-    assert isinstance(instance.label, str)
-
-
-@given(instance=trace::DebugTraceRegion_strategy)
-def test_trace::debugtraceregion_label_setter(instance):
-    original = instance.label
-    instance.label = original
-    assert instance.label == original
-
-@given(instance=trace::DebugTraceRegion_strategy)
-def test_trace::debugtraceregion_myEndOffset_type(instance):
-    assert isinstance(instance.myEndOffset, int)
-
-
-@given(instance=trace::DebugTraceRegion_strategy)
-def test_trace::debugtraceregion_myEndOffset_setter(instance):
+@given(instance=trace_DebugTraceRegion_strategy)
+def test_trace_debugtraceregion_myEndOffset_setter(instance):
     original = instance.myEndOffset
     instance.myEndOffset = original
     assert instance.myEndOffset == original
 
-@given(instance=trace::DebugLocationData_strategy)
-@settings(max_examples=50)
-def test_trace::debuglocationdata_instantiation(instance):
-    assert isinstance(instance, trace::DebugLocationData)
-
-@given(instance=trace::DebugLocationData_strategy)
-def test_trace::debuglocationdata_length_type(instance):
-    assert isinstance(instance.length, int)
 
 
-@given(instance=trace::DebugLocationData_strategy)
-def test_trace::debuglocationdata_length_setter(instance):
-    original = instance.length
-    instance.length = original
-    assert instance.length == original
-
-@given(instance=trace::DebugLocationData_strategy)
-def test_trace::debuglocationdata_offset_type(instance):
-    assert isinstance(instance.offset, int)
+@given(instance=trace_DebugTraceRegion_strategy)
+def test_trace_debugtraceregion_myLength_setter(instance):
+    original = instance.myLength
+    instance.myLength = original
+    assert instance.myLength == original
 
 
-@given(instance=trace::DebugLocationData_strategy)
-def test_trace::debuglocationdata_offset_setter(instance):
-    original = instance.offset
-    instance.offset = original
-    assert instance.offset == original
 
-@given(instance=trace::DebugLocationData_strategy)
-def test_trace::debuglocationdata_endOffset_type(instance):
-    assert isinstance(instance.endOffset, int)
-
-
-@given(instance=trace::DebugLocationData_strategy)
-def test_trace::debuglocationdata_endOffset_setter(instance):
-    original = instance.endOffset
-    instance.endOffset = original
-    assert instance.endOffset == original
-
-@given(instance=trace::DebugLocationData_strategy)
-def test_trace::debuglocationdata_lineNumber_type(instance):
-    assert isinstance(instance.lineNumber, int)
-
-
-@given(instance=trace::DebugLocationData_strategy)
-def test_trace::debuglocationdata_lineNumber_setter(instance):
-    original = instance.lineNumber
-    instance.lineNumber = original
-    assert instance.lineNumber == original
-
-@given(instance=trace::DebugLocationData_strategy)
-def test_trace::debuglocationdata_label_type(instance):
-    assert isinstance(instance.label, str)
-
-
-@given(instance=trace::DebugLocationData_strategy)
-def test_trace::debuglocationdata_label_setter(instance):
+@given(instance=trace_DebugTraceRegion_strategy)
+def test_trace_debugtraceregion_label_setter(instance):
     original = instance.label
     instance.label = original
     assert instance.label == original
 
-@given(instance=trace::DebugLocationData_strategy)
-def test_trace::debuglocationdata_endLineNumber_type(instance):
-    assert isinstance(instance.endLineNumber, int)
 
 
-@given(instance=trace::DebugLocationData_strategy)
-def test_trace::debuglocationdata_endLineNumber_setter(instance):
+@given(instance=trace_DebugTraceRegion_strategy)
+def test_trace_debugtraceregion_myOffset_setter(instance):
+    original = instance.myOffset
+    instance.myOffset = original
+    assert instance.myOffset == original
+
+
+
+@given(instance=trace_DebugTraceRegion_strategy)
+def test_trace_debugtraceregion_myEndLineNumber_setter(instance):
+    original = instance.myEndLineNumber
+    instance.myEndLineNumber = original
+    assert instance.myEndLineNumber == original
+
+
+
+@given(instance=trace_DebugTraceRegion_strategy)
+def test_trace_debugtraceregion_myLineNumber_setter(instance):
+    original = instance.myLineNumber
+    instance.myLineNumber = original
+    assert instance.myLineNumber == original
+
+@given(instance=trace_DebugLocationData_strategy)
+@settings(max_examples=50)
+def test_trace_debuglocationdata_instantiation(instance):
+    assert isinstance(instance, trace_DebugLocationData)
+
+
+
+@given(instance=trace_DebugLocationData_strategy)
+def test_trace_debuglocationdata_offset_setter(instance):
+    original = instance.offset
+    instance.offset = original
+    assert instance.offset == original
+
+
+
+@given(instance=trace_DebugLocationData_strategy)
+def test_trace_debuglocationdata_path_setter(instance):
+    original = instance.path
+    instance.path = original
+    assert instance.path == original
+
+
+
+@given(instance=trace_DebugLocationData_strategy)
+def test_trace_debuglocationdata_endLineNumber_setter(instance):
     original = instance.endLineNumber
     instance.endLineNumber = original
     assert instance.endLineNumber == original
 
-@given(instance=trace::DebugLocationData_strategy)
-def test_trace::debuglocationdata_path_type(instance):
-    assert isinstance(instance.path, str)
 
 
-@given(instance=trace::DebugLocationData_strategy)
-def test_trace::debuglocationdata_path_setter(instance):
-    original = instance.path
-    instance.path = original
-    assert instance.path == original
+@given(instance=trace_DebugLocationData_strategy)
+def test_trace_debuglocationdata_length_setter(instance):
+    original = instance.length
+    instance.length = original
+    assert instance.length == original
+
+
+
+@given(instance=trace_DebugLocationData_strategy)
+def test_trace_debuglocationdata_endOffset_setter(instance):
+    original = instance.endOffset
+    instance.endOffset = original
+    assert instance.endOffset == original
+
+
+
+@given(instance=trace_DebugLocationData_strategy)
+def test_trace_debuglocationdata_label_setter(instance):
+    original = instance.label
+    instance.label = original
+    assert instance.label == original
+
+
+
+@given(instance=trace_DebugLocationData_strategy)
+def test_trace_debuglocationdata_lineNumber_setter(instance):
+    original = instance.lineNumber
+    instance.lineNumber = original
+    assert instance.lineNumber == original

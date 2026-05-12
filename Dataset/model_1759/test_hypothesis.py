@@ -3,10 +3,10 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    library::book,
+from python_code import (
+    library_book,
 )
 
 # =============================================================================
@@ -15,55 +15,55 @@ from classes import (
 
 
 
-def test_library::book_is_not_abstract():
-    assert not inspect.isabstract(library::book)
+def test_library_book_is_not_abstract():
+    assert not inspect.isabstract(library_book)
 
 
-def test_library::book_constructor_exists():
-    assert callable(library::book.__init__)
+def test_library_book_constructor_exists():
+    assert callable(library_book.__init__)
 
 
-def test_library::book_constructor_args():
-    sig = inspect.signature(library::book.__init__)
+def test_library_book_constructor_args():
+    sig = inspect.signature(library_book.__init__)
     params = list(sig.parameters.keys())
-    assert "author" in params, "Missing parameter 'author'"
     assert "title" in params, "Missing parameter 'title'"
-    assert "pages" in params, "Missing parameter 'pages'"
+    assert "author" in params, "Missing parameter 'author'"
     assert "published" in params, "Missing parameter 'published'"
+    assert "pages" in params, "Missing parameter 'pages'"
 
-def test_library::book_has_author():
-    assert hasattr(library::book, "author")
+def test_library_book_has_title():
+    assert hasattr(library_book, "title")
     descriptor = None
-    for klass in library::book.__mro__:
-        if "author" in klass.__dict__:
-            descriptor = klass.__dict__["author"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_library::book_has_title():
-    assert hasattr(library::book, "title")
-    descriptor = None
-    for klass in library::book.__mro__:
+    for klass in library_book.__mro__:
         if "title" in klass.__dict__:
             descriptor = klass.__dict__["title"]
             break
     assert isinstance(descriptor, property)
 
-def test_library::book_has_pages():
-    assert hasattr(library::book, "pages")
+def test_library_book_has_author():
+    assert hasattr(library_book, "author")
     descriptor = None
-    for klass in library::book.__mro__:
-        if "pages" in klass.__dict__:
-            descriptor = klass.__dict__["pages"]
+    for klass in library_book.__mro__:
+        if "author" in klass.__dict__:
+            descriptor = klass.__dict__["author"]
             break
     assert isinstance(descriptor, property)
 
-def test_library::book_has_published():
-    assert hasattr(library::book, "published")
+def test_library_book_has_published():
+    assert hasattr(library_book, "published")
     descriptor = None
-    for klass in library::book.__mro__:
+    for klass in library_book.__mro__:
         if "published" in klass.__dict__:
             descriptor = klass.__dict__["published"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_library_book_has_pages():
+    assert hasattr(library_book, "pages")
+    descriptor = None
+    for klass in library_book.__mro__:
+        if "pages" in klass.__dict__:
+            descriptor = klass.__dict__["pages"]
             break
     assert isinstance(descriptor, property)
 
@@ -79,63 +79,51 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-library::book_strategy = st.builds(
-    library::book,
-    author=
-        safe_text,
+library_book_strategy = st.builds(
+    library_book,
     title=
         safe_text,
-    pages=
+    author=
         safe_text,
     published=
+        safe_text,
+    pages=
         safe_text
 )
 
-@given(instance=library::book_strategy)
+@given(instance=library_book_strategy)
 @settings(max_examples=50)
-def test_library::book_instantiation(instance):
-    assert isinstance(instance, library::book)
-
-@given(instance=library::book_strategy)
-def test_library::book_author_type(instance):
-    assert isinstance(instance.author, str)
+def test_library_book_instantiation(instance):
+    assert isinstance(instance, library_book)
 
 
-@given(instance=library::book_strategy)
-def test_library::book_author_setter(instance):
-    original = instance.author
-    instance.author = original
-    assert instance.author == original
 
-@given(instance=library::book_strategy)
-def test_library::book_title_type(instance):
-    assert isinstance(instance.title, str)
-
-
-@given(instance=library::book_strategy)
-def test_library::book_title_setter(instance):
+@given(instance=library_book_strategy)
+def test_library_book_title_setter(instance):
     original = instance.title
     instance.title = original
     assert instance.title == original
 
-@given(instance=library::book_strategy)
-def test_library::book_pages_type(instance):
-    assert isinstance(instance.pages, str)
 
 
-@given(instance=library::book_strategy)
-def test_library::book_pages_setter(instance):
-    original = instance.pages
-    instance.pages = original
-    assert instance.pages == original
-
-@given(instance=library::book_strategy)
-def test_library::book_published_type(instance):
-    assert isinstance(instance.published, str)
+@given(instance=library_book_strategy)
+def test_library_book_author_setter(instance):
+    original = instance.author
+    instance.author = original
+    assert instance.author == original
 
 
-@given(instance=library::book_strategy)
-def test_library::book_published_setter(instance):
+
+@given(instance=library_book_strategy)
+def test_library_book_published_setter(instance):
     original = instance.published
     instance.published = original
     assert instance.published == original
+
+
+
+@given(instance=library_book_strategy)
+def test_library_book_pages_setter(instance):
+    original = instance.pages
+    instance.pages = original
+    assert instance.pages == original

@@ -3,11 +3,11 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    library::OclLibrary,
-    library::OclExpression,
+from python_code import (
+    library_OclLibrary,
+    library_OclExpression,
 )
 
 # =============================================================================
@@ -16,23 +16,23 @@ from classes import (
 
 
 
-def test_library::ocllibrary_is_not_abstract():
-    assert not inspect.isabstract(library::OclLibrary)
+def test_library_ocllibrary_is_not_abstract():
+    assert not inspect.isabstract(library_OclLibrary)
 
 
-def test_library::ocllibrary_constructor_exists():
-    assert callable(library::OclLibrary.__init__)
+def test_library_ocllibrary_constructor_exists():
+    assert callable(library_OclLibrary.__init__)
 
 
-def test_library::ocllibrary_constructor_args():
-    sig = inspect.signature(library::OclLibrary.__init__)
+def test_library_ocllibrary_constructor_args():
+    sig = inspect.signature(library_OclLibrary.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_library::ocllibrary_has_name():
-    assert hasattr(library::OclLibrary, "name")
+def test_library_ocllibrary_has_name():
+    assert hasattr(library_OclLibrary, "name")
     descriptor = None
-    for klass in library::OclLibrary.__mro__:
+    for klass in library_OclLibrary.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -40,53 +40,53 @@ def test_library::ocllibrary_has_name():
 
 
 
-def test_library::oclexpression_is_not_abstract():
-    assert not inspect.isabstract(library::OclExpression)
+def test_library_oclexpression_is_not_abstract():
+    assert not inspect.isabstract(library_OclExpression)
 
 
-def test_library::oclexpression_constructor_exists():
-    assert callable(library::OclExpression.__init__)
+def test_library_oclexpression_constructor_exists():
+    assert callable(library_OclExpression.__init__)
 
 
-def test_library::oclexpression_constructor_args():
-    sig = inspect.signature(library::OclExpression.__init__)
+def test_library_oclexpression_constructor_args():
+    sig = inspect.signature(library_OclExpression.__init__)
     params = list(sig.parameters.keys())
-    assert "name" in params, "Missing parameter 'name'"
     assert "query" in params, "Missing parameter 'query'"
+    assert "name" in params, "Missing parameter 'name'"
     assert "context" in params, "Missing parameter 'context'"
     assert "description" in params, "Missing parameter 'description'"
 
-def test_library::oclexpression_has_name():
-    assert hasattr(library::OclExpression, "name")
+def test_library_oclexpression_has_query():
+    assert hasattr(library_OclExpression, "query")
     descriptor = None
-    for klass in library::OclExpression.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_library::oclexpression_has_query():
-    assert hasattr(library::OclExpression, "query")
-    descriptor = None
-    for klass in library::OclExpression.__mro__:
+    for klass in library_OclExpression.__mro__:
         if "query" in klass.__dict__:
             descriptor = klass.__dict__["query"]
             break
     assert isinstance(descriptor, property)
 
-def test_library::oclexpression_has_context():
-    assert hasattr(library::OclExpression, "context")
+def test_library_oclexpression_has_name():
+    assert hasattr(library_OclExpression, "name")
     descriptor = None
-    for klass in library::OclExpression.__mro__:
+    for klass in library_OclExpression.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_library_oclexpression_has_context():
+    assert hasattr(library_OclExpression, "context")
+    descriptor = None
+    for klass in library_OclExpression.__mro__:
         if "context" in klass.__dict__:
             descriptor = klass.__dict__["context"]
             break
     assert isinstance(descriptor, property)
 
-def test_library::oclexpression_has_description():
-    assert hasattr(library::OclExpression, "description")
+def test_library_oclexpression_has_description():
+    assert hasattr(library_OclExpression, "description")
     descriptor = None
-    for klass in library::OclExpression.__mro__:
+    for klass in library_OclExpression.__mro__:
         if "description" in klass.__dict__:
             descriptor = klass.__dict__["description"]
             break
@@ -104,16 +104,16 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-library::OclLibrary_strategy = st.builds(
-    library::OclLibrary,
+library_OclLibrary_strategy = st.builds(
+    library_OclLibrary,
     name=
         safe_text
 )
-library::OclExpression_strategy = st.builds(
-    library::OclExpression,
-    name=
-        safe_text,
+library_OclExpression_strategy = st.builds(
+    library_OclExpression,
     query=
+        safe_text,
+    name=
         safe_text,
     context=
         safe_text,
@@ -121,67 +121,52 @@ library::OclExpression_strategy = st.builds(
         safe_text
 )
 
-@given(instance=library::OclLibrary_strategy)
+@given(instance=library_OclLibrary_strategy)
 @settings(max_examples=50)
-def test_library::ocllibrary_instantiation(instance):
-    assert isinstance(instance, library::OclLibrary)
-
-@given(instance=library::OclLibrary_strategy)
-def test_library::ocllibrary_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_library_ocllibrary_instantiation(instance):
+    assert isinstance(instance, library_OclLibrary)
 
 
-@given(instance=library::OclLibrary_strategy)
-def test_library::ocllibrary_name_setter(instance):
+
+@given(instance=library_OclLibrary_strategy)
+def test_library_ocllibrary_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=library::OclExpression_strategy)
+@given(instance=library_OclExpression_strategy)
 @settings(max_examples=50)
-def test_library::oclexpression_instantiation(instance):
-    assert isinstance(instance, library::OclExpression)
-
-@given(instance=library::OclExpression_strategy)
-def test_library::oclexpression_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_library_oclexpression_instantiation(instance):
+    assert isinstance(instance, library_OclExpression)
 
 
-@given(instance=library::OclExpression_strategy)
-def test_library::oclexpression_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
 
-@given(instance=library::OclExpression_strategy)
-def test_library::oclexpression_query_type(instance):
-    assert isinstance(instance.query, str)
-
-
-@given(instance=library::OclExpression_strategy)
-def test_library::oclexpression_query_setter(instance):
+@given(instance=library_OclExpression_strategy)
+def test_library_oclexpression_query_setter(instance):
     original = instance.query
     instance.query = original
     assert instance.query == original
 
-@given(instance=library::OclExpression_strategy)
-def test_library::oclexpression_context_type(instance):
-    assert isinstance(instance.context, str)
 
 
-@given(instance=library::OclExpression_strategy)
-def test_library::oclexpression_context_setter(instance):
+@given(instance=library_OclExpression_strategy)
+def test_library_oclexpression_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+
+
+@given(instance=library_OclExpression_strategy)
+def test_library_oclexpression_context_setter(instance):
     original = instance.context
     instance.context = original
     assert instance.context == original
 
-@given(instance=library::OclExpression_strategy)
-def test_library::oclexpression_description_type(instance):
-    assert isinstance(instance.description, str)
 
 
-@given(instance=library::OclExpression_strategy)
-def test_library::oclexpression_description_setter(instance):
+@given(instance=library_OclExpression_strategy)
+def test_library_oclexpression_description_setter(instance):
     original = instance.description
     instance.description = original
     assert instance.description == original

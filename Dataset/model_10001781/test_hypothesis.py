@@ -3,7 +3,7 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
 from python_code import (
     T3,
@@ -66,17 +66,8 @@ def test_casinomanager_constructor_exists():
 def test_casinomanager_constructor_args():
     sig = inspect.signature(CasinoManager.__init__)
     params = list(sig.parameters.keys())
-    assert "table" in params, "Missing parameter 'table'"
     assert "waitList" in params, "Missing parameter 'waitList'"
-
-def test_casinomanager_has_table():
-    assert hasattr(CasinoManager, "table")
-    descriptor = None
-    for klass in CasinoManager.__mro__:
-        if "table" in klass.__dict__:
-            descriptor = klass.__dict__["table"]
-            break
-    assert isinstance(descriptor, property)
+    assert "table" in params, "Missing parameter 'table'"
 
 def test_casinomanager_has_waitList():
     assert hasattr(CasinoManager, "waitList")
@@ -84,6 +75,15 @@ def test_casinomanager_has_waitList():
     for klass in CasinoManager.__mro__:
         if "waitList" in klass.__dict__:
             descriptor = klass.__dict__["waitList"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_casinomanager_has_table():
+    assert hasattr(CasinoManager, "table")
+    descriptor = None
+    for klass in CasinoManager.__mro__:
+        if "table" in klass.__dict__:
+            descriptor = klass.__dict__["table"]
             break
     assert isinstance(descriptor, property)
 
@@ -256,17 +256,8 @@ def test_card_constructor_exists():
 def test_card_constructor_args():
     sig = inspect.signature(Card.__init__)
     params = list(sig.parameters.keys())
-    assert "suit" in params, "Missing parameter 'suit'"
     assert "value" in params, "Missing parameter 'value'"
-
-def test_card_has_suit():
-    assert hasattr(Card, "suit")
-    descriptor = None
-    for klass in Card.__mro__:
-        if "suit" in klass.__dict__:
-            descriptor = klass.__dict__["suit"]
-            break
-    assert isinstance(descriptor, property)
+    assert "suit" in params, "Missing parameter 'suit'"
 
 def test_card_has_value():
     assert hasattr(Card, "value")
@@ -274,6 +265,15 @@ def test_card_has_value():
     for klass in Card.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_card_has_suit():
+    assert hasattr(Card, "suit")
+    descriptor = None
+    for klass in Card.__mro__:
+        if "suit" in klass.__dict__:
+            descriptor = klass.__dict__["suit"]
             break
     assert isinstance(descriptor, property)
 
@@ -297,10 +297,10 @@ Queue_strategy = st.builds(
 )
 CasinoManager_strategy = st.builds(
     CasinoManager,
-    table=
-        st.none(),
     waitList=
-        safe_text
+        safe_text,
+    table=
+        st.none()
 )
 T2_strategy = st.builds(
     T2,
@@ -337,10 +337,10 @@ Executive_strategy = st.builds(
 )
 Card_strategy = st.builds(
     Card,
-    suit=
-        safe_text,
     value=
-        st.integers()
+        st.integers(),
+    suit=
+        safe_text
 )
 
 @given(instance=T3_strategy)
@@ -358,20 +358,6 @@ def test_queue_instantiation(instance):
 def test_casinomanager_instantiation(instance):
     assert isinstance(instance, CasinoManager)
 
-@given(instance=CasinoManager_strategy)
-def test_casinomanager_table_type(instance):
-    assert isinstance(instance.table, table)
-
-
-@given(instance=CasinoManager_strategy)
-def test_casinomanager_table_setter(instance):
-    original = instance.table
-    instance.table = original
-    assert instance.table == original
-
-@given(instance=CasinoManager_strategy)
-def test_casinomanager_waitList_type(instance):
-    assert isinstance(instance.waitList, str)
 
 
 @given(instance=CasinoManager_strategy)
@@ -379,6 +365,14 @@ def test_casinomanager_waitList_setter(instance):
     original = instance.waitList
     instance.waitList = original
     assert instance.waitList == original
+
+
+
+@given(instance=CasinoManager_strategy)
+def test_casinomanager_table_setter(instance):
+    original = instance.table
+    instance.table = original
+    assert instance.table == original
 
 @given(instance=T2_strategy)
 @settings(max_examples=50)
@@ -415,9 +409,6 @@ def test_stack_instantiation(instance):
 def test_deck_instantiation(instance):
     assert isinstance(instance, Deck)
 
-@given(instance=Deck_strategy)
-def test_deck_cards_type(instance):
-    assert isinstance(instance.cards, str)
 
 
 @given(instance=Deck_strategy)
@@ -431,9 +422,6 @@ def test_deck_cards_setter(instance):
 def test_table_instantiation(instance):
     assert isinstance(instance, Table)
 
-@given(instance=Table_strategy)
-def test_table_currPlayers_type(instance):
-    assert isinstance(instance.currPlayers, str)
 
 
 @given(instance=Table_strategy)
@@ -442,9 +430,6 @@ def test_table_currPlayers_setter(instance):
     instance.currPlayers = original
     assert instance.currPlayers == original
 
-@given(instance=Table_strategy)
-def test_table_deck_type(instance):
-    assert isinstance(instance.deck, deck)
 
 
 @given(instance=Table_strategy)
@@ -463,20 +448,6 @@ def test_executive_instantiation(instance):
 def test_card_instantiation(instance):
     assert isinstance(instance, Card)
 
-@given(instance=Card_strategy)
-def test_card_suit_type(instance):
-    assert isinstance(instance.suit, str)
-
-
-@given(instance=Card_strategy)
-def test_card_suit_setter(instance):
-    original = instance.suit
-    instance.suit = original
-    assert instance.suit == original
-
-@given(instance=Card_strategy)
-def test_card_value_type(instance):
-    assert isinstance(instance.value, int)
 
 
 @given(instance=Card_strategy)
@@ -484,3 +455,11 @@ def test_card_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
+
+
+
+@given(instance=Card_strategy)
+def test_card_suit_setter(instance):
+    original = instance.suit
+    instance.suit = original
+    assert instance.suit == original

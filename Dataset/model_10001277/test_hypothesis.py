@@ -3,7 +3,7 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
 from python_code import (
     NumericAnswers,
@@ -14,8 +14,8 @@ from python_code import (
     Choices,
     Answers,
     ConcreteRightAnswers,
-    NuRightAnswer,
     OtherAnswer,
+    NuRightAnswer,
 )
 
 # =============================================================================
@@ -35,17 +35,8 @@ def test_numericanswers_constructor_exists():
 def test_numericanswers_constructor_args():
     sig = inspect.signature(NumericAnswers.__init__)
     params = list(sig.parameters.keys())
-    assert "name" in params, "Missing parameter 'name'"
     assert "description" in params, "Missing parameter 'description'"
-
-def test_numericanswers_has_name():
-    assert hasattr(NumericAnswers, "name")
-    descriptor = None
-    for klass in NumericAnswers.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
+    assert "name" in params, "Missing parameter 'name'"
 
 def test_numericanswers_has_description():
     assert hasattr(NumericAnswers, "description")
@@ -53,6 +44,15 @@ def test_numericanswers_has_description():
     for klass in NumericAnswers.__mro__:
         if "description" in klass.__dict__:
             descriptor = klass.__dict__["description"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_numericanswers_has_name():
+    assert hasattr(NumericAnswers, "name")
+    descriptor = None
+    for klass in NumericAnswers.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
@@ -105,10 +105,10 @@ def test_multiplechoicesanswers_constructor_args():
     params = list(sig.parameters.keys())
     assert "total" in params, "Missing parameter 'total'"
     assert "ordered" in params, "Missing parameter 'ordered'"
-    assert "status" in params, "Missing parameter 'status'"
     assert "shipTo" in params, "Missing parameter 'shipTo'"
     assert "shipped" in params, "Missing parameter 'shipped'"
     assert "number" in params, "Missing parameter 'number'"
+    assert "status" in params, "Missing parameter 'status'"
 
 def test_multiplechoicesanswers_has_total():
     assert hasattr(MultipleChoicesAnswers, "total")
@@ -125,15 +125,6 @@ def test_multiplechoicesanswers_has_ordered():
     for klass in MultipleChoicesAnswers.__mro__:
         if "ordered" in klass.__dict__:
             descriptor = klass.__dict__["ordered"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_multiplechoicesanswers_has_status():
-    assert hasattr(MultipleChoicesAnswers, "status")
-    descriptor = None
-    for klass in MultipleChoicesAnswers.__mro__:
-        if "status" in klass.__dict__:
-            descriptor = klass.__dict__["status"]
             break
     assert isinstance(descriptor, property)
 
@@ -164,6 +155,15 @@ def test_multiplechoicesanswers_has_number():
             break
     assert isinstance(descriptor, property)
 
+def test_multiplechoicesanswers_has_status():
+    assert hasattr(MultipleChoicesAnswers, "status")
+    descriptor = None
+    for klass in MultipleChoicesAnswers.__mro__:
+        if "status" in klass.__dict__:
+            descriptor = klass.__dict__["status"]
+            break
+    assert isinstance(descriptor, property)
+
 
 
 def test_answerdbuilder_is_not_abstract():
@@ -177,18 +177,9 @@ def test_answerdbuilder_constructor_exists():
 def test_answerdbuilder_constructor_args():
     sig = inspect.signature(AnswerdBuilder.__init__)
     params = list(sig.parameters.keys())
-    assert "state" in params, "Missing parameter 'state'"
     assert "login" in params, "Missing parameter 'login'"
+    assert "state" in params, "Missing parameter 'state'"
     assert "password" in params, "Missing parameter 'password'"
-
-def test_answerdbuilder_has_state():
-    assert hasattr(AnswerdBuilder, "state")
-    descriptor = None
-    for klass in AnswerdBuilder.__mro__:
-        if "state" in klass.__dict__:
-            descriptor = klass.__dict__["state"]
-            break
-    assert isinstance(descriptor, property)
 
 def test_answerdbuilder_has_login():
     assert hasattr(AnswerdBuilder, "login")
@@ -196,6 +187,15 @@ def test_answerdbuilder_has_login():
     for klass in AnswerdBuilder.__mro__:
         if "login" in klass.__dict__:
             descriptor = klass.__dict__["login"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_answerdbuilder_has_state():
+    assert hasattr(AnswerdBuilder, "state")
+    descriptor = None
+    for klass in AnswerdBuilder.__mro__:
+        if "state" in klass.__dict__:
+            descriptor = klass.__dict__["state"]
             break
     assert isinstance(descriptor, property)
 
@@ -222,9 +222,9 @@ def test_concreteotheranswers_constructor_args():
     sig = inspect.signature(ConcreteOtherAnswers.__init__)
     params = list(sig.parameters.keys())
     assert "isClosed" in params, "Missing parameter 'isClosed'"
+    assert "closed" in params, "Missing parameter 'closed'"
     assert "open" in params, "Missing parameter 'open'"
     assert "billingAddress" in params, "Missing parameter 'billingAddress'"
-    assert "closed" in params, "Missing parameter 'closed'"
 
 def test_concreteotheranswers_has_isClosed():
     assert hasattr(ConcreteOtherAnswers, "isClosed")
@@ -232,6 +232,15 @@ def test_concreteotheranswers_has_isClosed():
     for klass in ConcreteOtherAnswers.__mro__:
         if "isClosed" in klass.__dict__:
             descriptor = klass.__dict__["isClosed"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_concreteotheranswers_has_closed():
+    assert hasattr(ConcreteOtherAnswers, "closed")
+    descriptor = None
+    for klass in ConcreteOtherAnswers.__mro__:
+        if "closed" in klass.__dict__:
+            descriptor = klass.__dict__["closed"]
             break
     assert isinstance(descriptor, property)
 
@@ -250,15 +259,6 @@ def test_concreteotheranswers_has_billingAddress():
     for klass in ConcreteOtherAnswers.__mro__:
         if "billingAddress" in klass.__dict__:
             descriptor = klass.__dict__["billingAddress"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_concreteotheranswers_has_closed():
-    assert hasattr(ConcreteOtherAnswers, "closed")
-    descriptor = None
-    for klass in ConcreteOtherAnswers.__mro__:
-        if "closed" in klass.__dict__:
-            descriptor = klass.__dict__["closed"]
             break
     assert isinstance(descriptor, property)
 
@@ -300,8 +300,8 @@ def test_answers_constructor_args():
     sig = inspect.signature(Answers.__init__)
     params = list(sig.parameters.keys())
     assert "paidDate" in params, "Missing parameter 'paidDate'"
-    assert "total" in params, "Missing parameter 'total'"
     assert "details" in params, "Missing parameter 'details'"
+    assert "total" in params, "Missing parameter 'total'"
 
 def test_answers_has_paidDate():
     assert hasattr(Answers, "paidDate")
@@ -312,21 +312,21 @@ def test_answers_has_paidDate():
             break
     assert isinstance(descriptor, property)
 
-def test_answers_has_total():
-    assert hasattr(Answers, "total")
-    descriptor = None
-    for klass in Answers.__mro__:
-        if "total" in klass.__dict__:
-            descriptor = klass.__dict__["total"]
-            break
-    assert isinstance(descriptor, property)
-
 def test_answers_has_details():
     assert hasattr(Answers, "details")
     descriptor = None
     for klass in Answers.__mro__:
         if "details" in klass.__dict__:
             descriptor = klass.__dict__["details"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_answers_has_total():
+    assert hasattr(Answers, "total")
+    descriptor = None
+    for klass in Answers.__mro__:
+        if "total" in klass.__dict__:
+            descriptor = klass.__dict__["total"]
             break
     assert isinstance(descriptor, property)
 
@@ -343,9 +343,18 @@ def test_concreterightanswers_constructor_exists():
 def test_concreterightanswers_constructor_args():
     sig = inspect.signature(ConcreteRightAnswers.__init__)
     params = list(sig.parameters.keys())
+    assert "email" in params, "Missing parameter 'email'"
     assert "phone" in params, "Missing parameter 'phone'"
     assert "address" in params, "Missing parameter 'address'"
-    assert "email" in params, "Missing parameter 'email'"
+
+def test_concreterightanswers_has_email():
+    assert hasattr(ConcreteRightAnswers, "email")
+    descriptor = None
+    for klass in ConcreteRightAnswers.__mro__:
+        if "email" in klass.__dict__:
+            descriptor = klass.__dict__["email"]
+            break
+    assert isinstance(descriptor, property)
 
 def test_concreterightanswers_has_phone():
     assert hasattr(ConcreteRightAnswers, "phone")
@@ -365,14 +374,18 @@ def test_concreterightanswers_has_address():
             break
     assert isinstance(descriptor, property)
 
-def test_concreterightanswers_has_email():
-    assert hasattr(ConcreteRightAnswers, "email")
-    descriptor = None
-    for klass in ConcreteRightAnswers.__mro__:
-        if "email" in klass.__dict__:
-            descriptor = klass.__dict__["email"]
-            break
-    assert isinstance(descriptor, property)
+def test_otheranswer_exists():
+    # Check that the Enumeration exists
+    assert OtherAnswer is not None
+
+def test_otheranswer_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in OtherAnswer]
+    expected_literals = [
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in OtherAnswer"
 
 def test_nurightanswer_exists():
     # Check that the Enumeration exists
@@ -386,19 +399,6 @@ def test_nurightanswer_has_all_literals():
     # Check that all expected literals exist
     for lit_name in expected_literals:
         assert lit_name in enum_literals, f"Literal '' missing in NuRightAnswer"
-
-def test_otheranswer_exists():
-    # Check that the Enumeration exists
-    assert OtherAnswer is not None
-
-def test_otheranswer_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in OtherAnswer]
-    expected_literals = [
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in OtherAnswer"
 
 
 # =============================================================================
@@ -414,9 +414,9 @@ safe_text = st.text(
 ).filter(lambda s: s[0].isalpha())
 NumericAnswers_strategy = st.builds(
     NumericAnswers,
-    name=
-        safe_text,
     description=
+        safe_text,
+    name=
         safe_text
 )
 MCRightAnswer_strategy = st.builds(
@@ -432,21 +432,21 @@ MultipleChoicesAnswers_strategy = st.builds(
         st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False),
     ordered=
         st.dates(),
-    status=
-        st.none(),
     shipTo=
         safe_text,
     shipped=
         st.booleans(),
     number=
-        st.integers()
+        st.integers(),
+    status=
+        st.none()
 )
 AnswerdBuilder_strategy = st.builds(
     AnswerdBuilder,
-    state=
-        st.none(),
     login=
         safe_text,
+    state=
+        st.none(),
     password=
         safe_text
 )
@@ -454,12 +454,12 @@ ConcreteOtherAnswers_strategy = st.builds(
     ConcreteOtherAnswers,
     isClosed=
         st.booleans(),
+    closed=
+        st.dates(),
     open=
         st.dates(),
     billingAddress=
-        safe_text,
-    closed=
-        st.dates()
+        safe_text
 )
 Choices_strategy = st.builds(
     Choices,
@@ -470,18 +470,18 @@ Answers_strategy = st.builds(
     Answers,
     paidDate=
         st.dates(),
-    total=
-        st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False),
     details=
-        safe_text
+        safe_text,
+    total=
+        st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False)
 )
 ConcreteRightAnswers_strategy = st.builds(
     ConcreteRightAnswers,
+    email=
+        safe_text,
     phone=
         safe_text,
     address=
-        safe_text,
-    email=
         safe_text
 )
 
@@ -490,20 +490,6 @@ ConcreteRightAnswers_strategy = st.builds(
 def test_numericanswers_instantiation(instance):
     assert isinstance(instance, NumericAnswers)
 
-@given(instance=NumericAnswers_strategy)
-def test_numericanswers_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=NumericAnswers_strategy)
-def test_numericanswers_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
-
-@given(instance=NumericAnswers_strategy)
-def test_numericanswers_description_type(instance):
-    assert isinstance(instance.description, str)
 
 
 @given(instance=NumericAnswers_strategy)
@@ -512,14 +498,19 @@ def test_numericanswers_description_setter(instance):
     instance.description = original
     assert instance.description == original
 
+
+
+@given(instance=NumericAnswers_strategy)
+def test_numericanswers_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
 @given(instance=MCRightAnswer_strategy)
 @settings(max_examples=50)
 def test_mcrightanswer_instantiation(instance):
     assert isinstance(instance, MCRightAnswer)
 
-@given(instance=MCRightAnswer_strategy)
-def test_mcrightanswer_price_type(instance):
-    assert isinstance(instance.price, float)
 
 
 @given(instance=MCRightAnswer_strategy)
@@ -528,9 +519,6 @@ def test_mcrightanswer_price_setter(instance):
     instance.price = original
     assert instance.price == original
 
-@given(instance=MCRightAnswer_strategy)
-def test_mcrightanswer_quantity_type(instance):
-    assert isinstance(instance.quantity, int)
 
 
 @given(instance=MCRightAnswer_strategy)
@@ -544,9 +532,6 @@ def test_mcrightanswer_quantity_setter(instance):
 def test_multiplechoicesanswers_instantiation(instance):
     assert isinstance(instance, MultipleChoicesAnswers)
 
-@given(instance=MultipleChoicesAnswers_strategy)
-def test_multiplechoicesanswers_total_type(instance):
-    assert isinstance(instance.total, float)
 
 
 @given(instance=MultipleChoicesAnswers_strategy)
@@ -555,9 +540,6 @@ def test_multiplechoicesanswers_total_setter(instance):
     instance.total = original
     assert instance.total == original
 
-@given(instance=MultipleChoicesAnswers_strategy)
-def test_multiplechoicesanswers_ordered_type(instance):
-    assert isinstance(instance.ordered, date)
 
 
 @given(instance=MultipleChoicesAnswers_strategy)
@@ -566,20 +548,6 @@ def test_multiplechoicesanswers_ordered_setter(instance):
     instance.ordered = original
     assert instance.ordered == original
 
-@given(instance=MultipleChoicesAnswers_strategy)
-def test_multiplechoicesanswers_status_type(instance):
-    assert isinstance(instance.status, otheranswer)
-
-
-@given(instance=MultipleChoicesAnswers_strategy)
-def test_multiplechoicesanswers_status_setter(instance):
-    original = instance.status
-    instance.status = original
-    assert instance.status == original
-
-@given(instance=MultipleChoicesAnswers_strategy)
-def test_multiplechoicesanswers_shipTo_type(instance):
-    assert isinstance(instance.shipTo, str)
 
 
 @given(instance=MultipleChoicesAnswers_strategy)
@@ -588,9 +556,6 @@ def test_multiplechoicesanswers_shipTo_setter(instance):
     instance.shipTo = original
     assert instance.shipTo == original
 
-@given(instance=MultipleChoicesAnswers_strategy)
-def test_multiplechoicesanswers_shipped_type(instance):
-    assert isinstance(instance.shipped, bool)
 
 
 @given(instance=MultipleChoicesAnswers_strategy)
@@ -599,9 +564,6 @@ def test_multiplechoicesanswers_shipped_setter(instance):
     instance.shipped = original
     assert instance.shipped == original
 
-@given(instance=MultipleChoicesAnswers_strategy)
-def test_multiplechoicesanswers_number_type(instance):
-    assert isinstance(instance.number, int)
 
 
 @given(instance=MultipleChoicesAnswers_strategy)
@@ -610,25 +572,19 @@ def test_multiplechoicesanswers_number_setter(instance):
     instance.number = original
     assert instance.number == original
 
+
+
+@given(instance=MultipleChoicesAnswers_strategy)
+def test_multiplechoicesanswers_status_setter(instance):
+    original = instance.status
+    instance.status = original
+    assert instance.status == original
+
 @given(instance=AnswerdBuilder_strategy)
 @settings(max_examples=50)
 def test_answerdbuilder_instantiation(instance):
     assert isinstance(instance, AnswerdBuilder)
 
-@given(instance=AnswerdBuilder_strategy)
-def test_answerdbuilder_state_type(instance):
-    assert isinstance(instance.state, nurightanswer)
-
-
-@given(instance=AnswerdBuilder_strategy)
-def test_answerdbuilder_state_setter(instance):
-    original = instance.state
-    instance.state = original
-    assert instance.state == original
-
-@given(instance=AnswerdBuilder_strategy)
-def test_answerdbuilder_login_type(instance):
-    assert isinstance(instance.login, str)
 
 
 @given(instance=AnswerdBuilder_strategy)
@@ -637,9 +593,14 @@ def test_answerdbuilder_login_setter(instance):
     instance.login = original
     assert instance.login == original
 
+
+
 @given(instance=AnswerdBuilder_strategy)
-def test_answerdbuilder_password_type(instance):
-    assert isinstance(instance.password, str)
+def test_answerdbuilder_state_setter(instance):
+    original = instance.state
+    instance.state = original
+    assert instance.state == original
+
 
 
 @given(instance=AnswerdBuilder_strategy)
@@ -653,9 +614,6 @@ def test_answerdbuilder_password_setter(instance):
 def test_concreteotheranswers_instantiation(instance):
     assert isinstance(instance, ConcreteOtherAnswers)
 
-@given(instance=ConcreteOtherAnswers_strategy)
-def test_concreteotheranswers_isClosed_type(instance):
-    assert isinstance(instance.isClosed, bool)
 
 
 @given(instance=ConcreteOtherAnswers_strategy)
@@ -664,31 +622,6 @@ def test_concreteotheranswers_isClosed_setter(instance):
     instance.isClosed = original
     assert instance.isClosed == original
 
-@given(instance=ConcreteOtherAnswers_strategy)
-def test_concreteotheranswers_open_type(instance):
-    assert isinstance(instance.open, date)
-
-
-@given(instance=ConcreteOtherAnswers_strategy)
-def test_concreteotheranswers_open_setter(instance):
-    original = instance.open
-    instance.open = original
-    assert instance.open == original
-
-@given(instance=ConcreteOtherAnswers_strategy)
-def test_concreteotheranswers_billingAddress_type(instance):
-    assert isinstance(instance.billingAddress, str)
-
-
-@given(instance=ConcreteOtherAnswers_strategy)
-def test_concreteotheranswers_billingAddress_setter(instance):
-    original = instance.billingAddress
-    instance.billingAddress = original
-    assert instance.billingAddress == original
-
-@given(instance=ConcreteOtherAnswers_strategy)
-def test_concreteotheranswers_closed_type(instance):
-    assert isinstance(instance.closed, date)
 
 
 @given(instance=ConcreteOtherAnswers_strategy)
@@ -697,14 +630,27 @@ def test_concreteotheranswers_closed_setter(instance):
     instance.closed = original
     assert instance.closed == original
 
+
+
+@given(instance=ConcreteOtherAnswers_strategy)
+def test_concreteotheranswers_open_setter(instance):
+    original = instance.open
+    instance.open = original
+    assert instance.open == original
+
+
+
+@given(instance=ConcreteOtherAnswers_strategy)
+def test_concreteotheranswers_billingAddress_setter(instance):
+    original = instance.billingAddress
+    instance.billingAddress = original
+    assert instance.billingAddress == original
+
 @given(instance=Choices_strategy)
 @settings(max_examples=50)
 def test_choices_instantiation(instance):
     assert isinstance(instance, Choices)
 
-@given(instance=Choices_strategy)
-def test_choices_creationDate_type(instance):
-    assert isinstance(instance.creationDate, date)
 
 
 @given(instance=Choices_strategy)
@@ -718,9 +664,6 @@ def test_choices_creationDate_setter(instance):
 def test_answers_instantiation(instance):
     assert isinstance(instance, Answers)
 
-@given(instance=Answers_strategy)
-def test_answers_paidDate_type(instance):
-    assert isinstance(instance.paidDate, date)
 
 
 @given(instance=Answers_strategy)
@@ -729,20 +672,6 @@ def test_answers_paidDate_setter(instance):
     instance.paidDate = original
     assert instance.paidDate == original
 
-@given(instance=Answers_strategy)
-def test_answers_total_type(instance):
-    assert isinstance(instance.total, float)
-
-
-@given(instance=Answers_strategy)
-def test_answers_total_setter(instance):
-    original = instance.total
-    instance.total = original
-    assert instance.total == original
-
-@given(instance=Answers_strategy)
-def test_answers_details_type(instance):
-    assert isinstance(instance.details, str)
 
 
 @given(instance=Answers_strategy)
@@ -751,14 +680,27 @@ def test_answers_details_setter(instance):
     instance.details = original
     assert instance.details == original
 
+
+
+@given(instance=Answers_strategy)
+def test_answers_total_setter(instance):
+    original = instance.total
+    instance.total = original
+    assert instance.total == original
+
 @given(instance=ConcreteRightAnswers_strategy)
 @settings(max_examples=50)
 def test_concreterightanswers_instantiation(instance):
     assert isinstance(instance, ConcreteRightAnswers)
 
+
+
 @given(instance=ConcreteRightAnswers_strategy)
-def test_concreterightanswers_phone_type(instance):
-    assert isinstance(instance.phone, str)
+def test_concreterightanswers_email_setter(instance):
+    original = instance.email
+    instance.email = original
+    assert instance.email == original
+
 
 
 @given(instance=ConcreteRightAnswers_strategy)
@@ -767,9 +709,6 @@ def test_concreterightanswers_phone_setter(instance):
     instance.phone = original
     assert instance.phone == original
 
-@given(instance=ConcreteRightAnswers_strategy)
-def test_concreterightanswers_address_type(instance):
-    assert isinstance(instance.address, str)
 
 
 @given(instance=ConcreteRightAnswers_strategy)
@@ -777,14 +716,3 @@ def test_concreterightanswers_address_setter(instance):
     original = instance.address
     instance.address = original
     assert instance.address == original
-
-@given(instance=ConcreteRightAnswers_strategy)
-def test_concreterightanswers_email_type(instance):
-    assert isinstance(instance.email, str)
-
-
-@given(instance=ConcreteRightAnswers_strategy)
-def test_concreterightanswers_email_setter(instance):
-    original = instance.email
-    instance.email = original
-    assert instance.email == original

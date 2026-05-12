@@ -3,80 +3,32 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    cassandra::SuperColumn,
-    cassandra::Keyspace,
+from python_code import (
     DataType,
-    cassandra::CounterColumnType,
-    cassandra::DecimalType,
-    cassandra::UTF8Type,
-    cassandra::DateType,
-    cassandra::DoubleType,
-    cassandra::AsciiType,
-    cassandra::BytesType,
-    cassandra::IntegerType,
-    cassandra::DataType,
-    cassandra::UUIDType,
-    cassandra::BooleanType,
-    cassandra::FloatType,
-    cassandra::Column,
-    cassandra::Row,
-    cassandra::ColumnFamily,
+    cassandra_DoubleType,
+    cassandra_UTF8Type,
+    cassandra_AsciiType,
+    cassandra_DecimalType,
+    cassandra_CounterColumnType,
+    cassandra_BytesType,
+    cassandra_DateType,
+    cassandra_IntegerType,
+    cassandra_DataType,
+    cassandra_UUIDType,
+    cassandra_BooleanType,
+    cassandra_FloatType,
+    cassandra_Column,
+    cassandra_Row,
+    cassandra_ColumnFamily,
+    cassandra_SuperColumn,
+    cassandra_Keyspace,
 )
 
 # =============================================================================
 # SECTION 1 — STRUCTURAL TESTS
 # =============================================================================
-
-
-
-def test_cassandra::supercolumn_is_not_abstract():
-    assert not inspect.isabstract(cassandra::SuperColumn)
-
-
-def test_cassandra::supercolumn_constructor_exists():
-    assert callable(cassandra::SuperColumn.__init__)
-
-
-def test_cassandra::supercolumn_constructor_args():
-    sig = inspect.signature(cassandra::SuperColumn.__init__)
-    params = list(sig.parameters.keys())
-    assert "key" in params, "Missing parameter 'key'"
-
-def test_cassandra::supercolumn_has_key():
-    assert hasattr(cassandra::SuperColumn, "key")
-    descriptor = None
-    for klass in cassandra::SuperColumn.__mro__:
-        if "key" in klass.__dict__:
-            descriptor = klass.__dict__["key"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_cassandra::keyspace_is_not_abstract():
-    assert not inspect.isabstract(cassandra::Keyspace)
-
-
-def test_cassandra::keyspace_constructor_exists():
-    assert callable(cassandra::Keyspace.__init__)
-
-
-def test_cassandra::keyspace_constructor_args():
-    sig = inspect.signature(cassandra::Keyspace.__init__)
-    params = list(sig.parameters.keys())
-    assert "name" in params, "Missing parameter 'name'"
-
-def test_cassandra::keyspace_has_name():
-    assert hasattr(cassandra::Keyspace, "name")
-    descriptor = None
-    for klass in cassandra::Keyspace.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
 
 
 
@@ -94,23 +46,23 @@ def test_datatype_constructor_args():
 
 
 
-def test_cassandra::countercolumntype_is_not_abstract():
-    assert not inspect.isabstract(cassandra::CounterColumnType)
+def test_cassandra_doubletype_is_not_abstract():
+    assert not inspect.isabstract(cassandra_DoubleType)
 
 
-def test_cassandra::countercolumntype_constructor_exists():
-    assert callable(cassandra::CounterColumnType.__init__)
+def test_cassandra_doubletype_constructor_exists():
+    assert callable(cassandra_DoubleType.__init__)
 
 
-def test_cassandra::countercolumntype_constructor_args():
-    sig = inspect.signature(cassandra::CounterColumnType.__init__)
+def test_cassandra_doubletype_constructor_args():
+    sig = inspect.signature(cassandra_DoubleType.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
 
-def test_cassandra::countercolumntype_has_value():
-    assert hasattr(cassandra::CounterColumnType, "value")
+def test_cassandra_doubletype_has_value():
+    assert hasattr(cassandra_DoubleType, "value")
     descriptor = None
-    for klass in cassandra::CounterColumnType.__mro__:
+    for klass in cassandra_DoubleType.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -118,23 +70,23 @@ def test_cassandra::countercolumntype_has_value():
 
 
 
-def test_cassandra::decimaltype_is_not_abstract():
-    assert not inspect.isabstract(cassandra::DecimalType)
+def test_cassandra_utf8type_is_not_abstract():
+    assert not inspect.isabstract(cassandra_UTF8Type)
 
 
-def test_cassandra::decimaltype_constructor_exists():
-    assert callable(cassandra::DecimalType.__init__)
+def test_cassandra_utf8type_constructor_exists():
+    assert callable(cassandra_UTF8Type.__init__)
 
 
-def test_cassandra::decimaltype_constructor_args():
-    sig = inspect.signature(cassandra::DecimalType.__init__)
+def test_cassandra_utf8type_constructor_args():
+    sig = inspect.signature(cassandra_UTF8Type.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
 
-def test_cassandra::decimaltype_has_value():
-    assert hasattr(cassandra::DecimalType, "value")
+def test_cassandra_utf8type_has_value():
+    assert hasattr(cassandra_UTF8Type, "value")
     descriptor = None
-    for klass in cassandra::DecimalType.__mro__:
+    for klass in cassandra_UTF8Type.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -142,23 +94,23 @@ def test_cassandra::decimaltype_has_value():
 
 
 
-def test_cassandra::utf8type_is_not_abstract():
-    assert not inspect.isabstract(cassandra::UTF8Type)
+def test_cassandra_asciitype_is_not_abstract():
+    assert not inspect.isabstract(cassandra_AsciiType)
 
 
-def test_cassandra::utf8type_constructor_exists():
-    assert callable(cassandra::UTF8Type.__init__)
+def test_cassandra_asciitype_constructor_exists():
+    assert callable(cassandra_AsciiType.__init__)
 
 
-def test_cassandra::utf8type_constructor_args():
-    sig = inspect.signature(cassandra::UTF8Type.__init__)
+def test_cassandra_asciitype_constructor_args():
+    sig = inspect.signature(cassandra_AsciiType.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
 
-def test_cassandra::utf8type_has_value():
-    assert hasattr(cassandra::UTF8Type, "value")
+def test_cassandra_asciitype_has_value():
+    assert hasattr(cassandra_AsciiType, "value")
     descriptor = None
-    for klass in cassandra::UTF8Type.__mro__:
+    for klass in cassandra_AsciiType.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -166,23 +118,23 @@ def test_cassandra::utf8type_has_value():
 
 
 
-def test_cassandra::datetype_is_not_abstract():
-    assert not inspect.isabstract(cassandra::DateType)
+def test_cassandra_decimaltype_is_not_abstract():
+    assert not inspect.isabstract(cassandra_DecimalType)
 
 
-def test_cassandra::datetype_constructor_exists():
-    assert callable(cassandra::DateType.__init__)
+def test_cassandra_decimaltype_constructor_exists():
+    assert callable(cassandra_DecimalType.__init__)
 
 
-def test_cassandra::datetype_constructor_args():
-    sig = inspect.signature(cassandra::DateType.__init__)
+def test_cassandra_decimaltype_constructor_args():
+    sig = inspect.signature(cassandra_DecimalType.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
 
-def test_cassandra::datetype_has_value():
-    assert hasattr(cassandra::DateType, "value")
+def test_cassandra_decimaltype_has_value():
+    assert hasattr(cassandra_DecimalType, "value")
     descriptor = None
-    for klass in cassandra::DateType.__mro__:
+    for klass in cassandra_DecimalType.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -190,23 +142,23 @@ def test_cassandra::datetype_has_value():
 
 
 
-def test_cassandra::doubletype_is_not_abstract():
-    assert not inspect.isabstract(cassandra::DoubleType)
+def test_cassandra_countercolumntype_is_not_abstract():
+    assert not inspect.isabstract(cassandra_CounterColumnType)
 
 
-def test_cassandra::doubletype_constructor_exists():
-    assert callable(cassandra::DoubleType.__init__)
+def test_cassandra_countercolumntype_constructor_exists():
+    assert callable(cassandra_CounterColumnType.__init__)
 
 
-def test_cassandra::doubletype_constructor_args():
-    sig = inspect.signature(cassandra::DoubleType.__init__)
+def test_cassandra_countercolumntype_constructor_args():
+    sig = inspect.signature(cassandra_CounterColumnType.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
 
-def test_cassandra::doubletype_has_value():
-    assert hasattr(cassandra::DoubleType, "value")
+def test_cassandra_countercolumntype_has_value():
+    assert hasattr(cassandra_CounterColumnType, "value")
     descriptor = None
-    for klass in cassandra::DoubleType.__mro__:
+    for klass in cassandra_CounterColumnType.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -214,23 +166,23 @@ def test_cassandra::doubletype_has_value():
 
 
 
-def test_cassandra::asciitype_is_not_abstract():
-    assert not inspect.isabstract(cassandra::AsciiType)
+def test_cassandra_bytestype_is_not_abstract():
+    assert not inspect.isabstract(cassandra_BytesType)
 
 
-def test_cassandra::asciitype_constructor_exists():
-    assert callable(cassandra::AsciiType.__init__)
+def test_cassandra_bytestype_constructor_exists():
+    assert callable(cassandra_BytesType.__init__)
 
 
-def test_cassandra::asciitype_constructor_args():
-    sig = inspect.signature(cassandra::AsciiType.__init__)
+def test_cassandra_bytestype_constructor_args():
+    sig = inspect.signature(cassandra_BytesType.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
 
-def test_cassandra::asciitype_has_value():
-    assert hasattr(cassandra::AsciiType, "value")
+def test_cassandra_bytestype_has_value():
+    assert hasattr(cassandra_BytesType, "value")
     descriptor = None
-    for klass in cassandra::AsciiType.__mro__:
+    for klass in cassandra_BytesType.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -238,23 +190,23 @@ def test_cassandra::asciitype_has_value():
 
 
 
-def test_cassandra::bytestype_is_not_abstract():
-    assert not inspect.isabstract(cassandra::BytesType)
+def test_cassandra_datetype_is_not_abstract():
+    assert not inspect.isabstract(cassandra_DateType)
 
 
-def test_cassandra::bytestype_constructor_exists():
-    assert callable(cassandra::BytesType.__init__)
+def test_cassandra_datetype_constructor_exists():
+    assert callable(cassandra_DateType.__init__)
 
 
-def test_cassandra::bytestype_constructor_args():
-    sig = inspect.signature(cassandra::BytesType.__init__)
+def test_cassandra_datetype_constructor_args():
+    sig = inspect.signature(cassandra_DateType.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
 
-def test_cassandra::bytestype_has_value():
-    assert hasattr(cassandra::BytesType, "value")
+def test_cassandra_datetype_has_value():
+    assert hasattr(cassandra_DateType, "value")
     descriptor = None
-    for klass in cassandra::BytesType.__mro__:
+    for klass in cassandra_DateType.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -262,23 +214,23 @@ def test_cassandra::bytestype_has_value():
 
 
 
-def test_cassandra::integertype_is_not_abstract():
-    assert not inspect.isabstract(cassandra::IntegerType)
+def test_cassandra_integertype_is_not_abstract():
+    assert not inspect.isabstract(cassandra_IntegerType)
 
 
-def test_cassandra::integertype_constructor_exists():
-    assert callable(cassandra::IntegerType.__init__)
+def test_cassandra_integertype_constructor_exists():
+    assert callable(cassandra_IntegerType.__init__)
 
 
-def test_cassandra::integertype_constructor_args():
-    sig = inspect.signature(cassandra::IntegerType.__init__)
+def test_cassandra_integertype_constructor_args():
+    sig = inspect.signature(cassandra_IntegerType.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
 
-def test_cassandra::integertype_has_value():
-    assert hasattr(cassandra::IntegerType, "value")
+def test_cassandra_integertype_has_value():
+    assert hasattr(cassandra_IntegerType, "value")
     descriptor = None
-    for klass in cassandra::IntegerType.__mro__:
+    for klass in cassandra_IntegerType.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -286,37 +238,37 @@ def test_cassandra::integertype_has_value():
 
 
 
-def test_cassandra::datatype_is_not_abstract():
-    assert not inspect.isabstract(cassandra::DataType)
+def test_cassandra_datatype_is_not_abstract():
+    assert not inspect.isabstract(cassandra_DataType)
 
 
-def test_cassandra::datatype_constructor_exists():
-    assert callable(cassandra::DataType.__init__)
+def test_cassandra_datatype_constructor_exists():
+    assert callable(cassandra_DataType.__init__)
 
 
-def test_cassandra::datatype_constructor_args():
-    sig = inspect.signature(cassandra::DataType.__init__)
+def test_cassandra_datatype_constructor_args():
+    sig = inspect.signature(cassandra_DataType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_cassandra::uuidtype_is_not_abstract():
-    assert not inspect.isabstract(cassandra::UUIDType)
+def test_cassandra_uuidtype_is_not_abstract():
+    assert not inspect.isabstract(cassandra_UUIDType)
 
 
-def test_cassandra::uuidtype_constructor_exists():
-    assert callable(cassandra::UUIDType.__init__)
+def test_cassandra_uuidtype_constructor_exists():
+    assert callable(cassandra_UUIDType.__init__)
 
 
-def test_cassandra::uuidtype_constructor_args():
-    sig = inspect.signature(cassandra::UUIDType.__init__)
+def test_cassandra_uuidtype_constructor_args():
+    sig = inspect.signature(cassandra_UUIDType.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
 
-def test_cassandra::uuidtype_has_value():
-    assert hasattr(cassandra::UUIDType, "value")
+def test_cassandra_uuidtype_has_value():
+    assert hasattr(cassandra_UUIDType, "value")
     descriptor = None
-    for klass in cassandra::UUIDType.__mro__:
+    for klass in cassandra_UUIDType.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -324,23 +276,23 @@ def test_cassandra::uuidtype_has_value():
 
 
 
-def test_cassandra::booleantype_is_not_abstract():
-    assert not inspect.isabstract(cassandra::BooleanType)
+def test_cassandra_booleantype_is_not_abstract():
+    assert not inspect.isabstract(cassandra_BooleanType)
 
 
-def test_cassandra::booleantype_constructor_exists():
-    assert callable(cassandra::BooleanType.__init__)
+def test_cassandra_booleantype_constructor_exists():
+    assert callable(cassandra_BooleanType.__init__)
 
 
-def test_cassandra::booleantype_constructor_args():
-    sig = inspect.signature(cassandra::BooleanType.__init__)
+def test_cassandra_booleantype_constructor_args():
+    sig = inspect.signature(cassandra_BooleanType.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
 
-def test_cassandra::booleantype_has_value():
-    assert hasattr(cassandra::BooleanType, "value")
+def test_cassandra_booleantype_has_value():
+    assert hasattr(cassandra_BooleanType, "value")
     descriptor = None
-    for klass in cassandra::BooleanType.__mro__:
+    for klass in cassandra_BooleanType.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -348,23 +300,23 @@ def test_cassandra::booleantype_has_value():
 
 
 
-def test_cassandra::floattype_is_not_abstract():
-    assert not inspect.isabstract(cassandra::FloatType)
+def test_cassandra_floattype_is_not_abstract():
+    assert not inspect.isabstract(cassandra_FloatType)
 
 
-def test_cassandra::floattype_constructor_exists():
-    assert callable(cassandra::FloatType.__init__)
+def test_cassandra_floattype_constructor_exists():
+    assert callable(cassandra_FloatType.__init__)
 
 
-def test_cassandra::floattype_constructor_args():
-    sig = inspect.signature(cassandra::FloatType.__init__)
+def test_cassandra_floattype_constructor_args():
+    sig = inspect.signature(cassandra_FloatType.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
 
-def test_cassandra::floattype_has_value():
-    assert hasattr(cassandra::FloatType, "value")
+def test_cassandra_floattype_has_value():
+    assert hasattr(cassandra_FloatType, "value")
     descriptor = None
-    for klass in cassandra::FloatType.__mro__:
+    for klass in cassandra_FloatType.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -372,57 +324,57 @@ def test_cassandra::floattype_has_value():
 
 
 
-def test_cassandra::column_is_not_abstract():
-    assert not inspect.isabstract(cassandra::Column)
+def test_cassandra_column_is_not_abstract():
+    assert not inspect.isabstract(cassandra_Column)
 
 
-def test_cassandra::column_constructor_exists():
-    assert callable(cassandra::Column.__init__)
+def test_cassandra_column_constructor_exists():
+    assert callable(cassandra_Column.__init__)
 
 
-def test_cassandra::column_constructor_args():
-    sig = inspect.signature(cassandra::Column.__init__)
+def test_cassandra_column_constructor_args():
+    sig = inspect.signature(cassandra_Column.__init__)
     params = list(sig.parameters.keys())
-    assert "timestamp" in params, "Missing parameter 'timestamp'"
     assert "key" in params, "Missing parameter 'key'"
+    assert "timestamp" in params, "Missing parameter 'timestamp'"
 
-def test_cassandra::column_has_timestamp():
-    assert hasattr(cassandra::Column, "timestamp")
+def test_cassandra_column_has_key():
+    assert hasattr(cassandra_Column, "key")
     descriptor = None
-    for klass in cassandra::Column.__mro__:
+    for klass in cassandra_Column.__mro__:
+        if "key" in klass.__dict__:
+            descriptor = klass.__dict__["key"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_cassandra_column_has_timestamp():
+    assert hasattr(cassandra_Column, "timestamp")
+    descriptor = None
+    for klass in cassandra_Column.__mro__:
         if "timestamp" in klass.__dict__:
             descriptor = klass.__dict__["timestamp"]
             break
     assert isinstance(descriptor, property)
 
-def test_cassandra::column_has_key():
-    assert hasattr(cassandra::Column, "key")
-    descriptor = None
-    for klass in cassandra::Column.__mro__:
-        if "key" in klass.__dict__:
-            descriptor = klass.__dict__["key"]
-            break
-    assert isinstance(descriptor, property)
 
 
-
-def test_cassandra::row_is_not_abstract():
-    assert not inspect.isabstract(cassandra::Row)
-
-
-def test_cassandra::row_constructor_exists():
-    assert callable(cassandra::Row.__init__)
+def test_cassandra_row_is_not_abstract():
+    assert not inspect.isabstract(cassandra_Row)
 
 
-def test_cassandra::row_constructor_args():
-    sig = inspect.signature(cassandra::Row.__init__)
+def test_cassandra_row_constructor_exists():
+    assert callable(cassandra_Row.__init__)
+
+
+def test_cassandra_row_constructor_args():
+    sig = inspect.signature(cassandra_Row.__init__)
     params = list(sig.parameters.keys())
     assert "key" in params, "Missing parameter 'key'"
 
-def test_cassandra::row_has_key():
-    assert hasattr(cassandra::Row, "key")
+def test_cassandra_row_has_key():
+    assert hasattr(cassandra_Row, "key")
     descriptor = None
-    for klass in cassandra::Row.__mro__:
+    for klass in cassandra_Row.__mro__:
         if "key" in klass.__dict__:
             descriptor = klass.__dict__["key"]
             break
@@ -430,23 +382,71 @@ def test_cassandra::row_has_key():
 
 
 
-def test_cassandra::columnfamily_is_not_abstract():
-    assert not inspect.isabstract(cassandra::ColumnFamily)
+def test_cassandra_columnfamily_is_not_abstract():
+    assert not inspect.isabstract(cassandra_ColumnFamily)
 
 
-def test_cassandra::columnfamily_constructor_exists():
-    assert callable(cassandra::ColumnFamily.__init__)
+def test_cassandra_columnfamily_constructor_exists():
+    assert callable(cassandra_ColumnFamily.__init__)
 
 
-def test_cassandra::columnfamily_constructor_args():
-    sig = inspect.signature(cassandra::ColumnFamily.__init__)
+def test_cassandra_columnfamily_constructor_args():
+    sig = inspect.signature(cassandra_ColumnFamily.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_cassandra::columnfamily_has_name():
-    assert hasattr(cassandra::ColumnFamily, "name")
+def test_cassandra_columnfamily_has_name():
+    assert hasattr(cassandra_ColumnFamily, "name")
     descriptor = None
-    for klass in cassandra::ColumnFamily.__mro__:
+    for klass in cassandra_ColumnFamily.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_cassandra_supercolumn_is_not_abstract():
+    assert not inspect.isabstract(cassandra_SuperColumn)
+
+
+def test_cassandra_supercolumn_constructor_exists():
+    assert callable(cassandra_SuperColumn.__init__)
+
+
+def test_cassandra_supercolumn_constructor_args():
+    sig = inspect.signature(cassandra_SuperColumn.__init__)
+    params = list(sig.parameters.keys())
+    assert "key" in params, "Missing parameter 'key'"
+
+def test_cassandra_supercolumn_has_key():
+    assert hasattr(cassandra_SuperColumn, "key")
+    descriptor = None
+    for klass in cassandra_SuperColumn.__mro__:
+        if "key" in klass.__dict__:
+            descriptor = klass.__dict__["key"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_cassandra_keyspace_is_not_abstract():
+    assert not inspect.isabstract(cassandra_Keyspace)
+
+
+def test_cassandra_keyspace_constructor_exists():
+    assert callable(cassandra_Keyspace.__init__)
+
+
+def test_cassandra_keyspace_constructor_args():
+    sig = inspect.signature(cassandra_Keyspace.__init__)
+    params = list(sig.parameters.keys())
+    assert "name" in params, "Missing parameter 'name'"
+
+def test_cassandra_keyspace_has_name():
+    assert hasattr(cassandra_Keyspace, "name")
+    descriptor = None
+    for klass in cassandra_Keyspace.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -464,368 +464,317 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-cassandra::SuperColumn_strategy = st.builds(
-    cassandra::SuperColumn,
-    key=
-        safe_text
-)
-cassandra::Keyspace_strategy = st.builds(
-    cassandra::Keyspace,
-    name=
-        safe_text
-)
 DataType_strategy = st.builds(
     DataType,
 )
-cassandra::CounterColumnType_strategy = st.builds(
-    cassandra::CounterColumnType,
-    value=
-        safe_text
-)
-cassandra::DecimalType_strategy = st.builds(
-    cassandra::DecimalType,
-    value=
-        safe_text
-)
-cassandra::UTF8Type_strategy = st.builds(
-    cassandra::UTF8Type,
-    value=
-        safe_text
-)
-cassandra::DateType_strategy = st.builds(
-    cassandra::DateType,
-    value=
-        safe_text
-)
-cassandra::DoubleType_strategy = st.builds(
-    cassandra::DoubleType,
+cassandra_DoubleType_strategy = st.builds(
+    cassandra_DoubleType,
     value=
         st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False)
 )
-cassandra::AsciiType_strategy = st.builds(
-    cassandra::AsciiType,
+cassandra_UTF8Type_strategy = st.builds(
+    cassandra_UTF8Type,
     value=
         safe_text
 )
-cassandra::BytesType_strategy = st.builds(
-    cassandra::BytesType,
+cassandra_AsciiType_strategy = st.builds(
+    cassandra_AsciiType,
     value=
         safe_text
 )
-cassandra::IntegerType_strategy = st.builds(
-    cassandra::IntegerType,
+cassandra_DecimalType_strategy = st.builds(
+    cassandra_DecimalType,
+    value=
+        safe_text
+)
+cassandra_CounterColumnType_strategy = st.builds(
+    cassandra_CounterColumnType,
+    value=
+        safe_text
+)
+cassandra_BytesType_strategy = st.builds(
+    cassandra_BytesType,
+    value=
+        safe_text
+)
+cassandra_DateType_strategy = st.builds(
+    cassandra_DateType,
+    value=
+        safe_text
+)
+cassandra_IntegerType_strategy = st.builds(
+    cassandra_IntegerType,
     value=
         st.integers()
 )
-cassandra::DataType_strategy = st.builds(
-    cassandra::DataType,
+cassandra_DataType_strategy = st.builds(
+    cassandra_DataType,
 )
-cassandra::UUIDType_strategy = st.builds(
-    cassandra::UUIDType,
+cassandra_UUIDType_strategy = st.builds(
+    cassandra_UUIDType,
     value=
         safe_text
 )
-cassandra::BooleanType_strategy = st.builds(
-    cassandra::BooleanType,
+cassandra_BooleanType_strategy = st.builds(
+    cassandra_BooleanType,
     value=
         st.booleans()
 )
-cassandra::FloatType_strategy = st.builds(
-    cassandra::FloatType,
+cassandra_FloatType_strategy = st.builds(
+    cassandra_FloatType,
     value=
         st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False)
 )
-cassandra::Column_strategy = st.builds(
-    cassandra::Column,
-    timestamp=
+cassandra_Column_strategy = st.builds(
+    cassandra_Column,
+    key=
         safe_text,
+    timestamp=
+        safe_text
+)
+cassandra_Row_strategy = st.builds(
+    cassandra_Row,
     key=
         safe_text
 )
-cassandra::Row_strategy = st.builds(
-    cassandra::Row,
-    key=
-        safe_text
-)
-cassandra::ColumnFamily_strategy = st.builds(
-    cassandra::ColumnFamily,
+cassandra_ColumnFamily_strategy = st.builds(
+    cassandra_ColumnFamily,
     name=
         safe_text
 )
-
-@given(instance=cassandra::SuperColumn_strategy)
-@settings(max_examples=50)
-def test_cassandra::supercolumn_instantiation(instance):
-    assert isinstance(instance, cassandra::SuperColumn)
-
-@given(instance=cassandra::SuperColumn_strategy)
-def test_cassandra::supercolumn_key_type(instance):
-    assert isinstance(instance.key, str)
-
-
-@given(instance=cassandra::SuperColumn_strategy)
-def test_cassandra::supercolumn_key_setter(instance):
-    original = instance.key
-    instance.key = original
-    assert instance.key == original
-
-@given(instance=cassandra::Keyspace_strategy)
-@settings(max_examples=50)
-def test_cassandra::keyspace_instantiation(instance):
-    assert isinstance(instance, cassandra::Keyspace)
-
-@given(instance=cassandra::Keyspace_strategy)
-def test_cassandra::keyspace_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=cassandra::Keyspace_strategy)
-def test_cassandra::keyspace_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
+cassandra_SuperColumn_strategy = st.builds(
+    cassandra_SuperColumn,
+    key=
+        safe_text
+)
+cassandra_Keyspace_strategy = st.builds(
+    cassandra_Keyspace,
+    name=
+        safe_text
+)
 
 @given(instance=DataType_strategy)
 @settings(max_examples=50)
 def test_datatype_instantiation(instance):
     assert isinstance(instance, DataType)
 
-@given(instance=cassandra::CounterColumnType_strategy)
+@given(instance=cassandra_DoubleType_strategy)
 @settings(max_examples=50)
-def test_cassandra::countercolumntype_instantiation(instance):
-    assert isinstance(instance, cassandra::CounterColumnType)
-
-@given(instance=cassandra::CounterColumnType_strategy)
-def test_cassandra::countercolumntype_value_type(instance):
-    assert isinstance(instance.value, str)
+def test_cassandra_doubletype_instantiation(instance):
+    assert isinstance(instance, cassandra_DoubleType)
 
 
-@given(instance=cassandra::CounterColumnType_strategy)
-def test_cassandra::countercolumntype_value_setter(instance):
+
+@given(instance=cassandra_DoubleType_strategy)
+def test_cassandra_doubletype_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
 
-@given(instance=cassandra::DecimalType_strategy)
+@given(instance=cassandra_UTF8Type_strategy)
 @settings(max_examples=50)
-def test_cassandra::decimaltype_instantiation(instance):
-    assert isinstance(instance, cassandra::DecimalType)
-
-@given(instance=cassandra::DecimalType_strategy)
-def test_cassandra::decimaltype_value_type(instance):
-    assert isinstance(instance.value, str)
+def test_cassandra_utf8type_instantiation(instance):
+    assert isinstance(instance, cassandra_UTF8Type)
 
 
-@given(instance=cassandra::DecimalType_strategy)
-def test_cassandra::decimaltype_value_setter(instance):
+
+@given(instance=cassandra_UTF8Type_strategy)
+def test_cassandra_utf8type_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
 
-@given(instance=cassandra::UTF8Type_strategy)
+@given(instance=cassandra_AsciiType_strategy)
 @settings(max_examples=50)
-def test_cassandra::utf8type_instantiation(instance):
-    assert isinstance(instance, cassandra::UTF8Type)
-
-@given(instance=cassandra::UTF8Type_strategy)
-def test_cassandra::utf8type_value_type(instance):
-    assert isinstance(instance.value, str)
+def test_cassandra_asciitype_instantiation(instance):
+    assert isinstance(instance, cassandra_AsciiType)
 
 
-@given(instance=cassandra::UTF8Type_strategy)
-def test_cassandra::utf8type_value_setter(instance):
+
+@given(instance=cassandra_AsciiType_strategy)
+def test_cassandra_asciitype_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
 
-@given(instance=cassandra::DateType_strategy)
+@given(instance=cassandra_DecimalType_strategy)
 @settings(max_examples=50)
-def test_cassandra::datetype_instantiation(instance):
-    assert isinstance(instance, cassandra::DateType)
-
-@given(instance=cassandra::DateType_strategy)
-def test_cassandra::datetype_value_type(instance):
-    assert isinstance(instance.value, str)
+def test_cassandra_decimaltype_instantiation(instance):
+    assert isinstance(instance, cassandra_DecimalType)
 
 
-@given(instance=cassandra::DateType_strategy)
-def test_cassandra::datetype_value_setter(instance):
+
+@given(instance=cassandra_DecimalType_strategy)
+def test_cassandra_decimaltype_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
 
-@given(instance=cassandra::DoubleType_strategy)
+@given(instance=cassandra_CounterColumnType_strategy)
 @settings(max_examples=50)
-def test_cassandra::doubletype_instantiation(instance):
-    assert isinstance(instance, cassandra::DoubleType)
-
-@given(instance=cassandra::DoubleType_strategy)
-def test_cassandra::doubletype_value_type(instance):
-    assert isinstance(instance.value, float)
+def test_cassandra_countercolumntype_instantiation(instance):
+    assert isinstance(instance, cassandra_CounterColumnType)
 
 
-@given(instance=cassandra::DoubleType_strategy)
-def test_cassandra::doubletype_value_setter(instance):
+
+@given(instance=cassandra_CounterColumnType_strategy)
+def test_cassandra_countercolumntype_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
 
-@given(instance=cassandra::AsciiType_strategy)
+@given(instance=cassandra_BytesType_strategy)
 @settings(max_examples=50)
-def test_cassandra::asciitype_instantiation(instance):
-    assert isinstance(instance, cassandra::AsciiType)
-
-@given(instance=cassandra::AsciiType_strategy)
-def test_cassandra::asciitype_value_type(instance):
-    assert isinstance(instance.value, str)
+def test_cassandra_bytestype_instantiation(instance):
+    assert isinstance(instance, cassandra_BytesType)
 
 
-@given(instance=cassandra::AsciiType_strategy)
-def test_cassandra::asciitype_value_setter(instance):
+
+@given(instance=cassandra_BytesType_strategy)
+def test_cassandra_bytestype_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
 
-@given(instance=cassandra::BytesType_strategy)
+@given(instance=cassandra_DateType_strategy)
 @settings(max_examples=50)
-def test_cassandra::bytestype_instantiation(instance):
-    assert isinstance(instance, cassandra::BytesType)
-
-@given(instance=cassandra::BytesType_strategy)
-def test_cassandra::bytestype_value_type(instance):
-    assert isinstance(instance.value, str)
+def test_cassandra_datetype_instantiation(instance):
+    assert isinstance(instance, cassandra_DateType)
 
 
-@given(instance=cassandra::BytesType_strategy)
-def test_cassandra::bytestype_value_setter(instance):
+
+@given(instance=cassandra_DateType_strategy)
+def test_cassandra_datetype_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
 
-@given(instance=cassandra::IntegerType_strategy)
+@given(instance=cassandra_IntegerType_strategy)
 @settings(max_examples=50)
-def test_cassandra::integertype_instantiation(instance):
-    assert isinstance(instance, cassandra::IntegerType)
-
-@given(instance=cassandra::IntegerType_strategy)
-def test_cassandra::integertype_value_type(instance):
-    assert isinstance(instance.value, int)
+def test_cassandra_integertype_instantiation(instance):
+    assert isinstance(instance, cassandra_IntegerType)
 
 
-@given(instance=cassandra::IntegerType_strategy)
-def test_cassandra::integertype_value_setter(instance):
+
+@given(instance=cassandra_IntegerType_strategy)
+def test_cassandra_integertype_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
 
-@given(instance=cassandra::DataType_strategy)
+@given(instance=cassandra_DataType_strategy)
 @settings(max_examples=50)
-def test_cassandra::datatype_instantiation(instance):
-    assert isinstance(instance, cassandra::DataType)
+def test_cassandra_datatype_instantiation(instance):
+    assert isinstance(instance, cassandra_DataType)
 
-@given(instance=cassandra::UUIDType_strategy)
+@given(instance=cassandra_UUIDType_strategy)
 @settings(max_examples=50)
-def test_cassandra::uuidtype_instantiation(instance):
-    assert isinstance(instance, cassandra::UUIDType)
-
-@given(instance=cassandra::UUIDType_strategy)
-def test_cassandra::uuidtype_value_type(instance):
-    assert isinstance(instance.value, str)
+def test_cassandra_uuidtype_instantiation(instance):
+    assert isinstance(instance, cassandra_UUIDType)
 
 
-@given(instance=cassandra::UUIDType_strategy)
-def test_cassandra::uuidtype_value_setter(instance):
+
+@given(instance=cassandra_UUIDType_strategy)
+def test_cassandra_uuidtype_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
 
-@given(instance=cassandra::BooleanType_strategy)
+@given(instance=cassandra_BooleanType_strategy)
 @settings(max_examples=50)
-def test_cassandra::booleantype_instantiation(instance):
-    assert isinstance(instance, cassandra::BooleanType)
-
-@given(instance=cassandra::BooleanType_strategy)
-def test_cassandra::booleantype_value_type(instance):
-    assert isinstance(instance.value, bool)
+def test_cassandra_booleantype_instantiation(instance):
+    assert isinstance(instance, cassandra_BooleanType)
 
 
-@given(instance=cassandra::BooleanType_strategy)
-def test_cassandra::booleantype_value_setter(instance):
+
+@given(instance=cassandra_BooleanType_strategy)
+def test_cassandra_booleantype_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
 
-@given(instance=cassandra::FloatType_strategy)
+@given(instance=cassandra_FloatType_strategy)
 @settings(max_examples=50)
-def test_cassandra::floattype_instantiation(instance):
-    assert isinstance(instance, cassandra::FloatType)
-
-@given(instance=cassandra::FloatType_strategy)
-def test_cassandra::floattype_value_type(instance):
-    assert isinstance(instance.value, float)
+def test_cassandra_floattype_instantiation(instance):
+    assert isinstance(instance, cassandra_FloatType)
 
 
-@given(instance=cassandra::FloatType_strategy)
-def test_cassandra::floattype_value_setter(instance):
+
+@given(instance=cassandra_FloatType_strategy)
+def test_cassandra_floattype_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
 
-@given(instance=cassandra::Column_strategy)
+@given(instance=cassandra_Column_strategy)
 @settings(max_examples=50)
-def test_cassandra::column_instantiation(instance):
-    assert isinstance(instance, cassandra::Column)
-
-@given(instance=cassandra::Column_strategy)
-def test_cassandra::column_timestamp_type(instance):
-    assert isinstance(instance.timestamp, str)
+def test_cassandra_column_instantiation(instance):
+    assert isinstance(instance, cassandra_Column)
 
 
-@given(instance=cassandra::Column_strategy)
-def test_cassandra::column_timestamp_setter(instance):
+
+@given(instance=cassandra_Column_strategy)
+def test_cassandra_column_key_setter(instance):
+    original = instance.key
+    instance.key = original
+    assert instance.key == original
+
+
+
+@given(instance=cassandra_Column_strategy)
+def test_cassandra_column_timestamp_setter(instance):
     original = instance.timestamp
     instance.timestamp = original
     assert instance.timestamp == original
 
-@given(instance=cassandra::Column_strategy)
-def test_cassandra::column_key_type(instance):
-    assert isinstance(instance.key, str)
+@given(instance=cassandra_Row_strategy)
+@settings(max_examples=50)
+def test_cassandra_row_instantiation(instance):
+    assert isinstance(instance, cassandra_Row)
 
 
-@given(instance=cassandra::Column_strategy)
-def test_cassandra::column_key_setter(instance):
+
+@given(instance=cassandra_Row_strategy)
+def test_cassandra_row_key_setter(instance):
     original = instance.key
     instance.key = original
     assert instance.key == original
 
-@given(instance=cassandra::Row_strategy)
+@given(instance=cassandra_ColumnFamily_strategy)
 @settings(max_examples=50)
-def test_cassandra::row_instantiation(instance):
-    assert isinstance(instance, cassandra::Row)
-
-@given(instance=cassandra::Row_strategy)
-def test_cassandra::row_key_type(instance):
-    assert isinstance(instance.key, str)
+def test_cassandra_columnfamily_instantiation(instance):
+    assert isinstance(instance, cassandra_ColumnFamily)
 
 
-@given(instance=cassandra::Row_strategy)
-def test_cassandra::row_key_setter(instance):
+
+@given(instance=cassandra_ColumnFamily_strategy)
+def test_cassandra_columnfamily_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+@given(instance=cassandra_SuperColumn_strategy)
+@settings(max_examples=50)
+def test_cassandra_supercolumn_instantiation(instance):
+    assert isinstance(instance, cassandra_SuperColumn)
+
+
+
+@given(instance=cassandra_SuperColumn_strategy)
+def test_cassandra_supercolumn_key_setter(instance):
     original = instance.key
     instance.key = original
     assert instance.key == original
 
-@given(instance=cassandra::ColumnFamily_strategy)
+@given(instance=cassandra_Keyspace_strategy)
 @settings(max_examples=50)
-def test_cassandra::columnfamily_instantiation(instance):
-    assert isinstance(instance, cassandra::ColumnFamily)
-
-@given(instance=cassandra::ColumnFamily_strategy)
-def test_cassandra::columnfamily_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_cassandra_keyspace_instantiation(instance):
+    assert isinstance(instance, cassandra_Keyspace)
 
 
-@given(instance=cassandra::ColumnFamily_strategy)
-def test_cassandra::columnfamily_name_setter(instance):
+
+@given(instance=cassandra_Keyspace_strategy)
+def test_cassandra_keyspace_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original

@@ -3,26 +3,26 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    sedml::variable,
-    sedml::math,
-    sedml::listOfVariables,
-    sedml::curve,
-    sedml::listOfCurves,
-    sedml::algorithm,
-    sedml::plot2D,
-    sedml::dataGenerator,
-    sedml::task,
-    sedml::model,
-    sedml::listOfOutputs,
-    sedml::listOfDataGenerators,
-    sedml::listOfTasks,
-    sedml::listOfModels,
-    sedml::listOfSimulations,
-    sedml::sedML,
-    sedml::uniformTimeCourse,
+from python_code import (
+    sedml_variable,
+    sedml_math,
+    sedml_listOfVariables,
+    sedml_curve,
+    sedml_listOfCurves,
+    sedml_algorithm,
+    sedml_plot2D,
+    sedml_dataGenerator,
+    sedml_task,
+    sedml_model,
+    sedml_listOfOutputs,
+    sedml_listOfDataGenerators,
+    sedml_listOfTasks,
+    sedml_listOfModels,
+    sedml_listOfSimulations,
+    sedml_sedML,
+    sedml_uniformTimeCourse,
 )
 
 # =============================================================================
@@ -31,67 +31,67 @@ from classes import (
 
 
 
-def test_sedml::variable_is_not_abstract():
-    assert not inspect.isabstract(sedml::variable)
+def test_sedml_variable_is_not_abstract():
+    assert not inspect.isabstract(sedml_variable)
 
 
-def test_sedml::variable_constructor_exists():
-    assert callable(sedml::variable.__init__)
+def test_sedml_variable_constructor_exists():
+    assert callable(sedml_variable.__init__)
 
 
-def test_sedml::variable_constructor_args():
-    sig = inspect.signature(sedml::variable.__init__)
+def test_sedml_variable_constructor_args():
+    sig = inspect.signature(sedml_variable.__init__)
     params = list(sig.parameters.keys())
     assert "target" in params, "Missing parameter 'target'"
-    assert "symbol" in params, "Missing parameter 'symbol'"
     assert "id" in params, "Missing parameter 'id'"
+    assert "symbol" in params, "Missing parameter 'symbol'"
 
-def test_sedml::variable_has_target():
-    assert hasattr(sedml::variable, "target")
+def test_sedml_variable_has_target():
+    assert hasattr(sedml_variable, "target")
     descriptor = None
-    for klass in sedml::variable.__mro__:
+    for klass in sedml_variable.__mro__:
         if "target" in klass.__dict__:
             descriptor = klass.__dict__["target"]
             break
     assert isinstance(descriptor, property)
 
-def test_sedml::variable_has_symbol():
-    assert hasattr(sedml::variable, "symbol")
+def test_sedml_variable_has_id():
+    assert hasattr(sedml_variable, "id")
     descriptor = None
-    for klass in sedml::variable.__mro__:
-        if "symbol" in klass.__dict__:
-            descriptor = klass.__dict__["symbol"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_sedml::variable_has_id():
-    assert hasattr(sedml::variable, "id")
-    descriptor = None
-    for klass in sedml::variable.__mro__:
+    for klass in sedml_variable.__mro__:
         if "id" in klass.__dict__:
             descriptor = klass.__dict__["id"]
             break
     assert isinstance(descriptor, property)
 
+def test_sedml_variable_has_symbol():
+    assert hasattr(sedml_variable, "symbol")
+    descriptor = None
+    for klass in sedml_variable.__mro__:
+        if "symbol" in klass.__dict__:
+            descriptor = klass.__dict__["symbol"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_sedml::math_is_not_abstract():
-    assert not inspect.isabstract(sedml::math)
+
+def test_sedml_math_is_not_abstract():
+    assert not inspect.isabstract(sedml_math)
 
 
-def test_sedml::math_constructor_exists():
-    assert callable(sedml::math.__init__)
+def test_sedml_math_constructor_exists():
+    assert callable(sedml_math.__init__)
 
 
-def test_sedml::math_constructor_args():
-    sig = inspect.signature(sedml::math.__init__)
+def test_sedml_math_constructor_args():
+    sig = inspect.signature(sedml_math.__init__)
     params = list(sig.parameters.keys())
     assert "xlms" in params, "Missing parameter 'xlms'"
 
-def test_sedml::math_has_xlms():
-    assert hasattr(sedml::math, "xlms")
+def test_sedml_math_has_xlms():
+    assert hasattr(sedml_math, "xlms")
     descriptor = None
-    for klass in sedml::math.__mro__:
+    for klass in sedml_math.__mro__:
         if "xlms" in klass.__dict__:
             descriptor = klass.__dict__["xlms"]
             break
@@ -99,115 +99,115 @@ def test_sedml::math_has_xlms():
 
 
 
-def test_sedml::listofvariables_is_not_abstract():
-    assert not inspect.isabstract(sedml::listOfVariables)
+def test_sedml_listofvariables_is_not_abstract():
+    assert not inspect.isabstract(sedml_listOfVariables)
 
 
-def test_sedml::listofvariables_constructor_exists():
-    assert callable(sedml::listOfVariables.__init__)
+def test_sedml_listofvariables_constructor_exists():
+    assert callable(sedml_listOfVariables.__init__)
 
 
-def test_sedml::listofvariables_constructor_args():
-    sig = inspect.signature(sedml::listOfVariables.__init__)
+def test_sedml_listofvariables_constructor_args():
+    sig = inspect.signature(sedml_listOfVariables.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sedml::curve_is_not_abstract():
-    assert not inspect.isabstract(sedml::curve)
+def test_sedml_curve_is_not_abstract():
+    assert not inspect.isabstract(sedml_curve)
 
 
-def test_sedml::curve_constructor_exists():
-    assert callable(sedml::curve.__init__)
+def test_sedml_curve_constructor_exists():
+    assert callable(sedml_curve.__init__)
 
 
-def test_sedml::curve_constructor_args():
-    sig = inspect.signature(sedml::curve.__init__)
+def test_sedml_curve_constructor_args():
+    sig = inspect.signature(sedml_curve.__init__)
     params = list(sig.parameters.keys())
-    assert "logY" in params, "Missing parameter 'logY'"
     assert "logX" in params, "Missing parameter 'logX'"
+    assert "logY" in params, "Missing parameter 'logY'"
     assert "id" in params, "Missing parameter 'id'"
-    assert "yDataReference" in params, "Missing parameter 'yDataReference'"
     assert "xDataReference" in params, "Missing parameter 'xDataReference'"
+    assert "yDataReference" in params, "Missing parameter 'yDataReference'"
 
-def test_sedml::curve_has_logY():
-    assert hasattr(sedml::curve, "logY")
+def test_sedml_curve_has_logX():
+    assert hasattr(sedml_curve, "logX")
     descriptor = None
-    for klass in sedml::curve.__mro__:
-        if "logY" in klass.__dict__:
-            descriptor = klass.__dict__["logY"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_sedml::curve_has_logX():
-    assert hasattr(sedml::curve, "logX")
-    descriptor = None
-    for klass in sedml::curve.__mro__:
+    for klass in sedml_curve.__mro__:
         if "logX" in klass.__dict__:
             descriptor = klass.__dict__["logX"]
             break
     assert isinstance(descriptor, property)
 
-def test_sedml::curve_has_id():
-    assert hasattr(sedml::curve, "id")
+def test_sedml_curve_has_logY():
+    assert hasattr(sedml_curve, "logY")
     descriptor = None
-    for klass in sedml::curve.__mro__:
+    for klass in sedml_curve.__mro__:
+        if "logY" in klass.__dict__:
+            descriptor = klass.__dict__["logY"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_sedml_curve_has_id():
+    assert hasattr(sedml_curve, "id")
+    descriptor = None
+    for klass in sedml_curve.__mro__:
         if "id" in klass.__dict__:
             descriptor = klass.__dict__["id"]
             break
     assert isinstance(descriptor, property)
 
-def test_sedml::curve_has_yDataReference():
-    assert hasattr(sedml::curve, "yDataReference")
+def test_sedml_curve_has_xDataReference():
+    assert hasattr(sedml_curve, "xDataReference")
     descriptor = None
-    for klass in sedml::curve.__mro__:
-        if "yDataReference" in klass.__dict__:
-            descriptor = klass.__dict__["yDataReference"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_sedml::curve_has_xDataReference():
-    assert hasattr(sedml::curve, "xDataReference")
-    descriptor = None
-    for klass in sedml::curve.__mro__:
+    for klass in sedml_curve.__mro__:
         if "xDataReference" in klass.__dict__:
             descriptor = klass.__dict__["xDataReference"]
             break
     assert isinstance(descriptor, property)
 
+def test_sedml_curve_has_yDataReference():
+    assert hasattr(sedml_curve, "yDataReference")
+    descriptor = None
+    for klass in sedml_curve.__mro__:
+        if "yDataReference" in klass.__dict__:
+            descriptor = klass.__dict__["yDataReference"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_sedml::listofcurves_is_not_abstract():
-    assert not inspect.isabstract(sedml::listOfCurves)
+
+def test_sedml_listofcurves_is_not_abstract():
+    assert not inspect.isabstract(sedml_listOfCurves)
 
 
-def test_sedml::listofcurves_constructor_exists():
-    assert callable(sedml::listOfCurves.__init__)
+def test_sedml_listofcurves_constructor_exists():
+    assert callable(sedml_listOfCurves.__init__)
 
 
-def test_sedml::listofcurves_constructor_args():
-    sig = inspect.signature(sedml::listOfCurves.__init__)
+def test_sedml_listofcurves_constructor_args():
+    sig = inspect.signature(sedml_listOfCurves.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sedml::algorithm_is_not_abstract():
-    assert not inspect.isabstract(sedml::algorithm)
+def test_sedml_algorithm_is_not_abstract():
+    assert not inspect.isabstract(sedml_algorithm)
 
 
-def test_sedml::algorithm_constructor_exists():
-    assert callable(sedml::algorithm.__init__)
+def test_sedml_algorithm_constructor_exists():
+    assert callable(sedml_algorithm.__init__)
 
 
-def test_sedml::algorithm_constructor_args():
-    sig = inspect.signature(sedml::algorithm.__init__)
+def test_sedml_algorithm_constructor_args():
+    sig = inspect.signature(sedml_algorithm.__init__)
     params = list(sig.parameters.keys())
     assert "kisaoID" in params, "Missing parameter 'kisaoID'"
 
-def test_sedml::algorithm_has_kisaoID():
-    assert hasattr(sedml::algorithm, "kisaoID")
+def test_sedml_algorithm_has_kisaoID():
+    assert hasattr(sedml_algorithm, "kisaoID")
     descriptor = None
-    for klass in sedml::algorithm.__mro__:
+    for klass in sedml_algorithm.__mro__:
         if "kisaoID" in klass.__dict__:
             descriptor = klass.__dict__["kisaoID"]
             break
@@ -215,33 +215,33 @@ def test_sedml::algorithm_has_kisaoID():
 
 
 
-def test_sedml::plot2d_is_not_abstract():
-    assert not inspect.isabstract(sedml::plot2D)
+def test_sedml_plot2d_is_not_abstract():
+    assert not inspect.isabstract(sedml_plot2D)
 
 
-def test_sedml::plot2d_constructor_exists():
-    assert callable(sedml::plot2D.__init__)
+def test_sedml_plot2d_constructor_exists():
+    assert callable(sedml_plot2D.__init__)
 
 
-def test_sedml::plot2d_constructor_args():
-    sig = inspect.signature(sedml::plot2D.__init__)
+def test_sedml_plot2d_constructor_args():
+    sig = inspect.signature(sedml_plot2D.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
     assert "id" in params, "Missing parameter 'id'"
 
-def test_sedml::plot2d_has_name():
-    assert hasattr(sedml::plot2D, "name")
+def test_sedml_plot2d_has_name():
+    assert hasattr(sedml_plot2D, "name")
     descriptor = None
-    for klass in sedml::plot2D.__mro__:
+    for klass in sedml_plot2D.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
-def test_sedml::plot2d_has_id():
-    assert hasattr(sedml::plot2D, "id")
+def test_sedml_plot2d_has_id():
+    assert hasattr(sedml_plot2D, "id")
     descriptor = None
-    for klass in sedml::plot2D.__mro__:
+    for klass in sedml_plot2D.__mro__:
         if "id" in klass.__dict__:
             descriptor = klass.__dict__["id"]
             break
@@ -249,67 +249,33 @@ def test_sedml::plot2d_has_id():
 
 
 
-def test_sedml::datagenerator_is_not_abstract():
-    assert not inspect.isabstract(sedml::dataGenerator)
+def test_sedml_datagenerator_is_not_abstract():
+    assert not inspect.isabstract(sedml_dataGenerator)
 
 
-def test_sedml::datagenerator_constructor_exists():
-    assert callable(sedml::dataGenerator.__init__)
+def test_sedml_datagenerator_constructor_exists():
+    assert callable(sedml_dataGenerator.__init__)
 
 
-def test_sedml::datagenerator_constructor_args():
-    sig = inspect.signature(sedml::dataGenerator.__init__)
+def test_sedml_datagenerator_constructor_args():
+    sig = inspect.signature(sedml_dataGenerator.__init__)
     params = list(sig.parameters.keys())
-    assert "id" in params, "Missing parameter 'id'"
     assert "name" in params, "Missing parameter 'name'"
+    assert "id" in params, "Missing parameter 'id'"
 
-def test_sedml::datagenerator_has_id():
-    assert hasattr(sedml::dataGenerator, "id")
+def test_sedml_datagenerator_has_name():
+    assert hasattr(sedml_dataGenerator, "name")
     descriptor = None
-    for klass in sedml::dataGenerator.__mro__:
-        if "id" in klass.__dict__:
-            descriptor = klass.__dict__["id"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_sedml::datagenerator_has_name():
-    assert hasattr(sedml::dataGenerator, "name")
-    descriptor = None
-    for klass in sedml::dataGenerator.__mro__:
+    for klass in sedml_dataGenerator.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
-
-
-def test_sedml::task_is_not_abstract():
-    assert not inspect.isabstract(sedml::task)
-
-
-def test_sedml::task_constructor_exists():
-    assert callable(sedml::task.__init__)
-
-
-def test_sedml::task_constructor_args():
-    sig = inspect.signature(sedml::task.__init__)
-    params = list(sig.parameters.keys())
-    assert "name" in params, "Missing parameter 'name'"
-    assert "id" in params, "Missing parameter 'id'"
-
-def test_sedml::task_has_name():
-    assert hasattr(sedml::task, "name")
+def test_sedml_datagenerator_has_id():
+    assert hasattr(sedml_dataGenerator, "id")
     descriptor = None
-    for klass in sedml::task.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_sedml::task_has_id():
-    assert hasattr(sedml::task, "id")
-    descriptor = None
-    for klass in sedml::task.__mro__:
+    for klass in sedml_dataGenerator.__mro__:
         if "id" in klass.__dict__:
             descriptor = klass.__dict__["id"]
             break
@@ -317,223 +283,257 @@ def test_sedml::task_has_id():
 
 
 
-def test_sedml::model_is_not_abstract():
-    assert not inspect.isabstract(sedml::model)
+def test_sedml_task_is_not_abstract():
+    assert not inspect.isabstract(sedml_task)
 
 
-def test_sedml::model_constructor_exists():
-    assert callable(sedml::model.__init__)
+def test_sedml_task_constructor_exists():
+    assert callable(sedml_task.__init__)
 
 
-def test_sedml::model_constructor_args():
-    sig = inspect.signature(sedml::model.__init__)
+def test_sedml_task_constructor_args():
+    sig = inspect.signature(sedml_task.__init__)
     params = list(sig.parameters.keys())
+    assert "name" in params, "Missing parameter 'name'"
+    assert "id" in params, "Missing parameter 'id'"
+
+def test_sedml_task_has_name():
+    assert hasattr(sedml_task, "name")
+    descriptor = None
+    for klass in sedml_task.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_sedml_task_has_id():
+    assert hasattr(sedml_task, "id")
+    descriptor = None
+    for klass in sedml_task.__mro__:
+        if "id" in klass.__dict__:
+            descriptor = klass.__dict__["id"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_sedml_model_is_not_abstract():
+    assert not inspect.isabstract(sedml_model)
+
+
+def test_sedml_model_constructor_exists():
+    assert callable(sedml_model.__init__)
+
+
+def test_sedml_model_constructor_args():
+    sig = inspect.signature(sedml_model.__init__)
+    params = list(sig.parameters.keys())
+    assert "name" in params, "Missing parameter 'name'"
+    assert "id" in params, "Missing parameter 'id'"
     assert "source" in params, "Missing parameter 'source'"
-    assert "name" in params, "Missing parameter 'name'"
     assert "language" in params, "Missing parameter 'language'"
-    assert "id" in params, "Missing parameter 'id'"
 
-def test_sedml::model_has_source():
-    assert hasattr(sedml::model, "source")
+def test_sedml_model_has_name():
+    assert hasattr(sedml_model, "name")
     descriptor = None
-    for klass in sedml::model.__mro__:
+    for klass in sedml_model.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_sedml_model_has_id():
+    assert hasattr(sedml_model, "id")
+    descriptor = None
+    for klass in sedml_model.__mro__:
+        if "id" in klass.__dict__:
+            descriptor = klass.__dict__["id"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_sedml_model_has_source():
+    assert hasattr(sedml_model, "source")
+    descriptor = None
+    for klass in sedml_model.__mro__:
         if "source" in klass.__dict__:
             descriptor = klass.__dict__["source"]
             break
     assert isinstance(descriptor, property)
 
-def test_sedml::model_has_name():
-    assert hasattr(sedml::model, "name")
+def test_sedml_model_has_language():
+    assert hasattr(sedml_model, "language")
     descriptor = None
-    for klass in sedml::model.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_sedml::model_has_language():
-    assert hasattr(sedml::model, "language")
-    descriptor = None
-    for klass in sedml::model.__mro__:
+    for klass in sedml_model.__mro__:
         if "language" in klass.__dict__:
             descriptor = klass.__dict__["language"]
             break
     assert isinstance(descriptor, property)
 
-def test_sedml::model_has_id():
-    assert hasattr(sedml::model, "id")
-    descriptor = None
-    for klass in sedml::model.__mro__:
-        if "id" in klass.__dict__:
-            descriptor = klass.__dict__["id"]
-            break
-    assert isinstance(descriptor, property)
 
 
-
-def test_sedml::listofoutputs_is_not_abstract():
-    assert not inspect.isabstract(sedml::listOfOutputs)
-
-
-def test_sedml::listofoutputs_constructor_exists():
-    assert callable(sedml::listOfOutputs.__init__)
+def test_sedml_listofoutputs_is_not_abstract():
+    assert not inspect.isabstract(sedml_listOfOutputs)
 
 
-def test_sedml::listofoutputs_constructor_args():
-    sig = inspect.signature(sedml::listOfOutputs.__init__)
+def test_sedml_listofoutputs_constructor_exists():
+    assert callable(sedml_listOfOutputs.__init__)
+
+
+def test_sedml_listofoutputs_constructor_args():
+    sig = inspect.signature(sedml_listOfOutputs.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sedml::listofdatagenerators_is_not_abstract():
-    assert not inspect.isabstract(sedml::listOfDataGenerators)
+def test_sedml_listofdatagenerators_is_not_abstract():
+    assert not inspect.isabstract(sedml_listOfDataGenerators)
 
 
-def test_sedml::listofdatagenerators_constructor_exists():
-    assert callable(sedml::listOfDataGenerators.__init__)
+def test_sedml_listofdatagenerators_constructor_exists():
+    assert callable(sedml_listOfDataGenerators.__init__)
 
 
-def test_sedml::listofdatagenerators_constructor_args():
-    sig = inspect.signature(sedml::listOfDataGenerators.__init__)
+def test_sedml_listofdatagenerators_constructor_args():
+    sig = inspect.signature(sedml_listOfDataGenerators.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sedml::listoftasks_is_not_abstract():
-    assert not inspect.isabstract(sedml::listOfTasks)
+def test_sedml_listoftasks_is_not_abstract():
+    assert not inspect.isabstract(sedml_listOfTasks)
 
 
-def test_sedml::listoftasks_constructor_exists():
-    assert callable(sedml::listOfTasks.__init__)
+def test_sedml_listoftasks_constructor_exists():
+    assert callable(sedml_listOfTasks.__init__)
 
 
-def test_sedml::listoftasks_constructor_args():
-    sig = inspect.signature(sedml::listOfTasks.__init__)
+def test_sedml_listoftasks_constructor_args():
+    sig = inspect.signature(sedml_listOfTasks.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sedml::listofmodels_is_not_abstract():
-    assert not inspect.isabstract(sedml::listOfModels)
+def test_sedml_listofmodels_is_not_abstract():
+    assert not inspect.isabstract(sedml_listOfModels)
 
 
-def test_sedml::listofmodels_constructor_exists():
-    assert callable(sedml::listOfModels.__init__)
+def test_sedml_listofmodels_constructor_exists():
+    assert callable(sedml_listOfModels.__init__)
 
 
-def test_sedml::listofmodels_constructor_args():
-    sig = inspect.signature(sedml::listOfModels.__init__)
+def test_sedml_listofmodels_constructor_args():
+    sig = inspect.signature(sedml_listOfModels.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sedml::listofsimulations_is_not_abstract():
-    assert not inspect.isabstract(sedml::listOfSimulations)
+def test_sedml_listofsimulations_is_not_abstract():
+    assert not inspect.isabstract(sedml_listOfSimulations)
 
 
-def test_sedml::listofsimulations_constructor_exists():
-    assert callable(sedml::listOfSimulations.__init__)
+def test_sedml_listofsimulations_constructor_exists():
+    assert callable(sedml_listOfSimulations.__init__)
 
 
-def test_sedml::listofsimulations_constructor_args():
-    sig = inspect.signature(sedml::listOfSimulations.__init__)
+def test_sedml_listofsimulations_constructor_args():
+    sig = inspect.signature(sedml_listOfSimulations.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sedml::sedml_is_not_abstract():
-    assert not inspect.isabstract(sedml::sedML)
+def test_sedml_sedml_is_not_abstract():
+    assert not inspect.isabstract(sedml_sedML)
 
 
-def test_sedml::sedml_constructor_exists():
-    assert callable(sedml::sedML.__init__)
+def test_sedml_sedml_constructor_exists():
+    assert callable(sedml_sedML.__init__)
 
 
-def test_sedml::sedml_constructor_args():
-    sig = inspect.signature(sedml::sedML.__init__)
+def test_sedml_sedml_constructor_args():
+    sig = inspect.signature(sedml_sedML.__init__)
     params = list(sig.parameters.keys())
-    assert "version" in params, "Missing parameter 'version'"
     assert "level" in params, "Missing parameter 'level'"
+    assert "version" in params, "Missing parameter 'version'"
 
-def test_sedml::sedml_has_version():
-    assert hasattr(sedml::sedML, "version")
+def test_sedml_sedml_has_level():
+    assert hasattr(sedml_sedML, "level")
     descriptor = None
-    for klass in sedml::sedML.__mro__:
-        if "version" in klass.__dict__:
-            descriptor = klass.__dict__["version"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_sedml::sedml_has_level():
-    assert hasattr(sedml::sedML, "level")
-    descriptor = None
-    for klass in sedml::sedML.__mro__:
+    for klass in sedml_sedML.__mro__:
         if "level" in klass.__dict__:
             descriptor = klass.__dict__["level"]
             break
     assert isinstance(descriptor, property)
 
+def test_sedml_sedml_has_version():
+    assert hasattr(sedml_sedML, "version")
+    descriptor = None
+    for klass in sedml_sedML.__mro__:
+        if "version" in klass.__dict__:
+            descriptor = klass.__dict__["version"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_sedml::uniformtimecourse_is_not_abstract():
-    assert not inspect.isabstract(sedml::uniformTimeCourse)
+
+def test_sedml_uniformtimecourse_is_not_abstract():
+    assert not inspect.isabstract(sedml_uniformTimeCourse)
 
 
-def test_sedml::uniformtimecourse_constructor_exists():
-    assert callable(sedml::uniformTimeCourse.__init__)
+def test_sedml_uniformtimecourse_constructor_exists():
+    assert callable(sedml_uniformTimeCourse.__init__)
 
 
-def test_sedml::uniformtimecourse_constructor_args():
-    sig = inspect.signature(sedml::uniformTimeCourse.__init__)
+def test_sedml_uniformtimecourse_constructor_args():
+    sig = inspect.signature(sedml_uniformTimeCourse.__init__)
     params = list(sig.parameters.keys())
-    assert "id" in params, "Missing parameter 'id'"
-    assert "outputEndTime" in params, "Missing parameter 'outputEndTime'"
-    assert "outputStartTime" in params, "Missing parameter 'outputStartTime'"
     assert "initialTime" in params, "Missing parameter 'initialTime'"
     assert "numberOfPoints" in params, "Missing parameter 'numberOfPoints'"
+    assert "outputStartTime" in params, "Missing parameter 'outputStartTime'"
+    assert "id" in params, "Missing parameter 'id'"
+    assert "outputEndTime" in params, "Missing parameter 'outputEndTime'"
 
-def test_sedml::uniformtimecourse_has_id():
-    assert hasattr(sedml::uniformTimeCourse, "id")
+def test_sedml_uniformtimecourse_has_initialTime():
+    assert hasattr(sedml_uniformTimeCourse, "initialTime")
     descriptor = None
-    for klass in sedml::uniformTimeCourse.__mro__:
-        if "id" in klass.__dict__:
-            descriptor = klass.__dict__["id"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_sedml::uniformtimecourse_has_outputEndTime():
-    assert hasattr(sedml::uniformTimeCourse, "outputEndTime")
-    descriptor = None
-    for klass in sedml::uniformTimeCourse.__mro__:
-        if "outputEndTime" in klass.__dict__:
-            descriptor = klass.__dict__["outputEndTime"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_sedml::uniformtimecourse_has_outputStartTime():
-    assert hasattr(sedml::uniformTimeCourse, "outputStartTime")
-    descriptor = None
-    for klass in sedml::uniformTimeCourse.__mro__:
-        if "outputStartTime" in klass.__dict__:
-            descriptor = klass.__dict__["outputStartTime"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_sedml::uniformtimecourse_has_initialTime():
-    assert hasattr(sedml::uniformTimeCourse, "initialTime")
-    descriptor = None
-    for klass in sedml::uniformTimeCourse.__mro__:
+    for klass in sedml_uniformTimeCourse.__mro__:
         if "initialTime" in klass.__dict__:
             descriptor = klass.__dict__["initialTime"]
             break
     assert isinstance(descriptor, property)
 
-def test_sedml::uniformtimecourse_has_numberOfPoints():
-    assert hasattr(sedml::uniformTimeCourse, "numberOfPoints")
+def test_sedml_uniformtimecourse_has_numberOfPoints():
+    assert hasattr(sedml_uniformTimeCourse, "numberOfPoints")
     descriptor = None
-    for klass in sedml::uniformTimeCourse.__mro__:
+    for klass in sedml_uniformTimeCourse.__mro__:
         if "numberOfPoints" in klass.__dict__:
             descriptor = klass.__dict__["numberOfPoints"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_sedml_uniformtimecourse_has_outputStartTime():
+    assert hasattr(sedml_uniformTimeCourse, "outputStartTime")
+    descriptor = None
+    for klass in sedml_uniformTimeCourse.__mro__:
+        if "outputStartTime" in klass.__dict__:
+            descriptor = klass.__dict__["outputStartTime"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_sedml_uniformtimecourse_has_id():
+    assert hasattr(sedml_uniformTimeCourse, "id")
+    descriptor = None
+    for klass in sedml_uniformTimeCourse.__mro__:
+        if "id" in klass.__dict__:
+            descriptor = klass.__dict__["id"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_sedml_uniformtimecourse_has_outputEndTime():
+    assert hasattr(sedml_uniformTimeCourse, "outputEndTime")
+    descriptor = None
+    for klass in sedml_uniformTimeCourse.__mro__:
+        if "outputEndTime" in klass.__dict__:
+            descriptor = klass.__dict__["outputEndTime"]
             break
     assert isinstance(descriptor, property)
 
@@ -549,490 +549,409 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-sedml::variable_strategy = st.builds(
-    sedml::variable,
+sedml_variable_strategy = st.builds(
+    sedml_variable,
     target=
         safe_text,
-    symbol=
-        safe_text,
     id=
+        safe_text,
+    symbol=
         safe_text
 )
-sedml::math_strategy = st.builds(
-    sedml::math,
+sedml_math_strategy = st.builds(
+    sedml_math,
     xlms=
         safe_text
 )
-sedml::listOfVariables_strategy = st.builds(
-    sedml::listOfVariables,
+sedml_listOfVariables_strategy = st.builds(
+    sedml_listOfVariables,
 )
-sedml::curve_strategy = st.builds(
-    sedml::curve,
-    logY=
-        safe_text,
+sedml_curve_strategy = st.builds(
+    sedml_curve,
     logX=
+        safe_text,
+    logY=
         safe_text,
     id=
         safe_text,
-    yDataReference=
-        safe_text,
     xDataReference=
+        safe_text,
+    yDataReference=
         safe_text
 )
-sedml::listOfCurves_strategy = st.builds(
-    sedml::listOfCurves,
+sedml_listOfCurves_strategy = st.builds(
+    sedml_listOfCurves,
 )
-sedml::algorithm_strategy = st.builds(
-    sedml::algorithm,
+sedml_algorithm_strategy = st.builds(
+    sedml_algorithm,
     kisaoID=
         safe_text
 )
-sedml::plot2D_strategy = st.builds(
-    sedml::plot2D,
+sedml_plot2D_strategy = st.builds(
+    sedml_plot2D,
     name=
         safe_text,
     id=
         safe_text
 )
-sedml::dataGenerator_strategy = st.builds(
-    sedml::dataGenerator,
-    id=
-        safe_text,
-    name=
-        safe_text
-)
-sedml::task_strategy = st.builds(
-    sedml::task,
+sedml_dataGenerator_strategy = st.builds(
+    sedml_dataGenerator,
     name=
         safe_text,
     id=
         safe_text
 )
-sedml::model_strategy = st.builds(
-    sedml::model,
+sedml_task_strategy = st.builds(
+    sedml_task,
+    name=
+        safe_text,
+    id=
+        safe_text
+)
+sedml_model_strategy = st.builds(
+    sedml_model,
+    name=
+        safe_text,
+    id=
+        safe_text,
     source=
         safe_text,
-    name=
-        safe_text,
     language=
-        safe_text,
-    id=
         safe_text
 )
-sedml::listOfOutputs_strategy = st.builds(
-    sedml::listOfOutputs,
+sedml_listOfOutputs_strategy = st.builds(
+    sedml_listOfOutputs,
 )
-sedml::listOfDataGenerators_strategy = st.builds(
-    sedml::listOfDataGenerators,
+sedml_listOfDataGenerators_strategy = st.builds(
+    sedml_listOfDataGenerators,
 )
-sedml::listOfTasks_strategy = st.builds(
-    sedml::listOfTasks,
+sedml_listOfTasks_strategy = st.builds(
+    sedml_listOfTasks,
 )
-sedml::listOfModels_strategy = st.builds(
-    sedml::listOfModels,
+sedml_listOfModels_strategy = st.builds(
+    sedml_listOfModels,
 )
-sedml::listOfSimulations_strategy = st.builds(
-    sedml::listOfSimulations,
+sedml_listOfSimulations_strategy = st.builds(
+    sedml_listOfSimulations,
 )
-sedml::sedML_strategy = st.builds(
-    sedml::sedML,
-    version=
-        st.integers(),
+sedml_sedML_strategy = st.builds(
+    sedml_sedML,
     level=
+        st.integers(),
+    version=
         st.integers()
 )
-sedml::uniformTimeCourse_strategy = st.builds(
-    sedml::uniformTimeCourse,
-    id=
-        safe_text,
-    outputEndTime=
-        st.integers(),
-    outputStartTime=
-        st.integers(),
+sedml_uniformTimeCourse_strategy = st.builds(
+    sedml_uniformTimeCourse,
     initialTime=
         st.integers(),
     numberOfPoints=
+        st.integers(),
+    outputStartTime=
+        st.integers(),
+    id=
+        safe_text,
+    outputEndTime=
         st.integers()
 )
 
-@given(instance=sedml::variable_strategy)
+@given(instance=sedml_variable_strategy)
 @settings(max_examples=50)
-def test_sedml::variable_instantiation(instance):
-    assert isinstance(instance, sedml::variable)
-
-@given(instance=sedml::variable_strategy)
-def test_sedml::variable_target_type(instance):
-    assert isinstance(instance.target, str)
+def test_sedml_variable_instantiation(instance):
+    assert isinstance(instance, sedml_variable)
 
 
-@given(instance=sedml::variable_strategy)
-def test_sedml::variable_target_setter(instance):
+
+@given(instance=sedml_variable_strategy)
+def test_sedml_variable_target_setter(instance):
     original = instance.target
     instance.target = original
     assert instance.target == original
 
-@given(instance=sedml::variable_strategy)
-def test_sedml::variable_symbol_type(instance):
-    assert isinstance(instance.symbol, str)
 
 
-@given(instance=sedml::variable_strategy)
-def test_sedml::variable_symbol_setter(instance):
+@given(instance=sedml_variable_strategy)
+def test_sedml_variable_id_setter(instance):
+    original = instance.id
+    instance.id = original
+    assert instance.id == original
+
+
+
+@given(instance=sedml_variable_strategy)
+def test_sedml_variable_symbol_setter(instance):
     original = instance.symbol
     instance.symbol = original
     assert instance.symbol == original
 
-@given(instance=sedml::variable_strategy)
-def test_sedml::variable_id_type(instance):
-    assert isinstance(instance.id, str)
-
-
-@given(instance=sedml::variable_strategy)
-def test_sedml::variable_id_setter(instance):
-    original = instance.id
-    instance.id = original
-    assert instance.id == original
-
-@given(instance=sedml::math_strategy)
+@given(instance=sedml_math_strategy)
 @settings(max_examples=50)
-def test_sedml::math_instantiation(instance):
-    assert isinstance(instance, sedml::math)
-
-@given(instance=sedml::math_strategy)
-def test_sedml::math_xlms_type(instance):
-    assert isinstance(instance.xlms, str)
+def test_sedml_math_instantiation(instance):
+    assert isinstance(instance, sedml_math)
 
 
-@given(instance=sedml::math_strategy)
-def test_sedml::math_xlms_setter(instance):
+
+@given(instance=sedml_math_strategy)
+def test_sedml_math_xlms_setter(instance):
     original = instance.xlms
     instance.xlms = original
     assert instance.xlms == original
 
-@given(instance=sedml::listOfVariables_strategy)
+@given(instance=sedml_listOfVariables_strategy)
 @settings(max_examples=50)
-def test_sedml::listofvariables_instantiation(instance):
-    assert isinstance(instance, sedml::listOfVariables)
+def test_sedml_listofvariables_instantiation(instance):
+    assert isinstance(instance, sedml_listOfVariables)
 
-@given(instance=sedml::curve_strategy)
+@given(instance=sedml_curve_strategy)
 @settings(max_examples=50)
-def test_sedml::curve_instantiation(instance):
-    assert isinstance(instance, sedml::curve)
-
-@given(instance=sedml::curve_strategy)
-def test_sedml::curve_logY_type(instance):
-    assert isinstance(instance.logY, str)
+def test_sedml_curve_instantiation(instance):
+    assert isinstance(instance, sedml_curve)
 
 
-@given(instance=sedml::curve_strategy)
-def test_sedml::curve_logY_setter(instance):
-    original = instance.logY
-    instance.logY = original
-    assert instance.logY == original
 
-@given(instance=sedml::curve_strategy)
-def test_sedml::curve_logX_type(instance):
-    assert isinstance(instance.logX, str)
-
-
-@given(instance=sedml::curve_strategy)
-def test_sedml::curve_logX_setter(instance):
+@given(instance=sedml_curve_strategy)
+def test_sedml_curve_logX_setter(instance):
     original = instance.logX
     instance.logX = original
     assert instance.logX == original
 
-@given(instance=sedml::curve_strategy)
-def test_sedml::curve_id_type(instance):
-    assert isinstance(instance.id, str)
 
 
-@given(instance=sedml::curve_strategy)
-def test_sedml::curve_id_setter(instance):
+@given(instance=sedml_curve_strategy)
+def test_sedml_curve_logY_setter(instance):
+    original = instance.logY
+    instance.logY = original
+    assert instance.logY == original
+
+
+
+@given(instance=sedml_curve_strategy)
+def test_sedml_curve_id_setter(instance):
     original = instance.id
     instance.id = original
     assert instance.id == original
 
-@given(instance=sedml::curve_strategy)
-def test_sedml::curve_yDataReference_type(instance):
-    assert isinstance(instance.yDataReference, str)
 
 
-@given(instance=sedml::curve_strategy)
-def test_sedml::curve_yDataReference_setter(instance):
-    original = instance.yDataReference
-    instance.yDataReference = original
-    assert instance.yDataReference == original
-
-@given(instance=sedml::curve_strategy)
-def test_sedml::curve_xDataReference_type(instance):
-    assert isinstance(instance.xDataReference, str)
-
-
-@given(instance=sedml::curve_strategy)
-def test_sedml::curve_xDataReference_setter(instance):
+@given(instance=sedml_curve_strategy)
+def test_sedml_curve_xDataReference_setter(instance):
     original = instance.xDataReference
     instance.xDataReference = original
     assert instance.xDataReference == original
 
-@given(instance=sedml::listOfCurves_strategy)
+
+
+@given(instance=sedml_curve_strategy)
+def test_sedml_curve_yDataReference_setter(instance):
+    original = instance.yDataReference
+    instance.yDataReference = original
+    assert instance.yDataReference == original
+
+@given(instance=sedml_listOfCurves_strategy)
 @settings(max_examples=50)
-def test_sedml::listofcurves_instantiation(instance):
-    assert isinstance(instance, sedml::listOfCurves)
+def test_sedml_listofcurves_instantiation(instance):
+    assert isinstance(instance, sedml_listOfCurves)
 
-@given(instance=sedml::algorithm_strategy)
+@given(instance=sedml_algorithm_strategy)
 @settings(max_examples=50)
-def test_sedml::algorithm_instantiation(instance):
-    assert isinstance(instance, sedml::algorithm)
-
-@given(instance=sedml::algorithm_strategy)
-def test_sedml::algorithm_kisaoID_type(instance):
-    assert isinstance(instance.kisaoID, str)
+def test_sedml_algorithm_instantiation(instance):
+    assert isinstance(instance, sedml_algorithm)
 
 
-@given(instance=sedml::algorithm_strategy)
-def test_sedml::algorithm_kisaoID_setter(instance):
+
+@given(instance=sedml_algorithm_strategy)
+def test_sedml_algorithm_kisaoID_setter(instance):
     original = instance.kisaoID
     instance.kisaoID = original
     assert instance.kisaoID == original
 
-@given(instance=sedml::plot2D_strategy)
+@given(instance=sedml_plot2D_strategy)
 @settings(max_examples=50)
-def test_sedml::plot2d_instantiation(instance):
-    assert isinstance(instance, sedml::plot2D)
-
-@given(instance=sedml::plot2D_strategy)
-def test_sedml::plot2d_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_sedml_plot2d_instantiation(instance):
+    assert isinstance(instance, sedml_plot2D)
 
 
-@given(instance=sedml::plot2D_strategy)
-def test_sedml::plot2d_name_setter(instance):
+
+@given(instance=sedml_plot2D_strategy)
+def test_sedml_plot2d_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=sedml::plot2D_strategy)
-def test_sedml::plot2d_id_type(instance):
-    assert isinstance(instance.id, str)
 
 
-@given(instance=sedml::plot2D_strategy)
-def test_sedml::plot2d_id_setter(instance):
+@given(instance=sedml_plot2D_strategy)
+def test_sedml_plot2d_id_setter(instance):
     original = instance.id
     instance.id = original
     assert instance.id == original
 
-@given(instance=sedml::dataGenerator_strategy)
+@given(instance=sedml_dataGenerator_strategy)
 @settings(max_examples=50)
-def test_sedml::datagenerator_instantiation(instance):
-    assert isinstance(instance, sedml::dataGenerator)
-
-@given(instance=sedml::dataGenerator_strategy)
-def test_sedml::datagenerator_id_type(instance):
-    assert isinstance(instance.id, str)
+def test_sedml_datagenerator_instantiation(instance):
+    assert isinstance(instance, sedml_dataGenerator)
 
 
-@given(instance=sedml::dataGenerator_strategy)
-def test_sedml::datagenerator_id_setter(instance):
-    original = instance.id
-    instance.id = original
-    assert instance.id == original
 
-@given(instance=sedml::dataGenerator_strategy)
-def test_sedml::datagenerator_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=sedml::dataGenerator_strategy)
-def test_sedml::datagenerator_name_setter(instance):
+@given(instance=sedml_dataGenerator_strategy)
+def test_sedml_datagenerator_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=sedml::task_strategy)
-@settings(max_examples=50)
-def test_sedml::task_instantiation(instance):
-    assert isinstance(instance, sedml::task)
-
-@given(instance=sedml::task_strategy)
-def test_sedml::task_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
-@given(instance=sedml::task_strategy)
-def test_sedml::task_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
-
-@given(instance=sedml::task_strategy)
-def test_sedml::task_id_type(instance):
-    assert isinstance(instance.id, str)
-
-
-@given(instance=sedml::task_strategy)
-def test_sedml::task_id_setter(instance):
+@given(instance=sedml_dataGenerator_strategy)
+def test_sedml_datagenerator_id_setter(instance):
     original = instance.id
     instance.id = original
     assert instance.id == original
 
-@given(instance=sedml::model_strategy)
+@given(instance=sedml_task_strategy)
 @settings(max_examples=50)
-def test_sedml::model_instantiation(instance):
-    assert isinstance(instance, sedml::model)
-
-@given(instance=sedml::model_strategy)
-def test_sedml::model_source_type(instance):
-    assert isinstance(instance.source, str)
+def test_sedml_task_instantiation(instance):
+    assert isinstance(instance, sedml_task)
 
 
-@given(instance=sedml::model_strategy)
-def test_sedml::model_source_setter(instance):
+
+@given(instance=sedml_task_strategy)
+def test_sedml_task_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+
+
+@given(instance=sedml_task_strategy)
+def test_sedml_task_id_setter(instance):
+    original = instance.id
+    instance.id = original
+    assert instance.id == original
+
+@given(instance=sedml_model_strategy)
+@settings(max_examples=50)
+def test_sedml_model_instantiation(instance):
+    assert isinstance(instance, sedml_model)
+
+
+
+@given(instance=sedml_model_strategy)
+def test_sedml_model_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+
+
+@given(instance=sedml_model_strategy)
+def test_sedml_model_id_setter(instance):
+    original = instance.id
+    instance.id = original
+    assert instance.id == original
+
+
+
+@given(instance=sedml_model_strategy)
+def test_sedml_model_source_setter(instance):
     original = instance.source
     instance.source = original
     assert instance.source == original
 
-@given(instance=sedml::model_strategy)
-def test_sedml::model_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
-@given(instance=sedml::model_strategy)
-def test_sedml::model_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
-
-@given(instance=sedml::model_strategy)
-def test_sedml::model_language_type(instance):
-    assert isinstance(instance.language, str)
-
-
-@given(instance=sedml::model_strategy)
-def test_sedml::model_language_setter(instance):
+@given(instance=sedml_model_strategy)
+def test_sedml_model_language_setter(instance):
     original = instance.language
     instance.language = original
     assert instance.language == original
 
-@given(instance=sedml::model_strategy)
-def test_sedml::model_id_type(instance):
-    assert isinstance(instance.id, str)
-
-
-@given(instance=sedml::model_strategy)
-def test_sedml::model_id_setter(instance):
-    original = instance.id
-    instance.id = original
-    assert instance.id == original
-
-@given(instance=sedml::listOfOutputs_strategy)
+@given(instance=sedml_listOfOutputs_strategy)
 @settings(max_examples=50)
-def test_sedml::listofoutputs_instantiation(instance):
-    assert isinstance(instance, sedml::listOfOutputs)
+def test_sedml_listofoutputs_instantiation(instance):
+    assert isinstance(instance, sedml_listOfOutputs)
 
-@given(instance=sedml::listOfDataGenerators_strategy)
+@given(instance=sedml_listOfDataGenerators_strategy)
 @settings(max_examples=50)
-def test_sedml::listofdatagenerators_instantiation(instance):
-    assert isinstance(instance, sedml::listOfDataGenerators)
+def test_sedml_listofdatagenerators_instantiation(instance):
+    assert isinstance(instance, sedml_listOfDataGenerators)
 
-@given(instance=sedml::listOfTasks_strategy)
+@given(instance=sedml_listOfTasks_strategy)
 @settings(max_examples=50)
-def test_sedml::listoftasks_instantiation(instance):
-    assert isinstance(instance, sedml::listOfTasks)
+def test_sedml_listoftasks_instantiation(instance):
+    assert isinstance(instance, sedml_listOfTasks)
 
-@given(instance=sedml::listOfModels_strategy)
+@given(instance=sedml_listOfModels_strategy)
 @settings(max_examples=50)
-def test_sedml::listofmodels_instantiation(instance):
-    assert isinstance(instance, sedml::listOfModels)
+def test_sedml_listofmodels_instantiation(instance):
+    assert isinstance(instance, sedml_listOfModels)
 
-@given(instance=sedml::listOfSimulations_strategy)
+@given(instance=sedml_listOfSimulations_strategy)
 @settings(max_examples=50)
-def test_sedml::listofsimulations_instantiation(instance):
-    assert isinstance(instance, sedml::listOfSimulations)
+def test_sedml_listofsimulations_instantiation(instance):
+    assert isinstance(instance, sedml_listOfSimulations)
 
-@given(instance=sedml::sedML_strategy)
+@given(instance=sedml_sedML_strategy)
 @settings(max_examples=50)
-def test_sedml::sedml_instantiation(instance):
-    assert isinstance(instance, sedml::sedML)
-
-@given(instance=sedml::sedML_strategy)
-def test_sedml::sedml_version_type(instance):
-    assert isinstance(instance.version, int)
+def test_sedml_sedml_instantiation(instance):
+    assert isinstance(instance, sedml_sedML)
 
 
-@given(instance=sedml::sedML_strategy)
-def test_sedml::sedml_version_setter(instance):
-    original = instance.version
-    instance.version = original
-    assert instance.version == original
 
-@given(instance=sedml::sedML_strategy)
-def test_sedml::sedml_level_type(instance):
-    assert isinstance(instance.level, int)
-
-
-@given(instance=sedml::sedML_strategy)
-def test_sedml::sedml_level_setter(instance):
+@given(instance=sedml_sedML_strategy)
+def test_sedml_sedml_level_setter(instance):
     original = instance.level
     instance.level = original
     assert instance.level == original
 
-@given(instance=sedml::uniformTimeCourse_strategy)
+
+
+@given(instance=sedml_sedML_strategy)
+def test_sedml_sedml_version_setter(instance):
+    original = instance.version
+    instance.version = original
+    assert instance.version == original
+
+@given(instance=sedml_uniformTimeCourse_strategy)
 @settings(max_examples=50)
-def test_sedml::uniformtimecourse_instantiation(instance):
-    assert isinstance(instance, sedml::uniformTimeCourse)
-
-@given(instance=sedml::uniformTimeCourse_strategy)
-def test_sedml::uniformtimecourse_id_type(instance):
-    assert isinstance(instance.id, str)
+def test_sedml_uniformtimecourse_instantiation(instance):
+    assert isinstance(instance, sedml_uniformTimeCourse)
 
 
-@given(instance=sedml::uniformTimeCourse_strategy)
-def test_sedml::uniformtimecourse_id_setter(instance):
-    original = instance.id
-    instance.id = original
-    assert instance.id == original
 
-@given(instance=sedml::uniformTimeCourse_strategy)
-def test_sedml::uniformtimecourse_outputEndTime_type(instance):
-    assert isinstance(instance.outputEndTime, int)
-
-
-@given(instance=sedml::uniformTimeCourse_strategy)
-def test_sedml::uniformtimecourse_outputEndTime_setter(instance):
-    original = instance.outputEndTime
-    instance.outputEndTime = original
-    assert instance.outputEndTime == original
-
-@given(instance=sedml::uniformTimeCourse_strategy)
-def test_sedml::uniformtimecourse_outputStartTime_type(instance):
-    assert isinstance(instance.outputStartTime, int)
-
-
-@given(instance=sedml::uniformTimeCourse_strategy)
-def test_sedml::uniformtimecourse_outputStartTime_setter(instance):
-    original = instance.outputStartTime
-    instance.outputStartTime = original
-    assert instance.outputStartTime == original
-
-@given(instance=sedml::uniformTimeCourse_strategy)
-def test_sedml::uniformtimecourse_initialTime_type(instance):
-    assert isinstance(instance.initialTime, int)
-
-
-@given(instance=sedml::uniformTimeCourse_strategy)
-def test_sedml::uniformtimecourse_initialTime_setter(instance):
+@given(instance=sedml_uniformTimeCourse_strategy)
+def test_sedml_uniformtimecourse_initialTime_setter(instance):
     original = instance.initialTime
     instance.initialTime = original
     assert instance.initialTime == original
 
-@given(instance=sedml::uniformTimeCourse_strategy)
-def test_sedml::uniformtimecourse_numberOfPoints_type(instance):
-    assert isinstance(instance.numberOfPoints, int)
 
 
-@given(instance=sedml::uniformTimeCourse_strategy)
-def test_sedml::uniformtimecourse_numberOfPoints_setter(instance):
+@given(instance=sedml_uniformTimeCourse_strategy)
+def test_sedml_uniformtimecourse_numberOfPoints_setter(instance):
     original = instance.numberOfPoints
     instance.numberOfPoints = original
     assert instance.numberOfPoints == original
+
+
+
+@given(instance=sedml_uniformTimeCourse_strategy)
+def test_sedml_uniformtimecourse_outputStartTime_setter(instance):
+    original = instance.outputStartTime
+    instance.outputStartTime = original
+    assert instance.outputStartTime == original
+
+
+
+@given(instance=sedml_uniformTimeCourse_strategy)
+def test_sedml_uniformtimecourse_id_setter(instance):
+    original = instance.id
+    instance.id = original
+    assert instance.id == original
+
+
+
+@given(instance=sedml_uniformTimeCourse_strategy)
+def test_sedml_uniformtimecourse_outputEndTime_setter(instance):
+    original = instance.outputEndTime
+    instance.outputEndTime = original
+    assert instance.outputEndTime == original

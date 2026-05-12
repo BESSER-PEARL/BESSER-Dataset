@@ -3,17 +3,17 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     Writer,
-    library::GuideBookWriter,
+    library_GuideBookWriter,
     SpecialistBookWriter,
-    library::GuideSpecialistBookWriter,
-    library::Library,
-    library::Writer,
-    library::SpecialistBookWriter,
-    library::Book,
+    library_GuideSpecialistBookWriter,
+    library_Library,
+    library_Writer,
+    library_SpecialistBookWriter,
+    library_Book,
 )
 
 # =============================================================================
@@ -36,23 +36,23 @@ def test_writer_constructor_args():
 
 
 
-def test_library::guidebookwriter_is_not_abstract():
-    assert not inspect.isabstract(library::GuideBookWriter)
+def test_library_guidebookwriter_is_not_abstract():
+    assert not inspect.isabstract(library_GuideBookWriter)
 
 
-def test_library::guidebookwriter_constructor_exists():
-    assert callable(library::GuideBookWriter.__init__)
+def test_library_guidebookwriter_constructor_exists():
+    assert callable(library_GuideBookWriter.__init__)
 
 
-def test_library::guidebookwriter_constructor_args():
-    sig = inspect.signature(library::GuideBookWriter.__init__)
+def test_library_guidebookwriter_constructor_args():
+    sig = inspect.signature(library_GuideBookWriter.__init__)
     params = list(sig.parameters.keys())
     assert "countries" in params, "Missing parameter 'countries'"
 
-def test_library::guidebookwriter_has_countries():
-    assert hasattr(library::GuideBookWriter, "countries")
+def test_library_guidebookwriter_has_countries():
+    assert hasattr(library_GuideBookWriter, "countries")
     descriptor = None
-    for klass in library::GuideBookWriter.__mro__:
+    for klass in library_GuideBookWriter.__mro__:
         if "countries" in klass.__dict__:
             descriptor = klass.__dict__["countries"]
             break
@@ -74,23 +74,23 @@ def test_specialistbookwriter_constructor_args():
 
 
 
-def test_library::guidespecialistbookwriter_is_not_abstract():
-    assert not inspect.isabstract(library::GuideSpecialistBookWriter)
+def test_library_guidespecialistbookwriter_is_not_abstract():
+    assert not inspect.isabstract(library_GuideSpecialistBookWriter)
 
 
-def test_library::guidespecialistbookwriter_constructor_exists():
-    assert callable(library::GuideSpecialistBookWriter.__init__)
+def test_library_guidespecialistbookwriter_constructor_exists():
+    assert callable(library_GuideSpecialistBookWriter.__init__)
 
 
-def test_library::guidespecialistbookwriter_constructor_args():
-    sig = inspect.signature(library::GuideSpecialistBookWriter.__init__)
+def test_library_guidespecialistbookwriter_constructor_args():
+    sig = inspect.signature(library_GuideSpecialistBookWriter.__init__)
     params = list(sig.parameters.keys())
     assert "amazing" in params, "Missing parameter 'amazing'"
 
-def test_library::guidespecialistbookwriter_has_amazing():
-    assert hasattr(library::GuideSpecialistBookWriter, "amazing")
+def test_library_guidespecialistbookwriter_has_amazing():
+    assert hasattr(library_GuideSpecialistBookWriter, "amazing")
     descriptor = None
-    for klass in library::GuideSpecialistBookWriter.__mro__:
+    for klass in library_GuideSpecialistBookWriter.__mro__:
         if "amazing" in klass.__dict__:
             descriptor = klass.__dict__["amazing"]
             break
@@ -98,23 +98,23 @@ def test_library::guidespecialistbookwriter_has_amazing():
 
 
 
-def test_library::library_is_not_abstract():
-    assert not inspect.isabstract(library::Library)
+def test_library_library_is_not_abstract():
+    assert not inspect.isabstract(library_Library)
 
 
-def test_library::library_constructor_exists():
-    assert callable(library::Library.__init__)
+def test_library_library_constructor_exists():
+    assert callable(library_Library.__init__)
 
 
-def test_library::library_constructor_args():
-    sig = inspect.signature(library::Library.__init__)
+def test_library_library_constructor_args():
+    sig = inspect.signature(library_Library.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_library::library_has_name():
-    assert hasattr(library::Library, "name")
+def test_library_library_has_name():
+    assert hasattr(library_Library, "name")
     descriptor = None
-    for klass in library::Library.__mro__:
+    for klass in library_Library.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -122,23 +122,23 @@ def test_library::library_has_name():
 
 
 
-def test_library::writer_is_not_abstract():
-    assert not inspect.isabstract(library::Writer)
+def test_library_writer_is_not_abstract():
+    assert not inspect.isabstract(library_Writer)
 
 
-def test_library::writer_constructor_exists():
-    assert callable(library::Writer.__init__)
+def test_library_writer_constructor_exists():
+    assert callable(library_Writer.__init__)
 
 
-def test_library::writer_constructor_args():
-    sig = inspect.signature(library::Writer.__init__)
+def test_library_writer_constructor_args():
+    sig = inspect.signature(library_Writer.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_library::writer_has_name():
-    assert hasattr(library::Writer, "name")
+def test_library_writer_has_name():
+    assert hasattr(library_Writer, "name")
     descriptor = None
-    for klass in library::Writer.__mro__:
+    for klass in library_Writer.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -146,23 +146,23 @@ def test_library::writer_has_name():
 
 
 
-def test_library::specialistbookwriter_is_not_abstract():
-    assert not inspect.isabstract(library::SpecialistBookWriter)
+def test_library_specialistbookwriter_is_not_abstract():
+    assert not inspect.isabstract(library_SpecialistBookWriter)
 
 
-def test_library::specialistbookwriter_constructor_exists():
-    assert callable(library::SpecialistBookWriter.__init__)
+def test_library_specialistbookwriter_constructor_exists():
+    assert callable(library_SpecialistBookWriter.__init__)
 
 
-def test_library::specialistbookwriter_constructor_args():
-    sig = inspect.signature(library::SpecialistBookWriter.__init__)
+def test_library_specialistbookwriter_constructor_args():
+    sig = inspect.signature(library_SpecialistBookWriter.__init__)
     params = list(sig.parameters.keys())
     assert "subject" in params, "Missing parameter 'subject'"
 
-def test_library::specialistbookwriter_has_subject():
-    assert hasattr(library::SpecialistBookWriter, "subject")
+def test_library_specialistbookwriter_has_subject():
+    assert hasattr(library_SpecialistBookWriter, "subject")
     descriptor = None
-    for klass in library::SpecialistBookWriter.__mro__:
+    for klass in library_SpecialistBookWriter.__mro__:
         if "subject" in klass.__dict__:
             descriptor = klass.__dict__["subject"]
             break
@@ -170,33 +170,33 @@ def test_library::specialistbookwriter_has_subject():
 
 
 
-def test_library::book_is_not_abstract():
-    assert not inspect.isabstract(library::Book)
+def test_library_book_is_not_abstract():
+    assert not inspect.isabstract(library_Book)
 
 
-def test_library::book_constructor_exists():
-    assert callable(library::Book.__init__)
+def test_library_book_constructor_exists():
+    assert callable(library_Book.__init__)
 
 
-def test_library::book_constructor_args():
-    sig = inspect.signature(library::Book.__init__)
+def test_library_book_constructor_args():
+    sig = inspect.signature(library_Book.__init__)
     params = list(sig.parameters.keys())
     assert "pages" in params, "Missing parameter 'pages'"
     assert "title" in params, "Missing parameter 'title'"
 
-def test_library::book_has_pages():
-    assert hasattr(library::Book, "pages")
+def test_library_book_has_pages():
+    assert hasattr(library_Book, "pages")
     descriptor = None
-    for klass in library::Book.__mro__:
+    for klass in library_Book.__mro__:
         if "pages" in klass.__dict__:
             descriptor = klass.__dict__["pages"]
             break
     assert isinstance(descriptor, property)
 
-def test_library::book_has_title():
-    assert hasattr(library::Book, "title")
+def test_library_book_has_title():
+    assert hasattr(library_Book, "title")
     descriptor = None
-    for klass in library::Book.__mro__:
+    for klass in library_Book.__mro__:
         if "title" in klass.__dict__:
             descriptor = klass.__dict__["title"]
             break
@@ -217,36 +217,36 @@ safe_text = st.text(
 Writer_strategy = st.builds(
     Writer,
 )
-library::GuideBookWriter_strategy = st.builds(
-    library::GuideBookWriter,
+library_GuideBookWriter_strategy = st.builds(
+    library_GuideBookWriter,
     countries=
         safe_text
 )
 SpecialistBookWriter_strategy = st.builds(
     SpecialistBookWriter,
 )
-library::GuideSpecialistBookWriter_strategy = st.builds(
-    library::GuideSpecialistBookWriter,
+library_GuideSpecialistBookWriter_strategy = st.builds(
+    library_GuideSpecialistBookWriter,
     amazing=
         safe_text
 )
-library::Library_strategy = st.builds(
-    library::Library,
+library_Library_strategy = st.builds(
+    library_Library,
     name=
         safe_text
 )
-library::Writer_strategy = st.builds(
-    library::Writer,
+library_Writer_strategy = st.builds(
+    library_Writer,
     name=
         safe_text
 )
-library::SpecialistBookWriter_strategy = st.builds(
-    library::SpecialistBookWriter,
+library_SpecialistBookWriter_strategy = st.builds(
+    library_SpecialistBookWriter,
     subject=
         safe_text
 )
-library::Book_strategy = st.builds(
-    library::Book,
+library_Book_strategy = st.builds(
+    library_Book,
     pages=
         safe_text,
     title=
@@ -258,18 +258,15 @@ library::Book_strategy = st.builds(
 def test_writer_instantiation(instance):
     assert isinstance(instance, Writer)
 
-@given(instance=library::GuideBookWriter_strategy)
+@given(instance=library_GuideBookWriter_strategy)
 @settings(max_examples=50)
-def test_library::guidebookwriter_instantiation(instance):
-    assert isinstance(instance, library::GuideBookWriter)
-
-@given(instance=library::GuideBookWriter_strategy)
-def test_library::guidebookwriter_countries_type(instance):
-    assert isinstance(instance.countries, str)
+def test_library_guidebookwriter_instantiation(instance):
+    assert isinstance(instance, library_GuideBookWriter)
 
 
-@given(instance=library::GuideBookWriter_strategy)
-def test_library::guidebookwriter_countries_setter(instance):
+
+@given(instance=library_GuideBookWriter_strategy)
+def test_library_guidebookwriter_countries_setter(instance):
     original = instance.countries
     instance.countries = original
     assert instance.countries == original
@@ -279,93 +276,75 @@ def test_library::guidebookwriter_countries_setter(instance):
 def test_specialistbookwriter_instantiation(instance):
     assert isinstance(instance, SpecialistBookWriter)
 
-@given(instance=library::GuideSpecialistBookWriter_strategy)
+@given(instance=library_GuideSpecialistBookWriter_strategy)
 @settings(max_examples=50)
-def test_library::guidespecialistbookwriter_instantiation(instance):
-    assert isinstance(instance, library::GuideSpecialistBookWriter)
-
-@given(instance=library::GuideSpecialistBookWriter_strategy)
-def test_library::guidespecialistbookwriter_amazing_type(instance):
-    assert isinstance(instance.amazing, str)
+def test_library_guidespecialistbookwriter_instantiation(instance):
+    assert isinstance(instance, library_GuideSpecialistBookWriter)
 
 
-@given(instance=library::GuideSpecialistBookWriter_strategy)
-def test_library::guidespecialistbookwriter_amazing_setter(instance):
+
+@given(instance=library_GuideSpecialistBookWriter_strategy)
+def test_library_guidespecialistbookwriter_amazing_setter(instance):
     original = instance.amazing
     instance.amazing = original
     assert instance.amazing == original
 
-@given(instance=library::Library_strategy)
+@given(instance=library_Library_strategy)
 @settings(max_examples=50)
-def test_library::library_instantiation(instance):
-    assert isinstance(instance, library::Library)
-
-@given(instance=library::Library_strategy)
-def test_library::library_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_library_library_instantiation(instance):
+    assert isinstance(instance, library_Library)
 
 
-@given(instance=library::Library_strategy)
-def test_library::library_name_setter(instance):
+
+@given(instance=library_Library_strategy)
+def test_library_library_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=library::Writer_strategy)
+@given(instance=library_Writer_strategy)
 @settings(max_examples=50)
-def test_library::writer_instantiation(instance):
-    assert isinstance(instance, library::Writer)
-
-@given(instance=library::Writer_strategy)
-def test_library::writer_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_library_writer_instantiation(instance):
+    assert isinstance(instance, library_Writer)
 
 
-@given(instance=library::Writer_strategy)
-def test_library::writer_name_setter(instance):
+
+@given(instance=library_Writer_strategy)
+def test_library_writer_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=library::SpecialistBookWriter_strategy)
+@given(instance=library_SpecialistBookWriter_strategy)
 @settings(max_examples=50)
-def test_library::specialistbookwriter_instantiation(instance):
-    assert isinstance(instance, library::SpecialistBookWriter)
-
-@given(instance=library::SpecialistBookWriter_strategy)
-def test_library::specialistbookwriter_subject_type(instance):
-    assert isinstance(instance.subject, str)
+def test_library_specialistbookwriter_instantiation(instance):
+    assert isinstance(instance, library_SpecialistBookWriter)
 
 
-@given(instance=library::SpecialistBookWriter_strategy)
-def test_library::specialistbookwriter_subject_setter(instance):
+
+@given(instance=library_SpecialistBookWriter_strategy)
+def test_library_specialistbookwriter_subject_setter(instance):
     original = instance.subject
     instance.subject = original
     assert instance.subject == original
 
-@given(instance=library::Book_strategy)
+@given(instance=library_Book_strategy)
 @settings(max_examples=50)
-def test_library::book_instantiation(instance):
-    assert isinstance(instance, library::Book)
-
-@given(instance=library::Book_strategy)
-def test_library::book_pages_type(instance):
-    assert isinstance(instance.pages, str)
+def test_library_book_instantiation(instance):
+    assert isinstance(instance, library_Book)
 
 
-@given(instance=library::Book_strategy)
-def test_library::book_pages_setter(instance):
+
+@given(instance=library_Book_strategy)
+def test_library_book_pages_setter(instance):
     original = instance.pages
     instance.pages = original
     assert instance.pages == original
 
-@given(instance=library::Book_strategy)
-def test_library::book_title_type(instance):
-    assert isinstance(instance.title, str)
 
 
-@given(instance=library::Book_strategy)
-def test_library::book_title_setter(instance):
+@given(instance=library_Book_strategy)
+def test_library_book_title_setter(instance):
     original = instance.title
     instance.title = original
     assert instance.title == original

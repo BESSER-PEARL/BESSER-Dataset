@@ -3,18 +3,18 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    errors::Error,
-    errors::Errores,
-    errors::ColumnFk,
-    errors::Table,
+from python_code import (
+    errors_ValueCk,
+    errors_ColumnCk,
+    errors_Error,
+    errors_Errores,
+    errors_ColumnFk,
+    errors_Table,
     Error,
-    errors::CheckError,
-    errors::ForeignError,
-    errors::ValueCk,
-    errors::ColumnCk,
+    errors_CheckError,
+    errors_ForeignError,
 )
 
 # =============================================================================
@@ -23,51 +23,99 @@ from classes import (
 
 
 
-def test_errors::error_is_not_abstract():
-    assert not inspect.isabstract(errors::Error)
+def test_errors_valueck_is_not_abstract():
+    assert not inspect.isabstract(errors_ValueCk)
 
 
-def test_errors::error_constructor_exists():
-    assert callable(errors::Error.__init__)
+def test_errors_valueck_constructor_exists():
+    assert callable(errors_ValueCk.__init__)
 
 
-def test_errors::error_constructor_args():
-    sig = inspect.signature(errors::Error.__init__)
+def test_errors_valueck_constructor_args():
+    sig = inspect.signature(errors_ValueCk.__init__)
+    params = list(sig.parameters.keys())
+    assert "value" in params, "Missing parameter 'value'"
+
+def test_errors_valueck_has_value():
+    assert hasattr(errors_ValueCk, "value")
+    descriptor = None
+    for klass in errors_ValueCk.__mro__:
+        if "value" in klass.__dict__:
+            descriptor = klass.__dict__["value"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_errors_columnck_is_not_abstract():
+    assert not inspect.isabstract(errors_ColumnCk)
+
+
+def test_errors_columnck_constructor_exists():
+    assert callable(errors_ColumnCk.__init__)
+
+
+def test_errors_columnck_constructor_args():
+    sig = inspect.signature(errors_ColumnCk.__init__)
+    params = list(sig.parameters.keys())
+    assert "columnName" in params, "Missing parameter 'columnName'"
+
+def test_errors_columnck_has_columnName():
+    assert hasattr(errors_ColumnCk, "columnName")
+    descriptor = None
+    for klass in errors_ColumnCk.__mro__:
+        if "columnName" in klass.__dict__:
+            descriptor = klass.__dict__["columnName"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_errors_error_is_not_abstract():
+    assert not inspect.isabstract(errors_Error)
+
+
+def test_errors_error_constructor_exists():
+    assert callable(errors_Error.__init__)
+
+
+def test_errors_error_constructor_args():
+    sig = inspect.signature(errors_Error.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_errors::errores_is_not_abstract():
-    assert not inspect.isabstract(errors::Errores)
+def test_errors_errores_is_not_abstract():
+    assert not inspect.isabstract(errors_Errores)
 
 
-def test_errors::errores_constructor_exists():
-    assert callable(errors::Errores.__init__)
+def test_errors_errores_constructor_exists():
+    assert callable(errors_Errores.__init__)
 
 
-def test_errors::errores_constructor_args():
-    sig = inspect.signature(errors::Errores.__init__)
+def test_errors_errores_constructor_args():
+    sig = inspect.signature(errors_Errores.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_errors::columnfk_is_not_abstract():
-    assert not inspect.isabstract(errors::ColumnFk)
+def test_errors_columnfk_is_not_abstract():
+    assert not inspect.isabstract(errors_ColumnFk)
 
 
-def test_errors::columnfk_constructor_exists():
-    assert callable(errors::ColumnFk.__init__)
+def test_errors_columnfk_constructor_exists():
+    assert callable(errors_ColumnFk.__init__)
 
 
-def test_errors::columnfk_constructor_args():
-    sig = inspect.signature(errors::ColumnFk.__init__)
+def test_errors_columnfk_constructor_args():
+    sig = inspect.signature(errors_ColumnFk.__init__)
     params = list(sig.parameters.keys())
     assert "nameColumn" in params, "Missing parameter 'nameColumn'"
 
-def test_errors::columnfk_has_nameColumn():
-    assert hasattr(errors::ColumnFk, "nameColumn")
+def test_errors_columnfk_has_nameColumn():
+    assert hasattr(errors_ColumnFk, "nameColumn")
     descriptor = None
-    for klass in errors::ColumnFk.__mro__:
+    for klass in errors_ColumnFk.__mro__:
         if "nameColumn" in klass.__dict__:
             descriptor = klass.__dict__["nameColumn"]
             break
@@ -75,23 +123,23 @@ def test_errors::columnfk_has_nameColumn():
 
 
 
-def test_errors::table_is_not_abstract():
-    assert not inspect.isabstract(errors::Table)
+def test_errors_table_is_not_abstract():
+    assert not inspect.isabstract(errors_Table)
 
 
-def test_errors::table_constructor_exists():
-    assert callable(errors::Table.__init__)
+def test_errors_table_constructor_exists():
+    assert callable(errors_Table.__init__)
 
 
-def test_errors::table_constructor_args():
-    sig = inspect.signature(errors::Table.__init__)
+def test_errors_table_constructor_args():
+    sig = inspect.signature(errors_Table.__init__)
     params = list(sig.parameters.keys())
     assert "nameTable" in params, "Missing parameter 'nameTable'"
 
-def test_errors::table_has_nameTable():
-    assert hasattr(errors::Table, "nameTable")
+def test_errors_table_has_nameTable():
+    assert hasattr(errors_Table, "nameTable")
     descriptor = None
-    for klass in errors::Table.__mro__:
+    for klass in errors_Table.__mro__:
         if "nameTable" in klass.__dict__:
             descriptor = klass.__dict__["nameTable"]
             break
@@ -113,127 +161,79 @@ def test_error_constructor_args():
 
 
 
-def test_errors::checkerror_is_not_abstract():
-    assert not inspect.isabstract(errors::CheckError)
+def test_errors_checkerror_is_not_abstract():
+    assert not inspect.isabstract(errors_CheckError)
 
 
-def test_errors::checkerror_constructor_exists():
-    assert callable(errors::CheckError.__init__)
+def test_errors_checkerror_constructor_exists():
+    assert callable(errors_CheckError.__init__)
 
 
-def test_errors::checkerror_constructor_args():
-    sig = inspect.signature(errors::CheckError.__init__)
+def test_errors_checkerror_constructor_args():
+    sig = inspect.signature(errors_CheckError.__init__)
     params = list(sig.parameters.keys())
+    assert "nameCk" in params, "Missing parameter 'nameCk'"
     assert "porcent" in params, "Missing parameter 'porcent'"
     assert "nameTable" in params, "Missing parameter 'nameTable'"
-    assert "nameCk" in params, "Missing parameter 'nameCk'"
 
-def test_errors::checkerror_has_porcent():
-    assert hasattr(errors::CheckError, "porcent")
+def test_errors_checkerror_has_nameCk():
+    assert hasattr(errors_CheckError, "nameCk")
     descriptor = None
-    for klass in errors::CheckError.__mro__:
-        if "porcent" in klass.__dict__:
-            descriptor = klass.__dict__["porcent"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_errors::checkerror_has_nameTable():
-    assert hasattr(errors::CheckError, "nameTable")
-    descriptor = None
-    for klass in errors::CheckError.__mro__:
-        if "nameTable" in klass.__dict__:
-            descriptor = klass.__dict__["nameTable"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_errors::checkerror_has_nameCk():
-    assert hasattr(errors::CheckError, "nameCk")
-    descriptor = None
-    for klass in errors::CheckError.__mro__:
+    for klass in errors_CheckError.__mro__:
         if "nameCk" in klass.__dict__:
             descriptor = klass.__dict__["nameCk"]
             break
     assert isinstance(descriptor, property)
 
-
-
-def test_errors::foreignerror_is_not_abstract():
-    assert not inspect.isabstract(errors::ForeignError)
-
-
-def test_errors::foreignerror_constructor_exists():
-    assert callable(errors::ForeignError.__init__)
-
-
-def test_errors::foreignerror_constructor_args():
-    sig = inspect.signature(errors::ForeignError.__init__)
-    params = list(sig.parameters.keys())
-    assert "porcent" in params, "Missing parameter 'porcent'"
-    assert "nameFk" in params, "Missing parameter 'nameFk'"
-
-def test_errors::foreignerror_has_porcent():
-    assert hasattr(errors::ForeignError, "porcent")
+def test_errors_checkerror_has_porcent():
+    assert hasattr(errors_CheckError, "porcent")
     descriptor = None
-    for klass in errors::ForeignError.__mro__:
+    for klass in errors_CheckError.__mro__:
         if "porcent" in klass.__dict__:
             descriptor = klass.__dict__["porcent"]
             break
     assert isinstance(descriptor, property)
 
-def test_errors::foreignerror_has_nameFk():
-    assert hasattr(errors::ForeignError, "nameFk")
+def test_errors_checkerror_has_nameTable():
+    assert hasattr(errors_CheckError, "nameTable")
     descriptor = None
-    for klass in errors::ForeignError.__mro__:
+    for klass in errors_CheckError.__mro__:
+        if "nameTable" in klass.__dict__:
+            descriptor = klass.__dict__["nameTable"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_errors_foreignerror_is_not_abstract():
+    assert not inspect.isabstract(errors_ForeignError)
+
+
+def test_errors_foreignerror_constructor_exists():
+    assert callable(errors_ForeignError.__init__)
+
+
+def test_errors_foreignerror_constructor_args():
+    sig = inspect.signature(errors_ForeignError.__init__)
+    params = list(sig.parameters.keys())
+    assert "porcent" in params, "Missing parameter 'porcent'"
+    assert "nameFk" in params, "Missing parameter 'nameFk'"
+
+def test_errors_foreignerror_has_porcent():
+    assert hasattr(errors_ForeignError, "porcent")
+    descriptor = None
+    for klass in errors_ForeignError.__mro__:
+        if "porcent" in klass.__dict__:
+            descriptor = klass.__dict__["porcent"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_errors_foreignerror_has_nameFk():
+    assert hasattr(errors_ForeignError, "nameFk")
+    descriptor = None
+    for klass in errors_ForeignError.__mro__:
         if "nameFk" in klass.__dict__:
             descriptor = klass.__dict__["nameFk"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_errors::valueck_is_not_abstract():
-    assert not inspect.isabstract(errors::ValueCk)
-
-
-def test_errors::valueck_constructor_exists():
-    assert callable(errors::ValueCk.__init__)
-
-
-def test_errors::valueck_constructor_args():
-    sig = inspect.signature(errors::ValueCk.__init__)
-    params = list(sig.parameters.keys())
-    assert "value" in params, "Missing parameter 'value'"
-
-def test_errors::valueck_has_value():
-    assert hasattr(errors::ValueCk, "value")
-    descriptor = None
-    for klass in errors::ValueCk.__mro__:
-        if "value" in klass.__dict__:
-            descriptor = klass.__dict__["value"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_errors::columnck_is_not_abstract():
-    assert not inspect.isabstract(errors::ColumnCk)
-
-
-def test_errors::columnck_constructor_exists():
-    assert callable(errors::ColumnCk.__init__)
-
-
-def test_errors::columnck_constructor_args():
-    sig = inspect.signature(errors::ColumnCk.__init__)
-    params = list(sig.parameters.keys())
-    assert "columnName" in params, "Missing parameter 'columnName'"
-
-def test_errors::columnck_has_columnName():
-    assert hasattr(errors::ColumnCk, "columnName")
-    descriptor = None
-    for klass in errors::ColumnCk.__mro__:
-        if "columnName" in klass.__dict__:
-            descriptor = klass.__dict__["columnName"]
             break
     assert isinstance(descriptor, property)
 
@@ -249,90 +249,110 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-errors::Error_strategy = st.builds(
-    errors::Error,
+errors_ValueCk_strategy = st.builds(
+    errors_ValueCk,
+    value=
+        safe_text
 )
-errors::Errores_strategy = st.builds(
-    errors::Errores,
+errors_ColumnCk_strategy = st.builds(
+    errors_ColumnCk,
+    columnName=
+        safe_text
 )
-errors::ColumnFk_strategy = st.builds(
-    errors::ColumnFk,
+errors_Error_strategy = st.builds(
+    errors_Error,
+)
+errors_Errores_strategy = st.builds(
+    errors_Errores,
+)
+errors_ColumnFk_strategy = st.builds(
+    errors_ColumnFk,
     nameColumn=
         safe_text
 )
-errors::Table_strategy = st.builds(
-    errors::Table,
+errors_Table_strategy = st.builds(
+    errors_Table,
     nameTable=
         safe_text
 )
 Error_strategy = st.builds(
     Error,
 )
-errors::CheckError_strategy = st.builds(
-    errors::CheckError,
+errors_CheckError_strategy = st.builds(
+    errors_CheckError,
+    nameCk=
+        safe_text,
     porcent=
         safe_text,
     nameTable=
-        safe_text,
-    nameCk=
         safe_text
 )
-errors::ForeignError_strategy = st.builds(
-    errors::ForeignError,
+errors_ForeignError_strategy = st.builds(
+    errors_ForeignError,
     porcent=
         safe_text,
     nameFk=
         safe_text
 )
-errors::ValueCk_strategy = st.builds(
-    errors::ValueCk,
-    value=
-        safe_text
-)
-errors::ColumnCk_strategy = st.builds(
-    errors::ColumnCk,
-    columnName=
-        safe_text
-)
 
-@given(instance=errors::Error_strategy)
+@given(instance=errors_ValueCk_strategy)
 @settings(max_examples=50)
-def test_errors::error_instantiation(instance):
-    assert isinstance(instance, errors::Error)
+def test_errors_valueck_instantiation(instance):
+    assert isinstance(instance, errors_ValueCk)
 
-@given(instance=errors::Errores_strategy)
+
+
+@given(instance=errors_ValueCk_strategy)
+def test_errors_valueck_value_setter(instance):
+    original = instance.value
+    instance.value = original
+    assert instance.value == original
+
+@given(instance=errors_ColumnCk_strategy)
 @settings(max_examples=50)
-def test_errors::errores_instantiation(instance):
-    assert isinstance(instance, errors::Errores)
+def test_errors_columnck_instantiation(instance):
+    assert isinstance(instance, errors_ColumnCk)
 
-@given(instance=errors::ColumnFk_strategy)
+
+
+@given(instance=errors_ColumnCk_strategy)
+def test_errors_columnck_columnName_setter(instance):
+    original = instance.columnName
+    instance.columnName = original
+    assert instance.columnName == original
+
+@given(instance=errors_Error_strategy)
 @settings(max_examples=50)
-def test_errors::columnfk_instantiation(instance):
-    assert isinstance(instance, errors::ColumnFk)
+def test_errors_error_instantiation(instance):
+    assert isinstance(instance, errors_Error)
 
-@given(instance=errors::ColumnFk_strategy)
-def test_errors::columnfk_nameColumn_type(instance):
-    assert isinstance(instance.nameColumn, str)
+@given(instance=errors_Errores_strategy)
+@settings(max_examples=50)
+def test_errors_errores_instantiation(instance):
+    assert isinstance(instance, errors_Errores)
+
+@given(instance=errors_ColumnFk_strategy)
+@settings(max_examples=50)
+def test_errors_columnfk_instantiation(instance):
+    assert isinstance(instance, errors_ColumnFk)
 
 
-@given(instance=errors::ColumnFk_strategy)
-def test_errors::columnfk_nameColumn_setter(instance):
+
+@given(instance=errors_ColumnFk_strategy)
+def test_errors_columnfk_nameColumn_setter(instance):
     original = instance.nameColumn
     instance.nameColumn = original
     assert instance.nameColumn == original
 
-@given(instance=errors::Table_strategy)
+@given(instance=errors_Table_strategy)
 @settings(max_examples=50)
-def test_errors::table_instantiation(instance):
-    assert isinstance(instance, errors::Table)
-
-@given(instance=errors::Table_strategy)
-def test_errors::table_nameTable_type(instance):
-    assert isinstance(instance.nameTable, str)
+def test_errors_table_instantiation(instance):
+    assert isinstance(instance, errors_Table)
 
 
-@given(instance=errors::Table_strategy)
-def test_errors::table_nameTable_setter(instance):
+
+@given(instance=errors_Table_strategy)
+def test_errors_table_nameTable_setter(instance):
     original = instance.nameTable
     instance.nameTable = original
     assert instance.nameTable == original
@@ -342,99 +362,52 @@ def test_errors::table_nameTable_setter(instance):
 def test_error_instantiation(instance):
     assert isinstance(instance, Error)
 
-@given(instance=errors::CheckError_strategy)
+@given(instance=errors_CheckError_strategy)
 @settings(max_examples=50)
-def test_errors::checkerror_instantiation(instance):
-    assert isinstance(instance, errors::CheckError)
-
-@given(instance=errors::CheckError_strategy)
-def test_errors::checkerror_porcent_type(instance):
-    assert isinstance(instance.porcent, str)
+def test_errors_checkerror_instantiation(instance):
+    assert isinstance(instance, errors_CheckError)
 
 
-@given(instance=errors::CheckError_strategy)
-def test_errors::checkerror_porcent_setter(instance):
-    original = instance.porcent
-    instance.porcent = original
-    assert instance.porcent == original
 
-@given(instance=errors::CheckError_strategy)
-def test_errors::checkerror_nameTable_type(instance):
-    assert isinstance(instance.nameTable, str)
-
-
-@given(instance=errors::CheckError_strategy)
-def test_errors::checkerror_nameTable_setter(instance):
-    original = instance.nameTable
-    instance.nameTable = original
-    assert instance.nameTable == original
-
-@given(instance=errors::CheckError_strategy)
-def test_errors::checkerror_nameCk_type(instance):
-    assert isinstance(instance.nameCk, str)
-
-
-@given(instance=errors::CheckError_strategy)
-def test_errors::checkerror_nameCk_setter(instance):
+@given(instance=errors_CheckError_strategy)
+def test_errors_checkerror_nameCk_setter(instance):
     original = instance.nameCk
     instance.nameCk = original
     assert instance.nameCk == original
 
-@given(instance=errors::ForeignError_strategy)
-@settings(max_examples=50)
-def test_errors::foreignerror_instantiation(instance):
-    assert isinstance(instance, errors::ForeignError)
-
-@given(instance=errors::ForeignError_strategy)
-def test_errors::foreignerror_porcent_type(instance):
-    assert isinstance(instance.porcent, str)
 
 
-@given(instance=errors::ForeignError_strategy)
-def test_errors::foreignerror_porcent_setter(instance):
+@given(instance=errors_CheckError_strategy)
+def test_errors_checkerror_porcent_setter(instance):
     original = instance.porcent
     instance.porcent = original
     assert instance.porcent == original
 
-@given(instance=errors::ForeignError_strategy)
-def test_errors::foreignerror_nameFk_type(instance):
-    assert isinstance(instance.nameFk, str)
 
 
-@given(instance=errors::ForeignError_strategy)
-def test_errors::foreignerror_nameFk_setter(instance):
+@given(instance=errors_CheckError_strategy)
+def test_errors_checkerror_nameTable_setter(instance):
+    original = instance.nameTable
+    instance.nameTable = original
+    assert instance.nameTable == original
+
+@given(instance=errors_ForeignError_strategy)
+@settings(max_examples=50)
+def test_errors_foreignerror_instantiation(instance):
+    assert isinstance(instance, errors_ForeignError)
+
+
+
+@given(instance=errors_ForeignError_strategy)
+def test_errors_foreignerror_porcent_setter(instance):
+    original = instance.porcent
+    instance.porcent = original
+    assert instance.porcent == original
+
+
+
+@given(instance=errors_ForeignError_strategy)
+def test_errors_foreignerror_nameFk_setter(instance):
     original = instance.nameFk
     instance.nameFk = original
     assert instance.nameFk == original
-
-@given(instance=errors::ValueCk_strategy)
-@settings(max_examples=50)
-def test_errors::valueck_instantiation(instance):
-    assert isinstance(instance, errors::ValueCk)
-
-@given(instance=errors::ValueCk_strategy)
-def test_errors::valueck_value_type(instance):
-    assert isinstance(instance.value, str)
-
-
-@given(instance=errors::ValueCk_strategy)
-def test_errors::valueck_value_setter(instance):
-    original = instance.value
-    instance.value = original
-    assert instance.value == original
-
-@given(instance=errors::ColumnCk_strategy)
-@settings(max_examples=50)
-def test_errors::columnck_instantiation(instance):
-    assert isinstance(instance, errors::ColumnCk)
-
-@given(instance=errors::ColumnCk_strategy)
-def test_errors::columnck_columnName_type(instance):
-    assert isinstance(instance.columnName, str)
-
-
-@given(instance=errors::ColumnCk_strategy)
-def test_errors::columnck_columnName_setter(instance):
-    original = instance.columnName
-    instance.columnName = original
-    assert instance.columnName == original

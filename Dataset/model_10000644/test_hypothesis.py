@@ -3,7 +3,7 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
 from python_code import (
     ClientType,
@@ -204,9 +204,18 @@ def test_virtualtour_transaction_constructor_exists():
 def test_virtualtour_transaction_constructor_args():
     sig = inspect.signature(virtualtour_Transaction.__init__)
     params = list(sig.parameters.keys())
+    assert "type" in params, "Missing parameter 'type'"
     assert "id" in params, "Missing parameter 'id'"
     assert "transactionTime" in params, "Missing parameter 'transactionTime'"
-    assert "type" in params, "Missing parameter 'type'"
+
+def test_virtualtour_transaction_has_type():
+    assert hasattr(virtualtour_Transaction, "type")
+    descriptor = None
+    for klass in virtualtour_Transaction.__mro__:
+        if "type" in klass.__dict__:
+            descriptor = klass.__dict__["type"]
+            break
+    assert isinstance(descriptor, property)
 
 def test_virtualtour_transaction_has_id():
     assert hasattr(virtualtour_Transaction, "id")
@@ -226,15 +235,6 @@ def test_virtualtour_transaction_has_transactionTime():
             break
     assert isinstance(descriptor, property)
 
-def test_virtualtour_transaction_has_type():
-    assert hasattr(virtualtour_Transaction, "type")
-    descriptor = None
-    for klass in virtualtour_Transaction.__mro__:
-        if "type" in klass.__dict__:
-            descriptor = klass.__dict__["type"]
-            break
-    assert isinstance(descriptor, property)
-
 
 
 def test_login_is_not_abstract():
@@ -248,20 +248,11 @@ def test_login_constructor_exists():
 def test_login_constructor_args():
     sig = inspect.signature(Login.__init__)
     params = list(sig.parameters.keys())
-    assert "lastLoginTime" in params, "Missing parameter 'lastLoginTime'"
     assert "username" in params, "Missing parameter 'username'"
-    assert "securityQuestion" in params, "Missing parameter 'securityQuestion'"
+    assert "lastLoginTime" in params, "Missing parameter 'lastLoginTime'"
     assert "password" in params, "Missing parameter 'password'"
+    assert "securityQuestion" in params, "Missing parameter 'securityQuestion'"
     assert "securityAnswer" in params, "Missing parameter 'securityAnswer'"
-
-def test_login_has_lastLoginTime():
-    assert hasattr(Login, "lastLoginTime")
-    descriptor = None
-    for klass in Login.__mro__:
-        if "lastLoginTime" in klass.__dict__:
-            descriptor = klass.__dict__["lastLoginTime"]
-            break
-    assert isinstance(descriptor, property)
 
 def test_login_has_username():
     assert hasattr(Login, "username")
@@ -272,12 +263,12 @@ def test_login_has_username():
             break
     assert isinstance(descriptor, property)
 
-def test_login_has_securityQuestion():
-    assert hasattr(Login, "securityQuestion")
+def test_login_has_lastLoginTime():
+    assert hasattr(Login, "lastLoginTime")
     descriptor = None
     for klass in Login.__mro__:
-        if "securityQuestion" in klass.__dict__:
-            descriptor = klass.__dict__["securityQuestion"]
+        if "lastLoginTime" in klass.__dict__:
+            descriptor = klass.__dict__["lastLoginTime"]
             break
     assert isinstance(descriptor, property)
 
@@ -287,6 +278,15 @@ def test_login_has_password():
     for klass in Login.__mro__:
         if "password" in klass.__dict__:
             descriptor = klass.__dict__["password"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_login_has_securityQuestion():
+    assert hasattr(Login, "securityQuestion")
+    descriptor = None
+    for klass in Login.__mro__:
+        if "securityQuestion" in klass.__dict__:
+            descriptor = klass.__dict__["securityQuestion"]
             break
     assert isinstance(descriptor, property)
 
@@ -314,9 +314,9 @@ def test_client_constructor_args():
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
     assert "address" in params, "Missing parameter 'address'"
-    assert "emailAddress" in params, "Missing parameter 'emailAddress'"
-    assert "dateOfBirth" in params, "Missing parameter 'dateOfBirth'"
     assert "phoneNumber" in params, "Missing parameter 'phoneNumber'"
+    assert "dateOfBirth" in params, "Missing parameter 'dateOfBirth'"
+    assert "emailAddress" in params, "Missing parameter 'emailAddress'"
 
 def test_client_has_name():
     assert hasattr(Client, "name")
@@ -336,12 +336,12 @@ def test_client_has_address():
             break
     assert isinstance(descriptor, property)
 
-def test_client_has_emailAddress():
-    assert hasattr(Client, "emailAddress")
+def test_client_has_phoneNumber():
+    assert hasattr(Client, "phoneNumber")
     descriptor = None
     for klass in Client.__mro__:
-        if "emailAddress" in klass.__dict__:
-            descriptor = klass.__dict__["emailAddress"]
+        if "phoneNumber" in klass.__dict__:
+            descriptor = klass.__dict__["phoneNumber"]
             break
     assert isinstance(descriptor, property)
 
@@ -354,12 +354,12 @@ def test_client_has_dateOfBirth():
             break
     assert isinstance(descriptor, property)
 
-def test_client_has_phoneNumber():
-    assert hasattr(Client, "phoneNumber")
+def test_client_has_emailAddress():
+    assert hasattr(Client, "emailAddress")
     descriptor = None
     for klass in Client.__mro__:
-        if "phoneNumber" in klass.__dict__:
-            descriptor = klass.__dict__["phoneNumber"]
+        if "emailAddress" in klass.__dict__:
+            descriptor = klass.__dict__["emailAddress"]
             break
     assert isinstance(descriptor, property)
 
@@ -425,22 +425,22 @@ virtualtour_UploadFloorplan_strategy = st.builds(
 )
 virtualtour_Transaction_strategy = st.builds(
     virtualtour_Transaction,
+    type=
+        st.none(),
     id=
         st.integers(),
     transactionTime=
-        st.dates(),
-    type=
-        st.none()
+        st.dates()
 )
 Login_strategy = st.builds(
     Login,
-    lastLoginTime=
-        st.dates(),
     username=
         safe_text,
-    securityQuestion=
-        safe_text,
+    lastLoginTime=
+        st.dates(),
     password=
+        safe_text,
+    securityQuestion=
         safe_text,
     securityAnswer=
         safe_text
@@ -451,11 +451,11 @@ Client_strategy = st.builds(
         safe_text,
     address=
         safe_text,
-    emailAddress=
+    phoneNumber=
         safe_text,
     dateOfBirth=
         st.dates(),
-    phoneNumber=
+    emailAddress=
         safe_text
 )
 
@@ -469,9 +469,6 @@ def test_clienttype_instantiation(instance):
 def test_client_clientaccount_instantiation(instance):
     assert isinstance(instance, client_ClientAccount)
 
-@given(instance=client_ClientAccount_strategy)
-def test_client_clientaccount_clientNo_type(instance):
-    assert isinstance(instance.clientNo, str)
 
 
 @given(instance=client_ClientAccount_strategy)
@@ -480,9 +477,6 @@ def test_client_clientaccount_clientNo_setter(instance):
     instance.clientNo = original
     assert instance.clientNo == original
 
-@given(instance=client_ClientAccount_strategy)
-def test_client_clientaccount_type_type(instance):
-    assert isinstance(instance.type, clienttype)
 
 
 @given(instance=client_ClientAccount_strategy)
@@ -496,9 +490,6 @@ def test_client_clientaccount_type_setter(instance):
 def test_client_realtor_instantiation(instance):
     assert isinstance(instance, client_Realtor)
 
-@given(instance=client_Realtor_strategy)
-def test_client_realtor_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
 @given(instance=client_Realtor_strategy)
@@ -512,9 +503,6 @@ def test_client_realtor_name_setter(instance):
 def test_client_homeowner_instantiation(instance):
     assert isinstance(instance, client_HomeOwner)
 
-@given(instance=client_HomeOwner_strategy)
-def test_client_homeowner_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
 @given(instance=client_HomeOwner_strategy)
@@ -553,31 +541,6 @@ def test_virtualtour_uploadfloorplan_instantiation(instance):
 def test_virtualtour_transaction_instantiation(instance):
     assert isinstance(instance, virtualtour_Transaction)
 
-@given(instance=virtualtour_Transaction_strategy)
-def test_virtualtour_transaction_id_type(instance):
-    assert isinstance(instance.id, int)
-
-
-@given(instance=virtualtour_Transaction_strategy)
-def test_virtualtour_transaction_id_setter(instance):
-    original = instance.id
-    instance.id = original
-    assert instance.id == original
-
-@given(instance=virtualtour_Transaction_strategy)
-def test_virtualtour_transaction_transactionTime_type(instance):
-    assert isinstance(instance.transactionTime, date)
-
-
-@given(instance=virtualtour_Transaction_strategy)
-def test_virtualtour_transaction_transactionTime_setter(instance):
-    original = instance.transactionTime
-    instance.transactionTime = original
-    assert instance.transactionTime == original
-
-@given(instance=virtualtour_Transaction_strategy)
-def test_virtualtour_transaction_type_type(instance):
-    assert isinstance(instance.type, virtualtour_transactiontype)
 
 
 @given(instance=virtualtour_Transaction_strategy)
@@ -586,25 +549,27 @@ def test_virtualtour_transaction_type_setter(instance):
     instance.type = original
     assert instance.type == original
 
+
+
+@given(instance=virtualtour_Transaction_strategy)
+def test_virtualtour_transaction_id_setter(instance):
+    original = instance.id
+    instance.id = original
+    assert instance.id == original
+
+
+
+@given(instance=virtualtour_Transaction_strategy)
+def test_virtualtour_transaction_transactionTime_setter(instance):
+    original = instance.transactionTime
+    instance.transactionTime = original
+    assert instance.transactionTime == original
+
 @given(instance=Login_strategy)
 @settings(max_examples=50)
 def test_login_instantiation(instance):
     assert isinstance(instance, Login)
 
-@given(instance=Login_strategy)
-def test_login_lastLoginTime_type(instance):
-    assert isinstance(instance.lastLoginTime, date)
-
-
-@given(instance=Login_strategy)
-def test_login_lastLoginTime_setter(instance):
-    original = instance.lastLoginTime
-    instance.lastLoginTime = original
-    assert instance.lastLoginTime == original
-
-@given(instance=Login_strategy)
-def test_login_username_type(instance):
-    assert isinstance(instance.username, str)
 
 
 @given(instance=Login_strategy)
@@ -613,20 +578,14 @@ def test_login_username_setter(instance):
     instance.username = original
     assert instance.username == original
 
-@given(instance=Login_strategy)
-def test_login_securityQuestion_type(instance):
-    assert isinstance(instance.securityQuestion, str)
 
 
 @given(instance=Login_strategy)
-def test_login_securityQuestion_setter(instance):
-    original = instance.securityQuestion
-    instance.securityQuestion = original
-    assert instance.securityQuestion == original
+def test_login_lastLoginTime_setter(instance):
+    original = instance.lastLoginTime
+    instance.lastLoginTime = original
+    assert instance.lastLoginTime == original
 
-@given(instance=Login_strategy)
-def test_login_password_type(instance):
-    assert isinstance(instance.password, str)
 
 
 @given(instance=Login_strategy)
@@ -635,9 +594,14 @@ def test_login_password_setter(instance):
     instance.password = original
     assert instance.password == original
 
+
+
 @given(instance=Login_strategy)
-def test_login_securityAnswer_type(instance):
-    assert isinstance(instance.securityAnswer, str)
+def test_login_securityQuestion_setter(instance):
+    original = instance.securityQuestion
+    instance.securityQuestion = original
+    assert instance.securityQuestion == original
+
 
 
 @given(instance=Login_strategy)
@@ -651,9 +615,6 @@ def test_login_securityAnswer_setter(instance):
 def test_client_instantiation(instance):
     assert isinstance(instance, Client)
 
-@given(instance=Client_strategy)
-def test_client_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
 @given(instance=Client_strategy)
@@ -662,9 +623,6 @@ def test_client_name_setter(instance):
     instance.name = original
     assert instance.name == original
 
-@given(instance=Client_strategy)
-def test_client_address_type(instance):
-    assert isinstance(instance.address, str)
 
 
 @given(instance=Client_strategy)
@@ -673,20 +631,14 @@ def test_client_address_setter(instance):
     instance.address = original
     assert instance.address == original
 
-@given(instance=Client_strategy)
-def test_client_emailAddress_type(instance):
-    assert isinstance(instance.emailAddress, str)
 
 
 @given(instance=Client_strategy)
-def test_client_emailAddress_setter(instance):
-    original = instance.emailAddress
-    instance.emailAddress = original
-    assert instance.emailAddress == original
+def test_client_phoneNumber_setter(instance):
+    original = instance.phoneNumber
+    instance.phoneNumber = original
+    assert instance.phoneNumber == original
 
-@given(instance=Client_strategy)
-def test_client_dateOfBirth_type(instance):
-    assert isinstance(instance.dateOfBirth, date)
 
 
 @given(instance=Client_strategy)
@@ -695,13 +647,10 @@ def test_client_dateOfBirth_setter(instance):
     instance.dateOfBirth = original
     assert instance.dateOfBirth == original
 
-@given(instance=Client_strategy)
-def test_client_phoneNumber_type(instance):
-    assert isinstance(instance.phoneNumber, str)
 
 
 @given(instance=Client_strategy)
-def test_client_phoneNumber_setter(instance):
-    original = instance.phoneNumber
-    instance.phoneNumber = original
-    assert instance.phoneNumber == original
+def test_client_emailAddress_setter(instance):
+    original = instance.emailAddress
+    instance.emailAddress = original
+    assert instance.emailAddress == original

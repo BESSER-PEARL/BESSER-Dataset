@@ -3,31 +3,31 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     BooleanExpression,
-    gseq::False,
-    gseq::Not,
-    gseq::Equality,
-    gseq::True,
-    gseq::GreaterThan,
-    gseq::And,
-    gseq::Method,
-    gseq::Program,
+    gseq_Not,
+    gseq_Equality,
+    gseq_False,
+    gseq_True,
+    gseq_GreaterThan,
+    gseq_And,
+    gseq_Method,
+    gseq_Program,
     IntegerExpression,
-    gseq::Plus,
-    gseq::Var,
-    gseq::Const,
+    gseq_Var,
+    gseq_Const,
+    gseq_Plus,
     Operation,
-    gseq::While,
-    gseq::Assign,
-    gseq::IntegerExpression,
-    gseq::If,
-    gseq::BooleanExpression,
-    gseq::Print,
-    gseq::MethodCall,
-    gseq::Operation,
+    gseq_While,
+    gseq_Assign,
+    gseq_BooleanExpression,
+    gseq_If,
+    gseq_IntegerExpression,
+    gseq_Print,
+    gseq_MethodCall,
+    gseq_Operation,
 )
 
 # =============================================================================
@@ -50,107 +50,107 @@ def test_booleanexpression_constructor_args():
 
 
 
-def test_gseq::false_is_not_abstract():
-    assert not inspect.isabstract(gseq::False)
+def test_gseq_not_is_not_abstract():
+    assert not inspect.isabstract(gseq_Not)
 
 
-def test_gseq::false_constructor_exists():
-    assert callable(gseq::False.__init__)
+def test_gseq_not_constructor_exists():
+    assert callable(gseq_Not.__init__)
 
 
-def test_gseq::false_constructor_args():
-    sig = inspect.signature(gseq::False.__init__)
+def test_gseq_not_constructor_args():
+    sig = inspect.signature(gseq_Not.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_gseq::not_is_not_abstract():
-    assert not inspect.isabstract(gseq::Not)
+def test_gseq_equality_is_not_abstract():
+    assert not inspect.isabstract(gseq_Equality)
 
 
-def test_gseq::not_constructor_exists():
-    assert callable(gseq::Not.__init__)
+def test_gseq_equality_constructor_exists():
+    assert callable(gseq_Equality.__init__)
 
 
-def test_gseq::not_constructor_args():
-    sig = inspect.signature(gseq::Not.__init__)
+def test_gseq_equality_constructor_args():
+    sig = inspect.signature(gseq_Equality.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_gseq::equality_is_not_abstract():
-    assert not inspect.isabstract(gseq::Equality)
+def test_gseq_false_is_not_abstract():
+    assert not inspect.isabstract(gseq_False)
 
 
-def test_gseq::equality_constructor_exists():
-    assert callable(gseq::Equality.__init__)
+def test_gseq_false_constructor_exists():
+    assert callable(gseq_False.__init__)
 
 
-def test_gseq::equality_constructor_args():
-    sig = inspect.signature(gseq::Equality.__init__)
+def test_gseq_false_constructor_args():
+    sig = inspect.signature(gseq_False.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_gseq::true_is_not_abstract():
-    assert not inspect.isabstract(gseq::True)
+def test_gseq_true_is_not_abstract():
+    assert not inspect.isabstract(gseq_True)
 
 
-def test_gseq::true_constructor_exists():
-    assert callable(gseq::True.__init__)
+def test_gseq_true_constructor_exists():
+    assert callable(gseq_True.__init__)
 
 
-def test_gseq::true_constructor_args():
-    sig = inspect.signature(gseq::True.__init__)
+def test_gseq_true_constructor_args():
+    sig = inspect.signature(gseq_True.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_gseq::greaterthan_is_not_abstract():
-    assert not inspect.isabstract(gseq::GreaterThan)
+def test_gseq_greaterthan_is_not_abstract():
+    assert not inspect.isabstract(gseq_GreaterThan)
 
 
-def test_gseq::greaterthan_constructor_exists():
-    assert callable(gseq::GreaterThan.__init__)
+def test_gseq_greaterthan_constructor_exists():
+    assert callable(gseq_GreaterThan.__init__)
 
 
-def test_gseq::greaterthan_constructor_args():
-    sig = inspect.signature(gseq::GreaterThan.__init__)
+def test_gseq_greaterthan_constructor_args():
+    sig = inspect.signature(gseq_GreaterThan.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_gseq::and_is_not_abstract():
-    assert not inspect.isabstract(gseq::And)
+def test_gseq_and_is_not_abstract():
+    assert not inspect.isabstract(gseq_And)
 
 
-def test_gseq::and_constructor_exists():
-    assert callable(gseq::And.__init__)
+def test_gseq_and_constructor_exists():
+    assert callable(gseq_And.__init__)
 
 
-def test_gseq::and_constructor_args():
-    sig = inspect.signature(gseq::And.__init__)
+def test_gseq_and_constructor_args():
+    sig = inspect.signature(gseq_And.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_gseq::method_is_not_abstract():
-    assert not inspect.isabstract(gseq::Method)
+def test_gseq_method_is_not_abstract():
+    assert not inspect.isabstract(gseq_Method)
 
 
-def test_gseq::method_constructor_exists():
-    assert callable(gseq::Method.__init__)
+def test_gseq_method_constructor_exists():
+    assert callable(gseq_Method.__init__)
 
 
-def test_gseq::method_constructor_args():
-    sig = inspect.signature(gseq::Method.__init__)
+def test_gseq_method_constructor_args():
+    sig = inspect.signature(gseq_Method.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_gseq::method_has_name():
-    assert hasattr(gseq::Method, "name")
+def test_gseq_method_has_name():
+    assert hasattr(gseq_Method, "name")
     descriptor = None
-    for klass in gseq::Method.__mro__:
+    for klass in gseq_Method.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -158,16 +158,16 @@ def test_gseq::method_has_name():
 
 
 
-def test_gseq::program_is_not_abstract():
-    assert not inspect.isabstract(gseq::Program)
+def test_gseq_program_is_not_abstract():
+    assert not inspect.isabstract(gseq_Program)
 
 
-def test_gseq::program_constructor_exists():
-    assert callable(gseq::Program.__init__)
+def test_gseq_program_constructor_exists():
+    assert callable(gseq_Program.__init__)
 
 
-def test_gseq::program_constructor_args():
-    sig = inspect.signature(gseq::Program.__init__)
+def test_gseq_program_constructor_args():
+    sig = inspect.signature(gseq_Program.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -186,37 +186,23 @@ def test_integerexpression_constructor_args():
 
 
 
-def test_gseq::plus_is_not_abstract():
-    assert not inspect.isabstract(gseq::Plus)
+def test_gseq_var_is_not_abstract():
+    assert not inspect.isabstract(gseq_Var)
 
 
-def test_gseq::plus_constructor_exists():
-    assert callable(gseq::Plus.__init__)
+def test_gseq_var_constructor_exists():
+    assert callable(gseq_Var.__init__)
 
 
-def test_gseq::plus_constructor_args():
-    sig = inspect.signature(gseq::Plus.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_gseq::var_is_not_abstract():
-    assert not inspect.isabstract(gseq::Var)
-
-
-def test_gseq::var_constructor_exists():
-    assert callable(gseq::Var.__init__)
-
-
-def test_gseq::var_constructor_args():
-    sig = inspect.signature(gseq::Var.__init__)
+def test_gseq_var_constructor_args():
+    sig = inspect.signature(gseq_Var.__init__)
     params = list(sig.parameters.keys())
     assert "varName" in params, "Missing parameter 'varName'"
 
-def test_gseq::var_has_varName():
-    assert hasattr(gseq::Var, "varName")
+def test_gseq_var_has_varName():
+    assert hasattr(gseq_Var, "varName")
     descriptor = None
-    for klass in gseq::Var.__mro__:
+    for klass in gseq_Var.__mro__:
         if "varName" in klass.__dict__:
             descriptor = klass.__dict__["varName"]
             break
@@ -224,27 +210,41 @@ def test_gseq::var_has_varName():
 
 
 
-def test_gseq::const_is_not_abstract():
-    assert not inspect.isabstract(gseq::Const)
+def test_gseq_const_is_not_abstract():
+    assert not inspect.isabstract(gseq_Const)
 
 
-def test_gseq::const_constructor_exists():
-    assert callable(gseq::Const.__init__)
+def test_gseq_const_constructor_exists():
+    assert callable(gseq_Const.__init__)
 
 
-def test_gseq::const_constructor_args():
-    sig = inspect.signature(gseq::Const.__init__)
+def test_gseq_const_constructor_args():
+    sig = inspect.signature(gseq_Const.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
 
-def test_gseq::const_has_value():
-    assert hasattr(gseq::Const, "value")
+def test_gseq_const_has_value():
+    assert hasattr(gseq_Const, "value")
     descriptor = None
-    for klass in gseq::Const.__mro__:
+    for klass in gseq_Const.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
     assert isinstance(descriptor, property)
+
+
+
+def test_gseq_plus_is_not_abstract():
+    assert not inspect.isabstract(gseq_Plus)
+
+
+def test_gseq_plus_constructor_exists():
+    assert callable(gseq_Plus.__init__)
+
+
+def test_gseq_plus_constructor_args():
+    sig = inspect.signature(gseq_Plus.__init__)
+    params = list(sig.parameters.keys())
 
 
 
@@ -262,37 +262,37 @@ def test_operation_constructor_args():
 
 
 
-def test_gseq::while_is_not_abstract():
-    assert not inspect.isabstract(gseq::While)
+def test_gseq_while_is_not_abstract():
+    assert not inspect.isabstract(gseq_While)
 
 
-def test_gseq::while_constructor_exists():
-    assert callable(gseq::While.__init__)
+def test_gseq_while_constructor_exists():
+    assert callable(gseq_While.__init__)
 
 
-def test_gseq::while_constructor_args():
-    sig = inspect.signature(gseq::While.__init__)
+def test_gseq_while_constructor_args():
+    sig = inspect.signature(gseq_While.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_gseq::assign_is_not_abstract():
-    assert not inspect.isabstract(gseq::Assign)
+def test_gseq_assign_is_not_abstract():
+    assert not inspect.isabstract(gseq_Assign)
 
 
-def test_gseq::assign_constructor_exists():
-    assert callable(gseq::Assign.__init__)
+def test_gseq_assign_constructor_exists():
+    assert callable(gseq_Assign.__init__)
 
 
-def test_gseq::assign_constructor_args():
-    sig = inspect.signature(gseq::Assign.__init__)
+def test_gseq_assign_constructor_args():
+    sig = inspect.signature(gseq_Assign.__init__)
     params = list(sig.parameters.keys())
     assert "varName" in params, "Missing parameter 'varName'"
 
-def test_gseq::assign_has_varName():
-    assert hasattr(gseq::Assign, "varName")
+def test_gseq_assign_has_varName():
+    assert hasattr(gseq_Assign, "varName")
     descriptor = None
-    for klass in gseq::Assign.__mro__:
+    for klass in gseq_Assign.__mro__:
         if "varName" in klass.__dict__:
             descriptor = klass.__dict__["varName"]
             break
@@ -300,86 +300,86 @@ def test_gseq::assign_has_varName():
 
 
 
-def test_gseq::integerexpression_is_not_abstract():
-    assert not inspect.isabstract(gseq::IntegerExpression)
+def test_gseq_booleanexpression_is_not_abstract():
+    assert not inspect.isabstract(gseq_BooleanExpression)
 
 
-def test_gseq::integerexpression_constructor_exists():
-    assert callable(gseq::IntegerExpression.__init__)
+def test_gseq_booleanexpression_constructor_exists():
+    assert callable(gseq_BooleanExpression.__init__)
 
 
-def test_gseq::integerexpression_constructor_args():
-    sig = inspect.signature(gseq::IntegerExpression.__init__)
+def test_gseq_booleanexpression_constructor_args():
+    sig = inspect.signature(gseq_BooleanExpression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_gseq::if_is_not_abstract():
-    assert not inspect.isabstract(gseq::If)
+def test_gseq_if_is_not_abstract():
+    assert not inspect.isabstract(gseq_If)
 
 
-def test_gseq::if_constructor_exists():
-    assert callable(gseq::If.__init__)
+def test_gseq_if_constructor_exists():
+    assert callable(gseq_If.__init__)
 
 
-def test_gseq::if_constructor_args():
-    sig = inspect.signature(gseq::If.__init__)
+def test_gseq_if_constructor_args():
+    sig = inspect.signature(gseq_If.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_gseq::booleanexpression_is_not_abstract():
-    assert not inspect.isabstract(gseq::BooleanExpression)
+def test_gseq_integerexpression_is_not_abstract():
+    assert not inspect.isabstract(gseq_IntegerExpression)
 
 
-def test_gseq::booleanexpression_constructor_exists():
-    assert callable(gseq::BooleanExpression.__init__)
+def test_gseq_integerexpression_constructor_exists():
+    assert callable(gseq_IntegerExpression.__init__)
 
 
-def test_gseq::booleanexpression_constructor_args():
-    sig = inspect.signature(gseq::BooleanExpression.__init__)
+def test_gseq_integerexpression_constructor_args():
+    sig = inspect.signature(gseq_IntegerExpression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_gseq::print_is_not_abstract():
-    assert not inspect.isabstract(gseq::Print)
+def test_gseq_print_is_not_abstract():
+    assert not inspect.isabstract(gseq_Print)
 
 
-def test_gseq::print_constructor_exists():
-    assert callable(gseq::Print.__init__)
+def test_gseq_print_constructor_exists():
+    assert callable(gseq_Print.__init__)
 
 
-def test_gseq::print_constructor_args():
-    sig = inspect.signature(gseq::Print.__init__)
+def test_gseq_print_constructor_args():
+    sig = inspect.signature(gseq_Print.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_gseq::methodcall_is_not_abstract():
-    assert not inspect.isabstract(gseq::MethodCall)
+def test_gseq_methodcall_is_not_abstract():
+    assert not inspect.isabstract(gseq_MethodCall)
 
 
-def test_gseq::methodcall_constructor_exists():
-    assert callable(gseq::MethodCall.__init__)
+def test_gseq_methodcall_constructor_exists():
+    assert callable(gseq_MethodCall.__init__)
 
 
-def test_gseq::methodcall_constructor_args():
-    sig = inspect.signature(gseq::MethodCall.__init__)
+def test_gseq_methodcall_constructor_args():
+    sig = inspect.signature(gseq_MethodCall.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_gseq::operation_is_not_abstract():
-    assert not inspect.isabstract(gseq::Operation)
+def test_gseq_operation_is_not_abstract():
+    assert not inspect.isabstract(gseq_Operation)
 
 
-def test_gseq::operation_constructor_exists():
-    assert callable(gseq::Operation.__init__)
+def test_gseq_operation_constructor_exists():
+    assert callable(gseq_Operation.__init__)
 
 
-def test_gseq::operation_constructor_args():
-    sig = inspect.signature(gseq::Operation.__init__)
+def test_gseq_operation_constructor_args():
+    sig = inspect.signature(gseq_Operation.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -397,76 +397,76 @@ safe_text = st.text(
 BooleanExpression_strategy = st.builds(
     BooleanExpression,
 )
-gseq::False_strategy = st.builds(
-    gseq::False,
+gseq_Not_strategy = st.builds(
+    gseq_Not,
 )
-gseq::Not_strategy = st.builds(
-    gseq::Not,
+gseq_Equality_strategy = st.builds(
+    gseq_Equality,
 )
-gseq::Equality_strategy = st.builds(
-    gseq::Equality,
+gseq_False_strategy = st.builds(
+    gseq_False,
 )
-gseq::True_strategy = st.builds(
-    gseq::True,
+gseq_True_strategy = st.builds(
+    gseq_True,
 )
-gseq::GreaterThan_strategy = st.builds(
-    gseq::GreaterThan,
+gseq_GreaterThan_strategy = st.builds(
+    gseq_GreaterThan,
 )
-gseq::And_strategy = st.builds(
-    gseq::And,
+gseq_And_strategy = st.builds(
+    gseq_And,
 )
-gseq::Method_strategy = st.builds(
-    gseq::Method,
+gseq_Method_strategy = st.builds(
+    gseq_Method,
     name=
         safe_text
 )
-gseq::Program_strategy = st.builds(
-    gseq::Program,
+gseq_Program_strategy = st.builds(
+    gseq_Program,
 )
 IntegerExpression_strategy = st.builds(
     IntegerExpression,
 )
-gseq::Plus_strategy = st.builds(
-    gseq::Plus,
-)
-gseq::Var_strategy = st.builds(
-    gseq::Var,
+gseq_Var_strategy = st.builds(
+    gseq_Var,
     varName=
         safe_text
 )
-gseq::Const_strategy = st.builds(
-    gseq::Const,
+gseq_Const_strategy = st.builds(
+    gseq_Const,
     value=
         safe_text
+)
+gseq_Plus_strategy = st.builds(
+    gseq_Plus,
 )
 Operation_strategy = st.builds(
     Operation,
 )
-gseq::While_strategy = st.builds(
-    gseq::While,
+gseq_While_strategy = st.builds(
+    gseq_While,
 )
-gseq::Assign_strategy = st.builds(
-    gseq::Assign,
+gseq_Assign_strategy = st.builds(
+    gseq_Assign,
     varName=
         safe_text
 )
-gseq::IntegerExpression_strategy = st.builds(
-    gseq::IntegerExpression,
+gseq_BooleanExpression_strategy = st.builds(
+    gseq_BooleanExpression,
 )
-gseq::If_strategy = st.builds(
-    gseq::If,
+gseq_If_strategy = st.builds(
+    gseq_If,
 )
-gseq::BooleanExpression_strategy = st.builds(
-    gseq::BooleanExpression,
+gseq_IntegerExpression_strategy = st.builds(
+    gseq_IntegerExpression,
 )
-gseq::Print_strategy = st.builds(
-    gseq::Print,
+gseq_Print_strategy = st.builds(
+    gseq_Print,
 )
-gseq::MethodCall_strategy = st.builds(
-    gseq::MethodCall,
+gseq_MethodCall_strategy = st.builds(
+    gseq_MethodCall,
 )
-gseq::Operation_strategy = st.builds(
-    gseq::Operation,
+gseq_Operation_strategy = st.builds(
+    gseq_Operation,
 )
 
 @given(instance=BooleanExpression_strategy)
@@ -474,48 +474,45 @@ gseq::Operation_strategy = st.builds(
 def test_booleanexpression_instantiation(instance):
     assert isinstance(instance, BooleanExpression)
 
-@given(instance=gseq::False_strategy)
+@given(instance=gseq_Not_strategy)
 @settings(max_examples=50)
-def test_gseq::false_instantiation(instance):
-    assert isinstance(instance, gseq::False)
+def test_gseq_not_instantiation(instance):
+    assert isinstance(instance, gseq_Not)
 
-@given(instance=gseq::Not_strategy)
+@given(instance=gseq_Equality_strategy)
 @settings(max_examples=50)
-def test_gseq::not_instantiation(instance):
-    assert isinstance(instance, gseq::Not)
+def test_gseq_equality_instantiation(instance):
+    assert isinstance(instance, gseq_Equality)
 
-@given(instance=gseq::Equality_strategy)
+@given(instance=gseq_False_strategy)
 @settings(max_examples=50)
-def test_gseq::equality_instantiation(instance):
-    assert isinstance(instance, gseq::Equality)
+def test_gseq_false_instantiation(instance):
+    assert isinstance(instance, gseq_False)
 
-@given(instance=gseq::True_strategy)
+@given(instance=gseq_True_strategy)
 @settings(max_examples=50)
-def test_gseq::true_instantiation(instance):
-    assert isinstance(instance, gseq::True)
+def test_gseq_true_instantiation(instance):
+    assert isinstance(instance, gseq_True)
 
-@given(instance=gseq::GreaterThan_strategy)
+@given(instance=gseq_GreaterThan_strategy)
 @settings(max_examples=50)
-def test_gseq::greaterthan_instantiation(instance):
-    assert isinstance(instance, gseq::GreaterThan)
+def test_gseq_greaterthan_instantiation(instance):
+    assert isinstance(instance, gseq_GreaterThan)
 
-@given(instance=gseq::And_strategy)
+@given(instance=gseq_And_strategy)
 @settings(max_examples=50)
-def test_gseq::and_instantiation(instance):
-    assert isinstance(instance, gseq::And)
+def test_gseq_and_instantiation(instance):
+    assert isinstance(instance, gseq_And)
 
-@given(instance=gseq::Method_strategy)
+@given(instance=gseq_Method_strategy)
 @settings(max_examples=50)
-def test_gseq::method_instantiation(instance):
-    assert isinstance(instance, gseq::Method)
-
-@given(instance=gseq::Method_strategy)
-def test_gseq::method_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_gseq_method_instantiation(instance):
+    assert isinstance(instance, gseq_Method)
 
 
-@given(instance=gseq::Method_strategy)
-def test_gseq::method_name_setter(instance):
+
+@given(instance=gseq_Method_strategy)
+def test_gseq_method_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
@@ -526,9 +523,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=gseq::Method_strategy)
+@given(instance=gseq_Method_strategy)
 @settings(max_examples=30)
-def test_gseq::method_call_changes_state(instance):
+def test_gseq_method_call_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -540,19 +537,19 @@ def test_gseq::method_call_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'call' in gseq::Method is empty"
+        assert has_statements, f"Function 'call' in gseq_Method is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'call' in gseq::Method did not change state; check implementation")
+            warnings.warn(f"Operation 'call' in gseq_Method did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'call' in gseq::Method is not implemented or raised an error")
+        warnings.warn(f"Operation 'call' in gseq_Method is not implemented or raised an error")
 
-@given(instance=gseq::Program_strategy)
+@given(instance=gseq_Program_strategy)
 @settings(max_examples=50)
-def test_gseq::program_instantiation(instance):
-    assert isinstance(instance, gseq::Program)
+def test_gseq_program_instantiation(instance):
+    assert isinstance(instance, gseq_Program)
 
 import warnings
 import copy
@@ -560,9 +557,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=gseq::Program_strategy)
+@given(instance=gseq_Program_strategy)
 @settings(max_examples=30)
-def test_gseq::program_init_changes_state(instance):
+def test_gseq_program_init_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -574,87 +571,78 @@ def test_gseq::program_init_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'init' in gseq::Program is empty"
+        assert has_statements, f"Function 'init' in gseq_Program is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'init' in gseq::Program did not change state; check implementation")
+            warnings.warn(f"Operation 'init' in gseq_Program did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'init' in gseq::Program is not implemented or raised an error")
+        warnings.warn(f"Operation 'init' in gseq_Program is not implemented or raised an error")
 
 @given(instance=IntegerExpression_strategy)
 @settings(max_examples=50)
 def test_integerexpression_instantiation(instance):
     assert isinstance(instance, IntegerExpression)
 
-@given(instance=gseq::Plus_strategy)
+@given(instance=gseq_Var_strategy)
 @settings(max_examples=50)
-def test_gseq::plus_instantiation(instance):
-    assert isinstance(instance, gseq::Plus)
-
-@given(instance=gseq::Var_strategy)
-@settings(max_examples=50)
-def test_gseq::var_instantiation(instance):
-    assert isinstance(instance, gseq::Var)
-
-@given(instance=gseq::Var_strategy)
-def test_gseq::var_varName_type(instance):
-    assert isinstance(instance.varName, str)
+def test_gseq_var_instantiation(instance):
+    assert isinstance(instance, gseq_Var)
 
 
-@given(instance=gseq::Var_strategy)
-def test_gseq::var_varName_setter(instance):
+
+@given(instance=gseq_Var_strategy)
+def test_gseq_var_varName_setter(instance):
     original = instance.varName
     instance.varName = original
     assert instance.varName == original
 
-@given(instance=gseq::Const_strategy)
+@given(instance=gseq_Const_strategy)
 @settings(max_examples=50)
-def test_gseq::const_instantiation(instance):
-    assert isinstance(instance, gseq::Const)
-
-@given(instance=gseq::Const_strategy)
-def test_gseq::const_value_type(instance):
-    assert isinstance(instance.value, str)
+def test_gseq_const_instantiation(instance):
+    assert isinstance(instance, gseq_Const)
 
 
-@given(instance=gseq::Const_strategy)
-def test_gseq::const_value_setter(instance):
+
+@given(instance=gseq_Const_strategy)
+def test_gseq_const_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
+
+@given(instance=gseq_Plus_strategy)
+@settings(max_examples=50)
+def test_gseq_plus_instantiation(instance):
+    assert isinstance(instance, gseq_Plus)
 
 @given(instance=Operation_strategy)
 @settings(max_examples=50)
 def test_operation_instantiation(instance):
     assert isinstance(instance, Operation)
 
-@given(instance=gseq::While_strategy)
+@given(instance=gseq_While_strategy)
 @settings(max_examples=50)
-def test_gseq::while_instantiation(instance):
-    assert isinstance(instance, gseq::While)
+def test_gseq_while_instantiation(instance):
+    assert isinstance(instance, gseq_While)
 
-@given(instance=gseq::Assign_strategy)
+@given(instance=gseq_Assign_strategy)
 @settings(max_examples=50)
-def test_gseq::assign_instantiation(instance):
-    assert isinstance(instance, gseq::Assign)
-
-@given(instance=gseq::Assign_strategy)
-def test_gseq::assign_varName_type(instance):
-    assert isinstance(instance.varName, str)
+def test_gseq_assign_instantiation(instance):
+    assert isinstance(instance, gseq_Assign)
 
 
-@given(instance=gseq::Assign_strategy)
-def test_gseq::assign_varName_setter(instance):
+
+@given(instance=gseq_Assign_strategy)
+def test_gseq_assign_varName_setter(instance):
     original = instance.varName
     instance.varName = original
     assert instance.varName == original
 
-@given(instance=gseq::IntegerExpression_strategy)
+@given(instance=gseq_BooleanExpression_strategy)
 @settings(max_examples=50)
-def test_gseq::integerexpression_instantiation(instance):
-    assert isinstance(instance, gseq::IntegerExpression)
+def test_gseq_booleanexpression_instantiation(instance):
+    assert isinstance(instance, gseq_BooleanExpression)
 
 import warnings
 import copy
@@ -662,38 +650,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=gseq::IntegerExpression_strategy)
+@given(instance=gseq_BooleanExpression_strategy)
 @settings(max_examples=30)
-def test_gseq::integerexpression_ivalue_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.ivalue()
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.ivalue).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'ivalue' in gseq::IntegerExpression is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'ivalue' in gseq::IntegerExpression did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'ivalue' in gseq::IntegerExpression is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=gseq::IntegerExpression_strategy)
-@settings(max_examples=30)
-def test_gseq::integerexpression_pretty_changes_state(instance):
+def test_gseq_booleanexpression_pretty_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -705,24 +664,14 @@ def test_gseq::integerexpression_pretty_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'pretty' in gseq::IntegerExpression is empty"
+        assert has_statements, f"Function 'pretty' in gseq_BooleanExpression is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'pretty' in gseq::IntegerExpression did not change state; check implementation")
+            warnings.warn(f"Operation 'pretty' in gseq_BooleanExpression did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'pretty' in gseq::IntegerExpression is not implemented or raised an error")
-
-@given(instance=gseq::If_strategy)
-@settings(max_examples=50)
-def test_gseq::if_instantiation(instance):
-    assert isinstance(instance, gseq::If)
-
-@given(instance=gseq::BooleanExpression_strategy)
-@settings(max_examples=50)
-def test_gseq::booleanexpression_instantiation(instance):
-    assert isinstance(instance, gseq::BooleanExpression)
+        warnings.warn(f"Operation 'pretty' in gseq_BooleanExpression is not implemented or raised an error")
 
 import warnings
 import copy
@@ -730,9 +679,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=gseq::BooleanExpression_strategy)
+@given(instance=gseq_BooleanExpression_strategy)
 @settings(max_examples=30)
-def test_gseq::booleanexpression_bvalue_changes_state(instance):
+def test_gseq_booleanexpression_bvalue_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -744,14 +693,24 @@ def test_gseq::booleanexpression_bvalue_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'bvalue' in gseq::BooleanExpression is empty"
+        assert has_statements, f"Function 'bvalue' in gseq_BooleanExpression is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'bvalue' in gseq::BooleanExpression did not change state; check implementation")
+            warnings.warn(f"Operation 'bvalue' in gseq_BooleanExpression did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'bvalue' in gseq::BooleanExpression is not implemented or raised an error")
+        warnings.warn(f"Operation 'bvalue' in gseq_BooleanExpression is not implemented or raised an error")
+
+@given(instance=gseq_If_strategy)
+@settings(max_examples=50)
+def test_gseq_if_instantiation(instance):
+    assert isinstance(instance, gseq_If)
+
+@given(instance=gseq_IntegerExpression_strategy)
+@settings(max_examples=50)
+def test_gseq_integerexpression_instantiation(instance):
+    assert isinstance(instance, gseq_IntegerExpression)
 
 import warnings
 import copy
@@ -759,9 +718,38 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=gseq::BooleanExpression_strategy)
+@given(instance=gseq_IntegerExpression_strategy)
 @settings(max_examples=30)
-def test_gseq::booleanexpression_pretty_changes_state(instance):
+def test_gseq_integerexpression_ivalue_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.ivalue()
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.ivalue).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'ivalue' in gseq_IntegerExpression is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'ivalue' in gseq_IntegerExpression did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'ivalue' in gseq_IntegerExpression is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=gseq_IntegerExpression_strategy)
+@settings(max_examples=30)
+def test_gseq_integerexpression_pretty_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -773,19 +761,19 @@ def test_gseq::booleanexpression_pretty_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'pretty' in gseq::BooleanExpression is empty"
+        assert has_statements, f"Function 'pretty' in gseq_IntegerExpression is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'pretty' in gseq::BooleanExpression did not change state; check implementation")
+            warnings.warn(f"Operation 'pretty' in gseq_IntegerExpression did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'pretty' in gseq::BooleanExpression is not implemented or raised an error")
+        warnings.warn(f"Operation 'pretty' in gseq_IntegerExpression is not implemented or raised an error")
 
-@given(instance=gseq::Print_strategy)
+@given(instance=gseq_Print_strategy)
 @settings(max_examples=50)
-def test_gseq::print_instantiation(instance):
-    assert isinstance(instance, gseq::Print)
+def test_gseq_print_instantiation(instance):
+    assert isinstance(instance, gseq_Print)
 
 import warnings
 import copy
@@ -793,9 +781,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=gseq::Print_strategy)
+@given(instance=gseq_Print_strategy)
 @settings(max_examples=30)
-def test_gseq::print_print_changes_state(instance):
+def test_gseq_print_print_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -807,24 +795,24 @@ def test_gseq::print_print_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'print' in gseq::Print is empty"
+        assert has_statements, f"Function 'print' in gseq_Print is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'print' in gseq::Print did not change state; check implementation")
+            warnings.warn(f"Operation 'print' in gseq_Print did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'print' in gseq::Print is not implemented or raised an error")
+        warnings.warn(f"Operation 'print' in gseq_Print is not implemented or raised an error")
 
-@given(instance=gseq::MethodCall_strategy)
+@given(instance=gseq_MethodCall_strategy)
 @settings(max_examples=50)
-def test_gseq::methodcall_instantiation(instance):
-    assert isinstance(instance, gseq::MethodCall)
+def test_gseq_methodcall_instantiation(instance):
+    assert isinstance(instance, gseq_MethodCall)
 
-@given(instance=gseq::Operation_strategy)
+@given(instance=gseq_Operation_strategy)
 @settings(max_examples=50)
-def test_gseq::operation_instantiation(instance):
-    assert isinstance(instance, gseq::Operation)
+def test_gseq_operation_instantiation(instance):
+    assert isinstance(instance, gseq_Operation)
 
 import warnings
 import copy
@@ -832,9 +820,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=gseq::Operation_strategy)
+@given(instance=gseq_Operation_strategy)
 @settings(max_examples=30)
-def test_gseq::operation_execute_changes_state(instance):
+def test_gseq_operation_execute_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -846,11 +834,11 @@ def test_gseq::operation_execute_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'execute' in gseq::Operation is empty"
+        assert has_statements, f"Function 'execute' in gseq_Operation is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'execute' in gseq::Operation did not change state; check implementation")
+            warnings.warn(f"Operation 'execute' in gseq_Operation did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'execute' in gseq::Operation is not implemented or raised an error")
+        warnings.warn(f"Operation 'execute' in gseq_Operation is not implemented or raised an error")

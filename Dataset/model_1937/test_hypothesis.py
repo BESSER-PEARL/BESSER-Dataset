@@ -3,14 +3,14 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    restaurant::Table,
-    restaurant::Menu,
-    restaurant::Restaurant,
-    restaurant::Booking,
-    restaurant::Waiter,
+from python_code import (
+    restaurant_Table,
+    restaurant_Menu,
+    restaurant_Restaurant,
+    restaurant_Booking,
+    restaurant_Waiter,
 )
 
 # =============================================================================
@@ -19,72 +19,72 @@ from classes import (
 
 
 
-def test_restaurant::table_is_not_abstract():
-    assert not inspect.isabstract(restaurant::Table)
+def test_restaurant_table_is_not_abstract():
+    assert not inspect.isabstract(restaurant_Table)
 
 
-def test_restaurant::table_constructor_exists():
-    assert callable(restaurant::Table.__init__)
+def test_restaurant_table_constructor_exists():
+    assert callable(restaurant_Table.__init__)
 
 
-def test_restaurant::table_constructor_args():
-    sig = inspect.signature(restaurant::Table.__init__)
+def test_restaurant_table_constructor_args():
+    sig = inspect.signature(restaurant_Table.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_restaurant::menu_is_not_abstract():
-    assert not inspect.isabstract(restaurant::Menu)
+def test_restaurant_menu_is_not_abstract():
+    assert not inspect.isabstract(restaurant_Menu)
 
 
-def test_restaurant::menu_constructor_exists():
-    assert callable(restaurant::Menu.__init__)
+def test_restaurant_menu_constructor_exists():
+    assert callable(restaurant_Menu.__init__)
 
 
-def test_restaurant::menu_constructor_args():
-    sig = inspect.signature(restaurant::Menu.__init__)
+def test_restaurant_menu_constructor_args():
+    sig = inspect.signature(restaurant_Menu.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_restaurant::restaurant_is_not_abstract():
-    assert not inspect.isabstract(restaurant::Restaurant)
+def test_restaurant_restaurant_is_not_abstract():
+    assert not inspect.isabstract(restaurant_Restaurant)
 
 
-def test_restaurant::restaurant_constructor_exists():
-    assert callable(restaurant::Restaurant.__init__)
+def test_restaurant_restaurant_constructor_exists():
+    assert callable(restaurant_Restaurant.__init__)
 
 
-def test_restaurant::restaurant_constructor_args():
-    sig = inspect.signature(restaurant::Restaurant.__init__)
+def test_restaurant_restaurant_constructor_args():
+    sig = inspect.signature(restaurant_Restaurant.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_restaurant::booking_is_not_abstract():
-    assert not inspect.isabstract(restaurant::Booking)
+def test_restaurant_booking_is_not_abstract():
+    assert not inspect.isabstract(restaurant_Booking)
 
 
-def test_restaurant::booking_constructor_exists():
-    assert callable(restaurant::Booking.__init__)
+def test_restaurant_booking_constructor_exists():
+    assert callable(restaurant_Booking.__init__)
 
 
-def test_restaurant::booking_constructor_args():
-    sig = inspect.signature(restaurant::Booking.__init__)
+def test_restaurant_booking_constructor_args():
+    sig = inspect.signature(restaurant_Booking.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_restaurant::waiter_is_not_abstract():
-    assert not inspect.isabstract(restaurant::Waiter)
+def test_restaurant_waiter_is_not_abstract():
+    assert not inspect.isabstract(restaurant_Waiter)
 
 
-def test_restaurant::waiter_constructor_exists():
-    assert callable(restaurant::Waiter.__init__)
+def test_restaurant_waiter_constructor_exists():
+    assert callable(restaurant_Waiter.__init__)
 
 
-def test_restaurant::waiter_constructor_args():
-    sig = inspect.signature(restaurant::Waiter.__init__)
+def test_restaurant_waiter_constructor_args():
+    sig = inspect.signature(restaurant_Waiter.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -99,43 +99,43 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-restaurant::Table_strategy = st.builds(
-    restaurant::Table,
+restaurant_Table_strategy = st.builds(
+    restaurant_Table,
 )
-restaurant::Menu_strategy = st.builds(
-    restaurant::Menu,
+restaurant_Menu_strategy = st.builds(
+    restaurant_Menu,
 )
-restaurant::Restaurant_strategy = st.builds(
-    restaurant::Restaurant,
+restaurant_Restaurant_strategy = st.builds(
+    restaurant_Restaurant,
 )
-restaurant::Booking_strategy = st.builds(
-    restaurant::Booking,
+restaurant_Booking_strategy = st.builds(
+    restaurant_Booking,
 )
-restaurant::Waiter_strategy = st.builds(
-    restaurant::Waiter,
+restaurant_Waiter_strategy = st.builds(
+    restaurant_Waiter,
 )
 
-@given(instance=restaurant::Table_strategy)
+@given(instance=restaurant_Table_strategy)
 @settings(max_examples=50)
-def test_restaurant::table_instantiation(instance):
-    assert isinstance(instance, restaurant::Table)
+def test_restaurant_table_instantiation(instance):
+    assert isinstance(instance, restaurant_Table)
 
-@given(instance=restaurant::Menu_strategy)
+@given(instance=restaurant_Menu_strategy)
 @settings(max_examples=50)
-def test_restaurant::menu_instantiation(instance):
-    assert isinstance(instance, restaurant::Menu)
+def test_restaurant_menu_instantiation(instance):
+    assert isinstance(instance, restaurant_Menu)
 
-@given(instance=restaurant::Restaurant_strategy)
+@given(instance=restaurant_Restaurant_strategy)
 @settings(max_examples=50)
-def test_restaurant::restaurant_instantiation(instance):
-    assert isinstance(instance, restaurant::Restaurant)
+def test_restaurant_restaurant_instantiation(instance):
+    assert isinstance(instance, restaurant_Restaurant)
 
-@given(instance=restaurant::Booking_strategy)
+@given(instance=restaurant_Booking_strategy)
 @settings(max_examples=50)
-def test_restaurant::booking_instantiation(instance):
-    assert isinstance(instance, restaurant::Booking)
+def test_restaurant_booking_instantiation(instance):
+    assert isinstance(instance, restaurant_Booking)
 
-@given(instance=restaurant::Waiter_strategy)
+@given(instance=restaurant_Waiter_strategy)
 @settings(max_examples=50)
-def test_restaurant::waiter_instantiation(instance):
-    assert isinstance(instance, restaurant::Waiter)
+def test_restaurant_waiter_instantiation(instance):
+    assert isinstance(instance, restaurant_Waiter)

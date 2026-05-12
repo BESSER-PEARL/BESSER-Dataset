@@ -3,7 +3,7 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
 from python_code import (
     Requirement,
@@ -38,11 +38,29 @@ def test_requirement_constructor_exists():
 def test_requirement_constructor_args():
     sig = inspect.signature(Requirement.__init__)
     params = list(sig.parameters.keys())
+    assert "Photo" in params, "Missing parameter 'Photo'"
+    assert "Curriculum_Vitae" in params, "Missing parameter 'Curriculum_Vitae'"
     assert "ID_Card" in params, "Missing parameter 'ID_Card'"
     assert "Diploma" in params, "Missing parameter 'Diploma'"
-    assert "Curriculum_Vitae" in params, "Missing parameter 'Curriculum_Vitae'"
     assert "Transcript" in params, "Missing parameter 'Transcript'"
-    assert "Photo" in params, "Missing parameter 'Photo'"
+
+def test_requirement_has_Photo():
+    assert hasattr(Requirement, "Photo")
+    descriptor = None
+    for klass in Requirement.__mro__:
+        if "Photo" in klass.__dict__:
+            descriptor = klass.__dict__["Photo"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_requirement_has_Curriculum_Vitae():
+    assert hasattr(Requirement, "Curriculum_Vitae")
+    descriptor = None
+    for klass in Requirement.__mro__:
+        if "Curriculum_Vitae" in klass.__dict__:
+            descriptor = klass.__dict__["Curriculum_Vitae"]
+            break
+    assert isinstance(descriptor, property)
 
 def test_requirement_has_ID_Card():
     assert hasattr(Requirement, "ID_Card")
@@ -62,30 +80,12 @@ def test_requirement_has_Diploma():
             break
     assert isinstance(descriptor, property)
 
-def test_requirement_has_Curriculum_Vitae():
-    assert hasattr(Requirement, "Curriculum_Vitae")
-    descriptor = None
-    for klass in Requirement.__mro__:
-        if "Curriculum_Vitae" in klass.__dict__:
-            descriptor = klass.__dict__["Curriculum_Vitae"]
-            break
-    assert isinstance(descriptor, property)
-
 def test_requirement_has_Transcript():
     assert hasattr(Requirement, "Transcript")
     descriptor = None
     for klass in Requirement.__mro__:
         if "Transcript" in klass.__dict__:
             descriptor = klass.__dict__["Transcript"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_requirement_has_Photo():
-    assert hasattr(Requirement, "Photo")
-    descriptor = None
-    for klass in Requirement.__mro__:
-        if "Photo" in klass.__dict__:
-            descriptor = klass.__dict__["Photo"]
             break
     assert isinstance(descriptor, property)
 
@@ -102,10 +102,19 @@ def test_attendance_constructor_exists():
 def test_attendance_constructor_args():
     sig = inspect.signature(Attendance.__init__)
     params = list(sig.parameters.keys())
-    assert "Name" in params, "Missing parameter 'Name'"
-    assert "Details" in params, "Missing parameter 'Details'"
-    assert "Position" in params, "Missing parameter 'Position'"
     assert "Date___Time" in params, "Missing parameter 'Date___Time'"
+    assert "Name" in params, "Missing parameter 'Name'"
+    assert "Position" in params, "Missing parameter 'Position'"
+    assert "Details" in params, "Missing parameter 'Details'"
+
+def test_attendance_has_Date___Time():
+    assert hasattr(Attendance, "Date___Time")
+    descriptor = None
+    for klass in Attendance.__mro__:
+        if "Date___Time" in klass.__dict__:
+            descriptor = klass.__dict__["Date___Time"]
+            break
+    assert isinstance(descriptor, property)
 
 def test_attendance_has_Name():
     assert hasattr(Attendance, "Name")
@@ -113,15 +122,6 @@ def test_attendance_has_Name():
     for klass in Attendance.__mro__:
         if "Name" in klass.__dict__:
             descriptor = klass.__dict__["Name"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_attendance_has_Details():
-    assert hasattr(Attendance, "Details")
-    descriptor = None
-    for klass in Attendance.__mro__:
-        if "Details" in klass.__dict__:
-            descriptor = klass.__dict__["Details"]
             break
     assert isinstance(descriptor, property)
 
@@ -134,12 +134,12 @@ def test_attendance_has_Position():
             break
     assert isinstance(descriptor, property)
 
-def test_attendance_has_Date___Time():
-    assert hasattr(Attendance, "Date___Time")
+def test_attendance_has_Details():
+    assert hasattr(Attendance, "Details")
     descriptor = None
     for klass in Attendance.__mro__:
-        if "Date___Time" in klass.__dict__:
-            descriptor = klass.__dict__["Date___Time"]
+        if "Details" in klass.__dict__:
+            descriptor = klass.__dict__["Details"]
             break
     assert isinstance(descriptor, property)
 
@@ -190,10 +190,19 @@ def test_position_constructor_exists():
 def test_position_constructor_args():
     sig = inspect.signature(Position.__init__)
     params = list(sig.parameters.keys())
-    assert "positionID" in params, "Missing parameter 'positionID'"
-    assert "divisionName" in params, "Missing parameter 'divisionName'"
-    assert "positionName" in params, "Missing parameter 'positionName'"
     assert "jobID" in params, "Missing parameter 'jobID'"
+    assert "positionID" in params, "Missing parameter 'positionID'"
+    assert "positionName" in params, "Missing parameter 'positionName'"
+    assert "divisionName" in params, "Missing parameter 'divisionName'"
+
+def test_position_has_jobID():
+    assert hasattr(Position, "jobID")
+    descriptor = None
+    for klass in Position.__mro__:
+        if "jobID" in klass.__dict__:
+            descriptor = klass.__dict__["jobID"]
+            break
+    assert isinstance(descriptor, property)
 
 def test_position_has_positionID():
     assert hasattr(Position, "positionID")
@@ -201,15 +210,6 @@ def test_position_has_positionID():
     for klass in Position.__mro__:
         if "positionID" in klass.__dict__:
             descriptor = klass.__dict__["positionID"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_position_has_divisionName():
-    assert hasattr(Position, "divisionName")
-    descriptor = None
-    for klass in Position.__mro__:
-        if "divisionName" in klass.__dict__:
-            descriptor = klass.__dict__["divisionName"]
             break
     assert isinstance(descriptor, property)
 
@@ -222,12 +222,12 @@ def test_position_has_positionName():
             break
     assert isinstance(descriptor, property)
 
-def test_position_has_jobID():
-    assert hasattr(Position, "jobID")
+def test_position_has_divisionName():
+    assert hasattr(Position, "divisionName")
     descriptor = None
     for klass in Position.__mro__:
-        if "jobID" in klass.__dict__:
-            descriptor = klass.__dict__["jobID"]
+        if "divisionName" in klass.__dict__:
+            descriptor = klass.__dict__["divisionName"]
             break
     assert isinstance(descriptor, property)
 
@@ -244,14 +244,32 @@ def test_registration_constructor_exists():
 def test_registration_constructor_args():
     sig = inspect.signature(Registration.__init__)
     params = list(sig.parameters.keys())
+    assert "Address" in params, "Missing parameter 'Address'"
+    assert "Email" in params, "Missing parameter 'Email'"
     assert "Date" in params, "Missing parameter 'Date'"
     assert "Position_Type" in params, "Missing parameter 'Position_Type'"
-    assert "Skills___Requirement" in params, "Missing parameter 'Skills___Requirement'"
-    assert "Email" in params, "Missing parameter 'Email'"
-    assert "Address" in params, "Missing parameter 'Address'"
-    assert "Name" in params, "Missing parameter 'Name'"
     assert "Applied_Position" in params, "Missing parameter 'Applied_Position'"
     assert "Phone" in params, "Missing parameter 'Phone'"
+    assert "Skills___Requirement" in params, "Missing parameter 'Skills___Requirement'"
+    assert "Name" in params, "Missing parameter 'Name'"
+
+def test_registration_has_Address():
+    assert hasattr(Registration, "Address")
+    descriptor = None
+    for klass in Registration.__mro__:
+        if "Address" in klass.__dict__:
+            descriptor = klass.__dict__["Address"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_registration_has_Email():
+    assert hasattr(Registration, "Email")
+    descriptor = None
+    for klass in Registration.__mro__:
+        if "Email" in klass.__dict__:
+            descriptor = klass.__dict__["Email"]
+            break
+    assert isinstance(descriptor, property)
 
 def test_registration_has_Date():
     assert hasattr(Registration, "Date")
@@ -268,42 +286,6 @@ def test_registration_has_Position_Type():
     for klass in Registration.__mro__:
         if "Position_Type" in klass.__dict__:
             descriptor = klass.__dict__["Position_Type"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_registration_has_Skills___Requirement():
-    assert hasattr(Registration, "Skills___Requirement")
-    descriptor = None
-    for klass in Registration.__mro__:
-        if "Skills___Requirement" in klass.__dict__:
-            descriptor = klass.__dict__["Skills___Requirement"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_registration_has_Email():
-    assert hasattr(Registration, "Email")
-    descriptor = None
-    for klass in Registration.__mro__:
-        if "Email" in klass.__dict__:
-            descriptor = klass.__dict__["Email"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_registration_has_Address():
-    assert hasattr(Registration, "Address")
-    descriptor = None
-    for klass in Registration.__mro__:
-        if "Address" in klass.__dict__:
-            descriptor = klass.__dict__["Address"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_registration_has_Name():
-    assert hasattr(Registration, "Name")
-    descriptor = None
-    for klass in Registration.__mro__:
-        if "Name" in klass.__dict__:
-            descriptor = klass.__dict__["Name"]
             break
     assert isinstance(descriptor, property)
 
@@ -325,6 +307,24 @@ def test_registration_has_Phone():
             break
     assert isinstance(descriptor, property)
 
+def test_registration_has_Skills___Requirement():
+    assert hasattr(Registration, "Skills___Requirement")
+    descriptor = None
+    for klass in Registration.__mro__:
+        if "Skills___Requirement" in klass.__dict__:
+            descriptor = klass.__dict__["Skills___Requirement"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_registration_has_Name():
+    assert hasattr(Registration, "Name")
+    descriptor = None
+    for klass in Registration.__mro__:
+        if "Name" in klass.__dict__:
+            descriptor = klass.__dict__["Name"]
+            break
+    assert isinstance(descriptor, property)
+
 
 
 def test_admin_is_not_abstract():
@@ -338,18 +338,9 @@ def test_admin_constructor_exists():
 def test_admin_constructor_args():
     sig = inspect.signature(Admin.__init__)
     params = list(sig.parameters.keys())
-    assert "qualification" in params, "Missing parameter 'qualification'"
     assert "name" in params, "Missing parameter 'name'"
     assert "address" in params, "Missing parameter 'address'"
-
-def test_admin_has_qualification():
-    assert hasattr(Admin, "qualification")
-    descriptor = None
-    for klass in Admin.__mro__:
-        if "qualification" in klass.__dict__:
-            descriptor = klass.__dict__["qualification"]
-            break
-    assert isinstance(descriptor, property)
+    assert "qualification" in params, "Missing parameter 'qualification'"
 
 def test_admin_has_name():
     assert hasattr(Admin, "name")
@@ -369,6 +360,15 @@ def test_admin_has_address():
             break
     assert isinstance(descriptor, property)
 
+def test_admin_has_qualification():
+    assert hasattr(Admin, "qualification")
+    descriptor = None
+    for klass in Admin.__mro__:
+        if "qualification" in klass.__dict__:
+            descriptor = klass.__dict__["qualification"]
+            break
+    assert isinstance(descriptor, property)
+
 
 
 def test_applicant_is_not_abstract():
@@ -383,13 +383,13 @@ def test_applicant_constructor_args():
     sig = inspect.signature(Applicant.__init__)
     params = list(sig.parameters.keys())
     assert "Phone" in params, "Missing parameter 'Phone'"
-    assert "Password" in params, "Missing parameter 'Password'"
-    assert "Applied_Position" in params, "Missing parameter 'Applied_Position'"
-    assert "Address" in params, "Missing parameter 'Address'"
     assert "Email" in params, "Missing parameter 'Email'"
-    assert "Last_Name" in params, "Missing parameter 'Last_Name'"
     assert "Date_of_Birth" in params, "Missing parameter 'Date_of_Birth'"
+    assert "Last_Name" in params, "Missing parameter 'Last_Name'"
+    assert "Applied_Position" in params, "Missing parameter 'Applied_Position'"
+    assert "Password" in params, "Missing parameter 'Password'"
     assert "First_Name" in params, "Missing parameter 'First_Name'"
+    assert "Address" in params, "Missing parameter 'Address'"
 
 def test_applicant_has_Phone():
     assert hasattr(Applicant, "Phone")
@@ -397,33 +397,6 @@ def test_applicant_has_Phone():
     for klass in Applicant.__mro__:
         if "Phone" in klass.__dict__:
             descriptor = klass.__dict__["Phone"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_applicant_has_Password():
-    assert hasattr(Applicant, "Password")
-    descriptor = None
-    for klass in Applicant.__mro__:
-        if "Password" in klass.__dict__:
-            descriptor = klass.__dict__["Password"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_applicant_has_Applied_Position():
-    assert hasattr(Applicant, "Applied_Position")
-    descriptor = None
-    for klass in Applicant.__mro__:
-        if "Applied_Position" in klass.__dict__:
-            descriptor = klass.__dict__["Applied_Position"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_applicant_has_Address():
-    assert hasattr(Applicant, "Address")
-    descriptor = None
-    for klass in Applicant.__mro__:
-        if "Address" in klass.__dict__:
-            descriptor = klass.__dict__["Address"]
             break
     assert isinstance(descriptor, property)
 
@@ -436,15 +409,6 @@ def test_applicant_has_Email():
             break
     assert isinstance(descriptor, property)
 
-def test_applicant_has_Last_Name():
-    assert hasattr(Applicant, "Last_Name")
-    descriptor = None
-    for klass in Applicant.__mro__:
-        if "Last_Name" in klass.__dict__:
-            descriptor = klass.__dict__["Last_Name"]
-            break
-    assert isinstance(descriptor, property)
-
 def test_applicant_has_Date_of_Birth():
     assert hasattr(Applicant, "Date_of_Birth")
     descriptor = None
@@ -454,12 +418,48 @@ def test_applicant_has_Date_of_Birth():
             break
     assert isinstance(descriptor, property)
 
+def test_applicant_has_Last_Name():
+    assert hasattr(Applicant, "Last_Name")
+    descriptor = None
+    for klass in Applicant.__mro__:
+        if "Last_Name" in klass.__dict__:
+            descriptor = klass.__dict__["Last_Name"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_applicant_has_Applied_Position():
+    assert hasattr(Applicant, "Applied_Position")
+    descriptor = None
+    for klass in Applicant.__mro__:
+        if "Applied_Position" in klass.__dict__:
+            descriptor = klass.__dict__["Applied_Position"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_applicant_has_Password():
+    assert hasattr(Applicant, "Password")
+    descriptor = None
+    for klass in Applicant.__mro__:
+        if "Password" in klass.__dict__:
+            descriptor = klass.__dict__["Password"]
+            break
+    assert isinstance(descriptor, property)
+
 def test_applicant_has_First_Name():
     assert hasattr(Applicant, "First_Name")
     descriptor = None
     for klass in Applicant.__mro__:
         if "First_Name" in klass.__dict__:
             descriptor = klass.__dict__["First_Name"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_applicant_has_Address():
+    assert hasattr(Applicant, "Address")
+    descriptor = None
+    for klass in Applicant.__mro__:
+        if "Address" in klass.__dict__:
+            descriptor = klass.__dict__["Address"]
             break
     assert isinstance(descriptor, property)
 
@@ -520,18 +520,9 @@ def test_assessment_constructor_exists():
 def test_assessment_constructor_args():
     sig = inspect.signature(Assessment.__init__)
     params = list(sig.parameters.keys())
-    assert "Total_Score" in params, "Missing parameter 'Total_Score'"
     assert "Type_of_Assessment" in params, "Missing parameter 'Type_of_Assessment'"
+    assert "Total_Score" in params, "Missing parameter 'Total_Score'"
     assert "Name" in params, "Missing parameter 'Name'"
-
-def test_assessment_has_Total_Score():
-    assert hasattr(Assessment, "Total_Score")
-    descriptor = None
-    for klass in Assessment.__mro__:
-        if "Total_Score" in klass.__dict__:
-            descriptor = klass.__dict__["Total_Score"]
-            break
-    assert isinstance(descriptor, property)
 
 def test_assessment_has_Type_of_Assessment():
     assert hasattr(Assessment, "Type_of_Assessment")
@@ -539,6 +530,15 @@ def test_assessment_has_Type_of_Assessment():
     for klass in Assessment.__mro__:
         if "Type_of_Assessment" in klass.__dict__:
             descriptor = klass.__dict__["Type_of_Assessment"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_assessment_has_Total_Score():
+    assert hasattr(Assessment, "Total_Score")
+    descriptor = None
+    for klass in Assessment.__mro__:
+        if "Total_Score" in klass.__dict__:
+            descriptor = klass.__dict__["Total_Score"]
             break
     assert isinstance(descriptor, property)
 
@@ -564,19 +564,10 @@ def test_performance_constructor_exists():
 def test_performance_constructor_args():
     sig = inspect.signature(Performance.__init__)
     params = list(sig.parameters.keys())
-    assert "Punctuality" in params, "Missing parameter 'Punctuality'"
     assert "Coordination" in params, "Missing parameter 'Coordination'"
     assert "Name" in params, "Missing parameter 'Name'"
     assert "Target" in params, "Missing parameter 'Target'"
-
-def test_performance_has_Punctuality():
-    assert hasattr(Performance, "Punctuality")
-    descriptor = None
-    for klass in Performance.__mro__:
-        if "Punctuality" in klass.__dict__:
-            descriptor = klass.__dict__["Punctuality"]
-            break
-    assert isinstance(descriptor, property)
+    assert "Punctuality" in params, "Missing parameter 'Punctuality'"
 
 def test_performance_has_Coordination():
     assert hasattr(Performance, "Coordination")
@@ -605,6 +596,15 @@ def test_performance_has_Target():
             break
     assert isinstance(descriptor, property)
 
+def test_performance_has_Punctuality():
+    assert hasattr(Performance, "Punctuality")
+    descriptor = None
+    for klass in Performance.__mro__:
+        if "Punctuality" in klass.__dict__:
+            descriptor = klass.__dict__["Punctuality"]
+            break
+    assert isinstance(descriptor, property)
+
 
 
 def test_survey_is_not_abstract():
@@ -618,16 +618,16 @@ def test_survey_constructor_exists():
 def test_survey_constructor_args():
     sig = inspect.signature(Survey.__init__)
     params = list(sig.parameters.keys())
-    assert "Question" in params, "Missing parameter 'Question'"
-    assert "Score" in params, "Missing parameter 'Score'"
     assert "Name" in params, "Missing parameter 'Name'"
+    assert "Score" in params, "Missing parameter 'Score'"
+    assert "Question" in params, "Missing parameter 'Question'"
 
-def test_survey_has_Question():
-    assert hasattr(Survey, "Question")
+def test_survey_has_Name():
+    assert hasattr(Survey, "Name")
     descriptor = None
     for klass in Survey.__mro__:
-        if "Question" in klass.__dict__:
-            descriptor = klass.__dict__["Question"]
+        if "Name" in klass.__dict__:
+            descriptor = klass.__dict__["Name"]
             break
     assert isinstance(descriptor, property)
 
@@ -640,12 +640,12 @@ def test_survey_has_Score():
             break
     assert isinstance(descriptor, property)
 
-def test_survey_has_Name():
-    assert hasattr(Survey, "Name")
+def test_survey_has_Question():
+    assert hasattr(Survey, "Question")
     descriptor = None
     for klass in Survey.__mro__:
-        if "Name" in klass.__dict__:
-            descriptor = klass.__dict__["Name"]
+        if "Question" in klass.__dict__:
+            descriptor = klass.__dict__["Question"]
             break
     assert isinstance(descriptor, property)
 
@@ -662,37 +662,19 @@ def test_new_employee_constructor_exists():
 def test_new_employee_constructor_args():
     sig = inspect.signature(New_Employee.__init__)
     params = list(sig.parameters.keys())
-    assert "Place_of_Birth" in params, "Missing parameter 'Place_of_Birth'"
-    assert "Name" in params, "Missing parameter 'Name'"
-    assert "Working_Since" in params, "Missing parameter 'Working_Since'"
+    assert "Position" in params, "Missing parameter 'Position'"
     assert "Date_of_Birth" in params, "Missing parameter 'Date_of_Birth'"
     assert "Division" in params, "Missing parameter 'Division'"
-    assert "Position" in params, "Missing parameter 'Position'"
+    assert "Working_Since" in params, "Missing parameter 'Working_Since'"
+    assert "Name" in params, "Missing parameter 'Name'"
+    assert "Place_of_Birth" in params, "Missing parameter 'Place_of_Birth'"
 
-def test_new_employee_has_Place_of_Birth():
-    assert hasattr(New_Employee, "Place_of_Birth")
+def test_new_employee_has_Position():
+    assert hasattr(New_Employee, "Position")
     descriptor = None
     for klass in New_Employee.__mro__:
-        if "Place_of_Birth" in klass.__dict__:
-            descriptor = klass.__dict__["Place_of_Birth"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_new_employee_has_Name():
-    assert hasattr(New_Employee, "Name")
-    descriptor = None
-    for klass in New_Employee.__mro__:
-        if "Name" in klass.__dict__:
-            descriptor = klass.__dict__["Name"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_new_employee_has_Working_Since():
-    assert hasattr(New_Employee, "Working_Since")
-    descriptor = None
-    for klass in New_Employee.__mro__:
-        if "Working_Since" in klass.__dict__:
-            descriptor = klass.__dict__["Working_Since"]
+        if "Position" in klass.__dict__:
+            descriptor = klass.__dict__["Position"]
             break
     assert isinstance(descriptor, property)
 
@@ -714,12 +696,30 @@ def test_new_employee_has_Division():
             break
     assert isinstance(descriptor, property)
 
-def test_new_employee_has_Position():
-    assert hasattr(New_Employee, "Position")
+def test_new_employee_has_Working_Since():
+    assert hasattr(New_Employee, "Working_Since")
     descriptor = None
     for klass in New_Employee.__mro__:
-        if "Position" in klass.__dict__:
-            descriptor = klass.__dict__["Position"]
+        if "Working_Since" in klass.__dict__:
+            descriptor = klass.__dict__["Working_Since"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_new_employee_has_Name():
+    assert hasattr(New_Employee, "Name")
+    descriptor = None
+    for klass in New_Employee.__mro__:
+        if "Name" in klass.__dict__:
+            descriptor = klass.__dict__["Name"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_new_employee_has_Place_of_Birth():
+    assert hasattr(New_Employee, "Place_of_Birth")
+    descriptor = None
+    for klass in New_Employee.__mro__:
+        if "Place_of_Birth" in klass.__dict__:
+            descriptor = klass.__dict__["Place_of_Birth"]
             break
     assert isinstance(descriptor, property)
 
@@ -736,10 +736,28 @@ def test_task_constructor_exists():
 def test_task_constructor_args():
     sig = inspect.signature(Task.__init__)
     params = list(sig.parameters.keys())
+    assert "Name" in params, "Missing parameter 'Name'"
+    assert "Task_Detail" in params, "Missing parameter 'Task_Detail'"
     assert "Deadline" in params, "Missing parameter 'Deadline'"
     assert "Task_Name" in params, "Missing parameter 'Task_Name'"
-    assert "Task_Detail" in params, "Missing parameter 'Task_Detail'"
-    assert "Name" in params, "Missing parameter 'Name'"
+
+def test_task_has_Name():
+    assert hasattr(Task, "Name")
+    descriptor = None
+    for klass in Task.__mro__:
+        if "Name" in klass.__dict__:
+            descriptor = klass.__dict__["Name"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_task_has_Task_Detail():
+    assert hasattr(Task, "Task_Detail")
+    descriptor = None
+    for klass in Task.__mro__:
+        if "Task_Detail" in klass.__dict__:
+            descriptor = klass.__dict__["Task_Detail"]
+            break
+    assert isinstance(descriptor, property)
 
 def test_task_has_Deadline():
     assert hasattr(Task, "Deadline")
@@ -759,24 +777,6 @@ def test_task_has_Task_Name():
             break
     assert isinstance(descriptor, property)
 
-def test_task_has_Task_Detail():
-    assert hasattr(Task, "Task_Detail")
-    descriptor = None
-    for klass in Task.__mro__:
-        if "Task_Detail" in klass.__dict__:
-            descriptor = klass.__dict__["Task_Detail"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_task_has_Name():
-    assert hasattr(Task, "Name")
-    descriptor = None
-    for klass in Task.__mro__:
-        if "Name" in klass.__dict__:
-            descriptor = klass.__dict__["Name"]
-            break
-    assert isinstance(descriptor, property)
-
 
 # =============================================================================
 # HYPOTHESIS STRATEGIES
@@ -791,26 +791,26 @@ safe_text = st.text(
 ).filter(lambda s: s[0].isalpha())
 Requirement_strategy = st.builds(
     Requirement,
+    Photo=
+        safe_text,
+    Curriculum_Vitae=
+        safe_text,
     ID_Card=
         safe_text,
     Diploma=
         safe_text,
-    Curriculum_Vitae=
-        safe_text,
     Transcript=
-        safe_text,
-    Photo=
         safe_text
 )
 Attendance_strategy = st.builds(
     Attendance,
-    Name=
+    Date___Time=
         safe_text,
-    Details=
+    Name=
         safe_text,
     Position=
         safe_text,
-    Date___Time=
+    Details=
         safe_text
 )
 Login_strategy = st.builds(
@@ -822,60 +822,60 @@ Login_strategy = st.builds(
 )
 Position_strategy = st.builds(
     Position,
+    jobID=
+        safe_text,
     positionID=
         st.integers(),
-    divisionName=
-        safe_text,
     positionName=
         safe_text,
-    jobID=
+    divisionName=
         safe_text
 )
 Registration_strategy = st.builds(
     Registration,
+    Address=
+        safe_text,
+    Email=
+        safe_text,
     Date=
         safe_text,
     Position_Type=
         safe_text,
-    Skills___Requirement=
-        safe_text,
-    Email=
-        safe_text,
-    Address=
-        safe_text,
-    Name=
-        safe_text,
     Applied_Position=
         safe_text,
     Phone=
+        safe_text,
+    Skills___Requirement=
+        safe_text,
+    Name=
         safe_text
 )
 Admin_strategy = st.builds(
     Admin,
-    qualification=
-        safe_text,
     name=
         safe_text,
     address=
+        safe_text,
+    qualification=
         safe_text
 )
 Applicant_strategy = st.builds(
     Applicant,
     Phone=
         safe_text,
-    Password=
-        safe_text,
-    Applied_Position=
-        safe_text,
-    Address=
-        safe_text,
     Email=
-        safe_text,
-    Last_Name=
         safe_text,
     Date_of_Birth=
         safe_text,
+    Last_Name=
+        safe_text,
+    Applied_Position=
+        safe_text,
+    Password=
+        safe_text,
     First_Name=
+        safe_text,
+    Address=
         safe_text
 )
 Assessment__Self_Assessment_strategy = st.builds(
@@ -889,57 +889,57 @@ Assessment__Self_Assessment_strategy = st.builds(
 )
 Assessment_strategy = st.builds(
     Assessment,
-    Total_Score=
-        safe_text,
     Type_of_Assessment=
+        safe_text,
+    Total_Score=
         safe_text,
     Name=
         safe_text
 )
 Performance_strategy = st.builds(
     Performance,
-    Punctuality=
-        safe_text,
     Coordination=
         safe_text,
     Name=
         safe_text,
     Target=
+        safe_text,
+    Punctuality=
         safe_text
 )
 Survey_strategy = st.builds(
     Survey,
-    Question=
+    Name=
         safe_text,
     Score=
         safe_text,
-    Name=
+    Question=
         safe_text
 )
 New_Employee_strategy = st.builds(
     New_Employee,
-    Place_of_Birth=
-        safe_text,
-    Name=
-        safe_text,
-    Working_Since=
+    Position=
         safe_text,
     Date_of_Birth=
         safe_text,
     Division=
         safe_text,
-    Position=
+    Working_Since=
+        safe_text,
+    Name=
+        safe_text,
+    Place_of_Birth=
         safe_text
 )
 Task_strategy = st.builds(
     Task,
-    Deadline=
-        safe_text,
-    Task_Name=
+    Name=
         safe_text,
     Task_Detail=
         safe_text,
-    Name=
+    Deadline=
+        safe_text,
+    Task_Name=
         safe_text
 )
 
@@ -948,53 +948,6 @@ Task_strategy = st.builds(
 def test_requirement_instantiation(instance):
     assert isinstance(instance, Requirement)
 
-@given(instance=Requirement_strategy)
-def test_requirement_ID_Card_type(instance):
-    assert isinstance(instance.ID_Card, str)
-
-
-@given(instance=Requirement_strategy)
-def test_requirement_ID_Card_setter(instance):
-    original = instance.ID_Card
-    instance.ID_Card = original
-    assert instance.ID_Card == original
-
-@given(instance=Requirement_strategy)
-def test_requirement_Diploma_type(instance):
-    assert isinstance(instance.Diploma, str)
-
-
-@given(instance=Requirement_strategy)
-def test_requirement_Diploma_setter(instance):
-    original = instance.Diploma
-    instance.Diploma = original
-    assert instance.Diploma == original
-
-@given(instance=Requirement_strategy)
-def test_requirement_Curriculum_Vitae_type(instance):
-    assert isinstance(instance.Curriculum_Vitae, str)
-
-
-@given(instance=Requirement_strategy)
-def test_requirement_Curriculum_Vitae_setter(instance):
-    original = instance.Curriculum_Vitae
-    instance.Curriculum_Vitae = original
-    assert instance.Curriculum_Vitae == original
-
-@given(instance=Requirement_strategy)
-def test_requirement_Transcript_type(instance):
-    assert isinstance(instance.Transcript, str)
-
-
-@given(instance=Requirement_strategy)
-def test_requirement_Transcript_setter(instance):
-    original = instance.Transcript
-    instance.Transcript = original
-    assert instance.Transcript == original
-
-@given(instance=Requirement_strategy)
-def test_requirement_Photo_type(instance):
-    assert isinstance(instance.Photo, str)
 
 
 @given(instance=Requirement_strategy)
@@ -1003,47 +956,43 @@ def test_requirement_Photo_setter(instance):
     instance.Photo = original
     assert instance.Photo == original
 
+
+
+@given(instance=Requirement_strategy)
+def test_requirement_Curriculum_Vitae_setter(instance):
+    original = instance.Curriculum_Vitae
+    instance.Curriculum_Vitae = original
+    assert instance.Curriculum_Vitae == original
+
+
+
+@given(instance=Requirement_strategy)
+def test_requirement_ID_Card_setter(instance):
+    original = instance.ID_Card
+    instance.ID_Card = original
+    assert instance.ID_Card == original
+
+
+
+@given(instance=Requirement_strategy)
+def test_requirement_Diploma_setter(instance):
+    original = instance.Diploma
+    instance.Diploma = original
+    assert instance.Diploma == original
+
+
+
+@given(instance=Requirement_strategy)
+def test_requirement_Transcript_setter(instance):
+    original = instance.Transcript
+    instance.Transcript = original
+    assert instance.Transcript == original
+
 @given(instance=Attendance_strategy)
 @settings(max_examples=50)
 def test_attendance_instantiation(instance):
     assert isinstance(instance, Attendance)
 
-@given(instance=Attendance_strategy)
-def test_attendance_Name_type(instance):
-    assert isinstance(instance.Name, str)
-
-
-@given(instance=Attendance_strategy)
-def test_attendance_Name_setter(instance):
-    original = instance.Name
-    instance.Name = original
-    assert instance.Name == original
-
-@given(instance=Attendance_strategy)
-def test_attendance_Details_type(instance):
-    assert isinstance(instance.Details, str)
-
-
-@given(instance=Attendance_strategy)
-def test_attendance_Details_setter(instance):
-    original = instance.Details
-    instance.Details = original
-    assert instance.Details == original
-
-@given(instance=Attendance_strategy)
-def test_attendance_Position_type(instance):
-    assert isinstance(instance.Position, str)
-
-
-@given(instance=Attendance_strategy)
-def test_attendance_Position_setter(instance):
-    original = instance.Position
-    instance.Position = original
-    assert instance.Position == original
-
-@given(instance=Attendance_strategy)
-def test_attendance_Date___Time_type(instance):
-    assert isinstance(instance.Date___Time, str)
 
 
 @given(instance=Attendance_strategy)
@@ -1052,14 +1001,35 @@ def test_attendance_Date___Time_setter(instance):
     instance.Date___Time = original
     assert instance.Date___Time == original
 
+
+
+@given(instance=Attendance_strategy)
+def test_attendance_Name_setter(instance):
+    original = instance.Name
+    instance.Name = original
+    assert instance.Name == original
+
+
+
+@given(instance=Attendance_strategy)
+def test_attendance_Position_setter(instance):
+    original = instance.Position
+    instance.Position = original
+    assert instance.Position == original
+
+
+
+@given(instance=Attendance_strategy)
+def test_attendance_Details_setter(instance):
+    original = instance.Details
+    instance.Details = original
+    assert instance.Details == original
+
 @given(instance=Login_strategy)
 @settings(max_examples=50)
 def test_login_instantiation(instance):
     assert isinstance(instance, Login)
 
-@given(instance=Login_strategy)
-def test_login_password_type(instance):
-    assert isinstance(instance.password, str)
 
 
 @given(instance=Login_strategy)
@@ -1068,9 +1038,6 @@ def test_login_password_setter(instance):
     instance.password = original
     assert instance.password == original
 
-@given(instance=Login_strategy)
-def test_login_userid_type(instance):
-    assert isinstance(instance.userid, str)
 
 
 @given(instance=Login_strategy)
@@ -1084,42 +1051,6 @@ def test_login_userid_setter(instance):
 def test_position_instantiation(instance):
     assert isinstance(instance, Position)
 
-@given(instance=Position_strategy)
-def test_position_positionID_type(instance):
-    assert isinstance(instance.positionID, int)
-
-
-@given(instance=Position_strategy)
-def test_position_positionID_setter(instance):
-    original = instance.positionID
-    instance.positionID = original
-    assert instance.positionID == original
-
-@given(instance=Position_strategy)
-def test_position_divisionName_type(instance):
-    assert isinstance(instance.divisionName, str)
-
-
-@given(instance=Position_strategy)
-def test_position_divisionName_setter(instance):
-    original = instance.divisionName
-    instance.divisionName = original
-    assert instance.divisionName == original
-
-@given(instance=Position_strategy)
-def test_position_positionName_type(instance):
-    assert isinstance(instance.positionName, str)
-
-
-@given(instance=Position_strategy)
-def test_position_positionName_setter(instance):
-    original = instance.positionName
-    instance.positionName = original
-    assert instance.positionName == original
-
-@given(instance=Position_strategy)
-def test_position_jobID_type(instance):
-    assert isinstance(instance.jobID, str)
 
 
 @given(instance=Position_strategy)
@@ -1128,58 +1059,35 @@ def test_position_jobID_setter(instance):
     instance.jobID = original
     assert instance.jobID == original
 
+
+
+@given(instance=Position_strategy)
+def test_position_positionID_setter(instance):
+    original = instance.positionID
+    instance.positionID = original
+    assert instance.positionID == original
+
+
+
+@given(instance=Position_strategy)
+def test_position_positionName_setter(instance):
+    original = instance.positionName
+    instance.positionName = original
+    assert instance.positionName == original
+
+
+
+@given(instance=Position_strategy)
+def test_position_divisionName_setter(instance):
+    original = instance.divisionName
+    instance.divisionName = original
+    assert instance.divisionName == original
+
 @given(instance=Registration_strategy)
 @settings(max_examples=50)
 def test_registration_instantiation(instance):
     assert isinstance(instance, Registration)
 
-@given(instance=Registration_strategy)
-def test_registration_Date_type(instance):
-    assert isinstance(instance.Date, str)
-
-
-@given(instance=Registration_strategy)
-def test_registration_Date_setter(instance):
-    original = instance.Date
-    instance.Date = original
-    assert instance.Date == original
-
-@given(instance=Registration_strategy)
-def test_registration_Position_Type_type(instance):
-    assert isinstance(instance.Position_Type, str)
-
-
-@given(instance=Registration_strategy)
-def test_registration_Position_Type_setter(instance):
-    original = instance.Position_Type
-    instance.Position_Type = original
-    assert instance.Position_Type == original
-
-@given(instance=Registration_strategy)
-def test_registration_Skills___Requirement_type(instance):
-    assert isinstance(instance.Skills___Requirement, str)
-
-
-@given(instance=Registration_strategy)
-def test_registration_Skills___Requirement_setter(instance):
-    original = instance.Skills___Requirement
-    instance.Skills___Requirement = original
-    assert instance.Skills___Requirement == original
-
-@given(instance=Registration_strategy)
-def test_registration_Email_type(instance):
-    assert isinstance(instance.Email, str)
-
-
-@given(instance=Registration_strategy)
-def test_registration_Email_setter(instance):
-    original = instance.Email
-    instance.Email = original
-    assert instance.Email == original
-
-@given(instance=Registration_strategy)
-def test_registration_Address_type(instance):
-    assert isinstance(instance.Address, str)
 
 
 @given(instance=Registration_strategy)
@@ -1188,20 +1096,30 @@ def test_registration_Address_setter(instance):
     instance.Address = original
     assert instance.Address == original
 
-@given(instance=Registration_strategy)
-def test_registration_Name_type(instance):
-    assert isinstance(instance.Name, str)
 
 
 @given(instance=Registration_strategy)
-def test_registration_Name_setter(instance):
-    original = instance.Name
-    instance.Name = original
-    assert instance.Name == original
+def test_registration_Email_setter(instance):
+    original = instance.Email
+    instance.Email = original
+    assert instance.Email == original
+
+
 
 @given(instance=Registration_strategy)
-def test_registration_Applied_Position_type(instance):
-    assert isinstance(instance.Applied_Position, str)
+def test_registration_Date_setter(instance):
+    original = instance.Date
+    instance.Date = original
+    assert instance.Date == original
+
+
+
+@given(instance=Registration_strategy)
+def test_registration_Position_Type_setter(instance):
+    original = instance.Position_Type
+    instance.Position_Type = original
+    assert instance.Position_Type == original
+
 
 
 @given(instance=Registration_strategy)
@@ -1210,9 +1128,6 @@ def test_registration_Applied_Position_setter(instance):
     instance.Applied_Position = original
     assert instance.Applied_Position == original
 
-@given(instance=Registration_strategy)
-def test_registration_Phone_type(instance):
-    assert isinstance(instance.Phone, str)
 
 
 @given(instance=Registration_strategy)
@@ -1221,25 +1136,27 @@ def test_registration_Phone_setter(instance):
     instance.Phone = original
     assert instance.Phone == original
 
+
+
+@given(instance=Registration_strategy)
+def test_registration_Skills___Requirement_setter(instance):
+    original = instance.Skills___Requirement
+    instance.Skills___Requirement = original
+    assert instance.Skills___Requirement == original
+
+
+
+@given(instance=Registration_strategy)
+def test_registration_Name_setter(instance):
+    original = instance.Name
+    instance.Name = original
+    assert instance.Name == original
+
 @given(instance=Admin_strategy)
 @settings(max_examples=50)
 def test_admin_instantiation(instance):
     assert isinstance(instance, Admin)
 
-@given(instance=Admin_strategy)
-def test_admin_qualification_type(instance):
-    assert isinstance(instance.qualification, str)
-
-
-@given(instance=Admin_strategy)
-def test_admin_qualification_setter(instance):
-    original = instance.qualification
-    instance.qualification = original
-    assert instance.qualification == original
-
-@given(instance=Admin_strategy)
-def test_admin_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
 @given(instance=Admin_strategy)
@@ -1248,9 +1165,6 @@ def test_admin_name_setter(instance):
     instance.name = original
     assert instance.name == original
 
-@given(instance=Admin_strategy)
-def test_admin_address_type(instance):
-    assert isinstance(instance.address, str)
 
 
 @given(instance=Admin_strategy)
@@ -1259,14 +1173,19 @@ def test_admin_address_setter(instance):
     instance.address = original
     assert instance.address == original
 
+
+
+@given(instance=Admin_strategy)
+def test_admin_qualification_setter(instance):
+    original = instance.qualification
+    instance.qualification = original
+    assert instance.qualification == original
+
 @given(instance=Applicant_strategy)
 @settings(max_examples=50)
 def test_applicant_instantiation(instance):
     assert isinstance(instance, Applicant)
 
-@given(instance=Applicant_strategy)
-def test_applicant_Phone_type(instance):
-    assert isinstance(instance.Phone, str)
 
 
 @given(instance=Applicant_strategy)
@@ -1275,42 +1194,6 @@ def test_applicant_Phone_setter(instance):
     instance.Phone = original
     assert instance.Phone == original
 
-@given(instance=Applicant_strategy)
-def test_applicant_Password_type(instance):
-    assert isinstance(instance.Password, str)
-
-
-@given(instance=Applicant_strategy)
-def test_applicant_Password_setter(instance):
-    original = instance.Password
-    instance.Password = original
-    assert instance.Password == original
-
-@given(instance=Applicant_strategy)
-def test_applicant_Applied_Position_type(instance):
-    assert isinstance(instance.Applied_Position, str)
-
-
-@given(instance=Applicant_strategy)
-def test_applicant_Applied_Position_setter(instance):
-    original = instance.Applied_Position
-    instance.Applied_Position = original
-    assert instance.Applied_Position == original
-
-@given(instance=Applicant_strategy)
-def test_applicant_Address_type(instance):
-    assert isinstance(instance.Address, str)
-
-
-@given(instance=Applicant_strategy)
-def test_applicant_Address_setter(instance):
-    original = instance.Address
-    instance.Address = original
-    assert instance.Address == original
-
-@given(instance=Applicant_strategy)
-def test_applicant_Email_type(instance):
-    assert isinstance(instance.Email, str)
 
 
 @given(instance=Applicant_strategy)
@@ -1319,20 +1202,6 @@ def test_applicant_Email_setter(instance):
     instance.Email = original
     assert instance.Email == original
 
-@given(instance=Applicant_strategy)
-def test_applicant_Last_Name_type(instance):
-    assert isinstance(instance.Last_Name, str)
-
-
-@given(instance=Applicant_strategy)
-def test_applicant_Last_Name_setter(instance):
-    original = instance.Last_Name
-    instance.Last_Name = original
-    assert instance.Last_Name == original
-
-@given(instance=Applicant_strategy)
-def test_applicant_Date_of_Birth_type(instance):
-    assert isinstance(instance.Date_of_Birth, str)
 
 
 @given(instance=Applicant_strategy)
@@ -1341,9 +1210,30 @@ def test_applicant_Date_of_Birth_setter(instance):
     instance.Date_of_Birth = original
     assert instance.Date_of_Birth == original
 
+
+
 @given(instance=Applicant_strategy)
-def test_applicant_First_Name_type(instance):
-    assert isinstance(instance.First_Name, str)
+def test_applicant_Last_Name_setter(instance):
+    original = instance.Last_Name
+    instance.Last_Name = original
+    assert instance.Last_Name == original
+
+
+
+@given(instance=Applicant_strategy)
+def test_applicant_Applied_Position_setter(instance):
+    original = instance.Applied_Position
+    instance.Applied_Position = original
+    assert instance.Applied_Position == original
+
+
+
+@given(instance=Applicant_strategy)
+def test_applicant_Password_setter(instance):
+    original = instance.Password
+    instance.Password = original
+    assert instance.Password == original
+
 
 
 @given(instance=Applicant_strategy)
@@ -1352,14 +1242,19 @@ def test_applicant_First_Name_setter(instance):
     instance.First_Name = original
     assert instance.First_Name == original
 
+
+
+@given(instance=Applicant_strategy)
+def test_applicant_Address_setter(instance):
+    original = instance.Address
+    instance.Address = original
+    assert instance.Address == original
+
 @given(instance=Assessment__Self_Assessment_strategy)
 @settings(max_examples=50)
 def test_assessment__self_assessment_instantiation(instance):
     assert isinstance(instance, Assessment__Self_Assessment)
 
-@given(instance=Assessment__Self_Assessment_strategy)
-def test_assessment__self_assessment_Name_type(instance):
-    assert isinstance(instance.Name, str)
 
 
 @given(instance=Assessment__Self_Assessment_strategy)
@@ -1368,9 +1263,6 @@ def test_assessment__self_assessment_Name_setter(instance):
     instance.Name = original
     assert instance.Name == original
 
-@given(instance=Assessment__Self_Assessment_strategy)
-def test_assessment__self_assessment_Score_type(instance):
-    assert isinstance(instance.Score, str)
 
 
 @given(instance=Assessment__Self_Assessment_strategy)
@@ -1379,9 +1271,6 @@ def test_assessment__self_assessment_Score_setter(instance):
     instance.Score = original
     assert instance.Score == original
 
-@given(instance=Assessment__Self_Assessment_strategy)
-def test_assessment__self_assessment_Question_type(instance):
-    assert isinstance(instance.Question, str)
 
 
 @given(instance=Assessment__Self_Assessment_strategy)
@@ -1395,20 +1284,6 @@ def test_assessment__self_assessment_Question_setter(instance):
 def test_assessment_instantiation(instance):
     assert isinstance(instance, Assessment)
 
-@given(instance=Assessment_strategy)
-def test_assessment_Total_Score_type(instance):
-    assert isinstance(instance.Total_Score, str)
-
-
-@given(instance=Assessment_strategy)
-def test_assessment_Total_Score_setter(instance):
-    original = instance.Total_Score
-    instance.Total_Score = original
-    assert instance.Total_Score == original
-
-@given(instance=Assessment_strategy)
-def test_assessment_Type_of_Assessment_type(instance):
-    assert isinstance(instance.Type_of_Assessment, str)
 
 
 @given(instance=Assessment_strategy)
@@ -1417,9 +1292,14 @@ def test_assessment_Type_of_Assessment_setter(instance):
     instance.Type_of_Assessment = original
     assert instance.Type_of_Assessment == original
 
+
+
 @given(instance=Assessment_strategy)
-def test_assessment_Name_type(instance):
-    assert isinstance(instance.Name, str)
+def test_assessment_Total_Score_setter(instance):
+    original = instance.Total_Score
+    instance.Total_Score = original
+    assert instance.Total_Score == original
+
 
 
 @given(instance=Assessment_strategy)
@@ -1433,20 +1313,6 @@ def test_assessment_Name_setter(instance):
 def test_performance_instantiation(instance):
     assert isinstance(instance, Performance)
 
-@given(instance=Performance_strategy)
-def test_performance_Punctuality_type(instance):
-    assert isinstance(instance.Punctuality, str)
-
-
-@given(instance=Performance_strategy)
-def test_performance_Punctuality_setter(instance):
-    original = instance.Punctuality
-    instance.Punctuality = original
-    assert instance.Punctuality == original
-
-@given(instance=Performance_strategy)
-def test_performance_Coordination_type(instance):
-    assert isinstance(instance.Coordination, str)
 
 
 @given(instance=Performance_strategy)
@@ -1455,9 +1321,6 @@ def test_performance_Coordination_setter(instance):
     instance.Coordination = original
     assert instance.Coordination == original
 
-@given(instance=Performance_strategy)
-def test_performance_Name_type(instance):
-    assert isinstance(instance.Name, str)
 
 
 @given(instance=Performance_strategy)
@@ -1466,9 +1329,6 @@ def test_performance_Name_setter(instance):
     instance.Name = original
     assert instance.Name == original
 
-@given(instance=Performance_strategy)
-def test_performance_Target_type(instance):
-    assert isinstance(instance.Target, str)
 
 
 @given(instance=Performance_strategy)
@@ -1477,36 +1337,19 @@ def test_performance_Target_setter(instance):
     instance.Target = original
     assert instance.Target == original
 
+
+
+@given(instance=Performance_strategy)
+def test_performance_Punctuality_setter(instance):
+    original = instance.Punctuality
+    instance.Punctuality = original
+    assert instance.Punctuality == original
+
 @given(instance=Survey_strategy)
 @settings(max_examples=50)
 def test_survey_instantiation(instance):
     assert isinstance(instance, Survey)
 
-@given(instance=Survey_strategy)
-def test_survey_Question_type(instance):
-    assert isinstance(instance.Question, str)
-
-
-@given(instance=Survey_strategy)
-def test_survey_Question_setter(instance):
-    original = instance.Question
-    instance.Question = original
-    assert instance.Question == original
-
-@given(instance=Survey_strategy)
-def test_survey_Score_type(instance):
-    assert isinstance(instance.Score, str)
-
-
-@given(instance=Survey_strategy)
-def test_survey_Score_setter(instance):
-    original = instance.Score
-    instance.Score = original
-    assert instance.Score == original
-
-@given(instance=Survey_strategy)
-def test_survey_Name_type(instance):
-    assert isinstance(instance.Name, str)
 
 
 @given(instance=Survey_strategy)
@@ -1515,69 +1358,27 @@ def test_survey_Name_setter(instance):
     instance.Name = original
     assert instance.Name == original
 
+
+
+@given(instance=Survey_strategy)
+def test_survey_Score_setter(instance):
+    original = instance.Score
+    instance.Score = original
+    assert instance.Score == original
+
+
+
+@given(instance=Survey_strategy)
+def test_survey_Question_setter(instance):
+    original = instance.Question
+    instance.Question = original
+    assert instance.Question == original
+
 @given(instance=New_Employee_strategy)
 @settings(max_examples=50)
 def test_new_employee_instantiation(instance):
     assert isinstance(instance, New_Employee)
 
-@given(instance=New_Employee_strategy)
-def test_new_employee_Place_of_Birth_type(instance):
-    assert isinstance(instance.Place_of_Birth, str)
-
-
-@given(instance=New_Employee_strategy)
-def test_new_employee_Place_of_Birth_setter(instance):
-    original = instance.Place_of_Birth
-    instance.Place_of_Birth = original
-    assert instance.Place_of_Birth == original
-
-@given(instance=New_Employee_strategy)
-def test_new_employee_Name_type(instance):
-    assert isinstance(instance.Name, str)
-
-
-@given(instance=New_Employee_strategy)
-def test_new_employee_Name_setter(instance):
-    original = instance.Name
-    instance.Name = original
-    assert instance.Name == original
-
-@given(instance=New_Employee_strategy)
-def test_new_employee_Working_Since_type(instance):
-    assert isinstance(instance.Working_Since, str)
-
-
-@given(instance=New_Employee_strategy)
-def test_new_employee_Working_Since_setter(instance):
-    original = instance.Working_Since
-    instance.Working_Since = original
-    assert instance.Working_Since == original
-
-@given(instance=New_Employee_strategy)
-def test_new_employee_Date_of_Birth_type(instance):
-    assert isinstance(instance.Date_of_Birth, str)
-
-
-@given(instance=New_Employee_strategy)
-def test_new_employee_Date_of_Birth_setter(instance):
-    original = instance.Date_of_Birth
-    instance.Date_of_Birth = original
-    assert instance.Date_of_Birth == original
-
-@given(instance=New_Employee_strategy)
-def test_new_employee_Division_type(instance):
-    assert isinstance(instance.Division, str)
-
-
-@given(instance=New_Employee_strategy)
-def test_new_employee_Division_setter(instance):
-    original = instance.Division
-    instance.Division = original
-    assert instance.Division == original
-
-@given(instance=New_Employee_strategy)
-def test_new_employee_Position_type(instance):
-    assert isinstance(instance.Position, str)
 
 
 @given(instance=New_Employee_strategy)
@@ -1586,36 +1387,59 @@ def test_new_employee_Position_setter(instance):
     instance.Position = original
     assert instance.Position == original
 
+
+
+@given(instance=New_Employee_strategy)
+def test_new_employee_Date_of_Birth_setter(instance):
+    original = instance.Date_of_Birth
+    instance.Date_of_Birth = original
+    assert instance.Date_of_Birth == original
+
+
+
+@given(instance=New_Employee_strategy)
+def test_new_employee_Division_setter(instance):
+    original = instance.Division
+    instance.Division = original
+    assert instance.Division == original
+
+
+
+@given(instance=New_Employee_strategy)
+def test_new_employee_Working_Since_setter(instance):
+    original = instance.Working_Since
+    instance.Working_Since = original
+    assert instance.Working_Since == original
+
+
+
+@given(instance=New_Employee_strategy)
+def test_new_employee_Name_setter(instance):
+    original = instance.Name
+    instance.Name = original
+    assert instance.Name == original
+
+
+
+@given(instance=New_Employee_strategy)
+def test_new_employee_Place_of_Birth_setter(instance):
+    original = instance.Place_of_Birth
+    instance.Place_of_Birth = original
+    assert instance.Place_of_Birth == original
+
 @given(instance=Task_strategy)
 @settings(max_examples=50)
 def test_task_instantiation(instance):
     assert isinstance(instance, Task)
 
-@given(instance=Task_strategy)
-def test_task_Deadline_type(instance):
-    assert isinstance(instance.Deadline, str)
 
 
 @given(instance=Task_strategy)
-def test_task_Deadline_setter(instance):
-    original = instance.Deadline
-    instance.Deadline = original
-    assert instance.Deadline == original
+def test_task_Name_setter(instance):
+    original = instance.Name
+    instance.Name = original
+    assert instance.Name == original
 
-@given(instance=Task_strategy)
-def test_task_Task_Name_type(instance):
-    assert isinstance(instance.Task_Name, str)
-
-
-@given(instance=Task_strategy)
-def test_task_Task_Name_setter(instance):
-    original = instance.Task_Name
-    instance.Task_Name = original
-    assert instance.Task_Name == original
-
-@given(instance=Task_strategy)
-def test_task_Task_Detail_type(instance):
-    assert isinstance(instance.Task_Detail, str)
 
 
 @given(instance=Task_strategy)
@@ -1624,13 +1448,18 @@ def test_task_Task_Detail_setter(instance):
     instance.Task_Detail = original
     assert instance.Task_Detail == original
 
-@given(instance=Task_strategy)
-def test_task_Name_type(instance):
-    assert isinstance(instance.Name, str)
 
 
 @given(instance=Task_strategy)
-def test_task_Name_setter(instance):
-    original = instance.Name
-    instance.Name = original
-    assert instance.Name == original
+def test_task_Deadline_setter(instance):
+    original = instance.Deadline
+    instance.Deadline = original
+    assert instance.Deadline == original
+
+
+
+@given(instance=Task_strategy)
+def test_task_Task_Name_setter(instance):
+    original = instance.Task_Name
+    instance.Task_Name = original
+    assert instance.Task_Name == original

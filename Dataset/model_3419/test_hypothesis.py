@@ -3,68 +3,68 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    tracker::EventAttributeSchema,
-    tracker::EventSchema,
-    tracker::EventAttribute,
+from python_code import (
+    tracker_EventAttributeSchema,
+    tracker_EventSchema,
+    tracker_EventAttribute,
     MedicalCondition,
-    tracker::Mastitis,
+    tracker_Mastitis,
     Birthing,
-    tracker::Calving,
+    tracker_Calving,
     Bovine,
-    tracker::BovineBison,
-    tracker::BovineDairy,
-    tracker::BovineBeef,
-    tracker::Schema,
-    tracker::Location,
-    tracker::Premises,
+    tracker_BovineDairy,
+    tracker_BovineBison,
+    tracker_BovineBeef,
+    tracker_Schema,
+    tracker_Location,
+    tracker_Premises,
     Event,
-    tracker::BirthDefect,
-    tracker::HerdTest,
-    tracker::Sighting,
-    tracker::LostTag,
-    tracker::MovedOut,
-    tracker::MilkTest,
-    tracker::Exported,
-    tracker::GenericEvent,
-    tracker::ICVI,
-    tracker::TagRetired,
-    tracker::Imported,
-    tracker::MedicalCondition,
-    tracker::Died,
-    tracker::MedicalTreatment,
-    tracker::ReplacedTag,
-    tracker::AnimalMissing,
-    tracker::Slaughtered,
-    tracker::MovedIn,
-    tracker::TagApplied,
-    tracker::Birthing,
-    tracker::WeighIn,
-    tracker::TagAllocated,
+    tracker_WeighIn,
+    tracker_MilkTest,
+    tracker_MovedIn,
+    tracker_TagRetired,
+    tracker_BirthDefect,
+    tracker_ICVI,
+    tracker_LostTag,
+    tracker_HerdTest,
+    tracker_Imported,
+    tracker_Birthing,
+    tracker_MovedOut,
+    tracker_ReplacedTag,
+    tracker_TagApplied,
+    tracker_GenericEvent,
+    tracker_Sighting,
+    tracker_Slaughtered,
+    tracker_AnimalMissing,
+    tracker_Died,
+    tracker_MedicalCondition,
+    tracker_MedicalTreatment,
+    tracker_Exported,
+    tracker_TagAllocated,
     Animal,
-    tracker::Ovine,
-    tracker::Swine,
-    tracker::Equine,
-    tracker::Caprine,
-    tracker::Bovine,
-    tracker::Event,
-    tracker::Tag,
-    tracker::Animal,
-    Sex,
-    AnimalType,
-    TreatmentMethod,
-    SheepBreed,
-    BisonBreed,
-    EventDataType,
-    BeefBreed,
+    tracker_Swine,
+    tracker_Ovine,
+    tracker_Equine,
+    tracker_Caprine,
+    tracker_Bovine,
+    tracker_Event,
+    tracker_Tag,
+    tracker_Animal,
     SwineBreed,
-    HorseBreed,
+    GoatBreed,
     OneToTen,
+    BisonBreed,
+    SheepBreed,
     DairyBreed,
     Treatment,
-    GoatBreed,
+    EventDataType,
+    TreatmentMethod,
+    BeefBreed,
+    AnimalType,
+    Sex,
+    HorseBreed,
 )
 
 # =============================================================================
@@ -73,121 +73,121 @@ from classes import (
 
 
 
-def test_tracker::eventattributeschema_is_not_abstract():
-    assert not inspect.isabstract(tracker::EventAttributeSchema)
+def test_tracker_eventattributeschema_is_not_abstract():
+    assert not inspect.isabstract(tracker_EventAttributeSchema)
 
 
-def test_tracker::eventattributeschema_constructor_exists():
-    assert callable(tracker::EventAttributeSchema.__init__)
+def test_tracker_eventattributeschema_constructor_exists():
+    assert callable(tracker_EventAttributeSchema.__init__)
 
 
-def test_tracker::eventattributeschema_constructor_args():
-    sig = inspect.signature(tracker::EventAttributeSchema.__init__)
+def test_tracker_eventattributeschema_constructor_args():
+    sig = inspect.signature(tracker_EventAttributeSchema.__init__)
     params = list(sig.parameters.keys())
-    assert "name" in params, "Missing parameter 'name'"
     assert "description" in params, "Missing parameter 'description'"
     assert "dataType" in params, "Missing parameter 'dataType'"
+    assert "name" in params, "Missing parameter 'name'"
 
-def test_tracker::eventattributeschema_has_name():
-    assert hasattr(tracker::EventAttributeSchema, "name")
+def test_tracker_eventattributeschema_has_description():
+    assert hasattr(tracker_EventAttributeSchema, "description")
     descriptor = None
-    for klass in tracker::EventAttributeSchema.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_tracker::eventattributeschema_has_description():
-    assert hasattr(tracker::EventAttributeSchema, "description")
-    descriptor = None
-    for klass in tracker::EventAttributeSchema.__mro__:
+    for klass in tracker_EventAttributeSchema.__mro__:
         if "description" in klass.__dict__:
             descriptor = klass.__dict__["description"]
             break
     assert isinstance(descriptor, property)
 
-def test_tracker::eventattributeschema_has_dataType():
-    assert hasattr(tracker::EventAttributeSchema, "dataType")
+def test_tracker_eventattributeschema_has_dataType():
+    assert hasattr(tracker_EventAttributeSchema, "dataType")
     descriptor = None
-    for klass in tracker::EventAttributeSchema.__mro__:
+    for klass in tracker_EventAttributeSchema.__mro__:
         if "dataType" in klass.__dict__:
             descriptor = klass.__dict__["dataType"]
             break
     assert isinstance(descriptor, property)
 
-
-
-def test_tracker::eventschema_is_not_abstract():
-    assert not inspect.isabstract(tracker::EventSchema)
-
-
-def test_tracker::eventschema_constructor_exists():
-    assert callable(tracker::EventSchema.__init__)
-
-
-def test_tracker::eventschema_constructor_args():
-    sig = inspect.signature(tracker::EventSchema.__init__)
-    params = list(sig.parameters.keys())
-    assert "name" in params, "Missing parameter 'name'"
-    assert "animalType" in params, "Missing parameter 'animalType'"
-    assert "description" in params, "Missing parameter 'description'"
-
-def test_tracker::eventschema_has_name():
-    assert hasattr(tracker::EventSchema, "name")
+def test_tracker_eventattributeschema_has_name():
+    assert hasattr(tracker_EventAttributeSchema, "name")
     descriptor = None
-    for klass in tracker::EventSchema.__mro__:
+    for klass in tracker_EventAttributeSchema.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
-def test_tracker::eventschema_has_animalType():
-    assert hasattr(tracker::EventSchema, "animalType")
+
+
+def test_tracker_eventschema_is_not_abstract():
+    assert not inspect.isabstract(tracker_EventSchema)
+
+
+def test_tracker_eventschema_constructor_exists():
+    assert callable(tracker_EventSchema.__init__)
+
+
+def test_tracker_eventschema_constructor_args():
+    sig = inspect.signature(tracker_EventSchema.__init__)
+    params = list(sig.parameters.keys())
+    assert "name" in params, "Missing parameter 'name'"
+    assert "description" in params, "Missing parameter 'description'"
+    assert "animalType" in params, "Missing parameter 'animalType'"
+
+def test_tracker_eventschema_has_name():
+    assert hasattr(tracker_EventSchema, "name")
     descriptor = None
-    for klass in tracker::EventSchema.__mro__:
-        if "animalType" in klass.__dict__:
-            descriptor = klass.__dict__["animalType"]
+    for klass in tracker_EventSchema.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
-def test_tracker::eventschema_has_description():
-    assert hasattr(tracker::EventSchema, "description")
+def test_tracker_eventschema_has_description():
+    assert hasattr(tracker_EventSchema, "description")
     descriptor = None
-    for klass in tracker::EventSchema.__mro__:
+    for klass in tracker_EventSchema.__mro__:
         if "description" in klass.__dict__:
             descriptor = klass.__dict__["description"]
             break
     assert isinstance(descriptor, property)
 
+def test_tracker_eventschema_has_animalType():
+    assert hasattr(tracker_EventSchema, "animalType")
+    descriptor = None
+    for klass in tracker_EventSchema.__mro__:
+        if "animalType" in klass.__dict__:
+            descriptor = klass.__dict__["animalType"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_tracker::eventattribute_is_not_abstract():
-    assert not inspect.isabstract(tracker::EventAttribute)
+
+def test_tracker_eventattribute_is_not_abstract():
+    assert not inspect.isabstract(tracker_EventAttribute)
 
 
-def test_tracker::eventattribute_constructor_exists():
-    assert callable(tracker::EventAttribute.__init__)
+def test_tracker_eventattribute_constructor_exists():
+    assert callable(tracker_EventAttribute.__init__)
 
 
-def test_tracker::eventattribute_constructor_args():
-    sig = inspect.signature(tracker::EventAttribute.__init__)
+def test_tracker_eventattribute_constructor_args():
+    sig = inspect.signature(tracker_EventAttribute.__init__)
     params = list(sig.parameters.keys())
     assert "key" in params, "Missing parameter 'key'"
     assert "value" in params, "Missing parameter 'value'"
 
-def test_tracker::eventattribute_has_key():
-    assert hasattr(tracker::EventAttribute, "key")
+def test_tracker_eventattribute_has_key():
+    assert hasattr(tracker_EventAttribute, "key")
     descriptor = None
-    for klass in tracker::EventAttribute.__mro__:
+    for klass in tracker_EventAttribute.__mro__:
         if "key" in klass.__dict__:
             descriptor = klass.__dict__["key"]
             break
     assert isinstance(descriptor, property)
 
-def test_tracker::eventattribute_has_value():
-    assert hasattr(tracker::EventAttribute, "value")
+def test_tracker_eventattribute_has_value():
+    assert hasattr(tracker_EventAttribute, "value")
     descriptor = None
-    for klass in tracker::EventAttribute.__mro__:
+    for klass in tracker_EventAttribute.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -209,33 +209,33 @@ def test_medicalcondition_constructor_args():
 
 
 
-def test_tracker::mastitis_is_not_abstract():
-    assert not inspect.isabstract(tracker::Mastitis)
+def test_tracker_mastitis_is_not_abstract():
+    assert not inspect.isabstract(tracker_Mastitis)
 
 
-def test_tracker::mastitis_constructor_exists():
-    assert callable(tracker::Mastitis.__init__)
+def test_tracker_mastitis_constructor_exists():
+    assert callable(tracker_Mastitis.__init__)
 
 
-def test_tracker::mastitis_constructor_args():
-    sig = inspect.signature(tracker::Mastitis.__init__)
+def test_tracker_mastitis_constructor_args():
+    sig = inspect.signature(tracker_Mastitis.__init__)
     params = list(sig.parameters.keys())
     assert "origin" in params, "Missing parameter 'origin'"
     assert "location" in params, "Missing parameter 'location'"
 
-def test_tracker::mastitis_has_origin():
-    assert hasattr(tracker::Mastitis, "origin")
+def test_tracker_mastitis_has_origin():
+    assert hasattr(tracker_Mastitis, "origin")
     descriptor = None
-    for klass in tracker::Mastitis.__mro__:
+    for klass in tracker_Mastitis.__mro__:
         if "origin" in klass.__dict__:
             descriptor = klass.__dict__["origin"]
             break
     assert isinstance(descriptor, property)
 
-def test_tracker::mastitis_has_location():
-    assert hasattr(tracker::Mastitis, "location")
+def test_tracker_mastitis_has_location():
+    assert hasattr(tracker_Mastitis, "location")
     descriptor = None
-    for klass in tracker::Mastitis.__mro__:
+    for klass in tracker_Mastitis.__mro__:
         if "location" in klass.__dict__:
             descriptor = klass.__dict__["location"]
             break
@@ -257,16 +257,16 @@ def test_birthing_constructor_args():
 
 
 
-def test_tracker::calving_is_not_abstract():
-    assert not inspect.isabstract(tracker::Calving)
+def test_tracker_calving_is_not_abstract():
+    assert not inspect.isabstract(tracker_Calving)
 
 
-def test_tracker::calving_constructor_exists():
-    assert callable(tracker::Calving.__init__)
+def test_tracker_calving_constructor_exists():
+    assert callable(tracker_Calving.__init__)
 
 
-def test_tracker::calving_constructor_args():
-    sig = inspect.signature(tracker::Calving.__init__)
+def test_tracker_calving_constructor_args():
+    sig = inspect.signature(tracker_Calving.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -285,47 +285,23 @@ def test_bovine_constructor_args():
 
 
 
-def test_tracker::bovinebison_is_not_abstract():
-    assert not inspect.isabstract(tracker::BovineBison)
+def test_tracker_bovinedairy_is_not_abstract():
+    assert not inspect.isabstract(tracker_BovineDairy)
 
 
-def test_tracker::bovinebison_constructor_exists():
-    assert callable(tracker::BovineBison.__init__)
+def test_tracker_bovinedairy_constructor_exists():
+    assert callable(tracker_BovineDairy.__init__)
 
 
-def test_tracker::bovinebison_constructor_args():
-    sig = inspect.signature(tracker::BovineBison.__init__)
-    params = list(sig.parameters.keys())
-    assert "buffaloBreed" in params, "Missing parameter 'buffaloBreed'"
-
-def test_tracker::bovinebison_has_buffaloBreed():
-    assert hasattr(tracker::BovineBison, "buffaloBreed")
-    descriptor = None
-    for klass in tracker::BovineBison.__mro__:
-        if "buffaloBreed" in klass.__dict__:
-            descriptor = klass.__dict__["buffaloBreed"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_tracker::bovinedairy_is_not_abstract():
-    assert not inspect.isabstract(tracker::BovineDairy)
-
-
-def test_tracker::bovinedairy_constructor_exists():
-    assert callable(tracker::BovineDairy.__init__)
-
-
-def test_tracker::bovinedairy_constructor_args():
-    sig = inspect.signature(tracker::BovineDairy.__init__)
+def test_tracker_bovinedairy_constructor_args():
+    sig = inspect.signature(tracker_BovineDairy.__init__)
     params = list(sig.parameters.keys())
     assert "dairyBreed" in params, "Missing parameter 'dairyBreed'"
 
-def test_tracker::bovinedairy_has_dairyBreed():
-    assert hasattr(tracker::BovineDairy, "dairyBreed")
+def test_tracker_bovinedairy_has_dairyBreed():
+    assert hasattr(tracker_BovineDairy, "dairyBreed")
     descriptor = None
-    for klass in tracker::BovineDairy.__mro__:
+    for klass in tracker_BovineDairy.__mro__:
         if "dairyBreed" in klass.__dict__:
             descriptor = klass.__dict__["dairyBreed"]
             break
@@ -333,23 +309,47 @@ def test_tracker::bovinedairy_has_dairyBreed():
 
 
 
-def test_tracker::bovinebeef_is_not_abstract():
-    assert not inspect.isabstract(tracker::BovineBeef)
+def test_tracker_bovinebison_is_not_abstract():
+    assert not inspect.isabstract(tracker_BovineBison)
 
 
-def test_tracker::bovinebeef_constructor_exists():
-    assert callable(tracker::BovineBeef.__init__)
+def test_tracker_bovinebison_constructor_exists():
+    assert callable(tracker_BovineBison.__init__)
 
 
-def test_tracker::bovinebeef_constructor_args():
-    sig = inspect.signature(tracker::BovineBeef.__init__)
+def test_tracker_bovinebison_constructor_args():
+    sig = inspect.signature(tracker_BovineBison.__init__)
+    params = list(sig.parameters.keys())
+    assert "buffaloBreed" in params, "Missing parameter 'buffaloBreed'"
+
+def test_tracker_bovinebison_has_buffaloBreed():
+    assert hasattr(tracker_BovineBison, "buffaloBreed")
+    descriptor = None
+    for klass in tracker_BovineBison.__mro__:
+        if "buffaloBreed" in klass.__dict__:
+            descriptor = klass.__dict__["buffaloBreed"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_tracker_bovinebeef_is_not_abstract():
+    assert not inspect.isabstract(tracker_BovineBeef)
+
+
+def test_tracker_bovinebeef_constructor_exists():
+    assert callable(tracker_BovineBeef.__init__)
+
+
+def test_tracker_bovinebeef_constructor_args():
+    sig = inspect.signature(tracker_BovineBeef.__init__)
     params = list(sig.parameters.keys())
     assert "beefBreed" in params, "Missing parameter 'beefBreed'"
 
-def test_tracker::bovinebeef_has_beefBreed():
-    assert hasattr(tracker::BovineBeef, "beefBreed")
+def test_tracker_bovinebeef_has_beefBreed():
+    assert hasattr(tracker_BovineBeef, "beefBreed")
     descriptor = None
-    for klass in tracker::BovineBeef.__mro__:
+    for klass in tracker_BovineBeef.__mro__:
         if "beefBreed" in klass.__dict__:
             descriptor = klass.__dict__["beefBreed"]
             break
@@ -357,37 +357,37 @@ def test_tracker::bovinebeef_has_beefBreed():
 
 
 
-def test_tracker::schema_is_not_abstract():
-    assert not inspect.isabstract(tracker::Schema)
+def test_tracker_schema_is_not_abstract():
+    assert not inspect.isabstract(tracker_Schema)
 
 
-def test_tracker::schema_constructor_exists():
-    assert callable(tracker::Schema.__init__)
+def test_tracker_schema_constructor_exists():
+    assert callable(tracker_Schema.__init__)
 
 
-def test_tracker::schema_constructor_args():
-    sig = inspect.signature(tracker::Schema.__init__)
+def test_tracker_schema_constructor_args():
+    sig = inspect.signature(tracker_Schema.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_tracker::location_is_not_abstract():
-    assert not inspect.isabstract(tracker::Location)
+def test_tracker_location_is_not_abstract():
+    assert not inspect.isabstract(tracker_Location)
 
 
-def test_tracker::location_constructor_exists():
-    assert callable(tracker::Location.__init__)
+def test_tracker_location_constructor_exists():
+    assert callable(tracker_Location.__init__)
 
 
-def test_tracker::location_constructor_args():
-    sig = inspect.signature(tracker::Location.__init__)
+def test_tracker_location_constructor_args():
+    sig = inspect.signature(tracker_Location.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_tracker::location_has_name():
-    assert hasattr(tracker::Location, "name")
+def test_tracker_location_has_name():
+    assert hasattr(tracker_Location, "name")
     descriptor = None
-    for klass in tracker::Location.__mro__:
+    for klass in tracker_Location.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -395,55 +395,55 @@ def test_tracker::location_has_name():
 
 
 
-def test_tracker::premises_is_not_abstract():
-    assert not inspect.isabstract(tracker::Premises)
+def test_tracker_premises_is_not_abstract():
+    assert not inspect.isabstract(tracker_Premises)
 
 
-def test_tracker::premises_constructor_exists():
-    assert callable(tracker::Premises.__init__)
+def test_tracker_premises_constructor_exists():
+    assert callable(tracker_Premises.__init__)
 
 
-def test_tracker::premises_constructor_args():
-    sig = inspect.signature(tracker::Premises.__init__)
+def test_tracker_premises_constructor_args():
+    sig = inspect.signature(tracker_Premises.__init__)
     params = list(sig.parameters.keys())
-    assert "premisesId" in params, "Missing parameter 'premisesId'"
     assert "emailContact" in params, "Missing parameter 'emailContact'"
-    assert "uri" in params, "Missing parameter 'uri'"
+    assert "premisesId" in params, "Missing parameter 'premisesId'"
     assert "name" in params, "Missing parameter 'name'"
+    assert "uri" in params, "Missing parameter 'uri'"
 
-def test_tracker::premises_has_premisesId():
-    assert hasattr(tracker::Premises, "premisesId")
+def test_tracker_premises_has_emailContact():
+    assert hasattr(tracker_Premises, "emailContact")
     descriptor = None
-    for klass in tracker::Premises.__mro__:
-        if "premisesId" in klass.__dict__:
-            descriptor = klass.__dict__["premisesId"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_tracker::premises_has_emailContact():
-    assert hasattr(tracker::Premises, "emailContact")
-    descriptor = None
-    for klass in tracker::Premises.__mro__:
+    for klass in tracker_Premises.__mro__:
         if "emailContact" in klass.__dict__:
             descriptor = klass.__dict__["emailContact"]
             break
     assert isinstance(descriptor, property)
 
-def test_tracker::premises_has_uri():
-    assert hasattr(tracker::Premises, "uri")
+def test_tracker_premises_has_premisesId():
+    assert hasattr(tracker_Premises, "premisesId")
     descriptor = None
-    for klass in tracker::Premises.__mro__:
-        if "uri" in klass.__dict__:
-            descriptor = klass.__dict__["uri"]
+    for klass in tracker_Premises.__mro__:
+        if "premisesId" in klass.__dict__:
+            descriptor = klass.__dict__["premisesId"]
             break
     assert isinstance(descriptor, property)
 
-def test_tracker::premises_has_name():
-    assert hasattr(tracker::Premises, "name")
+def test_tracker_premises_has_name():
+    assert hasattr(tracker_Premises, "name")
     descriptor = None
-    for klass in tracker::Premises.__mro__:
+    for klass in tracker_Premises.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_tracker_premises_has_uri():
+    assert hasattr(tracker_Premises, "uri")
+    descriptor = None
+    for klass in tracker_Premises.__mro__:
+        if "uri" in klass.__dict__:
+            descriptor = klass.__dict__["uri"]
             break
     assert isinstance(descriptor, property)
 
@@ -463,451 +463,121 @@ def test_event_constructor_args():
 
 
 
-def test_tracker::birthdefect_is_not_abstract():
-    assert not inspect.isabstract(tracker::BirthDefect)
+def test_tracker_weighin_is_not_abstract():
+    assert not inspect.isabstract(tracker_WeighIn)
 
 
-def test_tracker::birthdefect_constructor_exists():
-    assert callable(tracker::BirthDefect.__init__)
+def test_tracker_weighin_constructor_exists():
+    assert callable(tracker_WeighIn.__init__)
 
 
-def test_tracker::birthdefect_constructor_args():
-    sig = inspect.signature(tracker::BirthDefect.__init__)
+def test_tracker_weighin_constructor_args():
+    sig = inspect.signature(tracker_WeighIn.__init__)
     params = list(sig.parameters.keys())
-    assert "freemartin" in params, "Missing parameter 'freemartin'"
+    assert "weight" in params, "Missing parameter 'weight'"
+    assert "weightGainPerDay" in params, "Missing parameter 'weightGainPerDay'"
 
-def test_tracker::birthdefect_has_freemartin():
-    assert hasattr(tracker::BirthDefect, "freemartin")
+def test_tracker_weighin_has_weight():
+    assert hasattr(tracker_WeighIn, "weight")
     descriptor = None
-    for klass in tracker::BirthDefect.__mro__:
-        if "freemartin" in klass.__dict__:
-            descriptor = klass.__dict__["freemartin"]
+    for klass in tracker_WeighIn.__mro__:
+        if "weight" in klass.__dict__:
+            descriptor = klass.__dict__["weight"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_tracker_weighin_has_weightGainPerDay():
+    assert hasattr(tracker_WeighIn, "weightGainPerDay")
+    descriptor = None
+    for klass in tracker_WeighIn.__mro__:
+        if "weightGainPerDay" in klass.__dict__:
+            descriptor = klass.__dict__["weightGainPerDay"]
             break
     assert isinstance(descriptor, property)
 
 
 
-def test_tracker::herdtest_is_not_abstract():
-    assert not inspect.isabstract(tracker::HerdTest)
+def test_tracker_milktest_is_not_abstract():
+    assert not inspect.isabstract(tracker_MilkTest)
 
 
-def test_tracker::herdtest_constructor_exists():
-    assert callable(tracker::HerdTest.__init__)
+def test_tracker_milktest_constructor_exists():
+    assert callable(tracker_MilkTest.__init__)
 
 
-def test_tracker::herdtest_constructor_args():
-    sig = inspect.signature(tracker::HerdTest.__init__)
-    params = list(sig.parameters.keys())
-    assert "pregnant" in params, "Missing parameter 'pregnant'"
-    assert "bredDateEstimate" in params, "Missing parameter 'bredDateEstimate'"
-    assert "daysSinceBredEstimate" in params, "Missing parameter 'daysSinceBredEstimate'"
-
-def test_tracker::herdtest_has_pregnant():
-    assert hasattr(tracker::HerdTest, "pregnant")
-    descriptor = None
-    for klass in tracker::HerdTest.__mro__:
-        if "pregnant" in klass.__dict__:
-            descriptor = klass.__dict__["pregnant"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_tracker::herdtest_has_bredDateEstimate():
-    assert hasattr(tracker::HerdTest, "bredDateEstimate")
-    descriptor = None
-    for klass in tracker::HerdTest.__mro__:
-        if "bredDateEstimate" in klass.__dict__:
-            descriptor = klass.__dict__["bredDateEstimate"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_tracker::herdtest_has_daysSinceBredEstimate():
-    assert hasattr(tracker::HerdTest, "daysSinceBredEstimate")
-    descriptor = None
-    for klass in tracker::HerdTest.__mro__:
-        if "daysSinceBredEstimate" in klass.__dict__:
-            descriptor = klass.__dict__["daysSinceBredEstimate"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_tracker::sighting_is_not_abstract():
-    assert not inspect.isabstract(tracker::Sighting)
-
-
-def test_tracker::sighting_constructor_exists():
-    assert callable(tracker::Sighting.__init__)
-
-
-def test_tracker::sighting_constructor_args():
-    sig = inspect.signature(tracker::Sighting.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_tracker::losttag_is_not_abstract():
-    assert not inspect.isabstract(tracker::LostTag)
-
-
-def test_tracker::losttag_constructor_exists():
-    assert callable(tracker::LostTag.__init__)
-
-
-def test_tracker::losttag_constructor_args():
-    sig = inspect.signature(tracker::LostTag.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_tracker::movedout_is_not_abstract():
-    assert not inspect.isabstract(tracker::MovedOut)
-
-
-def test_tracker::movedout_constructor_exists():
-    assert callable(tracker::MovedOut.__init__)
-
-
-def test_tracker::movedout_constructor_args():
-    sig = inspect.signature(tracker::MovedOut.__init__)
-    params = list(sig.parameters.keys())
-    assert "destinationPin" in params, "Missing parameter 'destinationPin'"
-
-def test_tracker::movedout_has_destinationPin():
-    assert hasattr(tracker::MovedOut, "destinationPin")
-    descriptor = None
-    for klass in tracker::MovedOut.__mro__:
-        if "destinationPin" in klass.__dict__:
-            descriptor = klass.__dict__["destinationPin"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_tracker::milktest_is_not_abstract():
-    assert not inspect.isabstract(tracker::MilkTest)
-
-
-def test_tracker::milktest_constructor_exists():
-    assert callable(tracker::MilkTest.__init__)
-
-
-def test_tracker::milktest_constructor_args():
-    sig = inspect.signature(tracker::MilkTest.__init__)
+def test_tracker_milktest_constructor_args():
+    sig = inspect.signature(tracker_MilkTest.__init__)
     params = list(sig.parameters.keys())
     assert "percentButterFat" in params, "Missing parameter 'percentButterFat'"
-    assert "otherSolids" in params, "Missing parameter 'otherSolids'"
-    assert "percentProtein" in params, "Missing parameter 'percentProtein'"
     assert "poundsProduced" in params, "Missing parameter 'poundsProduced'"
     assert "somaticCellCounts" in params, "Missing parameter 'somaticCellCounts'"
+    assert "percentProtein" in params, "Missing parameter 'percentProtein'"
+    assert "otherSolids" in params, "Missing parameter 'otherSolids'"
 
-def test_tracker::milktest_has_percentButterFat():
-    assert hasattr(tracker::MilkTest, "percentButterFat")
+def test_tracker_milktest_has_percentButterFat():
+    assert hasattr(tracker_MilkTest, "percentButterFat")
     descriptor = None
-    for klass in tracker::MilkTest.__mro__:
+    for klass in tracker_MilkTest.__mro__:
         if "percentButterFat" in klass.__dict__:
             descriptor = klass.__dict__["percentButterFat"]
             break
     assert isinstance(descriptor, property)
 
-def test_tracker::milktest_has_otherSolids():
-    assert hasattr(tracker::MilkTest, "otherSolids")
+def test_tracker_milktest_has_poundsProduced():
+    assert hasattr(tracker_MilkTest, "poundsProduced")
     descriptor = None
-    for klass in tracker::MilkTest.__mro__:
-        if "otherSolids" in klass.__dict__:
-            descriptor = klass.__dict__["otherSolids"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_tracker::milktest_has_percentProtein():
-    assert hasattr(tracker::MilkTest, "percentProtein")
-    descriptor = None
-    for klass in tracker::MilkTest.__mro__:
-        if "percentProtein" in klass.__dict__:
-            descriptor = klass.__dict__["percentProtein"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_tracker::milktest_has_poundsProduced():
-    assert hasattr(tracker::MilkTest, "poundsProduced")
-    descriptor = None
-    for klass in tracker::MilkTest.__mro__:
+    for klass in tracker_MilkTest.__mro__:
         if "poundsProduced" in klass.__dict__:
             descriptor = klass.__dict__["poundsProduced"]
             break
     assert isinstance(descriptor, property)
 
-def test_tracker::milktest_has_somaticCellCounts():
-    assert hasattr(tracker::MilkTest, "somaticCellCounts")
+def test_tracker_milktest_has_somaticCellCounts():
+    assert hasattr(tracker_MilkTest, "somaticCellCounts")
     descriptor = None
-    for klass in tracker::MilkTest.__mro__:
+    for klass in tracker_MilkTest.__mro__:
         if "somaticCellCounts" in klass.__dict__:
             descriptor = klass.__dict__["somaticCellCounts"]
             break
     assert isinstance(descriptor, property)
 
-
-
-def test_tracker::exported_is_not_abstract():
-    assert not inspect.isabstract(tracker::Exported)
-
-
-def test_tracker::exported_constructor_exists():
-    assert callable(tracker::Exported.__init__)
-
-
-def test_tracker::exported_constructor_args():
-    sig = inspect.signature(tracker::Exported.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_tracker::genericevent_is_not_abstract():
-    assert not inspect.isabstract(tracker::GenericEvent)
-
-
-def test_tracker::genericevent_constructor_exists():
-    assert callable(tracker::GenericEvent.__init__)
-
-
-def test_tracker::genericevent_constructor_args():
-    sig = inspect.signature(tracker::GenericEvent.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_tracker::icvi_is_not_abstract():
-    assert not inspect.isabstract(tracker::ICVI)
-
-
-def test_tracker::icvi_constructor_exists():
-    assert callable(tracker::ICVI.__init__)
-
-
-def test_tracker::icvi_constructor_args():
-    sig = inspect.signature(tracker::ICVI.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_tracker::tagretired_is_not_abstract():
-    assert not inspect.isabstract(tracker::TagRetired)
-
-
-def test_tracker::tagretired_constructor_exists():
-    assert callable(tracker::TagRetired.__init__)
-
-
-def test_tracker::tagretired_constructor_args():
-    sig = inspect.signature(tracker::TagRetired.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_tracker::imported_is_not_abstract():
-    assert not inspect.isabstract(tracker::Imported)
-
-
-def test_tracker::imported_constructor_exists():
-    assert callable(tracker::Imported.__init__)
-
-
-def test_tracker::imported_constructor_args():
-    sig = inspect.signature(tracker::Imported.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_tracker::medicalcondition_is_not_abstract():
-    assert not inspect.isabstract(tracker::MedicalCondition)
-
-
-def test_tracker::medicalcondition_constructor_exists():
-    assert callable(tracker::MedicalCondition.__init__)
-
-
-def test_tracker::medicalcondition_constructor_args():
-    sig = inspect.signature(tracker::MedicalCondition.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_tracker::died_is_not_abstract():
-    assert not inspect.isabstract(tracker::Died)
-
-
-def test_tracker::died_constructor_exists():
-    assert callable(tracker::Died.__init__)
-
-
-def test_tracker::died_constructor_args():
-    sig = inspect.signature(tracker::Died.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_tracker::medicaltreatment_is_not_abstract():
-    assert not inspect.isabstract(tracker::MedicalTreatment)
-
-
-def test_tracker::medicaltreatment_constructor_exists():
-    assert callable(tracker::MedicalTreatment.__init__)
-
-
-def test_tracker::medicaltreatment_constructor_args():
-    sig = inspect.signature(tracker::MedicalTreatment.__init__)
-    params = list(sig.parameters.keys())
-    assert "quantity" in params, "Missing parameter 'quantity'"
-    assert "treatment" in params, "Missing parameter 'treatment'"
-    assert "lot" in params, "Missing parameter 'lot'"
-    assert "product" in params, "Missing parameter 'product'"
-    assert "name" in params, "Missing parameter 'name'"
-    assert "method" in params, "Missing parameter 'method'"
-    assert "manufacturer" in params, "Missing parameter 'manufacturer'"
-
-def test_tracker::medicaltreatment_has_quantity():
-    assert hasattr(tracker::MedicalTreatment, "quantity")
+def test_tracker_milktest_has_percentProtein():
+    assert hasattr(tracker_MilkTest, "percentProtein")
     descriptor = None
-    for klass in tracker::MedicalTreatment.__mro__:
-        if "quantity" in klass.__dict__:
-            descriptor = klass.__dict__["quantity"]
+    for klass in tracker_MilkTest.__mro__:
+        if "percentProtein" in klass.__dict__:
+            descriptor = klass.__dict__["percentProtein"]
             break
     assert isinstance(descriptor, property)
 
-def test_tracker::medicaltreatment_has_treatment():
-    assert hasattr(tracker::MedicalTreatment, "treatment")
+def test_tracker_milktest_has_otherSolids():
+    assert hasattr(tracker_MilkTest, "otherSolids")
     descriptor = None
-    for klass in tracker::MedicalTreatment.__mro__:
-        if "treatment" in klass.__dict__:
-            descriptor = klass.__dict__["treatment"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_tracker::medicaltreatment_has_lot():
-    assert hasattr(tracker::MedicalTreatment, "lot")
-    descriptor = None
-    for klass in tracker::MedicalTreatment.__mro__:
-        if "lot" in klass.__dict__:
-            descriptor = klass.__dict__["lot"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_tracker::medicaltreatment_has_product():
-    assert hasattr(tracker::MedicalTreatment, "product")
-    descriptor = None
-    for klass in tracker::MedicalTreatment.__mro__:
-        if "product" in klass.__dict__:
-            descriptor = klass.__dict__["product"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_tracker::medicaltreatment_has_name():
-    assert hasattr(tracker::MedicalTreatment, "name")
-    descriptor = None
-    for klass in tracker::MedicalTreatment.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_tracker::medicaltreatment_has_method():
-    assert hasattr(tracker::MedicalTreatment, "method")
-    descriptor = None
-    for klass in tracker::MedicalTreatment.__mro__:
-        if "method" in klass.__dict__:
-            descriptor = klass.__dict__["method"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_tracker::medicaltreatment_has_manufacturer():
-    assert hasattr(tracker::MedicalTreatment, "manufacturer")
-    descriptor = None
-    for klass in tracker::MedicalTreatment.__mro__:
-        if "manufacturer" in klass.__dict__:
-            descriptor = klass.__dict__["manufacturer"]
+    for klass in tracker_MilkTest.__mro__:
+        if "otherSolids" in klass.__dict__:
+            descriptor = klass.__dict__["otherSolids"]
             break
     assert isinstance(descriptor, property)
 
 
 
-def test_tracker::replacedtag_is_not_abstract():
-    assert not inspect.isabstract(tracker::ReplacedTag)
+def test_tracker_movedin_is_not_abstract():
+    assert not inspect.isabstract(tracker_MovedIn)
 
 
-def test_tracker::replacedtag_constructor_exists():
-    assert callable(tracker::ReplacedTag.__init__)
+def test_tracker_movedin_constructor_exists():
+    assert callable(tracker_MovedIn.__init__)
 
 
-def test_tracker::replacedtag_constructor_args():
-    sig = inspect.signature(tracker::ReplacedTag.__init__)
-    params = list(sig.parameters.keys())
-    assert "oldId" in params, "Missing parameter 'oldId'"
-    assert "usainNumberUsedForOldId" in params, "Missing parameter 'usainNumberUsedForOldId'"
-
-def test_tracker::replacedtag_has_oldId():
-    assert hasattr(tracker::ReplacedTag, "oldId")
-    descriptor = None
-    for klass in tracker::ReplacedTag.__mro__:
-        if "oldId" in klass.__dict__:
-            descriptor = klass.__dict__["oldId"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_tracker::replacedtag_has_usainNumberUsedForOldId():
-    assert hasattr(tracker::ReplacedTag, "usainNumberUsedForOldId")
-    descriptor = None
-    for klass in tracker::ReplacedTag.__mro__:
-        if "usainNumberUsedForOldId" in klass.__dict__:
-            descriptor = klass.__dict__["usainNumberUsedForOldId"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_tracker::animalmissing_is_not_abstract():
-    assert not inspect.isabstract(tracker::AnimalMissing)
-
-
-def test_tracker::animalmissing_constructor_exists():
-    assert callable(tracker::AnimalMissing.__init__)
-
-
-def test_tracker::animalmissing_constructor_args():
-    sig = inspect.signature(tracker::AnimalMissing.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_tracker::slaughtered_is_not_abstract():
-    assert not inspect.isabstract(tracker::Slaughtered)
-
-
-def test_tracker::slaughtered_constructor_exists():
-    assert callable(tracker::Slaughtered.__init__)
-
-
-def test_tracker::slaughtered_constructor_args():
-    sig = inspect.signature(tracker::Slaughtered.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_tracker::movedin_is_not_abstract():
-    assert not inspect.isabstract(tracker::MovedIn)
-
-
-def test_tracker::movedin_constructor_exists():
-    assert callable(tracker::MovedIn.__init__)
-
-
-def test_tracker::movedin_constructor_args():
-    sig = inspect.signature(tracker::MovedIn.__init__)
+def test_tracker_movedin_constructor_args():
+    sig = inspect.signature(tracker_MovedIn.__init__)
     params = list(sig.parameters.keys())
     assert "sourcePin" in params, "Missing parameter 'sourcePin'"
 
-def test_tracker::movedin_has_sourcePin():
-    assert hasattr(tracker::MovedIn, "sourcePin")
+def test_tracker_movedin_has_sourcePin():
+    assert hasattr(tracker_MovedIn, "sourcePin")
     descriptor = None
-    for klass in tracker::MovedIn.__mro__:
+    for klass in tracker_MovedIn.__mro__:
         if "sourcePin" in klass.__dict__:
             descriptor = klass.__dict__["sourcePin"]
             break
@@ -915,108 +585,438 @@ def test_tracker::movedin_has_sourcePin():
 
 
 
-def test_tracker::tagapplied_is_not_abstract():
-    assert not inspect.isabstract(tracker::TagApplied)
+def test_tracker_tagretired_is_not_abstract():
+    assert not inspect.isabstract(tracker_TagRetired)
 
 
-def test_tracker::tagapplied_constructor_exists():
-    assert callable(tracker::TagApplied.__init__)
+def test_tracker_tagretired_constructor_exists():
+    assert callable(tracker_TagRetired.__init__)
 
 
-def test_tracker::tagapplied_constructor_args():
-    sig = inspect.signature(tracker::TagApplied.__init__)
+def test_tracker_tagretired_constructor_args():
+    sig = inspect.signature(tracker_TagRetired.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_tracker::birthing_is_not_abstract():
-    assert not inspect.isabstract(tracker::Birthing)
+def test_tracker_birthdefect_is_not_abstract():
+    assert not inspect.isabstract(tracker_BirthDefect)
 
 
-def test_tracker::birthing_constructor_exists():
-    assert callable(tracker::Birthing.__init__)
+def test_tracker_birthdefect_constructor_exists():
+    assert callable(tracker_BirthDefect.__init__)
 
 
-def test_tracker::birthing_constructor_args():
-    sig = inspect.signature(tracker::Birthing.__init__)
+def test_tracker_birthdefect_constructor_args():
+    sig = inspect.signature(tracker_BirthDefect.__init__)
     params = list(sig.parameters.keys())
-    assert "assisted" in params, "Missing parameter 'assisted'"
-    assert "viability" in params, "Missing parameter 'viability'"
+    assert "freemartin" in params, "Missing parameter 'freemartin'"
+
+def test_tracker_birthdefect_has_freemartin():
+    assert hasattr(tracker_BirthDefect, "freemartin")
+    descriptor = None
+    for klass in tracker_BirthDefect.__mro__:
+        if "freemartin" in klass.__dict__:
+            descriptor = klass.__dict__["freemartin"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_tracker_icvi_is_not_abstract():
+    assert not inspect.isabstract(tracker_ICVI)
+
+
+def test_tracker_icvi_constructor_exists():
+    assert callable(tracker_ICVI.__init__)
+
+
+def test_tracker_icvi_constructor_args():
+    sig = inspect.signature(tracker_ICVI.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_tracker_losttag_is_not_abstract():
+    assert not inspect.isabstract(tracker_LostTag)
+
+
+def test_tracker_losttag_constructor_exists():
+    assert callable(tracker_LostTag.__init__)
+
+
+def test_tracker_losttag_constructor_args():
+    sig = inspect.signature(tracker_LostTag.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_tracker_herdtest_is_not_abstract():
+    assert not inspect.isabstract(tracker_HerdTest)
+
+
+def test_tracker_herdtest_constructor_exists():
+    assert callable(tracker_HerdTest.__init__)
+
+
+def test_tracker_herdtest_constructor_args():
+    sig = inspect.signature(tracker_HerdTest.__init__)
+    params = list(sig.parameters.keys())
+    assert "pregnant" in params, "Missing parameter 'pregnant'"
+    assert "bredDateEstimate" in params, "Missing parameter 'bredDateEstimate'"
+    assert "daysSinceBredEstimate" in params, "Missing parameter 'daysSinceBredEstimate'"
+
+def test_tracker_herdtest_has_pregnant():
+    assert hasattr(tracker_HerdTest, "pregnant")
+    descriptor = None
+    for klass in tracker_HerdTest.__mro__:
+        if "pregnant" in klass.__dict__:
+            descriptor = klass.__dict__["pregnant"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_tracker_herdtest_has_bredDateEstimate():
+    assert hasattr(tracker_HerdTest, "bredDateEstimate")
+    descriptor = None
+    for klass in tracker_HerdTest.__mro__:
+        if "bredDateEstimate" in klass.__dict__:
+            descriptor = klass.__dict__["bredDateEstimate"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_tracker_herdtest_has_daysSinceBredEstimate():
+    assert hasattr(tracker_HerdTest, "daysSinceBredEstimate")
+    descriptor = None
+    for klass in tracker_HerdTest.__mro__:
+        if "daysSinceBredEstimate" in klass.__dict__:
+            descriptor = klass.__dict__["daysSinceBredEstimate"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_tracker_imported_is_not_abstract():
+    assert not inspect.isabstract(tracker_Imported)
+
+
+def test_tracker_imported_constructor_exists():
+    assert callable(tracker_Imported.__init__)
+
+
+def test_tracker_imported_constructor_args():
+    sig = inspect.signature(tracker_Imported.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_tracker_birthing_is_not_abstract():
+    assert not inspect.isabstract(tracker_Birthing)
+
+
+def test_tracker_birthing_constructor_exists():
+    assert callable(tracker_Birthing.__init__)
+
+
+def test_tracker_birthing_constructor_args():
+    sig = inspect.signature(tracker_Birthing.__init__)
+    params = list(sig.parameters.keys())
     assert "difficulty" in params, "Missing parameter 'difficulty'"
+    assert "viability" in params, "Missing parameter 'viability'"
+    assert "assisted" in params, "Missing parameter 'assisted'"
 
-def test_tracker::birthing_has_assisted():
-    assert hasattr(tracker::Birthing, "assisted")
+def test_tracker_birthing_has_difficulty():
+    assert hasattr(tracker_Birthing, "difficulty")
     descriptor = None
-    for klass in tracker::Birthing.__mro__:
-        if "assisted" in klass.__dict__:
-            descriptor = klass.__dict__["assisted"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_tracker::birthing_has_viability():
-    assert hasattr(tracker::Birthing, "viability")
-    descriptor = None
-    for klass in tracker::Birthing.__mro__:
-        if "viability" in klass.__dict__:
-            descriptor = klass.__dict__["viability"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_tracker::birthing_has_difficulty():
-    assert hasattr(tracker::Birthing, "difficulty")
-    descriptor = None
-    for klass in tracker::Birthing.__mro__:
+    for klass in tracker_Birthing.__mro__:
         if "difficulty" in klass.__dict__:
             descriptor = klass.__dict__["difficulty"]
             break
     assert isinstance(descriptor, property)
 
+def test_tracker_birthing_has_viability():
+    assert hasattr(tracker_Birthing, "viability")
+    descriptor = None
+    for klass in tracker_Birthing.__mro__:
+        if "viability" in klass.__dict__:
+            descriptor = klass.__dict__["viability"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_tracker_birthing_has_assisted():
+    assert hasattr(tracker_Birthing, "assisted")
+    descriptor = None
+    for klass in tracker_Birthing.__mro__:
+        if "assisted" in klass.__dict__:
+            descriptor = klass.__dict__["assisted"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_tracker::weighin_is_not_abstract():
-    assert not inspect.isabstract(tracker::WeighIn)
+
+def test_tracker_movedout_is_not_abstract():
+    assert not inspect.isabstract(tracker_MovedOut)
 
 
-def test_tracker::weighin_constructor_exists():
-    assert callable(tracker::WeighIn.__init__)
+def test_tracker_movedout_constructor_exists():
+    assert callable(tracker_MovedOut.__init__)
 
 
-def test_tracker::weighin_constructor_args():
-    sig = inspect.signature(tracker::WeighIn.__init__)
+def test_tracker_movedout_constructor_args():
+    sig = inspect.signature(tracker_MovedOut.__init__)
     params = list(sig.parameters.keys())
-    assert "weightGainPerDay" in params, "Missing parameter 'weightGainPerDay'"
-    assert "weight" in params, "Missing parameter 'weight'"
+    assert "destinationPin" in params, "Missing parameter 'destinationPin'"
 
-def test_tracker::weighin_has_weightGainPerDay():
-    assert hasattr(tracker::WeighIn, "weightGainPerDay")
+def test_tracker_movedout_has_destinationPin():
+    assert hasattr(tracker_MovedOut, "destinationPin")
     descriptor = None
-    for klass in tracker::WeighIn.__mro__:
-        if "weightGainPerDay" in klass.__dict__:
-            descriptor = klass.__dict__["weightGainPerDay"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_tracker::weighin_has_weight():
-    assert hasattr(tracker::WeighIn, "weight")
-    descriptor = None
-    for klass in tracker::WeighIn.__mro__:
-        if "weight" in klass.__dict__:
-            descriptor = klass.__dict__["weight"]
+    for klass in tracker_MovedOut.__mro__:
+        if "destinationPin" in klass.__dict__:
+            descriptor = klass.__dict__["destinationPin"]
             break
     assert isinstance(descriptor, property)
 
 
 
-def test_tracker::tagallocated_is_not_abstract():
-    assert not inspect.isabstract(tracker::TagAllocated)
+def test_tracker_replacedtag_is_not_abstract():
+    assert not inspect.isabstract(tracker_ReplacedTag)
 
 
-def test_tracker::tagallocated_constructor_exists():
-    assert callable(tracker::TagAllocated.__init__)
+def test_tracker_replacedtag_constructor_exists():
+    assert callable(tracker_ReplacedTag.__init__)
 
 
-def test_tracker::tagallocated_constructor_args():
-    sig = inspect.signature(tracker::TagAllocated.__init__)
+def test_tracker_replacedtag_constructor_args():
+    sig = inspect.signature(tracker_ReplacedTag.__init__)
+    params = list(sig.parameters.keys())
+    assert "usainNumberUsedForOldId" in params, "Missing parameter 'usainNumberUsedForOldId'"
+    assert "oldId" in params, "Missing parameter 'oldId'"
+
+def test_tracker_replacedtag_has_usainNumberUsedForOldId():
+    assert hasattr(tracker_ReplacedTag, "usainNumberUsedForOldId")
+    descriptor = None
+    for klass in tracker_ReplacedTag.__mro__:
+        if "usainNumberUsedForOldId" in klass.__dict__:
+            descriptor = klass.__dict__["usainNumberUsedForOldId"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_tracker_replacedtag_has_oldId():
+    assert hasattr(tracker_ReplacedTag, "oldId")
+    descriptor = None
+    for klass in tracker_ReplacedTag.__mro__:
+        if "oldId" in klass.__dict__:
+            descriptor = klass.__dict__["oldId"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_tracker_tagapplied_is_not_abstract():
+    assert not inspect.isabstract(tracker_TagApplied)
+
+
+def test_tracker_tagapplied_constructor_exists():
+    assert callable(tracker_TagApplied.__init__)
+
+
+def test_tracker_tagapplied_constructor_args():
+    sig = inspect.signature(tracker_TagApplied.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_tracker_genericevent_is_not_abstract():
+    assert not inspect.isabstract(tracker_GenericEvent)
+
+
+def test_tracker_genericevent_constructor_exists():
+    assert callable(tracker_GenericEvent.__init__)
+
+
+def test_tracker_genericevent_constructor_args():
+    sig = inspect.signature(tracker_GenericEvent.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_tracker_sighting_is_not_abstract():
+    assert not inspect.isabstract(tracker_Sighting)
+
+
+def test_tracker_sighting_constructor_exists():
+    assert callable(tracker_Sighting.__init__)
+
+
+def test_tracker_sighting_constructor_args():
+    sig = inspect.signature(tracker_Sighting.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_tracker_slaughtered_is_not_abstract():
+    assert not inspect.isabstract(tracker_Slaughtered)
+
+
+def test_tracker_slaughtered_constructor_exists():
+    assert callable(tracker_Slaughtered.__init__)
+
+
+def test_tracker_slaughtered_constructor_args():
+    sig = inspect.signature(tracker_Slaughtered.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_tracker_animalmissing_is_not_abstract():
+    assert not inspect.isabstract(tracker_AnimalMissing)
+
+
+def test_tracker_animalmissing_constructor_exists():
+    assert callable(tracker_AnimalMissing.__init__)
+
+
+def test_tracker_animalmissing_constructor_args():
+    sig = inspect.signature(tracker_AnimalMissing.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_tracker_died_is_not_abstract():
+    assert not inspect.isabstract(tracker_Died)
+
+
+def test_tracker_died_constructor_exists():
+    assert callable(tracker_Died.__init__)
+
+
+def test_tracker_died_constructor_args():
+    sig = inspect.signature(tracker_Died.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_tracker_medicalcondition_is_not_abstract():
+    assert not inspect.isabstract(tracker_MedicalCondition)
+
+
+def test_tracker_medicalcondition_constructor_exists():
+    assert callable(tracker_MedicalCondition.__init__)
+
+
+def test_tracker_medicalcondition_constructor_args():
+    sig = inspect.signature(tracker_MedicalCondition.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_tracker_medicaltreatment_is_not_abstract():
+    assert not inspect.isabstract(tracker_MedicalTreatment)
+
+
+def test_tracker_medicaltreatment_constructor_exists():
+    assert callable(tracker_MedicalTreatment.__init__)
+
+
+def test_tracker_medicaltreatment_constructor_args():
+    sig = inspect.signature(tracker_MedicalTreatment.__init__)
+    params = list(sig.parameters.keys())
+    assert "method" in params, "Missing parameter 'method'"
+    assert "lot" in params, "Missing parameter 'lot'"
+    assert "manufacturer" in params, "Missing parameter 'manufacturer'"
+    assert "product" in params, "Missing parameter 'product'"
+    assert "name" in params, "Missing parameter 'name'"
+    assert "quantity" in params, "Missing parameter 'quantity'"
+    assert "treatment" in params, "Missing parameter 'treatment'"
+
+def test_tracker_medicaltreatment_has_method():
+    assert hasattr(tracker_MedicalTreatment, "method")
+    descriptor = None
+    for klass in tracker_MedicalTreatment.__mro__:
+        if "method" in klass.__dict__:
+            descriptor = klass.__dict__["method"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_tracker_medicaltreatment_has_lot():
+    assert hasattr(tracker_MedicalTreatment, "lot")
+    descriptor = None
+    for klass in tracker_MedicalTreatment.__mro__:
+        if "lot" in klass.__dict__:
+            descriptor = klass.__dict__["lot"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_tracker_medicaltreatment_has_manufacturer():
+    assert hasattr(tracker_MedicalTreatment, "manufacturer")
+    descriptor = None
+    for klass in tracker_MedicalTreatment.__mro__:
+        if "manufacturer" in klass.__dict__:
+            descriptor = klass.__dict__["manufacturer"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_tracker_medicaltreatment_has_product():
+    assert hasattr(tracker_MedicalTreatment, "product")
+    descriptor = None
+    for klass in tracker_MedicalTreatment.__mro__:
+        if "product" in klass.__dict__:
+            descriptor = klass.__dict__["product"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_tracker_medicaltreatment_has_name():
+    assert hasattr(tracker_MedicalTreatment, "name")
+    descriptor = None
+    for klass in tracker_MedicalTreatment.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_tracker_medicaltreatment_has_quantity():
+    assert hasattr(tracker_MedicalTreatment, "quantity")
+    descriptor = None
+    for klass in tracker_MedicalTreatment.__mro__:
+        if "quantity" in klass.__dict__:
+            descriptor = klass.__dict__["quantity"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_tracker_medicaltreatment_has_treatment():
+    assert hasattr(tracker_MedicalTreatment, "treatment")
+    descriptor = None
+    for klass in tracker_MedicalTreatment.__mro__:
+        if "treatment" in klass.__dict__:
+            descriptor = klass.__dict__["treatment"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_tracker_exported_is_not_abstract():
+    assert not inspect.isabstract(tracker_Exported)
+
+
+def test_tracker_exported_constructor_exists():
+    assert callable(tracker_Exported.__init__)
+
+
+def test_tracker_exported_constructor_args():
+    sig = inspect.signature(tracker_Exported.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_tracker_tagallocated_is_not_abstract():
+    assert not inspect.isabstract(tracker_TagAllocated)
+
+
+def test_tracker_tagallocated_constructor_exists():
+    assert callable(tracker_TagAllocated.__init__)
+
+
+def test_tracker_tagallocated_constructor_args():
+    sig = inspect.signature(tracker_TagAllocated.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1035,77 +1035,43 @@ def test_animal_constructor_args():
 
 
 
-def test_tracker::ovine_is_not_abstract():
-    assert not inspect.isabstract(tracker::Ovine)
+def test_tracker_swine_is_not_abstract():
+    assert not inspect.isabstract(tracker_Swine)
 
 
-def test_tracker::ovine_constructor_exists():
-    assert callable(tracker::Ovine.__init__)
+def test_tracker_swine_constructor_exists():
+    assert callable(tracker_Swine.__init__)
 
 
-def test_tracker::ovine_constructor_args():
-    sig = inspect.signature(tracker::Ovine.__init__)
+def test_tracker_swine_constructor_args():
+    sig = inspect.signature(tracker_Swine.__init__)
     params = list(sig.parameters.keys())
-    assert "sheepBreed" in params, "Missing parameter 'sheepBreed'"
-    assert "scrapieTag" in params, "Missing parameter 'scrapieTag'"
-
-def test_tracker::ovine_has_sheepBreed():
-    assert hasattr(tracker::Ovine, "sheepBreed")
-    descriptor = None
-    for klass in tracker::Ovine.__mro__:
-        if "sheepBreed" in klass.__dict__:
-            descriptor = klass.__dict__["sheepBreed"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_tracker::ovine_has_scrapieTag():
-    assert hasattr(tracker::Ovine, "scrapieTag")
-    descriptor = None
-    for klass in tracker::Ovine.__mro__:
-        if "scrapieTag" in klass.__dict__:
-            descriptor = klass.__dict__["scrapieTag"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_tracker::swine_is_not_abstract():
-    assert not inspect.isabstract(tracker::Swine)
-
-
-def test_tracker::swine_constructor_exists():
-    assert callable(tracker::Swine.__init__)
-
-
-def test_tracker::swine_constructor_args():
-    sig = inspect.signature(tracker::Swine.__init__)
-    params = list(sig.parameters.keys())
-    assert "rightEarNotching" in params, "Missing parameter 'rightEarNotching'"
     assert "leftEarNotching" in params, "Missing parameter 'leftEarNotching'"
+    assert "rightEarNotching" in params, "Missing parameter 'rightEarNotching'"
     assert "swineBreed" in params, "Missing parameter 'swineBreed'"
 
-def test_tracker::swine_has_rightEarNotching():
-    assert hasattr(tracker::Swine, "rightEarNotching")
+def test_tracker_swine_has_leftEarNotching():
+    assert hasattr(tracker_Swine, "leftEarNotching")
     descriptor = None
-    for klass in tracker::Swine.__mro__:
-        if "rightEarNotching" in klass.__dict__:
-            descriptor = klass.__dict__["rightEarNotching"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_tracker::swine_has_leftEarNotching():
-    assert hasattr(tracker::Swine, "leftEarNotching")
-    descriptor = None
-    for klass in tracker::Swine.__mro__:
+    for klass in tracker_Swine.__mro__:
         if "leftEarNotching" in klass.__dict__:
             descriptor = klass.__dict__["leftEarNotching"]
             break
     assert isinstance(descriptor, property)
 
-def test_tracker::swine_has_swineBreed():
-    assert hasattr(tracker::Swine, "swineBreed")
+def test_tracker_swine_has_rightEarNotching():
+    assert hasattr(tracker_Swine, "rightEarNotching")
     descriptor = None
-    for klass in tracker::Swine.__mro__:
+    for klass in tracker_Swine.__mro__:
+        if "rightEarNotching" in klass.__dict__:
+            descriptor = klass.__dict__["rightEarNotching"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_tracker_swine_has_swineBreed():
+    assert hasattr(tracker_Swine, "swineBreed")
+    descriptor = None
+    for klass in tracker_Swine.__mro__:
         if "swineBreed" in klass.__dict__:
             descriptor = klass.__dict__["swineBreed"]
             break
@@ -1113,23 +1079,57 @@ def test_tracker::swine_has_swineBreed():
 
 
 
-def test_tracker::equine_is_not_abstract():
-    assert not inspect.isabstract(tracker::Equine)
+def test_tracker_ovine_is_not_abstract():
+    assert not inspect.isabstract(tracker_Ovine)
 
 
-def test_tracker::equine_constructor_exists():
-    assert callable(tracker::Equine.__init__)
+def test_tracker_ovine_constructor_exists():
+    assert callable(tracker_Ovine.__init__)
 
 
-def test_tracker::equine_constructor_args():
-    sig = inspect.signature(tracker::Equine.__init__)
+def test_tracker_ovine_constructor_args():
+    sig = inspect.signature(tracker_Ovine.__init__)
+    params = list(sig.parameters.keys())
+    assert "sheepBreed" in params, "Missing parameter 'sheepBreed'"
+    assert "scrapieTag" in params, "Missing parameter 'scrapieTag'"
+
+def test_tracker_ovine_has_sheepBreed():
+    assert hasattr(tracker_Ovine, "sheepBreed")
+    descriptor = None
+    for klass in tracker_Ovine.__mro__:
+        if "sheepBreed" in klass.__dict__:
+            descriptor = klass.__dict__["sheepBreed"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_tracker_ovine_has_scrapieTag():
+    assert hasattr(tracker_Ovine, "scrapieTag")
+    descriptor = None
+    for klass in tracker_Ovine.__mro__:
+        if "scrapieTag" in klass.__dict__:
+            descriptor = klass.__dict__["scrapieTag"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_tracker_equine_is_not_abstract():
+    assert not inspect.isabstract(tracker_Equine)
+
+
+def test_tracker_equine_constructor_exists():
+    assert callable(tracker_Equine.__init__)
+
+
+def test_tracker_equine_constructor_args():
+    sig = inspect.signature(tracker_Equine.__init__)
     params = list(sig.parameters.keys())
     assert "horseBreed" in params, "Missing parameter 'horseBreed'"
 
-def test_tracker::equine_has_horseBreed():
-    assert hasattr(tracker::Equine, "horseBreed")
+def test_tracker_equine_has_horseBreed():
+    assert hasattr(tracker_Equine, "horseBreed")
     descriptor = None
-    for klass in tracker::Equine.__mro__:
+    for klass in tracker_Equine.__mro__:
         if "horseBreed" in klass.__dict__:
             descriptor = klass.__dict__["horseBreed"]
             break
@@ -1137,23 +1137,23 @@ def test_tracker::equine_has_horseBreed():
 
 
 
-def test_tracker::caprine_is_not_abstract():
-    assert not inspect.isabstract(tracker::Caprine)
+def test_tracker_caprine_is_not_abstract():
+    assert not inspect.isabstract(tracker_Caprine)
 
 
-def test_tracker::caprine_constructor_exists():
-    assert callable(tracker::Caprine.__init__)
+def test_tracker_caprine_constructor_exists():
+    assert callable(tracker_Caprine.__init__)
 
 
-def test_tracker::caprine_constructor_args():
-    sig = inspect.signature(tracker::Caprine.__init__)
+def test_tracker_caprine_constructor_args():
+    sig = inspect.signature(tracker_Caprine.__init__)
     params = list(sig.parameters.keys())
     assert "goatBreed" in params, "Missing parameter 'goatBreed'"
 
-def test_tracker::caprine_has_goatBreed():
-    assert hasattr(tracker::Caprine, "goatBreed")
+def test_tracker_caprine_has_goatBreed():
+    assert hasattr(tracker_Caprine, "goatBreed")
     descriptor = None
-    for klass in tracker::Caprine.__mro__:
+    for klass in tracker_Caprine.__mro__:
         if "goatBreed" in klass.__dict__:
             descriptor = klass.__dict__["goatBreed"]
             break
@@ -1161,550 +1161,259 @@ def test_tracker::caprine_has_goatBreed():
 
 
 
-def test_tracker::bovine_is_not_abstract():
-    assert not inspect.isabstract(tracker::Bovine)
+def test_tracker_bovine_is_not_abstract():
+    assert not inspect.isabstract(tracker_Bovine)
 
 
-def test_tracker::bovine_constructor_exists():
-    assert callable(tracker::Bovine.__init__)
+def test_tracker_bovine_constructor_exists():
+    assert callable(tracker_Bovine.__init__)
 
 
-def test_tracker::bovine_constructor_args():
-    sig = inspect.signature(tracker::Bovine.__init__)
+def test_tracker_bovine_constructor_args():
+    sig = inspect.signature(tracker_Bovine.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_tracker::event_is_not_abstract():
-    assert not inspect.isabstract(tracker::Event)
+def test_tracker_event_is_not_abstract():
+    assert not inspect.isabstract(tracker_Event)
 
 
-def test_tracker::event_constructor_exists():
-    assert callable(tracker::Event.__init__)
+def test_tracker_event_constructor_exists():
+    assert callable(tracker_Event.__init__)
 
 
-def test_tracker::event_constructor_args():
-    sig = inspect.signature(tracker::Event.__init__)
+def test_tracker_event_constructor_args():
+    sig = inspect.signature(tracker_Event.__init__)
     params = list(sig.parameters.keys())
-    assert "id" in params, "Missing parameter 'id'"
-    assert "eventCode" in params, "Missing parameter 'eventCode'"
-    assert "dateTime" in params, "Missing parameter 'dateTime'"
     assert "electronicallyRead" in params, "Missing parameter 'electronicallyRead'"
     assert "correction" in params, "Missing parameter 'correction'"
+    assert "eventCode" in params, "Missing parameter 'eventCode'"
     assert "comments" in params, "Missing parameter 'comments'"
+    assert "dateTime" in params, "Missing parameter 'dateTime'"
+    assert "id" in params, "Missing parameter 'id'"
 
-def test_tracker::event_has_id():
-    assert hasattr(tracker::Event, "id")
+def test_tracker_event_has_electronicallyRead():
+    assert hasattr(tracker_Event, "electronicallyRead")
     descriptor = None
-    for klass in tracker::Event.__mro__:
-        if "id" in klass.__dict__:
-            descriptor = klass.__dict__["id"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_tracker::event_has_eventCode():
-    assert hasattr(tracker::Event, "eventCode")
-    descriptor = None
-    for klass in tracker::Event.__mro__:
-        if "eventCode" in klass.__dict__:
-            descriptor = klass.__dict__["eventCode"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_tracker::event_has_dateTime():
-    assert hasattr(tracker::Event, "dateTime")
-    descriptor = None
-    for klass in tracker::Event.__mro__:
-        if "dateTime" in klass.__dict__:
-            descriptor = klass.__dict__["dateTime"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_tracker::event_has_electronicallyRead():
-    assert hasattr(tracker::Event, "electronicallyRead")
-    descriptor = None
-    for klass in tracker::Event.__mro__:
+    for klass in tracker_Event.__mro__:
         if "electronicallyRead" in klass.__dict__:
             descriptor = klass.__dict__["electronicallyRead"]
             break
     assert isinstance(descriptor, property)
 
-def test_tracker::event_has_correction():
-    assert hasattr(tracker::Event, "correction")
+def test_tracker_event_has_correction():
+    assert hasattr(tracker_Event, "correction")
     descriptor = None
-    for klass in tracker::Event.__mro__:
+    for klass in tracker_Event.__mro__:
         if "correction" in klass.__dict__:
             descriptor = klass.__dict__["correction"]
             break
     assert isinstance(descriptor, property)
 
-def test_tracker::event_has_comments():
-    assert hasattr(tracker::Event, "comments")
+def test_tracker_event_has_eventCode():
+    assert hasattr(tracker_Event, "eventCode")
     descriptor = None
-    for klass in tracker::Event.__mro__:
+    for klass in tracker_Event.__mro__:
+        if "eventCode" in klass.__dict__:
+            descriptor = klass.__dict__["eventCode"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_tracker_event_has_comments():
+    assert hasattr(tracker_Event, "comments")
+    descriptor = None
+    for klass in tracker_Event.__mro__:
         if "comments" in klass.__dict__:
             descriptor = klass.__dict__["comments"]
             break
     assert isinstance(descriptor, property)
 
-
-
-def test_tracker::tag_is_not_abstract():
-    assert not inspect.isabstract(tracker::Tag)
-
-
-def test_tracker::tag_constructor_exists():
-    assert callable(tracker::Tag.__init__)
-
-
-def test_tracker::tag_constructor_args():
-    sig = inspect.signature(tracker::Tag.__init__)
-    params = list(sig.parameters.keys())
-    assert "id" in params, "Missing parameter 'id'"
-    assert "usainNumberUsed" in params, "Missing parameter 'usainNumberUsed'"
-
-def test_tracker::tag_has_id():
-    assert hasattr(tracker::Tag, "id")
+def test_tracker_event_has_dateTime():
+    assert hasattr(tracker_Event, "dateTime")
     descriptor = None
-    for klass in tracker::Tag.__mro__:
+    for klass in tracker_Event.__mro__:
+        if "dateTime" in klass.__dict__:
+            descriptor = klass.__dict__["dateTime"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_tracker_event_has_id():
+    assert hasattr(tracker_Event, "id")
+    descriptor = None
+    for klass in tracker_Event.__mro__:
         if "id" in klass.__dict__:
             descriptor = klass.__dict__["id"]
             break
     assert isinstance(descriptor, property)
 
-def test_tracker::tag_has_usainNumberUsed():
-    assert hasattr(tracker::Tag, "usainNumberUsed")
+
+
+def test_tracker_tag_is_not_abstract():
+    assert not inspect.isabstract(tracker_Tag)
+
+
+def test_tracker_tag_constructor_exists():
+    assert callable(tracker_Tag.__init__)
+
+
+def test_tracker_tag_constructor_args():
+    sig = inspect.signature(tracker_Tag.__init__)
+    params = list(sig.parameters.keys())
+    assert "usainNumberUsed" in params, "Missing parameter 'usainNumberUsed'"
+    assert "id" in params, "Missing parameter 'id'"
+
+def test_tracker_tag_has_usainNumberUsed():
+    assert hasattr(tracker_Tag, "usainNumberUsed")
     descriptor = None
-    for klass in tracker::Tag.__mro__:
+    for klass in tracker_Tag.__mro__:
         if "usainNumberUsed" in klass.__dict__:
             descriptor = klass.__dict__["usainNumberUsed"]
             break
     assert isinstance(descriptor, property)
 
-
-
-def test_tracker::animal_is_not_abstract():
-    assert not inspect.isabstract(tracker::Animal)
-
-
-def test_tracker::animal_constructor_exists():
-    assert callable(tracker::Animal.__init__)
-
-
-def test_tracker::animal_constructor_args():
-    sig = inspect.signature(tracker::Animal.__init__)
-    params = list(sig.parameters.keys())
-    assert "birthDate" in params, "Missing parameter 'birthDate'"
-    assert "lastEventDateTime" in params, "Missing parameter 'lastEventDateTime'"
-    assert "id" in params, "Missing parameter 'id'"
-    assert "weight" in params, "Missing parameter 'weight'"
-    assert "age" in params, "Missing parameter 'age'"
-    assert "speciesCode" in params, "Missing parameter 'speciesCode'"
-    assert "sexCode" in params, "Missing parameter 'sexCode'"
-    assert "breed" in params, "Missing parameter 'breed'"
-    assert "species" in params, "Missing parameter 'species'"
-    assert "sex" in params, "Missing parameter 'sex'"
-    assert "comments" in params, "Missing parameter 'comments'"
-    assert "weightGainPerDay" in params, "Missing parameter 'weightGainPerDay'"
-
-def test_tracker::animal_has_birthDate():
-    assert hasattr(tracker::Animal, "birthDate")
+def test_tracker_tag_has_id():
+    assert hasattr(tracker_Tag, "id")
     descriptor = None
-    for klass in tracker::Animal.__mro__:
-        if "birthDate" in klass.__dict__:
-            descriptor = klass.__dict__["birthDate"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_tracker::animal_has_lastEventDateTime():
-    assert hasattr(tracker::Animal, "lastEventDateTime")
-    descriptor = None
-    for klass in tracker::Animal.__mro__:
-        if "lastEventDateTime" in klass.__dict__:
-            descriptor = klass.__dict__["lastEventDateTime"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_tracker::animal_has_id():
-    assert hasattr(tracker::Animal, "id")
-    descriptor = None
-    for klass in tracker::Animal.__mro__:
+    for klass in tracker_Tag.__mro__:
         if "id" in klass.__dict__:
             descriptor = klass.__dict__["id"]
             break
     assert isinstance(descriptor, property)
 
-def test_tracker::animal_has_weight():
-    assert hasattr(tracker::Animal, "weight")
-    descriptor = None
-    for klass in tracker::Animal.__mro__:
-        if "weight" in klass.__dict__:
-            descriptor = klass.__dict__["weight"]
-            break
-    assert isinstance(descriptor, property)
 
-def test_tracker::animal_has_age():
-    assert hasattr(tracker::Animal, "age")
-    descriptor = None
-    for klass in tracker::Animal.__mro__:
-        if "age" in klass.__dict__:
-            descriptor = klass.__dict__["age"]
-            break
-    assert isinstance(descriptor, property)
 
-def test_tracker::animal_has_speciesCode():
-    assert hasattr(tracker::Animal, "speciesCode")
-    descriptor = None
-    for klass in tracker::Animal.__mro__:
-        if "speciesCode" in klass.__dict__:
-            descriptor = klass.__dict__["speciesCode"]
-            break
-    assert isinstance(descriptor, property)
+def test_tracker_animal_is_not_abstract():
+    assert not inspect.isabstract(tracker_Animal)
 
-def test_tracker::animal_has_sexCode():
-    assert hasattr(tracker::Animal, "sexCode")
-    descriptor = None
-    for klass in tracker::Animal.__mro__:
-        if "sexCode" in klass.__dict__:
-            descriptor = klass.__dict__["sexCode"]
-            break
-    assert isinstance(descriptor, property)
 
-def test_tracker::animal_has_breed():
-    assert hasattr(tracker::Animal, "breed")
-    descriptor = None
-    for klass in tracker::Animal.__mro__:
-        if "breed" in klass.__dict__:
-            descriptor = klass.__dict__["breed"]
-            break
-    assert isinstance(descriptor, property)
+def test_tracker_animal_constructor_exists():
+    assert callable(tracker_Animal.__init__)
 
-def test_tracker::animal_has_species():
-    assert hasattr(tracker::Animal, "species")
-    descriptor = None
-    for klass in tracker::Animal.__mro__:
-        if "species" in klass.__dict__:
-            descriptor = klass.__dict__["species"]
-            break
-    assert isinstance(descriptor, property)
 
-def test_tracker::animal_has_sex():
-    assert hasattr(tracker::Animal, "sex")
-    descriptor = None
-    for klass in tracker::Animal.__mro__:
-        if "sex" in klass.__dict__:
-            descriptor = klass.__dict__["sex"]
-            break
-    assert isinstance(descriptor, property)
+def test_tracker_animal_constructor_args():
+    sig = inspect.signature(tracker_Animal.__init__)
+    params = list(sig.parameters.keys())
+    assert "comments" in params, "Missing parameter 'comments'"
+    assert "species" in params, "Missing parameter 'species'"
+    assert "lastEventDateTime" in params, "Missing parameter 'lastEventDateTime'"
+    assert "id" in params, "Missing parameter 'id'"
+    assert "weightGainPerDay" in params, "Missing parameter 'weightGainPerDay'"
+    assert "sex" in params, "Missing parameter 'sex'"
+    assert "sexCode" in params, "Missing parameter 'sexCode'"
+    assert "birthDate" in params, "Missing parameter 'birthDate'"
+    assert "breed" in params, "Missing parameter 'breed'"
+    assert "weight" in params, "Missing parameter 'weight'"
+    assert "age" in params, "Missing parameter 'age'"
+    assert "speciesCode" in params, "Missing parameter 'speciesCode'"
 
-def test_tracker::animal_has_comments():
-    assert hasattr(tracker::Animal, "comments")
+def test_tracker_animal_has_comments():
+    assert hasattr(tracker_Animal, "comments")
     descriptor = None
-    for klass in tracker::Animal.__mro__:
+    for klass in tracker_Animal.__mro__:
         if "comments" in klass.__dict__:
             descriptor = klass.__dict__["comments"]
             break
     assert isinstance(descriptor, property)
 
-def test_tracker::animal_has_weightGainPerDay():
-    assert hasattr(tracker::Animal, "weightGainPerDay")
+def test_tracker_animal_has_species():
+    assert hasattr(tracker_Animal, "species")
     descriptor = None
-    for klass in tracker::Animal.__mro__:
+    for klass in tracker_Animal.__mro__:
+        if "species" in klass.__dict__:
+            descriptor = klass.__dict__["species"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_tracker_animal_has_lastEventDateTime():
+    assert hasattr(tracker_Animal, "lastEventDateTime")
+    descriptor = None
+    for klass in tracker_Animal.__mro__:
+        if "lastEventDateTime" in klass.__dict__:
+            descriptor = klass.__dict__["lastEventDateTime"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_tracker_animal_has_id():
+    assert hasattr(tracker_Animal, "id")
+    descriptor = None
+    for klass in tracker_Animal.__mro__:
+        if "id" in klass.__dict__:
+            descriptor = klass.__dict__["id"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_tracker_animal_has_weightGainPerDay():
+    assert hasattr(tracker_Animal, "weightGainPerDay")
+    descriptor = None
+    for klass in tracker_Animal.__mro__:
         if "weightGainPerDay" in klass.__dict__:
             descriptor = klass.__dict__["weightGainPerDay"]
             break
     assert isinstance(descriptor, property)
 
-def test_sex_exists():
-    # Check that the Enumeration exists
-    assert Sex is not None
+def test_tracker_animal_has_sex():
+    assert hasattr(tracker_Animal, "sex")
+    descriptor = None
+    for klass in tracker_Animal.__mro__:
+        if "sex" in klass.__dict__:
+            descriptor = klass.__dict__["sex"]
+            break
+    assert isinstance(descriptor, property)
 
-def test_sex_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in Sex]
-    expected_literals = [
-        "Unspecified",
-        "M",
-        "F",
-        "C",
-        "S",
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in Sex"
+def test_tracker_animal_has_sexCode():
+    assert hasattr(tracker_Animal, "sexCode")
+    descriptor = None
+    for klass in tracker_Animal.__mro__:
+        if "sexCode" in klass.__dict__:
+            descriptor = klass.__dict__["sexCode"]
+            break
+    assert isinstance(descriptor, property)
 
-def test_animaltype_exists():
-    # Check that the Enumeration exists
-    assert AnimalType is not None
+def test_tracker_animal_has_birthDate():
+    assert hasattr(tracker_Animal, "birthDate")
+    descriptor = None
+    for klass in tracker_Animal.__mro__:
+        if "birthDate" in klass.__dict__:
+            descriptor = klass.__dict__["birthDate"]
+            break
+    assert isinstance(descriptor, property)
 
-def test_animaltype_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in AnimalType]
-    expected_literals = [
-        "BovineDairy",
-        "BovineBison",
-        "Equine",
-        "Swine",
-        "Ovine",
-        "Caprine",
-        "Unspecified",
-        "BovineBeef",
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in AnimalType"
+def test_tracker_animal_has_breed():
+    assert hasattr(tracker_Animal, "breed")
+    descriptor = None
+    for klass in tracker_Animal.__mro__:
+        if "breed" in klass.__dict__:
+            descriptor = klass.__dict__["breed"]
+            break
+    assert isinstance(descriptor, property)
 
-def test_treatmentmethod_exists():
-    # Check that the Enumeration exists
-    assert TreatmentMethod is not None
+def test_tracker_animal_has_weight():
+    assert hasattr(tracker_Animal, "weight")
+    descriptor = None
+    for klass in tracker_Animal.__mro__:
+        if "weight" in klass.__dict__:
+            descriptor = klass.__dict__["weight"]
+            break
+    assert isinstance(descriptor, property)
 
-def test_treatmentmethod_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in TreatmentMethod]
-    expected_literals = [
-        "Salve",
-        "Unspecified",
-        "Nasal",
-        "Intramuscular",
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in TreatmentMethod"
+def test_tracker_animal_has_age():
+    assert hasattr(tracker_Animal, "age")
+    descriptor = None
+    for klass in tracker_Animal.__mro__:
+        if "age" in klass.__dict__:
+            descriptor = klass.__dict__["age"]
+            break
+    assert isinstance(descriptor, property)
 
-def test_sheepbreed_exists():
-    # Check that the Enumeration exists
-    assert SheepBreed is not None
-
-def test_sheepbreed_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in SheepBreed]
-    expected_literals = [
-        "CL",
-        "BO",
-        "RM",
-        "IL",
-        "BC",
-        "CD",
-        "OU",
-        "DP",
-        "RV",
-        "KK",
-        "KH",
-        "DL",
-        "TX",
-        "KA",
-        "ST",
-        "HL",
-        "FB",
-        "CR",
-        "SL",
-        "Unspecified",
-        "SC",
-        "CF",
-        "LY",
-        "SX",
-        "MP",
-        "SU",
-        "PO",
-        "BL",
-        "BF",
-        "LE",
-        "CO",
-        "XM",
-        "RG",
-        "ER",
-        "NC",
-        "BW",
-        "XL",
-        "MM",
-        "NL",
-        "FN",
-        "TU",
-        "PE",
-        "SR",
-        "CP",
-        "HS",
-        "HY",
-        "MT",
-        "ZS",
-        "OX",
-        "RI",
-        "DH",
-        "LI",
-        "RY",
-        "TA",
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in SheepBreed"
-
-def test_bisonbreed_exists():
-    # Check that the Enumeration exists
-    assert BisonBreed is not None
-
-def test_bisonbreed_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in BisonBreed]
-    expected_literals = [
-        "WO",
-        "PB",
-        "Unspecified",
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in BisonBreed"
-
-def test_eventdatatype_exists():
-    # Check that the Enumeration exists
-    assert EventDataType is not None
-
-def test_eventdatatype_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in EventDataType]
-    expected_literals = [
-        "Integer",
-        "Boolean",
-        "String",
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in EventDataType"
-
-def test_beefbreed_exists():
-    # Check that the Enumeration exists
-    assert BeefBreed is not None
-
-def test_beefbreed_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in BeefBreed]
-    expected_literals = [
-        "BR",
-        "FB",
-        "RW",
-        "BU",
-        "SA",
-        "BG",
-        "AM",
-        "GE",
-        "HB",
-        "GV",
-        "FA",
-        "CG",
-        "SM",
-        "DF",
-        "DE",
-        "SB",
-        "BL",
-        "PA",
-        "KB",
-        "MA",
-        "GA",
-        "AK",
-        "BD",
-        "RO",
-        "RD",
-        "TI",
-        "SG",
-        "MC",
-        "WP",
-        "RP",
-        "CP",
-        "GZ",
-        "LR",
-        "CN",
-        "WB",
-        "FL",
-        "SP",
-        "KY",
-        "IS",
-        "TN",
-        "Unspecified",
-        "BQ",
-        "MG",
-        "FC",
-        "FP",
-        "HY",
-        "DB",
-        "IB",
-        "CU",
-        "TL",
-        "BB",
-        "LM",
-        "LO",
-        "NE",
-        "AU",
-        "HP",
-        "DR",
-        "FR",
-        "DL",
-        "SI",
-        "ME",
-        "BM",
-        "CB",
-        "BF",
-        "LU",
-        "BE",
-        "ER",
-        "CH",
-        "AN",
-        "BO",
-        "AL",
-        "SV",
-        "MU",
-        "MI",
-        "SW",
-        "AR",
-        "GY",
-        "YA",
-        "ML",
-        "XT",
-        "RS",
-        "HH",
-        "TA",
-        "DJ",
-        "SL",
-        "WF",
-        "RN",
-        "MO",
-        "CA",
-        "AB",
-        "PR",
-        "NM",
-        "CM",
-        "SX",
-        "PZ",
-        "XX",
-        "SS",
-        "GR",
-        "MH",
-        "BA",
-        "RR",
-        "DN",
-        "BW",
-        "BI",
-        "AE",
-        "PI",
-        "RB",
-        "NR",
-        "SE",
-        "TP",
-        "MR",
-        "HC",
-        "RA",
-        "GI",
-        "BH",
-        "TG",
-        "BN",
-        "SH",
-        "DS",
-        "NS",
-        "AF",
-        "AW",
-        "GS",
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in BeefBreed"
+def test_tracker_animal_has_speciesCode():
+    assert hasattr(tracker_Animal, "speciesCode")
+    descriptor = None
+    for klass in tracker_Animal.__mro__:
+        if "speciesCode" in klass.__dict__:
+            descriptor = klass.__dict__["speciesCode"]
+            break
+    assert isinstance(descriptor, property)
 
 def test_swinebreed_exists():
     # Check that the Enumeration exists
@@ -1714,106 +1423,51 @@ def test_swinebreed_has_all_literals():
     # Collect the names of literals in this Enumeration
     enum_literals = [lit.name for lit in SwineBreed]
     expected_literals = [
-        "TM",
-        "DU",
-        "LC",
-        "BK",
-        "HA",
-        "YO",
-        "CW",
-        "LW",
-        "PC",
-        "Unspecified",
         "RW",
         "SO",
-        "PE",
-        "LB",
+        "HA",
+        "LC",
+        "DU",
         "WS",
         "LA",
+        "LW",
+        "TM",
+        "PC",
+        "Unspecified",
+        "YO",
+        "CW",
+        "LB",
+        "PE",
+        "BK",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
         assert lit_name in enum_literals, f"Literal '' missing in SwineBreed"
 
-def test_horsebreed_exists():
+def test_goatbreed_exists():
     # Check that the Enumeration exists
-    assert HorseBreed is not None
+    assert GoatBreed is not None
 
-def test_horsebreed_has_all_literals():
+def test_goatbreed_has_all_literals():
     # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in HorseBreed]
+    enum_literals = [lit.name for lit in GoatBreed]
     expected_literals = [
-        "NF",
-        "TH",
-        "PV",
-        "SE",
-        "IC",
-        "SY",
-        "VK",
-        "WE",
-        "BU",
-        "OL",
-        "MF",
-        "HK",
-        "PL",
-        "DT",
-        "TR",
-        "HU",
-        "PN",
-        "MU",
-        "AS",
-        "RH",
-        "AC",
-        "AP",
-        "TF",
-        "TW",
-        "HT",
-        "LZ",
-        "CY",
-        "WW",
-        "WU",
-        "BW",
-        "NK",
-        "PW",
-        "MN",
-        "CI",
-        "HF",
-        "HN",
-        "FH",
-        "SF",
-        "WG",
-        "WI",
-        "FR",
-        "WF",
-        "HG",
-        "PH",
-        "BY",
-        "FC",
-        "QH",
-        "DW",
-        "AD",
-        "AO",
-        "AA",
-        "HW",
-        "HV",
-        "EX",
-        "TP",
-        "PF",
-        "CV",
-        "CM",
-        "GL",
-        "FJ",
-        "FE",
-        "RU",
-        "OB",
-        "NO",
+        "ND",
+        "OH",
+        "BZ",
+        "TO",
+        "EN",
         "Unspecified",
-        "SN",
-        "PT",
+        "CS",
+        "AI",
+        "LN",
+        "AG",
+        "NU",
+        "PY",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in HorseBreed"
+        assert lit_name in enum_literals, f"Literal '' missing in GoatBreed"
 
 def test_onetoten_exists():
     # Check that the Enumeration exists
@@ -1823,21 +1477,104 @@ def test_onetoten_has_all_literals():
     # Collect the names of literals in this Enumeration
     enum_literals = [lit.name for lit in OneToTen]
     expected_literals = [
-        "Four",
-        "One",
         "Eight",
-        "Five",
-        "Two",
+        "Four",
         "Three",
-        "Seven",
-        "Unspecified",
-        "Nine",
+        "Five",
         "Ten",
+        "Seven",
         "Six",
+        "Nine",
+        "One",
+        "Unspecified",
+        "Two",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
         assert lit_name in enum_literals, f"Literal '' missing in OneToTen"
+
+def test_bisonbreed_exists():
+    # Check that the Enumeration exists
+    assert BisonBreed is not None
+
+def test_bisonbreed_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in BisonBreed]
+    expected_literals = [
+        "PB",
+        "WO",
+        "Unspecified",
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in BisonBreed"
+
+def test_sheepbreed_exists():
+    # Check that the Enumeration exists
+    assert SheepBreed is not None
+
+def test_sheepbreed_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in SheepBreed]
+    expected_literals = [
+        "RY",
+        "SC",
+        "SU",
+        "NC",
+        "CL",
+        "RM",
+        "MM",
+        "CR",
+        "KH",
+        "TX",
+        "Unspecified",
+        "CD",
+        "SR",
+        "MT",
+        "HY",
+        "FB",
+        "IL",
+        "LE",
+        "KK",
+        "MP",
+        "XM",
+        "TU",
+        "ST",
+        "NL",
+        "SX",
+        "CO",
+        "RV",
+        "RI",
+        "XL",
+        "ZS",
+        "DL",
+        "PE",
+        "DP",
+        "PO",
+        "TA",
+        "OU",
+        "BF",
+        "ER",
+        "HS",
+        "CP",
+        "CF",
+        "BL",
+        "LI",
+        "KA",
+        "LY",
+        "RG",
+        "HL",
+        "SL",
+        "BW",
+        "BC",
+        "BO",
+        "DH",
+        "OX",
+        "FN",
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in SheepBreed"
 
 def test_dairybreed_exists():
     # Check that the Enumeration exists
@@ -1847,17 +1584,17 @@ def test_dairybreed_has_all_literals():
     # Collect the names of literals in this Enumeration
     enum_literals = [lit.name for lit in DairyBreed]
     expected_literals = [
-        "LD",
         "WW",
-        "AY",
-        "Unspecified",
+        "LD",
         "JE",
+        "BS",
+        "AY",
+        "GU",
         "FM",
         "GD",
-        "GU",
-        "HO",
+        "Unspecified",
         "MS",
-        "BS",
+        "HO",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
@@ -1871,40 +1608,303 @@ def test_treatment_has_all_literals():
     # Collect the names of literals in this Enumeration
     enum_literals = [lit.name for lit in Treatment]
     expected_literals = [
-        "Unspecified",
-        "Vaccination",
         "Vitamin",
-        "Prevention",
+        "Vaccination",
         "Hormone",
+        "Prevention",
+        "Unspecified",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
         assert lit_name in enum_literals, f"Literal '' missing in Treatment"
 
-def test_goatbreed_exists():
+def test_eventdatatype_exists():
     # Check that the Enumeration exists
-    assert GoatBreed is not None
+    assert EventDataType is not None
 
-def test_goatbreed_has_all_literals():
+def test_eventdatatype_has_all_literals():
     # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in GoatBreed]
+    enum_literals = [lit.name for lit in EventDataType]
     expected_literals = [
-        "OH",
-        "ND",
-        "AI",
-        "TO",
-        "EN",
-        "LN",
-        "Unspecified",
-        "NU",
-        "BZ",
-        "PY",
-        "AG",
-        "CS",
+        "String",
+        "Boolean",
+        "Integer",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in GoatBreed"
+        assert lit_name in enum_literals, f"Literal '' missing in EventDataType"
+
+def test_treatmentmethod_exists():
+    # Check that the Enumeration exists
+    assert TreatmentMethod is not None
+
+def test_treatmentmethod_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in TreatmentMethod]
+    expected_literals = [
+        "Intramuscular",
+        "Salve",
+        "Nasal",
+        "Unspecified",
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in TreatmentMethod"
+
+def test_beefbreed_exists():
+    # Check that the Enumeration exists
+    assert BeefBreed is not None
+
+def test_beefbreed_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in BeefBreed]
+    expected_literals = [
+        "BH",
+        "BB",
+        "DS",
+        "LO",
+        "BN",
+        "PI",
+        "RA",
+        "AF",
+        "LU",
+        "KY",
+        "GS",
+        "DN",
+        "WF",
+        "AE",
+        "CP",
+        "HB",
+        "TA",
+        "CM",
+        "BA",
+        "CB",
+        "BR",
+        "GA",
+        "DL",
+        "NM",
+        "TP",
+        "BM",
+        "DB",
+        "GR",
+        "DR",
+        "TL",
+        "NR",
+        "SP",
+        "SX",
+        "SB",
+        "LR",
+        "WB",
+        "BU",
+        "AK",
+        "NE",
+        "ML",
+        "HC",
+        "AU",
+        "GY",
+        "CN",
+        "RP",
+        "CG",
+        "MC",
+        "AN",
+        "AB",
+        "RR",
+        "XX",
+        "MI",
+        "MU",
+        "SG",
+        "RN",
+        "GV",
+        "AL",
+        "FP",
+        "MH",
+        "FA",
+        "BQ",
+        "AR",
+        "WP",
+        "XT",
+        "AW",
+        "TN",
+        "Unspecified",
+        "PR",
+        "RB",
+        "DE",
+        "BE",
+        "NS",
+        "RW",
+        "GI",
+        "IS",
+        "CU",
+        "MA",
+        "GZ",
+        "GE",
+        "AM",
+        "FR",
+        "HP",
+        "DJ",
+        "KB",
+        "BL",
+        "BD",
+        "SE",
+        "RS",
+        "PZ",
+        "ER",
+        "LM",
+        "CH",
+        "PA",
+        "MO",
+        "SM",
+        "TI",
+        "BO",
+        "SL",
+        "MR",
+        "ME",
+        "FB",
+        "YA",
+        "BG",
+        "RO",
+        "SH",
+        "BF",
+        "HY",
+        "FC",
+        "SV",
+        "BW",
+        "RD",
+        "SS",
+        "SW",
+        "TG",
+        "SA",
+        "IB",
+        "FL",
+        "SI",
+        "BI",
+        "HH",
+        "CA",
+        "MG",
+        "DF",
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in BeefBreed"
+
+def test_animaltype_exists():
+    # Check that the Enumeration exists
+    assert AnimalType is not None
+
+def test_animaltype_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in AnimalType]
+    expected_literals = [
+        "Unspecified",
+        "Swine",
+        "BovineDairy",
+        "Equine",
+        "BovineBeef",
+        "Caprine",
+        "BovineBison",
+        "Ovine",
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in AnimalType"
+
+def test_sex_exists():
+    # Check that the Enumeration exists
+    assert Sex is not None
+
+def test_sex_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in Sex]
+    expected_literals = [
+        "S",
+        "F",
+        "C",
+        "Unspecified",
+        "M",
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in Sex"
+
+def test_horsebreed_exists():
+    # Check that the Enumeration exists
+    assert HorseBreed is not None
+
+def test_horsebreed_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in HorseBreed]
+    expected_literals = [
+        "DT",
+        "PN",
+        "WI",
+        "EX",
+        "PV",
+        "PF",
+        "MN",
+        "NO",
+        "AC",
+        "BU",
+        "BW",
+        "AA",
+        "HW",
+        "MF",
+        "RU",
+        "CV",
+        "AP",
+        "QH",
+        "FR",
+        "WE",
+        "LZ",
+        "CM",
+        "TP",
+        "HF",
+        "MU",
+        "WG",
+        "TF",
+        "HU",
+        "VK",
+        "OL",
+        "WU",
+        "NK",
+        "PH",
+        "HN",
+        "AO",
+        "HV",
+        "SE",
+        "DW",
+        "PT",
+        "NF",
+        "RH",
+        "WF",
+        "HT",
+        "CI",
+        "HK",
+        "Unspecified",
+        "SF",
+        "OB",
+        "FE",
+        "FH",
+        "TR",
+        "FJ",
+        "PW",
+        "TH",
+        "GL",
+        "HG",
+        "AD",
+        "IC",
+        "PL",
+        "SN",
+        "CY",
+        "TW",
+        "AS",
+        "SY",
+        "FC",
+        "BY",
+        "WW",
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in HorseBreed"
 
 
 # =============================================================================
@@ -1918,26 +1918,26 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-tracker::EventAttributeSchema_strategy = st.builds(
-    tracker::EventAttributeSchema,
-    name=
-        safe_text,
+tracker_EventAttributeSchema_strategy = st.builds(
+    tracker_EventAttributeSchema,
     description=
         safe_text,
     dataType=
+        safe_text,
+    name=
         safe_text
 )
-tracker::EventSchema_strategy = st.builds(
-    tracker::EventSchema,
+tracker_EventSchema_strategy = st.builds(
+    tracker_EventSchema,
     name=
         safe_text,
-    animalType=
-        safe_text,
     description=
+        safe_text,
+    animalType=
         safe_text
 )
-tracker::EventAttribute_strategy = st.builds(
-    tracker::EventAttribute,
+tracker_EventAttribute_strategy = st.builds(
+    tracker_EventAttribute,
     key=
         safe_text,
     value=
@@ -1946,8 +1946,8 @@ tracker::EventAttribute_strategy = st.builds(
 MedicalCondition_strategy = st.builds(
     MedicalCondition,
 )
-tracker::Mastitis_strategy = st.builds(
-    tracker::Mastitis,
+tracker_Mastitis_strategy = st.builds(
+    tracker_Mastitis,
     origin=
         safe_text,
     location=
@@ -1956,56 +1956,90 @@ tracker::Mastitis_strategy = st.builds(
 Birthing_strategy = st.builds(
     Birthing,
 )
-tracker::Calving_strategy = st.builds(
-    tracker::Calving,
+tracker_Calving_strategy = st.builds(
+    tracker_Calving,
 )
 Bovine_strategy = st.builds(
     Bovine,
 )
-tracker::BovineBison_strategy = st.builds(
-    tracker::BovineBison,
-    buffaloBreed=
-        safe_text
-)
-tracker::BovineDairy_strategy = st.builds(
-    tracker::BovineDairy,
+tracker_BovineDairy_strategy = st.builds(
+    tracker_BovineDairy,
     dairyBreed=
         safe_text
 )
-tracker::BovineBeef_strategy = st.builds(
-    tracker::BovineBeef,
+tracker_BovineBison_strategy = st.builds(
+    tracker_BovineBison,
+    buffaloBreed=
+        safe_text
+)
+tracker_BovineBeef_strategy = st.builds(
+    tracker_BovineBeef,
     beefBreed=
         safe_text
 )
-tracker::Schema_strategy = st.builds(
-    tracker::Schema,
+tracker_Schema_strategy = st.builds(
+    tracker_Schema,
 )
-tracker::Location_strategy = st.builds(
-    tracker::Location,
+tracker_Location_strategy = st.builds(
+    tracker_Location,
     name=
         safe_text
 )
-tracker::Premises_strategy = st.builds(
-    tracker::Premises,
-    premisesId=
-        safe_text,
+tracker_Premises_strategy = st.builds(
+    tracker_Premises,
     emailContact=
         safe_text,
-    uri=
+    premisesId=
         safe_text,
     name=
+        safe_text,
+    uri=
         safe_text
 )
 Event_strategy = st.builds(
     Event,
 )
-tracker::BirthDefect_strategy = st.builds(
-    tracker::BirthDefect,
+tracker_WeighIn_strategy = st.builds(
+    tracker_WeighIn,
+    weight=
+        safe_text,
+    weightGainPerDay=
+        safe_text
+)
+tracker_MilkTest_strategy = st.builds(
+    tracker_MilkTest,
+    percentButterFat=
+        st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False),
+    poundsProduced=
+        st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False),
+    somaticCellCounts=
+        st.integers(),
+    percentProtein=
+        st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False),
+    otherSolids=
+        st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False)
+)
+tracker_MovedIn_strategy = st.builds(
+    tracker_MovedIn,
+    sourcePin=
+        safe_text
+)
+tracker_TagRetired_strategy = st.builds(
+    tracker_TagRetired,
+)
+tracker_BirthDefect_strategy = st.builds(
+    tracker_BirthDefect,
     freemartin=
         st.booleans()
 )
-tracker::HerdTest_strategy = st.builds(
-    tracker::HerdTest,
+tracker_ICVI_strategy = st.builds(
+    tracker_ICVI,
+)
+tracker_LostTag_strategy = st.builds(
+    tracker_LostTag,
+)
+tracker_HerdTest_strategy = st.builds(
+    tracker_HerdTest,
     pregnant=
         st.booleans(),
     bredDateEstimate=
@@ -2013,289 +2047,231 @@ tracker::HerdTest_strategy = st.builds(
     daysSinceBredEstimate=
         st.integers()
 )
-tracker::Sighting_strategy = st.builds(
-    tracker::Sighting,
+tracker_Imported_strategy = st.builds(
+    tracker_Imported,
 )
-tracker::LostTag_strategy = st.builds(
-    tracker::LostTag,
+tracker_Birthing_strategy = st.builds(
+    tracker_Birthing,
+    difficulty=
+        safe_text,
+    viability=
+        st.booleans(),
+    assisted=
+        st.booleans()
 )
-tracker::MovedOut_strategy = st.builds(
-    tracker::MovedOut,
+tracker_MovedOut_strategy = st.builds(
+    tracker_MovedOut,
     destinationPin=
         safe_text
 )
-tracker::MilkTest_strategy = st.builds(
-    tracker::MilkTest,
-    percentButterFat=
-        st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False),
-    otherSolids=
-        st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False),
-    percentProtein=
-        st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False),
-    poundsProduced=
-        st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False),
-    somaticCellCounts=
-        st.integers()
+tracker_ReplacedTag_strategy = st.builds(
+    tracker_ReplacedTag,
+    usainNumberUsedForOldId=
+        st.booleans(),
+    oldId=
+        safe_text
 )
-tracker::Exported_strategy = st.builds(
-    tracker::Exported,
+tracker_TagApplied_strategy = st.builds(
+    tracker_TagApplied,
 )
-tracker::GenericEvent_strategy = st.builds(
-    tracker::GenericEvent,
+tracker_GenericEvent_strategy = st.builds(
+    tracker_GenericEvent,
 )
-tracker::ICVI_strategy = st.builds(
-    tracker::ICVI,
+tracker_Sighting_strategy = st.builds(
+    tracker_Sighting,
 )
-tracker::TagRetired_strategy = st.builds(
-    tracker::TagRetired,
+tracker_Slaughtered_strategy = st.builds(
+    tracker_Slaughtered,
 )
-tracker::Imported_strategy = st.builds(
-    tracker::Imported,
+tracker_AnimalMissing_strategy = st.builds(
+    tracker_AnimalMissing,
 )
-tracker::MedicalCondition_strategy = st.builds(
-    tracker::MedicalCondition,
+tracker_Died_strategy = st.builds(
+    tracker_Died,
 )
-tracker::Died_strategy = st.builds(
-    tracker::Died,
+tracker_MedicalCondition_strategy = st.builds(
+    tracker_MedicalCondition,
 )
-tracker::MedicalTreatment_strategy = st.builds(
-    tracker::MedicalTreatment,
-    quantity=
-        safe_text,
-    treatment=
+tracker_MedicalTreatment_strategy = st.builds(
+    tracker_MedicalTreatment,
+    method=
         safe_text,
     lot=
+        safe_text,
+    manufacturer=
         safe_text,
     product=
         safe_text,
     name=
         safe_text,
-    method=
+    quantity=
         safe_text,
-    manufacturer=
+    treatment=
         safe_text
 )
-tracker::ReplacedTag_strategy = st.builds(
-    tracker::ReplacedTag,
-    oldId=
-        safe_text,
-    usainNumberUsedForOldId=
-        st.booleans()
+tracker_Exported_strategy = st.builds(
+    tracker_Exported,
 )
-tracker::AnimalMissing_strategy = st.builds(
-    tracker::AnimalMissing,
-)
-tracker::Slaughtered_strategy = st.builds(
-    tracker::Slaughtered,
-)
-tracker::MovedIn_strategy = st.builds(
-    tracker::MovedIn,
-    sourcePin=
-        safe_text
-)
-tracker::TagApplied_strategy = st.builds(
-    tracker::TagApplied,
-)
-tracker::Birthing_strategy = st.builds(
-    tracker::Birthing,
-    assisted=
-        st.booleans(),
-    viability=
-        st.booleans(),
-    difficulty=
-        safe_text
-)
-tracker::WeighIn_strategy = st.builds(
-    tracker::WeighIn,
-    weightGainPerDay=
-        safe_text,
-    weight=
-        safe_text
-)
-tracker::TagAllocated_strategy = st.builds(
-    tracker::TagAllocated,
+tracker_TagAllocated_strategy = st.builds(
+    tracker_TagAllocated,
 )
 Animal_strategy = st.builds(
     Animal,
 )
-tracker::Ovine_strategy = st.builds(
-    tracker::Ovine,
+tracker_Swine_strategy = st.builds(
+    tracker_Swine,
+    leftEarNotching=
+        st.integers(),
+    rightEarNotching=
+        st.integers(),
+    swineBreed=
+        safe_text
+)
+tracker_Ovine_strategy = st.builds(
+    tracker_Ovine,
     sheepBreed=
         safe_text,
     scrapieTag=
         safe_text
 )
-tracker::Swine_strategy = st.builds(
-    tracker::Swine,
-    rightEarNotching=
-        st.integers(),
-    leftEarNotching=
-        st.integers(),
-    swineBreed=
-        safe_text
-)
-tracker::Equine_strategy = st.builds(
-    tracker::Equine,
+tracker_Equine_strategy = st.builds(
+    tracker_Equine,
     horseBreed=
         safe_text
 )
-tracker::Caprine_strategy = st.builds(
-    tracker::Caprine,
+tracker_Caprine_strategy = st.builds(
+    tracker_Caprine,
     goatBreed=
         safe_text
 )
-tracker::Bovine_strategy = st.builds(
-    tracker::Bovine,
+tracker_Bovine_strategy = st.builds(
+    tracker_Bovine,
 )
-tracker::Event_strategy = st.builds(
-    tracker::Event,
-    id=
-        safe_text,
-    eventCode=
-        st.integers(),
-    dateTime=
-        st.dates(),
+tracker_Event_strategy = st.builds(
+    tracker_Event,
     electronicallyRead=
         st.booleans(),
     correction=
         st.booleans(),
+    eventCode=
+        st.integers(),
     comments=
+        safe_text,
+    dateTime=
+        st.dates(),
+    id=
         safe_text
 )
-tracker::Tag_strategy = st.builds(
-    tracker::Tag,
-    id=
-        safe_text,
+tracker_Tag_strategy = st.builds(
+    tracker_Tag,
     usainNumberUsed=
-        st.booleans()
+        st.booleans(),
+    id=
+        safe_text
 )
-tracker::Animal_strategy = st.builds(
-    tracker::Animal,
-    birthDate=
-        st.dates(),
+tracker_Animal_strategy = st.builds(
+    tracker_Animal,
+    comments=
+        safe_text,
+    species=
+        safe_text,
     lastEventDateTime=
         st.dates(),
     id=
+        safe_text,
+    weightGainPerDay=
+        safe_text,
+    sex=
+        safe_text,
+    sexCode=
+        safe_text,
+    birthDate=
+        st.dates(),
+    breed=
         safe_text,
     weight=
         safe_text,
     age=
         safe_text,
     speciesCode=
-        safe_text,
-    sexCode=
-        safe_text,
-    breed=
-        safe_text,
-    species=
-        safe_text,
-    sex=
-        safe_text,
-    comments=
-        safe_text,
-    weightGainPerDay=
         safe_text
 )
 
-@given(instance=tracker::EventAttributeSchema_strategy)
+@given(instance=tracker_EventAttributeSchema_strategy)
 @settings(max_examples=50)
-def test_tracker::eventattributeschema_instantiation(instance):
-    assert isinstance(instance, tracker::EventAttributeSchema)
-
-@given(instance=tracker::EventAttributeSchema_strategy)
-def test_tracker::eventattributeschema_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_tracker_eventattributeschema_instantiation(instance):
+    assert isinstance(instance, tracker_EventAttributeSchema)
 
 
-@given(instance=tracker::EventAttributeSchema_strategy)
-def test_tracker::eventattributeschema_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
 
-@given(instance=tracker::EventAttributeSchema_strategy)
-def test_tracker::eventattributeschema_description_type(instance):
-    assert isinstance(instance.description, str)
-
-
-@given(instance=tracker::EventAttributeSchema_strategy)
-def test_tracker::eventattributeschema_description_setter(instance):
+@given(instance=tracker_EventAttributeSchema_strategy)
+def test_tracker_eventattributeschema_description_setter(instance):
     original = instance.description
     instance.description = original
     assert instance.description == original
 
-@given(instance=tracker::EventAttributeSchema_strategy)
-def test_tracker::eventattributeschema_dataType_type(instance):
-    assert isinstance(instance.dataType, str)
 
 
-@given(instance=tracker::EventAttributeSchema_strategy)
-def test_tracker::eventattributeschema_dataType_setter(instance):
+@given(instance=tracker_EventAttributeSchema_strategy)
+def test_tracker_eventattributeschema_dataType_setter(instance):
     original = instance.dataType
     instance.dataType = original
     assert instance.dataType == original
 
-@given(instance=tracker::EventSchema_strategy)
-@settings(max_examples=50)
-def test_tracker::eventschema_instantiation(instance):
-    assert isinstance(instance, tracker::EventSchema)
-
-@given(instance=tracker::EventSchema_strategy)
-def test_tracker::eventschema_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
-@given(instance=tracker::EventSchema_strategy)
-def test_tracker::eventschema_name_setter(instance):
+@given(instance=tracker_EventAttributeSchema_strategy)
+def test_tracker_eventattributeschema_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=tracker::EventSchema_strategy)
-def test_tracker::eventschema_animalType_type(instance):
-    assert isinstance(instance.animalType, str)
+@given(instance=tracker_EventSchema_strategy)
+@settings(max_examples=50)
+def test_tracker_eventschema_instantiation(instance):
+    assert isinstance(instance, tracker_EventSchema)
 
 
-@given(instance=tracker::EventSchema_strategy)
-def test_tracker::eventschema_animalType_setter(instance):
-    original = instance.animalType
-    instance.animalType = original
-    assert instance.animalType == original
 
-@given(instance=tracker::EventSchema_strategy)
-def test_tracker::eventschema_description_type(instance):
-    assert isinstance(instance.description, str)
+@given(instance=tracker_EventSchema_strategy)
+def test_tracker_eventschema_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
 
 
-@given(instance=tracker::EventSchema_strategy)
-def test_tracker::eventschema_description_setter(instance):
+
+@given(instance=tracker_EventSchema_strategy)
+def test_tracker_eventschema_description_setter(instance):
     original = instance.description
     instance.description = original
     assert instance.description == original
 
-@given(instance=tracker::EventAttribute_strategy)
+
+
+@given(instance=tracker_EventSchema_strategy)
+def test_tracker_eventschema_animalType_setter(instance):
+    original = instance.animalType
+    instance.animalType = original
+    assert instance.animalType == original
+
+@given(instance=tracker_EventAttribute_strategy)
 @settings(max_examples=50)
-def test_tracker::eventattribute_instantiation(instance):
-    assert isinstance(instance, tracker::EventAttribute)
-
-@given(instance=tracker::EventAttribute_strategy)
-def test_tracker::eventattribute_key_type(instance):
-    assert isinstance(instance.key, str)
+def test_tracker_eventattribute_instantiation(instance):
+    assert isinstance(instance, tracker_EventAttribute)
 
 
-@given(instance=tracker::EventAttribute_strategy)
-def test_tracker::eventattribute_key_setter(instance):
+
+@given(instance=tracker_EventAttribute_strategy)
+def test_tracker_eventattribute_key_setter(instance):
     original = instance.key
     instance.key = original
     assert instance.key == original
 
-@given(instance=tracker::EventAttribute_strategy)
-def test_tracker::eventattribute_value_type(instance):
-    assert isinstance(instance.value, str)
 
 
-@given(instance=tracker::EventAttribute_strategy)
-def test_tracker::eventattribute_value_setter(instance):
+@given(instance=tracker_EventAttribute_strategy)
+def test_tracker_eventattribute_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
@@ -2305,29 +2281,23 @@ def test_tracker::eventattribute_value_setter(instance):
 def test_medicalcondition_instantiation(instance):
     assert isinstance(instance, MedicalCondition)
 
-@given(instance=tracker::Mastitis_strategy)
+@given(instance=tracker_Mastitis_strategy)
 @settings(max_examples=50)
-def test_tracker::mastitis_instantiation(instance):
-    assert isinstance(instance, tracker::Mastitis)
-
-@given(instance=tracker::Mastitis_strategy)
-def test_tracker::mastitis_origin_type(instance):
-    assert isinstance(instance.origin, str)
+def test_tracker_mastitis_instantiation(instance):
+    assert isinstance(instance, tracker_Mastitis)
 
 
-@given(instance=tracker::Mastitis_strategy)
-def test_tracker::mastitis_origin_setter(instance):
+
+@given(instance=tracker_Mastitis_strategy)
+def test_tracker_mastitis_origin_setter(instance):
     original = instance.origin
     instance.origin = original
     assert instance.origin == original
 
-@given(instance=tracker::Mastitis_strategy)
-def test_tracker::mastitis_location_type(instance):
-    assert isinstance(instance.location, str)
 
 
-@given(instance=tracker::Mastitis_strategy)
-def test_tracker::mastitis_location_setter(instance):
+@given(instance=tracker_Mastitis_strategy)
+def test_tracker_mastitis_location_setter(instance):
     original = instance.location
     instance.location = original
     assert instance.location == original
@@ -2337,164 +2307,109 @@ def test_tracker::mastitis_location_setter(instance):
 def test_birthing_instantiation(instance):
     assert isinstance(instance, Birthing)
 
-@given(instance=tracker::Calving_strategy)
+@given(instance=tracker_Calving_strategy)
 @settings(max_examples=50)
-def test_tracker::calving_instantiation(instance):
-    assert isinstance(instance, tracker::Calving)
+def test_tracker_calving_instantiation(instance):
+    assert isinstance(instance, tracker_Calving)
 
 @given(instance=Bovine_strategy)
 @settings(max_examples=50)
 def test_bovine_instantiation(instance):
     assert isinstance(instance, Bovine)
 
-@given(instance=tracker::BovineBison_strategy)
+@given(instance=tracker_BovineDairy_strategy)
 @settings(max_examples=50)
-def test_tracker::bovinebison_instantiation(instance):
-    assert isinstance(instance, tracker::BovineBison)
-
-@given(instance=tracker::BovineBison_strategy)
-def test_tracker::bovinebison_buffaloBreed_type(instance):
-    assert isinstance(instance.buffaloBreed, str)
+def test_tracker_bovinedairy_instantiation(instance):
+    assert isinstance(instance, tracker_BovineDairy)
 
 
-@given(instance=tracker::BovineBison_strategy)
-def test_tracker::bovinebison_buffaloBreed_setter(instance):
-    original = instance.buffaloBreed
-    instance.buffaloBreed = original
-    assert instance.buffaloBreed == original
 
-@given(instance=tracker::BovineDairy_strategy)
-@settings(max_examples=50)
-def test_tracker::bovinedairy_instantiation(instance):
-    assert isinstance(instance, tracker::BovineDairy)
-
-@given(instance=tracker::BovineDairy_strategy)
-def test_tracker::bovinedairy_dairyBreed_type(instance):
-    assert isinstance(instance.dairyBreed, str)
-
-
-@given(instance=tracker::BovineDairy_strategy)
-def test_tracker::bovinedairy_dairyBreed_setter(instance):
+@given(instance=tracker_BovineDairy_strategy)
+def test_tracker_bovinedairy_dairyBreed_setter(instance):
     original = instance.dairyBreed
     instance.dairyBreed = original
     assert instance.dairyBreed == original
 
-@given(instance=tracker::BovineBeef_strategy)
+@given(instance=tracker_BovineBison_strategy)
 @settings(max_examples=50)
-def test_tracker::bovinebeef_instantiation(instance):
-    assert isinstance(instance, tracker::BovineBeef)
-
-@given(instance=tracker::BovineBeef_strategy)
-def test_tracker::bovinebeef_beefBreed_type(instance):
-    assert isinstance(instance.beefBreed, str)
+def test_tracker_bovinebison_instantiation(instance):
+    assert isinstance(instance, tracker_BovineBison)
 
 
-@given(instance=tracker::BovineBeef_strategy)
-def test_tracker::bovinebeef_beefBreed_setter(instance):
+
+@given(instance=tracker_BovineBison_strategy)
+def test_tracker_bovinebison_buffaloBreed_setter(instance):
+    original = instance.buffaloBreed
+    instance.buffaloBreed = original
+    assert instance.buffaloBreed == original
+
+@given(instance=tracker_BovineBeef_strategy)
+@settings(max_examples=50)
+def test_tracker_bovinebeef_instantiation(instance):
+    assert isinstance(instance, tracker_BovineBeef)
+
+
+
+@given(instance=tracker_BovineBeef_strategy)
+def test_tracker_bovinebeef_beefBreed_setter(instance):
     original = instance.beefBreed
     instance.beefBreed = original
     assert instance.beefBreed == original
 
-@given(instance=tracker::Schema_strategy)
+@given(instance=tracker_Schema_strategy)
 @settings(max_examples=50)
-def test_tracker::schema_instantiation(instance):
-    assert isinstance(instance, tracker::Schema)
+def test_tracker_schema_instantiation(instance):
+    assert isinstance(instance, tracker_Schema)
 
-@given(instance=tracker::Location_strategy)
+@given(instance=tracker_Location_strategy)
 @settings(max_examples=50)
-def test_tracker::location_instantiation(instance):
-    assert isinstance(instance, tracker::Location)
-
-@given(instance=tracker::Location_strategy)
-def test_tracker::location_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_tracker_location_instantiation(instance):
+    assert isinstance(instance, tracker_Location)
 
 
-@given(instance=tracker::Location_strategy)
-def test_tracker::location_name_setter(instance):
+
+@given(instance=tracker_Location_strategy)
+def test_tracker_location_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=tracker::Premises_strategy)
+@given(instance=tracker_Premises_strategy)
 @settings(max_examples=50)
-def test_tracker::premises_instantiation(instance):
-    assert isinstance(instance, tracker::Premises)
-
-@given(instance=tracker::Premises_strategy)
-def test_tracker::premises_premisesId_type(instance):
-    assert isinstance(instance.premisesId, str)
+def test_tracker_premises_instantiation(instance):
+    assert isinstance(instance, tracker_Premises)
 
 
-@given(instance=tracker::Premises_strategy)
-def test_tracker::premises_premisesId_setter(instance):
-    original = instance.premisesId
-    instance.premisesId = original
-    assert instance.premisesId == original
 
-@given(instance=tracker::Premises_strategy)
-def test_tracker::premises_emailContact_type(instance):
-    assert isinstance(instance.emailContact, str)
-
-
-@given(instance=tracker::Premises_strategy)
-def test_tracker::premises_emailContact_setter(instance):
+@given(instance=tracker_Premises_strategy)
+def test_tracker_premises_emailContact_setter(instance):
     original = instance.emailContact
     instance.emailContact = original
     assert instance.emailContact == original
 
-@given(instance=tracker::Premises_strategy)
-def test_tracker::premises_uri_type(instance):
-    assert isinstance(instance.uri, str)
 
 
-@given(instance=tracker::Premises_strategy)
-def test_tracker::premises_uri_setter(instance):
-    original = instance.uri
-    instance.uri = original
-    assert instance.uri == original
-
-@given(instance=tracker::Premises_strategy)
-def test_tracker::premises_name_type(instance):
-    assert isinstance(instance.name, str)
+@given(instance=tracker_Premises_strategy)
+def test_tracker_premises_premisesId_setter(instance):
+    original = instance.premisesId
+    instance.premisesId = original
+    assert instance.premisesId == original
 
 
-@given(instance=tracker::Premises_strategy)
-def test_tracker::premises_name_setter(instance):
+
+@given(instance=tracker_Premises_strategy)
+def test_tracker_premises_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
 
-@given(instance=tracker::Premises_strategy)
-@settings(max_examples=30)
-def test_tracker::premises_findanimal_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.findAnimal(
-            "test"
-        )
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.findAnimal).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'findAnimal' in tracker::Premises is empty"
 
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'findAnimal' in tracker::Premises did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'findAnimal' in tracker::Premises is not implemented or raised an error")
+@given(instance=tracker_Premises_strategy)
+def test_tracker_premises_uri_setter(instance):
+    original = instance.uri
+    instance.uri = original
+    assert instance.uri == original
 
 import warnings
 import copy
@@ -2502,38 +2417,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=tracker::Premises_strategy)
+@given(instance=tracker_Premises_strategy)
 @settings(max_examples=30)
-def test_tracker::premises_eventhistory_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.eventHistory()
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.eventHistory).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'eventHistory' in tracker::Premises is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'eventHistory' in tracker::Premises did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'eventHistory' in tracker::Premises is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=tracker::Premises_strategy)
-@settings(max_examples=30)
-def test_tracker::premises_addtemplate_changes_state(instance):
+def test_tracker_premises_addtemplate_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -2548,169 +2434,14 @@ def test_tracker::premises_addtemplate_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'addTemplate' in tracker::Premises is empty"
+        assert has_statements, f"Function 'addTemplate' in tracker_Premises is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'addTemplate' in tracker::Premises did not change state; check implementation")
+            warnings.warn(f"Operation 'addTemplate' in tracker_Premises did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'addTemplate' in tracker::Premises is not implemented or raised an error")
-
-@given(instance=Event_strategy)
-@settings(max_examples=50)
-def test_event_instantiation(instance):
-    assert isinstance(instance, Event)
-
-@given(instance=tracker::BirthDefect_strategy)
-@settings(max_examples=50)
-def test_tracker::birthdefect_instantiation(instance):
-    assert isinstance(instance, tracker::BirthDefect)
-
-@given(instance=tracker::BirthDefect_strategy)
-def test_tracker::birthdefect_freemartin_type(instance):
-    assert isinstance(instance.freemartin, bool)
-
-
-@given(instance=tracker::BirthDefect_strategy)
-def test_tracker::birthdefect_freemartin_setter(instance):
-    original = instance.freemartin
-    instance.freemartin = original
-    assert instance.freemartin == original
-
-@given(instance=tracker::HerdTest_strategy)
-@settings(max_examples=50)
-def test_tracker::herdtest_instantiation(instance):
-    assert isinstance(instance, tracker::HerdTest)
-
-@given(instance=tracker::HerdTest_strategy)
-def test_tracker::herdtest_pregnant_type(instance):
-    assert isinstance(instance.pregnant, bool)
-
-
-@given(instance=tracker::HerdTest_strategy)
-def test_tracker::herdtest_pregnant_setter(instance):
-    original = instance.pregnant
-    instance.pregnant = original
-    assert instance.pregnant == original
-
-@given(instance=tracker::HerdTest_strategy)
-def test_tracker::herdtest_bredDateEstimate_type(instance):
-    assert isinstance(instance.bredDateEstimate, date)
-
-
-@given(instance=tracker::HerdTest_strategy)
-def test_tracker::herdtest_bredDateEstimate_setter(instance):
-    original = instance.bredDateEstimate
-    instance.bredDateEstimate = original
-    assert instance.bredDateEstimate == original
-
-@given(instance=tracker::HerdTest_strategy)
-def test_tracker::herdtest_daysSinceBredEstimate_type(instance):
-    assert isinstance(instance.daysSinceBredEstimate, int)
-
-
-@given(instance=tracker::HerdTest_strategy)
-def test_tracker::herdtest_daysSinceBredEstimate_setter(instance):
-    original = instance.daysSinceBredEstimate
-    instance.daysSinceBredEstimate = original
-    assert instance.daysSinceBredEstimate == original
-
-@given(instance=tracker::Sighting_strategy)
-@settings(max_examples=50)
-def test_tracker::sighting_instantiation(instance):
-    assert isinstance(instance, tracker::Sighting)
-
-@given(instance=tracker::LostTag_strategy)
-@settings(max_examples=50)
-def test_tracker::losttag_instantiation(instance):
-    assert isinstance(instance, tracker::LostTag)
-
-@given(instance=tracker::MovedOut_strategy)
-@settings(max_examples=50)
-def test_tracker::movedout_instantiation(instance):
-    assert isinstance(instance, tracker::MovedOut)
-
-@given(instance=tracker::MovedOut_strategy)
-def test_tracker::movedout_destinationPin_type(instance):
-    assert isinstance(instance.destinationPin, str)
-
-
-@given(instance=tracker::MovedOut_strategy)
-def test_tracker::movedout_destinationPin_setter(instance):
-    original = instance.destinationPin
-    instance.destinationPin = original
-    assert instance.destinationPin == original
-
-@given(instance=tracker::MilkTest_strategy)
-@settings(max_examples=50)
-def test_tracker::milktest_instantiation(instance):
-    assert isinstance(instance, tracker::MilkTest)
-
-@given(instance=tracker::MilkTest_strategy)
-def test_tracker::milktest_percentButterFat_type(instance):
-    assert isinstance(instance.percentButterFat, float)
-
-
-@given(instance=tracker::MilkTest_strategy)
-def test_tracker::milktest_percentButterFat_setter(instance):
-    original = instance.percentButterFat
-    instance.percentButterFat = original
-    assert instance.percentButterFat == original
-
-@given(instance=tracker::MilkTest_strategy)
-def test_tracker::milktest_otherSolids_type(instance):
-    assert isinstance(instance.otherSolids, float)
-
-
-@given(instance=tracker::MilkTest_strategy)
-def test_tracker::milktest_otherSolids_setter(instance):
-    original = instance.otherSolids
-    instance.otherSolids = original
-    assert instance.otherSolids == original
-
-@given(instance=tracker::MilkTest_strategy)
-def test_tracker::milktest_percentProtein_type(instance):
-    assert isinstance(instance.percentProtein, float)
-
-
-@given(instance=tracker::MilkTest_strategy)
-def test_tracker::milktest_percentProtein_setter(instance):
-    original = instance.percentProtein
-    instance.percentProtein = original
-    assert instance.percentProtein == original
-
-@given(instance=tracker::MilkTest_strategy)
-def test_tracker::milktest_poundsProduced_type(instance):
-    assert isinstance(instance.poundsProduced, float)
-
-
-@given(instance=tracker::MilkTest_strategy)
-def test_tracker::milktest_poundsProduced_setter(instance):
-    original = instance.poundsProduced
-    instance.poundsProduced = original
-    assert instance.poundsProduced == original
-
-@given(instance=tracker::MilkTest_strategy)
-def test_tracker::milktest_somaticCellCounts_type(instance):
-    assert isinstance(instance.somaticCellCounts, int)
-
-
-@given(instance=tracker::MilkTest_strategy)
-def test_tracker::milktest_somaticCellCounts_setter(instance):
-    original = instance.somaticCellCounts
-    instance.somaticCellCounts = original
-    assert instance.somaticCellCounts == original
-
-@given(instance=tracker::Exported_strategy)
-@settings(max_examples=50)
-def test_tracker::exported_instantiation(instance):
-    assert isinstance(instance, tracker::Exported)
-
-@given(instance=tracker::GenericEvent_strategy)
-@settings(max_examples=50)
-def test_tracker::genericevent_instantiation(instance):
-    assert isinstance(instance, tracker::GenericEvent)
+        warnings.warn(f"Operation 'addTemplate' in tracker_Premises is not implemented or raised an error")
 
 import warnings
 import copy
@@ -2718,9 +2449,317 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=tracker::GenericEvent_strategy)
+@given(instance=tracker_Premises_strategy)
 @settings(max_examples=30)
-def test_tracker::genericevent_findschema_changes_state(instance):
+def test_tracker_premises_findanimal_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.findAnimal(
+            "test"
+        )
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.findAnimal).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'findAnimal' in tracker_Premises is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'findAnimal' in tracker_Premises did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'findAnimal' in tracker_Premises is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=tracker_Premises_strategy)
+@settings(max_examples=30)
+def test_tracker_premises_eventhistory_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.eventHistory()
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.eventHistory).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'eventHistory' in tracker_Premises is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'eventHistory' in tracker_Premises did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'eventHistory' in tracker_Premises is not implemented or raised an error")
+
+@given(instance=Event_strategy)
+@settings(max_examples=50)
+def test_event_instantiation(instance):
+    assert isinstance(instance, Event)
+
+@given(instance=tracker_WeighIn_strategy)
+@settings(max_examples=50)
+def test_tracker_weighin_instantiation(instance):
+    assert isinstance(instance, tracker_WeighIn)
+
+
+
+@given(instance=tracker_WeighIn_strategy)
+def test_tracker_weighin_weight_setter(instance):
+    original = instance.weight
+    instance.weight = original
+    assert instance.weight == original
+
+
+
+@given(instance=tracker_WeighIn_strategy)
+def test_tracker_weighin_weightGainPerDay_setter(instance):
+    original = instance.weightGainPerDay
+    instance.weightGainPerDay = original
+    assert instance.weightGainPerDay == original
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=tracker_WeighIn_strategy)
+@settings(max_examples=30)
+def test_tracker_weighin_previousweighin_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.previousWeighIn()
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.previousWeighIn).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'previousWeighIn' in tracker_WeighIn is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'previousWeighIn' in tracker_WeighIn did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'previousWeighIn' in tracker_WeighIn is not implemented or raised an error")
+
+@given(instance=tracker_MilkTest_strategy)
+@settings(max_examples=50)
+def test_tracker_milktest_instantiation(instance):
+    assert isinstance(instance, tracker_MilkTest)
+
+
+
+@given(instance=tracker_MilkTest_strategy)
+def test_tracker_milktest_percentButterFat_setter(instance):
+    original = instance.percentButterFat
+    instance.percentButterFat = original
+    assert instance.percentButterFat == original
+
+
+
+@given(instance=tracker_MilkTest_strategy)
+def test_tracker_milktest_poundsProduced_setter(instance):
+    original = instance.poundsProduced
+    instance.poundsProduced = original
+    assert instance.poundsProduced == original
+
+
+
+@given(instance=tracker_MilkTest_strategy)
+def test_tracker_milktest_somaticCellCounts_setter(instance):
+    original = instance.somaticCellCounts
+    instance.somaticCellCounts = original
+    assert instance.somaticCellCounts == original
+
+
+
+@given(instance=tracker_MilkTest_strategy)
+def test_tracker_milktest_percentProtein_setter(instance):
+    original = instance.percentProtein
+    instance.percentProtein = original
+    assert instance.percentProtein == original
+
+
+
+@given(instance=tracker_MilkTest_strategy)
+def test_tracker_milktest_otherSolids_setter(instance):
+    original = instance.otherSolids
+    instance.otherSolids = original
+    assert instance.otherSolids == original
+
+@given(instance=tracker_MovedIn_strategy)
+@settings(max_examples=50)
+def test_tracker_movedin_instantiation(instance):
+    assert isinstance(instance, tracker_MovedIn)
+
+
+
+@given(instance=tracker_MovedIn_strategy)
+def test_tracker_movedin_sourcePin_setter(instance):
+    original = instance.sourcePin
+    instance.sourcePin = original
+    assert instance.sourcePin == original
+
+@given(instance=tracker_TagRetired_strategy)
+@settings(max_examples=50)
+def test_tracker_tagretired_instantiation(instance):
+    assert isinstance(instance, tracker_TagRetired)
+
+@given(instance=tracker_BirthDefect_strategy)
+@settings(max_examples=50)
+def test_tracker_birthdefect_instantiation(instance):
+    assert isinstance(instance, tracker_BirthDefect)
+
+
+
+@given(instance=tracker_BirthDefect_strategy)
+def test_tracker_birthdefect_freemartin_setter(instance):
+    original = instance.freemartin
+    instance.freemartin = original
+    assert instance.freemartin == original
+
+@given(instance=tracker_ICVI_strategy)
+@settings(max_examples=50)
+def test_tracker_icvi_instantiation(instance):
+    assert isinstance(instance, tracker_ICVI)
+
+@given(instance=tracker_LostTag_strategy)
+@settings(max_examples=50)
+def test_tracker_losttag_instantiation(instance):
+    assert isinstance(instance, tracker_LostTag)
+
+@given(instance=tracker_HerdTest_strategy)
+@settings(max_examples=50)
+def test_tracker_herdtest_instantiation(instance):
+    assert isinstance(instance, tracker_HerdTest)
+
+
+
+@given(instance=tracker_HerdTest_strategy)
+def test_tracker_herdtest_pregnant_setter(instance):
+    original = instance.pregnant
+    instance.pregnant = original
+    assert instance.pregnant == original
+
+
+
+@given(instance=tracker_HerdTest_strategy)
+def test_tracker_herdtest_bredDateEstimate_setter(instance):
+    original = instance.bredDateEstimate
+    instance.bredDateEstimate = original
+    assert instance.bredDateEstimate == original
+
+
+
+@given(instance=tracker_HerdTest_strategy)
+def test_tracker_herdtest_daysSinceBredEstimate_setter(instance):
+    original = instance.daysSinceBredEstimate
+    instance.daysSinceBredEstimate = original
+    assert instance.daysSinceBredEstimate == original
+
+@given(instance=tracker_Imported_strategy)
+@settings(max_examples=50)
+def test_tracker_imported_instantiation(instance):
+    assert isinstance(instance, tracker_Imported)
+
+@given(instance=tracker_Birthing_strategy)
+@settings(max_examples=50)
+def test_tracker_birthing_instantiation(instance):
+    assert isinstance(instance, tracker_Birthing)
+
+
+
+@given(instance=tracker_Birthing_strategy)
+def test_tracker_birthing_difficulty_setter(instance):
+    original = instance.difficulty
+    instance.difficulty = original
+    assert instance.difficulty == original
+
+
+
+@given(instance=tracker_Birthing_strategy)
+def test_tracker_birthing_viability_setter(instance):
+    original = instance.viability
+    instance.viability = original
+    assert instance.viability == original
+
+
+
+@given(instance=tracker_Birthing_strategy)
+def test_tracker_birthing_assisted_setter(instance):
+    original = instance.assisted
+    instance.assisted = original
+    assert instance.assisted == original
+
+@given(instance=tracker_MovedOut_strategy)
+@settings(max_examples=50)
+def test_tracker_movedout_instantiation(instance):
+    assert isinstance(instance, tracker_MovedOut)
+
+
+
+@given(instance=tracker_MovedOut_strategy)
+def test_tracker_movedout_destinationPin_setter(instance):
+    original = instance.destinationPin
+    instance.destinationPin = original
+    assert instance.destinationPin == original
+
+@given(instance=tracker_ReplacedTag_strategy)
+@settings(max_examples=50)
+def test_tracker_replacedtag_instantiation(instance):
+    assert isinstance(instance, tracker_ReplacedTag)
+
+
+
+@given(instance=tracker_ReplacedTag_strategy)
+def test_tracker_replacedtag_usainNumberUsedForOldId_setter(instance):
+    original = instance.usainNumberUsedForOldId
+    instance.usainNumberUsedForOldId = original
+    assert instance.usainNumberUsedForOldId == original
+
+
+
+@given(instance=tracker_ReplacedTag_strategy)
+def test_tracker_replacedtag_oldId_setter(instance):
+    original = instance.oldId
+    instance.oldId = original
+    assert instance.oldId == original
+
+@given(instance=tracker_TagApplied_strategy)
+@settings(max_examples=50)
+def test_tracker_tagapplied_instantiation(instance):
+    assert isinstance(instance, tracker_TagApplied)
+
+@given(instance=tracker_GenericEvent_strategy)
+@settings(max_examples=50)
+def test_tracker_genericevent_instantiation(instance):
+    assert isinstance(instance, tracker_GenericEvent)
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=tracker_GenericEvent_strategy)
+@settings(max_examples=30)
+def test_tracker_genericevent_findschema_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -2734,649 +2773,400 @@ def test_tracker::genericevent_findschema_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'findSchema' in tracker::GenericEvent is empty"
+        assert has_statements, f"Function 'findSchema' in tracker_GenericEvent is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'findSchema' in tracker::GenericEvent did not change state; check implementation")
+            warnings.warn(f"Operation 'findSchema' in tracker_GenericEvent did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'findSchema' in tracker::GenericEvent is not implemented or raised an error")
+        warnings.warn(f"Operation 'findSchema' in tracker_GenericEvent is not implemented or raised an error")
 
-@given(instance=tracker::ICVI_strategy)
+@given(instance=tracker_Sighting_strategy)
 @settings(max_examples=50)
-def test_tracker::icvi_instantiation(instance):
-    assert isinstance(instance, tracker::ICVI)
+def test_tracker_sighting_instantiation(instance):
+    assert isinstance(instance, tracker_Sighting)
 
-@given(instance=tracker::TagRetired_strategy)
+@given(instance=tracker_Slaughtered_strategy)
 @settings(max_examples=50)
-def test_tracker::tagretired_instantiation(instance):
-    assert isinstance(instance, tracker::TagRetired)
+def test_tracker_slaughtered_instantiation(instance):
+    assert isinstance(instance, tracker_Slaughtered)
 
-@given(instance=tracker::Imported_strategy)
+@given(instance=tracker_AnimalMissing_strategy)
 @settings(max_examples=50)
-def test_tracker::imported_instantiation(instance):
-    assert isinstance(instance, tracker::Imported)
+def test_tracker_animalmissing_instantiation(instance):
+    assert isinstance(instance, tracker_AnimalMissing)
 
-@given(instance=tracker::MedicalCondition_strategy)
+@given(instance=tracker_Died_strategy)
 @settings(max_examples=50)
-def test_tracker::medicalcondition_instantiation(instance):
-    assert isinstance(instance, tracker::MedicalCondition)
+def test_tracker_died_instantiation(instance):
+    assert isinstance(instance, tracker_Died)
 
-@given(instance=tracker::Died_strategy)
+@given(instance=tracker_MedicalCondition_strategy)
 @settings(max_examples=50)
-def test_tracker::died_instantiation(instance):
-    assert isinstance(instance, tracker::Died)
+def test_tracker_medicalcondition_instantiation(instance):
+    assert isinstance(instance, tracker_MedicalCondition)
 
-@given(instance=tracker::MedicalTreatment_strategy)
+@given(instance=tracker_MedicalTreatment_strategy)
 @settings(max_examples=50)
-def test_tracker::medicaltreatment_instantiation(instance):
-    assert isinstance(instance, tracker::MedicalTreatment)
-
-@given(instance=tracker::MedicalTreatment_strategy)
-def test_tracker::medicaltreatment_quantity_type(instance):
-    assert isinstance(instance.quantity, str)
+def test_tracker_medicaltreatment_instantiation(instance):
+    assert isinstance(instance, tracker_MedicalTreatment)
 
 
-@given(instance=tracker::MedicalTreatment_strategy)
-def test_tracker::medicaltreatment_quantity_setter(instance):
-    original = instance.quantity
-    instance.quantity = original
-    assert instance.quantity == original
 
-@given(instance=tracker::MedicalTreatment_strategy)
-def test_tracker::medicaltreatment_treatment_type(instance):
-    assert isinstance(instance.treatment, str)
-
-
-@given(instance=tracker::MedicalTreatment_strategy)
-def test_tracker::medicaltreatment_treatment_setter(instance):
-    original = instance.treatment
-    instance.treatment = original
-    assert instance.treatment == original
-
-@given(instance=tracker::MedicalTreatment_strategy)
-def test_tracker::medicaltreatment_lot_type(instance):
-    assert isinstance(instance.lot, str)
-
-
-@given(instance=tracker::MedicalTreatment_strategy)
-def test_tracker::medicaltreatment_lot_setter(instance):
-    original = instance.lot
-    instance.lot = original
-    assert instance.lot == original
-
-@given(instance=tracker::MedicalTreatment_strategy)
-def test_tracker::medicaltreatment_product_type(instance):
-    assert isinstance(instance.product, str)
-
-
-@given(instance=tracker::MedicalTreatment_strategy)
-def test_tracker::medicaltreatment_product_setter(instance):
-    original = instance.product
-    instance.product = original
-    assert instance.product == original
-
-@given(instance=tracker::MedicalTreatment_strategy)
-def test_tracker::medicaltreatment_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=tracker::MedicalTreatment_strategy)
-def test_tracker::medicaltreatment_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
-
-@given(instance=tracker::MedicalTreatment_strategy)
-def test_tracker::medicaltreatment_method_type(instance):
-    assert isinstance(instance.method, str)
-
-
-@given(instance=tracker::MedicalTreatment_strategy)
-def test_tracker::medicaltreatment_method_setter(instance):
+@given(instance=tracker_MedicalTreatment_strategy)
+def test_tracker_medicaltreatment_method_setter(instance):
     original = instance.method
     instance.method = original
     assert instance.method == original
 
-@given(instance=tracker::MedicalTreatment_strategy)
-def test_tracker::medicaltreatment_manufacturer_type(instance):
-    assert isinstance(instance.manufacturer, str)
 
 
-@given(instance=tracker::MedicalTreatment_strategy)
-def test_tracker::medicaltreatment_manufacturer_setter(instance):
+@given(instance=tracker_MedicalTreatment_strategy)
+def test_tracker_medicaltreatment_lot_setter(instance):
+    original = instance.lot
+    instance.lot = original
+    assert instance.lot == original
+
+
+
+@given(instance=tracker_MedicalTreatment_strategy)
+def test_tracker_medicaltreatment_manufacturer_setter(instance):
     original = instance.manufacturer
     instance.manufacturer = original
     assert instance.manufacturer == original
 
-@given(instance=tracker::ReplacedTag_strategy)
+
+
+@given(instance=tracker_MedicalTreatment_strategy)
+def test_tracker_medicaltreatment_product_setter(instance):
+    original = instance.product
+    instance.product = original
+    assert instance.product == original
+
+
+
+@given(instance=tracker_MedicalTreatment_strategy)
+def test_tracker_medicaltreatment_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+
+
+@given(instance=tracker_MedicalTreatment_strategy)
+def test_tracker_medicaltreatment_quantity_setter(instance):
+    original = instance.quantity
+    instance.quantity = original
+    assert instance.quantity == original
+
+
+
+@given(instance=tracker_MedicalTreatment_strategy)
+def test_tracker_medicaltreatment_treatment_setter(instance):
+    original = instance.treatment
+    instance.treatment = original
+    assert instance.treatment == original
+
+@given(instance=tracker_Exported_strategy)
 @settings(max_examples=50)
-def test_tracker::replacedtag_instantiation(instance):
-    assert isinstance(instance, tracker::ReplacedTag)
+def test_tracker_exported_instantiation(instance):
+    assert isinstance(instance, tracker_Exported)
 
-@given(instance=tracker::ReplacedTag_strategy)
-def test_tracker::replacedtag_oldId_type(instance):
-    assert isinstance(instance.oldId, str)
-
-
-@given(instance=tracker::ReplacedTag_strategy)
-def test_tracker::replacedtag_oldId_setter(instance):
-    original = instance.oldId
-    instance.oldId = original
-    assert instance.oldId == original
-
-@given(instance=tracker::ReplacedTag_strategy)
-def test_tracker::replacedtag_usainNumberUsedForOldId_type(instance):
-    assert isinstance(instance.usainNumberUsedForOldId, bool)
-
-
-@given(instance=tracker::ReplacedTag_strategy)
-def test_tracker::replacedtag_usainNumberUsedForOldId_setter(instance):
-    original = instance.usainNumberUsedForOldId
-    instance.usainNumberUsedForOldId = original
-    assert instance.usainNumberUsedForOldId == original
-
-@given(instance=tracker::AnimalMissing_strategy)
+@given(instance=tracker_TagAllocated_strategy)
 @settings(max_examples=50)
-def test_tracker::animalmissing_instantiation(instance):
-    assert isinstance(instance, tracker::AnimalMissing)
-
-@given(instance=tracker::Slaughtered_strategy)
-@settings(max_examples=50)
-def test_tracker::slaughtered_instantiation(instance):
-    assert isinstance(instance, tracker::Slaughtered)
-
-@given(instance=tracker::MovedIn_strategy)
-@settings(max_examples=50)
-def test_tracker::movedin_instantiation(instance):
-    assert isinstance(instance, tracker::MovedIn)
-
-@given(instance=tracker::MovedIn_strategy)
-def test_tracker::movedin_sourcePin_type(instance):
-    assert isinstance(instance.sourcePin, str)
-
-
-@given(instance=tracker::MovedIn_strategy)
-def test_tracker::movedin_sourcePin_setter(instance):
-    original = instance.sourcePin
-    instance.sourcePin = original
-    assert instance.sourcePin == original
-
-@given(instance=tracker::TagApplied_strategy)
-@settings(max_examples=50)
-def test_tracker::tagapplied_instantiation(instance):
-    assert isinstance(instance, tracker::TagApplied)
-
-@given(instance=tracker::Birthing_strategy)
-@settings(max_examples=50)
-def test_tracker::birthing_instantiation(instance):
-    assert isinstance(instance, tracker::Birthing)
-
-@given(instance=tracker::Birthing_strategy)
-def test_tracker::birthing_assisted_type(instance):
-    assert isinstance(instance.assisted, bool)
-
-
-@given(instance=tracker::Birthing_strategy)
-def test_tracker::birthing_assisted_setter(instance):
-    original = instance.assisted
-    instance.assisted = original
-    assert instance.assisted == original
-
-@given(instance=tracker::Birthing_strategy)
-def test_tracker::birthing_viability_type(instance):
-    assert isinstance(instance.viability, bool)
-
-
-@given(instance=tracker::Birthing_strategy)
-def test_tracker::birthing_viability_setter(instance):
-    original = instance.viability
-    instance.viability = original
-    assert instance.viability == original
-
-@given(instance=tracker::Birthing_strategy)
-def test_tracker::birthing_difficulty_type(instance):
-    assert isinstance(instance.difficulty, str)
-
-
-@given(instance=tracker::Birthing_strategy)
-def test_tracker::birthing_difficulty_setter(instance):
-    original = instance.difficulty
-    instance.difficulty = original
-    assert instance.difficulty == original
-
-@given(instance=tracker::WeighIn_strategy)
-@settings(max_examples=50)
-def test_tracker::weighin_instantiation(instance):
-    assert isinstance(instance, tracker::WeighIn)
-
-@given(instance=tracker::WeighIn_strategy)
-def test_tracker::weighin_weightGainPerDay_type(instance):
-    assert isinstance(instance.weightGainPerDay, str)
-
-
-@given(instance=tracker::WeighIn_strategy)
-def test_tracker::weighin_weightGainPerDay_setter(instance):
-    original = instance.weightGainPerDay
-    instance.weightGainPerDay = original
-    assert instance.weightGainPerDay == original
-
-@given(instance=tracker::WeighIn_strategy)
-def test_tracker::weighin_weight_type(instance):
-    assert isinstance(instance.weight, str)
-
-
-@given(instance=tracker::WeighIn_strategy)
-def test_tracker::weighin_weight_setter(instance):
-    original = instance.weight
-    instance.weight = original
-    assert instance.weight == original
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=tracker::WeighIn_strategy)
-@settings(max_examples=30)
-def test_tracker::weighin_previousweighin_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.previousWeighIn()
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.previousWeighIn).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'previousWeighIn' in tracker::WeighIn is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'previousWeighIn' in tracker::WeighIn did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'previousWeighIn' in tracker::WeighIn is not implemented or raised an error")
-
-@given(instance=tracker::TagAllocated_strategy)
-@settings(max_examples=50)
-def test_tracker::tagallocated_instantiation(instance):
-    assert isinstance(instance, tracker::TagAllocated)
+def test_tracker_tagallocated_instantiation(instance):
+    assert isinstance(instance, tracker_TagAllocated)
 
 @given(instance=Animal_strategy)
 @settings(max_examples=50)
 def test_animal_instantiation(instance):
     assert isinstance(instance, Animal)
 
-@given(instance=tracker::Ovine_strategy)
+@given(instance=tracker_Swine_strategy)
 @settings(max_examples=50)
-def test_tracker::ovine_instantiation(instance):
-    assert isinstance(instance, tracker::Ovine)
-
-@given(instance=tracker::Ovine_strategy)
-def test_tracker::ovine_sheepBreed_type(instance):
-    assert isinstance(instance.sheepBreed, str)
+def test_tracker_swine_instantiation(instance):
+    assert isinstance(instance, tracker_Swine)
 
 
-@given(instance=tracker::Ovine_strategy)
-def test_tracker::ovine_sheepBreed_setter(instance):
-    original = instance.sheepBreed
-    instance.sheepBreed = original
-    assert instance.sheepBreed == original
 
-@given(instance=tracker::Ovine_strategy)
-def test_tracker::ovine_scrapieTag_type(instance):
-    assert isinstance(instance.scrapieTag, str)
-
-
-@given(instance=tracker::Ovine_strategy)
-def test_tracker::ovine_scrapieTag_setter(instance):
-    original = instance.scrapieTag
-    instance.scrapieTag = original
-    assert instance.scrapieTag == original
-
-@given(instance=tracker::Swine_strategy)
-@settings(max_examples=50)
-def test_tracker::swine_instantiation(instance):
-    assert isinstance(instance, tracker::Swine)
-
-@given(instance=tracker::Swine_strategy)
-def test_tracker::swine_rightEarNotching_type(instance):
-    assert isinstance(instance.rightEarNotching, int)
-
-
-@given(instance=tracker::Swine_strategy)
-def test_tracker::swine_rightEarNotching_setter(instance):
-    original = instance.rightEarNotching
-    instance.rightEarNotching = original
-    assert instance.rightEarNotching == original
-
-@given(instance=tracker::Swine_strategy)
-def test_tracker::swine_leftEarNotching_type(instance):
-    assert isinstance(instance.leftEarNotching, int)
-
-
-@given(instance=tracker::Swine_strategy)
-def test_tracker::swine_leftEarNotching_setter(instance):
+@given(instance=tracker_Swine_strategy)
+def test_tracker_swine_leftEarNotching_setter(instance):
     original = instance.leftEarNotching
     instance.leftEarNotching = original
     assert instance.leftEarNotching == original
 
-@given(instance=tracker::Swine_strategy)
-def test_tracker::swine_swineBreed_type(instance):
-    assert isinstance(instance.swineBreed, str)
 
 
-@given(instance=tracker::Swine_strategy)
-def test_tracker::swine_swineBreed_setter(instance):
+@given(instance=tracker_Swine_strategy)
+def test_tracker_swine_rightEarNotching_setter(instance):
+    original = instance.rightEarNotching
+    instance.rightEarNotching = original
+    assert instance.rightEarNotching == original
+
+
+
+@given(instance=tracker_Swine_strategy)
+def test_tracker_swine_swineBreed_setter(instance):
     original = instance.swineBreed
     instance.swineBreed = original
     assert instance.swineBreed == original
 
-@given(instance=tracker::Equine_strategy)
+@given(instance=tracker_Ovine_strategy)
 @settings(max_examples=50)
-def test_tracker::equine_instantiation(instance):
-    assert isinstance(instance, tracker::Equine)
-
-@given(instance=tracker::Equine_strategy)
-def test_tracker::equine_horseBreed_type(instance):
-    assert isinstance(instance.horseBreed, str)
+def test_tracker_ovine_instantiation(instance):
+    assert isinstance(instance, tracker_Ovine)
 
 
-@given(instance=tracker::Equine_strategy)
-def test_tracker::equine_horseBreed_setter(instance):
+
+@given(instance=tracker_Ovine_strategy)
+def test_tracker_ovine_sheepBreed_setter(instance):
+    original = instance.sheepBreed
+    instance.sheepBreed = original
+    assert instance.sheepBreed == original
+
+
+
+@given(instance=tracker_Ovine_strategy)
+def test_tracker_ovine_scrapieTag_setter(instance):
+    original = instance.scrapieTag
+    instance.scrapieTag = original
+    assert instance.scrapieTag == original
+
+@given(instance=tracker_Equine_strategy)
+@settings(max_examples=50)
+def test_tracker_equine_instantiation(instance):
+    assert isinstance(instance, tracker_Equine)
+
+
+
+@given(instance=tracker_Equine_strategy)
+def test_tracker_equine_horseBreed_setter(instance):
     original = instance.horseBreed
     instance.horseBreed = original
     assert instance.horseBreed == original
 
-@given(instance=tracker::Caprine_strategy)
+@given(instance=tracker_Caprine_strategy)
 @settings(max_examples=50)
-def test_tracker::caprine_instantiation(instance):
-    assert isinstance(instance, tracker::Caprine)
-
-@given(instance=tracker::Caprine_strategy)
-def test_tracker::caprine_goatBreed_type(instance):
-    assert isinstance(instance.goatBreed, str)
+def test_tracker_caprine_instantiation(instance):
+    assert isinstance(instance, tracker_Caprine)
 
 
-@given(instance=tracker::Caprine_strategy)
-def test_tracker::caprine_goatBreed_setter(instance):
+
+@given(instance=tracker_Caprine_strategy)
+def test_tracker_caprine_goatBreed_setter(instance):
     original = instance.goatBreed
     instance.goatBreed = original
     assert instance.goatBreed == original
 
-@given(instance=tracker::Bovine_strategy)
+@given(instance=tracker_Bovine_strategy)
 @settings(max_examples=50)
-def test_tracker::bovine_instantiation(instance):
-    assert isinstance(instance, tracker::Bovine)
+def test_tracker_bovine_instantiation(instance):
+    assert isinstance(instance, tracker_Bovine)
 
-@given(instance=tracker::Event_strategy)
+@given(instance=tracker_Event_strategy)
 @settings(max_examples=50)
-def test_tracker::event_instantiation(instance):
-    assert isinstance(instance, tracker::Event)
-
-@given(instance=tracker::Event_strategy)
-def test_tracker::event_id_type(instance):
-    assert isinstance(instance.id, str)
+def test_tracker_event_instantiation(instance):
+    assert isinstance(instance, tracker_Event)
 
 
-@given(instance=tracker::Event_strategy)
-def test_tracker::event_id_setter(instance):
-    original = instance.id
-    instance.id = original
-    assert instance.id == original
 
-@given(instance=tracker::Event_strategy)
-def test_tracker::event_eventCode_type(instance):
-    assert isinstance(instance.eventCode, int)
-
-
-@given(instance=tracker::Event_strategy)
-def test_tracker::event_eventCode_setter(instance):
-    original = instance.eventCode
-    instance.eventCode = original
-    assert instance.eventCode == original
-
-@given(instance=tracker::Event_strategy)
-def test_tracker::event_dateTime_type(instance):
-    assert isinstance(instance.dateTime, date)
-
-
-@given(instance=tracker::Event_strategy)
-def test_tracker::event_dateTime_setter(instance):
-    original = instance.dateTime
-    instance.dateTime = original
-    assert instance.dateTime == original
-
-@given(instance=tracker::Event_strategy)
-def test_tracker::event_electronicallyRead_type(instance):
-    assert isinstance(instance.electronicallyRead, bool)
-
-
-@given(instance=tracker::Event_strategy)
-def test_tracker::event_electronicallyRead_setter(instance):
+@given(instance=tracker_Event_strategy)
+def test_tracker_event_electronicallyRead_setter(instance):
     original = instance.electronicallyRead
     instance.electronicallyRead = original
     assert instance.electronicallyRead == original
 
-@given(instance=tracker::Event_strategy)
-def test_tracker::event_correction_type(instance):
-    assert isinstance(instance.correction, bool)
 
 
-@given(instance=tracker::Event_strategy)
-def test_tracker::event_correction_setter(instance):
+@given(instance=tracker_Event_strategy)
+def test_tracker_event_correction_setter(instance):
     original = instance.correction
     instance.correction = original
     assert instance.correction == original
 
-@given(instance=tracker::Event_strategy)
-def test_tracker::event_comments_type(instance):
-    assert isinstance(instance.comments, str)
 
 
-@given(instance=tracker::Event_strategy)
-def test_tracker::event_comments_setter(instance):
+@given(instance=tracker_Event_strategy)
+def test_tracker_event_eventCode_setter(instance):
+    original = instance.eventCode
+    instance.eventCode = original
+    assert instance.eventCode == original
+
+
+
+@given(instance=tracker_Event_strategy)
+def test_tracker_event_comments_setter(instance):
     original = instance.comments
     instance.comments = original
     assert instance.comments == original
 
-@given(instance=tracker::Tag_strategy)
-@settings(max_examples=50)
-def test_tracker::tag_instantiation(instance):
-    assert isinstance(instance, tracker::Tag)
-
-@given(instance=tracker::Tag_strategy)
-def test_tracker::tag_id_type(instance):
-    assert isinstance(instance.id, str)
 
 
-@given(instance=tracker::Tag_strategy)
-def test_tracker::tag_id_setter(instance):
+@given(instance=tracker_Event_strategy)
+def test_tracker_event_dateTime_setter(instance):
+    original = instance.dateTime
+    instance.dateTime = original
+    assert instance.dateTime == original
+
+
+
+@given(instance=tracker_Event_strategy)
+def test_tracker_event_id_setter(instance):
     original = instance.id
     instance.id = original
     assert instance.id == original
 
-@given(instance=tracker::Tag_strategy)
-def test_tracker::tag_usainNumberUsed_type(instance):
-    assert isinstance(instance.usainNumberUsed, bool)
+@given(instance=tracker_Tag_strategy)
+@settings(max_examples=50)
+def test_tracker_tag_instantiation(instance):
+    assert isinstance(instance, tracker_Tag)
 
 
-@given(instance=tracker::Tag_strategy)
-def test_tracker::tag_usainNumberUsed_setter(instance):
+
+@given(instance=tracker_Tag_strategy)
+def test_tracker_tag_usainNumberUsed_setter(instance):
     original = instance.usainNumberUsed
     instance.usainNumberUsed = original
     assert instance.usainNumberUsed == original
 
-@given(instance=tracker::Animal_strategy)
-@settings(max_examples=50)
-def test_tracker::animal_instantiation(instance):
-    assert isinstance(instance, tracker::Animal)
-
-@given(instance=tracker::Animal_strategy)
-def test_tracker::animal_birthDate_type(instance):
-    assert isinstance(instance.birthDate, date)
 
 
-@given(instance=tracker::Animal_strategy)
-def test_tracker::animal_birthDate_setter(instance):
-    original = instance.birthDate
-    instance.birthDate = original
-    assert instance.birthDate == original
-
-@given(instance=tracker::Animal_strategy)
-def test_tracker::animal_lastEventDateTime_type(instance):
-    assert isinstance(instance.lastEventDateTime, date)
-
-
-@given(instance=tracker::Animal_strategy)
-def test_tracker::animal_lastEventDateTime_setter(instance):
-    original = instance.lastEventDateTime
-    instance.lastEventDateTime = original
-    assert instance.lastEventDateTime == original
-
-@given(instance=tracker::Animal_strategy)
-def test_tracker::animal_id_type(instance):
-    assert isinstance(instance.id, str)
-
-
-@given(instance=tracker::Animal_strategy)
-def test_tracker::animal_id_setter(instance):
+@given(instance=tracker_Tag_strategy)
+def test_tracker_tag_id_setter(instance):
     original = instance.id
     instance.id = original
     assert instance.id == original
 
-@given(instance=tracker::Animal_strategy)
-def test_tracker::animal_weight_type(instance):
-    assert isinstance(instance.weight, str)
+@given(instance=tracker_Animal_strategy)
+@settings(max_examples=50)
+def test_tracker_animal_instantiation(instance):
+    assert isinstance(instance, tracker_Animal)
 
 
-@given(instance=tracker::Animal_strategy)
-def test_tracker::animal_weight_setter(instance):
-    original = instance.weight
-    instance.weight = original
-    assert instance.weight == original
 
-@given(instance=tracker::Animal_strategy)
-def test_tracker::animal_age_type(instance):
-    assert isinstance(instance.age, str)
-
-
-@given(instance=tracker::Animal_strategy)
-def test_tracker::animal_age_setter(instance):
-    original = instance.age
-    instance.age = original
-    assert instance.age == original
-
-@given(instance=tracker::Animal_strategy)
-def test_tracker::animal_speciesCode_type(instance):
-    assert isinstance(instance.speciesCode, str)
-
-
-@given(instance=tracker::Animal_strategy)
-def test_tracker::animal_speciesCode_setter(instance):
-    original = instance.speciesCode
-    instance.speciesCode = original
-    assert instance.speciesCode == original
-
-@given(instance=tracker::Animal_strategy)
-def test_tracker::animal_sexCode_type(instance):
-    assert isinstance(instance.sexCode, str)
-
-
-@given(instance=tracker::Animal_strategy)
-def test_tracker::animal_sexCode_setter(instance):
-    original = instance.sexCode
-    instance.sexCode = original
-    assert instance.sexCode == original
-
-@given(instance=tracker::Animal_strategy)
-def test_tracker::animal_breed_type(instance):
-    assert isinstance(instance.breed, str)
-
-
-@given(instance=tracker::Animal_strategy)
-def test_tracker::animal_breed_setter(instance):
-    original = instance.breed
-    instance.breed = original
-    assert instance.breed == original
-
-@given(instance=tracker::Animal_strategy)
-def test_tracker::animal_species_type(instance):
-    assert isinstance(instance.species, str)
-
-
-@given(instance=tracker::Animal_strategy)
-def test_tracker::animal_species_setter(instance):
-    original = instance.species
-    instance.species = original
-    assert instance.species == original
-
-@given(instance=tracker::Animal_strategy)
-def test_tracker::animal_sex_type(instance):
-    assert isinstance(instance.sex, str)
-
-
-@given(instance=tracker::Animal_strategy)
-def test_tracker::animal_sex_setter(instance):
-    original = instance.sex
-    instance.sex = original
-    assert instance.sex == original
-
-@given(instance=tracker::Animal_strategy)
-def test_tracker::animal_comments_type(instance):
-    assert isinstance(instance.comments, str)
-
-
-@given(instance=tracker::Animal_strategy)
-def test_tracker::animal_comments_setter(instance):
+@given(instance=tracker_Animal_strategy)
+def test_tracker_animal_comments_setter(instance):
     original = instance.comments
     instance.comments = original
     assert instance.comments == original
 
-@given(instance=tracker::Animal_strategy)
-def test_tracker::animal_weightGainPerDay_type(instance):
-    assert isinstance(instance.weightGainPerDay, str)
 
 
-@given(instance=tracker::Animal_strategy)
-def test_tracker::animal_weightGainPerDay_setter(instance):
+@given(instance=tracker_Animal_strategy)
+def test_tracker_animal_species_setter(instance):
+    original = instance.species
+    instance.species = original
+    assert instance.species == original
+
+
+
+@given(instance=tracker_Animal_strategy)
+def test_tracker_animal_lastEventDateTime_setter(instance):
+    original = instance.lastEventDateTime
+    instance.lastEventDateTime = original
+    assert instance.lastEventDateTime == original
+
+
+
+@given(instance=tracker_Animal_strategy)
+def test_tracker_animal_id_setter(instance):
+    original = instance.id
+    instance.id = original
+    assert instance.id == original
+
+
+
+@given(instance=tracker_Animal_strategy)
+def test_tracker_animal_weightGainPerDay_setter(instance):
     original = instance.weightGainPerDay
     instance.weightGainPerDay = original
     assert instance.weightGainPerDay == original
 
+
+
+@given(instance=tracker_Animal_strategy)
+def test_tracker_animal_sex_setter(instance):
+    original = instance.sex
+    instance.sex = original
+    assert instance.sex == original
+
+
+
+@given(instance=tracker_Animal_strategy)
+def test_tracker_animal_sexCode_setter(instance):
+    original = instance.sexCode
+    instance.sexCode = original
+    assert instance.sexCode == original
+
+
+
+@given(instance=tracker_Animal_strategy)
+def test_tracker_animal_birthDate_setter(instance):
+    original = instance.birthDate
+    instance.birthDate = original
+    assert instance.birthDate == original
+
+
+
+@given(instance=tracker_Animal_strategy)
+def test_tracker_animal_breed_setter(instance):
+    original = instance.breed
+    instance.breed = original
+    assert instance.breed == original
+
+
+
+@given(instance=tracker_Animal_strategy)
+def test_tracker_animal_weight_setter(instance):
+    original = instance.weight
+    instance.weight = original
+    assert instance.weight == original
+
+
+
+@given(instance=tracker_Animal_strategy)
+def test_tracker_animal_age_setter(instance):
+    original = instance.age
+    instance.age = original
+    assert instance.age == original
+
+
+
+@given(instance=tracker_Animal_strategy)
+def test_tracker_animal_speciesCode_setter(instance):
+    original = instance.speciesCode
+    instance.speciesCode = original
+    assert instance.speciesCode == original
+
 import warnings
 import copy
 import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=tracker::Animal_strategy)
+@given(instance=tracker_Animal_strategy)
 @settings(max_examples=30)
-def test_tracker::animal_activetag_changes_state(instance):
+def test_tracker_animal_allevents_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
-        instance.activeTag()
+        instance.allEvents()
         if instance.__dict__ != before.__dict__:
             return  # test passes
         # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.activeTag).strip()
+        source = inspect.getsource(instance.allEvents).strip()
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'activeTag' in tracker::Animal is empty"
+        assert has_statements, f"Function 'allEvents' in tracker_Animal is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'activeTag' in tracker::Animal did not change state; check implementation")
+            warnings.warn(f"Operation 'allEvents' in tracker_Animal did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'activeTag' in tracker::Animal is not implemented or raised an error")
+        warnings.warn(f"Operation 'allEvents' in tracker_Animal is not implemented or raised an error")
 
 import warnings
 import copy
@@ -3384,38 +3174,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=tracker::Animal_strategy)
+@given(instance=tracker_Animal_strategy)
 @settings(max_examples=30)
-def test_tracker::animal_eventhistory_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.eventHistory()
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.eventHistory).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'eventHistory' in tracker::Animal is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'eventHistory' in tracker::Animal did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'eventHistory' in tracker::Animal is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=tracker::Animal_strategy)
-@settings(max_examples=30)
-def test_tracker::animal_addtemplate_changes_state(instance):
+def test_tracker_animal_addtemplate_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -3429,14 +3190,14 @@ def test_tracker::animal_addtemplate_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'addTemplate' in tracker::Animal is empty"
+        assert has_statements, f"Function 'addTemplate' in tracker_Animal is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'addTemplate' in tracker::Animal did not change state; check implementation")
+            warnings.warn(f"Operation 'addTemplate' in tracker_Animal did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'addTemplate' in tracker::Animal is not implemented or raised an error")
+        warnings.warn(f"Operation 'addTemplate' in tracker_Animal is not implemented or raised an error")
 
 import warnings
 import copy
@@ -3444,28 +3205,28 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=tracker::Animal_strategy)
+@given(instance=tracker_Animal_strategy)
 @settings(max_examples=30)
-def test_tracker::animal_allevents_changes_state(instance):
+def test_tracker_animal_activetag_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
-        instance.allEvents()
+        instance.activeTag()
         if instance.__dict__ != before.__dict__:
             return  # test passes
         # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.allEvents).strip()
+        source = inspect.getsource(instance.activeTag).strip()
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'allEvents' in tracker::Animal is empty"
+        assert has_statements, f"Function 'activeTag' in tracker_Animal is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'allEvents' in tracker::Animal did not change state; check implementation")
+            warnings.warn(f"Operation 'activeTag' in tracker_Animal did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'allEvents' in tracker::Animal is not implemented or raised an error")
+        warnings.warn(f"Operation 'activeTag' in tracker_Animal is not implemented or raised an error")
 
 import warnings
 import copy
@@ -3473,9 +3234,38 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=tracker::Animal_strategy)
+@given(instance=tracker_Animal_strategy)
 @settings(max_examples=30)
-def test_tracker::animal_lastweighin_changes_state(instance):
+def test_tracker_animal_eventhistory_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.eventHistory()
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.eventHistory).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'eventHistory' in tracker_Animal is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'eventHistory' in tracker_Animal did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'eventHistory' in tracker_Animal is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=tracker_Animal_strategy)
+@settings(max_examples=30)
+def test_tracker_animal_lastweighin_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -3487,11 +3277,11 @@ def test_tracker::animal_lastweighin_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'lastWeighIn' in tracker::Animal is empty"
+        assert has_statements, f"Function 'lastWeighIn' in tracker_Animal is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'lastWeighIn' in tracker::Animal did not change state; check implementation")
+            warnings.warn(f"Operation 'lastWeighIn' in tracker_Animal did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'lastWeighIn' in tracker::Animal is not implemented or raised an error")
+        warnings.warn(f"Operation 'lastWeighIn' in tracker_Animal is not implemented or raised an error")

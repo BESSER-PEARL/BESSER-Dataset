@@ -3,15 +3,15 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     B,
-    source::D,
-    source::C,
+    source_D,
+    source_C,
     C,
-    source::B,
-    source::A,
+    source_B,
+    source_A,
 )
 
 # =============================================================================
@@ -34,30 +34,30 @@ def test_b_constructor_args():
 
 
 
-def test_source::d_is_not_abstract():
-    assert not inspect.isabstract(source::D)
+def test_source_d_is_not_abstract():
+    assert not inspect.isabstract(source_D)
 
 
-def test_source::d_constructor_exists():
-    assert callable(source::D.__init__)
+def test_source_d_constructor_exists():
+    assert callable(source_D.__init__)
 
 
-def test_source::d_constructor_args():
-    sig = inspect.signature(source::D.__init__)
+def test_source_d_constructor_args():
+    sig = inspect.signature(source_D.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_source::c_is_not_abstract():
-    assert not inspect.isabstract(source::C)
+def test_source_c_is_not_abstract():
+    assert not inspect.isabstract(source_C)
 
 
-def test_source::c_constructor_exists():
-    assert callable(source::C.__init__)
+def test_source_c_constructor_exists():
+    assert callable(source_C.__init__)
 
 
-def test_source::c_constructor_args():
-    sig = inspect.signature(source::C.__init__)
+def test_source_c_constructor_args():
+    sig = inspect.signature(source_C.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -76,30 +76,30 @@ def test_c_constructor_args():
 
 
 
-def test_source::b_is_not_abstract():
-    assert not inspect.isabstract(source::B)
+def test_source_b_is_not_abstract():
+    assert not inspect.isabstract(source_B)
 
 
-def test_source::b_constructor_exists():
-    assert callable(source::B.__init__)
+def test_source_b_constructor_exists():
+    assert callable(source_B.__init__)
 
 
-def test_source::b_constructor_args():
-    sig = inspect.signature(source::B.__init__)
+def test_source_b_constructor_args():
+    sig = inspect.signature(source_B.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_source::a_is_not_abstract():
-    assert not inspect.isabstract(source::A)
+def test_source_a_is_not_abstract():
+    assert not inspect.isabstract(source_A)
 
 
-def test_source::a_constructor_exists():
-    assert callable(source::A.__init__)
+def test_source_a_constructor_exists():
+    assert callable(source_A.__init__)
 
 
-def test_source::a_constructor_args():
-    sig = inspect.signature(source::A.__init__)
+def test_source_a_constructor_args():
+    sig = inspect.signature(source_A.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -117,20 +117,20 @@ safe_text = st.text(
 B_strategy = st.builds(
     B,
 )
-source::D_strategy = st.builds(
-    source::D,
+source_D_strategy = st.builds(
+    source_D,
 )
-source::C_strategy = st.builds(
-    source::C,
+source_C_strategy = st.builds(
+    source_C,
 )
 C_strategy = st.builds(
     C,
 )
-source::B_strategy = st.builds(
-    source::B,
+source_B_strategy = st.builds(
+    source_B,
 )
-source::A_strategy = st.builds(
-    source::A,
+source_A_strategy = st.builds(
+    source_A,
 )
 
 @given(instance=B_strategy)
@@ -138,27 +138,27 @@ source::A_strategy = st.builds(
 def test_b_instantiation(instance):
     assert isinstance(instance, B)
 
-@given(instance=source::D_strategy)
+@given(instance=source_D_strategy)
 @settings(max_examples=50)
-def test_source::d_instantiation(instance):
-    assert isinstance(instance, source::D)
+def test_source_d_instantiation(instance):
+    assert isinstance(instance, source_D)
 
-@given(instance=source::C_strategy)
+@given(instance=source_C_strategy)
 @settings(max_examples=50)
-def test_source::c_instantiation(instance):
-    assert isinstance(instance, source::C)
+def test_source_c_instantiation(instance):
+    assert isinstance(instance, source_C)
 
 @given(instance=C_strategy)
 @settings(max_examples=50)
 def test_c_instantiation(instance):
     assert isinstance(instance, C)
 
-@given(instance=source::B_strategy)
+@given(instance=source_B_strategy)
 @settings(max_examples=50)
-def test_source::b_instantiation(instance):
-    assert isinstance(instance, source::B)
+def test_source_b_instantiation(instance):
+    assert isinstance(instance, source_B)
 
-@given(instance=source::A_strategy)
+@given(instance=source_A_strategy)
 @settings(max_examples=50)
-def test_source::a_instantiation(instance):
-    assert isinstance(instance, source::A)
+def test_source_a_instantiation(instance):
+    assert isinstance(instance, source_A)

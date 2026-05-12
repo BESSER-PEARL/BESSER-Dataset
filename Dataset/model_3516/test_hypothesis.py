@@ -3,12 +3,12 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    declarationorder::S,
+from python_code import (
+    declarationorder_S,
     S,
-    declarationorder::Child,
+    declarationorder_Child,
 )
 
 # =============================================================================
@@ -17,16 +17,16 @@ from classes import (
 
 
 
-def test_declarationorder::s_is_not_abstract():
-    assert not inspect.isabstract(declarationorder::S)
+def test_declarationorder_s_is_not_abstract():
+    assert not inspect.isabstract(declarationorder_S)
 
 
-def test_declarationorder::s_constructor_exists():
-    assert callable(declarationorder::S.__init__)
+def test_declarationorder_s_constructor_exists():
+    assert callable(declarationorder_S.__init__)
 
 
-def test_declarationorder::s_constructor_args():
-    sig = inspect.signature(declarationorder::S.__init__)
+def test_declarationorder_s_constructor_args():
+    sig = inspect.signature(declarationorder_S.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -45,16 +45,16 @@ def test_s_constructor_args():
 
 
 
-def test_declarationorder::child_is_not_abstract():
-    assert not inspect.isabstract(declarationorder::Child)
+def test_declarationorder_child_is_not_abstract():
+    assert not inspect.isabstract(declarationorder_Child)
 
 
-def test_declarationorder::child_constructor_exists():
-    assert callable(declarationorder::Child.__init__)
+def test_declarationorder_child_constructor_exists():
+    assert callable(declarationorder_Child.__init__)
 
 
-def test_declarationorder::child_constructor_args():
-    sig = inspect.signature(declarationorder::Child.__init__)
+def test_declarationorder_child_constructor_args():
+    sig = inspect.signature(declarationorder_Child.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -69,27 +69,27 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-declarationorder::S_strategy = st.builds(
-    declarationorder::S,
+declarationorder_S_strategy = st.builds(
+    declarationorder_S,
 )
 S_strategy = st.builds(
     S,
 )
-declarationorder::Child_strategy = st.builds(
-    declarationorder::Child,
+declarationorder_Child_strategy = st.builds(
+    declarationorder_Child,
 )
 
-@given(instance=declarationorder::S_strategy)
+@given(instance=declarationorder_S_strategy)
 @settings(max_examples=50)
-def test_declarationorder::s_instantiation(instance):
-    assert isinstance(instance, declarationorder::S)
+def test_declarationorder_s_instantiation(instance):
+    assert isinstance(instance, declarationorder_S)
 
 @given(instance=S_strategy)
 @settings(max_examples=50)
 def test_s_instantiation(instance):
     assert isinstance(instance, S)
 
-@given(instance=declarationorder::Child_strategy)
+@given(instance=declarationorder_Child_strategy)
 @settings(max_examples=50)
-def test_declarationorder::child_instantiation(instance):
-    assert isinstance(instance, declarationorder::Child)
+def test_declarationorder_child_instantiation(instance):
+    assert isinstance(instance, declarationorder_Child)

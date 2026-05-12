@@ -3,11 +3,11 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    myDslA::Greeting,
-    myDslA::Model,
+from python_code import (
+    myDslA_Greeting,
+    myDslA_Model,
 )
 
 # =============================================================================
@@ -16,23 +16,23 @@ from classes import (
 
 
 
-def test_mydsla::greeting_is_not_abstract():
-    assert not inspect.isabstract(myDslA::Greeting)
+def test_mydsla_greeting_is_not_abstract():
+    assert not inspect.isabstract(myDslA_Greeting)
 
 
-def test_mydsla::greeting_constructor_exists():
-    assert callable(myDslA::Greeting.__init__)
+def test_mydsla_greeting_constructor_exists():
+    assert callable(myDslA_Greeting.__init__)
 
 
-def test_mydsla::greeting_constructor_args():
-    sig = inspect.signature(myDslA::Greeting.__init__)
+def test_mydsla_greeting_constructor_args():
+    sig = inspect.signature(myDslA_Greeting.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_mydsla::greeting_has_name():
-    assert hasattr(myDslA::Greeting, "name")
+def test_mydsla_greeting_has_name():
+    assert hasattr(myDslA_Greeting, "name")
     descriptor = None
-    for klass in myDslA::Greeting.__mro__:
+    for klass in myDslA_Greeting.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -40,16 +40,16 @@ def test_mydsla::greeting_has_name():
 
 
 
-def test_mydsla::model_is_not_abstract():
-    assert not inspect.isabstract(myDslA::Model)
+def test_mydsla_model_is_not_abstract():
+    assert not inspect.isabstract(myDslA_Model)
 
 
-def test_mydsla::model_constructor_exists():
-    assert callable(myDslA::Model.__init__)
+def test_mydsla_model_constructor_exists():
+    assert callable(myDslA_Model.__init__)
 
 
-def test_mydsla::model_constructor_args():
-    sig = inspect.signature(myDslA::Model.__init__)
+def test_mydsla_model_constructor_args():
+    sig = inspect.signature(myDslA_Model.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -64,32 +64,29 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-myDslA::Greeting_strategy = st.builds(
-    myDslA::Greeting,
+myDslA_Greeting_strategy = st.builds(
+    myDslA_Greeting,
     name=
         safe_text
 )
-myDslA::Model_strategy = st.builds(
-    myDslA::Model,
+myDslA_Model_strategy = st.builds(
+    myDslA_Model,
 )
 
-@given(instance=myDslA::Greeting_strategy)
+@given(instance=myDslA_Greeting_strategy)
 @settings(max_examples=50)
-def test_mydsla::greeting_instantiation(instance):
-    assert isinstance(instance, myDslA::Greeting)
-
-@given(instance=myDslA::Greeting_strategy)
-def test_mydsla::greeting_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_mydsla_greeting_instantiation(instance):
+    assert isinstance(instance, myDslA_Greeting)
 
 
-@given(instance=myDslA::Greeting_strategy)
-def test_mydsla::greeting_name_setter(instance):
+
+@given(instance=myDslA_Greeting_strategy)
+def test_mydsla_greeting_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=myDslA::Model_strategy)
+@given(instance=myDslA_Model_strategy)
 @settings(max_examples=50)
-def test_mydsla::model_instantiation(instance):
-    assert isinstance(instance, myDslA::Model)
+def test_mydsla_model_instantiation(instance):
+    assert isinstance(instance, myDslA_Model)

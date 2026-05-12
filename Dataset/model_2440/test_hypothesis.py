@@ -3,12 +3,12 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    database::Column,
-    database::Table,
-    database::Scheme,
+from python_code import (
+    database_Column,
+    database_Table,
+    database_Scheme,
 )
 
 # =============================================================================
@@ -17,53 +17,77 @@ from classes import (
 
 
 
-def test_database::column_is_not_abstract():
-    assert not inspect.isabstract(database::Column)
+def test_database_column_is_not_abstract():
+    assert not inspect.isabstract(database_Column)
 
 
-def test_database::column_constructor_exists():
-    assert callable(database::Column.__init__)
+def test_database_column_constructor_exists():
+    assert callable(database_Column.__init__)
 
 
-def test_database::column_constructor_args():
-    sig = inspect.signature(database::Column.__init__)
+def test_database_column_constructor_args():
+    sig = inspect.signature(database_Column.__init__)
     params = list(sig.parameters.keys())
-    assert "PrimaryKey" in params, "Missing parameter 'PrimaryKey'"
-    assert "type" in params, "Missing parameter 'type'"
-    assert "NotNull" in params, "Missing parameter 'NotNull'"
     assert "name" in params, "Missing parameter 'name'"
+    assert "type" in params, "Missing parameter 'type'"
+    assert "PrimaryKey" in params, "Missing parameter 'PrimaryKey'"
+    assert "NotNull" in params, "Missing parameter 'NotNull'"
 
-def test_database::column_has_PrimaryKey():
-    assert hasattr(database::Column, "PrimaryKey")
+def test_database_column_has_name():
+    assert hasattr(database_Column, "name")
     descriptor = None
-    for klass in database::Column.__mro__:
-        if "PrimaryKey" in klass.__dict__:
-            descriptor = klass.__dict__["PrimaryKey"]
+    for klass in database_Column.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
-def test_database::column_has_type():
-    assert hasattr(database::Column, "type")
+def test_database_column_has_type():
+    assert hasattr(database_Column, "type")
     descriptor = None
-    for klass in database::Column.__mro__:
+    for klass in database_Column.__mro__:
         if "type" in klass.__dict__:
             descriptor = klass.__dict__["type"]
             break
     assert isinstance(descriptor, property)
 
-def test_database::column_has_NotNull():
-    assert hasattr(database::Column, "NotNull")
+def test_database_column_has_PrimaryKey():
+    assert hasattr(database_Column, "PrimaryKey")
     descriptor = None
-    for klass in database::Column.__mro__:
+    for klass in database_Column.__mro__:
+        if "PrimaryKey" in klass.__dict__:
+            descriptor = klass.__dict__["PrimaryKey"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_database_column_has_NotNull():
+    assert hasattr(database_Column, "NotNull")
+    descriptor = None
+    for klass in database_Column.__mro__:
         if "NotNull" in klass.__dict__:
             descriptor = klass.__dict__["NotNull"]
             break
     assert isinstance(descriptor, property)
 
-def test_database::column_has_name():
-    assert hasattr(database::Column, "name")
+
+
+def test_database_table_is_not_abstract():
+    assert not inspect.isabstract(database_Table)
+
+
+def test_database_table_constructor_exists():
+    assert callable(database_Table.__init__)
+
+
+def test_database_table_constructor_args():
+    sig = inspect.signature(database_Table.__init__)
+    params = list(sig.parameters.keys())
+    assert "name" in params, "Missing parameter 'name'"
+
+def test_database_table_has_name():
+    assert hasattr(database_Table, "name")
     descriptor = None
-    for klass in database::Column.__mro__:
+    for klass in database_Table.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -71,47 +95,23 @@ def test_database::column_has_name():
 
 
 
-def test_database::table_is_not_abstract():
-    assert not inspect.isabstract(database::Table)
+def test_database_scheme_is_not_abstract():
+    assert not inspect.isabstract(database_Scheme)
 
 
-def test_database::table_constructor_exists():
-    assert callable(database::Table.__init__)
+def test_database_scheme_constructor_exists():
+    assert callable(database_Scheme.__init__)
 
 
-def test_database::table_constructor_args():
-    sig = inspect.signature(database::Table.__init__)
+def test_database_scheme_constructor_args():
+    sig = inspect.signature(database_Scheme.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_database::table_has_name():
-    assert hasattr(database::Table, "name")
+def test_database_scheme_has_name():
+    assert hasattr(database_Scheme, "name")
     descriptor = None
-    for klass in database::Table.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_database::scheme_is_not_abstract():
-    assert not inspect.isabstract(database::Scheme)
-
-
-def test_database::scheme_constructor_exists():
-    assert callable(database::Scheme.__init__)
-
-
-def test_database::scheme_constructor_args():
-    sig = inspect.signature(database::Scheme.__init__)
-    params = list(sig.parameters.keys())
-    assert "name" in params, "Missing parameter 'name'"
-
-def test_database::scheme_has_name():
-    assert hasattr(database::Scheme, "name")
-    descriptor = None
-    for klass in database::Scheme.__mro__:
+    for klass in database_Scheme.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -129,105 +129,87 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-database::Column_strategy = st.builds(
-    database::Column,
-    PrimaryKey=
-        st.booleans(),
+database_Column_strategy = st.builds(
+    database_Column,
+    name=
+        safe_text,
     type=
         safe_text,
-    NotNull=
+    PrimaryKey=
         st.booleans(),
+    NotNull=
+        st.booleans()
+)
+database_Table_strategy = st.builds(
+    database_Table,
     name=
         safe_text
 )
-database::Table_strategy = st.builds(
-    database::Table,
-    name=
-        safe_text
-)
-database::Scheme_strategy = st.builds(
-    database::Scheme,
+database_Scheme_strategy = st.builds(
+    database_Scheme,
     name=
         safe_text
 )
 
-@given(instance=database::Column_strategy)
+@given(instance=database_Column_strategy)
 @settings(max_examples=50)
-def test_database::column_instantiation(instance):
-    assert isinstance(instance, database::Column)
-
-@given(instance=database::Column_strategy)
-def test_database::column_PrimaryKey_type(instance):
-    assert isinstance(instance.PrimaryKey, bool)
+def test_database_column_instantiation(instance):
+    assert isinstance(instance, database_Column)
 
 
-@given(instance=database::Column_strategy)
-def test_database::column_PrimaryKey_setter(instance):
-    original = instance.PrimaryKey
-    instance.PrimaryKey = original
-    assert instance.PrimaryKey == original
 
-@given(instance=database::Column_strategy)
-def test_database::column_type_type(instance):
-    assert isinstance(instance.type, str)
+@given(instance=database_Column_strategy)
+def test_database_column_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
 
 
-@given(instance=database::Column_strategy)
-def test_database::column_type_setter(instance):
+
+@given(instance=database_Column_strategy)
+def test_database_column_type_setter(instance):
     original = instance.type
     instance.type = original
     assert instance.type == original
 
-@given(instance=database::Column_strategy)
-def test_database::column_NotNull_type(instance):
-    assert isinstance(instance.NotNull, bool)
 
 
-@given(instance=database::Column_strategy)
-def test_database::column_NotNull_setter(instance):
+@given(instance=database_Column_strategy)
+def test_database_column_PrimaryKey_setter(instance):
+    original = instance.PrimaryKey
+    instance.PrimaryKey = original
+    assert instance.PrimaryKey == original
+
+
+
+@given(instance=database_Column_strategy)
+def test_database_column_NotNull_setter(instance):
     original = instance.NotNull
     instance.NotNull = original
     assert instance.NotNull == original
 
-@given(instance=database::Column_strategy)
-def test_database::column_name_type(instance):
-    assert isinstance(instance.name, str)
+@given(instance=database_Table_strategy)
+@settings(max_examples=50)
+def test_database_table_instantiation(instance):
+    assert isinstance(instance, database_Table)
 
 
-@given(instance=database::Column_strategy)
-def test_database::column_name_setter(instance):
+
+@given(instance=database_Table_strategy)
+def test_database_table_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=database::Table_strategy)
+@given(instance=database_Scheme_strategy)
 @settings(max_examples=50)
-def test_database::table_instantiation(instance):
-    assert isinstance(instance, database::Table)
-
-@given(instance=database::Table_strategy)
-def test_database::table_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_database_scheme_instantiation(instance):
+    assert isinstance(instance, database_Scheme)
 
 
-@given(instance=database::Table_strategy)
-def test_database::table_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
 
-@given(instance=database::Scheme_strategy)
-@settings(max_examples=50)
-def test_database::scheme_instantiation(instance):
-    assert isinstance(instance, database::Scheme)
-
-@given(instance=database::Scheme_strategy)
-def test_database::scheme_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=database::Scheme_strategy)
-def test_database::scheme_name_setter(instance):
+@given(instance=database_Scheme_strategy)
+def test_database_scheme_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original

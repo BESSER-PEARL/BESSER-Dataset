@@ -3,94 +3,136 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    Symbol,
-    amethyst::ForInitializerDeclaration,
-    amethyst::ParameterDeclaration,
-    amethyst::DefinitionDeclaration,
-    amethyst::TagLoopInitializerDeclaration,
-    amethyst::VariableDeclaration,
-    amethyst::ClassDeclaration,
-    PrimitiveType,
-    amethyst::FloatType,
-    amethyst::DefinitionType,
-    amethyst::AnyType,
-    amethyst::StringType,
-    amethyst::BooleanType,
-    amethyst::IntType,
-    amethyst::CharType,
-    Type,
-    amethyst::PrimitiveType,
-    AbstractType,
-    amethyst::ArrayType,
-    amethyst::Type,
-    amethyst::AbstractType,
+from python_code import (
     RangeLiteral,
-    amethyst::CharRangeLiteral,
-    amethyst::NumberRangeLiteral,
+    amethyst_CharRangeLiteral,
+    amethyst_NumberRangeLiteral,
+    Symbol,
+    amethyst_ParameterDeclaration,
+    amethyst_DefinitionDeclaration,
+    amethyst_ForInitializerDeclaration,
+    amethyst_TagLoopInitializerDeclaration,
+    amethyst_VariableDeclaration,
+    amethyst_ClassDeclaration,
+    PrimitiveType,
+    amethyst_FloatType,
+    amethyst_IntType,
+    amethyst_StringType,
+    amethyst_DefinitionType,
+    amethyst_BooleanType,
+    amethyst_AnyType,
+    amethyst_CharType,
+    Type,
+    amethyst_PrimitiveType,
+    AbstractType,
+    amethyst_ArrayType,
+    amethyst_Type,
+    amethyst_AbstractType,
     Literal,
-    amethyst::NullLiteral,
-    amethyst::FloatLiteral,
-    amethyst::BooleanLiteral,
-    amethyst::RangeLiteral,
-    amethyst::StringLiteral,
-    amethyst::IntLiteral,
-    amethyst::CharLiteral,
+    amethyst_BooleanLiteral,
+    amethyst_NullLiteral,
+    amethyst_FloatLiteral,
+    amethyst_RangeLiteral,
+    amethyst_IntLiteral,
+    amethyst_StringLiteral,
+    amethyst_CharLiteral,
     Expression,
-    amethyst::IndexAccessExpression,
-    amethyst::AdditiveExpression,
-    amethyst::ShiftExpression,
-    amethyst::ParenthisedExpression,
-    amethyst::MatchingExpression,
-    amethyst::InExpression,
-    amethyst::MultiplicativeExpression,
-    amethyst::CallExpression,
-    amethyst::TypeCastExpression,
-    amethyst::OrExpression,
-    amethyst::SelfExpression,
-    amethyst::NotExpression,
-    amethyst::UnaryMinusExpression,
-    amethyst::MemberAccessExpression,
-    amethyst::SuperExpression,
-    amethyst::AssignmentExpression,
-    amethyst::AndExpression,
-    amethyst::EqualityExpression,
-    amethyst::NewExpression,
-    amethyst::RelationalExpression,
-    amethyst::Literal,
-    amethyst::SymbolReference,
-    amethyst::TagExpression,
-    amethyst::EObject,
-    amethyst::TagAttribute,
-    amethyst::TagLoopExpression,
-    amethyst::ClassType,
-    amethyst::TagDeclaration,
+    amethyst_ShiftExpression,
+    amethyst_AndExpression,
+    amethyst_CallExpression,
+    amethyst_AdditiveExpression,
+    amethyst_MatchingExpression,
+    amethyst_SuperExpression,
+    amethyst_ParenthisedExpression,
+    amethyst_SelfExpression,
+    amethyst_TypeCastExpression,
+    amethyst_IndexAccessExpression,
+    amethyst_InExpression,
+    amethyst_MultiplicativeExpression,
+    amethyst_AssignmentExpression,
+    amethyst_MemberAccessExpression,
+    amethyst_UnaryMinusExpression,
+    amethyst_EqualityExpression,
+    amethyst_NotExpression,
+    amethyst_RelationalExpression,
+    amethyst_Literal,
+    amethyst_OrExpression,
+    amethyst_NewExpression,
+    amethyst_SymbolReference,
+    amethyst_TagExpression,
+    amethyst_EObject,
+    amethyst_TagAttribute,
+    amethyst_TagLoopExpression,
+    amethyst_ClassType,
+    amethyst_TagDeclaration,
     Statement,
-    amethyst::Expression,
-    amethyst::ReturnStatement,
-    amethyst::IfStatement,
-    amethyst::ForStatement,
-    amethyst::CaseStatement,
-    amethyst::ElseStatement,
-    amethyst::BreakStatement,
-    amethyst::JsCodeStatement,
-    amethyst::NextStatement,
-    amethyst::CaseElseStatement,
-    amethyst::WhileStatement,
-    amethyst::WhenStatement,
-    amethyst::ElseIfStatement,
-    amethyst::Symbol,
-    amethyst::Statement,
-    amethyst::Import,
-    amethyst::Module,
-    amethyst::PropertyDeclaration,
+    amethyst_ElseIfStatement,
+    amethyst_BreakStatement,
+    amethyst_ForStatement,
+    amethyst_CaseElseStatement,
+    amethyst_JsCodeStatement,
+    amethyst_Expression,
+    amethyst_WhenStatement,
+    amethyst_IfStatement,
+    amethyst_ElseStatement,
+    amethyst_NextStatement,
+    amethyst_CaseStatement,
+    amethyst_ReturnStatement,
+    amethyst_WhileStatement,
+    amethyst_Symbol,
+    amethyst_Statement,
+    amethyst_Import,
+    amethyst_Module,
+    amethyst_PropertyDeclaration,
 )
 
 # =============================================================================
 # SECTION 1 — STRUCTURAL TESTS
 # =============================================================================
+
+
+
+def test_rangeliteral_is_not_abstract():
+    assert not inspect.isabstract(RangeLiteral)
+
+
+def test_rangeliteral_constructor_exists():
+    assert callable(RangeLiteral.__init__)
+
+
+def test_rangeliteral_constructor_args():
+    sig = inspect.signature(RangeLiteral.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_amethyst_charrangeliteral_is_not_abstract():
+    assert not inspect.isabstract(amethyst_CharRangeLiteral)
+
+
+def test_amethyst_charrangeliteral_constructor_exists():
+    assert callable(amethyst_CharRangeLiteral.__init__)
+
+
+def test_amethyst_charrangeliteral_constructor_args():
+    sig = inspect.signature(amethyst_CharRangeLiteral.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_amethyst_numberrangeliteral_is_not_abstract():
+    assert not inspect.isabstract(amethyst_NumberRangeLiteral)
+
+
+def test_amethyst_numberrangeliteral_constructor_exists():
+    assert callable(amethyst_NumberRangeLiteral.__init__)
+
+
+def test_amethyst_numberrangeliteral_constructor_args():
+    sig = inspect.signature(amethyst_NumberRangeLiteral.__init__)
+    params = list(sig.parameters.keys())
 
 
 
@@ -108,51 +150,37 @@ def test_symbol_constructor_args():
 
 
 
-def test_amethyst::forinitializerdeclaration_is_not_abstract():
-    assert not inspect.isabstract(amethyst::ForInitializerDeclaration)
+def test_amethyst_parameterdeclaration_is_not_abstract():
+    assert not inspect.isabstract(amethyst_ParameterDeclaration)
 
 
-def test_amethyst::forinitializerdeclaration_constructor_exists():
-    assert callable(amethyst::ForInitializerDeclaration.__init__)
+def test_amethyst_parameterdeclaration_constructor_exists():
+    assert callable(amethyst_ParameterDeclaration.__init__)
 
 
-def test_amethyst::forinitializerdeclaration_constructor_args():
-    sig = inspect.signature(amethyst::ForInitializerDeclaration.__init__)
+def test_amethyst_parameterdeclaration_constructor_args():
+    sig = inspect.signature(amethyst_ParameterDeclaration.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_amethyst::parameterdeclaration_is_not_abstract():
-    assert not inspect.isabstract(amethyst::ParameterDeclaration)
+def test_amethyst_definitiondeclaration_is_not_abstract():
+    assert not inspect.isabstract(amethyst_DefinitionDeclaration)
 
 
-def test_amethyst::parameterdeclaration_constructor_exists():
-    assert callable(amethyst::ParameterDeclaration.__init__)
+def test_amethyst_definitiondeclaration_constructor_exists():
+    assert callable(amethyst_DefinitionDeclaration.__init__)
 
 
-def test_amethyst::parameterdeclaration_constructor_args():
-    sig = inspect.signature(amethyst::ParameterDeclaration.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_amethyst::definitiondeclaration_is_not_abstract():
-    assert not inspect.isabstract(amethyst::DefinitionDeclaration)
-
-
-def test_amethyst::definitiondeclaration_constructor_exists():
-    assert callable(amethyst::DefinitionDeclaration.__init__)
-
-
-def test_amethyst::definitiondeclaration_constructor_args():
-    sig = inspect.signature(amethyst::DefinitionDeclaration.__init__)
+def test_amethyst_definitiondeclaration_constructor_args():
+    sig = inspect.signature(amethyst_DefinitionDeclaration.__init__)
     params = list(sig.parameters.keys())
     assert "static" in params, "Missing parameter 'static'"
 
-def test_amethyst::definitiondeclaration_has_static():
-    assert hasattr(amethyst::DefinitionDeclaration, "static")
+def test_amethyst_definitiondeclaration_has_static():
+    assert hasattr(amethyst_DefinitionDeclaration, "static")
     descriptor = None
-    for klass in amethyst::DefinitionDeclaration.__mro__:
+    for klass in amethyst_DefinitionDeclaration.__mro__:
         if "static" in klass.__dict__:
             descriptor = klass.__dict__["static"]
             break
@@ -160,44 +188,58 @@ def test_amethyst::definitiondeclaration_has_static():
 
 
 
-def test_amethyst::tagloopinitializerdeclaration_is_not_abstract():
-    assert not inspect.isabstract(amethyst::TagLoopInitializerDeclaration)
+def test_amethyst_forinitializerdeclaration_is_not_abstract():
+    assert not inspect.isabstract(amethyst_ForInitializerDeclaration)
 
 
-def test_amethyst::tagloopinitializerdeclaration_constructor_exists():
-    assert callable(amethyst::TagLoopInitializerDeclaration.__init__)
+def test_amethyst_forinitializerdeclaration_constructor_exists():
+    assert callable(amethyst_ForInitializerDeclaration.__init__)
 
 
-def test_amethyst::tagloopinitializerdeclaration_constructor_args():
-    sig = inspect.signature(amethyst::TagLoopInitializerDeclaration.__init__)
+def test_amethyst_forinitializerdeclaration_constructor_args():
+    sig = inspect.signature(amethyst_ForInitializerDeclaration.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_amethyst::variabledeclaration_is_not_abstract():
-    assert not inspect.isabstract(amethyst::VariableDeclaration)
+def test_amethyst_tagloopinitializerdeclaration_is_not_abstract():
+    assert not inspect.isabstract(amethyst_TagLoopInitializerDeclaration)
 
 
-def test_amethyst::variabledeclaration_constructor_exists():
-    assert callable(amethyst::VariableDeclaration.__init__)
+def test_amethyst_tagloopinitializerdeclaration_constructor_exists():
+    assert callable(amethyst_TagLoopInitializerDeclaration.__init__)
 
 
-def test_amethyst::variabledeclaration_constructor_args():
-    sig = inspect.signature(amethyst::VariableDeclaration.__init__)
+def test_amethyst_tagloopinitializerdeclaration_constructor_args():
+    sig = inspect.signature(amethyst_TagLoopInitializerDeclaration.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_amethyst::classdeclaration_is_not_abstract():
-    assert not inspect.isabstract(amethyst::ClassDeclaration)
+def test_amethyst_variabledeclaration_is_not_abstract():
+    assert not inspect.isabstract(amethyst_VariableDeclaration)
 
 
-def test_amethyst::classdeclaration_constructor_exists():
-    assert callable(amethyst::ClassDeclaration.__init__)
+def test_amethyst_variabledeclaration_constructor_exists():
+    assert callable(amethyst_VariableDeclaration.__init__)
 
 
-def test_amethyst::classdeclaration_constructor_args():
-    sig = inspect.signature(amethyst::ClassDeclaration.__init__)
+def test_amethyst_variabledeclaration_constructor_args():
+    sig = inspect.signature(amethyst_VariableDeclaration.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_amethyst_classdeclaration_is_not_abstract():
+    assert not inspect.isabstract(amethyst_ClassDeclaration)
+
+
+def test_amethyst_classdeclaration_constructor_exists():
+    assert callable(amethyst_ClassDeclaration.__init__)
+
+
+def test_amethyst_classdeclaration_constructor_args():
+    sig = inspect.signature(amethyst_ClassDeclaration.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -216,100 +258,100 @@ def test_primitivetype_constructor_args():
 
 
 
-def test_amethyst::floattype_is_not_abstract():
-    assert not inspect.isabstract(amethyst::FloatType)
+def test_amethyst_floattype_is_not_abstract():
+    assert not inspect.isabstract(amethyst_FloatType)
 
 
-def test_amethyst::floattype_constructor_exists():
-    assert callable(amethyst::FloatType.__init__)
+def test_amethyst_floattype_constructor_exists():
+    assert callable(amethyst_FloatType.__init__)
 
 
-def test_amethyst::floattype_constructor_args():
-    sig = inspect.signature(amethyst::FloatType.__init__)
+def test_amethyst_floattype_constructor_args():
+    sig = inspect.signature(amethyst_FloatType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_amethyst::definitiontype_is_not_abstract():
-    assert not inspect.isabstract(amethyst::DefinitionType)
+def test_amethyst_inttype_is_not_abstract():
+    assert not inspect.isabstract(amethyst_IntType)
 
 
-def test_amethyst::definitiontype_constructor_exists():
-    assert callable(amethyst::DefinitionType.__init__)
+def test_amethyst_inttype_constructor_exists():
+    assert callable(amethyst_IntType.__init__)
 
 
-def test_amethyst::definitiontype_constructor_args():
-    sig = inspect.signature(amethyst::DefinitionType.__init__)
+def test_amethyst_inttype_constructor_args():
+    sig = inspect.signature(amethyst_IntType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_amethyst::anytype_is_not_abstract():
-    assert not inspect.isabstract(amethyst::AnyType)
+def test_amethyst_stringtype_is_not_abstract():
+    assert not inspect.isabstract(amethyst_StringType)
 
 
-def test_amethyst::anytype_constructor_exists():
-    assert callable(amethyst::AnyType.__init__)
+def test_amethyst_stringtype_constructor_exists():
+    assert callable(amethyst_StringType.__init__)
 
 
-def test_amethyst::anytype_constructor_args():
-    sig = inspect.signature(amethyst::AnyType.__init__)
+def test_amethyst_stringtype_constructor_args():
+    sig = inspect.signature(amethyst_StringType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_amethyst::stringtype_is_not_abstract():
-    assert not inspect.isabstract(amethyst::StringType)
+def test_amethyst_definitiontype_is_not_abstract():
+    assert not inspect.isabstract(amethyst_DefinitionType)
 
 
-def test_amethyst::stringtype_constructor_exists():
-    assert callable(amethyst::StringType.__init__)
+def test_amethyst_definitiontype_constructor_exists():
+    assert callable(amethyst_DefinitionType.__init__)
 
 
-def test_amethyst::stringtype_constructor_args():
-    sig = inspect.signature(amethyst::StringType.__init__)
+def test_amethyst_definitiontype_constructor_args():
+    sig = inspect.signature(amethyst_DefinitionType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_amethyst::booleantype_is_not_abstract():
-    assert not inspect.isabstract(amethyst::BooleanType)
+def test_amethyst_booleantype_is_not_abstract():
+    assert not inspect.isabstract(amethyst_BooleanType)
 
 
-def test_amethyst::booleantype_constructor_exists():
-    assert callable(amethyst::BooleanType.__init__)
+def test_amethyst_booleantype_constructor_exists():
+    assert callable(amethyst_BooleanType.__init__)
 
 
-def test_amethyst::booleantype_constructor_args():
-    sig = inspect.signature(amethyst::BooleanType.__init__)
+def test_amethyst_booleantype_constructor_args():
+    sig = inspect.signature(amethyst_BooleanType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_amethyst::inttype_is_not_abstract():
-    assert not inspect.isabstract(amethyst::IntType)
+def test_amethyst_anytype_is_not_abstract():
+    assert not inspect.isabstract(amethyst_AnyType)
 
 
-def test_amethyst::inttype_constructor_exists():
-    assert callable(amethyst::IntType.__init__)
+def test_amethyst_anytype_constructor_exists():
+    assert callable(amethyst_AnyType.__init__)
 
 
-def test_amethyst::inttype_constructor_args():
-    sig = inspect.signature(amethyst::IntType.__init__)
+def test_amethyst_anytype_constructor_args():
+    sig = inspect.signature(amethyst_AnyType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_amethyst::chartype_is_not_abstract():
-    assert not inspect.isabstract(amethyst::CharType)
+def test_amethyst_chartype_is_not_abstract():
+    assert not inspect.isabstract(amethyst_CharType)
 
 
-def test_amethyst::chartype_constructor_exists():
-    assert callable(amethyst::CharType.__init__)
+def test_amethyst_chartype_constructor_exists():
+    assert callable(amethyst_CharType.__init__)
 
 
-def test_amethyst::chartype_constructor_args():
-    sig = inspect.signature(amethyst::CharType.__init__)
+def test_amethyst_chartype_constructor_args():
+    sig = inspect.signature(amethyst_CharType.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -328,16 +370,16 @@ def test_type_constructor_args():
 
 
 
-def test_amethyst::primitivetype_is_not_abstract():
-    assert not inspect.isabstract(amethyst::PrimitiveType)
+def test_amethyst_primitivetype_is_not_abstract():
+    assert not inspect.isabstract(amethyst_PrimitiveType)
 
 
-def test_amethyst::primitivetype_constructor_exists():
-    assert callable(amethyst::PrimitiveType.__init__)
+def test_amethyst_primitivetype_constructor_exists():
+    assert callable(amethyst_PrimitiveType.__init__)
 
 
-def test_amethyst::primitivetype_constructor_args():
-    sig = inspect.signature(amethyst::PrimitiveType.__init__)
+def test_amethyst_primitivetype_constructor_args():
+    sig = inspect.signature(amethyst_PrimitiveType.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -356,86 +398,44 @@ def test_abstracttype_constructor_args():
 
 
 
-def test_amethyst::arraytype_is_not_abstract():
-    assert not inspect.isabstract(amethyst::ArrayType)
+def test_amethyst_arraytype_is_not_abstract():
+    assert not inspect.isabstract(amethyst_ArrayType)
 
 
-def test_amethyst::arraytype_constructor_exists():
-    assert callable(amethyst::ArrayType.__init__)
+def test_amethyst_arraytype_constructor_exists():
+    assert callable(amethyst_ArrayType.__init__)
 
 
-def test_amethyst::arraytype_constructor_args():
-    sig = inspect.signature(amethyst::ArrayType.__init__)
+def test_amethyst_arraytype_constructor_args():
+    sig = inspect.signature(amethyst_ArrayType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_amethyst::type_is_not_abstract():
-    assert not inspect.isabstract(amethyst::Type)
+def test_amethyst_type_is_not_abstract():
+    assert not inspect.isabstract(amethyst_Type)
 
 
-def test_amethyst::type_constructor_exists():
-    assert callable(amethyst::Type.__init__)
+def test_amethyst_type_constructor_exists():
+    assert callable(amethyst_Type.__init__)
 
 
-def test_amethyst::type_constructor_args():
-    sig = inspect.signature(amethyst::Type.__init__)
+def test_amethyst_type_constructor_args():
+    sig = inspect.signature(amethyst_Type.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_amethyst::abstracttype_is_not_abstract():
-    assert not inspect.isabstract(amethyst::AbstractType)
+def test_amethyst_abstracttype_is_not_abstract():
+    assert not inspect.isabstract(amethyst_AbstractType)
 
 
-def test_amethyst::abstracttype_constructor_exists():
-    assert callable(amethyst::AbstractType.__init__)
+def test_amethyst_abstracttype_constructor_exists():
+    assert callable(amethyst_AbstractType.__init__)
 
 
-def test_amethyst::abstracttype_constructor_args():
-    sig = inspect.signature(amethyst::AbstractType.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_rangeliteral_is_not_abstract():
-    assert not inspect.isabstract(RangeLiteral)
-
-
-def test_rangeliteral_constructor_exists():
-    assert callable(RangeLiteral.__init__)
-
-
-def test_rangeliteral_constructor_args():
-    sig = inspect.signature(RangeLiteral.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_amethyst::charrangeliteral_is_not_abstract():
-    assert not inspect.isabstract(amethyst::CharRangeLiteral)
-
-
-def test_amethyst::charrangeliteral_constructor_exists():
-    assert callable(amethyst::CharRangeLiteral.__init__)
-
-
-def test_amethyst::charrangeliteral_constructor_args():
-    sig = inspect.signature(amethyst::CharRangeLiteral.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_amethyst::numberrangeliteral_is_not_abstract():
-    assert not inspect.isabstract(amethyst::NumberRangeLiteral)
-
-
-def test_amethyst::numberrangeliteral_constructor_exists():
-    assert callable(amethyst::NumberRangeLiteral.__init__)
-
-
-def test_amethyst::numberrangeliteral_constructor_args():
-    sig = inspect.signature(amethyst::NumberRangeLiteral.__init__)
+def test_amethyst_abstracttype_constructor_args():
+    sig = inspect.signature(amethyst_AbstractType.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -454,37 +454,23 @@ def test_literal_constructor_args():
 
 
 
-def test_amethyst::nullliteral_is_not_abstract():
-    assert not inspect.isabstract(amethyst::NullLiteral)
+def test_amethyst_booleanliteral_is_not_abstract():
+    assert not inspect.isabstract(amethyst_BooleanLiteral)
 
 
-def test_amethyst::nullliteral_constructor_exists():
-    assert callable(amethyst::NullLiteral.__init__)
+def test_amethyst_booleanliteral_constructor_exists():
+    assert callable(amethyst_BooleanLiteral.__init__)
 
 
-def test_amethyst::nullliteral_constructor_args():
-    sig = inspect.signature(amethyst::NullLiteral.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_amethyst::floatliteral_is_not_abstract():
-    assert not inspect.isabstract(amethyst::FloatLiteral)
-
-
-def test_amethyst::floatliteral_constructor_exists():
-    assert callable(amethyst::FloatLiteral.__init__)
-
-
-def test_amethyst::floatliteral_constructor_args():
-    sig = inspect.signature(amethyst::FloatLiteral.__init__)
+def test_amethyst_booleanliteral_constructor_args():
+    sig = inspect.signature(amethyst_BooleanLiteral.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
 
-def test_amethyst::floatliteral_has_value():
-    assert hasattr(amethyst::FloatLiteral, "value")
+def test_amethyst_booleanliteral_has_value():
+    assert hasattr(amethyst_BooleanLiteral, "value")
     descriptor = None
-    for klass in amethyst::FloatLiteral.__mro__:
+    for klass in amethyst_BooleanLiteral.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -492,23 +478,37 @@ def test_amethyst::floatliteral_has_value():
 
 
 
-def test_amethyst::booleanliteral_is_not_abstract():
-    assert not inspect.isabstract(amethyst::BooleanLiteral)
+def test_amethyst_nullliteral_is_not_abstract():
+    assert not inspect.isabstract(amethyst_NullLiteral)
 
 
-def test_amethyst::booleanliteral_constructor_exists():
-    assert callable(amethyst::BooleanLiteral.__init__)
+def test_amethyst_nullliteral_constructor_exists():
+    assert callable(amethyst_NullLiteral.__init__)
 
 
-def test_amethyst::booleanliteral_constructor_args():
-    sig = inspect.signature(amethyst::BooleanLiteral.__init__)
+def test_amethyst_nullliteral_constructor_args():
+    sig = inspect.signature(amethyst_NullLiteral.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_amethyst_floatliteral_is_not_abstract():
+    assert not inspect.isabstract(amethyst_FloatLiteral)
+
+
+def test_amethyst_floatliteral_constructor_exists():
+    assert callable(amethyst_FloatLiteral.__init__)
+
+
+def test_amethyst_floatliteral_constructor_args():
+    sig = inspect.signature(amethyst_FloatLiteral.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
 
-def test_amethyst::booleanliteral_has_value():
-    assert hasattr(amethyst::BooleanLiteral, "value")
+def test_amethyst_floatliteral_has_value():
+    assert hasattr(amethyst_FloatLiteral, "value")
     descriptor = None
-    for klass in amethyst::BooleanLiteral.__mro__:
+    for klass in amethyst_FloatLiteral.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -516,37 +516,37 @@ def test_amethyst::booleanliteral_has_value():
 
 
 
-def test_amethyst::rangeliteral_is_not_abstract():
-    assert not inspect.isabstract(amethyst::RangeLiteral)
+def test_amethyst_rangeliteral_is_not_abstract():
+    assert not inspect.isabstract(amethyst_RangeLiteral)
 
 
-def test_amethyst::rangeliteral_constructor_exists():
-    assert callable(amethyst::RangeLiteral.__init__)
+def test_amethyst_rangeliteral_constructor_exists():
+    assert callable(amethyst_RangeLiteral.__init__)
 
 
-def test_amethyst::rangeliteral_constructor_args():
-    sig = inspect.signature(amethyst::RangeLiteral.__init__)
+def test_amethyst_rangeliteral_constructor_args():
+    sig = inspect.signature(amethyst_RangeLiteral.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_amethyst::stringliteral_is_not_abstract():
-    assert not inspect.isabstract(amethyst::StringLiteral)
+def test_amethyst_intliteral_is_not_abstract():
+    assert not inspect.isabstract(amethyst_IntLiteral)
 
 
-def test_amethyst::stringliteral_constructor_exists():
-    assert callable(amethyst::StringLiteral.__init__)
+def test_amethyst_intliteral_constructor_exists():
+    assert callable(amethyst_IntLiteral.__init__)
 
 
-def test_amethyst::stringliteral_constructor_args():
-    sig = inspect.signature(amethyst::StringLiteral.__init__)
+def test_amethyst_intliteral_constructor_args():
+    sig = inspect.signature(amethyst_IntLiteral.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
 
-def test_amethyst::stringliteral_has_value():
-    assert hasattr(amethyst::StringLiteral, "value")
+def test_amethyst_intliteral_has_value():
+    assert hasattr(amethyst_IntLiteral, "value")
     descriptor = None
-    for klass in amethyst::StringLiteral.__mro__:
+    for klass in amethyst_IntLiteral.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -554,23 +554,23 @@ def test_amethyst::stringliteral_has_value():
 
 
 
-def test_amethyst::intliteral_is_not_abstract():
-    assert not inspect.isabstract(amethyst::IntLiteral)
+def test_amethyst_stringliteral_is_not_abstract():
+    assert not inspect.isabstract(amethyst_StringLiteral)
 
 
-def test_amethyst::intliteral_constructor_exists():
-    assert callable(amethyst::IntLiteral.__init__)
+def test_amethyst_stringliteral_constructor_exists():
+    assert callable(amethyst_StringLiteral.__init__)
 
 
-def test_amethyst::intliteral_constructor_args():
-    sig = inspect.signature(amethyst::IntLiteral.__init__)
+def test_amethyst_stringliteral_constructor_args():
+    sig = inspect.signature(amethyst_StringLiteral.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
 
-def test_amethyst::intliteral_has_value():
-    assert hasattr(amethyst::IntLiteral, "value")
+def test_amethyst_stringliteral_has_value():
+    assert hasattr(amethyst_StringLiteral, "value")
     descriptor = None
-    for klass in amethyst::IntLiteral.__mro__:
+    for klass in amethyst_StringLiteral.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -578,23 +578,23 @@ def test_amethyst::intliteral_has_value():
 
 
 
-def test_amethyst::charliteral_is_not_abstract():
-    assert not inspect.isabstract(amethyst::CharLiteral)
+def test_amethyst_charliteral_is_not_abstract():
+    assert not inspect.isabstract(amethyst_CharLiteral)
 
 
-def test_amethyst::charliteral_constructor_exists():
-    assert callable(amethyst::CharLiteral.__init__)
+def test_amethyst_charliteral_constructor_exists():
+    assert callable(amethyst_CharLiteral.__init__)
 
 
-def test_amethyst::charliteral_constructor_args():
-    sig = inspect.signature(amethyst::CharLiteral.__init__)
+def test_amethyst_charliteral_constructor_args():
+    sig = inspect.signature(amethyst_CharLiteral.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
 
-def test_amethyst::charliteral_has_value():
-    assert hasattr(amethyst::CharLiteral, "value")
+def test_amethyst_charliteral_has_value():
+    assert hasattr(amethyst_CharLiteral, "value")
     descriptor = None
-    for klass in amethyst::CharLiteral.__mro__:
+    for klass in amethyst_CharLiteral.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -616,37 +616,23 @@ def test_expression_constructor_args():
 
 
 
-def test_amethyst::indexaccessexpression_is_not_abstract():
-    assert not inspect.isabstract(amethyst::IndexAccessExpression)
+def test_amethyst_shiftexpression_is_not_abstract():
+    assert not inspect.isabstract(amethyst_ShiftExpression)
 
 
-def test_amethyst::indexaccessexpression_constructor_exists():
-    assert callable(amethyst::IndexAccessExpression.__init__)
+def test_amethyst_shiftexpression_constructor_exists():
+    assert callable(amethyst_ShiftExpression.__init__)
 
 
-def test_amethyst::indexaccessexpression_constructor_args():
-    sig = inspect.signature(amethyst::IndexAccessExpression.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_amethyst::additiveexpression_is_not_abstract():
-    assert not inspect.isabstract(amethyst::AdditiveExpression)
-
-
-def test_amethyst::additiveexpression_constructor_exists():
-    assert callable(amethyst::AdditiveExpression.__init__)
-
-
-def test_amethyst::additiveexpression_constructor_args():
-    sig = inspect.signature(amethyst::AdditiveExpression.__init__)
+def test_amethyst_shiftexpression_constructor_args():
+    sig = inspect.signature(amethyst_ShiftExpression.__init__)
     params = list(sig.parameters.keys())
     assert "operator" in params, "Missing parameter 'operator'"
 
-def test_amethyst::additiveexpression_has_operator():
-    assert hasattr(amethyst::AdditiveExpression, "operator")
+def test_amethyst_shiftexpression_has_operator():
+    assert hasattr(amethyst_ShiftExpression, "operator")
     descriptor = None
-    for klass in amethyst::AdditiveExpression.__mro__:
+    for klass in amethyst_ShiftExpression.__mro__:
         if "operator" in klass.__dict__:
             descriptor = klass.__dict__["operator"]
             break
@@ -654,23 +640,51 @@ def test_amethyst::additiveexpression_has_operator():
 
 
 
-def test_amethyst::shiftexpression_is_not_abstract():
-    assert not inspect.isabstract(amethyst::ShiftExpression)
+def test_amethyst_andexpression_is_not_abstract():
+    assert not inspect.isabstract(amethyst_AndExpression)
 
 
-def test_amethyst::shiftexpression_constructor_exists():
-    assert callable(amethyst::ShiftExpression.__init__)
+def test_amethyst_andexpression_constructor_exists():
+    assert callable(amethyst_AndExpression.__init__)
 
 
-def test_amethyst::shiftexpression_constructor_args():
-    sig = inspect.signature(amethyst::ShiftExpression.__init__)
+def test_amethyst_andexpression_constructor_args():
+    sig = inspect.signature(amethyst_AndExpression.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_amethyst_callexpression_is_not_abstract():
+    assert not inspect.isabstract(amethyst_CallExpression)
+
+
+def test_amethyst_callexpression_constructor_exists():
+    assert callable(amethyst_CallExpression.__init__)
+
+
+def test_amethyst_callexpression_constructor_args():
+    sig = inspect.signature(amethyst_CallExpression.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_amethyst_additiveexpression_is_not_abstract():
+    assert not inspect.isabstract(amethyst_AdditiveExpression)
+
+
+def test_amethyst_additiveexpression_constructor_exists():
+    assert callable(amethyst_AdditiveExpression.__init__)
+
+
+def test_amethyst_additiveexpression_constructor_args():
+    sig = inspect.signature(amethyst_AdditiveExpression.__init__)
     params = list(sig.parameters.keys())
     assert "operator" in params, "Missing parameter 'operator'"
 
-def test_amethyst::shiftexpression_has_operator():
-    assert hasattr(amethyst::ShiftExpression, "operator")
+def test_amethyst_additiveexpression_has_operator():
+    assert hasattr(amethyst_AdditiveExpression, "operator")
     descriptor = None
-    for klass in amethyst::ShiftExpression.__mro__:
+    for klass in amethyst_AdditiveExpression.__mro__:
         if "operator" in klass.__dict__:
             descriptor = klass.__dict__["operator"]
             break
@@ -678,37 +692,23 @@ def test_amethyst::shiftexpression_has_operator():
 
 
 
-def test_amethyst::parenthisedexpression_is_not_abstract():
-    assert not inspect.isabstract(amethyst::ParenthisedExpression)
+def test_amethyst_matchingexpression_is_not_abstract():
+    assert not inspect.isabstract(amethyst_MatchingExpression)
 
 
-def test_amethyst::parenthisedexpression_constructor_exists():
-    assert callable(amethyst::ParenthisedExpression.__init__)
+def test_amethyst_matchingexpression_constructor_exists():
+    assert callable(amethyst_MatchingExpression.__init__)
 
 
-def test_amethyst::parenthisedexpression_constructor_args():
-    sig = inspect.signature(amethyst::ParenthisedExpression.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_amethyst::matchingexpression_is_not_abstract():
-    assert not inspect.isabstract(amethyst::MatchingExpression)
-
-
-def test_amethyst::matchingexpression_constructor_exists():
-    assert callable(amethyst::MatchingExpression.__init__)
-
-
-def test_amethyst::matchingexpression_constructor_args():
-    sig = inspect.signature(amethyst::MatchingExpression.__init__)
+def test_amethyst_matchingexpression_constructor_args():
+    sig = inspect.signature(amethyst_MatchingExpression.__init__)
     params = list(sig.parameters.keys())
     assert "operator" in params, "Missing parameter 'operator'"
 
-def test_amethyst::matchingexpression_has_operator():
-    assert hasattr(amethyst::MatchingExpression, "operator")
+def test_amethyst_matchingexpression_has_operator():
+    assert hasattr(amethyst_MatchingExpression, "operator")
     descriptor = None
-    for klass in amethyst::MatchingExpression.__mro__:
+    for klass in amethyst_MatchingExpression.__mro__:
         if "operator" in klass.__dict__:
             descriptor = klass.__dict__["operator"]
             break
@@ -716,37 +716,107 @@ def test_amethyst::matchingexpression_has_operator():
 
 
 
-def test_amethyst::inexpression_is_not_abstract():
-    assert not inspect.isabstract(amethyst::InExpression)
+def test_amethyst_superexpression_is_not_abstract():
+    assert not inspect.isabstract(amethyst_SuperExpression)
 
 
-def test_amethyst::inexpression_constructor_exists():
-    assert callable(amethyst::InExpression.__init__)
+def test_amethyst_superexpression_constructor_exists():
+    assert callable(amethyst_SuperExpression.__init__)
 
 
-def test_amethyst::inexpression_constructor_args():
-    sig = inspect.signature(amethyst::InExpression.__init__)
+def test_amethyst_superexpression_constructor_args():
+    sig = inspect.signature(amethyst_SuperExpression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_amethyst::multiplicativeexpression_is_not_abstract():
-    assert not inspect.isabstract(amethyst::MultiplicativeExpression)
+def test_amethyst_parenthisedexpression_is_not_abstract():
+    assert not inspect.isabstract(amethyst_ParenthisedExpression)
 
 
-def test_amethyst::multiplicativeexpression_constructor_exists():
-    assert callable(amethyst::MultiplicativeExpression.__init__)
+def test_amethyst_parenthisedexpression_constructor_exists():
+    assert callable(amethyst_ParenthisedExpression.__init__)
 
 
-def test_amethyst::multiplicativeexpression_constructor_args():
-    sig = inspect.signature(amethyst::MultiplicativeExpression.__init__)
+def test_amethyst_parenthisedexpression_constructor_args():
+    sig = inspect.signature(amethyst_ParenthisedExpression.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_amethyst_selfexpression_is_not_abstract():
+    assert not inspect.isabstract(amethyst_SelfExpression)
+
+
+def test_amethyst_selfexpression_constructor_exists():
+    assert callable(amethyst_SelfExpression.__init__)
+
+
+def test_amethyst_selfexpression_constructor_args():
+    sig = inspect.signature(amethyst_SelfExpression.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_amethyst_typecastexpression_is_not_abstract():
+    assert not inspect.isabstract(amethyst_TypeCastExpression)
+
+
+def test_amethyst_typecastexpression_constructor_exists():
+    assert callable(amethyst_TypeCastExpression.__init__)
+
+
+def test_amethyst_typecastexpression_constructor_args():
+    sig = inspect.signature(amethyst_TypeCastExpression.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_amethyst_indexaccessexpression_is_not_abstract():
+    assert not inspect.isabstract(amethyst_IndexAccessExpression)
+
+
+def test_amethyst_indexaccessexpression_constructor_exists():
+    assert callable(amethyst_IndexAccessExpression.__init__)
+
+
+def test_amethyst_indexaccessexpression_constructor_args():
+    sig = inspect.signature(amethyst_IndexAccessExpression.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_amethyst_inexpression_is_not_abstract():
+    assert not inspect.isabstract(amethyst_InExpression)
+
+
+def test_amethyst_inexpression_constructor_exists():
+    assert callable(amethyst_InExpression.__init__)
+
+
+def test_amethyst_inexpression_constructor_args():
+    sig = inspect.signature(amethyst_InExpression.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_amethyst_multiplicativeexpression_is_not_abstract():
+    assert not inspect.isabstract(amethyst_MultiplicativeExpression)
+
+
+def test_amethyst_multiplicativeexpression_constructor_exists():
+    assert callable(amethyst_MultiplicativeExpression.__init__)
+
+
+def test_amethyst_multiplicativeexpression_constructor_args():
+    sig = inspect.signature(amethyst_MultiplicativeExpression.__init__)
     params = list(sig.parameters.keys())
     assert "operator" in params, "Missing parameter 'operator'"
 
-def test_amethyst::multiplicativeexpression_has_operator():
-    assert hasattr(amethyst::MultiplicativeExpression, "operator")
+def test_amethyst_multiplicativeexpression_has_operator():
+    assert hasattr(amethyst_MultiplicativeExpression, "operator")
     descriptor = None
-    for klass in amethyst::MultiplicativeExpression.__mro__:
+    for klass in amethyst_MultiplicativeExpression.__mro__:
         if "operator" in klass.__dict__:
             descriptor = klass.__dict__["operator"]
             break
@@ -754,163 +824,65 @@ def test_amethyst::multiplicativeexpression_has_operator():
 
 
 
-def test_amethyst::callexpression_is_not_abstract():
-    assert not inspect.isabstract(amethyst::CallExpression)
+def test_amethyst_assignmentexpression_is_not_abstract():
+    assert not inspect.isabstract(amethyst_AssignmentExpression)
 
 
-def test_amethyst::callexpression_constructor_exists():
-    assert callable(amethyst::CallExpression.__init__)
+def test_amethyst_assignmentexpression_constructor_exists():
+    assert callable(amethyst_AssignmentExpression.__init__)
 
 
-def test_amethyst::callexpression_constructor_args():
-    sig = inspect.signature(amethyst::CallExpression.__init__)
+def test_amethyst_assignmentexpression_constructor_args():
+    sig = inspect.signature(amethyst_AssignmentExpression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_amethyst::typecastexpression_is_not_abstract():
-    assert not inspect.isabstract(amethyst::TypeCastExpression)
+def test_amethyst_memberaccessexpression_is_not_abstract():
+    assert not inspect.isabstract(amethyst_MemberAccessExpression)
 
 
-def test_amethyst::typecastexpression_constructor_exists():
-    assert callable(amethyst::TypeCastExpression.__init__)
+def test_amethyst_memberaccessexpression_constructor_exists():
+    assert callable(amethyst_MemberAccessExpression.__init__)
 
 
-def test_amethyst::typecastexpression_constructor_args():
-    sig = inspect.signature(amethyst::TypeCastExpression.__init__)
+def test_amethyst_memberaccessexpression_constructor_args():
+    sig = inspect.signature(amethyst_MemberAccessExpression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_amethyst::orexpression_is_not_abstract():
-    assert not inspect.isabstract(amethyst::OrExpression)
+def test_amethyst_unaryminusexpression_is_not_abstract():
+    assert not inspect.isabstract(amethyst_UnaryMinusExpression)
 
 
-def test_amethyst::orexpression_constructor_exists():
-    assert callable(amethyst::OrExpression.__init__)
+def test_amethyst_unaryminusexpression_constructor_exists():
+    assert callable(amethyst_UnaryMinusExpression.__init__)
 
 
-def test_amethyst::orexpression_constructor_args():
-    sig = inspect.signature(amethyst::OrExpression.__init__)
+def test_amethyst_unaryminusexpression_constructor_args():
+    sig = inspect.signature(amethyst_UnaryMinusExpression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_amethyst::selfexpression_is_not_abstract():
-    assert not inspect.isabstract(amethyst::SelfExpression)
+def test_amethyst_equalityexpression_is_not_abstract():
+    assert not inspect.isabstract(amethyst_EqualityExpression)
 
 
-def test_amethyst::selfexpression_constructor_exists():
-    assert callable(amethyst::SelfExpression.__init__)
+def test_amethyst_equalityexpression_constructor_exists():
+    assert callable(amethyst_EqualityExpression.__init__)
 
 
-def test_amethyst::selfexpression_constructor_args():
-    sig = inspect.signature(amethyst::SelfExpression.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_amethyst::notexpression_is_not_abstract():
-    assert not inspect.isabstract(amethyst::NotExpression)
-
-
-def test_amethyst::notexpression_constructor_exists():
-    assert callable(amethyst::NotExpression.__init__)
-
-
-def test_amethyst::notexpression_constructor_args():
-    sig = inspect.signature(amethyst::NotExpression.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_amethyst::unaryminusexpression_is_not_abstract():
-    assert not inspect.isabstract(amethyst::UnaryMinusExpression)
-
-
-def test_amethyst::unaryminusexpression_constructor_exists():
-    assert callable(amethyst::UnaryMinusExpression.__init__)
-
-
-def test_amethyst::unaryminusexpression_constructor_args():
-    sig = inspect.signature(amethyst::UnaryMinusExpression.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_amethyst::memberaccessexpression_is_not_abstract():
-    assert not inspect.isabstract(amethyst::MemberAccessExpression)
-
-
-def test_amethyst::memberaccessexpression_constructor_exists():
-    assert callable(amethyst::MemberAccessExpression.__init__)
-
-
-def test_amethyst::memberaccessexpression_constructor_args():
-    sig = inspect.signature(amethyst::MemberAccessExpression.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_amethyst::superexpression_is_not_abstract():
-    assert not inspect.isabstract(amethyst::SuperExpression)
-
-
-def test_amethyst::superexpression_constructor_exists():
-    assert callable(amethyst::SuperExpression.__init__)
-
-
-def test_amethyst::superexpression_constructor_args():
-    sig = inspect.signature(amethyst::SuperExpression.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_amethyst::assignmentexpression_is_not_abstract():
-    assert not inspect.isabstract(amethyst::AssignmentExpression)
-
-
-def test_amethyst::assignmentexpression_constructor_exists():
-    assert callable(amethyst::AssignmentExpression.__init__)
-
-
-def test_amethyst::assignmentexpression_constructor_args():
-    sig = inspect.signature(amethyst::AssignmentExpression.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_amethyst::andexpression_is_not_abstract():
-    assert not inspect.isabstract(amethyst::AndExpression)
-
-
-def test_amethyst::andexpression_constructor_exists():
-    assert callable(amethyst::AndExpression.__init__)
-
-
-def test_amethyst::andexpression_constructor_args():
-    sig = inspect.signature(amethyst::AndExpression.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_amethyst::equalityexpression_is_not_abstract():
-    assert not inspect.isabstract(amethyst::EqualityExpression)
-
-
-def test_amethyst::equalityexpression_constructor_exists():
-    assert callable(amethyst::EqualityExpression.__init__)
-
-
-def test_amethyst::equalityexpression_constructor_args():
-    sig = inspect.signature(amethyst::EqualityExpression.__init__)
+def test_amethyst_equalityexpression_constructor_args():
+    sig = inspect.signature(amethyst_EqualityExpression.__init__)
     params = list(sig.parameters.keys())
     assert "operator" in params, "Missing parameter 'operator'"
 
-def test_amethyst::equalityexpression_has_operator():
-    assert hasattr(amethyst::EqualityExpression, "operator")
+def test_amethyst_equalityexpression_has_operator():
+    assert hasattr(amethyst_EqualityExpression, "operator")
     descriptor = None
-    for klass in amethyst::EqualityExpression.__mro__:
+    for klass in amethyst_EqualityExpression.__mro__:
         if "operator" in klass.__dict__:
             descriptor = klass.__dict__["operator"]
             break
@@ -918,37 +890,37 @@ def test_amethyst::equalityexpression_has_operator():
 
 
 
-def test_amethyst::newexpression_is_not_abstract():
-    assert not inspect.isabstract(amethyst::NewExpression)
+def test_amethyst_notexpression_is_not_abstract():
+    assert not inspect.isabstract(amethyst_NotExpression)
 
 
-def test_amethyst::newexpression_constructor_exists():
-    assert callable(amethyst::NewExpression.__init__)
+def test_amethyst_notexpression_constructor_exists():
+    assert callable(amethyst_NotExpression.__init__)
 
 
-def test_amethyst::newexpression_constructor_args():
-    sig = inspect.signature(amethyst::NewExpression.__init__)
+def test_amethyst_notexpression_constructor_args():
+    sig = inspect.signature(amethyst_NotExpression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_amethyst::relationalexpression_is_not_abstract():
-    assert not inspect.isabstract(amethyst::RelationalExpression)
+def test_amethyst_relationalexpression_is_not_abstract():
+    assert not inspect.isabstract(amethyst_RelationalExpression)
 
 
-def test_amethyst::relationalexpression_constructor_exists():
-    assert callable(amethyst::RelationalExpression.__init__)
+def test_amethyst_relationalexpression_constructor_exists():
+    assert callable(amethyst_RelationalExpression.__init__)
 
 
-def test_amethyst::relationalexpression_constructor_args():
-    sig = inspect.signature(amethyst::RelationalExpression.__init__)
+def test_amethyst_relationalexpression_constructor_args():
+    sig = inspect.signature(amethyst_RelationalExpression.__init__)
     params = list(sig.parameters.keys())
     assert "operator" in params, "Missing parameter 'operator'"
 
-def test_amethyst::relationalexpression_has_operator():
-    assert hasattr(amethyst::RelationalExpression, "operator")
+def test_amethyst_relationalexpression_has_operator():
+    assert hasattr(amethyst_RelationalExpression, "operator")
     descriptor = None
-    for klass in amethyst::RelationalExpression.__mro__:
+    for klass in amethyst_RelationalExpression.__mro__:
         if "operator" in klass.__dict__:
             descriptor = klass.__dict__["operator"]
             break
@@ -956,114 +928,142 @@ def test_amethyst::relationalexpression_has_operator():
 
 
 
-def test_amethyst::literal_is_not_abstract():
-    assert not inspect.isabstract(amethyst::Literal)
+def test_amethyst_literal_is_not_abstract():
+    assert not inspect.isabstract(amethyst_Literal)
 
 
-def test_amethyst::literal_constructor_exists():
-    assert callable(amethyst::Literal.__init__)
+def test_amethyst_literal_constructor_exists():
+    assert callable(amethyst_Literal.__init__)
 
 
-def test_amethyst::literal_constructor_args():
-    sig = inspect.signature(amethyst::Literal.__init__)
+def test_amethyst_literal_constructor_args():
+    sig = inspect.signature(amethyst_Literal.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_amethyst::symbolreference_is_not_abstract():
-    assert not inspect.isabstract(amethyst::SymbolReference)
+def test_amethyst_orexpression_is_not_abstract():
+    assert not inspect.isabstract(amethyst_OrExpression)
 
 
-def test_amethyst::symbolreference_constructor_exists():
-    assert callable(amethyst::SymbolReference.__init__)
+def test_amethyst_orexpression_constructor_exists():
+    assert callable(amethyst_OrExpression.__init__)
 
 
-def test_amethyst::symbolreference_constructor_args():
-    sig = inspect.signature(amethyst::SymbolReference.__init__)
+def test_amethyst_orexpression_constructor_args():
+    sig = inspect.signature(amethyst_OrExpression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_amethyst::tagexpression_is_not_abstract():
-    assert not inspect.isabstract(amethyst::TagExpression)
+def test_amethyst_newexpression_is_not_abstract():
+    assert not inspect.isabstract(amethyst_NewExpression)
 
 
-def test_amethyst::tagexpression_constructor_exists():
-    assert callable(amethyst::TagExpression.__init__)
+def test_amethyst_newexpression_constructor_exists():
+    assert callable(amethyst_NewExpression.__init__)
 
 
-def test_amethyst::tagexpression_constructor_args():
-    sig = inspect.signature(amethyst::TagExpression.__init__)
+def test_amethyst_newexpression_constructor_args():
+    sig = inspect.signature(amethyst_NewExpression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_amethyst::eobject_is_not_abstract():
-    assert not inspect.isabstract(amethyst::EObject)
+def test_amethyst_symbolreference_is_not_abstract():
+    assert not inspect.isabstract(amethyst_SymbolReference)
 
 
-def test_amethyst::eobject_constructor_exists():
-    assert callable(amethyst::EObject.__init__)
+def test_amethyst_symbolreference_constructor_exists():
+    assert callable(amethyst_SymbolReference.__init__)
 
 
-def test_amethyst::eobject_constructor_args():
-    sig = inspect.signature(amethyst::EObject.__init__)
+def test_amethyst_symbolreference_constructor_args():
+    sig = inspect.signature(amethyst_SymbolReference.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_amethyst::tagattribute_is_not_abstract():
-    assert not inspect.isabstract(amethyst::TagAttribute)
+def test_amethyst_tagexpression_is_not_abstract():
+    assert not inspect.isabstract(amethyst_TagExpression)
 
 
-def test_amethyst::tagattribute_constructor_exists():
-    assert callable(amethyst::TagAttribute.__init__)
+def test_amethyst_tagexpression_constructor_exists():
+    assert callable(amethyst_TagExpression.__init__)
 
 
-def test_amethyst::tagattribute_constructor_args():
-    sig = inspect.signature(amethyst::TagAttribute.__init__)
+def test_amethyst_tagexpression_constructor_args():
+    sig = inspect.signature(amethyst_TagExpression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_amethyst::tagloopexpression_is_not_abstract():
-    assert not inspect.isabstract(amethyst::TagLoopExpression)
+def test_amethyst_eobject_is_not_abstract():
+    assert not inspect.isabstract(amethyst_EObject)
 
 
-def test_amethyst::tagloopexpression_constructor_exists():
-    assert callable(amethyst::TagLoopExpression.__init__)
+def test_amethyst_eobject_constructor_exists():
+    assert callable(amethyst_EObject.__init__)
 
 
-def test_amethyst::tagloopexpression_constructor_args():
-    sig = inspect.signature(amethyst::TagLoopExpression.__init__)
+def test_amethyst_eobject_constructor_args():
+    sig = inspect.signature(amethyst_EObject.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_amethyst::classtype_is_not_abstract():
-    assert not inspect.isabstract(amethyst::ClassType)
+def test_amethyst_tagattribute_is_not_abstract():
+    assert not inspect.isabstract(amethyst_TagAttribute)
 
 
-def test_amethyst::classtype_constructor_exists():
-    assert callable(amethyst::ClassType.__init__)
+def test_amethyst_tagattribute_constructor_exists():
+    assert callable(amethyst_TagAttribute.__init__)
 
 
-def test_amethyst::classtype_constructor_args():
-    sig = inspect.signature(amethyst::ClassType.__init__)
+def test_amethyst_tagattribute_constructor_args():
+    sig = inspect.signature(amethyst_TagAttribute.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_amethyst::tagdeclaration_is_not_abstract():
-    assert not inspect.isabstract(amethyst::TagDeclaration)
+def test_amethyst_tagloopexpression_is_not_abstract():
+    assert not inspect.isabstract(amethyst_TagLoopExpression)
 
 
-def test_amethyst::tagdeclaration_constructor_exists():
-    assert callable(amethyst::TagDeclaration.__init__)
+def test_amethyst_tagloopexpression_constructor_exists():
+    assert callable(amethyst_TagLoopExpression.__init__)
 
 
-def test_amethyst::tagdeclaration_constructor_args():
-    sig = inspect.signature(amethyst::TagDeclaration.__init__)
+def test_amethyst_tagloopexpression_constructor_args():
+    sig = inspect.signature(amethyst_TagLoopExpression.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_amethyst_classtype_is_not_abstract():
+    assert not inspect.isabstract(amethyst_ClassType)
+
+
+def test_amethyst_classtype_constructor_exists():
+    assert callable(amethyst_ClassType.__init__)
+
+
+def test_amethyst_classtype_constructor_args():
+    sig = inspect.signature(amethyst_ClassType.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_amethyst_tagdeclaration_is_not_abstract():
+    assert not inspect.isabstract(amethyst_TagDeclaration)
+
+
+def test_amethyst_tagdeclaration_constructor_exists():
+    assert callable(amethyst_TagDeclaration.__init__)
+
+
+def test_amethyst_tagdeclaration_constructor_args():
+    sig = inspect.signature(amethyst_TagDeclaration.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1082,121 +1082,79 @@ def test_statement_constructor_args():
 
 
 
-def test_amethyst::expression_is_not_abstract():
-    assert not inspect.isabstract(amethyst::Expression)
+def test_amethyst_elseifstatement_is_not_abstract():
+    assert not inspect.isabstract(amethyst_ElseIfStatement)
 
 
-def test_amethyst::expression_constructor_exists():
-    assert callable(amethyst::Expression.__init__)
+def test_amethyst_elseifstatement_constructor_exists():
+    assert callable(amethyst_ElseIfStatement.__init__)
 
 
-def test_amethyst::expression_constructor_args():
-    sig = inspect.signature(amethyst::Expression.__init__)
+def test_amethyst_elseifstatement_constructor_args():
+    sig = inspect.signature(amethyst_ElseIfStatement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_amethyst::returnstatement_is_not_abstract():
-    assert not inspect.isabstract(amethyst::ReturnStatement)
+def test_amethyst_breakstatement_is_not_abstract():
+    assert not inspect.isabstract(amethyst_BreakStatement)
 
 
-def test_amethyst::returnstatement_constructor_exists():
-    assert callable(amethyst::ReturnStatement.__init__)
+def test_amethyst_breakstatement_constructor_exists():
+    assert callable(amethyst_BreakStatement.__init__)
 
 
-def test_amethyst::returnstatement_constructor_args():
-    sig = inspect.signature(amethyst::ReturnStatement.__init__)
+def test_amethyst_breakstatement_constructor_args():
+    sig = inspect.signature(amethyst_BreakStatement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_amethyst::ifstatement_is_not_abstract():
-    assert not inspect.isabstract(amethyst::IfStatement)
+def test_amethyst_forstatement_is_not_abstract():
+    assert not inspect.isabstract(amethyst_ForStatement)
 
 
-def test_amethyst::ifstatement_constructor_exists():
-    assert callable(amethyst::IfStatement.__init__)
+def test_amethyst_forstatement_constructor_exists():
+    assert callable(amethyst_ForStatement.__init__)
 
 
-def test_amethyst::ifstatement_constructor_args():
-    sig = inspect.signature(amethyst::IfStatement.__init__)
+def test_amethyst_forstatement_constructor_args():
+    sig = inspect.signature(amethyst_ForStatement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_amethyst::forstatement_is_not_abstract():
-    assert not inspect.isabstract(amethyst::ForStatement)
+def test_amethyst_caseelsestatement_is_not_abstract():
+    assert not inspect.isabstract(amethyst_CaseElseStatement)
 
 
-def test_amethyst::forstatement_constructor_exists():
-    assert callable(amethyst::ForStatement.__init__)
+def test_amethyst_caseelsestatement_constructor_exists():
+    assert callable(amethyst_CaseElseStatement.__init__)
 
 
-def test_amethyst::forstatement_constructor_args():
-    sig = inspect.signature(amethyst::ForStatement.__init__)
+def test_amethyst_caseelsestatement_constructor_args():
+    sig = inspect.signature(amethyst_CaseElseStatement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_amethyst::casestatement_is_not_abstract():
-    assert not inspect.isabstract(amethyst::CaseStatement)
+def test_amethyst_jscodestatement_is_not_abstract():
+    assert not inspect.isabstract(amethyst_JsCodeStatement)
 
 
-def test_amethyst::casestatement_constructor_exists():
-    assert callable(amethyst::CaseStatement.__init__)
+def test_amethyst_jscodestatement_constructor_exists():
+    assert callable(amethyst_JsCodeStatement.__init__)
 
 
-def test_amethyst::casestatement_constructor_args():
-    sig = inspect.signature(amethyst::CaseStatement.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_amethyst::elsestatement_is_not_abstract():
-    assert not inspect.isabstract(amethyst::ElseStatement)
-
-
-def test_amethyst::elsestatement_constructor_exists():
-    assert callable(amethyst::ElseStatement.__init__)
-
-
-def test_amethyst::elsestatement_constructor_args():
-    sig = inspect.signature(amethyst::ElseStatement.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_amethyst::breakstatement_is_not_abstract():
-    assert not inspect.isabstract(amethyst::BreakStatement)
-
-
-def test_amethyst::breakstatement_constructor_exists():
-    assert callable(amethyst::BreakStatement.__init__)
-
-
-def test_amethyst::breakstatement_constructor_args():
-    sig = inspect.signature(amethyst::BreakStatement.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_amethyst::jscodestatement_is_not_abstract():
-    assert not inspect.isabstract(amethyst::JsCodeStatement)
-
-
-def test_amethyst::jscodestatement_constructor_exists():
-    assert callable(amethyst::JsCodeStatement.__init__)
-
-
-def test_amethyst::jscodestatement_constructor_args():
-    sig = inspect.signature(amethyst::JsCodeStatement.__init__)
+def test_amethyst_jscodestatement_constructor_args():
+    sig = inspect.signature(amethyst_JsCodeStatement.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
 
-def test_amethyst::jscodestatement_has_value():
-    assert hasattr(amethyst::JsCodeStatement, "value")
+def test_amethyst_jscodestatement_has_value():
+    assert hasattr(amethyst_JsCodeStatement, "value")
     descriptor = None
-    for klass in amethyst::JsCodeStatement.__mro__:
+    for klass in amethyst_JsCodeStatement.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -1204,93 +1162,135 @@ def test_amethyst::jscodestatement_has_value():
 
 
 
-def test_amethyst::nextstatement_is_not_abstract():
-    assert not inspect.isabstract(amethyst::NextStatement)
+def test_amethyst_expression_is_not_abstract():
+    assert not inspect.isabstract(amethyst_Expression)
 
 
-def test_amethyst::nextstatement_constructor_exists():
-    assert callable(amethyst::NextStatement.__init__)
+def test_amethyst_expression_constructor_exists():
+    assert callable(amethyst_Expression.__init__)
 
 
-def test_amethyst::nextstatement_constructor_args():
-    sig = inspect.signature(amethyst::NextStatement.__init__)
+def test_amethyst_expression_constructor_args():
+    sig = inspect.signature(amethyst_Expression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_amethyst::caseelsestatement_is_not_abstract():
-    assert not inspect.isabstract(amethyst::CaseElseStatement)
+def test_amethyst_whenstatement_is_not_abstract():
+    assert not inspect.isabstract(amethyst_WhenStatement)
 
 
-def test_amethyst::caseelsestatement_constructor_exists():
-    assert callable(amethyst::CaseElseStatement.__init__)
+def test_amethyst_whenstatement_constructor_exists():
+    assert callable(amethyst_WhenStatement.__init__)
 
 
-def test_amethyst::caseelsestatement_constructor_args():
-    sig = inspect.signature(amethyst::CaseElseStatement.__init__)
+def test_amethyst_whenstatement_constructor_args():
+    sig = inspect.signature(amethyst_WhenStatement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_amethyst::whilestatement_is_not_abstract():
-    assert not inspect.isabstract(amethyst::WhileStatement)
+def test_amethyst_ifstatement_is_not_abstract():
+    assert not inspect.isabstract(amethyst_IfStatement)
 
 
-def test_amethyst::whilestatement_constructor_exists():
-    assert callable(amethyst::WhileStatement.__init__)
+def test_amethyst_ifstatement_constructor_exists():
+    assert callable(amethyst_IfStatement.__init__)
 
 
-def test_amethyst::whilestatement_constructor_args():
-    sig = inspect.signature(amethyst::WhileStatement.__init__)
+def test_amethyst_ifstatement_constructor_args():
+    sig = inspect.signature(amethyst_IfStatement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_amethyst::whenstatement_is_not_abstract():
-    assert not inspect.isabstract(amethyst::WhenStatement)
+def test_amethyst_elsestatement_is_not_abstract():
+    assert not inspect.isabstract(amethyst_ElseStatement)
 
 
-def test_amethyst::whenstatement_constructor_exists():
-    assert callable(amethyst::WhenStatement.__init__)
+def test_amethyst_elsestatement_constructor_exists():
+    assert callable(amethyst_ElseStatement.__init__)
 
 
-def test_amethyst::whenstatement_constructor_args():
-    sig = inspect.signature(amethyst::WhenStatement.__init__)
+def test_amethyst_elsestatement_constructor_args():
+    sig = inspect.signature(amethyst_ElseStatement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_amethyst::elseifstatement_is_not_abstract():
-    assert not inspect.isabstract(amethyst::ElseIfStatement)
+def test_amethyst_nextstatement_is_not_abstract():
+    assert not inspect.isabstract(amethyst_NextStatement)
 
 
-def test_amethyst::elseifstatement_constructor_exists():
-    assert callable(amethyst::ElseIfStatement.__init__)
+def test_amethyst_nextstatement_constructor_exists():
+    assert callable(amethyst_NextStatement.__init__)
 
 
-def test_amethyst::elseifstatement_constructor_args():
-    sig = inspect.signature(amethyst::ElseIfStatement.__init__)
+def test_amethyst_nextstatement_constructor_args():
+    sig = inspect.signature(amethyst_NextStatement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_amethyst::symbol_is_not_abstract():
-    assert not inspect.isabstract(amethyst::Symbol)
+def test_amethyst_casestatement_is_not_abstract():
+    assert not inspect.isabstract(amethyst_CaseStatement)
 
 
-def test_amethyst::symbol_constructor_exists():
-    assert callable(amethyst::Symbol.__init__)
+def test_amethyst_casestatement_constructor_exists():
+    assert callable(amethyst_CaseStatement.__init__)
 
 
-def test_amethyst::symbol_constructor_args():
-    sig = inspect.signature(amethyst::Symbol.__init__)
+def test_amethyst_casestatement_constructor_args():
+    sig = inspect.signature(amethyst_CaseStatement.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_amethyst_returnstatement_is_not_abstract():
+    assert not inspect.isabstract(amethyst_ReturnStatement)
+
+
+def test_amethyst_returnstatement_constructor_exists():
+    assert callable(amethyst_ReturnStatement.__init__)
+
+
+def test_amethyst_returnstatement_constructor_args():
+    sig = inspect.signature(amethyst_ReturnStatement.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_amethyst_whilestatement_is_not_abstract():
+    assert not inspect.isabstract(amethyst_WhileStatement)
+
+
+def test_amethyst_whilestatement_constructor_exists():
+    assert callable(amethyst_WhileStatement.__init__)
+
+
+def test_amethyst_whilestatement_constructor_args():
+    sig = inspect.signature(amethyst_WhileStatement.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_amethyst_symbol_is_not_abstract():
+    assert not inspect.isabstract(amethyst_Symbol)
+
+
+def test_amethyst_symbol_constructor_exists():
+    assert callable(amethyst_Symbol.__init__)
+
+
+def test_amethyst_symbol_constructor_args():
+    sig = inspect.signature(amethyst_Symbol.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_amethyst::symbol_has_name():
-    assert hasattr(amethyst::Symbol, "name")
+def test_amethyst_symbol_has_name():
+    assert hasattr(amethyst_Symbol, "name")
     descriptor = None
-    for klass in amethyst::Symbol.__mro__:
+    for klass in amethyst_Symbol.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -1298,37 +1298,37 @@ def test_amethyst::symbol_has_name():
 
 
 
-def test_amethyst::statement_is_not_abstract():
-    assert not inspect.isabstract(amethyst::Statement)
+def test_amethyst_statement_is_not_abstract():
+    assert not inspect.isabstract(amethyst_Statement)
 
 
-def test_amethyst::statement_constructor_exists():
-    assert callable(amethyst::Statement.__init__)
+def test_amethyst_statement_constructor_exists():
+    assert callable(amethyst_Statement.__init__)
 
 
-def test_amethyst::statement_constructor_args():
-    sig = inspect.signature(amethyst::Statement.__init__)
+def test_amethyst_statement_constructor_args():
+    sig = inspect.signature(amethyst_Statement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_amethyst::import_is_not_abstract():
-    assert not inspect.isabstract(amethyst::Import)
+def test_amethyst_import_is_not_abstract():
+    assert not inspect.isabstract(amethyst_Import)
 
 
-def test_amethyst::import_constructor_exists():
-    assert callable(amethyst::Import.__init__)
+def test_amethyst_import_constructor_exists():
+    assert callable(amethyst_Import.__init__)
 
 
-def test_amethyst::import_constructor_args():
-    sig = inspect.signature(amethyst::Import.__init__)
+def test_amethyst_import_constructor_args():
+    sig = inspect.signature(amethyst_Import.__init__)
     params = list(sig.parameters.keys())
     assert "importedNamespace" in params, "Missing parameter 'importedNamespace'"
 
-def test_amethyst::import_has_importedNamespace():
-    assert hasattr(amethyst::Import, "importedNamespace")
+def test_amethyst_import_has_importedNamespace():
+    assert hasattr(amethyst_Import, "importedNamespace")
     descriptor = None
-    for klass in amethyst::Import.__mro__:
+    for klass in amethyst_Import.__mro__:
         if "importedNamespace" in klass.__dict__:
             descriptor = klass.__dict__["importedNamespace"]
             break
@@ -1336,23 +1336,23 @@ def test_amethyst::import_has_importedNamespace():
 
 
 
-def test_amethyst::module_is_not_abstract():
-    assert not inspect.isabstract(amethyst::Module)
+def test_amethyst_module_is_not_abstract():
+    assert not inspect.isabstract(amethyst_Module)
 
 
-def test_amethyst::module_constructor_exists():
-    assert callable(amethyst::Module.__init__)
+def test_amethyst_module_constructor_exists():
+    assert callable(amethyst_Module.__init__)
 
 
-def test_amethyst::module_constructor_args():
-    sig = inspect.signature(amethyst::Module.__init__)
+def test_amethyst_module_constructor_args():
+    sig = inspect.signature(amethyst_Module.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_amethyst::module_has_name():
-    assert hasattr(amethyst::Module, "name")
+def test_amethyst_module_has_name():
+    assert hasattr(amethyst_Module, "name")
     descriptor = None
-    for klass in amethyst::Module.__mro__:
+    for klass in amethyst_Module.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -1360,16 +1360,16 @@ def test_amethyst::module_has_name():
 
 
 
-def test_amethyst::propertydeclaration_is_not_abstract():
-    assert not inspect.isabstract(amethyst::PropertyDeclaration)
+def test_amethyst_propertydeclaration_is_not_abstract():
+    assert not inspect.isabstract(amethyst_PropertyDeclaration)
 
 
-def test_amethyst::propertydeclaration_constructor_exists():
-    assert callable(amethyst::PropertyDeclaration.__init__)
+def test_amethyst_propertydeclaration_constructor_exists():
+    assert callable(amethyst_PropertyDeclaration.__init__)
 
 
-def test_amethyst::propertydeclaration_constructor_args():
-    sig = inspect.signature(amethyst::PropertyDeclaration.__init__)
+def test_amethyst_propertydeclaration_constructor_args():
+    sig = inspect.signature(amethyst_PropertyDeclaration.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1384,501 +1384,483 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
+RangeLiteral_strategy = st.builds(
+    RangeLiteral,
+)
+amethyst_CharRangeLiteral_strategy = st.builds(
+    amethyst_CharRangeLiteral,
+)
+amethyst_NumberRangeLiteral_strategy = st.builds(
+    amethyst_NumberRangeLiteral,
+)
 Symbol_strategy = st.builds(
     Symbol,
 )
-amethyst::ForInitializerDeclaration_strategy = st.builds(
-    amethyst::ForInitializerDeclaration,
+amethyst_ParameterDeclaration_strategy = st.builds(
+    amethyst_ParameterDeclaration,
 )
-amethyst::ParameterDeclaration_strategy = st.builds(
-    amethyst::ParameterDeclaration,
-)
-amethyst::DefinitionDeclaration_strategy = st.builds(
-    amethyst::DefinitionDeclaration,
+amethyst_DefinitionDeclaration_strategy = st.builds(
+    amethyst_DefinitionDeclaration,
     static=
         st.booleans()
 )
-amethyst::TagLoopInitializerDeclaration_strategy = st.builds(
-    amethyst::TagLoopInitializerDeclaration,
+amethyst_ForInitializerDeclaration_strategy = st.builds(
+    amethyst_ForInitializerDeclaration,
 )
-amethyst::VariableDeclaration_strategy = st.builds(
-    amethyst::VariableDeclaration,
+amethyst_TagLoopInitializerDeclaration_strategy = st.builds(
+    amethyst_TagLoopInitializerDeclaration,
 )
-amethyst::ClassDeclaration_strategy = st.builds(
-    amethyst::ClassDeclaration,
+amethyst_VariableDeclaration_strategy = st.builds(
+    amethyst_VariableDeclaration,
+)
+amethyst_ClassDeclaration_strategy = st.builds(
+    amethyst_ClassDeclaration,
 )
 PrimitiveType_strategy = st.builds(
     PrimitiveType,
 )
-amethyst::FloatType_strategy = st.builds(
-    amethyst::FloatType,
+amethyst_FloatType_strategy = st.builds(
+    amethyst_FloatType,
 )
-amethyst::DefinitionType_strategy = st.builds(
-    amethyst::DefinitionType,
+amethyst_IntType_strategy = st.builds(
+    amethyst_IntType,
 )
-amethyst::AnyType_strategy = st.builds(
-    amethyst::AnyType,
+amethyst_StringType_strategy = st.builds(
+    amethyst_StringType,
 )
-amethyst::StringType_strategy = st.builds(
-    amethyst::StringType,
+amethyst_DefinitionType_strategy = st.builds(
+    amethyst_DefinitionType,
 )
-amethyst::BooleanType_strategy = st.builds(
-    amethyst::BooleanType,
+amethyst_BooleanType_strategy = st.builds(
+    amethyst_BooleanType,
 )
-amethyst::IntType_strategy = st.builds(
-    amethyst::IntType,
+amethyst_AnyType_strategy = st.builds(
+    amethyst_AnyType,
 )
-amethyst::CharType_strategy = st.builds(
-    amethyst::CharType,
+amethyst_CharType_strategy = st.builds(
+    amethyst_CharType,
 )
 Type_strategy = st.builds(
     Type,
 )
-amethyst::PrimitiveType_strategy = st.builds(
-    amethyst::PrimitiveType,
+amethyst_PrimitiveType_strategy = st.builds(
+    amethyst_PrimitiveType,
 )
 AbstractType_strategy = st.builds(
     AbstractType,
 )
-amethyst::ArrayType_strategy = st.builds(
-    amethyst::ArrayType,
+amethyst_ArrayType_strategy = st.builds(
+    amethyst_ArrayType,
 )
-amethyst::Type_strategy = st.builds(
-    amethyst::Type,
+amethyst_Type_strategy = st.builds(
+    amethyst_Type,
 )
-amethyst::AbstractType_strategy = st.builds(
-    amethyst::AbstractType,
-)
-RangeLiteral_strategy = st.builds(
-    RangeLiteral,
-)
-amethyst::CharRangeLiteral_strategy = st.builds(
-    amethyst::CharRangeLiteral,
-)
-amethyst::NumberRangeLiteral_strategy = st.builds(
-    amethyst::NumberRangeLiteral,
+amethyst_AbstractType_strategy = st.builds(
+    amethyst_AbstractType,
 )
 Literal_strategy = st.builds(
     Literal,
 )
-amethyst::NullLiteral_strategy = st.builds(
-    amethyst::NullLiteral,
-)
-amethyst::FloatLiteral_strategy = st.builds(
-    amethyst::FloatLiteral,
-    value=
-        st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False)
-)
-amethyst::BooleanLiteral_strategy = st.builds(
-    amethyst::BooleanLiteral,
+amethyst_BooleanLiteral_strategy = st.builds(
+    amethyst_BooleanLiteral,
     value=
         st.booleans()
 )
-amethyst::RangeLiteral_strategy = st.builds(
-    amethyst::RangeLiteral,
+amethyst_NullLiteral_strategy = st.builds(
+    amethyst_NullLiteral,
 )
-amethyst::StringLiteral_strategy = st.builds(
-    amethyst::StringLiteral,
+amethyst_FloatLiteral_strategy = st.builds(
+    amethyst_FloatLiteral,
     value=
-        safe_text
+        st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False)
 )
-amethyst::IntLiteral_strategy = st.builds(
-    amethyst::IntLiteral,
+amethyst_RangeLiteral_strategy = st.builds(
+    amethyst_RangeLiteral,
+)
+amethyst_IntLiteral_strategy = st.builds(
+    amethyst_IntLiteral,
     value=
         st.integers()
 )
-amethyst::CharLiteral_strategy = st.builds(
-    amethyst::CharLiteral,
+amethyst_StringLiteral_strategy = st.builds(
+    amethyst_StringLiteral,
+    value=
+        safe_text
+)
+amethyst_CharLiteral_strategy = st.builds(
+    amethyst_CharLiteral,
     value=
         safe_text
 )
 Expression_strategy = st.builds(
     Expression,
 )
-amethyst::IndexAccessExpression_strategy = st.builds(
-    amethyst::IndexAccessExpression,
-)
-amethyst::AdditiveExpression_strategy = st.builds(
-    amethyst::AdditiveExpression,
+amethyst_ShiftExpression_strategy = st.builds(
+    amethyst_ShiftExpression,
     operator=
         safe_text
 )
-amethyst::ShiftExpression_strategy = st.builds(
-    amethyst::ShiftExpression,
+amethyst_AndExpression_strategy = st.builds(
+    amethyst_AndExpression,
+)
+amethyst_CallExpression_strategy = st.builds(
+    amethyst_CallExpression,
+)
+amethyst_AdditiveExpression_strategy = st.builds(
+    amethyst_AdditiveExpression,
     operator=
         safe_text
 )
-amethyst::ParenthisedExpression_strategy = st.builds(
-    amethyst::ParenthisedExpression,
-)
-amethyst::MatchingExpression_strategy = st.builds(
-    amethyst::MatchingExpression,
+amethyst_MatchingExpression_strategy = st.builds(
+    amethyst_MatchingExpression,
     operator=
         safe_text
 )
-amethyst::InExpression_strategy = st.builds(
-    amethyst::InExpression,
+amethyst_SuperExpression_strategy = st.builds(
+    amethyst_SuperExpression,
 )
-amethyst::MultiplicativeExpression_strategy = st.builds(
-    amethyst::MultiplicativeExpression,
+amethyst_ParenthisedExpression_strategy = st.builds(
+    amethyst_ParenthisedExpression,
+)
+amethyst_SelfExpression_strategy = st.builds(
+    amethyst_SelfExpression,
+)
+amethyst_TypeCastExpression_strategy = st.builds(
+    amethyst_TypeCastExpression,
+)
+amethyst_IndexAccessExpression_strategy = st.builds(
+    amethyst_IndexAccessExpression,
+)
+amethyst_InExpression_strategy = st.builds(
+    amethyst_InExpression,
+)
+amethyst_MultiplicativeExpression_strategy = st.builds(
+    amethyst_MultiplicativeExpression,
     operator=
         safe_text
 )
-amethyst::CallExpression_strategy = st.builds(
-    amethyst::CallExpression,
+amethyst_AssignmentExpression_strategy = st.builds(
+    amethyst_AssignmentExpression,
 )
-amethyst::TypeCastExpression_strategy = st.builds(
-    amethyst::TypeCastExpression,
+amethyst_MemberAccessExpression_strategy = st.builds(
+    amethyst_MemberAccessExpression,
 )
-amethyst::OrExpression_strategy = st.builds(
-    amethyst::OrExpression,
+amethyst_UnaryMinusExpression_strategy = st.builds(
+    amethyst_UnaryMinusExpression,
 )
-amethyst::SelfExpression_strategy = st.builds(
-    amethyst::SelfExpression,
-)
-amethyst::NotExpression_strategy = st.builds(
-    amethyst::NotExpression,
-)
-amethyst::UnaryMinusExpression_strategy = st.builds(
-    amethyst::UnaryMinusExpression,
-)
-amethyst::MemberAccessExpression_strategy = st.builds(
-    amethyst::MemberAccessExpression,
-)
-amethyst::SuperExpression_strategy = st.builds(
-    amethyst::SuperExpression,
-)
-amethyst::AssignmentExpression_strategy = st.builds(
-    amethyst::AssignmentExpression,
-)
-amethyst::AndExpression_strategy = st.builds(
-    amethyst::AndExpression,
-)
-amethyst::EqualityExpression_strategy = st.builds(
-    amethyst::EqualityExpression,
+amethyst_EqualityExpression_strategy = st.builds(
+    amethyst_EqualityExpression,
     operator=
         safe_text
 )
-amethyst::NewExpression_strategy = st.builds(
-    amethyst::NewExpression,
+amethyst_NotExpression_strategy = st.builds(
+    amethyst_NotExpression,
 )
-amethyst::RelationalExpression_strategy = st.builds(
-    amethyst::RelationalExpression,
+amethyst_RelationalExpression_strategy = st.builds(
+    amethyst_RelationalExpression,
     operator=
         safe_text
 )
-amethyst::Literal_strategy = st.builds(
-    amethyst::Literal,
+amethyst_Literal_strategy = st.builds(
+    amethyst_Literal,
 )
-amethyst::SymbolReference_strategy = st.builds(
-    amethyst::SymbolReference,
+amethyst_OrExpression_strategy = st.builds(
+    amethyst_OrExpression,
 )
-amethyst::TagExpression_strategy = st.builds(
-    amethyst::TagExpression,
+amethyst_NewExpression_strategy = st.builds(
+    amethyst_NewExpression,
 )
-amethyst::EObject_strategy = st.builds(
-    amethyst::EObject,
+amethyst_SymbolReference_strategy = st.builds(
+    amethyst_SymbolReference,
 )
-amethyst::TagAttribute_strategy = st.builds(
-    amethyst::TagAttribute,
+amethyst_TagExpression_strategy = st.builds(
+    amethyst_TagExpression,
 )
-amethyst::TagLoopExpression_strategy = st.builds(
-    amethyst::TagLoopExpression,
+amethyst_EObject_strategy = st.builds(
+    amethyst_EObject,
 )
-amethyst::ClassType_strategy = st.builds(
-    amethyst::ClassType,
+amethyst_TagAttribute_strategy = st.builds(
+    amethyst_TagAttribute,
 )
-amethyst::TagDeclaration_strategy = st.builds(
-    amethyst::TagDeclaration,
+amethyst_TagLoopExpression_strategy = st.builds(
+    amethyst_TagLoopExpression,
+)
+amethyst_ClassType_strategy = st.builds(
+    amethyst_ClassType,
+)
+amethyst_TagDeclaration_strategy = st.builds(
+    amethyst_TagDeclaration,
 )
 Statement_strategy = st.builds(
     Statement,
 )
-amethyst::Expression_strategy = st.builds(
-    amethyst::Expression,
+amethyst_ElseIfStatement_strategy = st.builds(
+    amethyst_ElseIfStatement,
 )
-amethyst::ReturnStatement_strategy = st.builds(
-    amethyst::ReturnStatement,
+amethyst_BreakStatement_strategy = st.builds(
+    amethyst_BreakStatement,
 )
-amethyst::IfStatement_strategy = st.builds(
-    amethyst::IfStatement,
+amethyst_ForStatement_strategy = st.builds(
+    amethyst_ForStatement,
 )
-amethyst::ForStatement_strategy = st.builds(
-    amethyst::ForStatement,
+amethyst_CaseElseStatement_strategy = st.builds(
+    amethyst_CaseElseStatement,
 )
-amethyst::CaseStatement_strategy = st.builds(
-    amethyst::CaseStatement,
-)
-amethyst::ElseStatement_strategy = st.builds(
-    amethyst::ElseStatement,
-)
-amethyst::BreakStatement_strategy = st.builds(
-    amethyst::BreakStatement,
-)
-amethyst::JsCodeStatement_strategy = st.builds(
-    amethyst::JsCodeStatement,
+amethyst_JsCodeStatement_strategy = st.builds(
+    amethyst_JsCodeStatement,
     value=
         safe_text
 )
-amethyst::NextStatement_strategy = st.builds(
-    amethyst::NextStatement,
+amethyst_Expression_strategy = st.builds(
+    amethyst_Expression,
 )
-amethyst::CaseElseStatement_strategy = st.builds(
-    amethyst::CaseElseStatement,
+amethyst_WhenStatement_strategy = st.builds(
+    amethyst_WhenStatement,
 )
-amethyst::WhileStatement_strategy = st.builds(
-    amethyst::WhileStatement,
+amethyst_IfStatement_strategy = st.builds(
+    amethyst_IfStatement,
 )
-amethyst::WhenStatement_strategy = st.builds(
-    amethyst::WhenStatement,
+amethyst_ElseStatement_strategy = st.builds(
+    amethyst_ElseStatement,
 )
-amethyst::ElseIfStatement_strategy = st.builds(
-    amethyst::ElseIfStatement,
+amethyst_NextStatement_strategy = st.builds(
+    amethyst_NextStatement,
 )
-amethyst::Symbol_strategy = st.builds(
-    amethyst::Symbol,
+amethyst_CaseStatement_strategy = st.builds(
+    amethyst_CaseStatement,
+)
+amethyst_ReturnStatement_strategy = st.builds(
+    amethyst_ReturnStatement,
+)
+amethyst_WhileStatement_strategy = st.builds(
+    amethyst_WhileStatement,
+)
+amethyst_Symbol_strategy = st.builds(
+    amethyst_Symbol,
     name=
         safe_text
 )
-amethyst::Statement_strategy = st.builds(
-    amethyst::Statement,
+amethyst_Statement_strategy = st.builds(
+    amethyst_Statement,
 )
-amethyst::Import_strategy = st.builds(
-    amethyst::Import,
+amethyst_Import_strategy = st.builds(
+    amethyst_Import,
     importedNamespace=
         safe_text
 )
-amethyst::Module_strategy = st.builds(
-    amethyst::Module,
+amethyst_Module_strategy = st.builds(
+    amethyst_Module,
     name=
         safe_text
 )
-amethyst::PropertyDeclaration_strategy = st.builds(
-    amethyst::PropertyDeclaration,
+amethyst_PropertyDeclaration_strategy = st.builds(
+    amethyst_PropertyDeclaration,
 )
-
-@given(instance=Symbol_strategy)
-@settings(max_examples=50)
-def test_symbol_instantiation(instance):
-    assert isinstance(instance, Symbol)
-
-@given(instance=amethyst::ForInitializerDeclaration_strategy)
-@settings(max_examples=50)
-def test_amethyst::forinitializerdeclaration_instantiation(instance):
-    assert isinstance(instance, amethyst::ForInitializerDeclaration)
-
-@given(instance=amethyst::ParameterDeclaration_strategy)
-@settings(max_examples=50)
-def test_amethyst::parameterdeclaration_instantiation(instance):
-    assert isinstance(instance, amethyst::ParameterDeclaration)
-
-@given(instance=amethyst::DefinitionDeclaration_strategy)
-@settings(max_examples=50)
-def test_amethyst::definitiondeclaration_instantiation(instance):
-    assert isinstance(instance, amethyst::DefinitionDeclaration)
-
-@given(instance=amethyst::DefinitionDeclaration_strategy)
-def test_amethyst::definitiondeclaration_static_type(instance):
-    assert isinstance(instance.static, bool)
-
-
-@given(instance=amethyst::DefinitionDeclaration_strategy)
-def test_amethyst::definitiondeclaration_static_setter(instance):
-    original = instance.static
-    instance.static = original
-    assert instance.static == original
-
-@given(instance=amethyst::TagLoopInitializerDeclaration_strategy)
-@settings(max_examples=50)
-def test_amethyst::tagloopinitializerdeclaration_instantiation(instance):
-    assert isinstance(instance, amethyst::TagLoopInitializerDeclaration)
-
-@given(instance=amethyst::VariableDeclaration_strategy)
-@settings(max_examples=50)
-def test_amethyst::variabledeclaration_instantiation(instance):
-    assert isinstance(instance, amethyst::VariableDeclaration)
-
-@given(instance=amethyst::ClassDeclaration_strategy)
-@settings(max_examples=50)
-def test_amethyst::classdeclaration_instantiation(instance):
-    assert isinstance(instance, amethyst::ClassDeclaration)
-
-@given(instance=PrimitiveType_strategy)
-@settings(max_examples=50)
-def test_primitivetype_instantiation(instance):
-    assert isinstance(instance, PrimitiveType)
-
-@given(instance=amethyst::FloatType_strategy)
-@settings(max_examples=50)
-def test_amethyst::floattype_instantiation(instance):
-    assert isinstance(instance, amethyst::FloatType)
-
-@given(instance=amethyst::DefinitionType_strategy)
-@settings(max_examples=50)
-def test_amethyst::definitiontype_instantiation(instance):
-    assert isinstance(instance, amethyst::DefinitionType)
-
-@given(instance=amethyst::AnyType_strategy)
-@settings(max_examples=50)
-def test_amethyst::anytype_instantiation(instance):
-    assert isinstance(instance, amethyst::AnyType)
-
-@given(instance=amethyst::StringType_strategy)
-@settings(max_examples=50)
-def test_amethyst::stringtype_instantiation(instance):
-    assert isinstance(instance, amethyst::StringType)
-
-@given(instance=amethyst::BooleanType_strategy)
-@settings(max_examples=50)
-def test_amethyst::booleantype_instantiation(instance):
-    assert isinstance(instance, amethyst::BooleanType)
-
-@given(instance=amethyst::IntType_strategy)
-@settings(max_examples=50)
-def test_amethyst::inttype_instantiation(instance):
-    assert isinstance(instance, amethyst::IntType)
-
-@given(instance=amethyst::CharType_strategy)
-@settings(max_examples=50)
-def test_amethyst::chartype_instantiation(instance):
-    assert isinstance(instance, amethyst::CharType)
-
-@given(instance=Type_strategy)
-@settings(max_examples=50)
-def test_type_instantiation(instance):
-    assert isinstance(instance, Type)
-
-@given(instance=amethyst::PrimitiveType_strategy)
-@settings(max_examples=50)
-def test_amethyst::primitivetype_instantiation(instance):
-    assert isinstance(instance, amethyst::PrimitiveType)
-
-@given(instance=AbstractType_strategy)
-@settings(max_examples=50)
-def test_abstracttype_instantiation(instance):
-    assert isinstance(instance, AbstractType)
-
-@given(instance=amethyst::ArrayType_strategy)
-@settings(max_examples=50)
-def test_amethyst::arraytype_instantiation(instance):
-    assert isinstance(instance, amethyst::ArrayType)
-
-@given(instance=amethyst::Type_strategy)
-@settings(max_examples=50)
-def test_amethyst::type_instantiation(instance):
-    assert isinstance(instance, amethyst::Type)
-
-@given(instance=amethyst::AbstractType_strategy)
-@settings(max_examples=50)
-def test_amethyst::abstracttype_instantiation(instance):
-    assert isinstance(instance, amethyst::AbstractType)
 
 @given(instance=RangeLiteral_strategy)
 @settings(max_examples=50)
 def test_rangeliteral_instantiation(instance):
     assert isinstance(instance, RangeLiteral)
 
-@given(instance=amethyst::CharRangeLiteral_strategy)
+@given(instance=amethyst_CharRangeLiteral_strategy)
 @settings(max_examples=50)
-def test_amethyst::charrangeliteral_instantiation(instance):
-    assert isinstance(instance, amethyst::CharRangeLiteral)
+def test_amethyst_charrangeliteral_instantiation(instance):
+    assert isinstance(instance, amethyst_CharRangeLiteral)
 
-@given(instance=amethyst::NumberRangeLiteral_strategy)
+@given(instance=amethyst_NumberRangeLiteral_strategy)
 @settings(max_examples=50)
-def test_amethyst::numberrangeliteral_instantiation(instance):
-    assert isinstance(instance, amethyst::NumberRangeLiteral)
+def test_amethyst_numberrangeliteral_instantiation(instance):
+    assert isinstance(instance, amethyst_NumberRangeLiteral)
+
+@given(instance=Symbol_strategy)
+@settings(max_examples=50)
+def test_symbol_instantiation(instance):
+    assert isinstance(instance, Symbol)
+
+@given(instance=amethyst_ParameterDeclaration_strategy)
+@settings(max_examples=50)
+def test_amethyst_parameterdeclaration_instantiation(instance):
+    assert isinstance(instance, amethyst_ParameterDeclaration)
+
+@given(instance=amethyst_DefinitionDeclaration_strategy)
+@settings(max_examples=50)
+def test_amethyst_definitiondeclaration_instantiation(instance):
+    assert isinstance(instance, amethyst_DefinitionDeclaration)
+
+
+
+@given(instance=amethyst_DefinitionDeclaration_strategy)
+def test_amethyst_definitiondeclaration_static_setter(instance):
+    original = instance.static
+    instance.static = original
+    assert instance.static == original
+
+@given(instance=amethyst_ForInitializerDeclaration_strategy)
+@settings(max_examples=50)
+def test_amethyst_forinitializerdeclaration_instantiation(instance):
+    assert isinstance(instance, amethyst_ForInitializerDeclaration)
+
+@given(instance=amethyst_TagLoopInitializerDeclaration_strategy)
+@settings(max_examples=50)
+def test_amethyst_tagloopinitializerdeclaration_instantiation(instance):
+    assert isinstance(instance, amethyst_TagLoopInitializerDeclaration)
+
+@given(instance=amethyst_VariableDeclaration_strategy)
+@settings(max_examples=50)
+def test_amethyst_variabledeclaration_instantiation(instance):
+    assert isinstance(instance, amethyst_VariableDeclaration)
+
+@given(instance=amethyst_ClassDeclaration_strategy)
+@settings(max_examples=50)
+def test_amethyst_classdeclaration_instantiation(instance):
+    assert isinstance(instance, amethyst_ClassDeclaration)
+
+@given(instance=PrimitiveType_strategy)
+@settings(max_examples=50)
+def test_primitivetype_instantiation(instance):
+    assert isinstance(instance, PrimitiveType)
+
+@given(instance=amethyst_FloatType_strategy)
+@settings(max_examples=50)
+def test_amethyst_floattype_instantiation(instance):
+    assert isinstance(instance, amethyst_FloatType)
+
+@given(instance=amethyst_IntType_strategy)
+@settings(max_examples=50)
+def test_amethyst_inttype_instantiation(instance):
+    assert isinstance(instance, amethyst_IntType)
+
+@given(instance=amethyst_StringType_strategy)
+@settings(max_examples=50)
+def test_amethyst_stringtype_instantiation(instance):
+    assert isinstance(instance, amethyst_StringType)
+
+@given(instance=amethyst_DefinitionType_strategy)
+@settings(max_examples=50)
+def test_amethyst_definitiontype_instantiation(instance):
+    assert isinstance(instance, amethyst_DefinitionType)
+
+@given(instance=amethyst_BooleanType_strategy)
+@settings(max_examples=50)
+def test_amethyst_booleantype_instantiation(instance):
+    assert isinstance(instance, amethyst_BooleanType)
+
+@given(instance=amethyst_AnyType_strategy)
+@settings(max_examples=50)
+def test_amethyst_anytype_instantiation(instance):
+    assert isinstance(instance, amethyst_AnyType)
+
+@given(instance=amethyst_CharType_strategy)
+@settings(max_examples=50)
+def test_amethyst_chartype_instantiation(instance):
+    assert isinstance(instance, amethyst_CharType)
+
+@given(instance=Type_strategy)
+@settings(max_examples=50)
+def test_type_instantiation(instance):
+    assert isinstance(instance, Type)
+
+@given(instance=amethyst_PrimitiveType_strategy)
+@settings(max_examples=50)
+def test_amethyst_primitivetype_instantiation(instance):
+    assert isinstance(instance, amethyst_PrimitiveType)
+
+@given(instance=AbstractType_strategy)
+@settings(max_examples=50)
+def test_abstracttype_instantiation(instance):
+    assert isinstance(instance, AbstractType)
+
+@given(instance=amethyst_ArrayType_strategy)
+@settings(max_examples=50)
+def test_amethyst_arraytype_instantiation(instance):
+    assert isinstance(instance, amethyst_ArrayType)
+
+@given(instance=amethyst_Type_strategy)
+@settings(max_examples=50)
+def test_amethyst_type_instantiation(instance):
+    assert isinstance(instance, amethyst_Type)
+
+@given(instance=amethyst_AbstractType_strategy)
+@settings(max_examples=50)
+def test_amethyst_abstracttype_instantiation(instance):
+    assert isinstance(instance, amethyst_AbstractType)
 
 @given(instance=Literal_strategy)
 @settings(max_examples=50)
 def test_literal_instantiation(instance):
     assert isinstance(instance, Literal)
 
-@given(instance=amethyst::NullLiteral_strategy)
+@given(instance=amethyst_BooleanLiteral_strategy)
 @settings(max_examples=50)
-def test_amethyst::nullliteral_instantiation(instance):
-    assert isinstance(instance, amethyst::NullLiteral)
-
-@given(instance=amethyst::FloatLiteral_strategy)
-@settings(max_examples=50)
-def test_amethyst::floatliteral_instantiation(instance):
-    assert isinstance(instance, amethyst::FloatLiteral)
-
-@given(instance=amethyst::FloatLiteral_strategy)
-def test_amethyst::floatliteral_value_type(instance):
-    assert isinstance(instance.value, float)
+def test_amethyst_booleanliteral_instantiation(instance):
+    assert isinstance(instance, amethyst_BooleanLiteral)
 
 
-@given(instance=amethyst::FloatLiteral_strategy)
-def test_amethyst::floatliteral_value_setter(instance):
+
+@given(instance=amethyst_BooleanLiteral_strategy)
+def test_amethyst_booleanliteral_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
 
-@given(instance=amethyst::BooleanLiteral_strategy)
+@given(instance=amethyst_NullLiteral_strategy)
 @settings(max_examples=50)
-def test_amethyst::booleanliteral_instantiation(instance):
-    assert isinstance(instance, amethyst::BooleanLiteral)
+def test_amethyst_nullliteral_instantiation(instance):
+    assert isinstance(instance, amethyst_NullLiteral)
 
-@given(instance=amethyst::BooleanLiteral_strategy)
-def test_amethyst::booleanliteral_value_type(instance):
-    assert isinstance(instance.value, bool)
+@given(instance=amethyst_FloatLiteral_strategy)
+@settings(max_examples=50)
+def test_amethyst_floatliteral_instantiation(instance):
+    assert isinstance(instance, amethyst_FloatLiteral)
 
 
-@given(instance=amethyst::BooleanLiteral_strategy)
-def test_amethyst::booleanliteral_value_setter(instance):
+
+@given(instance=amethyst_FloatLiteral_strategy)
+def test_amethyst_floatliteral_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
 
-@given(instance=amethyst::RangeLiteral_strategy)
+@given(instance=amethyst_RangeLiteral_strategy)
 @settings(max_examples=50)
-def test_amethyst::rangeliteral_instantiation(instance):
-    assert isinstance(instance, amethyst::RangeLiteral)
+def test_amethyst_rangeliteral_instantiation(instance):
+    assert isinstance(instance, amethyst_RangeLiteral)
 
-@given(instance=amethyst::StringLiteral_strategy)
+@given(instance=amethyst_IntLiteral_strategy)
 @settings(max_examples=50)
-def test_amethyst::stringliteral_instantiation(instance):
-    assert isinstance(instance, amethyst::StringLiteral)
-
-@given(instance=amethyst::StringLiteral_strategy)
-def test_amethyst::stringliteral_value_type(instance):
-    assert isinstance(instance.value, str)
+def test_amethyst_intliteral_instantiation(instance):
+    assert isinstance(instance, amethyst_IntLiteral)
 
 
-@given(instance=amethyst::StringLiteral_strategy)
-def test_amethyst::stringliteral_value_setter(instance):
+
+@given(instance=amethyst_IntLiteral_strategy)
+def test_amethyst_intliteral_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
 
-@given(instance=amethyst::IntLiteral_strategy)
+@given(instance=amethyst_StringLiteral_strategy)
 @settings(max_examples=50)
-def test_amethyst::intliteral_instantiation(instance):
-    assert isinstance(instance, amethyst::IntLiteral)
-
-@given(instance=amethyst::IntLiteral_strategy)
-def test_amethyst::intliteral_value_type(instance):
-    assert isinstance(instance.value, int)
+def test_amethyst_stringliteral_instantiation(instance):
+    assert isinstance(instance, amethyst_StringLiteral)
 
 
-@given(instance=amethyst::IntLiteral_strategy)
-def test_amethyst::intliteral_value_setter(instance):
+
+@given(instance=amethyst_StringLiteral_strategy)
+def test_amethyst_stringliteral_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
 
-@given(instance=amethyst::CharLiteral_strategy)
+@given(instance=amethyst_CharLiteral_strategy)
 @settings(max_examples=50)
-def test_amethyst::charliteral_instantiation(instance):
-    assert isinstance(instance, amethyst::CharLiteral)
-
-@given(instance=amethyst::CharLiteral_strategy)
-def test_amethyst::charliteral_value_type(instance):
-    assert isinstance(instance.value, str)
+def test_amethyst_charliteral_instantiation(instance):
+    assert isinstance(instance, amethyst_CharLiteral)
 
 
-@given(instance=amethyst::CharLiteral_strategy)
-def test_amethyst::charliteral_value_setter(instance):
+
+@given(instance=amethyst_CharLiteral_strategy)
+def test_amethyst_charliteral_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
@@ -1888,347 +1870,317 @@ def test_amethyst::charliteral_value_setter(instance):
 def test_expression_instantiation(instance):
     assert isinstance(instance, Expression)
 
-@given(instance=amethyst::IndexAccessExpression_strategy)
+@given(instance=amethyst_ShiftExpression_strategy)
 @settings(max_examples=50)
-def test_amethyst::indexaccessexpression_instantiation(instance):
-    assert isinstance(instance, amethyst::IndexAccessExpression)
-
-@given(instance=amethyst::AdditiveExpression_strategy)
-@settings(max_examples=50)
-def test_amethyst::additiveexpression_instantiation(instance):
-    assert isinstance(instance, amethyst::AdditiveExpression)
-
-@given(instance=amethyst::AdditiveExpression_strategy)
-def test_amethyst::additiveexpression_operator_type(instance):
-    assert isinstance(instance.operator, str)
+def test_amethyst_shiftexpression_instantiation(instance):
+    assert isinstance(instance, amethyst_ShiftExpression)
 
 
-@given(instance=amethyst::AdditiveExpression_strategy)
-def test_amethyst::additiveexpression_operator_setter(instance):
+
+@given(instance=amethyst_ShiftExpression_strategy)
+def test_amethyst_shiftexpression_operator_setter(instance):
     original = instance.operator
     instance.operator = original
     assert instance.operator == original
 
-@given(instance=amethyst::ShiftExpression_strategy)
+@given(instance=amethyst_AndExpression_strategy)
 @settings(max_examples=50)
-def test_amethyst::shiftexpression_instantiation(instance):
-    assert isinstance(instance, amethyst::ShiftExpression)
+def test_amethyst_andexpression_instantiation(instance):
+    assert isinstance(instance, amethyst_AndExpression)
 
-@given(instance=amethyst::ShiftExpression_strategy)
-def test_amethyst::shiftexpression_operator_type(instance):
-    assert isinstance(instance.operator, str)
+@given(instance=amethyst_CallExpression_strategy)
+@settings(max_examples=50)
+def test_amethyst_callexpression_instantiation(instance):
+    assert isinstance(instance, amethyst_CallExpression)
+
+@given(instance=amethyst_AdditiveExpression_strategy)
+@settings(max_examples=50)
+def test_amethyst_additiveexpression_instantiation(instance):
+    assert isinstance(instance, amethyst_AdditiveExpression)
 
 
-@given(instance=amethyst::ShiftExpression_strategy)
-def test_amethyst::shiftexpression_operator_setter(instance):
+
+@given(instance=amethyst_AdditiveExpression_strategy)
+def test_amethyst_additiveexpression_operator_setter(instance):
     original = instance.operator
     instance.operator = original
     assert instance.operator == original
 
-@given(instance=amethyst::ParenthisedExpression_strategy)
+@given(instance=amethyst_MatchingExpression_strategy)
 @settings(max_examples=50)
-def test_amethyst::parenthisedexpression_instantiation(instance):
-    assert isinstance(instance, amethyst::ParenthisedExpression)
-
-@given(instance=amethyst::MatchingExpression_strategy)
-@settings(max_examples=50)
-def test_amethyst::matchingexpression_instantiation(instance):
-    assert isinstance(instance, amethyst::MatchingExpression)
-
-@given(instance=amethyst::MatchingExpression_strategy)
-def test_amethyst::matchingexpression_operator_type(instance):
-    assert isinstance(instance.operator, str)
+def test_amethyst_matchingexpression_instantiation(instance):
+    assert isinstance(instance, amethyst_MatchingExpression)
 
 
-@given(instance=amethyst::MatchingExpression_strategy)
-def test_amethyst::matchingexpression_operator_setter(instance):
+
+@given(instance=amethyst_MatchingExpression_strategy)
+def test_amethyst_matchingexpression_operator_setter(instance):
     original = instance.operator
     instance.operator = original
     assert instance.operator == original
 
-@given(instance=amethyst::InExpression_strategy)
+@given(instance=amethyst_SuperExpression_strategy)
 @settings(max_examples=50)
-def test_amethyst::inexpression_instantiation(instance):
-    assert isinstance(instance, amethyst::InExpression)
+def test_amethyst_superexpression_instantiation(instance):
+    assert isinstance(instance, amethyst_SuperExpression)
 
-@given(instance=amethyst::MultiplicativeExpression_strategy)
+@given(instance=amethyst_ParenthisedExpression_strategy)
 @settings(max_examples=50)
-def test_amethyst::multiplicativeexpression_instantiation(instance):
-    assert isinstance(instance, amethyst::MultiplicativeExpression)
+def test_amethyst_parenthisedexpression_instantiation(instance):
+    assert isinstance(instance, amethyst_ParenthisedExpression)
 
-@given(instance=amethyst::MultiplicativeExpression_strategy)
-def test_amethyst::multiplicativeexpression_operator_type(instance):
-    assert isinstance(instance.operator, str)
+@given(instance=amethyst_SelfExpression_strategy)
+@settings(max_examples=50)
+def test_amethyst_selfexpression_instantiation(instance):
+    assert isinstance(instance, amethyst_SelfExpression)
+
+@given(instance=amethyst_TypeCastExpression_strategy)
+@settings(max_examples=50)
+def test_amethyst_typecastexpression_instantiation(instance):
+    assert isinstance(instance, amethyst_TypeCastExpression)
+
+@given(instance=amethyst_IndexAccessExpression_strategy)
+@settings(max_examples=50)
+def test_amethyst_indexaccessexpression_instantiation(instance):
+    assert isinstance(instance, amethyst_IndexAccessExpression)
+
+@given(instance=amethyst_InExpression_strategy)
+@settings(max_examples=50)
+def test_amethyst_inexpression_instantiation(instance):
+    assert isinstance(instance, amethyst_InExpression)
+
+@given(instance=amethyst_MultiplicativeExpression_strategy)
+@settings(max_examples=50)
+def test_amethyst_multiplicativeexpression_instantiation(instance):
+    assert isinstance(instance, amethyst_MultiplicativeExpression)
 
 
-@given(instance=amethyst::MultiplicativeExpression_strategy)
-def test_amethyst::multiplicativeexpression_operator_setter(instance):
+
+@given(instance=amethyst_MultiplicativeExpression_strategy)
+def test_amethyst_multiplicativeexpression_operator_setter(instance):
     original = instance.operator
     instance.operator = original
     assert instance.operator == original
 
-@given(instance=amethyst::CallExpression_strategy)
+@given(instance=amethyst_AssignmentExpression_strategy)
 @settings(max_examples=50)
-def test_amethyst::callexpression_instantiation(instance):
-    assert isinstance(instance, amethyst::CallExpression)
+def test_amethyst_assignmentexpression_instantiation(instance):
+    assert isinstance(instance, amethyst_AssignmentExpression)
 
-@given(instance=amethyst::TypeCastExpression_strategy)
+@given(instance=amethyst_MemberAccessExpression_strategy)
 @settings(max_examples=50)
-def test_amethyst::typecastexpression_instantiation(instance):
-    assert isinstance(instance, amethyst::TypeCastExpression)
+def test_amethyst_memberaccessexpression_instantiation(instance):
+    assert isinstance(instance, amethyst_MemberAccessExpression)
 
-@given(instance=amethyst::OrExpression_strategy)
+@given(instance=amethyst_UnaryMinusExpression_strategy)
 @settings(max_examples=50)
-def test_amethyst::orexpression_instantiation(instance):
-    assert isinstance(instance, amethyst::OrExpression)
+def test_amethyst_unaryminusexpression_instantiation(instance):
+    assert isinstance(instance, amethyst_UnaryMinusExpression)
 
-@given(instance=amethyst::SelfExpression_strategy)
+@given(instance=amethyst_EqualityExpression_strategy)
 @settings(max_examples=50)
-def test_amethyst::selfexpression_instantiation(instance):
-    assert isinstance(instance, amethyst::SelfExpression)
-
-@given(instance=amethyst::NotExpression_strategy)
-@settings(max_examples=50)
-def test_amethyst::notexpression_instantiation(instance):
-    assert isinstance(instance, amethyst::NotExpression)
-
-@given(instance=amethyst::UnaryMinusExpression_strategy)
-@settings(max_examples=50)
-def test_amethyst::unaryminusexpression_instantiation(instance):
-    assert isinstance(instance, amethyst::UnaryMinusExpression)
-
-@given(instance=amethyst::MemberAccessExpression_strategy)
-@settings(max_examples=50)
-def test_amethyst::memberaccessexpression_instantiation(instance):
-    assert isinstance(instance, amethyst::MemberAccessExpression)
-
-@given(instance=amethyst::SuperExpression_strategy)
-@settings(max_examples=50)
-def test_amethyst::superexpression_instantiation(instance):
-    assert isinstance(instance, amethyst::SuperExpression)
-
-@given(instance=amethyst::AssignmentExpression_strategy)
-@settings(max_examples=50)
-def test_amethyst::assignmentexpression_instantiation(instance):
-    assert isinstance(instance, amethyst::AssignmentExpression)
-
-@given(instance=amethyst::AndExpression_strategy)
-@settings(max_examples=50)
-def test_amethyst::andexpression_instantiation(instance):
-    assert isinstance(instance, amethyst::AndExpression)
-
-@given(instance=amethyst::EqualityExpression_strategy)
-@settings(max_examples=50)
-def test_amethyst::equalityexpression_instantiation(instance):
-    assert isinstance(instance, amethyst::EqualityExpression)
-
-@given(instance=amethyst::EqualityExpression_strategy)
-def test_amethyst::equalityexpression_operator_type(instance):
-    assert isinstance(instance.operator, str)
+def test_amethyst_equalityexpression_instantiation(instance):
+    assert isinstance(instance, amethyst_EqualityExpression)
 
 
-@given(instance=amethyst::EqualityExpression_strategy)
-def test_amethyst::equalityexpression_operator_setter(instance):
+
+@given(instance=amethyst_EqualityExpression_strategy)
+def test_amethyst_equalityexpression_operator_setter(instance):
     original = instance.operator
     instance.operator = original
     assert instance.operator == original
 
-@given(instance=amethyst::NewExpression_strategy)
+@given(instance=amethyst_NotExpression_strategy)
 @settings(max_examples=50)
-def test_amethyst::newexpression_instantiation(instance):
-    assert isinstance(instance, amethyst::NewExpression)
+def test_amethyst_notexpression_instantiation(instance):
+    assert isinstance(instance, amethyst_NotExpression)
 
-@given(instance=amethyst::RelationalExpression_strategy)
+@given(instance=amethyst_RelationalExpression_strategy)
 @settings(max_examples=50)
-def test_amethyst::relationalexpression_instantiation(instance):
-    assert isinstance(instance, amethyst::RelationalExpression)
-
-@given(instance=amethyst::RelationalExpression_strategy)
-def test_amethyst::relationalexpression_operator_type(instance):
-    assert isinstance(instance.operator, str)
+def test_amethyst_relationalexpression_instantiation(instance):
+    assert isinstance(instance, amethyst_RelationalExpression)
 
 
-@given(instance=amethyst::RelationalExpression_strategy)
-def test_amethyst::relationalexpression_operator_setter(instance):
+
+@given(instance=amethyst_RelationalExpression_strategy)
+def test_amethyst_relationalexpression_operator_setter(instance):
     original = instance.operator
     instance.operator = original
     assert instance.operator == original
 
-@given(instance=amethyst::Literal_strategy)
+@given(instance=amethyst_Literal_strategy)
 @settings(max_examples=50)
-def test_amethyst::literal_instantiation(instance):
-    assert isinstance(instance, amethyst::Literal)
+def test_amethyst_literal_instantiation(instance):
+    assert isinstance(instance, amethyst_Literal)
 
-@given(instance=amethyst::SymbolReference_strategy)
+@given(instance=amethyst_OrExpression_strategy)
 @settings(max_examples=50)
-def test_amethyst::symbolreference_instantiation(instance):
-    assert isinstance(instance, amethyst::SymbolReference)
+def test_amethyst_orexpression_instantiation(instance):
+    assert isinstance(instance, amethyst_OrExpression)
 
-@given(instance=amethyst::TagExpression_strategy)
+@given(instance=amethyst_NewExpression_strategy)
 @settings(max_examples=50)
-def test_amethyst::tagexpression_instantiation(instance):
-    assert isinstance(instance, amethyst::TagExpression)
+def test_amethyst_newexpression_instantiation(instance):
+    assert isinstance(instance, amethyst_NewExpression)
 
-@given(instance=amethyst::EObject_strategy)
+@given(instance=amethyst_SymbolReference_strategy)
 @settings(max_examples=50)
-def test_amethyst::eobject_instantiation(instance):
-    assert isinstance(instance, amethyst::EObject)
+def test_amethyst_symbolreference_instantiation(instance):
+    assert isinstance(instance, amethyst_SymbolReference)
 
-@given(instance=amethyst::TagAttribute_strategy)
+@given(instance=amethyst_TagExpression_strategy)
 @settings(max_examples=50)
-def test_amethyst::tagattribute_instantiation(instance):
-    assert isinstance(instance, amethyst::TagAttribute)
+def test_amethyst_tagexpression_instantiation(instance):
+    assert isinstance(instance, amethyst_TagExpression)
 
-@given(instance=amethyst::TagLoopExpression_strategy)
+@given(instance=amethyst_EObject_strategy)
 @settings(max_examples=50)
-def test_amethyst::tagloopexpression_instantiation(instance):
-    assert isinstance(instance, amethyst::TagLoopExpression)
+def test_amethyst_eobject_instantiation(instance):
+    assert isinstance(instance, amethyst_EObject)
 
-@given(instance=amethyst::ClassType_strategy)
+@given(instance=amethyst_TagAttribute_strategy)
 @settings(max_examples=50)
-def test_amethyst::classtype_instantiation(instance):
-    assert isinstance(instance, amethyst::ClassType)
+def test_amethyst_tagattribute_instantiation(instance):
+    assert isinstance(instance, amethyst_TagAttribute)
 
-@given(instance=amethyst::TagDeclaration_strategy)
+@given(instance=amethyst_TagLoopExpression_strategy)
 @settings(max_examples=50)
-def test_amethyst::tagdeclaration_instantiation(instance):
-    assert isinstance(instance, amethyst::TagDeclaration)
+def test_amethyst_tagloopexpression_instantiation(instance):
+    assert isinstance(instance, amethyst_TagLoopExpression)
+
+@given(instance=amethyst_ClassType_strategy)
+@settings(max_examples=50)
+def test_amethyst_classtype_instantiation(instance):
+    assert isinstance(instance, amethyst_ClassType)
+
+@given(instance=amethyst_TagDeclaration_strategy)
+@settings(max_examples=50)
+def test_amethyst_tagdeclaration_instantiation(instance):
+    assert isinstance(instance, amethyst_TagDeclaration)
 
 @given(instance=Statement_strategy)
 @settings(max_examples=50)
 def test_statement_instantiation(instance):
     assert isinstance(instance, Statement)
 
-@given(instance=amethyst::Expression_strategy)
+@given(instance=amethyst_ElseIfStatement_strategy)
 @settings(max_examples=50)
-def test_amethyst::expression_instantiation(instance):
-    assert isinstance(instance, amethyst::Expression)
+def test_amethyst_elseifstatement_instantiation(instance):
+    assert isinstance(instance, amethyst_ElseIfStatement)
 
-@given(instance=amethyst::ReturnStatement_strategy)
+@given(instance=amethyst_BreakStatement_strategy)
 @settings(max_examples=50)
-def test_amethyst::returnstatement_instantiation(instance):
-    assert isinstance(instance, amethyst::ReturnStatement)
+def test_amethyst_breakstatement_instantiation(instance):
+    assert isinstance(instance, amethyst_BreakStatement)
 
-@given(instance=amethyst::IfStatement_strategy)
+@given(instance=amethyst_ForStatement_strategy)
 @settings(max_examples=50)
-def test_amethyst::ifstatement_instantiation(instance):
-    assert isinstance(instance, amethyst::IfStatement)
+def test_amethyst_forstatement_instantiation(instance):
+    assert isinstance(instance, amethyst_ForStatement)
 
-@given(instance=amethyst::ForStatement_strategy)
+@given(instance=amethyst_CaseElseStatement_strategy)
 @settings(max_examples=50)
-def test_amethyst::forstatement_instantiation(instance):
-    assert isinstance(instance, amethyst::ForStatement)
+def test_amethyst_caseelsestatement_instantiation(instance):
+    assert isinstance(instance, amethyst_CaseElseStatement)
 
-@given(instance=amethyst::CaseStatement_strategy)
+@given(instance=amethyst_JsCodeStatement_strategy)
 @settings(max_examples=50)
-def test_amethyst::casestatement_instantiation(instance):
-    assert isinstance(instance, amethyst::CaseStatement)
-
-@given(instance=amethyst::ElseStatement_strategy)
-@settings(max_examples=50)
-def test_amethyst::elsestatement_instantiation(instance):
-    assert isinstance(instance, amethyst::ElseStatement)
-
-@given(instance=amethyst::BreakStatement_strategy)
-@settings(max_examples=50)
-def test_amethyst::breakstatement_instantiation(instance):
-    assert isinstance(instance, amethyst::BreakStatement)
-
-@given(instance=amethyst::JsCodeStatement_strategy)
-@settings(max_examples=50)
-def test_amethyst::jscodestatement_instantiation(instance):
-    assert isinstance(instance, amethyst::JsCodeStatement)
-
-@given(instance=amethyst::JsCodeStatement_strategy)
-def test_amethyst::jscodestatement_value_type(instance):
-    assert isinstance(instance.value, str)
+def test_amethyst_jscodestatement_instantiation(instance):
+    assert isinstance(instance, amethyst_JsCodeStatement)
 
 
-@given(instance=amethyst::JsCodeStatement_strategy)
-def test_amethyst::jscodestatement_value_setter(instance):
+
+@given(instance=amethyst_JsCodeStatement_strategy)
+def test_amethyst_jscodestatement_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
 
-@given(instance=amethyst::NextStatement_strategy)
+@given(instance=amethyst_Expression_strategy)
 @settings(max_examples=50)
-def test_amethyst::nextstatement_instantiation(instance):
-    assert isinstance(instance, amethyst::NextStatement)
+def test_amethyst_expression_instantiation(instance):
+    assert isinstance(instance, amethyst_Expression)
 
-@given(instance=amethyst::CaseElseStatement_strategy)
+@given(instance=amethyst_WhenStatement_strategy)
 @settings(max_examples=50)
-def test_amethyst::caseelsestatement_instantiation(instance):
-    assert isinstance(instance, amethyst::CaseElseStatement)
+def test_amethyst_whenstatement_instantiation(instance):
+    assert isinstance(instance, amethyst_WhenStatement)
 
-@given(instance=amethyst::WhileStatement_strategy)
+@given(instance=amethyst_IfStatement_strategy)
 @settings(max_examples=50)
-def test_amethyst::whilestatement_instantiation(instance):
-    assert isinstance(instance, amethyst::WhileStatement)
+def test_amethyst_ifstatement_instantiation(instance):
+    assert isinstance(instance, amethyst_IfStatement)
 
-@given(instance=amethyst::WhenStatement_strategy)
+@given(instance=amethyst_ElseStatement_strategy)
 @settings(max_examples=50)
-def test_amethyst::whenstatement_instantiation(instance):
-    assert isinstance(instance, amethyst::WhenStatement)
+def test_amethyst_elsestatement_instantiation(instance):
+    assert isinstance(instance, amethyst_ElseStatement)
 
-@given(instance=amethyst::ElseIfStatement_strategy)
+@given(instance=amethyst_NextStatement_strategy)
 @settings(max_examples=50)
-def test_amethyst::elseifstatement_instantiation(instance):
-    assert isinstance(instance, amethyst::ElseIfStatement)
+def test_amethyst_nextstatement_instantiation(instance):
+    assert isinstance(instance, amethyst_NextStatement)
 
-@given(instance=amethyst::Symbol_strategy)
+@given(instance=amethyst_CaseStatement_strategy)
 @settings(max_examples=50)
-def test_amethyst::symbol_instantiation(instance):
-    assert isinstance(instance, amethyst::Symbol)
+def test_amethyst_casestatement_instantiation(instance):
+    assert isinstance(instance, amethyst_CaseStatement)
 
-@given(instance=amethyst::Symbol_strategy)
-def test_amethyst::symbol_name_type(instance):
-    assert isinstance(instance.name, str)
+@given(instance=amethyst_ReturnStatement_strategy)
+@settings(max_examples=50)
+def test_amethyst_returnstatement_instantiation(instance):
+    assert isinstance(instance, amethyst_ReturnStatement)
+
+@given(instance=amethyst_WhileStatement_strategy)
+@settings(max_examples=50)
+def test_amethyst_whilestatement_instantiation(instance):
+    assert isinstance(instance, amethyst_WhileStatement)
+
+@given(instance=amethyst_Symbol_strategy)
+@settings(max_examples=50)
+def test_amethyst_symbol_instantiation(instance):
+    assert isinstance(instance, amethyst_Symbol)
 
 
-@given(instance=amethyst::Symbol_strategy)
-def test_amethyst::symbol_name_setter(instance):
+
+@given(instance=amethyst_Symbol_strategy)
+def test_amethyst_symbol_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=amethyst::Statement_strategy)
+@given(instance=amethyst_Statement_strategy)
 @settings(max_examples=50)
-def test_amethyst::statement_instantiation(instance):
-    assert isinstance(instance, amethyst::Statement)
+def test_amethyst_statement_instantiation(instance):
+    assert isinstance(instance, amethyst_Statement)
 
-@given(instance=amethyst::Import_strategy)
+@given(instance=amethyst_Import_strategy)
 @settings(max_examples=50)
-def test_amethyst::import_instantiation(instance):
-    assert isinstance(instance, amethyst::Import)
-
-@given(instance=amethyst::Import_strategy)
-def test_amethyst::import_importedNamespace_type(instance):
-    assert isinstance(instance.importedNamespace, str)
+def test_amethyst_import_instantiation(instance):
+    assert isinstance(instance, amethyst_Import)
 
 
-@given(instance=amethyst::Import_strategy)
-def test_amethyst::import_importedNamespace_setter(instance):
+
+@given(instance=amethyst_Import_strategy)
+def test_amethyst_import_importedNamespace_setter(instance):
     original = instance.importedNamespace
     instance.importedNamespace = original
     assert instance.importedNamespace == original
 
-@given(instance=amethyst::Module_strategy)
+@given(instance=amethyst_Module_strategy)
 @settings(max_examples=50)
-def test_amethyst::module_instantiation(instance):
-    assert isinstance(instance, amethyst::Module)
-
-@given(instance=amethyst::Module_strategy)
-def test_amethyst::module_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_amethyst_module_instantiation(instance):
+    assert isinstance(instance, amethyst_Module)
 
 
-@given(instance=amethyst::Module_strategy)
-def test_amethyst::module_name_setter(instance):
+
+@given(instance=amethyst_Module_strategy)
+def test_amethyst_module_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=amethyst::PropertyDeclaration_strategy)
+@given(instance=amethyst_PropertyDeclaration_strategy)
 @settings(max_examples=50)
-def test_amethyst::propertydeclaration_instantiation(instance):
-    assert isinstance(instance, amethyst::PropertyDeclaration)
+def test_amethyst_propertydeclaration_instantiation(instance):
+    assert isinstance(instance, amethyst_PropertyDeclaration)

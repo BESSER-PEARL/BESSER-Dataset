@@ -3,19 +3,19 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    xDstmdata::composingtype,
-    xDstmdata::channel::specifier,
-    xDstmdata::subtype,
-    xDstmdata::vVariable,
-    xDstmdata::cExtchannel,
-    xDstmdata::cIntchannel,
-    xDstmdata::tMultitype,
-    xDstmdata::tCompound,
-    xDstmdata::tEnum,
-    xDstmdata::tTypes,
+from python_code import (
+    xDstmdata_composingtype,
+    xDstmdata_channel_specifier,
+    xDstmdata_subtype,
+    xDstmdata_vVariable,
+    xDstmdata_cExtchannel,
+    xDstmdata_cIntchannel,
+    xDstmdata_tMultitype,
+    xDstmdata_tCompound,
+    xDstmdata_tEnum,
+    xDstmdata_tTypes,
 )
 
 # =============================================================================
@@ -24,57 +24,57 @@ from classes import (
 
 
 
-def test_xdstmdata::composingtype_is_not_abstract():
-    assert not inspect.isabstract(xDstmdata::composingtype)
+def test_xdstmdata_composingtype_is_not_abstract():
+    assert not inspect.isabstract(xDstmdata_composingtype)
 
 
-def test_xdstmdata::composingtype_constructor_exists():
-    assert callable(xDstmdata::composingtype.__init__)
+def test_xdstmdata_composingtype_constructor_exists():
+    assert callable(xDstmdata_composingtype.__init__)
 
 
-def test_xdstmdata::composingtype_constructor_args():
-    sig = inspect.signature(xDstmdata::composingtype.__init__)
+def test_xdstmdata_composingtype_constructor_args():
+    sig = inspect.signature(xDstmdata_composingtype.__init__)
     params = list(sig.parameters.keys())
-    assert "tString" in params, "Missing parameter 'tString'"
     assert "tID" in params, "Missing parameter 'tID'"
+    assert "tString" in params, "Missing parameter 'tString'"
 
-def test_xdstmdata::composingtype_has_tString():
-    assert hasattr(xDstmdata::composingtype, "tString")
+def test_xdstmdata_composingtype_has_tID():
+    assert hasattr(xDstmdata_composingtype, "tID")
     descriptor = None
-    for klass in xDstmdata::composingtype.__mro__:
-        if "tString" in klass.__dict__:
-            descriptor = klass.__dict__["tString"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_xdstmdata::composingtype_has_tID():
-    assert hasattr(xDstmdata::composingtype, "tID")
-    descriptor = None
-    for klass in xDstmdata::composingtype.__mro__:
+    for klass in xDstmdata_composingtype.__mro__:
         if "tID" in klass.__dict__:
             descriptor = klass.__dict__["tID"]
             break
     assert isinstance(descriptor, property)
 
+def test_xdstmdata_composingtype_has_tString():
+    assert hasattr(xDstmdata_composingtype, "tString")
+    descriptor = None
+    for klass in xDstmdata_composingtype.__mro__:
+        if "tString" in klass.__dict__:
+            descriptor = klass.__dict__["tString"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_xdstmdata::channel::specifier_is_not_abstract():
-    assert not inspect.isabstract(xDstmdata::channel::specifier)
+
+def test_xdstmdata_channel_specifier_is_not_abstract():
+    assert not inspect.isabstract(xDstmdata_channel_specifier)
 
 
-def test_xdstmdata::channel::specifier_constructor_exists():
-    assert callable(xDstmdata::channel::specifier.__init__)
+def test_xdstmdata_channel_specifier_constructor_exists():
+    assert callable(xDstmdata_channel_specifier.__init__)
 
 
-def test_xdstmdata::channel::specifier_constructor_args():
-    sig = inspect.signature(xDstmdata::channel::specifier.__init__)
+def test_xdstmdata_channel_specifier_constructor_args():
+    sig = inspect.signature(xDstmdata_channel_specifier.__init__)
     params = list(sig.parameters.keys())
     assert "type" in params, "Missing parameter 'type'"
 
-def test_xdstmdata::channel::specifier_has_type():
-    assert hasattr(xDstmdata::channel::specifier, "type")
+def test_xdstmdata_channel_specifier_has_type():
+    assert hasattr(xDstmdata_channel_specifier, "type")
     descriptor = None
-    for klass in xDstmdata::channel::specifier.__mro__:
+    for klass in xDstmdata_channel_specifier.__mro__:
         if "type" in klass.__dict__:
             descriptor = klass.__dict__["type"]
             break
@@ -82,33 +82,33 @@ def test_xdstmdata::channel::specifier_has_type():
 
 
 
-def test_xdstmdata::subtype_is_not_abstract():
-    assert not inspect.isabstract(xDstmdata::subtype)
+def test_xdstmdata_subtype_is_not_abstract():
+    assert not inspect.isabstract(xDstmdata_subtype)
 
 
-def test_xdstmdata::subtype_constructor_exists():
-    assert callable(xDstmdata::subtype.__init__)
+def test_xdstmdata_subtype_constructor_exists():
+    assert callable(xDstmdata_subtype.__init__)
 
 
-def test_xdstmdata::subtype_constructor_args():
-    sig = inspect.signature(xDstmdata::subtype.__init__)
+def test_xdstmdata_subtype_constructor_args():
+    sig = inspect.signature(xDstmdata_subtype.__init__)
     params = list(sig.parameters.keys())
     assert "tString" in params, "Missing parameter 'tString'"
     assert "tID" in params, "Missing parameter 'tID'"
 
-def test_xdstmdata::subtype_has_tString():
-    assert hasattr(xDstmdata::subtype, "tString")
+def test_xdstmdata_subtype_has_tString():
+    assert hasattr(xDstmdata_subtype, "tString")
     descriptor = None
-    for klass in xDstmdata::subtype.__mro__:
+    for klass in xDstmdata_subtype.__mro__:
         if "tString" in klass.__dict__:
             descriptor = klass.__dict__["tString"]
             break
     assert isinstance(descriptor, property)
 
-def test_xdstmdata::subtype_has_tID():
-    assert hasattr(xDstmdata::subtype, "tID")
+def test_xdstmdata_subtype_has_tID():
+    assert hasattr(xDstmdata_subtype, "tID")
     descriptor = None
-    for klass in xDstmdata::subtype.__mro__:
+    for klass in xDstmdata_subtype.__mro__:
         if "tID" in klass.__dict__:
             descriptor = klass.__dict__["tID"]
             break
@@ -116,165 +116,165 @@ def test_xdstmdata::subtype_has_tID():
 
 
 
-def test_xdstmdata::vvariable_is_not_abstract():
-    assert not inspect.isabstract(xDstmdata::vVariable)
+def test_xdstmdata_vvariable_is_not_abstract():
+    assert not inspect.isabstract(xDstmdata_vVariable)
 
 
-def test_xdstmdata::vvariable_constructor_exists():
-    assert callable(xDstmdata::vVariable.__init__)
+def test_xdstmdata_vvariable_constructor_exists():
+    assert callable(xDstmdata_vVariable.__init__)
 
 
-def test_xdstmdata::vvariable_constructor_args():
-    sig = inspect.signature(xDstmdata::vVariable.__init__)
+def test_xdstmdata_vvariable_constructor_args():
+    sig = inspect.signature(xDstmdata_vVariable.__init__)
     params = list(sig.parameters.keys())
-    assert "tString" in params, "Missing parameter 'tString'"
     assert "name" in params, "Missing parameter 'name'"
+    assert "tString" in params, "Missing parameter 'tString'"
     assert "tID" in params, "Missing parameter 'tID'"
 
-def test_xdstmdata::vvariable_has_tString():
-    assert hasattr(xDstmdata::vVariable, "tString")
+def test_xdstmdata_vvariable_has_name():
+    assert hasattr(xDstmdata_vVariable, "name")
     descriptor = None
-    for klass in xDstmdata::vVariable.__mro__:
-        if "tString" in klass.__dict__:
-            descriptor = klass.__dict__["tString"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_xdstmdata::vvariable_has_name():
-    assert hasattr(xDstmdata::vVariable, "name")
-    descriptor = None
-    for klass in xDstmdata::vVariable.__mro__:
+    for klass in xDstmdata_vVariable.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
-def test_xdstmdata::vvariable_has_tID():
-    assert hasattr(xDstmdata::vVariable, "tID")
+def test_xdstmdata_vvariable_has_tString():
+    assert hasattr(xDstmdata_vVariable, "tString")
     descriptor = None
-    for klass in xDstmdata::vVariable.__mro__:
-        if "tID" in klass.__dict__:
-            descriptor = klass.__dict__["tID"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_xdstmdata::cextchannel_is_not_abstract():
-    assert not inspect.isabstract(xDstmdata::cExtchannel)
-
-
-def test_xdstmdata::cextchannel_constructor_exists():
-    assert callable(xDstmdata::cExtchannel.__init__)
-
-
-def test_xdstmdata::cextchannel_constructor_args():
-    sig = inspect.signature(xDstmdata::cExtchannel.__init__)
-    params = list(sig.parameters.keys())
-    assert "tString" in params, "Missing parameter 'tString'"
-    assert "tID" in params, "Missing parameter 'tID'"
-    assert "name" in params, "Missing parameter 'name'"
-
-def test_xdstmdata::cextchannel_has_tString():
-    assert hasattr(xDstmdata::cExtchannel, "tString")
-    descriptor = None
-    for klass in xDstmdata::cExtchannel.__mro__:
+    for klass in xDstmdata_vVariable.__mro__:
         if "tString" in klass.__dict__:
             descriptor = klass.__dict__["tString"]
             break
     assert isinstance(descriptor, property)
 
-def test_xdstmdata::cextchannel_has_tID():
-    assert hasattr(xDstmdata::cExtchannel, "tID")
+def test_xdstmdata_vvariable_has_tID():
+    assert hasattr(xDstmdata_vVariable, "tID")
     descriptor = None
-    for klass in xDstmdata::cExtchannel.__mro__:
+    for klass in xDstmdata_vVariable.__mro__:
         if "tID" in klass.__dict__:
             descriptor = klass.__dict__["tID"]
             break
     assert isinstance(descriptor, property)
 
-def test_xdstmdata::cextchannel_has_name():
-    assert hasattr(xDstmdata::cExtchannel, "name")
+
+
+def test_xdstmdata_cextchannel_is_not_abstract():
+    assert not inspect.isabstract(xDstmdata_cExtchannel)
+
+
+def test_xdstmdata_cextchannel_constructor_exists():
+    assert callable(xDstmdata_cExtchannel.__init__)
+
+
+def test_xdstmdata_cextchannel_constructor_args():
+    sig = inspect.signature(xDstmdata_cExtchannel.__init__)
+    params = list(sig.parameters.keys())
+    assert "tString" in params, "Missing parameter 'tString'"
+    assert "name" in params, "Missing parameter 'name'"
+    assert "tID" in params, "Missing parameter 'tID'"
+
+def test_xdstmdata_cextchannel_has_tString():
+    assert hasattr(xDstmdata_cExtchannel, "tString")
     descriptor = None
-    for klass in xDstmdata::cExtchannel.__mro__:
+    for klass in xDstmdata_cExtchannel.__mro__:
+        if "tString" in klass.__dict__:
+            descriptor = klass.__dict__["tString"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_xdstmdata_cextchannel_has_name():
+    assert hasattr(xDstmdata_cExtchannel, "name")
+    descriptor = None
+    for klass in xDstmdata_cExtchannel.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
+def test_xdstmdata_cextchannel_has_tID():
+    assert hasattr(xDstmdata_cExtchannel, "tID")
+    descriptor = None
+    for klass in xDstmdata_cExtchannel.__mro__:
+        if "tID" in klass.__dict__:
+            descriptor = klass.__dict__["tID"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_xdstmdata::cintchannel_is_not_abstract():
-    assert not inspect.isabstract(xDstmdata::cIntchannel)
+
+def test_xdstmdata_cintchannel_is_not_abstract():
+    assert not inspect.isabstract(xDstmdata_cIntchannel)
 
 
-def test_xdstmdata::cintchannel_constructor_exists():
-    assert callable(xDstmdata::cIntchannel.__init__)
+def test_xdstmdata_cintchannel_constructor_exists():
+    assert callable(xDstmdata_cIntchannel.__init__)
 
 
-def test_xdstmdata::cintchannel_constructor_args():
-    sig = inspect.signature(xDstmdata::cIntchannel.__init__)
+def test_xdstmdata_cintchannel_constructor_args():
+    sig = inspect.signature(xDstmdata_cIntchannel.__init__)
     params = list(sig.parameters.keys())
+    assert "name" in params, "Missing parameter 'name'"
+    assert "tString" in params, "Missing parameter 'tString'"
     assert "tID" in params, "Missing parameter 'tID'"
     assert "bound" in params, "Missing parameter 'bound'"
-    assert "tString" in params, "Missing parameter 'tString'"
-    assert "name" in params, "Missing parameter 'name'"
 
-def test_xdstmdata::cintchannel_has_tID():
-    assert hasattr(xDstmdata::cIntchannel, "tID")
+def test_xdstmdata_cintchannel_has_name():
+    assert hasattr(xDstmdata_cIntchannel, "name")
     descriptor = None
-    for klass in xDstmdata::cIntchannel.__mro__:
+    for klass in xDstmdata_cIntchannel.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_xdstmdata_cintchannel_has_tString():
+    assert hasattr(xDstmdata_cIntchannel, "tString")
+    descriptor = None
+    for klass in xDstmdata_cIntchannel.__mro__:
+        if "tString" in klass.__dict__:
+            descriptor = klass.__dict__["tString"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_xdstmdata_cintchannel_has_tID():
+    assert hasattr(xDstmdata_cIntchannel, "tID")
+    descriptor = None
+    for klass in xDstmdata_cIntchannel.__mro__:
         if "tID" in klass.__dict__:
             descriptor = klass.__dict__["tID"]
             break
     assert isinstance(descriptor, property)
 
-def test_xdstmdata::cintchannel_has_bound():
-    assert hasattr(xDstmdata::cIntchannel, "bound")
+def test_xdstmdata_cintchannel_has_bound():
+    assert hasattr(xDstmdata_cIntchannel, "bound")
     descriptor = None
-    for klass in xDstmdata::cIntchannel.__mro__:
+    for klass in xDstmdata_cIntchannel.__mro__:
         if "bound" in klass.__dict__:
             descriptor = klass.__dict__["bound"]
             break
     assert isinstance(descriptor, property)
 
-def test_xdstmdata::cintchannel_has_tString():
-    assert hasattr(xDstmdata::cIntchannel, "tString")
-    descriptor = None
-    for klass in xDstmdata::cIntchannel.__mro__:
-        if "tString" in klass.__dict__:
-            descriptor = klass.__dict__["tString"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_xdstmdata::cintchannel_has_name():
-    assert hasattr(xDstmdata::cIntchannel, "name")
-    descriptor = None
-    for klass in xDstmdata::cIntchannel.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
 
 
-
-def test_xdstmdata::tmultitype_is_not_abstract():
-    assert not inspect.isabstract(xDstmdata::tMultitype)
-
-
-def test_xdstmdata::tmultitype_constructor_exists():
-    assert callable(xDstmdata::tMultitype.__init__)
+def test_xdstmdata_tmultitype_is_not_abstract():
+    assert not inspect.isabstract(xDstmdata_tMultitype)
 
 
-def test_xdstmdata::tmultitype_constructor_args():
-    sig = inspect.signature(xDstmdata::tMultitype.__init__)
+def test_xdstmdata_tmultitype_constructor_exists():
+    assert callable(xDstmdata_tMultitype.__init__)
+
+
+def test_xdstmdata_tmultitype_constructor_args():
+    sig = inspect.signature(xDstmdata_tMultitype.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_xdstmdata::tmultitype_has_name():
-    assert hasattr(xDstmdata::tMultitype, "name")
+def test_xdstmdata_tmultitype_has_name():
+    assert hasattr(xDstmdata_tMultitype, "name")
     descriptor = None
-    for klass in xDstmdata::tMultitype.__mro__:
+    for klass in xDstmdata_tMultitype.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -282,23 +282,23 @@ def test_xdstmdata::tmultitype_has_name():
 
 
 
-def test_xdstmdata::tcompound_is_not_abstract():
-    assert not inspect.isabstract(xDstmdata::tCompound)
+def test_xdstmdata_tcompound_is_not_abstract():
+    assert not inspect.isabstract(xDstmdata_tCompound)
 
 
-def test_xdstmdata::tcompound_constructor_exists():
-    assert callable(xDstmdata::tCompound.__init__)
+def test_xdstmdata_tcompound_constructor_exists():
+    assert callable(xDstmdata_tCompound.__init__)
 
 
-def test_xdstmdata::tcompound_constructor_args():
-    sig = inspect.signature(xDstmdata::tCompound.__init__)
+def test_xdstmdata_tcompound_constructor_args():
+    sig = inspect.signature(xDstmdata_tCompound.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_xdstmdata::tcompound_has_name():
-    assert hasattr(xDstmdata::tCompound, "name")
+def test_xdstmdata_tcompound_has_name():
+    assert hasattr(xDstmdata_tCompound, "name")
     descriptor = None
-    for klass in xDstmdata::tCompound.__mro__:
+    for klass in xDstmdata_tCompound.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -306,33 +306,33 @@ def test_xdstmdata::tcompound_has_name():
 
 
 
-def test_xdstmdata::tenum_is_not_abstract():
-    assert not inspect.isabstract(xDstmdata::tEnum)
+def test_xdstmdata_tenum_is_not_abstract():
+    assert not inspect.isabstract(xDstmdata_tEnum)
 
 
-def test_xdstmdata::tenum_constructor_exists():
-    assert callable(xDstmdata::tEnum.__init__)
+def test_xdstmdata_tenum_constructor_exists():
+    assert callable(xDstmdata_tEnum.__init__)
 
 
-def test_xdstmdata::tenum_constructor_args():
-    sig = inspect.signature(xDstmdata::tEnum.__init__)
+def test_xdstmdata_tenum_constructor_args():
+    sig = inspect.signature(xDstmdata_tEnum.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
     assert "literals" in params, "Missing parameter 'literals'"
 
-def test_xdstmdata::tenum_has_name():
-    assert hasattr(xDstmdata::tEnum, "name")
+def test_xdstmdata_tenum_has_name():
+    assert hasattr(xDstmdata_tEnum, "name")
     descriptor = None
-    for klass in xDstmdata::tEnum.__mro__:
+    for klass in xDstmdata_tEnum.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
-def test_xdstmdata::tenum_has_literals():
-    assert hasattr(xDstmdata::tEnum, "literals")
+def test_xdstmdata_tenum_has_literals():
+    assert hasattr(xDstmdata_tEnum, "literals")
     descriptor = None
-    for klass in xDstmdata::tEnum.__mro__:
+    for klass in xDstmdata_tEnum.__mro__:
         if "literals" in klass.__dict__:
             descriptor = klass.__dict__["literals"]
             break
@@ -340,16 +340,16 @@ def test_xdstmdata::tenum_has_literals():
 
 
 
-def test_xdstmdata::ttypes_is_not_abstract():
-    assert not inspect.isabstract(xDstmdata::tTypes)
+def test_xdstmdata_ttypes_is_not_abstract():
+    assert not inspect.isabstract(xDstmdata_tTypes)
 
 
-def test_xdstmdata::ttypes_constructor_exists():
-    assert callable(xDstmdata::tTypes.__init__)
+def test_xdstmdata_ttypes_constructor_exists():
+    assert callable(xDstmdata_tTypes.__init__)
 
 
-def test_xdstmdata::ttypes_constructor_args():
-    sig = inspect.signature(xDstmdata::tTypes.__init__)
+def test_xdstmdata_ttypes_constructor_args():
+    sig = inspect.signature(xDstmdata_tTypes.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -364,27 +364,36 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-xDstmdata::composingtype_strategy = st.builds(
-    xDstmdata::composingtype,
-    tString=
-        safe_text,
+xDstmdata_composingtype_strategy = st.builds(
+    xDstmdata_composingtype,
     tID=
+        safe_text,
+    tString=
         safe_text
 )
-xDstmdata::channel::specifier_strategy = st.builds(
-    xDstmdata::channel::specifier,
+xDstmdata_channel_specifier_strategy = st.builds(
+    xDstmdata_channel_specifier,
     type=
         safe_text
 )
-xDstmdata::subtype_strategy = st.builds(
-    xDstmdata::subtype,
+xDstmdata_subtype_strategy = st.builds(
+    xDstmdata_subtype,
     tString=
         safe_text,
     tID=
         safe_text
 )
-xDstmdata::vVariable_strategy = st.builds(
-    xDstmdata::vVariable,
+xDstmdata_vVariable_strategy = st.builds(
+    xDstmdata_vVariable,
+    name=
+        safe_text,
+    tString=
+        safe_text,
+    tID=
+        safe_text
+)
+xDstmdata_cExtchannel_strategy = st.builds(
+    xDstmdata_cExtchannel,
     tString=
         safe_text,
     name=
@@ -392,302 +401,236 @@ xDstmdata::vVariable_strategy = st.builds(
     tID=
         safe_text
 )
-xDstmdata::cExtchannel_strategy = st.builds(
-    xDstmdata::cExtchannel,
+xDstmdata_cIntchannel_strategy = st.builds(
+    xDstmdata_cIntchannel,
+    name=
+        safe_text,
     tString=
         safe_text,
-    tID=
-        safe_text,
-    name=
-        safe_text
-)
-xDstmdata::cIntchannel_strategy = st.builds(
-    xDstmdata::cIntchannel,
     tID=
         safe_text,
     bound=
-        st.integers(),
-    tString=
-        safe_text,
+        st.integers()
+)
+xDstmdata_tMultitype_strategy = st.builds(
+    xDstmdata_tMultitype,
     name=
         safe_text
 )
-xDstmdata::tMultitype_strategy = st.builds(
-    xDstmdata::tMultitype,
+xDstmdata_tCompound_strategy = st.builds(
+    xDstmdata_tCompound,
     name=
         safe_text
 )
-xDstmdata::tCompound_strategy = st.builds(
-    xDstmdata::tCompound,
-    name=
-        safe_text
-)
-xDstmdata::tEnum_strategy = st.builds(
-    xDstmdata::tEnum,
+xDstmdata_tEnum_strategy = st.builds(
+    xDstmdata_tEnum,
     name=
         safe_text,
     literals=
         safe_text
 )
-xDstmdata::tTypes_strategy = st.builds(
-    xDstmdata::tTypes,
+xDstmdata_tTypes_strategy = st.builds(
+    xDstmdata_tTypes,
 )
 
-@given(instance=xDstmdata::composingtype_strategy)
+@given(instance=xDstmdata_composingtype_strategy)
 @settings(max_examples=50)
-def test_xdstmdata::composingtype_instantiation(instance):
-    assert isinstance(instance, xDstmdata::composingtype)
-
-@given(instance=xDstmdata::composingtype_strategy)
-def test_xdstmdata::composingtype_tString_type(instance):
-    assert isinstance(instance.tString, str)
+def test_xdstmdata_composingtype_instantiation(instance):
+    assert isinstance(instance, xDstmdata_composingtype)
 
 
-@given(instance=xDstmdata::composingtype_strategy)
-def test_xdstmdata::composingtype_tString_setter(instance):
-    original = instance.tString
-    instance.tString = original
-    assert instance.tString == original
 
-@given(instance=xDstmdata::composingtype_strategy)
-def test_xdstmdata::composingtype_tID_type(instance):
-    assert isinstance(instance.tID, str)
-
-
-@given(instance=xDstmdata::composingtype_strategy)
-def test_xdstmdata::composingtype_tID_setter(instance):
+@given(instance=xDstmdata_composingtype_strategy)
+def test_xdstmdata_composingtype_tID_setter(instance):
     original = instance.tID
     instance.tID = original
     assert instance.tID == original
 
-@given(instance=xDstmdata::channel::specifier_strategy)
+
+
+@given(instance=xDstmdata_composingtype_strategy)
+def test_xdstmdata_composingtype_tString_setter(instance):
+    original = instance.tString
+    instance.tString = original
+    assert instance.tString == original
+
+@given(instance=xDstmdata_channel_specifier_strategy)
 @settings(max_examples=50)
-def test_xdstmdata::channel::specifier_instantiation(instance):
-    assert isinstance(instance, xDstmdata::channel::specifier)
-
-@given(instance=xDstmdata::channel::specifier_strategy)
-def test_xdstmdata::channel::specifier_type_type(instance):
-    assert isinstance(instance.type, str)
+def test_xdstmdata_channel_specifier_instantiation(instance):
+    assert isinstance(instance, xDstmdata_channel_specifier)
 
 
-@given(instance=xDstmdata::channel::specifier_strategy)
-def test_xdstmdata::channel::specifier_type_setter(instance):
+
+@given(instance=xDstmdata_channel_specifier_strategy)
+def test_xdstmdata_channel_specifier_type_setter(instance):
     original = instance.type
     instance.type = original
     assert instance.type == original
 
-@given(instance=xDstmdata::subtype_strategy)
+@given(instance=xDstmdata_subtype_strategy)
 @settings(max_examples=50)
-def test_xdstmdata::subtype_instantiation(instance):
-    assert isinstance(instance, xDstmdata::subtype)
-
-@given(instance=xDstmdata::subtype_strategy)
-def test_xdstmdata::subtype_tString_type(instance):
-    assert isinstance(instance.tString, str)
+def test_xdstmdata_subtype_instantiation(instance):
+    assert isinstance(instance, xDstmdata_subtype)
 
 
-@given(instance=xDstmdata::subtype_strategy)
-def test_xdstmdata::subtype_tString_setter(instance):
+
+@given(instance=xDstmdata_subtype_strategy)
+def test_xdstmdata_subtype_tString_setter(instance):
     original = instance.tString
     instance.tString = original
     assert instance.tString == original
 
-@given(instance=xDstmdata::subtype_strategy)
-def test_xdstmdata::subtype_tID_type(instance):
-    assert isinstance(instance.tID, str)
 
 
-@given(instance=xDstmdata::subtype_strategy)
-def test_xdstmdata::subtype_tID_setter(instance):
+@given(instance=xDstmdata_subtype_strategy)
+def test_xdstmdata_subtype_tID_setter(instance):
     original = instance.tID
     instance.tID = original
     assert instance.tID == original
 
-@given(instance=xDstmdata::vVariable_strategy)
+@given(instance=xDstmdata_vVariable_strategy)
 @settings(max_examples=50)
-def test_xdstmdata::vvariable_instantiation(instance):
-    assert isinstance(instance, xDstmdata::vVariable)
-
-@given(instance=xDstmdata::vVariable_strategy)
-def test_xdstmdata::vvariable_tString_type(instance):
-    assert isinstance(instance.tString, str)
+def test_xdstmdata_vvariable_instantiation(instance):
+    assert isinstance(instance, xDstmdata_vVariable)
 
 
-@given(instance=xDstmdata::vVariable_strategy)
-def test_xdstmdata::vvariable_tString_setter(instance):
-    original = instance.tString
-    instance.tString = original
-    assert instance.tString == original
 
-@given(instance=xDstmdata::vVariable_strategy)
-def test_xdstmdata::vvariable_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=xDstmdata::vVariable_strategy)
-def test_xdstmdata::vvariable_name_setter(instance):
+@given(instance=xDstmdata_vVariable_strategy)
+def test_xdstmdata_vvariable_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=xDstmdata::vVariable_strategy)
-def test_xdstmdata::vvariable_tID_type(instance):
-    assert isinstance(instance.tID, str)
 
 
-@given(instance=xDstmdata::vVariable_strategy)
-def test_xdstmdata::vvariable_tID_setter(instance):
-    original = instance.tID
-    instance.tID = original
-    assert instance.tID == original
-
-@given(instance=xDstmdata::cExtchannel_strategy)
-@settings(max_examples=50)
-def test_xdstmdata::cextchannel_instantiation(instance):
-    assert isinstance(instance, xDstmdata::cExtchannel)
-
-@given(instance=xDstmdata::cExtchannel_strategy)
-def test_xdstmdata::cextchannel_tString_type(instance):
-    assert isinstance(instance.tString, str)
-
-
-@given(instance=xDstmdata::cExtchannel_strategy)
-def test_xdstmdata::cextchannel_tString_setter(instance):
+@given(instance=xDstmdata_vVariable_strategy)
+def test_xdstmdata_vvariable_tString_setter(instance):
     original = instance.tString
     instance.tString = original
     assert instance.tString == original
 
-@given(instance=xDstmdata::cExtchannel_strategy)
-def test_xdstmdata::cextchannel_tID_type(instance):
-    assert isinstance(instance.tID, str)
 
 
-@given(instance=xDstmdata::cExtchannel_strategy)
-def test_xdstmdata::cextchannel_tID_setter(instance):
+@given(instance=xDstmdata_vVariable_strategy)
+def test_xdstmdata_vvariable_tID_setter(instance):
     original = instance.tID
     instance.tID = original
     assert instance.tID == original
 
-@given(instance=xDstmdata::cExtchannel_strategy)
-def test_xdstmdata::cextchannel_name_type(instance):
-    assert isinstance(instance.name, str)
+@given(instance=xDstmdata_cExtchannel_strategy)
+@settings(max_examples=50)
+def test_xdstmdata_cextchannel_instantiation(instance):
+    assert isinstance(instance, xDstmdata_cExtchannel)
 
 
-@given(instance=xDstmdata::cExtchannel_strategy)
-def test_xdstmdata::cextchannel_name_setter(instance):
+
+@given(instance=xDstmdata_cExtchannel_strategy)
+def test_xdstmdata_cextchannel_tString_setter(instance):
+    original = instance.tString
+    instance.tString = original
+    assert instance.tString == original
+
+
+
+@given(instance=xDstmdata_cExtchannel_strategy)
+def test_xdstmdata_cextchannel_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=xDstmdata::cIntchannel_strategy)
-@settings(max_examples=50)
-def test_xdstmdata::cintchannel_instantiation(instance):
-    assert isinstance(instance, xDstmdata::cIntchannel)
-
-@given(instance=xDstmdata::cIntchannel_strategy)
-def test_xdstmdata::cintchannel_tID_type(instance):
-    assert isinstance(instance.tID, str)
 
 
-@given(instance=xDstmdata::cIntchannel_strategy)
-def test_xdstmdata::cintchannel_tID_setter(instance):
+@given(instance=xDstmdata_cExtchannel_strategy)
+def test_xdstmdata_cextchannel_tID_setter(instance):
     original = instance.tID
     instance.tID = original
     assert instance.tID == original
 
-@given(instance=xDstmdata::cIntchannel_strategy)
-def test_xdstmdata::cintchannel_bound_type(instance):
-    assert isinstance(instance.bound, int)
+@given(instance=xDstmdata_cIntchannel_strategy)
+@settings(max_examples=50)
+def test_xdstmdata_cintchannel_instantiation(instance):
+    assert isinstance(instance, xDstmdata_cIntchannel)
 
 
-@given(instance=xDstmdata::cIntchannel_strategy)
-def test_xdstmdata::cintchannel_bound_setter(instance):
+
+@given(instance=xDstmdata_cIntchannel_strategy)
+def test_xdstmdata_cintchannel_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+
+
+@given(instance=xDstmdata_cIntchannel_strategy)
+def test_xdstmdata_cintchannel_tString_setter(instance):
+    original = instance.tString
+    instance.tString = original
+    assert instance.tString == original
+
+
+
+@given(instance=xDstmdata_cIntchannel_strategy)
+def test_xdstmdata_cintchannel_tID_setter(instance):
+    original = instance.tID
+    instance.tID = original
+    assert instance.tID == original
+
+
+
+@given(instance=xDstmdata_cIntchannel_strategy)
+def test_xdstmdata_cintchannel_bound_setter(instance):
     original = instance.bound
     instance.bound = original
     assert instance.bound == original
 
-@given(instance=xDstmdata::cIntchannel_strategy)
-def test_xdstmdata::cintchannel_tString_type(instance):
-    assert isinstance(instance.tString, str)
-
-
-@given(instance=xDstmdata::cIntchannel_strategy)
-def test_xdstmdata::cintchannel_tString_setter(instance):
-    original = instance.tString
-    instance.tString = original
-    assert instance.tString == original
-
-@given(instance=xDstmdata::cIntchannel_strategy)
-def test_xdstmdata::cintchannel_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=xDstmdata::cIntchannel_strategy)
-def test_xdstmdata::cintchannel_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
-
-@given(instance=xDstmdata::tMultitype_strategy)
+@given(instance=xDstmdata_tMultitype_strategy)
 @settings(max_examples=50)
-def test_xdstmdata::tmultitype_instantiation(instance):
-    assert isinstance(instance, xDstmdata::tMultitype)
-
-@given(instance=xDstmdata::tMultitype_strategy)
-def test_xdstmdata::tmultitype_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_xdstmdata_tmultitype_instantiation(instance):
+    assert isinstance(instance, xDstmdata_tMultitype)
 
 
-@given(instance=xDstmdata::tMultitype_strategy)
-def test_xdstmdata::tmultitype_name_setter(instance):
+
+@given(instance=xDstmdata_tMultitype_strategy)
+def test_xdstmdata_tmultitype_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=xDstmdata::tCompound_strategy)
+@given(instance=xDstmdata_tCompound_strategy)
 @settings(max_examples=50)
-def test_xdstmdata::tcompound_instantiation(instance):
-    assert isinstance(instance, xDstmdata::tCompound)
-
-@given(instance=xDstmdata::tCompound_strategy)
-def test_xdstmdata::tcompound_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_xdstmdata_tcompound_instantiation(instance):
+    assert isinstance(instance, xDstmdata_tCompound)
 
 
-@given(instance=xDstmdata::tCompound_strategy)
-def test_xdstmdata::tcompound_name_setter(instance):
+
+@given(instance=xDstmdata_tCompound_strategy)
+def test_xdstmdata_tcompound_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=xDstmdata::tEnum_strategy)
+@given(instance=xDstmdata_tEnum_strategy)
 @settings(max_examples=50)
-def test_xdstmdata::tenum_instantiation(instance):
-    assert isinstance(instance, xDstmdata::tEnum)
-
-@given(instance=xDstmdata::tEnum_strategy)
-def test_xdstmdata::tenum_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_xdstmdata_tenum_instantiation(instance):
+    assert isinstance(instance, xDstmdata_tEnum)
 
 
-@given(instance=xDstmdata::tEnum_strategy)
-def test_xdstmdata::tenum_name_setter(instance):
+
+@given(instance=xDstmdata_tEnum_strategy)
+def test_xdstmdata_tenum_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=xDstmdata::tEnum_strategy)
-def test_xdstmdata::tenum_literals_type(instance):
-    assert isinstance(instance.literals, str)
 
 
-@given(instance=xDstmdata::tEnum_strategy)
-def test_xdstmdata::tenum_literals_setter(instance):
+@given(instance=xDstmdata_tEnum_strategy)
+def test_xdstmdata_tenum_literals_setter(instance):
     original = instance.literals
     instance.literals = original
     assert instance.literals == original
 
-@given(instance=xDstmdata::tTypes_strategy)
+@given(instance=xDstmdata_tTypes_strategy)
 @settings(max_examples=50)
-def test_xdstmdata::ttypes_instantiation(instance):
-    assert isinstance(instance, xDstmdata::tTypes)
+def test_xdstmdata_ttypes_instantiation(instance):
+    assert isinstance(instance, xDstmdata_tTypes)

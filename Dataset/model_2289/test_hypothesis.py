@@ -3,19 +3,19 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    gradingsystem::Grade,
-    gradingsystem::GradingScheme,
+from python_code import (
+    gradingsystem_Grade,
+    gradingsystem_GradingScheme,
     Task,
-    gradingsystem::TaskGroup,
-    gradingsystem::ConcreteTask,
-    gradingsystem::MinRequirement,
-    gradingsystem::Task,
-    gradingsystem::Grading,
-    gradingsystem::Course,
-    gradingsystem::GradingSystem,
+    gradingsystem_TaskGroup,
+    gradingsystem_ConcreteTask,
+    gradingsystem_MinRequirement,
+    gradingsystem_Task,
+    gradingsystem_Grading,
+    gradingsystem_Course,
+    gradingsystem_GradingSystem,
     MinRequirementsType,
 )
 
@@ -25,33 +25,33 @@ from classes import (
 
 
 
-def test_gradingsystem::grade_is_not_abstract():
-    assert not inspect.isabstract(gradingsystem::Grade)
+def test_gradingsystem_grade_is_not_abstract():
+    assert not inspect.isabstract(gradingsystem_Grade)
 
 
-def test_gradingsystem::grade_constructor_exists():
-    assert callable(gradingsystem::Grade.__init__)
+def test_gradingsystem_grade_constructor_exists():
+    assert callable(gradingsystem_Grade.__init__)
 
 
-def test_gradingsystem::grade_constructor_args():
-    sig = inspect.signature(gradingsystem::Grade.__init__)
+def test_gradingsystem_grade_constructor_args():
+    sig = inspect.signature(gradingsystem_Grade.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
     assert "requiredPoints" in params, "Missing parameter 'requiredPoints'"
 
-def test_gradingsystem::grade_has_name():
-    assert hasattr(gradingsystem::Grade, "name")
+def test_gradingsystem_grade_has_name():
+    assert hasattr(gradingsystem_Grade, "name")
     descriptor = None
-    for klass in gradingsystem::Grade.__mro__:
+    for klass in gradingsystem_Grade.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
-def test_gradingsystem::grade_has_requiredPoints():
-    assert hasattr(gradingsystem::Grade, "requiredPoints")
+def test_gradingsystem_grade_has_requiredPoints():
+    assert hasattr(gradingsystem_Grade, "requiredPoints")
     descriptor = None
-    for klass in gradingsystem::Grade.__mro__:
+    for klass in gradingsystem_Grade.__mro__:
         if "requiredPoints" in klass.__dict__:
             descriptor = klass.__dict__["requiredPoints"]
             break
@@ -59,16 +59,16 @@ def test_gradingsystem::grade_has_requiredPoints():
 
 
 
-def test_gradingsystem::gradingscheme_is_not_abstract():
-    assert not inspect.isabstract(gradingsystem::GradingScheme)
+def test_gradingsystem_gradingscheme_is_not_abstract():
+    assert not inspect.isabstract(gradingsystem_GradingScheme)
 
 
-def test_gradingsystem::gradingscheme_constructor_exists():
-    assert callable(gradingsystem::GradingScheme.__init__)
+def test_gradingsystem_gradingscheme_constructor_exists():
+    assert callable(gradingsystem_GradingScheme.__init__)
 
 
-def test_gradingsystem::gradingscheme_constructor_args():
-    sig = inspect.signature(gradingsystem::GradingScheme.__init__)
+def test_gradingsystem_gradingscheme_constructor_args():
+    sig = inspect.signature(gradingsystem_GradingScheme.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -87,37 +87,37 @@ def test_task_constructor_args():
 
 
 
-def test_gradingsystem::taskgroup_is_not_abstract():
-    assert not inspect.isabstract(gradingsystem::TaskGroup)
+def test_gradingsystem_taskgroup_is_not_abstract():
+    assert not inspect.isabstract(gradingsystem_TaskGroup)
 
 
-def test_gradingsystem::taskgroup_constructor_exists():
-    assert callable(gradingsystem::TaskGroup.__init__)
+def test_gradingsystem_taskgroup_constructor_exists():
+    assert callable(gradingsystem_TaskGroup.__init__)
 
 
-def test_gradingsystem::taskgroup_constructor_args():
-    sig = inspect.signature(gradingsystem::TaskGroup.__init__)
+def test_gradingsystem_taskgroup_constructor_args():
+    sig = inspect.signature(gradingsystem_TaskGroup.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_gradingsystem::concretetask_is_not_abstract():
-    assert not inspect.isabstract(gradingsystem::ConcreteTask)
+def test_gradingsystem_concretetask_is_not_abstract():
+    assert not inspect.isabstract(gradingsystem_ConcreteTask)
 
 
-def test_gradingsystem::concretetask_constructor_exists():
-    assert callable(gradingsystem::ConcreteTask.__init__)
+def test_gradingsystem_concretetask_constructor_exists():
+    assert callable(gradingsystem_ConcreteTask.__init__)
 
 
-def test_gradingsystem::concretetask_constructor_args():
-    sig = inspect.signature(gradingsystem::ConcreteTask.__init__)
+def test_gradingsystem_concretetask_constructor_args():
+    sig = inspect.signature(gradingsystem_ConcreteTask.__init__)
     params = list(sig.parameters.keys())
     assert "maxPoints" in params, "Missing parameter 'maxPoints'"
 
-def test_gradingsystem::concretetask_has_maxPoints():
-    assert hasattr(gradingsystem::ConcreteTask, "maxPoints")
+def test_gradingsystem_concretetask_has_maxPoints():
+    assert hasattr(gradingsystem_ConcreteTask, "maxPoints")
     descriptor = None
-    for klass in gradingsystem::ConcreteTask.__mro__:
+    for klass in gradingsystem_ConcreteTask.__mro__:
         if "maxPoints" in klass.__dict__:
             descriptor = klass.__dict__["maxPoints"]
             break
@@ -125,33 +125,33 @@ def test_gradingsystem::concretetask_has_maxPoints():
 
 
 
-def test_gradingsystem::minrequirement_is_not_abstract():
-    assert not inspect.isabstract(gradingsystem::MinRequirement)
+def test_gradingsystem_minrequirement_is_not_abstract():
+    assert not inspect.isabstract(gradingsystem_MinRequirement)
 
 
-def test_gradingsystem::minrequirement_constructor_exists():
-    assert callable(gradingsystem::MinRequirement.__init__)
+def test_gradingsystem_minrequirement_constructor_exists():
+    assert callable(gradingsystem_MinRequirement.__init__)
 
 
-def test_gradingsystem::minrequirement_constructor_args():
-    sig = inspect.signature(gradingsystem::MinRequirement.__init__)
+def test_gradingsystem_minrequirement_constructor_args():
+    sig = inspect.signature(gradingsystem_MinRequirement.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
     assert "type" in params, "Missing parameter 'type'"
 
-def test_gradingsystem::minrequirement_has_value():
-    assert hasattr(gradingsystem::MinRequirement, "value")
+def test_gradingsystem_minrequirement_has_value():
+    assert hasattr(gradingsystem_MinRequirement, "value")
     descriptor = None
-    for klass in gradingsystem::MinRequirement.__mro__:
+    for klass in gradingsystem_MinRequirement.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
     assert isinstance(descriptor, property)
 
-def test_gradingsystem::minrequirement_has_type():
-    assert hasattr(gradingsystem::MinRequirement, "type")
+def test_gradingsystem_minrequirement_has_type():
+    assert hasattr(gradingsystem_MinRequirement, "type")
     descriptor = None
-    for klass in gradingsystem::MinRequirement.__mro__:
+    for klass in gradingsystem_MinRequirement.__mro__:
         if "type" in klass.__dict__:
             descriptor = klass.__dict__["type"]
             break
@@ -159,23 +159,23 @@ def test_gradingsystem::minrequirement_has_type():
 
 
 
-def test_gradingsystem::task_is_not_abstract():
-    assert not inspect.isabstract(gradingsystem::Task)
+def test_gradingsystem_task_is_not_abstract():
+    assert not inspect.isabstract(gradingsystem_Task)
 
 
-def test_gradingsystem::task_constructor_exists():
-    assert callable(gradingsystem::Task.__init__)
+def test_gradingsystem_task_constructor_exists():
+    assert callable(gradingsystem_Task.__init__)
 
 
-def test_gradingsystem::task_constructor_args():
-    sig = inspect.signature(gradingsystem::Task.__init__)
+def test_gradingsystem_task_constructor_args():
+    sig = inspect.signature(gradingsystem_Task.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_gradingsystem::task_has_name():
-    assert hasattr(gradingsystem::Task, "name")
+def test_gradingsystem_task_has_name():
+    assert hasattr(gradingsystem_Task, "name")
     descriptor = None
-    for klass in gradingsystem::Task.__mro__:
+    for klass in gradingsystem_Task.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -183,23 +183,23 @@ def test_gradingsystem::task_has_name():
 
 
 
-def test_gradingsystem::grading_is_not_abstract():
-    assert not inspect.isabstract(gradingsystem::Grading)
+def test_gradingsystem_grading_is_not_abstract():
+    assert not inspect.isabstract(gradingsystem_Grading)
 
 
-def test_gradingsystem::grading_constructor_exists():
-    assert callable(gradingsystem::Grading.__init__)
+def test_gradingsystem_grading_constructor_exists():
+    assert callable(gradingsystem_Grading.__init__)
 
 
-def test_gradingsystem::grading_constructor_args():
-    sig = inspect.signature(gradingsystem::Grading.__init__)
+def test_gradingsystem_grading_constructor_args():
+    sig = inspect.signature(gradingsystem_Grading.__init__)
     params = list(sig.parameters.keys())
     assert "semester" in params, "Missing parameter 'semester'"
 
-def test_gradingsystem::grading_has_semester():
-    assert hasattr(gradingsystem::Grading, "semester")
+def test_gradingsystem_grading_has_semester():
+    assert hasattr(gradingsystem_Grading, "semester")
     descriptor = None
-    for klass in gradingsystem::Grading.__mro__:
+    for klass in gradingsystem_Grading.__mro__:
         if "semester" in klass.__dict__:
             descriptor = klass.__dict__["semester"]
             break
@@ -207,23 +207,23 @@ def test_gradingsystem::grading_has_semester():
 
 
 
-def test_gradingsystem::course_is_not_abstract():
-    assert not inspect.isabstract(gradingsystem::Course)
+def test_gradingsystem_course_is_not_abstract():
+    assert not inspect.isabstract(gradingsystem_Course)
 
 
-def test_gradingsystem::course_constructor_exists():
-    assert callable(gradingsystem::Course.__init__)
+def test_gradingsystem_course_constructor_exists():
+    assert callable(gradingsystem_Course.__init__)
 
 
-def test_gradingsystem::course_constructor_args():
-    sig = inspect.signature(gradingsystem::Course.__init__)
+def test_gradingsystem_course_constructor_args():
+    sig = inspect.signature(gradingsystem_Course.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_gradingsystem::course_has_name():
-    assert hasattr(gradingsystem::Course, "name")
+def test_gradingsystem_course_has_name():
+    assert hasattr(gradingsystem_Course, "name")
     descriptor = None
-    for klass in gradingsystem::Course.__mro__:
+    for klass in gradingsystem_Course.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -231,16 +231,16 @@ def test_gradingsystem::course_has_name():
 
 
 
-def test_gradingsystem::gradingsystem_is_not_abstract():
-    assert not inspect.isabstract(gradingsystem::GradingSystem)
+def test_gradingsystem_gradingsystem_is_not_abstract():
+    assert not inspect.isabstract(gradingsystem_GradingSystem)
 
 
-def test_gradingsystem::gradingsystem_constructor_exists():
-    assert callable(gradingsystem::GradingSystem.__init__)
+def test_gradingsystem_gradingsystem_constructor_exists():
+    assert callable(gradingsystem_GradingSystem.__init__)
 
 
-def test_gradingsystem::gradingsystem_constructor_args():
-    sig = inspect.signature(gradingsystem::GradingSystem.__init__)
+def test_gradingsystem_gradingsystem_constructor_args():
+    sig = inspect.signature(gradingsystem_GradingSystem.__init__)
     params = list(sig.parameters.keys())
 
 def test_minrequirementstype_exists():
@@ -270,187 +270,163 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-gradingsystem::Grade_strategy = st.builds(
-    gradingsystem::Grade,
+gradingsystem_Grade_strategy = st.builds(
+    gradingsystem_Grade,
     name=
         safe_text,
     requiredPoints=
         st.integers()
 )
-gradingsystem::GradingScheme_strategy = st.builds(
-    gradingsystem::GradingScheme,
+gradingsystem_GradingScheme_strategy = st.builds(
+    gradingsystem_GradingScheme,
 )
 Task_strategy = st.builds(
     Task,
 )
-gradingsystem::TaskGroup_strategy = st.builds(
-    gradingsystem::TaskGroup,
+gradingsystem_TaskGroup_strategy = st.builds(
+    gradingsystem_TaskGroup,
 )
-gradingsystem::ConcreteTask_strategy = st.builds(
-    gradingsystem::ConcreteTask,
+gradingsystem_ConcreteTask_strategy = st.builds(
+    gradingsystem_ConcreteTask,
     maxPoints=
         st.integers()
 )
-gradingsystem::MinRequirement_strategy = st.builds(
-    gradingsystem::MinRequirement,
+gradingsystem_MinRequirement_strategy = st.builds(
+    gradingsystem_MinRequirement,
     value=
         st.integers(),
     type=
         safe_text
 )
-gradingsystem::Task_strategy = st.builds(
-    gradingsystem::Task,
+gradingsystem_Task_strategy = st.builds(
+    gradingsystem_Task,
     name=
         safe_text
 )
-gradingsystem::Grading_strategy = st.builds(
-    gradingsystem::Grading,
+gradingsystem_Grading_strategy = st.builds(
+    gradingsystem_Grading,
     semester=
         safe_text
 )
-gradingsystem::Course_strategy = st.builds(
-    gradingsystem::Course,
+gradingsystem_Course_strategy = st.builds(
+    gradingsystem_Course,
     name=
         safe_text
 )
-gradingsystem::GradingSystem_strategy = st.builds(
-    gradingsystem::GradingSystem,
+gradingsystem_GradingSystem_strategy = st.builds(
+    gradingsystem_GradingSystem,
 )
 
-@given(instance=gradingsystem::Grade_strategy)
+@given(instance=gradingsystem_Grade_strategy)
 @settings(max_examples=50)
-def test_gradingsystem::grade_instantiation(instance):
-    assert isinstance(instance, gradingsystem::Grade)
-
-@given(instance=gradingsystem::Grade_strategy)
-def test_gradingsystem::grade_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_gradingsystem_grade_instantiation(instance):
+    assert isinstance(instance, gradingsystem_Grade)
 
 
-@given(instance=gradingsystem::Grade_strategy)
-def test_gradingsystem::grade_name_setter(instance):
+
+@given(instance=gradingsystem_Grade_strategy)
+def test_gradingsystem_grade_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=gradingsystem::Grade_strategy)
-def test_gradingsystem::grade_requiredPoints_type(instance):
-    assert isinstance(instance.requiredPoints, int)
 
 
-@given(instance=gradingsystem::Grade_strategy)
-def test_gradingsystem::grade_requiredPoints_setter(instance):
+@given(instance=gradingsystem_Grade_strategy)
+def test_gradingsystem_grade_requiredPoints_setter(instance):
     original = instance.requiredPoints
     instance.requiredPoints = original
     assert instance.requiredPoints == original
 
-@given(instance=gradingsystem::GradingScheme_strategy)
+@given(instance=gradingsystem_GradingScheme_strategy)
 @settings(max_examples=50)
-def test_gradingsystem::gradingscheme_instantiation(instance):
-    assert isinstance(instance, gradingsystem::GradingScheme)
+def test_gradingsystem_gradingscheme_instantiation(instance):
+    assert isinstance(instance, gradingsystem_GradingScheme)
 
 @given(instance=Task_strategy)
 @settings(max_examples=50)
 def test_task_instantiation(instance):
     assert isinstance(instance, Task)
 
-@given(instance=gradingsystem::TaskGroup_strategy)
+@given(instance=gradingsystem_TaskGroup_strategy)
 @settings(max_examples=50)
-def test_gradingsystem::taskgroup_instantiation(instance):
-    assert isinstance(instance, gradingsystem::TaskGroup)
+def test_gradingsystem_taskgroup_instantiation(instance):
+    assert isinstance(instance, gradingsystem_TaskGroup)
 
-@given(instance=gradingsystem::ConcreteTask_strategy)
+@given(instance=gradingsystem_ConcreteTask_strategy)
 @settings(max_examples=50)
-def test_gradingsystem::concretetask_instantiation(instance):
-    assert isinstance(instance, gradingsystem::ConcreteTask)
-
-@given(instance=gradingsystem::ConcreteTask_strategy)
-def test_gradingsystem::concretetask_maxPoints_type(instance):
-    assert isinstance(instance.maxPoints, int)
+def test_gradingsystem_concretetask_instantiation(instance):
+    assert isinstance(instance, gradingsystem_ConcreteTask)
 
 
-@given(instance=gradingsystem::ConcreteTask_strategy)
-def test_gradingsystem::concretetask_maxPoints_setter(instance):
+
+@given(instance=gradingsystem_ConcreteTask_strategy)
+def test_gradingsystem_concretetask_maxPoints_setter(instance):
     original = instance.maxPoints
     instance.maxPoints = original
     assert instance.maxPoints == original
 
-@given(instance=gradingsystem::MinRequirement_strategy)
+@given(instance=gradingsystem_MinRequirement_strategy)
 @settings(max_examples=50)
-def test_gradingsystem::minrequirement_instantiation(instance):
-    assert isinstance(instance, gradingsystem::MinRequirement)
-
-@given(instance=gradingsystem::MinRequirement_strategy)
-def test_gradingsystem::minrequirement_value_type(instance):
-    assert isinstance(instance.value, int)
+def test_gradingsystem_minrequirement_instantiation(instance):
+    assert isinstance(instance, gradingsystem_MinRequirement)
 
 
-@given(instance=gradingsystem::MinRequirement_strategy)
-def test_gradingsystem::minrequirement_value_setter(instance):
+
+@given(instance=gradingsystem_MinRequirement_strategy)
+def test_gradingsystem_minrequirement_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
 
-@given(instance=gradingsystem::MinRequirement_strategy)
-def test_gradingsystem::minrequirement_type_type(instance):
-    assert isinstance(instance.type, str)
 
 
-@given(instance=gradingsystem::MinRequirement_strategy)
-def test_gradingsystem::minrequirement_type_setter(instance):
+@given(instance=gradingsystem_MinRequirement_strategy)
+def test_gradingsystem_minrequirement_type_setter(instance):
     original = instance.type
     instance.type = original
     assert instance.type == original
 
-@given(instance=gradingsystem::Task_strategy)
+@given(instance=gradingsystem_Task_strategy)
 @settings(max_examples=50)
-def test_gradingsystem::task_instantiation(instance):
-    assert isinstance(instance, gradingsystem::Task)
-
-@given(instance=gradingsystem::Task_strategy)
-def test_gradingsystem::task_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_gradingsystem_task_instantiation(instance):
+    assert isinstance(instance, gradingsystem_Task)
 
 
-@given(instance=gradingsystem::Task_strategy)
-def test_gradingsystem::task_name_setter(instance):
+
+@given(instance=gradingsystem_Task_strategy)
+def test_gradingsystem_task_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=gradingsystem::Grading_strategy)
+@given(instance=gradingsystem_Grading_strategy)
 @settings(max_examples=50)
-def test_gradingsystem::grading_instantiation(instance):
-    assert isinstance(instance, gradingsystem::Grading)
-
-@given(instance=gradingsystem::Grading_strategy)
-def test_gradingsystem::grading_semester_type(instance):
-    assert isinstance(instance.semester, str)
+def test_gradingsystem_grading_instantiation(instance):
+    assert isinstance(instance, gradingsystem_Grading)
 
 
-@given(instance=gradingsystem::Grading_strategy)
-def test_gradingsystem::grading_semester_setter(instance):
+
+@given(instance=gradingsystem_Grading_strategy)
+def test_gradingsystem_grading_semester_setter(instance):
     original = instance.semester
     instance.semester = original
     assert instance.semester == original
 
-@given(instance=gradingsystem::Course_strategy)
+@given(instance=gradingsystem_Course_strategy)
 @settings(max_examples=50)
-def test_gradingsystem::course_instantiation(instance):
-    assert isinstance(instance, gradingsystem::Course)
-
-@given(instance=gradingsystem::Course_strategy)
-def test_gradingsystem::course_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_gradingsystem_course_instantiation(instance):
+    assert isinstance(instance, gradingsystem_Course)
 
 
-@given(instance=gradingsystem::Course_strategy)
-def test_gradingsystem::course_name_setter(instance):
+
+@given(instance=gradingsystem_Course_strategy)
+def test_gradingsystem_course_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=gradingsystem::GradingSystem_strategy)
+@given(instance=gradingsystem_GradingSystem_strategy)
 @settings(max_examples=50)
-def test_gradingsystem::gradingsystem_instantiation(instance):
-    assert isinstance(instance, gradingsystem::GradingSystem)
+def test_gradingsystem_gradingsystem_instantiation(instance):
+    assert isinstance(instance, gradingsystem_GradingSystem)

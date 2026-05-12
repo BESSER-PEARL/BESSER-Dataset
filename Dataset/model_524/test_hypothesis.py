@@ -3,15 +3,15 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     Person,
-    family::Woman,
-    family::Man,
+    family_Woman,
+    family_Man,
     EModelElement,
-    family::Person,
-    family::Family,
+    family_Person,
+    family_Family,
     Month,
 )
 
@@ -35,30 +35,30 @@ def test_person_constructor_args():
 
 
 
-def test_family::woman_is_not_abstract():
-    assert not inspect.isabstract(family::Woman)
+def test_family_woman_is_not_abstract():
+    assert not inspect.isabstract(family_Woman)
 
 
-def test_family::woman_constructor_exists():
-    assert callable(family::Woman.__init__)
+def test_family_woman_constructor_exists():
+    assert callable(family_Woman.__init__)
 
 
-def test_family::woman_constructor_args():
-    sig = inspect.signature(family::Woman.__init__)
+def test_family_woman_constructor_args():
+    sig = inspect.signature(family_Woman.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_family::man_is_not_abstract():
-    assert not inspect.isabstract(family::Man)
+def test_family_man_is_not_abstract():
+    assert not inspect.isabstract(family_Man)
 
 
-def test_family::man_constructor_exists():
-    assert callable(family::Man.__init__)
+def test_family_man_constructor_exists():
+    assert callable(family_Man.__init__)
 
 
-def test_family::man_constructor_args():
-    sig = inspect.signature(family::Man.__init__)
+def test_family_man_constructor_args():
+    sig = inspect.signature(family_Man.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -77,97 +77,97 @@ def test_emodelelement_constructor_args():
 
 
 
-def test_family::person_is_not_abstract():
-    assert not inspect.isabstract(family::Person)
+def test_family_person_is_not_abstract():
+    assert not inspect.isabstract(family_Person)
 
 
-def test_family::person_constructor_exists():
-    assert callable(family::Person.__init__)
+def test_family_person_constructor_exists():
+    assert callable(family_Person.__init__)
 
 
-def test_family::person_constructor_args():
-    sig = inspect.signature(family::Person.__init__)
+def test_family_person_constructor_args():
+    sig = inspect.signature(family_Person.__init__)
     params = list(sig.parameters.keys())
-    assert "birthDay" in params, "Missing parameter 'birthDay'"
     assert "lastName" in params, "Missing parameter 'lastName'"
-    assert "birthMonth" in params, "Missing parameter 'birthMonth'"
     assert "birthYear" in params, "Missing parameter 'birthYear'"
     assert "birthCity" in params, "Missing parameter 'birthCity'"
     assert "firstName" in params, "Missing parameter 'firstName'"
+    assert "birthMonth" in params, "Missing parameter 'birthMonth'"
+    assert "birthDay" in params, "Missing parameter 'birthDay'"
 
-def test_family::person_has_birthDay():
-    assert hasattr(family::Person, "birthDay")
+def test_family_person_has_lastName():
+    assert hasattr(family_Person, "lastName")
     descriptor = None
-    for klass in family::Person.__mro__:
-        if "birthDay" in klass.__dict__:
-            descriptor = klass.__dict__["birthDay"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_family::person_has_lastName():
-    assert hasattr(family::Person, "lastName")
-    descriptor = None
-    for klass in family::Person.__mro__:
+    for klass in family_Person.__mro__:
         if "lastName" in klass.__dict__:
             descriptor = klass.__dict__["lastName"]
             break
     assert isinstance(descriptor, property)
 
-def test_family::person_has_birthMonth():
-    assert hasattr(family::Person, "birthMonth")
+def test_family_person_has_birthYear():
+    assert hasattr(family_Person, "birthYear")
     descriptor = None
-    for klass in family::Person.__mro__:
-        if "birthMonth" in klass.__dict__:
-            descriptor = klass.__dict__["birthMonth"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_family::person_has_birthYear():
-    assert hasattr(family::Person, "birthYear")
-    descriptor = None
-    for klass in family::Person.__mro__:
+    for klass in family_Person.__mro__:
         if "birthYear" in klass.__dict__:
             descriptor = klass.__dict__["birthYear"]
             break
     assert isinstance(descriptor, property)
 
-def test_family::person_has_birthCity():
-    assert hasattr(family::Person, "birthCity")
+def test_family_person_has_birthCity():
+    assert hasattr(family_Person, "birthCity")
     descriptor = None
-    for klass in family::Person.__mro__:
+    for klass in family_Person.__mro__:
         if "birthCity" in klass.__dict__:
             descriptor = klass.__dict__["birthCity"]
             break
     assert isinstance(descriptor, property)
 
-def test_family::person_has_firstName():
-    assert hasattr(family::Person, "firstName")
+def test_family_person_has_firstName():
+    assert hasattr(family_Person, "firstName")
     descriptor = None
-    for klass in family::Person.__mro__:
+    for klass in family_Person.__mro__:
         if "firstName" in klass.__dict__:
             descriptor = klass.__dict__["firstName"]
             break
     assert isinstance(descriptor, property)
 
+def test_family_person_has_birthMonth():
+    assert hasattr(family_Person, "birthMonth")
+    descriptor = None
+    for klass in family_Person.__mro__:
+        if "birthMonth" in klass.__dict__:
+            descriptor = klass.__dict__["birthMonth"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_family_person_has_birthDay():
+    assert hasattr(family_Person, "birthDay")
+    descriptor = None
+    for klass in family_Person.__mro__:
+        if "birthDay" in klass.__dict__:
+            descriptor = klass.__dict__["birthDay"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_family::family_is_not_abstract():
-    assert not inspect.isabstract(family::Family)
+
+def test_family_family_is_not_abstract():
+    assert not inspect.isabstract(family_Family)
 
 
-def test_family::family_constructor_exists():
-    assert callable(family::Family.__init__)
+def test_family_family_constructor_exists():
+    assert callable(family_Family.__init__)
 
 
-def test_family::family_constructor_args():
-    sig = inspect.signature(family::Family.__init__)
+def test_family_family_constructor_args():
+    sig = inspect.signature(family_Family.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_family::family_has_name():
-    assert hasattr(family::Family, "name")
+def test_family_family_has_name():
+    assert hasattr(family_Family, "name")
     descriptor = None
-    for klass in family::Family.__mro__:
+    for klass in family_Family.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -181,18 +181,18 @@ def test_month_has_all_literals():
     # Collect the names of literals in this Enumeration
     enum_literals = [lit.name for lit in Month]
     expected_literals = [
-        "April",
         "March",
-        "September",
+        "April",
+        "July",
         "October",
         "November",
-        "February",
-        "July",
-        "January",
         "May",
+        "January",
+        "September",
+        "February",
+        "June",
         "August",
         "December",
-        "June",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
@@ -213,32 +213,32 @@ safe_text = st.text(
 Person_strategy = st.builds(
     Person,
 )
-family::Woman_strategy = st.builds(
-    family::Woman,
+family_Woman_strategy = st.builds(
+    family_Woman,
 )
-family::Man_strategy = st.builds(
-    family::Man,
+family_Man_strategy = st.builds(
+    family_Man,
 )
 EModelElement_strategy = st.builds(
     EModelElement,
 )
-family::Person_strategy = st.builds(
-    family::Person,
-    birthDay=
-        st.integers(),
+family_Person_strategy = st.builds(
+    family_Person,
     lastName=
-        safe_text,
-    birthMonth=
         safe_text,
     birthYear=
         st.integers(),
     birthCity=
         safe_text,
     firstName=
-        safe_text
+        safe_text,
+    birthMonth=
+        safe_text,
+    birthDay=
+        st.integers()
 )
-family::Family_strategy = st.builds(
-    family::Family,
+family_Family_strategy = st.builds(
+    family_Family,
     name=
         safe_text
 )
@@ -248,104 +248,83 @@ family::Family_strategy = st.builds(
 def test_person_instantiation(instance):
     assert isinstance(instance, Person)
 
-@given(instance=family::Woman_strategy)
+@given(instance=family_Woman_strategy)
 @settings(max_examples=50)
-def test_family::woman_instantiation(instance):
-    assert isinstance(instance, family::Woman)
+def test_family_woman_instantiation(instance):
+    assert isinstance(instance, family_Woman)
 
-@given(instance=family::Man_strategy)
+@given(instance=family_Man_strategy)
 @settings(max_examples=50)
-def test_family::man_instantiation(instance):
-    assert isinstance(instance, family::Man)
+def test_family_man_instantiation(instance):
+    assert isinstance(instance, family_Man)
 
 @given(instance=EModelElement_strategy)
 @settings(max_examples=50)
 def test_emodelelement_instantiation(instance):
     assert isinstance(instance, EModelElement)
 
-@given(instance=family::Person_strategy)
+@given(instance=family_Person_strategy)
 @settings(max_examples=50)
-def test_family::person_instantiation(instance):
-    assert isinstance(instance, family::Person)
-
-@given(instance=family::Person_strategy)
-def test_family::person_birthDay_type(instance):
-    assert isinstance(instance.birthDay, int)
+def test_family_person_instantiation(instance):
+    assert isinstance(instance, family_Person)
 
 
-@given(instance=family::Person_strategy)
-def test_family::person_birthDay_setter(instance):
-    original = instance.birthDay
-    instance.birthDay = original
-    assert instance.birthDay == original
 
-@given(instance=family::Person_strategy)
-def test_family::person_lastName_type(instance):
-    assert isinstance(instance.lastName, str)
-
-
-@given(instance=family::Person_strategy)
-def test_family::person_lastName_setter(instance):
+@given(instance=family_Person_strategy)
+def test_family_person_lastName_setter(instance):
     original = instance.lastName
     instance.lastName = original
     assert instance.lastName == original
 
-@given(instance=family::Person_strategy)
-def test_family::person_birthMonth_type(instance):
-    assert isinstance(instance.birthMonth, str)
 
 
-@given(instance=family::Person_strategy)
-def test_family::person_birthMonth_setter(instance):
-    original = instance.birthMonth
-    instance.birthMonth = original
-    assert instance.birthMonth == original
-
-@given(instance=family::Person_strategy)
-def test_family::person_birthYear_type(instance):
-    assert isinstance(instance.birthYear, int)
-
-
-@given(instance=family::Person_strategy)
-def test_family::person_birthYear_setter(instance):
+@given(instance=family_Person_strategy)
+def test_family_person_birthYear_setter(instance):
     original = instance.birthYear
     instance.birthYear = original
     assert instance.birthYear == original
 
-@given(instance=family::Person_strategy)
-def test_family::person_birthCity_type(instance):
-    assert isinstance(instance.birthCity, str)
 
 
-@given(instance=family::Person_strategy)
-def test_family::person_birthCity_setter(instance):
+@given(instance=family_Person_strategy)
+def test_family_person_birthCity_setter(instance):
     original = instance.birthCity
     instance.birthCity = original
     assert instance.birthCity == original
 
-@given(instance=family::Person_strategy)
-def test_family::person_firstName_type(instance):
-    assert isinstance(instance.firstName, str)
 
 
-@given(instance=family::Person_strategy)
-def test_family::person_firstName_setter(instance):
+@given(instance=family_Person_strategy)
+def test_family_person_firstName_setter(instance):
     original = instance.firstName
     instance.firstName = original
     assert instance.firstName == original
 
-@given(instance=family::Family_strategy)
+
+
+@given(instance=family_Person_strategy)
+def test_family_person_birthMonth_setter(instance):
+    original = instance.birthMonth
+    instance.birthMonth = original
+    assert instance.birthMonth == original
+
+
+
+@given(instance=family_Person_strategy)
+def test_family_person_birthDay_setter(instance):
+    original = instance.birthDay
+    instance.birthDay = original
+    assert instance.birthDay == original
+
+@given(instance=family_Family_strategy)
 @settings(max_examples=50)
-def test_family::family_instantiation(instance):
-    assert isinstance(instance, family::Family)
-
-@given(instance=family::Family_strategy)
-def test_family::family_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_family_family_instantiation(instance):
+    assert isinstance(instance, family_Family)
 
 
-@given(instance=family::Family_strategy)
-def test_family::family_name_setter(instance):
+
+@given(instance=family_Family_strategy)
+def test_family_family_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original

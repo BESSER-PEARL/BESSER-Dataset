@@ -3,15 +3,15 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     Feature,
-    featuretree::TreeFeature,
-    core::ITopLevelElement,
-    features::IFeatureDomain,
-    core::AbstractModelElement,
-    featuretree::FeatureTree,
+    featuretree_TreeFeature,
+    core_ITopLevelElement,
+    features_IFeatureDomain,
+    core_AbstractModelElement,
+    featuretree_FeatureTree,
 )
 
 # =============================================================================
@@ -34,23 +34,23 @@ def test_feature_constructor_args():
 
 
 
-def test_featuretree::treefeature_is_not_abstract():
-    assert not inspect.isabstract(featuretree::TreeFeature)
+def test_featuretree_treefeature_is_not_abstract():
+    assert not inspect.isabstract(featuretree_TreeFeature)
 
 
-def test_featuretree::treefeature_constructor_exists():
-    assert callable(featuretree::TreeFeature.__init__)
+def test_featuretree_treefeature_constructor_exists():
+    assert callable(featuretree_TreeFeature.__init__)
 
 
-def test_featuretree::treefeature_constructor_args():
-    sig = inspect.signature(featuretree::TreeFeature.__init__)
+def test_featuretree_treefeature_constructor_args():
+    sig = inspect.signature(featuretree_TreeFeature.__init__)
     params = list(sig.parameters.keys())
     assert "mandatory" in params, "Missing parameter 'mandatory'"
 
-def test_featuretree::treefeature_has_mandatory():
-    assert hasattr(featuretree::TreeFeature, "mandatory")
+def test_featuretree_treefeature_has_mandatory():
+    assert hasattr(featuretree_TreeFeature, "mandatory")
     descriptor = None
-    for klass in featuretree::TreeFeature.__mro__:
+    for klass in featuretree_TreeFeature.__mro__:
         if "mandatory" in klass.__dict__:
             descriptor = klass.__dict__["mandatory"]
             break
@@ -58,58 +58,58 @@ def test_featuretree::treefeature_has_mandatory():
 
 
 
-def test_core::itoplevelelement_is_not_abstract():
-    assert not inspect.isabstract(core::ITopLevelElement)
+def test_core_itoplevelelement_is_not_abstract():
+    assert not inspect.isabstract(core_ITopLevelElement)
 
 
-def test_core::itoplevelelement_constructor_exists():
-    assert callable(core::ITopLevelElement.__init__)
+def test_core_itoplevelelement_constructor_exists():
+    assert callable(core_ITopLevelElement.__init__)
 
 
-def test_core::itoplevelelement_constructor_args():
-    sig = inspect.signature(core::ITopLevelElement.__init__)
+def test_core_itoplevelelement_constructor_args():
+    sig = inspect.signature(core_ITopLevelElement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_features::ifeaturedomain_is_not_abstract():
-    assert not inspect.isabstract(features::IFeatureDomain)
+def test_features_ifeaturedomain_is_not_abstract():
+    assert not inspect.isabstract(features_IFeatureDomain)
 
 
-def test_features::ifeaturedomain_constructor_exists():
-    assert callable(features::IFeatureDomain.__init__)
+def test_features_ifeaturedomain_constructor_exists():
+    assert callable(features_IFeatureDomain.__init__)
 
 
-def test_features::ifeaturedomain_constructor_args():
-    sig = inspect.signature(features::IFeatureDomain.__init__)
+def test_features_ifeaturedomain_constructor_args():
+    sig = inspect.signature(features_IFeatureDomain.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_core::abstractmodelelement_is_not_abstract():
-    assert not inspect.isabstract(core::AbstractModelElement)
+def test_core_abstractmodelelement_is_not_abstract():
+    assert not inspect.isabstract(core_AbstractModelElement)
 
 
-def test_core::abstractmodelelement_constructor_exists():
-    assert callable(core::AbstractModelElement.__init__)
+def test_core_abstractmodelelement_constructor_exists():
+    assert callable(core_AbstractModelElement.__init__)
 
 
-def test_core::abstractmodelelement_constructor_args():
-    sig = inspect.signature(core::AbstractModelElement.__init__)
+def test_core_abstractmodelelement_constructor_args():
+    sig = inspect.signature(core_AbstractModelElement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_featuretree::featuretree_is_not_abstract():
-    assert not inspect.isabstract(featuretree::FeatureTree)
+def test_featuretree_featuretree_is_not_abstract():
+    assert not inspect.isabstract(featuretree_FeatureTree)
 
 
-def test_featuretree::featuretree_constructor_exists():
-    assert callable(featuretree::FeatureTree.__init__)
+def test_featuretree_featuretree_constructor_exists():
+    assert callable(featuretree_FeatureTree.__init__)
 
 
-def test_featuretree::featuretree_constructor_args():
-    sig = inspect.signature(featuretree::FeatureTree.__init__)
+def test_featuretree_featuretree_constructor_args():
+    sig = inspect.signature(featuretree_FeatureTree.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -127,22 +127,22 @@ safe_text = st.text(
 Feature_strategy = st.builds(
     Feature,
 )
-featuretree::TreeFeature_strategy = st.builds(
-    featuretree::TreeFeature,
+featuretree_TreeFeature_strategy = st.builds(
+    featuretree_TreeFeature,
     mandatory=
         st.booleans()
 )
-core::ITopLevelElement_strategy = st.builds(
-    core::ITopLevelElement,
+core_ITopLevelElement_strategy = st.builds(
+    core_ITopLevelElement,
 )
-features::IFeatureDomain_strategy = st.builds(
-    features::IFeatureDomain,
+features_IFeatureDomain_strategy = st.builds(
+    features_IFeatureDomain,
 )
-core::AbstractModelElement_strategy = st.builds(
-    core::AbstractModelElement,
+core_AbstractModelElement_strategy = st.builds(
+    core_AbstractModelElement,
 )
-featuretree::FeatureTree_strategy = st.builds(
-    featuretree::FeatureTree,
+featuretree_FeatureTree_strategy = st.builds(
+    featuretree_FeatureTree,
 )
 
 @given(instance=Feature_strategy)
@@ -150,38 +150,35 @@ featuretree::FeatureTree_strategy = st.builds(
 def test_feature_instantiation(instance):
     assert isinstance(instance, Feature)
 
-@given(instance=featuretree::TreeFeature_strategy)
+@given(instance=featuretree_TreeFeature_strategy)
 @settings(max_examples=50)
-def test_featuretree::treefeature_instantiation(instance):
-    assert isinstance(instance, featuretree::TreeFeature)
-
-@given(instance=featuretree::TreeFeature_strategy)
-def test_featuretree::treefeature_mandatory_type(instance):
-    assert isinstance(instance.mandatory, bool)
+def test_featuretree_treefeature_instantiation(instance):
+    assert isinstance(instance, featuretree_TreeFeature)
 
 
-@given(instance=featuretree::TreeFeature_strategy)
-def test_featuretree::treefeature_mandatory_setter(instance):
+
+@given(instance=featuretree_TreeFeature_strategy)
+def test_featuretree_treefeature_mandatory_setter(instance):
     original = instance.mandatory
     instance.mandatory = original
     assert instance.mandatory == original
 
-@given(instance=core::ITopLevelElement_strategy)
+@given(instance=core_ITopLevelElement_strategy)
 @settings(max_examples=50)
-def test_core::itoplevelelement_instantiation(instance):
-    assert isinstance(instance, core::ITopLevelElement)
+def test_core_itoplevelelement_instantiation(instance):
+    assert isinstance(instance, core_ITopLevelElement)
 
-@given(instance=features::IFeatureDomain_strategy)
+@given(instance=features_IFeatureDomain_strategy)
 @settings(max_examples=50)
-def test_features::ifeaturedomain_instantiation(instance):
-    assert isinstance(instance, features::IFeatureDomain)
+def test_features_ifeaturedomain_instantiation(instance):
+    assert isinstance(instance, features_IFeatureDomain)
 
-@given(instance=core::AbstractModelElement_strategy)
+@given(instance=core_AbstractModelElement_strategy)
 @settings(max_examples=50)
-def test_core::abstractmodelelement_instantiation(instance):
-    assert isinstance(instance, core::AbstractModelElement)
+def test_core_abstractmodelelement_instantiation(instance):
+    assert isinstance(instance, core_AbstractModelElement)
 
-@given(instance=featuretree::FeatureTree_strategy)
+@given(instance=featuretree_FeatureTree_strategy)
 @settings(max_examples=50)
-def test_featuretree::featuretree_instantiation(instance):
-    assert isinstance(instance, featuretree::FeatureTree)
+def test_featuretree_featuretree_instantiation(instance):
+    assert isinstance(instance, featuretree_FeatureTree)

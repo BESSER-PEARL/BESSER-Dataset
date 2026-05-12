@@ -3,7 +3,7 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
 from python_code import (
     Seats,
@@ -82,11 +82,20 @@ def test_ticket_constructor_exists():
 def test_ticket_constructor_args():
     sig = inspect.signature(Ticket.__init__)
     params = list(sig.parameters.keys())
-    assert "DateTime" in params, "Missing parameter 'DateTime'"
     assert "TicketType" in params, "Missing parameter 'TicketType'"
+    assert "DateTime" in params, "Missing parameter 'DateTime'"
+    assert "Gate" in params, "Missing parameter 'Gate'"
     assert "TicketID" in params, "Missing parameter 'TicketID'"
     assert "Price" in params, "Missing parameter 'Price'"
-    assert "Gate" in params, "Missing parameter 'Gate'"
+
+def test_ticket_has_TicketType():
+    assert hasattr(Ticket, "TicketType")
+    descriptor = None
+    for klass in Ticket.__mro__:
+        if "TicketType" in klass.__dict__:
+            descriptor = klass.__dict__["TicketType"]
+            break
+    assert isinstance(descriptor, property)
 
 def test_ticket_has_DateTime():
     assert hasattr(Ticket, "DateTime")
@@ -97,12 +106,12 @@ def test_ticket_has_DateTime():
             break
     assert isinstance(descriptor, property)
 
-def test_ticket_has_TicketType():
-    assert hasattr(Ticket, "TicketType")
+def test_ticket_has_Gate():
+    assert hasattr(Ticket, "Gate")
     descriptor = None
     for klass in Ticket.__mro__:
-        if "TicketType" in klass.__dict__:
-            descriptor = klass.__dict__["TicketType"]
+        if "Gate" in klass.__dict__:
+            descriptor = klass.__dict__["Gate"]
             break
     assert isinstance(descriptor, property)
 
@@ -124,15 +133,6 @@ def test_ticket_has_Price():
             break
     assert isinstance(descriptor, property)
 
-def test_ticket_has_Gate():
-    assert hasattr(Ticket, "Gate")
-    descriptor = None
-    for klass in Ticket.__mro__:
-        if "Gate" in klass.__dict__:
-            descriptor = klass.__dict__["Gate"]
-            break
-    assert isinstance(descriptor, property)
-
 
 
 def test_airport_is_not_abstract():
@@ -146,18 +146,9 @@ def test_airport_constructor_exists():
 def test_airport_constructor_args():
     sig = inspect.signature(Airport.__init__)
     params = list(sig.parameters.keys())
-    assert "Address" in params, "Missing parameter 'Address'"
     assert "AirportID" in params, "Missing parameter 'AirportID'"
+    assert "Address" in params, "Missing parameter 'Address'"
     assert "AirportName" in params, "Missing parameter 'AirportName'"
-
-def test_airport_has_Address():
-    assert hasattr(Airport, "Address")
-    descriptor = None
-    for klass in Airport.__mro__:
-        if "Address" in klass.__dict__:
-            descriptor = klass.__dict__["Address"]
-            break
-    assert isinstance(descriptor, property)
 
 def test_airport_has_AirportID():
     assert hasattr(Airport, "AirportID")
@@ -165,6 +156,15 @@ def test_airport_has_AirportID():
     for klass in Airport.__mro__:
         if "AirportID" in klass.__dict__:
             descriptor = klass.__dict__["AirportID"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_airport_has_Address():
+    assert hasattr(Airport, "Address")
+    descriptor = None
+    for klass in Airport.__mro__:
+        if "Address" in klass.__dict__:
+            descriptor = klass.__dict__["Address"]
             break
     assert isinstance(descriptor, property)
 
@@ -235,8 +235,8 @@ def test_routes_constructor_args():
     sig = inspect.signature(Routes.__init__)
     params = list(sig.parameters.keys())
     assert "RouteID" in params, "Missing parameter 'RouteID'"
-    assert "DestinationAirport" in params, "Missing parameter 'DestinationAirport'"
     assert "OriginAirport" in params, "Missing parameter 'OriginAirport'"
+    assert "DestinationAirport" in params, "Missing parameter 'DestinationAirport'"
 
 def test_routes_has_RouteID():
     assert hasattr(Routes, "RouteID")
@@ -247,21 +247,21 @@ def test_routes_has_RouteID():
             break
     assert isinstance(descriptor, property)
 
-def test_routes_has_DestinationAirport():
-    assert hasattr(Routes, "DestinationAirport")
-    descriptor = None
-    for klass in Routes.__mro__:
-        if "DestinationAirport" in klass.__dict__:
-            descriptor = klass.__dict__["DestinationAirport"]
-            break
-    assert isinstance(descriptor, property)
-
 def test_routes_has_OriginAirport():
     assert hasattr(Routes, "OriginAirport")
     descriptor = None
     for klass in Routes.__mro__:
         if "OriginAirport" in klass.__dict__:
             descriptor = klass.__dict__["OriginAirport"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_routes_has_DestinationAirport():
+    assert hasattr(Routes, "DestinationAirport")
+    descriptor = None
+    for klass in Routes.__mro__:
+        if "DestinationAirport" in klass.__dict__:
+            descriptor = klass.__dict__["DestinationAirport"]
             break
     assert isinstance(descriptor, property)
 
@@ -278,17 +278,8 @@ def test_flight_constructor_exists():
 def test_flight_constructor_args():
     sig = inspect.signature(Flight.__init__)
     params = list(sig.parameters.keys())
-    assert "Date" in params, "Missing parameter 'Date'"
     assert "FlightNumber" in params, "Missing parameter 'FlightNumber'"
-
-def test_flight_has_Date():
-    assert hasattr(Flight, "Date")
-    descriptor = None
-    for klass in Flight.__mro__:
-        if "Date" in klass.__dict__:
-            descriptor = klass.__dict__["Date"]
-            break
-    assert isinstance(descriptor, property)
+    assert "Date" in params, "Missing parameter 'Date'"
 
 def test_flight_has_FlightNumber():
     assert hasattr(Flight, "FlightNumber")
@@ -296,6 +287,15 @@ def test_flight_has_FlightNumber():
     for klass in Flight.__mro__:
         if "FlightNumber" in klass.__dict__:
             descriptor = klass.__dict__["FlightNumber"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_flight_has_Date():
+    assert hasattr(Flight, "Date")
+    descriptor = None
+    for klass in Flight.__mro__:
+        if "Date" in klass.__dict__:
+            descriptor = klass.__dict__["Date"]
             break
     assert isinstance(descriptor, property)
 
@@ -312,19 +312,10 @@ def test_customers_constructor_exists():
 def test_customers_constructor_args():
     sig = inspect.signature(Customers.__init__)
     params = list(sig.parameters.keys())
-    assert "NameCustomer" in params, "Missing parameter 'NameCustomer'"
     assert "IdCustomer" in params, "Missing parameter 'IdCustomer'"
     assert "Email" in params, "Missing parameter 'Email'"
     assert "Password" in params, "Missing parameter 'Password'"
-
-def test_customers_has_NameCustomer():
-    assert hasattr(Customers, "NameCustomer")
-    descriptor = None
-    for klass in Customers.__mro__:
-        if "NameCustomer" in klass.__dict__:
-            descriptor = klass.__dict__["NameCustomer"]
-            break
-    assert isinstance(descriptor, property)
+    assert "NameCustomer" in params, "Missing parameter 'NameCustomer'"
 
 def test_customers_has_IdCustomer():
     assert hasattr(Customers, "IdCustomer")
@@ -350,6 +341,15 @@ def test_customers_has_Password():
     for klass in Customers.__mro__:
         if "Password" in klass.__dict__:
             descriptor = klass.__dict__["Password"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_customers_has_NameCustomer():
+    assert hasattr(Customers, "NameCustomer")
+    descriptor = None
+    for klass in Customers.__mro__:
+        if "NameCustomer" in klass.__dict__:
+            descriptor = klass.__dict__["NameCustomer"]
             break
     assert isinstance(descriptor, property)
 
@@ -390,22 +390,22 @@ Reservation_strategy = st.builds(
 )
 Ticket_strategy = st.builds(
     Ticket,
+    TicketType=
+        safe_text,
     DateTime=
         safe_text,
-    TicketType=
+    Gate=
         safe_text,
     TicketID=
         safe_text,
     Price=
-        safe_text,
-    Gate=
         safe_text
 )
 Airport_strategy = st.builds(
     Airport,
-    Address=
-        safe_text,
     AirportID=
+        safe_text,
+    Address=
         safe_text,
     AirportName=
         safe_text
@@ -423,27 +423,27 @@ Routes_strategy = st.builds(
     Routes,
     RouteID=
         safe_text,
-    DestinationAirport=
-        safe_text,
     OriginAirport=
+        safe_text,
+    DestinationAirport=
         safe_text
 )
 Flight_strategy = st.builds(
     Flight,
-    Date=
-        safe_text,
     FlightNumber=
+        safe_text,
+    Date=
         safe_text
 )
 Customers_strategy = st.builds(
     Customers,
-    NameCustomer=
-        safe_text,
     IdCustomer=
         safe_text,
     Email=
         safe_text,
     Password=
+        safe_text,
+    NameCustomer=
         safe_text
 )
 
@@ -452,9 +452,6 @@ Customers_strategy = st.builds(
 def test_seats_instantiation(instance):
     assert isinstance(instance, Seats)
 
-@given(instance=Seats_strategy)
-def test_seats_SeatNumber_type(instance):
-    assert isinstance(instance.SeatNumber, int)
 
 
 @given(instance=Seats_strategy)
@@ -463,9 +460,6 @@ def test_seats_SeatNumber_setter(instance):
     instance.SeatNumber = original
     assert instance.SeatNumber == original
 
-@given(instance=Seats_strategy)
-def test_seats_Availability_type(instance):
-    assert isinstance(instance.Availability, bool)
 
 
 @given(instance=Seats_strategy)
@@ -484,20 +478,6 @@ def test_reservation_instantiation(instance):
 def test_ticket_instantiation(instance):
     assert isinstance(instance, Ticket)
 
-@given(instance=Ticket_strategy)
-def test_ticket_DateTime_type(instance):
-    assert isinstance(instance.DateTime, str)
-
-
-@given(instance=Ticket_strategy)
-def test_ticket_DateTime_setter(instance):
-    original = instance.DateTime
-    instance.DateTime = original
-    assert instance.DateTime == original
-
-@given(instance=Ticket_strategy)
-def test_ticket_TicketType_type(instance):
-    assert isinstance(instance.TicketType, str)
 
 
 @given(instance=Ticket_strategy)
@@ -506,31 +486,14 @@ def test_ticket_TicketType_setter(instance):
     instance.TicketType = original
     assert instance.TicketType == original
 
-@given(instance=Ticket_strategy)
-def test_ticket_TicketID_type(instance):
-    assert isinstance(instance.TicketID, str)
 
 
 @given(instance=Ticket_strategy)
-def test_ticket_TicketID_setter(instance):
-    original = instance.TicketID
-    instance.TicketID = original
-    assert instance.TicketID == original
+def test_ticket_DateTime_setter(instance):
+    original = instance.DateTime
+    instance.DateTime = original
+    assert instance.DateTime == original
 
-@given(instance=Ticket_strategy)
-def test_ticket_Price_type(instance):
-    assert isinstance(instance.Price, str)
-
-
-@given(instance=Ticket_strategy)
-def test_ticket_Price_setter(instance):
-    original = instance.Price
-    instance.Price = original
-    assert instance.Price == original
-
-@given(instance=Ticket_strategy)
-def test_ticket_Gate_type(instance):
-    assert isinstance(instance.Gate, str)
 
 
 @given(instance=Ticket_strategy)
@@ -539,25 +502,27 @@ def test_ticket_Gate_setter(instance):
     instance.Gate = original
     assert instance.Gate == original
 
+
+
+@given(instance=Ticket_strategy)
+def test_ticket_TicketID_setter(instance):
+    original = instance.TicketID
+    instance.TicketID = original
+    assert instance.TicketID == original
+
+
+
+@given(instance=Ticket_strategy)
+def test_ticket_Price_setter(instance):
+    original = instance.Price
+    instance.Price = original
+    assert instance.Price == original
+
 @given(instance=Airport_strategy)
 @settings(max_examples=50)
 def test_airport_instantiation(instance):
     assert isinstance(instance, Airport)
 
-@given(instance=Airport_strategy)
-def test_airport_Address_type(instance):
-    assert isinstance(instance.Address, str)
-
-
-@given(instance=Airport_strategy)
-def test_airport_Address_setter(instance):
-    original = instance.Address
-    instance.Address = original
-    assert instance.Address == original
-
-@given(instance=Airport_strategy)
-def test_airport_AirportID_type(instance):
-    assert isinstance(instance.AirportID, str)
 
 
 @given(instance=Airport_strategy)
@@ -566,9 +531,14 @@ def test_airport_AirportID_setter(instance):
     instance.AirportID = original
     assert instance.AirportID == original
 
+
+
 @given(instance=Airport_strategy)
-def test_airport_AirportName_type(instance):
-    assert isinstance(instance.AirportName, str)
+def test_airport_Address_setter(instance):
+    original = instance.Address
+    instance.Address = original
+    assert instance.Address == original
+
 
 
 @given(instance=Airport_strategy)
@@ -582,9 +552,6 @@ def test_airport_AirportName_setter(instance):
 def test_plane_instantiation(instance):
     assert isinstance(instance, Plane)
 
-@given(instance=Plane_strategy)
-def test_plane_PlaneName_type(instance):
-    assert isinstance(instance.PlaneName, str)
 
 
 @given(instance=Plane_strategy)
@@ -593,9 +560,6 @@ def test_plane_PlaneName_setter(instance):
     instance.PlaneName = original
     assert instance.PlaneName == original
 
-@given(instance=Plane_strategy)
-def test_plane_Capacity_type(instance):
-    assert isinstance(instance.Capacity, int)
 
 
 @given(instance=Plane_strategy)
@@ -604,9 +568,6 @@ def test_plane_Capacity_setter(instance):
     instance.Capacity = original
     assert instance.Capacity == original
 
-@given(instance=Plane_strategy)
-def test_plane_PlaneId_type(instance):
-    assert isinstance(instance.PlaneId, str)
 
 
 @given(instance=Plane_strategy)
@@ -620,9 +581,6 @@ def test_plane_PlaneId_setter(instance):
 def test_routes_instantiation(instance):
     assert isinstance(instance, Routes)
 
-@given(instance=Routes_strategy)
-def test_routes_RouteID_type(instance):
-    assert isinstance(instance.RouteID, str)
 
 
 @given(instance=Routes_strategy)
@@ -631,20 +589,6 @@ def test_routes_RouteID_setter(instance):
     instance.RouteID = original
     assert instance.RouteID == original
 
-@given(instance=Routes_strategy)
-def test_routes_DestinationAirport_type(instance):
-    assert isinstance(instance.DestinationAirport, str)
-
-
-@given(instance=Routes_strategy)
-def test_routes_DestinationAirport_setter(instance):
-    original = instance.DestinationAirport
-    instance.DestinationAirport = original
-    assert instance.DestinationAirport == original
-
-@given(instance=Routes_strategy)
-def test_routes_OriginAirport_type(instance):
-    assert isinstance(instance.OriginAirport, str)
 
 
 @given(instance=Routes_strategy)
@@ -653,25 +597,19 @@ def test_routes_OriginAirport_setter(instance):
     instance.OriginAirport = original
     assert instance.OriginAirport == original
 
+
+
+@given(instance=Routes_strategy)
+def test_routes_DestinationAirport_setter(instance):
+    original = instance.DestinationAirport
+    instance.DestinationAirport = original
+    assert instance.DestinationAirport == original
+
 @given(instance=Flight_strategy)
 @settings(max_examples=50)
 def test_flight_instantiation(instance):
     assert isinstance(instance, Flight)
 
-@given(instance=Flight_strategy)
-def test_flight_Date_type(instance):
-    assert isinstance(instance.Date, str)
-
-
-@given(instance=Flight_strategy)
-def test_flight_Date_setter(instance):
-    original = instance.Date
-    instance.Date = original
-    assert instance.Date == original
-
-@given(instance=Flight_strategy)
-def test_flight_FlightNumber_type(instance):
-    assert isinstance(instance.FlightNumber, str)
 
 
 @given(instance=Flight_strategy)
@@ -680,25 +618,19 @@ def test_flight_FlightNumber_setter(instance):
     instance.FlightNumber = original
     assert instance.FlightNumber == original
 
+
+
+@given(instance=Flight_strategy)
+def test_flight_Date_setter(instance):
+    original = instance.Date
+    instance.Date = original
+    assert instance.Date == original
+
 @given(instance=Customers_strategy)
 @settings(max_examples=50)
 def test_customers_instantiation(instance):
     assert isinstance(instance, Customers)
 
-@given(instance=Customers_strategy)
-def test_customers_NameCustomer_type(instance):
-    assert isinstance(instance.NameCustomer, str)
-
-
-@given(instance=Customers_strategy)
-def test_customers_NameCustomer_setter(instance):
-    original = instance.NameCustomer
-    instance.NameCustomer = original
-    assert instance.NameCustomer == original
-
-@given(instance=Customers_strategy)
-def test_customers_IdCustomer_type(instance):
-    assert isinstance(instance.IdCustomer, str)
 
 
 @given(instance=Customers_strategy)
@@ -707,9 +639,6 @@ def test_customers_IdCustomer_setter(instance):
     instance.IdCustomer = original
     assert instance.IdCustomer == original
 
-@given(instance=Customers_strategy)
-def test_customers_Email_type(instance):
-    assert isinstance(instance.Email, str)
 
 
 @given(instance=Customers_strategy)
@@ -718,9 +647,6 @@ def test_customers_Email_setter(instance):
     instance.Email = original
     assert instance.Email == original
 
-@given(instance=Customers_strategy)
-def test_customers_Password_type(instance):
-    assert isinstance(instance.Password, str)
 
 
 @given(instance=Customers_strategy)
@@ -728,3 +654,11 @@ def test_customers_Password_setter(instance):
     original = instance.Password
     instance.Password = original
     assert instance.Password == original
+
+
+
+@given(instance=Customers_strategy)
+def test_customers_NameCustomer_setter(instance):
+    original = instance.NameCustomer
+    instance.NameCustomer = original
+    assert instance.NameCustomer == original

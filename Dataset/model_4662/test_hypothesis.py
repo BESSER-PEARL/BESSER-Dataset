@@ -3,26 +3,26 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     LabeledShape,
     Plane,
-    di::Font,
+    di_Font,
     Style,
     Label,
-    di::DiagramElement,
-    di::BaseElement,
+    di_DiagramElement,
+    di_BaseElement,
     LabeledEdge,
     Diagram,
-    di::BPMNShape,
-    di::BPMNPlane,
-    di::BPMNLabelStyle,
-    di::BPMNLabel,
-    di::BPMNEdge,
-    di::BPMNDiagram,
-    di::EStringToStringMapEntry,
-    di::DocumentRoot,
+    di_BPMNShape,
+    di_BPMNPlane,
+    di_BPMNLabelStyle,
+    di_BPMNLabel,
+    di_BPMNEdge,
+    di_BPMNDiagram,
+    di_EStringToStringMapEntry,
+    di_DocumentRoot,
     MessageVisibleKind,
     ParticipantBandKind,
 )
@@ -61,16 +61,16 @@ def test_plane_constructor_args():
 
 
 
-def test_di::font_is_not_abstract():
-    assert not inspect.isabstract(di::Font)
+def test_di_font_is_not_abstract():
+    assert not inspect.isabstract(di_Font)
 
 
-def test_di::font_constructor_exists():
-    assert callable(di::Font.__init__)
+def test_di_font_constructor_exists():
+    assert callable(di_Font.__init__)
 
 
-def test_di::font_constructor_args():
-    sig = inspect.signature(di::Font.__init__)
+def test_di_font_constructor_args():
+    sig = inspect.signature(di_Font.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -103,30 +103,30 @@ def test_label_constructor_args():
 
 
 
-def test_di::diagramelement_is_not_abstract():
-    assert not inspect.isabstract(di::DiagramElement)
+def test_di_diagramelement_is_not_abstract():
+    assert not inspect.isabstract(di_DiagramElement)
 
 
-def test_di::diagramelement_constructor_exists():
-    assert callable(di::DiagramElement.__init__)
+def test_di_diagramelement_constructor_exists():
+    assert callable(di_DiagramElement.__init__)
 
 
-def test_di::diagramelement_constructor_args():
-    sig = inspect.signature(di::DiagramElement.__init__)
+def test_di_diagramelement_constructor_args():
+    sig = inspect.signature(di_DiagramElement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_di::baseelement_is_not_abstract():
-    assert not inspect.isabstract(di::BaseElement)
+def test_di_baseelement_is_not_abstract():
+    assert not inspect.isabstract(di_BaseElement)
 
 
-def test_di::baseelement_constructor_exists():
-    assert callable(di::BaseElement.__init__)
+def test_di_baseelement_constructor_exists():
+    assert callable(di_BaseElement.__init__)
 
 
-def test_di::baseelement_constructor_args():
-    sig = inspect.signature(di::BaseElement.__init__)
+def test_di_baseelement_constructor_args():
+    sig = inspect.signature(di_BaseElement.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -159,129 +159,129 @@ def test_diagram_constructor_args():
 
 
 
-def test_di::bpmnshape_is_not_abstract():
-    assert not inspect.isabstract(di::BPMNShape)
+def test_di_bpmnshape_is_not_abstract():
+    assert not inspect.isabstract(di_BPMNShape)
 
 
-def test_di::bpmnshape_constructor_exists():
-    assert callable(di::BPMNShape.__init__)
+def test_di_bpmnshape_constructor_exists():
+    assert callable(di_BPMNShape.__init__)
 
 
-def test_di::bpmnshape_constructor_args():
-    sig = inspect.signature(di::BPMNShape.__init__)
+def test_di_bpmnshape_constructor_args():
+    sig = inspect.signature(di_BPMNShape.__init__)
     params = list(sig.parameters.keys())
-    assert "participantBandKind" in params, "Missing parameter 'participantBandKind'"
     assert "isHorizontal" in params, "Missing parameter 'isHorizontal'"
-    assert "isMessageVisible" in params, "Missing parameter 'isMessageVisible'"
     assert "isMarkerVisible" in params, "Missing parameter 'isMarkerVisible'"
+    assert "participantBandKind" in params, "Missing parameter 'participantBandKind'"
     assert "isExpanded" in params, "Missing parameter 'isExpanded'"
+    assert "isMessageVisible" in params, "Missing parameter 'isMessageVisible'"
 
-def test_di::bpmnshape_has_participantBandKind():
-    assert hasattr(di::BPMNShape, "participantBandKind")
+def test_di_bpmnshape_has_isHorizontal():
+    assert hasattr(di_BPMNShape, "isHorizontal")
     descriptor = None
-    for klass in di::BPMNShape.__mro__:
-        if "participantBandKind" in klass.__dict__:
-            descriptor = klass.__dict__["participantBandKind"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_di::bpmnshape_has_isHorizontal():
-    assert hasattr(di::BPMNShape, "isHorizontal")
-    descriptor = None
-    for klass in di::BPMNShape.__mro__:
+    for klass in di_BPMNShape.__mro__:
         if "isHorizontal" in klass.__dict__:
             descriptor = klass.__dict__["isHorizontal"]
             break
     assert isinstance(descriptor, property)
 
-def test_di::bpmnshape_has_isMessageVisible():
-    assert hasattr(di::BPMNShape, "isMessageVisible")
+def test_di_bpmnshape_has_isMarkerVisible():
+    assert hasattr(di_BPMNShape, "isMarkerVisible")
     descriptor = None
-    for klass in di::BPMNShape.__mro__:
-        if "isMessageVisible" in klass.__dict__:
-            descriptor = klass.__dict__["isMessageVisible"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_di::bpmnshape_has_isMarkerVisible():
-    assert hasattr(di::BPMNShape, "isMarkerVisible")
-    descriptor = None
-    for klass in di::BPMNShape.__mro__:
+    for klass in di_BPMNShape.__mro__:
         if "isMarkerVisible" in klass.__dict__:
             descriptor = klass.__dict__["isMarkerVisible"]
             break
     assert isinstance(descriptor, property)
 
-def test_di::bpmnshape_has_isExpanded():
-    assert hasattr(di::BPMNShape, "isExpanded")
+def test_di_bpmnshape_has_participantBandKind():
+    assert hasattr(di_BPMNShape, "participantBandKind")
     descriptor = None
-    for klass in di::BPMNShape.__mro__:
+    for klass in di_BPMNShape.__mro__:
+        if "participantBandKind" in klass.__dict__:
+            descriptor = klass.__dict__["participantBandKind"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_di_bpmnshape_has_isExpanded():
+    assert hasattr(di_BPMNShape, "isExpanded")
+    descriptor = None
+    for klass in di_BPMNShape.__mro__:
         if "isExpanded" in klass.__dict__:
             descriptor = klass.__dict__["isExpanded"]
             break
     assert isinstance(descriptor, property)
 
+def test_di_bpmnshape_has_isMessageVisible():
+    assert hasattr(di_BPMNShape, "isMessageVisible")
+    descriptor = None
+    for klass in di_BPMNShape.__mro__:
+        if "isMessageVisible" in klass.__dict__:
+            descriptor = klass.__dict__["isMessageVisible"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_di::bpmnplane_is_not_abstract():
-    assert not inspect.isabstract(di::BPMNPlane)
+
+def test_di_bpmnplane_is_not_abstract():
+    assert not inspect.isabstract(di_BPMNPlane)
 
 
-def test_di::bpmnplane_constructor_exists():
-    assert callable(di::BPMNPlane.__init__)
+def test_di_bpmnplane_constructor_exists():
+    assert callable(di_BPMNPlane.__init__)
 
 
-def test_di::bpmnplane_constructor_args():
-    sig = inspect.signature(di::BPMNPlane.__init__)
+def test_di_bpmnplane_constructor_args():
+    sig = inspect.signature(di_BPMNPlane.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_di::bpmnlabelstyle_is_not_abstract():
-    assert not inspect.isabstract(di::BPMNLabelStyle)
+def test_di_bpmnlabelstyle_is_not_abstract():
+    assert not inspect.isabstract(di_BPMNLabelStyle)
 
 
-def test_di::bpmnlabelstyle_constructor_exists():
-    assert callable(di::BPMNLabelStyle.__init__)
+def test_di_bpmnlabelstyle_constructor_exists():
+    assert callable(di_BPMNLabelStyle.__init__)
 
 
-def test_di::bpmnlabelstyle_constructor_args():
-    sig = inspect.signature(di::BPMNLabelStyle.__init__)
+def test_di_bpmnlabelstyle_constructor_args():
+    sig = inspect.signature(di_BPMNLabelStyle.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_di::bpmnlabel_is_not_abstract():
-    assert not inspect.isabstract(di::BPMNLabel)
+def test_di_bpmnlabel_is_not_abstract():
+    assert not inspect.isabstract(di_BPMNLabel)
 
 
-def test_di::bpmnlabel_constructor_exists():
-    assert callable(di::BPMNLabel.__init__)
+def test_di_bpmnlabel_constructor_exists():
+    assert callable(di_BPMNLabel.__init__)
 
 
-def test_di::bpmnlabel_constructor_args():
-    sig = inspect.signature(di::BPMNLabel.__init__)
+def test_di_bpmnlabel_constructor_args():
+    sig = inspect.signature(di_BPMNLabel.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_di::bpmnedge_is_not_abstract():
-    assert not inspect.isabstract(di::BPMNEdge)
+def test_di_bpmnedge_is_not_abstract():
+    assert not inspect.isabstract(di_BPMNEdge)
 
 
-def test_di::bpmnedge_constructor_exists():
-    assert callable(di::BPMNEdge.__init__)
+def test_di_bpmnedge_constructor_exists():
+    assert callable(di_BPMNEdge.__init__)
 
 
-def test_di::bpmnedge_constructor_args():
-    sig = inspect.signature(di::BPMNEdge.__init__)
+def test_di_bpmnedge_constructor_args():
+    sig = inspect.signature(di_BPMNEdge.__init__)
     params = list(sig.parameters.keys())
     assert "messageVisibleKind" in params, "Missing parameter 'messageVisibleKind'"
 
-def test_di::bpmnedge_has_messageVisibleKind():
-    assert hasattr(di::BPMNEdge, "messageVisibleKind")
+def test_di_bpmnedge_has_messageVisibleKind():
+    assert hasattr(di_BPMNEdge, "messageVisibleKind")
     descriptor = None
-    for klass in di::BPMNEdge.__mro__:
+    for klass in di_BPMNEdge.__mro__:
         if "messageVisibleKind" in klass.__dict__:
             descriptor = klass.__dict__["messageVisibleKind"]
             break
@@ -289,51 +289,51 @@ def test_di::bpmnedge_has_messageVisibleKind():
 
 
 
-def test_di::bpmndiagram_is_not_abstract():
-    assert not inspect.isabstract(di::BPMNDiagram)
+def test_di_bpmndiagram_is_not_abstract():
+    assert not inspect.isabstract(di_BPMNDiagram)
 
 
-def test_di::bpmndiagram_constructor_exists():
-    assert callable(di::BPMNDiagram.__init__)
+def test_di_bpmndiagram_constructor_exists():
+    assert callable(di_BPMNDiagram.__init__)
 
 
-def test_di::bpmndiagram_constructor_args():
-    sig = inspect.signature(di::BPMNDiagram.__init__)
+def test_di_bpmndiagram_constructor_args():
+    sig = inspect.signature(di_BPMNDiagram.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_di::estringtostringmapentry_is_not_abstract():
-    assert not inspect.isabstract(di::EStringToStringMapEntry)
+def test_di_estringtostringmapentry_is_not_abstract():
+    assert not inspect.isabstract(di_EStringToStringMapEntry)
 
 
-def test_di::estringtostringmapentry_constructor_exists():
-    assert callable(di::EStringToStringMapEntry.__init__)
+def test_di_estringtostringmapentry_constructor_exists():
+    assert callable(di_EStringToStringMapEntry.__init__)
 
 
-def test_di::estringtostringmapentry_constructor_args():
-    sig = inspect.signature(di::EStringToStringMapEntry.__init__)
+def test_di_estringtostringmapentry_constructor_args():
+    sig = inspect.signature(di_EStringToStringMapEntry.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_di::documentroot_is_not_abstract():
-    assert not inspect.isabstract(di::DocumentRoot)
+def test_di_documentroot_is_not_abstract():
+    assert not inspect.isabstract(di_DocumentRoot)
 
 
-def test_di::documentroot_constructor_exists():
-    assert callable(di::DocumentRoot.__init__)
+def test_di_documentroot_constructor_exists():
+    assert callable(di_DocumentRoot.__init__)
 
 
-def test_di::documentroot_constructor_args():
-    sig = inspect.signature(di::DocumentRoot.__init__)
+def test_di_documentroot_constructor_args():
+    sig = inspect.signature(di_DocumentRoot.__init__)
     params = list(sig.parameters.keys())
     assert "mixed" in params, "Missing parameter 'mixed'"
 
-def test_di::documentroot_has_mixed():
-    assert hasattr(di::DocumentRoot, "mixed")
+def test_di_documentroot_has_mixed():
+    assert hasattr(di_DocumentRoot, "mixed")
     descriptor = None
-    for klass in di::DocumentRoot.__mro__:
+    for klass in di_DocumentRoot.__mro__:
         if "mixed" in klass.__dict__:
             descriptor = klass.__dict__["mixed"]
             break
@@ -347,8 +347,8 @@ def test_messagevisiblekind_has_all_literals():
     # Collect the names of literals in this Enumeration
     enum_literals = [lit.name for lit in MessageVisibleKind]
     expected_literals = [
-        "non_initiating",
         "initiating",
+        "non_initiating",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
@@ -363,11 +363,11 @@ def test_participantbandkind_has_all_literals():
     enum_literals = [lit.name for lit in ParticipantBandKind]
     expected_literals = [
         "middle_non_initiating",
-        "bottom_initiating",
-        "middle_initiating",
-        "top_initiating",
-        "bottom_non_initiating",
         "top_non_initiating",
+        "top_initiating",
+        "bottom_initiating",
+        "bottom_non_initiating",
+        "middle_initiating",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
@@ -391,8 +391,8 @@ LabeledShape_strategy = st.builds(
 Plane_strategy = st.builds(
     Plane,
 )
-di::Font_strategy = st.builds(
-    di::Font,
+di_Font_strategy = st.builds(
+    di_Font,
 )
 Style_strategy = st.builds(
     Style,
@@ -400,11 +400,11 @@ Style_strategy = st.builds(
 Label_strategy = st.builds(
     Label,
 )
-di::DiagramElement_strategy = st.builds(
-    di::DiagramElement,
+di_DiagramElement_strategy = st.builds(
+    di_DiagramElement,
 )
-di::BaseElement_strategy = st.builds(
-    di::BaseElement,
+di_BaseElement_strategy = st.builds(
+    di_BaseElement,
 )
 LabeledEdge_strategy = st.builds(
     LabeledEdge,
@@ -412,41 +412,41 @@ LabeledEdge_strategy = st.builds(
 Diagram_strategy = st.builds(
     Diagram,
 )
-di::BPMNShape_strategy = st.builds(
-    di::BPMNShape,
-    participantBandKind=
-        safe_text,
+di_BPMNShape_strategy = st.builds(
+    di_BPMNShape,
     isHorizontal=
-        st.booleans(),
-    isMessageVisible=
         st.booleans(),
     isMarkerVisible=
         st.booleans(),
+    participantBandKind=
+        safe_text,
     isExpanded=
+        st.booleans(),
+    isMessageVisible=
         st.booleans()
 )
-di::BPMNPlane_strategy = st.builds(
-    di::BPMNPlane,
+di_BPMNPlane_strategy = st.builds(
+    di_BPMNPlane,
 )
-di::BPMNLabelStyle_strategy = st.builds(
-    di::BPMNLabelStyle,
+di_BPMNLabelStyle_strategy = st.builds(
+    di_BPMNLabelStyle,
 )
-di::BPMNLabel_strategy = st.builds(
-    di::BPMNLabel,
+di_BPMNLabel_strategy = st.builds(
+    di_BPMNLabel,
 )
-di::BPMNEdge_strategy = st.builds(
-    di::BPMNEdge,
+di_BPMNEdge_strategy = st.builds(
+    di_BPMNEdge,
     messageVisibleKind=
         safe_text
 )
-di::BPMNDiagram_strategy = st.builds(
-    di::BPMNDiagram,
+di_BPMNDiagram_strategy = st.builds(
+    di_BPMNDiagram,
 )
-di::EStringToStringMapEntry_strategy = st.builds(
-    di::EStringToStringMapEntry,
+di_EStringToStringMapEntry_strategy = st.builds(
+    di_EStringToStringMapEntry,
 )
-di::DocumentRoot_strategy = st.builds(
-    di::DocumentRoot,
+di_DocumentRoot_strategy = st.builds(
+    di_DocumentRoot,
     mixed=
         safe_text
 )
@@ -461,10 +461,10 @@ def test_labeledshape_instantiation(instance):
 def test_plane_instantiation(instance):
     assert isinstance(instance, Plane)
 
-@given(instance=di::Font_strategy)
+@given(instance=di_Font_strategy)
 @settings(max_examples=50)
-def test_di::font_instantiation(instance):
-    assert isinstance(instance, di::Font)
+def test_di_font_instantiation(instance):
+    assert isinstance(instance, di_Font)
 
 @given(instance=Style_strategy)
 @settings(max_examples=50)
@@ -476,15 +476,15 @@ def test_style_instantiation(instance):
 def test_label_instantiation(instance):
     assert isinstance(instance, Label)
 
-@given(instance=di::DiagramElement_strategy)
+@given(instance=di_DiagramElement_strategy)
 @settings(max_examples=50)
-def test_di::diagramelement_instantiation(instance):
-    assert isinstance(instance, di::DiagramElement)
+def test_di_diagramelement_instantiation(instance):
+    assert isinstance(instance, di_DiagramElement)
 
-@given(instance=di::BaseElement_strategy)
+@given(instance=di_BaseElement_strategy)
 @settings(max_examples=50)
-def test_di::baseelement_instantiation(instance):
-    assert isinstance(instance, di::BaseElement)
+def test_di_baseelement_instantiation(instance):
+    assert isinstance(instance, di_BaseElement)
 
 @given(instance=LabeledEdge_strategy)
 @settings(max_examples=50)
@@ -496,119 +496,98 @@ def test_labelededge_instantiation(instance):
 def test_diagram_instantiation(instance):
     assert isinstance(instance, Diagram)
 
-@given(instance=di::BPMNShape_strategy)
+@given(instance=di_BPMNShape_strategy)
 @settings(max_examples=50)
-def test_di::bpmnshape_instantiation(instance):
-    assert isinstance(instance, di::BPMNShape)
-
-@given(instance=di::BPMNShape_strategy)
-def test_di::bpmnshape_participantBandKind_type(instance):
-    assert isinstance(instance.participantBandKind, str)
+def test_di_bpmnshape_instantiation(instance):
+    assert isinstance(instance, di_BPMNShape)
 
 
-@given(instance=di::BPMNShape_strategy)
-def test_di::bpmnshape_participantBandKind_setter(instance):
-    original = instance.participantBandKind
-    instance.participantBandKind = original
-    assert instance.participantBandKind == original
 
-@given(instance=di::BPMNShape_strategy)
-def test_di::bpmnshape_isHorizontal_type(instance):
-    assert isinstance(instance.isHorizontal, bool)
-
-
-@given(instance=di::BPMNShape_strategy)
-def test_di::bpmnshape_isHorizontal_setter(instance):
+@given(instance=di_BPMNShape_strategy)
+def test_di_bpmnshape_isHorizontal_setter(instance):
     original = instance.isHorizontal
     instance.isHorizontal = original
     assert instance.isHorizontal == original
 
-@given(instance=di::BPMNShape_strategy)
-def test_di::bpmnshape_isMessageVisible_type(instance):
-    assert isinstance(instance.isMessageVisible, bool)
 
 
-@given(instance=di::BPMNShape_strategy)
-def test_di::bpmnshape_isMessageVisible_setter(instance):
-    original = instance.isMessageVisible
-    instance.isMessageVisible = original
-    assert instance.isMessageVisible == original
-
-@given(instance=di::BPMNShape_strategy)
-def test_di::bpmnshape_isMarkerVisible_type(instance):
-    assert isinstance(instance.isMarkerVisible, bool)
-
-
-@given(instance=di::BPMNShape_strategy)
-def test_di::bpmnshape_isMarkerVisible_setter(instance):
+@given(instance=di_BPMNShape_strategy)
+def test_di_bpmnshape_isMarkerVisible_setter(instance):
     original = instance.isMarkerVisible
     instance.isMarkerVisible = original
     assert instance.isMarkerVisible == original
 
-@given(instance=di::BPMNShape_strategy)
-def test_di::bpmnshape_isExpanded_type(instance):
-    assert isinstance(instance.isExpanded, bool)
 
 
-@given(instance=di::BPMNShape_strategy)
-def test_di::bpmnshape_isExpanded_setter(instance):
+@given(instance=di_BPMNShape_strategy)
+def test_di_bpmnshape_participantBandKind_setter(instance):
+    original = instance.participantBandKind
+    instance.participantBandKind = original
+    assert instance.participantBandKind == original
+
+
+
+@given(instance=di_BPMNShape_strategy)
+def test_di_bpmnshape_isExpanded_setter(instance):
     original = instance.isExpanded
     instance.isExpanded = original
     assert instance.isExpanded == original
 
-@given(instance=di::BPMNPlane_strategy)
+
+
+@given(instance=di_BPMNShape_strategy)
+def test_di_bpmnshape_isMessageVisible_setter(instance):
+    original = instance.isMessageVisible
+    instance.isMessageVisible = original
+    assert instance.isMessageVisible == original
+
+@given(instance=di_BPMNPlane_strategy)
 @settings(max_examples=50)
-def test_di::bpmnplane_instantiation(instance):
-    assert isinstance(instance, di::BPMNPlane)
+def test_di_bpmnplane_instantiation(instance):
+    assert isinstance(instance, di_BPMNPlane)
 
-@given(instance=di::BPMNLabelStyle_strategy)
+@given(instance=di_BPMNLabelStyle_strategy)
 @settings(max_examples=50)
-def test_di::bpmnlabelstyle_instantiation(instance):
-    assert isinstance(instance, di::BPMNLabelStyle)
+def test_di_bpmnlabelstyle_instantiation(instance):
+    assert isinstance(instance, di_BPMNLabelStyle)
 
-@given(instance=di::BPMNLabel_strategy)
+@given(instance=di_BPMNLabel_strategy)
 @settings(max_examples=50)
-def test_di::bpmnlabel_instantiation(instance):
-    assert isinstance(instance, di::BPMNLabel)
+def test_di_bpmnlabel_instantiation(instance):
+    assert isinstance(instance, di_BPMNLabel)
 
-@given(instance=di::BPMNEdge_strategy)
+@given(instance=di_BPMNEdge_strategy)
 @settings(max_examples=50)
-def test_di::bpmnedge_instantiation(instance):
-    assert isinstance(instance, di::BPMNEdge)
-
-@given(instance=di::BPMNEdge_strategy)
-def test_di::bpmnedge_messageVisibleKind_type(instance):
-    assert isinstance(instance.messageVisibleKind, str)
+def test_di_bpmnedge_instantiation(instance):
+    assert isinstance(instance, di_BPMNEdge)
 
 
-@given(instance=di::BPMNEdge_strategy)
-def test_di::bpmnedge_messageVisibleKind_setter(instance):
+
+@given(instance=di_BPMNEdge_strategy)
+def test_di_bpmnedge_messageVisibleKind_setter(instance):
     original = instance.messageVisibleKind
     instance.messageVisibleKind = original
     assert instance.messageVisibleKind == original
 
-@given(instance=di::BPMNDiagram_strategy)
+@given(instance=di_BPMNDiagram_strategy)
 @settings(max_examples=50)
-def test_di::bpmndiagram_instantiation(instance):
-    assert isinstance(instance, di::BPMNDiagram)
+def test_di_bpmndiagram_instantiation(instance):
+    assert isinstance(instance, di_BPMNDiagram)
 
-@given(instance=di::EStringToStringMapEntry_strategy)
+@given(instance=di_EStringToStringMapEntry_strategy)
 @settings(max_examples=50)
-def test_di::estringtostringmapentry_instantiation(instance):
-    assert isinstance(instance, di::EStringToStringMapEntry)
+def test_di_estringtostringmapentry_instantiation(instance):
+    assert isinstance(instance, di_EStringToStringMapEntry)
 
-@given(instance=di::DocumentRoot_strategy)
+@given(instance=di_DocumentRoot_strategy)
 @settings(max_examples=50)
-def test_di::documentroot_instantiation(instance):
-    assert isinstance(instance, di::DocumentRoot)
-
-@given(instance=di::DocumentRoot_strategy)
-def test_di::documentroot_mixed_type(instance):
-    assert isinstance(instance.mixed, str)
+def test_di_documentroot_instantiation(instance):
+    assert isinstance(instance, di_DocumentRoot)
 
 
-@given(instance=di::DocumentRoot_strategy)
-def test_di::documentroot_mixed_setter(instance):
+
+@given(instance=di_DocumentRoot_strategy)
+def test_di_documentroot_mixed_setter(instance):
     original = instance.mixed
     instance.mixed = original
     assert instance.mixed == original

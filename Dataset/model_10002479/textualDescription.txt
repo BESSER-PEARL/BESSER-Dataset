@@ -1,0 +1,8 @@
+The model has 6 class(es).
+The class 'PLACEMENTS_PAGE' has the following attributes: 'SALARY' of type int; 'INTREST' of type str; 'BRANCH' of type str.
+The class 'PERSONAL_PAGE' has the following attributes: 'YEAR' of type int; 'BRANCH' of type str.
+The class 'WebUser' has the following attributes: 'login' of type str; 'state' of type str; 'password' of type str.
+The class 'Welcome' has the following attributes: 'personal' of type str; 'placements' of type str; 'academic' of type str.
+The class 'ACADEMIC_PAGE' has the following attributes: 'BRANCH' of type str; 'STUDIES' of type str.
+The class 'Database_system' has the following attributes: 'Content' of type bool.
+'ACADEMIC_PAGE' (role 'lineItems0', cardinality 0..*) is associated with 'PERSONAL_PAGE' (role 'product1', cardinality 0..*).

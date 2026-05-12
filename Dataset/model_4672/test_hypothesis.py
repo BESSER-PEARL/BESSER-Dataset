@@ -3,36 +3,36 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     IdUse,
-    picojava::TypeUse,
-    picojava::VariableUse,
-    picojava::Use,
+    picojava_VariableUse,
+    picojava_TypeUse,
+    picojava_Use,
     Exp,
-    picojava::BooleanLiteral,
+    picojava_BooleanLiteral,
     Access,
-    picojava::Dot,
-    picojava::Exp,
-    picojava::IdUse,
+    picojava_Dot,
+    picojava_Exp,
+    picojava_IdUse,
     Stmt,
-    picojava::WhileStmt,
-    picojava::AssignStmt,
-    picojava::Access,
+    picojava_WhileStmt,
+    picojava_AssignStmt,
+    picojava_Access,
     TypeDecl,
-    picojava::ClassDecl,
+    picojava_ClassDecl,
     Decl,
-    picojava::VarDecl,
-    picojava::BlockStmt,
+    picojava_VarDecl,
+    picojava_BlockStmt,
     BlockStmt,
-    picojava::Decl,
-    picojava::Stmt,
-    picojava::TypeDecl,
-    picojava::Block,
-    picojava::PrimitiveDecl,
-    picojava::UnknownDecl,
-    picojava::Program,
+    picojava_Decl,
+    picojava_Stmt,
+    picojava_TypeDecl,
+    picojava_Block,
+    picojava_PrimitiveDecl,
+    picojava_UnknownDecl,
+    picojava_Program,
 )
 
 # =============================================================================
@@ -55,44 +55,44 @@ def test_iduse_constructor_args():
 
 
 
-def test_picojava::typeuse_is_not_abstract():
-    assert not inspect.isabstract(picojava::TypeUse)
+def test_picojava_variableuse_is_not_abstract():
+    assert not inspect.isabstract(picojava_VariableUse)
 
 
-def test_picojava::typeuse_constructor_exists():
-    assert callable(picojava::TypeUse.__init__)
+def test_picojava_variableuse_constructor_exists():
+    assert callable(picojava_VariableUse.__init__)
 
 
-def test_picojava::typeuse_constructor_args():
-    sig = inspect.signature(picojava::TypeUse.__init__)
+def test_picojava_variableuse_constructor_args():
+    sig = inspect.signature(picojava_VariableUse.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_picojava::variableuse_is_not_abstract():
-    assert not inspect.isabstract(picojava::VariableUse)
+def test_picojava_typeuse_is_not_abstract():
+    assert not inspect.isabstract(picojava_TypeUse)
 
 
-def test_picojava::variableuse_constructor_exists():
-    assert callable(picojava::VariableUse.__init__)
+def test_picojava_typeuse_constructor_exists():
+    assert callable(picojava_TypeUse.__init__)
 
 
-def test_picojava::variableuse_constructor_args():
-    sig = inspect.signature(picojava::VariableUse.__init__)
+def test_picojava_typeuse_constructor_args():
+    sig = inspect.signature(picojava_TypeUse.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_picojava::use_is_not_abstract():
-    assert not inspect.isabstract(picojava::Use)
+def test_picojava_use_is_not_abstract():
+    assert not inspect.isabstract(picojava_Use)
 
 
-def test_picojava::use_constructor_exists():
-    assert callable(picojava::Use.__init__)
+def test_picojava_use_constructor_exists():
+    assert callable(picojava_Use.__init__)
 
 
-def test_picojava::use_constructor_args():
-    sig = inspect.signature(picojava::Use.__init__)
+def test_picojava_use_constructor_args():
+    sig = inspect.signature(picojava_Use.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -111,23 +111,23 @@ def test_exp_constructor_args():
 
 
 
-def test_picojava::booleanliteral_is_not_abstract():
-    assert not inspect.isabstract(picojava::BooleanLiteral)
+def test_picojava_booleanliteral_is_not_abstract():
+    assert not inspect.isabstract(picojava_BooleanLiteral)
 
 
-def test_picojava::booleanliteral_constructor_exists():
-    assert callable(picojava::BooleanLiteral.__init__)
+def test_picojava_booleanliteral_constructor_exists():
+    assert callable(picojava_BooleanLiteral.__init__)
 
 
-def test_picojava::booleanliteral_constructor_args():
-    sig = inspect.signature(picojava::BooleanLiteral.__init__)
+def test_picojava_booleanliteral_constructor_args():
+    sig = inspect.signature(picojava_BooleanLiteral.__init__)
     params = list(sig.parameters.keys())
     assert "Value" in params, "Missing parameter 'Value'"
 
-def test_picojava::booleanliteral_has_Value():
-    assert hasattr(picojava::BooleanLiteral, "Value")
+def test_picojava_booleanliteral_has_Value():
+    assert hasattr(picojava_BooleanLiteral, "Value")
     descriptor = None
-    for klass in picojava::BooleanLiteral.__mro__:
+    for klass in picojava_BooleanLiteral.__mro__:
         if "Value" in klass.__dict__:
             descriptor = klass.__dict__["Value"]
             break
@@ -149,37 +149,37 @@ def test_access_constructor_args():
 
 
 
-def test_picojava::dot_is_not_abstract():
-    assert not inspect.isabstract(picojava::Dot)
+def test_picojava_dot_is_not_abstract():
+    assert not inspect.isabstract(picojava_Dot)
 
 
-def test_picojava::dot_constructor_exists():
-    assert callable(picojava::Dot.__init__)
+def test_picojava_dot_constructor_exists():
+    assert callable(picojava_Dot.__init__)
 
 
-def test_picojava::dot_constructor_args():
-    sig = inspect.signature(picojava::Dot.__init__)
+def test_picojava_dot_constructor_args():
+    sig = inspect.signature(picojava_Dot.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_picojava::exp_is_not_abstract():
-    assert not inspect.isabstract(picojava::Exp)
+def test_picojava_exp_is_not_abstract():
+    assert not inspect.isabstract(picojava_Exp)
 
 
-def test_picojava::exp_constructor_exists():
-    assert callable(picojava::Exp.__init__)
+def test_picojava_exp_constructor_exists():
+    assert callable(picojava_Exp.__init__)
 
 
-def test_picojava::exp_constructor_args():
-    sig = inspect.signature(picojava::Exp.__init__)
+def test_picojava_exp_constructor_args():
+    sig = inspect.signature(picojava_Exp.__init__)
     params = list(sig.parameters.keys())
     assert "isValue" in params, "Missing parameter 'isValue'"
 
-def test_picojava::exp_has_isValue():
-    assert hasattr(picojava::Exp, "isValue")
+def test_picojava_exp_has_isValue():
+    assert hasattr(picojava_Exp, "isValue")
     descriptor = None
-    for klass in picojava::Exp.__mro__:
+    for klass in picojava_Exp.__mro__:
         if "isValue" in klass.__dict__:
             descriptor = klass.__dict__["isValue"]
             break
@@ -187,35 +187,35 @@ def test_picojava::exp_has_isValue():
 
 
 
-def test_picojava::iduse_is_not_abstract():
-    assert not inspect.isabstract(picojava::IdUse)
+def test_picojava_iduse_is_not_abstract():
+    assert not inspect.isabstract(picojava_IdUse)
 
 
-def test_picojava::iduse_constructor_exists():
-    assert callable(picojava::IdUse.__init__)
+def test_picojava_iduse_constructor_exists():
+    assert callable(picojava_IdUse.__init__)
 
 
-def test_picojava::iduse_constructor_args():
-    sig = inspect.signature(picojava::IdUse.__init__)
+def test_picojava_iduse_constructor_args():
+    sig = inspect.signature(picojava_IdUse.__init__)
     params = list(sig.parameters.keys())
-    assert "isQualified" in params, "Missing parameter 'isQualified'"
     assert "Name" in params, "Missing parameter 'Name'"
+    assert "isQualified" in params, "Missing parameter 'isQualified'"
 
-def test_picojava::iduse_has_isQualified():
-    assert hasattr(picojava::IdUse, "isQualified")
+def test_picojava_iduse_has_Name():
+    assert hasattr(picojava_IdUse, "Name")
     descriptor = None
-    for klass in picojava::IdUse.__mro__:
-        if "isQualified" in klass.__dict__:
-            descriptor = klass.__dict__["isQualified"]
+    for klass in picojava_IdUse.__mro__:
+        if "Name" in klass.__dict__:
+            descriptor = klass.__dict__["Name"]
             break
     assert isinstance(descriptor, property)
 
-def test_picojava::iduse_has_Name():
-    assert hasattr(picojava::IdUse, "Name")
+def test_picojava_iduse_has_isQualified():
+    assert hasattr(picojava_IdUse, "isQualified")
     descriptor = None
-    for klass in picojava::IdUse.__mro__:
-        if "Name" in klass.__dict__:
-            descriptor = klass.__dict__["Name"]
+    for klass in picojava_IdUse.__mro__:
+        if "isQualified" in klass.__dict__:
+            descriptor = klass.__dict__["isQualified"]
             break
     assert isinstance(descriptor, property)
 
@@ -235,44 +235,44 @@ def test_stmt_constructor_args():
 
 
 
-def test_picojava::whilestmt_is_not_abstract():
-    assert not inspect.isabstract(picojava::WhileStmt)
+def test_picojava_whilestmt_is_not_abstract():
+    assert not inspect.isabstract(picojava_WhileStmt)
 
 
-def test_picojava::whilestmt_constructor_exists():
-    assert callable(picojava::WhileStmt.__init__)
+def test_picojava_whilestmt_constructor_exists():
+    assert callable(picojava_WhileStmt.__init__)
 
 
-def test_picojava::whilestmt_constructor_args():
-    sig = inspect.signature(picojava::WhileStmt.__init__)
+def test_picojava_whilestmt_constructor_args():
+    sig = inspect.signature(picojava_WhileStmt.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_picojava::assignstmt_is_not_abstract():
-    assert not inspect.isabstract(picojava::AssignStmt)
+def test_picojava_assignstmt_is_not_abstract():
+    assert not inspect.isabstract(picojava_AssignStmt)
 
 
-def test_picojava::assignstmt_constructor_exists():
-    assert callable(picojava::AssignStmt.__init__)
+def test_picojava_assignstmt_constructor_exists():
+    assert callable(picojava_AssignStmt.__init__)
 
 
-def test_picojava::assignstmt_constructor_args():
-    sig = inspect.signature(picojava::AssignStmt.__init__)
+def test_picojava_assignstmt_constructor_args():
+    sig = inspect.signature(picojava_AssignStmt.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_picojava::access_is_not_abstract():
-    assert not inspect.isabstract(picojava::Access)
+def test_picojava_access_is_not_abstract():
+    assert not inspect.isabstract(picojava_Access)
 
 
-def test_picojava::access_constructor_exists():
-    assert callable(picojava::Access.__init__)
+def test_picojava_access_constructor_exists():
+    assert callable(picojava_Access.__init__)
 
 
-def test_picojava::access_constructor_args():
-    sig = inspect.signature(picojava::Access.__init__)
+def test_picojava_access_constructor_args():
+    sig = inspect.signature(picojava_Access.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -291,23 +291,23 @@ def test_typedecl_constructor_args():
 
 
 
-def test_picojava::classdecl_is_not_abstract():
-    assert not inspect.isabstract(picojava::ClassDecl)
+def test_picojava_classdecl_is_not_abstract():
+    assert not inspect.isabstract(picojava_ClassDecl)
 
 
-def test_picojava::classdecl_constructor_exists():
-    assert callable(picojava::ClassDecl.__init__)
+def test_picojava_classdecl_constructor_exists():
+    assert callable(picojava_ClassDecl.__init__)
 
 
-def test_picojava::classdecl_constructor_args():
-    sig = inspect.signature(picojava::ClassDecl.__init__)
+def test_picojava_classdecl_constructor_args():
+    sig = inspect.signature(picojava_ClassDecl.__init__)
     params = list(sig.parameters.keys())
     assert "hasCycleOnSuperclassChain" in params, "Missing parameter 'hasCycleOnSuperclassChain'"
 
-def test_picojava::classdecl_has_hasCycleOnSuperclassChain():
-    assert hasattr(picojava::ClassDecl, "hasCycleOnSuperclassChain")
+def test_picojava_classdecl_has_hasCycleOnSuperclassChain():
+    assert hasattr(picojava_ClassDecl, "hasCycleOnSuperclassChain")
     descriptor = None
-    for klass in picojava::ClassDecl.__mro__:
+    for klass in picojava_ClassDecl.__mro__:
         if "hasCycleOnSuperclassChain" in klass.__dict__:
             descriptor = klass.__dict__["hasCycleOnSuperclassChain"]
             break
@@ -329,30 +329,30 @@ def test_decl_constructor_args():
 
 
 
-def test_picojava::vardecl_is_not_abstract():
-    assert not inspect.isabstract(picojava::VarDecl)
+def test_picojava_vardecl_is_not_abstract():
+    assert not inspect.isabstract(picojava_VarDecl)
 
 
-def test_picojava::vardecl_constructor_exists():
-    assert callable(picojava::VarDecl.__init__)
+def test_picojava_vardecl_constructor_exists():
+    assert callable(picojava_VarDecl.__init__)
 
 
-def test_picojava::vardecl_constructor_args():
-    sig = inspect.signature(picojava::VarDecl.__init__)
+def test_picojava_vardecl_constructor_args():
+    sig = inspect.signature(picojava_VarDecl.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_picojava::blockstmt_is_not_abstract():
-    assert not inspect.isabstract(picojava::BlockStmt)
+def test_picojava_blockstmt_is_not_abstract():
+    assert not inspect.isabstract(picojava_BlockStmt)
 
 
-def test_picojava::blockstmt_constructor_exists():
-    assert callable(picojava::BlockStmt.__init__)
+def test_picojava_blockstmt_constructor_exists():
+    assert callable(picojava_BlockStmt.__init__)
 
 
-def test_picojava::blockstmt_constructor_args():
-    sig = inspect.signature(picojava::BlockStmt.__init__)
+def test_picojava_blockstmt_constructor_args():
+    sig = inspect.signature(picojava_BlockStmt.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -371,33 +371,33 @@ def test_blockstmt_constructor_args():
 
 
 
-def test_picojava::decl_is_not_abstract():
-    assert not inspect.isabstract(picojava::Decl)
+def test_picojava_decl_is_not_abstract():
+    assert not inspect.isabstract(picojava_Decl)
 
 
-def test_picojava::decl_constructor_exists():
-    assert callable(picojava::Decl.__init__)
+def test_picojava_decl_constructor_exists():
+    assert callable(picojava_Decl.__init__)
 
 
-def test_picojava::decl_constructor_args():
-    sig = inspect.signature(picojava::Decl.__init__)
+def test_picojava_decl_constructor_args():
+    sig = inspect.signature(picojava_Decl.__init__)
     params = list(sig.parameters.keys())
     assert "Name" in params, "Missing parameter 'Name'"
     assert "isUnknown" in params, "Missing parameter 'isUnknown'"
 
-def test_picojava::decl_has_Name():
-    assert hasattr(picojava::Decl, "Name")
+def test_picojava_decl_has_Name():
+    assert hasattr(picojava_Decl, "Name")
     descriptor = None
-    for klass in picojava::Decl.__mro__:
+    for klass in picojava_Decl.__mro__:
         if "Name" in klass.__dict__:
             descriptor = klass.__dict__["Name"]
             break
     assert isinstance(descriptor, property)
 
-def test_picojava::decl_has_isUnknown():
-    assert hasattr(picojava::Decl, "isUnknown")
+def test_picojava_decl_has_isUnknown():
+    assert hasattr(picojava_Decl, "isUnknown")
     descriptor = None
-    for klass in picojava::Decl.__mro__:
+    for klass in picojava_Decl.__mro__:
         if "isUnknown" in klass.__dict__:
             descriptor = klass.__dict__["isUnknown"]
             break
@@ -405,37 +405,37 @@ def test_picojava::decl_has_isUnknown():
 
 
 
-def test_picojava::stmt_is_not_abstract():
-    assert not inspect.isabstract(picojava::Stmt)
+def test_picojava_stmt_is_not_abstract():
+    assert not inspect.isabstract(picojava_Stmt)
 
 
-def test_picojava::stmt_constructor_exists():
-    assert callable(picojava::Stmt.__init__)
+def test_picojava_stmt_constructor_exists():
+    assert callable(picojava_Stmt.__init__)
 
 
-def test_picojava::stmt_constructor_args():
-    sig = inspect.signature(picojava::Stmt.__init__)
+def test_picojava_stmt_constructor_args():
+    sig = inspect.signature(picojava_Stmt.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_picojava::typedecl_is_not_abstract():
-    assert not inspect.isabstract(picojava::TypeDecl)
+def test_picojava_typedecl_is_not_abstract():
+    assert not inspect.isabstract(picojava_TypeDecl)
 
 
-def test_picojava::typedecl_constructor_exists():
-    assert callable(picojava::TypeDecl.__init__)
+def test_picojava_typedecl_constructor_exists():
+    assert callable(picojava_TypeDecl.__init__)
 
 
-def test_picojava::typedecl_constructor_args():
-    sig = inspect.signature(picojava::TypeDecl.__init__)
+def test_picojava_typedecl_constructor_args():
+    sig = inspect.signature(picojava_TypeDecl.__init__)
     params = list(sig.parameters.keys())
     assert "isQualified" in params, "Missing parameter 'isQualified'"
 
-def test_picojava::typedecl_has_isQualified():
-    assert hasattr(picojava::TypeDecl, "isQualified")
+def test_picojava_typedecl_has_isQualified():
+    assert hasattr(picojava_TypeDecl, "isQualified")
     descriptor = None
-    for klass in picojava::TypeDecl.__mro__:
+    for klass in picojava_TypeDecl.__mro__:
         if "isQualified" in klass.__dict__:
             descriptor = klass.__dict__["isQualified"]
             break
@@ -443,58 +443,58 @@ def test_picojava::typedecl_has_isQualified():
 
 
 
-def test_picojava::block_is_not_abstract():
-    assert not inspect.isabstract(picojava::Block)
+def test_picojava_block_is_not_abstract():
+    assert not inspect.isabstract(picojava_Block)
 
 
-def test_picojava::block_constructor_exists():
-    assert callable(picojava::Block.__init__)
+def test_picojava_block_constructor_exists():
+    assert callable(picojava_Block.__init__)
 
 
-def test_picojava::block_constructor_args():
-    sig = inspect.signature(picojava::Block.__init__)
+def test_picojava_block_constructor_args():
+    sig = inspect.signature(picojava_Block.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_picojava::primitivedecl_is_not_abstract():
-    assert not inspect.isabstract(picojava::PrimitiveDecl)
+def test_picojava_primitivedecl_is_not_abstract():
+    assert not inspect.isabstract(picojava_PrimitiveDecl)
 
 
-def test_picojava::primitivedecl_constructor_exists():
-    assert callable(picojava::PrimitiveDecl.__init__)
+def test_picojava_primitivedecl_constructor_exists():
+    assert callable(picojava_PrimitiveDecl.__init__)
 
 
-def test_picojava::primitivedecl_constructor_args():
-    sig = inspect.signature(picojava::PrimitiveDecl.__init__)
+def test_picojava_primitivedecl_constructor_args():
+    sig = inspect.signature(picojava_PrimitiveDecl.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_picojava::unknowndecl_is_not_abstract():
-    assert not inspect.isabstract(picojava::UnknownDecl)
+def test_picojava_unknowndecl_is_not_abstract():
+    assert not inspect.isabstract(picojava_UnknownDecl)
 
 
-def test_picojava::unknowndecl_constructor_exists():
-    assert callable(picojava::UnknownDecl.__init__)
+def test_picojava_unknowndecl_constructor_exists():
+    assert callable(picojava_UnknownDecl.__init__)
 
 
-def test_picojava::unknowndecl_constructor_args():
-    sig = inspect.signature(picojava::UnknownDecl.__init__)
+def test_picojava_unknowndecl_constructor_args():
+    sig = inspect.signature(picojava_UnknownDecl.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_picojava::program_is_not_abstract():
-    assert not inspect.isabstract(picojava::Program)
+def test_picojava_program_is_not_abstract():
+    assert not inspect.isabstract(picojava_Program)
 
 
-def test_picojava::program_constructor_exists():
-    assert callable(picojava::Program.__init__)
+def test_picojava_program_constructor_exists():
+    assert callable(picojava_Program.__init__)
 
 
-def test_picojava::program_constructor_args():
-    sig = inspect.signature(picojava::Program.__init__)
+def test_picojava_program_constructor_args():
+    sig = inspect.signature(picojava_Program.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -512,99 +512,99 @@ safe_text = st.text(
 IdUse_strategy = st.builds(
     IdUse,
 )
-picojava::TypeUse_strategy = st.builds(
-    picojava::TypeUse,
+picojava_VariableUse_strategy = st.builds(
+    picojava_VariableUse,
 )
-picojava::VariableUse_strategy = st.builds(
-    picojava::VariableUse,
+picojava_TypeUse_strategy = st.builds(
+    picojava_TypeUse,
 )
-picojava::Use_strategy = st.builds(
-    picojava::Use,
+picojava_Use_strategy = st.builds(
+    picojava_Use,
 )
 Exp_strategy = st.builds(
     Exp,
 )
-picojava::BooleanLiteral_strategy = st.builds(
-    picojava::BooleanLiteral,
+picojava_BooleanLiteral_strategy = st.builds(
+    picojava_BooleanLiteral,
     Value=
         safe_text
 )
 Access_strategy = st.builds(
     Access,
 )
-picojava::Dot_strategy = st.builds(
-    picojava::Dot,
+picojava_Dot_strategy = st.builds(
+    picojava_Dot,
 )
-picojava::Exp_strategy = st.builds(
-    picojava::Exp,
+picojava_Exp_strategy = st.builds(
+    picojava_Exp,
     isValue=
         st.booleans()
 )
-picojava::IdUse_strategy = st.builds(
-    picojava::IdUse,
-    isQualified=
-        st.booleans(),
+picojava_IdUse_strategy = st.builds(
+    picojava_IdUse,
     Name=
-        safe_text
+        safe_text,
+    isQualified=
+        st.booleans()
 )
 Stmt_strategy = st.builds(
     Stmt,
 )
-picojava::WhileStmt_strategy = st.builds(
-    picojava::WhileStmt,
+picojava_WhileStmt_strategy = st.builds(
+    picojava_WhileStmt,
 )
-picojava::AssignStmt_strategy = st.builds(
-    picojava::AssignStmt,
+picojava_AssignStmt_strategy = st.builds(
+    picojava_AssignStmt,
 )
-picojava::Access_strategy = st.builds(
-    picojava::Access,
+picojava_Access_strategy = st.builds(
+    picojava_Access,
 )
 TypeDecl_strategy = st.builds(
     TypeDecl,
 )
-picojava::ClassDecl_strategy = st.builds(
-    picojava::ClassDecl,
+picojava_ClassDecl_strategy = st.builds(
+    picojava_ClassDecl,
     hasCycleOnSuperclassChain=
         st.booleans()
 )
 Decl_strategy = st.builds(
     Decl,
 )
-picojava::VarDecl_strategy = st.builds(
-    picojava::VarDecl,
+picojava_VarDecl_strategy = st.builds(
+    picojava_VarDecl,
 )
-picojava::BlockStmt_strategy = st.builds(
-    picojava::BlockStmt,
+picojava_BlockStmt_strategy = st.builds(
+    picojava_BlockStmt,
 )
 BlockStmt_strategy = st.builds(
     BlockStmt,
 )
-picojava::Decl_strategy = st.builds(
-    picojava::Decl,
+picojava_Decl_strategy = st.builds(
+    picojava_Decl,
     Name=
         safe_text,
     isUnknown=
         st.booleans()
 )
-picojava::Stmt_strategy = st.builds(
-    picojava::Stmt,
+picojava_Stmt_strategy = st.builds(
+    picojava_Stmt,
 )
-picojava::TypeDecl_strategy = st.builds(
-    picojava::TypeDecl,
+picojava_TypeDecl_strategy = st.builds(
+    picojava_TypeDecl,
     isQualified=
         st.booleans()
 )
-picojava::Block_strategy = st.builds(
-    picojava::Block,
+picojava_Block_strategy = st.builds(
+    picojava_Block,
 )
-picojava::PrimitiveDecl_strategy = st.builds(
-    picojava::PrimitiveDecl,
+picojava_PrimitiveDecl_strategy = st.builds(
+    picojava_PrimitiveDecl,
 )
-picojava::UnknownDecl_strategy = st.builds(
-    picojava::UnknownDecl,
+picojava_UnknownDecl_strategy = st.builds(
+    picojava_UnknownDecl,
 )
-picojava::Program_strategy = st.builds(
-    picojava::Program,
+picojava_Program_strategy = st.builds(
+    picojava_Program,
 )
 
 @given(instance=IdUse_strategy)
@@ -612,38 +612,35 @@ picojava::Program_strategy = st.builds(
 def test_iduse_instantiation(instance):
     assert isinstance(instance, IdUse)
 
-@given(instance=picojava::TypeUse_strategy)
+@given(instance=picojava_VariableUse_strategy)
 @settings(max_examples=50)
-def test_picojava::typeuse_instantiation(instance):
-    assert isinstance(instance, picojava::TypeUse)
+def test_picojava_variableuse_instantiation(instance):
+    assert isinstance(instance, picojava_VariableUse)
 
-@given(instance=picojava::VariableUse_strategy)
+@given(instance=picojava_TypeUse_strategy)
 @settings(max_examples=50)
-def test_picojava::variableuse_instantiation(instance):
-    assert isinstance(instance, picojava::VariableUse)
+def test_picojava_typeuse_instantiation(instance):
+    assert isinstance(instance, picojava_TypeUse)
 
-@given(instance=picojava::Use_strategy)
+@given(instance=picojava_Use_strategy)
 @settings(max_examples=50)
-def test_picojava::use_instantiation(instance):
-    assert isinstance(instance, picojava::Use)
+def test_picojava_use_instantiation(instance):
+    assert isinstance(instance, picojava_Use)
 
 @given(instance=Exp_strategy)
 @settings(max_examples=50)
 def test_exp_instantiation(instance):
     assert isinstance(instance, Exp)
 
-@given(instance=picojava::BooleanLiteral_strategy)
+@given(instance=picojava_BooleanLiteral_strategy)
 @settings(max_examples=50)
-def test_picojava::booleanliteral_instantiation(instance):
-    assert isinstance(instance, picojava::BooleanLiteral)
-
-@given(instance=picojava::BooleanLiteral_strategy)
-def test_picojava::booleanliteral_Value_type(instance):
-    assert isinstance(instance.Value, str)
+def test_picojava_booleanliteral_instantiation(instance):
+    assert isinstance(instance, picojava_BooleanLiteral)
 
 
-@given(instance=picojava::BooleanLiteral_strategy)
-def test_picojava::booleanliteral_Value_setter(instance):
+
+@given(instance=picojava_BooleanLiteral_strategy)
+def test_picojava_booleanliteral_Value_setter(instance):
     original = instance.Value
     instance.Value = original
     assert instance.Value == original
@@ -653,53 +650,44 @@ def test_picojava::booleanliteral_Value_setter(instance):
 def test_access_instantiation(instance):
     assert isinstance(instance, Access)
 
-@given(instance=picojava::Dot_strategy)
+@given(instance=picojava_Dot_strategy)
 @settings(max_examples=50)
-def test_picojava::dot_instantiation(instance):
-    assert isinstance(instance, picojava::Dot)
+def test_picojava_dot_instantiation(instance):
+    assert isinstance(instance, picojava_Dot)
 
-@given(instance=picojava::Exp_strategy)
+@given(instance=picojava_Exp_strategy)
 @settings(max_examples=50)
-def test_picojava::exp_instantiation(instance):
-    assert isinstance(instance, picojava::Exp)
-
-@given(instance=picojava::Exp_strategy)
-def test_picojava::exp_isValue_type(instance):
-    assert isinstance(instance.isValue, bool)
+def test_picojava_exp_instantiation(instance):
+    assert isinstance(instance, picojava_Exp)
 
 
-@given(instance=picojava::Exp_strategy)
-def test_picojava::exp_isValue_setter(instance):
+
+@given(instance=picojava_Exp_strategy)
+def test_picojava_exp_isValue_setter(instance):
     original = instance.isValue
     instance.isValue = original
     assert instance.isValue == original
 
-@given(instance=picojava::IdUse_strategy)
+@given(instance=picojava_IdUse_strategy)
 @settings(max_examples=50)
-def test_picojava::iduse_instantiation(instance):
-    assert isinstance(instance, picojava::IdUse)
-
-@given(instance=picojava::IdUse_strategy)
-def test_picojava::iduse_isQualified_type(instance):
-    assert isinstance(instance.isQualified, bool)
+def test_picojava_iduse_instantiation(instance):
+    assert isinstance(instance, picojava_IdUse)
 
 
-@given(instance=picojava::IdUse_strategy)
-def test_picojava::iduse_isQualified_setter(instance):
-    original = instance.isQualified
-    instance.isQualified = original
-    assert instance.isQualified == original
 
-@given(instance=picojava::IdUse_strategy)
-def test_picojava::iduse_Name_type(instance):
-    assert isinstance(instance.Name, str)
-
-
-@given(instance=picojava::IdUse_strategy)
-def test_picojava::iduse_Name_setter(instance):
+@given(instance=picojava_IdUse_strategy)
+def test_picojava_iduse_Name_setter(instance):
     original = instance.Name
     instance.Name = original
     assert instance.Name == original
+
+
+
+@given(instance=picojava_IdUse_strategy)
+def test_picojava_iduse_isQualified_setter(instance):
+    original = instance.isQualified
+    instance.isQualified = original
+    assert instance.isQualified == original
 
 import warnings
 import copy
@@ -707,9 +695,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=picojava::IdUse_strategy)
+@given(instance=picojava_IdUse_strategy)
 @settings(max_examples=30)
-def test_picojava::iduse_lookup_changes_state(instance):
+def test_picojava_iduse_lookup_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -723,52 +711,49 @@ def test_picojava::iduse_lookup_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'lookup' in picojava::IdUse is empty"
+        assert has_statements, f"Function 'lookup' in picojava_IdUse is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'lookup' in picojava::IdUse did not change state; check implementation")
+            warnings.warn(f"Operation 'lookup' in picojava_IdUse did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'lookup' in picojava::IdUse is not implemented or raised an error")
+        warnings.warn(f"Operation 'lookup' in picojava_IdUse is not implemented or raised an error")
 
 @given(instance=Stmt_strategy)
 @settings(max_examples=50)
 def test_stmt_instantiation(instance):
     assert isinstance(instance, Stmt)
 
-@given(instance=picojava::WhileStmt_strategy)
+@given(instance=picojava_WhileStmt_strategy)
 @settings(max_examples=50)
-def test_picojava::whilestmt_instantiation(instance):
-    assert isinstance(instance, picojava::WhileStmt)
+def test_picojava_whilestmt_instantiation(instance):
+    assert isinstance(instance, picojava_WhileStmt)
 
-@given(instance=picojava::AssignStmt_strategy)
+@given(instance=picojava_AssignStmt_strategy)
 @settings(max_examples=50)
-def test_picojava::assignstmt_instantiation(instance):
-    assert isinstance(instance, picojava::AssignStmt)
+def test_picojava_assignstmt_instantiation(instance):
+    assert isinstance(instance, picojava_AssignStmt)
 
-@given(instance=picojava::Access_strategy)
+@given(instance=picojava_Access_strategy)
 @settings(max_examples=50)
-def test_picojava::access_instantiation(instance):
-    assert isinstance(instance, picojava::Access)
+def test_picojava_access_instantiation(instance):
+    assert isinstance(instance, picojava_Access)
 
 @given(instance=TypeDecl_strategy)
 @settings(max_examples=50)
 def test_typedecl_instantiation(instance):
     assert isinstance(instance, TypeDecl)
 
-@given(instance=picojava::ClassDecl_strategy)
+@given(instance=picojava_ClassDecl_strategy)
 @settings(max_examples=50)
-def test_picojava::classdecl_instantiation(instance):
-    assert isinstance(instance, picojava::ClassDecl)
-
-@given(instance=picojava::ClassDecl_strategy)
-def test_picojava::classdecl_hasCycleOnSuperclassChain_type(instance):
-    assert isinstance(instance.hasCycleOnSuperclassChain, bool)
+def test_picojava_classdecl_instantiation(instance):
+    assert isinstance(instance, picojava_ClassDecl)
 
 
-@given(instance=picojava::ClassDecl_strategy)
-def test_picojava::classdecl_hasCycleOnSuperclassChain_setter(instance):
+
+@given(instance=picojava_ClassDecl_strategy)
+def test_picojava_classdecl_hasCycleOnSuperclassChain_setter(instance):
     original = instance.hasCycleOnSuperclassChain
     instance.hasCycleOnSuperclassChain = original
     assert instance.hasCycleOnSuperclassChain == original
@@ -778,15 +763,15 @@ def test_picojava::classdecl_hasCycleOnSuperclassChain_setter(instance):
 def test_decl_instantiation(instance):
     assert isinstance(instance, Decl)
 
-@given(instance=picojava::VarDecl_strategy)
+@given(instance=picojava_VarDecl_strategy)
 @settings(max_examples=50)
-def test_picojava::vardecl_instantiation(instance):
-    assert isinstance(instance, picojava::VarDecl)
+def test_picojava_vardecl_instantiation(instance):
+    assert isinstance(instance, picojava_VarDecl)
 
-@given(instance=picojava::BlockStmt_strategy)
+@given(instance=picojava_BlockStmt_strategy)
 @settings(max_examples=50)
-def test_picojava::blockstmt_instantiation(instance):
-    assert isinstance(instance, picojava::BlockStmt)
+def test_picojava_blockstmt_instantiation(instance):
+    assert isinstance(instance, picojava_BlockStmt)
 
 import warnings
 import copy
@@ -794,9 +779,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=picojava::BlockStmt_strategy)
+@given(instance=picojava_BlockStmt_strategy)
 @settings(max_examples=30)
-def test_picojava::blockstmt_declarationof_changes_state(instance):
+def test_picojava_blockstmt_declarationof_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -810,64 +795,55 @@ def test_picojava::blockstmt_declarationof_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'declarationOf' in picojava::BlockStmt is empty"
+        assert has_statements, f"Function 'declarationOf' in picojava_BlockStmt is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'declarationOf' in picojava::BlockStmt did not change state; check implementation")
+            warnings.warn(f"Operation 'declarationOf' in picojava_BlockStmt did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'declarationOf' in picojava::BlockStmt is not implemented or raised an error")
+        warnings.warn(f"Operation 'declarationOf' in picojava_BlockStmt is not implemented or raised an error")
 
 @given(instance=BlockStmt_strategy)
 @settings(max_examples=50)
 def test_blockstmt_instantiation(instance):
     assert isinstance(instance, BlockStmt)
 
-@given(instance=picojava::Decl_strategy)
+@given(instance=picojava_Decl_strategy)
 @settings(max_examples=50)
-def test_picojava::decl_instantiation(instance):
-    assert isinstance(instance, picojava::Decl)
-
-@given(instance=picojava::Decl_strategy)
-def test_picojava::decl_Name_type(instance):
-    assert isinstance(instance.Name, str)
+def test_picojava_decl_instantiation(instance):
+    assert isinstance(instance, picojava_Decl)
 
 
-@given(instance=picojava::Decl_strategy)
-def test_picojava::decl_Name_setter(instance):
+
+@given(instance=picojava_Decl_strategy)
+def test_picojava_decl_Name_setter(instance):
     original = instance.Name
     instance.Name = original
     assert instance.Name == original
 
-@given(instance=picojava::Decl_strategy)
-def test_picojava::decl_isUnknown_type(instance):
-    assert isinstance(instance.isUnknown, bool)
 
 
-@given(instance=picojava::Decl_strategy)
-def test_picojava::decl_isUnknown_setter(instance):
+@given(instance=picojava_Decl_strategy)
+def test_picojava_decl_isUnknown_setter(instance):
     original = instance.isUnknown
     instance.isUnknown = original
     assert instance.isUnknown == original
 
-@given(instance=picojava::Stmt_strategy)
+@given(instance=picojava_Stmt_strategy)
 @settings(max_examples=50)
-def test_picojava::stmt_instantiation(instance):
-    assert isinstance(instance, picojava::Stmt)
+def test_picojava_stmt_instantiation(instance):
+    assert isinstance(instance, picojava_Stmt)
 
-@given(instance=picojava::TypeDecl_strategy)
+@given(instance=picojava_TypeDecl_strategy)
 @settings(max_examples=50)
-def test_picojava::typedecl_instantiation(instance):
-    assert isinstance(instance, picojava::TypeDecl)
-
-@given(instance=picojava::TypeDecl_strategy)
-def test_picojava::typedecl_isQualified_type(instance):
-    assert isinstance(instance.isQualified, bool)
+def test_picojava_typedecl_instantiation(instance):
+    assert isinstance(instance, picojava_TypeDecl)
 
 
-@given(instance=picojava::TypeDecl_strategy)
-def test_picojava::typedecl_isQualified_setter(instance):
+
+@given(instance=picojava_TypeDecl_strategy)
+def test_picojava_typedecl_isQualified_setter(instance):
     original = instance.isQualified
     instance.isQualified = original
     assert instance.isQualified == original
@@ -878,71 +854,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=picojava::TypeDecl_strategy)
+@given(instance=picojava_TypeDecl_strategy)
 @settings(max_examples=30)
-def test_picojava::typedecl_issupertypeofclassdecl_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.isSuperTypeOfClassDecl(
-            "test"
-        )
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.isSuperTypeOfClassDecl).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'isSuperTypeOfClassDecl' in picojava::TypeDecl is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'isSuperTypeOfClassDecl' in picojava::TypeDecl did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'isSuperTypeOfClassDecl' in picojava::TypeDecl is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=picojava::TypeDecl_strategy)
-@settings(max_examples=30)
-def test_picojava::typedecl_lookup_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.lookup(
-            "test"
-        )
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.lookup).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'lookup' in picojava::TypeDecl is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'lookup' in picojava::TypeDecl did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'lookup' in picojava::TypeDecl is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=picojava::TypeDecl_strategy)
-@settings(max_examples=30)
-def test_picojava::typedecl_issubtypeof_changes_state(instance):
+def test_picojava_typedecl_issubtypeof_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -956,14 +870,14 @@ def test_picojava::typedecl_issubtypeof_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'isSubtypeOf' in picojava::TypeDecl is empty"
+        assert has_statements, f"Function 'isSubtypeOf' in picojava_TypeDecl is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'isSubtypeOf' in picojava::TypeDecl did not change state; check implementation")
+            warnings.warn(f"Operation 'isSubtypeOf' in picojava_TypeDecl did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'isSubtypeOf' in picojava::TypeDecl is not implemented or raised an error")
+        warnings.warn(f"Operation 'isSubtypeOf' in picojava_TypeDecl is not implemented or raised an error")
 
 import warnings
 import copy
@@ -971,40 +885,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=picojava::TypeDecl_strategy)
+@given(instance=picojava_TypeDecl_strategy)
 @settings(max_examples=30)
-def test_picojava::typedecl_issupertypeof_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.isSuperTypeOf(
-            "test"
-        )
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.isSuperTypeOf).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'isSuperTypeOf' in picojava::TypeDecl is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'isSuperTypeOf' in picojava::TypeDecl did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'isSuperTypeOf' in picojava::TypeDecl is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=picojava::TypeDecl_strategy)
-@settings(max_examples=30)
-def test_picojava::typedecl_remotelookup_changes_state(instance):
+def test_picojava_typedecl_remotelookup_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -1018,19 +901,14 @@ def test_picojava::typedecl_remotelookup_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'remoteLookup' in picojava::TypeDecl is empty"
+        assert has_statements, f"Function 'remoteLookup' in picojava_TypeDecl is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'remoteLookup' in picojava::TypeDecl did not change state; check implementation")
+            warnings.warn(f"Operation 'remoteLookup' in picojava_TypeDecl did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'remoteLookup' in picojava::TypeDecl is not implemented or raised an error")
-
-@given(instance=picojava::Block_strategy)
-@settings(max_examples=50)
-def test_picojava::block_instantiation(instance):
-    assert isinstance(instance, picojava::Block)
+        warnings.warn(f"Operation 'remoteLookup' in picojava_TypeDecl is not implemented or raised an error")
 
 import warnings
 import copy
@@ -1038,9 +916,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=picojava::Block_strategy)
+@given(instance=picojava_TypeDecl_strategy)
 @settings(max_examples=30)
-def test_picojava::block_lookup_changes_state(instance):
+def test_picojava_typedecl_lookup_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -1054,14 +932,14 @@ def test_picojava::block_lookup_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'lookup' in picojava::Block is empty"
+        assert has_statements, f"Function 'lookup' in picojava_TypeDecl is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'lookup' in picojava::Block did not change state; check implementation")
+            warnings.warn(f"Operation 'lookup' in picojava_TypeDecl did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'lookup' in picojava::Block is not implemented or raised an error")
+        warnings.warn(f"Operation 'lookup' in picojava_TypeDecl is not implemented or raised an error")
 
 import warnings
 import copy
@@ -1069,9 +947,76 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=picojava::Block_strategy)
+@given(instance=picojava_TypeDecl_strategy)
 @settings(max_examples=30)
-def test_picojava::block_locallookup_changes_state(instance):
+def test_picojava_typedecl_issupertypeofclassdecl_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.isSuperTypeOfClassDecl(
+            "test"
+        )
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.isSuperTypeOfClassDecl).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'isSuperTypeOfClassDecl' in picojava_TypeDecl is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'isSuperTypeOfClassDecl' in picojava_TypeDecl did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'isSuperTypeOfClassDecl' in picojava_TypeDecl is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=picojava_TypeDecl_strategy)
+@settings(max_examples=30)
+def test_picojava_typedecl_issupertypeof_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.isSuperTypeOf(
+            "test"
+        )
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.isSuperTypeOf).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'isSuperTypeOf' in picojava_TypeDecl is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'isSuperTypeOf' in picojava_TypeDecl did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'isSuperTypeOf' in picojava_TypeDecl is not implemented or raised an error")
+
+@given(instance=picojava_Block_strategy)
+@settings(max_examples=50)
+def test_picojava_block_instantiation(instance):
+    assert isinstance(instance, picojava_Block)
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=picojava_Block_strategy)
+@settings(max_examples=30)
+def test_picojava_block_locallookup_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -1085,29 +1030,14 @@ def test_picojava::block_locallookup_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'localLookup' in picojava::Block is empty"
+        assert has_statements, f"Function 'localLookup' in picojava_Block is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'localLookup' in picojava::Block did not change state; check implementation")
+            warnings.warn(f"Operation 'localLookup' in picojava_Block did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'localLookup' in picojava::Block is not implemented or raised an error")
-
-@given(instance=picojava::PrimitiveDecl_strategy)
-@settings(max_examples=50)
-def test_picojava::primitivedecl_instantiation(instance):
-    assert isinstance(instance, picojava::PrimitiveDecl)
-
-@given(instance=picojava::UnknownDecl_strategy)
-@settings(max_examples=50)
-def test_picojava::unknowndecl_instantiation(instance):
-    assert isinstance(instance, picojava::UnknownDecl)
-
-@given(instance=picojava::Program_strategy)
-@settings(max_examples=50)
-def test_picojava::program_instantiation(instance):
-    assert isinstance(instance, picojava::Program)
+        warnings.warn(f"Operation 'localLookup' in picojava_Block is not implemented or raised an error")
 
 import warnings
 import copy
@@ -1115,9 +1045,55 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=picojava::Program_strategy)
+@given(instance=picojava_Block_strategy)
 @settings(max_examples=30)
-def test_picojava::program_locallookup_changes_state(instance):
+def test_picojava_block_lookup_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.lookup(
+            "test"
+        )
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.lookup).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'lookup' in picojava_Block is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'lookup' in picojava_Block did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'lookup' in picojava_Block is not implemented or raised an error")
+
+@given(instance=picojava_PrimitiveDecl_strategy)
+@settings(max_examples=50)
+def test_picojava_primitivedecl_instantiation(instance):
+    assert isinstance(instance, picojava_PrimitiveDecl)
+
+@given(instance=picojava_UnknownDecl_strategy)
+@settings(max_examples=50)
+def test_picojava_unknowndecl_instantiation(instance):
+    assert isinstance(instance, picojava_UnknownDecl)
+
+@given(instance=picojava_Program_strategy)
+@settings(max_examples=50)
+def test_picojava_program_instantiation(instance):
+    assert isinstance(instance, picojava_Program)
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=picojava_Program_strategy)
+@settings(max_examples=30)
+def test_picojava_program_locallookup_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -1131,11 +1107,11 @@ def test_picojava::program_locallookup_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'localLookup' in picojava::Program is empty"
+        assert has_statements, f"Function 'localLookup' in picojava_Program is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'localLookup' in picojava::Program did not change state; check implementation")
+            warnings.warn(f"Operation 'localLookup' in picojava_Program did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'localLookup' in picojava::Program is not implemented or raised an error")
+        warnings.warn(f"Operation 'localLookup' in picojava_Program is not implemented or raised an error")

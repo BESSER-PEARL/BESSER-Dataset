@@ -1,0 +1,15 @@
+The model has 6 class(es).
+The class 'Book' has the following attributes: 'dueDate' of type str; 'author' of type str; 'title' of type str; 'refNum' of type int.
+The class 'Media' has the following attributes: 'type' of type int; 'refNum' of type int.
+The class 'Staff' has the following attributes: 'name' of type str; 'id' of type int.
+The class 'Magazine' has the following attributes: 'location' of type str; 'name' of type str; 'issueNum' of type int.
+The class 'Patron' has the following attributes: 'id' of type int; 'name' of type str; 'position' of type str.
+The class 'Computer' has the following attributes: 'compID' of type int.
+'Magazine' (role 'staff11', cardinality 0..*) is associated with 'Staff' (role 'magazine10', cardinality 0..*).
+'Media' (role 'patron5', cardinality 0..*) is associated with 'Patron' (role 'media4', cardinality 0..*).
+'Staff' (role 'book8', cardinality 0..*) is associated with 'Book' (role 'staff9', cardinality 0..*).
+'Computer' (role 'patron7', cardinality 0..*) is associated with 'Patron' (role 'computer6', cardinality 0..*).
+'Media' (role 'staff13', cardinality 0..*) is associated with 'Staff' (role 'media12', cardinality 0..*).
+'Magazine' (role 'patron3', cardinality 0..*) is associated with 'Patron' (role 'magazine2', cardinality 0..*).
+'Patron' (role 'book0', cardinality 0..*) is associated with 'Book' (role 'patron1', cardinality 0..*).
+'Computer' (role 'staff15', cardinality 0..*) is associated with 'Staff' (role 'computer14', cardinality 0..*).

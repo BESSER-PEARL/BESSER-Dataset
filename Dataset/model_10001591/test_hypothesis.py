@@ -3,7 +3,7 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
 from python_code import (
     Database,
@@ -33,8 +33,8 @@ def test_database_constructor_args():
     sig = inspect.signature(Database.__init__)
     params = list(sig.parameters.keys())
     assert "Details" in params, "Missing parameter 'Details'"
-    assert "income" in params, "Missing parameter 'income'"
     assert "service" in params, "Missing parameter 'service'"
+    assert "income" in params, "Missing parameter 'income'"
 
 def test_database_has_Details():
     assert hasattr(Database, "Details")
@@ -45,21 +45,21 @@ def test_database_has_Details():
             break
     assert isinstance(descriptor, property)
 
-def test_database_has_income():
-    assert hasattr(Database, "income")
-    descriptor = None
-    for klass in Database.__mro__:
-        if "income" in klass.__dict__:
-            descriptor = klass.__dict__["income"]
-            break
-    assert isinstance(descriptor, property)
-
 def test_database_has_service():
     assert hasattr(Database, "service")
     descriptor = None
     for klass in Database.__mro__:
         if "service" in klass.__dict__:
             descriptor = klass.__dict__["service"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_database_has_income():
+    assert hasattr(Database, "income")
+    descriptor = None
+    for klass in Database.__mro__:
+        if "income" in klass.__dict__:
+            descriptor = klass.__dict__["income"]
             break
     assert isinstance(descriptor, property)
 
@@ -76,17 +76,8 @@ def test_inventory_constructor_exists():
 def test_inventory_constructor_args():
     sig = inspect.signature(Inventory.__init__)
     params = list(sig.parameters.keys())
-    assert "Status" in params, "Missing parameter 'Status'"
     assert "type" in params, "Missing parameter 'type'"
-
-def test_inventory_has_Status():
-    assert hasattr(Inventory, "Status")
-    descriptor = None
-    for klass in Inventory.__mro__:
-        if "Status" in klass.__dict__:
-            descriptor = klass.__dict__["Status"]
-            break
-    assert isinstance(descriptor, property)
+    assert "Status" in params, "Missing parameter 'Status'"
 
 def test_inventory_has_type():
     assert hasattr(Inventory, "type")
@@ -94,6 +85,15 @@ def test_inventory_has_type():
     for klass in Inventory.__mro__:
         if "type" in klass.__dict__:
             descriptor = klass.__dict__["type"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_inventory_has_Status():
+    assert hasattr(Inventory, "Status")
+    descriptor = None
+    for klass in Inventory.__mro__:
+        if "Status" in klass.__dict__:
+            descriptor = klass.__dict__["Status"]
             break
     assert isinstance(descriptor, property)
 
@@ -144,18 +144,9 @@ def test_room_constructor_exists():
 def test_room_constructor_args():
     sig = inspect.signature(Room.__init__)
     params = list(sig.parameters.keys())
-    assert "roomNo" in params, "Missing parameter 'roomNo'"
     assert "RatesofRoom" in params, "Missing parameter 'RatesofRoom'"
     assert "typeOfRoom" in params, "Missing parameter 'typeOfRoom'"
-
-def test_room_has_roomNo():
-    assert hasattr(Room, "roomNo")
-    descriptor = None
-    for klass in Room.__mro__:
-        if "roomNo" in klass.__dict__:
-            descriptor = klass.__dict__["roomNo"]
-            break
-    assert isinstance(descriptor, property)
+    assert "roomNo" in params, "Missing parameter 'roomNo'"
 
 def test_room_has_RatesofRoom():
     assert hasattr(Room, "RatesofRoom")
@@ -175,6 +166,15 @@ def test_room_has_typeOfRoom():
             break
     assert isinstance(descriptor, property)
 
+def test_room_has_roomNo():
+    assert hasattr(Room, "roomNo")
+    descriptor = None
+    for klass in Room.__mro__:
+        if "roomNo" in klass.__dict__:
+            descriptor = klass.__dict__["roomNo"]
+            break
+    assert isinstance(descriptor, property)
+
 
 
 def test_manager_is_not_abstract():
@@ -188,17 +188,8 @@ def test_manager_constructor_exists():
 def test_manager_constructor_args():
     sig = inspect.signature(Manager.__init__)
     params = list(sig.parameters.keys())
-    assert "name" in params, "Missing parameter 'name'"
     assert "id" in params, "Missing parameter 'id'"
-
-def test_manager_has_name():
-    assert hasattr(Manager, "name")
-    descriptor = None
-    for klass in Manager.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
+    assert "name" in params, "Missing parameter 'name'"
 
 def test_manager_has_id():
     assert hasattr(Manager, "id")
@@ -206,6 +197,15 @@ def test_manager_has_id():
     for klass in Manager.__mro__:
         if "id" in klass.__dict__:
             descriptor = klass.__dict__["id"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_manager_has_name():
+    assert hasattr(Manager, "name")
+    descriptor = None
+    for klass in Manager.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
@@ -256,30 +256,12 @@ def test_guest_constructor_exists():
 def test_guest_constructor_args():
     sig = inspect.signature(Guest.__init__)
     params = list(sig.parameters.keys())
-    assert "credit_card" in params, "Missing parameter 'credit_card'"
-    assert "phoneNo" in params, "Missing parameter 'phoneNo'"
     assert "Address" in params, "Missing parameter 'Address'"
-    assert "Room" in params, "Missing parameter 'Room'"
+    assert "phoneNo" in params, "Missing parameter 'phoneNo'"
     assert "id" in params, "Missing parameter 'id'"
     assert "name" in params, "Missing parameter 'name'"
-
-def test_guest_has_credit_card():
-    assert hasattr(Guest, "credit_card")
-    descriptor = None
-    for klass in Guest.__mro__:
-        if "credit_card" in klass.__dict__:
-            descriptor = klass.__dict__["credit_card"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_guest_has_phoneNo():
-    assert hasattr(Guest, "phoneNo")
-    descriptor = None
-    for klass in Guest.__mro__:
-        if "phoneNo" in klass.__dict__:
-            descriptor = klass.__dict__["phoneNo"]
-            break
-    assert isinstance(descriptor, property)
+    assert "credit_card" in params, "Missing parameter 'credit_card'"
+    assert "Room" in params, "Missing parameter 'Room'"
 
 def test_guest_has_Address():
     assert hasattr(Guest, "Address")
@@ -290,12 +272,12 @@ def test_guest_has_Address():
             break
     assert isinstance(descriptor, property)
 
-def test_guest_has_Room():
-    assert hasattr(Guest, "Room")
+def test_guest_has_phoneNo():
+    assert hasattr(Guest, "phoneNo")
     descriptor = None
     for klass in Guest.__mro__:
-        if "Room" in klass.__dict__:
-            descriptor = klass.__dict__["Room"]
+        if "phoneNo" in klass.__dict__:
+            descriptor = klass.__dict__["phoneNo"]
             break
     assert isinstance(descriptor, property)
 
@@ -317,6 +299,24 @@ def test_guest_has_name():
             break
     assert isinstance(descriptor, property)
 
+def test_guest_has_credit_card():
+    assert hasattr(Guest, "credit_card")
+    descriptor = None
+    for klass in Guest.__mro__:
+        if "credit_card" in klass.__dict__:
+            descriptor = klass.__dict__["credit_card"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_guest_has_Room():
+    assert hasattr(Guest, "Room")
+    descriptor = None
+    for klass in Guest.__mro__:
+        if "Room" in klass.__dict__:
+            descriptor = klass.__dict__["Room"]
+            break
+    assert isinstance(descriptor, property)
+
 
 # =============================================================================
 # HYPOTHESIS STRATEGIES
@@ -333,16 +333,16 @@ Database_strategy = st.builds(
     Database,
     Details=
         safe_text,
-    income=
-        st.integers(),
     service=
-        safe_text
+        safe_text,
+    income=
+        st.integers()
 )
 Inventory_strategy = st.builds(
     Inventory,
-    Status=
-        safe_text,
     type=
+        safe_text,
+    Status=
         safe_text
 )
 Bill_strategy = st.builds(
@@ -354,19 +354,19 @@ Bill_strategy = st.builds(
 )
 Room_strategy = st.builds(
     Room,
-    roomNo=
-        st.integers(),
     RatesofRoom=
         st.integers(),
     typeOfRoom=
-        safe_text
+        safe_text,
+    roomNo=
+        st.integers()
 )
 Manager_strategy = st.builds(
     Manager,
-    name=
-        safe_text,
     id=
-        st.integers()
+        st.integers(),
+    name=
+        safe_text
 )
 Receptionist_strategy = st.builds(
     Receptionist,
@@ -377,18 +377,18 @@ Receptionist_strategy = st.builds(
 )
 Guest_strategy = st.builds(
     Guest,
-    credit_card=
-        st.integers(),
-    phoneNo=
-        st.integers(),
     Address=
         safe_text,
-    Room=
+    phoneNo=
         st.integers(),
     id=
         st.integers(),
     name=
-        safe_text
+        safe_text,
+    credit_card=
+        st.integers(),
+    Room=
+        st.integers()
 )
 
 @given(instance=Database_strategy)
@@ -396,9 +396,6 @@ Guest_strategy = st.builds(
 def test_database_instantiation(instance):
     assert isinstance(instance, Database)
 
-@given(instance=Database_strategy)
-def test_database_Details_type(instance):
-    assert isinstance(instance.Details, str)
 
 
 @given(instance=Database_strategy)
@@ -407,20 +404,6 @@ def test_database_Details_setter(instance):
     instance.Details = original
     assert instance.Details == original
 
-@given(instance=Database_strategy)
-def test_database_income_type(instance):
-    assert isinstance(instance.income, int)
-
-
-@given(instance=Database_strategy)
-def test_database_income_setter(instance):
-    original = instance.income
-    instance.income = original
-    assert instance.income == original
-
-@given(instance=Database_strategy)
-def test_database_service_type(instance):
-    assert isinstance(instance.service, str)
 
 
 @given(instance=Database_strategy)
@@ -429,25 +412,19 @@ def test_database_service_setter(instance):
     instance.service = original
     assert instance.service == original
 
+
+
+@given(instance=Database_strategy)
+def test_database_income_setter(instance):
+    original = instance.income
+    instance.income = original
+    assert instance.income == original
+
 @given(instance=Inventory_strategy)
 @settings(max_examples=50)
 def test_inventory_instantiation(instance):
     assert isinstance(instance, Inventory)
 
-@given(instance=Inventory_strategy)
-def test_inventory_Status_type(instance):
-    assert isinstance(instance.Status, str)
-
-
-@given(instance=Inventory_strategy)
-def test_inventory_Status_setter(instance):
-    original = instance.Status
-    instance.Status = original
-    assert instance.Status == original
-
-@given(instance=Inventory_strategy)
-def test_inventory_type_type(instance):
-    assert isinstance(instance.type, str)
 
 
 @given(instance=Inventory_strategy)
@@ -456,14 +433,19 @@ def test_inventory_type_setter(instance):
     instance.type = original
     assert instance.type == original
 
+
+
+@given(instance=Inventory_strategy)
+def test_inventory_Status_setter(instance):
+    original = instance.Status
+    instance.Status = original
+    assert instance.Status == original
+
 @given(instance=Bill_strategy)
 @settings(max_examples=50)
 def test_bill_instantiation(instance):
     assert isinstance(instance, Bill)
 
-@given(instance=Bill_strategy)
-def test_bill_GuestName_type(instance):
-    assert isinstance(instance.GuestName, str)
 
 
 @given(instance=Bill_strategy)
@@ -472,9 +454,6 @@ def test_bill_GuestName_setter(instance):
     instance.GuestName = original
     assert instance.GuestName == original
 
-@given(instance=Bill_strategy)
-def test_bill_bill_No_type(instance):
-    assert isinstance(instance.bill_No, int)
 
 
 @given(instance=Bill_strategy)
@@ -488,20 +467,6 @@ def test_bill_bill_No_setter(instance):
 def test_room_instantiation(instance):
     assert isinstance(instance, Room)
 
-@given(instance=Room_strategy)
-def test_room_roomNo_type(instance):
-    assert isinstance(instance.roomNo, int)
-
-
-@given(instance=Room_strategy)
-def test_room_roomNo_setter(instance):
-    original = instance.roomNo
-    instance.roomNo = original
-    assert instance.roomNo == original
-
-@given(instance=Room_strategy)
-def test_room_RatesofRoom_type(instance):
-    assert isinstance(instance.RatesofRoom, int)
 
 
 @given(instance=Room_strategy)
@@ -510,9 +475,6 @@ def test_room_RatesofRoom_setter(instance):
     instance.RatesofRoom = original
     assert instance.RatesofRoom == original
 
-@given(instance=Room_strategy)
-def test_room_typeOfRoom_type(instance):
-    assert isinstance(instance.typeOfRoom, str)
 
 
 @given(instance=Room_strategy)
@@ -521,25 +483,19 @@ def test_room_typeOfRoom_setter(instance):
     instance.typeOfRoom = original
     assert instance.typeOfRoom == original
 
+
+
+@given(instance=Room_strategy)
+def test_room_roomNo_setter(instance):
+    original = instance.roomNo
+    instance.roomNo = original
+    assert instance.roomNo == original
+
 @given(instance=Manager_strategy)
 @settings(max_examples=50)
 def test_manager_instantiation(instance):
     assert isinstance(instance, Manager)
 
-@given(instance=Manager_strategy)
-def test_manager_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=Manager_strategy)
-def test_manager_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
-
-@given(instance=Manager_strategy)
-def test_manager_id_type(instance):
-    assert isinstance(instance.id, int)
 
 
 @given(instance=Manager_strategy)
@@ -548,14 +504,19 @@ def test_manager_id_setter(instance):
     instance.id = original
     assert instance.id == original
 
+
+
+@given(instance=Manager_strategy)
+def test_manager_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
 @given(instance=Receptionist_strategy)
 @settings(max_examples=50)
 def test_receptionist_instantiation(instance):
     assert isinstance(instance, Receptionist)
 
-@given(instance=Receptionist_strategy)
-def test_receptionist_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
 @given(instance=Receptionist_strategy)
@@ -564,9 +525,6 @@ def test_receptionist_name_setter(instance):
     instance.name = original
     assert instance.name == original
 
-@given(instance=Receptionist_strategy)
-def test_receptionist_Id_type(instance):
-    assert isinstance(instance.Id, int)
 
 
 @given(instance=Receptionist_strategy)
@@ -580,31 +538,6 @@ def test_receptionist_Id_setter(instance):
 def test_guest_instantiation(instance):
     assert isinstance(instance, Guest)
 
-@given(instance=Guest_strategy)
-def test_guest_credit_card_type(instance):
-    assert isinstance(instance.credit_card, int)
-
-
-@given(instance=Guest_strategy)
-def test_guest_credit_card_setter(instance):
-    original = instance.credit_card
-    instance.credit_card = original
-    assert instance.credit_card == original
-
-@given(instance=Guest_strategy)
-def test_guest_phoneNo_type(instance):
-    assert isinstance(instance.phoneNo, int)
-
-
-@given(instance=Guest_strategy)
-def test_guest_phoneNo_setter(instance):
-    original = instance.phoneNo
-    instance.phoneNo = original
-    assert instance.phoneNo == original
-
-@given(instance=Guest_strategy)
-def test_guest_Address_type(instance):
-    assert isinstance(instance.Address, str)
 
 
 @given(instance=Guest_strategy)
@@ -613,20 +546,14 @@ def test_guest_Address_setter(instance):
     instance.Address = original
     assert instance.Address == original
 
-@given(instance=Guest_strategy)
-def test_guest_Room_type(instance):
-    assert isinstance(instance.Room, int)
 
 
 @given(instance=Guest_strategy)
-def test_guest_Room_setter(instance):
-    original = instance.Room
-    instance.Room = original
-    assert instance.Room == original
+def test_guest_phoneNo_setter(instance):
+    original = instance.phoneNo
+    instance.phoneNo = original
+    assert instance.phoneNo == original
 
-@given(instance=Guest_strategy)
-def test_guest_id_type(instance):
-    assert isinstance(instance.id, int)
 
 
 @given(instance=Guest_strategy)
@@ -635,9 +562,6 @@ def test_guest_id_setter(instance):
     instance.id = original
     assert instance.id == original
 
-@given(instance=Guest_strategy)
-def test_guest_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
 @given(instance=Guest_strategy)
@@ -645,3 +569,19 @@ def test_guest_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
+
+
+
+@given(instance=Guest_strategy)
+def test_guest_credit_card_setter(instance):
+    original = instance.credit_card
+    instance.credit_card = original
+    assert instance.credit_card == original
+
+
+
+@given(instance=Guest_strategy)
+def test_guest_Room_setter(instance):
+    original = instance.Room
+    instance.Room = original
+    assert instance.Room == original

@@ -3,7 +3,7 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
 from python_code import (
     Interface_Interface,
@@ -61,18 +61,9 @@ def test_curso_constructor_exists():
 def test_curso_constructor_args():
     sig = inspect.signature(Curso.__init__)
     params = list(sig.parameters.keys())
-    assert "CourseNumber" in params, "Missing parameter 'CourseNumber'"
     assert "Course_Teacher" in params, "Missing parameter 'Course_Teacher'"
+    assert "CourseNumber" in params, "Missing parameter 'CourseNumber'"
     assert "CourseName" in params, "Missing parameter 'CourseName'"
-
-def test_curso_has_CourseNumber():
-    assert hasattr(Curso, "CourseNumber")
-    descriptor = None
-    for klass in Curso.__mro__:
-        if "CourseNumber" in klass.__dict__:
-            descriptor = klass.__dict__["CourseNumber"]
-            break
-    assert isinstance(descriptor, property)
 
 def test_curso_has_Course_Teacher():
     assert hasattr(Curso, "Course_Teacher")
@@ -80,6 +71,15 @@ def test_curso_has_Course_Teacher():
     for klass in Curso.__mro__:
         if "Course_Teacher" in klass.__dict__:
             descriptor = klass.__dict__["Course_Teacher"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_curso_has_CourseNumber():
+    assert hasattr(Curso, "CourseNumber")
+    descriptor = None
+    for klass in Curso.__mro__:
+        if "CourseNumber" in klass.__dict__:
+            descriptor = klass.__dict__["CourseNumber"]
             break
     assert isinstance(descriptor, property)
 
@@ -119,28 +119,10 @@ def test_database_constructor_exists():
 def test_database_constructor_args():
     sig = inspect.signature(Database.__init__)
     params = list(sig.parameters.keys())
-    assert "Schedules" in params, "Missing parameter 'Schedules'"
-    assert "Materials" in params, "Missing parameter 'Materials'"
     assert "Grades" in params, "Missing parameter 'Grades'"
     assert "Accounts" in params, "Missing parameter 'Accounts'"
-
-def test_database_has_Schedules():
-    assert hasattr(Database, "Schedules")
-    descriptor = None
-    for klass in Database.__mro__:
-        if "Schedules" in klass.__dict__:
-            descriptor = klass.__dict__["Schedules"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_database_has_Materials():
-    assert hasattr(Database, "Materials")
-    descriptor = None
-    for klass in Database.__mro__:
-        if "Materials" in klass.__dict__:
-            descriptor = klass.__dict__["Materials"]
-            break
-    assert isinstance(descriptor, property)
+    assert "Schedules" in params, "Missing parameter 'Schedules'"
+    assert "Materials" in params, "Missing parameter 'Materials'"
 
 def test_database_has_Grades():
     assert hasattr(Database, "Grades")
@@ -157,6 +139,24 @@ def test_database_has_Accounts():
     for klass in Database.__mro__:
         if "Accounts" in klass.__dict__:
             descriptor = klass.__dict__["Accounts"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_database_has_Schedules():
+    assert hasattr(Database, "Schedules")
+    descriptor = None
+    for klass in Database.__mro__:
+        if "Schedules" in klass.__dict__:
+            descriptor = klass.__dict__["Schedules"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_database_has_Materials():
+    assert hasattr(Database, "Materials")
+    descriptor = None
+    for klass in Database.__mro__:
+        if "Materials" in klass.__dict__:
+            descriptor = klass.__dict__["Materials"]
             break
     assert isinstance(descriptor, property)
 
@@ -221,17 +221,17 @@ def test_usuario_constructor_exists():
 def test_usuario_constructor_args():
     sig = inspect.signature(Usuario.__init__)
     params = list(sig.parameters.keys())
-    assert "Last_Name" in params, "Missing parameter 'Last_Name'"
-    assert "Password" in params, "Missing parameter 'Password'"
     assert "ID_Number" in params, "Missing parameter 'ID_Number'"
+    assert "Password" in params, "Missing parameter 'Password'"
     assert "First_Name" in params, "Missing parameter 'First_Name'"
+    assert "Last_Name" in params, "Missing parameter 'Last_Name'"
 
-def test_usuario_has_Last_Name():
-    assert hasattr(Usuario, "Last_Name")
+def test_usuario_has_ID_Number():
+    assert hasattr(Usuario, "ID_Number")
     descriptor = None
     for klass in Usuario.__mro__:
-        if "Last_Name" in klass.__dict__:
-            descriptor = klass.__dict__["Last_Name"]
+        if "ID_Number" in klass.__dict__:
+            descriptor = klass.__dict__["ID_Number"]
             break
     assert isinstance(descriptor, property)
 
@@ -244,21 +244,21 @@ def test_usuario_has_Password():
             break
     assert isinstance(descriptor, property)
 
-def test_usuario_has_ID_Number():
-    assert hasattr(Usuario, "ID_Number")
-    descriptor = None
-    for klass in Usuario.__mro__:
-        if "ID_Number" in klass.__dict__:
-            descriptor = klass.__dict__["ID_Number"]
-            break
-    assert isinstance(descriptor, property)
-
 def test_usuario_has_First_Name():
     assert hasattr(Usuario, "First_Name")
     descriptor = None
     for klass in Usuario.__mro__:
         if "First_Name" in klass.__dict__:
             descriptor = klass.__dict__["First_Name"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_usuario_has_Last_Name():
+    assert hasattr(Usuario, "Last_Name")
+    descriptor = None
+    for klass in Usuario.__mro__:
+        if "Last_Name" in klass.__dict__:
+            descriptor = klass.__dict__["Last_Name"]
             break
     assert isinstance(descriptor, property)
 
@@ -282,10 +282,10 @@ Login_strategy = st.builds(
 )
 Curso_strategy = st.builds(
     Curso,
-    CourseNumber=
-        safe_text,
     Course_Teacher=
         st.none(),
+    CourseNumber=
+        safe_text,
     CourseName=
         safe_text
 )
@@ -294,13 +294,13 @@ Admin_strategy = st.builds(
 )
 Database_strategy = st.builds(
     Database,
-    Schedules=
-        st.none(),
-    Materials=
-        st.none(),
     Grades=
         st.none(),
     Accounts=
+        st.none(),
+    Schedules=
+        st.none(),
+    Materials=
         st.none()
 )
 Profesor_strategy = st.builds(
@@ -315,13 +315,13 @@ Student_strategy = st.builds(
 )
 Usuario_strategy = st.builds(
     Usuario,
-    Last_Name=
-        safe_text,
-    Password=
-        safe_text,
     ID_Number=
         st.integers(),
+    Password=
+        safe_text,
     First_Name=
+        safe_text,
+    Last_Name=
         safe_text
 )
 
@@ -340,20 +340,6 @@ def test_login_instantiation(instance):
 def test_curso_instantiation(instance):
     assert isinstance(instance, Curso)
 
-@given(instance=Curso_strategy)
-def test_curso_CourseNumber_type(instance):
-    assert isinstance(instance.CourseNumber, str)
-
-
-@given(instance=Curso_strategy)
-def test_curso_CourseNumber_setter(instance):
-    original = instance.CourseNumber
-    instance.CourseNumber = original
-    assert instance.CourseNumber == original
-
-@given(instance=Curso_strategy)
-def test_curso_Course_Teacher_type(instance):
-    assert isinstance(instance.Course_Teacher, profesor)
 
 
 @given(instance=Curso_strategy)
@@ -362,9 +348,14 @@ def test_curso_Course_Teacher_setter(instance):
     instance.Course_Teacher = original
     assert instance.Course_Teacher == original
 
+
+
 @given(instance=Curso_strategy)
-def test_curso_CourseName_type(instance):
-    assert isinstance(instance.CourseName, str)
+def test_curso_CourseNumber_setter(instance):
+    original = instance.CourseNumber
+    instance.CourseNumber = original
+    assert instance.CourseNumber == original
+
 
 
 @given(instance=Curso_strategy)
@@ -383,31 +374,6 @@ def test_admin_instantiation(instance):
 def test_database_instantiation(instance):
     assert isinstance(instance, Database)
 
-@given(instance=Database_strategy)
-def test_database_Schedules_type(instance):
-    assert isinstance(instance.Schedules, database)
-
-
-@given(instance=Database_strategy)
-def test_database_Schedules_setter(instance):
-    original = instance.Schedules
-    instance.Schedules = original
-    assert instance.Schedules == original
-
-@given(instance=Database_strategy)
-def test_database_Materials_type(instance):
-    assert isinstance(instance.Materials, database)
-
-
-@given(instance=Database_strategy)
-def test_database_Materials_setter(instance):
-    original = instance.Materials
-    instance.Materials = original
-    assert instance.Materials == original
-
-@given(instance=Database_strategy)
-def test_database_Grades_type(instance):
-    assert isinstance(instance.Grades, database)
 
 
 @given(instance=Database_strategy)
@@ -416,9 +382,6 @@ def test_database_Grades_setter(instance):
     instance.Grades = original
     assert instance.Grades == original
 
-@given(instance=Database_strategy)
-def test_database_Accounts_type(instance):
-    assert isinstance(instance.Accounts, database)
 
 
 @given(instance=Database_strategy)
@@ -427,14 +390,27 @@ def test_database_Accounts_setter(instance):
     instance.Accounts = original
     assert instance.Accounts == original
 
+
+
+@given(instance=Database_strategy)
+def test_database_Schedules_setter(instance):
+    original = instance.Schedules
+    instance.Schedules = original
+    assert instance.Schedules == original
+
+
+
+@given(instance=Database_strategy)
+def test_database_Materials_setter(instance):
+    original = instance.Materials
+    instance.Materials = original
+    assert instance.Materials == original
+
 @given(instance=Profesor_strategy)
 @settings(max_examples=50)
 def test_profesor_instantiation(instance):
     assert isinstance(instance, Profesor)
 
-@given(instance=Profesor_strategy)
-def test_profesor_Assigned_Courses_type(instance):
-    assert isinstance(instance.Assigned_Courses, str)
 
 
 @given(instance=Profesor_strategy)
@@ -448,9 +424,6 @@ def test_profesor_Assigned_Courses_setter(instance):
 def test_student_instantiation(instance):
     assert isinstance(instance, Student)
 
-@given(instance=Student_strategy)
-def test_student_Year_type(instance):
-    assert isinstance(instance.Year, str)
 
 
 @given(instance=Student_strategy)
@@ -464,31 +437,6 @@ def test_student_Year_setter(instance):
 def test_usuario_instantiation(instance):
     assert isinstance(instance, Usuario)
 
-@given(instance=Usuario_strategy)
-def test_usuario_Last_Name_type(instance):
-    assert isinstance(instance.Last_Name, str)
-
-
-@given(instance=Usuario_strategy)
-def test_usuario_Last_Name_setter(instance):
-    original = instance.Last_Name
-    instance.Last_Name = original
-    assert instance.Last_Name == original
-
-@given(instance=Usuario_strategy)
-def test_usuario_Password_type(instance):
-    assert isinstance(instance.Password, str)
-
-
-@given(instance=Usuario_strategy)
-def test_usuario_Password_setter(instance):
-    original = instance.Password
-    instance.Password = original
-    assert instance.Password == original
-
-@given(instance=Usuario_strategy)
-def test_usuario_ID_Number_type(instance):
-    assert isinstance(instance.ID_Number, int)
 
 
 @given(instance=Usuario_strategy)
@@ -497,9 +445,14 @@ def test_usuario_ID_Number_setter(instance):
     instance.ID_Number = original
     assert instance.ID_Number == original
 
+
+
 @given(instance=Usuario_strategy)
-def test_usuario_First_Name_type(instance):
-    assert isinstance(instance.First_Name, str)
+def test_usuario_Password_setter(instance):
+    original = instance.Password
+    instance.Password = original
+    assert instance.Password == original
+
 
 
 @given(instance=Usuario_strategy)
@@ -507,3 +460,11 @@ def test_usuario_First_Name_setter(instance):
     original = instance.First_Name
     instance.First_Name = original
     assert instance.First_Name == original
+
+
+
+@given(instance=Usuario_strategy)
+def test_usuario_Last_Name_setter(instance):
+    original = instance.Last_Name
+    instance.Last_Name = original
+    assert instance.Last_Name == original

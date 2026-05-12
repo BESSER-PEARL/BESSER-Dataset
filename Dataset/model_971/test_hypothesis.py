@@ -3,14 +3,14 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    graph::Edge,
-    graph::AbstractNamedObject,
+from python_code import (
+    graph_Edge,
+    graph_AbstractNamedObject,
     AbstractNamedObject,
-    graph::Node,
-    graph::Graph,
+    graph_Node,
+    graph_Graph,
 )
 
 # =============================================================================
@@ -19,37 +19,37 @@ from classes import (
 
 
 
-def test_graph::edge_is_not_abstract():
-    assert not inspect.isabstract(graph::Edge)
+def test_graph_edge_is_not_abstract():
+    assert not inspect.isabstract(graph_Edge)
 
 
-def test_graph::edge_constructor_exists():
-    assert callable(graph::Edge.__init__)
+def test_graph_edge_constructor_exists():
+    assert callable(graph_Edge.__init__)
 
 
-def test_graph::edge_constructor_args():
-    sig = inspect.signature(graph::Edge.__init__)
+def test_graph_edge_constructor_args():
+    sig = inspect.signature(graph_Edge.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_graph::abstractnamedobject_is_not_abstract():
-    assert not inspect.isabstract(graph::AbstractNamedObject)
+def test_graph_abstractnamedobject_is_not_abstract():
+    assert not inspect.isabstract(graph_AbstractNamedObject)
 
 
-def test_graph::abstractnamedobject_constructor_exists():
-    assert callable(graph::AbstractNamedObject.__init__)
+def test_graph_abstractnamedobject_constructor_exists():
+    assert callable(graph_AbstractNamedObject.__init__)
 
 
-def test_graph::abstractnamedobject_constructor_args():
-    sig = inspect.signature(graph::AbstractNamedObject.__init__)
+def test_graph_abstractnamedobject_constructor_args():
+    sig = inspect.signature(graph_AbstractNamedObject.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_graph::abstractnamedobject_has_name():
-    assert hasattr(graph::AbstractNamedObject, "name")
+def test_graph_abstractnamedobject_has_name():
+    assert hasattr(graph_AbstractNamedObject, "name")
     descriptor = None
-    for klass in graph::AbstractNamedObject.__mro__:
+    for klass in graph_AbstractNamedObject.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -71,30 +71,30 @@ def test_abstractnamedobject_constructor_args():
 
 
 
-def test_graph::node_is_not_abstract():
-    assert not inspect.isabstract(graph::Node)
+def test_graph_node_is_not_abstract():
+    assert not inspect.isabstract(graph_Node)
 
 
-def test_graph::node_constructor_exists():
-    assert callable(graph::Node.__init__)
+def test_graph_node_constructor_exists():
+    assert callable(graph_Node.__init__)
 
 
-def test_graph::node_constructor_args():
-    sig = inspect.signature(graph::Node.__init__)
+def test_graph_node_constructor_args():
+    sig = inspect.signature(graph_Node.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_graph::graph_is_not_abstract():
-    assert not inspect.isabstract(graph::Graph)
+def test_graph_graph_is_not_abstract():
+    assert not inspect.isabstract(graph_Graph)
 
 
-def test_graph::graph_constructor_exists():
-    assert callable(graph::Graph.__init__)
+def test_graph_graph_constructor_exists():
+    assert callable(graph_Graph.__init__)
 
 
-def test_graph::graph_constructor_args():
-    sig = inspect.signature(graph::Graph.__init__)
+def test_graph_graph_constructor_args():
+    sig = inspect.signature(graph_Graph.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -109,41 +109,38 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-graph::Edge_strategy = st.builds(
-    graph::Edge,
+graph_Edge_strategy = st.builds(
+    graph_Edge,
 )
-graph::AbstractNamedObject_strategy = st.builds(
-    graph::AbstractNamedObject,
+graph_AbstractNamedObject_strategy = st.builds(
+    graph_AbstractNamedObject,
     name=
         safe_text
 )
 AbstractNamedObject_strategy = st.builds(
     AbstractNamedObject,
 )
-graph::Node_strategy = st.builds(
-    graph::Node,
+graph_Node_strategy = st.builds(
+    graph_Node,
 )
-graph::Graph_strategy = st.builds(
-    graph::Graph,
+graph_Graph_strategy = st.builds(
+    graph_Graph,
 )
 
-@given(instance=graph::Edge_strategy)
+@given(instance=graph_Edge_strategy)
 @settings(max_examples=50)
-def test_graph::edge_instantiation(instance):
-    assert isinstance(instance, graph::Edge)
+def test_graph_edge_instantiation(instance):
+    assert isinstance(instance, graph_Edge)
 
-@given(instance=graph::AbstractNamedObject_strategy)
+@given(instance=graph_AbstractNamedObject_strategy)
 @settings(max_examples=50)
-def test_graph::abstractnamedobject_instantiation(instance):
-    assert isinstance(instance, graph::AbstractNamedObject)
-
-@given(instance=graph::AbstractNamedObject_strategy)
-def test_graph::abstractnamedobject_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_graph_abstractnamedobject_instantiation(instance):
+    assert isinstance(instance, graph_AbstractNamedObject)
 
 
-@given(instance=graph::AbstractNamedObject_strategy)
-def test_graph::abstractnamedobject_name_setter(instance):
+
+@given(instance=graph_AbstractNamedObject_strategy)
+def test_graph_abstractnamedobject_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
@@ -153,12 +150,12 @@ def test_graph::abstractnamedobject_name_setter(instance):
 def test_abstractnamedobject_instantiation(instance):
     assert isinstance(instance, AbstractNamedObject)
 
-@given(instance=graph::Node_strategy)
+@given(instance=graph_Node_strategy)
 @settings(max_examples=50)
-def test_graph::node_instantiation(instance):
-    assert isinstance(instance, graph::Node)
+def test_graph_node_instantiation(instance):
+    assert isinstance(instance, graph_Node)
 
-@given(instance=graph::Graph_strategy)
+@given(instance=graph_Graph_strategy)
 @settings(max_examples=50)
-def test_graph::graph_instantiation(instance):
-    assert isinstance(instance, graph::Graph)
+def test_graph_graph_instantiation(instance):
+    assert isinstance(instance, graph_Graph)

@@ -3,11 +3,11 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    entity::Writer,
-    entity::Book,
+from python_code import (
+    entity_Writer,
+    entity_Book,
 )
 
 # =============================================================================
@@ -16,23 +16,23 @@ from classes import (
 
 
 
-def test_entity::writer_is_not_abstract():
-    assert not inspect.isabstract(entity::Writer)
+def test_entity_writer_is_not_abstract():
+    assert not inspect.isabstract(entity_Writer)
 
 
-def test_entity::writer_constructor_exists():
-    assert callable(entity::Writer.__init__)
+def test_entity_writer_constructor_exists():
+    assert callable(entity_Writer.__init__)
 
 
-def test_entity::writer_constructor_args():
-    sig = inspect.signature(entity::Writer.__init__)
+def test_entity_writer_constructor_args():
+    sig = inspect.signature(entity_Writer.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_entity::writer_has_name():
-    assert hasattr(entity::Writer, "name")
+def test_entity_writer_has_name():
+    assert hasattr(entity_Writer, "name")
     descriptor = None
-    for klass in entity::Writer.__mro__:
+    for klass in entity_Writer.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -40,23 +40,23 @@ def test_entity::writer_has_name():
 
 
 
-def test_entity::book_is_not_abstract():
-    assert not inspect.isabstract(entity::Book)
+def test_entity_book_is_not_abstract():
+    assert not inspect.isabstract(entity_Book)
 
 
-def test_entity::book_constructor_exists():
-    assert callable(entity::Book.__init__)
+def test_entity_book_constructor_exists():
+    assert callable(entity_Book.__init__)
 
 
-def test_entity::book_constructor_args():
-    sig = inspect.signature(entity::Book.__init__)
+def test_entity_book_constructor_args():
+    sig = inspect.signature(entity_Book.__init__)
     params = list(sig.parameters.keys())
     assert "title" in params, "Missing parameter 'title'"
 
-def test_entity::book_has_title():
-    assert hasattr(entity::Book, "title")
+def test_entity_book_has_title():
+    assert hasattr(entity_Book, "title")
     descriptor = None
-    for klass in entity::Book.__mro__:
+    for klass in entity_Book.__mro__:
         if "title" in klass.__dict__:
             descriptor = klass.__dict__["title"]
             break
@@ -74,45 +74,39 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-entity::Writer_strategy = st.builds(
-    entity::Writer,
+entity_Writer_strategy = st.builds(
+    entity_Writer,
     name=
         safe_text
 )
-entity::Book_strategy = st.builds(
-    entity::Book,
+entity_Book_strategy = st.builds(
+    entity_Book,
     title=
         safe_text
 )
 
-@given(instance=entity::Writer_strategy)
+@given(instance=entity_Writer_strategy)
 @settings(max_examples=50)
-def test_entity::writer_instantiation(instance):
-    assert isinstance(instance, entity::Writer)
-
-@given(instance=entity::Writer_strategy)
-def test_entity::writer_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_entity_writer_instantiation(instance):
+    assert isinstance(instance, entity_Writer)
 
 
-@given(instance=entity::Writer_strategy)
-def test_entity::writer_name_setter(instance):
+
+@given(instance=entity_Writer_strategy)
+def test_entity_writer_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=entity::Book_strategy)
+@given(instance=entity_Book_strategy)
 @settings(max_examples=50)
-def test_entity::book_instantiation(instance):
-    assert isinstance(instance, entity::Book)
-
-@given(instance=entity::Book_strategy)
-def test_entity::book_title_type(instance):
-    assert isinstance(instance.title, str)
+def test_entity_book_instantiation(instance):
+    assert isinstance(instance, entity_Book)
 
 
-@given(instance=entity::Book_strategy)
-def test_entity::book_title_setter(instance):
+
+@given(instance=entity_Book_strategy)
+def test_entity_book_title_setter(instance):
     original = instance.title
     instance.title = original
     assert instance.title == original

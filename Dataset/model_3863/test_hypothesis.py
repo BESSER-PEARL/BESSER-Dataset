@@ -3,11 +3,11 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    tracemap::TraceMap,
-    tracemap::TraceEntry,
+from python_code import (
+    tracemap_TraceMap,
+    tracemap_TraceEntry,
 )
 
 # =============================================================================
@@ -16,30 +16,30 @@ from classes import (
 
 
 
-def test_tracemap::tracemap_is_not_abstract():
-    assert not inspect.isabstract(tracemap::TraceMap)
+def test_tracemap_tracemap_is_not_abstract():
+    assert not inspect.isabstract(tracemap_TraceMap)
 
 
-def test_tracemap::tracemap_constructor_exists():
-    assert callable(tracemap::TraceMap.__init__)
+def test_tracemap_tracemap_constructor_exists():
+    assert callable(tracemap_TraceMap.__init__)
 
 
-def test_tracemap::tracemap_constructor_args():
-    sig = inspect.signature(tracemap::TraceMap.__init__)
+def test_tracemap_tracemap_constructor_args():
+    sig = inspect.signature(tracemap_TraceMap.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_tracemap::traceentry_is_not_abstract():
-    assert not inspect.isabstract(tracemap::TraceEntry)
+def test_tracemap_traceentry_is_not_abstract():
+    assert not inspect.isabstract(tracemap_TraceEntry)
 
 
-def test_tracemap::traceentry_constructor_exists():
-    assert callable(tracemap::TraceEntry.__init__)
+def test_tracemap_traceentry_constructor_exists():
+    assert callable(tracemap_TraceEntry.__init__)
 
 
-def test_tracemap::traceentry_constructor_args():
-    sig = inspect.signature(tracemap::TraceEntry.__init__)
+def test_tracemap_traceentry_constructor_args():
+    sig = inspect.signature(tracemap_TraceEntry.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -54,19 +54,19 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-tracemap::TraceMap_strategy = st.builds(
-    tracemap::TraceMap,
+tracemap_TraceMap_strategy = st.builds(
+    tracemap_TraceMap,
 )
-tracemap::TraceEntry_strategy = st.builds(
-    tracemap::TraceEntry,
+tracemap_TraceEntry_strategy = st.builds(
+    tracemap_TraceEntry,
 )
 
-@given(instance=tracemap::TraceMap_strategy)
+@given(instance=tracemap_TraceMap_strategy)
 @settings(max_examples=50)
-def test_tracemap::tracemap_instantiation(instance):
-    assert isinstance(instance, tracemap::TraceMap)
+def test_tracemap_tracemap_instantiation(instance):
+    assert isinstance(instance, tracemap_TraceMap)
 
-@given(instance=tracemap::TraceEntry_strategy)
+@given(instance=tracemap_TraceEntry_strategy)
 @settings(max_examples=50)
-def test_tracemap::traceentry_instantiation(instance):
-    assert isinstance(instance, tracemap::TraceEntry)
+def test_tracemap_traceentry_instantiation(instance):
+    assert isinstance(instance, tracemap_TraceEntry)

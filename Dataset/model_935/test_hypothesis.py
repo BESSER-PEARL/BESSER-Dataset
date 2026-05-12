@@ -3,259 +3,129 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    Concept,
-    uma::Whitepaper,
-    uma::WorkOrder,
-    Descriptor,
-    uma::RoleDescriptor,
+from python_code import (
     ActivityDescription,
-    uma::ProcessDescription,
-    uma::WorkProductDescriptor,
+    uma_ProcessDescription,
     ProcessPackage,
-    uma::ProcessComponent,
+    uma_ProcessComponent,
     Element,
-    uma::NamedElement,
+    uma_NamedElement,
     NamedElement,
-    uma::PackageableElement,
+    uma_PackageableElement,
     Activity,
-    uma::Process,
-    uma::Phase,
-    uma::Iteration,
-    uma::Element,
-    uma::EStringToStringMapEntry,
-    uma::DocumentRoot,
+    uma_Phase,
+    uma_Process,
+    uma_Iteration,
+    uma_Element,
+    uma_EStringToStringMapEntry,
+    uma_DocumentRoot,
     BreakdownElement,
-    uma::ProcessComponentInterface,
-    uma::TeamProfile,
-    uma::WorkBreakdownElement,
-    uma::Descriptor,
+    uma_ProcessComponentInterface,
+    uma_Descriptor,
     ProcessDescription,
-    uma::DeliveryProcessDescription,
+    uma_DeliveryProcessDescription,
     ContentCategory,
-    uma::WorkProductType,
-    uma::Discipline,
-    uma::DisciplineGrouping,
-    uma::Tool,
-    uma::Domain,
-    uma::RoleSet,
-    uma::RoleSetGrouping,
-    uma::CustomCategory,
+    uma_Domain,
+    uma_DisciplineGrouping,
+    uma_Discipline,
+    uma_CustomCategory,
     WorkBreakdownElement,
-    uma::Milestone,
-    uma::TaskDescriptor,
-    uma::Activity,
+    uma_Milestone,
+    uma_TaskDescriptor,
+    uma_Activity,
     DescribableElement,
-    uma::ProcessElement,
-    uma::ContentElement,
+    uma_ProcessElement,
+    uma_ContentElement,
     MethodUnit,
-    uma::MethodConfiguration,
-    uma::MethodPlugin,
-    uma::MethodLibrary,
-    uma::ContentDescription,
+    uma_MethodPlugin,
+    uma_MethodLibrary,
+    uma_MethodConfiguration,
+    uma_ContentDescription,
     MethodElement,
-    uma::Section,
-    uma::MethodPackage,
-    uma::WorkDefinition,
-    uma::DescribableElement,
-    uma::MethodUnit,
-    uma::Constraint,
+    uma_Section,
+    uma_MethodPackage,
+    uma_MethodUnit,
+    uma_DescribableElement,
+    uma_Constraint,
     RoleDescriptor,
-    uma::CompositeRole,
+    uma_CompositeRole,
     Guidance,
-    uma::Practice,
-    uma::Estimate,
-    uma::Roadmap,
-    uma::ToolMentor,
-    uma::Template,
-    uma::EstimationConsiderations,
-    uma::ReusableAsset,
-    uma::Guideline,
-    uma::TermDefinition,
-    uma::Report,
-    uma::Concept,
-    uma::SupportingMaterial,
-    uma::EstimatingMetric,
-    uma::Example,
-    uma::Checklist,
+    uma_Example,
+    uma_ReusableAsset,
+    uma_Report,
+    uma_Guideline,
+    uma_EstimationConsiderations,
+    uma_Concept,
+    uma_Estimate,
+    uma_Practice,
+    uma_EstimatingMetric,
+    uma_Checklist,
     Process,
-    uma::ProcessPlanningTemplate,
-    uma::DeliveryProcess,
-    uma::CapabilityPattern,
+    uma_DeliveryProcess,
+    uma_ProcessPlanningTemplate,
+    uma_CapabilityPattern,
     ContentDescription,
-    uma::WorkProductDescription,
-    uma::PracticeDescription,
-    uma::TaskDescription,
-    uma::GuidanceDescription,
-    uma::RoleDescription,
-    uma::BreakdownElementDescription,
+    uma_PracticeDescription,
+    uma_GuidanceDescription,
+    uma_RoleDescription,
+    uma_BreakdownElementDescription,
     MethodPackage,
-    uma::ProcessPackage,
-    uma::ContentPackage,
-    uma::ContentCategoryPackage,
+    uma_ProcessPackage,
+    uma_ContentPackage,
+    uma_ContentCategoryPackage,
     ContentElement,
-    uma::WorkProduct,
-    uma::Role,
-    uma::Guidance,
-    uma::Task,
-    uma::Kind,
-    uma::ContentCategory,
+    uma_Guidance,
+    uma_Kind,
+    uma_Role,
+    uma_ContentCategory,
     WorkProductDescription,
-    uma::DeliverableDescription,
-    uma::ArtifactDescription,
+    uma_DeliverableDescription,
+    uma_ArtifactDescription,
     WorkProduct,
-    uma::Outcome,
-    uma::Deliverable,
-    uma::Artifact,
+    uma_Outcome,
+    uma_Deliverable,
+    uma_Artifact,
     PackageableElement,
-    uma::MethodElementProperty,
-    uma::MethodElement,
-    uma::ApplicableMetaClassInfo,
+    uma_MethodElementProperty,
+    uma_MethodElement,
+    uma_ApplicableMetaClassInfo,
     ProcessElement,
-    uma::PlanningData,
-    uma::BreakdownElement,
+    uma_PlanningData,
+    uma_BreakdownElement,
     BreakdownElementDescription,
-    uma::DescriptorDescription,
-    uma::ActivityDescription,
-    WorkOrderType,
+    uma_DescriptorDescription,
+    uma_ActivityDescription,
+    uma_WorkProductType,
+    uma_WorkProductDescription,
+    uma_WorkProduct,
+    uma_WorkDefinition,
+    uma_WorkBreakdownElement,
+    Concept,
+    uma_Whitepaper,
+    uma_WorkOrder,
+    uma_Tool,
+    uma_TermDefinition,
+    uma_Template,
+    uma_TeamProfile,
+    uma_ToolMentor,
+    uma_TaskDescription,
+    uma_Task,
+    uma_SupportingMaterial,
+    uma_RoleSetGrouping,
+    uma_RoleSet,
+    Descriptor,
+    uma_WorkProductDescriptor,
+    uma_RoleDescriptor,
+    uma_Roadmap,
     VariabilityType,
+    WorkOrderType,
 )
 
 # =============================================================================
 # SECTION 1 — STRUCTURAL TESTS
 # =============================================================================
-
-
-
-def test_concept_is_not_abstract():
-    assert not inspect.isabstract(Concept)
-
-
-def test_concept_constructor_exists():
-    assert callable(Concept.__init__)
-
-
-def test_concept_constructor_args():
-    sig = inspect.signature(Concept.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_uma::whitepaper_is_not_abstract():
-    assert not inspect.isabstract(uma::Whitepaper)
-
-
-def test_uma::whitepaper_constructor_exists():
-    assert callable(uma::Whitepaper.__init__)
-
-
-def test_uma::whitepaper_constructor_args():
-    sig = inspect.signature(uma::Whitepaper.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_uma::workorder_is_not_abstract():
-    assert not inspect.isabstract(uma::WorkOrder)
-
-
-def test_uma::workorder_constructor_exists():
-    assert callable(uma::WorkOrder.__init__)
-
-
-def test_uma::workorder_constructor_args():
-    sig = inspect.signature(uma::WorkOrder.__init__)
-    params = list(sig.parameters.keys())
-    assert "linkType" in params, "Missing parameter 'linkType'"
-    assert "id" in params, "Missing parameter 'id'"
-    assert "properties" in params, "Missing parameter 'properties'"
-    assert "value" in params, "Missing parameter 'value'"
-
-def test_uma::workorder_has_linkType():
-    assert hasattr(uma::WorkOrder, "linkType")
-    descriptor = None
-    for klass in uma::WorkOrder.__mro__:
-        if "linkType" in klass.__dict__:
-            descriptor = klass.__dict__["linkType"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_uma::workorder_has_id():
-    assert hasattr(uma::WorkOrder, "id")
-    descriptor = None
-    for klass in uma::WorkOrder.__mro__:
-        if "id" in klass.__dict__:
-            descriptor = klass.__dict__["id"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_uma::workorder_has_properties():
-    assert hasattr(uma::WorkOrder, "properties")
-    descriptor = None
-    for klass in uma::WorkOrder.__mro__:
-        if "properties" in klass.__dict__:
-            descriptor = klass.__dict__["properties"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_uma::workorder_has_value():
-    assert hasattr(uma::WorkOrder, "value")
-    descriptor = None
-    for klass in uma::WorkOrder.__mro__:
-        if "value" in klass.__dict__:
-            descriptor = klass.__dict__["value"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_descriptor_is_not_abstract():
-    assert not inspect.isabstract(Descriptor)
-
-
-def test_descriptor_constructor_exists():
-    assert callable(Descriptor.__init__)
-
-
-def test_descriptor_constructor_args():
-    sig = inspect.signature(Descriptor.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_uma::roledescriptor_is_not_abstract():
-    assert not inspect.isabstract(uma::RoleDescriptor)
-
-
-def test_uma::roledescriptor_constructor_exists():
-    assert callable(uma::RoleDescriptor.__init__)
-
-
-def test_uma::roledescriptor_constructor_args():
-    sig = inspect.signature(uma::RoleDescriptor.__init__)
-    params = list(sig.parameters.keys())
-    assert "role" in params, "Missing parameter 'role'"
-    assert "responsibleFor" in params, "Missing parameter 'responsibleFor'"
-
-def test_uma::roledescriptor_has_role():
-    assert hasattr(uma::RoleDescriptor, "role")
-    descriptor = None
-    for klass in uma::RoleDescriptor.__mro__:
-        if "role" in klass.__dict__:
-            descriptor = klass.__dict__["role"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_uma::roledescriptor_has_responsibleFor():
-    assert hasattr(uma::RoleDescriptor, "responsibleFor")
-    descriptor = None
-    for klass in uma::RoleDescriptor.__mro__:
-        if "responsibleFor" in klass.__dict__:
-            descriptor = klass.__dict__["responsibleFor"]
-            break
-    assert isinstance(descriptor, property)
 
 
 
@@ -273,169 +143,35 @@ def test_activitydescription_constructor_args():
 
 
 
-def test_uma::processdescription_is_not_abstract():
-    assert not inspect.isabstract(uma::ProcessDescription)
+def test_uma_processdescription_is_not_abstract():
+    assert not inspect.isabstract(uma_ProcessDescription)
 
 
-def test_uma::processdescription_constructor_exists():
-    assert callable(uma::ProcessDescription.__init__)
+def test_uma_processdescription_constructor_exists():
+    assert callable(uma_ProcessDescription.__init__)
 
 
-def test_uma::processdescription_constructor_args():
-    sig = inspect.signature(uma::ProcessDescription.__init__)
+def test_uma_processdescription_constructor_args():
+    sig = inspect.signature(uma_ProcessDescription.__init__)
     params = list(sig.parameters.keys())
-    assert "usageNotes" in params, "Missing parameter 'usageNotes'"
     assert "scope" in params, "Missing parameter 'scope'"
+    assert "usageNotes" in params, "Missing parameter 'usageNotes'"
 
-def test_uma::processdescription_has_usageNotes():
-    assert hasattr(uma::ProcessDescription, "usageNotes")
+def test_uma_processdescription_has_scope():
+    assert hasattr(uma_ProcessDescription, "scope")
     descriptor = None
-    for klass in uma::ProcessDescription.__mro__:
-        if "usageNotes" in klass.__dict__:
-            descriptor = klass.__dict__["usageNotes"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_uma::processdescription_has_scope():
-    assert hasattr(uma::ProcessDescription, "scope")
-    descriptor = None
-    for klass in uma::ProcessDescription.__mro__:
+    for klass in uma_ProcessDescription.__mro__:
         if "scope" in klass.__dict__:
             descriptor = klass.__dict__["scope"]
             break
     assert isinstance(descriptor, property)
 
-
-
-def test_uma::workproductdescriptor_is_not_abstract():
-    assert not inspect.isabstract(uma::WorkProductDescriptor)
-
-
-def test_uma::workproductdescriptor_constructor_exists():
-    assert callable(uma::WorkProductDescriptor.__init__)
-
-
-def test_uma::workproductdescriptor_constructor_args():
-    sig = inspect.signature(uma::WorkProductDescriptor.__init__)
-    params = list(sig.parameters.keys())
-    assert "group2" in params, "Missing parameter 'group2'"
-    assert "activityExitState" in params, "Missing parameter 'activityExitState'"
-    assert "responsibleRole" in params, "Missing parameter 'responsibleRole'"
-    assert "mandatoryInputTo" in params, "Missing parameter 'mandatoryInputTo'"
-    assert "optionalInputTo" in params, "Missing parameter 'optionalInputTo'"
-    assert "externalInputTo" in params, "Missing parameter 'externalInputTo'"
-    assert "activityEntryState" in params, "Missing parameter 'activityEntryState'"
-    assert "workProduct" in params, "Missing parameter 'workProduct'"
-    assert "outputFrom" in params, "Missing parameter 'outputFrom'"
-    assert "impacts" in params, "Missing parameter 'impacts'"
-    assert "deliverableParts" in params, "Missing parameter 'deliverableParts'"
-    assert "impactedBy" in params, "Missing parameter 'impactedBy'"
-
-def test_uma::workproductdescriptor_has_group2():
-    assert hasattr(uma::WorkProductDescriptor, "group2")
+def test_uma_processdescription_has_usageNotes():
+    assert hasattr(uma_ProcessDescription, "usageNotes")
     descriptor = None
-    for klass in uma::WorkProductDescriptor.__mro__:
-        if "group2" in klass.__dict__:
-            descriptor = klass.__dict__["group2"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_uma::workproductdescriptor_has_activityExitState():
-    assert hasattr(uma::WorkProductDescriptor, "activityExitState")
-    descriptor = None
-    for klass in uma::WorkProductDescriptor.__mro__:
-        if "activityExitState" in klass.__dict__:
-            descriptor = klass.__dict__["activityExitState"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_uma::workproductdescriptor_has_responsibleRole():
-    assert hasattr(uma::WorkProductDescriptor, "responsibleRole")
-    descriptor = None
-    for klass in uma::WorkProductDescriptor.__mro__:
-        if "responsibleRole" in klass.__dict__:
-            descriptor = klass.__dict__["responsibleRole"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_uma::workproductdescriptor_has_mandatoryInputTo():
-    assert hasattr(uma::WorkProductDescriptor, "mandatoryInputTo")
-    descriptor = None
-    for klass in uma::WorkProductDescriptor.__mro__:
-        if "mandatoryInputTo" in klass.__dict__:
-            descriptor = klass.__dict__["mandatoryInputTo"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_uma::workproductdescriptor_has_optionalInputTo():
-    assert hasattr(uma::WorkProductDescriptor, "optionalInputTo")
-    descriptor = None
-    for klass in uma::WorkProductDescriptor.__mro__:
-        if "optionalInputTo" in klass.__dict__:
-            descriptor = klass.__dict__["optionalInputTo"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_uma::workproductdescriptor_has_externalInputTo():
-    assert hasattr(uma::WorkProductDescriptor, "externalInputTo")
-    descriptor = None
-    for klass in uma::WorkProductDescriptor.__mro__:
-        if "externalInputTo" in klass.__dict__:
-            descriptor = klass.__dict__["externalInputTo"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_uma::workproductdescriptor_has_activityEntryState():
-    assert hasattr(uma::WorkProductDescriptor, "activityEntryState")
-    descriptor = None
-    for klass in uma::WorkProductDescriptor.__mro__:
-        if "activityEntryState" in klass.__dict__:
-            descriptor = klass.__dict__["activityEntryState"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_uma::workproductdescriptor_has_workProduct():
-    assert hasattr(uma::WorkProductDescriptor, "workProduct")
-    descriptor = None
-    for klass in uma::WorkProductDescriptor.__mro__:
-        if "workProduct" in klass.__dict__:
-            descriptor = klass.__dict__["workProduct"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_uma::workproductdescriptor_has_outputFrom():
-    assert hasattr(uma::WorkProductDescriptor, "outputFrom")
-    descriptor = None
-    for klass in uma::WorkProductDescriptor.__mro__:
-        if "outputFrom" in klass.__dict__:
-            descriptor = klass.__dict__["outputFrom"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_uma::workproductdescriptor_has_impacts():
-    assert hasattr(uma::WorkProductDescriptor, "impacts")
-    descriptor = None
-    for klass in uma::WorkProductDescriptor.__mro__:
-        if "impacts" in klass.__dict__:
-            descriptor = klass.__dict__["impacts"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_uma::workproductdescriptor_has_deliverableParts():
-    assert hasattr(uma::WorkProductDescriptor, "deliverableParts")
-    descriptor = None
-    for klass in uma::WorkProductDescriptor.__mro__:
-        if "deliverableParts" in klass.__dict__:
-            descriptor = klass.__dict__["deliverableParts"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_uma::workproductdescriptor_has_impactedBy():
-    assert hasattr(uma::WorkProductDescriptor, "impactedBy")
-    descriptor = None
-    for klass in uma::WorkProductDescriptor.__mro__:
-        if "impactedBy" in klass.__dict__:
-            descriptor = klass.__dict__["impactedBy"]
+    for klass in uma_ProcessDescription.__mro__:
+        if "usageNotes" in klass.__dict__:
+            descriptor = klass.__dict__["usageNotes"]
             break
     assert isinstance(descriptor, property)
 
@@ -455,65 +191,65 @@ def test_processpackage_constructor_args():
 
 
 
-def test_uma::processcomponent_is_not_abstract():
-    assert not inspect.isabstract(uma::ProcessComponent)
+def test_uma_processcomponent_is_not_abstract():
+    assert not inspect.isabstract(uma_ProcessComponent)
 
 
-def test_uma::processcomponent_constructor_exists():
-    assert callable(uma::ProcessComponent.__init__)
+def test_uma_processcomponent_constructor_exists():
+    assert callable(uma_ProcessComponent.__init__)
 
 
-def test_uma::processcomponent_constructor_args():
-    sig = inspect.signature(uma::ProcessComponent.__init__)
+def test_uma_processcomponent_constructor_args():
+    sig = inspect.signature(uma_ProcessComponent.__init__)
     params = list(sig.parameters.keys())
+    assert "changeDescription" in params, "Missing parameter 'changeDescription'"
+    assert "copyright" in params, "Missing parameter 'copyright'"
+    assert "changeDate" in params, "Missing parameter 'changeDate'"
     assert "authors" in params, "Missing parameter 'authors'"
     assert "version" in params, "Missing parameter 'version'"
-    assert "changeDescription" in params, "Missing parameter 'changeDescription'"
-    assert "changeDate" in params, "Missing parameter 'changeDate'"
-    assert "copyright" in params, "Missing parameter 'copyright'"
 
-def test_uma::processcomponent_has_authors():
-    assert hasattr(uma::ProcessComponent, "authors")
+def test_uma_processcomponent_has_changeDescription():
+    assert hasattr(uma_ProcessComponent, "changeDescription")
     descriptor = None
-    for klass in uma::ProcessComponent.__mro__:
-        if "authors" in klass.__dict__:
-            descriptor = klass.__dict__["authors"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_uma::processcomponent_has_version():
-    assert hasattr(uma::ProcessComponent, "version")
-    descriptor = None
-    for klass in uma::ProcessComponent.__mro__:
-        if "version" in klass.__dict__:
-            descriptor = klass.__dict__["version"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_uma::processcomponent_has_changeDescription():
-    assert hasattr(uma::ProcessComponent, "changeDescription")
-    descriptor = None
-    for klass in uma::ProcessComponent.__mro__:
+    for klass in uma_ProcessComponent.__mro__:
         if "changeDescription" in klass.__dict__:
             descriptor = klass.__dict__["changeDescription"]
             break
     assert isinstance(descriptor, property)
 
-def test_uma::processcomponent_has_changeDate():
-    assert hasattr(uma::ProcessComponent, "changeDate")
+def test_uma_processcomponent_has_copyright():
+    assert hasattr(uma_ProcessComponent, "copyright")
     descriptor = None
-    for klass in uma::ProcessComponent.__mro__:
+    for klass in uma_ProcessComponent.__mro__:
+        if "copyright" in klass.__dict__:
+            descriptor = klass.__dict__["copyright"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_uma_processcomponent_has_changeDate():
+    assert hasattr(uma_ProcessComponent, "changeDate")
+    descriptor = None
+    for klass in uma_ProcessComponent.__mro__:
         if "changeDate" in klass.__dict__:
             descriptor = klass.__dict__["changeDate"]
             break
     assert isinstance(descriptor, property)
 
-def test_uma::processcomponent_has_copyright():
-    assert hasattr(uma::ProcessComponent, "copyright")
+def test_uma_processcomponent_has_authors():
+    assert hasattr(uma_ProcessComponent, "authors")
     descriptor = None
-    for klass in uma::ProcessComponent.__mro__:
-        if "copyright" in klass.__dict__:
-            descriptor = klass.__dict__["copyright"]
+    for klass in uma_ProcessComponent.__mro__:
+        if "authors" in klass.__dict__:
+            descriptor = klass.__dict__["authors"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_uma_processcomponent_has_version():
+    assert hasattr(uma_ProcessComponent, "version")
+    descriptor = None
+    for klass in uma_ProcessComponent.__mro__:
+        if "version" in klass.__dict__:
+            descriptor = klass.__dict__["version"]
             break
     assert isinstance(descriptor, property)
 
@@ -533,23 +269,23 @@ def test_element_constructor_args():
 
 
 
-def test_uma::namedelement_is_not_abstract():
-    assert not inspect.isabstract(uma::NamedElement)
+def test_uma_namedelement_is_not_abstract():
+    assert not inspect.isabstract(uma_NamedElement)
 
 
-def test_uma::namedelement_constructor_exists():
-    assert callable(uma::NamedElement.__init__)
+def test_uma_namedelement_constructor_exists():
+    assert callable(uma_NamedElement.__init__)
 
 
-def test_uma::namedelement_constructor_args():
-    sig = inspect.signature(uma::NamedElement.__init__)
+def test_uma_namedelement_constructor_args():
+    sig = inspect.signature(uma_NamedElement.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_uma::namedelement_has_name():
-    assert hasattr(uma::NamedElement, "name")
+def test_uma_namedelement_has_name():
+    assert hasattr(uma_NamedElement, "name")
     descriptor = None
-    for klass in uma::NamedElement.__mro__:
+    for klass in uma_NamedElement.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -571,16 +307,16 @@ def test_namedelement_constructor_args():
 
 
 
-def test_uma::packageableelement_is_not_abstract():
-    assert not inspect.isabstract(uma::PackageableElement)
+def test_uma_packageableelement_is_not_abstract():
+    assert not inspect.isabstract(uma_PackageableElement)
 
 
-def test_uma::packageableelement_constructor_exists():
-    assert callable(uma::PackageableElement.__init__)
+def test_uma_packageableelement_constructor_exists():
+    assert callable(uma_PackageableElement.__init__)
 
 
-def test_uma::packageableelement_constructor_args():
-    sig = inspect.signature(uma::PackageableElement.__init__)
+def test_uma_packageableelement_constructor_args():
+    sig = inspect.signature(uma_PackageableElement.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -599,133 +335,133 @@ def test_activity_constructor_args():
 
 
 
-def test_uma::process_is_not_abstract():
-    assert not inspect.isabstract(uma::Process)
+def test_uma_phase_is_not_abstract():
+    assert not inspect.isabstract(uma_Phase)
 
 
-def test_uma::process_constructor_exists():
-    assert callable(uma::Process.__init__)
+def test_uma_phase_constructor_exists():
+    assert callable(uma_Phase.__init__)
 
 
-def test_uma::process_constructor_args():
-    sig = inspect.signature(uma::Process.__init__)
+def test_uma_phase_constructor_args():
+    sig = inspect.signature(uma_Phase.__init__)
     params = list(sig.parameters.keys())
-    assert "validContext" in params, "Missing parameter 'validContext'"
+
+
+
+def test_uma_process_is_not_abstract():
+    assert not inspect.isabstract(uma_Process)
+
+
+def test_uma_process_constructor_exists():
+    assert callable(uma_Process.__init__)
+
+
+def test_uma_process_constructor_args():
+    sig = inspect.signature(uma_Process.__init__)
+    params = list(sig.parameters.keys())
+    assert "includesPattern" in params, "Missing parameter 'includesPattern'"
     assert "defaultContext" in params, "Missing parameter 'defaultContext'"
     assert "diagramURI" in params, "Missing parameter 'diagramURI'"
-    assert "includesPattern" in params, "Missing parameter 'includesPattern'"
+    assert "validContext" in params, "Missing parameter 'validContext'"
 
-def test_uma::process_has_validContext():
-    assert hasattr(uma::Process, "validContext")
+def test_uma_process_has_includesPattern():
+    assert hasattr(uma_Process, "includesPattern")
     descriptor = None
-    for klass in uma::Process.__mro__:
-        if "validContext" in klass.__dict__:
-            descriptor = klass.__dict__["validContext"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_uma::process_has_defaultContext():
-    assert hasattr(uma::Process, "defaultContext")
-    descriptor = None
-    for klass in uma::Process.__mro__:
-        if "defaultContext" in klass.__dict__:
-            descriptor = klass.__dict__["defaultContext"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_uma::process_has_diagramURI():
-    assert hasattr(uma::Process, "diagramURI")
-    descriptor = None
-    for klass in uma::Process.__mro__:
-        if "diagramURI" in klass.__dict__:
-            descriptor = klass.__dict__["diagramURI"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_uma::process_has_includesPattern():
-    assert hasattr(uma::Process, "includesPattern")
-    descriptor = None
-    for klass in uma::Process.__mro__:
+    for klass in uma_Process.__mro__:
         if "includesPattern" in klass.__dict__:
             descriptor = klass.__dict__["includesPattern"]
             break
     assert isinstance(descriptor, property)
 
+def test_uma_process_has_defaultContext():
+    assert hasattr(uma_Process, "defaultContext")
+    descriptor = None
+    for klass in uma_Process.__mro__:
+        if "defaultContext" in klass.__dict__:
+            descriptor = klass.__dict__["defaultContext"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_uma_process_has_diagramURI():
+    assert hasattr(uma_Process, "diagramURI")
+    descriptor = None
+    for klass in uma_Process.__mro__:
+        if "diagramURI" in klass.__dict__:
+            descriptor = klass.__dict__["diagramURI"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_uma_process_has_validContext():
+    assert hasattr(uma_Process, "validContext")
+    descriptor = None
+    for klass in uma_Process.__mro__:
+        if "validContext" in klass.__dict__:
+            descriptor = klass.__dict__["validContext"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_uma::phase_is_not_abstract():
-    assert not inspect.isabstract(uma::Phase)
+
+def test_uma_iteration_is_not_abstract():
+    assert not inspect.isabstract(uma_Iteration)
 
 
-def test_uma::phase_constructor_exists():
-    assert callable(uma::Phase.__init__)
+def test_uma_iteration_constructor_exists():
+    assert callable(uma_Iteration.__init__)
 
 
-def test_uma::phase_constructor_args():
-    sig = inspect.signature(uma::Phase.__init__)
+def test_uma_iteration_constructor_args():
+    sig = inspect.signature(uma_Iteration.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_uma::iteration_is_not_abstract():
-    assert not inspect.isabstract(uma::Iteration)
+def test_uma_element_is_not_abstract():
+    assert not inspect.isabstract(uma_Element)
 
 
-def test_uma::iteration_constructor_exists():
-    assert callable(uma::Iteration.__init__)
+def test_uma_element_constructor_exists():
+    assert callable(uma_Element.__init__)
 
 
-def test_uma::iteration_constructor_args():
-    sig = inspect.signature(uma::Iteration.__init__)
+def test_uma_element_constructor_args():
+    sig = inspect.signature(uma_Element.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_uma::element_is_not_abstract():
-    assert not inspect.isabstract(uma::Element)
+def test_uma_estringtostringmapentry_is_not_abstract():
+    assert not inspect.isabstract(uma_EStringToStringMapEntry)
 
 
-def test_uma::element_constructor_exists():
-    assert callable(uma::Element.__init__)
+def test_uma_estringtostringmapentry_constructor_exists():
+    assert callable(uma_EStringToStringMapEntry.__init__)
 
 
-def test_uma::element_constructor_args():
-    sig = inspect.signature(uma::Element.__init__)
+def test_uma_estringtostringmapentry_constructor_args():
+    sig = inspect.signature(uma_EStringToStringMapEntry.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_uma::estringtostringmapentry_is_not_abstract():
-    assert not inspect.isabstract(uma::EStringToStringMapEntry)
+def test_uma_documentroot_is_not_abstract():
+    assert not inspect.isabstract(uma_DocumentRoot)
 
 
-def test_uma::estringtostringmapentry_constructor_exists():
-    assert callable(uma::EStringToStringMapEntry.__init__)
+def test_uma_documentroot_constructor_exists():
+    assert callable(uma_DocumentRoot.__init__)
 
 
-def test_uma::estringtostringmapentry_constructor_args():
-    sig = inspect.signature(uma::EStringToStringMapEntry.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_uma::documentroot_is_not_abstract():
-    assert not inspect.isabstract(uma::DocumentRoot)
-
-
-def test_uma::documentroot_constructor_exists():
-    assert callable(uma::DocumentRoot.__init__)
-
-
-def test_uma::documentroot_constructor_args():
-    sig = inspect.signature(uma::DocumentRoot.__init__)
+def test_uma_documentroot_constructor_args():
+    sig = inspect.signature(uma_DocumentRoot.__init__)
     params = list(sig.parameters.keys())
     assert "mixed" in params, "Missing parameter 'mixed'"
 
-def test_uma::documentroot_has_mixed():
-    assert hasattr(uma::DocumentRoot, "mixed")
+def test_uma_documentroot_has_mixed():
+    assert hasattr(uma_DocumentRoot, "mixed")
     descriptor = None
-    for klass in uma::DocumentRoot.__mro__:
+    for klass in uma_DocumentRoot.__mro__:
         if "mixed" in klass.__dict__:
             descriptor = klass.__dict__["mixed"]
             break
@@ -747,23 +483,23 @@ def test_breakdownelement_constructor_args():
 
 
 
-def test_uma::processcomponentinterface_is_not_abstract():
-    assert not inspect.isabstract(uma::ProcessComponentInterface)
+def test_uma_processcomponentinterface_is_not_abstract():
+    assert not inspect.isabstract(uma_ProcessComponentInterface)
 
 
-def test_uma::processcomponentinterface_constructor_exists():
-    assert callable(uma::ProcessComponentInterface.__init__)
+def test_uma_processcomponentinterface_constructor_exists():
+    assert callable(uma_ProcessComponentInterface.__init__)
 
 
-def test_uma::processcomponentinterface_constructor_args():
-    sig = inspect.signature(uma::ProcessComponentInterface.__init__)
+def test_uma_processcomponentinterface_constructor_args():
+    sig = inspect.signature(uma_ProcessComponentInterface.__init__)
     params = list(sig.parameters.keys())
     assert "group2" in params, "Missing parameter 'group2'"
 
-def test_uma::processcomponentinterface_has_group2():
-    assert hasattr(uma::ProcessComponentInterface, "group2")
+def test_uma_processcomponentinterface_has_group2():
+    assert hasattr(uma_ProcessComponentInterface, "group2")
     descriptor = None
-    for klass in uma::ProcessComponentInterface.__mro__:
+    for klass in uma_ProcessComponentInterface.__mro__:
         if "group2" in klass.__dict__:
             descriptor = klass.__dict__["group2"]
             break
@@ -771,131 +507,23 @@ def test_uma::processcomponentinterface_has_group2():
 
 
 
-def test_uma::teamprofile_is_not_abstract():
-    assert not inspect.isabstract(uma::TeamProfile)
+def test_uma_descriptor_is_not_abstract():
+    assert not inspect.isabstract(uma_Descriptor)
 
 
-def test_uma::teamprofile_constructor_exists():
-    assert callable(uma::TeamProfile.__init__)
+def test_uma_descriptor_constructor_exists():
+    assert callable(uma_Descriptor.__init__)
 
 
-def test_uma::teamprofile_constructor_args():
-    sig = inspect.signature(uma::TeamProfile.__init__)
-    params = list(sig.parameters.keys())
-    assert "group2" in params, "Missing parameter 'group2'"
-    assert "role" in params, "Missing parameter 'role'"
-    assert "subTeam" in params, "Missing parameter 'subTeam'"
-    assert "superTeam" in params, "Missing parameter 'superTeam'"
-
-def test_uma::teamprofile_has_group2():
-    assert hasattr(uma::TeamProfile, "group2")
-    descriptor = None
-    for klass in uma::TeamProfile.__mro__:
-        if "group2" in klass.__dict__:
-            descriptor = klass.__dict__["group2"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_uma::teamprofile_has_role():
-    assert hasattr(uma::TeamProfile, "role")
-    descriptor = None
-    for klass in uma::TeamProfile.__mro__:
-        if "role" in klass.__dict__:
-            descriptor = klass.__dict__["role"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_uma::teamprofile_has_subTeam():
-    assert hasattr(uma::TeamProfile, "subTeam")
-    descriptor = None
-    for klass in uma::TeamProfile.__mro__:
-        if "subTeam" in klass.__dict__:
-            descriptor = klass.__dict__["subTeam"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_uma::teamprofile_has_superTeam():
-    assert hasattr(uma::TeamProfile, "superTeam")
-    descriptor = None
-    for klass in uma::TeamProfile.__mro__:
-        if "superTeam" in klass.__dict__:
-            descriptor = klass.__dict__["superTeam"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_uma::workbreakdownelement_is_not_abstract():
-    assert not inspect.isabstract(uma::WorkBreakdownElement)
-
-
-def test_uma::workbreakdownelement_constructor_exists():
-    assert callable(uma::WorkBreakdownElement.__init__)
-
-
-def test_uma::workbreakdownelement_constructor_args():
-    sig = inspect.signature(uma::WorkBreakdownElement.__init__)
-    params = list(sig.parameters.keys())
-    assert "isEventDriven" in params, "Missing parameter 'isEventDriven'"
-    assert "isRepeatable" in params, "Missing parameter 'isRepeatable'"
-    assert "isOngoing" in params, "Missing parameter 'isOngoing'"
-    assert "group2" in params, "Missing parameter 'group2'"
-
-def test_uma::workbreakdownelement_has_isEventDriven():
-    assert hasattr(uma::WorkBreakdownElement, "isEventDriven")
-    descriptor = None
-    for klass in uma::WorkBreakdownElement.__mro__:
-        if "isEventDriven" in klass.__dict__:
-            descriptor = klass.__dict__["isEventDriven"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_uma::workbreakdownelement_has_isRepeatable():
-    assert hasattr(uma::WorkBreakdownElement, "isRepeatable")
-    descriptor = None
-    for klass in uma::WorkBreakdownElement.__mro__:
-        if "isRepeatable" in klass.__dict__:
-            descriptor = klass.__dict__["isRepeatable"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_uma::workbreakdownelement_has_isOngoing():
-    assert hasattr(uma::WorkBreakdownElement, "isOngoing")
-    descriptor = None
-    for klass in uma::WorkBreakdownElement.__mro__:
-        if "isOngoing" in klass.__dict__:
-            descriptor = klass.__dict__["isOngoing"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_uma::workbreakdownelement_has_group2():
-    assert hasattr(uma::WorkBreakdownElement, "group2")
-    descriptor = None
-    for klass in uma::WorkBreakdownElement.__mro__:
-        if "group2" in klass.__dict__:
-            descriptor = klass.__dict__["group2"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_uma::descriptor_is_not_abstract():
-    assert not inspect.isabstract(uma::Descriptor)
-
-
-def test_uma::descriptor_constructor_exists():
-    assert callable(uma::Descriptor.__init__)
-
-
-def test_uma::descriptor_constructor_args():
-    sig = inspect.signature(uma::Descriptor.__init__)
+def test_uma_descriptor_constructor_args():
+    sig = inspect.signature(uma_Descriptor.__init__)
     params = list(sig.parameters.keys())
     assert "isSynchronizedWithSource" in params, "Missing parameter 'isSynchronizedWithSource'"
 
-def test_uma::descriptor_has_isSynchronizedWithSource():
-    assert hasattr(uma::Descriptor, "isSynchronizedWithSource")
+def test_uma_descriptor_has_isSynchronizedWithSource():
+    assert hasattr(uma_Descriptor, "isSynchronizedWithSource")
     descriptor = None
-    for klass in uma::Descriptor.__mro__:
+    for klass in uma_Descriptor.__mro__:
         if "isSynchronizedWithSource" in klass.__dict__:
             descriptor = klass.__dict__["isSynchronizedWithSource"]
             break
@@ -917,75 +545,75 @@ def test_processdescription_constructor_args():
 
 
 
-def test_uma::deliveryprocessdescription_is_not_abstract():
-    assert not inspect.isabstract(uma::DeliveryProcessDescription)
+def test_uma_deliveryprocessdescription_is_not_abstract():
+    assert not inspect.isabstract(uma_DeliveryProcessDescription)
 
 
-def test_uma::deliveryprocessdescription_constructor_exists():
-    assert callable(uma::DeliveryProcessDescription.__init__)
+def test_uma_deliveryprocessdescription_constructor_exists():
+    assert callable(uma_DeliveryProcessDescription.__init__)
 
 
-def test_uma::deliveryprocessdescription_constructor_args():
-    sig = inspect.signature(uma::DeliveryProcessDescription.__init__)
+def test_uma_deliveryprocessdescription_constructor_args():
+    sig = inspect.signature(uma_DeliveryProcessDescription.__init__)
     params = list(sig.parameters.keys())
-    assert "scale" in params, "Missing parameter 'scale'"
-    assert "projectMemberExpertise" in params, "Missing parameter 'projectMemberExpertise'"
-    assert "riskLevel" in params, "Missing parameter 'riskLevel'"
-    assert "projectCharacteristics" in params, "Missing parameter 'projectCharacteristics'"
-    assert "typeOfContract" in params, "Missing parameter 'typeOfContract'"
     assert "estimatingTechnique" in params, "Missing parameter 'estimatingTechnique'"
+    assert "projectMemberExpertise" in params, "Missing parameter 'projectMemberExpertise'"
+    assert "projectCharacteristics" in params, "Missing parameter 'projectCharacteristics'"
+    assert "scale" in params, "Missing parameter 'scale'"
+    assert "riskLevel" in params, "Missing parameter 'riskLevel'"
+    assert "typeOfContract" in params, "Missing parameter 'typeOfContract'"
 
-def test_uma::deliveryprocessdescription_has_scale():
-    assert hasattr(uma::DeliveryProcessDescription, "scale")
+def test_uma_deliveryprocessdescription_has_estimatingTechnique():
+    assert hasattr(uma_DeliveryProcessDescription, "estimatingTechnique")
     descriptor = None
-    for klass in uma::DeliveryProcessDescription.__mro__:
-        if "scale" in klass.__dict__:
-            descriptor = klass.__dict__["scale"]
+    for klass in uma_DeliveryProcessDescription.__mro__:
+        if "estimatingTechnique" in klass.__dict__:
+            descriptor = klass.__dict__["estimatingTechnique"]
             break
     assert isinstance(descriptor, property)
 
-def test_uma::deliveryprocessdescription_has_projectMemberExpertise():
-    assert hasattr(uma::DeliveryProcessDescription, "projectMemberExpertise")
+def test_uma_deliveryprocessdescription_has_projectMemberExpertise():
+    assert hasattr(uma_DeliveryProcessDescription, "projectMemberExpertise")
     descriptor = None
-    for klass in uma::DeliveryProcessDescription.__mro__:
+    for klass in uma_DeliveryProcessDescription.__mro__:
         if "projectMemberExpertise" in klass.__dict__:
             descriptor = klass.__dict__["projectMemberExpertise"]
             break
     assert isinstance(descriptor, property)
 
-def test_uma::deliveryprocessdescription_has_riskLevel():
-    assert hasattr(uma::DeliveryProcessDescription, "riskLevel")
+def test_uma_deliveryprocessdescription_has_projectCharacteristics():
+    assert hasattr(uma_DeliveryProcessDescription, "projectCharacteristics")
     descriptor = None
-    for klass in uma::DeliveryProcessDescription.__mro__:
-        if "riskLevel" in klass.__dict__:
-            descriptor = klass.__dict__["riskLevel"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_uma::deliveryprocessdescription_has_projectCharacteristics():
-    assert hasattr(uma::DeliveryProcessDescription, "projectCharacteristics")
-    descriptor = None
-    for klass in uma::DeliveryProcessDescription.__mro__:
+    for klass in uma_DeliveryProcessDescription.__mro__:
         if "projectCharacteristics" in klass.__dict__:
             descriptor = klass.__dict__["projectCharacteristics"]
             break
     assert isinstance(descriptor, property)
 
-def test_uma::deliveryprocessdescription_has_typeOfContract():
-    assert hasattr(uma::DeliveryProcessDescription, "typeOfContract")
+def test_uma_deliveryprocessdescription_has_scale():
+    assert hasattr(uma_DeliveryProcessDescription, "scale")
     descriptor = None
-    for klass in uma::DeliveryProcessDescription.__mro__:
-        if "typeOfContract" in klass.__dict__:
-            descriptor = klass.__dict__["typeOfContract"]
+    for klass in uma_DeliveryProcessDescription.__mro__:
+        if "scale" in klass.__dict__:
+            descriptor = klass.__dict__["scale"]
             break
     assert isinstance(descriptor, property)
 
-def test_uma::deliveryprocessdescription_has_estimatingTechnique():
-    assert hasattr(uma::DeliveryProcessDescription, "estimatingTechnique")
+def test_uma_deliveryprocessdescription_has_riskLevel():
+    assert hasattr(uma_DeliveryProcessDescription, "riskLevel")
     descriptor = None
-    for klass in uma::DeliveryProcessDescription.__mro__:
-        if "estimatingTechnique" in klass.__dict__:
-            descriptor = klass.__dict__["estimatingTechnique"]
+    for klass in uma_DeliveryProcessDescription.__mro__:
+        if "riskLevel" in klass.__dict__:
+            descriptor = klass.__dict__["riskLevel"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_uma_deliveryprocessdescription_has_typeOfContract():
+    assert hasattr(uma_DeliveryProcessDescription, "typeOfContract")
+    descriptor = None
+    for klass in uma_DeliveryProcessDescription.__mro__:
+        if "typeOfContract" in klass.__dict__:
+            descriptor = klass.__dict__["typeOfContract"]
             break
     assert isinstance(descriptor, property)
 
@@ -1005,33 +633,33 @@ def test_contentcategory_constructor_args():
 
 
 
-def test_uma::workproducttype_is_not_abstract():
-    assert not inspect.isabstract(uma::WorkProductType)
+def test_uma_domain_is_not_abstract():
+    assert not inspect.isabstract(uma_Domain)
 
 
-def test_uma::workproducttype_constructor_exists():
-    assert callable(uma::WorkProductType.__init__)
+def test_uma_domain_constructor_exists():
+    assert callable(uma_Domain.__init__)
 
 
-def test_uma::workproducttype_constructor_args():
-    sig = inspect.signature(uma::WorkProductType.__init__)
+def test_uma_domain_constructor_args():
+    sig = inspect.signature(uma_Domain.__init__)
     params = list(sig.parameters.keys())
     assert "group2" in params, "Missing parameter 'group2'"
     assert "workProduct" in params, "Missing parameter 'workProduct'"
 
-def test_uma::workproducttype_has_group2():
-    assert hasattr(uma::WorkProductType, "group2")
+def test_uma_domain_has_group2():
+    assert hasattr(uma_Domain, "group2")
     descriptor = None
-    for klass in uma::WorkProductType.__mro__:
+    for klass in uma_Domain.__mro__:
         if "group2" in klass.__dict__:
             descriptor = klass.__dict__["group2"]
             break
     assert isinstance(descriptor, property)
 
-def test_uma::workproducttype_has_workProduct():
-    assert hasattr(uma::WorkProductType, "workProduct")
+def test_uma_domain_has_workProduct():
+    assert hasattr(uma_Domain, "workProduct")
     descriptor = None
-    for klass in uma::WorkProductType.__mro__:
+    for klass in uma_Domain.__mro__:
         if "workProduct" in klass.__dict__:
             descriptor = klass.__dict__["workProduct"]
             break
@@ -1039,259 +667,123 @@ def test_uma::workproducttype_has_workProduct():
 
 
 
-def test_uma::discipline_is_not_abstract():
-    assert not inspect.isabstract(uma::Discipline)
+def test_uma_disciplinegrouping_is_not_abstract():
+    assert not inspect.isabstract(uma_DisciplineGrouping)
 
 
-def test_uma::discipline_constructor_exists():
-    assert callable(uma::Discipline.__init__)
+def test_uma_disciplinegrouping_constructor_exists():
+    assert callable(uma_DisciplineGrouping.__init__)
 
 
-def test_uma::discipline_constructor_args():
-    sig = inspect.signature(uma::Discipline.__init__)
+def test_uma_disciplinegrouping_constructor_args():
+    sig = inspect.signature(uma_DisciplineGrouping.__init__)
     params = list(sig.parameters.keys())
-    assert "task" in params, "Missing parameter 'task'"
-    assert "referenceWorkflow" in params, "Missing parameter 'referenceWorkflow'"
     assert "group2" in params, "Missing parameter 'group2'"
+    assert "discipline" in params, "Missing parameter 'discipline'"
 
-def test_uma::discipline_has_task():
-    assert hasattr(uma::Discipline, "task")
+def test_uma_disciplinegrouping_has_group2():
+    assert hasattr(uma_DisciplineGrouping, "group2")
     descriptor = None
-    for klass in uma::Discipline.__mro__:
-        if "task" in klass.__dict__:
-            descriptor = klass.__dict__["task"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_uma::discipline_has_referenceWorkflow():
-    assert hasattr(uma::Discipline, "referenceWorkflow")
-    descriptor = None
-    for klass in uma::Discipline.__mro__:
-        if "referenceWorkflow" in klass.__dict__:
-            descriptor = klass.__dict__["referenceWorkflow"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_uma::discipline_has_group2():
-    assert hasattr(uma::Discipline, "group2")
-    descriptor = None
-    for klass in uma::Discipline.__mro__:
+    for klass in uma_DisciplineGrouping.__mro__:
         if "group2" in klass.__dict__:
             descriptor = klass.__dict__["group2"]
             break
     assert isinstance(descriptor, property)
 
-
-
-def test_uma::disciplinegrouping_is_not_abstract():
-    assert not inspect.isabstract(uma::DisciplineGrouping)
-
-
-def test_uma::disciplinegrouping_constructor_exists():
-    assert callable(uma::DisciplineGrouping.__init__)
-
-
-def test_uma::disciplinegrouping_constructor_args():
-    sig = inspect.signature(uma::DisciplineGrouping.__init__)
-    params = list(sig.parameters.keys())
-    assert "discipline" in params, "Missing parameter 'discipline'"
-    assert "group2" in params, "Missing parameter 'group2'"
-
-def test_uma::disciplinegrouping_has_discipline():
-    assert hasattr(uma::DisciplineGrouping, "discipline")
+def test_uma_disciplinegrouping_has_discipline():
+    assert hasattr(uma_DisciplineGrouping, "discipline")
     descriptor = None
-    for klass in uma::DisciplineGrouping.__mro__:
+    for klass in uma_DisciplineGrouping.__mro__:
         if "discipline" in klass.__dict__:
             descriptor = klass.__dict__["discipline"]
             break
     assert isinstance(descriptor, property)
 
-def test_uma::disciplinegrouping_has_group2():
-    assert hasattr(uma::DisciplineGrouping, "group2")
-    descriptor = None
-    for klass in uma::DisciplineGrouping.__mro__:
-        if "group2" in klass.__dict__:
-            descriptor = klass.__dict__["group2"]
-            break
-    assert isinstance(descriptor, property)
 
 
-
-def test_uma::tool_is_not_abstract():
-    assert not inspect.isabstract(uma::Tool)
-
-
-def test_uma::tool_constructor_exists():
-    assert callable(uma::Tool.__init__)
+def test_uma_discipline_is_not_abstract():
+    assert not inspect.isabstract(uma_Discipline)
 
 
-def test_uma::tool_constructor_args():
-    sig = inspect.signature(uma::Tool.__init__)
+def test_uma_discipline_constructor_exists():
+    assert callable(uma_Discipline.__init__)
+
+
+def test_uma_discipline_constructor_args():
+    sig = inspect.signature(uma_Discipline.__init__)
     params = list(sig.parameters.keys())
+    assert "task" in params, "Missing parameter 'task'"
     assert "group2" in params, "Missing parameter 'group2'"
-    assert "toolMentor" in params, "Missing parameter 'toolMentor'"
+    assert "referenceWorkflow" in params, "Missing parameter 'referenceWorkflow'"
 
-def test_uma::tool_has_group2():
-    assert hasattr(uma::Tool, "group2")
+def test_uma_discipline_has_task():
+    assert hasattr(uma_Discipline, "task")
     descriptor = None
-    for klass in uma::Tool.__mro__:
+    for klass in uma_Discipline.__mro__:
+        if "task" in klass.__dict__:
+            descriptor = klass.__dict__["task"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_uma_discipline_has_group2():
+    assert hasattr(uma_Discipline, "group2")
+    descriptor = None
+    for klass in uma_Discipline.__mro__:
         if "group2" in klass.__dict__:
             descriptor = klass.__dict__["group2"]
             break
     assert isinstance(descriptor, property)
 
-def test_uma::tool_has_toolMentor():
-    assert hasattr(uma::Tool, "toolMentor")
+def test_uma_discipline_has_referenceWorkflow():
+    assert hasattr(uma_Discipline, "referenceWorkflow")
     descriptor = None
-    for klass in uma::Tool.__mro__:
-        if "toolMentor" in klass.__dict__:
-            descriptor = klass.__dict__["toolMentor"]
+    for klass in uma_Discipline.__mro__:
+        if "referenceWorkflow" in klass.__dict__:
+            descriptor = klass.__dict__["referenceWorkflow"]
             break
     assert isinstance(descriptor, property)
 
 
 
-def test_uma::domain_is_not_abstract():
-    assert not inspect.isabstract(uma::Domain)
+def test_uma_customcategory_is_not_abstract():
+    assert not inspect.isabstract(uma_CustomCategory)
 
 
-def test_uma::domain_constructor_exists():
-    assert callable(uma::Domain.__init__)
+def test_uma_customcategory_constructor_exists():
+    assert callable(uma_CustomCategory.__init__)
 
 
-def test_uma::domain_constructor_args():
-    sig = inspect.signature(uma::Domain.__init__)
-    params = list(sig.parameters.keys())
-    assert "group2" in params, "Missing parameter 'group2'"
-    assert "workProduct" in params, "Missing parameter 'workProduct'"
-
-def test_uma::domain_has_group2():
-    assert hasattr(uma::Domain, "group2")
-    descriptor = None
-    for klass in uma::Domain.__mro__:
-        if "group2" in klass.__dict__:
-            descriptor = klass.__dict__["group2"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_uma::domain_has_workProduct():
-    assert hasattr(uma::Domain, "workProduct")
-    descriptor = None
-    for klass in uma::Domain.__mro__:
-        if "workProduct" in klass.__dict__:
-            descriptor = klass.__dict__["workProduct"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_uma::roleset_is_not_abstract():
-    assert not inspect.isabstract(uma::RoleSet)
-
-
-def test_uma::roleset_constructor_exists():
-    assert callable(uma::RoleSet.__init__)
-
-
-def test_uma::roleset_constructor_args():
-    sig = inspect.signature(uma::RoleSet.__init__)
-    params = list(sig.parameters.keys())
-    assert "group2" in params, "Missing parameter 'group2'"
-    assert "role" in params, "Missing parameter 'role'"
-
-def test_uma::roleset_has_group2():
-    assert hasattr(uma::RoleSet, "group2")
-    descriptor = None
-    for klass in uma::RoleSet.__mro__:
-        if "group2" in klass.__dict__:
-            descriptor = klass.__dict__["group2"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_uma::roleset_has_role():
-    assert hasattr(uma::RoleSet, "role")
-    descriptor = None
-    for klass in uma::RoleSet.__mro__:
-        if "role" in klass.__dict__:
-            descriptor = klass.__dict__["role"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_uma::rolesetgrouping_is_not_abstract():
-    assert not inspect.isabstract(uma::RoleSetGrouping)
-
-
-def test_uma::rolesetgrouping_constructor_exists():
-    assert callable(uma::RoleSetGrouping.__init__)
-
-
-def test_uma::rolesetgrouping_constructor_args():
-    sig = inspect.signature(uma::RoleSetGrouping.__init__)
-    params = list(sig.parameters.keys())
-    assert "roleSet" in params, "Missing parameter 'roleSet'"
-    assert "group2" in params, "Missing parameter 'group2'"
-
-def test_uma::rolesetgrouping_has_roleSet():
-    assert hasattr(uma::RoleSetGrouping, "roleSet")
-    descriptor = None
-    for klass in uma::RoleSetGrouping.__mro__:
-        if "roleSet" in klass.__dict__:
-            descriptor = klass.__dict__["roleSet"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_uma::rolesetgrouping_has_group2():
-    assert hasattr(uma::RoleSetGrouping, "group2")
-    descriptor = None
-    for klass in uma::RoleSetGrouping.__mro__:
-        if "group2" in klass.__dict__:
-            descriptor = klass.__dict__["group2"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_uma::customcategory_is_not_abstract():
-    assert not inspect.isabstract(uma::CustomCategory)
-
-
-def test_uma::customcategory_constructor_exists():
-    assert callable(uma::CustomCategory.__init__)
-
-
-def test_uma::customcategory_constructor_args():
-    sig = inspect.signature(uma::CustomCategory.__init__)
+def test_uma_customcategory_constructor_args():
+    sig = inspect.signature(uma_CustomCategory.__init__)
     params = list(sig.parameters.keys())
     assert "subCategory" in params, "Missing parameter 'subCategory'"
-    assert "group2" in params, "Missing parameter 'group2'"
     assert "categorizedElement" in params, "Missing parameter 'categorizedElement'"
+    assert "group2" in params, "Missing parameter 'group2'"
 
-def test_uma::customcategory_has_subCategory():
-    assert hasattr(uma::CustomCategory, "subCategory")
+def test_uma_customcategory_has_subCategory():
+    assert hasattr(uma_CustomCategory, "subCategory")
     descriptor = None
-    for klass in uma::CustomCategory.__mro__:
+    for klass in uma_CustomCategory.__mro__:
         if "subCategory" in klass.__dict__:
             descriptor = klass.__dict__["subCategory"]
             break
     assert isinstance(descriptor, property)
 
-def test_uma::customcategory_has_group2():
-    assert hasattr(uma::CustomCategory, "group2")
+def test_uma_customcategory_has_categorizedElement():
+    assert hasattr(uma_CustomCategory, "categorizedElement")
     descriptor = None
-    for klass in uma::CustomCategory.__mro__:
-        if "group2" in klass.__dict__:
-            descriptor = klass.__dict__["group2"]
+    for klass in uma_CustomCategory.__mro__:
+        if "categorizedElement" in klass.__dict__:
+            descriptor = klass.__dict__["categorizedElement"]
             break
     assert isinstance(descriptor, property)
 
-def test_uma::customcategory_has_categorizedElement():
-    assert hasattr(uma::CustomCategory, "categorizedElement")
+def test_uma_customcategory_has_group2():
+    assert hasattr(uma_CustomCategory, "group2")
     descriptor = None
-    for klass in uma::CustomCategory.__mro__:
-        if "categorizedElement" in klass.__dict__:
-            descriptor = klass.__dict__["categorizedElement"]
+    for klass in uma_CustomCategory.__mro__:
+        if "group2" in klass.__dict__:
+            descriptor = klass.__dict__["group2"]
             break
     assert isinstance(descriptor, property)
 
@@ -1311,23 +803,23 @@ def test_workbreakdownelement_constructor_args():
 
 
 
-def test_uma::milestone_is_not_abstract():
-    assert not inspect.isabstract(uma::Milestone)
+def test_uma_milestone_is_not_abstract():
+    assert not inspect.isabstract(uma_Milestone)
 
 
-def test_uma::milestone_constructor_exists():
-    assert callable(uma::Milestone.__init__)
+def test_uma_milestone_constructor_exists():
+    assert callable(uma_Milestone.__init__)
 
 
-def test_uma::milestone_constructor_args():
-    sig = inspect.signature(uma::Milestone.__init__)
+def test_uma_milestone_constructor_args():
+    sig = inspect.signature(uma_Milestone.__init__)
     params = list(sig.parameters.keys())
     assert "requiredResult" in params, "Missing parameter 'requiredResult'"
 
-def test_uma::milestone_has_requiredResult():
-    assert hasattr(uma::Milestone, "requiredResult")
+def test_uma_milestone_has_requiredResult():
+    assert hasattr(uma_Milestone, "requiredResult")
     descriptor = None
-    for klass in uma::Milestone.__mro__:
+    for klass in uma_Milestone.__mro__:
         if "requiredResult" in klass.__dict__:
             descriptor = klass.__dict__["requiredResult"]
             break
@@ -1335,199 +827,199 @@ def test_uma::milestone_has_requiredResult():
 
 
 
-def test_uma::taskdescriptor_is_not_abstract():
-    assert not inspect.isabstract(uma::TaskDescriptor)
+def test_uma_taskdescriptor_is_not_abstract():
+    assert not inspect.isabstract(uma_TaskDescriptor)
 
 
-def test_uma::taskdescriptor_constructor_exists():
-    assert callable(uma::TaskDescriptor.__init__)
+def test_uma_taskdescriptor_constructor_exists():
+    assert callable(uma_TaskDescriptor.__init__)
 
 
-def test_uma::taskdescriptor_constructor_args():
-    sig = inspect.signature(uma::TaskDescriptor.__init__)
+def test_uma_taskdescriptor_constructor_args():
+    sig = inspect.signature(uma_TaskDescriptor.__init__)
     params = list(sig.parameters.keys())
-    assert "mandatoryInput" in params, "Missing parameter 'mandatoryInput'"
-    assert "task" in params, "Missing parameter 'task'"
+    assert "assistedBy" in params, "Missing parameter 'assistedBy'"
+    assert "isSynchronizedWithSource" in params, "Missing parameter 'isSynchronizedWithSource'"
+    assert "output" in params, "Missing parameter 'output'"
     assert "optionalInput" in params, "Missing parameter 'optionalInput'"
     assert "performedPrimarilyBy" in params, "Missing parameter 'performedPrimarilyBy'"
-    assert "assistedBy" in params, "Missing parameter 'assistedBy'"
-    assert "externalInput" in params, "Missing parameter 'externalInput'"
-    assert "output" in params, "Missing parameter 'output'"
-    assert "additionallyPerformedBy" in params, "Missing parameter 'additionallyPerformedBy'"
     assert "group3" in params, "Missing parameter 'group3'"
-    assert "isSynchronizedWithSource" in params, "Missing parameter 'isSynchronizedWithSource'"
+    assert "externalInput" in params, "Missing parameter 'externalInput'"
+    assert "task" in params, "Missing parameter 'task'"
+    assert "additionallyPerformedBy" in params, "Missing parameter 'additionallyPerformedBy'"
+    assert "mandatoryInput" in params, "Missing parameter 'mandatoryInput'"
 
-def test_uma::taskdescriptor_has_mandatoryInput():
-    assert hasattr(uma::TaskDescriptor, "mandatoryInput")
+def test_uma_taskdescriptor_has_assistedBy():
+    assert hasattr(uma_TaskDescriptor, "assistedBy")
     descriptor = None
-    for klass in uma::TaskDescriptor.__mro__:
-        if "mandatoryInput" in klass.__dict__:
-            descriptor = klass.__dict__["mandatoryInput"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_uma::taskdescriptor_has_task():
-    assert hasattr(uma::TaskDescriptor, "task")
-    descriptor = None
-    for klass in uma::TaskDescriptor.__mro__:
-        if "task" in klass.__dict__:
-            descriptor = klass.__dict__["task"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_uma::taskdescriptor_has_optionalInput():
-    assert hasattr(uma::TaskDescriptor, "optionalInput")
-    descriptor = None
-    for klass in uma::TaskDescriptor.__mro__:
-        if "optionalInput" in klass.__dict__:
-            descriptor = klass.__dict__["optionalInput"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_uma::taskdescriptor_has_performedPrimarilyBy():
-    assert hasattr(uma::TaskDescriptor, "performedPrimarilyBy")
-    descriptor = None
-    for klass in uma::TaskDescriptor.__mro__:
-        if "performedPrimarilyBy" in klass.__dict__:
-            descriptor = klass.__dict__["performedPrimarilyBy"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_uma::taskdescriptor_has_assistedBy():
-    assert hasattr(uma::TaskDescriptor, "assistedBy")
-    descriptor = None
-    for klass in uma::TaskDescriptor.__mro__:
+    for klass in uma_TaskDescriptor.__mro__:
         if "assistedBy" in klass.__dict__:
             descriptor = klass.__dict__["assistedBy"]
             break
     assert isinstance(descriptor, property)
 
-def test_uma::taskdescriptor_has_externalInput():
-    assert hasattr(uma::TaskDescriptor, "externalInput")
+def test_uma_taskdescriptor_has_isSynchronizedWithSource():
+    assert hasattr(uma_TaskDescriptor, "isSynchronizedWithSource")
     descriptor = None
-    for klass in uma::TaskDescriptor.__mro__:
-        if "externalInput" in klass.__dict__:
-            descriptor = klass.__dict__["externalInput"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_uma::taskdescriptor_has_output():
-    assert hasattr(uma::TaskDescriptor, "output")
-    descriptor = None
-    for klass in uma::TaskDescriptor.__mro__:
-        if "output" in klass.__dict__:
-            descriptor = klass.__dict__["output"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_uma::taskdescriptor_has_additionallyPerformedBy():
-    assert hasattr(uma::TaskDescriptor, "additionallyPerformedBy")
-    descriptor = None
-    for klass in uma::TaskDescriptor.__mro__:
-        if "additionallyPerformedBy" in klass.__dict__:
-            descriptor = klass.__dict__["additionallyPerformedBy"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_uma::taskdescriptor_has_group3():
-    assert hasattr(uma::TaskDescriptor, "group3")
-    descriptor = None
-    for klass in uma::TaskDescriptor.__mro__:
-        if "group3" in klass.__dict__:
-            descriptor = klass.__dict__["group3"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_uma::taskdescriptor_has_isSynchronizedWithSource():
-    assert hasattr(uma::TaskDescriptor, "isSynchronizedWithSource")
-    descriptor = None
-    for klass in uma::TaskDescriptor.__mro__:
+    for klass in uma_TaskDescriptor.__mro__:
         if "isSynchronizedWithSource" in klass.__dict__:
             descriptor = klass.__dict__["isSynchronizedWithSource"]
             break
     assert isinstance(descriptor, property)
 
-
-
-def test_uma::activity_is_not_abstract():
-    assert not inspect.isabstract(uma::Activity)
-
-
-def test_uma::activity_constructor_exists():
-    assert callable(uma::Activity.__init__)
-
-
-def test_uma::activity_constructor_args():
-    sig = inspect.signature(uma::Activity.__init__)
-    params = list(sig.parameters.keys())
-    assert "group3" in params, "Missing parameter 'group3'"
-    assert "roadmap" in params, "Missing parameter 'roadmap'"
-    assert "postcondition" in params, "Missing parameter 'postcondition'"
-    assert "isEnactable" in params, "Missing parameter 'isEnactable'"
-    assert "variabilityType" in params, "Missing parameter 'variabilityType'"
-    assert "variabilityBasedOnElement" in params, "Missing parameter 'variabilityBasedOnElement'"
-    assert "precondition" in params, "Missing parameter 'precondition'"
-
-def test_uma::activity_has_group3():
-    assert hasattr(uma::Activity, "group3")
+def test_uma_taskdescriptor_has_output():
+    assert hasattr(uma_TaskDescriptor, "output")
     descriptor = None
-    for klass in uma::Activity.__mro__:
+    for klass in uma_TaskDescriptor.__mro__:
+        if "output" in klass.__dict__:
+            descriptor = klass.__dict__["output"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_uma_taskdescriptor_has_optionalInput():
+    assert hasattr(uma_TaskDescriptor, "optionalInput")
+    descriptor = None
+    for klass in uma_TaskDescriptor.__mro__:
+        if "optionalInput" in klass.__dict__:
+            descriptor = klass.__dict__["optionalInput"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_uma_taskdescriptor_has_performedPrimarilyBy():
+    assert hasattr(uma_TaskDescriptor, "performedPrimarilyBy")
+    descriptor = None
+    for klass in uma_TaskDescriptor.__mro__:
+        if "performedPrimarilyBy" in klass.__dict__:
+            descriptor = klass.__dict__["performedPrimarilyBy"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_uma_taskdescriptor_has_group3():
+    assert hasattr(uma_TaskDescriptor, "group3")
+    descriptor = None
+    for klass in uma_TaskDescriptor.__mro__:
         if "group3" in klass.__dict__:
             descriptor = klass.__dict__["group3"]
             break
     assert isinstance(descriptor, property)
 
-def test_uma::activity_has_roadmap():
-    assert hasattr(uma::Activity, "roadmap")
+def test_uma_taskdescriptor_has_externalInput():
+    assert hasattr(uma_TaskDescriptor, "externalInput")
     descriptor = None
-    for klass in uma::Activity.__mro__:
-        if "roadmap" in klass.__dict__:
-            descriptor = klass.__dict__["roadmap"]
+    for klass in uma_TaskDescriptor.__mro__:
+        if "externalInput" in klass.__dict__:
+            descriptor = klass.__dict__["externalInput"]
             break
     assert isinstance(descriptor, property)
 
-def test_uma::activity_has_postcondition():
-    assert hasattr(uma::Activity, "postcondition")
+def test_uma_taskdescriptor_has_task():
+    assert hasattr(uma_TaskDescriptor, "task")
     descriptor = None
-    for klass in uma::Activity.__mro__:
-        if "postcondition" in klass.__dict__:
-            descriptor = klass.__dict__["postcondition"]
+    for klass in uma_TaskDescriptor.__mro__:
+        if "task" in klass.__dict__:
+            descriptor = klass.__dict__["task"]
             break
     assert isinstance(descriptor, property)
 
-def test_uma::activity_has_isEnactable():
-    assert hasattr(uma::Activity, "isEnactable")
+def test_uma_taskdescriptor_has_additionallyPerformedBy():
+    assert hasattr(uma_TaskDescriptor, "additionallyPerformedBy")
     descriptor = None
-    for klass in uma::Activity.__mro__:
-        if "isEnactable" in klass.__dict__:
-            descriptor = klass.__dict__["isEnactable"]
+    for klass in uma_TaskDescriptor.__mro__:
+        if "additionallyPerformedBy" in klass.__dict__:
+            descriptor = klass.__dict__["additionallyPerformedBy"]
             break
     assert isinstance(descriptor, property)
 
-def test_uma::activity_has_variabilityType():
-    assert hasattr(uma::Activity, "variabilityType")
+def test_uma_taskdescriptor_has_mandatoryInput():
+    assert hasattr(uma_TaskDescriptor, "mandatoryInput")
     descriptor = None
-    for klass in uma::Activity.__mro__:
-        if "variabilityType" in klass.__dict__:
-            descriptor = klass.__dict__["variabilityType"]
+    for klass in uma_TaskDescriptor.__mro__:
+        if "mandatoryInput" in klass.__dict__:
+            descriptor = klass.__dict__["mandatoryInput"]
             break
     assert isinstance(descriptor, property)
 
-def test_uma::activity_has_variabilityBasedOnElement():
-    assert hasattr(uma::Activity, "variabilityBasedOnElement")
+
+
+def test_uma_activity_is_not_abstract():
+    assert not inspect.isabstract(uma_Activity)
+
+
+def test_uma_activity_constructor_exists():
+    assert callable(uma_Activity.__init__)
+
+
+def test_uma_activity_constructor_args():
+    sig = inspect.signature(uma_Activity.__init__)
+    params = list(sig.parameters.keys())
+    assert "group3" in params, "Missing parameter 'group3'"
+    assert "variabilityBasedOnElement" in params, "Missing parameter 'variabilityBasedOnElement'"
+    assert "variabilityType" in params, "Missing parameter 'variabilityType'"
+    assert "roadmap" in params, "Missing parameter 'roadmap'"
+    assert "precondition" in params, "Missing parameter 'precondition'"
+    assert "postcondition" in params, "Missing parameter 'postcondition'"
+    assert "isEnactable" in params, "Missing parameter 'isEnactable'"
+
+def test_uma_activity_has_group3():
+    assert hasattr(uma_Activity, "group3")
     descriptor = None
-    for klass in uma::Activity.__mro__:
+    for klass in uma_Activity.__mro__:
+        if "group3" in klass.__dict__:
+            descriptor = klass.__dict__["group3"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_uma_activity_has_variabilityBasedOnElement():
+    assert hasattr(uma_Activity, "variabilityBasedOnElement")
+    descriptor = None
+    for klass in uma_Activity.__mro__:
         if "variabilityBasedOnElement" in klass.__dict__:
             descriptor = klass.__dict__["variabilityBasedOnElement"]
             break
     assert isinstance(descriptor, property)
 
-def test_uma::activity_has_precondition():
-    assert hasattr(uma::Activity, "precondition")
+def test_uma_activity_has_variabilityType():
+    assert hasattr(uma_Activity, "variabilityType")
     descriptor = None
-    for klass in uma::Activity.__mro__:
+    for klass in uma_Activity.__mro__:
+        if "variabilityType" in klass.__dict__:
+            descriptor = klass.__dict__["variabilityType"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_uma_activity_has_roadmap():
+    assert hasattr(uma_Activity, "roadmap")
+    descriptor = None
+    for klass in uma_Activity.__mro__:
+        if "roadmap" in klass.__dict__:
+            descriptor = klass.__dict__["roadmap"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_uma_activity_has_precondition():
+    assert hasattr(uma_Activity, "precondition")
+    descriptor = None
+    for klass in uma_Activity.__mro__:
         if "precondition" in klass.__dict__:
             descriptor = klass.__dict__["precondition"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_uma_activity_has_postcondition():
+    assert hasattr(uma_Activity, "postcondition")
+    descriptor = None
+    for klass in uma_Activity.__mro__:
+        if "postcondition" in klass.__dict__:
+            descriptor = klass.__dict__["postcondition"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_uma_activity_has_isEnactable():
+    assert hasattr(uma_Activity, "isEnactable")
+    descriptor = None
+    for klass in uma_Activity.__mro__:
+        if "isEnactable" in klass.__dict__:
+            descriptor = klass.__dict__["isEnactable"]
             break
     assert isinstance(descriptor, property)
 
@@ -1547,129 +1039,129 @@ def test_describableelement_constructor_args():
 
 
 
-def test_uma::processelement_is_not_abstract():
-    assert not inspect.isabstract(uma::ProcessElement)
+def test_uma_processelement_is_not_abstract():
+    assert not inspect.isabstract(uma_ProcessElement)
 
 
-def test_uma::processelement_constructor_exists():
-    assert callable(uma::ProcessElement.__init__)
+def test_uma_processelement_constructor_exists():
+    assert callable(uma_ProcessElement.__init__)
 
 
-def test_uma::processelement_constructor_args():
-    sig = inspect.signature(uma::ProcessElement.__init__)
+def test_uma_processelement_constructor_args():
+    sig = inspect.signature(uma_ProcessElement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_uma::contentelement_is_not_abstract():
-    assert not inspect.isabstract(uma::ContentElement)
+def test_uma_contentelement_is_not_abstract():
+    assert not inspect.isabstract(uma_ContentElement)
 
 
-def test_uma::contentelement_constructor_exists():
-    assert callable(uma::ContentElement.__init__)
+def test_uma_contentelement_constructor_exists():
+    assert callable(uma_ContentElement.__init__)
 
 
-def test_uma::contentelement_constructor_args():
-    sig = inspect.signature(uma::ContentElement.__init__)
+def test_uma_contentelement_constructor_args():
+    sig = inspect.signature(uma_ContentElement.__init__)
     params = list(sig.parameters.keys())
-    assert "reusableAsset" in params, "Missing parameter 'reusableAsset'"
-    assert "supportingMaterial" in params, "Missing parameter 'supportingMaterial'"
-    assert "checklist" in params, "Missing parameter 'checklist'"
+    assert "group1" in params, "Missing parameter 'group1'"
+    assert "guideline" in params, "Missing parameter 'guideline'"
+    assert "variabilityBasedOnElement" in params, "Missing parameter 'variabilityBasedOnElement'"
+    assert "example" in params, "Missing parameter 'example'"
     assert "variabilityType" in params, "Missing parameter 'variabilityType'"
     assert "whitepaper" in params, "Missing parameter 'whitepaper'"
-    assert "variabilityBasedOnElement" in params, "Missing parameter 'variabilityBasedOnElement'"
+    assert "supportingMaterial" in params, "Missing parameter 'supportingMaterial'"
     assert "concept" in params, "Missing parameter 'concept'"
-    assert "example" in params, "Missing parameter 'example'"
-    assert "guideline" in params, "Missing parameter 'guideline'"
-    assert "group1" in params, "Missing parameter 'group1'"
+    assert "checklist" in params, "Missing parameter 'checklist'"
+    assert "reusableAsset" in params, "Missing parameter 'reusableAsset'"
 
-def test_uma::contentelement_has_reusableAsset():
-    assert hasattr(uma::ContentElement, "reusableAsset")
+def test_uma_contentelement_has_group1():
+    assert hasattr(uma_ContentElement, "group1")
     descriptor = None
-    for klass in uma::ContentElement.__mro__:
-        if "reusableAsset" in klass.__dict__:
-            descriptor = klass.__dict__["reusableAsset"]
+    for klass in uma_ContentElement.__mro__:
+        if "group1" in klass.__dict__:
+            descriptor = klass.__dict__["group1"]
             break
     assert isinstance(descriptor, property)
 
-def test_uma::contentelement_has_supportingMaterial():
-    assert hasattr(uma::ContentElement, "supportingMaterial")
+def test_uma_contentelement_has_guideline():
+    assert hasattr(uma_ContentElement, "guideline")
     descriptor = None
-    for klass in uma::ContentElement.__mro__:
-        if "supportingMaterial" in klass.__dict__:
-            descriptor = klass.__dict__["supportingMaterial"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_uma::contentelement_has_checklist():
-    assert hasattr(uma::ContentElement, "checklist")
-    descriptor = None
-    for klass in uma::ContentElement.__mro__:
-        if "checklist" in klass.__dict__:
-            descriptor = klass.__dict__["checklist"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_uma::contentelement_has_variabilityType():
-    assert hasattr(uma::ContentElement, "variabilityType")
-    descriptor = None
-    for klass in uma::ContentElement.__mro__:
-        if "variabilityType" in klass.__dict__:
-            descriptor = klass.__dict__["variabilityType"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_uma::contentelement_has_whitepaper():
-    assert hasattr(uma::ContentElement, "whitepaper")
-    descriptor = None
-    for klass in uma::ContentElement.__mro__:
-        if "whitepaper" in klass.__dict__:
-            descriptor = klass.__dict__["whitepaper"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_uma::contentelement_has_variabilityBasedOnElement():
-    assert hasattr(uma::ContentElement, "variabilityBasedOnElement")
-    descriptor = None
-    for klass in uma::ContentElement.__mro__:
-        if "variabilityBasedOnElement" in klass.__dict__:
-            descriptor = klass.__dict__["variabilityBasedOnElement"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_uma::contentelement_has_concept():
-    assert hasattr(uma::ContentElement, "concept")
-    descriptor = None
-    for klass in uma::ContentElement.__mro__:
-        if "concept" in klass.__dict__:
-            descriptor = klass.__dict__["concept"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_uma::contentelement_has_example():
-    assert hasattr(uma::ContentElement, "example")
-    descriptor = None
-    for klass in uma::ContentElement.__mro__:
-        if "example" in klass.__dict__:
-            descriptor = klass.__dict__["example"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_uma::contentelement_has_guideline():
-    assert hasattr(uma::ContentElement, "guideline")
-    descriptor = None
-    for klass in uma::ContentElement.__mro__:
+    for klass in uma_ContentElement.__mro__:
         if "guideline" in klass.__dict__:
             descriptor = klass.__dict__["guideline"]
             break
     assert isinstance(descriptor, property)
 
-def test_uma::contentelement_has_group1():
-    assert hasattr(uma::ContentElement, "group1")
+def test_uma_contentelement_has_variabilityBasedOnElement():
+    assert hasattr(uma_ContentElement, "variabilityBasedOnElement")
     descriptor = None
-    for klass in uma::ContentElement.__mro__:
-        if "group1" in klass.__dict__:
-            descriptor = klass.__dict__["group1"]
+    for klass in uma_ContentElement.__mro__:
+        if "variabilityBasedOnElement" in klass.__dict__:
+            descriptor = klass.__dict__["variabilityBasedOnElement"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_uma_contentelement_has_example():
+    assert hasattr(uma_ContentElement, "example")
+    descriptor = None
+    for klass in uma_ContentElement.__mro__:
+        if "example" in klass.__dict__:
+            descriptor = klass.__dict__["example"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_uma_contentelement_has_variabilityType():
+    assert hasattr(uma_ContentElement, "variabilityType")
+    descriptor = None
+    for klass in uma_ContentElement.__mro__:
+        if "variabilityType" in klass.__dict__:
+            descriptor = klass.__dict__["variabilityType"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_uma_contentelement_has_whitepaper():
+    assert hasattr(uma_ContentElement, "whitepaper")
+    descriptor = None
+    for klass in uma_ContentElement.__mro__:
+        if "whitepaper" in klass.__dict__:
+            descriptor = klass.__dict__["whitepaper"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_uma_contentelement_has_supportingMaterial():
+    assert hasattr(uma_ContentElement, "supportingMaterial")
+    descriptor = None
+    for klass in uma_ContentElement.__mro__:
+        if "supportingMaterial" in klass.__dict__:
+            descriptor = klass.__dict__["supportingMaterial"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_uma_contentelement_has_concept():
+    assert hasattr(uma_ContentElement, "concept")
+    descriptor = None
+    for klass in uma_ContentElement.__mro__:
+        if "concept" in klass.__dict__:
+            descriptor = klass.__dict__["concept"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_uma_contentelement_has_checklist():
+    assert hasattr(uma_ContentElement, "checklist")
+    descriptor = None
+    for klass in uma_ContentElement.__mro__:
+        if "checklist" in klass.__dict__:
+            descriptor = klass.__dict__["checklist"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_uma_contentelement_has_reusableAsset():
+    assert hasattr(uma_ContentElement, "reusableAsset")
+    descriptor = None
+    for klass in uma_ContentElement.__mro__:
+        if "reusableAsset" in klass.__dict__:
+            descriptor = klass.__dict__["reusableAsset"]
             break
     assert isinstance(descriptor, property)
 
@@ -1689,127 +1181,43 @@ def test_methodunit_constructor_args():
 
 
 
-def test_uma::methodconfiguration_is_not_abstract():
-    assert not inspect.isabstract(uma::MethodConfiguration)
+def test_uma_methodplugin_is_not_abstract():
+    assert not inspect.isabstract(uma_MethodPlugin)
 
 
-def test_uma::methodconfiguration_constructor_exists():
-    assert callable(uma::MethodConfiguration.__init__)
+def test_uma_methodplugin_constructor_exists():
+    assert callable(uma_MethodPlugin.__init__)
 
 
-def test_uma::methodconfiguration_constructor_args():
-    sig = inspect.signature(uma::MethodConfiguration.__init__)
-    params = list(sig.parameters.keys())
-    assert "processView" in params, "Missing parameter 'processView'"
-    assert "addedCategory" in params, "Missing parameter 'addedCategory'"
-    assert "methodPluginSelection" in params, "Missing parameter 'methodPluginSelection'"
-    assert "methodPackageSelection" in params, "Missing parameter 'methodPackageSelection'"
-    assert "subtractedCategory" in params, "Missing parameter 'subtractedCategory'"
-    assert "defaultView" in params, "Missing parameter 'defaultView'"
-    assert "baseConfiguration" in params, "Missing parameter 'baseConfiguration'"
-
-def test_uma::methodconfiguration_has_processView():
-    assert hasattr(uma::MethodConfiguration, "processView")
-    descriptor = None
-    for klass in uma::MethodConfiguration.__mro__:
-        if "processView" in klass.__dict__:
-            descriptor = klass.__dict__["processView"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_uma::methodconfiguration_has_addedCategory():
-    assert hasattr(uma::MethodConfiguration, "addedCategory")
-    descriptor = None
-    for klass in uma::MethodConfiguration.__mro__:
-        if "addedCategory" in klass.__dict__:
-            descriptor = klass.__dict__["addedCategory"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_uma::methodconfiguration_has_methodPluginSelection():
-    assert hasattr(uma::MethodConfiguration, "methodPluginSelection")
-    descriptor = None
-    for klass in uma::MethodConfiguration.__mro__:
-        if "methodPluginSelection" in klass.__dict__:
-            descriptor = klass.__dict__["methodPluginSelection"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_uma::methodconfiguration_has_methodPackageSelection():
-    assert hasattr(uma::MethodConfiguration, "methodPackageSelection")
-    descriptor = None
-    for klass in uma::MethodConfiguration.__mro__:
-        if "methodPackageSelection" in klass.__dict__:
-            descriptor = klass.__dict__["methodPackageSelection"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_uma::methodconfiguration_has_subtractedCategory():
-    assert hasattr(uma::MethodConfiguration, "subtractedCategory")
-    descriptor = None
-    for klass in uma::MethodConfiguration.__mro__:
-        if "subtractedCategory" in klass.__dict__:
-            descriptor = klass.__dict__["subtractedCategory"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_uma::methodconfiguration_has_defaultView():
-    assert hasattr(uma::MethodConfiguration, "defaultView")
-    descriptor = None
-    for klass in uma::MethodConfiguration.__mro__:
-        if "defaultView" in klass.__dict__:
-            descriptor = klass.__dict__["defaultView"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_uma::methodconfiguration_has_baseConfiguration():
-    assert hasattr(uma::MethodConfiguration, "baseConfiguration")
-    descriptor = None
-    for klass in uma::MethodConfiguration.__mro__:
-        if "baseConfiguration" in klass.__dict__:
-            descriptor = klass.__dict__["baseConfiguration"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_uma::methodplugin_is_not_abstract():
-    assert not inspect.isabstract(uma::MethodPlugin)
-
-
-def test_uma::methodplugin_constructor_exists():
-    assert callable(uma::MethodPlugin.__init__)
-
-
-def test_uma::methodplugin_constructor_args():
-    sig = inspect.signature(uma::MethodPlugin.__init__)
+def test_uma_methodplugin_constructor_args():
+    sig = inspect.signature(uma_MethodPlugin.__init__)
     params = list(sig.parameters.keys())
     assert "userChangeable" in params, "Missing parameter 'userChangeable'"
     assert "supporting" in params, "Missing parameter 'supporting'"
     assert "referencedMethodPlugin" in params, "Missing parameter 'referencedMethodPlugin'"
 
-def test_uma::methodplugin_has_userChangeable():
-    assert hasattr(uma::MethodPlugin, "userChangeable")
+def test_uma_methodplugin_has_userChangeable():
+    assert hasattr(uma_MethodPlugin, "userChangeable")
     descriptor = None
-    for klass in uma::MethodPlugin.__mro__:
+    for klass in uma_MethodPlugin.__mro__:
         if "userChangeable" in klass.__dict__:
             descriptor = klass.__dict__["userChangeable"]
             break
     assert isinstance(descriptor, property)
 
-def test_uma::methodplugin_has_supporting():
-    assert hasattr(uma::MethodPlugin, "supporting")
+def test_uma_methodplugin_has_supporting():
+    assert hasattr(uma_MethodPlugin, "supporting")
     descriptor = None
-    for klass in uma::MethodPlugin.__mro__:
+    for klass in uma_MethodPlugin.__mro__:
         if "supporting" in klass.__dict__:
             descriptor = klass.__dict__["supporting"]
             break
     assert isinstance(descriptor, property)
 
-def test_uma::methodplugin_has_referencedMethodPlugin():
-    assert hasattr(uma::MethodPlugin, "referencedMethodPlugin")
+def test_uma_methodplugin_has_referencedMethodPlugin():
+    assert hasattr(uma_MethodPlugin, "referencedMethodPlugin")
     descriptor = None
-    for klass in uma::MethodPlugin.__mro__:
+    for klass in uma_MethodPlugin.__mro__:
         if "referencedMethodPlugin" in klass.__dict__:
             descriptor = klass.__dict__["referencedMethodPlugin"]
             break
@@ -1817,23 +1225,23 @@ def test_uma::methodplugin_has_referencedMethodPlugin():
 
 
 
-def test_uma::methodlibrary_is_not_abstract():
-    assert not inspect.isabstract(uma::MethodLibrary)
+def test_uma_methodlibrary_is_not_abstract():
+    assert not inspect.isabstract(uma_MethodLibrary)
 
 
-def test_uma::methodlibrary_constructor_exists():
-    assert callable(uma::MethodLibrary.__init__)
+def test_uma_methodlibrary_constructor_exists():
+    assert callable(uma_MethodLibrary.__init__)
 
 
-def test_uma::methodlibrary_constructor_args():
-    sig = inspect.signature(uma::MethodLibrary.__init__)
+def test_uma_methodlibrary_constructor_args():
+    sig = inspect.signature(uma_MethodLibrary.__init__)
     params = list(sig.parameters.keys())
     assert "tool" in params, "Missing parameter 'tool'"
 
-def test_uma::methodlibrary_has_tool():
-    assert hasattr(uma::MethodLibrary, "tool")
+def test_uma_methodlibrary_has_tool():
+    assert hasattr(uma_MethodLibrary, "tool")
     descriptor = None
-    for klass in uma::MethodLibrary.__mro__:
+    for klass in uma_MethodLibrary.__mro__:
         if "tool" in klass.__dict__:
             descriptor = klass.__dict__["tool"]
             break
@@ -1841,43 +1249,127 @@ def test_uma::methodlibrary_has_tool():
 
 
 
-def test_uma::contentdescription_is_not_abstract():
-    assert not inspect.isabstract(uma::ContentDescription)
+def test_uma_methodconfiguration_is_not_abstract():
+    assert not inspect.isabstract(uma_MethodConfiguration)
 
 
-def test_uma::contentdescription_constructor_exists():
-    assert callable(uma::ContentDescription.__init__)
+def test_uma_methodconfiguration_constructor_exists():
+    assert callable(uma_MethodConfiguration.__init__)
 
 
-def test_uma::contentdescription_constructor_args():
-    sig = inspect.signature(uma::ContentDescription.__init__)
+def test_uma_methodconfiguration_constructor_args():
+    sig = inspect.signature(uma_MethodConfiguration.__init__)
     params = list(sig.parameters.keys())
-    assert "keyConsiderations" in params, "Missing parameter 'keyConsiderations'"
-    assert "mainDescription" in params, "Missing parameter 'mainDescription'"
-    assert "externalId" in params, "Missing parameter 'externalId'"
+    assert "addedCategory" in params, "Missing parameter 'addedCategory'"
+    assert "methodPluginSelection" in params, "Missing parameter 'methodPluginSelection'"
+    assert "processView" in params, "Missing parameter 'processView'"
+    assert "defaultView" in params, "Missing parameter 'defaultView'"
+    assert "methodPackageSelection" in params, "Missing parameter 'methodPackageSelection'"
+    assert "subtractedCategory" in params, "Missing parameter 'subtractedCategory'"
+    assert "baseConfiguration" in params, "Missing parameter 'baseConfiguration'"
 
-def test_uma::contentdescription_has_keyConsiderations():
-    assert hasattr(uma::ContentDescription, "keyConsiderations")
+def test_uma_methodconfiguration_has_addedCategory():
+    assert hasattr(uma_MethodConfiguration, "addedCategory")
     descriptor = None
-    for klass in uma::ContentDescription.__mro__:
-        if "keyConsiderations" in klass.__dict__:
-            descriptor = klass.__dict__["keyConsiderations"]
+    for klass in uma_MethodConfiguration.__mro__:
+        if "addedCategory" in klass.__dict__:
+            descriptor = klass.__dict__["addedCategory"]
             break
     assert isinstance(descriptor, property)
 
-def test_uma::contentdescription_has_mainDescription():
-    assert hasattr(uma::ContentDescription, "mainDescription")
+def test_uma_methodconfiguration_has_methodPluginSelection():
+    assert hasattr(uma_MethodConfiguration, "methodPluginSelection")
     descriptor = None
-    for klass in uma::ContentDescription.__mro__:
+    for klass in uma_MethodConfiguration.__mro__:
+        if "methodPluginSelection" in klass.__dict__:
+            descriptor = klass.__dict__["methodPluginSelection"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_uma_methodconfiguration_has_processView():
+    assert hasattr(uma_MethodConfiguration, "processView")
+    descriptor = None
+    for klass in uma_MethodConfiguration.__mro__:
+        if "processView" in klass.__dict__:
+            descriptor = klass.__dict__["processView"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_uma_methodconfiguration_has_defaultView():
+    assert hasattr(uma_MethodConfiguration, "defaultView")
+    descriptor = None
+    for klass in uma_MethodConfiguration.__mro__:
+        if "defaultView" in klass.__dict__:
+            descriptor = klass.__dict__["defaultView"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_uma_methodconfiguration_has_methodPackageSelection():
+    assert hasattr(uma_MethodConfiguration, "methodPackageSelection")
+    descriptor = None
+    for klass in uma_MethodConfiguration.__mro__:
+        if "methodPackageSelection" in klass.__dict__:
+            descriptor = klass.__dict__["methodPackageSelection"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_uma_methodconfiguration_has_subtractedCategory():
+    assert hasattr(uma_MethodConfiguration, "subtractedCategory")
+    descriptor = None
+    for klass in uma_MethodConfiguration.__mro__:
+        if "subtractedCategory" in klass.__dict__:
+            descriptor = klass.__dict__["subtractedCategory"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_uma_methodconfiguration_has_baseConfiguration():
+    assert hasattr(uma_MethodConfiguration, "baseConfiguration")
+    descriptor = None
+    for klass in uma_MethodConfiguration.__mro__:
+        if "baseConfiguration" in klass.__dict__:
+            descriptor = klass.__dict__["baseConfiguration"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_uma_contentdescription_is_not_abstract():
+    assert not inspect.isabstract(uma_ContentDescription)
+
+
+def test_uma_contentdescription_constructor_exists():
+    assert callable(uma_ContentDescription.__init__)
+
+
+def test_uma_contentdescription_constructor_args():
+    sig = inspect.signature(uma_ContentDescription.__init__)
+    params = list(sig.parameters.keys())
+    assert "mainDescription" in params, "Missing parameter 'mainDescription'"
+    assert "keyConsiderations" in params, "Missing parameter 'keyConsiderations'"
+    assert "externalId" in params, "Missing parameter 'externalId'"
+
+def test_uma_contentdescription_has_mainDescription():
+    assert hasattr(uma_ContentDescription, "mainDescription")
+    descriptor = None
+    for klass in uma_ContentDescription.__mro__:
         if "mainDescription" in klass.__dict__:
             descriptor = klass.__dict__["mainDescription"]
             break
     assert isinstance(descriptor, property)
 
-def test_uma::contentdescription_has_externalId():
-    assert hasattr(uma::ContentDescription, "externalId")
+def test_uma_contentdescription_has_keyConsiderations():
+    assert hasattr(uma_ContentDescription, "keyConsiderations")
     descriptor = None
-    for klass in uma::ContentDescription.__mro__:
+    for klass in uma_ContentDescription.__mro__:
+        if "keyConsiderations" in klass.__dict__:
+            descriptor = klass.__dict__["keyConsiderations"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_uma_contentdescription_has_externalId():
+    assert hasattr(uma_ContentDescription, "externalId")
+    descriptor = None
+    for klass in uma_ContentDescription.__mro__:
         if "externalId" in klass.__dict__:
             descriptor = klass.__dict__["externalId"]
             break
@@ -1899,107 +1391,107 @@ def test_methodelement_constructor_args():
 
 
 
-def test_uma::section_is_not_abstract():
-    assert not inspect.isabstract(uma::Section)
+def test_uma_section_is_not_abstract():
+    assert not inspect.isabstract(uma_Section)
 
 
-def test_uma::section_constructor_exists():
-    assert callable(uma::Section.__init__)
+def test_uma_section_constructor_exists():
+    assert callable(uma_Section.__init__)
 
 
-def test_uma::section_constructor_args():
-    sig = inspect.signature(uma::Section.__init__)
+def test_uma_section_constructor_args():
+    sig = inspect.signature(uma_Section.__init__)
     params = list(sig.parameters.keys())
     assert "description" in params, "Missing parameter 'description'"
-    assert "variabilityType" in params, "Missing parameter 'variabilityType'"
-    assert "predecessor" in params, "Missing parameter 'predecessor'"
-    assert "variabilityBasedOnElement" in params, "Missing parameter 'variabilityBasedOnElement'"
     assert "sectionName" in params, "Missing parameter 'sectionName'"
+    assert "variabilityType" in params, "Missing parameter 'variabilityType'"
+    assert "variabilityBasedOnElement" in params, "Missing parameter 'variabilityBasedOnElement'"
+    assert "predecessor" in params, "Missing parameter 'predecessor'"
 
-def test_uma::section_has_description():
-    assert hasattr(uma::Section, "description")
+def test_uma_section_has_description():
+    assert hasattr(uma_Section, "description")
     descriptor = None
-    for klass in uma::Section.__mro__:
+    for klass in uma_Section.__mro__:
         if "description" in klass.__dict__:
             descriptor = klass.__dict__["description"]
             break
     assert isinstance(descriptor, property)
 
-def test_uma::section_has_variabilityType():
-    assert hasattr(uma::Section, "variabilityType")
+def test_uma_section_has_sectionName():
+    assert hasattr(uma_Section, "sectionName")
     descriptor = None
-    for klass in uma::Section.__mro__:
-        if "variabilityType" in klass.__dict__:
-            descriptor = klass.__dict__["variabilityType"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_uma::section_has_predecessor():
-    assert hasattr(uma::Section, "predecessor")
-    descriptor = None
-    for klass in uma::Section.__mro__:
-        if "predecessor" in klass.__dict__:
-            descriptor = klass.__dict__["predecessor"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_uma::section_has_variabilityBasedOnElement():
-    assert hasattr(uma::Section, "variabilityBasedOnElement")
-    descriptor = None
-    for klass in uma::Section.__mro__:
-        if "variabilityBasedOnElement" in klass.__dict__:
-            descriptor = klass.__dict__["variabilityBasedOnElement"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_uma::section_has_sectionName():
-    assert hasattr(uma::Section, "sectionName")
-    descriptor = None
-    for klass in uma::Section.__mro__:
+    for klass in uma_Section.__mro__:
         if "sectionName" in klass.__dict__:
             descriptor = klass.__dict__["sectionName"]
             break
     assert isinstance(descriptor, property)
 
-
-
-def test_uma::methodpackage_is_not_abstract():
-    assert not inspect.isabstract(uma::MethodPackage)
-
-
-def test_uma::methodpackage_constructor_exists():
-    assert callable(uma::MethodPackage.__init__)
-
-
-def test_uma::methodpackage_constructor_args():
-    sig = inspect.signature(uma::MethodPackage.__init__)
-    params = list(sig.parameters.keys())
-    assert "group1" in params, "Missing parameter 'group1'"
-    assert "global_" in params, "Missing parameter 'global_'"
-    assert "reusedPackage" in params, "Missing parameter 'reusedPackage'"
-
-def test_uma::methodpackage_has_group1():
-    assert hasattr(uma::MethodPackage, "group1")
+def test_uma_section_has_variabilityType():
+    assert hasattr(uma_Section, "variabilityType")
     descriptor = None
-    for klass in uma::MethodPackage.__mro__:
-        if "group1" in klass.__dict__:
-            descriptor = klass.__dict__["group1"]
+    for klass in uma_Section.__mro__:
+        if "variabilityType" in klass.__dict__:
+            descriptor = klass.__dict__["variabilityType"]
             break
     assert isinstance(descriptor, property)
 
-def test_uma::methodpackage_has_global_():
-    assert hasattr(uma::MethodPackage, "global_")
+def test_uma_section_has_variabilityBasedOnElement():
+    assert hasattr(uma_Section, "variabilityBasedOnElement")
     descriptor = None
-    for klass in uma::MethodPackage.__mro__:
+    for klass in uma_Section.__mro__:
+        if "variabilityBasedOnElement" in klass.__dict__:
+            descriptor = klass.__dict__["variabilityBasedOnElement"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_uma_section_has_predecessor():
+    assert hasattr(uma_Section, "predecessor")
+    descriptor = None
+    for klass in uma_Section.__mro__:
+        if "predecessor" in klass.__dict__:
+            descriptor = klass.__dict__["predecessor"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_uma_methodpackage_is_not_abstract():
+    assert not inspect.isabstract(uma_MethodPackage)
+
+
+def test_uma_methodpackage_constructor_exists():
+    assert callable(uma_MethodPackage.__init__)
+
+
+def test_uma_methodpackage_constructor_args():
+    sig = inspect.signature(uma_MethodPackage.__init__)
+    params = list(sig.parameters.keys())
+    assert "global_" in params, "Missing parameter 'global_'"
+    assert "group1" in params, "Missing parameter 'group1'"
+    assert "reusedPackage" in params, "Missing parameter 'reusedPackage'"
+
+def test_uma_methodpackage_has_global_():
+    assert hasattr(uma_MethodPackage, "global_")
+    descriptor = None
+    for klass in uma_MethodPackage.__mro__:
         if "global_" in klass.__dict__:
             descriptor = klass.__dict__["global_"]
             break
     assert isinstance(descriptor, property)
 
-def test_uma::methodpackage_has_reusedPackage():
-    assert hasattr(uma::MethodPackage, "reusedPackage")
+def test_uma_methodpackage_has_group1():
+    assert hasattr(uma_MethodPackage, "group1")
     descriptor = None
-    for klass in uma::MethodPackage.__mro__:
+    for klass in uma_MethodPackage.__mro__:
+        if "group1" in klass.__dict__:
+            descriptor = klass.__dict__["group1"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_uma_methodpackage_has_reusedPackage():
+    assert hasattr(uma_MethodPackage, "reusedPackage")
+    descriptor = None
+    for klass in uma_MethodPackage.__mro__:
         if "reusedPackage" in klass.__dict__:
             descriptor = klass.__dict__["reusedPackage"]
             break
@@ -2007,151 +1499,63 @@ def test_uma::methodpackage_has_reusedPackage():
 
 
 
-def test_uma::workdefinition_is_not_abstract():
-    assert not inspect.isabstract(uma::WorkDefinition)
+def test_uma_methodunit_is_not_abstract():
+    assert not inspect.isabstract(uma_MethodUnit)
 
 
-def test_uma::workdefinition_constructor_exists():
-    assert callable(uma::WorkDefinition.__init__)
+def test_uma_methodunit_constructor_exists():
+    assert callable(uma_MethodUnit.__init__)
 
 
-def test_uma::workdefinition_constructor_args():
-    sig = inspect.signature(uma::WorkDefinition.__init__)
+def test_uma_methodunit_constructor_args():
+    sig = inspect.signature(uma_MethodUnit.__init__)
     params = list(sig.parameters.keys())
-    assert "postcondition" in params, "Missing parameter 'postcondition'"
-    assert "precondition" in params, "Missing parameter 'precondition'"
-
-def test_uma::workdefinition_has_postcondition():
-    assert hasattr(uma::WorkDefinition, "postcondition")
-    descriptor = None
-    for klass in uma::WorkDefinition.__mro__:
-        if "postcondition" in klass.__dict__:
-            descriptor = klass.__dict__["postcondition"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_uma::workdefinition_has_precondition():
-    assert hasattr(uma::WorkDefinition, "precondition")
-    descriptor = None
-    for klass in uma::WorkDefinition.__mro__:
-        if "precondition" in klass.__dict__:
-            descriptor = klass.__dict__["precondition"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_uma::describableelement_is_not_abstract():
-    assert not inspect.isabstract(uma::DescribableElement)
-
-
-def test_uma::describableelement_constructor_exists():
-    assert callable(uma::DescribableElement.__init__)
-
-
-def test_uma::describableelement_constructor_args():
-    sig = inspect.signature(uma::DescribableElement.__init__)
-    params = list(sig.parameters.keys())
-    assert "fulfill" in params, "Missing parameter 'fulfill'"
-    assert "shapeicon" in params, "Missing parameter 'shapeicon'"
-    assert "nodeicon" in params, "Missing parameter 'nodeicon'"
-    assert "isAbstract" in params, "Missing parameter 'isAbstract'"
-
-def test_uma::describableelement_has_fulfill():
-    assert hasattr(uma::DescribableElement, "fulfill")
-    descriptor = None
-    for klass in uma::DescribableElement.__mro__:
-        if "fulfill" in klass.__dict__:
-            descriptor = klass.__dict__["fulfill"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_uma::describableelement_has_shapeicon():
-    assert hasattr(uma::DescribableElement, "shapeicon")
-    descriptor = None
-    for klass in uma::DescribableElement.__mro__:
-        if "shapeicon" in klass.__dict__:
-            descriptor = klass.__dict__["shapeicon"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_uma::describableelement_has_nodeicon():
-    assert hasattr(uma::DescribableElement, "nodeicon")
-    descriptor = None
-    for klass in uma::DescribableElement.__mro__:
-        if "nodeicon" in klass.__dict__:
-            descriptor = klass.__dict__["nodeicon"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_uma::describableelement_has_isAbstract():
-    assert hasattr(uma::DescribableElement, "isAbstract")
-    descriptor = None
-    for klass in uma::DescribableElement.__mro__:
-        if "isAbstract" in klass.__dict__:
-            descriptor = klass.__dict__["isAbstract"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_uma::methodunit_is_not_abstract():
-    assert not inspect.isabstract(uma::MethodUnit)
-
-
-def test_uma::methodunit_constructor_exists():
-    assert callable(uma::MethodUnit.__init__)
-
-
-def test_uma::methodunit_constructor_args():
-    sig = inspect.signature(uma::MethodUnit.__init__)
-    params = list(sig.parameters.keys())
-    assert "changeDescription" in params, "Missing parameter 'changeDescription'"
-    assert "version" in params, "Missing parameter 'version'"
     assert "changeDate" in params, "Missing parameter 'changeDate'"
+    assert "changeDescription" in params, "Missing parameter 'changeDescription'"
     assert "authors" in params, "Missing parameter 'authors'"
+    assert "version" in params, "Missing parameter 'version'"
     assert "copyright" in params, "Missing parameter 'copyright'"
 
-def test_uma::methodunit_has_changeDescription():
-    assert hasattr(uma::MethodUnit, "changeDescription")
+def test_uma_methodunit_has_changeDate():
+    assert hasattr(uma_MethodUnit, "changeDate")
     descriptor = None
-    for klass in uma::MethodUnit.__mro__:
-        if "changeDescription" in klass.__dict__:
-            descriptor = klass.__dict__["changeDescription"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_uma::methodunit_has_version():
-    assert hasattr(uma::MethodUnit, "version")
-    descriptor = None
-    for klass in uma::MethodUnit.__mro__:
-        if "version" in klass.__dict__:
-            descriptor = klass.__dict__["version"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_uma::methodunit_has_changeDate():
-    assert hasattr(uma::MethodUnit, "changeDate")
-    descriptor = None
-    for klass in uma::MethodUnit.__mro__:
+    for klass in uma_MethodUnit.__mro__:
         if "changeDate" in klass.__dict__:
             descriptor = klass.__dict__["changeDate"]
             break
     assert isinstance(descriptor, property)
 
-def test_uma::methodunit_has_authors():
-    assert hasattr(uma::MethodUnit, "authors")
+def test_uma_methodunit_has_changeDescription():
+    assert hasattr(uma_MethodUnit, "changeDescription")
     descriptor = None
-    for klass in uma::MethodUnit.__mro__:
+    for klass in uma_MethodUnit.__mro__:
+        if "changeDescription" in klass.__dict__:
+            descriptor = klass.__dict__["changeDescription"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_uma_methodunit_has_authors():
+    assert hasattr(uma_MethodUnit, "authors")
+    descriptor = None
+    for klass in uma_MethodUnit.__mro__:
         if "authors" in klass.__dict__:
             descriptor = klass.__dict__["authors"]
             break
     assert isinstance(descriptor, property)
 
-def test_uma::methodunit_has_copyright():
-    assert hasattr(uma::MethodUnit, "copyright")
+def test_uma_methodunit_has_version():
+    assert hasattr(uma_MethodUnit, "version")
     descriptor = None
-    for klass in uma::MethodUnit.__mro__:
+    for klass in uma_MethodUnit.__mro__:
+        if "version" in klass.__dict__:
+            descriptor = klass.__dict__["version"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_uma_methodunit_has_copyright():
+    assert hasattr(uma_MethodUnit, "copyright")
+    descriptor = None
+    for klass in uma_MethodUnit.__mro__:
         if "copyright" in klass.__dict__:
             descriptor = klass.__dict__["copyright"]
             break
@@ -2159,23 +1563,77 @@ def test_uma::methodunit_has_copyright():
 
 
 
-def test_uma::constraint_is_not_abstract():
-    assert not inspect.isabstract(uma::Constraint)
+def test_uma_describableelement_is_not_abstract():
+    assert not inspect.isabstract(uma_DescribableElement)
 
 
-def test_uma::constraint_constructor_exists():
-    assert callable(uma::Constraint.__init__)
+def test_uma_describableelement_constructor_exists():
+    assert callable(uma_DescribableElement.__init__)
 
 
-def test_uma::constraint_constructor_args():
-    sig = inspect.signature(uma::Constraint.__init__)
+def test_uma_describableelement_constructor_args():
+    sig = inspect.signature(uma_DescribableElement.__init__)
+    params = list(sig.parameters.keys())
+    assert "isAbstract" in params, "Missing parameter 'isAbstract'"
+    assert "shapeicon" in params, "Missing parameter 'shapeicon'"
+    assert "nodeicon" in params, "Missing parameter 'nodeicon'"
+    assert "fulfill" in params, "Missing parameter 'fulfill'"
+
+def test_uma_describableelement_has_isAbstract():
+    assert hasattr(uma_DescribableElement, "isAbstract")
+    descriptor = None
+    for klass in uma_DescribableElement.__mro__:
+        if "isAbstract" in klass.__dict__:
+            descriptor = klass.__dict__["isAbstract"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_uma_describableelement_has_shapeicon():
+    assert hasattr(uma_DescribableElement, "shapeicon")
+    descriptor = None
+    for klass in uma_DescribableElement.__mro__:
+        if "shapeicon" in klass.__dict__:
+            descriptor = klass.__dict__["shapeicon"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_uma_describableelement_has_nodeicon():
+    assert hasattr(uma_DescribableElement, "nodeicon")
+    descriptor = None
+    for klass in uma_DescribableElement.__mro__:
+        if "nodeicon" in klass.__dict__:
+            descriptor = klass.__dict__["nodeicon"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_uma_describableelement_has_fulfill():
+    assert hasattr(uma_DescribableElement, "fulfill")
+    descriptor = None
+    for klass in uma_DescribableElement.__mro__:
+        if "fulfill" in klass.__dict__:
+            descriptor = klass.__dict__["fulfill"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_uma_constraint_is_not_abstract():
+    assert not inspect.isabstract(uma_Constraint)
+
+
+def test_uma_constraint_constructor_exists():
+    assert callable(uma_Constraint.__init__)
+
+
+def test_uma_constraint_constructor_args():
+    sig = inspect.signature(uma_Constraint.__init__)
     params = list(sig.parameters.keys())
     assert "mainDescription" in params, "Missing parameter 'mainDescription'"
 
-def test_uma::constraint_has_mainDescription():
-    assert hasattr(uma::Constraint, "mainDescription")
+def test_uma_constraint_has_mainDescription():
+    assert hasattr(uma_Constraint, "mainDescription")
     descriptor = None
-    for klass in uma::Constraint.__mro__:
+    for klass in uma_Constraint.__mro__:
         if "mainDescription" in klass.__dict__:
             descriptor = klass.__dict__["mainDescription"]
             break
@@ -2197,23 +1655,23 @@ def test_roledescriptor_constructor_args():
 
 
 
-def test_uma::compositerole_is_not_abstract():
-    assert not inspect.isabstract(uma::CompositeRole)
+def test_uma_compositerole_is_not_abstract():
+    assert not inspect.isabstract(uma_CompositeRole)
 
 
-def test_uma::compositerole_constructor_exists():
-    assert callable(uma::CompositeRole.__init__)
+def test_uma_compositerole_constructor_exists():
+    assert callable(uma_CompositeRole.__init__)
 
 
-def test_uma::compositerole_constructor_args():
-    sig = inspect.signature(uma::CompositeRole.__init__)
+def test_uma_compositerole_constructor_args():
+    sig = inspect.signature(uma_CompositeRole.__init__)
     params = list(sig.parameters.keys())
     assert "group2" in params, "Missing parameter 'group2'"
 
-def test_uma::compositerole_has_group2():
-    assert hasattr(uma::CompositeRole, "group2")
+def test_uma_compositerole_has_group2():
+    assert hasattr(uma_CompositeRole, "group2")
     descriptor = None
-    for klass in uma::CompositeRole.__mro__:
+    for klass in uma_CompositeRole.__mro__:
         if "group2" in klass.__dict__:
             descriptor = klass.__dict__["group2"]
             break
@@ -2235,272 +1693,202 @@ def test_guidance_constructor_args():
 
 
 
-def test_uma::practice_is_not_abstract():
-    assert not inspect.isabstract(uma::Practice)
+def test_uma_example_is_not_abstract():
+    assert not inspect.isabstract(uma_Example)
 
 
-def test_uma::practice_constructor_exists():
-    assert callable(uma::Practice.__init__)
+def test_uma_example_constructor_exists():
+    assert callable(uma_Example.__init__)
 
 
-def test_uma::practice_constructor_args():
-    sig = inspect.signature(uma::Practice.__init__)
+def test_uma_example_constructor_args():
+    sig = inspect.signature(uma_Example.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_uma_reusableasset_is_not_abstract():
+    assert not inspect.isabstract(uma_ReusableAsset)
+
+
+def test_uma_reusableasset_constructor_exists():
+    assert callable(uma_ReusableAsset.__init__)
+
+
+def test_uma_reusableasset_constructor_args():
+    sig = inspect.signature(uma_ReusableAsset.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_uma_report_is_not_abstract():
+    assert not inspect.isabstract(uma_Report)
+
+
+def test_uma_report_constructor_exists():
+    assert callable(uma_Report.__init__)
+
+
+def test_uma_report_constructor_args():
+    sig = inspect.signature(uma_Report.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_uma_guideline_is_not_abstract():
+    assert not inspect.isabstract(uma_Guideline)
+
+
+def test_uma_guideline_constructor_exists():
+    assert callable(uma_Guideline.__init__)
+
+
+def test_uma_guideline_constructor_args():
+    sig = inspect.signature(uma_Guideline.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_uma_estimationconsiderations_is_not_abstract():
+    assert not inspect.isabstract(uma_EstimationConsiderations)
+
+
+def test_uma_estimationconsiderations_constructor_exists():
+    assert callable(uma_EstimationConsiderations.__init__)
+
+
+def test_uma_estimationconsiderations_constructor_args():
+    sig = inspect.signature(uma_EstimationConsiderations.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_uma_concept_is_not_abstract():
+    assert not inspect.isabstract(uma_Concept)
+
+
+def test_uma_concept_constructor_exists():
+    assert callable(uma_Concept.__init__)
+
+
+def test_uma_concept_constructor_args():
+    sig = inspect.signature(uma_Concept.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_uma_estimate_is_not_abstract():
+    assert not inspect.isabstract(uma_Estimate)
+
+
+def test_uma_estimate_constructor_exists():
+    assert callable(uma_Estimate.__init__)
+
+
+def test_uma_estimate_constructor_args():
+    sig = inspect.signature(uma_Estimate.__init__)
     params = list(sig.parameters.keys())
     assert "group2" in params, "Missing parameter 'group2'"
-    assert "contentReference" in params, "Missing parameter 'contentReference'"
-    assert "activityReference" in params, "Missing parameter 'activityReference'"
+    assert "estimationConsiderations" in params, "Missing parameter 'estimationConsiderations'"
+    assert "estimationMetric" in params, "Missing parameter 'estimationMetric'"
 
-def test_uma::practice_has_group2():
-    assert hasattr(uma::Practice, "group2")
+def test_uma_estimate_has_group2():
+    assert hasattr(uma_Estimate, "group2")
     descriptor = None
-    for klass in uma::Practice.__mro__:
+    for klass in uma_Estimate.__mro__:
         if "group2" in klass.__dict__:
             descriptor = klass.__dict__["group2"]
             break
     assert isinstance(descriptor, property)
 
-def test_uma::practice_has_contentReference():
-    assert hasattr(uma::Practice, "contentReference")
+def test_uma_estimate_has_estimationConsiderations():
+    assert hasattr(uma_Estimate, "estimationConsiderations")
     descriptor = None
-    for klass in uma::Practice.__mro__:
-        if "contentReference" in klass.__dict__:
-            descriptor = klass.__dict__["contentReference"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_uma::practice_has_activityReference():
-    assert hasattr(uma::Practice, "activityReference")
-    descriptor = None
-    for klass in uma::Practice.__mro__:
-        if "activityReference" in klass.__dict__:
-            descriptor = klass.__dict__["activityReference"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_uma::estimate_is_not_abstract():
-    assert not inspect.isabstract(uma::Estimate)
-
-
-def test_uma::estimate_constructor_exists():
-    assert callable(uma::Estimate.__init__)
-
-
-def test_uma::estimate_constructor_args():
-    sig = inspect.signature(uma::Estimate.__init__)
-    params = list(sig.parameters.keys())
-    assert "estimationMetric" in params, "Missing parameter 'estimationMetric'"
-    assert "estimationConsiderations" in params, "Missing parameter 'estimationConsiderations'"
-    assert "group2" in params, "Missing parameter 'group2'"
-
-def test_uma::estimate_has_estimationMetric():
-    assert hasattr(uma::Estimate, "estimationMetric")
-    descriptor = None
-    for klass in uma::Estimate.__mro__:
-        if "estimationMetric" in klass.__dict__:
-            descriptor = klass.__dict__["estimationMetric"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_uma::estimate_has_estimationConsiderations():
-    assert hasattr(uma::Estimate, "estimationConsiderations")
-    descriptor = None
-    for klass in uma::Estimate.__mro__:
+    for klass in uma_Estimate.__mro__:
         if "estimationConsiderations" in klass.__dict__:
             descriptor = klass.__dict__["estimationConsiderations"]
             break
     assert isinstance(descriptor, property)
 
-def test_uma::estimate_has_group2():
-    assert hasattr(uma::Estimate, "group2")
+def test_uma_estimate_has_estimationMetric():
+    assert hasattr(uma_Estimate, "estimationMetric")
     descriptor = None
-    for klass in uma::Estimate.__mro__:
-        if "group2" in klass.__dict__:
-            descriptor = klass.__dict__["group2"]
+    for klass in uma_Estimate.__mro__:
+        if "estimationMetric" in klass.__dict__:
+            descriptor = klass.__dict__["estimationMetric"]
             break
     assert isinstance(descriptor, property)
 
 
 
-def test_uma::roadmap_is_not_abstract():
-    assert not inspect.isabstract(uma::Roadmap)
+def test_uma_practice_is_not_abstract():
+    assert not inspect.isabstract(uma_Practice)
 
 
-def test_uma::roadmap_constructor_exists():
-    assert callable(uma::Roadmap.__init__)
+def test_uma_practice_constructor_exists():
+    assert callable(uma_Practice.__init__)
 
 
-def test_uma::roadmap_constructor_args():
-    sig = inspect.signature(uma::Roadmap.__init__)
+def test_uma_practice_constructor_args():
+    sig = inspect.signature(uma_Practice.__init__)
+    params = list(sig.parameters.keys())
+    assert "group2" in params, "Missing parameter 'group2'"
+    assert "activityReference" in params, "Missing parameter 'activityReference'"
+    assert "contentReference" in params, "Missing parameter 'contentReference'"
+
+def test_uma_practice_has_group2():
+    assert hasattr(uma_Practice, "group2")
+    descriptor = None
+    for klass in uma_Practice.__mro__:
+        if "group2" in klass.__dict__:
+            descriptor = klass.__dict__["group2"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_uma_practice_has_activityReference():
+    assert hasattr(uma_Practice, "activityReference")
+    descriptor = None
+    for klass in uma_Practice.__mro__:
+        if "activityReference" in klass.__dict__:
+            descriptor = klass.__dict__["activityReference"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_uma_practice_has_contentReference():
+    assert hasattr(uma_Practice, "contentReference")
+    descriptor = None
+    for klass in uma_Practice.__mro__:
+        if "contentReference" in klass.__dict__:
+            descriptor = klass.__dict__["contentReference"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_uma_estimatingmetric_is_not_abstract():
+    assert not inspect.isabstract(uma_EstimatingMetric)
+
+
+def test_uma_estimatingmetric_constructor_exists():
+    assert callable(uma_EstimatingMetric.__init__)
+
+
+def test_uma_estimatingmetric_constructor_args():
+    sig = inspect.signature(uma_EstimatingMetric.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_uma::toolmentor_is_not_abstract():
-    assert not inspect.isabstract(uma::ToolMentor)
+def test_uma_checklist_is_not_abstract():
+    assert not inspect.isabstract(uma_Checklist)
 
 
-def test_uma::toolmentor_constructor_exists():
-    assert callable(uma::ToolMentor.__init__)
+def test_uma_checklist_constructor_exists():
+    assert callable(uma_Checklist.__init__)
 
 
-def test_uma::toolmentor_constructor_args():
-    sig = inspect.signature(uma::ToolMentor.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_uma::template_is_not_abstract():
-    assert not inspect.isabstract(uma::Template)
-
-
-def test_uma::template_constructor_exists():
-    assert callable(uma::Template.__init__)
-
-
-def test_uma::template_constructor_args():
-    sig = inspect.signature(uma::Template.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_uma::estimationconsiderations_is_not_abstract():
-    assert not inspect.isabstract(uma::EstimationConsiderations)
-
-
-def test_uma::estimationconsiderations_constructor_exists():
-    assert callable(uma::EstimationConsiderations.__init__)
-
-
-def test_uma::estimationconsiderations_constructor_args():
-    sig = inspect.signature(uma::EstimationConsiderations.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_uma::reusableasset_is_not_abstract():
-    assert not inspect.isabstract(uma::ReusableAsset)
-
-
-def test_uma::reusableasset_constructor_exists():
-    assert callable(uma::ReusableAsset.__init__)
-
-
-def test_uma::reusableasset_constructor_args():
-    sig = inspect.signature(uma::ReusableAsset.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_uma::guideline_is_not_abstract():
-    assert not inspect.isabstract(uma::Guideline)
-
-
-def test_uma::guideline_constructor_exists():
-    assert callable(uma::Guideline.__init__)
-
-
-def test_uma::guideline_constructor_args():
-    sig = inspect.signature(uma::Guideline.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_uma::termdefinition_is_not_abstract():
-    assert not inspect.isabstract(uma::TermDefinition)
-
-
-def test_uma::termdefinition_constructor_exists():
-    assert callable(uma::TermDefinition.__init__)
-
-
-def test_uma::termdefinition_constructor_args():
-    sig = inspect.signature(uma::TermDefinition.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_uma::report_is_not_abstract():
-    assert not inspect.isabstract(uma::Report)
-
-
-def test_uma::report_constructor_exists():
-    assert callable(uma::Report.__init__)
-
-
-def test_uma::report_constructor_args():
-    sig = inspect.signature(uma::Report.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_uma::concept_is_not_abstract():
-    assert not inspect.isabstract(uma::Concept)
-
-
-def test_uma::concept_constructor_exists():
-    assert callable(uma::Concept.__init__)
-
-
-def test_uma::concept_constructor_args():
-    sig = inspect.signature(uma::Concept.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_uma::supportingmaterial_is_not_abstract():
-    assert not inspect.isabstract(uma::SupportingMaterial)
-
-
-def test_uma::supportingmaterial_constructor_exists():
-    assert callable(uma::SupportingMaterial.__init__)
-
-
-def test_uma::supportingmaterial_constructor_args():
-    sig = inspect.signature(uma::SupportingMaterial.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_uma::estimatingmetric_is_not_abstract():
-    assert not inspect.isabstract(uma::EstimatingMetric)
-
-
-def test_uma::estimatingmetric_constructor_exists():
-    assert callable(uma::EstimatingMetric.__init__)
-
-
-def test_uma::estimatingmetric_constructor_args():
-    sig = inspect.signature(uma::EstimatingMetric.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_uma::example_is_not_abstract():
-    assert not inspect.isabstract(uma::Example)
-
-
-def test_uma::example_constructor_exists():
-    assert callable(uma::Example.__init__)
-
-
-def test_uma::example_constructor_args():
-    sig = inspect.signature(uma::Example.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_uma::checklist_is_not_abstract():
-    assert not inspect.isabstract(uma::Checklist)
-
-
-def test_uma::checklist_constructor_exists():
-    assert callable(uma::Checklist.__init__)
-
-
-def test_uma::checklist_constructor_args():
-    sig = inspect.signature(uma::Checklist.__init__)
+def test_uma_checklist_constructor_args():
+    sig = inspect.signature(uma_Checklist.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -2519,94 +1907,94 @@ def test_process_constructor_args():
 
 
 
-def test_uma::processplanningtemplate_is_not_abstract():
-    assert not inspect.isabstract(uma::ProcessPlanningTemplate)
+def test_uma_deliveryprocess_is_not_abstract():
+    assert not inspect.isabstract(uma_DeliveryProcess)
 
 
-def test_uma::processplanningtemplate_constructor_exists():
-    assert callable(uma::ProcessPlanningTemplate.__init__)
+def test_uma_deliveryprocess_constructor_exists():
+    assert callable(uma_DeliveryProcess.__init__)
 
 
-def test_uma::processplanningtemplate_constructor_args():
-    sig = inspect.signature(uma::ProcessPlanningTemplate.__init__)
+def test_uma_deliveryprocess_constructor_args():
+    sig = inspect.signature(uma_DeliveryProcess.__init__)
     params = list(sig.parameters.keys())
-    assert "baseProcess" in params, "Missing parameter 'baseProcess'"
-    assert "group4" in params, "Missing parameter 'group4'"
-
-def test_uma::processplanningtemplate_has_baseProcess():
-    assert hasattr(uma::ProcessPlanningTemplate, "baseProcess")
-    descriptor = None
-    for klass in uma::ProcessPlanningTemplate.__mro__:
-        if "baseProcess" in klass.__dict__:
-            descriptor = klass.__dict__["baseProcess"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_uma::processplanningtemplate_has_group4():
-    assert hasattr(uma::ProcessPlanningTemplate, "group4")
-    descriptor = None
-    for klass in uma::ProcessPlanningTemplate.__mro__:
-        if "group4" in klass.__dict__:
-            descriptor = klass.__dict__["group4"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_uma::deliveryprocess_is_not_abstract():
-    assert not inspect.isabstract(uma::DeliveryProcess)
-
-
-def test_uma::deliveryprocess_constructor_exists():
-    assert callable(uma::DeliveryProcess.__init__)
-
-
-def test_uma::deliveryprocess_constructor_args():
-    sig = inspect.signature(uma::DeliveryProcess.__init__)
-    params = list(sig.parameters.keys())
-    assert "educationMaterial" in params, "Missing parameter 'educationMaterial'"
     assert "communicationsMaterial" in params, "Missing parameter 'communicationsMaterial'"
     assert "group4" in params, "Missing parameter 'group4'"
+    assert "educationMaterial" in params, "Missing parameter 'educationMaterial'"
 
-def test_uma::deliveryprocess_has_educationMaterial():
-    assert hasattr(uma::DeliveryProcess, "educationMaterial")
+def test_uma_deliveryprocess_has_communicationsMaterial():
+    assert hasattr(uma_DeliveryProcess, "communicationsMaterial")
     descriptor = None
-    for klass in uma::DeliveryProcess.__mro__:
-        if "educationMaterial" in klass.__dict__:
-            descriptor = klass.__dict__["educationMaterial"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_uma::deliveryprocess_has_communicationsMaterial():
-    assert hasattr(uma::DeliveryProcess, "communicationsMaterial")
-    descriptor = None
-    for klass in uma::DeliveryProcess.__mro__:
+    for klass in uma_DeliveryProcess.__mro__:
         if "communicationsMaterial" in klass.__dict__:
             descriptor = klass.__dict__["communicationsMaterial"]
             break
     assert isinstance(descriptor, property)
 
-def test_uma::deliveryprocess_has_group4():
-    assert hasattr(uma::DeliveryProcess, "group4")
+def test_uma_deliveryprocess_has_group4():
+    assert hasattr(uma_DeliveryProcess, "group4")
     descriptor = None
-    for klass in uma::DeliveryProcess.__mro__:
+    for klass in uma_DeliveryProcess.__mro__:
         if "group4" in klass.__dict__:
             descriptor = klass.__dict__["group4"]
             break
     assert isinstance(descriptor, property)
 
+def test_uma_deliveryprocess_has_educationMaterial():
+    assert hasattr(uma_DeliveryProcess, "educationMaterial")
+    descriptor = None
+    for klass in uma_DeliveryProcess.__mro__:
+        if "educationMaterial" in klass.__dict__:
+            descriptor = klass.__dict__["educationMaterial"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_uma::capabilitypattern_is_not_abstract():
-    assert not inspect.isabstract(uma::CapabilityPattern)
+
+def test_uma_processplanningtemplate_is_not_abstract():
+    assert not inspect.isabstract(uma_ProcessPlanningTemplate)
 
 
-def test_uma::capabilitypattern_constructor_exists():
-    assert callable(uma::CapabilityPattern.__init__)
+def test_uma_processplanningtemplate_constructor_exists():
+    assert callable(uma_ProcessPlanningTemplate.__init__)
 
 
-def test_uma::capabilitypattern_constructor_args():
-    sig = inspect.signature(uma::CapabilityPattern.__init__)
+def test_uma_processplanningtemplate_constructor_args():
+    sig = inspect.signature(uma_ProcessPlanningTemplate.__init__)
+    params = list(sig.parameters.keys())
+    assert "group4" in params, "Missing parameter 'group4'"
+    assert "baseProcess" in params, "Missing parameter 'baseProcess'"
+
+def test_uma_processplanningtemplate_has_group4():
+    assert hasattr(uma_ProcessPlanningTemplate, "group4")
+    descriptor = None
+    for klass in uma_ProcessPlanningTemplate.__mro__:
+        if "group4" in klass.__dict__:
+            descriptor = klass.__dict__["group4"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_uma_processplanningtemplate_has_baseProcess():
+    assert hasattr(uma_ProcessPlanningTemplate, "baseProcess")
+    descriptor = None
+    for klass in uma_ProcessPlanningTemplate.__mro__:
+        if "baseProcess" in klass.__dict__:
+            descriptor = klass.__dict__["baseProcess"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_uma_capabilitypattern_is_not_abstract():
+    assert not inspect.isabstract(uma_CapabilityPattern)
+
+
+def test_uma_capabilitypattern_constructor_exists():
+    assert callable(uma_CapabilityPattern.__init__)
+
+
+def test_uma_capabilitypattern_constructor_args():
+    sig = inspect.signature(uma_CapabilityPattern.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -2625,175 +2013,97 @@ def test_contentdescription_constructor_args():
 
 
 
-def test_uma::workproductdescription_is_not_abstract():
-    assert not inspect.isabstract(uma::WorkProductDescription)
+def test_uma_practicedescription_is_not_abstract():
+    assert not inspect.isabstract(uma_PracticeDescription)
 
 
-def test_uma::workproductdescription_constructor_exists():
-    assert callable(uma::WorkProductDescription.__init__)
+def test_uma_practicedescription_constructor_exists():
+    assert callable(uma_PracticeDescription.__init__)
 
 
-def test_uma::workproductdescription_constructor_args():
-    sig = inspect.signature(uma::WorkProductDescription.__init__)
-    params = list(sig.parameters.keys())
-    assert "purpose" in params, "Missing parameter 'purpose'"
-    assert "impactOfNotHaving" in params, "Missing parameter 'impactOfNotHaving'"
-    assert "reasonsForNotNeeding" in params, "Missing parameter 'reasonsForNotNeeding'"
-
-def test_uma::workproductdescription_has_purpose():
-    assert hasattr(uma::WorkProductDescription, "purpose")
-    descriptor = None
-    for klass in uma::WorkProductDescription.__mro__:
-        if "purpose" in klass.__dict__:
-            descriptor = klass.__dict__["purpose"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_uma::workproductdescription_has_impactOfNotHaving():
-    assert hasattr(uma::WorkProductDescription, "impactOfNotHaving")
-    descriptor = None
-    for klass in uma::WorkProductDescription.__mro__:
-        if "impactOfNotHaving" in klass.__dict__:
-            descriptor = klass.__dict__["impactOfNotHaving"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_uma::workproductdescription_has_reasonsForNotNeeding():
-    assert hasattr(uma::WorkProductDescription, "reasonsForNotNeeding")
-    descriptor = None
-    for klass in uma::WorkProductDescription.__mro__:
-        if "reasonsForNotNeeding" in klass.__dict__:
-            descriptor = klass.__dict__["reasonsForNotNeeding"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_uma::practicedescription_is_not_abstract():
-    assert not inspect.isabstract(uma::PracticeDescription)
-
-
-def test_uma::practicedescription_constructor_exists():
-    assert callable(uma::PracticeDescription.__init__)
-
-
-def test_uma::practicedescription_constructor_args():
-    sig = inspect.signature(uma::PracticeDescription.__init__)
+def test_uma_practicedescription_constructor_args():
+    sig = inspect.signature(uma_PracticeDescription.__init__)
     params = list(sig.parameters.keys())
     assert "background" in params, "Missing parameter 'background'"
-    assert "goals" in params, "Missing parameter 'goals'"
-    assert "application" in params, "Missing parameter 'application'"
+    assert "levelsOfAdoption" in params, "Missing parameter 'levelsOfAdoption'"
     assert "additionalInfo" in params, "Missing parameter 'additionalInfo'"
     assert "problem" in params, "Missing parameter 'problem'"
-    assert "levelsOfAdoption" in params, "Missing parameter 'levelsOfAdoption'"
+    assert "application" in params, "Missing parameter 'application'"
+    assert "goals" in params, "Missing parameter 'goals'"
 
-def test_uma::practicedescription_has_background():
-    assert hasattr(uma::PracticeDescription, "background")
+def test_uma_practicedescription_has_background():
+    assert hasattr(uma_PracticeDescription, "background")
     descriptor = None
-    for klass in uma::PracticeDescription.__mro__:
+    for klass in uma_PracticeDescription.__mro__:
         if "background" in klass.__dict__:
             descriptor = klass.__dict__["background"]
             break
     assert isinstance(descriptor, property)
 
-def test_uma::practicedescription_has_goals():
-    assert hasattr(uma::PracticeDescription, "goals")
+def test_uma_practicedescription_has_levelsOfAdoption():
+    assert hasattr(uma_PracticeDescription, "levelsOfAdoption")
     descriptor = None
-    for klass in uma::PracticeDescription.__mro__:
-        if "goals" in klass.__dict__:
-            descriptor = klass.__dict__["goals"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_uma::practicedescription_has_application():
-    assert hasattr(uma::PracticeDescription, "application")
-    descriptor = None
-    for klass in uma::PracticeDescription.__mro__:
-        if "application" in klass.__dict__:
-            descriptor = klass.__dict__["application"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_uma::practicedescription_has_additionalInfo():
-    assert hasattr(uma::PracticeDescription, "additionalInfo")
-    descriptor = None
-    for klass in uma::PracticeDescription.__mro__:
-        if "additionalInfo" in klass.__dict__:
-            descriptor = klass.__dict__["additionalInfo"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_uma::practicedescription_has_problem():
-    assert hasattr(uma::PracticeDescription, "problem")
-    descriptor = None
-    for klass in uma::PracticeDescription.__mro__:
-        if "problem" in klass.__dict__:
-            descriptor = klass.__dict__["problem"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_uma::practicedescription_has_levelsOfAdoption():
-    assert hasattr(uma::PracticeDescription, "levelsOfAdoption")
-    descriptor = None
-    for klass in uma::PracticeDescription.__mro__:
+    for klass in uma_PracticeDescription.__mro__:
         if "levelsOfAdoption" in klass.__dict__:
             descriptor = klass.__dict__["levelsOfAdoption"]
             break
     assert isinstance(descriptor, property)
 
-
-
-def test_uma::taskdescription_is_not_abstract():
-    assert not inspect.isabstract(uma::TaskDescription)
-
-
-def test_uma::taskdescription_constructor_exists():
-    assert callable(uma::TaskDescription.__init__)
-
-
-def test_uma::taskdescription_constructor_args():
-    sig = inspect.signature(uma::TaskDescription.__init__)
-    params = list(sig.parameters.keys())
-    assert "purpose" in params, "Missing parameter 'purpose'"
-    assert "alternatives" in params, "Missing parameter 'alternatives'"
-
-def test_uma::taskdescription_has_purpose():
-    assert hasattr(uma::TaskDescription, "purpose")
+def test_uma_practicedescription_has_additionalInfo():
+    assert hasattr(uma_PracticeDescription, "additionalInfo")
     descriptor = None
-    for klass in uma::TaskDescription.__mro__:
-        if "purpose" in klass.__dict__:
-            descriptor = klass.__dict__["purpose"]
+    for klass in uma_PracticeDescription.__mro__:
+        if "additionalInfo" in klass.__dict__:
+            descriptor = klass.__dict__["additionalInfo"]
             break
     assert isinstance(descriptor, property)
 
-def test_uma::taskdescription_has_alternatives():
-    assert hasattr(uma::TaskDescription, "alternatives")
+def test_uma_practicedescription_has_problem():
+    assert hasattr(uma_PracticeDescription, "problem")
     descriptor = None
-    for klass in uma::TaskDescription.__mro__:
-        if "alternatives" in klass.__dict__:
-            descriptor = klass.__dict__["alternatives"]
+    for klass in uma_PracticeDescription.__mro__:
+        if "problem" in klass.__dict__:
+            descriptor = klass.__dict__["problem"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_uma_practicedescription_has_application():
+    assert hasattr(uma_PracticeDescription, "application")
+    descriptor = None
+    for klass in uma_PracticeDescription.__mro__:
+        if "application" in klass.__dict__:
+            descriptor = klass.__dict__["application"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_uma_practicedescription_has_goals():
+    assert hasattr(uma_PracticeDescription, "goals")
+    descriptor = None
+    for klass in uma_PracticeDescription.__mro__:
+        if "goals" in klass.__dict__:
+            descriptor = klass.__dict__["goals"]
             break
     assert isinstance(descriptor, property)
 
 
 
-def test_uma::guidancedescription_is_not_abstract():
-    assert not inspect.isabstract(uma::GuidanceDescription)
+def test_uma_guidancedescription_is_not_abstract():
+    assert not inspect.isabstract(uma_GuidanceDescription)
 
 
-def test_uma::guidancedescription_constructor_exists():
-    assert callable(uma::GuidanceDescription.__init__)
+def test_uma_guidancedescription_constructor_exists():
+    assert callable(uma_GuidanceDescription.__init__)
 
 
-def test_uma::guidancedescription_constructor_args():
-    sig = inspect.signature(uma::GuidanceDescription.__init__)
+def test_uma_guidancedescription_constructor_args():
+    sig = inspect.signature(uma_GuidanceDescription.__init__)
     params = list(sig.parameters.keys())
     assert "attachment" in params, "Missing parameter 'attachment'"
 
-def test_uma::guidancedescription_has_attachment():
-    assert hasattr(uma::GuidanceDescription, "attachment")
+def test_uma_guidancedescription_has_attachment():
+    assert hasattr(uma_GuidanceDescription, "attachment")
     descriptor = None
-    for klass in uma::GuidanceDescription.__mro__:
+    for klass in uma_GuidanceDescription.__mro__:
         if "attachment" in klass.__dict__:
             descriptor = klass.__dict__["attachment"]
             break
@@ -2801,67 +2111,67 @@ def test_uma::guidancedescription_has_attachment():
 
 
 
-def test_uma::roledescription_is_not_abstract():
-    assert not inspect.isabstract(uma::RoleDescription)
+def test_uma_roledescription_is_not_abstract():
+    assert not inspect.isabstract(uma_RoleDescription)
 
 
-def test_uma::roledescription_constructor_exists():
-    assert callable(uma::RoleDescription.__init__)
+def test_uma_roledescription_constructor_exists():
+    assert callable(uma_RoleDescription.__init__)
 
 
-def test_uma::roledescription_constructor_args():
-    sig = inspect.signature(uma::RoleDescription.__init__)
+def test_uma_roledescription_constructor_args():
+    sig = inspect.signature(uma_RoleDescription.__init__)
     params = list(sig.parameters.keys())
-    assert "skills" in params, "Missing parameter 'skills'"
     assert "assignmentApproaches" in params, "Missing parameter 'assignmentApproaches'"
     assert "synonyms" in params, "Missing parameter 'synonyms'"
+    assert "skills" in params, "Missing parameter 'skills'"
 
-def test_uma::roledescription_has_skills():
-    assert hasattr(uma::RoleDescription, "skills")
+def test_uma_roledescription_has_assignmentApproaches():
+    assert hasattr(uma_RoleDescription, "assignmentApproaches")
     descriptor = None
-    for klass in uma::RoleDescription.__mro__:
-        if "skills" in klass.__dict__:
-            descriptor = klass.__dict__["skills"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_uma::roledescription_has_assignmentApproaches():
-    assert hasattr(uma::RoleDescription, "assignmentApproaches")
-    descriptor = None
-    for klass in uma::RoleDescription.__mro__:
+    for klass in uma_RoleDescription.__mro__:
         if "assignmentApproaches" in klass.__dict__:
             descriptor = klass.__dict__["assignmentApproaches"]
             break
     assert isinstance(descriptor, property)
 
-def test_uma::roledescription_has_synonyms():
-    assert hasattr(uma::RoleDescription, "synonyms")
+def test_uma_roledescription_has_synonyms():
+    assert hasattr(uma_RoleDescription, "synonyms")
     descriptor = None
-    for klass in uma::RoleDescription.__mro__:
+    for klass in uma_RoleDescription.__mro__:
         if "synonyms" in klass.__dict__:
             descriptor = klass.__dict__["synonyms"]
             break
     assert isinstance(descriptor, property)
 
+def test_uma_roledescription_has_skills():
+    assert hasattr(uma_RoleDescription, "skills")
+    descriptor = None
+    for klass in uma_RoleDescription.__mro__:
+        if "skills" in klass.__dict__:
+            descriptor = klass.__dict__["skills"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_uma::breakdownelementdescription_is_not_abstract():
-    assert not inspect.isabstract(uma::BreakdownElementDescription)
+
+def test_uma_breakdownelementdescription_is_not_abstract():
+    assert not inspect.isabstract(uma_BreakdownElementDescription)
 
 
-def test_uma::breakdownelementdescription_constructor_exists():
-    assert callable(uma::BreakdownElementDescription.__init__)
+def test_uma_breakdownelementdescription_constructor_exists():
+    assert callable(uma_BreakdownElementDescription.__init__)
 
 
-def test_uma::breakdownelementdescription_constructor_args():
-    sig = inspect.signature(uma::BreakdownElementDescription.__init__)
+def test_uma_breakdownelementdescription_constructor_args():
+    sig = inspect.signature(uma_BreakdownElementDescription.__init__)
     params = list(sig.parameters.keys())
     assert "usageGuidance" in params, "Missing parameter 'usageGuidance'"
 
-def test_uma::breakdownelementdescription_has_usageGuidance():
-    assert hasattr(uma::BreakdownElementDescription, "usageGuidance")
+def test_uma_breakdownelementdescription_has_usageGuidance():
+    assert hasattr(uma_BreakdownElementDescription, "usageGuidance")
     descriptor = None
-    for klass in uma::BreakdownElementDescription.__mro__:
+    for klass in uma_BreakdownElementDescription.__mro__:
         if "usageGuidance" in klass.__dict__:
             descriptor = klass.__dict__["usageGuidance"]
             break
@@ -2883,23 +2193,23 @@ def test_methodpackage_constructor_args():
 
 
 
-def test_uma::processpackage_is_not_abstract():
-    assert not inspect.isabstract(uma::ProcessPackage)
+def test_uma_processpackage_is_not_abstract():
+    assert not inspect.isabstract(uma_ProcessPackage)
 
 
-def test_uma::processpackage_constructor_exists():
-    assert callable(uma::ProcessPackage.__init__)
+def test_uma_processpackage_constructor_exists():
+    assert callable(uma_ProcessPackage.__init__)
 
 
-def test_uma::processpackage_constructor_args():
-    sig = inspect.signature(uma::ProcessPackage.__init__)
+def test_uma_processpackage_constructor_args():
+    sig = inspect.signature(uma_ProcessPackage.__init__)
     params = list(sig.parameters.keys())
     assert "group2" in params, "Missing parameter 'group2'"
 
-def test_uma::processpackage_has_group2():
-    assert hasattr(uma::ProcessPackage, "group2")
+def test_uma_processpackage_has_group2():
+    assert hasattr(uma_ProcessPackage, "group2")
     descriptor = None
-    for klass in uma::ProcessPackage.__mro__:
+    for klass in uma_ProcessPackage.__mro__:
         if "group2" in klass.__dict__:
             descriptor = klass.__dict__["group2"]
             break
@@ -2907,23 +2217,23 @@ def test_uma::processpackage_has_group2():
 
 
 
-def test_uma::contentpackage_is_not_abstract():
-    assert not inspect.isabstract(uma::ContentPackage)
+def test_uma_contentpackage_is_not_abstract():
+    assert not inspect.isabstract(uma_ContentPackage)
 
 
-def test_uma::contentpackage_constructor_exists():
-    assert callable(uma::ContentPackage.__init__)
+def test_uma_contentpackage_constructor_exists():
+    assert callable(uma_ContentPackage.__init__)
 
 
-def test_uma::contentpackage_constructor_args():
-    sig = inspect.signature(uma::ContentPackage.__init__)
+def test_uma_contentpackage_constructor_args():
+    sig = inspect.signature(uma_ContentPackage.__init__)
     params = list(sig.parameters.keys())
     assert "group2" in params, "Missing parameter 'group2'"
 
-def test_uma::contentpackage_has_group2():
-    assert hasattr(uma::ContentPackage, "group2")
+def test_uma_contentpackage_has_group2():
+    assert hasattr(uma_ContentPackage, "group2")
     descriptor = None
-    for klass in uma::ContentPackage.__mro__:
+    for klass in uma_ContentPackage.__mro__:
         if "group2" in klass.__dict__:
             descriptor = klass.__dict__["group2"]
             break
@@ -2931,23 +2241,23 @@ def test_uma::contentpackage_has_group2():
 
 
 
-def test_uma::contentcategorypackage_is_not_abstract():
-    assert not inspect.isabstract(uma::ContentCategoryPackage)
+def test_uma_contentcategorypackage_is_not_abstract():
+    assert not inspect.isabstract(uma_ContentCategoryPackage)
 
 
-def test_uma::contentcategorypackage_constructor_exists():
-    assert callable(uma::ContentCategoryPackage.__init__)
+def test_uma_contentcategorypackage_constructor_exists():
+    assert callable(uma_ContentCategoryPackage.__init__)
 
 
-def test_uma::contentcategorypackage_constructor_args():
-    sig = inspect.signature(uma::ContentCategoryPackage.__init__)
+def test_uma_contentcategorypackage_constructor_args():
+    sig = inspect.signature(uma_ContentCategoryPackage.__init__)
     params = list(sig.parameters.keys())
     assert "group2" in params, "Missing parameter 'group2'"
 
-def test_uma::contentcategorypackage_has_group2():
-    assert hasattr(uma::ContentCategoryPackage, "group2")
+def test_uma_contentcategorypackage_has_group2():
+    assert hasattr(uma_ContentCategoryPackage, "group2")
     descriptor = None
-    for klass in uma::ContentCategoryPackage.__mro__:
+    for klass in uma_ContentCategoryPackage.__mro__:
         if "group2" in klass.__dict__:
             descriptor = klass.__dict__["group2"]
             break
@@ -2969,269 +2279,37 @@ def test_contentelement_constructor_args():
 
 
 
-def test_uma::workproduct_is_not_abstract():
-    assert not inspect.isabstract(uma::WorkProduct)
+def test_uma_guidance_is_not_abstract():
+    assert not inspect.isabstract(uma_Guidance)
 
 
-def test_uma::workproduct_constructor_exists():
-    assert callable(uma::WorkProduct.__init__)
+def test_uma_guidance_constructor_exists():
+    assert callable(uma_Guidance.__init__)
 
 
-def test_uma::workproduct_constructor_args():
-    sig = inspect.signature(uma::WorkProduct.__init__)
-    params = list(sig.parameters.keys())
-    assert "toolMentor" in params, "Missing parameter 'toolMentor'"
-    assert "estimate" in params, "Missing parameter 'estimate'"
-    assert "report" in params, "Missing parameter 'report'"
-    assert "estimationConsiderations" in params, "Missing parameter 'estimationConsiderations'"
-    assert "group2" in params, "Missing parameter 'group2'"
-    assert "template" in params, "Missing parameter 'template'"
-
-def test_uma::workproduct_has_toolMentor():
-    assert hasattr(uma::WorkProduct, "toolMentor")
-    descriptor = None
-    for klass in uma::WorkProduct.__mro__:
-        if "toolMentor" in klass.__dict__:
-            descriptor = klass.__dict__["toolMentor"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_uma::workproduct_has_estimate():
-    assert hasattr(uma::WorkProduct, "estimate")
-    descriptor = None
-    for klass in uma::WorkProduct.__mro__:
-        if "estimate" in klass.__dict__:
-            descriptor = klass.__dict__["estimate"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_uma::workproduct_has_report():
-    assert hasattr(uma::WorkProduct, "report")
-    descriptor = None
-    for klass in uma::WorkProduct.__mro__:
-        if "report" in klass.__dict__:
-            descriptor = klass.__dict__["report"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_uma::workproduct_has_estimationConsiderations():
-    assert hasattr(uma::WorkProduct, "estimationConsiderations")
-    descriptor = None
-    for klass in uma::WorkProduct.__mro__:
-        if "estimationConsiderations" in klass.__dict__:
-            descriptor = klass.__dict__["estimationConsiderations"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_uma::workproduct_has_group2():
-    assert hasattr(uma::WorkProduct, "group2")
-    descriptor = None
-    for klass in uma::WorkProduct.__mro__:
-        if "group2" in klass.__dict__:
-            descriptor = klass.__dict__["group2"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_uma::workproduct_has_template():
-    assert hasattr(uma::WorkProduct, "template")
-    descriptor = None
-    for klass in uma::WorkProduct.__mro__:
-        if "template" in klass.__dict__:
-            descriptor = klass.__dict__["template"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_uma::role_is_not_abstract():
-    assert not inspect.isabstract(uma::Role)
-
-
-def test_uma::role_constructor_exists():
-    assert callable(uma::Role.__init__)
-
-
-def test_uma::role_constructor_args():
-    sig = inspect.signature(uma::Role.__init__)
-    params = list(sig.parameters.keys())
-    assert "group2" in params, "Missing parameter 'group2'"
-    assert "responsibleFor" in params, "Missing parameter 'responsibleFor'"
-
-def test_uma::role_has_group2():
-    assert hasattr(uma::Role, "group2")
-    descriptor = None
-    for klass in uma::Role.__mro__:
-        if "group2" in klass.__dict__:
-            descriptor = klass.__dict__["group2"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_uma::role_has_responsibleFor():
-    assert hasattr(uma::Role, "responsibleFor")
-    descriptor = None
-    for klass in uma::Role.__mro__:
-        if "responsibleFor" in klass.__dict__:
-            descriptor = klass.__dict__["responsibleFor"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_uma::guidance_is_not_abstract():
-    assert not inspect.isabstract(uma::Guidance)
-
-
-def test_uma::guidance_constructor_exists():
-    assert callable(uma::Guidance.__init__)
-
-
-def test_uma::guidance_constructor_args():
-    sig = inspect.signature(uma::Guidance.__init__)
+def test_uma_guidance_constructor_args():
+    sig = inspect.signature(uma_Guidance.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_uma::task_is_not_abstract():
-    assert not inspect.isabstract(uma::Task)
+def test_uma_kind_is_not_abstract():
+    assert not inspect.isabstract(uma_Kind)
 
 
-def test_uma::task_constructor_exists():
-    assert callable(uma::Task.__init__)
+def test_uma_kind_constructor_exists():
+    assert callable(uma_Kind.__init__)
 
 
-def test_uma::task_constructor_args():
-    sig = inspect.signature(uma::Task.__init__)
-    params = list(sig.parameters.keys())
-    assert "postcondition" in params, "Missing parameter 'postcondition'"
-    assert "additionallyPerformedBy" in params, "Missing parameter 'additionallyPerformedBy'"
-    assert "group2" in params, "Missing parameter 'group2'"
-    assert "toolMentor" in params, "Missing parameter 'toolMentor'"
-    assert "mandatoryInput" in params, "Missing parameter 'mandatoryInput'"
-    assert "estimationConsiderations" in params, "Missing parameter 'estimationConsiderations'"
-    assert "estimate" in params, "Missing parameter 'estimate'"
-    assert "output" in params, "Missing parameter 'output'"
-    assert "performedBy" in params, "Missing parameter 'performedBy'"
-    assert "optionalInput" in params, "Missing parameter 'optionalInput'"
-    assert "precondition" in params, "Missing parameter 'precondition'"
-
-def test_uma::task_has_postcondition():
-    assert hasattr(uma::Task, "postcondition")
-    descriptor = None
-    for klass in uma::Task.__mro__:
-        if "postcondition" in klass.__dict__:
-            descriptor = klass.__dict__["postcondition"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_uma::task_has_additionallyPerformedBy():
-    assert hasattr(uma::Task, "additionallyPerformedBy")
-    descriptor = None
-    for klass in uma::Task.__mro__:
-        if "additionallyPerformedBy" in klass.__dict__:
-            descriptor = klass.__dict__["additionallyPerformedBy"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_uma::task_has_group2():
-    assert hasattr(uma::Task, "group2")
-    descriptor = None
-    for klass in uma::Task.__mro__:
-        if "group2" in klass.__dict__:
-            descriptor = klass.__dict__["group2"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_uma::task_has_toolMentor():
-    assert hasattr(uma::Task, "toolMentor")
-    descriptor = None
-    for klass in uma::Task.__mro__:
-        if "toolMentor" in klass.__dict__:
-            descriptor = klass.__dict__["toolMentor"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_uma::task_has_mandatoryInput():
-    assert hasattr(uma::Task, "mandatoryInput")
-    descriptor = None
-    for klass in uma::Task.__mro__:
-        if "mandatoryInput" in klass.__dict__:
-            descriptor = klass.__dict__["mandatoryInput"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_uma::task_has_estimationConsiderations():
-    assert hasattr(uma::Task, "estimationConsiderations")
-    descriptor = None
-    for klass in uma::Task.__mro__:
-        if "estimationConsiderations" in klass.__dict__:
-            descriptor = klass.__dict__["estimationConsiderations"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_uma::task_has_estimate():
-    assert hasattr(uma::Task, "estimate")
-    descriptor = None
-    for klass in uma::Task.__mro__:
-        if "estimate" in klass.__dict__:
-            descriptor = klass.__dict__["estimate"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_uma::task_has_output():
-    assert hasattr(uma::Task, "output")
-    descriptor = None
-    for klass in uma::Task.__mro__:
-        if "output" in klass.__dict__:
-            descriptor = klass.__dict__["output"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_uma::task_has_performedBy():
-    assert hasattr(uma::Task, "performedBy")
-    descriptor = None
-    for klass in uma::Task.__mro__:
-        if "performedBy" in klass.__dict__:
-            descriptor = klass.__dict__["performedBy"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_uma::task_has_optionalInput():
-    assert hasattr(uma::Task, "optionalInput")
-    descriptor = None
-    for klass in uma::Task.__mro__:
-        if "optionalInput" in klass.__dict__:
-            descriptor = klass.__dict__["optionalInput"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_uma::task_has_precondition():
-    assert hasattr(uma::Task, "precondition")
-    descriptor = None
-    for klass in uma::Task.__mro__:
-        if "precondition" in klass.__dict__:
-            descriptor = klass.__dict__["precondition"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_uma::kind_is_not_abstract():
-    assert not inspect.isabstract(uma::Kind)
-
-
-def test_uma::kind_constructor_exists():
-    assert callable(uma::Kind.__init__)
-
-
-def test_uma::kind_constructor_args():
-    sig = inspect.signature(uma::Kind.__init__)
+def test_uma_kind_constructor_args():
+    sig = inspect.signature(uma_Kind.__init__)
     params = list(sig.parameters.keys())
     assert "applicableMetaClassInfo" in params, "Missing parameter 'applicableMetaClassInfo'"
 
-def test_uma::kind_has_applicableMetaClassInfo():
-    assert hasattr(uma::Kind, "applicableMetaClassInfo")
+def test_uma_kind_has_applicableMetaClassInfo():
+    assert hasattr(uma_Kind, "applicableMetaClassInfo")
     descriptor = None
-    for klass in uma::Kind.__mro__:
+    for klass in uma_Kind.__mro__:
         if "applicableMetaClassInfo" in klass.__dict__:
             descriptor = klass.__dict__["applicableMetaClassInfo"]
             break
@@ -3239,16 +2317,50 @@ def test_uma::kind_has_applicableMetaClassInfo():
 
 
 
-def test_uma::contentcategory_is_not_abstract():
-    assert not inspect.isabstract(uma::ContentCategory)
+def test_uma_role_is_not_abstract():
+    assert not inspect.isabstract(uma_Role)
 
 
-def test_uma::contentcategory_constructor_exists():
-    assert callable(uma::ContentCategory.__init__)
+def test_uma_role_constructor_exists():
+    assert callable(uma_Role.__init__)
 
 
-def test_uma::contentcategory_constructor_args():
-    sig = inspect.signature(uma::ContentCategory.__init__)
+def test_uma_role_constructor_args():
+    sig = inspect.signature(uma_Role.__init__)
+    params = list(sig.parameters.keys())
+    assert "group2" in params, "Missing parameter 'group2'"
+    assert "responsibleFor" in params, "Missing parameter 'responsibleFor'"
+
+def test_uma_role_has_group2():
+    assert hasattr(uma_Role, "group2")
+    descriptor = None
+    for klass in uma_Role.__mro__:
+        if "group2" in klass.__dict__:
+            descriptor = klass.__dict__["group2"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_uma_role_has_responsibleFor():
+    assert hasattr(uma_Role, "responsibleFor")
+    descriptor = None
+    for klass in uma_Role.__mro__:
+        if "responsibleFor" in klass.__dict__:
+            descriptor = klass.__dict__["responsibleFor"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_uma_contentcategory_is_not_abstract():
+    assert not inspect.isabstract(uma_ContentCategory)
+
+
+def test_uma_contentcategory_constructor_exists():
+    assert callable(uma_ContentCategory.__init__)
+
+
+def test_uma_contentcategory_constructor_args():
+    sig = inspect.signature(uma_ContentCategory.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -3267,33 +2379,33 @@ def test_workproductdescription_constructor_args():
 
 
 
-def test_uma::deliverabledescription_is_not_abstract():
-    assert not inspect.isabstract(uma::DeliverableDescription)
+def test_uma_deliverabledescription_is_not_abstract():
+    assert not inspect.isabstract(uma_DeliverableDescription)
 
 
-def test_uma::deliverabledescription_constructor_exists():
-    assert callable(uma::DeliverableDescription.__init__)
+def test_uma_deliverabledescription_constructor_exists():
+    assert callable(uma_DeliverableDescription.__init__)
 
 
-def test_uma::deliverabledescription_constructor_args():
-    sig = inspect.signature(uma::DeliverableDescription.__init__)
+def test_uma_deliverabledescription_constructor_args():
+    sig = inspect.signature(uma_DeliverableDescription.__init__)
     params = list(sig.parameters.keys())
     assert "externalDescription" in params, "Missing parameter 'externalDescription'"
     assert "packagingGuidance" in params, "Missing parameter 'packagingGuidance'"
 
-def test_uma::deliverabledescription_has_externalDescription():
-    assert hasattr(uma::DeliverableDescription, "externalDescription")
+def test_uma_deliverabledescription_has_externalDescription():
+    assert hasattr(uma_DeliverableDescription, "externalDescription")
     descriptor = None
-    for klass in uma::DeliverableDescription.__mro__:
+    for klass in uma_DeliverableDescription.__mro__:
         if "externalDescription" in klass.__dict__:
             descriptor = klass.__dict__["externalDescription"]
             break
     assert isinstance(descriptor, property)
 
-def test_uma::deliverabledescription_has_packagingGuidance():
-    assert hasattr(uma::DeliverableDescription, "packagingGuidance")
+def test_uma_deliverabledescription_has_packagingGuidance():
+    assert hasattr(uma_DeliverableDescription, "packagingGuidance")
     descriptor = None
-    for klass in uma::DeliverableDescription.__mro__:
+    for klass in uma_DeliverableDescription.__mro__:
         if "packagingGuidance" in klass.__dict__:
             descriptor = klass.__dict__["packagingGuidance"]
             break
@@ -3301,55 +2413,55 @@ def test_uma::deliverabledescription_has_packagingGuidance():
 
 
 
-def test_uma::artifactdescription_is_not_abstract():
-    assert not inspect.isabstract(uma::ArtifactDescription)
+def test_uma_artifactdescription_is_not_abstract():
+    assert not inspect.isabstract(uma_ArtifactDescription)
 
 
-def test_uma::artifactdescription_constructor_exists():
-    assert callable(uma::ArtifactDescription.__init__)
+def test_uma_artifactdescription_constructor_exists():
+    assert callable(uma_ArtifactDescription.__init__)
 
 
-def test_uma::artifactdescription_constructor_args():
-    sig = inspect.signature(uma::ArtifactDescription.__init__)
+def test_uma_artifactdescription_constructor_args():
+    sig = inspect.signature(uma_ArtifactDescription.__init__)
     params = list(sig.parameters.keys())
     assert "representationOptions" in params, "Missing parameter 'representationOptions'"
+    assert "notation" in params, "Missing parameter 'notation'"
     assert "representation" in params, "Missing parameter 'representation'"
     assert "briefOutline" in params, "Missing parameter 'briefOutline'"
-    assert "notation" in params, "Missing parameter 'notation'"
 
-def test_uma::artifactdescription_has_representationOptions():
-    assert hasattr(uma::ArtifactDescription, "representationOptions")
+def test_uma_artifactdescription_has_representationOptions():
+    assert hasattr(uma_ArtifactDescription, "representationOptions")
     descriptor = None
-    for klass in uma::ArtifactDescription.__mro__:
+    for klass in uma_ArtifactDescription.__mro__:
         if "representationOptions" in klass.__dict__:
             descriptor = klass.__dict__["representationOptions"]
             break
     assert isinstance(descriptor, property)
 
-def test_uma::artifactdescription_has_representation():
-    assert hasattr(uma::ArtifactDescription, "representation")
+def test_uma_artifactdescription_has_notation():
+    assert hasattr(uma_ArtifactDescription, "notation")
     descriptor = None
-    for klass in uma::ArtifactDescription.__mro__:
+    for klass in uma_ArtifactDescription.__mro__:
+        if "notation" in klass.__dict__:
+            descriptor = klass.__dict__["notation"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_uma_artifactdescription_has_representation():
+    assert hasattr(uma_ArtifactDescription, "representation")
+    descriptor = None
+    for klass in uma_ArtifactDescription.__mro__:
         if "representation" in klass.__dict__:
             descriptor = klass.__dict__["representation"]
             break
     assert isinstance(descriptor, property)
 
-def test_uma::artifactdescription_has_briefOutline():
-    assert hasattr(uma::ArtifactDescription, "briefOutline")
+def test_uma_artifactdescription_has_briefOutline():
+    assert hasattr(uma_ArtifactDescription, "briefOutline")
     descriptor = None
-    for klass in uma::ArtifactDescription.__mro__:
+    for klass in uma_ArtifactDescription.__mro__:
         if "briefOutline" in klass.__dict__:
             descriptor = klass.__dict__["briefOutline"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_uma::artifactdescription_has_notation():
-    assert hasattr(uma::ArtifactDescription, "notation")
-    descriptor = None
-    for klass in uma::ArtifactDescription.__mro__:
-        if "notation" in klass.__dict__:
-            descriptor = klass.__dict__["notation"]
             break
     assert isinstance(descriptor, property)
 
@@ -3369,47 +2481,47 @@ def test_workproduct_constructor_args():
 
 
 
-def test_uma::outcome_is_not_abstract():
-    assert not inspect.isabstract(uma::Outcome)
+def test_uma_outcome_is_not_abstract():
+    assert not inspect.isabstract(uma_Outcome)
 
 
-def test_uma::outcome_constructor_exists():
-    assert callable(uma::Outcome.__init__)
+def test_uma_outcome_constructor_exists():
+    assert callable(uma_Outcome.__init__)
 
 
-def test_uma::outcome_constructor_args():
-    sig = inspect.signature(uma::Outcome.__init__)
+def test_uma_outcome_constructor_args():
+    sig = inspect.signature(uma_Outcome.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_uma::deliverable_is_not_abstract():
-    assert not inspect.isabstract(uma::Deliverable)
+def test_uma_deliverable_is_not_abstract():
+    assert not inspect.isabstract(uma_Deliverable)
 
 
-def test_uma::deliverable_constructor_exists():
-    assert callable(uma::Deliverable.__init__)
+def test_uma_deliverable_constructor_exists():
+    assert callable(uma_Deliverable.__init__)
 
 
-def test_uma::deliverable_constructor_args():
-    sig = inspect.signature(uma::Deliverable.__init__)
+def test_uma_deliverable_constructor_args():
+    sig = inspect.signature(uma_Deliverable.__init__)
     params = list(sig.parameters.keys())
     assert "deliveredWorkProduct" in params, "Missing parameter 'deliveredWorkProduct'"
     assert "group3" in params, "Missing parameter 'group3'"
 
-def test_uma::deliverable_has_deliveredWorkProduct():
-    assert hasattr(uma::Deliverable, "deliveredWorkProduct")
+def test_uma_deliverable_has_deliveredWorkProduct():
+    assert hasattr(uma_Deliverable, "deliveredWorkProduct")
     descriptor = None
-    for klass in uma::Deliverable.__mro__:
+    for klass in uma_Deliverable.__mro__:
         if "deliveredWorkProduct" in klass.__dict__:
             descriptor = klass.__dict__["deliveredWorkProduct"]
             break
     assert isinstance(descriptor, property)
 
-def test_uma::deliverable_has_group3():
-    assert hasattr(uma::Deliverable, "group3")
+def test_uma_deliverable_has_group3():
+    assert hasattr(uma_Deliverable, "group3")
     descriptor = None
-    for klass in uma::Deliverable.__mro__:
+    for klass in uma_Deliverable.__mro__:
         if "group3" in klass.__dict__:
             descriptor = klass.__dict__["group3"]
             break
@@ -3417,23 +2529,23 @@ def test_uma::deliverable_has_group3():
 
 
 
-def test_uma::artifact_is_not_abstract():
-    assert not inspect.isabstract(uma::Artifact)
+def test_uma_artifact_is_not_abstract():
+    assert not inspect.isabstract(uma_Artifact)
 
 
-def test_uma::artifact_constructor_exists():
-    assert callable(uma::Artifact.__init__)
+def test_uma_artifact_constructor_exists():
+    assert callable(uma_Artifact.__init__)
 
 
-def test_uma::artifact_constructor_args():
-    sig = inspect.signature(uma::Artifact.__init__)
+def test_uma_artifact_constructor_args():
+    sig = inspect.signature(uma_Artifact.__init__)
     params = list(sig.parameters.keys())
     assert "group3" in params, "Missing parameter 'group3'"
 
-def test_uma::artifact_has_group3():
-    assert hasattr(uma::Artifact, "group3")
+def test_uma_artifact_has_group3():
+    assert hasattr(uma_Artifact, "group3")
     descriptor = None
-    for klass in uma::Artifact.__mro__:
+    for klass in uma_Artifact.__mro__:
         if "group3" in klass.__dict__:
             descriptor = klass.__dict__["group3"]
             break
@@ -3455,23 +2567,23 @@ def test_packageableelement_constructor_args():
 
 
 
-def test_uma::methodelementproperty_is_not_abstract():
-    assert not inspect.isabstract(uma::MethodElementProperty)
+def test_uma_methodelementproperty_is_not_abstract():
+    assert not inspect.isabstract(uma_MethodElementProperty)
 
 
-def test_uma::methodelementproperty_constructor_exists():
-    assert callable(uma::MethodElementProperty.__init__)
+def test_uma_methodelementproperty_constructor_exists():
+    assert callable(uma_MethodElementProperty.__init__)
 
 
-def test_uma::methodelementproperty_constructor_args():
-    sig = inspect.signature(uma::MethodElementProperty.__init__)
+def test_uma_methodelementproperty_constructor_args():
+    sig = inspect.signature(uma_MethodElementProperty.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
 
-def test_uma::methodelementproperty_has_value():
-    assert hasattr(uma::MethodElementProperty, "value")
+def test_uma_methodelementproperty_has_value():
+    assert hasattr(uma_MethodElementProperty, "value")
     descriptor = None
-    for klass in uma::MethodElementProperty.__mro__:
+    for klass in uma_MethodElementProperty.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -3479,97 +2591,97 @@ def test_uma::methodelementproperty_has_value():
 
 
 
-def test_uma::methodelement_is_not_abstract():
-    assert not inspect.isabstract(uma::MethodElement)
+def test_uma_methodelement_is_not_abstract():
+    assert not inspect.isabstract(uma_MethodElement)
 
 
-def test_uma::methodelement_constructor_exists():
-    assert callable(uma::MethodElement.__init__)
+def test_uma_methodelement_constructor_exists():
+    assert callable(uma_MethodElement.__init__)
 
 
-def test_uma::methodelement_constructor_args():
-    sig = inspect.signature(uma::MethodElement.__init__)
+def test_uma_methodelement_constructor_args():
+    sig = inspect.signature(uma_MethodElement.__init__)
     params = list(sig.parameters.keys())
-    assert "presentationName" in params, "Missing parameter 'presentationName'"
-    assert "group" in params, "Missing parameter 'group'"
+    assert "suppressed" in params, "Missing parameter 'suppressed'"
     assert "orderingGuide" in params, "Missing parameter 'orderingGuide'"
     assert "id" in params, "Missing parameter 'id'"
-    assert "suppressed" in params, "Missing parameter 'suppressed'"
     assert "briefDescription" in params, "Missing parameter 'briefDescription'"
+    assert "presentationName" in params, "Missing parameter 'presentationName'"
+    assert "group" in params, "Missing parameter 'group'"
 
-def test_uma::methodelement_has_presentationName():
-    assert hasattr(uma::MethodElement, "presentationName")
+def test_uma_methodelement_has_suppressed():
+    assert hasattr(uma_MethodElement, "suppressed")
     descriptor = None
-    for klass in uma::MethodElement.__mro__:
-        if "presentationName" in klass.__dict__:
-            descriptor = klass.__dict__["presentationName"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_uma::methodelement_has_group():
-    assert hasattr(uma::MethodElement, "group")
-    descriptor = None
-    for klass in uma::MethodElement.__mro__:
-        if "group" in klass.__dict__:
-            descriptor = klass.__dict__["group"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_uma::methodelement_has_orderingGuide():
-    assert hasattr(uma::MethodElement, "orderingGuide")
-    descriptor = None
-    for klass in uma::MethodElement.__mro__:
-        if "orderingGuide" in klass.__dict__:
-            descriptor = klass.__dict__["orderingGuide"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_uma::methodelement_has_id():
-    assert hasattr(uma::MethodElement, "id")
-    descriptor = None
-    for klass in uma::MethodElement.__mro__:
-        if "id" in klass.__dict__:
-            descriptor = klass.__dict__["id"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_uma::methodelement_has_suppressed():
-    assert hasattr(uma::MethodElement, "suppressed")
-    descriptor = None
-    for klass in uma::MethodElement.__mro__:
+    for klass in uma_MethodElement.__mro__:
         if "suppressed" in klass.__dict__:
             descriptor = klass.__dict__["suppressed"]
             break
     assert isinstance(descriptor, property)
 
-def test_uma::methodelement_has_briefDescription():
-    assert hasattr(uma::MethodElement, "briefDescription")
+def test_uma_methodelement_has_orderingGuide():
+    assert hasattr(uma_MethodElement, "orderingGuide")
     descriptor = None
-    for klass in uma::MethodElement.__mro__:
+    for klass in uma_MethodElement.__mro__:
+        if "orderingGuide" in klass.__dict__:
+            descriptor = klass.__dict__["orderingGuide"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_uma_methodelement_has_id():
+    assert hasattr(uma_MethodElement, "id")
+    descriptor = None
+    for klass in uma_MethodElement.__mro__:
+        if "id" in klass.__dict__:
+            descriptor = klass.__dict__["id"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_uma_methodelement_has_briefDescription():
+    assert hasattr(uma_MethodElement, "briefDescription")
+    descriptor = None
+    for klass in uma_MethodElement.__mro__:
         if "briefDescription" in klass.__dict__:
             descriptor = klass.__dict__["briefDescription"]
             break
     assert isinstance(descriptor, property)
 
+def test_uma_methodelement_has_presentationName():
+    assert hasattr(uma_MethodElement, "presentationName")
+    descriptor = None
+    for klass in uma_MethodElement.__mro__:
+        if "presentationName" in klass.__dict__:
+            descriptor = klass.__dict__["presentationName"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_uma_methodelement_has_group():
+    assert hasattr(uma_MethodElement, "group")
+    descriptor = None
+    for klass in uma_MethodElement.__mro__:
+        if "group" in klass.__dict__:
+            descriptor = klass.__dict__["group"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_uma::applicablemetaclassinfo_is_not_abstract():
-    assert not inspect.isabstract(uma::ApplicableMetaClassInfo)
+
+def test_uma_applicablemetaclassinfo_is_not_abstract():
+    assert not inspect.isabstract(uma_ApplicableMetaClassInfo)
 
 
-def test_uma::applicablemetaclassinfo_constructor_exists():
-    assert callable(uma::ApplicableMetaClassInfo.__init__)
+def test_uma_applicablemetaclassinfo_constructor_exists():
+    assert callable(uma_ApplicableMetaClassInfo.__init__)
 
 
-def test_uma::applicablemetaclassinfo_constructor_args():
-    sig = inspect.signature(uma::ApplicableMetaClassInfo.__init__)
+def test_uma_applicablemetaclassinfo_constructor_args():
+    sig = inspect.signature(uma_ApplicableMetaClassInfo.__init__)
     params = list(sig.parameters.keys())
     assert "isPrimaryExtension" in params, "Missing parameter 'isPrimaryExtension'"
 
-def test_uma::applicablemetaclassinfo_has_isPrimaryExtension():
-    assert hasattr(uma::ApplicableMetaClassInfo, "isPrimaryExtension")
+def test_uma_applicablemetaclassinfo_has_isPrimaryExtension():
+    assert hasattr(uma_ApplicableMetaClassInfo, "isPrimaryExtension")
     descriptor = None
-    for klass in uma::ApplicableMetaClassInfo.__mro__:
+    for klass in uma_ApplicableMetaClassInfo.__mro__:
         if "isPrimaryExtension" in klass.__dict__:
             descriptor = klass.__dict__["isPrimaryExtension"]
             break
@@ -3591,43 +2703,43 @@ def test_processelement_constructor_args():
 
 
 
-def test_uma::planningdata_is_not_abstract():
-    assert not inspect.isabstract(uma::PlanningData)
+def test_uma_planningdata_is_not_abstract():
+    assert not inspect.isabstract(uma_PlanningData)
 
 
-def test_uma::planningdata_constructor_exists():
-    assert callable(uma::PlanningData.__init__)
+def test_uma_planningdata_constructor_exists():
+    assert callable(uma_PlanningData.__init__)
 
 
-def test_uma::planningdata_constructor_args():
-    sig = inspect.signature(uma::PlanningData.__init__)
+def test_uma_planningdata_constructor_args():
+    sig = inspect.signature(uma_PlanningData.__init__)
     params = list(sig.parameters.keys())
-    assert "rank" in params, "Missing parameter 'rank'"
     assert "finishDate" in params, "Missing parameter 'finishDate'"
+    assert "rank" in params, "Missing parameter 'rank'"
     assert "startDate" in params, "Missing parameter 'startDate'"
 
-def test_uma::planningdata_has_rank():
-    assert hasattr(uma::PlanningData, "rank")
+def test_uma_planningdata_has_finishDate():
+    assert hasattr(uma_PlanningData, "finishDate")
     descriptor = None
-    for klass in uma::PlanningData.__mro__:
-        if "rank" in klass.__dict__:
-            descriptor = klass.__dict__["rank"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_uma::planningdata_has_finishDate():
-    assert hasattr(uma::PlanningData, "finishDate")
-    descriptor = None
-    for klass in uma::PlanningData.__mro__:
+    for klass in uma_PlanningData.__mro__:
         if "finishDate" in klass.__dict__:
             descriptor = klass.__dict__["finishDate"]
             break
     assert isinstance(descriptor, property)
 
-def test_uma::planningdata_has_startDate():
-    assert hasattr(uma::PlanningData, "startDate")
+def test_uma_planningdata_has_rank():
+    assert hasattr(uma_PlanningData, "rank")
     descriptor = None
-    for klass in uma::PlanningData.__mro__:
+    for klass in uma_PlanningData.__mro__:
+        if "rank" in klass.__dict__:
+            descriptor = klass.__dict__["rank"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_uma_planningdata_has_startDate():
+    assert hasattr(uma_PlanningData, "startDate")
+    descriptor = None
+    for klass in uma_PlanningData.__mro__:
         if "startDate" in klass.__dict__:
             descriptor = klass.__dict__["startDate"]
             break
@@ -3635,175 +2747,175 @@ def test_uma::planningdata_has_startDate():
 
 
 
-def test_uma::breakdownelement_is_not_abstract():
-    assert not inspect.isabstract(uma::BreakdownElement)
+def test_uma_breakdownelement_is_not_abstract():
+    assert not inspect.isabstract(uma_BreakdownElement)
 
 
-def test_uma::breakdownelement_constructor_exists():
-    assert callable(uma::BreakdownElement.__init__)
+def test_uma_breakdownelement_constructor_exists():
+    assert callable(uma_BreakdownElement.__init__)
 
 
-def test_uma::breakdownelement_constructor_args():
-    sig = inspect.signature(uma::BreakdownElement.__init__)
+def test_uma_breakdownelement_constructor_args():
+    sig = inspect.signature(uma_BreakdownElement.__init__)
     params = list(sig.parameters.keys())
-    assert "isOptional" in params, "Missing parameter 'isOptional'"
-    assert "example" in params, "Missing parameter 'example'"
-    assert "presentedAfter" in params, "Missing parameter 'presentedAfter'"
-    assert "reusableAsset" in params, "Missing parameter 'reusableAsset'"
-    assert "guideline" in params, "Missing parameter 'guideline'"
-    assert "planningData" in params, "Missing parameter 'planningData'"
     assert "supportingMaterial" in params, "Missing parameter 'supportingMaterial'"
     assert "prefix" in params, "Missing parameter 'prefix'"
-    assert "hasMultipleOccurrences" in params, "Missing parameter 'hasMultipleOccurrences'"
-    assert "checklist" in params, "Missing parameter 'checklist'"
-    assert "whitepaper" in params, "Missing parameter 'whitepaper'"
-    assert "superActivity" in params, "Missing parameter 'superActivity'"
-    assert "presentedBefore" in params, "Missing parameter 'presentedBefore'"
-    assert "isPlanned" in params, "Missing parameter 'isPlanned'"
     assert "concept" in params, "Missing parameter 'concept'"
+    assert "planningData" in params, "Missing parameter 'planningData'"
     assert "group1" in params, "Missing parameter 'group1'"
+    assert "hasMultipleOccurrences" in params, "Missing parameter 'hasMultipleOccurrences'"
+    assert "isPlanned" in params, "Missing parameter 'isPlanned'"
+    assert "isOptional" in params, "Missing parameter 'isOptional'"
+    assert "whitepaper" in params, "Missing parameter 'whitepaper'"
+    assert "presentedBefore" in params, "Missing parameter 'presentedBefore'"
+    assert "presentedAfter" in params, "Missing parameter 'presentedAfter'"
+    assert "example" in params, "Missing parameter 'example'"
+    assert "superActivity" in params, "Missing parameter 'superActivity'"
+    assert "guideline" in params, "Missing parameter 'guideline'"
+    assert "checklist" in params, "Missing parameter 'checklist'"
+    assert "reusableAsset" in params, "Missing parameter 'reusableAsset'"
 
-def test_uma::breakdownelement_has_isOptional():
-    assert hasattr(uma::BreakdownElement, "isOptional")
+def test_uma_breakdownelement_has_supportingMaterial():
+    assert hasattr(uma_BreakdownElement, "supportingMaterial")
     descriptor = None
-    for klass in uma::BreakdownElement.__mro__:
-        if "isOptional" in klass.__dict__:
-            descriptor = klass.__dict__["isOptional"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_uma::breakdownelement_has_example():
-    assert hasattr(uma::BreakdownElement, "example")
-    descriptor = None
-    for klass in uma::BreakdownElement.__mro__:
-        if "example" in klass.__dict__:
-            descriptor = klass.__dict__["example"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_uma::breakdownelement_has_presentedAfter():
-    assert hasattr(uma::BreakdownElement, "presentedAfter")
-    descriptor = None
-    for klass in uma::BreakdownElement.__mro__:
-        if "presentedAfter" in klass.__dict__:
-            descriptor = klass.__dict__["presentedAfter"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_uma::breakdownelement_has_reusableAsset():
-    assert hasattr(uma::BreakdownElement, "reusableAsset")
-    descriptor = None
-    for klass in uma::BreakdownElement.__mro__:
-        if "reusableAsset" in klass.__dict__:
-            descriptor = klass.__dict__["reusableAsset"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_uma::breakdownelement_has_guideline():
-    assert hasattr(uma::BreakdownElement, "guideline")
-    descriptor = None
-    for klass in uma::BreakdownElement.__mro__:
-        if "guideline" in klass.__dict__:
-            descriptor = klass.__dict__["guideline"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_uma::breakdownelement_has_planningData():
-    assert hasattr(uma::BreakdownElement, "planningData")
-    descriptor = None
-    for klass in uma::BreakdownElement.__mro__:
-        if "planningData" in klass.__dict__:
-            descriptor = klass.__dict__["planningData"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_uma::breakdownelement_has_supportingMaterial():
-    assert hasattr(uma::BreakdownElement, "supportingMaterial")
-    descriptor = None
-    for klass in uma::BreakdownElement.__mro__:
+    for klass in uma_BreakdownElement.__mro__:
         if "supportingMaterial" in klass.__dict__:
             descriptor = klass.__dict__["supportingMaterial"]
             break
     assert isinstance(descriptor, property)
 
-def test_uma::breakdownelement_has_prefix():
-    assert hasattr(uma::BreakdownElement, "prefix")
+def test_uma_breakdownelement_has_prefix():
+    assert hasattr(uma_BreakdownElement, "prefix")
     descriptor = None
-    for klass in uma::BreakdownElement.__mro__:
+    for klass in uma_BreakdownElement.__mro__:
         if "prefix" in klass.__dict__:
             descriptor = klass.__dict__["prefix"]
             break
     assert isinstance(descriptor, property)
 
-def test_uma::breakdownelement_has_hasMultipleOccurrences():
-    assert hasattr(uma::BreakdownElement, "hasMultipleOccurrences")
+def test_uma_breakdownelement_has_concept():
+    assert hasattr(uma_BreakdownElement, "concept")
     descriptor = None
-    for klass in uma::BreakdownElement.__mro__:
-        if "hasMultipleOccurrences" in klass.__dict__:
-            descriptor = klass.__dict__["hasMultipleOccurrences"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_uma::breakdownelement_has_checklist():
-    assert hasattr(uma::BreakdownElement, "checklist")
-    descriptor = None
-    for klass in uma::BreakdownElement.__mro__:
-        if "checklist" in klass.__dict__:
-            descriptor = klass.__dict__["checklist"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_uma::breakdownelement_has_whitepaper():
-    assert hasattr(uma::BreakdownElement, "whitepaper")
-    descriptor = None
-    for klass in uma::BreakdownElement.__mro__:
-        if "whitepaper" in klass.__dict__:
-            descriptor = klass.__dict__["whitepaper"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_uma::breakdownelement_has_superActivity():
-    assert hasattr(uma::BreakdownElement, "superActivity")
-    descriptor = None
-    for klass in uma::BreakdownElement.__mro__:
-        if "superActivity" in klass.__dict__:
-            descriptor = klass.__dict__["superActivity"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_uma::breakdownelement_has_presentedBefore():
-    assert hasattr(uma::BreakdownElement, "presentedBefore")
-    descriptor = None
-    for klass in uma::BreakdownElement.__mro__:
-        if "presentedBefore" in klass.__dict__:
-            descriptor = klass.__dict__["presentedBefore"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_uma::breakdownelement_has_isPlanned():
-    assert hasattr(uma::BreakdownElement, "isPlanned")
-    descriptor = None
-    for klass in uma::BreakdownElement.__mro__:
-        if "isPlanned" in klass.__dict__:
-            descriptor = klass.__dict__["isPlanned"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_uma::breakdownelement_has_concept():
-    assert hasattr(uma::BreakdownElement, "concept")
-    descriptor = None
-    for klass in uma::BreakdownElement.__mro__:
+    for klass in uma_BreakdownElement.__mro__:
         if "concept" in klass.__dict__:
             descriptor = klass.__dict__["concept"]
             break
     assert isinstance(descriptor, property)
 
-def test_uma::breakdownelement_has_group1():
-    assert hasattr(uma::BreakdownElement, "group1")
+def test_uma_breakdownelement_has_planningData():
+    assert hasattr(uma_BreakdownElement, "planningData")
     descriptor = None
-    for klass in uma::BreakdownElement.__mro__:
+    for klass in uma_BreakdownElement.__mro__:
+        if "planningData" in klass.__dict__:
+            descriptor = klass.__dict__["planningData"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_uma_breakdownelement_has_group1():
+    assert hasattr(uma_BreakdownElement, "group1")
+    descriptor = None
+    for klass in uma_BreakdownElement.__mro__:
         if "group1" in klass.__dict__:
             descriptor = klass.__dict__["group1"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_uma_breakdownelement_has_hasMultipleOccurrences():
+    assert hasattr(uma_BreakdownElement, "hasMultipleOccurrences")
+    descriptor = None
+    for klass in uma_BreakdownElement.__mro__:
+        if "hasMultipleOccurrences" in klass.__dict__:
+            descriptor = klass.__dict__["hasMultipleOccurrences"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_uma_breakdownelement_has_isPlanned():
+    assert hasattr(uma_BreakdownElement, "isPlanned")
+    descriptor = None
+    for klass in uma_BreakdownElement.__mro__:
+        if "isPlanned" in klass.__dict__:
+            descriptor = klass.__dict__["isPlanned"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_uma_breakdownelement_has_isOptional():
+    assert hasattr(uma_BreakdownElement, "isOptional")
+    descriptor = None
+    for klass in uma_BreakdownElement.__mro__:
+        if "isOptional" in klass.__dict__:
+            descriptor = klass.__dict__["isOptional"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_uma_breakdownelement_has_whitepaper():
+    assert hasattr(uma_BreakdownElement, "whitepaper")
+    descriptor = None
+    for klass in uma_BreakdownElement.__mro__:
+        if "whitepaper" in klass.__dict__:
+            descriptor = klass.__dict__["whitepaper"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_uma_breakdownelement_has_presentedBefore():
+    assert hasattr(uma_BreakdownElement, "presentedBefore")
+    descriptor = None
+    for klass in uma_BreakdownElement.__mro__:
+        if "presentedBefore" in klass.__dict__:
+            descriptor = klass.__dict__["presentedBefore"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_uma_breakdownelement_has_presentedAfter():
+    assert hasattr(uma_BreakdownElement, "presentedAfter")
+    descriptor = None
+    for klass in uma_BreakdownElement.__mro__:
+        if "presentedAfter" in klass.__dict__:
+            descriptor = klass.__dict__["presentedAfter"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_uma_breakdownelement_has_example():
+    assert hasattr(uma_BreakdownElement, "example")
+    descriptor = None
+    for klass in uma_BreakdownElement.__mro__:
+        if "example" in klass.__dict__:
+            descriptor = klass.__dict__["example"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_uma_breakdownelement_has_superActivity():
+    assert hasattr(uma_BreakdownElement, "superActivity")
+    descriptor = None
+    for klass in uma_BreakdownElement.__mro__:
+        if "superActivity" in klass.__dict__:
+            descriptor = klass.__dict__["superActivity"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_uma_breakdownelement_has_guideline():
+    assert hasattr(uma_BreakdownElement, "guideline")
+    descriptor = None
+    for klass in uma_BreakdownElement.__mro__:
+        if "guideline" in klass.__dict__:
+            descriptor = klass.__dict__["guideline"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_uma_breakdownelement_has_checklist():
+    assert hasattr(uma_BreakdownElement, "checklist")
+    descriptor = None
+    for klass in uma_BreakdownElement.__mro__:
+        if "checklist" in klass.__dict__:
+            descriptor = klass.__dict__["checklist"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_uma_breakdownelement_has_reusableAsset():
+    assert hasattr(uma_BreakdownElement, "reusableAsset")
+    descriptor = None
+    for klass in uma_BreakdownElement.__mro__:
+        if "reusableAsset" in klass.__dict__:
+            descriptor = klass.__dict__["reusableAsset"]
             break
     assert isinstance(descriptor, property)
 
@@ -3823,23 +2935,23 @@ def test_breakdownelementdescription_constructor_args():
 
 
 
-def test_uma::descriptordescription_is_not_abstract():
-    assert not inspect.isabstract(uma::DescriptorDescription)
+def test_uma_descriptordescription_is_not_abstract():
+    assert not inspect.isabstract(uma_DescriptorDescription)
 
 
-def test_uma::descriptordescription_constructor_exists():
-    assert callable(uma::DescriptorDescription.__init__)
+def test_uma_descriptordescription_constructor_exists():
+    assert callable(uma_DescriptorDescription.__init__)
 
 
-def test_uma::descriptordescription_constructor_args():
-    sig = inspect.signature(uma::DescriptorDescription.__init__)
+def test_uma_descriptordescription_constructor_args():
+    sig = inspect.signature(uma_DescriptorDescription.__init__)
     params = list(sig.parameters.keys())
     assert "refinedDescription" in params, "Missing parameter 'refinedDescription'"
 
-def test_uma::descriptordescription_has_refinedDescription():
-    assert hasattr(uma::DescriptorDescription, "refinedDescription")
+def test_uma_descriptordescription_has_refinedDescription():
+    assert hasattr(uma_DescriptorDescription, "refinedDescription")
     descriptor = None
-    for klass in uma::DescriptorDescription.__mro__:
+    for klass in uma_DescriptorDescription.__mro__:
         if "refinedDescription" in klass.__dict__:
             descriptor = klass.__dict__["refinedDescription"]
             break
@@ -3847,64 +2959,935 @@ def test_uma::descriptordescription_has_refinedDescription():
 
 
 
-def test_uma::activitydescription_is_not_abstract():
-    assert not inspect.isabstract(uma::ActivityDescription)
+def test_uma_activitydescription_is_not_abstract():
+    assert not inspect.isabstract(uma_ActivityDescription)
 
 
-def test_uma::activitydescription_constructor_exists():
-    assert callable(uma::ActivityDescription.__init__)
+def test_uma_activitydescription_constructor_exists():
+    assert callable(uma_ActivityDescription.__init__)
 
 
-def test_uma::activitydescription_constructor_args():
-    sig = inspect.signature(uma::ActivityDescription.__init__)
+def test_uma_activitydescription_constructor_args():
+    sig = inspect.signature(uma_ActivityDescription.__init__)
     params = list(sig.parameters.keys())
-    assert "howToStaff" in params, "Missing parameter 'howToStaff'"
-    assert "purpose" in params, "Missing parameter 'purpose'"
     assert "alternatives" in params, "Missing parameter 'alternatives'"
+    assert "purpose" in params, "Missing parameter 'purpose'"
+    assert "howToStaff" in params, "Missing parameter 'howToStaff'"
 
-def test_uma::activitydescription_has_howToStaff():
-    assert hasattr(uma::ActivityDescription, "howToStaff")
+def test_uma_activitydescription_has_alternatives():
+    assert hasattr(uma_ActivityDescription, "alternatives")
     descriptor = None
-    for klass in uma::ActivityDescription.__mro__:
-        if "howToStaff" in klass.__dict__:
-            descriptor = klass.__dict__["howToStaff"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_uma::activitydescription_has_purpose():
-    assert hasattr(uma::ActivityDescription, "purpose")
-    descriptor = None
-    for klass in uma::ActivityDescription.__mro__:
-        if "purpose" in klass.__dict__:
-            descriptor = klass.__dict__["purpose"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_uma::activitydescription_has_alternatives():
-    assert hasattr(uma::ActivityDescription, "alternatives")
-    descriptor = None
-    for klass in uma::ActivityDescription.__mro__:
+    for klass in uma_ActivityDescription.__mro__:
         if "alternatives" in klass.__dict__:
             descriptor = klass.__dict__["alternatives"]
             break
     assert isinstance(descriptor, property)
 
-def test_workordertype_exists():
-    # Check that the Enumeration exists
-    assert WorkOrderType is not None
+def test_uma_activitydescription_has_purpose():
+    assert hasattr(uma_ActivityDescription, "purpose")
+    descriptor = None
+    for klass in uma_ActivityDescription.__mro__:
+        if "purpose" in klass.__dict__:
+            descriptor = klass.__dict__["purpose"]
+            break
+    assert isinstance(descriptor, property)
 
-def test_workordertype_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in WorkOrderType]
-    expected_literals = [
-        "finishToStart",
-        "finishToFinish",
-        "startToFinish",
-        "startToStart",
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in WorkOrderType"
+def test_uma_activitydescription_has_howToStaff():
+    assert hasattr(uma_ActivityDescription, "howToStaff")
+    descriptor = None
+    for klass in uma_ActivityDescription.__mro__:
+        if "howToStaff" in klass.__dict__:
+            descriptor = klass.__dict__["howToStaff"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_uma_workproducttype_is_not_abstract():
+    assert not inspect.isabstract(uma_WorkProductType)
+
+
+def test_uma_workproducttype_constructor_exists():
+    assert callable(uma_WorkProductType.__init__)
+
+
+def test_uma_workproducttype_constructor_args():
+    sig = inspect.signature(uma_WorkProductType.__init__)
+    params = list(sig.parameters.keys())
+    assert "workProduct" in params, "Missing parameter 'workProduct'"
+    assert "group2" in params, "Missing parameter 'group2'"
+
+def test_uma_workproducttype_has_workProduct():
+    assert hasattr(uma_WorkProductType, "workProduct")
+    descriptor = None
+    for klass in uma_WorkProductType.__mro__:
+        if "workProduct" in klass.__dict__:
+            descriptor = klass.__dict__["workProduct"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_uma_workproducttype_has_group2():
+    assert hasattr(uma_WorkProductType, "group2")
+    descriptor = None
+    for klass in uma_WorkProductType.__mro__:
+        if "group2" in klass.__dict__:
+            descriptor = klass.__dict__["group2"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_uma_workproductdescription_is_not_abstract():
+    assert not inspect.isabstract(uma_WorkProductDescription)
+
+
+def test_uma_workproductdescription_constructor_exists():
+    assert callable(uma_WorkProductDescription.__init__)
+
+
+def test_uma_workproductdescription_constructor_args():
+    sig = inspect.signature(uma_WorkProductDescription.__init__)
+    params = list(sig.parameters.keys())
+    assert "purpose" in params, "Missing parameter 'purpose'"
+    assert "impactOfNotHaving" in params, "Missing parameter 'impactOfNotHaving'"
+    assert "reasonsForNotNeeding" in params, "Missing parameter 'reasonsForNotNeeding'"
+
+def test_uma_workproductdescription_has_purpose():
+    assert hasattr(uma_WorkProductDescription, "purpose")
+    descriptor = None
+    for klass in uma_WorkProductDescription.__mro__:
+        if "purpose" in klass.__dict__:
+            descriptor = klass.__dict__["purpose"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_uma_workproductdescription_has_impactOfNotHaving():
+    assert hasattr(uma_WorkProductDescription, "impactOfNotHaving")
+    descriptor = None
+    for klass in uma_WorkProductDescription.__mro__:
+        if "impactOfNotHaving" in klass.__dict__:
+            descriptor = klass.__dict__["impactOfNotHaving"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_uma_workproductdescription_has_reasonsForNotNeeding():
+    assert hasattr(uma_WorkProductDescription, "reasonsForNotNeeding")
+    descriptor = None
+    for klass in uma_WorkProductDescription.__mro__:
+        if "reasonsForNotNeeding" in klass.__dict__:
+            descriptor = klass.__dict__["reasonsForNotNeeding"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_uma_workproduct_is_not_abstract():
+    assert not inspect.isabstract(uma_WorkProduct)
+
+
+def test_uma_workproduct_constructor_exists():
+    assert callable(uma_WorkProduct.__init__)
+
+
+def test_uma_workproduct_constructor_args():
+    sig = inspect.signature(uma_WorkProduct.__init__)
+    params = list(sig.parameters.keys())
+    assert "group2" in params, "Missing parameter 'group2'"
+    assert "toolMentor" in params, "Missing parameter 'toolMentor'"
+    assert "estimationConsiderations" in params, "Missing parameter 'estimationConsiderations'"
+    assert "estimate" in params, "Missing parameter 'estimate'"
+    assert "report" in params, "Missing parameter 'report'"
+    assert "template" in params, "Missing parameter 'template'"
+
+def test_uma_workproduct_has_group2():
+    assert hasattr(uma_WorkProduct, "group2")
+    descriptor = None
+    for klass in uma_WorkProduct.__mro__:
+        if "group2" in klass.__dict__:
+            descriptor = klass.__dict__["group2"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_uma_workproduct_has_toolMentor():
+    assert hasattr(uma_WorkProduct, "toolMentor")
+    descriptor = None
+    for klass in uma_WorkProduct.__mro__:
+        if "toolMentor" in klass.__dict__:
+            descriptor = klass.__dict__["toolMentor"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_uma_workproduct_has_estimationConsiderations():
+    assert hasattr(uma_WorkProduct, "estimationConsiderations")
+    descriptor = None
+    for klass in uma_WorkProduct.__mro__:
+        if "estimationConsiderations" in klass.__dict__:
+            descriptor = klass.__dict__["estimationConsiderations"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_uma_workproduct_has_estimate():
+    assert hasattr(uma_WorkProduct, "estimate")
+    descriptor = None
+    for klass in uma_WorkProduct.__mro__:
+        if "estimate" in klass.__dict__:
+            descriptor = klass.__dict__["estimate"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_uma_workproduct_has_report():
+    assert hasattr(uma_WorkProduct, "report")
+    descriptor = None
+    for klass in uma_WorkProduct.__mro__:
+        if "report" in klass.__dict__:
+            descriptor = klass.__dict__["report"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_uma_workproduct_has_template():
+    assert hasattr(uma_WorkProduct, "template")
+    descriptor = None
+    for klass in uma_WorkProduct.__mro__:
+        if "template" in klass.__dict__:
+            descriptor = klass.__dict__["template"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_uma_workdefinition_is_not_abstract():
+    assert not inspect.isabstract(uma_WorkDefinition)
+
+
+def test_uma_workdefinition_constructor_exists():
+    assert callable(uma_WorkDefinition.__init__)
+
+
+def test_uma_workdefinition_constructor_args():
+    sig = inspect.signature(uma_WorkDefinition.__init__)
+    params = list(sig.parameters.keys())
+    assert "precondition" in params, "Missing parameter 'precondition'"
+    assert "postcondition" in params, "Missing parameter 'postcondition'"
+
+def test_uma_workdefinition_has_precondition():
+    assert hasattr(uma_WorkDefinition, "precondition")
+    descriptor = None
+    for klass in uma_WorkDefinition.__mro__:
+        if "precondition" in klass.__dict__:
+            descriptor = klass.__dict__["precondition"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_uma_workdefinition_has_postcondition():
+    assert hasattr(uma_WorkDefinition, "postcondition")
+    descriptor = None
+    for klass in uma_WorkDefinition.__mro__:
+        if "postcondition" in klass.__dict__:
+            descriptor = klass.__dict__["postcondition"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_uma_workbreakdownelement_is_not_abstract():
+    assert not inspect.isabstract(uma_WorkBreakdownElement)
+
+
+def test_uma_workbreakdownelement_constructor_exists():
+    assert callable(uma_WorkBreakdownElement.__init__)
+
+
+def test_uma_workbreakdownelement_constructor_args():
+    sig = inspect.signature(uma_WorkBreakdownElement.__init__)
+    params = list(sig.parameters.keys())
+    assert "isRepeatable" in params, "Missing parameter 'isRepeatable'"
+    assert "isOngoing" in params, "Missing parameter 'isOngoing'"
+    assert "group2" in params, "Missing parameter 'group2'"
+    assert "isEventDriven" in params, "Missing parameter 'isEventDriven'"
+
+def test_uma_workbreakdownelement_has_isRepeatable():
+    assert hasattr(uma_WorkBreakdownElement, "isRepeatable")
+    descriptor = None
+    for klass in uma_WorkBreakdownElement.__mro__:
+        if "isRepeatable" in klass.__dict__:
+            descriptor = klass.__dict__["isRepeatable"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_uma_workbreakdownelement_has_isOngoing():
+    assert hasattr(uma_WorkBreakdownElement, "isOngoing")
+    descriptor = None
+    for klass in uma_WorkBreakdownElement.__mro__:
+        if "isOngoing" in klass.__dict__:
+            descriptor = klass.__dict__["isOngoing"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_uma_workbreakdownelement_has_group2():
+    assert hasattr(uma_WorkBreakdownElement, "group2")
+    descriptor = None
+    for klass in uma_WorkBreakdownElement.__mro__:
+        if "group2" in klass.__dict__:
+            descriptor = klass.__dict__["group2"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_uma_workbreakdownelement_has_isEventDriven():
+    assert hasattr(uma_WorkBreakdownElement, "isEventDriven")
+    descriptor = None
+    for klass in uma_WorkBreakdownElement.__mro__:
+        if "isEventDriven" in klass.__dict__:
+            descriptor = klass.__dict__["isEventDriven"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_concept_is_not_abstract():
+    assert not inspect.isabstract(Concept)
+
+
+def test_concept_constructor_exists():
+    assert callable(Concept.__init__)
+
+
+def test_concept_constructor_args():
+    sig = inspect.signature(Concept.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_uma_whitepaper_is_not_abstract():
+    assert not inspect.isabstract(uma_Whitepaper)
+
+
+def test_uma_whitepaper_constructor_exists():
+    assert callable(uma_Whitepaper.__init__)
+
+
+def test_uma_whitepaper_constructor_args():
+    sig = inspect.signature(uma_Whitepaper.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_uma_workorder_is_not_abstract():
+    assert not inspect.isabstract(uma_WorkOrder)
+
+
+def test_uma_workorder_constructor_exists():
+    assert callable(uma_WorkOrder.__init__)
+
+
+def test_uma_workorder_constructor_args():
+    sig = inspect.signature(uma_WorkOrder.__init__)
+    params = list(sig.parameters.keys())
+    assert "id" in params, "Missing parameter 'id'"
+    assert "properties" in params, "Missing parameter 'properties'"
+    assert "linkType" in params, "Missing parameter 'linkType'"
+    assert "value" in params, "Missing parameter 'value'"
+
+def test_uma_workorder_has_id():
+    assert hasattr(uma_WorkOrder, "id")
+    descriptor = None
+    for klass in uma_WorkOrder.__mro__:
+        if "id" in klass.__dict__:
+            descriptor = klass.__dict__["id"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_uma_workorder_has_properties():
+    assert hasattr(uma_WorkOrder, "properties")
+    descriptor = None
+    for klass in uma_WorkOrder.__mro__:
+        if "properties" in klass.__dict__:
+            descriptor = klass.__dict__["properties"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_uma_workorder_has_linkType():
+    assert hasattr(uma_WorkOrder, "linkType")
+    descriptor = None
+    for klass in uma_WorkOrder.__mro__:
+        if "linkType" in klass.__dict__:
+            descriptor = klass.__dict__["linkType"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_uma_workorder_has_value():
+    assert hasattr(uma_WorkOrder, "value")
+    descriptor = None
+    for klass in uma_WorkOrder.__mro__:
+        if "value" in klass.__dict__:
+            descriptor = klass.__dict__["value"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_uma_tool_is_not_abstract():
+    assert not inspect.isabstract(uma_Tool)
+
+
+def test_uma_tool_constructor_exists():
+    assert callable(uma_Tool.__init__)
+
+
+def test_uma_tool_constructor_args():
+    sig = inspect.signature(uma_Tool.__init__)
+    params = list(sig.parameters.keys())
+    assert "group2" in params, "Missing parameter 'group2'"
+    assert "toolMentor" in params, "Missing parameter 'toolMentor'"
+
+def test_uma_tool_has_group2():
+    assert hasattr(uma_Tool, "group2")
+    descriptor = None
+    for klass in uma_Tool.__mro__:
+        if "group2" in klass.__dict__:
+            descriptor = klass.__dict__["group2"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_uma_tool_has_toolMentor():
+    assert hasattr(uma_Tool, "toolMentor")
+    descriptor = None
+    for klass in uma_Tool.__mro__:
+        if "toolMentor" in klass.__dict__:
+            descriptor = klass.__dict__["toolMentor"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_uma_termdefinition_is_not_abstract():
+    assert not inspect.isabstract(uma_TermDefinition)
+
+
+def test_uma_termdefinition_constructor_exists():
+    assert callable(uma_TermDefinition.__init__)
+
+
+def test_uma_termdefinition_constructor_args():
+    sig = inspect.signature(uma_TermDefinition.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_uma_template_is_not_abstract():
+    assert not inspect.isabstract(uma_Template)
+
+
+def test_uma_template_constructor_exists():
+    assert callable(uma_Template.__init__)
+
+
+def test_uma_template_constructor_args():
+    sig = inspect.signature(uma_Template.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_uma_teamprofile_is_not_abstract():
+    assert not inspect.isabstract(uma_TeamProfile)
+
+
+def test_uma_teamprofile_constructor_exists():
+    assert callable(uma_TeamProfile.__init__)
+
+
+def test_uma_teamprofile_constructor_args():
+    sig = inspect.signature(uma_TeamProfile.__init__)
+    params = list(sig.parameters.keys())
+    assert "group2" in params, "Missing parameter 'group2'"
+    assert "role" in params, "Missing parameter 'role'"
+    assert "superTeam" in params, "Missing parameter 'superTeam'"
+    assert "subTeam" in params, "Missing parameter 'subTeam'"
+
+def test_uma_teamprofile_has_group2():
+    assert hasattr(uma_TeamProfile, "group2")
+    descriptor = None
+    for klass in uma_TeamProfile.__mro__:
+        if "group2" in klass.__dict__:
+            descriptor = klass.__dict__["group2"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_uma_teamprofile_has_role():
+    assert hasattr(uma_TeamProfile, "role")
+    descriptor = None
+    for klass in uma_TeamProfile.__mro__:
+        if "role" in klass.__dict__:
+            descriptor = klass.__dict__["role"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_uma_teamprofile_has_superTeam():
+    assert hasattr(uma_TeamProfile, "superTeam")
+    descriptor = None
+    for klass in uma_TeamProfile.__mro__:
+        if "superTeam" in klass.__dict__:
+            descriptor = klass.__dict__["superTeam"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_uma_teamprofile_has_subTeam():
+    assert hasattr(uma_TeamProfile, "subTeam")
+    descriptor = None
+    for klass in uma_TeamProfile.__mro__:
+        if "subTeam" in klass.__dict__:
+            descriptor = klass.__dict__["subTeam"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_uma_toolmentor_is_not_abstract():
+    assert not inspect.isabstract(uma_ToolMentor)
+
+
+def test_uma_toolmentor_constructor_exists():
+    assert callable(uma_ToolMentor.__init__)
+
+
+def test_uma_toolmentor_constructor_args():
+    sig = inspect.signature(uma_ToolMentor.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_uma_taskdescription_is_not_abstract():
+    assert not inspect.isabstract(uma_TaskDescription)
+
+
+def test_uma_taskdescription_constructor_exists():
+    assert callable(uma_TaskDescription.__init__)
+
+
+def test_uma_taskdescription_constructor_args():
+    sig = inspect.signature(uma_TaskDescription.__init__)
+    params = list(sig.parameters.keys())
+    assert "alternatives" in params, "Missing parameter 'alternatives'"
+    assert "purpose" in params, "Missing parameter 'purpose'"
+
+def test_uma_taskdescription_has_alternatives():
+    assert hasattr(uma_TaskDescription, "alternatives")
+    descriptor = None
+    for klass in uma_TaskDescription.__mro__:
+        if "alternatives" in klass.__dict__:
+            descriptor = klass.__dict__["alternatives"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_uma_taskdescription_has_purpose():
+    assert hasattr(uma_TaskDescription, "purpose")
+    descriptor = None
+    for klass in uma_TaskDescription.__mro__:
+        if "purpose" in klass.__dict__:
+            descriptor = klass.__dict__["purpose"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_uma_task_is_not_abstract():
+    assert not inspect.isabstract(uma_Task)
+
+
+def test_uma_task_constructor_exists():
+    assert callable(uma_Task.__init__)
+
+
+def test_uma_task_constructor_args():
+    sig = inspect.signature(uma_Task.__init__)
+    params = list(sig.parameters.keys())
+    assert "estimationConsiderations" in params, "Missing parameter 'estimationConsiderations'"
+    assert "additionallyPerformedBy" in params, "Missing parameter 'additionallyPerformedBy'"
+    assert "precondition" in params, "Missing parameter 'precondition'"
+    assert "output" in params, "Missing parameter 'output'"
+    assert "performedBy" in params, "Missing parameter 'performedBy'"
+    assert "group2" in params, "Missing parameter 'group2'"
+    assert "estimate" in params, "Missing parameter 'estimate'"
+    assert "toolMentor" in params, "Missing parameter 'toolMentor'"
+    assert "mandatoryInput" in params, "Missing parameter 'mandatoryInput'"
+    assert "postcondition" in params, "Missing parameter 'postcondition'"
+    assert "optionalInput" in params, "Missing parameter 'optionalInput'"
+
+def test_uma_task_has_estimationConsiderations():
+    assert hasattr(uma_Task, "estimationConsiderations")
+    descriptor = None
+    for klass in uma_Task.__mro__:
+        if "estimationConsiderations" in klass.__dict__:
+            descriptor = klass.__dict__["estimationConsiderations"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_uma_task_has_additionallyPerformedBy():
+    assert hasattr(uma_Task, "additionallyPerformedBy")
+    descriptor = None
+    for klass in uma_Task.__mro__:
+        if "additionallyPerformedBy" in klass.__dict__:
+            descriptor = klass.__dict__["additionallyPerformedBy"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_uma_task_has_precondition():
+    assert hasattr(uma_Task, "precondition")
+    descriptor = None
+    for klass in uma_Task.__mro__:
+        if "precondition" in klass.__dict__:
+            descriptor = klass.__dict__["precondition"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_uma_task_has_output():
+    assert hasattr(uma_Task, "output")
+    descriptor = None
+    for klass in uma_Task.__mro__:
+        if "output" in klass.__dict__:
+            descriptor = klass.__dict__["output"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_uma_task_has_performedBy():
+    assert hasattr(uma_Task, "performedBy")
+    descriptor = None
+    for klass in uma_Task.__mro__:
+        if "performedBy" in klass.__dict__:
+            descriptor = klass.__dict__["performedBy"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_uma_task_has_group2():
+    assert hasattr(uma_Task, "group2")
+    descriptor = None
+    for klass in uma_Task.__mro__:
+        if "group2" in klass.__dict__:
+            descriptor = klass.__dict__["group2"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_uma_task_has_estimate():
+    assert hasattr(uma_Task, "estimate")
+    descriptor = None
+    for klass in uma_Task.__mro__:
+        if "estimate" in klass.__dict__:
+            descriptor = klass.__dict__["estimate"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_uma_task_has_toolMentor():
+    assert hasattr(uma_Task, "toolMentor")
+    descriptor = None
+    for klass in uma_Task.__mro__:
+        if "toolMentor" in klass.__dict__:
+            descriptor = klass.__dict__["toolMentor"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_uma_task_has_mandatoryInput():
+    assert hasattr(uma_Task, "mandatoryInput")
+    descriptor = None
+    for klass in uma_Task.__mro__:
+        if "mandatoryInput" in klass.__dict__:
+            descriptor = klass.__dict__["mandatoryInput"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_uma_task_has_postcondition():
+    assert hasattr(uma_Task, "postcondition")
+    descriptor = None
+    for klass in uma_Task.__mro__:
+        if "postcondition" in klass.__dict__:
+            descriptor = klass.__dict__["postcondition"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_uma_task_has_optionalInput():
+    assert hasattr(uma_Task, "optionalInput")
+    descriptor = None
+    for klass in uma_Task.__mro__:
+        if "optionalInput" in klass.__dict__:
+            descriptor = klass.__dict__["optionalInput"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_uma_supportingmaterial_is_not_abstract():
+    assert not inspect.isabstract(uma_SupportingMaterial)
+
+
+def test_uma_supportingmaterial_constructor_exists():
+    assert callable(uma_SupportingMaterial.__init__)
+
+
+def test_uma_supportingmaterial_constructor_args():
+    sig = inspect.signature(uma_SupportingMaterial.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_uma_rolesetgrouping_is_not_abstract():
+    assert not inspect.isabstract(uma_RoleSetGrouping)
+
+
+def test_uma_rolesetgrouping_constructor_exists():
+    assert callable(uma_RoleSetGrouping.__init__)
+
+
+def test_uma_rolesetgrouping_constructor_args():
+    sig = inspect.signature(uma_RoleSetGrouping.__init__)
+    params = list(sig.parameters.keys())
+    assert "group2" in params, "Missing parameter 'group2'"
+    assert "roleSet" in params, "Missing parameter 'roleSet'"
+
+def test_uma_rolesetgrouping_has_group2():
+    assert hasattr(uma_RoleSetGrouping, "group2")
+    descriptor = None
+    for klass in uma_RoleSetGrouping.__mro__:
+        if "group2" in klass.__dict__:
+            descriptor = klass.__dict__["group2"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_uma_rolesetgrouping_has_roleSet():
+    assert hasattr(uma_RoleSetGrouping, "roleSet")
+    descriptor = None
+    for klass in uma_RoleSetGrouping.__mro__:
+        if "roleSet" in klass.__dict__:
+            descriptor = klass.__dict__["roleSet"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_uma_roleset_is_not_abstract():
+    assert not inspect.isabstract(uma_RoleSet)
+
+
+def test_uma_roleset_constructor_exists():
+    assert callable(uma_RoleSet.__init__)
+
+
+def test_uma_roleset_constructor_args():
+    sig = inspect.signature(uma_RoleSet.__init__)
+    params = list(sig.parameters.keys())
+    assert "role" in params, "Missing parameter 'role'"
+    assert "group2" in params, "Missing parameter 'group2'"
+
+def test_uma_roleset_has_role():
+    assert hasattr(uma_RoleSet, "role")
+    descriptor = None
+    for klass in uma_RoleSet.__mro__:
+        if "role" in klass.__dict__:
+            descriptor = klass.__dict__["role"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_uma_roleset_has_group2():
+    assert hasattr(uma_RoleSet, "group2")
+    descriptor = None
+    for klass in uma_RoleSet.__mro__:
+        if "group2" in klass.__dict__:
+            descriptor = klass.__dict__["group2"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_descriptor_is_not_abstract():
+    assert not inspect.isabstract(Descriptor)
+
+
+def test_descriptor_constructor_exists():
+    assert callable(Descriptor.__init__)
+
+
+def test_descriptor_constructor_args():
+    sig = inspect.signature(Descriptor.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_uma_workproductdescriptor_is_not_abstract():
+    assert not inspect.isabstract(uma_WorkProductDescriptor)
+
+
+def test_uma_workproductdescriptor_constructor_exists():
+    assert callable(uma_WorkProductDescriptor.__init__)
+
+
+def test_uma_workproductdescriptor_constructor_args():
+    sig = inspect.signature(uma_WorkProductDescriptor.__init__)
+    params = list(sig.parameters.keys())
+    assert "mandatoryInputTo" in params, "Missing parameter 'mandatoryInputTo'"
+    assert "impactedBy" in params, "Missing parameter 'impactedBy'"
+    assert "externalInputTo" in params, "Missing parameter 'externalInputTo'"
+    assert "group2" in params, "Missing parameter 'group2'"
+    assert "workProduct" in params, "Missing parameter 'workProduct'"
+    assert "responsibleRole" in params, "Missing parameter 'responsibleRole'"
+    assert "impacts" in params, "Missing parameter 'impacts'"
+    assert "activityEntryState" in params, "Missing parameter 'activityEntryState'"
+    assert "optionalInputTo" in params, "Missing parameter 'optionalInputTo'"
+    assert "activityExitState" in params, "Missing parameter 'activityExitState'"
+    assert "outputFrom" in params, "Missing parameter 'outputFrom'"
+    assert "deliverableParts" in params, "Missing parameter 'deliverableParts'"
+
+def test_uma_workproductdescriptor_has_mandatoryInputTo():
+    assert hasattr(uma_WorkProductDescriptor, "mandatoryInputTo")
+    descriptor = None
+    for klass in uma_WorkProductDescriptor.__mro__:
+        if "mandatoryInputTo" in klass.__dict__:
+            descriptor = klass.__dict__["mandatoryInputTo"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_uma_workproductdescriptor_has_impactedBy():
+    assert hasattr(uma_WorkProductDescriptor, "impactedBy")
+    descriptor = None
+    for klass in uma_WorkProductDescriptor.__mro__:
+        if "impactedBy" in klass.__dict__:
+            descriptor = klass.__dict__["impactedBy"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_uma_workproductdescriptor_has_externalInputTo():
+    assert hasattr(uma_WorkProductDescriptor, "externalInputTo")
+    descriptor = None
+    for klass in uma_WorkProductDescriptor.__mro__:
+        if "externalInputTo" in klass.__dict__:
+            descriptor = klass.__dict__["externalInputTo"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_uma_workproductdescriptor_has_group2():
+    assert hasattr(uma_WorkProductDescriptor, "group2")
+    descriptor = None
+    for klass in uma_WorkProductDescriptor.__mro__:
+        if "group2" in klass.__dict__:
+            descriptor = klass.__dict__["group2"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_uma_workproductdescriptor_has_workProduct():
+    assert hasattr(uma_WorkProductDescriptor, "workProduct")
+    descriptor = None
+    for klass in uma_WorkProductDescriptor.__mro__:
+        if "workProduct" in klass.__dict__:
+            descriptor = klass.__dict__["workProduct"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_uma_workproductdescriptor_has_responsibleRole():
+    assert hasattr(uma_WorkProductDescriptor, "responsibleRole")
+    descriptor = None
+    for klass in uma_WorkProductDescriptor.__mro__:
+        if "responsibleRole" in klass.__dict__:
+            descriptor = klass.__dict__["responsibleRole"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_uma_workproductdescriptor_has_impacts():
+    assert hasattr(uma_WorkProductDescriptor, "impacts")
+    descriptor = None
+    for klass in uma_WorkProductDescriptor.__mro__:
+        if "impacts" in klass.__dict__:
+            descriptor = klass.__dict__["impacts"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_uma_workproductdescriptor_has_activityEntryState():
+    assert hasattr(uma_WorkProductDescriptor, "activityEntryState")
+    descriptor = None
+    for klass in uma_WorkProductDescriptor.__mro__:
+        if "activityEntryState" in klass.__dict__:
+            descriptor = klass.__dict__["activityEntryState"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_uma_workproductdescriptor_has_optionalInputTo():
+    assert hasattr(uma_WorkProductDescriptor, "optionalInputTo")
+    descriptor = None
+    for klass in uma_WorkProductDescriptor.__mro__:
+        if "optionalInputTo" in klass.__dict__:
+            descriptor = klass.__dict__["optionalInputTo"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_uma_workproductdescriptor_has_activityExitState():
+    assert hasattr(uma_WorkProductDescriptor, "activityExitState")
+    descriptor = None
+    for klass in uma_WorkProductDescriptor.__mro__:
+        if "activityExitState" in klass.__dict__:
+            descriptor = klass.__dict__["activityExitState"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_uma_workproductdescriptor_has_outputFrom():
+    assert hasattr(uma_WorkProductDescriptor, "outputFrom")
+    descriptor = None
+    for klass in uma_WorkProductDescriptor.__mro__:
+        if "outputFrom" in klass.__dict__:
+            descriptor = klass.__dict__["outputFrom"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_uma_workproductdescriptor_has_deliverableParts():
+    assert hasattr(uma_WorkProductDescriptor, "deliverableParts")
+    descriptor = None
+    for klass in uma_WorkProductDescriptor.__mro__:
+        if "deliverableParts" in klass.__dict__:
+            descriptor = klass.__dict__["deliverableParts"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_uma_roledescriptor_is_not_abstract():
+    assert not inspect.isabstract(uma_RoleDescriptor)
+
+
+def test_uma_roledescriptor_constructor_exists():
+    assert callable(uma_RoleDescriptor.__init__)
+
+
+def test_uma_roledescriptor_constructor_args():
+    sig = inspect.signature(uma_RoleDescriptor.__init__)
+    params = list(sig.parameters.keys())
+    assert "responsibleFor" in params, "Missing parameter 'responsibleFor'"
+    assert "role" in params, "Missing parameter 'role'"
+
+def test_uma_roledescriptor_has_responsibleFor():
+    assert hasattr(uma_RoleDescriptor, "responsibleFor")
+    descriptor = None
+    for klass in uma_RoleDescriptor.__mro__:
+        if "responsibleFor" in klass.__dict__:
+            descriptor = klass.__dict__["responsibleFor"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_uma_roledescriptor_has_role():
+    assert hasattr(uma_RoleDescriptor, "role")
+    descriptor = None
+    for klass in uma_RoleDescriptor.__mro__:
+        if "role" in klass.__dict__:
+            descriptor = klass.__dict__["role"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_uma_roadmap_is_not_abstract():
+    assert not inspect.isabstract(uma_Roadmap)
+
+
+def test_uma_roadmap_constructor_exists():
+    assert callable(uma_Roadmap.__init__)
+
+
+def test_uma_roadmap_constructor_args():
+    sig = inspect.signature(uma_Roadmap.__init__)
+    params = list(sig.parameters.keys())
 
 def test_variabilitytype_exists():
     # Check that the Enumeration exists
@@ -3914,17 +3897,34 @@ def test_variabilitytype_has_all_literals():
     # Collect the names of literals in this Enumeration
     enum_literals = [lit.name for lit in VariabilityType]
     expected_literals = [
-        "na",
         "replaces",
-        "extendsReplaces",
-        "localContribution",
-        "localReplacement",
-        "extends",
         "contributes",
+        "na",
+        "localReplacement",
+        "extendsReplaces",
+        "extends",
+        "localContribution",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
         assert lit_name in enum_literals, f"Literal '' missing in VariabilityType"
+
+def test_workordertype_exists():
+    # Check that the Enumeration exists
+    assert WorkOrderType is not None
+
+def test_workordertype_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in WorkOrderType]
+    expected_literals = [
+        "startToFinish",
+        "finishToFinish",
+        "finishToStart",
+        "startToStart",
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in WorkOrderType"
 
 
 # =============================================================================
@@ -3938,346 +3938,225 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-Concept_strategy = st.builds(
-    Concept,
-)
-uma::Whitepaper_strategy = st.builds(
-    uma::Whitepaper,
-)
-uma::WorkOrder_strategy = st.builds(
-    uma::WorkOrder,
-    linkType=
-        safe_text,
-    id=
-        safe_text,
-    properties=
-        safe_text,
-    value=
-        safe_text
-)
-Descriptor_strategy = st.builds(
-    Descriptor,
-)
-uma::RoleDescriptor_strategy = st.builds(
-    uma::RoleDescriptor,
-    role=
-        safe_text,
-    responsibleFor=
-        safe_text
-)
 ActivityDescription_strategy = st.builds(
     ActivityDescription,
 )
-uma::ProcessDescription_strategy = st.builds(
-    uma::ProcessDescription,
-    usageNotes=
-        safe_text,
+uma_ProcessDescription_strategy = st.builds(
+    uma_ProcessDescription,
     scope=
-        safe_text
-)
-uma::WorkProductDescriptor_strategy = st.builds(
-    uma::WorkProductDescriptor,
-    group2=
         safe_text,
-    activityExitState=
-        safe_text,
-    responsibleRole=
-        safe_text,
-    mandatoryInputTo=
-        safe_text,
-    optionalInputTo=
-        safe_text,
-    externalInputTo=
-        safe_text,
-    activityEntryState=
-        safe_text,
-    workProduct=
-        safe_text,
-    outputFrom=
-        safe_text,
-    impacts=
-        safe_text,
-    deliverableParts=
-        safe_text,
-    impactedBy=
+    usageNotes=
         safe_text
 )
 ProcessPackage_strategy = st.builds(
     ProcessPackage,
 )
-uma::ProcessComponent_strategy = st.builds(
-    uma::ProcessComponent,
-    authors=
-        safe_text,
-    version=
-        safe_text,
+uma_ProcessComponent_strategy = st.builds(
+    uma_ProcessComponent,
     changeDescription=
+        safe_text,
+    copyright=
         safe_text,
     changeDate=
         safe_text,
-    copyright=
+    authors=
+        safe_text,
+    version=
         safe_text
 )
 Element_strategy = st.builds(
     Element,
 )
-uma::NamedElement_strategy = st.builds(
-    uma::NamedElement,
+uma_NamedElement_strategy = st.builds(
+    uma_NamedElement,
     name=
         safe_text
 )
 NamedElement_strategy = st.builds(
     NamedElement,
 )
-uma::PackageableElement_strategy = st.builds(
-    uma::PackageableElement,
+uma_PackageableElement_strategy = st.builds(
+    uma_PackageableElement,
 )
 Activity_strategy = st.builds(
     Activity,
 )
-uma::Process_strategy = st.builds(
-    uma::Process,
-    validContext=
+uma_Phase_strategy = st.builds(
+    uma_Phase,
+)
+uma_Process_strategy = st.builds(
+    uma_Process,
+    includesPattern=
         safe_text,
     defaultContext=
         safe_text,
     diagramURI=
         safe_text,
-    includesPattern=
+    validContext=
         safe_text
 )
-uma::Phase_strategy = st.builds(
-    uma::Phase,
+uma_Iteration_strategy = st.builds(
+    uma_Iteration,
 )
-uma::Iteration_strategy = st.builds(
-    uma::Iteration,
+uma_Element_strategy = st.builds(
+    uma_Element,
 )
-uma::Element_strategy = st.builds(
-    uma::Element,
+uma_EStringToStringMapEntry_strategy = st.builds(
+    uma_EStringToStringMapEntry,
 )
-uma::EStringToStringMapEntry_strategy = st.builds(
-    uma::EStringToStringMapEntry,
-)
-uma::DocumentRoot_strategy = st.builds(
-    uma::DocumentRoot,
+uma_DocumentRoot_strategy = st.builds(
+    uma_DocumentRoot,
     mixed=
         safe_text
 )
 BreakdownElement_strategy = st.builds(
     BreakdownElement,
 )
-uma::ProcessComponentInterface_strategy = st.builds(
-    uma::ProcessComponentInterface,
+uma_ProcessComponentInterface_strategy = st.builds(
+    uma_ProcessComponentInterface,
     group2=
         safe_text
 )
-uma::TeamProfile_strategy = st.builds(
-    uma::TeamProfile,
-    group2=
-        safe_text,
-    role=
-        safe_text,
-    subTeam=
-        safe_text,
-    superTeam=
-        safe_text
-)
-uma::WorkBreakdownElement_strategy = st.builds(
-    uma::WorkBreakdownElement,
-    isEventDriven=
-        safe_text,
-    isRepeatable=
-        safe_text,
-    isOngoing=
-        safe_text,
-    group2=
-        safe_text
-)
-uma::Descriptor_strategy = st.builds(
-    uma::Descriptor,
+uma_Descriptor_strategy = st.builds(
+    uma_Descriptor,
     isSynchronizedWithSource=
         safe_text
 )
 ProcessDescription_strategy = st.builds(
     ProcessDescription,
 )
-uma::DeliveryProcessDescription_strategy = st.builds(
-    uma::DeliveryProcessDescription,
-    scale=
+uma_DeliveryProcessDescription_strategy = st.builds(
+    uma_DeliveryProcessDescription,
+    estimatingTechnique=
         safe_text,
     projectMemberExpertise=
         safe_text,
-    riskLevel=
-        safe_text,
     projectCharacteristics=
         safe_text,
-    typeOfContract=
+    scale=
         safe_text,
-    estimatingTechnique=
+    riskLevel=
+        safe_text,
+    typeOfContract=
         safe_text
 )
 ContentCategory_strategy = st.builds(
     ContentCategory,
 )
-uma::WorkProductType_strategy = st.builds(
-    uma::WorkProductType,
+uma_Domain_strategy = st.builds(
+    uma_Domain,
     group2=
         safe_text,
     workProduct=
         safe_text
 )
-uma::Discipline_strategy = st.builds(
-    uma::Discipline,
+uma_DisciplineGrouping_strategy = st.builds(
+    uma_DisciplineGrouping,
+    group2=
+        safe_text,
+    discipline=
+        safe_text
+)
+uma_Discipline_strategy = st.builds(
+    uma_Discipline,
     task=
         safe_text,
+    group2=
+        safe_text,
     referenceWorkflow=
-        safe_text,
-    group2=
         safe_text
 )
-uma::DisciplineGrouping_strategy = st.builds(
-    uma::DisciplineGrouping,
-    discipline=
-        safe_text,
-    group2=
-        safe_text
-)
-uma::Tool_strategy = st.builds(
-    uma::Tool,
-    group2=
-        safe_text,
-    toolMentor=
-        safe_text
-)
-uma::Domain_strategy = st.builds(
-    uma::Domain,
-    group2=
-        safe_text,
-    workProduct=
-        safe_text
-)
-uma::RoleSet_strategy = st.builds(
-    uma::RoleSet,
-    group2=
-        safe_text,
-    role=
-        safe_text
-)
-uma::RoleSetGrouping_strategy = st.builds(
-    uma::RoleSetGrouping,
-    roleSet=
-        safe_text,
-    group2=
-        safe_text
-)
-uma::CustomCategory_strategy = st.builds(
-    uma::CustomCategory,
+uma_CustomCategory_strategy = st.builds(
+    uma_CustomCategory,
     subCategory=
         safe_text,
-    group2=
-        safe_text,
     categorizedElement=
+        safe_text,
+    group2=
         safe_text
 )
 WorkBreakdownElement_strategy = st.builds(
     WorkBreakdownElement,
 )
-uma::Milestone_strategy = st.builds(
-    uma::Milestone,
+uma_Milestone_strategy = st.builds(
+    uma_Milestone,
     requiredResult=
         safe_text
 )
-uma::TaskDescriptor_strategy = st.builds(
-    uma::TaskDescriptor,
-    mandatoryInput=
+uma_TaskDescriptor_strategy = st.builds(
+    uma_TaskDescriptor,
+    assistedBy=
         safe_text,
-    task=
+    isSynchronizedWithSource=
+        safe_text,
+    output=
         safe_text,
     optionalInput=
         safe_text,
     performedPrimarilyBy=
         safe_text,
-    assistedBy=
+    group3=
         safe_text,
     externalInput=
         safe_text,
-    output=
+    task=
         safe_text,
     additionallyPerformedBy=
         safe_text,
-    group3=
-        safe_text,
-    isSynchronizedWithSource=
+    mandatoryInput=
         safe_text
 )
-uma::Activity_strategy = st.builds(
-    uma::Activity,
+uma_Activity_strategy = st.builds(
+    uma_Activity,
     group3=
         safe_text,
+    variabilityBasedOnElement=
+        safe_text,
+    variabilityType=
+        safe_text,
     roadmap=
+        safe_text,
+    precondition=
         safe_text,
     postcondition=
         safe_text,
     isEnactable=
-        safe_text,
-    variabilityType=
-        safe_text,
-    variabilityBasedOnElement=
-        safe_text,
-    precondition=
         safe_text
 )
 DescribableElement_strategy = st.builds(
     DescribableElement,
 )
-uma::ProcessElement_strategy = st.builds(
-    uma::ProcessElement,
+uma_ProcessElement_strategy = st.builds(
+    uma_ProcessElement,
 )
-uma::ContentElement_strategy = st.builds(
-    uma::ContentElement,
-    reusableAsset=
+uma_ContentElement_strategy = st.builds(
+    uma_ContentElement,
+    group1=
         safe_text,
-    supportingMaterial=
+    guideline=
         safe_text,
-    checklist=
+    variabilityBasedOnElement=
+        safe_text,
+    example=
         safe_text,
     variabilityType=
         safe_text,
     whitepaper=
         safe_text,
-    variabilityBasedOnElement=
+    supportingMaterial=
         safe_text,
     concept=
         safe_text,
-    example=
+    checklist=
         safe_text,
-    guideline=
-        safe_text,
-    group1=
+    reusableAsset=
         safe_text
 )
 MethodUnit_strategy = st.builds(
     MethodUnit,
 )
-uma::MethodConfiguration_strategy = st.builds(
-    uma::MethodConfiguration,
-    processView=
-        safe_text,
-    addedCategory=
-        safe_text,
-    methodPluginSelection=
-        safe_text,
-    methodPackageSelection=
-        safe_text,
-    subtractedCategory=
-        safe_text,
-    defaultView=
-        safe_text,
-    baseConfiguration=
-        safe_text
-)
-uma::MethodPlugin_strategy = st.builds(
-    uma::MethodPlugin,
+uma_MethodPlugin_strategy = st.builds(
+    uma_MethodPlugin,
     userChangeable=
         safe_text,
     supporting=
@@ -4285,16 +4164,33 @@ uma::MethodPlugin_strategy = st.builds(
     referencedMethodPlugin=
         safe_text
 )
-uma::MethodLibrary_strategy = st.builds(
-    uma::MethodLibrary,
+uma_MethodLibrary_strategy = st.builds(
+    uma_MethodLibrary,
     tool=
         safe_text
 )
-uma::ContentDescription_strategy = st.builds(
-    uma::ContentDescription,
-    keyConsiderations=
+uma_MethodConfiguration_strategy = st.builds(
+    uma_MethodConfiguration,
+    addedCategory=
         safe_text,
+    methodPluginSelection=
+        safe_text,
+    processView=
+        safe_text,
+    defaultView=
+        safe_text,
+    methodPackageSelection=
+        safe_text,
+    subtractedCategory=
+        safe_text,
+    baseConfiguration=
+        safe_text
+)
+uma_ContentDescription_strategy = st.builds(
+    uma_ContentDescription,
     mainDescription=
+        safe_text,
+    keyConsiderations=
         safe_text,
     externalId=
         safe_text
@@ -4302,159 +4198,348 @@ uma::ContentDescription_strategy = st.builds(
 MethodElement_strategy = st.builds(
     MethodElement,
 )
-uma::Section_strategy = st.builds(
-    uma::Section,
+uma_Section_strategy = st.builds(
+    uma_Section,
     description=
+        safe_text,
+    sectionName=
         safe_text,
     variabilityType=
         safe_text,
-    predecessor=
-        safe_text,
     variabilityBasedOnElement=
         safe_text,
-    sectionName=
+    predecessor=
         safe_text
 )
-uma::MethodPackage_strategy = st.builds(
-    uma::MethodPackage,
-    group1=
-        safe_text,
+uma_MethodPackage_strategy = st.builds(
+    uma_MethodPackage,
     global_=
+        safe_text,
+    group1=
         safe_text,
     reusedPackage=
         safe_text
 )
-uma::WorkDefinition_strategy = st.builds(
-    uma::WorkDefinition,
-    postcondition=
+uma_MethodUnit_strategy = st.builds(
+    uma_MethodUnit,
+    changeDate=
         safe_text,
-    precondition=
+    changeDescription=
+        safe_text,
+    authors=
+        safe_text,
+    version=
+        safe_text,
+    copyright=
         safe_text
 )
-uma::DescribableElement_strategy = st.builds(
-    uma::DescribableElement,
-    fulfill=
+uma_DescribableElement_strategy = st.builds(
+    uma_DescribableElement,
+    isAbstract=
         safe_text,
     shapeicon=
         safe_text,
     nodeicon=
         safe_text,
-    isAbstract=
+    fulfill=
         safe_text
 )
-uma::MethodUnit_strategy = st.builds(
-    uma::MethodUnit,
-    changeDescription=
-        safe_text,
-    version=
-        safe_text,
-    changeDate=
-        safe_text,
-    authors=
-        safe_text,
-    copyright=
-        safe_text
-)
-uma::Constraint_strategy = st.builds(
-    uma::Constraint,
+uma_Constraint_strategy = st.builds(
+    uma_Constraint,
     mainDescription=
         safe_text
 )
 RoleDescriptor_strategy = st.builds(
     RoleDescriptor,
 )
-uma::CompositeRole_strategy = st.builds(
-    uma::CompositeRole,
+uma_CompositeRole_strategy = st.builds(
+    uma_CompositeRole,
     group2=
         safe_text
 )
 Guidance_strategy = st.builds(
     Guidance,
 )
-uma::Practice_strategy = st.builds(
-    uma::Practice,
-    group2=
-        safe_text,
-    contentReference=
-        safe_text,
-    activityReference=
-        safe_text
+uma_Example_strategy = st.builds(
+    uma_Example,
 )
-uma::Estimate_strategy = st.builds(
-    uma::Estimate,
-    estimationMetric=
+uma_ReusableAsset_strategy = st.builds(
+    uma_ReusableAsset,
+)
+uma_Report_strategy = st.builds(
+    uma_Report,
+)
+uma_Guideline_strategy = st.builds(
+    uma_Guideline,
+)
+uma_EstimationConsiderations_strategy = st.builds(
+    uma_EstimationConsiderations,
+)
+uma_Concept_strategy = st.builds(
+    uma_Concept,
+)
+uma_Estimate_strategy = st.builds(
+    uma_Estimate,
+    group2=
         safe_text,
     estimationConsiderations=
         safe_text,
-    group2=
+    estimationMetric=
         safe_text
 )
-uma::Roadmap_strategy = st.builds(
-    uma::Roadmap,
+uma_Practice_strategy = st.builds(
+    uma_Practice,
+    group2=
+        safe_text,
+    activityReference=
+        safe_text,
+    contentReference=
+        safe_text
 )
-uma::ToolMentor_strategy = st.builds(
-    uma::ToolMentor,
+uma_EstimatingMetric_strategy = st.builds(
+    uma_EstimatingMetric,
 )
-uma::Template_strategy = st.builds(
-    uma::Template,
-)
-uma::EstimationConsiderations_strategy = st.builds(
-    uma::EstimationConsiderations,
-)
-uma::ReusableAsset_strategy = st.builds(
-    uma::ReusableAsset,
-)
-uma::Guideline_strategy = st.builds(
-    uma::Guideline,
-)
-uma::TermDefinition_strategy = st.builds(
-    uma::TermDefinition,
-)
-uma::Report_strategy = st.builds(
-    uma::Report,
-)
-uma::Concept_strategy = st.builds(
-    uma::Concept,
-)
-uma::SupportingMaterial_strategy = st.builds(
-    uma::SupportingMaterial,
-)
-uma::EstimatingMetric_strategy = st.builds(
-    uma::EstimatingMetric,
-)
-uma::Example_strategy = st.builds(
-    uma::Example,
-)
-uma::Checklist_strategy = st.builds(
-    uma::Checklist,
+uma_Checklist_strategy = st.builds(
+    uma_Checklist,
 )
 Process_strategy = st.builds(
     Process,
 )
-uma::ProcessPlanningTemplate_strategy = st.builds(
-    uma::ProcessPlanningTemplate,
-    baseProcess=
-        safe_text,
-    group4=
-        safe_text
-)
-uma::DeliveryProcess_strategy = st.builds(
-    uma::DeliveryProcess,
-    educationMaterial=
-        safe_text,
+uma_DeliveryProcess_strategy = st.builds(
+    uma_DeliveryProcess,
     communicationsMaterial=
         safe_text,
     group4=
+        safe_text,
+    educationMaterial=
         safe_text
 )
-uma::CapabilityPattern_strategy = st.builds(
-    uma::CapabilityPattern,
+uma_ProcessPlanningTemplate_strategy = st.builds(
+    uma_ProcessPlanningTemplate,
+    group4=
+        safe_text,
+    baseProcess=
+        safe_text
+)
+uma_CapabilityPattern_strategy = st.builds(
+    uma_CapabilityPattern,
 )
 ContentDescription_strategy = st.builds(
     ContentDescription,
 )
-uma::WorkProductDescription_strategy = st.builds(
-    uma::WorkProductDescription,
+uma_PracticeDescription_strategy = st.builds(
+    uma_PracticeDescription,
+    background=
+        safe_text,
+    levelsOfAdoption=
+        safe_text,
+    additionalInfo=
+        safe_text,
+    problem=
+        safe_text,
+    application=
+        safe_text,
+    goals=
+        safe_text
+)
+uma_GuidanceDescription_strategy = st.builds(
+    uma_GuidanceDescription,
+    attachment=
+        safe_text
+)
+uma_RoleDescription_strategy = st.builds(
+    uma_RoleDescription,
+    assignmentApproaches=
+        safe_text,
+    synonyms=
+        safe_text,
+    skills=
+        safe_text
+)
+uma_BreakdownElementDescription_strategy = st.builds(
+    uma_BreakdownElementDescription,
+    usageGuidance=
+        safe_text
+)
+MethodPackage_strategy = st.builds(
+    MethodPackage,
+)
+uma_ProcessPackage_strategy = st.builds(
+    uma_ProcessPackage,
+    group2=
+        safe_text
+)
+uma_ContentPackage_strategy = st.builds(
+    uma_ContentPackage,
+    group2=
+        safe_text
+)
+uma_ContentCategoryPackage_strategy = st.builds(
+    uma_ContentCategoryPackage,
+    group2=
+        safe_text
+)
+ContentElement_strategy = st.builds(
+    ContentElement,
+)
+uma_Guidance_strategy = st.builds(
+    uma_Guidance,
+)
+uma_Kind_strategy = st.builds(
+    uma_Kind,
+    applicableMetaClassInfo=
+        safe_text
+)
+uma_Role_strategy = st.builds(
+    uma_Role,
+    group2=
+        safe_text,
+    responsibleFor=
+        safe_text
+)
+uma_ContentCategory_strategy = st.builds(
+    uma_ContentCategory,
+)
+WorkProductDescription_strategy = st.builds(
+    WorkProductDescription,
+)
+uma_DeliverableDescription_strategy = st.builds(
+    uma_DeliverableDescription,
+    externalDescription=
+        safe_text,
+    packagingGuidance=
+        safe_text
+)
+uma_ArtifactDescription_strategy = st.builds(
+    uma_ArtifactDescription,
+    representationOptions=
+        safe_text,
+    notation=
+        safe_text,
+    representation=
+        safe_text,
+    briefOutline=
+        safe_text
+)
+WorkProduct_strategy = st.builds(
+    WorkProduct,
+)
+uma_Outcome_strategy = st.builds(
+    uma_Outcome,
+)
+uma_Deliverable_strategy = st.builds(
+    uma_Deliverable,
+    deliveredWorkProduct=
+        safe_text,
+    group3=
+        safe_text
+)
+uma_Artifact_strategy = st.builds(
+    uma_Artifact,
+    group3=
+        safe_text
+)
+PackageableElement_strategy = st.builds(
+    PackageableElement,
+)
+uma_MethodElementProperty_strategy = st.builds(
+    uma_MethodElementProperty,
+    value=
+        safe_text
+)
+uma_MethodElement_strategy = st.builds(
+    uma_MethodElement,
+    suppressed=
+        safe_text,
+    orderingGuide=
+        safe_text,
+    id=
+        safe_text,
+    briefDescription=
+        safe_text,
+    presentationName=
+        safe_text,
+    group=
+        safe_text
+)
+uma_ApplicableMetaClassInfo_strategy = st.builds(
+    uma_ApplicableMetaClassInfo,
+    isPrimaryExtension=
+        safe_text
+)
+ProcessElement_strategy = st.builds(
+    ProcessElement,
+)
+uma_PlanningData_strategy = st.builds(
+    uma_PlanningData,
+    finishDate=
+        safe_text,
+    rank=
+        safe_text,
+    startDate=
+        safe_text
+)
+uma_BreakdownElement_strategy = st.builds(
+    uma_BreakdownElement,
+    supportingMaterial=
+        safe_text,
+    prefix=
+        safe_text,
+    concept=
+        safe_text,
+    planningData=
+        safe_text,
+    group1=
+        safe_text,
+    hasMultipleOccurrences=
+        safe_text,
+    isPlanned=
+        safe_text,
+    isOptional=
+        safe_text,
+    whitepaper=
+        safe_text,
+    presentedBefore=
+        safe_text,
+    presentedAfter=
+        safe_text,
+    example=
+        safe_text,
+    superActivity=
+        safe_text,
+    guideline=
+        safe_text,
+    checklist=
+        safe_text,
+    reusableAsset=
+        safe_text
+)
+BreakdownElementDescription_strategy = st.builds(
+    BreakdownElementDescription,
+)
+uma_DescriptorDescription_strategy = st.builds(
+    uma_DescriptorDescription,
+    refinedDescription=
+        safe_text
+)
+uma_ActivityDescription_strategy = st.builds(
+    uma_ActivityDescription,
+    alternatives=
+        safe_text,
+    purpose=
+        safe_text,
+    howToStaff=
+        safe_text
+)
+uma_WorkProductType_strategy = st.builds(
+    uma_WorkProductType,
+    workProduct=
+        safe_text,
+    group2=
+        safe_text
+)
+uma_WorkProductDescription_strategy = st.builds(
+    uma_WorkProductDescription,
     purpose=
         safe_text,
     impactOfNotHaving=
@@ -4462,600 +4547,263 @@ uma::WorkProductDescription_strategy = st.builds(
     reasonsForNotNeeding=
         safe_text
 )
-uma::PracticeDescription_strategy = st.builds(
-    uma::PracticeDescription,
-    background=
-        safe_text,
-    goals=
-        safe_text,
-    application=
-        safe_text,
-    additionalInfo=
-        safe_text,
-    problem=
-        safe_text,
-    levelsOfAdoption=
-        safe_text
-)
-uma::TaskDescription_strategy = st.builds(
-    uma::TaskDescription,
-    purpose=
-        safe_text,
-    alternatives=
-        safe_text
-)
-uma::GuidanceDescription_strategy = st.builds(
-    uma::GuidanceDescription,
-    attachment=
-        safe_text
-)
-uma::RoleDescription_strategy = st.builds(
-    uma::RoleDescription,
-    skills=
-        safe_text,
-    assignmentApproaches=
-        safe_text,
-    synonyms=
-        safe_text
-)
-uma::BreakdownElementDescription_strategy = st.builds(
-    uma::BreakdownElementDescription,
-    usageGuidance=
-        safe_text
-)
-MethodPackage_strategy = st.builds(
-    MethodPackage,
-)
-uma::ProcessPackage_strategy = st.builds(
-    uma::ProcessPackage,
+uma_WorkProduct_strategy = st.builds(
+    uma_WorkProduct,
     group2=
-        safe_text
-)
-uma::ContentPackage_strategy = st.builds(
-    uma::ContentPackage,
-    group2=
-        safe_text
-)
-uma::ContentCategoryPackage_strategy = st.builds(
-    uma::ContentCategoryPackage,
-    group2=
-        safe_text
-)
-ContentElement_strategy = st.builds(
-    ContentElement,
-)
-uma::WorkProduct_strategy = st.builds(
-    uma::WorkProduct,
+        safe_text,
     toolMentor=
+        safe_text,
+    estimationConsiderations=
         safe_text,
     estimate=
         safe_text,
     report=
         safe_text,
-    estimationConsiderations=
-        safe_text,
-    group2=
-        safe_text,
     template=
         safe_text
 )
-uma::Role_strategy = st.builds(
-    uma::Role,
-    group2=
+uma_WorkDefinition_strategy = st.builds(
+    uma_WorkDefinition,
+    precondition=
         safe_text,
-    responsibleFor=
+    postcondition=
         safe_text
 )
-uma::Guidance_strategy = st.builds(
-    uma::Guidance,
+uma_WorkBreakdownElement_strategy = st.builds(
+    uma_WorkBreakdownElement,
+    isRepeatable=
+        safe_text,
+    isOngoing=
+        safe_text,
+    group2=
+        safe_text,
+    isEventDriven=
+        safe_text
 )
-uma::Task_strategy = st.builds(
-    uma::Task,
-    postcondition=
+Concept_strategy = st.builds(
+    Concept,
+)
+uma_Whitepaper_strategy = st.builds(
+    uma_Whitepaper,
+)
+uma_WorkOrder_strategy = st.builds(
+    uma_WorkOrder,
+    id=
         safe_text,
-    additionallyPerformedBy=
+    properties=
         safe_text,
+    linkType=
+        safe_text,
+    value=
+        safe_text
+)
+uma_Tool_strategy = st.builds(
+    uma_Tool,
     group2=
         safe_text,
     toolMentor=
+        safe_text
+)
+uma_TermDefinition_strategy = st.builds(
+    uma_TermDefinition,
+)
+uma_Template_strategy = st.builds(
+    uma_Template,
+)
+uma_TeamProfile_strategy = st.builds(
+    uma_TeamProfile,
+    group2=
         safe_text,
-    mandatoryInput=
+    role=
         safe_text,
+    superTeam=
+        safe_text,
+    subTeam=
+        safe_text
+)
+uma_ToolMentor_strategy = st.builds(
+    uma_ToolMentor,
+)
+uma_TaskDescription_strategy = st.builds(
+    uma_TaskDescription,
+    alternatives=
+        safe_text,
+    purpose=
+        safe_text
+)
+uma_Task_strategy = st.builds(
+    uma_Task,
     estimationConsiderations=
         safe_text,
-    estimate=
+    additionallyPerformedBy=
+        safe_text,
+    precondition=
         safe_text,
     output=
         safe_text,
     performedBy=
         safe_text,
+    group2=
+        safe_text,
+    estimate=
+        safe_text,
+    toolMentor=
+        safe_text,
+    mandatoryInput=
+        safe_text,
+    postcondition=
+        safe_text,
     optionalInput=
-        safe_text,
-    precondition=
         safe_text
 )
-uma::Kind_strategy = st.builds(
-    uma::Kind,
-    applicableMetaClassInfo=
+uma_SupportingMaterial_strategy = st.builds(
+    uma_SupportingMaterial,
+)
+uma_RoleSetGrouping_strategy = st.builds(
+    uma_RoleSetGrouping,
+    group2=
+        safe_text,
+    roleSet=
         safe_text
 )
-uma::ContentCategory_strategy = st.builds(
-    uma::ContentCategory,
-)
-WorkProductDescription_strategy = st.builds(
-    WorkProductDescription,
-)
-uma::DeliverableDescription_strategy = st.builds(
-    uma::DeliverableDescription,
-    externalDescription=
+uma_RoleSet_strategy = st.builds(
+    uma_RoleSet,
+    role=
         safe_text,
-    packagingGuidance=
+    group2=
         safe_text
 )
-uma::ArtifactDescription_strategy = st.builds(
-    uma::ArtifactDescription,
-    representationOptions=
+Descriptor_strategy = st.builds(
+    Descriptor,
+)
+uma_WorkProductDescriptor_strategy = st.builds(
+    uma_WorkProductDescriptor,
+    mandatoryInputTo=
         safe_text,
-    representation=
+    impactedBy=
         safe_text,
-    briefOutline=
+    externalInputTo=
         safe_text,
-    notation=
+    group2=
+        safe_text,
+    workProduct=
+        safe_text,
+    responsibleRole=
+        safe_text,
+    impacts=
+        safe_text,
+    activityEntryState=
+        safe_text,
+    optionalInputTo=
+        safe_text,
+    activityExitState=
+        safe_text,
+    outputFrom=
+        safe_text,
+    deliverableParts=
         safe_text
 )
-WorkProduct_strategy = st.builds(
-    WorkProduct,
-)
-uma::Outcome_strategy = st.builds(
-    uma::Outcome,
-)
-uma::Deliverable_strategy = st.builds(
-    uma::Deliverable,
-    deliveredWorkProduct=
+uma_RoleDescriptor_strategy = st.builds(
+    uma_RoleDescriptor,
+    responsibleFor=
         safe_text,
-    group3=
+    role=
         safe_text
 )
-uma::Artifact_strategy = st.builds(
-    uma::Artifact,
-    group3=
-        safe_text
+uma_Roadmap_strategy = st.builds(
+    uma_Roadmap,
 )
-PackageableElement_strategy = st.builds(
-    PackageableElement,
-)
-uma::MethodElementProperty_strategy = st.builds(
-    uma::MethodElementProperty,
-    value=
-        safe_text
-)
-uma::MethodElement_strategy = st.builds(
-    uma::MethodElement,
-    presentationName=
-        safe_text,
-    group=
-        safe_text,
-    orderingGuide=
-        safe_text,
-    id=
-        safe_text,
-    suppressed=
-        safe_text,
-    briefDescription=
-        safe_text
-)
-uma::ApplicableMetaClassInfo_strategy = st.builds(
-    uma::ApplicableMetaClassInfo,
-    isPrimaryExtension=
-        safe_text
-)
-ProcessElement_strategy = st.builds(
-    ProcessElement,
-)
-uma::PlanningData_strategy = st.builds(
-    uma::PlanningData,
-    rank=
-        safe_text,
-    finishDate=
-        safe_text,
-    startDate=
-        safe_text
-)
-uma::BreakdownElement_strategy = st.builds(
-    uma::BreakdownElement,
-    isOptional=
-        safe_text,
-    example=
-        safe_text,
-    presentedAfter=
-        safe_text,
-    reusableAsset=
-        safe_text,
-    guideline=
-        safe_text,
-    planningData=
-        safe_text,
-    supportingMaterial=
-        safe_text,
-    prefix=
-        safe_text,
-    hasMultipleOccurrences=
-        safe_text,
-    checklist=
-        safe_text,
-    whitepaper=
-        safe_text,
-    superActivity=
-        safe_text,
-    presentedBefore=
-        safe_text,
-    isPlanned=
-        safe_text,
-    concept=
-        safe_text,
-    group1=
-        safe_text
-)
-BreakdownElementDescription_strategy = st.builds(
-    BreakdownElementDescription,
-)
-uma::DescriptorDescription_strategy = st.builds(
-    uma::DescriptorDescription,
-    refinedDescription=
-        safe_text
-)
-uma::ActivityDescription_strategy = st.builds(
-    uma::ActivityDescription,
-    howToStaff=
-        safe_text,
-    purpose=
-        safe_text,
-    alternatives=
-        safe_text
-)
-
-@given(instance=Concept_strategy)
-@settings(max_examples=50)
-def test_concept_instantiation(instance):
-    assert isinstance(instance, Concept)
-
-@given(instance=uma::Whitepaper_strategy)
-@settings(max_examples=50)
-def test_uma::whitepaper_instantiation(instance):
-    assert isinstance(instance, uma::Whitepaper)
-
-@given(instance=uma::WorkOrder_strategy)
-@settings(max_examples=50)
-def test_uma::workorder_instantiation(instance):
-    assert isinstance(instance, uma::WorkOrder)
-
-@given(instance=uma::WorkOrder_strategy)
-def test_uma::workorder_linkType_type(instance):
-    assert isinstance(instance.linkType, str)
-
-
-@given(instance=uma::WorkOrder_strategy)
-def test_uma::workorder_linkType_setter(instance):
-    original = instance.linkType
-    instance.linkType = original
-    assert instance.linkType == original
-
-@given(instance=uma::WorkOrder_strategy)
-def test_uma::workorder_id_type(instance):
-    assert isinstance(instance.id, str)
-
-
-@given(instance=uma::WorkOrder_strategy)
-def test_uma::workorder_id_setter(instance):
-    original = instance.id
-    instance.id = original
-    assert instance.id == original
-
-@given(instance=uma::WorkOrder_strategy)
-def test_uma::workorder_properties_type(instance):
-    assert isinstance(instance.properties, str)
-
-
-@given(instance=uma::WorkOrder_strategy)
-def test_uma::workorder_properties_setter(instance):
-    original = instance.properties
-    instance.properties = original
-    assert instance.properties == original
-
-@given(instance=uma::WorkOrder_strategy)
-def test_uma::workorder_value_type(instance):
-    assert isinstance(instance.value, str)
-
-
-@given(instance=uma::WorkOrder_strategy)
-def test_uma::workorder_value_setter(instance):
-    original = instance.value
-    instance.value = original
-    assert instance.value == original
-
-@given(instance=Descriptor_strategy)
-@settings(max_examples=50)
-def test_descriptor_instantiation(instance):
-    assert isinstance(instance, Descriptor)
-
-@given(instance=uma::RoleDescriptor_strategy)
-@settings(max_examples=50)
-def test_uma::roledescriptor_instantiation(instance):
-    assert isinstance(instance, uma::RoleDescriptor)
-
-@given(instance=uma::RoleDescriptor_strategy)
-def test_uma::roledescriptor_role_type(instance):
-    assert isinstance(instance.role, str)
-
-
-@given(instance=uma::RoleDescriptor_strategy)
-def test_uma::roledescriptor_role_setter(instance):
-    original = instance.role
-    instance.role = original
-    assert instance.role == original
-
-@given(instance=uma::RoleDescriptor_strategy)
-def test_uma::roledescriptor_responsibleFor_type(instance):
-    assert isinstance(instance.responsibleFor, str)
-
-
-@given(instance=uma::RoleDescriptor_strategy)
-def test_uma::roledescriptor_responsibleFor_setter(instance):
-    original = instance.responsibleFor
-    instance.responsibleFor = original
-    assert instance.responsibleFor == original
 
 @given(instance=ActivityDescription_strategy)
 @settings(max_examples=50)
 def test_activitydescription_instantiation(instance):
     assert isinstance(instance, ActivityDescription)
 
-@given(instance=uma::ProcessDescription_strategy)
+@given(instance=uma_ProcessDescription_strategy)
 @settings(max_examples=50)
-def test_uma::processdescription_instantiation(instance):
-    assert isinstance(instance, uma::ProcessDescription)
-
-@given(instance=uma::ProcessDescription_strategy)
-def test_uma::processdescription_usageNotes_type(instance):
-    assert isinstance(instance.usageNotes, str)
+def test_uma_processdescription_instantiation(instance):
+    assert isinstance(instance, uma_ProcessDescription)
 
 
-@given(instance=uma::ProcessDescription_strategy)
-def test_uma::processdescription_usageNotes_setter(instance):
-    original = instance.usageNotes
-    instance.usageNotes = original
-    assert instance.usageNotes == original
 
-@given(instance=uma::ProcessDescription_strategy)
-def test_uma::processdescription_scope_type(instance):
-    assert isinstance(instance.scope, str)
-
-
-@given(instance=uma::ProcessDescription_strategy)
-def test_uma::processdescription_scope_setter(instance):
+@given(instance=uma_ProcessDescription_strategy)
+def test_uma_processdescription_scope_setter(instance):
     original = instance.scope
     instance.scope = original
     assert instance.scope == original
 
-@given(instance=uma::WorkProductDescriptor_strategy)
-@settings(max_examples=50)
-def test_uma::workproductdescriptor_instantiation(instance):
-    assert isinstance(instance, uma::WorkProductDescriptor)
-
-@given(instance=uma::WorkProductDescriptor_strategy)
-def test_uma::workproductdescriptor_group2_type(instance):
-    assert isinstance(instance.group2, str)
 
 
-@given(instance=uma::WorkProductDescriptor_strategy)
-def test_uma::workproductdescriptor_group2_setter(instance):
-    original = instance.group2
-    instance.group2 = original
-    assert instance.group2 == original
-
-@given(instance=uma::WorkProductDescriptor_strategy)
-def test_uma::workproductdescriptor_activityExitState_type(instance):
-    assert isinstance(instance.activityExitState, str)
-
-
-@given(instance=uma::WorkProductDescriptor_strategy)
-def test_uma::workproductdescriptor_activityExitState_setter(instance):
-    original = instance.activityExitState
-    instance.activityExitState = original
-    assert instance.activityExitState == original
-
-@given(instance=uma::WorkProductDescriptor_strategy)
-def test_uma::workproductdescriptor_responsibleRole_type(instance):
-    assert isinstance(instance.responsibleRole, str)
-
-
-@given(instance=uma::WorkProductDescriptor_strategy)
-def test_uma::workproductdescriptor_responsibleRole_setter(instance):
-    original = instance.responsibleRole
-    instance.responsibleRole = original
-    assert instance.responsibleRole == original
-
-@given(instance=uma::WorkProductDescriptor_strategy)
-def test_uma::workproductdescriptor_mandatoryInputTo_type(instance):
-    assert isinstance(instance.mandatoryInputTo, str)
-
-
-@given(instance=uma::WorkProductDescriptor_strategy)
-def test_uma::workproductdescriptor_mandatoryInputTo_setter(instance):
-    original = instance.mandatoryInputTo
-    instance.mandatoryInputTo = original
-    assert instance.mandatoryInputTo == original
-
-@given(instance=uma::WorkProductDescriptor_strategy)
-def test_uma::workproductdescriptor_optionalInputTo_type(instance):
-    assert isinstance(instance.optionalInputTo, str)
-
-
-@given(instance=uma::WorkProductDescriptor_strategy)
-def test_uma::workproductdescriptor_optionalInputTo_setter(instance):
-    original = instance.optionalInputTo
-    instance.optionalInputTo = original
-    assert instance.optionalInputTo == original
-
-@given(instance=uma::WorkProductDescriptor_strategy)
-def test_uma::workproductdescriptor_externalInputTo_type(instance):
-    assert isinstance(instance.externalInputTo, str)
-
-
-@given(instance=uma::WorkProductDescriptor_strategy)
-def test_uma::workproductdescriptor_externalInputTo_setter(instance):
-    original = instance.externalInputTo
-    instance.externalInputTo = original
-    assert instance.externalInputTo == original
-
-@given(instance=uma::WorkProductDescriptor_strategy)
-def test_uma::workproductdescriptor_activityEntryState_type(instance):
-    assert isinstance(instance.activityEntryState, str)
-
-
-@given(instance=uma::WorkProductDescriptor_strategy)
-def test_uma::workproductdescriptor_activityEntryState_setter(instance):
-    original = instance.activityEntryState
-    instance.activityEntryState = original
-    assert instance.activityEntryState == original
-
-@given(instance=uma::WorkProductDescriptor_strategy)
-def test_uma::workproductdescriptor_workProduct_type(instance):
-    assert isinstance(instance.workProduct, str)
-
-
-@given(instance=uma::WorkProductDescriptor_strategy)
-def test_uma::workproductdescriptor_workProduct_setter(instance):
-    original = instance.workProduct
-    instance.workProduct = original
-    assert instance.workProduct == original
-
-@given(instance=uma::WorkProductDescriptor_strategy)
-def test_uma::workproductdescriptor_outputFrom_type(instance):
-    assert isinstance(instance.outputFrom, str)
-
-
-@given(instance=uma::WorkProductDescriptor_strategy)
-def test_uma::workproductdescriptor_outputFrom_setter(instance):
-    original = instance.outputFrom
-    instance.outputFrom = original
-    assert instance.outputFrom == original
-
-@given(instance=uma::WorkProductDescriptor_strategy)
-def test_uma::workproductdescriptor_impacts_type(instance):
-    assert isinstance(instance.impacts, str)
-
-
-@given(instance=uma::WorkProductDescriptor_strategy)
-def test_uma::workproductdescriptor_impacts_setter(instance):
-    original = instance.impacts
-    instance.impacts = original
-    assert instance.impacts == original
-
-@given(instance=uma::WorkProductDescriptor_strategy)
-def test_uma::workproductdescriptor_deliverableParts_type(instance):
-    assert isinstance(instance.deliverableParts, str)
-
-
-@given(instance=uma::WorkProductDescriptor_strategy)
-def test_uma::workproductdescriptor_deliverableParts_setter(instance):
-    original = instance.deliverableParts
-    instance.deliverableParts = original
-    assert instance.deliverableParts == original
-
-@given(instance=uma::WorkProductDescriptor_strategy)
-def test_uma::workproductdescriptor_impactedBy_type(instance):
-    assert isinstance(instance.impactedBy, str)
-
-
-@given(instance=uma::WorkProductDescriptor_strategy)
-def test_uma::workproductdescriptor_impactedBy_setter(instance):
-    original = instance.impactedBy
-    instance.impactedBy = original
-    assert instance.impactedBy == original
+@given(instance=uma_ProcessDescription_strategy)
+def test_uma_processdescription_usageNotes_setter(instance):
+    original = instance.usageNotes
+    instance.usageNotes = original
+    assert instance.usageNotes == original
 
 @given(instance=ProcessPackage_strategy)
 @settings(max_examples=50)
 def test_processpackage_instantiation(instance):
     assert isinstance(instance, ProcessPackage)
 
-@given(instance=uma::ProcessComponent_strategy)
+@given(instance=uma_ProcessComponent_strategy)
 @settings(max_examples=50)
-def test_uma::processcomponent_instantiation(instance):
-    assert isinstance(instance, uma::ProcessComponent)
-
-@given(instance=uma::ProcessComponent_strategy)
-def test_uma::processcomponent_authors_type(instance):
-    assert isinstance(instance.authors, str)
+def test_uma_processcomponent_instantiation(instance):
+    assert isinstance(instance, uma_ProcessComponent)
 
 
-@given(instance=uma::ProcessComponent_strategy)
-def test_uma::processcomponent_authors_setter(instance):
-    original = instance.authors
-    instance.authors = original
-    assert instance.authors == original
 
-@given(instance=uma::ProcessComponent_strategy)
-def test_uma::processcomponent_version_type(instance):
-    assert isinstance(instance.version, str)
-
-
-@given(instance=uma::ProcessComponent_strategy)
-def test_uma::processcomponent_version_setter(instance):
-    original = instance.version
-    instance.version = original
-    assert instance.version == original
-
-@given(instance=uma::ProcessComponent_strategy)
-def test_uma::processcomponent_changeDescription_type(instance):
-    assert isinstance(instance.changeDescription, str)
-
-
-@given(instance=uma::ProcessComponent_strategy)
-def test_uma::processcomponent_changeDescription_setter(instance):
+@given(instance=uma_ProcessComponent_strategy)
+def test_uma_processcomponent_changeDescription_setter(instance):
     original = instance.changeDescription
     instance.changeDescription = original
     assert instance.changeDescription == original
 
-@given(instance=uma::ProcessComponent_strategy)
-def test_uma::processcomponent_changeDate_type(instance):
-    assert isinstance(instance.changeDate, str)
 
 
-@given(instance=uma::ProcessComponent_strategy)
-def test_uma::processcomponent_changeDate_setter(instance):
+@given(instance=uma_ProcessComponent_strategy)
+def test_uma_processcomponent_copyright_setter(instance):
+    original = instance.copyright
+    instance.copyright = original
+    assert instance.copyright == original
+
+
+
+@given(instance=uma_ProcessComponent_strategy)
+def test_uma_processcomponent_changeDate_setter(instance):
     original = instance.changeDate
     instance.changeDate = original
     assert instance.changeDate == original
 
-@given(instance=uma::ProcessComponent_strategy)
-def test_uma::processcomponent_copyright_type(instance):
-    assert isinstance(instance.copyright, str)
 
 
-@given(instance=uma::ProcessComponent_strategy)
-def test_uma::processcomponent_copyright_setter(instance):
-    original = instance.copyright
-    instance.copyright = original
-    assert instance.copyright == original
+@given(instance=uma_ProcessComponent_strategy)
+def test_uma_processcomponent_authors_setter(instance):
+    original = instance.authors
+    instance.authors = original
+    assert instance.authors == original
+
+
+
+@given(instance=uma_ProcessComponent_strategy)
+def test_uma_processcomponent_version_setter(instance):
+    original = instance.version
+    instance.version = original
+    assert instance.version == original
 
 @given(instance=Element_strategy)
 @settings(max_examples=50)
 def test_element_instantiation(instance):
     assert isinstance(instance, Element)
 
-@given(instance=uma::NamedElement_strategy)
+@given(instance=uma_NamedElement_strategy)
 @settings(max_examples=50)
-def test_uma::namedelement_instantiation(instance):
-    assert isinstance(instance, uma::NamedElement)
-
-@given(instance=uma::NamedElement_strategy)
-def test_uma::namedelement_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_uma_namedelement_instantiation(instance):
+    assert isinstance(instance, uma_NamedElement)
 
 
-@given(instance=uma::NamedElement_strategy)
-def test_uma::namedelement_name_setter(instance):
+
+@given(instance=uma_NamedElement_strategy)
+def test_uma_namedelement_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
@@ -5065,97 +4813,82 @@ def test_uma::namedelement_name_setter(instance):
 def test_namedelement_instantiation(instance):
     assert isinstance(instance, NamedElement)
 
-@given(instance=uma::PackageableElement_strategy)
+@given(instance=uma_PackageableElement_strategy)
 @settings(max_examples=50)
-def test_uma::packageableelement_instantiation(instance):
-    assert isinstance(instance, uma::PackageableElement)
+def test_uma_packageableelement_instantiation(instance):
+    assert isinstance(instance, uma_PackageableElement)
 
 @given(instance=Activity_strategy)
 @settings(max_examples=50)
 def test_activity_instantiation(instance):
     assert isinstance(instance, Activity)
 
-@given(instance=uma::Process_strategy)
+@given(instance=uma_Phase_strategy)
 @settings(max_examples=50)
-def test_uma::process_instantiation(instance):
-    assert isinstance(instance, uma::Process)
+def test_uma_phase_instantiation(instance):
+    assert isinstance(instance, uma_Phase)
 
-@given(instance=uma::Process_strategy)
-def test_uma::process_validContext_type(instance):
-    assert isinstance(instance.validContext, str)
-
-
-@given(instance=uma::Process_strategy)
-def test_uma::process_validContext_setter(instance):
-    original = instance.validContext
-    instance.validContext = original
-    assert instance.validContext == original
-
-@given(instance=uma::Process_strategy)
-def test_uma::process_defaultContext_type(instance):
-    assert isinstance(instance.defaultContext, str)
+@given(instance=uma_Process_strategy)
+@settings(max_examples=50)
+def test_uma_process_instantiation(instance):
+    assert isinstance(instance, uma_Process)
 
 
-@given(instance=uma::Process_strategy)
-def test_uma::process_defaultContext_setter(instance):
-    original = instance.defaultContext
-    instance.defaultContext = original
-    assert instance.defaultContext == original
 
-@given(instance=uma::Process_strategy)
-def test_uma::process_diagramURI_type(instance):
-    assert isinstance(instance.diagramURI, str)
-
-
-@given(instance=uma::Process_strategy)
-def test_uma::process_diagramURI_setter(instance):
-    original = instance.diagramURI
-    instance.diagramURI = original
-    assert instance.diagramURI == original
-
-@given(instance=uma::Process_strategy)
-def test_uma::process_includesPattern_type(instance):
-    assert isinstance(instance.includesPattern, str)
-
-
-@given(instance=uma::Process_strategy)
-def test_uma::process_includesPattern_setter(instance):
+@given(instance=uma_Process_strategy)
+def test_uma_process_includesPattern_setter(instance):
     original = instance.includesPattern
     instance.includesPattern = original
     assert instance.includesPattern == original
 
-@given(instance=uma::Phase_strategy)
+
+
+@given(instance=uma_Process_strategy)
+def test_uma_process_defaultContext_setter(instance):
+    original = instance.defaultContext
+    instance.defaultContext = original
+    assert instance.defaultContext == original
+
+
+
+@given(instance=uma_Process_strategy)
+def test_uma_process_diagramURI_setter(instance):
+    original = instance.diagramURI
+    instance.diagramURI = original
+    assert instance.diagramURI == original
+
+
+
+@given(instance=uma_Process_strategy)
+def test_uma_process_validContext_setter(instance):
+    original = instance.validContext
+    instance.validContext = original
+    assert instance.validContext == original
+
+@given(instance=uma_Iteration_strategy)
 @settings(max_examples=50)
-def test_uma::phase_instantiation(instance):
-    assert isinstance(instance, uma::Phase)
+def test_uma_iteration_instantiation(instance):
+    assert isinstance(instance, uma_Iteration)
 
-@given(instance=uma::Iteration_strategy)
+@given(instance=uma_Element_strategy)
 @settings(max_examples=50)
-def test_uma::iteration_instantiation(instance):
-    assert isinstance(instance, uma::Iteration)
+def test_uma_element_instantiation(instance):
+    assert isinstance(instance, uma_Element)
 
-@given(instance=uma::Element_strategy)
+@given(instance=uma_EStringToStringMapEntry_strategy)
 @settings(max_examples=50)
-def test_uma::element_instantiation(instance):
-    assert isinstance(instance, uma::Element)
+def test_uma_estringtostringmapentry_instantiation(instance):
+    assert isinstance(instance, uma_EStringToStringMapEntry)
 
-@given(instance=uma::EStringToStringMapEntry_strategy)
+@given(instance=uma_DocumentRoot_strategy)
 @settings(max_examples=50)
-def test_uma::estringtostringmapentry_instantiation(instance):
-    assert isinstance(instance, uma::EStringToStringMapEntry)
-
-@given(instance=uma::DocumentRoot_strategy)
-@settings(max_examples=50)
-def test_uma::documentroot_instantiation(instance):
-    assert isinstance(instance, uma::DocumentRoot)
-
-@given(instance=uma::DocumentRoot_strategy)
-def test_uma::documentroot_mixed_type(instance):
-    assert isinstance(instance.mixed, str)
+def test_uma_documentroot_instantiation(instance):
+    assert isinstance(instance, uma_DocumentRoot)
 
 
-@given(instance=uma::DocumentRoot_strategy)
-def test_uma::documentroot_mixed_setter(instance):
+
+@given(instance=uma_DocumentRoot_strategy)
+def test_uma_documentroot_mixed_setter(instance):
     original = instance.mixed
     instance.mixed = original
     assert instance.mixed == original
@@ -5165,132 +4898,28 @@ def test_uma::documentroot_mixed_setter(instance):
 def test_breakdownelement_instantiation(instance):
     assert isinstance(instance, BreakdownElement)
 
-@given(instance=uma::ProcessComponentInterface_strategy)
+@given(instance=uma_ProcessComponentInterface_strategy)
 @settings(max_examples=50)
-def test_uma::processcomponentinterface_instantiation(instance):
-    assert isinstance(instance, uma::ProcessComponentInterface)
-
-@given(instance=uma::ProcessComponentInterface_strategy)
-def test_uma::processcomponentinterface_group2_type(instance):
-    assert isinstance(instance.group2, str)
+def test_uma_processcomponentinterface_instantiation(instance):
+    assert isinstance(instance, uma_ProcessComponentInterface)
 
 
-@given(instance=uma::ProcessComponentInterface_strategy)
-def test_uma::processcomponentinterface_group2_setter(instance):
+
+@given(instance=uma_ProcessComponentInterface_strategy)
+def test_uma_processcomponentinterface_group2_setter(instance):
     original = instance.group2
     instance.group2 = original
     assert instance.group2 == original
 
-@given(instance=uma::TeamProfile_strategy)
+@given(instance=uma_Descriptor_strategy)
 @settings(max_examples=50)
-def test_uma::teamprofile_instantiation(instance):
-    assert isinstance(instance, uma::TeamProfile)
-
-@given(instance=uma::TeamProfile_strategy)
-def test_uma::teamprofile_group2_type(instance):
-    assert isinstance(instance.group2, str)
+def test_uma_descriptor_instantiation(instance):
+    assert isinstance(instance, uma_Descriptor)
 
 
-@given(instance=uma::TeamProfile_strategy)
-def test_uma::teamprofile_group2_setter(instance):
-    original = instance.group2
-    instance.group2 = original
-    assert instance.group2 == original
 
-@given(instance=uma::TeamProfile_strategy)
-def test_uma::teamprofile_role_type(instance):
-    assert isinstance(instance.role, str)
-
-
-@given(instance=uma::TeamProfile_strategy)
-def test_uma::teamprofile_role_setter(instance):
-    original = instance.role
-    instance.role = original
-    assert instance.role == original
-
-@given(instance=uma::TeamProfile_strategy)
-def test_uma::teamprofile_subTeam_type(instance):
-    assert isinstance(instance.subTeam, str)
-
-
-@given(instance=uma::TeamProfile_strategy)
-def test_uma::teamprofile_subTeam_setter(instance):
-    original = instance.subTeam
-    instance.subTeam = original
-    assert instance.subTeam == original
-
-@given(instance=uma::TeamProfile_strategy)
-def test_uma::teamprofile_superTeam_type(instance):
-    assert isinstance(instance.superTeam, str)
-
-
-@given(instance=uma::TeamProfile_strategy)
-def test_uma::teamprofile_superTeam_setter(instance):
-    original = instance.superTeam
-    instance.superTeam = original
-    assert instance.superTeam == original
-
-@given(instance=uma::WorkBreakdownElement_strategy)
-@settings(max_examples=50)
-def test_uma::workbreakdownelement_instantiation(instance):
-    assert isinstance(instance, uma::WorkBreakdownElement)
-
-@given(instance=uma::WorkBreakdownElement_strategy)
-def test_uma::workbreakdownelement_isEventDriven_type(instance):
-    assert isinstance(instance.isEventDriven, str)
-
-
-@given(instance=uma::WorkBreakdownElement_strategy)
-def test_uma::workbreakdownelement_isEventDriven_setter(instance):
-    original = instance.isEventDriven
-    instance.isEventDriven = original
-    assert instance.isEventDriven == original
-
-@given(instance=uma::WorkBreakdownElement_strategy)
-def test_uma::workbreakdownelement_isRepeatable_type(instance):
-    assert isinstance(instance.isRepeatable, str)
-
-
-@given(instance=uma::WorkBreakdownElement_strategy)
-def test_uma::workbreakdownelement_isRepeatable_setter(instance):
-    original = instance.isRepeatable
-    instance.isRepeatable = original
-    assert instance.isRepeatable == original
-
-@given(instance=uma::WorkBreakdownElement_strategy)
-def test_uma::workbreakdownelement_isOngoing_type(instance):
-    assert isinstance(instance.isOngoing, str)
-
-
-@given(instance=uma::WorkBreakdownElement_strategy)
-def test_uma::workbreakdownelement_isOngoing_setter(instance):
-    original = instance.isOngoing
-    instance.isOngoing = original
-    assert instance.isOngoing == original
-
-@given(instance=uma::WorkBreakdownElement_strategy)
-def test_uma::workbreakdownelement_group2_type(instance):
-    assert isinstance(instance.group2, str)
-
-
-@given(instance=uma::WorkBreakdownElement_strategy)
-def test_uma::workbreakdownelement_group2_setter(instance):
-    original = instance.group2
-    instance.group2 = original
-    assert instance.group2 == original
-
-@given(instance=uma::Descriptor_strategy)
-@settings(max_examples=50)
-def test_uma::descriptor_instantiation(instance):
-    assert isinstance(instance, uma::Descriptor)
-
-@given(instance=uma::Descriptor_strategy)
-def test_uma::descriptor_isSynchronizedWithSource_type(instance):
-    assert isinstance(instance.isSynchronizedWithSource, str)
-
-
-@given(instance=uma::Descriptor_strategy)
-def test_uma::descriptor_isSynchronizedWithSource_setter(instance):
+@given(instance=uma_Descriptor_strategy)
+def test_uma_descriptor_isSynchronizedWithSource_setter(instance):
     original = instance.isSynchronizedWithSource
     instance.isSynchronizedWithSource = original
     assert instance.isSynchronizedWithSource == original
@@ -5300,838 +4929,556 @@ def test_uma::descriptor_isSynchronizedWithSource_setter(instance):
 def test_processdescription_instantiation(instance):
     assert isinstance(instance, ProcessDescription)
 
-@given(instance=uma::DeliveryProcessDescription_strategy)
+@given(instance=uma_DeliveryProcessDescription_strategy)
 @settings(max_examples=50)
-def test_uma::deliveryprocessdescription_instantiation(instance):
-    assert isinstance(instance, uma::DeliveryProcessDescription)
-
-@given(instance=uma::DeliveryProcessDescription_strategy)
-def test_uma::deliveryprocessdescription_scale_type(instance):
-    assert isinstance(instance.scale, str)
+def test_uma_deliveryprocessdescription_instantiation(instance):
+    assert isinstance(instance, uma_DeliveryProcessDescription)
 
 
-@given(instance=uma::DeliveryProcessDescription_strategy)
-def test_uma::deliveryprocessdescription_scale_setter(instance):
-    original = instance.scale
-    instance.scale = original
-    assert instance.scale == original
 
-@given(instance=uma::DeliveryProcessDescription_strategy)
-def test_uma::deliveryprocessdescription_projectMemberExpertise_type(instance):
-    assert isinstance(instance.projectMemberExpertise, str)
+@given(instance=uma_DeliveryProcessDescription_strategy)
+def test_uma_deliveryprocessdescription_estimatingTechnique_setter(instance):
+    original = instance.estimatingTechnique
+    instance.estimatingTechnique = original
+    assert instance.estimatingTechnique == original
 
 
-@given(instance=uma::DeliveryProcessDescription_strategy)
-def test_uma::deliveryprocessdescription_projectMemberExpertise_setter(instance):
+
+@given(instance=uma_DeliveryProcessDescription_strategy)
+def test_uma_deliveryprocessdescription_projectMemberExpertise_setter(instance):
     original = instance.projectMemberExpertise
     instance.projectMemberExpertise = original
     assert instance.projectMemberExpertise == original
 
-@given(instance=uma::DeliveryProcessDescription_strategy)
-def test_uma::deliveryprocessdescription_riskLevel_type(instance):
-    assert isinstance(instance.riskLevel, str)
 
 
-@given(instance=uma::DeliveryProcessDescription_strategy)
-def test_uma::deliveryprocessdescription_riskLevel_setter(instance):
-    original = instance.riskLevel
-    instance.riskLevel = original
-    assert instance.riskLevel == original
-
-@given(instance=uma::DeliveryProcessDescription_strategy)
-def test_uma::deliveryprocessdescription_projectCharacteristics_type(instance):
-    assert isinstance(instance.projectCharacteristics, str)
-
-
-@given(instance=uma::DeliveryProcessDescription_strategy)
-def test_uma::deliveryprocessdescription_projectCharacteristics_setter(instance):
+@given(instance=uma_DeliveryProcessDescription_strategy)
+def test_uma_deliveryprocessdescription_projectCharacteristics_setter(instance):
     original = instance.projectCharacteristics
     instance.projectCharacteristics = original
     assert instance.projectCharacteristics == original
 
-@given(instance=uma::DeliveryProcessDescription_strategy)
-def test_uma::deliveryprocessdescription_typeOfContract_type(instance):
-    assert isinstance(instance.typeOfContract, str)
 
 
-@given(instance=uma::DeliveryProcessDescription_strategy)
-def test_uma::deliveryprocessdescription_typeOfContract_setter(instance):
+@given(instance=uma_DeliveryProcessDescription_strategy)
+def test_uma_deliveryprocessdescription_scale_setter(instance):
+    original = instance.scale
+    instance.scale = original
+    assert instance.scale == original
+
+
+
+@given(instance=uma_DeliveryProcessDescription_strategy)
+def test_uma_deliveryprocessdescription_riskLevel_setter(instance):
+    original = instance.riskLevel
+    instance.riskLevel = original
+    assert instance.riskLevel == original
+
+
+
+@given(instance=uma_DeliveryProcessDescription_strategy)
+def test_uma_deliveryprocessdescription_typeOfContract_setter(instance):
     original = instance.typeOfContract
     instance.typeOfContract = original
     assert instance.typeOfContract == original
-
-@given(instance=uma::DeliveryProcessDescription_strategy)
-def test_uma::deliveryprocessdescription_estimatingTechnique_type(instance):
-    assert isinstance(instance.estimatingTechnique, str)
-
-
-@given(instance=uma::DeliveryProcessDescription_strategy)
-def test_uma::deliveryprocessdescription_estimatingTechnique_setter(instance):
-    original = instance.estimatingTechnique
-    instance.estimatingTechnique = original
-    assert instance.estimatingTechnique == original
 
 @given(instance=ContentCategory_strategy)
 @settings(max_examples=50)
 def test_contentcategory_instantiation(instance):
     assert isinstance(instance, ContentCategory)
 
-@given(instance=uma::WorkProductType_strategy)
+@given(instance=uma_Domain_strategy)
 @settings(max_examples=50)
-def test_uma::workproducttype_instantiation(instance):
-    assert isinstance(instance, uma::WorkProductType)
-
-@given(instance=uma::WorkProductType_strategy)
-def test_uma::workproducttype_group2_type(instance):
-    assert isinstance(instance.group2, str)
+def test_uma_domain_instantiation(instance):
+    assert isinstance(instance, uma_Domain)
 
 
-@given(instance=uma::WorkProductType_strategy)
-def test_uma::workproducttype_group2_setter(instance):
+
+@given(instance=uma_Domain_strategy)
+def test_uma_domain_group2_setter(instance):
     original = instance.group2
     instance.group2 = original
     assert instance.group2 == original
 
-@given(instance=uma::WorkProductType_strategy)
-def test_uma::workproducttype_workProduct_type(instance):
-    assert isinstance(instance.workProduct, str)
 
 
-@given(instance=uma::WorkProductType_strategy)
-def test_uma::workproducttype_workProduct_setter(instance):
+@given(instance=uma_Domain_strategy)
+def test_uma_domain_workProduct_setter(instance):
     original = instance.workProduct
     instance.workProduct = original
     assert instance.workProduct == original
 
-@given(instance=uma::Discipline_strategy)
+@given(instance=uma_DisciplineGrouping_strategy)
 @settings(max_examples=50)
-def test_uma::discipline_instantiation(instance):
-    assert isinstance(instance, uma::Discipline)
-
-@given(instance=uma::Discipline_strategy)
-def test_uma::discipline_task_type(instance):
-    assert isinstance(instance.task, str)
+def test_uma_disciplinegrouping_instantiation(instance):
+    assert isinstance(instance, uma_DisciplineGrouping)
 
 
-@given(instance=uma::Discipline_strategy)
-def test_uma::discipline_task_setter(instance):
-    original = instance.task
-    instance.task = original
-    assert instance.task == original
 
-@given(instance=uma::Discipline_strategy)
-def test_uma::discipline_referenceWorkflow_type(instance):
-    assert isinstance(instance.referenceWorkflow, str)
-
-
-@given(instance=uma::Discipline_strategy)
-def test_uma::discipline_referenceWorkflow_setter(instance):
-    original = instance.referenceWorkflow
-    instance.referenceWorkflow = original
-    assert instance.referenceWorkflow == original
-
-@given(instance=uma::Discipline_strategy)
-def test_uma::discipline_group2_type(instance):
-    assert isinstance(instance.group2, str)
-
-
-@given(instance=uma::Discipline_strategy)
-def test_uma::discipline_group2_setter(instance):
+@given(instance=uma_DisciplineGrouping_strategy)
+def test_uma_disciplinegrouping_group2_setter(instance):
     original = instance.group2
     instance.group2 = original
     assert instance.group2 == original
 
-@given(instance=uma::DisciplineGrouping_strategy)
-@settings(max_examples=50)
-def test_uma::disciplinegrouping_instantiation(instance):
-    assert isinstance(instance, uma::DisciplineGrouping)
-
-@given(instance=uma::DisciplineGrouping_strategy)
-def test_uma::disciplinegrouping_discipline_type(instance):
-    assert isinstance(instance.discipline, str)
 
 
-@given(instance=uma::DisciplineGrouping_strategy)
-def test_uma::disciplinegrouping_discipline_setter(instance):
+@given(instance=uma_DisciplineGrouping_strategy)
+def test_uma_disciplinegrouping_discipline_setter(instance):
     original = instance.discipline
     instance.discipline = original
     assert instance.discipline == original
 
-@given(instance=uma::DisciplineGrouping_strategy)
-def test_uma::disciplinegrouping_group2_type(instance):
-    assert isinstance(instance.group2, str)
+@given(instance=uma_Discipline_strategy)
+@settings(max_examples=50)
+def test_uma_discipline_instantiation(instance):
+    assert isinstance(instance, uma_Discipline)
 
 
-@given(instance=uma::DisciplineGrouping_strategy)
-def test_uma::disciplinegrouping_group2_setter(instance):
+
+@given(instance=uma_Discipline_strategy)
+def test_uma_discipline_task_setter(instance):
+    original = instance.task
+    instance.task = original
+    assert instance.task == original
+
+
+
+@given(instance=uma_Discipline_strategy)
+def test_uma_discipline_group2_setter(instance):
     original = instance.group2
     instance.group2 = original
     assert instance.group2 == original
 
-@given(instance=uma::Tool_strategy)
+
+
+@given(instance=uma_Discipline_strategy)
+def test_uma_discipline_referenceWorkflow_setter(instance):
+    original = instance.referenceWorkflow
+    instance.referenceWorkflow = original
+    assert instance.referenceWorkflow == original
+
+@given(instance=uma_CustomCategory_strategy)
 @settings(max_examples=50)
-def test_uma::tool_instantiation(instance):
-    assert isinstance(instance, uma::Tool)
-
-@given(instance=uma::Tool_strategy)
-def test_uma::tool_group2_type(instance):
-    assert isinstance(instance.group2, str)
+def test_uma_customcategory_instantiation(instance):
+    assert isinstance(instance, uma_CustomCategory)
 
 
-@given(instance=uma::Tool_strategy)
-def test_uma::tool_group2_setter(instance):
-    original = instance.group2
-    instance.group2 = original
-    assert instance.group2 == original
 
-@given(instance=uma::Tool_strategy)
-def test_uma::tool_toolMentor_type(instance):
-    assert isinstance(instance.toolMentor, str)
-
-
-@given(instance=uma::Tool_strategy)
-def test_uma::tool_toolMentor_setter(instance):
-    original = instance.toolMentor
-    instance.toolMentor = original
-    assert instance.toolMentor == original
-
-@given(instance=uma::Domain_strategy)
-@settings(max_examples=50)
-def test_uma::domain_instantiation(instance):
-    assert isinstance(instance, uma::Domain)
-
-@given(instance=uma::Domain_strategy)
-def test_uma::domain_group2_type(instance):
-    assert isinstance(instance.group2, str)
-
-
-@given(instance=uma::Domain_strategy)
-def test_uma::domain_group2_setter(instance):
-    original = instance.group2
-    instance.group2 = original
-    assert instance.group2 == original
-
-@given(instance=uma::Domain_strategy)
-def test_uma::domain_workProduct_type(instance):
-    assert isinstance(instance.workProduct, str)
-
-
-@given(instance=uma::Domain_strategy)
-def test_uma::domain_workProduct_setter(instance):
-    original = instance.workProduct
-    instance.workProduct = original
-    assert instance.workProduct == original
-
-@given(instance=uma::RoleSet_strategy)
-@settings(max_examples=50)
-def test_uma::roleset_instantiation(instance):
-    assert isinstance(instance, uma::RoleSet)
-
-@given(instance=uma::RoleSet_strategy)
-def test_uma::roleset_group2_type(instance):
-    assert isinstance(instance.group2, str)
-
-
-@given(instance=uma::RoleSet_strategy)
-def test_uma::roleset_group2_setter(instance):
-    original = instance.group2
-    instance.group2 = original
-    assert instance.group2 == original
-
-@given(instance=uma::RoleSet_strategy)
-def test_uma::roleset_role_type(instance):
-    assert isinstance(instance.role, str)
-
-
-@given(instance=uma::RoleSet_strategy)
-def test_uma::roleset_role_setter(instance):
-    original = instance.role
-    instance.role = original
-    assert instance.role == original
-
-@given(instance=uma::RoleSetGrouping_strategy)
-@settings(max_examples=50)
-def test_uma::rolesetgrouping_instantiation(instance):
-    assert isinstance(instance, uma::RoleSetGrouping)
-
-@given(instance=uma::RoleSetGrouping_strategy)
-def test_uma::rolesetgrouping_roleSet_type(instance):
-    assert isinstance(instance.roleSet, str)
-
-
-@given(instance=uma::RoleSetGrouping_strategy)
-def test_uma::rolesetgrouping_roleSet_setter(instance):
-    original = instance.roleSet
-    instance.roleSet = original
-    assert instance.roleSet == original
-
-@given(instance=uma::RoleSetGrouping_strategy)
-def test_uma::rolesetgrouping_group2_type(instance):
-    assert isinstance(instance.group2, str)
-
-
-@given(instance=uma::RoleSetGrouping_strategy)
-def test_uma::rolesetgrouping_group2_setter(instance):
-    original = instance.group2
-    instance.group2 = original
-    assert instance.group2 == original
-
-@given(instance=uma::CustomCategory_strategy)
-@settings(max_examples=50)
-def test_uma::customcategory_instantiation(instance):
-    assert isinstance(instance, uma::CustomCategory)
-
-@given(instance=uma::CustomCategory_strategy)
-def test_uma::customcategory_subCategory_type(instance):
-    assert isinstance(instance.subCategory, str)
-
-
-@given(instance=uma::CustomCategory_strategy)
-def test_uma::customcategory_subCategory_setter(instance):
+@given(instance=uma_CustomCategory_strategy)
+def test_uma_customcategory_subCategory_setter(instance):
     original = instance.subCategory
     instance.subCategory = original
     assert instance.subCategory == original
 
-@given(instance=uma::CustomCategory_strategy)
-def test_uma::customcategory_group2_type(instance):
-    assert isinstance(instance.group2, str)
 
 
-@given(instance=uma::CustomCategory_strategy)
-def test_uma::customcategory_group2_setter(instance):
-    original = instance.group2
-    instance.group2 = original
-    assert instance.group2 == original
-
-@given(instance=uma::CustomCategory_strategy)
-def test_uma::customcategory_categorizedElement_type(instance):
-    assert isinstance(instance.categorizedElement, str)
-
-
-@given(instance=uma::CustomCategory_strategy)
-def test_uma::customcategory_categorizedElement_setter(instance):
+@given(instance=uma_CustomCategory_strategy)
+def test_uma_customcategory_categorizedElement_setter(instance):
     original = instance.categorizedElement
     instance.categorizedElement = original
     assert instance.categorizedElement == original
+
+
+
+@given(instance=uma_CustomCategory_strategy)
+def test_uma_customcategory_group2_setter(instance):
+    original = instance.group2
+    instance.group2 = original
+    assert instance.group2 == original
 
 @given(instance=WorkBreakdownElement_strategy)
 @settings(max_examples=50)
 def test_workbreakdownelement_instantiation(instance):
     assert isinstance(instance, WorkBreakdownElement)
 
-@given(instance=uma::Milestone_strategy)
+@given(instance=uma_Milestone_strategy)
 @settings(max_examples=50)
-def test_uma::milestone_instantiation(instance):
-    assert isinstance(instance, uma::Milestone)
-
-@given(instance=uma::Milestone_strategy)
-def test_uma::milestone_requiredResult_type(instance):
-    assert isinstance(instance.requiredResult, str)
+def test_uma_milestone_instantiation(instance):
+    assert isinstance(instance, uma_Milestone)
 
 
-@given(instance=uma::Milestone_strategy)
-def test_uma::milestone_requiredResult_setter(instance):
+
+@given(instance=uma_Milestone_strategy)
+def test_uma_milestone_requiredResult_setter(instance):
     original = instance.requiredResult
     instance.requiredResult = original
     assert instance.requiredResult == original
 
-@given(instance=uma::TaskDescriptor_strategy)
+@given(instance=uma_TaskDescriptor_strategy)
 @settings(max_examples=50)
-def test_uma::taskdescriptor_instantiation(instance):
-    assert isinstance(instance, uma::TaskDescriptor)
-
-@given(instance=uma::TaskDescriptor_strategy)
-def test_uma::taskdescriptor_mandatoryInput_type(instance):
-    assert isinstance(instance.mandatoryInput, str)
+def test_uma_taskdescriptor_instantiation(instance):
+    assert isinstance(instance, uma_TaskDescriptor)
 
 
-@given(instance=uma::TaskDescriptor_strategy)
-def test_uma::taskdescriptor_mandatoryInput_setter(instance):
-    original = instance.mandatoryInput
-    instance.mandatoryInput = original
-    assert instance.mandatoryInput == original
 
-@given(instance=uma::TaskDescriptor_strategy)
-def test_uma::taskdescriptor_task_type(instance):
-    assert isinstance(instance.task, str)
-
-
-@given(instance=uma::TaskDescriptor_strategy)
-def test_uma::taskdescriptor_task_setter(instance):
-    original = instance.task
-    instance.task = original
-    assert instance.task == original
-
-@given(instance=uma::TaskDescriptor_strategy)
-def test_uma::taskdescriptor_optionalInput_type(instance):
-    assert isinstance(instance.optionalInput, str)
-
-
-@given(instance=uma::TaskDescriptor_strategy)
-def test_uma::taskdescriptor_optionalInput_setter(instance):
-    original = instance.optionalInput
-    instance.optionalInput = original
-    assert instance.optionalInput == original
-
-@given(instance=uma::TaskDescriptor_strategy)
-def test_uma::taskdescriptor_performedPrimarilyBy_type(instance):
-    assert isinstance(instance.performedPrimarilyBy, str)
-
-
-@given(instance=uma::TaskDescriptor_strategy)
-def test_uma::taskdescriptor_performedPrimarilyBy_setter(instance):
-    original = instance.performedPrimarilyBy
-    instance.performedPrimarilyBy = original
-    assert instance.performedPrimarilyBy == original
-
-@given(instance=uma::TaskDescriptor_strategy)
-def test_uma::taskdescriptor_assistedBy_type(instance):
-    assert isinstance(instance.assistedBy, str)
-
-
-@given(instance=uma::TaskDescriptor_strategy)
-def test_uma::taskdescriptor_assistedBy_setter(instance):
+@given(instance=uma_TaskDescriptor_strategy)
+def test_uma_taskdescriptor_assistedBy_setter(instance):
     original = instance.assistedBy
     instance.assistedBy = original
     assert instance.assistedBy == original
 
-@given(instance=uma::TaskDescriptor_strategy)
-def test_uma::taskdescriptor_externalInput_type(instance):
-    assert isinstance(instance.externalInput, str)
 
 
-@given(instance=uma::TaskDescriptor_strategy)
-def test_uma::taskdescriptor_externalInput_setter(instance):
-    original = instance.externalInput
-    instance.externalInput = original
-    assert instance.externalInput == original
-
-@given(instance=uma::TaskDescriptor_strategy)
-def test_uma::taskdescriptor_output_type(instance):
-    assert isinstance(instance.output, str)
-
-
-@given(instance=uma::TaskDescriptor_strategy)
-def test_uma::taskdescriptor_output_setter(instance):
-    original = instance.output
-    instance.output = original
-    assert instance.output == original
-
-@given(instance=uma::TaskDescriptor_strategy)
-def test_uma::taskdescriptor_additionallyPerformedBy_type(instance):
-    assert isinstance(instance.additionallyPerformedBy, str)
-
-
-@given(instance=uma::TaskDescriptor_strategy)
-def test_uma::taskdescriptor_additionallyPerformedBy_setter(instance):
-    original = instance.additionallyPerformedBy
-    instance.additionallyPerformedBy = original
-    assert instance.additionallyPerformedBy == original
-
-@given(instance=uma::TaskDescriptor_strategy)
-def test_uma::taskdescriptor_group3_type(instance):
-    assert isinstance(instance.group3, str)
-
-
-@given(instance=uma::TaskDescriptor_strategy)
-def test_uma::taskdescriptor_group3_setter(instance):
-    original = instance.group3
-    instance.group3 = original
-    assert instance.group3 == original
-
-@given(instance=uma::TaskDescriptor_strategy)
-def test_uma::taskdescriptor_isSynchronizedWithSource_type(instance):
-    assert isinstance(instance.isSynchronizedWithSource, str)
-
-
-@given(instance=uma::TaskDescriptor_strategy)
-def test_uma::taskdescriptor_isSynchronizedWithSource_setter(instance):
+@given(instance=uma_TaskDescriptor_strategy)
+def test_uma_taskdescriptor_isSynchronizedWithSource_setter(instance):
     original = instance.isSynchronizedWithSource
     instance.isSynchronizedWithSource = original
     assert instance.isSynchronizedWithSource == original
 
-@given(instance=uma::Activity_strategy)
-@settings(max_examples=50)
-def test_uma::activity_instantiation(instance):
-    assert isinstance(instance, uma::Activity)
-
-@given(instance=uma::Activity_strategy)
-def test_uma::activity_group3_type(instance):
-    assert isinstance(instance.group3, str)
 
 
-@given(instance=uma::Activity_strategy)
-def test_uma::activity_group3_setter(instance):
+@given(instance=uma_TaskDescriptor_strategy)
+def test_uma_taskdescriptor_output_setter(instance):
+    original = instance.output
+    instance.output = original
+    assert instance.output == original
+
+
+
+@given(instance=uma_TaskDescriptor_strategy)
+def test_uma_taskdescriptor_optionalInput_setter(instance):
+    original = instance.optionalInput
+    instance.optionalInput = original
+    assert instance.optionalInput == original
+
+
+
+@given(instance=uma_TaskDescriptor_strategy)
+def test_uma_taskdescriptor_performedPrimarilyBy_setter(instance):
+    original = instance.performedPrimarilyBy
+    instance.performedPrimarilyBy = original
+    assert instance.performedPrimarilyBy == original
+
+
+
+@given(instance=uma_TaskDescriptor_strategy)
+def test_uma_taskdescriptor_group3_setter(instance):
     original = instance.group3
     instance.group3 = original
     assert instance.group3 == original
 
-@given(instance=uma::Activity_strategy)
-def test_uma::activity_roadmap_type(instance):
-    assert isinstance(instance.roadmap, str)
 
 
-@given(instance=uma::Activity_strategy)
-def test_uma::activity_roadmap_setter(instance):
-    original = instance.roadmap
-    instance.roadmap = original
-    assert instance.roadmap == original
-
-@given(instance=uma::Activity_strategy)
-def test_uma::activity_postcondition_type(instance):
-    assert isinstance(instance.postcondition, str)
+@given(instance=uma_TaskDescriptor_strategy)
+def test_uma_taskdescriptor_externalInput_setter(instance):
+    original = instance.externalInput
+    instance.externalInput = original
+    assert instance.externalInput == original
 
 
-@given(instance=uma::Activity_strategy)
-def test_uma::activity_postcondition_setter(instance):
-    original = instance.postcondition
-    instance.postcondition = original
-    assert instance.postcondition == original
 
-@given(instance=uma::Activity_strategy)
-def test_uma::activity_isEnactable_type(instance):
-    assert isinstance(instance.isEnactable, str)
+@given(instance=uma_TaskDescriptor_strategy)
+def test_uma_taskdescriptor_task_setter(instance):
+    original = instance.task
+    instance.task = original
+    assert instance.task == original
 
 
-@given(instance=uma::Activity_strategy)
-def test_uma::activity_isEnactable_setter(instance):
-    original = instance.isEnactable
-    instance.isEnactable = original
-    assert instance.isEnactable == original
 
-@given(instance=uma::Activity_strategy)
-def test_uma::activity_variabilityType_type(instance):
-    assert isinstance(instance.variabilityType, str)
+@given(instance=uma_TaskDescriptor_strategy)
+def test_uma_taskdescriptor_additionallyPerformedBy_setter(instance):
+    original = instance.additionallyPerformedBy
+    instance.additionallyPerformedBy = original
+    assert instance.additionallyPerformedBy == original
 
 
-@given(instance=uma::Activity_strategy)
-def test_uma::activity_variabilityType_setter(instance):
-    original = instance.variabilityType
-    instance.variabilityType = original
-    assert instance.variabilityType == original
 
-@given(instance=uma::Activity_strategy)
-def test_uma::activity_variabilityBasedOnElement_type(instance):
-    assert isinstance(instance.variabilityBasedOnElement, str)
+@given(instance=uma_TaskDescriptor_strategy)
+def test_uma_taskdescriptor_mandatoryInput_setter(instance):
+    original = instance.mandatoryInput
+    instance.mandatoryInput = original
+    assert instance.mandatoryInput == original
+
+@given(instance=uma_Activity_strategy)
+@settings(max_examples=50)
+def test_uma_activity_instantiation(instance):
+    assert isinstance(instance, uma_Activity)
 
 
-@given(instance=uma::Activity_strategy)
-def test_uma::activity_variabilityBasedOnElement_setter(instance):
+
+@given(instance=uma_Activity_strategy)
+def test_uma_activity_group3_setter(instance):
+    original = instance.group3
+    instance.group3 = original
+    assert instance.group3 == original
+
+
+
+@given(instance=uma_Activity_strategy)
+def test_uma_activity_variabilityBasedOnElement_setter(instance):
     original = instance.variabilityBasedOnElement
     instance.variabilityBasedOnElement = original
     assert instance.variabilityBasedOnElement == original
 
-@given(instance=uma::Activity_strategy)
-def test_uma::activity_precondition_type(instance):
-    assert isinstance(instance.precondition, str)
 
 
-@given(instance=uma::Activity_strategy)
-def test_uma::activity_precondition_setter(instance):
+@given(instance=uma_Activity_strategy)
+def test_uma_activity_variabilityType_setter(instance):
+    original = instance.variabilityType
+    instance.variabilityType = original
+    assert instance.variabilityType == original
+
+
+
+@given(instance=uma_Activity_strategy)
+def test_uma_activity_roadmap_setter(instance):
+    original = instance.roadmap
+    instance.roadmap = original
+    assert instance.roadmap == original
+
+
+
+@given(instance=uma_Activity_strategy)
+def test_uma_activity_precondition_setter(instance):
     original = instance.precondition
     instance.precondition = original
     assert instance.precondition == original
+
+
+
+@given(instance=uma_Activity_strategy)
+def test_uma_activity_postcondition_setter(instance):
+    original = instance.postcondition
+    instance.postcondition = original
+    assert instance.postcondition == original
+
+
+
+@given(instance=uma_Activity_strategy)
+def test_uma_activity_isEnactable_setter(instance):
+    original = instance.isEnactable
+    instance.isEnactable = original
+    assert instance.isEnactable == original
 
 @given(instance=DescribableElement_strategy)
 @settings(max_examples=50)
 def test_describableelement_instantiation(instance):
     assert isinstance(instance, DescribableElement)
 
-@given(instance=uma::ProcessElement_strategy)
+@given(instance=uma_ProcessElement_strategy)
 @settings(max_examples=50)
-def test_uma::processelement_instantiation(instance):
-    assert isinstance(instance, uma::ProcessElement)
+def test_uma_processelement_instantiation(instance):
+    assert isinstance(instance, uma_ProcessElement)
 
-@given(instance=uma::ContentElement_strategy)
+@given(instance=uma_ContentElement_strategy)
 @settings(max_examples=50)
-def test_uma::contentelement_instantiation(instance):
-    assert isinstance(instance, uma::ContentElement)
-
-@given(instance=uma::ContentElement_strategy)
-def test_uma::contentelement_reusableAsset_type(instance):
-    assert isinstance(instance.reusableAsset, str)
+def test_uma_contentelement_instantiation(instance):
+    assert isinstance(instance, uma_ContentElement)
 
 
-@given(instance=uma::ContentElement_strategy)
-def test_uma::contentelement_reusableAsset_setter(instance):
-    original = instance.reusableAsset
-    instance.reusableAsset = original
-    assert instance.reusableAsset == original
 
-@given(instance=uma::ContentElement_strategy)
-def test_uma::contentelement_supportingMaterial_type(instance):
-    assert isinstance(instance.supportingMaterial, str)
+@given(instance=uma_ContentElement_strategy)
+def test_uma_contentelement_group1_setter(instance):
+    original = instance.group1
+    instance.group1 = original
+    assert instance.group1 == original
 
 
-@given(instance=uma::ContentElement_strategy)
-def test_uma::contentelement_supportingMaterial_setter(instance):
-    original = instance.supportingMaterial
-    instance.supportingMaterial = original
-    assert instance.supportingMaterial == original
 
-@given(instance=uma::ContentElement_strategy)
-def test_uma::contentelement_checklist_type(instance):
-    assert isinstance(instance.checklist, str)
-
-
-@given(instance=uma::ContentElement_strategy)
-def test_uma::contentelement_checklist_setter(instance):
-    original = instance.checklist
-    instance.checklist = original
-    assert instance.checklist == original
-
-@given(instance=uma::ContentElement_strategy)
-def test_uma::contentelement_variabilityType_type(instance):
-    assert isinstance(instance.variabilityType, str)
-
-
-@given(instance=uma::ContentElement_strategy)
-def test_uma::contentelement_variabilityType_setter(instance):
-    original = instance.variabilityType
-    instance.variabilityType = original
-    assert instance.variabilityType == original
-
-@given(instance=uma::ContentElement_strategy)
-def test_uma::contentelement_whitepaper_type(instance):
-    assert isinstance(instance.whitepaper, str)
-
-
-@given(instance=uma::ContentElement_strategy)
-def test_uma::contentelement_whitepaper_setter(instance):
-    original = instance.whitepaper
-    instance.whitepaper = original
-    assert instance.whitepaper == original
-
-@given(instance=uma::ContentElement_strategy)
-def test_uma::contentelement_variabilityBasedOnElement_type(instance):
-    assert isinstance(instance.variabilityBasedOnElement, str)
-
-
-@given(instance=uma::ContentElement_strategy)
-def test_uma::contentelement_variabilityBasedOnElement_setter(instance):
-    original = instance.variabilityBasedOnElement
-    instance.variabilityBasedOnElement = original
-    assert instance.variabilityBasedOnElement == original
-
-@given(instance=uma::ContentElement_strategy)
-def test_uma::contentelement_concept_type(instance):
-    assert isinstance(instance.concept, str)
-
-
-@given(instance=uma::ContentElement_strategy)
-def test_uma::contentelement_concept_setter(instance):
-    original = instance.concept
-    instance.concept = original
-    assert instance.concept == original
-
-@given(instance=uma::ContentElement_strategy)
-def test_uma::contentelement_example_type(instance):
-    assert isinstance(instance.example, str)
-
-
-@given(instance=uma::ContentElement_strategy)
-def test_uma::contentelement_example_setter(instance):
-    original = instance.example
-    instance.example = original
-    assert instance.example == original
-
-@given(instance=uma::ContentElement_strategy)
-def test_uma::contentelement_guideline_type(instance):
-    assert isinstance(instance.guideline, str)
-
-
-@given(instance=uma::ContentElement_strategy)
-def test_uma::contentelement_guideline_setter(instance):
+@given(instance=uma_ContentElement_strategy)
+def test_uma_contentelement_guideline_setter(instance):
     original = instance.guideline
     instance.guideline = original
     assert instance.guideline == original
 
-@given(instance=uma::ContentElement_strategy)
-def test_uma::contentelement_group1_type(instance):
-    assert isinstance(instance.group1, str)
 
 
-@given(instance=uma::ContentElement_strategy)
-def test_uma::contentelement_group1_setter(instance):
-    original = instance.group1
-    instance.group1 = original
-    assert instance.group1 == original
+@given(instance=uma_ContentElement_strategy)
+def test_uma_contentelement_variabilityBasedOnElement_setter(instance):
+    original = instance.variabilityBasedOnElement
+    instance.variabilityBasedOnElement = original
+    assert instance.variabilityBasedOnElement == original
+
+
+
+@given(instance=uma_ContentElement_strategy)
+def test_uma_contentelement_example_setter(instance):
+    original = instance.example
+    instance.example = original
+    assert instance.example == original
+
+
+
+@given(instance=uma_ContentElement_strategy)
+def test_uma_contentelement_variabilityType_setter(instance):
+    original = instance.variabilityType
+    instance.variabilityType = original
+    assert instance.variabilityType == original
+
+
+
+@given(instance=uma_ContentElement_strategy)
+def test_uma_contentelement_whitepaper_setter(instance):
+    original = instance.whitepaper
+    instance.whitepaper = original
+    assert instance.whitepaper == original
+
+
+
+@given(instance=uma_ContentElement_strategy)
+def test_uma_contentelement_supportingMaterial_setter(instance):
+    original = instance.supportingMaterial
+    instance.supportingMaterial = original
+    assert instance.supportingMaterial == original
+
+
+
+@given(instance=uma_ContentElement_strategy)
+def test_uma_contentelement_concept_setter(instance):
+    original = instance.concept
+    instance.concept = original
+    assert instance.concept == original
+
+
+
+@given(instance=uma_ContentElement_strategy)
+def test_uma_contentelement_checklist_setter(instance):
+    original = instance.checklist
+    instance.checklist = original
+    assert instance.checklist == original
+
+
+
+@given(instance=uma_ContentElement_strategy)
+def test_uma_contentelement_reusableAsset_setter(instance):
+    original = instance.reusableAsset
+    instance.reusableAsset = original
+    assert instance.reusableAsset == original
 
 @given(instance=MethodUnit_strategy)
 @settings(max_examples=50)
 def test_methodunit_instantiation(instance):
     assert isinstance(instance, MethodUnit)
 
-@given(instance=uma::MethodConfiguration_strategy)
+@given(instance=uma_MethodPlugin_strategy)
 @settings(max_examples=50)
-def test_uma::methodconfiguration_instantiation(instance):
-    assert isinstance(instance, uma::MethodConfiguration)
-
-@given(instance=uma::MethodConfiguration_strategy)
-def test_uma::methodconfiguration_processView_type(instance):
-    assert isinstance(instance.processView, str)
+def test_uma_methodplugin_instantiation(instance):
+    assert isinstance(instance, uma_MethodPlugin)
 
 
-@given(instance=uma::MethodConfiguration_strategy)
-def test_uma::methodconfiguration_processView_setter(instance):
-    original = instance.processView
-    instance.processView = original
-    assert instance.processView == original
 
-@given(instance=uma::MethodConfiguration_strategy)
-def test_uma::methodconfiguration_addedCategory_type(instance):
-    assert isinstance(instance.addedCategory, str)
-
-
-@given(instance=uma::MethodConfiguration_strategy)
-def test_uma::methodconfiguration_addedCategory_setter(instance):
-    original = instance.addedCategory
-    instance.addedCategory = original
-    assert instance.addedCategory == original
-
-@given(instance=uma::MethodConfiguration_strategy)
-def test_uma::methodconfiguration_methodPluginSelection_type(instance):
-    assert isinstance(instance.methodPluginSelection, str)
-
-
-@given(instance=uma::MethodConfiguration_strategy)
-def test_uma::methodconfiguration_methodPluginSelection_setter(instance):
-    original = instance.methodPluginSelection
-    instance.methodPluginSelection = original
-    assert instance.methodPluginSelection == original
-
-@given(instance=uma::MethodConfiguration_strategy)
-def test_uma::methodconfiguration_methodPackageSelection_type(instance):
-    assert isinstance(instance.methodPackageSelection, str)
-
-
-@given(instance=uma::MethodConfiguration_strategy)
-def test_uma::methodconfiguration_methodPackageSelection_setter(instance):
-    original = instance.methodPackageSelection
-    instance.methodPackageSelection = original
-    assert instance.methodPackageSelection == original
-
-@given(instance=uma::MethodConfiguration_strategy)
-def test_uma::methodconfiguration_subtractedCategory_type(instance):
-    assert isinstance(instance.subtractedCategory, str)
-
-
-@given(instance=uma::MethodConfiguration_strategy)
-def test_uma::methodconfiguration_subtractedCategory_setter(instance):
-    original = instance.subtractedCategory
-    instance.subtractedCategory = original
-    assert instance.subtractedCategory == original
-
-@given(instance=uma::MethodConfiguration_strategy)
-def test_uma::methodconfiguration_defaultView_type(instance):
-    assert isinstance(instance.defaultView, str)
-
-
-@given(instance=uma::MethodConfiguration_strategy)
-def test_uma::methodconfiguration_defaultView_setter(instance):
-    original = instance.defaultView
-    instance.defaultView = original
-    assert instance.defaultView == original
-
-@given(instance=uma::MethodConfiguration_strategy)
-def test_uma::methodconfiguration_baseConfiguration_type(instance):
-    assert isinstance(instance.baseConfiguration, str)
-
-
-@given(instance=uma::MethodConfiguration_strategy)
-def test_uma::methodconfiguration_baseConfiguration_setter(instance):
-    original = instance.baseConfiguration
-    instance.baseConfiguration = original
-    assert instance.baseConfiguration == original
-
-@given(instance=uma::MethodPlugin_strategy)
-@settings(max_examples=50)
-def test_uma::methodplugin_instantiation(instance):
-    assert isinstance(instance, uma::MethodPlugin)
-
-@given(instance=uma::MethodPlugin_strategy)
-def test_uma::methodplugin_userChangeable_type(instance):
-    assert isinstance(instance.userChangeable, str)
-
-
-@given(instance=uma::MethodPlugin_strategy)
-def test_uma::methodplugin_userChangeable_setter(instance):
+@given(instance=uma_MethodPlugin_strategy)
+def test_uma_methodplugin_userChangeable_setter(instance):
     original = instance.userChangeable
     instance.userChangeable = original
     assert instance.userChangeable == original
 
-@given(instance=uma::MethodPlugin_strategy)
-def test_uma::methodplugin_supporting_type(instance):
-    assert isinstance(instance.supporting, str)
 
 
-@given(instance=uma::MethodPlugin_strategy)
-def test_uma::methodplugin_supporting_setter(instance):
+@given(instance=uma_MethodPlugin_strategy)
+def test_uma_methodplugin_supporting_setter(instance):
     original = instance.supporting
     instance.supporting = original
     assert instance.supporting == original
 
-@given(instance=uma::MethodPlugin_strategy)
-def test_uma::methodplugin_referencedMethodPlugin_type(instance):
-    assert isinstance(instance.referencedMethodPlugin, str)
 
 
-@given(instance=uma::MethodPlugin_strategy)
-def test_uma::methodplugin_referencedMethodPlugin_setter(instance):
+@given(instance=uma_MethodPlugin_strategy)
+def test_uma_methodplugin_referencedMethodPlugin_setter(instance):
     original = instance.referencedMethodPlugin
     instance.referencedMethodPlugin = original
     assert instance.referencedMethodPlugin == original
 
-@given(instance=uma::MethodLibrary_strategy)
+@given(instance=uma_MethodLibrary_strategy)
 @settings(max_examples=50)
-def test_uma::methodlibrary_instantiation(instance):
-    assert isinstance(instance, uma::MethodLibrary)
-
-@given(instance=uma::MethodLibrary_strategy)
-def test_uma::methodlibrary_tool_type(instance):
-    assert isinstance(instance.tool, str)
+def test_uma_methodlibrary_instantiation(instance):
+    assert isinstance(instance, uma_MethodLibrary)
 
 
-@given(instance=uma::MethodLibrary_strategy)
-def test_uma::methodlibrary_tool_setter(instance):
+
+@given(instance=uma_MethodLibrary_strategy)
+def test_uma_methodlibrary_tool_setter(instance):
     original = instance.tool
     instance.tool = original
     assert instance.tool == original
 
-@given(instance=uma::ContentDescription_strategy)
+@given(instance=uma_MethodConfiguration_strategy)
 @settings(max_examples=50)
-def test_uma::contentdescription_instantiation(instance):
-    assert isinstance(instance, uma::ContentDescription)
-
-@given(instance=uma::ContentDescription_strategy)
-def test_uma::contentdescription_keyConsiderations_type(instance):
-    assert isinstance(instance.keyConsiderations, str)
+def test_uma_methodconfiguration_instantiation(instance):
+    assert isinstance(instance, uma_MethodConfiguration)
 
 
-@given(instance=uma::ContentDescription_strategy)
-def test_uma::contentdescription_keyConsiderations_setter(instance):
-    original = instance.keyConsiderations
-    instance.keyConsiderations = original
-    assert instance.keyConsiderations == original
 
-@given(instance=uma::ContentDescription_strategy)
-def test_uma::contentdescription_mainDescription_type(instance):
-    assert isinstance(instance.mainDescription, str)
+@given(instance=uma_MethodConfiguration_strategy)
+def test_uma_methodconfiguration_addedCategory_setter(instance):
+    original = instance.addedCategory
+    instance.addedCategory = original
+    assert instance.addedCategory == original
 
 
-@given(instance=uma::ContentDescription_strategy)
-def test_uma::contentdescription_mainDescription_setter(instance):
+
+@given(instance=uma_MethodConfiguration_strategy)
+def test_uma_methodconfiguration_methodPluginSelection_setter(instance):
+    original = instance.methodPluginSelection
+    instance.methodPluginSelection = original
+    assert instance.methodPluginSelection == original
+
+
+
+@given(instance=uma_MethodConfiguration_strategy)
+def test_uma_methodconfiguration_processView_setter(instance):
+    original = instance.processView
+    instance.processView = original
+    assert instance.processView == original
+
+
+
+@given(instance=uma_MethodConfiguration_strategy)
+def test_uma_methodconfiguration_defaultView_setter(instance):
+    original = instance.defaultView
+    instance.defaultView = original
+    assert instance.defaultView == original
+
+
+
+@given(instance=uma_MethodConfiguration_strategy)
+def test_uma_methodconfiguration_methodPackageSelection_setter(instance):
+    original = instance.methodPackageSelection
+    instance.methodPackageSelection = original
+    assert instance.methodPackageSelection == original
+
+
+
+@given(instance=uma_MethodConfiguration_strategy)
+def test_uma_methodconfiguration_subtractedCategory_setter(instance):
+    original = instance.subtractedCategory
+    instance.subtractedCategory = original
+    assert instance.subtractedCategory == original
+
+
+
+@given(instance=uma_MethodConfiguration_strategy)
+def test_uma_methodconfiguration_baseConfiguration_setter(instance):
+    original = instance.baseConfiguration
+    instance.baseConfiguration = original
+    assert instance.baseConfiguration == original
+
+@given(instance=uma_ContentDescription_strategy)
+@settings(max_examples=50)
+def test_uma_contentdescription_instantiation(instance):
+    assert isinstance(instance, uma_ContentDescription)
+
+
+
+@given(instance=uma_ContentDescription_strategy)
+def test_uma_contentdescription_mainDescription_setter(instance):
     original = instance.mainDescription
     instance.mainDescription = original
     assert instance.mainDescription == original
 
-@given(instance=uma::ContentDescription_strategy)
-def test_uma::contentdescription_externalId_type(instance):
-    assert isinstance(instance.externalId, str)
 
 
-@given(instance=uma::ContentDescription_strategy)
-def test_uma::contentdescription_externalId_setter(instance):
+@given(instance=uma_ContentDescription_strategy)
+def test_uma_contentdescription_keyConsiderations_setter(instance):
+    original = instance.keyConsiderations
+    instance.keyConsiderations = original
+    assert instance.keyConsiderations == original
+
+
+
+@given(instance=uma_ContentDescription_strategy)
+def test_uma_contentdescription_externalId_setter(instance):
     original = instance.externalId
     instance.externalId = original
     assert instance.externalId == original
@@ -6141,252 +5488,171 @@ def test_uma::contentdescription_externalId_setter(instance):
 def test_methodelement_instantiation(instance):
     assert isinstance(instance, MethodElement)
 
-@given(instance=uma::Section_strategy)
+@given(instance=uma_Section_strategy)
 @settings(max_examples=50)
-def test_uma::section_instantiation(instance):
-    assert isinstance(instance, uma::Section)
-
-@given(instance=uma::Section_strategy)
-def test_uma::section_description_type(instance):
-    assert isinstance(instance.description, str)
+def test_uma_section_instantiation(instance):
+    assert isinstance(instance, uma_Section)
 
 
-@given(instance=uma::Section_strategy)
-def test_uma::section_description_setter(instance):
+
+@given(instance=uma_Section_strategy)
+def test_uma_section_description_setter(instance):
     original = instance.description
     instance.description = original
     assert instance.description == original
 
-@given(instance=uma::Section_strategy)
-def test_uma::section_variabilityType_type(instance):
-    assert isinstance(instance.variabilityType, str)
 
 
-@given(instance=uma::Section_strategy)
-def test_uma::section_variabilityType_setter(instance):
-    original = instance.variabilityType
-    instance.variabilityType = original
-    assert instance.variabilityType == original
-
-@given(instance=uma::Section_strategy)
-def test_uma::section_predecessor_type(instance):
-    assert isinstance(instance.predecessor, str)
-
-
-@given(instance=uma::Section_strategy)
-def test_uma::section_predecessor_setter(instance):
-    original = instance.predecessor
-    instance.predecessor = original
-    assert instance.predecessor == original
-
-@given(instance=uma::Section_strategy)
-def test_uma::section_variabilityBasedOnElement_type(instance):
-    assert isinstance(instance.variabilityBasedOnElement, str)
-
-
-@given(instance=uma::Section_strategy)
-def test_uma::section_variabilityBasedOnElement_setter(instance):
-    original = instance.variabilityBasedOnElement
-    instance.variabilityBasedOnElement = original
-    assert instance.variabilityBasedOnElement == original
-
-@given(instance=uma::Section_strategy)
-def test_uma::section_sectionName_type(instance):
-    assert isinstance(instance.sectionName, str)
-
-
-@given(instance=uma::Section_strategy)
-def test_uma::section_sectionName_setter(instance):
+@given(instance=uma_Section_strategy)
+def test_uma_section_sectionName_setter(instance):
     original = instance.sectionName
     instance.sectionName = original
     assert instance.sectionName == original
 
-@given(instance=uma::MethodPackage_strategy)
+
+
+@given(instance=uma_Section_strategy)
+def test_uma_section_variabilityType_setter(instance):
+    original = instance.variabilityType
+    instance.variabilityType = original
+    assert instance.variabilityType == original
+
+
+
+@given(instance=uma_Section_strategy)
+def test_uma_section_variabilityBasedOnElement_setter(instance):
+    original = instance.variabilityBasedOnElement
+    instance.variabilityBasedOnElement = original
+    assert instance.variabilityBasedOnElement == original
+
+
+
+@given(instance=uma_Section_strategy)
+def test_uma_section_predecessor_setter(instance):
+    original = instance.predecessor
+    instance.predecessor = original
+    assert instance.predecessor == original
+
+@given(instance=uma_MethodPackage_strategy)
 @settings(max_examples=50)
-def test_uma::methodpackage_instantiation(instance):
-    assert isinstance(instance, uma::MethodPackage)
-
-@given(instance=uma::MethodPackage_strategy)
-def test_uma::methodpackage_group1_type(instance):
-    assert isinstance(instance.group1, str)
+def test_uma_methodpackage_instantiation(instance):
+    assert isinstance(instance, uma_MethodPackage)
 
 
-@given(instance=uma::MethodPackage_strategy)
-def test_uma::methodpackage_group1_setter(instance):
-    original = instance.group1
-    instance.group1 = original
-    assert instance.group1 == original
 
-@given(instance=uma::MethodPackage_strategy)
-def test_uma::methodpackage_global__type(instance):
-    assert isinstance(instance.global_, str)
-
-
-@given(instance=uma::MethodPackage_strategy)
-def test_uma::methodpackage_global__setter(instance):
+@given(instance=uma_MethodPackage_strategy)
+def test_uma_methodpackage_global__setter(instance):
     original = instance.global_
     instance.global_ = original
     assert instance.global_ == original
 
-@given(instance=uma::MethodPackage_strategy)
-def test_uma::methodpackage_reusedPackage_type(instance):
-    assert isinstance(instance.reusedPackage, str)
 
 
-@given(instance=uma::MethodPackage_strategy)
-def test_uma::methodpackage_reusedPackage_setter(instance):
+@given(instance=uma_MethodPackage_strategy)
+def test_uma_methodpackage_group1_setter(instance):
+    original = instance.group1
+    instance.group1 = original
+    assert instance.group1 == original
+
+
+
+@given(instance=uma_MethodPackage_strategy)
+def test_uma_methodpackage_reusedPackage_setter(instance):
     original = instance.reusedPackage
     instance.reusedPackage = original
     assert instance.reusedPackage == original
 
-@given(instance=uma::WorkDefinition_strategy)
+@given(instance=uma_MethodUnit_strategy)
 @settings(max_examples=50)
-def test_uma::workdefinition_instantiation(instance):
-    assert isinstance(instance, uma::WorkDefinition)
-
-@given(instance=uma::WorkDefinition_strategy)
-def test_uma::workdefinition_postcondition_type(instance):
-    assert isinstance(instance.postcondition, str)
+def test_uma_methodunit_instantiation(instance):
+    assert isinstance(instance, uma_MethodUnit)
 
 
-@given(instance=uma::WorkDefinition_strategy)
-def test_uma::workdefinition_postcondition_setter(instance):
-    original = instance.postcondition
-    instance.postcondition = original
-    assert instance.postcondition == original
 
-@given(instance=uma::WorkDefinition_strategy)
-def test_uma::workdefinition_precondition_type(instance):
-    assert isinstance(instance.precondition, str)
-
-
-@given(instance=uma::WorkDefinition_strategy)
-def test_uma::workdefinition_precondition_setter(instance):
-    original = instance.precondition
-    instance.precondition = original
-    assert instance.precondition == original
-
-@given(instance=uma::DescribableElement_strategy)
-@settings(max_examples=50)
-def test_uma::describableelement_instantiation(instance):
-    assert isinstance(instance, uma::DescribableElement)
-
-@given(instance=uma::DescribableElement_strategy)
-def test_uma::describableelement_fulfill_type(instance):
-    assert isinstance(instance.fulfill, str)
-
-
-@given(instance=uma::DescribableElement_strategy)
-def test_uma::describableelement_fulfill_setter(instance):
-    original = instance.fulfill
-    instance.fulfill = original
-    assert instance.fulfill == original
-
-@given(instance=uma::DescribableElement_strategy)
-def test_uma::describableelement_shapeicon_type(instance):
-    assert isinstance(instance.shapeicon, str)
-
-
-@given(instance=uma::DescribableElement_strategy)
-def test_uma::describableelement_shapeicon_setter(instance):
-    original = instance.shapeicon
-    instance.shapeicon = original
-    assert instance.shapeicon == original
-
-@given(instance=uma::DescribableElement_strategy)
-def test_uma::describableelement_nodeicon_type(instance):
-    assert isinstance(instance.nodeicon, str)
-
-
-@given(instance=uma::DescribableElement_strategy)
-def test_uma::describableelement_nodeicon_setter(instance):
-    original = instance.nodeicon
-    instance.nodeicon = original
-    assert instance.nodeicon == original
-
-@given(instance=uma::DescribableElement_strategy)
-def test_uma::describableelement_isAbstract_type(instance):
-    assert isinstance(instance.isAbstract, str)
-
-
-@given(instance=uma::DescribableElement_strategy)
-def test_uma::describableelement_isAbstract_setter(instance):
-    original = instance.isAbstract
-    instance.isAbstract = original
-    assert instance.isAbstract == original
-
-@given(instance=uma::MethodUnit_strategy)
-@settings(max_examples=50)
-def test_uma::methodunit_instantiation(instance):
-    assert isinstance(instance, uma::MethodUnit)
-
-@given(instance=uma::MethodUnit_strategy)
-def test_uma::methodunit_changeDescription_type(instance):
-    assert isinstance(instance.changeDescription, str)
-
-
-@given(instance=uma::MethodUnit_strategy)
-def test_uma::methodunit_changeDescription_setter(instance):
-    original = instance.changeDescription
-    instance.changeDescription = original
-    assert instance.changeDescription == original
-
-@given(instance=uma::MethodUnit_strategy)
-def test_uma::methodunit_version_type(instance):
-    assert isinstance(instance.version, str)
-
-
-@given(instance=uma::MethodUnit_strategy)
-def test_uma::methodunit_version_setter(instance):
-    original = instance.version
-    instance.version = original
-    assert instance.version == original
-
-@given(instance=uma::MethodUnit_strategy)
-def test_uma::methodunit_changeDate_type(instance):
-    assert isinstance(instance.changeDate, str)
-
-
-@given(instance=uma::MethodUnit_strategy)
-def test_uma::methodunit_changeDate_setter(instance):
+@given(instance=uma_MethodUnit_strategy)
+def test_uma_methodunit_changeDate_setter(instance):
     original = instance.changeDate
     instance.changeDate = original
     assert instance.changeDate == original
 
-@given(instance=uma::MethodUnit_strategy)
-def test_uma::methodunit_authors_type(instance):
-    assert isinstance(instance.authors, str)
 
 
-@given(instance=uma::MethodUnit_strategy)
-def test_uma::methodunit_authors_setter(instance):
+@given(instance=uma_MethodUnit_strategy)
+def test_uma_methodunit_changeDescription_setter(instance):
+    original = instance.changeDescription
+    instance.changeDescription = original
+    assert instance.changeDescription == original
+
+
+
+@given(instance=uma_MethodUnit_strategy)
+def test_uma_methodunit_authors_setter(instance):
     original = instance.authors
     instance.authors = original
     assert instance.authors == original
 
-@given(instance=uma::MethodUnit_strategy)
-def test_uma::methodunit_copyright_type(instance):
-    assert isinstance(instance.copyright, str)
 
 
-@given(instance=uma::MethodUnit_strategy)
-def test_uma::methodunit_copyright_setter(instance):
+@given(instance=uma_MethodUnit_strategy)
+def test_uma_methodunit_version_setter(instance):
+    original = instance.version
+    instance.version = original
+    assert instance.version == original
+
+
+
+@given(instance=uma_MethodUnit_strategy)
+def test_uma_methodunit_copyright_setter(instance):
     original = instance.copyright
     instance.copyright = original
     assert instance.copyright == original
 
-@given(instance=uma::Constraint_strategy)
+@given(instance=uma_DescribableElement_strategy)
 @settings(max_examples=50)
-def test_uma::constraint_instantiation(instance):
-    assert isinstance(instance, uma::Constraint)
-
-@given(instance=uma::Constraint_strategy)
-def test_uma::constraint_mainDescription_type(instance):
-    assert isinstance(instance.mainDescription, str)
+def test_uma_describableelement_instantiation(instance):
+    assert isinstance(instance, uma_DescribableElement)
 
 
-@given(instance=uma::Constraint_strategy)
-def test_uma::constraint_mainDescription_setter(instance):
+
+@given(instance=uma_DescribableElement_strategy)
+def test_uma_describableelement_isAbstract_setter(instance):
+    original = instance.isAbstract
+    instance.isAbstract = original
+    assert instance.isAbstract == original
+
+
+
+@given(instance=uma_DescribableElement_strategy)
+def test_uma_describableelement_shapeicon_setter(instance):
+    original = instance.shapeicon
+    instance.shapeicon = original
+    assert instance.shapeicon == original
+
+
+
+@given(instance=uma_DescribableElement_strategy)
+def test_uma_describableelement_nodeicon_setter(instance):
+    original = instance.nodeicon
+    instance.nodeicon = original
+    assert instance.nodeicon == original
+
+
+
+@given(instance=uma_DescribableElement_strategy)
+def test_uma_describableelement_fulfill_setter(instance):
+    original = instance.fulfill
+    instance.fulfill = original
+    assert instance.fulfill == original
+
+@given(instance=uma_Constraint_strategy)
+@settings(max_examples=50)
+def test_uma_constraint_instantiation(instance):
+    assert isinstance(instance, uma_Constraint)
+
+
+
+@given(instance=uma_Constraint_strategy)
+def test_uma_constraint_mainDescription_setter(instance):
     original = instance.mainDescription
     instance.mainDescription = original
     assert instance.mainDescription == original
@@ -6396,18 +5662,15 @@ def test_uma::constraint_mainDescription_setter(instance):
 def test_roledescriptor_instantiation(instance):
     assert isinstance(instance, RoleDescriptor)
 
-@given(instance=uma::CompositeRole_strategy)
+@given(instance=uma_CompositeRole_strategy)
 @settings(max_examples=50)
-def test_uma::compositerole_instantiation(instance):
-    assert isinstance(instance, uma::CompositeRole)
-
-@given(instance=uma::CompositeRole_strategy)
-def test_uma::compositerole_group2_type(instance):
-    assert isinstance(instance.group2, str)
+def test_uma_compositerole_instantiation(instance):
+    assert isinstance(instance, uma_CompositeRole)
 
 
-@given(instance=uma::CompositeRole_strategy)
-def test_uma::compositerole_group2_setter(instance):
+
+@given(instance=uma_CompositeRole_strategy)
+def test_uma_compositerole_group2_setter(instance):
     original = instance.group2
     instance.group2 = original
     assert instance.group2 == original
@@ -6417,429 +5680,273 @@ def test_uma::compositerole_group2_setter(instance):
 def test_guidance_instantiation(instance):
     assert isinstance(instance, Guidance)
 
-@given(instance=uma::Practice_strategy)
+@given(instance=uma_Example_strategy)
 @settings(max_examples=50)
-def test_uma::practice_instantiation(instance):
-    assert isinstance(instance, uma::Practice)
+def test_uma_example_instantiation(instance):
+    assert isinstance(instance, uma_Example)
 
-@given(instance=uma::Practice_strategy)
-def test_uma::practice_group2_type(instance):
-    assert isinstance(instance.group2, str)
+@given(instance=uma_ReusableAsset_strategy)
+@settings(max_examples=50)
+def test_uma_reusableasset_instantiation(instance):
+    assert isinstance(instance, uma_ReusableAsset)
+
+@given(instance=uma_Report_strategy)
+@settings(max_examples=50)
+def test_uma_report_instantiation(instance):
+    assert isinstance(instance, uma_Report)
+
+@given(instance=uma_Guideline_strategy)
+@settings(max_examples=50)
+def test_uma_guideline_instantiation(instance):
+    assert isinstance(instance, uma_Guideline)
+
+@given(instance=uma_EstimationConsiderations_strategy)
+@settings(max_examples=50)
+def test_uma_estimationconsiderations_instantiation(instance):
+    assert isinstance(instance, uma_EstimationConsiderations)
+
+@given(instance=uma_Concept_strategy)
+@settings(max_examples=50)
+def test_uma_concept_instantiation(instance):
+    assert isinstance(instance, uma_Concept)
+
+@given(instance=uma_Estimate_strategy)
+@settings(max_examples=50)
+def test_uma_estimate_instantiation(instance):
+    assert isinstance(instance, uma_Estimate)
 
 
-@given(instance=uma::Practice_strategy)
-def test_uma::practice_group2_setter(instance):
+
+@given(instance=uma_Estimate_strategy)
+def test_uma_estimate_group2_setter(instance):
     original = instance.group2
     instance.group2 = original
     assert instance.group2 == original
 
-@given(instance=uma::Practice_strategy)
-def test_uma::practice_contentReference_type(instance):
-    assert isinstance(instance.contentReference, str)
 
 
-@given(instance=uma::Practice_strategy)
-def test_uma::practice_contentReference_setter(instance):
-    original = instance.contentReference
-    instance.contentReference = original
-    assert instance.contentReference == original
-
-@given(instance=uma::Practice_strategy)
-def test_uma::practice_activityReference_type(instance):
-    assert isinstance(instance.activityReference, str)
-
-
-@given(instance=uma::Practice_strategy)
-def test_uma::practice_activityReference_setter(instance):
-    original = instance.activityReference
-    instance.activityReference = original
-    assert instance.activityReference == original
-
-@given(instance=uma::Estimate_strategy)
-@settings(max_examples=50)
-def test_uma::estimate_instantiation(instance):
-    assert isinstance(instance, uma::Estimate)
-
-@given(instance=uma::Estimate_strategy)
-def test_uma::estimate_estimationMetric_type(instance):
-    assert isinstance(instance.estimationMetric, str)
-
-
-@given(instance=uma::Estimate_strategy)
-def test_uma::estimate_estimationMetric_setter(instance):
-    original = instance.estimationMetric
-    instance.estimationMetric = original
-    assert instance.estimationMetric == original
-
-@given(instance=uma::Estimate_strategy)
-def test_uma::estimate_estimationConsiderations_type(instance):
-    assert isinstance(instance.estimationConsiderations, str)
-
-
-@given(instance=uma::Estimate_strategy)
-def test_uma::estimate_estimationConsiderations_setter(instance):
+@given(instance=uma_Estimate_strategy)
+def test_uma_estimate_estimationConsiderations_setter(instance):
     original = instance.estimationConsiderations
     instance.estimationConsiderations = original
     assert instance.estimationConsiderations == original
 
-@given(instance=uma::Estimate_strategy)
-def test_uma::estimate_group2_type(instance):
-    assert isinstance(instance.group2, str)
 
 
-@given(instance=uma::Estimate_strategy)
-def test_uma::estimate_group2_setter(instance):
+@given(instance=uma_Estimate_strategy)
+def test_uma_estimate_estimationMetric_setter(instance):
+    original = instance.estimationMetric
+    instance.estimationMetric = original
+    assert instance.estimationMetric == original
+
+@given(instance=uma_Practice_strategy)
+@settings(max_examples=50)
+def test_uma_practice_instantiation(instance):
+    assert isinstance(instance, uma_Practice)
+
+
+
+@given(instance=uma_Practice_strategy)
+def test_uma_practice_group2_setter(instance):
     original = instance.group2
     instance.group2 = original
     assert instance.group2 == original
 
-@given(instance=uma::Roadmap_strategy)
-@settings(max_examples=50)
-def test_uma::roadmap_instantiation(instance):
-    assert isinstance(instance, uma::Roadmap)
 
-@given(instance=uma::ToolMentor_strategy)
-@settings(max_examples=50)
-def test_uma::toolmentor_instantiation(instance):
-    assert isinstance(instance, uma::ToolMentor)
 
-@given(instance=uma::Template_strategy)
-@settings(max_examples=50)
-def test_uma::template_instantiation(instance):
-    assert isinstance(instance, uma::Template)
+@given(instance=uma_Practice_strategy)
+def test_uma_practice_activityReference_setter(instance):
+    original = instance.activityReference
+    instance.activityReference = original
+    assert instance.activityReference == original
 
-@given(instance=uma::EstimationConsiderations_strategy)
-@settings(max_examples=50)
-def test_uma::estimationconsiderations_instantiation(instance):
-    assert isinstance(instance, uma::EstimationConsiderations)
 
-@given(instance=uma::ReusableAsset_strategy)
-@settings(max_examples=50)
-def test_uma::reusableasset_instantiation(instance):
-    assert isinstance(instance, uma::ReusableAsset)
 
-@given(instance=uma::Guideline_strategy)
-@settings(max_examples=50)
-def test_uma::guideline_instantiation(instance):
-    assert isinstance(instance, uma::Guideline)
+@given(instance=uma_Practice_strategy)
+def test_uma_practice_contentReference_setter(instance):
+    original = instance.contentReference
+    instance.contentReference = original
+    assert instance.contentReference == original
 
-@given(instance=uma::TermDefinition_strategy)
+@given(instance=uma_EstimatingMetric_strategy)
 @settings(max_examples=50)
-def test_uma::termdefinition_instantiation(instance):
-    assert isinstance(instance, uma::TermDefinition)
+def test_uma_estimatingmetric_instantiation(instance):
+    assert isinstance(instance, uma_EstimatingMetric)
 
-@given(instance=uma::Report_strategy)
+@given(instance=uma_Checklist_strategy)
 @settings(max_examples=50)
-def test_uma::report_instantiation(instance):
-    assert isinstance(instance, uma::Report)
-
-@given(instance=uma::Concept_strategy)
-@settings(max_examples=50)
-def test_uma::concept_instantiation(instance):
-    assert isinstance(instance, uma::Concept)
-
-@given(instance=uma::SupportingMaterial_strategy)
-@settings(max_examples=50)
-def test_uma::supportingmaterial_instantiation(instance):
-    assert isinstance(instance, uma::SupportingMaterial)
-
-@given(instance=uma::EstimatingMetric_strategy)
-@settings(max_examples=50)
-def test_uma::estimatingmetric_instantiation(instance):
-    assert isinstance(instance, uma::EstimatingMetric)
-
-@given(instance=uma::Example_strategy)
-@settings(max_examples=50)
-def test_uma::example_instantiation(instance):
-    assert isinstance(instance, uma::Example)
-
-@given(instance=uma::Checklist_strategy)
-@settings(max_examples=50)
-def test_uma::checklist_instantiation(instance):
-    assert isinstance(instance, uma::Checklist)
+def test_uma_checklist_instantiation(instance):
+    assert isinstance(instance, uma_Checklist)
 
 @given(instance=Process_strategy)
 @settings(max_examples=50)
 def test_process_instantiation(instance):
     assert isinstance(instance, Process)
 
-@given(instance=uma::ProcessPlanningTemplate_strategy)
+@given(instance=uma_DeliveryProcess_strategy)
 @settings(max_examples=50)
-def test_uma::processplanningtemplate_instantiation(instance):
-    assert isinstance(instance, uma::ProcessPlanningTemplate)
-
-@given(instance=uma::ProcessPlanningTemplate_strategy)
-def test_uma::processplanningtemplate_baseProcess_type(instance):
-    assert isinstance(instance.baseProcess, str)
+def test_uma_deliveryprocess_instantiation(instance):
+    assert isinstance(instance, uma_DeliveryProcess)
 
 
-@given(instance=uma::ProcessPlanningTemplate_strategy)
-def test_uma::processplanningtemplate_baseProcess_setter(instance):
-    original = instance.baseProcess
-    instance.baseProcess = original
-    assert instance.baseProcess == original
 
-@given(instance=uma::ProcessPlanningTemplate_strategy)
-def test_uma::processplanningtemplate_group4_type(instance):
-    assert isinstance(instance.group4, str)
-
-
-@given(instance=uma::ProcessPlanningTemplate_strategy)
-def test_uma::processplanningtemplate_group4_setter(instance):
-    original = instance.group4
-    instance.group4 = original
-    assert instance.group4 == original
-
-@given(instance=uma::DeliveryProcess_strategy)
-@settings(max_examples=50)
-def test_uma::deliveryprocess_instantiation(instance):
-    assert isinstance(instance, uma::DeliveryProcess)
-
-@given(instance=uma::DeliveryProcess_strategy)
-def test_uma::deliveryprocess_educationMaterial_type(instance):
-    assert isinstance(instance.educationMaterial, str)
-
-
-@given(instance=uma::DeliveryProcess_strategy)
-def test_uma::deliveryprocess_educationMaterial_setter(instance):
-    original = instance.educationMaterial
-    instance.educationMaterial = original
-    assert instance.educationMaterial == original
-
-@given(instance=uma::DeliveryProcess_strategy)
-def test_uma::deliveryprocess_communicationsMaterial_type(instance):
-    assert isinstance(instance.communicationsMaterial, str)
-
-
-@given(instance=uma::DeliveryProcess_strategy)
-def test_uma::deliveryprocess_communicationsMaterial_setter(instance):
+@given(instance=uma_DeliveryProcess_strategy)
+def test_uma_deliveryprocess_communicationsMaterial_setter(instance):
     original = instance.communicationsMaterial
     instance.communicationsMaterial = original
     assert instance.communicationsMaterial == original
 
-@given(instance=uma::DeliveryProcess_strategy)
-def test_uma::deliveryprocess_group4_type(instance):
-    assert isinstance(instance.group4, str)
 
 
-@given(instance=uma::DeliveryProcess_strategy)
-def test_uma::deliveryprocess_group4_setter(instance):
+@given(instance=uma_DeliveryProcess_strategy)
+def test_uma_deliveryprocess_group4_setter(instance):
     original = instance.group4
     instance.group4 = original
     assert instance.group4 == original
 
-@given(instance=uma::CapabilityPattern_strategy)
+
+
+@given(instance=uma_DeliveryProcess_strategy)
+def test_uma_deliveryprocess_educationMaterial_setter(instance):
+    original = instance.educationMaterial
+    instance.educationMaterial = original
+    assert instance.educationMaterial == original
+
+@given(instance=uma_ProcessPlanningTemplate_strategy)
 @settings(max_examples=50)
-def test_uma::capabilitypattern_instantiation(instance):
-    assert isinstance(instance, uma::CapabilityPattern)
+def test_uma_processplanningtemplate_instantiation(instance):
+    assert isinstance(instance, uma_ProcessPlanningTemplate)
+
+
+
+@given(instance=uma_ProcessPlanningTemplate_strategy)
+def test_uma_processplanningtemplate_group4_setter(instance):
+    original = instance.group4
+    instance.group4 = original
+    assert instance.group4 == original
+
+
+
+@given(instance=uma_ProcessPlanningTemplate_strategy)
+def test_uma_processplanningtemplate_baseProcess_setter(instance):
+    original = instance.baseProcess
+    instance.baseProcess = original
+    assert instance.baseProcess == original
+
+@given(instance=uma_CapabilityPattern_strategy)
+@settings(max_examples=50)
+def test_uma_capabilitypattern_instantiation(instance):
+    assert isinstance(instance, uma_CapabilityPattern)
 
 @given(instance=ContentDescription_strategy)
 @settings(max_examples=50)
 def test_contentdescription_instantiation(instance):
     assert isinstance(instance, ContentDescription)
 
-@given(instance=uma::WorkProductDescription_strategy)
+@given(instance=uma_PracticeDescription_strategy)
 @settings(max_examples=50)
-def test_uma::workproductdescription_instantiation(instance):
-    assert isinstance(instance, uma::WorkProductDescription)
-
-@given(instance=uma::WorkProductDescription_strategy)
-def test_uma::workproductdescription_purpose_type(instance):
-    assert isinstance(instance.purpose, str)
+def test_uma_practicedescription_instantiation(instance):
+    assert isinstance(instance, uma_PracticeDescription)
 
 
-@given(instance=uma::WorkProductDescription_strategy)
-def test_uma::workproductdescription_purpose_setter(instance):
-    original = instance.purpose
-    instance.purpose = original
-    assert instance.purpose == original
 
-@given(instance=uma::WorkProductDescription_strategy)
-def test_uma::workproductdescription_impactOfNotHaving_type(instance):
-    assert isinstance(instance.impactOfNotHaving, str)
-
-
-@given(instance=uma::WorkProductDescription_strategy)
-def test_uma::workproductdescription_impactOfNotHaving_setter(instance):
-    original = instance.impactOfNotHaving
-    instance.impactOfNotHaving = original
-    assert instance.impactOfNotHaving == original
-
-@given(instance=uma::WorkProductDescription_strategy)
-def test_uma::workproductdescription_reasonsForNotNeeding_type(instance):
-    assert isinstance(instance.reasonsForNotNeeding, str)
-
-
-@given(instance=uma::WorkProductDescription_strategy)
-def test_uma::workproductdescription_reasonsForNotNeeding_setter(instance):
-    original = instance.reasonsForNotNeeding
-    instance.reasonsForNotNeeding = original
-    assert instance.reasonsForNotNeeding == original
-
-@given(instance=uma::PracticeDescription_strategy)
-@settings(max_examples=50)
-def test_uma::practicedescription_instantiation(instance):
-    assert isinstance(instance, uma::PracticeDescription)
-
-@given(instance=uma::PracticeDescription_strategy)
-def test_uma::practicedescription_background_type(instance):
-    assert isinstance(instance.background, str)
-
-
-@given(instance=uma::PracticeDescription_strategy)
-def test_uma::practicedescription_background_setter(instance):
+@given(instance=uma_PracticeDescription_strategy)
+def test_uma_practicedescription_background_setter(instance):
     original = instance.background
     instance.background = original
     assert instance.background == original
 
-@given(instance=uma::PracticeDescription_strategy)
-def test_uma::practicedescription_goals_type(instance):
-    assert isinstance(instance.goals, str)
 
 
-@given(instance=uma::PracticeDescription_strategy)
-def test_uma::practicedescription_goals_setter(instance):
-    original = instance.goals
-    instance.goals = original
-    assert instance.goals == original
-
-@given(instance=uma::PracticeDescription_strategy)
-def test_uma::practicedescription_application_type(instance):
-    assert isinstance(instance.application, str)
-
-
-@given(instance=uma::PracticeDescription_strategy)
-def test_uma::practicedescription_application_setter(instance):
-    original = instance.application
-    instance.application = original
-    assert instance.application == original
-
-@given(instance=uma::PracticeDescription_strategy)
-def test_uma::practicedescription_additionalInfo_type(instance):
-    assert isinstance(instance.additionalInfo, str)
-
-
-@given(instance=uma::PracticeDescription_strategy)
-def test_uma::practicedescription_additionalInfo_setter(instance):
-    original = instance.additionalInfo
-    instance.additionalInfo = original
-    assert instance.additionalInfo == original
-
-@given(instance=uma::PracticeDescription_strategy)
-def test_uma::practicedescription_problem_type(instance):
-    assert isinstance(instance.problem, str)
-
-
-@given(instance=uma::PracticeDescription_strategy)
-def test_uma::practicedescription_problem_setter(instance):
-    original = instance.problem
-    instance.problem = original
-    assert instance.problem == original
-
-@given(instance=uma::PracticeDescription_strategy)
-def test_uma::practicedescription_levelsOfAdoption_type(instance):
-    assert isinstance(instance.levelsOfAdoption, str)
-
-
-@given(instance=uma::PracticeDescription_strategy)
-def test_uma::practicedescription_levelsOfAdoption_setter(instance):
+@given(instance=uma_PracticeDescription_strategy)
+def test_uma_practicedescription_levelsOfAdoption_setter(instance):
     original = instance.levelsOfAdoption
     instance.levelsOfAdoption = original
     assert instance.levelsOfAdoption == original
 
-@given(instance=uma::TaskDescription_strategy)
+
+
+@given(instance=uma_PracticeDescription_strategy)
+def test_uma_practicedescription_additionalInfo_setter(instance):
+    original = instance.additionalInfo
+    instance.additionalInfo = original
+    assert instance.additionalInfo == original
+
+
+
+@given(instance=uma_PracticeDescription_strategy)
+def test_uma_practicedescription_problem_setter(instance):
+    original = instance.problem
+    instance.problem = original
+    assert instance.problem == original
+
+
+
+@given(instance=uma_PracticeDescription_strategy)
+def test_uma_practicedescription_application_setter(instance):
+    original = instance.application
+    instance.application = original
+    assert instance.application == original
+
+
+
+@given(instance=uma_PracticeDescription_strategy)
+def test_uma_practicedescription_goals_setter(instance):
+    original = instance.goals
+    instance.goals = original
+    assert instance.goals == original
+
+@given(instance=uma_GuidanceDescription_strategy)
 @settings(max_examples=50)
-def test_uma::taskdescription_instantiation(instance):
-    assert isinstance(instance, uma::TaskDescription)
-
-@given(instance=uma::TaskDescription_strategy)
-def test_uma::taskdescription_purpose_type(instance):
-    assert isinstance(instance.purpose, str)
+def test_uma_guidancedescription_instantiation(instance):
+    assert isinstance(instance, uma_GuidanceDescription)
 
 
-@given(instance=uma::TaskDescription_strategy)
-def test_uma::taskdescription_purpose_setter(instance):
-    original = instance.purpose
-    instance.purpose = original
-    assert instance.purpose == original
 
-@given(instance=uma::TaskDescription_strategy)
-def test_uma::taskdescription_alternatives_type(instance):
-    assert isinstance(instance.alternatives, str)
-
-
-@given(instance=uma::TaskDescription_strategy)
-def test_uma::taskdescription_alternatives_setter(instance):
-    original = instance.alternatives
-    instance.alternatives = original
-    assert instance.alternatives == original
-
-@given(instance=uma::GuidanceDescription_strategy)
-@settings(max_examples=50)
-def test_uma::guidancedescription_instantiation(instance):
-    assert isinstance(instance, uma::GuidanceDescription)
-
-@given(instance=uma::GuidanceDescription_strategy)
-def test_uma::guidancedescription_attachment_type(instance):
-    assert isinstance(instance.attachment, str)
-
-
-@given(instance=uma::GuidanceDescription_strategy)
-def test_uma::guidancedescription_attachment_setter(instance):
+@given(instance=uma_GuidanceDescription_strategy)
+def test_uma_guidancedescription_attachment_setter(instance):
     original = instance.attachment
     instance.attachment = original
     assert instance.attachment == original
 
-@given(instance=uma::RoleDescription_strategy)
+@given(instance=uma_RoleDescription_strategy)
 @settings(max_examples=50)
-def test_uma::roledescription_instantiation(instance):
-    assert isinstance(instance, uma::RoleDescription)
-
-@given(instance=uma::RoleDescription_strategy)
-def test_uma::roledescription_skills_type(instance):
-    assert isinstance(instance.skills, str)
+def test_uma_roledescription_instantiation(instance):
+    assert isinstance(instance, uma_RoleDescription)
 
 
-@given(instance=uma::RoleDescription_strategy)
-def test_uma::roledescription_skills_setter(instance):
-    original = instance.skills
-    instance.skills = original
-    assert instance.skills == original
 
-@given(instance=uma::RoleDescription_strategy)
-def test_uma::roledescription_assignmentApproaches_type(instance):
-    assert isinstance(instance.assignmentApproaches, str)
-
-
-@given(instance=uma::RoleDescription_strategy)
-def test_uma::roledescription_assignmentApproaches_setter(instance):
+@given(instance=uma_RoleDescription_strategy)
+def test_uma_roledescription_assignmentApproaches_setter(instance):
     original = instance.assignmentApproaches
     instance.assignmentApproaches = original
     assert instance.assignmentApproaches == original
 
-@given(instance=uma::RoleDescription_strategy)
-def test_uma::roledescription_synonyms_type(instance):
-    assert isinstance(instance.synonyms, str)
 
 
-@given(instance=uma::RoleDescription_strategy)
-def test_uma::roledescription_synonyms_setter(instance):
+@given(instance=uma_RoleDescription_strategy)
+def test_uma_roledescription_synonyms_setter(instance):
     original = instance.synonyms
     instance.synonyms = original
     assert instance.synonyms == original
 
-@given(instance=uma::BreakdownElementDescription_strategy)
+
+
+@given(instance=uma_RoleDescription_strategy)
+def test_uma_roledescription_skills_setter(instance):
+    original = instance.skills
+    instance.skills = original
+    assert instance.skills == original
+
+@given(instance=uma_BreakdownElementDescription_strategy)
 @settings(max_examples=50)
-def test_uma::breakdownelementdescription_instantiation(instance):
-    assert isinstance(instance, uma::BreakdownElementDescription)
-
-@given(instance=uma::BreakdownElementDescription_strategy)
-def test_uma::breakdownelementdescription_usageGuidance_type(instance):
-    assert isinstance(instance.usageGuidance, str)
+def test_uma_breakdownelementdescription_instantiation(instance):
+    assert isinstance(instance, uma_BreakdownElementDescription)
 
 
-@given(instance=uma::BreakdownElementDescription_strategy)
-def test_uma::breakdownelementdescription_usageGuidance_setter(instance):
+
+@given(instance=uma_BreakdownElementDescription_strategy)
+def test_uma_breakdownelementdescription_usageGuidance_setter(instance):
     original = instance.usageGuidance
     instance.usageGuidance = original
     assert instance.usageGuidance == original
@@ -6849,50 +5956,41 @@ def test_uma::breakdownelementdescription_usageGuidance_setter(instance):
 def test_methodpackage_instantiation(instance):
     assert isinstance(instance, MethodPackage)
 
-@given(instance=uma::ProcessPackage_strategy)
+@given(instance=uma_ProcessPackage_strategy)
 @settings(max_examples=50)
-def test_uma::processpackage_instantiation(instance):
-    assert isinstance(instance, uma::ProcessPackage)
-
-@given(instance=uma::ProcessPackage_strategy)
-def test_uma::processpackage_group2_type(instance):
-    assert isinstance(instance.group2, str)
+def test_uma_processpackage_instantiation(instance):
+    assert isinstance(instance, uma_ProcessPackage)
 
 
-@given(instance=uma::ProcessPackage_strategy)
-def test_uma::processpackage_group2_setter(instance):
+
+@given(instance=uma_ProcessPackage_strategy)
+def test_uma_processpackage_group2_setter(instance):
     original = instance.group2
     instance.group2 = original
     assert instance.group2 == original
 
-@given(instance=uma::ContentPackage_strategy)
+@given(instance=uma_ContentPackage_strategy)
 @settings(max_examples=50)
-def test_uma::contentpackage_instantiation(instance):
-    assert isinstance(instance, uma::ContentPackage)
-
-@given(instance=uma::ContentPackage_strategy)
-def test_uma::contentpackage_group2_type(instance):
-    assert isinstance(instance.group2, str)
+def test_uma_contentpackage_instantiation(instance):
+    assert isinstance(instance, uma_ContentPackage)
 
 
-@given(instance=uma::ContentPackage_strategy)
-def test_uma::contentpackage_group2_setter(instance):
+
+@given(instance=uma_ContentPackage_strategy)
+def test_uma_contentpackage_group2_setter(instance):
     original = instance.group2
     instance.group2 = original
     assert instance.group2 == original
 
-@given(instance=uma::ContentCategoryPackage_strategy)
+@given(instance=uma_ContentCategoryPackage_strategy)
 @settings(max_examples=50)
-def test_uma::contentcategorypackage_instantiation(instance):
-    assert isinstance(instance, uma::ContentCategoryPackage)
-
-@given(instance=uma::ContentCategoryPackage_strategy)
-def test_uma::contentcategorypackage_group2_type(instance):
-    assert isinstance(instance.group2, str)
+def test_uma_contentcategorypackage_instantiation(instance):
+    assert isinstance(instance, uma_ContentCategoryPackage)
 
 
-@given(instance=uma::ContentCategoryPackage_strategy)
-def test_uma::contentcategorypackage_group2_setter(instance):
+
+@given(instance=uma_ContentCategoryPackage_strategy)
+def test_uma_contentcategorypackage_group2_setter(instance):
     original = instance.group2
     instance.group2 = original
     assert instance.group2 == original
@@ -6902,386 +6000,153 @@ def test_uma::contentcategorypackage_group2_setter(instance):
 def test_contentelement_instantiation(instance):
     assert isinstance(instance, ContentElement)
 
-@given(instance=uma::WorkProduct_strategy)
+@given(instance=uma_Guidance_strategy)
 @settings(max_examples=50)
-def test_uma::workproduct_instantiation(instance):
-    assert isinstance(instance, uma::WorkProduct)
+def test_uma_guidance_instantiation(instance):
+    assert isinstance(instance, uma_Guidance)
 
-@given(instance=uma::WorkProduct_strategy)
-def test_uma::workproduct_toolMentor_type(instance):
-    assert isinstance(instance.toolMentor, str)
-
-
-@given(instance=uma::WorkProduct_strategy)
-def test_uma::workproduct_toolMentor_setter(instance):
-    original = instance.toolMentor
-    instance.toolMentor = original
-    assert instance.toolMentor == original
-
-@given(instance=uma::WorkProduct_strategy)
-def test_uma::workproduct_estimate_type(instance):
-    assert isinstance(instance.estimate, str)
-
-
-@given(instance=uma::WorkProduct_strategy)
-def test_uma::workproduct_estimate_setter(instance):
-    original = instance.estimate
-    instance.estimate = original
-    assert instance.estimate == original
-
-@given(instance=uma::WorkProduct_strategy)
-def test_uma::workproduct_report_type(instance):
-    assert isinstance(instance.report, str)
-
-
-@given(instance=uma::WorkProduct_strategy)
-def test_uma::workproduct_report_setter(instance):
-    original = instance.report
-    instance.report = original
-    assert instance.report == original
-
-@given(instance=uma::WorkProduct_strategy)
-def test_uma::workproduct_estimationConsiderations_type(instance):
-    assert isinstance(instance.estimationConsiderations, str)
-
-
-@given(instance=uma::WorkProduct_strategy)
-def test_uma::workproduct_estimationConsiderations_setter(instance):
-    original = instance.estimationConsiderations
-    instance.estimationConsiderations = original
-    assert instance.estimationConsiderations == original
-
-@given(instance=uma::WorkProduct_strategy)
-def test_uma::workproduct_group2_type(instance):
-    assert isinstance(instance.group2, str)
-
-
-@given(instance=uma::WorkProduct_strategy)
-def test_uma::workproduct_group2_setter(instance):
-    original = instance.group2
-    instance.group2 = original
-    assert instance.group2 == original
-
-@given(instance=uma::WorkProduct_strategy)
-def test_uma::workproduct_template_type(instance):
-    assert isinstance(instance.template, str)
-
-
-@given(instance=uma::WorkProduct_strategy)
-def test_uma::workproduct_template_setter(instance):
-    original = instance.template
-    instance.template = original
-    assert instance.template == original
-
-@given(instance=uma::Role_strategy)
+@given(instance=uma_Kind_strategy)
 @settings(max_examples=50)
-def test_uma::role_instantiation(instance):
-    assert isinstance(instance, uma::Role)
-
-@given(instance=uma::Role_strategy)
-def test_uma::role_group2_type(instance):
-    assert isinstance(instance.group2, str)
+def test_uma_kind_instantiation(instance):
+    assert isinstance(instance, uma_Kind)
 
 
-@given(instance=uma::Role_strategy)
-def test_uma::role_group2_setter(instance):
-    original = instance.group2
-    instance.group2 = original
-    assert instance.group2 == original
 
-@given(instance=uma::Role_strategy)
-def test_uma::role_responsibleFor_type(instance):
-    assert isinstance(instance.responsibleFor, str)
-
-
-@given(instance=uma::Role_strategy)
-def test_uma::role_responsibleFor_setter(instance):
-    original = instance.responsibleFor
-    instance.responsibleFor = original
-    assert instance.responsibleFor == original
-
-@given(instance=uma::Guidance_strategy)
-@settings(max_examples=50)
-def test_uma::guidance_instantiation(instance):
-    assert isinstance(instance, uma::Guidance)
-
-@given(instance=uma::Task_strategy)
-@settings(max_examples=50)
-def test_uma::task_instantiation(instance):
-    assert isinstance(instance, uma::Task)
-
-@given(instance=uma::Task_strategy)
-def test_uma::task_postcondition_type(instance):
-    assert isinstance(instance.postcondition, str)
-
-
-@given(instance=uma::Task_strategy)
-def test_uma::task_postcondition_setter(instance):
-    original = instance.postcondition
-    instance.postcondition = original
-    assert instance.postcondition == original
-
-@given(instance=uma::Task_strategy)
-def test_uma::task_additionallyPerformedBy_type(instance):
-    assert isinstance(instance.additionallyPerformedBy, str)
-
-
-@given(instance=uma::Task_strategy)
-def test_uma::task_additionallyPerformedBy_setter(instance):
-    original = instance.additionallyPerformedBy
-    instance.additionallyPerformedBy = original
-    assert instance.additionallyPerformedBy == original
-
-@given(instance=uma::Task_strategy)
-def test_uma::task_group2_type(instance):
-    assert isinstance(instance.group2, str)
-
-
-@given(instance=uma::Task_strategy)
-def test_uma::task_group2_setter(instance):
-    original = instance.group2
-    instance.group2 = original
-    assert instance.group2 == original
-
-@given(instance=uma::Task_strategy)
-def test_uma::task_toolMentor_type(instance):
-    assert isinstance(instance.toolMentor, str)
-
-
-@given(instance=uma::Task_strategy)
-def test_uma::task_toolMentor_setter(instance):
-    original = instance.toolMentor
-    instance.toolMentor = original
-    assert instance.toolMentor == original
-
-@given(instance=uma::Task_strategy)
-def test_uma::task_mandatoryInput_type(instance):
-    assert isinstance(instance.mandatoryInput, str)
-
-
-@given(instance=uma::Task_strategy)
-def test_uma::task_mandatoryInput_setter(instance):
-    original = instance.mandatoryInput
-    instance.mandatoryInput = original
-    assert instance.mandatoryInput == original
-
-@given(instance=uma::Task_strategy)
-def test_uma::task_estimationConsiderations_type(instance):
-    assert isinstance(instance.estimationConsiderations, str)
-
-
-@given(instance=uma::Task_strategy)
-def test_uma::task_estimationConsiderations_setter(instance):
-    original = instance.estimationConsiderations
-    instance.estimationConsiderations = original
-    assert instance.estimationConsiderations == original
-
-@given(instance=uma::Task_strategy)
-def test_uma::task_estimate_type(instance):
-    assert isinstance(instance.estimate, str)
-
-
-@given(instance=uma::Task_strategy)
-def test_uma::task_estimate_setter(instance):
-    original = instance.estimate
-    instance.estimate = original
-    assert instance.estimate == original
-
-@given(instance=uma::Task_strategy)
-def test_uma::task_output_type(instance):
-    assert isinstance(instance.output, str)
-
-
-@given(instance=uma::Task_strategy)
-def test_uma::task_output_setter(instance):
-    original = instance.output
-    instance.output = original
-    assert instance.output == original
-
-@given(instance=uma::Task_strategy)
-def test_uma::task_performedBy_type(instance):
-    assert isinstance(instance.performedBy, str)
-
-
-@given(instance=uma::Task_strategy)
-def test_uma::task_performedBy_setter(instance):
-    original = instance.performedBy
-    instance.performedBy = original
-    assert instance.performedBy == original
-
-@given(instance=uma::Task_strategy)
-def test_uma::task_optionalInput_type(instance):
-    assert isinstance(instance.optionalInput, str)
-
-
-@given(instance=uma::Task_strategy)
-def test_uma::task_optionalInput_setter(instance):
-    original = instance.optionalInput
-    instance.optionalInput = original
-    assert instance.optionalInput == original
-
-@given(instance=uma::Task_strategy)
-def test_uma::task_precondition_type(instance):
-    assert isinstance(instance.precondition, str)
-
-
-@given(instance=uma::Task_strategy)
-def test_uma::task_precondition_setter(instance):
-    original = instance.precondition
-    instance.precondition = original
-    assert instance.precondition == original
-
-@given(instance=uma::Kind_strategy)
-@settings(max_examples=50)
-def test_uma::kind_instantiation(instance):
-    assert isinstance(instance, uma::Kind)
-
-@given(instance=uma::Kind_strategy)
-def test_uma::kind_applicableMetaClassInfo_type(instance):
-    assert isinstance(instance.applicableMetaClassInfo, str)
-
-
-@given(instance=uma::Kind_strategy)
-def test_uma::kind_applicableMetaClassInfo_setter(instance):
+@given(instance=uma_Kind_strategy)
+def test_uma_kind_applicableMetaClassInfo_setter(instance):
     original = instance.applicableMetaClassInfo
     instance.applicableMetaClassInfo = original
     assert instance.applicableMetaClassInfo == original
 
-@given(instance=uma::ContentCategory_strategy)
+@given(instance=uma_Role_strategy)
 @settings(max_examples=50)
-def test_uma::contentcategory_instantiation(instance):
-    assert isinstance(instance, uma::ContentCategory)
+def test_uma_role_instantiation(instance):
+    assert isinstance(instance, uma_Role)
+
+
+
+@given(instance=uma_Role_strategy)
+def test_uma_role_group2_setter(instance):
+    original = instance.group2
+    instance.group2 = original
+    assert instance.group2 == original
+
+
+
+@given(instance=uma_Role_strategy)
+def test_uma_role_responsibleFor_setter(instance):
+    original = instance.responsibleFor
+    instance.responsibleFor = original
+    assert instance.responsibleFor == original
+
+@given(instance=uma_ContentCategory_strategy)
+@settings(max_examples=50)
+def test_uma_contentcategory_instantiation(instance):
+    assert isinstance(instance, uma_ContentCategory)
 
 @given(instance=WorkProductDescription_strategy)
 @settings(max_examples=50)
 def test_workproductdescription_instantiation(instance):
     assert isinstance(instance, WorkProductDescription)
 
-@given(instance=uma::DeliverableDescription_strategy)
+@given(instance=uma_DeliverableDescription_strategy)
 @settings(max_examples=50)
-def test_uma::deliverabledescription_instantiation(instance):
-    assert isinstance(instance, uma::DeliverableDescription)
-
-@given(instance=uma::DeliverableDescription_strategy)
-def test_uma::deliverabledescription_externalDescription_type(instance):
-    assert isinstance(instance.externalDescription, str)
+def test_uma_deliverabledescription_instantiation(instance):
+    assert isinstance(instance, uma_DeliverableDescription)
 
 
-@given(instance=uma::DeliverableDescription_strategy)
-def test_uma::deliverabledescription_externalDescription_setter(instance):
+
+@given(instance=uma_DeliverableDescription_strategy)
+def test_uma_deliverabledescription_externalDescription_setter(instance):
     original = instance.externalDescription
     instance.externalDescription = original
     assert instance.externalDescription == original
 
-@given(instance=uma::DeliverableDescription_strategy)
-def test_uma::deliverabledescription_packagingGuidance_type(instance):
-    assert isinstance(instance.packagingGuidance, str)
 
 
-@given(instance=uma::DeliverableDescription_strategy)
-def test_uma::deliverabledescription_packagingGuidance_setter(instance):
+@given(instance=uma_DeliverableDescription_strategy)
+def test_uma_deliverabledescription_packagingGuidance_setter(instance):
     original = instance.packagingGuidance
     instance.packagingGuidance = original
     assert instance.packagingGuidance == original
 
-@given(instance=uma::ArtifactDescription_strategy)
+@given(instance=uma_ArtifactDescription_strategy)
 @settings(max_examples=50)
-def test_uma::artifactdescription_instantiation(instance):
-    assert isinstance(instance, uma::ArtifactDescription)
-
-@given(instance=uma::ArtifactDescription_strategy)
-def test_uma::artifactdescription_representationOptions_type(instance):
-    assert isinstance(instance.representationOptions, str)
+def test_uma_artifactdescription_instantiation(instance):
+    assert isinstance(instance, uma_ArtifactDescription)
 
 
-@given(instance=uma::ArtifactDescription_strategy)
-def test_uma::artifactdescription_representationOptions_setter(instance):
+
+@given(instance=uma_ArtifactDescription_strategy)
+def test_uma_artifactdescription_representationOptions_setter(instance):
     original = instance.representationOptions
     instance.representationOptions = original
     assert instance.representationOptions == original
 
-@given(instance=uma::ArtifactDescription_strategy)
-def test_uma::artifactdescription_representation_type(instance):
-    assert isinstance(instance.representation, str)
 
 
-@given(instance=uma::ArtifactDescription_strategy)
-def test_uma::artifactdescription_representation_setter(instance):
+@given(instance=uma_ArtifactDescription_strategy)
+def test_uma_artifactdescription_notation_setter(instance):
+    original = instance.notation
+    instance.notation = original
+    assert instance.notation == original
+
+
+
+@given(instance=uma_ArtifactDescription_strategy)
+def test_uma_artifactdescription_representation_setter(instance):
     original = instance.representation
     instance.representation = original
     assert instance.representation == original
 
-@given(instance=uma::ArtifactDescription_strategy)
-def test_uma::artifactdescription_briefOutline_type(instance):
-    assert isinstance(instance.briefOutline, str)
 
 
-@given(instance=uma::ArtifactDescription_strategy)
-def test_uma::artifactdescription_briefOutline_setter(instance):
+@given(instance=uma_ArtifactDescription_strategy)
+def test_uma_artifactdescription_briefOutline_setter(instance):
     original = instance.briefOutline
     instance.briefOutline = original
     assert instance.briefOutline == original
-
-@given(instance=uma::ArtifactDescription_strategy)
-def test_uma::artifactdescription_notation_type(instance):
-    assert isinstance(instance.notation, str)
-
-
-@given(instance=uma::ArtifactDescription_strategy)
-def test_uma::artifactdescription_notation_setter(instance):
-    original = instance.notation
-    instance.notation = original
-    assert instance.notation == original
 
 @given(instance=WorkProduct_strategy)
 @settings(max_examples=50)
 def test_workproduct_instantiation(instance):
     assert isinstance(instance, WorkProduct)
 
-@given(instance=uma::Outcome_strategy)
+@given(instance=uma_Outcome_strategy)
 @settings(max_examples=50)
-def test_uma::outcome_instantiation(instance):
-    assert isinstance(instance, uma::Outcome)
+def test_uma_outcome_instantiation(instance):
+    assert isinstance(instance, uma_Outcome)
 
-@given(instance=uma::Deliverable_strategy)
+@given(instance=uma_Deliverable_strategy)
 @settings(max_examples=50)
-def test_uma::deliverable_instantiation(instance):
-    assert isinstance(instance, uma::Deliverable)
-
-@given(instance=uma::Deliverable_strategy)
-def test_uma::deliverable_deliveredWorkProduct_type(instance):
-    assert isinstance(instance.deliveredWorkProduct, str)
+def test_uma_deliverable_instantiation(instance):
+    assert isinstance(instance, uma_Deliverable)
 
 
-@given(instance=uma::Deliverable_strategy)
-def test_uma::deliverable_deliveredWorkProduct_setter(instance):
+
+@given(instance=uma_Deliverable_strategy)
+def test_uma_deliverable_deliveredWorkProduct_setter(instance):
     original = instance.deliveredWorkProduct
     instance.deliveredWorkProduct = original
     assert instance.deliveredWorkProduct == original
 
-@given(instance=uma::Deliverable_strategy)
-def test_uma::deliverable_group3_type(instance):
-    assert isinstance(instance.group3, str)
 
 
-@given(instance=uma::Deliverable_strategy)
-def test_uma::deliverable_group3_setter(instance):
+@given(instance=uma_Deliverable_strategy)
+def test_uma_deliverable_group3_setter(instance):
     original = instance.group3
     instance.group3 = original
     assert instance.group3 == original
 
-@given(instance=uma::Artifact_strategy)
+@given(instance=uma_Artifact_strategy)
 @settings(max_examples=50)
-def test_uma::artifact_instantiation(instance):
-    assert isinstance(instance, uma::Artifact)
-
-@given(instance=uma::Artifact_strategy)
-def test_uma::artifact_group3_type(instance):
-    assert isinstance(instance.group3, str)
+def test_uma_artifact_instantiation(instance):
+    assert isinstance(instance, uma_Artifact)
 
 
-@given(instance=uma::Artifact_strategy)
-def test_uma::artifact_group3_setter(instance):
+
+@given(instance=uma_Artifact_strategy)
+def test_uma_artifact_group3_setter(instance):
     original = instance.group3
     instance.group3 = original
     assert instance.group3 == original
@@ -7291,105 +6156,81 @@ def test_uma::artifact_group3_setter(instance):
 def test_packageableelement_instantiation(instance):
     assert isinstance(instance, PackageableElement)
 
-@given(instance=uma::MethodElementProperty_strategy)
+@given(instance=uma_MethodElementProperty_strategy)
 @settings(max_examples=50)
-def test_uma::methodelementproperty_instantiation(instance):
-    assert isinstance(instance, uma::MethodElementProperty)
-
-@given(instance=uma::MethodElementProperty_strategy)
-def test_uma::methodelementproperty_value_type(instance):
-    assert isinstance(instance.value, str)
+def test_uma_methodelementproperty_instantiation(instance):
+    assert isinstance(instance, uma_MethodElementProperty)
 
 
-@given(instance=uma::MethodElementProperty_strategy)
-def test_uma::methodelementproperty_value_setter(instance):
+
+@given(instance=uma_MethodElementProperty_strategy)
+def test_uma_methodelementproperty_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
 
-@given(instance=uma::MethodElement_strategy)
+@given(instance=uma_MethodElement_strategy)
 @settings(max_examples=50)
-def test_uma::methodelement_instantiation(instance):
-    assert isinstance(instance, uma::MethodElement)
-
-@given(instance=uma::MethodElement_strategy)
-def test_uma::methodelement_presentationName_type(instance):
-    assert isinstance(instance.presentationName, str)
+def test_uma_methodelement_instantiation(instance):
+    assert isinstance(instance, uma_MethodElement)
 
 
-@given(instance=uma::MethodElement_strategy)
-def test_uma::methodelement_presentationName_setter(instance):
-    original = instance.presentationName
-    instance.presentationName = original
-    assert instance.presentationName == original
 
-@given(instance=uma::MethodElement_strategy)
-def test_uma::methodelement_group_type(instance):
-    assert isinstance(instance.group, str)
-
-
-@given(instance=uma::MethodElement_strategy)
-def test_uma::methodelement_group_setter(instance):
-    original = instance.group
-    instance.group = original
-    assert instance.group == original
-
-@given(instance=uma::MethodElement_strategy)
-def test_uma::methodelement_orderingGuide_type(instance):
-    assert isinstance(instance.orderingGuide, str)
-
-
-@given(instance=uma::MethodElement_strategy)
-def test_uma::methodelement_orderingGuide_setter(instance):
-    original = instance.orderingGuide
-    instance.orderingGuide = original
-    assert instance.orderingGuide == original
-
-@given(instance=uma::MethodElement_strategy)
-def test_uma::methodelement_id_type(instance):
-    assert isinstance(instance.id, str)
-
-
-@given(instance=uma::MethodElement_strategy)
-def test_uma::methodelement_id_setter(instance):
-    original = instance.id
-    instance.id = original
-    assert instance.id == original
-
-@given(instance=uma::MethodElement_strategy)
-def test_uma::methodelement_suppressed_type(instance):
-    assert isinstance(instance.suppressed, str)
-
-
-@given(instance=uma::MethodElement_strategy)
-def test_uma::methodelement_suppressed_setter(instance):
+@given(instance=uma_MethodElement_strategy)
+def test_uma_methodelement_suppressed_setter(instance):
     original = instance.suppressed
     instance.suppressed = original
     assert instance.suppressed == original
 
-@given(instance=uma::MethodElement_strategy)
-def test_uma::methodelement_briefDescription_type(instance):
-    assert isinstance(instance.briefDescription, str)
 
 
-@given(instance=uma::MethodElement_strategy)
-def test_uma::methodelement_briefDescription_setter(instance):
+@given(instance=uma_MethodElement_strategy)
+def test_uma_methodelement_orderingGuide_setter(instance):
+    original = instance.orderingGuide
+    instance.orderingGuide = original
+    assert instance.orderingGuide == original
+
+
+
+@given(instance=uma_MethodElement_strategy)
+def test_uma_methodelement_id_setter(instance):
+    original = instance.id
+    instance.id = original
+    assert instance.id == original
+
+
+
+@given(instance=uma_MethodElement_strategy)
+def test_uma_methodelement_briefDescription_setter(instance):
     original = instance.briefDescription
     instance.briefDescription = original
     assert instance.briefDescription == original
 
-@given(instance=uma::ApplicableMetaClassInfo_strategy)
+
+
+@given(instance=uma_MethodElement_strategy)
+def test_uma_methodelement_presentationName_setter(instance):
+    original = instance.presentationName
+    instance.presentationName = original
+    assert instance.presentationName == original
+
+
+
+@given(instance=uma_MethodElement_strategy)
+def test_uma_methodelement_group_setter(instance):
+    original = instance.group
+    instance.group = original
+    assert instance.group == original
+
+@given(instance=uma_ApplicableMetaClassInfo_strategy)
 @settings(max_examples=50)
-def test_uma::applicablemetaclassinfo_instantiation(instance):
-    assert isinstance(instance, uma::ApplicableMetaClassInfo)
-
-@given(instance=uma::ApplicableMetaClassInfo_strategy)
-def test_uma::applicablemetaclassinfo_isPrimaryExtension_type(instance):
-    assert isinstance(instance.isPrimaryExtension, str)
+def test_uma_applicablemetaclassinfo_instantiation(instance):
+    assert isinstance(instance, uma_ApplicableMetaClassInfo)
 
 
-@given(instance=uma::ApplicableMetaClassInfo_strategy)
-def test_uma::applicablemetaclassinfo_isPrimaryExtension_setter(instance):
+
+@given(instance=uma_ApplicableMetaClassInfo_strategy)
+def test_uma_applicablemetaclassinfo_isPrimaryExtension_setter(instance):
     original = instance.isPrimaryExtension
     instance.isPrimaryExtension = original
     assert instance.isPrimaryExtension == original
@@ -7399,280 +6240,785 @@ def test_uma::applicablemetaclassinfo_isPrimaryExtension_setter(instance):
 def test_processelement_instantiation(instance):
     assert isinstance(instance, ProcessElement)
 
-@given(instance=uma::PlanningData_strategy)
+@given(instance=uma_PlanningData_strategy)
 @settings(max_examples=50)
-def test_uma::planningdata_instantiation(instance):
-    assert isinstance(instance, uma::PlanningData)
-
-@given(instance=uma::PlanningData_strategy)
-def test_uma::planningdata_rank_type(instance):
-    assert isinstance(instance.rank, str)
+def test_uma_planningdata_instantiation(instance):
+    assert isinstance(instance, uma_PlanningData)
 
 
-@given(instance=uma::PlanningData_strategy)
-def test_uma::planningdata_rank_setter(instance):
-    original = instance.rank
-    instance.rank = original
-    assert instance.rank == original
 
-@given(instance=uma::PlanningData_strategy)
-def test_uma::planningdata_finishDate_type(instance):
-    assert isinstance(instance.finishDate, str)
-
-
-@given(instance=uma::PlanningData_strategy)
-def test_uma::planningdata_finishDate_setter(instance):
+@given(instance=uma_PlanningData_strategy)
+def test_uma_planningdata_finishDate_setter(instance):
     original = instance.finishDate
     instance.finishDate = original
     assert instance.finishDate == original
 
-@given(instance=uma::PlanningData_strategy)
-def test_uma::planningdata_startDate_type(instance):
-    assert isinstance(instance.startDate, str)
 
 
-@given(instance=uma::PlanningData_strategy)
-def test_uma::planningdata_startDate_setter(instance):
+@given(instance=uma_PlanningData_strategy)
+def test_uma_planningdata_rank_setter(instance):
+    original = instance.rank
+    instance.rank = original
+    assert instance.rank == original
+
+
+
+@given(instance=uma_PlanningData_strategy)
+def test_uma_planningdata_startDate_setter(instance):
     original = instance.startDate
     instance.startDate = original
     assert instance.startDate == original
 
-@given(instance=uma::BreakdownElement_strategy)
+@given(instance=uma_BreakdownElement_strategy)
 @settings(max_examples=50)
-def test_uma::breakdownelement_instantiation(instance):
-    assert isinstance(instance, uma::BreakdownElement)
-
-@given(instance=uma::BreakdownElement_strategy)
-def test_uma::breakdownelement_isOptional_type(instance):
-    assert isinstance(instance.isOptional, str)
+def test_uma_breakdownelement_instantiation(instance):
+    assert isinstance(instance, uma_BreakdownElement)
 
 
-@given(instance=uma::BreakdownElement_strategy)
-def test_uma::breakdownelement_isOptional_setter(instance):
-    original = instance.isOptional
-    instance.isOptional = original
-    assert instance.isOptional == original
 
-@given(instance=uma::BreakdownElement_strategy)
-def test_uma::breakdownelement_example_type(instance):
-    assert isinstance(instance.example, str)
-
-
-@given(instance=uma::BreakdownElement_strategy)
-def test_uma::breakdownelement_example_setter(instance):
-    original = instance.example
-    instance.example = original
-    assert instance.example == original
-
-@given(instance=uma::BreakdownElement_strategy)
-def test_uma::breakdownelement_presentedAfter_type(instance):
-    assert isinstance(instance.presentedAfter, str)
-
-
-@given(instance=uma::BreakdownElement_strategy)
-def test_uma::breakdownelement_presentedAfter_setter(instance):
-    original = instance.presentedAfter
-    instance.presentedAfter = original
-    assert instance.presentedAfter == original
-
-@given(instance=uma::BreakdownElement_strategy)
-def test_uma::breakdownelement_reusableAsset_type(instance):
-    assert isinstance(instance.reusableAsset, str)
-
-
-@given(instance=uma::BreakdownElement_strategy)
-def test_uma::breakdownelement_reusableAsset_setter(instance):
-    original = instance.reusableAsset
-    instance.reusableAsset = original
-    assert instance.reusableAsset == original
-
-@given(instance=uma::BreakdownElement_strategy)
-def test_uma::breakdownelement_guideline_type(instance):
-    assert isinstance(instance.guideline, str)
-
-
-@given(instance=uma::BreakdownElement_strategy)
-def test_uma::breakdownelement_guideline_setter(instance):
-    original = instance.guideline
-    instance.guideline = original
-    assert instance.guideline == original
-
-@given(instance=uma::BreakdownElement_strategy)
-def test_uma::breakdownelement_planningData_type(instance):
-    assert isinstance(instance.planningData, str)
-
-
-@given(instance=uma::BreakdownElement_strategy)
-def test_uma::breakdownelement_planningData_setter(instance):
-    original = instance.planningData
-    instance.planningData = original
-    assert instance.planningData == original
-
-@given(instance=uma::BreakdownElement_strategy)
-def test_uma::breakdownelement_supportingMaterial_type(instance):
-    assert isinstance(instance.supportingMaterial, str)
-
-
-@given(instance=uma::BreakdownElement_strategy)
-def test_uma::breakdownelement_supportingMaterial_setter(instance):
+@given(instance=uma_BreakdownElement_strategy)
+def test_uma_breakdownelement_supportingMaterial_setter(instance):
     original = instance.supportingMaterial
     instance.supportingMaterial = original
     assert instance.supportingMaterial == original
 
-@given(instance=uma::BreakdownElement_strategy)
-def test_uma::breakdownelement_prefix_type(instance):
-    assert isinstance(instance.prefix, str)
 
 
-@given(instance=uma::BreakdownElement_strategy)
-def test_uma::breakdownelement_prefix_setter(instance):
+@given(instance=uma_BreakdownElement_strategy)
+def test_uma_breakdownelement_prefix_setter(instance):
     original = instance.prefix
     instance.prefix = original
     assert instance.prefix == original
 
-@given(instance=uma::BreakdownElement_strategy)
-def test_uma::breakdownelement_hasMultipleOccurrences_type(instance):
-    assert isinstance(instance.hasMultipleOccurrences, str)
 
 
-@given(instance=uma::BreakdownElement_strategy)
-def test_uma::breakdownelement_hasMultipleOccurrences_setter(instance):
-    original = instance.hasMultipleOccurrences
-    instance.hasMultipleOccurrences = original
-    assert instance.hasMultipleOccurrences == original
-
-@given(instance=uma::BreakdownElement_strategy)
-def test_uma::breakdownelement_checklist_type(instance):
-    assert isinstance(instance.checklist, str)
-
-
-@given(instance=uma::BreakdownElement_strategy)
-def test_uma::breakdownelement_checklist_setter(instance):
-    original = instance.checklist
-    instance.checklist = original
-    assert instance.checklist == original
-
-@given(instance=uma::BreakdownElement_strategy)
-def test_uma::breakdownelement_whitepaper_type(instance):
-    assert isinstance(instance.whitepaper, str)
-
-
-@given(instance=uma::BreakdownElement_strategy)
-def test_uma::breakdownelement_whitepaper_setter(instance):
-    original = instance.whitepaper
-    instance.whitepaper = original
-    assert instance.whitepaper == original
-
-@given(instance=uma::BreakdownElement_strategy)
-def test_uma::breakdownelement_superActivity_type(instance):
-    assert isinstance(instance.superActivity, str)
-
-
-@given(instance=uma::BreakdownElement_strategy)
-def test_uma::breakdownelement_superActivity_setter(instance):
-    original = instance.superActivity
-    instance.superActivity = original
-    assert instance.superActivity == original
-
-@given(instance=uma::BreakdownElement_strategy)
-def test_uma::breakdownelement_presentedBefore_type(instance):
-    assert isinstance(instance.presentedBefore, str)
-
-
-@given(instance=uma::BreakdownElement_strategy)
-def test_uma::breakdownelement_presentedBefore_setter(instance):
-    original = instance.presentedBefore
-    instance.presentedBefore = original
-    assert instance.presentedBefore == original
-
-@given(instance=uma::BreakdownElement_strategy)
-def test_uma::breakdownelement_isPlanned_type(instance):
-    assert isinstance(instance.isPlanned, str)
-
-
-@given(instance=uma::BreakdownElement_strategy)
-def test_uma::breakdownelement_isPlanned_setter(instance):
-    original = instance.isPlanned
-    instance.isPlanned = original
-    assert instance.isPlanned == original
-
-@given(instance=uma::BreakdownElement_strategy)
-def test_uma::breakdownelement_concept_type(instance):
-    assert isinstance(instance.concept, str)
-
-
-@given(instance=uma::BreakdownElement_strategy)
-def test_uma::breakdownelement_concept_setter(instance):
+@given(instance=uma_BreakdownElement_strategy)
+def test_uma_breakdownelement_concept_setter(instance):
     original = instance.concept
     instance.concept = original
     assert instance.concept == original
 
-@given(instance=uma::BreakdownElement_strategy)
-def test_uma::breakdownelement_group1_type(instance):
-    assert isinstance(instance.group1, str)
 
 
-@given(instance=uma::BreakdownElement_strategy)
-def test_uma::breakdownelement_group1_setter(instance):
+@given(instance=uma_BreakdownElement_strategy)
+def test_uma_breakdownelement_planningData_setter(instance):
+    original = instance.planningData
+    instance.planningData = original
+    assert instance.planningData == original
+
+
+
+@given(instance=uma_BreakdownElement_strategy)
+def test_uma_breakdownelement_group1_setter(instance):
     original = instance.group1
     instance.group1 = original
     assert instance.group1 == original
+
+
+
+@given(instance=uma_BreakdownElement_strategy)
+def test_uma_breakdownelement_hasMultipleOccurrences_setter(instance):
+    original = instance.hasMultipleOccurrences
+    instance.hasMultipleOccurrences = original
+    assert instance.hasMultipleOccurrences == original
+
+
+
+@given(instance=uma_BreakdownElement_strategy)
+def test_uma_breakdownelement_isPlanned_setter(instance):
+    original = instance.isPlanned
+    instance.isPlanned = original
+    assert instance.isPlanned == original
+
+
+
+@given(instance=uma_BreakdownElement_strategy)
+def test_uma_breakdownelement_isOptional_setter(instance):
+    original = instance.isOptional
+    instance.isOptional = original
+    assert instance.isOptional == original
+
+
+
+@given(instance=uma_BreakdownElement_strategy)
+def test_uma_breakdownelement_whitepaper_setter(instance):
+    original = instance.whitepaper
+    instance.whitepaper = original
+    assert instance.whitepaper == original
+
+
+
+@given(instance=uma_BreakdownElement_strategy)
+def test_uma_breakdownelement_presentedBefore_setter(instance):
+    original = instance.presentedBefore
+    instance.presentedBefore = original
+    assert instance.presentedBefore == original
+
+
+
+@given(instance=uma_BreakdownElement_strategy)
+def test_uma_breakdownelement_presentedAfter_setter(instance):
+    original = instance.presentedAfter
+    instance.presentedAfter = original
+    assert instance.presentedAfter == original
+
+
+
+@given(instance=uma_BreakdownElement_strategy)
+def test_uma_breakdownelement_example_setter(instance):
+    original = instance.example
+    instance.example = original
+    assert instance.example == original
+
+
+
+@given(instance=uma_BreakdownElement_strategy)
+def test_uma_breakdownelement_superActivity_setter(instance):
+    original = instance.superActivity
+    instance.superActivity = original
+    assert instance.superActivity == original
+
+
+
+@given(instance=uma_BreakdownElement_strategy)
+def test_uma_breakdownelement_guideline_setter(instance):
+    original = instance.guideline
+    instance.guideline = original
+    assert instance.guideline == original
+
+
+
+@given(instance=uma_BreakdownElement_strategy)
+def test_uma_breakdownelement_checklist_setter(instance):
+    original = instance.checklist
+    instance.checklist = original
+    assert instance.checklist == original
+
+
+
+@given(instance=uma_BreakdownElement_strategy)
+def test_uma_breakdownelement_reusableAsset_setter(instance):
+    original = instance.reusableAsset
+    instance.reusableAsset = original
+    assert instance.reusableAsset == original
 
 @given(instance=BreakdownElementDescription_strategy)
 @settings(max_examples=50)
 def test_breakdownelementdescription_instantiation(instance):
     assert isinstance(instance, BreakdownElementDescription)
 
-@given(instance=uma::DescriptorDescription_strategy)
+@given(instance=uma_DescriptorDescription_strategy)
 @settings(max_examples=50)
-def test_uma::descriptordescription_instantiation(instance):
-    assert isinstance(instance, uma::DescriptorDescription)
-
-@given(instance=uma::DescriptorDescription_strategy)
-def test_uma::descriptordescription_refinedDescription_type(instance):
-    assert isinstance(instance.refinedDescription, str)
+def test_uma_descriptordescription_instantiation(instance):
+    assert isinstance(instance, uma_DescriptorDescription)
 
 
-@given(instance=uma::DescriptorDescription_strategy)
-def test_uma::descriptordescription_refinedDescription_setter(instance):
+
+@given(instance=uma_DescriptorDescription_strategy)
+def test_uma_descriptordescription_refinedDescription_setter(instance):
     original = instance.refinedDescription
     instance.refinedDescription = original
     assert instance.refinedDescription == original
 
-@given(instance=uma::ActivityDescription_strategy)
+@given(instance=uma_ActivityDescription_strategy)
 @settings(max_examples=50)
-def test_uma::activitydescription_instantiation(instance):
-    assert isinstance(instance, uma::ActivityDescription)
-
-@given(instance=uma::ActivityDescription_strategy)
-def test_uma::activitydescription_howToStaff_type(instance):
-    assert isinstance(instance.howToStaff, str)
+def test_uma_activitydescription_instantiation(instance):
+    assert isinstance(instance, uma_ActivityDescription)
 
 
-@given(instance=uma::ActivityDescription_strategy)
-def test_uma::activitydescription_howToStaff_setter(instance):
-    original = instance.howToStaff
-    instance.howToStaff = original
-    assert instance.howToStaff == original
 
-@given(instance=uma::ActivityDescription_strategy)
-def test_uma::activitydescription_purpose_type(instance):
-    assert isinstance(instance.purpose, str)
+@given(instance=uma_ActivityDescription_strategy)
+def test_uma_activitydescription_alternatives_setter(instance):
+    original = instance.alternatives
+    instance.alternatives = original
+    assert instance.alternatives == original
 
 
-@given(instance=uma::ActivityDescription_strategy)
-def test_uma::activitydescription_purpose_setter(instance):
+
+@given(instance=uma_ActivityDescription_strategy)
+def test_uma_activitydescription_purpose_setter(instance):
     original = instance.purpose
     instance.purpose = original
     assert instance.purpose == original
 
-@given(instance=uma::ActivityDescription_strategy)
-def test_uma::activitydescription_alternatives_type(instance):
-    assert isinstance(instance.alternatives, str)
 
 
-@given(instance=uma::ActivityDescription_strategy)
-def test_uma::activitydescription_alternatives_setter(instance):
+@given(instance=uma_ActivityDescription_strategy)
+def test_uma_activitydescription_howToStaff_setter(instance):
+    original = instance.howToStaff
+    instance.howToStaff = original
+    assert instance.howToStaff == original
+
+@given(instance=uma_WorkProductType_strategy)
+@settings(max_examples=50)
+def test_uma_workproducttype_instantiation(instance):
+    assert isinstance(instance, uma_WorkProductType)
+
+
+
+@given(instance=uma_WorkProductType_strategy)
+def test_uma_workproducttype_workProduct_setter(instance):
+    original = instance.workProduct
+    instance.workProduct = original
+    assert instance.workProduct == original
+
+
+
+@given(instance=uma_WorkProductType_strategy)
+def test_uma_workproducttype_group2_setter(instance):
+    original = instance.group2
+    instance.group2 = original
+    assert instance.group2 == original
+
+@given(instance=uma_WorkProductDescription_strategy)
+@settings(max_examples=50)
+def test_uma_workproductdescription_instantiation(instance):
+    assert isinstance(instance, uma_WorkProductDescription)
+
+
+
+@given(instance=uma_WorkProductDescription_strategy)
+def test_uma_workproductdescription_purpose_setter(instance):
+    original = instance.purpose
+    instance.purpose = original
+    assert instance.purpose == original
+
+
+
+@given(instance=uma_WorkProductDescription_strategy)
+def test_uma_workproductdescription_impactOfNotHaving_setter(instance):
+    original = instance.impactOfNotHaving
+    instance.impactOfNotHaving = original
+    assert instance.impactOfNotHaving == original
+
+
+
+@given(instance=uma_WorkProductDescription_strategy)
+def test_uma_workproductdescription_reasonsForNotNeeding_setter(instance):
+    original = instance.reasonsForNotNeeding
+    instance.reasonsForNotNeeding = original
+    assert instance.reasonsForNotNeeding == original
+
+@given(instance=uma_WorkProduct_strategy)
+@settings(max_examples=50)
+def test_uma_workproduct_instantiation(instance):
+    assert isinstance(instance, uma_WorkProduct)
+
+
+
+@given(instance=uma_WorkProduct_strategy)
+def test_uma_workproduct_group2_setter(instance):
+    original = instance.group2
+    instance.group2 = original
+    assert instance.group2 == original
+
+
+
+@given(instance=uma_WorkProduct_strategy)
+def test_uma_workproduct_toolMentor_setter(instance):
+    original = instance.toolMentor
+    instance.toolMentor = original
+    assert instance.toolMentor == original
+
+
+
+@given(instance=uma_WorkProduct_strategy)
+def test_uma_workproduct_estimationConsiderations_setter(instance):
+    original = instance.estimationConsiderations
+    instance.estimationConsiderations = original
+    assert instance.estimationConsiderations == original
+
+
+
+@given(instance=uma_WorkProduct_strategy)
+def test_uma_workproduct_estimate_setter(instance):
+    original = instance.estimate
+    instance.estimate = original
+    assert instance.estimate == original
+
+
+
+@given(instance=uma_WorkProduct_strategy)
+def test_uma_workproduct_report_setter(instance):
+    original = instance.report
+    instance.report = original
+    assert instance.report == original
+
+
+
+@given(instance=uma_WorkProduct_strategy)
+def test_uma_workproduct_template_setter(instance):
+    original = instance.template
+    instance.template = original
+    assert instance.template == original
+
+@given(instance=uma_WorkDefinition_strategy)
+@settings(max_examples=50)
+def test_uma_workdefinition_instantiation(instance):
+    assert isinstance(instance, uma_WorkDefinition)
+
+
+
+@given(instance=uma_WorkDefinition_strategy)
+def test_uma_workdefinition_precondition_setter(instance):
+    original = instance.precondition
+    instance.precondition = original
+    assert instance.precondition == original
+
+
+
+@given(instance=uma_WorkDefinition_strategy)
+def test_uma_workdefinition_postcondition_setter(instance):
+    original = instance.postcondition
+    instance.postcondition = original
+    assert instance.postcondition == original
+
+@given(instance=uma_WorkBreakdownElement_strategy)
+@settings(max_examples=50)
+def test_uma_workbreakdownelement_instantiation(instance):
+    assert isinstance(instance, uma_WorkBreakdownElement)
+
+
+
+@given(instance=uma_WorkBreakdownElement_strategy)
+def test_uma_workbreakdownelement_isRepeatable_setter(instance):
+    original = instance.isRepeatable
+    instance.isRepeatable = original
+    assert instance.isRepeatable == original
+
+
+
+@given(instance=uma_WorkBreakdownElement_strategy)
+def test_uma_workbreakdownelement_isOngoing_setter(instance):
+    original = instance.isOngoing
+    instance.isOngoing = original
+    assert instance.isOngoing == original
+
+
+
+@given(instance=uma_WorkBreakdownElement_strategy)
+def test_uma_workbreakdownelement_group2_setter(instance):
+    original = instance.group2
+    instance.group2 = original
+    assert instance.group2 == original
+
+
+
+@given(instance=uma_WorkBreakdownElement_strategy)
+def test_uma_workbreakdownelement_isEventDriven_setter(instance):
+    original = instance.isEventDriven
+    instance.isEventDriven = original
+    assert instance.isEventDriven == original
+
+@given(instance=Concept_strategy)
+@settings(max_examples=50)
+def test_concept_instantiation(instance):
+    assert isinstance(instance, Concept)
+
+@given(instance=uma_Whitepaper_strategy)
+@settings(max_examples=50)
+def test_uma_whitepaper_instantiation(instance):
+    assert isinstance(instance, uma_Whitepaper)
+
+@given(instance=uma_WorkOrder_strategy)
+@settings(max_examples=50)
+def test_uma_workorder_instantiation(instance):
+    assert isinstance(instance, uma_WorkOrder)
+
+
+
+@given(instance=uma_WorkOrder_strategy)
+def test_uma_workorder_id_setter(instance):
+    original = instance.id
+    instance.id = original
+    assert instance.id == original
+
+
+
+@given(instance=uma_WorkOrder_strategy)
+def test_uma_workorder_properties_setter(instance):
+    original = instance.properties
+    instance.properties = original
+    assert instance.properties == original
+
+
+
+@given(instance=uma_WorkOrder_strategy)
+def test_uma_workorder_linkType_setter(instance):
+    original = instance.linkType
+    instance.linkType = original
+    assert instance.linkType == original
+
+
+
+@given(instance=uma_WorkOrder_strategy)
+def test_uma_workorder_value_setter(instance):
+    original = instance.value
+    instance.value = original
+    assert instance.value == original
+
+@given(instance=uma_Tool_strategy)
+@settings(max_examples=50)
+def test_uma_tool_instantiation(instance):
+    assert isinstance(instance, uma_Tool)
+
+
+
+@given(instance=uma_Tool_strategy)
+def test_uma_tool_group2_setter(instance):
+    original = instance.group2
+    instance.group2 = original
+    assert instance.group2 == original
+
+
+
+@given(instance=uma_Tool_strategy)
+def test_uma_tool_toolMentor_setter(instance):
+    original = instance.toolMentor
+    instance.toolMentor = original
+    assert instance.toolMentor == original
+
+@given(instance=uma_TermDefinition_strategy)
+@settings(max_examples=50)
+def test_uma_termdefinition_instantiation(instance):
+    assert isinstance(instance, uma_TermDefinition)
+
+@given(instance=uma_Template_strategy)
+@settings(max_examples=50)
+def test_uma_template_instantiation(instance):
+    assert isinstance(instance, uma_Template)
+
+@given(instance=uma_TeamProfile_strategy)
+@settings(max_examples=50)
+def test_uma_teamprofile_instantiation(instance):
+    assert isinstance(instance, uma_TeamProfile)
+
+
+
+@given(instance=uma_TeamProfile_strategy)
+def test_uma_teamprofile_group2_setter(instance):
+    original = instance.group2
+    instance.group2 = original
+    assert instance.group2 == original
+
+
+
+@given(instance=uma_TeamProfile_strategy)
+def test_uma_teamprofile_role_setter(instance):
+    original = instance.role
+    instance.role = original
+    assert instance.role == original
+
+
+
+@given(instance=uma_TeamProfile_strategy)
+def test_uma_teamprofile_superTeam_setter(instance):
+    original = instance.superTeam
+    instance.superTeam = original
+    assert instance.superTeam == original
+
+
+
+@given(instance=uma_TeamProfile_strategy)
+def test_uma_teamprofile_subTeam_setter(instance):
+    original = instance.subTeam
+    instance.subTeam = original
+    assert instance.subTeam == original
+
+@given(instance=uma_ToolMentor_strategy)
+@settings(max_examples=50)
+def test_uma_toolmentor_instantiation(instance):
+    assert isinstance(instance, uma_ToolMentor)
+
+@given(instance=uma_TaskDescription_strategy)
+@settings(max_examples=50)
+def test_uma_taskdescription_instantiation(instance):
+    assert isinstance(instance, uma_TaskDescription)
+
+
+
+@given(instance=uma_TaskDescription_strategy)
+def test_uma_taskdescription_alternatives_setter(instance):
     original = instance.alternatives
     instance.alternatives = original
     assert instance.alternatives == original
+
+
+
+@given(instance=uma_TaskDescription_strategy)
+def test_uma_taskdescription_purpose_setter(instance):
+    original = instance.purpose
+    instance.purpose = original
+    assert instance.purpose == original
+
+@given(instance=uma_Task_strategy)
+@settings(max_examples=50)
+def test_uma_task_instantiation(instance):
+    assert isinstance(instance, uma_Task)
+
+
+
+@given(instance=uma_Task_strategy)
+def test_uma_task_estimationConsiderations_setter(instance):
+    original = instance.estimationConsiderations
+    instance.estimationConsiderations = original
+    assert instance.estimationConsiderations == original
+
+
+
+@given(instance=uma_Task_strategy)
+def test_uma_task_additionallyPerformedBy_setter(instance):
+    original = instance.additionallyPerformedBy
+    instance.additionallyPerformedBy = original
+    assert instance.additionallyPerformedBy == original
+
+
+
+@given(instance=uma_Task_strategy)
+def test_uma_task_precondition_setter(instance):
+    original = instance.precondition
+    instance.precondition = original
+    assert instance.precondition == original
+
+
+
+@given(instance=uma_Task_strategy)
+def test_uma_task_output_setter(instance):
+    original = instance.output
+    instance.output = original
+    assert instance.output == original
+
+
+
+@given(instance=uma_Task_strategy)
+def test_uma_task_performedBy_setter(instance):
+    original = instance.performedBy
+    instance.performedBy = original
+    assert instance.performedBy == original
+
+
+
+@given(instance=uma_Task_strategy)
+def test_uma_task_group2_setter(instance):
+    original = instance.group2
+    instance.group2 = original
+    assert instance.group2 == original
+
+
+
+@given(instance=uma_Task_strategy)
+def test_uma_task_estimate_setter(instance):
+    original = instance.estimate
+    instance.estimate = original
+    assert instance.estimate == original
+
+
+
+@given(instance=uma_Task_strategy)
+def test_uma_task_toolMentor_setter(instance):
+    original = instance.toolMentor
+    instance.toolMentor = original
+    assert instance.toolMentor == original
+
+
+
+@given(instance=uma_Task_strategy)
+def test_uma_task_mandatoryInput_setter(instance):
+    original = instance.mandatoryInput
+    instance.mandatoryInput = original
+    assert instance.mandatoryInput == original
+
+
+
+@given(instance=uma_Task_strategy)
+def test_uma_task_postcondition_setter(instance):
+    original = instance.postcondition
+    instance.postcondition = original
+    assert instance.postcondition == original
+
+
+
+@given(instance=uma_Task_strategy)
+def test_uma_task_optionalInput_setter(instance):
+    original = instance.optionalInput
+    instance.optionalInput = original
+    assert instance.optionalInput == original
+
+@given(instance=uma_SupportingMaterial_strategy)
+@settings(max_examples=50)
+def test_uma_supportingmaterial_instantiation(instance):
+    assert isinstance(instance, uma_SupportingMaterial)
+
+@given(instance=uma_RoleSetGrouping_strategy)
+@settings(max_examples=50)
+def test_uma_rolesetgrouping_instantiation(instance):
+    assert isinstance(instance, uma_RoleSetGrouping)
+
+
+
+@given(instance=uma_RoleSetGrouping_strategy)
+def test_uma_rolesetgrouping_group2_setter(instance):
+    original = instance.group2
+    instance.group2 = original
+    assert instance.group2 == original
+
+
+
+@given(instance=uma_RoleSetGrouping_strategy)
+def test_uma_rolesetgrouping_roleSet_setter(instance):
+    original = instance.roleSet
+    instance.roleSet = original
+    assert instance.roleSet == original
+
+@given(instance=uma_RoleSet_strategy)
+@settings(max_examples=50)
+def test_uma_roleset_instantiation(instance):
+    assert isinstance(instance, uma_RoleSet)
+
+
+
+@given(instance=uma_RoleSet_strategy)
+def test_uma_roleset_role_setter(instance):
+    original = instance.role
+    instance.role = original
+    assert instance.role == original
+
+
+
+@given(instance=uma_RoleSet_strategy)
+def test_uma_roleset_group2_setter(instance):
+    original = instance.group2
+    instance.group2 = original
+    assert instance.group2 == original
+
+@given(instance=Descriptor_strategy)
+@settings(max_examples=50)
+def test_descriptor_instantiation(instance):
+    assert isinstance(instance, Descriptor)
+
+@given(instance=uma_WorkProductDescriptor_strategy)
+@settings(max_examples=50)
+def test_uma_workproductdescriptor_instantiation(instance):
+    assert isinstance(instance, uma_WorkProductDescriptor)
+
+
+
+@given(instance=uma_WorkProductDescriptor_strategy)
+def test_uma_workproductdescriptor_mandatoryInputTo_setter(instance):
+    original = instance.mandatoryInputTo
+    instance.mandatoryInputTo = original
+    assert instance.mandatoryInputTo == original
+
+
+
+@given(instance=uma_WorkProductDescriptor_strategy)
+def test_uma_workproductdescriptor_impactedBy_setter(instance):
+    original = instance.impactedBy
+    instance.impactedBy = original
+    assert instance.impactedBy == original
+
+
+
+@given(instance=uma_WorkProductDescriptor_strategy)
+def test_uma_workproductdescriptor_externalInputTo_setter(instance):
+    original = instance.externalInputTo
+    instance.externalInputTo = original
+    assert instance.externalInputTo == original
+
+
+
+@given(instance=uma_WorkProductDescriptor_strategy)
+def test_uma_workproductdescriptor_group2_setter(instance):
+    original = instance.group2
+    instance.group2 = original
+    assert instance.group2 == original
+
+
+
+@given(instance=uma_WorkProductDescriptor_strategy)
+def test_uma_workproductdescriptor_workProduct_setter(instance):
+    original = instance.workProduct
+    instance.workProduct = original
+    assert instance.workProduct == original
+
+
+
+@given(instance=uma_WorkProductDescriptor_strategy)
+def test_uma_workproductdescriptor_responsibleRole_setter(instance):
+    original = instance.responsibleRole
+    instance.responsibleRole = original
+    assert instance.responsibleRole == original
+
+
+
+@given(instance=uma_WorkProductDescriptor_strategy)
+def test_uma_workproductdescriptor_impacts_setter(instance):
+    original = instance.impacts
+    instance.impacts = original
+    assert instance.impacts == original
+
+
+
+@given(instance=uma_WorkProductDescriptor_strategy)
+def test_uma_workproductdescriptor_activityEntryState_setter(instance):
+    original = instance.activityEntryState
+    instance.activityEntryState = original
+    assert instance.activityEntryState == original
+
+
+
+@given(instance=uma_WorkProductDescriptor_strategy)
+def test_uma_workproductdescriptor_optionalInputTo_setter(instance):
+    original = instance.optionalInputTo
+    instance.optionalInputTo = original
+    assert instance.optionalInputTo == original
+
+
+
+@given(instance=uma_WorkProductDescriptor_strategy)
+def test_uma_workproductdescriptor_activityExitState_setter(instance):
+    original = instance.activityExitState
+    instance.activityExitState = original
+    assert instance.activityExitState == original
+
+
+
+@given(instance=uma_WorkProductDescriptor_strategy)
+def test_uma_workproductdescriptor_outputFrom_setter(instance):
+    original = instance.outputFrom
+    instance.outputFrom = original
+    assert instance.outputFrom == original
+
+
+
+@given(instance=uma_WorkProductDescriptor_strategy)
+def test_uma_workproductdescriptor_deliverableParts_setter(instance):
+    original = instance.deliverableParts
+    instance.deliverableParts = original
+    assert instance.deliverableParts == original
+
+@given(instance=uma_RoleDescriptor_strategy)
+@settings(max_examples=50)
+def test_uma_roledescriptor_instantiation(instance):
+    assert isinstance(instance, uma_RoleDescriptor)
+
+
+
+@given(instance=uma_RoleDescriptor_strategy)
+def test_uma_roledescriptor_responsibleFor_setter(instance):
+    original = instance.responsibleFor
+    instance.responsibleFor = original
+    assert instance.responsibleFor == original
+
+
+
+@given(instance=uma_RoleDescriptor_strategy)
+def test_uma_roledescriptor_role_setter(instance):
+    original = instance.role
+    instance.role = original
+    assert instance.role == original
+
+@given(instance=uma_Roadmap_strategy)
+@settings(max_examples=50)
+def test_uma_roadmap_instantiation(instance):
+    assert isinstance(instance, uma_Roadmap)

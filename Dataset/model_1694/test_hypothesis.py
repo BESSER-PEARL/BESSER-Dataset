@@ -3,11 +3,11 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    helloworld::Thing,
-    helloworld::World,
+from python_code import (
+    helloworld_Thing,
+    helloworld_World,
 )
 
 # =============================================================================
@@ -16,23 +16,23 @@ from classes import (
 
 
 
-def test_helloworld::thing_is_not_abstract():
-    assert not inspect.isabstract(helloworld::Thing)
+def test_helloworld_thing_is_not_abstract():
+    assert not inspect.isabstract(helloworld_Thing)
 
 
-def test_helloworld::thing_constructor_exists():
-    assert callable(helloworld::Thing.__init__)
+def test_helloworld_thing_constructor_exists():
+    assert callable(helloworld_Thing.__init__)
 
 
-def test_helloworld::thing_constructor_args():
-    sig = inspect.signature(helloworld::Thing.__init__)
+def test_helloworld_thing_constructor_args():
+    sig = inspect.signature(helloworld_Thing.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_helloworld::thing_has_name():
-    assert hasattr(helloworld::Thing, "name")
+def test_helloworld_thing_has_name():
+    assert hasattr(helloworld_Thing, "name")
     descriptor = None
-    for klass in helloworld::Thing.__mro__:
+    for klass in helloworld_Thing.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -40,16 +40,16 @@ def test_helloworld::thing_has_name():
 
 
 
-def test_helloworld::world_is_not_abstract():
-    assert not inspect.isabstract(helloworld::World)
+def test_helloworld_world_is_not_abstract():
+    assert not inspect.isabstract(helloworld_World)
 
 
-def test_helloworld::world_constructor_exists():
-    assert callable(helloworld::World.__init__)
+def test_helloworld_world_constructor_exists():
+    assert callable(helloworld_World.__init__)
 
 
-def test_helloworld::world_constructor_args():
-    sig = inspect.signature(helloworld::World.__init__)
+def test_helloworld_world_constructor_args():
+    sig = inspect.signature(helloworld_World.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -64,32 +64,29 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-helloworld::Thing_strategy = st.builds(
-    helloworld::Thing,
+helloworld_Thing_strategy = st.builds(
+    helloworld_Thing,
     name=
         safe_text
 )
-helloworld::World_strategy = st.builds(
-    helloworld::World,
+helloworld_World_strategy = st.builds(
+    helloworld_World,
 )
 
-@given(instance=helloworld::Thing_strategy)
+@given(instance=helloworld_Thing_strategy)
 @settings(max_examples=50)
-def test_helloworld::thing_instantiation(instance):
-    assert isinstance(instance, helloworld::Thing)
-
-@given(instance=helloworld::Thing_strategy)
-def test_helloworld::thing_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_helloworld_thing_instantiation(instance):
+    assert isinstance(instance, helloworld_Thing)
 
 
-@given(instance=helloworld::Thing_strategy)
-def test_helloworld::thing_name_setter(instance):
+
+@given(instance=helloworld_Thing_strategy)
+def test_helloworld_thing_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=helloworld::World_strategy)
+@given(instance=helloworld_World_strategy)
 @settings(max_examples=50)
-def test_helloworld::world_instantiation(instance):
-    assert isinstance(instance, helloworld::World)
+def test_helloworld_world_instantiation(instance):
+    assert isinstance(instance, helloworld_World)

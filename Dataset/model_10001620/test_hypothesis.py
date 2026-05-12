@@ -3,7 +3,7 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
 from python_code import (
     UseCase2_UseCase,
@@ -164,9 +164,6 @@ def test_myinterface_interface_instantiation(instance):
 def test_myclass_instantiation(instance):
     assert isinstance(instance, MyClass)
 
-@given(instance=MyClass_strategy)
-def test_myclass_Abb_type(instance):
-    assert isinstance(instance.Abb, bool)
 
 
 @given(instance=MyClass_strategy)
@@ -175,9 +172,6 @@ def test_myclass_Abb_setter(instance):
     instance.Abb = original
     assert instance.Abb == original
 
-@given(instance=MyClass_strategy)
-def test_myclass_ABC_type(instance):
-    assert isinstance(instance.ABC, myclass)
 
 
 @given(instance=MyClass_strategy)

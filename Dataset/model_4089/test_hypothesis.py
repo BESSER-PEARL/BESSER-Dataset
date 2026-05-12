@@ -3,16 +3,16 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    Behavior::NamedElement,
+from python_code import (
+    Behavior_NamedElement,
     NamedElement,
-    Behavior::System,
-    Behavior::Transition,
-    Behavior::State,
-    Behavior::Event,
-    Behavior::Component,
+    Behavior_System,
+    Behavior_Transition,
+    Behavior_State,
+    Behavior_Event,
+    Behavior_Component,
 )
 
 # =============================================================================
@@ -21,23 +21,23 @@ from classes import (
 
 
 
-def test_behavior::namedelement_is_not_abstract():
-    assert not inspect.isabstract(Behavior::NamedElement)
+def test_behavior_namedelement_is_not_abstract():
+    assert not inspect.isabstract(Behavior_NamedElement)
 
 
-def test_behavior::namedelement_constructor_exists():
-    assert callable(Behavior::NamedElement.__init__)
+def test_behavior_namedelement_constructor_exists():
+    assert callable(Behavior_NamedElement.__init__)
 
 
-def test_behavior::namedelement_constructor_args():
-    sig = inspect.signature(Behavior::NamedElement.__init__)
+def test_behavior_namedelement_constructor_args():
+    sig = inspect.signature(Behavior_NamedElement.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_behavior::namedelement_has_name():
-    assert hasattr(Behavior::NamedElement, "name")
+def test_behavior_namedelement_has_name():
+    assert hasattr(Behavior_NamedElement, "name")
     descriptor = None
-    for klass in Behavior::NamedElement.__mro__:
+    for klass in Behavior_NamedElement.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -59,72 +59,72 @@ def test_namedelement_constructor_args():
 
 
 
-def test_behavior::system_is_not_abstract():
-    assert not inspect.isabstract(Behavior::System)
+def test_behavior_system_is_not_abstract():
+    assert not inspect.isabstract(Behavior_System)
 
 
-def test_behavior::system_constructor_exists():
-    assert callable(Behavior::System.__init__)
+def test_behavior_system_constructor_exists():
+    assert callable(Behavior_System.__init__)
 
 
-def test_behavior::system_constructor_args():
-    sig = inspect.signature(Behavior::System.__init__)
+def test_behavior_system_constructor_args():
+    sig = inspect.signature(Behavior_System.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_behavior::transition_is_not_abstract():
-    assert not inspect.isabstract(Behavior::Transition)
+def test_behavior_transition_is_not_abstract():
+    assert not inspect.isabstract(Behavior_Transition)
 
 
-def test_behavior::transition_constructor_exists():
-    assert callable(Behavior::Transition.__init__)
+def test_behavior_transition_constructor_exists():
+    assert callable(Behavior_Transition.__init__)
 
 
-def test_behavior::transition_constructor_args():
-    sig = inspect.signature(Behavior::Transition.__init__)
+def test_behavior_transition_constructor_args():
+    sig = inspect.signature(Behavior_Transition.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_behavior::state_is_not_abstract():
-    assert not inspect.isabstract(Behavior::State)
+def test_behavior_state_is_not_abstract():
+    assert not inspect.isabstract(Behavior_State)
 
 
-def test_behavior::state_constructor_exists():
-    assert callable(Behavior::State.__init__)
+def test_behavior_state_constructor_exists():
+    assert callable(Behavior_State.__init__)
 
 
-def test_behavior::state_constructor_args():
-    sig = inspect.signature(Behavior::State.__init__)
+def test_behavior_state_constructor_args():
+    sig = inspect.signature(Behavior_State.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_behavior::event_is_not_abstract():
-    assert not inspect.isabstract(Behavior::Event)
+def test_behavior_event_is_not_abstract():
+    assert not inspect.isabstract(Behavior_Event)
 
 
-def test_behavior::event_constructor_exists():
-    assert callable(Behavior::Event.__init__)
+def test_behavior_event_constructor_exists():
+    assert callable(Behavior_Event.__init__)
 
 
-def test_behavior::event_constructor_args():
-    sig = inspect.signature(Behavior::Event.__init__)
+def test_behavior_event_constructor_args():
+    sig = inspect.signature(Behavior_Event.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_behavior::component_is_not_abstract():
-    assert not inspect.isabstract(Behavior::Component)
+def test_behavior_component_is_not_abstract():
+    assert not inspect.isabstract(Behavior_Component)
 
 
-def test_behavior::component_constructor_exists():
-    assert callable(Behavior::Component.__init__)
+def test_behavior_component_constructor_exists():
+    assert callable(Behavior_Component.__init__)
 
 
-def test_behavior::component_constructor_args():
-    sig = inspect.signature(Behavior::Component.__init__)
+def test_behavior_component_constructor_args():
+    sig = inspect.signature(Behavior_Component.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -139,42 +139,39 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-Behavior::NamedElement_strategy = st.builds(
-    Behavior::NamedElement,
+Behavior_NamedElement_strategy = st.builds(
+    Behavior_NamedElement,
     name=
         safe_text
 )
 NamedElement_strategy = st.builds(
     NamedElement,
 )
-Behavior::System_strategy = st.builds(
-    Behavior::System,
+Behavior_System_strategy = st.builds(
+    Behavior_System,
 )
-Behavior::Transition_strategy = st.builds(
-    Behavior::Transition,
+Behavior_Transition_strategy = st.builds(
+    Behavior_Transition,
 )
-Behavior::State_strategy = st.builds(
-    Behavior::State,
+Behavior_State_strategy = st.builds(
+    Behavior_State,
 )
-Behavior::Event_strategy = st.builds(
-    Behavior::Event,
+Behavior_Event_strategy = st.builds(
+    Behavior_Event,
 )
-Behavior::Component_strategy = st.builds(
-    Behavior::Component,
+Behavior_Component_strategy = st.builds(
+    Behavior_Component,
 )
 
-@given(instance=Behavior::NamedElement_strategy)
+@given(instance=Behavior_NamedElement_strategy)
 @settings(max_examples=50)
-def test_behavior::namedelement_instantiation(instance):
-    assert isinstance(instance, Behavior::NamedElement)
-
-@given(instance=Behavior::NamedElement_strategy)
-def test_behavior::namedelement_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_behavior_namedelement_instantiation(instance):
+    assert isinstance(instance, Behavior_NamedElement)
 
 
-@given(instance=Behavior::NamedElement_strategy)
-def test_behavior::namedelement_name_setter(instance):
+
+@given(instance=Behavior_NamedElement_strategy)
+def test_behavior_namedelement_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
@@ -184,27 +181,27 @@ def test_behavior::namedelement_name_setter(instance):
 def test_namedelement_instantiation(instance):
     assert isinstance(instance, NamedElement)
 
-@given(instance=Behavior::System_strategy)
+@given(instance=Behavior_System_strategy)
 @settings(max_examples=50)
-def test_behavior::system_instantiation(instance):
-    assert isinstance(instance, Behavior::System)
+def test_behavior_system_instantiation(instance):
+    assert isinstance(instance, Behavior_System)
 
-@given(instance=Behavior::Transition_strategy)
+@given(instance=Behavior_Transition_strategy)
 @settings(max_examples=50)
-def test_behavior::transition_instantiation(instance):
-    assert isinstance(instance, Behavior::Transition)
+def test_behavior_transition_instantiation(instance):
+    assert isinstance(instance, Behavior_Transition)
 
-@given(instance=Behavior::State_strategy)
+@given(instance=Behavior_State_strategy)
 @settings(max_examples=50)
-def test_behavior::state_instantiation(instance):
-    assert isinstance(instance, Behavior::State)
+def test_behavior_state_instantiation(instance):
+    assert isinstance(instance, Behavior_State)
 
-@given(instance=Behavior::Event_strategy)
+@given(instance=Behavior_Event_strategy)
 @settings(max_examples=50)
-def test_behavior::event_instantiation(instance):
-    assert isinstance(instance, Behavior::Event)
+def test_behavior_event_instantiation(instance):
+    assert isinstance(instance, Behavior_Event)
 
-@given(instance=Behavior::Component_strategy)
+@given(instance=Behavior_Component_strategy)
 @settings(max_examples=50)
-def test_behavior::component_instantiation(instance):
-    assert isinstance(instance, Behavior::Component)
+def test_behavior_component_instantiation(instance):
+    assert isinstance(instance, Behavior_Component)

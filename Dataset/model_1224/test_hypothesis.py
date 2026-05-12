@@ -3,67 +3,58 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    CollectionLiteralPartCS,
-    LiteralExpCS,
-    qvtoperational::cst::ListLiteralExpCS,
-    DictLiteralPartCS,
+from python_code import (
     LogExpCS,
-    qvtoperational::cst::DictLiteralExpCS,
     ModuleUsageCS,
     ModuleRefCS,
     ModuleKindCS,
     TransformationRefineCS,
     PackageRefCS,
     ResolveExpCS,
-    qvtoperational::cst::ResolveInExpCS,
+    qvtoperational_cst_ResolveInExpCS,
     CallExpCS,
-    qvtoperational::cst::ResolveExpCS,
-    qvtoperational::cst::ElementWithBody,
+    qvtoperational_cst_ResolveExpCS,
+    qvtoperational_cst_ElementWithBody,
     OperationCallExpCS,
-    qvtoperational::cst::LogExpCS,
-    qvtoperational::cst::ImperativeOperationCallExpCS,
+    qvtoperational_cst_ImperativeOperationCallExpCS,
     ImperativeOperationCallExpCS,
-    qvtoperational::cst::MappingCallExpCS,
-    cst::InstantiationExpCS,
+    qvtoperational_cst_MappingCallExpCS,
+    cst_InstantiationExpCS,
     VariableCS,
     SwitchAltExpCS,
     ImperativeLoopExpCS,
-    qvtoperational::cst::ImperativeIterateExpCS,
-    qvtoperational::cst::ForExpCS,
-    cst::StatementCS,
-    cst::LoopExpCS,
-    qvtoperational::cst::ImperativeLoopExpCS,
+    qvtoperational_cst_ImperativeIterateExpCS,
+    qvtoperational_cst_ForExpCS,
+    cst_StatementCS,
+    cst_LoopExpCS,
+    qvtoperational_cst_ImperativeLoopExpCS,
     MappingDeclarationCS,
     StatementCS,
-    qvtoperational::cst::AssignStatementCS,
-    qvtoperational::cst::ComputeExpCS,
-    qvtoperational::cst::ContinueExpCS,
-    qvtoperational::cst::InstantiationExpCS,
-    qvtoperational::cst::WhileExpCS,
-    qvtoperational::cst::BreakExpCS,
-    qvtoperational::cst::VariableInitializationCS,
-    qvtoperational::cst::SwitchExpCS,
-    qvtoperational::cst::ReturnExpCS,
-    qvtoperational::cst::SwitchAltExpCS,
-    qvtoperational::cst::AssertExpCS,
-    qvtoperational::cst::ExpressionStatementCS,
-    qvtoperational::cst::BlockExpCS,
+    qvtoperational_cst_ContinueExpCS,
+    qvtoperational_cst_BreakExpCS,
+    qvtoperational_cst_VariableInitializationCS,
+    qvtoperational_cst_WhileExpCS,
+    qvtoperational_cst_SwitchAltExpCS,
+    qvtoperational_cst_ComputeExpCS,
+    qvtoperational_cst_ExpressionStatementCS,
+    qvtoperational_cst_SwitchExpCS,
+    qvtoperational_cst_AssignStatementCS,
+    qvtoperational_cst_BlockExpCS,
     MappingEndCS,
     MappingBodyCS,
     MappingInitCS,
     MappingSectionCS,
-    qvtoperational::cst::MappingEndCS,
-    qvtoperational::cst::MappingBodyCS,
-    qvtoperational::cst::MappingInitCS,
+    qvtoperational_cst_MappingBodyCS,
+    qvtoperational_cst_MappingEndCS,
+    qvtoperational_cst_MappingInitCS,
     MappingRuleCS,
-    cst::ElementWithBody,
-    qvtoperational::cst::ObjectExpCS,
-    cst::CSTNode,
-    qvtoperational::cst::ModelTypeCS,
-    qvtoperational::cst::MappingSectionCS,
+    cst_ElementWithBody,
+    qvtoperational_cst_ObjectExpCS,
+    cst_CSTNode,
+    qvtoperational_cst_ModelTypeCS,
+    qvtoperational_cst_MappingSectionCS,
     MappingSectionsCS,
     PrimitiveLiteralExpCS,
     SimpleSignatureCS,
@@ -71,131 +62,84 @@ from classes import (
     MultiplicityDefCS,
     TypeSpecCS,
     LocalPropertyCS,
-    qvtoperational::cst::ClassifierPropertyCS,
+    qvtoperational_cst_ClassifierPropertyCS,
     MappingExtensionCS,
     DirectionKindCS,
     ParameterDeclarationCS,
     OCLExpressionCS,
-    qvtoperational::cst::StatementCS,
+    qvtoperational_cst_StatementCS,
     StringLiteralExpCS,
     SimpleNameCS,
     TypeCS,
-    qvtoperational::cst::ListTypeCS,
-    qvtoperational::cst::DictionaryTypeCS,
     PathNameCS,
     ClassifierPropertyCS,
     ScopedNameCS,
     ModelTypeCS,
     ImportCS,
-    qvtoperational::cst::LibraryImportCS,
+    qvtoperational_cst_LibraryImportCS,
     TransformationHeaderCS,
     CSTNode,
-    qvtoperational::cst::ModuleKindCS,
-    qvtoperational::cst::SimpleSignatureCS,
-    qvtoperational::cst::ModulePropertyCS,
-    qvtoperational::cst::MappingDeclarationCS,
-    qvtoperational::cst::TagCS,
-    qvtoperational::cst::ResolveOpArgsExpCS,
-    qvtoperational::cst::CompleteSignatureCS,
-    qvtoperational::cst::TransformationRefineCS,
-    qvtoperational::cst::DictLiteralPartCS,
-    qvtoperational::cst::TypeSpecCS,
-    qvtoperational::cst::DirectionKindCS,
-    qvtoperational::cst::MultiplicityDefCS,
-    qvtoperational::cst::ModuleUsageCS,
-    qvtoperational::cst::ClassifierDefCS,
-    qvtoperational::cst::RenameCS,
-    qvtoperational::cst::MappingMethodCS,
-    qvtoperational::cst::PackageRefCS,
-    qvtoperational::cst::ParameterDeclarationCS,
-    qvtoperational::cst::MappingExtensionCS,
-    qvtoperational::cst::MappingSectionsCS,
-    qvtoperational::cst::UnitCS,
-    qvtoperational::cst::ModuleRefCS,
-    qvtoperational::cst::ScopedNameCS,
-    qvtoperational::cst::TransformationHeaderCS,
-    qvtoperational::cst::OppositePropertyCS,
-    qvtoperational::cst::MappingModuleCS,
-    qvtoperational::cst::ImportCS,
+    qvtoperational_cst_TransformationRefineCS,
+    qvtoperational_cst_MappingMethodCS,
+    qvtoperational_cst_ModuleKindCS,
+    qvtoperational_cst_DirectionKindCS,
+    qvtoperational_cst_ModulePropertyCS,
+    qvtoperational_cst_SimpleSignatureCS,
+    qvtoperational_cst_RenameCS,
+    qvtoperational_cst_ModuleUsageCS,
+    qvtoperational_cst_ParameterDeclarationCS,
+    qvtoperational_cst_ModuleRefCS,
+    qvtoperational_cst_PackageRefCS,
+    qvtoperational_cst_MappingDeclarationCS,
+    qvtoperational_cst_TypeSpecCS,
+    qvtoperational_cst_MultiplicityDefCS,
+    qvtoperational_cst_ClassifierDefCS,
+    qvtoperational_cst_MappingSectionsCS,
+    qvtoperational_cst_OppositePropertyCS,
+    qvtoperational_cst_TransformationHeaderCS,
+    qvtoperational_cst_CompleteSignatureCS,
+    qvtoperational_cst_MappingModuleCS,
+    qvtoperational_cst_ImportCS,
     MappingModuleCS,
-    qvtoperational::cst::LibraryCS,
+    qvtoperational_cst_LibraryCS,
     TagCS,
     ClassifierDefCS,
     MappingMethodCS,
-    qvtoperational::cst::MappingQueryCS,
-    qvtoperational::cst::MappingRuleCS,
-    qvtoperational::cst::ConstructorCS,
+    qvtoperational_cst_MappingRuleCS,
+    qvtoperational_cst_ConstructorCS,
+    qvtoperational_cst_MappingQueryCS,
     ModulePropertyCS,
-    qvtoperational::cst::ContextualPropertyCS,
-    qvtoperational::cst::LocalPropertyCS,
-    qvtoperational::cst::ConfigPropertyCS,
+    qvtoperational_cst_ConfigPropertyCS,
+    qvtoperational_cst_LocalPropertyCS,
+    qvtoperational_cst_ContextualPropertyCS,
     RenameCS,
-    QualifierKindCS,
-    MappingExtensionKindCS,
+    qvtoperational_cst_ResolveOpArgsExpCS,
+    qvtoperational_cst_UnitCS,
+    qvtoperational_cst_TagCS,
+    qvtoperational_cst_ScopedNameCS,
+    qvtoperational_cst_AssertExpCS,
+    qvtoperational_cst_DictionaryTypeCS,
+    qvtoperational_cst_LogExpCS,
+    CollectionLiteralPartCS,
+    LiteralExpCS,
+    qvtoperational_cst_DictLiteralExpCS,
+    qvtoperational_cst_ListLiteralExpCS,
+    qvtoperational_cst_ListTypeCS,
+    qvtoperational_cst_InstantiationExpCS,
+    qvtoperational_cst_MappingExtensionCS,
+    qvtoperational_cst_ReturnExpCS,
+    qvtoperational_cst_DictLiteralPartCS,
+    DictLiteralPartCS,
     ImportKindEnum,
-    ModuleKindEnum,
     DirectionKindEnum,
+    QualifierKindCS,
+    ModuleKindEnum,
+    MappingExtensionKindCS,
 )
 
 # =============================================================================
 # SECTION 1 — STRUCTURAL TESTS
 # =============================================================================
-
-
-
-def test_collectionliteralpartcs_is_not_abstract():
-    assert not inspect.isabstract(CollectionLiteralPartCS)
-
-
-def test_collectionliteralpartcs_constructor_exists():
-    assert callable(CollectionLiteralPartCS.__init__)
-
-
-def test_collectionliteralpartcs_constructor_args():
-    sig = inspect.signature(CollectionLiteralPartCS.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_literalexpcs_is_not_abstract():
-    assert not inspect.isabstract(LiteralExpCS)
-
-
-def test_literalexpcs_constructor_exists():
-    assert callable(LiteralExpCS.__init__)
-
-
-def test_literalexpcs_constructor_args():
-    sig = inspect.signature(LiteralExpCS.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_qvtoperational::cst::listliteralexpcs_is_not_abstract():
-    assert not inspect.isabstract(qvtoperational::cst::ListLiteralExpCS)
-
-
-def test_qvtoperational::cst::listliteralexpcs_constructor_exists():
-    assert callable(qvtoperational::cst::ListLiteralExpCS.__init__)
-
-
-def test_qvtoperational::cst::listliteralexpcs_constructor_args():
-    sig = inspect.signature(qvtoperational::cst::ListLiteralExpCS.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_dictliteralpartcs_is_not_abstract():
-    assert not inspect.isabstract(DictLiteralPartCS)
-
-
-def test_dictliteralpartcs_constructor_exists():
-    assert callable(DictLiteralPartCS.__init__)
-
-
-def test_dictliteralpartcs_constructor_args():
-    sig = inspect.signature(DictLiteralPartCS.__init__)
-    params = list(sig.parameters.keys())
 
 
 
@@ -209,20 +153,6 @@ def test_logexpcs_constructor_exists():
 
 def test_logexpcs_constructor_args():
     sig = inspect.signature(LogExpCS.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_qvtoperational::cst::dictliteralexpcs_is_not_abstract():
-    assert not inspect.isabstract(qvtoperational::cst::DictLiteralExpCS)
-
-
-def test_qvtoperational::cst::dictliteralexpcs_constructor_exists():
-    assert callable(qvtoperational::cst::DictLiteralExpCS.__init__)
-
-
-def test_qvtoperational::cst::dictliteralexpcs_constructor_args():
-    sig = inspect.signature(qvtoperational::cst::DictLiteralExpCS.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -311,16 +241,16 @@ def test_resolveexpcs_constructor_args():
 
 
 
-def test_qvtoperational::cst::resolveinexpcs_is_not_abstract():
-    assert not inspect.isabstract(qvtoperational::cst::ResolveInExpCS)
+def test_qvtoperational_cst_resolveinexpcs_is_not_abstract():
+    assert not inspect.isabstract(qvtoperational_cst_ResolveInExpCS)
 
 
-def test_qvtoperational::cst::resolveinexpcs_constructor_exists():
-    assert callable(qvtoperational::cst::ResolveInExpCS.__init__)
+def test_qvtoperational_cst_resolveinexpcs_constructor_exists():
+    assert callable(qvtoperational_cst_ResolveInExpCS.__init__)
 
 
-def test_qvtoperational::cst::resolveinexpcs_constructor_args():
-    sig = inspect.signature(qvtoperational::cst::ResolveInExpCS.__init__)
+def test_qvtoperational_cst_resolveinexpcs_constructor_args():
+    sig = inspect.signature(qvtoperational_cst_ResolveInExpCS.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -339,79 +269,79 @@ def test_callexpcs_constructor_args():
 
 
 
-def test_qvtoperational::cst::resolveexpcs_is_not_abstract():
-    assert not inspect.isabstract(qvtoperational::cst::ResolveExpCS)
+def test_qvtoperational_cst_resolveexpcs_is_not_abstract():
+    assert not inspect.isabstract(qvtoperational_cst_ResolveExpCS)
 
 
-def test_qvtoperational::cst::resolveexpcs_constructor_exists():
-    assert callable(qvtoperational::cst::ResolveExpCS.__init__)
+def test_qvtoperational_cst_resolveexpcs_constructor_exists():
+    assert callable(qvtoperational_cst_ResolveExpCS.__init__)
 
 
-def test_qvtoperational::cst::resolveexpcs_constructor_args():
-    sig = inspect.signature(qvtoperational::cst::ResolveExpCS.__init__)
+def test_qvtoperational_cst_resolveexpcs_constructor_args():
+    sig = inspect.signature(qvtoperational_cst_ResolveExpCS.__init__)
     params = list(sig.parameters.keys())
-    assert "isDeferred" in params, "Missing parameter 'isDeferred'"
     assert "one" in params, "Missing parameter 'one'"
     assert "isInverse" in params, "Missing parameter 'isInverse'"
+    assert "isDeferred" in params, "Missing parameter 'isDeferred'"
 
-def test_qvtoperational::cst::resolveexpcs_has_isDeferred():
-    assert hasattr(qvtoperational::cst::ResolveExpCS, "isDeferred")
+def test_qvtoperational_cst_resolveexpcs_has_one():
+    assert hasattr(qvtoperational_cst_ResolveExpCS, "one")
     descriptor = None
-    for klass in qvtoperational::cst::ResolveExpCS.__mro__:
-        if "isDeferred" in klass.__dict__:
-            descriptor = klass.__dict__["isDeferred"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_qvtoperational::cst::resolveexpcs_has_one():
-    assert hasattr(qvtoperational::cst::ResolveExpCS, "one")
-    descriptor = None
-    for klass in qvtoperational::cst::ResolveExpCS.__mro__:
+    for klass in qvtoperational_cst_ResolveExpCS.__mro__:
         if "one" in klass.__dict__:
             descriptor = klass.__dict__["one"]
             break
     assert isinstance(descriptor, property)
 
-def test_qvtoperational::cst::resolveexpcs_has_isInverse():
-    assert hasattr(qvtoperational::cst::ResolveExpCS, "isInverse")
+def test_qvtoperational_cst_resolveexpcs_has_isInverse():
+    assert hasattr(qvtoperational_cst_ResolveExpCS, "isInverse")
     descriptor = None
-    for klass in qvtoperational::cst::ResolveExpCS.__mro__:
+    for klass in qvtoperational_cst_ResolveExpCS.__mro__:
         if "isInverse" in klass.__dict__:
             descriptor = klass.__dict__["isInverse"]
             break
     assert isinstance(descriptor, property)
 
-
-
-def test_qvtoperational::cst::elementwithbody_is_not_abstract():
-    assert not inspect.isabstract(qvtoperational::cst::ElementWithBody)
-
-
-def test_qvtoperational::cst::elementwithbody_constructor_exists():
-    assert callable(qvtoperational::cst::ElementWithBody.__init__)
-
-
-def test_qvtoperational::cst::elementwithbody_constructor_args():
-    sig = inspect.signature(qvtoperational::cst::ElementWithBody.__init__)
-    params = list(sig.parameters.keys())
-    assert "bodyEndLocation" in params, "Missing parameter 'bodyEndLocation'"
-    assert "bodyStartLocation" in params, "Missing parameter 'bodyStartLocation'"
-
-def test_qvtoperational::cst::elementwithbody_has_bodyEndLocation():
-    assert hasattr(qvtoperational::cst::ElementWithBody, "bodyEndLocation")
+def test_qvtoperational_cst_resolveexpcs_has_isDeferred():
+    assert hasattr(qvtoperational_cst_ResolveExpCS, "isDeferred")
     descriptor = None
-    for klass in qvtoperational::cst::ElementWithBody.__mro__:
-        if "bodyEndLocation" in klass.__dict__:
-            descriptor = klass.__dict__["bodyEndLocation"]
+    for klass in qvtoperational_cst_ResolveExpCS.__mro__:
+        if "isDeferred" in klass.__dict__:
+            descriptor = klass.__dict__["isDeferred"]
             break
     assert isinstance(descriptor, property)
 
-def test_qvtoperational::cst::elementwithbody_has_bodyStartLocation():
-    assert hasattr(qvtoperational::cst::ElementWithBody, "bodyStartLocation")
+
+
+def test_qvtoperational_cst_elementwithbody_is_not_abstract():
+    assert not inspect.isabstract(qvtoperational_cst_ElementWithBody)
+
+
+def test_qvtoperational_cst_elementwithbody_constructor_exists():
+    assert callable(qvtoperational_cst_ElementWithBody.__init__)
+
+
+def test_qvtoperational_cst_elementwithbody_constructor_args():
+    sig = inspect.signature(qvtoperational_cst_ElementWithBody.__init__)
+    params = list(sig.parameters.keys())
+    assert "bodyStartLocation" in params, "Missing parameter 'bodyStartLocation'"
+    assert "bodyEndLocation" in params, "Missing parameter 'bodyEndLocation'"
+
+def test_qvtoperational_cst_elementwithbody_has_bodyStartLocation():
+    assert hasattr(qvtoperational_cst_ElementWithBody, "bodyStartLocation")
     descriptor = None
-    for klass in qvtoperational::cst::ElementWithBody.__mro__:
+    for klass in qvtoperational_cst_ElementWithBody.__mro__:
         if "bodyStartLocation" in klass.__dict__:
             descriptor = klass.__dict__["bodyStartLocation"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_qvtoperational_cst_elementwithbody_has_bodyEndLocation():
+    assert hasattr(qvtoperational_cst_ElementWithBody, "bodyEndLocation")
+    descriptor = None
+    for klass in qvtoperational_cst_ElementWithBody.__mro__:
+        if "bodyEndLocation" in klass.__dict__:
+            descriptor = klass.__dict__["bodyEndLocation"]
             break
     assert isinstance(descriptor, property)
 
@@ -431,30 +361,16 @@ def test_operationcallexpcs_constructor_args():
 
 
 
-def test_qvtoperational::cst::logexpcs_is_not_abstract():
-    assert not inspect.isabstract(qvtoperational::cst::LogExpCS)
+def test_qvtoperational_cst_imperativeoperationcallexpcs_is_not_abstract():
+    assert not inspect.isabstract(qvtoperational_cst_ImperativeOperationCallExpCS)
 
 
-def test_qvtoperational::cst::logexpcs_constructor_exists():
-    assert callable(qvtoperational::cst::LogExpCS.__init__)
+def test_qvtoperational_cst_imperativeoperationcallexpcs_constructor_exists():
+    assert callable(qvtoperational_cst_ImperativeOperationCallExpCS.__init__)
 
 
-def test_qvtoperational::cst::logexpcs_constructor_args():
-    sig = inspect.signature(qvtoperational::cst::LogExpCS.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_qvtoperational::cst::imperativeoperationcallexpcs_is_not_abstract():
-    assert not inspect.isabstract(qvtoperational::cst::ImperativeOperationCallExpCS)
-
-
-def test_qvtoperational::cst::imperativeoperationcallexpcs_constructor_exists():
-    assert callable(qvtoperational::cst::ImperativeOperationCallExpCS.__init__)
-
-
-def test_qvtoperational::cst::imperativeoperationcallexpcs_constructor_args():
-    sig = inspect.signature(qvtoperational::cst::ImperativeOperationCallExpCS.__init__)
+def test_qvtoperational_cst_imperativeoperationcallexpcs_constructor_args():
+    sig = inspect.signature(qvtoperational_cst_ImperativeOperationCallExpCS.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -473,23 +389,23 @@ def test_imperativeoperationcallexpcs_constructor_args():
 
 
 
-def test_qvtoperational::cst::mappingcallexpcs_is_not_abstract():
-    assert not inspect.isabstract(qvtoperational::cst::MappingCallExpCS)
+def test_qvtoperational_cst_mappingcallexpcs_is_not_abstract():
+    assert not inspect.isabstract(qvtoperational_cst_MappingCallExpCS)
 
 
-def test_qvtoperational::cst::mappingcallexpcs_constructor_exists():
-    assert callable(qvtoperational::cst::MappingCallExpCS.__init__)
+def test_qvtoperational_cst_mappingcallexpcs_constructor_exists():
+    assert callable(qvtoperational_cst_MappingCallExpCS.__init__)
 
 
-def test_qvtoperational::cst::mappingcallexpcs_constructor_args():
-    sig = inspect.signature(qvtoperational::cst::MappingCallExpCS.__init__)
+def test_qvtoperational_cst_mappingcallexpcs_constructor_args():
+    sig = inspect.signature(qvtoperational_cst_MappingCallExpCS.__init__)
     params = list(sig.parameters.keys())
     assert "strict" in params, "Missing parameter 'strict'"
 
-def test_qvtoperational::cst::mappingcallexpcs_has_strict():
-    assert hasattr(qvtoperational::cst::MappingCallExpCS, "strict")
+def test_qvtoperational_cst_mappingcallexpcs_has_strict():
+    assert hasattr(qvtoperational_cst_MappingCallExpCS, "strict")
     descriptor = None
-    for klass in qvtoperational::cst::MappingCallExpCS.__mro__:
+    for klass in qvtoperational_cst_MappingCallExpCS.__mro__:
         if "strict" in klass.__dict__:
             descriptor = klass.__dict__["strict"]
             break
@@ -497,16 +413,16 @@ def test_qvtoperational::cst::mappingcallexpcs_has_strict():
 
 
 
-def test_cst::instantiationexpcs_is_not_abstract():
-    assert not inspect.isabstract(cst::InstantiationExpCS)
+def test_cst_instantiationexpcs_is_not_abstract():
+    assert not inspect.isabstract(cst_InstantiationExpCS)
 
 
-def test_cst::instantiationexpcs_constructor_exists():
-    assert callable(cst::InstantiationExpCS.__init__)
+def test_cst_instantiationexpcs_constructor_exists():
+    assert callable(cst_InstantiationExpCS.__init__)
 
 
-def test_cst::instantiationexpcs_constructor_args():
-    sig = inspect.signature(cst::InstantiationExpCS.__init__)
+def test_cst_instantiationexpcs_constructor_args():
+    sig = inspect.signature(cst_InstantiationExpCS.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -553,72 +469,72 @@ def test_imperativeloopexpcs_constructor_args():
 
 
 
-def test_qvtoperational::cst::imperativeiterateexpcs_is_not_abstract():
-    assert not inspect.isabstract(qvtoperational::cst::ImperativeIterateExpCS)
+def test_qvtoperational_cst_imperativeiterateexpcs_is_not_abstract():
+    assert not inspect.isabstract(qvtoperational_cst_ImperativeIterateExpCS)
 
 
-def test_qvtoperational::cst::imperativeiterateexpcs_constructor_exists():
-    assert callable(qvtoperational::cst::ImperativeIterateExpCS.__init__)
+def test_qvtoperational_cst_imperativeiterateexpcs_constructor_exists():
+    assert callable(qvtoperational_cst_ImperativeIterateExpCS.__init__)
 
 
-def test_qvtoperational::cst::imperativeiterateexpcs_constructor_args():
-    sig = inspect.signature(qvtoperational::cst::ImperativeIterateExpCS.__init__)
+def test_qvtoperational_cst_imperativeiterateexpcs_constructor_args():
+    sig = inspect.signature(qvtoperational_cst_ImperativeIterateExpCS.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_qvtoperational::cst::forexpcs_is_not_abstract():
-    assert not inspect.isabstract(qvtoperational::cst::ForExpCS)
+def test_qvtoperational_cst_forexpcs_is_not_abstract():
+    assert not inspect.isabstract(qvtoperational_cst_ForExpCS)
 
 
-def test_qvtoperational::cst::forexpcs_constructor_exists():
-    assert callable(qvtoperational::cst::ForExpCS.__init__)
+def test_qvtoperational_cst_forexpcs_constructor_exists():
+    assert callable(qvtoperational_cst_ForExpCS.__init__)
 
 
-def test_qvtoperational::cst::forexpcs_constructor_args():
-    sig = inspect.signature(qvtoperational::cst::ForExpCS.__init__)
+def test_qvtoperational_cst_forexpcs_constructor_args():
+    sig = inspect.signature(qvtoperational_cst_ForExpCS.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_cst::statementcs_is_not_abstract():
-    assert not inspect.isabstract(cst::StatementCS)
+def test_cst_statementcs_is_not_abstract():
+    assert not inspect.isabstract(cst_StatementCS)
 
 
-def test_cst::statementcs_constructor_exists():
-    assert callable(cst::StatementCS.__init__)
+def test_cst_statementcs_constructor_exists():
+    assert callable(cst_StatementCS.__init__)
 
 
-def test_cst::statementcs_constructor_args():
-    sig = inspect.signature(cst::StatementCS.__init__)
+def test_cst_statementcs_constructor_args():
+    sig = inspect.signature(cst_StatementCS.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_cst::loopexpcs_is_not_abstract():
-    assert not inspect.isabstract(cst::LoopExpCS)
+def test_cst_loopexpcs_is_not_abstract():
+    assert not inspect.isabstract(cst_LoopExpCS)
 
 
-def test_cst::loopexpcs_constructor_exists():
-    assert callable(cst::LoopExpCS.__init__)
+def test_cst_loopexpcs_constructor_exists():
+    assert callable(cst_LoopExpCS.__init__)
 
 
-def test_cst::loopexpcs_constructor_args():
-    sig = inspect.signature(cst::LoopExpCS.__init__)
+def test_cst_loopexpcs_constructor_args():
+    sig = inspect.signature(cst_LoopExpCS.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_qvtoperational::cst::imperativeloopexpcs_is_not_abstract():
-    assert not inspect.isabstract(qvtoperational::cst::ImperativeLoopExpCS)
+def test_qvtoperational_cst_imperativeloopexpcs_is_not_abstract():
+    assert not inspect.isabstract(qvtoperational_cst_ImperativeLoopExpCS)
 
 
-def test_qvtoperational::cst::imperativeloopexpcs_constructor_exists():
-    assert callable(qvtoperational::cst::ImperativeLoopExpCS.__init__)
+def test_qvtoperational_cst_imperativeloopexpcs_constructor_exists():
+    assert callable(qvtoperational_cst_ImperativeLoopExpCS.__init__)
 
 
-def test_qvtoperational::cst::imperativeloopexpcs_constructor_args():
-    sig = inspect.signature(qvtoperational::cst::ImperativeLoopExpCS.__init__)
+def test_qvtoperational_cst_imperativeloopexpcs_constructor_args():
+    sig = inspect.signature(qvtoperational_cst_ImperativeLoopExpCS.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -651,117 +567,51 @@ def test_statementcs_constructor_args():
 
 
 
-def test_qvtoperational::cst::assignstatementcs_is_not_abstract():
-    assert not inspect.isabstract(qvtoperational::cst::AssignStatementCS)
+def test_qvtoperational_cst_continueexpcs_is_not_abstract():
+    assert not inspect.isabstract(qvtoperational_cst_ContinueExpCS)
 
 
-def test_qvtoperational::cst::assignstatementcs_constructor_exists():
-    assert callable(qvtoperational::cst::AssignStatementCS.__init__)
+def test_qvtoperational_cst_continueexpcs_constructor_exists():
+    assert callable(qvtoperational_cst_ContinueExpCS.__init__)
 
 
-def test_qvtoperational::cst::assignstatementcs_constructor_args():
-    sig = inspect.signature(qvtoperational::cst::AssignStatementCS.__init__)
-    params = list(sig.parameters.keys())
-    assert "incremental" in params, "Missing parameter 'incremental'"
-
-def test_qvtoperational::cst::assignstatementcs_has_incremental():
-    assert hasattr(qvtoperational::cst::AssignStatementCS, "incremental")
-    descriptor = None
-    for klass in qvtoperational::cst::AssignStatementCS.__mro__:
-        if "incremental" in klass.__dict__:
-            descriptor = klass.__dict__["incremental"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_qvtoperational::cst::computeexpcs_is_not_abstract():
-    assert not inspect.isabstract(qvtoperational::cst::ComputeExpCS)
-
-
-def test_qvtoperational::cst::computeexpcs_constructor_exists():
-    assert callable(qvtoperational::cst::ComputeExpCS.__init__)
-
-
-def test_qvtoperational::cst::computeexpcs_constructor_args():
-    sig = inspect.signature(qvtoperational::cst::ComputeExpCS.__init__)
+def test_qvtoperational_cst_continueexpcs_constructor_args():
+    sig = inspect.signature(qvtoperational_cst_ContinueExpCS.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_qvtoperational::cst::continueexpcs_is_not_abstract():
-    assert not inspect.isabstract(qvtoperational::cst::ContinueExpCS)
+def test_qvtoperational_cst_breakexpcs_is_not_abstract():
+    assert not inspect.isabstract(qvtoperational_cst_BreakExpCS)
 
 
-def test_qvtoperational::cst::continueexpcs_constructor_exists():
-    assert callable(qvtoperational::cst::ContinueExpCS.__init__)
+def test_qvtoperational_cst_breakexpcs_constructor_exists():
+    assert callable(qvtoperational_cst_BreakExpCS.__init__)
 
 
-def test_qvtoperational::cst::continueexpcs_constructor_args():
-    sig = inspect.signature(qvtoperational::cst::ContinueExpCS.__init__)
+def test_qvtoperational_cst_breakexpcs_constructor_args():
+    sig = inspect.signature(qvtoperational_cst_BreakExpCS.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_qvtoperational::cst::instantiationexpcs_is_not_abstract():
-    assert not inspect.isabstract(qvtoperational::cst::InstantiationExpCS)
+def test_qvtoperational_cst_variableinitializationcs_is_not_abstract():
+    assert not inspect.isabstract(qvtoperational_cst_VariableInitializationCS)
 
 
-def test_qvtoperational::cst::instantiationexpcs_constructor_exists():
-    assert callable(qvtoperational::cst::InstantiationExpCS.__init__)
+def test_qvtoperational_cst_variableinitializationcs_constructor_exists():
+    assert callable(qvtoperational_cst_VariableInitializationCS.__init__)
 
 
-def test_qvtoperational::cst::instantiationexpcs_constructor_args():
-    sig = inspect.signature(qvtoperational::cst::InstantiationExpCS.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_qvtoperational::cst::whileexpcs_is_not_abstract():
-    assert not inspect.isabstract(qvtoperational::cst::WhileExpCS)
-
-
-def test_qvtoperational::cst::whileexpcs_constructor_exists():
-    assert callable(qvtoperational::cst::WhileExpCS.__init__)
-
-
-def test_qvtoperational::cst::whileexpcs_constructor_args():
-    sig = inspect.signature(qvtoperational::cst::WhileExpCS.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_qvtoperational::cst::breakexpcs_is_not_abstract():
-    assert not inspect.isabstract(qvtoperational::cst::BreakExpCS)
-
-
-def test_qvtoperational::cst::breakexpcs_constructor_exists():
-    assert callable(qvtoperational::cst::BreakExpCS.__init__)
-
-
-def test_qvtoperational::cst::breakexpcs_constructor_args():
-    sig = inspect.signature(qvtoperational::cst::BreakExpCS.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_qvtoperational::cst::variableinitializationcs_is_not_abstract():
-    assert not inspect.isabstract(qvtoperational::cst::VariableInitializationCS)
-
-
-def test_qvtoperational::cst::variableinitializationcs_constructor_exists():
-    assert callable(qvtoperational::cst::VariableInitializationCS.__init__)
-
-
-def test_qvtoperational::cst::variableinitializationcs_constructor_args():
-    sig = inspect.signature(qvtoperational::cst::VariableInitializationCS.__init__)
+def test_qvtoperational_cst_variableinitializationcs_constructor_args():
+    sig = inspect.signature(qvtoperational_cst_VariableInitializationCS.__init__)
     params = list(sig.parameters.keys())
     assert "withResult" in params, "Missing parameter 'withResult'"
 
-def test_qvtoperational::cst::variableinitializationcs_has_withResult():
-    assert hasattr(qvtoperational::cst::VariableInitializationCS, "withResult")
+def test_qvtoperational_cst_variableinitializationcs_has_withResult():
+    assert hasattr(qvtoperational_cst_VariableInitializationCS, "withResult")
     descriptor = None
-    for klass in qvtoperational::cst::VariableInitializationCS.__mro__:
+    for klass in qvtoperational_cst_VariableInitializationCS.__mro__:
         if "withResult" in klass.__dict__:
             descriptor = klass.__dict__["withResult"]
             break
@@ -769,86 +619,110 @@ def test_qvtoperational::cst::variableinitializationcs_has_withResult():
 
 
 
-def test_qvtoperational::cst::switchexpcs_is_not_abstract():
-    assert not inspect.isabstract(qvtoperational::cst::SwitchExpCS)
+def test_qvtoperational_cst_whileexpcs_is_not_abstract():
+    assert not inspect.isabstract(qvtoperational_cst_WhileExpCS)
 
 
-def test_qvtoperational::cst::switchexpcs_constructor_exists():
-    assert callable(qvtoperational::cst::SwitchExpCS.__init__)
+def test_qvtoperational_cst_whileexpcs_constructor_exists():
+    assert callable(qvtoperational_cst_WhileExpCS.__init__)
 
 
-def test_qvtoperational::cst::switchexpcs_constructor_args():
-    sig = inspect.signature(qvtoperational::cst::SwitchExpCS.__init__)
+def test_qvtoperational_cst_whileexpcs_constructor_args():
+    sig = inspect.signature(qvtoperational_cst_WhileExpCS.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_qvtoperational::cst::returnexpcs_is_not_abstract():
-    assert not inspect.isabstract(qvtoperational::cst::ReturnExpCS)
+def test_qvtoperational_cst_switchaltexpcs_is_not_abstract():
+    assert not inspect.isabstract(qvtoperational_cst_SwitchAltExpCS)
 
 
-def test_qvtoperational::cst::returnexpcs_constructor_exists():
-    assert callable(qvtoperational::cst::ReturnExpCS.__init__)
+def test_qvtoperational_cst_switchaltexpcs_constructor_exists():
+    assert callable(qvtoperational_cst_SwitchAltExpCS.__init__)
 
 
-def test_qvtoperational::cst::returnexpcs_constructor_args():
-    sig = inspect.signature(qvtoperational::cst::ReturnExpCS.__init__)
+def test_qvtoperational_cst_switchaltexpcs_constructor_args():
+    sig = inspect.signature(qvtoperational_cst_SwitchAltExpCS.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_qvtoperational::cst::switchaltexpcs_is_not_abstract():
-    assert not inspect.isabstract(qvtoperational::cst::SwitchAltExpCS)
+def test_qvtoperational_cst_computeexpcs_is_not_abstract():
+    assert not inspect.isabstract(qvtoperational_cst_ComputeExpCS)
 
 
-def test_qvtoperational::cst::switchaltexpcs_constructor_exists():
-    assert callable(qvtoperational::cst::SwitchAltExpCS.__init__)
+def test_qvtoperational_cst_computeexpcs_constructor_exists():
+    assert callable(qvtoperational_cst_ComputeExpCS.__init__)
 
 
-def test_qvtoperational::cst::switchaltexpcs_constructor_args():
-    sig = inspect.signature(qvtoperational::cst::SwitchAltExpCS.__init__)
+def test_qvtoperational_cst_computeexpcs_constructor_args():
+    sig = inspect.signature(qvtoperational_cst_ComputeExpCS.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_qvtoperational::cst::assertexpcs_is_not_abstract():
-    assert not inspect.isabstract(qvtoperational::cst::AssertExpCS)
+def test_qvtoperational_cst_expressionstatementcs_is_not_abstract():
+    assert not inspect.isabstract(qvtoperational_cst_ExpressionStatementCS)
 
 
-def test_qvtoperational::cst::assertexpcs_constructor_exists():
-    assert callable(qvtoperational::cst::AssertExpCS.__init__)
+def test_qvtoperational_cst_expressionstatementcs_constructor_exists():
+    assert callable(qvtoperational_cst_ExpressionStatementCS.__init__)
 
 
-def test_qvtoperational::cst::assertexpcs_constructor_args():
-    sig = inspect.signature(qvtoperational::cst::AssertExpCS.__init__)
+def test_qvtoperational_cst_expressionstatementcs_constructor_args():
+    sig = inspect.signature(qvtoperational_cst_ExpressionStatementCS.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_qvtoperational::cst::expressionstatementcs_is_not_abstract():
-    assert not inspect.isabstract(qvtoperational::cst::ExpressionStatementCS)
+def test_qvtoperational_cst_switchexpcs_is_not_abstract():
+    assert not inspect.isabstract(qvtoperational_cst_SwitchExpCS)
 
 
-def test_qvtoperational::cst::expressionstatementcs_constructor_exists():
-    assert callable(qvtoperational::cst::ExpressionStatementCS.__init__)
+def test_qvtoperational_cst_switchexpcs_constructor_exists():
+    assert callable(qvtoperational_cst_SwitchExpCS.__init__)
 
 
-def test_qvtoperational::cst::expressionstatementcs_constructor_args():
-    sig = inspect.signature(qvtoperational::cst::ExpressionStatementCS.__init__)
+def test_qvtoperational_cst_switchexpcs_constructor_args():
+    sig = inspect.signature(qvtoperational_cst_SwitchExpCS.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_qvtoperational::cst::blockexpcs_is_not_abstract():
-    assert not inspect.isabstract(qvtoperational::cst::BlockExpCS)
+def test_qvtoperational_cst_assignstatementcs_is_not_abstract():
+    assert not inspect.isabstract(qvtoperational_cst_AssignStatementCS)
 
 
-def test_qvtoperational::cst::blockexpcs_constructor_exists():
-    assert callable(qvtoperational::cst::BlockExpCS.__init__)
+def test_qvtoperational_cst_assignstatementcs_constructor_exists():
+    assert callable(qvtoperational_cst_AssignStatementCS.__init__)
 
 
-def test_qvtoperational::cst::blockexpcs_constructor_args():
-    sig = inspect.signature(qvtoperational::cst::BlockExpCS.__init__)
+def test_qvtoperational_cst_assignstatementcs_constructor_args():
+    sig = inspect.signature(qvtoperational_cst_AssignStatementCS.__init__)
+    params = list(sig.parameters.keys())
+    assert "incremental" in params, "Missing parameter 'incremental'"
+
+def test_qvtoperational_cst_assignstatementcs_has_incremental():
+    assert hasattr(qvtoperational_cst_AssignStatementCS, "incremental")
+    descriptor = None
+    for klass in qvtoperational_cst_AssignStatementCS.__mro__:
+        if "incremental" in klass.__dict__:
+            descriptor = klass.__dict__["incremental"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_qvtoperational_cst_blockexpcs_is_not_abstract():
+    assert not inspect.isabstract(qvtoperational_cst_BlockExpCS)
+
+
+def test_qvtoperational_cst_blockexpcs_constructor_exists():
+    assert callable(qvtoperational_cst_BlockExpCS.__init__)
+
+
+def test_qvtoperational_cst_blockexpcs_constructor_args():
+    sig = inspect.signature(qvtoperational_cst_BlockExpCS.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -909,37 +783,23 @@ def test_mappingsectioncs_constructor_args():
 
 
 
-def test_qvtoperational::cst::mappingendcs_is_not_abstract():
-    assert not inspect.isabstract(qvtoperational::cst::MappingEndCS)
+def test_qvtoperational_cst_mappingbodycs_is_not_abstract():
+    assert not inspect.isabstract(qvtoperational_cst_MappingBodyCS)
 
 
-def test_qvtoperational::cst::mappingendcs_constructor_exists():
-    assert callable(qvtoperational::cst::MappingEndCS.__init__)
+def test_qvtoperational_cst_mappingbodycs_constructor_exists():
+    assert callable(qvtoperational_cst_MappingBodyCS.__init__)
 
 
-def test_qvtoperational::cst::mappingendcs_constructor_args():
-    sig = inspect.signature(qvtoperational::cst::MappingEndCS.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_qvtoperational::cst::mappingbodycs_is_not_abstract():
-    assert not inspect.isabstract(qvtoperational::cst::MappingBodyCS)
-
-
-def test_qvtoperational::cst::mappingbodycs_constructor_exists():
-    assert callable(qvtoperational::cst::MappingBodyCS.__init__)
-
-
-def test_qvtoperational::cst::mappingbodycs_constructor_args():
-    sig = inspect.signature(qvtoperational::cst::MappingBodyCS.__init__)
+def test_qvtoperational_cst_mappingbodycs_constructor_args():
+    sig = inspect.signature(qvtoperational_cst_MappingBodyCS.__init__)
     params = list(sig.parameters.keys())
     assert "hasPopulationKeyword" in params, "Missing parameter 'hasPopulationKeyword'"
 
-def test_qvtoperational::cst::mappingbodycs_has_hasPopulationKeyword():
-    assert hasattr(qvtoperational::cst::MappingBodyCS, "hasPopulationKeyword")
+def test_qvtoperational_cst_mappingbodycs_has_hasPopulationKeyword():
+    assert hasattr(qvtoperational_cst_MappingBodyCS, "hasPopulationKeyword")
     descriptor = None
-    for klass in qvtoperational::cst::MappingBodyCS.__mro__:
+    for klass in qvtoperational_cst_MappingBodyCS.__mro__:
         if "hasPopulationKeyword" in klass.__dict__:
             descriptor = klass.__dict__["hasPopulationKeyword"]
             break
@@ -947,16 +807,30 @@ def test_qvtoperational::cst::mappingbodycs_has_hasPopulationKeyword():
 
 
 
-def test_qvtoperational::cst::mappinginitcs_is_not_abstract():
-    assert not inspect.isabstract(qvtoperational::cst::MappingInitCS)
+def test_qvtoperational_cst_mappingendcs_is_not_abstract():
+    assert not inspect.isabstract(qvtoperational_cst_MappingEndCS)
 
 
-def test_qvtoperational::cst::mappinginitcs_constructor_exists():
-    assert callable(qvtoperational::cst::MappingInitCS.__init__)
+def test_qvtoperational_cst_mappingendcs_constructor_exists():
+    assert callable(qvtoperational_cst_MappingEndCS.__init__)
 
 
-def test_qvtoperational::cst::mappinginitcs_constructor_args():
-    sig = inspect.signature(qvtoperational::cst::MappingInitCS.__init__)
+def test_qvtoperational_cst_mappingendcs_constructor_args():
+    sig = inspect.signature(qvtoperational_cst_MappingEndCS.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_qvtoperational_cst_mappinginitcs_is_not_abstract():
+    assert not inspect.isabstract(qvtoperational_cst_MappingInitCS)
+
+
+def test_qvtoperational_cst_mappinginitcs_constructor_exists():
+    assert callable(qvtoperational_cst_MappingInitCS.__init__)
+
+
+def test_qvtoperational_cst_mappinginitcs_constructor_args():
+    sig = inspect.signature(qvtoperational_cst_MappingInitCS.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -975,37 +849,37 @@ def test_mappingrulecs_constructor_args():
 
 
 
-def test_cst::elementwithbody_is_not_abstract():
-    assert not inspect.isabstract(cst::ElementWithBody)
+def test_cst_elementwithbody_is_not_abstract():
+    assert not inspect.isabstract(cst_ElementWithBody)
 
 
-def test_cst::elementwithbody_constructor_exists():
-    assert callable(cst::ElementWithBody.__init__)
+def test_cst_elementwithbody_constructor_exists():
+    assert callable(cst_ElementWithBody.__init__)
 
 
-def test_cst::elementwithbody_constructor_args():
-    sig = inspect.signature(cst::ElementWithBody.__init__)
+def test_cst_elementwithbody_constructor_args():
+    sig = inspect.signature(cst_ElementWithBody.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_qvtoperational::cst::objectexpcs_is_not_abstract():
-    assert not inspect.isabstract(qvtoperational::cst::ObjectExpCS)
+def test_qvtoperational_cst_objectexpcs_is_not_abstract():
+    assert not inspect.isabstract(qvtoperational_cst_ObjectExpCS)
 
 
-def test_qvtoperational::cst::objectexpcs_constructor_exists():
-    assert callable(qvtoperational::cst::ObjectExpCS.__init__)
+def test_qvtoperational_cst_objectexpcs_constructor_exists():
+    assert callable(qvtoperational_cst_ObjectExpCS.__init__)
 
 
-def test_qvtoperational::cst::objectexpcs_constructor_args():
-    sig = inspect.signature(qvtoperational::cst::ObjectExpCS.__init__)
+def test_qvtoperational_cst_objectexpcs_constructor_args():
+    sig = inspect.signature(qvtoperational_cst_ObjectExpCS.__init__)
     params = list(sig.parameters.keys())
     assert "isImplicit" in params, "Missing parameter 'isImplicit'"
 
-def test_qvtoperational::cst::objectexpcs_has_isImplicit():
-    assert hasattr(qvtoperational::cst::ObjectExpCS, "isImplicit")
+def test_qvtoperational_cst_objectexpcs_has_isImplicit():
+    assert hasattr(qvtoperational_cst_ObjectExpCS, "isImplicit")
     descriptor = None
-    for klass in qvtoperational::cst::ObjectExpCS.__mro__:
+    for klass in qvtoperational_cst_ObjectExpCS.__mro__:
         if "isImplicit" in klass.__dict__:
             descriptor = klass.__dict__["isImplicit"]
             break
@@ -1013,44 +887,44 @@ def test_qvtoperational::cst::objectexpcs_has_isImplicit():
 
 
 
-def test_cst::cstnode_is_not_abstract():
-    assert not inspect.isabstract(cst::CSTNode)
+def test_cst_cstnode_is_not_abstract():
+    assert not inspect.isabstract(cst_CSTNode)
 
 
-def test_cst::cstnode_constructor_exists():
-    assert callable(cst::CSTNode.__init__)
+def test_cst_cstnode_constructor_exists():
+    assert callable(cst_CSTNode.__init__)
 
 
-def test_cst::cstnode_constructor_args():
-    sig = inspect.signature(cst::CSTNode.__init__)
+def test_cst_cstnode_constructor_args():
+    sig = inspect.signature(cst_CSTNode.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_qvtoperational::cst::modeltypecs_is_not_abstract():
-    assert not inspect.isabstract(qvtoperational::cst::ModelTypeCS)
+def test_qvtoperational_cst_modeltypecs_is_not_abstract():
+    assert not inspect.isabstract(qvtoperational_cst_ModelTypeCS)
 
 
-def test_qvtoperational::cst::modeltypecs_constructor_exists():
-    assert callable(qvtoperational::cst::ModelTypeCS.__init__)
+def test_qvtoperational_cst_modeltypecs_constructor_exists():
+    assert callable(qvtoperational_cst_ModelTypeCS.__init__)
 
 
-def test_qvtoperational::cst::modeltypecs_constructor_args():
-    sig = inspect.signature(qvtoperational::cst::ModelTypeCS.__init__)
+def test_qvtoperational_cst_modeltypecs_constructor_args():
+    sig = inspect.signature(qvtoperational_cst_ModelTypeCS.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_qvtoperational::cst::mappingsectioncs_is_not_abstract():
-    assert not inspect.isabstract(qvtoperational::cst::MappingSectionCS)
+def test_qvtoperational_cst_mappingsectioncs_is_not_abstract():
+    assert not inspect.isabstract(qvtoperational_cst_MappingSectionCS)
 
 
-def test_qvtoperational::cst::mappingsectioncs_constructor_exists():
-    assert callable(qvtoperational::cst::MappingSectionCS.__init__)
+def test_qvtoperational_cst_mappingsectioncs_constructor_exists():
+    assert callable(qvtoperational_cst_MappingSectionCS.__init__)
 
 
-def test_qvtoperational::cst::mappingsectioncs_constructor_args():
-    sig = inspect.signature(qvtoperational::cst::MappingSectionCS.__init__)
+def test_qvtoperational_cst_mappingsectioncs_constructor_args():
+    sig = inspect.signature(qvtoperational_cst_MappingSectionCS.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1153,23 +1027,23 @@ def test_localpropertycs_constructor_args():
 
 
 
-def test_qvtoperational::cst::classifierpropertycs_is_not_abstract():
-    assert not inspect.isabstract(qvtoperational::cst::ClassifierPropertyCS)
+def test_qvtoperational_cst_classifierpropertycs_is_not_abstract():
+    assert not inspect.isabstract(qvtoperational_cst_ClassifierPropertyCS)
 
 
-def test_qvtoperational::cst::classifierpropertycs_constructor_exists():
-    assert callable(qvtoperational::cst::ClassifierPropertyCS.__init__)
+def test_qvtoperational_cst_classifierpropertycs_constructor_exists():
+    assert callable(qvtoperational_cst_ClassifierPropertyCS.__init__)
 
 
-def test_qvtoperational::cst::classifierpropertycs_constructor_args():
-    sig = inspect.signature(qvtoperational::cst::ClassifierPropertyCS.__init__)
+def test_qvtoperational_cst_classifierpropertycs_constructor_args():
+    sig = inspect.signature(qvtoperational_cst_ClassifierPropertyCS.__init__)
     params = list(sig.parameters.keys())
     assert "isOrdered" in params, "Missing parameter 'isOrdered'"
 
-def test_qvtoperational::cst::classifierpropertycs_has_isOrdered():
-    assert hasattr(qvtoperational::cst::ClassifierPropertyCS, "isOrdered")
+def test_qvtoperational_cst_classifierpropertycs_has_isOrdered():
+    assert hasattr(qvtoperational_cst_ClassifierPropertyCS, "isOrdered")
     descriptor = None
-    for klass in qvtoperational::cst::ClassifierPropertyCS.__mro__:
+    for klass in qvtoperational_cst_ClassifierPropertyCS.__mro__:
         if "isOrdered" in klass.__dict__:
             descriptor = klass.__dict__["isOrdered"]
             break
@@ -1233,16 +1107,16 @@ def test_oclexpressioncs_constructor_args():
 
 
 
-def test_qvtoperational::cst::statementcs_is_not_abstract():
-    assert not inspect.isabstract(qvtoperational::cst::StatementCS)
+def test_qvtoperational_cst_statementcs_is_not_abstract():
+    assert not inspect.isabstract(qvtoperational_cst_StatementCS)
 
 
-def test_qvtoperational::cst::statementcs_constructor_exists():
-    assert callable(qvtoperational::cst::StatementCS.__init__)
+def test_qvtoperational_cst_statementcs_constructor_exists():
+    assert callable(qvtoperational_cst_StatementCS.__init__)
 
 
-def test_qvtoperational::cst::statementcs_constructor_args():
-    sig = inspect.signature(qvtoperational::cst::StatementCS.__init__)
+def test_qvtoperational_cst_statementcs_constructor_args():
+    sig = inspect.signature(qvtoperational_cst_StatementCS.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1285,34 +1159,6 @@ def test_typecs_constructor_exists():
 
 def test_typecs_constructor_args():
     sig = inspect.signature(TypeCS.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_qvtoperational::cst::listtypecs_is_not_abstract():
-    assert not inspect.isabstract(qvtoperational::cst::ListTypeCS)
-
-
-def test_qvtoperational::cst::listtypecs_constructor_exists():
-    assert callable(qvtoperational::cst::ListTypeCS.__init__)
-
-
-def test_qvtoperational::cst::listtypecs_constructor_args():
-    sig = inspect.signature(qvtoperational::cst::ListTypeCS.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_qvtoperational::cst::dictionarytypecs_is_not_abstract():
-    assert not inspect.isabstract(qvtoperational::cst::DictionaryTypeCS)
-
-
-def test_qvtoperational::cst::dictionarytypecs_constructor_exists():
-    assert callable(qvtoperational::cst::DictionaryTypeCS.__init__)
-
-
-def test_qvtoperational::cst::dictionarytypecs_constructor_args():
-    sig = inspect.signature(qvtoperational::cst::DictionaryTypeCS.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1387,16 +1233,16 @@ def test_importcs_constructor_args():
 
 
 
-def test_qvtoperational::cst::libraryimportcs_is_not_abstract():
-    assert not inspect.isabstract(qvtoperational::cst::LibraryImportCS)
+def test_qvtoperational_cst_libraryimportcs_is_not_abstract():
+    assert not inspect.isabstract(qvtoperational_cst_LibraryImportCS)
 
 
-def test_qvtoperational::cst::libraryimportcs_constructor_exists():
-    assert callable(qvtoperational::cst::LibraryImportCS.__init__)
+def test_qvtoperational_cst_libraryimportcs_constructor_exists():
+    assert callable(qvtoperational_cst_LibraryImportCS.__init__)
 
 
-def test_qvtoperational::cst::libraryimportcs_constructor_args():
-    sig = inspect.signature(qvtoperational::cst::LibraryImportCS.__init__)
+def test_qvtoperational_cst_libraryimportcs_constructor_args():
+    sig = inspect.signature(qvtoperational_cst_LibraryImportCS.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1429,283 +1275,37 @@ def test_cstnode_constructor_args():
 
 
 
-def test_qvtoperational::cst::modulekindcs_is_not_abstract():
-    assert not inspect.isabstract(qvtoperational::cst::ModuleKindCS)
+def test_qvtoperational_cst_transformationrefinecs_is_not_abstract():
+    assert not inspect.isabstract(qvtoperational_cst_TransformationRefineCS)
 
 
-def test_qvtoperational::cst::modulekindcs_constructor_exists():
-    assert callable(qvtoperational::cst::ModuleKindCS.__init__)
+def test_qvtoperational_cst_transformationrefinecs_constructor_exists():
+    assert callable(qvtoperational_cst_TransformationRefineCS.__init__)
 
 
-def test_qvtoperational::cst::modulekindcs_constructor_args():
-    sig = inspect.signature(qvtoperational::cst::ModuleKindCS.__init__)
-    params = list(sig.parameters.keys())
-    assert "moduleKind" in params, "Missing parameter 'moduleKind'"
-
-def test_qvtoperational::cst::modulekindcs_has_moduleKind():
-    assert hasattr(qvtoperational::cst::ModuleKindCS, "moduleKind")
-    descriptor = None
-    for klass in qvtoperational::cst::ModuleKindCS.__mro__:
-        if "moduleKind" in klass.__dict__:
-            descriptor = klass.__dict__["moduleKind"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_qvtoperational::cst::simplesignaturecs_is_not_abstract():
-    assert not inspect.isabstract(qvtoperational::cst::SimpleSignatureCS)
-
-
-def test_qvtoperational::cst::simplesignaturecs_constructor_exists():
-    assert callable(qvtoperational::cst::SimpleSignatureCS.__init__)
-
-
-def test_qvtoperational::cst::simplesignaturecs_constructor_args():
-    sig = inspect.signature(qvtoperational::cst::SimpleSignatureCS.__init__)
+def test_qvtoperational_cst_transformationrefinecs_constructor_args():
+    sig = inspect.signature(qvtoperational_cst_TransformationRefineCS.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_qvtoperational::cst::modulepropertycs_is_not_abstract():
-    assert not inspect.isabstract(qvtoperational::cst::ModulePropertyCS)
+def test_qvtoperational_cst_mappingmethodcs_is_not_abstract():
+    assert not inspect.isabstract(qvtoperational_cst_MappingMethodCS)
 
 
-def test_qvtoperational::cst::modulepropertycs_constructor_exists():
-    assert callable(qvtoperational::cst::ModulePropertyCS.__init__)
+def test_qvtoperational_cst_mappingmethodcs_constructor_exists():
+    assert callable(qvtoperational_cst_MappingMethodCS.__init__)
 
 
-def test_qvtoperational::cst::modulepropertycs_constructor_args():
-    sig = inspect.signature(qvtoperational::cst::ModulePropertyCS.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_qvtoperational::cst::mappingdeclarationcs_is_not_abstract():
-    assert not inspect.isabstract(qvtoperational::cst::MappingDeclarationCS)
-
-
-def test_qvtoperational::cst::mappingdeclarationcs_constructor_exists():
-    assert callable(qvtoperational::cst::MappingDeclarationCS.__init__)
-
-
-def test_qvtoperational::cst::mappingdeclarationcs_constructor_args():
-    sig = inspect.signature(qvtoperational::cst::MappingDeclarationCS.__init__)
-    params = list(sig.parameters.keys())
-    assert "qualifiers" in params, "Missing parameter 'qualifiers'"
-    assert "isQuery" in params, "Missing parameter 'isQuery'"
-
-def test_qvtoperational::cst::mappingdeclarationcs_has_qualifiers():
-    assert hasattr(qvtoperational::cst::MappingDeclarationCS, "qualifiers")
-    descriptor = None
-    for klass in qvtoperational::cst::MappingDeclarationCS.__mro__:
-        if "qualifiers" in klass.__dict__:
-            descriptor = klass.__dict__["qualifiers"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_qvtoperational::cst::mappingdeclarationcs_has_isQuery():
-    assert hasattr(qvtoperational::cst::MappingDeclarationCS, "isQuery")
-    descriptor = None
-    for klass in qvtoperational::cst::MappingDeclarationCS.__mro__:
-        if "isQuery" in klass.__dict__:
-            descriptor = klass.__dict__["isQuery"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_qvtoperational::cst::tagcs_is_not_abstract():
-    assert not inspect.isabstract(qvtoperational::cst::TagCS)
-
-
-def test_qvtoperational::cst::tagcs_constructor_exists():
-    assert callable(qvtoperational::cst::TagCS.__init__)
-
-
-def test_qvtoperational::cst::tagcs_constructor_args():
-    sig = inspect.signature(qvtoperational::cst::TagCS.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_qvtoperational::cst::resolveopargsexpcs_is_not_abstract():
-    assert not inspect.isabstract(qvtoperational::cst::ResolveOpArgsExpCS)
-
-
-def test_qvtoperational::cst::resolveopargsexpcs_constructor_exists():
-    assert callable(qvtoperational::cst::ResolveOpArgsExpCS.__init__)
-
-
-def test_qvtoperational::cst::resolveopargsexpcs_constructor_args():
-    sig = inspect.signature(qvtoperational::cst::ResolveOpArgsExpCS.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_qvtoperational::cst::completesignaturecs_is_not_abstract():
-    assert not inspect.isabstract(qvtoperational::cst::CompleteSignatureCS)
-
-
-def test_qvtoperational::cst::completesignaturecs_constructor_exists():
-    assert callable(qvtoperational::cst::CompleteSignatureCS.__init__)
-
-
-def test_qvtoperational::cst::completesignaturecs_constructor_args():
-    sig = inspect.signature(qvtoperational::cst::CompleteSignatureCS.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_qvtoperational::cst::transformationrefinecs_is_not_abstract():
-    assert not inspect.isabstract(qvtoperational::cst::TransformationRefineCS)
-
-
-def test_qvtoperational::cst::transformationrefinecs_constructor_exists():
-    assert callable(qvtoperational::cst::TransformationRefineCS.__init__)
-
-
-def test_qvtoperational::cst::transformationrefinecs_constructor_args():
-    sig = inspect.signature(qvtoperational::cst::TransformationRefineCS.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_qvtoperational::cst::dictliteralpartcs_is_not_abstract():
-    assert not inspect.isabstract(qvtoperational::cst::DictLiteralPartCS)
-
-
-def test_qvtoperational::cst::dictliteralpartcs_constructor_exists():
-    assert callable(qvtoperational::cst::DictLiteralPartCS.__init__)
-
-
-def test_qvtoperational::cst::dictliteralpartcs_constructor_args():
-    sig = inspect.signature(qvtoperational::cst::DictLiteralPartCS.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_qvtoperational::cst::typespeccs_is_not_abstract():
-    assert not inspect.isabstract(qvtoperational::cst::TypeSpecCS)
-
-
-def test_qvtoperational::cst::typespeccs_constructor_exists():
-    assert callable(qvtoperational::cst::TypeSpecCS.__init__)
-
-
-def test_qvtoperational::cst::typespeccs_constructor_args():
-    sig = inspect.signature(qvtoperational::cst::TypeSpecCS.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_qvtoperational::cst::directionkindcs_is_not_abstract():
-    assert not inspect.isabstract(qvtoperational::cst::DirectionKindCS)
-
-
-def test_qvtoperational::cst::directionkindcs_constructor_exists():
-    assert callable(qvtoperational::cst::DirectionKindCS.__init__)
-
-
-def test_qvtoperational::cst::directionkindcs_constructor_args():
-    sig = inspect.signature(qvtoperational::cst::DirectionKindCS.__init__)
-    params = list(sig.parameters.keys())
-    assert "directionKind" in params, "Missing parameter 'directionKind'"
-
-def test_qvtoperational::cst::directionkindcs_has_directionKind():
-    assert hasattr(qvtoperational::cst::DirectionKindCS, "directionKind")
-    descriptor = None
-    for klass in qvtoperational::cst::DirectionKindCS.__mro__:
-        if "directionKind" in klass.__dict__:
-            descriptor = klass.__dict__["directionKind"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_qvtoperational::cst::multiplicitydefcs_is_not_abstract():
-    assert not inspect.isabstract(qvtoperational::cst::MultiplicityDefCS)
-
-
-def test_qvtoperational::cst::multiplicitydefcs_constructor_exists():
-    assert callable(qvtoperational::cst::MultiplicityDefCS.__init__)
-
-
-def test_qvtoperational::cst::multiplicitydefcs_constructor_args():
-    sig = inspect.signature(qvtoperational::cst::MultiplicityDefCS.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_qvtoperational::cst::moduleusagecs_is_not_abstract():
-    assert not inspect.isabstract(qvtoperational::cst::ModuleUsageCS)
-
-
-def test_qvtoperational::cst::moduleusagecs_constructor_exists():
-    assert callable(qvtoperational::cst::ModuleUsageCS.__init__)
-
-
-def test_qvtoperational::cst::moduleusagecs_constructor_args():
-    sig = inspect.signature(qvtoperational::cst::ModuleUsageCS.__init__)
-    params = list(sig.parameters.keys())
-    assert "importKind" in params, "Missing parameter 'importKind'"
-
-def test_qvtoperational::cst::moduleusagecs_has_importKind():
-    assert hasattr(qvtoperational::cst::ModuleUsageCS, "importKind")
-    descriptor = None
-    for klass in qvtoperational::cst::ModuleUsageCS.__mro__:
-        if "importKind" in klass.__dict__:
-            descriptor = klass.__dict__["importKind"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_qvtoperational::cst::classifierdefcs_is_not_abstract():
-    assert not inspect.isabstract(qvtoperational::cst::ClassifierDefCS)
-
-
-def test_qvtoperational::cst::classifierdefcs_constructor_exists():
-    assert callable(qvtoperational::cst::ClassifierDefCS.__init__)
-
-
-def test_qvtoperational::cst::classifierdefcs_constructor_args():
-    sig = inspect.signature(qvtoperational::cst::ClassifierDefCS.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_qvtoperational::cst::renamecs_is_not_abstract():
-    assert not inspect.isabstract(qvtoperational::cst::RenameCS)
-
-
-def test_qvtoperational::cst::renamecs_constructor_exists():
-    assert callable(qvtoperational::cst::RenameCS.__init__)
-
-
-def test_qvtoperational::cst::renamecs_constructor_args():
-    sig = inspect.signature(qvtoperational::cst::RenameCS.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_qvtoperational::cst::mappingmethodcs_is_not_abstract():
-    assert not inspect.isabstract(qvtoperational::cst::MappingMethodCS)
-
-
-def test_qvtoperational::cst::mappingmethodcs_constructor_exists():
-    assert callable(qvtoperational::cst::MappingMethodCS.__init__)
-
-
-def test_qvtoperational::cst::mappingmethodcs_constructor_args():
-    sig = inspect.signature(qvtoperational::cst::MappingMethodCS.__init__)
+def test_qvtoperational_cst_mappingmethodcs_constructor_args():
+    sig = inspect.signature(qvtoperational_cst_MappingMethodCS.__init__)
     params = list(sig.parameters.keys())
     assert "blackBox" in params, "Missing parameter 'blackBox'"
 
-def test_qvtoperational::cst::mappingmethodcs_has_blackBox():
-    assert hasattr(qvtoperational::cst::MappingMethodCS, "blackBox")
+def test_qvtoperational_cst_mappingmethodcs_has_blackBox():
+    assert hasattr(qvtoperational_cst_MappingMethodCS, "blackBox")
     descriptor = None
-    for klass in qvtoperational::cst::MappingMethodCS.__mro__:
+    for klass in qvtoperational_cst_MappingMethodCS.__mro__:
         if "blackBox" in klass.__dict__:
             descriptor = klass.__dict__["blackBox"]
             break
@@ -1713,37 +1313,47 @@ def test_qvtoperational::cst::mappingmethodcs_has_blackBox():
 
 
 
-def test_qvtoperational::cst::packagerefcs_is_not_abstract():
-    assert not inspect.isabstract(qvtoperational::cst::PackageRefCS)
+def test_qvtoperational_cst_modulekindcs_is_not_abstract():
+    assert not inspect.isabstract(qvtoperational_cst_ModuleKindCS)
 
 
-def test_qvtoperational::cst::packagerefcs_constructor_exists():
-    assert callable(qvtoperational::cst::PackageRefCS.__init__)
+def test_qvtoperational_cst_modulekindcs_constructor_exists():
+    assert callable(qvtoperational_cst_ModuleKindCS.__init__)
 
 
-def test_qvtoperational::cst::packagerefcs_constructor_args():
-    sig = inspect.signature(qvtoperational::cst::PackageRefCS.__init__)
+def test_qvtoperational_cst_modulekindcs_constructor_args():
+    sig = inspect.signature(qvtoperational_cst_ModuleKindCS.__init__)
     params = list(sig.parameters.keys())
+    assert "moduleKind" in params, "Missing parameter 'moduleKind'"
+
+def test_qvtoperational_cst_modulekindcs_has_moduleKind():
+    assert hasattr(qvtoperational_cst_ModuleKindCS, "moduleKind")
+    descriptor = None
+    for klass in qvtoperational_cst_ModuleKindCS.__mro__:
+        if "moduleKind" in klass.__dict__:
+            descriptor = klass.__dict__["moduleKind"]
+            break
+    assert isinstance(descriptor, property)
 
 
 
-def test_qvtoperational::cst::parameterdeclarationcs_is_not_abstract():
-    assert not inspect.isabstract(qvtoperational::cst::ParameterDeclarationCS)
+def test_qvtoperational_cst_directionkindcs_is_not_abstract():
+    assert not inspect.isabstract(qvtoperational_cst_DirectionKindCS)
 
 
-def test_qvtoperational::cst::parameterdeclarationcs_constructor_exists():
-    assert callable(qvtoperational::cst::ParameterDeclarationCS.__init__)
+def test_qvtoperational_cst_directionkindcs_constructor_exists():
+    assert callable(qvtoperational_cst_DirectionKindCS.__init__)
 
 
-def test_qvtoperational::cst::parameterdeclarationcs_constructor_args():
-    sig = inspect.signature(qvtoperational::cst::ParameterDeclarationCS.__init__)
+def test_qvtoperational_cst_directionkindcs_constructor_args():
+    sig = inspect.signature(qvtoperational_cst_DirectionKindCS.__init__)
     params = list(sig.parameters.keys())
     assert "directionKind" in params, "Missing parameter 'directionKind'"
 
-def test_qvtoperational::cst::parameterdeclarationcs_has_directionKind():
-    assert hasattr(qvtoperational::cst::ParameterDeclarationCS, "directionKind")
+def test_qvtoperational_cst_directionkindcs_has_directionKind():
+    assert hasattr(qvtoperational_cst_DirectionKindCS, "directionKind")
     descriptor = None
-    for klass in qvtoperational::cst::ParameterDeclarationCS.__mro__:
+    for klass in qvtoperational_cst_DirectionKindCS.__mro__:
         if "directionKind" in klass.__dict__:
             descriptor = klass.__dict__["directionKind"]
             break
@@ -1751,127 +1361,231 @@ def test_qvtoperational::cst::parameterdeclarationcs_has_directionKind():
 
 
 
-def test_qvtoperational::cst::mappingextensioncs_is_not_abstract():
-    assert not inspect.isabstract(qvtoperational::cst::MappingExtensionCS)
+def test_qvtoperational_cst_modulepropertycs_is_not_abstract():
+    assert not inspect.isabstract(qvtoperational_cst_ModulePropertyCS)
 
 
-def test_qvtoperational::cst::mappingextensioncs_constructor_exists():
-    assert callable(qvtoperational::cst::MappingExtensionCS.__init__)
+def test_qvtoperational_cst_modulepropertycs_constructor_exists():
+    assert callable(qvtoperational_cst_ModulePropertyCS.__init__)
 
 
-def test_qvtoperational::cst::mappingextensioncs_constructor_args():
-    sig = inspect.signature(qvtoperational::cst::MappingExtensionCS.__init__)
+def test_qvtoperational_cst_modulepropertycs_constructor_args():
+    sig = inspect.signature(qvtoperational_cst_ModulePropertyCS.__init__)
     params = list(sig.parameters.keys())
-    assert "kind" in params, "Missing parameter 'kind'"
 
-def test_qvtoperational::cst::mappingextensioncs_has_kind():
-    assert hasattr(qvtoperational::cst::MappingExtensionCS, "kind")
+
+
+def test_qvtoperational_cst_simplesignaturecs_is_not_abstract():
+    assert not inspect.isabstract(qvtoperational_cst_SimpleSignatureCS)
+
+
+def test_qvtoperational_cst_simplesignaturecs_constructor_exists():
+    assert callable(qvtoperational_cst_SimpleSignatureCS.__init__)
+
+
+def test_qvtoperational_cst_simplesignaturecs_constructor_args():
+    sig = inspect.signature(qvtoperational_cst_SimpleSignatureCS.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_qvtoperational_cst_renamecs_is_not_abstract():
+    assert not inspect.isabstract(qvtoperational_cst_RenameCS)
+
+
+def test_qvtoperational_cst_renamecs_constructor_exists():
+    assert callable(qvtoperational_cst_RenameCS.__init__)
+
+
+def test_qvtoperational_cst_renamecs_constructor_args():
+    sig = inspect.signature(qvtoperational_cst_RenameCS.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_qvtoperational_cst_moduleusagecs_is_not_abstract():
+    assert not inspect.isabstract(qvtoperational_cst_ModuleUsageCS)
+
+
+def test_qvtoperational_cst_moduleusagecs_constructor_exists():
+    assert callable(qvtoperational_cst_ModuleUsageCS.__init__)
+
+
+def test_qvtoperational_cst_moduleusagecs_constructor_args():
+    sig = inspect.signature(qvtoperational_cst_ModuleUsageCS.__init__)
+    params = list(sig.parameters.keys())
+    assert "importKind" in params, "Missing parameter 'importKind'"
+
+def test_qvtoperational_cst_moduleusagecs_has_importKind():
+    assert hasattr(qvtoperational_cst_ModuleUsageCS, "importKind")
     descriptor = None
-    for klass in qvtoperational::cst::MappingExtensionCS.__mro__:
-        if "kind" in klass.__dict__:
-            descriptor = klass.__dict__["kind"]
+    for klass in qvtoperational_cst_ModuleUsageCS.__mro__:
+        if "importKind" in klass.__dict__:
+            descriptor = klass.__dict__["importKind"]
             break
     assert isinstance(descriptor, property)
 
 
 
-def test_qvtoperational::cst::mappingsectionscs_is_not_abstract():
-    assert not inspect.isabstract(qvtoperational::cst::MappingSectionsCS)
+def test_qvtoperational_cst_parameterdeclarationcs_is_not_abstract():
+    assert not inspect.isabstract(qvtoperational_cst_ParameterDeclarationCS)
 
 
-def test_qvtoperational::cst::mappingsectionscs_constructor_exists():
-    assert callable(qvtoperational::cst::MappingSectionsCS.__init__)
+def test_qvtoperational_cst_parameterdeclarationcs_constructor_exists():
+    assert callable(qvtoperational_cst_ParameterDeclarationCS.__init__)
 
 
-def test_qvtoperational::cst::mappingsectionscs_constructor_args():
-    sig = inspect.signature(qvtoperational::cst::MappingSectionsCS.__init__)
+def test_qvtoperational_cst_parameterdeclarationcs_constructor_args():
+    sig = inspect.signature(qvtoperational_cst_ParameterDeclarationCS.__init__)
     params = list(sig.parameters.keys())
+    assert "directionKind" in params, "Missing parameter 'directionKind'"
 
-
-
-def test_qvtoperational::cst::unitcs_is_not_abstract():
-    assert not inspect.isabstract(qvtoperational::cst::UnitCS)
-
-
-def test_qvtoperational::cst::unitcs_constructor_exists():
-    assert callable(qvtoperational::cst::UnitCS.__init__)
-
-
-def test_qvtoperational::cst::unitcs_constructor_args():
-    sig = inspect.signature(qvtoperational::cst::UnitCS.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_qvtoperational::cst::modulerefcs_is_not_abstract():
-    assert not inspect.isabstract(qvtoperational::cst::ModuleRefCS)
-
-
-def test_qvtoperational::cst::modulerefcs_constructor_exists():
-    assert callable(qvtoperational::cst::ModuleRefCS.__init__)
-
-
-def test_qvtoperational::cst::modulerefcs_constructor_args():
-    sig = inspect.signature(qvtoperational::cst::ModuleRefCS.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_qvtoperational::cst::scopednamecs_is_not_abstract():
-    assert not inspect.isabstract(qvtoperational::cst::ScopedNameCS)
-
-
-def test_qvtoperational::cst::scopednamecs_constructor_exists():
-    assert callable(qvtoperational::cst::ScopedNameCS.__init__)
-
-
-def test_qvtoperational::cst::scopednamecs_constructor_args():
-    sig = inspect.signature(qvtoperational::cst::ScopedNameCS.__init__)
-    params = list(sig.parameters.keys())
-    assert "name" in params, "Missing parameter 'name'"
-
-def test_qvtoperational::cst::scopednamecs_has_name():
-    assert hasattr(qvtoperational::cst::ScopedNameCS, "name")
+def test_qvtoperational_cst_parameterdeclarationcs_has_directionKind():
+    assert hasattr(qvtoperational_cst_ParameterDeclarationCS, "directionKind")
     descriptor = None
-    for klass in qvtoperational::cst::ScopedNameCS.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
+    for klass in qvtoperational_cst_ParameterDeclarationCS.__mro__:
+        if "directionKind" in klass.__dict__:
+            descriptor = klass.__dict__["directionKind"]
             break
     assert isinstance(descriptor, property)
 
 
 
-def test_qvtoperational::cst::transformationheadercs_is_not_abstract():
-    assert not inspect.isabstract(qvtoperational::cst::TransformationHeaderCS)
+def test_qvtoperational_cst_modulerefcs_is_not_abstract():
+    assert not inspect.isabstract(qvtoperational_cst_ModuleRefCS)
 
 
-def test_qvtoperational::cst::transformationheadercs_constructor_exists():
-    assert callable(qvtoperational::cst::TransformationHeaderCS.__init__)
+def test_qvtoperational_cst_modulerefcs_constructor_exists():
+    assert callable(qvtoperational_cst_ModuleRefCS.__init__)
 
 
-def test_qvtoperational::cst::transformationheadercs_constructor_args():
-    sig = inspect.signature(qvtoperational::cst::TransformationHeaderCS.__init__)
+def test_qvtoperational_cst_modulerefcs_constructor_args():
+    sig = inspect.signature(qvtoperational_cst_ModuleRefCS.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_qvtoperational::cst::oppositepropertycs_is_not_abstract():
-    assert not inspect.isabstract(qvtoperational::cst::OppositePropertyCS)
+def test_qvtoperational_cst_packagerefcs_is_not_abstract():
+    assert not inspect.isabstract(qvtoperational_cst_PackageRefCS)
 
 
-def test_qvtoperational::cst::oppositepropertycs_constructor_exists():
-    assert callable(qvtoperational::cst::OppositePropertyCS.__init__)
+def test_qvtoperational_cst_packagerefcs_constructor_exists():
+    assert callable(qvtoperational_cst_PackageRefCS.__init__)
 
 
-def test_qvtoperational::cst::oppositepropertycs_constructor_args():
-    sig = inspect.signature(qvtoperational::cst::OppositePropertyCS.__init__)
+def test_qvtoperational_cst_packagerefcs_constructor_args():
+    sig = inspect.signature(qvtoperational_cst_PackageRefCS.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_qvtoperational_cst_mappingdeclarationcs_is_not_abstract():
+    assert not inspect.isabstract(qvtoperational_cst_MappingDeclarationCS)
+
+
+def test_qvtoperational_cst_mappingdeclarationcs_constructor_exists():
+    assert callable(qvtoperational_cst_MappingDeclarationCS.__init__)
+
+
+def test_qvtoperational_cst_mappingdeclarationcs_constructor_args():
+    sig = inspect.signature(qvtoperational_cst_MappingDeclarationCS.__init__)
+    params = list(sig.parameters.keys())
+    assert "qualifiers" in params, "Missing parameter 'qualifiers'"
+    assert "isQuery" in params, "Missing parameter 'isQuery'"
+
+def test_qvtoperational_cst_mappingdeclarationcs_has_qualifiers():
+    assert hasattr(qvtoperational_cst_MappingDeclarationCS, "qualifiers")
+    descriptor = None
+    for klass in qvtoperational_cst_MappingDeclarationCS.__mro__:
+        if "qualifiers" in klass.__dict__:
+            descriptor = klass.__dict__["qualifiers"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_qvtoperational_cst_mappingdeclarationcs_has_isQuery():
+    assert hasattr(qvtoperational_cst_MappingDeclarationCS, "isQuery")
+    descriptor = None
+    for klass in qvtoperational_cst_MappingDeclarationCS.__mro__:
+        if "isQuery" in klass.__dict__:
+            descriptor = klass.__dict__["isQuery"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_qvtoperational_cst_typespeccs_is_not_abstract():
+    assert not inspect.isabstract(qvtoperational_cst_TypeSpecCS)
+
+
+def test_qvtoperational_cst_typespeccs_constructor_exists():
+    assert callable(qvtoperational_cst_TypeSpecCS.__init__)
+
+
+def test_qvtoperational_cst_typespeccs_constructor_args():
+    sig = inspect.signature(qvtoperational_cst_TypeSpecCS.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_qvtoperational_cst_multiplicitydefcs_is_not_abstract():
+    assert not inspect.isabstract(qvtoperational_cst_MultiplicityDefCS)
+
+
+def test_qvtoperational_cst_multiplicitydefcs_constructor_exists():
+    assert callable(qvtoperational_cst_MultiplicityDefCS.__init__)
+
+
+def test_qvtoperational_cst_multiplicitydefcs_constructor_args():
+    sig = inspect.signature(qvtoperational_cst_MultiplicityDefCS.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_qvtoperational_cst_classifierdefcs_is_not_abstract():
+    assert not inspect.isabstract(qvtoperational_cst_ClassifierDefCS)
+
+
+def test_qvtoperational_cst_classifierdefcs_constructor_exists():
+    assert callable(qvtoperational_cst_ClassifierDefCS.__init__)
+
+
+def test_qvtoperational_cst_classifierdefcs_constructor_args():
+    sig = inspect.signature(qvtoperational_cst_ClassifierDefCS.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_qvtoperational_cst_mappingsectionscs_is_not_abstract():
+    assert not inspect.isabstract(qvtoperational_cst_MappingSectionsCS)
+
+
+def test_qvtoperational_cst_mappingsectionscs_constructor_exists():
+    assert callable(qvtoperational_cst_MappingSectionsCS.__init__)
+
+
+def test_qvtoperational_cst_mappingsectionscs_constructor_args():
+    sig = inspect.signature(qvtoperational_cst_MappingSectionsCS.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_qvtoperational_cst_oppositepropertycs_is_not_abstract():
+    assert not inspect.isabstract(qvtoperational_cst_OppositePropertyCS)
+
+
+def test_qvtoperational_cst_oppositepropertycs_constructor_exists():
+    assert callable(qvtoperational_cst_OppositePropertyCS.__init__)
+
+
+def test_qvtoperational_cst_oppositepropertycs_constructor_args():
+    sig = inspect.signature(qvtoperational_cst_OppositePropertyCS.__init__)
     params = list(sig.parameters.keys())
     assert "isNavigable" in params, "Missing parameter 'isNavigable'"
 
-def test_qvtoperational::cst::oppositepropertycs_has_isNavigable():
-    assert hasattr(qvtoperational::cst::OppositePropertyCS, "isNavigable")
+def test_qvtoperational_cst_oppositepropertycs_has_isNavigable():
+    assert hasattr(qvtoperational_cst_OppositePropertyCS, "isNavigable")
     descriptor = None
-    for klass in qvtoperational::cst::OppositePropertyCS.__mro__:
+    for klass in qvtoperational_cst_OppositePropertyCS.__mro__:
         if "isNavigable" in klass.__dict__:
             descriptor = klass.__dict__["isNavigable"]
             break
@@ -1879,30 +1593,58 @@ def test_qvtoperational::cst::oppositepropertycs_has_isNavigable():
 
 
 
-def test_qvtoperational::cst::mappingmodulecs_is_not_abstract():
-    assert not inspect.isabstract(qvtoperational::cst::MappingModuleCS)
+def test_qvtoperational_cst_transformationheadercs_is_not_abstract():
+    assert not inspect.isabstract(qvtoperational_cst_TransformationHeaderCS)
 
 
-def test_qvtoperational::cst::mappingmodulecs_constructor_exists():
-    assert callable(qvtoperational::cst::MappingModuleCS.__init__)
+def test_qvtoperational_cst_transformationheadercs_constructor_exists():
+    assert callable(qvtoperational_cst_TransformationHeaderCS.__init__)
 
 
-def test_qvtoperational::cst::mappingmodulecs_constructor_args():
-    sig = inspect.signature(qvtoperational::cst::MappingModuleCS.__init__)
+def test_qvtoperational_cst_transformationheadercs_constructor_args():
+    sig = inspect.signature(qvtoperational_cst_TransformationHeaderCS.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_qvtoperational::cst::importcs_is_not_abstract():
-    assert not inspect.isabstract(qvtoperational::cst::ImportCS)
+def test_qvtoperational_cst_completesignaturecs_is_not_abstract():
+    assert not inspect.isabstract(qvtoperational_cst_CompleteSignatureCS)
 
 
-def test_qvtoperational::cst::importcs_constructor_exists():
-    assert callable(qvtoperational::cst::ImportCS.__init__)
+def test_qvtoperational_cst_completesignaturecs_constructor_exists():
+    assert callable(qvtoperational_cst_CompleteSignatureCS.__init__)
 
 
-def test_qvtoperational::cst::importcs_constructor_args():
-    sig = inspect.signature(qvtoperational::cst::ImportCS.__init__)
+def test_qvtoperational_cst_completesignaturecs_constructor_args():
+    sig = inspect.signature(qvtoperational_cst_CompleteSignatureCS.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_qvtoperational_cst_mappingmodulecs_is_not_abstract():
+    assert not inspect.isabstract(qvtoperational_cst_MappingModuleCS)
+
+
+def test_qvtoperational_cst_mappingmodulecs_constructor_exists():
+    assert callable(qvtoperational_cst_MappingModuleCS.__init__)
+
+
+def test_qvtoperational_cst_mappingmodulecs_constructor_args():
+    sig = inspect.signature(qvtoperational_cst_MappingModuleCS.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_qvtoperational_cst_importcs_is_not_abstract():
+    assert not inspect.isabstract(qvtoperational_cst_ImportCS)
+
+
+def test_qvtoperational_cst_importcs_constructor_exists():
+    assert callable(qvtoperational_cst_ImportCS.__init__)
+
+
+def test_qvtoperational_cst_importcs_constructor_args():
+    sig = inspect.signature(qvtoperational_cst_ImportCS.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1921,16 +1663,16 @@ def test_mappingmodulecs_constructor_args():
 
 
 
-def test_qvtoperational::cst::librarycs_is_not_abstract():
-    assert not inspect.isabstract(qvtoperational::cst::LibraryCS)
+def test_qvtoperational_cst_librarycs_is_not_abstract():
+    assert not inspect.isabstract(qvtoperational_cst_LibraryCS)
 
 
-def test_qvtoperational::cst::librarycs_constructor_exists():
-    assert callable(qvtoperational::cst::LibraryCS.__init__)
+def test_qvtoperational_cst_librarycs_constructor_exists():
+    assert callable(qvtoperational_cst_LibraryCS.__init__)
 
 
-def test_qvtoperational::cst::librarycs_constructor_args():
-    sig = inspect.signature(qvtoperational::cst::LibraryCS.__init__)
+def test_qvtoperational_cst_librarycs_constructor_args():
+    sig = inspect.signature(qvtoperational_cst_LibraryCS.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1977,55 +1719,55 @@ def test_mappingmethodcs_constructor_args():
 
 
 
-def test_qvtoperational::cst::mappingquerycs_is_not_abstract():
-    assert not inspect.isabstract(qvtoperational::cst::MappingQueryCS)
+def test_qvtoperational_cst_mappingrulecs_is_not_abstract():
+    assert not inspect.isabstract(qvtoperational_cst_MappingRuleCS)
 
 
-def test_qvtoperational::cst::mappingquerycs_constructor_exists():
-    assert callable(qvtoperational::cst::MappingQueryCS.__init__)
+def test_qvtoperational_cst_mappingrulecs_constructor_exists():
+    assert callable(qvtoperational_cst_MappingRuleCS.__init__)
 
 
-def test_qvtoperational::cst::mappingquerycs_constructor_args():
-    sig = inspect.signature(qvtoperational::cst::MappingQueryCS.__init__)
+def test_qvtoperational_cst_mappingrulecs_constructor_args():
+    sig = inspect.signature(qvtoperational_cst_MappingRuleCS.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_qvtoperational_cst_constructorcs_is_not_abstract():
+    assert not inspect.isabstract(qvtoperational_cst_ConstructorCS)
+
+
+def test_qvtoperational_cst_constructorcs_constructor_exists():
+    assert callable(qvtoperational_cst_ConstructorCS.__init__)
+
+
+def test_qvtoperational_cst_constructorcs_constructor_args():
+    sig = inspect.signature(qvtoperational_cst_ConstructorCS.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_qvtoperational_cst_mappingquerycs_is_not_abstract():
+    assert not inspect.isabstract(qvtoperational_cst_MappingQueryCS)
+
+
+def test_qvtoperational_cst_mappingquerycs_constructor_exists():
+    assert callable(qvtoperational_cst_MappingQueryCS.__init__)
+
+
+def test_qvtoperational_cst_mappingquerycs_constructor_args():
+    sig = inspect.signature(qvtoperational_cst_MappingQueryCS.__init__)
     params = list(sig.parameters.keys())
     assert "isSimpleDefinition" in params, "Missing parameter 'isSimpleDefinition'"
 
-def test_qvtoperational::cst::mappingquerycs_has_isSimpleDefinition():
-    assert hasattr(qvtoperational::cst::MappingQueryCS, "isSimpleDefinition")
+def test_qvtoperational_cst_mappingquerycs_has_isSimpleDefinition():
+    assert hasattr(qvtoperational_cst_MappingQueryCS, "isSimpleDefinition")
     descriptor = None
-    for klass in qvtoperational::cst::MappingQueryCS.__mro__:
+    for klass in qvtoperational_cst_MappingQueryCS.__mro__:
         if "isSimpleDefinition" in klass.__dict__:
             descriptor = klass.__dict__["isSimpleDefinition"]
             break
     assert isinstance(descriptor, property)
-
-
-
-def test_qvtoperational::cst::mappingrulecs_is_not_abstract():
-    assert not inspect.isabstract(qvtoperational::cst::MappingRuleCS)
-
-
-def test_qvtoperational::cst::mappingrulecs_constructor_exists():
-    assert callable(qvtoperational::cst::MappingRuleCS.__init__)
-
-
-def test_qvtoperational::cst::mappingrulecs_constructor_args():
-    sig = inspect.signature(qvtoperational::cst::MappingRuleCS.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_qvtoperational::cst::constructorcs_is_not_abstract():
-    assert not inspect.isabstract(qvtoperational::cst::ConstructorCS)
-
-
-def test_qvtoperational::cst::constructorcs_constructor_exists():
-    assert callable(qvtoperational::cst::ConstructorCS.__init__)
-
-
-def test_qvtoperational::cst::constructorcs_constructor_args():
-    sig = inspect.signature(qvtoperational::cst::ConstructorCS.__init__)
-    params = list(sig.parameters.keys())
 
 
 
@@ -2043,44 +1785,44 @@ def test_modulepropertycs_constructor_args():
 
 
 
-def test_qvtoperational::cst::contextualpropertycs_is_not_abstract():
-    assert not inspect.isabstract(qvtoperational::cst::ContextualPropertyCS)
+def test_qvtoperational_cst_configpropertycs_is_not_abstract():
+    assert not inspect.isabstract(qvtoperational_cst_ConfigPropertyCS)
 
 
-def test_qvtoperational::cst::contextualpropertycs_constructor_exists():
-    assert callable(qvtoperational::cst::ContextualPropertyCS.__init__)
+def test_qvtoperational_cst_configpropertycs_constructor_exists():
+    assert callable(qvtoperational_cst_ConfigPropertyCS.__init__)
 
 
-def test_qvtoperational::cst::contextualpropertycs_constructor_args():
-    sig = inspect.signature(qvtoperational::cst::ContextualPropertyCS.__init__)
+def test_qvtoperational_cst_configpropertycs_constructor_args():
+    sig = inspect.signature(qvtoperational_cst_ConfigPropertyCS.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_qvtoperational::cst::localpropertycs_is_not_abstract():
-    assert not inspect.isabstract(qvtoperational::cst::LocalPropertyCS)
+def test_qvtoperational_cst_localpropertycs_is_not_abstract():
+    assert not inspect.isabstract(qvtoperational_cst_LocalPropertyCS)
 
 
-def test_qvtoperational::cst::localpropertycs_constructor_exists():
-    assert callable(qvtoperational::cst::LocalPropertyCS.__init__)
+def test_qvtoperational_cst_localpropertycs_constructor_exists():
+    assert callable(qvtoperational_cst_LocalPropertyCS.__init__)
 
 
-def test_qvtoperational::cst::localpropertycs_constructor_args():
-    sig = inspect.signature(qvtoperational::cst::LocalPropertyCS.__init__)
+def test_qvtoperational_cst_localpropertycs_constructor_args():
+    sig = inspect.signature(qvtoperational_cst_LocalPropertyCS.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_qvtoperational::cst::configpropertycs_is_not_abstract():
-    assert not inspect.isabstract(qvtoperational::cst::ConfigPropertyCS)
+def test_qvtoperational_cst_contextualpropertycs_is_not_abstract():
+    assert not inspect.isabstract(qvtoperational_cst_ContextualPropertyCS)
 
 
-def test_qvtoperational::cst::configpropertycs_constructor_exists():
-    assert callable(qvtoperational::cst::ConfigPropertyCS.__init__)
+def test_qvtoperational_cst_contextualpropertycs_constructor_exists():
+    assert callable(qvtoperational_cst_ContextualPropertyCS.__init__)
 
 
-def test_qvtoperational::cst::configpropertycs_constructor_args():
-    sig = inspect.signature(qvtoperational::cst::ConfigPropertyCS.__init__)
+def test_qvtoperational_cst_contextualpropertycs_constructor_args():
+    sig = inspect.signature(qvtoperational_cst_ContextualPropertyCS.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -2097,37 +1839,263 @@ def test_renamecs_constructor_args():
     sig = inspect.signature(RenameCS.__init__)
     params = list(sig.parameters.keys())
 
-def test_qualifierkindcs_exists():
-    # Check that the Enumeration exists
-    assert QualifierKindCS is not None
 
-def test_qualifierkindcs_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in QualifierKindCS]
-    expected_literals = [
-        "static",
-        "blackbox",
-        "abstract",
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in QualifierKindCS"
 
-def test_mappingextensionkindcs_exists():
-    # Check that the Enumeration exists
-    assert MappingExtensionKindCS is not None
+def test_qvtoperational_cst_resolveopargsexpcs_is_not_abstract():
+    assert not inspect.isabstract(qvtoperational_cst_ResolveOpArgsExpCS)
 
-def test_mappingextensionkindcs_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in MappingExtensionKindCS]
-    expected_literals = [
-        "inherits",
-        "merges",
-        "disjuncts",
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in MappingExtensionKindCS"
+
+def test_qvtoperational_cst_resolveopargsexpcs_constructor_exists():
+    assert callable(qvtoperational_cst_ResolveOpArgsExpCS.__init__)
+
+
+def test_qvtoperational_cst_resolveopargsexpcs_constructor_args():
+    sig = inspect.signature(qvtoperational_cst_ResolveOpArgsExpCS.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_qvtoperational_cst_unitcs_is_not_abstract():
+    assert not inspect.isabstract(qvtoperational_cst_UnitCS)
+
+
+def test_qvtoperational_cst_unitcs_constructor_exists():
+    assert callable(qvtoperational_cst_UnitCS.__init__)
+
+
+def test_qvtoperational_cst_unitcs_constructor_args():
+    sig = inspect.signature(qvtoperational_cst_UnitCS.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_qvtoperational_cst_tagcs_is_not_abstract():
+    assert not inspect.isabstract(qvtoperational_cst_TagCS)
+
+
+def test_qvtoperational_cst_tagcs_constructor_exists():
+    assert callable(qvtoperational_cst_TagCS.__init__)
+
+
+def test_qvtoperational_cst_tagcs_constructor_args():
+    sig = inspect.signature(qvtoperational_cst_TagCS.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_qvtoperational_cst_scopednamecs_is_not_abstract():
+    assert not inspect.isabstract(qvtoperational_cst_ScopedNameCS)
+
+
+def test_qvtoperational_cst_scopednamecs_constructor_exists():
+    assert callable(qvtoperational_cst_ScopedNameCS.__init__)
+
+
+def test_qvtoperational_cst_scopednamecs_constructor_args():
+    sig = inspect.signature(qvtoperational_cst_ScopedNameCS.__init__)
+    params = list(sig.parameters.keys())
+    assert "name" in params, "Missing parameter 'name'"
+
+def test_qvtoperational_cst_scopednamecs_has_name():
+    assert hasattr(qvtoperational_cst_ScopedNameCS, "name")
+    descriptor = None
+    for klass in qvtoperational_cst_ScopedNameCS.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_qvtoperational_cst_assertexpcs_is_not_abstract():
+    assert not inspect.isabstract(qvtoperational_cst_AssertExpCS)
+
+
+def test_qvtoperational_cst_assertexpcs_constructor_exists():
+    assert callable(qvtoperational_cst_AssertExpCS.__init__)
+
+
+def test_qvtoperational_cst_assertexpcs_constructor_args():
+    sig = inspect.signature(qvtoperational_cst_AssertExpCS.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_qvtoperational_cst_dictionarytypecs_is_not_abstract():
+    assert not inspect.isabstract(qvtoperational_cst_DictionaryTypeCS)
+
+
+def test_qvtoperational_cst_dictionarytypecs_constructor_exists():
+    assert callable(qvtoperational_cst_DictionaryTypeCS.__init__)
+
+
+def test_qvtoperational_cst_dictionarytypecs_constructor_args():
+    sig = inspect.signature(qvtoperational_cst_DictionaryTypeCS.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_qvtoperational_cst_logexpcs_is_not_abstract():
+    assert not inspect.isabstract(qvtoperational_cst_LogExpCS)
+
+
+def test_qvtoperational_cst_logexpcs_constructor_exists():
+    assert callable(qvtoperational_cst_LogExpCS.__init__)
+
+
+def test_qvtoperational_cst_logexpcs_constructor_args():
+    sig = inspect.signature(qvtoperational_cst_LogExpCS.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_collectionliteralpartcs_is_not_abstract():
+    assert not inspect.isabstract(CollectionLiteralPartCS)
+
+
+def test_collectionliteralpartcs_constructor_exists():
+    assert callable(CollectionLiteralPartCS.__init__)
+
+
+def test_collectionliteralpartcs_constructor_args():
+    sig = inspect.signature(CollectionLiteralPartCS.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_literalexpcs_is_not_abstract():
+    assert not inspect.isabstract(LiteralExpCS)
+
+
+def test_literalexpcs_constructor_exists():
+    assert callable(LiteralExpCS.__init__)
+
+
+def test_literalexpcs_constructor_args():
+    sig = inspect.signature(LiteralExpCS.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_qvtoperational_cst_dictliteralexpcs_is_not_abstract():
+    assert not inspect.isabstract(qvtoperational_cst_DictLiteralExpCS)
+
+
+def test_qvtoperational_cst_dictliteralexpcs_constructor_exists():
+    assert callable(qvtoperational_cst_DictLiteralExpCS.__init__)
+
+
+def test_qvtoperational_cst_dictliteralexpcs_constructor_args():
+    sig = inspect.signature(qvtoperational_cst_DictLiteralExpCS.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_qvtoperational_cst_listliteralexpcs_is_not_abstract():
+    assert not inspect.isabstract(qvtoperational_cst_ListLiteralExpCS)
+
+
+def test_qvtoperational_cst_listliteralexpcs_constructor_exists():
+    assert callable(qvtoperational_cst_ListLiteralExpCS.__init__)
+
+
+def test_qvtoperational_cst_listliteralexpcs_constructor_args():
+    sig = inspect.signature(qvtoperational_cst_ListLiteralExpCS.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_qvtoperational_cst_listtypecs_is_not_abstract():
+    assert not inspect.isabstract(qvtoperational_cst_ListTypeCS)
+
+
+def test_qvtoperational_cst_listtypecs_constructor_exists():
+    assert callable(qvtoperational_cst_ListTypeCS.__init__)
+
+
+def test_qvtoperational_cst_listtypecs_constructor_args():
+    sig = inspect.signature(qvtoperational_cst_ListTypeCS.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_qvtoperational_cst_instantiationexpcs_is_not_abstract():
+    assert not inspect.isabstract(qvtoperational_cst_InstantiationExpCS)
+
+
+def test_qvtoperational_cst_instantiationexpcs_constructor_exists():
+    assert callable(qvtoperational_cst_InstantiationExpCS.__init__)
+
+
+def test_qvtoperational_cst_instantiationexpcs_constructor_args():
+    sig = inspect.signature(qvtoperational_cst_InstantiationExpCS.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_qvtoperational_cst_mappingextensioncs_is_not_abstract():
+    assert not inspect.isabstract(qvtoperational_cst_MappingExtensionCS)
+
+
+def test_qvtoperational_cst_mappingextensioncs_constructor_exists():
+    assert callable(qvtoperational_cst_MappingExtensionCS.__init__)
+
+
+def test_qvtoperational_cst_mappingextensioncs_constructor_args():
+    sig = inspect.signature(qvtoperational_cst_MappingExtensionCS.__init__)
+    params = list(sig.parameters.keys())
+    assert "kind" in params, "Missing parameter 'kind'"
+
+def test_qvtoperational_cst_mappingextensioncs_has_kind():
+    assert hasattr(qvtoperational_cst_MappingExtensionCS, "kind")
+    descriptor = None
+    for klass in qvtoperational_cst_MappingExtensionCS.__mro__:
+        if "kind" in klass.__dict__:
+            descriptor = klass.__dict__["kind"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_qvtoperational_cst_returnexpcs_is_not_abstract():
+    assert not inspect.isabstract(qvtoperational_cst_ReturnExpCS)
+
+
+def test_qvtoperational_cst_returnexpcs_constructor_exists():
+    assert callable(qvtoperational_cst_ReturnExpCS.__init__)
+
+
+def test_qvtoperational_cst_returnexpcs_constructor_args():
+    sig = inspect.signature(qvtoperational_cst_ReturnExpCS.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_qvtoperational_cst_dictliteralpartcs_is_not_abstract():
+    assert not inspect.isabstract(qvtoperational_cst_DictLiteralPartCS)
+
+
+def test_qvtoperational_cst_dictliteralpartcs_constructor_exists():
+    assert callable(qvtoperational_cst_DictLiteralPartCS.__init__)
+
+
+def test_qvtoperational_cst_dictliteralpartcs_constructor_args():
+    sig = inspect.signature(qvtoperational_cst_DictLiteralPartCS.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_dictliteralpartcs_is_not_abstract():
+    assert not inspect.isabstract(DictLiteralPartCS)
+
+
+def test_dictliteralpartcs_constructor_exists():
+    assert callable(DictLiteralPartCS.__init__)
+
+
+def test_dictliteralpartcs_constructor_args():
+    sig = inspect.signature(DictLiteralPartCS.__init__)
+    params = list(sig.parameters.keys())
 
 def test_importkindenum_exists():
     # Check that the Enumeration exists
@@ -2137,12 +2105,45 @@ def test_importkindenum_has_all_literals():
     # Collect the names of literals in this Enumeration
     enum_literals = [lit.name for lit in ImportKindEnum]
     expected_literals = [
-        "extension",
         "access",
+        "extension",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
         assert lit_name in enum_literals, f"Literal '' missing in ImportKindEnum"
+
+def test_directionkindenum_exists():
+    # Check that the Enumeration exists
+    assert DirectionKindEnum is not None
+
+def test_directionkindenum_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in DirectionKindEnum]
+    expected_literals = [
+        "DEFAULT",
+        "out",
+        "in_",
+        "inout",
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in DirectionKindEnum"
+
+def test_qualifierkindcs_exists():
+    # Check that the Enumeration exists
+    assert QualifierKindCS is not None
+
+def test_qualifierkindcs_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in QualifierKindCS]
+    expected_literals = [
+        "blackbox",
+        "abstract",
+        "static",
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in QualifierKindCS"
 
 def test_modulekindenum_exists():
     # Check that the Enumeration exists
@@ -2159,22 +2160,21 @@ def test_modulekindenum_has_all_literals():
     for lit_name in expected_literals:
         assert lit_name in enum_literals, f"Literal '' missing in ModuleKindEnum"
 
-def test_directionkindenum_exists():
+def test_mappingextensionkindcs_exists():
     # Check that the Enumeration exists
-    assert DirectionKindEnum is not None
+    assert MappingExtensionKindCS is not None
 
-def test_directionkindenum_has_all_literals():
+def test_mappingextensionkindcs_has_all_literals():
     # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in DirectionKindEnum]
+    enum_literals = [lit.name for lit in MappingExtensionKindCS]
     expected_literals = [
-        "in_",
-        "DEFAULT",
-        "out",
-        "inout",
+        "merges",
+        "inherits",
+        "disjuncts",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in DirectionKindEnum"
+        assert lit_name in enum_literals, f"Literal '' missing in MappingExtensionKindCS"
 
 
 # =============================================================================
@@ -2188,23 +2188,8 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-CollectionLiteralPartCS_strategy = st.builds(
-    CollectionLiteralPartCS,
-)
-LiteralExpCS_strategy = st.builds(
-    LiteralExpCS,
-)
-qvtoperational::cst::ListLiteralExpCS_strategy = st.builds(
-    qvtoperational::cst::ListLiteralExpCS,
-)
-DictLiteralPartCS_strategy = st.builds(
-    DictLiteralPartCS,
-)
 LogExpCS_strategy = st.builds(
     LogExpCS,
-)
-qvtoperational::cst::DictLiteralExpCS_strategy = st.builds(
-    qvtoperational::cst::DictLiteralExpCS,
 )
 ModuleUsageCS_strategy = st.builds(
     ModuleUsageCS,
@@ -2224,47 +2209,44 @@ PackageRefCS_strategy = st.builds(
 ResolveExpCS_strategy = st.builds(
     ResolveExpCS,
 )
-qvtoperational::cst::ResolveInExpCS_strategy = st.builds(
-    qvtoperational::cst::ResolveInExpCS,
+qvtoperational_cst_ResolveInExpCS_strategy = st.builds(
+    qvtoperational_cst_ResolveInExpCS,
 )
 CallExpCS_strategy = st.builds(
     CallExpCS,
 )
-qvtoperational::cst::ResolveExpCS_strategy = st.builds(
-    qvtoperational::cst::ResolveExpCS,
-    isDeferred=
-        st.booleans(),
+qvtoperational_cst_ResolveExpCS_strategy = st.builds(
+    qvtoperational_cst_ResolveExpCS,
     one=
         st.booleans(),
     isInverse=
+        st.booleans(),
+    isDeferred=
         st.booleans()
 )
-qvtoperational::cst::ElementWithBody_strategy = st.builds(
-    qvtoperational::cst::ElementWithBody,
-    bodyEndLocation=
-        st.integers(),
+qvtoperational_cst_ElementWithBody_strategy = st.builds(
+    qvtoperational_cst_ElementWithBody,
     bodyStartLocation=
+        st.integers(),
+    bodyEndLocation=
         st.integers()
 )
 OperationCallExpCS_strategy = st.builds(
     OperationCallExpCS,
 )
-qvtoperational::cst::LogExpCS_strategy = st.builds(
-    qvtoperational::cst::LogExpCS,
-)
-qvtoperational::cst::ImperativeOperationCallExpCS_strategy = st.builds(
-    qvtoperational::cst::ImperativeOperationCallExpCS,
+qvtoperational_cst_ImperativeOperationCallExpCS_strategy = st.builds(
+    qvtoperational_cst_ImperativeOperationCallExpCS,
 )
 ImperativeOperationCallExpCS_strategy = st.builds(
     ImperativeOperationCallExpCS,
 )
-qvtoperational::cst::MappingCallExpCS_strategy = st.builds(
-    qvtoperational::cst::MappingCallExpCS,
+qvtoperational_cst_MappingCallExpCS_strategy = st.builds(
+    qvtoperational_cst_MappingCallExpCS,
     strict=
         st.booleans()
 )
-cst::InstantiationExpCS_strategy = st.builds(
-    cst::InstantiationExpCS,
+cst_InstantiationExpCS_strategy = st.builds(
+    cst_InstantiationExpCS,
 )
 VariableCS_strategy = st.builds(
     VariableCS,
@@ -2275,20 +2257,20 @@ SwitchAltExpCS_strategy = st.builds(
 ImperativeLoopExpCS_strategy = st.builds(
     ImperativeLoopExpCS,
 )
-qvtoperational::cst::ImperativeIterateExpCS_strategy = st.builds(
-    qvtoperational::cst::ImperativeIterateExpCS,
+qvtoperational_cst_ImperativeIterateExpCS_strategy = st.builds(
+    qvtoperational_cst_ImperativeIterateExpCS,
 )
-qvtoperational::cst::ForExpCS_strategy = st.builds(
-    qvtoperational::cst::ForExpCS,
+qvtoperational_cst_ForExpCS_strategy = st.builds(
+    qvtoperational_cst_ForExpCS,
 )
-cst::StatementCS_strategy = st.builds(
-    cst::StatementCS,
+cst_StatementCS_strategy = st.builds(
+    cst_StatementCS,
 )
-cst::LoopExpCS_strategy = st.builds(
-    cst::LoopExpCS,
+cst_LoopExpCS_strategy = st.builds(
+    cst_LoopExpCS,
 )
-qvtoperational::cst::ImperativeLoopExpCS_strategy = st.builds(
-    qvtoperational::cst::ImperativeLoopExpCS,
+qvtoperational_cst_ImperativeLoopExpCS_strategy = st.builds(
+    qvtoperational_cst_ImperativeLoopExpCS,
 )
 MappingDeclarationCS_strategy = st.builds(
     MappingDeclarationCS,
@@ -2296,48 +2278,39 @@ MappingDeclarationCS_strategy = st.builds(
 StatementCS_strategy = st.builds(
     StatementCS,
 )
-qvtoperational::cst::AssignStatementCS_strategy = st.builds(
-    qvtoperational::cst::AssignStatementCS,
-    incremental=
-        st.booleans()
+qvtoperational_cst_ContinueExpCS_strategy = st.builds(
+    qvtoperational_cst_ContinueExpCS,
 )
-qvtoperational::cst::ComputeExpCS_strategy = st.builds(
-    qvtoperational::cst::ComputeExpCS,
+qvtoperational_cst_BreakExpCS_strategy = st.builds(
+    qvtoperational_cst_BreakExpCS,
 )
-qvtoperational::cst::ContinueExpCS_strategy = st.builds(
-    qvtoperational::cst::ContinueExpCS,
-)
-qvtoperational::cst::InstantiationExpCS_strategy = st.builds(
-    qvtoperational::cst::InstantiationExpCS,
-)
-qvtoperational::cst::WhileExpCS_strategy = st.builds(
-    qvtoperational::cst::WhileExpCS,
-)
-qvtoperational::cst::BreakExpCS_strategy = st.builds(
-    qvtoperational::cst::BreakExpCS,
-)
-qvtoperational::cst::VariableInitializationCS_strategy = st.builds(
-    qvtoperational::cst::VariableInitializationCS,
+qvtoperational_cst_VariableInitializationCS_strategy = st.builds(
+    qvtoperational_cst_VariableInitializationCS,
     withResult=
         st.booleans()
 )
-qvtoperational::cst::SwitchExpCS_strategy = st.builds(
-    qvtoperational::cst::SwitchExpCS,
+qvtoperational_cst_WhileExpCS_strategy = st.builds(
+    qvtoperational_cst_WhileExpCS,
 )
-qvtoperational::cst::ReturnExpCS_strategy = st.builds(
-    qvtoperational::cst::ReturnExpCS,
+qvtoperational_cst_SwitchAltExpCS_strategy = st.builds(
+    qvtoperational_cst_SwitchAltExpCS,
 )
-qvtoperational::cst::SwitchAltExpCS_strategy = st.builds(
-    qvtoperational::cst::SwitchAltExpCS,
+qvtoperational_cst_ComputeExpCS_strategy = st.builds(
+    qvtoperational_cst_ComputeExpCS,
 )
-qvtoperational::cst::AssertExpCS_strategy = st.builds(
-    qvtoperational::cst::AssertExpCS,
+qvtoperational_cst_ExpressionStatementCS_strategy = st.builds(
+    qvtoperational_cst_ExpressionStatementCS,
 )
-qvtoperational::cst::ExpressionStatementCS_strategy = st.builds(
-    qvtoperational::cst::ExpressionStatementCS,
+qvtoperational_cst_SwitchExpCS_strategy = st.builds(
+    qvtoperational_cst_SwitchExpCS,
 )
-qvtoperational::cst::BlockExpCS_strategy = st.builds(
-    qvtoperational::cst::BlockExpCS,
+qvtoperational_cst_AssignStatementCS_strategy = st.builds(
+    qvtoperational_cst_AssignStatementCS,
+    incremental=
+        st.booleans()
+)
+qvtoperational_cst_BlockExpCS_strategy = st.builds(
+    qvtoperational_cst_BlockExpCS,
 )
 MappingEndCS_strategy = st.builds(
     MappingEndCS,
@@ -2351,36 +2324,36 @@ MappingInitCS_strategy = st.builds(
 MappingSectionCS_strategy = st.builds(
     MappingSectionCS,
 )
-qvtoperational::cst::MappingEndCS_strategy = st.builds(
-    qvtoperational::cst::MappingEndCS,
-)
-qvtoperational::cst::MappingBodyCS_strategy = st.builds(
-    qvtoperational::cst::MappingBodyCS,
+qvtoperational_cst_MappingBodyCS_strategy = st.builds(
+    qvtoperational_cst_MappingBodyCS,
     hasPopulationKeyword=
         st.booleans()
 )
-qvtoperational::cst::MappingInitCS_strategy = st.builds(
-    qvtoperational::cst::MappingInitCS,
+qvtoperational_cst_MappingEndCS_strategy = st.builds(
+    qvtoperational_cst_MappingEndCS,
+)
+qvtoperational_cst_MappingInitCS_strategy = st.builds(
+    qvtoperational_cst_MappingInitCS,
 )
 MappingRuleCS_strategy = st.builds(
     MappingRuleCS,
 )
-cst::ElementWithBody_strategy = st.builds(
-    cst::ElementWithBody,
+cst_ElementWithBody_strategy = st.builds(
+    cst_ElementWithBody,
 )
-qvtoperational::cst::ObjectExpCS_strategy = st.builds(
-    qvtoperational::cst::ObjectExpCS,
+qvtoperational_cst_ObjectExpCS_strategy = st.builds(
+    qvtoperational_cst_ObjectExpCS,
     isImplicit=
         st.booleans()
 )
-cst::CSTNode_strategy = st.builds(
-    cst::CSTNode,
+cst_CSTNode_strategy = st.builds(
+    cst_CSTNode,
 )
-qvtoperational::cst::ModelTypeCS_strategy = st.builds(
-    qvtoperational::cst::ModelTypeCS,
+qvtoperational_cst_ModelTypeCS_strategy = st.builds(
+    qvtoperational_cst_ModelTypeCS,
 )
-qvtoperational::cst::MappingSectionCS_strategy = st.builds(
-    qvtoperational::cst::MappingSectionCS,
+qvtoperational_cst_MappingSectionCS_strategy = st.builds(
+    qvtoperational_cst_MappingSectionCS,
 )
 MappingSectionsCS_strategy = st.builds(
     MappingSectionsCS,
@@ -2403,8 +2376,8 @@ TypeSpecCS_strategy = st.builds(
 LocalPropertyCS_strategy = st.builds(
     LocalPropertyCS,
 )
-qvtoperational::cst::ClassifierPropertyCS_strategy = st.builds(
-    qvtoperational::cst::ClassifierPropertyCS,
+qvtoperational_cst_ClassifierPropertyCS_strategy = st.builds(
+    qvtoperational_cst_ClassifierPropertyCS,
     isOrdered=
         st.booleans()
 )
@@ -2420,8 +2393,8 @@ ParameterDeclarationCS_strategy = st.builds(
 OCLExpressionCS_strategy = st.builds(
     OCLExpressionCS,
 )
-qvtoperational::cst::StatementCS_strategy = st.builds(
-    qvtoperational::cst::StatementCS,
+qvtoperational_cst_StatementCS_strategy = st.builds(
+    qvtoperational_cst_StatementCS,
 )
 StringLiteralExpCS_strategy = st.builds(
     StringLiteralExpCS,
@@ -2431,12 +2404,6 @@ SimpleNameCS_strategy = st.builds(
 )
 TypeCS_strategy = st.builds(
     TypeCS,
-)
-qvtoperational::cst::ListTypeCS_strategy = st.builds(
-    qvtoperational::cst::ListTypeCS,
-)
-qvtoperational::cst::DictionaryTypeCS_strategy = st.builds(
-    qvtoperational::cst::DictionaryTypeCS,
 )
 PathNameCS_strategy = st.builds(
     PathNameCS,
@@ -2453,8 +2420,8 @@ ModelTypeCS_strategy = st.builds(
 ImportCS_strategy = st.builds(
     ImportCS,
 )
-qvtoperational::cst::LibraryImportCS_strategy = st.builds(
-    qvtoperational::cst::LibraryImportCS,
+qvtoperational_cst_LibraryImportCS_strategy = st.builds(
+    qvtoperational_cst_LibraryImportCS,
 )
 TransformationHeaderCS_strategy = st.builds(
     TransformationHeaderCS,
@@ -2462,112 +2429,90 @@ TransformationHeaderCS_strategy = st.builds(
 CSTNode_strategy = st.builds(
     CSTNode,
 )
-qvtoperational::cst::ModuleKindCS_strategy = st.builds(
-    qvtoperational::cst::ModuleKindCS,
+qvtoperational_cst_TransformationRefineCS_strategy = st.builds(
+    qvtoperational_cst_TransformationRefineCS,
+)
+qvtoperational_cst_MappingMethodCS_strategy = st.builds(
+    qvtoperational_cst_MappingMethodCS,
+    blackBox=
+        st.booleans()
+)
+qvtoperational_cst_ModuleKindCS_strategy = st.builds(
+    qvtoperational_cst_ModuleKindCS,
     moduleKind=
         safe_text
 )
-qvtoperational::cst::SimpleSignatureCS_strategy = st.builds(
-    qvtoperational::cst::SimpleSignatureCS,
+qvtoperational_cst_DirectionKindCS_strategy = st.builds(
+    qvtoperational_cst_DirectionKindCS,
+    directionKind=
+        safe_text
 )
-qvtoperational::cst::ModulePropertyCS_strategy = st.builds(
-    qvtoperational::cst::ModulePropertyCS,
+qvtoperational_cst_ModulePropertyCS_strategy = st.builds(
+    qvtoperational_cst_ModulePropertyCS,
 )
-qvtoperational::cst::MappingDeclarationCS_strategy = st.builds(
-    qvtoperational::cst::MappingDeclarationCS,
+qvtoperational_cst_SimpleSignatureCS_strategy = st.builds(
+    qvtoperational_cst_SimpleSignatureCS,
+)
+qvtoperational_cst_RenameCS_strategy = st.builds(
+    qvtoperational_cst_RenameCS,
+)
+qvtoperational_cst_ModuleUsageCS_strategy = st.builds(
+    qvtoperational_cst_ModuleUsageCS,
+    importKind=
+        safe_text
+)
+qvtoperational_cst_ParameterDeclarationCS_strategy = st.builds(
+    qvtoperational_cst_ParameterDeclarationCS,
+    directionKind=
+        safe_text
+)
+qvtoperational_cst_ModuleRefCS_strategy = st.builds(
+    qvtoperational_cst_ModuleRefCS,
+)
+qvtoperational_cst_PackageRefCS_strategy = st.builds(
+    qvtoperational_cst_PackageRefCS,
+)
+qvtoperational_cst_MappingDeclarationCS_strategy = st.builds(
+    qvtoperational_cst_MappingDeclarationCS,
     qualifiers=
         safe_text,
     isQuery=
         st.booleans()
 )
-qvtoperational::cst::TagCS_strategy = st.builds(
-    qvtoperational::cst::TagCS,
+qvtoperational_cst_TypeSpecCS_strategy = st.builds(
+    qvtoperational_cst_TypeSpecCS,
 )
-qvtoperational::cst::ResolveOpArgsExpCS_strategy = st.builds(
-    qvtoperational::cst::ResolveOpArgsExpCS,
+qvtoperational_cst_MultiplicityDefCS_strategy = st.builds(
+    qvtoperational_cst_MultiplicityDefCS,
 )
-qvtoperational::cst::CompleteSignatureCS_strategy = st.builds(
-    qvtoperational::cst::CompleteSignatureCS,
+qvtoperational_cst_ClassifierDefCS_strategy = st.builds(
+    qvtoperational_cst_ClassifierDefCS,
 )
-qvtoperational::cst::TransformationRefineCS_strategy = st.builds(
-    qvtoperational::cst::TransformationRefineCS,
+qvtoperational_cst_MappingSectionsCS_strategy = st.builds(
+    qvtoperational_cst_MappingSectionsCS,
 )
-qvtoperational::cst::DictLiteralPartCS_strategy = st.builds(
-    qvtoperational::cst::DictLiteralPartCS,
-)
-qvtoperational::cst::TypeSpecCS_strategy = st.builds(
-    qvtoperational::cst::TypeSpecCS,
-)
-qvtoperational::cst::DirectionKindCS_strategy = st.builds(
-    qvtoperational::cst::DirectionKindCS,
-    directionKind=
-        safe_text
-)
-qvtoperational::cst::MultiplicityDefCS_strategy = st.builds(
-    qvtoperational::cst::MultiplicityDefCS,
-)
-qvtoperational::cst::ModuleUsageCS_strategy = st.builds(
-    qvtoperational::cst::ModuleUsageCS,
-    importKind=
-        safe_text
-)
-qvtoperational::cst::ClassifierDefCS_strategy = st.builds(
-    qvtoperational::cst::ClassifierDefCS,
-)
-qvtoperational::cst::RenameCS_strategy = st.builds(
-    qvtoperational::cst::RenameCS,
-)
-qvtoperational::cst::MappingMethodCS_strategy = st.builds(
-    qvtoperational::cst::MappingMethodCS,
-    blackBox=
-        st.booleans()
-)
-qvtoperational::cst::PackageRefCS_strategy = st.builds(
-    qvtoperational::cst::PackageRefCS,
-)
-qvtoperational::cst::ParameterDeclarationCS_strategy = st.builds(
-    qvtoperational::cst::ParameterDeclarationCS,
-    directionKind=
-        safe_text
-)
-qvtoperational::cst::MappingExtensionCS_strategy = st.builds(
-    qvtoperational::cst::MappingExtensionCS,
-    kind=
-        safe_text
-)
-qvtoperational::cst::MappingSectionsCS_strategy = st.builds(
-    qvtoperational::cst::MappingSectionsCS,
-)
-qvtoperational::cst::UnitCS_strategy = st.builds(
-    qvtoperational::cst::UnitCS,
-)
-qvtoperational::cst::ModuleRefCS_strategy = st.builds(
-    qvtoperational::cst::ModuleRefCS,
-)
-qvtoperational::cst::ScopedNameCS_strategy = st.builds(
-    qvtoperational::cst::ScopedNameCS,
-    name=
-        safe_text
-)
-qvtoperational::cst::TransformationHeaderCS_strategy = st.builds(
-    qvtoperational::cst::TransformationHeaderCS,
-)
-qvtoperational::cst::OppositePropertyCS_strategy = st.builds(
-    qvtoperational::cst::OppositePropertyCS,
+qvtoperational_cst_OppositePropertyCS_strategy = st.builds(
+    qvtoperational_cst_OppositePropertyCS,
     isNavigable=
         st.booleans()
 )
-qvtoperational::cst::MappingModuleCS_strategy = st.builds(
-    qvtoperational::cst::MappingModuleCS,
+qvtoperational_cst_TransformationHeaderCS_strategy = st.builds(
+    qvtoperational_cst_TransformationHeaderCS,
 )
-qvtoperational::cst::ImportCS_strategy = st.builds(
-    qvtoperational::cst::ImportCS,
+qvtoperational_cst_CompleteSignatureCS_strategy = st.builds(
+    qvtoperational_cst_CompleteSignatureCS,
+)
+qvtoperational_cst_MappingModuleCS_strategy = st.builds(
+    qvtoperational_cst_MappingModuleCS,
+)
+qvtoperational_cst_ImportCS_strategy = st.builds(
+    qvtoperational_cst_ImportCS,
 )
 MappingModuleCS_strategy = st.builds(
     MappingModuleCS,
 )
-qvtoperational::cst::LibraryCS_strategy = st.builds(
-    qvtoperational::cst::LibraryCS,
+qvtoperational_cst_LibraryCS_strategy = st.builds(
+    qvtoperational_cst_LibraryCS,
 )
 TagCS_strategy = st.builds(
     TagCS,
@@ -2578,62 +2523,92 @@ ClassifierDefCS_strategy = st.builds(
 MappingMethodCS_strategy = st.builds(
     MappingMethodCS,
 )
-qvtoperational::cst::MappingQueryCS_strategy = st.builds(
-    qvtoperational::cst::MappingQueryCS,
+qvtoperational_cst_MappingRuleCS_strategy = st.builds(
+    qvtoperational_cst_MappingRuleCS,
+)
+qvtoperational_cst_ConstructorCS_strategy = st.builds(
+    qvtoperational_cst_ConstructorCS,
+)
+qvtoperational_cst_MappingQueryCS_strategy = st.builds(
+    qvtoperational_cst_MappingQueryCS,
     isSimpleDefinition=
         st.booleans()
-)
-qvtoperational::cst::MappingRuleCS_strategy = st.builds(
-    qvtoperational::cst::MappingRuleCS,
-)
-qvtoperational::cst::ConstructorCS_strategy = st.builds(
-    qvtoperational::cst::ConstructorCS,
 )
 ModulePropertyCS_strategy = st.builds(
     ModulePropertyCS,
 )
-qvtoperational::cst::ContextualPropertyCS_strategy = st.builds(
-    qvtoperational::cst::ContextualPropertyCS,
+qvtoperational_cst_ConfigPropertyCS_strategy = st.builds(
+    qvtoperational_cst_ConfigPropertyCS,
 )
-qvtoperational::cst::LocalPropertyCS_strategy = st.builds(
-    qvtoperational::cst::LocalPropertyCS,
+qvtoperational_cst_LocalPropertyCS_strategy = st.builds(
+    qvtoperational_cst_LocalPropertyCS,
 )
-qvtoperational::cst::ConfigPropertyCS_strategy = st.builds(
-    qvtoperational::cst::ConfigPropertyCS,
+qvtoperational_cst_ContextualPropertyCS_strategy = st.builds(
+    qvtoperational_cst_ContextualPropertyCS,
 )
 RenameCS_strategy = st.builds(
     RenameCS,
 )
-
-@given(instance=CollectionLiteralPartCS_strategy)
-@settings(max_examples=50)
-def test_collectionliteralpartcs_instantiation(instance):
-    assert isinstance(instance, CollectionLiteralPartCS)
-
-@given(instance=LiteralExpCS_strategy)
-@settings(max_examples=50)
-def test_literalexpcs_instantiation(instance):
-    assert isinstance(instance, LiteralExpCS)
-
-@given(instance=qvtoperational::cst::ListLiteralExpCS_strategy)
-@settings(max_examples=50)
-def test_qvtoperational::cst::listliteralexpcs_instantiation(instance):
-    assert isinstance(instance, qvtoperational::cst::ListLiteralExpCS)
-
-@given(instance=DictLiteralPartCS_strategy)
-@settings(max_examples=50)
-def test_dictliteralpartcs_instantiation(instance):
-    assert isinstance(instance, DictLiteralPartCS)
+qvtoperational_cst_ResolveOpArgsExpCS_strategy = st.builds(
+    qvtoperational_cst_ResolveOpArgsExpCS,
+)
+qvtoperational_cst_UnitCS_strategy = st.builds(
+    qvtoperational_cst_UnitCS,
+)
+qvtoperational_cst_TagCS_strategy = st.builds(
+    qvtoperational_cst_TagCS,
+)
+qvtoperational_cst_ScopedNameCS_strategy = st.builds(
+    qvtoperational_cst_ScopedNameCS,
+    name=
+        safe_text
+)
+qvtoperational_cst_AssertExpCS_strategy = st.builds(
+    qvtoperational_cst_AssertExpCS,
+)
+qvtoperational_cst_DictionaryTypeCS_strategy = st.builds(
+    qvtoperational_cst_DictionaryTypeCS,
+)
+qvtoperational_cst_LogExpCS_strategy = st.builds(
+    qvtoperational_cst_LogExpCS,
+)
+CollectionLiteralPartCS_strategy = st.builds(
+    CollectionLiteralPartCS,
+)
+LiteralExpCS_strategy = st.builds(
+    LiteralExpCS,
+)
+qvtoperational_cst_DictLiteralExpCS_strategy = st.builds(
+    qvtoperational_cst_DictLiteralExpCS,
+)
+qvtoperational_cst_ListLiteralExpCS_strategy = st.builds(
+    qvtoperational_cst_ListLiteralExpCS,
+)
+qvtoperational_cst_ListTypeCS_strategy = st.builds(
+    qvtoperational_cst_ListTypeCS,
+)
+qvtoperational_cst_InstantiationExpCS_strategy = st.builds(
+    qvtoperational_cst_InstantiationExpCS,
+)
+qvtoperational_cst_MappingExtensionCS_strategy = st.builds(
+    qvtoperational_cst_MappingExtensionCS,
+    kind=
+        safe_text
+)
+qvtoperational_cst_ReturnExpCS_strategy = st.builds(
+    qvtoperational_cst_ReturnExpCS,
+)
+qvtoperational_cst_DictLiteralPartCS_strategy = st.builds(
+    qvtoperational_cst_DictLiteralPartCS,
+)
+DictLiteralPartCS_strategy = st.builds(
+    DictLiteralPartCS,
+)
 
 @given(instance=LogExpCS_strategy)
 @settings(max_examples=50)
 def test_logexpcs_instantiation(instance):
     assert isinstance(instance, LogExpCS)
-
-@given(instance=qvtoperational::cst::DictLiteralExpCS_strategy)
-@settings(max_examples=50)
-def test_qvtoperational::cst::dictliteralexpcs_instantiation(instance):
-    assert isinstance(instance, qvtoperational::cst::DictLiteralExpCS)
 
 @given(instance=ModuleUsageCS_strategy)
 @settings(max_examples=50)
@@ -2665,121 +2640,98 @@ def test_packagerefcs_instantiation(instance):
 def test_resolveexpcs_instantiation(instance):
     assert isinstance(instance, ResolveExpCS)
 
-@given(instance=qvtoperational::cst::ResolveInExpCS_strategy)
+@given(instance=qvtoperational_cst_ResolveInExpCS_strategy)
 @settings(max_examples=50)
-def test_qvtoperational::cst::resolveinexpcs_instantiation(instance):
-    assert isinstance(instance, qvtoperational::cst::ResolveInExpCS)
+def test_qvtoperational_cst_resolveinexpcs_instantiation(instance):
+    assert isinstance(instance, qvtoperational_cst_ResolveInExpCS)
 
 @given(instance=CallExpCS_strategy)
 @settings(max_examples=50)
 def test_callexpcs_instantiation(instance):
     assert isinstance(instance, CallExpCS)
 
-@given(instance=qvtoperational::cst::ResolveExpCS_strategy)
+@given(instance=qvtoperational_cst_ResolveExpCS_strategy)
 @settings(max_examples=50)
-def test_qvtoperational::cst::resolveexpcs_instantiation(instance):
-    assert isinstance(instance, qvtoperational::cst::ResolveExpCS)
-
-@given(instance=qvtoperational::cst::ResolveExpCS_strategy)
-def test_qvtoperational::cst::resolveexpcs_isDeferred_type(instance):
-    assert isinstance(instance.isDeferred, bool)
+def test_qvtoperational_cst_resolveexpcs_instantiation(instance):
+    assert isinstance(instance, qvtoperational_cst_ResolveExpCS)
 
 
-@given(instance=qvtoperational::cst::ResolveExpCS_strategy)
-def test_qvtoperational::cst::resolveexpcs_isDeferred_setter(instance):
-    original = instance.isDeferred
-    instance.isDeferred = original
-    assert instance.isDeferred == original
 
-@given(instance=qvtoperational::cst::ResolveExpCS_strategy)
-def test_qvtoperational::cst::resolveexpcs_one_type(instance):
-    assert isinstance(instance.one, bool)
-
-
-@given(instance=qvtoperational::cst::ResolveExpCS_strategy)
-def test_qvtoperational::cst::resolveexpcs_one_setter(instance):
+@given(instance=qvtoperational_cst_ResolveExpCS_strategy)
+def test_qvtoperational_cst_resolveexpcs_one_setter(instance):
     original = instance.one
     instance.one = original
     assert instance.one == original
 
-@given(instance=qvtoperational::cst::ResolveExpCS_strategy)
-def test_qvtoperational::cst::resolveexpcs_isInverse_type(instance):
-    assert isinstance(instance.isInverse, bool)
 
 
-@given(instance=qvtoperational::cst::ResolveExpCS_strategy)
-def test_qvtoperational::cst::resolveexpcs_isInverse_setter(instance):
+@given(instance=qvtoperational_cst_ResolveExpCS_strategy)
+def test_qvtoperational_cst_resolveexpcs_isInverse_setter(instance):
     original = instance.isInverse
     instance.isInverse = original
     assert instance.isInverse == original
 
-@given(instance=qvtoperational::cst::ElementWithBody_strategy)
+
+
+@given(instance=qvtoperational_cst_ResolveExpCS_strategy)
+def test_qvtoperational_cst_resolveexpcs_isDeferred_setter(instance):
+    original = instance.isDeferred
+    instance.isDeferred = original
+    assert instance.isDeferred == original
+
+@given(instance=qvtoperational_cst_ElementWithBody_strategy)
 @settings(max_examples=50)
-def test_qvtoperational::cst::elementwithbody_instantiation(instance):
-    assert isinstance(instance, qvtoperational::cst::ElementWithBody)
-
-@given(instance=qvtoperational::cst::ElementWithBody_strategy)
-def test_qvtoperational::cst::elementwithbody_bodyEndLocation_type(instance):
-    assert isinstance(instance.bodyEndLocation, int)
+def test_qvtoperational_cst_elementwithbody_instantiation(instance):
+    assert isinstance(instance, qvtoperational_cst_ElementWithBody)
 
 
-@given(instance=qvtoperational::cst::ElementWithBody_strategy)
-def test_qvtoperational::cst::elementwithbody_bodyEndLocation_setter(instance):
-    original = instance.bodyEndLocation
-    instance.bodyEndLocation = original
-    assert instance.bodyEndLocation == original
 
-@given(instance=qvtoperational::cst::ElementWithBody_strategy)
-def test_qvtoperational::cst::elementwithbody_bodyStartLocation_type(instance):
-    assert isinstance(instance.bodyStartLocation, int)
-
-
-@given(instance=qvtoperational::cst::ElementWithBody_strategy)
-def test_qvtoperational::cst::elementwithbody_bodyStartLocation_setter(instance):
+@given(instance=qvtoperational_cst_ElementWithBody_strategy)
+def test_qvtoperational_cst_elementwithbody_bodyStartLocation_setter(instance):
     original = instance.bodyStartLocation
     instance.bodyStartLocation = original
     assert instance.bodyStartLocation == original
+
+
+
+@given(instance=qvtoperational_cst_ElementWithBody_strategy)
+def test_qvtoperational_cst_elementwithbody_bodyEndLocation_setter(instance):
+    original = instance.bodyEndLocation
+    instance.bodyEndLocation = original
+    assert instance.bodyEndLocation == original
 
 @given(instance=OperationCallExpCS_strategy)
 @settings(max_examples=50)
 def test_operationcallexpcs_instantiation(instance):
     assert isinstance(instance, OperationCallExpCS)
 
-@given(instance=qvtoperational::cst::LogExpCS_strategy)
+@given(instance=qvtoperational_cst_ImperativeOperationCallExpCS_strategy)
 @settings(max_examples=50)
-def test_qvtoperational::cst::logexpcs_instantiation(instance):
-    assert isinstance(instance, qvtoperational::cst::LogExpCS)
-
-@given(instance=qvtoperational::cst::ImperativeOperationCallExpCS_strategy)
-@settings(max_examples=50)
-def test_qvtoperational::cst::imperativeoperationcallexpcs_instantiation(instance):
-    assert isinstance(instance, qvtoperational::cst::ImperativeOperationCallExpCS)
+def test_qvtoperational_cst_imperativeoperationcallexpcs_instantiation(instance):
+    assert isinstance(instance, qvtoperational_cst_ImperativeOperationCallExpCS)
 
 @given(instance=ImperativeOperationCallExpCS_strategy)
 @settings(max_examples=50)
 def test_imperativeoperationcallexpcs_instantiation(instance):
     assert isinstance(instance, ImperativeOperationCallExpCS)
 
-@given(instance=qvtoperational::cst::MappingCallExpCS_strategy)
+@given(instance=qvtoperational_cst_MappingCallExpCS_strategy)
 @settings(max_examples=50)
-def test_qvtoperational::cst::mappingcallexpcs_instantiation(instance):
-    assert isinstance(instance, qvtoperational::cst::MappingCallExpCS)
-
-@given(instance=qvtoperational::cst::MappingCallExpCS_strategy)
-def test_qvtoperational::cst::mappingcallexpcs_strict_type(instance):
-    assert isinstance(instance.strict, bool)
+def test_qvtoperational_cst_mappingcallexpcs_instantiation(instance):
+    assert isinstance(instance, qvtoperational_cst_MappingCallExpCS)
 
 
-@given(instance=qvtoperational::cst::MappingCallExpCS_strategy)
-def test_qvtoperational::cst::mappingcallexpcs_strict_setter(instance):
+
+@given(instance=qvtoperational_cst_MappingCallExpCS_strategy)
+def test_qvtoperational_cst_mappingcallexpcs_strict_setter(instance):
     original = instance.strict
     instance.strict = original
     assert instance.strict == original
 
-@given(instance=cst::InstantiationExpCS_strategy)
+@given(instance=cst_InstantiationExpCS_strategy)
 @settings(max_examples=50)
-def test_cst::instantiationexpcs_instantiation(instance):
-    assert isinstance(instance, cst::InstantiationExpCS)
+def test_cst_instantiationexpcs_instantiation(instance):
+    assert isinstance(instance, cst_InstantiationExpCS)
 
 @given(instance=VariableCS_strategy)
 @settings(max_examples=50)
@@ -2796,30 +2748,30 @@ def test_switchaltexpcs_instantiation(instance):
 def test_imperativeloopexpcs_instantiation(instance):
     assert isinstance(instance, ImperativeLoopExpCS)
 
-@given(instance=qvtoperational::cst::ImperativeIterateExpCS_strategy)
+@given(instance=qvtoperational_cst_ImperativeIterateExpCS_strategy)
 @settings(max_examples=50)
-def test_qvtoperational::cst::imperativeiterateexpcs_instantiation(instance):
-    assert isinstance(instance, qvtoperational::cst::ImperativeIterateExpCS)
+def test_qvtoperational_cst_imperativeiterateexpcs_instantiation(instance):
+    assert isinstance(instance, qvtoperational_cst_ImperativeIterateExpCS)
 
-@given(instance=qvtoperational::cst::ForExpCS_strategy)
+@given(instance=qvtoperational_cst_ForExpCS_strategy)
 @settings(max_examples=50)
-def test_qvtoperational::cst::forexpcs_instantiation(instance):
-    assert isinstance(instance, qvtoperational::cst::ForExpCS)
+def test_qvtoperational_cst_forexpcs_instantiation(instance):
+    assert isinstance(instance, qvtoperational_cst_ForExpCS)
 
-@given(instance=cst::StatementCS_strategy)
+@given(instance=cst_StatementCS_strategy)
 @settings(max_examples=50)
-def test_cst::statementcs_instantiation(instance):
-    assert isinstance(instance, cst::StatementCS)
+def test_cst_statementcs_instantiation(instance):
+    assert isinstance(instance, cst_StatementCS)
 
-@given(instance=cst::LoopExpCS_strategy)
+@given(instance=cst_LoopExpCS_strategy)
 @settings(max_examples=50)
-def test_cst::loopexpcs_instantiation(instance):
-    assert isinstance(instance, cst::LoopExpCS)
+def test_cst_loopexpcs_instantiation(instance):
+    assert isinstance(instance, cst_LoopExpCS)
 
-@given(instance=qvtoperational::cst::ImperativeLoopExpCS_strategy)
+@given(instance=qvtoperational_cst_ImperativeLoopExpCS_strategy)
 @settings(max_examples=50)
-def test_qvtoperational::cst::imperativeloopexpcs_instantiation(instance):
-    assert isinstance(instance, qvtoperational::cst::ImperativeLoopExpCS)
+def test_qvtoperational_cst_imperativeloopexpcs_instantiation(instance):
+    assert isinstance(instance, qvtoperational_cst_ImperativeLoopExpCS)
 
 @given(instance=MappingDeclarationCS_strategy)
 @settings(max_examples=50)
@@ -2831,92 +2783,71 @@ def test_mappingdeclarationcs_instantiation(instance):
 def test_statementcs_instantiation(instance):
     assert isinstance(instance, StatementCS)
 
-@given(instance=qvtoperational::cst::AssignStatementCS_strategy)
+@given(instance=qvtoperational_cst_ContinueExpCS_strategy)
 @settings(max_examples=50)
-def test_qvtoperational::cst::assignstatementcs_instantiation(instance):
-    assert isinstance(instance, qvtoperational::cst::AssignStatementCS)
+def test_qvtoperational_cst_continueexpcs_instantiation(instance):
+    assert isinstance(instance, qvtoperational_cst_ContinueExpCS)
 
-@given(instance=qvtoperational::cst::AssignStatementCS_strategy)
-def test_qvtoperational::cst::assignstatementcs_incremental_type(instance):
-    assert isinstance(instance.incremental, bool)
-
-
-@given(instance=qvtoperational::cst::AssignStatementCS_strategy)
-def test_qvtoperational::cst::assignstatementcs_incremental_setter(instance):
-    original = instance.incremental
-    instance.incremental = original
-    assert instance.incremental == original
-
-@given(instance=qvtoperational::cst::ComputeExpCS_strategy)
+@given(instance=qvtoperational_cst_BreakExpCS_strategy)
 @settings(max_examples=50)
-def test_qvtoperational::cst::computeexpcs_instantiation(instance):
-    assert isinstance(instance, qvtoperational::cst::ComputeExpCS)
+def test_qvtoperational_cst_breakexpcs_instantiation(instance):
+    assert isinstance(instance, qvtoperational_cst_BreakExpCS)
 
-@given(instance=qvtoperational::cst::ContinueExpCS_strategy)
+@given(instance=qvtoperational_cst_VariableInitializationCS_strategy)
 @settings(max_examples=50)
-def test_qvtoperational::cst::continueexpcs_instantiation(instance):
-    assert isinstance(instance, qvtoperational::cst::ContinueExpCS)
-
-@given(instance=qvtoperational::cst::InstantiationExpCS_strategy)
-@settings(max_examples=50)
-def test_qvtoperational::cst::instantiationexpcs_instantiation(instance):
-    assert isinstance(instance, qvtoperational::cst::InstantiationExpCS)
-
-@given(instance=qvtoperational::cst::WhileExpCS_strategy)
-@settings(max_examples=50)
-def test_qvtoperational::cst::whileexpcs_instantiation(instance):
-    assert isinstance(instance, qvtoperational::cst::WhileExpCS)
-
-@given(instance=qvtoperational::cst::BreakExpCS_strategy)
-@settings(max_examples=50)
-def test_qvtoperational::cst::breakexpcs_instantiation(instance):
-    assert isinstance(instance, qvtoperational::cst::BreakExpCS)
-
-@given(instance=qvtoperational::cst::VariableInitializationCS_strategy)
-@settings(max_examples=50)
-def test_qvtoperational::cst::variableinitializationcs_instantiation(instance):
-    assert isinstance(instance, qvtoperational::cst::VariableInitializationCS)
-
-@given(instance=qvtoperational::cst::VariableInitializationCS_strategy)
-def test_qvtoperational::cst::variableinitializationcs_withResult_type(instance):
-    assert isinstance(instance.withResult, bool)
+def test_qvtoperational_cst_variableinitializationcs_instantiation(instance):
+    assert isinstance(instance, qvtoperational_cst_VariableInitializationCS)
 
 
-@given(instance=qvtoperational::cst::VariableInitializationCS_strategy)
-def test_qvtoperational::cst::variableinitializationcs_withResult_setter(instance):
+
+@given(instance=qvtoperational_cst_VariableInitializationCS_strategy)
+def test_qvtoperational_cst_variableinitializationcs_withResult_setter(instance):
     original = instance.withResult
     instance.withResult = original
     assert instance.withResult == original
 
-@given(instance=qvtoperational::cst::SwitchExpCS_strategy)
+@given(instance=qvtoperational_cst_WhileExpCS_strategy)
 @settings(max_examples=50)
-def test_qvtoperational::cst::switchexpcs_instantiation(instance):
-    assert isinstance(instance, qvtoperational::cst::SwitchExpCS)
+def test_qvtoperational_cst_whileexpcs_instantiation(instance):
+    assert isinstance(instance, qvtoperational_cst_WhileExpCS)
 
-@given(instance=qvtoperational::cst::ReturnExpCS_strategy)
+@given(instance=qvtoperational_cst_SwitchAltExpCS_strategy)
 @settings(max_examples=50)
-def test_qvtoperational::cst::returnexpcs_instantiation(instance):
-    assert isinstance(instance, qvtoperational::cst::ReturnExpCS)
+def test_qvtoperational_cst_switchaltexpcs_instantiation(instance):
+    assert isinstance(instance, qvtoperational_cst_SwitchAltExpCS)
 
-@given(instance=qvtoperational::cst::SwitchAltExpCS_strategy)
+@given(instance=qvtoperational_cst_ComputeExpCS_strategy)
 @settings(max_examples=50)
-def test_qvtoperational::cst::switchaltexpcs_instantiation(instance):
-    assert isinstance(instance, qvtoperational::cst::SwitchAltExpCS)
+def test_qvtoperational_cst_computeexpcs_instantiation(instance):
+    assert isinstance(instance, qvtoperational_cst_ComputeExpCS)
 
-@given(instance=qvtoperational::cst::AssertExpCS_strategy)
+@given(instance=qvtoperational_cst_ExpressionStatementCS_strategy)
 @settings(max_examples=50)
-def test_qvtoperational::cst::assertexpcs_instantiation(instance):
-    assert isinstance(instance, qvtoperational::cst::AssertExpCS)
+def test_qvtoperational_cst_expressionstatementcs_instantiation(instance):
+    assert isinstance(instance, qvtoperational_cst_ExpressionStatementCS)
 
-@given(instance=qvtoperational::cst::ExpressionStatementCS_strategy)
+@given(instance=qvtoperational_cst_SwitchExpCS_strategy)
 @settings(max_examples=50)
-def test_qvtoperational::cst::expressionstatementcs_instantiation(instance):
-    assert isinstance(instance, qvtoperational::cst::ExpressionStatementCS)
+def test_qvtoperational_cst_switchexpcs_instantiation(instance):
+    assert isinstance(instance, qvtoperational_cst_SwitchExpCS)
 
-@given(instance=qvtoperational::cst::BlockExpCS_strategy)
+@given(instance=qvtoperational_cst_AssignStatementCS_strategy)
 @settings(max_examples=50)
-def test_qvtoperational::cst::blockexpcs_instantiation(instance):
-    assert isinstance(instance, qvtoperational::cst::BlockExpCS)
+def test_qvtoperational_cst_assignstatementcs_instantiation(instance):
+    assert isinstance(instance, qvtoperational_cst_AssignStatementCS)
+
+
+
+@given(instance=qvtoperational_cst_AssignStatementCS_strategy)
+def test_qvtoperational_cst_assignstatementcs_incremental_setter(instance):
+    original = instance.incremental
+    instance.incremental = original
+    assert instance.incremental == original
+
+@given(instance=qvtoperational_cst_BlockExpCS_strategy)
+@settings(max_examples=50)
+def test_qvtoperational_cst_blockexpcs_instantiation(instance):
+    assert isinstance(instance, qvtoperational_cst_BlockExpCS)
 
 @given(instance=MappingEndCS_strategy)
 @settings(max_examples=50)
@@ -2938,72 +2869,66 @@ def test_mappinginitcs_instantiation(instance):
 def test_mappingsectioncs_instantiation(instance):
     assert isinstance(instance, MappingSectionCS)
 
-@given(instance=qvtoperational::cst::MappingEndCS_strategy)
+@given(instance=qvtoperational_cst_MappingBodyCS_strategy)
 @settings(max_examples=50)
-def test_qvtoperational::cst::mappingendcs_instantiation(instance):
-    assert isinstance(instance, qvtoperational::cst::MappingEndCS)
-
-@given(instance=qvtoperational::cst::MappingBodyCS_strategy)
-@settings(max_examples=50)
-def test_qvtoperational::cst::mappingbodycs_instantiation(instance):
-    assert isinstance(instance, qvtoperational::cst::MappingBodyCS)
-
-@given(instance=qvtoperational::cst::MappingBodyCS_strategy)
-def test_qvtoperational::cst::mappingbodycs_hasPopulationKeyword_type(instance):
-    assert isinstance(instance.hasPopulationKeyword, bool)
+def test_qvtoperational_cst_mappingbodycs_instantiation(instance):
+    assert isinstance(instance, qvtoperational_cst_MappingBodyCS)
 
 
-@given(instance=qvtoperational::cst::MappingBodyCS_strategy)
-def test_qvtoperational::cst::mappingbodycs_hasPopulationKeyword_setter(instance):
+
+@given(instance=qvtoperational_cst_MappingBodyCS_strategy)
+def test_qvtoperational_cst_mappingbodycs_hasPopulationKeyword_setter(instance):
     original = instance.hasPopulationKeyword
     instance.hasPopulationKeyword = original
     assert instance.hasPopulationKeyword == original
 
-@given(instance=qvtoperational::cst::MappingInitCS_strategy)
+@given(instance=qvtoperational_cst_MappingEndCS_strategy)
 @settings(max_examples=50)
-def test_qvtoperational::cst::mappinginitcs_instantiation(instance):
-    assert isinstance(instance, qvtoperational::cst::MappingInitCS)
+def test_qvtoperational_cst_mappingendcs_instantiation(instance):
+    assert isinstance(instance, qvtoperational_cst_MappingEndCS)
+
+@given(instance=qvtoperational_cst_MappingInitCS_strategy)
+@settings(max_examples=50)
+def test_qvtoperational_cst_mappinginitcs_instantiation(instance):
+    assert isinstance(instance, qvtoperational_cst_MappingInitCS)
 
 @given(instance=MappingRuleCS_strategy)
 @settings(max_examples=50)
 def test_mappingrulecs_instantiation(instance):
     assert isinstance(instance, MappingRuleCS)
 
-@given(instance=cst::ElementWithBody_strategy)
+@given(instance=cst_ElementWithBody_strategy)
 @settings(max_examples=50)
-def test_cst::elementwithbody_instantiation(instance):
-    assert isinstance(instance, cst::ElementWithBody)
+def test_cst_elementwithbody_instantiation(instance):
+    assert isinstance(instance, cst_ElementWithBody)
 
-@given(instance=qvtoperational::cst::ObjectExpCS_strategy)
+@given(instance=qvtoperational_cst_ObjectExpCS_strategy)
 @settings(max_examples=50)
-def test_qvtoperational::cst::objectexpcs_instantiation(instance):
-    assert isinstance(instance, qvtoperational::cst::ObjectExpCS)
-
-@given(instance=qvtoperational::cst::ObjectExpCS_strategy)
-def test_qvtoperational::cst::objectexpcs_isImplicit_type(instance):
-    assert isinstance(instance.isImplicit, bool)
+def test_qvtoperational_cst_objectexpcs_instantiation(instance):
+    assert isinstance(instance, qvtoperational_cst_ObjectExpCS)
 
 
-@given(instance=qvtoperational::cst::ObjectExpCS_strategy)
-def test_qvtoperational::cst::objectexpcs_isImplicit_setter(instance):
+
+@given(instance=qvtoperational_cst_ObjectExpCS_strategy)
+def test_qvtoperational_cst_objectexpcs_isImplicit_setter(instance):
     original = instance.isImplicit
     instance.isImplicit = original
     assert instance.isImplicit == original
 
-@given(instance=cst::CSTNode_strategy)
+@given(instance=cst_CSTNode_strategy)
 @settings(max_examples=50)
-def test_cst::cstnode_instantiation(instance):
-    assert isinstance(instance, cst::CSTNode)
+def test_cst_cstnode_instantiation(instance):
+    assert isinstance(instance, cst_CSTNode)
 
-@given(instance=qvtoperational::cst::ModelTypeCS_strategy)
+@given(instance=qvtoperational_cst_ModelTypeCS_strategy)
 @settings(max_examples=50)
-def test_qvtoperational::cst::modeltypecs_instantiation(instance):
-    assert isinstance(instance, qvtoperational::cst::ModelTypeCS)
+def test_qvtoperational_cst_modeltypecs_instantiation(instance):
+    assert isinstance(instance, qvtoperational_cst_ModelTypeCS)
 
-@given(instance=qvtoperational::cst::MappingSectionCS_strategy)
+@given(instance=qvtoperational_cst_MappingSectionCS_strategy)
 @settings(max_examples=50)
-def test_qvtoperational::cst::mappingsectioncs_instantiation(instance):
-    assert isinstance(instance, qvtoperational::cst::MappingSectionCS)
+def test_qvtoperational_cst_mappingsectioncs_instantiation(instance):
+    assert isinstance(instance, qvtoperational_cst_MappingSectionCS)
 
 @given(instance=MappingSectionsCS_strategy)
 @settings(max_examples=50)
@@ -3040,18 +2965,15 @@ def test_typespeccs_instantiation(instance):
 def test_localpropertycs_instantiation(instance):
     assert isinstance(instance, LocalPropertyCS)
 
-@given(instance=qvtoperational::cst::ClassifierPropertyCS_strategy)
+@given(instance=qvtoperational_cst_ClassifierPropertyCS_strategy)
 @settings(max_examples=50)
-def test_qvtoperational::cst::classifierpropertycs_instantiation(instance):
-    assert isinstance(instance, qvtoperational::cst::ClassifierPropertyCS)
-
-@given(instance=qvtoperational::cst::ClassifierPropertyCS_strategy)
-def test_qvtoperational::cst::classifierpropertycs_isOrdered_type(instance):
-    assert isinstance(instance.isOrdered, bool)
+def test_qvtoperational_cst_classifierpropertycs_instantiation(instance):
+    assert isinstance(instance, qvtoperational_cst_ClassifierPropertyCS)
 
 
-@given(instance=qvtoperational::cst::ClassifierPropertyCS_strategy)
-def test_qvtoperational::cst::classifierpropertycs_isOrdered_setter(instance):
+
+@given(instance=qvtoperational_cst_ClassifierPropertyCS_strategy)
+def test_qvtoperational_cst_classifierpropertycs_isOrdered_setter(instance):
     original = instance.isOrdered
     instance.isOrdered = original
     assert instance.isOrdered == original
@@ -3076,10 +2998,10 @@ def test_parameterdeclarationcs_instantiation(instance):
 def test_oclexpressioncs_instantiation(instance):
     assert isinstance(instance, OCLExpressionCS)
 
-@given(instance=qvtoperational::cst::StatementCS_strategy)
+@given(instance=qvtoperational_cst_StatementCS_strategy)
 @settings(max_examples=50)
-def test_qvtoperational::cst::statementcs_instantiation(instance):
-    assert isinstance(instance, qvtoperational::cst::StatementCS)
+def test_qvtoperational_cst_statementcs_instantiation(instance):
+    assert isinstance(instance, qvtoperational_cst_StatementCS)
 
 @given(instance=StringLiteralExpCS_strategy)
 @settings(max_examples=50)
@@ -3095,16 +3017,6 @@ def test_simplenamecs_instantiation(instance):
 @settings(max_examples=50)
 def test_typecs_instantiation(instance):
     assert isinstance(instance, TypeCS)
-
-@given(instance=qvtoperational::cst::ListTypeCS_strategy)
-@settings(max_examples=50)
-def test_qvtoperational::cst::listtypecs_instantiation(instance):
-    assert isinstance(instance, qvtoperational::cst::ListTypeCS)
-
-@given(instance=qvtoperational::cst::DictionaryTypeCS_strategy)
-@settings(max_examples=50)
-def test_qvtoperational::cst::dictionarytypecs_instantiation(instance):
-    assert isinstance(instance, qvtoperational::cst::DictionaryTypeCS)
 
 @given(instance=PathNameCS_strategy)
 @settings(max_examples=50)
@@ -3131,10 +3043,10 @@ def test_modeltypecs_instantiation(instance):
 def test_importcs_instantiation(instance):
     assert isinstance(instance, ImportCS)
 
-@given(instance=qvtoperational::cst::LibraryImportCS_strategy)
+@given(instance=qvtoperational_cst_LibraryImportCS_strategy)
 @settings(max_examples=50)
-def test_qvtoperational::cst::libraryimportcs_instantiation(instance):
-    assert isinstance(instance, qvtoperational::cst::LibraryImportCS)
+def test_qvtoperational_cst_libraryimportcs_instantiation(instance):
+    assert isinstance(instance, qvtoperational_cst_LibraryImportCS)
 
 @given(instance=TransformationHeaderCS_strategy)
 @settings(max_examples=50)
@@ -3146,260 +3058,184 @@ def test_transformationheadercs_instantiation(instance):
 def test_cstnode_instantiation(instance):
     assert isinstance(instance, CSTNode)
 
-@given(instance=qvtoperational::cst::ModuleKindCS_strategy)
+@given(instance=qvtoperational_cst_TransformationRefineCS_strategy)
 @settings(max_examples=50)
-def test_qvtoperational::cst::modulekindcs_instantiation(instance):
-    assert isinstance(instance, qvtoperational::cst::ModuleKindCS)
+def test_qvtoperational_cst_transformationrefinecs_instantiation(instance):
+    assert isinstance(instance, qvtoperational_cst_TransformationRefineCS)
 
-@given(instance=qvtoperational::cst::ModuleKindCS_strategy)
-def test_qvtoperational::cst::modulekindcs_moduleKind_type(instance):
-    assert isinstance(instance.moduleKind, str)
-
-
-@given(instance=qvtoperational::cst::ModuleKindCS_strategy)
-def test_qvtoperational::cst::modulekindcs_moduleKind_setter(instance):
-    original = instance.moduleKind
-    instance.moduleKind = original
-    assert instance.moduleKind == original
-
-@given(instance=qvtoperational::cst::SimpleSignatureCS_strategy)
+@given(instance=qvtoperational_cst_MappingMethodCS_strategy)
 @settings(max_examples=50)
-def test_qvtoperational::cst::simplesignaturecs_instantiation(instance):
-    assert isinstance(instance, qvtoperational::cst::SimpleSignatureCS)
-
-@given(instance=qvtoperational::cst::ModulePropertyCS_strategy)
-@settings(max_examples=50)
-def test_qvtoperational::cst::modulepropertycs_instantiation(instance):
-    assert isinstance(instance, qvtoperational::cst::ModulePropertyCS)
-
-@given(instance=qvtoperational::cst::MappingDeclarationCS_strategy)
-@settings(max_examples=50)
-def test_qvtoperational::cst::mappingdeclarationcs_instantiation(instance):
-    assert isinstance(instance, qvtoperational::cst::MappingDeclarationCS)
-
-@given(instance=qvtoperational::cst::MappingDeclarationCS_strategy)
-def test_qvtoperational::cst::mappingdeclarationcs_qualifiers_type(instance):
-    assert isinstance(instance.qualifiers, str)
+def test_qvtoperational_cst_mappingmethodcs_instantiation(instance):
+    assert isinstance(instance, qvtoperational_cst_MappingMethodCS)
 
 
-@given(instance=qvtoperational::cst::MappingDeclarationCS_strategy)
-def test_qvtoperational::cst::mappingdeclarationcs_qualifiers_setter(instance):
-    original = instance.qualifiers
-    instance.qualifiers = original
-    assert instance.qualifiers == original
 
-@given(instance=qvtoperational::cst::MappingDeclarationCS_strategy)
-def test_qvtoperational::cst::mappingdeclarationcs_isQuery_type(instance):
-    assert isinstance(instance.isQuery, bool)
-
-
-@given(instance=qvtoperational::cst::MappingDeclarationCS_strategy)
-def test_qvtoperational::cst::mappingdeclarationcs_isQuery_setter(instance):
-    original = instance.isQuery
-    instance.isQuery = original
-    assert instance.isQuery == original
-
-@given(instance=qvtoperational::cst::TagCS_strategy)
-@settings(max_examples=50)
-def test_qvtoperational::cst::tagcs_instantiation(instance):
-    assert isinstance(instance, qvtoperational::cst::TagCS)
-
-@given(instance=qvtoperational::cst::ResolveOpArgsExpCS_strategy)
-@settings(max_examples=50)
-def test_qvtoperational::cst::resolveopargsexpcs_instantiation(instance):
-    assert isinstance(instance, qvtoperational::cst::ResolveOpArgsExpCS)
-
-@given(instance=qvtoperational::cst::CompleteSignatureCS_strategy)
-@settings(max_examples=50)
-def test_qvtoperational::cst::completesignaturecs_instantiation(instance):
-    assert isinstance(instance, qvtoperational::cst::CompleteSignatureCS)
-
-@given(instance=qvtoperational::cst::TransformationRefineCS_strategy)
-@settings(max_examples=50)
-def test_qvtoperational::cst::transformationrefinecs_instantiation(instance):
-    assert isinstance(instance, qvtoperational::cst::TransformationRefineCS)
-
-@given(instance=qvtoperational::cst::DictLiteralPartCS_strategy)
-@settings(max_examples=50)
-def test_qvtoperational::cst::dictliteralpartcs_instantiation(instance):
-    assert isinstance(instance, qvtoperational::cst::DictLiteralPartCS)
-
-@given(instance=qvtoperational::cst::TypeSpecCS_strategy)
-@settings(max_examples=50)
-def test_qvtoperational::cst::typespeccs_instantiation(instance):
-    assert isinstance(instance, qvtoperational::cst::TypeSpecCS)
-
-@given(instance=qvtoperational::cst::DirectionKindCS_strategy)
-@settings(max_examples=50)
-def test_qvtoperational::cst::directionkindcs_instantiation(instance):
-    assert isinstance(instance, qvtoperational::cst::DirectionKindCS)
-
-@given(instance=qvtoperational::cst::DirectionKindCS_strategy)
-def test_qvtoperational::cst::directionkindcs_directionKind_type(instance):
-    assert isinstance(instance.directionKind, str)
-
-
-@given(instance=qvtoperational::cst::DirectionKindCS_strategy)
-def test_qvtoperational::cst::directionkindcs_directionKind_setter(instance):
-    original = instance.directionKind
-    instance.directionKind = original
-    assert instance.directionKind == original
-
-@given(instance=qvtoperational::cst::MultiplicityDefCS_strategy)
-@settings(max_examples=50)
-def test_qvtoperational::cst::multiplicitydefcs_instantiation(instance):
-    assert isinstance(instance, qvtoperational::cst::MultiplicityDefCS)
-
-@given(instance=qvtoperational::cst::ModuleUsageCS_strategy)
-@settings(max_examples=50)
-def test_qvtoperational::cst::moduleusagecs_instantiation(instance):
-    assert isinstance(instance, qvtoperational::cst::ModuleUsageCS)
-
-@given(instance=qvtoperational::cst::ModuleUsageCS_strategy)
-def test_qvtoperational::cst::moduleusagecs_importKind_type(instance):
-    assert isinstance(instance.importKind, str)
-
-
-@given(instance=qvtoperational::cst::ModuleUsageCS_strategy)
-def test_qvtoperational::cst::moduleusagecs_importKind_setter(instance):
-    original = instance.importKind
-    instance.importKind = original
-    assert instance.importKind == original
-
-@given(instance=qvtoperational::cst::ClassifierDefCS_strategy)
-@settings(max_examples=50)
-def test_qvtoperational::cst::classifierdefcs_instantiation(instance):
-    assert isinstance(instance, qvtoperational::cst::ClassifierDefCS)
-
-@given(instance=qvtoperational::cst::RenameCS_strategy)
-@settings(max_examples=50)
-def test_qvtoperational::cst::renamecs_instantiation(instance):
-    assert isinstance(instance, qvtoperational::cst::RenameCS)
-
-@given(instance=qvtoperational::cst::MappingMethodCS_strategy)
-@settings(max_examples=50)
-def test_qvtoperational::cst::mappingmethodcs_instantiation(instance):
-    assert isinstance(instance, qvtoperational::cst::MappingMethodCS)
-
-@given(instance=qvtoperational::cst::MappingMethodCS_strategy)
-def test_qvtoperational::cst::mappingmethodcs_blackBox_type(instance):
-    assert isinstance(instance.blackBox, bool)
-
-
-@given(instance=qvtoperational::cst::MappingMethodCS_strategy)
-def test_qvtoperational::cst::mappingmethodcs_blackBox_setter(instance):
+@given(instance=qvtoperational_cst_MappingMethodCS_strategy)
+def test_qvtoperational_cst_mappingmethodcs_blackBox_setter(instance):
     original = instance.blackBox
     instance.blackBox = original
     assert instance.blackBox == original
 
-@given(instance=qvtoperational::cst::PackageRefCS_strategy)
+@given(instance=qvtoperational_cst_ModuleKindCS_strategy)
 @settings(max_examples=50)
-def test_qvtoperational::cst::packagerefcs_instantiation(instance):
-    assert isinstance(instance, qvtoperational::cst::PackageRefCS)
+def test_qvtoperational_cst_modulekindcs_instantiation(instance):
+    assert isinstance(instance, qvtoperational_cst_ModuleKindCS)
 
-@given(instance=qvtoperational::cst::ParameterDeclarationCS_strategy)
+
+
+@given(instance=qvtoperational_cst_ModuleKindCS_strategy)
+def test_qvtoperational_cst_modulekindcs_moduleKind_setter(instance):
+    original = instance.moduleKind
+    instance.moduleKind = original
+    assert instance.moduleKind == original
+
+@given(instance=qvtoperational_cst_DirectionKindCS_strategy)
 @settings(max_examples=50)
-def test_qvtoperational::cst::parameterdeclarationcs_instantiation(instance):
-    assert isinstance(instance, qvtoperational::cst::ParameterDeclarationCS)
-
-@given(instance=qvtoperational::cst::ParameterDeclarationCS_strategy)
-def test_qvtoperational::cst::parameterdeclarationcs_directionKind_type(instance):
-    assert isinstance(instance.directionKind, str)
+def test_qvtoperational_cst_directionkindcs_instantiation(instance):
+    assert isinstance(instance, qvtoperational_cst_DirectionKindCS)
 
 
-@given(instance=qvtoperational::cst::ParameterDeclarationCS_strategy)
-def test_qvtoperational::cst::parameterdeclarationcs_directionKind_setter(instance):
+
+@given(instance=qvtoperational_cst_DirectionKindCS_strategy)
+def test_qvtoperational_cst_directionkindcs_directionKind_setter(instance):
     original = instance.directionKind
     instance.directionKind = original
     assert instance.directionKind == original
 
-@given(instance=qvtoperational::cst::MappingExtensionCS_strategy)
+@given(instance=qvtoperational_cst_ModulePropertyCS_strategy)
 @settings(max_examples=50)
-def test_qvtoperational::cst::mappingextensioncs_instantiation(instance):
-    assert isinstance(instance, qvtoperational::cst::MappingExtensionCS)
+def test_qvtoperational_cst_modulepropertycs_instantiation(instance):
+    assert isinstance(instance, qvtoperational_cst_ModulePropertyCS)
 
-@given(instance=qvtoperational::cst::MappingExtensionCS_strategy)
-def test_qvtoperational::cst::mappingextensioncs_kind_type(instance):
-    assert isinstance(instance.kind, str)
-
-
-@given(instance=qvtoperational::cst::MappingExtensionCS_strategy)
-def test_qvtoperational::cst::mappingextensioncs_kind_setter(instance):
-    original = instance.kind
-    instance.kind = original
-    assert instance.kind == original
-
-@given(instance=qvtoperational::cst::MappingSectionsCS_strategy)
+@given(instance=qvtoperational_cst_SimpleSignatureCS_strategy)
 @settings(max_examples=50)
-def test_qvtoperational::cst::mappingsectionscs_instantiation(instance):
-    assert isinstance(instance, qvtoperational::cst::MappingSectionsCS)
+def test_qvtoperational_cst_simplesignaturecs_instantiation(instance):
+    assert isinstance(instance, qvtoperational_cst_SimpleSignatureCS)
 
-@given(instance=qvtoperational::cst::UnitCS_strategy)
+@given(instance=qvtoperational_cst_RenameCS_strategy)
 @settings(max_examples=50)
-def test_qvtoperational::cst::unitcs_instantiation(instance):
-    assert isinstance(instance, qvtoperational::cst::UnitCS)
+def test_qvtoperational_cst_renamecs_instantiation(instance):
+    assert isinstance(instance, qvtoperational_cst_RenameCS)
 
-@given(instance=qvtoperational::cst::ModuleRefCS_strategy)
+@given(instance=qvtoperational_cst_ModuleUsageCS_strategy)
 @settings(max_examples=50)
-def test_qvtoperational::cst::modulerefcs_instantiation(instance):
-    assert isinstance(instance, qvtoperational::cst::ModuleRefCS)
+def test_qvtoperational_cst_moduleusagecs_instantiation(instance):
+    assert isinstance(instance, qvtoperational_cst_ModuleUsageCS)
 
-@given(instance=qvtoperational::cst::ScopedNameCS_strategy)
+
+
+@given(instance=qvtoperational_cst_ModuleUsageCS_strategy)
+def test_qvtoperational_cst_moduleusagecs_importKind_setter(instance):
+    original = instance.importKind
+    instance.importKind = original
+    assert instance.importKind == original
+
+@given(instance=qvtoperational_cst_ParameterDeclarationCS_strategy)
 @settings(max_examples=50)
-def test_qvtoperational::cst::scopednamecs_instantiation(instance):
-    assert isinstance(instance, qvtoperational::cst::ScopedNameCS)
-
-@given(instance=qvtoperational::cst::ScopedNameCS_strategy)
-def test_qvtoperational::cst::scopednamecs_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_qvtoperational_cst_parameterdeclarationcs_instantiation(instance):
+    assert isinstance(instance, qvtoperational_cst_ParameterDeclarationCS)
 
 
-@given(instance=qvtoperational::cst::ScopedNameCS_strategy)
-def test_qvtoperational::cst::scopednamecs_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
 
-@given(instance=qvtoperational::cst::TransformationHeaderCS_strategy)
+@given(instance=qvtoperational_cst_ParameterDeclarationCS_strategy)
+def test_qvtoperational_cst_parameterdeclarationcs_directionKind_setter(instance):
+    original = instance.directionKind
+    instance.directionKind = original
+    assert instance.directionKind == original
+
+@given(instance=qvtoperational_cst_ModuleRefCS_strategy)
 @settings(max_examples=50)
-def test_qvtoperational::cst::transformationheadercs_instantiation(instance):
-    assert isinstance(instance, qvtoperational::cst::TransformationHeaderCS)
+def test_qvtoperational_cst_modulerefcs_instantiation(instance):
+    assert isinstance(instance, qvtoperational_cst_ModuleRefCS)
 
-@given(instance=qvtoperational::cst::OppositePropertyCS_strategy)
+@given(instance=qvtoperational_cst_PackageRefCS_strategy)
 @settings(max_examples=50)
-def test_qvtoperational::cst::oppositepropertycs_instantiation(instance):
-    assert isinstance(instance, qvtoperational::cst::OppositePropertyCS)
+def test_qvtoperational_cst_packagerefcs_instantiation(instance):
+    assert isinstance(instance, qvtoperational_cst_PackageRefCS)
 
-@given(instance=qvtoperational::cst::OppositePropertyCS_strategy)
-def test_qvtoperational::cst::oppositepropertycs_isNavigable_type(instance):
-    assert isinstance(instance.isNavigable, bool)
+@given(instance=qvtoperational_cst_MappingDeclarationCS_strategy)
+@settings(max_examples=50)
+def test_qvtoperational_cst_mappingdeclarationcs_instantiation(instance):
+    assert isinstance(instance, qvtoperational_cst_MappingDeclarationCS)
 
 
-@given(instance=qvtoperational::cst::OppositePropertyCS_strategy)
-def test_qvtoperational::cst::oppositepropertycs_isNavigable_setter(instance):
+
+@given(instance=qvtoperational_cst_MappingDeclarationCS_strategy)
+def test_qvtoperational_cst_mappingdeclarationcs_qualifiers_setter(instance):
+    original = instance.qualifiers
+    instance.qualifiers = original
+    assert instance.qualifiers == original
+
+
+
+@given(instance=qvtoperational_cst_MappingDeclarationCS_strategy)
+def test_qvtoperational_cst_mappingdeclarationcs_isQuery_setter(instance):
+    original = instance.isQuery
+    instance.isQuery = original
+    assert instance.isQuery == original
+
+@given(instance=qvtoperational_cst_TypeSpecCS_strategy)
+@settings(max_examples=50)
+def test_qvtoperational_cst_typespeccs_instantiation(instance):
+    assert isinstance(instance, qvtoperational_cst_TypeSpecCS)
+
+@given(instance=qvtoperational_cst_MultiplicityDefCS_strategy)
+@settings(max_examples=50)
+def test_qvtoperational_cst_multiplicitydefcs_instantiation(instance):
+    assert isinstance(instance, qvtoperational_cst_MultiplicityDefCS)
+
+@given(instance=qvtoperational_cst_ClassifierDefCS_strategy)
+@settings(max_examples=50)
+def test_qvtoperational_cst_classifierdefcs_instantiation(instance):
+    assert isinstance(instance, qvtoperational_cst_ClassifierDefCS)
+
+@given(instance=qvtoperational_cst_MappingSectionsCS_strategy)
+@settings(max_examples=50)
+def test_qvtoperational_cst_mappingsectionscs_instantiation(instance):
+    assert isinstance(instance, qvtoperational_cst_MappingSectionsCS)
+
+@given(instance=qvtoperational_cst_OppositePropertyCS_strategy)
+@settings(max_examples=50)
+def test_qvtoperational_cst_oppositepropertycs_instantiation(instance):
+    assert isinstance(instance, qvtoperational_cst_OppositePropertyCS)
+
+
+
+@given(instance=qvtoperational_cst_OppositePropertyCS_strategy)
+def test_qvtoperational_cst_oppositepropertycs_isNavigable_setter(instance):
     original = instance.isNavigable
     instance.isNavigable = original
     assert instance.isNavigable == original
 
-@given(instance=qvtoperational::cst::MappingModuleCS_strategy)
+@given(instance=qvtoperational_cst_TransformationHeaderCS_strategy)
 @settings(max_examples=50)
-def test_qvtoperational::cst::mappingmodulecs_instantiation(instance):
-    assert isinstance(instance, qvtoperational::cst::MappingModuleCS)
+def test_qvtoperational_cst_transformationheadercs_instantiation(instance):
+    assert isinstance(instance, qvtoperational_cst_TransformationHeaderCS)
 
-@given(instance=qvtoperational::cst::ImportCS_strategy)
+@given(instance=qvtoperational_cst_CompleteSignatureCS_strategy)
 @settings(max_examples=50)
-def test_qvtoperational::cst::importcs_instantiation(instance):
-    assert isinstance(instance, qvtoperational::cst::ImportCS)
+def test_qvtoperational_cst_completesignaturecs_instantiation(instance):
+    assert isinstance(instance, qvtoperational_cst_CompleteSignatureCS)
+
+@given(instance=qvtoperational_cst_MappingModuleCS_strategy)
+@settings(max_examples=50)
+def test_qvtoperational_cst_mappingmodulecs_instantiation(instance):
+    assert isinstance(instance, qvtoperational_cst_MappingModuleCS)
+
+@given(instance=qvtoperational_cst_ImportCS_strategy)
+@settings(max_examples=50)
+def test_qvtoperational_cst_importcs_instantiation(instance):
+    assert isinstance(instance, qvtoperational_cst_ImportCS)
 
 @given(instance=MappingModuleCS_strategy)
 @settings(max_examples=50)
 def test_mappingmodulecs_instantiation(instance):
     assert isinstance(instance, MappingModuleCS)
 
-@given(instance=qvtoperational::cst::LibraryCS_strategy)
+@given(instance=qvtoperational_cst_LibraryCS_strategy)
 @settings(max_examples=50)
-def test_qvtoperational::cst::librarycs_instantiation(instance):
-    assert isinstance(instance, qvtoperational::cst::LibraryCS)
+def test_qvtoperational_cst_librarycs_instantiation(instance):
+    assert isinstance(instance, qvtoperational_cst_LibraryCS)
 
 @given(instance=TagCS_strategy)
 @settings(max_examples=50)
@@ -3416,53 +3252,151 @@ def test_classifierdefcs_instantiation(instance):
 def test_mappingmethodcs_instantiation(instance):
     assert isinstance(instance, MappingMethodCS)
 
-@given(instance=qvtoperational::cst::MappingQueryCS_strategy)
+@given(instance=qvtoperational_cst_MappingRuleCS_strategy)
 @settings(max_examples=50)
-def test_qvtoperational::cst::mappingquerycs_instantiation(instance):
-    assert isinstance(instance, qvtoperational::cst::MappingQueryCS)
+def test_qvtoperational_cst_mappingrulecs_instantiation(instance):
+    assert isinstance(instance, qvtoperational_cst_MappingRuleCS)
 
-@given(instance=qvtoperational::cst::MappingQueryCS_strategy)
-def test_qvtoperational::cst::mappingquerycs_isSimpleDefinition_type(instance):
-    assert isinstance(instance.isSimpleDefinition, bool)
+@given(instance=qvtoperational_cst_ConstructorCS_strategy)
+@settings(max_examples=50)
+def test_qvtoperational_cst_constructorcs_instantiation(instance):
+    assert isinstance(instance, qvtoperational_cst_ConstructorCS)
+
+@given(instance=qvtoperational_cst_MappingQueryCS_strategy)
+@settings(max_examples=50)
+def test_qvtoperational_cst_mappingquerycs_instantiation(instance):
+    assert isinstance(instance, qvtoperational_cst_MappingQueryCS)
 
 
-@given(instance=qvtoperational::cst::MappingQueryCS_strategy)
-def test_qvtoperational::cst::mappingquerycs_isSimpleDefinition_setter(instance):
+
+@given(instance=qvtoperational_cst_MappingQueryCS_strategy)
+def test_qvtoperational_cst_mappingquerycs_isSimpleDefinition_setter(instance):
     original = instance.isSimpleDefinition
     instance.isSimpleDefinition = original
     assert instance.isSimpleDefinition == original
-
-@given(instance=qvtoperational::cst::MappingRuleCS_strategy)
-@settings(max_examples=50)
-def test_qvtoperational::cst::mappingrulecs_instantiation(instance):
-    assert isinstance(instance, qvtoperational::cst::MappingRuleCS)
-
-@given(instance=qvtoperational::cst::ConstructorCS_strategy)
-@settings(max_examples=50)
-def test_qvtoperational::cst::constructorcs_instantiation(instance):
-    assert isinstance(instance, qvtoperational::cst::ConstructorCS)
 
 @given(instance=ModulePropertyCS_strategy)
 @settings(max_examples=50)
 def test_modulepropertycs_instantiation(instance):
     assert isinstance(instance, ModulePropertyCS)
 
-@given(instance=qvtoperational::cst::ContextualPropertyCS_strategy)
+@given(instance=qvtoperational_cst_ConfigPropertyCS_strategy)
 @settings(max_examples=50)
-def test_qvtoperational::cst::contextualpropertycs_instantiation(instance):
-    assert isinstance(instance, qvtoperational::cst::ContextualPropertyCS)
+def test_qvtoperational_cst_configpropertycs_instantiation(instance):
+    assert isinstance(instance, qvtoperational_cst_ConfigPropertyCS)
 
-@given(instance=qvtoperational::cst::LocalPropertyCS_strategy)
+@given(instance=qvtoperational_cst_LocalPropertyCS_strategy)
 @settings(max_examples=50)
-def test_qvtoperational::cst::localpropertycs_instantiation(instance):
-    assert isinstance(instance, qvtoperational::cst::LocalPropertyCS)
+def test_qvtoperational_cst_localpropertycs_instantiation(instance):
+    assert isinstance(instance, qvtoperational_cst_LocalPropertyCS)
 
-@given(instance=qvtoperational::cst::ConfigPropertyCS_strategy)
+@given(instance=qvtoperational_cst_ContextualPropertyCS_strategy)
 @settings(max_examples=50)
-def test_qvtoperational::cst::configpropertycs_instantiation(instance):
-    assert isinstance(instance, qvtoperational::cst::ConfigPropertyCS)
+def test_qvtoperational_cst_contextualpropertycs_instantiation(instance):
+    assert isinstance(instance, qvtoperational_cst_ContextualPropertyCS)
 
 @given(instance=RenameCS_strategy)
 @settings(max_examples=50)
 def test_renamecs_instantiation(instance):
     assert isinstance(instance, RenameCS)
+
+@given(instance=qvtoperational_cst_ResolveOpArgsExpCS_strategy)
+@settings(max_examples=50)
+def test_qvtoperational_cst_resolveopargsexpcs_instantiation(instance):
+    assert isinstance(instance, qvtoperational_cst_ResolveOpArgsExpCS)
+
+@given(instance=qvtoperational_cst_UnitCS_strategy)
+@settings(max_examples=50)
+def test_qvtoperational_cst_unitcs_instantiation(instance):
+    assert isinstance(instance, qvtoperational_cst_UnitCS)
+
+@given(instance=qvtoperational_cst_TagCS_strategy)
+@settings(max_examples=50)
+def test_qvtoperational_cst_tagcs_instantiation(instance):
+    assert isinstance(instance, qvtoperational_cst_TagCS)
+
+@given(instance=qvtoperational_cst_ScopedNameCS_strategy)
+@settings(max_examples=50)
+def test_qvtoperational_cst_scopednamecs_instantiation(instance):
+    assert isinstance(instance, qvtoperational_cst_ScopedNameCS)
+
+
+
+@given(instance=qvtoperational_cst_ScopedNameCS_strategy)
+def test_qvtoperational_cst_scopednamecs_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+@given(instance=qvtoperational_cst_AssertExpCS_strategy)
+@settings(max_examples=50)
+def test_qvtoperational_cst_assertexpcs_instantiation(instance):
+    assert isinstance(instance, qvtoperational_cst_AssertExpCS)
+
+@given(instance=qvtoperational_cst_DictionaryTypeCS_strategy)
+@settings(max_examples=50)
+def test_qvtoperational_cst_dictionarytypecs_instantiation(instance):
+    assert isinstance(instance, qvtoperational_cst_DictionaryTypeCS)
+
+@given(instance=qvtoperational_cst_LogExpCS_strategy)
+@settings(max_examples=50)
+def test_qvtoperational_cst_logexpcs_instantiation(instance):
+    assert isinstance(instance, qvtoperational_cst_LogExpCS)
+
+@given(instance=CollectionLiteralPartCS_strategy)
+@settings(max_examples=50)
+def test_collectionliteralpartcs_instantiation(instance):
+    assert isinstance(instance, CollectionLiteralPartCS)
+
+@given(instance=LiteralExpCS_strategy)
+@settings(max_examples=50)
+def test_literalexpcs_instantiation(instance):
+    assert isinstance(instance, LiteralExpCS)
+
+@given(instance=qvtoperational_cst_DictLiteralExpCS_strategy)
+@settings(max_examples=50)
+def test_qvtoperational_cst_dictliteralexpcs_instantiation(instance):
+    assert isinstance(instance, qvtoperational_cst_DictLiteralExpCS)
+
+@given(instance=qvtoperational_cst_ListLiteralExpCS_strategy)
+@settings(max_examples=50)
+def test_qvtoperational_cst_listliteralexpcs_instantiation(instance):
+    assert isinstance(instance, qvtoperational_cst_ListLiteralExpCS)
+
+@given(instance=qvtoperational_cst_ListTypeCS_strategy)
+@settings(max_examples=50)
+def test_qvtoperational_cst_listtypecs_instantiation(instance):
+    assert isinstance(instance, qvtoperational_cst_ListTypeCS)
+
+@given(instance=qvtoperational_cst_InstantiationExpCS_strategy)
+@settings(max_examples=50)
+def test_qvtoperational_cst_instantiationexpcs_instantiation(instance):
+    assert isinstance(instance, qvtoperational_cst_InstantiationExpCS)
+
+@given(instance=qvtoperational_cst_MappingExtensionCS_strategy)
+@settings(max_examples=50)
+def test_qvtoperational_cst_mappingextensioncs_instantiation(instance):
+    assert isinstance(instance, qvtoperational_cst_MappingExtensionCS)
+
+
+
+@given(instance=qvtoperational_cst_MappingExtensionCS_strategy)
+def test_qvtoperational_cst_mappingextensioncs_kind_setter(instance):
+    original = instance.kind
+    instance.kind = original
+    assert instance.kind == original
+
+@given(instance=qvtoperational_cst_ReturnExpCS_strategy)
+@settings(max_examples=50)
+def test_qvtoperational_cst_returnexpcs_instantiation(instance):
+    assert isinstance(instance, qvtoperational_cst_ReturnExpCS)
+
+@given(instance=qvtoperational_cst_DictLiteralPartCS_strategy)
+@settings(max_examples=50)
+def test_qvtoperational_cst_dictliteralpartcs_instantiation(instance):
+    assert isinstance(instance, qvtoperational_cst_DictLiteralPartCS)
+
+@given(instance=DictLiteralPartCS_strategy)
+@settings(max_examples=50)
+def test_dictliteralpartcs_instantiation(instance):
+    assert isinstance(instance, DictLiteralPartCS)

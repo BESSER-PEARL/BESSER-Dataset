@@ -3,180 +3,52 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    testmodel::Target,
-    testmodel::Source,
-    B,
-    testmodel::C,
-    A,
-    testmodel::B,
-    testmodel::A,
+from python_code import (
     SubClass1,
     SubAbstractClass1,
-    testmodel::SubInterface7,
     SubInterface2,
     SubInterface1,
-    testmodel::SubAbstractClass4,
-    testmodel::SubInterface6,
-    testmodel::SubAbstractClass5,
-    testmodel::SubAbstractClass6,
-    testmodel::SubInterface5,
-    testmodel::SubInterface4,
+    testmodel_SubInterface6,
+    testmodel_SubInterface5,
+    testmodel_SubInterface4,
     SuperClass,
-    testmodel::SubAbstractClass3,
-    testmodel::SubClass3,
-    testmodel::SubInterface3,
+    testmodel_SubAbstractClass3,
+    testmodel_SubClass3,
+    testmodel_SubInterface3,
     SuperAbstractClass,
-    testmodel::SubAbstractClass2,
-    testmodel::SubClass2,
-    testmodel::SubInterface2,
+    testmodel_SubAbstractClass2,
+    testmodel_SubClass2,
+    testmodel_SubInterface2,
     SuperInterface,
-    testmodel::SubClass1,
-    testmodel::SubAbstractClass1,
-    testmodel::SubInterface1,
-    testmodel::SuperClass,
-    testmodel::SubClass7,
-    testmodel::SubClass6,
-    testmodel::SubClass5,
-    testmodel::SubClass4,
-    testmodel::SubAbstractClass7,
-    testmodel::SuperAbstractClass,
-    testmodel::SuperInterface,
+    testmodel_SubAbstractClass1,
+    testmodel_SubClass1,
+    testmodel_SubInterface1,
+    testmodel_SuperClass,
+    testmodel_SubClass7,
+    testmodel_SubClass6,
+    testmodel_SubClass5,
+    testmodel_SubClass4,
+    testmodel_SubAbstractClass7,
+    testmodel_SuperAbstractClass,
+    testmodel_SuperInterface,
+    testmodel_Target,
+    testmodel_Source,
+    B,
+    testmodel_C,
+    A,
+    testmodel_B,
+    testmodel_A,
+    testmodel_SubAbstractClass6,
+    testmodel_SubAbstractClass5,
+    testmodel_SubAbstractClass4,
+    testmodel_SubInterface7,
 )
 
 # =============================================================================
 # SECTION 1 — STRUCTURAL TESTS
 # =============================================================================
-
-
-
-def test_testmodel::target_is_not_abstract():
-    assert not inspect.isabstract(testmodel::Target)
-
-
-def test_testmodel::target_constructor_exists():
-    assert callable(testmodel::Target.__init__)
-
-
-def test_testmodel::target_constructor_args():
-    sig = inspect.signature(testmodel::Target.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_testmodel::source_is_not_abstract():
-    assert not inspect.isabstract(testmodel::Source)
-
-
-def test_testmodel::source_constructor_exists():
-    assert callable(testmodel::Source.__init__)
-
-
-def test_testmodel::source_constructor_args():
-    sig = inspect.signature(testmodel::Source.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_b_is_not_abstract():
-    assert not inspect.isabstract(B)
-
-
-def test_b_constructor_exists():
-    assert callable(B.__init__)
-
-
-def test_b_constructor_args():
-    sig = inspect.signature(B.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_testmodel::c_is_not_abstract():
-    assert not inspect.isabstract(testmodel::C)
-
-
-def test_testmodel::c_constructor_exists():
-    assert callable(testmodel::C.__init__)
-
-
-def test_testmodel::c_constructor_args():
-    sig = inspect.signature(testmodel::C.__init__)
-    params = list(sig.parameters.keys())
-    assert "c" in params, "Missing parameter 'c'"
-
-def test_testmodel::c_has_c():
-    assert hasattr(testmodel::C, "c")
-    descriptor = None
-    for klass in testmodel::C.__mro__:
-        if "c" in klass.__dict__:
-            descriptor = klass.__dict__["c"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_a_is_not_abstract():
-    assert not inspect.isabstract(A)
-
-
-def test_a_constructor_exists():
-    assert callable(A.__init__)
-
-
-def test_a_constructor_args():
-    sig = inspect.signature(A.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_testmodel::b_is_not_abstract():
-    assert not inspect.isabstract(testmodel::B)
-
-
-def test_testmodel::b_constructor_exists():
-    assert callable(testmodel::B.__init__)
-
-
-def test_testmodel::b_constructor_args():
-    sig = inspect.signature(testmodel::B.__init__)
-    params = list(sig.parameters.keys())
-    assert "b" in params, "Missing parameter 'b'"
-
-def test_testmodel::b_has_b():
-    assert hasattr(testmodel::B, "b")
-    descriptor = None
-    for klass in testmodel::B.__mro__:
-        if "b" in klass.__dict__:
-            descriptor = klass.__dict__["b"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_testmodel::a_is_not_abstract():
-    assert not inspect.isabstract(testmodel::A)
-
-
-def test_testmodel::a_constructor_exists():
-    assert callable(testmodel::A.__init__)
-
-
-def test_testmodel::a_constructor_args():
-    sig = inspect.signature(testmodel::A.__init__)
-    params = list(sig.parameters.keys())
-    assert "a" in params, "Missing parameter 'a'"
-
-def test_testmodel::a_has_a():
-    assert hasattr(testmodel::A, "a")
-    descriptor = None
-    for klass in testmodel::A.__mro__:
-        if "a" in klass.__dict__:
-            descriptor = klass.__dict__["a"]
-            break
-    assert isinstance(descriptor, property)
 
 
 
@@ -204,20 +76,6 @@ def test_subabstractclass1_constructor_exists():
 
 def test_subabstractclass1_constructor_args():
     sig = inspect.signature(SubAbstractClass1.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_testmodel::subinterface7_is_not_abstract():
-    assert not inspect.isabstract(testmodel::SubInterface7)
-
-
-def test_testmodel::subinterface7_constructor_exists():
-    assert callable(testmodel::SubInterface7.__init__)
-
-
-def test_testmodel::subinterface7_constructor_args():
-    sig = inspect.signature(testmodel::SubInterface7.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -250,86 +108,44 @@ def test_subinterface1_constructor_args():
 
 
 
-def test_testmodel::subabstractclass4_is_not_abstract():
-    assert not inspect.isabstract(testmodel::SubAbstractClass4)
+def test_testmodel_subinterface6_is_not_abstract():
+    assert not inspect.isabstract(testmodel_SubInterface6)
 
 
-def test_testmodel::subabstractclass4_constructor_exists():
-    assert callable(testmodel::SubAbstractClass4.__init__)
+def test_testmodel_subinterface6_constructor_exists():
+    assert callable(testmodel_SubInterface6.__init__)
 
 
-def test_testmodel::subabstractclass4_constructor_args():
-    sig = inspect.signature(testmodel::SubAbstractClass4.__init__)
+def test_testmodel_subinterface6_constructor_args():
+    sig = inspect.signature(testmodel_SubInterface6.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_testmodel::subinterface6_is_not_abstract():
-    assert not inspect.isabstract(testmodel::SubInterface6)
+def test_testmodel_subinterface5_is_not_abstract():
+    assert not inspect.isabstract(testmodel_SubInterface5)
 
 
-def test_testmodel::subinterface6_constructor_exists():
-    assert callable(testmodel::SubInterface6.__init__)
+def test_testmodel_subinterface5_constructor_exists():
+    assert callable(testmodel_SubInterface5.__init__)
 
 
-def test_testmodel::subinterface6_constructor_args():
-    sig = inspect.signature(testmodel::SubInterface6.__init__)
+def test_testmodel_subinterface5_constructor_args():
+    sig = inspect.signature(testmodel_SubInterface5.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_testmodel::subabstractclass5_is_not_abstract():
-    assert not inspect.isabstract(testmodel::SubAbstractClass5)
+def test_testmodel_subinterface4_is_not_abstract():
+    assert not inspect.isabstract(testmodel_SubInterface4)
 
 
-def test_testmodel::subabstractclass5_constructor_exists():
-    assert callable(testmodel::SubAbstractClass5.__init__)
+def test_testmodel_subinterface4_constructor_exists():
+    assert callable(testmodel_SubInterface4.__init__)
 
 
-def test_testmodel::subabstractclass5_constructor_args():
-    sig = inspect.signature(testmodel::SubAbstractClass5.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_testmodel::subabstractclass6_is_not_abstract():
-    assert not inspect.isabstract(testmodel::SubAbstractClass6)
-
-
-def test_testmodel::subabstractclass6_constructor_exists():
-    assert callable(testmodel::SubAbstractClass6.__init__)
-
-
-def test_testmodel::subabstractclass6_constructor_args():
-    sig = inspect.signature(testmodel::SubAbstractClass6.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_testmodel::subinterface5_is_not_abstract():
-    assert not inspect.isabstract(testmodel::SubInterface5)
-
-
-def test_testmodel::subinterface5_constructor_exists():
-    assert callable(testmodel::SubInterface5.__init__)
-
-
-def test_testmodel::subinterface5_constructor_args():
-    sig = inspect.signature(testmodel::SubInterface5.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_testmodel::subinterface4_is_not_abstract():
-    assert not inspect.isabstract(testmodel::SubInterface4)
-
-
-def test_testmodel::subinterface4_constructor_exists():
-    assert callable(testmodel::SubInterface4.__init__)
-
-
-def test_testmodel::subinterface4_constructor_args():
-    sig = inspect.signature(testmodel::SubInterface4.__init__)
+def test_testmodel_subinterface4_constructor_args():
+    sig = inspect.signature(testmodel_SubInterface4.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -348,44 +164,44 @@ def test_superclass_constructor_args():
 
 
 
-def test_testmodel::subabstractclass3_is_not_abstract():
-    assert not inspect.isabstract(testmodel::SubAbstractClass3)
+def test_testmodel_subabstractclass3_is_not_abstract():
+    assert not inspect.isabstract(testmodel_SubAbstractClass3)
 
 
-def test_testmodel::subabstractclass3_constructor_exists():
-    assert callable(testmodel::SubAbstractClass3.__init__)
+def test_testmodel_subabstractclass3_constructor_exists():
+    assert callable(testmodel_SubAbstractClass3.__init__)
 
 
-def test_testmodel::subabstractclass3_constructor_args():
-    sig = inspect.signature(testmodel::SubAbstractClass3.__init__)
+def test_testmodel_subabstractclass3_constructor_args():
+    sig = inspect.signature(testmodel_SubAbstractClass3.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_testmodel::subclass3_is_not_abstract():
-    assert not inspect.isabstract(testmodel::SubClass3)
+def test_testmodel_subclass3_is_not_abstract():
+    assert not inspect.isabstract(testmodel_SubClass3)
 
 
-def test_testmodel::subclass3_constructor_exists():
-    assert callable(testmodel::SubClass3.__init__)
+def test_testmodel_subclass3_constructor_exists():
+    assert callable(testmodel_SubClass3.__init__)
 
 
-def test_testmodel::subclass3_constructor_args():
-    sig = inspect.signature(testmodel::SubClass3.__init__)
+def test_testmodel_subclass3_constructor_args():
+    sig = inspect.signature(testmodel_SubClass3.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_testmodel::subinterface3_is_not_abstract():
-    assert not inspect.isabstract(testmodel::SubInterface3)
+def test_testmodel_subinterface3_is_not_abstract():
+    assert not inspect.isabstract(testmodel_SubInterface3)
 
 
-def test_testmodel::subinterface3_constructor_exists():
-    assert callable(testmodel::SubInterface3.__init__)
+def test_testmodel_subinterface3_constructor_exists():
+    assert callable(testmodel_SubInterface3.__init__)
 
 
-def test_testmodel::subinterface3_constructor_args():
-    sig = inspect.signature(testmodel::SubInterface3.__init__)
+def test_testmodel_subinterface3_constructor_args():
+    sig = inspect.signature(testmodel_SubInterface3.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -404,44 +220,44 @@ def test_superabstractclass_constructor_args():
 
 
 
-def test_testmodel::subabstractclass2_is_not_abstract():
-    assert not inspect.isabstract(testmodel::SubAbstractClass2)
+def test_testmodel_subabstractclass2_is_not_abstract():
+    assert not inspect.isabstract(testmodel_SubAbstractClass2)
 
 
-def test_testmodel::subabstractclass2_constructor_exists():
-    assert callable(testmodel::SubAbstractClass2.__init__)
+def test_testmodel_subabstractclass2_constructor_exists():
+    assert callable(testmodel_SubAbstractClass2.__init__)
 
 
-def test_testmodel::subabstractclass2_constructor_args():
-    sig = inspect.signature(testmodel::SubAbstractClass2.__init__)
+def test_testmodel_subabstractclass2_constructor_args():
+    sig = inspect.signature(testmodel_SubAbstractClass2.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_testmodel::subclass2_is_not_abstract():
-    assert not inspect.isabstract(testmodel::SubClass2)
+def test_testmodel_subclass2_is_not_abstract():
+    assert not inspect.isabstract(testmodel_SubClass2)
 
 
-def test_testmodel::subclass2_constructor_exists():
-    assert callable(testmodel::SubClass2.__init__)
+def test_testmodel_subclass2_constructor_exists():
+    assert callable(testmodel_SubClass2.__init__)
 
 
-def test_testmodel::subclass2_constructor_args():
-    sig = inspect.signature(testmodel::SubClass2.__init__)
+def test_testmodel_subclass2_constructor_args():
+    sig = inspect.signature(testmodel_SubClass2.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_testmodel::subinterface2_is_not_abstract():
-    assert not inspect.isabstract(testmodel::SubInterface2)
+def test_testmodel_subinterface2_is_not_abstract():
+    assert not inspect.isabstract(testmodel_SubInterface2)
 
 
-def test_testmodel::subinterface2_constructor_exists():
-    assert callable(testmodel::SubInterface2.__init__)
+def test_testmodel_subinterface2_constructor_exists():
+    assert callable(testmodel_SubInterface2.__init__)
 
 
-def test_testmodel::subinterface2_constructor_args():
-    sig = inspect.signature(testmodel::SubInterface2.__init__)
+def test_testmodel_subinterface2_constructor_args():
+    sig = inspect.signature(testmodel_SubInterface2.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -460,156 +276,340 @@ def test_superinterface_constructor_args():
 
 
 
-def test_testmodel::subclass1_is_not_abstract():
-    assert not inspect.isabstract(testmodel::SubClass1)
+def test_testmodel_subabstractclass1_is_not_abstract():
+    assert not inspect.isabstract(testmodel_SubAbstractClass1)
 
 
-def test_testmodel::subclass1_constructor_exists():
-    assert callable(testmodel::SubClass1.__init__)
+def test_testmodel_subabstractclass1_constructor_exists():
+    assert callable(testmodel_SubAbstractClass1.__init__)
 
 
-def test_testmodel::subclass1_constructor_args():
-    sig = inspect.signature(testmodel::SubClass1.__init__)
+def test_testmodel_subabstractclass1_constructor_args():
+    sig = inspect.signature(testmodel_SubAbstractClass1.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_testmodel::subabstractclass1_is_not_abstract():
-    assert not inspect.isabstract(testmodel::SubAbstractClass1)
+def test_testmodel_subclass1_is_not_abstract():
+    assert not inspect.isabstract(testmodel_SubClass1)
 
 
-def test_testmodel::subabstractclass1_constructor_exists():
-    assert callable(testmodel::SubAbstractClass1.__init__)
+def test_testmodel_subclass1_constructor_exists():
+    assert callable(testmodel_SubClass1.__init__)
 
 
-def test_testmodel::subabstractclass1_constructor_args():
-    sig = inspect.signature(testmodel::SubAbstractClass1.__init__)
+def test_testmodel_subclass1_constructor_args():
+    sig = inspect.signature(testmodel_SubClass1.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_testmodel::subinterface1_is_not_abstract():
-    assert not inspect.isabstract(testmodel::SubInterface1)
+def test_testmodel_subinterface1_is_not_abstract():
+    assert not inspect.isabstract(testmodel_SubInterface1)
 
 
-def test_testmodel::subinterface1_constructor_exists():
-    assert callable(testmodel::SubInterface1.__init__)
+def test_testmodel_subinterface1_constructor_exists():
+    assert callable(testmodel_SubInterface1.__init__)
 
 
-def test_testmodel::subinterface1_constructor_args():
-    sig = inspect.signature(testmodel::SubInterface1.__init__)
+def test_testmodel_subinterface1_constructor_args():
+    sig = inspect.signature(testmodel_SubInterface1.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_testmodel::superclass_is_not_abstract():
-    assert not inspect.isabstract(testmodel::SuperClass)
+def test_testmodel_superclass_is_not_abstract():
+    assert not inspect.isabstract(testmodel_SuperClass)
 
 
-def test_testmodel::superclass_constructor_exists():
-    assert callable(testmodel::SuperClass.__init__)
+def test_testmodel_superclass_constructor_exists():
+    assert callable(testmodel_SuperClass.__init__)
 
 
-def test_testmodel::superclass_constructor_args():
-    sig = inspect.signature(testmodel::SuperClass.__init__)
+def test_testmodel_superclass_constructor_args():
+    sig = inspect.signature(testmodel_SuperClass.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_testmodel::subclass7_is_not_abstract():
-    assert not inspect.isabstract(testmodel::SubClass7)
+def test_testmodel_subclass7_is_not_abstract():
+    assert not inspect.isabstract(testmodel_SubClass7)
 
 
-def test_testmodel::subclass7_constructor_exists():
-    assert callable(testmodel::SubClass7.__init__)
+def test_testmodel_subclass7_constructor_exists():
+    assert callable(testmodel_SubClass7.__init__)
 
 
-def test_testmodel::subclass7_constructor_args():
-    sig = inspect.signature(testmodel::SubClass7.__init__)
+def test_testmodel_subclass7_constructor_args():
+    sig = inspect.signature(testmodel_SubClass7.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_testmodel::subclass6_is_not_abstract():
-    assert not inspect.isabstract(testmodel::SubClass6)
+def test_testmodel_subclass6_is_not_abstract():
+    assert not inspect.isabstract(testmodel_SubClass6)
 
 
-def test_testmodel::subclass6_constructor_exists():
-    assert callable(testmodel::SubClass6.__init__)
+def test_testmodel_subclass6_constructor_exists():
+    assert callable(testmodel_SubClass6.__init__)
 
 
-def test_testmodel::subclass6_constructor_args():
-    sig = inspect.signature(testmodel::SubClass6.__init__)
+def test_testmodel_subclass6_constructor_args():
+    sig = inspect.signature(testmodel_SubClass6.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_testmodel::subclass5_is_not_abstract():
-    assert not inspect.isabstract(testmodel::SubClass5)
+def test_testmodel_subclass5_is_not_abstract():
+    assert not inspect.isabstract(testmodel_SubClass5)
 
 
-def test_testmodel::subclass5_constructor_exists():
-    assert callable(testmodel::SubClass5.__init__)
+def test_testmodel_subclass5_constructor_exists():
+    assert callable(testmodel_SubClass5.__init__)
 
 
-def test_testmodel::subclass5_constructor_args():
-    sig = inspect.signature(testmodel::SubClass5.__init__)
+def test_testmodel_subclass5_constructor_args():
+    sig = inspect.signature(testmodel_SubClass5.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_testmodel::subclass4_is_not_abstract():
-    assert not inspect.isabstract(testmodel::SubClass4)
+def test_testmodel_subclass4_is_not_abstract():
+    assert not inspect.isabstract(testmodel_SubClass4)
 
 
-def test_testmodel::subclass4_constructor_exists():
-    assert callable(testmodel::SubClass4.__init__)
+def test_testmodel_subclass4_constructor_exists():
+    assert callable(testmodel_SubClass4.__init__)
 
 
-def test_testmodel::subclass4_constructor_args():
-    sig = inspect.signature(testmodel::SubClass4.__init__)
+def test_testmodel_subclass4_constructor_args():
+    sig = inspect.signature(testmodel_SubClass4.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_testmodel::subabstractclass7_is_not_abstract():
-    assert not inspect.isabstract(testmodel::SubAbstractClass7)
+def test_testmodel_subabstractclass7_is_not_abstract():
+    assert not inspect.isabstract(testmodel_SubAbstractClass7)
 
 
-def test_testmodel::subabstractclass7_constructor_exists():
-    assert callable(testmodel::SubAbstractClass7.__init__)
+def test_testmodel_subabstractclass7_constructor_exists():
+    assert callable(testmodel_SubAbstractClass7.__init__)
 
 
-def test_testmodel::subabstractclass7_constructor_args():
-    sig = inspect.signature(testmodel::SubAbstractClass7.__init__)
+def test_testmodel_subabstractclass7_constructor_args():
+    sig = inspect.signature(testmodel_SubAbstractClass7.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_testmodel::superabstractclass_is_not_abstract():
-    assert not inspect.isabstract(testmodel::SuperAbstractClass)
+def test_testmodel_superabstractclass_is_not_abstract():
+    assert not inspect.isabstract(testmodel_SuperAbstractClass)
 
 
-def test_testmodel::superabstractclass_constructor_exists():
-    assert callable(testmodel::SuperAbstractClass.__init__)
+def test_testmodel_superabstractclass_constructor_exists():
+    assert callable(testmodel_SuperAbstractClass.__init__)
 
 
-def test_testmodel::superabstractclass_constructor_args():
-    sig = inspect.signature(testmodel::SuperAbstractClass.__init__)
+def test_testmodel_superabstractclass_constructor_args():
+    sig = inspect.signature(testmodel_SuperAbstractClass.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_testmodel::superinterface_is_not_abstract():
-    assert not inspect.isabstract(testmodel::SuperInterface)
+def test_testmodel_superinterface_is_not_abstract():
+    assert not inspect.isabstract(testmodel_SuperInterface)
 
 
-def test_testmodel::superinterface_constructor_exists():
-    assert callable(testmodel::SuperInterface.__init__)
+def test_testmodel_superinterface_constructor_exists():
+    assert callable(testmodel_SuperInterface.__init__)
 
 
-def test_testmodel::superinterface_constructor_args():
-    sig = inspect.signature(testmodel::SuperInterface.__init__)
+def test_testmodel_superinterface_constructor_args():
+    sig = inspect.signature(testmodel_SuperInterface.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_testmodel_target_is_not_abstract():
+    assert not inspect.isabstract(testmodel_Target)
+
+
+def test_testmodel_target_constructor_exists():
+    assert callable(testmodel_Target.__init__)
+
+
+def test_testmodel_target_constructor_args():
+    sig = inspect.signature(testmodel_Target.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_testmodel_source_is_not_abstract():
+    assert not inspect.isabstract(testmodel_Source)
+
+
+def test_testmodel_source_constructor_exists():
+    assert callable(testmodel_Source.__init__)
+
+
+def test_testmodel_source_constructor_args():
+    sig = inspect.signature(testmodel_Source.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_b_is_not_abstract():
+    assert not inspect.isabstract(B)
+
+
+def test_b_constructor_exists():
+    assert callable(B.__init__)
+
+
+def test_b_constructor_args():
+    sig = inspect.signature(B.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_testmodel_c_is_not_abstract():
+    assert not inspect.isabstract(testmodel_C)
+
+
+def test_testmodel_c_constructor_exists():
+    assert callable(testmodel_C.__init__)
+
+
+def test_testmodel_c_constructor_args():
+    sig = inspect.signature(testmodel_C.__init__)
+    params = list(sig.parameters.keys())
+    assert "c" in params, "Missing parameter 'c'"
+
+def test_testmodel_c_has_c():
+    assert hasattr(testmodel_C, "c")
+    descriptor = None
+    for klass in testmodel_C.__mro__:
+        if "c" in klass.__dict__:
+            descriptor = klass.__dict__["c"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_a_is_not_abstract():
+    assert not inspect.isabstract(A)
+
+
+def test_a_constructor_exists():
+    assert callable(A.__init__)
+
+
+def test_a_constructor_args():
+    sig = inspect.signature(A.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_testmodel_b_is_not_abstract():
+    assert not inspect.isabstract(testmodel_B)
+
+
+def test_testmodel_b_constructor_exists():
+    assert callable(testmodel_B.__init__)
+
+
+def test_testmodel_b_constructor_args():
+    sig = inspect.signature(testmodel_B.__init__)
+    params = list(sig.parameters.keys())
+    assert "b" in params, "Missing parameter 'b'"
+
+def test_testmodel_b_has_b():
+    assert hasattr(testmodel_B, "b")
+    descriptor = None
+    for klass in testmodel_B.__mro__:
+        if "b" in klass.__dict__:
+            descriptor = klass.__dict__["b"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_testmodel_a_is_not_abstract():
+    assert not inspect.isabstract(testmodel_A)
+
+
+def test_testmodel_a_constructor_exists():
+    assert callable(testmodel_A.__init__)
+
+
+def test_testmodel_a_constructor_args():
+    sig = inspect.signature(testmodel_A.__init__)
+    params = list(sig.parameters.keys())
+    assert "a" in params, "Missing parameter 'a'"
+
+def test_testmodel_a_has_a():
+    assert hasattr(testmodel_A, "a")
+    descriptor = None
+    for klass in testmodel_A.__mro__:
+        if "a" in klass.__dict__:
+            descriptor = klass.__dict__["a"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_testmodel_subabstractclass6_is_not_abstract():
+    assert not inspect.isabstract(testmodel_SubAbstractClass6)
+
+
+def test_testmodel_subabstractclass6_constructor_exists():
+    assert callable(testmodel_SubAbstractClass6.__init__)
+
+
+def test_testmodel_subabstractclass6_constructor_args():
+    sig = inspect.signature(testmodel_SubAbstractClass6.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_testmodel_subabstractclass5_is_not_abstract():
+    assert not inspect.isabstract(testmodel_SubAbstractClass5)
+
+
+def test_testmodel_subabstractclass5_constructor_exists():
+    assert callable(testmodel_SubAbstractClass5.__init__)
+
+
+def test_testmodel_subabstractclass5_constructor_args():
+    sig = inspect.signature(testmodel_SubAbstractClass5.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_testmodel_subabstractclass4_is_not_abstract():
+    assert not inspect.isabstract(testmodel_SubAbstractClass4)
+
+
+def test_testmodel_subabstractclass4_constructor_exists():
+    assert callable(testmodel_SubAbstractClass4.__init__)
+
+
+def test_testmodel_subabstractclass4_constructor_args():
+    sig = inspect.signature(testmodel_SubAbstractClass4.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_testmodel_subinterface7_is_not_abstract():
+    assert not inspect.isabstract(testmodel_SubInterface7)
+
+
+def test_testmodel_subinterface7_constructor_exists():
+    assert callable(testmodel_SubInterface7.__init__)
+
+
+def test_testmodel_subinterface7_constructor_args():
+    sig = inspect.signature(testmodel_SubInterface7.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -624,41 +624,11 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-testmodel::Target_strategy = st.builds(
-    testmodel::Target,
-)
-testmodel::Source_strategy = st.builds(
-    testmodel::Source,
-)
-B_strategy = st.builds(
-    B,
-)
-testmodel::C_strategy = st.builds(
-    testmodel::C,
-    c=
-        safe_text
-)
-A_strategy = st.builds(
-    A,
-)
-testmodel::B_strategy = st.builds(
-    testmodel::B,
-    b=
-        safe_text
-)
-testmodel::A_strategy = st.builds(
-    testmodel::A,
-    a=
-        safe_text
-)
 SubClass1_strategy = st.builds(
     SubClass1,
 )
 SubAbstractClass1_strategy = st.builds(
     SubAbstractClass1,
-)
-testmodel::SubInterface7_strategy = st.builds(
-    testmodel::SubInterface7,
 )
 SubInterface2_strategy = st.builds(
     SubInterface2,
@@ -666,268 +636,114 @@ SubInterface2_strategy = st.builds(
 SubInterface1_strategy = st.builds(
     SubInterface1,
 )
-testmodel::SubAbstractClass4_strategy = st.builds(
-    testmodel::SubAbstractClass4,
+testmodel_SubInterface6_strategy = st.builds(
+    testmodel_SubInterface6,
 )
-testmodel::SubInterface6_strategy = st.builds(
-    testmodel::SubInterface6,
+testmodel_SubInterface5_strategy = st.builds(
+    testmodel_SubInterface5,
 )
-testmodel::SubAbstractClass5_strategy = st.builds(
-    testmodel::SubAbstractClass5,
-)
-testmodel::SubAbstractClass6_strategy = st.builds(
-    testmodel::SubAbstractClass6,
-)
-testmodel::SubInterface5_strategy = st.builds(
-    testmodel::SubInterface5,
-)
-testmodel::SubInterface4_strategy = st.builds(
-    testmodel::SubInterface4,
+testmodel_SubInterface4_strategy = st.builds(
+    testmodel_SubInterface4,
 )
 SuperClass_strategy = st.builds(
     SuperClass,
 )
-testmodel::SubAbstractClass3_strategy = st.builds(
-    testmodel::SubAbstractClass3,
+testmodel_SubAbstractClass3_strategy = st.builds(
+    testmodel_SubAbstractClass3,
 )
-testmodel::SubClass3_strategy = st.builds(
-    testmodel::SubClass3,
+testmodel_SubClass3_strategy = st.builds(
+    testmodel_SubClass3,
 )
-testmodel::SubInterface3_strategy = st.builds(
-    testmodel::SubInterface3,
+testmodel_SubInterface3_strategy = st.builds(
+    testmodel_SubInterface3,
 )
 SuperAbstractClass_strategy = st.builds(
     SuperAbstractClass,
 )
-testmodel::SubAbstractClass2_strategy = st.builds(
-    testmodel::SubAbstractClass2,
+testmodel_SubAbstractClass2_strategy = st.builds(
+    testmodel_SubAbstractClass2,
 )
-testmodel::SubClass2_strategy = st.builds(
-    testmodel::SubClass2,
+testmodel_SubClass2_strategy = st.builds(
+    testmodel_SubClass2,
 )
-testmodel::SubInterface2_strategy = st.builds(
-    testmodel::SubInterface2,
+testmodel_SubInterface2_strategy = st.builds(
+    testmodel_SubInterface2,
 )
 SuperInterface_strategy = st.builds(
     SuperInterface,
 )
-testmodel::SubClass1_strategy = st.builds(
-    testmodel::SubClass1,
+testmodel_SubAbstractClass1_strategy = st.builds(
+    testmodel_SubAbstractClass1,
 )
-testmodel::SubAbstractClass1_strategy = st.builds(
-    testmodel::SubAbstractClass1,
+testmodel_SubClass1_strategy = st.builds(
+    testmodel_SubClass1,
 )
-testmodel::SubInterface1_strategy = st.builds(
-    testmodel::SubInterface1,
+testmodel_SubInterface1_strategy = st.builds(
+    testmodel_SubInterface1,
 )
-testmodel::SuperClass_strategy = st.builds(
-    testmodel::SuperClass,
+testmodel_SuperClass_strategy = st.builds(
+    testmodel_SuperClass,
 )
-testmodel::SubClass7_strategy = st.builds(
-    testmodel::SubClass7,
+testmodel_SubClass7_strategy = st.builds(
+    testmodel_SubClass7,
 )
-testmodel::SubClass6_strategy = st.builds(
-    testmodel::SubClass6,
+testmodel_SubClass6_strategy = st.builds(
+    testmodel_SubClass6,
 )
-testmodel::SubClass5_strategy = st.builds(
-    testmodel::SubClass5,
+testmodel_SubClass5_strategy = st.builds(
+    testmodel_SubClass5,
 )
-testmodel::SubClass4_strategy = st.builds(
-    testmodel::SubClass4,
+testmodel_SubClass4_strategy = st.builds(
+    testmodel_SubClass4,
 )
-testmodel::SubAbstractClass7_strategy = st.builds(
-    testmodel::SubAbstractClass7,
+testmodel_SubAbstractClass7_strategy = st.builds(
+    testmodel_SubAbstractClass7,
 )
-testmodel::SuperAbstractClass_strategy = st.builds(
-    testmodel::SuperAbstractClass,
+testmodel_SuperAbstractClass_strategy = st.builds(
+    testmodel_SuperAbstractClass,
 )
-testmodel::SuperInterface_strategy = st.builds(
-    testmodel::SuperInterface,
+testmodel_SuperInterface_strategy = st.builds(
+    testmodel_SuperInterface,
 )
-
-@given(instance=testmodel::Target_strategy)
-@settings(max_examples=50)
-def test_testmodel::target_instantiation(instance):
-    assert isinstance(instance, testmodel::Target)
-
-@given(instance=testmodel::Source_strategy)
-@settings(max_examples=50)
-def test_testmodel::source_instantiation(instance):
-    assert isinstance(instance, testmodel::Source)
-
-@given(instance=B_strategy)
-@settings(max_examples=50)
-def test_b_instantiation(instance):
-    assert isinstance(instance, B)
-
-@given(instance=testmodel::C_strategy)
-@settings(max_examples=50)
-def test_testmodel::c_instantiation(instance):
-    assert isinstance(instance, testmodel::C)
-
-@given(instance=testmodel::C_strategy)
-def test_testmodel::c_c_type(instance):
-    assert isinstance(instance.c, str)
-
-
-@given(instance=testmodel::C_strategy)
-def test_testmodel::c_c_setter(instance):
-    original = instance.c
-    instance.c = original
-    assert instance.c == original
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=testmodel::C_strategy)
-@settings(max_examples=30)
-def test_testmodel::c_aop_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.aOp()
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.aOp).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'aOp' in testmodel::C is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'aOp' in testmodel::C did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'aOp' in testmodel::C is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=testmodel::C_strategy)
-@settings(max_examples=30)
-def test_testmodel::c_bop_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.bOp()
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.bOp).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'bOp' in testmodel::C is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'bOp' in testmodel::C did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'bOp' in testmodel::C is not implemented or raised an error")
-
-@given(instance=A_strategy)
-@settings(max_examples=50)
-def test_a_instantiation(instance):
-    assert isinstance(instance, A)
-
-@given(instance=testmodel::B_strategy)
-@settings(max_examples=50)
-def test_testmodel::b_instantiation(instance):
-    assert isinstance(instance, testmodel::B)
-
-@given(instance=testmodel::B_strategy)
-def test_testmodel::b_b_type(instance):
-    assert isinstance(instance.b, str)
-
-
-@given(instance=testmodel::B_strategy)
-def test_testmodel::b_b_setter(instance):
-    original = instance.b
-    instance.b = original
-    assert instance.b == original
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=testmodel::B_strategy)
-@settings(max_examples=30)
-def test_testmodel::b_bop_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.bOp()
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.bOp).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'bOp' in testmodel::B is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'bOp' in testmodel::B did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'bOp' in testmodel::B is not implemented or raised an error")
-
-@given(instance=testmodel::A_strategy)
-@settings(max_examples=50)
-def test_testmodel::a_instantiation(instance):
-    assert isinstance(instance, testmodel::A)
-
-@given(instance=testmodel::A_strategy)
-def test_testmodel::a_a_type(instance):
-    assert isinstance(instance.a, str)
-
-
-@given(instance=testmodel::A_strategy)
-def test_testmodel::a_a_setter(instance):
-    original = instance.a
-    instance.a = original
-    assert instance.a == original
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=testmodel::A_strategy)
-@settings(max_examples=30)
-def test_testmodel::a_aop_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.aOp()
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.aOp).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'aOp' in testmodel::A is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'aOp' in testmodel::A did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'aOp' in testmodel::A is not implemented or raised an error")
+testmodel_Target_strategy = st.builds(
+    testmodel_Target,
+)
+testmodel_Source_strategy = st.builds(
+    testmodel_Source,
+)
+B_strategy = st.builds(
+    B,
+)
+testmodel_C_strategy = st.builds(
+    testmodel_C,
+    c=
+        safe_text
+)
+A_strategy = st.builds(
+    A,
+)
+testmodel_B_strategy = st.builds(
+    testmodel_B,
+    b=
+        safe_text
+)
+testmodel_A_strategy = st.builds(
+    testmodel_A,
+    a=
+        safe_text
+)
+testmodel_SubAbstractClass6_strategy = st.builds(
+    testmodel_SubAbstractClass6,
+)
+testmodel_SubAbstractClass5_strategy = st.builds(
+    testmodel_SubAbstractClass5,
+)
+testmodel_SubAbstractClass4_strategy = st.builds(
+    testmodel_SubAbstractClass4,
+)
+testmodel_SubInterface7_strategy = st.builds(
+    testmodel_SubInterface7,
+)
 
 @given(instance=SubClass1_strategy)
 @settings(max_examples=50)
@@ -939,11 +755,6 @@ def test_subclass1_instantiation(instance):
 def test_subabstractclass1_instantiation(instance):
     assert isinstance(instance, SubAbstractClass1)
 
-@given(instance=testmodel::SubInterface7_strategy)
-@settings(max_examples=50)
-def test_testmodel::subinterface7_instantiation(instance):
-    assert isinstance(instance, testmodel::SubInterface7)
-
 @given(instance=SubInterface2_strategy)
 @settings(max_examples=50)
 def test_subinterface2_instantiation(instance):
@@ -954,132 +765,312 @@ def test_subinterface2_instantiation(instance):
 def test_subinterface1_instantiation(instance):
     assert isinstance(instance, SubInterface1)
 
-@given(instance=testmodel::SubAbstractClass4_strategy)
+@given(instance=testmodel_SubInterface6_strategy)
 @settings(max_examples=50)
-def test_testmodel::subabstractclass4_instantiation(instance):
-    assert isinstance(instance, testmodel::SubAbstractClass4)
+def test_testmodel_subinterface6_instantiation(instance):
+    assert isinstance(instance, testmodel_SubInterface6)
 
-@given(instance=testmodel::SubInterface6_strategy)
+@given(instance=testmodel_SubInterface5_strategy)
 @settings(max_examples=50)
-def test_testmodel::subinterface6_instantiation(instance):
-    assert isinstance(instance, testmodel::SubInterface6)
+def test_testmodel_subinterface5_instantiation(instance):
+    assert isinstance(instance, testmodel_SubInterface5)
 
-@given(instance=testmodel::SubAbstractClass5_strategy)
+@given(instance=testmodel_SubInterface4_strategy)
 @settings(max_examples=50)
-def test_testmodel::subabstractclass5_instantiation(instance):
-    assert isinstance(instance, testmodel::SubAbstractClass5)
-
-@given(instance=testmodel::SubAbstractClass6_strategy)
-@settings(max_examples=50)
-def test_testmodel::subabstractclass6_instantiation(instance):
-    assert isinstance(instance, testmodel::SubAbstractClass6)
-
-@given(instance=testmodel::SubInterface5_strategy)
-@settings(max_examples=50)
-def test_testmodel::subinterface5_instantiation(instance):
-    assert isinstance(instance, testmodel::SubInterface5)
-
-@given(instance=testmodel::SubInterface4_strategy)
-@settings(max_examples=50)
-def test_testmodel::subinterface4_instantiation(instance):
-    assert isinstance(instance, testmodel::SubInterface4)
+def test_testmodel_subinterface4_instantiation(instance):
+    assert isinstance(instance, testmodel_SubInterface4)
 
 @given(instance=SuperClass_strategy)
 @settings(max_examples=50)
 def test_superclass_instantiation(instance):
     assert isinstance(instance, SuperClass)
 
-@given(instance=testmodel::SubAbstractClass3_strategy)
+@given(instance=testmodel_SubAbstractClass3_strategy)
 @settings(max_examples=50)
-def test_testmodel::subabstractclass3_instantiation(instance):
-    assert isinstance(instance, testmodel::SubAbstractClass3)
+def test_testmodel_subabstractclass3_instantiation(instance):
+    assert isinstance(instance, testmodel_SubAbstractClass3)
 
-@given(instance=testmodel::SubClass3_strategy)
+@given(instance=testmodel_SubClass3_strategy)
 @settings(max_examples=50)
-def test_testmodel::subclass3_instantiation(instance):
-    assert isinstance(instance, testmodel::SubClass3)
+def test_testmodel_subclass3_instantiation(instance):
+    assert isinstance(instance, testmodel_SubClass3)
 
-@given(instance=testmodel::SubInterface3_strategy)
+@given(instance=testmodel_SubInterface3_strategy)
 @settings(max_examples=50)
-def test_testmodel::subinterface3_instantiation(instance):
-    assert isinstance(instance, testmodel::SubInterface3)
+def test_testmodel_subinterface3_instantiation(instance):
+    assert isinstance(instance, testmodel_SubInterface3)
 
 @given(instance=SuperAbstractClass_strategy)
 @settings(max_examples=50)
 def test_superabstractclass_instantiation(instance):
     assert isinstance(instance, SuperAbstractClass)
 
-@given(instance=testmodel::SubAbstractClass2_strategy)
+@given(instance=testmodel_SubAbstractClass2_strategy)
 @settings(max_examples=50)
-def test_testmodel::subabstractclass2_instantiation(instance):
-    assert isinstance(instance, testmodel::SubAbstractClass2)
+def test_testmodel_subabstractclass2_instantiation(instance):
+    assert isinstance(instance, testmodel_SubAbstractClass2)
 
-@given(instance=testmodel::SubClass2_strategy)
+@given(instance=testmodel_SubClass2_strategy)
 @settings(max_examples=50)
-def test_testmodel::subclass2_instantiation(instance):
-    assert isinstance(instance, testmodel::SubClass2)
+def test_testmodel_subclass2_instantiation(instance):
+    assert isinstance(instance, testmodel_SubClass2)
 
-@given(instance=testmodel::SubInterface2_strategy)
+@given(instance=testmodel_SubInterface2_strategy)
 @settings(max_examples=50)
-def test_testmodel::subinterface2_instantiation(instance):
-    assert isinstance(instance, testmodel::SubInterface2)
+def test_testmodel_subinterface2_instantiation(instance):
+    assert isinstance(instance, testmodel_SubInterface2)
 
 @given(instance=SuperInterface_strategy)
 @settings(max_examples=50)
 def test_superinterface_instantiation(instance):
     assert isinstance(instance, SuperInterface)
 
-@given(instance=testmodel::SubClass1_strategy)
+@given(instance=testmodel_SubAbstractClass1_strategy)
 @settings(max_examples=50)
-def test_testmodel::subclass1_instantiation(instance):
-    assert isinstance(instance, testmodel::SubClass1)
+def test_testmodel_subabstractclass1_instantiation(instance):
+    assert isinstance(instance, testmodel_SubAbstractClass1)
 
-@given(instance=testmodel::SubAbstractClass1_strategy)
+@given(instance=testmodel_SubClass1_strategy)
 @settings(max_examples=50)
-def test_testmodel::subabstractclass1_instantiation(instance):
-    assert isinstance(instance, testmodel::SubAbstractClass1)
+def test_testmodel_subclass1_instantiation(instance):
+    assert isinstance(instance, testmodel_SubClass1)
 
-@given(instance=testmodel::SubInterface1_strategy)
+@given(instance=testmodel_SubInterface1_strategy)
 @settings(max_examples=50)
-def test_testmodel::subinterface1_instantiation(instance):
-    assert isinstance(instance, testmodel::SubInterface1)
+def test_testmodel_subinterface1_instantiation(instance):
+    assert isinstance(instance, testmodel_SubInterface1)
 
-@given(instance=testmodel::SuperClass_strategy)
+@given(instance=testmodel_SuperClass_strategy)
 @settings(max_examples=50)
-def test_testmodel::superclass_instantiation(instance):
-    assert isinstance(instance, testmodel::SuperClass)
+def test_testmodel_superclass_instantiation(instance):
+    assert isinstance(instance, testmodel_SuperClass)
 
-@given(instance=testmodel::SubClass7_strategy)
+@given(instance=testmodel_SubClass7_strategy)
 @settings(max_examples=50)
-def test_testmodel::subclass7_instantiation(instance):
-    assert isinstance(instance, testmodel::SubClass7)
+def test_testmodel_subclass7_instantiation(instance):
+    assert isinstance(instance, testmodel_SubClass7)
 
-@given(instance=testmodel::SubClass6_strategy)
+@given(instance=testmodel_SubClass6_strategy)
 @settings(max_examples=50)
-def test_testmodel::subclass6_instantiation(instance):
-    assert isinstance(instance, testmodel::SubClass6)
+def test_testmodel_subclass6_instantiation(instance):
+    assert isinstance(instance, testmodel_SubClass6)
 
-@given(instance=testmodel::SubClass5_strategy)
+@given(instance=testmodel_SubClass5_strategy)
 @settings(max_examples=50)
-def test_testmodel::subclass5_instantiation(instance):
-    assert isinstance(instance, testmodel::SubClass5)
+def test_testmodel_subclass5_instantiation(instance):
+    assert isinstance(instance, testmodel_SubClass5)
 
-@given(instance=testmodel::SubClass4_strategy)
+@given(instance=testmodel_SubClass4_strategy)
 @settings(max_examples=50)
-def test_testmodel::subclass4_instantiation(instance):
-    assert isinstance(instance, testmodel::SubClass4)
+def test_testmodel_subclass4_instantiation(instance):
+    assert isinstance(instance, testmodel_SubClass4)
 
-@given(instance=testmodel::SubAbstractClass7_strategy)
+@given(instance=testmodel_SubAbstractClass7_strategy)
 @settings(max_examples=50)
-def test_testmodel::subabstractclass7_instantiation(instance):
-    assert isinstance(instance, testmodel::SubAbstractClass7)
+def test_testmodel_subabstractclass7_instantiation(instance):
+    assert isinstance(instance, testmodel_SubAbstractClass7)
 
-@given(instance=testmodel::SuperAbstractClass_strategy)
+@given(instance=testmodel_SuperAbstractClass_strategy)
 @settings(max_examples=50)
-def test_testmodel::superabstractclass_instantiation(instance):
-    assert isinstance(instance, testmodel::SuperAbstractClass)
+def test_testmodel_superabstractclass_instantiation(instance):
+    assert isinstance(instance, testmodel_SuperAbstractClass)
 
-@given(instance=testmodel::SuperInterface_strategy)
+@given(instance=testmodel_SuperInterface_strategy)
 @settings(max_examples=50)
-def test_testmodel::superinterface_instantiation(instance):
-    assert isinstance(instance, testmodel::SuperInterface)
+def test_testmodel_superinterface_instantiation(instance):
+    assert isinstance(instance, testmodel_SuperInterface)
+
+@given(instance=testmodel_Target_strategy)
+@settings(max_examples=50)
+def test_testmodel_target_instantiation(instance):
+    assert isinstance(instance, testmodel_Target)
+
+@given(instance=testmodel_Source_strategy)
+@settings(max_examples=50)
+def test_testmodel_source_instantiation(instance):
+    assert isinstance(instance, testmodel_Source)
+
+@given(instance=B_strategy)
+@settings(max_examples=50)
+def test_b_instantiation(instance):
+    assert isinstance(instance, B)
+
+@given(instance=testmodel_C_strategy)
+@settings(max_examples=50)
+def test_testmodel_c_instantiation(instance):
+    assert isinstance(instance, testmodel_C)
+
+
+
+@given(instance=testmodel_C_strategy)
+def test_testmodel_c_c_setter(instance):
+    original = instance.c
+    instance.c = original
+    assert instance.c == original
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=testmodel_C_strategy)
+@settings(max_examples=30)
+def test_testmodel_c_bop_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.bOp()
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.bOp).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'bOp' in testmodel_C is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'bOp' in testmodel_C did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'bOp' in testmodel_C is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=testmodel_C_strategy)
+@settings(max_examples=30)
+def test_testmodel_c_aop_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.aOp()
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.aOp).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'aOp' in testmodel_C is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'aOp' in testmodel_C did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'aOp' in testmodel_C is not implemented or raised an error")
+
+@given(instance=A_strategy)
+@settings(max_examples=50)
+def test_a_instantiation(instance):
+    assert isinstance(instance, A)
+
+@given(instance=testmodel_B_strategy)
+@settings(max_examples=50)
+def test_testmodel_b_instantiation(instance):
+    assert isinstance(instance, testmodel_B)
+
+
+
+@given(instance=testmodel_B_strategy)
+def test_testmodel_b_b_setter(instance):
+    original = instance.b
+    instance.b = original
+    assert instance.b == original
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=testmodel_B_strategy)
+@settings(max_examples=30)
+def test_testmodel_b_bop_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.bOp()
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.bOp).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'bOp' in testmodel_B is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'bOp' in testmodel_B did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'bOp' in testmodel_B is not implemented or raised an error")
+
+@given(instance=testmodel_A_strategy)
+@settings(max_examples=50)
+def test_testmodel_a_instantiation(instance):
+    assert isinstance(instance, testmodel_A)
+
+
+
+@given(instance=testmodel_A_strategy)
+def test_testmodel_a_a_setter(instance):
+    original = instance.a
+    instance.a = original
+    assert instance.a == original
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=testmodel_A_strategy)
+@settings(max_examples=30)
+def test_testmodel_a_aop_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.aOp()
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.aOp).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'aOp' in testmodel_A is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'aOp' in testmodel_A did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'aOp' in testmodel_A is not implemented or raised an error")
+
+@given(instance=testmodel_SubAbstractClass6_strategy)
+@settings(max_examples=50)
+def test_testmodel_subabstractclass6_instantiation(instance):
+    assert isinstance(instance, testmodel_SubAbstractClass6)
+
+@given(instance=testmodel_SubAbstractClass5_strategy)
+@settings(max_examples=50)
+def test_testmodel_subabstractclass5_instantiation(instance):
+    assert isinstance(instance, testmodel_SubAbstractClass5)
+
+@given(instance=testmodel_SubAbstractClass4_strategy)
+@settings(max_examples=50)
+def test_testmodel_subabstractclass4_instantiation(instance):
+    assert isinstance(instance, testmodel_SubAbstractClass4)
+
+@given(instance=testmodel_SubInterface7_strategy)
+@settings(max_examples=50)
+def test_testmodel_subinterface7_instantiation(instance):
+    assert isinstance(instance, testmodel_SubInterface7)

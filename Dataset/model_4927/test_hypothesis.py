@@ -3,26 +3,26 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     FormWidget,
-    bootstrap::CheckBox,
-    bootstrap::Spinner,
-    bootstrap::TextArea,
-    bootstrap::Widget,
-    bootstrap::Section,
-    bootstrap::FormWidget,
+    bootstrap_Spinner,
+    bootstrap_CheckBox,
+    bootstrap_TextArea,
+    bootstrap_Widget,
+    bootstrap_Section,
+    bootstrap_FormWidget,
     Widget,
-    bootstrap::Video,
-    bootstrap::Gallery,
-    bootstrap::Text,
-    bootstrap::ImagesBlock,
-    bootstrap::Table,
-    bootstrap::Form,
-    bootstrap::MainPage,
-    bootstrap::Page,
-    bootstrap::Site,
+    bootstrap_Gallery,
+    bootstrap_ImagesBlock,
+    bootstrap_Table,
+    bootstrap_Text,
+    bootstrap_Video,
+    bootstrap_Form,
+    bootstrap_MainPage,
+    bootstrap_Page,
+    bootstrap_Site,
 )
 
 # =============================================================================
@@ -45,47 +45,23 @@ def test_formwidget_constructor_args():
 
 
 
-def test_bootstrap::checkbox_is_not_abstract():
-    assert not inspect.isabstract(bootstrap::CheckBox)
+def test_bootstrap_spinner_is_not_abstract():
+    assert not inspect.isabstract(bootstrap_Spinner)
 
 
-def test_bootstrap::checkbox_constructor_exists():
-    assert callable(bootstrap::CheckBox.__init__)
+def test_bootstrap_spinner_constructor_exists():
+    assert callable(bootstrap_Spinner.__init__)
 
 
-def test_bootstrap::checkbox_constructor_args():
-    sig = inspect.signature(bootstrap::CheckBox.__init__)
-    params = list(sig.parameters.keys())
-    assert "description" in params, "Missing parameter 'description'"
-
-def test_bootstrap::checkbox_has_description():
-    assert hasattr(bootstrap::CheckBox, "description")
-    descriptor = None
-    for klass in bootstrap::CheckBox.__mro__:
-        if "description" in klass.__dict__:
-            descriptor = klass.__dict__["description"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_bootstrap::spinner_is_not_abstract():
-    assert not inspect.isabstract(bootstrap::Spinner)
-
-
-def test_bootstrap::spinner_constructor_exists():
-    assert callable(bootstrap::Spinner.__init__)
-
-
-def test_bootstrap::spinner_constructor_args():
-    sig = inspect.signature(bootstrap::Spinner.__init__)
+def test_bootstrap_spinner_constructor_args():
+    sig = inspect.signature(bootstrap_Spinner.__init__)
     params = list(sig.parameters.keys())
     assert "values" in params, "Missing parameter 'values'"
 
-def test_bootstrap::spinner_has_values():
-    assert hasattr(bootstrap::Spinner, "values")
+def test_bootstrap_spinner_has_values():
+    assert hasattr(bootstrap_Spinner, "values")
     descriptor = None
-    for klass in bootstrap::Spinner.__mro__:
+    for klass in bootstrap_Spinner.__mro__:
         if "values" in klass.__dict__:
             descriptor = klass.__dict__["values"]
             break
@@ -93,71 +69,61 @@ def test_bootstrap::spinner_has_values():
 
 
 
-def test_bootstrap::textarea_is_not_abstract():
-    assert not inspect.isabstract(bootstrap::TextArea)
+def test_bootstrap_checkbox_is_not_abstract():
+    assert not inspect.isabstract(bootstrap_CheckBox)
 
 
-def test_bootstrap::textarea_constructor_exists():
-    assert callable(bootstrap::TextArea.__init__)
+def test_bootstrap_checkbox_constructor_exists():
+    assert callable(bootstrap_CheckBox.__init__)
 
 
-def test_bootstrap::textarea_constructor_args():
-    sig = inspect.signature(bootstrap::TextArea.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_bootstrap::widget_is_not_abstract():
-    assert not inspect.isabstract(bootstrap::Widget)
-
-
-def test_bootstrap::widget_constructor_exists():
-    assert callable(bootstrap::Widget.__init__)
-
-
-def test_bootstrap::widget_constructor_args():
-    sig = inspect.signature(bootstrap::Widget.__init__)
-    params = list(sig.parameters.keys())
-    assert "title" in params, "Missing parameter 'title'"
-
-def test_bootstrap::widget_has_title():
-    assert hasattr(bootstrap::Widget, "title")
-    descriptor = None
-    for klass in bootstrap::Widget.__mro__:
-        if "title" in klass.__dict__:
-            descriptor = klass.__dict__["title"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_bootstrap::section_is_not_abstract():
-    assert not inspect.isabstract(bootstrap::Section)
-
-
-def test_bootstrap::section_constructor_exists():
-    assert callable(bootstrap::Section.__init__)
-
-
-def test_bootstrap::section_constructor_args():
-    sig = inspect.signature(bootstrap::Section.__init__)
+def test_bootstrap_checkbox_constructor_args():
+    sig = inspect.signature(bootstrap_CheckBox.__init__)
     params = list(sig.parameters.keys())
     assert "description" in params, "Missing parameter 'description'"
-    assert "title" in params, "Missing parameter 'title'"
 
-def test_bootstrap::section_has_description():
-    assert hasattr(bootstrap::Section, "description")
+def test_bootstrap_checkbox_has_description():
+    assert hasattr(bootstrap_CheckBox, "description")
     descriptor = None
-    for klass in bootstrap::Section.__mro__:
+    for klass in bootstrap_CheckBox.__mro__:
         if "description" in klass.__dict__:
             descriptor = klass.__dict__["description"]
             break
     assert isinstance(descriptor, property)
 
-def test_bootstrap::section_has_title():
-    assert hasattr(bootstrap::Section, "title")
+
+
+def test_bootstrap_textarea_is_not_abstract():
+    assert not inspect.isabstract(bootstrap_TextArea)
+
+
+def test_bootstrap_textarea_constructor_exists():
+    assert callable(bootstrap_TextArea.__init__)
+
+
+def test_bootstrap_textarea_constructor_args():
+    sig = inspect.signature(bootstrap_TextArea.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_bootstrap_widget_is_not_abstract():
+    assert not inspect.isabstract(bootstrap_Widget)
+
+
+def test_bootstrap_widget_constructor_exists():
+    assert callable(bootstrap_Widget.__init__)
+
+
+def test_bootstrap_widget_constructor_args():
+    sig = inspect.signature(bootstrap_Widget.__init__)
+    params = list(sig.parameters.keys())
+    assert "title" in params, "Missing parameter 'title'"
+
+def test_bootstrap_widget_has_title():
+    assert hasattr(bootstrap_Widget, "title")
     descriptor = None
-    for klass in bootstrap::Section.__mro__:
+    for klass in bootstrap_Widget.__mro__:
         if "title" in klass.__dict__:
             descriptor = klass.__dict__["title"]
             break
@@ -165,23 +131,57 @@ def test_bootstrap::section_has_title():
 
 
 
-def test_bootstrap::formwidget_is_not_abstract():
-    assert not inspect.isabstract(bootstrap::FormWidget)
+def test_bootstrap_section_is_not_abstract():
+    assert not inspect.isabstract(bootstrap_Section)
 
 
-def test_bootstrap::formwidget_constructor_exists():
-    assert callable(bootstrap::FormWidget.__init__)
+def test_bootstrap_section_constructor_exists():
+    assert callable(bootstrap_Section.__init__)
 
 
-def test_bootstrap::formwidget_constructor_args():
-    sig = inspect.signature(bootstrap::FormWidget.__init__)
+def test_bootstrap_section_constructor_args():
+    sig = inspect.signature(bootstrap_Section.__init__)
+    params = list(sig.parameters.keys())
+    assert "title" in params, "Missing parameter 'title'"
+    assert "description" in params, "Missing parameter 'description'"
+
+def test_bootstrap_section_has_title():
+    assert hasattr(bootstrap_Section, "title")
+    descriptor = None
+    for klass in bootstrap_Section.__mro__:
+        if "title" in klass.__dict__:
+            descriptor = klass.__dict__["title"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_bootstrap_section_has_description():
+    assert hasattr(bootstrap_Section, "description")
+    descriptor = None
+    for klass in bootstrap_Section.__mro__:
+        if "description" in klass.__dict__:
+            descriptor = klass.__dict__["description"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_bootstrap_formwidget_is_not_abstract():
+    assert not inspect.isabstract(bootstrap_FormWidget)
+
+
+def test_bootstrap_formwidget_constructor_exists():
+    assert callable(bootstrap_FormWidget.__init__)
+
+
+def test_bootstrap_formwidget_constructor_args():
+    sig = inspect.signature(bootstrap_FormWidget.__init__)
     params = list(sig.parameters.keys())
     assert "label" in params, "Missing parameter 'label'"
 
-def test_bootstrap::formwidget_has_label():
-    assert hasattr(bootstrap::FormWidget, "label")
+def test_bootstrap_formwidget_has_label():
+    assert hasattr(bootstrap_FormWidget, "label")
     descriptor = None
-    for klass in bootstrap::FormWidget.__mro__:
+    for klass in bootstrap_FormWidget.__mro__:
         if "label" in klass.__dict__:
             descriptor = klass.__dict__["label"]
             break
@@ -203,47 +203,23 @@ def test_widget_constructor_args():
 
 
 
-def test_bootstrap::video_is_not_abstract():
-    assert not inspect.isabstract(bootstrap::Video)
+def test_bootstrap_gallery_is_not_abstract():
+    assert not inspect.isabstract(bootstrap_Gallery)
 
 
-def test_bootstrap::video_constructor_exists():
-    assert callable(bootstrap::Video.__init__)
+def test_bootstrap_gallery_constructor_exists():
+    assert callable(bootstrap_Gallery.__init__)
 
 
-def test_bootstrap::video_constructor_args():
-    sig = inspect.signature(bootstrap::Video.__init__)
-    params = list(sig.parameters.keys())
-    assert "path" in params, "Missing parameter 'path'"
-
-def test_bootstrap::video_has_path():
-    assert hasattr(bootstrap::Video, "path")
-    descriptor = None
-    for klass in bootstrap::Video.__mro__:
-        if "path" in klass.__dict__:
-            descriptor = klass.__dict__["path"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_bootstrap::gallery_is_not_abstract():
-    assert not inspect.isabstract(bootstrap::Gallery)
-
-
-def test_bootstrap::gallery_constructor_exists():
-    assert callable(bootstrap::Gallery.__init__)
-
-
-def test_bootstrap::gallery_constructor_args():
-    sig = inspect.signature(bootstrap::Gallery.__init__)
+def test_bootstrap_gallery_constructor_args():
+    sig = inspect.signature(bootstrap_Gallery.__init__)
     params = list(sig.parameters.keys())
     assert "imagesPath" in params, "Missing parameter 'imagesPath'"
 
-def test_bootstrap::gallery_has_imagesPath():
-    assert hasattr(bootstrap::Gallery, "imagesPath")
+def test_bootstrap_gallery_has_imagesPath():
+    assert hasattr(bootstrap_Gallery, "imagesPath")
     descriptor = None
-    for klass in bootstrap::Gallery.__mro__:
+    for klass in bootstrap_Gallery.__mro__:
         if "imagesPath" in klass.__dict__:
             descriptor = klass.__dict__["imagesPath"]
             break
@@ -251,23 +227,101 @@ def test_bootstrap::gallery_has_imagesPath():
 
 
 
-def test_bootstrap::text_is_not_abstract():
-    assert not inspect.isabstract(bootstrap::Text)
+def test_bootstrap_imagesblock_is_not_abstract():
+    assert not inspect.isabstract(bootstrap_ImagesBlock)
 
 
-def test_bootstrap::text_constructor_exists():
-    assert callable(bootstrap::Text.__init__)
+def test_bootstrap_imagesblock_constructor_exists():
+    assert callable(bootstrap_ImagesBlock.__init__)
 
 
-def test_bootstrap::text_constructor_args():
-    sig = inspect.signature(bootstrap::Text.__init__)
+def test_bootstrap_imagesblock_constructor_args():
+    sig = inspect.signature(bootstrap_ImagesBlock.__init__)
+    params = list(sig.parameters.keys())
+    assert "imagesPath" in params, "Missing parameter 'imagesPath'"
+
+def test_bootstrap_imagesblock_has_imagesPath():
+    assert hasattr(bootstrap_ImagesBlock, "imagesPath")
+    descriptor = None
+    for klass in bootstrap_ImagesBlock.__mro__:
+        if "imagesPath" in klass.__dict__:
+            descriptor = klass.__dict__["imagesPath"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_bootstrap_table_is_not_abstract():
+    assert not inspect.isabstract(bootstrap_Table)
+
+
+def test_bootstrap_table_constructor_exists():
+    assert callable(bootstrap_Table.__init__)
+
+
+def test_bootstrap_table_constructor_args():
+    sig = inspect.signature(bootstrap_Table.__init__)
+    params = list(sig.parameters.keys())
+    assert "columnNames" in params, "Missing parameter 'columnNames'"
+    assert "bordered" in params, "Missing parameter 'bordered'"
+    assert "striped" in params, "Missing parameter 'striped'"
+    assert "rowNames" in params, "Missing parameter 'rowNames'"
+
+def test_bootstrap_table_has_columnNames():
+    assert hasattr(bootstrap_Table, "columnNames")
+    descriptor = None
+    for klass in bootstrap_Table.__mro__:
+        if "columnNames" in klass.__dict__:
+            descriptor = klass.__dict__["columnNames"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_bootstrap_table_has_bordered():
+    assert hasattr(bootstrap_Table, "bordered")
+    descriptor = None
+    for klass in bootstrap_Table.__mro__:
+        if "bordered" in klass.__dict__:
+            descriptor = klass.__dict__["bordered"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_bootstrap_table_has_striped():
+    assert hasattr(bootstrap_Table, "striped")
+    descriptor = None
+    for klass in bootstrap_Table.__mro__:
+        if "striped" in klass.__dict__:
+            descriptor = klass.__dict__["striped"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_bootstrap_table_has_rowNames():
+    assert hasattr(bootstrap_Table, "rowNames")
+    descriptor = None
+    for klass in bootstrap_Table.__mro__:
+        if "rowNames" in klass.__dict__:
+            descriptor = klass.__dict__["rowNames"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_bootstrap_text_is_not_abstract():
+    assert not inspect.isabstract(bootstrap_Text)
+
+
+def test_bootstrap_text_constructor_exists():
+    assert callable(bootstrap_Text.__init__)
+
+
+def test_bootstrap_text_constructor_args():
+    sig = inspect.signature(bootstrap_Text.__init__)
     params = list(sig.parameters.keys())
     assert "columnNumber" in params, "Missing parameter 'columnNumber'"
 
-def test_bootstrap::text_has_columnNumber():
-    assert hasattr(bootstrap::Text, "columnNumber")
+def test_bootstrap_text_has_columnNumber():
+    assert hasattr(bootstrap_Text, "columnNumber")
     descriptor = None
-    for klass in bootstrap::Text.__mro__:
+    for klass in bootstrap_Text.__mro__:
         if "columnNumber" in klass.__dict__:
             descriptor = klass.__dict__["columnNumber"]
             break
@@ -275,125 +329,71 @@ def test_bootstrap::text_has_columnNumber():
 
 
 
-def test_bootstrap::imagesblock_is_not_abstract():
-    assert not inspect.isabstract(bootstrap::ImagesBlock)
+def test_bootstrap_video_is_not_abstract():
+    assert not inspect.isabstract(bootstrap_Video)
 
 
-def test_bootstrap::imagesblock_constructor_exists():
-    assert callable(bootstrap::ImagesBlock.__init__)
+def test_bootstrap_video_constructor_exists():
+    assert callable(bootstrap_Video.__init__)
 
 
-def test_bootstrap::imagesblock_constructor_args():
-    sig = inspect.signature(bootstrap::ImagesBlock.__init__)
+def test_bootstrap_video_constructor_args():
+    sig = inspect.signature(bootstrap_Video.__init__)
     params = list(sig.parameters.keys())
-    assert "imagesPath" in params, "Missing parameter 'imagesPath'"
+    assert "path" in params, "Missing parameter 'path'"
 
-def test_bootstrap::imagesblock_has_imagesPath():
-    assert hasattr(bootstrap::ImagesBlock, "imagesPath")
+def test_bootstrap_video_has_path():
+    assert hasattr(bootstrap_Video, "path")
     descriptor = None
-    for klass in bootstrap::ImagesBlock.__mro__:
-        if "imagesPath" in klass.__dict__:
-            descriptor = klass.__dict__["imagesPath"]
+    for klass in bootstrap_Video.__mro__:
+        if "path" in klass.__dict__:
+            descriptor = klass.__dict__["path"]
             break
     assert isinstance(descriptor, property)
 
 
 
-def test_bootstrap::table_is_not_abstract():
-    assert not inspect.isabstract(bootstrap::Table)
+def test_bootstrap_form_is_not_abstract():
+    assert not inspect.isabstract(bootstrap_Form)
 
 
-def test_bootstrap::table_constructor_exists():
-    assert callable(bootstrap::Table.__init__)
+def test_bootstrap_form_constructor_exists():
+    assert callable(bootstrap_Form.__init__)
 
 
-def test_bootstrap::table_constructor_args():
-    sig = inspect.signature(bootstrap::Table.__init__)
-    params = list(sig.parameters.keys())
-    assert "rowNames" in params, "Missing parameter 'rowNames'"
-    assert "columnNames" in params, "Missing parameter 'columnNames'"
-    assert "bordered" in params, "Missing parameter 'bordered'"
-    assert "striped" in params, "Missing parameter 'striped'"
-
-def test_bootstrap::table_has_rowNames():
-    assert hasattr(bootstrap::Table, "rowNames")
-    descriptor = None
-    for klass in bootstrap::Table.__mro__:
-        if "rowNames" in klass.__dict__:
-            descriptor = klass.__dict__["rowNames"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_bootstrap::table_has_columnNames():
-    assert hasattr(bootstrap::Table, "columnNames")
-    descriptor = None
-    for klass in bootstrap::Table.__mro__:
-        if "columnNames" in klass.__dict__:
-            descriptor = klass.__dict__["columnNames"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_bootstrap::table_has_bordered():
-    assert hasattr(bootstrap::Table, "bordered")
-    descriptor = None
-    for klass in bootstrap::Table.__mro__:
-        if "bordered" in klass.__dict__:
-            descriptor = klass.__dict__["bordered"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_bootstrap::table_has_striped():
-    assert hasattr(bootstrap::Table, "striped")
-    descriptor = None
-    for klass in bootstrap::Table.__mro__:
-        if "striped" in klass.__dict__:
-            descriptor = klass.__dict__["striped"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_bootstrap::form_is_not_abstract():
-    assert not inspect.isabstract(bootstrap::Form)
-
-
-def test_bootstrap::form_constructor_exists():
-    assert callable(bootstrap::Form.__init__)
-
-
-def test_bootstrap::form_constructor_args():
-    sig = inspect.signature(bootstrap::Form.__init__)
+def test_bootstrap_form_constructor_args():
+    sig = inspect.signature(bootstrap_Form.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_bootstrap::mainpage_is_not_abstract():
-    assert not inspect.isabstract(bootstrap::MainPage)
+def test_bootstrap_mainpage_is_not_abstract():
+    assert not inspect.isabstract(bootstrap_MainPage)
 
 
-def test_bootstrap::mainpage_constructor_exists():
-    assert callable(bootstrap::MainPage.__init__)
+def test_bootstrap_mainpage_constructor_exists():
+    assert callable(bootstrap_MainPage.__init__)
 
 
-def test_bootstrap::mainpage_constructor_args():
-    sig = inspect.signature(bootstrap::MainPage.__init__)
+def test_bootstrap_mainpage_constructor_args():
+    sig = inspect.signature(bootstrap_MainPage.__init__)
     params = list(sig.parameters.keys())
     assert "title" in params, "Missing parameter 'title'"
     assert "description" in params, "Missing parameter 'description'"
 
-def test_bootstrap::mainpage_has_title():
-    assert hasattr(bootstrap::MainPage, "title")
+def test_bootstrap_mainpage_has_title():
+    assert hasattr(bootstrap_MainPage, "title")
     descriptor = None
-    for klass in bootstrap::MainPage.__mro__:
+    for klass in bootstrap_MainPage.__mro__:
         if "title" in klass.__dict__:
             descriptor = klass.__dict__["title"]
             break
     assert isinstance(descriptor, property)
 
-def test_bootstrap::mainpage_has_description():
-    assert hasattr(bootstrap::MainPage, "description")
+def test_bootstrap_mainpage_has_description():
+    assert hasattr(bootstrap_MainPage, "description")
     descriptor = None
-    for klass in bootstrap::MainPage.__mro__:
+    for klass in bootstrap_MainPage.__mro__:
         if "description" in klass.__dict__:
             descriptor = klass.__dict__["description"]
             break
@@ -401,67 +401,67 @@ def test_bootstrap::mainpage_has_description():
 
 
 
-def test_bootstrap::page_is_not_abstract():
-    assert not inspect.isabstract(bootstrap::Page)
+def test_bootstrap_page_is_not_abstract():
+    assert not inspect.isabstract(bootstrap_Page)
 
 
-def test_bootstrap::page_constructor_exists():
-    assert callable(bootstrap::Page.__init__)
+def test_bootstrap_page_constructor_exists():
+    assert callable(bootstrap_Page.__init__)
 
 
-def test_bootstrap::page_constructor_args():
-    sig = inspect.signature(bootstrap::Page.__init__)
+def test_bootstrap_page_constructor_args():
+    sig = inspect.signature(bootstrap_Page.__init__)
     params = list(sig.parameters.keys())
     assert "title" in params, "Missing parameter 'title'"
-    assert "name" in params, "Missing parameter 'name'"
     assert "description" in params, "Missing parameter 'description'"
+    assert "name" in params, "Missing parameter 'name'"
 
-def test_bootstrap::page_has_title():
-    assert hasattr(bootstrap::Page, "title")
+def test_bootstrap_page_has_title():
+    assert hasattr(bootstrap_Page, "title")
     descriptor = None
-    for klass in bootstrap::Page.__mro__:
+    for klass in bootstrap_Page.__mro__:
         if "title" in klass.__dict__:
             descriptor = klass.__dict__["title"]
             break
     assert isinstance(descriptor, property)
 
-def test_bootstrap::page_has_name():
-    assert hasattr(bootstrap::Page, "name")
+def test_bootstrap_page_has_description():
+    assert hasattr(bootstrap_Page, "description")
     descriptor = None
-    for klass in bootstrap::Page.__mro__:
+    for klass in bootstrap_Page.__mro__:
+        if "description" in klass.__dict__:
+            descriptor = klass.__dict__["description"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_bootstrap_page_has_name():
+    assert hasattr(bootstrap_Page, "name")
+    descriptor = None
+    for klass in bootstrap_Page.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
-def test_bootstrap::page_has_description():
-    assert hasattr(bootstrap::Page, "description")
-    descriptor = None
-    for klass in bootstrap::Page.__mro__:
-        if "description" in klass.__dict__:
-            descriptor = klass.__dict__["description"]
-            break
-    assert isinstance(descriptor, property)
 
 
-
-def test_bootstrap::site_is_not_abstract():
-    assert not inspect.isabstract(bootstrap::Site)
-
-
-def test_bootstrap::site_constructor_exists():
-    assert callable(bootstrap::Site.__init__)
+def test_bootstrap_site_is_not_abstract():
+    assert not inspect.isabstract(bootstrap_Site)
 
 
-def test_bootstrap::site_constructor_args():
-    sig = inspect.signature(bootstrap::Site.__init__)
+def test_bootstrap_site_constructor_exists():
+    assert callable(bootstrap_Site.__init__)
+
+
+def test_bootstrap_site_constructor_args():
+    sig = inspect.signature(bootstrap_Site.__init__)
     params = list(sig.parameters.keys())
     assert "title" in params, "Missing parameter 'title'"
 
-def test_bootstrap::site_has_title():
-    assert hasattr(bootstrap::Site, "title")
+def test_bootstrap_site_has_title():
+    assert hasattr(bootstrap_Site, "title")
     descriptor = None
-    for klass in bootstrap::Site.__mro__:
+    for klass in bootstrap_Site.__mro__:
         if "title" in klass.__dict__:
             descriptor = klass.__dict__["title"]
             break
@@ -482,91 +482,91 @@ safe_text = st.text(
 FormWidget_strategy = st.builds(
     FormWidget,
 )
-bootstrap::CheckBox_strategy = st.builds(
-    bootstrap::CheckBox,
-    description=
-        safe_text
-)
-bootstrap::Spinner_strategy = st.builds(
-    bootstrap::Spinner,
+bootstrap_Spinner_strategy = st.builds(
+    bootstrap_Spinner,
     values=
         safe_text
 )
-bootstrap::TextArea_strategy = st.builds(
-    bootstrap::TextArea,
-)
-bootstrap::Widget_strategy = st.builds(
-    bootstrap::Widget,
-    title=
-        safe_text
-)
-bootstrap::Section_strategy = st.builds(
-    bootstrap::Section,
+bootstrap_CheckBox_strategy = st.builds(
+    bootstrap_CheckBox,
     description=
-        safe_text,
+        safe_text
+)
+bootstrap_TextArea_strategy = st.builds(
+    bootstrap_TextArea,
+)
+bootstrap_Widget_strategy = st.builds(
+    bootstrap_Widget,
     title=
         safe_text
 )
-bootstrap::FormWidget_strategy = st.builds(
-    bootstrap::FormWidget,
+bootstrap_Section_strategy = st.builds(
+    bootstrap_Section,
+    title=
+        safe_text,
+    description=
+        safe_text
+)
+bootstrap_FormWidget_strategy = st.builds(
+    bootstrap_FormWidget,
     label=
         safe_text
 )
 Widget_strategy = st.builds(
     Widget,
 )
-bootstrap::Video_strategy = st.builds(
-    bootstrap::Video,
-    path=
-        safe_text
-)
-bootstrap::Gallery_strategy = st.builds(
-    bootstrap::Gallery,
+bootstrap_Gallery_strategy = st.builds(
+    bootstrap_Gallery,
     imagesPath=
         safe_text
 )
-bootstrap::Text_strategy = st.builds(
-    bootstrap::Text,
-    columnNumber=
-        st.integers()
-)
-bootstrap::ImagesBlock_strategy = st.builds(
-    bootstrap::ImagesBlock,
+bootstrap_ImagesBlock_strategy = st.builds(
+    bootstrap_ImagesBlock,
     imagesPath=
         safe_text
 )
-bootstrap::Table_strategy = st.builds(
-    bootstrap::Table,
-    rowNames=
-        safe_text,
+bootstrap_Table_strategy = st.builds(
+    bootstrap_Table,
     columnNames=
         safe_text,
     bordered=
         st.booleans(),
     striped=
-        st.booleans()
+        st.booleans(),
+    rowNames=
+        safe_text
 )
-bootstrap::Form_strategy = st.builds(
-    bootstrap::Form,
+bootstrap_Text_strategy = st.builds(
+    bootstrap_Text,
+    columnNumber=
+        st.integers()
 )
-bootstrap::MainPage_strategy = st.builds(
-    bootstrap::MainPage,
+bootstrap_Video_strategy = st.builds(
+    bootstrap_Video,
+    path=
+        safe_text
+)
+bootstrap_Form_strategy = st.builds(
+    bootstrap_Form,
+)
+bootstrap_MainPage_strategy = st.builds(
+    bootstrap_MainPage,
     title=
         safe_text,
     description=
         safe_text
 )
-bootstrap::Page_strategy = st.builds(
-    bootstrap::Page,
+bootstrap_Page_strategy = st.builds(
+    bootstrap_Page,
     title=
+        safe_text,
+    description=
         safe_text,
     name=
-        safe_text,
-    description=
         safe_text
 )
-bootstrap::Site_strategy = st.builds(
-    bootstrap::Site,
+bootstrap_Site_strategy = st.builds(
+    bootstrap_Site,
     title=
         safe_text
 )
@@ -576,98 +576,80 @@ bootstrap::Site_strategy = st.builds(
 def test_formwidget_instantiation(instance):
     assert isinstance(instance, FormWidget)
 
-@given(instance=bootstrap::CheckBox_strategy)
+@given(instance=bootstrap_Spinner_strategy)
 @settings(max_examples=50)
-def test_bootstrap::checkbox_instantiation(instance):
-    assert isinstance(instance, bootstrap::CheckBox)
-
-@given(instance=bootstrap::CheckBox_strategy)
-def test_bootstrap::checkbox_description_type(instance):
-    assert isinstance(instance.description, str)
+def test_bootstrap_spinner_instantiation(instance):
+    assert isinstance(instance, bootstrap_Spinner)
 
 
-@given(instance=bootstrap::CheckBox_strategy)
-def test_bootstrap::checkbox_description_setter(instance):
-    original = instance.description
-    instance.description = original
-    assert instance.description == original
 
-@given(instance=bootstrap::Spinner_strategy)
-@settings(max_examples=50)
-def test_bootstrap::spinner_instantiation(instance):
-    assert isinstance(instance, bootstrap::Spinner)
-
-@given(instance=bootstrap::Spinner_strategy)
-def test_bootstrap::spinner_values_type(instance):
-    assert isinstance(instance.values, str)
-
-
-@given(instance=bootstrap::Spinner_strategy)
-def test_bootstrap::spinner_values_setter(instance):
+@given(instance=bootstrap_Spinner_strategy)
+def test_bootstrap_spinner_values_setter(instance):
     original = instance.values
     instance.values = original
     assert instance.values == original
 
-@given(instance=bootstrap::TextArea_strategy)
+@given(instance=bootstrap_CheckBox_strategy)
 @settings(max_examples=50)
-def test_bootstrap::textarea_instantiation(instance):
-    assert isinstance(instance, bootstrap::TextArea)
-
-@given(instance=bootstrap::Widget_strategy)
-@settings(max_examples=50)
-def test_bootstrap::widget_instantiation(instance):
-    assert isinstance(instance, bootstrap::Widget)
-
-@given(instance=bootstrap::Widget_strategy)
-def test_bootstrap::widget_title_type(instance):
-    assert isinstance(instance.title, str)
+def test_bootstrap_checkbox_instantiation(instance):
+    assert isinstance(instance, bootstrap_CheckBox)
 
 
-@given(instance=bootstrap::Widget_strategy)
-def test_bootstrap::widget_title_setter(instance):
-    original = instance.title
-    instance.title = original
-    assert instance.title == original
 
-@given(instance=bootstrap::Section_strategy)
-@settings(max_examples=50)
-def test_bootstrap::section_instantiation(instance):
-    assert isinstance(instance, bootstrap::Section)
-
-@given(instance=bootstrap::Section_strategy)
-def test_bootstrap::section_description_type(instance):
-    assert isinstance(instance.description, str)
-
-
-@given(instance=bootstrap::Section_strategy)
-def test_bootstrap::section_description_setter(instance):
+@given(instance=bootstrap_CheckBox_strategy)
+def test_bootstrap_checkbox_description_setter(instance):
     original = instance.description
     instance.description = original
     assert instance.description == original
 
-@given(instance=bootstrap::Section_strategy)
-def test_bootstrap::section_title_type(instance):
-    assert isinstance(instance.title, str)
+@given(instance=bootstrap_TextArea_strategy)
+@settings(max_examples=50)
+def test_bootstrap_textarea_instantiation(instance):
+    assert isinstance(instance, bootstrap_TextArea)
+
+@given(instance=bootstrap_Widget_strategy)
+@settings(max_examples=50)
+def test_bootstrap_widget_instantiation(instance):
+    assert isinstance(instance, bootstrap_Widget)
 
 
-@given(instance=bootstrap::Section_strategy)
-def test_bootstrap::section_title_setter(instance):
+
+@given(instance=bootstrap_Widget_strategy)
+def test_bootstrap_widget_title_setter(instance):
     original = instance.title
     instance.title = original
     assert instance.title == original
 
-@given(instance=bootstrap::FormWidget_strategy)
+@given(instance=bootstrap_Section_strategy)
 @settings(max_examples=50)
-def test_bootstrap::formwidget_instantiation(instance):
-    assert isinstance(instance, bootstrap::FormWidget)
-
-@given(instance=bootstrap::FormWidget_strategy)
-def test_bootstrap::formwidget_label_type(instance):
-    assert isinstance(instance.label, str)
+def test_bootstrap_section_instantiation(instance):
+    assert isinstance(instance, bootstrap_Section)
 
 
-@given(instance=bootstrap::FormWidget_strategy)
-def test_bootstrap::formwidget_label_setter(instance):
+
+@given(instance=bootstrap_Section_strategy)
+def test_bootstrap_section_title_setter(instance):
+    original = instance.title
+    instance.title = original
+    assert instance.title == original
+
+
+
+@given(instance=bootstrap_Section_strategy)
+def test_bootstrap_section_description_setter(instance):
+    original = instance.description
+    instance.description = original
+    assert instance.description == original
+
+@given(instance=bootstrap_FormWidget_strategy)
+@settings(max_examples=50)
+def test_bootstrap_formwidget_instantiation(instance):
+    assert isinstance(instance, bootstrap_FormWidget)
+
+
+
+@given(instance=bootstrap_FormWidget_strategy)
+def test_bootstrap_formwidget_label_setter(instance):
     original = instance.label
     instance.label = original
     assert instance.label == original
@@ -677,201 +659,159 @@ def test_bootstrap::formwidget_label_setter(instance):
 def test_widget_instantiation(instance):
     assert isinstance(instance, Widget)
 
-@given(instance=bootstrap::Video_strategy)
+@given(instance=bootstrap_Gallery_strategy)
 @settings(max_examples=50)
-def test_bootstrap::video_instantiation(instance):
-    assert isinstance(instance, bootstrap::Video)
-
-@given(instance=bootstrap::Video_strategy)
-def test_bootstrap::video_path_type(instance):
-    assert isinstance(instance.path, str)
+def test_bootstrap_gallery_instantiation(instance):
+    assert isinstance(instance, bootstrap_Gallery)
 
 
-@given(instance=bootstrap::Video_strategy)
-def test_bootstrap::video_path_setter(instance):
-    original = instance.path
-    instance.path = original
-    assert instance.path == original
 
-@given(instance=bootstrap::Gallery_strategy)
-@settings(max_examples=50)
-def test_bootstrap::gallery_instantiation(instance):
-    assert isinstance(instance, bootstrap::Gallery)
-
-@given(instance=bootstrap::Gallery_strategy)
-def test_bootstrap::gallery_imagesPath_type(instance):
-    assert isinstance(instance.imagesPath, str)
-
-
-@given(instance=bootstrap::Gallery_strategy)
-def test_bootstrap::gallery_imagesPath_setter(instance):
+@given(instance=bootstrap_Gallery_strategy)
+def test_bootstrap_gallery_imagesPath_setter(instance):
     original = instance.imagesPath
     instance.imagesPath = original
     assert instance.imagesPath == original
 
-@given(instance=bootstrap::Text_strategy)
+@given(instance=bootstrap_ImagesBlock_strategy)
 @settings(max_examples=50)
-def test_bootstrap::text_instantiation(instance):
-    assert isinstance(instance, bootstrap::Text)
-
-@given(instance=bootstrap::Text_strategy)
-def test_bootstrap::text_columnNumber_type(instance):
-    assert isinstance(instance.columnNumber, int)
+def test_bootstrap_imagesblock_instantiation(instance):
+    assert isinstance(instance, bootstrap_ImagesBlock)
 
 
-@given(instance=bootstrap::Text_strategy)
-def test_bootstrap::text_columnNumber_setter(instance):
-    original = instance.columnNumber
-    instance.columnNumber = original
-    assert instance.columnNumber == original
 
-@given(instance=bootstrap::ImagesBlock_strategy)
-@settings(max_examples=50)
-def test_bootstrap::imagesblock_instantiation(instance):
-    assert isinstance(instance, bootstrap::ImagesBlock)
-
-@given(instance=bootstrap::ImagesBlock_strategy)
-def test_bootstrap::imagesblock_imagesPath_type(instance):
-    assert isinstance(instance.imagesPath, str)
-
-
-@given(instance=bootstrap::ImagesBlock_strategy)
-def test_bootstrap::imagesblock_imagesPath_setter(instance):
+@given(instance=bootstrap_ImagesBlock_strategy)
+def test_bootstrap_imagesblock_imagesPath_setter(instance):
     original = instance.imagesPath
     instance.imagesPath = original
     assert instance.imagesPath == original
 
-@given(instance=bootstrap::Table_strategy)
+@given(instance=bootstrap_Table_strategy)
 @settings(max_examples=50)
-def test_bootstrap::table_instantiation(instance):
-    assert isinstance(instance, bootstrap::Table)
-
-@given(instance=bootstrap::Table_strategy)
-def test_bootstrap::table_rowNames_type(instance):
-    assert isinstance(instance.rowNames, str)
+def test_bootstrap_table_instantiation(instance):
+    assert isinstance(instance, bootstrap_Table)
 
 
-@given(instance=bootstrap::Table_strategy)
-def test_bootstrap::table_rowNames_setter(instance):
-    original = instance.rowNames
-    instance.rowNames = original
-    assert instance.rowNames == original
 
-@given(instance=bootstrap::Table_strategy)
-def test_bootstrap::table_columnNames_type(instance):
-    assert isinstance(instance.columnNames, str)
-
-
-@given(instance=bootstrap::Table_strategy)
-def test_bootstrap::table_columnNames_setter(instance):
+@given(instance=bootstrap_Table_strategy)
+def test_bootstrap_table_columnNames_setter(instance):
     original = instance.columnNames
     instance.columnNames = original
     assert instance.columnNames == original
 
-@given(instance=bootstrap::Table_strategy)
-def test_bootstrap::table_bordered_type(instance):
-    assert isinstance(instance.bordered, bool)
 
 
-@given(instance=bootstrap::Table_strategy)
-def test_bootstrap::table_bordered_setter(instance):
+@given(instance=bootstrap_Table_strategy)
+def test_bootstrap_table_bordered_setter(instance):
     original = instance.bordered
     instance.bordered = original
     assert instance.bordered == original
 
-@given(instance=bootstrap::Table_strategy)
-def test_bootstrap::table_striped_type(instance):
-    assert isinstance(instance.striped, bool)
 
 
-@given(instance=bootstrap::Table_strategy)
-def test_bootstrap::table_striped_setter(instance):
+@given(instance=bootstrap_Table_strategy)
+def test_bootstrap_table_striped_setter(instance):
     original = instance.striped
     instance.striped = original
     assert instance.striped == original
 
-@given(instance=bootstrap::Form_strategy)
+
+
+@given(instance=bootstrap_Table_strategy)
+def test_bootstrap_table_rowNames_setter(instance):
+    original = instance.rowNames
+    instance.rowNames = original
+    assert instance.rowNames == original
+
+@given(instance=bootstrap_Text_strategy)
 @settings(max_examples=50)
-def test_bootstrap::form_instantiation(instance):
-    assert isinstance(instance, bootstrap::Form)
+def test_bootstrap_text_instantiation(instance):
+    assert isinstance(instance, bootstrap_Text)
 
-@given(instance=bootstrap::MainPage_strategy)
+
+
+@given(instance=bootstrap_Text_strategy)
+def test_bootstrap_text_columnNumber_setter(instance):
+    original = instance.columnNumber
+    instance.columnNumber = original
+    assert instance.columnNumber == original
+
+@given(instance=bootstrap_Video_strategy)
 @settings(max_examples=50)
-def test_bootstrap::mainpage_instantiation(instance):
-    assert isinstance(instance, bootstrap::MainPage)
-
-@given(instance=bootstrap::MainPage_strategy)
-def test_bootstrap::mainpage_title_type(instance):
-    assert isinstance(instance.title, str)
+def test_bootstrap_video_instantiation(instance):
+    assert isinstance(instance, bootstrap_Video)
 
 
-@given(instance=bootstrap::MainPage_strategy)
-def test_bootstrap::mainpage_title_setter(instance):
+
+@given(instance=bootstrap_Video_strategy)
+def test_bootstrap_video_path_setter(instance):
+    original = instance.path
+    instance.path = original
+    assert instance.path == original
+
+@given(instance=bootstrap_Form_strategy)
+@settings(max_examples=50)
+def test_bootstrap_form_instantiation(instance):
+    assert isinstance(instance, bootstrap_Form)
+
+@given(instance=bootstrap_MainPage_strategy)
+@settings(max_examples=50)
+def test_bootstrap_mainpage_instantiation(instance):
+    assert isinstance(instance, bootstrap_MainPage)
+
+
+
+@given(instance=bootstrap_MainPage_strategy)
+def test_bootstrap_mainpage_title_setter(instance):
     original = instance.title
     instance.title = original
     assert instance.title == original
 
-@given(instance=bootstrap::MainPage_strategy)
-def test_bootstrap::mainpage_description_type(instance):
-    assert isinstance(instance.description, str)
 
 
-@given(instance=bootstrap::MainPage_strategy)
-def test_bootstrap::mainpage_description_setter(instance):
+@given(instance=bootstrap_MainPage_strategy)
+def test_bootstrap_mainpage_description_setter(instance):
     original = instance.description
     instance.description = original
     assert instance.description == original
 
-@given(instance=bootstrap::Page_strategy)
+@given(instance=bootstrap_Page_strategy)
 @settings(max_examples=50)
-def test_bootstrap::page_instantiation(instance):
-    assert isinstance(instance, bootstrap::Page)
-
-@given(instance=bootstrap::Page_strategy)
-def test_bootstrap::page_title_type(instance):
-    assert isinstance(instance.title, str)
+def test_bootstrap_page_instantiation(instance):
+    assert isinstance(instance, bootstrap_Page)
 
 
-@given(instance=bootstrap::Page_strategy)
-def test_bootstrap::page_title_setter(instance):
+
+@given(instance=bootstrap_Page_strategy)
+def test_bootstrap_page_title_setter(instance):
     original = instance.title
     instance.title = original
     assert instance.title == original
 
-@given(instance=bootstrap::Page_strategy)
-def test_bootstrap::page_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
-@given(instance=bootstrap::Page_strategy)
-def test_bootstrap::page_name_setter(instance):
+@given(instance=bootstrap_Page_strategy)
+def test_bootstrap_page_description_setter(instance):
+    original = instance.description
+    instance.description = original
+    assert instance.description == original
+
+
+
+@given(instance=bootstrap_Page_strategy)
+def test_bootstrap_page_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=bootstrap::Page_strategy)
-def test_bootstrap::page_description_type(instance):
-    assert isinstance(instance.description, str)
-
-
-@given(instance=bootstrap::Page_strategy)
-def test_bootstrap::page_description_setter(instance):
-    original = instance.description
-    instance.description = original
-    assert instance.description == original
-
-@given(instance=bootstrap::Site_strategy)
+@given(instance=bootstrap_Site_strategy)
 @settings(max_examples=50)
-def test_bootstrap::site_instantiation(instance):
-    assert isinstance(instance, bootstrap::Site)
-
-@given(instance=bootstrap::Site_strategy)
-def test_bootstrap::site_title_type(instance):
-    assert isinstance(instance.title, str)
+def test_bootstrap_site_instantiation(instance):
+    assert isinstance(instance, bootstrap_Site)
 
 
-@given(instance=bootstrap::Site_strategy)
-def test_bootstrap::site_title_setter(instance):
+
+@given(instance=bootstrap_Site_strategy)
+def test_bootstrap_site_title_setter(instance):
     original = instance.title
     instance.title = original
     assert instance.title == original

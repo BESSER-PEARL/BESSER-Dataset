@@ -3,24 +3,24 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    stateMachine::OutputState,
-    stateMachine::InputState,
-    ex::stateMachine::StandardState,
-    ex::stateMachine::State,
+from python_code import (
+    stateMachine_OutputState,
+    stateMachine_InputState,
+    ex_stateMachine_StandardState,
+    ex_stateMachine_State,
     InputState,
-    ex::stateMachine::TerminalState,
+    ex_stateMachine_TerminalState,
     OutputState,
-    ex::stateMachine::InitState,
-    ex::stateMachine::Transition,
+    ex_stateMachine_InitState,
+    ex_stateMachine_Transition,
     Transition,
     State,
-    ex::stateMachine::OutputState,
-    ex::stateMachine::InputState,
+    ex_stateMachine_InputState,
+    ex_stateMachine_OutputState,
     InitState,
-    ex::stateMachine::StateMachine,
+    ex_stateMachine_StateMachine,
 )
 
 # =============================================================================
@@ -29,65 +29,65 @@ from classes import (
 
 
 
-def test_statemachine::outputstate_is_not_abstract():
-    assert not inspect.isabstract(stateMachine::OutputState)
+def test_statemachine_outputstate_is_not_abstract():
+    assert not inspect.isabstract(stateMachine_OutputState)
 
 
-def test_statemachine::outputstate_constructor_exists():
-    assert callable(stateMachine::OutputState.__init__)
+def test_statemachine_outputstate_constructor_exists():
+    assert callable(stateMachine_OutputState.__init__)
 
 
-def test_statemachine::outputstate_constructor_args():
-    sig = inspect.signature(stateMachine::OutputState.__init__)
+def test_statemachine_outputstate_constructor_args():
+    sig = inspect.signature(stateMachine_OutputState.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_statemachine::inputstate_is_not_abstract():
-    assert not inspect.isabstract(stateMachine::InputState)
+def test_statemachine_inputstate_is_not_abstract():
+    assert not inspect.isabstract(stateMachine_InputState)
 
 
-def test_statemachine::inputstate_constructor_exists():
-    assert callable(stateMachine::InputState.__init__)
+def test_statemachine_inputstate_constructor_exists():
+    assert callable(stateMachine_InputState.__init__)
 
 
-def test_statemachine::inputstate_constructor_args():
-    sig = inspect.signature(stateMachine::InputState.__init__)
+def test_statemachine_inputstate_constructor_args():
+    sig = inspect.signature(stateMachine_InputState.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ex::statemachine::standardstate_is_not_abstract():
-    assert not inspect.isabstract(ex::stateMachine::StandardState)
+def test_ex_statemachine_standardstate_is_not_abstract():
+    assert not inspect.isabstract(ex_stateMachine_StandardState)
 
 
-def test_ex::statemachine::standardstate_constructor_exists():
-    assert callable(ex::stateMachine::StandardState.__init__)
+def test_ex_statemachine_standardstate_constructor_exists():
+    assert callable(ex_stateMachine_StandardState.__init__)
 
 
-def test_ex::statemachine::standardstate_constructor_args():
-    sig = inspect.signature(ex::stateMachine::StandardState.__init__)
+def test_ex_statemachine_standardstate_constructor_args():
+    sig = inspect.signature(ex_stateMachine_StandardState.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ex::statemachine::state_is_not_abstract():
-    assert not inspect.isabstract(ex::stateMachine::State)
+def test_ex_statemachine_state_is_not_abstract():
+    assert not inspect.isabstract(ex_stateMachine_State)
 
 
-def test_ex::statemachine::state_constructor_exists():
-    assert callable(ex::stateMachine::State.__init__)
+def test_ex_statemachine_state_constructor_exists():
+    assert callable(ex_stateMachine_State.__init__)
 
 
-def test_ex::statemachine::state_constructor_args():
-    sig = inspect.signature(ex::stateMachine::State.__init__)
+def test_ex_statemachine_state_constructor_args():
+    sig = inspect.signature(ex_stateMachine_State.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_ex::statemachine::state_has_name():
-    assert hasattr(ex::stateMachine::State, "name")
+def test_ex_statemachine_state_has_name():
+    assert hasattr(ex_stateMachine_State, "name")
     descriptor = None
-    for klass in ex::stateMachine::State.__mro__:
+    for klass in ex_stateMachine_State.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -109,16 +109,16 @@ def test_inputstate_constructor_args():
 
 
 
-def test_ex::statemachine::terminalstate_is_not_abstract():
-    assert not inspect.isabstract(ex::stateMachine::TerminalState)
+def test_ex_statemachine_terminalstate_is_not_abstract():
+    assert not inspect.isabstract(ex_stateMachine_TerminalState)
 
 
-def test_ex::statemachine::terminalstate_constructor_exists():
-    assert callable(ex::stateMachine::TerminalState.__init__)
+def test_ex_statemachine_terminalstate_constructor_exists():
+    assert callable(ex_stateMachine_TerminalState.__init__)
 
 
-def test_ex::statemachine::terminalstate_constructor_args():
-    sig = inspect.signature(ex::stateMachine::TerminalState.__init__)
+def test_ex_statemachine_terminalstate_constructor_args():
+    sig = inspect.signature(ex_stateMachine_TerminalState.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -137,30 +137,30 @@ def test_outputstate_constructor_args():
 
 
 
-def test_ex::statemachine::initstate_is_not_abstract():
-    assert not inspect.isabstract(ex::stateMachine::InitState)
+def test_ex_statemachine_initstate_is_not_abstract():
+    assert not inspect.isabstract(ex_stateMachine_InitState)
 
 
-def test_ex::statemachine::initstate_constructor_exists():
-    assert callable(ex::stateMachine::InitState.__init__)
+def test_ex_statemachine_initstate_constructor_exists():
+    assert callable(ex_stateMachine_InitState.__init__)
 
 
-def test_ex::statemachine::initstate_constructor_args():
-    sig = inspect.signature(ex::stateMachine::InitState.__init__)
+def test_ex_statemachine_initstate_constructor_args():
+    sig = inspect.signature(ex_stateMachine_InitState.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ex::statemachine::transition_is_not_abstract():
-    assert not inspect.isabstract(ex::stateMachine::Transition)
+def test_ex_statemachine_transition_is_not_abstract():
+    assert not inspect.isabstract(ex_stateMachine_Transition)
 
 
-def test_ex::statemachine::transition_constructor_exists():
-    assert callable(ex::stateMachine::Transition.__init__)
+def test_ex_statemachine_transition_constructor_exists():
+    assert callable(ex_stateMachine_Transition.__init__)
 
 
-def test_ex::statemachine::transition_constructor_args():
-    sig = inspect.signature(ex::stateMachine::Transition.__init__)
+def test_ex_statemachine_transition_constructor_args():
+    sig = inspect.signature(ex_stateMachine_Transition.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -193,30 +193,30 @@ def test_state_constructor_args():
 
 
 
-def test_ex::statemachine::outputstate_is_not_abstract():
-    assert not inspect.isabstract(ex::stateMachine::OutputState)
+def test_ex_statemachine_inputstate_is_not_abstract():
+    assert not inspect.isabstract(ex_stateMachine_InputState)
 
 
-def test_ex::statemachine::outputstate_constructor_exists():
-    assert callable(ex::stateMachine::OutputState.__init__)
+def test_ex_statemachine_inputstate_constructor_exists():
+    assert callable(ex_stateMachine_InputState.__init__)
 
 
-def test_ex::statemachine::outputstate_constructor_args():
-    sig = inspect.signature(ex::stateMachine::OutputState.__init__)
+def test_ex_statemachine_inputstate_constructor_args():
+    sig = inspect.signature(ex_stateMachine_InputState.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ex::statemachine::inputstate_is_not_abstract():
-    assert not inspect.isabstract(ex::stateMachine::InputState)
+def test_ex_statemachine_outputstate_is_not_abstract():
+    assert not inspect.isabstract(ex_stateMachine_OutputState)
 
 
-def test_ex::statemachine::inputstate_constructor_exists():
-    assert callable(ex::stateMachine::InputState.__init__)
+def test_ex_statemachine_outputstate_constructor_exists():
+    assert callable(ex_stateMachine_OutputState.__init__)
 
 
-def test_ex::statemachine::inputstate_constructor_args():
-    sig = inspect.signature(ex::stateMachine::InputState.__init__)
+def test_ex_statemachine_outputstate_constructor_args():
+    sig = inspect.signature(ex_stateMachine_OutputState.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -235,16 +235,16 @@ def test_initstate_constructor_args():
 
 
 
-def test_ex::statemachine::statemachine_is_not_abstract():
-    assert not inspect.isabstract(ex::stateMachine::StateMachine)
+def test_ex_statemachine_statemachine_is_not_abstract():
+    assert not inspect.isabstract(ex_stateMachine_StateMachine)
 
 
-def test_ex::statemachine::statemachine_constructor_exists():
-    assert callable(ex::stateMachine::StateMachine.__init__)
+def test_ex_statemachine_statemachine_constructor_exists():
+    assert callable(ex_stateMachine_StateMachine.__init__)
 
 
-def test_ex::statemachine::statemachine_constructor_args():
-    sig = inspect.signature(ex::stateMachine::StateMachine.__init__)
+def test_ex_statemachine_statemachine_constructor_args():
+    sig = inspect.signature(ex_stateMachine_StateMachine.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -259,34 +259,34 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-stateMachine::OutputState_strategy = st.builds(
-    stateMachine::OutputState,
+stateMachine_OutputState_strategy = st.builds(
+    stateMachine_OutputState,
 )
-stateMachine::InputState_strategy = st.builds(
-    stateMachine::InputState,
+stateMachine_InputState_strategy = st.builds(
+    stateMachine_InputState,
 )
-ex::stateMachine::StandardState_strategy = st.builds(
-    ex::stateMachine::StandardState,
+ex_stateMachine_StandardState_strategy = st.builds(
+    ex_stateMachine_StandardState,
 )
-ex::stateMachine::State_strategy = st.builds(
-    ex::stateMachine::State,
+ex_stateMachine_State_strategy = st.builds(
+    ex_stateMachine_State,
     name=
         safe_text
 )
 InputState_strategy = st.builds(
     InputState,
 )
-ex::stateMachine::TerminalState_strategy = st.builds(
-    ex::stateMachine::TerminalState,
+ex_stateMachine_TerminalState_strategy = st.builds(
+    ex_stateMachine_TerminalState,
 )
 OutputState_strategy = st.builds(
     OutputState,
 )
-ex::stateMachine::InitState_strategy = st.builds(
-    ex::stateMachine::InitState,
+ex_stateMachine_InitState_strategy = st.builds(
+    ex_stateMachine_InitState,
 )
-ex::stateMachine::Transition_strategy = st.builds(
-    ex::stateMachine::Transition,
+ex_stateMachine_Transition_strategy = st.builds(
+    ex_stateMachine_Transition,
 )
 Transition_strategy = st.builds(
     Transition,
@@ -294,46 +294,43 @@ Transition_strategy = st.builds(
 State_strategy = st.builds(
     State,
 )
-ex::stateMachine::OutputState_strategy = st.builds(
-    ex::stateMachine::OutputState,
+ex_stateMachine_InputState_strategy = st.builds(
+    ex_stateMachine_InputState,
 )
-ex::stateMachine::InputState_strategy = st.builds(
-    ex::stateMachine::InputState,
+ex_stateMachine_OutputState_strategy = st.builds(
+    ex_stateMachine_OutputState,
 )
 InitState_strategy = st.builds(
     InitState,
 )
-ex::stateMachine::StateMachine_strategy = st.builds(
-    ex::stateMachine::StateMachine,
+ex_stateMachine_StateMachine_strategy = st.builds(
+    ex_stateMachine_StateMachine,
 )
 
-@given(instance=stateMachine::OutputState_strategy)
+@given(instance=stateMachine_OutputState_strategy)
 @settings(max_examples=50)
-def test_statemachine::outputstate_instantiation(instance):
-    assert isinstance(instance, stateMachine::OutputState)
+def test_statemachine_outputstate_instantiation(instance):
+    assert isinstance(instance, stateMachine_OutputState)
 
-@given(instance=stateMachine::InputState_strategy)
+@given(instance=stateMachine_InputState_strategy)
 @settings(max_examples=50)
-def test_statemachine::inputstate_instantiation(instance):
-    assert isinstance(instance, stateMachine::InputState)
+def test_statemachine_inputstate_instantiation(instance):
+    assert isinstance(instance, stateMachine_InputState)
 
-@given(instance=ex::stateMachine::StandardState_strategy)
+@given(instance=ex_stateMachine_StandardState_strategy)
 @settings(max_examples=50)
-def test_ex::statemachine::standardstate_instantiation(instance):
-    assert isinstance(instance, ex::stateMachine::StandardState)
+def test_ex_statemachine_standardstate_instantiation(instance):
+    assert isinstance(instance, ex_stateMachine_StandardState)
 
-@given(instance=ex::stateMachine::State_strategy)
+@given(instance=ex_stateMachine_State_strategy)
 @settings(max_examples=50)
-def test_ex::statemachine::state_instantiation(instance):
-    assert isinstance(instance, ex::stateMachine::State)
-
-@given(instance=ex::stateMachine::State_strategy)
-def test_ex::statemachine::state_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_ex_statemachine_state_instantiation(instance):
+    assert isinstance(instance, ex_stateMachine_State)
 
 
-@given(instance=ex::stateMachine::State_strategy)
-def test_ex::statemachine::state_name_setter(instance):
+
+@given(instance=ex_stateMachine_State_strategy)
+def test_ex_statemachine_state_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
@@ -343,25 +340,25 @@ def test_ex::statemachine::state_name_setter(instance):
 def test_inputstate_instantiation(instance):
     assert isinstance(instance, InputState)
 
-@given(instance=ex::stateMachine::TerminalState_strategy)
+@given(instance=ex_stateMachine_TerminalState_strategy)
 @settings(max_examples=50)
-def test_ex::statemachine::terminalstate_instantiation(instance):
-    assert isinstance(instance, ex::stateMachine::TerminalState)
+def test_ex_statemachine_terminalstate_instantiation(instance):
+    assert isinstance(instance, ex_stateMachine_TerminalState)
 
 @given(instance=OutputState_strategy)
 @settings(max_examples=50)
 def test_outputstate_instantiation(instance):
     assert isinstance(instance, OutputState)
 
-@given(instance=ex::stateMachine::InitState_strategy)
+@given(instance=ex_stateMachine_InitState_strategy)
 @settings(max_examples=50)
-def test_ex::statemachine::initstate_instantiation(instance):
-    assert isinstance(instance, ex::stateMachine::InitState)
+def test_ex_statemachine_initstate_instantiation(instance):
+    assert isinstance(instance, ex_stateMachine_InitState)
 
-@given(instance=ex::stateMachine::Transition_strategy)
+@given(instance=ex_stateMachine_Transition_strategy)
 @settings(max_examples=50)
-def test_ex::statemachine::transition_instantiation(instance):
-    assert isinstance(instance, ex::stateMachine::Transition)
+def test_ex_statemachine_transition_instantiation(instance):
+    assert isinstance(instance, ex_stateMachine_Transition)
 
 @given(instance=Transition_strategy)
 @settings(max_examples=50)
@@ -373,22 +370,22 @@ def test_transition_instantiation(instance):
 def test_state_instantiation(instance):
     assert isinstance(instance, State)
 
-@given(instance=ex::stateMachine::OutputState_strategy)
+@given(instance=ex_stateMachine_InputState_strategy)
 @settings(max_examples=50)
-def test_ex::statemachine::outputstate_instantiation(instance):
-    assert isinstance(instance, ex::stateMachine::OutputState)
+def test_ex_statemachine_inputstate_instantiation(instance):
+    assert isinstance(instance, ex_stateMachine_InputState)
 
-@given(instance=ex::stateMachine::InputState_strategy)
+@given(instance=ex_stateMachine_OutputState_strategy)
 @settings(max_examples=50)
-def test_ex::statemachine::inputstate_instantiation(instance):
-    assert isinstance(instance, ex::stateMachine::InputState)
+def test_ex_statemachine_outputstate_instantiation(instance):
+    assert isinstance(instance, ex_stateMachine_OutputState)
 
 @given(instance=InitState_strategy)
 @settings(max_examples=50)
 def test_initstate_instantiation(instance):
     assert isinstance(instance, InitState)
 
-@given(instance=ex::stateMachine::StateMachine_strategy)
+@given(instance=ex_stateMachine_StateMachine_strategy)
 @settings(max_examples=50)
-def test_ex::statemachine::statemachine_instantiation(instance):
-    assert isinstance(instance, ex::stateMachine::StateMachine)
+def test_ex_statemachine_statemachine_instantiation(instance):
+    assert isinstance(instance, ex_stateMachine_StateMachine)

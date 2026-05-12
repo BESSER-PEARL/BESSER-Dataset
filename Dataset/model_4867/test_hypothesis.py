@@ -3,18 +3,18 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     Expression,
-    simpleExpressions::NotExpression,
-    simpleExpressions::Comparison,
-    simpleExpressions::NumberLiteral,
-    simpleExpressions::Expression,
-    simpleExpressions::IfCondition,
-    simpleExpressions::AndExpression,
-    simpleExpressions::OrExpression,
-    simpleExpressions::MethodCall,
+    simpleExpressions_NotExpression,
+    simpleExpressions_Comparison,
+    simpleExpressions_NumberLiteral,
+    simpleExpressions_Expression,
+    simpleExpressions_IfCondition,
+    simpleExpressions_AndExpression,
+    simpleExpressions_OrExpression,
+    simpleExpressions_MethodCall,
 )
 
 # =============================================================================
@@ -37,37 +37,37 @@ def test_expression_constructor_args():
 
 
 
-def test_simpleexpressions::notexpression_is_not_abstract():
-    assert not inspect.isabstract(simpleExpressions::NotExpression)
+def test_simpleexpressions_notexpression_is_not_abstract():
+    assert not inspect.isabstract(simpleExpressions_NotExpression)
 
 
-def test_simpleexpressions::notexpression_constructor_exists():
-    assert callable(simpleExpressions::NotExpression.__init__)
+def test_simpleexpressions_notexpression_constructor_exists():
+    assert callable(simpleExpressions_NotExpression.__init__)
 
 
-def test_simpleexpressions::notexpression_constructor_args():
-    sig = inspect.signature(simpleExpressions::NotExpression.__init__)
+def test_simpleexpressions_notexpression_constructor_args():
+    sig = inspect.signature(simpleExpressions_NotExpression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_simpleexpressions::comparison_is_not_abstract():
-    assert not inspect.isabstract(simpleExpressions::Comparison)
+def test_simpleexpressions_comparison_is_not_abstract():
+    assert not inspect.isabstract(simpleExpressions_Comparison)
 
 
-def test_simpleexpressions::comparison_constructor_exists():
-    assert callable(simpleExpressions::Comparison.__init__)
+def test_simpleexpressions_comparison_constructor_exists():
+    assert callable(simpleExpressions_Comparison.__init__)
 
 
-def test_simpleexpressions::comparison_constructor_args():
-    sig = inspect.signature(simpleExpressions::Comparison.__init__)
+def test_simpleexpressions_comparison_constructor_args():
+    sig = inspect.signature(simpleExpressions_Comparison.__init__)
     params = list(sig.parameters.keys())
     assert "operator" in params, "Missing parameter 'operator'"
 
-def test_simpleexpressions::comparison_has_operator():
-    assert hasattr(simpleExpressions::Comparison, "operator")
+def test_simpleexpressions_comparison_has_operator():
+    assert hasattr(simpleExpressions_Comparison, "operator")
     descriptor = None
-    for klass in simpleExpressions::Comparison.__mro__:
+    for klass in simpleExpressions_Comparison.__mro__:
         if "operator" in klass.__dict__:
             descriptor = klass.__dict__["operator"]
             break
@@ -75,23 +75,23 @@ def test_simpleexpressions::comparison_has_operator():
 
 
 
-def test_simpleexpressions::numberliteral_is_not_abstract():
-    assert not inspect.isabstract(simpleExpressions::NumberLiteral)
+def test_simpleexpressions_numberliteral_is_not_abstract():
+    assert not inspect.isabstract(simpleExpressions_NumberLiteral)
 
 
-def test_simpleexpressions::numberliteral_constructor_exists():
-    assert callable(simpleExpressions::NumberLiteral.__init__)
+def test_simpleexpressions_numberliteral_constructor_exists():
+    assert callable(simpleExpressions_NumberLiteral.__init__)
 
 
-def test_simpleexpressions::numberliteral_constructor_args():
-    sig = inspect.signature(simpleExpressions::NumberLiteral.__init__)
+def test_simpleexpressions_numberliteral_constructor_args():
+    sig = inspect.signature(simpleExpressions_NumberLiteral.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
 
-def test_simpleexpressions::numberliteral_has_value():
-    assert hasattr(simpleExpressions::NumberLiteral, "value")
+def test_simpleexpressions_numberliteral_has_value():
+    assert hasattr(simpleExpressions_NumberLiteral, "value")
     descriptor = None
-    for klass in simpleExpressions::NumberLiteral.__mro__:
+    for klass in simpleExpressions_NumberLiteral.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -99,37 +99,37 @@ def test_simpleexpressions::numberliteral_has_value():
 
 
 
-def test_simpleexpressions::expression_is_not_abstract():
-    assert not inspect.isabstract(simpleExpressions::Expression)
+def test_simpleexpressions_expression_is_not_abstract():
+    assert not inspect.isabstract(simpleExpressions_Expression)
 
 
-def test_simpleexpressions::expression_constructor_exists():
-    assert callable(simpleExpressions::Expression.__init__)
+def test_simpleexpressions_expression_constructor_exists():
+    assert callable(simpleExpressions_Expression.__init__)
 
 
-def test_simpleexpressions::expression_constructor_args():
-    sig = inspect.signature(simpleExpressions::Expression.__init__)
+def test_simpleexpressions_expression_constructor_args():
+    sig = inspect.signature(simpleExpressions_Expression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_simpleexpressions::ifcondition_is_not_abstract():
-    assert not inspect.isabstract(simpleExpressions::IfCondition)
+def test_simpleexpressions_ifcondition_is_not_abstract():
+    assert not inspect.isabstract(simpleExpressions_IfCondition)
 
 
-def test_simpleexpressions::ifcondition_constructor_exists():
-    assert callable(simpleExpressions::IfCondition.__init__)
+def test_simpleexpressions_ifcondition_constructor_exists():
+    assert callable(simpleExpressions_IfCondition.__init__)
 
 
-def test_simpleexpressions::ifcondition_constructor_args():
-    sig = inspect.signature(simpleExpressions::IfCondition.__init__)
+def test_simpleexpressions_ifcondition_constructor_args():
+    sig = inspect.signature(simpleExpressions_IfCondition.__init__)
     params = list(sig.parameters.keys())
     assert "elseif" in params, "Missing parameter 'elseif'"
 
-def test_simpleexpressions::ifcondition_has_elseif():
-    assert hasattr(simpleExpressions::IfCondition, "elseif")
+def test_simpleexpressions_ifcondition_has_elseif():
+    assert hasattr(simpleExpressions_IfCondition, "elseif")
     descriptor = None
-    for klass in simpleExpressions::IfCondition.__mro__:
+    for klass in simpleExpressions_IfCondition.__mro__:
         if "elseif" in klass.__dict__:
             descriptor = klass.__dict__["elseif"]
             break
@@ -137,51 +137,51 @@ def test_simpleexpressions::ifcondition_has_elseif():
 
 
 
-def test_simpleexpressions::andexpression_is_not_abstract():
-    assert not inspect.isabstract(simpleExpressions::AndExpression)
+def test_simpleexpressions_andexpression_is_not_abstract():
+    assert not inspect.isabstract(simpleExpressions_AndExpression)
 
 
-def test_simpleexpressions::andexpression_constructor_exists():
-    assert callable(simpleExpressions::AndExpression.__init__)
+def test_simpleexpressions_andexpression_constructor_exists():
+    assert callable(simpleExpressions_AndExpression.__init__)
 
 
-def test_simpleexpressions::andexpression_constructor_args():
-    sig = inspect.signature(simpleExpressions::AndExpression.__init__)
+def test_simpleexpressions_andexpression_constructor_args():
+    sig = inspect.signature(simpleExpressions_AndExpression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_simpleexpressions::orexpression_is_not_abstract():
-    assert not inspect.isabstract(simpleExpressions::OrExpression)
+def test_simpleexpressions_orexpression_is_not_abstract():
+    assert not inspect.isabstract(simpleExpressions_OrExpression)
 
 
-def test_simpleexpressions::orexpression_constructor_exists():
-    assert callable(simpleExpressions::OrExpression.__init__)
+def test_simpleexpressions_orexpression_constructor_exists():
+    assert callable(simpleExpressions_OrExpression.__init__)
 
 
-def test_simpleexpressions::orexpression_constructor_args():
-    sig = inspect.signature(simpleExpressions::OrExpression.__init__)
+def test_simpleexpressions_orexpression_constructor_args():
+    sig = inspect.signature(simpleExpressions_OrExpression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_simpleexpressions::methodcall_is_not_abstract():
-    assert not inspect.isabstract(simpleExpressions::MethodCall)
+def test_simpleexpressions_methodcall_is_not_abstract():
+    assert not inspect.isabstract(simpleExpressions_MethodCall)
 
 
-def test_simpleexpressions::methodcall_constructor_exists():
-    assert callable(simpleExpressions::MethodCall.__init__)
+def test_simpleexpressions_methodcall_constructor_exists():
+    assert callable(simpleExpressions_MethodCall.__init__)
 
 
-def test_simpleexpressions::methodcall_constructor_args():
-    sig = inspect.signature(simpleExpressions::MethodCall.__init__)
+def test_simpleexpressions_methodcall_constructor_args():
+    sig = inspect.signature(simpleExpressions_MethodCall.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
 
-def test_simpleexpressions::methodcall_has_value():
-    assert hasattr(simpleExpressions::MethodCall, "value")
+def test_simpleexpressions_methodcall_has_value():
+    assert hasattr(simpleExpressions_MethodCall, "value")
     descriptor = None
-    for klass in simpleExpressions::MethodCall.__mro__:
+    for klass in simpleExpressions_MethodCall.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -202,35 +202,35 @@ safe_text = st.text(
 Expression_strategy = st.builds(
     Expression,
 )
-simpleExpressions::NotExpression_strategy = st.builds(
-    simpleExpressions::NotExpression,
+simpleExpressions_NotExpression_strategy = st.builds(
+    simpleExpressions_NotExpression,
 )
-simpleExpressions::Comparison_strategy = st.builds(
-    simpleExpressions::Comparison,
+simpleExpressions_Comparison_strategy = st.builds(
+    simpleExpressions_Comparison,
     operator=
         safe_text
 )
-simpleExpressions::NumberLiteral_strategy = st.builds(
-    simpleExpressions::NumberLiteral,
+simpleExpressions_NumberLiteral_strategy = st.builds(
+    simpleExpressions_NumberLiteral,
     value=
         st.integers()
 )
-simpleExpressions::Expression_strategy = st.builds(
-    simpleExpressions::Expression,
+simpleExpressions_Expression_strategy = st.builds(
+    simpleExpressions_Expression,
 )
-simpleExpressions::IfCondition_strategy = st.builds(
-    simpleExpressions::IfCondition,
+simpleExpressions_IfCondition_strategy = st.builds(
+    simpleExpressions_IfCondition,
     elseif=
         st.booleans()
 )
-simpleExpressions::AndExpression_strategy = st.builds(
-    simpleExpressions::AndExpression,
+simpleExpressions_AndExpression_strategy = st.builds(
+    simpleExpressions_AndExpression,
 )
-simpleExpressions::OrExpression_strategy = st.builds(
-    simpleExpressions::OrExpression,
+simpleExpressions_OrExpression_strategy = st.builds(
+    simpleExpressions_OrExpression,
 )
-simpleExpressions::MethodCall_strategy = st.builds(
-    simpleExpressions::MethodCall,
+simpleExpressions_MethodCall_strategy = st.builds(
+    simpleExpressions_MethodCall,
     value=
         safe_text
 )
@@ -240,86 +240,74 @@ simpleExpressions::MethodCall_strategy = st.builds(
 def test_expression_instantiation(instance):
     assert isinstance(instance, Expression)
 
-@given(instance=simpleExpressions::NotExpression_strategy)
+@given(instance=simpleExpressions_NotExpression_strategy)
 @settings(max_examples=50)
-def test_simpleexpressions::notexpression_instantiation(instance):
-    assert isinstance(instance, simpleExpressions::NotExpression)
+def test_simpleexpressions_notexpression_instantiation(instance):
+    assert isinstance(instance, simpleExpressions_NotExpression)
 
-@given(instance=simpleExpressions::Comparison_strategy)
+@given(instance=simpleExpressions_Comparison_strategy)
 @settings(max_examples=50)
-def test_simpleexpressions::comparison_instantiation(instance):
-    assert isinstance(instance, simpleExpressions::Comparison)
-
-@given(instance=simpleExpressions::Comparison_strategy)
-def test_simpleexpressions::comparison_operator_type(instance):
-    assert isinstance(instance.operator, str)
+def test_simpleexpressions_comparison_instantiation(instance):
+    assert isinstance(instance, simpleExpressions_Comparison)
 
 
-@given(instance=simpleExpressions::Comparison_strategy)
-def test_simpleexpressions::comparison_operator_setter(instance):
+
+@given(instance=simpleExpressions_Comparison_strategy)
+def test_simpleexpressions_comparison_operator_setter(instance):
     original = instance.operator
     instance.operator = original
     assert instance.operator == original
 
-@given(instance=simpleExpressions::NumberLiteral_strategy)
+@given(instance=simpleExpressions_NumberLiteral_strategy)
 @settings(max_examples=50)
-def test_simpleexpressions::numberliteral_instantiation(instance):
-    assert isinstance(instance, simpleExpressions::NumberLiteral)
-
-@given(instance=simpleExpressions::NumberLiteral_strategy)
-def test_simpleexpressions::numberliteral_value_type(instance):
-    assert isinstance(instance.value, int)
+def test_simpleexpressions_numberliteral_instantiation(instance):
+    assert isinstance(instance, simpleExpressions_NumberLiteral)
 
 
-@given(instance=simpleExpressions::NumberLiteral_strategy)
-def test_simpleexpressions::numberliteral_value_setter(instance):
+
+@given(instance=simpleExpressions_NumberLiteral_strategy)
+def test_simpleexpressions_numberliteral_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
 
-@given(instance=simpleExpressions::Expression_strategy)
+@given(instance=simpleExpressions_Expression_strategy)
 @settings(max_examples=50)
-def test_simpleexpressions::expression_instantiation(instance):
-    assert isinstance(instance, simpleExpressions::Expression)
+def test_simpleexpressions_expression_instantiation(instance):
+    assert isinstance(instance, simpleExpressions_Expression)
 
-@given(instance=simpleExpressions::IfCondition_strategy)
+@given(instance=simpleExpressions_IfCondition_strategy)
 @settings(max_examples=50)
-def test_simpleexpressions::ifcondition_instantiation(instance):
-    assert isinstance(instance, simpleExpressions::IfCondition)
-
-@given(instance=simpleExpressions::IfCondition_strategy)
-def test_simpleexpressions::ifcondition_elseif_type(instance):
-    assert isinstance(instance.elseif, bool)
+def test_simpleexpressions_ifcondition_instantiation(instance):
+    assert isinstance(instance, simpleExpressions_IfCondition)
 
 
-@given(instance=simpleExpressions::IfCondition_strategy)
-def test_simpleexpressions::ifcondition_elseif_setter(instance):
+
+@given(instance=simpleExpressions_IfCondition_strategy)
+def test_simpleexpressions_ifcondition_elseif_setter(instance):
     original = instance.elseif
     instance.elseif = original
     assert instance.elseif == original
 
-@given(instance=simpleExpressions::AndExpression_strategy)
+@given(instance=simpleExpressions_AndExpression_strategy)
 @settings(max_examples=50)
-def test_simpleexpressions::andexpression_instantiation(instance):
-    assert isinstance(instance, simpleExpressions::AndExpression)
+def test_simpleexpressions_andexpression_instantiation(instance):
+    assert isinstance(instance, simpleExpressions_AndExpression)
 
-@given(instance=simpleExpressions::OrExpression_strategy)
+@given(instance=simpleExpressions_OrExpression_strategy)
 @settings(max_examples=50)
-def test_simpleexpressions::orexpression_instantiation(instance):
-    assert isinstance(instance, simpleExpressions::OrExpression)
+def test_simpleexpressions_orexpression_instantiation(instance):
+    assert isinstance(instance, simpleExpressions_OrExpression)
 
-@given(instance=simpleExpressions::MethodCall_strategy)
+@given(instance=simpleExpressions_MethodCall_strategy)
 @settings(max_examples=50)
-def test_simpleexpressions::methodcall_instantiation(instance):
-    assert isinstance(instance, simpleExpressions::MethodCall)
-
-@given(instance=simpleExpressions::MethodCall_strategy)
-def test_simpleexpressions::methodcall_value_type(instance):
-    assert isinstance(instance.value, str)
+def test_simpleexpressions_methodcall_instantiation(instance):
+    assert isinstance(instance, simpleExpressions_MethodCall)
 
 
-@given(instance=simpleExpressions::MethodCall_strategy)
-def test_simpleexpressions::methodcall_value_setter(instance):
+
+@given(instance=simpleExpressions_MethodCall_strategy)
+def test_simpleexpressions_methodcall_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original

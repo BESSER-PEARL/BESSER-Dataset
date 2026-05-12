@@ -3,23 +3,23 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    dsl::ColorValue,
+from python_code import (
+    dsl_ColorValue,
     SensorType,
-    dsl::ColorSensor,
-    dsl::timeUnitValue,
-    dsl::UltrasonicSensor,
-    dsl::TouchSensor,
-    dsl::Ignorables,
-    dsl::SensorType,
-    dsl::Task,
-    dsl::Mission,
-    TouchSensorSides,
-    timeUnit,
+    dsl_ColorSensor,
+    dsl_timeUnitValue,
+    dsl_UltrasonicSensor,
+    dsl_TouchSensor,
+    dsl_Ignorables,
+    dsl_SensorType,
+    dsl_Task,
+    dsl_Mission,
     Colors,
+    TouchSensorSides,
     CompareOperator,
+    timeUnit,
     Actions,
     Directions,
 )
@@ -30,23 +30,23 @@ from classes import (
 
 
 
-def test_dsl::colorvalue_is_not_abstract():
-    assert not inspect.isabstract(dsl::ColorValue)
+def test_dsl_colorvalue_is_not_abstract():
+    assert not inspect.isabstract(dsl_ColorValue)
 
 
-def test_dsl::colorvalue_constructor_exists():
-    assert callable(dsl::ColorValue.__init__)
+def test_dsl_colorvalue_constructor_exists():
+    assert callable(dsl_ColorValue.__init__)
 
 
-def test_dsl::colorvalue_constructor_args():
-    sig = inspect.signature(dsl::ColorValue.__init__)
+def test_dsl_colorvalue_constructor_args():
+    sig = inspect.signature(dsl_ColorValue.__init__)
     params = list(sig.parameters.keys())
     assert "color" in params, "Missing parameter 'color'"
 
-def test_dsl::colorvalue_has_color():
-    assert hasattr(dsl::ColorValue, "color")
+def test_dsl_colorvalue_has_color():
+    assert hasattr(dsl_ColorValue, "color")
     descriptor = None
-    for klass in dsl::ColorValue.__mro__:
+    for klass in dsl_ColorValue.__mro__:
         if "color" in klass.__dict__:
             descriptor = klass.__dict__["color"]
             break
@@ -68,23 +68,23 @@ def test_sensortype_constructor_args():
 
 
 
-def test_dsl::colorsensor_is_not_abstract():
-    assert not inspect.isabstract(dsl::ColorSensor)
+def test_dsl_colorsensor_is_not_abstract():
+    assert not inspect.isabstract(dsl_ColorSensor)
 
 
-def test_dsl::colorsensor_constructor_exists():
-    assert callable(dsl::ColorSensor.__init__)
+def test_dsl_colorsensor_constructor_exists():
+    assert callable(dsl_ColorSensor.__init__)
 
 
-def test_dsl::colorsensor_constructor_args():
-    sig = inspect.signature(dsl::ColorSensor.__init__)
+def test_dsl_colorsensor_constructor_args():
+    sig = inspect.signature(dsl_ColorSensor.__init__)
     params = list(sig.parameters.keys())
     assert "distinct" in params, "Missing parameter 'distinct'"
 
-def test_dsl::colorsensor_has_distinct():
-    assert hasattr(dsl::ColorSensor, "distinct")
+def test_dsl_colorsensor_has_distinct():
+    assert hasattr(dsl_ColorSensor, "distinct")
     descriptor = None
-    for klass in dsl::ColorSensor.__mro__:
+    for klass in dsl_ColorSensor.__mro__:
         if "distinct" in klass.__dict__:
             descriptor = klass.__dict__["distinct"]
             break
@@ -92,23 +92,23 @@ def test_dsl::colorsensor_has_distinct():
 
 
 
-def test_dsl::timeunitvalue_is_not_abstract():
-    assert not inspect.isabstract(dsl::timeUnitValue)
+def test_dsl_timeunitvalue_is_not_abstract():
+    assert not inspect.isabstract(dsl_timeUnitValue)
 
 
-def test_dsl::timeunitvalue_constructor_exists():
-    assert callable(dsl::timeUnitValue.__init__)
+def test_dsl_timeunitvalue_constructor_exists():
+    assert callable(dsl_timeUnitValue.__init__)
 
 
-def test_dsl::timeunitvalue_constructor_args():
-    sig = inspect.signature(dsl::timeUnitValue.__init__)
+def test_dsl_timeunitvalue_constructor_args():
+    sig = inspect.signature(dsl_timeUnitValue.__init__)
     params = list(sig.parameters.keys())
     assert "unit" in params, "Missing parameter 'unit'"
 
-def test_dsl::timeunitvalue_has_unit():
-    assert hasattr(dsl::timeUnitValue, "unit")
+def test_dsl_timeunitvalue_has_unit():
+    assert hasattr(dsl_timeUnitValue, "unit")
     descriptor = None
-    for klass in dsl::timeUnitValue.__mro__:
+    for klass in dsl_timeUnitValue.__mro__:
         if "unit" in klass.__dict__:
             descriptor = klass.__dict__["unit"]
             break
@@ -116,57 +116,57 @@ def test_dsl::timeunitvalue_has_unit():
 
 
 
-def test_dsl::ultrasonicsensor_is_not_abstract():
-    assert not inspect.isabstract(dsl::UltrasonicSensor)
+def test_dsl_ultrasonicsensor_is_not_abstract():
+    assert not inspect.isabstract(dsl_UltrasonicSensor)
 
 
-def test_dsl::ultrasonicsensor_constructor_exists():
-    assert callable(dsl::UltrasonicSensor.__init__)
+def test_dsl_ultrasonicsensor_constructor_exists():
+    assert callable(dsl_UltrasonicSensor.__init__)
 
 
-def test_dsl::ultrasonicsensor_constructor_args():
-    sig = inspect.signature(dsl::UltrasonicSensor.__init__)
+def test_dsl_ultrasonicsensor_constructor_args():
+    sig = inspect.signature(dsl_UltrasonicSensor.__init__)
     params = list(sig.parameters.keys())
-    assert "distance" in params, "Missing parameter 'distance'"
     assert "comparator" in params, "Missing parameter 'comparator'"
+    assert "distance" in params, "Missing parameter 'distance'"
 
-def test_dsl::ultrasonicsensor_has_distance():
-    assert hasattr(dsl::UltrasonicSensor, "distance")
+def test_dsl_ultrasonicsensor_has_comparator():
+    assert hasattr(dsl_UltrasonicSensor, "comparator")
     descriptor = None
-    for klass in dsl::UltrasonicSensor.__mro__:
-        if "distance" in klass.__dict__:
-            descriptor = klass.__dict__["distance"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_dsl::ultrasonicsensor_has_comparator():
-    assert hasattr(dsl::UltrasonicSensor, "comparator")
-    descriptor = None
-    for klass in dsl::UltrasonicSensor.__mro__:
+    for klass in dsl_UltrasonicSensor.__mro__:
         if "comparator" in klass.__dict__:
             descriptor = klass.__dict__["comparator"]
             break
     assert isinstance(descriptor, property)
 
+def test_dsl_ultrasonicsensor_has_distance():
+    assert hasattr(dsl_UltrasonicSensor, "distance")
+    descriptor = None
+    for klass in dsl_UltrasonicSensor.__mro__:
+        if "distance" in klass.__dict__:
+            descriptor = klass.__dict__["distance"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_dsl::touchsensor_is_not_abstract():
-    assert not inspect.isabstract(dsl::TouchSensor)
+
+def test_dsl_touchsensor_is_not_abstract():
+    assert not inspect.isabstract(dsl_TouchSensor)
 
 
-def test_dsl::touchsensor_constructor_exists():
-    assert callable(dsl::TouchSensor.__init__)
+def test_dsl_touchsensor_constructor_exists():
+    assert callable(dsl_TouchSensor.__init__)
 
 
-def test_dsl::touchsensor_constructor_args():
-    sig = inspect.signature(dsl::TouchSensor.__init__)
+def test_dsl_touchsensor_constructor_args():
+    sig = inspect.signature(dsl_TouchSensor.__init__)
     params = list(sig.parameters.keys())
     assert "key" in params, "Missing parameter 'key'"
 
-def test_dsl::touchsensor_has_key():
-    assert hasattr(dsl::TouchSensor, "key")
+def test_dsl_touchsensor_has_key():
+    assert hasattr(dsl_TouchSensor, "key")
     descriptor = None
-    for klass in dsl::TouchSensor.__mro__:
+    for klass in dsl_TouchSensor.__mro__:
         if "key" in klass.__dict__:
             descriptor = klass.__dict__["key"]
             break
@@ -174,23 +174,23 @@ def test_dsl::touchsensor_has_key():
 
 
 
-def test_dsl::ignorables_is_not_abstract():
-    assert not inspect.isabstract(dsl::Ignorables)
+def test_dsl_ignorables_is_not_abstract():
+    assert not inspect.isabstract(dsl_Ignorables)
 
 
-def test_dsl::ignorables_constructor_exists():
-    assert callable(dsl::Ignorables.__init__)
+def test_dsl_ignorables_constructor_exists():
+    assert callable(dsl_Ignorables.__init__)
 
 
-def test_dsl::ignorables_constructor_args():
-    sig = inspect.signature(dsl::Ignorables.__init__)
+def test_dsl_ignorables_constructor_args():
+    sig = inspect.signature(dsl_Ignorables.__init__)
     params = list(sig.parameters.keys())
     assert "AVOID_OBJECTS" in params, "Missing parameter 'AVOID_OBJECTS'"
 
-def test_dsl::ignorables_has_AVOID_OBJECTS():
-    assert hasattr(dsl::Ignorables, "AVOID_OBJECTS")
+def test_dsl_ignorables_has_AVOID_OBJECTS():
+    assert hasattr(dsl_Ignorables, "AVOID_OBJECTS")
     descriptor = None
-    for klass in dsl::Ignorables.__mro__:
+    for klass in dsl_Ignorables.__mro__:
         if "AVOID_OBJECTS" in klass.__dict__:
             descriptor = klass.__dict__["AVOID_OBJECTS"]
             break
@@ -198,85 +198,111 @@ def test_dsl::ignorables_has_AVOID_OBJECTS():
 
 
 
-def test_dsl::sensortype_is_not_abstract():
-    assert not inspect.isabstract(dsl::SensorType)
+def test_dsl_sensortype_is_not_abstract():
+    assert not inspect.isabstract(dsl_SensorType)
 
 
-def test_dsl::sensortype_constructor_exists():
-    assert callable(dsl::SensorType.__init__)
+def test_dsl_sensortype_constructor_exists():
+    assert callable(dsl_SensorType.__init__)
 
 
-def test_dsl::sensortype_constructor_args():
-    sig = inspect.signature(dsl::SensorType.__init__)
+def test_dsl_sensortype_constructor_args():
+    sig = inspect.signature(dsl_SensorType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_dsl::task_is_not_abstract():
-    assert not inspect.isabstract(dsl::Task)
+def test_dsl_task_is_not_abstract():
+    assert not inspect.isabstract(dsl_Task)
 
 
-def test_dsl::task_constructor_exists():
-    assert callable(dsl::Task.__init__)
+def test_dsl_task_constructor_exists():
+    assert callable(dsl_Task.__init__)
 
 
-def test_dsl::task_constructor_args():
-    sig = inspect.signature(dsl::Task.__init__)
+def test_dsl_task_constructor_args():
+    sig = inspect.signature(dsl_Task.__init__)
     params = list(sig.parameters.keys())
-    assert "time" in params, "Missing parameter 'time'"
+    assert "nrOfTimes" in params, "Missing parameter 'nrOfTimes'"
     assert "action" in params, "Missing parameter 'action'"
     assert "name" in params, "Missing parameter 'name'"
-    assert "nrOfTimes" in params, "Missing parameter 'nrOfTimes'"
+    assert "time" in params, "Missing parameter 'time'"
 
-def test_dsl::task_has_time():
-    assert hasattr(dsl::Task, "time")
+def test_dsl_task_has_nrOfTimes():
+    assert hasattr(dsl_Task, "nrOfTimes")
     descriptor = None
-    for klass in dsl::Task.__mro__:
-        if "time" in klass.__dict__:
-            descriptor = klass.__dict__["time"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_dsl::task_has_action():
-    assert hasattr(dsl::Task, "action")
-    descriptor = None
-    for klass in dsl::Task.__mro__:
-        if "action" in klass.__dict__:
-            descriptor = klass.__dict__["action"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_dsl::task_has_name():
-    assert hasattr(dsl::Task, "name")
-    descriptor = None
-    for klass in dsl::Task.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_dsl::task_has_nrOfTimes():
-    assert hasattr(dsl::Task, "nrOfTimes")
-    descriptor = None
-    for klass in dsl::Task.__mro__:
+    for klass in dsl_Task.__mro__:
         if "nrOfTimes" in klass.__dict__:
             descriptor = klass.__dict__["nrOfTimes"]
             break
     assert isinstance(descriptor, property)
 
+def test_dsl_task_has_action():
+    assert hasattr(dsl_Task, "action")
+    descriptor = None
+    for klass in dsl_Task.__mro__:
+        if "action" in klass.__dict__:
+            descriptor = klass.__dict__["action"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_dsl_task_has_name():
+    assert hasattr(dsl_Task, "name")
+    descriptor = None
+    for klass in dsl_Task.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_dsl_task_has_time():
+    assert hasattr(dsl_Task, "time")
+    descriptor = None
+    for klass in dsl_Task.__mro__:
+        if "time" in klass.__dict__:
+            descriptor = klass.__dict__["time"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_dsl::mission_is_not_abstract():
-    assert not inspect.isabstract(dsl::Mission)
+
+def test_dsl_mission_is_not_abstract():
+    assert not inspect.isabstract(dsl_Mission)
 
 
-def test_dsl::mission_constructor_exists():
-    assert callable(dsl::Mission.__init__)
+def test_dsl_mission_constructor_exists():
+    assert callable(dsl_Mission.__init__)
 
 
-def test_dsl::mission_constructor_args():
-    sig = inspect.signature(dsl::Mission.__init__)
+def test_dsl_mission_constructor_args():
+    sig = inspect.signature(dsl_Mission.__init__)
     params = list(sig.parameters.keys())
+
+def test_colors_exists():
+    # Check that the Enumeration exists
+    assert Colors is not None
+
+def test_colors_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in Colors]
+    expected_literals = [
+        "BLACK",
+        "LIGHT_GRAY",
+        "PINK",
+        "CYAN",
+        "BLUE",
+        "GREEN",
+        "YELLOW",
+        "GRAY",
+        "RED",
+        "WHITE",
+        "MAGENTA",
+        "DARK_GRAY",
+        "ORANGE",
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in Colors"
 
 def test_touchsensorsides_exists():
     # Check that the Enumeration exists
@@ -286,14 +312,33 @@ def test_touchsensorsides_has_all_literals():
     # Collect the names of literals in this Enumeration
     enum_literals = [lit.name for lit in TouchSensorSides]
     expected_literals = [
-        "BOTH",
-        "RIGHT",
         "ANY",
         "LEFT",
+        "RIGHT",
+        "BOTH",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
         assert lit_name in enum_literals, f"Literal '' missing in TouchSensorSides"
+
+def test_compareoperator_exists():
+    # Check that the Enumeration exists
+    assert CompareOperator is not None
+
+def test_compareoperator_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in CompareOperator]
+    expected_literals = [
+        "GEQ",
+        "G",
+        "EQ",
+        "L",
+        "NEQ",
+        "LEQ",
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in CompareOperator"
 
 def test_timeunit_exists():
     # Check that the Enumeration exists
@@ -310,51 +355,6 @@ def test_timeunit_has_all_literals():
     for lit_name in expected_literals:
         assert lit_name in enum_literals, f"Literal '' missing in timeUnit"
 
-def test_colors_exists():
-    # Check that the Enumeration exists
-    assert Colors is not None
-
-def test_colors_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in Colors]
-    expected_literals = [
-        "LIGHT_GRAY",
-        "GRAY",
-        "ORANGE",
-        "PINK",
-        "GREEN",
-        "BLUE",
-        "BLACK",
-        "MAGENTA",
-        "CYAN",
-        "YELLOW",
-        "WHITE",
-        "RED",
-        "DARK_GRAY",
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in Colors"
-
-def test_compareoperator_exists():
-    # Check that the Enumeration exists
-    assert CompareOperator is not None
-
-def test_compareoperator_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in CompareOperator]
-    expected_literals = [
-        "NEQ",
-        "LEQ",
-        "G",
-        "GEQ",
-        "L",
-        "EQ",
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in CompareOperator"
-
 def test_actions_exists():
     # Check that the Enumeration exists
     assert Actions is not None
@@ -363,15 +363,15 @@ def test_actions_has_all_literals():
     # Collect the names of literals in this Enumeration
     enum_literals = [lit.name for lit in Actions]
     expected_literals = [
-        "BEEP",
         "ROTATE_L",
         "ROTATE_R",
-        "MEASURE",
         "STOP_DRIVING",
-        "TURN_AROUND",
-        "DRIVE_FORWARD",
+        "MEASURE",
         "DRIVE_BACKWARD",
         "DRIVETOEDGE",
+        "DRIVE_FORWARD",
+        "BEEP",
+        "TURN_AROUND",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
@@ -385,14 +385,14 @@ def test_directions_has_all_literals():
     # Collect the names of literals in this Enumeration
     enum_literals = [lit.name for lit in Directions]
     expected_literals = [
-        "E",
-        "NE",
-        "SE",
-        "SW",
         "S",
         "NW",
-        "N",
+        "E",
+        "SW",
         "W",
+        "SE",
+        "NE",
+        "N",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
@@ -410,71 +410,68 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-dsl::ColorValue_strategy = st.builds(
-    dsl::ColorValue,
+dsl_ColorValue_strategy = st.builds(
+    dsl_ColorValue,
     color=
         safe_text
 )
 SensorType_strategy = st.builds(
     SensorType,
 )
-dsl::ColorSensor_strategy = st.builds(
-    dsl::ColorSensor,
+dsl_ColorSensor_strategy = st.builds(
+    dsl_ColorSensor,
     distinct=
         st.booleans()
 )
-dsl::timeUnitValue_strategy = st.builds(
-    dsl::timeUnitValue,
+dsl_timeUnitValue_strategy = st.builds(
+    dsl_timeUnitValue,
     unit=
         safe_text
 )
-dsl::UltrasonicSensor_strategy = st.builds(
-    dsl::UltrasonicSensor,
-    distance=
-        safe_text,
+dsl_UltrasonicSensor_strategy = st.builds(
+    dsl_UltrasonicSensor,
     comparator=
+        safe_text,
+    distance=
         safe_text
 )
-dsl::TouchSensor_strategy = st.builds(
-    dsl::TouchSensor,
+dsl_TouchSensor_strategy = st.builds(
+    dsl_TouchSensor,
     key=
         safe_text
 )
-dsl::Ignorables_strategy = st.builds(
-    dsl::Ignorables,
+dsl_Ignorables_strategy = st.builds(
+    dsl_Ignorables,
     AVOID_OBJECTS=
         safe_text
 )
-dsl::SensorType_strategy = st.builds(
-    dsl::SensorType,
+dsl_SensorType_strategy = st.builds(
+    dsl_SensorType,
 )
-dsl::Task_strategy = st.builds(
-    dsl::Task,
-    time=
+dsl_Task_strategy = st.builds(
+    dsl_Task,
+    nrOfTimes=
         st.integers(),
     action=
         safe_text,
     name=
         safe_text,
-    nrOfTimes=
+    time=
         st.integers()
 )
-dsl::Mission_strategy = st.builds(
-    dsl::Mission,
+dsl_Mission_strategy = st.builds(
+    dsl_Mission,
 )
 
-@given(instance=dsl::ColorValue_strategy)
+@given(instance=dsl_ColorValue_strategy)
 @settings(max_examples=50)
-def test_dsl::colorvalue_instantiation(instance):
-    assert isinstance(instance, dsl::ColorValue)
-
-@given(instance=dsl::ColorValue_strategy)
-def test_dsl::colorvalue_color_type(instance):
-    assert isinstance(instance.color, str)
+def test_dsl_colorvalue_instantiation(instance):
+    assert isinstance(instance, dsl_ColorValue)
 
 
-@given(instance=dsl::ColorValue_strategy)
-def test_dsl::colorvalue_color_setter(instance):
+
+@given(instance=dsl_ColorValue_strategy)
+def test_dsl_colorvalue_color_setter(instance):
     original = instance.color
     instance.color = original
     assert instance.color == original
@@ -484,152 +481,122 @@ def test_dsl::colorvalue_color_setter(instance):
 def test_sensortype_instantiation(instance):
     assert isinstance(instance, SensorType)
 
-@given(instance=dsl::ColorSensor_strategy)
+@given(instance=dsl_ColorSensor_strategy)
 @settings(max_examples=50)
-def test_dsl::colorsensor_instantiation(instance):
-    assert isinstance(instance, dsl::ColorSensor)
-
-@given(instance=dsl::ColorSensor_strategy)
-def test_dsl::colorsensor_distinct_type(instance):
-    assert isinstance(instance.distinct, bool)
+def test_dsl_colorsensor_instantiation(instance):
+    assert isinstance(instance, dsl_ColorSensor)
 
 
-@given(instance=dsl::ColorSensor_strategy)
-def test_dsl::colorsensor_distinct_setter(instance):
+
+@given(instance=dsl_ColorSensor_strategy)
+def test_dsl_colorsensor_distinct_setter(instance):
     original = instance.distinct
     instance.distinct = original
     assert instance.distinct == original
 
-@given(instance=dsl::timeUnitValue_strategy)
+@given(instance=dsl_timeUnitValue_strategy)
 @settings(max_examples=50)
-def test_dsl::timeunitvalue_instantiation(instance):
-    assert isinstance(instance, dsl::timeUnitValue)
-
-@given(instance=dsl::timeUnitValue_strategy)
-def test_dsl::timeunitvalue_unit_type(instance):
-    assert isinstance(instance.unit, str)
+def test_dsl_timeunitvalue_instantiation(instance):
+    assert isinstance(instance, dsl_timeUnitValue)
 
 
-@given(instance=dsl::timeUnitValue_strategy)
-def test_dsl::timeunitvalue_unit_setter(instance):
+
+@given(instance=dsl_timeUnitValue_strategy)
+def test_dsl_timeunitvalue_unit_setter(instance):
     original = instance.unit
     instance.unit = original
     assert instance.unit == original
 
-@given(instance=dsl::UltrasonicSensor_strategy)
+@given(instance=dsl_UltrasonicSensor_strategy)
 @settings(max_examples=50)
-def test_dsl::ultrasonicsensor_instantiation(instance):
-    assert isinstance(instance, dsl::UltrasonicSensor)
-
-@given(instance=dsl::UltrasonicSensor_strategy)
-def test_dsl::ultrasonicsensor_distance_type(instance):
-    assert isinstance(instance.distance, str)
+def test_dsl_ultrasonicsensor_instantiation(instance):
+    assert isinstance(instance, dsl_UltrasonicSensor)
 
 
-@given(instance=dsl::UltrasonicSensor_strategy)
-def test_dsl::ultrasonicsensor_distance_setter(instance):
-    original = instance.distance
-    instance.distance = original
-    assert instance.distance == original
 
-@given(instance=dsl::UltrasonicSensor_strategy)
-def test_dsl::ultrasonicsensor_comparator_type(instance):
-    assert isinstance(instance.comparator, str)
-
-
-@given(instance=dsl::UltrasonicSensor_strategy)
-def test_dsl::ultrasonicsensor_comparator_setter(instance):
+@given(instance=dsl_UltrasonicSensor_strategy)
+def test_dsl_ultrasonicsensor_comparator_setter(instance):
     original = instance.comparator
     instance.comparator = original
     assert instance.comparator == original
 
-@given(instance=dsl::TouchSensor_strategy)
+
+
+@given(instance=dsl_UltrasonicSensor_strategy)
+def test_dsl_ultrasonicsensor_distance_setter(instance):
+    original = instance.distance
+    instance.distance = original
+    assert instance.distance == original
+
+@given(instance=dsl_TouchSensor_strategy)
 @settings(max_examples=50)
-def test_dsl::touchsensor_instantiation(instance):
-    assert isinstance(instance, dsl::TouchSensor)
-
-@given(instance=dsl::TouchSensor_strategy)
-def test_dsl::touchsensor_key_type(instance):
-    assert isinstance(instance.key, str)
+def test_dsl_touchsensor_instantiation(instance):
+    assert isinstance(instance, dsl_TouchSensor)
 
 
-@given(instance=dsl::TouchSensor_strategy)
-def test_dsl::touchsensor_key_setter(instance):
+
+@given(instance=dsl_TouchSensor_strategy)
+def test_dsl_touchsensor_key_setter(instance):
     original = instance.key
     instance.key = original
     assert instance.key == original
 
-@given(instance=dsl::Ignorables_strategy)
+@given(instance=dsl_Ignorables_strategy)
 @settings(max_examples=50)
-def test_dsl::ignorables_instantiation(instance):
-    assert isinstance(instance, dsl::Ignorables)
-
-@given(instance=dsl::Ignorables_strategy)
-def test_dsl::ignorables_AVOID_OBJECTS_type(instance):
-    assert isinstance(instance.AVOID_OBJECTS, str)
+def test_dsl_ignorables_instantiation(instance):
+    assert isinstance(instance, dsl_Ignorables)
 
 
-@given(instance=dsl::Ignorables_strategy)
-def test_dsl::ignorables_AVOID_OBJECTS_setter(instance):
+
+@given(instance=dsl_Ignorables_strategy)
+def test_dsl_ignorables_AVOID_OBJECTS_setter(instance):
     original = instance.AVOID_OBJECTS
     instance.AVOID_OBJECTS = original
     assert instance.AVOID_OBJECTS == original
 
-@given(instance=dsl::SensorType_strategy)
+@given(instance=dsl_SensorType_strategy)
 @settings(max_examples=50)
-def test_dsl::sensortype_instantiation(instance):
-    assert isinstance(instance, dsl::SensorType)
+def test_dsl_sensortype_instantiation(instance):
+    assert isinstance(instance, dsl_SensorType)
 
-@given(instance=dsl::Task_strategy)
+@given(instance=dsl_Task_strategy)
 @settings(max_examples=50)
-def test_dsl::task_instantiation(instance):
-    assert isinstance(instance, dsl::Task)
-
-@given(instance=dsl::Task_strategy)
-def test_dsl::task_time_type(instance):
-    assert isinstance(instance.time, int)
+def test_dsl_task_instantiation(instance):
+    assert isinstance(instance, dsl_Task)
 
 
-@given(instance=dsl::Task_strategy)
-def test_dsl::task_time_setter(instance):
-    original = instance.time
-    instance.time = original
-    assert instance.time == original
 
-@given(instance=dsl::Task_strategy)
-def test_dsl::task_action_type(instance):
-    assert isinstance(instance.action, str)
-
-
-@given(instance=dsl::Task_strategy)
-def test_dsl::task_action_setter(instance):
-    original = instance.action
-    instance.action = original
-    assert instance.action == original
-
-@given(instance=dsl::Task_strategy)
-def test_dsl::task_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=dsl::Task_strategy)
-def test_dsl::task_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
-
-@given(instance=dsl::Task_strategy)
-def test_dsl::task_nrOfTimes_type(instance):
-    assert isinstance(instance.nrOfTimes, int)
-
-
-@given(instance=dsl::Task_strategy)
-def test_dsl::task_nrOfTimes_setter(instance):
+@given(instance=dsl_Task_strategy)
+def test_dsl_task_nrOfTimes_setter(instance):
     original = instance.nrOfTimes
     instance.nrOfTimes = original
     assert instance.nrOfTimes == original
 
-@given(instance=dsl::Mission_strategy)
+
+
+@given(instance=dsl_Task_strategy)
+def test_dsl_task_action_setter(instance):
+    original = instance.action
+    instance.action = original
+    assert instance.action == original
+
+
+
+@given(instance=dsl_Task_strategy)
+def test_dsl_task_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+
+
+@given(instance=dsl_Task_strategy)
+def test_dsl_task_time_setter(instance):
+    original = instance.time
+    instance.time = original
+    assert instance.time == original
+
+@given(instance=dsl_Mission_strategy)
 @settings(max_examples=50)
-def test_dsl::mission_instantiation(instance):
-    assert isinstance(instance, dsl::Mission)
+def test_dsl_mission_instantiation(instance):
+    assert isinstance(instance, dsl_Mission)

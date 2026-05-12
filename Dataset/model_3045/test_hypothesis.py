@@ -3,38 +3,38 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    df::Expression,
-    df::VarToPortMapEntry,
-    df::PortToVarMapEntry,
-    df::Tag,
-    df::Pattern,
+from python_code import (
+    df_Expression,
+    df_VarToPortMapEntry,
+    df_PortToVarMapEntry,
+    df_Tag,
+    df_Pattern,
     Edge,
-    df::Transition,
-    df::Connection,
-    df::Vertex,
-    df::PortToEIntegerObjectMapEntry,
-    df::MoC,
+    df_Transition,
+    df_Connection,
+    df_Vertex,
+    df_PortToEIntegerObjectMapEntry,
+    df_MoC,
     Graph,
-    df::FSM,
-    df::EObject,
-    df::Argument,
+    df_FSM,
+    df_EObject,
+    df_Argument,
     Adaptable,
-    df::Network,
-    df::Type,
+    df_Network,
+    df_Type,
     Vertex,
-    df::Instance,
-    df::State,
-    df::Actor,
-    df::Port,
-    df::Procedure,
-    df::Var,
+    df_Actor,
+    df_State,
+    df_Instance,
+    df_Port,
+    df_Procedure,
+    df_Var,
     Attributable,
-    df::Entity,
-    df::Action,
-    df::Unit,
+    df_Action,
+    df_Entity,
+    df_Unit,
 )
 
 # =============================================================================
@@ -43,65 +43,65 @@ from classes import (
 
 
 
-def test_df::expression_is_not_abstract():
-    assert not inspect.isabstract(df::Expression)
+def test_df_expression_is_not_abstract():
+    assert not inspect.isabstract(df_Expression)
 
 
-def test_df::expression_constructor_exists():
-    assert callable(df::Expression.__init__)
+def test_df_expression_constructor_exists():
+    assert callable(df_Expression.__init__)
 
 
-def test_df::expression_constructor_args():
-    sig = inspect.signature(df::Expression.__init__)
+def test_df_expression_constructor_args():
+    sig = inspect.signature(df_Expression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_df::vartoportmapentry_is_not_abstract():
-    assert not inspect.isabstract(df::VarToPortMapEntry)
+def test_df_vartoportmapentry_is_not_abstract():
+    assert not inspect.isabstract(df_VarToPortMapEntry)
 
 
-def test_df::vartoportmapentry_constructor_exists():
-    assert callable(df::VarToPortMapEntry.__init__)
+def test_df_vartoportmapentry_constructor_exists():
+    assert callable(df_VarToPortMapEntry.__init__)
 
 
-def test_df::vartoportmapentry_constructor_args():
-    sig = inspect.signature(df::VarToPortMapEntry.__init__)
+def test_df_vartoportmapentry_constructor_args():
+    sig = inspect.signature(df_VarToPortMapEntry.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_df::porttovarmapentry_is_not_abstract():
-    assert not inspect.isabstract(df::PortToVarMapEntry)
+def test_df_porttovarmapentry_is_not_abstract():
+    assert not inspect.isabstract(df_PortToVarMapEntry)
 
 
-def test_df::porttovarmapentry_constructor_exists():
-    assert callable(df::PortToVarMapEntry.__init__)
+def test_df_porttovarmapentry_constructor_exists():
+    assert callable(df_PortToVarMapEntry.__init__)
 
 
-def test_df::porttovarmapentry_constructor_args():
-    sig = inspect.signature(df::PortToVarMapEntry.__init__)
+def test_df_porttovarmapentry_constructor_args():
+    sig = inspect.signature(df_PortToVarMapEntry.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_df::tag_is_not_abstract():
-    assert not inspect.isabstract(df::Tag)
+def test_df_tag_is_not_abstract():
+    assert not inspect.isabstract(df_Tag)
 
 
-def test_df::tag_constructor_exists():
-    assert callable(df::Tag.__init__)
+def test_df_tag_constructor_exists():
+    assert callable(df_Tag.__init__)
 
 
-def test_df::tag_constructor_args():
-    sig = inspect.signature(df::Tag.__init__)
+def test_df_tag_constructor_args():
+    sig = inspect.signature(df_Tag.__init__)
     params = list(sig.parameters.keys())
     assert "identifiers" in params, "Missing parameter 'identifiers'"
 
-def test_df::tag_has_identifiers():
-    assert hasattr(df::Tag, "identifiers")
+def test_df_tag_has_identifiers():
+    assert hasattr(df_Tag, "identifiers")
     descriptor = None
-    for klass in df::Tag.__mro__:
+    for klass in df_Tag.__mro__:
         if "identifiers" in klass.__dict__:
             descriptor = klass.__dict__["identifiers"]
             break
@@ -109,16 +109,16 @@ def test_df::tag_has_identifiers():
 
 
 
-def test_df::pattern_is_not_abstract():
-    assert not inspect.isabstract(df::Pattern)
+def test_df_pattern_is_not_abstract():
+    assert not inspect.isabstract(df_Pattern)
 
 
-def test_df::pattern_constructor_exists():
-    assert callable(df::Pattern.__init__)
+def test_df_pattern_constructor_exists():
+    assert callable(df_Pattern.__init__)
 
 
-def test_df::pattern_constructor_args():
-    sig = inspect.signature(df::Pattern.__init__)
+def test_df_pattern_constructor_args():
+    sig = inspect.signature(df_Pattern.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -137,65 +137,65 @@ def test_edge_constructor_args():
 
 
 
-def test_df::transition_is_not_abstract():
-    assert not inspect.isabstract(df::Transition)
+def test_df_transition_is_not_abstract():
+    assert not inspect.isabstract(df_Transition)
 
 
-def test_df::transition_constructor_exists():
-    assert callable(df::Transition.__init__)
+def test_df_transition_constructor_exists():
+    assert callable(df_Transition.__init__)
 
 
-def test_df::transition_constructor_args():
-    sig = inspect.signature(df::Transition.__init__)
+def test_df_transition_constructor_args():
+    sig = inspect.signature(df_Transition.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_df::connection_is_not_abstract():
-    assert not inspect.isabstract(df::Connection)
+def test_df_connection_is_not_abstract():
+    assert not inspect.isabstract(df_Connection)
 
 
-def test_df::connection_constructor_exists():
-    assert callable(df::Connection.__init__)
+def test_df_connection_constructor_exists():
+    assert callable(df_Connection.__init__)
 
 
-def test_df::connection_constructor_args():
-    sig = inspect.signature(df::Connection.__init__)
+def test_df_connection_constructor_args():
+    sig = inspect.signature(df_Connection.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_df::vertex_is_not_abstract():
-    assert not inspect.isabstract(df::Vertex)
+def test_df_vertex_is_not_abstract():
+    assert not inspect.isabstract(df_Vertex)
 
 
-def test_df::vertex_constructor_exists():
-    assert callable(df::Vertex.__init__)
+def test_df_vertex_constructor_exists():
+    assert callable(df_Vertex.__init__)
 
 
-def test_df::vertex_constructor_args():
-    sig = inspect.signature(df::Vertex.__init__)
+def test_df_vertex_constructor_args():
+    sig = inspect.signature(df_Vertex.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_df::porttoeintegerobjectmapentry_is_not_abstract():
-    assert not inspect.isabstract(df::PortToEIntegerObjectMapEntry)
+def test_df_porttoeintegerobjectmapentry_is_not_abstract():
+    assert not inspect.isabstract(df_PortToEIntegerObjectMapEntry)
 
 
-def test_df::porttoeintegerobjectmapentry_constructor_exists():
-    assert callable(df::PortToEIntegerObjectMapEntry.__init__)
+def test_df_porttoeintegerobjectmapentry_constructor_exists():
+    assert callable(df_PortToEIntegerObjectMapEntry.__init__)
 
 
-def test_df::porttoeintegerobjectmapentry_constructor_args():
-    sig = inspect.signature(df::PortToEIntegerObjectMapEntry.__init__)
+def test_df_porttoeintegerobjectmapentry_constructor_args():
+    sig = inspect.signature(df_PortToEIntegerObjectMapEntry.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
 
-def test_df::porttoeintegerobjectmapentry_has_value():
-    assert hasattr(df::PortToEIntegerObjectMapEntry, "value")
+def test_df_porttoeintegerobjectmapentry_has_value():
+    assert hasattr(df_PortToEIntegerObjectMapEntry, "value")
     descriptor = None
-    for klass in df::PortToEIntegerObjectMapEntry.__mro__:
+    for klass in df_PortToEIntegerObjectMapEntry.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -203,16 +203,16 @@ def test_df::porttoeintegerobjectmapentry_has_value():
 
 
 
-def test_df::moc_is_not_abstract():
-    assert not inspect.isabstract(df::MoC)
+def test_df_moc_is_not_abstract():
+    assert not inspect.isabstract(df_MoC)
 
 
-def test_df::moc_constructor_exists():
-    assert callable(df::MoC.__init__)
+def test_df_moc_constructor_exists():
+    assert callable(df_MoC.__init__)
 
 
-def test_df::moc_constructor_args():
-    sig = inspect.signature(df::MoC.__init__)
+def test_df_moc_constructor_args():
+    sig = inspect.signature(df_MoC.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -231,44 +231,44 @@ def test_graph_constructor_args():
 
 
 
-def test_df::fsm_is_not_abstract():
-    assert not inspect.isabstract(df::FSM)
+def test_df_fsm_is_not_abstract():
+    assert not inspect.isabstract(df_FSM)
 
 
-def test_df::fsm_constructor_exists():
-    assert callable(df::FSM.__init__)
+def test_df_fsm_constructor_exists():
+    assert callable(df_FSM.__init__)
 
 
-def test_df::fsm_constructor_args():
-    sig = inspect.signature(df::FSM.__init__)
+def test_df_fsm_constructor_args():
+    sig = inspect.signature(df_FSM.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_df::eobject_is_not_abstract():
-    assert not inspect.isabstract(df::EObject)
+def test_df_eobject_is_not_abstract():
+    assert not inspect.isabstract(df_EObject)
 
 
-def test_df::eobject_constructor_exists():
-    assert callable(df::EObject.__init__)
+def test_df_eobject_constructor_exists():
+    assert callable(df_EObject.__init__)
 
 
-def test_df::eobject_constructor_args():
-    sig = inspect.signature(df::EObject.__init__)
+def test_df_eobject_constructor_args():
+    sig = inspect.signature(df_EObject.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_df::argument_is_not_abstract():
-    assert not inspect.isabstract(df::Argument)
+def test_df_argument_is_not_abstract():
+    assert not inspect.isabstract(df_Argument)
 
 
-def test_df::argument_constructor_exists():
-    assert callable(df::Argument.__init__)
+def test_df_argument_constructor_exists():
+    assert callable(df_Argument.__init__)
 
 
-def test_df::argument_constructor_args():
-    sig = inspect.signature(df::Argument.__init__)
+def test_df_argument_constructor_args():
+    sig = inspect.signature(df_Argument.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -287,33 +287,33 @@ def test_adaptable_constructor_args():
 
 
 
-def test_df::network_is_not_abstract():
-    assert not inspect.isabstract(df::Network)
+def test_df_network_is_not_abstract():
+    assert not inspect.isabstract(df_Network)
 
 
-def test_df::network_constructor_exists():
-    assert callable(df::Network.__init__)
+def test_df_network_constructor_exists():
+    assert callable(df_Network.__init__)
 
 
-def test_df::network_constructor_args():
-    sig = inspect.signature(df::Network.__init__)
+def test_df_network_constructor_args():
+    sig = inspect.signature(df_Network.__init__)
     params = list(sig.parameters.keys())
     assert "fileName" in params, "Missing parameter 'fileName'"
     assert "name" in params, "Missing parameter 'name'"
 
-def test_df::network_has_fileName():
-    assert hasattr(df::Network, "fileName")
+def test_df_network_has_fileName():
+    assert hasattr(df_Network, "fileName")
     descriptor = None
-    for klass in df::Network.__mro__:
+    for klass in df_Network.__mro__:
         if "fileName" in klass.__dict__:
             descriptor = klass.__dict__["fileName"]
             break
     assert isinstance(descriptor, property)
 
-def test_df::network_has_name():
-    assert hasattr(df::Network, "name")
+def test_df_network_has_name():
+    assert hasattr(df_Network, "name")
     descriptor = None
-    for klass in df::Network.__mro__:
+    for klass in df_Network.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -321,16 +321,16 @@ def test_df::network_has_name():
 
 
 
-def test_df::type_is_not_abstract():
-    assert not inspect.isabstract(df::Type)
+def test_df_type_is_not_abstract():
+    assert not inspect.isabstract(df_Type)
 
 
-def test_df::type_constructor_exists():
-    assert callable(df::Type.__init__)
+def test_df_type_constructor_exists():
+    assert callable(df_Type.__init__)
 
 
-def test_df::type_constructor_args():
-    sig = inspect.signature(df::Type.__init__)
+def test_df_type_constructor_args():
+    sig = inspect.signature(df_Type.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -349,135 +349,135 @@ def test_vertex_constructor_args():
 
 
 
-def test_df::instance_is_not_abstract():
-    assert not inspect.isabstract(df::Instance)
+def test_df_actor_is_not_abstract():
+    assert not inspect.isabstract(df_Actor)
 
 
-def test_df::instance_constructor_exists():
-    assert callable(df::Instance.__init__)
+def test_df_actor_constructor_exists():
+    assert callable(df_Actor.__init__)
 
 
-def test_df::instance_constructor_args():
-    sig = inspect.signature(df::Instance.__init__)
+def test_df_actor_constructor_args():
+    sig = inspect.signature(df_Actor.__init__)
     params = list(sig.parameters.keys())
-    assert "name" in params, "Missing parameter 'name'"
-
-def test_df::instance_has_name():
-    assert hasattr(df::Instance, "name")
-    descriptor = None
-    for klass in df::Instance.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_df::state_is_not_abstract():
-    assert not inspect.isabstract(df::State)
-
-
-def test_df::state_constructor_exists():
-    assert callable(df::State.__init__)
-
-
-def test_df::state_constructor_args():
-    sig = inspect.signature(df::State.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_df::actor_is_not_abstract():
-    assert not inspect.isabstract(df::Actor)
-
-
-def test_df::actor_constructor_exists():
-    assert callable(df::Actor.__init__)
-
-
-def test_df::actor_constructor_args():
-    sig = inspect.signature(df::Actor.__init__)
-    params = list(sig.parameters.keys())
-    assert "name" in params, "Missing parameter 'name'"
-    assert "lineNumber" in params, "Missing parameter 'lineNumber'"
-    assert "native" in params, "Missing parameter 'native'"
     assert "fileName" in params, "Missing parameter 'fileName'"
+    assert "native" in params, "Missing parameter 'native'"
+    assert "lineNumber" in params, "Missing parameter 'lineNumber'"
+    assert "name" in params, "Missing parameter 'name'"
 
-def test_df::actor_has_name():
-    assert hasattr(df::Actor, "name")
+def test_df_actor_has_fileName():
+    assert hasattr(df_Actor, "fileName")
     descriptor = None
-    for klass in df::Actor.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_df::actor_has_lineNumber():
-    assert hasattr(df::Actor, "lineNumber")
-    descriptor = None
-    for klass in df::Actor.__mro__:
-        if "lineNumber" in klass.__dict__:
-            descriptor = klass.__dict__["lineNumber"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_df::actor_has_native():
-    assert hasattr(df::Actor, "native")
-    descriptor = None
-    for klass in df::Actor.__mro__:
-        if "native" in klass.__dict__:
-            descriptor = klass.__dict__["native"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_df::actor_has_fileName():
-    assert hasattr(df::Actor, "fileName")
-    descriptor = None
-    for klass in df::Actor.__mro__:
+    for klass in df_Actor.__mro__:
         if "fileName" in klass.__dict__:
             descriptor = klass.__dict__["fileName"]
             break
     assert isinstance(descriptor, property)
 
-
-
-def test_df::port_is_not_abstract():
-    assert not inspect.isabstract(df::Port)
-
-
-def test_df::port_constructor_exists():
-    assert callable(df::Port.__init__)
-
-
-def test_df::port_constructor_args():
-    sig = inspect.signature(df::Port.__init__)
-    params = list(sig.parameters.keys())
-    assert "numTokensConsumed" in params, "Missing parameter 'numTokensConsumed'"
-    assert "name" in params, "Missing parameter 'name'"
-    assert "numTokensProduced" in params, "Missing parameter 'numTokensProduced'"
-
-def test_df::port_has_numTokensConsumed():
-    assert hasattr(df::Port, "numTokensConsumed")
+def test_df_actor_has_native():
+    assert hasattr(df_Actor, "native")
     descriptor = None
-    for klass in df::Port.__mro__:
-        if "numTokensConsumed" in klass.__dict__:
-            descriptor = klass.__dict__["numTokensConsumed"]
+    for klass in df_Actor.__mro__:
+        if "native" in klass.__dict__:
+            descriptor = klass.__dict__["native"]
             break
     assert isinstance(descriptor, property)
 
-def test_df::port_has_name():
-    assert hasattr(df::Port, "name")
+def test_df_actor_has_lineNumber():
+    assert hasattr(df_Actor, "lineNumber")
     descriptor = None
-    for klass in df::Port.__mro__:
+    for klass in df_Actor.__mro__:
+        if "lineNumber" in klass.__dict__:
+            descriptor = klass.__dict__["lineNumber"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_df_actor_has_name():
+    assert hasattr(df_Actor, "name")
+    descriptor = None
+    for klass in df_Actor.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
-def test_df::port_has_numTokensProduced():
-    assert hasattr(df::Port, "numTokensProduced")
+
+
+def test_df_state_is_not_abstract():
+    assert not inspect.isabstract(df_State)
+
+
+def test_df_state_constructor_exists():
+    assert callable(df_State.__init__)
+
+
+def test_df_state_constructor_args():
+    sig = inspect.signature(df_State.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_df_instance_is_not_abstract():
+    assert not inspect.isabstract(df_Instance)
+
+
+def test_df_instance_constructor_exists():
+    assert callable(df_Instance.__init__)
+
+
+def test_df_instance_constructor_args():
+    sig = inspect.signature(df_Instance.__init__)
+    params = list(sig.parameters.keys())
+    assert "name" in params, "Missing parameter 'name'"
+
+def test_df_instance_has_name():
+    assert hasattr(df_Instance, "name")
     descriptor = None
-    for klass in df::Port.__mro__:
+    for klass in df_Instance.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_df_port_is_not_abstract():
+    assert not inspect.isabstract(df_Port)
+
+
+def test_df_port_constructor_exists():
+    assert callable(df_Port.__init__)
+
+
+def test_df_port_constructor_args():
+    sig = inspect.signature(df_Port.__init__)
+    params = list(sig.parameters.keys())
+    assert "name" in params, "Missing parameter 'name'"
+    assert "numTokensConsumed" in params, "Missing parameter 'numTokensConsumed'"
+    assert "numTokensProduced" in params, "Missing parameter 'numTokensProduced'"
+
+def test_df_port_has_name():
+    assert hasattr(df_Port, "name")
+    descriptor = None
+    for klass in df_Port.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_df_port_has_numTokensConsumed():
+    assert hasattr(df_Port, "numTokensConsumed")
+    descriptor = None
+    for klass in df_Port.__mro__:
+        if "numTokensConsumed" in klass.__dict__:
+            descriptor = klass.__dict__["numTokensConsumed"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_df_port_has_numTokensProduced():
+    assert hasattr(df_Port, "numTokensProduced")
+    descriptor = None
+    for klass in df_Port.__mro__:
         if "numTokensProduced" in klass.__dict__:
             descriptor = klass.__dict__["numTokensProduced"]
             break
@@ -485,30 +485,30 @@ def test_df::port_has_numTokensProduced():
 
 
 
-def test_df::procedure_is_not_abstract():
-    assert not inspect.isabstract(df::Procedure)
+def test_df_procedure_is_not_abstract():
+    assert not inspect.isabstract(df_Procedure)
 
 
-def test_df::procedure_constructor_exists():
-    assert callable(df::Procedure.__init__)
+def test_df_procedure_constructor_exists():
+    assert callable(df_Procedure.__init__)
 
 
-def test_df::procedure_constructor_args():
-    sig = inspect.signature(df::Procedure.__init__)
+def test_df_procedure_constructor_args():
+    sig = inspect.signature(df_Procedure.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_df::var_is_not_abstract():
-    assert not inspect.isabstract(df::Var)
+def test_df_var_is_not_abstract():
+    assert not inspect.isabstract(df_Var)
 
 
-def test_df::var_constructor_exists():
-    assert callable(df::Var.__init__)
+def test_df_var_constructor_exists():
+    assert callable(df_Var.__init__)
 
 
-def test_df::var_constructor_args():
-    sig = inspect.signature(df::Var.__init__)
+def test_df_var_constructor_args():
+    sig = inspect.signature(df_Var.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -527,103 +527,103 @@ def test_attributable_constructor_args():
 
 
 
-def test_df::entity_is_not_abstract():
-    assert not inspect.isabstract(df::Entity)
+def test_df_action_is_not_abstract():
+    assert not inspect.isabstract(df_Action)
 
 
-def test_df::entity_constructor_exists():
-    assert callable(df::Entity.__init__)
+def test_df_action_constructor_exists():
+    assert callable(df_Action.__init__)
 
 
-def test_df::entity_constructor_args():
-    sig = inspect.signature(df::Entity.__init__)
+def test_df_action_constructor_args():
+    sig = inspect.signature(df_Action.__init__)
     params = list(sig.parameters.keys())
-    assert "incomingPortMap" in params, "Missing parameter 'incomingPortMap'"
-    assert "name" in params, "Missing parameter 'name'"
+
+
+
+def test_df_entity_is_not_abstract():
+    assert not inspect.isabstract(df_Entity)
+
+
+def test_df_entity_constructor_exists():
+    assert callable(df_Entity.__init__)
+
+
+def test_df_entity_constructor_args():
+    sig = inspect.signature(df_Entity.__init__)
+    params = list(sig.parameters.keys())
     assert "outgoingPortMap" in params, "Missing parameter 'outgoingPortMap'"
+    assert "name" in params, "Missing parameter 'name'"
+    assert "incomingPortMap" in params, "Missing parameter 'incomingPortMap'"
 
-def test_df::entity_has_incomingPortMap():
-    assert hasattr(df::Entity, "incomingPortMap")
+def test_df_entity_has_outgoingPortMap():
+    assert hasattr(df_Entity, "outgoingPortMap")
     descriptor = None
-    for klass in df::Entity.__mro__:
-        if "incomingPortMap" in klass.__dict__:
-            descriptor = klass.__dict__["incomingPortMap"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_df::entity_has_name():
-    assert hasattr(df::Entity, "name")
-    descriptor = None
-    for klass in df::Entity.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_df::entity_has_outgoingPortMap():
-    assert hasattr(df::Entity, "outgoingPortMap")
-    descriptor = None
-    for klass in df::Entity.__mro__:
+    for klass in df_Entity.__mro__:
         if "outgoingPortMap" in klass.__dict__:
             descriptor = klass.__dict__["outgoingPortMap"]
             break
     assert isinstance(descriptor, property)
 
-
-
-def test_df::action_is_not_abstract():
-    assert not inspect.isabstract(df::Action)
-
-
-def test_df::action_constructor_exists():
-    assert callable(df::Action.__init__)
-
-
-def test_df::action_constructor_args():
-    sig = inspect.signature(df::Action.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_df::unit_is_not_abstract():
-    assert not inspect.isabstract(df::Unit)
-
-
-def test_df::unit_constructor_exists():
-    assert callable(df::Unit.__init__)
-
-
-def test_df::unit_constructor_args():
-    sig = inspect.signature(df::Unit.__init__)
-    params = list(sig.parameters.keys())
-    assert "name" in params, "Missing parameter 'name'"
-    assert "fileName" in params, "Missing parameter 'fileName'"
-    assert "lineNumber" in params, "Missing parameter 'lineNumber'"
-
-def test_df::unit_has_name():
-    assert hasattr(df::Unit, "name")
+def test_df_entity_has_name():
+    assert hasattr(df_Entity, "name")
     descriptor = None
-    for klass in df::Unit.__mro__:
+    for klass in df_Entity.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
-def test_df::unit_has_fileName():
-    assert hasattr(df::Unit, "fileName")
+def test_df_entity_has_incomingPortMap():
+    assert hasattr(df_Entity, "incomingPortMap")
     descriptor = None
-    for klass in df::Unit.__mro__:
-        if "fileName" in klass.__dict__:
-            descriptor = klass.__dict__["fileName"]
+    for klass in df_Entity.__mro__:
+        if "incomingPortMap" in klass.__dict__:
+            descriptor = klass.__dict__["incomingPortMap"]
             break
     assert isinstance(descriptor, property)
 
-def test_df::unit_has_lineNumber():
-    assert hasattr(df::Unit, "lineNumber")
+
+
+def test_df_unit_is_not_abstract():
+    assert not inspect.isabstract(df_Unit)
+
+
+def test_df_unit_constructor_exists():
+    assert callable(df_Unit.__init__)
+
+
+def test_df_unit_constructor_args():
+    sig = inspect.signature(df_Unit.__init__)
+    params = list(sig.parameters.keys())
+    assert "lineNumber" in params, "Missing parameter 'lineNumber'"
+    assert "name" in params, "Missing parameter 'name'"
+    assert "fileName" in params, "Missing parameter 'fileName'"
+
+def test_df_unit_has_lineNumber():
+    assert hasattr(df_Unit, "lineNumber")
     descriptor = None
-    for klass in df::Unit.__mro__:
+    for klass in df_Unit.__mro__:
         if "lineNumber" in klass.__dict__:
             descriptor = klass.__dict__["lineNumber"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_df_unit_has_name():
+    assert hasattr(df_Unit, "name")
+    descriptor = None
+    for klass in df_Unit.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_df_unit_has_fileName():
+    assert hasattr(df_Unit, "fileName")
+    descriptor = None
+    for klass in df_Unit.__mro__:
+        if "fileName" in klass.__dict__:
+            descriptor = klass.__dict__["fileName"]
             break
     assert isinstance(descriptor, property)
 
@@ -639,469 +639,415 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-df::Expression_strategy = st.builds(
-    df::Expression,
+df_Expression_strategy = st.builds(
+    df_Expression,
 )
-df::VarToPortMapEntry_strategy = st.builds(
-    df::VarToPortMapEntry,
+df_VarToPortMapEntry_strategy = st.builds(
+    df_VarToPortMapEntry,
 )
-df::PortToVarMapEntry_strategy = st.builds(
-    df::PortToVarMapEntry,
+df_PortToVarMapEntry_strategy = st.builds(
+    df_PortToVarMapEntry,
 )
-df::Tag_strategy = st.builds(
-    df::Tag,
+df_Tag_strategy = st.builds(
+    df_Tag,
     identifiers=
         safe_text
 )
-df::Pattern_strategy = st.builds(
-    df::Pattern,
+df_Pattern_strategy = st.builds(
+    df_Pattern,
 )
 Edge_strategy = st.builds(
     Edge,
 )
-df::Transition_strategy = st.builds(
-    df::Transition,
+df_Transition_strategy = st.builds(
+    df_Transition,
 )
-df::Connection_strategy = st.builds(
-    df::Connection,
+df_Connection_strategy = st.builds(
+    df_Connection,
 )
-df::Vertex_strategy = st.builds(
-    df::Vertex,
+df_Vertex_strategy = st.builds(
+    df_Vertex,
 )
-df::PortToEIntegerObjectMapEntry_strategy = st.builds(
-    df::PortToEIntegerObjectMapEntry,
+df_PortToEIntegerObjectMapEntry_strategy = st.builds(
+    df_PortToEIntegerObjectMapEntry,
     value=
         safe_text
 )
-df::MoC_strategy = st.builds(
-    df::MoC,
+df_MoC_strategy = st.builds(
+    df_MoC,
 )
 Graph_strategy = st.builds(
     Graph,
 )
-df::FSM_strategy = st.builds(
-    df::FSM,
+df_FSM_strategy = st.builds(
+    df_FSM,
 )
-df::EObject_strategy = st.builds(
-    df::EObject,
+df_EObject_strategy = st.builds(
+    df_EObject,
 )
-df::Argument_strategy = st.builds(
-    df::Argument,
+df_Argument_strategy = st.builds(
+    df_Argument,
 )
 Adaptable_strategy = st.builds(
     Adaptable,
 )
-df::Network_strategy = st.builds(
-    df::Network,
+df_Network_strategy = st.builds(
+    df_Network,
     fileName=
         safe_text,
     name=
         safe_text
 )
-df::Type_strategy = st.builds(
-    df::Type,
+df_Type_strategy = st.builds(
+    df_Type,
 )
 Vertex_strategy = st.builds(
     Vertex,
 )
-df::Instance_strategy = st.builds(
-    df::Instance,
-    name=
-        safe_text
-)
-df::State_strategy = st.builds(
-    df::State,
-)
-df::Actor_strategy = st.builds(
-    df::Actor,
-    name=
+df_Actor_strategy = st.builds(
+    df_Actor,
+    fileName=
         safe_text,
-    lineNumber=
-        st.integers(),
     native=
         st.booleans(),
-    fileName=
-        safe_text
-)
-df::Port_strategy = st.builds(
-    df::Port,
-    numTokensConsumed=
+    lineNumber=
         st.integers(),
     name=
+        safe_text
+)
+df_State_strategy = st.builds(
+    df_State,
+)
+df_Instance_strategy = st.builds(
+    df_Instance,
+    name=
+        safe_text
+)
+df_Port_strategy = st.builds(
+    df_Port,
+    name=
         safe_text,
+    numTokensConsumed=
+        st.integers(),
     numTokensProduced=
         st.integers()
 )
-df::Procedure_strategy = st.builds(
-    df::Procedure,
+df_Procedure_strategy = st.builds(
+    df_Procedure,
 )
-df::Var_strategy = st.builds(
-    df::Var,
+df_Var_strategy = st.builds(
+    df_Var,
 )
 Attributable_strategy = st.builds(
     Attributable,
 )
-df::Entity_strategy = st.builds(
-    df::Entity,
-    incomingPortMap=
+df_Action_strategy = st.builds(
+    df_Action,
+)
+df_Entity_strategy = st.builds(
+    df_Entity,
+    outgoingPortMap=
         safe_text,
     name=
         safe_text,
-    outgoingPortMap=
+    incomingPortMap=
         safe_text
 )
-df::Action_strategy = st.builds(
-    df::Action,
-)
-df::Unit_strategy = st.builds(
-    df::Unit,
+df_Unit_strategy = st.builds(
+    df_Unit,
+    lineNumber=
+        st.integers(),
     name=
         safe_text,
     fileName=
-        safe_text,
-    lineNumber=
-        st.integers()
+        safe_text
 )
 
-@given(instance=df::Expression_strategy)
+@given(instance=df_Expression_strategy)
 @settings(max_examples=50)
-def test_df::expression_instantiation(instance):
-    assert isinstance(instance, df::Expression)
+def test_df_expression_instantiation(instance):
+    assert isinstance(instance, df_Expression)
 
-@given(instance=df::VarToPortMapEntry_strategy)
+@given(instance=df_VarToPortMapEntry_strategy)
 @settings(max_examples=50)
-def test_df::vartoportmapentry_instantiation(instance):
-    assert isinstance(instance, df::VarToPortMapEntry)
+def test_df_vartoportmapentry_instantiation(instance):
+    assert isinstance(instance, df_VarToPortMapEntry)
 
-@given(instance=df::PortToVarMapEntry_strategy)
+@given(instance=df_PortToVarMapEntry_strategy)
 @settings(max_examples=50)
-def test_df::porttovarmapentry_instantiation(instance):
-    assert isinstance(instance, df::PortToVarMapEntry)
+def test_df_porttovarmapentry_instantiation(instance):
+    assert isinstance(instance, df_PortToVarMapEntry)
 
-@given(instance=df::Tag_strategy)
+@given(instance=df_Tag_strategy)
 @settings(max_examples=50)
-def test_df::tag_instantiation(instance):
-    assert isinstance(instance, df::Tag)
-
-@given(instance=df::Tag_strategy)
-def test_df::tag_identifiers_type(instance):
-    assert isinstance(instance.identifiers, str)
+def test_df_tag_instantiation(instance):
+    assert isinstance(instance, df_Tag)
 
 
-@given(instance=df::Tag_strategy)
-def test_df::tag_identifiers_setter(instance):
+
+@given(instance=df_Tag_strategy)
+def test_df_tag_identifiers_setter(instance):
     original = instance.identifiers
     instance.identifiers = original
     assert instance.identifiers == original
 
-@given(instance=df::Pattern_strategy)
+@given(instance=df_Pattern_strategy)
 @settings(max_examples=50)
-def test_df::pattern_instantiation(instance):
-    assert isinstance(instance, df::Pattern)
+def test_df_pattern_instantiation(instance):
+    assert isinstance(instance, df_Pattern)
 
 @given(instance=Edge_strategy)
 @settings(max_examples=50)
 def test_edge_instantiation(instance):
     assert isinstance(instance, Edge)
 
-@given(instance=df::Transition_strategy)
+@given(instance=df_Transition_strategy)
 @settings(max_examples=50)
-def test_df::transition_instantiation(instance):
-    assert isinstance(instance, df::Transition)
+def test_df_transition_instantiation(instance):
+    assert isinstance(instance, df_Transition)
 
-@given(instance=df::Connection_strategy)
+@given(instance=df_Connection_strategy)
 @settings(max_examples=50)
-def test_df::connection_instantiation(instance):
-    assert isinstance(instance, df::Connection)
+def test_df_connection_instantiation(instance):
+    assert isinstance(instance, df_Connection)
 
-@given(instance=df::Vertex_strategy)
+@given(instance=df_Vertex_strategy)
 @settings(max_examples=50)
-def test_df::vertex_instantiation(instance):
-    assert isinstance(instance, df::Vertex)
+def test_df_vertex_instantiation(instance):
+    assert isinstance(instance, df_Vertex)
 
-@given(instance=df::PortToEIntegerObjectMapEntry_strategy)
+@given(instance=df_PortToEIntegerObjectMapEntry_strategy)
 @settings(max_examples=50)
-def test_df::porttoeintegerobjectmapentry_instantiation(instance):
-    assert isinstance(instance, df::PortToEIntegerObjectMapEntry)
-
-@given(instance=df::PortToEIntegerObjectMapEntry_strategy)
-def test_df::porttoeintegerobjectmapentry_value_type(instance):
-    assert isinstance(instance.value, str)
+def test_df_porttoeintegerobjectmapentry_instantiation(instance):
+    assert isinstance(instance, df_PortToEIntegerObjectMapEntry)
 
 
-@given(instance=df::PortToEIntegerObjectMapEntry_strategy)
-def test_df::porttoeintegerobjectmapentry_value_setter(instance):
+
+@given(instance=df_PortToEIntegerObjectMapEntry_strategy)
+def test_df_porttoeintegerobjectmapentry_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
 
-@given(instance=df::MoC_strategy)
+@given(instance=df_MoC_strategy)
 @settings(max_examples=50)
-def test_df::moc_instantiation(instance):
-    assert isinstance(instance, df::MoC)
+def test_df_moc_instantiation(instance):
+    assert isinstance(instance, df_MoC)
 
 @given(instance=Graph_strategy)
 @settings(max_examples=50)
 def test_graph_instantiation(instance):
     assert isinstance(instance, Graph)
 
-@given(instance=df::FSM_strategy)
+@given(instance=df_FSM_strategy)
 @settings(max_examples=50)
-def test_df::fsm_instantiation(instance):
-    assert isinstance(instance, df::FSM)
+def test_df_fsm_instantiation(instance):
+    assert isinstance(instance, df_FSM)
 
-@given(instance=df::EObject_strategy)
+@given(instance=df_EObject_strategy)
 @settings(max_examples=50)
-def test_df::eobject_instantiation(instance):
-    assert isinstance(instance, df::EObject)
+def test_df_eobject_instantiation(instance):
+    assert isinstance(instance, df_EObject)
 
-@given(instance=df::Argument_strategy)
+@given(instance=df_Argument_strategy)
 @settings(max_examples=50)
-def test_df::argument_instantiation(instance):
-    assert isinstance(instance, df::Argument)
+def test_df_argument_instantiation(instance):
+    assert isinstance(instance, df_Argument)
 
 @given(instance=Adaptable_strategy)
 @settings(max_examples=50)
 def test_adaptable_instantiation(instance):
     assert isinstance(instance, Adaptable)
 
-@given(instance=df::Network_strategy)
+@given(instance=df_Network_strategy)
 @settings(max_examples=50)
-def test_df::network_instantiation(instance):
-    assert isinstance(instance, df::Network)
-
-@given(instance=df::Network_strategy)
-def test_df::network_fileName_type(instance):
-    assert isinstance(instance.fileName, str)
+def test_df_network_instantiation(instance):
+    assert isinstance(instance, df_Network)
 
 
-@given(instance=df::Network_strategy)
-def test_df::network_fileName_setter(instance):
+
+@given(instance=df_Network_strategy)
+def test_df_network_fileName_setter(instance):
     original = instance.fileName
     instance.fileName = original
     assert instance.fileName == original
 
-@given(instance=df::Network_strategy)
-def test_df::network_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
-@given(instance=df::Network_strategy)
-def test_df::network_name_setter(instance):
+@given(instance=df_Network_strategy)
+def test_df_network_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=df::Type_strategy)
+@given(instance=df_Type_strategy)
 @settings(max_examples=50)
-def test_df::type_instantiation(instance):
-    assert isinstance(instance, df::Type)
+def test_df_type_instantiation(instance):
+    assert isinstance(instance, df_Type)
 
 @given(instance=Vertex_strategy)
 @settings(max_examples=50)
 def test_vertex_instantiation(instance):
     assert isinstance(instance, Vertex)
 
-@given(instance=df::Instance_strategy)
+@given(instance=df_Actor_strategy)
 @settings(max_examples=50)
-def test_df::instance_instantiation(instance):
-    assert isinstance(instance, df::Instance)
-
-@given(instance=df::Instance_strategy)
-def test_df::instance_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_df_actor_instantiation(instance):
+    assert isinstance(instance, df_Actor)
 
 
-@given(instance=df::Instance_strategy)
-def test_df::instance_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
 
-@given(instance=df::State_strategy)
-@settings(max_examples=50)
-def test_df::state_instantiation(instance):
-    assert isinstance(instance, df::State)
-
-@given(instance=df::Actor_strategy)
-@settings(max_examples=50)
-def test_df::actor_instantiation(instance):
-    assert isinstance(instance, df::Actor)
-
-@given(instance=df::Actor_strategy)
-def test_df::actor_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=df::Actor_strategy)
-def test_df::actor_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
-
-@given(instance=df::Actor_strategy)
-def test_df::actor_lineNumber_type(instance):
-    assert isinstance(instance.lineNumber, int)
-
-
-@given(instance=df::Actor_strategy)
-def test_df::actor_lineNumber_setter(instance):
-    original = instance.lineNumber
-    instance.lineNumber = original
-    assert instance.lineNumber == original
-
-@given(instance=df::Actor_strategy)
-def test_df::actor_native_type(instance):
-    assert isinstance(instance.native, bool)
-
-
-@given(instance=df::Actor_strategy)
-def test_df::actor_native_setter(instance):
-    original = instance.native
-    instance.native = original
-    assert instance.native == original
-
-@given(instance=df::Actor_strategy)
-def test_df::actor_fileName_type(instance):
-    assert isinstance(instance.fileName, str)
-
-
-@given(instance=df::Actor_strategy)
-def test_df::actor_fileName_setter(instance):
+@given(instance=df_Actor_strategy)
+def test_df_actor_fileName_setter(instance):
     original = instance.fileName
     instance.fileName = original
     assert instance.fileName == original
 
-@given(instance=df::Port_strategy)
-@settings(max_examples=50)
-def test_df::port_instantiation(instance):
-    assert isinstance(instance, df::Port)
-
-@given(instance=df::Port_strategy)
-def test_df::port_numTokensConsumed_type(instance):
-    assert isinstance(instance.numTokensConsumed, int)
 
 
-@given(instance=df::Port_strategy)
-def test_df::port_numTokensConsumed_setter(instance):
-    original = instance.numTokensConsumed
-    instance.numTokensConsumed = original
-    assert instance.numTokensConsumed == original
-
-@given(instance=df::Port_strategy)
-def test_df::port_name_type(instance):
-    assert isinstance(instance.name, str)
+@given(instance=df_Actor_strategy)
+def test_df_actor_native_setter(instance):
+    original = instance.native
+    instance.native = original
+    assert instance.native == original
 
 
-@given(instance=df::Port_strategy)
-def test_df::port_name_setter(instance):
+
+@given(instance=df_Actor_strategy)
+def test_df_actor_lineNumber_setter(instance):
+    original = instance.lineNumber
+    instance.lineNumber = original
+    assert instance.lineNumber == original
+
+
+
+@given(instance=df_Actor_strategy)
+def test_df_actor_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=df::Port_strategy)
-def test_df::port_numTokensProduced_type(instance):
-    assert isinstance(instance.numTokensProduced, int)
+@given(instance=df_State_strategy)
+@settings(max_examples=50)
+def test_df_state_instantiation(instance):
+    assert isinstance(instance, df_State)
+
+@given(instance=df_Instance_strategy)
+@settings(max_examples=50)
+def test_df_instance_instantiation(instance):
+    assert isinstance(instance, df_Instance)
 
 
-@given(instance=df::Port_strategy)
-def test_df::port_numTokensProduced_setter(instance):
+
+@given(instance=df_Instance_strategy)
+def test_df_instance_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+@given(instance=df_Port_strategy)
+@settings(max_examples=50)
+def test_df_port_instantiation(instance):
+    assert isinstance(instance, df_Port)
+
+
+
+@given(instance=df_Port_strategy)
+def test_df_port_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+
+
+@given(instance=df_Port_strategy)
+def test_df_port_numTokensConsumed_setter(instance):
+    original = instance.numTokensConsumed
+    instance.numTokensConsumed = original
+    assert instance.numTokensConsumed == original
+
+
+
+@given(instance=df_Port_strategy)
+def test_df_port_numTokensProduced_setter(instance):
     original = instance.numTokensProduced
     instance.numTokensProduced = original
     assert instance.numTokensProduced == original
 
-@given(instance=df::Procedure_strategy)
+@given(instance=df_Procedure_strategy)
 @settings(max_examples=50)
-def test_df::procedure_instantiation(instance):
-    assert isinstance(instance, df::Procedure)
+def test_df_procedure_instantiation(instance):
+    assert isinstance(instance, df_Procedure)
 
-@given(instance=df::Var_strategy)
+@given(instance=df_Var_strategy)
 @settings(max_examples=50)
-def test_df::var_instantiation(instance):
-    assert isinstance(instance, df::Var)
+def test_df_var_instantiation(instance):
+    assert isinstance(instance, df_Var)
 
 @given(instance=Attributable_strategy)
 @settings(max_examples=50)
 def test_attributable_instantiation(instance):
     assert isinstance(instance, Attributable)
 
-@given(instance=df::Entity_strategy)
+@given(instance=df_Action_strategy)
 @settings(max_examples=50)
-def test_df::entity_instantiation(instance):
-    assert isinstance(instance, df::Entity)
+def test_df_action_instantiation(instance):
+    assert isinstance(instance, df_Action)
 
-@given(instance=df::Entity_strategy)
-def test_df::entity_incomingPortMap_type(instance):
-    assert isinstance(instance.incomingPortMap, str)
-
-
-@given(instance=df::Entity_strategy)
-def test_df::entity_incomingPortMap_setter(instance):
-    original = instance.incomingPortMap
-    instance.incomingPortMap = original
-    assert instance.incomingPortMap == original
-
-@given(instance=df::Entity_strategy)
-def test_df::entity_name_type(instance):
-    assert isinstance(instance.name, str)
+@given(instance=df_Entity_strategy)
+@settings(max_examples=50)
+def test_df_entity_instantiation(instance):
+    assert isinstance(instance, df_Entity)
 
 
-@given(instance=df::Entity_strategy)
-def test_df::entity_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
 
-@given(instance=df::Entity_strategy)
-def test_df::entity_outgoingPortMap_type(instance):
-    assert isinstance(instance.outgoingPortMap, str)
-
-
-@given(instance=df::Entity_strategy)
-def test_df::entity_outgoingPortMap_setter(instance):
+@given(instance=df_Entity_strategy)
+def test_df_entity_outgoingPortMap_setter(instance):
     original = instance.outgoingPortMap
     instance.outgoingPortMap = original
     assert instance.outgoingPortMap == original
 
-@given(instance=df::Action_strategy)
-@settings(max_examples=50)
-def test_df::action_instantiation(instance):
-    assert isinstance(instance, df::Action)
-
-@given(instance=df::Unit_strategy)
-@settings(max_examples=50)
-def test_df::unit_instantiation(instance):
-    assert isinstance(instance, df::Unit)
-
-@given(instance=df::Unit_strategy)
-def test_df::unit_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
-@given(instance=df::Unit_strategy)
-def test_df::unit_name_setter(instance):
+@given(instance=df_Entity_strategy)
+def test_df_entity_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=df::Unit_strategy)
-def test_df::unit_fileName_type(instance):
-    assert isinstance(instance.fileName, str)
 
 
-@given(instance=df::Unit_strategy)
-def test_df::unit_fileName_setter(instance):
-    original = instance.fileName
-    instance.fileName = original
-    assert instance.fileName == original
+@given(instance=df_Entity_strategy)
+def test_df_entity_incomingPortMap_setter(instance):
+    original = instance.incomingPortMap
+    instance.incomingPortMap = original
+    assert instance.incomingPortMap == original
 
-@given(instance=df::Unit_strategy)
-def test_df::unit_lineNumber_type(instance):
-    assert isinstance(instance.lineNumber, int)
+@given(instance=df_Unit_strategy)
+@settings(max_examples=50)
+def test_df_unit_instantiation(instance):
+    assert isinstance(instance, df_Unit)
 
 
-@given(instance=df::Unit_strategy)
-def test_df::unit_lineNumber_setter(instance):
+
+@given(instance=df_Unit_strategy)
+def test_df_unit_lineNumber_setter(instance):
     original = instance.lineNumber
     instance.lineNumber = original
     assert instance.lineNumber == original
+
+
+
+@given(instance=df_Unit_strategy)
+def test_df_unit_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+
+
+@given(instance=df_Unit_strategy)
+def test_df_unit_fileName_setter(instance):
+    original = instance.fileName
+    instance.fileName = original
+    assert instance.fileName == original

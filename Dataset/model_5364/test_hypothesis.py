@@ -3,10 +3,10 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    c::SuperStuff2,
+from python_code import (
+    c_SuperStuff2,
 )
 
 # =============================================================================
@@ -15,16 +15,16 @@ from classes import (
 
 
 
-def test_c::superstuff2_is_not_abstract():
-    assert not inspect.isabstract(c::SuperStuff2)
+def test_c_superstuff2_is_not_abstract():
+    assert not inspect.isabstract(c_SuperStuff2)
 
 
-def test_c::superstuff2_constructor_exists():
-    assert callable(c::SuperStuff2.__init__)
+def test_c_superstuff2_constructor_exists():
+    assert callable(c_SuperStuff2.__init__)
 
 
-def test_c::superstuff2_constructor_args():
-    sig = inspect.signature(c::SuperStuff2.__init__)
+def test_c_superstuff2_constructor_args():
+    sig = inspect.signature(c_SuperStuff2.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -39,11 +39,11 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-c::SuperStuff2_strategy = st.builds(
-    c::SuperStuff2,
+c_SuperStuff2_strategy = st.builds(
+    c_SuperStuff2,
 )
 
-@given(instance=c::SuperStuff2_strategy)
+@given(instance=c_SuperStuff2_strategy)
 @settings(max_examples=50)
-def test_c::superstuff2_instantiation(instance):
-    assert isinstance(instance, c::SuperStuff2)
+def test_c_superstuff2_instantiation(instance):
+    assert isinstance(instance, c_SuperStuff2)

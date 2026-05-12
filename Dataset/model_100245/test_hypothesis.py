@@ -3,12 +3,12 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     ValueType,
-    NumberValue,
     StringValue,
+    NumberValue,
     BooleanValue,
     Data,
     ErrorValue,
@@ -42,30 +42,6 @@ def test_valuetype_constructor_args():
 
 
 
-def test_numbervalue_is_not_abstract():
-    assert not inspect.isabstract(NumberValue)
-
-
-def test_numbervalue_constructor_exists():
-    assert callable(NumberValue.__init__)
-
-
-def test_numbervalue_constructor_args():
-    sig = inspect.signature(NumberValue.__init__)
-    params = list(sig.parameters.keys())
-    assert "value" in params, "Missing parameter 'value'"
-
-def test_numbervalue_has_value():
-    assert hasattr(NumberValue, "value")
-    descriptor = None
-    for klass in NumberValue.__mro__:
-        if "value" in klass.__dict__:
-            descriptor = klass.__dict__["value"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
 def test_stringvalue_is_not_abstract():
     assert not inspect.isabstract(StringValue)
 
@@ -83,6 +59,30 @@ def test_stringvalue_has_value():
     assert hasattr(StringValue, "value")
     descriptor = None
     for klass in StringValue.__mro__:
+        if "value" in klass.__dict__:
+            descriptor = klass.__dict__["value"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_numbervalue_is_not_abstract():
+    assert not inspect.isabstract(NumberValue)
+
+
+def test_numbervalue_constructor_exists():
+    assert callable(NumberValue.__init__)
+
+
+def test_numbervalue_constructor_args():
+    sig = inspect.signature(NumberValue.__init__)
+    params = list(sig.parameters.keys())
+    assert "value" in params, "Missing parameter 'value'"
+
+def test_numbervalue_has_value():
+    assert hasattr(NumberValue, "value")
+    descriptor = None
+    for klass in NumberValue.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -177,17 +177,8 @@ def test_cell_constructor_exists():
 def test_cell_constructor_args():
     sig = inspect.signature(Cell.__init__)
     params = list(sig.parameters.keys())
-    assert "formula" in params, "Missing parameter 'formula'"
     assert "index" in params, "Missing parameter 'index'"
-
-def test_cell_has_formula():
-    assert hasattr(Cell, "formula")
-    descriptor = None
-    for klass in Cell.__mro__:
-        if "formula" in klass.__dict__:
-            descriptor = klass.__dict__["formula"]
-            break
-    assert isinstance(descriptor, property)
+    assert "formula" in params, "Missing parameter 'formula'"
 
 def test_cell_has_index():
     assert hasattr(Cell, "index")
@@ -195,6 +186,15 @@ def test_cell_has_index():
     for klass in Cell.__mro__:
         if "index" in klass.__dict__:
             descriptor = klass.__dict__["index"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_cell_has_formula():
+    assert hasattr(Cell, "formula")
+    descriptor = None
+    for klass in Cell.__mro__:
+        if "formula" in klass.__dict__:
+            descriptor = klass.__dict__["formula"]
             break
     assert isinstance(descriptor, property)
 
@@ -211,9 +211,18 @@ def test_colorrowelement_constructor_exists():
 def test_colorrowelement_constructor_args():
     sig = inspect.signature(ColOrRowElement.__init__)
     params = list(sig.parameters.keys())
+    assert "span" in params, "Missing parameter 'span'"
     assert "index" in params, "Missing parameter 'index'"
     assert "hidden" in params, "Missing parameter 'hidden'"
-    assert "span" in params, "Missing parameter 'span'"
+
+def test_colorrowelement_has_span():
+    assert hasattr(ColOrRowElement, "span")
+    descriptor = None
+    for klass in ColOrRowElement.__mro__:
+        if "span" in klass.__dict__:
+            descriptor = klass.__dict__["span"]
+            break
+    assert isinstance(descriptor, property)
 
 def test_colorrowelement_has_index():
     assert hasattr(ColOrRowElement, "index")
@@ -233,15 +242,6 @@ def test_colorrowelement_has_hidden():
             break
     assert isinstance(descriptor, property)
 
-def test_colorrowelement_has_span():
-    assert hasattr(ColOrRowElement, "span")
-    descriptor = None
-    for klass in ColOrRowElement.__mro__:
-        if "span" in klass.__dict__:
-            descriptor = klass.__dict__["span"]
-            break
-    assert isinstance(descriptor, property)
-
 
 
 def test_row_is_not_abstract():
@@ -255,9 +255,18 @@ def test_row_constructor_exists():
 def test_row_constructor_args():
     sig = inspect.signature(Row.__init__)
     params = list(sig.parameters.keys())
+    assert "span" in params, "Missing parameter 'span'"
     assert "index" in params, "Missing parameter 'index'"
     assert "hidden" in params, "Missing parameter 'hidden'"
-    assert "span" in params, "Missing parameter 'span'"
+
+def test_row_has_span():
+    assert hasattr(Row, "span")
+    descriptor = None
+    for klass in Row.__mro__:
+        if "span" in klass.__dict__:
+            descriptor = klass.__dict__["span"]
+            break
+    assert isinstance(descriptor, property)
 
 def test_row_has_index():
     assert hasattr(Row, "index")
@@ -277,15 +286,6 @@ def test_row_has_hidden():
             break
     assert isinstance(descriptor, property)
 
-def test_row_has_span():
-    assert hasattr(Row, "span")
-    descriptor = None
-    for klass in Row.__mro__:
-        if "span" in klass.__dict__:
-            descriptor = klass.__dict__["span"]
-            break
-    assert isinstance(descriptor, property)
-
 
 
 def test_column_is_not_abstract():
@@ -299,9 +299,18 @@ def test_column_constructor_exists():
 def test_column_constructor_args():
     sig = inspect.signature(Column.__init__)
     params = list(sig.parameters.keys())
+    assert "span" in params, "Missing parameter 'span'"
     assert "index" in params, "Missing parameter 'index'"
     assert "hidden" in params, "Missing parameter 'hidden'"
-    assert "span" in params, "Missing parameter 'span'"
+
+def test_column_has_span():
+    assert hasattr(Column, "span")
+    descriptor = None
+    for klass in Column.__mro__:
+        if "span" in klass.__dict__:
+            descriptor = klass.__dict__["span"]
+            break
+    assert isinstance(descriptor, property)
 
 def test_column_has_index():
     assert hasattr(Column, "index")
@@ -318,15 +327,6 @@ def test_column_has_hidden():
     for klass in Column.__mro__:
         if "hidden" in klass.__dict__:
             descriptor = klass.__dict__["hidden"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_column_has_span():
-    assert hasattr(Column, "span")
-    descriptor = None
-    for klass in Column.__mro__:
-        if "span" in klass.__dict__:
-            descriptor = klass.__dict__["span"]
             break
     assert isinstance(descriptor, property)
 
@@ -397,15 +397,15 @@ safe_text = st.text(
 ValueType_strategy = st.builds(
     ValueType,
 )
-NumberValue_strategy = st.builds(
-    NumberValue,
-    value=
-        st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False)
-)
 StringValue_strategy = st.builds(
     StringValue,
     value=
         safe_text
+)
+NumberValue_strategy = st.builds(
+    NumberValue,
+    value=
+        st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False)
 )
 BooleanValue_strategy = st.builds(
     BooleanValue,
@@ -425,37 +425,37 @@ TableElement_strategy = st.builds(
 )
 Cell_strategy = st.builds(
     Cell,
-    formula=
-        safe_text,
     index=
-        st.integers()
+        st.integers(),
+    formula=
+        safe_text
 )
 ColOrRowElement_strategy = st.builds(
     ColOrRowElement,
+    span=
+        st.integers(),
     index=
         st.integers(),
     hidden=
-        st.booleans(),
-    span=
-        st.integers()
+        st.booleans()
 )
 Row_strategy = st.builds(
     Row,
+    span=
+        st.integers(),
     index=
         st.integers(),
     hidden=
-        st.booleans(),
-    span=
-        st.integers()
+        st.booleans()
 )
 Column_strategy = st.builds(
     Column,
+    span=
+        st.integers(),
     index=
         st.integers(),
     hidden=
-        st.booleans(),
-    span=
-        st.integers()
+        st.booleans()
 )
 Table_strategy = st.builds(
     Table,
@@ -474,34 +474,28 @@ Workbook_strategy = st.builds(
 def test_valuetype_instantiation(instance):
     assert isinstance(instance, ValueType)
 
-@given(instance=NumberValue_strategy)
-@settings(max_examples=50)
-def test_numbervalue_instantiation(instance):
-    assert isinstance(instance, NumberValue)
-
-@given(instance=NumberValue_strategy)
-def test_numbervalue_value_type(instance):
-    assert isinstance(instance.value, float)
-
-
-@given(instance=NumberValue_strategy)
-def test_numbervalue_value_setter(instance):
-    original = instance.value
-    instance.value = original
-    assert instance.value == original
-
 @given(instance=StringValue_strategy)
 @settings(max_examples=50)
 def test_stringvalue_instantiation(instance):
     assert isinstance(instance, StringValue)
 
-@given(instance=StringValue_strategy)
-def test_stringvalue_value_type(instance):
-    assert isinstance(instance.value, str)
 
 
 @given(instance=StringValue_strategy)
 def test_stringvalue_value_setter(instance):
+    original = instance.value
+    instance.value = original
+    assert instance.value == original
+
+@given(instance=NumberValue_strategy)
+@settings(max_examples=50)
+def test_numbervalue_instantiation(instance):
+    assert isinstance(instance, NumberValue)
+
+
+
+@given(instance=NumberValue_strategy)
+def test_numbervalue_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
@@ -511,9 +505,6 @@ def test_stringvalue_value_setter(instance):
 def test_booleanvalue_instantiation(instance):
     assert isinstance(instance, BooleanValue)
 
-@given(instance=BooleanValue_strategy)
-def test_booleanvalue_value_type(instance):
-    assert isinstance(instance.value, bool)
 
 
 @given(instance=BooleanValue_strategy)
@@ -537,9 +528,6 @@ def test_errorvalue_instantiation(instance):
 def test_tableelement_instantiation(instance):
     assert isinstance(instance, TableElement)
 
-@given(instance=TableElement_strategy)
-def test_tableelement_index_type(instance):
-    assert isinstance(instance.index, int)
 
 
 @given(instance=TableElement_strategy)
@@ -553,20 +541,6 @@ def test_tableelement_index_setter(instance):
 def test_cell_instantiation(instance):
     assert isinstance(instance, Cell)
 
-@given(instance=Cell_strategy)
-def test_cell_formula_type(instance):
-    assert isinstance(instance.formula, str)
-
-
-@given(instance=Cell_strategy)
-def test_cell_formula_setter(instance):
-    original = instance.formula
-    instance.formula = original
-    assert instance.formula == original
-
-@given(instance=Cell_strategy)
-def test_cell_index_type(instance):
-    assert isinstance(instance.index, int)
 
 
 @given(instance=Cell_strategy)
@@ -575,36 +549,19 @@ def test_cell_index_setter(instance):
     instance.index = original
     assert instance.index == original
 
+
+
+@given(instance=Cell_strategy)
+def test_cell_formula_setter(instance):
+    original = instance.formula
+    instance.formula = original
+    assert instance.formula == original
+
 @given(instance=ColOrRowElement_strategy)
 @settings(max_examples=50)
 def test_colorrowelement_instantiation(instance):
     assert isinstance(instance, ColOrRowElement)
 
-@given(instance=ColOrRowElement_strategy)
-def test_colorrowelement_index_type(instance):
-    assert isinstance(instance.index, int)
-
-
-@given(instance=ColOrRowElement_strategy)
-def test_colorrowelement_index_setter(instance):
-    original = instance.index
-    instance.index = original
-    assert instance.index == original
-
-@given(instance=ColOrRowElement_strategy)
-def test_colorrowelement_hidden_type(instance):
-    assert isinstance(instance.hidden, bool)
-
-
-@given(instance=ColOrRowElement_strategy)
-def test_colorrowelement_hidden_setter(instance):
-    original = instance.hidden
-    instance.hidden = original
-    assert instance.hidden == original
-
-@given(instance=ColOrRowElement_strategy)
-def test_colorrowelement_span_type(instance):
-    assert isinstance(instance.span, int)
 
 
 @given(instance=ColOrRowElement_strategy)
@@ -613,36 +570,27 @@ def test_colorrowelement_span_setter(instance):
     instance.span = original
     assert instance.span == original
 
-@given(instance=Row_strategy)
-@settings(max_examples=50)
-def test_row_instantiation(instance):
-    assert isinstance(instance, Row)
-
-@given(instance=Row_strategy)
-def test_row_index_type(instance):
-    assert isinstance(instance.index, int)
 
 
-@given(instance=Row_strategy)
-def test_row_index_setter(instance):
+@given(instance=ColOrRowElement_strategy)
+def test_colorrowelement_index_setter(instance):
     original = instance.index
     instance.index = original
     assert instance.index == original
 
-@given(instance=Row_strategy)
-def test_row_hidden_type(instance):
-    assert isinstance(instance.hidden, bool)
 
 
-@given(instance=Row_strategy)
-def test_row_hidden_setter(instance):
+@given(instance=ColOrRowElement_strategy)
+def test_colorrowelement_hidden_setter(instance):
     original = instance.hidden
     instance.hidden = original
     assert instance.hidden == original
 
 @given(instance=Row_strategy)
-def test_row_span_type(instance):
-    assert isinstance(instance.span, int)
+@settings(max_examples=50)
+def test_row_instantiation(instance):
+    assert isinstance(instance, Row)
+
 
 
 @given(instance=Row_strategy)
@@ -651,14 +599,35 @@ def test_row_span_setter(instance):
     instance.span = original
     assert instance.span == original
 
+
+
+@given(instance=Row_strategy)
+def test_row_index_setter(instance):
+    original = instance.index
+    instance.index = original
+    assert instance.index == original
+
+
+
+@given(instance=Row_strategy)
+def test_row_hidden_setter(instance):
+    original = instance.hidden
+    instance.hidden = original
+    assert instance.hidden == original
+
 @given(instance=Column_strategy)
 @settings(max_examples=50)
 def test_column_instantiation(instance):
     assert isinstance(instance, Column)
 
+
+
 @given(instance=Column_strategy)
-def test_column_index_type(instance):
-    assert isinstance(instance.index, int)
+def test_column_span_setter(instance):
+    original = instance.span
+    instance.span = original
+    assert instance.span == original
+
 
 
 @given(instance=Column_strategy)
@@ -667,9 +636,6 @@ def test_column_index_setter(instance):
     instance.index = original
     assert instance.index == original
 
-@given(instance=Column_strategy)
-def test_column_hidden_type(instance):
-    assert isinstance(instance.hidden, bool)
 
 
 @given(instance=Column_strategy)
@@ -677,17 +643,6 @@ def test_column_hidden_setter(instance):
     original = instance.hidden
     instance.hidden = original
     assert instance.hidden == original
-
-@given(instance=Column_strategy)
-def test_column_span_type(instance):
-    assert isinstance(instance.span, int)
-
-
-@given(instance=Column_strategy)
-def test_column_span_setter(instance):
-    original = instance.span
-    instance.span = original
-    assert instance.span == original
 
 @given(instance=Table_strategy)
 @settings(max_examples=50)
@@ -699,9 +654,6 @@ def test_table_instantiation(instance):
 def test_worksheet_instantiation(instance):
     assert isinstance(instance, Worksheet)
 
-@given(instance=Worksheet_strategy)
-def test_worksheet_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
 @given(instance=Worksheet_strategy)

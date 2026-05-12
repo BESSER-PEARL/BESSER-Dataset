@@ -3,14 +3,14 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    sQL::Table,
-    sQL::DataBase,
-    sQL::foreignKey,
-    sQL::primaryKey,
-    sQL::column,
+from python_code import (
+    sQL_Table,
+    sQL_DataBase,
+    sQL_foreignKey,
+    sQL_primaryKey,
+    sQL_column,
     DataType,
 )
 
@@ -20,23 +20,23 @@ from classes import (
 
 
 
-def test_sql::table_is_not_abstract():
-    assert not inspect.isabstract(sQL::Table)
+def test_sql_table_is_not_abstract():
+    assert not inspect.isabstract(sQL_Table)
 
 
-def test_sql::table_constructor_exists():
-    assert callable(sQL::Table.__init__)
+def test_sql_table_constructor_exists():
+    assert callable(sQL_Table.__init__)
 
 
-def test_sql::table_constructor_args():
-    sig = inspect.signature(sQL::Table.__init__)
+def test_sql_table_constructor_args():
+    sig = inspect.signature(sQL_Table.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_sql::table_has_name():
-    assert hasattr(sQL::Table, "name")
+def test_sql_table_has_name():
+    assert hasattr(sQL_Table, "name")
     descriptor = None
-    for klass in sQL::Table.__mro__:
+    for klass in sQL_Table.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -44,37 +44,37 @@ def test_sql::table_has_name():
 
 
 
-def test_sql::database_is_not_abstract():
-    assert not inspect.isabstract(sQL::DataBase)
+def test_sql_database_is_not_abstract():
+    assert not inspect.isabstract(sQL_DataBase)
 
 
-def test_sql::database_constructor_exists():
-    assert callable(sQL::DataBase.__init__)
+def test_sql_database_constructor_exists():
+    assert callable(sQL_DataBase.__init__)
 
 
-def test_sql::database_constructor_args():
-    sig = inspect.signature(sQL::DataBase.__init__)
+def test_sql_database_constructor_args():
+    sig = inspect.signature(sQL_DataBase.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sql::foreignkey_is_not_abstract():
-    assert not inspect.isabstract(sQL::foreignKey)
+def test_sql_foreignkey_is_not_abstract():
+    assert not inspect.isabstract(sQL_foreignKey)
 
 
-def test_sql::foreignkey_constructor_exists():
-    assert callable(sQL::foreignKey.__init__)
+def test_sql_foreignkey_constructor_exists():
+    assert callable(sQL_foreignKey.__init__)
 
 
-def test_sql::foreignkey_constructor_args():
-    sig = inspect.signature(sQL::foreignKey.__init__)
+def test_sql_foreignkey_constructor_args():
+    sig = inspect.signature(sQL_foreignKey.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_sql::foreignkey_has_name():
-    assert hasattr(sQL::foreignKey, "name")
+def test_sql_foreignkey_has_name():
+    assert hasattr(sQL_foreignKey, "name")
     descriptor = None
-    for klass in sQL::foreignKey.__mro__:
+    for klass in sQL_foreignKey.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -82,23 +82,23 @@ def test_sql::foreignkey_has_name():
 
 
 
-def test_sql::primarykey_is_not_abstract():
-    assert not inspect.isabstract(sQL::primaryKey)
+def test_sql_primarykey_is_not_abstract():
+    assert not inspect.isabstract(sQL_primaryKey)
 
 
-def test_sql::primarykey_constructor_exists():
-    assert callable(sQL::primaryKey.__init__)
+def test_sql_primarykey_constructor_exists():
+    assert callable(sQL_primaryKey.__init__)
 
 
-def test_sql::primarykey_constructor_args():
-    sig = inspect.signature(sQL::primaryKey.__init__)
+def test_sql_primarykey_constructor_args():
+    sig = inspect.signature(sQL_primaryKey.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_sql::primarykey_has_name():
-    assert hasattr(sQL::primaryKey, "name")
+def test_sql_primarykey_has_name():
+    assert hasattr(sQL_primaryKey, "name")
     descriptor = None
-    for klass in sQL::primaryKey.__mro__:
+    for klass in sQL_primaryKey.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -106,33 +106,33 @@ def test_sql::primarykey_has_name():
 
 
 
-def test_sql::column_is_not_abstract():
-    assert not inspect.isabstract(sQL::column)
+def test_sql_column_is_not_abstract():
+    assert not inspect.isabstract(sQL_column)
 
 
-def test_sql::column_constructor_exists():
-    assert callable(sQL::column.__init__)
+def test_sql_column_constructor_exists():
+    assert callable(sQL_column.__init__)
 
 
-def test_sql::column_constructor_args():
-    sig = inspect.signature(sQL::column.__init__)
+def test_sql_column_constructor_args():
+    sig = inspect.signature(sQL_column.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
     assert "type" in params, "Missing parameter 'type'"
 
-def test_sql::column_has_name():
-    assert hasattr(sQL::column, "name")
+def test_sql_column_has_name():
+    assert hasattr(sQL_column, "name")
     descriptor = None
-    for klass in sQL::column.__mro__:
+    for klass in sQL_column.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
-def test_sql::column_has_type():
-    assert hasattr(sQL::column, "type")
+def test_sql_column_has_type():
+    assert hasattr(sQL_column, "type")
     descriptor = None
-    for klass in sQL::column.__mro__:
+    for klass in sQL_column.__mro__:
         if "type" in klass.__dict__:
             descriptor = klass.__dict__["type"]
             break
@@ -146,16 +146,16 @@ def test_datatype_has_all_literals():
     # Collect the names of literals in this Enumeration
     enum_literals = [lit.name for lit in DataType]
     expected_literals = [
+        "FLOAT",
+        "DATE",
         "NUMERIC",
         "VARCHAR255",
         "DECIMAL",
-        "VARCHAR",
-        "DATE",
-        "FLOAT",
-        "CHAR",
-        "TIME",
-        "INT",
         "BOOL",
+        "CHAR",
+        "VARCHAR",
+        "INT",
+        "TIME",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
@@ -173,108 +173,93 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-sQL::Table_strategy = st.builds(
-    sQL::Table,
+sQL_Table_strategy = st.builds(
+    sQL_Table,
     name=
         safe_text
 )
-sQL::DataBase_strategy = st.builds(
-    sQL::DataBase,
+sQL_DataBase_strategy = st.builds(
+    sQL_DataBase,
 )
-sQL::foreignKey_strategy = st.builds(
-    sQL::foreignKey,
+sQL_foreignKey_strategy = st.builds(
+    sQL_foreignKey,
     name=
         safe_text
 )
-sQL::primaryKey_strategy = st.builds(
-    sQL::primaryKey,
+sQL_primaryKey_strategy = st.builds(
+    sQL_primaryKey,
     name=
         safe_text
 )
-sQL::column_strategy = st.builds(
-    sQL::column,
+sQL_column_strategy = st.builds(
+    sQL_column,
     name=
         safe_text,
     type=
         safe_text
 )
 
-@given(instance=sQL::Table_strategy)
+@given(instance=sQL_Table_strategy)
 @settings(max_examples=50)
-def test_sql::table_instantiation(instance):
-    assert isinstance(instance, sQL::Table)
-
-@given(instance=sQL::Table_strategy)
-def test_sql::table_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_sql_table_instantiation(instance):
+    assert isinstance(instance, sQL_Table)
 
 
-@given(instance=sQL::Table_strategy)
-def test_sql::table_name_setter(instance):
+
+@given(instance=sQL_Table_strategy)
+def test_sql_table_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=sQL::DataBase_strategy)
+@given(instance=sQL_DataBase_strategy)
 @settings(max_examples=50)
-def test_sql::database_instantiation(instance):
-    assert isinstance(instance, sQL::DataBase)
+def test_sql_database_instantiation(instance):
+    assert isinstance(instance, sQL_DataBase)
 
-@given(instance=sQL::foreignKey_strategy)
+@given(instance=sQL_foreignKey_strategy)
 @settings(max_examples=50)
-def test_sql::foreignkey_instantiation(instance):
-    assert isinstance(instance, sQL::foreignKey)
-
-@given(instance=sQL::foreignKey_strategy)
-def test_sql::foreignkey_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_sql_foreignkey_instantiation(instance):
+    assert isinstance(instance, sQL_foreignKey)
 
 
-@given(instance=sQL::foreignKey_strategy)
-def test_sql::foreignkey_name_setter(instance):
+
+@given(instance=sQL_foreignKey_strategy)
+def test_sql_foreignkey_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=sQL::primaryKey_strategy)
+@given(instance=sQL_primaryKey_strategy)
 @settings(max_examples=50)
-def test_sql::primarykey_instantiation(instance):
-    assert isinstance(instance, sQL::primaryKey)
-
-@given(instance=sQL::primaryKey_strategy)
-def test_sql::primarykey_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_sql_primarykey_instantiation(instance):
+    assert isinstance(instance, sQL_primaryKey)
 
 
-@given(instance=sQL::primaryKey_strategy)
-def test_sql::primarykey_name_setter(instance):
+
+@given(instance=sQL_primaryKey_strategy)
+def test_sql_primarykey_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=sQL::column_strategy)
+@given(instance=sQL_column_strategy)
 @settings(max_examples=50)
-def test_sql::column_instantiation(instance):
-    assert isinstance(instance, sQL::column)
-
-@given(instance=sQL::column_strategy)
-def test_sql::column_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_sql_column_instantiation(instance):
+    assert isinstance(instance, sQL_column)
 
 
-@given(instance=sQL::column_strategy)
-def test_sql::column_name_setter(instance):
+
+@given(instance=sQL_column_strategy)
+def test_sql_column_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=sQL::column_strategy)
-def test_sql::column_type_type(instance):
-    assert isinstance(instance.type, str)
 
 
-@given(instance=sQL::column_strategy)
-def test_sql::column_type_setter(instance):
+@given(instance=sQL_column_strategy)
+def test_sql_column_type_setter(instance):
     original = instance.type
     instance.type = original
     assert instance.type == original

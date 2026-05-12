@@ -3,12 +3,12 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    fsm::Transition,
-    fsm::State,
-    fsm::Fsm,
+from python_code import (
+    fsm_Transition,
+    fsm_State,
+    fsm_Fsm,
 )
 
 # =============================================================================
@@ -17,23 +17,23 @@ from classes import (
 
 
 
-def test_fsm::transition_is_not_abstract():
-    assert not inspect.isabstract(fsm::Transition)
+def test_fsm_transition_is_not_abstract():
+    assert not inspect.isabstract(fsm_Transition)
 
 
-def test_fsm::transition_constructor_exists():
-    assert callable(fsm::Transition.__init__)
+def test_fsm_transition_constructor_exists():
+    assert callable(fsm_Transition.__init__)
 
 
-def test_fsm::transition_constructor_args():
-    sig = inspect.signature(fsm::Transition.__init__)
+def test_fsm_transition_constructor_args():
+    sig = inspect.signature(fsm_Transition.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_fsm::transition_has_name():
-    assert hasattr(fsm::Transition, "name")
+def test_fsm_transition_has_name():
+    assert hasattr(fsm_Transition, "name")
     descriptor = None
-    for klass in fsm::Transition.__mro__:
+    for klass in fsm_Transition.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -41,23 +41,23 @@ def test_fsm::transition_has_name():
 
 
 
-def test_fsm::state_is_not_abstract():
-    assert not inspect.isabstract(fsm::State)
+def test_fsm_state_is_not_abstract():
+    assert not inspect.isabstract(fsm_State)
 
 
-def test_fsm::state_constructor_exists():
-    assert callable(fsm::State.__init__)
+def test_fsm_state_constructor_exists():
+    assert callable(fsm_State.__init__)
 
 
-def test_fsm::state_constructor_args():
-    sig = inspect.signature(fsm::State.__init__)
+def test_fsm_state_constructor_args():
+    sig = inspect.signature(fsm_State.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_fsm::state_has_name():
-    assert hasattr(fsm::State, "name")
+def test_fsm_state_has_name():
+    assert hasattr(fsm_State, "name")
     descriptor = None
-    for klass in fsm::State.__mro__:
+    for klass in fsm_State.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -65,23 +65,23 @@ def test_fsm::state_has_name():
 
 
 
-def test_fsm::fsm_is_not_abstract():
-    assert not inspect.isabstract(fsm::Fsm)
+def test_fsm_fsm_is_not_abstract():
+    assert not inspect.isabstract(fsm_Fsm)
 
 
-def test_fsm::fsm_constructor_exists():
-    assert callable(fsm::Fsm.__init__)
+def test_fsm_fsm_constructor_exists():
+    assert callable(fsm_Fsm.__init__)
 
 
-def test_fsm::fsm_constructor_args():
-    sig = inspect.signature(fsm::Fsm.__init__)
+def test_fsm_fsm_constructor_args():
+    sig = inspect.signature(fsm_Fsm.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_fsm::fsm_has_name():
-    assert hasattr(fsm::Fsm, "name")
+def test_fsm_fsm_has_name():
+    assert hasattr(fsm_Fsm, "name")
     descriptor = None
-    for klass in fsm::Fsm.__mro__:
+    for klass in fsm_Fsm.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -99,66 +99,57 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-fsm::Transition_strategy = st.builds(
-    fsm::Transition,
+fsm_Transition_strategy = st.builds(
+    fsm_Transition,
     name=
         safe_text
 )
-fsm::State_strategy = st.builds(
-    fsm::State,
+fsm_State_strategy = st.builds(
+    fsm_State,
     name=
         safe_text
 )
-fsm::Fsm_strategy = st.builds(
-    fsm::Fsm,
+fsm_Fsm_strategy = st.builds(
+    fsm_Fsm,
     name=
         safe_text
 )
 
-@given(instance=fsm::Transition_strategy)
+@given(instance=fsm_Transition_strategy)
 @settings(max_examples=50)
-def test_fsm::transition_instantiation(instance):
-    assert isinstance(instance, fsm::Transition)
-
-@given(instance=fsm::Transition_strategy)
-def test_fsm::transition_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_fsm_transition_instantiation(instance):
+    assert isinstance(instance, fsm_Transition)
 
 
-@given(instance=fsm::Transition_strategy)
-def test_fsm::transition_name_setter(instance):
+
+@given(instance=fsm_Transition_strategy)
+def test_fsm_transition_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=fsm::State_strategy)
+@given(instance=fsm_State_strategy)
 @settings(max_examples=50)
-def test_fsm::state_instantiation(instance):
-    assert isinstance(instance, fsm::State)
-
-@given(instance=fsm::State_strategy)
-def test_fsm::state_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_fsm_state_instantiation(instance):
+    assert isinstance(instance, fsm_State)
 
 
-@given(instance=fsm::State_strategy)
-def test_fsm::state_name_setter(instance):
+
+@given(instance=fsm_State_strategy)
+def test_fsm_state_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=fsm::Fsm_strategy)
+@given(instance=fsm_Fsm_strategy)
 @settings(max_examples=50)
-def test_fsm::fsm_instantiation(instance):
-    assert isinstance(instance, fsm::Fsm)
-
-@given(instance=fsm::Fsm_strategy)
-def test_fsm::fsm_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_fsm_fsm_instantiation(instance):
+    assert isinstance(instance, fsm_Fsm)
 
 
-@given(instance=fsm::Fsm_strategy)
-def test_fsm::fsm_name_setter(instance):
+
+@given(instance=fsm_Fsm_strategy)
+def test_fsm_fsm_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original

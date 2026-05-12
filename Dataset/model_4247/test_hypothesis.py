@@ -3,11 +3,11 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    ce::Company,
-    ce::Employee,
+from python_code import (
+    ce_Company,
+    ce_Employee,
 )
 
 # =============================================================================
@@ -16,23 +16,23 @@ from classes import (
 
 
 
-def test_ce::company_is_not_abstract():
-    assert not inspect.isabstract(ce::Company)
+def test_ce_company_is_not_abstract():
+    assert not inspect.isabstract(ce_Company)
 
 
-def test_ce::company_constructor_exists():
-    assert callable(ce::Company.__init__)
+def test_ce_company_constructor_exists():
+    assert callable(ce_Company.__init__)
 
 
-def test_ce::company_constructor_args():
-    sig = inspect.signature(ce::Company.__init__)
+def test_ce_company_constructor_args():
+    sig = inspect.signature(ce_Company.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_ce::company_has_name():
-    assert hasattr(ce::Company, "name")
+def test_ce_company_has_name():
+    assert hasattr(ce_Company, "name")
     descriptor = None
-    for klass in ce::Company.__mro__:
+    for klass in ce_Company.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -40,45 +40,45 @@ def test_ce::company_has_name():
 
 
 
-def test_ce::employee_is_not_abstract():
-    assert not inspect.isabstract(ce::Employee)
+def test_ce_employee_is_not_abstract():
+    assert not inspect.isabstract(ce_Employee)
 
 
-def test_ce::employee_constructor_exists():
-    assert callable(ce::Employee.__init__)
+def test_ce_employee_constructor_exists():
+    assert callable(ce_Employee.__init__)
 
 
-def test_ce::employee_constructor_args():
-    sig = inspect.signature(ce::Employee.__init__)
+def test_ce_employee_constructor_args():
+    sig = inspect.signature(ce_Employee.__init__)
     params = list(sig.parameters.keys())
-    assert "name" in params, "Missing parameter 'name'"
-    assert "address" in params, "Missing parameter 'address'"
     assert "department" in params, "Missing parameter 'department'"
+    assert "address" in params, "Missing parameter 'address'"
+    assert "name" in params, "Missing parameter 'name'"
 
-def test_ce::employee_has_name():
-    assert hasattr(ce::Employee, "name")
+def test_ce_employee_has_department():
+    assert hasattr(ce_Employee, "department")
     descriptor = None
-    for klass in ce::Employee.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
+    for klass in ce_Employee.__mro__:
+        if "department" in klass.__dict__:
+            descriptor = klass.__dict__["department"]
             break
     assert isinstance(descriptor, property)
 
-def test_ce::employee_has_address():
-    assert hasattr(ce::Employee, "address")
+def test_ce_employee_has_address():
+    assert hasattr(ce_Employee, "address")
     descriptor = None
-    for klass in ce::Employee.__mro__:
+    for klass in ce_Employee.__mro__:
         if "address" in klass.__dict__:
             descriptor = klass.__dict__["address"]
             break
     assert isinstance(descriptor, property)
 
-def test_ce::employee_has_department():
-    assert hasattr(ce::Employee, "department")
+def test_ce_employee_has_name():
+    assert hasattr(ce_Employee, "name")
     descriptor = None
-    for klass in ce::Employee.__mro__:
-        if "department" in klass.__dict__:
-            descriptor = klass.__dict__["department"]
+    for klass in ce_Employee.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
@@ -94,71 +94,59 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-ce::Company_strategy = st.builds(
-    ce::Company,
+ce_Company_strategy = st.builds(
+    ce_Company,
     name=
         safe_text
 )
-ce::Employee_strategy = st.builds(
-    ce::Employee,
-    name=
+ce_Employee_strategy = st.builds(
+    ce_Employee,
+    department=
         safe_text,
     address=
         safe_text,
-    department=
+    name=
         safe_text
 )
 
-@given(instance=ce::Company_strategy)
+@given(instance=ce_Company_strategy)
 @settings(max_examples=50)
-def test_ce::company_instantiation(instance):
-    assert isinstance(instance, ce::Company)
-
-@given(instance=ce::Company_strategy)
-def test_ce::company_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_ce_company_instantiation(instance):
+    assert isinstance(instance, ce_Company)
 
 
-@given(instance=ce::Company_strategy)
-def test_ce::company_name_setter(instance):
+
+@given(instance=ce_Company_strategy)
+def test_ce_company_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=ce::Employee_strategy)
+@given(instance=ce_Employee_strategy)
 @settings(max_examples=50)
-def test_ce::employee_instantiation(instance):
-    assert isinstance(instance, ce::Employee)
-
-@given(instance=ce::Employee_strategy)
-def test_ce::employee_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_ce_employee_instantiation(instance):
+    assert isinstance(instance, ce_Employee)
 
 
-@given(instance=ce::Employee_strategy)
-def test_ce::employee_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
 
-@given(instance=ce::Employee_strategy)
-def test_ce::employee_address_type(instance):
-    assert isinstance(instance.address, str)
+@given(instance=ce_Employee_strategy)
+def test_ce_employee_department_setter(instance):
+    original = instance.department
+    instance.department = original
+    assert instance.department == original
 
 
-@given(instance=ce::Employee_strategy)
-def test_ce::employee_address_setter(instance):
+
+@given(instance=ce_Employee_strategy)
+def test_ce_employee_address_setter(instance):
     original = instance.address
     instance.address = original
     assert instance.address == original
 
-@given(instance=ce::Employee_strategy)
-def test_ce::employee_department_type(instance):
-    assert isinstance(instance.department, str)
 
 
-@given(instance=ce::Employee_strategy)
-def test_ce::employee_department_setter(instance):
-    original = instance.department
-    instance.department = original
-    assert instance.department == original
+@given(instance=ce_Employee_strategy)
+def test_ce_employee_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original

@@ -3,21 +3,21 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    state::Module,
-    state::StateMachine,
+from python_code import (
+    state_Module,
+    state_StateMachine,
     Node,
-    state::FinalNode,
-    state::State,
-    state::ConditionalNode,
-    state::InitialNode,
-    state::Condition,
+    state_State,
+    state_FinalNode,
+    state_ConditionalNode,
+    state_InitialNode,
+    state_Condition,
     Transition,
-    state::TimeoutTransition,
-    state::Transition,
-    state::Node,
+    state_TimeoutTransition,
+    state_Transition,
+    state_Node,
 )
 
 # =============================================================================
@@ -26,37 +26,37 @@ from classes import (
 
 
 
-def test_state::module_is_not_abstract():
-    assert not inspect.isabstract(state::Module)
+def test_state_module_is_not_abstract():
+    assert not inspect.isabstract(state_Module)
 
 
-def test_state::module_constructor_exists():
-    assert callable(state::Module.__init__)
+def test_state_module_constructor_exists():
+    assert callable(state_Module.__init__)
 
 
-def test_state::module_constructor_args():
-    sig = inspect.signature(state::Module.__init__)
+def test_state_module_constructor_args():
+    sig = inspect.signature(state_Module.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_state::statemachine_is_not_abstract():
-    assert not inspect.isabstract(state::StateMachine)
+def test_state_statemachine_is_not_abstract():
+    assert not inspect.isabstract(state_StateMachine)
 
 
-def test_state::statemachine_constructor_exists():
-    assert callable(state::StateMachine.__init__)
+def test_state_statemachine_constructor_exists():
+    assert callable(state_StateMachine.__init__)
 
 
-def test_state::statemachine_constructor_args():
-    sig = inspect.signature(state::StateMachine.__init__)
+def test_state_statemachine_constructor_args():
+    sig = inspect.signature(state_StateMachine.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_state::statemachine_has_name():
-    assert hasattr(state::StateMachine, "name")
+def test_state_statemachine_has_name():
+    assert hasattr(state_StateMachine, "name")
     descriptor = None
-    for klass in state::StateMachine.__mro__:
+    for klass in state_StateMachine.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -78,47 +78,33 @@ def test_node_constructor_args():
 
 
 
-def test_state::finalnode_is_not_abstract():
-    assert not inspect.isabstract(state::FinalNode)
+def test_state_state_is_not_abstract():
+    assert not inspect.isabstract(state_State)
 
 
-def test_state::finalnode_constructor_exists():
-    assert callable(state::FinalNode.__init__)
+def test_state_state_constructor_exists():
+    assert callable(state_State.__init__)
 
 
-def test_state::finalnode_constructor_args():
-    sig = inspect.signature(state::FinalNode.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_state::state_is_not_abstract():
-    assert not inspect.isabstract(state::State)
-
-
-def test_state::state_constructor_exists():
-    assert callable(state::State.__init__)
-
-
-def test_state::state_constructor_args():
-    sig = inspect.signature(state::State.__init__)
+def test_state_state_constructor_args():
+    sig = inspect.signature(state_State.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
     assert "duration" in params, "Missing parameter 'duration'"
 
-def test_state::state_has_name():
-    assert hasattr(state::State, "name")
+def test_state_state_has_name():
+    assert hasattr(state_State, "name")
     descriptor = None
-    for klass in state::State.__mro__:
+    for klass in state_State.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
-def test_state::state_has_duration():
-    assert hasattr(state::State, "duration")
+def test_state_state_has_duration():
+    assert hasattr(state_State, "duration")
     descriptor = None
-    for klass in state::State.__mro__:
+    for klass in state_State.__mro__:
         if "duration" in klass.__dict__:
             descriptor = klass.__dict__["duration"]
             break
@@ -126,51 +112,65 @@ def test_state::state_has_duration():
 
 
 
-def test_state::conditionalnode_is_not_abstract():
-    assert not inspect.isabstract(state::ConditionalNode)
+def test_state_finalnode_is_not_abstract():
+    assert not inspect.isabstract(state_FinalNode)
 
 
-def test_state::conditionalnode_constructor_exists():
-    assert callable(state::ConditionalNode.__init__)
+def test_state_finalnode_constructor_exists():
+    assert callable(state_FinalNode.__init__)
 
 
-def test_state::conditionalnode_constructor_args():
-    sig = inspect.signature(state::ConditionalNode.__init__)
+def test_state_finalnode_constructor_args():
+    sig = inspect.signature(state_FinalNode.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_state::initialnode_is_not_abstract():
-    assert not inspect.isabstract(state::InitialNode)
+def test_state_conditionalnode_is_not_abstract():
+    assert not inspect.isabstract(state_ConditionalNode)
 
 
-def test_state::initialnode_constructor_exists():
-    assert callable(state::InitialNode.__init__)
+def test_state_conditionalnode_constructor_exists():
+    assert callable(state_ConditionalNode.__init__)
 
 
-def test_state::initialnode_constructor_args():
-    sig = inspect.signature(state::InitialNode.__init__)
+def test_state_conditionalnode_constructor_args():
+    sig = inspect.signature(state_ConditionalNode.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_state::condition_is_not_abstract():
-    assert not inspect.isabstract(state::Condition)
+def test_state_initialnode_is_not_abstract():
+    assert not inspect.isabstract(state_InitialNode)
 
 
-def test_state::condition_constructor_exists():
-    assert callable(state::Condition.__init__)
+def test_state_initialnode_constructor_exists():
+    assert callable(state_InitialNode.__init__)
 
 
-def test_state::condition_constructor_args():
-    sig = inspect.signature(state::Condition.__init__)
+def test_state_initialnode_constructor_args():
+    sig = inspect.signature(state_InitialNode.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_state_condition_is_not_abstract():
+    assert not inspect.isabstract(state_Condition)
+
+
+def test_state_condition_constructor_exists():
+    assert callable(state_Condition.__init__)
+
+
+def test_state_condition_constructor_args():
+    sig = inspect.signature(state_Condition.__init__)
     params = list(sig.parameters.keys())
     assert "expression" in params, "Missing parameter 'expression'"
 
-def test_state::condition_has_expression():
-    assert hasattr(state::Condition, "expression")
+def test_state_condition_has_expression():
+    assert hasattr(state_Condition, "expression")
     descriptor = None
-    for klass in state::Condition.__mro__:
+    for klass in state_Condition.__mro__:
         if "expression" in klass.__dict__:
             descriptor = klass.__dict__["expression"]
             break
@@ -192,37 +192,37 @@ def test_transition_constructor_args():
 
 
 
-def test_state::timeouttransition_is_not_abstract():
-    assert not inspect.isabstract(state::TimeoutTransition)
+def test_state_timeouttransition_is_not_abstract():
+    assert not inspect.isabstract(state_TimeoutTransition)
 
 
-def test_state::timeouttransition_constructor_exists():
-    assert callable(state::TimeoutTransition.__init__)
+def test_state_timeouttransition_constructor_exists():
+    assert callable(state_TimeoutTransition.__init__)
 
 
-def test_state::timeouttransition_constructor_args():
-    sig = inspect.signature(state::TimeoutTransition.__init__)
+def test_state_timeouttransition_constructor_args():
+    sig = inspect.signature(state_TimeoutTransition.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_state::transition_is_not_abstract():
-    assert not inspect.isabstract(state::Transition)
+def test_state_transition_is_not_abstract():
+    assert not inspect.isabstract(state_Transition)
 
 
-def test_state::transition_constructor_exists():
-    assert callable(state::Transition.__init__)
+def test_state_transition_constructor_exists():
+    assert callable(state_Transition.__init__)
 
 
-def test_state::transition_constructor_args():
-    sig = inspect.signature(state::Transition.__init__)
+def test_state_transition_constructor_args():
+    sig = inspect.signature(state_Transition.__init__)
     params = list(sig.parameters.keys())
     assert "triggerEventName" in params, "Missing parameter 'triggerEventName'"
 
-def test_state::transition_has_triggerEventName():
-    assert hasattr(state::Transition, "triggerEventName")
+def test_state_transition_has_triggerEventName():
+    assert hasattr(state_Transition, "triggerEventName")
     descriptor = None
-    for klass in state::Transition.__mro__:
+    for klass in state_Transition.__mro__:
         if "triggerEventName" in klass.__dict__:
             descriptor = klass.__dict__["triggerEventName"]
             break
@@ -230,16 +230,16 @@ def test_state::transition_has_triggerEventName():
 
 
 
-def test_state::node_is_not_abstract():
-    assert not inspect.isabstract(state::Node)
+def test_state_node_is_not_abstract():
+    assert not inspect.isabstract(state_Node)
 
 
-def test_state::node_constructor_exists():
-    assert callable(state::Node.__init__)
+def test_state_node_constructor_exists():
+    assert callable(state_Node.__init__)
 
 
-def test_state::node_constructor_args():
-    sig = inspect.signature(state::Node.__init__)
+def test_state_node_constructor_args():
+    sig = inspect.signature(state_Node.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -254,70 +254,67 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-state::Module_strategy = st.builds(
-    state::Module,
+state_Module_strategy = st.builds(
+    state_Module,
 )
-state::StateMachine_strategy = st.builds(
-    state::StateMachine,
+state_StateMachine_strategy = st.builds(
+    state_StateMachine,
     name=
         safe_text
 )
 Node_strategy = st.builds(
     Node,
 )
-state::FinalNode_strategy = st.builds(
-    state::FinalNode,
-)
-state::State_strategy = st.builds(
-    state::State,
+state_State_strategy = st.builds(
+    state_State,
     name=
         safe_text,
     duration=
         safe_text
 )
-state::ConditionalNode_strategy = st.builds(
-    state::ConditionalNode,
+state_FinalNode_strategy = st.builds(
+    state_FinalNode,
 )
-state::InitialNode_strategy = st.builds(
-    state::InitialNode,
+state_ConditionalNode_strategy = st.builds(
+    state_ConditionalNode,
 )
-state::Condition_strategy = st.builds(
-    state::Condition,
+state_InitialNode_strategy = st.builds(
+    state_InitialNode,
+)
+state_Condition_strategy = st.builds(
+    state_Condition,
     expression=
         safe_text
 )
 Transition_strategy = st.builds(
     Transition,
 )
-state::TimeoutTransition_strategy = st.builds(
-    state::TimeoutTransition,
+state_TimeoutTransition_strategy = st.builds(
+    state_TimeoutTransition,
 )
-state::Transition_strategy = st.builds(
-    state::Transition,
+state_Transition_strategy = st.builds(
+    state_Transition,
     triggerEventName=
         safe_text
 )
-state::Node_strategy = st.builds(
-    state::Node,
+state_Node_strategy = st.builds(
+    state_Node,
 )
 
-@given(instance=state::Module_strategy)
+@given(instance=state_Module_strategy)
 @settings(max_examples=50)
-def test_state::module_instantiation(instance):
-    assert isinstance(instance, state::Module)
+def test_state_module_instantiation(instance):
+    assert isinstance(instance, state_Module)
 
-@given(instance=state::StateMachine_strategy)
+@given(instance=state_StateMachine_strategy)
 @settings(max_examples=50)
-def test_state::statemachine_instantiation(instance):
-    assert isinstance(instance, state::StateMachine)
-
-@given(instance=state::StateMachine_strategy)
-def test_state::statemachine_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_state_statemachine_instantiation(instance):
+    assert isinstance(instance, state_StateMachine)
 
 
-@given(instance=state::StateMachine_strategy)
-def test_state::statemachine_name_setter(instance):
+
+@given(instance=state_StateMachine_strategy)
+def test_state_statemachine_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
@@ -327,60 +324,51 @@ def test_state::statemachine_name_setter(instance):
 def test_node_instantiation(instance):
     assert isinstance(instance, Node)
 
-@given(instance=state::FinalNode_strategy)
+@given(instance=state_State_strategy)
 @settings(max_examples=50)
-def test_state::finalnode_instantiation(instance):
-    assert isinstance(instance, state::FinalNode)
-
-@given(instance=state::State_strategy)
-@settings(max_examples=50)
-def test_state::state_instantiation(instance):
-    assert isinstance(instance, state::State)
-
-@given(instance=state::State_strategy)
-def test_state::state_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_state_state_instantiation(instance):
+    assert isinstance(instance, state_State)
 
 
-@given(instance=state::State_strategy)
-def test_state::state_name_setter(instance):
+
+@given(instance=state_State_strategy)
+def test_state_state_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=state::State_strategy)
-def test_state::state_duration_type(instance):
-    assert isinstance(instance.duration, str)
 
 
-@given(instance=state::State_strategy)
-def test_state::state_duration_setter(instance):
+@given(instance=state_State_strategy)
+def test_state_state_duration_setter(instance):
     original = instance.duration
     instance.duration = original
     assert instance.duration == original
 
-@given(instance=state::ConditionalNode_strategy)
+@given(instance=state_FinalNode_strategy)
 @settings(max_examples=50)
-def test_state::conditionalnode_instantiation(instance):
-    assert isinstance(instance, state::ConditionalNode)
+def test_state_finalnode_instantiation(instance):
+    assert isinstance(instance, state_FinalNode)
 
-@given(instance=state::InitialNode_strategy)
+@given(instance=state_ConditionalNode_strategy)
 @settings(max_examples=50)
-def test_state::initialnode_instantiation(instance):
-    assert isinstance(instance, state::InitialNode)
+def test_state_conditionalnode_instantiation(instance):
+    assert isinstance(instance, state_ConditionalNode)
 
-@given(instance=state::Condition_strategy)
+@given(instance=state_InitialNode_strategy)
 @settings(max_examples=50)
-def test_state::condition_instantiation(instance):
-    assert isinstance(instance, state::Condition)
+def test_state_initialnode_instantiation(instance):
+    assert isinstance(instance, state_InitialNode)
 
-@given(instance=state::Condition_strategy)
-def test_state::condition_expression_type(instance):
-    assert isinstance(instance.expression, str)
+@given(instance=state_Condition_strategy)
+@settings(max_examples=50)
+def test_state_condition_instantiation(instance):
+    assert isinstance(instance, state_Condition)
 
 
-@given(instance=state::Condition_strategy)
-def test_state::condition_expression_setter(instance):
+
+@given(instance=state_Condition_strategy)
+def test_state_condition_expression_setter(instance):
     original = instance.expression
     instance.expression = original
     assert instance.expression == original
@@ -390,28 +378,25 @@ def test_state::condition_expression_setter(instance):
 def test_transition_instantiation(instance):
     assert isinstance(instance, Transition)
 
-@given(instance=state::TimeoutTransition_strategy)
+@given(instance=state_TimeoutTransition_strategy)
 @settings(max_examples=50)
-def test_state::timeouttransition_instantiation(instance):
-    assert isinstance(instance, state::TimeoutTransition)
+def test_state_timeouttransition_instantiation(instance):
+    assert isinstance(instance, state_TimeoutTransition)
 
-@given(instance=state::Transition_strategy)
+@given(instance=state_Transition_strategy)
 @settings(max_examples=50)
-def test_state::transition_instantiation(instance):
-    assert isinstance(instance, state::Transition)
-
-@given(instance=state::Transition_strategy)
-def test_state::transition_triggerEventName_type(instance):
-    assert isinstance(instance.triggerEventName, str)
+def test_state_transition_instantiation(instance):
+    assert isinstance(instance, state_Transition)
 
 
-@given(instance=state::Transition_strategy)
-def test_state::transition_triggerEventName_setter(instance):
+
+@given(instance=state_Transition_strategy)
+def test_state_transition_triggerEventName_setter(instance):
     original = instance.triggerEventName
     instance.triggerEventName = original
     assert instance.triggerEventName == original
 
-@given(instance=state::Node_strategy)
+@given(instance=state_Node_strategy)
 @settings(max_examples=50)
-def test_state::node_instantiation(instance):
-    assert isinstance(instance, state::Node)
+def test_state_node_instantiation(instance):
+    assert isinstance(instance, state_Node)

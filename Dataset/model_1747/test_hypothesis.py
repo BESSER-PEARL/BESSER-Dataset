@@ -3,12 +3,12 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    mytry::Author,
-    mytry::Book,
-    mytry::Library,
+from python_code import (
+    mytry_Author,
+    mytry_Book,
+    mytry_Library,
 )
 
 # =============================================================================
@@ -17,23 +17,23 @@ from classes import (
 
 
 
-def test_mytry::author_is_not_abstract():
-    assert not inspect.isabstract(mytry::Author)
+def test_mytry_author_is_not_abstract():
+    assert not inspect.isabstract(mytry_Author)
 
 
-def test_mytry::author_constructor_exists():
-    assert callable(mytry::Author.__init__)
+def test_mytry_author_constructor_exists():
+    assert callable(mytry_Author.__init__)
 
 
-def test_mytry::author_constructor_args():
-    sig = inspect.signature(mytry::Author.__init__)
+def test_mytry_author_constructor_args():
+    sig = inspect.signature(mytry_Author.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_mytry::author_has_name():
-    assert hasattr(mytry::Author, "name")
+def test_mytry_author_has_name():
+    assert hasattr(mytry_Author, "name")
     descriptor = None
-    for klass in mytry::Author.__mro__:
+    for klass in mytry_Author.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -41,23 +41,23 @@ def test_mytry::author_has_name():
 
 
 
-def test_mytry::book_is_not_abstract():
-    assert not inspect.isabstract(mytry::Book)
+def test_mytry_book_is_not_abstract():
+    assert not inspect.isabstract(mytry_Book)
 
 
-def test_mytry::book_constructor_exists():
-    assert callable(mytry::Book.__init__)
+def test_mytry_book_constructor_exists():
+    assert callable(mytry_Book.__init__)
 
 
-def test_mytry::book_constructor_args():
-    sig = inspect.signature(mytry::Book.__init__)
+def test_mytry_book_constructor_args():
+    sig = inspect.signature(mytry_Book.__init__)
     params = list(sig.parameters.keys())
     assert "title" in params, "Missing parameter 'title'"
 
-def test_mytry::book_has_title():
-    assert hasattr(mytry::Book, "title")
+def test_mytry_book_has_title():
+    assert hasattr(mytry_Book, "title")
     descriptor = None
-    for klass in mytry::Book.__mro__:
+    for klass in mytry_Book.__mro__:
         if "title" in klass.__dict__:
             descriptor = klass.__dict__["title"]
             break
@@ -65,16 +65,16 @@ def test_mytry::book_has_title():
 
 
 
-def test_mytry::library_is_not_abstract():
-    assert not inspect.isabstract(mytry::Library)
+def test_mytry_library_is_not_abstract():
+    assert not inspect.isabstract(mytry_Library)
 
 
-def test_mytry::library_constructor_exists():
-    assert callable(mytry::Library.__init__)
+def test_mytry_library_constructor_exists():
+    assert callable(mytry_Library.__init__)
 
 
-def test_mytry::library_constructor_args():
-    sig = inspect.signature(mytry::Library.__init__)
+def test_mytry_library_constructor_args():
+    sig = inspect.signature(mytry_Library.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -89,53 +89,47 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-mytry::Author_strategy = st.builds(
-    mytry::Author,
+mytry_Author_strategy = st.builds(
+    mytry_Author,
     name=
         safe_text
 )
-mytry::Book_strategy = st.builds(
-    mytry::Book,
+mytry_Book_strategy = st.builds(
+    mytry_Book,
     title=
         safe_text
 )
-mytry::Library_strategy = st.builds(
-    mytry::Library,
+mytry_Library_strategy = st.builds(
+    mytry_Library,
 )
 
-@given(instance=mytry::Author_strategy)
+@given(instance=mytry_Author_strategy)
 @settings(max_examples=50)
-def test_mytry::author_instantiation(instance):
-    assert isinstance(instance, mytry::Author)
-
-@given(instance=mytry::Author_strategy)
-def test_mytry::author_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_mytry_author_instantiation(instance):
+    assert isinstance(instance, mytry_Author)
 
 
-@given(instance=mytry::Author_strategy)
-def test_mytry::author_name_setter(instance):
+
+@given(instance=mytry_Author_strategy)
+def test_mytry_author_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=mytry::Book_strategy)
+@given(instance=mytry_Book_strategy)
 @settings(max_examples=50)
-def test_mytry::book_instantiation(instance):
-    assert isinstance(instance, mytry::Book)
-
-@given(instance=mytry::Book_strategy)
-def test_mytry::book_title_type(instance):
-    assert isinstance(instance.title, str)
+def test_mytry_book_instantiation(instance):
+    assert isinstance(instance, mytry_Book)
 
 
-@given(instance=mytry::Book_strategy)
-def test_mytry::book_title_setter(instance):
+
+@given(instance=mytry_Book_strategy)
+def test_mytry_book_title_setter(instance):
     original = instance.title
     instance.title = original
     assert instance.title == original
 
-@given(instance=mytry::Library_strategy)
+@given(instance=mytry_Library_strategy)
 @settings(max_examples=50)
-def test_mytry::library_instantiation(instance):
-    assert isinstance(instance, mytry::Library)
+def test_mytry_library_instantiation(instance):
+    assert isinstance(instance, mytry_Library)

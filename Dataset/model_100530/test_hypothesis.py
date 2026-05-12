@@ -3,39 +3,39 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     Responce,
     Stimilus,
-    USECASE1::Parameter,
+    USECASE1_Parameter,
     Episode,
-    USECASE1::Event,
+    USECASE1_Event,
     Event,
-    USECASE1::Episode,
-    USECASE1::PostCondition,
-    USECASE1::PreCondition,
-    USECASE1::Stimilus,
+    USECASE1_Episode,
+    USECASE1_PostCondition,
+    USECASE1_PreCondition,
+    USECASE1_Stimilus,
     Parameter,
-    USECASE1::Responce,
-    USECASE1::Context,
-    USECASE1::Action,
-    USECASE1::Scenario,
+    USECASE1_Responce,
+    USECASE1_Context,
+    USECASE1_Action,
+    USECASE1_Scenario,
     Task,
-    USECASE1::Service,
+    USECASE1_Service,
     PostCondition,
     PreCondition,
-    USECASE1::Goal,
+    USECASE1_Goal,
     User,
     Goal,
-    USECASE1::Actor,
+    USECASE1_Actor,
     Actor,
     UseCase,
     Context,
-    USECASE1::UseCase,
-    USECASE1::User,
+    USECASE1_UseCase,
+    USECASE1_User,
     Service,
-    USECASE1::Task,
+    USECASE1_Task,
 )
 
 # =============================================================================
@@ -72,16 +72,16 @@ def test_stimilus_constructor_args():
 
 
 
-def test_usecase1::parameter_is_not_abstract():
-    assert not inspect.isabstract(USECASE1::Parameter)
+def test_usecase1_parameter_is_not_abstract():
+    assert not inspect.isabstract(USECASE1_Parameter)
 
 
-def test_usecase1::parameter_constructor_exists():
-    assert callable(USECASE1::Parameter.__init__)
+def test_usecase1_parameter_constructor_exists():
+    assert callable(USECASE1_Parameter.__init__)
 
 
-def test_usecase1::parameter_constructor_args():
-    sig = inspect.signature(USECASE1::Parameter.__init__)
+def test_usecase1_parameter_constructor_args():
+    sig = inspect.signature(USECASE1_Parameter.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -100,16 +100,16 @@ def test_episode_constructor_args():
 
 
 
-def test_usecase1::event_is_not_abstract():
-    assert not inspect.isabstract(USECASE1::Event)
+def test_usecase1_event_is_not_abstract():
+    assert not inspect.isabstract(USECASE1_Event)
 
 
-def test_usecase1::event_constructor_exists():
-    assert callable(USECASE1::Event.__init__)
+def test_usecase1_event_constructor_exists():
+    assert callable(USECASE1_Event.__init__)
 
 
-def test_usecase1::event_constructor_args():
-    sig = inspect.signature(USECASE1::Event.__init__)
+def test_usecase1_event_constructor_args():
+    sig = inspect.signature(USECASE1_Event.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -128,58 +128,58 @@ def test_event_constructor_args():
 
 
 
-def test_usecase1::episode_is_not_abstract():
-    assert not inspect.isabstract(USECASE1::Episode)
+def test_usecase1_episode_is_not_abstract():
+    assert not inspect.isabstract(USECASE1_Episode)
 
 
-def test_usecase1::episode_constructor_exists():
-    assert callable(USECASE1::Episode.__init__)
+def test_usecase1_episode_constructor_exists():
+    assert callable(USECASE1_Episode.__init__)
 
 
-def test_usecase1::episode_constructor_args():
-    sig = inspect.signature(USECASE1::Episode.__init__)
+def test_usecase1_episode_constructor_args():
+    sig = inspect.signature(USECASE1_Episode.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_usecase1::postcondition_is_not_abstract():
-    assert not inspect.isabstract(USECASE1::PostCondition)
+def test_usecase1_postcondition_is_not_abstract():
+    assert not inspect.isabstract(USECASE1_PostCondition)
 
 
-def test_usecase1::postcondition_constructor_exists():
-    assert callable(USECASE1::PostCondition.__init__)
+def test_usecase1_postcondition_constructor_exists():
+    assert callable(USECASE1_PostCondition.__init__)
 
 
-def test_usecase1::postcondition_constructor_args():
-    sig = inspect.signature(USECASE1::PostCondition.__init__)
+def test_usecase1_postcondition_constructor_args():
+    sig = inspect.signature(USECASE1_PostCondition.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_usecase1::precondition_is_not_abstract():
-    assert not inspect.isabstract(USECASE1::PreCondition)
+def test_usecase1_precondition_is_not_abstract():
+    assert not inspect.isabstract(USECASE1_PreCondition)
 
 
-def test_usecase1::precondition_constructor_exists():
-    assert callable(USECASE1::PreCondition.__init__)
+def test_usecase1_precondition_constructor_exists():
+    assert callable(USECASE1_PreCondition.__init__)
 
 
-def test_usecase1::precondition_constructor_args():
-    sig = inspect.signature(USECASE1::PreCondition.__init__)
+def test_usecase1_precondition_constructor_args():
+    sig = inspect.signature(USECASE1_PreCondition.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_usecase1::stimilus_is_not_abstract():
-    assert not inspect.isabstract(USECASE1::Stimilus)
+def test_usecase1_stimilus_is_not_abstract():
+    assert not inspect.isabstract(USECASE1_Stimilus)
 
 
-def test_usecase1::stimilus_constructor_exists():
-    assert callable(USECASE1::Stimilus.__init__)
+def test_usecase1_stimilus_constructor_exists():
+    assert callable(USECASE1_Stimilus.__init__)
 
 
-def test_usecase1::stimilus_constructor_args():
-    sig = inspect.signature(USECASE1::Stimilus.__init__)
+def test_usecase1_stimilus_constructor_args():
+    sig = inspect.signature(USECASE1_Stimilus.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -198,58 +198,58 @@ def test_parameter_constructor_args():
 
 
 
-def test_usecase1::responce_is_not_abstract():
-    assert not inspect.isabstract(USECASE1::Responce)
+def test_usecase1_responce_is_not_abstract():
+    assert not inspect.isabstract(USECASE1_Responce)
 
 
-def test_usecase1::responce_constructor_exists():
-    assert callable(USECASE1::Responce.__init__)
+def test_usecase1_responce_constructor_exists():
+    assert callable(USECASE1_Responce.__init__)
 
 
-def test_usecase1::responce_constructor_args():
-    sig = inspect.signature(USECASE1::Responce.__init__)
+def test_usecase1_responce_constructor_args():
+    sig = inspect.signature(USECASE1_Responce.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_usecase1::context_is_not_abstract():
-    assert not inspect.isabstract(USECASE1::Context)
+def test_usecase1_context_is_not_abstract():
+    assert not inspect.isabstract(USECASE1_Context)
 
 
-def test_usecase1::context_constructor_exists():
-    assert callable(USECASE1::Context.__init__)
+def test_usecase1_context_constructor_exists():
+    assert callable(USECASE1_Context.__init__)
 
 
-def test_usecase1::context_constructor_args():
-    sig = inspect.signature(USECASE1::Context.__init__)
+def test_usecase1_context_constructor_args():
+    sig = inspect.signature(USECASE1_Context.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_usecase1::action_is_not_abstract():
-    assert not inspect.isabstract(USECASE1::Action)
+def test_usecase1_action_is_not_abstract():
+    assert not inspect.isabstract(USECASE1_Action)
 
 
-def test_usecase1::action_constructor_exists():
-    assert callable(USECASE1::Action.__init__)
+def test_usecase1_action_constructor_exists():
+    assert callable(USECASE1_Action.__init__)
 
 
-def test_usecase1::action_constructor_args():
-    sig = inspect.signature(USECASE1::Action.__init__)
+def test_usecase1_action_constructor_args():
+    sig = inspect.signature(USECASE1_Action.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_usecase1::scenario_is_not_abstract():
-    assert not inspect.isabstract(USECASE1::Scenario)
+def test_usecase1_scenario_is_not_abstract():
+    assert not inspect.isabstract(USECASE1_Scenario)
 
 
-def test_usecase1::scenario_constructor_exists():
-    assert callable(USECASE1::Scenario.__init__)
+def test_usecase1_scenario_constructor_exists():
+    assert callable(USECASE1_Scenario.__init__)
 
 
-def test_usecase1::scenario_constructor_args():
-    sig = inspect.signature(USECASE1::Scenario.__init__)
+def test_usecase1_scenario_constructor_args():
+    sig = inspect.signature(USECASE1_Scenario.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -268,16 +268,16 @@ def test_task_constructor_args():
 
 
 
-def test_usecase1::service_is_not_abstract():
-    assert not inspect.isabstract(USECASE1::Service)
+def test_usecase1_service_is_not_abstract():
+    assert not inspect.isabstract(USECASE1_Service)
 
 
-def test_usecase1::service_constructor_exists():
-    assert callable(USECASE1::Service.__init__)
+def test_usecase1_service_constructor_exists():
+    assert callable(USECASE1_Service.__init__)
 
 
-def test_usecase1::service_constructor_args():
-    sig = inspect.signature(USECASE1::Service.__init__)
+def test_usecase1_service_constructor_args():
+    sig = inspect.signature(USECASE1_Service.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -310,16 +310,16 @@ def test_precondition_constructor_args():
 
 
 
-def test_usecase1::goal_is_not_abstract():
-    assert not inspect.isabstract(USECASE1::Goal)
+def test_usecase1_goal_is_not_abstract():
+    assert not inspect.isabstract(USECASE1_Goal)
 
 
-def test_usecase1::goal_constructor_exists():
-    assert callable(USECASE1::Goal.__init__)
+def test_usecase1_goal_constructor_exists():
+    assert callable(USECASE1_Goal.__init__)
 
 
-def test_usecase1::goal_constructor_args():
-    sig = inspect.signature(USECASE1::Goal.__init__)
+def test_usecase1_goal_constructor_args():
+    sig = inspect.signature(USECASE1_Goal.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -352,16 +352,16 @@ def test_goal_constructor_args():
 
 
 
-def test_usecase1::actor_is_not_abstract():
-    assert not inspect.isabstract(USECASE1::Actor)
+def test_usecase1_actor_is_not_abstract():
+    assert not inspect.isabstract(USECASE1_Actor)
 
 
-def test_usecase1::actor_constructor_exists():
-    assert callable(USECASE1::Actor.__init__)
+def test_usecase1_actor_constructor_exists():
+    assert callable(USECASE1_Actor.__init__)
 
 
-def test_usecase1::actor_constructor_args():
-    sig = inspect.signature(USECASE1::Actor.__init__)
+def test_usecase1_actor_constructor_args():
+    sig = inspect.signature(USECASE1_Actor.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -408,30 +408,30 @@ def test_context_constructor_args():
 
 
 
-def test_usecase1::usecase_is_not_abstract():
-    assert not inspect.isabstract(USECASE1::UseCase)
+def test_usecase1_usecase_is_not_abstract():
+    assert not inspect.isabstract(USECASE1_UseCase)
 
 
-def test_usecase1::usecase_constructor_exists():
-    assert callable(USECASE1::UseCase.__init__)
+def test_usecase1_usecase_constructor_exists():
+    assert callable(USECASE1_UseCase.__init__)
 
 
-def test_usecase1::usecase_constructor_args():
-    sig = inspect.signature(USECASE1::UseCase.__init__)
+def test_usecase1_usecase_constructor_args():
+    sig = inspect.signature(USECASE1_UseCase.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_usecase1::user_is_not_abstract():
-    assert not inspect.isabstract(USECASE1::User)
+def test_usecase1_user_is_not_abstract():
+    assert not inspect.isabstract(USECASE1_User)
 
 
-def test_usecase1::user_constructor_exists():
-    assert callable(USECASE1::User.__init__)
+def test_usecase1_user_constructor_exists():
+    assert callable(USECASE1_User.__init__)
 
 
-def test_usecase1::user_constructor_args():
-    sig = inspect.signature(USECASE1::User.__init__)
+def test_usecase1_user_constructor_args():
+    sig = inspect.signature(USECASE1_User.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -450,16 +450,16 @@ def test_service_constructor_args():
 
 
 
-def test_usecase1::task_is_not_abstract():
-    assert not inspect.isabstract(USECASE1::Task)
+def test_usecase1_task_is_not_abstract():
+    assert not inspect.isabstract(USECASE1_Task)
 
 
-def test_usecase1::task_constructor_exists():
-    assert callable(USECASE1::Task.__init__)
+def test_usecase1_task_constructor_exists():
+    assert callable(USECASE1_Task.__init__)
 
 
-def test_usecase1::task_constructor_args():
-    sig = inspect.signature(USECASE1::Task.__init__)
+def test_usecase1_task_constructor_args():
+    sig = inspect.signature(USECASE1_Task.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -480,50 +480,50 @@ Responce_strategy = st.builds(
 Stimilus_strategy = st.builds(
     Stimilus,
 )
-USECASE1::Parameter_strategy = st.builds(
-    USECASE1::Parameter,
+USECASE1_Parameter_strategy = st.builds(
+    USECASE1_Parameter,
 )
 Episode_strategy = st.builds(
     Episode,
 )
-USECASE1::Event_strategy = st.builds(
-    USECASE1::Event,
+USECASE1_Event_strategy = st.builds(
+    USECASE1_Event,
 )
 Event_strategy = st.builds(
     Event,
 )
-USECASE1::Episode_strategy = st.builds(
-    USECASE1::Episode,
+USECASE1_Episode_strategy = st.builds(
+    USECASE1_Episode,
 )
-USECASE1::PostCondition_strategy = st.builds(
-    USECASE1::PostCondition,
+USECASE1_PostCondition_strategy = st.builds(
+    USECASE1_PostCondition,
 )
-USECASE1::PreCondition_strategy = st.builds(
-    USECASE1::PreCondition,
+USECASE1_PreCondition_strategy = st.builds(
+    USECASE1_PreCondition,
 )
-USECASE1::Stimilus_strategy = st.builds(
-    USECASE1::Stimilus,
+USECASE1_Stimilus_strategy = st.builds(
+    USECASE1_Stimilus,
 )
 Parameter_strategy = st.builds(
     Parameter,
 )
-USECASE1::Responce_strategy = st.builds(
-    USECASE1::Responce,
+USECASE1_Responce_strategy = st.builds(
+    USECASE1_Responce,
 )
-USECASE1::Context_strategy = st.builds(
-    USECASE1::Context,
+USECASE1_Context_strategy = st.builds(
+    USECASE1_Context,
 )
-USECASE1::Action_strategy = st.builds(
-    USECASE1::Action,
+USECASE1_Action_strategy = st.builds(
+    USECASE1_Action,
 )
-USECASE1::Scenario_strategy = st.builds(
-    USECASE1::Scenario,
+USECASE1_Scenario_strategy = st.builds(
+    USECASE1_Scenario,
 )
 Task_strategy = st.builds(
     Task,
 )
-USECASE1::Service_strategy = st.builds(
-    USECASE1::Service,
+USECASE1_Service_strategy = st.builds(
+    USECASE1_Service,
 )
 PostCondition_strategy = st.builds(
     PostCondition,
@@ -531,8 +531,8 @@ PostCondition_strategy = st.builds(
 PreCondition_strategy = st.builds(
     PreCondition,
 )
-USECASE1::Goal_strategy = st.builds(
-    USECASE1::Goal,
+USECASE1_Goal_strategy = st.builds(
+    USECASE1_Goal,
 )
 User_strategy = st.builds(
     User,
@@ -540,8 +540,8 @@ User_strategy = st.builds(
 Goal_strategy = st.builds(
     Goal,
 )
-USECASE1::Actor_strategy = st.builds(
-    USECASE1::Actor,
+USECASE1_Actor_strategy = st.builds(
+    USECASE1_Actor,
 )
 Actor_strategy = st.builds(
     Actor,
@@ -552,17 +552,17 @@ UseCase_strategy = st.builds(
 Context_strategy = st.builds(
     Context,
 )
-USECASE1::UseCase_strategy = st.builds(
-    USECASE1::UseCase,
+USECASE1_UseCase_strategy = st.builds(
+    USECASE1_UseCase,
 )
-USECASE1::User_strategy = st.builds(
-    USECASE1::User,
+USECASE1_User_strategy = st.builds(
+    USECASE1_User,
 )
 Service_strategy = st.builds(
     Service,
 )
-USECASE1::Task_strategy = st.builds(
-    USECASE1::Task,
+USECASE1_Task_strategy = st.builds(
+    USECASE1_Task,
 )
 
 @given(instance=Responce_strategy)
@@ -575,80 +575,80 @@ def test_responce_instantiation(instance):
 def test_stimilus_instantiation(instance):
     assert isinstance(instance, Stimilus)
 
-@given(instance=USECASE1::Parameter_strategy)
+@given(instance=USECASE1_Parameter_strategy)
 @settings(max_examples=50)
-def test_usecase1::parameter_instantiation(instance):
-    assert isinstance(instance, USECASE1::Parameter)
+def test_usecase1_parameter_instantiation(instance):
+    assert isinstance(instance, USECASE1_Parameter)
 
 @given(instance=Episode_strategy)
 @settings(max_examples=50)
 def test_episode_instantiation(instance):
     assert isinstance(instance, Episode)
 
-@given(instance=USECASE1::Event_strategy)
+@given(instance=USECASE1_Event_strategy)
 @settings(max_examples=50)
-def test_usecase1::event_instantiation(instance):
-    assert isinstance(instance, USECASE1::Event)
+def test_usecase1_event_instantiation(instance):
+    assert isinstance(instance, USECASE1_Event)
 
 @given(instance=Event_strategy)
 @settings(max_examples=50)
 def test_event_instantiation(instance):
     assert isinstance(instance, Event)
 
-@given(instance=USECASE1::Episode_strategy)
+@given(instance=USECASE1_Episode_strategy)
 @settings(max_examples=50)
-def test_usecase1::episode_instantiation(instance):
-    assert isinstance(instance, USECASE1::Episode)
+def test_usecase1_episode_instantiation(instance):
+    assert isinstance(instance, USECASE1_Episode)
 
-@given(instance=USECASE1::PostCondition_strategy)
+@given(instance=USECASE1_PostCondition_strategy)
 @settings(max_examples=50)
-def test_usecase1::postcondition_instantiation(instance):
-    assert isinstance(instance, USECASE1::PostCondition)
+def test_usecase1_postcondition_instantiation(instance):
+    assert isinstance(instance, USECASE1_PostCondition)
 
-@given(instance=USECASE1::PreCondition_strategy)
+@given(instance=USECASE1_PreCondition_strategy)
 @settings(max_examples=50)
-def test_usecase1::precondition_instantiation(instance):
-    assert isinstance(instance, USECASE1::PreCondition)
+def test_usecase1_precondition_instantiation(instance):
+    assert isinstance(instance, USECASE1_PreCondition)
 
-@given(instance=USECASE1::Stimilus_strategy)
+@given(instance=USECASE1_Stimilus_strategy)
 @settings(max_examples=50)
-def test_usecase1::stimilus_instantiation(instance):
-    assert isinstance(instance, USECASE1::Stimilus)
+def test_usecase1_stimilus_instantiation(instance):
+    assert isinstance(instance, USECASE1_Stimilus)
 
 @given(instance=Parameter_strategy)
 @settings(max_examples=50)
 def test_parameter_instantiation(instance):
     assert isinstance(instance, Parameter)
 
-@given(instance=USECASE1::Responce_strategy)
+@given(instance=USECASE1_Responce_strategy)
 @settings(max_examples=50)
-def test_usecase1::responce_instantiation(instance):
-    assert isinstance(instance, USECASE1::Responce)
+def test_usecase1_responce_instantiation(instance):
+    assert isinstance(instance, USECASE1_Responce)
 
-@given(instance=USECASE1::Context_strategy)
+@given(instance=USECASE1_Context_strategy)
 @settings(max_examples=50)
-def test_usecase1::context_instantiation(instance):
-    assert isinstance(instance, USECASE1::Context)
+def test_usecase1_context_instantiation(instance):
+    assert isinstance(instance, USECASE1_Context)
 
-@given(instance=USECASE1::Action_strategy)
+@given(instance=USECASE1_Action_strategy)
 @settings(max_examples=50)
-def test_usecase1::action_instantiation(instance):
-    assert isinstance(instance, USECASE1::Action)
+def test_usecase1_action_instantiation(instance):
+    assert isinstance(instance, USECASE1_Action)
 
-@given(instance=USECASE1::Scenario_strategy)
+@given(instance=USECASE1_Scenario_strategy)
 @settings(max_examples=50)
-def test_usecase1::scenario_instantiation(instance):
-    assert isinstance(instance, USECASE1::Scenario)
+def test_usecase1_scenario_instantiation(instance):
+    assert isinstance(instance, USECASE1_Scenario)
 
 @given(instance=Task_strategy)
 @settings(max_examples=50)
 def test_task_instantiation(instance):
     assert isinstance(instance, Task)
 
-@given(instance=USECASE1::Service_strategy)
+@given(instance=USECASE1_Service_strategy)
 @settings(max_examples=50)
-def test_usecase1::service_instantiation(instance):
-    assert isinstance(instance, USECASE1::Service)
+def test_usecase1_service_instantiation(instance):
+    assert isinstance(instance, USECASE1_Service)
 
 @given(instance=PostCondition_strategy)
 @settings(max_examples=50)
@@ -660,10 +660,10 @@ def test_postcondition_instantiation(instance):
 def test_precondition_instantiation(instance):
     assert isinstance(instance, PreCondition)
 
-@given(instance=USECASE1::Goal_strategy)
+@given(instance=USECASE1_Goal_strategy)
 @settings(max_examples=50)
-def test_usecase1::goal_instantiation(instance):
-    assert isinstance(instance, USECASE1::Goal)
+def test_usecase1_goal_instantiation(instance):
+    assert isinstance(instance, USECASE1_Goal)
 
 @given(instance=User_strategy)
 @settings(max_examples=50)
@@ -675,10 +675,10 @@ def test_user_instantiation(instance):
 def test_goal_instantiation(instance):
     assert isinstance(instance, Goal)
 
-@given(instance=USECASE1::Actor_strategy)
+@given(instance=USECASE1_Actor_strategy)
 @settings(max_examples=50)
-def test_usecase1::actor_instantiation(instance):
-    assert isinstance(instance, USECASE1::Actor)
+def test_usecase1_actor_instantiation(instance):
+    assert isinstance(instance, USECASE1_Actor)
 
 @given(instance=Actor_strategy)
 @settings(max_examples=50)
@@ -695,22 +695,22 @@ def test_usecase_instantiation(instance):
 def test_context_instantiation(instance):
     assert isinstance(instance, Context)
 
-@given(instance=USECASE1::UseCase_strategy)
+@given(instance=USECASE1_UseCase_strategy)
 @settings(max_examples=50)
-def test_usecase1::usecase_instantiation(instance):
-    assert isinstance(instance, USECASE1::UseCase)
+def test_usecase1_usecase_instantiation(instance):
+    assert isinstance(instance, USECASE1_UseCase)
 
-@given(instance=USECASE1::User_strategy)
+@given(instance=USECASE1_User_strategy)
 @settings(max_examples=50)
-def test_usecase1::user_instantiation(instance):
-    assert isinstance(instance, USECASE1::User)
+def test_usecase1_user_instantiation(instance):
+    assert isinstance(instance, USECASE1_User)
 
 @given(instance=Service_strategy)
 @settings(max_examples=50)
 def test_service_instantiation(instance):
     assert isinstance(instance, Service)
 
-@given(instance=USECASE1::Task_strategy)
+@given(instance=USECASE1_Task_strategy)
 @settings(max_examples=50)
-def test_usecase1::task_instantiation(instance):
-    assert isinstance(instance, USECASE1::Task)
+def test_usecase1_task_instantiation(instance):
+    assert isinstance(instance, USECASE1_Task)

@@ -3,41 +3,41 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    operators::Operator,
-    Operator,
-    operators::CREATE,
-    operators::QueryVariableQualifier,
-    operators::VAR,
-    operators::EOperation,
+from python_code import (
+    operators_QueryVariableQualifier,
+    operators_EOperation,
     QueryVariableQualifier,
-    operators::EReferenceQualifier,
-    operators::EOperationQualifier,
-    operators::StructuralFeatureSet,
-    operators::SPLIT,
-    operators::MOVE,
-    operators::MERGE,
-    operators::EStructuralFeature,
-    operators::SET,
-    operators::Variable,
-    operators::ASSIGN,
-    operators::DELETE,
-    operators::EObject,
-    operators::EClass,
+    operators_EReferenceQualifier,
+    operators_EOperationQualifier,
+    operators_StructuralFeatureSet,
+    operators_EStructuralFeature,
+    operators_Variable,
+    operators_EObject,
+    operators_EClass,
     Variable,
-    operators::TypeVariable,
-    operators::QueryVariable,
-    operators::EReference,
-    operators::Referrable,
+    operators_QueryVariable,
+    operators_EReference,
+    operators_Referrable,
     Referrable,
-    operators::VariableReference,
+    operators_VariableReference,
     Result,
-    operators::PrimitiveReference,
-    operators::EObjectReference,
-    operators::EAttribute,
-    operators::Result,
+    operators_PrimitiveReference,
+    operators_EObjectReference,
+    operators_EAttribute,
+    operators_Result,
+    operators_Operator,
+    operators_TypeVariable,
+    Operator,
+    operators_MOVE,
+    operators_MERGE,
+    operators_SPLIT,
+    operators_ASSIGN,
+    operators_SET,
+    operators_DELETE,
+    operators_VAR,
+    operators_CREATE,
 )
 
 # =============================================================================
@@ -46,96 +46,30 @@ from classes import (
 
 
 
-def test_operators::operator_is_not_abstract():
-    assert not inspect.isabstract(operators::Operator)
+def test_operators_queryvariablequalifier_is_not_abstract():
+    assert not inspect.isabstract(operators_QueryVariableQualifier)
 
 
-def test_operators::operator_constructor_exists():
-    assert callable(operators::Operator.__init__)
+def test_operators_queryvariablequalifier_constructor_exists():
+    assert callable(operators_QueryVariableQualifier.__init__)
 
 
-def test_operators::operator_constructor_args():
-    sig = inspect.signature(operators::Operator.__init__)
-    params = list(sig.parameters.keys())
-    assert "executed" in params, "Missing parameter 'executed'"
-
-def test_operators::operator_has_executed():
-    assert hasattr(operators::Operator, "executed")
-    descriptor = None
-    for klass in operators::Operator.__mro__:
-        if "executed" in klass.__dict__:
-            descriptor = klass.__dict__["executed"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_operator_is_not_abstract():
-    assert not inspect.isabstract(Operator)
-
-
-def test_operator_constructor_exists():
-    assert callable(Operator.__init__)
-
-
-def test_operator_constructor_args():
-    sig = inspect.signature(Operator.__init__)
+def test_operators_queryvariablequalifier_constructor_args():
+    sig = inspect.signature(operators_QueryVariableQualifier.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_operators::create_is_not_abstract():
-    assert not inspect.isabstract(operators::CREATE)
+def test_operators_eoperation_is_not_abstract():
+    assert not inspect.isabstract(operators_EOperation)
 
 
-def test_operators::create_constructor_exists():
-    assert callable(operators::CREATE.__init__)
+def test_operators_eoperation_constructor_exists():
+    assert callable(operators_EOperation.__init__)
 
 
-def test_operators::create_constructor_args():
-    sig = inspect.signature(operators::CREATE.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_operators::queryvariablequalifier_is_not_abstract():
-    assert not inspect.isabstract(operators::QueryVariableQualifier)
-
-
-def test_operators::queryvariablequalifier_constructor_exists():
-    assert callable(operators::QueryVariableQualifier.__init__)
-
-
-def test_operators::queryvariablequalifier_constructor_args():
-    sig = inspect.signature(operators::QueryVariableQualifier.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_operators::var_is_not_abstract():
-    assert not inspect.isabstract(operators::VAR)
-
-
-def test_operators::var_constructor_exists():
-    assert callable(operators::VAR.__init__)
-
-
-def test_operators::var_constructor_args():
-    sig = inspect.signature(operators::VAR.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_operators::eoperation_is_not_abstract():
-    assert not inspect.isabstract(operators::EOperation)
-
-
-def test_operators::eoperation_constructor_exists():
-    assert callable(operators::EOperation.__init__)
-
-
-def test_operators::eoperation_constructor_args():
-    sig = inspect.signature(operators::EOperation.__init__)
+def test_operators_eoperation_constructor_args():
+    sig = inspect.signature(operators_EOperation.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -154,135 +88,79 @@ def test_queryvariablequalifier_constructor_args():
 
 
 
-def test_operators::ereferencequalifier_is_not_abstract():
-    assert not inspect.isabstract(operators::EReferenceQualifier)
+def test_operators_ereferencequalifier_is_not_abstract():
+    assert not inspect.isabstract(operators_EReferenceQualifier)
 
 
-def test_operators::ereferencequalifier_constructor_exists():
-    assert callable(operators::EReferenceQualifier.__init__)
+def test_operators_ereferencequalifier_constructor_exists():
+    assert callable(operators_EReferenceQualifier.__init__)
 
 
-def test_operators::ereferencequalifier_constructor_args():
-    sig = inspect.signature(operators::EReferenceQualifier.__init__)
+def test_operators_ereferencequalifier_constructor_args():
+    sig = inspect.signature(operators_EReferenceQualifier.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_operators::eoperationqualifier_is_not_abstract():
-    assert not inspect.isabstract(operators::EOperationQualifier)
+def test_operators_eoperationqualifier_is_not_abstract():
+    assert not inspect.isabstract(operators_EOperationQualifier)
 
 
-def test_operators::eoperationqualifier_constructor_exists():
-    assert callable(operators::EOperationQualifier.__init__)
+def test_operators_eoperationqualifier_constructor_exists():
+    assert callable(operators_EOperationQualifier.__init__)
 
 
-def test_operators::eoperationqualifier_constructor_args():
-    sig = inspect.signature(operators::EOperationQualifier.__init__)
+def test_operators_eoperationqualifier_constructor_args():
+    sig = inspect.signature(operators_EOperationQualifier.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_operators::structuralfeatureset_is_not_abstract():
-    assert not inspect.isabstract(operators::StructuralFeatureSet)
+def test_operators_structuralfeatureset_is_not_abstract():
+    assert not inspect.isabstract(operators_StructuralFeatureSet)
 
 
-def test_operators::structuralfeatureset_constructor_exists():
-    assert callable(operators::StructuralFeatureSet.__init__)
+def test_operators_structuralfeatureset_constructor_exists():
+    assert callable(operators_StructuralFeatureSet.__init__)
 
 
-def test_operators::structuralfeatureset_constructor_args():
-    sig = inspect.signature(operators::StructuralFeatureSet.__init__)
+def test_operators_structuralfeatureset_constructor_args():
+    sig = inspect.signature(operators_StructuralFeatureSet.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_operators::split_is_not_abstract():
-    assert not inspect.isabstract(operators::SPLIT)
+def test_operators_estructuralfeature_is_not_abstract():
+    assert not inspect.isabstract(operators_EStructuralFeature)
 
 
-def test_operators::split_constructor_exists():
-    assert callable(operators::SPLIT.__init__)
+def test_operators_estructuralfeature_constructor_exists():
+    assert callable(operators_EStructuralFeature.__init__)
 
 
-def test_operators::split_constructor_args():
-    sig = inspect.signature(operators::SPLIT.__init__)
+def test_operators_estructuralfeature_constructor_args():
+    sig = inspect.signature(operators_EStructuralFeature.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_operators::move_is_not_abstract():
-    assert not inspect.isabstract(operators::MOVE)
+def test_operators_variable_is_not_abstract():
+    assert not inspect.isabstract(operators_Variable)
 
 
-def test_operators::move_constructor_exists():
-    assert callable(operators::MOVE.__init__)
+def test_operators_variable_constructor_exists():
+    assert callable(operators_Variable.__init__)
 
 
-def test_operators::move_constructor_args():
-    sig = inspect.signature(operators::MOVE.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_operators::merge_is_not_abstract():
-    assert not inspect.isabstract(operators::MERGE)
-
-
-def test_operators::merge_constructor_exists():
-    assert callable(operators::MERGE.__init__)
-
-
-def test_operators::merge_constructor_args():
-    sig = inspect.signature(operators::MERGE.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_operators::estructuralfeature_is_not_abstract():
-    assert not inspect.isabstract(operators::EStructuralFeature)
-
-
-def test_operators::estructuralfeature_constructor_exists():
-    assert callable(operators::EStructuralFeature.__init__)
-
-
-def test_operators::estructuralfeature_constructor_args():
-    sig = inspect.signature(operators::EStructuralFeature.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_operators::set_is_not_abstract():
-    assert not inspect.isabstract(operators::SET)
-
-
-def test_operators::set_constructor_exists():
-    assert callable(operators::SET.__init__)
-
-
-def test_operators::set_constructor_args():
-    sig = inspect.signature(operators::SET.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_operators::variable_is_not_abstract():
-    assert not inspect.isabstract(operators::Variable)
-
-
-def test_operators::variable_constructor_exists():
-    assert callable(operators::Variable.__init__)
-
-
-def test_operators::variable_constructor_args():
-    sig = inspect.signature(operators::Variable.__init__)
+def test_operators_variable_constructor_args():
+    sig = inspect.signature(operators_Variable.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_operators::variable_has_name():
-    assert hasattr(operators::Variable, "name")
+def test_operators_variable_has_name():
+    assert hasattr(operators_Variable, "name")
     descriptor = None
-    for klass in operators::Variable.__mro__:
+    for klass in operators_Variable.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -290,68 +168,30 @@ def test_operators::variable_has_name():
 
 
 
-def test_operators::assign_is_not_abstract():
-    assert not inspect.isabstract(operators::ASSIGN)
+def test_operators_eobject_is_not_abstract():
+    assert not inspect.isabstract(operators_EObject)
 
 
-def test_operators::assign_constructor_exists():
-    assert callable(operators::ASSIGN.__init__)
+def test_operators_eobject_constructor_exists():
+    assert callable(operators_EObject.__init__)
 
 
-def test_operators::assign_constructor_args():
-    sig = inspect.signature(operators::ASSIGN.__init__)
-    params = list(sig.parameters.keys())
-    assert "value" in params, "Missing parameter 'value'"
-
-def test_operators::assign_has_value():
-    assert hasattr(operators::ASSIGN, "value")
-    descriptor = None
-    for klass in operators::ASSIGN.__mro__:
-        if "value" in klass.__dict__:
-            descriptor = klass.__dict__["value"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_operators::delete_is_not_abstract():
-    assert not inspect.isabstract(operators::DELETE)
-
-
-def test_operators::delete_constructor_exists():
-    assert callable(operators::DELETE.__init__)
-
-
-def test_operators::delete_constructor_args():
-    sig = inspect.signature(operators::DELETE.__init__)
+def test_operators_eobject_constructor_args():
+    sig = inspect.signature(operators_EObject.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_operators::eobject_is_not_abstract():
-    assert not inspect.isabstract(operators::EObject)
+def test_operators_eclass_is_not_abstract():
+    assert not inspect.isabstract(operators_EClass)
 
 
-def test_operators::eobject_constructor_exists():
-    assert callable(operators::EObject.__init__)
+def test_operators_eclass_constructor_exists():
+    assert callable(operators_EClass.__init__)
 
 
-def test_operators::eobject_constructor_args():
-    sig = inspect.signature(operators::EObject.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_operators::eclass_is_not_abstract():
-    assert not inspect.isabstract(operators::EClass)
-
-
-def test_operators::eclass_constructor_exists():
-    assert callable(operators::EClass.__init__)
-
-
-def test_operators::eclass_constructor_args():
-    sig = inspect.signature(operators::EClass.__init__)
+def test_operators_eclass_constructor_args():
+    sig = inspect.signature(operators_EClass.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -370,58 +210,44 @@ def test_variable_constructor_args():
 
 
 
-def test_operators::typevariable_is_not_abstract():
-    assert not inspect.isabstract(operators::TypeVariable)
+def test_operators_queryvariable_is_not_abstract():
+    assert not inspect.isabstract(operators_QueryVariable)
 
 
-def test_operators::typevariable_constructor_exists():
-    assert callable(operators::TypeVariable.__init__)
+def test_operators_queryvariable_constructor_exists():
+    assert callable(operators_QueryVariable.__init__)
 
 
-def test_operators::typevariable_constructor_args():
-    sig = inspect.signature(operators::TypeVariable.__init__)
+def test_operators_queryvariable_constructor_args():
+    sig = inspect.signature(operators_QueryVariable.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_operators::queryvariable_is_not_abstract():
-    assert not inspect.isabstract(operators::QueryVariable)
+def test_operators_ereference_is_not_abstract():
+    assert not inspect.isabstract(operators_EReference)
 
 
-def test_operators::queryvariable_constructor_exists():
-    assert callable(operators::QueryVariable.__init__)
+def test_operators_ereference_constructor_exists():
+    assert callable(operators_EReference.__init__)
 
 
-def test_operators::queryvariable_constructor_args():
-    sig = inspect.signature(operators::QueryVariable.__init__)
+def test_operators_ereference_constructor_args():
+    sig = inspect.signature(operators_EReference.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_operators::ereference_is_not_abstract():
-    assert not inspect.isabstract(operators::EReference)
+def test_operators_referrable_is_not_abstract():
+    assert not inspect.isabstract(operators_Referrable)
 
 
-def test_operators::ereference_constructor_exists():
-    assert callable(operators::EReference.__init__)
+def test_operators_referrable_constructor_exists():
+    assert callable(operators_Referrable.__init__)
 
 
-def test_operators::ereference_constructor_args():
-    sig = inspect.signature(operators::EReference.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_operators::referrable_is_not_abstract():
-    assert not inspect.isabstract(operators::Referrable)
-
-
-def test_operators::referrable_constructor_exists():
-    assert callable(operators::Referrable.__init__)
-
-
-def test_operators::referrable_constructor_args():
-    sig = inspect.signature(operators::Referrable.__init__)
+def test_operators_referrable_constructor_args():
+    sig = inspect.signature(operators_Referrable.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -440,16 +266,16 @@ def test_referrable_constructor_args():
 
 
 
-def test_operators::variablereference_is_not_abstract():
-    assert not inspect.isabstract(operators::VariableReference)
+def test_operators_variablereference_is_not_abstract():
+    assert not inspect.isabstract(operators_VariableReference)
 
 
-def test_operators::variablereference_constructor_exists():
-    assert callable(operators::VariableReference.__init__)
+def test_operators_variablereference_constructor_exists():
+    assert callable(operators_VariableReference.__init__)
 
 
-def test_operators::variablereference_constructor_args():
-    sig = inspect.signature(operators::VariableReference.__init__)
+def test_operators_variablereference_constructor_args():
+    sig = inspect.signature(operators_VariableReference.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -468,23 +294,23 @@ def test_result_constructor_args():
 
 
 
-def test_operators::primitivereference_is_not_abstract():
-    assert not inspect.isabstract(operators::PrimitiveReference)
+def test_operators_primitivereference_is_not_abstract():
+    assert not inspect.isabstract(operators_PrimitiveReference)
 
 
-def test_operators::primitivereference_constructor_exists():
-    assert callable(operators::PrimitiveReference.__init__)
+def test_operators_primitivereference_constructor_exists():
+    assert callable(operators_PrimitiveReference.__init__)
 
 
-def test_operators::primitivereference_constructor_args():
-    sig = inspect.signature(operators::PrimitiveReference.__init__)
+def test_operators_primitivereference_constructor_args():
+    sig = inspect.signature(operators_PrimitiveReference.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
 
-def test_operators::primitivereference_has_value():
-    assert hasattr(operators::PrimitiveReference, "value")
+def test_operators_primitivereference_has_value():
+    assert hasattr(operators_PrimitiveReference, "value")
     descriptor = None
-    for klass in operators::PrimitiveReference.__mro__:
+    for klass in operators_PrimitiveReference.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -492,44 +318,218 @@ def test_operators::primitivereference_has_value():
 
 
 
-def test_operators::eobjectreference_is_not_abstract():
-    assert not inspect.isabstract(operators::EObjectReference)
+def test_operators_eobjectreference_is_not_abstract():
+    assert not inspect.isabstract(operators_EObjectReference)
 
 
-def test_operators::eobjectreference_constructor_exists():
-    assert callable(operators::EObjectReference.__init__)
+def test_operators_eobjectreference_constructor_exists():
+    assert callable(operators_EObjectReference.__init__)
 
 
-def test_operators::eobjectreference_constructor_args():
-    sig = inspect.signature(operators::EObjectReference.__init__)
+def test_operators_eobjectreference_constructor_args():
+    sig = inspect.signature(operators_EObjectReference.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_operators::eattribute_is_not_abstract():
-    assert not inspect.isabstract(operators::EAttribute)
+def test_operators_eattribute_is_not_abstract():
+    assert not inspect.isabstract(operators_EAttribute)
 
 
-def test_operators::eattribute_constructor_exists():
-    assert callable(operators::EAttribute.__init__)
+def test_operators_eattribute_constructor_exists():
+    assert callable(operators_EAttribute.__init__)
 
 
-def test_operators::eattribute_constructor_args():
-    sig = inspect.signature(operators::EAttribute.__init__)
+def test_operators_eattribute_constructor_args():
+    sig = inspect.signature(operators_EAttribute.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_operators::result_is_not_abstract():
-    assert not inspect.isabstract(operators::Result)
+def test_operators_result_is_not_abstract():
+    assert not inspect.isabstract(operators_Result)
 
 
-def test_operators::result_constructor_exists():
-    assert callable(operators::Result.__init__)
+def test_operators_result_constructor_exists():
+    assert callable(operators_Result.__init__)
 
 
-def test_operators::result_constructor_args():
-    sig = inspect.signature(operators::Result.__init__)
+def test_operators_result_constructor_args():
+    sig = inspect.signature(operators_Result.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_operators_operator_is_not_abstract():
+    assert not inspect.isabstract(operators_Operator)
+
+
+def test_operators_operator_constructor_exists():
+    assert callable(operators_Operator.__init__)
+
+
+def test_operators_operator_constructor_args():
+    sig = inspect.signature(operators_Operator.__init__)
+    params = list(sig.parameters.keys())
+    assert "executed" in params, "Missing parameter 'executed'"
+
+def test_operators_operator_has_executed():
+    assert hasattr(operators_Operator, "executed")
+    descriptor = None
+    for klass in operators_Operator.__mro__:
+        if "executed" in klass.__dict__:
+            descriptor = klass.__dict__["executed"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_operators_typevariable_is_not_abstract():
+    assert not inspect.isabstract(operators_TypeVariable)
+
+
+def test_operators_typevariable_constructor_exists():
+    assert callable(operators_TypeVariable.__init__)
+
+
+def test_operators_typevariable_constructor_args():
+    sig = inspect.signature(operators_TypeVariable.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_operator_is_not_abstract():
+    assert not inspect.isabstract(Operator)
+
+
+def test_operator_constructor_exists():
+    assert callable(Operator.__init__)
+
+
+def test_operator_constructor_args():
+    sig = inspect.signature(Operator.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_operators_move_is_not_abstract():
+    assert not inspect.isabstract(operators_MOVE)
+
+
+def test_operators_move_constructor_exists():
+    assert callable(operators_MOVE.__init__)
+
+
+def test_operators_move_constructor_args():
+    sig = inspect.signature(operators_MOVE.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_operators_merge_is_not_abstract():
+    assert not inspect.isabstract(operators_MERGE)
+
+
+def test_operators_merge_constructor_exists():
+    assert callable(operators_MERGE.__init__)
+
+
+def test_operators_merge_constructor_args():
+    sig = inspect.signature(operators_MERGE.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_operators_split_is_not_abstract():
+    assert not inspect.isabstract(operators_SPLIT)
+
+
+def test_operators_split_constructor_exists():
+    assert callable(operators_SPLIT.__init__)
+
+
+def test_operators_split_constructor_args():
+    sig = inspect.signature(operators_SPLIT.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_operators_assign_is_not_abstract():
+    assert not inspect.isabstract(operators_ASSIGN)
+
+
+def test_operators_assign_constructor_exists():
+    assert callable(operators_ASSIGN.__init__)
+
+
+def test_operators_assign_constructor_args():
+    sig = inspect.signature(operators_ASSIGN.__init__)
+    params = list(sig.parameters.keys())
+    assert "value" in params, "Missing parameter 'value'"
+
+def test_operators_assign_has_value():
+    assert hasattr(operators_ASSIGN, "value")
+    descriptor = None
+    for klass in operators_ASSIGN.__mro__:
+        if "value" in klass.__dict__:
+            descriptor = klass.__dict__["value"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_operators_set_is_not_abstract():
+    assert not inspect.isabstract(operators_SET)
+
+
+def test_operators_set_constructor_exists():
+    assert callable(operators_SET.__init__)
+
+
+def test_operators_set_constructor_args():
+    sig = inspect.signature(operators_SET.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_operators_delete_is_not_abstract():
+    assert not inspect.isabstract(operators_DELETE)
+
+
+def test_operators_delete_constructor_exists():
+    assert callable(operators_DELETE.__init__)
+
+
+def test_operators_delete_constructor_args():
+    sig = inspect.signature(operators_DELETE.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_operators_var_is_not_abstract():
+    assert not inspect.isabstract(operators_VAR)
+
+
+def test_operators_var_constructor_exists():
+    assert callable(operators_VAR.__init__)
+
+
+def test_operators_var_constructor_args():
+    sig = inspect.signature(operators_VAR.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_operators_create_is_not_abstract():
+    assert not inspect.isabstract(operators_CREATE)
+
+
+def test_operators_create_constructor_exists():
+    assert callable(operators_CREATE.__init__)
+
+
+def test_operators_create_constructor_args():
+    sig = inspect.signature(operators_CREATE.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -544,123 +544,241 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-operators::Operator_strategy = st.builds(
-    operators::Operator,
-    executed=
-        st.booleans()
+operators_QueryVariableQualifier_strategy = st.builds(
+    operators_QueryVariableQualifier,
 )
-Operator_strategy = st.builds(
-    Operator,
-)
-operators::CREATE_strategy = st.builds(
-    operators::CREATE,
-)
-operators::QueryVariableQualifier_strategy = st.builds(
-    operators::QueryVariableQualifier,
-)
-operators::VAR_strategy = st.builds(
-    operators::VAR,
-)
-operators::EOperation_strategy = st.builds(
-    operators::EOperation,
+operators_EOperation_strategy = st.builds(
+    operators_EOperation,
 )
 QueryVariableQualifier_strategy = st.builds(
     QueryVariableQualifier,
 )
-operators::EReferenceQualifier_strategy = st.builds(
-    operators::EReferenceQualifier,
+operators_EReferenceQualifier_strategy = st.builds(
+    operators_EReferenceQualifier,
 )
-operators::EOperationQualifier_strategy = st.builds(
-    operators::EOperationQualifier,
+operators_EOperationQualifier_strategy = st.builds(
+    operators_EOperationQualifier,
 )
-operators::StructuralFeatureSet_strategy = st.builds(
-    operators::StructuralFeatureSet,
+operators_StructuralFeatureSet_strategy = st.builds(
+    operators_StructuralFeatureSet,
 )
-operators::SPLIT_strategy = st.builds(
-    operators::SPLIT,
+operators_EStructuralFeature_strategy = st.builds(
+    operators_EStructuralFeature,
 )
-operators::MOVE_strategy = st.builds(
-    operators::MOVE,
-)
-operators::MERGE_strategy = st.builds(
-    operators::MERGE,
-)
-operators::EStructuralFeature_strategy = st.builds(
-    operators::EStructuralFeature,
-)
-operators::SET_strategy = st.builds(
-    operators::SET,
-)
-operators::Variable_strategy = st.builds(
-    operators::Variable,
+operators_Variable_strategy = st.builds(
+    operators_Variable,
     name=
         safe_text
 )
-operators::ASSIGN_strategy = st.builds(
-    operators::ASSIGN,
-    value=
-        safe_text
+operators_EObject_strategy = st.builds(
+    operators_EObject,
 )
-operators::DELETE_strategy = st.builds(
-    operators::DELETE,
-)
-operators::EObject_strategy = st.builds(
-    operators::EObject,
-)
-operators::EClass_strategy = st.builds(
-    operators::EClass,
+operators_EClass_strategy = st.builds(
+    operators_EClass,
 )
 Variable_strategy = st.builds(
     Variable,
 )
-operators::TypeVariable_strategy = st.builds(
-    operators::TypeVariable,
+operators_QueryVariable_strategy = st.builds(
+    operators_QueryVariable,
 )
-operators::QueryVariable_strategy = st.builds(
-    operators::QueryVariable,
+operators_EReference_strategy = st.builds(
+    operators_EReference,
 )
-operators::EReference_strategy = st.builds(
-    operators::EReference,
-)
-operators::Referrable_strategy = st.builds(
-    operators::Referrable,
+operators_Referrable_strategy = st.builds(
+    operators_Referrable,
 )
 Referrable_strategy = st.builds(
     Referrable,
 )
-operators::VariableReference_strategy = st.builds(
-    operators::VariableReference,
+operators_VariableReference_strategy = st.builds(
+    operators_VariableReference,
 )
 Result_strategy = st.builds(
     Result,
 )
-operators::PrimitiveReference_strategy = st.builds(
-    operators::PrimitiveReference,
+operators_PrimitiveReference_strategy = st.builds(
+    operators_PrimitiveReference,
     value=
         safe_text
 )
-operators::EObjectReference_strategy = st.builds(
-    operators::EObjectReference,
+operators_EObjectReference_strategy = st.builds(
+    operators_EObjectReference,
 )
-operators::EAttribute_strategy = st.builds(
-    operators::EAttribute,
+operators_EAttribute_strategy = st.builds(
+    operators_EAttribute,
 )
-operators::Result_strategy = st.builds(
-    operators::Result,
+operators_Result_strategy = st.builds(
+    operators_Result,
+)
+operators_Operator_strategy = st.builds(
+    operators_Operator,
+    executed=
+        st.booleans()
+)
+operators_TypeVariable_strategy = st.builds(
+    operators_TypeVariable,
+)
+Operator_strategy = st.builds(
+    Operator,
+)
+operators_MOVE_strategy = st.builds(
+    operators_MOVE,
+)
+operators_MERGE_strategy = st.builds(
+    operators_MERGE,
+)
+operators_SPLIT_strategy = st.builds(
+    operators_SPLIT,
+)
+operators_ASSIGN_strategy = st.builds(
+    operators_ASSIGN,
+    value=
+        safe_text
+)
+operators_SET_strategy = st.builds(
+    operators_SET,
+)
+operators_DELETE_strategy = st.builds(
+    operators_DELETE,
+)
+operators_VAR_strategy = st.builds(
+    operators_VAR,
+)
+operators_CREATE_strategy = st.builds(
+    operators_CREATE,
 )
 
-@given(instance=operators::Operator_strategy)
+@given(instance=operators_QueryVariableQualifier_strategy)
 @settings(max_examples=50)
-def test_operators::operator_instantiation(instance):
-    assert isinstance(instance, operators::Operator)
+def test_operators_queryvariablequalifier_instantiation(instance):
+    assert isinstance(instance, operators_QueryVariableQualifier)
 
-@given(instance=operators::Operator_strategy)
-def test_operators::operator_executed_type(instance):
-    assert isinstance(instance.executed, bool)
+@given(instance=operators_EOperation_strategy)
+@settings(max_examples=50)
+def test_operators_eoperation_instantiation(instance):
+    assert isinstance(instance, operators_EOperation)
+
+@given(instance=QueryVariableQualifier_strategy)
+@settings(max_examples=50)
+def test_queryvariablequalifier_instantiation(instance):
+    assert isinstance(instance, QueryVariableQualifier)
+
+@given(instance=operators_EReferenceQualifier_strategy)
+@settings(max_examples=50)
+def test_operators_ereferencequalifier_instantiation(instance):
+    assert isinstance(instance, operators_EReferenceQualifier)
+
+@given(instance=operators_EOperationQualifier_strategy)
+@settings(max_examples=50)
+def test_operators_eoperationqualifier_instantiation(instance):
+    assert isinstance(instance, operators_EOperationQualifier)
+
+@given(instance=operators_StructuralFeatureSet_strategy)
+@settings(max_examples=50)
+def test_operators_structuralfeatureset_instantiation(instance):
+    assert isinstance(instance, operators_StructuralFeatureSet)
+
+@given(instance=operators_EStructuralFeature_strategy)
+@settings(max_examples=50)
+def test_operators_estructuralfeature_instantiation(instance):
+    assert isinstance(instance, operators_EStructuralFeature)
+
+@given(instance=operators_Variable_strategy)
+@settings(max_examples=50)
+def test_operators_variable_instantiation(instance):
+    assert isinstance(instance, operators_Variable)
 
 
-@given(instance=operators::Operator_strategy)
-def test_operators::operator_executed_setter(instance):
+
+@given(instance=operators_Variable_strategy)
+def test_operators_variable_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+@given(instance=operators_EObject_strategy)
+@settings(max_examples=50)
+def test_operators_eobject_instantiation(instance):
+    assert isinstance(instance, operators_EObject)
+
+@given(instance=operators_EClass_strategy)
+@settings(max_examples=50)
+def test_operators_eclass_instantiation(instance):
+    assert isinstance(instance, operators_EClass)
+
+@given(instance=Variable_strategy)
+@settings(max_examples=50)
+def test_variable_instantiation(instance):
+    assert isinstance(instance, Variable)
+
+@given(instance=operators_QueryVariable_strategy)
+@settings(max_examples=50)
+def test_operators_queryvariable_instantiation(instance):
+    assert isinstance(instance, operators_QueryVariable)
+
+@given(instance=operators_EReference_strategy)
+@settings(max_examples=50)
+def test_operators_ereference_instantiation(instance):
+    assert isinstance(instance, operators_EReference)
+
+@given(instance=operators_Referrable_strategy)
+@settings(max_examples=50)
+def test_operators_referrable_instantiation(instance):
+    assert isinstance(instance, operators_Referrable)
+
+@given(instance=Referrable_strategy)
+@settings(max_examples=50)
+def test_referrable_instantiation(instance):
+    assert isinstance(instance, Referrable)
+
+@given(instance=operators_VariableReference_strategy)
+@settings(max_examples=50)
+def test_operators_variablereference_instantiation(instance):
+    assert isinstance(instance, operators_VariableReference)
+
+@given(instance=Result_strategy)
+@settings(max_examples=50)
+def test_result_instantiation(instance):
+    assert isinstance(instance, Result)
+
+@given(instance=operators_PrimitiveReference_strategy)
+@settings(max_examples=50)
+def test_operators_primitivereference_instantiation(instance):
+    assert isinstance(instance, operators_PrimitiveReference)
+
+
+
+@given(instance=operators_PrimitiveReference_strategy)
+def test_operators_primitivereference_value_setter(instance):
+    original = instance.value
+    instance.value = original
+    assert instance.value == original
+
+@given(instance=operators_EObjectReference_strategy)
+@settings(max_examples=50)
+def test_operators_eobjectreference_instantiation(instance):
+    assert isinstance(instance, operators_EObjectReference)
+
+@given(instance=operators_EAttribute_strategy)
+@settings(max_examples=50)
+def test_operators_eattribute_instantiation(instance):
+    assert isinstance(instance, operators_EAttribute)
+
+@given(instance=operators_Result_strategy)
+@settings(max_examples=50)
+def test_operators_result_instantiation(instance):
+    assert isinstance(instance, operators_Result)
+
+@given(instance=operators_Operator_strategy)
+@settings(max_examples=50)
+def test_operators_operator_instantiation(instance):
+    assert isinstance(instance, operators_Operator)
+
+
+
+@given(instance=operators_Operator_strategy)
+def test_operators_operator_executed_setter(instance):
     original = instance.executed
     instance.executed = original
     assert instance.executed == original
@@ -671,9 +789,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=operators::Operator_strategy)
+@given(instance=operators_Operator_strategy)
 @settings(max_examples=30)
-def test_operators::operator_execute_changes_state(instance):
+def test_operators_operator_execute_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -685,24 +803,29 @@ def test_operators::operator_execute_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'execute' in operators::Operator is empty"
+        assert has_statements, f"Function 'execute' in operators_Operator is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'execute' in operators::Operator did not change state; check implementation")
+            warnings.warn(f"Operation 'execute' in operators_Operator did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'execute' in operators::Operator is not implemented or raised an error")
+        warnings.warn(f"Operation 'execute' in operators_Operator is not implemented or raised an error")
+
+@given(instance=operators_TypeVariable_strategy)
+@settings(max_examples=50)
+def test_operators_typevariable_instantiation(instance):
+    assert isinstance(instance, operators_TypeVariable)
 
 @given(instance=Operator_strategy)
 @settings(max_examples=50)
 def test_operator_instantiation(instance):
     assert isinstance(instance, Operator)
 
-@given(instance=operators::CREATE_strategy)
+@given(instance=operators_MOVE_strategy)
 @settings(max_examples=50)
-def test_operators::create_instantiation(instance):
-    assert isinstance(instance, operators::CREATE)
+def test_operators_move_instantiation(instance):
+    assert isinstance(instance, operators_MOVE)
 
 import warnings
 import copy
@@ -710,9 +833,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=operators::CREATE_strategy)
+@given(instance=operators_MOVE_strategy)
 @settings(max_examples=30)
-def test_operators::create_execute_changes_state(instance):
+def test_operators_move_execute_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -724,190 +847,34 @@ def test_operators::create_execute_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'execute' in operators::CREATE is empty"
+        assert has_statements, f"Function 'execute' in operators_MOVE is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'execute' in operators::CREATE did not change state; check implementation")
+            warnings.warn(f"Operation 'execute' in operators_MOVE did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'execute' in operators::CREATE is not implemented or raised an error")
+        warnings.warn(f"Operation 'execute' in operators_MOVE is not implemented or raised an error")
 
-@given(instance=operators::QueryVariableQualifier_strategy)
+@given(instance=operators_MERGE_strategy)
 @settings(max_examples=50)
-def test_operators::queryvariablequalifier_instantiation(instance):
-    assert isinstance(instance, operators::QueryVariableQualifier)
+def test_operators_merge_instantiation(instance):
+    assert isinstance(instance, operators_MERGE)
 
-@given(instance=operators::VAR_strategy)
+@given(instance=operators_SPLIT_strategy)
 @settings(max_examples=50)
-def test_operators::var_instantiation(instance):
-    assert isinstance(instance, operators::VAR)
+def test_operators_split_instantiation(instance):
+    assert isinstance(instance, operators_SPLIT)
 
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=operators::VAR_strategy)
-@settings(max_examples=30)
-def test_operators::var_execute_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.execute()
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.execute).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'execute' in operators::VAR is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'execute' in operators::VAR did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'execute' in operators::VAR is not implemented or raised an error")
-
-@given(instance=operators::EOperation_strategy)
+@given(instance=operators_ASSIGN_strategy)
 @settings(max_examples=50)
-def test_operators::eoperation_instantiation(instance):
-    assert isinstance(instance, operators::EOperation)
-
-@given(instance=QueryVariableQualifier_strategy)
-@settings(max_examples=50)
-def test_queryvariablequalifier_instantiation(instance):
-    assert isinstance(instance, QueryVariableQualifier)
-
-@given(instance=operators::EReferenceQualifier_strategy)
-@settings(max_examples=50)
-def test_operators::ereferencequalifier_instantiation(instance):
-    assert isinstance(instance, operators::EReferenceQualifier)
-
-@given(instance=operators::EOperationQualifier_strategy)
-@settings(max_examples=50)
-def test_operators::eoperationqualifier_instantiation(instance):
-    assert isinstance(instance, operators::EOperationQualifier)
-
-@given(instance=operators::StructuralFeatureSet_strategy)
-@settings(max_examples=50)
-def test_operators::structuralfeatureset_instantiation(instance):
-    assert isinstance(instance, operators::StructuralFeatureSet)
-
-@given(instance=operators::SPLIT_strategy)
-@settings(max_examples=50)
-def test_operators::split_instantiation(instance):
-    assert isinstance(instance, operators::SPLIT)
-
-@given(instance=operators::MOVE_strategy)
-@settings(max_examples=50)
-def test_operators::move_instantiation(instance):
-    assert isinstance(instance, operators::MOVE)
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=operators::MOVE_strategy)
-@settings(max_examples=30)
-def test_operators::move_execute_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.execute()
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.execute).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'execute' in operators::MOVE is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'execute' in operators::MOVE did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'execute' in operators::MOVE is not implemented or raised an error")
-
-@given(instance=operators::MERGE_strategy)
-@settings(max_examples=50)
-def test_operators::merge_instantiation(instance):
-    assert isinstance(instance, operators::MERGE)
-
-@given(instance=operators::EStructuralFeature_strategy)
-@settings(max_examples=50)
-def test_operators::estructuralfeature_instantiation(instance):
-    assert isinstance(instance, operators::EStructuralFeature)
-
-@given(instance=operators::SET_strategy)
-@settings(max_examples=50)
-def test_operators::set_instantiation(instance):
-    assert isinstance(instance, operators::SET)
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=operators::SET_strategy)
-@settings(max_examples=30)
-def test_operators::set_execute_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.execute()
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.execute).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'execute' in operators::SET is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'execute' in operators::SET did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'execute' in operators::SET is not implemented or raised an error")
-
-@given(instance=operators::Variable_strategy)
-@settings(max_examples=50)
-def test_operators::variable_instantiation(instance):
-    assert isinstance(instance, operators::Variable)
-
-@given(instance=operators::Variable_strategy)
-def test_operators::variable_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_operators_assign_instantiation(instance):
+    assert isinstance(instance, operators_ASSIGN)
 
 
-@given(instance=operators::Variable_strategy)
-def test_operators::variable_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
 
-@given(instance=operators::ASSIGN_strategy)
-@settings(max_examples=50)
-def test_operators::assign_instantiation(instance):
-    assert isinstance(instance, operators::ASSIGN)
-
-@given(instance=operators::ASSIGN_strategy)
-def test_operators::assign_value_type(instance):
-    assert isinstance(instance.value, str)
-
-
-@given(instance=operators::ASSIGN_strategy)
-def test_operators::assign_value_setter(instance):
+@given(instance=operators_ASSIGN_strategy)
+def test_operators_assign_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
@@ -918,9 +885,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=operators::ASSIGN_strategy)
+@given(instance=operators_ASSIGN_strategy)
 @settings(max_examples=30)
-def test_operators::assign_execute_changes_state(instance):
+def test_operators_assign_execute_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -932,19 +899,19 @@ def test_operators::assign_execute_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'execute' in operators::ASSIGN is empty"
+        assert has_statements, f"Function 'execute' in operators_ASSIGN is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'execute' in operators::ASSIGN did not change state; check implementation")
+            warnings.warn(f"Operation 'execute' in operators_ASSIGN did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'execute' in operators::ASSIGN is not implemented or raised an error")
+        warnings.warn(f"Operation 'execute' in operators_ASSIGN is not implemented or raised an error")
 
-@given(instance=operators::DELETE_strategy)
+@given(instance=operators_SET_strategy)
 @settings(max_examples=50)
-def test_operators::delete_instantiation(instance):
-    assert isinstance(instance, operators::DELETE)
+def test_operators_set_instantiation(instance):
+    assert isinstance(instance, operators_SET)
 
 import warnings
 import copy
@@ -952,9 +919,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=operators::DELETE_strategy)
+@given(instance=operators_SET_strategy)
 @settings(max_examples=30)
-def test_operators::delete_execute_changes_state(instance):
+def test_operators_set_execute_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -966,92 +933,113 @@ def test_operators::delete_execute_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'execute' in operators::DELETE is empty"
+        assert has_statements, f"Function 'execute' in operators_SET is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'execute' in operators::DELETE did not change state; check implementation")
+            warnings.warn(f"Operation 'execute' in operators_SET did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'execute' in operators::DELETE is not implemented or raised an error")
+        warnings.warn(f"Operation 'execute' in operators_SET is not implemented or raised an error")
 
-@given(instance=operators::EObject_strategy)
+@given(instance=operators_DELETE_strategy)
 @settings(max_examples=50)
-def test_operators::eobject_instantiation(instance):
-    assert isinstance(instance, operators::EObject)
+def test_operators_delete_instantiation(instance):
+    assert isinstance(instance, operators_DELETE)
 
-@given(instance=operators::EClass_strategy)
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=operators_DELETE_strategy)
+@settings(max_examples=30)
+def test_operators_delete_execute_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.execute()
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.execute).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'execute' in operators_DELETE is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'execute' in operators_DELETE did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'execute' in operators_DELETE is not implemented or raised an error")
+
+@given(instance=operators_VAR_strategy)
 @settings(max_examples=50)
-def test_operators::eclass_instantiation(instance):
-    assert isinstance(instance, operators::EClass)
+def test_operators_var_instantiation(instance):
+    assert isinstance(instance, operators_VAR)
 
-@given(instance=Variable_strategy)
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=operators_VAR_strategy)
+@settings(max_examples=30)
+def test_operators_var_execute_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.execute()
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.execute).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'execute' in operators_VAR is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'execute' in operators_VAR did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'execute' in operators_VAR is not implemented or raised an error")
+
+@given(instance=operators_CREATE_strategy)
 @settings(max_examples=50)
-def test_variable_instantiation(instance):
-    assert isinstance(instance, Variable)
+def test_operators_create_instantiation(instance):
+    assert isinstance(instance, operators_CREATE)
 
-@given(instance=operators::TypeVariable_strategy)
-@settings(max_examples=50)
-def test_operators::typevariable_instantiation(instance):
-    assert isinstance(instance, operators::TypeVariable)
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
 
-@given(instance=operators::QueryVariable_strategy)
-@settings(max_examples=50)
-def test_operators::queryvariable_instantiation(instance):
-    assert isinstance(instance, operators::QueryVariable)
+@given(instance=operators_CREATE_strategy)
+@settings(max_examples=30)
+def test_operators_create_execute_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.execute()
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.execute).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'execute' in operators_CREATE is empty"
 
-@given(instance=operators::EReference_strategy)
-@settings(max_examples=50)
-def test_operators::ereference_instantiation(instance):
-    assert isinstance(instance, operators::EReference)
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'execute' in operators_CREATE did not change state; check implementation")
 
-@given(instance=operators::Referrable_strategy)
-@settings(max_examples=50)
-def test_operators::referrable_instantiation(instance):
-    assert isinstance(instance, operators::Referrable)
-
-@given(instance=Referrable_strategy)
-@settings(max_examples=50)
-def test_referrable_instantiation(instance):
-    assert isinstance(instance, Referrable)
-
-@given(instance=operators::VariableReference_strategy)
-@settings(max_examples=50)
-def test_operators::variablereference_instantiation(instance):
-    assert isinstance(instance, operators::VariableReference)
-
-@given(instance=Result_strategy)
-@settings(max_examples=50)
-def test_result_instantiation(instance):
-    assert isinstance(instance, Result)
-
-@given(instance=operators::PrimitiveReference_strategy)
-@settings(max_examples=50)
-def test_operators::primitivereference_instantiation(instance):
-    assert isinstance(instance, operators::PrimitiveReference)
-
-@given(instance=operators::PrimitiveReference_strategy)
-def test_operators::primitivereference_value_type(instance):
-    assert isinstance(instance.value, str)
-
-
-@given(instance=operators::PrimitiveReference_strategy)
-def test_operators::primitivereference_value_setter(instance):
-    original = instance.value
-    instance.value = original
-    assert instance.value == original
-
-@given(instance=operators::EObjectReference_strategy)
-@settings(max_examples=50)
-def test_operators::eobjectreference_instantiation(instance):
-    assert isinstance(instance, operators::EObjectReference)
-
-@given(instance=operators::EAttribute_strategy)
-@settings(max_examples=50)
-def test_operators::eattribute_instantiation(instance):
-    assert isinstance(instance, operators::EAttribute)
-
-@given(instance=operators::Result_strategy)
-@settings(max_examples=50)
-def test_operators::result_instantiation(instance):
-    assert isinstance(instance, operators::Result)
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'execute' in operators_CREATE is not implemented or raised an error")

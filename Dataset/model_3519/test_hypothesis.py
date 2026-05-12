@@ -3,11 +3,11 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    modelA::B,
-    modelA::A,
+from python_code import (
+    modelA_B,
+    modelA_A,
 )
 
 # =============================================================================
@@ -16,23 +16,23 @@ from classes import (
 
 
 
-def test_modela::b_is_not_abstract():
-    assert not inspect.isabstract(modelA::B)
+def test_modela_b_is_not_abstract():
+    assert not inspect.isabstract(modelA_B)
 
 
-def test_modela::b_constructor_exists():
-    assert callable(modelA::B.__init__)
+def test_modela_b_constructor_exists():
+    assert callable(modelA_B.__init__)
 
 
-def test_modela::b_constructor_args():
-    sig = inspect.signature(modelA::B.__init__)
+def test_modela_b_constructor_args():
+    sig = inspect.signature(modelA_B.__init__)
     params = list(sig.parameters.keys())
     assert "b" in params, "Missing parameter 'b'"
 
-def test_modela::b_has_b():
-    assert hasattr(modelA::B, "b")
+def test_modela_b_has_b():
+    assert hasattr(modelA_B, "b")
     descriptor = None
-    for klass in modelA::B.__mro__:
+    for klass in modelA_B.__mro__:
         if "b" in klass.__dict__:
             descriptor = klass.__dict__["b"]
             break
@@ -40,23 +40,23 @@ def test_modela::b_has_b():
 
 
 
-def test_modela::a_is_not_abstract():
-    assert not inspect.isabstract(modelA::A)
+def test_modela_a_is_not_abstract():
+    assert not inspect.isabstract(modelA_A)
 
 
-def test_modela::a_constructor_exists():
-    assert callable(modelA::A.__init__)
+def test_modela_a_constructor_exists():
+    assert callable(modelA_A.__init__)
 
 
-def test_modela::a_constructor_args():
-    sig = inspect.signature(modelA::A.__init__)
+def test_modela_a_constructor_args():
+    sig = inspect.signature(modelA_A.__init__)
     params = list(sig.parameters.keys())
     assert "a" in params, "Missing parameter 'a'"
 
-def test_modela::a_has_a():
-    assert hasattr(modelA::A, "a")
+def test_modela_a_has_a():
+    assert hasattr(modelA_A, "a")
     descriptor = None
-    for klass in modelA::A.__mro__:
+    for klass in modelA_A.__mro__:
         if "a" in klass.__dict__:
             descriptor = klass.__dict__["a"]
             break
@@ -74,45 +74,39 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-modelA::B_strategy = st.builds(
-    modelA::B,
+modelA_B_strategy = st.builds(
+    modelA_B,
     b=
         st.booleans()
 )
-modelA::A_strategy = st.builds(
-    modelA::A,
+modelA_A_strategy = st.builds(
+    modelA_A,
     a=
         st.integers()
 )
 
-@given(instance=modelA::B_strategy)
+@given(instance=modelA_B_strategy)
 @settings(max_examples=50)
-def test_modela::b_instantiation(instance):
-    assert isinstance(instance, modelA::B)
-
-@given(instance=modelA::B_strategy)
-def test_modela::b_b_type(instance):
-    assert isinstance(instance.b, bool)
+def test_modela_b_instantiation(instance):
+    assert isinstance(instance, modelA_B)
 
 
-@given(instance=modelA::B_strategy)
-def test_modela::b_b_setter(instance):
+
+@given(instance=modelA_B_strategy)
+def test_modela_b_b_setter(instance):
     original = instance.b
     instance.b = original
     assert instance.b == original
 
-@given(instance=modelA::A_strategy)
+@given(instance=modelA_A_strategy)
 @settings(max_examples=50)
-def test_modela::a_instantiation(instance):
-    assert isinstance(instance, modelA::A)
-
-@given(instance=modelA::A_strategy)
-def test_modela::a_a_type(instance):
-    assert isinstance(instance.a, int)
+def test_modela_a_instantiation(instance):
+    assert isinstance(instance, modelA_A)
 
 
-@given(instance=modelA::A_strategy)
-def test_modela::a_a_setter(instance):
+
+@given(instance=modelA_A_strategy)
+def test_modela_a_a_setter(instance):
     original = instance.a
     instance.a = original
     assert instance.a == original

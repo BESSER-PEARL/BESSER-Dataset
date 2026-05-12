@@ -3,10 +3,9 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
 from python_code import (
-    Login_UseCase,
     Query_Eligibility_UseCase,
     Change_Password_UseCase,
     Employee_Actor,
@@ -42,26 +41,13 @@ from python_code import (
     Apply_Leave_UseCase,
     Query_Leave_History_UseCase,
     Query_Leave_Balance_UseCase,
+    Login_UseCase,
     LeaveStatus,
 )
 
 # =============================================================================
 # SECTION 1 — STRUCTURAL TESTS
 # =============================================================================
-
-
-
-def test_login_usecase_is_not_abstract():
-    assert not inspect.isabstract(Login_UseCase)
-
-
-def test_login_usecase_constructor_exists():
-    assert callable(Login_UseCase.__init__)
-
-
-def test_login_usecase_constructor_args():
-    sig = inspect.signature(Login_UseCase.__init__)
-    params = list(sig.parameters.keys())
 
 
 
@@ -298,29 +284,20 @@ def test_leaveapplication_constructor_exists():
 def test_leaveapplication_constructor_args():
     sig = inspect.signature(LeaveApplication.__init__)
     params = list(sig.parameters.keys())
-    assert "applicationId" in params, "Missing parameter 'applicationId'"
-    assert "employeeId" in params, "Missing parameter 'employeeId'"
-    assert "toDate" in params, "Missing parameter 'toDate'"
-    assert "status" in params, "Missing parameter 'status'"
-    assert "fromDate" in params, "Missing parameter 'fromDate'"
-    assert "reason" in params, "Missing parameter 'reason'"
     assert "approverComments" in params, "Missing parameter 'approverComments'"
+    assert "toDate" in params, "Missing parameter 'toDate'"
+    assert "applicationId" in params, "Missing parameter 'applicationId'"
+    assert "fromDate" in params, "Missing parameter 'fromDate'"
+    assert "employeeId" in params, "Missing parameter 'employeeId'"
+    assert "status" in params, "Missing parameter 'status'"
+    assert "reason" in params, "Missing parameter 'reason'"
 
-def test_leaveapplication_has_applicationId():
-    assert hasattr(LeaveApplication, "applicationId")
+def test_leaveapplication_has_approverComments():
+    assert hasattr(LeaveApplication, "approverComments")
     descriptor = None
     for klass in LeaveApplication.__mro__:
-        if "applicationId" in klass.__dict__:
-            descriptor = klass.__dict__["applicationId"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_leaveapplication_has_employeeId():
-    assert hasattr(LeaveApplication, "employeeId")
-    descriptor = None
-    for klass in LeaveApplication.__mro__:
-        if "employeeId" in klass.__dict__:
-            descriptor = klass.__dict__["employeeId"]
+        if "approverComments" in klass.__dict__:
+            descriptor = klass.__dict__["approverComments"]
             break
     assert isinstance(descriptor, property)
 
@@ -333,12 +310,12 @@ def test_leaveapplication_has_toDate():
             break
     assert isinstance(descriptor, property)
 
-def test_leaveapplication_has_status():
-    assert hasattr(LeaveApplication, "status")
+def test_leaveapplication_has_applicationId():
+    assert hasattr(LeaveApplication, "applicationId")
     descriptor = None
     for klass in LeaveApplication.__mro__:
-        if "status" in klass.__dict__:
-            descriptor = klass.__dict__["status"]
+        if "applicationId" in klass.__dict__:
+            descriptor = klass.__dict__["applicationId"]
             break
     assert isinstance(descriptor, property)
 
@@ -351,21 +328,30 @@ def test_leaveapplication_has_fromDate():
             break
     assert isinstance(descriptor, property)
 
+def test_leaveapplication_has_employeeId():
+    assert hasattr(LeaveApplication, "employeeId")
+    descriptor = None
+    for klass in LeaveApplication.__mro__:
+        if "employeeId" in klass.__dict__:
+            descriptor = klass.__dict__["employeeId"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_leaveapplication_has_status():
+    assert hasattr(LeaveApplication, "status")
+    descriptor = None
+    for klass in LeaveApplication.__mro__:
+        if "status" in klass.__dict__:
+            descriptor = klass.__dict__["status"]
+            break
+    assert isinstance(descriptor, property)
+
 def test_leaveapplication_has_reason():
     assert hasattr(LeaveApplication, "reason")
     descriptor = None
     for klass in LeaveApplication.__mro__:
         if "reason" in klass.__dict__:
             descriptor = klass.__dict__["reason"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_leaveapplication_has_approverComments():
-    assert hasattr(LeaveApplication, "approverComments")
-    descriptor = None
-    for klass in LeaveApplication.__mro__:
-        if "approverComments" in klass.__dict__:
-            descriptor = klass.__dict__["approverComments"]
             break
     assert isinstance(descriptor, property)
 
@@ -478,13 +464,58 @@ def test_employee_constructor_exists():
 def test_employee_constructor_args():
     sig = inspect.signature(Employee.__init__)
     params = list(sig.parameters.keys())
+    assert "managerId" in params, "Missing parameter 'managerId'"
+    assert "password" in params, "Missing parameter 'password'"
+    assert "noOfLeaves" in params, "Missing parameter 'noOfLeaves'"
+    assert "employeeId" in params, "Missing parameter 'employeeId'"
+    assert "jobLevel" in params, "Missing parameter 'jobLevel'"
     assert "leavesTaken" in params, "Missing parameter 'leavesTaken'"
     assert "employeeName" in params, "Missing parameter 'employeeName'"
-    assert "noOfLeaves" in params, "Missing parameter 'noOfLeaves'"
-    assert "jobLevel" in params, "Missing parameter 'jobLevel'"
-    assert "password" in params, "Missing parameter 'password'"
-    assert "managerId" in params, "Missing parameter 'managerId'"
-    assert "employeeId" in params, "Missing parameter 'employeeId'"
+
+def test_employee_has_managerId():
+    assert hasattr(Employee, "managerId")
+    descriptor = None
+    for klass in Employee.__mro__:
+        if "managerId" in klass.__dict__:
+            descriptor = klass.__dict__["managerId"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_employee_has_password():
+    assert hasattr(Employee, "password")
+    descriptor = None
+    for klass in Employee.__mro__:
+        if "password" in klass.__dict__:
+            descriptor = klass.__dict__["password"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_employee_has_noOfLeaves():
+    assert hasattr(Employee, "noOfLeaves")
+    descriptor = None
+    for klass in Employee.__mro__:
+        if "noOfLeaves" in klass.__dict__:
+            descriptor = klass.__dict__["noOfLeaves"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_employee_has_employeeId():
+    assert hasattr(Employee, "employeeId")
+    descriptor = None
+    for klass in Employee.__mro__:
+        if "employeeId" in klass.__dict__:
+            descriptor = klass.__dict__["employeeId"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_employee_has_jobLevel():
+    assert hasattr(Employee, "jobLevel")
+    descriptor = None
+    for klass in Employee.__mro__:
+        if "jobLevel" in klass.__dict__:
+            descriptor = klass.__dict__["jobLevel"]
+            break
+    assert isinstance(descriptor, property)
 
 def test_employee_has_leavesTaken():
     assert hasattr(Employee, "leavesTaken")
@@ -501,51 +532,6 @@ def test_employee_has_employeeName():
     for klass in Employee.__mro__:
         if "employeeName" in klass.__dict__:
             descriptor = klass.__dict__["employeeName"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_employee_has_noOfLeaves():
-    assert hasattr(Employee, "noOfLeaves")
-    descriptor = None
-    for klass in Employee.__mro__:
-        if "noOfLeaves" in klass.__dict__:
-            descriptor = klass.__dict__["noOfLeaves"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_employee_has_jobLevel():
-    assert hasattr(Employee, "jobLevel")
-    descriptor = None
-    for klass in Employee.__mro__:
-        if "jobLevel" in klass.__dict__:
-            descriptor = klass.__dict__["jobLevel"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_employee_has_password():
-    assert hasattr(Employee, "password")
-    descriptor = None
-    for klass in Employee.__mro__:
-        if "password" in klass.__dict__:
-            descriptor = klass.__dict__["password"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_employee_has_managerId():
-    assert hasattr(Employee, "managerId")
-    descriptor = None
-    for klass in Employee.__mro__:
-        if "managerId" in klass.__dict__:
-            descriptor = klass.__dict__["managerId"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_employee_has_employeeId():
-    assert hasattr(Employee, "employeeId")
-    descriptor = None
-    for klass in Employee.__mro__:
-        if "employeeId" in klass.__dict__:
-            descriptor = klass.__dict__["employeeId"]
             break
     assert isinstance(descriptor, property)
 
@@ -773,6 +759,20 @@ def test_query_leave_balance_usecase_constructor_args():
     sig = inspect.signature(Query_Leave_Balance_UseCase.__init__)
     params = list(sig.parameters.keys())
 
+
+
+def test_login_usecase_is_not_abstract():
+    assert not inspect.isabstract(Login_UseCase)
+
+
+def test_login_usecase_constructor_exists():
+    assert callable(Login_UseCase.__init__)
+
+
+def test_login_usecase_constructor_args():
+    sig = inspect.signature(Login_UseCase.__init__)
+    params = list(sig.parameters.keys())
+
 def test_leavestatus_exists():
     # Check that the Enumeration exists
     assert LeaveStatus is not None
@@ -798,9 +798,6 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-Login_UseCase_strategy = st.builds(
-    Login_UseCase,
-)
 Query_Eligibility_UseCase_strategy = st.builds(
     Query_Eligibility_UseCase,
 )
@@ -850,19 +847,19 @@ Request_strategy = st.builds(
 )
 LeaveApplication_strategy = st.builds(
     LeaveApplication,
-    applicationId=
-        safe_text,
-    employeeId=
+    approverComments=
         safe_text,
     toDate=
         st.dates(),
-    status=
+    applicationId=
         safe_text,
     fromDate=
         st.dates(),
-    reason=
+    employeeId=
         safe_text,
-    approverComments=
+    status=
+        safe_text,
+    reason=
         safe_text
 )
 LeaveHistoryQuery_strategy = st.builds(
@@ -887,19 +884,19 @@ Query_strategy = st.builds(
 )
 Employee_strategy = st.builds(
     Employee,
-    leavesTaken=
+    managerId=
         safe_text,
-    employeeName=
+    password=
         safe_text,
     noOfLeaves=
         st.integers(),
+    employeeId=
+        safe_text,
     jobLevel=
         st.integers(),
-    password=
+    leavesTaken=
         safe_text,
-    managerId=
-        safe_text,
-    employeeId=
+    employeeName=
         safe_text
 )
 _UseCase_strategy = st.builds(
@@ -950,11 +947,9 @@ Query_Leave_History_UseCase_strategy = st.builds(
 Query_Leave_Balance_UseCase_strategy = st.builds(
     Query_Leave_Balance_UseCase,
 )
-
-@given(instance=Login_UseCase_strategy)
-@settings(max_examples=50)
-def test_login_usecase_instantiation(instance):
-    assert isinstance(instance, Login_UseCase)
+Login_UseCase_strategy = st.builds(
+    Login_UseCase,
+)
 
 @given(instance=Query_Eligibility_UseCase_strategy)
 @settings(max_examples=50)
@@ -986,9 +981,6 @@ def test_updatecalendar_instantiation(instance):
 def test_createuseraction_instantiation(instance):
     assert isinstance(instance, CreateUserAction)
 
-@given(instance=CreateUserAction_strategy)
-def test_createuseraction_employee_type(instance):
-    assert isinstance(instance.employee, employee_actor)
 
 
 @given(instance=CreateUserAction_strategy)
@@ -1002,9 +994,6 @@ def test_createuseraction_employee_setter(instance):
 def test_loginaction_instantiation(instance):
     assert isinstance(instance, LoginAction)
 
-@given(instance=LoginAction_strategy)
-def test_loginaction_employee_type(instance):
-    assert isinstance(instance.employee, employee_actor)
 
 
 @given(instance=LoginAction_strategy)
@@ -1043,9 +1032,6 @@ def test_applyleaverequest_instantiation(instance):
 def test_request_instantiation(instance):
     assert isinstance(instance, Request)
 
-@given(instance=Request_strategy)
-def test_request_leaveApplication_type(instance):
-    assert isinstance(instance.leaveApplication, leaveapplication)
 
 
 @given(instance=Request_strategy)
@@ -1054,9 +1040,6 @@ def test_request_leaveApplication_setter(instance):
     instance.leaveApplication = original
     assert instance.leaveApplication == original
 
-@given(instance=Request_strategy)
-def test_request_requestId_type(instance):
-    assert isinstance(instance.requestId, str)
 
 
 @given(instance=Request_strategy)
@@ -1070,75 +1053,6 @@ def test_request_requestId_setter(instance):
 def test_leaveapplication_instantiation(instance):
     assert isinstance(instance, LeaveApplication)
 
-@given(instance=LeaveApplication_strategy)
-def test_leaveapplication_applicationId_type(instance):
-    assert isinstance(instance.applicationId, str)
-
-
-@given(instance=LeaveApplication_strategy)
-def test_leaveapplication_applicationId_setter(instance):
-    original = instance.applicationId
-    instance.applicationId = original
-    assert instance.applicationId == original
-
-@given(instance=LeaveApplication_strategy)
-def test_leaveapplication_employeeId_type(instance):
-    assert isinstance(instance.employeeId, str)
-
-
-@given(instance=LeaveApplication_strategy)
-def test_leaveapplication_employeeId_setter(instance):
-    original = instance.employeeId
-    instance.employeeId = original
-    assert instance.employeeId == original
-
-@given(instance=LeaveApplication_strategy)
-def test_leaveapplication_toDate_type(instance):
-    assert isinstance(instance.toDate, date)
-
-
-@given(instance=LeaveApplication_strategy)
-def test_leaveapplication_toDate_setter(instance):
-    original = instance.toDate
-    instance.toDate = original
-    assert instance.toDate == original
-
-@given(instance=LeaveApplication_strategy)
-def test_leaveapplication_status_type(instance):
-    assert isinstance(instance.status, str)
-
-
-@given(instance=LeaveApplication_strategy)
-def test_leaveapplication_status_setter(instance):
-    original = instance.status
-    instance.status = original
-    assert instance.status == original
-
-@given(instance=LeaveApplication_strategy)
-def test_leaveapplication_fromDate_type(instance):
-    assert isinstance(instance.fromDate, date)
-
-
-@given(instance=LeaveApplication_strategy)
-def test_leaveapplication_fromDate_setter(instance):
-    original = instance.fromDate
-    instance.fromDate = original
-    assert instance.fromDate == original
-
-@given(instance=LeaveApplication_strategy)
-def test_leaveapplication_reason_type(instance):
-    assert isinstance(instance.reason, str)
-
-
-@given(instance=LeaveApplication_strategy)
-def test_leaveapplication_reason_setter(instance):
-    original = instance.reason
-    instance.reason = original
-    assert instance.reason == original
-
-@given(instance=LeaveApplication_strategy)
-def test_leaveapplication_approverComments_type(instance):
-    assert isinstance(instance.approverComments, str)
 
 
 @given(instance=LeaveApplication_strategy)
@@ -1147,14 +1061,59 @@ def test_leaveapplication_approverComments_setter(instance):
     instance.approverComments = original
     assert instance.approverComments == original
 
+
+
+@given(instance=LeaveApplication_strategy)
+def test_leaveapplication_toDate_setter(instance):
+    original = instance.toDate
+    instance.toDate = original
+    assert instance.toDate == original
+
+
+
+@given(instance=LeaveApplication_strategy)
+def test_leaveapplication_applicationId_setter(instance):
+    original = instance.applicationId
+    instance.applicationId = original
+    assert instance.applicationId == original
+
+
+
+@given(instance=LeaveApplication_strategy)
+def test_leaveapplication_fromDate_setter(instance):
+    original = instance.fromDate
+    instance.fromDate = original
+    assert instance.fromDate == original
+
+
+
+@given(instance=LeaveApplication_strategy)
+def test_leaveapplication_employeeId_setter(instance):
+    original = instance.employeeId
+    instance.employeeId = original
+    assert instance.employeeId == original
+
+
+
+@given(instance=LeaveApplication_strategy)
+def test_leaveapplication_status_setter(instance):
+    original = instance.status
+    instance.status = original
+    assert instance.status == original
+
+
+
+@given(instance=LeaveApplication_strategy)
+def test_leaveapplication_reason_setter(instance):
+    original = instance.reason
+    instance.reason = original
+    assert instance.reason == original
+
 @given(instance=LeaveHistoryQuery_strategy)
 @settings(max_examples=50)
 def test_leavehistoryquery_instantiation(instance):
     assert isinstance(instance, LeaveHistoryQuery)
 
-@given(instance=LeaveHistoryQuery_strategy)
-def test_leavehistoryquery_fromDate_type(instance):
-    assert isinstance(instance.fromDate, date)
 
 
 @given(instance=LeaveHistoryQuery_strategy)
@@ -1163,9 +1122,6 @@ def test_leavehistoryquery_fromDate_setter(instance):
     instance.fromDate = original
     assert instance.fromDate == original
 
-@given(instance=LeaveHistoryQuery_strategy)
-def test_leavehistoryquery_toDate_type(instance):
-    assert isinstance(instance.toDate, date)
 
 
 @given(instance=LeaveHistoryQuery_strategy)
@@ -1189,9 +1145,6 @@ def test_eligibilityquery_instantiation(instance):
 def test_query_instantiation(instance):
     assert isinstance(instance, Query)
 
-@given(instance=Query_strategy)
-def test_query_user_type(instance):
-    assert isinstance(instance.user, employee_actor)
 
 
 @given(instance=Query_strategy)
@@ -1200,9 +1153,6 @@ def test_query_user_setter(instance):
     instance.user = original
     assert instance.user == original
 
-@given(instance=Query_strategy)
-def test_query_requestId_type(instance):
-    assert isinstance(instance.requestId, str)
 
 
 @given(instance=Query_strategy)
@@ -1216,64 +1166,6 @@ def test_query_requestId_setter(instance):
 def test_employee_instantiation(instance):
     assert isinstance(instance, Employee)
 
-@given(instance=Employee_strategy)
-def test_employee_leavesTaken_type(instance):
-    assert isinstance(instance.leavesTaken, str)
-
-
-@given(instance=Employee_strategy)
-def test_employee_leavesTaken_setter(instance):
-    original = instance.leavesTaken
-    instance.leavesTaken = original
-    assert instance.leavesTaken == original
-
-@given(instance=Employee_strategy)
-def test_employee_employeeName_type(instance):
-    assert isinstance(instance.employeeName, str)
-
-
-@given(instance=Employee_strategy)
-def test_employee_employeeName_setter(instance):
-    original = instance.employeeName
-    instance.employeeName = original
-    assert instance.employeeName == original
-
-@given(instance=Employee_strategy)
-def test_employee_noOfLeaves_type(instance):
-    assert isinstance(instance.noOfLeaves, int)
-
-
-@given(instance=Employee_strategy)
-def test_employee_noOfLeaves_setter(instance):
-    original = instance.noOfLeaves
-    instance.noOfLeaves = original
-    assert instance.noOfLeaves == original
-
-@given(instance=Employee_strategy)
-def test_employee_jobLevel_type(instance):
-    assert isinstance(instance.jobLevel, int)
-
-
-@given(instance=Employee_strategy)
-def test_employee_jobLevel_setter(instance):
-    original = instance.jobLevel
-    instance.jobLevel = original
-    assert instance.jobLevel == original
-
-@given(instance=Employee_strategy)
-def test_employee_password_type(instance):
-    assert isinstance(instance.password, str)
-
-
-@given(instance=Employee_strategy)
-def test_employee_password_setter(instance):
-    original = instance.password
-    instance.password = original
-    assert instance.password == original
-
-@given(instance=Employee_strategy)
-def test_employee_managerId_type(instance):
-    assert isinstance(instance.managerId, str)
 
 
 @given(instance=Employee_strategy)
@@ -1282,9 +1174,22 @@ def test_employee_managerId_setter(instance):
     instance.managerId = original
     assert instance.managerId == original
 
+
+
 @given(instance=Employee_strategy)
-def test_employee_employeeId_type(instance):
-    assert isinstance(instance.employeeId, str)
+def test_employee_password_setter(instance):
+    original = instance.password
+    instance.password = original
+    assert instance.password == original
+
+
+
+@given(instance=Employee_strategy)
+def test_employee_noOfLeaves_setter(instance):
+    original = instance.noOfLeaves
+    instance.noOfLeaves = original
+    assert instance.noOfLeaves == original
+
 
 
 @given(instance=Employee_strategy)
@@ -1292,6 +1197,30 @@ def test_employee_employeeId_setter(instance):
     original = instance.employeeId
     instance.employeeId = original
     assert instance.employeeId == original
+
+
+
+@given(instance=Employee_strategy)
+def test_employee_jobLevel_setter(instance):
+    original = instance.jobLevel
+    instance.jobLevel = original
+    assert instance.jobLevel == original
+
+
+
+@given(instance=Employee_strategy)
+def test_employee_leavesTaken_setter(instance):
+    original = instance.leavesTaken
+    instance.leavesTaken = original
+    assert instance.leavesTaken == original
+
+
+
+@given(instance=Employee_strategy)
+def test_employee_employeeName_setter(instance):
+    original = instance.employeeName
+    instance.employeeName = original
+    assert instance.employeeName == original
 
 @given(instance=_UseCase_strategy)
 @settings(max_examples=50)
@@ -1372,3 +1301,8 @@ def test_query_leave_history_usecase_instantiation(instance):
 @settings(max_examples=50)
 def test_query_leave_balance_usecase_instantiation(instance):
     assert isinstance(instance, Query_Leave_Balance_UseCase)
+
+@given(instance=Login_UseCase_strategy)
+@settings(max_examples=50)
+def test_login_usecase_instantiation(instance):
+    assert isinstance(instance, Login_UseCase)

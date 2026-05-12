@@ -3,20 +3,20 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    Concept::Thing,
-    Concept::IndividualContainer,
+from python_code import (
+    Concept_Thing,
+    Concept_IndividualContainer,
     Thing,
-    Concept::Route,
-    Concept::Signal,
-    Concept::SwitchPosition,
-    Concept::Sensor,
-    Concept::Trackelement,
+    Concept_Sensor,
+    Concept_Route,
+    Concept_Signal,
+    Concept_SwitchPosition,
+    Concept_Trackelement,
     Trackelement,
-    Concept::Switch,
-    Concept::Segment,
+    Concept_Switch,
+    Concept_Segment,
     SignalStateKind,
     SwitchStateKind,
 )
@@ -27,30 +27,30 @@ from classes import (
 
 
 
-def test_concept::thing_is_not_abstract():
-    assert not inspect.isabstract(Concept::Thing)
+def test_concept_thing_is_not_abstract():
+    assert not inspect.isabstract(Concept_Thing)
 
 
-def test_concept::thing_constructor_exists():
-    assert callable(Concept::Thing.__init__)
+def test_concept_thing_constructor_exists():
+    assert callable(Concept_Thing.__init__)
 
 
-def test_concept::thing_constructor_args():
-    sig = inspect.signature(Concept::Thing.__init__)
+def test_concept_thing_constructor_args():
+    sig = inspect.signature(Concept_Thing.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_concept::individualcontainer_is_not_abstract():
-    assert not inspect.isabstract(Concept::IndividualContainer)
+def test_concept_individualcontainer_is_not_abstract():
+    assert not inspect.isabstract(Concept_IndividualContainer)
 
 
-def test_concept::individualcontainer_constructor_exists():
-    assert callable(Concept::IndividualContainer.__init__)
+def test_concept_individualcontainer_constructor_exists():
+    assert callable(Concept_IndividualContainer.__init__)
 
 
-def test_concept::individualcontainer_constructor_args():
-    sig = inspect.signature(Concept::IndividualContainer.__init__)
+def test_concept_individualcontainer_constructor_args():
+    sig = inspect.signature(Concept_IndividualContainer.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -69,37 +69,51 @@ def test_thing_constructor_args():
 
 
 
-def test_concept::route_is_not_abstract():
-    assert not inspect.isabstract(Concept::Route)
+def test_concept_sensor_is_not_abstract():
+    assert not inspect.isabstract(Concept_Sensor)
 
 
-def test_concept::route_constructor_exists():
-    assert callable(Concept::Route.__init__)
+def test_concept_sensor_constructor_exists():
+    assert callable(Concept_Sensor.__init__)
 
 
-def test_concept::route_constructor_args():
-    sig = inspect.signature(Concept::Route.__init__)
+def test_concept_sensor_constructor_args():
+    sig = inspect.signature(Concept_Sensor.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_concept::signal_is_not_abstract():
-    assert not inspect.isabstract(Concept::Signal)
+def test_concept_route_is_not_abstract():
+    assert not inspect.isabstract(Concept_Route)
 
 
-def test_concept::signal_constructor_exists():
-    assert callable(Concept::Signal.__init__)
+def test_concept_route_constructor_exists():
+    assert callable(Concept_Route.__init__)
 
 
-def test_concept::signal_constructor_args():
-    sig = inspect.signature(Concept::Signal.__init__)
+def test_concept_route_constructor_args():
+    sig = inspect.signature(Concept_Route.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_concept_signal_is_not_abstract():
+    assert not inspect.isabstract(Concept_Signal)
+
+
+def test_concept_signal_constructor_exists():
+    assert callable(Concept_Signal.__init__)
+
+
+def test_concept_signal_constructor_args():
+    sig = inspect.signature(Concept_Signal.__init__)
     params = list(sig.parameters.keys())
     assert "Signal_actualState" in params, "Missing parameter 'Signal_actualState'"
 
-def test_concept::signal_has_Signal_actualState():
-    assert hasattr(Concept::Signal, "Signal_actualState")
+def test_concept_signal_has_Signal_actualState():
+    assert hasattr(Concept_Signal, "Signal_actualState")
     descriptor = None
-    for klass in Concept::Signal.__mro__:
+    for klass in Concept_Signal.__mro__:
         if "Signal_actualState" in klass.__dict__:
             descriptor = klass.__dict__["Signal_actualState"]
             break
@@ -107,23 +121,23 @@ def test_concept::signal_has_Signal_actualState():
 
 
 
-def test_concept::switchposition_is_not_abstract():
-    assert not inspect.isabstract(Concept::SwitchPosition)
+def test_concept_switchposition_is_not_abstract():
+    assert not inspect.isabstract(Concept_SwitchPosition)
 
 
-def test_concept::switchposition_constructor_exists():
-    assert callable(Concept::SwitchPosition.__init__)
+def test_concept_switchposition_constructor_exists():
+    assert callable(Concept_SwitchPosition.__init__)
 
 
-def test_concept::switchposition_constructor_args():
-    sig = inspect.signature(Concept::SwitchPosition.__init__)
+def test_concept_switchposition_constructor_args():
+    sig = inspect.signature(Concept_SwitchPosition.__init__)
     params = list(sig.parameters.keys())
     assert "SwitchPosition_switchState" in params, "Missing parameter 'SwitchPosition_switchState'"
 
-def test_concept::switchposition_has_SwitchPosition_switchState():
-    assert hasattr(Concept::SwitchPosition, "SwitchPosition_switchState")
+def test_concept_switchposition_has_SwitchPosition_switchState():
+    assert hasattr(Concept_SwitchPosition, "SwitchPosition_switchState")
     descriptor = None
-    for klass in Concept::SwitchPosition.__mro__:
+    for klass in Concept_SwitchPosition.__mro__:
         if "SwitchPosition_switchState" in klass.__dict__:
             descriptor = klass.__dict__["SwitchPosition_switchState"]
             break
@@ -131,30 +145,16 @@ def test_concept::switchposition_has_SwitchPosition_switchState():
 
 
 
-def test_concept::sensor_is_not_abstract():
-    assert not inspect.isabstract(Concept::Sensor)
+def test_concept_trackelement_is_not_abstract():
+    assert not inspect.isabstract(Concept_Trackelement)
 
 
-def test_concept::sensor_constructor_exists():
-    assert callable(Concept::Sensor.__init__)
+def test_concept_trackelement_constructor_exists():
+    assert callable(Concept_Trackelement.__init__)
 
 
-def test_concept::sensor_constructor_args():
-    sig = inspect.signature(Concept::Sensor.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_concept::trackelement_is_not_abstract():
-    assert not inspect.isabstract(Concept::Trackelement)
-
-
-def test_concept::trackelement_constructor_exists():
-    assert callable(Concept::Trackelement.__init__)
-
-
-def test_concept::trackelement_constructor_args():
-    sig = inspect.signature(Concept::Trackelement.__init__)
+def test_concept_trackelement_constructor_args():
+    sig = inspect.signature(Concept_Trackelement.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -173,23 +173,23 @@ def test_trackelement_constructor_args():
 
 
 
-def test_concept::switch_is_not_abstract():
-    assert not inspect.isabstract(Concept::Switch)
+def test_concept_switch_is_not_abstract():
+    assert not inspect.isabstract(Concept_Switch)
 
 
-def test_concept::switch_constructor_exists():
-    assert callable(Concept::Switch.__init__)
+def test_concept_switch_constructor_exists():
+    assert callable(Concept_Switch.__init__)
 
 
-def test_concept::switch_constructor_args():
-    sig = inspect.signature(Concept::Switch.__init__)
+def test_concept_switch_constructor_args():
+    sig = inspect.signature(Concept_Switch.__init__)
     params = list(sig.parameters.keys())
     assert "Switch_actualState" in params, "Missing parameter 'Switch_actualState'"
 
-def test_concept::switch_has_Switch_actualState():
-    assert hasattr(Concept::Switch, "Switch_actualState")
+def test_concept_switch_has_Switch_actualState():
+    assert hasattr(Concept_Switch, "Switch_actualState")
     descriptor = None
-    for klass in Concept::Switch.__mro__:
+    for klass in Concept_Switch.__mro__:
         if "Switch_actualState" in klass.__dict__:
             descriptor = klass.__dict__["Switch_actualState"]
             break
@@ -197,23 +197,23 @@ def test_concept::switch_has_Switch_actualState():
 
 
 
-def test_concept::segment_is_not_abstract():
-    assert not inspect.isabstract(Concept::Segment)
+def test_concept_segment_is_not_abstract():
+    assert not inspect.isabstract(Concept_Segment)
 
 
-def test_concept::segment_constructor_exists():
-    assert callable(Concept::Segment.__init__)
+def test_concept_segment_constructor_exists():
+    assert callable(Concept_Segment.__init__)
 
 
-def test_concept::segment_constructor_args():
-    sig = inspect.signature(Concept::Segment.__init__)
+def test_concept_segment_constructor_args():
+    sig = inspect.signature(Concept_Segment.__init__)
     params = list(sig.parameters.keys())
     assert "Segment_length" in params, "Missing parameter 'Segment_length'"
 
-def test_concept::segment_has_Segment_length():
-    assert hasattr(Concept::Segment, "Segment_length")
+def test_concept_segment_has_Segment_length():
+    assert hasattr(Concept_Segment, "Segment_length")
     descriptor = None
-    for klass in Concept::Segment.__mro__:
+    for klass in Concept_Segment.__mro__:
         if "Segment_length" in klass.__dict__:
             descriptor = klass.__dict__["Segment_length"]
             break
@@ -227,9 +227,9 @@ def test_signalstatekind_has_all_literals():
     # Collect the names of literals in this Enumeration
     enum_literals = [lit.name for lit in SignalStateKind]
     expected_literals = [
-        "SignalStateKind_STOP",
-        "SignalStateKind_GO",
         "SignalStateKind_FAILURE",
+        "SignalStateKind_GO",
+        "SignalStateKind_STOP",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
@@ -243,10 +243,10 @@ def test_switchstatekind_has_all_literals():
     # Collect the names of literals in this Enumeration
     enum_literals = [lit.name for lit in SwitchStateKind]
     expected_literals = [
-        "PointStateKind_RIGHT",
-        "PointStateKind_LEFT",
         "PointStateKind_STRAIGHT",
         "PointStateKind_FAILURE",
+        "PointStateKind_LEFT",
+        "PointStateKind_RIGHT",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
@@ -264,143 +264,131 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-Concept::Thing_strategy = st.builds(
-    Concept::Thing,
+Concept_Thing_strategy = st.builds(
+    Concept_Thing,
 )
-Concept::IndividualContainer_strategy = st.builds(
-    Concept::IndividualContainer,
+Concept_IndividualContainer_strategy = st.builds(
+    Concept_IndividualContainer,
 )
 Thing_strategy = st.builds(
     Thing,
 )
-Concept::Route_strategy = st.builds(
-    Concept::Route,
+Concept_Sensor_strategy = st.builds(
+    Concept_Sensor,
 )
-Concept::Signal_strategy = st.builds(
-    Concept::Signal,
+Concept_Route_strategy = st.builds(
+    Concept_Route,
+)
+Concept_Signal_strategy = st.builds(
+    Concept_Signal,
     Signal_actualState=
         safe_text
 )
-Concept::SwitchPosition_strategy = st.builds(
-    Concept::SwitchPosition,
+Concept_SwitchPosition_strategy = st.builds(
+    Concept_SwitchPosition,
     SwitchPosition_switchState=
         safe_text
 )
-Concept::Sensor_strategy = st.builds(
-    Concept::Sensor,
-)
-Concept::Trackelement_strategy = st.builds(
-    Concept::Trackelement,
+Concept_Trackelement_strategy = st.builds(
+    Concept_Trackelement,
 )
 Trackelement_strategy = st.builds(
     Trackelement,
 )
-Concept::Switch_strategy = st.builds(
-    Concept::Switch,
+Concept_Switch_strategy = st.builds(
+    Concept_Switch,
     Switch_actualState=
         safe_text
 )
-Concept::Segment_strategy = st.builds(
-    Concept::Segment,
+Concept_Segment_strategy = st.builds(
+    Concept_Segment,
     Segment_length=
         st.integers()
 )
 
-@given(instance=Concept::Thing_strategy)
+@given(instance=Concept_Thing_strategy)
 @settings(max_examples=50)
-def test_concept::thing_instantiation(instance):
-    assert isinstance(instance, Concept::Thing)
+def test_concept_thing_instantiation(instance):
+    assert isinstance(instance, Concept_Thing)
 
-@given(instance=Concept::IndividualContainer_strategy)
+@given(instance=Concept_IndividualContainer_strategy)
 @settings(max_examples=50)
-def test_concept::individualcontainer_instantiation(instance):
-    assert isinstance(instance, Concept::IndividualContainer)
+def test_concept_individualcontainer_instantiation(instance):
+    assert isinstance(instance, Concept_IndividualContainer)
 
 @given(instance=Thing_strategy)
 @settings(max_examples=50)
 def test_thing_instantiation(instance):
     assert isinstance(instance, Thing)
 
-@given(instance=Concept::Route_strategy)
+@given(instance=Concept_Sensor_strategy)
 @settings(max_examples=50)
-def test_concept::route_instantiation(instance):
-    assert isinstance(instance, Concept::Route)
+def test_concept_sensor_instantiation(instance):
+    assert isinstance(instance, Concept_Sensor)
 
-@given(instance=Concept::Signal_strategy)
+@given(instance=Concept_Route_strategy)
 @settings(max_examples=50)
-def test_concept::signal_instantiation(instance):
-    assert isinstance(instance, Concept::Signal)
+def test_concept_route_instantiation(instance):
+    assert isinstance(instance, Concept_Route)
 
-@given(instance=Concept::Signal_strategy)
-def test_concept::signal_Signal_actualState_type(instance):
-    assert isinstance(instance.Signal_actualState, str)
+@given(instance=Concept_Signal_strategy)
+@settings(max_examples=50)
+def test_concept_signal_instantiation(instance):
+    assert isinstance(instance, Concept_Signal)
 
 
-@given(instance=Concept::Signal_strategy)
-def test_concept::signal_Signal_actualState_setter(instance):
+
+@given(instance=Concept_Signal_strategy)
+def test_concept_signal_Signal_actualState_setter(instance):
     original = instance.Signal_actualState
     instance.Signal_actualState = original
     assert instance.Signal_actualState == original
 
-@given(instance=Concept::SwitchPosition_strategy)
+@given(instance=Concept_SwitchPosition_strategy)
 @settings(max_examples=50)
-def test_concept::switchposition_instantiation(instance):
-    assert isinstance(instance, Concept::SwitchPosition)
-
-@given(instance=Concept::SwitchPosition_strategy)
-def test_concept::switchposition_SwitchPosition_switchState_type(instance):
-    assert isinstance(instance.SwitchPosition_switchState, str)
+def test_concept_switchposition_instantiation(instance):
+    assert isinstance(instance, Concept_SwitchPosition)
 
 
-@given(instance=Concept::SwitchPosition_strategy)
-def test_concept::switchposition_SwitchPosition_switchState_setter(instance):
+
+@given(instance=Concept_SwitchPosition_strategy)
+def test_concept_switchposition_SwitchPosition_switchState_setter(instance):
     original = instance.SwitchPosition_switchState
     instance.SwitchPosition_switchState = original
     assert instance.SwitchPosition_switchState == original
 
-@given(instance=Concept::Sensor_strategy)
+@given(instance=Concept_Trackelement_strategy)
 @settings(max_examples=50)
-def test_concept::sensor_instantiation(instance):
-    assert isinstance(instance, Concept::Sensor)
-
-@given(instance=Concept::Trackelement_strategy)
-@settings(max_examples=50)
-def test_concept::trackelement_instantiation(instance):
-    assert isinstance(instance, Concept::Trackelement)
+def test_concept_trackelement_instantiation(instance):
+    assert isinstance(instance, Concept_Trackelement)
 
 @given(instance=Trackelement_strategy)
 @settings(max_examples=50)
 def test_trackelement_instantiation(instance):
     assert isinstance(instance, Trackelement)
 
-@given(instance=Concept::Switch_strategy)
+@given(instance=Concept_Switch_strategy)
 @settings(max_examples=50)
-def test_concept::switch_instantiation(instance):
-    assert isinstance(instance, Concept::Switch)
-
-@given(instance=Concept::Switch_strategy)
-def test_concept::switch_Switch_actualState_type(instance):
-    assert isinstance(instance.Switch_actualState, str)
+def test_concept_switch_instantiation(instance):
+    assert isinstance(instance, Concept_Switch)
 
 
-@given(instance=Concept::Switch_strategy)
-def test_concept::switch_Switch_actualState_setter(instance):
+
+@given(instance=Concept_Switch_strategy)
+def test_concept_switch_Switch_actualState_setter(instance):
     original = instance.Switch_actualState
     instance.Switch_actualState = original
     assert instance.Switch_actualState == original
 
-@given(instance=Concept::Segment_strategy)
+@given(instance=Concept_Segment_strategy)
 @settings(max_examples=50)
-def test_concept::segment_instantiation(instance):
-    assert isinstance(instance, Concept::Segment)
-
-@given(instance=Concept::Segment_strategy)
-def test_concept::segment_Segment_length_type(instance):
-    assert isinstance(instance.Segment_length, int)
+def test_concept_segment_instantiation(instance):
+    assert isinstance(instance, Concept_Segment)
 
 
-@given(instance=Concept::Segment_strategy)
-def test_concept::segment_Segment_length_setter(instance):
+
+@given(instance=Concept_Segment_strategy)
+def test_concept_segment_Segment_length_setter(instance):
     original = instance.Segment_length
     instance.Segment_length = original
     assert instance.Segment_length == original

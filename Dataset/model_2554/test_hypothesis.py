@@ -3,12 +3,12 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    testmodel::Val,
-    testmodel::Node,
-    testmodel::cont,
+from python_code import (
+    testmodel_Val,
+    testmodel_Node,
+    testmodel_cont,
 )
 
 # =============================================================================
@@ -17,67 +17,67 @@ from classes import (
 
 
 
-def test_testmodel::val_is_not_abstract():
-    assert not inspect.isabstract(testmodel::Val)
+def test_testmodel_val_is_not_abstract():
+    assert not inspect.isabstract(testmodel_Val)
 
 
-def test_testmodel::val_constructor_exists():
-    assert callable(testmodel::Val.__init__)
+def test_testmodel_val_constructor_exists():
+    assert callable(testmodel_Val.__init__)
 
 
-def test_testmodel::val_constructor_args():
-    sig = inspect.signature(testmodel::Val.__init__)
+def test_testmodel_val_constructor_args():
+    sig = inspect.signature(testmodel_Val.__init__)
     params = list(sig.parameters.keys())
-    assert "intvl" in params, "Missing parameter 'intvl'"
     assert "valname" in params, "Missing parameter 'valname'"
     assert "intlist" in params, "Missing parameter 'intlist'"
+    assert "intvl" in params, "Missing parameter 'intvl'"
 
-def test_testmodel::val_has_intvl():
-    assert hasattr(testmodel::Val, "intvl")
+def test_testmodel_val_has_valname():
+    assert hasattr(testmodel_Val, "valname")
     descriptor = None
-    for klass in testmodel::Val.__mro__:
-        if "intvl" in klass.__dict__:
-            descriptor = klass.__dict__["intvl"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_testmodel::val_has_valname():
-    assert hasattr(testmodel::Val, "valname")
-    descriptor = None
-    for klass in testmodel::Val.__mro__:
+    for klass in testmodel_Val.__mro__:
         if "valname" in klass.__dict__:
             descriptor = klass.__dict__["valname"]
             break
     assert isinstance(descriptor, property)
 
-def test_testmodel::val_has_intlist():
-    assert hasattr(testmodel::Val, "intlist")
+def test_testmodel_val_has_intlist():
+    assert hasattr(testmodel_Val, "intlist")
     descriptor = None
-    for klass in testmodel::Val.__mro__:
+    for klass in testmodel_Val.__mro__:
         if "intlist" in klass.__dict__:
             descriptor = klass.__dict__["intlist"]
             break
     assert isinstance(descriptor, property)
 
+def test_testmodel_val_has_intvl():
+    assert hasattr(testmodel_Val, "intvl")
+    descriptor = None
+    for klass in testmodel_Val.__mro__:
+        if "intvl" in klass.__dict__:
+            descriptor = klass.__dict__["intvl"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_testmodel::node_is_not_abstract():
-    assert not inspect.isabstract(testmodel::Node)
+
+def test_testmodel_node_is_not_abstract():
+    assert not inspect.isabstract(testmodel_Node)
 
 
-def test_testmodel::node_constructor_exists():
-    assert callable(testmodel::Node.__init__)
+def test_testmodel_node_constructor_exists():
+    assert callable(testmodel_Node.__init__)
 
 
-def test_testmodel::node_constructor_args():
-    sig = inspect.signature(testmodel::Node.__init__)
+def test_testmodel_node_constructor_args():
+    sig = inspect.signature(testmodel_Node.__init__)
     params = list(sig.parameters.keys())
     assert "nodename" in params, "Missing parameter 'nodename'"
 
-def test_testmodel::node_has_nodename():
-    assert hasattr(testmodel::Node, "nodename")
+def test_testmodel_node_has_nodename():
+    assert hasattr(testmodel_Node, "nodename")
     descriptor = None
-    for klass in testmodel::Node.__mro__:
+    for klass in testmodel_Node.__mro__:
         if "nodename" in klass.__dict__:
             descriptor = klass.__dict__["nodename"]
             break
@@ -85,16 +85,16 @@ def test_testmodel::node_has_nodename():
 
 
 
-def test_testmodel::cont_is_not_abstract():
-    assert not inspect.isabstract(testmodel::cont)
+def test_testmodel_cont_is_not_abstract():
+    assert not inspect.isabstract(testmodel_cont)
 
 
-def test_testmodel::cont_constructor_exists():
-    assert callable(testmodel::cont.__init__)
+def test_testmodel_cont_constructor_exists():
+    assert callable(testmodel_cont.__init__)
 
 
-def test_testmodel::cont_constructor_args():
-    sig = inspect.signature(testmodel::cont.__init__)
+def test_testmodel_cont_constructor_args():
+    sig = inspect.signature(testmodel_cont.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -109,79 +109,67 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-testmodel::Val_strategy = st.builds(
-    testmodel::Val,
-    intvl=
-        st.integers(),
+testmodel_Val_strategy = st.builds(
+    testmodel_Val,
     valname=
         safe_text,
     intlist=
+        st.integers(),
+    intvl=
         st.integers()
 )
-testmodel::Node_strategy = st.builds(
-    testmodel::Node,
+testmodel_Node_strategy = st.builds(
+    testmodel_Node,
     nodename=
         safe_text
 )
-testmodel::cont_strategy = st.builds(
-    testmodel::cont,
+testmodel_cont_strategy = st.builds(
+    testmodel_cont,
 )
 
-@given(instance=testmodel::Val_strategy)
+@given(instance=testmodel_Val_strategy)
 @settings(max_examples=50)
-def test_testmodel::val_instantiation(instance):
-    assert isinstance(instance, testmodel::Val)
-
-@given(instance=testmodel::Val_strategy)
-def test_testmodel::val_intvl_type(instance):
-    assert isinstance(instance.intvl, int)
+def test_testmodel_val_instantiation(instance):
+    assert isinstance(instance, testmodel_Val)
 
 
-@given(instance=testmodel::Val_strategy)
-def test_testmodel::val_intvl_setter(instance):
-    original = instance.intvl
-    instance.intvl = original
-    assert instance.intvl == original
 
-@given(instance=testmodel::Val_strategy)
-def test_testmodel::val_valname_type(instance):
-    assert isinstance(instance.valname, str)
-
-
-@given(instance=testmodel::Val_strategy)
-def test_testmodel::val_valname_setter(instance):
+@given(instance=testmodel_Val_strategy)
+def test_testmodel_val_valname_setter(instance):
     original = instance.valname
     instance.valname = original
     assert instance.valname == original
 
-@given(instance=testmodel::Val_strategy)
-def test_testmodel::val_intlist_type(instance):
-    assert isinstance(instance.intlist, int)
 
 
-@given(instance=testmodel::Val_strategy)
-def test_testmodel::val_intlist_setter(instance):
+@given(instance=testmodel_Val_strategy)
+def test_testmodel_val_intlist_setter(instance):
     original = instance.intlist
     instance.intlist = original
     assert instance.intlist == original
 
-@given(instance=testmodel::Node_strategy)
+
+
+@given(instance=testmodel_Val_strategy)
+def test_testmodel_val_intvl_setter(instance):
+    original = instance.intvl
+    instance.intvl = original
+    assert instance.intvl == original
+
+@given(instance=testmodel_Node_strategy)
 @settings(max_examples=50)
-def test_testmodel::node_instantiation(instance):
-    assert isinstance(instance, testmodel::Node)
-
-@given(instance=testmodel::Node_strategy)
-def test_testmodel::node_nodename_type(instance):
-    assert isinstance(instance.nodename, str)
+def test_testmodel_node_instantiation(instance):
+    assert isinstance(instance, testmodel_Node)
 
 
-@given(instance=testmodel::Node_strategy)
-def test_testmodel::node_nodename_setter(instance):
+
+@given(instance=testmodel_Node_strategy)
+def test_testmodel_node_nodename_setter(instance):
     original = instance.nodename
     instance.nodename = original
     assert instance.nodename == original
 
-@given(instance=testmodel::cont_strategy)
+@given(instance=testmodel_cont_strategy)
 @settings(max_examples=50)
-def test_testmodel::cont_instantiation(instance):
-    assert isinstance(instance, testmodel::cont)
+def test_testmodel_cont_instantiation(instance):
+    assert isinstance(instance, testmodel_cont)

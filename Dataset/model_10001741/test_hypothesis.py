@@ -3,7 +3,7 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
 from python_code import (
     genmymodelreverse_java_util_logging_Logger,
@@ -88,19 +88,10 @@ def test_model_callcenteremployee_constructor_exists():
 def test_model_callcenteremployee_constructor_args():
     sig = inspect.signature(model_CallCenterEmployee.__init__)
     params = list(sig.parameters.keys())
-    assert "callsAnswered" in params, "Missing parameter 'callsAnswered'"
     assert "name" in params, "Missing parameter 'name'"
     assert "LOGGER" in params, "Missing parameter 'LOGGER'"
     assert "employeeType" in params, "Missing parameter 'employeeType'"
-
-def test_model_callcenteremployee_has_callsAnswered():
-    assert hasattr(model_CallCenterEmployee, "callsAnswered")
-    descriptor = None
-    for klass in model_CallCenterEmployee.__mro__:
-        if "callsAnswered" in klass.__dict__:
-            descriptor = klass.__dict__["callsAnswered"]
-            break
-    assert isinstance(descriptor, property)
+    assert "callsAnswered" in params, "Missing parameter 'callsAnswered'"
 
 def test_model_callcenteremployee_has_name():
     assert hasattr(model_CallCenterEmployee, "name")
@@ -126,6 +117,15 @@ def test_model_callcenteremployee_has_employeeType():
     for klass in model_CallCenterEmployee.__mro__:
         if "employeeType" in klass.__dict__:
             descriptor = klass.__dict__["employeeType"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_model_callcenteremployee_has_callsAnswered():
+    assert hasattr(model_CallCenterEmployee, "callsAnswered")
+    descriptor = None
+    for klass in model_CallCenterEmployee.__mro__:
+        if "callsAnswered" in klass.__dict__:
+            descriptor = klass.__dict__["callsAnswered"]
             break
     assert isinstance(descriptor, property)
 
@@ -156,28 +156,10 @@ def test_model_call_constructor_exists():
 def test_model_call_constructor_args():
     sig = inspect.signature(model_Call.__init__)
     params = list(sig.parameters.keys())
-    assert "MIN" in params, "Missing parameter 'MIN'"
-    assert "MAX" in params, "Missing parameter 'MAX'"
     assert "LOGGER" in params, "Missing parameter 'LOGGER'"
     assert "number" in params, "Missing parameter 'number'"
-
-def test_model_call_has_MIN():
-    assert hasattr(model_Call, "MIN")
-    descriptor = None
-    for klass in model_Call.__mro__:
-        if "MIN" in klass.__dict__:
-            descriptor = klass.__dict__["MIN"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_model_call_has_MAX():
-    assert hasattr(model_Call, "MAX")
-    descriptor = None
-    for klass in model_Call.__mro__:
-        if "MAX" in klass.__dict__:
-            descriptor = klass.__dict__["MAX"]
-            break
-    assert isinstance(descriptor, property)
+    assert "MIN" in params, "Missing parameter 'MIN'"
+    assert "MAX" in params, "Missing parameter 'MAX'"
 
 def test_model_call_has_LOGGER():
     assert hasattr(model_Call, "LOGGER")
@@ -194,6 +176,24 @@ def test_model_call_has_number():
     for klass in model_Call.__mro__:
         if "number" in klass.__dict__:
             descriptor = klass.__dict__["number"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_model_call_has_MIN():
+    assert hasattr(model_Call, "MIN")
+    descriptor = None
+    for klass in model_Call.__mro__:
+        if "MIN" in klass.__dict__:
+            descriptor = klass.__dict__["MIN"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_model_call_has_MAX():
+    assert hasattr(model_Call, "MAX")
+    descriptor = None
+    for klass in model_Call.__mro__:
+        if "MAX" in klass.__dict__:
+            descriptor = klass.__dict__["MAX"]
             break
     assert isinstance(descriptor, property)
 
@@ -223,27 +223,27 @@ model_Director_strategy = st.builds(
 )
 model_CallCenterEmployee_strategy = st.builds(
     model_CallCenterEmployee,
-    callsAnswered=
-        st.integers(),
     name=
         safe_text,
     LOGGER=
         st.none(),
     employeeType=
-        safe_text
+        safe_text,
+    callsAnswered=
+        st.integers()
 )
 model_T_strategy = st.builds(
     model_T,
 )
 model_Call_strategy = st.builds(
     model_Call,
-    MIN=
-        st.integers(),
-    MAX=
-        st.integers(),
     LOGGER=
         st.none(),
     number=
+        st.integers(),
+    MIN=
+        st.integers(),
+    MAX=
         st.integers()
 )
 
@@ -272,20 +272,6 @@ def test_model_director_instantiation(instance):
 def test_model_callcenteremployee_instantiation(instance):
     assert isinstance(instance, model_CallCenterEmployee)
 
-@given(instance=model_CallCenterEmployee_strategy)
-def test_model_callcenteremployee_callsAnswered_type(instance):
-    assert isinstance(instance.callsAnswered, int)
-
-
-@given(instance=model_CallCenterEmployee_strategy)
-def test_model_callcenteremployee_callsAnswered_setter(instance):
-    original = instance.callsAnswered
-    instance.callsAnswered = original
-    assert instance.callsAnswered == original
-
-@given(instance=model_CallCenterEmployee_strategy)
-def test_model_callcenteremployee_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
 @given(instance=model_CallCenterEmployee_strategy)
@@ -294,9 +280,6 @@ def test_model_callcenteremployee_name_setter(instance):
     instance.name = original
     assert instance.name == original
 
-@given(instance=model_CallCenterEmployee_strategy)
-def test_model_callcenteremployee_LOGGER_type(instance):
-    assert isinstance(instance.LOGGER, genmymodelreverse_java_util_logging_logger)
 
 
 @given(instance=model_CallCenterEmployee_strategy)
@@ -305,9 +288,6 @@ def test_model_callcenteremployee_LOGGER_setter(instance):
     instance.LOGGER = original
     assert instance.LOGGER == original
 
-@given(instance=model_CallCenterEmployee_strategy)
-def test_model_callcenteremployee_employeeType_type(instance):
-    assert isinstance(instance.employeeType, str)
 
 
 @given(instance=model_CallCenterEmployee_strategy)
@@ -315,6 +295,14 @@ def test_model_callcenteremployee_employeeType_setter(instance):
     original = instance.employeeType
     instance.employeeType = original
     assert instance.employeeType == original
+
+
+
+@given(instance=model_CallCenterEmployee_strategy)
+def test_model_callcenteremployee_callsAnswered_setter(instance):
+    original = instance.callsAnswered
+    instance.callsAnswered = original
+    assert instance.callsAnswered == original
 
 @given(instance=model_T_strategy)
 @settings(max_examples=50)
@@ -326,31 +314,6 @@ def test_model_t_instantiation(instance):
 def test_model_call_instantiation(instance):
     assert isinstance(instance, model_Call)
 
-@given(instance=model_Call_strategy)
-def test_model_call_MIN_type(instance):
-    assert isinstance(instance.MIN, int)
-
-
-@given(instance=model_Call_strategy)
-def test_model_call_MIN_setter(instance):
-    original = instance.MIN
-    instance.MIN = original
-    assert instance.MIN == original
-
-@given(instance=model_Call_strategy)
-def test_model_call_MAX_type(instance):
-    assert isinstance(instance.MAX, int)
-
-
-@given(instance=model_Call_strategy)
-def test_model_call_MAX_setter(instance):
-    original = instance.MAX
-    instance.MAX = original
-    assert instance.MAX == original
-
-@given(instance=model_Call_strategy)
-def test_model_call_LOGGER_type(instance):
-    assert isinstance(instance.LOGGER, genmymodelreverse_java_util_logging_logger)
 
 
 @given(instance=model_Call_strategy)
@@ -359,9 +322,6 @@ def test_model_call_LOGGER_setter(instance):
     instance.LOGGER = original
     assert instance.LOGGER == original
 
-@given(instance=model_Call_strategy)
-def test_model_call_number_type(instance):
-    assert isinstance(instance.number, int)
 
 
 @given(instance=model_Call_strategy)
@@ -369,3 +329,19 @@ def test_model_call_number_setter(instance):
     original = instance.number
     instance.number = original
     assert instance.number == original
+
+
+
+@given(instance=model_Call_strategy)
+def test_model_call_MIN_setter(instance):
+    original = instance.MIN
+    instance.MIN = original
+    assert instance.MIN == original
+
+
+
+@given(instance=model_Call_strategy)
+def test_model_call_MAX_setter(instance):
+    original = instance.MAX
+    instance.MAX = original
+    assert instance.MAX == original

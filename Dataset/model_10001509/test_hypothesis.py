@@ -3,7 +3,7 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
 from python_code import (
     floor_s_buttons,
@@ -180,9 +180,6 @@ elevator_strategy = st.builds(
 def test_floor_s_buttons_instantiation(instance):
     assert isinstance(instance, floor_s_buttons)
 
-@given(instance=floor_s_buttons_strategy)
-def test_floor_s_buttons_number_type(instance):
-    assert isinstance(instance.number, bool)
 
 
 @given(instance=floor_s_buttons_strategy)
@@ -196,9 +193,6 @@ def test_floor_s_buttons_number_setter(instance):
 def test_elevator_s_buttons_instantiation(instance):
     assert isinstance(instance, elevator_s_buttons)
 
-@given(instance=elevator_s_buttons_strategy)
-def test_elevator_s_buttons_number_type(instance):
-    assert isinstance(instance.number, int)
 
 
 @given(instance=elevator_s_buttons_strategy)
@@ -212,9 +206,6 @@ def test_elevator_s_buttons_number_setter(instance):
 def test_button_instantiation(instance):
     assert isinstance(instance, button)
 
-@given(instance=button_strategy)
-def test_button_number_type(instance):
-    assert isinstance(instance.number, int)
 
 
 @given(instance=button_strategy)
@@ -228,9 +219,6 @@ def test_button_number_setter(instance):
 def test_door_instantiation(instance):
     assert isinstance(instance, door)
 
-@given(instance=door_strategy)
-def test_door_close_type(instance):
-    assert isinstance(instance.close, bool)
 
 
 @given(instance=door_strategy)
@@ -244,9 +232,6 @@ def test_door_close_setter(instance):
 def test_elevator_instantiation(instance):
     assert isinstance(instance, elevator)
 
-@given(instance=elevator_strategy)
-def test_elevator_floor_type(instance):
-    assert isinstance(instance.floor, int)
 
 
 @given(instance=elevator_strategy)

@@ -3,24 +3,24 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     Relation,
-    metamodel::OneToMany,
-    metamodel::OneToOne,
+    metamodel_OneToMany,
+    metamodel_OneToOne,
     Feature,
-    metamodel::ManyToMany,
-    metamodel::Type,
-    metamodel::Model,
-    metamodel::idFeature,
-    metamodel::Feature,
+    metamodel_ManyToMany,
+    metamodel_Type,
+    metamodel_Model,
+    metamodel_idFeature,
+    metamodel_Feature,
     Type,
-    metamodel::AssociationEntity,
-    metamodel::Relation,
-    metamodel::Entity,
-    metamodel::Datatype,
-    metamodel::DatabaseConnection,
+    metamodel_AssociationEntity,
+    metamodel_Relation,
+    metamodel_Entity,
+    metamodel_Datatype,
+    metamodel_DatabaseConnection,
 )
 
 # =============================================================================
@@ -43,30 +43,30 @@ def test_relation_constructor_args():
 
 
 
-def test_metamodel::onetomany_is_not_abstract():
-    assert not inspect.isabstract(metamodel::OneToMany)
+def test_metamodel_onetomany_is_not_abstract():
+    assert not inspect.isabstract(metamodel_OneToMany)
 
 
-def test_metamodel::onetomany_constructor_exists():
-    assert callable(metamodel::OneToMany.__init__)
+def test_metamodel_onetomany_constructor_exists():
+    assert callable(metamodel_OneToMany.__init__)
 
 
-def test_metamodel::onetomany_constructor_args():
-    sig = inspect.signature(metamodel::OneToMany.__init__)
+def test_metamodel_onetomany_constructor_args():
+    sig = inspect.signature(metamodel_OneToMany.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_metamodel::onetoone_is_not_abstract():
-    assert not inspect.isabstract(metamodel::OneToOne)
+def test_metamodel_onetoone_is_not_abstract():
+    assert not inspect.isabstract(metamodel_OneToOne)
 
 
-def test_metamodel::onetoone_constructor_exists():
-    assert callable(metamodel::OneToOne.__init__)
+def test_metamodel_onetoone_constructor_exists():
+    assert callable(metamodel_OneToOne.__init__)
 
 
-def test_metamodel::onetoone_constructor_args():
-    sig = inspect.signature(metamodel::OneToOne.__init__)
+def test_metamodel_onetoone_constructor_args():
+    sig = inspect.signature(metamodel_OneToOne.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -85,37 +85,37 @@ def test_feature_constructor_args():
 
 
 
-def test_metamodel::manytomany_is_not_abstract():
-    assert not inspect.isabstract(metamodel::ManyToMany)
+def test_metamodel_manytomany_is_not_abstract():
+    assert not inspect.isabstract(metamodel_ManyToMany)
 
 
-def test_metamodel::manytomany_constructor_exists():
-    assert callable(metamodel::ManyToMany.__init__)
+def test_metamodel_manytomany_constructor_exists():
+    assert callable(metamodel_ManyToMany.__init__)
 
 
-def test_metamodel::manytomany_constructor_args():
-    sig = inspect.signature(metamodel::ManyToMany.__init__)
+def test_metamodel_manytomany_constructor_args():
+    sig = inspect.signature(metamodel_ManyToMany.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_metamodel::type_is_not_abstract():
-    assert not inspect.isabstract(metamodel::Type)
+def test_metamodel_type_is_not_abstract():
+    assert not inspect.isabstract(metamodel_Type)
 
 
-def test_metamodel::type_constructor_exists():
-    assert callable(metamodel::Type.__init__)
+def test_metamodel_type_constructor_exists():
+    assert callable(metamodel_Type.__init__)
 
 
-def test_metamodel::type_constructor_args():
-    sig = inspect.signature(metamodel::Type.__init__)
+def test_metamodel_type_constructor_args():
+    sig = inspect.signature(metamodel_Type.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_metamodel::type_has_name():
-    assert hasattr(metamodel::Type, "name")
+def test_metamodel_type_has_name():
+    assert hasattr(metamodel_Type, "name")
     descriptor = None
-    for klass in metamodel::Type.__mro__:
+    for klass in metamodel_Type.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -123,23 +123,23 @@ def test_metamodel::type_has_name():
 
 
 
-def test_metamodel::model_is_not_abstract():
-    assert not inspect.isabstract(metamodel::Model)
+def test_metamodel_model_is_not_abstract():
+    assert not inspect.isabstract(metamodel_Model)
 
 
-def test_metamodel::model_constructor_exists():
-    assert callable(metamodel::Model.__init__)
+def test_metamodel_model_constructor_exists():
+    assert callable(metamodel_Model.__init__)
 
 
-def test_metamodel::model_constructor_args():
-    sig = inspect.signature(metamodel::Model.__init__)
+def test_metamodel_model_constructor_args():
+    sig = inspect.signature(metamodel_Model.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_metamodel::model_has_name():
-    assert hasattr(metamodel::Model, "name")
+def test_metamodel_model_has_name():
+    assert hasattr(metamodel_Model, "name")
     descriptor = None
-    for klass in metamodel::Model.__mro__:
+    for klass in metamodel_Model.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -147,23 +147,23 @@ def test_metamodel::model_has_name():
 
 
 
-def test_metamodel::idfeature_is_not_abstract():
-    assert not inspect.isabstract(metamodel::idFeature)
+def test_metamodel_idfeature_is_not_abstract():
+    assert not inspect.isabstract(metamodel_idFeature)
 
 
-def test_metamodel::idfeature_constructor_exists():
-    assert callable(metamodel::idFeature.__init__)
+def test_metamodel_idfeature_constructor_exists():
+    assert callable(metamodel_idFeature.__init__)
 
 
-def test_metamodel::idfeature_constructor_args():
-    sig = inspect.signature(metamodel::idFeature.__init__)
+def test_metamodel_idfeature_constructor_args():
+    sig = inspect.signature(metamodel_idFeature.__init__)
     params = list(sig.parameters.keys())
     assert "generationType" in params, "Missing parameter 'generationType'"
 
-def test_metamodel::idfeature_has_generationType():
-    assert hasattr(metamodel::idFeature, "generationType")
+def test_metamodel_idfeature_has_generationType():
+    assert hasattr(metamodel_idFeature, "generationType")
     descriptor = None
-    for klass in metamodel::idFeature.__mro__:
+    for klass in metamodel_idFeature.__mro__:
         if "generationType" in klass.__dict__:
             descriptor = klass.__dict__["generationType"]
             break
@@ -171,43 +171,43 @@ def test_metamodel::idfeature_has_generationType():
 
 
 
-def test_metamodel::feature_is_not_abstract():
-    assert not inspect.isabstract(metamodel::Feature)
+def test_metamodel_feature_is_not_abstract():
+    assert not inspect.isabstract(metamodel_Feature)
 
 
-def test_metamodel::feature_constructor_exists():
-    assert callable(metamodel::Feature.__init__)
+def test_metamodel_feature_constructor_exists():
+    assert callable(metamodel_Feature.__init__)
 
 
-def test_metamodel::feature_constructor_args():
-    sig = inspect.signature(metamodel::Feature.__init__)
+def test_metamodel_feature_constructor_args():
+    sig = inspect.signature(metamodel_Feature.__init__)
     params = list(sig.parameters.keys())
     assert "nullable" in params, "Missing parameter 'nullable'"
     assert "xmltransient" in params, "Missing parameter 'xmltransient'"
     assert "name" in params, "Missing parameter 'name'"
 
-def test_metamodel::feature_has_nullable():
-    assert hasattr(metamodel::Feature, "nullable")
+def test_metamodel_feature_has_nullable():
+    assert hasattr(metamodel_Feature, "nullable")
     descriptor = None
-    for klass in metamodel::Feature.__mro__:
+    for klass in metamodel_Feature.__mro__:
         if "nullable" in klass.__dict__:
             descriptor = klass.__dict__["nullable"]
             break
     assert isinstance(descriptor, property)
 
-def test_metamodel::feature_has_xmltransient():
-    assert hasattr(metamodel::Feature, "xmltransient")
+def test_metamodel_feature_has_xmltransient():
+    assert hasattr(metamodel_Feature, "xmltransient")
     descriptor = None
-    for klass in metamodel::Feature.__mro__:
+    for klass in metamodel_Feature.__mro__:
         if "xmltransient" in klass.__dict__:
             descriptor = klass.__dict__["xmltransient"]
             break
     assert isinstance(descriptor, property)
 
-def test_metamodel::feature_has_name():
-    assert hasattr(metamodel::Feature, "name")
+def test_metamodel_feature_has_name():
+    assert hasattr(metamodel_Feature, "name")
     descriptor = None
-    for klass in metamodel::Feature.__mro__:
+    for klass in metamodel_Feature.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -229,47 +229,47 @@ def test_type_constructor_args():
 
 
 
-def test_metamodel::associationentity_is_not_abstract():
-    assert not inspect.isabstract(metamodel::AssociationEntity)
+def test_metamodel_associationentity_is_not_abstract():
+    assert not inspect.isabstract(metamodel_AssociationEntity)
 
 
-def test_metamodel::associationentity_constructor_exists():
-    assert callable(metamodel::AssociationEntity.__init__)
+def test_metamodel_associationentity_constructor_exists():
+    assert callable(metamodel_AssociationEntity.__init__)
 
 
-def test_metamodel::associationentity_constructor_args():
-    sig = inspect.signature(metamodel::AssociationEntity.__init__)
+def test_metamodel_associationentity_constructor_args():
+    sig = inspect.signature(metamodel_AssociationEntity.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_metamodel::relation_is_not_abstract():
-    assert not inspect.isabstract(metamodel::Relation)
+def test_metamodel_relation_is_not_abstract():
+    assert not inspect.isabstract(metamodel_Relation)
 
 
-def test_metamodel::relation_constructor_exists():
-    assert callable(metamodel::Relation.__init__)
+def test_metamodel_relation_constructor_exists():
+    assert callable(metamodel_Relation.__init__)
 
 
-def test_metamodel::relation_constructor_args():
-    sig = inspect.signature(metamodel::Relation.__init__)
+def test_metamodel_relation_constructor_args():
+    sig = inspect.signature(metamodel_Relation.__init__)
     params = list(sig.parameters.keys())
     assert "optional" in params, "Missing parameter 'optional'"
     assert "unidirectional" in params, "Missing parameter 'unidirectional'"
 
-def test_metamodel::relation_has_optional():
-    assert hasattr(metamodel::Relation, "optional")
+def test_metamodel_relation_has_optional():
+    assert hasattr(metamodel_Relation, "optional")
     descriptor = None
-    for klass in metamodel::Relation.__mro__:
+    for klass in metamodel_Relation.__mro__:
         if "optional" in klass.__dict__:
             descriptor = klass.__dict__["optional"]
             break
     assert isinstance(descriptor, property)
 
-def test_metamodel::relation_has_unidirectional():
-    assert hasattr(metamodel::Relation, "unidirectional")
+def test_metamodel_relation_has_unidirectional():
+    assert hasattr(metamodel_Relation, "unidirectional")
     descriptor = None
-    for klass in metamodel::Relation.__mro__:
+    for klass in metamodel_Relation.__mro__:
         if "unidirectional" in klass.__dict__:
             descriptor = klass.__dict__["unidirectional"]
             break
@@ -277,103 +277,103 @@ def test_metamodel::relation_has_unidirectional():
 
 
 
-def test_metamodel::entity_is_not_abstract():
-    assert not inspect.isabstract(metamodel::Entity)
+def test_metamodel_entity_is_not_abstract():
+    assert not inspect.isabstract(metamodel_Entity)
 
 
-def test_metamodel::entity_constructor_exists():
-    assert callable(metamodel::Entity.__init__)
+def test_metamodel_entity_constructor_exists():
+    assert callable(metamodel_Entity.__init__)
 
 
-def test_metamodel::entity_constructor_args():
-    sig = inspect.signature(metamodel::Entity.__init__)
+def test_metamodel_entity_constructor_args():
+    sig = inspect.signature(metamodel_Entity.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_metamodel::datatype_is_not_abstract():
-    assert not inspect.isabstract(metamodel::Datatype)
+def test_metamodel_datatype_is_not_abstract():
+    assert not inspect.isabstract(metamodel_Datatype)
 
 
-def test_metamodel::datatype_constructor_exists():
-    assert callable(metamodel::Datatype.__init__)
+def test_metamodel_datatype_constructor_exists():
+    assert callable(metamodel_Datatype.__init__)
 
 
-def test_metamodel::datatype_constructor_args():
-    sig = inspect.signature(metamodel::Datatype.__init__)
+def test_metamodel_datatype_constructor_args():
+    sig = inspect.signature(metamodel_Datatype.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_metamodel::databaseconnection_is_not_abstract():
-    assert not inspect.isabstract(metamodel::DatabaseConnection)
+def test_metamodel_databaseconnection_is_not_abstract():
+    assert not inspect.isabstract(metamodel_DatabaseConnection)
 
 
-def test_metamodel::databaseconnection_constructor_exists():
-    assert callable(metamodel::DatabaseConnection.__init__)
+def test_metamodel_databaseconnection_constructor_exists():
+    assert callable(metamodel_DatabaseConnection.__init__)
 
 
-def test_metamodel::databaseconnection_constructor_args():
-    sig = inspect.signature(metamodel::DatabaseConnection.__init__)
+def test_metamodel_databaseconnection_constructor_args():
+    sig = inspect.signature(metamodel_DatabaseConnection.__init__)
     params = list(sig.parameters.keys())
+    assert "jdbcUrl" in params, "Missing parameter 'jdbcUrl'"
     assert "jdbcPassword" in params, "Missing parameter 'jdbcPassword'"
+    assert "jdbcPrefix" in params, "Missing parameter 'jdbcPrefix'"
+    assert "jdbcDriver" in params, "Missing parameter 'jdbcDriver'"
     assert "jdbcUser" in params, "Missing parameter 'jdbcUser'"
     assert "persistenceUnit" in params, "Missing parameter 'persistenceUnit'"
-    assert "jdbcDriver" in params, "Missing parameter 'jdbcDriver'"
-    assert "jdbcPrefix" in params, "Missing parameter 'jdbcPrefix'"
-    assert "jdbcUrl" in params, "Missing parameter 'jdbcUrl'"
 
-def test_metamodel::databaseconnection_has_jdbcPassword():
-    assert hasattr(metamodel::DatabaseConnection, "jdbcPassword")
+def test_metamodel_databaseconnection_has_jdbcUrl():
+    assert hasattr(metamodel_DatabaseConnection, "jdbcUrl")
     descriptor = None
-    for klass in metamodel::DatabaseConnection.__mro__:
+    for klass in metamodel_DatabaseConnection.__mro__:
+        if "jdbcUrl" in klass.__dict__:
+            descriptor = klass.__dict__["jdbcUrl"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_metamodel_databaseconnection_has_jdbcPassword():
+    assert hasattr(metamodel_DatabaseConnection, "jdbcPassword")
+    descriptor = None
+    for klass in metamodel_DatabaseConnection.__mro__:
         if "jdbcPassword" in klass.__dict__:
             descriptor = klass.__dict__["jdbcPassword"]
             break
     assert isinstance(descriptor, property)
 
-def test_metamodel::databaseconnection_has_jdbcUser():
-    assert hasattr(metamodel::DatabaseConnection, "jdbcUser")
+def test_metamodel_databaseconnection_has_jdbcPrefix():
+    assert hasattr(metamodel_DatabaseConnection, "jdbcPrefix")
     descriptor = None
-    for klass in metamodel::DatabaseConnection.__mro__:
-        if "jdbcUser" in klass.__dict__:
-            descriptor = klass.__dict__["jdbcUser"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_metamodel::databaseconnection_has_persistenceUnit():
-    assert hasattr(metamodel::DatabaseConnection, "persistenceUnit")
-    descriptor = None
-    for klass in metamodel::DatabaseConnection.__mro__:
-        if "persistenceUnit" in klass.__dict__:
-            descriptor = klass.__dict__["persistenceUnit"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_metamodel::databaseconnection_has_jdbcDriver():
-    assert hasattr(metamodel::DatabaseConnection, "jdbcDriver")
-    descriptor = None
-    for klass in metamodel::DatabaseConnection.__mro__:
-        if "jdbcDriver" in klass.__dict__:
-            descriptor = klass.__dict__["jdbcDriver"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_metamodel::databaseconnection_has_jdbcPrefix():
-    assert hasattr(metamodel::DatabaseConnection, "jdbcPrefix")
-    descriptor = None
-    for klass in metamodel::DatabaseConnection.__mro__:
+    for klass in metamodel_DatabaseConnection.__mro__:
         if "jdbcPrefix" in klass.__dict__:
             descriptor = klass.__dict__["jdbcPrefix"]
             break
     assert isinstance(descriptor, property)
 
-def test_metamodel::databaseconnection_has_jdbcUrl():
-    assert hasattr(metamodel::DatabaseConnection, "jdbcUrl")
+def test_metamodel_databaseconnection_has_jdbcDriver():
+    assert hasattr(metamodel_DatabaseConnection, "jdbcDriver")
     descriptor = None
-    for klass in metamodel::DatabaseConnection.__mro__:
-        if "jdbcUrl" in klass.__dict__:
-            descriptor = klass.__dict__["jdbcUrl"]
+    for klass in metamodel_DatabaseConnection.__mro__:
+        if "jdbcDriver" in klass.__dict__:
+            descriptor = klass.__dict__["jdbcDriver"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_metamodel_databaseconnection_has_jdbcUser():
+    assert hasattr(metamodel_DatabaseConnection, "jdbcUser")
+    descriptor = None
+    for klass in metamodel_DatabaseConnection.__mro__:
+        if "jdbcUser" in klass.__dict__:
+            descriptor = klass.__dict__["jdbcUser"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_metamodel_databaseconnection_has_persistenceUnit():
+    assert hasattr(metamodel_DatabaseConnection, "persistenceUnit")
+    descriptor = None
+    for klass in metamodel_DatabaseConnection.__mro__:
+        if "persistenceUnit" in klass.__dict__:
+            descriptor = klass.__dict__["persistenceUnit"]
             break
     assert isinstance(descriptor, property)
 
@@ -392,35 +392,35 @@ safe_text = st.text(
 Relation_strategy = st.builds(
     Relation,
 )
-metamodel::OneToMany_strategy = st.builds(
-    metamodel::OneToMany,
+metamodel_OneToMany_strategy = st.builds(
+    metamodel_OneToMany,
 )
-metamodel::OneToOne_strategy = st.builds(
-    metamodel::OneToOne,
+metamodel_OneToOne_strategy = st.builds(
+    metamodel_OneToOne,
 )
 Feature_strategy = st.builds(
     Feature,
 )
-metamodel::ManyToMany_strategy = st.builds(
-    metamodel::ManyToMany,
+metamodel_ManyToMany_strategy = st.builds(
+    metamodel_ManyToMany,
 )
-metamodel::Type_strategy = st.builds(
-    metamodel::Type,
+metamodel_Type_strategy = st.builds(
+    metamodel_Type,
     name=
         safe_text
 )
-metamodel::Model_strategy = st.builds(
-    metamodel::Model,
+metamodel_Model_strategy = st.builds(
+    metamodel_Model,
     name=
         safe_text
 )
-metamodel::idFeature_strategy = st.builds(
-    metamodel::idFeature,
+metamodel_idFeature_strategy = st.builds(
+    metamodel_idFeature,
     generationType=
         safe_text
 )
-metamodel::Feature_strategy = st.builds(
-    metamodel::Feature,
+metamodel_Feature_strategy = st.builds(
+    metamodel_Feature,
     nullable=
         st.booleans(),
     xmltransient=
@@ -431,35 +431,35 @@ metamodel::Feature_strategy = st.builds(
 Type_strategy = st.builds(
     Type,
 )
-metamodel::AssociationEntity_strategy = st.builds(
-    metamodel::AssociationEntity,
+metamodel_AssociationEntity_strategy = st.builds(
+    metamodel_AssociationEntity,
 )
-metamodel::Relation_strategy = st.builds(
-    metamodel::Relation,
+metamodel_Relation_strategy = st.builds(
+    metamodel_Relation,
     optional=
         st.booleans(),
     unidirectional=
         st.booleans()
 )
-metamodel::Entity_strategy = st.builds(
-    metamodel::Entity,
+metamodel_Entity_strategy = st.builds(
+    metamodel_Entity,
 )
-metamodel::Datatype_strategy = st.builds(
-    metamodel::Datatype,
+metamodel_Datatype_strategy = st.builds(
+    metamodel_Datatype,
 )
-metamodel::DatabaseConnection_strategy = st.builds(
-    metamodel::DatabaseConnection,
+metamodel_DatabaseConnection_strategy = st.builds(
+    metamodel_DatabaseConnection,
+    jdbcUrl=
+        safe_text,
     jdbcPassword=
+        safe_text,
+    jdbcPrefix=
+        safe_text,
+    jdbcDriver=
         safe_text,
     jdbcUser=
         safe_text,
     persistenceUnit=
-        safe_text,
-    jdbcDriver=
-        safe_text,
-    jdbcPrefix=
-        safe_text,
-    jdbcUrl=
         safe_text
 )
 
@@ -468,108 +468,90 @@ metamodel::DatabaseConnection_strategy = st.builds(
 def test_relation_instantiation(instance):
     assert isinstance(instance, Relation)
 
-@given(instance=metamodel::OneToMany_strategy)
+@given(instance=metamodel_OneToMany_strategy)
 @settings(max_examples=50)
-def test_metamodel::onetomany_instantiation(instance):
-    assert isinstance(instance, metamodel::OneToMany)
+def test_metamodel_onetomany_instantiation(instance):
+    assert isinstance(instance, metamodel_OneToMany)
 
-@given(instance=metamodel::OneToOne_strategy)
+@given(instance=metamodel_OneToOne_strategy)
 @settings(max_examples=50)
-def test_metamodel::onetoone_instantiation(instance):
-    assert isinstance(instance, metamodel::OneToOne)
+def test_metamodel_onetoone_instantiation(instance):
+    assert isinstance(instance, metamodel_OneToOne)
 
 @given(instance=Feature_strategy)
 @settings(max_examples=50)
 def test_feature_instantiation(instance):
     assert isinstance(instance, Feature)
 
-@given(instance=metamodel::ManyToMany_strategy)
+@given(instance=metamodel_ManyToMany_strategy)
 @settings(max_examples=50)
-def test_metamodel::manytomany_instantiation(instance):
-    assert isinstance(instance, metamodel::ManyToMany)
+def test_metamodel_manytomany_instantiation(instance):
+    assert isinstance(instance, metamodel_ManyToMany)
 
-@given(instance=metamodel::Type_strategy)
+@given(instance=metamodel_Type_strategy)
 @settings(max_examples=50)
-def test_metamodel::type_instantiation(instance):
-    assert isinstance(instance, metamodel::Type)
-
-@given(instance=metamodel::Type_strategy)
-def test_metamodel::type_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_metamodel_type_instantiation(instance):
+    assert isinstance(instance, metamodel_Type)
 
 
-@given(instance=metamodel::Type_strategy)
-def test_metamodel::type_name_setter(instance):
+
+@given(instance=metamodel_Type_strategy)
+def test_metamodel_type_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=metamodel::Model_strategy)
+@given(instance=metamodel_Model_strategy)
 @settings(max_examples=50)
-def test_metamodel::model_instantiation(instance):
-    assert isinstance(instance, metamodel::Model)
-
-@given(instance=metamodel::Model_strategy)
-def test_metamodel::model_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_metamodel_model_instantiation(instance):
+    assert isinstance(instance, metamodel_Model)
 
 
-@given(instance=metamodel::Model_strategy)
-def test_metamodel::model_name_setter(instance):
+
+@given(instance=metamodel_Model_strategy)
+def test_metamodel_model_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=metamodel::idFeature_strategy)
+@given(instance=metamodel_idFeature_strategy)
 @settings(max_examples=50)
-def test_metamodel::idfeature_instantiation(instance):
-    assert isinstance(instance, metamodel::idFeature)
-
-@given(instance=metamodel::idFeature_strategy)
-def test_metamodel::idfeature_generationType_type(instance):
-    assert isinstance(instance.generationType, str)
+def test_metamodel_idfeature_instantiation(instance):
+    assert isinstance(instance, metamodel_idFeature)
 
 
-@given(instance=metamodel::idFeature_strategy)
-def test_metamodel::idfeature_generationType_setter(instance):
+
+@given(instance=metamodel_idFeature_strategy)
+def test_metamodel_idfeature_generationType_setter(instance):
     original = instance.generationType
     instance.generationType = original
     assert instance.generationType == original
 
-@given(instance=metamodel::Feature_strategy)
+@given(instance=metamodel_Feature_strategy)
 @settings(max_examples=50)
-def test_metamodel::feature_instantiation(instance):
-    assert isinstance(instance, metamodel::Feature)
-
-@given(instance=metamodel::Feature_strategy)
-def test_metamodel::feature_nullable_type(instance):
-    assert isinstance(instance.nullable, bool)
+def test_metamodel_feature_instantiation(instance):
+    assert isinstance(instance, metamodel_Feature)
 
 
-@given(instance=metamodel::Feature_strategy)
-def test_metamodel::feature_nullable_setter(instance):
+
+@given(instance=metamodel_Feature_strategy)
+def test_metamodel_feature_nullable_setter(instance):
     original = instance.nullable
     instance.nullable = original
     assert instance.nullable == original
 
-@given(instance=metamodel::Feature_strategy)
-def test_metamodel::feature_xmltransient_type(instance):
-    assert isinstance(instance.xmltransient, bool)
 
 
-@given(instance=metamodel::Feature_strategy)
-def test_metamodel::feature_xmltransient_setter(instance):
+@given(instance=metamodel_Feature_strategy)
+def test_metamodel_feature_xmltransient_setter(instance):
     original = instance.xmltransient
     instance.xmltransient = original
     assert instance.xmltransient == original
 
-@given(instance=metamodel::Feature_strategy)
-def test_metamodel::feature_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
-@given(instance=metamodel::Feature_strategy)
-def test_metamodel::feature_name_setter(instance):
+@given(instance=metamodel_Feature_strategy)
+def test_metamodel_feature_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
@@ -579,115 +561,91 @@ def test_metamodel::feature_name_setter(instance):
 def test_type_instantiation(instance):
     assert isinstance(instance, Type)
 
-@given(instance=metamodel::AssociationEntity_strategy)
+@given(instance=metamodel_AssociationEntity_strategy)
 @settings(max_examples=50)
-def test_metamodel::associationentity_instantiation(instance):
-    assert isinstance(instance, metamodel::AssociationEntity)
+def test_metamodel_associationentity_instantiation(instance):
+    assert isinstance(instance, metamodel_AssociationEntity)
 
-@given(instance=metamodel::Relation_strategy)
+@given(instance=metamodel_Relation_strategy)
 @settings(max_examples=50)
-def test_metamodel::relation_instantiation(instance):
-    assert isinstance(instance, metamodel::Relation)
-
-@given(instance=metamodel::Relation_strategy)
-def test_metamodel::relation_optional_type(instance):
-    assert isinstance(instance.optional, bool)
+def test_metamodel_relation_instantiation(instance):
+    assert isinstance(instance, metamodel_Relation)
 
 
-@given(instance=metamodel::Relation_strategy)
-def test_metamodel::relation_optional_setter(instance):
+
+@given(instance=metamodel_Relation_strategy)
+def test_metamodel_relation_optional_setter(instance):
     original = instance.optional
     instance.optional = original
     assert instance.optional == original
 
-@given(instance=metamodel::Relation_strategy)
-def test_metamodel::relation_unidirectional_type(instance):
-    assert isinstance(instance.unidirectional, bool)
 
 
-@given(instance=metamodel::Relation_strategy)
-def test_metamodel::relation_unidirectional_setter(instance):
+@given(instance=metamodel_Relation_strategy)
+def test_metamodel_relation_unidirectional_setter(instance):
     original = instance.unidirectional
     instance.unidirectional = original
     assert instance.unidirectional == original
 
-@given(instance=metamodel::Entity_strategy)
+@given(instance=metamodel_Entity_strategy)
 @settings(max_examples=50)
-def test_metamodel::entity_instantiation(instance):
-    assert isinstance(instance, metamodel::Entity)
+def test_metamodel_entity_instantiation(instance):
+    assert isinstance(instance, metamodel_Entity)
 
-@given(instance=metamodel::Datatype_strategy)
+@given(instance=metamodel_Datatype_strategy)
 @settings(max_examples=50)
-def test_metamodel::datatype_instantiation(instance):
-    assert isinstance(instance, metamodel::Datatype)
+def test_metamodel_datatype_instantiation(instance):
+    assert isinstance(instance, metamodel_Datatype)
 
-@given(instance=metamodel::DatabaseConnection_strategy)
+@given(instance=metamodel_DatabaseConnection_strategy)
 @settings(max_examples=50)
-def test_metamodel::databaseconnection_instantiation(instance):
-    assert isinstance(instance, metamodel::DatabaseConnection)
-
-@given(instance=metamodel::DatabaseConnection_strategy)
-def test_metamodel::databaseconnection_jdbcPassword_type(instance):
-    assert isinstance(instance.jdbcPassword, str)
+def test_metamodel_databaseconnection_instantiation(instance):
+    assert isinstance(instance, metamodel_DatabaseConnection)
 
 
-@given(instance=metamodel::DatabaseConnection_strategy)
-def test_metamodel::databaseconnection_jdbcPassword_setter(instance):
+
+@given(instance=metamodel_DatabaseConnection_strategy)
+def test_metamodel_databaseconnection_jdbcUrl_setter(instance):
+    original = instance.jdbcUrl
+    instance.jdbcUrl = original
+    assert instance.jdbcUrl == original
+
+
+
+@given(instance=metamodel_DatabaseConnection_strategy)
+def test_metamodel_databaseconnection_jdbcPassword_setter(instance):
     original = instance.jdbcPassword
     instance.jdbcPassword = original
     assert instance.jdbcPassword == original
 
-@given(instance=metamodel::DatabaseConnection_strategy)
-def test_metamodel::databaseconnection_jdbcUser_type(instance):
-    assert isinstance(instance.jdbcUser, str)
 
 
-@given(instance=metamodel::DatabaseConnection_strategy)
-def test_metamodel::databaseconnection_jdbcUser_setter(instance):
-    original = instance.jdbcUser
-    instance.jdbcUser = original
-    assert instance.jdbcUser == original
-
-@given(instance=metamodel::DatabaseConnection_strategy)
-def test_metamodel::databaseconnection_persistenceUnit_type(instance):
-    assert isinstance(instance.persistenceUnit, str)
-
-
-@given(instance=metamodel::DatabaseConnection_strategy)
-def test_metamodel::databaseconnection_persistenceUnit_setter(instance):
-    original = instance.persistenceUnit
-    instance.persistenceUnit = original
-    assert instance.persistenceUnit == original
-
-@given(instance=metamodel::DatabaseConnection_strategy)
-def test_metamodel::databaseconnection_jdbcDriver_type(instance):
-    assert isinstance(instance.jdbcDriver, str)
-
-
-@given(instance=metamodel::DatabaseConnection_strategy)
-def test_metamodel::databaseconnection_jdbcDriver_setter(instance):
-    original = instance.jdbcDriver
-    instance.jdbcDriver = original
-    assert instance.jdbcDriver == original
-
-@given(instance=metamodel::DatabaseConnection_strategy)
-def test_metamodel::databaseconnection_jdbcPrefix_type(instance):
-    assert isinstance(instance.jdbcPrefix, str)
-
-
-@given(instance=metamodel::DatabaseConnection_strategy)
-def test_metamodel::databaseconnection_jdbcPrefix_setter(instance):
+@given(instance=metamodel_DatabaseConnection_strategy)
+def test_metamodel_databaseconnection_jdbcPrefix_setter(instance):
     original = instance.jdbcPrefix
     instance.jdbcPrefix = original
     assert instance.jdbcPrefix == original
 
-@given(instance=metamodel::DatabaseConnection_strategy)
-def test_metamodel::databaseconnection_jdbcUrl_type(instance):
-    assert isinstance(instance.jdbcUrl, str)
 
 
-@given(instance=metamodel::DatabaseConnection_strategy)
-def test_metamodel::databaseconnection_jdbcUrl_setter(instance):
-    original = instance.jdbcUrl
-    instance.jdbcUrl = original
-    assert instance.jdbcUrl == original
+@given(instance=metamodel_DatabaseConnection_strategy)
+def test_metamodel_databaseconnection_jdbcDriver_setter(instance):
+    original = instance.jdbcDriver
+    instance.jdbcDriver = original
+    assert instance.jdbcDriver == original
+
+
+
+@given(instance=metamodel_DatabaseConnection_strategy)
+def test_metamodel_databaseconnection_jdbcUser_setter(instance):
+    original = instance.jdbcUser
+    instance.jdbcUser = original
+    assert instance.jdbcUser == original
+
+
+
+@given(instance=metamodel_DatabaseConnection_strategy)
+def test_metamodel_databaseconnection_persistenceUnit_setter(instance):
+    original = instance.persistenceUnit
+    instance.persistenceUnit = original
+    assert instance.persistenceUnit == original

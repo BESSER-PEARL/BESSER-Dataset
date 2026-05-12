@@ -3,11 +3,11 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    tree::EObject,
-    tree::TreeNode,
+from python_code import (
+    tree_EObject,
+    tree_TreeNode,
 )
 
 # =============================================================================
@@ -16,30 +16,30 @@ from classes import (
 
 
 
-def test_tree::eobject_is_not_abstract():
-    assert not inspect.isabstract(tree::EObject)
+def test_tree_eobject_is_not_abstract():
+    assert not inspect.isabstract(tree_EObject)
 
 
-def test_tree::eobject_constructor_exists():
-    assert callable(tree::EObject.__init__)
+def test_tree_eobject_constructor_exists():
+    assert callable(tree_EObject.__init__)
 
 
-def test_tree::eobject_constructor_args():
-    sig = inspect.signature(tree::EObject.__init__)
+def test_tree_eobject_constructor_args():
+    sig = inspect.signature(tree_EObject.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_tree::treenode_is_not_abstract():
-    assert not inspect.isabstract(tree::TreeNode)
+def test_tree_treenode_is_not_abstract():
+    assert not inspect.isabstract(tree_TreeNode)
 
 
-def test_tree::treenode_constructor_exists():
-    assert callable(tree::TreeNode.__init__)
+def test_tree_treenode_constructor_exists():
+    assert callable(tree_TreeNode.__init__)
 
 
-def test_tree::treenode_constructor_args():
-    sig = inspect.signature(tree::TreeNode.__init__)
+def test_tree_treenode_constructor_args():
+    sig = inspect.signature(tree_TreeNode.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -54,19 +54,19 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-tree::EObject_strategy = st.builds(
-    tree::EObject,
+tree_EObject_strategy = st.builds(
+    tree_EObject,
 )
-tree::TreeNode_strategy = st.builds(
-    tree::TreeNode,
+tree_TreeNode_strategy = st.builds(
+    tree_TreeNode,
 )
 
-@given(instance=tree::EObject_strategy)
+@given(instance=tree_EObject_strategy)
 @settings(max_examples=50)
-def test_tree::eobject_instantiation(instance):
-    assert isinstance(instance, tree::EObject)
+def test_tree_eobject_instantiation(instance):
+    assert isinstance(instance, tree_EObject)
 
-@given(instance=tree::TreeNode_strategy)
+@given(instance=tree_TreeNode_strategy)
 @settings(max_examples=50)
-def test_tree::treenode_instantiation(instance):
-    assert isinstance(instance, tree::TreeNode)
+def test_tree_treenode_instantiation(instance):
+    assert isinstance(instance, tree_TreeNode)

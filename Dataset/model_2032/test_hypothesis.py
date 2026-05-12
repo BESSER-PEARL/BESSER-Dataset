@@ -3,22 +3,22 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     Vertex,
-    MySM::Vertex,
-    MySM::Pseudostate,
-    MySM::State,
-    MySM::Region,
+    MySM_Vertex,
+    MySM_Pseudostate,
+    MySM_State,
+    MySM_Region,
     Transition,
-    MySM::LabeledTransition,
+    MySM_LabeledTransition,
     State,
-    MySM::ComplexSate,
-    MySM::Action,
-    MySM::Transition,
+    MySM_ComplexSate,
+    MySM_Action,
+    MySM_Transition,
     Region,
-    MySM::Statemachine,
+    MySM_Statemachine,
     Pseudokind,
 )
 
@@ -42,71 +42,71 @@ def test_vertex_constructor_args():
 
 
 
-def test_mysm::vertex_is_not_abstract():
-    assert not inspect.isabstract(MySM::Vertex)
+def test_mysm_vertex_is_not_abstract():
+    assert not inspect.isabstract(MySM_Vertex)
 
 
-def test_mysm::vertex_constructor_exists():
-    assert callable(MySM::Vertex.__init__)
+def test_mysm_vertex_constructor_exists():
+    assert callable(MySM_Vertex.__init__)
 
 
-def test_mysm::vertex_constructor_args():
-    sig = inspect.signature(MySM::Vertex.__init__)
+def test_mysm_vertex_constructor_args():
+    sig = inspect.signature(MySM_Vertex.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_mysm::pseudostate_is_not_abstract():
-    assert not inspect.isabstract(MySM::Pseudostate)
+def test_mysm_pseudostate_is_not_abstract():
+    assert not inspect.isabstract(MySM_Pseudostate)
 
 
-def test_mysm::pseudostate_constructor_exists():
-    assert callable(MySM::Pseudostate.__init__)
+def test_mysm_pseudostate_constructor_exists():
+    assert callable(MySM_Pseudostate.__init__)
 
 
-def test_mysm::pseudostate_constructor_args():
-    sig = inspect.signature(MySM::Pseudostate.__init__)
+def test_mysm_pseudostate_constructor_args():
+    sig = inspect.signature(MySM_Pseudostate.__init__)
     params = list(sig.parameters.keys())
-    assert "kind" in params, "Missing parameter 'kind'"
     assert "psId" in params, "Missing parameter 'psId'"
+    assert "kind" in params, "Missing parameter 'kind'"
 
-def test_mysm::pseudostate_has_kind():
-    assert hasattr(MySM::Pseudostate, "kind")
+def test_mysm_pseudostate_has_psId():
+    assert hasattr(MySM_Pseudostate, "psId")
     descriptor = None
-    for klass in MySM::Pseudostate.__mro__:
-        if "kind" in klass.__dict__:
-            descriptor = klass.__dict__["kind"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_mysm::pseudostate_has_psId():
-    assert hasattr(MySM::Pseudostate, "psId")
-    descriptor = None
-    for klass in MySM::Pseudostate.__mro__:
+    for klass in MySM_Pseudostate.__mro__:
         if "psId" in klass.__dict__:
             descriptor = klass.__dict__["psId"]
             break
     assert isinstance(descriptor, property)
 
+def test_mysm_pseudostate_has_kind():
+    assert hasattr(MySM_Pseudostate, "kind")
+    descriptor = None
+    for klass in MySM_Pseudostate.__mro__:
+        if "kind" in klass.__dict__:
+            descriptor = klass.__dict__["kind"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_mysm::state_is_not_abstract():
-    assert not inspect.isabstract(MySM::State)
+
+def test_mysm_state_is_not_abstract():
+    assert not inspect.isabstract(MySM_State)
 
 
-def test_mysm::state_constructor_exists():
-    assert callable(MySM::State.__init__)
+def test_mysm_state_constructor_exists():
+    assert callable(MySM_State.__init__)
 
 
-def test_mysm::state_constructor_args():
-    sig = inspect.signature(MySM::State.__init__)
+def test_mysm_state_constructor_args():
+    sig = inspect.signature(MySM_State.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_mysm::state_has_name():
-    assert hasattr(MySM::State, "name")
+def test_mysm_state_has_name():
+    assert hasattr(MySM_State, "name")
     descriptor = None
-    for klass in MySM::State.__mro__:
+    for klass in MySM_State.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -114,23 +114,23 @@ def test_mysm::state_has_name():
 
 
 
-def test_mysm::region_is_not_abstract():
-    assert not inspect.isabstract(MySM::Region)
+def test_mysm_region_is_not_abstract():
+    assert not inspect.isabstract(MySM_Region)
 
 
-def test_mysm::region_constructor_exists():
-    assert callable(MySM::Region.__init__)
+def test_mysm_region_constructor_exists():
+    assert callable(MySM_Region.__init__)
 
 
-def test_mysm::region_constructor_args():
-    sig = inspect.signature(MySM::Region.__init__)
+def test_mysm_region_constructor_args():
+    sig = inspect.signature(MySM_Region.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_mysm::region_has_name():
-    assert hasattr(MySM::Region, "name")
+def test_mysm_region_has_name():
+    assert hasattr(MySM_Region, "name")
     descriptor = None
-    for klass in MySM::Region.__mro__:
+    for klass in MySM_Region.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -152,16 +152,16 @@ def test_transition_constructor_args():
 
 
 
-def test_mysm::labeledtransition_is_not_abstract():
-    assert not inspect.isabstract(MySM::LabeledTransition)
+def test_mysm_labeledtransition_is_not_abstract():
+    assert not inspect.isabstract(MySM_LabeledTransition)
 
 
-def test_mysm::labeledtransition_constructor_exists():
-    assert callable(MySM::LabeledTransition.__init__)
+def test_mysm_labeledtransition_constructor_exists():
+    assert callable(MySM_LabeledTransition.__init__)
 
 
-def test_mysm::labeledtransition_constructor_args():
-    sig = inspect.signature(MySM::LabeledTransition.__init__)
+def test_mysm_labeledtransition_constructor_args():
+    sig = inspect.signature(MySM_LabeledTransition.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -180,37 +180,37 @@ def test_state_constructor_args():
 
 
 
-def test_mysm::complexsate_is_not_abstract():
-    assert not inspect.isabstract(MySM::ComplexSate)
+def test_mysm_complexsate_is_not_abstract():
+    assert not inspect.isabstract(MySM_ComplexSate)
 
 
-def test_mysm::complexsate_constructor_exists():
-    assert callable(MySM::ComplexSate.__init__)
+def test_mysm_complexsate_constructor_exists():
+    assert callable(MySM_ComplexSate.__init__)
 
 
-def test_mysm::complexsate_constructor_args():
-    sig = inspect.signature(MySM::ComplexSate.__init__)
+def test_mysm_complexsate_constructor_args():
+    sig = inspect.signature(MySM_ComplexSate.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_mysm::action_is_not_abstract():
-    assert not inspect.isabstract(MySM::Action)
+def test_mysm_action_is_not_abstract():
+    assert not inspect.isabstract(MySM_Action)
 
 
-def test_mysm::action_constructor_exists():
-    assert callable(MySM::Action.__init__)
+def test_mysm_action_constructor_exists():
+    assert callable(MySM_Action.__init__)
 
 
-def test_mysm::action_constructor_args():
-    sig = inspect.signature(MySM::Action.__init__)
+def test_mysm_action_constructor_args():
+    sig = inspect.signature(MySM_Action.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_mysm::action_has_name():
-    assert hasattr(MySM::Action, "name")
+def test_mysm_action_has_name():
+    assert hasattr(MySM_Action, "name")
     descriptor = None
-    for klass in MySM::Action.__mro__:
+    for klass in MySM_Action.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -218,23 +218,23 @@ def test_mysm::action_has_name():
 
 
 
-def test_mysm::transition_is_not_abstract():
-    assert not inspect.isabstract(MySM::Transition)
+def test_mysm_transition_is_not_abstract():
+    assert not inspect.isabstract(MySM_Transition)
 
 
-def test_mysm::transition_constructor_exists():
-    assert callable(MySM::Transition.__init__)
+def test_mysm_transition_constructor_exists():
+    assert callable(MySM_Transition.__init__)
 
 
-def test_mysm::transition_constructor_args():
-    sig = inspect.signature(MySM::Transition.__init__)
+def test_mysm_transition_constructor_args():
+    sig = inspect.signature(MySM_Transition.__init__)
     params = list(sig.parameters.keys())
     assert "tId" in params, "Missing parameter 'tId'"
 
-def test_mysm::transition_has_tId():
-    assert hasattr(MySM::Transition, "tId")
+def test_mysm_transition_has_tId():
+    assert hasattr(MySM_Transition, "tId")
     descriptor = None
-    for klass in MySM::Transition.__mro__:
+    for klass in MySM_Transition.__mro__:
         if "tId" in klass.__dict__:
             descriptor = klass.__dict__["tId"]
             break
@@ -256,16 +256,16 @@ def test_region_constructor_args():
 
 
 
-def test_mysm::statemachine_is_not_abstract():
-    assert not inspect.isabstract(MySM::Statemachine)
+def test_mysm_statemachine_is_not_abstract():
+    assert not inspect.isabstract(MySM_Statemachine)
 
 
-def test_mysm::statemachine_constructor_exists():
-    assert callable(MySM::Statemachine.__init__)
+def test_mysm_statemachine_constructor_exists():
+    assert callable(MySM_Statemachine.__init__)
 
 
-def test_mysm::statemachine_constructor_args():
-    sig = inspect.signature(MySM::Statemachine.__init__)
+def test_mysm_statemachine_constructor_args():
+    sig = inspect.signature(MySM_Statemachine.__init__)
     params = list(sig.parameters.keys())
 
 def test_pseudokind_exists():
@@ -301,53 +301,53 @@ safe_text = st.text(
 Vertex_strategy = st.builds(
     Vertex,
 )
-MySM::Vertex_strategy = st.builds(
-    MySM::Vertex,
+MySM_Vertex_strategy = st.builds(
+    MySM_Vertex,
 )
-MySM::Pseudostate_strategy = st.builds(
-    MySM::Pseudostate,
-    kind=
-        safe_text,
+MySM_Pseudostate_strategy = st.builds(
+    MySM_Pseudostate,
     psId=
+        safe_text,
+    kind=
         safe_text
 )
-MySM::State_strategy = st.builds(
-    MySM::State,
+MySM_State_strategy = st.builds(
+    MySM_State,
     name=
         safe_text
 )
-MySM::Region_strategy = st.builds(
-    MySM::Region,
+MySM_Region_strategy = st.builds(
+    MySM_Region,
     name=
         safe_text
 )
 Transition_strategy = st.builds(
     Transition,
 )
-MySM::LabeledTransition_strategy = st.builds(
-    MySM::LabeledTransition,
+MySM_LabeledTransition_strategy = st.builds(
+    MySM_LabeledTransition,
 )
 State_strategy = st.builds(
     State,
 )
-MySM::ComplexSate_strategy = st.builds(
-    MySM::ComplexSate,
+MySM_ComplexSate_strategy = st.builds(
+    MySM_ComplexSate,
 )
-MySM::Action_strategy = st.builds(
-    MySM::Action,
+MySM_Action_strategy = st.builds(
+    MySM_Action,
     name=
         safe_text
 )
-MySM::Transition_strategy = st.builds(
-    MySM::Transition,
+MySM_Transition_strategy = st.builds(
+    MySM_Transition,
     tId=
         safe_text
 )
 Region_strategy = st.builds(
     Region,
 )
-MySM::Statemachine_strategy = st.builds(
-    MySM::Statemachine,
+MySM_Statemachine_strategy = st.builds(
+    MySM_Statemachine,
 )
 
 @given(instance=Vertex_strategy)
@@ -355,66 +355,54 @@ MySM::Statemachine_strategy = st.builds(
 def test_vertex_instantiation(instance):
     assert isinstance(instance, Vertex)
 
-@given(instance=MySM::Vertex_strategy)
+@given(instance=MySM_Vertex_strategy)
 @settings(max_examples=50)
-def test_mysm::vertex_instantiation(instance):
-    assert isinstance(instance, MySM::Vertex)
+def test_mysm_vertex_instantiation(instance):
+    assert isinstance(instance, MySM_Vertex)
 
-@given(instance=MySM::Pseudostate_strategy)
+@given(instance=MySM_Pseudostate_strategy)
 @settings(max_examples=50)
-def test_mysm::pseudostate_instantiation(instance):
-    assert isinstance(instance, MySM::Pseudostate)
-
-@given(instance=MySM::Pseudostate_strategy)
-def test_mysm::pseudostate_kind_type(instance):
-    assert isinstance(instance.kind, str)
+def test_mysm_pseudostate_instantiation(instance):
+    assert isinstance(instance, MySM_Pseudostate)
 
 
-@given(instance=MySM::Pseudostate_strategy)
-def test_mysm::pseudostate_kind_setter(instance):
-    original = instance.kind
-    instance.kind = original
-    assert instance.kind == original
 
-@given(instance=MySM::Pseudostate_strategy)
-def test_mysm::pseudostate_psId_type(instance):
-    assert isinstance(instance.psId, str)
-
-
-@given(instance=MySM::Pseudostate_strategy)
-def test_mysm::pseudostate_psId_setter(instance):
+@given(instance=MySM_Pseudostate_strategy)
+def test_mysm_pseudostate_psId_setter(instance):
     original = instance.psId
     instance.psId = original
     assert instance.psId == original
 
-@given(instance=MySM::State_strategy)
+
+
+@given(instance=MySM_Pseudostate_strategy)
+def test_mysm_pseudostate_kind_setter(instance):
+    original = instance.kind
+    instance.kind = original
+    assert instance.kind == original
+
+@given(instance=MySM_State_strategy)
 @settings(max_examples=50)
-def test_mysm::state_instantiation(instance):
-    assert isinstance(instance, MySM::State)
-
-@given(instance=MySM::State_strategy)
-def test_mysm::state_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_mysm_state_instantiation(instance):
+    assert isinstance(instance, MySM_State)
 
 
-@given(instance=MySM::State_strategy)
-def test_mysm::state_name_setter(instance):
+
+@given(instance=MySM_State_strategy)
+def test_mysm_state_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=MySM::Region_strategy)
+@given(instance=MySM_Region_strategy)
 @settings(max_examples=50)
-def test_mysm::region_instantiation(instance):
-    assert isinstance(instance, MySM::Region)
-
-@given(instance=MySM::Region_strategy)
-def test_mysm::region_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_mysm_region_instantiation(instance):
+    assert isinstance(instance, MySM_Region)
 
 
-@given(instance=MySM::Region_strategy)
-def test_mysm::region_name_setter(instance):
+
+@given(instance=MySM_Region_strategy)
+def test_mysm_region_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
@@ -424,49 +412,43 @@ def test_mysm::region_name_setter(instance):
 def test_transition_instantiation(instance):
     assert isinstance(instance, Transition)
 
-@given(instance=MySM::LabeledTransition_strategy)
+@given(instance=MySM_LabeledTransition_strategy)
 @settings(max_examples=50)
-def test_mysm::labeledtransition_instantiation(instance):
-    assert isinstance(instance, MySM::LabeledTransition)
+def test_mysm_labeledtransition_instantiation(instance):
+    assert isinstance(instance, MySM_LabeledTransition)
 
 @given(instance=State_strategy)
 @settings(max_examples=50)
 def test_state_instantiation(instance):
     assert isinstance(instance, State)
 
-@given(instance=MySM::ComplexSate_strategy)
+@given(instance=MySM_ComplexSate_strategy)
 @settings(max_examples=50)
-def test_mysm::complexsate_instantiation(instance):
-    assert isinstance(instance, MySM::ComplexSate)
+def test_mysm_complexsate_instantiation(instance):
+    assert isinstance(instance, MySM_ComplexSate)
 
-@given(instance=MySM::Action_strategy)
+@given(instance=MySM_Action_strategy)
 @settings(max_examples=50)
-def test_mysm::action_instantiation(instance):
-    assert isinstance(instance, MySM::Action)
-
-@given(instance=MySM::Action_strategy)
-def test_mysm::action_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_mysm_action_instantiation(instance):
+    assert isinstance(instance, MySM_Action)
 
 
-@given(instance=MySM::Action_strategy)
-def test_mysm::action_name_setter(instance):
+
+@given(instance=MySM_Action_strategy)
+def test_mysm_action_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=MySM::Transition_strategy)
+@given(instance=MySM_Transition_strategy)
 @settings(max_examples=50)
-def test_mysm::transition_instantiation(instance):
-    assert isinstance(instance, MySM::Transition)
-
-@given(instance=MySM::Transition_strategy)
-def test_mysm::transition_tId_type(instance):
-    assert isinstance(instance.tId, str)
+def test_mysm_transition_instantiation(instance):
+    assert isinstance(instance, MySM_Transition)
 
 
-@given(instance=MySM::Transition_strategy)
-def test_mysm::transition_tId_setter(instance):
+
+@given(instance=MySM_Transition_strategy)
+def test_mysm_transition_tId_setter(instance):
     original = instance.tId
     instance.tId = original
     assert instance.tId == original
@@ -476,7 +458,7 @@ def test_mysm::transition_tId_setter(instance):
 def test_region_instantiation(instance):
     assert isinstance(instance, Region)
 
-@given(instance=MySM::Statemachine_strategy)
+@given(instance=MySM_Statemachine_strategy)
 @settings(max_examples=50)
-def test_mysm::statemachine_instantiation(instance):
-    assert isinstance(instance, MySM::Statemachine)
+def test_mysm_statemachine_instantiation(instance):
+    assert isinstance(instance, MySM_Statemachine)

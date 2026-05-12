@@ -3,11 +3,11 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    pascal::Greeting,
-    pascal::Model,
+from python_code import (
+    pascal_Greeting,
+    pascal_Model,
 )
 
 # =============================================================================
@@ -16,23 +16,23 @@ from classes import (
 
 
 
-def test_pascal::greeting_is_not_abstract():
-    assert not inspect.isabstract(pascal::Greeting)
+def test_pascal_greeting_is_not_abstract():
+    assert not inspect.isabstract(pascal_Greeting)
 
 
-def test_pascal::greeting_constructor_exists():
-    assert callable(pascal::Greeting.__init__)
+def test_pascal_greeting_constructor_exists():
+    assert callable(pascal_Greeting.__init__)
 
 
-def test_pascal::greeting_constructor_args():
-    sig = inspect.signature(pascal::Greeting.__init__)
+def test_pascal_greeting_constructor_args():
+    sig = inspect.signature(pascal_Greeting.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_pascal::greeting_has_name():
-    assert hasattr(pascal::Greeting, "name")
+def test_pascal_greeting_has_name():
+    assert hasattr(pascal_Greeting, "name")
     descriptor = None
-    for klass in pascal::Greeting.__mro__:
+    for klass in pascal_Greeting.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -40,16 +40,16 @@ def test_pascal::greeting_has_name():
 
 
 
-def test_pascal::model_is_not_abstract():
-    assert not inspect.isabstract(pascal::Model)
+def test_pascal_model_is_not_abstract():
+    assert not inspect.isabstract(pascal_Model)
 
 
-def test_pascal::model_constructor_exists():
-    assert callable(pascal::Model.__init__)
+def test_pascal_model_constructor_exists():
+    assert callable(pascal_Model.__init__)
 
 
-def test_pascal::model_constructor_args():
-    sig = inspect.signature(pascal::Model.__init__)
+def test_pascal_model_constructor_args():
+    sig = inspect.signature(pascal_Model.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -64,32 +64,29 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-pascal::Greeting_strategy = st.builds(
-    pascal::Greeting,
+pascal_Greeting_strategy = st.builds(
+    pascal_Greeting,
     name=
         safe_text
 )
-pascal::Model_strategy = st.builds(
-    pascal::Model,
+pascal_Model_strategy = st.builds(
+    pascal_Model,
 )
 
-@given(instance=pascal::Greeting_strategy)
+@given(instance=pascal_Greeting_strategy)
 @settings(max_examples=50)
-def test_pascal::greeting_instantiation(instance):
-    assert isinstance(instance, pascal::Greeting)
-
-@given(instance=pascal::Greeting_strategy)
-def test_pascal::greeting_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_pascal_greeting_instantiation(instance):
+    assert isinstance(instance, pascal_Greeting)
 
 
-@given(instance=pascal::Greeting_strategy)
-def test_pascal::greeting_name_setter(instance):
+
+@given(instance=pascal_Greeting_strategy)
+def test_pascal_greeting_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=pascal::Model_strategy)
+@given(instance=pascal_Model_strategy)
 @settings(max_examples=50)
-def test_pascal::model_instantiation(instance):
-    assert isinstance(instance, pascal::Model)
+def test_pascal_model_instantiation(instance):
+    assert isinstance(instance, pascal_Model)

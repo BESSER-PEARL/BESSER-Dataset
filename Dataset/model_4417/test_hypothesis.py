@@ -3,36 +3,36 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     Sensor,
-    mindstorms::ColorSensor,
-    mindstorms::UltrasonicSensor,
-    mindstorms::TouchSensor,
+    mindstorms_UltrasonicSensor,
+    mindstorms_ColorSensor,
+    mindstorms_TouchSensor,
     Action,
-    mindstorms::GoBackward,
-    mindstorms::GoTo,
-    mindstorms::Release,
-    mindstorms::Delay,
-    mindstorms::Grab,
-    mindstorms::ReturnToBase,
-    mindstorms::Rotate,
-    mindstorms::GoForward,
+    mindstorms_Rotate,
+    mindstorms_GoTo,
+    mindstorms_GoBackward,
+    mindstorms_Grab,
+    mindstorms_Delay,
+    mindstorms_Release,
+    mindstorms_ReturnToBase,
+    mindstorms_GoForward,
     ConditionalFlow,
-    mindstorms::While,
-    mindstorms::If,
+    mindstorms_While,
+    mindstorms_If,
     Condition,
-    mindstorms::Sensor,
-    mindstorms::Condition,
+    mindstorms_Sensor,
+    mindstorms_Condition,
     Flow,
-    mindstorms::ConditionalFlow,
-    mindstorms::Choregraphy,
+    mindstorms_ConditionalFlow,
+    mindstorms_Choregraphy,
     Instruction,
-    mindstorms::Action,
-    mindstorms::Reuse,
-    mindstorms::Flow,
-    mindstorms::Instruction,
+    mindstorms_Action,
+    mindstorms_Reuse,
+    mindstorms_Flow,
+    mindstorms_Instruction,
     Color,
     OperatorKind,
 )
@@ -57,57 +57,33 @@ def test_sensor_constructor_args():
 
 
 
-def test_mindstorms::colorsensor_is_not_abstract():
-    assert not inspect.isabstract(mindstorms::ColorSensor)
+def test_mindstorms_ultrasonicsensor_is_not_abstract():
+    assert not inspect.isabstract(mindstorms_UltrasonicSensor)
 
 
-def test_mindstorms::colorsensor_constructor_exists():
-    assert callable(mindstorms::ColorSensor.__init__)
+def test_mindstorms_ultrasonicsensor_constructor_exists():
+    assert callable(mindstorms_UltrasonicSensor.__init__)
 
 
-def test_mindstorms::colorsensor_constructor_args():
-    sig = inspect.signature(mindstorms::ColorSensor.__init__)
-    params = list(sig.parameters.keys())
-    assert "color" in params, "Missing parameter 'color'"
-
-def test_mindstorms::colorsensor_has_color():
-    assert hasattr(mindstorms::ColorSensor, "color")
-    descriptor = None
-    for klass in mindstorms::ColorSensor.__mro__:
-        if "color" in klass.__dict__:
-            descriptor = klass.__dict__["color"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_mindstorms::ultrasonicsensor_is_not_abstract():
-    assert not inspect.isabstract(mindstorms::UltrasonicSensor)
-
-
-def test_mindstorms::ultrasonicsensor_constructor_exists():
-    assert callable(mindstorms::UltrasonicSensor.__init__)
-
-
-def test_mindstorms::ultrasonicsensor_constructor_args():
-    sig = inspect.signature(mindstorms::UltrasonicSensor.__init__)
+def test_mindstorms_ultrasonicsensor_constructor_args():
+    sig = inspect.signature(mindstorms_UltrasonicSensor.__init__)
     params = list(sig.parameters.keys())
     assert "operator" in params, "Missing parameter 'operator'"
     assert "value" in params, "Missing parameter 'value'"
 
-def test_mindstorms::ultrasonicsensor_has_operator():
-    assert hasattr(mindstorms::UltrasonicSensor, "operator")
+def test_mindstorms_ultrasonicsensor_has_operator():
+    assert hasattr(mindstorms_UltrasonicSensor, "operator")
     descriptor = None
-    for klass in mindstorms::UltrasonicSensor.__mro__:
+    for klass in mindstorms_UltrasonicSensor.__mro__:
         if "operator" in klass.__dict__:
             descriptor = klass.__dict__["operator"]
             break
     assert isinstance(descriptor, property)
 
-def test_mindstorms::ultrasonicsensor_has_value():
-    assert hasattr(mindstorms::UltrasonicSensor, "value")
+def test_mindstorms_ultrasonicsensor_has_value():
+    assert hasattr(mindstorms_UltrasonicSensor, "value")
     descriptor = None
-    for klass in mindstorms::UltrasonicSensor.__mro__:
+    for klass in mindstorms_UltrasonicSensor.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -115,23 +91,47 @@ def test_mindstorms::ultrasonicsensor_has_value():
 
 
 
-def test_mindstorms::touchsensor_is_not_abstract():
-    assert not inspect.isabstract(mindstorms::TouchSensor)
+def test_mindstorms_colorsensor_is_not_abstract():
+    assert not inspect.isabstract(mindstorms_ColorSensor)
 
 
-def test_mindstorms::touchsensor_constructor_exists():
-    assert callable(mindstorms::TouchSensor.__init__)
+def test_mindstorms_colorsensor_constructor_exists():
+    assert callable(mindstorms_ColorSensor.__init__)
 
 
-def test_mindstorms::touchsensor_constructor_args():
-    sig = inspect.signature(mindstorms::TouchSensor.__init__)
+def test_mindstorms_colorsensor_constructor_args():
+    sig = inspect.signature(mindstorms_ColorSensor.__init__)
+    params = list(sig.parameters.keys())
+    assert "color" in params, "Missing parameter 'color'"
+
+def test_mindstorms_colorsensor_has_color():
+    assert hasattr(mindstorms_ColorSensor, "color")
+    descriptor = None
+    for klass in mindstorms_ColorSensor.__mro__:
+        if "color" in klass.__dict__:
+            descriptor = klass.__dict__["color"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_mindstorms_touchsensor_is_not_abstract():
+    assert not inspect.isabstract(mindstorms_TouchSensor)
+
+
+def test_mindstorms_touchsensor_constructor_exists():
+    assert callable(mindstorms_TouchSensor.__init__)
+
+
+def test_mindstorms_touchsensor_constructor_args():
+    sig = inspect.signature(mindstorms_TouchSensor.__init__)
     params = list(sig.parameters.keys())
     assert "isPressed" in params, "Missing parameter 'isPressed'"
 
-def test_mindstorms::touchsensor_has_isPressed():
-    assert hasattr(mindstorms::TouchSensor, "isPressed")
+def test_mindstorms_touchsensor_has_isPressed():
+    assert hasattr(mindstorms_TouchSensor, "isPressed")
     descriptor = None
-    for klass in mindstorms::TouchSensor.__mro__:
+    for klass in mindstorms_TouchSensor.__mro__:
         if "isPressed" in klass.__dict__:
             descriptor = klass.__dict__["isPressed"]
             break
@@ -153,105 +153,139 @@ def test_action_constructor_args():
 
 
 
-def test_mindstorms::gobackward_is_not_abstract():
-    assert not inspect.isabstract(mindstorms::GoBackward)
+def test_mindstorms_rotate_is_not_abstract():
+    assert not inspect.isabstract(mindstorms_Rotate)
 
 
-def test_mindstorms::gobackward_constructor_exists():
-    assert callable(mindstorms::GoBackward.__init__)
+def test_mindstorms_rotate_constructor_exists():
+    assert callable(mindstorms_Rotate.__init__)
 
 
-def test_mindstorms::gobackward_constructor_args():
-    sig = inspect.signature(mindstorms::GoBackward.__init__)
+def test_mindstorms_rotate_constructor_args():
+    sig = inspect.signature(mindstorms_Rotate.__init__)
     params = list(sig.parameters.keys())
-    assert "cm" in params, "Missing parameter 'cm'"
-    assert "infinite" in params, "Missing parameter 'infinite'"
+    assert "degrees" in params, "Missing parameter 'degrees'"
+    assert "random" in params, "Missing parameter 'random'"
 
-def test_mindstorms::gobackward_has_cm():
-    assert hasattr(mindstorms::GoBackward, "cm")
+def test_mindstorms_rotate_has_degrees():
+    assert hasattr(mindstorms_Rotate, "degrees")
     descriptor = None
-    for klass in mindstorms::GoBackward.__mro__:
-        if "cm" in klass.__dict__:
-            descriptor = klass.__dict__["cm"]
+    for klass in mindstorms_Rotate.__mro__:
+        if "degrees" in klass.__dict__:
+            descriptor = klass.__dict__["degrees"]
             break
     assert isinstance(descriptor, property)
 
-def test_mindstorms::gobackward_has_infinite():
-    assert hasattr(mindstorms::GoBackward, "infinite")
+def test_mindstorms_rotate_has_random():
+    assert hasattr(mindstorms_Rotate, "random")
     descriptor = None
-    for klass in mindstorms::GoBackward.__mro__:
-        if "infinite" in klass.__dict__:
-            descriptor = klass.__dict__["infinite"]
+    for klass in mindstorms_Rotate.__mro__:
+        if "random" in klass.__dict__:
+            descriptor = klass.__dict__["random"]
             break
     assert isinstance(descriptor, property)
 
 
 
-def test_mindstorms::goto_is_not_abstract():
-    assert not inspect.isabstract(mindstorms::GoTo)
+def test_mindstorms_goto_is_not_abstract():
+    assert not inspect.isabstract(mindstorms_GoTo)
 
 
-def test_mindstorms::goto_constructor_exists():
-    assert callable(mindstorms::GoTo.__init__)
+def test_mindstorms_goto_constructor_exists():
+    assert callable(mindstorms_GoTo.__init__)
 
 
-def test_mindstorms::goto_constructor_args():
-    sig = inspect.signature(mindstorms::GoTo.__init__)
+def test_mindstorms_goto_constructor_args():
+    sig = inspect.signature(mindstorms_GoTo.__init__)
     params = list(sig.parameters.keys())
-    assert "x" in params, "Missing parameter 'x'"
     assert "y" in params, "Missing parameter 'y'"
+    assert "x" in params, "Missing parameter 'x'"
 
-def test_mindstorms::goto_has_x():
-    assert hasattr(mindstorms::GoTo, "x")
+def test_mindstorms_goto_has_y():
+    assert hasattr(mindstorms_GoTo, "y")
     descriptor = None
-    for klass in mindstorms::GoTo.__mro__:
-        if "x" in klass.__dict__:
-            descriptor = klass.__dict__["x"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_mindstorms::goto_has_y():
-    assert hasattr(mindstorms::GoTo, "y")
-    descriptor = None
-    for klass in mindstorms::GoTo.__mro__:
+    for klass in mindstorms_GoTo.__mro__:
         if "y" in klass.__dict__:
             descriptor = klass.__dict__["y"]
             break
     assert isinstance(descriptor, property)
 
+def test_mindstorms_goto_has_x():
+    assert hasattr(mindstorms_GoTo, "x")
+    descriptor = None
+    for klass in mindstorms_GoTo.__mro__:
+        if "x" in klass.__dict__:
+            descriptor = klass.__dict__["x"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_mindstorms::release_is_not_abstract():
-    assert not inspect.isabstract(mindstorms::Release)
+
+def test_mindstorms_gobackward_is_not_abstract():
+    assert not inspect.isabstract(mindstorms_GoBackward)
 
 
-def test_mindstorms::release_constructor_exists():
-    assert callable(mindstorms::Release.__init__)
+def test_mindstorms_gobackward_constructor_exists():
+    assert callable(mindstorms_GoBackward.__init__)
 
 
-def test_mindstorms::release_constructor_args():
-    sig = inspect.signature(mindstorms::Release.__init__)
+def test_mindstorms_gobackward_constructor_args():
+    sig = inspect.signature(mindstorms_GoBackward.__init__)
+    params = list(sig.parameters.keys())
+    assert "infinite" in params, "Missing parameter 'infinite'"
+    assert "cm" in params, "Missing parameter 'cm'"
+
+def test_mindstorms_gobackward_has_infinite():
+    assert hasattr(mindstorms_GoBackward, "infinite")
+    descriptor = None
+    for klass in mindstorms_GoBackward.__mro__:
+        if "infinite" in klass.__dict__:
+            descriptor = klass.__dict__["infinite"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_mindstorms_gobackward_has_cm():
+    assert hasattr(mindstorms_GoBackward, "cm")
+    descriptor = None
+    for klass in mindstorms_GoBackward.__mro__:
+        if "cm" in klass.__dict__:
+            descriptor = klass.__dict__["cm"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_mindstorms_grab_is_not_abstract():
+    assert not inspect.isabstract(mindstorms_Grab)
+
+
+def test_mindstorms_grab_constructor_exists():
+    assert callable(mindstorms_Grab.__init__)
+
+
+def test_mindstorms_grab_constructor_args():
+    sig = inspect.signature(mindstorms_Grab.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_mindstorms::delay_is_not_abstract():
-    assert not inspect.isabstract(mindstorms::Delay)
+def test_mindstorms_delay_is_not_abstract():
+    assert not inspect.isabstract(mindstorms_Delay)
 
 
-def test_mindstorms::delay_constructor_exists():
-    assert callable(mindstorms::Delay.__init__)
+def test_mindstorms_delay_constructor_exists():
+    assert callable(mindstorms_Delay.__init__)
 
 
-def test_mindstorms::delay_constructor_args():
-    sig = inspect.signature(mindstorms::Delay.__init__)
+def test_mindstorms_delay_constructor_args():
+    sig = inspect.signature(mindstorms_Delay.__init__)
     params = list(sig.parameters.keys())
     assert "ms" in params, "Missing parameter 'ms'"
 
-def test_mindstorms::delay_has_ms():
-    assert hasattr(mindstorms::Delay, "ms")
+def test_mindstorms_delay_has_ms():
+    assert hasattr(mindstorms_Delay, "ms")
     descriptor = None
-    for klass in mindstorms::Delay.__mro__:
+    for klass in mindstorms_Delay.__mro__:
         if "ms" in klass.__dict__:
             descriptor = klass.__dict__["ms"]
             break
@@ -259,95 +293,61 @@ def test_mindstorms::delay_has_ms():
 
 
 
-def test_mindstorms::grab_is_not_abstract():
-    assert not inspect.isabstract(mindstorms::Grab)
+def test_mindstorms_release_is_not_abstract():
+    assert not inspect.isabstract(mindstorms_Release)
 
 
-def test_mindstorms::grab_constructor_exists():
-    assert callable(mindstorms::Grab.__init__)
+def test_mindstorms_release_constructor_exists():
+    assert callable(mindstorms_Release.__init__)
 
 
-def test_mindstorms::grab_constructor_args():
-    sig = inspect.signature(mindstorms::Grab.__init__)
+def test_mindstorms_release_constructor_args():
+    sig = inspect.signature(mindstorms_Release.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_mindstorms::returntobase_is_not_abstract():
-    assert not inspect.isabstract(mindstorms::ReturnToBase)
+def test_mindstorms_returntobase_is_not_abstract():
+    assert not inspect.isabstract(mindstorms_ReturnToBase)
 
 
-def test_mindstorms::returntobase_constructor_exists():
-    assert callable(mindstorms::ReturnToBase.__init__)
+def test_mindstorms_returntobase_constructor_exists():
+    assert callable(mindstorms_ReturnToBase.__init__)
 
 
-def test_mindstorms::returntobase_constructor_args():
-    sig = inspect.signature(mindstorms::ReturnToBase.__init__)
+def test_mindstorms_returntobase_constructor_args():
+    sig = inspect.signature(mindstorms_ReturnToBase.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_mindstorms::rotate_is_not_abstract():
-    assert not inspect.isabstract(mindstorms::Rotate)
+def test_mindstorms_goforward_is_not_abstract():
+    assert not inspect.isabstract(mindstorms_GoForward)
 
 
-def test_mindstorms::rotate_constructor_exists():
-    assert callable(mindstorms::Rotate.__init__)
+def test_mindstorms_goforward_constructor_exists():
+    assert callable(mindstorms_GoForward.__init__)
 
 
-def test_mindstorms::rotate_constructor_args():
-    sig = inspect.signature(mindstorms::Rotate.__init__)
-    params = list(sig.parameters.keys())
-    assert "random" in params, "Missing parameter 'random'"
-    assert "degrees" in params, "Missing parameter 'degrees'"
-
-def test_mindstorms::rotate_has_random():
-    assert hasattr(mindstorms::Rotate, "random")
-    descriptor = None
-    for klass in mindstorms::Rotate.__mro__:
-        if "random" in klass.__dict__:
-            descriptor = klass.__dict__["random"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_mindstorms::rotate_has_degrees():
-    assert hasattr(mindstorms::Rotate, "degrees")
-    descriptor = None
-    for klass in mindstorms::Rotate.__mro__:
-        if "degrees" in klass.__dict__:
-            descriptor = klass.__dict__["degrees"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_mindstorms::goforward_is_not_abstract():
-    assert not inspect.isabstract(mindstorms::GoForward)
-
-
-def test_mindstorms::goforward_constructor_exists():
-    assert callable(mindstorms::GoForward.__init__)
-
-
-def test_mindstorms::goforward_constructor_args():
-    sig = inspect.signature(mindstorms::GoForward.__init__)
+def test_mindstorms_goforward_constructor_args():
+    sig = inspect.signature(mindstorms_GoForward.__init__)
     params = list(sig.parameters.keys())
     assert "cm" in params, "Missing parameter 'cm'"
     assert "infinite" in params, "Missing parameter 'infinite'"
 
-def test_mindstorms::goforward_has_cm():
-    assert hasattr(mindstorms::GoForward, "cm")
+def test_mindstorms_goforward_has_cm():
+    assert hasattr(mindstorms_GoForward, "cm")
     descriptor = None
-    for klass in mindstorms::GoForward.__mro__:
+    for klass in mindstorms_GoForward.__mro__:
         if "cm" in klass.__dict__:
             descriptor = klass.__dict__["cm"]
             break
     assert isinstance(descriptor, property)
 
-def test_mindstorms::goforward_has_infinite():
-    assert hasattr(mindstorms::GoForward, "infinite")
+def test_mindstorms_goforward_has_infinite():
+    assert hasattr(mindstorms_GoForward, "infinite")
     descriptor = None
-    for klass in mindstorms::GoForward.__mro__:
+    for klass in mindstorms_GoForward.__mro__:
         if "infinite" in klass.__dict__:
             descriptor = klass.__dict__["infinite"]
             break
@@ -369,30 +369,30 @@ def test_conditionalflow_constructor_args():
 
 
 
-def test_mindstorms::while_is_not_abstract():
-    assert not inspect.isabstract(mindstorms::While)
+def test_mindstorms_while_is_not_abstract():
+    assert not inspect.isabstract(mindstorms_While)
 
 
-def test_mindstorms::while_constructor_exists():
-    assert callable(mindstorms::While.__init__)
+def test_mindstorms_while_constructor_exists():
+    assert callable(mindstorms_While.__init__)
 
 
-def test_mindstorms::while_constructor_args():
-    sig = inspect.signature(mindstorms::While.__init__)
+def test_mindstorms_while_constructor_args():
+    sig = inspect.signature(mindstorms_While.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_mindstorms::if_is_not_abstract():
-    assert not inspect.isabstract(mindstorms::If)
+def test_mindstorms_if_is_not_abstract():
+    assert not inspect.isabstract(mindstorms_If)
 
 
-def test_mindstorms::if_constructor_exists():
-    assert callable(mindstorms::If.__init__)
+def test_mindstorms_if_constructor_exists():
+    assert callable(mindstorms_If.__init__)
 
 
-def test_mindstorms::if_constructor_args():
-    sig = inspect.signature(mindstorms::If.__init__)
+def test_mindstorms_if_constructor_args():
+    sig = inspect.signature(mindstorms_If.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -411,30 +411,30 @@ def test_condition_constructor_args():
 
 
 
-def test_mindstorms::sensor_is_not_abstract():
-    assert not inspect.isabstract(mindstorms::Sensor)
+def test_mindstorms_sensor_is_not_abstract():
+    assert not inspect.isabstract(mindstorms_Sensor)
 
 
-def test_mindstorms::sensor_constructor_exists():
-    assert callable(mindstorms::Sensor.__init__)
+def test_mindstorms_sensor_constructor_exists():
+    assert callable(mindstorms_Sensor.__init__)
 
 
-def test_mindstorms::sensor_constructor_args():
-    sig = inspect.signature(mindstorms::Sensor.__init__)
+def test_mindstorms_sensor_constructor_args():
+    sig = inspect.signature(mindstorms_Sensor.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_mindstorms::condition_is_not_abstract():
-    assert not inspect.isabstract(mindstorms::Condition)
+def test_mindstorms_condition_is_not_abstract():
+    assert not inspect.isabstract(mindstorms_Condition)
 
 
-def test_mindstorms::condition_constructor_exists():
-    assert callable(mindstorms::Condition.__init__)
+def test_mindstorms_condition_constructor_exists():
+    assert callable(mindstorms_Condition.__init__)
 
 
-def test_mindstorms::condition_constructor_args():
-    sig = inspect.signature(mindstorms::Condition.__init__)
+def test_mindstorms_condition_constructor_args():
+    sig = inspect.signature(mindstorms_Condition.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -453,37 +453,37 @@ def test_flow_constructor_args():
 
 
 
-def test_mindstorms::conditionalflow_is_not_abstract():
-    assert not inspect.isabstract(mindstorms::ConditionalFlow)
+def test_mindstorms_conditionalflow_is_not_abstract():
+    assert not inspect.isabstract(mindstorms_ConditionalFlow)
 
 
-def test_mindstorms::conditionalflow_constructor_exists():
-    assert callable(mindstorms::ConditionalFlow.__init__)
+def test_mindstorms_conditionalflow_constructor_exists():
+    assert callable(mindstorms_ConditionalFlow.__init__)
 
 
-def test_mindstorms::conditionalflow_constructor_args():
-    sig = inspect.signature(mindstorms::ConditionalFlow.__init__)
+def test_mindstorms_conditionalflow_constructor_args():
+    sig = inspect.signature(mindstorms_ConditionalFlow.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_mindstorms::choregraphy_is_not_abstract():
-    assert not inspect.isabstract(mindstorms::Choregraphy)
+def test_mindstorms_choregraphy_is_not_abstract():
+    assert not inspect.isabstract(mindstorms_Choregraphy)
 
 
-def test_mindstorms::choregraphy_constructor_exists():
-    assert callable(mindstorms::Choregraphy.__init__)
+def test_mindstorms_choregraphy_constructor_exists():
+    assert callable(mindstorms_Choregraphy.__init__)
 
 
-def test_mindstorms::choregraphy_constructor_args():
-    sig = inspect.signature(mindstorms::Choregraphy.__init__)
+def test_mindstorms_choregraphy_constructor_args():
+    sig = inspect.signature(mindstorms_Choregraphy.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_mindstorms::choregraphy_has_name():
-    assert hasattr(mindstorms::Choregraphy, "name")
+def test_mindstorms_choregraphy_has_name():
+    assert hasattr(mindstorms_Choregraphy, "name")
     descriptor = None
-    for klass in mindstorms::Choregraphy.__mro__:
+    for klass in mindstorms_Choregraphy.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -505,58 +505,58 @@ def test_instruction_constructor_args():
 
 
 
-def test_mindstorms::action_is_not_abstract():
-    assert not inspect.isabstract(mindstorms::Action)
+def test_mindstorms_action_is_not_abstract():
+    assert not inspect.isabstract(mindstorms_Action)
 
 
-def test_mindstorms::action_constructor_exists():
-    assert callable(mindstorms::Action.__init__)
+def test_mindstorms_action_constructor_exists():
+    assert callable(mindstorms_Action.__init__)
 
 
-def test_mindstorms::action_constructor_args():
-    sig = inspect.signature(mindstorms::Action.__init__)
+def test_mindstorms_action_constructor_args():
+    sig = inspect.signature(mindstorms_Action.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_mindstorms::reuse_is_not_abstract():
-    assert not inspect.isabstract(mindstorms::Reuse)
+def test_mindstorms_reuse_is_not_abstract():
+    assert not inspect.isabstract(mindstorms_Reuse)
 
 
-def test_mindstorms::reuse_constructor_exists():
-    assert callable(mindstorms::Reuse.__init__)
+def test_mindstorms_reuse_constructor_exists():
+    assert callable(mindstorms_Reuse.__init__)
 
 
-def test_mindstorms::reuse_constructor_args():
-    sig = inspect.signature(mindstorms::Reuse.__init__)
+def test_mindstorms_reuse_constructor_args():
+    sig = inspect.signature(mindstorms_Reuse.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_mindstorms::flow_is_not_abstract():
-    assert not inspect.isabstract(mindstorms::Flow)
+def test_mindstorms_flow_is_not_abstract():
+    assert not inspect.isabstract(mindstorms_Flow)
 
 
-def test_mindstorms::flow_constructor_exists():
-    assert callable(mindstorms::Flow.__init__)
+def test_mindstorms_flow_constructor_exists():
+    assert callable(mindstorms_Flow.__init__)
 
 
-def test_mindstorms::flow_constructor_args():
-    sig = inspect.signature(mindstorms::Flow.__init__)
+def test_mindstorms_flow_constructor_args():
+    sig = inspect.signature(mindstorms_Flow.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_mindstorms::instruction_is_not_abstract():
-    assert not inspect.isabstract(mindstorms::Instruction)
+def test_mindstorms_instruction_is_not_abstract():
+    assert not inspect.isabstract(mindstorms_Instruction)
 
 
-def test_mindstorms::instruction_constructor_exists():
-    assert callable(mindstorms::Instruction.__init__)
+def test_mindstorms_instruction_constructor_exists():
+    assert callable(mindstorms_Instruction.__init__)
 
 
-def test_mindstorms::instruction_constructor_args():
-    sig = inspect.signature(mindstorms::Instruction.__init__)
+def test_mindstorms_instruction_constructor_args():
+    sig = inspect.signature(mindstorms_Instruction.__init__)
     params = list(sig.parameters.keys())
 
 def test_color_exists():
@@ -567,21 +567,21 @@ def test_color_has_all_literals():
     # Collect the names of literals in this Enumeration
     enum_literals = [lit.name for lit in Color]
     expected_literals = [
-        "GREEN",
-        "GRAY",
         "YELLOW",
-        "BLACK",
-        "BROWN",
-        "NONE",
-        "DARK_GRAY",
-        "BLUE",
-        "RED",
-        "LIGHT_GRAY",
-        "PINK",
-        "WHITE",
-        "CYAN",
-        "ORANGE",
         "MAGENTA",
+        "CYAN",
+        "LIGHT_GRAY",
+        "NONE",
+        "RED",
+        "GRAY",
+        "GREEN",
+        "ORANGE",
+        "BLACK",
+        "DARK_GRAY",
+        "WHITE",
+        "BROWN",
+        "PINK",
+        "BLUE",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
@@ -595,9 +595,9 @@ def test_operatorkind_has_all_literals():
     # Collect the names of literals in this Enumeration
     enum_literals = [lit.name for lit in OperatorKind]
     expected_literals = [
-        "notEqual",
-        "lowerOrEqual",
         "upperOrEqual",
+        "lowerOrEqual",
+        "notEqual",
         "equal",
     ]
     # Check that all expected literals exist
@@ -619,63 +619,63 @@ safe_text = st.text(
 Sensor_strategy = st.builds(
     Sensor,
 )
-mindstorms::ColorSensor_strategy = st.builds(
-    mindstorms::ColorSensor,
-    color=
-        safe_text
-)
-mindstorms::UltrasonicSensor_strategy = st.builds(
-    mindstorms::UltrasonicSensor,
+mindstorms_UltrasonicSensor_strategy = st.builds(
+    mindstorms_UltrasonicSensor,
     operator=
         safe_text,
     value=
         st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False)
 )
-mindstorms::TouchSensor_strategy = st.builds(
-    mindstorms::TouchSensor,
+mindstorms_ColorSensor_strategy = st.builds(
+    mindstorms_ColorSensor,
+    color=
+        safe_text
+)
+mindstorms_TouchSensor_strategy = st.builds(
+    mindstorms_TouchSensor,
     isPressed=
         st.booleans()
 )
 Action_strategy = st.builds(
     Action,
 )
-mindstorms::GoBackward_strategy = st.builds(
-    mindstorms::GoBackward,
-    cm=
+mindstorms_Rotate_strategy = st.builds(
+    mindstorms_Rotate,
+    degrees=
         st.integers(),
-    infinite=
+    random=
         st.booleans()
 )
-mindstorms::GoTo_strategy = st.builds(
-    mindstorms::GoTo,
-    x=
-        st.integers(),
+mindstorms_GoTo_strategy = st.builds(
+    mindstorms_GoTo,
     y=
+        st.integers(),
+    x=
         st.integers()
 )
-mindstorms::Release_strategy = st.builds(
-    mindstorms::Release,
+mindstorms_GoBackward_strategy = st.builds(
+    mindstorms_GoBackward,
+    infinite=
+        st.booleans(),
+    cm=
+        st.integers()
 )
-mindstorms::Delay_strategy = st.builds(
-    mindstorms::Delay,
+mindstorms_Grab_strategy = st.builds(
+    mindstorms_Grab,
+)
+mindstorms_Delay_strategy = st.builds(
+    mindstorms_Delay,
     ms=
         st.integers()
 )
-mindstorms::Grab_strategy = st.builds(
-    mindstorms::Grab,
+mindstorms_Release_strategy = st.builds(
+    mindstorms_Release,
 )
-mindstorms::ReturnToBase_strategy = st.builds(
-    mindstorms::ReturnToBase,
+mindstorms_ReturnToBase_strategy = st.builds(
+    mindstorms_ReturnToBase,
 )
-mindstorms::Rotate_strategy = st.builds(
-    mindstorms::Rotate,
-    random=
-        st.booleans(),
-    degrees=
-        st.integers()
-)
-mindstorms::GoForward_strategy = st.builds(
-    mindstorms::GoForward,
+mindstorms_GoForward_strategy = st.builds(
+    mindstorms_GoForward,
     cm=
         st.integers(),
     infinite=
@@ -684,46 +684,46 @@ mindstorms::GoForward_strategy = st.builds(
 ConditionalFlow_strategy = st.builds(
     ConditionalFlow,
 )
-mindstorms::While_strategy = st.builds(
-    mindstorms::While,
+mindstorms_While_strategy = st.builds(
+    mindstorms_While,
 )
-mindstorms::If_strategy = st.builds(
-    mindstorms::If,
+mindstorms_If_strategy = st.builds(
+    mindstorms_If,
 )
 Condition_strategy = st.builds(
     Condition,
 )
-mindstorms::Sensor_strategy = st.builds(
-    mindstorms::Sensor,
+mindstorms_Sensor_strategy = st.builds(
+    mindstorms_Sensor,
 )
-mindstorms::Condition_strategy = st.builds(
-    mindstorms::Condition,
+mindstorms_Condition_strategy = st.builds(
+    mindstorms_Condition,
 )
 Flow_strategy = st.builds(
     Flow,
 )
-mindstorms::ConditionalFlow_strategy = st.builds(
-    mindstorms::ConditionalFlow,
+mindstorms_ConditionalFlow_strategy = st.builds(
+    mindstorms_ConditionalFlow,
 )
-mindstorms::Choregraphy_strategy = st.builds(
-    mindstorms::Choregraphy,
+mindstorms_Choregraphy_strategy = st.builds(
+    mindstorms_Choregraphy,
     name=
         safe_text
 )
 Instruction_strategy = st.builds(
     Instruction,
 )
-mindstorms::Action_strategy = st.builds(
-    mindstorms::Action,
+mindstorms_Action_strategy = st.builds(
+    mindstorms_Action,
 )
-mindstorms::Reuse_strategy = st.builds(
-    mindstorms::Reuse,
+mindstorms_Reuse_strategy = st.builds(
+    mindstorms_Reuse,
 )
-mindstorms::Flow_strategy = st.builds(
-    mindstorms::Flow,
+mindstorms_Flow_strategy = st.builds(
+    mindstorms_Flow,
 )
-mindstorms::Instruction_strategy = st.builds(
-    mindstorms::Instruction,
+mindstorms_Instruction_strategy = st.builds(
+    mindstorms_Instruction,
 )
 
 @given(instance=Sensor_strategy)
@@ -731,61 +731,49 @@ mindstorms::Instruction_strategy = st.builds(
 def test_sensor_instantiation(instance):
     assert isinstance(instance, Sensor)
 
-@given(instance=mindstorms::ColorSensor_strategy)
+@given(instance=mindstorms_UltrasonicSensor_strategy)
 @settings(max_examples=50)
-def test_mindstorms::colorsensor_instantiation(instance):
-    assert isinstance(instance, mindstorms::ColorSensor)
-
-@given(instance=mindstorms::ColorSensor_strategy)
-def test_mindstorms::colorsensor_color_type(instance):
-    assert isinstance(instance.color, str)
+def test_mindstorms_ultrasonicsensor_instantiation(instance):
+    assert isinstance(instance, mindstorms_UltrasonicSensor)
 
 
-@given(instance=mindstorms::ColorSensor_strategy)
-def test_mindstorms::colorsensor_color_setter(instance):
-    original = instance.color
-    instance.color = original
-    assert instance.color == original
 
-@given(instance=mindstorms::UltrasonicSensor_strategy)
-@settings(max_examples=50)
-def test_mindstorms::ultrasonicsensor_instantiation(instance):
-    assert isinstance(instance, mindstorms::UltrasonicSensor)
-
-@given(instance=mindstorms::UltrasonicSensor_strategy)
-def test_mindstorms::ultrasonicsensor_operator_type(instance):
-    assert isinstance(instance.operator, str)
-
-
-@given(instance=mindstorms::UltrasonicSensor_strategy)
-def test_mindstorms::ultrasonicsensor_operator_setter(instance):
+@given(instance=mindstorms_UltrasonicSensor_strategy)
+def test_mindstorms_ultrasonicsensor_operator_setter(instance):
     original = instance.operator
     instance.operator = original
     assert instance.operator == original
 
-@given(instance=mindstorms::UltrasonicSensor_strategy)
-def test_mindstorms::ultrasonicsensor_value_type(instance):
-    assert isinstance(instance.value, float)
 
 
-@given(instance=mindstorms::UltrasonicSensor_strategy)
-def test_mindstorms::ultrasonicsensor_value_setter(instance):
+@given(instance=mindstorms_UltrasonicSensor_strategy)
+def test_mindstorms_ultrasonicsensor_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
 
-@given(instance=mindstorms::TouchSensor_strategy)
+@given(instance=mindstorms_ColorSensor_strategy)
 @settings(max_examples=50)
-def test_mindstorms::touchsensor_instantiation(instance):
-    assert isinstance(instance, mindstorms::TouchSensor)
-
-@given(instance=mindstorms::TouchSensor_strategy)
-def test_mindstorms::touchsensor_isPressed_type(instance):
-    assert isinstance(instance.isPressed, bool)
+def test_mindstorms_colorsensor_instantiation(instance):
+    assert isinstance(instance, mindstorms_ColorSensor)
 
 
-@given(instance=mindstorms::TouchSensor_strategy)
-def test_mindstorms::touchsensor_isPressed_setter(instance):
+
+@given(instance=mindstorms_ColorSensor_strategy)
+def test_mindstorms_colorsensor_color_setter(instance):
+    original = instance.color
+    instance.color = original
+    assert instance.color == original
+
+@given(instance=mindstorms_TouchSensor_strategy)
+@settings(max_examples=50)
+def test_mindstorms_touchsensor_instantiation(instance):
+    assert isinstance(instance, mindstorms_TouchSensor)
+
+
+
+@given(instance=mindstorms_TouchSensor_strategy)
+def test_mindstorms_touchsensor_isPressed_setter(instance):
     original = instance.isPressed
     instance.isPressed = original
     assert instance.isPressed == original
@@ -795,141 +783,114 @@ def test_mindstorms::touchsensor_isPressed_setter(instance):
 def test_action_instantiation(instance):
     assert isinstance(instance, Action)
 
-@given(instance=mindstorms::GoBackward_strategy)
+@given(instance=mindstorms_Rotate_strategy)
 @settings(max_examples=50)
-def test_mindstorms::gobackward_instantiation(instance):
-    assert isinstance(instance, mindstorms::GoBackward)
-
-@given(instance=mindstorms::GoBackward_strategy)
-def test_mindstorms::gobackward_cm_type(instance):
-    assert isinstance(instance.cm, int)
+def test_mindstorms_rotate_instantiation(instance):
+    assert isinstance(instance, mindstorms_Rotate)
 
 
-@given(instance=mindstorms::GoBackward_strategy)
-def test_mindstorms::gobackward_cm_setter(instance):
-    original = instance.cm
-    instance.cm = original
-    assert instance.cm == original
 
-@given(instance=mindstorms::GoBackward_strategy)
-def test_mindstorms::gobackward_infinite_type(instance):
-    assert isinstance(instance.infinite, bool)
-
-
-@given(instance=mindstorms::GoBackward_strategy)
-def test_mindstorms::gobackward_infinite_setter(instance):
-    original = instance.infinite
-    instance.infinite = original
-    assert instance.infinite == original
-
-@given(instance=mindstorms::GoTo_strategy)
-@settings(max_examples=50)
-def test_mindstorms::goto_instantiation(instance):
-    assert isinstance(instance, mindstorms::GoTo)
-
-@given(instance=mindstorms::GoTo_strategy)
-def test_mindstorms::goto_x_type(instance):
-    assert isinstance(instance.x, int)
-
-
-@given(instance=mindstorms::GoTo_strategy)
-def test_mindstorms::goto_x_setter(instance):
-    original = instance.x
-    instance.x = original
-    assert instance.x == original
-
-@given(instance=mindstorms::GoTo_strategy)
-def test_mindstorms::goto_y_type(instance):
-    assert isinstance(instance.y, int)
-
-
-@given(instance=mindstorms::GoTo_strategy)
-def test_mindstorms::goto_y_setter(instance):
-    original = instance.y
-    instance.y = original
-    assert instance.y == original
-
-@given(instance=mindstorms::Release_strategy)
-@settings(max_examples=50)
-def test_mindstorms::release_instantiation(instance):
-    assert isinstance(instance, mindstorms::Release)
-
-@given(instance=mindstorms::Delay_strategy)
-@settings(max_examples=50)
-def test_mindstorms::delay_instantiation(instance):
-    assert isinstance(instance, mindstorms::Delay)
-
-@given(instance=mindstorms::Delay_strategy)
-def test_mindstorms::delay_ms_type(instance):
-    assert isinstance(instance.ms, int)
-
-
-@given(instance=mindstorms::Delay_strategy)
-def test_mindstorms::delay_ms_setter(instance):
-    original = instance.ms
-    instance.ms = original
-    assert instance.ms == original
-
-@given(instance=mindstorms::Grab_strategy)
-@settings(max_examples=50)
-def test_mindstorms::grab_instantiation(instance):
-    assert isinstance(instance, mindstorms::Grab)
-
-@given(instance=mindstorms::ReturnToBase_strategy)
-@settings(max_examples=50)
-def test_mindstorms::returntobase_instantiation(instance):
-    assert isinstance(instance, mindstorms::ReturnToBase)
-
-@given(instance=mindstorms::Rotate_strategy)
-@settings(max_examples=50)
-def test_mindstorms::rotate_instantiation(instance):
-    assert isinstance(instance, mindstorms::Rotate)
-
-@given(instance=mindstorms::Rotate_strategy)
-def test_mindstorms::rotate_random_type(instance):
-    assert isinstance(instance.random, bool)
-
-
-@given(instance=mindstorms::Rotate_strategy)
-def test_mindstorms::rotate_random_setter(instance):
-    original = instance.random
-    instance.random = original
-    assert instance.random == original
-
-@given(instance=mindstorms::Rotate_strategy)
-def test_mindstorms::rotate_degrees_type(instance):
-    assert isinstance(instance.degrees, int)
-
-
-@given(instance=mindstorms::Rotate_strategy)
-def test_mindstorms::rotate_degrees_setter(instance):
+@given(instance=mindstorms_Rotate_strategy)
+def test_mindstorms_rotate_degrees_setter(instance):
     original = instance.degrees
     instance.degrees = original
     assert instance.degrees == original
 
-@given(instance=mindstorms::GoForward_strategy)
+
+
+@given(instance=mindstorms_Rotate_strategy)
+def test_mindstorms_rotate_random_setter(instance):
+    original = instance.random
+    instance.random = original
+    assert instance.random == original
+
+@given(instance=mindstorms_GoTo_strategy)
 @settings(max_examples=50)
-def test_mindstorms::goforward_instantiation(instance):
-    assert isinstance(instance, mindstorms::GoForward)
-
-@given(instance=mindstorms::GoForward_strategy)
-def test_mindstorms::goforward_cm_type(instance):
-    assert isinstance(instance.cm, int)
+def test_mindstorms_goto_instantiation(instance):
+    assert isinstance(instance, mindstorms_GoTo)
 
 
-@given(instance=mindstorms::GoForward_strategy)
-def test_mindstorms::goforward_cm_setter(instance):
+
+@given(instance=mindstorms_GoTo_strategy)
+def test_mindstorms_goto_y_setter(instance):
+    original = instance.y
+    instance.y = original
+    assert instance.y == original
+
+
+
+@given(instance=mindstorms_GoTo_strategy)
+def test_mindstorms_goto_x_setter(instance):
+    original = instance.x
+    instance.x = original
+    assert instance.x == original
+
+@given(instance=mindstorms_GoBackward_strategy)
+@settings(max_examples=50)
+def test_mindstorms_gobackward_instantiation(instance):
+    assert isinstance(instance, mindstorms_GoBackward)
+
+
+
+@given(instance=mindstorms_GoBackward_strategy)
+def test_mindstorms_gobackward_infinite_setter(instance):
+    original = instance.infinite
+    instance.infinite = original
+    assert instance.infinite == original
+
+
+
+@given(instance=mindstorms_GoBackward_strategy)
+def test_mindstorms_gobackward_cm_setter(instance):
     original = instance.cm
     instance.cm = original
     assert instance.cm == original
 
-@given(instance=mindstorms::GoForward_strategy)
-def test_mindstorms::goforward_infinite_type(instance):
-    assert isinstance(instance.infinite, bool)
+@given(instance=mindstorms_Grab_strategy)
+@settings(max_examples=50)
+def test_mindstorms_grab_instantiation(instance):
+    assert isinstance(instance, mindstorms_Grab)
+
+@given(instance=mindstorms_Delay_strategy)
+@settings(max_examples=50)
+def test_mindstorms_delay_instantiation(instance):
+    assert isinstance(instance, mindstorms_Delay)
 
 
-@given(instance=mindstorms::GoForward_strategy)
-def test_mindstorms::goforward_infinite_setter(instance):
+
+@given(instance=mindstorms_Delay_strategy)
+def test_mindstorms_delay_ms_setter(instance):
+    original = instance.ms
+    instance.ms = original
+    assert instance.ms == original
+
+@given(instance=mindstorms_Release_strategy)
+@settings(max_examples=50)
+def test_mindstorms_release_instantiation(instance):
+    assert isinstance(instance, mindstorms_Release)
+
+@given(instance=mindstorms_ReturnToBase_strategy)
+@settings(max_examples=50)
+def test_mindstorms_returntobase_instantiation(instance):
+    assert isinstance(instance, mindstorms_ReturnToBase)
+
+@given(instance=mindstorms_GoForward_strategy)
+@settings(max_examples=50)
+def test_mindstorms_goforward_instantiation(instance):
+    assert isinstance(instance, mindstorms_GoForward)
+
+
+
+@given(instance=mindstorms_GoForward_strategy)
+def test_mindstorms_goforward_cm_setter(instance):
+    original = instance.cm
+    instance.cm = original
+    assert instance.cm == original
+
+
+
+@given(instance=mindstorms_GoForward_strategy)
+def test_mindstorms_goforward_infinite_setter(instance):
     original = instance.infinite
     instance.infinite = original
     assert instance.infinite == original
@@ -939,53 +900,50 @@ def test_mindstorms::goforward_infinite_setter(instance):
 def test_conditionalflow_instantiation(instance):
     assert isinstance(instance, ConditionalFlow)
 
-@given(instance=mindstorms::While_strategy)
+@given(instance=mindstorms_While_strategy)
 @settings(max_examples=50)
-def test_mindstorms::while_instantiation(instance):
-    assert isinstance(instance, mindstorms::While)
+def test_mindstorms_while_instantiation(instance):
+    assert isinstance(instance, mindstorms_While)
 
-@given(instance=mindstorms::If_strategy)
+@given(instance=mindstorms_If_strategy)
 @settings(max_examples=50)
-def test_mindstorms::if_instantiation(instance):
-    assert isinstance(instance, mindstorms::If)
+def test_mindstorms_if_instantiation(instance):
+    assert isinstance(instance, mindstorms_If)
 
 @given(instance=Condition_strategy)
 @settings(max_examples=50)
 def test_condition_instantiation(instance):
     assert isinstance(instance, Condition)
 
-@given(instance=mindstorms::Sensor_strategy)
+@given(instance=mindstorms_Sensor_strategy)
 @settings(max_examples=50)
-def test_mindstorms::sensor_instantiation(instance):
-    assert isinstance(instance, mindstorms::Sensor)
+def test_mindstorms_sensor_instantiation(instance):
+    assert isinstance(instance, mindstorms_Sensor)
 
-@given(instance=mindstorms::Condition_strategy)
+@given(instance=mindstorms_Condition_strategy)
 @settings(max_examples=50)
-def test_mindstorms::condition_instantiation(instance):
-    assert isinstance(instance, mindstorms::Condition)
+def test_mindstorms_condition_instantiation(instance):
+    assert isinstance(instance, mindstorms_Condition)
 
 @given(instance=Flow_strategy)
 @settings(max_examples=50)
 def test_flow_instantiation(instance):
     assert isinstance(instance, Flow)
 
-@given(instance=mindstorms::ConditionalFlow_strategy)
+@given(instance=mindstorms_ConditionalFlow_strategy)
 @settings(max_examples=50)
-def test_mindstorms::conditionalflow_instantiation(instance):
-    assert isinstance(instance, mindstorms::ConditionalFlow)
+def test_mindstorms_conditionalflow_instantiation(instance):
+    assert isinstance(instance, mindstorms_ConditionalFlow)
 
-@given(instance=mindstorms::Choregraphy_strategy)
+@given(instance=mindstorms_Choregraphy_strategy)
 @settings(max_examples=50)
-def test_mindstorms::choregraphy_instantiation(instance):
-    assert isinstance(instance, mindstorms::Choregraphy)
-
-@given(instance=mindstorms::Choregraphy_strategy)
-def test_mindstorms::choregraphy_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_mindstorms_choregraphy_instantiation(instance):
+    assert isinstance(instance, mindstorms_Choregraphy)
 
 
-@given(instance=mindstorms::Choregraphy_strategy)
-def test_mindstorms::choregraphy_name_setter(instance):
+
+@given(instance=mindstorms_Choregraphy_strategy)
+def test_mindstorms_choregraphy_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
@@ -995,22 +953,22 @@ def test_mindstorms::choregraphy_name_setter(instance):
 def test_instruction_instantiation(instance):
     assert isinstance(instance, Instruction)
 
-@given(instance=mindstorms::Action_strategy)
+@given(instance=mindstorms_Action_strategy)
 @settings(max_examples=50)
-def test_mindstorms::action_instantiation(instance):
-    assert isinstance(instance, mindstorms::Action)
+def test_mindstorms_action_instantiation(instance):
+    assert isinstance(instance, mindstorms_Action)
 
-@given(instance=mindstorms::Reuse_strategy)
+@given(instance=mindstorms_Reuse_strategy)
 @settings(max_examples=50)
-def test_mindstorms::reuse_instantiation(instance):
-    assert isinstance(instance, mindstorms::Reuse)
+def test_mindstorms_reuse_instantiation(instance):
+    assert isinstance(instance, mindstorms_Reuse)
 
-@given(instance=mindstorms::Flow_strategy)
+@given(instance=mindstorms_Flow_strategy)
 @settings(max_examples=50)
-def test_mindstorms::flow_instantiation(instance):
-    assert isinstance(instance, mindstorms::Flow)
+def test_mindstorms_flow_instantiation(instance):
+    assert isinstance(instance, mindstorms_Flow)
 
-@given(instance=mindstorms::Instruction_strategy)
+@given(instance=mindstorms_Instruction_strategy)
 @settings(max_examples=50)
-def test_mindstorms::instruction_instantiation(instance):
-    assert isinstance(instance, mindstorms::Instruction)
+def test_mindstorms_instruction_instantiation(instance):
+    assert isinstance(instance, mindstorms_Instruction)

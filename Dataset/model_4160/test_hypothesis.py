@@ -3,11 +3,11 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    font::Greeting,
-    font::Model,
+from python_code import (
+    font_Greeting,
+    font_Model,
 )
 
 # =============================================================================
@@ -16,23 +16,23 @@ from classes import (
 
 
 
-def test_font::greeting_is_not_abstract():
-    assert not inspect.isabstract(font::Greeting)
+def test_font_greeting_is_not_abstract():
+    assert not inspect.isabstract(font_Greeting)
 
 
-def test_font::greeting_constructor_exists():
-    assert callable(font::Greeting.__init__)
+def test_font_greeting_constructor_exists():
+    assert callable(font_Greeting.__init__)
 
 
-def test_font::greeting_constructor_args():
-    sig = inspect.signature(font::Greeting.__init__)
+def test_font_greeting_constructor_args():
+    sig = inspect.signature(font_Greeting.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_font::greeting_has_name():
-    assert hasattr(font::Greeting, "name")
+def test_font_greeting_has_name():
+    assert hasattr(font_Greeting, "name")
     descriptor = None
-    for klass in font::Greeting.__mro__:
+    for klass in font_Greeting.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -40,16 +40,16 @@ def test_font::greeting_has_name():
 
 
 
-def test_font::model_is_not_abstract():
-    assert not inspect.isabstract(font::Model)
+def test_font_model_is_not_abstract():
+    assert not inspect.isabstract(font_Model)
 
 
-def test_font::model_constructor_exists():
-    assert callable(font::Model.__init__)
+def test_font_model_constructor_exists():
+    assert callable(font_Model.__init__)
 
 
-def test_font::model_constructor_args():
-    sig = inspect.signature(font::Model.__init__)
+def test_font_model_constructor_args():
+    sig = inspect.signature(font_Model.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -64,32 +64,29 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-font::Greeting_strategy = st.builds(
-    font::Greeting,
+font_Greeting_strategy = st.builds(
+    font_Greeting,
     name=
         safe_text
 )
-font::Model_strategy = st.builds(
-    font::Model,
+font_Model_strategy = st.builds(
+    font_Model,
 )
 
-@given(instance=font::Greeting_strategy)
+@given(instance=font_Greeting_strategy)
 @settings(max_examples=50)
-def test_font::greeting_instantiation(instance):
-    assert isinstance(instance, font::Greeting)
-
-@given(instance=font::Greeting_strategy)
-def test_font::greeting_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_font_greeting_instantiation(instance):
+    assert isinstance(instance, font_Greeting)
 
 
-@given(instance=font::Greeting_strategy)
-def test_font::greeting_name_setter(instance):
+
+@given(instance=font_Greeting_strategy)
+def test_font_greeting_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=font::Model_strategy)
+@given(instance=font_Model_strategy)
 @settings(max_examples=50)
-def test_font::model_instantiation(instance):
-    assert isinstance(instance, font::Model)
+def test_font_model_instantiation(instance):
+    assert isinstance(instance, font_Model)

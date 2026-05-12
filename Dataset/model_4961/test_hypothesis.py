@@ -3,73 +3,73 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    RoleConstraint,
-    crom::l1::composed::RoleProhibition,
-    crom::l1::composed::RoleEquivalence,
-    crom::l1::composed::RoleImplication,
-    crom::l1::composed::RoleGroupElement,
+from python_code import (
+    crom_l1_composed_RoleGroupElement,
     IntraRelationshipConstraint,
-    crom::l1::composed::Total,
-    crom::l1::composed::Cyclic,
-    crom::l1::composed::ParthoodConstraint,
-    crom::l1::composed::Reflexive,
-    crom::l1::composed::Acyclic,
-    crom::l1::composed::Irreflexive,
+    crom_l1_composed_Cyclic,
+    crom_l1_composed_Total,
+    crom_l1_composed_Reflexive,
+    crom_l1_composed_Acyclic,
+    crom_l1_composed_Irreflexive,
     InterRelationshipConstraint,
-    crom::l1::composed::RelationshipExclusion,
-    crom::l1::composed::RelationshipImplication,
+    crom_l1_composed_RelationshipExclusion,
+    crom_l1_composed_RelationshipImplication,
     RoleGroupElement,
-    crom::l1::composed::AbstractRoleRef,
     Inheritance,
-    crom::l1::composed::RoleInheritance,
-    crom::l1::composed::NaturalInheritance,
-    crom::l1::composed::DataInheritance,
+    crom_l1_composed_NaturalInheritance,
+    crom_l1_composed_RoleInheritance,
+    crom_l1_composed_DataInheritance,
     RelationshipConstraint,
-    crom::l1::composed::InterRelationshipConstraint,
+    crom_l1_composed_InterRelationshipConstraint,
     Constraint,
-    crom::l1::composed::RelationshipConstraint,
-    crom::l1::composed::ComplexConstraint,
-    crom::l1::composed::RoleConstraint,
-    crom::l1::composed::AbstractRole,
-    crom::l1::composed::IntraRelationshipConstraint,
-    crom::l1::composed::CompartmentInheritance,
-    crom::l1::composed::Place,
+    crom_l1_composed_RelationshipConstraint,
+    crom_l1_composed_ComplexConstraint,
+    crom_l1_composed_RoleConstraint,
+    crom_l1_composed_AbstractRole,
+    crom_l1_composed_IntraRelationshipConstraint,
+    crom_l1_composed_CompartmentInheritance,
+    crom_l1_composed_Place,
     Relation,
-    crom::l1::composed::Inheritance,
+    crom_l1_composed_Inheritance,
     AbstractRole,
     AntiRigidType,
-    crom::l1::composed::RoleType,
-    crom::l1::composed::Fulfillment,
-    crom::l1::composed::Constraint,
-    crom::l1::composed::Part,
+    crom_l1_composed_RoleType,
+    crom_l1_composed_Fulfillment,
+    crom_l1_composed_Constraint,
+    crom_l1_composed_Part,
     RigidType,
-    crom::l1::composed::CompartmentType,
-    crom::l1::composed::NaturalType,
-    crom::l1::composed::DataType,
+    crom_l1_composed_CompartmentType,
+    crom_l1_composed_NaturalType,
+    crom_l1_composed_DataType,
     TypedElement,
-    crom::l1::composed::Attribute,
-    crom::l1::composed::Operation,
-    crom::l1::composed::Parameter,
+    crom_l1_composed_Attribute,
+    crom_l1_composed_Operation,
+    crom_l1_composed_Parameter,
     Model,
     ModelElement,
-    crom::l1::composed::Group,
+    crom_l1_composed_Group,
     Type,
-    crom::l1::composed::AntiRigidType,
-    crom::l1::composed::RigidType,
-    crom::l1::composed::Relation,
-    crom::l1::composed::Model,
+    crom_l1_composed_AntiRigidType,
+    crom_l1_composed_RigidType,
+    crom_l1_composed_Relation,
+    crom_l1_composed_Model,
     NamedElement,
-    crom::l1::composed::TypedElement,
-    crom::l1::composed::RelationTarget,
-    crom::l1::composed::Relationship,
-    crom::l1::composed::ModelElement,
-    crom::l1::composed::NamedElement,
+    crom_l1_composed_RelationTarget,
+    crom_l1_composed_Relationship,
+    crom_l1_composed_ModelElement,
+    crom_l1_composed_NamedElement,
     RelationTarget,
-    crom::l1::composed::RoleGroup,
-    crom::l1::composed::Type,
+    crom_l1_composed_Type,
+    crom_l1_composed_RoleGroup,
+    crom_l1_composed_AbstractRoleRef,
+    crom_l1_composed_ParthoodConstraint,
+    crom_l1_composed_TypedElement,
+    RoleConstraint,
+    crom_l1_composed_RoleImplication,
+    crom_l1_composed_RoleEquivalence,
+    crom_l1_composed_RoleProhibition,
     Direction,
     Parthood,
 )
@@ -80,72 +80,16 @@ from classes import (
 
 
 
-def test_roleconstraint_is_not_abstract():
-    assert not inspect.isabstract(RoleConstraint)
+def test_crom_l1_composed_rolegroupelement_is_not_abstract():
+    assert not inspect.isabstract(crom_l1_composed_RoleGroupElement)
 
 
-def test_roleconstraint_constructor_exists():
-    assert callable(RoleConstraint.__init__)
+def test_crom_l1_composed_rolegroupelement_constructor_exists():
+    assert callable(crom_l1_composed_RoleGroupElement.__init__)
 
 
-def test_roleconstraint_constructor_args():
-    sig = inspect.signature(RoleConstraint.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_crom::l1::composed::roleprohibition_is_not_abstract():
-    assert not inspect.isabstract(crom::l1::composed::RoleProhibition)
-
-
-def test_crom::l1::composed::roleprohibition_constructor_exists():
-    assert callable(crom::l1::composed::RoleProhibition.__init__)
-
-
-def test_crom::l1::composed::roleprohibition_constructor_args():
-    sig = inspect.signature(crom::l1::composed::RoleProhibition.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_crom::l1::composed::roleequivalence_is_not_abstract():
-    assert not inspect.isabstract(crom::l1::composed::RoleEquivalence)
-
-
-def test_crom::l1::composed::roleequivalence_constructor_exists():
-    assert callable(crom::l1::composed::RoleEquivalence.__init__)
-
-
-def test_crom::l1::composed::roleequivalence_constructor_args():
-    sig = inspect.signature(crom::l1::composed::RoleEquivalence.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_crom::l1::composed::roleimplication_is_not_abstract():
-    assert not inspect.isabstract(crom::l1::composed::RoleImplication)
-
-
-def test_crom::l1::composed::roleimplication_constructor_exists():
-    assert callable(crom::l1::composed::RoleImplication.__init__)
-
-
-def test_crom::l1::composed::roleimplication_constructor_args():
-    sig = inspect.signature(crom::l1::composed::RoleImplication.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_crom::l1::composed::rolegroupelement_is_not_abstract():
-    assert not inspect.isabstract(crom::l1::composed::RoleGroupElement)
-
-
-def test_crom::l1::composed::rolegroupelement_constructor_exists():
-    assert callable(crom::l1::composed::RoleGroupElement.__init__)
-
-
-def test_crom::l1::composed::rolegroupelement_constructor_args():
-    sig = inspect.signature(crom::l1::composed::RoleGroupElement.__init__)
+def test_crom_l1_composed_rolegroupelement_constructor_args():
+    sig = inspect.signature(crom_l1_composed_RoleGroupElement.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -164,96 +108,72 @@ def test_intrarelationshipconstraint_constructor_args():
 
 
 
-def test_crom::l1::composed::total_is_not_abstract():
-    assert not inspect.isabstract(crom::l1::composed::Total)
+def test_crom_l1_composed_cyclic_is_not_abstract():
+    assert not inspect.isabstract(crom_l1_composed_Cyclic)
 
 
-def test_crom::l1::composed::total_constructor_exists():
-    assert callable(crom::l1::composed::Total.__init__)
+def test_crom_l1_composed_cyclic_constructor_exists():
+    assert callable(crom_l1_composed_Cyclic.__init__)
 
 
-def test_crom::l1::composed::total_constructor_args():
-    sig = inspect.signature(crom::l1::composed::Total.__init__)
+def test_crom_l1_composed_cyclic_constructor_args():
+    sig = inspect.signature(crom_l1_composed_Cyclic.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_crom::l1::composed::cyclic_is_not_abstract():
-    assert not inspect.isabstract(crom::l1::composed::Cyclic)
+def test_crom_l1_composed_total_is_not_abstract():
+    assert not inspect.isabstract(crom_l1_composed_Total)
 
 
-def test_crom::l1::composed::cyclic_constructor_exists():
-    assert callable(crom::l1::composed::Cyclic.__init__)
+def test_crom_l1_composed_total_constructor_exists():
+    assert callable(crom_l1_composed_Total.__init__)
 
 
-def test_crom::l1::composed::cyclic_constructor_args():
-    sig = inspect.signature(crom::l1::composed::Cyclic.__init__)
+def test_crom_l1_composed_total_constructor_args():
+    sig = inspect.signature(crom_l1_composed_Total.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_crom::l1::composed::parthoodconstraint_is_not_abstract():
-    assert not inspect.isabstract(crom::l1::composed::ParthoodConstraint)
+def test_crom_l1_composed_reflexive_is_not_abstract():
+    assert not inspect.isabstract(crom_l1_composed_Reflexive)
 
 
-def test_crom::l1::composed::parthoodconstraint_constructor_exists():
-    assert callable(crom::l1::composed::ParthoodConstraint.__init__)
+def test_crom_l1_composed_reflexive_constructor_exists():
+    assert callable(crom_l1_composed_Reflexive.__init__)
 
 
-def test_crom::l1::composed::parthoodconstraint_constructor_args():
-    sig = inspect.signature(crom::l1::composed::ParthoodConstraint.__init__)
-    params = list(sig.parameters.keys())
-    assert "kind" in params, "Missing parameter 'kind'"
-
-def test_crom::l1::composed::parthoodconstraint_has_kind():
-    assert hasattr(crom::l1::composed::ParthoodConstraint, "kind")
-    descriptor = None
-    for klass in crom::l1::composed::ParthoodConstraint.__mro__:
-        if "kind" in klass.__dict__:
-            descriptor = klass.__dict__["kind"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_crom::l1::composed::reflexive_is_not_abstract():
-    assert not inspect.isabstract(crom::l1::composed::Reflexive)
-
-
-def test_crom::l1::composed::reflexive_constructor_exists():
-    assert callable(crom::l1::composed::Reflexive.__init__)
-
-
-def test_crom::l1::composed::reflexive_constructor_args():
-    sig = inspect.signature(crom::l1::composed::Reflexive.__init__)
+def test_crom_l1_composed_reflexive_constructor_args():
+    sig = inspect.signature(crom_l1_composed_Reflexive.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_crom::l1::composed::acyclic_is_not_abstract():
-    assert not inspect.isabstract(crom::l1::composed::Acyclic)
+def test_crom_l1_composed_acyclic_is_not_abstract():
+    assert not inspect.isabstract(crom_l1_composed_Acyclic)
 
 
-def test_crom::l1::composed::acyclic_constructor_exists():
-    assert callable(crom::l1::composed::Acyclic.__init__)
+def test_crom_l1_composed_acyclic_constructor_exists():
+    assert callable(crom_l1_composed_Acyclic.__init__)
 
 
-def test_crom::l1::composed::acyclic_constructor_args():
-    sig = inspect.signature(crom::l1::composed::Acyclic.__init__)
+def test_crom_l1_composed_acyclic_constructor_args():
+    sig = inspect.signature(crom_l1_composed_Acyclic.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_crom::l1::composed::irreflexive_is_not_abstract():
-    assert not inspect.isabstract(crom::l1::composed::Irreflexive)
+def test_crom_l1_composed_irreflexive_is_not_abstract():
+    assert not inspect.isabstract(crom_l1_composed_Irreflexive)
 
 
-def test_crom::l1::composed::irreflexive_constructor_exists():
-    assert callable(crom::l1::composed::Irreflexive.__init__)
+def test_crom_l1_composed_irreflexive_constructor_exists():
+    assert callable(crom_l1_composed_Irreflexive.__init__)
 
 
-def test_crom::l1::composed::irreflexive_constructor_args():
-    sig = inspect.signature(crom::l1::composed::Irreflexive.__init__)
+def test_crom_l1_composed_irreflexive_constructor_args():
+    sig = inspect.signature(crom_l1_composed_Irreflexive.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -272,30 +192,30 @@ def test_interrelationshipconstraint_constructor_args():
 
 
 
-def test_crom::l1::composed::relationshipexclusion_is_not_abstract():
-    assert not inspect.isabstract(crom::l1::composed::RelationshipExclusion)
+def test_crom_l1_composed_relationshipexclusion_is_not_abstract():
+    assert not inspect.isabstract(crom_l1_composed_RelationshipExclusion)
 
 
-def test_crom::l1::composed::relationshipexclusion_constructor_exists():
-    assert callable(crom::l1::composed::RelationshipExclusion.__init__)
+def test_crom_l1_composed_relationshipexclusion_constructor_exists():
+    assert callable(crom_l1_composed_RelationshipExclusion.__init__)
 
 
-def test_crom::l1::composed::relationshipexclusion_constructor_args():
-    sig = inspect.signature(crom::l1::composed::RelationshipExclusion.__init__)
+def test_crom_l1_composed_relationshipexclusion_constructor_args():
+    sig = inspect.signature(crom_l1_composed_RelationshipExclusion.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_crom::l1::composed::relationshipimplication_is_not_abstract():
-    assert not inspect.isabstract(crom::l1::composed::RelationshipImplication)
+def test_crom_l1_composed_relationshipimplication_is_not_abstract():
+    assert not inspect.isabstract(crom_l1_composed_RelationshipImplication)
 
 
-def test_crom::l1::composed::relationshipimplication_constructor_exists():
-    assert callable(crom::l1::composed::RelationshipImplication.__init__)
+def test_crom_l1_composed_relationshipimplication_constructor_exists():
+    assert callable(crom_l1_composed_RelationshipImplication.__init__)
 
 
-def test_crom::l1::composed::relationshipimplication_constructor_args():
-    sig = inspect.signature(crom::l1::composed::RelationshipImplication.__init__)
+def test_crom_l1_composed_relationshipimplication_constructor_args():
+    sig = inspect.signature(crom_l1_composed_RelationshipImplication.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -314,20 +234,6 @@ def test_rolegroupelement_constructor_args():
 
 
 
-def test_crom::l1::composed::abstractroleref_is_not_abstract():
-    assert not inspect.isabstract(crom::l1::composed::AbstractRoleRef)
-
-
-def test_crom::l1::composed::abstractroleref_constructor_exists():
-    assert callable(crom::l1::composed::AbstractRoleRef.__init__)
-
-
-def test_crom::l1::composed::abstractroleref_constructor_args():
-    sig = inspect.signature(crom::l1::composed::AbstractRoleRef.__init__)
-    params = list(sig.parameters.keys())
-
-
-
 def test_inheritance_is_not_abstract():
     assert not inspect.isabstract(Inheritance)
 
@@ -342,44 +248,44 @@ def test_inheritance_constructor_args():
 
 
 
-def test_crom::l1::composed::roleinheritance_is_not_abstract():
-    assert not inspect.isabstract(crom::l1::composed::RoleInheritance)
+def test_crom_l1_composed_naturalinheritance_is_not_abstract():
+    assert not inspect.isabstract(crom_l1_composed_NaturalInheritance)
 
 
-def test_crom::l1::composed::roleinheritance_constructor_exists():
-    assert callable(crom::l1::composed::RoleInheritance.__init__)
+def test_crom_l1_composed_naturalinheritance_constructor_exists():
+    assert callable(crom_l1_composed_NaturalInheritance.__init__)
 
 
-def test_crom::l1::composed::roleinheritance_constructor_args():
-    sig = inspect.signature(crom::l1::composed::RoleInheritance.__init__)
+def test_crom_l1_composed_naturalinheritance_constructor_args():
+    sig = inspect.signature(crom_l1_composed_NaturalInheritance.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_crom::l1::composed::naturalinheritance_is_not_abstract():
-    assert not inspect.isabstract(crom::l1::composed::NaturalInheritance)
+def test_crom_l1_composed_roleinheritance_is_not_abstract():
+    assert not inspect.isabstract(crom_l1_composed_RoleInheritance)
 
 
-def test_crom::l1::composed::naturalinheritance_constructor_exists():
-    assert callable(crom::l1::composed::NaturalInheritance.__init__)
+def test_crom_l1_composed_roleinheritance_constructor_exists():
+    assert callable(crom_l1_composed_RoleInheritance.__init__)
 
 
-def test_crom::l1::composed::naturalinheritance_constructor_args():
-    sig = inspect.signature(crom::l1::composed::NaturalInheritance.__init__)
+def test_crom_l1_composed_roleinheritance_constructor_args():
+    sig = inspect.signature(crom_l1_composed_RoleInheritance.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_crom::l1::composed::datainheritance_is_not_abstract():
-    assert not inspect.isabstract(crom::l1::composed::DataInheritance)
+def test_crom_l1_composed_datainheritance_is_not_abstract():
+    assert not inspect.isabstract(crom_l1_composed_DataInheritance)
 
 
-def test_crom::l1::composed::datainheritance_constructor_exists():
-    assert callable(crom::l1::composed::DataInheritance.__init__)
+def test_crom_l1_composed_datainheritance_constructor_exists():
+    assert callable(crom_l1_composed_DataInheritance.__init__)
 
 
-def test_crom::l1::composed::datainheritance_constructor_args():
-    sig = inspect.signature(crom::l1::composed::DataInheritance.__init__)
+def test_crom_l1_composed_datainheritance_constructor_args():
+    sig = inspect.signature(crom_l1_composed_DataInheritance.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -398,16 +304,16 @@ def test_relationshipconstraint_constructor_args():
 
 
 
-def test_crom::l1::composed::interrelationshipconstraint_is_not_abstract():
-    assert not inspect.isabstract(crom::l1::composed::InterRelationshipConstraint)
+def test_crom_l1_composed_interrelationshipconstraint_is_not_abstract():
+    assert not inspect.isabstract(crom_l1_composed_InterRelationshipConstraint)
 
 
-def test_crom::l1::composed::interrelationshipconstraint_constructor_exists():
-    assert callable(crom::l1::composed::InterRelationshipConstraint.__init__)
+def test_crom_l1_composed_interrelationshipconstraint_constructor_exists():
+    assert callable(crom_l1_composed_InterRelationshipConstraint.__init__)
 
 
-def test_crom::l1::composed::interrelationshipconstraint_constructor_args():
-    sig = inspect.signature(crom::l1::composed::InterRelationshipConstraint.__init__)
+def test_crom_l1_composed_interrelationshipconstraint_constructor_args():
+    sig = inspect.signature(crom_l1_composed_InterRelationshipConstraint.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -426,37 +332,37 @@ def test_constraint_constructor_args():
 
 
 
-def test_crom::l1::composed::relationshipconstraint_is_not_abstract():
-    assert not inspect.isabstract(crom::l1::composed::RelationshipConstraint)
+def test_crom_l1_composed_relationshipconstraint_is_not_abstract():
+    assert not inspect.isabstract(crom_l1_composed_RelationshipConstraint)
 
 
-def test_crom::l1::composed::relationshipconstraint_constructor_exists():
-    assert callable(crom::l1::composed::RelationshipConstraint.__init__)
+def test_crom_l1_composed_relationshipconstraint_constructor_exists():
+    assert callable(crom_l1_composed_RelationshipConstraint.__init__)
 
 
-def test_crom::l1::composed::relationshipconstraint_constructor_args():
-    sig = inspect.signature(crom::l1::composed::RelationshipConstraint.__init__)
+def test_crom_l1_composed_relationshipconstraint_constructor_args():
+    sig = inspect.signature(crom_l1_composed_RelationshipConstraint.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_crom::l1::composed::complexconstraint_is_not_abstract():
-    assert not inspect.isabstract(crom::l1::composed::ComplexConstraint)
+def test_crom_l1_composed_complexconstraint_is_not_abstract():
+    assert not inspect.isabstract(crom_l1_composed_ComplexConstraint)
 
 
-def test_crom::l1::composed::complexconstraint_constructor_exists():
-    assert callable(crom::l1::composed::ComplexConstraint.__init__)
+def test_crom_l1_composed_complexconstraint_constructor_exists():
+    assert callable(crom_l1_composed_ComplexConstraint.__init__)
 
 
-def test_crom::l1::composed::complexconstraint_constructor_args():
-    sig = inspect.signature(crom::l1::composed::ComplexConstraint.__init__)
+def test_crom_l1_composed_complexconstraint_constructor_args():
+    sig = inspect.signature(crom_l1_composed_ComplexConstraint.__init__)
     params = list(sig.parameters.keys())
     assert "expression" in params, "Missing parameter 'expression'"
 
-def test_crom::l1::composed::complexconstraint_has_expression():
-    assert hasattr(crom::l1::composed::ComplexConstraint, "expression")
+def test_crom_l1_composed_complexconstraint_has_expression():
+    assert hasattr(crom_l1_composed_ComplexConstraint, "expression")
     descriptor = None
-    for klass in crom::l1::composed::ComplexConstraint.__mro__:
+    for klass in crom_l1_composed_ComplexConstraint.__mro__:
         if "expression" in klass.__dict__:
             descriptor = klass.__dict__["expression"]
             break
@@ -464,89 +370,89 @@ def test_crom::l1::composed::complexconstraint_has_expression():
 
 
 
-def test_crom::l1::composed::roleconstraint_is_not_abstract():
-    assert not inspect.isabstract(crom::l1::composed::RoleConstraint)
+def test_crom_l1_composed_roleconstraint_is_not_abstract():
+    assert not inspect.isabstract(crom_l1_composed_RoleConstraint)
 
 
-def test_crom::l1::composed::roleconstraint_constructor_exists():
-    assert callable(crom::l1::composed::RoleConstraint.__init__)
+def test_crom_l1_composed_roleconstraint_constructor_exists():
+    assert callable(crom_l1_composed_RoleConstraint.__init__)
 
 
-def test_crom::l1::composed::roleconstraint_constructor_args():
-    sig = inspect.signature(crom::l1::composed::RoleConstraint.__init__)
+def test_crom_l1_composed_roleconstraint_constructor_args():
+    sig = inspect.signature(crom_l1_composed_RoleConstraint.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_crom::l1::composed::abstractrole_is_not_abstract():
-    assert not inspect.isabstract(crom::l1::composed::AbstractRole)
+def test_crom_l1_composed_abstractrole_is_not_abstract():
+    assert not inspect.isabstract(crom_l1_composed_AbstractRole)
 
 
-def test_crom::l1::composed::abstractrole_constructor_exists():
-    assert callable(crom::l1::composed::AbstractRole.__init__)
+def test_crom_l1_composed_abstractrole_constructor_exists():
+    assert callable(crom_l1_composed_AbstractRole.__init__)
 
 
-def test_crom::l1::composed::abstractrole_constructor_args():
-    sig = inspect.signature(crom::l1::composed::AbstractRole.__init__)
+def test_crom_l1_composed_abstractrole_constructor_args():
+    sig = inspect.signature(crom_l1_composed_AbstractRole.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_crom::l1::composed::intrarelationshipconstraint_is_not_abstract():
-    assert not inspect.isabstract(crom::l1::composed::IntraRelationshipConstraint)
+def test_crom_l1_composed_intrarelationshipconstraint_is_not_abstract():
+    assert not inspect.isabstract(crom_l1_composed_IntraRelationshipConstraint)
 
 
-def test_crom::l1::composed::intrarelationshipconstraint_constructor_exists():
-    assert callable(crom::l1::composed::IntraRelationshipConstraint.__init__)
+def test_crom_l1_composed_intrarelationshipconstraint_constructor_exists():
+    assert callable(crom_l1_composed_IntraRelationshipConstraint.__init__)
 
 
-def test_crom::l1::composed::intrarelationshipconstraint_constructor_args():
-    sig = inspect.signature(crom::l1::composed::IntraRelationshipConstraint.__init__)
+def test_crom_l1_composed_intrarelationshipconstraint_constructor_args():
+    sig = inspect.signature(crom_l1_composed_IntraRelationshipConstraint.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_crom::l1::composed::compartmentinheritance_is_not_abstract():
-    assert not inspect.isabstract(crom::l1::composed::CompartmentInheritance)
+def test_crom_l1_composed_compartmentinheritance_is_not_abstract():
+    assert not inspect.isabstract(crom_l1_composed_CompartmentInheritance)
 
 
-def test_crom::l1::composed::compartmentinheritance_constructor_exists():
-    assert callable(crom::l1::composed::CompartmentInheritance.__init__)
+def test_crom_l1_composed_compartmentinheritance_constructor_exists():
+    assert callable(crom_l1_composed_CompartmentInheritance.__init__)
 
 
-def test_crom::l1::composed::compartmentinheritance_constructor_args():
-    sig = inspect.signature(crom::l1::composed::CompartmentInheritance.__init__)
+def test_crom_l1_composed_compartmentinheritance_constructor_args():
+    sig = inspect.signature(crom_l1_composed_CompartmentInheritance.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_crom::l1::composed::place_is_not_abstract():
-    assert not inspect.isabstract(crom::l1::composed::Place)
+def test_crom_l1_composed_place_is_not_abstract():
+    assert not inspect.isabstract(crom_l1_composed_Place)
 
 
-def test_crom::l1::composed::place_constructor_exists():
-    assert callable(crom::l1::composed::Place.__init__)
+def test_crom_l1_composed_place_constructor_exists():
+    assert callable(crom_l1_composed_Place.__init__)
 
 
-def test_crom::l1::composed::place_constructor_args():
-    sig = inspect.signature(crom::l1::composed::Place.__init__)
+def test_crom_l1_composed_place_constructor_args():
+    sig = inspect.signature(crom_l1_composed_Place.__init__)
     params = list(sig.parameters.keys())
     assert "lower" in params, "Missing parameter 'lower'"
     assert "upper" in params, "Missing parameter 'upper'"
 
-def test_crom::l1::composed::place_has_lower():
-    assert hasattr(crom::l1::composed::Place, "lower")
+def test_crom_l1_composed_place_has_lower():
+    assert hasattr(crom_l1_composed_Place, "lower")
     descriptor = None
-    for klass in crom::l1::composed::Place.__mro__:
+    for klass in crom_l1_composed_Place.__mro__:
         if "lower" in klass.__dict__:
             descriptor = klass.__dict__["lower"]
             break
     assert isinstance(descriptor, property)
 
-def test_crom::l1::composed::place_has_upper():
-    assert hasattr(crom::l1::composed::Place, "upper")
+def test_crom_l1_composed_place_has_upper():
+    assert hasattr(crom_l1_composed_Place, "upper")
     descriptor = None
-    for klass in crom::l1::composed::Place.__mro__:
+    for klass in crom_l1_composed_Place.__mro__:
         if "upper" in klass.__dict__:
             descriptor = klass.__dict__["upper"]
             break
@@ -568,16 +474,16 @@ def test_relation_constructor_args():
 
 
 
-def test_crom::l1::composed::inheritance_is_not_abstract():
-    assert not inspect.isabstract(crom::l1::composed::Inheritance)
+def test_crom_l1_composed_inheritance_is_not_abstract():
+    assert not inspect.isabstract(crom_l1_composed_Inheritance)
 
 
-def test_crom::l1::composed::inheritance_constructor_exists():
-    assert callable(crom::l1::composed::Inheritance.__init__)
+def test_crom_l1_composed_inheritance_constructor_exists():
+    assert callable(crom_l1_composed_Inheritance.__init__)
 
 
-def test_crom::l1::composed::inheritance_constructor_args():
-    sig = inspect.signature(crom::l1::composed::Inheritance.__init__)
+def test_crom_l1_composed_inheritance_constructor_args():
+    sig = inspect.signature(crom_l1_composed_Inheritance.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -610,75 +516,75 @@ def test_antirigidtype_constructor_args():
 
 
 
-def test_crom::l1::composed::roletype_is_not_abstract():
-    assert not inspect.isabstract(crom::l1::composed::RoleType)
+def test_crom_l1_composed_roletype_is_not_abstract():
+    assert not inspect.isabstract(crom_l1_composed_RoleType)
 
 
-def test_crom::l1::composed::roletype_constructor_exists():
-    assert callable(crom::l1::composed::RoleType.__init__)
+def test_crom_l1_composed_roletype_constructor_exists():
+    assert callable(crom_l1_composed_RoleType.__init__)
 
 
-def test_crom::l1::composed::roletype_constructor_args():
-    sig = inspect.signature(crom::l1::composed::RoleType.__init__)
+def test_crom_l1_composed_roletype_constructor_args():
+    sig = inspect.signature(crom_l1_composed_RoleType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_crom::l1::composed::fulfillment_is_not_abstract():
-    assert not inspect.isabstract(crom::l1::composed::Fulfillment)
+def test_crom_l1_composed_fulfillment_is_not_abstract():
+    assert not inspect.isabstract(crom_l1_composed_Fulfillment)
 
 
-def test_crom::l1::composed::fulfillment_constructor_exists():
-    assert callable(crom::l1::composed::Fulfillment.__init__)
+def test_crom_l1_composed_fulfillment_constructor_exists():
+    assert callable(crom_l1_composed_Fulfillment.__init__)
 
 
-def test_crom::l1::composed::fulfillment_constructor_args():
-    sig = inspect.signature(crom::l1::composed::Fulfillment.__init__)
+def test_crom_l1_composed_fulfillment_constructor_args():
+    sig = inspect.signature(crom_l1_composed_Fulfillment.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_crom::l1::composed::constraint_is_not_abstract():
-    assert not inspect.isabstract(crom::l1::composed::Constraint)
+def test_crom_l1_composed_constraint_is_not_abstract():
+    assert not inspect.isabstract(crom_l1_composed_Constraint)
 
 
-def test_crom::l1::composed::constraint_constructor_exists():
-    assert callable(crom::l1::composed::Constraint.__init__)
+def test_crom_l1_composed_constraint_constructor_exists():
+    assert callable(crom_l1_composed_Constraint.__init__)
 
 
-def test_crom::l1::composed::constraint_constructor_args():
-    sig = inspect.signature(crom::l1::composed::Constraint.__init__)
+def test_crom_l1_composed_constraint_constructor_args():
+    sig = inspect.signature(crom_l1_composed_Constraint.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_crom::l1::composed::part_is_not_abstract():
-    assert not inspect.isabstract(crom::l1::composed::Part)
+def test_crom_l1_composed_part_is_not_abstract():
+    assert not inspect.isabstract(crom_l1_composed_Part)
 
 
-def test_crom::l1::composed::part_constructor_exists():
-    assert callable(crom::l1::composed::Part.__init__)
+def test_crom_l1_composed_part_constructor_exists():
+    assert callable(crom_l1_composed_Part.__init__)
 
 
-def test_crom::l1::composed::part_constructor_args():
-    sig = inspect.signature(crom::l1::composed::Part.__init__)
+def test_crom_l1_composed_part_constructor_args():
+    sig = inspect.signature(crom_l1_composed_Part.__init__)
     params = list(sig.parameters.keys())
     assert "lower" in params, "Missing parameter 'lower'"
     assert "upper" in params, "Missing parameter 'upper'"
 
-def test_crom::l1::composed::part_has_lower():
-    assert hasattr(crom::l1::composed::Part, "lower")
+def test_crom_l1_composed_part_has_lower():
+    assert hasattr(crom_l1_composed_Part, "lower")
     descriptor = None
-    for klass in crom::l1::composed::Part.__mro__:
+    for klass in crom_l1_composed_Part.__mro__:
         if "lower" in klass.__dict__:
             descriptor = klass.__dict__["lower"]
             break
     assert isinstance(descriptor, property)
 
-def test_crom::l1::composed::part_has_upper():
-    assert hasattr(crom::l1::composed::Part, "upper")
+def test_crom_l1_composed_part_has_upper():
+    assert hasattr(crom_l1_composed_Part, "upper")
     descriptor = None
-    for klass in crom::l1::composed::Part.__mro__:
+    for klass in crom_l1_composed_Part.__mro__:
         if "upper" in klass.__dict__:
             descriptor = klass.__dict__["upper"]
             break
@@ -700,51 +606,51 @@ def test_rigidtype_constructor_args():
 
 
 
-def test_crom::l1::composed::compartmenttype_is_not_abstract():
-    assert not inspect.isabstract(crom::l1::composed::CompartmentType)
+def test_crom_l1_composed_compartmenttype_is_not_abstract():
+    assert not inspect.isabstract(crom_l1_composed_CompartmentType)
 
 
-def test_crom::l1::composed::compartmenttype_constructor_exists():
-    assert callable(crom::l1::composed::CompartmentType.__init__)
+def test_crom_l1_composed_compartmenttype_constructor_exists():
+    assert callable(crom_l1_composed_CompartmentType.__init__)
 
 
-def test_crom::l1::composed::compartmenttype_constructor_args():
-    sig = inspect.signature(crom::l1::composed::CompartmentType.__init__)
+def test_crom_l1_composed_compartmenttype_constructor_args():
+    sig = inspect.signature(crom_l1_composed_CompartmentType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_crom::l1::composed::naturaltype_is_not_abstract():
-    assert not inspect.isabstract(crom::l1::composed::NaturalType)
+def test_crom_l1_composed_naturaltype_is_not_abstract():
+    assert not inspect.isabstract(crom_l1_composed_NaturalType)
 
 
-def test_crom::l1::composed::naturaltype_constructor_exists():
-    assert callable(crom::l1::composed::NaturalType.__init__)
+def test_crom_l1_composed_naturaltype_constructor_exists():
+    assert callable(crom_l1_composed_NaturalType.__init__)
 
 
-def test_crom::l1::composed::naturaltype_constructor_args():
-    sig = inspect.signature(crom::l1::composed::NaturalType.__init__)
+def test_crom_l1_composed_naturaltype_constructor_args():
+    sig = inspect.signature(crom_l1_composed_NaturalType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_crom::l1::composed::datatype_is_not_abstract():
-    assert not inspect.isabstract(crom::l1::composed::DataType)
+def test_crom_l1_composed_datatype_is_not_abstract():
+    assert not inspect.isabstract(crom_l1_composed_DataType)
 
 
-def test_crom::l1::composed::datatype_constructor_exists():
-    assert callable(crom::l1::composed::DataType.__init__)
+def test_crom_l1_composed_datatype_constructor_exists():
+    assert callable(crom_l1_composed_DataType.__init__)
 
 
-def test_crom::l1::composed::datatype_constructor_args():
-    sig = inspect.signature(crom::l1::composed::DataType.__init__)
+def test_crom_l1_composed_datatype_constructor_args():
+    sig = inspect.signature(crom_l1_composed_DataType.__init__)
     params = list(sig.parameters.keys())
     assert "serializable" in params, "Missing parameter 'serializable'"
 
-def test_crom::l1::composed::datatype_has_serializable():
-    assert hasattr(crom::l1::composed::DataType, "serializable")
+def test_crom_l1_composed_datatype_has_serializable():
+    assert hasattr(crom_l1_composed_DataType, "serializable")
     descriptor = None
-    for klass in crom::l1::composed::DataType.__mro__:
+    for klass in crom_l1_composed_DataType.__mro__:
         if "serializable" in klass.__dict__:
             descriptor = klass.__dict__["serializable"]
             break
@@ -766,37 +672,37 @@ def test_typedelement_constructor_args():
 
 
 
-def test_crom::l1::composed::attribute_is_not_abstract():
-    assert not inspect.isabstract(crom::l1::composed::Attribute)
+def test_crom_l1_composed_attribute_is_not_abstract():
+    assert not inspect.isabstract(crom_l1_composed_Attribute)
 
 
-def test_crom::l1::composed::attribute_constructor_exists():
-    assert callable(crom::l1::composed::Attribute.__init__)
+def test_crom_l1_composed_attribute_constructor_exists():
+    assert callable(crom_l1_composed_Attribute.__init__)
 
 
-def test_crom::l1::composed::attribute_constructor_args():
-    sig = inspect.signature(crom::l1::composed::Attribute.__init__)
+def test_crom_l1_composed_attribute_constructor_args():
+    sig = inspect.signature(crom_l1_composed_Attribute.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_crom::l1::composed::operation_is_not_abstract():
-    assert not inspect.isabstract(crom::l1::composed::Operation)
+def test_crom_l1_composed_operation_is_not_abstract():
+    assert not inspect.isabstract(crom_l1_composed_Operation)
 
 
-def test_crom::l1::composed::operation_constructor_exists():
-    assert callable(crom::l1::composed::Operation.__init__)
+def test_crom_l1_composed_operation_constructor_exists():
+    assert callable(crom_l1_composed_Operation.__init__)
 
 
-def test_crom::l1::composed::operation_constructor_args():
-    sig = inspect.signature(crom::l1::composed::Operation.__init__)
+def test_crom_l1_composed_operation_constructor_args():
+    sig = inspect.signature(crom_l1_composed_Operation.__init__)
     params = list(sig.parameters.keys())
     assert "operation" in params, "Missing parameter 'operation'"
 
-def test_crom::l1::composed::operation_has_operation():
-    assert hasattr(crom::l1::composed::Operation, "operation")
+def test_crom_l1_composed_operation_has_operation():
+    assert hasattr(crom_l1_composed_Operation, "operation")
     descriptor = None
-    for klass in crom::l1::composed::Operation.__mro__:
+    for klass in crom_l1_composed_Operation.__mro__:
         if "operation" in klass.__dict__:
             descriptor = klass.__dict__["operation"]
             break
@@ -804,16 +710,16 @@ def test_crom::l1::composed::operation_has_operation():
 
 
 
-def test_crom::l1::composed::parameter_is_not_abstract():
-    assert not inspect.isabstract(crom::l1::composed::Parameter)
+def test_crom_l1_composed_parameter_is_not_abstract():
+    assert not inspect.isabstract(crom_l1_composed_Parameter)
 
 
-def test_crom::l1::composed::parameter_constructor_exists():
-    assert callable(crom::l1::composed::Parameter.__init__)
+def test_crom_l1_composed_parameter_constructor_exists():
+    assert callable(crom_l1_composed_Parameter.__init__)
 
 
-def test_crom::l1::composed::parameter_constructor_args():
-    sig = inspect.signature(crom::l1::composed::Parameter.__init__)
+def test_crom_l1_composed_parameter_constructor_args():
+    sig = inspect.signature(crom_l1_composed_Parameter.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -846,16 +752,16 @@ def test_modelelement_constructor_args():
 
 
 
-def test_crom::l1::composed::group_is_not_abstract():
-    assert not inspect.isabstract(crom::l1::composed::Group)
+def test_crom_l1_composed_group_is_not_abstract():
+    assert not inspect.isabstract(crom_l1_composed_Group)
 
 
-def test_crom::l1::composed::group_constructor_exists():
-    assert callable(crom::l1::composed::Group.__init__)
+def test_crom_l1_composed_group_constructor_exists():
+    assert callable(crom_l1_composed_Group.__init__)
 
 
-def test_crom::l1::composed::group_constructor_args():
-    sig = inspect.signature(crom::l1::composed::Group.__init__)
+def test_crom_l1_composed_group_constructor_args():
+    sig = inspect.signature(crom_l1_composed_Group.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -874,58 +780,58 @@ def test_type_constructor_args():
 
 
 
-def test_crom::l1::composed::antirigidtype_is_not_abstract():
-    assert not inspect.isabstract(crom::l1::composed::AntiRigidType)
+def test_crom_l1_composed_antirigidtype_is_not_abstract():
+    assert not inspect.isabstract(crom_l1_composed_AntiRigidType)
 
 
-def test_crom::l1::composed::antirigidtype_constructor_exists():
-    assert callable(crom::l1::composed::AntiRigidType.__init__)
+def test_crom_l1_composed_antirigidtype_constructor_exists():
+    assert callable(crom_l1_composed_AntiRigidType.__init__)
 
 
-def test_crom::l1::composed::antirigidtype_constructor_args():
-    sig = inspect.signature(crom::l1::composed::AntiRigidType.__init__)
+def test_crom_l1_composed_antirigidtype_constructor_args():
+    sig = inspect.signature(crom_l1_composed_AntiRigidType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_crom::l1::composed::rigidtype_is_not_abstract():
-    assert not inspect.isabstract(crom::l1::composed::RigidType)
+def test_crom_l1_composed_rigidtype_is_not_abstract():
+    assert not inspect.isabstract(crom_l1_composed_RigidType)
 
 
-def test_crom::l1::composed::rigidtype_constructor_exists():
-    assert callable(crom::l1::composed::RigidType.__init__)
+def test_crom_l1_composed_rigidtype_constructor_exists():
+    assert callable(crom_l1_composed_RigidType.__init__)
 
 
-def test_crom::l1::composed::rigidtype_constructor_args():
-    sig = inspect.signature(crom::l1::composed::RigidType.__init__)
+def test_crom_l1_composed_rigidtype_constructor_args():
+    sig = inspect.signature(crom_l1_composed_RigidType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_crom::l1::composed::relation_is_not_abstract():
-    assert not inspect.isabstract(crom::l1::composed::Relation)
+def test_crom_l1_composed_relation_is_not_abstract():
+    assert not inspect.isabstract(crom_l1_composed_Relation)
 
 
-def test_crom::l1::composed::relation_constructor_exists():
-    assert callable(crom::l1::composed::Relation.__init__)
+def test_crom_l1_composed_relation_constructor_exists():
+    assert callable(crom_l1_composed_Relation.__init__)
 
 
-def test_crom::l1::composed::relation_constructor_args():
-    sig = inspect.signature(crom::l1::composed::Relation.__init__)
+def test_crom_l1_composed_relation_constructor_args():
+    sig = inspect.signature(crom_l1_composed_Relation.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_crom::l1::composed::model_is_not_abstract():
-    assert not inspect.isabstract(crom::l1::composed::Model)
+def test_crom_l1_composed_model_is_not_abstract():
+    assert not inspect.isabstract(crom_l1_composed_Model)
 
 
-def test_crom::l1::composed::model_constructor_exists():
-    assert callable(crom::l1::composed::Model.__init__)
+def test_crom_l1_composed_model_constructor_exists():
+    assert callable(crom_l1_composed_Model.__init__)
 
 
-def test_crom::l1::composed::model_constructor_args():
-    sig = inspect.signature(crom::l1::composed::Model.__init__)
+def test_crom_l1_composed_model_constructor_args():
+    sig = inspect.signature(crom_l1_composed_Model.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -944,51 +850,37 @@ def test_namedelement_constructor_args():
 
 
 
-def test_crom::l1::composed::typedelement_is_not_abstract():
-    assert not inspect.isabstract(crom::l1::composed::TypedElement)
+def test_crom_l1_composed_relationtarget_is_not_abstract():
+    assert not inspect.isabstract(crom_l1_composed_RelationTarget)
 
 
-def test_crom::l1::composed::typedelement_constructor_exists():
-    assert callable(crom::l1::composed::TypedElement.__init__)
+def test_crom_l1_composed_relationtarget_constructor_exists():
+    assert callable(crom_l1_composed_RelationTarget.__init__)
 
 
-def test_crom::l1::composed::typedelement_constructor_args():
-    sig = inspect.signature(crom::l1::composed::TypedElement.__init__)
+def test_crom_l1_composed_relationtarget_constructor_args():
+    sig = inspect.signature(crom_l1_composed_RelationTarget.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_crom::l1::composed::relationtarget_is_not_abstract():
-    assert not inspect.isabstract(crom::l1::composed::RelationTarget)
+def test_crom_l1_composed_relationship_is_not_abstract():
+    assert not inspect.isabstract(crom_l1_composed_Relationship)
 
 
-def test_crom::l1::composed::relationtarget_constructor_exists():
-    assert callable(crom::l1::composed::RelationTarget.__init__)
+def test_crom_l1_composed_relationship_constructor_exists():
+    assert callable(crom_l1_composed_Relationship.__init__)
 
 
-def test_crom::l1::composed::relationtarget_constructor_args():
-    sig = inspect.signature(crom::l1::composed::RelationTarget.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_crom::l1::composed::relationship_is_not_abstract():
-    assert not inspect.isabstract(crom::l1::composed::Relationship)
-
-
-def test_crom::l1::composed::relationship_constructor_exists():
-    assert callable(crom::l1::composed::Relationship.__init__)
-
-
-def test_crom::l1::composed::relationship_constructor_args():
-    sig = inspect.signature(crom::l1::composed::Relationship.__init__)
+def test_crom_l1_composed_relationship_constructor_args():
+    sig = inspect.signature(crom_l1_composed_Relationship.__init__)
     params = list(sig.parameters.keys())
     assert "direction" in params, "Missing parameter 'direction'"
 
-def test_crom::l1::composed::relationship_has_direction():
-    assert hasattr(crom::l1::composed::Relationship, "direction")
+def test_crom_l1_composed_relationship_has_direction():
+    assert hasattr(crom_l1_composed_Relationship, "direction")
     descriptor = None
-    for klass in crom::l1::composed::Relationship.__mro__:
+    for klass in crom_l1_composed_Relationship.__mro__:
         if "direction" in klass.__dict__:
             descriptor = klass.__dict__["direction"]
             break
@@ -996,37 +888,37 @@ def test_crom::l1::composed::relationship_has_direction():
 
 
 
-def test_crom::l1::composed::modelelement_is_not_abstract():
-    assert not inspect.isabstract(crom::l1::composed::ModelElement)
+def test_crom_l1_composed_modelelement_is_not_abstract():
+    assert not inspect.isabstract(crom_l1_composed_ModelElement)
 
 
-def test_crom::l1::composed::modelelement_constructor_exists():
-    assert callable(crom::l1::composed::ModelElement.__init__)
+def test_crom_l1_composed_modelelement_constructor_exists():
+    assert callable(crom_l1_composed_ModelElement.__init__)
 
 
-def test_crom::l1::composed::modelelement_constructor_args():
-    sig = inspect.signature(crom::l1::composed::ModelElement.__init__)
+def test_crom_l1_composed_modelelement_constructor_args():
+    sig = inspect.signature(crom_l1_composed_ModelElement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_crom::l1::composed::namedelement_is_not_abstract():
-    assert not inspect.isabstract(crom::l1::composed::NamedElement)
+def test_crom_l1_composed_namedelement_is_not_abstract():
+    assert not inspect.isabstract(crom_l1_composed_NamedElement)
 
 
-def test_crom::l1::composed::namedelement_constructor_exists():
-    assert callable(crom::l1::composed::NamedElement.__init__)
+def test_crom_l1_composed_namedelement_constructor_exists():
+    assert callable(crom_l1_composed_NamedElement.__init__)
 
 
-def test_crom::l1::composed::namedelement_constructor_args():
-    sig = inspect.signature(crom::l1::composed::NamedElement.__init__)
+def test_crom_l1_composed_namedelement_constructor_args():
+    sig = inspect.signature(crom_l1_composed_NamedElement.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_crom::l1::composed::namedelement_has_name():
-    assert hasattr(crom::l1::composed::NamedElement, "name")
+def test_crom_l1_composed_namedelement_has_name():
+    assert hasattr(crom_l1_composed_NamedElement, "name")
     descriptor = None
-    for klass in crom::l1::composed::NamedElement.__mro__:
+    for klass in crom_l1_composed_NamedElement.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -1048,33 +940,47 @@ def test_relationtarget_constructor_args():
 
 
 
-def test_crom::l1::composed::rolegroup_is_not_abstract():
-    assert not inspect.isabstract(crom::l1::composed::RoleGroup)
+def test_crom_l1_composed_type_is_not_abstract():
+    assert not inspect.isabstract(crom_l1_composed_Type)
 
 
-def test_crom::l1::composed::rolegroup_constructor_exists():
-    assert callable(crom::l1::composed::RoleGroup.__init__)
+def test_crom_l1_composed_type_constructor_exists():
+    assert callable(crom_l1_composed_Type.__init__)
 
 
-def test_crom::l1::composed::rolegroup_constructor_args():
-    sig = inspect.signature(crom::l1::composed::RoleGroup.__init__)
+def test_crom_l1_composed_type_constructor_args():
+    sig = inspect.signature(crom_l1_composed_Type.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_crom_l1_composed_rolegroup_is_not_abstract():
+    assert not inspect.isabstract(crom_l1_composed_RoleGroup)
+
+
+def test_crom_l1_composed_rolegroup_constructor_exists():
+    assert callable(crom_l1_composed_RoleGroup.__init__)
+
+
+def test_crom_l1_composed_rolegroup_constructor_args():
+    sig = inspect.signature(crom_l1_composed_RoleGroup.__init__)
     params = list(sig.parameters.keys())
     assert "lower" in params, "Missing parameter 'lower'"
     assert "upper" in params, "Missing parameter 'upper'"
 
-def test_crom::l1::composed::rolegroup_has_lower():
-    assert hasattr(crom::l1::composed::RoleGroup, "lower")
+def test_crom_l1_composed_rolegroup_has_lower():
+    assert hasattr(crom_l1_composed_RoleGroup, "lower")
     descriptor = None
-    for klass in crom::l1::composed::RoleGroup.__mro__:
+    for klass in crom_l1_composed_RoleGroup.__mro__:
         if "lower" in klass.__dict__:
             descriptor = klass.__dict__["lower"]
             break
     assert isinstance(descriptor, property)
 
-def test_crom::l1::composed::rolegroup_has_upper():
-    assert hasattr(crom::l1::composed::RoleGroup, "upper")
+def test_crom_l1_composed_rolegroup_has_upper():
+    assert hasattr(crom_l1_composed_RoleGroup, "upper")
     descriptor = None
-    for klass in crom::l1::composed::RoleGroup.__mro__:
+    for klass in crom_l1_composed_RoleGroup.__mro__:
         if "upper" in klass.__dict__:
             descriptor = klass.__dict__["upper"]
             break
@@ -1082,16 +988,110 @@ def test_crom::l1::composed::rolegroup_has_upper():
 
 
 
-def test_crom::l1::composed::type_is_not_abstract():
-    assert not inspect.isabstract(crom::l1::composed::Type)
+def test_crom_l1_composed_abstractroleref_is_not_abstract():
+    assert not inspect.isabstract(crom_l1_composed_AbstractRoleRef)
 
 
-def test_crom::l1::composed::type_constructor_exists():
-    assert callable(crom::l1::composed::Type.__init__)
+def test_crom_l1_composed_abstractroleref_constructor_exists():
+    assert callable(crom_l1_composed_AbstractRoleRef.__init__)
 
 
-def test_crom::l1::composed::type_constructor_args():
-    sig = inspect.signature(crom::l1::composed::Type.__init__)
+def test_crom_l1_composed_abstractroleref_constructor_args():
+    sig = inspect.signature(crom_l1_composed_AbstractRoleRef.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_crom_l1_composed_parthoodconstraint_is_not_abstract():
+    assert not inspect.isabstract(crom_l1_composed_ParthoodConstraint)
+
+
+def test_crom_l1_composed_parthoodconstraint_constructor_exists():
+    assert callable(crom_l1_composed_ParthoodConstraint.__init__)
+
+
+def test_crom_l1_composed_parthoodconstraint_constructor_args():
+    sig = inspect.signature(crom_l1_composed_ParthoodConstraint.__init__)
+    params = list(sig.parameters.keys())
+    assert "kind" in params, "Missing parameter 'kind'"
+
+def test_crom_l1_composed_parthoodconstraint_has_kind():
+    assert hasattr(crom_l1_composed_ParthoodConstraint, "kind")
+    descriptor = None
+    for klass in crom_l1_composed_ParthoodConstraint.__mro__:
+        if "kind" in klass.__dict__:
+            descriptor = klass.__dict__["kind"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_crom_l1_composed_typedelement_is_not_abstract():
+    assert not inspect.isabstract(crom_l1_composed_TypedElement)
+
+
+def test_crom_l1_composed_typedelement_constructor_exists():
+    assert callable(crom_l1_composed_TypedElement.__init__)
+
+
+def test_crom_l1_composed_typedelement_constructor_args():
+    sig = inspect.signature(crom_l1_composed_TypedElement.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_roleconstraint_is_not_abstract():
+    assert not inspect.isabstract(RoleConstraint)
+
+
+def test_roleconstraint_constructor_exists():
+    assert callable(RoleConstraint.__init__)
+
+
+def test_roleconstraint_constructor_args():
+    sig = inspect.signature(RoleConstraint.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_crom_l1_composed_roleimplication_is_not_abstract():
+    assert not inspect.isabstract(crom_l1_composed_RoleImplication)
+
+
+def test_crom_l1_composed_roleimplication_constructor_exists():
+    assert callable(crom_l1_composed_RoleImplication.__init__)
+
+
+def test_crom_l1_composed_roleimplication_constructor_args():
+    sig = inspect.signature(crom_l1_composed_RoleImplication.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_crom_l1_composed_roleequivalence_is_not_abstract():
+    assert not inspect.isabstract(crom_l1_composed_RoleEquivalence)
+
+
+def test_crom_l1_composed_roleequivalence_constructor_exists():
+    assert callable(crom_l1_composed_RoleEquivalence.__init__)
+
+
+def test_crom_l1_composed_roleequivalence_constructor_args():
+    sig = inspect.signature(crom_l1_composed_RoleEquivalence.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_crom_l1_composed_roleprohibition_is_not_abstract():
+    assert not inspect.isabstract(crom_l1_composed_RoleProhibition)
+
+
+def test_crom_l1_composed_roleprohibition_constructor_exists():
+    assert callable(crom_l1_composed_RoleProhibition.__init__)
+
+
+def test_crom_l1_composed_roleprohibition_constructor_args():
+    sig = inspect.signature(crom_l1_composed_RoleProhibition.__init__)
     params = list(sig.parameters.keys())
 
 def test_direction_exists():
@@ -1102,9 +1102,9 @@ def test_direction_has_all_literals():
     # Collect the names of literals in this Enumeration
     enum_literals = [lit.name for lit in Direction]
     expected_literals = [
-        "FirstToSecond",
-        "SecondToFirst",
         "Undirected",
+        "SecondToFirst",
+        "FirstToSecond",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
@@ -1118,12 +1118,12 @@ def test_parthood_has_all_literals():
     # Collect the names of literals in this Enumeration
     enum_literals = [lit.name for lit in Parthood]
     expected_literals = [
+        "EssentialPart",
+        "SharablePart",
+        "InseparablePart",
         "Unconstrained",
         "ExclusivePart",
         "MandatoryPart",
-        "SharablePart",
-        "InseparablePart",
-        "EssentialPart",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
@@ -1141,102 +1141,82 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-RoleConstraint_strategy = st.builds(
-    RoleConstraint,
-)
-crom::l1::composed::RoleProhibition_strategy = st.builds(
-    crom::l1::composed::RoleProhibition,
-)
-crom::l1::composed::RoleEquivalence_strategy = st.builds(
-    crom::l1::composed::RoleEquivalence,
-)
-crom::l1::composed::RoleImplication_strategy = st.builds(
-    crom::l1::composed::RoleImplication,
-)
-crom::l1::composed::RoleGroupElement_strategy = st.builds(
-    crom::l1::composed::RoleGroupElement,
+crom_l1_composed_RoleGroupElement_strategy = st.builds(
+    crom_l1_composed_RoleGroupElement,
 )
 IntraRelationshipConstraint_strategy = st.builds(
     IntraRelationshipConstraint,
 )
-crom::l1::composed::Total_strategy = st.builds(
-    crom::l1::composed::Total,
+crom_l1_composed_Cyclic_strategy = st.builds(
+    crom_l1_composed_Cyclic,
 )
-crom::l1::composed::Cyclic_strategy = st.builds(
-    crom::l1::composed::Cyclic,
+crom_l1_composed_Total_strategy = st.builds(
+    crom_l1_composed_Total,
 )
-crom::l1::composed::ParthoodConstraint_strategy = st.builds(
-    crom::l1::composed::ParthoodConstraint,
-    kind=
-        safe_text
+crom_l1_composed_Reflexive_strategy = st.builds(
+    crom_l1_composed_Reflexive,
 )
-crom::l1::composed::Reflexive_strategy = st.builds(
-    crom::l1::composed::Reflexive,
+crom_l1_composed_Acyclic_strategy = st.builds(
+    crom_l1_composed_Acyclic,
 )
-crom::l1::composed::Acyclic_strategy = st.builds(
-    crom::l1::composed::Acyclic,
-)
-crom::l1::composed::Irreflexive_strategy = st.builds(
-    crom::l1::composed::Irreflexive,
+crom_l1_composed_Irreflexive_strategy = st.builds(
+    crom_l1_composed_Irreflexive,
 )
 InterRelationshipConstraint_strategy = st.builds(
     InterRelationshipConstraint,
 )
-crom::l1::composed::RelationshipExclusion_strategy = st.builds(
-    crom::l1::composed::RelationshipExclusion,
+crom_l1_composed_RelationshipExclusion_strategy = st.builds(
+    crom_l1_composed_RelationshipExclusion,
 )
-crom::l1::composed::RelationshipImplication_strategy = st.builds(
-    crom::l1::composed::RelationshipImplication,
+crom_l1_composed_RelationshipImplication_strategy = st.builds(
+    crom_l1_composed_RelationshipImplication,
 )
 RoleGroupElement_strategy = st.builds(
     RoleGroupElement,
 )
-crom::l1::composed::AbstractRoleRef_strategy = st.builds(
-    crom::l1::composed::AbstractRoleRef,
-)
 Inheritance_strategy = st.builds(
     Inheritance,
 )
-crom::l1::composed::RoleInheritance_strategy = st.builds(
-    crom::l1::composed::RoleInheritance,
+crom_l1_composed_NaturalInheritance_strategy = st.builds(
+    crom_l1_composed_NaturalInheritance,
 )
-crom::l1::composed::NaturalInheritance_strategy = st.builds(
-    crom::l1::composed::NaturalInheritance,
+crom_l1_composed_RoleInheritance_strategy = st.builds(
+    crom_l1_composed_RoleInheritance,
 )
-crom::l1::composed::DataInheritance_strategy = st.builds(
-    crom::l1::composed::DataInheritance,
+crom_l1_composed_DataInheritance_strategy = st.builds(
+    crom_l1_composed_DataInheritance,
 )
 RelationshipConstraint_strategy = st.builds(
     RelationshipConstraint,
 )
-crom::l1::composed::InterRelationshipConstraint_strategy = st.builds(
-    crom::l1::composed::InterRelationshipConstraint,
+crom_l1_composed_InterRelationshipConstraint_strategy = st.builds(
+    crom_l1_composed_InterRelationshipConstraint,
 )
 Constraint_strategy = st.builds(
     Constraint,
 )
-crom::l1::composed::RelationshipConstraint_strategy = st.builds(
-    crom::l1::composed::RelationshipConstraint,
+crom_l1_composed_RelationshipConstraint_strategy = st.builds(
+    crom_l1_composed_RelationshipConstraint,
 )
-crom::l1::composed::ComplexConstraint_strategy = st.builds(
-    crom::l1::composed::ComplexConstraint,
+crom_l1_composed_ComplexConstraint_strategy = st.builds(
+    crom_l1_composed_ComplexConstraint,
     expression=
         safe_text
 )
-crom::l1::composed::RoleConstraint_strategy = st.builds(
-    crom::l1::composed::RoleConstraint,
+crom_l1_composed_RoleConstraint_strategy = st.builds(
+    crom_l1_composed_RoleConstraint,
 )
-crom::l1::composed::AbstractRole_strategy = st.builds(
-    crom::l1::composed::AbstractRole,
+crom_l1_composed_AbstractRole_strategy = st.builds(
+    crom_l1_composed_AbstractRole,
 )
-crom::l1::composed::IntraRelationshipConstraint_strategy = st.builds(
-    crom::l1::composed::IntraRelationshipConstraint,
+crom_l1_composed_IntraRelationshipConstraint_strategy = st.builds(
+    crom_l1_composed_IntraRelationshipConstraint,
 )
-crom::l1::composed::CompartmentInheritance_strategy = st.builds(
-    crom::l1::composed::CompartmentInheritance,
+crom_l1_composed_CompartmentInheritance_strategy = st.builds(
+    crom_l1_composed_CompartmentInheritance,
 )
-crom::l1::composed::Place_strategy = st.builds(
-    crom::l1::composed::Place,
+crom_l1_composed_Place_strategy = st.builds(
+    crom_l1_composed_Place,
     lower=
         st.integers(),
     upper=
@@ -1245,8 +1225,8 @@ crom::l1::composed::Place_strategy = st.builds(
 Relation_strategy = st.builds(
     Relation,
 )
-crom::l1::composed::Inheritance_strategy = st.builds(
-    crom::l1::composed::Inheritance,
+crom_l1_composed_Inheritance_strategy = st.builds(
+    crom_l1_composed_Inheritance,
 )
 AbstractRole_strategy = st.builds(
     AbstractRole,
@@ -1254,17 +1234,17 @@ AbstractRole_strategy = st.builds(
 AntiRigidType_strategy = st.builds(
     AntiRigidType,
 )
-crom::l1::composed::RoleType_strategy = st.builds(
-    crom::l1::composed::RoleType,
+crom_l1_composed_RoleType_strategy = st.builds(
+    crom_l1_composed_RoleType,
 )
-crom::l1::composed::Fulfillment_strategy = st.builds(
-    crom::l1::composed::Fulfillment,
+crom_l1_composed_Fulfillment_strategy = st.builds(
+    crom_l1_composed_Fulfillment,
 )
-crom::l1::composed::Constraint_strategy = st.builds(
-    crom::l1::composed::Constraint,
+crom_l1_composed_Constraint_strategy = st.builds(
+    crom_l1_composed_Constraint,
 )
-crom::l1::composed::Part_strategy = st.builds(
-    crom::l1::composed::Part,
+crom_l1_composed_Part_strategy = st.builds(
+    crom_l1_composed_Part,
     lower=
         st.integers(),
     upper=
@@ -1273,30 +1253,30 @@ crom::l1::composed::Part_strategy = st.builds(
 RigidType_strategy = st.builds(
     RigidType,
 )
-crom::l1::composed::CompartmentType_strategy = st.builds(
-    crom::l1::composed::CompartmentType,
+crom_l1_composed_CompartmentType_strategy = st.builds(
+    crom_l1_composed_CompartmentType,
 )
-crom::l1::composed::NaturalType_strategy = st.builds(
-    crom::l1::composed::NaturalType,
+crom_l1_composed_NaturalType_strategy = st.builds(
+    crom_l1_composed_NaturalType,
 )
-crom::l1::composed::DataType_strategy = st.builds(
-    crom::l1::composed::DataType,
+crom_l1_composed_DataType_strategy = st.builds(
+    crom_l1_composed_DataType,
     serializable=
         st.booleans()
 )
 TypedElement_strategy = st.builds(
     TypedElement,
 )
-crom::l1::composed::Attribute_strategy = st.builds(
-    crom::l1::composed::Attribute,
+crom_l1_composed_Attribute_strategy = st.builds(
+    crom_l1_composed_Attribute,
 )
-crom::l1::composed::Operation_strategy = st.builds(
-    crom::l1::composed::Operation,
+crom_l1_composed_Operation_strategy = st.builds(
+    crom_l1_composed_Operation,
     operation=
         safe_text
 )
-crom::l1::composed::Parameter_strategy = st.builds(
-    crom::l1::composed::Parameter,
+crom_l1_composed_Parameter_strategy = st.builds(
+    crom_l1_composed_Parameter,
 )
 Model_strategy = st.builds(
     Model,
@@ -1304,255 +1284,225 @@ Model_strategy = st.builds(
 ModelElement_strategy = st.builds(
     ModelElement,
 )
-crom::l1::composed::Group_strategy = st.builds(
-    crom::l1::composed::Group,
+crom_l1_composed_Group_strategy = st.builds(
+    crom_l1_composed_Group,
 )
 Type_strategy = st.builds(
     Type,
 )
-crom::l1::composed::AntiRigidType_strategy = st.builds(
-    crom::l1::composed::AntiRigidType,
+crom_l1_composed_AntiRigidType_strategy = st.builds(
+    crom_l1_composed_AntiRigidType,
 )
-crom::l1::composed::RigidType_strategy = st.builds(
-    crom::l1::composed::RigidType,
+crom_l1_composed_RigidType_strategy = st.builds(
+    crom_l1_composed_RigidType,
 )
-crom::l1::composed::Relation_strategy = st.builds(
-    crom::l1::composed::Relation,
+crom_l1_composed_Relation_strategy = st.builds(
+    crom_l1_composed_Relation,
 )
-crom::l1::composed::Model_strategy = st.builds(
-    crom::l1::composed::Model,
+crom_l1_composed_Model_strategy = st.builds(
+    crom_l1_composed_Model,
 )
 NamedElement_strategy = st.builds(
     NamedElement,
 )
-crom::l1::composed::TypedElement_strategy = st.builds(
-    crom::l1::composed::TypedElement,
+crom_l1_composed_RelationTarget_strategy = st.builds(
+    crom_l1_composed_RelationTarget,
 )
-crom::l1::composed::RelationTarget_strategy = st.builds(
-    crom::l1::composed::RelationTarget,
-)
-crom::l1::composed::Relationship_strategy = st.builds(
-    crom::l1::composed::Relationship,
+crom_l1_composed_Relationship_strategy = st.builds(
+    crom_l1_composed_Relationship,
     direction=
         safe_text
 )
-crom::l1::composed::ModelElement_strategy = st.builds(
-    crom::l1::composed::ModelElement,
+crom_l1_composed_ModelElement_strategy = st.builds(
+    crom_l1_composed_ModelElement,
 )
-crom::l1::composed::NamedElement_strategy = st.builds(
-    crom::l1::composed::NamedElement,
+crom_l1_composed_NamedElement_strategy = st.builds(
+    crom_l1_composed_NamedElement,
     name=
         safe_text
 )
 RelationTarget_strategy = st.builds(
     RelationTarget,
 )
-crom::l1::composed::RoleGroup_strategy = st.builds(
-    crom::l1::composed::RoleGroup,
+crom_l1_composed_Type_strategy = st.builds(
+    crom_l1_composed_Type,
+)
+crom_l1_composed_RoleGroup_strategy = st.builds(
+    crom_l1_composed_RoleGroup,
     lower=
         st.integers(),
     upper=
         st.integers()
 )
-crom::l1::composed::Type_strategy = st.builds(
-    crom::l1::composed::Type,
+crom_l1_composed_AbstractRoleRef_strategy = st.builds(
+    crom_l1_composed_AbstractRoleRef,
+)
+crom_l1_composed_ParthoodConstraint_strategy = st.builds(
+    crom_l1_composed_ParthoodConstraint,
+    kind=
+        safe_text
+)
+crom_l1_composed_TypedElement_strategy = st.builds(
+    crom_l1_composed_TypedElement,
+)
+RoleConstraint_strategy = st.builds(
+    RoleConstraint,
+)
+crom_l1_composed_RoleImplication_strategy = st.builds(
+    crom_l1_composed_RoleImplication,
+)
+crom_l1_composed_RoleEquivalence_strategy = st.builds(
+    crom_l1_composed_RoleEquivalence,
+)
+crom_l1_composed_RoleProhibition_strategy = st.builds(
+    crom_l1_composed_RoleProhibition,
 )
 
-@given(instance=RoleConstraint_strategy)
+@given(instance=crom_l1_composed_RoleGroupElement_strategy)
 @settings(max_examples=50)
-def test_roleconstraint_instantiation(instance):
-    assert isinstance(instance, RoleConstraint)
-
-@given(instance=crom::l1::composed::RoleProhibition_strategy)
-@settings(max_examples=50)
-def test_crom::l1::composed::roleprohibition_instantiation(instance):
-    assert isinstance(instance, crom::l1::composed::RoleProhibition)
-
-@given(instance=crom::l1::composed::RoleEquivalence_strategy)
-@settings(max_examples=50)
-def test_crom::l1::composed::roleequivalence_instantiation(instance):
-    assert isinstance(instance, crom::l1::composed::RoleEquivalence)
-
-@given(instance=crom::l1::composed::RoleImplication_strategy)
-@settings(max_examples=50)
-def test_crom::l1::composed::roleimplication_instantiation(instance):
-    assert isinstance(instance, crom::l1::composed::RoleImplication)
-
-@given(instance=crom::l1::composed::RoleGroupElement_strategy)
-@settings(max_examples=50)
-def test_crom::l1::composed::rolegroupelement_instantiation(instance):
-    assert isinstance(instance, crom::l1::composed::RoleGroupElement)
+def test_crom_l1_composed_rolegroupelement_instantiation(instance):
+    assert isinstance(instance, crom_l1_composed_RoleGroupElement)
 
 @given(instance=IntraRelationshipConstraint_strategy)
 @settings(max_examples=50)
 def test_intrarelationshipconstraint_instantiation(instance):
     assert isinstance(instance, IntraRelationshipConstraint)
 
-@given(instance=crom::l1::composed::Total_strategy)
+@given(instance=crom_l1_composed_Cyclic_strategy)
 @settings(max_examples=50)
-def test_crom::l1::composed::total_instantiation(instance):
-    assert isinstance(instance, crom::l1::composed::Total)
+def test_crom_l1_composed_cyclic_instantiation(instance):
+    assert isinstance(instance, crom_l1_composed_Cyclic)
 
-@given(instance=crom::l1::composed::Cyclic_strategy)
+@given(instance=crom_l1_composed_Total_strategy)
 @settings(max_examples=50)
-def test_crom::l1::composed::cyclic_instantiation(instance):
-    assert isinstance(instance, crom::l1::composed::Cyclic)
+def test_crom_l1_composed_total_instantiation(instance):
+    assert isinstance(instance, crom_l1_composed_Total)
 
-@given(instance=crom::l1::composed::ParthoodConstraint_strategy)
+@given(instance=crom_l1_composed_Reflexive_strategy)
 @settings(max_examples=50)
-def test_crom::l1::composed::parthoodconstraint_instantiation(instance):
-    assert isinstance(instance, crom::l1::composed::ParthoodConstraint)
+def test_crom_l1_composed_reflexive_instantiation(instance):
+    assert isinstance(instance, crom_l1_composed_Reflexive)
 
-@given(instance=crom::l1::composed::ParthoodConstraint_strategy)
-def test_crom::l1::composed::parthoodconstraint_kind_type(instance):
-    assert isinstance(instance.kind, str)
-
-
-@given(instance=crom::l1::composed::ParthoodConstraint_strategy)
-def test_crom::l1::composed::parthoodconstraint_kind_setter(instance):
-    original = instance.kind
-    instance.kind = original
-    assert instance.kind == original
-
-@given(instance=crom::l1::composed::Reflexive_strategy)
+@given(instance=crom_l1_composed_Acyclic_strategy)
 @settings(max_examples=50)
-def test_crom::l1::composed::reflexive_instantiation(instance):
-    assert isinstance(instance, crom::l1::composed::Reflexive)
+def test_crom_l1_composed_acyclic_instantiation(instance):
+    assert isinstance(instance, crom_l1_composed_Acyclic)
 
-@given(instance=crom::l1::composed::Acyclic_strategy)
+@given(instance=crom_l1_composed_Irreflexive_strategy)
 @settings(max_examples=50)
-def test_crom::l1::composed::acyclic_instantiation(instance):
-    assert isinstance(instance, crom::l1::composed::Acyclic)
-
-@given(instance=crom::l1::composed::Irreflexive_strategy)
-@settings(max_examples=50)
-def test_crom::l1::composed::irreflexive_instantiation(instance):
-    assert isinstance(instance, crom::l1::composed::Irreflexive)
+def test_crom_l1_composed_irreflexive_instantiation(instance):
+    assert isinstance(instance, crom_l1_composed_Irreflexive)
 
 @given(instance=InterRelationshipConstraint_strategy)
 @settings(max_examples=50)
 def test_interrelationshipconstraint_instantiation(instance):
     assert isinstance(instance, InterRelationshipConstraint)
 
-@given(instance=crom::l1::composed::RelationshipExclusion_strategy)
+@given(instance=crom_l1_composed_RelationshipExclusion_strategy)
 @settings(max_examples=50)
-def test_crom::l1::composed::relationshipexclusion_instantiation(instance):
-    assert isinstance(instance, crom::l1::composed::RelationshipExclusion)
+def test_crom_l1_composed_relationshipexclusion_instantiation(instance):
+    assert isinstance(instance, crom_l1_composed_RelationshipExclusion)
 
-@given(instance=crom::l1::composed::RelationshipImplication_strategy)
+@given(instance=crom_l1_composed_RelationshipImplication_strategy)
 @settings(max_examples=50)
-def test_crom::l1::composed::relationshipimplication_instantiation(instance):
-    assert isinstance(instance, crom::l1::composed::RelationshipImplication)
+def test_crom_l1_composed_relationshipimplication_instantiation(instance):
+    assert isinstance(instance, crom_l1_composed_RelationshipImplication)
 
 @given(instance=RoleGroupElement_strategy)
 @settings(max_examples=50)
 def test_rolegroupelement_instantiation(instance):
     assert isinstance(instance, RoleGroupElement)
 
-@given(instance=crom::l1::composed::AbstractRoleRef_strategy)
-@settings(max_examples=50)
-def test_crom::l1::composed::abstractroleref_instantiation(instance):
-    assert isinstance(instance, crom::l1::composed::AbstractRoleRef)
-
 @given(instance=Inheritance_strategy)
 @settings(max_examples=50)
 def test_inheritance_instantiation(instance):
     assert isinstance(instance, Inheritance)
 
-@given(instance=crom::l1::composed::RoleInheritance_strategy)
+@given(instance=crom_l1_composed_NaturalInheritance_strategy)
 @settings(max_examples=50)
-def test_crom::l1::composed::roleinheritance_instantiation(instance):
-    assert isinstance(instance, crom::l1::composed::RoleInheritance)
+def test_crom_l1_composed_naturalinheritance_instantiation(instance):
+    assert isinstance(instance, crom_l1_composed_NaturalInheritance)
 
-@given(instance=crom::l1::composed::NaturalInheritance_strategy)
+@given(instance=crom_l1_composed_RoleInheritance_strategy)
 @settings(max_examples=50)
-def test_crom::l1::composed::naturalinheritance_instantiation(instance):
-    assert isinstance(instance, crom::l1::composed::NaturalInheritance)
+def test_crom_l1_composed_roleinheritance_instantiation(instance):
+    assert isinstance(instance, crom_l1_composed_RoleInheritance)
 
-@given(instance=crom::l1::composed::DataInheritance_strategy)
+@given(instance=crom_l1_composed_DataInheritance_strategy)
 @settings(max_examples=50)
-def test_crom::l1::composed::datainheritance_instantiation(instance):
-    assert isinstance(instance, crom::l1::composed::DataInheritance)
+def test_crom_l1_composed_datainheritance_instantiation(instance):
+    assert isinstance(instance, crom_l1_composed_DataInheritance)
 
 @given(instance=RelationshipConstraint_strategy)
 @settings(max_examples=50)
 def test_relationshipconstraint_instantiation(instance):
     assert isinstance(instance, RelationshipConstraint)
 
-@given(instance=crom::l1::composed::InterRelationshipConstraint_strategy)
+@given(instance=crom_l1_composed_InterRelationshipConstraint_strategy)
 @settings(max_examples=50)
-def test_crom::l1::composed::interrelationshipconstraint_instantiation(instance):
-    assert isinstance(instance, crom::l1::composed::InterRelationshipConstraint)
+def test_crom_l1_composed_interrelationshipconstraint_instantiation(instance):
+    assert isinstance(instance, crom_l1_composed_InterRelationshipConstraint)
 
 @given(instance=Constraint_strategy)
 @settings(max_examples=50)
 def test_constraint_instantiation(instance):
     assert isinstance(instance, Constraint)
 
-@given(instance=crom::l1::composed::RelationshipConstraint_strategy)
+@given(instance=crom_l1_composed_RelationshipConstraint_strategy)
 @settings(max_examples=50)
-def test_crom::l1::composed::relationshipconstraint_instantiation(instance):
-    assert isinstance(instance, crom::l1::composed::RelationshipConstraint)
+def test_crom_l1_composed_relationshipconstraint_instantiation(instance):
+    assert isinstance(instance, crom_l1_composed_RelationshipConstraint)
 
-@given(instance=crom::l1::composed::ComplexConstraint_strategy)
+@given(instance=crom_l1_composed_ComplexConstraint_strategy)
 @settings(max_examples=50)
-def test_crom::l1::composed::complexconstraint_instantiation(instance):
-    assert isinstance(instance, crom::l1::composed::ComplexConstraint)
-
-@given(instance=crom::l1::composed::ComplexConstraint_strategy)
-def test_crom::l1::composed::complexconstraint_expression_type(instance):
-    assert isinstance(instance.expression, str)
+def test_crom_l1_composed_complexconstraint_instantiation(instance):
+    assert isinstance(instance, crom_l1_composed_ComplexConstraint)
 
 
-@given(instance=crom::l1::composed::ComplexConstraint_strategy)
-def test_crom::l1::composed::complexconstraint_expression_setter(instance):
+
+@given(instance=crom_l1_composed_ComplexConstraint_strategy)
+def test_crom_l1_composed_complexconstraint_expression_setter(instance):
     original = instance.expression
     instance.expression = original
     assert instance.expression == original
 
-@given(instance=crom::l1::composed::RoleConstraint_strategy)
+@given(instance=crom_l1_composed_RoleConstraint_strategy)
 @settings(max_examples=50)
-def test_crom::l1::composed::roleconstraint_instantiation(instance):
-    assert isinstance(instance, crom::l1::composed::RoleConstraint)
+def test_crom_l1_composed_roleconstraint_instantiation(instance):
+    assert isinstance(instance, crom_l1_composed_RoleConstraint)
 
-@given(instance=crom::l1::composed::AbstractRole_strategy)
+@given(instance=crom_l1_composed_AbstractRole_strategy)
 @settings(max_examples=50)
-def test_crom::l1::composed::abstractrole_instantiation(instance):
-    assert isinstance(instance, crom::l1::composed::AbstractRole)
+def test_crom_l1_composed_abstractrole_instantiation(instance):
+    assert isinstance(instance, crom_l1_composed_AbstractRole)
 
-@given(instance=crom::l1::composed::IntraRelationshipConstraint_strategy)
+@given(instance=crom_l1_composed_IntraRelationshipConstraint_strategy)
 @settings(max_examples=50)
-def test_crom::l1::composed::intrarelationshipconstraint_instantiation(instance):
-    assert isinstance(instance, crom::l1::composed::IntraRelationshipConstraint)
+def test_crom_l1_composed_intrarelationshipconstraint_instantiation(instance):
+    assert isinstance(instance, crom_l1_composed_IntraRelationshipConstraint)
 
-@given(instance=crom::l1::composed::CompartmentInheritance_strategy)
+@given(instance=crom_l1_composed_CompartmentInheritance_strategy)
 @settings(max_examples=50)
-def test_crom::l1::composed::compartmentinheritance_instantiation(instance):
-    assert isinstance(instance, crom::l1::composed::CompartmentInheritance)
+def test_crom_l1_composed_compartmentinheritance_instantiation(instance):
+    assert isinstance(instance, crom_l1_composed_CompartmentInheritance)
 
-@given(instance=crom::l1::composed::Place_strategy)
+@given(instance=crom_l1_composed_Place_strategy)
 @settings(max_examples=50)
-def test_crom::l1::composed::place_instantiation(instance):
-    assert isinstance(instance, crom::l1::composed::Place)
-
-@given(instance=crom::l1::composed::Place_strategy)
-def test_crom::l1::composed::place_lower_type(instance):
-    assert isinstance(instance.lower, int)
+def test_crom_l1_composed_place_instantiation(instance):
+    assert isinstance(instance, crom_l1_composed_Place)
 
 
-@given(instance=crom::l1::composed::Place_strategy)
-def test_crom::l1::composed::place_lower_setter(instance):
+
+@given(instance=crom_l1_composed_Place_strategy)
+def test_crom_l1_composed_place_lower_setter(instance):
     original = instance.lower
     instance.lower = original
     assert instance.lower == original
 
-@given(instance=crom::l1::composed::Place_strategy)
-def test_crom::l1::composed::place_upper_type(instance):
-    assert isinstance(instance.upper, int)
 
 
-@given(instance=crom::l1::composed::Place_strategy)
-def test_crom::l1::composed::place_upper_setter(instance):
+@given(instance=crom_l1_composed_Place_strategy)
+def test_crom_l1_composed_place_upper_setter(instance):
     original = instance.upper
     instance.upper = original
     assert instance.upper == original
@@ -1562,10 +1512,10 @@ def test_crom::l1::composed::place_upper_setter(instance):
 def test_relation_instantiation(instance):
     assert isinstance(instance, Relation)
 
-@given(instance=crom::l1::composed::Inheritance_strategy)
+@given(instance=crom_l1_composed_Inheritance_strategy)
 @settings(max_examples=50)
-def test_crom::l1::composed::inheritance_instantiation(instance):
-    assert isinstance(instance, crom::l1::composed::Inheritance)
+def test_crom_l1_composed_inheritance_instantiation(instance):
+    assert isinstance(instance, crom_l1_composed_Inheritance)
 
 @given(instance=AbstractRole_strategy)
 @settings(max_examples=50)
@@ -1577,44 +1527,38 @@ def test_abstractrole_instantiation(instance):
 def test_antirigidtype_instantiation(instance):
     assert isinstance(instance, AntiRigidType)
 
-@given(instance=crom::l1::composed::RoleType_strategy)
+@given(instance=crom_l1_composed_RoleType_strategy)
 @settings(max_examples=50)
-def test_crom::l1::composed::roletype_instantiation(instance):
-    assert isinstance(instance, crom::l1::composed::RoleType)
+def test_crom_l1_composed_roletype_instantiation(instance):
+    assert isinstance(instance, crom_l1_composed_RoleType)
 
-@given(instance=crom::l1::composed::Fulfillment_strategy)
+@given(instance=crom_l1_composed_Fulfillment_strategy)
 @settings(max_examples=50)
-def test_crom::l1::composed::fulfillment_instantiation(instance):
-    assert isinstance(instance, crom::l1::composed::Fulfillment)
+def test_crom_l1_composed_fulfillment_instantiation(instance):
+    assert isinstance(instance, crom_l1_composed_Fulfillment)
 
-@given(instance=crom::l1::composed::Constraint_strategy)
+@given(instance=crom_l1_composed_Constraint_strategy)
 @settings(max_examples=50)
-def test_crom::l1::composed::constraint_instantiation(instance):
-    assert isinstance(instance, crom::l1::composed::Constraint)
+def test_crom_l1_composed_constraint_instantiation(instance):
+    assert isinstance(instance, crom_l1_composed_Constraint)
 
-@given(instance=crom::l1::composed::Part_strategy)
+@given(instance=crom_l1_composed_Part_strategy)
 @settings(max_examples=50)
-def test_crom::l1::composed::part_instantiation(instance):
-    assert isinstance(instance, crom::l1::composed::Part)
-
-@given(instance=crom::l1::composed::Part_strategy)
-def test_crom::l1::composed::part_lower_type(instance):
-    assert isinstance(instance.lower, int)
+def test_crom_l1_composed_part_instantiation(instance):
+    assert isinstance(instance, crom_l1_composed_Part)
 
 
-@given(instance=crom::l1::composed::Part_strategy)
-def test_crom::l1::composed::part_lower_setter(instance):
+
+@given(instance=crom_l1_composed_Part_strategy)
+def test_crom_l1_composed_part_lower_setter(instance):
     original = instance.lower
     instance.lower = original
     assert instance.lower == original
 
-@given(instance=crom::l1::composed::Part_strategy)
-def test_crom::l1::composed::part_upper_type(instance):
-    assert isinstance(instance.upper, int)
 
 
-@given(instance=crom::l1::composed::Part_strategy)
-def test_crom::l1::composed::part_upper_setter(instance):
+@given(instance=crom_l1_composed_Part_strategy)
+def test_crom_l1_composed_part_upper_setter(instance):
     original = instance.upper
     instance.upper = original
     assert instance.upper == original
@@ -1624,28 +1568,25 @@ def test_crom::l1::composed::part_upper_setter(instance):
 def test_rigidtype_instantiation(instance):
     assert isinstance(instance, RigidType)
 
-@given(instance=crom::l1::composed::CompartmentType_strategy)
+@given(instance=crom_l1_composed_CompartmentType_strategy)
 @settings(max_examples=50)
-def test_crom::l1::composed::compartmenttype_instantiation(instance):
-    assert isinstance(instance, crom::l1::composed::CompartmentType)
+def test_crom_l1_composed_compartmenttype_instantiation(instance):
+    assert isinstance(instance, crom_l1_composed_CompartmentType)
 
-@given(instance=crom::l1::composed::NaturalType_strategy)
+@given(instance=crom_l1_composed_NaturalType_strategy)
 @settings(max_examples=50)
-def test_crom::l1::composed::naturaltype_instantiation(instance):
-    assert isinstance(instance, crom::l1::composed::NaturalType)
+def test_crom_l1_composed_naturaltype_instantiation(instance):
+    assert isinstance(instance, crom_l1_composed_NaturalType)
 
-@given(instance=crom::l1::composed::DataType_strategy)
+@given(instance=crom_l1_composed_DataType_strategy)
 @settings(max_examples=50)
-def test_crom::l1::composed::datatype_instantiation(instance):
-    assert isinstance(instance, crom::l1::composed::DataType)
-
-@given(instance=crom::l1::composed::DataType_strategy)
-def test_crom::l1::composed::datatype_serializable_type(instance):
-    assert isinstance(instance.serializable, bool)
+def test_crom_l1_composed_datatype_instantiation(instance):
+    assert isinstance(instance, crom_l1_composed_DataType)
 
 
-@given(instance=crom::l1::composed::DataType_strategy)
-def test_crom::l1::composed::datatype_serializable_setter(instance):
+
+@given(instance=crom_l1_composed_DataType_strategy)
+def test_crom_l1_composed_datatype_serializable_setter(instance):
     original = instance.serializable
     instance.serializable = original
     assert instance.serializable == original
@@ -1655,31 +1596,28 @@ def test_crom::l1::composed::datatype_serializable_setter(instance):
 def test_typedelement_instantiation(instance):
     assert isinstance(instance, TypedElement)
 
-@given(instance=crom::l1::composed::Attribute_strategy)
+@given(instance=crom_l1_composed_Attribute_strategy)
 @settings(max_examples=50)
-def test_crom::l1::composed::attribute_instantiation(instance):
-    assert isinstance(instance, crom::l1::composed::Attribute)
+def test_crom_l1_composed_attribute_instantiation(instance):
+    assert isinstance(instance, crom_l1_composed_Attribute)
 
-@given(instance=crom::l1::composed::Operation_strategy)
+@given(instance=crom_l1_composed_Operation_strategy)
 @settings(max_examples=50)
-def test_crom::l1::composed::operation_instantiation(instance):
-    assert isinstance(instance, crom::l1::composed::Operation)
-
-@given(instance=crom::l1::composed::Operation_strategy)
-def test_crom::l1::composed::operation_operation_type(instance):
-    assert isinstance(instance.operation, str)
+def test_crom_l1_composed_operation_instantiation(instance):
+    assert isinstance(instance, crom_l1_composed_Operation)
 
 
-@given(instance=crom::l1::composed::Operation_strategy)
-def test_crom::l1::composed::operation_operation_setter(instance):
+
+@given(instance=crom_l1_composed_Operation_strategy)
+def test_crom_l1_composed_operation_operation_setter(instance):
     original = instance.operation
     instance.operation = original
     assert instance.operation == original
 
-@given(instance=crom::l1::composed::Parameter_strategy)
+@given(instance=crom_l1_composed_Parameter_strategy)
 @settings(max_examples=50)
-def test_crom::l1::composed::parameter_instantiation(instance):
-    assert isinstance(instance, crom::l1::composed::Parameter)
+def test_crom_l1_composed_parameter_instantiation(instance):
+    assert isinstance(instance, crom_l1_composed_Parameter)
 
 @given(instance=Model_strategy)
 @settings(max_examples=50)
@@ -1691,84 +1629,73 @@ def test_model_instantiation(instance):
 def test_modelelement_instantiation(instance):
     assert isinstance(instance, ModelElement)
 
-@given(instance=crom::l1::composed::Group_strategy)
+@given(instance=crom_l1_composed_Group_strategy)
 @settings(max_examples=50)
-def test_crom::l1::composed::group_instantiation(instance):
-    assert isinstance(instance, crom::l1::composed::Group)
+def test_crom_l1_composed_group_instantiation(instance):
+    assert isinstance(instance, crom_l1_composed_Group)
 
 @given(instance=Type_strategy)
 @settings(max_examples=50)
 def test_type_instantiation(instance):
     assert isinstance(instance, Type)
 
-@given(instance=crom::l1::composed::AntiRigidType_strategy)
+@given(instance=crom_l1_composed_AntiRigidType_strategy)
 @settings(max_examples=50)
-def test_crom::l1::composed::antirigidtype_instantiation(instance):
-    assert isinstance(instance, crom::l1::composed::AntiRigidType)
+def test_crom_l1_composed_antirigidtype_instantiation(instance):
+    assert isinstance(instance, crom_l1_composed_AntiRigidType)
 
-@given(instance=crom::l1::composed::RigidType_strategy)
+@given(instance=crom_l1_composed_RigidType_strategy)
 @settings(max_examples=50)
-def test_crom::l1::composed::rigidtype_instantiation(instance):
-    assert isinstance(instance, crom::l1::composed::RigidType)
+def test_crom_l1_composed_rigidtype_instantiation(instance):
+    assert isinstance(instance, crom_l1_composed_RigidType)
 
-@given(instance=crom::l1::composed::Relation_strategy)
+@given(instance=crom_l1_composed_Relation_strategy)
 @settings(max_examples=50)
-def test_crom::l1::composed::relation_instantiation(instance):
-    assert isinstance(instance, crom::l1::composed::Relation)
+def test_crom_l1_composed_relation_instantiation(instance):
+    assert isinstance(instance, crom_l1_composed_Relation)
 
-@given(instance=crom::l1::composed::Model_strategy)
+@given(instance=crom_l1_composed_Model_strategy)
 @settings(max_examples=50)
-def test_crom::l1::composed::model_instantiation(instance):
-    assert isinstance(instance, crom::l1::composed::Model)
+def test_crom_l1_composed_model_instantiation(instance):
+    assert isinstance(instance, crom_l1_composed_Model)
 
 @given(instance=NamedElement_strategy)
 @settings(max_examples=50)
 def test_namedelement_instantiation(instance):
     assert isinstance(instance, NamedElement)
 
-@given(instance=crom::l1::composed::TypedElement_strategy)
+@given(instance=crom_l1_composed_RelationTarget_strategy)
 @settings(max_examples=50)
-def test_crom::l1::composed::typedelement_instantiation(instance):
-    assert isinstance(instance, crom::l1::composed::TypedElement)
+def test_crom_l1_composed_relationtarget_instantiation(instance):
+    assert isinstance(instance, crom_l1_composed_RelationTarget)
 
-@given(instance=crom::l1::composed::RelationTarget_strategy)
+@given(instance=crom_l1_composed_Relationship_strategy)
 @settings(max_examples=50)
-def test_crom::l1::composed::relationtarget_instantiation(instance):
-    assert isinstance(instance, crom::l1::composed::RelationTarget)
-
-@given(instance=crom::l1::composed::Relationship_strategy)
-@settings(max_examples=50)
-def test_crom::l1::composed::relationship_instantiation(instance):
-    assert isinstance(instance, crom::l1::composed::Relationship)
-
-@given(instance=crom::l1::composed::Relationship_strategy)
-def test_crom::l1::composed::relationship_direction_type(instance):
-    assert isinstance(instance.direction, str)
+def test_crom_l1_composed_relationship_instantiation(instance):
+    assert isinstance(instance, crom_l1_composed_Relationship)
 
 
-@given(instance=crom::l1::composed::Relationship_strategy)
-def test_crom::l1::composed::relationship_direction_setter(instance):
+
+@given(instance=crom_l1_composed_Relationship_strategy)
+def test_crom_l1_composed_relationship_direction_setter(instance):
     original = instance.direction
     instance.direction = original
     assert instance.direction == original
 
-@given(instance=crom::l1::composed::ModelElement_strategy)
+@given(instance=crom_l1_composed_ModelElement_strategy)
 @settings(max_examples=50)
-def test_crom::l1::composed::modelelement_instantiation(instance):
-    assert isinstance(instance, crom::l1::composed::ModelElement)
+def test_crom_l1_composed_modelelement_instantiation(instance):
+    assert isinstance(instance, crom_l1_composed_ModelElement)
 
-@given(instance=crom::l1::composed::NamedElement_strategy)
+@given(instance=crom_l1_composed_NamedElement_strategy)
 @settings(max_examples=50)
-def test_crom::l1::composed::namedelement_instantiation(instance):
-    assert isinstance(instance, crom::l1::composed::NamedElement)
-
-@given(instance=crom::l1::composed::NamedElement_strategy)
-def test_crom::l1::composed::namedelement_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_crom_l1_composed_namedelement_instantiation(instance):
+    assert isinstance(instance, crom_l1_composed_NamedElement)
 
 
-@given(instance=crom::l1::composed::NamedElement_strategy)
-def test_crom::l1::composed::namedelement_name_setter(instance):
+
+@given(instance=crom_l1_composed_NamedElement_strategy)
+def test_crom_l1_composed_namedelement_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
@@ -1778,34 +1705,71 @@ def test_crom::l1::composed::namedelement_name_setter(instance):
 def test_relationtarget_instantiation(instance):
     assert isinstance(instance, RelationTarget)
 
-@given(instance=crom::l1::composed::RoleGroup_strategy)
+@given(instance=crom_l1_composed_Type_strategy)
 @settings(max_examples=50)
-def test_crom::l1::composed::rolegroup_instantiation(instance):
-    assert isinstance(instance, crom::l1::composed::RoleGroup)
+def test_crom_l1_composed_type_instantiation(instance):
+    assert isinstance(instance, crom_l1_composed_Type)
 
-@given(instance=crom::l1::composed::RoleGroup_strategy)
-def test_crom::l1::composed::rolegroup_lower_type(instance):
-    assert isinstance(instance.lower, int)
+@given(instance=crom_l1_composed_RoleGroup_strategy)
+@settings(max_examples=50)
+def test_crom_l1_composed_rolegroup_instantiation(instance):
+    assert isinstance(instance, crom_l1_composed_RoleGroup)
 
 
-@given(instance=crom::l1::composed::RoleGroup_strategy)
-def test_crom::l1::composed::rolegroup_lower_setter(instance):
+
+@given(instance=crom_l1_composed_RoleGroup_strategy)
+def test_crom_l1_composed_rolegroup_lower_setter(instance):
     original = instance.lower
     instance.lower = original
     assert instance.lower == original
 
-@given(instance=crom::l1::composed::RoleGroup_strategy)
-def test_crom::l1::composed::rolegroup_upper_type(instance):
-    assert isinstance(instance.upper, int)
 
 
-@given(instance=crom::l1::composed::RoleGroup_strategy)
-def test_crom::l1::composed::rolegroup_upper_setter(instance):
+@given(instance=crom_l1_composed_RoleGroup_strategy)
+def test_crom_l1_composed_rolegroup_upper_setter(instance):
     original = instance.upper
     instance.upper = original
     assert instance.upper == original
 
-@given(instance=crom::l1::composed::Type_strategy)
+@given(instance=crom_l1_composed_AbstractRoleRef_strategy)
 @settings(max_examples=50)
-def test_crom::l1::composed::type_instantiation(instance):
-    assert isinstance(instance, crom::l1::composed::Type)
+def test_crom_l1_composed_abstractroleref_instantiation(instance):
+    assert isinstance(instance, crom_l1_composed_AbstractRoleRef)
+
+@given(instance=crom_l1_composed_ParthoodConstraint_strategy)
+@settings(max_examples=50)
+def test_crom_l1_composed_parthoodconstraint_instantiation(instance):
+    assert isinstance(instance, crom_l1_composed_ParthoodConstraint)
+
+
+
+@given(instance=crom_l1_composed_ParthoodConstraint_strategy)
+def test_crom_l1_composed_parthoodconstraint_kind_setter(instance):
+    original = instance.kind
+    instance.kind = original
+    assert instance.kind == original
+
+@given(instance=crom_l1_composed_TypedElement_strategy)
+@settings(max_examples=50)
+def test_crom_l1_composed_typedelement_instantiation(instance):
+    assert isinstance(instance, crom_l1_composed_TypedElement)
+
+@given(instance=RoleConstraint_strategy)
+@settings(max_examples=50)
+def test_roleconstraint_instantiation(instance):
+    assert isinstance(instance, RoleConstraint)
+
+@given(instance=crom_l1_composed_RoleImplication_strategy)
+@settings(max_examples=50)
+def test_crom_l1_composed_roleimplication_instantiation(instance):
+    assert isinstance(instance, crom_l1_composed_RoleImplication)
+
+@given(instance=crom_l1_composed_RoleEquivalence_strategy)
+@settings(max_examples=50)
+def test_crom_l1_composed_roleequivalence_instantiation(instance):
+    assert isinstance(instance, crom_l1_composed_RoleEquivalence)
+
+@given(instance=crom_l1_composed_RoleProhibition_strategy)
+@settings(max_examples=50)
+def test_crom_l1_composed_roleprohibition_instantiation(instance):
+    assert isinstance(instance, crom_l1_composed_RoleProhibition)

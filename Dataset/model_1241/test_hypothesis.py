@@ -3,47 +3,47 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    imperativeocl::Typedef,
-    imperativeocl::OrderedTupleType,
-    imperativeocl::OrderedTupleLiteralPart,
-    OrderedTupleLiteralPart,
-    imperativeocl::OrderedTupleLiteralExp,
-    imperativeocl::LogExp,
-    imperativeocl::ListType,
+from python_code import (
+    imperativeocl_Typedef,
+    imperativeocl_OrderedTupleLiteralExp,
+    imperativeocl_LogExp,
+    imperativeocl_ListType,
     CatchExp,
-    imperativeocl::TemplateParameterType,
+    imperativeocl_TemplateParameterType,
     AltExp,
-    imperativeocl::SwitchExp,
-    imperativeocl::DictLiteralExp,
-    imperativeocl::ImperativeLoopExp,
-    imperativeocl::ImperativeExpression,
+    imperativeocl_SwitchExp,
+    imperativeocl_DictLiteralExp,
+    imperativeocl_ImperativeLoopExp,
+    imperativeocl_ImperativeExpression,
     ImperativeLoopExp,
-    imperativeocl::ImperativeIterateExp,
-    imperativeocl::ForExp,
-    imperativeocl::DictionaryType,
-    imperativeocl::DictLiteralPart,
+    imperativeocl_ImperativeIterateExp,
+    imperativeocl_ForExp,
+    imperativeocl_DictionaryType,
+    imperativeocl_DictLiteralPart,
     DictLiteralPart,
     LogExp,
     ImperativeExpression,
-    imperativeocl::ComputeExp,
-    imperativeocl::UnlinkExp,
-    imperativeocl::ReturnExp,
-    imperativeocl::BlockExp,
-    imperativeocl::UnpackExp,
-    imperativeocl::ContinueExp,
-    imperativeocl::WhileExp,
-    imperativeocl::AssertExp,
-    imperativeocl::InstantiationExp,
-    imperativeocl::TryExp,
-    imperativeocl::CatchExp,
-    imperativeocl::AssignExp,
-    imperativeocl::BreakExp,
-    imperativeocl::VariableInitExp,
-    imperativeocl::RaiseExp,
-    imperativeocl::AltExp,
+    imperativeocl_AssignExp,
+    imperativeocl_AssertExp,
+    imperativeocl_ReturnExp,
+    imperativeocl_ComputeExp,
+    imperativeocl_VariableInitExp,
+    imperativeocl_UnlinkExp,
+    imperativeocl_UnpackExp,
+    imperativeocl_TryExp,
+    imperativeocl_CatchExp,
+    imperativeocl_InstantiationExp,
+    imperativeocl_RaiseExp,
+    imperativeocl_BlockExp,
+    imperativeocl_ContinueExp,
+    imperativeocl_BreakExp,
+    imperativeocl_AltExp,
+    imperativeocl_WhileExp,
+    imperativeocl_OrderedTupleType,
+    imperativeocl_OrderedTupleLiteralPart,
+    OrderedTupleLiteralPart,
     SeverityKind,
 )
 
@@ -53,100 +53,58 @@ from classes import (
 
 
 
-def test_imperativeocl::typedef_is_not_abstract():
-    assert not inspect.isabstract(imperativeocl::Typedef)
+def test_imperativeocl_typedef_is_not_abstract():
+    assert not inspect.isabstract(imperativeocl_Typedef)
 
 
-def test_imperativeocl::typedef_constructor_exists():
-    assert callable(imperativeocl::Typedef.__init__)
+def test_imperativeocl_typedef_constructor_exists():
+    assert callable(imperativeocl_Typedef.__init__)
 
 
-def test_imperativeocl::typedef_constructor_args():
-    sig = inspect.signature(imperativeocl::Typedef.__init__)
+def test_imperativeocl_typedef_constructor_args():
+    sig = inspect.signature(imperativeocl_Typedef.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_imperativeocl::orderedtupletype_is_not_abstract():
-    assert not inspect.isabstract(imperativeocl::OrderedTupleType)
+def test_imperativeocl_orderedtupleliteralexp_is_not_abstract():
+    assert not inspect.isabstract(imperativeocl_OrderedTupleLiteralExp)
 
 
-def test_imperativeocl::orderedtupletype_constructor_exists():
-    assert callable(imperativeocl::OrderedTupleType.__init__)
+def test_imperativeocl_orderedtupleliteralexp_constructor_exists():
+    assert callable(imperativeocl_OrderedTupleLiteralExp.__init__)
 
 
-def test_imperativeocl::orderedtupletype_constructor_args():
-    sig = inspect.signature(imperativeocl::OrderedTupleType.__init__)
+def test_imperativeocl_orderedtupleliteralexp_constructor_args():
+    sig = inspect.signature(imperativeocl_OrderedTupleLiteralExp.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_imperativeocl::orderedtupleliteralpart_is_not_abstract():
-    assert not inspect.isabstract(imperativeocl::OrderedTupleLiteralPart)
+def test_imperativeocl_logexp_is_not_abstract():
+    assert not inspect.isabstract(imperativeocl_LogExp)
 
 
-def test_imperativeocl::orderedtupleliteralpart_constructor_exists():
-    assert callable(imperativeocl::OrderedTupleLiteralPart.__init__)
+def test_imperativeocl_logexp_constructor_exists():
+    assert callable(imperativeocl_LogExp.__init__)
 
 
-def test_imperativeocl::orderedtupleliteralpart_constructor_args():
-    sig = inspect.signature(imperativeocl::OrderedTupleLiteralPart.__init__)
+def test_imperativeocl_logexp_constructor_args():
+    sig = inspect.signature(imperativeocl_LogExp.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_orderedtupleliteralpart_is_not_abstract():
-    assert not inspect.isabstract(OrderedTupleLiteralPart)
+def test_imperativeocl_listtype_is_not_abstract():
+    assert not inspect.isabstract(imperativeocl_ListType)
 
 
-def test_orderedtupleliteralpart_constructor_exists():
-    assert callable(OrderedTupleLiteralPart.__init__)
+def test_imperativeocl_listtype_constructor_exists():
+    assert callable(imperativeocl_ListType.__init__)
 
 
-def test_orderedtupleliteralpart_constructor_args():
-    sig = inspect.signature(OrderedTupleLiteralPart.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_imperativeocl::orderedtupleliteralexp_is_not_abstract():
-    assert not inspect.isabstract(imperativeocl::OrderedTupleLiteralExp)
-
-
-def test_imperativeocl::orderedtupleliteralexp_constructor_exists():
-    assert callable(imperativeocl::OrderedTupleLiteralExp.__init__)
-
-
-def test_imperativeocl::orderedtupleliteralexp_constructor_args():
-    sig = inspect.signature(imperativeocl::OrderedTupleLiteralExp.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_imperativeocl::logexp_is_not_abstract():
-    assert not inspect.isabstract(imperativeocl::LogExp)
-
-
-def test_imperativeocl::logexp_constructor_exists():
-    assert callable(imperativeocl::LogExp.__init__)
-
-
-def test_imperativeocl::logexp_constructor_args():
-    sig = inspect.signature(imperativeocl::LogExp.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_imperativeocl::listtype_is_not_abstract():
-    assert not inspect.isabstract(imperativeocl::ListType)
-
-
-def test_imperativeocl::listtype_constructor_exists():
-    assert callable(imperativeocl::ListType.__init__)
-
-
-def test_imperativeocl::listtype_constructor_args():
-    sig = inspect.signature(imperativeocl::ListType.__init__)
+def test_imperativeocl_listtype_constructor_args():
+    sig = inspect.signature(imperativeocl_ListType.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -165,23 +123,23 @@ def test_catchexp_constructor_args():
 
 
 
-def test_imperativeocl::templateparametertype_is_not_abstract():
-    assert not inspect.isabstract(imperativeocl::TemplateParameterType)
+def test_imperativeocl_templateparametertype_is_not_abstract():
+    assert not inspect.isabstract(imperativeocl_TemplateParameterType)
 
 
-def test_imperativeocl::templateparametertype_constructor_exists():
-    assert callable(imperativeocl::TemplateParameterType.__init__)
+def test_imperativeocl_templateparametertype_constructor_exists():
+    assert callable(imperativeocl_TemplateParameterType.__init__)
 
 
-def test_imperativeocl::templateparametertype_constructor_args():
-    sig = inspect.signature(imperativeocl::TemplateParameterType.__init__)
+def test_imperativeocl_templateparametertype_constructor_args():
+    sig = inspect.signature(imperativeocl_TemplateParameterType.__init__)
     params = list(sig.parameters.keys())
     assert "specification" in params, "Missing parameter 'specification'"
 
-def test_imperativeocl::templateparametertype_has_specification():
-    assert hasattr(imperativeocl::TemplateParameterType, "specification")
+def test_imperativeocl_templateparametertype_has_specification():
+    assert hasattr(imperativeocl_TemplateParameterType, "specification")
     descriptor = None
-    for klass in imperativeocl::TemplateParameterType.__mro__:
+    for klass in imperativeocl_TemplateParameterType.__mro__:
         if "specification" in klass.__dict__:
             descriptor = klass.__dict__["specification"]
             break
@@ -203,58 +161,58 @@ def test_altexp_constructor_args():
 
 
 
-def test_imperativeocl::switchexp_is_not_abstract():
-    assert not inspect.isabstract(imperativeocl::SwitchExp)
+def test_imperativeocl_switchexp_is_not_abstract():
+    assert not inspect.isabstract(imperativeocl_SwitchExp)
 
 
-def test_imperativeocl::switchexp_constructor_exists():
-    assert callable(imperativeocl::SwitchExp.__init__)
+def test_imperativeocl_switchexp_constructor_exists():
+    assert callable(imperativeocl_SwitchExp.__init__)
 
 
-def test_imperativeocl::switchexp_constructor_args():
-    sig = inspect.signature(imperativeocl::SwitchExp.__init__)
+def test_imperativeocl_switchexp_constructor_args():
+    sig = inspect.signature(imperativeocl_SwitchExp.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_imperativeocl::dictliteralexp_is_not_abstract():
-    assert not inspect.isabstract(imperativeocl::DictLiteralExp)
+def test_imperativeocl_dictliteralexp_is_not_abstract():
+    assert not inspect.isabstract(imperativeocl_DictLiteralExp)
 
 
-def test_imperativeocl::dictliteralexp_constructor_exists():
-    assert callable(imperativeocl::DictLiteralExp.__init__)
+def test_imperativeocl_dictliteralexp_constructor_exists():
+    assert callable(imperativeocl_DictLiteralExp.__init__)
 
 
-def test_imperativeocl::dictliteralexp_constructor_args():
-    sig = inspect.signature(imperativeocl::DictLiteralExp.__init__)
+def test_imperativeocl_dictliteralexp_constructor_args():
+    sig = inspect.signature(imperativeocl_DictLiteralExp.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_imperativeocl::imperativeloopexp_is_not_abstract():
-    assert not inspect.isabstract(imperativeocl::ImperativeLoopExp)
+def test_imperativeocl_imperativeloopexp_is_not_abstract():
+    assert not inspect.isabstract(imperativeocl_ImperativeLoopExp)
 
 
-def test_imperativeocl::imperativeloopexp_constructor_exists():
-    assert callable(imperativeocl::ImperativeLoopExp.__init__)
+def test_imperativeocl_imperativeloopexp_constructor_exists():
+    assert callable(imperativeocl_ImperativeLoopExp.__init__)
 
 
-def test_imperativeocl::imperativeloopexp_constructor_args():
-    sig = inspect.signature(imperativeocl::ImperativeLoopExp.__init__)
+def test_imperativeocl_imperativeloopexp_constructor_args():
+    sig = inspect.signature(imperativeocl_ImperativeLoopExp.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_imperativeocl::imperativeexpression_is_not_abstract():
-    assert not inspect.isabstract(imperativeocl::ImperativeExpression)
+def test_imperativeocl_imperativeexpression_is_not_abstract():
+    assert not inspect.isabstract(imperativeocl_ImperativeExpression)
 
 
-def test_imperativeocl::imperativeexpression_constructor_exists():
-    assert callable(imperativeocl::ImperativeExpression.__init__)
+def test_imperativeocl_imperativeexpression_constructor_exists():
+    assert callable(imperativeocl_ImperativeExpression.__init__)
 
 
-def test_imperativeocl::imperativeexpression_constructor_args():
-    sig = inspect.signature(imperativeocl::ImperativeExpression.__init__)
+def test_imperativeocl_imperativeexpression_constructor_args():
+    sig = inspect.signature(imperativeocl_ImperativeExpression.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -273,58 +231,58 @@ def test_imperativeloopexp_constructor_args():
 
 
 
-def test_imperativeocl::imperativeiterateexp_is_not_abstract():
-    assert not inspect.isabstract(imperativeocl::ImperativeIterateExp)
+def test_imperativeocl_imperativeiterateexp_is_not_abstract():
+    assert not inspect.isabstract(imperativeocl_ImperativeIterateExp)
 
 
-def test_imperativeocl::imperativeiterateexp_constructor_exists():
-    assert callable(imperativeocl::ImperativeIterateExp.__init__)
+def test_imperativeocl_imperativeiterateexp_constructor_exists():
+    assert callable(imperativeocl_ImperativeIterateExp.__init__)
 
 
-def test_imperativeocl::imperativeiterateexp_constructor_args():
-    sig = inspect.signature(imperativeocl::ImperativeIterateExp.__init__)
+def test_imperativeocl_imperativeiterateexp_constructor_args():
+    sig = inspect.signature(imperativeocl_ImperativeIterateExp.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_imperativeocl::forexp_is_not_abstract():
-    assert not inspect.isabstract(imperativeocl::ForExp)
+def test_imperativeocl_forexp_is_not_abstract():
+    assert not inspect.isabstract(imperativeocl_ForExp)
 
 
-def test_imperativeocl::forexp_constructor_exists():
-    assert callable(imperativeocl::ForExp.__init__)
+def test_imperativeocl_forexp_constructor_exists():
+    assert callable(imperativeocl_ForExp.__init__)
 
 
-def test_imperativeocl::forexp_constructor_args():
-    sig = inspect.signature(imperativeocl::ForExp.__init__)
+def test_imperativeocl_forexp_constructor_args():
+    sig = inspect.signature(imperativeocl_ForExp.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_imperativeocl::dictionarytype_is_not_abstract():
-    assert not inspect.isabstract(imperativeocl::DictionaryType)
+def test_imperativeocl_dictionarytype_is_not_abstract():
+    assert not inspect.isabstract(imperativeocl_DictionaryType)
 
 
-def test_imperativeocl::dictionarytype_constructor_exists():
-    assert callable(imperativeocl::DictionaryType.__init__)
+def test_imperativeocl_dictionarytype_constructor_exists():
+    assert callable(imperativeocl_DictionaryType.__init__)
 
 
-def test_imperativeocl::dictionarytype_constructor_args():
-    sig = inspect.signature(imperativeocl::DictionaryType.__init__)
+def test_imperativeocl_dictionarytype_constructor_args():
+    sig = inspect.signature(imperativeocl_DictionaryType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_imperativeocl::dictliteralpart_is_not_abstract():
-    assert not inspect.isabstract(imperativeocl::DictLiteralPart)
+def test_imperativeocl_dictliteralpart_is_not_abstract():
+    assert not inspect.isabstract(imperativeocl_DictLiteralPart)
 
 
-def test_imperativeocl::dictliteralpart_constructor_exists():
-    assert callable(imperativeocl::DictLiteralPart.__init__)
+def test_imperativeocl_dictliteralpart_constructor_exists():
+    assert callable(imperativeocl_DictLiteralPart.__init__)
 
 
-def test_imperativeocl::dictliteralpart_constructor_args():
-    sig = inspect.signature(imperativeocl::DictLiteralPart.__init__)
+def test_imperativeocl_dictliteralpart_constructor_args():
+    sig = inspect.signature(imperativeocl_DictLiteralPart.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -371,187 +329,23 @@ def test_imperativeexpression_constructor_args():
 
 
 
-def test_imperativeocl::computeexp_is_not_abstract():
-    assert not inspect.isabstract(imperativeocl::ComputeExp)
+def test_imperativeocl_assignexp_is_not_abstract():
+    assert not inspect.isabstract(imperativeocl_AssignExp)
 
 
-def test_imperativeocl::computeexp_constructor_exists():
-    assert callable(imperativeocl::ComputeExp.__init__)
+def test_imperativeocl_assignexp_constructor_exists():
+    assert callable(imperativeocl_AssignExp.__init__)
 
 
-def test_imperativeocl::computeexp_constructor_args():
-    sig = inspect.signature(imperativeocl::ComputeExp.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_imperativeocl::unlinkexp_is_not_abstract():
-    assert not inspect.isabstract(imperativeocl::UnlinkExp)
-
-
-def test_imperativeocl::unlinkexp_constructor_exists():
-    assert callable(imperativeocl::UnlinkExp.__init__)
-
-
-def test_imperativeocl::unlinkexp_constructor_args():
-    sig = inspect.signature(imperativeocl::UnlinkExp.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_imperativeocl::returnexp_is_not_abstract():
-    assert not inspect.isabstract(imperativeocl::ReturnExp)
-
-
-def test_imperativeocl::returnexp_constructor_exists():
-    assert callable(imperativeocl::ReturnExp.__init__)
-
-
-def test_imperativeocl::returnexp_constructor_args():
-    sig = inspect.signature(imperativeocl::ReturnExp.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_imperativeocl::blockexp_is_not_abstract():
-    assert not inspect.isabstract(imperativeocl::BlockExp)
-
-
-def test_imperativeocl::blockexp_constructor_exists():
-    assert callable(imperativeocl::BlockExp.__init__)
-
-
-def test_imperativeocl::blockexp_constructor_args():
-    sig = inspect.signature(imperativeocl::BlockExp.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_imperativeocl::unpackexp_is_not_abstract():
-    assert not inspect.isabstract(imperativeocl::UnpackExp)
-
-
-def test_imperativeocl::unpackexp_constructor_exists():
-    assert callable(imperativeocl::UnpackExp.__init__)
-
-
-def test_imperativeocl::unpackexp_constructor_args():
-    sig = inspect.signature(imperativeocl::UnpackExp.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_imperativeocl::continueexp_is_not_abstract():
-    assert not inspect.isabstract(imperativeocl::ContinueExp)
-
-
-def test_imperativeocl::continueexp_constructor_exists():
-    assert callable(imperativeocl::ContinueExp.__init__)
-
-
-def test_imperativeocl::continueexp_constructor_args():
-    sig = inspect.signature(imperativeocl::ContinueExp.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_imperativeocl::whileexp_is_not_abstract():
-    assert not inspect.isabstract(imperativeocl::WhileExp)
-
-
-def test_imperativeocl::whileexp_constructor_exists():
-    assert callable(imperativeocl::WhileExp.__init__)
-
-
-def test_imperativeocl::whileexp_constructor_args():
-    sig = inspect.signature(imperativeocl::WhileExp.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_imperativeocl::assertexp_is_not_abstract():
-    assert not inspect.isabstract(imperativeocl::AssertExp)
-
-
-def test_imperativeocl::assertexp_constructor_exists():
-    assert callable(imperativeocl::AssertExp.__init__)
-
-
-def test_imperativeocl::assertexp_constructor_args():
-    sig = inspect.signature(imperativeocl::AssertExp.__init__)
-    params = list(sig.parameters.keys())
-    assert "severity" in params, "Missing parameter 'severity'"
-
-def test_imperativeocl::assertexp_has_severity():
-    assert hasattr(imperativeocl::AssertExp, "severity")
-    descriptor = None
-    for klass in imperativeocl::AssertExp.__mro__:
-        if "severity" in klass.__dict__:
-            descriptor = klass.__dict__["severity"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_imperativeocl::instantiationexp_is_not_abstract():
-    assert not inspect.isabstract(imperativeocl::InstantiationExp)
-
-
-def test_imperativeocl::instantiationexp_constructor_exists():
-    assert callable(imperativeocl::InstantiationExp.__init__)
-
-
-def test_imperativeocl::instantiationexp_constructor_args():
-    sig = inspect.signature(imperativeocl::InstantiationExp.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_imperativeocl::tryexp_is_not_abstract():
-    assert not inspect.isabstract(imperativeocl::TryExp)
-
-
-def test_imperativeocl::tryexp_constructor_exists():
-    assert callable(imperativeocl::TryExp.__init__)
-
-
-def test_imperativeocl::tryexp_constructor_args():
-    sig = inspect.signature(imperativeocl::TryExp.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_imperativeocl::catchexp_is_not_abstract():
-    assert not inspect.isabstract(imperativeocl::CatchExp)
-
-
-def test_imperativeocl::catchexp_constructor_exists():
-    assert callable(imperativeocl::CatchExp.__init__)
-
-
-def test_imperativeocl::catchexp_constructor_args():
-    sig = inspect.signature(imperativeocl::CatchExp.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_imperativeocl::assignexp_is_not_abstract():
-    assert not inspect.isabstract(imperativeocl::AssignExp)
-
-
-def test_imperativeocl::assignexp_constructor_exists():
-    assert callable(imperativeocl::AssignExp.__init__)
-
-
-def test_imperativeocl::assignexp_constructor_args():
-    sig = inspect.signature(imperativeocl::AssignExp.__init__)
+def test_imperativeocl_assignexp_constructor_args():
+    sig = inspect.signature(imperativeocl_AssignExp.__init__)
     params = list(sig.parameters.keys())
     assert "isReset" in params, "Missing parameter 'isReset'"
 
-def test_imperativeocl::assignexp_has_isReset():
-    assert hasattr(imperativeocl::AssignExp, "isReset")
+def test_imperativeocl_assignexp_has_isReset():
+    assert hasattr(imperativeocl_AssignExp, "isReset")
     descriptor = None
-    for klass in imperativeocl::AssignExp.__mro__:
+    for klass in imperativeocl_AssignExp.__mro__:
         if "isReset" in klass.__dict__:
             descriptor = klass.__dict__["isReset"]
             break
@@ -559,37 +353,75 @@ def test_imperativeocl::assignexp_has_isReset():
 
 
 
-def test_imperativeocl::breakexp_is_not_abstract():
-    assert not inspect.isabstract(imperativeocl::BreakExp)
+def test_imperativeocl_assertexp_is_not_abstract():
+    assert not inspect.isabstract(imperativeocl_AssertExp)
 
 
-def test_imperativeocl::breakexp_constructor_exists():
-    assert callable(imperativeocl::BreakExp.__init__)
+def test_imperativeocl_assertexp_constructor_exists():
+    assert callable(imperativeocl_AssertExp.__init__)
 
 
-def test_imperativeocl::breakexp_constructor_args():
-    sig = inspect.signature(imperativeocl::BreakExp.__init__)
+def test_imperativeocl_assertexp_constructor_args():
+    sig = inspect.signature(imperativeocl_AssertExp.__init__)
+    params = list(sig.parameters.keys())
+    assert "severity" in params, "Missing parameter 'severity'"
+
+def test_imperativeocl_assertexp_has_severity():
+    assert hasattr(imperativeocl_AssertExp, "severity")
+    descriptor = None
+    for klass in imperativeocl_AssertExp.__mro__:
+        if "severity" in klass.__dict__:
+            descriptor = klass.__dict__["severity"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_imperativeocl_returnexp_is_not_abstract():
+    assert not inspect.isabstract(imperativeocl_ReturnExp)
+
+
+def test_imperativeocl_returnexp_constructor_exists():
+    assert callable(imperativeocl_ReturnExp.__init__)
+
+
+def test_imperativeocl_returnexp_constructor_args():
+    sig = inspect.signature(imperativeocl_ReturnExp.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_imperativeocl::variableinitexp_is_not_abstract():
-    assert not inspect.isabstract(imperativeocl::VariableInitExp)
+def test_imperativeocl_computeexp_is_not_abstract():
+    assert not inspect.isabstract(imperativeocl_ComputeExp)
 
 
-def test_imperativeocl::variableinitexp_constructor_exists():
-    assert callable(imperativeocl::VariableInitExp.__init__)
+def test_imperativeocl_computeexp_constructor_exists():
+    assert callable(imperativeocl_ComputeExp.__init__)
 
 
-def test_imperativeocl::variableinitexp_constructor_args():
-    sig = inspect.signature(imperativeocl::VariableInitExp.__init__)
+def test_imperativeocl_computeexp_constructor_args():
+    sig = inspect.signature(imperativeocl_ComputeExp.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_imperativeocl_variableinitexp_is_not_abstract():
+    assert not inspect.isabstract(imperativeocl_VariableInitExp)
+
+
+def test_imperativeocl_variableinitexp_constructor_exists():
+    assert callable(imperativeocl_VariableInitExp.__init__)
+
+
+def test_imperativeocl_variableinitexp_constructor_args():
+    sig = inspect.signature(imperativeocl_VariableInitExp.__init__)
     params = list(sig.parameters.keys())
     assert "withResult" in params, "Missing parameter 'withResult'"
 
-def test_imperativeocl::variableinitexp_has_withResult():
-    assert hasattr(imperativeocl::VariableInitExp, "withResult")
+def test_imperativeocl_variableinitexp_has_withResult():
+    assert hasattr(imperativeocl_VariableInitExp, "withResult")
     descriptor = None
-    for klass in imperativeocl::VariableInitExp.__mro__:
+    for klass in imperativeocl_VariableInitExp.__mro__:
         if "withResult" in klass.__dict__:
             descriptor = klass.__dict__["withResult"]
             break
@@ -597,30 +429,198 @@ def test_imperativeocl::variableinitexp_has_withResult():
 
 
 
-def test_imperativeocl::raiseexp_is_not_abstract():
-    assert not inspect.isabstract(imperativeocl::RaiseExp)
+def test_imperativeocl_unlinkexp_is_not_abstract():
+    assert not inspect.isabstract(imperativeocl_UnlinkExp)
 
 
-def test_imperativeocl::raiseexp_constructor_exists():
-    assert callable(imperativeocl::RaiseExp.__init__)
+def test_imperativeocl_unlinkexp_constructor_exists():
+    assert callable(imperativeocl_UnlinkExp.__init__)
 
 
-def test_imperativeocl::raiseexp_constructor_args():
-    sig = inspect.signature(imperativeocl::RaiseExp.__init__)
+def test_imperativeocl_unlinkexp_constructor_args():
+    sig = inspect.signature(imperativeocl_UnlinkExp.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_imperativeocl::altexp_is_not_abstract():
-    assert not inspect.isabstract(imperativeocl::AltExp)
+def test_imperativeocl_unpackexp_is_not_abstract():
+    assert not inspect.isabstract(imperativeocl_UnpackExp)
 
 
-def test_imperativeocl::altexp_constructor_exists():
-    assert callable(imperativeocl::AltExp.__init__)
+def test_imperativeocl_unpackexp_constructor_exists():
+    assert callable(imperativeocl_UnpackExp.__init__)
 
 
-def test_imperativeocl::altexp_constructor_args():
-    sig = inspect.signature(imperativeocl::AltExp.__init__)
+def test_imperativeocl_unpackexp_constructor_args():
+    sig = inspect.signature(imperativeocl_UnpackExp.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_imperativeocl_tryexp_is_not_abstract():
+    assert not inspect.isabstract(imperativeocl_TryExp)
+
+
+def test_imperativeocl_tryexp_constructor_exists():
+    assert callable(imperativeocl_TryExp.__init__)
+
+
+def test_imperativeocl_tryexp_constructor_args():
+    sig = inspect.signature(imperativeocl_TryExp.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_imperativeocl_catchexp_is_not_abstract():
+    assert not inspect.isabstract(imperativeocl_CatchExp)
+
+
+def test_imperativeocl_catchexp_constructor_exists():
+    assert callable(imperativeocl_CatchExp.__init__)
+
+
+def test_imperativeocl_catchexp_constructor_args():
+    sig = inspect.signature(imperativeocl_CatchExp.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_imperativeocl_instantiationexp_is_not_abstract():
+    assert not inspect.isabstract(imperativeocl_InstantiationExp)
+
+
+def test_imperativeocl_instantiationexp_constructor_exists():
+    assert callable(imperativeocl_InstantiationExp.__init__)
+
+
+def test_imperativeocl_instantiationexp_constructor_args():
+    sig = inspect.signature(imperativeocl_InstantiationExp.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_imperativeocl_raiseexp_is_not_abstract():
+    assert not inspect.isabstract(imperativeocl_RaiseExp)
+
+
+def test_imperativeocl_raiseexp_constructor_exists():
+    assert callable(imperativeocl_RaiseExp.__init__)
+
+
+def test_imperativeocl_raiseexp_constructor_args():
+    sig = inspect.signature(imperativeocl_RaiseExp.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_imperativeocl_blockexp_is_not_abstract():
+    assert not inspect.isabstract(imperativeocl_BlockExp)
+
+
+def test_imperativeocl_blockexp_constructor_exists():
+    assert callable(imperativeocl_BlockExp.__init__)
+
+
+def test_imperativeocl_blockexp_constructor_args():
+    sig = inspect.signature(imperativeocl_BlockExp.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_imperativeocl_continueexp_is_not_abstract():
+    assert not inspect.isabstract(imperativeocl_ContinueExp)
+
+
+def test_imperativeocl_continueexp_constructor_exists():
+    assert callable(imperativeocl_ContinueExp.__init__)
+
+
+def test_imperativeocl_continueexp_constructor_args():
+    sig = inspect.signature(imperativeocl_ContinueExp.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_imperativeocl_breakexp_is_not_abstract():
+    assert not inspect.isabstract(imperativeocl_BreakExp)
+
+
+def test_imperativeocl_breakexp_constructor_exists():
+    assert callable(imperativeocl_BreakExp.__init__)
+
+
+def test_imperativeocl_breakexp_constructor_args():
+    sig = inspect.signature(imperativeocl_BreakExp.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_imperativeocl_altexp_is_not_abstract():
+    assert not inspect.isabstract(imperativeocl_AltExp)
+
+
+def test_imperativeocl_altexp_constructor_exists():
+    assert callable(imperativeocl_AltExp.__init__)
+
+
+def test_imperativeocl_altexp_constructor_args():
+    sig = inspect.signature(imperativeocl_AltExp.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_imperativeocl_whileexp_is_not_abstract():
+    assert not inspect.isabstract(imperativeocl_WhileExp)
+
+
+def test_imperativeocl_whileexp_constructor_exists():
+    assert callable(imperativeocl_WhileExp.__init__)
+
+
+def test_imperativeocl_whileexp_constructor_args():
+    sig = inspect.signature(imperativeocl_WhileExp.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_imperativeocl_orderedtupletype_is_not_abstract():
+    assert not inspect.isabstract(imperativeocl_OrderedTupleType)
+
+
+def test_imperativeocl_orderedtupletype_constructor_exists():
+    assert callable(imperativeocl_OrderedTupleType.__init__)
+
+
+def test_imperativeocl_orderedtupletype_constructor_args():
+    sig = inspect.signature(imperativeocl_OrderedTupleType.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_imperativeocl_orderedtupleliteralpart_is_not_abstract():
+    assert not inspect.isabstract(imperativeocl_OrderedTupleLiteralPart)
+
+
+def test_imperativeocl_orderedtupleliteralpart_constructor_exists():
+    assert callable(imperativeocl_OrderedTupleLiteralPart.__init__)
+
+
+def test_imperativeocl_orderedtupleliteralpart_constructor_args():
+    sig = inspect.signature(imperativeocl_OrderedTupleLiteralPart.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_orderedtupleliteralpart_is_not_abstract():
+    assert not inspect.isabstract(OrderedTupleLiteralPart)
+
+
+def test_orderedtupleliteralpart_constructor_exists():
+    assert callable(OrderedTupleLiteralPart.__init__)
+
+
+def test_orderedtupleliteralpart_constructor_args():
+    sig = inspect.signature(OrderedTupleLiteralPart.__init__)
     params = list(sig.parameters.keys())
 
 def test_severitykind_exists():
@@ -631,8 +631,8 @@ def test_severitykind_has_all_literals():
     # Collect the names of literals in this Enumeration
     enum_literals = [lit.name for lit in SeverityKind]
     expected_literals = [
-        "fatal",
         "warning",
+        "fatal",
         "error",
     ]
     # Check that all expected literals exist
@@ -651,64 +651,55 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-imperativeocl::Typedef_strategy = st.builds(
-    imperativeocl::Typedef,
+imperativeocl_Typedef_strategy = st.builds(
+    imperativeocl_Typedef,
 )
-imperativeocl::OrderedTupleType_strategy = st.builds(
-    imperativeocl::OrderedTupleType,
+imperativeocl_OrderedTupleLiteralExp_strategy = st.builds(
+    imperativeocl_OrderedTupleLiteralExp,
 )
-imperativeocl::OrderedTupleLiteralPart_strategy = st.builds(
-    imperativeocl::OrderedTupleLiteralPart,
+imperativeocl_LogExp_strategy = st.builds(
+    imperativeocl_LogExp,
 )
-OrderedTupleLiteralPart_strategy = st.builds(
-    OrderedTupleLiteralPart,
-)
-imperativeocl::OrderedTupleLiteralExp_strategy = st.builds(
-    imperativeocl::OrderedTupleLiteralExp,
-)
-imperativeocl::LogExp_strategy = st.builds(
-    imperativeocl::LogExp,
-)
-imperativeocl::ListType_strategy = st.builds(
-    imperativeocl::ListType,
+imperativeocl_ListType_strategy = st.builds(
+    imperativeocl_ListType,
 )
 CatchExp_strategy = st.builds(
     CatchExp,
 )
-imperativeocl::TemplateParameterType_strategy = st.builds(
-    imperativeocl::TemplateParameterType,
+imperativeocl_TemplateParameterType_strategy = st.builds(
+    imperativeocl_TemplateParameterType,
     specification=
         safe_text
 )
 AltExp_strategy = st.builds(
     AltExp,
 )
-imperativeocl::SwitchExp_strategy = st.builds(
-    imperativeocl::SwitchExp,
+imperativeocl_SwitchExp_strategy = st.builds(
+    imperativeocl_SwitchExp,
 )
-imperativeocl::DictLiteralExp_strategy = st.builds(
-    imperativeocl::DictLiteralExp,
+imperativeocl_DictLiteralExp_strategy = st.builds(
+    imperativeocl_DictLiteralExp,
 )
-imperativeocl::ImperativeLoopExp_strategy = st.builds(
-    imperativeocl::ImperativeLoopExp,
+imperativeocl_ImperativeLoopExp_strategy = st.builds(
+    imperativeocl_ImperativeLoopExp,
 )
-imperativeocl::ImperativeExpression_strategy = st.builds(
-    imperativeocl::ImperativeExpression,
+imperativeocl_ImperativeExpression_strategy = st.builds(
+    imperativeocl_ImperativeExpression,
 )
 ImperativeLoopExp_strategy = st.builds(
     ImperativeLoopExp,
 )
-imperativeocl::ImperativeIterateExp_strategy = st.builds(
-    imperativeocl::ImperativeIterateExp,
+imperativeocl_ImperativeIterateExp_strategy = st.builds(
+    imperativeocl_ImperativeIterateExp,
 )
-imperativeocl::ForExp_strategy = st.builds(
-    imperativeocl::ForExp,
+imperativeocl_ForExp_strategy = st.builds(
+    imperativeocl_ForExp,
 )
-imperativeocl::DictionaryType_strategy = st.builds(
-    imperativeocl::DictionaryType,
+imperativeocl_DictionaryType_strategy = st.builds(
+    imperativeocl_DictionaryType,
 )
-imperativeocl::DictLiteralPart_strategy = st.builds(
-    imperativeocl::DictLiteralPart,
+imperativeocl_DictLiteralPart_strategy = st.builds(
+    imperativeocl_DictLiteralPart,
 )
 DictLiteralPart_strategy = st.builds(
     DictLiteralPart,
@@ -719,113 +710,104 @@ LogExp_strategy = st.builds(
 ImperativeExpression_strategy = st.builds(
     ImperativeExpression,
 )
-imperativeocl::ComputeExp_strategy = st.builds(
-    imperativeocl::ComputeExp,
-)
-imperativeocl::UnlinkExp_strategy = st.builds(
-    imperativeocl::UnlinkExp,
-)
-imperativeocl::ReturnExp_strategy = st.builds(
-    imperativeocl::ReturnExp,
-)
-imperativeocl::BlockExp_strategy = st.builds(
-    imperativeocl::BlockExp,
-)
-imperativeocl::UnpackExp_strategy = st.builds(
-    imperativeocl::UnpackExp,
-)
-imperativeocl::ContinueExp_strategy = st.builds(
-    imperativeocl::ContinueExp,
-)
-imperativeocl::WhileExp_strategy = st.builds(
-    imperativeocl::WhileExp,
-)
-imperativeocl::AssertExp_strategy = st.builds(
-    imperativeocl::AssertExp,
-    severity=
-        safe_text
-)
-imperativeocl::InstantiationExp_strategy = st.builds(
-    imperativeocl::InstantiationExp,
-)
-imperativeocl::TryExp_strategy = st.builds(
-    imperativeocl::TryExp,
-)
-imperativeocl::CatchExp_strategy = st.builds(
-    imperativeocl::CatchExp,
-)
-imperativeocl::AssignExp_strategy = st.builds(
-    imperativeocl::AssignExp,
+imperativeocl_AssignExp_strategy = st.builds(
+    imperativeocl_AssignExp,
     isReset=
         safe_text
 )
-imperativeocl::BreakExp_strategy = st.builds(
-    imperativeocl::BreakExp,
+imperativeocl_AssertExp_strategy = st.builds(
+    imperativeocl_AssertExp,
+    severity=
+        safe_text
 )
-imperativeocl::VariableInitExp_strategy = st.builds(
-    imperativeocl::VariableInitExp,
+imperativeocl_ReturnExp_strategy = st.builds(
+    imperativeocl_ReturnExp,
+)
+imperativeocl_ComputeExp_strategy = st.builds(
+    imperativeocl_ComputeExp,
+)
+imperativeocl_VariableInitExp_strategy = st.builds(
+    imperativeocl_VariableInitExp,
     withResult=
         safe_text
 )
-imperativeocl::RaiseExp_strategy = st.builds(
-    imperativeocl::RaiseExp,
+imperativeocl_UnlinkExp_strategy = st.builds(
+    imperativeocl_UnlinkExp,
 )
-imperativeocl::AltExp_strategy = st.builds(
-    imperativeocl::AltExp,
+imperativeocl_UnpackExp_strategy = st.builds(
+    imperativeocl_UnpackExp,
+)
+imperativeocl_TryExp_strategy = st.builds(
+    imperativeocl_TryExp,
+)
+imperativeocl_CatchExp_strategy = st.builds(
+    imperativeocl_CatchExp,
+)
+imperativeocl_InstantiationExp_strategy = st.builds(
+    imperativeocl_InstantiationExp,
+)
+imperativeocl_RaiseExp_strategy = st.builds(
+    imperativeocl_RaiseExp,
+)
+imperativeocl_BlockExp_strategy = st.builds(
+    imperativeocl_BlockExp,
+)
+imperativeocl_ContinueExp_strategy = st.builds(
+    imperativeocl_ContinueExp,
+)
+imperativeocl_BreakExp_strategy = st.builds(
+    imperativeocl_BreakExp,
+)
+imperativeocl_AltExp_strategy = st.builds(
+    imperativeocl_AltExp,
+)
+imperativeocl_WhileExp_strategy = st.builds(
+    imperativeocl_WhileExp,
+)
+imperativeocl_OrderedTupleType_strategy = st.builds(
+    imperativeocl_OrderedTupleType,
+)
+imperativeocl_OrderedTupleLiteralPart_strategy = st.builds(
+    imperativeocl_OrderedTupleLiteralPart,
+)
+OrderedTupleLiteralPart_strategy = st.builds(
+    OrderedTupleLiteralPart,
 )
 
-@given(instance=imperativeocl::Typedef_strategy)
+@given(instance=imperativeocl_Typedef_strategy)
 @settings(max_examples=50)
-def test_imperativeocl::typedef_instantiation(instance):
-    assert isinstance(instance, imperativeocl::Typedef)
+def test_imperativeocl_typedef_instantiation(instance):
+    assert isinstance(instance, imperativeocl_Typedef)
 
-@given(instance=imperativeocl::OrderedTupleType_strategy)
+@given(instance=imperativeocl_OrderedTupleLiteralExp_strategy)
 @settings(max_examples=50)
-def test_imperativeocl::orderedtupletype_instantiation(instance):
-    assert isinstance(instance, imperativeocl::OrderedTupleType)
+def test_imperativeocl_orderedtupleliteralexp_instantiation(instance):
+    assert isinstance(instance, imperativeocl_OrderedTupleLiteralExp)
 
-@given(instance=imperativeocl::OrderedTupleLiteralPart_strategy)
+@given(instance=imperativeocl_LogExp_strategy)
 @settings(max_examples=50)
-def test_imperativeocl::orderedtupleliteralpart_instantiation(instance):
-    assert isinstance(instance, imperativeocl::OrderedTupleLiteralPart)
+def test_imperativeocl_logexp_instantiation(instance):
+    assert isinstance(instance, imperativeocl_LogExp)
 
-@given(instance=OrderedTupleLiteralPart_strategy)
+@given(instance=imperativeocl_ListType_strategy)
 @settings(max_examples=50)
-def test_orderedtupleliteralpart_instantiation(instance):
-    assert isinstance(instance, OrderedTupleLiteralPart)
-
-@given(instance=imperativeocl::OrderedTupleLiteralExp_strategy)
-@settings(max_examples=50)
-def test_imperativeocl::orderedtupleliteralexp_instantiation(instance):
-    assert isinstance(instance, imperativeocl::OrderedTupleLiteralExp)
-
-@given(instance=imperativeocl::LogExp_strategy)
-@settings(max_examples=50)
-def test_imperativeocl::logexp_instantiation(instance):
-    assert isinstance(instance, imperativeocl::LogExp)
-
-@given(instance=imperativeocl::ListType_strategy)
-@settings(max_examples=50)
-def test_imperativeocl::listtype_instantiation(instance):
-    assert isinstance(instance, imperativeocl::ListType)
+def test_imperativeocl_listtype_instantiation(instance):
+    assert isinstance(instance, imperativeocl_ListType)
 
 @given(instance=CatchExp_strategy)
 @settings(max_examples=50)
 def test_catchexp_instantiation(instance):
     assert isinstance(instance, CatchExp)
 
-@given(instance=imperativeocl::TemplateParameterType_strategy)
+@given(instance=imperativeocl_TemplateParameterType_strategy)
 @settings(max_examples=50)
-def test_imperativeocl::templateparametertype_instantiation(instance):
-    assert isinstance(instance, imperativeocl::TemplateParameterType)
-
-@given(instance=imperativeocl::TemplateParameterType_strategy)
-def test_imperativeocl::templateparametertype_specification_type(instance):
-    assert isinstance(instance.specification, str)
+def test_imperativeocl_templateparametertype_instantiation(instance):
+    assert isinstance(instance, imperativeocl_TemplateParameterType)
 
 
-@given(instance=imperativeocl::TemplateParameterType_strategy)
-def test_imperativeocl::templateparametertype_specification_setter(instance):
+
+@given(instance=imperativeocl_TemplateParameterType_strategy)
+def test_imperativeocl_templateparametertype_specification_setter(instance):
     original = instance.specification
     instance.specification = original
     assert instance.specification == original
@@ -835,50 +817,50 @@ def test_imperativeocl::templateparametertype_specification_setter(instance):
 def test_altexp_instantiation(instance):
     assert isinstance(instance, AltExp)
 
-@given(instance=imperativeocl::SwitchExp_strategy)
+@given(instance=imperativeocl_SwitchExp_strategy)
 @settings(max_examples=50)
-def test_imperativeocl::switchexp_instantiation(instance):
-    assert isinstance(instance, imperativeocl::SwitchExp)
+def test_imperativeocl_switchexp_instantiation(instance):
+    assert isinstance(instance, imperativeocl_SwitchExp)
 
-@given(instance=imperativeocl::DictLiteralExp_strategy)
+@given(instance=imperativeocl_DictLiteralExp_strategy)
 @settings(max_examples=50)
-def test_imperativeocl::dictliteralexp_instantiation(instance):
-    assert isinstance(instance, imperativeocl::DictLiteralExp)
+def test_imperativeocl_dictliteralexp_instantiation(instance):
+    assert isinstance(instance, imperativeocl_DictLiteralExp)
 
-@given(instance=imperativeocl::ImperativeLoopExp_strategy)
+@given(instance=imperativeocl_ImperativeLoopExp_strategy)
 @settings(max_examples=50)
-def test_imperativeocl::imperativeloopexp_instantiation(instance):
-    assert isinstance(instance, imperativeocl::ImperativeLoopExp)
+def test_imperativeocl_imperativeloopexp_instantiation(instance):
+    assert isinstance(instance, imperativeocl_ImperativeLoopExp)
 
-@given(instance=imperativeocl::ImperativeExpression_strategy)
+@given(instance=imperativeocl_ImperativeExpression_strategy)
 @settings(max_examples=50)
-def test_imperativeocl::imperativeexpression_instantiation(instance):
-    assert isinstance(instance, imperativeocl::ImperativeExpression)
+def test_imperativeocl_imperativeexpression_instantiation(instance):
+    assert isinstance(instance, imperativeocl_ImperativeExpression)
 
 @given(instance=ImperativeLoopExp_strategy)
 @settings(max_examples=50)
 def test_imperativeloopexp_instantiation(instance):
     assert isinstance(instance, ImperativeLoopExp)
 
-@given(instance=imperativeocl::ImperativeIterateExp_strategy)
+@given(instance=imperativeocl_ImperativeIterateExp_strategy)
 @settings(max_examples=50)
-def test_imperativeocl::imperativeiterateexp_instantiation(instance):
-    assert isinstance(instance, imperativeocl::ImperativeIterateExp)
+def test_imperativeocl_imperativeiterateexp_instantiation(instance):
+    assert isinstance(instance, imperativeocl_ImperativeIterateExp)
 
-@given(instance=imperativeocl::ForExp_strategy)
+@given(instance=imperativeocl_ForExp_strategy)
 @settings(max_examples=50)
-def test_imperativeocl::forexp_instantiation(instance):
-    assert isinstance(instance, imperativeocl::ForExp)
+def test_imperativeocl_forexp_instantiation(instance):
+    assert isinstance(instance, imperativeocl_ForExp)
 
-@given(instance=imperativeocl::DictionaryType_strategy)
+@given(instance=imperativeocl_DictionaryType_strategy)
 @settings(max_examples=50)
-def test_imperativeocl::dictionarytype_instantiation(instance):
-    assert isinstance(instance, imperativeocl::DictionaryType)
+def test_imperativeocl_dictionarytype_instantiation(instance):
+    assert isinstance(instance, imperativeocl_DictionaryType)
 
-@given(instance=imperativeocl::DictLiteralPart_strategy)
+@given(instance=imperativeocl_DictLiteralPart_strategy)
 @settings(max_examples=50)
-def test_imperativeocl::dictliteralpart_instantiation(instance):
-    assert isinstance(instance, imperativeocl::DictLiteralPart)
+def test_imperativeocl_dictliteralpart_instantiation(instance):
+    assert isinstance(instance, imperativeocl_DictLiteralPart)
 
 @given(instance=DictLiteralPart_strategy)
 @settings(max_examples=50)
@@ -895,115 +877,121 @@ def test_logexp_instantiation(instance):
 def test_imperativeexpression_instantiation(instance):
     assert isinstance(instance, ImperativeExpression)
 
-@given(instance=imperativeocl::ComputeExp_strategy)
+@given(instance=imperativeocl_AssignExp_strategy)
 @settings(max_examples=50)
-def test_imperativeocl::computeexp_instantiation(instance):
-    assert isinstance(instance, imperativeocl::ComputeExp)
-
-@given(instance=imperativeocl::UnlinkExp_strategy)
-@settings(max_examples=50)
-def test_imperativeocl::unlinkexp_instantiation(instance):
-    assert isinstance(instance, imperativeocl::UnlinkExp)
-
-@given(instance=imperativeocl::ReturnExp_strategy)
-@settings(max_examples=50)
-def test_imperativeocl::returnexp_instantiation(instance):
-    assert isinstance(instance, imperativeocl::ReturnExp)
-
-@given(instance=imperativeocl::BlockExp_strategy)
-@settings(max_examples=50)
-def test_imperativeocl::blockexp_instantiation(instance):
-    assert isinstance(instance, imperativeocl::BlockExp)
-
-@given(instance=imperativeocl::UnpackExp_strategy)
-@settings(max_examples=50)
-def test_imperativeocl::unpackexp_instantiation(instance):
-    assert isinstance(instance, imperativeocl::UnpackExp)
-
-@given(instance=imperativeocl::ContinueExp_strategy)
-@settings(max_examples=50)
-def test_imperativeocl::continueexp_instantiation(instance):
-    assert isinstance(instance, imperativeocl::ContinueExp)
-
-@given(instance=imperativeocl::WhileExp_strategy)
-@settings(max_examples=50)
-def test_imperativeocl::whileexp_instantiation(instance):
-    assert isinstance(instance, imperativeocl::WhileExp)
-
-@given(instance=imperativeocl::AssertExp_strategy)
-@settings(max_examples=50)
-def test_imperativeocl::assertexp_instantiation(instance):
-    assert isinstance(instance, imperativeocl::AssertExp)
-
-@given(instance=imperativeocl::AssertExp_strategy)
-def test_imperativeocl::assertexp_severity_type(instance):
-    assert isinstance(instance.severity, str)
+def test_imperativeocl_assignexp_instantiation(instance):
+    assert isinstance(instance, imperativeocl_AssignExp)
 
 
-@given(instance=imperativeocl::AssertExp_strategy)
-def test_imperativeocl::assertexp_severity_setter(instance):
-    original = instance.severity
-    instance.severity = original
-    assert instance.severity == original
 
-@given(instance=imperativeocl::InstantiationExp_strategy)
-@settings(max_examples=50)
-def test_imperativeocl::instantiationexp_instantiation(instance):
-    assert isinstance(instance, imperativeocl::InstantiationExp)
-
-@given(instance=imperativeocl::TryExp_strategy)
-@settings(max_examples=50)
-def test_imperativeocl::tryexp_instantiation(instance):
-    assert isinstance(instance, imperativeocl::TryExp)
-
-@given(instance=imperativeocl::CatchExp_strategy)
-@settings(max_examples=50)
-def test_imperativeocl::catchexp_instantiation(instance):
-    assert isinstance(instance, imperativeocl::CatchExp)
-
-@given(instance=imperativeocl::AssignExp_strategy)
-@settings(max_examples=50)
-def test_imperativeocl::assignexp_instantiation(instance):
-    assert isinstance(instance, imperativeocl::AssignExp)
-
-@given(instance=imperativeocl::AssignExp_strategy)
-def test_imperativeocl::assignexp_isReset_type(instance):
-    assert isinstance(instance.isReset, str)
-
-
-@given(instance=imperativeocl::AssignExp_strategy)
-def test_imperativeocl::assignexp_isReset_setter(instance):
+@given(instance=imperativeocl_AssignExp_strategy)
+def test_imperativeocl_assignexp_isReset_setter(instance):
     original = instance.isReset
     instance.isReset = original
     assert instance.isReset == original
 
-@given(instance=imperativeocl::BreakExp_strategy)
+@given(instance=imperativeocl_AssertExp_strategy)
 @settings(max_examples=50)
-def test_imperativeocl::breakexp_instantiation(instance):
-    assert isinstance(instance, imperativeocl::BreakExp)
+def test_imperativeocl_assertexp_instantiation(instance):
+    assert isinstance(instance, imperativeocl_AssertExp)
 
-@given(instance=imperativeocl::VariableInitExp_strategy)
+
+
+@given(instance=imperativeocl_AssertExp_strategy)
+def test_imperativeocl_assertexp_severity_setter(instance):
+    original = instance.severity
+    instance.severity = original
+    assert instance.severity == original
+
+@given(instance=imperativeocl_ReturnExp_strategy)
 @settings(max_examples=50)
-def test_imperativeocl::variableinitexp_instantiation(instance):
-    assert isinstance(instance, imperativeocl::VariableInitExp)
+def test_imperativeocl_returnexp_instantiation(instance):
+    assert isinstance(instance, imperativeocl_ReturnExp)
 
-@given(instance=imperativeocl::VariableInitExp_strategy)
-def test_imperativeocl::variableinitexp_withResult_type(instance):
-    assert isinstance(instance.withResult, str)
+@given(instance=imperativeocl_ComputeExp_strategy)
+@settings(max_examples=50)
+def test_imperativeocl_computeexp_instantiation(instance):
+    assert isinstance(instance, imperativeocl_ComputeExp)
+
+@given(instance=imperativeocl_VariableInitExp_strategy)
+@settings(max_examples=50)
+def test_imperativeocl_variableinitexp_instantiation(instance):
+    assert isinstance(instance, imperativeocl_VariableInitExp)
 
 
-@given(instance=imperativeocl::VariableInitExp_strategy)
-def test_imperativeocl::variableinitexp_withResult_setter(instance):
+
+@given(instance=imperativeocl_VariableInitExp_strategy)
+def test_imperativeocl_variableinitexp_withResult_setter(instance):
     original = instance.withResult
     instance.withResult = original
     assert instance.withResult == original
 
-@given(instance=imperativeocl::RaiseExp_strategy)
+@given(instance=imperativeocl_UnlinkExp_strategy)
 @settings(max_examples=50)
-def test_imperativeocl::raiseexp_instantiation(instance):
-    assert isinstance(instance, imperativeocl::RaiseExp)
+def test_imperativeocl_unlinkexp_instantiation(instance):
+    assert isinstance(instance, imperativeocl_UnlinkExp)
 
-@given(instance=imperativeocl::AltExp_strategy)
+@given(instance=imperativeocl_UnpackExp_strategy)
 @settings(max_examples=50)
-def test_imperativeocl::altexp_instantiation(instance):
-    assert isinstance(instance, imperativeocl::AltExp)
+def test_imperativeocl_unpackexp_instantiation(instance):
+    assert isinstance(instance, imperativeocl_UnpackExp)
+
+@given(instance=imperativeocl_TryExp_strategy)
+@settings(max_examples=50)
+def test_imperativeocl_tryexp_instantiation(instance):
+    assert isinstance(instance, imperativeocl_TryExp)
+
+@given(instance=imperativeocl_CatchExp_strategy)
+@settings(max_examples=50)
+def test_imperativeocl_catchexp_instantiation(instance):
+    assert isinstance(instance, imperativeocl_CatchExp)
+
+@given(instance=imperativeocl_InstantiationExp_strategy)
+@settings(max_examples=50)
+def test_imperativeocl_instantiationexp_instantiation(instance):
+    assert isinstance(instance, imperativeocl_InstantiationExp)
+
+@given(instance=imperativeocl_RaiseExp_strategy)
+@settings(max_examples=50)
+def test_imperativeocl_raiseexp_instantiation(instance):
+    assert isinstance(instance, imperativeocl_RaiseExp)
+
+@given(instance=imperativeocl_BlockExp_strategy)
+@settings(max_examples=50)
+def test_imperativeocl_blockexp_instantiation(instance):
+    assert isinstance(instance, imperativeocl_BlockExp)
+
+@given(instance=imperativeocl_ContinueExp_strategy)
+@settings(max_examples=50)
+def test_imperativeocl_continueexp_instantiation(instance):
+    assert isinstance(instance, imperativeocl_ContinueExp)
+
+@given(instance=imperativeocl_BreakExp_strategy)
+@settings(max_examples=50)
+def test_imperativeocl_breakexp_instantiation(instance):
+    assert isinstance(instance, imperativeocl_BreakExp)
+
+@given(instance=imperativeocl_AltExp_strategy)
+@settings(max_examples=50)
+def test_imperativeocl_altexp_instantiation(instance):
+    assert isinstance(instance, imperativeocl_AltExp)
+
+@given(instance=imperativeocl_WhileExp_strategy)
+@settings(max_examples=50)
+def test_imperativeocl_whileexp_instantiation(instance):
+    assert isinstance(instance, imperativeocl_WhileExp)
+
+@given(instance=imperativeocl_OrderedTupleType_strategy)
+@settings(max_examples=50)
+def test_imperativeocl_orderedtupletype_instantiation(instance):
+    assert isinstance(instance, imperativeocl_OrderedTupleType)
+
+@given(instance=imperativeocl_OrderedTupleLiteralPart_strategy)
+@settings(max_examples=50)
+def test_imperativeocl_orderedtupleliteralpart_instantiation(instance):
+    assert isinstance(instance, imperativeocl_OrderedTupleLiteralPart)
+
+@given(instance=OrderedTupleLiteralPart_strategy)
+@settings(max_examples=50)
+def test_orderedtupleliteralpart_instantiation(instance):
+    assert isinstance(instance, OrderedTupleLiteralPart)

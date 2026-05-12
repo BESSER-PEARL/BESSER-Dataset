@@ -3,13 +3,13 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    z3fsm::AbstractState,
+from python_code import (
+    z3fsm_AbstractState,
     AbstractState,
-    z3fsm::State,
-    z3fsm::Region,
+    z3fsm_State,
+    z3fsm_Region,
 )
 
 # =============================================================================
@@ -18,23 +18,23 @@ from classes import (
 
 
 
-def test_z3fsm::abstractstate_is_not_abstract():
-    assert not inspect.isabstract(z3fsm::AbstractState)
+def test_z3fsm_abstractstate_is_not_abstract():
+    assert not inspect.isabstract(z3fsm_AbstractState)
 
 
-def test_z3fsm::abstractstate_constructor_exists():
-    assert callable(z3fsm::AbstractState.__init__)
+def test_z3fsm_abstractstate_constructor_exists():
+    assert callable(z3fsm_AbstractState.__init__)
 
 
-def test_z3fsm::abstractstate_constructor_args():
-    sig = inspect.signature(z3fsm::AbstractState.__init__)
+def test_z3fsm_abstractstate_constructor_args():
+    sig = inspect.signature(z3fsm_AbstractState.__init__)
     params = list(sig.parameters.keys())
     assert "id" in params, "Missing parameter 'id'"
 
-def test_z3fsm::abstractstate_has_id():
-    assert hasattr(z3fsm::AbstractState, "id")
+def test_z3fsm_abstractstate_has_id():
+    assert hasattr(z3fsm_AbstractState, "id")
     descriptor = None
-    for klass in z3fsm::AbstractState.__mro__:
+    for klass in z3fsm_AbstractState.__mro__:
         if "id" in klass.__dict__:
             descriptor = klass.__dict__["id"]
             break
@@ -56,37 +56,37 @@ def test_abstractstate_constructor_args():
 
 
 
-def test_z3fsm::state_is_not_abstract():
-    assert not inspect.isabstract(z3fsm::State)
+def test_z3fsm_state_is_not_abstract():
+    assert not inspect.isabstract(z3fsm_State)
 
 
-def test_z3fsm::state_constructor_exists():
-    assert callable(z3fsm::State.__init__)
+def test_z3fsm_state_constructor_exists():
+    assert callable(z3fsm_State.__init__)
 
 
-def test_z3fsm::state_constructor_args():
-    sig = inspect.signature(z3fsm::State.__init__)
+def test_z3fsm_state_constructor_args():
+    sig = inspect.signature(z3fsm_State.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_z3fsm::region_is_not_abstract():
-    assert not inspect.isabstract(z3fsm::Region)
+def test_z3fsm_region_is_not_abstract():
+    assert not inspect.isabstract(z3fsm_Region)
 
 
-def test_z3fsm::region_constructor_exists():
-    assert callable(z3fsm::Region.__init__)
+def test_z3fsm_region_constructor_exists():
+    assert callable(z3fsm_Region.__init__)
 
 
-def test_z3fsm::region_constructor_args():
-    sig = inspect.signature(z3fsm::Region.__init__)
+def test_z3fsm_region_constructor_args():
+    sig = inspect.signature(z3fsm_Region.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_z3fsm::region_has_name():
-    assert hasattr(z3fsm::Region, "name")
+def test_z3fsm_region_has_name():
+    assert hasattr(z3fsm_Region, "name")
     descriptor = None
-    for klass in z3fsm::Region.__mro__:
+    for klass in z3fsm_Region.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -104,35 +104,32 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-z3fsm::AbstractState_strategy = st.builds(
-    z3fsm::AbstractState,
+z3fsm_AbstractState_strategy = st.builds(
+    z3fsm_AbstractState,
     id=
         safe_text
 )
 AbstractState_strategy = st.builds(
     AbstractState,
 )
-z3fsm::State_strategy = st.builds(
-    z3fsm::State,
+z3fsm_State_strategy = st.builds(
+    z3fsm_State,
 )
-z3fsm::Region_strategy = st.builds(
-    z3fsm::Region,
+z3fsm_Region_strategy = st.builds(
+    z3fsm_Region,
     name=
         safe_text
 )
 
-@given(instance=z3fsm::AbstractState_strategy)
+@given(instance=z3fsm_AbstractState_strategy)
 @settings(max_examples=50)
-def test_z3fsm::abstractstate_instantiation(instance):
-    assert isinstance(instance, z3fsm::AbstractState)
-
-@given(instance=z3fsm::AbstractState_strategy)
-def test_z3fsm::abstractstate_id_type(instance):
-    assert isinstance(instance.id, str)
+def test_z3fsm_abstractstate_instantiation(instance):
+    assert isinstance(instance, z3fsm_AbstractState)
 
 
-@given(instance=z3fsm::AbstractState_strategy)
-def test_z3fsm::abstractstate_id_setter(instance):
+
+@given(instance=z3fsm_AbstractState_strategy)
+def test_z3fsm_abstractstate_id_setter(instance):
     original = instance.id
     instance.id = original
     assert instance.id == original
@@ -142,23 +139,20 @@ def test_z3fsm::abstractstate_id_setter(instance):
 def test_abstractstate_instantiation(instance):
     assert isinstance(instance, AbstractState)
 
-@given(instance=z3fsm::State_strategy)
+@given(instance=z3fsm_State_strategy)
 @settings(max_examples=50)
-def test_z3fsm::state_instantiation(instance):
-    assert isinstance(instance, z3fsm::State)
+def test_z3fsm_state_instantiation(instance):
+    assert isinstance(instance, z3fsm_State)
 
-@given(instance=z3fsm::Region_strategy)
+@given(instance=z3fsm_Region_strategy)
 @settings(max_examples=50)
-def test_z3fsm::region_instantiation(instance):
-    assert isinstance(instance, z3fsm::Region)
-
-@given(instance=z3fsm::Region_strategy)
-def test_z3fsm::region_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_z3fsm_region_instantiation(instance):
+    assert isinstance(instance, z3fsm_Region)
 
 
-@given(instance=z3fsm::Region_strategy)
-def test_z3fsm::region_name_setter(instance):
+
+@given(instance=z3fsm_Region_strategy)
+def test_z3fsm_region_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original

@@ -3,15 +3,15 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    rel2rel::World,
+from python_code import (
+    rel2rel_World,
     Thing,
-    rel2rel::NamedElement,
-    rel2rel::RelatedTo,
+    rel2rel_NamedElement,
+    rel2rel_RelatedTo,
     NamedElement,
-    rel2rel::Thing,
+    rel2rel_Thing,
 )
 
 # =============================================================================
@@ -20,16 +20,16 @@ from classes import (
 
 
 
-def test_rel2rel::world_is_not_abstract():
-    assert not inspect.isabstract(rel2rel::World)
+def test_rel2rel_world_is_not_abstract():
+    assert not inspect.isabstract(rel2rel_World)
 
 
-def test_rel2rel::world_constructor_exists():
-    assert callable(rel2rel::World.__init__)
+def test_rel2rel_world_constructor_exists():
+    assert callable(rel2rel_World.__init__)
 
 
-def test_rel2rel::world_constructor_args():
-    sig = inspect.signature(rel2rel::World.__init__)
+def test_rel2rel_world_constructor_args():
+    sig = inspect.signature(rel2rel_World.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -48,23 +48,23 @@ def test_thing_constructor_args():
 
 
 
-def test_rel2rel::namedelement_is_not_abstract():
-    assert not inspect.isabstract(rel2rel::NamedElement)
+def test_rel2rel_namedelement_is_not_abstract():
+    assert not inspect.isabstract(rel2rel_NamedElement)
 
 
-def test_rel2rel::namedelement_constructor_exists():
-    assert callable(rel2rel::NamedElement.__init__)
+def test_rel2rel_namedelement_constructor_exists():
+    assert callable(rel2rel_NamedElement.__init__)
 
 
-def test_rel2rel::namedelement_constructor_args():
-    sig = inspect.signature(rel2rel::NamedElement.__init__)
+def test_rel2rel_namedelement_constructor_args():
+    sig = inspect.signature(rel2rel_NamedElement.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_rel2rel::namedelement_has_name():
-    assert hasattr(rel2rel::NamedElement, "name")
+def test_rel2rel_namedelement_has_name():
+    assert hasattr(rel2rel_NamedElement, "name")
     descriptor = None
-    for klass in rel2rel::NamedElement.__mro__:
+    for klass in rel2rel_NamedElement.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -72,23 +72,23 @@ def test_rel2rel::namedelement_has_name():
 
 
 
-def test_rel2rel::relatedto_is_not_abstract():
-    assert not inspect.isabstract(rel2rel::RelatedTo)
+def test_rel2rel_relatedto_is_not_abstract():
+    assert not inspect.isabstract(rel2rel_RelatedTo)
 
 
-def test_rel2rel::relatedto_constructor_exists():
-    assert callable(rel2rel::RelatedTo.__init__)
+def test_rel2rel_relatedto_constructor_exists():
+    assert callable(rel2rel_RelatedTo.__init__)
 
 
-def test_rel2rel::relatedto_constructor_args():
-    sig = inspect.signature(rel2rel::RelatedTo.__init__)
+def test_rel2rel_relatedto_constructor_args():
+    sig = inspect.signature(rel2rel_RelatedTo.__init__)
     params = list(sig.parameters.keys())
     assert "since" in params, "Missing parameter 'since'"
 
-def test_rel2rel::relatedto_has_since():
-    assert hasattr(rel2rel::RelatedTo, "since")
+def test_rel2rel_relatedto_has_since():
+    assert hasattr(rel2rel_RelatedTo, "since")
     descriptor = None
-    for klass in rel2rel::RelatedTo.__mro__:
+    for klass in rel2rel_RelatedTo.__mro__:
         if "since" in klass.__dict__:
             descriptor = klass.__dict__["since"]
             break
@@ -110,23 +110,23 @@ def test_namedelement_constructor_args():
 
 
 
-def test_rel2rel::thing_is_not_abstract():
-    assert not inspect.isabstract(rel2rel::Thing)
+def test_rel2rel_thing_is_not_abstract():
+    assert not inspect.isabstract(rel2rel_Thing)
 
 
-def test_rel2rel::thing_constructor_exists():
-    assert callable(rel2rel::Thing.__init__)
+def test_rel2rel_thing_constructor_exists():
+    assert callable(rel2rel_Thing.__init__)
 
 
-def test_rel2rel::thing_constructor_args():
-    sig = inspect.signature(rel2rel::Thing.__init__)
+def test_rel2rel_thing_constructor_args():
+    sig = inspect.signature(rel2rel_Thing.__init__)
     params = list(sig.parameters.keys())
     assert "id" in params, "Missing parameter 'id'"
 
-def test_rel2rel::thing_has_id():
-    assert hasattr(rel2rel::Thing, "id")
+def test_rel2rel_thing_has_id():
+    assert hasattr(rel2rel_Thing, "id")
     descriptor = None
-    for klass in rel2rel::Thing.__mro__:
+    for klass in rel2rel_Thing.__mro__:
         if "id" in klass.__dict__:
             descriptor = klass.__dict__["id"]
             break
@@ -144,69 +144,63 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-rel2rel::World_strategy = st.builds(
-    rel2rel::World,
+rel2rel_World_strategy = st.builds(
+    rel2rel_World,
 )
 Thing_strategy = st.builds(
     Thing,
 )
-rel2rel::NamedElement_strategy = st.builds(
-    rel2rel::NamedElement,
+rel2rel_NamedElement_strategy = st.builds(
+    rel2rel_NamedElement,
     name=
         safe_text
 )
-rel2rel::RelatedTo_strategy = st.builds(
-    rel2rel::RelatedTo,
+rel2rel_RelatedTo_strategy = st.builds(
+    rel2rel_RelatedTo,
     since=
         safe_text
 )
 NamedElement_strategy = st.builds(
     NamedElement,
 )
-rel2rel::Thing_strategy = st.builds(
-    rel2rel::Thing,
+rel2rel_Thing_strategy = st.builds(
+    rel2rel_Thing,
     id=
         st.integers()
 )
 
-@given(instance=rel2rel::World_strategy)
+@given(instance=rel2rel_World_strategy)
 @settings(max_examples=50)
-def test_rel2rel::world_instantiation(instance):
-    assert isinstance(instance, rel2rel::World)
+def test_rel2rel_world_instantiation(instance):
+    assert isinstance(instance, rel2rel_World)
 
 @given(instance=Thing_strategy)
 @settings(max_examples=50)
 def test_thing_instantiation(instance):
     assert isinstance(instance, Thing)
 
-@given(instance=rel2rel::NamedElement_strategy)
+@given(instance=rel2rel_NamedElement_strategy)
 @settings(max_examples=50)
-def test_rel2rel::namedelement_instantiation(instance):
-    assert isinstance(instance, rel2rel::NamedElement)
-
-@given(instance=rel2rel::NamedElement_strategy)
-def test_rel2rel::namedelement_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_rel2rel_namedelement_instantiation(instance):
+    assert isinstance(instance, rel2rel_NamedElement)
 
 
-@given(instance=rel2rel::NamedElement_strategy)
-def test_rel2rel::namedelement_name_setter(instance):
+
+@given(instance=rel2rel_NamedElement_strategy)
+def test_rel2rel_namedelement_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=rel2rel::RelatedTo_strategy)
+@given(instance=rel2rel_RelatedTo_strategy)
 @settings(max_examples=50)
-def test_rel2rel::relatedto_instantiation(instance):
-    assert isinstance(instance, rel2rel::RelatedTo)
-
-@given(instance=rel2rel::RelatedTo_strategy)
-def test_rel2rel::relatedto_since_type(instance):
-    assert isinstance(instance.since, str)
+def test_rel2rel_relatedto_instantiation(instance):
+    assert isinstance(instance, rel2rel_RelatedTo)
 
 
-@given(instance=rel2rel::RelatedTo_strategy)
-def test_rel2rel::relatedto_since_setter(instance):
+
+@given(instance=rel2rel_RelatedTo_strategy)
+def test_rel2rel_relatedto_since_setter(instance):
     original = instance.since
     instance.since = original
     assert instance.since == original
@@ -216,18 +210,15 @@ def test_rel2rel::relatedto_since_setter(instance):
 def test_namedelement_instantiation(instance):
     assert isinstance(instance, NamedElement)
 
-@given(instance=rel2rel::Thing_strategy)
+@given(instance=rel2rel_Thing_strategy)
 @settings(max_examples=50)
-def test_rel2rel::thing_instantiation(instance):
-    assert isinstance(instance, rel2rel::Thing)
-
-@given(instance=rel2rel::Thing_strategy)
-def test_rel2rel::thing_id_type(instance):
-    assert isinstance(instance.id, int)
+def test_rel2rel_thing_instantiation(instance):
+    assert isinstance(instance, rel2rel_Thing)
 
 
-@given(instance=rel2rel::Thing_strategy)
-def test_rel2rel::thing_id_setter(instance):
+
+@given(instance=rel2rel_Thing_strategy)
+def test_rel2rel_thing_id_setter(instance):
     original = instance.id
     instance.id = original
     assert instance.id == original

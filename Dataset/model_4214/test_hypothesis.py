@@ -3,14 +3,14 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    mydsl::MyModel,
+from python_code import (
+    mydsl_MyAbstractElement,
+    mydsl_MyModel,
     MyAbstractElement,
-    mydsl::MyReference,
-    mydsl::MyElement,
-    mydsl::MyAbstractElement,
+    mydsl_MyReference,
+    mydsl_MyElement,
 )
 
 # =============================================================================
@@ -19,23 +19,37 @@ from classes import (
 
 
 
-def test_mydsl::mymodel_is_not_abstract():
-    assert not inspect.isabstract(mydsl::MyModel)
+def test_mydsl_myabstractelement_is_not_abstract():
+    assert not inspect.isabstract(mydsl_MyAbstractElement)
 
 
-def test_mydsl::mymodel_constructor_exists():
-    assert callable(mydsl::MyModel.__init__)
+def test_mydsl_myabstractelement_constructor_exists():
+    assert callable(mydsl_MyAbstractElement.__init__)
 
 
-def test_mydsl::mymodel_constructor_args():
-    sig = inspect.signature(mydsl::MyModel.__init__)
+def test_mydsl_myabstractelement_constructor_args():
+    sig = inspect.signature(mydsl_MyAbstractElement.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_mydsl_mymodel_is_not_abstract():
+    assert not inspect.isabstract(mydsl_MyModel)
+
+
+def test_mydsl_mymodel_constructor_exists():
+    assert callable(mydsl_MyModel.__init__)
+
+
+def test_mydsl_mymodel_constructor_args():
+    sig = inspect.signature(mydsl_MyModel.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_mydsl::mymodel_has_name():
-    assert hasattr(mydsl::MyModel, "name")
+def test_mydsl_mymodel_has_name():
+    assert hasattr(mydsl_MyModel, "name")
     descriptor = None
-    for klass in mydsl::MyModel.__mro__:
+    for klass in mydsl_MyModel.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -57,55 +71,41 @@ def test_myabstractelement_constructor_args():
 
 
 
-def test_mydsl::myreference_is_not_abstract():
-    assert not inspect.isabstract(mydsl::MyReference)
+def test_mydsl_myreference_is_not_abstract():
+    assert not inspect.isabstract(mydsl_MyReference)
 
 
-def test_mydsl::myreference_constructor_exists():
-    assert callable(mydsl::MyReference.__init__)
+def test_mydsl_myreference_constructor_exists():
+    assert callable(mydsl_MyReference.__init__)
 
 
-def test_mydsl::myreference_constructor_args():
-    sig = inspect.signature(mydsl::MyReference.__init__)
+def test_mydsl_myreference_constructor_args():
+    sig = inspect.signature(mydsl_MyReference.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_mydsl::myelement_is_not_abstract():
-    assert not inspect.isabstract(mydsl::MyElement)
+def test_mydsl_myelement_is_not_abstract():
+    assert not inspect.isabstract(mydsl_MyElement)
 
 
-def test_mydsl::myelement_constructor_exists():
-    assert callable(mydsl::MyElement.__init__)
+def test_mydsl_myelement_constructor_exists():
+    assert callable(mydsl_MyElement.__init__)
 
 
-def test_mydsl::myelement_constructor_args():
-    sig = inspect.signature(mydsl::MyElement.__init__)
+def test_mydsl_myelement_constructor_args():
+    sig = inspect.signature(mydsl_MyElement.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_mydsl::myelement_has_name():
-    assert hasattr(mydsl::MyElement, "name")
+def test_mydsl_myelement_has_name():
+    assert hasattr(mydsl_MyElement, "name")
     descriptor = None
-    for klass in mydsl::MyElement.__mro__:
+    for klass in mydsl_MyElement.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
-
-
-
-def test_mydsl::myabstractelement_is_not_abstract():
-    assert not inspect.isabstract(mydsl::MyAbstractElement)
-
-
-def test_mydsl::myabstractelement_constructor_exists():
-    assert callable(mydsl::MyAbstractElement.__init__)
-
-
-def test_mydsl::myabstractelement_constructor_args():
-    sig = inspect.signature(mydsl::MyAbstractElement.__init__)
-    params = list(sig.parameters.keys())
 
 
 # =============================================================================
@@ -119,38 +119,40 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-mydsl::MyModel_strategy = st.builds(
-    mydsl::MyModel,
+mydsl_MyAbstractElement_strategy = st.builds(
+    mydsl_MyAbstractElement,
+)
+mydsl_MyModel_strategy = st.builds(
+    mydsl_MyModel,
     name=
         safe_text
 )
 MyAbstractElement_strategy = st.builds(
     MyAbstractElement,
 )
-mydsl::MyReference_strategy = st.builds(
-    mydsl::MyReference,
+mydsl_MyReference_strategy = st.builds(
+    mydsl_MyReference,
 )
-mydsl::MyElement_strategy = st.builds(
-    mydsl::MyElement,
+mydsl_MyElement_strategy = st.builds(
+    mydsl_MyElement,
     name=
         safe_text
 )
-mydsl::MyAbstractElement_strategy = st.builds(
-    mydsl::MyAbstractElement,
-)
 
-@given(instance=mydsl::MyModel_strategy)
+@given(instance=mydsl_MyAbstractElement_strategy)
 @settings(max_examples=50)
-def test_mydsl::mymodel_instantiation(instance):
-    assert isinstance(instance, mydsl::MyModel)
+def test_mydsl_myabstractelement_instantiation(instance):
+    assert isinstance(instance, mydsl_MyAbstractElement)
 
-@given(instance=mydsl::MyModel_strategy)
-def test_mydsl::mymodel_name_type(instance):
-    assert isinstance(instance.name, str)
+@given(instance=mydsl_MyModel_strategy)
+@settings(max_examples=50)
+def test_mydsl_mymodel_instantiation(instance):
+    assert isinstance(instance, mydsl_MyModel)
 
 
-@given(instance=mydsl::MyModel_strategy)
-def test_mydsl::mymodel_name_setter(instance):
+
+@given(instance=mydsl_MyModel_strategy)
+def test_mydsl_mymodel_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
@@ -160,28 +162,20 @@ def test_mydsl::mymodel_name_setter(instance):
 def test_myabstractelement_instantiation(instance):
     assert isinstance(instance, MyAbstractElement)
 
-@given(instance=mydsl::MyReference_strategy)
+@given(instance=mydsl_MyReference_strategy)
 @settings(max_examples=50)
-def test_mydsl::myreference_instantiation(instance):
-    assert isinstance(instance, mydsl::MyReference)
+def test_mydsl_myreference_instantiation(instance):
+    assert isinstance(instance, mydsl_MyReference)
 
-@given(instance=mydsl::MyElement_strategy)
+@given(instance=mydsl_MyElement_strategy)
 @settings(max_examples=50)
-def test_mydsl::myelement_instantiation(instance):
-    assert isinstance(instance, mydsl::MyElement)
-
-@given(instance=mydsl::MyElement_strategy)
-def test_mydsl::myelement_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_mydsl_myelement_instantiation(instance):
+    assert isinstance(instance, mydsl_MyElement)
 
 
-@given(instance=mydsl::MyElement_strategy)
-def test_mydsl::myelement_name_setter(instance):
+
+@given(instance=mydsl_MyElement_strategy)
+def test_mydsl_myelement_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
-
-@given(instance=mydsl::MyAbstractElement_strategy)
-@settings(max_examples=50)
-def test_mydsl::myabstractelement_instantiation(instance):
-    assert isinstance(instance, mydsl::MyAbstractElement)

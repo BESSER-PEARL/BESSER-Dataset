@@ -3,18 +3,18 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    testup::G,
+from python_code import (
+    testup_G,
     G,
     E,
-    testup::F,
+    testup_F,
     AUp,
-    testup::E,
-    testup::D,
-    testup::B,
-    testup::AUp,
+    testup_E,
+    testup_D,
+    testup_B,
+    testup_AUp,
 )
 
 # =============================================================================
@@ -23,16 +23,16 @@ from classes import (
 
 
 
-def test_testup::g_is_not_abstract():
-    assert not inspect.isabstract(testup::G)
+def test_testup_g_is_not_abstract():
+    assert not inspect.isabstract(testup_G)
 
 
-def test_testup::g_constructor_exists():
-    assert callable(testup::G.__init__)
+def test_testup_g_constructor_exists():
+    assert callable(testup_G.__init__)
 
 
-def test_testup::g_constructor_args():
-    sig = inspect.signature(testup::G.__init__)
+def test_testup_g_constructor_args():
+    sig = inspect.signature(testup_G.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -65,16 +65,16 @@ def test_e_constructor_args():
 
 
 
-def test_testup::f_is_not_abstract():
-    assert not inspect.isabstract(testup::F)
+def test_testup_f_is_not_abstract():
+    assert not inspect.isabstract(testup_F)
 
 
-def test_testup::f_constructor_exists():
-    assert callable(testup::F.__init__)
+def test_testup_f_constructor_exists():
+    assert callable(testup_F.__init__)
 
 
-def test_testup::f_constructor_args():
-    sig = inspect.signature(testup::F.__init__)
+def test_testup_f_constructor_args():
+    sig = inspect.signature(testup_F.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -93,23 +93,23 @@ def test_aup_constructor_args():
 
 
 
-def test_testup::e_is_not_abstract():
-    assert not inspect.isabstract(testup::E)
+def test_testup_e_is_not_abstract():
+    assert not inspect.isabstract(testup_E)
 
 
-def test_testup::e_constructor_exists():
-    assert callable(testup::E.__init__)
+def test_testup_e_constructor_exists():
+    assert callable(testup_E.__init__)
 
 
-def test_testup::e_constructor_args():
-    sig = inspect.signature(testup::E.__init__)
+def test_testup_e_constructor_args():
+    sig = inspect.signature(testup_E.__init__)
     params = list(sig.parameters.keys())
     assert "newAttribute" in params, "Missing parameter 'newAttribute'"
 
-def test_testup::e_has_newAttribute():
-    assert hasattr(testup::E, "newAttribute")
+def test_testup_e_has_newAttribute():
+    assert hasattr(testup_E, "newAttribute")
     descriptor = None
-    for klass in testup::E.__mro__:
+    for klass in testup_E.__mro__:
         if "newAttribute" in klass.__dict__:
             descriptor = klass.__dict__["newAttribute"]
             break
@@ -117,23 +117,23 @@ def test_testup::e_has_newAttribute():
 
 
 
-def test_testup::d_is_not_abstract():
-    assert not inspect.isabstract(testup::D)
+def test_testup_d_is_not_abstract():
+    assert not inspect.isabstract(testup_D)
 
 
-def test_testup::d_constructor_exists():
-    assert callable(testup::D.__init__)
+def test_testup_d_constructor_exists():
+    assert callable(testup_D.__init__)
 
 
-def test_testup::d_constructor_args():
-    sig = inspect.signature(testup::D.__init__)
+def test_testup_d_constructor_args():
+    sig = inspect.signature(testup_D.__init__)
     params = list(sig.parameters.keys())
     assert "newAttribute" in params, "Missing parameter 'newAttribute'"
 
-def test_testup::d_has_newAttribute():
-    assert hasattr(testup::D, "newAttribute")
+def test_testup_d_has_newAttribute():
+    assert hasattr(testup_D, "newAttribute")
     descriptor = None
-    for klass in testup::D.__mro__:
+    for klass in testup_D.__mro__:
         if "newAttribute" in klass.__dict__:
             descriptor = klass.__dict__["newAttribute"]
             break
@@ -141,23 +141,23 @@ def test_testup::d_has_newAttribute():
 
 
 
-def test_testup::b_is_not_abstract():
-    assert not inspect.isabstract(testup::B)
+def test_testup_b_is_not_abstract():
+    assert not inspect.isabstract(testup_B)
 
 
-def test_testup::b_constructor_exists():
-    assert callable(testup::B.__init__)
+def test_testup_b_constructor_exists():
+    assert callable(testup_B.__init__)
 
 
-def test_testup::b_constructor_args():
-    sig = inspect.signature(testup::B.__init__)
+def test_testup_b_constructor_args():
+    sig = inspect.signature(testup_B.__init__)
     params = list(sig.parameters.keys())
     assert "newAttribute" in params, "Missing parameter 'newAttribute'"
 
-def test_testup::b_has_newAttribute():
-    assert hasattr(testup::B, "newAttribute")
+def test_testup_b_has_newAttribute():
+    assert hasattr(testup_B, "newAttribute")
     descriptor = None
-    for klass in testup::B.__mro__:
+    for klass in testup_B.__mro__:
         if "newAttribute" in klass.__dict__:
             descriptor = klass.__dict__["newAttribute"]
             break
@@ -165,16 +165,16 @@ def test_testup::b_has_newAttribute():
 
 
 
-def test_testup::aup_is_not_abstract():
-    assert not inspect.isabstract(testup::AUp)
+def test_testup_aup_is_not_abstract():
+    assert not inspect.isabstract(testup_AUp)
 
 
-def test_testup::aup_constructor_exists():
-    assert callable(testup::AUp.__init__)
+def test_testup_aup_constructor_exists():
+    assert callable(testup_AUp.__init__)
 
 
-def test_testup::aup_constructor_args():
-    sig = inspect.signature(testup::AUp.__init__)
+def test_testup_aup_constructor_args():
+    sig = inspect.signature(testup_AUp.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -189,8 +189,8 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-testup::G_strategy = st.builds(
-    testup::G,
+testup_G_strategy = st.builds(
+    testup_G,
 )
 G_strategy = st.builds(
     G,
@@ -198,35 +198,35 @@ G_strategy = st.builds(
 E_strategy = st.builds(
     E,
 )
-testup::F_strategy = st.builds(
-    testup::F,
+testup_F_strategy = st.builds(
+    testup_F,
 )
 AUp_strategy = st.builds(
     AUp,
 )
-testup::E_strategy = st.builds(
-    testup::E,
+testup_E_strategy = st.builds(
+    testup_E,
     newAttribute=
         safe_text
 )
-testup::D_strategy = st.builds(
-    testup::D,
+testup_D_strategy = st.builds(
+    testup_D,
     newAttribute=
         safe_text
 )
-testup::B_strategy = st.builds(
-    testup::B,
+testup_B_strategy = st.builds(
+    testup_B,
     newAttribute=
         safe_text
 )
-testup::AUp_strategy = st.builds(
-    testup::AUp,
+testup_AUp_strategy = st.builds(
+    testup_AUp,
 )
 
-@given(instance=testup::G_strategy)
+@given(instance=testup_G_strategy)
 @settings(max_examples=50)
-def test_testup::g_instantiation(instance):
-    assert isinstance(instance, testup::G)
+def test_testup_g_instantiation(instance):
+    assert isinstance(instance, testup_G)
 
 @given(instance=G_strategy)
 @settings(max_examples=50)
@@ -238,65 +238,56 @@ def test_g_instantiation(instance):
 def test_e_instantiation(instance):
     assert isinstance(instance, E)
 
-@given(instance=testup::F_strategy)
+@given(instance=testup_F_strategy)
 @settings(max_examples=50)
-def test_testup::f_instantiation(instance):
-    assert isinstance(instance, testup::F)
+def test_testup_f_instantiation(instance):
+    assert isinstance(instance, testup_F)
 
 @given(instance=AUp_strategy)
 @settings(max_examples=50)
 def test_aup_instantiation(instance):
     assert isinstance(instance, AUp)
 
-@given(instance=testup::E_strategy)
+@given(instance=testup_E_strategy)
 @settings(max_examples=50)
-def test_testup::e_instantiation(instance):
-    assert isinstance(instance, testup::E)
-
-@given(instance=testup::E_strategy)
-def test_testup::e_newAttribute_type(instance):
-    assert isinstance(instance.newAttribute, str)
+def test_testup_e_instantiation(instance):
+    assert isinstance(instance, testup_E)
 
 
-@given(instance=testup::E_strategy)
-def test_testup::e_newAttribute_setter(instance):
+
+@given(instance=testup_E_strategy)
+def test_testup_e_newAttribute_setter(instance):
     original = instance.newAttribute
     instance.newAttribute = original
     assert instance.newAttribute == original
 
-@given(instance=testup::D_strategy)
+@given(instance=testup_D_strategy)
 @settings(max_examples=50)
-def test_testup::d_instantiation(instance):
-    assert isinstance(instance, testup::D)
-
-@given(instance=testup::D_strategy)
-def test_testup::d_newAttribute_type(instance):
-    assert isinstance(instance.newAttribute, str)
+def test_testup_d_instantiation(instance):
+    assert isinstance(instance, testup_D)
 
 
-@given(instance=testup::D_strategy)
-def test_testup::d_newAttribute_setter(instance):
+
+@given(instance=testup_D_strategy)
+def test_testup_d_newAttribute_setter(instance):
     original = instance.newAttribute
     instance.newAttribute = original
     assert instance.newAttribute == original
 
-@given(instance=testup::B_strategy)
+@given(instance=testup_B_strategy)
 @settings(max_examples=50)
-def test_testup::b_instantiation(instance):
-    assert isinstance(instance, testup::B)
-
-@given(instance=testup::B_strategy)
-def test_testup::b_newAttribute_type(instance):
-    assert isinstance(instance.newAttribute, str)
+def test_testup_b_instantiation(instance):
+    assert isinstance(instance, testup_B)
 
 
-@given(instance=testup::B_strategy)
-def test_testup::b_newAttribute_setter(instance):
+
+@given(instance=testup_B_strategy)
+def test_testup_b_newAttribute_setter(instance):
     original = instance.newAttribute
     instance.newAttribute = original
     assert instance.newAttribute == original
 
-@given(instance=testup::AUp_strategy)
+@given(instance=testup_AUp_strategy)
 @settings(max_examples=50)
-def test_testup::aup_instantiation(instance):
-    assert isinstance(instance, testup::AUp)
+def test_testup_aup_instantiation(instance):
+    assert isinstance(instance, testup_AUp)

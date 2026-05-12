@@ -3,12 +3,12 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    Paper::Paper,
-    Paper::Papers,
-    Paper::Author,
+from python_code import (
+    Paper_Paper,
+    Paper_Papers,
+    Paper_Author,
 )
 
 # =============================================================================
@@ -17,23 +17,23 @@ from classes import (
 
 
 
-def test_paper::paper_is_not_abstract():
-    assert not inspect.isabstract(Paper::Paper)
+def test_paper_paper_is_not_abstract():
+    assert not inspect.isabstract(Paper_Paper)
 
 
-def test_paper::paper_constructor_exists():
-    assert callable(Paper::Paper.__init__)
+def test_paper_paper_constructor_exists():
+    assert callable(Paper_Paper.__init__)
 
 
-def test_paper::paper_constructor_args():
-    sig = inspect.signature(Paper::Paper.__init__)
+def test_paper_paper_constructor_args():
+    sig = inspect.signature(Paper_Paper.__init__)
     params = list(sig.parameters.keys())
     assert "title" in params, "Missing parameter 'title'"
 
-def test_paper::paper_has_title():
-    assert hasattr(Paper::Paper, "title")
+def test_paper_paper_has_title():
+    assert hasattr(Paper_Paper, "title")
     descriptor = None
-    for klass in Paper::Paper.__mro__:
+    for klass in Paper_Paper.__mro__:
         if "title" in klass.__dict__:
             descriptor = klass.__dict__["title"]
             break
@@ -41,59 +41,59 @@ def test_paper::paper_has_title():
 
 
 
-def test_paper::papers_is_not_abstract():
-    assert not inspect.isabstract(Paper::Papers)
+def test_paper_papers_is_not_abstract():
+    assert not inspect.isabstract(Paper_Papers)
 
 
-def test_paper::papers_constructor_exists():
-    assert callable(Paper::Papers.__init__)
+def test_paper_papers_constructor_exists():
+    assert callable(Paper_Papers.__init__)
 
 
-def test_paper::papers_constructor_args():
-    sig = inspect.signature(Paper::Papers.__init__)
+def test_paper_papers_constructor_args():
+    sig = inspect.signature(Paper_Papers.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_paper::author_is_not_abstract():
-    assert not inspect.isabstract(Paper::Author)
+def test_paper_author_is_not_abstract():
+    assert not inspect.isabstract(Paper_Author)
 
 
-def test_paper::author_constructor_exists():
-    assert callable(Paper::Author.__init__)
+def test_paper_author_constructor_exists():
+    assert callable(Paper_Author.__init__)
 
 
-def test_paper::author_constructor_args():
-    sig = inspect.signature(Paper::Author.__init__)
+def test_paper_author_constructor_args():
+    sig = inspect.signature(Paper_Author.__init__)
     params = list(sig.parameters.keys())
+    assert "email" in params, "Missing parameter 'email'"
     assert "firstname" in params, "Missing parameter 'firstname'"
     assert "lastname" in params, "Missing parameter 'lastname'"
-    assert "email" in params, "Missing parameter 'email'"
 
-def test_paper::author_has_firstname():
-    assert hasattr(Paper::Author, "firstname")
+def test_paper_author_has_email():
+    assert hasattr(Paper_Author, "email")
     descriptor = None
-    for klass in Paper::Author.__mro__:
+    for klass in Paper_Author.__mro__:
+        if "email" in klass.__dict__:
+            descriptor = klass.__dict__["email"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_paper_author_has_firstname():
+    assert hasattr(Paper_Author, "firstname")
+    descriptor = None
+    for klass in Paper_Author.__mro__:
         if "firstname" in klass.__dict__:
             descriptor = klass.__dict__["firstname"]
             break
     assert isinstance(descriptor, property)
 
-def test_paper::author_has_lastname():
-    assert hasattr(Paper::Author, "lastname")
+def test_paper_author_has_lastname():
+    assert hasattr(Paper_Author, "lastname")
     descriptor = None
-    for klass in Paper::Author.__mro__:
+    for klass in Paper_Author.__mro__:
         if "lastname" in klass.__dict__:
             descriptor = klass.__dict__["lastname"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_paper::author_has_email():
-    assert hasattr(Paper::Author, "email")
-    descriptor = None
-    for klass in Paper::Author.__mro__:
-        if "email" in klass.__dict__:
-            descriptor = klass.__dict__["email"]
             break
     assert isinstance(descriptor, property)
 
@@ -109,79 +109,67 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-Paper::Paper_strategy = st.builds(
-    Paper::Paper,
+Paper_Paper_strategy = st.builds(
+    Paper_Paper,
     title=
         safe_text
 )
-Paper::Papers_strategy = st.builds(
-    Paper::Papers,
+Paper_Papers_strategy = st.builds(
+    Paper_Papers,
 )
-Paper::Author_strategy = st.builds(
-    Paper::Author,
+Paper_Author_strategy = st.builds(
+    Paper_Author,
+    email=
+        safe_text,
     firstname=
         safe_text,
     lastname=
-        safe_text,
-    email=
         safe_text
 )
 
-@given(instance=Paper::Paper_strategy)
+@given(instance=Paper_Paper_strategy)
 @settings(max_examples=50)
-def test_paper::paper_instantiation(instance):
-    assert isinstance(instance, Paper::Paper)
-
-@given(instance=Paper::Paper_strategy)
-def test_paper::paper_title_type(instance):
-    assert isinstance(instance.title, str)
+def test_paper_paper_instantiation(instance):
+    assert isinstance(instance, Paper_Paper)
 
 
-@given(instance=Paper::Paper_strategy)
-def test_paper::paper_title_setter(instance):
+
+@given(instance=Paper_Paper_strategy)
+def test_paper_paper_title_setter(instance):
     original = instance.title
     instance.title = original
     assert instance.title == original
 
-@given(instance=Paper::Papers_strategy)
+@given(instance=Paper_Papers_strategy)
 @settings(max_examples=50)
-def test_paper::papers_instantiation(instance):
-    assert isinstance(instance, Paper::Papers)
+def test_paper_papers_instantiation(instance):
+    assert isinstance(instance, Paper_Papers)
 
-@given(instance=Paper::Author_strategy)
+@given(instance=Paper_Author_strategy)
 @settings(max_examples=50)
-def test_paper::author_instantiation(instance):
-    assert isinstance(instance, Paper::Author)
-
-@given(instance=Paper::Author_strategy)
-def test_paper::author_firstname_type(instance):
-    assert isinstance(instance.firstname, str)
+def test_paper_author_instantiation(instance):
+    assert isinstance(instance, Paper_Author)
 
 
-@given(instance=Paper::Author_strategy)
-def test_paper::author_firstname_setter(instance):
+
+@given(instance=Paper_Author_strategy)
+def test_paper_author_email_setter(instance):
+    original = instance.email
+    instance.email = original
+    assert instance.email == original
+
+
+
+@given(instance=Paper_Author_strategy)
+def test_paper_author_firstname_setter(instance):
     original = instance.firstname
     instance.firstname = original
     assert instance.firstname == original
 
-@given(instance=Paper::Author_strategy)
-def test_paper::author_lastname_type(instance):
-    assert isinstance(instance.lastname, str)
 
 
-@given(instance=Paper::Author_strategy)
-def test_paper::author_lastname_setter(instance):
+@given(instance=Paper_Author_strategy)
+def test_paper_author_lastname_setter(instance):
     original = instance.lastname
     instance.lastname = original
     assert instance.lastname == original
-
-@given(instance=Paper::Author_strategy)
-def test_paper::author_email_type(instance):
-    assert isinstance(instance.email, str)
-
-
-@given(instance=Paper::Author_strategy)
-def test_paper::author_email_setter(instance):
-    original = instance.email
-    instance.email = original
-    assert instance.email == original

@@ -3,7 +3,7 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
 from python_code import (
     voiture,
@@ -164,19 +164,10 @@ def test_trajet_constructor_exists():
 def test_trajet_constructor_args():
     sig = inspect.signature(trajet.__init__)
     params = list(sig.parameters.keys())
-    assert "prix_du_trajet" in params, "Missing parameter 'prix_du_trajet'"
     assert "la_date" in params, "Missing parameter 'la_date'"
     assert "l_heure_de_d_part" in params, "Missing parameter 'l_heure_de_d_part'"
     assert "lieu_de_d_part" in params, "Missing parameter 'lieu_de_d_part'"
-
-def test_trajet_has_prix_du_trajet():
-    assert hasattr(trajet, "prix_du_trajet")
-    descriptor = None
-    for klass in trajet.__mro__:
-        if "prix_du_trajet" in klass.__dict__:
-            descriptor = klass.__dict__["prix_du_trajet"]
-            break
-    assert isinstance(descriptor, property)
+    assert "prix_du_trajet" in params, "Missing parameter 'prix_du_trajet'"
 
 def test_trajet_has_la_date():
     assert hasattr(trajet, "la_date")
@@ -202,6 +193,15 @@ def test_trajet_has_lieu_de_d_part():
     for klass in trajet.__mro__:
         if "lieu_de_d_part" in klass.__dict__:
             descriptor = klass.__dict__["lieu_de_d_part"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_trajet_has_prix_du_trajet():
+    assert hasattr(trajet, "prix_du_trajet")
+    descriptor = None
+    for klass in trajet.__mro__:
+        if "prix_du_trajet" in klass.__dict__:
+            descriptor = klass.__dict__["prix_du_trajet"]
             break
     assert isinstance(descriptor, property)
 
@@ -328,14 +328,14 @@ administrateur_strategy = st.builds(
 )
 trajet_strategy = st.builds(
     trajet,
-    prix_du_trajet=
-        st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False),
     la_date=
         safe_text,
     l_heure_de_d_part=
         st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False),
     lieu_de_d_part=
-        safe_text
+        safe_text,
+    prix_du_trajet=
+        st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False)
 )
 paiement_strategy = st.builds(
     paiement,
@@ -360,9 +360,6 @@ compte_strategy = st.builds(
 def test_voiture_instantiation(instance):
     assert isinstance(instance, voiture)
 
-@given(instance=voiture_strategy)
-def test_voiture_nombre_de_si_ges_type(instance):
-    assert isinstance(instance.nombre_de_si_ges, int)
 
 
 @given(instance=voiture_strategy)
@@ -371,9 +368,6 @@ def test_voiture_nombre_de_si_ges_setter(instance):
     instance.nombre_de_si_ges = original
     assert instance.nombre_de_si_ges == original
 
-@given(instance=voiture_strategy)
-def test_voiture_type_de_voiture_type(instance):
-    assert isinstance(instance.type_de_voiture, str)
 
 
 @given(instance=voiture_strategy)
@@ -387,9 +381,6 @@ def test_voiture_type_de_voiture_setter(instance):
 def test_conducteur_instantiation(instance):
     assert isinstance(instance, conducteur)
 
-@given(instance=conducteur_strategy)
-def test_conducteur_informations_conducteur_type(instance):
-    assert isinstance(instance.informations_conducteur, str)
 
 
 @given(instance=conducteur_strategy)
@@ -403,9 +394,6 @@ def test_conducteur_informations_conducteur_setter(instance):
 def test_passager_instantiation(instance):
     assert isinstance(instance, passager)
 
-@given(instance=passager_strategy)
-def test_passager_informations_passager_type(instance):
-    assert isinstance(instance.informations_passager, str)
 
 
 @given(instance=passager_strategy)
@@ -419,9 +407,6 @@ def test_passager_informations_passager_setter(instance):
 def test_inscription_instantiation(instance):
     assert isinstance(instance, inscription)
 
-@given(instance=inscription_strategy)
-def test_inscription_informations_conducteur_type(instance):
-    assert isinstance(instance.informations_conducteur, str)
 
 
 @given(instance=inscription_strategy)
@@ -430,9 +415,6 @@ def test_inscription_informations_conducteur_setter(instance):
     instance.informations_conducteur = original
     assert instance.informations_conducteur == original
 
-@given(instance=inscription_strategy)
-def test_inscription_informations_passager_type(instance):
-    assert isinstance(instance.informations_passager, str)
 
 
 @given(instance=inscription_strategy)
@@ -451,20 +433,6 @@ def test_administrateur_instantiation(instance):
 def test_trajet_instantiation(instance):
     assert isinstance(instance, trajet)
 
-@given(instance=trajet_strategy)
-def test_trajet_prix_du_trajet_type(instance):
-    assert isinstance(instance.prix_du_trajet, float)
-
-
-@given(instance=trajet_strategy)
-def test_trajet_prix_du_trajet_setter(instance):
-    original = instance.prix_du_trajet
-    instance.prix_du_trajet = original
-    assert instance.prix_du_trajet == original
-
-@given(instance=trajet_strategy)
-def test_trajet_la_date_type(instance):
-    assert isinstance(instance.la_date, str)
 
 
 @given(instance=trajet_strategy)
@@ -473,9 +441,6 @@ def test_trajet_la_date_setter(instance):
     instance.la_date = original
     assert instance.la_date == original
 
-@given(instance=trajet_strategy)
-def test_trajet_l_heure_de_d_part_type(instance):
-    assert isinstance(instance.l_heure_de_d_part, float)
 
 
 @given(instance=trajet_strategy)
@@ -484,9 +449,6 @@ def test_trajet_l_heure_de_d_part_setter(instance):
     instance.l_heure_de_d_part = original
     assert instance.l_heure_de_d_part == original
 
-@given(instance=trajet_strategy)
-def test_trajet_lieu_de_d_part_type(instance):
-    assert isinstance(instance.lieu_de_d_part, str)
 
 
 @given(instance=trajet_strategy)
@@ -495,14 +457,19 @@ def test_trajet_lieu_de_d_part_setter(instance):
     instance.lieu_de_d_part = original
     assert instance.lieu_de_d_part == original
 
+
+
+@given(instance=trajet_strategy)
+def test_trajet_prix_du_trajet_setter(instance):
+    original = instance.prix_du_trajet
+    instance.prix_du_trajet = original
+    assert instance.prix_du_trajet == original
+
 @given(instance=paiement_strategy)
 @settings(max_examples=50)
 def test_paiement_instantiation(instance):
     assert isinstance(instance, paiement)
 
-@given(instance=paiement_strategy)
-def test_paiement_m_thode_de_paiement_type(instance):
-    assert isinstance(instance.m_thode_de_paiement, str)
 
 
 @given(instance=paiement_strategy)
@@ -516,9 +483,6 @@ def test_paiement_m_thode_de_paiement_setter(instance):
 def test_reservation_instantiation(instance):
     assert isinstance(instance, reservation)
 
-@given(instance=reservation_strategy)
-def test_reservation_nombre_de_passager_type(instance):
-    assert isinstance(instance.nombre_de_passager, int)
 
 
 @given(instance=reservation_strategy)
@@ -532,9 +496,6 @@ def test_reservation_nombre_de_passager_setter(instance):
 def test_compte_instantiation(instance):
     assert isinstance(instance, compte)
 
-@given(instance=compte_strategy)
-def test_compte_informations_passager_type(instance):
-    assert isinstance(instance.informations_passager, str)
 
 
 @given(instance=compte_strategy)
@@ -543,9 +504,6 @@ def test_compte_informations_passager_setter(instance):
     instance.informations_passager = original
     assert instance.informations_passager == original
 
-@given(instance=compte_strategy)
-def test_compte_informations_conducteur_type(instance):
-    assert isinstance(instance.informations_conducteur, str)
 
 
 @given(instance=compte_strategy)

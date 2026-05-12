@@ -3,97 +3,97 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    ir::AnnotationArgument,
-    ir::State,
+from python_code import (
+    ir_AnnotationArgument,
+    ir_State,
     Type,
-    ir::TypeFloat,
-    ir::TypeInt,
-    ir::TypeLambda,
-    ir::TypeList,
-    ir::TypeExternal,
-    ir::TypeProc,
-    ir::TypeUint,
-    ir::TypeString,
-    ir::TypeBool,
+    ir_TypeString,
+    ir_TypeExternal,
+    ir_TypeInt,
+    ir_TypeLambda,
+    ir_TypeProc,
+    ir_TypeUint,
+    ir_TypeList,
+    ir_TypeFloat,
+    ir_TypeBool,
     LambdaExpression,
-    ir::TypeUser,
-    ir::TypeUndef,
+    ir_TypeUser,
     PortAccess,
-    ir::PortPeek,
+    ir_PortPeek,
     Block,
     Statement,
-    ir::WhileLoop,
-    ir::IfStatement,
-    ir::ReturnValue,
-    ir::ProcCall,
-    ir::ForEach,
-    ir::Assign,
+    ir_ForEach,
+    ir_ProcCall,
+    ir_IfStatement,
+    ir_WhileLoop,
+    ir_ReturnValue,
+    ir_Assign,
     Connection,
-    ir::FromSource,
-    ir::ToSink,
-    ir::Point2PointConnection,
+    ir_ToSink,
+    ir_FromSource,
+    ir_Point2PointConnection,
+    ir_TypeUndef,
     LiteralExpression,
-    ir::BooleanLiteral,
-    ir::StringLiteral,
-    ir::FloatLiteral,
-    ir::IntegerLiteral,
+    ir_StringLiteral,
+    ir_BooleanLiteral,
+    ir_FloatLiteral,
+    ir_IntegerLiteral,
     Expression,
-    ir::IfExpression,
-    ir::VariableExpression,
-    ir::ListExpression,
-    ir::LiteralExpression,
+    ir_ListExpression,
+    ir_VariableExpression,
+    ir_IfExpression,
+    ir_LiteralExpression,
     ExpressionCall,
-    ir::TypeConstructorCall,
-    ir::FunctionCall,
-    ir::ExpressionCall,
-    ir::UnaryExpression,
-    ir::BinaryExpression,
+    ir_TypeConstructorCall,
+    ir_FunctionCall,
+    ir_ExpressionCall,
+    ir_UnaryExpression,
+    ir_BinaryExpression,
     Variable,
-    ir::PortRead,
-    ir::PortWrite,
-    ir::Guard,
-    ir::ActorInstance,
-    ir::Schedule,
+    ir_PortRead,
+    ir_PortWrite,
+    ir_Guard,
+    ir_ActorInstance,
+    ir_Schedule,
     AbstractActor,
-    ir::Actor,
-    ir::Network,
-    ir::ExternalActor,
+    ir_Network,
+    ir_Actor,
+    ir_ExternalActor,
     Scope,
-    ir::Action,
-    ir::AbstractActor,
-    ir::Block,
-    ir::ProcExpression,
-    ir::LambdaExpression,
-    ir::Generator,
-    ir::Namespace,
-    ir::TaggedExpression,
-    ir::Type,
+    ir_Generator,
+    ir_ProcExpression,
+    ir_Action,
+    ir_LambdaExpression,
+    ir_Block,
+    ir_Namespace,
+    ir_TaggedExpression,
+    ir_Type,
     Declaration,
-    ir::TypeDeclarationImport,
-    ir::VariableExternal,
-    ir::TypeConstructor,
-    ir::ForwardDeclaration,
-    ir::TypeDeclaration,
-    ir::VariableImport,
-    ir::Annotation,
-    ir::Node,
+    ir_TypeDeclarationImport,
+    ir_ForwardDeclaration,
+    ir_TypeConstructor,
+    ir_VariableExternal,
+    ir_TypeDeclaration,
+    ir_VariableImport,
+    ir_Annotation,
+    ir_Node,
     Node,
-    ir::PortInstance,
-    ir::Expression,
-    ir::PortAccess,
-    ir::TypeRecord,
-    ir::VariableReference,
-    ir::Connection,
-    ir::Member,
-    ir::Statement,
-    ir::Declaration,
-    ir::Scope,
-    ir::Variable,
-    ir::Port,
-    ir::TypeActor,
+    ir_Declaration,
+    ir_Connection,
+    ir_Expression,
+    ir_Statement,
+    ir_TypeRecord,
+    ir_PortAccess,
+    ir_PortInstance,
+    ir_VariableReference,
+    ir_Member,
+    ir_Scope,
+    ir_Variable,
+    ir_Port,
+    ir_TypeActor,
+    ir_AbstractActor,
 )
 
 # =============================================================================
@@ -102,33 +102,33 @@ from classes import (
 
 
 
-def test_ir::annotationargument_is_not_abstract():
-    assert not inspect.isabstract(ir::AnnotationArgument)
+def test_ir_annotationargument_is_not_abstract():
+    assert not inspect.isabstract(ir_AnnotationArgument)
 
 
-def test_ir::annotationargument_constructor_exists():
-    assert callable(ir::AnnotationArgument.__init__)
+def test_ir_annotationargument_constructor_exists():
+    assert callable(ir_AnnotationArgument.__init__)
 
 
-def test_ir::annotationargument_constructor_args():
-    sig = inspect.signature(ir::AnnotationArgument.__init__)
+def test_ir_annotationargument_constructor_args():
+    sig = inspect.signature(ir_AnnotationArgument.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
     assert "id" in params, "Missing parameter 'id'"
 
-def test_ir::annotationargument_has_value():
-    assert hasattr(ir::AnnotationArgument, "value")
+def test_ir_annotationargument_has_value():
+    assert hasattr(ir_AnnotationArgument, "value")
     descriptor = None
-    for klass in ir::AnnotationArgument.__mro__:
+    for klass in ir_AnnotationArgument.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
     assert isinstance(descriptor, property)
 
-def test_ir::annotationargument_has_id():
-    assert hasattr(ir::AnnotationArgument, "id")
+def test_ir_annotationargument_has_id():
+    assert hasattr(ir_AnnotationArgument, "id")
     descriptor = None
-    for klass in ir::AnnotationArgument.__mro__:
+    for klass in ir_AnnotationArgument.__mro__:
         if "id" in klass.__dict__:
             descriptor = klass.__dict__["id"]
             break
@@ -136,45 +136,45 @@ def test_ir::annotationargument_has_id():
 
 
 
-def test_ir::state_is_not_abstract():
-    assert not inspect.isabstract(ir::State)
+def test_ir_state_is_not_abstract():
+    assert not inspect.isabstract(ir_State)
 
 
-def test_ir::state_constructor_exists():
-    assert callable(ir::State.__init__)
+def test_ir_state_constructor_exists():
+    assert callable(ir_State.__init__)
 
 
-def test_ir::state_constructor_args():
-    sig = inspect.signature(ir::State.__init__)
+def test_ir_state_constructor_args():
+    sig = inspect.signature(ir_State.__init__)
     params = list(sig.parameters.keys())
-    assert "PriorityGraph" in params, "Missing parameter 'PriorityGraph'"
     assert "Action2TargetMap" in params, "Missing parameter 'Action2TargetMap'"
     assert "name" in params, "Missing parameter 'name'"
+    assert "PriorityGraph" in params, "Missing parameter 'PriorityGraph'"
 
-def test_ir::state_has_PriorityGraph():
-    assert hasattr(ir::State, "PriorityGraph")
+def test_ir_state_has_Action2TargetMap():
+    assert hasattr(ir_State, "Action2TargetMap")
     descriptor = None
-    for klass in ir::State.__mro__:
-        if "PriorityGraph" in klass.__dict__:
-            descriptor = klass.__dict__["PriorityGraph"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_ir::state_has_Action2TargetMap():
-    assert hasattr(ir::State, "Action2TargetMap")
-    descriptor = None
-    for klass in ir::State.__mro__:
+    for klass in ir_State.__mro__:
         if "Action2TargetMap" in klass.__dict__:
             descriptor = klass.__dict__["Action2TargetMap"]
             break
     assert isinstance(descriptor, property)
 
-def test_ir::state_has_name():
-    assert hasattr(ir::State, "name")
+def test_ir_state_has_name():
+    assert hasattr(ir_State, "name")
     descriptor = None
-    for klass in ir::State.__mro__:
+    for klass in ir_State.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_ir_state_has_PriorityGraph():
+    assert hasattr(ir_State, "PriorityGraph")
+    descriptor = None
+    for klass in ir_State.__mro__:
+        if "PriorityGraph" in klass.__dict__:
+            descriptor = klass.__dict__["PriorityGraph"]
             break
     assert isinstance(descriptor, property)
 
@@ -194,148 +194,148 @@ def test_type_constructor_args():
 
 
 
-def test_ir::typefloat_is_not_abstract():
-    assert not inspect.isabstract(ir::TypeFloat)
+def test_ir_typestring_is_not_abstract():
+    assert not inspect.isabstract(ir_TypeString)
 
 
-def test_ir::typefloat_constructor_exists():
-    assert callable(ir::TypeFloat.__init__)
+def test_ir_typestring_constructor_exists():
+    assert callable(ir_TypeString.__init__)
 
 
-def test_ir::typefloat_constructor_args():
-    sig = inspect.signature(ir::TypeFloat.__init__)
+def test_ir_typestring_constructor_args():
+    sig = inspect.signature(ir_TypeString.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ir::typeint_is_not_abstract():
-    assert not inspect.isabstract(ir::TypeInt)
+def test_ir_typeexternal_is_not_abstract():
+    assert not inspect.isabstract(ir_TypeExternal)
 
 
-def test_ir::typeint_constructor_exists():
-    assert callable(ir::TypeInt.__init__)
+def test_ir_typeexternal_constructor_exists():
+    assert callable(ir_TypeExternal.__init__)
 
 
-def test_ir::typeint_constructor_args():
-    sig = inspect.signature(ir::TypeInt.__init__)
+def test_ir_typeexternal_constructor_args():
+    sig = inspect.signature(ir_TypeExternal.__init__)
     params = list(sig.parameters.keys())
-
-
-
-def test_ir::typelambda_is_not_abstract():
-    assert not inspect.isabstract(ir::TypeLambda)
-
-
-def test_ir::typelambda_constructor_exists():
-    assert callable(ir::TypeLambda.__init__)
-
-
-def test_ir::typelambda_constructor_args():
-    sig = inspect.signature(ir::TypeLambda.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_ir::typelist_is_not_abstract():
-    assert not inspect.isabstract(ir::TypeList)
-
-
-def test_ir::typelist_constructor_exists():
-    assert callable(ir::TypeList.__init__)
-
-
-def test_ir::typelist_constructor_args():
-    sig = inspect.signature(ir::TypeList.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_ir::typeexternal_is_not_abstract():
-    assert not inspect.isabstract(ir::TypeExternal)
-
-
-def test_ir::typeexternal_constructor_exists():
-    assert callable(ir::TypeExternal.__init__)
-
-
-def test_ir::typeexternal_constructor_args():
-    sig = inspect.signature(ir::TypeExternal.__init__)
-    params = list(sig.parameters.keys())
-    assert "name" in params, "Missing parameter 'name'"
     assert "scopeName" in params, "Missing parameter 'scopeName'"
+    assert "name" in params, "Missing parameter 'name'"
 
-def test_ir::typeexternal_has_name():
-    assert hasattr(ir::TypeExternal, "name")
+def test_ir_typeexternal_has_scopeName():
+    assert hasattr(ir_TypeExternal, "scopeName")
     descriptor = None
-    for klass in ir::TypeExternal.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_ir::typeexternal_has_scopeName():
-    assert hasattr(ir::TypeExternal, "scopeName")
-    descriptor = None
-    for klass in ir::TypeExternal.__mro__:
+    for klass in ir_TypeExternal.__mro__:
         if "scopeName" in klass.__dict__:
             descriptor = klass.__dict__["scopeName"]
             break
     assert isinstance(descriptor, property)
 
+def test_ir_typeexternal_has_name():
+    assert hasattr(ir_TypeExternal, "name")
+    descriptor = None
+    for klass in ir_TypeExternal.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_ir::typeproc_is_not_abstract():
-    assert not inspect.isabstract(ir::TypeProc)
+
+def test_ir_typeint_is_not_abstract():
+    assert not inspect.isabstract(ir_TypeInt)
 
 
-def test_ir::typeproc_constructor_exists():
-    assert callable(ir::TypeProc.__init__)
+def test_ir_typeint_constructor_exists():
+    assert callable(ir_TypeInt.__init__)
 
 
-def test_ir::typeproc_constructor_args():
-    sig = inspect.signature(ir::TypeProc.__init__)
+def test_ir_typeint_constructor_args():
+    sig = inspect.signature(ir_TypeInt.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ir::typeuint_is_not_abstract():
-    assert not inspect.isabstract(ir::TypeUint)
+def test_ir_typelambda_is_not_abstract():
+    assert not inspect.isabstract(ir_TypeLambda)
 
 
-def test_ir::typeuint_constructor_exists():
-    assert callable(ir::TypeUint.__init__)
+def test_ir_typelambda_constructor_exists():
+    assert callable(ir_TypeLambda.__init__)
 
 
-def test_ir::typeuint_constructor_args():
-    sig = inspect.signature(ir::TypeUint.__init__)
+def test_ir_typelambda_constructor_args():
+    sig = inspect.signature(ir_TypeLambda.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ir::typestring_is_not_abstract():
-    assert not inspect.isabstract(ir::TypeString)
+def test_ir_typeproc_is_not_abstract():
+    assert not inspect.isabstract(ir_TypeProc)
 
 
-def test_ir::typestring_constructor_exists():
-    assert callable(ir::TypeString.__init__)
+def test_ir_typeproc_constructor_exists():
+    assert callable(ir_TypeProc.__init__)
 
 
-def test_ir::typestring_constructor_args():
-    sig = inspect.signature(ir::TypeString.__init__)
+def test_ir_typeproc_constructor_args():
+    sig = inspect.signature(ir_TypeProc.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ir::typebool_is_not_abstract():
-    assert not inspect.isabstract(ir::TypeBool)
+def test_ir_typeuint_is_not_abstract():
+    assert not inspect.isabstract(ir_TypeUint)
 
 
-def test_ir::typebool_constructor_exists():
-    assert callable(ir::TypeBool.__init__)
+def test_ir_typeuint_constructor_exists():
+    assert callable(ir_TypeUint.__init__)
 
 
-def test_ir::typebool_constructor_args():
-    sig = inspect.signature(ir::TypeBool.__init__)
+def test_ir_typeuint_constructor_args():
+    sig = inspect.signature(ir_TypeUint.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_ir_typelist_is_not_abstract():
+    assert not inspect.isabstract(ir_TypeList)
+
+
+def test_ir_typelist_constructor_exists():
+    assert callable(ir_TypeList.__init__)
+
+
+def test_ir_typelist_constructor_args():
+    sig = inspect.signature(ir_TypeList.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_ir_typefloat_is_not_abstract():
+    assert not inspect.isabstract(ir_TypeFloat)
+
+
+def test_ir_typefloat_constructor_exists():
+    assert callable(ir_TypeFloat.__init__)
+
+
+def test_ir_typefloat_constructor_args():
+    sig = inspect.signature(ir_TypeFloat.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_ir_typebool_is_not_abstract():
+    assert not inspect.isabstract(ir_TypeBool)
+
+
+def test_ir_typebool_constructor_exists():
+    assert callable(ir_TypeBool.__init__)
+
+
+def test_ir_typebool_constructor_args():
+    sig = inspect.signature(ir_TypeBool.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -354,30 +354,16 @@ def test_lambdaexpression_constructor_args():
 
 
 
-def test_ir::typeuser_is_not_abstract():
-    assert not inspect.isabstract(ir::TypeUser)
+def test_ir_typeuser_is_not_abstract():
+    assert not inspect.isabstract(ir_TypeUser)
 
 
-def test_ir::typeuser_constructor_exists():
-    assert callable(ir::TypeUser.__init__)
+def test_ir_typeuser_constructor_exists():
+    assert callable(ir_TypeUser.__init__)
 
 
-def test_ir::typeuser_constructor_args():
-    sig = inspect.signature(ir::TypeUser.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_ir::typeundef_is_not_abstract():
-    assert not inspect.isabstract(ir::TypeUndef)
-
-
-def test_ir::typeundef_constructor_exists():
-    assert callable(ir::TypeUndef.__init__)
-
-
-def test_ir::typeundef_constructor_args():
-    sig = inspect.signature(ir::TypeUndef.__init__)
+def test_ir_typeuser_constructor_args():
+    sig = inspect.signature(ir_TypeUser.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -396,23 +382,23 @@ def test_portaccess_constructor_args():
 
 
 
-def test_ir::portpeek_is_not_abstract():
-    assert not inspect.isabstract(ir::PortPeek)
+def test_ir_portpeek_is_not_abstract():
+    assert not inspect.isabstract(ir_PortPeek)
 
 
-def test_ir::portpeek_constructor_exists():
-    assert callable(ir::PortPeek.__init__)
+def test_ir_portpeek_constructor_exists():
+    assert callable(ir_PortPeek.__init__)
 
 
-def test_ir::portpeek_constructor_args():
-    sig = inspect.signature(ir::PortPeek.__init__)
+def test_ir_portpeek_constructor_args():
+    sig = inspect.signature(ir_PortPeek.__init__)
     params = list(sig.parameters.keys())
     assert "position" in params, "Missing parameter 'position'"
 
-def test_ir::portpeek_has_position():
-    assert hasattr(ir::PortPeek, "position")
+def test_ir_portpeek_has_position():
+    assert hasattr(ir_PortPeek, "position")
     descriptor = None
-    for klass in ir::PortPeek.__mro__:
+    for klass in ir_PortPeek.__mro__:
         if "position" in klass.__dict__:
             descriptor = klass.__dict__["position"]
             break
@@ -448,86 +434,86 @@ def test_statement_constructor_args():
 
 
 
-def test_ir::whileloop_is_not_abstract():
-    assert not inspect.isabstract(ir::WhileLoop)
+def test_ir_foreach_is_not_abstract():
+    assert not inspect.isabstract(ir_ForEach)
 
 
-def test_ir::whileloop_constructor_exists():
-    assert callable(ir::WhileLoop.__init__)
+def test_ir_foreach_constructor_exists():
+    assert callable(ir_ForEach.__init__)
 
 
-def test_ir::whileloop_constructor_args():
-    sig = inspect.signature(ir::WhileLoop.__init__)
+def test_ir_foreach_constructor_args():
+    sig = inspect.signature(ir_ForEach.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ir::ifstatement_is_not_abstract():
-    assert not inspect.isabstract(ir::IfStatement)
+def test_ir_proccall_is_not_abstract():
+    assert not inspect.isabstract(ir_ProcCall)
 
 
-def test_ir::ifstatement_constructor_exists():
-    assert callable(ir::IfStatement.__init__)
+def test_ir_proccall_constructor_exists():
+    assert callable(ir_ProcCall.__init__)
 
 
-def test_ir::ifstatement_constructor_args():
-    sig = inspect.signature(ir::IfStatement.__init__)
+def test_ir_proccall_constructor_args():
+    sig = inspect.signature(ir_ProcCall.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ir::returnvalue_is_not_abstract():
-    assert not inspect.isabstract(ir::ReturnValue)
+def test_ir_ifstatement_is_not_abstract():
+    assert not inspect.isabstract(ir_IfStatement)
 
 
-def test_ir::returnvalue_constructor_exists():
-    assert callable(ir::ReturnValue.__init__)
+def test_ir_ifstatement_constructor_exists():
+    assert callable(ir_IfStatement.__init__)
 
 
-def test_ir::returnvalue_constructor_args():
-    sig = inspect.signature(ir::ReturnValue.__init__)
+def test_ir_ifstatement_constructor_args():
+    sig = inspect.signature(ir_IfStatement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ir::proccall_is_not_abstract():
-    assert not inspect.isabstract(ir::ProcCall)
+def test_ir_whileloop_is_not_abstract():
+    assert not inspect.isabstract(ir_WhileLoop)
 
 
-def test_ir::proccall_constructor_exists():
-    assert callable(ir::ProcCall.__init__)
+def test_ir_whileloop_constructor_exists():
+    assert callable(ir_WhileLoop.__init__)
 
 
-def test_ir::proccall_constructor_args():
-    sig = inspect.signature(ir::ProcCall.__init__)
+def test_ir_whileloop_constructor_args():
+    sig = inspect.signature(ir_WhileLoop.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ir::foreach_is_not_abstract():
-    assert not inspect.isabstract(ir::ForEach)
+def test_ir_returnvalue_is_not_abstract():
+    assert not inspect.isabstract(ir_ReturnValue)
 
 
-def test_ir::foreach_constructor_exists():
-    assert callable(ir::ForEach.__init__)
+def test_ir_returnvalue_constructor_exists():
+    assert callable(ir_ReturnValue.__init__)
 
 
-def test_ir::foreach_constructor_args():
-    sig = inspect.signature(ir::ForEach.__init__)
+def test_ir_returnvalue_constructor_args():
+    sig = inspect.signature(ir_ReturnValue.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ir::assign_is_not_abstract():
-    assert not inspect.isabstract(ir::Assign)
+def test_ir_assign_is_not_abstract():
+    assert not inspect.isabstract(ir_Assign)
 
 
-def test_ir::assign_constructor_exists():
-    assert callable(ir::Assign.__init__)
+def test_ir_assign_constructor_exists():
+    assert callable(ir_Assign.__init__)
 
 
-def test_ir::assign_constructor_args():
-    sig = inspect.signature(ir::Assign.__init__)
+def test_ir_assign_constructor_args():
+    sig = inspect.signature(ir_Assign.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -546,44 +532,58 @@ def test_connection_constructor_args():
 
 
 
-def test_ir::fromsource_is_not_abstract():
-    assert not inspect.isabstract(ir::FromSource)
+def test_ir_tosink_is_not_abstract():
+    assert not inspect.isabstract(ir_ToSink)
 
 
-def test_ir::fromsource_constructor_exists():
-    assert callable(ir::FromSource.__init__)
+def test_ir_tosink_constructor_exists():
+    assert callable(ir_ToSink.__init__)
 
 
-def test_ir::fromsource_constructor_args():
-    sig = inspect.signature(ir::FromSource.__init__)
+def test_ir_tosink_constructor_args():
+    sig = inspect.signature(ir_ToSink.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ir::tosink_is_not_abstract():
-    assert not inspect.isabstract(ir::ToSink)
+def test_ir_fromsource_is_not_abstract():
+    assert not inspect.isabstract(ir_FromSource)
 
 
-def test_ir::tosink_constructor_exists():
-    assert callable(ir::ToSink.__init__)
+def test_ir_fromsource_constructor_exists():
+    assert callable(ir_FromSource.__init__)
 
 
-def test_ir::tosink_constructor_args():
-    sig = inspect.signature(ir::ToSink.__init__)
+def test_ir_fromsource_constructor_args():
+    sig = inspect.signature(ir_FromSource.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ir::point2pointconnection_is_not_abstract():
-    assert not inspect.isabstract(ir::Point2PointConnection)
+def test_ir_point2pointconnection_is_not_abstract():
+    assert not inspect.isabstract(ir_Point2PointConnection)
 
 
-def test_ir::point2pointconnection_constructor_exists():
-    assert callable(ir::Point2PointConnection.__init__)
+def test_ir_point2pointconnection_constructor_exists():
+    assert callable(ir_Point2PointConnection.__init__)
 
 
-def test_ir::point2pointconnection_constructor_args():
-    sig = inspect.signature(ir::Point2PointConnection.__init__)
+def test_ir_point2pointconnection_constructor_args():
+    sig = inspect.signature(ir_Point2PointConnection.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_ir_typeundef_is_not_abstract():
+    assert not inspect.isabstract(ir_TypeUndef)
+
+
+def test_ir_typeundef_constructor_exists():
+    assert callable(ir_TypeUndef.__init__)
+
+
+def test_ir_typeundef_constructor_args():
+    sig = inspect.signature(ir_TypeUndef.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -602,23 +602,23 @@ def test_literalexpression_constructor_args():
 
 
 
-def test_ir::booleanliteral_is_not_abstract():
-    assert not inspect.isabstract(ir::BooleanLiteral)
+def test_ir_stringliteral_is_not_abstract():
+    assert not inspect.isabstract(ir_StringLiteral)
 
 
-def test_ir::booleanliteral_constructor_exists():
-    assert callable(ir::BooleanLiteral.__init__)
+def test_ir_stringliteral_constructor_exists():
+    assert callable(ir_StringLiteral.__init__)
 
 
-def test_ir::booleanliteral_constructor_args():
-    sig = inspect.signature(ir::BooleanLiteral.__init__)
+def test_ir_stringliteral_constructor_args():
+    sig = inspect.signature(ir_StringLiteral.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
 
-def test_ir::booleanliteral_has_value():
-    assert hasattr(ir::BooleanLiteral, "value")
+def test_ir_stringliteral_has_value():
+    assert hasattr(ir_StringLiteral, "value")
     descriptor = None
-    for klass in ir::BooleanLiteral.__mro__:
+    for klass in ir_StringLiteral.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -626,23 +626,23 @@ def test_ir::booleanliteral_has_value():
 
 
 
-def test_ir::stringliteral_is_not_abstract():
-    assert not inspect.isabstract(ir::StringLiteral)
+def test_ir_booleanliteral_is_not_abstract():
+    assert not inspect.isabstract(ir_BooleanLiteral)
 
 
-def test_ir::stringliteral_constructor_exists():
-    assert callable(ir::StringLiteral.__init__)
+def test_ir_booleanliteral_constructor_exists():
+    assert callable(ir_BooleanLiteral.__init__)
 
 
-def test_ir::stringliteral_constructor_args():
-    sig = inspect.signature(ir::StringLiteral.__init__)
+def test_ir_booleanliteral_constructor_args():
+    sig = inspect.signature(ir_BooleanLiteral.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
 
-def test_ir::stringliteral_has_value():
-    assert hasattr(ir::StringLiteral, "value")
+def test_ir_booleanliteral_has_value():
+    assert hasattr(ir_BooleanLiteral, "value")
     descriptor = None
-    for klass in ir::StringLiteral.__mro__:
+    for klass in ir_BooleanLiteral.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -650,23 +650,23 @@ def test_ir::stringliteral_has_value():
 
 
 
-def test_ir::floatliteral_is_not_abstract():
-    assert not inspect.isabstract(ir::FloatLiteral)
+def test_ir_floatliteral_is_not_abstract():
+    assert not inspect.isabstract(ir_FloatLiteral)
 
 
-def test_ir::floatliteral_constructor_exists():
-    assert callable(ir::FloatLiteral.__init__)
+def test_ir_floatliteral_constructor_exists():
+    assert callable(ir_FloatLiteral.__init__)
 
 
-def test_ir::floatliteral_constructor_args():
-    sig = inspect.signature(ir::FloatLiteral.__init__)
+def test_ir_floatliteral_constructor_args():
+    sig = inspect.signature(ir_FloatLiteral.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
 
-def test_ir::floatliteral_has_value():
-    assert hasattr(ir::FloatLiteral, "value")
+def test_ir_floatliteral_has_value():
+    assert hasattr(ir_FloatLiteral, "value")
     descriptor = None
-    for klass in ir::FloatLiteral.__mro__:
+    for klass in ir_FloatLiteral.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -674,23 +674,23 @@ def test_ir::floatliteral_has_value():
 
 
 
-def test_ir::integerliteral_is_not_abstract():
-    assert not inspect.isabstract(ir::IntegerLiteral)
+def test_ir_integerliteral_is_not_abstract():
+    assert not inspect.isabstract(ir_IntegerLiteral)
 
 
-def test_ir::integerliteral_constructor_exists():
-    assert callable(ir::IntegerLiteral.__init__)
+def test_ir_integerliteral_constructor_exists():
+    assert callable(ir_IntegerLiteral.__init__)
 
 
-def test_ir::integerliteral_constructor_args():
-    sig = inspect.signature(ir::IntegerLiteral.__init__)
+def test_ir_integerliteral_constructor_args():
+    sig = inspect.signature(ir_IntegerLiteral.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
 
-def test_ir::integerliteral_has_value():
-    assert hasattr(ir::IntegerLiteral, "value")
+def test_ir_integerliteral_has_value():
+    assert hasattr(ir_IntegerLiteral, "value")
     descriptor = None
-    for klass in ir::IntegerLiteral.__mro__:
+    for klass in ir_IntegerLiteral.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -712,58 +712,58 @@ def test_expression_constructor_args():
 
 
 
-def test_ir::ifexpression_is_not_abstract():
-    assert not inspect.isabstract(ir::IfExpression)
+def test_ir_listexpression_is_not_abstract():
+    assert not inspect.isabstract(ir_ListExpression)
 
 
-def test_ir::ifexpression_constructor_exists():
-    assert callable(ir::IfExpression.__init__)
+def test_ir_listexpression_constructor_exists():
+    assert callable(ir_ListExpression.__init__)
 
 
-def test_ir::ifexpression_constructor_args():
-    sig = inspect.signature(ir::IfExpression.__init__)
+def test_ir_listexpression_constructor_args():
+    sig = inspect.signature(ir_ListExpression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ir::variableexpression_is_not_abstract():
-    assert not inspect.isabstract(ir::VariableExpression)
+def test_ir_variableexpression_is_not_abstract():
+    assert not inspect.isabstract(ir_VariableExpression)
 
 
-def test_ir::variableexpression_constructor_exists():
-    assert callable(ir::VariableExpression.__init__)
+def test_ir_variableexpression_constructor_exists():
+    assert callable(ir_VariableExpression.__init__)
 
 
-def test_ir::variableexpression_constructor_args():
-    sig = inspect.signature(ir::VariableExpression.__init__)
+def test_ir_variableexpression_constructor_args():
+    sig = inspect.signature(ir_VariableExpression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ir::listexpression_is_not_abstract():
-    assert not inspect.isabstract(ir::ListExpression)
+def test_ir_ifexpression_is_not_abstract():
+    assert not inspect.isabstract(ir_IfExpression)
 
 
-def test_ir::listexpression_constructor_exists():
-    assert callable(ir::ListExpression.__init__)
+def test_ir_ifexpression_constructor_exists():
+    assert callable(ir_IfExpression.__init__)
 
 
-def test_ir::listexpression_constructor_args():
-    sig = inspect.signature(ir::ListExpression.__init__)
+def test_ir_ifexpression_constructor_args():
+    sig = inspect.signature(ir_IfExpression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ir::literalexpression_is_not_abstract():
-    assert not inspect.isabstract(ir::LiteralExpression)
+def test_ir_literalexpression_is_not_abstract():
+    assert not inspect.isabstract(ir_LiteralExpression)
 
 
-def test_ir::literalexpression_constructor_exists():
-    assert callable(ir::LiteralExpression.__init__)
+def test_ir_literalexpression_constructor_exists():
+    assert callable(ir_LiteralExpression.__init__)
 
 
-def test_ir::literalexpression_constructor_args():
-    sig = inspect.signature(ir::LiteralExpression.__init__)
+def test_ir_literalexpression_constructor_args():
+    sig = inspect.signature(ir_LiteralExpression.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -782,23 +782,23 @@ def test_expressioncall_constructor_args():
 
 
 
-def test_ir::typeconstructorcall_is_not_abstract():
-    assert not inspect.isabstract(ir::TypeConstructorCall)
+def test_ir_typeconstructorcall_is_not_abstract():
+    assert not inspect.isabstract(ir_TypeConstructorCall)
 
 
-def test_ir::typeconstructorcall_constructor_exists():
-    assert callable(ir::TypeConstructorCall.__init__)
+def test_ir_typeconstructorcall_constructor_exists():
+    assert callable(ir_TypeConstructorCall.__init__)
 
 
-def test_ir::typeconstructorcall_constructor_args():
-    sig = inspect.signature(ir::TypeConstructorCall.__init__)
+def test_ir_typeconstructorcall_constructor_args():
+    sig = inspect.signature(ir_TypeConstructorCall.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_ir::typeconstructorcall_has_name():
-    assert hasattr(ir::TypeConstructorCall, "name")
+def test_ir_typeconstructorcall_has_name():
+    assert hasattr(ir_TypeConstructorCall, "name")
     descriptor = None
-    for klass in ir::TypeConstructorCall.__mro__:
+    for klass in ir_TypeConstructorCall.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -806,51 +806,51 @@ def test_ir::typeconstructorcall_has_name():
 
 
 
-def test_ir::functioncall_is_not_abstract():
-    assert not inspect.isabstract(ir::FunctionCall)
+def test_ir_functioncall_is_not_abstract():
+    assert not inspect.isabstract(ir_FunctionCall)
 
 
-def test_ir::functioncall_constructor_exists():
-    assert callable(ir::FunctionCall.__init__)
+def test_ir_functioncall_constructor_exists():
+    assert callable(ir_FunctionCall.__init__)
 
 
-def test_ir::functioncall_constructor_args():
-    sig = inspect.signature(ir::FunctionCall.__init__)
+def test_ir_functioncall_constructor_args():
+    sig = inspect.signature(ir_FunctionCall.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ir::expressioncall_is_not_abstract():
-    assert not inspect.isabstract(ir::ExpressionCall)
+def test_ir_expressioncall_is_not_abstract():
+    assert not inspect.isabstract(ir_ExpressionCall)
 
 
-def test_ir::expressioncall_constructor_exists():
-    assert callable(ir::ExpressionCall.__init__)
+def test_ir_expressioncall_constructor_exists():
+    assert callable(ir_ExpressionCall.__init__)
 
 
-def test_ir::expressioncall_constructor_args():
-    sig = inspect.signature(ir::ExpressionCall.__init__)
+def test_ir_expressioncall_constructor_args():
+    sig = inspect.signature(ir_ExpressionCall.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ir::unaryexpression_is_not_abstract():
-    assert not inspect.isabstract(ir::UnaryExpression)
+def test_ir_unaryexpression_is_not_abstract():
+    assert not inspect.isabstract(ir_UnaryExpression)
 
 
-def test_ir::unaryexpression_constructor_exists():
-    assert callable(ir::UnaryExpression.__init__)
+def test_ir_unaryexpression_constructor_exists():
+    assert callable(ir_UnaryExpression.__init__)
 
 
-def test_ir::unaryexpression_constructor_args():
-    sig = inspect.signature(ir::UnaryExpression.__init__)
+def test_ir_unaryexpression_constructor_args():
+    sig = inspect.signature(ir_UnaryExpression.__init__)
     params = list(sig.parameters.keys())
     assert "operator" in params, "Missing parameter 'operator'"
 
-def test_ir::unaryexpression_has_operator():
-    assert hasattr(ir::UnaryExpression, "operator")
+def test_ir_unaryexpression_has_operator():
+    assert hasattr(ir_UnaryExpression, "operator")
     descriptor = None
-    for klass in ir::UnaryExpression.__mro__:
+    for klass in ir_UnaryExpression.__mro__:
         if "operator" in klass.__dict__:
             descriptor = klass.__dict__["operator"]
             break
@@ -858,23 +858,23 @@ def test_ir::unaryexpression_has_operator():
 
 
 
-def test_ir::binaryexpression_is_not_abstract():
-    assert not inspect.isabstract(ir::BinaryExpression)
+def test_ir_binaryexpression_is_not_abstract():
+    assert not inspect.isabstract(ir_BinaryExpression)
 
 
-def test_ir::binaryexpression_constructor_exists():
-    assert callable(ir::BinaryExpression.__init__)
+def test_ir_binaryexpression_constructor_exists():
+    assert callable(ir_BinaryExpression.__init__)
 
 
-def test_ir::binaryexpression_constructor_args():
-    sig = inspect.signature(ir::BinaryExpression.__init__)
+def test_ir_binaryexpression_constructor_args():
+    sig = inspect.signature(ir_BinaryExpression.__init__)
     params = list(sig.parameters.keys())
     assert "operator" in params, "Missing parameter 'operator'"
 
-def test_ir::binaryexpression_has_operator():
-    assert hasattr(ir::BinaryExpression, "operator")
+def test_ir_binaryexpression_has_operator():
+    assert hasattr(ir_BinaryExpression, "operator")
     descriptor = None
-    for klass in ir::BinaryExpression.__mro__:
+    for klass in ir_BinaryExpression.__mro__:
         if "operator" in klass.__dict__:
             descriptor = klass.__dict__["operator"]
             break
@@ -896,79 +896,79 @@ def test_variable_constructor_args():
 
 
 
-def test_ir::portread_is_not_abstract():
-    assert not inspect.isabstract(ir::PortRead)
+def test_ir_portread_is_not_abstract():
+    assert not inspect.isabstract(ir_PortRead)
 
 
-def test_ir::portread_constructor_exists():
-    assert callable(ir::PortRead.__init__)
+def test_ir_portread_constructor_exists():
+    assert callable(ir_PortRead.__init__)
 
 
-def test_ir::portread_constructor_args():
-    sig = inspect.signature(ir::PortRead.__init__)
+def test_ir_portread_constructor_args():
+    sig = inspect.signature(ir_PortRead.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ir::portwrite_is_not_abstract():
-    assert not inspect.isabstract(ir::PortWrite)
+def test_ir_portwrite_is_not_abstract():
+    assert not inspect.isabstract(ir_PortWrite)
 
 
-def test_ir::portwrite_constructor_exists():
-    assert callable(ir::PortWrite.__init__)
+def test_ir_portwrite_constructor_exists():
+    assert callable(ir_PortWrite.__init__)
 
 
-def test_ir::portwrite_constructor_args():
-    sig = inspect.signature(ir::PortWrite.__init__)
+def test_ir_portwrite_constructor_args():
+    sig = inspect.signature(ir_PortWrite.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ir::guard_is_not_abstract():
-    assert not inspect.isabstract(ir::Guard)
+def test_ir_guard_is_not_abstract():
+    assert not inspect.isabstract(ir_Guard)
 
 
-def test_ir::guard_constructor_exists():
-    assert callable(ir::Guard.__init__)
+def test_ir_guard_constructor_exists():
+    assert callable(ir_Guard.__init__)
 
 
-def test_ir::guard_constructor_args():
-    sig = inspect.signature(ir::Guard.__init__)
+def test_ir_guard_constructor_args():
+    sig = inspect.signature(ir_Guard.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ir::actorinstance_is_not_abstract():
-    assert not inspect.isabstract(ir::ActorInstance)
+def test_ir_actorinstance_is_not_abstract():
+    assert not inspect.isabstract(ir_ActorInstance)
 
 
-def test_ir::actorinstance_constructor_exists():
-    assert callable(ir::ActorInstance.__init__)
+def test_ir_actorinstance_constructor_exists():
+    assert callable(ir_ActorInstance.__init__)
 
 
-def test_ir::actorinstance_constructor_args():
-    sig = inspect.signature(ir::ActorInstance.__init__)
+def test_ir_actorinstance_constructor_args():
+    sig = inspect.signature(ir_ActorInstance.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ir::schedule_is_not_abstract():
-    assert not inspect.isabstract(ir::Schedule)
+def test_ir_schedule_is_not_abstract():
+    assert not inspect.isabstract(ir_Schedule)
 
 
-def test_ir::schedule_constructor_exists():
-    assert callable(ir::Schedule.__init__)
+def test_ir_schedule_constructor_exists():
+    assert callable(ir_Schedule.__init__)
 
 
-def test_ir::schedule_constructor_args():
-    sig = inspect.signature(ir::Schedule.__init__)
+def test_ir_schedule_constructor_args():
+    sig = inspect.signature(ir_Schedule.__init__)
     params = list(sig.parameters.keys())
     assert "PriorityGraph" in params, "Missing parameter 'PriorityGraph'"
 
-def test_ir::schedule_has_PriorityGraph():
-    assert hasattr(ir::Schedule, "PriorityGraph")
+def test_ir_schedule_has_PriorityGraph():
+    assert hasattr(ir_Schedule, "PriorityGraph")
     descriptor = None
-    for klass in ir::Schedule.__mro__:
+    for klass in ir_Schedule.__mro__:
         if "PriorityGraph" in klass.__dict__:
             descriptor = klass.__dict__["PriorityGraph"]
             break
@@ -990,44 +990,44 @@ def test_abstractactor_constructor_args():
 
 
 
-def test_ir::actor_is_not_abstract():
-    assert not inspect.isabstract(ir::Actor)
+def test_ir_network_is_not_abstract():
+    assert not inspect.isabstract(ir_Network)
 
 
-def test_ir::actor_constructor_exists():
-    assert callable(ir::Actor.__init__)
+def test_ir_network_constructor_exists():
+    assert callable(ir_Network.__init__)
 
 
-def test_ir::actor_constructor_args():
-    sig = inspect.signature(ir::Actor.__init__)
+def test_ir_network_constructor_args():
+    sig = inspect.signature(ir_Network.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ir::network_is_not_abstract():
-    assert not inspect.isabstract(ir::Network)
+def test_ir_actor_is_not_abstract():
+    assert not inspect.isabstract(ir_Actor)
 
 
-def test_ir::network_constructor_exists():
-    assert callable(ir::Network.__init__)
+def test_ir_actor_constructor_exists():
+    assert callable(ir_Actor.__init__)
 
 
-def test_ir::network_constructor_args():
-    sig = inspect.signature(ir::Network.__init__)
+def test_ir_actor_constructor_args():
+    sig = inspect.signature(ir_Actor.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ir::externalactor_is_not_abstract():
-    assert not inspect.isabstract(ir::ExternalActor)
+def test_ir_externalactor_is_not_abstract():
+    assert not inspect.isabstract(ir_ExternalActor)
 
 
-def test_ir::externalactor_constructor_exists():
-    assert callable(ir::ExternalActor.__init__)
+def test_ir_externalactor_constructor_exists():
+    assert callable(ir_ExternalActor.__init__)
 
 
-def test_ir::externalactor_constructor_args():
-    sig = inspect.signature(ir::ExternalActor.__init__)
+def test_ir_externalactor_constructor_args():
+    sig = inspect.signature(ir_ExternalActor.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1046,23 +1046,51 @@ def test_scope_constructor_args():
 
 
 
-def test_ir::action_is_not_abstract():
-    assert not inspect.isabstract(ir::Action)
+def test_ir_generator_is_not_abstract():
+    assert not inspect.isabstract(ir_Generator)
 
 
-def test_ir::action_constructor_exists():
-    assert callable(ir::Action.__init__)
+def test_ir_generator_constructor_exists():
+    assert callable(ir_Generator.__init__)
 
 
-def test_ir::action_constructor_args():
-    sig = inspect.signature(ir::Action.__init__)
+def test_ir_generator_constructor_args():
+    sig = inspect.signature(ir_Generator.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_ir_procexpression_is_not_abstract():
+    assert not inspect.isabstract(ir_ProcExpression)
+
+
+def test_ir_procexpression_constructor_exists():
+    assert callable(ir_ProcExpression.__init__)
+
+
+def test_ir_procexpression_constructor_args():
+    sig = inspect.signature(ir_ProcExpression.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_ir_action_is_not_abstract():
+    assert not inspect.isabstract(ir_Action)
+
+
+def test_ir_action_constructor_exists():
+    assert callable(ir_Action.__init__)
+
+
+def test_ir_action_constructor_args():
+    sig = inspect.signature(ir_Action.__init__)
     params = list(sig.parameters.keys())
     assert "tag" in params, "Missing parameter 'tag'"
 
-def test_ir::action_has_tag():
-    assert hasattr(ir::Action, "tag")
+def test_ir_action_has_tag():
+    assert hasattr(ir_Action, "tag")
     descriptor = None
-    for klass in ir::Action.__mro__:
+    for klass in ir_Action.__mro__:
         if "tag" in klass.__dict__:
             descriptor = klass.__dict__["tag"]
             break
@@ -1070,93 +1098,51 @@ def test_ir::action_has_tag():
 
 
 
-def test_ir::abstractactor_is_not_abstract():
-    assert not inspect.isabstract(ir::AbstractActor)
+def test_ir_lambdaexpression_is_not_abstract():
+    assert not inspect.isabstract(ir_LambdaExpression)
 
 
-def test_ir::abstractactor_constructor_exists():
-    assert callable(ir::AbstractActor.__init__)
+def test_ir_lambdaexpression_constructor_exists():
+    assert callable(ir_LambdaExpression.__init__)
 
 
-def test_ir::abstractactor_constructor_args():
-    sig = inspect.signature(ir::AbstractActor.__init__)
+def test_ir_lambdaexpression_constructor_args():
+    sig = inspect.signature(ir_LambdaExpression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ir::block_is_not_abstract():
-    assert not inspect.isabstract(ir::Block)
+def test_ir_block_is_not_abstract():
+    assert not inspect.isabstract(ir_Block)
 
 
-def test_ir::block_constructor_exists():
-    assert callable(ir::Block.__init__)
+def test_ir_block_constructor_exists():
+    assert callable(ir_Block.__init__)
 
 
-def test_ir::block_constructor_args():
-    sig = inspect.signature(ir::Block.__init__)
+def test_ir_block_constructor_args():
+    sig = inspect.signature(ir_Block.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ir::procexpression_is_not_abstract():
-    assert not inspect.isabstract(ir::ProcExpression)
+def test_ir_namespace_is_not_abstract():
+    assert not inspect.isabstract(ir_Namespace)
 
 
-def test_ir::procexpression_constructor_exists():
-    assert callable(ir::ProcExpression.__init__)
+def test_ir_namespace_constructor_exists():
+    assert callable(ir_Namespace.__init__)
 
 
-def test_ir::procexpression_constructor_args():
-    sig = inspect.signature(ir::ProcExpression.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_ir::lambdaexpression_is_not_abstract():
-    assert not inspect.isabstract(ir::LambdaExpression)
-
-
-def test_ir::lambdaexpression_constructor_exists():
-    assert callable(ir::LambdaExpression.__init__)
-
-
-def test_ir::lambdaexpression_constructor_args():
-    sig = inspect.signature(ir::LambdaExpression.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_ir::generator_is_not_abstract():
-    assert not inspect.isabstract(ir::Generator)
-
-
-def test_ir::generator_constructor_exists():
-    assert callable(ir::Generator.__init__)
-
-
-def test_ir::generator_constructor_args():
-    sig = inspect.signature(ir::Generator.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_ir::namespace_is_not_abstract():
-    assert not inspect.isabstract(ir::Namespace)
-
-
-def test_ir::namespace_constructor_exists():
-    assert callable(ir::Namespace.__init__)
-
-
-def test_ir::namespace_constructor_args():
-    sig = inspect.signature(ir::Namespace.__init__)
+def test_ir_namespace_constructor_args():
+    sig = inspect.signature(ir_Namespace.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_ir::namespace_has_name():
-    assert hasattr(ir::Namespace, "name")
+def test_ir_namespace_has_name():
+    assert hasattr(ir_Namespace, "name")
     descriptor = None
-    for klass in ir::Namespace.__mro__:
+    for klass in ir_Namespace.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -1164,23 +1150,23 @@ def test_ir::namespace_has_name():
 
 
 
-def test_ir::taggedexpression_is_not_abstract():
-    assert not inspect.isabstract(ir::TaggedExpression)
+def test_ir_taggedexpression_is_not_abstract():
+    assert not inspect.isabstract(ir_TaggedExpression)
 
 
-def test_ir::taggedexpression_constructor_exists():
-    assert callable(ir::TaggedExpression.__init__)
+def test_ir_taggedexpression_constructor_exists():
+    assert callable(ir_TaggedExpression.__init__)
 
 
-def test_ir::taggedexpression_constructor_args():
-    sig = inspect.signature(ir::TaggedExpression.__init__)
+def test_ir_taggedexpression_constructor_args():
+    sig = inspect.signature(ir_TaggedExpression.__init__)
     params = list(sig.parameters.keys())
     assert "tag" in params, "Missing parameter 'tag'"
 
-def test_ir::taggedexpression_has_tag():
-    assert hasattr(ir::TaggedExpression, "tag")
+def test_ir_taggedexpression_has_tag():
+    assert hasattr(ir_TaggedExpression, "tag")
     descriptor = None
-    for klass in ir::TaggedExpression.__mro__:
+    for klass in ir_TaggedExpression.__mro__:
         if "tag" in klass.__dict__:
             descriptor = klass.__dict__["tag"]
             break
@@ -1188,16 +1174,16 @@ def test_ir::taggedexpression_has_tag():
 
 
 
-def test_ir::type_is_not_abstract():
-    assert not inspect.isabstract(ir::Type)
+def test_ir_type_is_not_abstract():
+    assert not inspect.isabstract(ir_Type)
 
 
-def test_ir::type_constructor_exists():
-    assert callable(ir::Type.__init__)
+def test_ir_type_constructor_exists():
+    assert callable(ir_Type.__init__)
 
 
-def test_ir::type_constructor_args():
-    sig = inspect.signature(ir::Type.__init__)
+def test_ir_type_constructor_args():
+    sig = inspect.signature(ir_Type.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1216,23 +1202,23 @@ def test_declaration_constructor_args():
 
 
 
-def test_ir::typedeclarationimport_is_not_abstract():
-    assert not inspect.isabstract(ir::TypeDeclarationImport)
+def test_ir_typedeclarationimport_is_not_abstract():
+    assert not inspect.isabstract(ir_TypeDeclarationImport)
 
 
-def test_ir::typedeclarationimport_constructor_exists():
-    assert callable(ir::TypeDeclarationImport.__init__)
+def test_ir_typedeclarationimport_constructor_exists():
+    assert callable(ir_TypeDeclarationImport.__init__)
 
 
-def test_ir::typedeclarationimport_constructor_args():
-    sig = inspect.signature(ir::TypeDeclarationImport.__init__)
+def test_ir_typedeclarationimport_constructor_args():
+    sig = inspect.signature(ir_TypeDeclarationImport.__init__)
     params = list(sig.parameters.keys())
     assert "namespace" in params, "Missing parameter 'namespace'"
 
-def test_ir::typedeclarationimport_has_namespace():
-    assert hasattr(ir::TypeDeclarationImport, "namespace")
+def test_ir_typedeclarationimport_has_namespace():
+    assert hasattr(ir_TypeDeclarationImport, "namespace")
     descriptor = None
-    for klass in ir::TypeDeclarationImport.__mro__:
+    for klass in ir_TypeDeclarationImport.__mro__:
         if "namespace" in klass.__dict__:
             descriptor = klass.__dict__["namespace"]
             break
@@ -1240,79 +1226,79 @@ def test_ir::typedeclarationimport_has_namespace():
 
 
 
-def test_ir::variableexternal_is_not_abstract():
-    assert not inspect.isabstract(ir::VariableExternal)
+def test_ir_forwarddeclaration_is_not_abstract():
+    assert not inspect.isabstract(ir_ForwardDeclaration)
 
 
-def test_ir::variableexternal_constructor_exists():
-    assert callable(ir::VariableExternal.__init__)
+def test_ir_forwarddeclaration_constructor_exists():
+    assert callable(ir_ForwardDeclaration.__init__)
 
 
-def test_ir::variableexternal_constructor_args():
-    sig = inspect.signature(ir::VariableExternal.__init__)
+def test_ir_forwarddeclaration_constructor_args():
+    sig = inspect.signature(ir_ForwardDeclaration.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ir::typeconstructor_is_not_abstract():
-    assert not inspect.isabstract(ir::TypeConstructor)
+def test_ir_typeconstructor_is_not_abstract():
+    assert not inspect.isabstract(ir_TypeConstructor)
 
 
-def test_ir::typeconstructor_constructor_exists():
-    assert callable(ir::TypeConstructor.__init__)
+def test_ir_typeconstructor_constructor_exists():
+    assert callable(ir_TypeConstructor.__init__)
 
 
-def test_ir::typeconstructor_constructor_args():
-    sig = inspect.signature(ir::TypeConstructor.__init__)
+def test_ir_typeconstructor_constructor_args():
+    sig = inspect.signature(ir_TypeConstructor.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ir::forwarddeclaration_is_not_abstract():
-    assert not inspect.isabstract(ir::ForwardDeclaration)
+def test_ir_variableexternal_is_not_abstract():
+    assert not inspect.isabstract(ir_VariableExternal)
 
 
-def test_ir::forwarddeclaration_constructor_exists():
-    assert callable(ir::ForwardDeclaration.__init__)
+def test_ir_variableexternal_constructor_exists():
+    assert callable(ir_VariableExternal.__init__)
 
 
-def test_ir::forwarddeclaration_constructor_args():
-    sig = inspect.signature(ir::ForwardDeclaration.__init__)
+def test_ir_variableexternal_constructor_args():
+    sig = inspect.signature(ir_VariableExternal.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ir::typedeclaration_is_not_abstract():
-    assert not inspect.isabstract(ir::TypeDeclaration)
+def test_ir_typedeclaration_is_not_abstract():
+    assert not inspect.isabstract(ir_TypeDeclaration)
 
 
-def test_ir::typedeclaration_constructor_exists():
-    assert callable(ir::TypeDeclaration.__init__)
+def test_ir_typedeclaration_constructor_exists():
+    assert callable(ir_TypeDeclaration.__init__)
 
 
-def test_ir::typedeclaration_constructor_args():
-    sig = inspect.signature(ir::TypeDeclaration.__init__)
+def test_ir_typedeclaration_constructor_args():
+    sig = inspect.signature(ir_TypeDeclaration.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ir::variableimport_is_not_abstract():
-    assert not inspect.isabstract(ir::VariableImport)
+def test_ir_variableimport_is_not_abstract():
+    assert not inspect.isabstract(ir_VariableImport)
 
 
-def test_ir::variableimport_constructor_exists():
-    assert callable(ir::VariableImport.__init__)
+def test_ir_variableimport_constructor_exists():
+    assert callable(ir_VariableImport.__init__)
 
 
-def test_ir::variableimport_constructor_args():
-    sig = inspect.signature(ir::VariableImport.__init__)
+def test_ir_variableimport_constructor_args():
+    sig = inspect.signature(ir_VariableImport.__init__)
     params = list(sig.parameters.keys())
     assert "namespace" in params, "Missing parameter 'namespace'"
 
-def test_ir::variableimport_has_namespace():
-    assert hasattr(ir::VariableImport, "namespace")
+def test_ir_variableimport_has_namespace():
+    assert hasattr(ir_VariableImport, "namespace")
     descriptor = None
-    for klass in ir::VariableImport.__mro__:
+    for klass in ir_VariableImport.__mro__:
         if "namespace" in klass.__dict__:
             descriptor = klass.__dict__["namespace"]
             break
@@ -1320,23 +1306,23 @@ def test_ir::variableimport_has_namespace():
 
 
 
-def test_ir::annotation_is_not_abstract():
-    assert not inspect.isabstract(ir::Annotation)
+def test_ir_annotation_is_not_abstract():
+    assert not inspect.isabstract(ir_Annotation)
 
 
-def test_ir::annotation_constructor_exists():
-    assert callable(ir::Annotation.__init__)
+def test_ir_annotation_constructor_exists():
+    assert callable(ir_Annotation.__init__)
 
 
-def test_ir::annotation_constructor_args():
-    sig = inspect.signature(ir::Annotation.__init__)
+def test_ir_annotation_constructor_args():
+    sig = inspect.signature(ir_Annotation.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_ir::annotation_has_name():
-    assert hasattr(ir::Annotation, "name")
+def test_ir_annotation_has_name():
+    assert hasattr(ir_Annotation, "name")
     descriptor = None
-    for klass in ir::Annotation.__mro__:
+    for klass in ir_Annotation.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -1344,23 +1330,23 @@ def test_ir::annotation_has_name():
 
 
 
-def test_ir::node_is_not_abstract():
-    assert not inspect.isabstract(ir::Node)
+def test_ir_node_is_not_abstract():
+    assert not inspect.isabstract(ir_Node)
 
 
-def test_ir::node_constructor_exists():
-    assert callable(ir::Node.__init__)
+def test_ir_node_constructor_exists():
+    assert callable(ir_Node.__init__)
 
 
-def test_ir::node_constructor_args():
-    sig = inspect.signature(ir::Node.__init__)
+def test_ir_node_constructor_args():
+    sig = inspect.signature(ir_Node.__init__)
     params = list(sig.parameters.keys())
     assert "id" in params, "Missing parameter 'id'"
 
-def test_ir::node_has_id():
-    assert hasattr(ir::Node, "id")
+def test_ir_node_has_id():
+    assert hasattr(ir_Node, "id")
     descriptor = None
-    for klass in ir::Node.__mro__:
+    for klass in ir_Node.__mro__:
         if "id" in klass.__dict__:
             descriptor = klass.__dict__["id"]
             break
@@ -1382,23 +1368,23 @@ def test_node_constructor_args():
 
 
 
-def test_ir::portinstance_is_not_abstract():
-    assert not inspect.isabstract(ir::PortInstance)
+def test_ir_declaration_is_not_abstract():
+    assert not inspect.isabstract(ir_Declaration)
 
 
-def test_ir::portinstance_constructor_exists():
-    assert callable(ir::PortInstance.__init__)
+def test_ir_declaration_constructor_exists():
+    assert callable(ir_Declaration.__init__)
 
 
-def test_ir::portinstance_constructor_args():
-    sig = inspect.signature(ir::PortInstance.__init__)
+def test_ir_declaration_constructor_args():
+    sig = inspect.signature(ir_Declaration.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_ir::portinstance_has_name():
-    assert hasattr(ir::PortInstance, "name")
+def test_ir_declaration_has_name():
+    assert hasattr(ir_Declaration, "name")
     descriptor = None
-    for klass in ir::PortInstance.__mro__:
+    for klass in ir_Declaration.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -1406,93 +1392,93 @@ def test_ir::portinstance_has_name():
 
 
 
-def test_ir::expression_is_not_abstract():
-    assert not inspect.isabstract(ir::Expression)
+def test_ir_connection_is_not_abstract():
+    assert not inspect.isabstract(ir_Connection)
 
 
-def test_ir::expression_constructor_exists():
-    assert callable(ir::Expression.__init__)
+def test_ir_connection_constructor_exists():
+    assert callable(ir_Connection.__init__)
 
 
-def test_ir::expression_constructor_args():
-    sig = inspect.signature(ir::Expression.__init__)
+def test_ir_connection_constructor_args():
+    sig = inspect.signature(ir_Connection.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ir::portaccess_is_not_abstract():
-    assert not inspect.isabstract(ir::PortAccess)
+def test_ir_expression_is_not_abstract():
+    assert not inspect.isabstract(ir_Expression)
 
 
-def test_ir::portaccess_constructor_exists():
-    assert callable(ir::PortAccess.__init__)
+def test_ir_expression_constructor_exists():
+    assert callable(ir_Expression.__init__)
 
 
-def test_ir::portaccess_constructor_args():
-    sig = inspect.signature(ir::PortAccess.__init__)
+def test_ir_expression_constructor_args():
+    sig = inspect.signature(ir_Expression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ir::typerecord_is_not_abstract():
-    assert not inspect.isabstract(ir::TypeRecord)
+def test_ir_statement_is_not_abstract():
+    assert not inspect.isabstract(ir_Statement)
 
 
-def test_ir::typerecord_constructor_exists():
-    assert callable(ir::TypeRecord.__init__)
+def test_ir_statement_constructor_exists():
+    assert callable(ir_Statement.__init__)
 
 
-def test_ir::typerecord_constructor_args():
-    sig = inspect.signature(ir::TypeRecord.__init__)
+def test_ir_statement_constructor_args():
+    sig = inspect.signature(ir_Statement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ir::variablereference_is_not_abstract():
-    assert not inspect.isabstract(ir::VariableReference)
+def test_ir_typerecord_is_not_abstract():
+    assert not inspect.isabstract(ir_TypeRecord)
 
 
-def test_ir::variablereference_constructor_exists():
-    assert callable(ir::VariableReference.__init__)
+def test_ir_typerecord_constructor_exists():
+    assert callable(ir_TypeRecord.__init__)
 
 
-def test_ir::variablereference_constructor_args():
-    sig = inspect.signature(ir::VariableReference.__init__)
+def test_ir_typerecord_constructor_args():
+    sig = inspect.signature(ir_TypeRecord.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ir::connection_is_not_abstract():
-    assert not inspect.isabstract(ir::Connection)
+def test_ir_portaccess_is_not_abstract():
+    assert not inspect.isabstract(ir_PortAccess)
 
 
-def test_ir::connection_constructor_exists():
-    assert callable(ir::Connection.__init__)
+def test_ir_portaccess_constructor_exists():
+    assert callable(ir_PortAccess.__init__)
 
 
-def test_ir::connection_constructor_args():
-    sig = inspect.signature(ir::Connection.__init__)
+def test_ir_portaccess_constructor_args():
+    sig = inspect.signature(ir_PortAccess.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ir::member_is_not_abstract():
-    assert not inspect.isabstract(ir::Member)
+def test_ir_portinstance_is_not_abstract():
+    assert not inspect.isabstract(ir_PortInstance)
 
 
-def test_ir::member_constructor_exists():
-    assert callable(ir::Member.__init__)
+def test_ir_portinstance_constructor_exists():
+    assert callable(ir_PortInstance.__init__)
 
 
-def test_ir::member_constructor_args():
-    sig = inspect.signature(ir::Member.__init__)
+def test_ir_portinstance_constructor_args():
+    sig = inspect.signature(ir_PortInstance.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_ir::member_has_name():
-    assert hasattr(ir::Member, "name")
+def test_ir_portinstance_has_name():
+    assert hasattr(ir_PortInstance, "name")
     descriptor = None
-    for klass in ir::Member.__mro__:
+    for klass in ir_PortInstance.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -1500,37 +1486,37 @@ def test_ir::member_has_name():
 
 
 
-def test_ir::statement_is_not_abstract():
-    assert not inspect.isabstract(ir::Statement)
+def test_ir_variablereference_is_not_abstract():
+    assert not inspect.isabstract(ir_VariableReference)
 
 
-def test_ir::statement_constructor_exists():
-    assert callable(ir::Statement.__init__)
+def test_ir_variablereference_constructor_exists():
+    assert callable(ir_VariableReference.__init__)
 
 
-def test_ir::statement_constructor_args():
-    sig = inspect.signature(ir::Statement.__init__)
+def test_ir_variablereference_constructor_args():
+    sig = inspect.signature(ir_VariableReference.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ir::declaration_is_not_abstract():
-    assert not inspect.isabstract(ir::Declaration)
+def test_ir_member_is_not_abstract():
+    assert not inspect.isabstract(ir_Member)
 
 
-def test_ir::declaration_constructor_exists():
-    assert callable(ir::Declaration.__init__)
+def test_ir_member_constructor_exists():
+    assert callable(ir_Member.__init__)
 
 
-def test_ir::declaration_constructor_args():
-    sig = inspect.signature(ir::Declaration.__init__)
+def test_ir_member_constructor_args():
+    sig = inspect.signature(ir_Member.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_ir::declaration_has_name():
-    assert hasattr(ir::Declaration, "name")
+def test_ir_member_has_name():
+    assert hasattr(ir_Member, "name")
     descriptor = None
-    for klass in ir::Declaration.__mro__:
+    for klass in ir_Member.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -1538,47 +1524,47 @@ def test_ir::declaration_has_name():
 
 
 
-def test_ir::scope_is_not_abstract():
-    assert not inspect.isabstract(ir::Scope)
+def test_ir_scope_is_not_abstract():
+    assert not inspect.isabstract(ir_Scope)
 
 
-def test_ir::scope_constructor_exists():
-    assert callable(ir::Scope.__init__)
+def test_ir_scope_constructor_exists():
+    assert callable(ir_Scope.__init__)
 
 
-def test_ir::scope_constructor_args():
-    sig = inspect.signature(ir::Scope.__init__)
+def test_ir_scope_constructor_args():
+    sig = inspect.signature(ir_Scope.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ir::variable_is_not_abstract():
-    assert not inspect.isabstract(ir::Variable)
+def test_ir_variable_is_not_abstract():
+    assert not inspect.isabstract(ir_Variable)
 
 
-def test_ir::variable_constructor_exists():
-    assert callable(ir::Variable.__init__)
+def test_ir_variable_constructor_exists():
+    assert callable(ir_Variable.__init__)
 
 
-def test_ir::variable_constructor_args():
-    sig = inspect.signature(ir::Variable.__init__)
+def test_ir_variable_constructor_args():
+    sig = inspect.signature(ir_Variable.__init__)
     params = list(sig.parameters.keys())
     assert "constant" in params, "Missing parameter 'constant'"
     assert "parameter" in params, "Missing parameter 'parameter'"
 
-def test_ir::variable_has_constant():
-    assert hasattr(ir::Variable, "constant")
+def test_ir_variable_has_constant():
+    assert hasattr(ir_Variable, "constant")
     descriptor = None
-    for klass in ir::Variable.__mro__:
+    for klass in ir_Variable.__mro__:
         if "constant" in klass.__dict__:
             descriptor = klass.__dict__["constant"]
             break
     assert isinstance(descriptor, property)
 
-def test_ir::variable_has_parameter():
-    assert hasattr(ir::Variable, "parameter")
+def test_ir_variable_has_parameter():
+    assert hasattr(ir_Variable, "parameter")
     descriptor = None
-    for klass in ir::Variable.__mro__:
+    for klass in ir_Variable.__mro__:
         if "parameter" in klass.__dict__:
             descriptor = klass.__dict__["parameter"]
             break
@@ -1586,23 +1572,23 @@ def test_ir::variable_has_parameter():
 
 
 
-def test_ir::port_is_not_abstract():
-    assert not inspect.isabstract(ir::Port)
+def test_ir_port_is_not_abstract():
+    assert not inspect.isabstract(ir_Port)
 
 
-def test_ir::port_constructor_exists():
-    assert callable(ir::Port.__init__)
+def test_ir_port_constructor_exists():
+    assert callable(ir_Port.__init__)
 
 
-def test_ir::port_constructor_args():
-    sig = inspect.signature(ir::Port.__init__)
+def test_ir_port_constructor_args():
+    sig = inspect.signature(ir_Port.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_ir::port_has_name():
-    assert hasattr(ir::Port, "name")
+def test_ir_port_has_name():
+    assert hasattr(ir_Port, "name")
     descriptor = None
-    for klass in ir::Port.__mro__:
+    for klass in ir_Port.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -1610,37 +1596,51 @@ def test_ir::port_has_name():
 
 
 
-def test_ir::typeactor_is_not_abstract():
-    assert not inspect.isabstract(ir::TypeActor)
+def test_ir_typeactor_is_not_abstract():
+    assert not inspect.isabstract(ir_TypeActor)
 
 
-def test_ir::typeactor_constructor_exists():
-    assert callable(ir::TypeActor.__init__)
+def test_ir_typeactor_constructor_exists():
+    assert callable(ir_TypeActor.__init__)
 
 
-def test_ir::typeactor_constructor_args():
-    sig = inspect.signature(ir::TypeActor.__init__)
+def test_ir_typeactor_constructor_args():
+    sig = inspect.signature(ir_TypeActor.__init__)
     params = list(sig.parameters.keys())
-    assert "namespace" in params, "Missing parameter 'namespace'"
     assert "name" in params, "Missing parameter 'name'"
+    assert "namespace" in params, "Missing parameter 'namespace'"
 
-def test_ir::typeactor_has_namespace():
-    assert hasattr(ir::TypeActor, "namespace")
+def test_ir_typeactor_has_name():
+    assert hasattr(ir_TypeActor, "name")
     descriptor = None
-    for klass in ir::TypeActor.__mro__:
+    for klass in ir_TypeActor.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_ir_typeactor_has_namespace():
+    assert hasattr(ir_TypeActor, "namespace")
+    descriptor = None
+    for klass in ir_TypeActor.__mro__:
         if "namespace" in klass.__dict__:
             descriptor = klass.__dict__["namespace"]
             break
     assert isinstance(descriptor, property)
 
-def test_ir::typeactor_has_name():
-    assert hasattr(ir::TypeActor, "name")
-    descriptor = None
-    for klass in ir::TypeActor.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
+
+
+def test_ir_abstractactor_is_not_abstract():
+    assert not inspect.isabstract(ir_AbstractActor)
+
+
+def test_ir_abstractactor_constructor_exists():
+    assert callable(ir_AbstractActor.__init__)
+
+
+def test_ir_abstractactor_constructor_args():
+    sig = inspect.signature(ir_AbstractActor.__init__)
+    params = list(sig.parameters.keys())
 
 
 # =============================================================================
@@ -1654,70 +1654,67 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-ir::AnnotationArgument_strategy = st.builds(
-    ir::AnnotationArgument,
+ir_AnnotationArgument_strategy = st.builds(
+    ir_AnnotationArgument,
     value=
         safe_text,
     id=
         safe_text
 )
-ir::State_strategy = st.builds(
-    ir::State,
-    PriorityGraph=
-        safe_text,
+ir_State_strategy = st.builds(
+    ir_State,
     Action2TargetMap=
         safe_text,
     name=
+        safe_text,
+    PriorityGraph=
         safe_text
 )
 Type_strategy = st.builds(
     Type,
 )
-ir::TypeFloat_strategy = st.builds(
-    ir::TypeFloat,
+ir_TypeString_strategy = st.builds(
+    ir_TypeString,
 )
-ir::TypeInt_strategy = st.builds(
-    ir::TypeInt,
-)
-ir::TypeLambda_strategy = st.builds(
-    ir::TypeLambda,
-)
-ir::TypeList_strategy = st.builds(
-    ir::TypeList,
-)
-ir::TypeExternal_strategy = st.builds(
-    ir::TypeExternal,
-    name=
-        safe_text,
+ir_TypeExternal_strategy = st.builds(
+    ir_TypeExternal,
     scopeName=
+        safe_text,
+    name=
         safe_text
 )
-ir::TypeProc_strategy = st.builds(
-    ir::TypeProc,
+ir_TypeInt_strategy = st.builds(
+    ir_TypeInt,
 )
-ir::TypeUint_strategy = st.builds(
-    ir::TypeUint,
+ir_TypeLambda_strategy = st.builds(
+    ir_TypeLambda,
 )
-ir::TypeString_strategy = st.builds(
-    ir::TypeString,
+ir_TypeProc_strategy = st.builds(
+    ir_TypeProc,
 )
-ir::TypeBool_strategy = st.builds(
-    ir::TypeBool,
+ir_TypeUint_strategy = st.builds(
+    ir_TypeUint,
+)
+ir_TypeList_strategy = st.builds(
+    ir_TypeList,
+)
+ir_TypeFloat_strategy = st.builds(
+    ir_TypeFloat,
+)
+ir_TypeBool_strategy = st.builds(
+    ir_TypeBool,
 )
 LambdaExpression_strategy = st.builds(
     LambdaExpression,
 )
-ir::TypeUser_strategy = st.builds(
-    ir::TypeUser,
-)
-ir::TypeUndef_strategy = st.builds(
-    ir::TypeUndef,
+ir_TypeUser_strategy = st.builds(
+    ir_TypeUser,
 )
 PortAccess_strategy = st.builds(
     PortAccess,
 )
-ir::PortPeek_strategy = st.builds(
-    ir::PortPeek,
+ir_PortPeek_strategy = st.builds(
+    ir_PortPeek,
     position=
         st.integers()
 )
@@ -1727,429 +1724,403 @@ Block_strategy = st.builds(
 Statement_strategy = st.builds(
     Statement,
 )
-ir::WhileLoop_strategy = st.builds(
-    ir::WhileLoop,
+ir_ForEach_strategy = st.builds(
+    ir_ForEach,
 )
-ir::IfStatement_strategy = st.builds(
-    ir::IfStatement,
+ir_ProcCall_strategy = st.builds(
+    ir_ProcCall,
 )
-ir::ReturnValue_strategy = st.builds(
-    ir::ReturnValue,
+ir_IfStatement_strategy = st.builds(
+    ir_IfStatement,
 )
-ir::ProcCall_strategy = st.builds(
-    ir::ProcCall,
+ir_WhileLoop_strategy = st.builds(
+    ir_WhileLoop,
 )
-ir::ForEach_strategy = st.builds(
-    ir::ForEach,
+ir_ReturnValue_strategy = st.builds(
+    ir_ReturnValue,
 )
-ir::Assign_strategy = st.builds(
-    ir::Assign,
+ir_Assign_strategy = st.builds(
+    ir_Assign,
 )
 Connection_strategy = st.builds(
     Connection,
 )
-ir::FromSource_strategy = st.builds(
-    ir::FromSource,
+ir_ToSink_strategy = st.builds(
+    ir_ToSink,
 )
-ir::ToSink_strategy = st.builds(
-    ir::ToSink,
+ir_FromSource_strategy = st.builds(
+    ir_FromSource,
 )
-ir::Point2PointConnection_strategy = st.builds(
-    ir::Point2PointConnection,
+ir_Point2PointConnection_strategy = st.builds(
+    ir_Point2PointConnection,
+)
+ir_TypeUndef_strategy = st.builds(
+    ir_TypeUndef,
 )
 LiteralExpression_strategy = st.builds(
     LiteralExpression,
 )
-ir::BooleanLiteral_strategy = st.builds(
-    ir::BooleanLiteral,
-    value=
-        st.booleans()
-)
-ir::StringLiteral_strategy = st.builds(
-    ir::StringLiteral,
+ir_StringLiteral_strategy = st.builds(
+    ir_StringLiteral,
     value=
         safe_text
 )
-ir::FloatLiteral_strategy = st.builds(
-    ir::FloatLiteral,
+ir_BooleanLiteral_strategy = st.builds(
+    ir_BooleanLiteral,
+    value=
+        st.booleans()
+)
+ir_FloatLiteral_strategy = st.builds(
+    ir_FloatLiteral,
     value=
         st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False)
 )
-ir::IntegerLiteral_strategy = st.builds(
-    ir::IntegerLiteral,
+ir_IntegerLiteral_strategy = st.builds(
+    ir_IntegerLiteral,
     value=
         safe_text
 )
 Expression_strategy = st.builds(
     Expression,
 )
-ir::IfExpression_strategy = st.builds(
-    ir::IfExpression,
+ir_ListExpression_strategy = st.builds(
+    ir_ListExpression,
 )
-ir::VariableExpression_strategy = st.builds(
-    ir::VariableExpression,
+ir_VariableExpression_strategy = st.builds(
+    ir_VariableExpression,
 )
-ir::ListExpression_strategy = st.builds(
-    ir::ListExpression,
+ir_IfExpression_strategy = st.builds(
+    ir_IfExpression,
 )
-ir::LiteralExpression_strategy = st.builds(
-    ir::LiteralExpression,
+ir_LiteralExpression_strategy = st.builds(
+    ir_LiteralExpression,
 )
 ExpressionCall_strategy = st.builds(
     ExpressionCall,
 )
-ir::TypeConstructorCall_strategy = st.builds(
-    ir::TypeConstructorCall,
+ir_TypeConstructorCall_strategy = st.builds(
+    ir_TypeConstructorCall,
     name=
         safe_text
 )
-ir::FunctionCall_strategy = st.builds(
-    ir::FunctionCall,
+ir_FunctionCall_strategy = st.builds(
+    ir_FunctionCall,
 )
-ir::ExpressionCall_strategy = st.builds(
-    ir::ExpressionCall,
+ir_ExpressionCall_strategy = st.builds(
+    ir_ExpressionCall,
 )
-ir::UnaryExpression_strategy = st.builds(
-    ir::UnaryExpression,
+ir_UnaryExpression_strategy = st.builds(
+    ir_UnaryExpression,
     operator=
         safe_text
 )
-ir::BinaryExpression_strategy = st.builds(
-    ir::BinaryExpression,
+ir_BinaryExpression_strategy = st.builds(
+    ir_BinaryExpression,
     operator=
         safe_text
 )
 Variable_strategy = st.builds(
     Variable,
 )
-ir::PortRead_strategy = st.builds(
-    ir::PortRead,
+ir_PortRead_strategy = st.builds(
+    ir_PortRead,
 )
-ir::PortWrite_strategy = st.builds(
-    ir::PortWrite,
+ir_PortWrite_strategy = st.builds(
+    ir_PortWrite,
 )
-ir::Guard_strategy = st.builds(
-    ir::Guard,
+ir_Guard_strategy = st.builds(
+    ir_Guard,
 )
-ir::ActorInstance_strategy = st.builds(
-    ir::ActorInstance,
+ir_ActorInstance_strategy = st.builds(
+    ir_ActorInstance,
 )
-ir::Schedule_strategy = st.builds(
-    ir::Schedule,
+ir_Schedule_strategy = st.builds(
+    ir_Schedule,
     PriorityGraph=
         safe_text
 )
 AbstractActor_strategy = st.builds(
     AbstractActor,
 )
-ir::Actor_strategy = st.builds(
-    ir::Actor,
+ir_Network_strategy = st.builds(
+    ir_Network,
 )
-ir::Network_strategy = st.builds(
-    ir::Network,
+ir_Actor_strategy = st.builds(
+    ir_Actor,
 )
-ir::ExternalActor_strategy = st.builds(
-    ir::ExternalActor,
+ir_ExternalActor_strategy = st.builds(
+    ir_ExternalActor,
 )
 Scope_strategy = st.builds(
     Scope,
 )
-ir::Action_strategy = st.builds(
-    ir::Action,
+ir_Generator_strategy = st.builds(
+    ir_Generator,
+)
+ir_ProcExpression_strategy = st.builds(
+    ir_ProcExpression,
+)
+ir_Action_strategy = st.builds(
+    ir_Action,
     tag=
         safe_text
 )
-ir::AbstractActor_strategy = st.builds(
-    ir::AbstractActor,
+ir_LambdaExpression_strategy = st.builds(
+    ir_LambdaExpression,
 )
-ir::Block_strategy = st.builds(
-    ir::Block,
+ir_Block_strategy = st.builds(
+    ir_Block,
 )
-ir::ProcExpression_strategy = st.builds(
-    ir::ProcExpression,
-)
-ir::LambdaExpression_strategy = st.builds(
-    ir::LambdaExpression,
-)
-ir::Generator_strategy = st.builds(
-    ir::Generator,
-)
-ir::Namespace_strategy = st.builds(
-    ir::Namespace,
+ir_Namespace_strategy = st.builds(
+    ir_Namespace,
     name=
         safe_text
 )
-ir::TaggedExpression_strategy = st.builds(
-    ir::TaggedExpression,
+ir_TaggedExpression_strategy = st.builds(
+    ir_TaggedExpression,
     tag=
         safe_text
 )
-ir::Type_strategy = st.builds(
-    ir::Type,
+ir_Type_strategy = st.builds(
+    ir_Type,
 )
 Declaration_strategy = st.builds(
     Declaration,
 )
-ir::TypeDeclarationImport_strategy = st.builds(
-    ir::TypeDeclarationImport,
+ir_TypeDeclarationImport_strategy = st.builds(
+    ir_TypeDeclarationImport,
     namespace=
         safe_text
 )
-ir::VariableExternal_strategy = st.builds(
-    ir::VariableExternal,
+ir_ForwardDeclaration_strategy = st.builds(
+    ir_ForwardDeclaration,
 )
-ir::TypeConstructor_strategy = st.builds(
-    ir::TypeConstructor,
+ir_TypeConstructor_strategy = st.builds(
+    ir_TypeConstructor,
 )
-ir::ForwardDeclaration_strategy = st.builds(
-    ir::ForwardDeclaration,
+ir_VariableExternal_strategy = st.builds(
+    ir_VariableExternal,
 )
-ir::TypeDeclaration_strategy = st.builds(
-    ir::TypeDeclaration,
+ir_TypeDeclaration_strategy = st.builds(
+    ir_TypeDeclaration,
 )
-ir::VariableImport_strategy = st.builds(
-    ir::VariableImport,
+ir_VariableImport_strategy = st.builds(
+    ir_VariableImport,
     namespace=
         safe_text
 )
-ir::Annotation_strategy = st.builds(
-    ir::Annotation,
+ir_Annotation_strategy = st.builds(
+    ir_Annotation,
     name=
         safe_text
 )
-ir::Node_strategy = st.builds(
-    ir::Node,
+ir_Node_strategy = st.builds(
+    ir_Node,
     id=
         safe_text
 )
 Node_strategy = st.builds(
     Node,
 )
-ir::PortInstance_strategy = st.builds(
-    ir::PortInstance,
+ir_Declaration_strategy = st.builds(
+    ir_Declaration,
     name=
         safe_text
 )
-ir::Expression_strategy = st.builds(
-    ir::Expression,
+ir_Connection_strategy = st.builds(
+    ir_Connection,
 )
-ir::PortAccess_strategy = st.builds(
-    ir::PortAccess,
+ir_Expression_strategy = st.builds(
+    ir_Expression,
 )
-ir::TypeRecord_strategy = st.builds(
-    ir::TypeRecord,
+ir_Statement_strategy = st.builds(
+    ir_Statement,
 )
-ir::VariableReference_strategy = st.builds(
-    ir::VariableReference,
+ir_TypeRecord_strategy = st.builds(
+    ir_TypeRecord,
 )
-ir::Connection_strategy = st.builds(
-    ir::Connection,
+ir_PortAccess_strategy = st.builds(
+    ir_PortAccess,
 )
-ir::Member_strategy = st.builds(
-    ir::Member,
+ir_PortInstance_strategy = st.builds(
+    ir_PortInstance,
     name=
         safe_text
 )
-ir::Statement_strategy = st.builds(
-    ir::Statement,
+ir_VariableReference_strategy = st.builds(
+    ir_VariableReference,
 )
-ir::Declaration_strategy = st.builds(
-    ir::Declaration,
+ir_Member_strategy = st.builds(
+    ir_Member,
     name=
         safe_text
 )
-ir::Scope_strategy = st.builds(
-    ir::Scope,
+ir_Scope_strategy = st.builds(
+    ir_Scope,
 )
-ir::Variable_strategy = st.builds(
-    ir::Variable,
+ir_Variable_strategy = st.builds(
+    ir_Variable,
     constant=
         st.booleans(),
     parameter=
         st.booleans()
 )
-ir::Port_strategy = st.builds(
-    ir::Port,
+ir_Port_strategy = st.builds(
+    ir_Port,
     name=
         safe_text
 )
-ir::TypeActor_strategy = st.builds(
-    ir::TypeActor,
-    namespace=
+ir_TypeActor_strategy = st.builds(
+    ir_TypeActor,
+    name=
         safe_text,
-    name=
+    namespace=
         safe_text
 )
+ir_AbstractActor_strategy = st.builds(
+    ir_AbstractActor,
+)
 
-@given(instance=ir::AnnotationArgument_strategy)
+@given(instance=ir_AnnotationArgument_strategy)
 @settings(max_examples=50)
-def test_ir::annotationargument_instantiation(instance):
-    assert isinstance(instance, ir::AnnotationArgument)
-
-@given(instance=ir::AnnotationArgument_strategy)
-def test_ir::annotationargument_value_type(instance):
-    assert isinstance(instance.value, str)
+def test_ir_annotationargument_instantiation(instance):
+    assert isinstance(instance, ir_AnnotationArgument)
 
 
-@given(instance=ir::AnnotationArgument_strategy)
-def test_ir::annotationargument_value_setter(instance):
+
+@given(instance=ir_AnnotationArgument_strategy)
+def test_ir_annotationargument_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
 
-@given(instance=ir::AnnotationArgument_strategy)
-def test_ir::annotationargument_id_type(instance):
-    assert isinstance(instance.id, str)
 
 
-@given(instance=ir::AnnotationArgument_strategy)
-def test_ir::annotationargument_id_setter(instance):
+@given(instance=ir_AnnotationArgument_strategy)
+def test_ir_annotationargument_id_setter(instance):
     original = instance.id
     instance.id = original
     assert instance.id == original
 
-@given(instance=ir::State_strategy)
+@given(instance=ir_State_strategy)
 @settings(max_examples=50)
-def test_ir::state_instantiation(instance):
-    assert isinstance(instance, ir::State)
-
-@given(instance=ir::State_strategy)
-def test_ir::state_PriorityGraph_type(instance):
-    assert isinstance(instance.PriorityGraph, str)
+def test_ir_state_instantiation(instance):
+    assert isinstance(instance, ir_State)
 
 
-@given(instance=ir::State_strategy)
-def test_ir::state_PriorityGraph_setter(instance):
-    original = instance.PriorityGraph
-    instance.PriorityGraph = original
-    assert instance.PriorityGraph == original
 
-@given(instance=ir::State_strategy)
-def test_ir::state_Action2TargetMap_type(instance):
-    assert isinstance(instance.Action2TargetMap, str)
-
-
-@given(instance=ir::State_strategy)
-def test_ir::state_Action2TargetMap_setter(instance):
+@given(instance=ir_State_strategy)
+def test_ir_state_Action2TargetMap_setter(instance):
     original = instance.Action2TargetMap
     instance.Action2TargetMap = original
     assert instance.Action2TargetMap == original
 
-@given(instance=ir::State_strategy)
-def test_ir::state_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
-@given(instance=ir::State_strategy)
-def test_ir::state_name_setter(instance):
+@given(instance=ir_State_strategy)
+def test_ir_state_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
+
+
+
+@given(instance=ir_State_strategy)
+def test_ir_state_PriorityGraph_setter(instance):
+    original = instance.PriorityGraph
+    instance.PriorityGraph = original
+    assert instance.PriorityGraph == original
 
 @given(instance=Type_strategy)
 @settings(max_examples=50)
 def test_type_instantiation(instance):
     assert isinstance(instance, Type)
 
-@given(instance=ir::TypeFloat_strategy)
+@given(instance=ir_TypeString_strategy)
 @settings(max_examples=50)
-def test_ir::typefloat_instantiation(instance):
-    assert isinstance(instance, ir::TypeFloat)
+def test_ir_typestring_instantiation(instance):
+    assert isinstance(instance, ir_TypeString)
 
-@given(instance=ir::TypeInt_strategy)
+@given(instance=ir_TypeExternal_strategy)
 @settings(max_examples=50)
-def test_ir::typeint_instantiation(instance):
-    assert isinstance(instance, ir::TypeInt)
-
-@given(instance=ir::TypeLambda_strategy)
-@settings(max_examples=50)
-def test_ir::typelambda_instantiation(instance):
-    assert isinstance(instance, ir::TypeLambda)
-
-@given(instance=ir::TypeList_strategy)
-@settings(max_examples=50)
-def test_ir::typelist_instantiation(instance):
-    assert isinstance(instance, ir::TypeList)
-
-@given(instance=ir::TypeExternal_strategy)
-@settings(max_examples=50)
-def test_ir::typeexternal_instantiation(instance):
-    assert isinstance(instance, ir::TypeExternal)
-
-@given(instance=ir::TypeExternal_strategy)
-def test_ir::typeexternal_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_ir_typeexternal_instantiation(instance):
+    assert isinstance(instance, ir_TypeExternal)
 
 
-@given(instance=ir::TypeExternal_strategy)
-def test_ir::typeexternal_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
 
-@given(instance=ir::TypeExternal_strategy)
-def test_ir::typeexternal_scopeName_type(instance):
-    assert isinstance(instance.scopeName, str)
-
-
-@given(instance=ir::TypeExternal_strategy)
-def test_ir::typeexternal_scopeName_setter(instance):
+@given(instance=ir_TypeExternal_strategy)
+def test_ir_typeexternal_scopeName_setter(instance):
     original = instance.scopeName
     instance.scopeName = original
     assert instance.scopeName == original
 
-@given(instance=ir::TypeProc_strategy)
-@settings(max_examples=50)
-def test_ir::typeproc_instantiation(instance):
-    assert isinstance(instance, ir::TypeProc)
 
-@given(instance=ir::TypeUint_strategy)
-@settings(max_examples=50)
-def test_ir::typeuint_instantiation(instance):
-    assert isinstance(instance, ir::TypeUint)
 
-@given(instance=ir::TypeString_strategy)
-@settings(max_examples=50)
-def test_ir::typestring_instantiation(instance):
-    assert isinstance(instance, ir::TypeString)
+@given(instance=ir_TypeExternal_strategy)
+def test_ir_typeexternal_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
 
-@given(instance=ir::TypeBool_strategy)
+@given(instance=ir_TypeInt_strategy)
 @settings(max_examples=50)
-def test_ir::typebool_instantiation(instance):
-    assert isinstance(instance, ir::TypeBool)
+def test_ir_typeint_instantiation(instance):
+    assert isinstance(instance, ir_TypeInt)
+
+@given(instance=ir_TypeLambda_strategy)
+@settings(max_examples=50)
+def test_ir_typelambda_instantiation(instance):
+    assert isinstance(instance, ir_TypeLambda)
+
+@given(instance=ir_TypeProc_strategy)
+@settings(max_examples=50)
+def test_ir_typeproc_instantiation(instance):
+    assert isinstance(instance, ir_TypeProc)
+
+@given(instance=ir_TypeUint_strategy)
+@settings(max_examples=50)
+def test_ir_typeuint_instantiation(instance):
+    assert isinstance(instance, ir_TypeUint)
+
+@given(instance=ir_TypeList_strategy)
+@settings(max_examples=50)
+def test_ir_typelist_instantiation(instance):
+    assert isinstance(instance, ir_TypeList)
+
+@given(instance=ir_TypeFloat_strategy)
+@settings(max_examples=50)
+def test_ir_typefloat_instantiation(instance):
+    assert isinstance(instance, ir_TypeFloat)
+
+@given(instance=ir_TypeBool_strategy)
+@settings(max_examples=50)
+def test_ir_typebool_instantiation(instance):
+    assert isinstance(instance, ir_TypeBool)
 
 @given(instance=LambdaExpression_strategy)
 @settings(max_examples=50)
 def test_lambdaexpression_instantiation(instance):
     assert isinstance(instance, LambdaExpression)
 
-@given(instance=ir::TypeUser_strategy)
+@given(instance=ir_TypeUser_strategy)
 @settings(max_examples=50)
-def test_ir::typeuser_instantiation(instance):
-    assert isinstance(instance, ir::TypeUser)
-
-@given(instance=ir::TypeUndef_strategy)
-@settings(max_examples=50)
-def test_ir::typeundef_instantiation(instance):
-    assert isinstance(instance, ir::TypeUndef)
+def test_ir_typeuser_instantiation(instance):
+    assert isinstance(instance, ir_TypeUser)
 
 @given(instance=PortAccess_strategy)
 @settings(max_examples=50)
 def test_portaccess_instantiation(instance):
     assert isinstance(instance, PortAccess)
 
-@given(instance=ir::PortPeek_strategy)
+@given(instance=ir_PortPeek_strategy)
 @settings(max_examples=50)
-def test_ir::portpeek_instantiation(instance):
-    assert isinstance(instance, ir::PortPeek)
-
-@given(instance=ir::PortPeek_strategy)
-def test_ir::portpeek_position_type(instance):
-    assert isinstance(instance.position, int)
+def test_ir_portpeek_instantiation(instance):
+    assert isinstance(instance, ir_PortPeek)
 
 
-@given(instance=ir::PortPeek_strategy)
-def test_ir::portpeek_position_setter(instance):
+
+@given(instance=ir_PortPeek_strategy)
+def test_ir_portpeek_position_setter(instance):
     original = instance.position
     instance.position = original
     assert instance.position == original
@@ -2164,121 +2135,114 @@ def test_block_instantiation(instance):
 def test_statement_instantiation(instance):
     assert isinstance(instance, Statement)
 
-@given(instance=ir::WhileLoop_strategy)
+@given(instance=ir_ForEach_strategy)
 @settings(max_examples=50)
-def test_ir::whileloop_instantiation(instance):
-    assert isinstance(instance, ir::WhileLoop)
+def test_ir_foreach_instantiation(instance):
+    assert isinstance(instance, ir_ForEach)
 
-@given(instance=ir::IfStatement_strategy)
+@given(instance=ir_ProcCall_strategy)
 @settings(max_examples=50)
-def test_ir::ifstatement_instantiation(instance):
-    assert isinstance(instance, ir::IfStatement)
+def test_ir_proccall_instantiation(instance):
+    assert isinstance(instance, ir_ProcCall)
 
-@given(instance=ir::ReturnValue_strategy)
+@given(instance=ir_IfStatement_strategy)
 @settings(max_examples=50)
-def test_ir::returnvalue_instantiation(instance):
-    assert isinstance(instance, ir::ReturnValue)
+def test_ir_ifstatement_instantiation(instance):
+    assert isinstance(instance, ir_IfStatement)
 
-@given(instance=ir::ProcCall_strategy)
+@given(instance=ir_WhileLoop_strategy)
 @settings(max_examples=50)
-def test_ir::proccall_instantiation(instance):
-    assert isinstance(instance, ir::ProcCall)
+def test_ir_whileloop_instantiation(instance):
+    assert isinstance(instance, ir_WhileLoop)
 
-@given(instance=ir::ForEach_strategy)
+@given(instance=ir_ReturnValue_strategy)
 @settings(max_examples=50)
-def test_ir::foreach_instantiation(instance):
-    assert isinstance(instance, ir::ForEach)
+def test_ir_returnvalue_instantiation(instance):
+    assert isinstance(instance, ir_ReturnValue)
 
-@given(instance=ir::Assign_strategy)
+@given(instance=ir_Assign_strategy)
 @settings(max_examples=50)
-def test_ir::assign_instantiation(instance):
-    assert isinstance(instance, ir::Assign)
+def test_ir_assign_instantiation(instance):
+    assert isinstance(instance, ir_Assign)
 
 @given(instance=Connection_strategy)
 @settings(max_examples=50)
 def test_connection_instantiation(instance):
     assert isinstance(instance, Connection)
 
-@given(instance=ir::FromSource_strategy)
+@given(instance=ir_ToSink_strategy)
 @settings(max_examples=50)
-def test_ir::fromsource_instantiation(instance):
-    assert isinstance(instance, ir::FromSource)
+def test_ir_tosink_instantiation(instance):
+    assert isinstance(instance, ir_ToSink)
 
-@given(instance=ir::ToSink_strategy)
+@given(instance=ir_FromSource_strategy)
 @settings(max_examples=50)
-def test_ir::tosink_instantiation(instance):
-    assert isinstance(instance, ir::ToSink)
+def test_ir_fromsource_instantiation(instance):
+    assert isinstance(instance, ir_FromSource)
 
-@given(instance=ir::Point2PointConnection_strategy)
+@given(instance=ir_Point2PointConnection_strategy)
 @settings(max_examples=50)
-def test_ir::point2pointconnection_instantiation(instance):
-    assert isinstance(instance, ir::Point2PointConnection)
+def test_ir_point2pointconnection_instantiation(instance):
+    assert isinstance(instance, ir_Point2PointConnection)
+
+@given(instance=ir_TypeUndef_strategy)
+@settings(max_examples=50)
+def test_ir_typeundef_instantiation(instance):
+    assert isinstance(instance, ir_TypeUndef)
 
 @given(instance=LiteralExpression_strategy)
 @settings(max_examples=50)
 def test_literalexpression_instantiation(instance):
     assert isinstance(instance, LiteralExpression)
 
-@given(instance=ir::BooleanLiteral_strategy)
+@given(instance=ir_StringLiteral_strategy)
 @settings(max_examples=50)
-def test_ir::booleanliteral_instantiation(instance):
-    assert isinstance(instance, ir::BooleanLiteral)
-
-@given(instance=ir::BooleanLiteral_strategy)
-def test_ir::booleanliteral_value_type(instance):
-    assert isinstance(instance.value, bool)
+def test_ir_stringliteral_instantiation(instance):
+    assert isinstance(instance, ir_StringLiteral)
 
 
-@given(instance=ir::BooleanLiteral_strategy)
-def test_ir::booleanliteral_value_setter(instance):
+
+@given(instance=ir_StringLiteral_strategy)
+def test_ir_stringliteral_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
 
-@given(instance=ir::StringLiteral_strategy)
+@given(instance=ir_BooleanLiteral_strategy)
 @settings(max_examples=50)
-def test_ir::stringliteral_instantiation(instance):
-    assert isinstance(instance, ir::StringLiteral)
-
-@given(instance=ir::StringLiteral_strategy)
-def test_ir::stringliteral_value_type(instance):
-    assert isinstance(instance.value, str)
+def test_ir_booleanliteral_instantiation(instance):
+    assert isinstance(instance, ir_BooleanLiteral)
 
 
-@given(instance=ir::StringLiteral_strategy)
-def test_ir::stringliteral_value_setter(instance):
+
+@given(instance=ir_BooleanLiteral_strategy)
+def test_ir_booleanliteral_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
 
-@given(instance=ir::FloatLiteral_strategy)
+@given(instance=ir_FloatLiteral_strategy)
 @settings(max_examples=50)
-def test_ir::floatliteral_instantiation(instance):
-    assert isinstance(instance, ir::FloatLiteral)
-
-@given(instance=ir::FloatLiteral_strategy)
-def test_ir::floatliteral_value_type(instance):
-    assert isinstance(instance.value, float)
+def test_ir_floatliteral_instantiation(instance):
+    assert isinstance(instance, ir_FloatLiteral)
 
 
-@given(instance=ir::FloatLiteral_strategy)
-def test_ir::floatliteral_value_setter(instance):
+
+@given(instance=ir_FloatLiteral_strategy)
+def test_ir_floatliteral_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
 
-@given(instance=ir::IntegerLiteral_strategy)
+@given(instance=ir_IntegerLiteral_strategy)
 @settings(max_examples=50)
-def test_ir::integerliteral_instantiation(instance):
-    assert isinstance(instance, ir::IntegerLiteral)
-
-@given(instance=ir::IntegerLiteral_strategy)
-def test_ir::integerliteral_value_type(instance):
-    assert isinstance(instance.value, str)
+def test_ir_integerliteral_instantiation(instance):
+    assert isinstance(instance, ir_IntegerLiteral)
 
 
-@given(instance=ir::IntegerLiteral_strategy)
-def test_ir::integerliteral_value_setter(instance):
+
+@given(instance=ir_IntegerLiteral_strategy)
+def test_ir_integerliteral_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
@@ -2288,85 +2252,76 @@ def test_ir::integerliteral_value_setter(instance):
 def test_expression_instantiation(instance):
     assert isinstance(instance, Expression)
 
-@given(instance=ir::IfExpression_strategy)
+@given(instance=ir_ListExpression_strategy)
 @settings(max_examples=50)
-def test_ir::ifexpression_instantiation(instance):
-    assert isinstance(instance, ir::IfExpression)
+def test_ir_listexpression_instantiation(instance):
+    assert isinstance(instance, ir_ListExpression)
 
-@given(instance=ir::VariableExpression_strategy)
+@given(instance=ir_VariableExpression_strategy)
 @settings(max_examples=50)
-def test_ir::variableexpression_instantiation(instance):
-    assert isinstance(instance, ir::VariableExpression)
+def test_ir_variableexpression_instantiation(instance):
+    assert isinstance(instance, ir_VariableExpression)
 
-@given(instance=ir::ListExpression_strategy)
+@given(instance=ir_IfExpression_strategy)
 @settings(max_examples=50)
-def test_ir::listexpression_instantiation(instance):
-    assert isinstance(instance, ir::ListExpression)
+def test_ir_ifexpression_instantiation(instance):
+    assert isinstance(instance, ir_IfExpression)
 
-@given(instance=ir::LiteralExpression_strategy)
+@given(instance=ir_LiteralExpression_strategy)
 @settings(max_examples=50)
-def test_ir::literalexpression_instantiation(instance):
-    assert isinstance(instance, ir::LiteralExpression)
+def test_ir_literalexpression_instantiation(instance):
+    assert isinstance(instance, ir_LiteralExpression)
 
 @given(instance=ExpressionCall_strategy)
 @settings(max_examples=50)
 def test_expressioncall_instantiation(instance):
     assert isinstance(instance, ExpressionCall)
 
-@given(instance=ir::TypeConstructorCall_strategy)
+@given(instance=ir_TypeConstructorCall_strategy)
 @settings(max_examples=50)
-def test_ir::typeconstructorcall_instantiation(instance):
-    assert isinstance(instance, ir::TypeConstructorCall)
-
-@given(instance=ir::TypeConstructorCall_strategy)
-def test_ir::typeconstructorcall_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_ir_typeconstructorcall_instantiation(instance):
+    assert isinstance(instance, ir_TypeConstructorCall)
 
 
-@given(instance=ir::TypeConstructorCall_strategy)
-def test_ir::typeconstructorcall_name_setter(instance):
+
+@given(instance=ir_TypeConstructorCall_strategy)
+def test_ir_typeconstructorcall_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=ir::FunctionCall_strategy)
+@given(instance=ir_FunctionCall_strategy)
 @settings(max_examples=50)
-def test_ir::functioncall_instantiation(instance):
-    assert isinstance(instance, ir::FunctionCall)
+def test_ir_functioncall_instantiation(instance):
+    assert isinstance(instance, ir_FunctionCall)
 
-@given(instance=ir::ExpressionCall_strategy)
+@given(instance=ir_ExpressionCall_strategy)
 @settings(max_examples=50)
-def test_ir::expressioncall_instantiation(instance):
-    assert isinstance(instance, ir::ExpressionCall)
+def test_ir_expressioncall_instantiation(instance):
+    assert isinstance(instance, ir_ExpressionCall)
 
-@given(instance=ir::UnaryExpression_strategy)
+@given(instance=ir_UnaryExpression_strategy)
 @settings(max_examples=50)
-def test_ir::unaryexpression_instantiation(instance):
-    assert isinstance(instance, ir::UnaryExpression)
-
-@given(instance=ir::UnaryExpression_strategy)
-def test_ir::unaryexpression_operator_type(instance):
-    assert isinstance(instance.operator, str)
+def test_ir_unaryexpression_instantiation(instance):
+    assert isinstance(instance, ir_UnaryExpression)
 
 
-@given(instance=ir::UnaryExpression_strategy)
-def test_ir::unaryexpression_operator_setter(instance):
+
+@given(instance=ir_UnaryExpression_strategy)
+def test_ir_unaryexpression_operator_setter(instance):
     original = instance.operator
     instance.operator = original
     assert instance.operator == original
 
-@given(instance=ir::BinaryExpression_strategy)
+@given(instance=ir_BinaryExpression_strategy)
 @settings(max_examples=50)
-def test_ir::binaryexpression_instantiation(instance):
-    assert isinstance(instance, ir::BinaryExpression)
-
-@given(instance=ir::BinaryExpression_strategy)
-def test_ir::binaryexpression_operator_type(instance):
-    assert isinstance(instance.operator, str)
+def test_ir_binaryexpression_instantiation(instance):
+    assert isinstance(instance, ir_BinaryExpression)
 
 
-@given(instance=ir::BinaryExpression_strategy)
-def test_ir::binaryexpression_operator_setter(instance):
+
+@given(instance=ir_BinaryExpression_strategy)
+def test_ir_binaryexpression_operator_setter(instance):
     original = instance.operator
     instance.operator = original
     assert instance.operator == original
@@ -2376,38 +2331,35 @@ def test_ir::binaryexpression_operator_setter(instance):
 def test_variable_instantiation(instance):
     assert isinstance(instance, Variable)
 
-@given(instance=ir::PortRead_strategy)
+@given(instance=ir_PortRead_strategy)
 @settings(max_examples=50)
-def test_ir::portread_instantiation(instance):
-    assert isinstance(instance, ir::PortRead)
+def test_ir_portread_instantiation(instance):
+    assert isinstance(instance, ir_PortRead)
 
-@given(instance=ir::PortWrite_strategy)
+@given(instance=ir_PortWrite_strategy)
 @settings(max_examples=50)
-def test_ir::portwrite_instantiation(instance):
-    assert isinstance(instance, ir::PortWrite)
+def test_ir_portwrite_instantiation(instance):
+    assert isinstance(instance, ir_PortWrite)
 
-@given(instance=ir::Guard_strategy)
+@given(instance=ir_Guard_strategy)
 @settings(max_examples=50)
-def test_ir::guard_instantiation(instance):
-    assert isinstance(instance, ir::Guard)
+def test_ir_guard_instantiation(instance):
+    assert isinstance(instance, ir_Guard)
 
-@given(instance=ir::ActorInstance_strategy)
+@given(instance=ir_ActorInstance_strategy)
 @settings(max_examples=50)
-def test_ir::actorinstance_instantiation(instance):
-    assert isinstance(instance, ir::ActorInstance)
+def test_ir_actorinstance_instantiation(instance):
+    assert isinstance(instance, ir_ActorInstance)
 
-@given(instance=ir::Schedule_strategy)
+@given(instance=ir_Schedule_strategy)
 @settings(max_examples=50)
-def test_ir::schedule_instantiation(instance):
-    assert isinstance(instance, ir::Schedule)
-
-@given(instance=ir::Schedule_strategy)
-def test_ir::schedule_PriorityGraph_type(instance):
-    assert isinstance(instance.PriorityGraph, str)
+def test_ir_schedule_instantiation(instance):
+    assert isinstance(instance, ir_Schedule)
 
 
-@given(instance=ir::Schedule_strategy)
-def test_ir::schedule_PriorityGraph_setter(instance):
+
+@given(instance=ir_Schedule_strategy)
+def test_ir_schedule_PriorityGraph_setter(instance):
     original = instance.PriorityGraph
     instance.PriorityGraph = original
     assert instance.PriorityGraph == original
@@ -2417,189 +2369,163 @@ def test_ir::schedule_PriorityGraph_setter(instance):
 def test_abstractactor_instantiation(instance):
     assert isinstance(instance, AbstractActor)
 
-@given(instance=ir::Actor_strategy)
+@given(instance=ir_Network_strategy)
 @settings(max_examples=50)
-def test_ir::actor_instantiation(instance):
-    assert isinstance(instance, ir::Actor)
+def test_ir_network_instantiation(instance):
+    assert isinstance(instance, ir_Network)
 
-@given(instance=ir::Network_strategy)
+@given(instance=ir_Actor_strategy)
 @settings(max_examples=50)
-def test_ir::network_instantiation(instance):
-    assert isinstance(instance, ir::Network)
+def test_ir_actor_instantiation(instance):
+    assert isinstance(instance, ir_Actor)
 
-@given(instance=ir::ExternalActor_strategy)
+@given(instance=ir_ExternalActor_strategy)
 @settings(max_examples=50)
-def test_ir::externalactor_instantiation(instance):
-    assert isinstance(instance, ir::ExternalActor)
+def test_ir_externalactor_instantiation(instance):
+    assert isinstance(instance, ir_ExternalActor)
 
 @given(instance=Scope_strategy)
 @settings(max_examples=50)
 def test_scope_instantiation(instance):
     assert isinstance(instance, Scope)
 
-@given(instance=ir::Action_strategy)
+@given(instance=ir_Generator_strategy)
 @settings(max_examples=50)
-def test_ir::action_instantiation(instance):
-    assert isinstance(instance, ir::Action)
+def test_ir_generator_instantiation(instance):
+    assert isinstance(instance, ir_Generator)
 
-@given(instance=ir::Action_strategy)
-def test_ir::action_tag_type(instance):
-    assert isinstance(instance.tag, str)
+@given(instance=ir_ProcExpression_strategy)
+@settings(max_examples=50)
+def test_ir_procexpression_instantiation(instance):
+    assert isinstance(instance, ir_ProcExpression)
+
+@given(instance=ir_Action_strategy)
+@settings(max_examples=50)
+def test_ir_action_instantiation(instance):
+    assert isinstance(instance, ir_Action)
 
 
-@given(instance=ir::Action_strategy)
-def test_ir::action_tag_setter(instance):
+
+@given(instance=ir_Action_strategy)
+def test_ir_action_tag_setter(instance):
     original = instance.tag
     instance.tag = original
     assert instance.tag == original
 
-@given(instance=ir::AbstractActor_strategy)
+@given(instance=ir_LambdaExpression_strategy)
 @settings(max_examples=50)
-def test_ir::abstractactor_instantiation(instance):
-    assert isinstance(instance, ir::AbstractActor)
+def test_ir_lambdaexpression_instantiation(instance):
+    assert isinstance(instance, ir_LambdaExpression)
 
-@given(instance=ir::Block_strategy)
+@given(instance=ir_Block_strategy)
 @settings(max_examples=50)
-def test_ir::block_instantiation(instance):
-    assert isinstance(instance, ir::Block)
+def test_ir_block_instantiation(instance):
+    assert isinstance(instance, ir_Block)
 
-@given(instance=ir::ProcExpression_strategy)
+@given(instance=ir_Namespace_strategy)
 @settings(max_examples=50)
-def test_ir::procexpression_instantiation(instance):
-    assert isinstance(instance, ir::ProcExpression)
-
-@given(instance=ir::LambdaExpression_strategy)
-@settings(max_examples=50)
-def test_ir::lambdaexpression_instantiation(instance):
-    assert isinstance(instance, ir::LambdaExpression)
-
-@given(instance=ir::Generator_strategy)
-@settings(max_examples=50)
-def test_ir::generator_instantiation(instance):
-    assert isinstance(instance, ir::Generator)
-
-@given(instance=ir::Namespace_strategy)
-@settings(max_examples=50)
-def test_ir::namespace_instantiation(instance):
-    assert isinstance(instance, ir::Namespace)
-
-@given(instance=ir::Namespace_strategy)
-def test_ir::namespace_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_ir_namespace_instantiation(instance):
+    assert isinstance(instance, ir_Namespace)
 
 
-@given(instance=ir::Namespace_strategy)
-def test_ir::namespace_name_setter(instance):
+
+@given(instance=ir_Namespace_strategy)
+def test_ir_namespace_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=ir::TaggedExpression_strategy)
+@given(instance=ir_TaggedExpression_strategy)
 @settings(max_examples=50)
-def test_ir::taggedexpression_instantiation(instance):
-    assert isinstance(instance, ir::TaggedExpression)
-
-@given(instance=ir::TaggedExpression_strategy)
-def test_ir::taggedexpression_tag_type(instance):
-    assert isinstance(instance.tag, str)
+def test_ir_taggedexpression_instantiation(instance):
+    assert isinstance(instance, ir_TaggedExpression)
 
 
-@given(instance=ir::TaggedExpression_strategy)
-def test_ir::taggedexpression_tag_setter(instance):
+
+@given(instance=ir_TaggedExpression_strategy)
+def test_ir_taggedexpression_tag_setter(instance):
     original = instance.tag
     instance.tag = original
     assert instance.tag == original
 
-@given(instance=ir::Type_strategy)
+@given(instance=ir_Type_strategy)
 @settings(max_examples=50)
-def test_ir::type_instantiation(instance):
-    assert isinstance(instance, ir::Type)
+def test_ir_type_instantiation(instance):
+    assert isinstance(instance, ir_Type)
 
 @given(instance=Declaration_strategy)
 @settings(max_examples=50)
 def test_declaration_instantiation(instance):
     assert isinstance(instance, Declaration)
 
-@given(instance=ir::TypeDeclarationImport_strategy)
+@given(instance=ir_TypeDeclarationImport_strategy)
 @settings(max_examples=50)
-def test_ir::typedeclarationimport_instantiation(instance):
-    assert isinstance(instance, ir::TypeDeclarationImport)
-
-@given(instance=ir::TypeDeclarationImport_strategy)
-def test_ir::typedeclarationimport_namespace_type(instance):
-    assert isinstance(instance.namespace, str)
+def test_ir_typedeclarationimport_instantiation(instance):
+    assert isinstance(instance, ir_TypeDeclarationImport)
 
 
-@given(instance=ir::TypeDeclarationImport_strategy)
-def test_ir::typedeclarationimport_namespace_setter(instance):
+
+@given(instance=ir_TypeDeclarationImport_strategy)
+def test_ir_typedeclarationimport_namespace_setter(instance):
     original = instance.namespace
     instance.namespace = original
     assert instance.namespace == original
 
-@given(instance=ir::VariableExternal_strategy)
+@given(instance=ir_ForwardDeclaration_strategy)
 @settings(max_examples=50)
-def test_ir::variableexternal_instantiation(instance):
-    assert isinstance(instance, ir::VariableExternal)
+def test_ir_forwarddeclaration_instantiation(instance):
+    assert isinstance(instance, ir_ForwardDeclaration)
 
-@given(instance=ir::TypeConstructor_strategy)
+@given(instance=ir_TypeConstructor_strategy)
 @settings(max_examples=50)
-def test_ir::typeconstructor_instantiation(instance):
-    assert isinstance(instance, ir::TypeConstructor)
+def test_ir_typeconstructor_instantiation(instance):
+    assert isinstance(instance, ir_TypeConstructor)
 
-@given(instance=ir::ForwardDeclaration_strategy)
+@given(instance=ir_VariableExternal_strategy)
 @settings(max_examples=50)
-def test_ir::forwarddeclaration_instantiation(instance):
-    assert isinstance(instance, ir::ForwardDeclaration)
+def test_ir_variableexternal_instantiation(instance):
+    assert isinstance(instance, ir_VariableExternal)
 
-@given(instance=ir::TypeDeclaration_strategy)
+@given(instance=ir_TypeDeclaration_strategy)
 @settings(max_examples=50)
-def test_ir::typedeclaration_instantiation(instance):
-    assert isinstance(instance, ir::TypeDeclaration)
+def test_ir_typedeclaration_instantiation(instance):
+    assert isinstance(instance, ir_TypeDeclaration)
 
-@given(instance=ir::VariableImport_strategy)
+@given(instance=ir_VariableImport_strategy)
 @settings(max_examples=50)
-def test_ir::variableimport_instantiation(instance):
-    assert isinstance(instance, ir::VariableImport)
-
-@given(instance=ir::VariableImport_strategy)
-def test_ir::variableimport_namespace_type(instance):
-    assert isinstance(instance.namespace, str)
+def test_ir_variableimport_instantiation(instance):
+    assert isinstance(instance, ir_VariableImport)
 
 
-@given(instance=ir::VariableImport_strategy)
-def test_ir::variableimport_namespace_setter(instance):
+
+@given(instance=ir_VariableImport_strategy)
+def test_ir_variableimport_namespace_setter(instance):
     original = instance.namespace
     instance.namespace = original
     assert instance.namespace == original
 
-@given(instance=ir::Annotation_strategy)
+@given(instance=ir_Annotation_strategy)
 @settings(max_examples=50)
-def test_ir::annotation_instantiation(instance):
-    assert isinstance(instance, ir::Annotation)
-
-@given(instance=ir::Annotation_strategy)
-def test_ir::annotation_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_ir_annotation_instantiation(instance):
+    assert isinstance(instance, ir_Annotation)
 
 
-@given(instance=ir::Annotation_strategy)
-def test_ir::annotation_name_setter(instance):
+
+@given(instance=ir_Annotation_strategy)
+def test_ir_annotation_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=ir::Node_strategy)
+@given(instance=ir_Node_strategy)
 @settings(max_examples=50)
-def test_ir::node_instantiation(instance):
-    assert isinstance(instance, ir::Node)
-
-@given(instance=ir::Node_strategy)
-def test_ir::node_id_type(instance):
-    assert isinstance(instance.id, str)
+def test_ir_node_instantiation(instance):
+    assert isinstance(instance, ir_Node)
 
 
-@given(instance=ir::Node_strategy)
-def test_ir::node_id_setter(instance):
+
+@given(instance=ir_Node_strategy)
+def test_ir_node_id_setter(instance):
     original = instance.id
     instance.id = original
     assert instance.id == original
@@ -2609,155 +2535,136 @@ def test_ir::node_id_setter(instance):
 def test_node_instantiation(instance):
     assert isinstance(instance, Node)
 
-@given(instance=ir::PortInstance_strategy)
+@given(instance=ir_Declaration_strategy)
 @settings(max_examples=50)
-def test_ir::portinstance_instantiation(instance):
-    assert isinstance(instance, ir::PortInstance)
-
-@given(instance=ir::PortInstance_strategy)
-def test_ir::portinstance_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_ir_declaration_instantiation(instance):
+    assert isinstance(instance, ir_Declaration)
 
 
-@given(instance=ir::PortInstance_strategy)
-def test_ir::portinstance_name_setter(instance):
+
+@given(instance=ir_Declaration_strategy)
+def test_ir_declaration_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=ir::Expression_strategy)
+@given(instance=ir_Connection_strategy)
 @settings(max_examples=50)
-def test_ir::expression_instantiation(instance):
-    assert isinstance(instance, ir::Expression)
+def test_ir_connection_instantiation(instance):
+    assert isinstance(instance, ir_Connection)
 
-@given(instance=ir::PortAccess_strategy)
+@given(instance=ir_Expression_strategy)
 @settings(max_examples=50)
-def test_ir::portaccess_instantiation(instance):
-    assert isinstance(instance, ir::PortAccess)
+def test_ir_expression_instantiation(instance):
+    assert isinstance(instance, ir_Expression)
 
-@given(instance=ir::TypeRecord_strategy)
+@given(instance=ir_Statement_strategy)
 @settings(max_examples=50)
-def test_ir::typerecord_instantiation(instance):
-    assert isinstance(instance, ir::TypeRecord)
+def test_ir_statement_instantiation(instance):
+    assert isinstance(instance, ir_Statement)
 
-@given(instance=ir::VariableReference_strategy)
+@given(instance=ir_TypeRecord_strategy)
 @settings(max_examples=50)
-def test_ir::variablereference_instantiation(instance):
-    assert isinstance(instance, ir::VariableReference)
+def test_ir_typerecord_instantiation(instance):
+    assert isinstance(instance, ir_TypeRecord)
 
-@given(instance=ir::Connection_strategy)
+@given(instance=ir_PortAccess_strategy)
 @settings(max_examples=50)
-def test_ir::connection_instantiation(instance):
-    assert isinstance(instance, ir::Connection)
+def test_ir_portaccess_instantiation(instance):
+    assert isinstance(instance, ir_PortAccess)
 
-@given(instance=ir::Member_strategy)
+@given(instance=ir_PortInstance_strategy)
 @settings(max_examples=50)
-def test_ir::member_instantiation(instance):
-    assert isinstance(instance, ir::Member)
-
-@given(instance=ir::Member_strategy)
-def test_ir::member_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_ir_portinstance_instantiation(instance):
+    assert isinstance(instance, ir_PortInstance)
 
 
-@given(instance=ir::Member_strategy)
-def test_ir::member_name_setter(instance):
+
+@given(instance=ir_PortInstance_strategy)
+def test_ir_portinstance_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=ir::Statement_strategy)
+@given(instance=ir_VariableReference_strategy)
 @settings(max_examples=50)
-def test_ir::statement_instantiation(instance):
-    assert isinstance(instance, ir::Statement)
+def test_ir_variablereference_instantiation(instance):
+    assert isinstance(instance, ir_VariableReference)
 
-@given(instance=ir::Declaration_strategy)
+@given(instance=ir_Member_strategy)
 @settings(max_examples=50)
-def test_ir::declaration_instantiation(instance):
-    assert isinstance(instance, ir::Declaration)
-
-@given(instance=ir::Declaration_strategy)
-def test_ir::declaration_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_ir_member_instantiation(instance):
+    assert isinstance(instance, ir_Member)
 
 
-@given(instance=ir::Declaration_strategy)
-def test_ir::declaration_name_setter(instance):
+
+@given(instance=ir_Member_strategy)
+def test_ir_member_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=ir::Scope_strategy)
+@given(instance=ir_Scope_strategy)
 @settings(max_examples=50)
-def test_ir::scope_instantiation(instance):
-    assert isinstance(instance, ir::Scope)
+def test_ir_scope_instantiation(instance):
+    assert isinstance(instance, ir_Scope)
 
-@given(instance=ir::Variable_strategy)
+@given(instance=ir_Variable_strategy)
 @settings(max_examples=50)
-def test_ir::variable_instantiation(instance):
-    assert isinstance(instance, ir::Variable)
-
-@given(instance=ir::Variable_strategy)
-def test_ir::variable_constant_type(instance):
-    assert isinstance(instance.constant, bool)
+def test_ir_variable_instantiation(instance):
+    assert isinstance(instance, ir_Variable)
 
 
-@given(instance=ir::Variable_strategy)
-def test_ir::variable_constant_setter(instance):
+
+@given(instance=ir_Variable_strategy)
+def test_ir_variable_constant_setter(instance):
     original = instance.constant
     instance.constant = original
     assert instance.constant == original
 
-@given(instance=ir::Variable_strategy)
-def test_ir::variable_parameter_type(instance):
-    assert isinstance(instance.parameter, bool)
 
 
-@given(instance=ir::Variable_strategy)
-def test_ir::variable_parameter_setter(instance):
+@given(instance=ir_Variable_strategy)
+def test_ir_variable_parameter_setter(instance):
     original = instance.parameter
     instance.parameter = original
     assert instance.parameter == original
 
-@given(instance=ir::Port_strategy)
+@given(instance=ir_Port_strategy)
 @settings(max_examples=50)
-def test_ir::port_instantiation(instance):
-    assert isinstance(instance, ir::Port)
-
-@given(instance=ir::Port_strategy)
-def test_ir::port_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_ir_port_instantiation(instance):
+    assert isinstance(instance, ir_Port)
 
 
-@given(instance=ir::Port_strategy)
-def test_ir::port_name_setter(instance):
+
+@given(instance=ir_Port_strategy)
+def test_ir_port_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=ir::TypeActor_strategy)
+@given(instance=ir_TypeActor_strategy)
 @settings(max_examples=50)
-def test_ir::typeactor_instantiation(instance):
-    assert isinstance(instance, ir::TypeActor)
-
-@given(instance=ir::TypeActor_strategy)
-def test_ir::typeactor_namespace_type(instance):
-    assert isinstance(instance.namespace, str)
+def test_ir_typeactor_instantiation(instance):
+    assert isinstance(instance, ir_TypeActor)
 
 
-@given(instance=ir::TypeActor_strategy)
-def test_ir::typeactor_namespace_setter(instance):
+
+@given(instance=ir_TypeActor_strategy)
+def test_ir_typeactor_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+
+
+@given(instance=ir_TypeActor_strategy)
+def test_ir_typeactor_namespace_setter(instance):
     original = instance.namespace
     instance.namespace = original
     assert instance.namespace == original
 
-@given(instance=ir::TypeActor_strategy)
-def test_ir::typeactor_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=ir::TypeActor_strategy)
-def test_ir::typeactor_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
+@given(instance=ir_AbstractActor_strategy)
+@settings(max_examples=50)
+def test_ir_abstractactor_instantiation(instance):
+    assert isinstance(instance, ir_AbstractActor)

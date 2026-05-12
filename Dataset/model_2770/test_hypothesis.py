@@ -3,16 +3,16 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    links::RootNodeA,
-    links::Child::AB::Element::Link,
-    links::Root,
-    links::ChildNodeB,
-    links::ChildNodeA,
-    links::Root::BA::Element::Link,
-    links::RootNodeB,
+from python_code import (
+    links_RootNodeA,
+    links_Child_AB_Element_Link,
+    links_Root,
+    links_ChildNodeB,
+    links_ChildNodeA,
+    links_Root_BA_Element_Link,
+    links_RootNodeB,
 )
 
 # =============================================================================
@@ -21,93 +21,93 @@ from classes import (
 
 
 
-def test_links::rootnodea_is_not_abstract():
-    assert not inspect.isabstract(links::RootNodeA)
+def test_links_rootnodea_is_not_abstract():
+    assert not inspect.isabstract(links_RootNodeA)
 
 
-def test_links::rootnodea_constructor_exists():
-    assert callable(links::RootNodeA.__init__)
+def test_links_rootnodea_constructor_exists():
+    assert callable(links_RootNodeA.__init__)
 
 
-def test_links::rootnodea_constructor_args():
-    sig = inspect.signature(links::RootNodeA.__init__)
+def test_links_rootnodea_constructor_args():
+    sig = inspect.signature(links_RootNodeA.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_links::child::ab::element::link_is_not_abstract():
-    assert not inspect.isabstract(links::Child::AB::Element::Link)
+def test_links_child_ab_element_link_is_not_abstract():
+    assert not inspect.isabstract(links_Child_AB_Element_Link)
 
 
-def test_links::child::ab::element::link_constructor_exists():
-    assert callable(links::Child::AB::Element::Link.__init__)
+def test_links_child_ab_element_link_constructor_exists():
+    assert callable(links_Child_AB_Element_Link.__init__)
 
 
-def test_links::child::ab::element::link_constructor_args():
-    sig = inspect.signature(links::Child::AB::Element::Link.__init__)
+def test_links_child_ab_element_link_constructor_args():
+    sig = inspect.signature(links_Child_AB_Element_Link.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_links::root_is_not_abstract():
-    assert not inspect.isabstract(links::Root)
+def test_links_root_is_not_abstract():
+    assert not inspect.isabstract(links_Root)
 
 
-def test_links::root_constructor_exists():
-    assert callable(links::Root.__init__)
+def test_links_root_constructor_exists():
+    assert callable(links_Root.__init__)
 
 
-def test_links::root_constructor_args():
-    sig = inspect.signature(links::Root.__init__)
+def test_links_root_constructor_args():
+    sig = inspect.signature(links_Root.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_links::childnodeb_is_not_abstract():
-    assert not inspect.isabstract(links::ChildNodeB)
+def test_links_childnodeb_is_not_abstract():
+    assert not inspect.isabstract(links_ChildNodeB)
 
 
-def test_links::childnodeb_constructor_exists():
-    assert callable(links::ChildNodeB.__init__)
+def test_links_childnodeb_constructor_exists():
+    assert callable(links_ChildNodeB.__init__)
 
 
-def test_links::childnodeb_constructor_args():
-    sig = inspect.signature(links::ChildNodeB.__init__)
+def test_links_childnodeb_constructor_args():
+    sig = inspect.signature(links_ChildNodeB.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_links::childnodea_is_not_abstract():
-    assert not inspect.isabstract(links::ChildNodeA)
+def test_links_childnodea_is_not_abstract():
+    assert not inspect.isabstract(links_ChildNodeA)
 
 
-def test_links::childnodea_constructor_exists():
-    assert callable(links::ChildNodeA.__init__)
+def test_links_childnodea_constructor_exists():
+    assert callable(links_ChildNodeA.__init__)
 
 
-def test_links::childnodea_constructor_args():
-    sig = inspect.signature(links::ChildNodeA.__init__)
+def test_links_childnodea_constructor_args():
+    sig = inspect.signature(links_ChildNodeA.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_links::root::ba::element::link_is_not_abstract():
-    assert not inspect.isabstract(links::Root::BA::Element::Link)
+def test_links_root_ba_element_link_is_not_abstract():
+    assert not inspect.isabstract(links_Root_BA_Element_Link)
 
 
-def test_links::root::ba::element::link_constructor_exists():
-    assert callable(links::Root::BA::Element::Link.__init__)
+def test_links_root_ba_element_link_constructor_exists():
+    assert callable(links_Root_BA_Element_Link.__init__)
 
 
-def test_links::root::ba::element::link_constructor_args():
-    sig = inspect.signature(links::Root::BA::Element::Link.__init__)
+def test_links_root_ba_element_link_constructor_args():
+    sig = inspect.signature(links_Root_BA_Element_Link.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_links::root::ba::element::link_has_name():
-    assert hasattr(links::Root::BA::Element::Link, "name")
+def test_links_root_ba_element_link_has_name():
+    assert hasattr(links_Root_BA_Element_Link, "name")
     descriptor = None
-    for klass in links::Root::BA::Element::Link.__mro__:
+    for klass in links_Root_BA_Element_Link.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -115,16 +115,16 @@ def test_links::root::ba::element::link_has_name():
 
 
 
-def test_links::rootnodeb_is_not_abstract():
-    assert not inspect.isabstract(links::RootNodeB)
+def test_links_rootnodeb_is_not_abstract():
+    assert not inspect.isabstract(links_RootNodeB)
 
 
-def test_links::rootnodeb_constructor_exists():
-    assert callable(links::RootNodeB.__init__)
+def test_links_rootnodeb_constructor_exists():
+    assert callable(links_RootNodeB.__init__)
 
 
-def test_links::rootnodeb_constructor_args():
-    sig = inspect.signature(links::RootNodeB.__init__)
+def test_links_rootnodeb_constructor_args():
+    sig = inspect.signature(links_RootNodeB.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -139,72 +139,69 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-links::RootNodeA_strategy = st.builds(
-    links::RootNodeA,
+links_RootNodeA_strategy = st.builds(
+    links_RootNodeA,
 )
-links::Child::AB::Element::Link_strategy = st.builds(
-    links::Child::AB::Element::Link,
+links_Child_AB_Element_Link_strategy = st.builds(
+    links_Child_AB_Element_Link,
 )
-links::Root_strategy = st.builds(
-    links::Root,
+links_Root_strategy = st.builds(
+    links_Root,
 )
-links::ChildNodeB_strategy = st.builds(
-    links::ChildNodeB,
+links_ChildNodeB_strategy = st.builds(
+    links_ChildNodeB,
 )
-links::ChildNodeA_strategy = st.builds(
-    links::ChildNodeA,
+links_ChildNodeA_strategy = st.builds(
+    links_ChildNodeA,
 )
-links::Root::BA::Element::Link_strategy = st.builds(
-    links::Root::BA::Element::Link,
+links_Root_BA_Element_Link_strategy = st.builds(
+    links_Root_BA_Element_Link,
     name=
         safe_text
 )
-links::RootNodeB_strategy = st.builds(
-    links::RootNodeB,
+links_RootNodeB_strategy = st.builds(
+    links_RootNodeB,
 )
 
-@given(instance=links::RootNodeA_strategy)
+@given(instance=links_RootNodeA_strategy)
 @settings(max_examples=50)
-def test_links::rootnodea_instantiation(instance):
-    assert isinstance(instance, links::RootNodeA)
+def test_links_rootnodea_instantiation(instance):
+    assert isinstance(instance, links_RootNodeA)
 
-@given(instance=links::Child::AB::Element::Link_strategy)
+@given(instance=links_Child_AB_Element_Link_strategy)
 @settings(max_examples=50)
-def test_links::child::ab::element::link_instantiation(instance):
-    assert isinstance(instance, links::Child::AB::Element::Link)
+def test_links_child_ab_element_link_instantiation(instance):
+    assert isinstance(instance, links_Child_AB_Element_Link)
 
-@given(instance=links::Root_strategy)
+@given(instance=links_Root_strategy)
 @settings(max_examples=50)
-def test_links::root_instantiation(instance):
-    assert isinstance(instance, links::Root)
+def test_links_root_instantiation(instance):
+    assert isinstance(instance, links_Root)
 
-@given(instance=links::ChildNodeB_strategy)
+@given(instance=links_ChildNodeB_strategy)
 @settings(max_examples=50)
-def test_links::childnodeb_instantiation(instance):
-    assert isinstance(instance, links::ChildNodeB)
+def test_links_childnodeb_instantiation(instance):
+    assert isinstance(instance, links_ChildNodeB)
 
-@given(instance=links::ChildNodeA_strategy)
+@given(instance=links_ChildNodeA_strategy)
 @settings(max_examples=50)
-def test_links::childnodea_instantiation(instance):
-    assert isinstance(instance, links::ChildNodeA)
+def test_links_childnodea_instantiation(instance):
+    assert isinstance(instance, links_ChildNodeA)
 
-@given(instance=links::Root::BA::Element::Link_strategy)
+@given(instance=links_Root_BA_Element_Link_strategy)
 @settings(max_examples=50)
-def test_links::root::ba::element::link_instantiation(instance):
-    assert isinstance(instance, links::Root::BA::Element::Link)
-
-@given(instance=links::Root::BA::Element::Link_strategy)
-def test_links::root::ba::element::link_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_links_root_ba_element_link_instantiation(instance):
+    assert isinstance(instance, links_Root_BA_Element_Link)
 
 
-@given(instance=links::Root::BA::Element::Link_strategy)
-def test_links::root::ba::element::link_name_setter(instance):
+
+@given(instance=links_Root_BA_Element_Link_strategy)
+def test_links_root_ba_element_link_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=links::RootNodeB_strategy)
+@given(instance=links_RootNodeB_strategy)
 @settings(max_examples=50)
-def test_links::rootnodeb_instantiation(instance):
-    assert isinstance(instance, links::RootNodeB)
+def test_links_rootnodeb_instantiation(instance):
+    assert isinstance(instance, links_RootNodeB)

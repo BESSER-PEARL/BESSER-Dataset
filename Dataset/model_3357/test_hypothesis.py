@@ -3,19 +3,19 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     AbstractDataType,
-    dbDsl::CharType,
-    dbDsl::AbstractColumnMapper,
-    dbDsl::AbstractDataType,
-    dbDsl::Column,
-    dbDsl::Table,
+    dbDsl_CharType,
+    dbDsl_AbstractColumnMapper,
+    dbDsl_AbstractDataType,
+    dbDsl_Column,
+    dbDsl_Table,
     Root,
-    dbDsl::Database,
-    dbDsl::Root,
-    dbDsl::NumberType,
+    dbDsl_Database,
+    dbDsl_Root,
+    dbDsl_NumberType,
 )
 
 # =============================================================================
@@ -38,65 +38,65 @@ def test_abstractdatatype_constructor_args():
 
 
 
-def test_dbdsl::chartype_is_not_abstract():
-    assert not inspect.isabstract(dbDsl::CharType)
+def test_dbdsl_chartype_is_not_abstract():
+    assert not inspect.isabstract(dbDsl_CharType)
 
 
-def test_dbdsl::chartype_constructor_exists():
-    assert callable(dbDsl::CharType.__init__)
+def test_dbdsl_chartype_constructor_exists():
+    assert callable(dbDsl_CharType.__init__)
 
 
-def test_dbdsl::chartype_constructor_args():
-    sig = inspect.signature(dbDsl::CharType.__init__)
+def test_dbdsl_chartype_constructor_args():
+    sig = inspect.signature(dbDsl_CharType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_dbdsl::abstractcolumnmapper_is_not_abstract():
-    assert not inspect.isabstract(dbDsl::AbstractColumnMapper)
+def test_dbdsl_abstractcolumnmapper_is_not_abstract():
+    assert not inspect.isabstract(dbDsl_AbstractColumnMapper)
 
 
-def test_dbdsl::abstractcolumnmapper_constructor_exists():
-    assert callable(dbDsl::AbstractColumnMapper.__init__)
+def test_dbdsl_abstractcolumnmapper_constructor_exists():
+    assert callable(dbDsl_AbstractColumnMapper.__init__)
 
 
-def test_dbdsl::abstractcolumnmapper_constructor_args():
-    sig = inspect.signature(dbDsl::AbstractColumnMapper.__init__)
+def test_dbdsl_abstractcolumnmapper_constructor_args():
+    sig = inspect.signature(dbDsl_AbstractColumnMapper.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_dbdsl::abstractdatatype_is_not_abstract():
-    assert not inspect.isabstract(dbDsl::AbstractDataType)
+def test_dbdsl_abstractdatatype_is_not_abstract():
+    assert not inspect.isabstract(dbDsl_AbstractDataType)
 
 
-def test_dbdsl::abstractdatatype_constructor_exists():
-    assert callable(dbDsl::AbstractDataType.__init__)
+def test_dbdsl_abstractdatatype_constructor_exists():
+    assert callable(dbDsl_AbstractDataType.__init__)
 
 
-def test_dbdsl::abstractdatatype_constructor_args():
-    sig = inspect.signature(dbDsl::AbstractDataType.__init__)
+def test_dbdsl_abstractdatatype_constructor_args():
+    sig = inspect.signature(dbDsl_AbstractDataType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_dbdsl::column_is_not_abstract():
-    assert not inspect.isabstract(dbDsl::Column)
+def test_dbdsl_column_is_not_abstract():
+    assert not inspect.isabstract(dbDsl_Column)
 
 
-def test_dbdsl::column_constructor_exists():
-    assert callable(dbDsl::Column.__init__)
+def test_dbdsl_column_constructor_exists():
+    assert callable(dbDsl_Column.__init__)
 
 
-def test_dbdsl::column_constructor_args():
-    sig = inspect.signature(dbDsl::Column.__init__)
+def test_dbdsl_column_constructor_args():
+    sig = inspect.signature(dbDsl_Column.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_dbdsl::column_has_name():
-    assert hasattr(dbDsl::Column, "name")
+def test_dbdsl_column_has_name():
+    assert hasattr(dbDsl_Column, "name")
     descriptor = None
-    for klass in dbDsl::Column.__mro__:
+    for klass in dbDsl_Column.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -104,23 +104,23 @@ def test_dbdsl::column_has_name():
 
 
 
-def test_dbdsl::table_is_not_abstract():
-    assert not inspect.isabstract(dbDsl::Table)
+def test_dbdsl_table_is_not_abstract():
+    assert not inspect.isabstract(dbDsl_Table)
 
 
-def test_dbdsl::table_constructor_exists():
-    assert callable(dbDsl::Table.__init__)
+def test_dbdsl_table_constructor_exists():
+    assert callable(dbDsl_Table.__init__)
 
 
-def test_dbdsl::table_constructor_args():
-    sig = inspect.signature(dbDsl::Table.__init__)
+def test_dbdsl_table_constructor_args():
+    sig = inspect.signature(dbDsl_Table.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_dbdsl::table_has_name():
-    assert hasattr(dbDsl::Table, "name")
+def test_dbdsl_table_has_name():
+    assert hasattr(dbDsl_Table, "name")
     descriptor = None
-    for klass in dbDsl::Table.__mro__:
+    for klass in dbDsl_Table.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -142,23 +142,23 @@ def test_root_constructor_args():
 
 
 
-def test_dbdsl::database_is_not_abstract():
-    assert not inspect.isabstract(dbDsl::Database)
+def test_dbdsl_database_is_not_abstract():
+    assert not inspect.isabstract(dbDsl_Database)
 
 
-def test_dbdsl::database_constructor_exists():
-    assert callable(dbDsl::Database.__init__)
+def test_dbdsl_database_constructor_exists():
+    assert callable(dbDsl_Database.__init__)
 
 
-def test_dbdsl::database_constructor_args():
-    sig = inspect.signature(dbDsl::Database.__init__)
+def test_dbdsl_database_constructor_args():
+    sig = inspect.signature(dbDsl_Database.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_dbdsl::database_has_name():
-    assert hasattr(dbDsl::Database, "name")
+def test_dbdsl_database_has_name():
+    assert hasattr(dbDsl_Database, "name")
     descriptor = None
-    for klass in dbDsl::Database.__mro__:
+    for klass in dbDsl_Database.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -166,30 +166,30 @@ def test_dbdsl::database_has_name():
 
 
 
-def test_dbdsl::root_is_not_abstract():
-    assert not inspect.isabstract(dbDsl::Root)
+def test_dbdsl_root_is_not_abstract():
+    assert not inspect.isabstract(dbDsl_Root)
 
 
-def test_dbdsl::root_constructor_exists():
-    assert callable(dbDsl::Root.__init__)
+def test_dbdsl_root_constructor_exists():
+    assert callable(dbDsl_Root.__init__)
 
 
-def test_dbdsl::root_constructor_args():
-    sig = inspect.signature(dbDsl::Root.__init__)
+def test_dbdsl_root_constructor_args():
+    sig = inspect.signature(dbDsl_Root.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_dbdsl::numbertype_is_not_abstract():
-    assert not inspect.isabstract(dbDsl::NumberType)
+def test_dbdsl_numbertype_is_not_abstract():
+    assert not inspect.isabstract(dbDsl_NumberType)
 
 
-def test_dbdsl::numbertype_constructor_exists():
-    assert callable(dbDsl::NumberType.__init__)
+def test_dbdsl_numbertype_constructor_exists():
+    assert callable(dbDsl_NumberType.__init__)
 
 
-def test_dbdsl::numbertype_constructor_args():
-    sig = inspect.signature(dbDsl::NumberType.__init__)
+def test_dbdsl_numbertype_constructor_args():
+    sig = inspect.signature(dbDsl_NumberType.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -207,38 +207,38 @@ safe_text = st.text(
 AbstractDataType_strategy = st.builds(
     AbstractDataType,
 )
-dbDsl::CharType_strategy = st.builds(
-    dbDsl::CharType,
+dbDsl_CharType_strategy = st.builds(
+    dbDsl_CharType,
 )
-dbDsl::AbstractColumnMapper_strategy = st.builds(
-    dbDsl::AbstractColumnMapper,
+dbDsl_AbstractColumnMapper_strategy = st.builds(
+    dbDsl_AbstractColumnMapper,
 )
-dbDsl::AbstractDataType_strategy = st.builds(
-    dbDsl::AbstractDataType,
+dbDsl_AbstractDataType_strategy = st.builds(
+    dbDsl_AbstractDataType,
 )
-dbDsl::Column_strategy = st.builds(
-    dbDsl::Column,
+dbDsl_Column_strategy = st.builds(
+    dbDsl_Column,
     name=
         safe_text
 )
-dbDsl::Table_strategy = st.builds(
-    dbDsl::Table,
+dbDsl_Table_strategy = st.builds(
+    dbDsl_Table,
     name=
         safe_text
 )
 Root_strategy = st.builds(
     Root,
 )
-dbDsl::Database_strategy = st.builds(
-    dbDsl::Database,
+dbDsl_Database_strategy = st.builds(
+    dbDsl_Database,
     name=
         safe_text
 )
-dbDsl::Root_strategy = st.builds(
-    dbDsl::Root,
+dbDsl_Root_strategy = st.builds(
+    dbDsl_Root,
 )
-dbDsl::NumberType_strategy = st.builds(
-    dbDsl::NumberType,
+dbDsl_NumberType_strategy = st.builds(
+    dbDsl_NumberType,
 )
 
 @given(instance=AbstractDataType_strategy)
@@ -246,49 +246,43 @@ dbDsl::NumberType_strategy = st.builds(
 def test_abstractdatatype_instantiation(instance):
     assert isinstance(instance, AbstractDataType)
 
-@given(instance=dbDsl::CharType_strategy)
+@given(instance=dbDsl_CharType_strategy)
 @settings(max_examples=50)
-def test_dbdsl::chartype_instantiation(instance):
-    assert isinstance(instance, dbDsl::CharType)
+def test_dbdsl_chartype_instantiation(instance):
+    assert isinstance(instance, dbDsl_CharType)
 
-@given(instance=dbDsl::AbstractColumnMapper_strategy)
+@given(instance=dbDsl_AbstractColumnMapper_strategy)
 @settings(max_examples=50)
-def test_dbdsl::abstractcolumnmapper_instantiation(instance):
-    assert isinstance(instance, dbDsl::AbstractColumnMapper)
+def test_dbdsl_abstractcolumnmapper_instantiation(instance):
+    assert isinstance(instance, dbDsl_AbstractColumnMapper)
 
-@given(instance=dbDsl::AbstractDataType_strategy)
+@given(instance=dbDsl_AbstractDataType_strategy)
 @settings(max_examples=50)
-def test_dbdsl::abstractdatatype_instantiation(instance):
-    assert isinstance(instance, dbDsl::AbstractDataType)
+def test_dbdsl_abstractdatatype_instantiation(instance):
+    assert isinstance(instance, dbDsl_AbstractDataType)
 
-@given(instance=dbDsl::Column_strategy)
+@given(instance=dbDsl_Column_strategy)
 @settings(max_examples=50)
-def test_dbdsl::column_instantiation(instance):
-    assert isinstance(instance, dbDsl::Column)
-
-@given(instance=dbDsl::Column_strategy)
-def test_dbdsl::column_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_dbdsl_column_instantiation(instance):
+    assert isinstance(instance, dbDsl_Column)
 
 
-@given(instance=dbDsl::Column_strategy)
-def test_dbdsl::column_name_setter(instance):
+
+@given(instance=dbDsl_Column_strategy)
+def test_dbdsl_column_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=dbDsl::Table_strategy)
+@given(instance=dbDsl_Table_strategy)
 @settings(max_examples=50)
-def test_dbdsl::table_instantiation(instance):
-    assert isinstance(instance, dbDsl::Table)
-
-@given(instance=dbDsl::Table_strategy)
-def test_dbdsl::table_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_dbdsl_table_instantiation(instance):
+    assert isinstance(instance, dbDsl_Table)
 
 
-@given(instance=dbDsl::Table_strategy)
-def test_dbdsl::table_name_setter(instance):
+
+@given(instance=dbDsl_Table_strategy)
+def test_dbdsl_table_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
@@ -298,28 +292,25 @@ def test_dbdsl::table_name_setter(instance):
 def test_root_instantiation(instance):
     assert isinstance(instance, Root)
 
-@given(instance=dbDsl::Database_strategy)
+@given(instance=dbDsl_Database_strategy)
 @settings(max_examples=50)
-def test_dbdsl::database_instantiation(instance):
-    assert isinstance(instance, dbDsl::Database)
-
-@given(instance=dbDsl::Database_strategy)
-def test_dbdsl::database_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_dbdsl_database_instantiation(instance):
+    assert isinstance(instance, dbDsl_Database)
 
 
-@given(instance=dbDsl::Database_strategy)
-def test_dbdsl::database_name_setter(instance):
+
+@given(instance=dbDsl_Database_strategy)
+def test_dbdsl_database_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=dbDsl::Root_strategy)
+@given(instance=dbDsl_Root_strategy)
 @settings(max_examples=50)
-def test_dbdsl::root_instantiation(instance):
-    assert isinstance(instance, dbDsl::Root)
+def test_dbdsl_root_instantiation(instance):
+    assert isinstance(instance, dbDsl_Root)
 
-@given(instance=dbDsl::NumberType_strategy)
+@given(instance=dbDsl_NumberType_strategy)
 @settings(max_examples=50)
-def test_dbdsl::numbertype_instantiation(instance):
-    assert isinstance(instance, dbDsl::NumberType)
+def test_dbdsl_numbertype_instantiation(instance):
+    assert isinstance(instance, dbDsl_NumberType)

@@ -3,11 +3,11 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    prolog::Greeting,
-    prolog::Model,
+from python_code import (
+    prolog_Greeting,
+    prolog_Model,
 )
 
 # =============================================================================
@@ -16,23 +16,23 @@ from classes import (
 
 
 
-def test_prolog::greeting_is_not_abstract():
-    assert not inspect.isabstract(prolog::Greeting)
+def test_prolog_greeting_is_not_abstract():
+    assert not inspect.isabstract(prolog_Greeting)
 
 
-def test_prolog::greeting_constructor_exists():
-    assert callable(prolog::Greeting.__init__)
+def test_prolog_greeting_constructor_exists():
+    assert callable(prolog_Greeting.__init__)
 
 
-def test_prolog::greeting_constructor_args():
-    sig = inspect.signature(prolog::Greeting.__init__)
+def test_prolog_greeting_constructor_args():
+    sig = inspect.signature(prolog_Greeting.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_prolog::greeting_has_name():
-    assert hasattr(prolog::Greeting, "name")
+def test_prolog_greeting_has_name():
+    assert hasattr(prolog_Greeting, "name")
     descriptor = None
-    for klass in prolog::Greeting.__mro__:
+    for klass in prolog_Greeting.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -40,16 +40,16 @@ def test_prolog::greeting_has_name():
 
 
 
-def test_prolog::model_is_not_abstract():
-    assert not inspect.isabstract(prolog::Model)
+def test_prolog_model_is_not_abstract():
+    assert not inspect.isabstract(prolog_Model)
 
 
-def test_prolog::model_constructor_exists():
-    assert callable(prolog::Model.__init__)
+def test_prolog_model_constructor_exists():
+    assert callable(prolog_Model.__init__)
 
 
-def test_prolog::model_constructor_args():
-    sig = inspect.signature(prolog::Model.__init__)
+def test_prolog_model_constructor_args():
+    sig = inspect.signature(prolog_Model.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -64,32 +64,29 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-prolog::Greeting_strategy = st.builds(
-    prolog::Greeting,
+prolog_Greeting_strategy = st.builds(
+    prolog_Greeting,
     name=
         safe_text
 )
-prolog::Model_strategy = st.builds(
-    prolog::Model,
+prolog_Model_strategy = st.builds(
+    prolog_Model,
 )
 
-@given(instance=prolog::Greeting_strategy)
+@given(instance=prolog_Greeting_strategy)
 @settings(max_examples=50)
-def test_prolog::greeting_instantiation(instance):
-    assert isinstance(instance, prolog::Greeting)
-
-@given(instance=prolog::Greeting_strategy)
-def test_prolog::greeting_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_prolog_greeting_instantiation(instance):
+    assert isinstance(instance, prolog_Greeting)
 
 
-@given(instance=prolog::Greeting_strategy)
-def test_prolog::greeting_name_setter(instance):
+
+@given(instance=prolog_Greeting_strategy)
+def test_prolog_greeting_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=prolog::Model_strategy)
+@given(instance=prolog_Model_strategy)
 @settings(max_examples=50)
-def test_prolog::model_instantiation(instance):
-    assert isinstance(instance, prolog::Model)
+def test_prolog_model_instantiation(instance):
+    assert isinstance(instance, prolog_Model)

@@ -3,25 +3,25 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     Arith,
-    simpleALEnv::ArithLit,
-    simpleALEnv::ArithOp,
-    simpleALEnv::ALVarRef,
-    simpleALEnv::Arith,
-    simpleALEnv::RandRange,
-    simpleALEnv::EqualityTest,
+    simpleALEnv_ArithOp,
+    simpleALEnv_ArithLit,
+    simpleALEnv_ALVarRef,
+    simpleALEnv_Arith,
+    simpleALEnv_RandRange,
+    simpleALEnv_EqualityTest,
     Stmt,
-    simpleALEnv::IfStmt,
-    simpleALEnv::Assign,
-    simpleALEnv::Print,
+    simpleALEnv_IfStmt,
+    simpleALEnv_Assign,
+    simpleALEnv_Print,
     ArithOp,
-    simpleALEnv::ArithMinus,
-    simpleALEnv::ArithPlus,
-    simpleALEnv::Stmt,
-    simpleALEnv::Block,
+    simpleALEnv_ArithMinus,
+    simpleALEnv_ArithPlus,
+    simpleALEnv_Stmt,
+    simpleALEnv_Block,
 )
 
 # =============================================================================
@@ -44,23 +44,37 @@ def test_arith_constructor_args():
 
 
 
-def test_simplealenv::arithlit_is_not_abstract():
-    assert not inspect.isabstract(simpleALEnv::ArithLit)
+def test_simplealenv_arithop_is_not_abstract():
+    assert not inspect.isabstract(simpleALEnv_ArithOp)
 
 
-def test_simplealenv::arithlit_constructor_exists():
-    assert callable(simpleALEnv::ArithLit.__init__)
+def test_simplealenv_arithop_constructor_exists():
+    assert callable(simpleALEnv_ArithOp.__init__)
 
 
-def test_simplealenv::arithlit_constructor_args():
-    sig = inspect.signature(simpleALEnv::ArithLit.__init__)
+def test_simplealenv_arithop_constructor_args():
+    sig = inspect.signature(simpleALEnv_ArithOp.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_simplealenv_arithlit_is_not_abstract():
+    assert not inspect.isabstract(simpleALEnv_ArithLit)
+
+
+def test_simplealenv_arithlit_constructor_exists():
+    assert callable(simpleALEnv_ArithLit.__init__)
+
+
+def test_simplealenv_arithlit_constructor_args():
+    sig = inspect.signature(simpleALEnv_ArithLit.__init__)
     params = list(sig.parameters.keys())
     assert "val" in params, "Missing parameter 'val'"
 
-def test_simplealenv::arithlit_has_val():
-    assert hasattr(simpleALEnv::ArithLit, "val")
+def test_simplealenv_arithlit_has_val():
+    assert hasattr(simpleALEnv_ArithLit, "val")
     descriptor = None
-    for klass in simpleALEnv::ArithLit.__mro__:
+    for klass in simpleALEnv_ArithLit.__mro__:
         if "val" in klass.__dict__:
             descriptor = klass.__dict__["val"]
             break
@@ -68,37 +82,23 @@ def test_simplealenv::arithlit_has_val():
 
 
 
-def test_simplealenv::arithop_is_not_abstract():
-    assert not inspect.isabstract(simpleALEnv::ArithOp)
+def test_simplealenv_alvarref_is_not_abstract():
+    assert not inspect.isabstract(simpleALEnv_ALVarRef)
 
 
-def test_simplealenv::arithop_constructor_exists():
-    assert callable(simpleALEnv::ArithOp.__init__)
+def test_simplealenv_alvarref_constructor_exists():
+    assert callable(simpleALEnv_ALVarRef.__init__)
 
 
-def test_simplealenv::arithop_constructor_args():
-    sig = inspect.signature(simpleALEnv::ArithOp.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_simplealenv::alvarref_is_not_abstract():
-    assert not inspect.isabstract(simpleALEnv::ALVarRef)
-
-
-def test_simplealenv::alvarref_constructor_exists():
-    assert callable(simpleALEnv::ALVarRef.__init__)
-
-
-def test_simplealenv::alvarref_constructor_args():
-    sig = inspect.signature(simpleALEnv::ALVarRef.__init__)
+def test_simplealenv_alvarref_constructor_args():
+    sig = inspect.signature(simpleALEnv_ALVarRef.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_simplealenv::alvarref_has_name():
-    assert hasattr(simpleALEnv::ALVarRef, "name")
+def test_simplealenv_alvarref_has_name():
+    assert hasattr(simpleALEnv_ALVarRef, "name")
     descriptor = None
-    for klass in simpleALEnv::ALVarRef.__mro__:
+    for klass in simpleALEnv_ALVarRef.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -106,64 +106,64 @@ def test_simplealenv::alvarref_has_name():
 
 
 
-def test_simplealenv::arith_is_not_abstract():
-    assert not inspect.isabstract(simpleALEnv::Arith)
+def test_simplealenv_arith_is_not_abstract():
+    assert not inspect.isabstract(simpleALEnv_Arith)
 
 
-def test_simplealenv::arith_constructor_exists():
-    assert callable(simpleALEnv::Arith.__init__)
+def test_simplealenv_arith_constructor_exists():
+    assert callable(simpleALEnv_Arith.__init__)
 
 
-def test_simplealenv::arith_constructor_args():
-    sig = inspect.signature(simpleALEnv::Arith.__init__)
+def test_simplealenv_arith_constructor_args():
+    sig = inspect.signature(simpleALEnv_Arith.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_simplealenv::randrange_is_not_abstract():
-    assert not inspect.isabstract(simpleALEnv::RandRange)
+def test_simplealenv_randrange_is_not_abstract():
+    assert not inspect.isabstract(simpleALEnv_RandRange)
 
 
-def test_simplealenv::randrange_constructor_exists():
-    assert callable(simpleALEnv::RandRange.__init__)
+def test_simplealenv_randrange_constructor_exists():
+    assert callable(simpleALEnv_RandRange.__init__)
 
 
-def test_simplealenv::randrange_constructor_args():
-    sig = inspect.signature(simpleALEnv::RandRange.__init__)
+def test_simplealenv_randrange_constructor_args():
+    sig = inspect.signature(simpleALEnv_RandRange.__init__)
     params = list(sig.parameters.keys())
-    assert "max" in params, "Missing parameter 'max'"
     assert "min" in params, "Missing parameter 'min'"
+    assert "max" in params, "Missing parameter 'max'"
 
-def test_simplealenv::randrange_has_max():
-    assert hasattr(simpleALEnv::RandRange, "max")
+def test_simplealenv_randrange_has_min():
+    assert hasattr(simpleALEnv_RandRange, "min")
     descriptor = None
-    for klass in simpleALEnv::RandRange.__mro__:
-        if "max" in klass.__dict__:
-            descriptor = klass.__dict__["max"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_simplealenv::randrange_has_min():
-    assert hasattr(simpleALEnv::RandRange, "min")
-    descriptor = None
-    for klass in simpleALEnv::RandRange.__mro__:
+    for klass in simpleALEnv_RandRange.__mro__:
         if "min" in klass.__dict__:
             descriptor = klass.__dict__["min"]
             break
     assert isinstance(descriptor, property)
 
+def test_simplealenv_randrange_has_max():
+    assert hasattr(simpleALEnv_RandRange, "max")
+    descriptor = None
+    for klass in simpleALEnv_RandRange.__mro__:
+        if "max" in klass.__dict__:
+            descriptor = klass.__dict__["max"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_simplealenv::equalitytest_is_not_abstract():
-    assert not inspect.isabstract(simpleALEnv::EqualityTest)
+
+def test_simplealenv_equalitytest_is_not_abstract():
+    assert not inspect.isabstract(simpleALEnv_EqualityTest)
 
 
-def test_simplealenv::equalitytest_constructor_exists():
-    assert callable(simpleALEnv::EqualityTest.__init__)
+def test_simplealenv_equalitytest_constructor_exists():
+    assert callable(simpleALEnv_EqualityTest.__init__)
 
 
-def test_simplealenv::equalitytest_constructor_args():
-    sig = inspect.signature(simpleALEnv::EqualityTest.__init__)
+def test_simplealenv_equalitytest_constructor_args():
+    sig = inspect.signature(simpleALEnv_EqualityTest.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -182,37 +182,37 @@ def test_stmt_constructor_args():
 
 
 
-def test_simplealenv::ifstmt_is_not_abstract():
-    assert not inspect.isabstract(simpleALEnv::IfStmt)
+def test_simplealenv_ifstmt_is_not_abstract():
+    assert not inspect.isabstract(simpleALEnv_IfStmt)
 
 
-def test_simplealenv::ifstmt_constructor_exists():
-    assert callable(simpleALEnv::IfStmt.__init__)
+def test_simplealenv_ifstmt_constructor_exists():
+    assert callable(simpleALEnv_IfStmt.__init__)
 
 
-def test_simplealenv::ifstmt_constructor_args():
-    sig = inspect.signature(simpleALEnv::IfStmt.__init__)
+def test_simplealenv_ifstmt_constructor_args():
+    sig = inspect.signature(simpleALEnv_IfStmt.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_simplealenv::assign_is_not_abstract():
-    assert not inspect.isabstract(simpleALEnv::Assign)
+def test_simplealenv_assign_is_not_abstract():
+    assert not inspect.isabstract(simpleALEnv_Assign)
 
 
-def test_simplealenv::assign_constructor_exists():
-    assert callable(simpleALEnv::Assign.__init__)
+def test_simplealenv_assign_constructor_exists():
+    assert callable(simpleALEnv_Assign.__init__)
 
 
-def test_simplealenv::assign_constructor_args():
-    sig = inspect.signature(simpleALEnv::Assign.__init__)
+def test_simplealenv_assign_constructor_args():
+    sig = inspect.signature(simpleALEnv_Assign.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_simplealenv::assign_has_name():
-    assert hasattr(simpleALEnv::Assign, "name")
+def test_simplealenv_assign_has_name():
+    assert hasattr(simpleALEnv_Assign, "name")
     descriptor = None
-    for klass in simpleALEnv::Assign.__mro__:
+    for klass in simpleALEnv_Assign.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -220,23 +220,23 @@ def test_simplealenv::assign_has_name():
 
 
 
-def test_simplealenv::print_is_not_abstract():
-    assert not inspect.isabstract(simpleALEnv::Print)
+def test_simplealenv_print_is_not_abstract():
+    assert not inspect.isabstract(simpleALEnv_Print)
 
 
-def test_simplealenv::print_constructor_exists():
-    assert callable(simpleALEnv::Print.__init__)
+def test_simplealenv_print_constructor_exists():
+    assert callable(simpleALEnv_Print.__init__)
 
 
-def test_simplealenv::print_constructor_args():
-    sig = inspect.signature(simpleALEnv::Print.__init__)
+def test_simplealenv_print_constructor_args():
+    sig = inspect.signature(simpleALEnv_Print.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_simplealenv::print_has_name():
-    assert hasattr(simpleALEnv::Print, "name")
+def test_simplealenv_print_has_name():
+    assert hasattr(simpleALEnv_Print, "name")
     descriptor = None
-    for klass in simpleALEnv::Print.__mro__:
+    for klass in simpleALEnv_Print.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -258,58 +258,58 @@ def test_arithop_constructor_args():
 
 
 
-def test_simplealenv::arithminus_is_not_abstract():
-    assert not inspect.isabstract(simpleALEnv::ArithMinus)
+def test_simplealenv_arithminus_is_not_abstract():
+    assert not inspect.isabstract(simpleALEnv_ArithMinus)
 
 
-def test_simplealenv::arithminus_constructor_exists():
-    assert callable(simpleALEnv::ArithMinus.__init__)
+def test_simplealenv_arithminus_constructor_exists():
+    assert callable(simpleALEnv_ArithMinus.__init__)
 
 
-def test_simplealenv::arithminus_constructor_args():
-    sig = inspect.signature(simpleALEnv::ArithMinus.__init__)
+def test_simplealenv_arithminus_constructor_args():
+    sig = inspect.signature(simpleALEnv_ArithMinus.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_simplealenv::arithplus_is_not_abstract():
-    assert not inspect.isabstract(simpleALEnv::ArithPlus)
+def test_simplealenv_arithplus_is_not_abstract():
+    assert not inspect.isabstract(simpleALEnv_ArithPlus)
 
 
-def test_simplealenv::arithplus_constructor_exists():
-    assert callable(simpleALEnv::ArithPlus.__init__)
+def test_simplealenv_arithplus_constructor_exists():
+    assert callable(simpleALEnv_ArithPlus.__init__)
 
 
-def test_simplealenv::arithplus_constructor_args():
-    sig = inspect.signature(simpleALEnv::ArithPlus.__init__)
+def test_simplealenv_arithplus_constructor_args():
+    sig = inspect.signature(simpleALEnv_ArithPlus.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_simplealenv::stmt_is_not_abstract():
-    assert not inspect.isabstract(simpleALEnv::Stmt)
+def test_simplealenv_stmt_is_not_abstract():
+    assert not inspect.isabstract(simpleALEnv_Stmt)
 
 
-def test_simplealenv::stmt_constructor_exists():
-    assert callable(simpleALEnv::Stmt.__init__)
+def test_simplealenv_stmt_constructor_exists():
+    assert callable(simpleALEnv_Stmt.__init__)
 
 
-def test_simplealenv::stmt_constructor_args():
-    sig = inspect.signature(simpleALEnv::Stmt.__init__)
+def test_simplealenv_stmt_constructor_args():
+    sig = inspect.signature(simpleALEnv_Stmt.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_simplealenv::block_is_not_abstract():
-    assert not inspect.isabstract(simpleALEnv::Block)
+def test_simplealenv_block_is_not_abstract():
+    assert not inspect.isabstract(simpleALEnv_Block)
 
 
-def test_simplealenv::block_constructor_exists():
-    assert callable(simpleALEnv::Block.__init__)
+def test_simplealenv_block_constructor_exists():
+    assert callable(simpleALEnv_Block.__init__)
 
 
-def test_simplealenv::block_constructor_args():
-    sig = inspect.signature(simpleALEnv::Block.__init__)
+def test_simplealenv_block_constructor_args():
+    sig = inspect.signature(simpleALEnv_Block.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -327,62 +327,62 @@ safe_text = st.text(
 Arith_strategy = st.builds(
     Arith,
 )
-simpleALEnv::ArithLit_strategy = st.builds(
-    simpleALEnv::ArithLit,
+simpleALEnv_ArithOp_strategy = st.builds(
+    simpleALEnv_ArithOp,
+)
+simpleALEnv_ArithLit_strategy = st.builds(
+    simpleALEnv_ArithLit,
     val=
         st.integers()
 )
-simpleALEnv::ArithOp_strategy = st.builds(
-    simpleALEnv::ArithOp,
-)
-simpleALEnv::ALVarRef_strategy = st.builds(
-    simpleALEnv::ALVarRef,
+simpleALEnv_ALVarRef_strategy = st.builds(
+    simpleALEnv_ALVarRef,
     name=
         safe_text
 )
-simpleALEnv::Arith_strategy = st.builds(
-    simpleALEnv::Arith,
+simpleALEnv_Arith_strategy = st.builds(
+    simpleALEnv_Arith,
 )
-simpleALEnv::RandRange_strategy = st.builds(
-    simpleALEnv::RandRange,
-    max=
-        st.integers(),
+simpleALEnv_RandRange_strategy = st.builds(
+    simpleALEnv_RandRange,
     min=
+        st.integers(),
+    max=
         st.integers()
 )
-simpleALEnv::EqualityTest_strategy = st.builds(
-    simpleALEnv::EqualityTest,
+simpleALEnv_EqualityTest_strategy = st.builds(
+    simpleALEnv_EqualityTest,
 )
 Stmt_strategy = st.builds(
     Stmt,
 )
-simpleALEnv::IfStmt_strategy = st.builds(
-    simpleALEnv::IfStmt,
+simpleALEnv_IfStmt_strategy = st.builds(
+    simpleALEnv_IfStmt,
 )
-simpleALEnv::Assign_strategy = st.builds(
-    simpleALEnv::Assign,
+simpleALEnv_Assign_strategy = st.builds(
+    simpleALEnv_Assign,
     name=
         safe_text
 )
-simpleALEnv::Print_strategy = st.builds(
-    simpleALEnv::Print,
+simpleALEnv_Print_strategy = st.builds(
+    simpleALEnv_Print,
     name=
         safe_text
 )
 ArithOp_strategy = st.builds(
     ArithOp,
 )
-simpleALEnv::ArithMinus_strategy = st.builds(
-    simpleALEnv::ArithMinus,
+simpleALEnv_ArithMinus_strategy = st.builds(
+    simpleALEnv_ArithMinus,
 )
-simpleALEnv::ArithPlus_strategy = st.builds(
-    simpleALEnv::ArithPlus,
+simpleALEnv_ArithPlus_strategy = st.builds(
+    simpleALEnv_ArithPlus,
 )
-simpleALEnv::Stmt_strategy = st.builds(
-    simpleALEnv::Stmt,
+simpleALEnv_Stmt_strategy = st.builds(
+    simpleALEnv_Stmt,
 )
-simpleALEnv::Block_strategy = st.builds(
-    simpleALEnv::Block,
+simpleALEnv_Block_strategy = st.builds(
+    simpleALEnv_Block,
 )
 
 @given(instance=Arith_strategy)
@@ -390,118 +390,100 @@ simpleALEnv::Block_strategy = st.builds(
 def test_arith_instantiation(instance):
     assert isinstance(instance, Arith)
 
-@given(instance=simpleALEnv::ArithLit_strategy)
+@given(instance=simpleALEnv_ArithOp_strategy)
 @settings(max_examples=50)
-def test_simplealenv::arithlit_instantiation(instance):
-    assert isinstance(instance, simpleALEnv::ArithLit)
+def test_simplealenv_arithop_instantiation(instance):
+    assert isinstance(instance, simpleALEnv_ArithOp)
 
-@given(instance=simpleALEnv::ArithLit_strategy)
-def test_simplealenv::arithlit_val_type(instance):
-    assert isinstance(instance.val, int)
+@given(instance=simpleALEnv_ArithLit_strategy)
+@settings(max_examples=50)
+def test_simplealenv_arithlit_instantiation(instance):
+    assert isinstance(instance, simpleALEnv_ArithLit)
 
 
-@given(instance=simpleALEnv::ArithLit_strategy)
-def test_simplealenv::arithlit_val_setter(instance):
+
+@given(instance=simpleALEnv_ArithLit_strategy)
+def test_simplealenv_arithlit_val_setter(instance):
     original = instance.val
     instance.val = original
     assert instance.val == original
 
-@given(instance=simpleALEnv::ArithOp_strategy)
+@given(instance=simpleALEnv_ALVarRef_strategy)
 @settings(max_examples=50)
-def test_simplealenv::arithop_instantiation(instance):
-    assert isinstance(instance, simpleALEnv::ArithOp)
-
-@given(instance=simpleALEnv::ALVarRef_strategy)
-@settings(max_examples=50)
-def test_simplealenv::alvarref_instantiation(instance):
-    assert isinstance(instance, simpleALEnv::ALVarRef)
-
-@given(instance=simpleALEnv::ALVarRef_strategy)
-def test_simplealenv::alvarref_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_simplealenv_alvarref_instantiation(instance):
+    assert isinstance(instance, simpleALEnv_ALVarRef)
 
 
-@given(instance=simpleALEnv::ALVarRef_strategy)
-def test_simplealenv::alvarref_name_setter(instance):
+
+@given(instance=simpleALEnv_ALVarRef_strategy)
+def test_simplealenv_alvarref_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=simpleALEnv::Arith_strategy)
+@given(instance=simpleALEnv_Arith_strategy)
 @settings(max_examples=50)
-def test_simplealenv::arith_instantiation(instance):
-    assert isinstance(instance, simpleALEnv::Arith)
+def test_simplealenv_arith_instantiation(instance):
+    assert isinstance(instance, simpleALEnv_Arith)
 
-@given(instance=simpleALEnv::RandRange_strategy)
+@given(instance=simpleALEnv_RandRange_strategy)
 @settings(max_examples=50)
-def test_simplealenv::randrange_instantiation(instance):
-    assert isinstance(instance, simpleALEnv::RandRange)
-
-@given(instance=simpleALEnv::RandRange_strategy)
-def test_simplealenv::randrange_max_type(instance):
-    assert isinstance(instance.max, int)
+def test_simplealenv_randrange_instantiation(instance):
+    assert isinstance(instance, simpleALEnv_RandRange)
 
 
-@given(instance=simpleALEnv::RandRange_strategy)
-def test_simplealenv::randrange_max_setter(instance):
-    original = instance.max
-    instance.max = original
-    assert instance.max == original
 
-@given(instance=simpleALEnv::RandRange_strategy)
-def test_simplealenv::randrange_min_type(instance):
-    assert isinstance(instance.min, int)
-
-
-@given(instance=simpleALEnv::RandRange_strategy)
-def test_simplealenv::randrange_min_setter(instance):
+@given(instance=simpleALEnv_RandRange_strategy)
+def test_simplealenv_randrange_min_setter(instance):
     original = instance.min
     instance.min = original
     assert instance.min == original
 
-@given(instance=simpleALEnv::EqualityTest_strategy)
+
+
+@given(instance=simpleALEnv_RandRange_strategy)
+def test_simplealenv_randrange_max_setter(instance):
+    original = instance.max
+    instance.max = original
+    assert instance.max == original
+
+@given(instance=simpleALEnv_EqualityTest_strategy)
 @settings(max_examples=50)
-def test_simplealenv::equalitytest_instantiation(instance):
-    assert isinstance(instance, simpleALEnv::EqualityTest)
+def test_simplealenv_equalitytest_instantiation(instance):
+    assert isinstance(instance, simpleALEnv_EqualityTest)
 
 @given(instance=Stmt_strategy)
 @settings(max_examples=50)
 def test_stmt_instantiation(instance):
     assert isinstance(instance, Stmt)
 
-@given(instance=simpleALEnv::IfStmt_strategy)
+@given(instance=simpleALEnv_IfStmt_strategy)
 @settings(max_examples=50)
-def test_simplealenv::ifstmt_instantiation(instance):
-    assert isinstance(instance, simpleALEnv::IfStmt)
+def test_simplealenv_ifstmt_instantiation(instance):
+    assert isinstance(instance, simpleALEnv_IfStmt)
 
-@given(instance=simpleALEnv::Assign_strategy)
+@given(instance=simpleALEnv_Assign_strategy)
 @settings(max_examples=50)
-def test_simplealenv::assign_instantiation(instance):
-    assert isinstance(instance, simpleALEnv::Assign)
-
-@given(instance=simpleALEnv::Assign_strategy)
-def test_simplealenv::assign_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_simplealenv_assign_instantiation(instance):
+    assert isinstance(instance, simpleALEnv_Assign)
 
 
-@given(instance=simpleALEnv::Assign_strategy)
-def test_simplealenv::assign_name_setter(instance):
+
+@given(instance=simpleALEnv_Assign_strategy)
+def test_simplealenv_assign_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=simpleALEnv::Print_strategy)
+@given(instance=simpleALEnv_Print_strategy)
 @settings(max_examples=50)
-def test_simplealenv::print_instantiation(instance):
-    assert isinstance(instance, simpleALEnv::Print)
-
-@given(instance=simpleALEnv::Print_strategy)
-def test_simplealenv::print_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_simplealenv_print_instantiation(instance):
+    assert isinstance(instance, simpleALEnv_Print)
 
 
-@given(instance=simpleALEnv::Print_strategy)
-def test_simplealenv::print_name_setter(instance):
+
+@given(instance=simpleALEnv_Print_strategy)
+def test_simplealenv_print_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
@@ -511,22 +493,22 @@ def test_simplealenv::print_name_setter(instance):
 def test_arithop_instantiation(instance):
     assert isinstance(instance, ArithOp)
 
-@given(instance=simpleALEnv::ArithMinus_strategy)
+@given(instance=simpleALEnv_ArithMinus_strategy)
 @settings(max_examples=50)
-def test_simplealenv::arithminus_instantiation(instance):
-    assert isinstance(instance, simpleALEnv::ArithMinus)
+def test_simplealenv_arithminus_instantiation(instance):
+    assert isinstance(instance, simpleALEnv_ArithMinus)
 
-@given(instance=simpleALEnv::ArithPlus_strategy)
+@given(instance=simpleALEnv_ArithPlus_strategy)
 @settings(max_examples=50)
-def test_simplealenv::arithplus_instantiation(instance):
-    assert isinstance(instance, simpleALEnv::ArithPlus)
+def test_simplealenv_arithplus_instantiation(instance):
+    assert isinstance(instance, simpleALEnv_ArithPlus)
 
-@given(instance=simpleALEnv::Stmt_strategy)
+@given(instance=simpleALEnv_Stmt_strategy)
 @settings(max_examples=50)
-def test_simplealenv::stmt_instantiation(instance):
-    assert isinstance(instance, simpleALEnv::Stmt)
+def test_simplealenv_stmt_instantiation(instance):
+    assert isinstance(instance, simpleALEnv_Stmt)
 
-@given(instance=simpleALEnv::Block_strategy)
+@given(instance=simpleALEnv_Block_strategy)
 @settings(max_examples=50)
-def test_simplealenv::block_instantiation(instance):
-    assert isinstance(instance, simpleALEnv::Block)
+def test_simplealenv_block_instantiation(instance):
+    assert isinstance(instance, simpleALEnv_Block)

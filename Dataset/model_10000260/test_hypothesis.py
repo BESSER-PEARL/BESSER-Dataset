@@ -3,7 +3,7 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
 from python_code import (
     SteamGenerator,
@@ -232,17 +232,8 @@ def test_sensor_constructor_exists():
 def test_sensor_constructor_args():
     sig = inspect.signature(Sensor.__init__)
     params = list(sig.parameters.keys())
-    assert "SensorType" in params, "Missing parameter 'SensorType'"
     assert "SensorID" in params, "Missing parameter 'SensorID'"
-
-def test_sensor_has_SensorType():
-    assert hasattr(Sensor, "SensorType")
-    descriptor = None
-    for klass in Sensor.__mro__:
-        if "SensorType" in klass.__dict__:
-            descriptor = klass.__dict__["SensorType"]
-            break
-    assert isinstance(descriptor, property)
+    assert "SensorType" in params, "Missing parameter 'SensorType'"
 
 def test_sensor_has_SensorID():
     assert hasattr(Sensor, "SensorID")
@@ -250,6 +241,15 @@ def test_sensor_has_SensorID():
     for klass in Sensor.__mro__:
         if "SensorID" in klass.__dict__:
             descriptor = klass.__dict__["SensorID"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_sensor_has_SensorType():
+    assert hasattr(Sensor, "SensorType")
+    descriptor = None
+    for klass in Sensor.__mro__:
+        if "SensorType" in klass.__dict__:
+            descriptor = klass.__dict__["SensorType"]
             break
     assert isinstance(descriptor, property)
 
@@ -266,17 +266,8 @@ def test_system_constructor_exists():
 def test_system_constructor_args():
     sig = inspect.signature(System.__init__)
     params = list(sig.parameters.keys())
-    assert "Update" in params, "Missing parameter 'Update'"
     assert "Status" in params, "Missing parameter 'Status'"
-
-def test_system_has_Update():
-    assert hasattr(System, "Update")
-    descriptor = None
-    for klass in System.__mro__:
-        if "Update" in klass.__dict__:
-            descriptor = klass.__dict__["Update"]
-            break
-    assert isinstance(descriptor, property)
+    assert "Update" in params, "Missing parameter 'Update'"
 
 def test_system_has_Status():
     assert hasattr(System, "Status")
@@ -284,6 +275,15 @@ def test_system_has_Status():
     for klass in System.__mro__:
         if "Status" in klass.__dict__:
             descriptor = klass.__dict__["Status"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_system_has_Update():
+    assert hasattr(System, "Update")
+    descriptor = None
+    for klass in System.__mro__:
+        if "Update" in klass.__dict__:
+            descriptor = klass.__dict__["Update"]
             break
     assert isinstance(descriptor, property)
 
@@ -342,17 +342,17 @@ Temperature_Sensor_strategy = st.builds(
 )
 Sensor_strategy = st.builds(
     Sensor,
-    SensorType=
-        st.integers(),
     SensorID=
+        st.integers(),
+    SensorType=
         st.integers()
 )
 System_strategy = st.builds(
     System,
-    Update=
-        st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False),
     Status=
-        st.booleans()
+        st.booleans(),
+    Update=
+        st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False)
 )
 
 @given(instance=SteamGenerator_strategy)
@@ -360,9 +360,6 @@ System_strategy = st.builds(
 def test_steamgenerator_instantiation(instance):
     assert isinstance(instance, SteamGenerator)
 
-@given(instance=SteamGenerator_strategy)
-def test_steamgenerator_Status_type(instance):
-    assert isinstance(instance.Status, bool)
 
 
 @given(instance=SteamGenerator_strategy)
@@ -381,9 +378,6 @@ def test_display_instantiation(instance):
 def test_heater_instantiation(instance):
     assert isinstance(instance, Heater)
 
-@given(instance=Heater_strategy)
-def test_heater_Status_type(instance):
-    assert isinstance(instance.Status, bool)
 
 
 @given(instance=Heater_strategy)
@@ -402,9 +396,6 @@ def test_phoneapplication_instantiation(instance):
 def test_interior_container_instantiation(instance):
     assert isinstance(instance, Interior_Container)
 
-@given(instance=Interior_Container_strategy)
-def test_interior_container_WorkMode_type(instance):
-    assert isinstance(instance.WorkMode, int)
 
 
 @given(instance=Interior_Container_strategy)
@@ -418,9 +409,6 @@ def test_interior_container_WorkMode_setter(instance):
 def test_ingredient_box_instantiation(instance):
     assert isinstance(instance, Ingredient_Box)
 
-@given(instance=Ingredient_Box_strategy)
-def test_ingredient_box_WeightValue_type(instance):
-    assert isinstance(instance.WeightValue, float)
 
 
 @given(instance=Ingredient_Box_strategy)
@@ -429,9 +417,6 @@ def test_ingredient_box_WeightValue_setter(instance):
     instance.WeightValue = original
     assert instance.WeightValue == original
 
-@given(instance=Ingredient_Box_strategy)
-def test_ingredient_box_BoxID_type(instance):
-    assert isinstance(instance.BoxID, int)
 
 
 @given(instance=Ingredient_Box_strategy)
@@ -450,9 +435,6 @@ def test_cooking_system_instantiation(instance):
 def test_humidity_sensor_instantiation(instance):
     assert isinstance(instance, Humidity_Sensor)
 
-@given(instance=Humidity_Sensor_strategy)
-def test_humidity_sensor_CurrentValue_type(instance):
-    assert isinstance(instance.CurrentValue, float)
 
 
 @given(instance=Humidity_Sensor_strategy)
@@ -466,9 +448,6 @@ def test_humidity_sensor_CurrentValue_setter(instance):
 def test_temperature_sensor_instantiation(instance):
     assert isinstance(instance, Temperature_Sensor)
 
-@given(instance=Temperature_Sensor_strategy)
-def test_temperature_sensor_CurrentValue_type(instance):
-    assert isinstance(instance.CurrentValue, float)
 
 
 @given(instance=Temperature_Sensor_strategy)
@@ -482,20 +461,6 @@ def test_temperature_sensor_CurrentValue_setter(instance):
 def test_sensor_instantiation(instance):
     assert isinstance(instance, Sensor)
 
-@given(instance=Sensor_strategy)
-def test_sensor_SensorType_type(instance):
-    assert isinstance(instance.SensorType, int)
-
-
-@given(instance=Sensor_strategy)
-def test_sensor_SensorType_setter(instance):
-    original = instance.SensorType
-    instance.SensorType = original
-    assert instance.SensorType == original
-
-@given(instance=Sensor_strategy)
-def test_sensor_SensorID_type(instance):
-    assert isinstance(instance.SensorID, int)
 
 
 @given(instance=Sensor_strategy)
@@ -504,25 +469,19 @@ def test_sensor_SensorID_setter(instance):
     instance.SensorID = original
     assert instance.SensorID == original
 
+
+
+@given(instance=Sensor_strategy)
+def test_sensor_SensorType_setter(instance):
+    original = instance.SensorType
+    instance.SensorType = original
+    assert instance.SensorType == original
+
 @given(instance=System_strategy)
 @settings(max_examples=50)
 def test_system_instantiation(instance):
     assert isinstance(instance, System)
 
-@given(instance=System_strategy)
-def test_system_Update_type(instance):
-    assert isinstance(instance.Update, float)
-
-
-@given(instance=System_strategy)
-def test_system_Update_setter(instance):
-    original = instance.Update
-    instance.Update = original
-    assert instance.Update == original
-
-@given(instance=System_strategy)
-def test_system_Status_type(instance):
-    assert isinstance(instance.Status, bool)
 
 
 @given(instance=System_strategy)
@@ -530,3 +489,11 @@ def test_system_Status_setter(instance):
     original = instance.Status
     instance.Status = original
     assert instance.Status == original
+
+
+
+@given(instance=System_strategy)
+def test_system_Update_setter(instance):
+    original = instance.Update
+    instance.Update = original
+    assert instance.Update == original

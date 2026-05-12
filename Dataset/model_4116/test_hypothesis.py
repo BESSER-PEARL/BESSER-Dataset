@@ -3,37 +3,37 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    myDsl::ExprEq,
-    myDsl::ExprNotDo,
-    myDsl::LExpr,
-    myDsl::SymboleEx,
-    myDsl::Tl,
-    myDsl::Hd,
-    myDsl::Liste,
-    myDsl::Cons,
-    myDsl::ExprSimple,
-    myDsl::ExprAnd,
-    myDsl::ExprNotNot,
-    myDsl::ExprNot,
-    myDsl::ExprOr,
-    myDsl::Exprs,
-    myDsl::Vars,
-    myDsl::Foreach,
-    myDsl::If,
-    myDsl::For,
-    myDsl::While,
-    myDsl::AffectVar,
-    myDsl::Commande,
-    myDsl::Expr,
-    myDsl::Output,
-    myDsl::Commandes,
-    myDsl::Input,
-    myDsl::Fonction,
-    myDsl::Programme,
-    myDsl::Model,
+from python_code import (
+    myDsl_ExprEq,
+    myDsl_ExprNotDo,
+    myDsl_LExpr,
+    myDsl_SymboleEx,
+    myDsl_Tl,
+    myDsl_Hd,
+    myDsl_Liste,
+    myDsl_Cons,
+    myDsl_ExprSimple,
+    myDsl_ExprAnd,
+    myDsl_ExprNotNot,
+    myDsl_ExprNot,
+    myDsl_ExprOr,
+    myDsl_Exprs,
+    myDsl_Vars,
+    myDsl_Foreach,
+    myDsl_If,
+    myDsl_For,
+    myDsl_While,
+    myDsl_AffectVar,
+    myDsl_Commande,
+    myDsl_Expr,
+    myDsl_Output,
+    myDsl_Commandes,
+    myDsl_Input,
+    myDsl_Fonction,
+    myDsl_Programme,
+    myDsl_Model,
 )
 
 # =============================================================================
@@ -42,65 +42,65 @@ from classes import (
 
 
 
-def test_mydsl::expreq_is_not_abstract():
-    assert not inspect.isabstract(myDsl::ExprEq)
+def test_mydsl_expreq_is_not_abstract():
+    assert not inspect.isabstract(myDsl_ExprEq)
 
 
-def test_mydsl::expreq_constructor_exists():
-    assert callable(myDsl::ExprEq.__init__)
+def test_mydsl_expreq_constructor_exists():
+    assert callable(myDsl_ExprEq.__init__)
 
 
-def test_mydsl::expreq_constructor_args():
-    sig = inspect.signature(myDsl::ExprEq.__init__)
+def test_mydsl_expreq_constructor_args():
+    sig = inspect.signature(myDsl_ExprEq.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_mydsl::exprnotdo_is_not_abstract():
-    assert not inspect.isabstract(myDsl::ExprNotDo)
+def test_mydsl_exprnotdo_is_not_abstract():
+    assert not inspect.isabstract(myDsl_ExprNotDo)
 
 
-def test_mydsl::exprnotdo_constructor_exists():
-    assert callable(myDsl::ExprNotDo.__init__)
+def test_mydsl_exprnotdo_constructor_exists():
+    assert callable(myDsl_ExprNotDo.__init__)
 
 
-def test_mydsl::exprnotdo_constructor_args():
-    sig = inspect.signature(myDsl::ExprNotDo.__init__)
+def test_mydsl_exprnotdo_constructor_args():
+    sig = inspect.signature(myDsl_ExprNotDo.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_mydsl::lexpr_is_not_abstract():
-    assert not inspect.isabstract(myDsl::LExpr)
+def test_mydsl_lexpr_is_not_abstract():
+    assert not inspect.isabstract(myDsl_LExpr)
 
 
-def test_mydsl::lexpr_constructor_exists():
-    assert callable(myDsl::LExpr.__init__)
+def test_mydsl_lexpr_constructor_exists():
+    assert callable(myDsl_LExpr.__init__)
 
 
-def test_mydsl::lexpr_constructor_args():
-    sig = inspect.signature(myDsl::LExpr.__init__)
+def test_mydsl_lexpr_constructor_args():
+    sig = inspect.signature(myDsl_LExpr.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_mydsl::symboleex_is_not_abstract():
-    assert not inspect.isabstract(myDsl::SymboleEx)
+def test_mydsl_symboleex_is_not_abstract():
+    assert not inspect.isabstract(myDsl_SymboleEx)
 
 
-def test_mydsl::symboleex_constructor_exists():
-    assert callable(myDsl::SymboleEx.__init__)
+def test_mydsl_symboleex_constructor_exists():
+    assert callable(myDsl_SymboleEx.__init__)
 
 
-def test_mydsl::symboleex_constructor_args():
-    sig = inspect.signature(myDsl::SymboleEx.__init__)
+def test_mydsl_symboleex_constructor_args():
+    sig = inspect.signature(myDsl_SymboleEx.__init__)
     params = list(sig.parameters.keys())
     assert "p" in params, "Missing parameter 'p'"
 
-def test_mydsl::symboleex_has_p():
-    assert hasattr(myDsl::SymboleEx, "p")
+def test_mydsl_symboleex_has_p():
+    assert hasattr(myDsl_SymboleEx, "p")
     descriptor = None
-    for klass in myDsl::SymboleEx.__mro__:
+    for klass in myDsl_SymboleEx.__mro__:
         if "p" in klass.__dict__:
             descriptor = klass.__dict__["p"]
             break
@@ -108,203 +108,203 @@ def test_mydsl::symboleex_has_p():
 
 
 
-def test_mydsl::tl_is_not_abstract():
-    assert not inspect.isabstract(myDsl::Tl)
+def test_mydsl_tl_is_not_abstract():
+    assert not inspect.isabstract(myDsl_Tl)
 
 
-def test_mydsl::tl_constructor_exists():
-    assert callable(myDsl::Tl.__init__)
+def test_mydsl_tl_constructor_exists():
+    assert callable(myDsl_Tl.__init__)
 
 
-def test_mydsl::tl_constructor_args():
-    sig = inspect.signature(myDsl::Tl.__init__)
+def test_mydsl_tl_constructor_args():
+    sig = inspect.signature(myDsl_Tl.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_mydsl::hd_is_not_abstract():
-    assert not inspect.isabstract(myDsl::Hd)
+def test_mydsl_hd_is_not_abstract():
+    assert not inspect.isabstract(myDsl_Hd)
 
 
-def test_mydsl::hd_constructor_exists():
-    assert callable(myDsl::Hd.__init__)
+def test_mydsl_hd_constructor_exists():
+    assert callable(myDsl_Hd.__init__)
 
 
-def test_mydsl::hd_constructor_args():
-    sig = inspect.signature(myDsl::Hd.__init__)
+def test_mydsl_hd_constructor_args():
+    sig = inspect.signature(myDsl_Hd.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_mydsl::liste_is_not_abstract():
-    assert not inspect.isabstract(myDsl::Liste)
+def test_mydsl_liste_is_not_abstract():
+    assert not inspect.isabstract(myDsl_Liste)
 
 
-def test_mydsl::liste_constructor_exists():
-    assert callable(myDsl::Liste.__init__)
+def test_mydsl_liste_constructor_exists():
+    assert callable(myDsl_Liste.__init__)
 
 
-def test_mydsl::liste_constructor_args():
-    sig = inspect.signature(myDsl::Liste.__init__)
+def test_mydsl_liste_constructor_args():
+    sig = inspect.signature(myDsl_Liste.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_mydsl::cons_is_not_abstract():
-    assert not inspect.isabstract(myDsl::Cons)
+def test_mydsl_cons_is_not_abstract():
+    assert not inspect.isabstract(myDsl_Cons)
 
 
-def test_mydsl::cons_constructor_exists():
-    assert callable(myDsl::Cons.__init__)
+def test_mydsl_cons_constructor_exists():
+    assert callable(myDsl_Cons.__init__)
 
 
-def test_mydsl::cons_constructor_args():
-    sig = inspect.signature(myDsl::Cons.__init__)
+def test_mydsl_cons_constructor_args():
+    sig = inspect.signature(myDsl_Cons.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_mydsl::exprsimple_is_not_abstract():
-    assert not inspect.isabstract(myDsl::ExprSimple)
+def test_mydsl_exprsimple_is_not_abstract():
+    assert not inspect.isabstract(myDsl_ExprSimple)
 
 
-def test_mydsl::exprsimple_constructor_exists():
-    assert callable(myDsl::ExprSimple.__init__)
+def test_mydsl_exprsimple_constructor_exists():
+    assert callable(myDsl_ExprSimple.__init__)
 
 
-def test_mydsl::exprsimple_constructor_args():
-    sig = inspect.signature(myDsl::ExprSimple.__init__)
+def test_mydsl_exprsimple_constructor_args():
+    sig = inspect.signature(myDsl_ExprSimple.__init__)
     params = list(sig.parameters.keys())
-    assert "variable" in params, "Missing parameter 'variable'"
     assert "vide" in params, "Missing parameter 'vide'"
     assert "symbole" in params, "Missing parameter 'symbole'"
+    assert "variable" in params, "Missing parameter 'variable'"
 
-def test_mydsl::exprsimple_has_variable():
-    assert hasattr(myDsl::ExprSimple, "variable")
+def test_mydsl_exprsimple_has_vide():
+    assert hasattr(myDsl_ExprSimple, "vide")
     descriptor = None
-    for klass in myDsl::ExprSimple.__mro__:
-        if "variable" in klass.__dict__:
-            descriptor = klass.__dict__["variable"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_mydsl::exprsimple_has_vide():
-    assert hasattr(myDsl::ExprSimple, "vide")
-    descriptor = None
-    for klass in myDsl::ExprSimple.__mro__:
+    for klass in myDsl_ExprSimple.__mro__:
         if "vide" in klass.__dict__:
             descriptor = klass.__dict__["vide"]
             break
     assert isinstance(descriptor, property)
 
-def test_mydsl::exprsimple_has_symbole():
-    assert hasattr(myDsl::ExprSimple, "symbole")
+def test_mydsl_exprsimple_has_symbole():
+    assert hasattr(myDsl_ExprSimple, "symbole")
     descriptor = None
-    for klass in myDsl::ExprSimple.__mro__:
+    for klass in myDsl_ExprSimple.__mro__:
         if "symbole" in klass.__dict__:
             descriptor = klass.__dict__["symbole"]
             break
     assert isinstance(descriptor, property)
 
+def test_mydsl_exprsimple_has_variable():
+    assert hasattr(myDsl_ExprSimple, "variable")
+    descriptor = None
+    for klass in myDsl_ExprSimple.__mro__:
+        if "variable" in klass.__dict__:
+            descriptor = klass.__dict__["variable"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_mydsl::exprand_is_not_abstract():
-    assert not inspect.isabstract(myDsl::ExprAnd)
+
+def test_mydsl_exprand_is_not_abstract():
+    assert not inspect.isabstract(myDsl_ExprAnd)
 
 
-def test_mydsl::exprand_constructor_exists():
-    assert callable(myDsl::ExprAnd.__init__)
+def test_mydsl_exprand_constructor_exists():
+    assert callable(myDsl_ExprAnd.__init__)
 
 
-def test_mydsl::exprand_constructor_args():
-    sig = inspect.signature(myDsl::ExprAnd.__init__)
+def test_mydsl_exprand_constructor_args():
+    sig = inspect.signature(myDsl_ExprAnd.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_mydsl::exprnotnot_is_not_abstract():
-    assert not inspect.isabstract(myDsl::ExprNotNot)
+def test_mydsl_exprnotnot_is_not_abstract():
+    assert not inspect.isabstract(myDsl_ExprNotNot)
 
 
-def test_mydsl::exprnotnot_constructor_exists():
-    assert callable(myDsl::ExprNotNot.__init__)
+def test_mydsl_exprnotnot_constructor_exists():
+    assert callable(myDsl_ExprNotNot.__init__)
 
 
-def test_mydsl::exprnotnot_constructor_args():
-    sig = inspect.signature(myDsl::ExprNotNot.__init__)
+def test_mydsl_exprnotnot_constructor_args():
+    sig = inspect.signature(myDsl_ExprNotNot.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_mydsl::exprnot_is_not_abstract():
-    assert not inspect.isabstract(myDsl::ExprNot)
+def test_mydsl_exprnot_is_not_abstract():
+    assert not inspect.isabstract(myDsl_ExprNot)
 
 
-def test_mydsl::exprnot_constructor_exists():
-    assert callable(myDsl::ExprNot.__init__)
+def test_mydsl_exprnot_constructor_exists():
+    assert callable(myDsl_ExprNot.__init__)
 
 
-def test_mydsl::exprnot_constructor_args():
-    sig = inspect.signature(myDsl::ExprNot.__init__)
+def test_mydsl_exprnot_constructor_args():
+    sig = inspect.signature(myDsl_ExprNot.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_mydsl::expror_is_not_abstract():
-    assert not inspect.isabstract(myDsl::ExprOr)
+def test_mydsl_expror_is_not_abstract():
+    assert not inspect.isabstract(myDsl_ExprOr)
 
 
-def test_mydsl::expror_constructor_exists():
-    assert callable(myDsl::ExprOr.__init__)
+def test_mydsl_expror_constructor_exists():
+    assert callable(myDsl_ExprOr.__init__)
 
 
-def test_mydsl::expror_constructor_args():
-    sig = inspect.signature(myDsl::ExprOr.__init__)
+def test_mydsl_expror_constructor_args():
+    sig = inspect.signature(myDsl_ExprOr.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_mydsl::exprs_is_not_abstract():
-    assert not inspect.isabstract(myDsl::Exprs)
+def test_mydsl_exprs_is_not_abstract():
+    assert not inspect.isabstract(myDsl_Exprs)
 
 
-def test_mydsl::exprs_constructor_exists():
-    assert callable(myDsl::Exprs.__init__)
+def test_mydsl_exprs_constructor_exists():
+    assert callable(myDsl_Exprs.__init__)
 
 
-def test_mydsl::exprs_constructor_args():
-    sig = inspect.signature(myDsl::Exprs.__init__)
+def test_mydsl_exprs_constructor_args():
+    sig = inspect.signature(myDsl_Exprs.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_mydsl::vars_is_not_abstract():
-    assert not inspect.isabstract(myDsl::Vars)
+def test_mydsl_vars_is_not_abstract():
+    assert not inspect.isabstract(myDsl_Vars)
 
 
-def test_mydsl::vars_constructor_exists():
-    assert callable(myDsl::Vars.__init__)
+def test_mydsl_vars_constructor_exists():
+    assert callable(myDsl_Vars.__init__)
 
 
-def test_mydsl::vars_constructor_args():
-    sig = inspect.signature(myDsl::Vars.__init__)
+def test_mydsl_vars_constructor_args():
+    sig = inspect.signature(myDsl_Vars.__init__)
     params = list(sig.parameters.keys())
     assert "var3" in params, "Missing parameter 'var3'"
     assert "var2" in params, "Missing parameter 'var2'"
 
-def test_mydsl::vars_has_var3():
-    assert hasattr(myDsl::Vars, "var3")
+def test_mydsl_vars_has_var3():
+    assert hasattr(myDsl_Vars, "var3")
     descriptor = None
-    for klass in myDsl::Vars.__mro__:
+    for klass in myDsl_Vars.__mro__:
         if "var3" in klass.__dict__:
             descriptor = klass.__dict__["var3"]
             break
     assert isinstance(descriptor, property)
 
-def test_mydsl::vars_has_var2():
-    assert hasattr(myDsl::Vars, "var2")
+def test_mydsl_vars_has_var2():
+    assert hasattr(myDsl_Vars, "var2")
     descriptor = None
-    for klass in myDsl::Vars.__mro__:
+    for klass in myDsl_Vars.__mro__:
         if "var2" in klass.__dict__:
             descriptor = klass.__dict__["var2"]
             break
@@ -312,93 +312,93 @@ def test_mydsl::vars_has_var2():
 
 
 
-def test_mydsl::foreach_is_not_abstract():
-    assert not inspect.isabstract(myDsl::Foreach)
+def test_mydsl_foreach_is_not_abstract():
+    assert not inspect.isabstract(myDsl_Foreach)
 
 
-def test_mydsl::foreach_constructor_exists():
-    assert callable(myDsl::Foreach.__init__)
+def test_mydsl_foreach_constructor_exists():
+    assert callable(myDsl_Foreach.__init__)
 
 
-def test_mydsl::foreach_constructor_args():
-    sig = inspect.signature(myDsl::Foreach.__init__)
+def test_mydsl_foreach_constructor_args():
+    sig = inspect.signature(myDsl_Foreach.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_mydsl::if_is_not_abstract():
-    assert not inspect.isabstract(myDsl::If)
+def test_mydsl_if_is_not_abstract():
+    assert not inspect.isabstract(myDsl_If)
 
 
-def test_mydsl::if_constructor_exists():
-    assert callable(myDsl::If.__init__)
+def test_mydsl_if_constructor_exists():
+    assert callable(myDsl_If.__init__)
 
 
-def test_mydsl::if_constructor_args():
-    sig = inspect.signature(myDsl::If.__init__)
+def test_mydsl_if_constructor_args():
+    sig = inspect.signature(myDsl_If.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_mydsl::for_is_not_abstract():
-    assert not inspect.isabstract(myDsl::For)
+def test_mydsl_for_is_not_abstract():
+    assert not inspect.isabstract(myDsl_For)
 
 
-def test_mydsl::for_constructor_exists():
-    assert callable(myDsl::For.__init__)
+def test_mydsl_for_constructor_exists():
+    assert callable(myDsl_For.__init__)
 
 
-def test_mydsl::for_constructor_args():
-    sig = inspect.signature(myDsl::For.__init__)
+def test_mydsl_for_constructor_args():
+    sig = inspect.signature(myDsl_For.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_mydsl::while_is_not_abstract():
-    assert not inspect.isabstract(myDsl::While)
+def test_mydsl_while_is_not_abstract():
+    assert not inspect.isabstract(myDsl_While)
 
 
-def test_mydsl::while_constructor_exists():
-    assert callable(myDsl::While.__init__)
+def test_mydsl_while_constructor_exists():
+    assert callable(myDsl_While.__init__)
 
 
-def test_mydsl::while_constructor_args():
-    sig = inspect.signature(myDsl::While.__init__)
+def test_mydsl_while_constructor_args():
+    sig = inspect.signature(myDsl_While.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_mydsl::affectvar_is_not_abstract():
-    assert not inspect.isabstract(myDsl::AffectVar)
+def test_mydsl_affectvar_is_not_abstract():
+    assert not inspect.isabstract(myDsl_AffectVar)
 
 
-def test_mydsl::affectvar_constructor_exists():
-    assert callable(myDsl::AffectVar.__init__)
+def test_mydsl_affectvar_constructor_exists():
+    assert callable(myDsl_AffectVar.__init__)
 
 
-def test_mydsl::affectvar_constructor_args():
-    sig = inspect.signature(myDsl::AffectVar.__init__)
+def test_mydsl_affectvar_constructor_args():
+    sig = inspect.signature(myDsl_AffectVar.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_mydsl::commande_is_not_abstract():
-    assert not inspect.isabstract(myDsl::Commande)
+def test_mydsl_commande_is_not_abstract():
+    assert not inspect.isabstract(myDsl_Commande)
 
 
-def test_mydsl::commande_constructor_exists():
-    assert callable(myDsl::Commande.__init__)
+def test_mydsl_commande_constructor_exists():
+    assert callable(myDsl_Commande.__init__)
 
 
-def test_mydsl::commande_constructor_args():
-    sig = inspect.signature(myDsl::Commande.__init__)
+def test_mydsl_commande_constructor_args():
+    sig = inspect.signature(myDsl_Commande.__init__)
     params = list(sig.parameters.keys())
     assert "nop" in params, "Missing parameter 'nop'"
 
-def test_mydsl::commande_has_nop():
-    assert hasattr(myDsl::Commande, "nop")
+def test_mydsl_commande_has_nop():
+    assert hasattr(myDsl_Commande, "nop")
     descriptor = None
-    for klass in myDsl::Commande.__mro__:
+    for klass in myDsl_Commande.__mro__:
         if "nop" in klass.__dict__:
             descriptor = klass.__dict__["nop"]
             break
@@ -406,95 +406,47 @@ def test_mydsl::commande_has_nop():
 
 
 
-def test_mydsl::expr_is_not_abstract():
-    assert not inspect.isabstract(myDsl::Expr)
+def test_mydsl_expr_is_not_abstract():
+    assert not inspect.isabstract(myDsl_Expr)
 
 
-def test_mydsl::expr_constructor_exists():
-    assert callable(myDsl::Expr.__init__)
+def test_mydsl_expr_constructor_exists():
+    assert callable(myDsl_Expr.__init__)
 
 
-def test_mydsl::expr_constructor_args():
-    sig = inspect.signature(myDsl::Expr.__init__)
+def test_mydsl_expr_constructor_args():
+    sig = inspect.signature(myDsl_Expr.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_mydsl::output_is_not_abstract():
-    assert not inspect.isabstract(myDsl::Output)
+def test_mydsl_output_is_not_abstract():
+    assert not inspect.isabstract(myDsl_Output)
 
 
-def test_mydsl::output_constructor_exists():
-    assert callable(myDsl::Output.__init__)
+def test_mydsl_output_constructor_exists():
+    assert callable(myDsl_Output.__init__)
 
 
-def test_mydsl::output_constructor_args():
-    sig = inspect.signature(myDsl::Output.__init__)
+def test_mydsl_output_constructor_args():
+    sig = inspect.signature(myDsl_Output.__init__)
     params = list(sig.parameters.keys())
-    assert "var1" in params, "Missing parameter 'var1'"
     assert "var2" in params, "Missing parameter 'var2'"
+    assert "var1" in params, "Missing parameter 'var1'"
 
-def test_mydsl::output_has_var1():
-    assert hasattr(myDsl::Output, "var1")
+def test_mydsl_output_has_var2():
+    assert hasattr(myDsl_Output, "var2")
     descriptor = None
-    for klass in myDsl::Output.__mro__:
-        if "var1" in klass.__dict__:
-            descriptor = klass.__dict__["var1"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_mydsl::output_has_var2():
-    assert hasattr(myDsl::Output, "var2")
-    descriptor = None
-    for klass in myDsl::Output.__mro__:
+    for klass in myDsl_Output.__mro__:
         if "var2" in klass.__dict__:
             descriptor = klass.__dict__["var2"]
             break
     assert isinstance(descriptor, property)
 
-
-
-def test_mydsl::commandes_is_not_abstract():
-    assert not inspect.isabstract(myDsl::Commandes)
-
-
-def test_mydsl::commandes_constructor_exists():
-    assert callable(myDsl::Commandes.__init__)
-
-
-def test_mydsl::commandes_constructor_args():
-    sig = inspect.signature(myDsl::Commandes.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_mydsl::input_is_not_abstract():
-    assert not inspect.isabstract(myDsl::Input)
-
-
-def test_mydsl::input_constructor_exists():
-    assert callable(myDsl::Input.__init__)
-
-
-def test_mydsl::input_constructor_args():
-    sig = inspect.signature(myDsl::Input.__init__)
-    params = list(sig.parameters.keys())
-    assert "var2" in params, "Missing parameter 'var2'"
-    assert "var1" in params, "Missing parameter 'var1'"
-
-def test_mydsl::input_has_var2():
-    assert hasattr(myDsl::Input, "var2")
+def test_mydsl_output_has_var1():
+    assert hasattr(myDsl_Output, "var1")
     descriptor = None
-    for klass in myDsl::Input.__mro__:
-        if "var2" in klass.__dict__:
-            descriptor = klass.__dict__["var2"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_mydsl::input_has_var1():
-    assert hasattr(myDsl::Input, "var1")
-    descriptor = None
-    for klass in myDsl::Input.__mro__:
+    for klass in myDsl_Output.__mro__:
         if "var1" in klass.__dict__:
             descriptor = klass.__dict__["var1"]
             break
@@ -502,23 +454,71 @@ def test_mydsl::input_has_var1():
 
 
 
-def test_mydsl::fonction_is_not_abstract():
-    assert not inspect.isabstract(myDsl::Fonction)
+def test_mydsl_commandes_is_not_abstract():
+    assert not inspect.isabstract(myDsl_Commandes)
 
 
-def test_mydsl::fonction_constructor_exists():
-    assert callable(myDsl::Fonction.__init__)
+def test_mydsl_commandes_constructor_exists():
+    assert callable(myDsl_Commandes.__init__)
 
 
-def test_mydsl::fonction_constructor_args():
-    sig = inspect.signature(myDsl::Fonction.__init__)
+def test_mydsl_commandes_constructor_args():
+    sig = inspect.signature(myDsl_Commandes.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_mydsl_input_is_not_abstract():
+    assert not inspect.isabstract(myDsl_Input)
+
+
+def test_mydsl_input_constructor_exists():
+    assert callable(myDsl_Input.__init__)
+
+
+def test_mydsl_input_constructor_args():
+    sig = inspect.signature(myDsl_Input.__init__)
+    params = list(sig.parameters.keys())
+    assert "var1" in params, "Missing parameter 'var1'"
+    assert "var2" in params, "Missing parameter 'var2'"
+
+def test_mydsl_input_has_var1():
+    assert hasattr(myDsl_Input, "var1")
+    descriptor = None
+    for klass in myDsl_Input.__mro__:
+        if "var1" in klass.__dict__:
+            descriptor = klass.__dict__["var1"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_mydsl_input_has_var2():
+    assert hasattr(myDsl_Input, "var2")
+    descriptor = None
+    for klass in myDsl_Input.__mro__:
+        if "var2" in klass.__dict__:
+            descriptor = klass.__dict__["var2"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_mydsl_fonction_is_not_abstract():
+    assert not inspect.isabstract(myDsl_Fonction)
+
+
+def test_mydsl_fonction_constructor_exists():
+    assert callable(myDsl_Fonction.__init__)
+
+
+def test_mydsl_fonction_constructor_args():
+    sig = inspect.signature(myDsl_Fonction.__init__)
     params = list(sig.parameters.keys())
     assert "symbole" in params, "Missing parameter 'symbole'"
 
-def test_mydsl::fonction_has_symbole():
-    assert hasattr(myDsl::Fonction, "symbole")
+def test_mydsl_fonction_has_symbole():
+    assert hasattr(myDsl_Fonction, "symbole")
     descriptor = None
-    for klass in myDsl::Fonction.__mro__:
+    for klass in myDsl_Fonction.__mro__:
         if "symbole" in klass.__dict__:
             descriptor = klass.__dict__["symbole"]
             break
@@ -526,30 +526,30 @@ def test_mydsl::fonction_has_symbole():
 
 
 
-def test_mydsl::programme_is_not_abstract():
-    assert not inspect.isabstract(myDsl::Programme)
+def test_mydsl_programme_is_not_abstract():
+    assert not inspect.isabstract(myDsl_Programme)
 
 
-def test_mydsl::programme_constructor_exists():
-    assert callable(myDsl::Programme.__init__)
+def test_mydsl_programme_constructor_exists():
+    assert callable(myDsl_Programme.__init__)
 
 
-def test_mydsl::programme_constructor_args():
-    sig = inspect.signature(myDsl::Programme.__init__)
+def test_mydsl_programme_constructor_args():
+    sig = inspect.signature(myDsl_Programme.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_mydsl::model_is_not_abstract():
-    assert not inspect.isabstract(myDsl::Model)
+def test_mydsl_model_is_not_abstract():
+    assert not inspect.isabstract(myDsl_Model)
 
 
-def test_mydsl::model_constructor_exists():
-    assert callable(myDsl::Model.__init__)
+def test_mydsl_model_constructor_exists():
+    assert callable(myDsl_Model.__init__)
 
 
-def test_mydsl::model_constructor_args():
-    sig = inspect.signature(myDsl::Model.__init__)
+def test_mydsl_model_constructor_args():
+    sig = inspect.signature(myDsl_Model.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -564,383 +564,347 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-myDsl::ExprEq_strategy = st.builds(
-    myDsl::ExprEq,
+myDsl_ExprEq_strategy = st.builds(
+    myDsl_ExprEq,
 )
-myDsl::ExprNotDo_strategy = st.builds(
-    myDsl::ExprNotDo,
+myDsl_ExprNotDo_strategy = st.builds(
+    myDsl_ExprNotDo,
 )
-myDsl::LExpr_strategy = st.builds(
-    myDsl::LExpr,
+myDsl_LExpr_strategy = st.builds(
+    myDsl_LExpr,
 )
-myDsl::SymboleEx_strategy = st.builds(
-    myDsl::SymboleEx,
+myDsl_SymboleEx_strategy = st.builds(
+    myDsl_SymboleEx,
     p=
         safe_text
 )
-myDsl::Tl_strategy = st.builds(
-    myDsl::Tl,
+myDsl_Tl_strategy = st.builds(
+    myDsl_Tl,
 )
-myDsl::Hd_strategy = st.builds(
-    myDsl::Hd,
+myDsl_Hd_strategy = st.builds(
+    myDsl_Hd,
 )
-myDsl::Liste_strategy = st.builds(
-    myDsl::Liste,
+myDsl_Liste_strategy = st.builds(
+    myDsl_Liste,
 )
-myDsl::Cons_strategy = st.builds(
-    myDsl::Cons,
+myDsl_Cons_strategy = st.builds(
+    myDsl_Cons,
 )
-myDsl::ExprSimple_strategy = st.builds(
-    myDsl::ExprSimple,
-    variable=
-        safe_text,
+myDsl_ExprSimple_strategy = st.builds(
+    myDsl_ExprSimple,
     vide=
         safe_text,
     symbole=
+        safe_text,
+    variable=
         safe_text
 )
-myDsl::ExprAnd_strategy = st.builds(
-    myDsl::ExprAnd,
+myDsl_ExprAnd_strategy = st.builds(
+    myDsl_ExprAnd,
 )
-myDsl::ExprNotNot_strategy = st.builds(
-    myDsl::ExprNotNot,
+myDsl_ExprNotNot_strategy = st.builds(
+    myDsl_ExprNotNot,
 )
-myDsl::ExprNot_strategy = st.builds(
-    myDsl::ExprNot,
+myDsl_ExprNot_strategy = st.builds(
+    myDsl_ExprNot,
 )
-myDsl::ExprOr_strategy = st.builds(
-    myDsl::ExprOr,
+myDsl_ExprOr_strategy = st.builds(
+    myDsl_ExprOr,
 )
-myDsl::Exprs_strategy = st.builds(
-    myDsl::Exprs,
+myDsl_Exprs_strategy = st.builds(
+    myDsl_Exprs,
 )
-myDsl::Vars_strategy = st.builds(
-    myDsl::Vars,
+myDsl_Vars_strategy = st.builds(
+    myDsl_Vars,
     var3=
         safe_text,
     var2=
         safe_text
 )
-myDsl::Foreach_strategy = st.builds(
-    myDsl::Foreach,
+myDsl_Foreach_strategy = st.builds(
+    myDsl_Foreach,
 )
-myDsl::If_strategy = st.builds(
-    myDsl::If,
+myDsl_If_strategy = st.builds(
+    myDsl_If,
 )
-myDsl::For_strategy = st.builds(
-    myDsl::For,
+myDsl_For_strategy = st.builds(
+    myDsl_For,
 )
-myDsl::While_strategy = st.builds(
-    myDsl::While,
+myDsl_While_strategy = st.builds(
+    myDsl_While,
 )
-myDsl::AffectVar_strategy = st.builds(
-    myDsl::AffectVar,
+myDsl_AffectVar_strategy = st.builds(
+    myDsl_AffectVar,
 )
-myDsl::Commande_strategy = st.builds(
-    myDsl::Commande,
+myDsl_Commande_strategy = st.builds(
+    myDsl_Commande,
     nop=
         safe_text
 )
-myDsl::Expr_strategy = st.builds(
-    myDsl::Expr,
+myDsl_Expr_strategy = st.builds(
+    myDsl_Expr,
 )
-myDsl::Output_strategy = st.builds(
-    myDsl::Output,
-    var1=
-        safe_text,
-    var2=
-        safe_text
-)
-myDsl::Commandes_strategy = st.builds(
-    myDsl::Commandes,
-)
-myDsl::Input_strategy = st.builds(
-    myDsl::Input,
+myDsl_Output_strategy = st.builds(
+    myDsl_Output,
     var2=
         safe_text,
     var1=
         safe_text
 )
-myDsl::Fonction_strategy = st.builds(
-    myDsl::Fonction,
+myDsl_Commandes_strategy = st.builds(
+    myDsl_Commandes,
+)
+myDsl_Input_strategy = st.builds(
+    myDsl_Input,
+    var1=
+        safe_text,
+    var2=
+        safe_text
+)
+myDsl_Fonction_strategy = st.builds(
+    myDsl_Fonction,
     symbole=
         safe_text
 )
-myDsl::Programme_strategy = st.builds(
-    myDsl::Programme,
+myDsl_Programme_strategy = st.builds(
+    myDsl_Programme,
 )
-myDsl::Model_strategy = st.builds(
-    myDsl::Model,
+myDsl_Model_strategy = st.builds(
+    myDsl_Model,
 )
 
-@given(instance=myDsl::ExprEq_strategy)
+@given(instance=myDsl_ExprEq_strategy)
 @settings(max_examples=50)
-def test_mydsl::expreq_instantiation(instance):
-    assert isinstance(instance, myDsl::ExprEq)
+def test_mydsl_expreq_instantiation(instance):
+    assert isinstance(instance, myDsl_ExprEq)
 
-@given(instance=myDsl::ExprNotDo_strategy)
+@given(instance=myDsl_ExprNotDo_strategy)
 @settings(max_examples=50)
-def test_mydsl::exprnotdo_instantiation(instance):
-    assert isinstance(instance, myDsl::ExprNotDo)
+def test_mydsl_exprnotdo_instantiation(instance):
+    assert isinstance(instance, myDsl_ExprNotDo)
 
-@given(instance=myDsl::LExpr_strategy)
+@given(instance=myDsl_LExpr_strategy)
 @settings(max_examples=50)
-def test_mydsl::lexpr_instantiation(instance):
-    assert isinstance(instance, myDsl::LExpr)
+def test_mydsl_lexpr_instantiation(instance):
+    assert isinstance(instance, myDsl_LExpr)
 
-@given(instance=myDsl::SymboleEx_strategy)
+@given(instance=myDsl_SymboleEx_strategy)
 @settings(max_examples=50)
-def test_mydsl::symboleex_instantiation(instance):
-    assert isinstance(instance, myDsl::SymboleEx)
-
-@given(instance=myDsl::SymboleEx_strategy)
-def test_mydsl::symboleex_p_type(instance):
-    assert isinstance(instance.p, str)
+def test_mydsl_symboleex_instantiation(instance):
+    assert isinstance(instance, myDsl_SymboleEx)
 
 
-@given(instance=myDsl::SymboleEx_strategy)
-def test_mydsl::symboleex_p_setter(instance):
+
+@given(instance=myDsl_SymboleEx_strategy)
+def test_mydsl_symboleex_p_setter(instance):
     original = instance.p
     instance.p = original
     assert instance.p == original
 
-@given(instance=myDsl::Tl_strategy)
+@given(instance=myDsl_Tl_strategy)
 @settings(max_examples=50)
-def test_mydsl::tl_instantiation(instance):
-    assert isinstance(instance, myDsl::Tl)
+def test_mydsl_tl_instantiation(instance):
+    assert isinstance(instance, myDsl_Tl)
 
-@given(instance=myDsl::Hd_strategy)
+@given(instance=myDsl_Hd_strategy)
 @settings(max_examples=50)
-def test_mydsl::hd_instantiation(instance):
-    assert isinstance(instance, myDsl::Hd)
+def test_mydsl_hd_instantiation(instance):
+    assert isinstance(instance, myDsl_Hd)
 
-@given(instance=myDsl::Liste_strategy)
+@given(instance=myDsl_Liste_strategy)
 @settings(max_examples=50)
-def test_mydsl::liste_instantiation(instance):
-    assert isinstance(instance, myDsl::Liste)
+def test_mydsl_liste_instantiation(instance):
+    assert isinstance(instance, myDsl_Liste)
 
-@given(instance=myDsl::Cons_strategy)
+@given(instance=myDsl_Cons_strategy)
 @settings(max_examples=50)
-def test_mydsl::cons_instantiation(instance):
-    assert isinstance(instance, myDsl::Cons)
+def test_mydsl_cons_instantiation(instance):
+    assert isinstance(instance, myDsl_Cons)
 
-@given(instance=myDsl::ExprSimple_strategy)
+@given(instance=myDsl_ExprSimple_strategy)
 @settings(max_examples=50)
-def test_mydsl::exprsimple_instantiation(instance):
-    assert isinstance(instance, myDsl::ExprSimple)
-
-@given(instance=myDsl::ExprSimple_strategy)
-def test_mydsl::exprsimple_variable_type(instance):
-    assert isinstance(instance.variable, str)
+def test_mydsl_exprsimple_instantiation(instance):
+    assert isinstance(instance, myDsl_ExprSimple)
 
 
-@given(instance=myDsl::ExprSimple_strategy)
-def test_mydsl::exprsimple_variable_setter(instance):
-    original = instance.variable
-    instance.variable = original
-    assert instance.variable == original
 
-@given(instance=myDsl::ExprSimple_strategy)
-def test_mydsl::exprsimple_vide_type(instance):
-    assert isinstance(instance.vide, str)
-
-
-@given(instance=myDsl::ExprSimple_strategy)
-def test_mydsl::exprsimple_vide_setter(instance):
+@given(instance=myDsl_ExprSimple_strategy)
+def test_mydsl_exprsimple_vide_setter(instance):
     original = instance.vide
     instance.vide = original
     assert instance.vide == original
 
-@given(instance=myDsl::ExprSimple_strategy)
-def test_mydsl::exprsimple_symbole_type(instance):
-    assert isinstance(instance.symbole, str)
 
 
-@given(instance=myDsl::ExprSimple_strategy)
-def test_mydsl::exprsimple_symbole_setter(instance):
+@given(instance=myDsl_ExprSimple_strategy)
+def test_mydsl_exprsimple_symbole_setter(instance):
     original = instance.symbole
     instance.symbole = original
     assert instance.symbole == original
 
-@given(instance=myDsl::ExprAnd_strategy)
+
+
+@given(instance=myDsl_ExprSimple_strategy)
+def test_mydsl_exprsimple_variable_setter(instance):
+    original = instance.variable
+    instance.variable = original
+    assert instance.variable == original
+
+@given(instance=myDsl_ExprAnd_strategy)
 @settings(max_examples=50)
-def test_mydsl::exprand_instantiation(instance):
-    assert isinstance(instance, myDsl::ExprAnd)
+def test_mydsl_exprand_instantiation(instance):
+    assert isinstance(instance, myDsl_ExprAnd)
 
-@given(instance=myDsl::ExprNotNot_strategy)
+@given(instance=myDsl_ExprNotNot_strategy)
 @settings(max_examples=50)
-def test_mydsl::exprnotnot_instantiation(instance):
-    assert isinstance(instance, myDsl::ExprNotNot)
+def test_mydsl_exprnotnot_instantiation(instance):
+    assert isinstance(instance, myDsl_ExprNotNot)
 
-@given(instance=myDsl::ExprNot_strategy)
+@given(instance=myDsl_ExprNot_strategy)
 @settings(max_examples=50)
-def test_mydsl::exprnot_instantiation(instance):
-    assert isinstance(instance, myDsl::ExprNot)
+def test_mydsl_exprnot_instantiation(instance):
+    assert isinstance(instance, myDsl_ExprNot)
 
-@given(instance=myDsl::ExprOr_strategy)
+@given(instance=myDsl_ExprOr_strategy)
 @settings(max_examples=50)
-def test_mydsl::expror_instantiation(instance):
-    assert isinstance(instance, myDsl::ExprOr)
+def test_mydsl_expror_instantiation(instance):
+    assert isinstance(instance, myDsl_ExprOr)
 
-@given(instance=myDsl::Exprs_strategy)
+@given(instance=myDsl_Exprs_strategy)
 @settings(max_examples=50)
-def test_mydsl::exprs_instantiation(instance):
-    assert isinstance(instance, myDsl::Exprs)
+def test_mydsl_exprs_instantiation(instance):
+    assert isinstance(instance, myDsl_Exprs)
 
-@given(instance=myDsl::Vars_strategy)
+@given(instance=myDsl_Vars_strategy)
 @settings(max_examples=50)
-def test_mydsl::vars_instantiation(instance):
-    assert isinstance(instance, myDsl::Vars)
-
-@given(instance=myDsl::Vars_strategy)
-def test_mydsl::vars_var3_type(instance):
-    assert isinstance(instance.var3, str)
+def test_mydsl_vars_instantiation(instance):
+    assert isinstance(instance, myDsl_Vars)
 
 
-@given(instance=myDsl::Vars_strategy)
-def test_mydsl::vars_var3_setter(instance):
+
+@given(instance=myDsl_Vars_strategy)
+def test_mydsl_vars_var3_setter(instance):
     original = instance.var3
     instance.var3 = original
     assert instance.var3 == original
 
-@given(instance=myDsl::Vars_strategy)
-def test_mydsl::vars_var2_type(instance):
-    assert isinstance(instance.var2, str)
 
 
-@given(instance=myDsl::Vars_strategy)
-def test_mydsl::vars_var2_setter(instance):
+@given(instance=myDsl_Vars_strategy)
+def test_mydsl_vars_var2_setter(instance):
     original = instance.var2
     instance.var2 = original
     assert instance.var2 == original
 
-@given(instance=myDsl::Foreach_strategy)
+@given(instance=myDsl_Foreach_strategy)
 @settings(max_examples=50)
-def test_mydsl::foreach_instantiation(instance):
-    assert isinstance(instance, myDsl::Foreach)
+def test_mydsl_foreach_instantiation(instance):
+    assert isinstance(instance, myDsl_Foreach)
 
-@given(instance=myDsl::If_strategy)
+@given(instance=myDsl_If_strategy)
 @settings(max_examples=50)
-def test_mydsl::if_instantiation(instance):
-    assert isinstance(instance, myDsl::If)
+def test_mydsl_if_instantiation(instance):
+    assert isinstance(instance, myDsl_If)
 
-@given(instance=myDsl::For_strategy)
+@given(instance=myDsl_For_strategy)
 @settings(max_examples=50)
-def test_mydsl::for_instantiation(instance):
-    assert isinstance(instance, myDsl::For)
+def test_mydsl_for_instantiation(instance):
+    assert isinstance(instance, myDsl_For)
 
-@given(instance=myDsl::While_strategy)
+@given(instance=myDsl_While_strategy)
 @settings(max_examples=50)
-def test_mydsl::while_instantiation(instance):
-    assert isinstance(instance, myDsl::While)
+def test_mydsl_while_instantiation(instance):
+    assert isinstance(instance, myDsl_While)
 
-@given(instance=myDsl::AffectVar_strategy)
+@given(instance=myDsl_AffectVar_strategy)
 @settings(max_examples=50)
-def test_mydsl::affectvar_instantiation(instance):
-    assert isinstance(instance, myDsl::AffectVar)
+def test_mydsl_affectvar_instantiation(instance):
+    assert isinstance(instance, myDsl_AffectVar)
 
-@given(instance=myDsl::Commande_strategy)
+@given(instance=myDsl_Commande_strategy)
 @settings(max_examples=50)
-def test_mydsl::commande_instantiation(instance):
-    assert isinstance(instance, myDsl::Commande)
-
-@given(instance=myDsl::Commande_strategy)
-def test_mydsl::commande_nop_type(instance):
-    assert isinstance(instance.nop, str)
+def test_mydsl_commande_instantiation(instance):
+    assert isinstance(instance, myDsl_Commande)
 
 
-@given(instance=myDsl::Commande_strategy)
-def test_mydsl::commande_nop_setter(instance):
+
+@given(instance=myDsl_Commande_strategy)
+def test_mydsl_commande_nop_setter(instance):
     original = instance.nop
     instance.nop = original
     assert instance.nop == original
 
-@given(instance=myDsl::Expr_strategy)
+@given(instance=myDsl_Expr_strategy)
 @settings(max_examples=50)
-def test_mydsl::expr_instantiation(instance):
-    assert isinstance(instance, myDsl::Expr)
+def test_mydsl_expr_instantiation(instance):
+    assert isinstance(instance, myDsl_Expr)
 
-@given(instance=myDsl::Output_strategy)
+@given(instance=myDsl_Output_strategy)
 @settings(max_examples=50)
-def test_mydsl::output_instantiation(instance):
-    assert isinstance(instance, myDsl::Output)
-
-@given(instance=myDsl::Output_strategy)
-def test_mydsl::output_var1_type(instance):
-    assert isinstance(instance.var1, str)
+def test_mydsl_output_instantiation(instance):
+    assert isinstance(instance, myDsl_Output)
 
 
-@given(instance=myDsl::Output_strategy)
-def test_mydsl::output_var1_setter(instance):
-    original = instance.var1
-    instance.var1 = original
-    assert instance.var1 == original
 
-@given(instance=myDsl::Output_strategy)
-def test_mydsl::output_var2_type(instance):
-    assert isinstance(instance.var2, str)
-
-
-@given(instance=myDsl::Output_strategy)
-def test_mydsl::output_var2_setter(instance):
+@given(instance=myDsl_Output_strategy)
+def test_mydsl_output_var2_setter(instance):
     original = instance.var2
     instance.var2 = original
     assert instance.var2 == original
 
-@given(instance=myDsl::Commandes_strategy)
-@settings(max_examples=50)
-def test_mydsl::commandes_instantiation(instance):
-    assert isinstance(instance, myDsl::Commandes)
-
-@given(instance=myDsl::Input_strategy)
-@settings(max_examples=50)
-def test_mydsl::input_instantiation(instance):
-    assert isinstance(instance, myDsl::Input)
-
-@given(instance=myDsl::Input_strategy)
-def test_mydsl::input_var2_type(instance):
-    assert isinstance(instance.var2, str)
 
 
-@given(instance=myDsl::Input_strategy)
-def test_mydsl::input_var2_setter(instance):
-    original = instance.var2
-    instance.var2 = original
-    assert instance.var2 == original
-
-@given(instance=myDsl::Input_strategy)
-def test_mydsl::input_var1_type(instance):
-    assert isinstance(instance.var1, str)
-
-
-@given(instance=myDsl::Input_strategy)
-def test_mydsl::input_var1_setter(instance):
+@given(instance=myDsl_Output_strategy)
+def test_mydsl_output_var1_setter(instance):
     original = instance.var1
     instance.var1 = original
     assert instance.var1 == original
 
-@given(instance=myDsl::Fonction_strategy)
+@given(instance=myDsl_Commandes_strategy)
 @settings(max_examples=50)
-def test_mydsl::fonction_instantiation(instance):
-    assert isinstance(instance, myDsl::Fonction)
+def test_mydsl_commandes_instantiation(instance):
+    assert isinstance(instance, myDsl_Commandes)
 
-@given(instance=myDsl::Fonction_strategy)
-def test_mydsl::fonction_symbole_type(instance):
-    assert isinstance(instance.symbole, str)
+@given(instance=myDsl_Input_strategy)
+@settings(max_examples=50)
+def test_mydsl_input_instantiation(instance):
+    assert isinstance(instance, myDsl_Input)
 
 
-@given(instance=myDsl::Fonction_strategy)
-def test_mydsl::fonction_symbole_setter(instance):
+
+@given(instance=myDsl_Input_strategy)
+def test_mydsl_input_var1_setter(instance):
+    original = instance.var1
+    instance.var1 = original
+    assert instance.var1 == original
+
+
+
+@given(instance=myDsl_Input_strategy)
+def test_mydsl_input_var2_setter(instance):
+    original = instance.var2
+    instance.var2 = original
+    assert instance.var2 == original
+
+@given(instance=myDsl_Fonction_strategy)
+@settings(max_examples=50)
+def test_mydsl_fonction_instantiation(instance):
+    assert isinstance(instance, myDsl_Fonction)
+
+
+
+@given(instance=myDsl_Fonction_strategy)
+def test_mydsl_fonction_symbole_setter(instance):
     original = instance.symbole
     instance.symbole = original
     assert instance.symbole == original
 
-@given(instance=myDsl::Programme_strategy)
+@given(instance=myDsl_Programme_strategy)
 @settings(max_examples=50)
-def test_mydsl::programme_instantiation(instance):
-    assert isinstance(instance, myDsl::Programme)
+def test_mydsl_programme_instantiation(instance):
+    assert isinstance(instance, myDsl_Programme)
 
-@given(instance=myDsl::Model_strategy)
+@given(instance=myDsl_Model_strategy)
 @settings(max_examples=50)
-def test_mydsl::model_instantiation(instance):
-    assert isinstance(instance, myDsl::Model)
+def test_mydsl_model_instantiation(instance):
+    assert isinstance(instance, myDsl_Model)

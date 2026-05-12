@@ -3,13 +3,13 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    ocltutorial::Loans,
-    ocltutorial::Member,
-    ocltutorial::Book,
-    ocltutorial::Library,
+from python_code import (
+    ocltutorial_Loans,
+    ocltutorial_Member,
+    ocltutorial_Book,
+    ocltutorial_Library,
 )
 
 # =============================================================================
@@ -18,23 +18,23 @@ from classes import (
 
 
 
-def test_ocltutorial::loans_is_not_abstract():
-    assert not inspect.isabstract(ocltutorial::Loans)
+def test_ocltutorial_loans_is_not_abstract():
+    assert not inspect.isabstract(ocltutorial_Loans)
 
 
-def test_ocltutorial::loans_constructor_exists():
-    assert callable(ocltutorial::Loans.__init__)
+def test_ocltutorial_loans_constructor_exists():
+    assert callable(ocltutorial_Loans.__init__)
 
 
-def test_ocltutorial::loans_constructor_args():
-    sig = inspect.signature(ocltutorial::Loans.__init__)
+def test_ocltutorial_loans_constructor_args():
+    sig = inspect.signature(ocltutorial_Loans.__init__)
     params = list(sig.parameters.keys())
     assert "date" in params, "Missing parameter 'date'"
 
-def test_ocltutorial::loans_has_date():
-    assert hasattr(ocltutorial::Loans, "date")
+def test_ocltutorial_loans_has_date():
+    assert hasattr(ocltutorial_Loans, "date")
     descriptor = None
-    for klass in ocltutorial::Loans.__mro__:
+    for klass in ocltutorial_Loans.__mro__:
         if "date" in klass.__dict__:
             descriptor = klass.__dict__["date"]
             break
@@ -42,23 +42,23 @@ def test_ocltutorial::loans_has_date():
 
 
 
-def test_ocltutorial::member_is_not_abstract():
-    assert not inspect.isabstract(ocltutorial::Member)
+def test_ocltutorial_member_is_not_abstract():
+    assert not inspect.isabstract(ocltutorial_Member)
 
 
-def test_ocltutorial::member_constructor_exists():
-    assert callable(ocltutorial::Member.__init__)
+def test_ocltutorial_member_constructor_exists():
+    assert callable(ocltutorial_Member.__init__)
 
 
-def test_ocltutorial::member_constructor_args():
-    sig = inspect.signature(ocltutorial::Member.__init__)
+def test_ocltutorial_member_constructor_args():
+    sig = inspect.signature(ocltutorial_Member.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_ocltutorial::member_has_name():
-    assert hasattr(ocltutorial::Member, "name")
+def test_ocltutorial_member_has_name():
+    assert hasattr(ocltutorial_Member, "name")
     descriptor = None
-    for klass in ocltutorial::Member.__mro__:
+    for klass in ocltutorial_Member.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -66,50 +66,50 @@ def test_ocltutorial::member_has_name():
 
 
 
-def test_ocltutorial::book_is_not_abstract():
-    assert not inspect.isabstract(ocltutorial::Book)
+def test_ocltutorial_book_is_not_abstract():
+    assert not inspect.isabstract(ocltutorial_Book)
 
 
-def test_ocltutorial::book_constructor_exists():
-    assert callable(ocltutorial::Book.__init__)
+def test_ocltutorial_book_constructor_exists():
+    assert callable(ocltutorial_Book.__init__)
 
 
-def test_ocltutorial::book_constructor_args():
-    sig = inspect.signature(ocltutorial::Book.__init__)
+def test_ocltutorial_book_constructor_args():
+    sig = inspect.signature(ocltutorial_Book.__init__)
     params = list(sig.parameters.keys())
-    assert "copies" in params, "Missing parameter 'copies'"
     assert "name" in params, "Missing parameter 'name'"
+    assert "copies" in params, "Missing parameter 'copies'"
 
-def test_ocltutorial::book_has_copies():
-    assert hasattr(ocltutorial::Book, "copies")
+def test_ocltutorial_book_has_name():
+    assert hasattr(ocltutorial_Book, "name")
     descriptor = None
-    for klass in ocltutorial::Book.__mro__:
+    for klass in ocltutorial_Book.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_ocltutorial_book_has_copies():
+    assert hasattr(ocltutorial_Book, "copies")
+    descriptor = None
+    for klass in ocltutorial_Book.__mro__:
         if "copies" in klass.__dict__:
             descriptor = klass.__dict__["copies"]
             break
     assert isinstance(descriptor, property)
 
-def test_ocltutorial::book_has_name():
-    assert hasattr(ocltutorial::Book, "name")
-    descriptor = None
-    for klass in ocltutorial::Book.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
 
 
-
-def test_ocltutorial::library_is_not_abstract():
-    assert not inspect.isabstract(ocltutorial::Library)
-
-
-def test_ocltutorial::library_constructor_exists():
-    assert callable(ocltutorial::Library.__init__)
+def test_ocltutorial_library_is_not_abstract():
+    assert not inspect.isabstract(ocltutorial_Library)
 
 
-def test_ocltutorial::library_constructor_args():
-    sig = inspect.signature(ocltutorial::Library.__init__)
+def test_ocltutorial_library_constructor_exists():
+    assert callable(ocltutorial_Library.__init__)
+
+
+def test_ocltutorial_library_constructor_args():
+    sig = inspect.signature(ocltutorial_Library.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -124,87 +124,75 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-ocltutorial::Loans_strategy = st.builds(
-    ocltutorial::Loans,
+ocltutorial_Loans_strategy = st.builds(
+    ocltutorial_Loans,
     date=
         st.dates()
 )
-ocltutorial::Member_strategy = st.builds(
-    ocltutorial::Member,
+ocltutorial_Member_strategy = st.builds(
+    ocltutorial_Member,
     name=
         safe_text
 )
-ocltutorial::Book_strategy = st.builds(
-    ocltutorial::Book,
-    copies=
+ocltutorial_Book_strategy = st.builds(
+    ocltutorial_Book,
+    name=
         safe_text,
-    name=
+    copies=
         safe_text
 )
-ocltutorial::Library_strategy = st.builds(
-    ocltutorial::Library,
+ocltutorial_Library_strategy = st.builds(
+    ocltutorial_Library,
 )
 
-@given(instance=ocltutorial::Loans_strategy)
+@given(instance=ocltutorial_Loans_strategy)
 @settings(max_examples=50)
-def test_ocltutorial::loans_instantiation(instance):
-    assert isinstance(instance, ocltutorial::Loans)
-
-@given(instance=ocltutorial::Loans_strategy)
-def test_ocltutorial::loans_date_type(instance):
-    assert isinstance(instance.date, date)
+def test_ocltutorial_loans_instantiation(instance):
+    assert isinstance(instance, ocltutorial_Loans)
 
 
-@given(instance=ocltutorial::Loans_strategy)
-def test_ocltutorial::loans_date_setter(instance):
+
+@given(instance=ocltutorial_Loans_strategy)
+def test_ocltutorial_loans_date_setter(instance):
     original = instance.date
     instance.date = original
     assert instance.date == original
 
-@given(instance=ocltutorial::Member_strategy)
+@given(instance=ocltutorial_Member_strategy)
 @settings(max_examples=50)
-def test_ocltutorial::member_instantiation(instance):
-    assert isinstance(instance, ocltutorial::Member)
-
-@given(instance=ocltutorial::Member_strategy)
-def test_ocltutorial::member_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_ocltutorial_member_instantiation(instance):
+    assert isinstance(instance, ocltutorial_Member)
 
 
-@given(instance=ocltutorial::Member_strategy)
-def test_ocltutorial::member_name_setter(instance):
+
+@given(instance=ocltutorial_Member_strategy)
+def test_ocltutorial_member_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=ocltutorial::Book_strategy)
+@given(instance=ocltutorial_Book_strategy)
 @settings(max_examples=50)
-def test_ocltutorial::book_instantiation(instance):
-    assert isinstance(instance, ocltutorial::Book)
-
-@given(instance=ocltutorial::Book_strategy)
-def test_ocltutorial::book_copies_type(instance):
-    assert isinstance(instance.copies, str)
+def test_ocltutorial_book_instantiation(instance):
+    assert isinstance(instance, ocltutorial_Book)
 
 
-@given(instance=ocltutorial::Book_strategy)
-def test_ocltutorial::book_copies_setter(instance):
+
+@given(instance=ocltutorial_Book_strategy)
+def test_ocltutorial_book_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+
+
+@given(instance=ocltutorial_Book_strategy)
+def test_ocltutorial_book_copies_setter(instance):
     original = instance.copies
     instance.copies = original
     assert instance.copies == original
 
-@given(instance=ocltutorial::Book_strategy)
-def test_ocltutorial::book_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=ocltutorial::Book_strategy)
-def test_ocltutorial::book_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
-
-@given(instance=ocltutorial::Library_strategy)
+@given(instance=ocltutorial_Library_strategy)
 @settings(max_examples=50)
-def test_ocltutorial::library_instantiation(instance):
-    assert isinstance(instance, ocltutorial::Library)
+def test_ocltutorial_library_instantiation(instance):
+    assert isinstance(instance, ocltutorial_Library)

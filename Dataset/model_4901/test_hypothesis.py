@@ -3,115 +3,115 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     ErrorResponse,
-    SPL::RedirectionErrorResponse,
-    SPL::ServerErrorResponse,
-    SPL::GlobalErrorResponse,
-    SPL::ClientErrorResponse,
+    SPL_GlobalErrorResponse,
+    SPL_ServerErrorResponse,
+    SPL_RedirectionErrorResponse,
+    SPL_ClientErrorResponse,
     Response,
-    SPL::ErrorResponse,
-    SPL::SuccessResponse,
+    SPL_ErrorResponse,
+    SPL_SuccessResponse,
     Constant,
-    SPL::URIConstant,
-    SPL::StringConstant,
-    SPL::IntegerConstant,
-    SPL::BooleanConstant,
+    SPL_StringConstant,
+    SPL_IntegerConstant,
+    SPL_URIConstant,
+    SPL_BooleanConstant,
     MessageField,
-    SPL::HeadedMessageField,
-    SPL::ReasonMessageField,
+    SPL_HeadedMessageField,
+    SPL_ReasonMessageField,
     VariablePlace,
-    SPL::PropertyCallPlace,
+    SPL_PropertyCallPlace,
     Place,
-    SPL::VariablePlace,
-    SPL::SIPHeaderPlace,
-    SPL::ResponseConstant,
-    SPL::SequenceConstant,
+    SPL_VariablePlace,
+    SPL_SIPHeaderPlace,
+    SPL_ResponseConstant,
+    SPL_SequenceConstant,
     Expression,
-    SPL::BlockExp,
-    SPL::ReasonExp,
-    SPL::WithExp,
-    SPL::BODYExp,
-    SPL::OperatorExp,
-    SPL::ForwardExp,
-    SPL::ConstantExp,
-    SPL::FunctionCallExp,
-    SPL::PopExp,
-    SPL::RequestURIExp,
+    SPL_BODYExp,
+    SPL_OperatorExp,
+    SPL_BlockExp,
+    SPL_ForwardExp,
+    SPL_ReasonExp,
+    SPL_WithExp,
+    SPL_ConstantExp,
+    SPL_FunctionCallExp,
+    SPL_PopExp,
+    SPL_RequestURIExp,
     SelectMember,
-    SPL::SelectDefault,
-    SPL::SelectCase,
-    SPL::Place,
+    SPL_SelectDefault,
+    SPL_SelectCase,
+    SPL_Place,
     Statement,
-    SPL::ContinueStat,
-    SPL::FunctionCallStat,
-    SPL::SelectStat,
-    SPL::WhenStat,
-    SPL::ForeachStat,
-    SPL::IfStat,
-    SPL::DeclarationStat,
-    SPL::SetStat,
-    SPL::BreakStat,
-    SPL::PushStat,
-    SPL::ReturnStat,
-    SPL::CompoundStat,
-    SPL::Variable,
+    SPL_BreakStat,
+    SPL_PushStat,
+    SPL_ReturnStat,
+    SPL_SetStat,
+    SPL_ForeachStat,
+    SPL_FunctionCallStat,
+    SPL_IfStat,
+    SPL_WhenStat,
+    SPL_SelectStat,
+    SPL_DeclarationStat,
+    SPL_ContinueStat,
+    SPL_CompoundStat,
+    SPL_Variable,
     FunctionDeclaration,
-    SPL::LocalFunctionDeclaration,
-    SPL::RemoteFunctionDeclaration,
+    SPL_LocalFunctionDeclaration,
+    SPL_RemoteFunctionDeclaration,
     Declaration,
-    SPL::FunctionDeclaration,
-    SPL::StructureDeclaration,
-    SPL::VariableDeclaration,
+    SPL_FunctionDeclaration,
+    SPL_StructureDeclaration,
+    SPL_VariableDeclaration,
     Branch,
-    SPL::NamedBranch,
-    SPL::DefaultBranch,
+    SPL_NamedBranch,
+    SPL_DefaultBranch,
     MethodName,
-    SPL::ControlMethodName,
-    SPL::SIPMethodName,
+    SPL_ControlMethodName,
+    SPL_SIPMethodName,
     VariableDeclaration,
-    SPL::WhenHeader,
-    SPL::Argument,
+    SPL_WhenHeader,
+    SPL_Argument,
     TypeExpression,
-    SPL::DefinedType,
-    SPL::SequenceType,
-    SPL::SimpleType,
+    SPL_DefinedType,
+    SPL_SequenceType,
+    SPL_SimpleType,
     Session,
-    SPL::Event,
-    SPL::Method,
-    SPL::Dialog,
-    SPL::Registration,
+    SPL_Dialog,
+    SPL_Event,
+    SPL_Method,
+    SPL_Registration,
     LocatedElement,
-    SPL::Branch,
-    SPL::StructureProperty,
-    SPL::MethodName,
-    SPL::SelectMember,
-    SPL::MessageField,
-    SPL::Service,
-    SPL::Constant,
-    SPL::Session,
-    SPL::FunctionCall,
-    SPL::Statement,
-    SPL::Declaration,
-    SPL::Response,
-    SPL::Expression,
-    SPL::Program,
-    SPL::TypeExpression,
-    SPL::LocatedElement,
-    SIPMethod,
+    SPL_Declaration,
+    SPL_Service,
+    SPL_Constant,
+    SPL_Statement,
+    SPL_MessageField,
+    SPL_Expression,
+    SPL_StructureProperty,
+    SPL_MethodName,
+    SPL_Response,
+    SPL_FunctionCall,
+    SPL_SelectMember,
+    SPL_Branch,
+    SPL_Session,
+    SPL_Program,
+    SPL_TypeExpression,
+    SPL_LocatedElement,
     ClientErrorKind,
-    SuccessKind,
-    PrimitiveType,
-    RedirectionErrorKind,
-    Modifier,
-    FunctionLocation,
     ControlMethod,
-    GlobalErrorKind,
     ServerErrorKind,
-    SIPHeader,
     Direction,
+    FunctionLocation,
+    RedirectionErrorKind,
+    PrimitiveType,
+    GlobalErrorKind,
+    Modifier,
+    SuccessKind,
+    SIPHeader,
+    SIPMethod,
 )
 
 # =============================================================================
@@ -134,23 +134,23 @@ def test_errorresponse_constructor_args():
 
 
 
-def test_spl::redirectionerrorresponse_is_not_abstract():
-    assert not inspect.isabstract(SPL::RedirectionErrorResponse)
+def test_spl_globalerrorresponse_is_not_abstract():
+    assert not inspect.isabstract(SPL_GlobalErrorResponse)
 
 
-def test_spl::redirectionerrorresponse_constructor_exists():
-    assert callable(SPL::RedirectionErrorResponse.__init__)
+def test_spl_globalerrorresponse_constructor_exists():
+    assert callable(SPL_GlobalErrorResponse.__init__)
 
 
-def test_spl::redirectionerrorresponse_constructor_args():
-    sig = inspect.signature(SPL::RedirectionErrorResponse.__init__)
+def test_spl_globalerrorresponse_constructor_args():
+    sig = inspect.signature(SPL_GlobalErrorResponse.__init__)
     params = list(sig.parameters.keys())
     assert "errorKind" in params, "Missing parameter 'errorKind'"
 
-def test_spl::redirectionerrorresponse_has_errorKind():
-    assert hasattr(SPL::RedirectionErrorResponse, "errorKind")
+def test_spl_globalerrorresponse_has_errorKind():
+    assert hasattr(SPL_GlobalErrorResponse, "errorKind")
     descriptor = None
-    for klass in SPL::RedirectionErrorResponse.__mro__:
+    for klass in SPL_GlobalErrorResponse.__mro__:
         if "errorKind" in klass.__dict__:
             descriptor = klass.__dict__["errorKind"]
             break
@@ -158,23 +158,23 @@ def test_spl::redirectionerrorresponse_has_errorKind():
 
 
 
-def test_spl::servererrorresponse_is_not_abstract():
-    assert not inspect.isabstract(SPL::ServerErrorResponse)
+def test_spl_servererrorresponse_is_not_abstract():
+    assert not inspect.isabstract(SPL_ServerErrorResponse)
 
 
-def test_spl::servererrorresponse_constructor_exists():
-    assert callable(SPL::ServerErrorResponse.__init__)
+def test_spl_servererrorresponse_constructor_exists():
+    assert callable(SPL_ServerErrorResponse.__init__)
 
 
-def test_spl::servererrorresponse_constructor_args():
-    sig = inspect.signature(SPL::ServerErrorResponse.__init__)
+def test_spl_servererrorresponse_constructor_args():
+    sig = inspect.signature(SPL_ServerErrorResponse.__init__)
     params = list(sig.parameters.keys())
     assert "errorKind" in params, "Missing parameter 'errorKind'"
 
-def test_spl::servererrorresponse_has_errorKind():
-    assert hasattr(SPL::ServerErrorResponse, "errorKind")
+def test_spl_servererrorresponse_has_errorKind():
+    assert hasattr(SPL_ServerErrorResponse, "errorKind")
     descriptor = None
-    for klass in SPL::ServerErrorResponse.__mro__:
+    for klass in SPL_ServerErrorResponse.__mro__:
         if "errorKind" in klass.__dict__:
             descriptor = klass.__dict__["errorKind"]
             break
@@ -182,23 +182,23 @@ def test_spl::servererrorresponse_has_errorKind():
 
 
 
-def test_spl::globalerrorresponse_is_not_abstract():
-    assert not inspect.isabstract(SPL::GlobalErrorResponse)
+def test_spl_redirectionerrorresponse_is_not_abstract():
+    assert not inspect.isabstract(SPL_RedirectionErrorResponse)
 
 
-def test_spl::globalerrorresponse_constructor_exists():
-    assert callable(SPL::GlobalErrorResponse.__init__)
+def test_spl_redirectionerrorresponse_constructor_exists():
+    assert callable(SPL_RedirectionErrorResponse.__init__)
 
 
-def test_spl::globalerrorresponse_constructor_args():
-    sig = inspect.signature(SPL::GlobalErrorResponse.__init__)
+def test_spl_redirectionerrorresponse_constructor_args():
+    sig = inspect.signature(SPL_RedirectionErrorResponse.__init__)
     params = list(sig.parameters.keys())
     assert "errorKind" in params, "Missing parameter 'errorKind'"
 
-def test_spl::globalerrorresponse_has_errorKind():
-    assert hasattr(SPL::GlobalErrorResponse, "errorKind")
+def test_spl_redirectionerrorresponse_has_errorKind():
+    assert hasattr(SPL_RedirectionErrorResponse, "errorKind")
     descriptor = None
-    for klass in SPL::GlobalErrorResponse.__mro__:
+    for klass in SPL_RedirectionErrorResponse.__mro__:
         if "errorKind" in klass.__dict__:
             descriptor = klass.__dict__["errorKind"]
             break
@@ -206,23 +206,23 @@ def test_spl::globalerrorresponse_has_errorKind():
 
 
 
-def test_spl::clienterrorresponse_is_not_abstract():
-    assert not inspect.isabstract(SPL::ClientErrorResponse)
+def test_spl_clienterrorresponse_is_not_abstract():
+    assert not inspect.isabstract(SPL_ClientErrorResponse)
 
 
-def test_spl::clienterrorresponse_constructor_exists():
-    assert callable(SPL::ClientErrorResponse.__init__)
+def test_spl_clienterrorresponse_constructor_exists():
+    assert callable(SPL_ClientErrorResponse.__init__)
 
 
-def test_spl::clienterrorresponse_constructor_args():
-    sig = inspect.signature(SPL::ClientErrorResponse.__init__)
+def test_spl_clienterrorresponse_constructor_args():
+    sig = inspect.signature(SPL_ClientErrorResponse.__init__)
     params = list(sig.parameters.keys())
     assert "errorKind" in params, "Missing parameter 'errorKind'"
 
-def test_spl::clienterrorresponse_has_errorKind():
-    assert hasattr(SPL::ClientErrorResponse, "errorKind")
+def test_spl_clienterrorresponse_has_errorKind():
+    assert hasattr(SPL_ClientErrorResponse, "errorKind")
     descriptor = None
-    for klass in SPL::ClientErrorResponse.__mro__:
+    for klass in SPL_ClientErrorResponse.__mro__:
         if "errorKind" in klass.__dict__:
             descriptor = klass.__dict__["errorKind"]
             break
@@ -244,37 +244,37 @@ def test_response_constructor_args():
 
 
 
-def test_spl::errorresponse_is_not_abstract():
-    assert not inspect.isabstract(SPL::ErrorResponse)
+def test_spl_errorresponse_is_not_abstract():
+    assert not inspect.isabstract(SPL_ErrorResponse)
 
 
-def test_spl::errorresponse_constructor_exists():
-    assert callable(SPL::ErrorResponse.__init__)
+def test_spl_errorresponse_constructor_exists():
+    assert callable(SPL_ErrorResponse.__init__)
 
 
-def test_spl::errorresponse_constructor_args():
-    sig = inspect.signature(SPL::ErrorResponse.__init__)
+def test_spl_errorresponse_constructor_args():
+    sig = inspect.signature(SPL_ErrorResponse.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_spl::successresponse_is_not_abstract():
-    assert not inspect.isabstract(SPL::SuccessResponse)
+def test_spl_successresponse_is_not_abstract():
+    assert not inspect.isabstract(SPL_SuccessResponse)
 
 
-def test_spl::successresponse_constructor_exists():
-    assert callable(SPL::SuccessResponse.__init__)
+def test_spl_successresponse_constructor_exists():
+    assert callable(SPL_SuccessResponse.__init__)
 
 
-def test_spl::successresponse_constructor_args():
-    sig = inspect.signature(SPL::SuccessResponse.__init__)
+def test_spl_successresponse_constructor_args():
+    sig = inspect.signature(SPL_SuccessResponse.__init__)
     params = list(sig.parameters.keys())
     assert "successKind" in params, "Missing parameter 'successKind'"
 
-def test_spl::successresponse_has_successKind():
-    assert hasattr(SPL::SuccessResponse, "successKind")
+def test_spl_successresponse_has_successKind():
+    assert hasattr(SPL_SuccessResponse, "successKind")
     descriptor = None
-    for klass in SPL::SuccessResponse.__mro__:
+    for klass in SPL_SuccessResponse.__mro__:
         if "successKind" in klass.__dict__:
             descriptor = klass.__dict__["successKind"]
             break
@@ -296,23 +296,71 @@ def test_constant_constructor_args():
 
 
 
-def test_spl::uriconstant_is_not_abstract():
-    assert not inspect.isabstract(SPL::URIConstant)
+def test_spl_stringconstant_is_not_abstract():
+    assert not inspect.isabstract(SPL_StringConstant)
 
 
-def test_spl::uriconstant_constructor_exists():
-    assert callable(SPL::URIConstant.__init__)
+def test_spl_stringconstant_constructor_exists():
+    assert callable(SPL_StringConstant.__init__)
 
 
-def test_spl::uriconstant_constructor_args():
-    sig = inspect.signature(SPL::URIConstant.__init__)
+def test_spl_stringconstant_constructor_args():
+    sig = inspect.signature(SPL_StringConstant.__init__)
+    params = list(sig.parameters.keys())
+    assert "value" in params, "Missing parameter 'value'"
+
+def test_spl_stringconstant_has_value():
+    assert hasattr(SPL_StringConstant, "value")
+    descriptor = None
+    for klass in SPL_StringConstant.__mro__:
+        if "value" in klass.__dict__:
+            descriptor = klass.__dict__["value"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_spl_integerconstant_is_not_abstract():
+    assert not inspect.isabstract(SPL_IntegerConstant)
+
+
+def test_spl_integerconstant_constructor_exists():
+    assert callable(SPL_IntegerConstant.__init__)
+
+
+def test_spl_integerconstant_constructor_args():
+    sig = inspect.signature(SPL_IntegerConstant.__init__)
+    params = list(sig.parameters.keys())
+    assert "value" in params, "Missing parameter 'value'"
+
+def test_spl_integerconstant_has_value():
+    assert hasattr(SPL_IntegerConstant, "value")
+    descriptor = None
+    for klass in SPL_IntegerConstant.__mro__:
+        if "value" in klass.__dict__:
+            descriptor = klass.__dict__["value"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_spl_uriconstant_is_not_abstract():
+    assert not inspect.isabstract(SPL_URIConstant)
+
+
+def test_spl_uriconstant_constructor_exists():
+    assert callable(SPL_URIConstant.__init__)
+
+
+def test_spl_uriconstant_constructor_args():
+    sig = inspect.signature(SPL_URIConstant.__init__)
     params = list(sig.parameters.keys())
     assert "uri" in params, "Missing parameter 'uri'"
 
-def test_spl::uriconstant_has_uri():
-    assert hasattr(SPL::URIConstant, "uri")
+def test_spl_uriconstant_has_uri():
+    assert hasattr(SPL_URIConstant, "uri")
     descriptor = None
-    for klass in SPL::URIConstant.__mro__:
+    for klass in SPL_URIConstant.__mro__:
         if "uri" in klass.__dict__:
             descriptor = klass.__dict__["uri"]
             break
@@ -320,71 +368,23 @@ def test_spl::uriconstant_has_uri():
 
 
 
-def test_spl::stringconstant_is_not_abstract():
-    assert not inspect.isabstract(SPL::StringConstant)
+def test_spl_booleanconstant_is_not_abstract():
+    assert not inspect.isabstract(SPL_BooleanConstant)
 
 
-def test_spl::stringconstant_constructor_exists():
-    assert callable(SPL::StringConstant.__init__)
+def test_spl_booleanconstant_constructor_exists():
+    assert callable(SPL_BooleanConstant.__init__)
 
 
-def test_spl::stringconstant_constructor_args():
-    sig = inspect.signature(SPL::StringConstant.__init__)
+def test_spl_booleanconstant_constructor_args():
+    sig = inspect.signature(SPL_BooleanConstant.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
 
-def test_spl::stringconstant_has_value():
-    assert hasattr(SPL::StringConstant, "value")
+def test_spl_booleanconstant_has_value():
+    assert hasattr(SPL_BooleanConstant, "value")
     descriptor = None
-    for klass in SPL::StringConstant.__mro__:
-        if "value" in klass.__dict__:
-            descriptor = klass.__dict__["value"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_spl::integerconstant_is_not_abstract():
-    assert not inspect.isabstract(SPL::IntegerConstant)
-
-
-def test_spl::integerconstant_constructor_exists():
-    assert callable(SPL::IntegerConstant.__init__)
-
-
-def test_spl::integerconstant_constructor_args():
-    sig = inspect.signature(SPL::IntegerConstant.__init__)
-    params = list(sig.parameters.keys())
-    assert "value" in params, "Missing parameter 'value'"
-
-def test_spl::integerconstant_has_value():
-    assert hasattr(SPL::IntegerConstant, "value")
-    descriptor = None
-    for klass in SPL::IntegerConstant.__mro__:
-        if "value" in klass.__dict__:
-            descriptor = klass.__dict__["value"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_spl::booleanconstant_is_not_abstract():
-    assert not inspect.isabstract(SPL::BooleanConstant)
-
-
-def test_spl::booleanconstant_constructor_exists():
-    assert callable(SPL::BooleanConstant.__init__)
-
-
-def test_spl::booleanconstant_constructor_args():
-    sig = inspect.signature(SPL::BooleanConstant.__init__)
-    params = list(sig.parameters.keys())
-    assert "value" in params, "Missing parameter 'value'"
-
-def test_spl::booleanconstant_has_value():
-    assert hasattr(SPL::BooleanConstant, "value")
-    descriptor = None
-    for klass in SPL::BooleanConstant.__mro__:
+    for klass in SPL_BooleanConstant.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -406,23 +406,23 @@ def test_messagefield_constructor_args():
 
 
 
-def test_spl::headedmessagefield_is_not_abstract():
-    assert not inspect.isabstract(SPL::HeadedMessageField)
+def test_spl_headedmessagefield_is_not_abstract():
+    assert not inspect.isabstract(SPL_HeadedMessageField)
 
 
-def test_spl::headedmessagefield_constructor_exists():
-    assert callable(SPL::HeadedMessageField.__init__)
+def test_spl_headedmessagefield_constructor_exists():
+    assert callable(SPL_HeadedMessageField.__init__)
 
 
-def test_spl::headedmessagefield_constructor_args():
-    sig = inspect.signature(SPL::HeadedMessageField.__init__)
+def test_spl_headedmessagefield_constructor_args():
+    sig = inspect.signature(SPL_HeadedMessageField.__init__)
     params = list(sig.parameters.keys())
     assert "headerId" in params, "Missing parameter 'headerId'"
 
-def test_spl::headedmessagefield_has_headerId():
-    assert hasattr(SPL::HeadedMessageField, "headerId")
+def test_spl_headedmessagefield_has_headerId():
+    assert hasattr(SPL_HeadedMessageField, "headerId")
     descriptor = None
-    for klass in SPL::HeadedMessageField.__mro__:
+    for klass in SPL_HeadedMessageField.__mro__:
         if "headerId" in klass.__dict__:
             descriptor = klass.__dict__["headerId"]
             break
@@ -430,16 +430,16 @@ def test_spl::headedmessagefield_has_headerId():
 
 
 
-def test_spl::reasonmessagefield_is_not_abstract():
-    assert not inspect.isabstract(SPL::ReasonMessageField)
+def test_spl_reasonmessagefield_is_not_abstract():
+    assert not inspect.isabstract(SPL_ReasonMessageField)
 
 
-def test_spl::reasonmessagefield_constructor_exists():
-    assert callable(SPL::ReasonMessageField.__init__)
+def test_spl_reasonmessagefield_constructor_exists():
+    assert callable(SPL_ReasonMessageField.__init__)
 
 
-def test_spl::reasonmessagefield_constructor_args():
-    sig = inspect.signature(SPL::ReasonMessageField.__init__)
+def test_spl_reasonmessagefield_constructor_args():
+    sig = inspect.signature(SPL_ReasonMessageField.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -458,23 +458,23 @@ def test_variableplace_constructor_args():
 
 
 
-def test_spl::propertycallplace_is_not_abstract():
-    assert not inspect.isabstract(SPL::PropertyCallPlace)
+def test_spl_propertycallplace_is_not_abstract():
+    assert not inspect.isabstract(SPL_PropertyCallPlace)
 
 
-def test_spl::propertycallplace_constructor_exists():
-    assert callable(SPL::PropertyCallPlace.__init__)
+def test_spl_propertycallplace_constructor_exists():
+    assert callable(SPL_PropertyCallPlace.__init__)
 
 
-def test_spl::propertycallplace_constructor_args():
-    sig = inspect.signature(SPL::PropertyCallPlace.__init__)
+def test_spl_propertycallplace_constructor_args():
+    sig = inspect.signature(SPL_PropertyCallPlace.__init__)
     params = list(sig.parameters.keys())
     assert "propName" in params, "Missing parameter 'propName'"
 
-def test_spl::propertycallplace_has_propName():
-    assert hasattr(SPL::PropertyCallPlace, "propName")
+def test_spl_propertycallplace_has_propName():
+    assert hasattr(SPL_PropertyCallPlace, "propName")
     descriptor = None
-    for klass in SPL::PropertyCallPlace.__mro__:
+    for klass in SPL_PropertyCallPlace.__mro__:
         if "propName" in klass.__dict__:
             descriptor = klass.__dict__["propName"]
             break
@@ -496,37 +496,37 @@ def test_place_constructor_args():
 
 
 
-def test_spl::variableplace_is_not_abstract():
-    assert not inspect.isabstract(SPL::VariablePlace)
+def test_spl_variableplace_is_not_abstract():
+    assert not inspect.isabstract(SPL_VariablePlace)
 
 
-def test_spl::variableplace_constructor_exists():
-    assert callable(SPL::VariablePlace.__init__)
+def test_spl_variableplace_constructor_exists():
+    assert callable(SPL_VariablePlace.__init__)
 
 
-def test_spl::variableplace_constructor_args():
-    sig = inspect.signature(SPL::VariablePlace.__init__)
+def test_spl_variableplace_constructor_args():
+    sig = inspect.signature(SPL_VariablePlace.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_spl::sipheaderplace_is_not_abstract():
-    assert not inspect.isabstract(SPL::SIPHeaderPlace)
+def test_spl_sipheaderplace_is_not_abstract():
+    assert not inspect.isabstract(SPL_SIPHeaderPlace)
 
 
-def test_spl::sipheaderplace_constructor_exists():
-    assert callable(SPL::SIPHeaderPlace.__init__)
+def test_spl_sipheaderplace_constructor_exists():
+    assert callable(SPL_SIPHeaderPlace.__init__)
 
 
-def test_spl::sipheaderplace_constructor_args():
-    sig = inspect.signature(SPL::SIPHeaderPlace.__init__)
+def test_spl_sipheaderplace_constructor_args():
+    sig = inspect.signature(SPL_SIPHeaderPlace.__init__)
     params = list(sig.parameters.keys())
     assert "header" in params, "Missing parameter 'header'"
 
-def test_spl::sipheaderplace_has_header():
-    assert hasattr(SPL::SIPHeaderPlace, "header")
+def test_spl_sipheaderplace_has_header():
+    assert hasattr(SPL_SIPHeaderPlace, "header")
     descriptor = None
-    for klass in SPL::SIPHeaderPlace.__mro__:
+    for klass in SPL_SIPHeaderPlace.__mro__:
         if "header" in klass.__dict__:
             descriptor = klass.__dict__["header"]
             break
@@ -534,30 +534,30 @@ def test_spl::sipheaderplace_has_header():
 
 
 
-def test_spl::responseconstant_is_not_abstract():
-    assert not inspect.isabstract(SPL::ResponseConstant)
+def test_spl_responseconstant_is_not_abstract():
+    assert not inspect.isabstract(SPL_ResponseConstant)
 
 
-def test_spl::responseconstant_constructor_exists():
-    assert callable(SPL::ResponseConstant.__init__)
+def test_spl_responseconstant_constructor_exists():
+    assert callable(SPL_ResponseConstant.__init__)
 
 
-def test_spl::responseconstant_constructor_args():
-    sig = inspect.signature(SPL::ResponseConstant.__init__)
+def test_spl_responseconstant_constructor_args():
+    sig = inspect.signature(SPL_ResponseConstant.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_spl::sequenceconstant_is_not_abstract():
-    assert not inspect.isabstract(SPL::SequenceConstant)
+def test_spl_sequenceconstant_is_not_abstract():
+    assert not inspect.isabstract(SPL_SequenceConstant)
 
 
-def test_spl::sequenceconstant_constructor_exists():
-    assert callable(SPL::SequenceConstant.__init__)
+def test_spl_sequenceconstant_constructor_exists():
+    assert callable(SPL_SequenceConstant.__init__)
 
 
-def test_spl::sequenceconstant_constructor_args():
-    sig = inspect.signature(SPL::SequenceConstant.__init__)
+def test_spl_sequenceconstant_constructor_args():
+    sig = inspect.signature(SPL_SequenceConstant.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -576,79 +576,37 @@ def test_expression_constructor_args():
 
 
 
-def test_spl::blockexp_is_not_abstract():
-    assert not inspect.isabstract(SPL::BlockExp)
+def test_spl_bodyexp_is_not_abstract():
+    assert not inspect.isabstract(SPL_BODYExp)
 
 
-def test_spl::blockexp_constructor_exists():
-    assert callable(SPL::BlockExp.__init__)
+def test_spl_bodyexp_constructor_exists():
+    assert callable(SPL_BODYExp.__init__)
 
 
-def test_spl::blockexp_constructor_args():
-    sig = inspect.signature(SPL::BlockExp.__init__)
+def test_spl_bodyexp_constructor_args():
+    sig = inspect.signature(SPL_BODYExp.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_spl::reasonexp_is_not_abstract():
-    assert not inspect.isabstract(SPL::ReasonExp)
+def test_spl_operatorexp_is_not_abstract():
+    assert not inspect.isabstract(SPL_OperatorExp)
 
 
-def test_spl::reasonexp_constructor_exists():
-    assert callable(SPL::ReasonExp.__init__)
+def test_spl_operatorexp_constructor_exists():
+    assert callable(SPL_OperatorExp.__init__)
 
 
-def test_spl::reasonexp_constructor_args():
-    sig = inspect.signature(SPL::ReasonExp.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_spl::withexp_is_not_abstract():
-    assert not inspect.isabstract(SPL::WithExp)
-
-
-def test_spl::withexp_constructor_exists():
-    assert callable(SPL::WithExp.__init__)
-
-
-def test_spl::withexp_constructor_args():
-    sig = inspect.signature(SPL::WithExp.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_spl::bodyexp_is_not_abstract():
-    assert not inspect.isabstract(SPL::BODYExp)
-
-
-def test_spl::bodyexp_constructor_exists():
-    assert callable(SPL::BODYExp.__init__)
-
-
-def test_spl::bodyexp_constructor_args():
-    sig = inspect.signature(SPL::BODYExp.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_spl::operatorexp_is_not_abstract():
-    assert not inspect.isabstract(SPL::OperatorExp)
-
-
-def test_spl::operatorexp_constructor_exists():
-    assert callable(SPL::OperatorExp.__init__)
-
-
-def test_spl::operatorexp_constructor_args():
-    sig = inspect.signature(SPL::OperatorExp.__init__)
+def test_spl_operatorexp_constructor_args():
+    sig = inspect.signature(SPL_OperatorExp.__init__)
     params = list(sig.parameters.keys())
     assert "opName" in params, "Missing parameter 'opName'"
 
-def test_spl::operatorexp_has_opName():
-    assert hasattr(SPL::OperatorExp, "opName")
+def test_spl_operatorexp_has_opName():
+    assert hasattr(SPL_OperatorExp, "opName")
     descriptor = None
-    for klass in SPL::OperatorExp.__mro__:
+    for klass in SPL_OperatorExp.__mro__:
         if "opName" in klass.__dict__:
             descriptor = klass.__dict__["opName"]
             break
@@ -656,23 +614,37 @@ def test_spl::operatorexp_has_opName():
 
 
 
-def test_spl::forwardexp_is_not_abstract():
-    assert not inspect.isabstract(SPL::ForwardExp)
+def test_spl_blockexp_is_not_abstract():
+    assert not inspect.isabstract(SPL_BlockExp)
 
 
-def test_spl::forwardexp_constructor_exists():
-    assert callable(SPL::ForwardExp.__init__)
+def test_spl_blockexp_constructor_exists():
+    assert callable(SPL_BlockExp.__init__)
 
 
-def test_spl::forwardexp_constructor_args():
-    sig = inspect.signature(SPL::ForwardExp.__init__)
+def test_spl_blockexp_constructor_args():
+    sig = inspect.signature(SPL_BlockExp.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_spl_forwardexp_is_not_abstract():
+    assert not inspect.isabstract(SPL_ForwardExp)
+
+
+def test_spl_forwardexp_constructor_exists():
+    assert callable(SPL_ForwardExp.__init__)
+
+
+def test_spl_forwardexp_constructor_args():
+    sig = inspect.signature(SPL_ForwardExp.__init__)
     params = list(sig.parameters.keys())
     assert "isParallel" in params, "Missing parameter 'isParallel'"
 
-def test_spl::forwardexp_has_isParallel():
-    assert hasattr(SPL::ForwardExp, "isParallel")
+def test_spl_forwardexp_has_isParallel():
+    assert hasattr(SPL_ForwardExp, "isParallel")
     descriptor = None
-    for klass in SPL::ForwardExp.__mro__:
+    for klass in SPL_ForwardExp.__mro__:
         if "isParallel" in klass.__dict__:
             descriptor = klass.__dict__["isParallel"]
             break
@@ -680,58 +652,86 @@ def test_spl::forwardexp_has_isParallel():
 
 
 
-def test_spl::constantexp_is_not_abstract():
-    assert not inspect.isabstract(SPL::ConstantExp)
+def test_spl_reasonexp_is_not_abstract():
+    assert not inspect.isabstract(SPL_ReasonExp)
 
 
-def test_spl::constantexp_constructor_exists():
-    assert callable(SPL::ConstantExp.__init__)
+def test_spl_reasonexp_constructor_exists():
+    assert callable(SPL_ReasonExp.__init__)
 
 
-def test_spl::constantexp_constructor_args():
-    sig = inspect.signature(SPL::ConstantExp.__init__)
+def test_spl_reasonexp_constructor_args():
+    sig = inspect.signature(SPL_ReasonExp.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_spl::functioncallexp_is_not_abstract():
-    assert not inspect.isabstract(SPL::FunctionCallExp)
+def test_spl_withexp_is_not_abstract():
+    assert not inspect.isabstract(SPL_WithExp)
 
 
-def test_spl::functioncallexp_constructor_exists():
-    assert callable(SPL::FunctionCallExp.__init__)
+def test_spl_withexp_constructor_exists():
+    assert callable(SPL_WithExp.__init__)
 
 
-def test_spl::functioncallexp_constructor_args():
-    sig = inspect.signature(SPL::FunctionCallExp.__init__)
+def test_spl_withexp_constructor_args():
+    sig = inspect.signature(SPL_WithExp.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_spl::popexp_is_not_abstract():
-    assert not inspect.isabstract(SPL::PopExp)
+def test_spl_constantexp_is_not_abstract():
+    assert not inspect.isabstract(SPL_ConstantExp)
 
 
-def test_spl::popexp_constructor_exists():
-    assert callable(SPL::PopExp.__init__)
+def test_spl_constantexp_constructor_exists():
+    assert callable(SPL_ConstantExp.__init__)
 
 
-def test_spl::popexp_constructor_args():
-    sig = inspect.signature(SPL::PopExp.__init__)
+def test_spl_constantexp_constructor_args():
+    sig = inspect.signature(SPL_ConstantExp.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_spl::requesturiexp_is_not_abstract():
-    assert not inspect.isabstract(SPL::RequestURIExp)
+def test_spl_functioncallexp_is_not_abstract():
+    assert not inspect.isabstract(SPL_FunctionCallExp)
 
 
-def test_spl::requesturiexp_constructor_exists():
-    assert callable(SPL::RequestURIExp.__init__)
+def test_spl_functioncallexp_constructor_exists():
+    assert callable(SPL_FunctionCallExp.__init__)
 
 
-def test_spl::requesturiexp_constructor_args():
-    sig = inspect.signature(SPL::RequestURIExp.__init__)
+def test_spl_functioncallexp_constructor_args():
+    sig = inspect.signature(SPL_FunctionCallExp.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_spl_popexp_is_not_abstract():
+    assert not inspect.isabstract(SPL_PopExp)
+
+
+def test_spl_popexp_constructor_exists():
+    assert callable(SPL_PopExp.__init__)
+
+
+def test_spl_popexp_constructor_args():
+    sig = inspect.signature(SPL_PopExp.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_spl_requesturiexp_is_not_abstract():
+    assert not inspect.isabstract(SPL_RequestURIExp)
+
+
+def test_spl_requesturiexp_constructor_exists():
+    assert callable(SPL_RequestURIExp.__init__)
+
+
+def test_spl_requesturiexp_constructor_args():
+    sig = inspect.signature(SPL_RequestURIExp.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -750,44 +750,44 @@ def test_selectmember_constructor_args():
 
 
 
-def test_spl::selectdefault_is_not_abstract():
-    assert not inspect.isabstract(SPL::SelectDefault)
+def test_spl_selectdefault_is_not_abstract():
+    assert not inspect.isabstract(SPL_SelectDefault)
 
 
-def test_spl::selectdefault_constructor_exists():
-    assert callable(SPL::SelectDefault.__init__)
+def test_spl_selectdefault_constructor_exists():
+    assert callable(SPL_SelectDefault.__init__)
 
 
-def test_spl::selectdefault_constructor_args():
-    sig = inspect.signature(SPL::SelectDefault.__init__)
+def test_spl_selectdefault_constructor_args():
+    sig = inspect.signature(SPL_SelectDefault.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_spl::selectcase_is_not_abstract():
-    assert not inspect.isabstract(SPL::SelectCase)
+def test_spl_selectcase_is_not_abstract():
+    assert not inspect.isabstract(SPL_SelectCase)
 
 
-def test_spl::selectcase_constructor_exists():
-    assert callable(SPL::SelectCase.__init__)
+def test_spl_selectcase_constructor_exists():
+    assert callable(SPL_SelectCase.__init__)
 
 
-def test_spl::selectcase_constructor_args():
-    sig = inspect.signature(SPL::SelectCase.__init__)
+def test_spl_selectcase_constructor_args():
+    sig = inspect.signature(SPL_SelectCase.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_spl::place_is_not_abstract():
-    assert not inspect.isabstract(SPL::Place)
+def test_spl_place_is_not_abstract():
+    assert not inspect.isabstract(SPL_Place)
 
 
-def test_spl::place_constructor_exists():
-    assert callable(SPL::Place.__init__)
+def test_spl_place_constructor_exists():
+    assert callable(SPL_Place.__init__)
 
 
-def test_spl::place_constructor_args():
-    sig = inspect.signature(SPL::Place.__init__)
+def test_spl_place_constructor_args():
+    sig = inspect.signature(SPL_Place.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -806,79 +806,79 @@ def test_statement_constructor_args():
 
 
 
-def test_spl::continuestat_is_not_abstract():
-    assert not inspect.isabstract(SPL::ContinueStat)
+def test_spl_breakstat_is_not_abstract():
+    assert not inspect.isabstract(SPL_BreakStat)
 
 
-def test_spl::continuestat_constructor_exists():
-    assert callable(SPL::ContinueStat.__init__)
+def test_spl_breakstat_constructor_exists():
+    assert callable(SPL_BreakStat.__init__)
 
 
-def test_spl::continuestat_constructor_args():
-    sig = inspect.signature(SPL::ContinueStat.__init__)
+def test_spl_breakstat_constructor_args():
+    sig = inspect.signature(SPL_BreakStat.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_spl::functioncallstat_is_not_abstract():
-    assert not inspect.isabstract(SPL::FunctionCallStat)
+def test_spl_pushstat_is_not_abstract():
+    assert not inspect.isabstract(SPL_PushStat)
 
 
-def test_spl::functioncallstat_constructor_exists():
-    assert callable(SPL::FunctionCallStat.__init__)
+def test_spl_pushstat_constructor_exists():
+    assert callable(SPL_PushStat.__init__)
 
 
-def test_spl::functioncallstat_constructor_args():
-    sig = inspect.signature(SPL::FunctionCallStat.__init__)
+def test_spl_pushstat_constructor_args():
+    sig = inspect.signature(SPL_PushStat.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_spl::selectstat_is_not_abstract():
-    assert not inspect.isabstract(SPL::SelectStat)
+def test_spl_returnstat_is_not_abstract():
+    assert not inspect.isabstract(SPL_ReturnStat)
 
 
-def test_spl::selectstat_constructor_exists():
-    assert callable(SPL::SelectStat.__init__)
+def test_spl_returnstat_constructor_exists():
+    assert callable(SPL_ReturnStat.__init__)
 
 
-def test_spl::selectstat_constructor_args():
-    sig = inspect.signature(SPL::SelectStat.__init__)
+def test_spl_returnstat_constructor_args():
+    sig = inspect.signature(SPL_ReturnStat.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_spl::whenstat_is_not_abstract():
-    assert not inspect.isabstract(SPL::WhenStat)
+def test_spl_setstat_is_not_abstract():
+    assert not inspect.isabstract(SPL_SetStat)
 
 
-def test_spl::whenstat_constructor_exists():
-    assert callable(SPL::WhenStat.__init__)
+def test_spl_setstat_constructor_exists():
+    assert callable(SPL_SetStat.__init__)
 
 
-def test_spl::whenstat_constructor_args():
-    sig = inspect.signature(SPL::WhenStat.__init__)
+def test_spl_setstat_constructor_args():
+    sig = inspect.signature(SPL_SetStat.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_spl::foreachstat_is_not_abstract():
-    assert not inspect.isabstract(SPL::ForeachStat)
+def test_spl_foreachstat_is_not_abstract():
+    assert not inspect.isabstract(SPL_ForeachStat)
 
 
-def test_spl::foreachstat_constructor_exists():
-    assert callable(SPL::ForeachStat.__init__)
+def test_spl_foreachstat_constructor_exists():
+    assert callable(SPL_ForeachStat.__init__)
 
 
-def test_spl::foreachstat_constructor_args():
-    sig = inspect.signature(SPL::ForeachStat.__init__)
+def test_spl_foreachstat_constructor_args():
+    sig = inspect.signature(SPL_ForeachStat.__init__)
     params = list(sig.parameters.keys())
     assert "iteratorName" in params, "Missing parameter 'iteratorName'"
 
-def test_spl::foreachstat_has_iteratorName():
-    assert hasattr(SPL::ForeachStat, "iteratorName")
+def test_spl_foreachstat_has_iteratorName():
+    assert hasattr(SPL_ForeachStat, "iteratorName")
     descriptor = None
-    for klass in SPL::ForeachStat.__mro__:
+    for klass in SPL_ForeachStat.__mro__:
         if "iteratorName" in klass.__dict__:
             descriptor = klass.__dict__["iteratorName"]
             break
@@ -886,114 +886,114 @@ def test_spl::foreachstat_has_iteratorName():
 
 
 
-def test_spl::ifstat_is_not_abstract():
-    assert not inspect.isabstract(SPL::IfStat)
+def test_spl_functioncallstat_is_not_abstract():
+    assert not inspect.isabstract(SPL_FunctionCallStat)
 
 
-def test_spl::ifstat_constructor_exists():
-    assert callable(SPL::IfStat.__init__)
+def test_spl_functioncallstat_constructor_exists():
+    assert callable(SPL_FunctionCallStat.__init__)
 
 
-def test_spl::ifstat_constructor_args():
-    sig = inspect.signature(SPL::IfStat.__init__)
+def test_spl_functioncallstat_constructor_args():
+    sig = inspect.signature(SPL_FunctionCallStat.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_spl::declarationstat_is_not_abstract():
-    assert not inspect.isabstract(SPL::DeclarationStat)
+def test_spl_ifstat_is_not_abstract():
+    assert not inspect.isabstract(SPL_IfStat)
 
 
-def test_spl::declarationstat_constructor_exists():
-    assert callable(SPL::DeclarationStat.__init__)
+def test_spl_ifstat_constructor_exists():
+    assert callable(SPL_IfStat.__init__)
 
 
-def test_spl::declarationstat_constructor_args():
-    sig = inspect.signature(SPL::DeclarationStat.__init__)
+def test_spl_ifstat_constructor_args():
+    sig = inspect.signature(SPL_IfStat.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_spl::setstat_is_not_abstract():
-    assert not inspect.isabstract(SPL::SetStat)
+def test_spl_whenstat_is_not_abstract():
+    assert not inspect.isabstract(SPL_WhenStat)
 
 
-def test_spl::setstat_constructor_exists():
-    assert callable(SPL::SetStat.__init__)
+def test_spl_whenstat_constructor_exists():
+    assert callable(SPL_WhenStat.__init__)
 
 
-def test_spl::setstat_constructor_args():
-    sig = inspect.signature(SPL::SetStat.__init__)
+def test_spl_whenstat_constructor_args():
+    sig = inspect.signature(SPL_WhenStat.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_spl::breakstat_is_not_abstract():
-    assert not inspect.isabstract(SPL::BreakStat)
+def test_spl_selectstat_is_not_abstract():
+    assert not inspect.isabstract(SPL_SelectStat)
 
 
-def test_spl::breakstat_constructor_exists():
-    assert callable(SPL::BreakStat.__init__)
+def test_spl_selectstat_constructor_exists():
+    assert callable(SPL_SelectStat.__init__)
 
 
-def test_spl::breakstat_constructor_args():
-    sig = inspect.signature(SPL::BreakStat.__init__)
+def test_spl_selectstat_constructor_args():
+    sig = inspect.signature(SPL_SelectStat.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_spl::pushstat_is_not_abstract():
-    assert not inspect.isabstract(SPL::PushStat)
+def test_spl_declarationstat_is_not_abstract():
+    assert not inspect.isabstract(SPL_DeclarationStat)
 
 
-def test_spl::pushstat_constructor_exists():
-    assert callable(SPL::PushStat.__init__)
+def test_spl_declarationstat_constructor_exists():
+    assert callable(SPL_DeclarationStat.__init__)
 
 
-def test_spl::pushstat_constructor_args():
-    sig = inspect.signature(SPL::PushStat.__init__)
+def test_spl_declarationstat_constructor_args():
+    sig = inspect.signature(SPL_DeclarationStat.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_spl::returnstat_is_not_abstract():
-    assert not inspect.isabstract(SPL::ReturnStat)
+def test_spl_continuestat_is_not_abstract():
+    assert not inspect.isabstract(SPL_ContinueStat)
 
 
-def test_spl::returnstat_constructor_exists():
-    assert callable(SPL::ReturnStat.__init__)
+def test_spl_continuestat_constructor_exists():
+    assert callable(SPL_ContinueStat.__init__)
 
 
-def test_spl::returnstat_constructor_args():
-    sig = inspect.signature(SPL::ReturnStat.__init__)
+def test_spl_continuestat_constructor_args():
+    sig = inspect.signature(SPL_ContinueStat.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_spl::compoundstat_is_not_abstract():
-    assert not inspect.isabstract(SPL::CompoundStat)
+def test_spl_compoundstat_is_not_abstract():
+    assert not inspect.isabstract(SPL_CompoundStat)
 
 
-def test_spl::compoundstat_constructor_exists():
-    assert callable(SPL::CompoundStat.__init__)
+def test_spl_compoundstat_constructor_exists():
+    assert callable(SPL_CompoundStat.__init__)
 
 
-def test_spl::compoundstat_constructor_args():
-    sig = inspect.signature(SPL::CompoundStat.__init__)
+def test_spl_compoundstat_constructor_args():
+    sig = inspect.signature(SPL_CompoundStat.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_spl::variable_is_not_abstract():
-    assert not inspect.isabstract(SPL::Variable)
+def test_spl_variable_is_not_abstract():
+    assert not inspect.isabstract(SPL_Variable)
 
 
-def test_spl::variable_constructor_exists():
-    assert callable(SPL::Variable.__init__)
+def test_spl_variable_constructor_exists():
+    assert callable(SPL_Variable.__init__)
 
 
-def test_spl::variable_constructor_args():
-    sig = inspect.signature(SPL::Variable.__init__)
+def test_spl_variable_constructor_args():
+    sig = inspect.signature(SPL_Variable.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1012,37 +1012,37 @@ def test_functiondeclaration_constructor_args():
 
 
 
-def test_spl::localfunctiondeclaration_is_not_abstract():
-    assert not inspect.isabstract(SPL::LocalFunctionDeclaration)
+def test_spl_localfunctiondeclaration_is_not_abstract():
+    assert not inspect.isabstract(SPL_LocalFunctionDeclaration)
 
 
-def test_spl::localfunctiondeclaration_constructor_exists():
-    assert callable(SPL::LocalFunctionDeclaration.__init__)
+def test_spl_localfunctiondeclaration_constructor_exists():
+    assert callable(SPL_LocalFunctionDeclaration.__init__)
 
 
-def test_spl::localfunctiondeclaration_constructor_args():
-    sig = inspect.signature(SPL::LocalFunctionDeclaration.__init__)
+def test_spl_localfunctiondeclaration_constructor_args():
+    sig = inspect.signature(SPL_LocalFunctionDeclaration.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_spl::remotefunctiondeclaration_is_not_abstract():
-    assert not inspect.isabstract(SPL::RemoteFunctionDeclaration)
+def test_spl_remotefunctiondeclaration_is_not_abstract():
+    assert not inspect.isabstract(SPL_RemoteFunctionDeclaration)
 
 
-def test_spl::remotefunctiondeclaration_constructor_exists():
-    assert callable(SPL::RemoteFunctionDeclaration.__init__)
+def test_spl_remotefunctiondeclaration_constructor_exists():
+    assert callable(SPL_RemoteFunctionDeclaration.__init__)
 
 
-def test_spl::remotefunctiondeclaration_constructor_args():
-    sig = inspect.signature(SPL::RemoteFunctionDeclaration.__init__)
+def test_spl_remotefunctiondeclaration_constructor_args():
+    sig = inspect.signature(SPL_RemoteFunctionDeclaration.__init__)
     params = list(sig.parameters.keys())
     assert "functionLocation" in params, "Missing parameter 'functionLocation'"
 
-def test_spl::remotefunctiondeclaration_has_functionLocation():
-    assert hasattr(SPL::RemoteFunctionDeclaration, "functionLocation")
+def test_spl_remotefunctiondeclaration_has_functionLocation():
+    assert hasattr(SPL_RemoteFunctionDeclaration, "functionLocation")
     descriptor = None
-    for klass in SPL::RemoteFunctionDeclaration.__mro__:
+    for klass in SPL_RemoteFunctionDeclaration.__mro__:
         if "functionLocation" in klass.__dict__:
             descriptor = klass.__dict__["functionLocation"]
             break
@@ -1064,44 +1064,44 @@ def test_declaration_constructor_args():
 
 
 
-def test_spl::functiondeclaration_is_not_abstract():
-    assert not inspect.isabstract(SPL::FunctionDeclaration)
+def test_spl_functiondeclaration_is_not_abstract():
+    assert not inspect.isabstract(SPL_FunctionDeclaration)
 
 
-def test_spl::functiondeclaration_constructor_exists():
-    assert callable(SPL::FunctionDeclaration.__init__)
+def test_spl_functiondeclaration_constructor_exists():
+    assert callable(SPL_FunctionDeclaration.__init__)
 
 
-def test_spl::functiondeclaration_constructor_args():
-    sig = inspect.signature(SPL::FunctionDeclaration.__init__)
+def test_spl_functiondeclaration_constructor_args():
+    sig = inspect.signature(SPL_FunctionDeclaration.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_spl::structuredeclaration_is_not_abstract():
-    assert not inspect.isabstract(SPL::StructureDeclaration)
+def test_spl_structuredeclaration_is_not_abstract():
+    assert not inspect.isabstract(SPL_StructureDeclaration)
 
 
-def test_spl::structuredeclaration_constructor_exists():
-    assert callable(SPL::StructureDeclaration.__init__)
+def test_spl_structuredeclaration_constructor_exists():
+    assert callable(SPL_StructureDeclaration.__init__)
 
 
-def test_spl::structuredeclaration_constructor_args():
-    sig = inspect.signature(SPL::StructureDeclaration.__init__)
+def test_spl_structuredeclaration_constructor_args():
+    sig = inspect.signature(SPL_StructureDeclaration.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_spl::variabledeclaration_is_not_abstract():
-    assert not inspect.isabstract(SPL::VariableDeclaration)
+def test_spl_variabledeclaration_is_not_abstract():
+    assert not inspect.isabstract(SPL_VariableDeclaration)
 
 
-def test_spl::variabledeclaration_constructor_exists():
-    assert callable(SPL::VariableDeclaration.__init__)
+def test_spl_variabledeclaration_constructor_exists():
+    assert callable(SPL_VariableDeclaration.__init__)
 
 
-def test_spl::variabledeclaration_constructor_args():
-    sig = inspect.signature(SPL::VariableDeclaration.__init__)
+def test_spl_variabledeclaration_constructor_args():
+    sig = inspect.signature(SPL_VariableDeclaration.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1120,23 +1120,23 @@ def test_branch_constructor_args():
 
 
 
-def test_spl::namedbranch_is_not_abstract():
-    assert not inspect.isabstract(SPL::NamedBranch)
+def test_spl_namedbranch_is_not_abstract():
+    assert not inspect.isabstract(SPL_NamedBranch)
 
 
-def test_spl::namedbranch_constructor_exists():
-    assert callable(SPL::NamedBranch.__init__)
+def test_spl_namedbranch_constructor_exists():
+    assert callable(SPL_NamedBranch.__init__)
 
 
-def test_spl::namedbranch_constructor_args():
-    sig = inspect.signature(SPL::NamedBranch.__init__)
+def test_spl_namedbranch_constructor_args():
+    sig = inspect.signature(SPL_NamedBranch.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_spl::namedbranch_has_name():
-    assert hasattr(SPL::NamedBranch, "name")
+def test_spl_namedbranch_has_name():
+    assert hasattr(SPL_NamedBranch, "name")
     descriptor = None
-    for klass in SPL::NamedBranch.__mro__:
+    for klass in SPL_NamedBranch.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -1144,16 +1144,16 @@ def test_spl::namedbranch_has_name():
 
 
 
-def test_spl::defaultbranch_is_not_abstract():
-    assert not inspect.isabstract(SPL::DefaultBranch)
+def test_spl_defaultbranch_is_not_abstract():
+    assert not inspect.isabstract(SPL_DefaultBranch)
 
 
-def test_spl::defaultbranch_constructor_exists():
-    assert callable(SPL::DefaultBranch.__init__)
+def test_spl_defaultbranch_constructor_exists():
+    assert callable(SPL_DefaultBranch.__init__)
 
 
-def test_spl::defaultbranch_constructor_args():
-    sig = inspect.signature(SPL::DefaultBranch.__init__)
+def test_spl_defaultbranch_constructor_args():
+    sig = inspect.signature(SPL_DefaultBranch.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1172,23 +1172,23 @@ def test_methodname_constructor_args():
 
 
 
-def test_spl::controlmethodname_is_not_abstract():
-    assert not inspect.isabstract(SPL::ControlMethodName)
+def test_spl_controlmethodname_is_not_abstract():
+    assert not inspect.isabstract(SPL_ControlMethodName)
 
 
-def test_spl::controlmethodname_constructor_exists():
-    assert callable(SPL::ControlMethodName.__init__)
+def test_spl_controlmethodname_constructor_exists():
+    assert callable(SPL_ControlMethodName.__init__)
 
 
-def test_spl::controlmethodname_constructor_args():
-    sig = inspect.signature(SPL::ControlMethodName.__init__)
+def test_spl_controlmethodname_constructor_args():
+    sig = inspect.signature(SPL_ControlMethodName.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_spl::controlmethodname_has_name():
-    assert hasattr(SPL::ControlMethodName, "name")
+def test_spl_controlmethodname_has_name():
+    assert hasattr(SPL_ControlMethodName, "name")
     descriptor = None
-    for klass in SPL::ControlMethodName.__mro__:
+    for klass in SPL_ControlMethodName.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -1196,23 +1196,23 @@ def test_spl::controlmethodname_has_name():
 
 
 
-def test_spl::sipmethodname_is_not_abstract():
-    assert not inspect.isabstract(SPL::SIPMethodName)
+def test_spl_sipmethodname_is_not_abstract():
+    assert not inspect.isabstract(SPL_SIPMethodName)
 
 
-def test_spl::sipmethodname_constructor_exists():
-    assert callable(SPL::SIPMethodName.__init__)
+def test_spl_sipmethodname_constructor_exists():
+    assert callable(SPL_SIPMethodName.__init__)
 
 
-def test_spl::sipmethodname_constructor_args():
-    sig = inspect.signature(SPL::SIPMethodName.__init__)
+def test_spl_sipmethodname_constructor_args():
+    sig = inspect.signature(SPL_SIPMethodName.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_spl::sipmethodname_has_name():
-    assert hasattr(SPL::SIPMethodName, "name")
+def test_spl_sipmethodname_has_name():
+    assert hasattr(SPL_SIPMethodName, "name")
     descriptor = None
-    for klass in SPL::SIPMethodName.__mro__:
+    for klass in SPL_SIPMethodName.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -1234,23 +1234,23 @@ def test_variabledeclaration_constructor_args():
 
 
 
-def test_spl::whenheader_is_not_abstract():
-    assert not inspect.isabstract(SPL::WhenHeader)
+def test_spl_whenheader_is_not_abstract():
+    assert not inspect.isabstract(SPL_WhenHeader)
 
 
-def test_spl::whenheader_constructor_exists():
-    assert callable(SPL::WhenHeader.__init__)
+def test_spl_whenheader_constructor_exists():
+    assert callable(SPL_WhenHeader.__init__)
 
 
-def test_spl::whenheader_constructor_args():
-    sig = inspect.signature(SPL::WhenHeader.__init__)
+def test_spl_whenheader_constructor_args():
+    sig = inspect.signature(SPL_WhenHeader.__init__)
     params = list(sig.parameters.keys())
     assert "headerId" in params, "Missing parameter 'headerId'"
 
-def test_spl::whenheader_has_headerId():
-    assert hasattr(SPL::WhenHeader, "headerId")
+def test_spl_whenheader_has_headerId():
+    assert hasattr(SPL_WhenHeader, "headerId")
     descriptor = None
-    for klass in SPL::WhenHeader.__mro__:
+    for klass in SPL_WhenHeader.__mro__:
         if "headerId" in klass.__dict__:
             descriptor = klass.__dict__["headerId"]
             break
@@ -1258,16 +1258,16 @@ def test_spl::whenheader_has_headerId():
 
 
 
-def test_spl::argument_is_not_abstract():
-    assert not inspect.isabstract(SPL::Argument)
+def test_spl_argument_is_not_abstract():
+    assert not inspect.isabstract(SPL_Argument)
 
 
-def test_spl::argument_constructor_exists():
-    assert callable(SPL::Argument.__init__)
+def test_spl_argument_constructor_exists():
+    assert callable(SPL_Argument.__init__)
 
 
-def test_spl::argument_constructor_args():
-    sig = inspect.signature(SPL::Argument.__init__)
+def test_spl_argument_constructor_args():
+    sig = inspect.signature(SPL_Argument.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1286,23 +1286,23 @@ def test_typeexpression_constructor_args():
 
 
 
-def test_spl::definedtype_is_not_abstract():
-    assert not inspect.isabstract(SPL::DefinedType)
+def test_spl_definedtype_is_not_abstract():
+    assert not inspect.isabstract(SPL_DefinedType)
 
 
-def test_spl::definedtype_constructor_exists():
-    assert callable(SPL::DefinedType.__init__)
+def test_spl_definedtype_constructor_exists():
+    assert callable(SPL_DefinedType.__init__)
 
 
-def test_spl::definedtype_constructor_args():
-    sig = inspect.signature(SPL::DefinedType.__init__)
+def test_spl_definedtype_constructor_args():
+    sig = inspect.signature(SPL_DefinedType.__init__)
     params = list(sig.parameters.keys())
     assert "typeName" in params, "Missing parameter 'typeName'"
 
-def test_spl::definedtype_has_typeName():
-    assert hasattr(SPL::DefinedType, "typeName")
+def test_spl_definedtype_has_typeName():
+    assert hasattr(SPL_DefinedType, "typeName")
     descriptor = None
-    for klass in SPL::DefinedType.__mro__:
+    for klass in SPL_DefinedType.__mro__:
         if "typeName" in klass.__dict__:
             descriptor = klass.__dict__["typeName"]
             break
@@ -1310,67 +1310,67 @@ def test_spl::definedtype_has_typeName():
 
 
 
-def test_spl::sequencetype_is_not_abstract():
-    assert not inspect.isabstract(SPL::SequenceType)
+def test_spl_sequencetype_is_not_abstract():
+    assert not inspect.isabstract(SPL_SequenceType)
 
 
-def test_spl::sequencetype_constructor_exists():
-    assert callable(SPL::SequenceType.__init__)
+def test_spl_sequencetype_constructor_exists():
+    assert callable(SPL_SequenceType.__init__)
 
 
-def test_spl::sequencetype_constructor_args():
-    sig = inspect.signature(SPL::SequenceType.__init__)
+def test_spl_sequencetype_constructor_args():
+    sig = inspect.signature(SPL_SequenceType.__init__)
     params = list(sig.parameters.keys())
+    assert "size" in params, "Missing parameter 'size'"
     assert "type" in params, "Missing parameter 'type'"
     assert "modifier" in params, "Missing parameter 'modifier'"
-    assert "size" in params, "Missing parameter 'size'"
 
-def test_spl::sequencetype_has_type():
-    assert hasattr(SPL::SequenceType, "type")
+def test_spl_sequencetype_has_size():
+    assert hasattr(SPL_SequenceType, "size")
     descriptor = None
-    for klass in SPL::SequenceType.__mro__:
-        if "type" in klass.__dict__:
-            descriptor = klass.__dict__["type"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_spl::sequencetype_has_modifier():
-    assert hasattr(SPL::SequenceType, "modifier")
-    descriptor = None
-    for klass in SPL::SequenceType.__mro__:
-        if "modifier" in klass.__dict__:
-            descriptor = klass.__dict__["modifier"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_spl::sequencetype_has_size():
-    assert hasattr(SPL::SequenceType, "size")
-    descriptor = None
-    for klass in SPL::SequenceType.__mro__:
+    for klass in SPL_SequenceType.__mro__:
         if "size" in klass.__dict__:
             descriptor = klass.__dict__["size"]
             break
     assert isinstance(descriptor, property)
 
+def test_spl_sequencetype_has_type():
+    assert hasattr(SPL_SequenceType, "type")
+    descriptor = None
+    for klass in SPL_SequenceType.__mro__:
+        if "type" in klass.__dict__:
+            descriptor = klass.__dict__["type"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_spl_sequencetype_has_modifier():
+    assert hasattr(SPL_SequenceType, "modifier")
+    descriptor = None
+    for klass in SPL_SequenceType.__mro__:
+        if "modifier" in klass.__dict__:
+            descriptor = klass.__dict__["modifier"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_spl::simpletype_is_not_abstract():
-    assert not inspect.isabstract(SPL::SimpleType)
+
+def test_spl_simpletype_is_not_abstract():
+    assert not inspect.isabstract(SPL_SimpleType)
 
 
-def test_spl::simpletype_constructor_exists():
-    assert callable(SPL::SimpleType.__init__)
+def test_spl_simpletype_constructor_exists():
+    assert callable(SPL_SimpleType.__init__)
 
 
-def test_spl::simpletype_constructor_args():
-    sig = inspect.signature(SPL::SimpleType.__init__)
+def test_spl_simpletype_constructor_args():
+    sig = inspect.signature(SPL_SimpleType.__init__)
     params = list(sig.parameters.keys())
     assert "type" in params, "Missing parameter 'type'"
 
-def test_spl::simpletype_has_type():
-    assert hasattr(SPL::SimpleType, "type")
+def test_spl_simpletype_has_type():
+    assert hasattr(SPL_SimpleType, "type")
     descriptor = None
-    for klass in SPL::SimpleType.__mro__:
+    for klass in SPL_SimpleType.__mro__:
         if "type" in klass.__dict__:
             descriptor = klass.__dict__["type"]
             break
@@ -1392,23 +1392,37 @@ def test_session_constructor_args():
 
 
 
-def test_spl::event_is_not_abstract():
-    assert not inspect.isabstract(SPL::Event)
+def test_spl_dialog_is_not_abstract():
+    assert not inspect.isabstract(SPL_Dialog)
 
 
-def test_spl::event_constructor_exists():
-    assert callable(SPL::Event.__init__)
+def test_spl_dialog_constructor_exists():
+    assert callable(SPL_Dialog.__init__)
 
 
-def test_spl::event_constructor_args():
-    sig = inspect.signature(SPL::Event.__init__)
+def test_spl_dialog_constructor_args():
+    sig = inspect.signature(SPL_Dialog.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_spl_event_is_not_abstract():
+    assert not inspect.isabstract(SPL_Event)
+
+
+def test_spl_event_constructor_exists():
+    assert callable(SPL_Event.__init__)
+
+
+def test_spl_event_constructor_args():
+    sig = inspect.signature(SPL_Event.__init__)
     params = list(sig.parameters.keys())
     assert "eventId" in params, "Missing parameter 'eventId'"
 
-def test_spl::event_has_eventId():
-    assert hasattr(SPL::Event, "eventId")
+def test_spl_event_has_eventId():
+    assert hasattr(SPL_Event, "eventId")
     descriptor = None
-    for klass in SPL::Event.__mro__:
+    for klass in SPL_Event.__mro__:
         if "eventId" in klass.__dict__:
             descriptor = klass.__dict__["eventId"]
             break
@@ -1416,23 +1430,23 @@ def test_spl::event_has_eventId():
 
 
 
-def test_spl::method_is_not_abstract():
-    assert not inspect.isabstract(SPL::Method)
+def test_spl_method_is_not_abstract():
+    assert not inspect.isabstract(SPL_Method)
 
 
-def test_spl::method_constructor_exists():
-    assert callable(SPL::Method.__init__)
+def test_spl_method_constructor_exists():
+    assert callable(SPL_Method.__init__)
 
 
-def test_spl::method_constructor_args():
-    sig = inspect.signature(SPL::Method.__init__)
+def test_spl_method_constructor_args():
+    sig = inspect.signature(SPL_Method.__init__)
     params = list(sig.parameters.keys())
     assert "direction" in params, "Missing parameter 'direction'"
 
-def test_spl::method_has_direction():
-    assert hasattr(SPL::Method, "direction")
+def test_spl_method_has_direction():
+    assert hasattr(SPL_Method, "direction")
     descriptor = None
-    for klass in SPL::Method.__mro__:
+    for klass in SPL_Method.__mro__:
         if "direction" in klass.__dict__:
             descriptor = klass.__dict__["direction"]
             break
@@ -1440,30 +1454,16 @@ def test_spl::method_has_direction():
 
 
 
-def test_spl::dialog_is_not_abstract():
-    assert not inspect.isabstract(SPL::Dialog)
+def test_spl_registration_is_not_abstract():
+    assert not inspect.isabstract(SPL_Registration)
 
 
-def test_spl::dialog_constructor_exists():
-    assert callable(SPL::Dialog.__init__)
+def test_spl_registration_constructor_exists():
+    assert callable(SPL_Registration.__init__)
 
 
-def test_spl::dialog_constructor_args():
-    sig = inspect.signature(SPL::Dialog.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_spl::registration_is_not_abstract():
-    assert not inspect.isabstract(SPL::Registration)
-
-
-def test_spl::registration_constructor_exists():
-    assert callable(SPL::Registration.__init__)
-
-
-def test_spl::registration_constructor_args():
-    sig = inspect.signature(SPL::Registration.__init__)
+def test_spl_registration_constructor_args():
+    sig = inspect.signature(SPL_Registration.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1482,37 +1482,23 @@ def test_locatedelement_constructor_args():
 
 
 
-def test_spl::branch_is_not_abstract():
-    assert not inspect.isabstract(SPL::Branch)
+def test_spl_declaration_is_not_abstract():
+    assert not inspect.isabstract(SPL_Declaration)
 
 
-def test_spl::branch_constructor_exists():
-    assert callable(SPL::Branch.__init__)
+def test_spl_declaration_constructor_exists():
+    assert callable(SPL_Declaration.__init__)
 
 
-def test_spl::branch_constructor_args():
-    sig = inspect.signature(SPL::Branch.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_spl::structureproperty_is_not_abstract():
-    assert not inspect.isabstract(SPL::StructureProperty)
-
-
-def test_spl::structureproperty_constructor_exists():
-    assert callable(SPL::StructureProperty.__init__)
-
-
-def test_spl::structureproperty_constructor_args():
-    sig = inspect.signature(SPL::StructureProperty.__init__)
+def test_spl_declaration_constructor_args():
+    sig = inspect.signature(SPL_Declaration.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_spl::structureproperty_has_name():
-    assert hasattr(SPL::StructureProperty, "name")
+def test_spl_declaration_has_name():
+    assert hasattr(SPL_Declaration, "name")
     descriptor = None
-    for klass in SPL::StructureProperty.__mro__:
+    for klass in SPL_Declaration.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -1520,65 +1506,23 @@ def test_spl::structureproperty_has_name():
 
 
 
-def test_spl::methodname_is_not_abstract():
-    assert not inspect.isabstract(SPL::MethodName)
+def test_spl_service_is_not_abstract():
+    assert not inspect.isabstract(SPL_Service)
 
 
-def test_spl::methodname_constructor_exists():
-    assert callable(SPL::MethodName.__init__)
+def test_spl_service_constructor_exists():
+    assert callable(SPL_Service.__init__)
 
 
-def test_spl::methodname_constructor_args():
-    sig = inspect.signature(SPL::MethodName.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_spl::selectmember_is_not_abstract():
-    assert not inspect.isabstract(SPL::SelectMember)
-
-
-def test_spl::selectmember_constructor_exists():
-    assert callable(SPL::SelectMember.__init__)
-
-
-def test_spl::selectmember_constructor_args():
-    sig = inspect.signature(SPL::SelectMember.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_spl::messagefield_is_not_abstract():
-    assert not inspect.isabstract(SPL::MessageField)
-
-
-def test_spl::messagefield_constructor_exists():
-    assert callable(SPL::MessageField.__init__)
-
-
-def test_spl::messagefield_constructor_args():
-    sig = inspect.signature(SPL::MessageField.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_spl::service_is_not_abstract():
-    assert not inspect.isabstract(SPL::Service)
-
-
-def test_spl::service_constructor_exists():
-    assert callable(SPL::Service.__init__)
-
-
-def test_spl::service_constructor_args():
-    sig = inspect.signature(SPL::Service.__init__)
+def test_spl_service_constructor_args():
+    sig = inspect.signature(SPL_Service.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_spl::service_has_name():
-    assert hasattr(SPL::Service, "name")
+def test_spl_service_has_name():
+    assert hasattr(SPL_Service, "name")
     descriptor = None
-    for klass in SPL::Service.__mro__:
+    for klass in SPL_Service.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -1586,79 +1530,79 @@ def test_spl::service_has_name():
 
 
 
-def test_spl::constant_is_not_abstract():
-    assert not inspect.isabstract(SPL::Constant)
+def test_spl_constant_is_not_abstract():
+    assert not inspect.isabstract(SPL_Constant)
 
 
-def test_spl::constant_constructor_exists():
-    assert callable(SPL::Constant.__init__)
+def test_spl_constant_constructor_exists():
+    assert callable(SPL_Constant.__init__)
 
 
-def test_spl::constant_constructor_args():
-    sig = inspect.signature(SPL::Constant.__init__)
+def test_spl_constant_constructor_args():
+    sig = inspect.signature(SPL_Constant.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_spl::session_is_not_abstract():
-    assert not inspect.isabstract(SPL::Session)
+def test_spl_statement_is_not_abstract():
+    assert not inspect.isabstract(SPL_Statement)
 
 
-def test_spl::session_constructor_exists():
-    assert callable(SPL::Session.__init__)
+def test_spl_statement_constructor_exists():
+    assert callable(SPL_Statement.__init__)
 
 
-def test_spl::session_constructor_args():
-    sig = inspect.signature(SPL::Session.__init__)
+def test_spl_statement_constructor_args():
+    sig = inspect.signature(SPL_Statement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_spl::functioncall_is_not_abstract():
-    assert not inspect.isabstract(SPL::FunctionCall)
+def test_spl_messagefield_is_not_abstract():
+    assert not inspect.isabstract(SPL_MessageField)
 
 
-def test_spl::functioncall_constructor_exists():
-    assert callable(SPL::FunctionCall.__init__)
+def test_spl_messagefield_constructor_exists():
+    assert callable(SPL_MessageField.__init__)
 
 
-def test_spl::functioncall_constructor_args():
-    sig = inspect.signature(SPL::FunctionCall.__init__)
+def test_spl_messagefield_constructor_args():
+    sig = inspect.signature(SPL_MessageField.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_spl::statement_is_not_abstract():
-    assert not inspect.isabstract(SPL::Statement)
+def test_spl_expression_is_not_abstract():
+    assert not inspect.isabstract(SPL_Expression)
 
 
-def test_spl::statement_constructor_exists():
-    assert callable(SPL::Statement.__init__)
+def test_spl_expression_constructor_exists():
+    assert callable(SPL_Expression.__init__)
 
 
-def test_spl::statement_constructor_args():
-    sig = inspect.signature(SPL::Statement.__init__)
+def test_spl_expression_constructor_args():
+    sig = inspect.signature(SPL_Expression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_spl::declaration_is_not_abstract():
-    assert not inspect.isabstract(SPL::Declaration)
+def test_spl_structureproperty_is_not_abstract():
+    assert not inspect.isabstract(SPL_StructureProperty)
 
 
-def test_spl::declaration_constructor_exists():
-    assert callable(SPL::Declaration.__init__)
+def test_spl_structureproperty_constructor_exists():
+    assert callable(SPL_StructureProperty.__init__)
 
 
-def test_spl::declaration_constructor_args():
-    sig = inspect.signature(SPL::Declaration.__init__)
+def test_spl_structureproperty_constructor_args():
+    sig = inspect.signature(SPL_StructureProperty.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_spl::declaration_has_name():
-    assert hasattr(SPL::Declaration, "name")
+def test_spl_structureproperty_has_name():
+    assert hasattr(SPL_StructureProperty, "name")
     descriptor = None
-    for klass in SPL::Declaration.__mro__:
+    for klass in SPL_StructureProperty.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -1666,128 +1610,159 @@ def test_spl::declaration_has_name():
 
 
 
-def test_spl::response_is_not_abstract():
-    assert not inspect.isabstract(SPL::Response)
+def test_spl_methodname_is_not_abstract():
+    assert not inspect.isabstract(SPL_MethodName)
 
 
-def test_spl::response_constructor_exists():
-    assert callable(SPL::Response.__init__)
+def test_spl_methodname_constructor_exists():
+    assert callable(SPL_MethodName.__init__)
 
 
-def test_spl::response_constructor_args():
-    sig = inspect.signature(SPL::Response.__init__)
+def test_spl_methodname_constructor_args():
+    sig = inspect.signature(SPL_MethodName.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_spl::expression_is_not_abstract():
-    assert not inspect.isabstract(SPL::Expression)
+def test_spl_response_is_not_abstract():
+    assert not inspect.isabstract(SPL_Response)
 
 
-def test_spl::expression_constructor_exists():
-    assert callable(SPL::Expression.__init__)
+def test_spl_response_constructor_exists():
+    assert callable(SPL_Response.__init__)
 
 
-def test_spl::expression_constructor_args():
-    sig = inspect.signature(SPL::Expression.__init__)
+def test_spl_response_constructor_args():
+    sig = inspect.signature(SPL_Response.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_spl::program_is_not_abstract():
-    assert not inspect.isabstract(SPL::Program)
+def test_spl_functioncall_is_not_abstract():
+    assert not inspect.isabstract(SPL_FunctionCall)
 
 
-def test_spl::program_constructor_exists():
-    assert callable(SPL::Program.__init__)
+def test_spl_functioncall_constructor_exists():
+    assert callable(SPL_FunctionCall.__init__)
 
 
-def test_spl::program_constructor_args():
-    sig = inspect.signature(SPL::Program.__init__)
+def test_spl_functioncall_constructor_args():
+    sig = inspect.signature(SPL_FunctionCall.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_spl::typeexpression_is_not_abstract():
-    assert not inspect.isabstract(SPL::TypeExpression)
+def test_spl_selectmember_is_not_abstract():
+    assert not inspect.isabstract(SPL_SelectMember)
 
 
-def test_spl::typeexpression_constructor_exists():
-    assert callable(SPL::TypeExpression.__init__)
+def test_spl_selectmember_constructor_exists():
+    assert callable(SPL_SelectMember.__init__)
 
 
-def test_spl::typeexpression_constructor_args():
-    sig = inspect.signature(SPL::TypeExpression.__init__)
+def test_spl_selectmember_constructor_args():
+    sig = inspect.signature(SPL_SelectMember.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_spl::locatedelement_is_not_abstract():
-    assert not inspect.isabstract(SPL::LocatedElement)
+def test_spl_branch_is_not_abstract():
+    assert not inspect.isabstract(SPL_Branch)
 
 
-def test_spl::locatedelement_constructor_exists():
-    assert callable(SPL::LocatedElement.__init__)
+def test_spl_branch_constructor_exists():
+    assert callable(SPL_Branch.__init__)
 
 
-def test_spl::locatedelement_constructor_args():
-    sig = inspect.signature(SPL::LocatedElement.__init__)
+def test_spl_branch_constructor_args():
+    sig = inspect.signature(SPL_Branch.__init__)
     params = list(sig.parameters.keys())
-    assert "commentsBefore" in params, "Missing parameter 'commentsBefore'"
+
+
+
+def test_spl_session_is_not_abstract():
+    assert not inspect.isabstract(SPL_Session)
+
+
+def test_spl_session_constructor_exists():
+    assert callable(SPL_Session.__init__)
+
+
+def test_spl_session_constructor_args():
+    sig = inspect.signature(SPL_Session.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_spl_program_is_not_abstract():
+    assert not inspect.isabstract(SPL_Program)
+
+
+def test_spl_program_constructor_exists():
+    assert callable(SPL_Program.__init__)
+
+
+def test_spl_program_constructor_args():
+    sig = inspect.signature(SPL_Program.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_spl_typeexpression_is_not_abstract():
+    assert not inspect.isabstract(SPL_TypeExpression)
+
+
+def test_spl_typeexpression_constructor_exists():
+    assert callable(SPL_TypeExpression.__init__)
+
+
+def test_spl_typeexpression_constructor_args():
+    sig = inspect.signature(SPL_TypeExpression.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_spl_locatedelement_is_not_abstract():
+    assert not inspect.isabstract(SPL_LocatedElement)
+
+
+def test_spl_locatedelement_constructor_exists():
+    assert callable(SPL_LocatedElement.__init__)
+
+
+def test_spl_locatedelement_constructor_args():
+    sig = inspect.signature(SPL_LocatedElement.__init__)
+    params = list(sig.parameters.keys())
     assert "commentsAfter" in params, "Missing parameter 'commentsAfter'"
+    assert "commentsBefore" in params, "Missing parameter 'commentsBefore'"
     assert "location" in params, "Missing parameter 'location'"
 
-def test_spl::locatedelement_has_commentsBefore():
-    assert hasattr(SPL::LocatedElement, "commentsBefore")
+def test_spl_locatedelement_has_commentsAfter():
+    assert hasattr(SPL_LocatedElement, "commentsAfter")
     descriptor = None
-    for klass in SPL::LocatedElement.__mro__:
-        if "commentsBefore" in klass.__dict__:
-            descriptor = klass.__dict__["commentsBefore"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_spl::locatedelement_has_commentsAfter():
-    assert hasattr(SPL::LocatedElement, "commentsAfter")
-    descriptor = None
-    for klass in SPL::LocatedElement.__mro__:
+    for klass in SPL_LocatedElement.__mro__:
         if "commentsAfter" in klass.__dict__:
             descriptor = klass.__dict__["commentsAfter"]
             break
     assert isinstance(descriptor, property)
 
-def test_spl::locatedelement_has_location():
-    assert hasattr(SPL::LocatedElement, "location")
+def test_spl_locatedelement_has_commentsBefore():
+    assert hasattr(SPL_LocatedElement, "commentsBefore")
     descriptor = None
-    for klass in SPL::LocatedElement.__mro__:
+    for klass in SPL_LocatedElement.__mro__:
+        if "commentsBefore" in klass.__dict__:
+            descriptor = klass.__dict__["commentsBefore"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_spl_locatedelement_has_location():
+    assert hasattr(SPL_LocatedElement, "location")
+    descriptor = None
+    for klass in SPL_LocatedElement.__mro__:
         if "location" in klass.__dict__:
             descriptor = klass.__dict__["location"]
             break
     assert isinstance(descriptor, property)
-
-def test_sipmethod_exists():
-    # Check that the Enumeration exists
-    assert SIPMethod is not None
-
-def test_sipmethod_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in SIPMethod]
-    expected_literals = [
-        "BYE",
-        "OPTIONS",
-        "INVITE",
-        "REINVITE",
-        "NOTIFY",
-        "CANCEL",
-        "REACK",
-        "RESUBSCRIBE",
-        "REREGISTER",
-        "ACK",
-        "SUBSCRIBE",
-        "REGISTER",
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in SIPMethod"
 
 def test_clienterrorkind_exists():
     # Check that the Enumeration exists
@@ -1797,107 +1772,92 @@ def test_clienterrorkind_has_all_literals():
     # Collect the names of literals in this Enumeration
     enum_literals = [lit.name for lit in ClientErrorKind]
     expected_literals = [
-        "REQUEST_TIMEOUT",
-        "BAD_EXTENSION",
-        "PROXY_AUTHENTICATION_REQUIRED",
         "FORBIDDEN",
-        "INTERVAL_TOO_BRIEF",
-        "EXTENSION_REQUIRED",
-        "CALL_OR_TRANSACTION_DOES_NOT_EXIST",
-        "REQUEST_PENDING",
-        "AMBIGUOUS",
-        "BAD_REQUEST",
-        "NOT_ACCEPTABLE",
-        "UNSUPPORTED_URI_SCHEME",
-        "TOO_MANY_HOPS",
-        "LOOP_DETECTED",
-        "UNDECIPHERABLE",
-        "NOT_FOUND",
-        "NOT_ACCEPTABLE_HERE",
-        "REQUEST_TERMINATED",
-        "PAYMENT_REQUIRED",
         "TEMPORARILY_UNAVAILABLE",
-        "REQUESTURI_TOO_LONG",
+        "NOT_ACCEPTABLE_HERE",
         "BUSY_HERE",
-        "ADDRESS_INCOMPLETE",
-        "GONE",
-        "UNAUTHORIZED",
-        "METHOD_NOT_ALLOWED",
-        "UNSUPPORTED_MEDIA_TYPE",
         "REQUEST_ENTITY_TOO_LARGE",
+        "PROXY_AUTHENTICATION_REQUIRED",
+        "LOOP_DETECTED",
+        "GONE",
+        "BAD_EXTENSION",
+        "UNSUPPORTED_URI_SCHEME",
+        "CALL_OR_TRANSACTION_DOES_NOT_EXIST",
+        "EXTENSION_REQUIRED",
+        "REQUEST_TERMINATED",
+        "INTERVAL_TOO_BRIEF",
+        "REQUEST_PENDING",
+        "REQUESTURI_TOO_LONG",
+        "PAYMENT_REQUIRED",
+        "BAD_REQUEST",
+        "TOO_MANY_HOPS",
+        "ADDRESS_INCOMPLETE",
+        "METHOD_NOT_ALLOWED",
+        "REQUEST_TIMEOUT",
+        "NOT_ACCEPTABLE",
+        "AMBIGUOUS",
+        "NOT_FOUND",
+        "UNAUTHORIZED",
+        "UNSUPPORTED_MEDIA_TYPE",
+        "UNDECIPHERABLE",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
         assert lit_name in enum_literals, f"Literal '' missing in ClientErrorKind"
 
-def test_successkind_exists():
+def test_controlmethod_exists():
     # Check that the Enumeration exists
-    assert SuccessKind is not None
+    assert ControlMethod is not None
 
-def test_successkind_has_all_literals():
+def test_controlmethod_has_all_literals():
     # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in SuccessKind]
+    enum_literals = [lit.name for lit in ControlMethod]
     expected_literals = [
-        "OK",
-        "ACCEPTED",
+        "unsubscribe",
+        "uninvite",
+        "unregister",
+        "deploy",
+        "undeploy",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in SuccessKind"
+        assert lit_name in enum_literals, f"Literal '' missing in ControlMethod"
 
-def test_primitivetype_exists():
+def test_servererrorkind_exists():
     # Check that the Enumeration exists
-    assert PrimitiveType is not None
+    assert ServerErrorKind is not None
 
-def test_primitivetype_has_all_literals():
+def test_servererrorkind_has_all_literals():
     # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in PrimitiveType]
+    enum_literals = [lit.name for lit in ServerErrorKind]
     expected_literals = [
-        "bool",
-        "string",
-        "time",
-        "void",
-        "response",
-        "int",
-        "uri",
-        "request",
+        "SERVICE_UNAVAILABLE",
+        "MESSAGE_TOO_LARGE",
+        "SERVER_INTERNAL_ERROR",
+        "VERSION_NOT_SUPPORTED",
+        "SERVER_TIMEOUT",
+        "NOT_IMPLEMENTED",
+        "BAD_GATEWAY",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in PrimitiveType"
+        assert lit_name in enum_literals, f"Literal '' missing in ServerErrorKind"
 
-def test_redirectionerrorkind_exists():
+def test_direction_exists():
     # Check that the Enumeration exists
-    assert RedirectionErrorKind is not None
+    assert Direction is not None
 
-def test_redirectionerrorkind_has_all_literals():
+def test_direction_has_all_literals():
     # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in RedirectionErrorKind]
+    enum_literals = [lit.name for lit in Direction]
     expected_literals = [
-        "MOVED_PERMANENTLY",
-        "MOVED_TEMPORARILY",
-        "USE_PROXY",
-        "MULTIPLE_CHOICES",
-        "ALTERNATIVE_SERVICE",
+        "in_",
+        "inout",
+        "out",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in RedirectionErrorKind"
-
-def test_modifier_exists():
-    # Check that the Enumeration exists
-    assert Modifier is not None
-
-def test_modifier_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in Modifier]
-    expected_literals = [
-        "LIFO",
-        "FIFO",
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in Modifier"
+        assert lit_name in enum_literals, f"Literal '' missing in Direction"
 
 def test_functionlocation_exists():
     # Check that the Enumeration exists
@@ -1914,23 +1874,44 @@ def test_functionlocation_has_all_literals():
     for lit_name in expected_literals:
         assert lit_name in enum_literals, f"Literal '' missing in FunctionLocation"
 
-def test_controlmethod_exists():
+def test_redirectionerrorkind_exists():
     # Check that the Enumeration exists
-    assert ControlMethod is not None
+    assert RedirectionErrorKind is not None
 
-def test_controlmethod_has_all_literals():
+def test_redirectionerrorkind_has_all_literals():
     # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in ControlMethod]
+    enum_literals = [lit.name for lit in RedirectionErrorKind]
     expected_literals = [
-        "deploy",
-        "undeploy",
-        "unregister",
-        "unsubscribe",
-        "uninvite",
+        "MOVED_PERMANENTLY",
+        "MULTIPLE_CHOICES",
+        "MOVED_TEMPORARILY",
+        "ALTERNATIVE_SERVICE",
+        "USE_PROXY",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in ControlMethod"
+        assert lit_name in enum_literals, f"Literal '' missing in RedirectionErrorKind"
+
+def test_primitivetype_exists():
+    # Check that the Enumeration exists
+    assert PrimitiveType is not None
+
+def test_primitivetype_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in PrimitiveType]
+    expected_literals = [
+        "void",
+        "uri",
+        "int",
+        "string",
+        "time",
+        "bool",
+        "response",
+        "request",
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in PrimitiveType"
 
 def test_globalerrorkind_exists():
     # Check that the Enumeration exists
@@ -1940,34 +1921,44 @@ def test_globalerrorkind_has_all_literals():
     # Collect the names of literals in this Enumeration
     enum_literals = [lit.name for lit in GlobalErrorKind]
     expected_literals = [
-        "DOES_NOT_EXIST_ANYWHERE",
-        "BUSY_EVERYWHERE",
-        "DECLINE",
         "NOT_ACCEPTABLE",
+        "DOES_NOT_EXIST_ANYWHERE",
+        "DECLINE",
+        "BUSY_EVERYWHERE",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
         assert lit_name in enum_literals, f"Literal '' missing in GlobalErrorKind"
 
-def test_servererrorkind_exists():
+def test_modifier_exists():
     # Check that the Enumeration exists
-    assert ServerErrorKind is not None
+    assert Modifier is not None
 
-def test_servererrorkind_has_all_literals():
+def test_modifier_has_all_literals():
     # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in ServerErrorKind]
+    enum_literals = [lit.name for lit in Modifier]
     expected_literals = [
-        "BAD_GATEWAY",
-        "SERVER_INTERNAL_ERROR",
-        "VERSION_NOT_SUPPORTED",
-        "SERVER_TIMEOUT",
-        "NOT_IMPLEMENTED",
-        "SERVICE_UNAVAILABLE",
-        "MESSAGE_TOO_LARGE",
+        "LIFO",
+        "FIFO",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in ServerErrorKind"
+        assert lit_name in enum_literals, f"Literal '' missing in Modifier"
+
+def test_successkind_exists():
+    # Check that the Enumeration exists
+    assert SuccessKind is not None
+
+def test_successkind_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in SuccessKind]
+    expected_literals = [
+        "OK",
+        "ACCEPTED",
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in SuccessKind"
 
 def test_sipheader_exists():
     # Check that the Enumeration exists
@@ -1977,35 +1968,44 @@ def test_sipheader_has_all_literals():
     # Collect the names of literals in this Enumeration
     enum_literals = [lit.name for lit in SIPHeader]
     expected_literals = [
+        "EVENT",
+        "MAX_FORWARDS",
         "FROM",
         "SUBSCRIPTION_STATE",
-        "TO",
-        "VIA",
-        "CONTACT",
         "CSEQ",
-        "EVENT",
+        "VIA",
+        "TO",
+        "CONTACT",
         "CALL_ID",
-        "MAX_FORWARDS",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
         assert lit_name in enum_literals, f"Literal '' missing in SIPHeader"
 
-def test_direction_exists():
+def test_sipmethod_exists():
     # Check that the Enumeration exists
-    assert Direction is not None
+    assert SIPMethod is not None
 
-def test_direction_has_all_literals():
+def test_sipmethod_has_all_literals():
     # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in Direction]
+    enum_literals = [lit.name for lit in SIPMethod]
     expected_literals = [
-        "inout",
-        "in_",
-        "out",
+        "REACK",
+        "REREGISTER",
+        "CANCEL",
+        "INVITE",
+        "REINVITE",
+        "BYE",
+        "RESUBSCRIBE",
+        "OPTIONS",
+        "SUBSCRIBE",
+        "NOTIFY",
+        "REGISTER",
+        "ACK",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in Direction"
+        assert lit_name in enum_literals, f"Literal '' missing in SIPMethod"
 
 
 # =============================================================================
@@ -2022,347 +2022,347 @@ safe_text = st.text(
 ErrorResponse_strategy = st.builds(
     ErrorResponse,
 )
-SPL::RedirectionErrorResponse_strategy = st.builds(
-    SPL::RedirectionErrorResponse,
+SPL_GlobalErrorResponse_strategy = st.builds(
+    SPL_GlobalErrorResponse,
     errorKind=
         safe_text
 )
-SPL::ServerErrorResponse_strategy = st.builds(
-    SPL::ServerErrorResponse,
+SPL_ServerErrorResponse_strategy = st.builds(
+    SPL_ServerErrorResponse,
     errorKind=
         safe_text
 )
-SPL::GlobalErrorResponse_strategy = st.builds(
-    SPL::GlobalErrorResponse,
+SPL_RedirectionErrorResponse_strategy = st.builds(
+    SPL_RedirectionErrorResponse,
     errorKind=
         safe_text
 )
-SPL::ClientErrorResponse_strategy = st.builds(
-    SPL::ClientErrorResponse,
+SPL_ClientErrorResponse_strategy = st.builds(
+    SPL_ClientErrorResponse,
     errorKind=
         safe_text
 )
 Response_strategy = st.builds(
     Response,
 )
-SPL::ErrorResponse_strategy = st.builds(
-    SPL::ErrorResponse,
+SPL_ErrorResponse_strategy = st.builds(
+    SPL_ErrorResponse,
 )
-SPL::SuccessResponse_strategy = st.builds(
-    SPL::SuccessResponse,
+SPL_SuccessResponse_strategy = st.builds(
+    SPL_SuccessResponse,
     successKind=
         safe_text
 )
 Constant_strategy = st.builds(
     Constant,
 )
-SPL::URIConstant_strategy = st.builds(
-    SPL::URIConstant,
-    uri=
-        safe_text
-)
-SPL::StringConstant_strategy = st.builds(
-    SPL::StringConstant,
+SPL_StringConstant_strategy = st.builds(
+    SPL_StringConstant,
     value=
         safe_text
 )
-SPL::IntegerConstant_strategy = st.builds(
-    SPL::IntegerConstant,
+SPL_IntegerConstant_strategy = st.builds(
+    SPL_IntegerConstant,
     value=
         st.integers()
 )
-SPL::BooleanConstant_strategy = st.builds(
-    SPL::BooleanConstant,
+SPL_URIConstant_strategy = st.builds(
+    SPL_URIConstant,
+    uri=
+        safe_text
+)
+SPL_BooleanConstant_strategy = st.builds(
+    SPL_BooleanConstant,
     value=
         st.booleans()
 )
 MessageField_strategy = st.builds(
     MessageField,
 )
-SPL::HeadedMessageField_strategy = st.builds(
-    SPL::HeadedMessageField,
+SPL_HeadedMessageField_strategy = st.builds(
+    SPL_HeadedMessageField,
     headerId=
         safe_text
 )
-SPL::ReasonMessageField_strategy = st.builds(
-    SPL::ReasonMessageField,
+SPL_ReasonMessageField_strategy = st.builds(
+    SPL_ReasonMessageField,
 )
 VariablePlace_strategy = st.builds(
     VariablePlace,
 )
-SPL::PropertyCallPlace_strategy = st.builds(
-    SPL::PropertyCallPlace,
+SPL_PropertyCallPlace_strategy = st.builds(
+    SPL_PropertyCallPlace,
     propName=
         safe_text
 )
 Place_strategy = st.builds(
     Place,
 )
-SPL::VariablePlace_strategy = st.builds(
-    SPL::VariablePlace,
+SPL_VariablePlace_strategy = st.builds(
+    SPL_VariablePlace,
 )
-SPL::SIPHeaderPlace_strategy = st.builds(
-    SPL::SIPHeaderPlace,
+SPL_SIPHeaderPlace_strategy = st.builds(
+    SPL_SIPHeaderPlace,
     header=
         safe_text
 )
-SPL::ResponseConstant_strategy = st.builds(
-    SPL::ResponseConstant,
+SPL_ResponseConstant_strategy = st.builds(
+    SPL_ResponseConstant,
 )
-SPL::SequenceConstant_strategy = st.builds(
-    SPL::SequenceConstant,
+SPL_SequenceConstant_strategy = st.builds(
+    SPL_SequenceConstant,
 )
 Expression_strategy = st.builds(
     Expression,
 )
-SPL::BlockExp_strategy = st.builds(
-    SPL::BlockExp,
+SPL_BODYExp_strategy = st.builds(
+    SPL_BODYExp,
 )
-SPL::ReasonExp_strategy = st.builds(
-    SPL::ReasonExp,
-)
-SPL::WithExp_strategy = st.builds(
-    SPL::WithExp,
-)
-SPL::BODYExp_strategy = st.builds(
-    SPL::BODYExp,
-)
-SPL::OperatorExp_strategy = st.builds(
-    SPL::OperatorExp,
+SPL_OperatorExp_strategy = st.builds(
+    SPL_OperatorExp,
     opName=
         safe_text
 )
-SPL::ForwardExp_strategy = st.builds(
-    SPL::ForwardExp,
+SPL_BlockExp_strategy = st.builds(
+    SPL_BlockExp,
+)
+SPL_ForwardExp_strategy = st.builds(
+    SPL_ForwardExp,
     isParallel=
         st.booleans()
 )
-SPL::ConstantExp_strategy = st.builds(
-    SPL::ConstantExp,
+SPL_ReasonExp_strategy = st.builds(
+    SPL_ReasonExp,
 )
-SPL::FunctionCallExp_strategy = st.builds(
-    SPL::FunctionCallExp,
+SPL_WithExp_strategy = st.builds(
+    SPL_WithExp,
 )
-SPL::PopExp_strategy = st.builds(
-    SPL::PopExp,
+SPL_ConstantExp_strategy = st.builds(
+    SPL_ConstantExp,
 )
-SPL::RequestURIExp_strategy = st.builds(
-    SPL::RequestURIExp,
+SPL_FunctionCallExp_strategy = st.builds(
+    SPL_FunctionCallExp,
+)
+SPL_PopExp_strategy = st.builds(
+    SPL_PopExp,
+)
+SPL_RequestURIExp_strategy = st.builds(
+    SPL_RequestURIExp,
 )
 SelectMember_strategy = st.builds(
     SelectMember,
 )
-SPL::SelectDefault_strategy = st.builds(
-    SPL::SelectDefault,
+SPL_SelectDefault_strategy = st.builds(
+    SPL_SelectDefault,
 )
-SPL::SelectCase_strategy = st.builds(
-    SPL::SelectCase,
+SPL_SelectCase_strategy = st.builds(
+    SPL_SelectCase,
 )
-SPL::Place_strategy = st.builds(
-    SPL::Place,
+SPL_Place_strategy = st.builds(
+    SPL_Place,
 )
 Statement_strategy = st.builds(
     Statement,
 )
-SPL::ContinueStat_strategy = st.builds(
-    SPL::ContinueStat,
+SPL_BreakStat_strategy = st.builds(
+    SPL_BreakStat,
 )
-SPL::FunctionCallStat_strategy = st.builds(
-    SPL::FunctionCallStat,
+SPL_PushStat_strategy = st.builds(
+    SPL_PushStat,
 )
-SPL::SelectStat_strategy = st.builds(
-    SPL::SelectStat,
+SPL_ReturnStat_strategy = st.builds(
+    SPL_ReturnStat,
 )
-SPL::WhenStat_strategy = st.builds(
-    SPL::WhenStat,
+SPL_SetStat_strategy = st.builds(
+    SPL_SetStat,
 )
-SPL::ForeachStat_strategy = st.builds(
-    SPL::ForeachStat,
+SPL_ForeachStat_strategy = st.builds(
+    SPL_ForeachStat,
     iteratorName=
         safe_text
 )
-SPL::IfStat_strategy = st.builds(
-    SPL::IfStat,
+SPL_FunctionCallStat_strategy = st.builds(
+    SPL_FunctionCallStat,
 )
-SPL::DeclarationStat_strategy = st.builds(
-    SPL::DeclarationStat,
+SPL_IfStat_strategy = st.builds(
+    SPL_IfStat,
 )
-SPL::SetStat_strategy = st.builds(
-    SPL::SetStat,
+SPL_WhenStat_strategy = st.builds(
+    SPL_WhenStat,
 )
-SPL::BreakStat_strategy = st.builds(
-    SPL::BreakStat,
+SPL_SelectStat_strategy = st.builds(
+    SPL_SelectStat,
 )
-SPL::PushStat_strategy = st.builds(
-    SPL::PushStat,
+SPL_DeclarationStat_strategy = st.builds(
+    SPL_DeclarationStat,
 )
-SPL::ReturnStat_strategy = st.builds(
-    SPL::ReturnStat,
+SPL_ContinueStat_strategy = st.builds(
+    SPL_ContinueStat,
 )
-SPL::CompoundStat_strategy = st.builds(
-    SPL::CompoundStat,
+SPL_CompoundStat_strategy = st.builds(
+    SPL_CompoundStat,
 )
-SPL::Variable_strategy = st.builds(
-    SPL::Variable,
+SPL_Variable_strategy = st.builds(
+    SPL_Variable,
 )
 FunctionDeclaration_strategy = st.builds(
     FunctionDeclaration,
 )
-SPL::LocalFunctionDeclaration_strategy = st.builds(
-    SPL::LocalFunctionDeclaration,
+SPL_LocalFunctionDeclaration_strategy = st.builds(
+    SPL_LocalFunctionDeclaration,
 )
-SPL::RemoteFunctionDeclaration_strategy = st.builds(
-    SPL::RemoteFunctionDeclaration,
+SPL_RemoteFunctionDeclaration_strategy = st.builds(
+    SPL_RemoteFunctionDeclaration,
     functionLocation=
         safe_text
 )
 Declaration_strategy = st.builds(
     Declaration,
 )
-SPL::FunctionDeclaration_strategy = st.builds(
-    SPL::FunctionDeclaration,
+SPL_FunctionDeclaration_strategy = st.builds(
+    SPL_FunctionDeclaration,
 )
-SPL::StructureDeclaration_strategy = st.builds(
-    SPL::StructureDeclaration,
+SPL_StructureDeclaration_strategy = st.builds(
+    SPL_StructureDeclaration,
 )
-SPL::VariableDeclaration_strategy = st.builds(
-    SPL::VariableDeclaration,
+SPL_VariableDeclaration_strategy = st.builds(
+    SPL_VariableDeclaration,
 )
 Branch_strategy = st.builds(
     Branch,
 )
-SPL::NamedBranch_strategy = st.builds(
-    SPL::NamedBranch,
+SPL_NamedBranch_strategy = st.builds(
+    SPL_NamedBranch,
     name=
         safe_text
 )
-SPL::DefaultBranch_strategy = st.builds(
-    SPL::DefaultBranch,
+SPL_DefaultBranch_strategy = st.builds(
+    SPL_DefaultBranch,
 )
 MethodName_strategy = st.builds(
     MethodName,
 )
-SPL::ControlMethodName_strategy = st.builds(
-    SPL::ControlMethodName,
+SPL_ControlMethodName_strategy = st.builds(
+    SPL_ControlMethodName,
     name=
         safe_text
 )
-SPL::SIPMethodName_strategy = st.builds(
-    SPL::SIPMethodName,
+SPL_SIPMethodName_strategy = st.builds(
+    SPL_SIPMethodName,
     name=
         safe_text
 )
 VariableDeclaration_strategy = st.builds(
     VariableDeclaration,
 )
-SPL::WhenHeader_strategy = st.builds(
-    SPL::WhenHeader,
+SPL_WhenHeader_strategy = st.builds(
+    SPL_WhenHeader,
     headerId=
         safe_text
 )
-SPL::Argument_strategy = st.builds(
-    SPL::Argument,
+SPL_Argument_strategy = st.builds(
+    SPL_Argument,
 )
 TypeExpression_strategy = st.builds(
     TypeExpression,
 )
-SPL::DefinedType_strategy = st.builds(
-    SPL::DefinedType,
+SPL_DefinedType_strategy = st.builds(
+    SPL_DefinedType,
     typeName=
         safe_text
 )
-SPL::SequenceType_strategy = st.builds(
-    SPL::SequenceType,
+SPL_SequenceType_strategy = st.builds(
+    SPL_SequenceType,
+    size=
+        st.integers(),
     type=
         safe_text,
     modifier=
-        safe_text,
-    size=
-        st.integers()
+        safe_text
 )
-SPL::SimpleType_strategy = st.builds(
-    SPL::SimpleType,
+SPL_SimpleType_strategy = st.builds(
+    SPL_SimpleType,
     type=
         safe_text
 )
 Session_strategy = st.builds(
     Session,
 )
-SPL::Event_strategy = st.builds(
-    SPL::Event,
+SPL_Dialog_strategy = st.builds(
+    SPL_Dialog,
+)
+SPL_Event_strategy = st.builds(
+    SPL_Event,
     eventId=
         safe_text
 )
-SPL::Method_strategy = st.builds(
-    SPL::Method,
+SPL_Method_strategy = st.builds(
+    SPL_Method,
     direction=
         safe_text
 )
-SPL::Dialog_strategy = st.builds(
-    SPL::Dialog,
-)
-SPL::Registration_strategy = st.builds(
-    SPL::Registration,
+SPL_Registration_strategy = st.builds(
+    SPL_Registration,
 )
 LocatedElement_strategy = st.builds(
     LocatedElement,
 )
-SPL::Branch_strategy = st.builds(
-    SPL::Branch,
-)
-SPL::StructureProperty_strategy = st.builds(
-    SPL::StructureProperty,
+SPL_Declaration_strategy = st.builds(
+    SPL_Declaration,
     name=
         safe_text
 )
-SPL::MethodName_strategy = st.builds(
-    SPL::MethodName,
-)
-SPL::SelectMember_strategy = st.builds(
-    SPL::SelectMember,
-)
-SPL::MessageField_strategy = st.builds(
-    SPL::MessageField,
-)
-SPL::Service_strategy = st.builds(
-    SPL::Service,
+SPL_Service_strategy = st.builds(
+    SPL_Service,
     name=
         safe_text
 )
-SPL::Constant_strategy = st.builds(
-    SPL::Constant,
+SPL_Constant_strategy = st.builds(
+    SPL_Constant,
 )
-SPL::Session_strategy = st.builds(
-    SPL::Session,
+SPL_Statement_strategy = st.builds(
+    SPL_Statement,
 )
-SPL::FunctionCall_strategy = st.builds(
-    SPL::FunctionCall,
+SPL_MessageField_strategy = st.builds(
+    SPL_MessageField,
 )
-SPL::Statement_strategy = st.builds(
-    SPL::Statement,
+SPL_Expression_strategy = st.builds(
+    SPL_Expression,
 )
-SPL::Declaration_strategy = st.builds(
-    SPL::Declaration,
+SPL_StructureProperty_strategy = st.builds(
+    SPL_StructureProperty,
     name=
         safe_text
 )
-SPL::Response_strategy = st.builds(
-    SPL::Response,
+SPL_MethodName_strategy = st.builds(
+    SPL_MethodName,
 )
-SPL::Expression_strategy = st.builds(
-    SPL::Expression,
+SPL_Response_strategy = st.builds(
+    SPL_Response,
 )
-SPL::Program_strategy = st.builds(
-    SPL::Program,
+SPL_FunctionCall_strategy = st.builds(
+    SPL_FunctionCall,
 )
-SPL::TypeExpression_strategy = st.builds(
-    SPL::TypeExpression,
+SPL_SelectMember_strategy = st.builds(
+    SPL_SelectMember,
 )
-SPL::LocatedElement_strategy = st.builds(
-    SPL::LocatedElement,
-    commentsBefore=
-        safe_text,
+SPL_Branch_strategy = st.builds(
+    SPL_Branch,
+)
+SPL_Session_strategy = st.builds(
+    SPL_Session,
+)
+SPL_Program_strategy = st.builds(
+    SPL_Program,
+)
+SPL_TypeExpression_strategy = st.builds(
+    SPL_TypeExpression,
+)
+SPL_LocatedElement_strategy = st.builds(
+    SPL_LocatedElement,
     commentsAfter=
+        safe_text,
+    commentsBefore=
         safe_text,
     location=
         safe_text
@@ -2373,66 +2373,54 @@ SPL::LocatedElement_strategy = st.builds(
 def test_errorresponse_instantiation(instance):
     assert isinstance(instance, ErrorResponse)
 
-@given(instance=SPL::RedirectionErrorResponse_strategy)
+@given(instance=SPL_GlobalErrorResponse_strategy)
 @settings(max_examples=50)
-def test_spl::redirectionerrorresponse_instantiation(instance):
-    assert isinstance(instance, SPL::RedirectionErrorResponse)
-
-@given(instance=SPL::RedirectionErrorResponse_strategy)
-def test_spl::redirectionerrorresponse_errorKind_type(instance):
-    assert isinstance(instance.errorKind, str)
+def test_spl_globalerrorresponse_instantiation(instance):
+    assert isinstance(instance, SPL_GlobalErrorResponse)
 
 
-@given(instance=SPL::RedirectionErrorResponse_strategy)
-def test_spl::redirectionerrorresponse_errorKind_setter(instance):
+
+@given(instance=SPL_GlobalErrorResponse_strategy)
+def test_spl_globalerrorresponse_errorKind_setter(instance):
     original = instance.errorKind
     instance.errorKind = original
     assert instance.errorKind == original
 
-@given(instance=SPL::ServerErrorResponse_strategy)
+@given(instance=SPL_ServerErrorResponse_strategy)
 @settings(max_examples=50)
-def test_spl::servererrorresponse_instantiation(instance):
-    assert isinstance(instance, SPL::ServerErrorResponse)
-
-@given(instance=SPL::ServerErrorResponse_strategy)
-def test_spl::servererrorresponse_errorKind_type(instance):
-    assert isinstance(instance.errorKind, str)
+def test_spl_servererrorresponse_instantiation(instance):
+    assert isinstance(instance, SPL_ServerErrorResponse)
 
 
-@given(instance=SPL::ServerErrorResponse_strategy)
-def test_spl::servererrorresponse_errorKind_setter(instance):
+
+@given(instance=SPL_ServerErrorResponse_strategy)
+def test_spl_servererrorresponse_errorKind_setter(instance):
     original = instance.errorKind
     instance.errorKind = original
     assert instance.errorKind == original
 
-@given(instance=SPL::GlobalErrorResponse_strategy)
+@given(instance=SPL_RedirectionErrorResponse_strategy)
 @settings(max_examples=50)
-def test_spl::globalerrorresponse_instantiation(instance):
-    assert isinstance(instance, SPL::GlobalErrorResponse)
-
-@given(instance=SPL::GlobalErrorResponse_strategy)
-def test_spl::globalerrorresponse_errorKind_type(instance):
-    assert isinstance(instance.errorKind, str)
+def test_spl_redirectionerrorresponse_instantiation(instance):
+    assert isinstance(instance, SPL_RedirectionErrorResponse)
 
 
-@given(instance=SPL::GlobalErrorResponse_strategy)
-def test_spl::globalerrorresponse_errorKind_setter(instance):
+
+@given(instance=SPL_RedirectionErrorResponse_strategy)
+def test_spl_redirectionerrorresponse_errorKind_setter(instance):
     original = instance.errorKind
     instance.errorKind = original
     assert instance.errorKind == original
 
-@given(instance=SPL::ClientErrorResponse_strategy)
+@given(instance=SPL_ClientErrorResponse_strategy)
 @settings(max_examples=50)
-def test_spl::clienterrorresponse_instantiation(instance):
-    assert isinstance(instance, SPL::ClientErrorResponse)
-
-@given(instance=SPL::ClientErrorResponse_strategy)
-def test_spl::clienterrorresponse_errorKind_type(instance):
-    assert isinstance(instance.errorKind, str)
+def test_spl_clienterrorresponse_instantiation(instance):
+    assert isinstance(instance, SPL_ClientErrorResponse)
 
 
-@given(instance=SPL::ClientErrorResponse_strategy)
-def test_spl::clienterrorresponse_errorKind_setter(instance):
+
+@given(instance=SPL_ClientErrorResponse_strategy)
+def test_spl_clienterrorresponse_errorKind_setter(instance):
     original = instance.errorKind
     instance.errorKind = original
     assert instance.errorKind == original
@@ -2442,23 +2430,20 @@ def test_spl::clienterrorresponse_errorKind_setter(instance):
 def test_response_instantiation(instance):
     assert isinstance(instance, Response)
 
-@given(instance=SPL::ErrorResponse_strategy)
+@given(instance=SPL_ErrorResponse_strategy)
 @settings(max_examples=50)
-def test_spl::errorresponse_instantiation(instance):
-    assert isinstance(instance, SPL::ErrorResponse)
+def test_spl_errorresponse_instantiation(instance):
+    assert isinstance(instance, SPL_ErrorResponse)
 
-@given(instance=SPL::SuccessResponse_strategy)
+@given(instance=SPL_SuccessResponse_strategy)
 @settings(max_examples=50)
-def test_spl::successresponse_instantiation(instance):
-    assert isinstance(instance, SPL::SuccessResponse)
-
-@given(instance=SPL::SuccessResponse_strategy)
-def test_spl::successresponse_successKind_type(instance):
-    assert isinstance(instance.successKind, str)
+def test_spl_successresponse_instantiation(instance):
+    assert isinstance(instance, SPL_SuccessResponse)
 
 
-@given(instance=SPL::SuccessResponse_strategy)
-def test_spl::successresponse_successKind_setter(instance):
+
+@given(instance=SPL_SuccessResponse_strategy)
+def test_spl_successresponse_successKind_setter(instance):
     original = instance.successKind
     instance.successKind = original
     assert instance.successKind == original
@@ -2468,66 +2453,54 @@ def test_spl::successresponse_successKind_setter(instance):
 def test_constant_instantiation(instance):
     assert isinstance(instance, Constant)
 
-@given(instance=SPL::URIConstant_strategy)
+@given(instance=SPL_StringConstant_strategy)
 @settings(max_examples=50)
-def test_spl::uriconstant_instantiation(instance):
-    assert isinstance(instance, SPL::URIConstant)
-
-@given(instance=SPL::URIConstant_strategy)
-def test_spl::uriconstant_uri_type(instance):
-    assert isinstance(instance.uri, str)
+def test_spl_stringconstant_instantiation(instance):
+    assert isinstance(instance, SPL_StringConstant)
 
 
-@given(instance=SPL::URIConstant_strategy)
-def test_spl::uriconstant_uri_setter(instance):
+
+@given(instance=SPL_StringConstant_strategy)
+def test_spl_stringconstant_value_setter(instance):
+    original = instance.value
+    instance.value = original
+    assert instance.value == original
+
+@given(instance=SPL_IntegerConstant_strategy)
+@settings(max_examples=50)
+def test_spl_integerconstant_instantiation(instance):
+    assert isinstance(instance, SPL_IntegerConstant)
+
+
+
+@given(instance=SPL_IntegerConstant_strategy)
+def test_spl_integerconstant_value_setter(instance):
+    original = instance.value
+    instance.value = original
+    assert instance.value == original
+
+@given(instance=SPL_URIConstant_strategy)
+@settings(max_examples=50)
+def test_spl_uriconstant_instantiation(instance):
+    assert isinstance(instance, SPL_URIConstant)
+
+
+
+@given(instance=SPL_URIConstant_strategy)
+def test_spl_uriconstant_uri_setter(instance):
     original = instance.uri
     instance.uri = original
     assert instance.uri == original
 
-@given(instance=SPL::StringConstant_strategy)
+@given(instance=SPL_BooleanConstant_strategy)
 @settings(max_examples=50)
-def test_spl::stringconstant_instantiation(instance):
-    assert isinstance(instance, SPL::StringConstant)
-
-@given(instance=SPL::StringConstant_strategy)
-def test_spl::stringconstant_value_type(instance):
-    assert isinstance(instance.value, str)
+def test_spl_booleanconstant_instantiation(instance):
+    assert isinstance(instance, SPL_BooleanConstant)
 
 
-@given(instance=SPL::StringConstant_strategy)
-def test_spl::stringconstant_value_setter(instance):
-    original = instance.value
-    instance.value = original
-    assert instance.value == original
 
-@given(instance=SPL::IntegerConstant_strategy)
-@settings(max_examples=50)
-def test_spl::integerconstant_instantiation(instance):
-    assert isinstance(instance, SPL::IntegerConstant)
-
-@given(instance=SPL::IntegerConstant_strategy)
-def test_spl::integerconstant_value_type(instance):
-    assert isinstance(instance.value, int)
-
-
-@given(instance=SPL::IntegerConstant_strategy)
-def test_spl::integerconstant_value_setter(instance):
-    original = instance.value
-    instance.value = original
-    assert instance.value == original
-
-@given(instance=SPL::BooleanConstant_strategy)
-@settings(max_examples=50)
-def test_spl::booleanconstant_instantiation(instance):
-    assert isinstance(instance, SPL::BooleanConstant)
-
-@given(instance=SPL::BooleanConstant_strategy)
-def test_spl::booleanconstant_value_type(instance):
-    assert isinstance(instance.value, bool)
-
-
-@given(instance=SPL::BooleanConstant_strategy)
-def test_spl::booleanconstant_value_setter(instance):
+@given(instance=SPL_BooleanConstant_strategy)
+def test_spl_booleanconstant_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
@@ -2537,44 +2510,38 @@ def test_spl::booleanconstant_value_setter(instance):
 def test_messagefield_instantiation(instance):
     assert isinstance(instance, MessageField)
 
-@given(instance=SPL::HeadedMessageField_strategy)
+@given(instance=SPL_HeadedMessageField_strategy)
 @settings(max_examples=50)
-def test_spl::headedmessagefield_instantiation(instance):
-    assert isinstance(instance, SPL::HeadedMessageField)
-
-@given(instance=SPL::HeadedMessageField_strategy)
-def test_spl::headedmessagefield_headerId_type(instance):
-    assert isinstance(instance.headerId, str)
+def test_spl_headedmessagefield_instantiation(instance):
+    assert isinstance(instance, SPL_HeadedMessageField)
 
 
-@given(instance=SPL::HeadedMessageField_strategy)
-def test_spl::headedmessagefield_headerId_setter(instance):
+
+@given(instance=SPL_HeadedMessageField_strategy)
+def test_spl_headedmessagefield_headerId_setter(instance):
     original = instance.headerId
     instance.headerId = original
     assert instance.headerId == original
 
-@given(instance=SPL::ReasonMessageField_strategy)
+@given(instance=SPL_ReasonMessageField_strategy)
 @settings(max_examples=50)
-def test_spl::reasonmessagefield_instantiation(instance):
-    assert isinstance(instance, SPL::ReasonMessageField)
+def test_spl_reasonmessagefield_instantiation(instance):
+    assert isinstance(instance, SPL_ReasonMessageField)
 
 @given(instance=VariablePlace_strategy)
 @settings(max_examples=50)
 def test_variableplace_instantiation(instance):
     assert isinstance(instance, VariablePlace)
 
-@given(instance=SPL::PropertyCallPlace_strategy)
+@given(instance=SPL_PropertyCallPlace_strategy)
 @settings(max_examples=50)
-def test_spl::propertycallplace_instantiation(instance):
-    assert isinstance(instance, SPL::PropertyCallPlace)
-
-@given(instance=SPL::PropertyCallPlace_strategy)
-def test_spl::propertycallplace_propName_type(instance):
-    assert isinstance(instance.propName, str)
+def test_spl_propertycallplace_instantiation(instance):
+    assert isinstance(instance, SPL_PropertyCallPlace)
 
 
-@given(instance=SPL::PropertyCallPlace_strategy)
-def test_spl::propertycallplace_propName_setter(instance):
+
+@given(instance=SPL_PropertyCallPlace_strategy)
+def test_spl_propertycallplace_propName_setter(instance):
     original = instance.propName
     instance.propName = original
     assert instance.propName == original
@@ -2584,237 +2551,222 @@ def test_spl::propertycallplace_propName_setter(instance):
 def test_place_instantiation(instance):
     assert isinstance(instance, Place)
 
-@given(instance=SPL::VariablePlace_strategy)
+@given(instance=SPL_VariablePlace_strategy)
 @settings(max_examples=50)
-def test_spl::variableplace_instantiation(instance):
-    assert isinstance(instance, SPL::VariablePlace)
+def test_spl_variableplace_instantiation(instance):
+    assert isinstance(instance, SPL_VariablePlace)
 
-@given(instance=SPL::SIPHeaderPlace_strategy)
+@given(instance=SPL_SIPHeaderPlace_strategy)
 @settings(max_examples=50)
-def test_spl::sipheaderplace_instantiation(instance):
-    assert isinstance(instance, SPL::SIPHeaderPlace)
-
-@given(instance=SPL::SIPHeaderPlace_strategy)
-def test_spl::sipheaderplace_header_type(instance):
-    assert isinstance(instance.header, str)
+def test_spl_sipheaderplace_instantiation(instance):
+    assert isinstance(instance, SPL_SIPHeaderPlace)
 
 
-@given(instance=SPL::SIPHeaderPlace_strategy)
-def test_spl::sipheaderplace_header_setter(instance):
+
+@given(instance=SPL_SIPHeaderPlace_strategy)
+def test_spl_sipheaderplace_header_setter(instance):
     original = instance.header
     instance.header = original
     assert instance.header == original
 
-@given(instance=SPL::ResponseConstant_strategy)
+@given(instance=SPL_ResponseConstant_strategy)
 @settings(max_examples=50)
-def test_spl::responseconstant_instantiation(instance):
-    assert isinstance(instance, SPL::ResponseConstant)
+def test_spl_responseconstant_instantiation(instance):
+    assert isinstance(instance, SPL_ResponseConstant)
 
-@given(instance=SPL::SequenceConstant_strategy)
+@given(instance=SPL_SequenceConstant_strategy)
 @settings(max_examples=50)
-def test_spl::sequenceconstant_instantiation(instance):
-    assert isinstance(instance, SPL::SequenceConstant)
+def test_spl_sequenceconstant_instantiation(instance):
+    assert isinstance(instance, SPL_SequenceConstant)
 
 @given(instance=Expression_strategy)
 @settings(max_examples=50)
 def test_expression_instantiation(instance):
     assert isinstance(instance, Expression)
 
-@given(instance=SPL::BlockExp_strategy)
+@given(instance=SPL_BODYExp_strategy)
 @settings(max_examples=50)
-def test_spl::blockexp_instantiation(instance):
-    assert isinstance(instance, SPL::BlockExp)
+def test_spl_bodyexp_instantiation(instance):
+    assert isinstance(instance, SPL_BODYExp)
 
-@given(instance=SPL::ReasonExp_strategy)
+@given(instance=SPL_OperatorExp_strategy)
 @settings(max_examples=50)
-def test_spl::reasonexp_instantiation(instance):
-    assert isinstance(instance, SPL::ReasonExp)
-
-@given(instance=SPL::WithExp_strategy)
-@settings(max_examples=50)
-def test_spl::withexp_instantiation(instance):
-    assert isinstance(instance, SPL::WithExp)
-
-@given(instance=SPL::BODYExp_strategy)
-@settings(max_examples=50)
-def test_spl::bodyexp_instantiation(instance):
-    assert isinstance(instance, SPL::BODYExp)
-
-@given(instance=SPL::OperatorExp_strategy)
-@settings(max_examples=50)
-def test_spl::operatorexp_instantiation(instance):
-    assert isinstance(instance, SPL::OperatorExp)
-
-@given(instance=SPL::OperatorExp_strategy)
-def test_spl::operatorexp_opName_type(instance):
-    assert isinstance(instance.opName, str)
+def test_spl_operatorexp_instantiation(instance):
+    assert isinstance(instance, SPL_OperatorExp)
 
 
-@given(instance=SPL::OperatorExp_strategy)
-def test_spl::operatorexp_opName_setter(instance):
+
+@given(instance=SPL_OperatorExp_strategy)
+def test_spl_operatorexp_opName_setter(instance):
     original = instance.opName
     instance.opName = original
     assert instance.opName == original
 
-@given(instance=SPL::ForwardExp_strategy)
+@given(instance=SPL_BlockExp_strategy)
 @settings(max_examples=50)
-def test_spl::forwardexp_instantiation(instance):
-    assert isinstance(instance, SPL::ForwardExp)
+def test_spl_blockexp_instantiation(instance):
+    assert isinstance(instance, SPL_BlockExp)
 
-@given(instance=SPL::ForwardExp_strategy)
-def test_spl::forwardexp_isParallel_type(instance):
-    assert isinstance(instance.isParallel, bool)
+@given(instance=SPL_ForwardExp_strategy)
+@settings(max_examples=50)
+def test_spl_forwardexp_instantiation(instance):
+    assert isinstance(instance, SPL_ForwardExp)
 
 
-@given(instance=SPL::ForwardExp_strategy)
-def test_spl::forwardexp_isParallel_setter(instance):
+
+@given(instance=SPL_ForwardExp_strategy)
+def test_spl_forwardexp_isParallel_setter(instance):
     original = instance.isParallel
     instance.isParallel = original
     assert instance.isParallel == original
 
-@given(instance=SPL::ConstantExp_strategy)
+@given(instance=SPL_ReasonExp_strategy)
 @settings(max_examples=50)
-def test_spl::constantexp_instantiation(instance):
-    assert isinstance(instance, SPL::ConstantExp)
+def test_spl_reasonexp_instantiation(instance):
+    assert isinstance(instance, SPL_ReasonExp)
 
-@given(instance=SPL::FunctionCallExp_strategy)
+@given(instance=SPL_WithExp_strategy)
 @settings(max_examples=50)
-def test_spl::functioncallexp_instantiation(instance):
-    assert isinstance(instance, SPL::FunctionCallExp)
+def test_spl_withexp_instantiation(instance):
+    assert isinstance(instance, SPL_WithExp)
 
-@given(instance=SPL::PopExp_strategy)
+@given(instance=SPL_ConstantExp_strategy)
 @settings(max_examples=50)
-def test_spl::popexp_instantiation(instance):
-    assert isinstance(instance, SPL::PopExp)
+def test_spl_constantexp_instantiation(instance):
+    assert isinstance(instance, SPL_ConstantExp)
 
-@given(instance=SPL::RequestURIExp_strategy)
+@given(instance=SPL_FunctionCallExp_strategy)
 @settings(max_examples=50)
-def test_spl::requesturiexp_instantiation(instance):
-    assert isinstance(instance, SPL::RequestURIExp)
+def test_spl_functioncallexp_instantiation(instance):
+    assert isinstance(instance, SPL_FunctionCallExp)
+
+@given(instance=SPL_PopExp_strategy)
+@settings(max_examples=50)
+def test_spl_popexp_instantiation(instance):
+    assert isinstance(instance, SPL_PopExp)
+
+@given(instance=SPL_RequestURIExp_strategy)
+@settings(max_examples=50)
+def test_spl_requesturiexp_instantiation(instance):
+    assert isinstance(instance, SPL_RequestURIExp)
 
 @given(instance=SelectMember_strategy)
 @settings(max_examples=50)
 def test_selectmember_instantiation(instance):
     assert isinstance(instance, SelectMember)
 
-@given(instance=SPL::SelectDefault_strategy)
+@given(instance=SPL_SelectDefault_strategy)
 @settings(max_examples=50)
-def test_spl::selectdefault_instantiation(instance):
-    assert isinstance(instance, SPL::SelectDefault)
+def test_spl_selectdefault_instantiation(instance):
+    assert isinstance(instance, SPL_SelectDefault)
 
-@given(instance=SPL::SelectCase_strategy)
+@given(instance=SPL_SelectCase_strategy)
 @settings(max_examples=50)
-def test_spl::selectcase_instantiation(instance):
-    assert isinstance(instance, SPL::SelectCase)
+def test_spl_selectcase_instantiation(instance):
+    assert isinstance(instance, SPL_SelectCase)
 
-@given(instance=SPL::Place_strategy)
+@given(instance=SPL_Place_strategy)
 @settings(max_examples=50)
-def test_spl::place_instantiation(instance):
-    assert isinstance(instance, SPL::Place)
+def test_spl_place_instantiation(instance):
+    assert isinstance(instance, SPL_Place)
 
 @given(instance=Statement_strategy)
 @settings(max_examples=50)
 def test_statement_instantiation(instance):
     assert isinstance(instance, Statement)
 
-@given(instance=SPL::ContinueStat_strategy)
+@given(instance=SPL_BreakStat_strategy)
 @settings(max_examples=50)
-def test_spl::continuestat_instantiation(instance):
-    assert isinstance(instance, SPL::ContinueStat)
+def test_spl_breakstat_instantiation(instance):
+    assert isinstance(instance, SPL_BreakStat)
 
-@given(instance=SPL::FunctionCallStat_strategy)
+@given(instance=SPL_PushStat_strategy)
 @settings(max_examples=50)
-def test_spl::functioncallstat_instantiation(instance):
-    assert isinstance(instance, SPL::FunctionCallStat)
+def test_spl_pushstat_instantiation(instance):
+    assert isinstance(instance, SPL_PushStat)
 
-@given(instance=SPL::SelectStat_strategy)
+@given(instance=SPL_ReturnStat_strategy)
 @settings(max_examples=50)
-def test_spl::selectstat_instantiation(instance):
-    assert isinstance(instance, SPL::SelectStat)
+def test_spl_returnstat_instantiation(instance):
+    assert isinstance(instance, SPL_ReturnStat)
 
-@given(instance=SPL::WhenStat_strategy)
+@given(instance=SPL_SetStat_strategy)
 @settings(max_examples=50)
-def test_spl::whenstat_instantiation(instance):
-    assert isinstance(instance, SPL::WhenStat)
+def test_spl_setstat_instantiation(instance):
+    assert isinstance(instance, SPL_SetStat)
 
-@given(instance=SPL::ForeachStat_strategy)
+@given(instance=SPL_ForeachStat_strategy)
 @settings(max_examples=50)
-def test_spl::foreachstat_instantiation(instance):
-    assert isinstance(instance, SPL::ForeachStat)
-
-@given(instance=SPL::ForeachStat_strategy)
-def test_spl::foreachstat_iteratorName_type(instance):
-    assert isinstance(instance.iteratorName, str)
+def test_spl_foreachstat_instantiation(instance):
+    assert isinstance(instance, SPL_ForeachStat)
 
 
-@given(instance=SPL::ForeachStat_strategy)
-def test_spl::foreachstat_iteratorName_setter(instance):
+
+@given(instance=SPL_ForeachStat_strategy)
+def test_spl_foreachstat_iteratorName_setter(instance):
     original = instance.iteratorName
     instance.iteratorName = original
     assert instance.iteratorName == original
 
-@given(instance=SPL::IfStat_strategy)
+@given(instance=SPL_FunctionCallStat_strategy)
 @settings(max_examples=50)
-def test_spl::ifstat_instantiation(instance):
-    assert isinstance(instance, SPL::IfStat)
+def test_spl_functioncallstat_instantiation(instance):
+    assert isinstance(instance, SPL_FunctionCallStat)
 
-@given(instance=SPL::DeclarationStat_strategy)
+@given(instance=SPL_IfStat_strategy)
 @settings(max_examples=50)
-def test_spl::declarationstat_instantiation(instance):
-    assert isinstance(instance, SPL::DeclarationStat)
+def test_spl_ifstat_instantiation(instance):
+    assert isinstance(instance, SPL_IfStat)
 
-@given(instance=SPL::SetStat_strategy)
+@given(instance=SPL_WhenStat_strategy)
 @settings(max_examples=50)
-def test_spl::setstat_instantiation(instance):
-    assert isinstance(instance, SPL::SetStat)
+def test_spl_whenstat_instantiation(instance):
+    assert isinstance(instance, SPL_WhenStat)
 
-@given(instance=SPL::BreakStat_strategy)
+@given(instance=SPL_SelectStat_strategy)
 @settings(max_examples=50)
-def test_spl::breakstat_instantiation(instance):
-    assert isinstance(instance, SPL::BreakStat)
+def test_spl_selectstat_instantiation(instance):
+    assert isinstance(instance, SPL_SelectStat)
 
-@given(instance=SPL::PushStat_strategy)
+@given(instance=SPL_DeclarationStat_strategy)
 @settings(max_examples=50)
-def test_spl::pushstat_instantiation(instance):
-    assert isinstance(instance, SPL::PushStat)
+def test_spl_declarationstat_instantiation(instance):
+    assert isinstance(instance, SPL_DeclarationStat)
 
-@given(instance=SPL::ReturnStat_strategy)
+@given(instance=SPL_ContinueStat_strategy)
 @settings(max_examples=50)
-def test_spl::returnstat_instantiation(instance):
-    assert isinstance(instance, SPL::ReturnStat)
+def test_spl_continuestat_instantiation(instance):
+    assert isinstance(instance, SPL_ContinueStat)
 
-@given(instance=SPL::CompoundStat_strategy)
+@given(instance=SPL_CompoundStat_strategy)
 @settings(max_examples=50)
-def test_spl::compoundstat_instantiation(instance):
-    assert isinstance(instance, SPL::CompoundStat)
+def test_spl_compoundstat_instantiation(instance):
+    assert isinstance(instance, SPL_CompoundStat)
 
-@given(instance=SPL::Variable_strategy)
+@given(instance=SPL_Variable_strategy)
 @settings(max_examples=50)
-def test_spl::variable_instantiation(instance):
-    assert isinstance(instance, SPL::Variable)
+def test_spl_variable_instantiation(instance):
+    assert isinstance(instance, SPL_Variable)
 
 @given(instance=FunctionDeclaration_strategy)
 @settings(max_examples=50)
 def test_functiondeclaration_instantiation(instance):
     assert isinstance(instance, FunctionDeclaration)
 
-@given(instance=SPL::LocalFunctionDeclaration_strategy)
+@given(instance=SPL_LocalFunctionDeclaration_strategy)
 @settings(max_examples=50)
-def test_spl::localfunctiondeclaration_instantiation(instance):
-    assert isinstance(instance, SPL::LocalFunctionDeclaration)
+def test_spl_localfunctiondeclaration_instantiation(instance):
+    assert isinstance(instance, SPL_LocalFunctionDeclaration)
 
-@given(instance=SPL::RemoteFunctionDeclaration_strategy)
+@given(instance=SPL_RemoteFunctionDeclaration_strategy)
 @settings(max_examples=50)
-def test_spl::remotefunctiondeclaration_instantiation(instance):
-    assert isinstance(instance, SPL::RemoteFunctionDeclaration)
-
-@given(instance=SPL::RemoteFunctionDeclaration_strategy)
-def test_spl::remotefunctiondeclaration_functionLocation_type(instance):
-    assert isinstance(instance.functionLocation, str)
+def test_spl_remotefunctiondeclaration_instantiation(instance):
+    assert isinstance(instance, SPL_RemoteFunctionDeclaration)
 
 
-@given(instance=SPL::RemoteFunctionDeclaration_strategy)
-def test_spl::remotefunctiondeclaration_functionLocation_setter(instance):
+
+@given(instance=SPL_RemoteFunctionDeclaration_strategy)
+def test_spl_remotefunctiondeclaration_functionLocation_setter(instance):
     original = instance.functionLocation
     instance.functionLocation = original
     assert instance.functionLocation == original
@@ -2824,80 +2776,71 @@ def test_spl::remotefunctiondeclaration_functionLocation_setter(instance):
 def test_declaration_instantiation(instance):
     assert isinstance(instance, Declaration)
 
-@given(instance=SPL::FunctionDeclaration_strategy)
+@given(instance=SPL_FunctionDeclaration_strategy)
 @settings(max_examples=50)
-def test_spl::functiondeclaration_instantiation(instance):
-    assert isinstance(instance, SPL::FunctionDeclaration)
+def test_spl_functiondeclaration_instantiation(instance):
+    assert isinstance(instance, SPL_FunctionDeclaration)
 
-@given(instance=SPL::StructureDeclaration_strategy)
+@given(instance=SPL_StructureDeclaration_strategy)
 @settings(max_examples=50)
-def test_spl::structuredeclaration_instantiation(instance):
-    assert isinstance(instance, SPL::StructureDeclaration)
+def test_spl_structuredeclaration_instantiation(instance):
+    assert isinstance(instance, SPL_StructureDeclaration)
 
-@given(instance=SPL::VariableDeclaration_strategy)
+@given(instance=SPL_VariableDeclaration_strategy)
 @settings(max_examples=50)
-def test_spl::variabledeclaration_instantiation(instance):
-    assert isinstance(instance, SPL::VariableDeclaration)
+def test_spl_variabledeclaration_instantiation(instance):
+    assert isinstance(instance, SPL_VariableDeclaration)
 
 @given(instance=Branch_strategy)
 @settings(max_examples=50)
 def test_branch_instantiation(instance):
     assert isinstance(instance, Branch)
 
-@given(instance=SPL::NamedBranch_strategy)
+@given(instance=SPL_NamedBranch_strategy)
 @settings(max_examples=50)
-def test_spl::namedbranch_instantiation(instance):
-    assert isinstance(instance, SPL::NamedBranch)
-
-@given(instance=SPL::NamedBranch_strategy)
-def test_spl::namedbranch_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_spl_namedbranch_instantiation(instance):
+    assert isinstance(instance, SPL_NamedBranch)
 
 
-@given(instance=SPL::NamedBranch_strategy)
-def test_spl::namedbranch_name_setter(instance):
+
+@given(instance=SPL_NamedBranch_strategy)
+def test_spl_namedbranch_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=SPL::DefaultBranch_strategy)
+@given(instance=SPL_DefaultBranch_strategy)
 @settings(max_examples=50)
-def test_spl::defaultbranch_instantiation(instance):
-    assert isinstance(instance, SPL::DefaultBranch)
+def test_spl_defaultbranch_instantiation(instance):
+    assert isinstance(instance, SPL_DefaultBranch)
 
 @given(instance=MethodName_strategy)
 @settings(max_examples=50)
 def test_methodname_instantiation(instance):
     assert isinstance(instance, MethodName)
 
-@given(instance=SPL::ControlMethodName_strategy)
+@given(instance=SPL_ControlMethodName_strategy)
 @settings(max_examples=50)
-def test_spl::controlmethodname_instantiation(instance):
-    assert isinstance(instance, SPL::ControlMethodName)
-
-@given(instance=SPL::ControlMethodName_strategy)
-def test_spl::controlmethodname_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_spl_controlmethodname_instantiation(instance):
+    assert isinstance(instance, SPL_ControlMethodName)
 
 
-@given(instance=SPL::ControlMethodName_strategy)
-def test_spl::controlmethodname_name_setter(instance):
+
+@given(instance=SPL_ControlMethodName_strategy)
+def test_spl_controlmethodname_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=SPL::SIPMethodName_strategy)
+@given(instance=SPL_SIPMethodName_strategy)
 @settings(max_examples=50)
-def test_spl::sipmethodname_instantiation(instance):
-    assert isinstance(instance, SPL::SIPMethodName)
-
-@given(instance=SPL::SIPMethodName_strategy)
-def test_spl::sipmethodname_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_spl_sipmethodname_instantiation(instance):
+    assert isinstance(instance, SPL_SIPMethodName)
 
 
-@given(instance=SPL::SIPMethodName_strategy)
-def test_spl::sipmethodname_name_setter(instance):
+
+@given(instance=SPL_SIPMethodName_strategy)
+def test_spl_sipmethodname_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
@@ -2907,98 +2850,80 @@ def test_spl::sipmethodname_name_setter(instance):
 def test_variabledeclaration_instantiation(instance):
     assert isinstance(instance, VariableDeclaration)
 
-@given(instance=SPL::WhenHeader_strategy)
+@given(instance=SPL_WhenHeader_strategy)
 @settings(max_examples=50)
-def test_spl::whenheader_instantiation(instance):
-    assert isinstance(instance, SPL::WhenHeader)
-
-@given(instance=SPL::WhenHeader_strategy)
-def test_spl::whenheader_headerId_type(instance):
-    assert isinstance(instance.headerId, str)
+def test_spl_whenheader_instantiation(instance):
+    assert isinstance(instance, SPL_WhenHeader)
 
 
-@given(instance=SPL::WhenHeader_strategy)
-def test_spl::whenheader_headerId_setter(instance):
+
+@given(instance=SPL_WhenHeader_strategy)
+def test_spl_whenheader_headerId_setter(instance):
     original = instance.headerId
     instance.headerId = original
     assert instance.headerId == original
 
-@given(instance=SPL::Argument_strategy)
+@given(instance=SPL_Argument_strategy)
 @settings(max_examples=50)
-def test_spl::argument_instantiation(instance):
-    assert isinstance(instance, SPL::Argument)
+def test_spl_argument_instantiation(instance):
+    assert isinstance(instance, SPL_Argument)
 
 @given(instance=TypeExpression_strategy)
 @settings(max_examples=50)
 def test_typeexpression_instantiation(instance):
     assert isinstance(instance, TypeExpression)
 
-@given(instance=SPL::DefinedType_strategy)
+@given(instance=SPL_DefinedType_strategy)
 @settings(max_examples=50)
-def test_spl::definedtype_instantiation(instance):
-    assert isinstance(instance, SPL::DefinedType)
-
-@given(instance=SPL::DefinedType_strategy)
-def test_spl::definedtype_typeName_type(instance):
-    assert isinstance(instance.typeName, str)
+def test_spl_definedtype_instantiation(instance):
+    assert isinstance(instance, SPL_DefinedType)
 
 
-@given(instance=SPL::DefinedType_strategy)
-def test_spl::definedtype_typeName_setter(instance):
+
+@given(instance=SPL_DefinedType_strategy)
+def test_spl_definedtype_typeName_setter(instance):
     original = instance.typeName
     instance.typeName = original
     assert instance.typeName == original
 
-@given(instance=SPL::SequenceType_strategy)
+@given(instance=SPL_SequenceType_strategy)
 @settings(max_examples=50)
-def test_spl::sequencetype_instantiation(instance):
-    assert isinstance(instance, SPL::SequenceType)
-
-@given(instance=SPL::SequenceType_strategy)
-def test_spl::sequencetype_type_type(instance):
-    assert isinstance(instance.type, str)
+def test_spl_sequencetype_instantiation(instance):
+    assert isinstance(instance, SPL_SequenceType)
 
 
-@given(instance=SPL::SequenceType_strategy)
-def test_spl::sequencetype_type_setter(instance):
-    original = instance.type
-    instance.type = original
-    assert instance.type == original
 
-@given(instance=SPL::SequenceType_strategy)
-def test_spl::sequencetype_modifier_type(instance):
-    assert isinstance(instance.modifier, str)
-
-
-@given(instance=SPL::SequenceType_strategy)
-def test_spl::sequencetype_modifier_setter(instance):
-    original = instance.modifier
-    instance.modifier = original
-    assert instance.modifier == original
-
-@given(instance=SPL::SequenceType_strategy)
-def test_spl::sequencetype_size_type(instance):
-    assert isinstance(instance.size, int)
-
-
-@given(instance=SPL::SequenceType_strategy)
-def test_spl::sequencetype_size_setter(instance):
+@given(instance=SPL_SequenceType_strategy)
+def test_spl_sequencetype_size_setter(instance):
     original = instance.size
     instance.size = original
     assert instance.size == original
 
-@given(instance=SPL::SimpleType_strategy)
+
+
+@given(instance=SPL_SequenceType_strategy)
+def test_spl_sequencetype_type_setter(instance):
+    original = instance.type
+    instance.type = original
+    assert instance.type == original
+
+
+
+@given(instance=SPL_SequenceType_strategy)
+def test_spl_sequencetype_modifier_setter(instance):
+    original = instance.modifier
+    instance.modifier = original
+    assert instance.modifier == original
+
+@given(instance=SPL_SimpleType_strategy)
 @settings(max_examples=50)
-def test_spl::simpletype_instantiation(instance):
-    assert isinstance(instance, SPL::SimpleType)
-
-@given(instance=SPL::SimpleType_strategy)
-def test_spl::simpletype_type_type(instance):
-    assert isinstance(instance.type, str)
+def test_spl_simpletype_instantiation(instance):
+    assert isinstance(instance, SPL_SimpleType)
 
 
-@given(instance=SPL::SimpleType_strategy)
-def test_spl::simpletype_type_setter(instance):
+
+@given(instance=SPL_SimpleType_strategy)
+def test_spl_simpletype_type_setter(instance):
     original = instance.type
     instance.type = original
     assert instance.type == original
@@ -3008,195 +2933,171 @@ def test_spl::simpletype_type_setter(instance):
 def test_session_instantiation(instance):
     assert isinstance(instance, Session)
 
-@given(instance=SPL::Event_strategy)
+@given(instance=SPL_Dialog_strategy)
 @settings(max_examples=50)
-def test_spl::event_instantiation(instance):
-    assert isinstance(instance, SPL::Event)
+def test_spl_dialog_instantiation(instance):
+    assert isinstance(instance, SPL_Dialog)
 
-@given(instance=SPL::Event_strategy)
-def test_spl::event_eventId_type(instance):
-    assert isinstance(instance.eventId, str)
+@given(instance=SPL_Event_strategy)
+@settings(max_examples=50)
+def test_spl_event_instantiation(instance):
+    assert isinstance(instance, SPL_Event)
 
 
-@given(instance=SPL::Event_strategy)
-def test_spl::event_eventId_setter(instance):
+
+@given(instance=SPL_Event_strategy)
+def test_spl_event_eventId_setter(instance):
     original = instance.eventId
     instance.eventId = original
     assert instance.eventId == original
 
-@given(instance=SPL::Method_strategy)
+@given(instance=SPL_Method_strategy)
 @settings(max_examples=50)
-def test_spl::method_instantiation(instance):
-    assert isinstance(instance, SPL::Method)
-
-@given(instance=SPL::Method_strategy)
-def test_spl::method_direction_type(instance):
-    assert isinstance(instance.direction, str)
+def test_spl_method_instantiation(instance):
+    assert isinstance(instance, SPL_Method)
 
 
-@given(instance=SPL::Method_strategy)
-def test_spl::method_direction_setter(instance):
+
+@given(instance=SPL_Method_strategy)
+def test_spl_method_direction_setter(instance):
     original = instance.direction
     instance.direction = original
     assert instance.direction == original
 
-@given(instance=SPL::Dialog_strategy)
+@given(instance=SPL_Registration_strategy)
 @settings(max_examples=50)
-def test_spl::dialog_instantiation(instance):
-    assert isinstance(instance, SPL::Dialog)
-
-@given(instance=SPL::Registration_strategy)
-@settings(max_examples=50)
-def test_spl::registration_instantiation(instance):
-    assert isinstance(instance, SPL::Registration)
+def test_spl_registration_instantiation(instance):
+    assert isinstance(instance, SPL_Registration)
 
 @given(instance=LocatedElement_strategy)
 @settings(max_examples=50)
 def test_locatedelement_instantiation(instance):
     assert isinstance(instance, LocatedElement)
 
-@given(instance=SPL::Branch_strategy)
+@given(instance=SPL_Declaration_strategy)
 @settings(max_examples=50)
-def test_spl::branch_instantiation(instance):
-    assert isinstance(instance, SPL::Branch)
-
-@given(instance=SPL::StructureProperty_strategy)
-@settings(max_examples=50)
-def test_spl::structureproperty_instantiation(instance):
-    assert isinstance(instance, SPL::StructureProperty)
-
-@given(instance=SPL::StructureProperty_strategy)
-def test_spl::structureproperty_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_spl_declaration_instantiation(instance):
+    assert isinstance(instance, SPL_Declaration)
 
 
-@given(instance=SPL::StructureProperty_strategy)
-def test_spl::structureproperty_name_setter(instance):
+
+@given(instance=SPL_Declaration_strategy)
+def test_spl_declaration_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=SPL::MethodName_strategy)
+@given(instance=SPL_Service_strategy)
 @settings(max_examples=50)
-def test_spl::methodname_instantiation(instance):
-    assert isinstance(instance, SPL::MethodName)
-
-@given(instance=SPL::SelectMember_strategy)
-@settings(max_examples=50)
-def test_spl::selectmember_instantiation(instance):
-    assert isinstance(instance, SPL::SelectMember)
-
-@given(instance=SPL::MessageField_strategy)
-@settings(max_examples=50)
-def test_spl::messagefield_instantiation(instance):
-    assert isinstance(instance, SPL::MessageField)
-
-@given(instance=SPL::Service_strategy)
-@settings(max_examples=50)
-def test_spl::service_instantiation(instance):
-    assert isinstance(instance, SPL::Service)
-
-@given(instance=SPL::Service_strategy)
-def test_spl::service_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_spl_service_instantiation(instance):
+    assert isinstance(instance, SPL_Service)
 
 
-@given(instance=SPL::Service_strategy)
-def test_spl::service_name_setter(instance):
+
+@given(instance=SPL_Service_strategy)
+def test_spl_service_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=SPL::Constant_strategy)
+@given(instance=SPL_Constant_strategy)
 @settings(max_examples=50)
-def test_spl::constant_instantiation(instance):
-    assert isinstance(instance, SPL::Constant)
+def test_spl_constant_instantiation(instance):
+    assert isinstance(instance, SPL_Constant)
 
-@given(instance=SPL::Session_strategy)
+@given(instance=SPL_Statement_strategy)
 @settings(max_examples=50)
-def test_spl::session_instantiation(instance):
-    assert isinstance(instance, SPL::Session)
+def test_spl_statement_instantiation(instance):
+    assert isinstance(instance, SPL_Statement)
 
-@given(instance=SPL::FunctionCall_strategy)
+@given(instance=SPL_MessageField_strategy)
 @settings(max_examples=50)
-def test_spl::functioncall_instantiation(instance):
-    assert isinstance(instance, SPL::FunctionCall)
+def test_spl_messagefield_instantiation(instance):
+    assert isinstance(instance, SPL_MessageField)
 
-@given(instance=SPL::Statement_strategy)
+@given(instance=SPL_Expression_strategy)
 @settings(max_examples=50)
-def test_spl::statement_instantiation(instance):
-    assert isinstance(instance, SPL::Statement)
+def test_spl_expression_instantiation(instance):
+    assert isinstance(instance, SPL_Expression)
 
-@given(instance=SPL::Declaration_strategy)
+@given(instance=SPL_StructureProperty_strategy)
 @settings(max_examples=50)
-def test_spl::declaration_instantiation(instance):
-    assert isinstance(instance, SPL::Declaration)
-
-@given(instance=SPL::Declaration_strategy)
-def test_spl::declaration_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_spl_structureproperty_instantiation(instance):
+    assert isinstance(instance, SPL_StructureProperty)
 
 
-@given(instance=SPL::Declaration_strategy)
-def test_spl::declaration_name_setter(instance):
+
+@given(instance=SPL_StructureProperty_strategy)
+def test_spl_structureproperty_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=SPL::Response_strategy)
+@given(instance=SPL_MethodName_strategy)
 @settings(max_examples=50)
-def test_spl::response_instantiation(instance):
-    assert isinstance(instance, SPL::Response)
+def test_spl_methodname_instantiation(instance):
+    assert isinstance(instance, SPL_MethodName)
 
-@given(instance=SPL::Expression_strategy)
+@given(instance=SPL_Response_strategy)
 @settings(max_examples=50)
-def test_spl::expression_instantiation(instance):
-    assert isinstance(instance, SPL::Expression)
+def test_spl_response_instantiation(instance):
+    assert isinstance(instance, SPL_Response)
 
-@given(instance=SPL::Program_strategy)
+@given(instance=SPL_FunctionCall_strategy)
 @settings(max_examples=50)
-def test_spl::program_instantiation(instance):
-    assert isinstance(instance, SPL::Program)
+def test_spl_functioncall_instantiation(instance):
+    assert isinstance(instance, SPL_FunctionCall)
 
-@given(instance=SPL::TypeExpression_strategy)
+@given(instance=SPL_SelectMember_strategy)
 @settings(max_examples=50)
-def test_spl::typeexpression_instantiation(instance):
-    assert isinstance(instance, SPL::TypeExpression)
+def test_spl_selectmember_instantiation(instance):
+    assert isinstance(instance, SPL_SelectMember)
 
-@given(instance=SPL::LocatedElement_strategy)
+@given(instance=SPL_Branch_strategy)
 @settings(max_examples=50)
-def test_spl::locatedelement_instantiation(instance):
-    assert isinstance(instance, SPL::LocatedElement)
+def test_spl_branch_instantiation(instance):
+    assert isinstance(instance, SPL_Branch)
 
-@given(instance=SPL::LocatedElement_strategy)
-def test_spl::locatedelement_commentsBefore_type(instance):
-    assert isinstance(instance.commentsBefore, str)
+@given(instance=SPL_Session_strategy)
+@settings(max_examples=50)
+def test_spl_session_instantiation(instance):
+    assert isinstance(instance, SPL_Session)
+
+@given(instance=SPL_Program_strategy)
+@settings(max_examples=50)
+def test_spl_program_instantiation(instance):
+    assert isinstance(instance, SPL_Program)
+
+@given(instance=SPL_TypeExpression_strategy)
+@settings(max_examples=50)
+def test_spl_typeexpression_instantiation(instance):
+    assert isinstance(instance, SPL_TypeExpression)
+
+@given(instance=SPL_LocatedElement_strategy)
+@settings(max_examples=50)
+def test_spl_locatedelement_instantiation(instance):
+    assert isinstance(instance, SPL_LocatedElement)
 
 
-@given(instance=SPL::LocatedElement_strategy)
-def test_spl::locatedelement_commentsBefore_setter(instance):
-    original = instance.commentsBefore
-    instance.commentsBefore = original
-    assert instance.commentsBefore == original
 
-@given(instance=SPL::LocatedElement_strategy)
-def test_spl::locatedelement_commentsAfter_type(instance):
-    assert isinstance(instance.commentsAfter, str)
-
-
-@given(instance=SPL::LocatedElement_strategy)
-def test_spl::locatedelement_commentsAfter_setter(instance):
+@given(instance=SPL_LocatedElement_strategy)
+def test_spl_locatedelement_commentsAfter_setter(instance):
     original = instance.commentsAfter
     instance.commentsAfter = original
     assert instance.commentsAfter == original
 
-@given(instance=SPL::LocatedElement_strategy)
-def test_spl::locatedelement_location_type(instance):
-    assert isinstance(instance.location, str)
 
 
-@given(instance=SPL::LocatedElement_strategy)
-def test_spl::locatedelement_location_setter(instance):
+@given(instance=SPL_LocatedElement_strategy)
+def test_spl_locatedelement_commentsBefore_setter(instance):
+    original = instance.commentsBefore
+    instance.commentsBefore = original
+    assert instance.commentsBefore == original
+
+
+
+@given(instance=SPL_LocatedElement_strategy)
+def test_spl_locatedelement_location_setter(instance):
     original = instance.location
     instance.location = original
     assert instance.location == original

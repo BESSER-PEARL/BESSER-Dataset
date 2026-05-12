@@ -3,13 +3,13 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    root::subpackage2::C,
-    root::subsubpackage1::D,
-    root::subpackage1::B,
-    root::A,
+from python_code import (
+    root_subpackage2_C,
+    root_subsubpackage1_D,
+    root_subpackage1_B,
+    root_A,
 )
 
 # =============================================================================
@@ -18,58 +18,58 @@ from classes import (
 
 
 
-def test_root::subpackage2::c_is_not_abstract():
-    assert not inspect.isabstract(root::subpackage2::C)
+def test_root_subpackage2_c_is_not_abstract():
+    assert not inspect.isabstract(root_subpackage2_C)
 
 
-def test_root::subpackage2::c_constructor_exists():
-    assert callable(root::subpackage2::C.__init__)
+def test_root_subpackage2_c_constructor_exists():
+    assert callable(root_subpackage2_C.__init__)
 
 
-def test_root::subpackage2::c_constructor_args():
-    sig = inspect.signature(root::subpackage2::C.__init__)
+def test_root_subpackage2_c_constructor_args():
+    sig = inspect.signature(root_subpackage2_C.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_root::subsubpackage1::d_is_not_abstract():
-    assert not inspect.isabstract(root::subsubpackage1::D)
+def test_root_subsubpackage1_d_is_not_abstract():
+    assert not inspect.isabstract(root_subsubpackage1_D)
 
 
-def test_root::subsubpackage1::d_constructor_exists():
-    assert callable(root::subsubpackage1::D.__init__)
+def test_root_subsubpackage1_d_constructor_exists():
+    assert callable(root_subsubpackage1_D.__init__)
 
 
-def test_root::subsubpackage1::d_constructor_args():
-    sig = inspect.signature(root::subsubpackage1::D.__init__)
+def test_root_subsubpackage1_d_constructor_args():
+    sig = inspect.signature(root_subsubpackage1_D.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_root::subpackage1::b_is_not_abstract():
-    assert not inspect.isabstract(root::subpackage1::B)
+def test_root_subpackage1_b_is_not_abstract():
+    assert not inspect.isabstract(root_subpackage1_B)
 
 
-def test_root::subpackage1::b_constructor_exists():
-    assert callable(root::subpackage1::B.__init__)
+def test_root_subpackage1_b_constructor_exists():
+    assert callable(root_subpackage1_B.__init__)
 
 
-def test_root::subpackage1::b_constructor_args():
-    sig = inspect.signature(root::subpackage1::B.__init__)
+def test_root_subpackage1_b_constructor_args():
+    sig = inspect.signature(root_subpackage1_B.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_root::a_is_not_abstract():
-    assert not inspect.isabstract(root::A)
+def test_root_a_is_not_abstract():
+    assert not inspect.isabstract(root_A)
 
 
-def test_root::a_constructor_exists():
-    assert callable(root::A.__init__)
+def test_root_a_constructor_exists():
+    assert callable(root_A.__init__)
 
 
-def test_root::a_constructor_args():
-    sig = inspect.signature(root::A.__init__)
+def test_root_a_constructor_args():
+    sig = inspect.signature(root_A.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -84,35 +84,35 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-root::subpackage2::C_strategy = st.builds(
-    root::subpackage2::C,
+root_subpackage2_C_strategy = st.builds(
+    root_subpackage2_C,
 )
-root::subsubpackage1::D_strategy = st.builds(
-    root::subsubpackage1::D,
+root_subsubpackage1_D_strategy = st.builds(
+    root_subsubpackage1_D,
 )
-root::subpackage1::B_strategy = st.builds(
-    root::subpackage1::B,
+root_subpackage1_B_strategy = st.builds(
+    root_subpackage1_B,
 )
-root::A_strategy = st.builds(
-    root::A,
+root_A_strategy = st.builds(
+    root_A,
 )
 
-@given(instance=root::subpackage2::C_strategy)
+@given(instance=root_subpackage2_C_strategy)
 @settings(max_examples=50)
-def test_root::subpackage2::c_instantiation(instance):
-    assert isinstance(instance, root::subpackage2::C)
+def test_root_subpackage2_c_instantiation(instance):
+    assert isinstance(instance, root_subpackage2_C)
 
-@given(instance=root::subsubpackage1::D_strategy)
+@given(instance=root_subsubpackage1_D_strategy)
 @settings(max_examples=50)
-def test_root::subsubpackage1::d_instantiation(instance):
-    assert isinstance(instance, root::subsubpackage1::D)
+def test_root_subsubpackage1_d_instantiation(instance):
+    assert isinstance(instance, root_subsubpackage1_D)
 
-@given(instance=root::subpackage1::B_strategy)
+@given(instance=root_subpackage1_B_strategy)
 @settings(max_examples=50)
-def test_root::subpackage1::b_instantiation(instance):
-    assert isinstance(instance, root::subpackage1::B)
+def test_root_subpackage1_b_instantiation(instance):
+    assert isinstance(instance, root_subpackage1_B)
 
-@given(instance=root::A_strategy)
+@given(instance=root_A_strategy)
 @settings(max_examples=50)
-def test_root::a_instantiation(instance):
-    assert isinstance(instance, root::A)
+def test_root_a_instantiation(instance):
+    assert isinstance(instance, root_A)

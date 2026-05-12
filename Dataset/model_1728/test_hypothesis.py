@@ -3,33 +3,33 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     AudioVisualItem,
-    extlibraryprofile::VideoCassete,
-    extlibraryprofile::BookOnTape,
+    extlibraryprofile_VideoCassete,
+    extlibraryprofile_BookOnTape,
     Person,
-    extlibraryprofile::Writer,
-    extlibraryprofile::Dependency,
-    extlibraryprofile::Borrows,
-    extlibraryprofile::Employee,
-    extlibraryprofile::Borrower,
+    extlibraryprofile_Writer,
+    extlibraryprofile_Dependency,
+    extlibraryprofile_Borrows,
+    extlibraryprofile_Employee,
+    extlibraryprofile_Borrower,
     CirculatingItem,
-    extlibraryprofile::AudioVisualItem,
-    extlibraryprofile::Book,
-    extlibraryprofile::Addressable,
-    extlibraryprofile::Package,
+    extlibraryprofile_AudioVisualItem,
+    extlibraryprofile_Book,
+    extlibraryprofile_Addressable,
+    extlibraryprofile_Package,
     Addressable,
-    extlibraryprofile::Person,
-    extlibraryprofile::Library,
-    extlibraryprofile::Lendable,
-    extlibraryprofile::Class,
-    extlibraryprofile::Item,
+    extlibraryprofile_Person,
+    extlibraryprofile_Library,
+    extlibraryprofile_Lendable,
+    extlibraryprofile_Class,
+    extlibraryprofile_Item,
     Lendable,
     Item,
-    extlibraryprofile::Periodical,
-    extlibraryprofile::CirculatingItem,
+    extlibraryprofile_Periodical,
+    extlibraryprofile_CirculatingItem,
     BookCategory,
 )
 
@@ -53,30 +53,30 @@ def test_audiovisualitem_constructor_args():
 
 
 
-def test_extlibraryprofile::videocassete_is_not_abstract():
-    assert not inspect.isabstract(extlibraryprofile::VideoCassete)
+def test_extlibraryprofile_videocassete_is_not_abstract():
+    assert not inspect.isabstract(extlibraryprofile_VideoCassete)
 
 
-def test_extlibraryprofile::videocassete_constructor_exists():
-    assert callable(extlibraryprofile::VideoCassete.__init__)
+def test_extlibraryprofile_videocassete_constructor_exists():
+    assert callable(extlibraryprofile_VideoCassete.__init__)
 
 
-def test_extlibraryprofile::videocassete_constructor_args():
-    sig = inspect.signature(extlibraryprofile::VideoCassete.__init__)
+def test_extlibraryprofile_videocassete_constructor_args():
+    sig = inspect.signature(extlibraryprofile_VideoCassete.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_extlibraryprofile::bookontape_is_not_abstract():
-    assert not inspect.isabstract(extlibraryprofile::BookOnTape)
+def test_extlibraryprofile_bookontape_is_not_abstract():
+    assert not inspect.isabstract(extlibraryprofile_BookOnTape)
 
 
-def test_extlibraryprofile::bookontape_constructor_exists():
-    assert callable(extlibraryprofile::BookOnTape.__init__)
+def test_extlibraryprofile_bookontape_constructor_exists():
+    assert callable(extlibraryprofile_BookOnTape.__init__)
 
 
-def test_extlibraryprofile::bookontape_constructor_args():
-    sig = inspect.signature(extlibraryprofile::BookOnTape.__init__)
+def test_extlibraryprofile_bookontape_constructor_args():
+    sig = inspect.signature(extlibraryprofile_BookOnTape.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -95,23 +95,23 @@ def test_person_constructor_args():
 
 
 
-def test_extlibraryprofile::writer_is_not_abstract():
-    assert not inspect.isabstract(extlibraryprofile::Writer)
+def test_extlibraryprofile_writer_is_not_abstract():
+    assert not inspect.isabstract(extlibraryprofile_Writer)
 
 
-def test_extlibraryprofile::writer_constructor_exists():
-    assert callable(extlibraryprofile::Writer.__init__)
+def test_extlibraryprofile_writer_constructor_exists():
+    assert callable(extlibraryprofile_Writer.__init__)
 
 
-def test_extlibraryprofile::writer_constructor_args():
-    sig = inspect.signature(extlibraryprofile::Writer.__init__)
+def test_extlibraryprofile_writer_constructor_args():
+    sig = inspect.signature(extlibraryprofile_Writer.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_extlibraryprofile::writer_has_name():
-    assert hasattr(extlibraryprofile::Writer, "name")
+def test_extlibraryprofile_writer_has_name():
+    assert hasattr(extlibraryprofile_Writer, "name")
     descriptor = None
-    for klass in extlibraryprofile::Writer.__mro__:
+    for klass in extlibraryprofile_Writer.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -119,58 +119,58 @@ def test_extlibraryprofile::writer_has_name():
 
 
 
-def test_extlibraryprofile::dependency_is_not_abstract():
-    assert not inspect.isabstract(extlibraryprofile::Dependency)
+def test_extlibraryprofile_dependency_is_not_abstract():
+    assert not inspect.isabstract(extlibraryprofile_Dependency)
 
 
-def test_extlibraryprofile::dependency_constructor_exists():
-    assert callable(extlibraryprofile::Dependency.__init__)
+def test_extlibraryprofile_dependency_constructor_exists():
+    assert callable(extlibraryprofile_Dependency.__init__)
 
 
-def test_extlibraryprofile::dependency_constructor_args():
-    sig = inspect.signature(extlibraryprofile::Dependency.__init__)
+def test_extlibraryprofile_dependency_constructor_args():
+    sig = inspect.signature(extlibraryprofile_Dependency.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_extlibraryprofile::borrows_is_not_abstract():
-    assert not inspect.isabstract(extlibraryprofile::Borrows)
+def test_extlibraryprofile_borrows_is_not_abstract():
+    assert not inspect.isabstract(extlibraryprofile_Borrows)
 
 
-def test_extlibraryprofile::borrows_constructor_exists():
-    assert callable(extlibraryprofile::Borrows.__init__)
+def test_extlibraryprofile_borrows_constructor_exists():
+    assert callable(extlibraryprofile_Borrows.__init__)
 
 
-def test_extlibraryprofile::borrows_constructor_args():
-    sig = inspect.signature(extlibraryprofile::Borrows.__init__)
+def test_extlibraryprofile_borrows_constructor_args():
+    sig = inspect.signature(extlibraryprofile_Borrows.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_extlibraryprofile::employee_is_not_abstract():
-    assert not inspect.isabstract(extlibraryprofile::Employee)
+def test_extlibraryprofile_employee_is_not_abstract():
+    assert not inspect.isabstract(extlibraryprofile_Employee)
 
 
-def test_extlibraryprofile::employee_constructor_exists():
-    assert callable(extlibraryprofile::Employee.__init__)
+def test_extlibraryprofile_employee_constructor_exists():
+    assert callable(extlibraryprofile_Employee.__init__)
 
 
-def test_extlibraryprofile::employee_constructor_args():
-    sig = inspect.signature(extlibraryprofile::Employee.__init__)
+def test_extlibraryprofile_employee_constructor_args():
+    sig = inspect.signature(extlibraryprofile_Employee.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_extlibraryprofile::borrower_is_not_abstract():
-    assert not inspect.isabstract(extlibraryprofile::Borrower)
+def test_extlibraryprofile_borrower_is_not_abstract():
+    assert not inspect.isabstract(extlibraryprofile_Borrower)
 
 
-def test_extlibraryprofile::borrower_constructor_exists():
-    assert callable(extlibraryprofile::Borrower.__init__)
+def test_extlibraryprofile_borrower_constructor_exists():
+    assert callable(extlibraryprofile_Borrower.__init__)
 
 
-def test_extlibraryprofile::borrower_constructor_args():
-    sig = inspect.signature(extlibraryprofile::Borrower.__init__)
+def test_extlibraryprofile_borrower_constructor_args():
+    sig = inspect.signature(extlibraryprofile_Borrower.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -189,67 +189,67 @@ def test_circulatingitem_constructor_args():
 
 
 
-def test_extlibraryprofile::audiovisualitem_is_not_abstract():
-    assert not inspect.isabstract(extlibraryprofile::AudioVisualItem)
+def test_extlibraryprofile_audiovisualitem_is_not_abstract():
+    assert not inspect.isabstract(extlibraryprofile_AudioVisualItem)
 
 
-def test_extlibraryprofile::audiovisualitem_constructor_exists():
-    assert callable(extlibraryprofile::AudioVisualItem.__init__)
+def test_extlibraryprofile_audiovisualitem_constructor_exists():
+    assert callable(extlibraryprofile_AudioVisualItem.__init__)
 
 
-def test_extlibraryprofile::audiovisualitem_constructor_args():
-    sig = inspect.signature(extlibraryprofile::AudioVisualItem.__init__)
+def test_extlibraryprofile_audiovisualitem_constructor_args():
+    sig = inspect.signature(extlibraryprofile_AudioVisualItem.__init__)
     params = list(sig.parameters.keys())
-    assert "damaged" in params, "Missing parameter 'damaged'"
     assert "minutesLength" in params, "Missing parameter 'minutesLength'"
+    assert "damaged" in params, "Missing parameter 'damaged'"
 
-def test_extlibraryprofile::audiovisualitem_has_damaged():
-    assert hasattr(extlibraryprofile::AudioVisualItem, "damaged")
+def test_extlibraryprofile_audiovisualitem_has_minutesLength():
+    assert hasattr(extlibraryprofile_AudioVisualItem, "minutesLength")
     descriptor = None
-    for klass in extlibraryprofile::AudioVisualItem.__mro__:
-        if "damaged" in klass.__dict__:
-            descriptor = klass.__dict__["damaged"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_extlibraryprofile::audiovisualitem_has_minutesLength():
-    assert hasattr(extlibraryprofile::AudioVisualItem, "minutesLength")
-    descriptor = None
-    for klass in extlibraryprofile::AudioVisualItem.__mro__:
+    for klass in extlibraryprofile_AudioVisualItem.__mro__:
         if "minutesLength" in klass.__dict__:
             descriptor = klass.__dict__["minutesLength"]
             break
     assert isinstance(descriptor, property)
 
+def test_extlibraryprofile_audiovisualitem_has_damaged():
+    assert hasattr(extlibraryprofile_AudioVisualItem, "damaged")
+    descriptor = None
+    for klass in extlibraryprofile_AudioVisualItem.__mro__:
+        if "damaged" in klass.__dict__:
+            descriptor = klass.__dict__["damaged"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_extlibraryprofile::book_is_not_abstract():
-    assert not inspect.isabstract(extlibraryprofile::Book)
+
+def test_extlibraryprofile_book_is_not_abstract():
+    assert not inspect.isabstract(extlibraryprofile_Book)
 
 
-def test_extlibraryprofile::book_constructor_exists():
-    assert callable(extlibraryprofile::Book.__init__)
+def test_extlibraryprofile_book_constructor_exists():
+    assert callable(extlibraryprofile_Book.__init__)
 
 
-def test_extlibraryprofile::book_constructor_args():
-    sig = inspect.signature(extlibraryprofile::Book.__init__)
+def test_extlibraryprofile_book_constructor_args():
+    sig = inspect.signature(extlibraryprofile_Book.__init__)
     params = list(sig.parameters.keys())
     assert "category" in params, "Missing parameter 'category'"
     assert "pages" in params, "Missing parameter 'pages'"
 
-def test_extlibraryprofile::book_has_category():
-    assert hasattr(extlibraryprofile::Book, "category")
+def test_extlibraryprofile_book_has_category():
+    assert hasattr(extlibraryprofile_Book, "category")
     descriptor = None
-    for klass in extlibraryprofile::Book.__mro__:
+    for klass in extlibraryprofile_Book.__mro__:
         if "category" in klass.__dict__:
             descriptor = klass.__dict__["category"]
             break
     assert isinstance(descriptor, property)
 
-def test_extlibraryprofile::book_has_pages():
-    assert hasattr(extlibraryprofile::Book, "pages")
+def test_extlibraryprofile_book_has_pages():
+    assert hasattr(extlibraryprofile_Book, "pages")
     descriptor = None
-    for klass in extlibraryprofile::Book.__mro__:
+    for klass in extlibraryprofile_Book.__mro__:
         if "pages" in klass.__dict__:
             descriptor = klass.__dict__["pages"]
             break
@@ -257,23 +257,23 @@ def test_extlibraryprofile::book_has_pages():
 
 
 
-def test_extlibraryprofile::addressable_is_not_abstract():
-    assert not inspect.isabstract(extlibraryprofile::Addressable)
+def test_extlibraryprofile_addressable_is_not_abstract():
+    assert not inspect.isabstract(extlibraryprofile_Addressable)
 
 
-def test_extlibraryprofile::addressable_constructor_exists():
-    assert callable(extlibraryprofile::Addressable.__init__)
+def test_extlibraryprofile_addressable_constructor_exists():
+    assert callable(extlibraryprofile_Addressable.__init__)
 
 
-def test_extlibraryprofile::addressable_constructor_args():
-    sig = inspect.signature(extlibraryprofile::Addressable.__init__)
+def test_extlibraryprofile_addressable_constructor_args():
+    sig = inspect.signature(extlibraryprofile_Addressable.__init__)
     params = list(sig.parameters.keys())
     assert "address" in params, "Missing parameter 'address'"
 
-def test_extlibraryprofile::addressable_has_address():
-    assert hasattr(extlibraryprofile::Addressable, "address")
+def test_extlibraryprofile_addressable_has_address():
+    assert hasattr(extlibraryprofile_Addressable, "address")
     descriptor = None
-    for klass in extlibraryprofile::Addressable.__mro__:
+    for klass in extlibraryprofile_Addressable.__mro__:
         if "address" in klass.__dict__:
             descriptor = klass.__dict__["address"]
             break
@@ -281,16 +281,16 @@ def test_extlibraryprofile::addressable_has_address():
 
 
 
-def test_extlibraryprofile::package_is_not_abstract():
-    assert not inspect.isabstract(extlibraryprofile::Package)
+def test_extlibraryprofile_package_is_not_abstract():
+    assert not inspect.isabstract(extlibraryprofile_Package)
 
 
-def test_extlibraryprofile::package_constructor_exists():
-    assert callable(extlibraryprofile::Package.__init__)
+def test_extlibraryprofile_package_constructor_exists():
+    assert callable(extlibraryprofile_Package.__init__)
 
 
-def test_extlibraryprofile::package_constructor_args():
-    sig = inspect.signature(extlibraryprofile::Package.__init__)
+def test_extlibraryprofile_package_constructor_args():
+    sig = inspect.signature(extlibraryprofile_Package.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -309,57 +309,57 @@ def test_addressable_constructor_args():
 
 
 
-def test_extlibraryprofile::person_is_not_abstract():
-    assert not inspect.isabstract(extlibraryprofile::Person)
+def test_extlibraryprofile_person_is_not_abstract():
+    assert not inspect.isabstract(extlibraryprofile_Person)
 
 
-def test_extlibraryprofile::person_constructor_exists():
-    assert callable(extlibraryprofile::Person.__init__)
+def test_extlibraryprofile_person_constructor_exists():
+    assert callable(extlibraryprofile_Person.__init__)
 
 
-def test_extlibraryprofile::person_constructor_args():
-    sig = inspect.signature(extlibraryprofile::Person.__init__)
+def test_extlibraryprofile_person_constructor_args():
+    sig = inspect.signature(extlibraryprofile_Person.__init__)
     params = list(sig.parameters.keys())
-    assert "firstName" in params, "Missing parameter 'firstName'"
     assert "lastName" in params, "Missing parameter 'lastName'"
+    assert "firstName" in params, "Missing parameter 'firstName'"
 
-def test_extlibraryprofile::person_has_firstName():
-    assert hasattr(extlibraryprofile::Person, "firstName")
+def test_extlibraryprofile_person_has_lastName():
+    assert hasattr(extlibraryprofile_Person, "lastName")
     descriptor = None
-    for klass in extlibraryprofile::Person.__mro__:
-        if "firstName" in klass.__dict__:
-            descriptor = klass.__dict__["firstName"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_extlibraryprofile::person_has_lastName():
-    assert hasattr(extlibraryprofile::Person, "lastName")
-    descriptor = None
-    for klass in extlibraryprofile::Person.__mro__:
+    for klass in extlibraryprofile_Person.__mro__:
         if "lastName" in klass.__dict__:
             descriptor = klass.__dict__["lastName"]
             break
     assert isinstance(descriptor, property)
 
+def test_extlibraryprofile_person_has_firstName():
+    assert hasattr(extlibraryprofile_Person, "firstName")
+    descriptor = None
+    for klass in extlibraryprofile_Person.__mro__:
+        if "firstName" in klass.__dict__:
+            descriptor = klass.__dict__["firstName"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_extlibraryprofile::library_is_not_abstract():
-    assert not inspect.isabstract(extlibraryprofile::Library)
+
+def test_extlibraryprofile_library_is_not_abstract():
+    assert not inspect.isabstract(extlibraryprofile_Library)
 
 
-def test_extlibraryprofile::library_constructor_exists():
-    assert callable(extlibraryprofile::Library.__init__)
+def test_extlibraryprofile_library_constructor_exists():
+    assert callable(extlibraryprofile_Library.__init__)
 
 
-def test_extlibraryprofile::library_constructor_args():
-    sig = inspect.signature(extlibraryprofile::Library.__init__)
+def test_extlibraryprofile_library_constructor_args():
+    sig = inspect.signature(extlibraryprofile_Library.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_extlibraryprofile::library_has_name():
-    assert hasattr(extlibraryprofile::Library, "name")
+def test_extlibraryprofile_library_has_name():
+    assert hasattr(extlibraryprofile_Library, "name")
     descriptor = None
-    for klass in extlibraryprofile::Library.__mro__:
+    for klass in extlibraryprofile_Library.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -367,23 +367,23 @@ def test_extlibraryprofile::library_has_name():
 
 
 
-def test_extlibraryprofile::lendable_is_not_abstract():
-    assert not inspect.isabstract(extlibraryprofile::Lendable)
+def test_extlibraryprofile_lendable_is_not_abstract():
+    assert not inspect.isabstract(extlibraryprofile_Lendable)
 
 
-def test_extlibraryprofile::lendable_constructor_exists():
-    assert callable(extlibraryprofile::Lendable.__init__)
+def test_extlibraryprofile_lendable_constructor_exists():
+    assert callable(extlibraryprofile_Lendable.__init__)
 
 
-def test_extlibraryprofile::lendable_constructor_args():
-    sig = inspect.signature(extlibraryprofile::Lendable.__init__)
+def test_extlibraryprofile_lendable_constructor_args():
+    sig = inspect.signature(extlibraryprofile_Lendable.__init__)
     params = list(sig.parameters.keys())
     assert "copies" in params, "Missing parameter 'copies'"
 
-def test_extlibraryprofile::lendable_has_copies():
-    assert hasattr(extlibraryprofile::Lendable, "copies")
+def test_extlibraryprofile_lendable_has_copies():
+    assert hasattr(extlibraryprofile_Lendable, "copies")
     descriptor = None
-    for klass in extlibraryprofile::Lendable.__mro__:
+    for klass in extlibraryprofile_Lendable.__mro__:
         if "copies" in klass.__dict__:
             descriptor = klass.__dict__["copies"]
             break
@@ -391,47 +391,47 @@ def test_extlibraryprofile::lendable_has_copies():
 
 
 
-def test_extlibraryprofile::class_is_not_abstract():
-    assert not inspect.isabstract(extlibraryprofile::Class)
+def test_extlibraryprofile_class_is_not_abstract():
+    assert not inspect.isabstract(extlibraryprofile_Class)
 
 
-def test_extlibraryprofile::class_constructor_exists():
-    assert callable(extlibraryprofile::Class.__init__)
+def test_extlibraryprofile_class_constructor_exists():
+    assert callable(extlibraryprofile_Class.__init__)
 
 
-def test_extlibraryprofile::class_constructor_args():
-    sig = inspect.signature(extlibraryprofile::Class.__init__)
+def test_extlibraryprofile_class_constructor_args():
+    sig = inspect.signature(extlibraryprofile_Class.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_extlibraryprofile::item_is_not_abstract():
-    assert not inspect.isabstract(extlibraryprofile::Item)
+def test_extlibraryprofile_item_is_not_abstract():
+    assert not inspect.isabstract(extlibraryprofile_Item)
 
 
-def test_extlibraryprofile::item_constructor_exists():
-    assert callable(extlibraryprofile::Item.__init__)
+def test_extlibraryprofile_item_constructor_exists():
+    assert callable(extlibraryprofile_Item.__init__)
 
 
-def test_extlibraryprofile::item_constructor_args():
-    sig = inspect.signature(extlibraryprofile::Item.__init__)
+def test_extlibraryprofile_item_constructor_args():
+    sig = inspect.signature(extlibraryprofile_Item.__init__)
     params = list(sig.parameters.keys())
     assert "publicationDate" in params, "Missing parameter 'publicationDate'"
     assert "title" in params, "Missing parameter 'title'"
 
-def test_extlibraryprofile::item_has_publicationDate():
-    assert hasattr(extlibraryprofile::Item, "publicationDate")
+def test_extlibraryprofile_item_has_publicationDate():
+    assert hasattr(extlibraryprofile_Item, "publicationDate")
     descriptor = None
-    for klass in extlibraryprofile::Item.__mro__:
+    for klass in extlibraryprofile_Item.__mro__:
         if "publicationDate" in klass.__dict__:
             descriptor = klass.__dict__["publicationDate"]
             break
     assert isinstance(descriptor, property)
 
-def test_extlibraryprofile::item_has_title():
-    assert hasattr(extlibraryprofile::Item, "title")
+def test_extlibraryprofile_item_has_title():
+    assert hasattr(extlibraryprofile_Item, "title")
     descriptor = None
-    for klass in extlibraryprofile::Item.__mro__:
+    for klass in extlibraryprofile_Item.__mro__:
         if "title" in klass.__dict__:
             descriptor = klass.__dict__["title"]
             break
@@ -467,23 +467,23 @@ def test_item_constructor_args():
 
 
 
-def test_extlibraryprofile::periodical_is_not_abstract():
-    assert not inspect.isabstract(extlibraryprofile::Periodical)
+def test_extlibraryprofile_periodical_is_not_abstract():
+    assert not inspect.isabstract(extlibraryprofile_Periodical)
 
 
-def test_extlibraryprofile::periodical_constructor_exists():
-    assert callable(extlibraryprofile::Periodical.__init__)
+def test_extlibraryprofile_periodical_constructor_exists():
+    assert callable(extlibraryprofile_Periodical.__init__)
 
 
-def test_extlibraryprofile::periodical_constructor_args():
-    sig = inspect.signature(extlibraryprofile::Periodical.__init__)
+def test_extlibraryprofile_periodical_constructor_args():
+    sig = inspect.signature(extlibraryprofile_Periodical.__init__)
     params = list(sig.parameters.keys())
     assert "issuesPerYear" in params, "Missing parameter 'issuesPerYear'"
 
-def test_extlibraryprofile::periodical_has_issuesPerYear():
-    assert hasattr(extlibraryprofile::Periodical, "issuesPerYear")
+def test_extlibraryprofile_periodical_has_issuesPerYear():
+    assert hasattr(extlibraryprofile_Periodical, "issuesPerYear")
     descriptor = None
-    for klass in extlibraryprofile::Periodical.__mro__:
+    for klass in extlibraryprofile_Periodical.__mro__:
         if "issuesPerYear" in klass.__dict__:
             descriptor = klass.__dict__["issuesPerYear"]
             break
@@ -491,16 +491,16 @@ def test_extlibraryprofile::periodical_has_issuesPerYear():
 
 
 
-def test_extlibraryprofile::circulatingitem_is_not_abstract():
-    assert not inspect.isabstract(extlibraryprofile::CirculatingItem)
+def test_extlibraryprofile_circulatingitem_is_not_abstract():
+    assert not inspect.isabstract(extlibraryprofile_CirculatingItem)
 
 
-def test_extlibraryprofile::circulatingitem_constructor_exists():
-    assert callable(extlibraryprofile::CirculatingItem.__init__)
+def test_extlibraryprofile_circulatingitem_constructor_exists():
+    assert callable(extlibraryprofile_CirculatingItem.__init__)
 
 
-def test_extlibraryprofile::circulatingitem_constructor_args():
-    sig = inspect.signature(extlibraryprofile::CirculatingItem.__init__)
+def test_extlibraryprofile_circulatingitem_constructor_args():
+    sig = inspect.signature(extlibraryprofile_CirculatingItem.__init__)
     params = list(sig.parameters.keys())
 
 def test_bookcategory_exists():
@@ -511,9 +511,9 @@ def test_bookcategory_has_all_literals():
     # Collect the names of literals in this Enumeration
     enum_literals = [lit.name for lit in BookCategory]
     expected_literals = [
+        "Mystery",
         "ScienceFiction",
         "Biography",
-        "Mystery",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
@@ -534,82 +534,82 @@ safe_text = st.text(
 AudioVisualItem_strategy = st.builds(
     AudioVisualItem,
 )
-extlibraryprofile::VideoCassete_strategy = st.builds(
-    extlibraryprofile::VideoCassete,
+extlibraryprofile_VideoCassete_strategy = st.builds(
+    extlibraryprofile_VideoCassete,
 )
-extlibraryprofile::BookOnTape_strategy = st.builds(
-    extlibraryprofile::BookOnTape,
+extlibraryprofile_BookOnTape_strategy = st.builds(
+    extlibraryprofile_BookOnTape,
 )
 Person_strategy = st.builds(
     Person,
 )
-extlibraryprofile::Writer_strategy = st.builds(
-    extlibraryprofile::Writer,
+extlibraryprofile_Writer_strategy = st.builds(
+    extlibraryprofile_Writer,
     name=
         safe_text
 )
-extlibraryprofile::Dependency_strategy = st.builds(
-    extlibraryprofile::Dependency,
+extlibraryprofile_Dependency_strategy = st.builds(
+    extlibraryprofile_Dependency,
 )
-extlibraryprofile::Borrows_strategy = st.builds(
-    extlibraryprofile::Borrows,
+extlibraryprofile_Borrows_strategy = st.builds(
+    extlibraryprofile_Borrows,
 )
-extlibraryprofile::Employee_strategy = st.builds(
-    extlibraryprofile::Employee,
+extlibraryprofile_Employee_strategy = st.builds(
+    extlibraryprofile_Employee,
 )
-extlibraryprofile::Borrower_strategy = st.builds(
-    extlibraryprofile::Borrower,
+extlibraryprofile_Borrower_strategy = st.builds(
+    extlibraryprofile_Borrower,
 )
 CirculatingItem_strategy = st.builds(
     CirculatingItem,
 )
-extlibraryprofile::AudioVisualItem_strategy = st.builds(
-    extlibraryprofile::AudioVisualItem,
-    damaged=
-        safe_text,
+extlibraryprofile_AudioVisualItem_strategy = st.builds(
+    extlibraryprofile_AudioVisualItem,
     minutesLength=
+        safe_text,
+    damaged=
         safe_text
 )
-extlibraryprofile::Book_strategy = st.builds(
-    extlibraryprofile::Book,
+extlibraryprofile_Book_strategy = st.builds(
+    extlibraryprofile_Book,
     category=
         safe_text,
     pages=
         safe_text
 )
-extlibraryprofile::Addressable_strategy = st.builds(
-    extlibraryprofile::Addressable,
+extlibraryprofile_Addressable_strategy = st.builds(
+    extlibraryprofile_Addressable,
     address=
         safe_text
 )
-extlibraryprofile::Package_strategy = st.builds(
-    extlibraryprofile::Package,
+extlibraryprofile_Package_strategy = st.builds(
+    extlibraryprofile_Package,
 )
 Addressable_strategy = st.builds(
     Addressable,
 )
-extlibraryprofile::Person_strategy = st.builds(
-    extlibraryprofile::Person,
-    firstName=
-        safe_text,
+extlibraryprofile_Person_strategy = st.builds(
+    extlibraryprofile_Person,
     lastName=
+        safe_text,
+    firstName=
         safe_text
 )
-extlibraryprofile::Library_strategy = st.builds(
-    extlibraryprofile::Library,
+extlibraryprofile_Library_strategy = st.builds(
+    extlibraryprofile_Library,
     name=
         safe_text
 )
-extlibraryprofile::Lendable_strategy = st.builds(
-    extlibraryprofile::Lendable,
+extlibraryprofile_Lendable_strategy = st.builds(
+    extlibraryprofile_Lendable,
     copies=
         safe_text
 )
-extlibraryprofile::Class_strategy = st.builds(
-    extlibraryprofile::Class,
+extlibraryprofile_Class_strategy = st.builds(
+    extlibraryprofile_Class,
 )
-extlibraryprofile::Item_strategy = st.builds(
-    extlibraryprofile::Item,
+extlibraryprofile_Item_strategy = st.builds(
+    extlibraryprofile_Item,
     publicationDate=
         safe_text,
     title=
@@ -621,13 +621,13 @@ Lendable_strategy = st.builds(
 Item_strategy = st.builds(
     Item,
 )
-extlibraryprofile::Periodical_strategy = st.builds(
-    extlibraryprofile::Periodical,
+extlibraryprofile_Periodical_strategy = st.builds(
+    extlibraryprofile_Periodical,
     issuesPerYear=
         safe_text
 )
-extlibraryprofile::CirculatingItem_strategy = st.builds(
-    extlibraryprofile::CirculatingItem,
+extlibraryprofile_CirculatingItem_strategy = st.builds(
+    extlibraryprofile_CirculatingItem,
 )
 
 @given(instance=AudioVisualItem_strategy)
@@ -635,229 +635,193 @@ extlibraryprofile::CirculatingItem_strategy = st.builds(
 def test_audiovisualitem_instantiation(instance):
     assert isinstance(instance, AudioVisualItem)
 
-@given(instance=extlibraryprofile::VideoCassete_strategy)
+@given(instance=extlibraryprofile_VideoCassete_strategy)
 @settings(max_examples=50)
-def test_extlibraryprofile::videocassete_instantiation(instance):
-    assert isinstance(instance, extlibraryprofile::VideoCassete)
+def test_extlibraryprofile_videocassete_instantiation(instance):
+    assert isinstance(instance, extlibraryprofile_VideoCassete)
 
-@given(instance=extlibraryprofile::BookOnTape_strategy)
+@given(instance=extlibraryprofile_BookOnTape_strategy)
 @settings(max_examples=50)
-def test_extlibraryprofile::bookontape_instantiation(instance):
-    assert isinstance(instance, extlibraryprofile::BookOnTape)
+def test_extlibraryprofile_bookontape_instantiation(instance):
+    assert isinstance(instance, extlibraryprofile_BookOnTape)
 
 @given(instance=Person_strategy)
 @settings(max_examples=50)
 def test_person_instantiation(instance):
     assert isinstance(instance, Person)
 
-@given(instance=extlibraryprofile::Writer_strategy)
+@given(instance=extlibraryprofile_Writer_strategy)
 @settings(max_examples=50)
-def test_extlibraryprofile::writer_instantiation(instance):
-    assert isinstance(instance, extlibraryprofile::Writer)
-
-@given(instance=extlibraryprofile::Writer_strategy)
-def test_extlibraryprofile::writer_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_extlibraryprofile_writer_instantiation(instance):
+    assert isinstance(instance, extlibraryprofile_Writer)
 
 
-@given(instance=extlibraryprofile::Writer_strategy)
-def test_extlibraryprofile::writer_name_setter(instance):
+
+@given(instance=extlibraryprofile_Writer_strategy)
+def test_extlibraryprofile_writer_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=extlibraryprofile::Dependency_strategy)
+@given(instance=extlibraryprofile_Dependency_strategy)
 @settings(max_examples=50)
-def test_extlibraryprofile::dependency_instantiation(instance):
-    assert isinstance(instance, extlibraryprofile::Dependency)
+def test_extlibraryprofile_dependency_instantiation(instance):
+    assert isinstance(instance, extlibraryprofile_Dependency)
 
-@given(instance=extlibraryprofile::Borrows_strategy)
+@given(instance=extlibraryprofile_Borrows_strategy)
 @settings(max_examples=50)
-def test_extlibraryprofile::borrows_instantiation(instance):
-    assert isinstance(instance, extlibraryprofile::Borrows)
+def test_extlibraryprofile_borrows_instantiation(instance):
+    assert isinstance(instance, extlibraryprofile_Borrows)
 
-@given(instance=extlibraryprofile::Employee_strategy)
+@given(instance=extlibraryprofile_Employee_strategy)
 @settings(max_examples=50)
-def test_extlibraryprofile::employee_instantiation(instance):
-    assert isinstance(instance, extlibraryprofile::Employee)
+def test_extlibraryprofile_employee_instantiation(instance):
+    assert isinstance(instance, extlibraryprofile_Employee)
 
-@given(instance=extlibraryprofile::Borrower_strategy)
+@given(instance=extlibraryprofile_Borrower_strategy)
 @settings(max_examples=50)
-def test_extlibraryprofile::borrower_instantiation(instance):
-    assert isinstance(instance, extlibraryprofile::Borrower)
+def test_extlibraryprofile_borrower_instantiation(instance):
+    assert isinstance(instance, extlibraryprofile_Borrower)
 
 @given(instance=CirculatingItem_strategy)
 @settings(max_examples=50)
 def test_circulatingitem_instantiation(instance):
     assert isinstance(instance, CirculatingItem)
 
-@given(instance=extlibraryprofile::AudioVisualItem_strategy)
+@given(instance=extlibraryprofile_AudioVisualItem_strategy)
 @settings(max_examples=50)
-def test_extlibraryprofile::audiovisualitem_instantiation(instance):
-    assert isinstance(instance, extlibraryprofile::AudioVisualItem)
-
-@given(instance=extlibraryprofile::AudioVisualItem_strategy)
-def test_extlibraryprofile::audiovisualitem_damaged_type(instance):
-    assert isinstance(instance.damaged, str)
+def test_extlibraryprofile_audiovisualitem_instantiation(instance):
+    assert isinstance(instance, extlibraryprofile_AudioVisualItem)
 
 
-@given(instance=extlibraryprofile::AudioVisualItem_strategy)
-def test_extlibraryprofile::audiovisualitem_damaged_setter(instance):
-    original = instance.damaged
-    instance.damaged = original
-    assert instance.damaged == original
 
-@given(instance=extlibraryprofile::AudioVisualItem_strategy)
-def test_extlibraryprofile::audiovisualitem_minutesLength_type(instance):
-    assert isinstance(instance.minutesLength, str)
-
-
-@given(instance=extlibraryprofile::AudioVisualItem_strategy)
-def test_extlibraryprofile::audiovisualitem_minutesLength_setter(instance):
+@given(instance=extlibraryprofile_AudioVisualItem_strategy)
+def test_extlibraryprofile_audiovisualitem_minutesLength_setter(instance):
     original = instance.minutesLength
     instance.minutesLength = original
     assert instance.minutesLength == original
 
-@given(instance=extlibraryprofile::Book_strategy)
+
+
+@given(instance=extlibraryprofile_AudioVisualItem_strategy)
+def test_extlibraryprofile_audiovisualitem_damaged_setter(instance):
+    original = instance.damaged
+    instance.damaged = original
+    assert instance.damaged == original
+
+@given(instance=extlibraryprofile_Book_strategy)
 @settings(max_examples=50)
-def test_extlibraryprofile::book_instantiation(instance):
-    assert isinstance(instance, extlibraryprofile::Book)
-
-@given(instance=extlibraryprofile::Book_strategy)
-def test_extlibraryprofile::book_category_type(instance):
-    assert isinstance(instance.category, str)
+def test_extlibraryprofile_book_instantiation(instance):
+    assert isinstance(instance, extlibraryprofile_Book)
 
 
-@given(instance=extlibraryprofile::Book_strategy)
-def test_extlibraryprofile::book_category_setter(instance):
+
+@given(instance=extlibraryprofile_Book_strategy)
+def test_extlibraryprofile_book_category_setter(instance):
     original = instance.category
     instance.category = original
     assert instance.category == original
 
-@given(instance=extlibraryprofile::Book_strategy)
-def test_extlibraryprofile::book_pages_type(instance):
-    assert isinstance(instance.pages, str)
 
 
-@given(instance=extlibraryprofile::Book_strategy)
-def test_extlibraryprofile::book_pages_setter(instance):
+@given(instance=extlibraryprofile_Book_strategy)
+def test_extlibraryprofile_book_pages_setter(instance):
     original = instance.pages
     instance.pages = original
     assert instance.pages == original
 
-@given(instance=extlibraryprofile::Addressable_strategy)
+@given(instance=extlibraryprofile_Addressable_strategy)
 @settings(max_examples=50)
-def test_extlibraryprofile::addressable_instantiation(instance):
-    assert isinstance(instance, extlibraryprofile::Addressable)
-
-@given(instance=extlibraryprofile::Addressable_strategy)
-def test_extlibraryprofile::addressable_address_type(instance):
-    assert isinstance(instance.address, str)
+def test_extlibraryprofile_addressable_instantiation(instance):
+    assert isinstance(instance, extlibraryprofile_Addressable)
 
 
-@given(instance=extlibraryprofile::Addressable_strategy)
-def test_extlibraryprofile::addressable_address_setter(instance):
+
+@given(instance=extlibraryprofile_Addressable_strategy)
+def test_extlibraryprofile_addressable_address_setter(instance):
     original = instance.address
     instance.address = original
     assert instance.address == original
 
-@given(instance=extlibraryprofile::Package_strategy)
+@given(instance=extlibraryprofile_Package_strategy)
 @settings(max_examples=50)
-def test_extlibraryprofile::package_instantiation(instance):
-    assert isinstance(instance, extlibraryprofile::Package)
+def test_extlibraryprofile_package_instantiation(instance):
+    assert isinstance(instance, extlibraryprofile_Package)
 
 @given(instance=Addressable_strategy)
 @settings(max_examples=50)
 def test_addressable_instantiation(instance):
     assert isinstance(instance, Addressable)
 
-@given(instance=extlibraryprofile::Person_strategy)
+@given(instance=extlibraryprofile_Person_strategy)
 @settings(max_examples=50)
-def test_extlibraryprofile::person_instantiation(instance):
-    assert isinstance(instance, extlibraryprofile::Person)
-
-@given(instance=extlibraryprofile::Person_strategy)
-def test_extlibraryprofile::person_firstName_type(instance):
-    assert isinstance(instance.firstName, str)
+def test_extlibraryprofile_person_instantiation(instance):
+    assert isinstance(instance, extlibraryprofile_Person)
 
 
-@given(instance=extlibraryprofile::Person_strategy)
-def test_extlibraryprofile::person_firstName_setter(instance):
-    original = instance.firstName
-    instance.firstName = original
-    assert instance.firstName == original
 
-@given(instance=extlibraryprofile::Person_strategy)
-def test_extlibraryprofile::person_lastName_type(instance):
-    assert isinstance(instance.lastName, str)
-
-
-@given(instance=extlibraryprofile::Person_strategy)
-def test_extlibraryprofile::person_lastName_setter(instance):
+@given(instance=extlibraryprofile_Person_strategy)
+def test_extlibraryprofile_person_lastName_setter(instance):
     original = instance.lastName
     instance.lastName = original
     assert instance.lastName == original
 
-@given(instance=extlibraryprofile::Library_strategy)
+
+
+@given(instance=extlibraryprofile_Person_strategy)
+def test_extlibraryprofile_person_firstName_setter(instance):
+    original = instance.firstName
+    instance.firstName = original
+    assert instance.firstName == original
+
+@given(instance=extlibraryprofile_Library_strategy)
 @settings(max_examples=50)
-def test_extlibraryprofile::library_instantiation(instance):
-    assert isinstance(instance, extlibraryprofile::Library)
-
-@given(instance=extlibraryprofile::Library_strategy)
-def test_extlibraryprofile::library_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_extlibraryprofile_library_instantiation(instance):
+    assert isinstance(instance, extlibraryprofile_Library)
 
 
-@given(instance=extlibraryprofile::Library_strategy)
-def test_extlibraryprofile::library_name_setter(instance):
+
+@given(instance=extlibraryprofile_Library_strategy)
+def test_extlibraryprofile_library_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=extlibraryprofile::Lendable_strategy)
+@given(instance=extlibraryprofile_Lendable_strategy)
 @settings(max_examples=50)
-def test_extlibraryprofile::lendable_instantiation(instance):
-    assert isinstance(instance, extlibraryprofile::Lendable)
-
-@given(instance=extlibraryprofile::Lendable_strategy)
-def test_extlibraryprofile::lendable_copies_type(instance):
-    assert isinstance(instance.copies, str)
+def test_extlibraryprofile_lendable_instantiation(instance):
+    assert isinstance(instance, extlibraryprofile_Lendable)
 
 
-@given(instance=extlibraryprofile::Lendable_strategy)
-def test_extlibraryprofile::lendable_copies_setter(instance):
+
+@given(instance=extlibraryprofile_Lendable_strategy)
+def test_extlibraryprofile_lendable_copies_setter(instance):
     original = instance.copies
     instance.copies = original
     assert instance.copies == original
 
-@given(instance=extlibraryprofile::Class_strategy)
+@given(instance=extlibraryprofile_Class_strategy)
 @settings(max_examples=50)
-def test_extlibraryprofile::class_instantiation(instance):
-    assert isinstance(instance, extlibraryprofile::Class)
+def test_extlibraryprofile_class_instantiation(instance):
+    assert isinstance(instance, extlibraryprofile_Class)
 
-@given(instance=extlibraryprofile::Item_strategy)
+@given(instance=extlibraryprofile_Item_strategy)
 @settings(max_examples=50)
-def test_extlibraryprofile::item_instantiation(instance):
-    assert isinstance(instance, extlibraryprofile::Item)
-
-@given(instance=extlibraryprofile::Item_strategy)
-def test_extlibraryprofile::item_publicationDate_type(instance):
-    assert isinstance(instance.publicationDate, str)
+def test_extlibraryprofile_item_instantiation(instance):
+    assert isinstance(instance, extlibraryprofile_Item)
 
 
-@given(instance=extlibraryprofile::Item_strategy)
-def test_extlibraryprofile::item_publicationDate_setter(instance):
+
+@given(instance=extlibraryprofile_Item_strategy)
+def test_extlibraryprofile_item_publicationDate_setter(instance):
     original = instance.publicationDate
     instance.publicationDate = original
     assert instance.publicationDate == original
 
-@given(instance=extlibraryprofile::Item_strategy)
-def test_extlibraryprofile::item_title_type(instance):
-    assert isinstance(instance.title, str)
 
 
-@given(instance=extlibraryprofile::Item_strategy)
-def test_extlibraryprofile::item_title_setter(instance):
+@given(instance=extlibraryprofile_Item_strategy)
+def test_extlibraryprofile_item_title_setter(instance):
     original = instance.title
     instance.title = original
     assert instance.title == original
@@ -872,23 +836,20 @@ def test_lendable_instantiation(instance):
 def test_item_instantiation(instance):
     assert isinstance(instance, Item)
 
-@given(instance=extlibraryprofile::Periodical_strategy)
+@given(instance=extlibraryprofile_Periodical_strategy)
 @settings(max_examples=50)
-def test_extlibraryprofile::periodical_instantiation(instance):
-    assert isinstance(instance, extlibraryprofile::Periodical)
-
-@given(instance=extlibraryprofile::Periodical_strategy)
-def test_extlibraryprofile::periodical_issuesPerYear_type(instance):
-    assert isinstance(instance.issuesPerYear, str)
+def test_extlibraryprofile_periodical_instantiation(instance):
+    assert isinstance(instance, extlibraryprofile_Periodical)
 
 
-@given(instance=extlibraryprofile::Periodical_strategy)
-def test_extlibraryprofile::periodical_issuesPerYear_setter(instance):
+
+@given(instance=extlibraryprofile_Periodical_strategy)
+def test_extlibraryprofile_periodical_issuesPerYear_setter(instance):
     original = instance.issuesPerYear
     instance.issuesPerYear = original
     assert instance.issuesPerYear == original
 
-@given(instance=extlibraryprofile::CirculatingItem_strategy)
+@given(instance=extlibraryprofile_CirculatingItem_strategy)
 @settings(max_examples=50)
-def test_extlibraryprofile::circulatingitem_instantiation(instance):
-    assert isinstance(instance, extlibraryprofile::CirculatingItem)
+def test_extlibraryprofile_circulatingitem_instantiation(instance):
+    assert isinstance(instance, extlibraryprofile_CirculatingItem)

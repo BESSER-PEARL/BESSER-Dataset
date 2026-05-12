@@ -3,127 +3,127 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    alf::VariableDeclarationCompletion,
-    alf::ReclassifyAllClause,
-    alf::ClassificationToClause,
-    alf::ClassificationFromClause,
-    alf::ClassificationClause,
-    alf::QualifiedNameList,
-    alf::AcceptBlock,
-    alf::CompoundAcceptStatementCompletion,
-    alf::SimpleAcceptStatementCompletion,
-    alf::AcceptClause,
-    alf::LoopVariableDefinition,
-    alf::ForControl,
-    alf::NonEmptyStatementSequence,
-    alf::SwitchCase,
-    alf::SwitchDefaultClause,
-    alf::SwitchClause,
-    alf::NonFinalClause,
-    alf::ConcurrentClauses,
-    alf::FinalClause,
-    alf::SequentialClauses,
-    alf::Annotation,
+from python_code import (
+    alf_VariableDeclarationCompletion,
+    alf_ReclassifyAllClause,
+    alf_ClassificationToClause,
+    alf_ClassificationFromClause,
+    alf_ClassificationClause,
+    alf_QualifiedNameList,
+    alf_AcceptBlock,
+    alf_CompoundAcceptStatementCompletion,
+    alf_SimpleAcceptStatementCompletion,
+    alf_AcceptClause,
+    alf_LoopVariableDefinition,
+    alf_ForControl,
+    alf_NonEmptyStatementSequence,
+    alf_SwitchCase,
+    alf_SwitchDefaultClause,
+    alf_SwitchClause,
+    alf_NonFinalClause,
+    alf_ConcurrentClauses,
+    alf_FinalClause,
+    alf_SequentialClauses,
+    alf_Annotation,
     Statement,
-    alf::EmptyStatement,
-    alf::SuperInvocationStatement,
-    alf::AcceptStatement,
-    alf::DoStatement,
-    alf::ReturnStatement,
-    alf::WhileStatement,
-    alf::BlockStatement,
-    alf::ThisInvocationStatement,
-    alf::InvocationOrAssignementOrDeclarationStatement,
-    alf::BreakStatement,
-    alf::ForStatement,
-    alf::SwitchStatement,
-    alf::ClassifyStatement,
-    alf::IfStatement,
-    alf::AnnotatedStatement,
-    alf::InlineStatement,
-    alf::DocumentedStatement,
-    alf::StatementSequence,
-    alf::SequenceElement,
-    alf::LocalNameDeclarationStatement,
-    alf::PartialSequenceConstructionCompletion,
-    alf::AccessCompletion,
-    alf::InstanceCreationTupleElement,
-    alf::InstanceCreationTuple,
-    alf::NonLiteralValueSpecification,
+    alf_ThisInvocationStatement,
+    alf_EmptyStatement,
+    alf_BreakStatement,
+    alf_ForStatement,
+    alf_BlockStatement,
+    alf_AcceptStatement,
+    alf_AnnotatedStatement,
+    alf_SwitchStatement,
+    alf_InvocationOrAssignementOrDeclarationStatement,
+    alf_ReturnStatement,
+    alf_SuperInvocationStatement,
+    alf_ClassifyStatement,
+    alf_WhileStatement,
+    alf_DoStatement,
+    alf_IfStatement,
+    alf_InstanceCreationInvocationStatement,
+    alf_InlineStatement,
+    alf_DocumentedStatement,
+    alf_StatementSequence,
+    alf_SequenceElement,
+    alf_LocalNameDeclarationStatement,
+    alf_PartialSequenceConstructionCompletion,
+    alf_AccessCompletion,
+    alf_InstanceCreationTupleElement,
+    alf_InstanceCreationTuple,
+    alf_NonLiteralValueSpecification,
     SequenceExpansionExpression,
-    alf::ForAllOrExistsOrOneOperation,
-    alf::CollectOrIterateOperation,
-    alf::IsUniqueOperation,
-    alf::SelectOrRejectOperation,
-    alf::LinkOperationTupleElement,
-    alf::LinkOperationTuple,
+    alf_IsUniqueOperation,
+    alf_ForAllOrExistsOrOneOperation,
+    alf_CollectOrIterateOperation,
+    alf_SelectOrRejectOperation,
+    alf_LinkOperationTupleElement,
+    alf_LinkOperationTuple,
     SuffixExpression,
-    alf::ClassExtentExpression,
-    alf::SequenceExpansionExpression,
-    alf::PropertyCallExpression,
-    alf::SequenceReductionExpression,
-    alf::LinkOperationExpression,
-    alf::SequenceOperationExpression,
-    alf::OperationCallExpression,
-    alf::ValueSpecification,
-    alf::PrimaryExpression,
-    alf::UnaryExpression,
-    alf::MultiplicativeExpression,
-    alf::AdditiveExpression,
-    alf::ShiftExpression,
-    alf::ClassificationExpression,
-    alf::EqualityExpression,
-    alf::AndExpression,
-    alf::ExclusiveOrExpression,
-    alf::InclusiveOrExpression,
-    alf::ConditionalAndExpression,
-    alf::ConditionalOrExpression,
+    alf_LinkOperationExpression,
+    alf_ClassExtentExpression,
+    alf_SequenceExpansionExpression,
+    alf_SequenceOperationExpression,
+    alf_SequenceReductionExpression,
+    alf_PropertyCallExpression,
+    alf_OperationCallExpression,
+    alf_ValueSpecification,
+    alf_PrimaryExpression,
+    alf_UnaryExpression,
+    alf_MultiplicativeExpression,
+    alf_AdditiveExpression,
+    alf_ShiftExpression,
+    alf_ClassificationExpression,
+    alf_EqualityExpression,
+    alf_AndExpression,
+    alf_ExclusiveOrExpression,
+    alf_InclusiveOrExpression,
+    alf_ConditionalAndExpression,
+    alf_ConditionalOrExpression,
     Expression,
-    alf::ConditionalTestExpression,
+    alf_ConditionalTestExpression,
     SequenceElement,
-    alf::SequenceConstructionExpression,
-    alf::TupleElement,
-    alf::QualifiedNameWithBinding,
-    alf::NamedTemplateBinding,
-    alf::RelationalExpression,
-    alf::TemplateBinding,
-    alf::UnqualifiedName,
-    alf::SuffixExpression,
-    alf::SequenceConstructionOrAccessCompletion,
-    alf::Tuple,
-    alf::QualifiedNamePath,
+    alf_SequenceConstructionExpression,
+    alf_TupleElement,
+    alf_QualifiedNameWithBinding,
+    alf_NamedTemplateBinding,
+    alf_RelationalExpression,
+    alf_TemplateBinding,
+    alf_UnqualifiedName,
+    alf_SuffixExpression,
+    alf_SequenceConstructionOrAccessCompletion,
+    alf_Tuple,
+    alf_QualifiedNamePath,
     NonLiteralValueSpecification,
-    NUMBER::LITERAL,
-    alf::UNLIMITED::LITERAL,
-    alf::INTEGER::LITERAL,
+    NUMBER_LITERAL,
+    alf_UNLIMITED_LITERAL,
+    alf_INTEGER_LITERAL,
     ValueSpecification,
-    alf::InstanceCreationExpression,
-    alf::NullExpression,
-    alf::ThisExpression,
-    alf::NameExpression,
-    alf::SuperInvocationExpression,
-    alf::ParenthesizedExpression,
-    alf::LITERAL,
-    alf::Block,
-    alf::Statement,
-    alf::AssignmentCompletion,
-    alf::Expression,
-    alf::Test,
+    alf_NameExpression,
+    alf_ThisExpression,
+    alf_NullExpression,
+    alf_SuperInvocationExpression,
+    alf_ParenthesizedExpression,
+    alf_InstanceCreationExpression,
+    alf_LITERAL,
+    alf_Block,
+    alf_Statement,
+    alf_AssignmentCompletion,
+    alf_Expression,
+    alf_Test,
     LITERAL,
-    alf::STRING::LITERAL,
-    alf::NUMBER::LITERAL,
-    alf::BOOLEAN::LITERAL,
-    alf::InstanceCreationInvocationStatement,
-    AssignmentOperator,
-    CollectOrIterateOperator,
-    ForAllOrExistsOrOneOperator,
-    AnnotationKind,
-    BooleanValue,
-    SelectOrRejectOperator,
+    alf_NUMBER_LITERAL,
+    alf_STRING_LITERAL,
+    alf_BOOLEAN_LITERAL,
     LinkOperationKind,
+    CollectOrIterateOperator,
+    BooleanValue,
+    ForAllOrExistsOrOneOperator,
+    AssignmentOperator,
+    SelectOrRejectOperator,
+    AnnotationKind,
 )
 
 # =============================================================================
@@ -132,33 +132,33 @@ from classes import (
 
 
 
-def test_alf::variabledeclarationcompletion_is_not_abstract():
-    assert not inspect.isabstract(alf::VariableDeclarationCompletion)
+def test_alf_variabledeclarationcompletion_is_not_abstract():
+    assert not inspect.isabstract(alf_VariableDeclarationCompletion)
 
 
-def test_alf::variabledeclarationcompletion_constructor_exists():
-    assert callable(alf::VariableDeclarationCompletion.__init__)
+def test_alf_variabledeclarationcompletion_constructor_exists():
+    assert callable(alf_VariableDeclarationCompletion.__init__)
 
 
-def test_alf::variabledeclarationcompletion_constructor_args():
-    sig = inspect.signature(alf::VariableDeclarationCompletion.__init__)
+def test_alf_variabledeclarationcompletion_constructor_args():
+    sig = inspect.signature(alf_VariableDeclarationCompletion.__init__)
     params = list(sig.parameters.keys())
     assert "variableName" in params, "Missing parameter 'variableName'"
     assert "multiplicityIndicator" in params, "Missing parameter 'multiplicityIndicator'"
 
-def test_alf::variabledeclarationcompletion_has_variableName():
-    assert hasattr(alf::VariableDeclarationCompletion, "variableName")
+def test_alf_variabledeclarationcompletion_has_variableName():
+    assert hasattr(alf_VariableDeclarationCompletion, "variableName")
     descriptor = None
-    for klass in alf::VariableDeclarationCompletion.__mro__:
+    for klass in alf_VariableDeclarationCompletion.__mro__:
         if "variableName" in klass.__dict__:
             descriptor = klass.__dict__["variableName"]
             break
     assert isinstance(descriptor, property)
 
-def test_alf::variabledeclarationcompletion_has_multiplicityIndicator():
-    assert hasattr(alf::VariableDeclarationCompletion, "multiplicityIndicator")
+def test_alf_variabledeclarationcompletion_has_multiplicityIndicator():
+    assert hasattr(alf_VariableDeclarationCompletion, "multiplicityIndicator")
     descriptor = None
-    for klass in alf::VariableDeclarationCompletion.__mro__:
+    for klass in alf_VariableDeclarationCompletion.__mro__:
         if "multiplicityIndicator" in klass.__dict__:
             descriptor = klass.__dict__["multiplicityIndicator"]
             break
@@ -166,135 +166,135 @@ def test_alf::variabledeclarationcompletion_has_multiplicityIndicator():
 
 
 
-def test_alf::reclassifyallclause_is_not_abstract():
-    assert not inspect.isabstract(alf::ReclassifyAllClause)
+def test_alf_reclassifyallclause_is_not_abstract():
+    assert not inspect.isabstract(alf_ReclassifyAllClause)
 
 
-def test_alf::reclassifyallclause_constructor_exists():
-    assert callable(alf::ReclassifyAllClause.__init__)
+def test_alf_reclassifyallclause_constructor_exists():
+    assert callable(alf_ReclassifyAllClause.__init__)
 
 
-def test_alf::reclassifyallclause_constructor_args():
-    sig = inspect.signature(alf::ReclassifyAllClause.__init__)
+def test_alf_reclassifyallclause_constructor_args():
+    sig = inspect.signature(alf_ReclassifyAllClause.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_alf::classificationtoclause_is_not_abstract():
-    assert not inspect.isabstract(alf::ClassificationToClause)
+def test_alf_classificationtoclause_is_not_abstract():
+    assert not inspect.isabstract(alf_ClassificationToClause)
 
 
-def test_alf::classificationtoclause_constructor_exists():
-    assert callable(alf::ClassificationToClause.__init__)
+def test_alf_classificationtoclause_constructor_exists():
+    assert callable(alf_ClassificationToClause.__init__)
 
 
-def test_alf::classificationtoclause_constructor_args():
-    sig = inspect.signature(alf::ClassificationToClause.__init__)
+def test_alf_classificationtoclause_constructor_args():
+    sig = inspect.signature(alf_ClassificationToClause.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_alf::classificationfromclause_is_not_abstract():
-    assert not inspect.isabstract(alf::ClassificationFromClause)
+def test_alf_classificationfromclause_is_not_abstract():
+    assert not inspect.isabstract(alf_ClassificationFromClause)
 
 
-def test_alf::classificationfromclause_constructor_exists():
-    assert callable(alf::ClassificationFromClause.__init__)
+def test_alf_classificationfromclause_constructor_exists():
+    assert callable(alf_ClassificationFromClause.__init__)
 
 
-def test_alf::classificationfromclause_constructor_args():
-    sig = inspect.signature(alf::ClassificationFromClause.__init__)
+def test_alf_classificationfromclause_constructor_args():
+    sig = inspect.signature(alf_ClassificationFromClause.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_alf::classificationclause_is_not_abstract():
-    assert not inspect.isabstract(alf::ClassificationClause)
+def test_alf_classificationclause_is_not_abstract():
+    assert not inspect.isabstract(alf_ClassificationClause)
 
 
-def test_alf::classificationclause_constructor_exists():
-    assert callable(alf::ClassificationClause.__init__)
+def test_alf_classificationclause_constructor_exists():
+    assert callable(alf_ClassificationClause.__init__)
 
 
-def test_alf::classificationclause_constructor_args():
-    sig = inspect.signature(alf::ClassificationClause.__init__)
+def test_alf_classificationclause_constructor_args():
+    sig = inspect.signature(alf_ClassificationClause.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_alf::qualifiednamelist_is_not_abstract():
-    assert not inspect.isabstract(alf::QualifiedNameList)
+def test_alf_qualifiednamelist_is_not_abstract():
+    assert not inspect.isabstract(alf_QualifiedNameList)
 
 
-def test_alf::qualifiednamelist_constructor_exists():
-    assert callable(alf::QualifiedNameList.__init__)
+def test_alf_qualifiednamelist_constructor_exists():
+    assert callable(alf_QualifiedNameList.__init__)
 
 
-def test_alf::qualifiednamelist_constructor_args():
-    sig = inspect.signature(alf::QualifiedNameList.__init__)
+def test_alf_qualifiednamelist_constructor_args():
+    sig = inspect.signature(alf_QualifiedNameList.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_alf::acceptblock_is_not_abstract():
-    assert not inspect.isabstract(alf::AcceptBlock)
+def test_alf_acceptblock_is_not_abstract():
+    assert not inspect.isabstract(alf_AcceptBlock)
 
 
-def test_alf::acceptblock_constructor_exists():
-    assert callable(alf::AcceptBlock.__init__)
+def test_alf_acceptblock_constructor_exists():
+    assert callable(alf_AcceptBlock.__init__)
 
 
-def test_alf::acceptblock_constructor_args():
-    sig = inspect.signature(alf::AcceptBlock.__init__)
+def test_alf_acceptblock_constructor_args():
+    sig = inspect.signature(alf_AcceptBlock.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_alf::compoundacceptstatementcompletion_is_not_abstract():
-    assert not inspect.isabstract(alf::CompoundAcceptStatementCompletion)
+def test_alf_compoundacceptstatementcompletion_is_not_abstract():
+    assert not inspect.isabstract(alf_CompoundAcceptStatementCompletion)
 
 
-def test_alf::compoundacceptstatementcompletion_constructor_exists():
-    assert callable(alf::CompoundAcceptStatementCompletion.__init__)
+def test_alf_compoundacceptstatementcompletion_constructor_exists():
+    assert callable(alf_CompoundAcceptStatementCompletion.__init__)
 
 
-def test_alf::compoundacceptstatementcompletion_constructor_args():
-    sig = inspect.signature(alf::CompoundAcceptStatementCompletion.__init__)
+def test_alf_compoundacceptstatementcompletion_constructor_args():
+    sig = inspect.signature(alf_CompoundAcceptStatementCompletion.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_alf::simpleacceptstatementcompletion_is_not_abstract():
-    assert not inspect.isabstract(alf::SimpleAcceptStatementCompletion)
+def test_alf_simpleacceptstatementcompletion_is_not_abstract():
+    assert not inspect.isabstract(alf_SimpleAcceptStatementCompletion)
 
 
-def test_alf::simpleacceptstatementcompletion_constructor_exists():
-    assert callable(alf::SimpleAcceptStatementCompletion.__init__)
+def test_alf_simpleacceptstatementcompletion_constructor_exists():
+    assert callable(alf_SimpleAcceptStatementCompletion.__init__)
 
 
-def test_alf::simpleacceptstatementcompletion_constructor_args():
-    sig = inspect.signature(alf::SimpleAcceptStatementCompletion.__init__)
+def test_alf_simpleacceptstatementcompletion_constructor_args():
+    sig = inspect.signature(alf_SimpleAcceptStatementCompletion.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_alf::acceptclause_is_not_abstract():
-    assert not inspect.isabstract(alf::AcceptClause)
+def test_alf_acceptclause_is_not_abstract():
+    assert not inspect.isabstract(alf_AcceptClause)
 
 
-def test_alf::acceptclause_constructor_exists():
-    assert callable(alf::AcceptClause.__init__)
+def test_alf_acceptclause_constructor_exists():
+    assert callable(alf_AcceptClause.__init__)
 
 
-def test_alf::acceptclause_constructor_args():
-    sig = inspect.signature(alf::AcceptClause.__init__)
+def test_alf_acceptclause_constructor_args():
+    sig = inspect.signature(alf_AcceptClause.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_alf::acceptclause_has_name():
-    assert hasattr(alf::AcceptClause, "name")
+def test_alf_acceptclause_has_name():
+    assert hasattr(alf_AcceptClause, "name")
     descriptor = None
-    for klass in alf::AcceptClause.__mro__:
+    for klass in alf_AcceptClause.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -302,23 +302,23 @@ def test_alf::acceptclause_has_name():
 
 
 
-def test_alf::loopvariabledefinition_is_not_abstract():
-    assert not inspect.isabstract(alf::LoopVariableDefinition)
+def test_alf_loopvariabledefinition_is_not_abstract():
+    assert not inspect.isabstract(alf_LoopVariableDefinition)
 
 
-def test_alf::loopvariabledefinition_constructor_exists():
-    assert callable(alf::LoopVariableDefinition.__init__)
+def test_alf_loopvariabledefinition_constructor_exists():
+    assert callable(alf_LoopVariableDefinition.__init__)
 
 
-def test_alf::loopvariabledefinition_constructor_args():
-    sig = inspect.signature(alf::LoopVariableDefinition.__init__)
+def test_alf_loopvariabledefinition_constructor_args():
+    sig = inspect.signature(alf_LoopVariableDefinition.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_alf::loopvariabledefinition_has_name():
-    assert hasattr(alf::LoopVariableDefinition, "name")
+def test_alf_loopvariabledefinition_has_name():
+    assert hasattr(alf_LoopVariableDefinition, "name")
     descriptor = None
-    for klass in alf::LoopVariableDefinition.__mro__:
+    for klass in alf_LoopVariableDefinition.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -326,159 +326,159 @@ def test_alf::loopvariabledefinition_has_name():
 
 
 
-def test_alf::forcontrol_is_not_abstract():
-    assert not inspect.isabstract(alf::ForControl)
+def test_alf_forcontrol_is_not_abstract():
+    assert not inspect.isabstract(alf_ForControl)
 
 
-def test_alf::forcontrol_constructor_exists():
-    assert callable(alf::ForControl.__init__)
+def test_alf_forcontrol_constructor_exists():
+    assert callable(alf_ForControl.__init__)
 
 
-def test_alf::forcontrol_constructor_args():
-    sig = inspect.signature(alf::ForControl.__init__)
+def test_alf_forcontrol_constructor_args():
+    sig = inspect.signature(alf_ForControl.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_alf::nonemptystatementsequence_is_not_abstract():
-    assert not inspect.isabstract(alf::NonEmptyStatementSequence)
+def test_alf_nonemptystatementsequence_is_not_abstract():
+    assert not inspect.isabstract(alf_NonEmptyStatementSequence)
 
 
-def test_alf::nonemptystatementsequence_constructor_exists():
-    assert callable(alf::NonEmptyStatementSequence.__init__)
+def test_alf_nonemptystatementsequence_constructor_exists():
+    assert callable(alf_NonEmptyStatementSequence.__init__)
 
 
-def test_alf::nonemptystatementsequence_constructor_args():
-    sig = inspect.signature(alf::NonEmptyStatementSequence.__init__)
+def test_alf_nonemptystatementsequence_constructor_args():
+    sig = inspect.signature(alf_NonEmptyStatementSequence.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_alf::switchcase_is_not_abstract():
-    assert not inspect.isabstract(alf::SwitchCase)
+def test_alf_switchcase_is_not_abstract():
+    assert not inspect.isabstract(alf_SwitchCase)
 
 
-def test_alf::switchcase_constructor_exists():
-    assert callable(alf::SwitchCase.__init__)
+def test_alf_switchcase_constructor_exists():
+    assert callable(alf_SwitchCase.__init__)
 
 
-def test_alf::switchcase_constructor_args():
-    sig = inspect.signature(alf::SwitchCase.__init__)
+def test_alf_switchcase_constructor_args():
+    sig = inspect.signature(alf_SwitchCase.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_alf::switchdefaultclause_is_not_abstract():
-    assert not inspect.isabstract(alf::SwitchDefaultClause)
+def test_alf_switchdefaultclause_is_not_abstract():
+    assert not inspect.isabstract(alf_SwitchDefaultClause)
 
 
-def test_alf::switchdefaultclause_constructor_exists():
-    assert callable(alf::SwitchDefaultClause.__init__)
+def test_alf_switchdefaultclause_constructor_exists():
+    assert callable(alf_SwitchDefaultClause.__init__)
 
 
-def test_alf::switchdefaultclause_constructor_args():
-    sig = inspect.signature(alf::SwitchDefaultClause.__init__)
+def test_alf_switchdefaultclause_constructor_args():
+    sig = inspect.signature(alf_SwitchDefaultClause.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_alf::switchclause_is_not_abstract():
-    assert not inspect.isabstract(alf::SwitchClause)
+def test_alf_switchclause_is_not_abstract():
+    assert not inspect.isabstract(alf_SwitchClause)
 
 
-def test_alf::switchclause_constructor_exists():
-    assert callable(alf::SwitchClause.__init__)
+def test_alf_switchclause_constructor_exists():
+    assert callable(alf_SwitchClause.__init__)
 
 
-def test_alf::switchclause_constructor_args():
-    sig = inspect.signature(alf::SwitchClause.__init__)
+def test_alf_switchclause_constructor_args():
+    sig = inspect.signature(alf_SwitchClause.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_alf::nonfinalclause_is_not_abstract():
-    assert not inspect.isabstract(alf::NonFinalClause)
+def test_alf_nonfinalclause_is_not_abstract():
+    assert not inspect.isabstract(alf_NonFinalClause)
 
 
-def test_alf::nonfinalclause_constructor_exists():
-    assert callable(alf::NonFinalClause.__init__)
+def test_alf_nonfinalclause_constructor_exists():
+    assert callable(alf_NonFinalClause.__init__)
 
 
-def test_alf::nonfinalclause_constructor_args():
-    sig = inspect.signature(alf::NonFinalClause.__init__)
+def test_alf_nonfinalclause_constructor_args():
+    sig = inspect.signature(alf_NonFinalClause.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_alf::concurrentclauses_is_not_abstract():
-    assert not inspect.isabstract(alf::ConcurrentClauses)
+def test_alf_concurrentclauses_is_not_abstract():
+    assert not inspect.isabstract(alf_ConcurrentClauses)
 
 
-def test_alf::concurrentclauses_constructor_exists():
-    assert callable(alf::ConcurrentClauses.__init__)
+def test_alf_concurrentclauses_constructor_exists():
+    assert callable(alf_ConcurrentClauses.__init__)
 
 
-def test_alf::concurrentclauses_constructor_args():
-    sig = inspect.signature(alf::ConcurrentClauses.__init__)
+def test_alf_concurrentclauses_constructor_args():
+    sig = inspect.signature(alf_ConcurrentClauses.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_alf::finalclause_is_not_abstract():
-    assert not inspect.isabstract(alf::FinalClause)
+def test_alf_finalclause_is_not_abstract():
+    assert not inspect.isabstract(alf_FinalClause)
 
 
-def test_alf::finalclause_constructor_exists():
-    assert callable(alf::FinalClause.__init__)
+def test_alf_finalclause_constructor_exists():
+    assert callable(alf_FinalClause.__init__)
 
 
-def test_alf::finalclause_constructor_args():
-    sig = inspect.signature(alf::FinalClause.__init__)
+def test_alf_finalclause_constructor_args():
+    sig = inspect.signature(alf_FinalClause.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_alf::sequentialclauses_is_not_abstract():
-    assert not inspect.isabstract(alf::SequentialClauses)
+def test_alf_sequentialclauses_is_not_abstract():
+    assert not inspect.isabstract(alf_SequentialClauses)
 
 
-def test_alf::sequentialclauses_constructor_exists():
-    assert callable(alf::SequentialClauses.__init__)
+def test_alf_sequentialclauses_constructor_exists():
+    assert callable(alf_SequentialClauses.__init__)
 
 
-def test_alf::sequentialclauses_constructor_args():
-    sig = inspect.signature(alf::SequentialClauses.__init__)
+def test_alf_sequentialclauses_constructor_args():
+    sig = inspect.signature(alf_SequentialClauses.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_alf::annotation_is_not_abstract():
-    assert not inspect.isabstract(alf::Annotation)
+def test_alf_annotation_is_not_abstract():
+    assert not inspect.isabstract(alf_Annotation)
 
 
-def test_alf::annotation_constructor_exists():
-    assert callable(alf::Annotation.__init__)
+def test_alf_annotation_constructor_exists():
+    assert callable(alf_Annotation.__init__)
 
 
-def test_alf::annotation_constructor_args():
-    sig = inspect.signature(alf::Annotation.__init__)
+def test_alf_annotation_constructor_args():
+    sig = inspect.signature(alf_Annotation.__init__)
     params = list(sig.parameters.keys())
     assert "args" in params, "Missing parameter 'args'"
     assert "kind" in params, "Missing parameter 'kind'"
 
-def test_alf::annotation_has_args():
-    assert hasattr(alf::Annotation, "args")
+def test_alf_annotation_has_args():
+    assert hasattr(alf_Annotation, "args")
     descriptor = None
-    for klass in alf::Annotation.__mro__:
+    for klass in alf_Annotation.__mro__:
         if "args" in klass.__dict__:
             descriptor = klass.__dict__["args"]
             break
     assert isinstance(descriptor, property)
 
-def test_alf::annotation_has_kind():
-    assert hasattr(alf::Annotation, "kind")
+def test_alf_annotation_has_kind():
+    assert hasattr(alf_Annotation, "kind")
     descriptor = None
-    for klass in alf::Annotation.__mro__:
+    for klass in alf_Annotation.__mro__:
         if "kind" in klass.__dict__:
             descriptor = klass.__dict__["kind"]
             break
@@ -500,243 +500,257 @@ def test_statement_constructor_args():
 
 
 
-def test_alf::emptystatement_is_not_abstract():
-    assert not inspect.isabstract(alf::EmptyStatement)
+def test_alf_thisinvocationstatement_is_not_abstract():
+    assert not inspect.isabstract(alf_ThisInvocationStatement)
 
 
-def test_alf::emptystatement_constructor_exists():
-    assert callable(alf::EmptyStatement.__init__)
+def test_alf_thisinvocationstatement_constructor_exists():
+    assert callable(alf_ThisInvocationStatement.__init__)
 
 
-def test_alf::emptystatement_constructor_args():
-    sig = inspect.signature(alf::EmptyStatement.__init__)
+def test_alf_thisinvocationstatement_constructor_args():
+    sig = inspect.signature(alf_ThisInvocationStatement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_alf::superinvocationstatement_is_not_abstract():
-    assert not inspect.isabstract(alf::SuperInvocationStatement)
+def test_alf_emptystatement_is_not_abstract():
+    assert not inspect.isabstract(alf_EmptyStatement)
 
 
-def test_alf::superinvocationstatement_constructor_exists():
-    assert callable(alf::SuperInvocationStatement.__init__)
+def test_alf_emptystatement_constructor_exists():
+    assert callable(alf_EmptyStatement.__init__)
 
 
-def test_alf::superinvocationstatement_constructor_args():
-    sig = inspect.signature(alf::SuperInvocationStatement.__init__)
+def test_alf_emptystatement_constructor_args():
+    sig = inspect.signature(alf_EmptyStatement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_alf::acceptstatement_is_not_abstract():
-    assert not inspect.isabstract(alf::AcceptStatement)
+def test_alf_breakstatement_is_not_abstract():
+    assert not inspect.isabstract(alf_BreakStatement)
 
 
-def test_alf::acceptstatement_constructor_exists():
-    assert callable(alf::AcceptStatement.__init__)
+def test_alf_breakstatement_constructor_exists():
+    assert callable(alf_BreakStatement.__init__)
 
 
-def test_alf::acceptstatement_constructor_args():
-    sig = inspect.signature(alf::AcceptStatement.__init__)
+def test_alf_breakstatement_constructor_args():
+    sig = inspect.signature(alf_BreakStatement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_alf::dostatement_is_not_abstract():
-    assert not inspect.isabstract(alf::DoStatement)
+def test_alf_forstatement_is_not_abstract():
+    assert not inspect.isabstract(alf_ForStatement)
 
 
-def test_alf::dostatement_constructor_exists():
-    assert callable(alf::DoStatement.__init__)
+def test_alf_forstatement_constructor_exists():
+    assert callable(alf_ForStatement.__init__)
 
 
-def test_alf::dostatement_constructor_args():
-    sig = inspect.signature(alf::DoStatement.__init__)
+def test_alf_forstatement_constructor_args():
+    sig = inspect.signature(alf_ForStatement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_alf::returnstatement_is_not_abstract():
-    assert not inspect.isabstract(alf::ReturnStatement)
+def test_alf_blockstatement_is_not_abstract():
+    assert not inspect.isabstract(alf_BlockStatement)
 
 
-def test_alf::returnstatement_constructor_exists():
-    assert callable(alf::ReturnStatement.__init__)
+def test_alf_blockstatement_constructor_exists():
+    assert callable(alf_BlockStatement.__init__)
 
 
-def test_alf::returnstatement_constructor_args():
-    sig = inspect.signature(alf::ReturnStatement.__init__)
+def test_alf_blockstatement_constructor_args():
+    sig = inspect.signature(alf_BlockStatement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_alf::whilestatement_is_not_abstract():
-    assert not inspect.isabstract(alf::WhileStatement)
+def test_alf_acceptstatement_is_not_abstract():
+    assert not inspect.isabstract(alf_AcceptStatement)
 
 
-def test_alf::whilestatement_constructor_exists():
-    assert callable(alf::WhileStatement.__init__)
+def test_alf_acceptstatement_constructor_exists():
+    assert callable(alf_AcceptStatement.__init__)
 
 
-def test_alf::whilestatement_constructor_args():
-    sig = inspect.signature(alf::WhileStatement.__init__)
+def test_alf_acceptstatement_constructor_args():
+    sig = inspect.signature(alf_AcceptStatement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_alf::blockstatement_is_not_abstract():
-    assert not inspect.isabstract(alf::BlockStatement)
+def test_alf_annotatedstatement_is_not_abstract():
+    assert not inspect.isabstract(alf_AnnotatedStatement)
 
 
-def test_alf::blockstatement_constructor_exists():
-    assert callable(alf::BlockStatement.__init__)
+def test_alf_annotatedstatement_constructor_exists():
+    assert callable(alf_AnnotatedStatement.__init__)
 
 
-def test_alf::blockstatement_constructor_args():
-    sig = inspect.signature(alf::BlockStatement.__init__)
+def test_alf_annotatedstatement_constructor_args():
+    sig = inspect.signature(alf_AnnotatedStatement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_alf::thisinvocationstatement_is_not_abstract():
-    assert not inspect.isabstract(alf::ThisInvocationStatement)
+def test_alf_switchstatement_is_not_abstract():
+    assert not inspect.isabstract(alf_SwitchStatement)
 
 
-def test_alf::thisinvocationstatement_constructor_exists():
-    assert callable(alf::ThisInvocationStatement.__init__)
+def test_alf_switchstatement_constructor_exists():
+    assert callable(alf_SwitchStatement.__init__)
 
 
-def test_alf::thisinvocationstatement_constructor_args():
-    sig = inspect.signature(alf::ThisInvocationStatement.__init__)
+def test_alf_switchstatement_constructor_args():
+    sig = inspect.signature(alf_SwitchStatement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_alf::invocationorassignementordeclarationstatement_is_not_abstract():
-    assert not inspect.isabstract(alf::InvocationOrAssignementOrDeclarationStatement)
+def test_alf_invocationorassignementordeclarationstatement_is_not_abstract():
+    assert not inspect.isabstract(alf_InvocationOrAssignementOrDeclarationStatement)
 
 
-def test_alf::invocationorassignementordeclarationstatement_constructor_exists():
-    assert callable(alf::InvocationOrAssignementOrDeclarationStatement.__init__)
+def test_alf_invocationorassignementordeclarationstatement_constructor_exists():
+    assert callable(alf_InvocationOrAssignementOrDeclarationStatement.__init__)
 
 
-def test_alf::invocationorassignementordeclarationstatement_constructor_args():
-    sig = inspect.signature(alf::InvocationOrAssignementOrDeclarationStatement.__init__)
+def test_alf_invocationorassignementordeclarationstatement_constructor_args():
+    sig = inspect.signature(alf_InvocationOrAssignementOrDeclarationStatement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_alf::breakstatement_is_not_abstract():
-    assert not inspect.isabstract(alf::BreakStatement)
+def test_alf_returnstatement_is_not_abstract():
+    assert not inspect.isabstract(alf_ReturnStatement)
 
 
-def test_alf::breakstatement_constructor_exists():
-    assert callable(alf::BreakStatement.__init__)
+def test_alf_returnstatement_constructor_exists():
+    assert callable(alf_ReturnStatement.__init__)
 
 
-def test_alf::breakstatement_constructor_args():
-    sig = inspect.signature(alf::BreakStatement.__init__)
+def test_alf_returnstatement_constructor_args():
+    sig = inspect.signature(alf_ReturnStatement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_alf::forstatement_is_not_abstract():
-    assert not inspect.isabstract(alf::ForStatement)
+def test_alf_superinvocationstatement_is_not_abstract():
+    assert not inspect.isabstract(alf_SuperInvocationStatement)
 
 
-def test_alf::forstatement_constructor_exists():
-    assert callable(alf::ForStatement.__init__)
+def test_alf_superinvocationstatement_constructor_exists():
+    assert callable(alf_SuperInvocationStatement.__init__)
 
 
-def test_alf::forstatement_constructor_args():
-    sig = inspect.signature(alf::ForStatement.__init__)
+def test_alf_superinvocationstatement_constructor_args():
+    sig = inspect.signature(alf_SuperInvocationStatement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_alf::switchstatement_is_not_abstract():
-    assert not inspect.isabstract(alf::SwitchStatement)
+def test_alf_classifystatement_is_not_abstract():
+    assert not inspect.isabstract(alf_ClassifyStatement)
 
 
-def test_alf::switchstatement_constructor_exists():
-    assert callable(alf::SwitchStatement.__init__)
+def test_alf_classifystatement_constructor_exists():
+    assert callable(alf_ClassifyStatement.__init__)
 
 
-def test_alf::switchstatement_constructor_args():
-    sig = inspect.signature(alf::SwitchStatement.__init__)
+def test_alf_classifystatement_constructor_args():
+    sig = inspect.signature(alf_ClassifyStatement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_alf::classifystatement_is_not_abstract():
-    assert not inspect.isabstract(alf::ClassifyStatement)
+def test_alf_whilestatement_is_not_abstract():
+    assert not inspect.isabstract(alf_WhileStatement)
 
 
-def test_alf::classifystatement_constructor_exists():
-    assert callable(alf::ClassifyStatement.__init__)
+def test_alf_whilestatement_constructor_exists():
+    assert callable(alf_WhileStatement.__init__)
 
 
-def test_alf::classifystatement_constructor_args():
-    sig = inspect.signature(alf::ClassifyStatement.__init__)
+def test_alf_whilestatement_constructor_args():
+    sig = inspect.signature(alf_WhileStatement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_alf::ifstatement_is_not_abstract():
-    assert not inspect.isabstract(alf::IfStatement)
+def test_alf_dostatement_is_not_abstract():
+    assert not inspect.isabstract(alf_DoStatement)
 
 
-def test_alf::ifstatement_constructor_exists():
-    assert callable(alf::IfStatement.__init__)
+def test_alf_dostatement_constructor_exists():
+    assert callable(alf_DoStatement.__init__)
 
 
-def test_alf::ifstatement_constructor_args():
-    sig = inspect.signature(alf::IfStatement.__init__)
+def test_alf_dostatement_constructor_args():
+    sig = inspect.signature(alf_DoStatement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_alf::annotatedstatement_is_not_abstract():
-    assert not inspect.isabstract(alf::AnnotatedStatement)
+def test_alf_ifstatement_is_not_abstract():
+    assert not inspect.isabstract(alf_IfStatement)
 
 
-def test_alf::annotatedstatement_constructor_exists():
-    assert callable(alf::AnnotatedStatement.__init__)
+def test_alf_ifstatement_constructor_exists():
+    assert callable(alf_IfStatement.__init__)
 
 
-def test_alf::annotatedstatement_constructor_args():
-    sig = inspect.signature(alf::AnnotatedStatement.__init__)
+def test_alf_ifstatement_constructor_args():
+    sig = inspect.signature(alf_IfStatement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_alf::inlinestatement_is_not_abstract():
-    assert not inspect.isabstract(alf::InlineStatement)
+def test_alf_instancecreationinvocationstatement_is_not_abstract():
+    assert not inspect.isabstract(alf_InstanceCreationInvocationStatement)
 
 
-def test_alf::inlinestatement_constructor_exists():
-    assert callable(alf::InlineStatement.__init__)
+def test_alf_instancecreationinvocationstatement_constructor_exists():
+    assert callable(alf_InstanceCreationInvocationStatement.__init__)
 
 
-def test_alf::inlinestatement_constructor_args():
-    sig = inspect.signature(alf::InlineStatement.__init__)
+def test_alf_instancecreationinvocationstatement_constructor_args():
+    sig = inspect.signature(alf_InstanceCreationInvocationStatement.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_alf_inlinestatement_is_not_abstract():
+    assert not inspect.isabstract(alf_InlineStatement)
+
+
+def test_alf_inlinestatement_constructor_exists():
+    assert callable(alf_InlineStatement.__init__)
+
+
+def test_alf_inlinestatement_constructor_args():
+    sig = inspect.signature(alf_InlineStatement.__init__)
     params = list(sig.parameters.keys())
     assert "langageName" in params, "Missing parameter 'langageName'"
     assert "body" in params, "Missing parameter 'body'"
 
-def test_alf::inlinestatement_has_langageName():
-    assert hasattr(alf::InlineStatement, "langageName")
+def test_alf_inlinestatement_has_langageName():
+    assert hasattr(alf_InlineStatement, "langageName")
     descriptor = None
-    for klass in alf::InlineStatement.__mro__:
+    for klass in alf_InlineStatement.__mro__:
         if "langageName" in klass.__dict__:
             descriptor = klass.__dict__["langageName"]
             break
     assert isinstance(descriptor, property)
 
-def test_alf::inlinestatement_has_body():
-    assert hasattr(alf::InlineStatement, "body")
+def test_alf_inlinestatement_has_body():
+    assert hasattr(alf_InlineStatement, "body")
     descriptor = None
-    for klass in alf::InlineStatement.__mro__:
+    for klass in alf_InlineStatement.__mro__:
         if "body" in klass.__dict__:
             descriptor = klass.__dict__["body"]
             break
@@ -744,23 +758,23 @@ def test_alf::inlinestatement_has_body():
 
 
 
-def test_alf::documentedstatement_is_not_abstract():
-    assert not inspect.isabstract(alf::DocumentedStatement)
+def test_alf_documentedstatement_is_not_abstract():
+    assert not inspect.isabstract(alf_DocumentedStatement)
 
 
-def test_alf::documentedstatement_constructor_exists():
-    assert callable(alf::DocumentedStatement.__init__)
+def test_alf_documentedstatement_constructor_exists():
+    assert callable(alf_DocumentedStatement.__init__)
 
 
-def test_alf::documentedstatement_constructor_args():
-    sig = inspect.signature(alf::DocumentedStatement.__init__)
+def test_alf_documentedstatement_constructor_args():
+    sig = inspect.signature(alf_DocumentedStatement.__init__)
     params = list(sig.parameters.keys())
     assert "comment" in params, "Missing parameter 'comment'"
 
-def test_alf::documentedstatement_has_comment():
-    assert hasattr(alf::DocumentedStatement, "comment")
+def test_alf_documentedstatement_has_comment():
+    assert hasattr(alf_DocumentedStatement, "comment")
     descriptor = None
-    for klass in alf::DocumentedStatement.__mro__:
+    for klass in alf_DocumentedStatement.__mro__:
         if "comment" in klass.__dict__:
             descriptor = klass.__dict__["comment"]
             break
@@ -768,61 +782,61 @@ def test_alf::documentedstatement_has_comment():
 
 
 
-def test_alf::statementsequence_is_not_abstract():
-    assert not inspect.isabstract(alf::StatementSequence)
+def test_alf_statementsequence_is_not_abstract():
+    assert not inspect.isabstract(alf_StatementSequence)
 
 
-def test_alf::statementsequence_constructor_exists():
-    assert callable(alf::StatementSequence.__init__)
+def test_alf_statementsequence_constructor_exists():
+    assert callable(alf_StatementSequence.__init__)
 
 
-def test_alf::statementsequence_constructor_args():
-    sig = inspect.signature(alf::StatementSequence.__init__)
+def test_alf_statementsequence_constructor_args():
+    sig = inspect.signature(alf_StatementSequence.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_alf::sequenceelement_is_not_abstract():
-    assert not inspect.isabstract(alf::SequenceElement)
+def test_alf_sequenceelement_is_not_abstract():
+    assert not inspect.isabstract(alf_SequenceElement)
 
 
-def test_alf::sequenceelement_constructor_exists():
-    assert callable(alf::SequenceElement.__init__)
+def test_alf_sequenceelement_constructor_exists():
+    assert callable(alf_SequenceElement.__init__)
 
 
-def test_alf::sequenceelement_constructor_args():
-    sig = inspect.signature(alf::SequenceElement.__init__)
+def test_alf_sequenceelement_constructor_args():
+    sig = inspect.signature(alf_SequenceElement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_alf::localnamedeclarationstatement_is_not_abstract():
-    assert not inspect.isabstract(alf::LocalNameDeclarationStatement)
+def test_alf_localnamedeclarationstatement_is_not_abstract():
+    assert not inspect.isabstract(alf_LocalNameDeclarationStatement)
 
 
-def test_alf::localnamedeclarationstatement_constructor_exists():
-    assert callable(alf::LocalNameDeclarationStatement.__init__)
+def test_alf_localnamedeclarationstatement_constructor_exists():
+    assert callable(alf_LocalNameDeclarationStatement.__init__)
 
 
-def test_alf::localnamedeclarationstatement_constructor_args():
-    sig = inspect.signature(alf::LocalNameDeclarationStatement.__init__)
+def test_alf_localnamedeclarationstatement_constructor_args():
+    sig = inspect.signature(alf_LocalNameDeclarationStatement.__init__)
     params = list(sig.parameters.keys())
     assert "multiplicityIndicator" in params, "Missing parameter 'multiplicityIndicator'"
     assert "varName" in params, "Missing parameter 'varName'"
 
-def test_alf::localnamedeclarationstatement_has_multiplicityIndicator():
-    assert hasattr(alf::LocalNameDeclarationStatement, "multiplicityIndicator")
+def test_alf_localnamedeclarationstatement_has_multiplicityIndicator():
+    assert hasattr(alf_LocalNameDeclarationStatement, "multiplicityIndicator")
     descriptor = None
-    for klass in alf::LocalNameDeclarationStatement.__mro__:
+    for klass in alf_LocalNameDeclarationStatement.__mro__:
         if "multiplicityIndicator" in klass.__dict__:
             descriptor = klass.__dict__["multiplicityIndicator"]
             break
     assert isinstance(descriptor, property)
 
-def test_alf::localnamedeclarationstatement_has_varName():
-    assert hasattr(alf::LocalNameDeclarationStatement, "varName")
+def test_alf_localnamedeclarationstatement_has_varName():
+    assert hasattr(alf_LocalNameDeclarationStatement, "varName")
     descriptor = None
-    for klass in alf::LocalNameDeclarationStatement.__mro__:
+    for klass in alf_LocalNameDeclarationStatement.__mro__:
         if "varName" in klass.__dict__:
             descriptor = klass.__dict__["varName"]
             break
@@ -830,51 +844,51 @@ def test_alf::localnamedeclarationstatement_has_varName():
 
 
 
-def test_alf::partialsequenceconstructioncompletion_is_not_abstract():
-    assert not inspect.isabstract(alf::PartialSequenceConstructionCompletion)
+def test_alf_partialsequenceconstructioncompletion_is_not_abstract():
+    assert not inspect.isabstract(alf_PartialSequenceConstructionCompletion)
 
 
-def test_alf::partialsequenceconstructioncompletion_constructor_exists():
-    assert callable(alf::PartialSequenceConstructionCompletion.__init__)
+def test_alf_partialsequenceconstructioncompletion_constructor_exists():
+    assert callable(alf_PartialSequenceConstructionCompletion.__init__)
 
 
-def test_alf::partialsequenceconstructioncompletion_constructor_args():
-    sig = inspect.signature(alf::PartialSequenceConstructionCompletion.__init__)
+def test_alf_partialsequenceconstructioncompletion_constructor_args():
+    sig = inspect.signature(alf_PartialSequenceConstructionCompletion.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_alf::accesscompletion_is_not_abstract():
-    assert not inspect.isabstract(alf::AccessCompletion)
+def test_alf_accesscompletion_is_not_abstract():
+    assert not inspect.isabstract(alf_AccessCompletion)
 
 
-def test_alf::accesscompletion_constructor_exists():
-    assert callable(alf::AccessCompletion.__init__)
+def test_alf_accesscompletion_constructor_exists():
+    assert callable(alf_AccessCompletion.__init__)
 
 
-def test_alf::accesscompletion_constructor_args():
-    sig = inspect.signature(alf::AccessCompletion.__init__)
+def test_alf_accesscompletion_constructor_args():
+    sig = inspect.signature(alf_AccessCompletion.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_alf::instancecreationtupleelement_is_not_abstract():
-    assert not inspect.isabstract(alf::InstanceCreationTupleElement)
+def test_alf_instancecreationtupleelement_is_not_abstract():
+    assert not inspect.isabstract(alf_InstanceCreationTupleElement)
 
 
-def test_alf::instancecreationtupleelement_constructor_exists():
-    assert callable(alf::InstanceCreationTupleElement.__init__)
+def test_alf_instancecreationtupleelement_constructor_exists():
+    assert callable(alf_InstanceCreationTupleElement.__init__)
 
 
-def test_alf::instancecreationtupleelement_constructor_args():
-    sig = inspect.signature(alf::InstanceCreationTupleElement.__init__)
+def test_alf_instancecreationtupleelement_constructor_args():
+    sig = inspect.signature(alf_InstanceCreationTupleElement.__init__)
     params = list(sig.parameters.keys())
     assert "role" in params, "Missing parameter 'role'"
 
-def test_alf::instancecreationtupleelement_has_role():
-    assert hasattr(alf::InstanceCreationTupleElement, "role")
+def test_alf_instancecreationtupleelement_has_role():
+    assert hasattr(alf_InstanceCreationTupleElement, "role")
     descriptor = None
-    for klass in alf::InstanceCreationTupleElement.__mro__:
+    for klass in alf_InstanceCreationTupleElement.__mro__:
         if "role" in klass.__dict__:
             descriptor = klass.__dict__["role"]
             break
@@ -882,30 +896,30 @@ def test_alf::instancecreationtupleelement_has_role():
 
 
 
-def test_alf::instancecreationtuple_is_not_abstract():
-    assert not inspect.isabstract(alf::InstanceCreationTuple)
+def test_alf_instancecreationtuple_is_not_abstract():
+    assert not inspect.isabstract(alf_InstanceCreationTuple)
 
 
-def test_alf::instancecreationtuple_constructor_exists():
-    assert callable(alf::InstanceCreationTuple.__init__)
+def test_alf_instancecreationtuple_constructor_exists():
+    assert callable(alf_InstanceCreationTuple.__init__)
 
 
-def test_alf::instancecreationtuple_constructor_args():
-    sig = inspect.signature(alf::InstanceCreationTuple.__init__)
+def test_alf_instancecreationtuple_constructor_args():
+    sig = inspect.signature(alf_InstanceCreationTuple.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_alf::nonliteralvaluespecification_is_not_abstract():
-    assert not inspect.isabstract(alf::NonLiteralValueSpecification)
+def test_alf_nonliteralvaluespecification_is_not_abstract():
+    assert not inspect.isabstract(alf_NonLiteralValueSpecification)
 
 
-def test_alf::nonliteralvaluespecification_constructor_exists():
-    assert callable(alf::NonLiteralValueSpecification.__init__)
+def test_alf_nonliteralvaluespecification_constructor_exists():
+    assert callable(alf_NonLiteralValueSpecification.__init__)
 
 
-def test_alf::nonliteralvaluespecification_constructor_args():
-    sig = inspect.signature(alf::NonLiteralValueSpecification.__init__)
+def test_alf_nonliteralvaluespecification_constructor_args():
+    sig = inspect.signature(alf_NonLiteralValueSpecification.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -924,23 +938,37 @@ def test_sequenceexpansionexpression_constructor_args():
 
 
 
-def test_alf::forallorexistsoroneoperation_is_not_abstract():
-    assert not inspect.isabstract(alf::ForAllOrExistsOrOneOperation)
+def test_alf_isuniqueoperation_is_not_abstract():
+    assert not inspect.isabstract(alf_IsUniqueOperation)
 
 
-def test_alf::forallorexistsoroneoperation_constructor_exists():
-    assert callable(alf::ForAllOrExistsOrOneOperation.__init__)
+def test_alf_isuniqueoperation_constructor_exists():
+    assert callable(alf_IsUniqueOperation.__init__)
 
 
-def test_alf::forallorexistsoroneoperation_constructor_args():
-    sig = inspect.signature(alf::ForAllOrExistsOrOneOperation.__init__)
+def test_alf_isuniqueoperation_constructor_args():
+    sig = inspect.signature(alf_IsUniqueOperation.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_alf_forallorexistsoroneoperation_is_not_abstract():
+    assert not inspect.isabstract(alf_ForAllOrExistsOrOneOperation)
+
+
+def test_alf_forallorexistsoroneoperation_constructor_exists():
+    assert callable(alf_ForAllOrExistsOrOneOperation.__init__)
+
+
+def test_alf_forallorexistsoroneoperation_constructor_args():
+    sig = inspect.signature(alf_ForAllOrExistsOrOneOperation.__init__)
     params = list(sig.parameters.keys())
     assert "op" in params, "Missing parameter 'op'"
 
-def test_alf::forallorexistsoroneoperation_has_op():
-    assert hasattr(alf::ForAllOrExistsOrOneOperation, "op")
+def test_alf_forallorexistsoroneoperation_has_op():
+    assert hasattr(alf_ForAllOrExistsOrOneOperation, "op")
     descriptor = None
-    for klass in alf::ForAllOrExistsOrOneOperation.__mro__:
+    for klass in alf_ForAllOrExistsOrOneOperation.__mro__:
         if "op" in klass.__dict__:
             descriptor = klass.__dict__["op"]
             break
@@ -948,23 +976,23 @@ def test_alf::forallorexistsoroneoperation_has_op():
 
 
 
-def test_alf::collectoriterateoperation_is_not_abstract():
-    assert not inspect.isabstract(alf::CollectOrIterateOperation)
+def test_alf_collectoriterateoperation_is_not_abstract():
+    assert not inspect.isabstract(alf_CollectOrIterateOperation)
 
 
-def test_alf::collectoriterateoperation_constructor_exists():
-    assert callable(alf::CollectOrIterateOperation.__init__)
+def test_alf_collectoriterateoperation_constructor_exists():
+    assert callable(alf_CollectOrIterateOperation.__init__)
 
 
-def test_alf::collectoriterateoperation_constructor_args():
-    sig = inspect.signature(alf::CollectOrIterateOperation.__init__)
+def test_alf_collectoriterateoperation_constructor_args():
+    sig = inspect.signature(alf_CollectOrIterateOperation.__init__)
     params = list(sig.parameters.keys())
     assert "op" in params, "Missing parameter 'op'"
 
-def test_alf::collectoriterateoperation_has_op():
-    assert hasattr(alf::CollectOrIterateOperation, "op")
+def test_alf_collectoriterateoperation_has_op():
+    assert hasattr(alf_CollectOrIterateOperation, "op")
     descriptor = None
-    for klass in alf::CollectOrIterateOperation.__mro__:
+    for klass in alf_CollectOrIterateOperation.__mro__:
         if "op" in klass.__dict__:
             descriptor = klass.__dict__["op"]
             break
@@ -972,37 +1000,23 @@ def test_alf::collectoriterateoperation_has_op():
 
 
 
-def test_alf::isuniqueoperation_is_not_abstract():
-    assert not inspect.isabstract(alf::IsUniqueOperation)
+def test_alf_selectorrejectoperation_is_not_abstract():
+    assert not inspect.isabstract(alf_SelectOrRejectOperation)
 
 
-def test_alf::isuniqueoperation_constructor_exists():
-    assert callable(alf::IsUniqueOperation.__init__)
+def test_alf_selectorrejectoperation_constructor_exists():
+    assert callable(alf_SelectOrRejectOperation.__init__)
 
 
-def test_alf::isuniqueoperation_constructor_args():
-    sig = inspect.signature(alf::IsUniqueOperation.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_alf::selectorrejectoperation_is_not_abstract():
-    assert not inspect.isabstract(alf::SelectOrRejectOperation)
-
-
-def test_alf::selectorrejectoperation_constructor_exists():
-    assert callable(alf::SelectOrRejectOperation.__init__)
-
-
-def test_alf::selectorrejectoperation_constructor_args():
-    sig = inspect.signature(alf::SelectOrRejectOperation.__init__)
+def test_alf_selectorrejectoperation_constructor_args():
+    sig = inspect.signature(alf_SelectOrRejectOperation.__init__)
     params = list(sig.parameters.keys())
     assert "op" in params, "Missing parameter 'op'"
 
-def test_alf::selectorrejectoperation_has_op():
-    assert hasattr(alf::SelectOrRejectOperation, "op")
+def test_alf_selectorrejectoperation_has_op():
+    assert hasattr(alf_SelectOrRejectOperation, "op")
     descriptor = None
-    for klass in alf::SelectOrRejectOperation.__mro__:
+    for klass in alf_SelectOrRejectOperation.__mro__:
         if "op" in klass.__dict__:
             descriptor = klass.__dict__["op"]
             break
@@ -1010,23 +1024,23 @@ def test_alf::selectorrejectoperation_has_op():
 
 
 
-def test_alf::linkoperationtupleelement_is_not_abstract():
-    assert not inspect.isabstract(alf::LinkOperationTupleElement)
+def test_alf_linkoperationtupleelement_is_not_abstract():
+    assert not inspect.isabstract(alf_LinkOperationTupleElement)
 
 
-def test_alf::linkoperationtupleelement_constructor_exists():
-    assert callable(alf::LinkOperationTupleElement.__init__)
+def test_alf_linkoperationtupleelement_constructor_exists():
+    assert callable(alf_LinkOperationTupleElement.__init__)
 
 
-def test_alf::linkoperationtupleelement_constructor_args():
-    sig = inspect.signature(alf::LinkOperationTupleElement.__init__)
+def test_alf_linkoperationtupleelement_constructor_args():
+    sig = inspect.signature(alf_LinkOperationTupleElement.__init__)
     params = list(sig.parameters.keys())
     assert "role" in params, "Missing parameter 'role'"
 
-def test_alf::linkoperationtupleelement_has_role():
-    assert hasattr(alf::LinkOperationTupleElement, "role")
+def test_alf_linkoperationtupleelement_has_role():
+    assert hasattr(alf_LinkOperationTupleElement, "role")
     descriptor = None
-    for klass in alf::LinkOperationTupleElement.__mro__:
+    for klass in alf_LinkOperationTupleElement.__mro__:
         if "role" in klass.__dict__:
             descriptor = klass.__dict__["role"]
             break
@@ -1034,16 +1048,16 @@ def test_alf::linkoperationtupleelement_has_role():
 
 
 
-def test_alf::linkoperationtuple_is_not_abstract():
-    assert not inspect.isabstract(alf::LinkOperationTuple)
+def test_alf_linkoperationtuple_is_not_abstract():
+    assert not inspect.isabstract(alf_LinkOperationTuple)
 
 
-def test_alf::linkoperationtuple_constructor_exists():
-    assert callable(alf::LinkOperationTuple.__init__)
+def test_alf_linkoperationtuple_constructor_exists():
+    assert callable(alf_LinkOperationTuple.__init__)
 
 
-def test_alf::linkoperationtuple_constructor_args():
-    sig = inspect.signature(alf::LinkOperationTuple.__init__)
+def test_alf_linkoperationtuple_constructor_args():
+    sig = inspect.signature(alf_LinkOperationTuple.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1062,109 +1076,23 @@ def test_suffixexpression_constructor_args():
 
 
 
-def test_alf::classextentexpression_is_not_abstract():
-    assert not inspect.isabstract(alf::ClassExtentExpression)
+def test_alf_linkoperationexpression_is_not_abstract():
+    assert not inspect.isabstract(alf_LinkOperationExpression)
 
 
-def test_alf::classextentexpression_constructor_exists():
-    assert callable(alf::ClassExtentExpression.__init__)
+def test_alf_linkoperationexpression_constructor_exists():
+    assert callable(alf_LinkOperationExpression.__init__)
 
 
-def test_alf::classextentexpression_constructor_args():
-    sig = inspect.signature(alf::ClassExtentExpression.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_alf::sequenceexpansionexpression_is_not_abstract():
-    assert not inspect.isabstract(alf::SequenceExpansionExpression)
-
-
-def test_alf::sequenceexpansionexpression_constructor_exists():
-    assert callable(alf::SequenceExpansionExpression.__init__)
-
-
-def test_alf::sequenceexpansionexpression_constructor_args():
-    sig = inspect.signature(alf::SequenceExpansionExpression.__init__)
-    params = list(sig.parameters.keys())
-    assert "name" in params, "Missing parameter 'name'"
-
-def test_alf::sequenceexpansionexpression_has_name():
-    assert hasattr(alf::SequenceExpansionExpression, "name")
-    descriptor = None
-    for klass in alf::SequenceExpansionExpression.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_alf::propertycallexpression_is_not_abstract():
-    assert not inspect.isabstract(alf::PropertyCallExpression)
-
-
-def test_alf::propertycallexpression_constructor_exists():
-    assert callable(alf::PropertyCallExpression.__init__)
-
-
-def test_alf::propertycallexpression_constructor_args():
-    sig = inspect.signature(alf::PropertyCallExpression.__init__)
-    params = list(sig.parameters.keys())
-    assert "propertyName" in params, "Missing parameter 'propertyName'"
-
-def test_alf::propertycallexpression_has_propertyName():
-    assert hasattr(alf::PropertyCallExpression, "propertyName")
-    descriptor = None
-    for klass in alf::PropertyCallExpression.__mro__:
-        if "propertyName" in klass.__dict__:
-            descriptor = klass.__dict__["propertyName"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_alf::sequencereductionexpression_is_not_abstract():
-    assert not inspect.isabstract(alf::SequenceReductionExpression)
-
-
-def test_alf::sequencereductionexpression_constructor_exists():
-    assert callable(alf::SequenceReductionExpression.__init__)
-
-
-def test_alf::sequencereductionexpression_constructor_args():
-    sig = inspect.signature(alf::SequenceReductionExpression.__init__)
-    params = list(sig.parameters.keys())
-    assert "isOrdered" in params, "Missing parameter 'isOrdered'"
-
-def test_alf::sequencereductionexpression_has_isOrdered():
-    assert hasattr(alf::SequenceReductionExpression, "isOrdered")
-    descriptor = None
-    for klass in alf::SequenceReductionExpression.__mro__:
-        if "isOrdered" in klass.__dict__:
-            descriptor = klass.__dict__["isOrdered"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_alf::linkoperationexpression_is_not_abstract():
-    assert not inspect.isabstract(alf::LinkOperationExpression)
-
-
-def test_alf::linkoperationexpression_constructor_exists():
-    assert callable(alf::LinkOperationExpression.__init__)
-
-
-def test_alf::linkoperationexpression_constructor_args():
-    sig = inspect.signature(alf::LinkOperationExpression.__init__)
+def test_alf_linkoperationexpression_constructor_args():
+    sig = inspect.signature(alf_LinkOperationExpression.__init__)
     params = list(sig.parameters.keys())
     assert "kind" in params, "Missing parameter 'kind'"
 
-def test_alf::linkoperationexpression_has_kind():
-    assert hasattr(alf::LinkOperationExpression, "kind")
+def test_alf_linkoperationexpression_has_kind():
+    assert hasattr(alf_LinkOperationExpression, "kind")
     descriptor = None
-    for klass in alf::LinkOperationExpression.__mro__:
+    for klass in alf_LinkOperationExpression.__mro__:
         if "kind" in klass.__dict__:
             descriptor = klass.__dict__["kind"]
             break
@@ -1172,37 +1100,123 @@ def test_alf::linkoperationexpression_has_kind():
 
 
 
-def test_alf::sequenceoperationexpression_is_not_abstract():
-    assert not inspect.isabstract(alf::SequenceOperationExpression)
+def test_alf_classextentexpression_is_not_abstract():
+    assert not inspect.isabstract(alf_ClassExtentExpression)
 
 
-def test_alf::sequenceoperationexpression_constructor_exists():
-    assert callable(alf::SequenceOperationExpression.__init__)
+def test_alf_classextentexpression_constructor_exists():
+    assert callable(alf_ClassExtentExpression.__init__)
 
 
-def test_alf::sequenceoperationexpression_constructor_args():
-    sig = inspect.signature(alf::SequenceOperationExpression.__init__)
+def test_alf_classextentexpression_constructor_args():
+    sig = inspect.signature(alf_ClassExtentExpression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_alf::operationcallexpression_is_not_abstract():
-    assert not inspect.isabstract(alf::OperationCallExpression)
+def test_alf_sequenceexpansionexpression_is_not_abstract():
+    assert not inspect.isabstract(alf_SequenceExpansionExpression)
 
 
-def test_alf::operationcallexpression_constructor_exists():
-    assert callable(alf::OperationCallExpression.__init__)
+def test_alf_sequenceexpansionexpression_constructor_exists():
+    assert callable(alf_SequenceExpansionExpression.__init__)
 
 
-def test_alf::operationcallexpression_constructor_args():
-    sig = inspect.signature(alf::OperationCallExpression.__init__)
+def test_alf_sequenceexpansionexpression_constructor_args():
+    sig = inspect.signature(alf_SequenceExpansionExpression.__init__)
+    params = list(sig.parameters.keys())
+    assert "name" in params, "Missing parameter 'name'"
+
+def test_alf_sequenceexpansionexpression_has_name():
+    assert hasattr(alf_SequenceExpansionExpression, "name")
+    descriptor = None
+    for klass in alf_SequenceExpansionExpression.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_alf_sequenceoperationexpression_is_not_abstract():
+    assert not inspect.isabstract(alf_SequenceOperationExpression)
+
+
+def test_alf_sequenceoperationexpression_constructor_exists():
+    assert callable(alf_SequenceOperationExpression.__init__)
+
+
+def test_alf_sequenceoperationexpression_constructor_args():
+    sig = inspect.signature(alf_SequenceOperationExpression.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_alf_sequencereductionexpression_is_not_abstract():
+    assert not inspect.isabstract(alf_SequenceReductionExpression)
+
+
+def test_alf_sequencereductionexpression_constructor_exists():
+    assert callable(alf_SequenceReductionExpression.__init__)
+
+
+def test_alf_sequencereductionexpression_constructor_args():
+    sig = inspect.signature(alf_SequenceReductionExpression.__init__)
+    params = list(sig.parameters.keys())
+    assert "isOrdered" in params, "Missing parameter 'isOrdered'"
+
+def test_alf_sequencereductionexpression_has_isOrdered():
+    assert hasattr(alf_SequenceReductionExpression, "isOrdered")
+    descriptor = None
+    for klass in alf_SequenceReductionExpression.__mro__:
+        if "isOrdered" in klass.__dict__:
+            descriptor = klass.__dict__["isOrdered"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_alf_propertycallexpression_is_not_abstract():
+    assert not inspect.isabstract(alf_PropertyCallExpression)
+
+
+def test_alf_propertycallexpression_constructor_exists():
+    assert callable(alf_PropertyCallExpression.__init__)
+
+
+def test_alf_propertycallexpression_constructor_args():
+    sig = inspect.signature(alf_PropertyCallExpression.__init__)
+    params = list(sig.parameters.keys())
+    assert "propertyName" in params, "Missing parameter 'propertyName'"
+
+def test_alf_propertycallexpression_has_propertyName():
+    assert hasattr(alf_PropertyCallExpression, "propertyName")
+    descriptor = None
+    for klass in alf_PropertyCallExpression.__mro__:
+        if "propertyName" in klass.__dict__:
+            descriptor = klass.__dict__["propertyName"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_alf_operationcallexpression_is_not_abstract():
+    assert not inspect.isabstract(alf_OperationCallExpression)
+
+
+def test_alf_operationcallexpression_constructor_exists():
+    assert callable(alf_OperationCallExpression.__init__)
+
+
+def test_alf_operationcallexpression_constructor_args():
+    sig = inspect.signature(alf_OperationCallExpression.__init__)
     params = list(sig.parameters.keys())
     assert "operationName" in params, "Missing parameter 'operationName'"
 
-def test_alf::operationcallexpression_has_operationName():
-    assert hasattr(alf::OperationCallExpression, "operationName")
+def test_alf_operationcallexpression_has_operationName():
+    assert hasattr(alf_OperationCallExpression, "operationName")
     descriptor = None
-    for klass in alf::OperationCallExpression.__mro__:
+    for klass in alf_OperationCallExpression.__mro__:
         if "operationName" in klass.__dict__:
             descriptor = klass.__dict__["operationName"]
             break
@@ -1210,51 +1224,51 @@ def test_alf::operationcallexpression_has_operationName():
 
 
 
-def test_alf::valuespecification_is_not_abstract():
-    assert not inspect.isabstract(alf::ValueSpecification)
+def test_alf_valuespecification_is_not_abstract():
+    assert not inspect.isabstract(alf_ValueSpecification)
 
 
-def test_alf::valuespecification_constructor_exists():
-    assert callable(alf::ValueSpecification.__init__)
+def test_alf_valuespecification_constructor_exists():
+    assert callable(alf_ValueSpecification.__init__)
 
 
-def test_alf::valuespecification_constructor_args():
-    sig = inspect.signature(alf::ValueSpecification.__init__)
+def test_alf_valuespecification_constructor_args():
+    sig = inspect.signature(alf_ValueSpecification.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_alf::primaryexpression_is_not_abstract():
-    assert not inspect.isabstract(alf::PrimaryExpression)
+def test_alf_primaryexpression_is_not_abstract():
+    assert not inspect.isabstract(alf_PrimaryExpression)
 
 
-def test_alf::primaryexpression_constructor_exists():
-    assert callable(alf::PrimaryExpression.__init__)
+def test_alf_primaryexpression_constructor_exists():
+    assert callable(alf_PrimaryExpression.__init__)
 
 
-def test_alf::primaryexpression_constructor_args():
-    sig = inspect.signature(alf::PrimaryExpression.__init__)
+def test_alf_primaryexpression_constructor_args():
+    sig = inspect.signature(alf_PrimaryExpression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_alf::unaryexpression_is_not_abstract():
-    assert not inspect.isabstract(alf::UnaryExpression)
+def test_alf_unaryexpression_is_not_abstract():
+    assert not inspect.isabstract(alf_UnaryExpression)
 
 
-def test_alf::unaryexpression_constructor_exists():
-    assert callable(alf::UnaryExpression.__init__)
+def test_alf_unaryexpression_constructor_exists():
+    assert callable(alf_UnaryExpression.__init__)
 
 
-def test_alf::unaryexpression_constructor_args():
-    sig = inspect.signature(alf::UnaryExpression.__init__)
+def test_alf_unaryexpression_constructor_args():
+    sig = inspect.signature(alf_UnaryExpression.__init__)
     params = list(sig.parameters.keys())
     assert "op" in params, "Missing parameter 'op'"
 
-def test_alf::unaryexpression_has_op():
-    assert hasattr(alf::UnaryExpression, "op")
+def test_alf_unaryexpression_has_op():
+    assert hasattr(alf_UnaryExpression, "op")
     descriptor = None
-    for klass in alf::UnaryExpression.__mro__:
+    for klass in alf_UnaryExpression.__mro__:
         if "op" in klass.__dict__:
             descriptor = klass.__dict__["op"]
             break
@@ -1262,23 +1276,23 @@ def test_alf::unaryexpression_has_op():
 
 
 
-def test_alf::multiplicativeexpression_is_not_abstract():
-    assert not inspect.isabstract(alf::MultiplicativeExpression)
+def test_alf_multiplicativeexpression_is_not_abstract():
+    assert not inspect.isabstract(alf_MultiplicativeExpression)
 
 
-def test_alf::multiplicativeexpression_constructor_exists():
-    assert callable(alf::MultiplicativeExpression.__init__)
+def test_alf_multiplicativeexpression_constructor_exists():
+    assert callable(alf_MultiplicativeExpression.__init__)
 
 
-def test_alf::multiplicativeexpression_constructor_args():
-    sig = inspect.signature(alf::MultiplicativeExpression.__init__)
+def test_alf_multiplicativeexpression_constructor_args():
+    sig = inspect.signature(alf_MultiplicativeExpression.__init__)
     params = list(sig.parameters.keys())
     assert "op" in params, "Missing parameter 'op'"
 
-def test_alf::multiplicativeexpression_has_op():
-    assert hasattr(alf::MultiplicativeExpression, "op")
+def test_alf_multiplicativeexpression_has_op():
+    assert hasattr(alf_MultiplicativeExpression, "op")
     descriptor = None
-    for klass in alf::MultiplicativeExpression.__mro__:
+    for klass in alf_MultiplicativeExpression.__mro__:
         if "op" in klass.__dict__:
             descriptor = klass.__dict__["op"]
             break
@@ -1286,23 +1300,23 @@ def test_alf::multiplicativeexpression_has_op():
 
 
 
-def test_alf::additiveexpression_is_not_abstract():
-    assert not inspect.isabstract(alf::AdditiveExpression)
+def test_alf_additiveexpression_is_not_abstract():
+    assert not inspect.isabstract(alf_AdditiveExpression)
 
 
-def test_alf::additiveexpression_constructor_exists():
-    assert callable(alf::AdditiveExpression.__init__)
+def test_alf_additiveexpression_constructor_exists():
+    assert callable(alf_AdditiveExpression.__init__)
 
 
-def test_alf::additiveexpression_constructor_args():
-    sig = inspect.signature(alf::AdditiveExpression.__init__)
+def test_alf_additiveexpression_constructor_args():
+    sig = inspect.signature(alf_AdditiveExpression.__init__)
     params = list(sig.parameters.keys())
     assert "op" in params, "Missing parameter 'op'"
 
-def test_alf::additiveexpression_has_op():
-    assert hasattr(alf::AdditiveExpression, "op")
+def test_alf_additiveexpression_has_op():
+    assert hasattr(alf_AdditiveExpression, "op")
     descriptor = None
-    for klass in alf::AdditiveExpression.__mro__:
+    for klass in alf_AdditiveExpression.__mro__:
         if "op" in klass.__dict__:
             descriptor = klass.__dict__["op"]
             break
@@ -1310,23 +1324,23 @@ def test_alf::additiveexpression_has_op():
 
 
 
-def test_alf::shiftexpression_is_not_abstract():
-    assert not inspect.isabstract(alf::ShiftExpression)
+def test_alf_shiftexpression_is_not_abstract():
+    assert not inspect.isabstract(alf_ShiftExpression)
 
 
-def test_alf::shiftexpression_constructor_exists():
-    assert callable(alf::ShiftExpression.__init__)
+def test_alf_shiftexpression_constructor_exists():
+    assert callable(alf_ShiftExpression.__init__)
 
 
-def test_alf::shiftexpression_constructor_args():
-    sig = inspect.signature(alf::ShiftExpression.__init__)
+def test_alf_shiftexpression_constructor_args():
+    sig = inspect.signature(alf_ShiftExpression.__init__)
     params = list(sig.parameters.keys())
     assert "op" in params, "Missing parameter 'op'"
 
-def test_alf::shiftexpression_has_op():
-    assert hasattr(alf::ShiftExpression, "op")
+def test_alf_shiftexpression_has_op():
+    assert hasattr(alf_ShiftExpression, "op")
     descriptor = None
-    for klass in alf::ShiftExpression.__mro__:
+    for klass in alf_ShiftExpression.__mro__:
         if "op" in klass.__dict__:
             descriptor = klass.__dict__["op"]
             break
@@ -1334,23 +1348,23 @@ def test_alf::shiftexpression_has_op():
 
 
 
-def test_alf::classificationexpression_is_not_abstract():
-    assert not inspect.isabstract(alf::ClassificationExpression)
+def test_alf_classificationexpression_is_not_abstract():
+    assert not inspect.isabstract(alf_ClassificationExpression)
 
 
-def test_alf::classificationexpression_constructor_exists():
-    assert callable(alf::ClassificationExpression.__init__)
+def test_alf_classificationexpression_constructor_exists():
+    assert callable(alf_ClassificationExpression.__init__)
 
 
-def test_alf::classificationexpression_constructor_args():
-    sig = inspect.signature(alf::ClassificationExpression.__init__)
+def test_alf_classificationexpression_constructor_args():
+    sig = inspect.signature(alf_ClassificationExpression.__init__)
     params = list(sig.parameters.keys())
     assert "op" in params, "Missing parameter 'op'"
 
-def test_alf::classificationexpression_has_op():
-    assert hasattr(alf::ClassificationExpression, "op")
+def test_alf_classificationexpression_has_op():
+    assert hasattr(alf_ClassificationExpression, "op")
     descriptor = None
-    for klass in alf::ClassificationExpression.__mro__:
+    for klass in alf_ClassificationExpression.__mro__:
         if "op" in klass.__dict__:
             descriptor = klass.__dict__["op"]
             break
@@ -1358,23 +1372,23 @@ def test_alf::classificationexpression_has_op():
 
 
 
-def test_alf::equalityexpression_is_not_abstract():
-    assert not inspect.isabstract(alf::EqualityExpression)
+def test_alf_equalityexpression_is_not_abstract():
+    assert not inspect.isabstract(alf_EqualityExpression)
 
 
-def test_alf::equalityexpression_constructor_exists():
-    assert callable(alf::EqualityExpression.__init__)
+def test_alf_equalityexpression_constructor_exists():
+    assert callable(alf_EqualityExpression.__init__)
 
 
-def test_alf::equalityexpression_constructor_args():
-    sig = inspect.signature(alf::EqualityExpression.__init__)
+def test_alf_equalityexpression_constructor_args():
+    sig = inspect.signature(alf_EqualityExpression.__init__)
     params = list(sig.parameters.keys())
     assert "op" in params, "Missing parameter 'op'"
 
-def test_alf::equalityexpression_has_op():
-    assert hasattr(alf::EqualityExpression, "op")
+def test_alf_equalityexpression_has_op():
+    assert hasattr(alf_EqualityExpression, "op")
     descriptor = None
-    for klass in alf::EqualityExpression.__mro__:
+    for klass in alf_EqualityExpression.__mro__:
         if "op" in klass.__dict__:
             descriptor = klass.__dict__["op"]
             break
@@ -1382,72 +1396,72 @@ def test_alf::equalityexpression_has_op():
 
 
 
-def test_alf::andexpression_is_not_abstract():
-    assert not inspect.isabstract(alf::AndExpression)
+def test_alf_andexpression_is_not_abstract():
+    assert not inspect.isabstract(alf_AndExpression)
 
 
-def test_alf::andexpression_constructor_exists():
-    assert callable(alf::AndExpression.__init__)
+def test_alf_andexpression_constructor_exists():
+    assert callable(alf_AndExpression.__init__)
 
 
-def test_alf::andexpression_constructor_args():
-    sig = inspect.signature(alf::AndExpression.__init__)
+def test_alf_andexpression_constructor_args():
+    sig = inspect.signature(alf_AndExpression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_alf::exclusiveorexpression_is_not_abstract():
-    assert not inspect.isabstract(alf::ExclusiveOrExpression)
+def test_alf_exclusiveorexpression_is_not_abstract():
+    assert not inspect.isabstract(alf_ExclusiveOrExpression)
 
 
-def test_alf::exclusiveorexpression_constructor_exists():
-    assert callable(alf::ExclusiveOrExpression.__init__)
+def test_alf_exclusiveorexpression_constructor_exists():
+    assert callable(alf_ExclusiveOrExpression.__init__)
 
 
-def test_alf::exclusiveorexpression_constructor_args():
-    sig = inspect.signature(alf::ExclusiveOrExpression.__init__)
+def test_alf_exclusiveorexpression_constructor_args():
+    sig = inspect.signature(alf_ExclusiveOrExpression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_alf::inclusiveorexpression_is_not_abstract():
-    assert not inspect.isabstract(alf::InclusiveOrExpression)
+def test_alf_inclusiveorexpression_is_not_abstract():
+    assert not inspect.isabstract(alf_InclusiveOrExpression)
 
 
-def test_alf::inclusiveorexpression_constructor_exists():
-    assert callable(alf::InclusiveOrExpression.__init__)
+def test_alf_inclusiveorexpression_constructor_exists():
+    assert callable(alf_InclusiveOrExpression.__init__)
 
 
-def test_alf::inclusiveorexpression_constructor_args():
-    sig = inspect.signature(alf::InclusiveOrExpression.__init__)
+def test_alf_inclusiveorexpression_constructor_args():
+    sig = inspect.signature(alf_InclusiveOrExpression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_alf::conditionalandexpression_is_not_abstract():
-    assert not inspect.isabstract(alf::ConditionalAndExpression)
+def test_alf_conditionalandexpression_is_not_abstract():
+    assert not inspect.isabstract(alf_ConditionalAndExpression)
 
 
-def test_alf::conditionalandexpression_constructor_exists():
-    assert callable(alf::ConditionalAndExpression.__init__)
+def test_alf_conditionalandexpression_constructor_exists():
+    assert callable(alf_ConditionalAndExpression.__init__)
 
 
-def test_alf::conditionalandexpression_constructor_args():
-    sig = inspect.signature(alf::ConditionalAndExpression.__init__)
+def test_alf_conditionalandexpression_constructor_args():
+    sig = inspect.signature(alf_ConditionalAndExpression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_alf::conditionalorexpression_is_not_abstract():
-    assert not inspect.isabstract(alf::ConditionalOrExpression)
+def test_alf_conditionalorexpression_is_not_abstract():
+    assert not inspect.isabstract(alf_ConditionalOrExpression)
 
 
-def test_alf::conditionalorexpression_constructor_exists():
-    assert callable(alf::ConditionalOrExpression.__init__)
+def test_alf_conditionalorexpression_constructor_exists():
+    assert callable(alf_ConditionalOrExpression.__init__)
 
 
-def test_alf::conditionalorexpression_constructor_args():
-    sig = inspect.signature(alf::ConditionalOrExpression.__init__)
+def test_alf_conditionalorexpression_constructor_args():
+    sig = inspect.signature(alf_ConditionalOrExpression.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1466,16 +1480,16 @@ def test_expression_constructor_args():
 
 
 
-def test_alf::conditionaltestexpression_is_not_abstract():
-    assert not inspect.isabstract(alf::ConditionalTestExpression)
+def test_alf_conditionaltestexpression_is_not_abstract():
+    assert not inspect.isabstract(alf_ConditionalTestExpression)
 
 
-def test_alf::conditionaltestexpression_constructor_exists():
-    assert callable(alf::ConditionalTestExpression.__init__)
+def test_alf_conditionaltestexpression_constructor_exists():
+    assert callable(alf_ConditionalTestExpression.__init__)
 
 
-def test_alf::conditionaltestexpression_constructor_args():
-    sig = inspect.signature(alf::ConditionalTestExpression.__init__)
+def test_alf_conditionaltestexpression_constructor_args():
+    sig = inspect.signature(alf_ConditionalTestExpression.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1494,51 +1508,51 @@ def test_sequenceelement_constructor_args():
 
 
 
-def test_alf::sequenceconstructionexpression_is_not_abstract():
-    assert not inspect.isabstract(alf::SequenceConstructionExpression)
+def test_alf_sequenceconstructionexpression_is_not_abstract():
+    assert not inspect.isabstract(alf_SequenceConstructionExpression)
 
 
-def test_alf::sequenceconstructionexpression_constructor_exists():
-    assert callable(alf::SequenceConstructionExpression.__init__)
+def test_alf_sequenceconstructionexpression_constructor_exists():
+    assert callable(alf_SequenceConstructionExpression.__init__)
 
 
-def test_alf::sequenceconstructionexpression_constructor_args():
-    sig = inspect.signature(alf::SequenceConstructionExpression.__init__)
+def test_alf_sequenceconstructionexpression_constructor_args():
+    sig = inspect.signature(alf_SequenceConstructionExpression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_alf::tupleelement_is_not_abstract():
-    assert not inspect.isabstract(alf::TupleElement)
+def test_alf_tupleelement_is_not_abstract():
+    assert not inspect.isabstract(alf_TupleElement)
 
 
-def test_alf::tupleelement_constructor_exists():
-    assert callable(alf::TupleElement.__init__)
+def test_alf_tupleelement_constructor_exists():
+    assert callable(alf_TupleElement.__init__)
 
 
-def test_alf::tupleelement_constructor_args():
-    sig = inspect.signature(alf::TupleElement.__init__)
+def test_alf_tupleelement_constructor_args():
+    sig = inspect.signature(alf_TupleElement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_alf::qualifiednamewithbinding_is_not_abstract():
-    assert not inspect.isabstract(alf::QualifiedNameWithBinding)
+def test_alf_qualifiednamewithbinding_is_not_abstract():
+    assert not inspect.isabstract(alf_QualifiedNameWithBinding)
 
 
-def test_alf::qualifiednamewithbinding_constructor_exists():
-    assert callable(alf::QualifiedNameWithBinding.__init__)
+def test_alf_qualifiednamewithbinding_constructor_exists():
+    assert callable(alf_QualifiedNameWithBinding.__init__)
 
 
-def test_alf::qualifiednamewithbinding_constructor_args():
-    sig = inspect.signature(alf::QualifiedNameWithBinding.__init__)
+def test_alf_qualifiednamewithbinding_constructor_args():
+    sig = inspect.signature(alf_QualifiedNameWithBinding.__init__)
     params = list(sig.parameters.keys())
     assert "id" in params, "Missing parameter 'id'"
 
-def test_alf::qualifiednamewithbinding_has_id():
-    assert hasattr(alf::QualifiedNameWithBinding, "id")
+def test_alf_qualifiednamewithbinding_has_id():
+    assert hasattr(alf_QualifiedNameWithBinding, "id")
     descriptor = None
-    for klass in alf::QualifiedNameWithBinding.__mro__:
+    for klass in alf_QualifiedNameWithBinding.__mro__:
         if "id" in klass.__dict__:
             descriptor = klass.__dict__["id"]
             break
@@ -1546,23 +1560,23 @@ def test_alf::qualifiednamewithbinding_has_id():
 
 
 
-def test_alf::namedtemplatebinding_is_not_abstract():
-    assert not inspect.isabstract(alf::NamedTemplateBinding)
+def test_alf_namedtemplatebinding_is_not_abstract():
+    assert not inspect.isabstract(alf_NamedTemplateBinding)
 
 
-def test_alf::namedtemplatebinding_constructor_exists():
-    assert callable(alf::NamedTemplateBinding.__init__)
+def test_alf_namedtemplatebinding_constructor_exists():
+    assert callable(alf_NamedTemplateBinding.__init__)
 
 
-def test_alf::namedtemplatebinding_constructor_args():
-    sig = inspect.signature(alf::NamedTemplateBinding.__init__)
+def test_alf_namedtemplatebinding_constructor_args():
+    sig = inspect.signature(alf_NamedTemplateBinding.__init__)
     params = list(sig.parameters.keys())
     assert "formal" in params, "Missing parameter 'formal'"
 
-def test_alf::namedtemplatebinding_has_formal():
-    assert hasattr(alf::NamedTemplateBinding, "formal")
+def test_alf_namedtemplatebinding_has_formal():
+    assert hasattr(alf_NamedTemplateBinding, "formal")
     descriptor = None
-    for klass in alf::NamedTemplateBinding.__mro__:
+    for klass in alf_NamedTemplateBinding.__mro__:
         if "formal" in klass.__dict__:
             descriptor = klass.__dict__["formal"]
             break
@@ -1570,23 +1584,23 @@ def test_alf::namedtemplatebinding_has_formal():
 
 
 
-def test_alf::relationalexpression_is_not_abstract():
-    assert not inspect.isabstract(alf::RelationalExpression)
+def test_alf_relationalexpression_is_not_abstract():
+    assert not inspect.isabstract(alf_RelationalExpression)
 
 
-def test_alf::relationalexpression_constructor_exists():
-    assert callable(alf::RelationalExpression.__init__)
+def test_alf_relationalexpression_constructor_exists():
+    assert callable(alf_RelationalExpression.__init__)
 
 
-def test_alf::relationalexpression_constructor_args():
-    sig = inspect.signature(alf::RelationalExpression.__init__)
+def test_alf_relationalexpression_constructor_args():
+    sig = inspect.signature(alf_RelationalExpression.__init__)
     params = list(sig.parameters.keys())
     assert "op" in params, "Missing parameter 'op'"
 
-def test_alf::relationalexpression_has_op():
-    assert hasattr(alf::RelationalExpression, "op")
+def test_alf_relationalexpression_has_op():
+    assert hasattr(alf_RelationalExpression, "op")
     descriptor = None
-    for klass in alf::RelationalExpression.__mro__:
+    for klass in alf_RelationalExpression.__mro__:
         if "op" in klass.__dict__:
             descriptor = klass.__dict__["op"]
             break
@@ -1594,37 +1608,37 @@ def test_alf::relationalexpression_has_op():
 
 
 
-def test_alf::templatebinding_is_not_abstract():
-    assert not inspect.isabstract(alf::TemplateBinding)
+def test_alf_templatebinding_is_not_abstract():
+    assert not inspect.isabstract(alf_TemplateBinding)
 
 
-def test_alf::templatebinding_constructor_exists():
-    assert callable(alf::TemplateBinding.__init__)
+def test_alf_templatebinding_constructor_exists():
+    assert callable(alf_TemplateBinding.__init__)
 
 
-def test_alf::templatebinding_constructor_args():
-    sig = inspect.signature(alf::TemplateBinding.__init__)
+def test_alf_templatebinding_constructor_args():
+    sig = inspect.signature(alf_TemplateBinding.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_alf::unqualifiedname_is_not_abstract():
-    assert not inspect.isabstract(alf::UnqualifiedName)
+def test_alf_unqualifiedname_is_not_abstract():
+    assert not inspect.isabstract(alf_UnqualifiedName)
 
 
-def test_alf::unqualifiedname_constructor_exists():
-    assert callable(alf::UnqualifiedName.__init__)
+def test_alf_unqualifiedname_constructor_exists():
+    assert callable(alf_UnqualifiedName.__init__)
 
 
-def test_alf::unqualifiedname_constructor_args():
-    sig = inspect.signature(alf::UnqualifiedName.__init__)
+def test_alf_unqualifiedname_constructor_args():
+    sig = inspect.signature(alf_UnqualifiedName.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_alf::unqualifiedname_has_name():
-    assert hasattr(alf::UnqualifiedName, "name")
+def test_alf_unqualifiedname_has_name():
+    assert hasattr(alf_UnqualifiedName, "name")
     descriptor = None
-    for klass in alf::UnqualifiedName.__mro__:
+    for klass in alf_UnqualifiedName.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -1632,37 +1646,37 @@ def test_alf::unqualifiedname_has_name():
 
 
 
-def test_alf::suffixexpression_is_not_abstract():
-    assert not inspect.isabstract(alf::SuffixExpression)
+def test_alf_suffixexpression_is_not_abstract():
+    assert not inspect.isabstract(alf_SuffixExpression)
 
 
-def test_alf::suffixexpression_constructor_exists():
-    assert callable(alf::SuffixExpression.__init__)
+def test_alf_suffixexpression_constructor_exists():
+    assert callable(alf_SuffixExpression.__init__)
 
 
-def test_alf::suffixexpression_constructor_args():
-    sig = inspect.signature(alf::SuffixExpression.__init__)
+def test_alf_suffixexpression_constructor_args():
+    sig = inspect.signature(alf_SuffixExpression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_alf::sequenceconstructionoraccesscompletion_is_not_abstract():
-    assert not inspect.isabstract(alf::SequenceConstructionOrAccessCompletion)
+def test_alf_sequenceconstructionoraccesscompletion_is_not_abstract():
+    assert not inspect.isabstract(alf_SequenceConstructionOrAccessCompletion)
 
 
-def test_alf::sequenceconstructionoraccesscompletion_constructor_exists():
-    assert callable(alf::SequenceConstructionOrAccessCompletion.__init__)
+def test_alf_sequenceconstructionoraccesscompletion_constructor_exists():
+    assert callable(alf_SequenceConstructionOrAccessCompletion.__init__)
 
 
-def test_alf::sequenceconstructionoraccesscompletion_constructor_args():
-    sig = inspect.signature(alf::SequenceConstructionOrAccessCompletion.__init__)
+def test_alf_sequenceconstructionoraccesscompletion_constructor_args():
+    sig = inspect.signature(alf_SequenceConstructionOrAccessCompletion.__init__)
     params = list(sig.parameters.keys())
     assert "multiplicityIndicator" in params, "Missing parameter 'multiplicityIndicator'"
 
-def test_alf::sequenceconstructionoraccesscompletion_has_multiplicityIndicator():
-    assert hasattr(alf::SequenceConstructionOrAccessCompletion, "multiplicityIndicator")
+def test_alf_sequenceconstructionoraccesscompletion_has_multiplicityIndicator():
+    assert hasattr(alf_SequenceConstructionOrAccessCompletion, "multiplicityIndicator")
     descriptor = None
-    for klass in alf::SequenceConstructionOrAccessCompletion.__mro__:
+    for klass in alf_SequenceConstructionOrAccessCompletion.__mro__:
         if "multiplicityIndicator" in klass.__dict__:
             descriptor = klass.__dict__["multiplicityIndicator"]
             break
@@ -1670,30 +1684,30 @@ def test_alf::sequenceconstructionoraccesscompletion_has_multiplicityIndicator()
 
 
 
-def test_alf::tuple_is_not_abstract():
-    assert not inspect.isabstract(alf::Tuple)
+def test_alf_tuple_is_not_abstract():
+    assert not inspect.isabstract(alf_Tuple)
 
 
-def test_alf::tuple_constructor_exists():
-    assert callable(alf::Tuple.__init__)
+def test_alf_tuple_constructor_exists():
+    assert callable(alf_Tuple.__init__)
 
 
-def test_alf::tuple_constructor_args():
-    sig = inspect.signature(alf::Tuple.__init__)
+def test_alf_tuple_constructor_args():
+    sig = inspect.signature(alf_Tuple.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_alf::qualifiednamepath_is_not_abstract():
-    assert not inspect.isabstract(alf::QualifiedNamePath)
+def test_alf_qualifiednamepath_is_not_abstract():
+    assert not inspect.isabstract(alf_QualifiedNamePath)
 
 
-def test_alf::qualifiednamepath_constructor_exists():
-    assert callable(alf::QualifiedNamePath.__init__)
+def test_alf_qualifiednamepath_constructor_exists():
+    assert callable(alf_QualifiedNamePath.__init__)
 
 
-def test_alf::qualifiednamepath_constructor_args():
-    sig = inspect.signature(alf::QualifiedNamePath.__init__)
+def test_alf_qualifiednamepath_constructor_args():
+    sig = inspect.signature(alf_QualifiedNamePath.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1712,44 +1726,44 @@ def test_nonliteralvaluespecification_constructor_args():
 
 
 
-def test_number::literal_is_not_abstract():
-    assert not inspect.isabstract(NUMBER::LITERAL)
+def test_number_literal_is_not_abstract():
+    assert not inspect.isabstract(NUMBER_LITERAL)
 
 
-def test_number::literal_constructor_exists():
-    assert callable(NUMBER::LITERAL.__init__)
+def test_number_literal_constructor_exists():
+    assert callable(NUMBER_LITERAL.__init__)
 
 
-def test_number::literal_constructor_args():
-    sig = inspect.signature(NUMBER::LITERAL.__init__)
+def test_number_literal_constructor_args():
+    sig = inspect.signature(NUMBER_LITERAL.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_alf::unlimited::literal_is_not_abstract():
-    assert not inspect.isabstract(alf::UNLIMITED::LITERAL)
+def test_alf_unlimited_literal_is_not_abstract():
+    assert not inspect.isabstract(alf_UNLIMITED_LITERAL)
 
 
-def test_alf::unlimited::literal_constructor_exists():
-    assert callable(alf::UNLIMITED::LITERAL.__init__)
+def test_alf_unlimited_literal_constructor_exists():
+    assert callable(alf_UNLIMITED_LITERAL.__init__)
 
 
-def test_alf::unlimited::literal_constructor_args():
-    sig = inspect.signature(alf::UNLIMITED::LITERAL.__init__)
+def test_alf_unlimited_literal_constructor_args():
+    sig = inspect.signature(alf_UNLIMITED_LITERAL.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_alf::integer::literal_is_not_abstract():
-    assert not inspect.isabstract(alf::INTEGER::LITERAL)
+def test_alf_integer_literal_is_not_abstract():
+    assert not inspect.isabstract(alf_INTEGER_LITERAL)
 
 
-def test_alf::integer::literal_constructor_exists():
-    assert callable(alf::INTEGER::LITERAL.__init__)
+def test_alf_integer_literal_constructor_exists():
+    assert callable(alf_INTEGER_LITERAL.__init__)
 
 
-def test_alf::integer::literal_constructor_args():
-    sig = inspect.signature(alf::INTEGER::LITERAL.__init__)
+def test_alf_integer_literal_constructor_args():
+    sig = inspect.signature(alf_INTEGER_LITERAL.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1768,179 +1782,179 @@ def test_valuespecification_constructor_args():
 
 
 
-def test_alf::instancecreationexpression_is_not_abstract():
-    assert not inspect.isabstract(alf::InstanceCreationExpression)
+def test_alf_nameexpression_is_not_abstract():
+    assert not inspect.isabstract(alf_NameExpression)
 
 
-def test_alf::instancecreationexpression_constructor_exists():
-    assert callable(alf::InstanceCreationExpression.__init__)
+def test_alf_nameexpression_constructor_exists():
+    assert callable(alf_NameExpression.__init__)
 
 
-def test_alf::instancecreationexpression_constructor_args():
-    sig = inspect.signature(alf::InstanceCreationExpression.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_alf::nullexpression_is_not_abstract():
-    assert not inspect.isabstract(alf::NullExpression)
-
-
-def test_alf::nullexpression_constructor_exists():
-    assert callable(alf::NullExpression.__init__)
-
-
-def test_alf::nullexpression_constructor_args():
-    sig = inspect.signature(alf::NullExpression.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_alf::thisexpression_is_not_abstract():
-    assert not inspect.isabstract(alf::ThisExpression)
-
-
-def test_alf::thisexpression_constructor_exists():
-    assert callable(alf::ThisExpression.__init__)
-
-
-def test_alf::thisexpression_constructor_args():
-    sig = inspect.signature(alf::ThisExpression.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_alf::nameexpression_is_not_abstract():
-    assert not inspect.isabstract(alf::NameExpression)
-
-
-def test_alf::nameexpression_constructor_exists():
-    assert callable(alf::NameExpression.__init__)
-
-
-def test_alf::nameexpression_constructor_args():
-    sig = inspect.signature(alf::NameExpression.__init__)
+def test_alf_nameexpression_constructor_args():
+    sig = inspect.signature(alf_NameExpression.__init__)
     params = list(sig.parameters.keys())
     assert "postfixOp" in params, "Missing parameter 'postfixOp'"
-    assert "id" in params, "Missing parameter 'id'"
     assert "prefixOp" in params, "Missing parameter 'prefixOp'"
+    assert "id" in params, "Missing parameter 'id'"
 
-def test_alf::nameexpression_has_postfixOp():
-    assert hasattr(alf::NameExpression, "postfixOp")
+def test_alf_nameexpression_has_postfixOp():
+    assert hasattr(alf_NameExpression, "postfixOp")
     descriptor = None
-    for klass in alf::NameExpression.__mro__:
+    for klass in alf_NameExpression.__mro__:
         if "postfixOp" in klass.__dict__:
             descriptor = klass.__dict__["postfixOp"]
             break
     assert isinstance(descriptor, property)
 
-def test_alf::nameexpression_has_id():
-    assert hasattr(alf::NameExpression, "id")
+def test_alf_nameexpression_has_prefixOp():
+    assert hasattr(alf_NameExpression, "prefixOp")
     descriptor = None
-    for klass in alf::NameExpression.__mro__:
-        if "id" in klass.__dict__:
-            descriptor = klass.__dict__["id"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_alf::nameexpression_has_prefixOp():
-    assert hasattr(alf::NameExpression, "prefixOp")
-    descriptor = None
-    for klass in alf::NameExpression.__mro__:
+    for klass in alf_NameExpression.__mro__:
         if "prefixOp" in klass.__dict__:
             descriptor = klass.__dict__["prefixOp"]
             break
     assert isinstance(descriptor, property)
 
+def test_alf_nameexpression_has_id():
+    assert hasattr(alf_NameExpression, "id")
+    descriptor = None
+    for klass in alf_NameExpression.__mro__:
+        if "id" in klass.__dict__:
+            descriptor = klass.__dict__["id"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_alf::superinvocationexpression_is_not_abstract():
-    assert not inspect.isabstract(alf::SuperInvocationExpression)
+
+def test_alf_thisexpression_is_not_abstract():
+    assert not inspect.isabstract(alf_ThisExpression)
 
 
-def test_alf::superinvocationexpression_constructor_exists():
-    assert callable(alf::SuperInvocationExpression.__init__)
+def test_alf_thisexpression_constructor_exists():
+    assert callable(alf_ThisExpression.__init__)
 
 
-def test_alf::superinvocationexpression_constructor_args():
-    sig = inspect.signature(alf::SuperInvocationExpression.__init__)
+def test_alf_thisexpression_constructor_args():
+    sig = inspect.signature(alf_ThisExpression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_alf::parenthesizedexpression_is_not_abstract():
-    assert not inspect.isabstract(alf::ParenthesizedExpression)
+def test_alf_nullexpression_is_not_abstract():
+    assert not inspect.isabstract(alf_NullExpression)
 
 
-def test_alf::parenthesizedexpression_constructor_exists():
-    assert callable(alf::ParenthesizedExpression.__init__)
+def test_alf_nullexpression_constructor_exists():
+    assert callable(alf_NullExpression.__init__)
 
 
-def test_alf::parenthesizedexpression_constructor_args():
-    sig = inspect.signature(alf::ParenthesizedExpression.__init__)
+def test_alf_nullexpression_constructor_args():
+    sig = inspect.signature(alf_NullExpression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_alf::literal_is_not_abstract():
-    assert not inspect.isabstract(alf::LITERAL)
+def test_alf_superinvocationexpression_is_not_abstract():
+    assert not inspect.isabstract(alf_SuperInvocationExpression)
 
 
-def test_alf::literal_constructor_exists():
-    assert callable(alf::LITERAL.__init__)
+def test_alf_superinvocationexpression_constructor_exists():
+    assert callable(alf_SuperInvocationExpression.__init__)
 
 
-def test_alf::literal_constructor_args():
-    sig = inspect.signature(alf::LITERAL.__init__)
+def test_alf_superinvocationexpression_constructor_args():
+    sig = inspect.signature(alf_SuperInvocationExpression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_alf::block_is_not_abstract():
-    assert not inspect.isabstract(alf::Block)
+def test_alf_parenthesizedexpression_is_not_abstract():
+    assert not inspect.isabstract(alf_ParenthesizedExpression)
 
 
-def test_alf::block_constructor_exists():
-    assert callable(alf::Block.__init__)
+def test_alf_parenthesizedexpression_constructor_exists():
+    assert callable(alf_ParenthesizedExpression.__init__)
 
 
-def test_alf::block_constructor_args():
-    sig = inspect.signature(alf::Block.__init__)
+def test_alf_parenthesizedexpression_constructor_args():
+    sig = inspect.signature(alf_ParenthesizedExpression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_alf::statement_is_not_abstract():
-    assert not inspect.isabstract(alf::Statement)
+def test_alf_instancecreationexpression_is_not_abstract():
+    assert not inspect.isabstract(alf_InstanceCreationExpression)
 
 
-def test_alf::statement_constructor_exists():
-    assert callable(alf::Statement.__init__)
+def test_alf_instancecreationexpression_constructor_exists():
+    assert callable(alf_InstanceCreationExpression.__init__)
 
 
-def test_alf::statement_constructor_args():
-    sig = inspect.signature(alf::Statement.__init__)
+def test_alf_instancecreationexpression_constructor_args():
+    sig = inspect.signature(alf_InstanceCreationExpression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_alf::assignmentcompletion_is_not_abstract():
-    assert not inspect.isabstract(alf::AssignmentCompletion)
+def test_alf_literal_is_not_abstract():
+    assert not inspect.isabstract(alf_LITERAL)
 
 
-def test_alf::assignmentcompletion_constructor_exists():
-    assert callable(alf::AssignmentCompletion.__init__)
+def test_alf_literal_constructor_exists():
+    assert callable(alf_LITERAL.__init__)
 
 
-def test_alf::assignmentcompletion_constructor_args():
-    sig = inspect.signature(alf::AssignmentCompletion.__init__)
+def test_alf_literal_constructor_args():
+    sig = inspect.signature(alf_LITERAL.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_alf_block_is_not_abstract():
+    assert not inspect.isabstract(alf_Block)
+
+
+def test_alf_block_constructor_exists():
+    assert callable(alf_Block.__init__)
+
+
+def test_alf_block_constructor_args():
+    sig = inspect.signature(alf_Block.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_alf_statement_is_not_abstract():
+    assert not inspect.isabstract(alf_Statement)
+
+
+def test_alf_statement_constructor_exists():
+    assert callable(alf_Statement.__init__)
+
+
+def test_alf_statement_constructor_args():
+    sig = inspect.signature(alf_Statement.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_alf_assignmentcompletion_is_not_abstract():
+    assert not inspect.isabstract(alf_AssignmentCompletion)
+
+
+def test_alf_assignmentcompletion_constructor_exists():
+    assert callable(alf_AssignmentCompletion.__init__)
+
+
+def test_alf_assignmentcompletion_constructor_args():
+    sig = inspect.signature(alf_AssignmentCompletion.__init__)
     params = list(sig.parameters.keys())
     assert "op" in params, "Missing parameter 'op'"
 
-def test_alf::assignmentcompletion_has_op():
-    assert hasattr(alf::AssignmentCompletion, "op")
+def test_alf_assignmentcompletion_has_op():
+    assert hasattr(alf_AssignmentCompletion, "op")
     descriptor = None
-    for klass in alf::AssignmentCompletion.__mro__:
+    for klass in alf_AssignmentCompletion.__mro__:
         if "op" in klass.__dict__:
             descriptor = klass.__dict__["op"]
             break
@@ -1948,30 +1962,30 @@ def test_alf::assignmentcompletion_has_op():
 
 
 
-def test_alf::expression_is_not_abstract():
-    assert not inspect.isabstract(alf::Expression)
+def test_alf_expression_is_not_abstract():
+    assert not inspect.isabstract(alf_Expression)
 
 
-def test_alf::expression_constructor_exists():
-    assert callable(alf::Expression.__init__)
+def test_alf_expression_constructor_exists():
+    assert callable(alf_Expression.__init__)
 
 
-def test_alf::expression_constructor_args():
-    sig = inspect.signature(alf::Expression.__init__)
+def test_alf_expression_constructor_args():
+    sig = inspect.signature(alf_Expression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_alf::test_is_not_abstract():
-    assert not inspect.isabstract(alf::Test)
+def test_alf_test_is_not_abstract():
+    assert not inspect.isabstract(alf_Test)
 
 
-def test_alf::test_constructor_exists():
-    assert callable(alf::Test.__init__)
+def test_alf_test_constructor_exists():
+    assert callable(alf_Test.__init__)
 
 
-def test_alf::test_constructor_args():
-    sig = inspect.signature(alf::Test.__init__)
+def test_alf_test_constructor_args():
+    sig = inspect.signature(alf_Test.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1990,23 +2004,23 @@ def test_literal_constructor_args():
 
 
 
-def test_alf::string::literal_is_not_abstract():
-    assert not inspect.isabstract(alf::STRING::LITERAL)
+def test_alf_number_literal_is_not_abstract():
+    assert not inspect.isabstract(alf_NUMBER_LITERAL)
 
 
-def test_alf::string::literal_constructor_exists():
-    assert callable(alf::STRING::LITERAL.__init__)
+def test_alf_number_literal_constructor_exists():
+    assert callable(alf_NUMBER_LITERAL.__init__)
 
 
-def test_alf::string::literal_constructor_args():
-    sig = inspect.signature(alf::STRING::LITERAL.__init__)
+def test_alf_number_literal_constructor_args():
+    sig = inspect.signature(alf_NUMBER_LITERAL.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
 
-def test_alf::string::literal_has_value():
-    assert hasattr(alf::STRING::LITERAL, "value")
+def test_alf_number_literal_has_value():
+    assert hasattr(alf_NUMBER_LITERAL, "value")
     descriptor = None
-    for klass in alf::STRING::LITERAL.__mro__:
+    for klass in alf_NUMBER_LITERAL.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -2014,23 +2028,23 @@ def test_alf::string::literal_has_value():
 
 
 
-def test_alf::number::literal_is_not_abstract():
-    assert not inspect.isabstract(alf::NUMBER::LITERAL)
+def test_alf_string_literal_is_not_abstract():
+    assert not inspect.isabstract(alf_STRING_LITERAL)
 
 
-def test_alf::number::literal_constructor_exists():
-    assert callable(alf::NUMBER::LITERAL.__init__)
+def test_alf_string_literal_constructor_exists():
+    assert callable(alf_STRING_LITERAL.__init__)
 
 
-def test_alf::number::literal_constructor_args():
-    sig = inspect.signature(alf::NUMBER::LITERAL.__init__)
+def test_alf_string_literal_constructor_args():
+    sig = inspect.signature(alf_STRING_LITERAL.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
 
-def test_alf::number::literal_has_value():
-    assert hasattr(alf::NUMBER::LITERAL, "value")
+def test_alf_string_literal_has_value():
+    assert hasattr(alf_STRING_LITERAL, "value")
     descriptor = None
-    for klass in alf::NUMBER::LITERAL.__mro__:
+    for klass in alf_STRING_LITERAL.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -2038,66 +2052,43 @@ def test_alf::number::literal_has_value():
 
 
 
-def test_alf::boolean::literal_is_not_abstract():
-    assert not inspect.isabstract(alf::BOOLEAN::LITERAL)
+def test_alf_boolean_literal_is_not_abstract():
+    assert not inspect.isabstract(alf_BOOLEAN_LITERAL)
 
 
-def test_alf::boolean::literal_constructor_exists():
-    assert callable(alf::BOOLEAN::LITERAL.__init__)
+def test_alf_boolean_literal_constructor_exists():
+    assert callable(alf_BOOLEAN_LITERAL.__init__)
 
 
-def test_alf::boolean::literal_constructor_args():
-    sig = inspect.signature(alf::BOOLEAN::LITERAL.__init__)
+def test_alf_boolean_literal_constructor_args():
+    sig = inspect.signature(alf_BOOLEAN_LITERAL.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
 
-def test_alf::boolean::literal_has_value():
-    assert hasattr(alf::BOOLEAN::LITERAL, "value")
+def test_alf_boolean_literal_has_value():
+    assert hasattr(alf_BOOLEAN_LITERAL, "value")
     descriptor = None
-    for klass in alf::BOOLEAN::LITERAL.__mro__:
+    for klass in alf_BOOLEAN_LITERAL.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
     assert isinstance(descriptor, property)
 
-
-
-def test_alf::instancecreationinvocationstatement_is_not_abstract():
-    assert not inspect.isabstract(alf::InstanceCreationInvocationStatement)
-
-
-def test_alf::instancecreationinvocationstatement_constructor_exists():
-    assert callable(alf::InstanceCreationInvocationStatement.__init__)
-
-
-def test_alf::instancecreationinvocationstatement_constructor_args():
-    sig = inspect.signature(alf::InstanceCreationInvocationStatement.__init__)
-    params = list(sig.parameters.keys())
-
-def test_assignmentoperator_exists():
+def test_linkoperationkind_exists():
     # Check that the Enumeration exists
-    assert AssignmentOperator is not None
+    assert LinkOperationKind is not None
 
-def test_assignmentoperator_has_all_literals():
+def test_linkoperationkind_has_all_literals():
     # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in AssignmentOperator]
+    enum_literals = [lit.name for lit in LinkOperationKind]
     expected_literals = [
-        "RSHIFTASSIGN",
-        "XORASSIGN",
-        "ASSIGN",
-        "PLUSASSIGN",
-        "URSHIFTASSIGN",
-        "MODASSIGN",
-        "DIVASSIGN",
-        "ORASSIGN",
-        "LSHIFTASSIGN",
-        "ANDASSIGN",
-        "MULTASSIGN",
-        "MINUSASSIGN",
+        "DESTROY",
+        "CREATE",
+        "CLEAR",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in AssignmentOperator"
+        assert lit_name in enum_literals, f"Literal '' missing in LinkOperationKind"
 
 def test_collectoriterateoperator_exists():
     # Check that the Enumeration exists
@@ -2107,45 +2098,12 @@ def test_collectoriterateoperator_has_all_literals():
     # Collect the names of literals in this Enumeration
     enum_literals = [lit.name for lit in CollectOrIterateOperator]
     expected_literals = [
-        "ITERATE",
         "COLLECT",
+        "ITERATE",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
         assert lit_name in enum_literals, f"Literal '' missing in CollectOrIterateOperator"
-
-def test_forallorexistsoroneoperator_exists():
-    # Check that the Enumeration exists
-    assert ForAllOrExistsOrOneOperator is not None
-
-def test_forallorexistsoroneoperator_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in ForAllOrExistsOrOneOperator]
-    expected_literals = [
-        "FORALL",
-        "ONE",
-        "EXISTS",
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in ForAllOrExistsOrOneOperator"
-
-def test_annotationkind_exists():
-    # Check that the Enumeration exists
-    assert AnnotationKind is not None
-
-def test_annotationkind_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in AnnotationKind]
-    expected_literals = [
-        "ASSURED",
-        "DETERMINED",
-        "ISOLATED",
-        "PARALLEL",
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in AnnotationKind"
 
 def test_booleanvalue_exists():
     # Check that the Enumeration exists
@@ -2162,6 +2120,47 @@ def test_booleanvalue_has_all_literals():
     for lit_name in expected_literals:
         assert lit_name in enum_literals, f"Literal '' missing in BooleanValue"
 
+def test_forallorexistsoroneoperator_exists():
+    # Check that the Enumeration exists
+    assert ForAllOrExistsOrOneOperator is not None
+
+def test_forallorexistsoroneoperator_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in ForAllOrExistsOrOneOperator]
+    expected_literals = [
+        "FORALL",
+        "EXISTS",
+        "ONE",
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in ForAllOrExistsOrOneOperator"
+
+def test_assignmentoperator_exists():
+    # Check that the Enumeration exists
+    assert AssignmentOperator is not None
+
+def test_assignmentoperator_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in AssignmentOperator]
+    expected_literals = [
+        "MINUSASSIGN",
+        "PLUSASSIGN",
+        "URSHIFTASSIGN",
+        "ANDASSIGN",
+        "LSHIFTASSIGN",
+        "ORASSIGN",
+        "RSHIFTASSIGN",
+        "XORASSIGN",
+        "ASSIGN",
+        "MODASSIGN",
+        "DIVASSIGN",
+        "MULTASSIGN",
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in AssignmentOperator"
+
 def test_selectorrejectoperator_exists():
     # Check that the Enumeration exists
     assert SelectOrRejectOperator is not None
@@ -2177,21 +2176,22 @@ def test_selectorrejectoperator_has_all_literals():
     for lit_name in expected_literals:
         assert lit_name in enum_literals, f"Literal '' missing in SelectOrRejectOperator"
 
-def test_linkoperationkind_exists():
+def test_annotationkind_exists():
     # Check that the Enumeration exists
-    assert LinkOperationKind is not None
+    assert AnnotationKind is not None
 
-def test_linkoperationkind_has_all_literals():
+def test_annotationkind_has_all_literals():
     # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in LinkOperationKind]
+    enum_literals = [lit.name for lit in AnnotationKind]
     expected_literals = [
-        "DESTROY",
-        "CLEAR",
-        "CREATE",
+        "PARALLEL",
+        "ASSURED",
+        "ISOLATED",
+        "DETERMINED",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in LinkOperationKind"
+        assert lit_name in enum_literals, f"Literal '' missing in AnnotationKind"
 
 
 # =============================================================================
@@ -2205,76 +2205,76 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-alf::VariableDeclarationCompletion_strategy = st.builds(
-    alf::VariableDeclarationCompletion,
+alf_VariableDeclarationCompletion_strategy = st.builds(
+    alf_VariableDeclarationCompletion,
     variableName=
         safe_text,
     multiplicityIndicator=
         st.booleans()
 )
-alf::ReclassifyAllClause_strategy = st.builds(
-    alf::ReclassifyAllClause,
+alf_ReclassifyAllClause_strategy = st.builds(
+    alf_ReclassifyAllClause,
 )
-alf::ClassificationToClause_strategy = st.builds(
-    alf::ClassificationToClause,
+alf_ClassificationToClause_strategy = st.builds(
+    alf_ClassificationToClause,
 )
-alf::ClassificationFromClause_strategy = st.builds(
-    alf::ClassificationFromClause,
+alf_ClassificationFromClause_strategy = st.builds(
+    alf_ClassificationFromClause,
 )
-alf::ClassificationClause_strategy = st.builds(
-    alf::ClassificationClause,
+alf_ClassificationClause_strategy = st.builds(
+    alf_ClassificationClause,
 )
-alf::QualifiedNameList_strategy = st.builds(
-    alf::QualifiedNameList,
+alf_QualifiedNameList_strategy = st.builds(
+    alf_QualifiedNameList,
 )
-alf::AcceptBlock_strategy = st.builds(
-    alf::AcceptBlock,
+alf_AcceptBlock_strategy = st.builds(
+    alf_AcceptBlock,
 )
-alf::CompoundAcceptStatementCompletion_strategy = st.builds(
-    alf::CompoundAcceptStatementCompletion,
+alf_CompoundAcceptStatementCompletion_strategy = st.builds(
+    alf_CompoundAcceptStatementCompletion,
 )
-alf::SimpleAcceptStatementCompletion_strategy = st.builds(
-    alf::SimpleAcceptStatementCompletion,
+alf_SimpleAcceptStatementCompletion_strategy = st.builds(
+    alf_SimpleAcceptStatementCompletion,
 )
-alf::AcceptClause_strategy = st.builds(
-    alf::AcceptClause,
+alf_AcceptClause_strategy = st.builds(
+    alf_AcceptClause,
     name=
         safe_text
 )
-alf::LoopVariableDefinition_strategy = st.builds(
-    alf::LoopVariableDefinition,
+alf_LoopVariableDefinition_strategy = st.builds(
+    alf_LoopVariableDefinition,
     name=
         safe_text
 )
-alf::ForControl_strategy = st.builds(
-    alf::ForControl,
+alf_ForControl_strategy = st.builds(
+    alf_ForControl,
 )
-alf::NonEmptyStatementSequence_strategy = st.builds(
-    alf::NonEmptyStatementSequence,
+alf_NonEmptyStatementSequence_strategy = st.builds(
+    alf_NonEmptyStatementSequence,
 )
-alf::SwitchCase_strategy = st.builds(
-    alf::SwitchCase,
+alf_SwitchCase_strategy = st.builds(
+    alf_SwitchCase,
 )
-alf::SwitchDefaultClause_strategy = st.builds(
-    alf::SwitchDefaultClause,
+alf_SwitchDefaultClause_strategy = st.builds(
+    alf_SwitchDefaultClause,
 )
-alf::SwitchClause_strategy = st.builds(
-    alf::SwitchClause,
+alf_SwitchClause_strategy = st.builds(
+    alf_SwitchClause,
 )
-alf::NonFinalClause_strategy = st.builds(
-    alf::NonFinalClause,
+alf_NonFinalClause_strategy = st.builds(
+    alf_NonFinalClause,
 )
-alf::ConcurrentClauses_strategy = st.builds(
-    alf::ConcurrentClauses,
+alf_ConcurrentClauses_strategy = st.builds(
+    alf_ConcurrentClauses,
 )
-alf::FinalClause_strategy = st.builds(
-    alf::FinalClause,
+alf_FinalClause_strategy = st.builds(
+    alf_FinalClause,
 )
-alf::SequentialClauses_strategy = st.builds(
-    alf::SequentialClauses,
+alf_SequentialClauses_strategy = st.builds(
+    alf_SequentialClauses,
 )
-alf::Annotation_strategy = st.builds(
-    alf::Annotation,
+alf_Annotation_strategy = st.builds(
+    alf_Annotation,
     args=
         safe_text,
     kind=
@@ -2283,507 +2283,489 @@ alf::Annotation_strategy = st.builds(
 Statement_strategy = st.builds(
     Statement,
 )
-alf::EmptyStatement_strategy = st.builds(
-    alf::EmptyStatement,
+alf_ThisInvocationStatement_strategy = st.builds(
+    alf_ThisInvocationStatement,
 )
-alf::SuperInvocationStatement_strategy = st.builds(
-    alf::SuperInvocationStatement,
+alf_EmptyStatement_strategy = st.builds(
+    alf_EmptyStatement,
 )
-alf::AcceptStatement_strategy = st.builds(
-    alf::AcceptStatement,
+alf_BreakStatement_strategy = st.builds(
+    alf_BreakStatement,
 )
-alf::DoStatement_strategy = st.builds(
-    alf::DoStatement,
+alf_ForStatement_strategy = st.builds(
+    alf_ForStatement,
 )
-alf::ReturnStatement_strategy = st.builds(
-    alf::ReturnStatement,
+alf_BlockStatement_strategy = st.builds(
+    alf_BlockStatement,
 )
-alf::WhileStatement_strategy = st.builds(
-    alf::WhileStatement,
+alf_AcceptStatement_strategy = st.builds(
+    alf_AcceptStatement,
 )
-alf::BlockStatement_strategy = st.builds(
-    alf::BlockStatement,
+alf_AnnotatedStatement_strategy = st.builds(
+    alf_AnnotatedStatement,
 )
-alf::ThisInvocationStatement_strategy = st.builds(
-    alf::ThisInvocationStatement,
+alf_SwitchStatement_strategy = st.builds(
+    alf_SwitchStatement,
 )
-alf::InvocationOrAssignementOrDeclarationStatement_strategy = st.builds(
-    alf::InvocationOrAssignementOrDeclarationStatement,
+alf_InvocationOrAssignementOrDeclarationStatement_strategy = st.builds(
+    alf_InvocationOrAssignementOrDeclarationStatement,
 )
-alf::BreakStatement_strategy = st.builds(
-    alf::BreakStatement,
+alf_ReturnStatement_strategy = st.builds(
+    alf_ReturnStatement,
 )
-alf::ForStatement_strategy = st.builds(
-    alf::ForStatement,
+alf_SuperInvocationStatement_strategy = st.builds(
+    alf_SuperInvocationStatement,
 )
-alf::SwitchStatement_strategy = st.builds(
-    alf::SwitchStatement,
+alf_ClassifyStatement_strategy = st.builds(
+    alf_ClassifyStatement,
 )
-alf::ClassifyStatement_strategy = st.builds(
-    alf::ClassifyStatement,
+alf_WhileStatement_strategy = st.builds(
+    alf_WhileStatement,
 )
-alf::IfStatement_strategy = st.builds(
-    alf::IfStatement,
+alf_DoStatement_strategy = st.builds(
+    alf_DoStatement,
 )
-alf::AnnotatedStatement_strategy = st.builds(
-    alf::AnnotatedStatement,
+alf_IfStatement_strategy = st.builds(
+    alf_IfStatement,
 )
-alf::InlineStatement_strategy = st.builds(
-    alf::InlineStatement,
+alf_InstanceCreationInvocationStatement_strategy = st.builds(
+    alf_InstanceCreationInvocationStatement,
+)
+alf_InlineStatement_strategy = st.builds(
+    alf_InlineStatement,
     langageName=
         safe_text,
     body=
         safe_text
 )
-alf::DocumentedStatement_strategy = st.builds(
-    alf::DocumentedStatement,
+alf_DocumentedStatement_strategy = st.builds(
+    alf_DocumentedStatement,
     comment=
         safe_text
 )
-alf::StatementSequence_strategy = st.builds(
-    alf::StatementSequence,
+alf_StatementSequence_strategy = st.builds(
+    alf_StatementSequence,
 )
-alf::SequenceElement_strategy = st.builds(
-    alf::SequenceElement,
+alf_SequenceElement_strategy = st.builds(
+    alf_SequenceElement,
 )
-alf::LocalNameDeclarationStatement_strategy = st.builds(
-    alf::LocalNameDeclarationStatement,
+alf_LocalNameDeclarationStatement_strategy = st.builds(
+    alf_LocalNameDeclarationStatement,
     multiplicityIndicator=
         st.booleans(),
     varName=
         safe_text
 )
-alf::PartialSequenceConstructionCompletion_strategy = st.builds(
-    alf::PartialSequenceConstructionCompletion,
+alf_PartialSequenceConstructionCompletion_strategy = st.builds(
+    alf_PartialSequenceConstructionCompletion,
 )
-alf::AccessCompletion_strategy = st.builds(
-    alf::AccessCompletion,
+alf_AccessCompletion_strategy = st.builds(
+    alf_AccessCompletion,
 )
-alf::InstanceCreationTupleElement_strategy = st.builds(
-    alf::InstanceCreationTupleElement,
+alf_InstanceCreationTupleElement_strategy = st.builds(
+    alf_InstanceCreationTupleElement,
     role=
         safe_text
 )
-alf::InstanceCreationTuple_strategy = st.builds(
-    alf::InstanceCreationTuple,
+alf_InstanceCreationTuple_strategy = st.builds(
+    alf_InstanceCreationTuple,
 )
-alf::NonLiteralValueSpecification_strategy = st.builds(
-    alf::NonLiteralValueSpecification,
+alf_NonLiteralValueSpecification_strategy = st.builds(
+    alf_NonLiteralValueSpecification,
 )
 SequenceExpansionExpression_strategy = st.builds(
     SequenceExpansionExpression,
 )
-alf::ForAllOrExistsOrOneOperation_strategy = st.builds(
-    alf::ForAllOrExistsOrOneOperation,
+alf_IsUniqueOperation_strategy = st.builds(
+    alf_IsUniqueOperation,
+)
+alf_ForAllOrExistsOrOneOperation_strategy = st.builds(
+    alf_ForAllOrExistsOrOneOperation,
     op=
         safe_text
 )
-alf::CollectOrIterateOperation_strategy = st.builds(
-    alf::CollectOrIterateOperation,
+alf_CollectOrIterateOperation_strategy = st.builds(
+    alf_CollectOrIterateOperation,
     op=
         safe_text
 )
-alf::IsUniqueOperation_strategy = st.builds(
-    alf::IsUniqueOperation,
-)
-alf::SelectOrRejectOperation_strategy = st.builds(
-    alf::SelectOrRejectOperation,
+alf_SelectOrRejectOperation_strategy = st.builds(
+    alf_SelectOrRejectOperation,
     op=
         safe_text
 )
-alf::LinkOperationTupleElement_strategy = st.builds(
-    alf::LinkOperationTupleElement,
+alf_LinkOperationTupleElement_strategy = st.builds(
+    alf_LinkOperationTupleElement,
     role=
         safe_text
 )
-alf::LinkOperationTuple_strategy = st.builds(
-    alf::LinkOperationTuple,
+alf_LinkOperationTuple_strategy = st.builds(
+    alf_LinkOperationTuple,
 )
 SuffixExpression_strategy = st.builds(
     SuffixExpression,
 )
-alf::ClassExtentExpression_strategy = st.builds(
-    alf::ClassExtentExpression,
-)
-alf::SequenceExpansionExpression_strategy = st.builds(
-    alf::SequenceExpansionExpression,
-    name=
-        safe_text
-)
-alf::PropertyCallExpression_strategy = st.builds(
-    alf::PropertyCallExpression,
-    propertyName=
-        safe_text
-)
-alf::SequenceReductionExpression_strategy = st.builds(
-    alf::SequenceReductionExpression,
-    isOrdered=
-        st.booleans()
-)
-alf::LinkOperationExpression_strategy = st.builds(
-    alf::LinkOperationExpression,
+alf_LinkOperationExpression_strategy = st.builds(
+    alf_LinkOperationExpression,
     kind=
         safe_text
 )
-alf::SequenceOperationExpression_strategy = st.builds(
-    alf::SequenceOperationExpression,
+alf_ClassExtentExpression_strategy = st.builds(
+    alf_ClassExtentExpression,
 )
-alf::OperationCallExpression_strategy = st.builds(
-    alf::OperationCallExpression,
+alf_SequenceExpansionExpression_strategy = st.builds(
+    alf_SequenceExpansionExpression,
+    name=
+        safe_text
+)
+alf_SequenceOperationExpression_strategy = st.builds(
+    alf_SequenceOperationExpression,
+)
+alf_SequenceReductionExpression_strategy = st.builds(
+    alf_SequenceReductionExpression,
+    isOrdered=
+        st.booleans()
+)
+alf_PropertyCallExpression_strategy = st.builds(
+    alf_PropertyCallExpression,
+    propertyName=
+        safe_text
+)
+alf_OperationCallExpression_strategy = st.builds(
+    alf_OperationCallExpression,
     operationName=
         safe_text
 )
-alf::ValueSpecification_strategy = st.builds(
-    alf::ValueSpecification,
+alf_ValueSpecification_strategy = st.builds(
+    alf_ValueSpecification,
 )
-alf::PrimaryExpression_strategy = st.builds(
-    alf::PrimaryExpression,
+alf_PrimaryExpression_strategy = st.builds(
+    alf_PrimaryExpression,
 )
-alf::UnaryExpression_strategy = st.builds(
-    alf::UnaryExpression,
+alf_UnaryExpression_strategy = st.builds(
+    alf_UnaryExpression,
     op=
         safe_text
 )
-alf::MultiplicativeExpression_strategy = st.builds(
-    alf::MultiplicativeExpression,
+alf_MultiplicativeExpression_strategy = st.builds(
+    alf_MultiplicativeExpression,
     op=
         safe_text
 )
-alf::AdditiveExpression_strategy = st.builds(
-    alf::AdditiveExpression,
+alf_AdditiveExpression_strategy = st.builds(
+    alf_AdditiveExpression,
     op=
         safe_text
 )
-alf::ShiftExpression_strategy = st.builds(
-    alf::ShiftExpression,
+alf_ShiftExpression_strategy = st.builds(
+    alf_ShiftExpression,
     op=
         safe_text
 )
-alf::ClassificationExpression_strategy = st.builds(
-    alf::ClassificationExpression,
+alf_ClassificationExpression_strategy = st.builds(
+    alf_ClassificationExpression,
     op=
         safe_text
 )
-alf::EqualityExpression_strategy = st.builds(
-    alf::EqualityExpression,
+alf_EqualityExpression_strategy = st.builds(
+    alf_EqualityExpression,
     op=
         safe_text
 )
-alf::AndExpression_strategy = st.builds(
-    alf::AndExpression,
+alf_AndExpression_strategy = st.builds(
+    alf_AndExpression,
 )
-alf::ExclusiveOrExpression_strategy = st.builds(
-    alf::ExclusiveOrExpression,
+alf_ExclusiveOrExpression_strategy = st.builds(
+    alf_ExclusiveOrExpression,
 )
-alf::InclusiveOrExpression_strategy = st.builds(
-    alf::InclusiveOrExpression,
+alf_InclusiveOrExpression_strategy = st.builds(
+    alf_InclusiveOrExpression,
 )
-alf::ConditionalAndExpression_strategy = st.builds(
-    alf::ConditionalAndExpression,
+alf_ConditionalAndExpression_strategy = st.builds(
+    alf_ConditionalAndExpression,
 )
-alf::ConditionalOrExpression_strategy = st.builds(
-    alf::ConditionalOrExpression,
+alf_ConditionalOrExpression_strategy = st.builds(
+    alf_ConditionalOrExpression,
 )
 Expression_strategy = st.builds(
     Expression,
 )
-alf::ConditionalTestExpression_strategy = st.builds(
-    alf::ConditionalTestExpression,
+alf_ConditionalTestExpression_strategy = st.builds(
+    alf_ConditionalTestExpression,
 )
 SequenceElement_strategy = st.builds(
     SequenceElement,
 )
-alf::SequenceConstructionExpression_strategy = st.builds(
-    alf::SequenceConstructionExpression,
+alf_SequenceConstructionExpression_strategy = st.builds(
+    alf_SequenceConstructionExpression,
 )
-alf::TupleElement_strategy = st.builds(
-    alf::TupleElement,
+alf_TupleElement_strategy = st.builds(
+    alf_TupleElement,
 )
-alf::QualifiedNameWithBinding_strategy = st.builds(
-    alf::QualifiedNameWithBinding,
+alf_QualifiedNameWithBinding_strategy = st.builds(
+    alf_QualifiedNameWithBinding,
     id=
         safe_text
 )
-alf::NamedTemplateBinding_strategy = st.builds(
-    alf::NamedTemplateBinding,
+alf_NamedTemplateBinding_strategy = st.builds(
+    alf_NamedTemplateBinding,
     formal=
         safe_text
 )
-alf::RelationalExpression_strategy = st.builds(
-    alf::RelationalExpression,
+alf_RelationalExpression_strategy = st.builds(
+    alf_RelationalExpression,
     op=
         safe_text
 )
-alf::TemplateBinding_strategy = st.builds(
-    alf::TemplateBinding,
+alf_TemplateBinding_strategy = st.builds(
+    alf_TemplateBinding,
 )
-alf::UnqualifiedName_strategy = st.builds(
-    alf::UnqualifiedName,
+alf_UnqualifiedName_strategy = st.builds(
+    alf_UnqualifiedName,
     name=
         safe_text
 )
-alf::SuffixExpression_strategy = st.builds(
-    alf::SuffixExpression,
+alf_SuffixExpression_strategy = st.builds(
+    alf_SuffixExpression,
 )
-alf::SequenceConstructionOrAccessCompletion_strategy = st.builds(
-    alf::SequenceConstructionOrAccessCompletion,
+alf_SequenceConstructionOrAccessCompletion_strategy = st.builds(
+    alf_SequenceConstructionOrAccessCompletion,
     multiplicityIndicator=
         st.booleans()
 )
-alf::Tuple_strategy = st.builds(
-    alf::Tuple,
+alf_Tuple_strategy = st.builds(
+    alf_Tuple,
 )
-alf::QualifiedNamePath_strategy = st.builds(
-    alf::QualifiedNamePath,
+alf_QualifiedNamePath_strategy = st.builds(
+    alf_QualifiedNamePath,
 )
 NonLiteralValueSpecification_strategy = st.builds(
     NonLiteralValueSpecification,
 )
-NUMBER::LITERAL_strategy = st.builds(
-    NUMBER::LITERAL,
+NUMBER_LITERAL_strategy = st.builds(
+    NUMBER_LITERAL,
 )
-alf::UNLIMITED::LITERAL_strategy = st.builds(
-    alf::UNLIMITED::LITERAL,
+alf_UNLIMITED_LITERAL_strategy = st.builds(
+    alf_UNLIMITED_LITERAL,
 )
-alf::INTEGER::LITERAL_strategy = st.builds(
-    alf::INTEGER::LITERAL,
+alf_INTEGER_LITERAL_strategy = st.builds(
+    alf_INTEGER_LITERAL,
 )
 ValueSpecification_strategy = st.builds(
     ValueSpecification,
 )
-alf::InstanceCreationExpression_strategy = st.builds(
-    alf::InstanceCreationExpression,
-)
-alf::NullExpression_strategy = st.builds(
-    alf::NullExpression,
-)
-alf::ThisExpression_strategy = st.builds(
-    alf::ThisExpression,
-)
-alf::NameExpression_strategy = st.builds(
-    alf::NameExpression,
+alf_NameExpression_strategy = st.builds(
+    alf_NameExpression,
     postfixOp=
         safe_text,
-    id=
-        safe_text,
     prefixOp=
+        safe_text,
+    id=
         safe_text
 )
-alf::SuperInvocationExpression_strategy = st.builds(
-    alf::SuperInvocationExpression,
+alf_ThisExpression_strategy = st.builds(
+    alf_ThisExpression,
 )
-alf::ParenthesizedExpression_strategy = st.builds(
-    alf::ParenthesizedExpression,
+alf_NullExpression_strategy = st.builds(
+    alf_NullExpression,
 )
-alf::LITERAL_strategy = st.builds(
-    alf::LITERAL,
+alf_SuperInvocationExpression_strategy = st.builds(
+    alf_SuperInvocationExpression,
 )
-alf::Block_strategy = st.builds(
-    alf::Block,
+alf_ParenthesizedExpression_strategy = st.builds(
+    alf_ParenthesizedExpression,
 )
-alf::Statement_strategy = st.builds(
-    alf::Statement,
+alf_InstanceCreationExpression_strategy = st.builds(
+    alf_InstanceCreationExpression,
 )
-alf::AssignmentCompletion_strategy = st.builds(
-    alf::AssignmentCompletion,
+alf_LITERAL_strategy = st.builds(
+    alf_LITERAL,
+)
+alf_Block_strategy = st.builds(
+    alf_Block,
+)
+alf_Statement_strategy = st.builds(
+    alf_Statement,
+)
+alf_AssignmentCompletion_strategy = st.builds(
+    alf_AssignmentCompletion,
     op=
         safe_text
 )
-alf::Expression_strategy = st.builds(
-    alf::Expression,
+alf_Expression_strategy = st.builds(
+    alf_Expression,
 )
-alf::Test_strategy = st.builds(
-    alf::Test,
+alf_Test_strategy = st.builds(
+    alf_Test,
 )
 LITERAL_strategy = st.builds(
     LITERAL,
 )
-alf::STRING::LITERAL_strategy = st.builds(
-    alf::STRING::LITERAL,
+alf_NUMBER_LITERAL_strategy = st.builds(
+    alf_NUMBER_LITERAL,
     value=
         safe_text
 )
-alf::NUMBER::LITERAL_strategy = st.builds(
-    alf::NUMBER::LITERAL,
+alf_STRING_LITERAL_strategy = st.builds(
+    alf_STRING_LITERAL,
     value=
         safe_text
 )
-alf::BOOLEAN::LITERAL_strategy = st.builds(
-    alf::BOOLEAN::LITERAL,
+alf_BOOLEAN_LITERAL_strategy = st.builds(
+    alf_BOOLEAN_LITERAL,
     value=
         safe_text
-)
-alf::InstanceCreationInvocationStatement_strategy = st.builds(
-    alf::InstanceCreationInvocationStatement,
 )
 
-@given(instance=alf::VariableDeclarationCompletion_strategy)
+@given(instance=alf_VariableDeclarationCompletion_strategy)
 @settings(max_examples=50)
-def test_alf::variabledeclarationcompletion_instantiation(instance):
-    assert isinstance(instance, alf::VariableDeclarationCompletion)
-
-@given(instance=alf::VariableDeclarationCompletion_strategy)
-def test_alf::variabledeclarationcompletion_variableName_type(instance):
-    assert isinstance(instance.variableName, str)
+def test_alf_variabledeclarationcompletion_instantiation(instance):
+    assert isinstance(instance, alf_VariableDeclarationCompletion)
 
 
-@given(instance=alf::VariableDeclarationCompletion_strategy)
-def test_alf::variabledeclarationcompletion_variableName_setter(instance):
+
+@given(instance=alf_VariableDeclarationCompletion_strategy)
+def test_alf_variabledeclarationcompletion_variableName_setter(instance):
     original = instance.variableName
     instance.variableName = original
     assert instance.variableName == original
 
-@given(instance=alf::VariableDeclarationCompletion_strategy)
-def test_alf::variabledeclarationcompletion_multiplicityIndicator_type(instance):
-    assert isinstance(instance.multiplicityIndicator, bool)
 
 
-@given(instance=alf::VariableDeclarationCompletion_strategy)
-def test_alf::variabledeclarationcompletion_multiplicityIndicator_setter(instance):
+@given(instance=alf_VariableDeclarationCompletion_strategy)
+def test_alf_variabledeclarationcompletion_multiplicityIndicator_setter(instance):
     original = instance.multiplicityIndicator
     instance.multiplicityIndicator = original
     assert instance.multiplicityIndicator == original
 
-@given(instance=alf::ReclassifyAllClause_strategy)
+@given(instance=alf_ReclassifyAllClause_strategy)
 @settings(max_examples=50)
-def test_alf::reclassifyallclause_instantiation(instance):
-    assert isinstance(instance, alf::ReclassifyAllClause)
+def test_alf_reclassifyallclause_instantiation(instance):
+    assert isinstance(instance, alf_ReclassifyAllClause)
 
-@given(instance=alf::ClassificationToClause_strategy)
+@given(instance=alf_ClassificationToClause_strategy)
 @settings(max_examples=50)
-def test_alf::classificationtoclause_instantiation(instance):
-    assert isinstance(instance, alf::ClassificationToClause)
+def test_alf_classificationtoclause_instantiation(instance):
+    assert isinstance(instance, alf_ClassificationToClause)
 
-@given(instance=alf::ClassificationFromClause_strategy)
+@given(instance=alf_ClassificationFromClause_strategy)
 @settings(max_examples=50)
-def test_alf::classificationfromclause_instantiation(instance):
-    assert isinstance(instance, alf::ClassificationFromClause)
+def test_alf_classificationfromclause_instantiation(instance):
+    assert isinstance(instance, alf_ClassificationFromClause)
 
-@given(instance=alf::ClassificationClause_strategy)
+@given(instance=alf_ClassificationClause_strategy)
 @settings(max_examples=50)
-def test_alf::classificationclause_instantiation(instance):
-    assert isinstance(instance, alf::ClassificationClause)
+def test_alf_classificationclause_instantiation(instance):
+    assert isinstance(instance, alf_ClassificationClause)
 
-@given(instance=alf::QualifiedNameList_strategy)
+@given(instance=alf_QualifiedNameList_strategy)
 @settings(max_examples=50)
-def test_alf::qualifiednamelist_instantiation(instance):
-    assert isinstance(instance, alf::QualifiedNameList)
+def test_alf_qualifiednamelist_instantiation(instance):
+    assert isinstance(instance, alf_QualifiedNameList)
 
-@given(instance=alf::AcceptBlock_strategy)
+@given(instance=alf_AcceptBlock_strategy)
 @settings(max_examples=50)
-def test_alf::acceptblock_instantiation(instance):
-    assert isinstance(instance, alf::AcceptBlock)
+def test_alf_acceptblock_instantiation(instance):
+    assert isinstance(instance, alf_AcceptBlock)
 
-@given(instance=alf::CompoundAcceptStatementCompletion_strategy)
+@given(instance=alf_CompoundAcceptStatementCompletion_strategy)
 @settings(max_examples=50)
-def test_alf::compoundacceptstatementcompletion_instantiation(instance):
-    assert isinstance(instance, alf::CompoundAcceptStatementCompletion)
+def test_alf_compoundacceptstatementcompletion_instantiation(instance):
+    assert isinstance(instance, alf_CompoundAcceptStatementCompletion)
 
-@given(instance=alf::SimpleAcceptStatementCompletion_strategy)
+@given(instance=alf_SimpleAcceptStatementCompletion_strategy)
 @settings(max_examples=50)
-def test_alf::simpleacceptstatementcompletion_instantiation(instance):
-    assert isinstance(instance, alf::SimpleAcceptStatementCompletion)
+def test_alf_simpleacceptstatementcompletion_instantiation(instance):
+    assert isinstance(instance, alf_SimpleAcceptStatementCompletion)
 
-@given(instance=alf::AcceptClause_strategy)
+@given(instance=alf_AcceptClause_strategy)
 @settings(max_examples=50)
-def test_alf::acceptclause_instantiation(instance):
-    assert isinstance(instance, alf::AcceptClause)
-
-@given(instance=alf::AcceptClause_strategy)
-def test_alf::acceptclause_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_alf_acceptclause_instantiation(instance):
+    assert isinstance(instance, alf_AcceptClause)
 
 
-@given(instance=alf::AcceptClause_strategy)
-def test_alf::acceptclause_name_setter(instance):
+
+@given(instance=alf_AcceptClause_strategy)
+def test_alf_acceptclause_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=alf::LoopVariableDefinition_strategy)
+@given(instance=alf_LoopVariableDefinition_strategy)
 @settings(max_examples=50)
-def test_alf::loopvariabledefinition_instantiation(instance):
-    assert isinstance(instance, alf::LoopVariableDefinition)
-
-@given(instance=alf::LoopVariableDefinition_strategy)
-def test_alf::loopvariabledefinition_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_alf_loopvariabledefinition_instantiation(instance):
+    assert isinstance(instance, alf_LoopVariableDefinition)
 
 
-@given(instance=alf::LoopVariableDefinition_strategy)
-def test_alf::loopvariabledefinition_name_setter(instance):
+
+@given(instance=alf_LoopVariableDefinition_strategy)
+def test_alf_loopvariabledefinition_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=alf::ForControl_strategy)
+@given(instance=alf_ForControl_strategy)
 @settings(max_examples=50)
-def test_alf::forcontrol_instantiation(instance):
-    assert isinstance(instance, alf::ForControl)
+def test_alf_forcontrol_instantiation(instance):
+    assert isinstance(instance, alf_ForControl)
 
-@given(instance=alf::NonEmptyStatementSequence_strategy)
+@given(instance=alf_NonEmptyStatementSequence_strategy)
 @settings(max_examples=50)
-def test_alf::nonemptystatementsequence_instantiation(instance):
-    assert isinstance(instance, alf::NonEmptyStatementSequence)
+def test_alf_nonemptystatementsequence_instantiation(instance):
+    assert isinstance(instance, alf_NonEmptyStatementSequence)
 
-@given(instance=alf::SwitchCase_strategy)
+@given(instance=alf_SwitchCase_strategy)
 @settings(max_examples=50)
-def test_alf::switchcase_instantiation(instance):
-    assert isinstance(instance, alf::SwitchCase)
+def test_alf_switchcase_instantiation(instance):
+    assert isinstance(instance, alf_SwitchCase)
 
-@given(instance=alf::SwitchDefaultClause_strategy)
+@given(instance=alf_SwitchDefaultClause_strategy)
 @settings(max_examples=50)
-def test_alf::switchdefaultclause_instantiation(instance):
-    assert isinstance(instance, alf::SwitchDefaultClause)
+def test_alf_switchdefaultclause_instantiation(instance):
+    assert isinstance(instance, alf_SwitchDefaultClause)
 
-@given(instance=alf::SwitchClause_strategy)
+@given(instance=alf_SwitchClause_strategy)
 @settings(max_examples=50)
-def test_alf::switchclause_instantiation(instance):
-    assert isinstance(instance, alf::SwitchClause)
+def test_alf_switchclause_instantiation(instance):
+    assert isinstance(instance, alf_SwitchClause)
 
-@given(instance=alf::NonFinalClause_strategy)
+@given(instance=alf_NonFinalClause_strategy)
 @settings(max_examples=50)
-def test_alf::nonfinalclause_instantiation(instance):
-    assert isinstance(instance, alf::NonFinalClause)
+def test_alf_nonfinalclause_instantiation(instance):
+    assert isinstance(instance, alf_NonFinalClause)
 
-@given(instance=alf::ConcurrentClauses_strategy)
+@given(instance=alf_ConcurrentClauses_strategy)
 @settings(max_examples=50)
-def test_alf::concurrentclauses_instantiation(instance):
-    assert isinstance(instance, alf::ConcurrentClauses)
+def test_alf_concurrentclauses_instantiation(instance):
+    assert isinstance(instance, alf_ConcurrentClauses)
 
-@given(instance=alf::FinalClause_strategy)
+@given(instance=alf_FinalClause_strategy)
 @settings(max_examples=50)
-def test_alf::finalclause_instantiation(instance):
-    assert isinstance(instance, alf::FinalClause)
+def test_alf_finalclause_instantiation(instance):
+    assert isinstance(instance, alf_FinalClause)
 
-@given(instance=alf::SequentialClauses_strategy)
+@given(instance=alf_SequentialClauses_strategy)
 @settings(max_examples=50)
-def test_alf::sequentialclauses_instantiation(instance):
-    assert isinstance(instance, alf::SequentialClauses)
+def test_alf_sequentialclauses_instantiation(instance):
+    assert isinstance(instance, alf_SequentialClauses)
 
-@given(instance=alf::Annotation_strategy)
+@given(instance=alf_Annotation_strategy)
 @settings(max_examples=50)
-def test_alf::annotation_instantiation(instance):
-    assert isinstance(instance, alf::Annotation)
-
-@given(instance=alf::Annotation_strategy)
-def test_alf::annotation_args_type(instance):
-    assert isinstance(instance.args, str)
+def test_alf_annotation_instantiation(instance):
+    assert isinstance(instance, alf_Annotation)
 
 
-@given(instance=alf::Annotation_strategy)
-def test_alf::annotation_args_setter(instance):
+
+@given(instance=alf_Annotation_strategy)
+def test_alf_annotation_args_setter(instance):
     original = instance.args
     instance.args = original
     assert instance.args == original
 
-@given(instance=alf::Annotation_strategy)
-def test_alf::annotation_kind_type(instance):
-    assert isinstance(instance.kind, str)
 
 
-@given(instance=alf::Annotation_strategy)
-def test_alf::annotation_kind_setter(instance):
+@given(instance=alf_Annotation_strategy)
+def test_alf_annotation_kind_setter(instance):
     original = instance.kind
     instance.kind = original
     assert instance.kind == original
@@ -2793,810 +2775,711 @@ def test_alf::annotation_kind_setter(instance):
 def test_statement_instantiation(instance):
     assert isinstance(instance, Statement)
 
-@given(instance=alf::EmptyStatement_strategy)
+@given(instance=alf_ThisInvocationStatement_strategy)
 @settings(max_examples=50)
-def test_alf::emptystatement_instantiation(instance):
-    assert isinstance(instance, alf::EmptyStatement)
+def test_alf_thisinvocationstatement_instantiation(instance):
+    assert isinstance(instance, alf_ThisInvocationStatement)
 
-@given(instance=alf::SuperInvocationStatement_strategy)
+@given(instance=alf_EmptyStatement_strategy)
 @settings(max_examples=50)
-def test_alf::superinvocationstatement_instantiation(instance):
-    assert isinstance(instance, alf::SuperInvocationStatement)
+def test_alf_emptystatement_instantiation(instance):
+    assert isinstance(instance, alf_EmptyStatement)
 
-@given(instance=alf::AcceptStatement_strategy)
+@given(instance=alf_BreakStatement_strategy)
 @settings(max_examples=50)
-def test_alf::acceptstatement_instantiation(instance):
-    assert isinstance(instance, alf::AcceptStatement)
+def test_alf_breakstatement_instantiation(instance):
+    assert isinstance(instance, alf_BreakStatement)
 
-@given(instance=alf::DoStatement_strategy)
+@given(instance=alf_ForStatement_strategy)
 @settings(max_examples=50)
-def test_alf::dostatement_instantiation(instance):
-    assert isinstance(instance, alf::DoStatement)
+def test_alf_forstatement_instantiation(instance):
+    assert isinstance(instance, alf_ForStatement)
 
-@given(instance=alf::ReturnStatement_strategy)
+@given(instance=alf_BlockStatement_strategy)
 @settings(max_examples=50)
-def test_alf::returnstatement_instantiation(instance):
-    assert isinstance(instance, alf::ReturnStatement)
+def test_alf_blockstatement_instantiation(instance):
+    assert isinstance(instance, alf_BlockStatement)
 
-@given(instance=alf::WhileStatement_strategy)
+@given(instance=alf_AcceptStatement_strategy)
 @settings(max_examples=50)
-def test_alf::whilestatement_instantiation(instance):
-    assert isinstance(instance, alf::WhileStatement)
+def test_alf_acceptstatement_instantiation(instance):
+    assert isinstance(instance, alf_AcceptStatement)
 
-@given(instance=alf::BlockStatement_strategy)
+@given(instance=alf_AnnotatedStatement_strategy)
 @settings(max_examples=50)
-def test_alf::blockstatement_instantiation(instance):
-    assert isinstance(instance, alf::BlockStatement)
+def test_alf_annotatedstatement_instantiation(instance):
+    assert isinstance(instance, alf_AnnotatedStatement)
 
-@given(instance=alf::ThisInvocationStatement_strategy)
+@given(instance=alf_SwitchStatement_strategy)
 @settings(max_examples=50)
-def test_alf::thisinvocationstatement_instantiation(instance):
-    assert isinstance(instance, alf::ThisInvocationStatement)
+def test_alf_switchstatement_instantiation(instance):
+    assert isinstance(instance, alf_SwitchStatement)
 
-@given(instance=alf::InvocationOrAssignementOrDeclarationStatement_strategy)
+@given(instance=alf_InvocationOrAssignementOrDeclarationStatement_strategy)
 @settings(max_examples=50)
-def test_alf::invocationorassignementordeclarationstatement_instantiation(instance):
-    assert isinstance(instance, alf::InvocationOrAssignementOrDeclarationStatement)
+def test_alf_invocationorassignementordeclarationstatement_instantiation(instance):
+    assert isinstance(instance, alf_InvocationOrAssignementOrDeclarationStatement)
 
-@given(instance=alf::BreakStatement_strategy)
+@given(instance=alf_ReturnStatement_strategy)
 @settings(max_examples=50)
-def test_alf::breakstatement_instantiation(instance):
-    assert isinstance(instance, alf::BreakStatement)
+def test_alf_returnstatement_instantiation(instance):
+    assert isinstance(instance, alf_ReturnStatement)
 
-@given(instance=alf::ForStatement_strategy)
+@given(instance=alf_SuperInvocationStatement_strategy)
 @settings(max_examples=50)
-def test_alf::forstatement_instantiation(instance):
-    assert isinstance(instance, alf::ForStatement)
+def test_alf_superinvocationstatement_instantiation(instance):
+    assert isinstance(instance, alf_SuperInvocationStatement)
 
-@given(instance=alf::SwitchStatement_strategy)
+@given(instance=alf_ClassifyStatement_strategy)
 @settings(max_examples=50)
-def test_alf::switchstatement_instantiation(instance):
-    assert isinstance(instance, alf::SwitchStatement)
+def test_alf_classifystatement_instantiation(instance):
+    assert isinstance(instance, alf_ClassifyStatement)
 
-@given(instance=alf::ClassifyStatement_strategy)
+@given(instance=alf_WhileStatement_strategy)
 @settings(max_examples=50)
-def test_alf::classifystatement_instantiation(instance):
-    assert isinstance(instance, alf::ClassifyStatement)
+def test_alf_whilestatement_instantiation(instance):
+    assert isinstance(instance, alf_WhileStatement)
 
-@given(instance=alf::IfStatement_strategy)
+@given(instance=alf_DoStatement_strategy)
 @settings(max_examples=50)
-def test_alf::ifstatement_instantiation(instance):
-    assert isinstance(instance, alf::IfStatement)
+def test_alf_dostatement_instantiation(instance):
+    assert isinstance(instance, alf_DoStatement)
 
-@given(instance=alf::AnnotatedStatement_strategy)
+@given(instance=alf_IfStatement_strategy)
 @settings(max_examples=50)
-def test_alf::annotatedstatement_instantiation(instance):
-    assert isinstance(instance, alf::AnnotatedStatement)
+def test_alf_ifstatement_instantiation(instance):
+    assert isinstance(instance, alf_IfStatement)
 
-@given(instance=alf::InlineStatement_strategy)
+@given(instance=alf_InstanceCreationInvocationStatement_strategy)
 @settings(max_examples=50)
-def test_alf::inlinestatement_instantiation(instance):
-    assert isinstance(instance, alf::InlineStatement)
+def test_alf_instancecreationinvocationstatement_instantiation(instance):
+    assert isinstance(instance, alf_InstanceCreationInvocationStatement)
 
-@given(instance=alf::InlineStatement_strategy)
-def test_alf::inlinestatement_langageName_type(instance):
-    assert isinstance(instance.langageName, str)
+@given(instance=alf_InlineStatement_strategy)
+@settings(max_examples=50)
+def test_alf_inlinestatement_instantiation(instance):
+    assert isinstance(instance, alf_InlineStatement)
 
 
-@given(instance=alf::InlineStatement_strategy)
-def test_alf::inlinestatement_langageName_setter(instance):
+
+@given(instance=alf_InlineStatement_strategy)
+def test_alf_inlinestatement_langageName_setter(instance):
     original = instance.langageName
     instance.langageName = original
     assert instance.langageName == original
 
-@given(instance=alf::InlineStatement_strategy)
-def test_alf::inlinestatement_body_type(instance):
-    assert isinstance(instance.body, str)
 
 
-@given(instance=alf::InlineStatement_strategy)
-def test_alf::inlinestatement_body_setter(instance):
+@given(instance=alf_InlineStatement_strategy)
+def test_alf_inlinestatement_body_setter(instance):
     original = instance.body
     instance.body = original
     assert instance.body == original
 
-@given(instance=alf::DocumentedStatement_strategy)
+@given(instance=alf_DocumentedStatement_strategy)
 @settings(max_examples=50)
-def test_alf::documentedstatement_instantiation(instance):
-    assert isinstance(instance, alf::DocumentedStatement)
-
-@given(instance=alf::DocumentedStatement_strategy)
-def test_alf::documentedstatement_comment_type(instance):
-    assert isinstance(instance.comment, str)
+def test_alf_documentedstatement_instantiation(instance):
+    assert isinstance(instance, alf_DocumentedStatement)
 
 
-@given(instance=alf::DocumentedStatement_strategy)
-def test_alf::documentedstatement_comment_setter(instance):
+
+@given(instance=alf_DocumentedStatement_strategy)
+def test_alf_documentedstatement_comment_setter(instance):
     original = instance.comment
     instance.comment = original
     assert instance.comment == original
 
-@given(instance=alf::StatementSequence_strategy)
+@given(instance=alf_StatementSequence_strategy)
 @settings(max_examples=50)
-def test_alf::statementsequence_instantiation(instance):
-    assert isinstance(instance, alf::StatementSequence)
+def test_alf_statementsequence_instantiation(instance):
+    assert isinstance(instance, alf_StatementSequence)
 
-@given(instance=alf::SequenceElement_strategy)
+@given(instance=alf_SequenceElement_strategy)
 @settings(max_examples=50)
-def test_alf::sequenceelement_instantiation(instance):
-    assert isinstance(instance, alf::SequenceElement)
+def test_alf_sequenceelement_instantiation(instance):
+    assert isinstance(instance, alf_SequenceElement)
 
-@given(instance=alf::LocalNameDeclarationStatement_strategy)
+@given(instance=alf_LocalNameDeclarationStatement_strategy)
 @settings(max_examples=50)
-def test_alf::localnamedeclarationstatement_instantiation(instance):
-    assert isinstance(instance, alf::LocalNameDeclarationStatement)
-
-@given(instance=alf::LocalNameDeclarationStatement_strategy)
-def test_alf::localnamedeclarationstatement_multiplicityIndicator_type(instance):
-    assert isinstance(instance.multiplicityIndicator, bool)
+def test_alf_localnamedeclarationstatement_instantiation(instance):
+    assert isinstance(instance, alf_LocalNameDeclarationStatement)
 
 
-@given(instance=alf::LocalNameDeclarationStatement_strategy)
-def test_alf::localnamedeclarationstatement_multiplicityIndicator_setter(instance):
+
+@given(instance=alf_LocalNameDeclarationStatement_strategy)
+def test_alf_localnamedeclarationstatement_multiplicityIndicator_setter(instance):
     original = instance.multiplicityIndicator
     instance.multiplicityIndicator = original
     assert instance.multiplicityIndicator == original
 
-@given(instance=alf::LocalNameDeclarationStatement_strategy)
-def test_alf::localnamedeclarationstatement_varName_type(instance):
-    assert isinstance(instance.varName, str)
 
 
-@given(instance=alf::LocalNameDeclarationStatement_strategy)
-def test_alf::localnamedeclarationstatement_varName_setter(instance):
+@given(instance=alf_LocalNameDeclarationStatement_strategy)
+def test_alf_localnamedeclarationstatement_varName_setter(instance):
     original = instance.varName
     instance.varName = original
     assert instance.varName == original
 
-@given(instance=alf::PartialSequenceConstructionCompletion_strategy)
+@given(instance=alf_PartialSequenceConstructionCompletion_strategy)
 @settings(max_examples=50)
-def test_alf::partialsequenceconstructioncompletion_instantiation(instance):
-    assert isinstance(instance, alf::PartialSequenceConstructionCompletion)
+def test_alf_partialsequenceconstructioncompletion_instantiation(instance):
+    assert isinstance(instance, alf_PartialSequenceConstructionCompletion)
 
-@given(instance=alf::AccessCompletion_strategy)
+@given(instance=alf_AccessCompletion_strategy)
 @settings(max_examples=50)
-def test_alf::accesscompletion_instantiation(instance):
-    assert isinstance(instance, alf::AccessCompletion)
+def test_alf_accesscompletion_instantiation(instance):
+    assert isinstance(instance, alf_AccessCompletion)
 
-@given(instance=alf::InstanceCreationTupleElement_strategy)
+@given(instance=alf_InstanceCreationTupleElement_strategy)
 @settings(max_examples=50)
-def test_alf::instancecreationtupleelement_instantiation(instance):
-    assert isinstance(instance, alf::InstanceCreationTupleElement)
-
-@given(instance=alf::InstanceCreationTupleElement_strategy)
-def test_alf::instancecreationtupleelement_role_type(instance):
-    assert isinstance(instance.role, str)
+def test_alf_instancecreationtupleelement_instantiation(instance):
+    assert isinstance(instance, alf_InstanceCreationTupleElement)
 
 
-@given(instance=alf::InstanceCreationTupleElement_strategy)
-def test_alf::instancecreationtupleelement_role_setter(instance):
+
+@given(instance=alf_InstanceCreationTupleElement_strategy)
+def test_alf_instancecreationtupleelement_role_setter(instance):
     original = instance.role
     instance.role = original
     assert instance.role == original
 
-@given(instance=alf::InstanceCreationTuple_strategy)
+@given(instance=alf_InstanceCreationTuple_strategy)
 @settings(max_examples=50)
-def test_alf::instancecreationtuple_instantiation(instance):
-    assert isinstance(instance, alf::InstanceCreationTuple)
+def test_alf_instancecreationtuple_instantiation(instance):
+    assert isinstance(instance, alf_InstanceCreationTuple)
 
-@given(instance=alf::NonLiteralValueSpecification_strategy)
+@given(instance=alf_NonLiteralValueSpecification_strategy)
 @settings(max_examples=50)
-def test_alf::nonliteralvaluespecification_instantiation(instance):
-    assert isinstance(instance, alf::NonLiteralValueSpecification)
+def test_alf_nonliteralvaluespecification_instantiation(instance):
+    assert isinstance(instance, alf_NonLiteralValueSpecification)
 
 @given(instance=SequenceExpansionExpression_strategy)
 @settings(max_examples=50)
 def test_sequenceexpansionexpression_instantiation(instance):
     assert isinstance(instance, SequenceExpansionExpression)
 
-@given(instance=alf::ForAllOrExistsOrOneOperation_strategy)
+@given(instance=alf_IsUniqueOperation_strategy)
 @settings(max_examples=50)
-def test_alf::forallorexistsoroneoperation_instantiation(instance):
-    assert isinstance(instance, alf::ForAllOrExistsOrOneOperation)
+def test_alf_isuniqueoperation_instantiation(instance):
+    assert isinstance(instance, alf_IsUniqueOperation)
 
-@given(instance=alf::ForAllOrExistsOrOneOperation_strategy)
-def test_alf::forallorexistsoroneoperation_op_type(instance):
-    assert isinstance(instance.op, str)
+@given(instance=alf_ForAllOrExistsOrOneOperation_strategy)
+@settings(max_examples=50)
+def test_alf_forallorexistsoroneoperation_instantiation(instance):
+    assert isinstance(instance, alf_ForAllOrExistsOrOneOperation)
 
 
-@given(instance=alf::ForAllOrExistsOrOneOperation_strategy)
-def test_alf::forallorexistsoroneoperation_op_setter(instance):
+
+@given(instance=alf_ForAllOrExistsOrOneOperation_strategy)
+def test_alf_forallorexistsoroneoperation_op_setter(instance):
     original = instance.op
     instance.op = original
     assert instance.op == original
 
-@given(instance=alf::CollectOrIterateOperation_strategy)
+@given(instance=alf_CollectOrIterateOperation_strategy)
 @settings(max_examples=50)
-def test_alf::collectoriterateoperation_instantiation(instance):
-    assert isinstance(instance, alf::CollectOrIterateOperation)
-
-@given(instance=alf::CollectOrIterateOperation_strategy)
-def test_alf::collectoriterateoperation_op_type(instance):
-    assert isinstance(instance.op, str)
+def test_alf_collectoriterateoperation_instantiation(instance):
+    assert isinstance(instance, alf_CollectOrIterateOperation)
 
 
-@given(instance=alf::CollectOrIterateOperation_strategy)
-def test_alf::collectoriterateoperation_op_setter(instance):
+
+@given(instance=alf_CollectOrIterateOperation_strategy)
+def test_alf_collectoriterateoperation_op_setter(instance):
     original = instance.op
     instance.op = original
     assert instance.op == original
 
-@given(instance=alf::IsUniqueOperation_strategy)
+@given(instance=alf_SelectOrRejectOperation_strategy)
 @settings(max_examples=50)
-def test_alf::isuniqueoperation_instantiation(instance):
-    assert isinstance(instance, alf::IsUniqueOperation)
-
-@given(instance=alf::SelectOrRejectOperation_strategy)
-@settings(max_examples=50)
-def test_alf::selectorrejectoperation_instantiation(instance):
-    assert isinstance(instance, alf::SelectOrRejectOperation)
-
-@given(instance=alf::SelectOrRejectOperation_strategy)
-def test_alf::selectorrejectoperation_op_type(instance):
-    assert isinstance(instance.op, str)
+def test_alf_selectorrejectoperation_instantiation(instance):
+    assert isinstance(instance, alf_SelectOrRejectOperation)
 
 
-@given(instance=alf::SelectOrRejectOperation_strategy)
-def test_alf::selectorrejectoperation_op_setter(instance):
+
+@given(instance=alf_SelectOrRejectOperation_strategy)
+def test_alf_selectorrejectoperation_op_setter(instance):
     original = instance.op
     instance.op = original
     assert instance.op == original
 
-@given(instance=alf::LinkOperationTupleElement_strategy)
+@given(instance=alf_LinkOperationTupleElement_strategy)
 @settings(max_examples=50)
-def test_alf::linkoperationtupleelement_instantiation(instance):
-    assert isinstance(instance, alf::LinkOperationTupleElement)
-
-@given(instance=alf::LinkOperationTupleElement_strategy)
-def test_alf::linkoperationtupleelement_role_type(instance):
-    assert isinstance(instance.role, str)
+def test_alf_linkoperationtupleelement_instantiation(instance):
+    assert isinstance(instance, alf_LinkOperationTupleElement)
 
 
-@given(instance=alf::LinkOperationTupleElement_strategy)
-def test_alf::linkoperationtupleelement_role_setter(instance):
+
+@given(instance=alf_LinkOperationTupleElement_strategy)
+def test_alf_linkoperationtupleelement_role_setter(instance):
     original = instance.role
     instance.role = original
     assert instance.role == original
 
-@given(instance=alf::LinkOperationTuple_strategy)
+@given(instance=alf_LinkOperationTuple_strategy)
 @settings(max_examples=50)
-def test_alf::linkoperationtuple_instantiation(instance):
-    assert isinstance(instance, alf::LinkOperationTuple)
+def test_alf_linkoperationtuple_instantiation(instance):
+    assert isinstance(instance, alf_LinkOperationTuple)
 
 @given(instance=SuffixExpression_strategy)
 @settings(max_examples=50)
 def test_suffixexpression_instantiation(instance):
     assert isinstance(instance, SuffixExpression)
 
-@given(instance=alf::ClassExtentExpression_strategy)
+@given(instance=alf_LinkOperationExpression_strategy)
 @settings(max_examples=50)
-def test_alf::classextentexpression_instantiation(instance):
-    assert isinstance(instance, alf::ClassExtentExpression)
-
-@given(instance=alf::SequenceExpansionExpression_strategy)
-@settings(max_examples=50)
-def test_alf::sequenceexpansionexpression_instantiation(instance):
-    assert isinstance(instance, alf::SequenceExpansionExpression)
-
-@given(instance=alf::SequenceExpansionExpression_strategy)
-def test_alf::sequenceexpansionexpression_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_alf_linkoperationexpression_instantiation(instance):
+    assert isinstance(instance, alf_LinkOperationExpression)
 
 
-@given(instance=alf::SequenceExpansionExpression_strategy)
-def test_alf::sequenceexpansionexpression_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
 
-@given(instance=alf::PropertyCallExpression_strategy)
-@settings(max_examples=50)
-def test_alf::propertycallexpression_instantiation(instance):
-    assert isinstance(instance, alf::PropertyCallExpression)
-
-@given(instance=alf::PropertyCallExpression_strategy)
-def test_alf::propertycallexpression_propertyName_type(instance):
-    assert isinstance(instance.propertyName, str)
-
-
-@given(instance=alf::PropertyCallExpression_strategy)
-def test_alf::propertycallexpression_propertyName_setter(instance):
-    original = instance.propertyName
-    instance.propertyName = original
-    assert instance.propertyName == original
-
-@given(instance=alf::SequenceReductionExpression_strategy)
-@settings(max_examples=50)
-def test_alf::sequencereductionexpression_instantiation(instance):
-    assert isinstance(instance, alf::SequenceReductionExpression)
-
-@given(instance=alf::SequenceReductionExpression_strategy)
-def test_alf::sequencereductionexpression_isOrdered_type(instance):
-    assert isinstance(instance.isOrdered, bool)
-
-
-@given(instance=alf::SequenceReductionExpression_strategy)
-def test_alf::sequencereductionexpression_isOrdered_setter(instance):
-    original = instance.isOrdered
-    instance.isOrdered = original
-    assert instance.isOrdered == original
-
-@given(instance=alf::LinkOperationExpression_strategy)
-@settings(max_examples=50)
-def test_alf::linkoperationexpression_instantiation(instance):
-    assert isinstance(instance, alf::LinkOperationExpression)
-
-@given(instance=alf::LinkOperationExpression_strategy)
-def test_alf::linkoperationexpression_kind_type(instance):
-    assert isinstance(instance.kind, str)
-
-
-@given(instance=alf::LinkOperationExpression_strategy)
-def test_alf::linkoperationexpression_kind_setter(instance):
+@given(instance=alf_LinkOperationExpression_strategy)
+def test_alf_linkoperationexpression_kind_setter(instance):
     original = instance.kind
     instance.kind = original
     assert instance.kind == original
 
-@given(instance=alf::SequenceOperationExpression_strategy)
+@given(instance=alf_ClassExtentExpression_strategy)
 @settings(max_examples=50)
-def test_alf::sequenceoperationexpression_instantiation(instance):
-    assert isinstance(instance, alf::SequenceOperationExpression)
+def test_alf_classextentexpression_instantiation(instance):
+    assert isinstance(instance, alf_ClassExtentExpression)
 
-@given(instance=alf::OperationCallExpression_strategy)
+@given(instance=alf_SequenceExpansionExpression_strategy)
 @settings(max_examples=50)
-def test_alf::operationcallexpression_instantiation(instance):
-    assert isinstance(instance, alf::OperationCallExpression)
-
-@given(instance=alf::OperationCallExpression_strategy)
-def test_alf::operationcallexpression_operationName_type(instance):
-    assert isinstance(instance.operationName, str)
+def test_alf_sequenceexpansionexpression_instantiation(instance):
+    assert isinstance(instance, alf_SequenceExpansionExpression)
 
 
-@given(instance=alf::OperationCallExpression_strategy)
-def test_alf::operationcallexpression_operationName_setter(instance):
+
+@given(instance=alf_SequenceExpansionExpression_strategy)
+def test_alf_sequenceexpansionexpression_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+@given(instance=alf_SequenceOperationExpression_strategy)
+@settings(max_examples=50)
+def test_alf_sequenceoperationexpression_instantiation(instance):
+    assert isinstance(instance, alf_SequenceOperationExpression)
+
+@given(instance=alf_SequenceReductionExpression_strategy)
+@settings(max_examples=50)
+def test_alf_sequencereductionexpression_instantiation(instance):
+    assert isinstance(instance, alf_SequenceReductionExpression)
+
+
+
+@given(instance=alf_SequenceReductionExpression_strategy)
+def test_alf_sequencereductionexpression_isOrdered_setter(instance):
+    original = instance.isOrdered
+    instance.isOrdered = original
+    assert instance.isOrdered == original
+
+@given(instance=alf_PropertyCallExpression_strategy)
+@settings(max_examples=50)
+def test_alf_propertycallexpression_instantiation(instance):
+    assert isinstance(instance, alf_PropertyCallExpression)
+
+
+
+@given(instance=alf_PropertyCallExpression_strategy)
+def test_alf_propertycallexpression_propertyName_setter(instance):
+    original = instance.propertyName
+    instance.propertyName = original
+    assert instance.propertyName == original
+
+@given(instance=alf_OperationCallExpression_strategy)
+@settings(max_examples=50)
+def test_alf_operationcallexpression_instantiation(instance):
+    assert isinstance(instance, alf_OperationCallExpression)
+
+
+
+@given(instance=alf_OperationCallExpression_strategy)
+def test_alf_operationcallexpression_operationName_setter(instance):
     original = instance.operationName
     instance.operationName = original
     assert instance.operationName == original
 
-@given(instance=alf::ValueSpecification_strategy)
+@given(instance=alf_ValueSpecification_strategy)
 @settings(max_examples=50)
-def test_alf::valuespecification_instantiation(instance):
-    assert isinstance(instance, alf::ValueSpecification)
+def test_alf_valuespecification_instantiation(instance):
+    assert isinstance(instance, alf_ValueSpecification)
 
-@given(instance=alf::PrimaryExpression_strategy)
+@given(instance=alf_PrimaryExpression_strategy)
 @settings(max_examples=50)
-def test_alf::primaryexpression_instantiation(instance):
-    assert isinstance(instance, alf::PrimaryExpression)
+def test_alf_primaryexpression_instantiation(instance):
+    assert isinstance(instance, alf_PrimaryExpression)
 
-@given(instance=alf::UnaryExpression_strategy)
+@given(instance=alf_UnaryExpression_strategy)
 @settings(max_examples=50)
-def test_alf::unaryexpression_instantiation(instance):
-    assert isinstance(instance, alf::UnaryExpression)
-
-@given(instance=alf::UnaryExpression_strategy)
-def test_alf::unaryexpression_op_type(instance):
-    assert isinstance(instance.op, str)
+def test_alf_unaryexpression_instantiation(instance):
+    assert isinstance(instance, alf_UnaryExpression)
 
 
-@given(instance=alf::UnaryExpression_strategy)
-def test_alf::unaryexpression_op_setter(instance):
+
+@given(instance=alf_UnaryExpression_strategy)
+def test_alf_unaryexpression_op_setter(instance):
     original = instance.op
     instance.op = original
     assert instance.op == original
 
-@given(instance=alf::MultiplicativeExpression_strategy)
+@given(instance=alf_MultiplicativeExpression_strategy)
 @settings(max_examples=50)
-def test_alf::multiplicativeexpression_instantiation(instance):
-    assert isinstance(instance, alf::MultiplicativeExpression)
-
-@given(instance=alf::MultiplicativeExpression_strategy)
-def test_alf::multiplicativeexpression_op_type(instance):
-    assert isinstance(instance.op, str)
+def test_alf_multiplicativeexpression_instantiation(instance):
+    assert isinstance(instance, alf_MultiplicativeExpression)
 
 
-@given(instance=alf::MultiplicativeExpression_strategy)
-def test_alf::multiplicativeexpression_op_setter(instance):
+
+@given(instance=alf_MultiplicativeExpression_strategy)
+def test_alf_multiplicativeexpression_op_setter(instance):
     original = instance.op
     instance.op = original
     assert instance.op == original
 
-@given(instance=alf::AdditiveExpression_strategy)
+@given(instance=alf_AdditiveExpression_strategy)
 @settings(max_examples=50)
-def test_alf::additiveexpression_instantiation(instance):
-    assert isinstance(instance, alf::AdditiveExpression)
-
-@given(instance=alf::AdditiveExpression_strategy)
-def test_alf::additiveexpression_op_type(instance):
-    assert isinstance(instance.op, str)
+def test_alf_additiveexpression_instantiation(instance):
+    assert isinstance(instance, alf_AdditiveExpression)
 
 
-@given(instance=alf::AdditiveExpression_strategy)
-def test_alf::additiveexpression_op_setter(instance):
+
+@given(instance=alf_AdditiveExpression_strategy)
+def test_alf_additiveexpression_op_setter(instance):
     original = instance.op
     instance.op = original
     assert instance.op == original
 
-@given(instance=alf::ShiftExpression_strategy)
+@given(instance=alf_ShiftExpression_strategy)
 @settings(max_examples=50)
-def test_alf::shiftexpression_instantiation(instance):
-    assert isinstance(instance, alf::ShiftExpression)
-
-@given(instance=alf::ShiftExpression_strategy)
-def test_alf::shiftexpression_op_type(instance):
-    assert isinstance(instance.op, str)
+def test_alf_shiftexpression_instantiation(instance):
+    assert isinstance(instance, alf_ShiftExpression)
 
 
-@given(instance=alf::ShiftExpression_strategy)
-def test_alf::shiftexpression_op_setter(instance):
+
+@given(instance=alf_ShiftExpression_strategy)
+def test_alf_shiftexpression_op_setter(instance):
     original = instance.op
     instance.op = original
     assert instance.op == original
 
-@given(instance=alf::ClassificationExpression_strategy)
+@given(instance=alf_ClassificationExpression_strategy)
 @settings(max_examples=50)
-def test_alf::classificationexpression_instantiation(instance):
-    assert isinstance(instance, alf::ClassificationExpression)
-
-@given(instance=alf::ClassificationExpression_strategy)
-def test_alf::classificationexpression_op_type(instance):
-    assert isinstance(instance.op, str)
+def test_alf_classificationexpression_instantiation(instance):
+    assert isinstance(instance, alf_ClassificationExpression)
 
 
-@given(instance=alf::ClassificationExpression_strategy)
-def test_alf::classificationexpression_op_setter(instance):
+
+@given(instance=alf_ClassificationExpression_strategy)
+def test_alf_classificationexpression_op_setter(instance):
     original = instance.op
     instance.op = original
     assert instance.op == original
 
-@given(instance=alf::EqualityExpression_strategy)
+@given(instance=alf_EqualityExpression_strategy)
 @settings(max_examples=50)
-def test_alf::equalityexpression_instantiation(instance):
-    assert isinstance(instance, alf::EqualityExpression)
-
-@given(instance=alf::EqualityExpression_strategy)
-def test_alf::equalityexpression_op_type(instance):
-    assert isinstance(instance.op, str)
+def test_alf_equalityexpression_instantiation(instance):
+    assert isinstance(instance, alf_EqualityExpression)
 
 
-@given(instance=alf::EqualityExpression_strategy)
-def test_alf::equalityexpression_op_setter(instance):
+
+@given(instance=alf_EqualityExpression_strategy)
+def test_alf_equalityexpression_op_setter(instance):
     original = instance.op
     instance.op = original
     assert instance.op == original
 
-@given(instance=alf::AndExpression_strategy)
+@given(instance=alf_AndExpression_strategy)
 @settings(max_examples=50)
-def test_alf::andexpression_instantiation(instance):
-    assert isinstance(instance, alf::AndExpression)
+def test_alf_andexpression_instantiation(instance):
+    assert isinstance(instance, alf_AndExpression)
 
-@given(instance=alf::ExclusiveOrExpression_strategy)
+@given(instance=alf_ExclusiveOrExpression_strategy)
 @settings(max_examples=50)
-def test_alf::exclusiveorexpression_instantiation(instance):
-    assert isinstance(instance, alf::ExclusiveOrExpression)
+def test_alf_exclusiveorexpression_instantiation(instance):
+    assert isinstance(instance, alf_ExclusiveOrExpression)
 
-@given(instance=alf::InclusiveOrExpression_strategy)
+@given(instance=alf_InclusiveOrExpression_strategy)
 @settings(max_examples=50)
-def test_alf::inclusiveorexpression_instantiation(instance):
-    assert isinstance(instance, alf::InclusiveOrExpression)
+def test_alf_inclusiveorexpression_instantiation(instance):
+    assert isinstance(instance, alf_InclusiveOrExpression)
 
-@given(instance=alf::ConditionalAndExpression_strategy)
+@given(instance=alf_ConditionalAndExpression_strategy)
 @settings(max_examples=50)
-def test_alf::conditionalandexpression_instantiation(instance):
-    assert isinstance(instance, alf::ConditionalAndExpression)
+def test_alf_conditionalandexpression_instantiation(instance):
+    assert isinstance(instance, alf_ConditionalAndExpression)
 
-@given(instance=alf::ConditionalOrExpression_strategy)
+@given(instance=alf_ConditionalOrExpression_strategy)
 @settings(max_examples=50)
-def test_alf::conditionalorexpression_instantiation(instance):
-    assert isinstance(instance, alf::ConditionalOrExpression)
+def test_alf_conditionalorexpression_instantiation(instance):
+    assert isinstance(instance, alf_ConditionalOrExpression)
 
 @given(instance=Expression_strategy)
 @settings(max_examples=50)
 def test_expression_instantiation(instance):
     assert isinstance(instance, Expression)
 
-@given(instance=alf::ConditionalTestExpression_strategy)
+@given(instance=alf_ConditionalTestExpression_strategy)
 @settings(max_examples=50)
-def test_alf::conditionaltestexpression_instantiation(instance):
-    assert isinstance(instance, alf::ConditionalTestExpression)
+def test_alf_conditionaltestexpression_instantiation(instance):
+    assert isinstance(instance, alf_ConditionalTestExpression)
 
 @given(instance=SequenceElement_strategy)
 @settings(max_examples=50)
 def test_sequenceelement_instantiation(instance):
     assert isinstance(instance, SequenceElement)
 
-@given(instance=alf::SequenceConstructionExpression_strategy)
+@given(instance=alf_SequenceConstructionExpression_strategy)
 @settings(max_examples=50)
-def test_alf::sequenceconstructionexpression_instantiation(instance):
-    assert isinstance(instance, alf::SequenceConstructionExpression)
+def test_alf_sequenceconstructionexpression_instantiation(instance):
+    assert isinstance(instance, alf_SequenceConstructionExpression)
 
-@given(instance=alf::TupleElement_strategy)
+@given(instance=alf_TupleElement_strategy)
 @settings(max_examples=50)
-def test_alf::tupleelement_instantiation(instance):
-    assert isinstance(instance, alf::TupleElement)
+def test_alf_tupleelement_instantiation(instance):
+    assert isinstance(instance, alf_TupleElement)
 
-@given(instance=alf::QualifiedNameWithBinding_strategy)
+@given(instance=alf_QualifiedNameWithBinding_strategy)
 @settings(max_examples=50)
-def test_alf::qualifiednamewithbinding_instantiation(instance):
-    assert isinstance(instance, alf::QualifiedNameWithBinding)
-
-@given(instance=alf::QualifiedNameWithBinding_strategy)
-def test_alf::qualifiednamewithbinding_id_type(instance):
-    assert isinstance(instance.id, str)
+def test_alf_qualifiednamewithbinding_instantiation(instance):
+    assert isinstance(instance, alf_QualifiedNameWithBinding)
 
 
-@given(instance=alf::QualifiedNameWithBinding_strategy)
-def test_alf::qualifiednamewithbinding_id_setter(instance):
+
+@given(instance=alf_QualifiedNameWithBinding_strategy)
+def test_alf_qualifiednamewithbinding_id_setter(instance):
     original = instance.id
     instance.id = original
     assert instance.id == original
 
-@given(instance=alf::NamedTemplateBinding_strategy)
+@given(instance=alf_NamedTemplateBinding_strategy)
 @settings(max_examples=50)
-def test_alf::namedtemplatebinding_instantiation(instance):
-    assert isinstance(instance, alf::NamedTemplateBinding)
-
-@given(instance=alf::NamedTemplateBinding_strategy)
-def test_alf::namedtemplatebinding_formal_type(instance):
-    assert isinstance(instance.formal, str)
+def test_alf_namedtemplatebinding_instantiation(instance):
+    assert isinstance(instance, alf_NamedTemplateBinding)
 
 
-@given(instance=alf::NamedTemplateBinding_strategy)
-def test_alf::namedtemplatebinding_formal_setter(instance):
+
+@given(instance=alf_NamedTemplateBinding_strategy)
+def test_alf_namedtemplatebinding_formal_setter(instance):
     original = instance.formal
     instance.formal = original
     assert instance.formal == original
 
-@given(instance=alf::RelationalExpression_strategy)
+@given(instance=alf_RelationalExpression_strategy)
 @settings(max_examples=50)
-def test_alf::relationalexpression_instantiation(instance):
-    assert isinstance(instance, alf::RelationalExpression)
-
-@given(instance=alf::RelationalExpression_strategy)
-def test_alf::relationalexpression_op_type(instance):
-    assert isinstance(instance.op, str)
+def test_alf_relationalexpression_instantiation(instance):
+    assert isinstance(instance, alf_RelationalExpression)
 
 
-@given(instance=alf::RelationalExpression_strategy)
-def test_alf::relationalexpression_op_setter(instance):
+
+@given(instance=alf_RelationalExpression_strategy)
+def test_alf_relationalexpression_op_setter(instance):
     original = instance.op
     instance.op = original
     assert instance.op == original
 
-@given(instance=alf::TemplateBinding_strategy)
+@given(instance=alf_TemplateBinding_strategy)
 @settings(max_examples=50)
-def test_alf::templatebinding_instantiation(instance):
-    assert isinstance(instance, alf::TemplateBinding)
+def test_alf_templatebinding_instantiation(instance):
+    assert isinstance(instance, alf_TemplateBinding)
 
-@given(instance=alf::UnqualifiedName_strategy)
+@given(instance=alf_UnqualifiedName_strategy)
 @settings(max_examples=50)
-def test_alf::unqualifiedname_instantiation(instance):
-    assert isinstance(instance, alf::UnqualifiedName)
-
-@given(instance=alf::UnqualifiedName_strategy)
-def test_alf::unqualifiedname_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_alf_unqualifiedname_instantiation(instance):
+    assert isinstance(instance, alf_UnqualifiedName)
 
 
-@given(instance=alf::UnqualifiedName_strategy)
-def test_alf::unqualifiedname_name_setter(instance):
+
+@given(instance=alf_UnqualifiedName_strategy)
+def test_alf_unqualifiedname_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=alf::SuffixExpression_strategy)
+@given(instance=alf_SuffixExpression_strategy)
 @settings(max_examples=50)
-def test_alf::suffixexpression_instantiation(instance):
-    assert isinstance(instance, alf::SuffixExpression)
+def test_alf_suffixexpression_instantiation(instance):
+    assert isinstance(instance, alf_SuffixExpression)
 
-@given(instance=alf::SequenceConstructionOrAccessCompletion_strategy)
+@given(instance=alf_SequenceConstructionOrAccessCompletion_strategy)
 @settings(max_examples=50)
-def test_alf::sequenceconstructionoraccesscompletion_instantiation(instance):
-    assert isinstance(instance, alf::SequenceConstructionOrAccessCompletion)
-
-@given(instance=alf::SequenceConstructionOrAccessCompletion_strategy)
-def test_alf::sequenceconstructionoraccesscompletion_multiplicityIndicator_type(instance):
-    assert isinstance(instance.multiplicityIndicator, bool)
+def test_alf_sequenceconstructionoraccesscompletion_instantiation(instance):
+    assert isinstance(instance, alf_SequenceConstructionOrAccessCompletion)
 
 
-@given(instance=alf::SequenceConstructionOrAccessCompletion_strategy)
-def test_alf::sequenceconstructionoraccesscompletion_multiplicityIndicator_setter(instance):
+
+@given(instance=alf_SequenceConstructionOrAccessCompletion_strategy)
+def test_alf_sequenceconstructionoraccesscompletion_multiplicityIndicator_setter(instance):
     original = instance.multiplicityIndicator
     instance.multiplicityIndicator = original
     assert instance.multiplicityIndicator == original
 
-@given(instance=alf::Tuple_strategy)
+@given(instance=alf_Tuple_strategy)
 @settings(max_examples=50)
-def test_alf::tuple_instantiation(instance):
-    assert isinstance(instance, alf::Tuple)
+def test_alf_tuple_instantiation(instance):
+    assert isinstance(instance, alf_Tuple)
 
-@given(instance=alf::QualifiedNamePath_strategy)
+@given(instance=alf_QualifiedNamePath_strategy)
 @settings(max_examples=50)
-def test_alf::qualifiednamepath_instantiation(instance):
-    assert isinstance(instance, alf::QualifiedNamePath)
+def test_alf_qualifiednamepath_instantiation(instance):
+    assert isinstance(instance, alf_QualifiedNamePath)
 
 @given(instance=NonLiteralValueSpecification_strategy)
 @settings(max_examples=50)
 def test_nonliteralvaluespecification_instantiation(instance):
     assert isinstance(instance, NonLiteralValueSpecification)
 
-@given(instance=NUMBER::LITERAL_strategy)
+@given(instance=NUMBER_LITERAL_strategy)
 @settings(max_examples=50)
-def test_number::literal_instantiation(instance):
-    assert isinstance(instance, NUMBER::LITERAL)
+def test_number_literal_instantiation(instance):
+    assert isinstance(instance, NUMBER_LITERAL)
 
-@given(instance=alf::UNLIMITED::LITERAL_strategy)
+@given(instance=alf_UNLIMITED_LITERAL_strategy)
 @settings(max_examples=50)
-def test_alf::unlimited::literal_instantiation(instance):
-    assert isinstance(instance, alf::UNLIMITED::LITERAL)
+def test_alf_unlimited_literal_instantiation(instance):
+    assert isinstance(instance, alf_UNLIMITED_LITERAL)
 
-@given(instance=alf::INTEGER::LITERAL_strategy)
+@given(instance=alf_INTEGER_LITERAL_strategy)
 @settings(max_examples=50)
-def test_alf::integer::literal_instantiation(instance):
-    assert isinstance(instance, alf::INTEGER::LITERAL)
+def test_alf_integer_literal_instantiation(instance):
+    assert isinstance(instance, alf_INTEGER_LITERAL)
 
 @given(instance=ValueSpecification_strategy)
 @settings(max_examples=50)
 def test_valuespecification_instantiation(instance):
     assert isinstance(instance, ValueSpecification)
 
-@given(instance=alf::InstanceCreationExpression_strategy)
+@given(instance=alf_NameExpression_strategy)
 @settings(max_examples=50)
-def test_alf::instancecreationexpression_instantiation(instance):
-    assert isinstance(instance, alf::InstanceCreationExpression)
-
-@given(instance=alf::NullExpression_strategy)
-@settings(max_examples=50)
-def test_alf::nullexpression_instantiation(instance):
-    assert isinstance(instance, alf::NullExpression)
-
-@given(instance=alf::ThisExpression_strategy)
-@settings(max_examples=50)
-def test_alf::thisexpression_instantiation(instance):
-    assert isinstance(instance, alf::ThisExpression)
-
-@given(instance=alf::NameExpression_strategy)
-@settings(max_examples=50)
-def test_alf::nameexpression_instantiation(instance):
-    assert isinstance(instance, alf::NameExpression)
-
-@given(instance=alf::NameExpression_strategy)
-def test_alf::nameexpression_postfixOp_type(instance):
-    assert isinstance(instance.postfixOp, str)
+def test_alf_nameexpression_instantiation(instance):
+    assert isinstance(instance, alf_NameExpression)
 
 
-@given(instance=alf::NameExpression_strategy)
-def test_alf::nameexpression_postfixOp_setter(instance):
+
+@given(instance=alf_NameExpression_strategy)
+def test_alf_nameexpression_postfixOp_setter(instance):
     original = instance.postfixOp
     instance.postfixOp = original
     assert instance.postfixOp == original
 
-@given(instance=alf::NameExpression_strategy)
-def test_alf::nameexpression_id_type(instance):
-    assert isinstance(instance.id, str)
 
 
-@given(instance=alf::NameExpression_strategy)
-def test_alf::nameexpression_id_setter(instance):
-    original = instance.id
-    instance.id = original
-    assert instance.id == original
-
-@given(instance=alf::NameExpression_strategy)
-def test_alf::nameexpression_prefixOp_type(instance):
-    assert isinstance(instance.prefixOp, str)
-
-
-@given(instance=alf::NameExpression_strategy)
-def test_alf::nameexpression_prefixOp_setter(instance):
+@given(instance=alf_NameExpression_strategy)
+def test_alf_nameexpression_prefixOp_setter(instance):
     original = instance.prefixOp
     instance.prefixOp = original
     assert instance.prefixOp == original
 
-@given(instance=alf::SuperInvocationExpression_strategy)
+
+
+@given(instance=alf_NameExpression_strategy)
+def test_alf_nameexpression_id_setter(instance):
+    original = instance.id
+    instance.id = original
+    assert instance.id == original
+
+@given(instance=alf_ThisExpression_strategy)
 @settings(max_examples=50)
-def test_alf::superinvocationexpression_instantiation(instance):
-    assert isinstance(instance, alf::SuperInvocationExpression)
+def test_alf_thisexpression_instantiation(instance):
+    assert isinstance(instance, alf_ThisExpression)
 
-@given(instance=alf::ParenthesizedExpression_strategy)
+@given(instance=alf_NullExpression_strategy)
 @settings(max_examples=50)
-def test_alf::parenthesizedexpression_instantiation(instance):
-    assert isinstance(instance, alf::ParenthesizedExpression)
+def test_alf_nullexpression_instantiation(instance):
+    assert isinstance(instance, alf_NullExpression)
 
-@given(instance=alf::LITERAL_strategy)
+@given(instance=alf_SuperInvocationExpression_strategy)
 @settings(max_examples=50)
-def test_alf::literal_instantiation(instance):
-    assert isinstance(instance, alf::LITERAL)
+def test_alf_superinvocationexpression_instantiation(instance):
+    assert isinstance(instance, alf_SuperInvocationExpression)
 
-@given(instance=alf::Block_strategy)
+@given(instance=alf_ParenthesizedExpression_strategy)
 @settings(max_examples=50)
-def test_alf::block_instantiation(instance):
-    assert isinstance(instance, alf::Block)
+def test_alf_parenthesizedexpression_instantiation(instance):
+    assert isinstance(instance, alf_ParenthesizedExpression)
 
-@given(instance=alf::Statement_strategy)
+@given(instance=alf_InstanceCreationExpression_strategy)
 @settings(max_examples=50)
-def test_alf::statement_instantiation(instance):
-    assert isinstance(instance, alf::Statement)
+def test_alf_instancecreationexpression_instantiation(instance):
+    assert isinstance(instance, alf_InstanceCreationExpression)
 
-@given(instance=alf::AssignmentCompletion_strategy)
+@given(instance=alf_LITERAL_strategy)
 @settings(max_examples=50)
-def test_alf::assignmentcompletion_instantiation(instance):
-    assert isinstance(instance, alf::AssignmentCompletion)
+def test_alf_literal_instantiation(instance):
+    assert isinstance(instance, alf_LITERAL)
 
-@given(instance=alf::AssignmentCompletion_strategy)
-def test_alf::assignmentcompletion_op_type(instance):
-    assert isinstance(instance.op, str)
+@given(instance=alf_Block_strategy)
+@settings(max_examples=50)
+def test_alf_block_instantiation(instance):
+    assert isinstance(instance, alf_Block)
+
+@given(instance=alf_Statement_strategy)
+@settings(max_examples=50)
+def test_alf_statement_instantiation(instance):
+    assert isinstance(instance, alf_Statement)
+
+@given(instance=alf_AssignmentCompletion_strategy)
+@settings(max_examples=50)
+def test_alf_assignmentcompletion_instantiation(instance):
+    assert isinstance(instance, alf_AssignmentCompletion)
 
 
-@given(instance=alf::AssignmentCompletion_strategy)
-def test_alf::assignmentcompletion_op_setter(instance):
+
+@given(instance=alf_AssignmentCompletion_strategy)
+def test_alf_assignmentcompletion_op_setter(instance):
     original = instance.op
     instance.op = original
     assert instance.op == original
 
-@given(instance=alf::Expression_strategy)
+@given(instance=alf_Expression_strategy)
 @settings(max_examples=50)
-def test_alf::expression_instantiation(instance):
-    assert isinstance(instance, alf::Expression)
+def test_alf_expression_instantiation(instance):
+    assert isinstance(instance, alf_Expression)
 
-@given(instance=alf::Test_strategy)
+@given(instance=alf_Test_strategy)
 @settings(max_examples=50)
-def test_alf::test_instantiation(instance):
-    assert isinstance(instance, alf::Test)
+def test_alf_test_instantiation(instance):
+    assert isinstance(instance, alf_Test)
 
 @given(instance=LITERAL_strategy)
 @settings(max_examples=50)
 def test_literal_instantiation(instance):
     assert isinstance(instance, LITERAL)
 
-@given(instance=alf::STRING::LITERAL_strategy)
+@given(instance=alf_NUMBER_LITERAL_strategy)
 @settings(max_examples=50)
-def test_alf::string::literal_instantiation(instance):
-    assert isinstance(instance, alf::STRING::LITERAL)
-
-@given(instance=alf::STRING::LITERAL_strategy)
-def test_alf::string::literal_value_type(instance):
-    assert isinstance(instance.value, str)
+def test_alf_number_literal_instantiation(instance):
+    assert isinstance(instance, alf_NUMBER_LITERAL)
 
 
-@given(instance=alf::STRING::LITERAL_strategy)
-def test_alf::string::literal_value_setter(instance):
+
+@given(instance=alf_NUMBER_LITERAL_strategy)
+def test_alf_number_literal_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
 
-@given(instance=alf::NUMBER::LITERAL_strategy)
+@given(instance=alf_STRING_LITERAL_strategy)
 @settings(max_examples=50)
-def test_alf::number::literal_instantiation(instance):
-    assert isinstance(instance, alf::NUMBER::LITERAL)
-
-@given(instance=alf::NUMBER::LITERAL_strategy)
-def test_alf::number::literal_value_type(instance):
-    assert isinstance(instance.value, str)
+def test_alf_string_literal_instantiation(instance):
+    assert isinstance(instance, alf_STRING_LITERAL)
 
 
-@given(instance=alf::NUMBER::LITERAL_strategy)
-def test_alf::number::literal_value_setter(instance):
+
+@given(instance=alf_STRING_LITERAL_strategy)
+def test_alf_string_literal_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
 
-@given(instance=alf::BOOLEAN::LITERAL_strategy)
+@given(instance=alf_BOOLEAN_LITERAL_strategy)
 @settings(max_examples=50)
-def test_alf::boolean::literal_instantiation(instance):
-    assert isinstance(instance, alf::BOOLEAN::LITERAL)
-
-@given(instance=alf::BOOLEAN::LITERAL_strategy)
-def test_alf::boolean::literal_value_type(instance):
-    assert isinstance(instance.value, str)
+def test_alf_boolean_literal_instantiation(instance):
+    assert isinstance(instance, alf_BOOLEAN_LITERAL)
 
 
-@given(instance=alf::BOOLEAN::LITERAL_strategy)
-def test_alf::boolean::literal_value_setter(instance):
+
+@given(instance=alf_BOOLEAN_LITERAL_strategy)
+def test_alf_boolean_literal_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
-
-@given(instance=alf::InstanceCreationInvocationStatement_strategy)
-@settings(max_examples=50)
-def test_alf::instancecreationinvocationstatement_instantiation(instance):
-    assert isinstance(instance, alf::InstanceCreationInvocationStatement)

@@ -3,16 +3,16 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    iOI::Department,
+from python_code import (
+    iOI_Department,
     Employee,
-    iOI::Manager,
-    iOI::Position,
-    iOI::Employee,
-    iOI::Company,
-    iOI::Model,
+    iOI_Manager,
+    iOI_Position,
+    iOI_Employee,
+    iOI_Company,
+    iOI_Model,
 )
 
 # =============================================================================
@@ -21,23 +21,23 @@ from classes import (
 
 
 
-def test_ioi::department_is_not_abstract():
-    assert not inspect.isabstract(iOI::Department)
+def test_ioi_department_is_not_abstract():
+    assert not inspect.isabstract(iOI_Department)
 
 
-def test_ioi::department_constructor_exists():
-    assert callable(iOI::Department.__init__)
+def test_ioi_department_constructor_exists():
+    assert callable(iOI_Department.__init__)
 
 
-def test_ioi::department_constructor_args():
-    sig = inspect.signature(iOI::Department.__init__)
+def test_ioi_department_constructor_args():
+    sig = inspect.signature(iOI_Department.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_ioi::department_has_name():
-    assert hasattr(iOI::Department, "name")
+def test_ioi_department_has_name():
+    assert hasattr(iOI_Department, "name")
     descriptor = None
-    for klass in iOI::Department.__mro__:
+    for klass in iOI_Department.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -59,37 +59,37 @@ def test_employee_constructor_args():
 
 
 
-def test_ioi::manager_is_not_abstract():
-    assert not inspect.isabstract(iOI::Manager)
+def test_ioi_manager_is_not_abstract():
+    assert not inspect.isabstract(iOI_Manager)
 
 
-def test_ioi::manager_constructor_exists():
-    assert callable(iOI::Manager.__init__)
+def test_ioi_manager_constructor_exists():
+    assert callable(iOI_Manager.__init__)
 
 
-def test_ioi::manager_constructor_args():
-    sig = inspect.signature(iOI::Manager.__init__)
+def test_ioi_manager_constructor_args():
+    sig = inspect.signature(iOI_Manager.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ioi::position_is_not_abstract():
-    assert not inspect.isabstract(iOI::Position)
+def test_ioi_position_is_not_abstract():
+    assert not inspect.isabstract(iOI_Position)
 
 
-def test_ioi::position_constructor_exists():
-    assert callable(iOI::Position.__init__)
+def test_ioi_position_constructor_exists():
+    assert callable(iOI_Position.__init__)
 
 
-def test_ioi::position_constructor_args():
-    sig = inspect.signature(iOI::Position.__init__)
+def test_ioi_position_constructor_args():
+    sig = inspect.signature(iOI_Position.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_ioi::position_has_name():
-    assert hasattr(iOI::Position, "name")
+def test_ioi_position_has_name():
+    assert hasattr(iOI_Position, "name")
     descriptor = None
-    for klass in iOI::Position.__mro__:
+    for klass in iOI_Position.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -97,33 +97,33 @@ def test_ioi::position_has_name():
 
 
 
-def test_ioi::employee_is_not_abstract():
-    assert not inspect.isabstract(iOI::Employee)
+def test_ioi_employee_is_not_abstract():
+    assert not inspect.isabstract(iOI_Employee)
 
 
-def test_ioi::employee_constructor_exists():
-    assert callable(iOI::Employee.__init__)
+def test_ioi_employee_constructor_exists():
+    assert callable(iOI_Employee.__init__)
 
 
-def test_ioi::employee_constructor_args():
-    sig = inspect.signature(iOI::Employee.__init__)
+def test_ioi_employee_constructor_args():
+    sig = inspect.signature(iOI_Employee.__init__)
     params = list(sig.parameters.keys())
     assert "salary" in params, "Missing parameter 'salary'"
     assert "name" in params, "Missing parameter 'name'"
 
-def test_ioi::employee_has_salary():
-    assert hasattr(iOI::Employee, "salary")
+def test_ioi_employee_has_salary():
+    assert hasattr(iOI_Employee, "salary")
     descriptor = None
-    for klass in iOI::Employee.__mro__:
+    for klass in iOI_Employee.__mro__:
         if "salary" in klass.__dict__:
             descriptor = klass.__dict__["salary"]
             break
     assert isinstance(descriptor, property)
 
-def test_ioi::employee_has_name():
-    assert hasattr(iOI::Employee, "name")
+def test_ioi_employee_has_name():
+    assert hasattr(iOI_Employee, "name")
     descriptor = None
-    for klass in iOI::Employee.__mro__:
+    for klass in iOI_Employee.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -131,23 +131,23 @@ def test_ioi::employee_has_name():
 
 
 
-def test_ioi::company_is_not_abstract():
-    assert not inspect.isabstract(iOI::Company)
+def test_ioi_company_is_not_abstract():
+    assert not inspect.isabstract(iOI_Company)
 
 
-def test_ioi::company_constructor_exists():
-    assert callable(iOI::Company.__init__)
+def test_ioi_company_constructor_exists():
+    assert callable(iOI_Company.__init__)
 
 
-def test_ioi::company_constructor_args():
-    sig = inspect.signature(iOI::Company.__init__)
+def test_ioi_company_constructor_args():
+    sig = inspect.signature(iOI_Company.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_ioi::company_has_name():
-    assert hasattr(iOI::Company, "name")
+def test_ioi_company_has_name():
+    assert hasattr(iOI_Company, "name")
     descriptor = None
-    for klass in iOI::Company.__mro__:
+    for klass in iOI_Company.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -155,23 +155,23 @@ def test_ioi::company_has_name():
 
 
 
-def test_ioi::model_is_not_abstract():
-    assert not inspect.isabstract(iOI::Model)
+def test_ioi_model_is_not_abstract():
+    assert not inspect.isabstract(iOI_Model)
 
 
-def test_ioi::model_constructor_exists():
-    assert callable(iOI::Model.__init__)
+def test_ioi_model_constructor_exists():
+    assert callable(iOI_Model.__init__)
 
 
-def test_ioi::model_constructor_args():
-    sig = inspect.signature(iOI::Model.__init__)
+def test_ioi_model_constructor_args():
+    sig = inspect.signature(iOI_Model.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_ioi::model_has_name():
-    assert hasattr(iOI::Model, "name")
+def test_ioi_model_has_name():
+    assert hasattr(iOI_Model, "name")
     descriptor = None
-    for klass in iOI::Model.__mro__:
+    for klass in iOI_Model.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -189,52 +189,49 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-iOI::Department_strategy = st.builds(
-    iOI::Department,
+iOI_Department_strategy = st.builds(
+    iOI_Department,
     name=
         safe_text
 )
 Employee_strategy = st.builds(
     Employee,
 )
-iOI::Manager_strategy = st.builds(
-    iOI::Manager,
+iOI_Manager_strategy = st.builds(
+    iOI_Manager,
 )
-iOI::Position_strategy = st.builds(
-    iOI::Position,
+iOI_Position_strategy = st.builds(
+    iOI_Position,
     name=
         safe_text
 )
-iOI::Employee_strategy = st.builds(
-    iOI::Employee,
+iOI_Employee_strategy = st.builds(
+    iOI_Employee,
     salary=
         st.integers(),
     name=
         safe_text
 )
-iOI::Company_strategy = st.builds(
-    iOI::Company,
+iOI_Company_strategy = st.builds(
+    iOI_Company,
     name=
         safe_text
 )
-iOI::Model_strategy = st.builds(
-    iOI::Model,
+iOI_Model_strategy = st.builds(
+    iOI_Model,
     name=
         safe_text
 )
 
-@given(instance=iOI::Department_strategy)
+@given(instance=iOI_Department_strategy)
 @settings(max_examples=50)
-def test_ioi::department_instantiation(instance):
-    assert isinstance(instance, iOI::Department)
-
-@given(instance=iOI::Department_strategy)
-def test_ioi::department_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_ioi_department_instantiation(instance):
+    assert isinstance(instance, iOI_Department)
 
 
-@given(instance=iOI::Department_strategy)
-def test_ioi::department_name_setter(instance):
+
+@given(instance=iOI_Department_strategy)
+def test_ioi_department_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
@@ -244,82 +241,67 @@ def test_ioi::department_name_setter(instance):
 def test_employee_instantiation(instance):
     assert isinstance(instance, Employee)
 
-@given(instance=iOI::Manager_strategy)
+@given(instance=iOI_Manager_strategy)
 @settings(max_examples=50)
-def test_ioi::manager_instantiation(instance):
-    assert isinstance(instance, iOI::Manager)
+def test_ioi_manager_instantiation(instance):
+    assert isinstance(instance, iOI_Manager)
 
-@given(instance=iOI::Position_strategy)
+@given(instance=iOI_Position_strategy)
 @settings(max_examples=50)
-def test_ioi::position_instantiation(instance):
-    assert isinstance(instance, iOI::Position)
-
-@given(instance=iOI::Position_strategy)
-def test_ioi::position_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_ioi_position_instantiation(instance):
+    assert isinstance(instance, iOI_Position)
 
 
-@given(instance=iOI::Position_strategy)
-def test_ioi::position_name_setter(instance):
+
+@given(instance=iOI_Position_strategy)
+def test_ioi_position_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=iOI::Employee_strategy)
+@given(instance=iOI_Employee_strategy)
 @settings(max_examples=50)
-def test_ioi::employee_instantiation(instance):
-    assert isinstance(instance, iOI::Employee)
-
-@given(instance=iOI::Employee_strategy)
-def test_ioi::employee_salary_type(instance):
-    assert isinstance(instance.salary, int)
+def test_ioi_employee_instantiation(instance):
+    assert isinstance(instance, iOI_Employee)
 
 
-@given(instance=iOI::Employee_strategy)
-def test_ioi::employee_salary_setter(instance):
+
+@given(instance=iOI_Employee_strategy)
+def test_ioi_employee_salary_setter(instance):
     original = instance.salary
     instance.salary = original
     assert instance.salary == original
 
-@given(instance=iOI::Employee_strategy)
-def test_ioi::employee_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
-@given(instance=iOI::Employee_strategy)
-def test_ioi::employee_name_setter(instance):
+@given(instance=iOI_Employee_strategy)
+def test_ioi_employee_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=iOI::Company_strategy)
+@given(instance=iOI_Company_strategy)
 @settings(max_examples=50)
-def test_ioi::company_instantiation(instance):
-    assert isinstance(instance, iOI::Company)
-
-@given(instance=iOI::Company_strategy)
-def test_ioi::company_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_ioi_company_instantiation(instance):
+    assert isinstance(instance, iOI_Company)
 
 
-@given(instance=iOI::Company_strategy)
-def test_ioi::company_name_setter(instance):
+
+@given(instance=iOI_Company_strategy)
+def test_ioi_company_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=iOI::Model_strategy)
+@given(instance=iOI_Model_strategy)
 @settings(max_examples=50)
-def test_ioi::model_instantiation(instance):
-    assert isinstance(instance, iOI::Model)
-
-@given(instance=iOI::Model_strategy)
-def test_ioi::model_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_ioi_model_instantiation(instance):
+    assert isinstance(instance, iOI_Model)
 
 
-@given(instance=iOI::Model_strategy)
-def test_ioi::model_name_setter(instance):
+
+@given(instance=iOI_Model_strategy)
+def test_ioi_model_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original

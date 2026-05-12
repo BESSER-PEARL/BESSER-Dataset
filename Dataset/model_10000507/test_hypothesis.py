@@ -3,7 +3,7 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
 from python_code import (
     Computer_Player_1_Actor,
@@ -564,20 +564,11 @@ def test_checkers_gameengine_constructor_exists():
 def test_checkers_gameengine_constructor_args():
     sig = inspect.signature(checkers_GameEngine.__init__)
     params = list(sig.parameters.keys())
-    assert "normal" in params, "Missing parameter 'normal'"
     assert "edge" in params, "Missing parameter 'edge'"
     assert "inf" in params, "Missing parameter 'inf'"
-    assert "pos" in params, "Missing parameter 'pos'"
+    assert "normal" in params, "Missing parameter 'normal'"
     assert "king" in params, "Missing parameter 'king'"
-
-def test_checkers_gameengine_has_normal():
-    assert hasattr(checkers_GameEngine, "normal")
-    descriptor = None
-    for klass in checkers_GameEngine.__mro__:
-        if "normal" in klass.__dict__:
-            descriptor = klass.__dict__["normal"]
-            break
-    assert isinstance(descriptor, property)
+    assert "pos" in params, "Missing parameter 'pos'"
 
 def test_checkers_gameengine_has_edge():
     assert hasattr(checkers_GameEngine, "edge")
@@ -597,12 +588,12 @@ def test_checkers_gameengine_has_inf():
             break
     assert isinstance(descriptor, property)
 
-def test_checkers_gameengine_has_pos():
-    assert hasattr(checkers_GameEngine, "pos")
+def test_checkers_gameengine_has_normal():
+    assert hasattr(checkers_GameEngine, "normal")
     descriptor = None
     for klass in checkers_GameEngine.__mro__:
-        if "pos" in klass.__dict__:
-            descriptor = klass.__dict__["pos"]
+        if "normal" in klass.__dict__:
+            descriptor = klass.__dict__["normal"]
             break
     assert isinstance(descriptor, property)
 
@@ -612,6 +603,15 @@ def test_checkers_gameengine_has_king():
     for klass in checkers_GameEngine.__mro__:
         if "king" in klass.__dict__:
             descriptor = klass.__dict__["king"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_checkers_gameengine_has_pos():
+    assert hasattr(checkers_GameEngine, "pos")
+    descriptor = None
+    for klass in checkers_GameEngine.__mro__:
+        if "pos" in klass.__dict__:
+            descriptor = klass.__dict__["pos"]
             break
     assert isinstance(descriptor, property)
 
@@ -642,17 +642,8 @@ def test_checkers_playsound_constructor_exists():
 def test_checkers_playsound_constructor_args():
     sig = inspect.signature(checkers_PlaySound.__init__)
     params = list(sig.parameters.keys())
-    assert "filename" in params, "Missing parameter 'filename'"
     assert "EXTERNAL_BUFFER_SIZE" in params, "Missing parameter 'EXTERNAL_BUFFER_SIZE'"
-
-def test_checkers_playsound_has_filename():
-    assert hasattr(checkers_PlaySound, "filename")
-    descriptor = None
-    for klass in checkers_PlaySound.__mro__:
-        if "filename" in klass.__dict__:
-            descriptor = klass.__dict__["filename"]
-            break
-    assert isinstance(descriptor, property)
+    assert "filename" in params, "Missing parameter 'filename'"
 
 def test_checkers_playsound_has_EXTERNAL_BUFFER_SIZE():
     assert hasattr(checkers_PlaySound, "EXTERNAL_BUFFER_SIZE")
@@ -660,6 +651,15 @@ def test_checkers_playsound_has_EXTERNAL_BUFFER_SIZE():
     for klass in checkers_PlaySound.__mro__:
         if "EXTERNAL_BUFFER_SIZE" in klass.__dict__:
             descriptor = klass.__dict__["EXTERNAL_BUFFER_SIZE"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_checkers_playsound_has_filename():
+    assert hasattr(checkers_PlaySound, "filename")
+    descriptor = None
+    for klass in checkers_PlaySound.__mro__:
+        if "filename" in klass.__dict__:
+            descriptor = klass.__dict__["filename"]
             break
     assert isinstance(descriptor, property)
 
@@ -758,79 +758,97 @@ def test_checkers_checkers_constructor_exists():
 def test_checkers_checkers_constructor_args():
     sig = inspect.signature(checkers_Checkers.__init__)
     params = list(sig.parameters.keys())
-    assert "endY" in params, "Missing parameter 'endY'"
-    assert "diff" in params, "Missing parameter 'diff'"
+    assert "toMove" in params, "Missing parameter 'toMove'"
+    assert "redK" in params, "Missing parameter 'redK'"
+    assert "board" in params, "Missing parameter 'board'"
+    assert "hlp" in params, "Missing parameter 'hlp'"
     assert "yellowKing" in params, "Missing parameter 'yellowKing'"
-    assert "c2" in params, "Missing parameter 'c2'"
-    assert "preToMove1" in params, "Missing parameter 'preToMove1'"
+    assert "undoCount" in params, "Missing parameter 'undoCount'"
+    assert "selectedColor" in params, "Missing parameter 'selectedColor'"
+    assert "preBoard3" in params, "Missing parameter 'preBoard3'"
+    assert "rk" in params, "Missing parameter 'rk'"
     assert "empty" in params, "Missing parameter 'empty'"
-    assert "yellowK" in params, "Missing parameter 'yellowK'"
+    assert "yellowN" in params, "Missing parameter 'yellowN'"
+    assert "colors" in params, "Missing parameter 'colors'"
+    assert "preToMove3" in params, "Missing parameter 'preToMove3'"
+    assert "rkt" in params, "Missing parameter 'rkt'"
+    assert "bk" in params, "Missing parameter 'bk'"
+    assert "won" in params, "Missing parameter 'won'"
     assert "snp" in params, "Missing parameter 'snp'"
-    assert "highlight" in params, "Missing parameter 'highlight'"
-    assert "snB" in params, "Missing parameter 'snB'"
+    assert "rpt" in params, "Missing parameter 'rpt'"
+    assert "rp" in params, "Missing parameter 'rp'"
+    assert "preToMove2" in params, "Missing parameter 'preToMove2'"
+    assert "msg" in params, "Missing parameter 'msg'"
+    assert "currType" in params, "Missing parameter 'currType'"
     assert "yellowNormal" in params, "Missing parameter 'yellowNormal'"
     assert "redN" in params, "Missing parameter 'redN'"
-    assert "won" in params, "Missing parameter 'won'"
-    assert "preBoard1" in params, "Missing parameter 'preBoard1'"
-    assert "yellowN" in params, "Missing parameter 'yellowN'"
-    assert "preToMove2" in params, "Missing parameter 'preToMove2'"
-    assert "hlp" in params, "Missing parameter 'hlp'"
-    assert "bp" in params, "Missing parameter 'bp'"
-    assert "players" in params, "Missing parameter 'players'"
-    assert "rp" in params, "Missing parameter 'rp'"
-    assert "col" in params, "Missing parameter 'col'"
-    assert "mup" in params, "Missing parameter 'mup'"
-    assert "preBoard3" in params, "Missing parameter 'preBoard3'"
-    assert "msg" in params, "Missing parameter 'msg'"
-    assert "colors" in params, "Missing parameter 'colors'"
-    assert "bpt" in params, "Missing parameter 'bpt'"
-    assert "preToMove3" in params, "Missing parameter 'preToMove3'"
-    assert "mode" in params, "Missing parameter 'mode'"
-    assert "p1" in params, "Missing parameter 'p1'"
-    assert "difficulty" in params, "Missing parameter 'difficulty'"
-    assert "rkt" in params, "Missing parameter 'rkt'"
-    assert "level" in params, "Missing parameter 'level'"
-    assert "selectedColor" in params, "Missing parameter 'selectedColor'"
-    assert "undoCount" in params, "Missing parameter 'undoCount'"
-    assert "redKing" in params, "Missing parameter 'redKing'"
-    assert "hlpB" in params, "Missing parameter 'hlpB'"
-    assert "nwB" in params, "Missing parameter 'nwB'"
-    assert "movable" in params, "Missing parameter 'movable'"
-    assert "g" in params, "Missing parameter 'g'"
-    assert "silent" in params, "Missing parameter 'silent'"
-    assert "rk" in params, "Missing parameter 'rk'"
-    assert "p2" in params, "Missing parameter 'p2'"
-    assert "bk" in params, "Missing parameter 'bk'"
-    assert "incomplete" in params, "Missing parameter 'incomplete'"
-    assert "currType" in params, "Missing parameter 'currType'"
     assert "winPoint" in params, "Missing parameter 'winPoint'"
-    assert "loser" in params, "Missing parameter 'loser'"
-    assert "rpt" in params, "Missing parameter 'rpt'"
-    assert "unB" in params, "Missing parameter 'unB'"
-    assert "toMove" in params, "Missing parameter 'toMove'"
-    assert "selectedMode" in params, "Missing parameter 'selectedMode'"
-    assert "board" in params, "Missing parameter 'board'"
-    assert "preBoard2" in params, "Missing parameter 'preBoard2'"
-    assert "c1" in params, "Missing parameter 'c1'"
-    assert "redK" in params, "Missing parameter 'redK'"
-    assert "bkt" in params, "Missing parameter 'bkt'"
+    assert "mode" in params, "Missing parameter 'mode'"
+    assert "endY" in params, "Missing parameter 'endY'"
+    assert "preToMove1" in params, "Missing parameter 'preToMove1'"
     assert "redNormal" in params, "Missing parameter 'redNormal'"
+    assert "bp" in params, "Missing parameter 'bp'"
+    assert "preBoard2" in params, "Missing parameter 'preBoard2'"
+    assert "highlight" in params, "Missing parameter 'highlight'"
+    assert "p1" in params, "Missing parameter 'p1'"
+    assert "snB" in params, "Missing parameter 'snB'"
+    assert "g" in params, "Missing parameter 'g'"
+    assert "incomplete" in params, "Missing parameter 'incomplete'"
+    assert "c2" in params, "Missing parameter 'c2'"
+    assert "nwB" in params, "Missing parameter 'nwB'"
+    assert "diff" in params, "Missing parameter 'diff'"
+    assert "bpt" in params, "Missing parameter 'bpt'"
+    assert "preBoard1" in params, "Missing parameter 'preBoard1'"
+    assert "selectedMode" in params, "Missing parameter 'selectedMode'"
+    assert "hlpB" in params, "Missing parameter 'hlpB'"
+    assert "silent" in params, "Missing parameter 'silent'"
+    assert "difficulty" in params, "Missing parameter 'difficulty'"
+    assert "mup" in params, "Missing parameter 'mup'"
+    assert "c1" in params, "Missing parameter 'c1'"
+    assert "bkt" in params, "Missing parameter 'bkt'"
+    assert "loser" in params, "Missing parameter 'loser'"
+    assert "p2" in params, "Missing parameter 'p2'"
+    assert "col" in params, "Missing parameter 'col'"
+    assert "yellowK" in params, "Missing parameter 'yellowK'"
+    assert "level" in params, "Missing parameter 'level'"
+    assert "movable" in params, "Missing parameter 'movable'"
+    assert "redKing" in params, "Missing parameter 'redKing'"
+    assert "unB" in params, "Missing parameter 'unB'"
+    assert "players" in params, "Missing parameter 'players'"
 
-def test_checkers_checkers_has_endY():
-    assert hasattr(checkers_Checkers, "endY")
+def test_checkers_checkers_has_toMove():
+    assert hasattr(checkers_Checkers, "toMove")
     descriptor = None
     for klass in checkers_Checkers.__mro__:
-        if "endY" in klass.__dict__:
-            descriptor = klass.__dict__["endY"]
+        if "toMove" in klass.__dict__:
+            descriptor = klass.__dict__["toMove"]
             break
     assert isinstance(descriptor, property)
 
-def test_checkers_checkers_has_diff():
-    assert hasattr(checkers_Checkers, "diff")
+def test_checkers_checkers_has_redK():
+    assert hasattr(checkers_Checkers, "redK")
     descriptor = None
     for klass in checkers_Checkers.__mro__:
-        if "diff" in klass.__dict__:
-            descriptor = klass.__dict__["diff"]
+        if "redK" in klass.__dict__:
+            descriptor = klass.__dict__["redK"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_checkers_checkers_has_board():
+    assert hasattr(checkers_Checkers, "board")
+    descriptor = None
+    for klass in checkers_Checkers.__mro__:
+        if "board" in klass.__dict__:
+            descriptor = klass.__dict__["board"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_checkers_checkers_has_hlp():
+    assert hasattr(checkers_Checkers, "hlp")
+    descriptor = None
+    for klass in checkers_Checkers.__mro__:
+        if "hlp" in klass.__dict__:
+            descriptor = klass.__dict__["hlp"]
             break
     assert isinstance(descriptor, property)
 
@@ -843,21 +861,39 @@ def test_checkers_checkers_has_yellowKing():
             break
     assert isinstance(descriptor, property)
 
-def test_checkers_checkers_has_c2():
-    assert hasattr(checkers_Checkers, "c2")
+def test_checkers_checkers_has_undoCount():
+    assert hasattr(checkers_Checkers, "undoCount")
     descriptor = None
     for klass in checkers_Checkers.__mro__:
-        if "c2" in klass.__dict__:
-            descriptor = klass.__dict__["c2"]
+        if "undoCount" in klass.__dict__:
+            descriptor = klass.__dict__["undoCount"]
             break
     assert isinstance(descriptor, property)
 
-def test_checkers_checkers_has_preToMove1():
-    assert hasattr(checkers_Checkers, "preToMove1")
+def test_checkers_checkers_has_selectedColor():
+    assert hasattr(checkers_Checkers, "selectedColor")
     descriptor = None
     for klass in checkers_Checkers.__mro__:
-        if "preToMove1" in klass.__dict__:
-            descriptor = klass.__dict__["preToMove1"]
+        if "selectedColor" in klass.__dict__:
+            descriptor = klass.__dict__["selectedColor"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_checkers_checkers_has_preBoard3():
+    assert hasattr(checkers_Checkers, "preBoard3")
+    descriptor = None
+    for klass in checkers_Checkers.__mro__:
+        if "preBoard3" in klass.__dict__:
+            descriptor = klass.__dict__["preBoard3"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_checkers_checkers_has_rk():
+    assert hasattr(checkers_Checkers, "rk")
+    descriptor = None
+    for klass in checkers_Checkers.__mro__:
+        if "rk" in klass.__dict__:
+            descriptor = klass.__dict__["rk"]
             break
     assert isinstance(descriptor, property)
 
@@ -870,12 +906,57 @@ def test_checkers_checkers_has_empty():
             break
     assert isinstance(descriptor, property)
 
-def test_checkers_checkers_has_yellowK():
-    assert hasattr(checkers_Checkers, "yellowK")
+def test_checkers_checkers_has_yellowN():
+    assert hasattr(checkers_Checkers, "yellowN")
     descriptor = None
     for klass in checkers_Checkers.__mro__:
-        if "yellowK" in klass.__dict__:
-            descriptor = klass.__dict__["yellowK"]
+        if "yellowN" in klass.__dict__:
+            descriptor = klass.__dict__["yellowN"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_checkers_checkers_has_colors():
+    assert hasattr(checkers_Checkers, "colors")
+    descriptor = None
+    for klass in checkers_Checkers.__mro__:
+        if "colors" in klass.__dict__:
+            descriptor = klass.__dict__["colors"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_checkers_checkers_has_preToMove3():
+    assert hasattr(checkers_Checkers, "preToMove3")
+    descriptor = None
+    for klass in checkers_Checkers.__mro__:
+        if "preToMove3" in klass.__dict__:
+            descriptor = klass.__dict__["preToMove3"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_checkers_checkers_has_rkt():
+    assert hasattr(checkers_Checkers, "rkt")
+    descriptor = None
+    for klass in checkers_Checkers.__mro__:
+        if "rkt" in klass.__dict__:
+            descriptor = klass.__dict__["rkt"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_checkers_checkers_has_bk():
+    assert hasattr(checkers_Checkers, "bk")
+    descriptor = None
+    for klass in checkers_Checkers.__mro__:
+        if "bk" in klass.__dict__:
+            descriptor = klass.__dict__["bk"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_checkers_checkers_has_won():
+    assert hasattr(checkers_Checkers, "won")
+    descriptor = None
+    for klass in checkers_Checkers.__mro__:
+        if "won" in klass.__dict__:
+            descriptor = klass.__dict__["won"]
             break
     assert isinstance(descriptor, property)
 
@@ -888,21 +969,48 @@ def test_checkers_checkers_has_snp():
             break
     assert isinstance(descriptor, property)
 
-def test_checkers_checkers_has_highlight():
-    assert hasattr(checkers_Checkers, "highlight")
+def test_checkers_checkers_has_rpt():
+    assert hasattr(checkers_Checkers, "rpt")
     descriptor = None
     for klass in checkers_Checkers.__mro__:
-        if "highlight" in klass.__dict__:
-            descriptor = klass.__dict__["highlight"]
+        if "rpt" in klass.__dict__:
+            descriptor = klass.__dict__["rpt"]
             break
     assert isinstance(descriptor, property)
 
-def test_checkers_checkers_has_snB():
-    assert hasattr(checkers_Checkers, "snB")
+def test_checkers_checkers_has_rp():
+    assert hasattr(checkers_Checkers, "rp")
     descriptor = None
     for klass in checkers_Checkers.__mro__:
-        if "snB" in klass.__dict__:
-            descriptor = klass.__dict__["snB"]
+        if "rp" in klass.__dict__:
+            descriptor = klass.__dict__["rp"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_checkers_checkers_has_preToMove2():
+    assert hasattr(checkers_Checkers, "preToMove2")
+    descriptor = None
+    for klass in checkers_Checkers.__mro__:
+        if "preToMove2" in klass.__dict__:
+            descriptor = klass.__dict__["preToMove2"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_checkers_checkers_has_msg():
+    assert hasattr(checkers_Checkers, "msg")
+    descriptor = None
+    for klass in checkers_Checkers.__mro__:
+        if "msg" in klass.__dict__:
+            descriptor = klass.__dict__["msg"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_checkers_checkers_has_currType():
+    assert hasattr(checkers_Checkers, "currType")
+    descriptor = None
+    for klass in checkers_Checkers.__mro__:
+        if "currType" in klass.__dict__:
+            descriptor = klass.__dict__["currType"]
             break
     assert isinstance(descriptor, property)
 
@@ -924,138 +1032,12 @@ def test_checkers_checkers_has_redN():
             break
     assert isinstance(descriptor, property)
 
-def test_checkers_checkers_has_won():
-    assert hasattr(checkers_Checkers, "won")
+def test_checkers_checkers_has_winPoint():
+    assert hasattr(checkers_Checkers, "winPoint")
     descriptor = None
     for klass in checkers_Checkers.__mro__:
-        if "won" in klass.__dict__:
-            descriptor = klass.__dict__["won"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_checkers_checkers_has_preBoard1():
-    assert hasattr(checkers_Checkers, "preBoard1")
-    descriptor = None
-    for klass in checkers_Checkers.__mro__:
-        if "preBoard1" in klass.__dict__:
-            descriptor = klass.__dict__["preBoard1"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_checkers_checkers_has_yellowN():
-    assert hasattr(checkers_Checkers, "yellowN")
-    descriptor = None
-    for klass in checkers_Checkers.__mro__:
-        if "yellowN" in klass.__dict__:
-            descriptor = klass.__dict__["yellowN"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_checkers_checkers_has_preToMove2():
-    assert hasattr(checkers_Checkers, "preToMove2")
-    descriptor = None
-    for klass in checkers_Checkers.__mro__:
-        if "preToMove2" in klass.__dict__:
-            descriptor = klass.__dict__["preToMove2"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_checkers_checkers_has_hlp():
-    assert hasattr(checkers_Checkers, "hlp")
-    descriptor = None
-    for klass in checkers_Checkers.__mro__:
-        if "hlp" in klass.__dict__:
-            descriptor = klass.__dict__["hlp"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_checkers_checkers_has_bp():
-    assert hasattr(checkers_Checkers, "bp")
-    descriptor = None
-    for klass in checkers_Checkers.__mro__:
-        if "bp" in klass.__dict__:
-            descriptor = klass.__dict__["bp"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_checkers_checkers_has_players():
-    assert hasattr(checkers_Checkers, "players")
-    descriptor = None
-    for klass in checkers_Checkers.__mro__:
-        if "players" in klass.__dict__:
-            descriptor = klass.__dict__["players"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_checkers_checkers_has_rp():
-    assert hasattr(checkers_Checkers, "rp")
-    descriptor = None
-    for klass in checkers_Checkers.__mro__:
-        if "rp" in klass.__dict__:
-            descriptor = klass.__dict__["rp"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_checkers_checkers_has_col():
-    assert hasattr(checkers_Checkers, "col")
-    descriptor = None
-    for klass in checkers_Checkers.__mro__:
-        if "col" in klass.__dict__:
-            descriptor = klass.__dict__["col"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_checkers_checkers_has_mup():
-    assert hasattr(checkers_Checkers, "mup")
-    descriptor = None
-    for klass in checkers_Checkers.__mro__:
-        if "mup" in klass.__dict__:
-            descriptor = klass.__dict__["mup"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_checkers_checkers_has_preBoard3():
-    assert hasattr(checkers_Checkers, "preBoard3")
-    descriptor = None
-    for klass in checkers_Checkers.__mro__:
-        if "preBoard3" in klass.__dict__:
-            descriptor = klass.__dict__["preBoard3"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_checkers_checkers_has_msg():
-    assert hasattr(checkers_Checkers, "msg")
-    descriptor = None
-    for klass in checkers_Checkers.__mro__:
-        if "msg" in klass.__dict__:
-            descriptor = klass.__dict__["msg"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_checkers_checkers_has_colors():
-    assert hasattr(checkers_Checkers, "colors")
-    descriptor = None
-    for klass in checkers_Checkers.__mro__:
-        if "colors" in klass.__dict__:
-            descriptor = klass.__dict__["colors"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_checkers_checkers_has_bpt():
-    assert hasattr(checkers_Checkers, "bpt")
-    descriptor = None
-    for klass in checkers_Checkers.__mro__:
-        if "bpt" in klass.__dict__:
-            descriptor = klass.__dict__["bpt"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_checkers_checkers_has_preToMove3():
-    assert hasattr(checkers_Checkers, "preToMove3")
-    descriptor = None
-    for klass in checkers_Checkers.__mro__:
-        if "preToMove3" in klass.__dict__:
-            descriptor = klass.__dict__["preToMove3"]
+        if "winPoint" in klass.__dict__:
+            descriptor = klass.__dict__["winPoint"]
             break
     assert isinstance(descriptor, property)
 
@@ -1068,219 +1050,39 @@ def test_checkers_checkers_has_mode():
             break
     assert isinstance(descriptor, property)
 
-def test_checkers_checkers_has_p1():
-    assert hasattr(checkers_Checkers, "p1")
+def test_checkers_checkers_has_endY():
+    assert hasattr(checkers_Checkers, "endY")
     descriptor = None
     for klass in checkers_Checkers.__mro__:
-        if "p1" in klass.__dict__:
-            descriptor = klass.__dict__["p1"]
+        if "endY" in klass.__dict__:
+            descriptor = klass.__dict__["endY"]
             break
     assert isinstance(descriptor, property)
 
-def test_checkers_checkers_has_difficulty():
-    assert hasattr(checkers_Checkers, "difficulty")
+def test_checkers_checkers_has_preToMove1():
+    assert hasattr(checkers_Checkers, "preToMove1")
     descriptor = None
     for klass in checkers_Checkers.__mro__:
-        if "difficulty" in klass.__dict__:
-            descriptor = klass.__dict__["difficulty"]
+        if "preToMove1" in klass.__dict__:
+            descriptor = klass.__dict__["preToMove1"]
             break
     assert isinstance(descriptor, property)
 
-def test_checkers_checkers_has_rkt():
-    assert hasattr(checkers_Checkers, "rkt")
+def test_checkers_checkers_has_redNormal():
+    assert hasattr(checkers_Checkers, "redNormal")
     descriptor = None
     for klass in checkers_Checkers.__mro__:
-        if "rkt" in klass.__dict__:
-            descriptor = klass.__dict__["rkt"]
+        if "redNormal" in klass.__dict__:
+            descriptor = klass.__dict__["redNormal"]
             break
     assert isinstance(descriptor, property)
 
-def test_checkers_checkers_has_level():
-    assert hasattr(checkers_Checkers, "level")
+def test_checkers_checkers_has_bp():
+    assert hasattr(checkers_Checkers, "bp")
     descriptor = None
     for klass in checkers_Checkers.__mro__:
-        if "level" in klass.__dict__:
-            descriptor = klass.__dict__["level"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_checkers_checkers_has_selectedColor():
-    assert hasattr(checkers_Checkers, "selectedColor")
-    descriptor = None
-    for klass in checkers_Checkers.__mro__:
-        if "selectedColor" in klass.__dict__:
-            descriptor = klass.__dict__["selectedColor"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_checkers_checkers_has_undoCount():
-    assert hasattr(checkers_Checkers, "undoCount")
-    descriptor = None
-    for klass in checkers_Checkers.__mro__:
-        if "undoCount" in klass.__dict__:
-            descriptor = klass.__dict__["undoCount"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_checkers_checkers_has_redKing():
-    assert hasattr(checkers_Checkers, "redKing")
-    descriptor = None
-    for klass in checkers_Checkers.__mro__:
-        if "redKing" in klass.__dict__:
-            descriptor = klass.__dict__["redKing"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_checkers_checkers_has_hlpB():
-    assert hasattr(checkers_Checkers, "hlpB")
-    descriptor = None
-    for klass in checkers_Checkers.__mro__:
-        if "hlpB" in klass.__dict__:
-            descriptor = klass.__dict__["hlpB"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_checkers_checkers_has_nwB():
-    assert hasattr(checkers_Checkers, "nwB")
-    descriptor = None
-    for klass in checkers_Checkers.__mro__:
-        if "nwB" in klass.__dict__:
-            descriptor = klass.__dict__["nwB"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_checkers_checkers_has_movable():
-    assert hasattr(checkers_Checkers, "movable")
-    descriptor = None
-    for klass in checkers_Checkers.__mro__:
-        if "movable" in klass.__dict__:
-            descriptor = klass.__dict__["movable"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_checkers_checkers_has_g():
-    assert hasattr(checkers_Checkers, "g")
-    descriptor = None
-    for klass in checkers_Checkers.__mro__:
-        if "g" in klass.__dict__:
-            descriptor = klass.__dict__["g"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_checkers_checkers_has_silent():
-    assert hasattr(checkers_Checkers, "silent")
-    descriptor = None
-    for klass in checkers_Checkers.__mro__:
-        if "silent" in klass.__dict__:
-            descriptor = klass.__dict__["silent"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_checkers_checkers_has_rk():
-    assert hasattr(checkers_Checkers, "rk")
-    descriptor = None
-    for klass in checkers_Checkers.__mro__:
-        if "rk" in klass.__dict__:
-            descriptor = klass.__dict__["rk"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_checkers_checkers_has_p2():
-    assert hasattr(checkers_Checkers, "p2")
-    descriptor = None
-    for klass in checkers_Checkers.__mro__:
-        if "p2" in klass.__dict__:
-            descriptor = klass.__dict__["p2"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_checkers_checkers_has_bk():
-    assert hasattr(checkers_Checkers, "bk")
-    descriptor = None
-    for klass in checkers_Checkers.__mro__:
-        if "bk" in klass.__dict__:
-            descriptor = klass.__dict__["bk"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_checkers_checkers_has_incomplete():
-    assert hasattr(checkers_Checkers, "incomplete")
-    descriptor = None
-    for klass in checkers_Checkers.__mro__:
-        if "incomplete" in klass.__dict__:
-            descriptor = klass.__dict__["incomplete"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_checkers_checkers_has_currType():
-    assert hasattr(checkers_Checkers, "currType")
-    descriptor = None
-    for klass in checkers_Checkers.__mro__:
-        if "currType" in klass.__dict__:
-            descriptor = klass.__dict__["currType"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_checkers_checkers_has_winPoint():
-    assert hasattr(checkers_Checkers, "winPoint")
-    descriptor = None
-    for klass in checkers_Checkers.__mro__:
-        if "winPoint" in klass.__dict__:
-            descriptor = klass.__dict__["winPoint"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_checkers_checkers_has_loser():
-    assert hasattr(checkers_Checkers, "loser")
-    descriptor = None
-    for klass in checkers_Checkers.__mro__:
-        if "loser" in klass.__dict__:
-            descriptor = klass.__dict__["loser"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_checkers_checkers_has_rpt():
-    assert hasattr(checkers_Checkers, "rpt")
-    descriptor = None
-    for klass in checkers_Checkers.__mro__:
-        if "rpt" in klass.__dict__:
-            descriptor = klass.__dict__["rpt"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_checkers_checkers_has_unB():
-    assert hasattr(checkers_Checkers, "unB")
-    descriptor = None
-    for klass in checkers_Checkers.__mro__:
-        if "unB" in klass.__dict__:
-            descriptor = klass.__dict__["unB"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_checkers_checkers_has_toMove():
-    assert hasattr(checkers_Checkers, "toMove")
-    descriptor = None
-    for klass in checkers_Checkers.__mro__:
-        if "toMove" in klass.__dict__:
-            descriptor = klass.__dict__["toMove"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_checkers_checkers_has_selectedMode():
-    assert hasattr(checkers_Checkers, "selectedMode")
-    descriptor = None
-    for klass in checkers_Checkers.__mro__:
-        if "selectedMode" in klass.__dict__:
-            descriptor = klass.__dict__["selectedMode"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_checkers_checkers_has_board():
-    assert hasattr(checkers_Checkers, "board")
-    descriptor = None
-    for klass in checkers_Checkers.__mro__:
-        if "board" in klass.__dict__:
-            descriptor = klass.__dict__["board"]
+        if "bp" in klass.__dict__:
+            descriptor = klass.__dict__["bp"]
             break
     assert isinstance(descriptor, property)
 
@@ -1293,21 +1095,147 @@ def test_checkers_checkers_has_preBoard2():
             break
     assert isinstance(descriptor, property)
 
+def test_checkers_checkers_has_highlight():
+    assert hasattr(checkers_Checkers, "highlight")
+    descriptor = None
+    for klass in checkers_Checkers.__mro__:
+        if "highlight" in klass.__dict__:
+            descriptor = klass.__dict__["highlight"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_checkers_checkers_has_p1():
+    assert hasattr(checkers_Checkers, "p1")
+    descriptor = None
+    for klass in checkers_Checkers.__mro__:
+        if "p1" in klass.__dict__:
+            descriptor = klass.__dict__["p1"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_checkers_checkers_has_snB():
+    assert hasattr(checkers_Checkers, "snB")
+    descriptor = None
+    for klass in checkers_Checkers.__mro__:
+        if "snB" in klass.__dict__:
+            descriptor = klass.__dict__["snB"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_checkers_checkers_has_g():
+    assert hasattr(checkers_Checkers, "g")
+    descriptor = None
+    for klass in checkers_Checkers.__mro__:
+        if "g" in klass.__dict__:
+            descriptor = klass.__dict__["g"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_checkers_checkers_has_incomplete():
+    assert hasattr(checkers_Checkers, "incomplete")
+    descriptor = None
+    for klass in checkers_Checkers.__mro__:
+        if "incomplete" in klass.__dict__:
+            descriptor = klass.__dict__["incomplete"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_checkers_checkers_has_c2():
+    assert hasattr(checkers_Checkers, "c2")
+    descriptor = None
+    for klass in checkers_Checkers.__mro__:
+        if "c2" in klass.__dict__:
+            descriptor = klass.__dict__["c2"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_checkers_checkers_has_nwB():
+    assert hasattr(checkers_Checkers, "nwB")
+    descriptor = None
+    for klass in checkers_Checkers.__mro__:
+        if "nwB" in klass.__dict__:
+            descriptor = klass.__dict__["nwB"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_checkers_checkers_has_diff():
+    assert hasattr(checkers_Checkers, "diff")
+    descriptor = None
+    for klass in checkers_Checkers.__mro__:
+        if "diff" in klass.__dict__:
+            descriptor = klass.__dict__["diff"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_checkers_checkers_has_bpt():
+    assert hasattr(checkers_Checkers, "bpt")
+    descriptor = None
+    for klass in checkers_Checkers.__mro__:
+        if "bpt" in klass.__dict__:
+            descriptor = klass.__dict__["bpt"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_checkers_checkers_has_preBoard1():
+    assert hasattr(checkers_Checkers, "preBoard1")
+    descriptor = None
+    for klass in checkers_Checkers.__mro__:
+        if "preBoard1" in klass.__dict__:
+            descriptor = klass.__dict__["preBoard1"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_checkers_checkers_has_selectedMode():
+    assert hasattr(checkers_Checkers, "selectedMode")
+    descriptor = None
+    for klass in checkers_Checkers.__mro__:
+        if "selectedMode" in klass.__dict__:
+            descriptor = klass.__dict__["selectedMode"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_checkers_checkers_has_hlpB():
+    assert hasattr(checkers_Checkers, "hlpB")
+    descriptor = None
+    for klass in checkers_Checkers.__mro__:
+        if "hlpB" in klass.__dict__:
+            descriptor = klass.__dict__["hlpB"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_checkers_checkers_has_silent():
+    assert hasattr(checkers_Checkers, "silent")
+    descriptor = None
+    for klass in checkers_Checkers.__mro__:
+        if "silent" in klass.__dict__:
+            descriptor = klass.__dict__["silent"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_checkers_checkers_has_difficulty():
+    assert hasattr(checkers_Checkers, "difficulty")
+    descriptor = None
+    for klass in checkers_Checkers.__mro__:
+        if "difficulty" in klass.__dict__:
+            descriptor = klass.__dict__["difficulty"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_checkers_checkers_has_mup():
+    assert hasattr(checkers_Checkers, "mup")
+    descriptor = None
+    for klass in checkers_Checkers.__mro__:
+        if "mup" in klass.__dict__:
+            descriptor = klass.__dict__["mup"]
+            break
+    assert isinstance(descriptor, property)
+
 def test_checkers_checkers_has_c1():
     assert hasattr(checkers_Checkers, "c1")
     descriptor = None
     for klass in checkers_Checkers.__mro__:
         if "c1" in klass.__dict__:
             descriptor = klass.__dict__["c1"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_checkers_checkers_has_redK():
-    assert hasattr(checkers_Checkers, "redK")
-    descriptor = None
-    for klass in checkers_Checkers.__mro__:
-        if "redK" in klass.__dict__:
-            descriptor = klass.__dict__["redK"]
             break
     assert isinstance(descriptor, property)
 
@@ -1320,12 +1248,84 @@ def test_checkers_checkers_has_bkt():
             break
     assert isinstance(descriptor, property)
 
-def test_checkers_checkers_has_redNormal():
-    assert hasattr(checkers_Checkers, "redNormal")
+def test_checkers_checkers_has_loser():
+    assert hasattr(checkers_Checkers, "loser")
     descriptor = None
     for klass in checkers_Checkers.__mro__:
-        if "redNormal" in klass.__dict__:
-            descriptor = klass.__dict__["redNormal"]
+        if "loser" in klass.__dict__:
+            descriptor = klass.__dict__["loser"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_checkers_checkers_has_p2():
+    assert hasattr(checkers_Checkers, "p2")
+    descriptor = None
+    for klass in checkers_Checkers.__mro__:
+        if "p2" in klass.__dict__:
+            descriptor = klass.__dict__["p2"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_checkers_checkers_has_col():
+    assert hasattr(checkers_Checkers, "col")
+    descriptor = None
+    for klass in checkers_Checkers.__mro__:
+        if "col" in klass.__dict__:
+            descriptor = klass.__dict__["col"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_checkers_checkers_has_yellowK():
+    assert hasattr(checkers_Checkers, "yellowK")
+    descriptor = None
+    for klass in checkers_Checkers.__mro__:
+        if "yellowK" in klass.__dict__:
+            descriptor = klass.__dict__["yellowK"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_checkers_checkers_has_level():
+    assert hasattr(checkers_Checkers, "level")
+    descriptor = None
+    for klass in checkers_Checkers.__mro__:
+        if "level" in klass.__dict__:
+            descriptor = klass.__dict__["level"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_checkers_checkers_has_movable():
+    assert hasattr(checkers_Checkers, "movable")
+    descriptor = None
+    for klass in checkers_Checkers.__mro__:
+        if "movable" in klass.__dict__:
+            descriptor = klass.__dict__["movable"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_checkers_checkers_has_redKing():
+    assert hasattr(checkers_Checkers, "redKing")
+    descriptor = None
+    for klass in checkers_Checkers.__mro__:
+        if "redKing" in klass.__dict__:
+            descriptor = klass.__dict__["redKing"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_checkers_checkers_has_unB():
+    assert hasattr(checkers_Checkers, "unB")
+    descriptor = None
+    for klass in checkers_Checkers.__mro__:
+        if "unB" in klass.__dict__:
+            descriptor = klass.__dict__["unB"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_checkers_checkers_has_players():
+    assert hasattr(checkers_Checkers, "players")
+    descriptor = None
+    for klass in checkers_Checkers.__mro__:
+        if "players" in klass.__dict__:
+            descriptor = klass.__dict__["players"]
             break
     assert isinstance(descriptor, property)
 
@@ -1342,16 +1342,16 @@ def test_checkers_checkermove_constructor_exists():
 def test_checkers_checkermove_constructor_args():
     sig = inspect.signature(checkers_CheckerMove.__init__)
     params = list(sig.parameters.keys())
-    assert "illegalMove" in params, "Missing parameter 'illegalMove'"
-    assert "incompleteMove" in params, "Missing parameter 'incompleteMove'"
     assert "legalMove" in params, "Missing parameter 'legalMove'"
+    assert "incompleteMove" in params, "Missing parameter 'incompleteMove'"
+    assert "illegalMove" in params, "Missing parameter 'illegalMove'"
 
-def test_checkers_checkermove_has_illegalMove():
-    assert hasattr(checkers_CheckerMove, "illegalMove")
+def test_checkers_checkermove_has_legalMove():
+    assert hasattr(checkers_CheckerMove, "legalMove")
     descriptor = None
     for klass in checkers_CheckerMove.__mro__:
-        if "illegalMove" in klass.__dict__:
-            descriptor = klass.__dict__["illegalMove"]
+        if "legalMove" in klass.__dict__:
+            descriptor = klass.__dict__["legalMove"]
             break
     assert isinstance(descriptor, property)
 
@@ -1364,12 +1364,12 @@ def test_checkers_checkermove_has_incompleteMove():
             break
     assert isinstance(descriptor, property)
 
-def test_checkers_checkermove_has_legalMove():
-    assert hasattr(checkers_CheckerMove, "legalMove")
+def test_checkers_checkermove_has_illegalMove():
+    assert hasattr(checkers_CheckerMove, "illegalMove")
     descriptor = None
     for klass in checkers_CheckerMove.__mro__:
-        if "legalMove" in klass.__dict__:
-            descriptor = klass.__dict__["legalMove"]
+        if "illegalMove" in klass.__dict__:
+            descriptor = klass.__dict__["illegalMove"]
             break
     assert isinstance(descriptor, property)
 
@@ -1506,15 +1506,15 @@ checkers_CheckerFrame_strategy = st.builds(
 )
 checkers_GameEngine_strategy = st.builds(
     checkers_GameEngine,
-    normal=
-        st.integers(),
     edge=
         st.integers(),
     inf=
         st.integers(),
-    pos=
+    normal=
         st.integers(),
     king=
+        st.integers(),
+    pos=
         st.integers()
 )
 checkers_StartPanel_strategy = st.builds(
@@ -1522,10 +1522,10 @@ checkers_StartPanel_strategy = st.builds(
 )
 checkers_PlaySound_strategy = st.builds(
     checkers_PlaySound,
-    filename=
-        safe_text,
     EXTERNAL_BUFFER_SIZE=
-        st.integers()
+        st.integers(),
+    filename=
+        safe_text
 )
 checkers_IntelliChecker_strategy = st.builds(
     checkers_IntelliChecker,
@@ -1546,128 +1546,128 @@ checkers_GameWin_strategy = st.builds(
 )
 checkers_Checkers_strategy = st.builds(
     checkers_Checkers,
-    endY=
+    toMove=
         st.integers(),
-    diff=
+    redK=
+        st.none(),
+    board=
+        safe_text,
+    hlp=
         st.none(),
     yellowKing=
         st.integers(),
-    c2=
-        st.none(),
-    preToMove1=
+    undoCount=
         st.integers(),
+    selectedColor=
+        safe_text,
+    preBoard3=
+        safe_text,
+    rk=
+        st.none(),
     empty=
         st.integers(),
-    yellowK=
+    yellowN=
         st.none(),
+    colors=
+        st.none(),
+    preToMove3=
+        st.integers(),
+    rkt=
+        st.none(),
+    bk=
+        st.none(),
+    won=
+        st.integers(),
     snp=
         st.none(),
-    highlight=
-        st.booleans(),
-    snB=
+    rpt=
         st.none(),
+    rp=
+        st.none(),
+    preToMove2=
+        st.integers(),
+    msg=
+        st.none(),
+    currType=
+        st.integers(),
     yellowNormal=
         st.integers(),
     redN=
         st.none(),
-    won=
-        st.integers(),
-    preBoard1=
-        safe_text,
-    yellowN=
+    winPoint=
         st.none(),
-    preToMove2=
-        st.integers(),
-    hlp=
-        st.none(),
-    bp=
-        st.none(),
-    players=
-        st.none(),
-    rp=
-        st.none(),
-    col=
-        st.none(),
-    mup=
-        st.none(),
-    preBoard3=
-        safe_text,
-    msg=
-        st.none(),
-    colors=
-        st.none(),
-    bpt=
-        st.none(),
-    preToMove3=
-        st.integers(),
     mode=
         st.none(),
+    endY=
+        st.integers(),
+    preToMove1=
+        st.integers(),
+    redNormal=
+        st.integers(),
+    bp=
+        st.none(),
+    preBoard2=
+        safe_text,
+    highlight=
+        st.booleans(),
     p1=
         st.none(),
-    difficulty=
-        st.integers(),
-    rkt=
+    snB=
         st.none(),
-    level=
-        st.none(),
-    selectedColor=
-        safe_text,
-    undoCount=
-        st.integers(),
-    redKing=
-        st.integers(),
-    hlpB=
-        st.none(),
-    nwB=
-        st.none(),
-    movable=
-        st.booleans(),
     g=
-        st.none(),
-    silent=
-        st.booleans(),
-    rk=
-        st.none(),
-    p2=
-        st.none(),
-    bk=
         st.none(),
     incomplete=
         st.booleans(),
-    currType=
-        st.integers(),
-    winPoint=
+    c2=
         st.none(),
-    loser=
-        st.integers(),
-    rpt=
+    nwB=
         st.none(),
-    unB=
+    diff=
         st.none(),
-    toMove=
-        st.integers(),
+    bpt=
+        st.none(),
+    preBoard1=
+        safe_text,
     selectedMode=
         st.integers(),
-    board=
-        safe_text,
-    preBoard2=
-        safe_text,
-    c1=
+    hlpB=
         st.none(),
-    redK=
+    silent=
+        st.booleans(),
+    difficulty=
+        st.integers(),
+    mup=
+        st.none(),
+    c1=
         st.none(),
     bkt=
         st.none(),
-    redNormal=
-        st.integers()
+    loser=
+        st.integers(),
+    p2=
+        st.none(),
+    col=
+        st.none(),
+    yellowK=
+        st.none(),
+    level=
+        st.none(),
+    movable=
+        st.booleans(),
+    redKing=
+        st.integers(),
+    unB=
+        st.none(),
+    players=
+        st.none()
 )
 checkers_CheckerMove_strategy = st.builds(
     checkers_CheckerMove,
-    illegalMove=
+    legalMove=
         st.integers(),
     incompleteMove=
         st.integers(),
-    legalMove=
+    illegalMove=
         st.integers()
 )
 
@@ -1841,9 +1841,6 @@ def test_genmymodelreverse_java_awt_event_actionevent_instantiation(instance):
 def test_checkers_checkerframe_instantiation(instance):
     assert isinstance(instance, checkers_CheckerFrame)
 
-@given(instance=checkers_CheckerFrame_strategy)
-def test_checkers_checkerframe_startButton_type(instance):
-    assert isinstance(instance.startButton, str)
 
 
 @given(instance=checkers_CheckerFrame_strategy)
@@ -1852,9 +1849,6 @@ def test_checkers_checkerframe_startButton_setter(instance):
     instance.startButton = original
     assert instance.startButton == original
 
-@given(instance=checkers_CheckerFrame_strategy)
-def test_checkers_checkerframe_gamePanel_type(instance):
-    assert isinstance(instance.gamePanel, str)
 
 
 @given(instance=checkers_CheckerFrame_strategy)
@@ -1868,20 +1862,6 @@ def test_checkers_checkerframe_gamePanel_setter(instance):
 def test_checkers_gameengine_instantiation(instance):
     assert isinstance(instance, checkers_GameEngine)
 
-@given(instance=checkers_GameEngine_strategy)
-def test_checkers_gameengine_normal_type(instance):
-    assert isinstance(instance.normal, int)
-
-
-@given(instance=checkers_GameEngine_strategy)
-def test_checkers_gameengine_normal_setter(instance):
-    original = instance.normal
-    instance.normal = original
-    assert instance.normal == original
-
-@given(instance=checkers_GameEngine_strategy)
-def test_checkers_gameengine_edge_type(instance):
-    assert isinstance(instance.edge, int)
 
 
 @given(instance=checkers_GameEngine_strategy)
@@ -1890,9 +1870,6 @@ def test_checkers_gameengine_edge_setter(instance):
     instance.edge = original
     assert instance.edge == original
 
-@given(instance=checkers_GameEngine_strategy)
-def test_checkers_gameengine_inf_type(instance):
-    assert isinstance(instance.inf, int)
 
 
 @given(instance=checkers_GameEngine_strategy)
@@ -1901,20 +1878,14 @@ def test_checkers_gameengine_inf_setter(instance):
     instance.inf = original
     assert instance.inf == original
 
-@given(instance=checkers_GameEngine_strategy)
-def test_checkers_gameengine_pos_type(instance):
-    assert isinstance(instance.pos, int)
 
 
 @given(instance=checkers_GameEngine_strategy)
-def test_checkers_gameengine_pos_setter(instance):
-    original = instance.pos
-    instance.pos = original
-    assert instance.pos == original
+def test_checkers_gameengine_normal_setter(instance):
+    original = instance.normal
+    instance.normal = original
+    assert instance.normal == original
 
-@given(instance=checkers_GameEngine_strategy)
-def test_checkers_gameengine_king_type(instance):
-    assert isinstance(instance.king, int)
 
 
 @given(instance=checkers_GameEngine_strategy)
@@ -1922,6 +1893,14 @@ def test_checkers_gameengine_king_setter(instance):
     original = instance.king
     instance.king = original
     assert instance.king == original
+
+
+
+@given(instance=checkers_GameEngine_strategy)
+def test_checkers_gameengine_pos_setter(instance):
+    original = instance.pos
+    instance.pos = original
+    assert instance.pos == original
 
 @given(instance=checkers_StartPanel_strategy)
 @settings(max_examples=50)
@@ -1933,20 +1912,6 @@ def test_checkers_startpanel_instantiation(instance):
 def test_checkers_playsound_instantiation(instance):
     assert isinstance(instance, checkers_PlaySound)
 
-@given(instance=checkers_PlaySound_strategy)
-def test_checkers_playsound_filename_type(instance):
-    assert isinstance(instance.filename, str)
-
-
-@given(instance=checkers_PlaySound_strategy)
-def test_checkers_playsound_filename_setter(instance):
-    original = instance.filename
-    instance.filename = original
-    assert instance.filename == original
-
-@given(instance=checkers_PlaySound_strategy)
-def test_checkers_playsound_EXTERNAL_BUFFER_SIZE_type(instance):
-    assert isinstance(instance.EXTERNAL_BUFFER_SIZE, int)
 
 
 @given(instance=checkers_PlaySound_strategy)
@@ -1954,6 +1919,14 @@ def test_checkers_playsound_EXTERNAL_BUFFER_SIZE_setter(instance):
     original = instance.EXTERNAL_BUFFER_SIZE
     instance.EXTERNAL_BUFFER_SIZE = original
     assert instance.EXTERNAL_BUFFER_SIZE == original
+
+
+
+@given(instance=checkers_PlaySound_strategy)
+def test_checkers_playsound_filename_setter(instance):
+    original = instance.filename
+    instance.filename = original
+    assert instance.filename == original
 
 @given(instance=checkers_IntelliChecker_strategy)
 @settings(max_examples=50)
@@ -1965,9 +1938,6 @@ def test_checkers_intellichecker_instantiation(instance):
 def test_checkers_help_instantiation(instance):
     assert isinstance(instance, checkers_Help)
 
-@given(instance=checkers_Help_strategy)
-def test_checkers_help_txt_type(instance):
-    assert isinstance(instance.txt, genmymodelreverse_javax_swing_jtextarea)
 
 
 @given(instance=checkers_Help_strategy)
@@ -1976,9 +1946,6 @@ def test_checkers_help_txt_setter(instance):
     instance.txt = original
     assert instance.txt == original
 
-@given(instance=checkers_Help_strategy)
-def test_checkers_help_hlp_type(instance):
-    assert isinstance(instance.hlp, genmymodelreverse_javax_swing_jscrollpane)
 
 
 @given(instance=checkers_Help_strategy)
@@ -1992,9 +1959,6 @@ def test_checkers_help_hlp_setter(instance):
 def test_checkers_gamewin_instantiation(instance):
     assert isinstance(instance, checkers_GameWin)
 
-@given(instance=checkers_GameWin_strategy)
-def test_checkers_gamewin_masseage_type(instance):
-    assert isinstance(instance.masseage, genmymodelreverse_javax_swing_jlabel)
 
 
 @given(instance=checkers_GameWin_strategy)
@@ -2003,9 +1967,6 @@ def test_checkers_gamewin_masseage_setter(instance):
     instance.masseage = original
     assert instance.masseage == original
 
-@given(instance=checkers_GameWin_strategy)
-def test_checkers_gamewin_p_type(instance):
-    assert isinstance(instance.p, genmymodelreverse_java_awt_point)
 
 
 @given(instance=checkers_GameWin_strategy)
@@ -2019,548 +1980,6 @@ def test_checkers_gamewin_p_setter(instance):
 def test_checkers_checkers_instantiation(instance):
     assert isinstance(instance, checkers_Checkers)
 
-@given(instance=checkers_Checkers_strategy)
-def test_checkers_checkers_endY_type(instance):
-    assert isinstance(instance.endY, int)
-
-
-@given(instance=checkers_Checkers_strategy)
-def test_checkers_checkers_endY_setter(instance):
-    original = instance.endY
-    instance.endY = original
-    assert instance.endY == original
-
-@given(instance=checkers_Checkers_strategy)
-def test_checkers_checkers_diff_type(instance):
-    assert isinstance(instance.diff, genmymodelreverse_javax_swing_jlabel)
-
-
-@given(instance=checkers_Checkers_strategy)
-def test_checkers_checkers_diff_setter(instance):
-    original = instance.diff
-    instance.diff = original
-    assert instance.diff == original
-
-@given(instance=checkers_Checkers_strategy)
-def test_checkers_checkers_yellowKing_type(instance):
-    assert isinstance(instance.yellowKing, int)
-
-
-@given(instance=checkers_Checkers_strategy)
-def test_checkers_checkers_yellowKing_setter(instance):
-    original = instance.yellowKing
-    instance.yellowKing = original
-    assert instance.yellowKing == original
-
-@given(instance=checkers_Checkers_strategy)
-def test_checkers_checkers_c2_type(instance):
-    assert isinstance(instance.c2, genmymodelreverse_javax_swing_jradiobutton)
-
-
-@given(instance=checkers_Checkers_strategy)
-def test_checkers_checkers_c2_setter(instance):
-    original = instance.c2
-    instance.c2 = original
-    assert instance.c2 == original
-
-@given(instance=checkers_Checkers_strategy)
-def test_checkers_checkers_preToMove1_type(instance):
-    assert isinstance(instance.preToMove1, int)
-
-
-@given(instance=checkers_Checkers_strategy)
-def test_checkers_checkers_preToMove1_setter(instance):
-    original = instance.preToMove1
-    instance.preToMove1 = original
-    assert instance.preToMove1 == original
-
-@given(instance=checkers_Checkers_strategy)
-def test_checkers_checkers_empty_type(instance):
-    assert isinstance(instance.empty, int)
-
-
-@given(instance=checkers_Checkers_strategy)
-def test_checkers_checkers_empty_setter(instance):
-    original = instance.empty
-    instance.empty = original
-    assert instance.empty == original
-
-@given(instance=checkers_Checkers_strategy)
-def test_checkers_checkers_yellowK_type(instance):
-    assert isinstance(instance.yellowK, genmymodelreverse_javax_swing_imageicon)
-
-
-@given(instance=checkers_Checkers_strategy)
-def test_checkers_checkers_yellowK_setter(instance):
-    original = instance.yellowK
-    instance.yellowK = original
-    assert instance.yellowK == original
-
-@given(instance=checkers_Checkers_strategy)
-def test_checkers_checkers_snp_type(instance):
-    assert isinstance(instance.snp, genmymodelreverse_javax_swing_imageicon)
-
-
-@given(instance=checkers_Checkers_strategy)
-def test_checkers_checkers_snp_setter(instance):
-    original = instance.snp
-    instance.snp = original
-    assert instance.snp == original
-
-@given(instance=checkers_Checkers_strategy)
-def test_checkers_checkers_highlight_type(instance):
-    assert isinstance(instance.highlight, bool)
-
-
-@given(instance=checkers_Checkers_strategy)
-def test_checkers_checkers_highlight_setter(instance):
-    original = instance.highlight
-    instance.highlight = original
-    assert instance.highlight == original
-
-@given(instance=checkers_Checkers_strategy)
-def test_checkers_checkers_snB_type(instance):
-    assert isinstance(instance.snB, genmymodelreverse_javax_swing_jbutton)
-
-
-@given(instance=checkers_Checkers_strategy)
-def test_checkers_checkers_snB_setter(instance):
-    original = instance.snB
-    instance.snB = original
-    assert instance.snB == original
-
-@given(instance=checkers_Checkers_strategy)
-def test_checkers_checkers_yellowNormal_type(instance):
-    assert isinstance(instance.yellowNormal, int)
-
-
-@given(instance=checkers_Checkers_strategy)
-def test_checkers_checkers_yellowNormal_setter(instance):
-    original = instance.yellowNormal
-    instance.yellowNormal = original
-    assert instance.yellowNormal == original
-
-@given(instance=checkers_Checkers_strategy)
-def test_checkers_checkers_redN_type(instance):
-    assert isinstance(instance.redN, genmymodelreverse_javax_swing_imageicon)
-
-
-@given(instance=checkers_Checkers_strategy)
-def test_checkers_checkers_redN_setter(instance):
-    original = instance.redN
-    instance.redN = original
-    assert instance.redN == original
-
-@given(instance=checkers_Checkers_strategy)
-def test_checkers_checkers_won_type(instance):
-    assert isinstance(instance.won, int)
-
-
-@given(instance=checkers_Checkers_strategy)
-def test_checkers_checkers_won_setter(instance):
-    original = instance.won
-    instance.won = original
-    assert instance.won == original
-
-@given(instance=checkers_Checkers_strategy)
-def test_checkers_checkers_preBoard1_type(instance):
-    assert isinstance(instance.preBoard1, str)
-
-
-@given(instance=checkers_Checkers_strategy)
-def test_checkers_checkers_preBoard1_setter(instance):
-    original = instance.preBoard1
-    instance.preBoard1 = original
-    assert instance.preBoard1 == original
-
-@given(instance=checkers_Checkers_strategy)
-def test_checkers_checkers_yellowN_type(instance):
-    assert isinstance(instance.yellowN, genmymodelreverse_javax_swing_imageicon)
-
-
-@given(instance=checkers_Checkers_strategy)
-def test_checkers_checkers_yellowN_setter(instance):
-    original = instance.yellowN
-    instance.yellowN = original
-    assert instance.yellowN == original
-
-@given(instance=checkers_Checkers_strategy)
-def test_checkers_checkers_preToMove2_type(instance):
-    assert isinstance(instance.preToMove2, int)
-
-
-@given(instance=checkers_Checkers_strategy)
-def test_checkers_checkers_preToMove2_setter(instance):
-    original = instance.preToMove2
-    instance.preToMove2 = original
-    assert instance.preToMove2 == original
-
-@given(instance=checkers_Checkers_strategy)
-def test_checkers_checkers_hlp_type(instance):
-    assert isinstance(instance.hlp, genmymodelreverse_javax_swing_imageicon)
-
-
-@given(instance=checkers_Checkers_strategy)
-def test_checkers_checkers_hlp_setter(instance):
-    original = instance.hlp
-    instance.hlp = original
-    assert instance.hlp == original
-
-@given(instance=checkers_Checkers_strategy)
-def test_checkers_checkers_bp_type(instance):
-    assert isinstance(instance.bp, genmymodelreverse_javax_swing_jlabel)
-
-
-@given(instance=checkers_Checkers_strategy)
-def test_checkers_checkers_bp_setter(instance):
-    original = instance.bp
-    instance.bp = original
-    assert instance.bp == original
-
-@given(instance=checkers_Checkers_strategy)
-def test_checkers_checkers_players_type(instance):
-    assert isinstance(instance.players, genmymodelreverse_javax_swing_buttongroup)
-
-
-@given(instance=checkers_Checkers_strategy)
-def test_checkers_checkers_players_setter(instance):
-    original = instance.players
-    instance.players = original
-    assert instance.players == original
-
-@given(instance=checkers_Checkers_strategy)
-def test_checkers_checkers_rp_type(instance):
-    assert isinstance(instance.rp, genmymodelreverse_javax_swing_jlabel)
-
-
-@given(instance=checkers_Checkers_strategy)
-def test_checkers_checkers_rp_setter(instance):
-    original = instance.rp
-    instance.rp = original
-    assert instance.rp == original
-
-@given(instance=checkers_Checkers_strategy)
-def test_checkers_checkers_col_type(instance):
-    assert isinstance(instance.col, genmymodelreverse_javax_swing_jlabel)
-
-
-@given(instance=checkers_Checkers_strategy)
-def test_checkers_checkers_col_setter(instance):
-    original = instance.col
-    instance.col = original
-    assert instance.col == original
-
-@given(instance=checkers_Checkers_strategy)
-def test_checkers_checkers_mup_type(instance):
-    assert isinstance(instance.mup, genmymodelreverse_javax_swing_imageicon)
-
-
-@given(instance=checkers_Checkers_strategy)
-def test_checkers_checkers_mup_setter(instance):
-    original = instance.mup
-    instance.mup = original
-    assert instance.mup == original
-
-@given(instance=checkers_Checkers_strategy)
-def test_checkers_checkers_preBoard3_type(instance):
-    assert isinstance(instance.preBoard3, str)
-
-
-@given(instance=checkers_Checkers_strategy)
-def test_checkers_checkers_preBoard3_setter(instance):
-    original = instance.preBoard3
-    instance.preBoard3 = original
-    assert instance.preBoard3 == original
-
-@given(instance=checkers_Checkers_strategy)
-def test_checkers_checkers_msg_type(instance):
-    assert isinstance(instance.msg, genmymodelreverse_javax_swing_jtextarea)
-
-
-@given(instance=checkers_Checkers_strategy)
-def test_checkers_checkers_msg_setter(instance):
-    original = instance.msg
-    instance.msg = original
-    assert instance.msg == original
-
-@given(instance=checkers_Checkers_strategy)
-def test_checkers_checkers_colors_type(instance):
-    assert isinstance(instance.colors, genmymodelreverse_javax_swing_buttongroup)
-
-
-@given(instance=checkers_Checkers_strategy)
-def test_checkers_checkers_colors_setter(instance):
-    original = instance.colors
-    instance.colors = original
-    assert instance.colors == original
-
-@given(instance=checkers_Checkers_strategy)
-def test_checkers_checkers_bpt_type(instance):
-    assert isinstance(instance.bpt, genmymodelreverse_javax_swing_jlabel)
-
-
-@given(instance=checkers_Checkers_strategy)
-def test_checkers_checkers_bpt_setter(instance):
-    original = instance.bpt
-    instance.bpt = original
-    assert instance.bpt == original
-
-@given(instance=checkers_Checkers_strategy)
-def test_checkers_checkers_preToMove3_type(instance):
-    assert isinstance(instance.preToMove3, int)
-
-
-@given(instance=checkers_Checkers_strategy)
-def test_checkers_checkers_preToMove3_setter(instance):
-    original = instance.preToMove3
-    instance.preToMove3 = original
-    assert instance.preToMove3 == original
-
-@given(instance=checkers_Checkers_strategy)
-def test_checkers_checkers_mode_type(instance):
-    assert isinstance(instance.mode, genmymodelreverse_javax_swing_jlabel)
-
-
-@given(instance=checkers_Checkers_strategy)
-def test_checkers_checkers_mode_setter(instance):
-    original = instance.mode
-    instance.mode = original
-    assert instance.mode == original
-
-@given(instance=checkers_Checkers_strategy)
-def test_checkers_checkers_p1_type(instance):
-    assert isinstance(instance.p1, genmymodelreverse_javax_swing_jradiobutton)
-
-
-@given(instance=checkers_Checkers_strategy)
-def test_checkers_checkers_p1_setter(instance):
-    original = instance.p1
-    instance.p1 = original
-    assert instance.p1 == original
-
-@given(instance=checkers_Checkers_strategy)
-def test_checkers_checkers_difficulty_type(instance):
-    assert isinstance(instance.difficulty, int)
-
-
-@given(instance=checkers_Checkers_strategy)
-def test_checkers_checkers_difficulty_setter(instance):
-    original = instance.difficulty
-    instance.difficulty = original
-    assert instance.difficulty == original
-
-@given(instance=checkers_Checkers_strategy)
-def test_checkers_checkers_rkt_type(instance):
-    assert isinstance(instance.rkt, genmymodelreverse_javax_swing_jlabel)
-
-
-@given(instance=checkers_Checkers_strategy)
-def test_checkers_checkers_rkt_setter(instance):
-    original = instance.rkt
-    instance.rkt = original
-    assert instance.rkt == original
-
-@given(instance=checkers_Checkers_strategy)
-def test_checkers_checkers_level_type(instance):
-    assert isinstance(instance.level, genmymodelreverse_javax_swing_jcombobox)
-
-
-@given(instance=checkers_Checkers_strategy)
-def test_checkers_checkers_level_setter(instance):
-    original = instance.level
-    instance.level = original
-    assert instance.level == original
-
-@given(instance=checkers_Checkers_strategy)
-def test_checkers_checkers_selectedColor_type(instance):
-    assert isinstance(instance.selectedColor, str)
-
-
-@given(instance=checkers_Checkers_strategy)
-def test_checkers_checkers_selectedColor_setter(instance):
-    original = instance.selectedColor
-    instance.selectedColor = original
-    assert instance.selectedColor == original
-
-@given(instance=checkers_Checkers_strategy)
-def test_checkers_checkers_undoCount_type(instance):
-    assert isinstance(instance.undoCount, int)
-
-
-@given(instance=checkers_Checkers_strategy)
-def test_checkers_checkers_undoCount_setter(instance):
-    original = instance.undoCount
-    instance.undoCount = original
-    assert instance.undoCount == original
-
-@given(instance=checkers_Checkers_strategy)
-def test_checkers_checkers_redKing_type(instance):
-    assert isinstance(instance.redKing, int)
-
-
-@given(instance=checkers_Checkers_strategy)
-def test_checkers_checkers_redKing_setter(instance):
-    original = instance.redKing
-    instance.redKing = original
-    assert instance.redKing == original
-
-@given(instance=checkers_Checkers_strategy)
-def test_checkers_checkers_hlpB_type(instance):
-    assert isinstance(instance.hlpB, genmymodelreverse_javax_swing_jbutton)
-
-
-@given(instance=checkers_Checkers_strategy)
-def test_checkers_checkers_hlpB_setter(instance):
-    original = instance.hlpB
-    instance.hlpB = original
-    assert instance.hlpB == original
-
-@given(instance=checkers_Checkers_strategy)
-def test_checkers_checkers_nwB_type(instance):
-    assert isinstance(instance.nwB, genmymodelreverse_javax_swing_jbutton)
-
-
-@given(instance=checkers_Checkers_strategy)
-def test_checkers_checkers_nwB_setter(instance):
-    original = instance.nwB
-    instance.nwB = original
-    assert instance.nwB == original
-
-@given(instance=checkers_Checkers_strategy)
-def test_checkers_checkers_movable_type(instance):
-    assert isinstance(instance.movable, bool)
-
-
-@given(instance=checkers_Checkers_strategy)
-def test_checkers_checkers_movable_setter(instance):
-    original = instance.movable
-    instance.movable = original
-    assert instance.movable == original
-
-@given(instance=checkers_Checkers_strategy)
-def test_checkers_checkers_g_type(instance):
-    assert isinstance(instance.g, genmymodelreverse_java_awt_graphics)
-
-
-@given(instance=checkers_Checkers_strategy)
-def test_checkers_checkers_g_setter(instance):
-    original = instance.g
-    instance.g = original
-    assert instance.g == original
-
-@given(instance=checkers_Checkers_strategy)
-def test_checkers_checkers_silent_type(instance):
-    assert isinstance(instance.silent, bool)
-
-
-@given(instance=checkers_Checkers_strategy)
-def test_checkers_checkers_silent_setter(instance):
-    original = instance.silent
-    instance.silent = original
-    assert instance.silent == original
-
-@given(instance=checkers_Checkers_strategy)
-def test_checkers_checkers_rk_type(instance):
-    assert isinstance(instance.rk, genmymodelreverse_javax_swing_jlabel)
-
-
-@given(instance=checkers_Checkers_strategy)
-def test_checkers_checkers_rk_setter(instance):
-    original = instance.rk
-    instance.rk = original
-    assert instance.rk == original
-
-@given(instance=checkers_Checkers_strategy)
-def test_checkers_checkers_p2_type(instance):
-    assert isinstance(instance.p2, genmymodelreverse_javax_swing_jradiobutton)
-
-
-@given(instance=checkers_Checkers_strategy)
-def test_checkers_checkers_p2_setter(instance):
-    original = instance.p2
-    instance.p2 = original
-    assert instance.p2 == original
-
-@given(instance=checkers_Checkers_strategy)
-def test_checkers_checkers_bk_type(instance):
-    assert isinstance(instance.bk, genmymodelreverse_javax_swing_jlabel)
-
-
-@given(instance=checkers_Checkers_strategy)
-def test_checkers_checkers_bk_setter(instance):
-    original = instance.bk
-    instance.bk = original
-    assert instance.bk == original
-
-@given(instance=checkers_Checkers_strategy)
-def test_checkers_checkers_incomplete_type(instance):
-    assert isinstance(instance.incomplete, bool)
-
-
-@given(instance=checkers_Checkers_strategy)
-def test_checkers_checkers_incomplete_setter(instance):
-    original = instance.incomplete
-    instance.incomplete = original
-    assert instance.incomplete == original
-
-@given(instance=checkers_Checkers_strategy)
-def test_checkers_checkers_currType_type(instance):
-    assert isinstance(instance.currType, int)
-
-
-@given(instance=checkers_Checkers_strategy)
-def test_checkers_checkers_currType_setter(instance):
-    original = instance.currType
-    instance.currType = original
-    assert instance.currType == original
-
-@given(instance=checkers_Checkers_strategy)
-def test_checkers_checkers_winPoint_type(instance):
-    assert isinstance(instance.winPoint, genmymodelreverse_java_awt_point)
-
-
-@given(instance=checkers_Checkers_strategy)
-def test_checkers_checkers_winPoint_setter(instance):
-    original = instance.winPoint
-    instance.winPoint = original
-    assert instance.winPoint == original
-
-@given(instance=checkers_Checkers_strategy)
-def test_checkers_checkers_loser_type(instance):
-    assert isinstance(instance.loser, int)
-
-
-@given(instance=checkers_Checkers_strategy)
-def test_checkers_checkers_loser_setter(instance):
-    original = instance.loser
-    instance.loser = original
-    assert instance.loser == original
-
-@given(instance=checkers_Checkers_strategy)
-def test_checkers_checkers_rpt_type(instance):
-    assert isinstance(instance.rpt, genmymodelreverse_javax_swing_jlabel)
-
-
-@given(instance=checkers_Checkers_strategy)
-def test_checkers_checkers_rpt_setter(instance):
-    original = instance.rpt
-    instance.rpt = original
-    assert instance.rpt == original
-
-@given(instance=checkers_Checkers_strategy)
-def test_checkers_checkers_unB_type(instance):
-    assert isinstance(instance.unB, genmymodelreverse_javax_swing_jbutton)
-
-
-@given(instance=checkers_Checkers_strategy)
-def test_checkers_checkers_unB_setter(instance):
-    original = instance.unB
-    instance.unB = original
-    assert instance.unB == original
-
-@given(instance=checkers_Checkers_strategy)
-def test_checkers_checkers_toMove_type(instance):
-    assert isinstance(instance.toMove, int)
 
 
 @given(instance=checkers_Checkers_strategy)
@@ -2569,53 +1988,6 @@ def test_checkers_checkers_toMove_setter(instance):
     instance.toMove = original
     assert instance.toMove == original
 
-@given(instance=checkers_Checkers_strategy)
-def test_checkers_checkers_selectedMode_type(instance):
-    assert isinstance(instance.selectedMode, int)
-
-
-@given(instance=checkers_Checkers_strategy)
-def test_checkers_checkers_selectedMode_setter(instance):
-    original = instance.selectedMode
-    instance.selectedMode = original
-    assert instance.selectedMode == original
-
-@given(instance=checkers_Checkers_strategy)
-def test_checkers_checkers_board_type(instance):
-    assert isinstance(instance.board, str)
-
-
-@given(instance=checkers_Checkers_strategy)
-def test_checkers_checkers_board_setter(instance):
-    original = instance.board
-    instance.board = original
-    assert instance.board == original
-
-@given(instance=checkers_Checkers_strategy)
-def test_checkers_checkers_preBoard2_type(instance):
-    assert isinstance(instance.preBoard2, str)
-
-
-@given(instance=checkers_Checkers_strategy)
-def test_checkers_checkers_preBoard2_setter(instance):
-    original = instance.preBoard2
-    instance.preBoard2 = original
-    assert instance.preBoard2 == original
-
-@given(instance=checkers_Checkers_strategy)
-def test_checkers_checkers_c1_type(instance):
-    assert isinstance(instance.c1, genmymodelreverse_javax_swing_jradiobutton)
-
-
-@given(instance=checkers_Checkers_strategy)
-def test_checkers_checkers_c1_setter(instance):
-    original = instance.c1
-    instance.c1 = original
-    assert instance.c1 == original
-
-@given(instance=checkers_Checkers_strategy)
-def test_checkers_checkers_redK_type(instance):
-    assert isinstance(instance.redK, genmymodelreverse_javax_swing_imageicon)
 
 
 @given(instance=checkers_Checkers_strategy)
@@ -2624,20 +1996,214 @@ def test_checkers_checkers_redK_setter(instance):
     instance.redK = original
     assert instance.redK == original
 
-@given(instance=checkers_Checkers_strategy)
-def test_checkers_checkers_bkt_type(instance):
-    assert isinstance(instance.bkt, genmymodelreverse_javax_swing_jlabel)
 
 
 @given(instance=checkers_Checkers_strategy)
-def test_checkers_checkers_bkt_setter(instance):
-    original = instance.bkt
-    instance.bkt = original
-    assert instance.bkt == original
+def test_checkers_checkers_board_setter(instance):
+    original = instance.board
+    instance.board = original
+    assert instance.board == original
+
+
 
 @given(instance=checkers_Checkers_strategy)
-def test_checkers_checkers_redNormal_type(instance):
-    assert isinstance(instance.redNormal, int)
+def test_checkers_checkers_hlp_setter(instance):
+    original = instance.hlp
+    instance.hlp = original
+    assert instance.hlp == original
+
+
+
+@given(instance=checkers_Checkers_strategy)
+def test_checkers_checkers_yellowKing_setter(instance):
+    original = instance.yellowKing
+    instance.yellowKing = original
+    assert instance.yellowKing == original
+
+
+
+@given(instance=checkers_Checkers_strategy)
+def test_checkers_checkers_undoCount_setter(instance):
+    original = instance.undoCount
+    instance.undoCount = original
+    assert instance.undoCount == original
+
+
+
+@given(instance=checkers_Checkers_strategy)
+def test_checkers_checkers_selectedColor_setter(instance):
+    original = instance.selectedColor
+    instance.selectedColor = original
+    assert instance.selectedColor == original
+
+
+
+@given(instance=checkers_Checkers_strategy)
+def test_checkers_checkers_preBoard3_setter(instance):
+    original = instance.preBoard3
+    instance.preBoard3 = original
+    assert instance.preBoard3 == original
+
+
+
+@given(instance=checkers_Checkers_strategy)
+def test_checkers_checkers_rk_setter(instance):
+    original = instance.rk
+    instance.rk = original
+    assert instance.rk == original
+
+
+
+@given(instance=checkers_Checkers_strategy)
+def test_checkers_checkers_empty_setter(instance):
+    original = instance.empty
+    instance.empty = original
+    assert instance.empty == original
+
+
+
+@given(instance=checkers_Checkers_strategy)
+def test_checkers_checkers_yellowN_setter(instance):
+    original = instance.yellowN
+    instance.yellowN = original
+    assert instance.yellowN == original
+
+
+
+@given(instance=checkers_Checkers_strategy)
+def test_checkers_checkers_colors_setter(instance):
+    original = instance.colors
+    instance.colors = original
+    assert instance.colors == original
+
+
+
+@given(instance=checkers_Checkers_strategy)
+def test_checkers_checkers_preToMove3_setter(instance):
+    original = instance.preToMove3
+    instance.preToMove3 = original
+    assert instance.preToMove3 == original
+
+
+
+@given(instance=checkers_Checkers_strategy)
+def test_checkers_checkers_rkt_setter(instance):
+    original = instance.rkt
+    instance.rkt = original
+    assert instance.rkt == original
+
+
+
+@given(instance=checkers_Checkers_strategy)
+def test_checkers_checkers_bk_setter(instance):
+    original = instance.bk
+    instance.bk = original
+    assert instance.bk == original
+
+
+
+@given(instance=checkers_Checkers_strategy)
+def test_checkers_checkers_won_setter(instance):
+    original = instance.won
+    instance.won = original
+    assert instance.won == original
+
+
+
+@given(instance=checkers_Checkers_strategy)
+def test_checkers_checkers_snp_setter(instance):
+    original = instance.snp
+    instance.snp = original
+    assert instance.snp == original
+
+
+
+@given(instance=checkers_Checkers_strategy)
+def test_checkers_checkers_rpt_setter(instance):
+    original = instance.rpt
+    instance.rpt = original
+    assert instance.rpt == original
+
+
+
+@given(instance=checkers_Checkers_strategy)
+def test_checkers_checkers_rp_setter(instance):
+    original = instance.rp
+    instance.rp = original
+    assert instance.rp == original
+
+
+
+@given(instance=checkers_Checkers_strategy)
+def test_checkers_checkers_preToMove2_setter(instance):
+    original = instance.preToMove2
+    instance.preToMove2 = original
+    assert instance.preToMove2 == original
+
+
+
+@given(instance=checkers_Checkers_strategy)
+def test_checkers_checkers_msg_setter(instance):
+    original = instance.msg
+    instance.msg = original
+    assert instance.msg == original
+
+
+
+@given(instance=checkers_Checkers_strategy)
+def test_checkers_checkers_currType_setter(instance):
+    original = instance.currType
+    instance.currType = original
+    assert instance.currType == original
+
+
+
+@given(instance=checkers_Checkers_strategy)
+def test_checkers_checkers_yellowNormal_setter(instance):
+    original = instance.yellowNormal
+    instance.yellowNormal = original
+    assert instance.yellowNormal == original
+
+
+
+@given(instance=checkers_Checkers_strategy)
+def test_checkers_checkers_redN_setter(instance):
+    original = instance.redN
+    instance.redN = original
+    assert instance.redN == original
+
+
+
+@given(instance=checkers_Checkers_strategy)
+def test_checkers_checkers_winPoint_setter(instance):
+    original = instance.winPoint
+    instance.winPoint = original
+    assert instance.winPoint == original
+
+
+
+@given(instance=checkers_Checkers_strategy)
+def test_checkers_checkers_mode_setter(instance):
+    original = instance.mode
+    instance.mode = original
+    assert instance.mode == original
+
+
+
+@given(instance=checkers_Checkers_strategy)
+def test_checkers_checkers_endY_setter(instance):
+    original = instance.endY
+    instance.endY = original
+    assert instance.endY == original
+
+
+
+@given(instance=checkers_Checkers_strategy)
+def test_checkers_checkers_preToMove1_setter(instance):
+    original = instance.preToMove1
+    instance.preToMove1 = original
+    assert instance.preToMove1 == original
+
 
 
 @given(instance=checkers_Checkers_strategy)
@@ -2646,25 +2212,243 @@ def test_checkers_checkers_redNormal_setter(instance):
     instance.redNormal = original
     assert instance.redNormal == original
 
+
+
+@given(instance=checkers_Checkers_strategy)
+def test_checkers_checkers_bp_setter(instance):
+    original = instance.bp
+    instance.bp = original
+    assert instance.bp == original
+
+
+
+@given(instance=checkers_Checkers_strategy)
+def test_checkers_checkers_preBoard2_setter(instance):
+    original = instance.preBoard2
+    instance.preBoard2 = original
+    assert instance.preBoard2 == original
+
+
+
+@given(instance=checkers_Checkers_strategy)
+def test_checkers_checkers_highlight_setter(instance):
+    original = instance.highlight
+    instance.highlight = original
+    assert instance.highlight == original
+
+
+
+@given(instance=checkers_Checkers_strategy)
+def test_checkers_checkers_p1_setter(instance):
+    original = instance.p1
+    instance.p1 = original
+    assert instance.p1 == original
+
+
+
+@given(instance=checkers_Checkers_strategy)
+def test_checkers_checkers_snB_setter(instance):
+    original = instance.snB
+    instance.snB = original
+    assert instance.snB == original
+
+
+
+@given(instance=checkers_Checkers_strategy)
+def test_checkers_checkers_g_setter(instance):
+    original = instance.g
+    instance.g = original
+    assert instance.g == original
+
+
+
+@given(instance=checkers_Checkers_strategy)
+def test_checkers_checkers_incomplete_setter(instance):
+    original = instance.incomplete
+    instance.incomplete = original
+    assert instance.incomplete == original
+
+
+
+@given(instance=checkers_Checkers_strategy)
+def test_checkers_checkers_c2_setter(instance):
+    original = instance.c2
+    instance.c2 = original
+    assert instance.c2 == original
+
+
+
+@given(instance=checkers_Checkers_strategy)
+def test_checkers_checkers_nwB_setter(instance):
+    original = instance.nwB
+    instance.nwB = original
+    assert instance.nwB == original
+
+
+
+@given(instance=checkers_Checkers_strategy)
+def test_checkers_checkers_diff_setter(instance):
+    original = instance.diff
+    instance.diff = original
+    assert instance.diff == original
+
+
+
+@given(instance=checkers_Checkers_strategy)
+def test_checkers_checkers_bpt_setter(instance):
+    original = instance.bpt
+    instance.bpt = original
+    assert instance.bpt == original
+
+
+
+@given(instance=checkers_Checkers_strategy)
+def test_checkers_checkers_preBoard1_setter(instance):
+    original = instance.preBoard1
+    instance.preBoard1 = original
+    assert instance.preBoard1 == original
+
+
+
+@given(instance=checkers_Checkers_strategy)
+def test_checkers_checkers_selectedMode_setter(instance):
+    original = instance.selectedMode
+    instance.selectedMode = original
+    assert instance.selectedMode == original
+
+
+
+@given(instance=checkers_Checkers_strategy)
+def test_checkers_checkers_hlpB_setter(instance):
+    original = instance.hlpB
+    instance.hlpB = original
+    assert instance.hlpB == original
+
+
+
+@given(instance=checkers_Checkers_strategy)
+def test_checkers_checkers_silent_setter(instance):
+    original = instance.silent
+    instance.silent = original
+    assert instance.silent == original
+
+
+
+@given(instance=checkers_Checkers_strategy)
+def test_checkers_checkers_difficulty_setter(instance):
+    original = instance.difficulty
+    instance.difficulty = original
+    assert instance.difficulty == original
+
+
+
+@given(instance=checkers_Checkers_strategy)
+def test_checkers_checkers_mup_setter(instance):
+    original = instance.mup
+    instance.mup = original
+    assert instance.mup == original
+
+
+
+@given(instance=checkers_Checkers_strategy)
+def test_checkers_checkers_c1_setter(instance):
+    original = instance.c1
+    instance.c1 = original
+    assert instance.c1 == original
+
+
+
+@given(instance=checkers_Checkers_strategy)
+def test_checkers_checkers_bkt_setter(instance):
+    original = instance.bkt
+    instance.bkt = original
+    assert instance.bkt == original
+
+
+
+@given(instance=checkers_Checkers_strategy)
+def test_checkers_checkers_loser_setter(instance):
+    original = instance.loser
+    instance.loser = original
+    assert instance.loser == original
+
+
+
+@given(instance=checkers_Checkers_strategy)
+def test_checkers_checkers_p2_setter(instance):
+    original = instance.p2
+    instance.p2 = original
+    assert instance.p2 == original
+
+
+
+@given(instance=checkers_Checkers_strategy)
+def test_checkers_checkers_col_setter(instance):
+    original = instance.col
+    instance.col = original
+    assert instance.col == original
+
+
+
+@given(instance=checkers_Checkers_strategy)
+def test_checkers_checkers_yellowK_setter(instance):
+    original = instance.yellowK
+    instance.yellowK = original
+    assert instance.yellowK == original
+
+
+
+@given(instance=checkers_Checkers_strategy)
+def test_checkers_checkers_level_setter(instance):
+    original = instance.level
+    instance.level = original
+    assert instance.level == original
+
+
+
+@given(instance=checkers_Checkers_strategy)
+def test_checkers_checkers_movable_setter(instance):
+    original = instance.movable
+    instance.movable = original
+    assert instance.movable == original
+
+
+
+@given(instance=checkers_Checkers_strategy)
+def test_checkers_checkers_redKing_setter(instance):
+    original = instance.redKing
+    instance.redKing = original
+    assert instance.redKing == original
+
+
+
+@given(instance=checkers_Checkers_strategy)
+def test_checkers_checkers_unB_setter(instance):
+    original = instance.unB
+    instance.unB = original
+    assert instance.unB == original
+
+
+
+@given(instance=checkers_Checkers_strategy)
+def test_checkers_checkers_players_setter(instance):
+    original = instance.players
+    instance.players = original
+    assert instance.players == original
+
 @given(instance=checkers_CheckerMove_strategy)
 @settings(max_examples=50)
 def test_checkers_checkermove_instantiation(instance):
     assert isinstance(instance, checkers_CheckerMove)
 
-@given(instance=checkers_CheckerMove_strategy)
-def test_checkers_checkermove_illegalMove_type(instance):
-    assert isinstance(instance.illegalMove, int)
 
 
 @given(instance=checkers_CheckerMove_strategy)
-def test_checkers_checkermove_illegalMove_setter(instance):
-    original = instance.illegalMove
-    instance.illegalMove = original
-    assert instance.illegalMove == original
+def test_checkers_checkermove_legalMove_setter(instance):
+    original = instance.legalMove
+    instance.legalMove = original
+    assert instance.legalMove == original
 
-@given(instance=checkers_CheckerMove_strategy)
-def test_checkers_checkermove_incompleteMove_type(instance):
-    assert isinstance(instance.incompleteMove, int)
 
 
 @given(instance=checkers_CheckerMove_strategy)
@@ -2673,13 +2457,10 @@ def test_checkers_checkermove_incompleteMove_setter(instance):
     instance.incompleteMove = original
     assert instance.incompleteMove == original
 
-@given(instance=checkers_CheckerMove_strategy)
-def test_checkers_checkermove_legalMove_type(instance):
-    assert isinstance(instance.legalMove, int)
 
 
 @given(instance=checkers_CheckerMove_strategy)
-def test_checkers_checkermove_legalMove_setter(instance):
-    original = instance.legalMove
-    instance.legalMove = original
-    assert instance.legalMove == original
+def test_checkers_checkermove_illegalMove_setter(instance):
+    original = instance.illegalMove
+    instance.illegalMove = original
+    assert instance.illegalMove == original

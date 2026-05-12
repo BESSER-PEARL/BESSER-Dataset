@@ -3,26 +3,26 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    migration::AbstractResource,
-    migration::EPackage,
-    migration::Slot,
-    migration::EReference,
-    migration::EAttribute,
+from python_code import (
+    migration_AbstractResource,
+    migration_EPackage,
+    migration_Slot,
+    migration_EReference,
+    migration_EAttribute,
     Slot,
-    migration::ReferenceSlot,
-    migration::AttributeSlot,
-    migration::Type,
-    migration::EClass,
-    migration::Instance,
+    migration_ReferenceSlot,
+    migration_AttributeSlot,
+    migration_Type,
+    migration_EClass,
+    migration_Instance,
     AbstractResource,
-    migration::MetamodelResource,
-    migration::ModelResource,
-    migration::Metamodel,
-    migration::Model,
-    migration::Repository,
+    migration_ModelResource,
+    migration_MetamodelResource,
+    migration_Metamodel,
+    migration_Model,
+    migration_Repository,
 )
 
 # =============================================================================
@@ -31,33 +31,33 @@ from classes import (
 
 
 
-def test_migration::abstractresource_is_not_abstract():
-    assert not inspect.isabstract(migration::AbstractResource)
+def test_migration_abstractresource_is_not_abstract():
+    assert not inspect.isabstract(migration_AbstractResource)
 
 
-def test_migration::abstractresource_constructor_exists():
-    assert callable(migration::AbstractResource.__init__)
+def test_migration_abstractresource_constructor_exists():
+    assert callable(migration_AbstractResource.__init__)
 
 
-def test_migration::abstractresource_constructor_args():
-    sig = inspect.signature(migration::AbstractResource.__init__)
+def test_migration_abstractresource_constructor_args():
+    sig = inspect.signature(migration_AbstractResource.__init__)
     params = list(sig.parameters.keys())
     assert "uri" in params, "Missing parameter 'uri'"
     assert "encoding" in params, "Missing parameter 'encoding'"
 
-def test_migration::abstractresource_has_uri():
-    assert hasattr(migration::AbstractResource, "uri")
+def test_migration_abstractresource_has_uri():
+    assert hasattr(migration_AbstractResource, "uri")
     descriptor = None
-    for klass in migration::AbstractResource.__mro__:
+    for klass in migration_AbstractResource.__mro__:
         if "uri" in klass.__dict__:
             descriptor = klass.__dict__["uri"]
             break
     assert isinstance(descriptor, property)
 
-def test_migration::abstractresource_has_encoding():
-    assert hasattr(migration::AbstractResource, "encoding")
+def test_migration_abstractresource_has_encoding():
+    assert hasattr(migration_AbstractResource, "encoding")
     descriptor = None
-    for klass in migration::AbstractResource.__mro__:
+    for klass in migration_AbstractResource.__mro__:
         if "encoding" in klass.__dict__:
             descriptor = klass.__dict__["encoding"]
             break
@@ -65,58 +65,58 @@ def test_migration::abstractresource_has_encoding():
 
 
 
-def test_migration::epackage_is_not_abstract():
-    assert not inspect.isabstract(migration::EPackage)
+def test_migration_epackage_is_not_abstract():
+    assert not inspect.isabstract(migration_EPackage)
 
 
-def test_migration::epackage_constructor_exists():
-    assert callable(migration::EPackage.__init__)
+def test_migration_epackage_constructor_exists():
+    assert callable(migration_EPackage.__init__)
 
 
-def test_migration::epackage_constructor_args():
-    sig = inspect.signature(migration::EPackage.__init__)
+def test_migration_epackage_constructor_args():
+    sig = inspect.signature(migration_EPackage.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_migration::slot_is_not_abstract():
-    assert not inspect.isabstract(migration::Slot)
+def test_migration_slot_is_not_abstract():
+    assert not inspect.isabstract(migration_Slot)
 
 
-def test_migration::slot_constructor_exists():
-    assert callable(migration::Slot.__init__)
+def test_migration_slot_constructor_exists():
+    assert callable(migration_Slot.__init__)
 
 
-def test_migration::slot_constructor_args():
-    sig = inspect.signature(migration::Slot.__init__)
+def test_migration_slot_constructor_args():
+    sig = inspect.signature(migration_Slot.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_migration::ereference_is_not_abstract():
-    assert not inspect.isabstract(migration::EReference)
+def test_migration_ereference_is_not_abstract():
+    assert not inspect.isabstract(migration_EReference)
 
 
-def test_migration::ereference_constructor_exists():
-    assert callable(migration::EReference.__init__)
+def test_migration_ereference_constructor_exists():
+    assert callable(migration_EReference.__init__)
 
 
-def test_migration::ereference_constructor_args():
-    sig = inspect.signature(migration::EReference.__init__)
+def test_migration_ereference_constructor_args():
+    sig = inspect.signature(migration_EReference.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_migration::eattribute_is_not_abstract():
-    assert not inspect.isabstract(migration::EAttribute)
+def test_migration_eattribute_is_not_abstract():
+    assert not inspect.isabstract(migration_EAttribute)
 
 
-def test_migration::eattribute_constructor_exists():
-    assert callable(migration::EAttribute.__init__)
+def test_migration_eattribute_constructor_exists():
+    assert callable(migration_EAttribute.__init__)
 
 
-def test_migration::eattribute_constructor_args():
-    sig = inspect.signature(migration::EAttribute.__init__)
+def test_migration_eattribute_constructor_args():
+    sig = inspect.signature(migration_EAttribute.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -135,37 +135,37 @@ def test_slot_constructor_args():
 
 
 
-def test_migration::referenceslot_is_not_abstract():
-    assert not inspect.isabstract(migration::ReferenceSlot)
+def test_migration_referenceslot_is_not_abstract():
+    assert not inspect.isabstract(migration_ReferenceSlot)
 
 
-def test_migration::referenceslot_constructor_exists():
-    assert callable(migration::ReferenceSlot.__init__)
+def test_migration_referenceslot_constructor_exists():
+    assert callable(migration_ReferenceSlot.__init__)
 
 
-def test_migration::referenceslot_constructor_args():
-    sig = inspect.signature(migration::ReferenceSlot.__init__)
+def test_migration_referenceslot_constructor_args():
+    sig = inspect.signature(migration_ReferenceSlot.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_migration::attributeslot_is_not_abstract():
-    assert not inspect.isabstract(migration::AttributeSlot)
+def test_migration_attributeslot_is_not_abstract():
+    assert not inspect.isabstract(migration_AttributeSlot)
 
 
-def test_migration::attributeslot_constructor_exists():
-    assert callable(migration::AttributeSlot.__init__)
+def test_migration_attributeslot_constructor_exists():
+    assert callable(migration_AttributeSlot.__init__)
 
 
-def test_migration::attributeslot_constructor_args():
-    sig = inspect.signature(migration::AttributeSlot.__init__)
+def test_migration_attributeslot_constructor_args():
+    sig = inspect.signature(migration_AttributeSlot.__init__)
     params = list(sig.parameters.keys())
     assert "values" in params, "Missing parameter 'values'"
 
-def test_migration::attributeslot_has_values():
-    assert hasattr(migration::AttributeSlot, "values")
+def test_migration_attributeslot_has_values():
+    assert hasattr(migration_AttributeSlot, "values")
     descriptor = None
-    for klass in migration::AttributeSlot.__mro__:
+    for klass in migration_AttributeSlot.__mro__:
         if "values" in klass.__dict__:
             descriptor = klass.__dict__["values"]
             break
@@ -173,61 +173,61 @@ def test_migration::attributeslot_has_values():
 
 
 
-def test_migration::type_is_not_abstract():
-    assert not inspect.isabstract(migration::Type)
+def test_migration_type_is_not_abstract():
+    assert not inspect.isabstract(migration_Type)
 
 
-def test_migration::type_constructor_exists():
-    assert callable(migration::Type.__init__)
+def test_migration_type_constructor_exists():
+    assert callable(migration_Type.__init__)
 
 
-def test_migration::type_constructor_args():
-    sig = inspect.signature(migration::Type.__init__)
+def test_migration_type_constructor_args():
+    sig = inspect.signature(migration_Type.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_migration::eclass_is_not_abstract():
-    assert not inspect.isabstract(migration::EClass)
+def test_migration_eclass_is_not_abstract():
+    assert not inspect.isabstract(migration_EClass)
 
 
-def test_migration::eclass_constructor_exists():
-    assert callable(migration::EClass.__init__)
+def test_migration_eclass_constructor_exists():
+    assert callable(migration_EClass.__init__)
 
 
-def test_migration::eclass_constructor_args():
-    sig = inspect.signature(migration::EClass.__init__)
+def test_migration_eclass_constructor_args():
+    sig = inspect.signature(migration_EClass.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_migration::instance_is_not_abstract():
-    assert not inspect.isabstract(migration::Instance)
+def test_migration_instance_is_not_abstract():
+    assert not inspect.isabstract(migration_Instance)
 
 
-def test_migration::instance_constructor_exists():
-    assert callable(migration::Instance.__init__)
+def test_migration_instance_constructor_exists():
+    assert callable(migration_Instance.__init__)
 
 
-def test_migration::instance_constructor_args():
-    sig = inspect.signature(migration::Instance.__init__)
+def test_migration_instance_constructor_args():
+    sig = inspect.signature(migration_Instance.__init__)
     params = list(sig.parameters.keys())
     assert "uri" in params, "Missing parameter 'uri'"
     assert "uuid" in params, "Missing parameter 'uuid'"
 
-def test_migration::instance_has_uri():
-    assert hasattr(migration::Instance, "uri")
+def test_migration_instance_has_uri():
+    assert hasattr(migration_Instance, "uri")
     descriptor = None
-    for klass in migration::Instance.__mro__:
+    for klass in migration_Instance.__mro__:
         if "uri" in klass.__dict__:
             descriptor = klass.__dict__["uri"]
             break
     assert isinstance(descriptor, property)
 
-def test_migration::instance_has_uuid():
-    assert hasattr(migration::Instance, "uuid")
+def test_migration_instance_has_uuid():
+    assert hasattr(migration_Instance, "uuid")
     descriptor = None
-    for klass in migration::Instance.__mro__:
+    for klass in migration_Instance.__mro__:
         if "uuid" in klass.__dict__:
             descriptor = klass.__dict__["uuid"]
             break
@@ -249,65 +249,65 @@ def test_abstractresource_constructor_args():
 
 
 
-def test_migration::metamodelresource_is_not_abstract():
-    assert not inspect.isabstract(migration::MetamodelResource)
+def test_migration_modelresource_is_not_abstract():
+    assert not inspect.isabstract(migration_ModelResource)
 
 
-def test_migration::metamodelresource_constructor_exists():
-    assert callable(migration::MetamodelResource.__init__)
+def test_migration_modelresource_constructor_exists():
+    assert callable(migration_ModelResource.__init__)
 
 
-def test_migration::metamodelresource_constructor_args():
-    sig = inspect.signature(migration::MetamodelResource.__init__)
+def test_migration_modelresource_constructor_args():
+    sig = inspect.signature(migration_ModelResource.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_migration::modelresource_is_not_abstract():
-    assert not inspect.isabstract(migration::ModelResource)
+def test_migration_metamodelresource_is_not_abstract():
+    assert not inspect.isabstract(migration_MetamodelResource)
 
 
-def test_migration::modelresource_constructor_exists():
-    assert callable(migration::ModelResource.__init__)
+def test_migration_metamodelresource_constructor_exists():
+    assert callable(migration_MetamodelResource.__init__)
 
 
-def test_migration::modelresource_constructor_args():
-    sig = inspect.signature(migration::ModelResource.__init__)
+def test_migration_metamodelresource_constructor_args():
+    sig = inspect.signature(migration_MetamodelResource.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_migration::metamodel_is_not_abstract():
-    assert not inspect.isabstract(migration::Metamodel)
+def test_migration_metamodel_is_not_abstract():
+    assert not inspect.isabstract(migration_Metamodel)
 
 
-def test_migration::metamodel_constructor_exists():
-    assert callable(migration::Metamodel.__init__)
+def test_migration_metamodel_constructor_exists():
+    assert callable(migration_Metamodel.__init__)
 
 
-def test_migration::metamodel_constructor_args():
-    sig = inspect.signature(migration::Metamodel.__init__)
+def test_migration_metamodel_constructor_args():
+    sig = inspect.signature(migration_Metamodel.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_migration::model_is_not_abstract():
-    assert not inspect.isabstract(migration::Model)
+def test_migration_model_is_not_abstract():
+    assert not inspect.isabstract(migration_Model)
 
 
-def test_migration::model_constructor_exists():
-    assert callable(migration::Model.__init__)
+def test_migration_model_constructor_exists():
+    assert callable(migration_Model.__init__)
 
 
-def test_migration::model_constructor_args():
-    sig = inspect.signature(migration::Model.__init__)
+def test_migration_model_constructor_args():
+    sig = inspect.signature(migration_Model.__init__)
     params = list(sig.parameters.keys())
     assert "reflection" in params, "Missing parameter 'reflection'"
 
-def test_migration::model_has_reflection():
-    assert hasattr(migration::Model, "reflection")
+def test_migration_model_has_reflection():
+    assert hasattr(migration_Model, "reflection")
     descriptor = None
-    for klass in migration::Model.__mro__:
+    for klass in migration_Model.__mro__:
         if "reflection" in klass.__dict__:
             descriptor = klass.__dict__["reflection"]
             break
@@ -315,16 +315,16 @@ def test_migration::model_has_reflection():
 
 
 
-def test_migration::repository_is_not_abstract():
-    assert not inspect.isabstract(migration::Repository)
+def test_migration_repository_is_not_abstract():
+    assert not inspect.isabstract(migration_Repository)
 
 
-def test_migration::repository_constructor_exists():
-    assert callable(migration::Repository.__init__)
+def test_migration_repository_constructor_exists():
+    assert callable(migration_Repository.__init__)
 
 
-def test_migration::repository_constructor_args():
-    sig = inspect.signature(migration::Repository.__init__)
+def test_migration_repository_constructor_args():
+    sig = inspect.signature(migration_Repository.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -339,44 +339,44 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-migration::AbstractResource_strategy = st.builds(
-    migration::AbstractResource,
+migration_AbstractResource_strategy = st.builds(
+    migration_AbstractResource,
     uri=
         safe_text,
     encoding=
         safe_text
 )
-migration::EPackage_strategy = st.builds(
-    migration::EPackage,
+migration_EPackage_strategy = st.builds(
+    migration_EPackage,
 )
-migration::Slot_strategy = st.builds(
-    migration::Slot,
+migration_Slot_strategy = st.builds(
+    migration_Slot,
 )
-migration::EReference_strategy = st.builds(
-    migration::EReference,
+migration_EReference_strategy = st.builds(
+    migration_EReference,
 )
-migration::EAttribute_strategy = st.builds(
-    migration::EAttribute,
+migration_EAttribute_strategy = st.builds(
+    migration_EAttribute,
 )
 Slot_strategy = st.builds(
     Slot,
 )
-migration::ReferenceSlot_strategy = st.builds(
-    migration::ReferenceSlot,
+migration_ReferenceSlot_strategy = st.builds(
+    migration_ReferenceSlot,
 )
-migration::AttributeSlot_strategy = st.builds(
-    migration::AttributeSlot,
+migration_AttributeSlot_strategy = st.builds(
+    migration_AttributeSlot,
     values=
         safe_text
 )
-migration::Type_strategy = st.builds(
-    migration::Type,
+migration_Type_strategy = st.builds(
+    migration_Type,
 )
-migration::EClass_strategy = st.builds(
-    migration::EClass,
+migration_EClass_strategy = st.builds(
+    migration_EClass,
 )
-migration::Instance_strategy = st.builds(
-    migration::Instance,
+migration_Instance_strategy = st.builds(
+    migration_Instance,
     uri=
         safe_text,
     uuid=
@@ -385,101 +385,92 @@ migration::Instance_strategy = st.builds(
 AbstractResource_strategy = st.builds(
     AbstractResource,
 )
-migration::MetamodelResource_strategy = st.builds(
-    migration::MetamodelResource,
+migration_ModelResource_strategy = st.builds(
+    migration_ModelResource,
 )
-migration::ModelResource_strategy = st.builds(
-    migration::ModelResource,
+migration_MetamodelResource_strategy = st.builds(
+    migration_MetamodelResource,
 )
-migration::Metamodel_strategy = st.builds(
-    migration::Metamodel,
+migration_Metamodel_strategy = st.builds(
+    migration_Metamodel,
 )
-migration::Model_strategy = st.builds(
-    migration::Model,
+migration_Model_strategy = st.builds(
+    migration_Model,
     reflection=
         st.booleans()
 )
-migration::Repository_strategy = st.builds(
-    migration::Repository,
+migration_Repository_strategy = st.builds(
+    migration_Repository,
 )
 
-@given(instance=migration::AbstractResource_strategy)
+@given(instance=migration_AbstractResource_strategy)
 @settings(max_examples=50)
-def test_migration::abstractresource_instantiation(instance):
-    assert isinstance(instance, migration::AbstractResource)
-
-@given(instance=migration::AbstractResource_strategy)
-def test_migration::abstractresource_uri_type(instance):
-    assert isinstance(instance.uri, str)
+def test_migration_abstractresource_instantiation(instance):
+    assert isinstance(instance, migration_AbstractResource)
 
 
-@given(instance=migration::AbstractResource_strategy)
-def test_migration::abstractresource_uri_setter(instance):
+
+@given(instance=migration_AbstractResource_strategy)
+def test_migration_abstractresource_uri_setter(instance):
     original = instance.uri
     instance.uri = original
     assert instance.uri == original
 
-@given(instance=migration::AbstractResource_strategy)
-def test_migration::abstractresource_encoding_type(instance):
-    assert isinstance(instance.encoding, str)
 
 
-@given(instance=migration::AbstractResource_strategy)
-def test_migration::abstractresource_encoding_setter(instance):
+@given(instance=migration_AbstractResource_strategy)
+def test_migration_abstractresource_encoding_setter(instance):
     original = instance.encoding
     instance.encoding = original
     assert instance.encoding == original
 
-@given(instance=migration::EPackage_strategy)
+@given(instance=migration_EPackage_strategy)
 @settings(max_examples=50)
-def test_migration::epackage_instantiation(instance):
-    assert isinstance(instance, migration::EPackage)
+def test_migration_epackage_instantiation(instance):
+    assert isinstance(instance, migration_EPackage)
 
-@given(instance=migration::Slot_strategy)
+@given(instance=migration_Slot_strategy)
 @settings(max_examples=50)
-def test_migration::slot_instantiation(instance):
-    assert isinstance(instance, migration::Slot)
+def test_migration_slot_instantiation(instance):
+    assert isinstance(instance, migration_Slot)
 
-@given(instance=migration::EReference_strategy)
+@given(instance=migration_EReference_strategy)
 @settings(max_examples=50)
-def test_migration::ereference_instantiation(instance):
-    assert isinstance(instance, migration::EReference)
+def test_migration_ereference_instantiation(instance):
+    assert isinstance(instance, migration_EReference)
 
-@given(instance=migration::EAttribute_strategy)
+@given(instance=migration_EAttribute_strategy)
 @settings(max_examples=50)
-def test_migration::eattribute_instantiation(instance):
-    assert isinstance(instance, migration::EAttribute)
+def test_migration_eattribute_instantiation(instance):
+    assert isinstance(instance, migration_EAttribute)
 
 @given(instance=Slot_strategy)
 @settings(max_examples=50)
 def test_slot_instantiation(instance):
     assert isinstance(instance, Slot)
 
-@given(instance=migration::ReferenceSlot_strategy)
+@given(instance=migration_ReferenceSlot_strategy)
 @settings(max_examples=50)
-def test_migration::referenceslot_instantiation(instance):
-    assert isinstance(instance, migration::ReferenceSlot)
+def test_migration_referenceslot_instantiation(instance):
+    assert isinstance(instance, migration_ReferenceSlot)
 
-@given(instance=migration::AttributeSlot_strategy)
+@given(instance=migration_AttributeSlot_strategy)
 @settings(max_examples=50)
-def test_migration::attributeslot_instantiation(instance):
-    assert isinstance(instance, migration::AttributeSlot)
-
-@given(instance=migration::AttributeSlot_strategy)
-def test_migration::attributeslot_values_type(instance):
-    assert isinstance(instance.values, str)
+def test_migration_attributeslot_instantiation(instance):
+    assert isinstance(instance, migration_AttributeSlot)
 
 
-@given(instance=migration::AttributeSlot_strategy)
-def test_migration::attributeslot_values_setter(instance):
+
+@given(instance=migration_AttributeSlot_strategy)
+def test_migration_attributeslot_values_setter(instance):
     original = instance.values
     instance.values = original
     assert instance.values == original
 
-@given(instance=migration::Type_strategy)
+@given(instance=migration_Type_strategy)
 @settings(max_examples=50)
-def test_migration::type_instantiation(instance):
-    assert isinstance(instance, migration::Type)
+def test_migration_type_instantiation(instance):
+    assert isinstance(instance, migration_Type)
 
 import warnings
 import copy
@@ -487,9 +478,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=migration::Type_strategy)
+@given(instance=migration_Type_strategy)
 @settings(max_examples=30)
-def test_migration::type_newinstance_changes_state(instance):
+def test_migration_type_newinstance_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -501,43 +492,37 @@ def test_migration::type_newinstance_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'newInstance' in migration::Type is empty"
+        assert has_statements, f"Function 'newInstance' in migration_Type is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'newInstance' in migration::Type did not change state; check implementation")
+            warnings.warn(f"Operation 'newInstance' in migration_Type did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'newInstance' in migration::Type is not implemented or raised an error")
+        warnings.warn(f"Operation 'newInstance' in migration_Type is not implemented or raised an error")
 
-@given(instance=migration::EClass_strategy)
+@given(instance=migration_EClass_strategy)
 @settings(max_examples=50)
-def test_migration::eclass_instantiation(instance):
-    assert isinstance(instance, migration::EClass)
+def test_migration_eclass_instantiation(instance):
+    assert isinstance(instance, migration_EClass)
 
-@given(instance=migration::Instance_strategy)
+@given(instance=migration_Instance_strategy)
 @settings(max_examples=50)
-def test_migration::instance_instantiation(instance):
-    assert isinstance(instance, migration::Instance)
-
-@given(instance=migration::Instance_strategy)
-def test_migration::instance_uri_type(instance):
-    assert isinstance(instance.uri, str)
+def test_migration_instance_instantiation(instance):
+    assert isinstance(instance, migration_Instance)
 
 
-@given(instance=migration::Instance_strategy)
-def test_migration::instance_uri_setter(instance):
+
+@given(instance=migration_Instance_strategy)
+def test_migration_instance_uri_setter(instance):
     original = instance.uri
     instance.uri = original
     assert instance.uri == original
 
-@given(instance=migration::Instance_strategy)
-def test_migration::instance_uuid_type(instance):
-    assert isinstance(instance.uuid, str)
 
 
-@given(instance=migration::Instance_strategy)
-def test_migration::instance_uuid_setter(instance):
+@given(instance=migration_Instance_strategy)
+def test_migration_instance_uuid_setter(instance):
     original = instance.uuid
     instance.uuid = original
     assert instance.uuid == original
@@ -548,30 +533,28 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=migration::Instance_strategy)
+@given(instance=migration_Instance_strategy)
 @settings(max_examples=30)
-def test_migration::instance_instanceof_changes_state(instance):
+def test_migration_instance_copy_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
-        instance.instanceOf(
-            "test"
-        )
+        instance.copy()
         if instance.__dict__ != before.__dict__:
             return  # test passes
         # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.instanceOf).strip()
+        source = inspect.getsource(instance.copy).strip()
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'instanceOf' in migration::Instance is empty"
+        assert has_statements, f"Function 'copy' in migration_Instance is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'instanceOf' in migration::Instance did not change state; check implementation")
+            warnings.warn(f"Operation 'copy' in migration_Instance did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'instanceOf' in migration::Instance is not implemented or raised an error")
+        warnings.warn(f"Operation 'copy' in migration_Instance is not implemented or raised an error")
 
 import warnings
 import copy
@@ -579,9 +562,100 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=migration::Instance_strategy)
+@given(instance=migration_Instance_strategy)
 @settings(max_examples=30)
-def test_migration::instance_migrate_changes_state(instance):
+def test_migration_instance_validate_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.validate(
+            "test"
+        )
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.validate).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'validate' in migration_Instance is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'validate' in migration_Instance did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'validate' in migration_Instance is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=migration_Instance_strategy)
+@settings(max_examples=30)
+def test_migration_instance_isproxy_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.isProxy()
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.isProxy).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'isProxy' in migration_Instance is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'isProxy' in migration_Instance did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'isProxy' in migration_Instance is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=migration_Instance_strategy)
+@settings(max_examples=30)
+def test_migration_instance_unset_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.unset(
+            "test"
+        )
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.unset).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'unset' in migration_Instance is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'unset' in migration_Instance did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'unset' in migration_Instance is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=migration_Instance_strategy)
+@settings(max_examples=30)
+def test_migration_instance_migrate_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -595,14 +669,14 @@ def test_migration::instance_migrate_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'migrate' in migration::Instance is empty"
+        assert has_statements, f"Function 'migrate' in migration_Instance is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'migrate' in migration::Instance did not change state; check implementation")
+            warnings.warn(f"Operation 'migrate' in migration_Instance did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'migrate' in migration::Instance is not implemented or raised an error")
+        warnings.warn(f"Operation 'migrate' in migration_Instance is not implemented or raised an error")
 
 import warnings
 import copy
@@ -610,30 +684,30 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=migration::Instance_strategy)
+@given(instance=migration_Instance_strategy)
 @settings(max_examples=30)
-def test_migration::instance_isset_changes_state(instance):
+def test_migration_instance_instanceof_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
-        instance.isSet(
+        instance.instanceOf(
             "test"
         )
         if instance.__dict__ != before.__dict__:
             return  # test passes
         # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.isSet).strip()
+        source = inspect.getsource(instance.instanceOf).strip()
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'isSet' in migration::Instance is empty"
+        assert has_statements, f"Function 'instanceOf' in migration_Instance is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'isSet' in migration::Instance did not change state; check implementation")
+            warnings.warn(f"Operation 'instanceOf' in migration_Instance did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'isSet' in migration::Instance is not implemented or raised an error")
+        warnings.warn(f"Operation 'instanceOf' in migration_Instance is not implemented or raised an error")
 
 import warnings
 import copy
@@ -641,41 +715,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=migration::Instance_strategy)
+@given(instance=migration_Instance_strategy)
 @settings(max_examples=30)
-def test_migration::instance_remove_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.remove(
-            "test", 
-            "test"
-        )
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.remove).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'remove' in migration::Instance is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'remove' in migration::Instance did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'remove' in migration::Instance is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=migration::Instance_strategy)
-@settings(max_examples=30)
-def test_migration::instance_add_changes_state(instance):
+def test_migration_instance_add_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -691,14 +733,14 @@ def test_migration::instance_add_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'add' in migration::Instance is empty"
+        assert has_statements, f"Function 'add' in migration_Instance is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'add' in migration::Instance did not change state; check implementation")
+            warnings.warn(f"Operation 'add' in migration_Instance did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'add' in migration::Instance is not implemented or raised an error")
+        warnings.warn(f"Operation 'add' in migration_Instance is not implemented or raised an error")
 
 import warnings
 import copy
@@ -706,9 +748,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=migration::Instance_strategy)
+@given(instance=migration_Instance_strategy)
 @settings(max_examples=30)
-def test_migration::instance_evaluate_changes_state(instance):
+def test_migration_instance_evaluate_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -722,14 +764,14 @@ def test_migration::instance_evaluate_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'evaluate' in migration::Instance is empty"
+        assert has_statements, f"Function 'evaluate' in migration_Instance is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'evaluate' in migration::Instance did not change state; check implementation")
+            warnings.warn(f"Operation 'evaluate' in migration_Instance did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'evaluate' in migration::Instance is not implemented or raised an error")
+        warnings.warn(f"Operation 'evaluate' in migration_Instance is not implemented or raised an error")
 
 import warnings
 import copy
@@ -737,59 +779,31 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=migration::Instance_strategy)
+@given(instance=migration_Instance_strategy)
 @settings(max_examples=30)
-def test_migration::instance_copy_changes_state(instance):
+def test_migration_instance_remove_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
-        instance.copy()
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.copy).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'copy' in migration::Instance is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'copy' in migration::Instance did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'copy' in migration::Instance is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=migration::Instance_strategy)
-@settings(max_examples=30)
-def test_migration::instance_unset_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.unset(
+        instance.remove(
+            "test", 
             "test"
         )
         if instance.__dict__ != before.__dict__:
             return  # test passes
         # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.unset).strip()
+        source = inspect.getsource(instance.remove).strip()
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'unset' in migration::Instance is empty"
+        assert has_statements, f"Function 'remove' in migration_Instance is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'unset' in migration::Instance did not change state; check implementation")
+            warnings.warn(f"Operation 'remove' in migration_Instance did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'unset' in migration::Instance is not implemented or raised an error")
+        warnings.warn(f"Operation 'remove' in migration_Instance is not implemented or raised an error")
 
 import warnings
 import copy
@@ -797,9 +811,40 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=migration::Instance_strategy)
+@given(instance=migration_Instance_strategy)
 @settings(max_examples=30)
-def test_migration::instance_set_changes_state(instance):
+def test_migration_instance_isset_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.isSet(
+            "test"
+        )
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.isSet).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'isSet' in migration_Instance is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'isSet' in migration_Instance did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'isSet' in migration_Instance is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=migration_Instance_strategy)
+@settings(max_examples=30)
+def test_migration_instance_set_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -814,94 +859,34 @@ def test_migration::instance_set_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'set' in migration::Instance is empty"
+        assert has_statements, f"Function 'set' in migration_Instance is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'set' in migration::Instance did not change state; check implementation")
+            warnings.warn(f"Operation 'set' in migration_Instance did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'set' in migration::Instance is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=migration::Instance_strategy)
-@settings(max_examples=30)
-def test_migration::instance_isproxy_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.isProxy()
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.isProxy).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'isProxy' in migration::Instance is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'isProxy' in migration::Instance did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'isProxy' in migration::Instance is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=migration::Instance_strategy)
-@settings(max_examples=30)
-def test_migration::instance_validate_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.validate(
-            "test"
-        )
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.validate).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'validate' in migration::Instance is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'validate' in migration::Instance did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'validate' in migration::Instance is not implemented or raised an error")
+        warnings.warn(f"Operation 'set' in migration_Instance is not implemented or raised an error")
 
 @given(instance=AbstractResource_strategy)
 @settings(max_examples=50)
 def test_abstractresource_instantiation(instance):
     assert isinstance(instance, AbstractResource)
 
-@given(instance=migration::MetamodelResource_strategy)
+@given(instance=migration_ModelResource_strategy)
 @settings(max_examples=50)
-def test_migration::metamodelresource_instantiation(instance):
-    assert isinstance(instance, migration::MetamodelResource)
+def test_migration_modelresource_instantiation(instance):
+    assert isinstance(instance, migration_ModelResource)
 
-@given(instance=migration::ModelResource_strategy)
+@given(instance=migration_MetamodelResource_strategy)
 @settings(max_examples=50)
-def test_migration::modelresource_instantiation(instance):
-    assert isinstance(instance, migration::ModelResource)
+def test_migration_metamodelresource_instantiation(instance):
+    assert isinstance(instance, migration_MetamodelResource)
 
-@given(instance=migration::Metamodel_strategy)
+@given(instance=migration_Metamodel_strategy)
 @settings(max_examples=50)
-def test_migration::metamodel_instantiation(instance):
-    assert isinstance(instance, migration::Metamodel)
+def test_migration_metamodel_instantiation(instance):
+    assert isinstance(instance, migration_Metamodel)
 
 import warnings
 import copy
@@ -909,9 +894,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=migration::Metamodel_strategy)
+@given(instance=migration_Metamodel_strategy)
 @settings(max_examples=30)
-def test_migration::metamodel_validate_changes_state(instance):
+def test_migration_metamodel_validate_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -923,14 +908,14 @@ def test_migration::metamodel_validate_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'validate' in migration::Metamodel is empty"
+        assert has_statements, f"Function 'validate' in migration_Metamodel is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'validate' in migration::Metamodel did not change state; check implementation")
+            warnings.warn(f"Operation 'validate' in migration_Metamodel did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'validate' in migration::Metamodel is not implemented or raised an error")
+        warnings.warn(f"Operation 'validate' in migration_Metamodel is not implemented or raised an error")
 
 import warnings
 import copy
@@ -938,9 +923,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=migration::Metamodel_strategy)
+@given(instance=migration_Metamodel_strategy)
 @settings(max_examples=30)
-def test_migration::metamodel_delete_changes_state(instance):
+def test_migration_metamodel_delete_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -954,14 +939,14 @@ def test_migration::metamodel_delete_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'delete' in migration::Metamodel is empty"
+        assert has_statements, f"Function 'delete' in migration_Metamodel is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'delete' in migration::Metamodel did not change state; check implementation")
+            warnings.warn(f"Operation 'delete' in migration_Metamodel did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'delete' in migration::Metamodel is not implemented or raised an error")
+        warnings.warn(f"Operation 'delete' in migration_Metamodel is not implemented or raised an error")
 
 import warnings
 import copy
@@ -969,9 +954,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=migration::Metamodel_strategy)
+@given(instance=migration_Metamodel_strategy)
 @settings(max_examples=30)
-def test_migration::metamodel_seteopposite_changes_state(instance):
+def test_migration_metamodel_seteopposite_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -986,14 +971,14 @@ def test_migration::metamodel_seteopposite_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'setEOpposite' in migration::Metamodel is empty"
+        assert has_statements, f"Function 'setEOpposite' in migration_Metamodel is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'setEOpposite' in migration::Metamodel did not change state; check implementation")
+            warnings.warn(f"Operation 'setEOpposite' in migration_Metamodel did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'setEOpposite' in migration::Metamodel is not implemented or raised an error")
+        warnings.warn(f"Operation 'setEOpposite' in migration_Metamodel is not implemented or raised an error")
 
 import warnings
 import copy
@@ -1001,9 +986,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=migration::Metamodel_strategy)
+@given(instance=migration_Metamodel_strategy)
 @settings(max_examples=30)
-def test_migration::metamodel_setdefaultpackage_changes_state(instance):
+def test_migration_metamodel_setdefaultpackage_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -1017,27 +1002,24 @@ def test_migration::metamodel_setdefaultpackage_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'setDefaultPackage' in migration::Metamodel is empty"
+        assert has_statements, f"Function 'setDefaultPackage' in migration_Metamodel is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'setDefaultPackage' in migration::Metamodel did not change state; check implementation")
+            warnings.warn(f"Operation 'setDefaultPackage' in migration_Metamodel did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'setDefaultPackage' in migration::Metamodel is not implemented or raised an error")
+        warnings.warn(f"Operation 'setDefaultPackage' in migration_Metamodel is not implemented or raised an error")
 
-@given(instance=migration::Model_strategy)
+@given(instance=migration_Model_strategy)
 @settings(max_examples=50)
-def test_migration::model_instantiation(instance):
-    assert isinstance(instance, migration::Model)
-
-@given(instance=migration::Model_strategy)
-def test_migration::model_reflection_type(instance):
-    assert isinstance(instance.reflection, bool)
+def test_migration_model_instantiation(instance):
+    assert isinstance(instance, migration_Model)
 
 
-@given(instance=migration::Model_strategy)
-def test_migration::model_reflection_setter(instance):
+
+@given(instance=migration_Model_strategy)
+def test_migration_model_reflection_setter(instance):
     original = instance.reflection
     instance.reflection = original
     assert instance.reflection == original
@@ -1048,9 +1030,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=migration::Model_strategy)
+@given(instance=migration_Model_strategy)
 @settings(max_examples=30)
-def test_migration::model_createextentmap_changes_state(instance):
+def test_migration_model_createextentmap_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -1062,14 +1044,14 @@ def test_migration::model_createextentmap_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'createExtentMap' in migration::Model is empty"
+        assert has_statements, f"Function 'createExtentMap' in migration_Model is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'createExtentMap' in migration::Model did not change state; check implementation")
+            warnings.warn(f"Operation 'createExtentMap' in migration_Model did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'createExtentMap' in migration::Model is not implemented or raised an error")
+        warnings.warn(f"Operation 'createExtentMap' in migration_Model is not implemented or raised an error")
 
 import warnings
 import copy
@@ -1077,9 +1059,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=migration::Model_strategy)
+@given(instance=migration_Model_strategy)
 @settings(max_examples=30)
-def test_migration::model_newresource_changes_state(instance):
+def test_migration_model_newresource_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -1093,14 +1075,14 @@ def test_migration::model_newresource_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'newResource' in migration::Model is empty"
+        assert has_statements, f"Function 'newResource' in migration_Model is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'newResource' in migration::Model did not change state; check implementation")
+            warnings.warn(f"Operation 'newResource' in migration_Model did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'newResource' in migration::Model is not implemented or raised an error")
+        warnings.warn(f"Operation 'newResource' in migration_Model is not implemented or raised an error")
 
 import warnings
 import copy
@@ -1108,28 +1090,28 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=migration::Model_strategy)
+@given(instance=migration_Model_strategy)
 @settings(max_examples=30)
-def test_migration::model_checkconformance_changes_state(instance):
+def test_migration_model_commit_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
-        instance.checkConformance()
+        instance.commit()
         if instance.__dict__ != before.__dict__:
             return  # test passes
         # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.checkConformance).strip()
+        source = inspect.getsource(instance.commit).strip()
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'checkConformance' in migration::Model is empty"
+        assert has_statements, f"Function 'commit' in migration_Model is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'checkConformance' in migration::Model did not change state; check implementation")
+            warnings.warn(f"Operation 'commit' in migration_Model did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'checkConformance' in migration::Model is not implemented or raised an error")
+        warnings.warn(f"Operation 'commit' in migration_Model is not implemented or raised an error")
 
 import warnings
 import copy
@@ -1137,40 +1119,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=migration::Model_strategy)
+@given(instance=migration_Model_strategy)
 @settings(max_examples=30)
-def test_migration::model_delete_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.delete(
-            "test"
-        )
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.delete).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'delete' in migration::Model is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'delete' in migration::Model did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'delete' in migration::Model is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=migration::Model_strategy)
-@settings(max_examples=30)
-def test_migration::model_validate_changes_state(instance):
+def test_migration_model_validate_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -1182,14 +1133,14 @@ def test_migration::model_validate_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'validate' in migration::Model is empty"
+        assert has_statements, f"Function 'validate' in migration_Model is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'validate' in migration::Model did not change state; check implementation")
+            warnings.warn(f"Operation 'validate' in migration_Model did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'validate' in migration::Model is not implemented or raised an error")
+        warnings.warn(f"Operation 'validate' in migration_Model is not implemented or raised an error")
 
 import warnings
 import copy
@@ -1197,9 +1148,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=migration::Model_strategy)
+@given(instance=migration_Model_strategy)
 @settings(max_examples=30)
-def test_migration::model_newinstance_changes_state(instance):
+def test_migration_model_newinstance_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -1213,14 +1164,14 @@ def test_migration::model_newinstance_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'newInstance' in migration::Model is empty"
+        assert has_statements, f"Function 'newInstance' in migration_Model is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'newInstance' in migration::Model did not change state; check implementation")
+            warnings.warn(f"Operation 'newInstance' in migration_Model did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'newInstance' in migration::Model is not implemented or raised an error")
+        warnings.warn(f"Operation 'newInstance' in migration_Model is not implemented or raised an error")
 
 import warnings
 import copy
@@ -1228,30 +1179,61 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=migration::Model_strategy)
+@given(instance=migration_Model_strategy)
 @settings(max_examples=30)
-def test_migration::model_commit_changes_state(instance):
+def test_migration_model_delete_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
-        instance.commit()
+        instance.delete(
+            "test"
+        )
         if instance.__dict__ != before.__dict__:
             return  # test passes
         # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.commit).strip()
+        source = inspect.getsource(instance.delete).strip()
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'commit' in migration::Model is empty"
+        assert has_statements, f"Function 'delete' in migration_Model is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'commit' in migration::Model did not change state; check implementation")
+            warnings.warn(f"Operation 'delete' in migration_Model did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'commit' in migration::Model is not implemented or raised an error")
+        warnings.warn(f"Operation 'delete' in migration_Model is not implemented or raised an error")
 
-@given(instance=migration::Repository_strategy)
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=migration_Model_strategy)
+@settings(max_examples=30)
+def test_migration_model_checkconformance_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.checkConformance()
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.checkConformance).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'checkConformance' in migration_Model is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'checkConformance' in migration_Model did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'checkConformance' in migration_Model is not implemented or raised an error")
+
+@given(instance=migration_Repository_strategy)
 @settings(max_examples=50)
-def test_migration::repository_instantiation(instance):
-    assert isinstance(instance, migration::Repository)
+def test_migration_repository_instantiation(instance):
+    assert isinstance(instance, migration_Repository)

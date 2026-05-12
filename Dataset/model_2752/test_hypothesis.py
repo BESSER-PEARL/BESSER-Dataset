@@ -3,12 +3,12 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    cardinality6::B,
-    cardinality6::A,
-    cardinality6::Root,
+from python_code import (
+    cardinality6_B,
+    cardinality6_A,
+    cardinality6_Root,
 )
 
 # =============================================================================
@@ -17,44 +17,44 @@ from classes import (
 
 
 
-def test_cardinality6::b_is_not_abstract():
-    assert not inspect.isabstract(cardinality6::B)
+def test_cardinality6_b_is_not_abstract():
+    assert not inspect.isabstract(cardinality6_B)
 
 
-def test_cardinality6::b_constructor_exists():
-    assert callable(cardinality6::B.__init__)
+def test_cardinality6_b_constructor_exists():
+    assert callable(cardinality6_B.__init__)
 
 
-def test_cardinality6::b_constructor_args():
-    sig = inspect.signature(cardinality6::B.__init__)
+def test_cardinality6_b_constructor_args():
+    sig = inspect.signature(cardinality6_B.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_cardinality6::a_is_not_abstract():
-    assert not inspect.isabstract(cardinality6::A)
+def test_cardinality6_a_is_not_abstract():
+    assert not inspect.isabstract(cardinality6_A)
 
 
-def test_cardinality6::a_constructor_exists():
-    assert callable(cardinality6::A.__init__)
+def test_cardinality6_a_constructor_exists():
+    assert callable(cardinality6_A.__init__)
 
 
-def test_cardinality6::a_constructor_args():
-    sig = inspect.signature(cardinality6::A.__init__)
+def test_cardinality6_a_constructor_args():
+    sig = inspect.signature(cardinality6_A.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_cardinality6::root_is_not_abstract():
-    assert not inspect.isabstract(cardinality6::Root)
+def test_cardinality6_root_is_not_abstract():
+    assert not inspect.isabstract(cardinality6_Root)
 
 
-def test_cardinality6::root_constructor_exists():
-    assert callable(cardinality6::Root.__init__)
+def test_cardinality6_root_constructor_exists():
+    assert callable(cardinality6_Root.__init__)
 
 
-def test_cardinality6::root_constructor_args():
-    sig = inspect.signature(cardinality6::Root.__init__)
+def test_cardinality6_root_constructor_args():
+    sig = inspect.signature(cardinality6_Root.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -69,27 +69,27 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-cardinality6::B_strategy = st.builds(
-    cardinality6::B,
+cardinality6_B_strategy = st.builds(
+    cardinality6_B,
 )
-cardinality6::A_strategy = st.builds(
-    cardinality6::A,
+cardinality6_A_strategy = st.builds(
+    cardinality6_A,
 )
-cardinality6::Root_strategy = st.builds(
-    cardinality6::Root,
+cardinality6_Root_strategy = st.builds(
+    cardinality6_Root,
 )
 
-@given(instance=cardinality6::B_strategy)
+@given(instance=cardinality6_B_strategy)
 @settings(max_examples=50)
-def test_cardinality6::b_instantiation(instance):
-    assert isinstance(instance, cardinality6::B)
+def test_cardinality6_b_instantiation(instance):
+    assert isinstance(instance, cardinality6_B)
 
-@given(instance=cardinality6::A_strategy)
+@given(instance=cardinality6_A_strategy)
 @settings(max_examples=50)
-def test_cardinality6::a_instantiation(instance):
-    assert isinstance(instance, cardinality6::A)
+def test_cardinality6_a_instantiation(instance):
+    assert isinstance(instance, cardinality6_A)
 
-@given(instance=cardinality6::Root_strategy)
+@given(instance=cardinality6_Root_strategy)
 @settings(max_examples=50)
-def test_cardinality6::root_instantiation(instance):
-    assert isinstance(instance, cardinality6::Root)
+def test_cardinality6_root_instantiation(instance):
+    assert isinstance(instance, cardinality6_Root)

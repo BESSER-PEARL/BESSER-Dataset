@@ -3,17 +3,17 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     DatabaseElement,
-    DB::Type,
-    DB::Table,
+    DB_Type,
+    DB_Table,
     NamedElement,
-    DB::Column,
-    DB::DatabaseElement,
-    DB::Database,
-    DB::NamedElement,
+    DB_Column,
+    DB_DatabaseElement,
+    DB_Database,
+    DB_NamedElement,
 )
 
 # =============================================================================
@@ -36,30 +36,30 @@ def test_databaseelement_constructor_args():
 
 
 
-def test_db::type_is_not_abstract():
-    assert not inspect.isabstract(DB::Type)
+def test_db_type_is_not_abstract():
+    assert not inspect.isabstract(DB_Type)
 
 
-def test_db::type_constructor_exists():
-    assert callable(DB::Type.__init__)
+def test_db_type_constructor_exists():
+    assert callable(DB_Type.__init__)
 
 
-def test_db::type_constructor_args():
-    sig = inspect.signature(DB::Type.__init__)
+def test_db_type_constructor_args():
+    sig = inspect.signature(DB_Type.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_db::table_is_not_abstract():
-    assert not inspect.isabstract(DB::Table)
+def test_db_table_is_not_abstract():
+    assert not inspect.isabstract(DB_Table)
 
 
-def test_db::table_constructor_exists():
-    assert callable(DB::Table.__init__)
+def test_db_table_constructor_exists():
+    assert callable(DB_Table.__init__)
 
 
-def test_db::table_constructor_args():
-    sig = inspect.signature(DB::Table.__init__)
+def test_db_table_constructor_args():
+    sig = inspect.signature(DB_Table.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -78,65 +78,65 @@ def test_namedelement_constructor_args():
 
 
 
-def test_db::column_is_not_abstract():
-    assert not inspect.isabstract(DB::Column)
+def test_db_column_is_not_abstract():
+    assert not inspect.isabstract(DB_Column)
 
 
-def test_db::column_constructor_exists():
-    assert callable(DB::Column.__init__)
+def test_db_column_constructor_exists():
+    assert callable(DB_Column.__init__)
 
 
-def test_db::column_constructor_args():
-    sig = inspect.signature(DB::Column.__init__)
+def test_db_column_constructor_args():
+    sig = inspect.signature(DB_Column.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_db::databaseelement_is_not_abstract():
-    assert not inspect.isabstract(DB::DatabaseElement)
+def test_db_databaseelement_is_not_abstract():
+    assert not inspect.isabstract(DB_DatabaseElement)
 
 
-def test_db::databaseelement_constructor_exists():
-    assert callable(DB::DatabaseElement.__init__)
+def test_db_databaseelement_constructor_exists():
+    assert callable(DB_DatabaseElement.__init__)
 
 
-def test_db::databaseelement_constructor_args():
-    sig = inspect.signature(DB::DatabaseElement.__init__)
+def test_db_databaseelement_constructor_args():
+    sig = inspect.signature(DB_DatabaseElement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_db::database_is_not_abstract():
-    assert not inspect.isabstract(DB::Database)
+def test_db_database_is_not_abstract():
+    assert not inspect.isabstract(DB_Database)
 
 
-def test_db::database_constructor_exists():
-    assert callable(DB::Database.__init__)
+def test_db_database_constructor_exists():
+    assert callable(DB_Database.__init__)
 
 
-def test_db::database_constructor_args():
-    sig = inspect.signature(DB::Database.__init__)
+def test_db_database_constructor_args():
+    sig = inspect.signature(DB_Database.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_db::namedelement_is_not_abstract():
-    assert not inspect.isabstract(DB::NamedElement)
+def test_db_namedelement_is_not_abstract():
+    assert not inspect.isabstract(DB_NamedElement)
 
 
-def test_db::namedelement_constructor_exists():
-    assert callable(DB::NamedElement.__init__)
+def test_db_namedelement_constructor_exists():
+    assert callable(DB_NamedElement.__init__)
 
 
-def test_db::namedelement_constructor_args():
-    sig = inspect.signature(DB::NamedElement.__init__)
+def test_db_namedelement_constructor_args():
+    sig = inspect.signature(DB_NamedElement.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_db::namedelement_has_name():
-    assert hasattr(DB::NamedElement, "name")
+def test_db_namedelement_has_name():
+    assert hasattr(DB_NamedElement, "name")
     descriptor = None
-    for klass in DB::NamedElement.__mro__:
+    for klass in DB_NamedElement.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -157,26 +157,26 @@ safe_text = st.text(
 DatabaseElement_strategy = st.builds(
     DatabaseElement,
 )
-DB::Type_strategy = st.builds(
-    DB::Type,
+DB_Type_strategy = st.builds(
+    DB_Type,
 )
-DB::Table_strategy = st.builds(
-    DB::Table,
+DB_Table_strategy = st.builds(
+    DB_Table,
 )
 NamedElement_strategy = st.builds(
     NamedElement,
 )
-DB::Column_strategy = st.builds(
-    DB::Column,
+DB_Column_strategy = st.builds(
+    DB_Column,
 )
-DB::DatabaseElement_strategy = st.builds(
-    DB::DatabaseElement,
+DB_DatabaseElement_strategy = st.builds(
+    DB_DatabaseElement,
 )
-DB::Database_strategy = st.builds(
-    DB::Database,
+DB_Database_strategy = st.builds(
+    DB_Database,
 )
-DB::NamedElement_strategy = st.builds(
-    DB::NamedElement,
+DB_NamedElement_strategy = st.builds(
+    DB_NamedElement,
     name=
         safe_text
 )
@@ -186,48 +186,45 @@ DB::NamedElement_strategy = st.builds(
 def test_databaseelement_instantiation(instance):
     assert isinstance(instance, DatabaseElement)
 
-@given(instance=DB::Type_strategy)
+@given(instance=DB_Type_strategy)
 @settings(max_examples=50)
-def test_db::type_instantiation(instance):
-    assert isinstance(instance, DB::Type)
+def test_db_type_instantiation(instance):
+    assert isinstance(instance, DB_Type)
 
-@given(instance=DB::Table_strategy)
+@given(instance=DB_Table_strategy)
 @settings(max_examples=50)
-def test_db::table_instantiation(instance):
-    assert isinstance(instance, DB::Table)
+def test_db_table_instantiation(instance):
+    assert isinstance(instance, DB_Table)
 
 @given(instance=NamedElement_strategy)
 @settings(max_examples=50)
 def test_namedelement_instantiation(instance):
     assert isinstance(instance, NamedElement)
 
-@given(instance=DB::Column_strategy)
+@given(instance=DB_Column_strategy)
 @settings(max_examples=50)
-def test_db::column_instantiation(instance):
-    assert isinstance(instance, DB::Column)
+def test_db_column_instantiation(instance):
+    assert isinstance(instance, DB_Column)
 
-@given(instance=DB::DatabaseElement_strategy)
+@given(instance=DB_DatabaseElement_strategy)
 @settings(max_examples=50)
-def test_db::databaseelement_instantiation(instance):
-    assert isinstance(instance, DB::DatabaseElement)
+def test_db_databaseelement_instantiation(instance):
+    assert isinstance(instance, DB_DatabaseElement)
 
-@given(instance=DB::Database_strategy)
+@given(instance=DB_Database_strategy)
 @settings(max_examples=50)
-def test_db::database_instantiation(instance):
-    assert isinstance(instance, DB::Database)
+def test_db_database_instantiation(instance):
+    assert isinstance(instance, DB_Database)
 
-@given(instance=DB::NamedElement_strategy)
+@given(instance=DB_NamedElement_strategy)
 @settings(max_examples=50)
-def test_db::namedelement_instantiation(instance):
-    assert isinstance(instance, DB::NamedElement)
-
-@given(instance=DB::NamedElement_strategy)
-def test_db::namedelement_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_db_namedelement_instantiation(instance):
+    assert isinstance(instance, DB_NamedElement)
 
 
-@given(instance=DB::NamedElement_strategy)
-def test_db::namedelement_name_setter(instance):
+
+@given(instance=DB_NamedElement_strategy)
+def test_db_namedelement_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original

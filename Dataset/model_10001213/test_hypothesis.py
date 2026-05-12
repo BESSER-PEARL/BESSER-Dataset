@@ -3,7 +3,7 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
 from python_code import (
     Train,
@@ -37,17 +37,8 @@ def test_train_constructor_exists():
 def test_train_constructor_args():
     sig = inspect.signature(Train.__init__)
     params = list(sig.parameters.keys())
-    assert "myEngine" in params, "Missing parameter 'myEngine'"
     assert "myCoach" in params, "Missing parameter 'myCoach'"
-
-def test_train_has_myEngine():
-    assert hasattr(Train, "myEngine")
-    descriptor = None
-    for klass in Train.__mro__:
-        if "myEngine" in klass.__dict__:
-            descriptor = klass.__dict__["myEngine"]
-            break
-    assert isinstance(descriptor, property)
+    assert "myEngine" in params, "Missing parameter 'myEngine'"
 
 def test_train_has_myCoach():
     assert hasattr(Train, "myCoach")
@@ -55,6 +46,15 @@ def test_train_has_myCoach():
     for klass in Train.__mro__:
         if "myCoach" in klass.__dict__:
             descriptor = klass.__dict__["myCoach"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_train_has_myEngine():
+    assert hasattr(Train, "myEngine")
+    descriptor = None
+    for klass in Train.__mro__:
+        if "myEngine" in klass.__dict__:
+            descriptor = klass.__dict__["myEngine"]
             break
     assert isinstance(descriptor, property)
 
@@ -71,17 +71,8 @@ def test_engine_constructor_exists():
 def test_engine_constructor_args():
     sig = inspect.signature(Engine.__init__)
     params = list(sig.parameters.keys())
-    assert "horsePower" in params, "Missing parameter 'horsePower'"
     assert "fuelAvg" in params, "Missing parameter 'fuelAvg'"
-
-def test_engine_has_horsePower():
-    assert hasattr(Engine, "horsePower")
-    descriptor = None
-    for klass in Engine.__mro__:
-        if "horsePower" in klass.__dict__:
-            descriptor = klass.__dict__["horsePower"]
-            break
-    assert isinstance(descriptor, property)
+    assert "horsePower" in params, "Missing parameter 'horsePower'"
 
 def test_engine_has_fuelAvg():
     assert hasattr(Engine, "fuelAvg")
@@ -89,6 +80,15 @@ def test_engine_has_fuelAvg():
     for klass in Engine.__mro__:
         if "fuelAvg" in klass.__dict__:
             descriptor = klass.__dict__["fuelAvg"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_engine_has_horsePower():
+    assert hasattr(Engine, "horsePower")
+    descriptor = None
+    for klass in Engine.__mro__:
+        if "horsePower" in klass.__dict__:
+            descriptor = klass.__dict__["horsePower"]
             break
     assert isinstance(descriptor, property)
 
@@ -105,19 +105,10 @@ def test_route_constructor_exists():
 def test_route_constructor_args():
     sig = inspect.signature(Route.__init__)
     params = list(sig.parameters.keys())
-    assert "destination" in params, "Missing parameter 'destination'"
     assert "source" in params, "Missing parameter 'source'"
-    assert "routeId" in params, "Missing parameter 'routeId'"
     assert "stops" in params, "Missing parameter 'stops'"
-
-def test_route_has_destination():
-    assert hasattr(Route, "destination")
-    descriptor = None
-    for klass in Route.__mro__:
-        if "destination" in klass.__dict__:
-            descriptor = klass.__dict__["destination"]
-            break
-    assert isinstance(descriptor, property)
+    assert "routeId" in params, "Missing parameter 'routeId'"
+    assert "destination" in params, "Missing parameter 'destination'"
 
 def test_route_has_source():
     assert hasattr(Route, "source")
@@ -125,6 +116,15 @@ def test_route_has_source():
     for klass in Route.__mro__:
         if "source" in klass.__dict__:
             descriptor = klass.__dict__["source"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_route_has_stops():
+    assert hasattr(Route, "stops")
+    descriptor = None
+    for klass in Route.__mro__:
+        if "stops" in klass.__dict__:
+            descriptor = klass.__dict__["stops"]
             break
     assert isinstance(descriptor, property)
 
@@ -137,12 +137,12 @@ def test_route_has_routeId():
             break
     assert isinstance(descriptor, property)
 
-def test_route_has_stops():
-    assert hasattr(Route, "stops")
+def test_route_has_destination():
+    assert hasattr(Route, "destination")
     descriptor = None
     for klass in Route.__mro__:
-        if "stops" in klass.__dict__:
-            descriptor = klass.__dict__["stops"]
+        if "destination" in klass.__dict__:
+            descriptor = klass.__dict__["destination"]
             break
     assert isinstance(descriptor, property)
 
@@ -173,18 +173,18 @@ def test_coach_constructor_exists():
 def test_coach_constructor_args():
     sig = inspect.signature(Coach.__init__)
     params = list(sig.parameters.keys())
-    assert "capacity" in params, "Missing parameter 'capacity'"
+    assert "coachType" in params, "Missing parameter 'coachType'"
     assert "temprature" in params, "Missing parameter 'temprature'"
     assert "totalPassengers" in params, "Missing parameter 'totalPassengers'"
+    assert "capacity" in params, "Missing parameter 'capacity'"
     assert "humidity" in params, "Missing parameter 'humidity'"
-    assert "coachType" in params, "Missing parameter 'coachType'"
 
-def test_coach_has_capacity():
-    assert hasattr(Coach, "capacity")
+def test_coach_has_coachType():
+    assert hasattr(Coach, "coachType")
     descriptor = None
     for klass in Coach.__mro__:
-        if "capacity" in klass.__dict__:
-            descriptor = klass.__dict__["capacity"]
+        if "coachType" in klass.__dict__:
+            descriptor = klass.__dict__["coachType"]
             break
     assert isinstance(descriptor, property)
 
@@ -206,21 +206,21 @@ def test_coach_has_totalPassengers():
             break
     assert isinstance(descriptor, property)
 
+def test_coach_has_capacity():
+    assert hasattr(Coach, "capacity")
+    descriptor = None
+    for klass in Coach.__mro__:
+        if "capacity" in klass.__dict__:
+            descriptor = klass.__dict__["capacity"]
+            break
+    assert isinstance(descriptor, property)
+
 def test_coach_has_humidity():
     assert hasattr(Coach, "humidity")
     descriptor = None
     for klass in Coach.__mro__:
         if "humidity" in klass.__dict__:
             descriptor = klass.__dict__["humidity"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_coach_has_coachType():
-    assert hasattr(Coach, "coachType")
-    descriptor = None
-    for klass in Coach.__mro__:
-        if "coachType" in klass.__dict__:
-            descriptor = klass.__dict__["coachType"]
             break
     assert isinstance(descriptor, property)
 
@@ -271,17 +271,8 @@ def test_intercity_constructor_exists():
 def test_intercity_constructor_args():
     sig = inspect.signature(InterCity.__init__)
     params = list(sig.parameters.keys())
-    assert "interCityTrain" in params, "Missing parameter 'interCityTrain'"
     assert "builder" in params, "Missing parameter 'builder'"
-
-def test_intercity_has_interCityTrain():
-    assert hasattr(InterCity, "interCityTrain")
-    descriptor = None
-    for klass in InterCity.__mro__:
-        if "interCityTrain" in klass.__dict__:
-            descriptor = klass.__dict__["interCityTrain"]
-            break
-    assert isinstance(descriptor, property)
+    assert "interCityTrain" in params, "Missing parameter 'interCityTrain'"
 
 def test_intercity_has_builder():
     assert hasattr(InterCity, "builder")
@@ -289,6 +280,15 @@ def test_intercity_has_builder():
     for klass in InterCity.__mro__:
         if "builder" in klass.__dict__:
             descriptor = klass.__dict__["builder"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_intercity_has_interCityTrain():
+    assert hasattr(InterCity, "interCityTrain")
+    descriptor = None
+    for klass in InterCity.__mro__:
+        if "interCityTrain" in klass.__dict__:
+            descriptor = klass.__dict__["interCityTrain"]
             break
     assert isinstance(descriptor, property)
 
@@ -305,17 +305,8 @@ def test_commutator_constructor_exists():
 def test_commutator_constructor_args():
     sig = inspect.signature(Commutator.__init__)
     params = list(sig.parameters.keys())
-    assert "builder" in params, "Missing parameter 'builder'"
     assert "commutatorTrain" in params, "Missing parameter 'commutatorTrain'"
-
-def test_commutator_has_builder():
-    assert hasattr(Commutator, "builder")
-    descriptor = None
-    for klass in Commutator.__mro__:
-        if "builder" in klass.__dict__:
-            descriptor = klass.__dict__["builder"]
-            break
-    assert isinstance(descriptor, property)
+    assert "builder" in params, "Missing parameter 'builder'"
 
 def test_commutator_has_commutatorTrain():
     assert hasattr(Commutator, "commutatorTrain")
@@ -323,6 +314,15 @@ def test_commutator_has_commutatorTrain():
     for klass in Commutator.__mro__:
         if "commutatorTrain" in klass.__dict__:
             descriptor = klass.__dict__["commutatorTrain"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_commutator_has_builder():
+    assert hasattr(Commutator, "builder")
+    descriptor = None
+    for klass in Commutator.__mro__:
+        if "builder" in klass.__dict__:
+            descriptor = klass.__dict__["builder"]
             break
     assert isinstance(descriptor, property)
 
@@ -387,20 +387,11 @@ def test_trainstats_constructor_exists():
 def test_trainstats_constructor_args():
     sig = inspect.signature(TrainStats.__init__)
     params = list(sig.parameters.keys())
-    assert "passengerCount" in params, "Missing parameter 'passengerCount'"
     assert "fuelAvg" in params, "Missing parameter 'fuelAvg'"
     assert "humidityAvg" in params, "Missing parameter 'humidityAvg'"
     assert "tempAvg" in params, "Missing parameter 'tempAvg'"
     assert "trainService" in params, "Missing parameter 'trainService'"
-
-def test_trainstats_has_passengerCount():
-    assert hasattr(TrainStats, "passengerCount")
-    descriptor = None
-    for klass in TrainStats.__mro__:
-        if "passengerCount" in klass.__dict__:
-            descriptor = klass.__dict__["passengerCount"]
-            break
-    assert isinstance(descriptor, property)
+    assert "passengerCount" in params, "Missing parameter 'passengerCount'"
 
 def test_trainstats_has_fuelAvg():
     assert hasattr(TrainStats, "fuelAvg")
@@ -438,6 +429,15 @@ def test_trainstats_has_trainService():
             break
     assert isinstance(descriptor, property)
 
+def test_trainstats_has_passengerCount():
+    assert hasattr(TrainStats, "passengerCount")
+    descriptor = None
+    for klass in TrainStats.__mro__:
+        if "passengerCount" in klass.__dict__:
+            descriptor = klass.__dict__["passengerCount"]
+            break
+    assert isinstance(descriptor, property)
+
 
 
 def test_service_is_not_abstract():
@@ -451,18 +451,18 @@ def test_service_constructor_exists():
 def test_service_constructor_args():
     sig = inspect.signature(Service.__init__)
     params = list(sig.parameters.keys())
-    assert "serviceName" in params, "Missing parameter 'serviceName'"
-    assert "serviceId" in params, "Missing parameter 'serviceId'"
     assert "arrivalDateTime" in params, "Missing parameter 'arrivalDateTime'"
+    assert "serviceId" in params, "Missing parameter 'serviceId'"
+    assert "serviceName" in params, "Missing parameter 'serviceName'"
     assert "type" in params, "Missing parameter 'type'"
     assert "departureDateTime" in params, "Missing parameter 'departureDateTime'"
 
-def test_service_has_serviceName():
-    assert hasattr(Service, "serviceName")
+def test_service_has_arrivalDateTime():
+    assert hasattr(Service, "arrivalDateTime")
     descriptor = None
     for klass in Service.__mro__:
-        if "serviceName" in klass.__dict__:
-            descriptor = klass.__dict__["serviceName"]
+        if "arrivalDateTime" in klass.__dict__:
+            descriptor = klass.__dict__["arrivalDateTime"]
             break
     assert isinstance(descriptor, property)
 
@@ -475,12 +475,12 @@ def test_service_has_serviceId():
             break
     assert isinstance(descriptor, property)
 
-def test_service_has_arrivalDateTime():
-    assert hasattr(Service, "arrivalDateTime")
+def test_service_has_serviceName():
+    assert hasattr(Service, "serviceName")
     descriptor = None
     for klass in Service.__mro__:
-        if "arrivalDateTime" in klass.__dict__:
-            descriptor = klass.__dict__["arrivalDateTime"]
+        if "serviceName" in klass.__dict__:
+            descriptor = klass.__dict__["serviceName"]
             break
     assert isinstance(descriptor, property)
 
@@ -516,27 +516,27 @@ safe_text = st.text(
 ).filter(lambda s: s[0].isalpha())
 Train_strategy = st.builds(
     Train,
-    myEngine=
-        safe_text,
     myCoach=
+        safe_text,
+    myEngine=
         safe_text
 )
 Engine_strategy = st.builds(
     Engine,
-    horsePower=
-        safe_text,
     fuelAvg=
+        safe_text,
+    horsePower=
         safe_text
 )
 Route_strategy = st.builds(
     Route,
-    destination=
-        safe_text,
     source=
+        safe_text,
+    stops=
         safe_text,
     routeId=
         st.integers(),
-    stops=
+    destination=
         safe_text
 )
 TrainBuilder_Interface_strategy = st.builds(
@@ -544,15 +544,15 @@ TrainBuilder_Interface_strategy = st.builds(
 )
 Coach_strategy = st.builds(
     Coach,
-    capacity=
-        st.integers(),
+    coachType=
+        safe_text,
     temprature=
         safe_text,
     totalPassengers=
         st.integers(),
+    capacity=
+        st.integers(),
     humidity=
-        safe_text,
-    coachType=
         safe_text
 )
 Sleeper_strategy = st.builds(
@@ -564,17 +564,17 @@ Sleeper_strategy = st.builds(
 )
 InterCity_strategy = st.builds(
     InterCity,
-    interCityTrain=
-        safe_text,
     builder=
-        st.none()
+        st.none(),
+    interCityTrain=
+        safe_text
 )
 Commutator_strategy = st.builds(
     Commutator,
-    builder=
-        st.none(),
     commutatorTrain=
-        safe_text
+        safe_text,
+    builder=
+        st.none()
 )
 ServiceType_Interface_strategy = st.builds(
     ServiceType_Interface,
@@ -588,8 +588,6 @@ ServiceTypeFactory_strategy = st.builds(
 )
 TrainStats_strategy = st.builds(
     TrainStats,
-    passengerCount=
-        st.integers(),
     fuelAvg=
         safe_text,
     humidityAvg=
@@ -597,15 +595,17 @@ TrainStats_strategy = st.builds(
     tempAvg=
         safe_text,
     trainService=
-        safe_text
+        safe_text,
+    passengerCount=
+        st.integers()
 )
 Service_strategy = st.builds(
     Service,
-    serviceName=
+    arrivalDateTime=
         safe_text,
     serviceId=
         st.integers(),
-    arrivalDateTime=
+    serviceName=
         safe_text,
     type=
         st.none(),
@@ -618,20 +618,6 @@ Service_strategy = st.builds(
 def test_train_instantiation(instance):
     assert isinstance(instance, Train)
 
-@given(instance=Train_strategy)
-def test_train_myEngine_type(instance):
-    assert isinstance(instance.myEngine, str)
-
-
-@given(instance=Train_strategy)
-def test_train_myEngine_setter(instance):
-    original = instance.myEngine
-    instance.myEngine = original
-    assert instance.myEngine == original
-
-@given(instance=Train_strategy)
-def test_train_myCoach_type(instance):
-    assert isinstance(instance.myCoach, str)
 
 
 @given(instance=Train_strategy)
@@ -640,25 +626,19 @@ def test_train_myCoach_setter(instance):
     instance.myCoach = original
     assert instance.myCoach == original
 
+
+
+@given(instance=Train_strategy)
+def test_train_myEngine_setter(instance):
+    original = instance.myEngine
+    instance.myEngine = original
+    assert instance.myEngine == original
+
 @given(instance=Engine_strategy)
 @settings(max_examples=50)
 def test_engine_instantiation(instance):
     assert isinstance(instance, Engine)
 
-@given(instance=Engine_strategy)
-def test_engine_horsePower_type(instance):
-    assert isinstance(instance.horsePower, str)
-
-
-@given(instance=Engine_strategy)
-def test_engine_horsePower_setter(instance):
-    original = instance.horsePower
-    instance.horsePower = original
-    assert instance.horsePower == original
-
-@given(instance=Engine_strategy)
-def test_engine_fuelAvg_type(instance):
-    assert isinstance(instance.fuelAvg, str)
 
 
 @given(instance=Engine_strategy)
@@ -667,25 +647,19 @@ def test_engine_fuelAvg_setter(instance):
     instance.fuelAvg = original
     assert instance.fuelAvg == original
 
+
+
+@given(instance=Engine_strategy)
+def test_engine_horsePower_setter(instance):
+    original = instance.horsePower
+    instance.horsePower = original
+    assert instance.horsePower == original
+
 @given(instance=Route_strategy)
 @settings(max_examples=50)
 def test_route_instantiation(instance):
     assert isinstance(instance, Route)
 
-@given(instance=Route_strategy)
-def test_route_destination_type(instance):
-    assert isinstance(instance.destination, str)
-
-
-@given(instance=Route_strategy)
-def test_route_destination_setter(instance):
-    original = instance.destination
-    instance.destination = original
-    assert instance.destination == original
-
-@given(instance=Route_strategy)
-def test_route_source_type(instance):
-    assert isinstance(instance.source, str)
 
 
 @given(instance=Route_strategy)
@@ -694,9 +668,14 @@ def test_route_source_setter(instance):
     instance.source = original
     assert instance.source == original
 
+
+
 @given(instance=Route_strategy)
-def test_route_routeId_type(instance):
-    assert isinstance(instance.routeId, int)
+def test_route_stops_setter(instance):
+    original = instance.stops
+    instance.stops = original
+    assert instance.stops == original
+
 
 
 @given(instance=Route_strategy)
@@ -705,16 +684,13 @@ def test_route_routeId_setter(instance):
     instance.routeId = original
     assert instance.routeId == original
 
-@given(instance=Route_strategy)
-def test_route_stops_type(instance):
-    assert isinstance(instance.stops, str)
 
 
 @given(instance=Route_strategy)
-def test_route_stops_setter(instance):
-    original = instance.stops
-    instance.stops = original
-    assert instance.stops == original
+def test_route_destination_setter(instance):
+    original = instance.destination
+    instance.destination = original
+    assert instance.destination == original
 
 @given(instance=TrainBuilder_Interface_strategy)
 @settings(max_examples=50)
@@ -726,53 +702,6 @@ def test_trainbuilder_interface_instantiation(instance):
 def test_coach_instantiation(instance):
     assert isinstance(instance, Coach)
 
-@given(instance=Coach_strategy)
-def test_coach_capacity_type(instance):
-    assert isinstance(instance.capacity, int)
-
-
-@given(instance=Coach_strategy)
-def test_coach_capacity_setter(instance):
-    original = instance.capacity
-    instance.capacity = original
-    assert instance.capacity == original
-
-@given(instance=Coach_strategy)
-def test_coach_temprature_type(instance):
-    assert isinstance(instance.temprature, str)
-
-
-@given(instance=Coach_strategy)
-def test_coach_temprature_setter(instance):
-    original = instance.temprature
-    instance.temprature = original
-    assert instance.temprature == original
-
-@given(instance=Coach_strategy)
-def test_coach_totalPassengers_type(instance):
-    assert isinstance(instance.totalPassengers, int)
-
-
-@given(instance=Coach_strategy)
-def test_coach_totalPassengers_setter(instance):
-    original = instance.totalPassengers
-    instance.totalPassengers = original
-    assert instance.totalPassengers == original
-
-@given(instance=Coach_strategy)
-def test_coach_humidity_type(instance):
-    assert isinstance(instance.humidity, str)
-
-
-@given(instance=Coach_strategy)
-def test_coach_humidity_setter(instance):
-    original = instance.humidity
-    instance.humidity = original
-    assert instance.humidity == original
-
-@given(instance=Coach_strategy)
-def test_coach_coachType_type(instance):
-    assert isinstance(instance.coachType, str)
 
 
 @given(instance=Coach_strategy)
@@ -781,14 +710,43 @@ def test_coach_coachType_setter(instance):
     instance.coachType = original
     assert instance.coachType == original
 
+
+
+@given(instance=Coach_strategy)
+def test_coach_temprature_setter(instance):
+    original = instance.temprature
+    instance.temprature = original
+    assert instance.temprature == original
+
+
+
+@given(instance=Coach_strategy)
+def test_coach_totalPassengers_setter(instance):
+    original = instance.totalPassengers
+    instance.totalPassengers = original
+    assert instance.totalPassengers == original
+
+
+
+@given(instance=Coach_strategy)
+def test_coach_capacity_setter(instance):
+    original = instance.capacity
+    instance.capacity = original
+    assert instance.capacity == original
+
+
+
+@given(instance=Coach_strategy)
+def test_coach_humidity_setter(instance):
+    original = instance.humidity
+    instance.humidity = original
+    assert instance.humidity == original
+
 @given(instance=Sleeper_strategy)
 @settings(max_examples=50)
 def test_sleeper_instantiation(instance):
     assert isinstance(instance, Sleeper)
 
-@given(instance=Sleeper_strategy)
-def test_sleeper_sleeperTrain_type(instance):
-    assert isinstance(instance.sleeperTrain, str)
 
 
 @given(instance=Sleeper_strategy)
@@ -797,9 +755,6 @@ def test_sleeper_sleeperTrain_setter(instance):
     instance.sleeperTrain = original
     assert instance.sleeperTrain == original
 
-@given(instance=Sleeper_strategy)
-def test_sleeper_builder_type(instance):
-    assert isinstance(instance.builder, trainbuilder_interface)
 
 
 @given(instance=Sleeper_strategy)
@@ -813,20 +768,6 @@ def test_sleeper_builder_setter(instance):
 def test_intercity_instantiation(instance):
     assert isinstance(instance, InterCity)
 
-@given(instance=InterCity_strategy)
-def test_intercity_interCityTrain_type(instance):
-    assert isinstance(instance.interCityTrain, str)
-
-
-@given(instance=InterCity_strategy)
-def test_intercity_interCityTrain_setter(instance):
-    original = instance.interCityTrain
-    instance.interCityTrain = original
-    assert instance.interCityTrain == original
-
-@given(instance=InterCity_strategy)
-def test_intercity_builder_type(instance):
-    assert isinstance(instance.builder, trainbuilder_interface)
 
 
 @given(instance=InterCity_strategy)
@@ -835,25 +776,19 @@ def test_intercity_builder_setter(instance):
     instance.builder = original
     assert instance.builder == original
 
+
+
+@given(instance=InterCity_strategy)
+def test_intercity_interCityTrain_setter(instance):
+    original = instance.interCityTrain
+    instance.interCityTrain = original
+    assert instance.interCityTrain == original
+
 @given(instance=Commutator_strategy)
 @settings(max_examples=50)
 def test_commutator_instantiation(instance):
     assert isinstance(instance, Commutator)
 
-@given(instance=Commutator_strategy)
-def test_commutator_builder_type(instance):
-    assert isinstance(instance.builder, trainbuilder_interface)
-
-
-@given(instance=Commutator_strategy)
-def test_commutator_builder_setter(instance):
-    original = instance.builder
-    instance.builder = original
-    assert instance.builder == original
-
-@given(instance=Commutator_strategy)
-def test_commutator_commutatorTrain_type(instance):
-    assert isinstance(instance.commutatorTrain, str)
 
 
 @given(instance=Commutator_strategy)
@@ -861,6 +796,14 @@ def test_commutator_commutatorTrain_setter(instance):
     original = instance.commutatorTrain
     instance.commutatorTrain = original
     assert instance.commutatorTrain == original
+
+
+
+@given(instance=Commutator_strategy)
+def test_commutator_builder_setter(instance):
+    original = instance.builder
+    instance.builder = original
+    assert instance.builder == original
 
 @given(instance=ServiceType_Interface_strategy)
 @settings(max_examples=50)
@@ -872,9 +815,6 @@ def test_servicetype_interface_instantiation(instance):
 def test_servicetypefactory_instantiation(instance):
     assert isinstance(instance, ServiceTypeFactory)
 
-@given(instance=ServiceTypeFactory_strategy)
-def test_servicetypefactory_type_type(instance):
-    assert isinstance(instance.type, str)
 
 
 @given(instance=ServiceTypeFactory_strategy)
@@ -883,9 +823,6 @@ def test_servicetypefactory_type_setter(instance):
     instance.type = original
     assert instance.type == original
 
-@given(instance=ServiceTypeFactory_strategy)
-def test_servicetypefactory_getServiceType_type(instance):
-    assert isinstance(instance.getServiceType, servicetype_interface)
 
 
 @given(instance=ServiceTypeFactory_strategy)
@@ -899,20 +836,6 @@ def test_servicetypefactory_getServiceType_setter(instance):
 def test_trainstats_instantiation(instance):
     assert isinstance(instance, TrainStats)
 
-@given(instance=TrainStats_strategy)
-def test_trainstats_passengerCount_type(instance):
-    assert isinstance(instance.passengerCount, int)
-
-
-@given(instance=TrainStats_strategy)
-def test_trainstats_passengerCount_setter(instance):
-    original = instance.passengerCount
-    instance.passengerCount = original
-    assert instance.passengerCount == original
-
-@given(instance=TrainStats_strategy)
-def test_trainstats_fuelAvg_type(instance):
-    assert isinstance(instance.fuelAvg, str)
 
 
 @given(instance=TrainStats_strategy)
@@ -921,9 +844,6 @@ def test_trainstats_fuelAvg_setter(instance):
     instance.fuelAvg = original
     assert instance.fuelAvg == original
 
-@given(instance=TrainStats_strategy)
-def test_trainstats_humidityAvg_type(instance):
-    assert isinstance(instance.humidityAvg, str)
 
 
 @given(instance=TrainStats_strategy)
@@ -932,9 +852,6 @@ def test_trainstats_humidityAvg_setter(instance):
     instance.humidityAvg = original
     assert instance.humidityAvg == original
 
-@given(instance=TrainStats_strategy)
-def test_trainstats_tempAvg_type(instance):
-    assert isinstance(instance.tempAvg, str)
 
 
 @given(instance=TrainStats_strategy)
@@ -943,9 +860,6 @@ def test_trainstats_tempAvg_setter(instance):
     instance.tempAvg = original
     assert instance.tempAvg == original
 
-@given(instance=TrainStats_strategy)
-def test_trainstats_trainService_type(instance):
-    assert isinstance(instance.trainService, str)
 
 
 @given(instance=TrainStats_strategy)
@@ -954,36 +868,19 @@ def test_trainstats_trainService_setter(instance):
     instance.trainService = original
     assert instance.trainService == original
 
+
+
+@given(instance=TrainStats_strategy)
+def test_trainstats_passengerCount_setter(instance):
+    original = instance.passengerCount
+    instance.passengerCount = original
+    assert instance.passengerCount == original
+
 @given(instance=Service_strategy)
 @settings(max_examples=50)
 def test_service_instantiation(instance):
     assert isinstance(instance, Service)
 
-@given(instance=Service_strategy)
-def test_service_serviceName_type(instance):
-    assert isinstance(instance.serviceName, str)
-
-
-@given(instance=Service_strategy)
-def test_service_serviceName_setter(instance):
-    original = instance.serviceName
-    instance.serviceName = original
-    assert instance.serviceName == original
-
-@given(instance=Service_strategy)
-def test_service_serviceId_type(instance):
-    assert isinstance(instance.serviceId, int)
-
-
-@given(instance=Service_strategy)
-def test_service_serviceId_setter(instance):
-    original = instance.serviceId
-    instance.serviceId = original
-    assert instance.serviceId == original
-
-@given(instance=Service_strategy)
-def test_service_arrivalDateTime_type(instance):
-    assert isinstance(instance.arrivalDateTime, str)
 
 
 @given(instance=Service_strategy)
@@ -992,9 +889,22 @@ def test_service_arrivalDateTime_setter(instance):
     instance.arrivalDateTime = original
     assert instance.arrivalDateTime == original
 
+
+
 @given(instance=Service_strategy)
-def test_service_type_type(instance):
-    assert isinstance(instance.type, servicetype_interface)
+def test_service_serviceId_setter(instance):
+    original = instance.serviceId
+    instance.serviceId = original
+    assert instance.serviceId == original
+
+
+
+@given(instance=Service_strategy)
+def test_service_serviceName_setter(instance):
+    original = instance.serviceName
+    instance.serviceName = original
+    assert instance.serviceName == original
+
 
 
 @given(instance=Service_strategy)
@@ -1003,9 +913,6 @@ def test_service_type_setter(instance):
     instance.type = original
     assert instance.type == original
 
-@given(instance=Service_strategy)
-def test_service_departureDateTime_type(instance):
-    assert isinstance(instance.departureDateTime, str)
 
 
 @given(instance=Service_strategy)

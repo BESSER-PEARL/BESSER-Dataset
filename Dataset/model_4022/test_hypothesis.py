@@ -3,19 +3,19 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     Classifier,
-    classmm::Class,
-    classmm::DataType,
+    classmm_Class,
+    classmm_DataType,
     NamedElt,
-    classmm::Parameter,
-    classmm::Package,
-    classmm::Method,
-    classmm::Attribute,
-    classmm::Classifier,
-    classmm::NamedElt,
+    classmm_Attribute,
+    classmm_Package,
+    classmm_Parameter,
+    classmm_Method,
+    classmm_Classifier,
+    classmm_NamedElt,
     Visibility,
 )
 
@@ -39,50 +39,50 @@ def test_classifier_constructor_args():
 
 
 
-def test_classmm::class_is_not_abstract():
-    assert not inspect.isabstract(classmm::Class)
+def test_classmm_class_is_not_abstract():
+    assert not inspect.isabstract(classmm_Class)
 
 
-def test_classmm::class_constructor_exists():
-    assert callable(classmm::Class.__init__)
+def test_classmm_class_constructor_exists():
+    assert callable(classmm_Class.__init__)
 
 
-def test_classmm::class_constructor_args():
-    sig = inspect.signature(classmm::Class.__init__)
+def test_classmm_class_constructor_args():
+    sig = inspect.signature(classmm_Class.__init__)
     params = list(sig.parameters.keys())
-    assert "isAbstract" in params, "Missing parameter 'isAbstract'"
     assert "visibility" in params, "Missing parameter 'visibility'"
+    assert "isAbstract" in params, "Missing parameter 'isAbstract'"
 
-def test_classmm::class_has_isAbstract():
-    assert hasattr(classmm::Class, "isAbstract")
+def test_classmm_class_has_visibility():
+    assert hasattr(classmm_Class, "visibility")
     descriptor = None
-    for klass in classmm::Class.__mro__:
-        if "isAbstract" in klass.__dict__:
-            descriptor = klass.__dict__["isAbstract"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_classmm::class_has_visibility():
-    assert hasattr(classmm::Class, "visibility")
-    descriptor = None
-    for klass in classmm::Class.__mro__:
+    for klass in classmm_Class.__mro__:
         if "visibility" in klass.__dict__:
             descriptor = klass.__dict__["visibility"]
             break
     assert isinstance(descriptor, property)
 
+def test_classmm_class_has_isAbstract():
+    assert hasattr(classmm_Class, "isAbstract")
+    descriptor = None
+    for klass in classmm_Class.__mro__:
+        if "isAbstract" in klass.__dict__:
+            descriptor = klass.__dict__["isAbstract"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_classmm::datatype_is_not_abstract():
-    assert not inspect.isabstract(classmm::DataType)
+
+def test_classmm_datatype_is_not_abstract():
+    assert not inspect.isabstract(classmm_DataType)
 
 
-def test_classmm::datatype_constructor_exists():
-    assert callable(classmm::DataType.__init__)
+def test_classmm_datatype_constructor_exists():
+    assert callable(classmm_DataType.__init__)
 
 
-def test_classmm::datatype_constructor_args():
-    sig = inspect.signature(classmm::DataType.__init__)
+def test_classmm_datatype_constructor_args():
+    sig = inspect.signature(classmm_DataType.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -101,75 +101,33 @@ def test_namedelt_constructor_args():
 
 
 
-def test_classmm::parameter_is_not_abstract():
-    assert not inspect.isabstract(classmm::Parameter)
+def test_classmm_attribute_is_not_abstract():
+    assert not inspect.isabstract(classmm_Attribute)
 
 
-def test_classmm::parameter_constructor_exists():
-    assert callable(classmm::Parameter.__init__)
+def test_classmm_attribute_constructor_exists():
+    assert callable(classmm_Attribute.__init__)
 
 
-def test_classmm::parameter_constructor_args():
-    sig = inspect.signature(classmm::Parameter.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_classmm::package_is_not_abstract():
-    assert not inspect.isabstract(classmm::Package)
-
-
-def test_classmm::package_constructor_exists():
-    assert callable(classmm::Package.__init__)
-
-
-def test_classmm::package_constructor_args():
-    sig = inspect.signature(classmm::Package.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_classmm::method_is_not_abstract():
-    assert not inspect.isabstract(classmm::Method)
-
-
-def test_classmm::method_constructor_exists():
-    assert callable(classmm::Method.__init__)
-
-
-def test_classmm::method_constructor_args():
-    sig = inspect.signature(classmm::Method.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_classmm::attribute_is_not_abstract():
-    assert not inspect.isabstract(classmm::Attribute)
-
-
-def test_classmm::attribute_constructor_exists():
-    assert callable(classmm::Attribute.__init__)
-
-
-def test_classmm::attribute_constructor_args():
-    sig = inspect.signature(classmm::Attribute.__init__)
+def test_classmm_attribute_constructor_args():
+    sig = inspect.signature(classmm_Attribute.__init__)
     params = list(sig.parameters.keys())
     assert "multivalued" in params, "Missing parameter 'multivalued'"
     assert "visibility" in params, "Missing parameter 'visibility'"
 
-def test_classmm::attribute_has_multivalued():
-    assert hasattr(classmm::Attribute, "multivalued")
+def test_classmm_attribute_has_multivalued():
+    assert hasattr(classmm_Attribute, "multivalued")
     descriptor = None
-    for klass in classmm::Attribute.__mro__:
+    for klass in classmm_Attribute.__mro__:
         if "multivalued" in klass.__dict__:
             descriptor = klass.__dict__["multivalued"]
             break
     assert isinstance(descriptor, property)
 
-def test_classmm::attribute_has_visibility():
-    assert hasattr(classmm::Attribute, "visibility")
+def test_classmm_attribute_has_visibility():
+    assert hasattr(classmm_Attribute, "visibility")
     descriptor = None
-    for klass in classmm::Attribute.__mro__:
+    for klass in classmm_Attribute.__mro__:
         if "visibility" in klass.__dict__:
             descriptor = klass.__dict__["visibility"]
             break
@@ -177,37 +135,79 @@ def test_classmm::attribute_has_visibility():
 
 
 
-def test_classmm::classifier_is_not_abstract():
-    assert not inspect.isabstract(classmm::Classifier)
+def test_classmm_package_is_not_abstract():
+    assert not inspect.isabstract(classmm_Package)
 
 
-def test_classmm::classifier_constructor_exists():
-    assert callable(classmm::Classifier.__init__)
+def test_classmm_package_constructor_exists():
+    assert callable(classmm_Package.__init__)
 
 
-def test_classmm::classifier_constructor_args():
-    sig = inspect.signature(classmm::Classifier.__init__)
+def test_classmm_package_constructor_args():
+    sig = inspect.signature(classmm_Package.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_classmm::namedelt_is_not_abstract():
-    assert not inspect.isabstract(classmm::NamedElt)
+def test_classmm_parameter_is_not_abstract():
+    assert not inspect.isabstract(classmm_Parameter)
 
 
-def test_classmm::namedelt_constructor_exists():
-    assert callable(classmm::NamedElt.__init__)
+def test_classmm_parameter_constructor_exists():
+    assert callable(classmm_Parameter.__init__)
 
 
-def test_classmm::namedelt_constructor_args():
-    sig = inspect.signature(classmm::NamedElt.__init__)
+def test_classmm_parameter_constructor_args():
+    sig = inspect.signature(classmm_Parameter.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_classmm_method_is_not_abstract():
+    assert not inspect.isabstract(classmm_Method)
+
+
+def test_classmm_method_constructor_exists():
+    assert callable(classmm_Method.__init__)
+
+
+def test_classmm_method_constructor_args():
+    sig = inspect.signature(classmm_Method.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_classmm_classifier_is_not_abstract():
+    assert not inspect.isabstract(classmm_Classifier)
+
+
+def test_classmm_classifier_constructor_exists():
+    assert callable(classmm_Classifier.__init__)
+
+
+def test_classmm_classifier_constructor_args():
+    sig = inspect.signature(classmm_Classifier.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_classmm_namedelt_is_not_abstract():
+    assert not inspect.isabstract(classmm_NamedElt)
+
+
+def test_classmm_namedelt_constructor_exists():
+    assert callable(classmm_NamedElt.__init__)
+
+
+def test_classmm_namedelt_constructor_args():
+    sig = inspect.signature(classmm_NamedElt.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_classmm::namedelt_has_name():
-    assert hasattr(classmm::NamedElt, "name")
+def test_classmm_namedelt_has_name():
+    assert hasattr(classmm_NamedElt, "name")
     descriptor = None
-    for klass in classmm::NamedElt.__mro__:
+    for klass in classmm_NamedElt.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -221,10 +221,10 @@ def test_visibility_has_all_literals():
     # Collect the names of literals in this Enumeration
     enum_literals = [lit.name for lit in Visibility]
     expected_literals = [
-        "public",
-        "protected",
-        "package",
         "private",
+        "package",
+        "protected",
+        "public",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
@@ -245,40 +245,40 @@ safe_text = st.text(
 Classifier_strategy = st.builds(
     Classifier,
 )
-classmm::Class_strategy = st.builds(
-    classmm::Class,
-    isAbstract=
-        st.booleans(),
+classmm_Class_strategy = st.builds(
+    classmm_Class,
     visibility=
-        safe_text
+        safe_text,
+    isAbstract=
+        st.booleans()
 )
-classmm::DataType_strategy = st.builds(
-    classmm::DataType,
+classmm_DataType_strategy = st.builds(
+    classmm_DataType,
 )
 NamedElt_strategy = st.builds(
     NamedElt,
 )
-classmm::Parameter_strategy = st.builds(
-    classmm::Parameter,
-)
-classmm::Package_strategy = st.builds(
-    classmm::Package,
-)
-classmm::Method_strategy = st.builds(
-    classmm::Method,
-)
-classmm::Attribute_strategy = st.builds(
-    classmm::Attribute,
+classmm_Attribute_strategy = st.builds(
+    classmm_Attribute,
     multivalued=
         st.booleans(),
     visibility=
         safe_text
 )
-classmm::Classifier_strategy = st.builds(
-    classmm::Classifier,
+classmm_Package_strategy = st.builds(
+    classmm_Package,
 )
-classmm::NamedElt_strategy = st.builds(
-    classmm::NamedElt,
+classmm_Parameter_strategy = st.builds(
+    classmm_Parameter,
+)
+classmm_Method_strategy = st.builds(
+    classmm_Method,
+)
+classmm_Classifier_strategy = st.builds(
+    classmm_Classifier,
+)
+classmm_NamedElt_strategy = st.builds(
+    classmm_NamedElt,
     name=
         safe_text
 )
@@ -288,102 +288,87 @@ classmm::NamedElt_strategy = st.builds(
 def test_classifier_instantiation(instance):
     assert isinstance(instance, Classifier)
 
-@given(instance=classmm::Class_strategy)
+@given(instance=classmm_Class_strategy)
 @settings(max_examples=50)
-def test_classmm::class_instantiation(instance):
-    assert isinstance(instance, classmm::Class)
-
-@given(instance=classmm::Class_strategy)
-def test_classmm::class_isAbstract_type(instance):
-    assert isinstance(instance.isAbstract, bool)
+def test_classmm_class_instantiation(instance):
+    assert isinstance(instance, classmm_Class)
 
 
-@given(instance=classmm::Class_strategy)
-def test_classmm::class_isAbstract_setter(instance):
-    original = instance.isAbstract
-    instance.isAbstract = original
-    assert instance.isAbstract == original
 
-@given(instance=classmm::Class_strategy)
-def test_classmm::class_visibility_type(instance):
-    assert isinstance(instance.visibility, str)
-
-
-@given(instance=classmm::Class_strategy)
-def test_classmm::class_visibility_setter(instance):
+@given(instance=classmm_Class_strategy)
+def test_classmm_class_visibility_setter(instance):
     original = instance.visibility
     instance.visibility = original
     assert instance.visibility == original
 
-@given(instance=classmm::DataType_strategy)
+
+
+@given(instance=classmm_Class_strategy)
+def test_classmm_class_isAbstract_setter(instance):
+    original = instance.isAbstract
+    instance.isAbstract = original
+    assert instance.isAbstract == original
+
+@given(instance=classmm_DataType_strategy)
 @settings(max_examples=50)
-def test_classmm::datatype_instantiation(instance):
-    assert isinstance(instance, classmm::DataType)
+def test_classmm_datatype_instantiation(instance):
+    assert isinstance(instance, classmm_DataType)
 
 @given(instance=NamedElt_strategy)
 @settings(max_examples=50)
 def test_namedelt_instantiation(instance):
     assert isinstance(instance, NamedElt)
 
-@given(instance=classmm::Parameter_strategy)
+@given(instance=classmm_Attribute_strategy)
 @settings(max_examples=50)
-def test_classmm::parameter_instantiation(instance):
-    assert isinstance(instance, classmm::Parameter)
-
-@given(instance=classmm::Package_strategy)
-@settings(max_examples=50)
-def test_classmm::package_instantiation(instance):
-    assert isinstance(instance, classmm::Package)
-
-@given(instance=classmm::Method_strategy)
-@settings(max_examples=50)
-def test_classmm::method_instantiation(instance):
-    assert isinstance(instance, classmm::Method)
-
-@given(instance=classmm::Attribute_strategy)
-@settings(max_examples=50)
-def test_classmm::attribute_instantiation(instance):
-    assert isinstance(instance, classmm::Attribute)
-
-@given(instance=classmm::Attribute_strategy)
-def test_classmm::attribute_multivalued_type(instance):
-    assert isinstance(instance.multivalued, bool)
+def test_classmm_attribute_instantiation(instance):
+    assert isinstance(instance, classmm_Attribute)
 
 
-@given(instance=classmm::Attribute_strategy)
-def test_classmm::attribute_multivalued_setter(instance):
+
+@given(instance=classmm_Attribute_strategy)
+def test_classmm_attribute_multivalued_setter(instance):
     original = instance.multivalued
     instance.multivalued = original
     assert instance.multivalued == original
 
-@given(instance=classmm::Attribute_strategy)
-def test_classmm::attribute_visibility_type(instance):
-    assert isinstance(instance.visibility, str)
 
 
-@given(instance=classmm::Attribute_strategy)
-def test_classmm::attribute_visibility_setter(instance):
+@given(instance=classmm_Attribute_strategy)
+def test_classmm_attribute_visibility_setter(instance):
     original = instance.visibility
     instance.visibility = original
     assert instance.visibility == original
 
-@given(instance=classmm::Classifier_strategy)
+@given(instance=classmm_Package_strategy)
 @settings(max_examples=50)
-def test_classmm::classifier_instantiation(instance):
-    assert isinstance(instance, classmm::Classifier)
+def test_classmm_package_instantiation(instance):
+    assert isinstance(instance, classmm_Package)
 
-@given(instance=classmm::NamedElt_strategy)
+@given(instance=classmm_Parameter_strategy)
 @settings(max_examples=50)
-def test_classmm::namedelt_instantiation(instance):
-    assert isinstance(instance, classmm::NamedElt)
+def test_classmm_parameter_instantiation(instance):
+    assert isinstance(instance, classmm_Parameter)
 
-@given(instance=classmm::NamedElt_strategy)
-def test_classmm::namedelt_name_type(instance):
-    assert isinstance(instance.name, str)
+@given(instance=classmm_Method_strategy)
+@settings(max_examples=50)
+def test_classmm_method_instantiation(instance):
+    assert isinstance(instance, classmm_Method)
+
+@given(instance=classmm_Classifier_strategy)
+@settings(max_examples=50)
+def test_classmm_classifier_instantiation(instance):
+    assert isinstance(instance, classmm_Classifier)
+
+@given(instance=classmm_NamedElt_strategy)
+@settings(max_examples=50)
+def test_classmm_namedelt_instantiation(instance):
+    assert isinstance(instance, classmm_NamedElt)
 
 
-@given(instance=classmm::NamedElt_strategy)
-def test_classmm::namedelt_name_setter(instance):
+
+@given(instance=classmm_NamedElt_strategy)
+def test_classmm_namedelt_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original

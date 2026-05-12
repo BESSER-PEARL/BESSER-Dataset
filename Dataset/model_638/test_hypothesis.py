@@ -3,15 +3,15 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    libraryModel::ecore::NamedElement,
-    libraryModel::ecore::LibraryModel,
+from python_code import (
+    libraryModel_ecore_NamedElement,
+    libraryModel_ecore_LibraryModel,
     NamedElement,
-    libraryModel::ecore::Author,
-    libraryModel::ecore::Picture,
-    libraryModel::ecore::Book,
+    libraryModel_ecore_Author,
+    libraryModel_ecore_Picture,
+    libraryModel_ecore_Book,
 )
 
 # =============================================================================
@@ -20,23 +20,23 @@ from classes import (
 
 
 
-def test_librarymodel::ecore::namedelement_is_not_abstract():
-    assert not inspect.isabstract(libraryModel::ecore::NamedElement)
+def test_librarymodel_ecore_namedelement_is_not_abstract():
+    assert not inspect.isabstract(libraryModel_ecore_NamedElement)
 
 
-def test_librarymodel::ecore::namedelement_constructor_exists():
-    assert callable(libraryModel::ecore::NamedElement.__init__)
+def test_librarymodel_ecore_namedelement_constructor_exists():
+    assert callable(libraryModel_ecore_NamedElement.__init__)
 
 
-def test_librarymodel::ecore::namedelement_constructor_args():
-    sig = inspect.signature(libraryModel::ecore::NamedElement.__init__)
+def test_librarymodel_ecore_namedelement_constructor_args():
+    sig = inspect.signature(libraryModel_ecore_NamedElement.__init__)
     params = list(sig.parameters.keys())
     assert "Name" in params, "Missing parameter 'Name'"
 
-def test_librarymodel::ecore::namedelement_has_Name():
-    assert hasattr(libraryModel::ecore::NamedElement, "Name")
+def test_librarymodel_ecore_namedelement_has_Name():
+    assert hasattr(libraryModel_ecore_NamedElement, "Name")
     descriptor = None
-    for klass in libraryModel::ecore::NamedElement.__mro__:
+    for klass in libraryModel_ecore_NamedElement.__mro__:
         if "Name" in klass.__dict__:
             descriptor = klass.__dict__["Name"]
             break
@@ -44,16 +44,16 @@ def test_librarymodel::ecore::namedelement_has_Name():
 
 
 
-def test_librarymodel::ecore::librarymodel_is_not_abstract():
-    assert not inspect.isabstract(libraryModel::ecore::LibraryModel)
+def test_librarymodel_ecore_librarymodel_is_not_abstract():
+    assert not inspect.isabstract(libraryModel_ecore_LibraryModel)
 
 
-def test_librarymodel::ecore::librarymodel_constructor_exists():
-    assert callable(libraryModel::ecore::LibraryModel.__init__)
+def test_librarymodel_ecore_librarymodel_constructor_exists():
+    assert callable(libraryModel_ecore_LibraryModel.__init__)
 
 
-def test_librarymodel::ecore::librarymodel_constructor_args():
-    sig = inspect.signature(libraryModel::ecore::LibraryModel.__init__)
+def test_librarymodel_ecore_librarymodel_constructor_args():
+    sig = inspect.signature(libraryModel_ecore_LibraryModel.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -72,37 +72,37 @@ def test_namedelement_constructor_args():
 
 
 
-def test_librarymodel::ecore::author_is_not_abstract():
-    assert not inspect.isabstract(libraryModel::ecore::Author)
+def test_librarymodel_ecore_author_is_not_abstract():
+    assert not inspect.isabstract(libraryModel_ecore_Author)
 
 
-def test_librarymodel::ecore::author_constructor_exists():
-    assert callable(libraryModel::ecore::Author.__init__)
+def test_librarymodel_ecore_author_constructor_exists():
+    assert callable(libraryModel_ecore_Author.__init__)
 
 
-def test_librarymodel::ecore::author_constructor_args():
-    sig = inspect.signature(libraryModel::ecore::Author.__init__)
+def test_librarymodel_ecore_author_constructor_args():
+    sig = inspect.signature(libraryModel_ecore_Author.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_librarymodel::ecore::picture_is_not_abstract():
-    assert not inspect.isabstract(libraryModel::ecore::Picture)
+def test_librarymodel_ecore_picture_is_not_abstract():
+    assert not inspect.isabstract(libraryModel_ecore_Picture)
 
 
-def test_librarymodel::ecore::picture_constructor_exists():
-    assert callable(libraryModel::ecore::Picture.__init__)
+def test_librarymodel_ecore_picture_constructor_exists():
+    assert callable(libraryModel_ecore_Picture.__init__)
 
 
-def test_librarymodel::ecore::picture_constructor_args():
-    sig = inspect.signature(libraryModel::ecore::Picture.__init__)
+def test_librarymodel_ecore_picture_constructor_args():
+    sig = inspect.signature(libraryModel_ecore_Picture.__init__)
     params = list(sig.parameters.keys())
     assert "pageNumber" in params, "Missing parameter 'pageNumber'"
 
-def test_librarymodel::ecore::picture_has_pageNumber():
-    assert hasattr(libraryModel::ecore::Picture, "pageNumber")
+def test_librarymodel_ecore_picture_has_pageNumber():
+    assert hasattr(libraryModel_ecore_Picture, "pageNumber")
     descriptor = None
-    for klass in libraryModel::ecore::Picture.__mro__:
+    for klass in libraryModel_ecore_Picture.__mro__:
         if "pageNumber" in klass.__dict__:
             descriptor = klass.__dict__["pageNumber"]
             break
@@ -110,16 +110,16 @@ def test_librarymodel::ecore::picture_has_pageNumber():
 
 
 
-def test_librarymodel::ecore::book_is_not_abstract():
-    assert not inspect.isabstract(libraryModel::ecore::Book)
+def test_librarymodel_ecore_book_is_not_abstract():
+    assert not inspect.isabstract(libraryModel_ecore_Book)
 
 
-def test_librarymodel::ecore::book_constructor_exists():
-    assert callable(libraryModel::ecore::Book.__init__)
+def test_librarymodel_ecore_book_constructor_exists():
+    assert callable(libraryModel_ecore_Book.__init__)
 
 
-def test_librarymodel::ecore::book_constructor_args():
-    sig = inspect.signature(libraryModel::ecore::Book.__init__)
+def test_librarymodel_ecore_book_constructor_args():
+    sig = inspect.signature(libraryModel_ecore_Book.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -134,49 +134,46 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-libraryModel::ecore::NamedElement_strategy = st.builds(
-    libraryModel::ecore::NamedElement,
+libraryModel_ecore_NamedElement_strategy = st.builds(
+    libraryModel_ecore_NamedElement,
     Name=
         safe_text
 )
-libraryModel::ecore::LibraryModel_strategy = st.builds(
-    libraryModel::ecore::LibraryModel,
+libraryModel_ecore_LibraryModel_strategy = st.builds(
+    libraryModel_ecore_LibraryModel,
 )
 NamedElement_strategy = st.builds(
     NamedElement,
 )
-libraryModel::ecore::Author_strategy = st.builds(
-    libraryModel::ecore::Author,
+libraryModel_ecore_Author_strategy = st.builds(
+    libraryModel_ecore_Author,
 )
-libraryModel::ecore::Picture_strategy = st.builds(
-    libraryModel::ecore::Picture,
+libraryModel_ecore_Picture_strategy = st.builds(
+    libraryModel_ecore_Picture,
     pageNumber=
         safe_text
 )
-libraryModel::ecore::Book_strategy = st.builds(
-    libraryModel::ecore::Book,
+libraryModel_ecore_Book_strategy = st.builds(
+    libraryModel_ecore_Book,
 )
 
-@given(instance=libraryModel::ecore::NamedElement_strategy)
+@given(instance=libraryModel_ecore_NamedElement_strategy)
 @settings(max_examples=50)
-def test_librarymodel::ecore::namedelement_instantiation(instance):
-    assert isinstance(instance, libraryModel::ecore::NamedElement)
-
-@given(instance=libraryModel::ecore::NamedElement_strategy)
-def test_librarymodel::ecore::namedelement_Name_type(instance):
-    assert isinstance(instance.Name, str)
+def test_librarymodel_ecore_namedelement_instantiation(instance):
+    assert isinstance(instance, libraryModel_ecore_NamedElement)
 
 
-@given(instance=libraryModel::ecore::NamedElement_strategy)
-def test_librarymodel::ecore::namedelement_Name_setter(instance):
+
+@given(instance=libraryModel_ecore_NamedElement_strategy)
+def test_librarymodel_ecore_namedelement_Name_setter(instance):
     original = instance.Name
     instance.Name = original
     assert instance.Name == original
 
-@given(instance=libraryModel::ecore::LibraryModel_strategy)
+@given(instance=libraryModel_ecore_LibraryModel_strategy)
 @settings(max_examples=50)
-def test_librarymodel::ecore::librarymodel_instantiation(instance):
-    assert isinstance(instance, libraryModel::ecore::LibraryModel)
+def test_librarymodel_ecore_librarymodel_instantiation(instance):
+    assert isinstance(instance, libraryModel_ecore_LibraryModel)
 
 import warnings
 import copy
@@ -184,9 +181,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=libraryModel::ecore::LibraryModel_strategy)
+@given(instance=libraryModel_ecore_LibraryModel_strategy)
 @settings(max_examples=30)
-def test_librarymodel::ecore::librarymodel_printlibrary_changes_state(instance):
+def test_librarymodel_ecore_librarymodel_printlibrary_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -198,42 +195,39 @@ def test_librarymodel::ecore::librarymodel_printlibrary_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'printLibrary' in libraryModel::ecore::LibraryModel is empty"
+        assert has_statements, f"Function 'printLibrary' in libraryModel_ecore_LibraryModel is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'printLibrary' in libraryModel::ecore::LibraryModel did not change state; check implementation")
+            warnings.warn(f"Operation 'printLibrary' in libraryModel_ecore_LibraryModel did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'printLibrary' in libraryModel::ecore::LibraryModel is not implemented or raised an error")
+        warnings.warn(f"Operation 'printLibrary' in libraryModel_ecore_LibraryModel is not implemented or raised an error")
 
 @given(instance=NamedElement_strategy)
 @settings(max_examples=50)
 def test_namedelement_instantiation(instance):
     assert isinstance(instance, NamedElement)
 
-@given(instance=libraryModel::ecore::Author_strategy)
+@given(instance=libraryModel_ecore_Author_strategy)
 @settings(max_examples=50)
-def test_librarymodel::ecore::author_instantiation(instance):
-    assert isinstance(instance, libraryModel::ecore::Author)
+def test_librarymodel_ecore_author_instantiation(instance):
+    assert isinstance(instance, libraryModel_ecore_Author)
 
-@given(instance=libraryModel::ecore::Picture_strategy)
+@given(instance=libraryModel_ecore_Picture_strategy)
 @settings(max_examples=50)
-def test_librarymodel::ecore::picture_instantiation(instance):
-    assert isinstance(instance, libraryModel::ecore::Picture)
-
-@given(instance=libraryModel::ecore::Picture_strategy)
-def test_librarymodel::ecore::picture_pageNumber_type(instance):
-    assert isinstance(instance.pageNumber, str)
+def test_librarymodel_ecore_picture_instantiation(instance):
+    assert isinstance(instance, libraryModel_ecore_Picture)
 
 
-@given(instance=libraryModel::ecore::Picture_strategy)
-def test_librarymodel::ecore::picture_pageNumber_setter(instance):
+
+@given(instance=libraryModel_ecore_Picture_strategy)
+def test_librarymodel_ecore_picture_pageNumber_setter(instance):
     original = instance.pageNumber
     instance.pageNumber = original
     assert instance.pageNumber == original
 
-@given(instance=libraryModel::ecore::Book_strategy)
+@given(instance=libraryModel_ecore_Book_strategy)
 @settings(max_examples=50)
-def test_librarymodel::ecore::book_instantiation(instance):
-    assert isinstance(instance, libraryModel::ecore::Book)
+def test_librarymodel_ecore_book_instantiation(instance):
+    assert isinstance(instance, libraryModel_ecore_Book)

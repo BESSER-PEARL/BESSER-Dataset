@@ -3,21 +3,21 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     World,
-    testcompat103::EClass3,
+    testcompat103_EClass3,
     EClass0,
-    testcompat103::EClass2,
+    testcompat103_EClass2,
     NamedElement,
-    testcompat103::RelatedTo,
-    testcompat103::Foo,
-    testcompat103::Thing,
-    testcompat103::EClass1,
-    testcompat103::EClass0,
-    testcompat103::World,
-    testcompat103::NamedElement,
+    testcompat103_EClass0,
+    testcompat103_Thing,
+    testcompat103_EClass1,
+    testcompat103_Foo,
+    testcompat103_RelatedTo,
+    testcompat103_World,
+    testcompat103_NamedElement,
 )
 
 # =============================================================================
@@ -40,16 +40,16 @@ def test_world_constructor_args():
 
 
 
-def test_testcompat103::eclass3_is_not_abstract():
-    assert not inspect.isabstract(testcompat103::EClass3)
+def test_testcompat103_eclass3_is_not_abstract():
+    assert not inspect.isabstract(testcompat103_EClass3)
 
 
-def test_testcompat103::eclass3_constructor_exists():
-    assert callable(testcompat103::EClass3.__init__)
+def test_testcompat103_eclass3_constructor_exists():
+    assert callable(testcompat103_EClass3.__init__)
 
 
-def test_testcompat103::eclass3_constructor_args():
-    sig = inspect.signature(testcompat103::EClass3.__init__)
+def test_testcompat103_eclass3_constructor_args():
+    sig = inspect.signature(testcompat103_EClass3.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -68,16 +68,16 @@ def test_eclass0_constructor_args():
 
 
 
-def test_testcompat103::eclass2_is_not_abstract():
-    assert not inspect.isabstract(testcompat103::EClass2)
+def test_testcompat103_eclass2_is_not_abstract():
+    assert not inspect.isabstract(testcompat103_EClass2)
 
 
-def test_testcompat103::eclass2_constructor_exists():
-    assert callable(testcompat103::EClass2.__init__)
+def test_testcompat103_eclass2_constructor_exists():
+    assert callable(testcompat103_EClass2.__init__)
 
 
-def test_testcompat103::eclass2_constructor_args():
-    sig = inspect.signature(testcompat103::EClass2.__init__)
+def test_testcompat103_eclass2_constructor_args():
+    sig = inspect.signature(testcompat103_EClass2.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -96,61 +96,37 @@ def test_namedelement_constructor_args():
 
 
 
-def test_testcompat103::relatedto_is_not_abstract():
-    assert not inspect.isabstract(testcompat103::RelatedTo)
+def test_testcompat103_eclass0_is_not_abstract():
+    assert not inspect.isabstract(testcompat103_EClass0)
 
 
-def test_testcompat103::relatedto_constructor_exists():
-    assert callable(testcompat103::RelatedTo.__init__)
+def test_testcompat103_eclass0_constructor_exists():
+    assert callable(testcompat103_EClass0.__init__)
 
 
-def test_testcompat103::relatedto_constructor_args():
-    sig = inspect.signature(testcompat103::RelatedTo.__init__)
-    params = list(sig.parameters.keys())
-    assert "since" in params, "Missing parameter 'since'"
-
-def test_testcompat103::relatedto_has_since():
-    assert hasattr(testcompat103::RelatedTo, "since")
-    descriptor = None
-    for klass in testcompat103::RelatedTo.__mro__:
-        if "since" in klass.__dict__:
-            descriptor = klass.__dict__["since"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_testcompat103::foo_is_not_abstract():
-    assert not inspect.isabstract(testcompat103::Foo)
-
-
-def test_testcompat103::foo_constructor_exists():
-    assert callable(testcompat103::Foo.__init__)
-
-
-def test_testcompat103::foo_constructor_args():
-    sig = inspect.signature(testcompat103::Foo.__init__)
+def test_testcompat103_eclass0_constructor_args():
+    sig = inspect.signature(testcompat103_EClass0.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_testcompat103::thing_is_not_abstract():
-    assert not inspect.isabstract(testcompat103::Thing)
+def test_testcompat103_thing_is_not_abstract():
+    assert not inspect.isabstract(testcompat103_Thing)
 
 
-def test_testcompat103::thing_constructor_exists():
-    assert callable(testcompat103::Thing.__init__)
+def test_testcompat103_thing_constructor_exists():
+    assert callable(testcompat103_Thing.__init__)
 
 
-def test_testcompat103::thing_constructor_args():
-    sig = inspect.signature(testcompat103::Thing.__init__)
+def test_testcompat103_thing_constructor_args():
+    sig = inspect.signature(testcompat103_Thing.__init__)
     params = list(sig.parameters.keys())
     assert "id" in params, "Missing parameter 'id'"
 
-def test_testcompat103::thing_has_id():
-    assert hasattr(testcompat103::Thing, "id")
+def test_testcompat103_thing_has_id():
+    assert hasattr(testcompat103_Thing, "id")
     descriptor = None
-    for klass in testcompat103::Thing.__mro__:
+    for klass in testcompat103_Thing.__mro__:
         if "id" in klass.__dict__:
             descriptor = klass.__dict__["id"]
             break
@@ -158,65 +134,89 @@ def test_testcompat103::thing_has_id():
 
 
 
-def test_testcompat103::eclass1_is_not_abstract():
-    assert not inspect.isabstract(testcompat103::EClass1)
+def test_testcompat103_eclass1_is_not_abstract():
+    assert not inspect.isabstract(testcompat103_EClass1)
 
 
-def test_testcompat103::eclass1_constructor_exists():
-    assert callable(testcompat103::EClass1.__init__)
+def test_testcompat103_eclass1_constructor_exists():
+    assert callable(testcompat103_EClass1.__init__)
 
 
-def test_testcompat103::eclass1_constructor_args():
-    sig = inspect.signature(testcompat103::EClass1.__init__)
+def test_testcompat103_eclass1_constructor_args():
+    sig = inspect.signature(testcompat103_EClass1.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_testcompat103::eclass0_is_not_abstract():
-    assert not inspect.isabstract(testcompat103::EClass0)
+def test_testcompat103_foo_is_not_abstract():
+    assert not inspect.isabstract(testcompat103_Foo)
 
 
-def test_testcompat103::eclass0_constructor_exists():
-    assert callable(testcompat103::EClass0.__init__)
+def test_testcompat103_foo_constructor_exists():
+    assert callable(testcompat103_Foo.__init__)
 
 
-def test_testcompat103::eclass0_constructor_args():
-    sig = inspect.signature(testcompat103::EClass0.__init__)
+def test_testcompat103_foo_constructor_args():
+    sig = inspect.signature(testcompat103_Foo.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_testcompat103::world_is_not_abstract():
-    assert not inspect.isabstract(testcompat103::World)
+def test_testcompat103_relatedto_is_not_abstract():
+    assert not inspect.isabstract(testcompat103_RelatedTo)
 
 
-def test_testcompat103::world_constructor_exists():
-    assert callable(testcompat103::World.__init__)
+def test_testcompat103_relatedto_constructor_exists():
+    assert callable(testcompat103_RelatedTo.__init__)
 
 
-def test_testcompat103::world_constructor_args():
-    sig = inspect.signature(testcompat103::World.__init__)
+def test_testcompat103_relatedto_constructor_args():
+    sig = inspect.signature(testcompat103_RelatedTo.__init__)
+    params = list(sig.parameters.keys())
+    assert "since" in params, "Missing parameter 'since'"
+
+def test_testcompat103_relatedto_has_since():
+    assert hasattr(testcompat103_RelatedTo, "since")
+    descriptor = None
+    for klass in testcompat103_RelatedTo.__mro__:
+        if "since" in klass.__dict__:
+            descriptor = klass.__dict__["since"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_testcompat103_world_is_not_abstract():
+    assert not inspect.isabstract(testcompat103_World)
+
+
+def test_testcompat103_world_constructor_exists():
+    assert callable(testcompat103_World.__init__)
+
+
+def test_testcompat103_world_constructor_args():
+    sig = inspect.signature(testcompat103_World.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_testcompat103::namedelement_is_not_abstract():
-    assert not inspect.isabstract(testcompat103::NamedElement)
+def test_testcompat103_namedelement_is_not_abstract():
+    assert not inspect.isabstract(testcompat103_NamedElement)
 
 
-def test_testcompat103::namedelement_constructor_exists():
-    assert callable(testcompat103::NamedElement.__init__)
+def test_testcompat103_namedelement_constructor_exists():
+    assert callable(testcompat103_NamedElement.__init__)
 
 
-def test_testcompat103::namedelement_constructor_args():
-    sig = inspect.signature(testcompat103::NamedElement.__init__)
+def test_testcompat103_namedelement_constructor_args():
+    sig = inspect.signature(testcompat103_NamedElement.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_testcompat103::namedelement_has_name():
-    assert hasattr(testcompat103::NamedElement, "name")
+def test_testcompat103_namedelement_has_name():
+    assert hasattr(testcompat103_NamedElement, "name")
     descriptor = None
-    for klass in testcompat103::NamedElement.__mro__:
+    for klass in testcompat103_NamedElement.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -237,42 +237,42 @@ safe_text = st.text(
 World_strategy = st.builds(
     World,
 )
-testcompat103::EClass3_strategy = st.builds(
-    testcompat103::EClass3,
+testcompat103_EClass3_strategy = st.builds(
+    testcompat103_EClass3,
 )
 EClass0_strategy = st.builds(
     EClass0,
 )
-testcompat103::EClass2_strategy = st.builds(
-    testcompat103::EClass2,
+testcompat103_EClass2_strategy = st.builds(
+    testcompat103_EClass2,
 )
 NamedElement_strategy = st.builds(
     NamedElement,
 )
-testcompat103::RelatedTo_strategy = st.builds(
-    testcompat103::RelatedTo,
-    since=
-        safe_text
+testcompat103_EClass0_strategy = st.builds(
+    testcompat103_EClass0,
 )
-testcompat103::Foo_strategy = st.builds(
-    testcompat103::Foo,
-)
-testcompat103::Thing_strategy = st.builds(
-    testcompat103::Thing,
+testcompat103_Thing_strategy = st.builds(
+    testcompat103_Thing,
     id=
         st.integers()
 )
-testcompat103::EClass1_strategy = st.builds(
-    testcompat103::EClass1,
+testcompat103_EClass1_strategy = st.builds(
+    testcompat103_EClass1,
 )
-testcompat103::EClass0_strategy = st.builds(
-    testcompat103::EClass0,
+testcompat103_Foo_strategy = st.builds(
+    testcompat103_Foo,
 )
-testcompat103::World_strategy = st.builds(
-    testcompat103::World,
+testcompat103_RelatedTo_strategy = st.builds(
+    testcompat103_RelatedTo,
+    since=
+        safe_text
 )
-testcompat103::NamedElement_strategy = st.builds(
-    testcompat103::NamedElement,
+testcompat103_World_strategy = st.builds(
+    testcompat103_World,
+)
+testcompat103_NamedElement_strategy = st.builds(
+    testcompat103_NamedElement,
     name=
         safe_text
 )
@@ -282,90 +282,81 @@ testcompat103::NamedElement_strategy = st.builds(
 def test_world_instantiation(instance):
     assert isinstance(instance, World)
 
-@given(instance=testcompat103::EClass3_strategy)
+@given(instance=testcompat103_EClass3_strategy)
 @settings(max_examples=50)
-def test_testcompat103::eclass3_instantiation(instance):
-    assert isinstance(instance, testcompat103::EClass3)
+def test_testcompat103_eclass3_instantiation(instance):
+    assert isinstance(instance, testcompat103_EClass3)
 
 @given(instance=EClass0_strategy)
 @settings(max_examples=50)
 def test_eclass0_instantiation(instance):
     assert isinstance(instance, EClass0)
 
-@given(instance=testcompat103::EClass2_strategy)
+@given(instance=testcompat103_EClass2_strategy)
 @settings(max_examples=50)
-def test_testcompat103::eclass2_instantiation(instance):
-    assert isinstance(instance, testcompat103::EClass2)
+def test_testcompat103_eclass2_instantiation(instance):
+    assert isinstance(instance, testcompat103_EClass2)
 
 @given(instance=NamedElement_strategy)
 @settings(max_examples=50)
 def test_namedelement_instantiation(instance):
     assert isinstance(instance, NamedElement)
 
-@given(instance=testcompat103::RelatedTo_strategy)
+@given(instance=testcompat103_EClass0_strategy)
 @settings(max_examples=50)
-def test_testcompat103::relatedto_instantiation(instance):
-    assert isinstance(instance, testcompat103::RelatedTo)
+def test_testcompat103_eclass0_instantiation(instance):
+    assert isinstance(instance, testcompat103_EClass0)
 
-@given(instance=testcompat103::RelatedTo_strategy)
-def test_testcompat103::relatedto_since_type(instance):
-    assert isinstance(instance.since, str)
-
-
-@given(instance=testcompat103::RelatedTo_strategy)
-def test_testcompat103::relatedto_since_setter(instance):
-    original = instance.since
-    instance.since = original
-    assert instance.since == original
-
-@given(instance=testcompat103::Foo_strategy)
+@given(instance=testcompat103_Thing_strategy)
 @settings(max_examples=50)
-def test_testcompat103::foo_instantiation(instance):
-    assert isinstance(instance, testcompat103::Foo)
-
-@given(instance=testcompat103::Thing_strategy)
-@settings(max_examples=50)
-def test_testcompat103::thing_instantiation(instance):
-    assert isinstance(instance, testcompat103::Thing)
-
-@given(instance=testcompat103::Thing_strategy)
-def test_testcompat103::thing_id_type(instance):
-    assert isinstance(instance.id, int)
+def test_testcompat103_thing_instantiation(instance):
+    assert isinstance(instance, testcompat103_Thing)
 
 
-@given(instance=testcompat103::Thing_strategy)
-def test_testcompat103::thing_id_setter(instance):
+
+@given(instance=testcompat103_Thing_strategy)
+def test_testcompat103_thing_id_setter(instance):
     original = instance.id
     instance.id = original
     assert instance.id == original
 
-@given(instance=testcompat103::EClass1_strategy)
+@given(instance=testcompat103_EClass1_strategy)
 @settings(max_examples=50)
-def test_testcompat103::eclass1_instantiation(instance):
-    assert isinstance(instance, testcompat103::EClass1)
+def test_testcompat103_eclass1_instantiation(instance):
+    assert isinstance(instance, testcompat103_EClass1)
 
-@given(instance=testcompat103::EClass0_strategy)
+@given(instance=testcompat103_Foo_strategy)
 @settings(max_examples=50)
-def test_testcompat103::eclass0_instantiation(instance):
-    assert isinstance(instance, testcompat103::EClass0)
+def test_testcompat103_foo_instantiation(instance):
+    assert isinstance(instance, testcompat103_Foo)
 
-@given(instance=testcompat103::World_strategy)
+@given(instance=testcompat103_RelatedTo_strategy)
 @settings(max_examples=50)
-def test_testcompat103::world_instantiation(instance):
-    assert isinstance(instance, testcompat103::World)
+def test_testcompat103_relatedto_instantiation(instance):
+    assert isinstance(instance, testcompat103_RelatedTo)
 
-@given(instance=testcompat103::NamedElement_strategy)
+
+
+@given(instance=testcompat103_RelatedTo_strategy)
+def test_testcompat103_relatedto_since_setter(instance):
+    original = instance.since
+    instance.since = original
+    assert instance.since == original
+
+@given(instance=testcompat103_World_strategy)
 @settings(max_examples=50)
-def test_testcompat103::namedelement_instantiation(instance):
-    assert isinstance(instance, testcompat103::NamedElement)
+def test_testcompat103_world_instantiation(instance):
+    assert isinstance(instance, testcompat103_World)
 
-@given(instance=testcompat103::NamedElement_strategy)
-def test_testcompat103::namedelement_name_type(instance):
-    assert isinstance(instance.name, str)
+@given(instance=testcompat103_NamedElement_strategy)
+@settings(max_examples=50)
+def test_testcompat103_namedelement_instantiation(instance):
+    assert isinstance(instance, testcompat103_NamedElement)
 
 
-@given(instance=testcompat103::NamedElement_strategy)
-def test_testcompat103::namedelement_name_setter(instance):
+
+@given(instance=testcompat103_NamedElement_strategy)
+def test_testcompat103_namedelement_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original

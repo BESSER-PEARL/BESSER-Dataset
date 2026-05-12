@@ -3,11 +3,11 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    reneMartin::Greeting,
-    reneMartin::Model,
+from python_code import (
+    reneMartin_Greeting,
+    reneMartin_Model,
 )
 
 # =============================================================================
@@ -16,23 +16,23 @@ from classes import (
 
 
 
-def test_renemartin::greeting_is_not_abstract():
-    assert not inspect.isabstract(reneMartin::Greeting)
+def test_renemartin_greeting_is_not_abstract():
+    assert not inspect.isabstract(reneMartin_Greeting)
 
 
-def test_renemartin::greeting_constructor_exists():
-    assert callable(reneMartin::Greeting.__init__)
+def test_renemartin_greeting_constructor_exists():
+    assert callable(reneMartin_Greeting.__init__)
 
 
-def test_renemartin::greeting_constructor_args():
-    sig = inspect.signature(reneMartin::Greeting.__init__)
+def test_renemartin_greeting_constructor_args():
+    sig = inspect.signature(reneMartin_Greeting.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_renemartin::greeting_has_name():
-    assert hasattr(reneMartin::Greeting, "name")
+def test_renemartin_greeting_has_name():
+    assert hasattr(reneMartin_Greeting, "name")
     descriptor = None
-    for klass in reneMartin::Greeting.__mro__:
+    for klass in reneMartin_Greeting.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -40,16 +40,16 @@ def test_renemartin::greeting_has_name():
 
 
 
-def test_renemartin::model_is_not_abstract():
-    assert not inspect.isabstract(reneMartin::Model)
+def test_renemartin_model_is_not_abstract():
+    assert not inspect.isabstract(reneMartin_Model)
 
 
-def test_renemartin::model_constructor_exists():
-    assert callable(reneMartin::Model.__init__)
+def test_renemartin_model_constructor_exists():
+    assert callable(reneMartin_Model.__init__)
 
 
-def test_renemartin::model_constructor_args():
-    sig = inspect.signature(reneMartin::Model.__init__)
+def test_renemartin_model_constructor_args():
+    sig = inspect.signature(reneMartin_Model.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -64,32 +64,29 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-reneMartin::Greeting_strategy = st.builds(
-    reneMartin::Greeting,
+reneMartin_Greeting_strategy = st.builds(
+    reneMartin_Greeting,
     name=
         safe_text
 )
-reneMartin::Model_strategy = st.builds(
-    reneMartin::Model,
+reneMartin_Model_strategy = st.builds(
+    reneMartin_Model,
 )
 
-@given(instance=reneMartin::Greeting_strategy)
+@given(instance=reneMartin_Greeting_strategy)
 @settings(max_examples=50)
-def test_renemartin::greeting_instantiation(instance):
-    assert isinstance(instance, reneMartin::Greeting)
-
-@given(instance=reneMartin::Greeting_strategy)
-def test_renemartin::greeting_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_renemartin_greeting_instantiation(instance):
+    assert isinstance(instance, reneMartin_Greeting)
 
 
-@given(instance=reneMartin::Greeting_strategy)
-def test_renemartin::greeting_name_setter(instance):
+
+@given(instance=reneMartin_Greeting_strategy)
+def test_renemartin_greeting_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=reneMartin::Model_strategy)
+@given(instance=reneMartin_Model_strategy)
 @settings(max_examples=50)
-def test_renemartin::model_instantiation(instance):
-    assert isinstance(instance, reneMartin::Model)
+def test_renemartin_model_instantiation(instance):
+    assert isinstance(instance, reneMartin_Model)

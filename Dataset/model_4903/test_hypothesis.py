@@ -3,22 +3,22 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     IdElement,
-    base::ExecutionTrace,
-    base::Access,
-    base::PropertyTrace,
-    base::ModelTrace,
-    base::ModuleTrace,
-    base::IdElement,
-    base::ModelTypeTrace,
-    base::ModelElementTrace,
+    base_PropertyTrace,
+    base_ModelTrace,
+    base_ExecutionTrace,
+    base_Access,
+    base_ModuleTrace,
+    base_IdElement,
+    base_ModelTypeTrace,
+    base_ModelElementTrace,
     Access,
-    base::PropertyAccess,
-    base::AllInstancesAccess,
-    base::ElementAccess,
+    base_PropertyAccess,
+    base_AllInstancesAccess,
+    base_ElementAccess,
 )
 
 # =============================================================================
@@ -41,51 +41,23 @@ def test_idelement_constructor_args():
 
 
 
-def test_base::executiontrace_is_not_abstract():
-    assert not inspect.isabstract(base::ExecutionTrace)
+def test_base_propertytrace_is_not_abstract():
+    assert not inspect.isabstract(base_PropertyTrace)
 
 
-def test_base::executiontrace_constructor_exists():
-    assert callable(base::ExecutionTrace.__init__)
+def test_base_propertytrace_constructor_exists():
+    assert callable(base_PropertyTrace.__init__)
 
 
-def test_base::executiontrace_constructor_args():
-    sig = inspect.signature(base::ExecutionTrace.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_base::access_is_not_abstract():
-    assert not inspect.isabstract(base::Access)
-
-
-def test_base::access_constructor_exists():
-    assert callable(base::Access.__init__)
-
-
-def test_base::access_constructor_args():
-    sig = inspect.signature(base::Access.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_base::propertytrace_is_not_abstract():
-    assert not inspect.isabstract(base::PropertyTrace)
-
-
-def test_base::propertytrace_constructor_exists():
-    assert callable(base::PropertyTrace.__init__)
-
-
-def test_base::propertytrace_constructor_args():
-    sig = inspect.signature(base::PropertyTrace.__init__)
+def test_base_propertytrace_constructor_args():
+    sig = inspect.signature(base_PropertyTrace.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_base::propertytrace_has_name():
-    assert hasattr(base::PropertyTrace, "name")
+def test_base_propertytrace_has_name():
+    assert hasattr(base_PropertyTrace, "name")
     descriptor = None
-    for klass in base::PropertyTrace.__mro__:
+    for klass in base_PropertyTrace.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -93,23 +65,23 @@ def test_base::propertytrace_has_name():
 
 
 
-def test_base::modeltrace_is_not_abstract():
-    assert not inspect.isabstract(base::ModelTrace)
+def test_base_modeltrace_is_not_abstract():
+    assert not inspect.isabstract(base_ModelTrace)
 
 
-def test_base::modeltrace_constructor_exists():
-    assert callable(base::ModelTrace.__init__)
+def test_base_modeltrace_constructor_exists():
+    assert callable(base_ModelTrace.__init__)
 
 
-def test_base::modeltrace_constructor_args():
-    sig = inspect.signature(base::ModelTrace.__init__)
+def test_base_modeltrace_constructor_args():
+    sig = inspect.signature(base_ModelTrace.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_base::modeltrace_has_name():
-    assert hasattr(base::ModelTrace, "name")
+def test_base_modeltrace_has_name():
+    assert hasattr(base_ModelTrace, "name")
     descriptor = None
-    for klass in base::ModelTrace.__mro__:
+    for klass in base_ModelTrace.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -117,23 +89,51 @@ def test_base::modeltrace_has_name():
 
 
 
-def test_base::moduletrace_is_not_abstract():
-    assert not inspect.isabstract(base::ModuleTrace)
+def test_base_executiontrace_is_not_abstract():
+    assert not inspect.isabstract(base_ExecutionTrace)
 
 
-def test_base::moduletrace_constructor_exists():
-    assert callable(base::ModuleTrace.__init__)
+def test_base_executiontrace_constructor_exists():
+    assert callable(base_ExecutionTrace.__init__)
 
 
-def test_base::moduletrace_constructor_args():
-    sig = inspect.signature(base::ModuleTrace.__init__)
+def test_base_executiontrace_constructor_args():
+    sig = inspect.signature(base_ExecutionTrace.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_base_access_is_not_abstract():
+    assert not inspect.isabstract(base_Access)
+
+
+def test_base_access_constructor_exists():
+    assert callable(base_Access.__init__)
+
+
+def test_base_access_constructor_args():
+    sig = inspect.signature(base_Access.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_base_moduletrace_is_not_abstract():
+    assert not inspect.isabstract(base_ModuleTrace)
+
+
+def test_base_moduletrace_constructor_exists():
+    assert callable(base_ModuleTrace.__init__)
+
+
+def test_base_moduletrace_constructor_args():
+    sig = inspect.signature(base_ModuleTrace.__init__)
     params = list(sig.parameters.keys())
     assert "source" in params, "Missing parameter 'source'"
 
-def test_base::moduletrace_has_source():
-    assert hasattr(base::ModuleTrace, "source")
+def test_base_moduletrace_has_source():
+    assert hasattr(base_ModuleTrace, "source")
     descriptor = None
-    for klass in base::ModuleTrace.__mro__:
+    for klass in base_ModuleTrace.__mro__:
         if "source" in klass.__dict__:
             descriptor = klass.__dict__["source"]
             break
@@ -141,23 +141,23 @@ def test_base::moduletrace_has_source():
 
 
 
-def test_base::idelement_is_not_abstract():
-    assert not inspect.isabstract(base::IdElement)
+def test_base_idelement_is_not_abstract():
+    assert not inspect.isabstract(base_IdElement)
 
 
-def test_base::idelement_constructor_exists():
-    assert callable(base::IdElement.__init__)
+def test_base_idelement_constructor_exists():
+    assert callable(base_IdElement.__init__)
 
 
-def test_base::idelement_constructor_args():
-    sig = inspect.signature(base::IdElement.__init__)
+def test_base_idelement_constructor_args():
+    sig = inspect.signature(base_IdElement.__init__)
     params = list(sig.parameters.keys())
     assert "id" in params, "Missing parameter 'id'"
 
-def test_base::idelement_has_id():
-    assert hasattr(base::IdElement, "id")
+def test_base_idelement_has_id():
+    assert hasattr(base_IdElement, "id")
     descriptor = None
-    for klass in base::IdElement.__mro__:
+    for klass in base_IdElement.__mro__:
         if "id" in klass.__dict__:
             descriptor = klass.__dict__["id"]
             break
@@ -165,23 +165,23 @@ def test_base::idelement_has_id():
 
 
 
-def test_base::modeltypetrace_is_not_abstract():
-    assert not inspect.isabstract(base::ModelTypeTrace)
+def test_base_modeltypetrace_is_not_abstract():
+    assert not inspect.isabstract(base_ModelTypeTrace)
 
 
-def test_base::modeltypetrace_constructor_exists():
-    assert callable(base::ModelTypeTrace.__init__)
+def test_base_modeltypetrace_constructor_exists():
+    assert callable(base_ModelTypeTrace.__init__)
 
 
-def test_base::modeltypetrace_constructor_args():
-    sig = inspect.signature(base::ModelTypeTrace.__init__)
+def test_base_modeltypetrace_constructor_args():
+    sig = inspect.signature(base_ModelTypeTrace.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_base::modeltypetrace_has_name():
-    assert hasattr(base::ModelTypeTrace, "name")
+def test_base_modeltypetrace_has_name():
+    assert hasattr(base_ModelTypeTrace, "name")
     descriptor = None
-    for klass in base::ModelTypeTrace.__mro__:
+    for klass in base_ModelTypeTrace.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -189,23 +189,23 @@ def test_base::modeltypetrace_has_name():
 
 
 
-def test_base::modelelementtrace_is_not_abstract():
-    assert not inspect.isabstract(base::ModelElementTrace)
+def test_base_modelelementtrace_is_not_abstract():
+    assert not inspect.isabstract(base_ModelElementTrace)
 
 
-def test_base::modelelementtrace_constructor_exists():
-    assert callable(base::ModelElementTrace.__init__)
+def test_base_modelelementtrace_constructor_exists():
+    assert callable(base_ModelElementTrace.__init__)
 
 
-def test_base::modelelementtrace_constructor_args():
-    sig = inspect.signature(base::ModelElementTrace.__init__)
+def test_base_modelelementtrace_constructor_args():
+    sig = inspect.signature(base_ModelElementTrace.__init__)
     params = list(sig.parameters.keys())
     assert "uri" in params, "Missing parameter 'uri'"
 
-def test_base::modelelementtrace_has_uri():
-    assert hasattr(base::ModelElementTrace, "uri")
+def test_base_modelelementtrace_has_uri():
+    assert hasattr(base_ModelElementTrace, "uri")
     descriptor = None
-    for klass in base::ModelElementTrace.__mro__:
+    for klass in base_ModelElementTrace.__mro__:
         if "uri" in klass.__dict__:
             descriptor = klass.__dict__["uri"]
             break
@@ -227,23 +227,23 @@ def test_access_constructor_args():
 
 
 
-def test_base::propertyaccess_is_not_abstract():
-    assert not inspect.isabstract(base::PropertyAccess)
+def test_base_propertyaccess_is_not_abstract():
+    assert not inspect.isabstract(base_PropertyAccess)
 
 
-def test_base::propertyaccess_constructor_exists():
-    assert callable(base::PropertyAccess.__init__)
+def test_base_propertyaccess_constructor_exists():
+    assert callable(base_PropertyAccess.__init__)
 
 
-def test_base::propertyaccess_constructor_args():
-    sig = inspect.signature(base::PropertyAccess.__init__)
+def test_base_propertyaccess_constructor_args():
+    sig = inspect.signature(base_PropertyAccess.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
 
-def test_base::propertyaccess_has_value():
-    assert hasattr(base::PropertyAccess, "value")
+def test_base_propertyaccess_has_value():
+    assert hasattr(base_PropertyAccess, "value")
     descriptor = None
-    for klass in base::PropertyAccess.__mro__:
+    for klass in base_PropertyAccess.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -251,23 +251,23 @@ def test_base::propertyaccess_has_value():
 
 
 
-def test_base::allinstancesaccess_is_not_abstract():
-    assert not inspect.isabstract(base::AllInstancesAccess)
+def test_base_allinstancesaccess_is_not_abstract():
+    assert not inspect.isabstract(base_AllInstancesAccess)
 
 
-def test_base::allinstancesaccess_constructor_exists():
-    assert callable(base::AllInstancesAccess.__init__)
+def test_base_allinstancesaccess_constructor_exists():
+    assert callable(base_AllInstancesAccess.__init__)
 
 
-def test_base::allinstancesaccess_constructor_args():
-    sig = inspect.signature(base::AllInstancesAccess.__init__)
+def test_base_allinstancesaccess_constructor_args():
+    sig = inspect.signature(base_AllInstancesAccess.__init__)
     params = list(sig.parameters.keys())
     assert "ofKind" in params, "Missing parameter 'ofKind'"
 
-def test_base::allinstancesaccess_has_ofKind():
-    assert hasattr(base::AllInstancesAccess, "ofKind")
+def test_base_allinstancesaccess_has_ofKind():
+    assert hasattr(base_AllInstancesAccess, "ofKind")
     descriptor = None
-    for klass in base::AllInstancesAccess.__mro__:
+    for klass in base_AllInstancesAccess.__mro__:
         if "ofKind" in klass.__dict__:
             descriptor = klass.__dict__["ofKind"]
             break
@@ -275,16 +275,16 @@ def test_base::allinstancesaccess_has_ofKind():
 
 
 
-def test_base::elementaccess_is_not_abstract():
-    assert not inspect.isabstract(base::ElementAccess)
+def test_base_elementaccess_is_not_abstract():
+    assert not inspect.isabstract(base_ElementAccess)
 
 
-def test_base::elementaccess_constructor_exists():
-    assert callable(base::ElementAccess.__init__)
+def test_base_elementaccess_constructor_exists():
+    assert callable(base_ElementAccess.__init__)
 
 
-def test_base::elementaccess_constructor_args():
-    sig = inspect.signature(base::ElementAccess.__init__)
+def test_base_elementaccess_constructor_args():
+    sig = inspect.signature(base_ElementAccess.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -302,57 +302,57 @@ safe_text = st.text(
 IdElement_strategy = st.builds(
     IdElement,
 )
-base::ExecutionTrace_strategy = st.builds(
-    base::ExecutionTrace,
-)
-base::Access_strategy = st.builds(
-    base::Access,
-)
-base::PropertyTrace_strategy = st.builds(
-    base::PropertyTrace,
+base_PropertyTrace_strategy = st.builds(
+    base_PropertyTrace,
     name=
         safe_text
 )
-base::ModelTrace_strategy = st.builds(
-    base::ModelTrace,
+base_ModelTrace_strategy = st.builds(
+    base_ModelTrace,
     name=
         safe_text
 )
-base::ModuleTrace_strategy = st.builds(
-    base::ModuleTrace,
+base_ExecutionTrace_strategy = st.builds(
+    base_ExecutionTrace,
+)
+base_Access_strategy = st.builds(
+    base_Access,
+)
+base_ModuleTrace_strategy = st.builds(
+    base_ModuleTrace,
     source=
         safe_text
 )
-base::IdElement_strategy = st.builds(
-    base::IdElement,
+base_IdElement_strategy = st.builds(
+    base_IdElement,
     id=
         safe_text
 )
-base::ModelTypeTrace_strategy = st.builds(
-    base::ModelTypeTrace,
+base_ModelTypeTrace_strategy = st.builds(
+    base_ModelTypeTrace,
     name=
         safe_text
 )
-base::ModelElementTrace_strategy = st.builds(
-    base::ModelElementTrace,
+base_ModelElementTrace_strategy = st.builds(
+    base_ModelElementTrace,
     uri=
         safe_text
 )
 Access_strategy = st.builds(
     Access,
 )
-base::PropertyAccess_strategy = st.builds(
-    base::PropertyAccess,
+base_PropertyAccess_strategy = st.builds(
+    base_PropertyAccess,
     value=
         safe_text
 )
-base::AllInstancesAccess_strategy = st.builds(
-    base::AllInstancesAccess,
+base_AllInstancesAccess_strategy = st.builds(
+    base_AllInstancesAccess,
     ofKind=
         st.booleans()
 )
-base::ElementAccess_strategy = st.builds(
-    base::ElementAccess,
+base_ElementAccess_strategy = st.builds(
+    base_ElementAccess,
 )
 
 @given(instance=IdElement_strategy)
@@ -360,108 +360,90 @@ base::ElementAccess_strategy = st.builds(
 def test_idelement_instantiation(instance):
     assert isinstance(instance, IdElement)
 
-@given(instance=base::ExecutionTrace_strategy)
+@given(instance=base_PropertyTrace_strategy)
 @settings(max_examples=50)
-def test_base::executiontrace_instantiation(instance):
-    assert isinstance(instance, base::ExecutionTrace)
-
-@given(instance=base::Access_strategy)
-@settings(max_examples=50)
-def test_base::access_instantiation(instance):
-    assert isinstance(instance, base::Access)
-
-@given(instance=base::PropertyTrace_strategy)
-@settings(max_examples=50)
-def test_base::propertytrace_instantiation(instance):
-    assert isinstance(instance, base::PropertyTrace)
-
-@given(instance=base::PropertyTrace_strategy)
-def test_base::propertytrace_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_base_propertytrace_instantiation(instance):
+    assert isinstance(instance, base_PropertyTrace)
 
 
-@given(instance=base::PropertyTrace_strategy)
-def test_base::propertytrace_name_setter(instance):
+
+@given(instance=base_PropertyTrace_strategy)
+def test_base_propertytrace_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=base::ModelTrace_strategy)
+@given(instance=base_ModelTrace_strategy)
 @settings(max_examples=50)
-def test_base::modeltrace_instantiation(instance):
-    assert isinstance(instance, base::ModelTrace)
-
-@given(instance=base::ModelTrace_strategy)
-def test_base::modeltrace_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_base_modeltrace_instantiation(instance):
+    assert isinstance(instance, base_ModelTrace)
 
 
-@given(instance=base::ModelTrace_strategy)
-def test_base::modeltrace_name_setter(instance):
+
+@given(instance=base_ModelTrace_strategy)
+def test_base_modeltrace_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=base::ModuleTrace_strategy)
+@given(instance=base_ExecutionTrace_strategy)
 @settings(max_examples=50)
-def test_base::moduletrace_instantiation(instance):
-    assert isinstance(instance, base::ModuleTrace)
+def test_base_executiontrace_instantiation(instance):
+    assert isinstance(instance, base_ExecutionTrace)
 
-@given(instance=base::ModuleTrace_strategy)
-def test_base::moduletrace_source_type(instance):
-    assert isinstance(instance.source, str)
+@given(instance=base_Access_strategy)
+@settings(max_examples=50)
+def test_base_access_instantiation(instance):
+    assert isinstance(instance, base_Access)
+
+@given(instance=base_ModuleTrace_strategy)
+@settings(max_examples=50)
+def test_base_moduletrace_instantiation(instance):
+    assert isinstance(instance, base_ModuleTrace)
 
 
-@given(instance=base::ModuleTrace_strategy)
-def test_base::moduletrace_source_setter(instance):
+
+@given(instance=base_ModuleTrace_strategy)
+def test_base_moduletrace_source_setter(instance):
     original = instance.source
     instance.source = original
     assert instance.source == original
 
-@given(instance=base::IdElement_strategy)
+@given(instance=base_IdElement_strategy)
 @settings(max_examples=50)
-def test_base::idelement_instantiation(instance):
-    assert isinstance(instance, base::IdElement)
-
-@given(instance=base::IdElement_strategy)
-def test_base::idelement_id_type(instance):
-    assert isinstance(instance.id, str)
+def test_base_idelement_instantiation(instance):
+    assert isinstance(instance, base_IdElement)
 
 
-@given(instance=base::IdElement_strategy)
-def test_base::idelement_id_setter(instance):
+
+@given(instance=base_IdElement_strategy)
+def test_base_idelement_id_setter(instance):
     original = instance.id
     instance.id = original
     assert instance.id == original
 
-@given(instance=base::ModelTypeTrace_strategy)
+@given(instance=base_ModelTypeTrace_strategy)
 @settings(max_examples=50)
-def test_base::modeltypetrace_instantiation(instance):
-    assert isinstance(instance, base::ModelTypeTrace)
-
-@given(instance=base::ModelTypeTrace_strategy)
-def test_base::modeltypetrace_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_base_modeltypetrace_instantiation(instance):
+    assert isinstance(instance, base_ModelTypeTrace)
 
 
-@given(instance=base::ModelTypeTrace_strategy)
-def test_base::modeltypetrace_name_setter(instance):
+
+@given(instance=base_ModelTypeTrace_strategy)
+def test_base_modeltypetrace_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=base::ModelElementTrace_strategy)
+@given(instance=base_ModelElementTrace_strategy)
 @settings(max_examples=50)
-def test_base::modelelementtrace_instantiation(instance):
-    assert isinstance(instance, base::ModelElementTrace)
-
-@given(instance=base::ModelElementTrace_strategy)
-def test_base::modelelementtrace_uri_type(instance):
-    assert isinstance(instance.uri, str)
+def test_base_modelelementtrace_instantiation(instance):
+    assert isinstance(instance, base_ModelElementTrace)
 
 
-@given(instance=base::ModelElementTrace_strategy)
-def test_base::modelelementtrace_uri_setter(instance):
+
+@given(instance=base_ModelElementTrace_strategy)
+def test_base_modelelementtrace_uri_setter(instance):
     original = instance.uri
     instance.uri = original
     assert instance.uri == original
@@ -471,39 +453,33 @@ def test_base::modelelementtrace_uri_setter(instance):
 def test_access_instantiation(instance):
     assert isinstance(instance, Access)
 
-@given(instance=base::PropertyAccess_strategy)
+@given(instance=base_PropertyAccess_strategy)
 @settings(max_examples=50)
-def test_base::propertyaccess_instantiation(instance):
-    assert isinstance(instance, base::PropertyAccess)
-
-@given(instance=base::PropertyAccess_strategy)
-def test_base::propertyaccess_value_type(instance):
-    assert isinstance(instance.value, str)
+def test_base_propertyaccess_instantiation(instance):
+    assert isinstance(instance, base_PropertyAccess)
 
 
-@given(instance=base::PropertyAccess_strategy)
-def test_base::propertyaccess_value_setter(instance):
+
+@given(instance=base_PropertyAccess_strategy)
+def test_base_propertyaccess_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
 
-@given(instance=base::AllInstancesAccess_strategy)
+@given(instance=base_AllInstancesAccess_strategy)
 @settings(max_examples=50)
-def test_base::allinstancesaccess_instantiation(instance):
-    assert isinstance(instance, base::AllInstancesAccess)
-
-@given(instance=base::AllInstancesAccess_strategy)
-def test_base::allinstancesaccess_ofKind_type(instance):
-    assert isinstance(instance.ofKind, bool)
+def test_base_allinstancesaccess_instantiation(instance):
+    assert isinstance(instance, base_AllInstancesAccess)
 
 
-@given(instance=base::AllInstancesAccess_strategy)
-def test_base::allinstancesaccess_ofKind_setter(instance):
+
+@given(instance=base_AllInstancesAccess_strategy)
+def test_base_allinstancesaccess_ofKind_setter(instance):
     original = instance.ofKind
     instance.ofKind = original
     assert instance.ofKind == original
 
-@given(instance=base::ElementAccess_strategy)
+@given(instance=base_ElementAccess_strategy)
 @settings(max_examples=50)
-def test_base::elementaccess_instantiation(instance):
-    assert isinstance(instance, base::ElementAccess)
+def test_base_elementaccess_instantiation(instance):
+    assert isinstance(instance, base_ElementAccess)

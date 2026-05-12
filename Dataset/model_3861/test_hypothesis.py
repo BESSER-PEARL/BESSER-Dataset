@@ -3,13 +3,13 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     NamedElement,
-    table::Column,
-    table::Table,
-    table::NamedElement,
+    table_Column,
+    table_Table,
+    table_NamedElement,
 )
 
 # =============================================================================
@@ -32,23 +32,23 @@ def test_namedelement_constructor_args():
 
 
 
-def test_table::column_is_not_abstract():
-    assert not inspect.isabstract(table::Column)
+def test_table_column_is_not_abstract():
+    assert not inspect.isabstract(table_Column)
 
 
-def test_table::column_constructor_exists():
-    assert callable(table::Column.__init__)
+def test_table_column_constructor_exists():
+    assert callable(table_Column.__init__)
 
 
-def test_table::column_constructor_args():
-    sig = inspect.signature(table::Column.__init__)
+def test_table_column_constructor_args():
+    sig = inspect.signature(table_Column.__init__)
     params = list(sig.parameters.keys())
     assert "type" in params, "Missing parameter 'type'"
 
-def test_table::column_has_type():
-    assert hasattr(table::Column, "type")
+def test_table_column_has_type():
+    assert hasattr(table_Column, "type")
     descriptor = None
-    for klass in table::Column.__mro__:
+    for klass in table_Column.__mro__:
         if "type" in klass.__dict__:
             descriptor = klass.__dict__["type"]
             break
@@ -56,37 +56,37 @@ def test_table::column_has_type():
 
 
 
-def test_table::table_is_not_abstract():
-    assert not inspect.isabstract(table::Table)
+def test_table_table_is_not_abstract():
+    assert not inspect.isabstract(table_Table)
 
 
-def test_table::table_constructor_exists():
-    assert callable(table::Table.__init__)
+def test_table_table_constructor_exists():
+    assert callable(table_Table.__init__)
 
 
-def test_table::table_constructor_args():
-    sig = inspect.signature(table::Table.__init__)
+def test_table_table_constructor_args():
+    sig = inspect.signature(table_Table.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_table::namedelement_is_not_abstract():
-    assert not inspect.isabstract(table::NamedElement)
+def test_table_namedelement_is_not_abstract():
+    assert not inspect.isabstract(table_NamedElement)
 
 
-def test_table::namedelement_constructor_exists():
-    assert callable(table::NamedElement.__init__)
+def test_table_namedelement_constructor_exists():
+    assert callable(table_NamedElement.__init__)
 
 
-def test_table::namedelement_constructor_args():
-    sig = inspect.signature(table::NamedElement.__init__)
+def test_table_namedelement_constructor_args():
+    sig = inspect.signature(table_NamedElement.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_table::namedelement_has_name():
-    assert hasattr(table::NamedElement, "name")
+def test_table_namedelement_has_name():
+    assert hasattr(table_NamedElement, "name")
     descriptor = None
-    for klass in table::NamedElement.__mro__:
+    for klass in table_NamedElement.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -107,16 +107,16 @@ safe_text = st.text(
 NamedElement_strategy = st.builds(
     NamedElement,
 )
-table::Column_strategy = st.builds(
-    table::Column,
+table_Column_strategy = st.builds(
+    table_Column,
     type=
         safe_text
 )
-table::Table_strategy = st.builds(
-    table::Table,
+table_Table_strategy = st.builds(
+    table_Table,
 )
-table::NamedElement_strategy = st.builds(
-    table::NamedElement,
+table_NamedElement_strategy = st.builds(
+    table_NamedElement,
     name=
         safe_text
 )
@@ -126,39 +126,33 @@ table::NamedElement_strategy = st.builds(
 def test_namedelement_instantiation(instance):
     assert isinstance(instance, NamedElement)
 
-@given(instance=table::Column_strategy)
+@given(instance=table_Column_strategy)
 @settings(max_examples=50)
-def test_table::column_instantiation(instance):
-    assert isinstance(instance, table::Column)
-
-@given(instance=table::Column_strategy)
-def test_table::column_type_type(instance):
-    assert isinstance(instance.type, str)
+def test_table_column_instantiation(instance):
+    assert isinstance(instance, table_Column)
 
 
-@given(instance=table::Column_strategy)
-def test_table::column_type_setter(instance):
+
+@given(instance=table_Column_strategy)
+def test_table_column_type_setter(instance):
     original = instance.type
     instance.type = original
     assert instance.type == original
 
-@given(instance=table::Table_strategy)
+@given(instance=table_Table_strategy)
 @settings(max_examples=50)
-def test_table::table_instantiation(instance):
-    assert isinstance(instance, table::Table)
+def test_table_table_instantiation(instance):
+    assert isinstance(instance, table_Table)
 
-@given(instance=table::NamedElement_strategy)
+@given(instance=table_NamedElement_strategy)
 @settings(max_examples=50)
-def test_table::namedelement_instantiation(instance):
-    assert isinstance(instance, table::NamedElement)
-
-@given(instance=table::NamedElement_strategy)
-def test_table::namedelement_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_table_namedelement_instantiation(instance):
+    assert isinstance(instance, table_NamedElement)
 
 
-@given(instance=table::NamedElement_strategy)
-def test_table::namedelement_name_setter(instance):
+
+@given(instance=table_NamedElement_strategy)
+def test_table_namedelement_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original

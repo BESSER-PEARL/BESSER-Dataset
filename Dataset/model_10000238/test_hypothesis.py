@@ -3,7 +3,7 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
 from python_code import (
     Role,
@@ -32,16 +32,16 @@ def test_role_constructor_exists():
 def test_role_constructor_args():
     sig = inspect.signature(Role.__init__)
     params = list(sig.parameters.keys())
-    assert "Description" in params, "Missing parameter 'Description'"
-    assert "RoleID" in params, "Missing parameter 'RoleID'"
     assert "Name" in params, "Missing parameter 'Name'"
+    assert "RoleID" in params, "Missing parameter 'RoleID'"
+    assert "Description" in params, "Missing parameter 'Description'"
 
-def test_role_has_Description():
-    assert hasattr(Role, "Description")
+def test_role_has_Name():
+    assert hasattr(Role, "Name")
     descriptor = None
     for klass in Role.__mro__:
-        if "Description" in klass.__dict__:
-            descriptor = klass.__dict__["Description"]
+        if "Name" in klass.__dict__:
+            descriptor = klass.__dict__["Name"]
             break
     assert isinstance(descriptor, property)
 
@@ -54,12 +54,12 @@ def test_role_has_RoleID():
             break
     assert isinstance(descriptor, property)
 
-def test_role_has_Name():
-    assert hasattr(Role, "Name")
+def test_role_has_Description():
+    assert hasattr(Role, "Description")
     descriptor = None
     for klass in Role.__mro__:
-        if "Name" in klass.__dict__:
-            descriptor = klass.__dict__["Name"]
+        if "Description" in klass.__dict__:
+            descriptor = klass.__dict__["Description"]
             break
     assert isinstance(descriptor, property)
 
@@ -76,68 +76,14 @@ def test_attachment_constructor_exists():
 def test_attachment_constructor_args():
     sig = inspect.signature(Attachment.__init__)
     params = list(sig.parameters.keys())
-    assert "User" in params, "Missing parameter 'User'"
-    assert "Extension" in params, "Missing parameter 'Extension'"
-    assert "Project" in params, "Missing parameter 'Project'"
-    assert "Size" in params, "Missing parameter 'Size'"
-    assert "Path" in params, "Missing parameter 'Path'"
-    assert "Created" in params, "Missing parameter 'Created'"
     assert "Name" in params, "Missing parameter 'Name'"
     assert "AttachmentID" in params, "Missing parameter 'AttachmentID'"
-
-def test_attachment_has_User():
-    assert hasattr(Attachment, "User")
-    descriptor = None
-    for klass in Attachment.__mro__:
-        if "User" in klass.__dict__:
-            descriptor = klass.__dict__["User"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_attachment_has_Extension():
-    assert hasattr(Attachment, "Extension")
-    descriptor = None
-    for klass in Attachment.__mro__:
-        if "Extension" in klass.__dict__:
-            descriptor = klass.__dict__["Extension"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_attachment_has_Project():
-    assert hasattr(Attachment, "Project")
-    descriptor = None
-    for klass in Attachment.__mro__:
-        if "Project" in klass.__dict__:
-            descriptor = klass.__dict__["Project"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_attachment_has_Size():
-    assert hasattr(Attachment, "Size")
-    descriptor = None
-    for klass in Attachment.__mro__:
-        if "Size" in klass.__dict__:
-            descriptor = klass.__dict__["Size"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_attachment_has_Path():
-    assert hasattr(Attachment, "Path")
-    descriptor = None
-    for klass in Attachment.__mro__:
-        if "Path" in klass.__dict__:
-            descriptor = klass.__dict__["Path"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_attachment_has_Created():
-    assert hasattr(Attachment, "Created")
-    descriptor = None
-    for klass in Attachment.__mro__:
-        if "Created" in klass.__dict__:
-            descriptor = klass.__dict__["Created"]
-            break
-    assert isinstance(descriptor, property)
+    assert "Created" in params, "Missing parameter 'Created'"
+    assert "Path" in params, "Missing parameter 'Path'"
+    assert "Size" in params, "Missing parameter 'Size'"
+    assert "User" in params, "Missing parameter 'User'"
+    assert "Project" in params, "Missing parameter 'Project'"
+    assert "Extension" in params, "Missing parameter 'Extension'"
 
 def test_attachment_has_Name():
     assert hasattr(Attachment, "Name")
@@ -157,6 +103,60 @@ def test_attachment_has_AttachmentID():
             break
     assert isinstance(descriptor, property)
 
+def test_attachment_has_Created():
+    assert hasattr(Attachment, "Created")
+    descriptor = None
+    for klass in Attachment.__mro__:
+        if "Created" in klass.__dict__:
+            descriptor = klass.__dict__["Created"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_attachment_has_Path():
+    assert hasattr(Attachment, "Path")
+    descriptor = None
+    for klass in Attachment.__mro__:
+        if "Path" in klass.__dict__:
+            descriptor = klass.__dict__["Path"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_attachment_has_Size():
+    assert hasattr(Attachment, "Size")
+    descriptor = None
+    for klass in Attachment.__mro__:
+        if "Size" in klass.__dict__:
+            descriptor = klass.__dict__["Size"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_attachment_has_User():
+    assert hasattr(Attachment, "User")
+    descriptor = None
+    for klass in Attachment.__mro__:
+        if "User" in klass.__dict__:
+            descriptor = klass.__dict__["User"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_attachment_has_Project():
+    assert hasattr(Attachment, "Project")
+    descriptor = None
+    for klass in Attachment.__mro__:
+        if "Project" in klass.__dict__:
+            descriptor = klass.__dict__["Project"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_attachment_has_Extension():
+    assert hasattr(Attachment, "Extension")
+    descriptor = None
+    for klass in Attachment.__mro__:
+        if "Extension" in klass.__dict__:
+            descriptor = klass.__dict__["Extension"]
+            break
+    assert isinstance(descriptor, property)
+
 
 
 def test_comment_is_not_abstract():
@@ -170,11 +170,20 @@ def test_comment_constructor_exists():
 def test_comment_constructor_args():
     sig = inspect.signature(Comment.__init__)
     params = list(sig.parameters.keys())
-    assert "User" in params, "Missing parameter 'User'"
-    assert "Project" in params, "Missing parameter 'Project'"
-    assert "Content" in params, "Missing parameter 'Content'"
-    assert "CommentID" in params, "Missing parameter 'CommentID'"
     assert "Created" in params, "Missing parameter 'Created'"
+    assert "User" in params, "Missing parameter 'User'"
+    assert "CommentID" in params, "Missing parameter 'CommentID'"
+    assert "Content" in params, "Missing parameter 'Content'"
+    assert "Project" in params, "Missing parameter 'Project'"
+
+def test_comment_has_Created():
+    assert hasattr(Comment, "Created")
+    descriptor = None
+    for klass in Comment.__mro__:
+        if "Created" in klass.__dict__:
+            descriptor = klass.__dict__["Created"]
+            break
+    assert isinstance(descriptor, property)
 
 def test_comment_has_User():
     assert hasattr(Comment, "User")
@@ -182,24 +191,6 @@ def test_comment_has_User():
     for klass in Comment.__mro__:
         if "User" in klass.__dict__:
             descriptor = klass.__dict__["User"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_comment_has_Project():
-    assert hasattr(Comment, "Project")
-    descriptor = None
-    for klass in Comment.__mro__:
-        if "Project" in klass.__dict__:
-            descriptor = klass.__dict__["Project"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_comment_has_Content():
-    assert hasattr(Comment, "Content")
-    descriptor = None
-    for klass in Comment.__mro__:
-        if "Content" in klass.__dict__:
-            descriptor = klass.__dict__["Content"]
             break
     assert isinstance(descriptor, property)
 
@@ -212,12 +203,21 @@ def test_comment_has_CommentID():
             break
     assert isinstance(descriptor, property)
 
-def test_comment_has_Created():
-    assert hasattr(Comment, "Created")
+def test_comment_has_Content():
+    assert hasattr(Comment, "Content")
     descriptor = None
     for klass in Comment.__mro__:
-        if "Created" in klass.__dict__:
-            descriptor = klass.__dict__["Created"]
+        if "Content" in klass.__dict__:
+            descriptor = klass.__dict__["Content"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_comment_has_Project():
+    assert hasattr(Comment, "Project")
+    descriptor = None
+    for klass in Comment.__mro__:
+        if "Project" in klass.__dict__:
+            descriptor = klass.__dict__["Project"]
             break
     assert isinstance(descriptor, property)
 
@@ -234,59 +234,14 @@ def test_activity_constructor_exists():
 def test_activity_constructor_args():
     sig = inspect.signature(Activity.__init__)
     params = list(sig.parameters.keys())
-    assert "PrevValue" in params, "Missing parameter 'PrevValue'"
-    assert "NewValue" in params, "Missing parameter 'NewValue'"
-    assert "ActivityType" in params, "Missing parameter 'ActivityType'"
-    assert "ActivitySubType" in params, "Missing parameter 'ActivitySubType'"
-    assert "Project" in params, "Missing parameter 'Project'"
     assert "Seen" in params, "Missing parameter 'Seen'"
     assert "User" in params, "Missing parameter 'User'"
+    assert "ActivitySubType" in params, "Missing parameter 'ActivitySubType'"
     assert "ActivityID" in params, "Missing parameter 'ActivityID'"
-
-def test_activity_has_PrevValue():
-    assert hasattr(Activity, "PrevValue")
-    descriptor = None
-    for klass in Activity.__mro__:
-        if "PrevValue" in klass.__dict__:
-            descriptor = klass.__dict__["PrevValue"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_activity_has_NewValue():
-    assert hasattr(Activity, "NewValue")
-    descriptor = None
-    for klass in Activity.__mro__:
-        if "NewValue" in klass.__dict__:
-            descriptor = klass.__dict__["NewValue"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_activity_has_ActivityType():
-    assert hasattr(Activity, "ActivityType")
-    descriptor = None
-    for klass in Activity.__mro__:
-        if "ActivityType" in klass.__dict__:
-            descriptor = klass.__dict__["ActivityType"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_activity_has_ActivitySubType():
-    assert hasattr(Activity, "ActivitySubType")
-    descriptor = None
-    for klass in Activity.__mro__:
-        if "ActivitySubType" in klass.__dict__:
-            descriptor = klass.__dict__["ActivitySubType"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_activity_has_Project():
-    assert hasattr(Activity, "Project")
-    descriptor = None
-    for klass in Activity.__mro__:
-        if "Project" in klass.__dict__:
-            descriptor = klass.__dict__["Project"]
-            break
-    assert isinstance(descriptor, property)
+    assert "PrevValue" in params, "Missing parameter 'PrevValue'"
+    assert "ActivityType" in params, "Missing parameter 'ActivityType'"
+    assert "NewValue" in params, "Missing parameter 'NewValue'"
+    assert "Project" in params, "Missing parameter 'Project'"
 
 def test_activity_has_Seen():
     assert hasattr(Activity, "Seen")
@@ -306,12 +261,57 @@ def test_activity_has_User():
             break
     assert isinstance(descriptor, property)
 
+def test_activity_has_ActivitySubType():
+    assert hasattr(Activity, "ActivitySubType")
+    descriptor = None
+    for klass in Activity.__mro__:
+        if "ActivitySubType" in klass.__dict__:
+            descriptor = klass.__dict__["ActivitySubType"]
+            break
+    assert isinstance(descriptor, property)
+
 def test_activity_has_ActivityID():
     assert hasattr(Activity, "ActivityID")
     descriptor = None
     for klass in Activity.__mro__:
         if "ActivityID" in klass.__dict__:
             descriptor = klass.__dict__["ActivityID"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_activity_has_PrevValue():
+    assert hasattr(Activity, "PrevValue")
+    descriptor = None
+    for klass in Activity.__mro__:
+        if "PrevValue" in klass.__dict__:
+            descriptor = klass.__dict__["PrevValue"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_activity_has_ActivityType():
+    assert hasattr(Activity, "ActivityType")
+    descriptor = None
+    for klass in Activity.__mro__:
+        if "ActivityType" in klass.__dict__:
+            descriptor = klass.__dict__["ActivityType"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_activity_has_NewValue():
+    assert hasattr(Activity, "NewValue")
+    descriptor = None
+    for klass in Activity.__mro__:
+        if "NewValue" in klass.__dict__:
+            descriptor = klass.__dict__["NewValue"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_activity_has_Project():
+    assert hasattr(Activity, "Project")
+    descriptor = None
+    for klass in Activity.__mro__:
+        if "Project" in klass.__dict__:
+            descriptor = klass.__dict__["Project"]
             break
     assert isinstance(descriptor, property)
 
@@ -328,129 +328,21 @@ def test_project_constructor_exists():
 def test_project_constructor_args():
     sig = inspect.signature(Project.__init__)
     params = list(sig.parameters.keys())
-    assert "Author" in params, "Missing parameter 'Author'"
-    assert "Activities___" in params, "Missing parameter 'Activities___'"
-    assert "Created" in params, "Missing parameter 'Created'"
-    assert "Deadline" in params, "Missing parameter 'Deadline'"
-    assert "Comments___" in params, "Missing parameter 'Comments___'"
-    assert "PriorityID" in params, "Missing parameter 'PriorityID'"
-    assert "PorjectID" in params, "Missing parameter 'PorjectID'"
-    assert "Subscriptions___" in params, "Missing parameter 'Subscriptions___'"
-    assert "StatusID" in params, "Missing parameter 'StatusID'"
-    assert "Team___" in params, "Missing parameter 'Team___'"
-    assert "Attachments___" in params, "Missing parameter 'Attachments___'"
-    assert "Title" in params, "Missing parameter 'Title'"
     assert "ProjectManager" in params, "Missing parameter 'ProjectManager'"
     assert "Description" in params, "Missing parameter 'Description'"
+    assert "Comments___" in params, "Missing parameter 'Comments___'"
+    assert "Subscriptions___" in params, "Missing parameter 'Subscriptions___'"
+    assert "Deadline" in params, "Missing parameter 'Deadline'"
+    assert "Created" in params, "Missing parameter 'Created'"
     assert "Assignee" in params, "Missing parameter 'Assignee'"
-
-def test_project_has_Author():
-    assert hasattr(Project, "Author")
-    descriptor = None
-    for klass in Project.__mro__:
-        if "Author" in klass.__dict__:
-            descriptor = klass.__dict__["Author"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_project_has_Activities___():
-    assert hasattr(Project, "Activities___")
-    descriptor = None
-    for klass in Project.__mro__:
-        if "Activities___" in klass.__dict__:
-            descriptor = klass.__dict__["Activities___"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_project_has_Created():
-    assert hasattr(Project, "Created")
-    descriptor = None
-    for klass in Project.__mro__:
-        if "Created" in klass.__dict__:
-            descriptor = klass.__dict__["Created"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_project_has_Deadline():
-    assert hasattr(Project, "Deadline")
-    descriptor = None
-    for klass in Project.__mro__:
-        if "Deadline" in klass.__dict__:
-            descriptor = klass.__dict__["Deadline"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_project_has_Comments___():
-    assert hasattr(Project, "Comments___")
-    descriptor = None
-    for klass in Project.__mro__:
-        if "Comments___" in klass.__dict__:
-            descriptor = klass.__dict__["Comments___"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_project_has_PriorityID():
-    assert hasattr(Project, "PriorityID")
-    descriptor = None
-    for klass in Project.__mro__:
-        if "PriorityID" in klass.__dict__:
-            descriptor = klass.__dict__["PriorityID"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_project_has_PorjectID():
-    assert hasattr(Project, "PorjectID")
-    descriptor = None
-    for klass in Project.__mro__:
-        if "PorjectID" in klass.__dict__:
-            descriptor = klass.__dict__["PorjectID"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_project_has_Subscriptions___():
-    assert hasattr(Project, "Subscriptions___")
-    descriptor = None
-    for klass in Project.__mro__:
-        if "Subscriptions___" in klass.__dict__:
-            descriptor = klass.__dict__["Subscriptions___"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_project_has_StatusID():
-    assert hasattr(Project, "StatusID")
-    descriptor = None
-    for klass in Project.__mro__:
-        if "StatusID" in klass.__dict__:
-            descriptor = klass.__dict__["StatusID"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_project_has_Team___():
-    assert hasattr(Project, "Team___")
-    descriptor = None
-    for klass in Project.__mro__:
-        if "Team___" in klass.__dict__:
-            descriptor = klass.__dict__["Team___"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_project_has_Attachments___():
-    assert hasattr(Project, "Attachments___")
-    descriptor = None
-    for klass in Project.__mro__:
-        if "Attachments___" in klass.__dict__:
-            descriptor = klass.__dict__["Attachments___"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_project_has_Title():
-    assert hasattr(Project, "Title")
-    descriptor = None
-    for klass in Project.__mro__:
-        if "Title" in klass.__dict__:
-            descriptor = klass.__dict__["Title"]
-            break
-    assert isinstance(descriptor, property)
+    assert "Author" in params, "Missing parameter 'Author'"
+    assert "Attachments___" in params, "Missing parameter 'Attachments___'"
+    assert "PorjectID" in params, "Missing parameter 'PorjectID'"
+    assert "Team___" in params, "Missing parameter 'Team___'"
+    assert "Activities___" in params, "Missing parameter 'Activities___'"
+    assert "StatusID" in params, "Missing parameter 'StatusID'"
+    assert "PriorityID" in params, "Missing parameter 'PriorityID'"
+    assert "Title" in params, "Missing parameter 'Title'"
 
 def test_project_has_ProjectManager():
     assert hasattr(Project, "ProjectManager")
@@ -470,12 +362,120 @@ def test_project_has_Description():
             break
     assert isinstance(descriptor, property)
 
+def test_project_has_Comments___():
+    assert hasattr(Project, "Comments___")
+    descriptor = None
+    for klass in Project.__mro__:
+        if "Comments___" in klass.__dict__:
+            descriptor = klass.__dict__["Comments___"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_project_has_Subscriptions___():
+    assert hasattr(Project, "Subscriptions___")
+    descriptor = None
+    for klass in Project.__mro__:
+        if "Subscriptions___" in klass.__dict__:
+            descriptor = klass.__dict__["Subscriptions___"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_project_has_Deadline():
+    assert hasattr(Project, "Deadline")
+    descriptor = None
+    for klass in Project.__mro__:
+        if "Deadline" in klass.__dict__:
+            descriptor = klass.__dict__["Deadline"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_project_has_Created():
+    assert hasattr(Project, "Created")
+    descriptor = None
+    for klass in Project.__mro__:
+        if "Created" in klass.__dict__:
+            descriptor = klass.__dict__["Created"]
+            break
+    assert isinstance(descriptor, property)
+
 def test_project_has_Assignee():
     assert hasattr(Project, "Assignee")
     descriptor = None
     for klass in Project.__mro__:
         if "Assignee" in klass.__dict__:
             descriptor = klass.__dict__["Assignee"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_project_has_Author():
+    assert hasattr(Project, "Author")
+    descriptor = None
+    for klass in Project.__mro__:
+        if "Author" in klass.__dict__:
+            descriptor = klass.__dict__["Author"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_project_has_Attachments___():
+    assert hasattr(Project, "Attachments___")
+    descriptor = None
+    for klass in Project.__mro__:
+        if "Attachments___" in klass.__dict__:
+            descriptor = klass.__dict__["Attachments___"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_project_has_PorjectID():
+    assert hasattr(Project, "PorjectID")
+    descriptor = None
+    for klass in Project.__mro__:
+        if "PorjectID" in klass.__dict__:
+            descriptor = klass.__dict__["PorjectID"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_project_has_Team___():
+    assert hasattr(Project, "Team___")
+    descriptor = None
+    for klass in Project.__mro__:
+        if "Team___" in klass.__dict__:
+            descriptor = klass.__dict__["Team___"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_project_has_Activities___():
+    assert hasattr(Project, "Activities___")
+    descriptor = None
+    for klass in Project.__mro__:
+        if "Activities___" in klass.__dict__:
+            descriptor = klass.__dict__["Activities___"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_project_has_StatusID():
+    assert hasattr(Project, "StatusID")
+    descriptor = None
+    for klass in Project.__mro__:
+        if "StatusID" in klass.__dict__:
+            descriptor = klass.__dict__["StatusID"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_project_has_PriorityID():
+    assert hasattr(Project, "PriorityID")
+    descriptor = None
+    for klass in Project.__mro__:
+        if "PriorityID" in klass.__dict__:
+            descriptor = klass.__dict__["PriorityID"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_project_has_Title():
+    assert hasattr(Project, "Title")
+    descriptor = None
+    for klass in Project.__mro__:
+        if "Title" in klass.__dict__:
+            descriptor = klass.__dict__["Title"]
             break
     assert isinstance(descriptor, property)
 
@@ -492,68 +492,32 @@ def test_user_constructor_exists():
 def test_user_constructor_args():
     sig = inspect.signature(User.__init__)
     params = list(sig.parameters.keys())
-    assert "Username" in params, "Missing parameter 'Username'"
-    assert "Google_plus_link" in params, "Missing parameter 'Google_plus_link'"
-    assert "Roles___" in params, "Missing parameter 'Roles___'"
-    assert "Facebook_link" in params, "Missing parameter 'Facebook_link'"
-    assert "TitleID" in params, "Missing parameter 'TitleID'"
+    assert "Linkedin_link" in params, "Missing parameter 'Linkedin_link'"
     assert "DepartmentID" in params, "Missing parameter 'DepartmentID'"
-    assert "Lastname" in params, "Missing parameter 'Lastname'"
+    assert "Username" in params, "Missing parameter 'Username'"
+    assert "Roles___" in params, "Missing parameter 'Roles___'"
+    assert "Password" in params, "Missing parameter 'Password'"
+    assert "TitleID" in params, "Missing parameter 'TitleID'"
+    assert "Facebook_link" in params, "Missing parameter 'Facebook_link'"
+    assert "Position" in params, "Missing parameter 'Position'"
+    assert "Active" in params, "Missing parameter 'Active'"
+    assert "Firstname" in params, "Missing parameter 'Firstname'"
+    assert "Google_plus_link" in params, "Missing parameter 'Google_plus_link'"
     assert "Settings" in params, "Missing parameter 'Settings'"
-    assert "Hiredate" in params, "Missing parameter 'Hiredate'"
+    assert "Phone" in params, "Missing parameter 'Phone'"
+    assert "Lastname" in params, "Missing parameter 'Lastname'"
     assert "UserID" in params, "Missing parameter 'UserID'"
     assert "Dateofbirth" in params, "Missing parameter 'Dateofbirth'"
-    assert "Email" in params, "Missing parameter 'Email'"
-    assert "Active" in params, "Missing parameter 'Active'"
-    assert "Linkedin_link" in params, "Missing parameter 'Linkedin_link'"
-    assert "Phone" in params, "Missing parameter 'Phone'"
-    assert "Firstname" in params, "Missing parameter 'Firstname'"
+    assert "Hiredate" in params, "Missing parameter 'Hiredate'"
     assert "About" in params, "Missing parameter 'About'"
-    assert "Position" in params, "Missing parameter 'Position'"
-    assert "Password" in params, "Missing parameter 'Password'"
+    assert "Email" in params, "Missing parameter 'Email'"
 
-def test_user_has_Username():
-    assert hasattr(User, "Username")
+def test_user_has_Linkedin_link():
+    assert hasattr(User, "Linkedin_link")
     descriptor = None
     for klass in User.__mro__:
-        if "Username" in klass.__dict__:
-            descriptor = klass.__dict__["Username"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_user_has_Google_plus_link():
-    assert hasattr(User, "Google_plus_link")
-    descriptor = None
-    for klass in User.__mro__:
-        if "Google_plus_link" in klass.__dict__:
-            descriptor = klass.__dict__["Google_plus_link"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_user_has_Roles___():
-    assert hasattr(User, "Roles___")
-    descriptor = None
-    for klass in User.__mro__:
-        if "Roles___" in klass.__dict__:
-            descriptor = klass.__dict__["Roles___"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_user_has_Facebook_link():
-    assert hasattr(User, "Facebook_link")
-    descriptor = None
-    for klass in User.__mro__:
-        if "Facebook_link" in klass.__dict__:
-            descriptor = klass.__dict__["Facebook_link"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_user_has_TitleID():
-    assert hasattr(User, "TitleID")
-    descriptor = None
-    for klass in User.__mro__:
-        if "TitleID" in klass.__dict__:
-            descriptor = klass.__dict__["TitleID"]
+        if "Linkedin_link" in klass.__dict__:
+            descriptor = klass.__dict__["Linkedin_link"]
             break
     assert isinstance(descriptor, property)
 
@@ -566,12 +530,84 @@ def test_user_has_DepartmentID():
             break
     assert isinstance(descriptor, property)
 
-def test_user_has_Lastname():
-    assert hasattr(User, "Lastname")
+def test_user_has_Username():
+    assert hasattr(User, "Username")
     descriptor = None
     for klass in User.__mro__:
-        if "Lastname" in klass.__dict__:
-            descriptor = klass.__dict__["Lastname"]
+        if "Username" in klass.__dict__:
+            descriptor = klass.__dict__["Username"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_user_has_Roles___():
+    assert hasattr(User, "Roles___")
+    descriptor = None
+    for klass in User.__mro__:
+        if "Roles___" in klass.__dict__:
+            descriptor = klass.__dict__["Roles___"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_user_has_Password():
+    assert hasattr(User, "Password")
+    descriptor = None
+    for klass in User.__mro__:
+        if "Password" in klass.__dict__:
+            descriptor = klass.__dict__["Password"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_user_has_TitleID():
+    assert hasattr(User, "TitleID")
+    descriptor = None
+    for klass in User.__mro__:
+        if "TitleID" in klass.__dict__:
+            descriptor = klass.__dict__["TitleID"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_user_has_Facebook_link():
+    assert hasattr(User, "Facebook_link")
+    descriptor = None
+    for klass in User.__mro__:
+        if "Facebook_link" in klass.__dict__:
+            descriptor = klass.__dict__["Facebook_link"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_user_has_Position():
+    assert hasattr(User, "Position")
+    descriptor = None
+    for klass in User.__mro__:
+        if "Position" in klass.__dict__:
+            descriptor = klass.__dict__["Position"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_user_has_Active():
+    assert hasattr(User, "Active")
+    descriptor = None
+    for klass in User.__mro__:
+        if "Active" in klass.__dict__:
+            descriptor = klass.__dict__["Active"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_user_has_Firstname():
+    assert hasattr(User, "Firstname")
+    descriptor = None
+    for klass in User.__mro__:
+        if "Firstname" in klass.__dict__:
+            descriptor = klass.__dict__["Firstname"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_user_has_Google_plus_link():
+    assert hasattr(User, "Google_plus_link")
+    descriptor = None
+    for klass in User.__mro__:
+        if "Google_plus_link" in klass.__dict__:
+            descriptor = klass.__dict__["Google_plus_link"]
             break
     assert isinstance(descriptor, property)
 
@@ -584,12 +620,21 @@ def test_user_has_Settings():
             break
     assert isinstance(descriptor, property)
 
-def test_user_has_Hiredate():
-    assert hasattr(User, "Hiredate")
+def test_user_has_Phone():
+    assert hasattr(User, "Phone")
     descriptor = None
     for klass in User.__mro__:
-        if "Hiredate" in klass.__dict__:
-            descriptor = klass.__dict__["Hiredate"]
+        if "Phone" in klass.__dict__:
+            descriptor = klass.__dict__["Phone"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_user_has_Lastname():
+    assert hasattr(User, "Lastname")
+    descriptor = None
+    for klass in User.__mro__:
+        if "Lastname" in klass.__dict__:
+            descriptor = klass.__dict__["Lastname"]
             break
     assert isinstance(descriptor, property)
 
@@ -611,48 +656,12 @@ def test_user_has_Dateofbirth():
             break
     assert isinstance(descriptor, property)
 
-def test_user_has_Email():
-    assert hasattr(User, "Email")
+def test_user_has_Hiredate():
+    assert hasattr(User, "Hiredate")
     descriptor = None
     for klass in User.__mro__:
-        if "Email" in klass.__dict__:
-            descriptor = klass.__dict__["Email"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_user_has_Active():
-    assert hasattr(User, "Active")
-    descriptor = None
-    for klass in User.__mro__:
-        if "Active" in klass.__dict__:
-            descriptor = klass.__dict__["Active"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_user_has_Linkedin_link():
-    assert hasattr(User, "Linkedin_link")
-    descriptor = None
-    for klass in User.__mro__:
-        if "Linkedin_link" in klass.__dict__:
-            descriptor = klass.__dict__["Linkedin_link"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_user_has_Phone():
-    assert hasattr(User, "Phone")
-    descriptor = None
-    for klass in User.__mro__:
-        if "Phone" in klass.__dict__:
-            descriptor = klass.__dict__["Phone"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_user_has_Firstname():
-    assert hasattr(User, "Firstname")
-    descriptor = None
-    for klass in User.__mro__:
-        if "Firstname" in klass.__dict__:
-            descriptor = klass.__dict__["Firstname"]
+        if "Hiredate" in klass.__dict__:
+            descriptor = klass.__dict__["Hiredate"]
             break
     assert isinstance(descriptor, property)
 
@@ -665,21 +674,12 @@ def test_user_has_About():
             break
     assert isinstance(descriptor, property)
 
-def test_user_has_Position():
-    assert hasattr(User, "Position")
+def test_user_has_Email():
+    assert hasattr(User, "Email")
     descriptor = None
     for klass in User.__mro__:
-        if "Position" in klass.__dict__:
-            descriptor = klass.__dict__["Position"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_user_has_Password():
-    assert hasattr(User, "Password")
-    descriptor = None
-    for klass in User.__mro__:
-        if "Password" in klass.__dict__:
-            descriptor = klass.__dict__["Password"]
+        if "Email" in klass.__dict__:
+            descriptor = klass.__dict__["Email"]
             break
     assert isinstance(descriptor, property)
 
@@ -710,136 +710,136 @@ safe_text = st.text(
 ).filter(lambda s: s[0].isalpha())
 Role_strategy = st.builds(
     Role,
-    Description=
-        safe_text,
+    Name=
+        st.none(),
     RoleID=
         st.integers(),
-    Name=
-        st.none()
+    Description=
+        safe_text
 )
 Attachment_strategy = st.builds(
     Attachment,
-    User=
-        st.none(),
-    Extension=
-        safe_text,
-    Project=
-        st.none(),
-    Size=
-        safe_text,
-    Path=
-        safe_text,
-    Created=
-        safe_text,
     Name=
         safe_text,
     AttachmentID=
-        st.integers()
-)
-Comment_strategy = st.builds(
-    Comment,
+        st.integers(),
+    Created=
+        safe_text,
+    Path=
+        safe_text,
+    Size=
+        safe_text,
     User=
         st.none(),
     Project=
         st.none(),
-    Content=
+    Extension=
+        safe_text
+)
+Comment_strategy = st.builds(
+    Comment,
+    Created=
         safe_text,
+    User=
+        st.none(),
     CommentID=
         st.integers(),
-    Created=
-        safe_text
+    Content=
+        safe_text,
+    Project=
+        st.none()
 )
 Activity_strategy = st.builds(
     Activity,
-    PrevValue=
-        safe_text,
-    NewValue=
-        safe_text,
-    ActivityType=
-        st.integers(),
-    ActivitySubType=
-        st.integers(),
-    Project=
-        st.none(),
     Seen=
         st.booleans(),
     User=
         st.none(),
+    ActivitySubType=
+        st.integers(),
     ActivityID=
-        st.integers()
+        st.integers(),
+    PrevValue=
+        safe_text,
+    ActivityType=
+        st.integers(),
+    NewValue=
+        safe_text,
+    Project=
+        st.none()
 )
 Project_strategy = st.builds(
     Project,
-    Author=
-        st.none(),
-    Activities___=
-        safe_text,
-    Created=
-        safe_text,
-    Deadline=
-        safe_text,
-    Comments___=
-        safe_text,
-    PriorityID=
-        st.integers(),
-    PorjectID=
-        st.integers(),
-    Subscriptions___=
-        safe_text,
-    StatusID=
-        st.integers(),
-    Team___=
-        safe_text,
-    Attachments___=
-        safe_text,
-    Title=
-        safe_text,
     ProjectManager=
         st.none(),
     Description=
         safe_text,
+    Comments___=
+        safe_text,
+    Subscriptions___=
+        safe_text,
+    Deadline=
+        safe_text,
+    Created=
+        safe_text,
     Assignee=
-        st.none()
+        st.none(),
+    Author=
+        st.none(),
+    Attachments___=
+        safe_text,
+    PorjectID=
+        st.integers(),
+    Team___=
+        safe_text,
+    Activities___=
+        safe_text,
+    StatusID=
+        st.integers(),
+    PriorityID=
+        st.integers(),
+    Title=
+        safe_text
 )
 User_strategy = st.builds(
     User,
-    Username=
+    Linkedin_link=
         safe_text,
-    Google_plus_link=
+    DepartmentID=
+        st.integers(),
+    Username=
         safe_text,
     Roles___=
         safe_text,
-    Facebook_link=
+    Password=
         safe_text,
     TitleID=
         st.integers(),
-    DepartmentID=
-        st.integers(),
-    Lastname=
+    Facebook_link=
+        safe_text,
+    Position=
+        safe_text,
+    Active=
+        st.booleans(),
+    Firstname=
+        safe_text,
+    Google_plus_link=
         safe_text,
     Settings=
         safe_text,
-    Hiredate=
+    Phone=
+        safe_text,
+    Lastname=
         safe_text,
     UserID=
         st.integers(),
     Dateofbirth=
         safe_text,
-    Email=
-        safe_text,
-    Active=
-        st.booleans(),
-    Linkedin_link=
-        safe_text,
-    Phone=
-        safe_text,
-    Firstname=
+    Hiredate=
         safe_text,
     About=
         safe_text,
-    Position=
-        safe_text,
-    Password=
+    Email=
         safe_text
 )
 
@@ -848,31 +848,6 @@ User_strategy = st.builds(
 def test_role_instantiation(instance):
     assert isinstance(instance, Role)
 
-@given(instance=Role_strategy)
-def test_role_Description_type(instance):
-    assert isinstance(instance.Description, str)
-
-
-@given(instance=Role_strategy)
-def test_role_Description_setter(instance):
-    original = instance.Description
-    instance.Description = original
-    assert instance.Description == original
-
-@given(instance=Role_strategy)
-def test_role_RoleID_type(instance):
-    assert isinstance(instance.RoleID, int)
-
-
-@given(instance=Role_strategy)
-def test_role_RoleID_setter(instance):
-    original = instance.RoleID
-    instance.RoleID = original
-    assert instance.RoleID == original
-
-@given(instance=Role_strategy)
-def test_role_Name_type(instance):
-    assert isinstance(instance.Name, string)
 
 
 @given(instance=Role_strategy)
@@ -881,80 +856,27 @@ def test_role_Name_setter(instance):
     instance.Name = original
     assert instance.Name == original
 
+
+
+@given(instance=Role_strategy)
+def test_role_RoleID_setter(instance):
+    original = instance.RoleID
+    instance.RoleID = original
+    assert instance.RoleID == original
+
+
+
+@given(instance=Role_strategy)
+def test_role_Description_setter(instance):
+    original = instance.Description
+    instance.Description = original
+    assert instance.Description == original
+
 @given(instance=Attachment_strategy)
 @settings(max_examples=50)
 def test_attachment_instantiation(instance):
     assert isinstance(instance, Attachment)
 
-@given(instance=Attachment_strategy)
-def test_attachment_User_type(instance):
-    assert isinstance(instance.User, user)
-
-
-@given(instance=Attachment_strategy)
-def test_attachment_User_setter(instance):
-    original = instance.User
-    instance.User = original
-    assert instance.User == original
-
-@given(instance=Attachment_strategy)
-def test_attachment_Extension_type(instance):
-    assert isinstance(instance.Extension, str)
-
-
-@given(instance=Attachment_strategy)
-def test_attachment_Extension_setter(instance):
-    original = instance.Extension
-    instance.Extension = original
-    assert instance.Extension == original
-
-@given(instance=Attachment_strategy)
-def test_attachment_Project_type(instance):
-    assert isinstance(instance.Project, project)
-
-
-@given(instance=Attachment_strategy)
-def test_attachment_Project_setter(instance):
-    original = instance.Project
-    instance.Project = original
-    assert instance.Project == original
-
-@given(instance=Attachment_strategy)
-def test_attachment_Size_type(instance):
-    assert isinstance(instance.Size, str)
-
-
-@given(instance=Attachment_strategy)
-def test_attachment_Size_setter(instance):
-    original = instance.Size
-    instance.Size = original
-    assert instance.Size == original
-
-@given(instance=Attachment_strategy)
-def test_attachment_Path_type(instance):
-    assert isinstance(instance.Path, str)
-
-
-@given(instance=Attachment_strategy)
-def test_attachment_Path_setter(instance):
-    original = instance.Path
-    instance.Path = original
-    assert instance.Path == original
-
-@given(instance=Attachment_strategy)
-def test_attachment_Created_type(instance):
-    assert isinstance(instance.Created, str)
-
-
-@given(instance=Attachment_strategy)
-def test_attachment_Created_setter(instance):
-    original = instance.Created
-    instance.Created = original
-    assert instance.Created == original
-
-@given(instance=Attachment_strategy)
-def test_attachment_Name_type(instance):
-    assert isinstance(instance.Name, str)
 
 
 @given(instance=Attachment_strategy)
@@ -963,9 +885,6 @@ def test_attachment_Name_setter(instance):
     instance.Name = original
     assert instance.Name == original
 
-@given(instance=Attachment_strategy)
-def test_attachment_AttachmentID_type(instance):
-    assert isinstance(instance.AttachmentID, int)
 
 
 @given(instance=Attachment_strategy)
@@ -974,58 +893,59 @@ def test_attachment_AttachmentID_setter(instance):
     instance.AttachmentID = original
     assert instance.AttachmentID == original
 
+
+
+@given(instance=Attachment_strategy)
+def test_attachment_Created_setter(instance):
+    original = instance.Created
+    instance.Created = original
+    assert instance.Created == original
+
+
+
+@given(instance=Attachment_strategy)
+def test_attachment_Path_setter(instance):
+    original = instance.Path
+    instance.Path = original
+    assert instance.Path == original
+
+
+
+@given(instance=Attachment_strategy)
+def test_attachment_Size_setter(instance):
+    original = instance.Size
+    instance.Size = original
+    assert instance.Size == original
+
+
+
+@given(instance=Attachment_strategy)
+def test_attachment_User_setter(instance):
+    original = instance.User
+    instance.User = original
+    assert instance.User == original
+
+
+
+@given(instance=Attachment_strategy)
+def test_attachment_Project_setter(instance):
+    original = instance.Project
+    instance.Project = original
+    assert instance.Project == original
+
+
+
+@given(instance=Attachment_strategy)
+def test_attachment_Extension_setter(instance):
+    original = instance.Extension
+    instance.Extension = original
+    assert instance.Extension == original
+
 @given(instance=Comment_strategy)
 @settings(max_examples=50)
 def test_comment_instantiation(instance):
     assert isinstance(instance, Comment)
 
-@given(instance=Comment_strategy)
-def test_comment_User_type(instance):
-    assert isinstance(instance.User, user)
-
-
-@given(instance=Comment_strategy)
-def test_comment_User_setter(instance):
-    original = instance.User
-    instance.User = original
-    assert instance.User == original
-
-@given(instance=Comment_strategy)
-def test_comment_Project_type(instance):
-    assert isinstance(instance.Project, project)
-
-
-@given(instance=Comment_strategy)
-def test_comment_Project_setter(instance):
-    original = instance.Project
-    instance.Project = original
-    assert instance.Project == original
-
-@given(instance=Comment_strategy)
-def test_comment_Content_type(instance):
-    assert isinstance(instance.Content, str)
-
-
-@given(instance=Comment_strategy)
-def test_comment_Content_setter(instance):
-    original = instance.Content
-    instance.Content = original
-    assert instance.Content == original
-
-@given(instance=Comment_strategy)
-def test_comment_CommentID_type(instance):
-    assert isinstance(instance.CommentID, int)
-
-
-@given(instance=Comment_strategy)
-def test_comment_CommentID_setter(instance):
-    original = instance.CommentID
-    instance.CommentID = original
-    assert instance.CommentID == original
-
-@given(instance=Comment_strategy)
-def test_comment_Created_type(instance):
-    assert isinstance(instance.Created, str)
 
 
 @given(instance=Comment_strategy)
@@ -1034,69 +954,43 @@ def test_comment_Created_setter(instance):
     instance.Created = original
     assert instance.Created == original
 
-@given(instance=Activity_strategy)
-@settings(max_examples=50)
-def test_activity_instantiation(instance):
-    assert isinstance(instance, Activity)
-
-@given(instance=Activity_strategy)
-def test_activity_PrevValue_type(instance):
-    assert isinstance(instance.PrevValue, str)
 
 
-@given(instance=Activity_strategy)
-def test_activity_PrevValue_setter(instance):
-    original = instance.PrevValue
-    instance.PrevValue = original
-    assert instance.PrevValue == original
-
-@given(instance=Activity_strategy)
-def test_activity_NewValue_type(instance):
-    assert isinstance(instance.NewValue, str)
+@given(instance=Comment_strategy)
+def test_comment_User_setter(instance):
+    original = instance.User
+    instance.User = original
+    assert instance.User == original
 
 
-@given(instance=Activity_strategy)
-def test_activity_NewValue_setter(instance):
-    original = instance.NewValue
-    instance.NewValue = original
-    assert instance.NewValue == original
 
-@given(instance=Activity_strategy)
-def test_activity_ActivityType_type(instance):
-    assert isinstance(instance.ActivityType, int)
+@given(instance=Comment_strategy)
+def test_comment_CommentID_setter(instance):
+    original = instance.CommentID
+    instance.CommentID = original
+    assert instance.CommentID == original
 
 
-@given(instance=Activity_strategy)
-def test_activity_ActivityType_setter(instance):
-    original = instance.ActivityType
-    instance.ActivityType = original
-    assert instance.ActivityType == original
 
-@given(instance=Activity_strategy)
-def test_activity_ActivitySubType_type(instance):
-    assert isinstance(instance.ActivitySubType, int)
+@given(instance=Comment_strategy)
+def test_comment_Content_setter(instance):
+    original = instance.Content
+    instance.Content = original
+    assert instance.Content == original
 
 
-@given(instance=Activity_strategy)
-def test_activity_ActivitySubType_setter(instance):
-    original = instance.ActivitySubType
-    instance.ActivitySubType = original
-    assert instance.ActivitySubType == original
 
-@given(instance=Activity_strategy)
-def test_activity_Project_type(instance):
-    assert isinstance(instance.Project, project)
-
-
-@given(instance=Activity_strategy)
-def test_activity_Project_setter(instance):
+@given(instance=Comment_strategy)
+def test_comment_Project_setter(instance):
     original = instance.Project
     instance.Project = original
     assert instance.Project == original
 
 @given(instance=Activity_strategy)
-def test_activity_Seen_type(instance):
-    assert isinstance(instance.Seen, bool)
+@settings(max_examples=50)
+def test_activity_instantiation(instance):
+    assert isinstance(instance, Activity)
+
 
 
 @given(instance=Activity_strategy)
@@ -1105,9 +999,6 @@ def test_activity_Seen_setter(instance):
     instance.Seen = original
     assert instance.Seen == original
 
-@given(instance=Activity_strategy)
-def test_activity_User_type(instance):
-    assert isinstance(instance.User, user)
 
 
 @given(instance=Activity_strategy)
@@ -1116,9 +1007,14 @@ def test_activity_User_setter(instance):
     instance.User = original
     assert instance.User == original
 
+
+
 @given(instance=Activity_strategy)
-def test_activity_ActivityID_type(instance):
-    assert isinstance(instance.ActivityID, int)
+def test_activity_ActivitySubType_setter(instance):
+    original = instance.ActivitySubType
+    instance.ActivitySubType = original
+    assert instance.ActivitySubType == original
+
 
 
 @given(instance=Activity_strategy)
@@ -1127,146 +1023,43 @@ def test_activity_ActivityID_setter(instance):
     instance.ActivityID = original
     assert instance.ActivityID == original
 
+
+
+@given(instance=Activity_strategy)
+def test_activity_PrevValue_setter(instance):
+    original = instance.PrevValue
+    instance.PrevValue = original
+    assert instance.PrevValue == original
+
+
+
+@given(instance=Activity_strategy)
+def test_activity_ActivityType_setter(instance):
+    original = instance.ActivityType
+    instance.ActivityType = original
+    assert instance.ActivityType == original
+
+
+
+@given(instance=Activity_strategy)
+def test_activity_NewValue_setter(instance):
+    original = instance.NewValue
+    instance.NewValue = original
+    assert instance.NewValue == original
+
+
+
+@given(instance=Activity_strategy)
+def test_activity_Project_setter(instance):
+    original = instance.Project
+    instance.Project = original
+    assert instance.Project == original
+
 @given(instance=Project_strategy)
 @settings(max_examples=50)
 def test_project_instantiation(instance):
     assert isinstance(instance, Project)
 
-@given(instance=Project_strategy)
-def test_project_Author_type(instance):
-    assert isinstance(instance.Author, user)
-
-
-@given(instance=Project_strategy)
-def test_project_Author_setter(instance):
-    original = instance.Author
-    instance.Author = original
-    assert instance.Author == original
-
-@given(instance=Project_strategy)
-def test_project_Activities____type(instance):
-    assert isinstance(instance.Activities___, str)
-
-
-@given(instance=Project_strategy)
-def test_project_Activities____setter(instance):
-    original = instance.Activities___
-    instance.Activities___ = original
-    assert instance.Activities___ == original
-
-@given(instance=Project_strategy)
-def test_project_Created_type(instance):
-    assert isinstance(instance.Created, str)
-
-
-@given(instance=Project_strategy)
-def test_project_Created_setter(instance):
-    original = instance.Created
-    instance.Created = original
-    assert instance.Created == original
-
-@given(instance=Project_strategy)
-def test_project_Deadline_type(instance):
-    assert isinstance(instance.Deadline, str)
-
-
-@given(instance=Project_strategy)
-def test_project_Deadline_setter(instance):
-    original = instance.Deadline
-    instance.Deadline = original
-    assert instance.Deadline == original
-
-@given(instance=Project_strategy)
-def test_project_Comments____type(instance):
-    assert isinstance(instance.Comments___, str)
-
-
-@given(instance=Project_strategy)
-def test_project_Comments____setter(instance):
-    original = instance.Comments___
-    instance.Comments___ = original
-    assert instance.Comments___ == original
-
-@given(instance=Project_strategy)
-def test_project_PriorityID_type(instance):
-    assert isinstance(instance.PriorityID, int)
-
-
-@given(instance=Project_strategy)
-def test_project_PriorityID_setter(instance):
-    original = instance.PriorityID
-    instance.PriorityID = original
-    assert instance.PriorityID == original
-
-@given(instance=Project_strategy)
-def test_project_PorjectID_type(instance):
-    assert isinstance(instance.PorjectID, int)
-
-
-@given(instance=Project_strategy)
-def test_project_PorjectID_setter(instance):
-    original = instance.PorjectID
-    instance.PorjectID = original
-    assert instance.PorjectID == original
-
-@given(instance=Project_strategy)
-def test_project_Subscriptions____type(instance):
-    assert isinstance(instance.Subscriptions___, str)
-
-
-@given(instance=Project_strategy)
-def test_project_Subscriptions____setter(instance):
-    original = instance.Subscriptions___
-    instance.Subscriptions___ = original
-    assert instance.Subscriptions___ == original
-
-@given(instance=Project_strategy)
-def test_project_StatusID_type(instance):
-    assert isinstance(instance.StatusID, int)
-
-
-@given(instance=Project_strategy)
-def test_project_StatusID_setter(instance):
-    original = instance.StatusID
-    instance.StatusID = original
-    assert instance.StatusID == original
-
-@given(instance=Project_strategy)
-def test_project_Team____type(instance):
-    assert isinstance(instance.Team___, str)
-
-
-@given(instance=Project_strategy)
-def test_project_Team____setter(instance):
-    original = instance.Team___
-    instance.Team___ = original
-    assert instance.Team___ == original
-
-@given(instance=Project_strategy)
-def test_project_Attachments____type(instance):
-    assert isinstance(instance.Attachments___, str)
-
-
-@given(instance=Project_strategy)
-def test_project_Attachments____setter(instance):
-    original = instance.Attachments___
-    instance.Attachments___ = original
-    assert instance.Attachments___ == original
-
-@given(instance=Project_strategy)
-def test_project_Title_type(instance):
-    assert isinstance(instance.Title, str)
-
-
-@given(instance=Project_strategy)
-def test_project_Title_setter(instance):
-    original = instance.Title
-    instance.Title = original
-    assert instance.Title == original
-
-@given(instance=Project_strategy)
-def test_project_ProjectManager_type(instance):
-    assert isinstance(instance.ProjectManager, user)
 
 
 @given(instance=Project_strategy)
@@ -1275,9 +1068,6 @@ def test_project_ProjectManager_setter(instance):
     instance.ProjectManager = original
     assert instance.ProjectManager == original
 
-@given(instance=Project_strategy)
-def test_project_Description_type(instance):
-    assert isinstance(instance.Description, str)
 
 
 @given(instance=Project_strategy)
@@ -1286,9 +1076,38 @@ def test_project_Description_setter(instance):
     instance.Description = original
     assert instance.Description == original
 
+
+
 @given(instance=Project_strategy)
-def test_project_Assignee_type(instance):
-    assert isinstance(instance.Assignee, user)
+def test_project_Comments____setter(instance):
+    original = instance.Comments___
+    instance.Comments___ = original
+    assert instance.Comments___ == original
+
+
+
+@given(instance=Project_strategy)
+def test_project_Subscriptions____setter(instance):
+    original = instance.Subscriptions___
+    instance.Subscriptions___ = original
+    assert instance.Subscriptions___ == original
+
+
+
+@given(instance=Project_strategy)
+def test_project_Deadline_setter(instance):
+    original = instance.Deadline
+    instance.Deadline = original
+    assert instance.Deadline == original
+
+
+
+@given(instance=Project_strategy)
+def test_project_Created_setter(instance):
+    original = instance.Created
+    instance.Created = original
+    assert instance.Created == original
+
 
 
 @given(instance=Project_strategy)
@@ -1297,157 +1116,75 @@ def test_project_Assignee_setter(instance):
     instance.Assignee = original
     assert instance.Assignee == original
 
+
+
+@given(instance=Project_strategy)
+def test_project_Author_setter(instance):
+    original = instance.Author
+    instance.Author = original
+    assert instance.Author == original
+
+
+
+@given(instance=Project_strategy)
+def test_project_Attachments____setter(instance):
+    original = instance.Attachments___
+    instance.Attachments___ = original
+    assert instance.Attachments___ == original
+
+
+
+@given(instance=Project_strategy)
+def test_project_PorjectID_setter(instance):
+    original = instance.PorjectID
+    instance.PorjectID = original
+    assert instance.PorjectID == original
+
+
+
+@given(instance=Project_strategy)
+def test_project_Team____setter(instance):
+    original = instance.Team___
+    instance.Team___ = original
+    assert instance.Team___ == original
+
+
+
+@given(instance=Project_strategy)
+def test_project_Activities____setter(instance):
+    original = instance.Activities___
+    instance.Activities___ = original
+    assert instance.Activities___ == original
+
+
+
+@given(instance=Project_strategy)
+def test_project_StatusID_setter(instance):
+    original = instance.StatusID
+    instance.StatusID = original
+    assert instance.StatusID == original
+
+
+
+@given(instance=Project_strategy)
+def test_project_PriorityID_setter(instance):
+    original = instance.PriorityID
+    instance.PriorityID = original
+    assert instance.PriorityID == original
+
+
+
+@given(instance=Project_strategy)
+def test_project_Title_setter(instance):
+    original = instance.Title
+    instance.Title = original
+    assert instance.Title == original
+
 @given(instance=User_strategy)
 @settings(max_examples=50)
 def test_user_instantiation(instance):
     assert isinstance(instance, User)
 
-@given(instance=User_strategy)
-def test_user_Username_type(instance):
-    assert isinstance(instance.Username, str)
-
-
-@given(instance=User_strategy)
-def test_user_Username_setter(instance):
-    original = instance.Username
-    instance.Username = original
-    assert instance.Username == original
-
-@given(instance=User_strategy)
-def test_user_Google_plus_link_type(instance):
-    assert isinstance(instance.Google_plus_link, str)
-
-
-@given(instance=User_strategy)
-def test_user_Google_plus_link_setter(instance):
-    original = instance.Google_plus_link
-    instance.Google_plus_link = original
-    assert instance.Google_plus_link == original
-
-@given(instance=User_strategy)
-def test_user_Roles____type(instance):
-    assert isinstance(instance.Roles___, str)
-
-
-@given(instance=User_strategy)
-def test_user_Roles____setter(instance):
-    original = instance.Roles___
-    instance.Roles___ = original
-    assert instance.Roles___ == original
-
-@given(instance=User_strategy)
-def test_user_Facebook_link_type(instance):
-    assert isinstance(instance.Facebook_link, str)
-
-
-@given(instance=User_strategy)
-def test_user_Facebook_link_setter(instance):
-    original = instance.Facebook_link
-    instance.Facebook_link = original
-    assert instance.Facebook_link == original
-
-@given(instance=User_strategy)
-def test_user_TitleID_type(instance):
-    assert isinstance(instance.TitleID, int)
-
-
-@given(instance=User_strategy)
-def test_user_TitleID_setter(instance):
-    original = instance.TitleID
-    instance.TitleID = original
-    assert instance.TitleID == original
-
-@given(instance=User_strategy)
-def test_user_DepartmentID_type(instance):
-    assert isinstance(instance.DepartmentID, int)
-
-
-@given(instance=User_strategy)
-def test_user_DepartmentID_setter(instance):
-    original = instance.DepartmentID
-    instance.DepartmentID = original
-    assert instance.DepartmentID == original
-
-@given(instance=User_strategy)
-def test_user_Lastname_type(instance):
-    assert isinstance(instance.Lastname, str)
-
-
-@given(instance=User_strategy)
-def test_user_Lastname_setter(instance):
-    original = instance.Lastname
-    instance.Lastname = original
-    assert instance.Lastname == original
-
-@given(instance=User_strategy)
-def test_user_Settings_type(instance):
-    assert isinstance(instance.Settings, str)
-
-
-@given(instance=User_strategy)
-def test_user_Settings_setter(instance):
-    original = instance.Settings
-    instance.Settings = original
-    assert instance.Settings == original
-
-@given(instance=User_strategy)
-def test_user_Hiredate_type(instance):
-    assert isinstance(instance.Hiredate, str)
-
-
-@given(instance=User_strategy)
-def test_user_Hiredate_setter(instance):
-    original = instance.Hiredate
-    instance.Hiredate = original
-    assert instance.Hiredate == original
-
-@given(instance=User_strategy)
-def test_user_UserID_type(instance):
-    assert isinstance(instance.UserID, int)
-
-
-@given(instance=User_strategy)
-def test_user_UserID_setter(instance):
-    original = instance.UserID
-    instance.UserID = original
-    assert instance.UserID == original
-
-@given(instance=User_strategy)
-def test_user_Dateofbirth_type(instance):
-    assert isinstance(instance.Dateofbirth, str)
-
-
-@given(instance=User_strategy)
-def test_user_Dateofbirth_setter(instance):
-    original = instance.Dateofbirth
-    instance.Dateofbirth = original
-    assert instance.Dateofbirth == original
-
-@given(instance=User_strategy)
-def test_user_Email_type(instance):
-    assert isinstance(instance.Email, str)
-
-
-@given(instance=User_strategy)
-def test_user_Email_setter(instance):
-    original = instance.Email
-    instance.Email = original
-    assert instance.Email == original
-
-@given(instance=User_strategy)
-def test_user_Active_type(instance):
-    assert isinstance(instance.Active, bool)
-
-
-@given(instance=User_strategy)
-def test_user_Active_setter(instance):
-    original = instance.Active
-    instance.Active = original
-    assert instance.Active == original
-
-@given(instance=User_strategy)
-def test_user_Linkedin_link_type(instance):
-    assert isinstance(instance.Linkedin_link, str)
 
 
 @given(instance=User_strategy)
@@ -1456,42 +1193,54 @@ def test_user_Linkedin_link_setter(instance):
     instance.Linkedin_link = original
     assert instance.Linkedin_link == original
 
-@given(instance=User_strategy)
-def test_user_Phone_type(instance):
-    assert isinstance(instance.Phone, str)
 
 
 @given(instance=User_strategy)
-def test_user_Phone_setter(instance):
-    original = instance.Phone
-    instance.Phone = original
-    assert instance.Phone == original
+def test_user_DepartmentID_setter(instance):
+    original = instance.DepartmentID
+    instance.DepartmentID = original
+    assert instance.DepartmentID == original
 
-@given(instance=User_strategy)
-def test_user_Firstname_type(instance):
-    assert isinstance(instance.Firstname, str)
 
 
 @given(instance=User_strategy)
-def test_user_Firstname_setter(instance):
-    original = instance.Firstname
-    instance.Firstname = original
-    assert instance.Firstname == original
+def test_user_Username_setter(instance):
+    original = instance.Username
+    instance.Username = original
+    assert instance.Username == original
 
-@given(instance=User_strategy)
-def test_user_About_type(instance):
-    assert isinstance(instance.About, str)
 
 
 @given(instance=User_strategy)
-def test_user_About_setter(instance):
-    original = instance.About
-    instance.About = original
-    assert instance.About == original
+def test_user_Roles____setter(instance):
+    original = instance.Roles___
+    instance.Roles___ = original
+    assert instance.Roles___ == original
+
+
 
 @given(instance=User_strategy)
-def test_user_Position_type(instance):
-    assert isinstance(instance.Position, str)
+def test_user_Password_setter(instance):
+    original = instance.Password
+    instance.Password = original
+    assert instance.Password == original
+
+
+
+@given(instance=User_strategy)
+def test_user_TitleID_setter(instance):
+    original = instance.TitleID
+    instance.TitleID = original
+    assert instance.TitleID == original
+
+
+
+@given(instance=User_strategy)
+def test_user_Facebook_link_setter(instance):
+    original = instance.Facebook_link
+    instance.Facebook_link = original
+    assert instance.Facebook_link == original
+
 
 
 @given(instance=User_strategy)
@@ -1500,13 +1249,90 @@ def test_user_Position_setter(instance):
     instance.Position = original
     assert instance.Position == original
 
-@given(instance=User_strategy)
-def test_user_Password_type(instance):
-    assert isinstance(instance.Password, str)
 
 
 @given(instance=User_strategy)
-def test_user_Password_setter(instance):
-    original = instance.Password
-    instance.Password = original
-    assert instance.Password == original
+def test_user_Active_setter(instance):
+    original = instance.Active
+    instance.Active = original
+    assert instance.Active == original
+
+
+
+@given(instance=User_strategy)
+def test_user_Firstname_setter(instance):
+    original = instance.Firstname
+    instance.Firstname = original
+    assert instance.Firstname == original
+
+
+
+@given(instance=User_strategy)
+def test_user_Google_plus_link_setter(instance):
+    original = instance.Google_plus_link
+    instance.Google_plus_link = original
+    assert instance.Google_plus_link == original
+
+
+
+@given(instance=User_strategy)
+def test_user_Settings_setter(instance):
+    original = instance.Settings
+    instance.Settings = original
+    assert instance.Settings == original
+
+
+
+@given(instance=User_strategy)
+def test_user_Phone_setter(instance):
+    original = instance.Phone
+    instance.Phone = original
+    assert instance.Phone == original
+
+
+
+@given(instance=User_strategy)
+def test_user_Lastname_setter(instance):
+    original = instance.Lastname
+    instance.Lastname = original
+    assert instance.Lastname == original
+
+
+
+@given(instance=User_strategy)
+def test_user_UserID_setter(instance):
+    original = instance.UserID
+    instance.UserID = original
+    assert instance.UserID == original
+
+
+
+@given(instance=User_strategy)
+def test_user_Dateofbirth_setter(instance):
+    original = instance.Dateofbirth
+    instance.Dateofbirth = original
+    assert instance.Dateofbirth == original
+
+
+
+@given(instance=User_strategy)
+def test_user_Hiredate_setter(instance):
+    original = instance.Hiredate
+    instance.Hiredate = original
+    assert instance.Hiredate == original
+
+
+
+@given(instance=User_strategy)
+def test_user_About_setter(instance):
+    original = instance.About
+    instance.About = original
+    assert instance.About == original
+
+
+
+@given(instance=User_strategy)
+def test_user_Email_setter(instance):
+    original = instance.Email
+    instance.Email = original
+    assert instance.Email == original

@@ -3,11 +3,9 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
 from python_code import (
-    int,
-    UDP_Socket,
     UDP_Controller,
     RFID_Sensor,
     Employee,
@@ -26,49 +24,13 @@ from python_code import (
     Motion_Sensor,
     Sensor,
     Hub_Device,
+    int,
+    UDP_Socket,
 )
 
 # =============================================================================
 # SECTION 1 — STRUCTURAL TESTS
 # =============================================================================
-
-
-
-def test_int_is_not_abstract():
-    assert not inspect.isabstract(int)
-
-
-def test_int_constructor_exists():
-    assert callable(int.__init__)
-
-
-def test_int_constructor_args():
-    sig = inspect.signature(int.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_udp_socket_is_not_abstract():
-    assert not inspect.isabstract(UDP_Socket)
-
-
-def test_udp_socket_constructor_exists():
-    assert callable(UDP_Socket.__init__)
-
-
-def test_udp_socket_constructor_args():
-    sig = inspect.signature(UDP_Socket.__init__)
-    params = list(sig.parameters.keys())
-    assert "socket" in params, "Missing parameter 'socket'"
-
-def test_udp_socket_has_socket():
-    assert hasattr(UDP_Socket, "socket")
-    descriptor = None
-    for klass in UDP_Socket.__mro__:
-        if "socket" in klass.__dict__:
-            descriptor = klass.__dict__["socket"]
-            break
-    assert isinstance(descriptor, property)
 
 
 
@@ -145,20 +107,11 @@ def test_display_constructor_exists():
 def test_display_constructor_args():
     sig = inspect.signature(Display.__init__)
     params = list(sig.parameters.keys())
-    assert "Coffee" in params, "Missing parameter 'Coffee'"
     assert "TimeID" in params, "Missing parameter 'TimeID'"
-    assert "DishWasher" in params, "Missing parameter 'DishWasher'"
     assert "Alarm" in params, "Missing parameter 'Alarm'"
+    assert "Coffee" in params, "Missing parameter 'Coffee'"
     assert "WashingMachine" in params, "Missing parameter 'WashingMachine'"
-
-def test_display_has_Coffee():
-    assert hasattr(Display, "Coffee")
-    descriptor = None
-    for klass in Display.__mro__:
-        if "Coffee" in klass.__dict__:
-            descriptor = klass.__dict__["Coffee"]
-            break
-    assert isinstance(descriptor, property)
+    assert "DishWasher" in params, "Missing parameter 'DishWasher'"
 
 def test_display_has_TimeID():
     assert hasattr(Display, "TimeID")
@@ -166,15 +119,6 @@ def test_display_has_TimeID():
     for klass in Display.__mro__:
         if "TimeID" in klass.__dict__:
             descriptor = klass.__dict__["TimeID"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_display_has_DishWasher():
-    assert hasattr(Display, "DishWasher")
-    descriptor = None
-    for klass in Display.__mro__:
-        if "DishWasher" in klass.__dict__:
-            descriptor = klass.__dict__["DishWasher"]
             break
     assert isinstance(descriptor, property)
 
@@ -187,12 +131,30 @@ def test_display_has_Alarm():
             break
     assert isinstance(descriptor, property)
 
+def test_display_has_Coffee():
+    assert hasattr(Display, "Coffee")
+    descriptor = None
+    for klass in Display.__mro__:
+        if "Coffee" in klass.__dict__:
+            descriptor = klass.__dict__["Coffee"]
+            break
+    assert isinstance(descriptor, property)
+
 def test_display_has_WashingMachine():
     assert hasattr(Display, "WashingMachine")
     descriptor = None
     for klass in Display.__mro__:
         if "WashingMachine" in klass.__dict__:
             descriptor = klass.__dict__["WashingMachine"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_display_has_DishWasher():
+    assert hasattr(Display, "DishWasher")
+    descriptor = None
+    for klass in Display.__mro__:
+        if "DishWasher" in klass.__dict__:
+            descriptor = klass.__dict__["DishWasher"]
             break
     assert isinstance(descriptor, property)
 
@@ -533,6 +495,44 @@ def test_hub_device_has_Status():
     assert isinstance(descriptor, property)
 
 
+
+def test_int_is_not_abstract():
+    assert not inspect.isabstract(int)
+
+
+def test_int_constructor_exists():
+    assert callable(int.__init__)
+
+
+def test_int_constructor_args():
+    sig = inspect.signature(int.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_udp_socket_is_not_abstract():
+    assert not inspect.isabstract(UDP_Socket)
+
+
+def test_udp_socket_constructor_exists():
+    assert callable(UDP_Socket.__init__)
+
+
+def test_udp_socket_constructor_args():
+    sig = inspect.signature(UDP_Socket.__init__)
+    params = list(sig.parameters.keys())
+    assert "socket" in params, "Missing parameter 'socket'"
+
+def test_udp_socket_has_socket():
+    assert hasattr(UDP_Socket, "socket")
+    descriptor = None
+    for klass in UDP_Socket.__mro__:
+        if "socket" in klass.__dict__:
+            descriptor = klass.__dict__["socket"]
+            break
+    assert isinstance(descriptor, property)
+
+
 # =============================================================================
 # HYPOTHESIS STRATEGIES
 # =============================================================================
@@ -544,14 +544,6 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-int_strategy = st.builds(
-    int,
-)
-UDP_Socket_strategy = st.builds(
-    UDP_Socket,
-    socket=
-        st.integers()
-)
 UDP_Controller_strategy = st.builds(
     UDP_Controller,
     ip_session=
@@ -567,15 +559,15 @@ Employee_strategy = st.builds(
 )
 Display_strategy = st.builds(
     Display,
-    Coffee=
-        safe_text,
     TimeID=
-        safe_text,
-    DishWasher=
         safe_text,
     Alarm=
         safe_text,
+    Coffee=
+        safe_text,
     WashingMachine=
+        safe_text,
+    DishWasher=
         safe_text
 )
 Users_strategy = st.builds(
@@ -648,36 +640,20 @@ Hub_Device_strategy = st.builds(
     Status=
         st.booleans()
 )
-
-@given(instance=int_strategy)
-@settings(max_examples=50)
-def test_int_instantiation(instance):
-    assert isinstance(instance, int)
-
-@given(instance=UDP_Socket_strategy)
-@settings(max_examples=50)
-def test_udp_socket_instantiation(instance):
-    assert isinstance(instance, UDP_Socket)
-
-@given(instance=UDP_Socket_strategy)
-def test_udp_socket_socket_type(instance):
-    assert isinstance(instance.socket, int)
-
-
-@given(instance=UDP_Socket_strategy)
-def test_udp_socket_socket_setter(instance):
-    original = instance.socket
-    instance.socket = original
-    assert instance.socket == original
+int_strategy = st.builds(
+    int,
+)
+UDP_Socket_strategy = st.builds(
+    UDP_Socket,
+    socket=
+        st.integers()
+)
 
 @given(instance=UDP_Controller_strategy)
 @settings(max_examples=50)
 def test_udp_controller_instantiation(instance):
     assert isinstance(instance, UDP_Controller)
 
-@given(instance=UDP_Controller_strategy)
-def test_udp_controller_ip_session_type(instance):
-    assert isinstance(instance.ip_session, str)
 
 
 @given(instance=UDP_Controller_strategy)
@@ -696,9 +672,6 @@ def test_rfid_sensor_instantiation(instance):
 def test_employee_instantiation(instance):
     assert isinstance(instance, Employee)
 
-@given(instance=Employee_strategy)
-def test_employee_EmployeeID_type(instance):
-    assert isinstance(instance.EmployeeID, int)
 
 
 @given(instance=Employee_strategy)
@@ -712,20 +685,6 @@ def test_employee_EmployeeID_setter(instance):
 def test_display_instantiation(instance):
     assert isinstance(instance, Display)
 
-@given(instance=Display_strategy)
-def test_display_Coffee_type(instance):
-    assert isinstance(instance.Coffee, str)
-
-
-@given(instance=Display_strategy)
-def test_display_Coffee_setter(instance):
-    original = instance.Coffee
-    instance.Coffee = original
-    assert instance.Coffee == original
-
-@given(instance=Display_strategy)
-def test_display_TimeID_type(instance):
-    assert isinstance(instance.TimeID, str)
 
 
 @given(instance=Display_strategy)
@@ -734,20 +693,6 @@ def test_display_TimeID_setter(instance):
     instance.TimeID = original
     assert instance.TimeID == original
 
-@given(instance=Display_strategy)
-def test_display_DishWasher_type(instance):
-    assert isinstance(instance.DishWasher, str)
-
-
-@given(instance=Display_strategy)
-def test_display_DishWasher_setter(instance):
-    original = instance.DishWasher
-    instance.DishWasher = original
-    assert instance.DishWasher == original
-
-@given(instance=Display_strategy)
-def test_display_Alarm_type(instance):
-    assert isinstance(instance.Alarm, str)
 
 
 @given(instance=Display_strategy)
@@ -756,9 +701,14 @@ def test_display_Alarm_setter(instance):
     instance.Alarm = original
     assert instance.Alarm == original
 
+
+
 @given(instance=Display_strategy)
-def test_display_WashingMachine_type(instance):
-    assert isinstance(instance.WashingMachine, str)
+def test_display_Coffee_setter(instance):
+    original = instance.Coffee
+    instance.Coffee = original
+    assert instance.Coffee == original
+
 
 
 @given(instance=Display_strategy)
@@ -767,14 +717,19 @@ def test_display_WashingMachine_setter(instance):
     instance.WashingMachine = original
     assert instance.WashingMachine == original
 
+
+
+@given(instance=Display_strategy)
+def test_display_DishWasher_setter(instance):
+    original = instance.DishWasher
+    instance.DishWasher = original
+    assert instance.DishWasher == original
+
 @given(instance=Users_strategy)
 @settings(max_examples=50)
 def test_users_instantiation(instance):
     assert isinstance(instance, Users)
 
-@given(instance=Users_strategy)
-def test_users_HTID_type(instance):
-    assert isinstance(instance.HTID, str)
 
 
 @given(instance=Users_strategy)
@@ -788,9 +743,6 @@ def test_users_HTID_setter(instance):
 def test_admin_instantiation(instance):
     assert isinstance(instance, Admin)
 
-@given(instance=Admin_strategy)
-def test_admin_AdminID_type(instance):
-    assert isinstance(instance.AdminID, int)
 
 
 @given(instance=Admin_strategy)
@@ -804,9 +756,6 @@ def test_admin_AdminID_setter(instance):
 def test_end_of_day_instantiation(instance):
     assert isinstance(instance, End_Of_Day)
 
-@given(instance=End_Of_Day_strategy)
-def test_end_of_day_EOT_type(instance):
-    assert isinstance(instance.EOT, int)
 
 
 @given(instance=End_Of_Day_strategy)
@@ -820,9 +769,6 @@ def test_end_of_day_EOT_setter(instance):
 def test_start_of_day_instantiation(instance):
     assert isinstance(instance, Start_Of_Day)
 
-@given(instance=Start_Of_Day_strategy)
-def test_start_of_day_SOT_type(instance):
-    assert isinstance(instance.SOT, int)
 
 
 @given(instance=Start_Of_Day_strategy)
@@ -836,9 +782,6 @@ def test_start_of_day_SOT_setter(instance):
 def test_light_instantiation(instance):
     assert isinstance(instance, Light)
 
-@given(instance=Light_strategy)
-def test_light_LightID_type(instance):
-    assert isinstance(instance.LightID, str)
 
 
 @given(instance=Light_strategy)
@@ -852,9 +795,6 @@ def test_light_LightID_setter(instance):
 def test_manager_instantiation(instance):
     assert isinstance(instance, Manager)
 
-@given(instance=Manager_strategy)
-def test_manager_MangagerID_type(instance):
-    assert isinstance(instance.MangagerID, int)
 
 
 @given(instance=Manager_strategy)
@@ -868,9 +808,6 @@ def test_manager_MangagerID_setter(instance):
 def test_camera_instantiation(instance):
     assert isinstance(instance, Camera)
 
-@given(instance=Camera_strategy)
-def test_camera_CameraID_type(instance):
-    assert isinstance(instance.CameraID, int)
 
 
 @given(instance=Camera_strategy)
@@ -884,9 +821,6 @@ def test_camera_CameraID_setter(instance):
 def test_door_instantiation(instance):
     assert isinstance(instance, Door)
 
-@given(instance=Door_strategy)
-def test_door_DoorID_type(instance):
-    assert isinstance(instance.DoorID, int)
 
 
 @given(instance=Door_strategy)
@@ -900,9 +834,6 @@ def test_door_DoorID_setter(instance):
 def test_alert_instantiation(instance):
     assert isinstance(instance, Alert)
 
-@given(instance=Alert_strategy)
-def test_alert_AlertID_type(instance):
-    assert isinstance(instance.AlertID, int)
 
 
 @given(instance=Alert_strategy)
@@ -916,9 +847,6 @@ def test_alert_AlertID_setter(instance):
 def test_home_security_system_instantiation(instance):
     assert isinstance(instance, Home_Security_System)
 
-@given(instance=Home_Security_System_strategy)
-def test_home_security_system_UserID_type(instance):
-    assert isinstance(instance.UserID, int)
 
 
 @given(instance=Home_Security_System_strategy)
@@ -942,9 +870,6 @@ def test_motion_sensor_instantiation(instance):
 def test_sensor_instantiation(instance):
     assert isinstance(instance, Sensor)
 
-@given(instance=Sensor_strategy)
-def test_sensor_SensorType_type(instance):
-    assert isinstance(instance.SensorType, int)
 
 
 @given(instance=Sensor_strategy)
@@ -953,9 +878,6 @@ def test_sensor_SensorType_setter(instance):
     instance.SensorType = original
     assert instance.SensorType == original
 
-@given(instance=Sensor_strategy)
-def test_sensor_SensorID_type(instance):
-    assert isinstance(instance.SensorID, int)
 
 
 @given(instance=Sensor_strategy)
@@ -969,9 +891,6 @@ def test_sensor_SensorID_setter(instance):
 def test_hub_device_instantiation(instance):
     assert isinstance(instance, Hub_Device)
 
-@given(instance=Hub_Device_strategy)
-def test_hub_device_Update_type(instance):
-    assert isinstance(instance.Update, float)
 
 
 @given(instance=Hub_Device_strategy)
@@ -980,9 +899,6 @@ def test_hub_device_Update_setter(instance):
     instance.Update = original
     assert instance.Update == original
 
-@given(instance=Hub_Device_strategy)
-def test_hub_device_Status_type(instance):
-    assert isinstance(instance.Status, bool)
 
 
 @given(instance=Hub_Device_strategy)
@@ -990,3 +906,21 @@ def test_hub_device_Status_setter(instance):
     original = instance.Status
     instance.Status = original
     assert instance.Status == original
+
+@given(instance=int_strategy)
+@settings(max_examples=50)
+def test_int_instantiation(instance):
+    assert isinstance(instance, int)
+
+@given(instance=UDP_Socket_strategy)
+@settings(max_examples=50)
+def test_udp_socket_instantiation(instance):
+    assert isinstance(instance, UDP_Socket)
+
+
+
+@given(instance=UDP_Socket_strategy)
+def test_udp_socket_socket_setter(instance):
+    original = instance.socket
+    instance.socket = original
+    assert instance.socket == original

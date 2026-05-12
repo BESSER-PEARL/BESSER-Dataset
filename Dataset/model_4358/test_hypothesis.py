@@ -3,25 +3,25 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    mini::lang::Statement,
-    mini::lang::Block,
-    mini::lang::MiniLang,
+from python_code import (
+    mini_lang_Statement,
+    mini_lang_Block,
+    mini_lang_MiniLang,
     ComparisonExpression,
-    mini::lang::EqualsExpression,
-    mini::lang::NotEqualsExpression,
+    mini_lang_EqualsExpression,
+    mini_lang_NotEqualsExpression,
     Expression,
-    mini::lang::NameExpression,
-    mini::lang::FOLCallExpression,
-    mini::lang::ComparisonExpression,
-    mini::lang::Expression,
+    mini_lang_NameExpression,
+    mini_lang_FOLCallExpression,
+    mini_lang_ComparisonExpression,
+    mini_lang_Expression,
     Statement,
-    mini::lang::AssignmentStatement,
-    mini::lang::ReturnStatement,
-    mini::lang::ExpressionStatement,
-    mini::lang::IfStatement,
+    mini_lang_ExpressionStatement,
+    mini_lang_AssignmentStatement,
+    mini_lang_ReturnStatement,
+    mini_lang_IfStatement,
 )
 
 # =============================================================================
@@ -30,44 +30,44 @@ from classes import (
 
 
 
-def test_mini::lang::statement_is_not_abstract():
-    assert not inspect.isabstract(mini::lang::Statement)
+def test_mini_lang_statement_is_not_abstract():
+    assert not inspect.isabstract(mini_lang_Statement)
 
 
-def test_mini::lang::statement_constructor_exists():
-    assert callable(mini::lang::Statement.__init__)
+def test_mini_lang_statement_constructor_exists():
+    assert callable(mini_lang_Statement.__init__)
 
 
-def test_mini::lang::statement_constructor_args():
-    sig = inspect.signature(mini::lang::Statement.__init__)
+def test_mini_lang_statement_constructor_args():
+    sig = inspect.signature(mini_lang_Statement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_mini::lang::block_is_not_abstract():
-    assert not inspect.isabstract(mini::lang::Block)
+def test_mini_lang_block_is_not_abstract():
+    assert not inspect.isabstract(mini_lang_Block)
 
 
-def test_mini::lang::block_constructor_exists():
-    assert callable(mini::lang::Block.__init__)
+def test_mini_lang_block_constructor_exists():
+    assert callable(mini_lang_Block.__init__)
 
 
-def test_mini::lang::block_constructor_args():
-    sig = inspect.signature(mini::lang::Block.__init__)
+def test_mini_lang_block_constructor_args():
+    sig = inspect.signature(mini_lang_Block.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_mini::lang::minilang_is_not_abstract():
-    assert not inspect.isabstract(mini::lang::MiniLang)
+def test_mini_lang_minilang_is_not_abstract():
+    assert not inspect.isabstract(mini_lang_MiniLang)
 
 
-def test_mini::lang::minilang_constructor_exists():
-    assert callable(mini::lang::MiniLang.__init__)
+def test_mini_lang_minilang_constructor_exists():
+    assert callable(mini_lang_MiniLang.__init__)
 
 
-def test_mini::lang::minilang_constructor_args():
-    sig = inspect.signature(mini::lang::MiniLang.__init__)
+def test_mini_lang_minilang_constructor_args():
+    sig = inspect.signature(mini_lang_MiniLang.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -86,30 +86,30 @@ def test_comparisonexpression_constructor_args():
 
 
 
-def test_mini::lang::equalsexpression_is_not_abstract():
-    assert not inspect.isabstract(mini::lang::EqualsExpression)
+def test_mini_lang_equalsexpression_is_not_abstract():
+    assert not inspect.isabstract(mini_lang_EqualsExpression)
 
 
-def test_mini::lang::equalsexpression_constructor_exists():
-    assert callable(mini::lang::EqualsExpression.__init__)
+def test_mini_lang_equalsexpression_constructor_exists():
+    assert callable(mini_lang_EqualsExpression.__init__)
 
 
-def test_mini::lang::equalsexpression_constructor_args():
-    sig = inspect.signature(mini::lang::EqualsExpression.__init__)
+def test_mini_lang_equalsexpression_constructor_args():
+    sig = inspect.signature(mini_lang_EqualsExpression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_mini::lang::notequalsexpression_is_not_abstract():
-    assert not inspect.isabstract(mini::lang::NotEqualsExpression)
+def test_mini_lang_notequalsexpression_is_not_abstract():
+    assert not inspect.isabstract(mini_lang_NotEqualsExpression)
 
 
-def test_mini::lang::notequalsexpression_constructor_exists():
-    assert callable(mini::lang::NotEqualsExpression.__init__)
+def test_mini_lang_notequalsexpression_constructor_exists():
+    assert callable(mini_lang_NotEqualsExpression.__init__)
 
 
-def test_mini::lang::notequalsexpression_constructor_args():
-    sig = inspect.signature(mini::lang::NotEqualsExpression.__init__)
+def test_mini_lang_notequalsexpression_constructor_args():
+    sig = inspect.signature(mini_lang_NotEqualsExpression.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -128,23 +128,23 @@ def test_expression_constructor_args():
 
 
 
-def test_mini::lang::nameexpression_is_not_abstract():
-    assert not inspect.isabstract(mini::lang::NameExpression)
+def test_mini_lang_nameexpression_is_not_abstract():
+    assert not inspect.isabstract(mini_lang_NameExpression)
 
 
-def test_mini::lang::nameexpression_constructor_exists():
-    assert callable(mini::lang::NameExpression.__init__)
+def test_mini_lang_nameexpression_constructor_exists():
+    assert callable(mini_lang_NameExpression.__init__)
 
 
-def test_mini::lang::nameexpression_constructor_args():
-    sig = inspect.signature(mini::lang::NameExpression.__init__)
+def test_mini_lang_nameexpression_constructor_args():
+    sig = inspect.signature(mini_lang_NameExpression.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_mini::lang::nameexpression_has_name():
-    assert hasattr(mini::lang::NameExpression, "name")
+def test_mini_lang_nameexpression_has_name():
+    assert hasattr(mini_lang_NameExpression, "name")
     descriptor = None
-    for klass in mini::lang::NameExpression.__mro__:
+    for klass in mini_lang_NameExpression.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -152,64 +152,64 @@ def test_mini::lang::nameexpression_has_name():
 
 
 
-def test_mini::lang::folcallexpression_is_not_abstract():
-    assert not inspect.isabstract(mini::lang::FOLCallExpression)
+def test_mini_lang_folcallexpression_is_not_abstract():
+    assert not inspect.isabstract(mini_lang_FOLCallExpression)
 
 
-def test_mini::lang::folcallexpression_constructor_exists():
-    assert callable(mini::lang::FOLCallExpression.__init__)
+def test_mini_lang_folcallexpression_constructor_exists():
+    assert callable(mini_lang_FOLCallExpression.__init__)
 
 
-def test_mini::lang::folcallexpression_constructor_args():
-    sig = inspect.signature(mini::lang::FOLCallExpression.__init__)
+def test_mini_lang_folcallexpression_constructor_args():
+    sig = inspect.signature(mini_lang_FOLCallExpression.__init__)
     params = list(sig.parameters.keys())
-    assert "method" in params, "Missing parameter 'method'"
     assert "iterator" in params, "Missing parameter 'iterator'"
+    assert "method" in params, "Missing parameter 'method'"
 
-def test_mini::lang::folcallexpression_has_method():
-    assert hasattr(mini::lang::FOLCallExpression, "method")
+def test_mini_lang_folcallexpression_has_iterator():
+    assert hasattr(mini_lang_FOLCallExpression, "iterator")
     descriptor = None
-    for klass in mini::lang::FOLCallExpression.__mro__:
-        if "method" in klass.__dict__:
-            descriptor = klass.__dict__["method"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_mini::lang::folcallexpression_has_iterator():
-    assert hasattr(mini::lang::FOLCallExpression, "iterator")
-    descriptor = None
-    for klass in mini::lang::FOLCallExpression.__mro__:
+    for klass in mini_lang_FOLCallExpression.__mro__:
         if "iterator" in klass.__dict__:
             descriptor = klass.__dict__["iterator"]
             break
     assert isinstance(descriptor, property)
 
+def test_mini_lang_folcallexpression_has_method():
+    assert hasattr(mini_lang_FOLCallExpression, "method")
+    descriptor = None
+    for klass in mini_lang_FOLCallExpression.__mro__:
+        if "method" in klass.__dict__:
+            descriptor = klass.__dict__["method"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_mini::lang::comparisonexpression_is_not_abstract():
-    assert not inspect.isabstract(mini::lang::ComparisonExpression)
+
+def test_mini_lang_comparisonexpression_is_not_abstract():
+    assert not inspect.isabstract(mini_lang_ComparisonExpression)
 
 
-def test_mini::lang::comparisonexpression_constructor_exists():
-    assert callable(mini::lang::ComparisonExpression.__init__)
+def test_mini_lang_comparisonexpression_constructor_exists():
+    assert callable(mini_lang_ComparisonExpression.__init__)
 
 
-def test_mini::lang::comparisonexpression_constructor_args():
-    sig = inspect.signature(mini::lang::ComparisonExpression.__init__)
+def test_mini_lang_comparisonexpression_constructor_args():
+    sig = inspect.signature(mini_lang_ComparisonExpression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_mini::lang::expression_is_not_abstract():
-    assert not inspect.isabstract(mini::lang::Expression)
+def test_mini_lang_expression_is_not_abstract():
+    assert not inspect.isabstract(mini_lang_Expression)
 
 
-def test_mini::lang::expression_constructor_exists():
-    assert callable(mini::lang::Expression.__init__)
+def test_mini_lang_expression_constructor_exists():
+    assert callable(mini_lang_Expression.__init__)
 
 
-def test_mini::lang::expression_constructor_args():
-    sig = inspect.signature(mini::lang::Expression.__init__)
+def test_mini_lang_expression_constructor_args():
+    sig = inspect.signature(mini_lang_Expression.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -228,58 +228,58 @@ def test_statement_constructor_args():
 
 
 
-def test_mini::lang::assignmentstatement_is_not_abstract():
-    assert not inspect.isabstract(mini::lang::AssignmentStatement)
+def test_mini_lang_expressionstatement_is_not_abstract():
+    assert not inspect.isabstract(mini_lang_ExpressionStatement)
 
 
-def test_mini::lang::assignmentstatement_constructor_exists():
-    assert callable(mini::lang::AssignmentStatement.__init__)
+def test_mini_lang_expressionstatement_constructor_exists():
+    assert callable(mini_lang_ExpressionStatement.__init__)
 
 
-def test_mini::lang::assignmentstatement_constructor_args():
-    sig = inspect.signature(mini::lang::AssignmentStatement.__init__)
+def test_mini_lang_expressionstatement_constructor_args():
+    sig = inspect.signature(mini_lang_ExpressionStatement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_mini::lang::returnstatement_is_not_abstract():
-    assert not inspect.isabstract(mini::lang::ReturnStatement)
+def test_mini_lang_assignmentstatement_is_not_abstract():
+    assert not inspect.isabstract(mini_lang_AssignmentStatement)
 
 
-def test_mini::lang::returnstatement_constructor_exists():
-    assert callable(mini::lang::ReturnStatement.__init__)
+def test_mini_lang_assignmentstatement_constructor_exists():
+    assert callable(mini_lang_AssignmentStatement.__init__)
 
 
-def test_mini::lang::returnstatement_constructor_args():
-    sig = inspect.signature(mini::lang::ReturnStatement.__init__)
+def test_mini_lang_assignmentstatement_constructor_args():
+    sig = inspect.signature(mini_lang_AssignmentStatement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_mini::lang::expressionstatement_is_not_abstract():
-    assert not inspect.isabstract(mini::lang::ExpressionStatement)
+def test_mini_lang_returnstatement_is_not_abstract():
+    assert not inspect.isabstract(mini_lang_ReturnStatement)
 
 
-def test_mini::lang::expressionstatement_constructor_exists():
-    assert callable(mini::lang::ExpressionStatement.__init__)
+def test_mini_lang_returnstatement_constructor_exists():
+    assert callable(mini_lang_ReturnStatement.__init__)
 
 
-def test_mini::lang::expressionstatement_constructor_args():
-    sig = inspect.signature(mini::lang::ExpressionStatement.__init__)
+def test_mini_lang_returnstatement_constructor_args():
+    sig = inspect.signature(mini_lang_ReturnStatement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_mini::lang::ifstatement_is_not_abstract():
-    assert not inspect.isabstract(mini::lang::IfStatement)
+def test_mini_lang_ifstatement_is_not_abstract():
+    assert not inspect.isabstract(mini_lang_IfStatement)
 
 
-def test_mini::lang::ifstatement_constructor_exists():
-    assert callable(mini::lang::IfStatement.__init__)
+def test_mini_lang_ifstatement_constructor_exists():
+    assert callable(mini_lang_IfStatement.__init__)
 
 
-def test_mini::lang::ifstatement_constructor_args():
-    sig = inspect.signature(mini::lang::IfStatement.__init__)
+def test_mini_lang_ifstatement_constructor_args():
+    sig = inspect.signature(mini_lang_IfStatement.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -294,170 +294,161 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-mini::lang::Statement_strategy = st.builds(
-    mini::lang::Statement,
+mini_lang_Statement_strategy = st.builds(
+    mini_lang_Statement,
 )
-mini::lang::Block_strategy = st.builds(
-    mini::lang::Block,
+mini_lang_Block_strategy = st.builds(
+    mini_lang_Block,
 )
-mini::lang::MiniLang_strategy = st.builds(
-    mini::lang::MiniLang,
+mini_lang_MiniLang_strategy = st.builds(
+    mini_lang_MiniLang,
 )
 ComparisonExpression_strategy = st.builds(
     ComparisonExpression,
 )
-mini::lang::EqualsExpression_strategy = st.builds(
-    mini::lang::EqualsExpression,
+mini_lang_EqualsExpression_strategy = st.builds(
+    mini_lang_EqualsExpression,
 )
-mini::lang::NotEqualsExpression_strategy = st.builds(
-    mini::lang::NotEqualsExpression,
+mini_lang_NotEqualsExpression_strategy = st.builds(
+    mini_lang_NotEqualsExpression,
 )
 Expression_strategy = st.builds(
     Expression,
 )
-mini::lang::NameExpression_strategy = st.builds(
-    mini::lang::NameExpression,
+mini_lang_NameExpression_strategy = st.builds(
+    mini_lang_NameExpression,
     name=
         safe_text
 )
-mini::lang::FOLCallExpression_strategy = st.builds(
-    mini::lang::FOLCallExpression,
-    method=
-        safe_text,
+mini_lang_FOLCallExpression_strategy = st.builds(
+    mini_lang_FOLCallExpression,
     iterator=
+        safe_text,
+    method=
         safe_text
 )
-mini::lang::ComparisonExpression_strategy = st.builds(
-    mini::lang::ComparisonExpression,
+mini_lang_ComparisonExpression_strategy = st.builds(
+    mini_lang_ComparisonExpression,
 )
-mini::lang::Expression_strategy = st.builds(
-    mini::lang::Expression,
+mini_lang_Expression_strategy = st.builds(
+    mini_lang_Expression,
 )
 Statement_strategy = st.builds(
     Statement,
 )
-mini::lang::AssignmentStatement_strategy = st.builds(
-    mini::lang::AssignmentStatement,
+mini_lang_ExpressionStatement_strategy = st.builds(
+    mini_lang_ExpressionStatement,
 )
-mini::lang::ReturnStatement_strategy = st.builds(
-    mini::lang::ReturnStatement,
+mini_lang_AssignmentStatement_strategy = st.builds(
+    mini_lang_AssignmentStatement,
 )
-mini::lang::ExpressionStatement_strategy = st.builds(
-    mini::lang::ExpressionStatement,
+mini_lang_ReturnStatement_strategy = st.builds(
+    mini_lang_ReturnStatement,
 )
-mini::lang::IfStatement_strategy = st.builds(
-    mini::lang::IfStatement,
+mini_lang_IfStatement_strategy = st.builds(
+    mini_lang_IfStatement,
 )
 
-@given(instance=mini::lang::Statement_strategy)
+@given(instance=mini_lang_Statement_strategy)
 @settings(max_examples=50)
-def test_mini::lang::statement_instantiation(instance):
-    assert isinstance(instance, mini::lang::Statement)
+def test_mini_lang_statement_instantiation(instance):
+    assert isinstance(instance, mini_lang_Statement)
 
-@given(instance=mini::lang::Block_strategy)
+@given(instance=mini_lang_Block_strategy)
 @settings(max_examples=50)
-def test_mini::lang::block_instantiation(instance):
-    assert isinstance(instance, mini::lang::Block)
+def test_mini_lang_block_instantiation(instance):
+    assert isinstance(instance, mini_lang_Block)
 
-@given(instance=mini::lang::MiniLang_strategy)
+@given(instance=mini_lang_MiniLang_strategy)
 @settings(max_examples=50)
-def test_mini::lang::minilang_instantiation(instance):
-    assert isinstance(instance, mini::lang::MiniLang)
+def test_mini_lang_minilang_instantiation(instance):
+    assert isinstance(instance, mini_lang_MiniLang)
 
 @given(instance=ComparisonExpression_strategy)
 @settings(max_examples=50)
 def test_comparisonexpression_instantiation(instance):
     assert isinstance(instance, ComparisonExpression)
 
-@given(instance=mini::lang::EqualsExpression_strategy)
+@given(instance=mini_lang_EqualsExpression_strategy)
 @settings(max_examples=50)
-def test_mini::lang::equalsexpression_instantiation(instance):
-    assert isinstance(instance, mini::lang::EqualsExpression)
+def test_mini_lang_equalsexpression_instantiation(instance):
+    assert isinstance(instance, mini_lang_EqualsExpression)
 
-@given(instance=mini::lang::NotEqualsExpression_strategy)
+@given(instance=mini_lang_NotEqualsExpression_strategy)
 @settings(max_examples=50)
-def test_mini::lang::notequalsexpression_instantiation(instance):
-    assert isinstance(instance, mini::lang::NotEqualsExpression)
+def test_mini_lang_notequalsexpression_instantiation(instance):
+    assert isinstance(instance, mini_lang_NotEqualsExpression)
 
 @given(instance=Expression_strategy)
 @settings(max_examples=50)
 def test_expression_instantiation(instance):
     assert isinstance(instance, Expression)
 
-@given(instance=mini::lang::NameExpression_strategy)
+@given(instance=mini_lang_NameExpression_strategy)
 @settings(max_examples=50)
-def test_mini::lang::nameexpression_instantiation(instance):
-    assert isinstance(instance, mini::lang::NameExpression)
-
-@given(instance=mini::lang::NameExpression_strategy)
-def test_mini::lang::nameexpression_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_mini_lang_nameexpression_instantiation(instance):
+    assert isinstance(instance, mini_lang_NameExpression)
 
 
-@given(instance=mini::lang::NameExpression_strategy)
-def test_mini::lang::nameexpression_name_setter(instance):
+
+@given(instance=mini_lang_NameExpression_strategy)
+def test_mini_lang_nameexpression_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=mini::lang::FOLCallExpression_strategy)
+@given(instance=mini_lang_FOLCallExpression_strategy)
 @settings(max_examples=50)
-def test_mini::lang::folcallexpression_instantiation(instance):
-    assert isinstance(instance, mini::lang::FOLCallExpression)
-
-@given(instance=mini::lang::FOLCallExpression_strategy)
-def test_mini::lang::folcallexpression_method_type(instance):
-    assert isinstance(instance.method, str)
+def test_mini_lang_folcallexpression_instantiation(instance):
+    assert isinstance(instance, mini_lang_FOLCallExpression)
 
 
-@given(instance=mini::lang::FOLCallExpression_strategy)
-def test_mini::lang::folcallexpression_method_setter(instance):
-    original = instance.method
-    instance.method = original
-    assert instance.method == original
 
-@given(instance=mini::lang::FOLCallExpression_strategy)
-def test_mini::lang::folcallexpression_iterator_type(instance):
-    assert isinstance(instance.iterator, str)
-
-
-@given(instance=mini::lang::FOLCallExpression_strategy)
-def test_mini::lang::folcallexpression_iterator_setter(instance):
+@given(instance=mini_lang_FOLCallExpression_strategy)
+def test_mini_lang_folcallexpression_iterator_setter(instance):
     original = instance.iterator
     instance.iterator = original
     assert instance.iterator == original
 
-@given(instance=mini::lang::ComparisonExpression_strategy)
-@settings(max_examples=50)
-def test_mini::lang::comparisonexpression_instantiation(instance):
-    assert isinstance(instance, mini::lang::ComparisonExpression)
 
-@given(instance=mini::lang::Expression_strategy)
+
+@given(instance=mini_lang_FOLCallExpression_strategy)
+def test_mini_lang_folcallexpression_method_setter(instance):
+    original = instance.method
+    instance.method = original
+    assert instance.method == original
+
+@given(instance=mini_lang_ComparisonExpression_strategy)
 @settings(max_examples=50)
-def test_mini::lang::expression_instantiation(instance):
-    assert isinstance(instance, mini::lang::Expression)
+def test_mini_lang_comparisonexpression_instantiation(instance):
+    assert isinstance(instance, mini_lang_ComparisonExpression)
+
+@given(instance=mini_lang_Expression_strategy)
+@settings(max_examples=50)
+def test_mini_lang_expression_instantiation(instance):
+    assert isinstance(instance, mini_lang_Expression)
 
 @given(instance=Statement_strategy)
 @settings(max_examples=50)
 def test_statement_instantiation(instance):
     assert isinstance(instance, Statement)
 
-@given(instance=mini::lang::AssignmentStatement_strategy)
+@given(instance=mini_lang_ExpressionStatement_strategy)
 @settings(max_examples=50)
-def test_mini::lang::assignmentstatement_instantiation(instance):
-    assert isinstance(instance, mini::lang::AssignmentStatement)
+def test_mini_lang_expressionstatement_instantiation(instance):
+    assert isinstance(instance, mini_lang_ExpressionStatement)
 
-@given(instance=mini::lang::ReturnStatement_strategy)
+@given(instance=mini_lang_AssignmentStatement_strategy)
 @settings(max_examples=50)
-def test_mini::lang::returnstatement_instantiation(instance):
-    assert isinstance(instance, mini::lang::ReturnStatement)
+def test_mini_lang_assignmentstatement_instantiation(instance):
+    assert isinstance(instance, mini_lang_AssignmentStatement)
 
-@given(instance=mini::lang::ExpressionStatement_strategy)
+@given(instance=mini_lang_ReturnStatement_strategy)
 @settings(max_examples=50)
-def test_mini::lang::expressionstatement_instantiation(instance):
-    assert isinstance(instance, mini::lang::ExpressionStatement)
+def test_mini_lang_returnstatement_instantiation(instance):
+    assert isinstance(instance, mini_lang_ReturnStatement)
 
-@given(instance=mini::lang::IfStatement_strategy)
+@given(instance=mini_lang_IfStatement_strategy)
 @settings(max_examples=50)
-def test_mini::lang::ifstatement_instantiation(instance):
-    assert isinstance(instance, mini::lang::IfStatement)
+def test_mini_lang_ifstatement_instantiation(instance):
+    assert isinstance(instance, mini_lang_IfStatement)

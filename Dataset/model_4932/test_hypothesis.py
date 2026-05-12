@@ -3,28 +3,28 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     VisibilityCondition,
-    form::SelectionCondition,
-    form::ListItem,
-    form::SelectionItem,
+    form_SelectionCondition,
+    form_ListItem,
+    form_SelectionItem,
     InputField,
-    form::SelectionField,
-    form::TextArea,
-    form::TextField,
+    form_SelectionField,
+    form_TextArea,
+    form_TextField,
     PageElement,
-    form::Text,
-    form::InputField,
-    form::VisibilityCondition,
-    form::List,
+    form_Text,
+    form_InputField,
+    form_VisibilityCondition,
+    form_List,
     Text,
-    form::Paragraph,
-    form::Heading,
-    form::Page,
-    form::Form,
-    form::PageElement,
+    form_Paragraph,
+    form_Heading,
+    form_Page,
+    form_Form,
+    form_PageElement,
     SelectionFieldType,
 )
 
@@ -48,37 +48,37 @@ def test_visibilitycondition_constructor_args():
 
 
 
-def test_form::selectioncondition_is_not_abstract():
-    assert not inspect.isabstract(form::SelectionCondition)
+def test_form_selectioncondition_is_not_abstract():
+    assert not inspect.isabstract(form_SelectionCondition)
 
 
-def test_form::selectioncondition_constructor_exists():
-    assert callable(form::SelectionCondition.__init__)
+def test_form_selectioncondition_constructor_exists():
+    assert callable(form_SelectionCondition.__init__)
 
 
-def test_form::selectioncondition_constructor_args():
-    sig = inspect.signature(form::SelectionCondition.__init__)
+def test_form_selectioncondition_constructor_args():
+    sig = inspect.signature(form_SelectionCondition.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_form::listitem_is_not_abstract():
-    assert not inspect.isabstract(form::ListItem)
+def test_form_listitem_is_not_abstract():
+    assert not inspect.isabstract(form_ListItem)
 
 
-def test_form::listitem_constructor_exists():
-    assert callable(form::ListItem.__init__)
+def test_form_listitem_constructor_exists():
+    assert callable(form_ListItem.__init__)
 
 
-def test_form::listitem_constructor_args():
-    sig = inspect.signature(form::ListItem.__init__)
+def test_form_listitem_constructor_args():
+    sig = inspect.signature(form_ListItem.__init__)
     params = list(sig.parameters.keys())
     assert "label" in params, "Missing parameter 'label'"
 
-def test_form::listitem_has_label():
-    assert hasattr(form::ListItem, "label")
+def test_form_listitem_has_label():
+    assert hasattr(form_ListItem, "label")
     descriptor = None
-    for klass in form::ListItem.__mro__:
+    for klass in form_ListItem.__mro__:
         if "label" in klass.__dict__:
             descriptor = klass.__dict__["label"]
             break
@@ -86,35 +86,35 @@ def test_form::listitem_has_label():
 
 
 
-def test_form::selectionitem_is_not_abstract():
-    assert not inspect.isabstract(form::SelectionItem)
+def test_form_selectionitem_is_not_abstract():
+    assert not inspect.isabstract(form_SelectionItem)
 
 
-def test_form::selectionitem_constructor_exists():
-    assert callable(form::SelectionItem.__init__)
+def test_form_selectionitem_constructor_exists():
+    assert callable(form_SelectionItem.__init__)
 
 
-def test_form::selectionitem_constructor_args():
-    sig = inspect.signature(form::SelectionItem.__init__)
+def test_form_selectionitem_constructor_args():
+    sig = inspect.signature(form_SelectionItem.__init__)
     params = list(sig.parameters.keys())
-    assert "selected" in params, "Missing parameter 'selected'"
     assert "label" in params, "Missing parameter 'label'"
+    assert "selected" in params, "Missing parameter 'selected'"
 
-def test_form::selectionitem_has_selected():
-    assert hasattr(form::SelectionItem, "selected")
+def test_form_selectionitem_has_label():
+    assert hasattr(form_SelectionItem, "label")
     descriptor = None
-    for klass in form::SelectionItem.__mro__:
+    for klass in form_SelectionItem.__mro__:
+        if "label" in klass.__dict__:
+            descriptor = klass.__dict__["label"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_form_selectionitem_has_selected():
+    assert hasattr(form_SelectionItem, "selected")
+    descriptor = None
+    for klass in form_SelectionItem.__mro__:
         if "selected" in klass.__dict__:
             descriptor = klass.__dict__["selected"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_form::selectionitem_has_label():
-    assert hasattr(form::SelectionItem, "label")
-    descriptor = None
-    for klass in form::SelectionItem.__mro__:
-        if "label" in klass.__dict__:
-            descriptor = klass.__dict__["label"]
             break
     assert isinstance(descriptor, property)
 
@@ -134,23 +134,23 @@ def test_inputfield_constructor_args():
 
 
 
-def test_form::selectionfield_is_not_abstract():
-    assert not inspect.isabstract(form::SelectionField)
+def test_form_selectionfield_is_not_abstract():
+    assert not inspect.isabstract(form_SelectionField)
 
 
-def test_form::selectionfield_constructor_exists():
-    assert callable(form::SelectionField.__init__)
+def test_form_selectionfield_constructor_exists():
+    assert callable(form_SelectionField.__init__)
 
 
-def test_form::selectionfield_constructor_args():
-    sig = inspect.signature(form::SelectionField.__init__)
+def test_form_selectionfield_constructor_args():
+    sig = inspect.signature(form_SelectionField.__init__)
     params = list(sig.parameters.keys())
     assert "selectionFieldType" in params, "Missing parameter 'selectionFieldType'"
 
-def test_form::selectionfield_has_selectionFieldType():
-    assert hasattr(form::SelectionField, "selectionFieldType")
+def test_form_selectionfield_has_selectionFieldType():
+    assert hasattr(form_SelectionField, "selectionFieldType")
     descriptor = None
-    for klass in form::SelectionField.__mro__:
+    for klass in form_SelectionField.__mro__:
         if "selectionFieldType" in klass.__dict__:
             descriptor = klass.__dict__["selectionFieldType"]
             break
@@ -158,37 +158,37 @@ def test_form::selectionfield_has_selectionFieldType():
 
 
 
-def test_form::textarea_is_not_abstract():
-    assert not inspect.isabstract(form::TextArea)
+def test_form_textarea_is_not_abstract():
+    assert not inspect.isabstract(form_TextArea)
 
 
-def test_form::textarea_constructor_exists():
-    assert callable(form::TextArea.__init__)
+def test_form_textarea_constructor_exists():
+    assert callable(form_TextArea.__init__)
 
 
-def test_form::textarea_constructor_args():
-    sig = inspect.signature(form::TextArea.__init__)
+def test_form_textarea_constructor_args():
+    sig = inspect.signature(form_TextArea.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_form::textfield_is_not_abstract():
-    assert not inspect.isabstract(form::TextField)
+def test_form_textfield_is_not_abstract():
+    assert not inspect.isabstract(form_TextField)
 
 
-def test_form::textfield_constructor_exists():
-    assert callable(form::TextField.__init__)
+def test_form_textfield_constructor_exists():
+    assert callable(form_TextField.__init__)
 
 
-def test_form::textfield_constructor_args():
-    sig = inspect.signature(form::TextField.__init__)
+def test_form_textfield_constructor_args():
+    sig = inspect.signature(form_TextField.__init__)
     params = list(sig.parameters.keys())
     assert "encrypted" in params, "Missing parameter 'encrypted'"
 
-def test_form::textfield_has_encrypted():
-    assert hasattr(form::TextField, "encrypted")
+def test_form_textfield_has_encrypted():
+    assert hasattr(form_TextField, "encrypted")
     descriptor = None
-    for klass in form::TextField.__mro__:
+    for klass in form_TextField.__mro__:
         if "encrypted" in klass.__dict__:
             descriptor = klass.__dict__["encrypted"]
             break
@@ -210,23 +210,23 @@ def test_pageelement_constructor_args():
 
 
 
-def test_form::text_is_not_abstract():
-    assert not inspect.isabstract(form::Text)
+def test_form_text_is_not_abstract():
+    assert not inspect.isabstract(form_Text)
 
 
-def test_form::text_constructor_exists():
-    assert callable(form::Text.__init__)
+def test_form_text_constructor_exists():
+    assert callable(form_Text.__init__)
 
 
-def test_form::text_constructor_args():
-    sig = inspect.signature(form::Text.__init__)
+def test_form_text_constructor_args():
+    sig = inspect.signature(form_Text.__init__)
     params = list(sig.parameters.keys())
     assert "content" in params, "Missing parameter 'content'"
 
-def test_form::text_has_content():
-    assert hasattr(form::Text, "content")
+def test_form_text_has_content():
+    assert hasattr(form_Text, "content")
     descriptor = None
-    for klass in form::Text.__mro__:
+    for klass in form_Text.__mro__:
         if "content" in klass.__dict__:
             descriptor = klass.__dict__["content"]
             break
@@ -234,33 +234,33 @@ def test_form::text_has_content():
 
 
 
-def test_form::inputfield_is_not_abstract():
-    assert not inspect.isabstract(form::InputField)
+def test_form_inputfield_is_not_abstract():
+    assert not inspect.isabstract(form_InputField)
 
 
-def test_form::inputfield_constructor_exists():
-    assert callable(form::InputField.__init__)
+def test_form_inputfield_constructor_exists():
+    assert callable(form_InputField.__init__)
 
 
-def test_form::inputfield_constructor_args():
-    sig = inspect.signature(form::InputField.__init__)
+def test_form_inputfield_constructor_args():
+    sig = inspect.signature(form_InputField.__init__)
     params = list(sig.parameters.keys())
     assert "mandatory" in params, "Missing parameter 'mandatory'"
     assert "label" in params, "Missing parameter 'label'"
 
-def test_form::inputfield_has_mandatory():
-    assert hasattr(form::InputField, "mandatory")
+def test_form_inputfield_has_mandatory():
+    assert hasattr(form_InputField, "mandatory")
     descriptor = None
-    for klass in form::InputField.__mro__:
+    for klass in form_InputField.__mro__:
         if "mandatory" in klass.__dict__:
             descriptor = klass.__dict__["mandatory"]
             break
     assert isinstance(descriptor, property)
 
-def test_form::inputfield_has_label():
-    assert hasattr(form::InputField, "label")
+def test_form_inputfield_has_label():
+    assert hasattr(form_InputField, "label")
     descriptor = None
-    for klass in form::InputField.__mro__:
+    for klass in form_InputField.__mro__:
         if "label" in klass.__dict__:
             descriptor = klass.__dict__["label"]
             break
@@ -268,37 +268,37 @@ def test_form::inputfield_has_label():
 
 
 
-def test_form::visibilitycondition_is_not_abstract():
-    assert not inspect.isabstract(form::VisibilityCondition)
+def test_form_visibilitycondition_is_not_abstract():
+    assert not inspect.isabstract(form_VisibilityCondition)
 
 
-def test_form::visibilitycondition_constructor_exists():
-    assert callable(form::VisibilityCondition.__init__)
+def test_form_visibilitycondition_constructor_exists():
+    assert callable(form_VisibilityCondition.__init__)
 
 
-def test_form::visibilitycondition_constructor_args():
-    sig = inspect.signature(form::VisibilityCondition.__init__)
+def test_form_visibilitycondition_constructor_args():
+    sig = inspect.signature(form_VisibilityCondition.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_form::list_is_not_abstract():
-    assert not inspect.isabstract(form::List)
+def test_form_list_is_not_abstract():
+    assert not inspect.isabstract(form_List)
 
 
-def test_form::list_constructor_exists():
-    assert callable(form::List.__init__)
+def test_form_list_constructor_exists():
+    assert callable(form_List.__init__)
 
 
-def test_form::list_constructor_args():
-    sig = inspect.signature(form::List.__init__)
+def test_form_list_constructor_args():
+    sig = inspect.signature(form_List.__init__)
     params = list(sig.parameters.keys())
     assert "ordered" in params, "Missing parameter 'ordered'"
 
-def test_form::list_has_ordered():
-    assert hasattr(form::List, "ordered")
+def test_form_list_has_ordered():
+    assert hasattr(form_List, "ordered")
     descriptor = None
-    for klass in form::List.__mro__:
+    for klass in form_List.__mro__:
         if "ordered" in klass.__dict__:
             descriptor = klass.__dict__["ordered"]
             break
@@ -320,37 +320,37 @@ def test_text_constructor_args():
 
 
 
-def test_form::paragraph_is_not_abstract():
-    assert not inspect.isabstract(form::Paragraph)
+def test_form_paragraph_is_not_abstract():
+    assert not inspect.isabstract(form_Paragraph)
 
 
-def test_form::paragraph_constructor_exists():
-    assert callable(form::Paragraph.__init__)
+def test_form_paragraph_constructor_exists():
+    assert callable(form_Paragraph.__init__)
 
 
-def test_form::paragraph_constructor_args():
-    sig = inspect.signature(form::Paragraph.__init__)
+def test_form_paragraph_constructor_args():
+    sig = inspect.signature(form_Paragraph.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_form::heading_is_not_abstract():
-    assert not inspect.isabstract(form::Heading)
+def test_form_heading_is_not_abstract():
+    assert not inspect.isabstract(form_Heading)
 
 
-def test_form::heading_constructor_exists():
-    assert callable(form::Heading.__init__)
+def test_form_heading_constructor_exists():
+    assert callable(form_Heading.__init__)
 
 
-def test_form::heading_constructor_args():
-    sig = inspect.signature(form::Heading.__init__)
+def test_form_heading_constructor_args():
+    sig = inspect.signature(form_Heading.__init__)
     params = list(sig.parameters.keys())
     assert "level" in params, "Missing parameter 'level'"
 
-def test_form::heading_has_level():
-    assert hasattr(form::Heading, "level")
+def test_form_heading_has_level():
+    assert hasattr(form_Heading, "level")
     descriptor = None
-    for klass in form::Heading.__mro__:
+    for klass in form_Heading.__mro__:
         if "level" in klass.__dict__:
             descriptor = klass.__dict__["level"]
             break
@@ -358,23 +358,23 @@ def test_form::heading_has_level():
 
 
 
-def test_form::page_is_not_abstract():
-    assert not inspect.isabstract(form::Page)
+def test_form_page_is_not_abstract():
+    assert not inspect.isabstract(form_Page)
 
 
-def test_form::page_constructor_exists():
-    assert callable(form::Page.__init__)
+def test_form_page_constructor_exists():
+    assert callable(form_Page.__init__)
 
 
-def test_form::page_constructor_args():
-    sig = inspect.signature(form::Page.__init__)
+def test_form_page_constructor_args():
+    sig = inspect.signature(form_Page.__init__)
     params = list(sig.parameters.keys())
     assert "title" in params, "Missing parameter 'title'"
 
-def test_form::page_has_title():
-    assert hasattr(form::Page, "title")
+def test_form_page_has_title():
+    assert hasattr(form_Page, "title")
     descriptor = None
-    for klass in form::Page.__mro__:
+    for klass in form_Page.__mro__:
         if "title" in klass.__dict__:
             descriptor = klass.__dict__["title"]
             break
@@ -382,37 +382,37 @@ def test_form::page_has_title():
 
 
 
-def test_form::form_is_not_abstract():
-    assert not inspect.isabstract(form::Form)
+def test_form_form_is_not_abstract():
+    assert not inspect.isabstract(form_Form)
 
 
-def test_form::form_constructor_exists():
-    assert callable(form::Form.__init__)
+def test_form_form_constructor_exists():
+    assert callable(form_Form.__init__)
 
 
-def test_form::form_constructor_args():
-    sig = inspect.signature(form::Form.__init__)
+def test_form_form_constructor_args():
+    sig = inspect.signature(form_Form.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_form::pageelement_is_not_abstract():
-    assert not inspect.isabstract(form::PageElement)
+def test_form_pageelement_is_not_abstract():
+    assert not inspect.isabstract(form_PageElement)
 
 
-def test_form::pageelement_constructor_exists():
-    assert callable(form::PageElement.__init__)
+def test_form_pageelement_constructor_exists():
+    assert callable(form_PageElement.__init__)
 
 
-def test_form::pageelement_constructor_args():
-    sig = inspect.signature(form::PageElement.__init__)
+def test_form_pageelement_constructor_args():
+    sig = inspect.signature(form_PageElement.__init__)
     params = list(sig.parameters.keys())
     assert "elementId" in params, "Missing parameter 'elementId'"
 
-def test_form::pageelement_has_elementId():
-    assert hasattr(form::PageElement, "elementId")
+def test_form_pageelement_has_elementId():
+    assert hasattr(form_PageElement, "elementId")
     descriptor = None
-    for klass in form::PageElement.__mro__:
+    for klass in form_PageElement.__mro__:
         if "elementId" in klass.__dict__:
             descriptor = klass.__dict__["elementId"]
             break
@@ -426,9 +426,9 @@ def test_selectionfieldtype_has_all_literals():
     # Collect the names of literals in this Enumeration
     enum_literals = [lit.name for lit in SelectionFieldType]
     expected_literals = [
-        "Combobox",
         "Radio",
         "Checkbox",
+        "Combobox",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
@@ -449,81 +449,81 @@ safe_text = st.text(
 VisibilityCondition_strategy = st.builds(
     VisibilityCondition,
 )
-form::SelectionCondition_strategy = st.builds(
-    form::SelectionCondition,
+form_SelectionCondition_strategy = st.builds(
+    form_SelectionCondition,
 )
-form::ListItem_strategy = st.builds(
-    form::ListItem,
+form_ListItem_strategy = st.builds(
+    form_ListItem,
     label=
         safe_text
 )
-form::SelectionItem_strategy = st.builds(
-    form::SelectionItem,
+form_SelectionItem_strategy = st.builds(
+    form_SelectionItem,
+    label=
+        safe_text,
     selected=
-        st.booleans(),
-    label=
-        safe_text
+        st.booleans()
 )
 InputField_strategy = st.builds(
     InputField,
 )
-form::SelectionField_strategy = st.builds(
-    form::SelectionField,
+form_SelectionField_strategy = st.builds(
+    form_SelectionField,
     selectionFieldType=
         safe_text
 )
-form::TextArea_strategy = st.builds(
-    form::TextArea,
+form_TextArea_strategy = st.builds(
+    form_TextArea,
 )
-form::TextField_strategy = st.builds(
-    form::TextField,
+form_TextField_strategy = st.builds(
+    form_TextField,
     encrypted=
         st.booleans()
 )
 PageElement_strategy = st.builds(
     PageElement,
 )
-form::Text_strategy = st.builds(
-    form::Text,
+form_Text_strategy = st.builds(
+    form_Text,
     content=
         safe_text
 )
-form::InputField_strategy = st.builds(
-    form::InputField,
+form_InputField_strategy = st.builds(
+    form_InputField,
     mandatory=
         st.booleans(),
     label=
         safe_text
 )
-form::VisibilityCondition_strategy = st.builds(
-    form::VisibilityCondition,
+form_VisibilityCondition_strategy = st.builds(
+    form_VisibilityCondition,
 )
-form::List_strategy = st.builds(
-    form::List,
+form_List_strategy = st.builds(
+    form_List,
     ordered=
         st.booleans()
 )
 Text_strategy = st.builds(
     Text,
 )
-form::Paragraph_strategy = st.builds(
-    form::Paragraph,
+form_Paragraph_strategy = st.builds(
+    form_Paragraph,
 )
-form::Heading_strategy = st.builds(
-    form::Heading,
+form_Heading_strategy = st.builds(
+    form_Heading,
     level=
         st.integers()
 )
-form::Page_strategy = st.builds(
-    form::Page,
+form_Page_strategy = st.builds(
+    form_Page,
     title=
         safe_text
 )
-form::Form_strategy = st.builds(
-    form::Form,
+form_Form_strategy = st.builds(
+    form_Form,
 )
-form::PageElement_strategy = st.builds(
-    form::PageElement,
+form_PageElement_strategy = st.builds(
+    form_PageElement,
     elementId=
         safe_text
 )
@@ -533,92 +533,77 @@ form::PageElement_strategy = st.builds(
 def test_visibilitycondition_instantiation(instance):
     assert isinstance(instance, VisibilityCondition)
 
-@given(instance=form::SelectionCondition_strategy)
+@given(instance=form_SelectionCondition_strategy)
 @settings(max_examples=50)
-def test_form::selectioncondition_instantiation(instance):
-    assert isinstance(instance, form::SelectionCondition)
+def test_form_selectioncondition_instantiation(instance):
+    assert isinstance(instance, form_SelectionCondition)
 
-@given(instance=form::ListItem_strategy)
+@given(instance=form_ListItem_strategy)
 @settings(max_examples=50)
-def test_form::listitem_instantiation(instance):
-    assert isinstance(instance, form::ListItem)
-
-@given(instance=form::ListItem_strategy)
-def test_form::listitem_label_type(instance):
-    assert isinstance(instance.label, str)
+def test_form_listitem_instantiation(instance):
+    assert isinstance(instance, form_ListItem)
 
 
-@given(instance=form::ListItem_strategy)
-def test_form::listitem_label_setter(instance):
+
+@given(instance=form_ListItem_strategy)
+def test_form_listitem_label_setter(instance):
     original = instance.label
     instance.label = original
     assert instance.label == original
 
-@given(instance=form::SelectionItem_strategy)
+@given(instance=form_SelectionItem_strategy)
 @settings(max_examples=50)
-def test_form::selectionitem_instantiation(instance):
-    assert isinstance(instance, form::SelectionItem)
-
-@given(instance=form::SelectionItem_strategy)
-def test_form::selectionitem_selected_type(instance):
-    assert isinstance(instance.selected, bool)
+def test_form_selectionitem_instantiation(instance):
+    assert isinstance(instance, form_SelectionItem)
 
 
-@given(instance=form::SelectionItem_strategy)
-def test_form::selectionitem_selected_setter(instance):
+
+@given(instance=form_SelectionItem_strategy)
+def test_form_selectionitem_label_setter(instance):
+    original = instance.label
+    instance.label = original
+    assert instance.label == original
+
+
+
+@given(instance=form_SelectionItem_strategy)
+def test_form_selectionitem_selected_setter(instance):
     original = instance.selected
     instance.selected = original
     assert instance.selected == original
-
-@given(instance=form::SelectionItem_strategy)
-def test_form::selectionitem_label_type(instance):
-    assert isinstance(instance.label, str)
-
-
-@given(instance=form::SelectionItem_strategy)
-def test_form::selectionitem_label_setter(instance):
-    original = instance.label
-    instance.label = original
-    assert instance.label == original
 
 @given(instance=InputField_strategy)
 @settings(max_examples=50)
 def test_inputfield_instantiation(instance):
     assert isinstance(instance, InputField)
 
-@given(instance=form::SelectionField_strategy)
+@given(instance=form_SelectionField_strategy)
 @settings(max_examples=50)
-def test_form::selectionfield_instantiation(instance):
-    assert isinstance(instance, form::SelectionField)
-
-@given(instance=form::SelectionField_strategy)
-def test_form::selectionfield_selectionFieldType_type(instance):
-    assert isinstance(instance.selectionFieldType, str)
+def test_form_selectionfield_instantiation(instance):
+    assert isinstance(instance, form_SelectionField)
 
 
-@given(instance=form::SelectionField_strategy)
-def test_form::selectionfield_selectionFieldType_setter(instance):
+
+@given(instance=form_SelectionField_strategy)
+def test_form_selectionfield_selectionFieldType_setter(instance):
     original = instance.selectionFieldType
     instance.selectionFieldType = original
     assert instance.selectionFieldType == original
 
-@given(instance=form::TextArea_strategy)
+@given(instance=form_TextArea_strategy)
 @settings(max_examples=50)
-def test_form::textarea_instantiation(instance):
-    assert isinstance(instance, form::TextArea)
+def test_form_textarea_instantiation(instance):
+    assert isinstance(instance, form_TextArea)
 
-@given(instance=form::TextField_strategy)
+@given(instance=form_TextField_strategy)
 @settings(max_examples=50)
-def test_form::textfield_instantiation(instance):
-    assert isinstance(instance, form::TextField)
-
-@given(instance=form::TextField_strategy)
-def test_form::textfield_encrypted_type(instance):
-    assert isinstance(instance.encrypted, bool)
+def test_form_textfield_instantiation(instance):
+    assert isinstance(instance, form_TextField)
 
 
-@given(instance=form::TextField_strategy)
-def test_form::textfield_encrypted_setter(instance):
+
+@given(instance=form_TextField_strategy)
+def test_form_textfield_encrypted_setter(instance):
     original = instance.encrypted
     instance.encrypted = original
     assert instance.encrypted == original
@@ -628,66 +613,54 @@ def test_form::textfield_encrypted_setter(instance):
 def test_pageelement_instantiation(instance):
     assert isinstance(instance, PageElement)
 
-@given(instance=form::Text_strategy)
+@given(instance=form_Text_strategy)
 @settings(max_examples=50)
-def test_form::text_instantiation(instance):
-    assert isinstance(instance, form::Text)
-
-@given(instance=form::Text_strategy)
-def test_form::text_content_type(instance):
-    assert isinstance(instance.content, str)
+def test_form_text_instantiation(instance):
+    assert isinstance(instance, form_Text)
 
 
-@given(instance=form::Text_strategy)
-def test_form::text_content_setter(instance):
+
+@given(instance=form_Text_strategy)
+def test_form_text_content_setter(instance):
     original = instance.content
     instance.content = original
     assert instance.content == original
 
-@given(instance=form::InputField_strategy)
+@given(instance=form_InputField_strategy)
 @settings(max_examples=50)
-def test_form::inputfield_instantiation(instance):
-    assert isinstance(instance, form::InputField)
-
-@given(instance=form::InputField_strategy)
-def test_form::inputfield_mandatory_type(instance):
-    assert isinstance(instance.mandatory, bool)
+def test_form_inputfield_instantiation(instance):
+    assert isinstance(instance, form_InputField)
 
 
-@given(instance=form::InputField_strategy)
-def test_form::inputfield_mandatory_setter(instance):
+
+@given(instance=form_InputField_strategy)
+def test_form_inputfield_mandatory_setter(instance):
     original = instance.mandatory
     instance.mandatory = original
     assert instance.mandatory == original
 
-@given(instance=form::InputField_strategy)
-def test_form::inputfield_label_type(instance):
-    assert isinstance(instance.label, str)
 
 
-@given(instance=form::InputField_strategy)
-def test_form::inputfield_label_setter(instance):
+@given(instance=form_InputField_strategy)
+def test_form_inputfield_label_setter(instance):
     original = instance.label
     instance.label = original
     assert instance.label == original
 
-@given(instance=form::VisibilityCondition_strategy)
+@given(instance=form_VisibilityCondition_strategy)
 @settings(max_examples=50)
-def test_form::visibilitycondition_instantiation(instance):
-    assert isinstance(instance, form::VisibilityCondition)
+def test_form_visibilitycondition_instantiation(instance):
+    assert isinstance(instance, form_VisibilityCondition)
 
-@given(instance=form::List_strategy)
+@given(instance=form_List_strategy)
 @settings(max_examples=50)
-def test_form::list_instantiation(instance):
-    assert isinstance(instance, form::List)
-
-@given(instance=form::List_strategy)
-def test_form::list_ordered_type(instance):
-    assert isinstance(instance.ordered, bool)
+def test_form_list_instantiation(instance):
+    assert isinstance(instance, form_List)
 
 
-@given(instance=form::List_strategy)
-def test_form::list_ordered_setter(instance):
+
+@given(instance=form_List_strategy)
+def test_form_list_ordered_setter(instance):
     original = instance.ordered
     instance.ordered = original
     assert instance.ordered == original
@@ -697,60 +670,51 @@ def test_form::list_ordered_setter(instance):
 def test_text_instantiation(instance):
     assert isinstance(instance, Text)
 
-@given(instance=form::Paragraph_strategy)
+@given(instance=form_Paragraph_strategy)
 @settings(max_examples=50)
-def test_form::paragraph_instantiation(instance):
-    assert isinstance(instance, form::Paragraph)
+def test_form_paragraph_instantiation(instance):
+    assert isinstance(instance, form_Paragraph)
 
-@given(instance=form::Heading_strategy)
+@given(instance=form_Heading_strategy)
 @settings(max_examples=50)
-def test_form::heading_instantiation(instance):
-    assert isinstance(instance, form::Heading)
-
-@given(instance=form::Heading_strategy)
-def test_form::heading_level_type(instance):
-    assert isinstance(instance.level, int)
+def test_form_heading_instantiation(instance):
+    assert isinstance(instance, form_Heading)
 
 
-@given(instance=form::Heading_strategy)
-def test_form::heading_level_setter(instance):
+
+@given(instance=form_Heading_strategy)
+def test_form_heading_level_setter(instance):
     original = instance.level
     instance.level = original
     assert instance.level == original
 
-@given(instance=form::Page_strategy)
+@given(instance=form_Page_strategy)
 @settings(max_examples=50)
-def test_form::page_instantiation(instance):
-    assert isinstance(instance, form::Page)
-
-@given(instance=form::Page_strategy)
-def test_form::page_title_type(instance):
-    assert isinstance(instance.title, str)
+def test_form_page_instantiation(instance):
+    assert isinstance(instance, form_Page)
 
 
-@given(instance=form::Page_strategy)
-def test_form::page_title_setter(instance):
+
+@given(instance=form_Page_strategy)
+def test_form_page_title_setter(instance):
     original = instance.title
     instance.title = original
     assert instance.title == original
 
-@given(instance=form::Form_strategy)
+@given(instance=form_Form_strategy)
 @settings(max_examples=50)
-def test_form::form_instantiation(instance):
-    assert isinstance(instance, form::Form)
+def test_form_form_instantiation(instance):
+    assert isinstance(instance, form_Form)
 
-@given(instance=form::PageElement_strategy)
+@given(instance=form_PageElement_strategy)
 @settings(max_examples=50)
-def test_form::pageelement_instantiation(instance):
-    assert isinstance(instance, form::PageElement)
-
-@given(instance=form::PageElement_strategy)
-def test_form::pageelement_elementId_type(instance):
-    assert isinstance(instance.elementId, str)
+def test_form_pageelement_instantiation(instance):
+    assert isinstance(instance, form_PageElement)
 
 
-@given(instance=form::PageElement_strategy)
-def test_form::pageelement_elementId_setter(instance):
+
+@given(instance=form_PageElement_strategy)
+def test_form_pageelement_elementId_setter(instance):
     original = instance.elementId
     instance.elementId = original
     assert instance.elementId == original

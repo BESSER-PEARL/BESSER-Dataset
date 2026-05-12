@@ -3,11 +3,11 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    Example::Greeting,
-    Example::Model,
+from python_code import (
+    Example_Greeting,
+    Example_Model,
 )
 
 # =============================================================================
@@ -16,23 +16,23 @@ from classes import (
 
 
 
-def test_example::greeting_is_not_abstract():
-    assert not inspect.isabstract(Example::Greeting)
+def test_example_greeting_is_not_abstract():
+    assert not inspect.isabstract(Example_Greeting)
 
 
-def test_example::greeting_constructor_exists():
-    assert callable(Example::Greeting.__init__)
+def test_example_greeting_constructor_exists():
+    assert callable(Example_Greeting.__init__)
 
 
-def test_example::greeting_constructor_args():
-    sig = inspect.signature(Example::Greeting.__init__)
+def test_example_greeting_constructor_args():
+    sig = inspect.signature(Example_Greeting.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_example::greeting_has_name():
-    assert hasattr(Example::Greeting, "name")
+def test_example_greeting_has_name():
+    assert hasattr(Example_Greeting, "name")
     descriptor = None
-    for klass in Example::Greeting.__mro__:
+    for klass in Example_Greeting.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -40,16 +40,16 @@ def test_example::greeting_has_name():
 
 
 
-def test_example::model_is_not_abstract():
-    assert not inspect.isabstract(Example::Model)
+def test_example_model_is_not_abstract():
+    assert not inspect.isabstract(Example_Model)
 
 
-def test_example::model_constructor_exists():
-    assert callable(Example::Model.__init__)
+def test_example_model_constructor_exists():
+    assert callable(Example_Model.__init__)
 
 
-def test_example::model_constructor_args():
-    sig = inspect.signature(Example::Model.__init__)
+def test_example_model_constructor_args():
+    sig = inspect.signature(Example_Model.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -64,32 +64,29 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-Example::Greeting_strategy = st.builds(
-    Example::Greeting,
+Example_Greeting_strategy = st.builds(
+    Example_Greeting,
     name=
         safe_text
 )
-Example::Model_strategy = st.builds(
-    Example::Model,
+Example_Model_strategy = st.builds(
+    Example_Model,
 )
 
-@given(instance=Example::Greeting_strategy)
+@given(instance=Example_Greeting_strategy)
 @settings(max_examples=50)
-def test_example::greeting_instantiation(instance):
-    assert isinstance(instance, Example::Greeting)
-
-@given(instance=Example::Greeting_strategy)
-def test_example::greeting_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_example_greeting_instantiation(instance):
+    assert isinstance(instance, Example_Greeting)
 
 
-@given(instance=Example::Greeting_strategy)
-def test_example::greeting_name_setter(instance):
+
+@given(instance=Example_Greeting_strategy)
+def test_example_greeting_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=Example::Model_strategy)
+@given(instance=Example_Model_strategy)
 @settings(max_examples=50)
-def test_example::model_instantiation(instance):
-    assert isinstance(instance, Example::Model)
+def test_example_model_instantiation(instance):
+    assert isinstance(instance, Example_Model)

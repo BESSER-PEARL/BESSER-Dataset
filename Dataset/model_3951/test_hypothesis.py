@@ -3,44 +3,282 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    StructuralFeature,
-    sooml::Reference,
-    sooml::Attribute,
-    sooml::StateMachine,
-    sooml::NamedElement,
-    NamedElement,
-    sooml::Class,
-    sooml::StructuralFeature,
-    sooml::Parameter,
-    sooml::Operation,
-    sooml::Package,
+from python_code import (
     CallOperationAction,
-    sooml::CallParameterOperationAction,
-    sooml::CallReferenceOperationAction,
+    sooml_CallParameterOperationAction,
+    sooml_CallReferenceOperationAction,
     IsInStateCondition,
-    sooml::ParameterIsInStateCondition,
-    sooml::ReferenceIsInStateCondition,
+    sooml_ParameterIsInStateCondition,
+    sooml_ReferenceIsInStateCondition,
     Guard,
-    sooml::IsInStateCondition,
-    sooml::ParameterBinding,
+    sooml_IsInStateCondition,
+    sooml_ParameterBinding,
     Action,
-    sooml::ReferenceAssignmentAction,
-    sooml::CallOperationAction,
-    sooml::Event,
-    sooml::Guard,
-    sooml::Action,
-    sooml::EntryOperation,
-    sooml::Transition,
-    sooml::State,
+    sooml_ReferenceAssignmentAction,
+    sooml_CallOperationAction,
+    sooml_Event,
+    sooml_Guard,
+    sooml_Action,
+    sooml_EntryOperation,
+    sooml_Transition,
+    StructuralFeature,
+    sooml_Reference,
+    sooml_Attribute,
+    sooml_StateMachine,
+    sooml_NamedElement,
+    NamedElement,
+    sooml_Parameter,
+    sooml_Operation,
+    sooml_State,
+    sooml_StructuralFeature,
+    sooml_Class,
+    sooml_Package,
     DataType,
 )
 
 # =============================================================================
 # SECTION 1 — STRUCTURAL TESTS
 # =============================================================================
+
+
+
+def test_calloperationaction_is_not_abstract():
+    assert not inspect.isabstract(CallOperationAction)
+
+
+def test_calloperationaction_constructor_exists():
+    assert callable(CallOperationAction.__init__)
+
+
+def test_calloperationaction_constructor_args():
+    sig = inspect.signature(CallOperationAction.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_sooml_callparameteroperationaction_is_not_abstract():
+    assert not inspect.isabstract(sooml_CallParameterOperationAction)
+
+
+def test_sooml_callparameteroperationaction_constructor_exists():
+    assert callable(sooml_CallParameterOperationAction.__init__)
+
+
+def test_sooml_callparameteroperationaction_constructor_args():
+    sig = inspect.signature(sooml_CallParameterOperationAction.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_sooml_callreferenceoperationaction_is_not_abstract():
+    assert not inspect.isabstract(sooml_CallReferenceOperationAction)
+
+
+def test_sooml_callreferenceoperationaction_constructor_exists():
+    assert callable(sooml_CallReferenceOperationAction.__init__)
+
+
+def test_sooml_callreferenceoperationaction_constructor_args():
+    sig = inspect.signature(sooml_CallReferenceOperationAction.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_isinstatecondition_is_not_abstract():
+    assert not inspect.isabstract(IsInStateCondition)
+
+
+def test_isinstatecondition_constructor_exists():
+    assert callable(IsInStateCondition.__init__)
+
+
+def test_isinstatecondition_constructor_args():
+    sig = inspect.signature(IsInStateCondition.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_sooml_parameterisinstatecondition_is_not_abstract():
+    assert not inspect.isabstract(sooml_ParameterIsInStateCondition)
+
+
+def test_sooml_parameterisinstatecondition_constructor_exists():
+    assert callable(sooml_ParameterIsInStateCondition.__init__)
+
+
+def test_sooml_parameterisinstatecondition_constructor_args():
+    sig = inspect.signature(sooml_ParameterIsInStateCondition.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_sooml_referenceisinstatecondition_is_not_abstract():
+    assert not inspect.isabstract(sooml_ReferenceIsInStateCondition)
+
+
+def test_sooml_referenceisinstatecondition_constructor_exists():
+    assert callable(sooml_ReferenceIsInStateCondition.__init__)
+
+
+def test_sooml_referenceisinstatecondition_constructor_args():
+    sig = inspect.signature(sooml_ReferenceIsInStateCondition.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_guard_is_not_abstract():
+    assert not inspect.isabstract(Guard)
+
+
+def test_guard_constructor_exists():
+    assert callable(Guard.__init__)
+
+
+def test_guard_constructor_args():
+    sig = inspect.signature(Guard.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_sooml_isinstatecondition_is_not_abstract():
+    assert not inspect.isabstract(sooml_IsInStateCondition)
+
+
+def test_sooml_isinstatecondition_constructor_exists():
+    assert callable(sooml_IsInStateCondition.__init__)
+
+
+def test_sooml_isinstatecondition_constructor_args():
+    sig = inspect.signature(sooml_IsInStateCondition.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_sooml_parameterbinding_is_not_abstract():
+    assert not inspect.isabstract(sooml_ParameterBinding)
+
+
+def test_sooml_parameterbinding_constructor_exists():
+    assert callable(sooml_ParameterBinding.__init__)
+
+
+def test_sooml_parameterbinding_constructor_args():
+    sig = inspect.signature(sooml_ParameterBinding.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_action_is_not_abstract():
+    assert not inspect.isabstract(Action)
+
+
+def test_action_constructor_exists():
+    assert callable(Action.__init__)
+
+
+def test_action_constructor_args():
+    sig = inspect.signature(Action.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_sooml_referenceassignmentaction_is_not_abstract():
+    assert not inspect.isabstract(sooml_ReferenceAssignmentAction)
+
+
+def test_sooml_referenceassignmentaction_constructor_exists():
+    assert callable(sooml_ReferenceAssignmentAction.__init__)
+
+
+def test_sooml_referenceassignmentaction_constructor_args():
+    sig = inspect.signature(sooml_ReferenceAssignmentAction.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_sooml_calloperationaction_is_not_abstract():
+    assert not inspect.isabstract(sooml_CallOperationAction)
+
+
+def test_sooml_calloperationaction_constructor_exists():
+    assert callable(sooml_CallOperationAction.__init__)
+
+
+def test_sooml_calloperationaction_constructor_args():
+    sig = inspect.signature(sooml_CallOperationAction.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_sooml_event_is_not_abstract():
+    assert not inspect.isabstract(sooml_Event)
+
+
+def test_sooml_event_constructor_exists():
+    assert callable(sooml_Event.__init__)
+
+
+def test_sooml_event_constructor_args():
+    sig = inspect.signature(sooml_Event.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_sooml_guard_is_not_abstract():
+    assert not inspect.isabstract(sooml_Guard)
+
+
+def test_sooml_guard_constructor_exists():
+    assert callable(sooml_Guard.__init__)
+
+
+def test_sooml_guard_constructor_args():
+    sig = inspect.signature(sooml_Guard.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_sooml_action_is_not_abstract():
+    assert not inspect.isabstract(sooml_Action)
+
+
+def test_sooml_action_constructor_exists():
+    assert callable(sooml_Action.__init__)
+
+
+def test_sooml_action_constructor_args():
+    sig = inspect.signature(sooml_Action.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_sooml_entryoperation_is_not_abstract():
+    assert not inspect.isabstract(sooml_EntryOperation)
+
+
+def test_sooml_entryoperation_constructor_exists():
+    assert callable(sooml_EntryOperation.__init__)
+
+
+def test_sooml_entryoperation_constructor_args():
+    sig = inspect.signature(sooml_EntryOperation.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_sooml_transition_is_not_abstract():
+    assert not inspect.isabstract(sooml_Transition)
+
+
+def test_sooml_transition_constructor_exists():
+    assert callable(sooml_Transition.__init__)
+
+
+def test_sooml_transition_constructor_args():
+    sig = inspect.signature(sooml_Transition.__init__)
+    params = list(sig.parameters.keys())
 
 
 
@@ -58,37 +296,37 @@ def test_structuralfeature_constructor_args():
 
 
 
-def test_sooml::reference_is_not_abstract():
-    assert not inspect.isabstract(sooml::Reference)
+def test_sooml_reference_is_not_abstract():
+    assert not inspect.isabstract(sooml_Reference)
 
 
-def test_sooml::reference_constructor_exists():
-    assert callable(sooml::Reference.__init__)
+def test_sooml_reference_constructor_exists():
+    assert callable(sooml_Reference.__init__)
 
 
-def test_sooml::reference_constructor_args():
-    sig = inspect.signature(sooml::Reference.__init__)
+def test_sooml_reference_constructor_args():
+    sig = inspect.signature(sooml_Reference.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sooml::attribute_is_not_abstract():
-    assert not inspect.isabstract(sooml::Attribute)
+def test_sooml_attribute_is_not_abstract():
+    assert not inspect.isabstract(sooml_Attribute)
 
 
-def test_sooml::attribute_constructor_exists():
-    assert callable(sooml::Attribute.__init__)
+def test_sooml_attribute_constructor_exists():
+    assert callable(sooml_Attribute.__init__)
 
 
-def test_sooml::attribute_constructor_args():
-    sig = inspect.signature(sooml::Attribute.__init__)
+def test_sooml_attribute_constructor_args():
+    sig = inspect.signature(sooml_Attribute.__init__)
     params = list(sig.parameters.keys())
     assert "dataType" in params, "Missing parameter 'dataType'"
 
-def test_sooml::attribute_has_dataType():
-    assert hasattr(sooml::Attribute, "dataType")
+def test_sooml_attribute_has_dataType():
+    assert hasattr(sooml_Attribute, "dataType")
     descriptor = None
-    for klass in sooml::Attribute.__mro__:
+    for klass in sooml_Attribute.__mro__:
         if "dataType" in klass.__dict__:
             descriptor = klass.__dict__["dataType"]
             break
@@ -96,37 +334,37 @@ def test_sooml::attribute_has_dataType():
 
 
 
-def test_sooml::statemachine_is_not_abstract():
-    assert not inspect.isabstract(sooml::StateMachine)
+def test_sooml_statemachine_is_not_abstract():
+    assert not inspect.isabstract(sooml_StateMachine)
 
 
-def test_sooml::statemachine_constructor_exists():
-    assert callable(sooml::StateMachine.__init__)
+def test_sooml_statemachine_constructor_exists():
+    assert callable(sooml_StateMachine.__init__)
 
 
-def test_sooml::statemachine_constructor_args():
-    sig = inspect.signature(sooml::StateMachine.__init__)
+def test_sooml_statemachine_constructor_args():
+    sig = inspect.signature(sooml_StateMachine.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sooml::namedelement_is_not_abstract():
-    assert not inspect.isabstract(sooml::NamedElement)
+def test_sooml_namedelement_is_not_abstract():
+    assert not inspect.isabstract(sooml_NamedElement)
 
 
-def test_sooml::namedelement_constructor_exists():
-    assert callable(sooml::NamedElement.__init__)
+def test_sooml_namedelement_constructor_exists():
+    assert callable(sooml_NamedElement.__init__)
 
 
-def test_sooml::namedelement_constructor_args():
-    sig = inspect.signature(sooml::NamedElement.__init__)
+def test_sooml_namedelement_constructor_args():
+    sig = inspect.signature(sooml_NamedElement.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_sooml::namedelement_has_name():
-    assert hasattr(sooml::NamedElement, "name")
+def test_sooml_namedelement_has_name():
+    assert hasattr(sooml_NamedElement, "name")
     descriptor = None
-    for klass in sooml::NamedElement.__mro__:
+    for klass in sooml_NamedElement.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -148,71 +386,23 @@ def test_namedelement_constructor_args():
 
 
 
-def test_sooml::class_is_not_abstract():
-    assert not inspect.isabstract(sooml::Class)
+def test_sooml_parameter_is_not_abstract():
+    assert not inspect.isabstract(sooml_Parameter)
 
 
-def test_sooml::class_constructor_exists():
-    assert callable(sooml::Class.__init__)
+def test_sooml_parameter_constructor_exists():
+    assert callable(sooml_Parameter.__init__)
 
 
-def test_sooml::class_constructor_args():
-    sig = inspect.signature(sooml::Class.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_sooml::structuralfeature_is_not_abstract():
-    assert not inspect.isabstract(sooml::StructuralFeature)
-
-
-def test_sooml::structuralfeature_constructor_exists():
-    assert callable(sooml::StructuralFeature.__init__)
-
-
-def test_sooml::structuralfeature_constructor_args():
-    sig = inspect.signature(sooml::StructuralFeature.__init__)
-    params = list(sig.parameters.keys())
-    assert "lowerBound" in params, "Missing parameter 'lowerBound'"
-    assert "upperBound" in params, "Missing parameter 'upperBound'"
-
-def test_sooml::structuralfeature_has_lowerBound():
-    assert hasattr(sooml::StructuralFeature, "lowerBound")
-    descriptor = None
-    for klass in sooml::StructuralFeature.__mro__:
-        if "lowerBound" in klass.__dict__:
-            descriptor = klass.__dict__["lowerBound"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_sooml::structuralfeature_has_upperBound():
-    assert hasattr(sooml::StructuralFeature, "upperBound")
-    descriptor = None
-    for klass in sooml::StructuralFeature.__mro__:
-        if "upperBound" in klass.__dict__:
-            descriptor = klass.__dict__["upperBound"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_sooml::parameter_is_not_abstract():
-    assert not inspect.isabstract(sooml::Parameter)
-
-
-def test_sooml::parameter_constructor_exists():
-    assert callable(sooml::Parameter.__init__)
-
-
-def test_sooml::parameter_constructor_args():
-    sig = inspect.signature(sooml::Parameter.__init__)
+def test_sooml_parameter_constructor_args():
+    sig = inspect.signature(sooml_Parameter.__init__)
     params = list(sig.parameters.keys())
     assert "dataType" in params, "Missing parameter 'dataType'"
 
-def test_sooml::parameter_has_dataType():
-    assert hasattr(sooml::Parameter, "dataType")
+def test_sooml_parameter_has_dataType():
+    assert hasattr(sooml_Parameter, "dataType")
     descriptor = None
-    for klass in sooml::Parameter.__mro__:
+    for klass in sooml_Parameter.__mro__:
         if "dataType" in klass.__dict__:
             descriptor = klass.__dict__["dataType"]
             break
@@ -220,282 +410,92 @@ def test_sooml::parameter_has_dataType():
 
 
 
-def test_sooml::operation_is_not_abstract():
-    assert not inspect.isabstract(sooml::Operation)
+def test_sooml_operation_is_not_abstract():
+    assert not inspect.isabstract(sooml_Operation)
 
 
-def test_sooml::operation_constructor_exists():
-    assert callable(sooml::Operation.__init__)
+def test_sooml_operation_constructor_exists():
+    assert callable(sooml_Operation.__init__)
 
 
-def test_sooml::operation_constructor_args():
-    sig = inspect.signature(sooml::Operation.__init__)
+def test_sooml_operation_constructor_args():
+    sig = inspect.signature(sooml_Operation.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sooml::package_is_not_abstract():
-    assert not inspect.isabstract(sooml::Package)
+def test_sooml_state_is_not_abstract():
+    assert not inspect.isabstract(sooml_State)
 
 
-def test_sooml::package_constructor_exists():
-    assert callable(sooml::Package.__init__)
+def test_sooml_state_constructor_exists():
+    assert callable(sooml_State.__init__)
 
 
-def test_sooml::package_constructor_args():
-    sig = inspect.signature(sooml::Package.__init__)
+def test_sooml_state_constructor_args():
+    sig = inspect.signature(sooml_State.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_calloperationaction_is_not_abstract():
-    assert not inspect.isabstract(CallOperationAction)
+def test_sooml_structuralfeature_is_not_abstract():
+    assert not inspect.isabstract(sooml_StructuralFeature)
 
 
-def test_calloperationaction_constructor_exists():
-    assert callable(CallOperationAction.__init__)
+def test_sooml_structuralfeature_constructor_exists():
+    assert callable(sooml_StructuralFeature.__init__)
 
 
-def test_calloperationaction_constructor_args():
-    sig = inspect.signature(CallOperationAction.__init__)
+def test_sooml_structuralfeature_constructor_args():
+    sig = inspect.signature(sooml_StructuralFeature.__init__)
+    params = list(sig.parameters.keys())
+    assert "upperBound" in params, "Missing parameter 'upperBound'"
+    assert "lowerBound" in params, "Missing parameter 'lowerBound'"
+
+def test_sooml_structuralfeature_has_upperBound():
+    assert hasattr(sooml_StructuralFeature, "upperBound")
+    descriptor = None
+    for klass in sooml_StructuralFeature.__mro__:
+        if "upperBound" in klass.__dict__:
+            descriptor = klass.__dict__["upperBound"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_sooml_structuralfeature_has_lowerBound():
+    assert hasattr(sooml_StructuralFeature, "lowerBound")
+    descriptor = None
+    for klass in sooml_StructuralFeature.__mro__:
+        if "lowerBound" in klass.__dict__:
+            descriptor = klass.__dict__["lowerBound"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_sooml_class_is_not_abstract():
+    assert not inspect.isabstract(sooml_Class)
+
+
+def test_sooml_class_constructor_exists():
+    assert callable(sooml_Class.__init__)
+
+
+def test_sooml_class_constructor_args():
+    sig = inspect.signature(sooml_Class.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_sooml::callparameteroperationaction_is_not_abstract():
-    assert not inspect.isabstract(sooml::CallParameterOperationAction)
+def test_sooml_package_is_not_abstract():
+    assert not inspect.isabstract(sooml_Package)
 
 
-def test_sooml::callparameteroperationaction_constructor_exists():
-    assert callable(sooml::CallParameterOperationAction.__init__)
+def test_sooml_package_constructor_exists():
+    assert callable(sooml_Package.__init__)
 
 
-def test_sooml::callparameteroperationaction_constructor_args():
-    sig = inspect.signature(sooml::CallParameterOperationAction.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_sooml::callreferenceoperationaction_is_not_abstract():
-    assert not inspect.isabstract(sooml::CallReferenceOperationAction)
-
-
-def test_sooml::callreferenceoperationaction_constructor_exists():
-    assert callable(sooml::CallReferenceOperationAction.__init__)
-
-
-def test_sooml::callreferenceoperationaction_constructor_args():
-    sig = inspect.signature(sooml::CallReferenceOperationAction.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_isinstatecondition_is_not_abstract():
-    assert not inspect.isabstract(IsInStateCondition)
-
-
-def test_isinstatecondition_constructor_exists():
-    assert callable(IsInStateCondition.__init__)
-
-
-def test_isinstatecondition_constructor_args():
-    sig = inspect.signature(IsInStateCondition.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_sooml::parameterisinstatecondition_is_not_abstract():
-    assert not inspect.isabstract(sooml::ParameterIsInStateCondition)
-
-
-def test_sooml::parameterisinstatecondition_constructor_exists():
-    assert callable(sooml::ParameterIsInStateCondition.__init__)
-
-
-def test_sooml::parameterisinstatecondition_constructor_args():
-    sig = inspect.signature(sooml::ParameterIsInStateCondition.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_sooml::referenceisinstatecondition_is_not_abstract():
-    assert not inspect.isabstract(sooml::ReferenceIsInStateCondition)
-
-
-def test_sooml::referenceisinstatecondition_constructor_exists():
-    assert callable(sooml::ReferenceIsInStateCondition.__init__)
-
-
-def test_sooml::referenceisinstatecondition_constructor_args():
-    sig = inspect.signature(sooml::ReferenceIsInStateCondition.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_guard_is_not_abstract():
-    assert not inspect.isabstract(Guard)
-
-
-def test_guard_constructor_exists():
-    assert callable(Guard.__init__)
-
-
-def test_guard_constructor_args():
-    sig = inspect.signature(Guard.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_sooml::isinstatecondition_is_not_abstract():
-    assert not inspect.isabstract(sooml::IsInStateCondition)
-
-
-def test_sooml::isinstatecondition_constructor_exists():
-    assert callable(sooml::IsInStateCondition.__init__)
-
-
-def test_sooml::isinstatecondition_constructor_args():
-    sig = inspect.signature(sooml::IsInStateCondition.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_sooml::parameterbinding_is_not_abstract():
-    assert not inspect.isabstract(sooml::ParameterBinding)
-
-
-def test_sooml::parameterbinding_constructor_exists():
-    assert callable(sooml::ParameterBinding.__init__)
-
-
-def test_sooml::parameterbinding_constructor_args():
-    sig = inspect.signature(sooml::ParameterBinding.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_action_is_not_abstract():
-    assert not inspect.isabstract(Action)
-
-
-def test_action_constructor_exists():
-    assert callable(Action.__init__)
-
-
-def test_action_constructor_args():
-    sig = inspect.signature(Action.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_sooml::referenceassignmentaction_is_not_abstract():
-    assert not inspect.isabstract(sooml::ReferenceAssignmentAction)
-
-
-def test_sooml::referenceassignmentaction_constructor_exists():
-    assert callable(sooml::ReferenceAssignmentAction.__init__)
-
-
-def test_sooml::referenceassignmentaction_constructor_args():
-    sig = inspect.signature(sooml::ReferenceAssignmentAction.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_sooml::calloperationaction_is_not_abstract():
-    assert not inspect.isabstract(sooml::CallOperationAction)
-
-
-def test_sooml::calloperationaction_constructor_exists():
-    assert callable(sooml::CallOperationAction.__init__)
-
-
-def test_sooml::calloperationaction_constructor_args():
-    sig = inspect.signature(sooml::CallOperationAction.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_sooml::event_is_not_abstract():
-    assert not inspect.isabstract(sooml::Event)
-
-
-def test_sooml::event_constructor_exists():
-    assert callable(sooml::Event.__init__)
-
-
-def test_sooml::event_constructor_args():
-    sig = inspect.signature(sooml::Event.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_sooml::guard_is_not_abstract():
-    assert not inspect.isabstract(sooml::Guard)
-
-
-def test_sooml::guard_constructor_exists():
-    assert callable(sooml::Guard.__init__)
-
-
-def test_sooml::guard_constructor_args():
-    sig = inspect.signature(sooml::Guard.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_sooml::action_is_not_abstract():
-    assert not inspect.isabstract(sooml::Action)
-
-
-def test_sooml::action_constructor_exists():
-    assert callable(sooml::Action.__init__)
-
-
-def test_sooml::action_constructor_args():
-    sig = inspect.signature(sooml::Action.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_sooml::entryoperation_is_not_abstract():
-    assert not inspect.isabstract(sooml::EntryOperation)
-
-
-def test_sooml::entryoperation_constructor_exists():
-    assert callable(sooml::EntryOperation.__init__)
-
-
-def test_sooml::entryoperation_constructor_args():
-    sig = inspect.signature(sooml::EntryOperation.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_sooml::transition_is_not_abstract():
-    assert not inspect.isabstract(sooml::Transition)
-
-
-def test_sooml::transition_constructor_exists():
-    assert callable(sooml::Transition.__init__)
-
-
-def test_sooml::transition_constructor_args():
-    sig = inspect.signature(sooml::Transition.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_sooml::state_is_not_abstract():
-    assert not inspect.isabstract(sooml::State)
-
-
-def test_sooml::state_constructor_exists():
-    assert callable(sooml::State.__init__)
-
-
-def test_sooml::state_constructor_args():
-    sig = inspect.signature(sooml::State.__init__)
+def test_sooml_package_constructor_args():
+    sig = inspect.signature(sooml_Package.__init__)
     params = list(sig.parameters.keys())
 
 def test_datatype_exists():
@@ -506,10 +506,10 @@ def test_datatype_has_all_literals():
     # Collect the names of literals in this Enumeration
     enum_literals = [lit.name for lit in DataType]
     expected_literals = [
-        "Integer",
         "String",
-        "Complex",
+        "Integer",
         "Boolean",
+        "Complex",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
@@ -527,147 +527,226 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
+CallOperationAction_strategy = st.builds(
+    CallOperationAction,
+)
+sooml_CallParameterOperationAction_strategy = st.builds(
+    sooml_CallParameterOperationAction,
+)
+sooml_CallReferenceOperationAction_strategy = st.builds(
+    sooml_CallReferenceOperationAction,
+)
+IsInStateCondition_strategy = st.builds(
+    IsInStateCondition,
+)
+sooml_ParameterIsInStateCondition_strategy = st.builds(
+    sooml_ParameterIsInStateCondition,
+)
+sooml_ReferenceIsInStateCondition_strategy = st.builds(
+    sooml_ReferenceIsInStateCondition,
+)
+Guard_strategy = st.builds(
+    Guard,
+)
+sooml_IsInStateCondition_strategy = st.builds(
+    sooml_IsInStateCondition,
+)
+sooml_ParameterBinding_strategy = st.builds(
+    sooml_ParameterBinding,
+)
+Action_strategy = st.builds(
+    Action,
+)
+sooml_ReferenceAssignmentAction_strategy = st.builds(
+    sooml_ReferenceAssignmentAction,
+)
+sooml_CallOperationAction_strategy = st.builds(
+    sooml_CallOperationAction,
+)
+sooml_Event_strategy = st.builds(
+    sooml_Event,
+)
+sooml_Guard_strategy = st.builds(
+    sooml_Guard,
+)
+sooml_Action_strategy = st.builds(
+    sooml_Action,
+)
+sooml_EntryOperation_strategy = st.builds(
+    sooml_EntryOperation,
+)
+sooml_Transition_strategy = st.builds(
+    sooml_Transition,
+)
 StructuralFeature_strategy = st.builds(
     StructuralFeature,
 )
-sooml::Reference_strategy = st.builds(
-    sooml::Reference,
+sooml_Reference_strategy = st.builds(
+    sooml_Reference,
 )
-sooml::Attribute_strategy = st.builds(
-    sooml::Attribute,
+sooml_Attribute_strategy = st.builds(
+    sooml_Attribute,
     dataType=
         safe_text
 )
-sooml::StateMachine_strategy = st.builds(
-    sooml::StateMachine,
+sooml_StateMachine_strategy = st.builds(
+    sooml_StateMachine,
 )
-sooml::NamedElement_strategy = st.builds(
-    sooml::NamedElement,
+sooml_NamedElement_strategy = st.builds(
+    sooml_NamedElement,
     name=
         safe_text
 )
 NamedElement_strategy = st.builds(
     NamedElement,
 )
-sooml::Class_strategy = st.builds(
-    sooml::Class,
-)
-sooml::StructuralFeature_strategy = st.builds(
-    sooml::StructuralFeature,
-    lowerBound=
-        st.integers(),
-    upperBound=
-        st.integers()
-)
-sooml::Parameter_strategy = st.builds(
-    sooml::Parameter,
+sooml_Parameter_strategy = st.builds(
+    sooml_Parameter,
     dataType=
         safe_text
 )
-sooml::Operation_strategy = st.builds(
-    sooml::Operation,
+sooml_Operation_strategy = st.builds(
+    sooml_Operation,
 )
-sooml::Package_strategy = st.builds(
-    sooml::Package,
+sooml_State_strategy = st.builds(
+    sooml_State,
 )
-CallOperationAction_strategy = st.builds(
-    CallOperationAction,
+sooml_StructuralFeature_strategy = st.builds(
+    sooml_StructuralFeature,
+    upperBound=
+        st.integers(),
+    lowerBound=
+        st.integers()
 )
-sooml::CallParameterOperationAction_strategy = st.builds(
-    sooml::CallParameterOperationAction,
+sooml_Class_strategy = st.builds(
+    sooml_Class,
 )
-sooml::CallReferenceOperationAction_strategy = st.builds(
-    sooml::CallReferenceOperationAction,
+sooml_Package_strategy = st.builds(
+    sooml_Package,
 )
-IsInStateCondition_strategy = st.builds(
-    IsInStateCondition,
-)
-sooml::ParameterIsInStateCondition_strategy = st.builds(
-    sooml::ParameterIsInStateCondition,
-)
-sooml::ReferenceIsInStateCondition_strategy = st.builds(
-    sooml::ReferenceIsInStateCondition,
-)
-Guard_strategy = st.builds(
-    Guard,
-)
-sooml::IsInStateCondition_strategy = st.builds(
-    sooml::IsInStateCondition,
-)
-sooml::ParameterBinding_strategy = st.builds(
-    sooml::ParameterBinding,
-)
-Action_strategy = st.builds(
-    Action,
-)
-sooml::ReferenceAssignmentAction_strategy = st.builds(
-    sooml::ReferenceAssignmentAction,
-)
-sooml::CallOperationAction_strategy = st.builds(
-    sooml::CallOperationAction,
-)
-sooml::Event_strategy = st.builds(
-    sooml::Event,
-)
-sooml::Guard_strategy = st.builds(
-    sooml::Guard,
-)
-sooml::Action_strategy = st.builds(
-    sooml::Action,
-)
-sooml::EntryOperation_strategy = st.builds(
-    sooml::EntryOperation,
-)
-sooml::Transition_strategy = st.builds(
-    sooml::Transition,
-)
-sooml::State_strategy = st.builds(
-    sooml::State,
-)
+
+@given(instance=CallOperationAction_strategy)
+@settings(max_examples=50)
+def test_calloperationaction_instantiation(instance):
+    assert isinstance(instance, CallOperationAction)
+
+@given(instance=sooml_CallParameterOperationAction_strategy)
+@settings(max_examples=50)
+def test_sooml_callparameteroperationaction_instantiation(instance):
+    assert isinstance(instance, sooml_CallParameterOperationAction)
+
+@given(instance=sooml_CallReferenceOperationAction_strategy)
+@settings(max_examples=50)
+def test_sooml_callreferenceoperationaction_instantiation(instance):
+    assert isinstance(instance, sooml_CallReferenceOperationAction)
+
+@given(instance=IsInStateCondition_strategy)
+@settings(max_examples=50)
+def test_isinstatecondition_instantiation(instance):
+    assert isinstance(instance, IsInStateCondition)
+
+@given(instance=sooml_ParameterIsInStateCondition_strategy)
+@settings(max_examples=50)
+def test_sooml_parameterisinstatecondition_instantiation(instance):
+    assert isinstance(instance, sooml_ParameterIsInStateCondition)
+
+@given(instance=sooml_ReferenceIsInStateCondition_strategy)
+@settings(max_examples=50)
+def test_sooml_referenceisinstatecondition_instantiation(instance):
+    assert isinstance(instance, sooml_ReferenceIsInStateCondition)
+
+@given(instance=Guard_strategy)
+@settings(max_examples=50)
+def test_guard_instantiation(instance):
+    assert isinstance(instance, Guard)
+
+@given(instance=sooml_IsInStateCondition_strategy)
+@settings(max_examples=50)
+def test_sooml_isinstatecondition_instantiation(instance):
+    assert isinstance(instance, sooml_IsInStateCondition)
+
+@given(instance=sooml_ParameterBinding_strategy)
+@settings(max_examples=50)
+def test_sooml_parameterbinding_instantiation(instance):
+    assert isinstance(instance, sooml_ParameterBinding)
+
+@given(instance=Action_strategy)
+@settings(max_examples=50)
+def test_action_instantiation(instance):
+    assert isinstance(instance, Action)
+
+@given(instance=sooml_ReferenceAssignmentAction_strategy)
+@settings(max_examples=50)
+def test_sooml_referenceassignmentaction_instantiation(instance):
+    assert isinstance(instance, sooml_ReferenceAssignmentAction)
+
+@given(instance=sooml_CallOperationAction_strategy)
+@settings(max_examples=50)
+def test_sooml_calloperationaction_instantiation(instance):
+    assert isinstance(instance, sooml_CallOperationAction)
+
+@given(instance=sooml_Event_strategy)
+@settings(max_examples=50)
+def test_sooml_event_instantiation(instance):
+    assert isinstance(instance, sooml_Event)
+
+@given(instance=sooml_Guard_strategy)
+@settings(max_examples=50)
+def test_sooml_guard_instantiation(instance):
+    assert isinstance(instance, sooml_Guard)
+
+@given(instance=sooml_Action_strategy)
+@settings(max_examples=50)
+def test_sooml_action_instantiation(instance):
+    assert isinstance(instance, sooml_Action)
+
+@given(instance=sooml_EntryOperation_strategy)
+@settings(max_examples=50)
+def test_sooml_entryoperation_instantiation(instance):
+    assert isinstance(instance, sooml_EntryOperation)
+
+@given(instance=sooml_Transition_strategy)
+@settings(max_examples=50)
+def test_sooml_transition_instantiation(instance):
+    assert isinstance(instance, sooml_Transition)
 
 @given(instance=StructuralFeature_strategy)
 @settings(max_examples=50)
 def test_structuralfeature_instantiation(instance):
     assert isinstance(instance, StructuralFeature)
 
-@given(instance=sooml::Reference_strategy)
+@given(instance=sooml_Reference_strategy)
 @settings(max_examples=50)
-def test_sooml::reference_instantiation(instance):
-    assert isinstance(instance, sooml::Reference)
+def test_sooml_reference_instantiation(instance):
+    assert isinstance(instance, sooml_Reference)
 
-@given(instance=sooml::Attribute_strategy)
+@given(instance=sooml_Attribute_strategy)
 @settings(max_examples=50)
-def test_sooml::attribute_instantiation(instance):
-    assert isinstance(instance, sooml::Attribute)
-
-@given(instance=sooml::Attribute_strategy)
-def test_sooml::attribute_dataType_type(instance):
-    assert isinstance(instance.dataType, str)
+def test_sooml_attribute_instantiation(instance):
+    assert isinstance(instance, sooml_Attribute)
 
 
-@given(instance=sooml::Attribute_strategy)
-def test_sooml::attribute_dataType_setter(instance):
+
+@given(instance=sooml_Attribute_strategy)
+def test_sooml_attribute_dataType_setter(instance):
     original = instance.dataType
     instance.dataType = original
     assert instance.dataType == original
 
-@given(instance=sooml::StateMachine_strategy)
+@given(instance=sooml_StateMachine_strategy)
 @settings(max_examples=50)
-def test_sooml::statemachine_instantiation(instance):
-    assert isinstance(instance, sooml::StateMachine)
+def test_sooml_statemachine_instantiation(instance):
+    assert isinstance(instance, sooml_StateMachine)
 
-@given(instance=sooml::NamedElement_strategy)
+@given(instance=sooml_NamedElement_strategy)
 @settings(max_examples=50)
-def test_sooml::namedelement_instantiation(instance):
-    assert isinstance(instance, sooml::NamedElement)
-
-@given(instance=sooml::NamedElement_strategy)
-def test_sooml::namedelement_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_sooml_namedelement_instantiation(instance):
+    assert isinstance(instance, sooml_NamedElement)
 
 
-@given(instance=sooml::NamedElement_strategy)
-def test_sooml::namedelement_name_setter(instance):
+
+@given(instance=sooml_NamedElement_strategy)
+def test_sooml_namedelement_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
@@ -677,150 +756,56 @@ def test_sooml::namedelement_name_setter(instance):
 def test_namedelement_instantiation(instance):
     assert isinstance(instance, NamedElement)
 
-@given(instance=sooml::Class_strategy)
+@given(instance=sooml_Parameter_strategy)
 @settings(max_examples=50)
-def test_sooml::class_instantiation(instance):
-    assert isinstance(instance, sooml::Class)
-
-@given(instance=sooml::StructuralFeature_strategy)
-@settings(max_examples=50)
-def test_sooml::structuralfeature_instantiation(instance):
-    assert isinstance(instance, sooml::StructuralFeature)
-
-@given(instance=sooml::StructuralFeature_strategy)
-def test_sooml::structuralfeature_lowerBound_type(instance):
-    assert isinstance(instance.lowerBound, int)
+def test_sooml_parameter_instantiation(instance):
+    assert isinstance(instance, sooml_Parameter)
 
 
-@given(instance=sooml::StructuralFeature_strategy)
-def test_sooml::structuralfeature_lowerBound_setter(instance):
-    original = instance.lowerBound
-    instance.lowerBound = original
-    assert instance.lowerBound == original
 
-@given(instance=sooml::StructuralFeature_strategy)
-def test_sooml::structuralfeature_upperBound_type(instance):
-    assert isinstance(instance.upperBound, int)
-
-
-@given(instance=sooml::StructuralFeature_strategy)
-def test_sooml::structuralfeature_upperBound_setter(instance):
-    original = instance.upperBound
-    instance.upperBound = original
-    assert instance.upperBound == original
-
-@given(instance=sooml::Parameter_strategy)
-@settings(max_examples=50)
-def test_sooml::parameter_instantiation(instance):
-    assert isinstance(instance, sooml::Parameter)
-
-@given(instance=sooml::Parameter_strategy)
-def test_sooml::parameter_dataType_type(instance):
-    assert isinstance(instance.dataType, str)
-
-
-@given(instance=sooml::Parameter_strategy)
-def test_sooml::parameter_dataType_setter(instance):
+@given(instance=sooml_Parameter_strategy)
+def test_sooml_parameter_dataType_setter(instance):
     original = instance.dataType
     instance.dataType = original
     assert instance.dataType == original
 
-@given(instance=sooml::Operation_strategy)
+@given(instance=sooml_Operation_strategy)
 @settings(max_examples=50)
-def test_sooml::operation_instantiation(instance):
-    assert isinstance(instance, sooml::Operation)
+def test_sooml_operation_instantiation(instance):
+    assert isinstance(instance, sooml_Operation)
 
-@given(instance=sooml::Package_strategy)
+@given(instance=sooml_State_strategy)
 @settings(max_examples=50)
-def test_sooml::package_instantiation(instance):
-    assert isinstance(instance, sooml::Package)
+def test_sooml_state_instantiation(instance):
+    assert isinstance(instance, sooml_State)
 
-@given(instance=CallOperationAction_strategy)
+@given(instance=sooml_StructuralFeature_strategy)
 @settings(max_examples=50)
-def test_calloperationaction_instantiation(instance):
-    assert isinstance(instance, CallOperationAction)
+def test_sooml_structuralfeature_instantiation(instance):
+    assert isinstance(instance, sooml_StructuralFeature)
 
-@given(instance=sooml::CallParameterOperationAction_strategy)
-@settings(max_examples=50)
-def test_sooml::callparameteroperationaction_instantiation(instance):
-    assert isinstance(instance, sooml::CallParameterOperationAction)
 
-@given(instance=sooml::CallReferenceOperationAction_strategy)
-@settings(max_examples=50)
-def test_sooml::callreferenceoperationaction_instantiation(instance):
-    assert isinstance(instance, sooml::CallReferenceOperationAction)
 
-@given(instance=IsInStateCondition_strategy)
-@settings(max_examples=50)
-def test_isinstatecondition_instantiation(instance):
-    assert isinstance(instance, IsInStateCondition)
+@given(instance=sooml_StructuralFeature_strategy)
+def test_sooml_structuralfeature_upperBound_setter(instance):
+    original = instance.upperBound
+    instance.upperBound = original
+    assert instance.upperBound == original
 
-@given(instance=sooml::ParameterIsInStateCondition_strategy)
-@settings(max_examples=50)
-def test_sooml::parameterisinstatecondition_instantiation(instance):
-    assert isinstance(instance, sooml::ParameterIsInStateCondition)
 
-@given(instance=sooml::ReferenceIsInStateCondition_strategy)
-@settings(max_examples=50)
-def test_sooml::referenceisinstatecondition_instantiation(instance):
-    assert isinstance(instance, sooml::ReferenceIsInStateCondition)
 
-@given(instance=Guard_strategy)
-@settings(max_examples=50)
-def test_guard_instantiation(instance):
-    assert isinstance(instance, Guard)
+@given(instance=sooml_StructuralFeature_strategy)
+def test_sooml_structuralfeature_lowerBound_setter(instance):
+    original = instance.lowerBound
+    instance.lowerBound = original
+    assert instance.lowerBound == original
 
-@given(instance=sooml::IsInStateCondition_strategy)
+@given(instance=sooml_Class_strategy)
 @settings(max_examples=50)
-def test_sooml::isinstatecondition_instantiation(instance):
-    assert isinstance(instance, sooml::IsInStateCondition)
+def test_sooml_class_instantiation(instance):
+    assert isinstance(instance, sooml_Class)
 
-@given(instance=sooml::ParameterBinding_strategy)
+@given(instance=sooml_Package_strategy)
 @settings(max_examples=50)
-def test_sooml::parameterbinding_instantiation(instance):
-    assert isinstance(instance, sooml::ParameterBinding)
-
-@given(instance=Action_strategy)
-@settings(max_examples=50)
-def test_action_instantiation(instance):
-    assert isinstance(instance, Action)
-
-@given(instance=sooml::ReferenceAssignmentAction_strategy)
-@settings(max_examples=50)
-def test_sooml::referenceassignmentaction_instantiation(instance):
-    assert isinstance(instance, sooml::ReferenceAssignmentAction)
-
-@given(instance=sooml::CallOperationAction_strategy)
-@settings(max_examples=50)
-def test_sooml::calloperationaction_instantiation(instance):
-    assert isinstance(instance, sooml::CallOperationAction)
-
-@given(instance=sooml::Event_strategy)
-@settings(max_examples=50)
-def test_sooml::event_instantiation(instance):
-    assert isinstance(instance, sooml::Event)
-
-@given(instance=sooml::Guard_strategy)
-@settings(max_examples=50)
-def test_sooml::guard_instantiation(instance):
-    assert isinstance(instance, sooml::Guard)
-
-@given(instance=sooml::Action_strategy)
-@settings(max_examples=50)
-def test_sooml::action_instantiation(instance):
-    assert isinstance(instance, sooml::Action)
-
-@given(instance=sooml::EntryOperation_strategy)
-@settings(max_examples=50)
-def test_sooml::entryoperation_instantiation(instance):
-    assert isinstance(instance, sooml::EntryOperation)
-
-@given(instance=sooml::Transition_strategy)
-@settings(max_examples=50)
-def test_sooml::transition_instantiation(instance):
-    assert isinstance(instance, sooml::Transition)
-
-@given(instance=sooml::State_strategy)
-@settings(max_examples=50)
-def test_sooml::state_instantiation(instance):
-    assert isinstance(instance, sooml::State)
+def test_sooml_package_instantiation(instance):
+    assert isinstance(instance, sooml_Package)

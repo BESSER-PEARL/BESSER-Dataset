@@ -3,112 +3,168 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
+    Property,
+    thingml_Dictionary,
+    Event,
+    thingml_ReceiveMessage,
     Port,
-    thingml::ProvidedPort,
-    thingml::RequiredPort,
+    thingml_ProvidedPort,
+    thingml_RequiredPort,
     Region,
-    thingml::ParallelRegion,
+    thingml_ParallelRegion,
     State,
-    thingml::CompositeState,
+    thingml_CompositeState,
     Expression,
-    thingml::ExternExpression,
+    thingml_EventReference,
+    thingml_Literal,
+    thingml_ExternExpression,
     Action,
-    thingml::ExternStatement,
-    thingml::SendAction,
-    thingml::ActionBlock,
+    thingml_VariableAssignment,
+    thingml_ExternStatement,
+    thingml_SendAction,
+    thingml_ActionBlock,
     CompositeState,
     ThingMLElement,
-    thingml::AnnotatedElement,
-    thingml::Event,
-    thingml::PlatformAnnotation,
+    thingml_Event,
+    thingml_AnnotatedElement,
+    thingml_PlatformAnnotation,
     Handler,
-    thingml::Transition,
-    thingml::InternalTransition,
+    thingml_Transition,
+    thingml_InternalTransition,
     Variable,
-    thingml::StateMachine,
-    thingml::Property,
+    thingml_StateMachine,
+    thingml_Property,
     Type,
-    thingml::PrimitiveType,
-    thingml::Enumeration,
-    thingml::Thing,
-    thingml::Action,
-    thingml::Expression,
-    thingml::TypedElement,
-    thingml::ThingMLElement,
-    thingml::Parameter,
+    thingml_PrimitiveType,
+    thingml_Enumeration,
+    thingml_Thing,
+    thingml_Action,
+    thingml_Expression,
+    thingml_TypedElement,
+    thingml_ThingMLElement,
+    thingml_Parameter,
     TypedElement,
     AnnotatedElement,
-    thingml::PropertyAssign,
-    thingml::State,
-    thingml::EnumerationLiteral,
-    thingml::Port,
-    thingml::Handler,
-    thingml::Variable,
-    thingml::Message,
-    thingml::Region,
-    thingml::Function,
-    thingml::Configuration,
-    thingml::Type,
-    thingml::ThingMLModel,
-    thingml::InstanceRef,
-    thingml::LocalVariable,
+    thingml_Variable,
+    thingml_Port,
+    thingml_PropertyAssign,
+    thingml_EnumerationLiteral,
+    thingml_Message,
+    thingml_Region,
+    thingml_Handler,
+    thingml_State,
+    thingml_Function,
+    thingml_Configuration,
+    thingml_Type,
+    thingml_ThingMLModel,
+    thingml_InstanceRef,
+    thingml_LocalVariable,
     FunctionCall,
-    thingml::FunctionCallExpression,
-    thingml::FunctionCallStatement,
-    thingml::FunctionCall,
-    thingml::PrintAction,
-    thingml::ReturnAction,
-    thingml::ExpressionGroup,
+    thingml_FunctionCallExpression,
+    thingml_FunctionCallStatement,
+    thingml_FunctionCall,
+    thingml_PrintAction,
+    thingml_ReturnAction,
+    thingml_ExpressionGroup,
     PropertyReference,
-    thingml::DictionaryReference,
-    thingml::ArrayIndex,
-    thingml::PropertyReference,
-    thingml::ConfigPropertyAssign,
-    thingml::ConfigInclude,
-    thingml::Connector,
-    thingml::Instance,
-    thingml::ErrorAction,
-    thingml::BinaryExpression,
+    thingml_DictionaryReference,
+    thingml_ArrayIndex,
+    thingml_PropertyReference,
+    thingml_ConfigPropertyAssign,
+    thingml_ConfigInclude,
+    thingml_Connector,
+    thingml_Instance,
+    thingml_ErrorAction,
+    thingml_BinaryExpression,
     UnaryExpression,
-    thingml::UnaryMinus,
-    thingml::NotExpression,
-    thingml::UnaryExpression,
+    thingml_UnaryMinus,
+    thingml_NotExpression,
+    thingml_UnaryExpression,
     Literal,
-    thingml::BooleanLiteral,
-    thingml::DoubleLiteral,
-    thingml::IntegerLiteral,
-    thingml::StringLiteral,
-    thingml::EnumLiteralRef,
+    thingml_IntegerLiteral,
+    thingml_BooleanLiteral,
+    thingml_DoubleLiteral,
+    thingml_StringLiteral,
+    thingml_EnumLiteralRef,
     ControlStructure,
-    thingml::ConditionalAction,
-    thingml::LoopAction,
-    thingml::ControlStructure,
+    thingml_ConditionalAction,
+    thingml_LoopAction,
+    thingml_ControlStructure,
     BinaryExpression,
-    thingml::MinusExpression,
-    thingml::GreaterExpression,
-    thingml::DivExpression,
-    thingml::LowerExpression,
-    thingml::AndExpression,
-    thingml::EqualsExpression,
-    thingml::ModExpression,
-    thingml::OrExpression,
-    thingml::TimesExpression,
-    thingml::PlusExpression,
-    Property,
-    thingml::Dictionary,
-    Event,
-    thingml::ReceiveMessage,
-    thingml::VariableAssignment,
-    thingml::Literal,
-    thingml::EventReference,
+    thingml_MinusExpression,
+    thingml_AndExpression,
+    thingml_EqualsExpression,
+    thingml_LowerExpression,
+    thingml_DivExpression,
+    thingml_ModExpression,
+    thingml_TimesExpression,
+    thingml_OrExpression,
+    thingml_GreaterExpression,
+    thingml_PlusExpression,
 )
 
 # =============================================================================
 # SECTION 1 — STRUCTURAL TESTS
 # =============================================================================
+
+
+
+def test_property_is_not_abstract():
+    assert not inspect.isabstract(Property)
+
+
+def test_property_constructor_exists():
+    assert callable(Property.__init__)
+
+
+def test_property_constructor_args():
+    sig = inspect.signature(Property.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_thingml_dictionary_is_not_abstract():
+    assert not inspect.isabstract(thingml_Dictionary)
+
+
+def test_thingml_dictionary_constructor_exists():
+    assert callable(thingml_Dictionary.__init__)
+
+
+def test_thingml_dictionary_constructor_args():
+    sig = inspect.signature(thingml_Dictionary.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_event_is_not_abstract():
+    assert not inspect.isabstract(Event)
+
+
+def test_event_constructor_exists():
+    assert callable(Event.__init__)
+
+
+def test_event_constructor_args():
+    sig = inspect.signature(Event.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_thingml_receivemessage_is_not_abstract():
+    assert not inspect.isabstract(thingml_ReceiveMessage)
+
+
+def test_thingml_receivemessage_constructor_exists():
+    assert callable(thingml_ReceiveMessage.__init__)
+
+
+def test_thingml_receivemessage_constructor_args():
+    sig = inspect.signature(thingml_ReceiveMessage.__init__)
+    params = list(sig.parameters.keys())
 
 
 
@@ -126,37 +182,37 @@ def test_port_constructor_args():
 
 
 
-def test_thingml::providedport_is_not_abstract():
-    assert not inspect.isabstract(thingml::ProvidedPort)
+def test_thingml_providedport_is_not_abstract():
+    assert not inspect.isabstract(thingml_ProvidedPort)
 
 
-def test_thingml::providedport_constructor_exists():
-    assert callable(thingml::ProvidedPort.__init__)
+def test_thingml_providedport_constructor_exists():
+    assert callable(thingml_ProvidedPort.__init__)
 
 
-def test_thingml::providedport_constructor_args():
-    sig = inspect.signature(thingml::ProvidedPort.__init__)
+def test_thingml_providedport_constructor_args():
+    sig = inspect.signature(thingml_ProvidedPort.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_thingml::requiredport_is_not_abstract():
-    assert not inspect.isabstract(thingml::RequiredPort)
+def test_thingml_requiredport_is_not_abstract():
+    assert not inspect.isabstract(thingml_RequiredPort)
 
 
-def test_thingml::requiredport_constructor_exists():
-    assert callable(thingml::RequiredPort.__init__)
+def test_thingml_requiredport_constructor_exists():
+    assert callable(thingml_RequiredPort.__init__)
 
 
-def test_thingml::requiredport_constructor_args():
-    sig = inspect.signature(thingml::RequiredPort.__init__)
+def test_thingml_requiredport_constructor_args():
+    sig = inspect.signature(thingml_RequiredPort.__init__)
     params = list(sig.parameters.keys())
     assert "optional" in params, "Missing parameter 'optional'"
 
-def test_thingml::requiredport_has_optional():
-    assert hasattr(thingml::RequiredPort, "optional")
+def test_thingml_requiredport_has_optional():
+    assert hasattr(thingml_RequiredPort, "optional")
     descriptor = None
-    for klass in thingml::RequiredPort.__mro__:
+    for klass in thingml_RequiredPort.__mro__:
         if "optional" in klass.__dict__:
             descriptor = klass.__dict__["optional"]
             break
@@ -178,16 +234,16 @@ def test_region_constructor_args():
 
 
 
-def test_thingml::parallelregion_is_not_abstract():
-    assert not inspect.isabstract(thingml::ParallelRegion)
+def test_thingml_parallelregion_is_not_abstract():
+    assert not inspect.isabstract(thingml_ParallelRegion)
 
 
-def test_thingml::parallelregion_constructor_exists():
-    assert callable(thingml::ParallelRegion.__init__)
+def test_thingml_parallelregion_constructor_exists():
+    assert callable(thingml_ParallelRegion.__init__)
 
 
-def test_thingml::parallelregion_constructor_args():
-    sig = inspect.signature(thingml::ParallelRegion.__init__)
+def test_thingml_parallelregion_constructor_args():
+    sig = inspect.signature(thingml_ParallelRegion.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -206,16 +262,16 @@ def test_state_constructor_args():
 
 
 
-def test_thingml::compositestate_is_not_abstract():
-    assert not inspect.isabstract(thingml::CompositeState)
+def test_thingml_compositestate_is_not_abstract():
+    assert not inspect.isabstract(thingml_CompositeState)
 
 
-def test_thingml::compositestate_constructor_exists():
-    assert callable(thingml::CompositeState.__init__)
+def test_thingml_compositestate_constructor_exists():
+    assert callable(thingml_CompositeState.__init__)
 
 
-def test_thingml::compositestate_constructor_args():
-    sig = inspect.signature(thingml::CompositeState.__init__)
+def test_thingml_compositestate_constructor_args():
+    sig = inspect.signature(thingml_CompositeState.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -234,23 +290,51 @@ def test_expression_constructor_args():
 
 
 
-def test_thingml::externexpression_is_not_abstract():
-    assert not inspect.isabstract(thingml::ExternExpression)
+def test_thingml_eventreference_is_not_abstract():
+    assert not inspect.isabstract(thingml_EventReference)
 
 
-def test_thingml::externexpression_constructor_exists():
-    assert callable(thingml::ExternExpression.__init__)
+def test_thingml_eventreference_constructor_exists():
+    assert callable(thingml_EventReference.__init__)
 
 
-def test_thingml::externexpression_constructor_args():
-    sig = inspect.signature(thingml::ExternExpression.__init__)
+def test_thingml_eventreference_constructor_args():
+    sig = inspect.signature(thingml_EventReference.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_thingml_literal_is_not_abstract():
+    assert not inspect.isabstract(thingml_Literal)
+
+
+def test_thingml_literal_constructor_exists():
+    assert callable(thingml_Literal.__init__)
+
+
+def test_thingml_literal_constructor_args():
+    sig = inspect.signature(thingml_Literal.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_thingml_externexpression_is_not_abstract():
+    assert not inspect.isabstract(thingml_ExternExpression)
+
+
+def test_thingml_externexpression_constructor_exists():
+    assert callable(thingml_ExternExpression.__init__)
+
+
+def test_thingml_externexpression_constructor_args():
+    sig = inspect.signature(thingml_ExternExpression.__init__)
     params = list(sig.parameters.keys())
     assert "expression" in params, "Missing parameter 'expression'"
 
-def test_thingml::externexpression_has_expression():
-    assert hasattr(thingml::ExternExpression, "expression")
+def test_thingml_externexpression_has_expression():
+    assert hasattr(thingml_ExternExpression, "expression")
     descriptor = None
-    for klass in thingml::ExternExpression.__mro__:
+    for klass in thingml_ExternExpression.__mro__:
         if "expression" in klass.__dict__:
             descriptor = klass.__dict__["expression"]
             break
@@ -272,23 +356,37 @@ def test_action_constructor_args():
 
 
 
-def test_thingml::externstatement_is_not_abstract():
-    assert not inspect.isabstract(thingml::ExternStatement)
+def test_thingml_variableassignment_is_not_abstract():
+    assert not inspect.isabstract(thingml_VariableAssignment)
 
 
-def test_thingml::externstatement_constructor_exists():
-    assert callable(thingml::ExternStatement.__init__)
+def test_thingml_variableassignment_constructor_exists():
+    assert callable(thingml_VariableAssignment.__init__)
 
 
-def test_thingml::externstatement_constructor_args():
-    sig = inspect.signature(thingml::ExternStatement.__init__)
+def test_thingml_variableassignment_constructor_args():
+    sig = inspect.signature(thingml_VariableAssignment.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_thingml_externstatement_is_not_abstract():
+    assert not inspect.isabstract(thingml_ExternStatement)
+
+
+def test_thingml_externstatement_constructor_exists():
+    assert callable(thingml_ExternStatement.__init__)
+
+
+def test_thingml_externstatement_constructor_args():
+    sig = inspect.signature(thingml_ExternStatement.__init__)
     params = list(sig.parameters.keys())
     assert "statement" in params, "Missing parameter 'statement'"
 
-def test_thingml::externstatement_has_statement():
-    assert hasattr(thingml::ExternStatement, "statement")
+def test_thingml_externstatement_has_statement():
+    assert hasattr(thingml_ExternStatement, "statement")
     descriptor = None
-    for klass in thingml::ExternStatement.__mro__:
+    for klass in thingml_ExternStatement.__mro__:
         if "statement" in klass.__dict__:
             descriptor = klass.__dict__["statement"]
             break
@@ -296,30 +394,30 @@ def test_thingml::externstatement_has_statement():
 
 
 
-def test_thingml::sendaction_is_not_abstract():
-    assert not inspect.isabstract(thingml::SendAction)
+def test_thingml_sendaction_is_not_abstract():
+    assert not inspect.isabstract(thingml_SendAction)
 
 
-def test_thingml::sendaction_constructor_exists():
-    assert callable(thingml::SendAction.__init__)
+def test_thingml_sendaction_constructor_exists():
+    assert callable(thingml_SendAction.__init__)
 
 
-def test_thingml::sendaction_constructor_args():
-    sig = inspect.signature(thingml::SendAction.__init__)
+def test_thingml_sendaction_constructor_args():
+    sig = inspect.signature(thingml_SendAction.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_thingml::actionblock_is_not_abstract():
-    assert not inspect.isabstract(thingml::ActionBlock)
+def test_thingml_actionblock_is_not_abstract():
+    assert not inspect.isabstract(thingml_ActionBlock)
 
 
-def test_thingml::actionblock_constructor_exists():
-    assert callable(thingml::ActionBlock.__init__)
+def test_thingml_actionblock_constructor_exists():
+    assert callable(thingml_ActionBlock.__init__)
 
 
-def test_thingml::actionblock_constructor_args():
-    sig = inspect.signature(thingml::ActionBlock.__init__)
+def test_thingml_actionblock_constructor_args():
+    sig = inspect.signature(thingml_ActionBlock.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -352,51 +450,51 @@ def test_thingmlelement_constructor_args():
 
 
 
-def test_thingml::annotatedelement_is_not_abstract():
-    assert not inspect.isabstract(thingml::AnnotatedElement)
+def test_thingml_event_is_not_abstract():
+    assert not inspect.isabstract(thingml_Event)
 
 
-def test_thingml::annotatedelement_constructor_exists():
-    assert callable(thingml::AnnotatedElement.__init__)
+def test_thingml_event_constructor_exists():
+    assert callable(thingml_Event.__init__)
 
 
-def test_thingml::annotatedelement_constructor_args():
-    sig = inspect.signature(thingml::AnnotatedElement.__init__)
+def test_thingml_event_constructor_args():
+    sig = inspect.signature(thingml_Event.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_thingml::event_is_not_abstract():
-    assert not inspect.isabstract(thingml::Event)
+def test_thingml_annotatedelement_is_not_abstract():
+    assert not inspect.isabstract(thingml_AnnotatedElement)
 
 
-def test_thingml::event_constructor_exists():
-    assert callable(thingml::Event.__init__)
+def test_thingml_annotatedelement_constructor_exists():
+    assert callable(thingml_AnnotatedElement.__init__)
 
 
-def test_thingml::event_constructor_args():
-    sig = inspect.signature(thingml::Event.__init__)
+def test_thingml_annotatedelement_constructor_args():
+    sig = inspect.signature(thingml_AnnotatedElement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_thingml::platformannotation_is_not_abstract():
-    assert not inspect.isabstract(thingml::PlatformAnnotation)
+def test_thingml_platformannotation_is_not_abstract():
+    assert not inspect.isabstract(thingml_PlatformAnnotation)
 
 
-def test_thingml::platformannotation_constructor_exists():
-    assert callable(thingml::PlatformAnnotation.__init__)
+def test_thingml_platformannotation_constructor_exists():
+    assert callable(thingml_PlatformAnnotation.__init__)
 
 
-def test_thingml::platformannotation_constructor_args():
-    sig = inspect.signature(thingml::PlatformAnnotation.__init__)
+def test_thingml_platformannotation_constructor_args():
+    sig = inspect.signature(thingml_PlatformAnnotation.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
 
-def test_thingml::platformannotation_has_value():
-    assert hasattr(thingml::PlatformAnnotation, "value")
+def test_thingml_platformannotation_has_value():
+    assert hasattr(thingml_PlatformAnnotation, "value")
     descriptor = None
-    for klass in thingml::PlatformAnnotation.__mro__:
+    for klass in thingml_PlatformAnnotation.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -418,30 +516,30 @@ def test_handler_constructor_args():
 
 
 
-def test_thingml::transition_is_not_abstract():
-    assert not inspect.isabstract(thingml::Transition)
+def test_thingml_transition_is_not_abstract():
+    assert not inspect.isabstract(thingml_Transition)
 
 
-def test_thingml::transition_constructor_exists():
-    assert callable(thingml::Transition.__init__)
+def test_thingml_transition_constructor_exists():
+    assert callable(thingml_Transition.__init__)
 
 
-def test_thingml::transition_constructor_args():
-    sig = inspect.signature(thingml::Transition.__init__)
+def test_thingml_transition_constructor_args():
+    sig = inspect.signature(thingml_Transition.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_thingml::internaltransition_is_not_abstract():
-    assert not inspect.isabstract(thingml::InternalTransition)
+def test_thingml_internaltransition_is_not_abstract():
+    assert not inspect.isabstract(thingml_InternalTransition)
 
 
-def test_thingml::internaltransition_constructor_exists():
-    assert callable(thingml::InternalTransition.__init__)
+def test_thingml_internaltransition_constructor_exists():
+    assert callable(thingml_InternalTransition.__init__)
 
 
-def test_thingml::internaltransition_constructor_args():
-    sig = inspect.signature(thingml::InternalTransition.__init__)
+def test_thingml_internaltransition_constructor_args():
+    sig = inspect.signature(thingml_InternalTransition.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -460,37 +558,37 @@ def test_variable_constructor_args():
 
 
 
-def test_thingml::statemachine_is_not_abstract():
-    assert not inspect.isabstract(thingml::StateMachine)
+def test_thingml_statemachine_is_not_abstract():
+    assert not inspect.isabstract(thingml_StateMachine)
 
 
-def test_thingml::statemachine_constructor_exists():
-    assert callable(thingml::StateMachine.__init__)
+def test_thingml_statemachine_constructor_exists():
+    assert callable(thingml_StateMachine.__init__)
 
 
-def test_thingml::statemachine_constructor_args():
-    sig = inspect.signature(thingml::StateMachine.__init__)
+def test_thingml_statemachine_constructor_args():
+    sig = inspect.signature(thingml_StateMachine.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_thingml::property_is_not_abstract():
-    assert not inspect.isabstract(thingml::Property)
+def test_thingml_property_is_not_abstract():
+    assert not inspect.isabstract(thingml_Property)
 
 
-def test_thingml::property_constructor_exists():
-    assert callable(thingml::Property.__init__)
+def test_thingml_property_constructor_exists():
+    assert callable(thingml_Property.__init__)
 
 
-def test_thingml::property_constructor_args():
-    sig = inspect.signature(thingml::Property.__init__)
+def test_thingml_property_constructor_args():
+    sig = inspect.signature(thingml_Property.__init__)
     params = list(sig.parameters.keys())
     assert "changeable" in params, "Missing parameter 'changeable'"
 
-def test_thingml::property_has_changeable():
-    assert hasattr(thingml::Property, "changeable")
+def test_thingml_property_has_changeable():
+    assert hasattr(thingml_Property, "changeable")
     descriptor = None
-    for klass in thingml::Property.__mro__:
+    for klass in thingml_Property.__mro__:
         if "changeable" in klass.__dict__:
             descriptor = klass.__dict__["changeable"]
             break
@@ -512,51 +610,51 @@ def test_type_constructor_args():
 
 
 
-def test_thingml::primitivetype_is_not_abstract():
-    assert not inspect.isabstract(thingml::PrimitiveType)
+def test_thingml_primitivetype_is_not_abstract():
+    assert not inspect.isabstract(thingml_PrimitiveType)
 
 
-def test_thingml::primitivetype_constructor_exists():
-    assert callable(thingml::PrimitiveType.__init__)
+def test_thingml_primitivetype_constructor_exists():
+    assert callable(thingml_PrimitiveType.__init__)
 
 
-def test_thingml::primitivetype_constructor_args():
-    sig = inspect.signature(thingml::PrimitiveType.__init__)
+def test_thingml_primitivetype_constructor_args():
+    sig = inspect.signature(thingml_PrimitiveType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_thingml::enumeration_is_not_abstract():
-    assert not inspect.isabstract(thingml::Enumeration)
+def test_thingml_enumeration_is_not_abstract():
+    assert not inspect.isabstract(thingml_Enumeration)
 
 
-def test_thingml::enumeration_constructor_exists():
-    assert callable(thingml::Enumeration.__init__)
+def test_thingml_enumeration_constructor_exists():
+    assert callable(thingml_Enumeration.__init__)
 
 
-def test_thingml::enumeration_constructor_args():
-    sig = inspect.signature(thingml::Enumeration.__init__)
+def test_thingml_enumeration_constructor_args():
+    sig = inspect.signature(thingml_Enumeration.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_thingml::thing_is_not_abstract():
-    assert not inspect.isabstract(thingml::Thing)
+def test_thingml_thing_is_not_abstract():
+    assert not inspect.isabstract(thingml_Thing)
 
 
-def test_thingml::thing_constructor_exists():
-    assert callable(thingml::Thing.__init__)
+def test_thingml_thing_constructor_exists():
+    assert callable(thingml_Thing.__init__)
 
 
-def test_thingml::thing_constructor_args():
-    sig = inspect.signature(thingml::Thing.__init__)
+def test_thingml_thing_constructor_args():
+    sig = inspect.signature(thingml_Thing.__init__)
     params = list(sig.parameters.keys())
     assert "fragment" in params, "Missing parameter 'fragment'"
 
-def test_thingml::thing_has_fragment():
-    assert hasattr(thingml::Thing, "fragment")
+def test_thingml_thing_has_fragment():
+    assert hasattr(thingml_Thing, "fragment")
     descriptor = None
-    for klass in thingml::Thing.__mro__:
+    for klass in thingml_Thing.__mro__:
         if "fragment" in klass.__dict__:
             descriptor = klass.__dict__["fragment"]
             break
@@ -564,65 +662,65 @@ def test_thingml::thing_has_fragment():
 
 
 
-def test_thingml::action_is_not_abstract():
-    assert not inspect.isabstract(thingml::Action)
+def test_thingml_action_is_not_abstract():
+    assert not inspect.isabstract(thingml_Action)
 
 
-def test_thingml::action_constructor_exists():
-    assert callable(thingml::Action.__init__)
+def test_thingml_action_constructor_exists():
+    assert callable(thingml_Action.__init__)
 
 
-def test_thingml::action_constructor_args():
-    sig = inspect.signature(thingml::Action.__init__)
+def test_thingml_action_constructor_args():
+    sig = inspect.signature(thingml_Action.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_thingml::expression_is_not_abstract():
-    assert not inspect.isabstract(thingml::Expression)
+def test_thingml_expression_is_not_abstract():
+    assert not inspect.isabstract(thingml_Expression)
 
 
-def test_thingml::expression_constructor_exists():
-    assert callable(thingml::Expression.__init__)
+def test_thingml_expression_constructor_exists():
+    assert callable(thingml_Expression.__init__)
 
 
-def test_thingml::expression_constructor_args():
-    sig = inspect.signature(thingml::Expression.__init__)
+def test_thingml_expression_constructor_args():
+    sig = inspect.signature(thingml_Expression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_thingml::typedelement_is_not_abstract():
-    assert not inspect.isabstract(thingml::TypedElement)
+def test_thingml_typedelement_is_not_abstract():
+    assert not inspect.isabstract(thingml_TypedElement)
 
 
-def test_thingml::typedelement_constructor_exists():
-    assert callable(thingml::TypedElement.__init__)
+def test_thingml_typedelement_constructor_exists():
+    assert callable(thingml_TypedElement.__init__)
 
 
-def test_thingml::typedelement_constructor_args():
-    sig = inspect.signature(thingml::TypedElement.__init__)
+def test_thingml_typedelement_constructor_args():
+    sig = inspect.signature(thingml_TypedElement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_thingml::thingmlelement_is_not_abstract():
-    assert not inspect.isabstract(thingml::ThingMLElement)
+def test_thingml_thingmlelement_is_not_abstract():
+    assert not inspect.isabstract(thingml_ThingMLElement)
 
 
-def test_thingml::thingmlelement_constructor_exists():
-    assert callable(thingml::ThingMLElement.__init__)
+def test_thingml_thingmlelement_constructor_exists():
+    assert callable(thingml_ThingMLElement.__init__)
 
 
-def test_thingml::thingmlelement_constructor_args():
-    sig = inspect.signature(thingml::ThingMLElement.__init__)
+def test_thingml_thingmlelement_constructor_args():
+    sig = inspect.signature(thingml_ThingMLElement.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_thingml::thingmlelement_has_name():
-    assert hasattr(thingml::ThingMLElement, "name")
+def test_thingml_thingmlelement_has_name():
+    assert hasattr(thingml_ThingMLElement, "name")
     descriptor = None
-    for klass in thingml::ThingMLElement.__mro__:
+    for klass in thingml_ThingMLElement.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -630,16 +728,16 @@ def test_thingml::thingmlelement_has_name():
 
 
 
-def test_thingml::parameter_is_not_abstract():
-    assert not inspect.isabstract(thingml::Parameter)
+def test_thingml_parameter_is_not_abstract():
+    assert not inspect.isabstract(thingml_Parameter)
 
 
-def test_thingml::parameter_constructor_exists():
-    assert callable(thingml::Parameter.__init__)
+def test_thingml_parameter_constructor_exists():
+    assert callable(thingml_Parameter.__init__)
 
 
-def test_thingml::parameter_constructor_args():
-    sig = inspect.signature(thingml::Parameter.__init__)
+def test_thingml_parameter_constructor_args():
+    sig = inspect.signature(thingml_Parameter.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -672,121 +770,93 @@ def test_annotatedelement_constructor_args():
 
 
 
-def test_thingml::propertyassign_is_not_abstract():
-    assert not inspect.isabstract(thingml::PropertyAssign)
+def test_thingml_variable_is_not_abstract():
+    assert not inspect.isabstract(thingml_Variable)
 
 
-def test_thingml::propertyassign_constructor_exists():
-    assert callable(thingml::PropertyAssign.__init__)
+def test_thingml_variable_constructor_exists():
+    assert callable(thingml_Variable.__init__)
 
 
-def test_thingml::propertyassign_constructor_args():
-    sig = inspect.signature(thingml::PropertyAssign.__init__)
+def test_thingml_variable_constructor_args():
+    sig = inspect.signature(thingml_Variable.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_thingml::state_is_not_abstract():
-    assert not inspect.isabstract(thingml::State)
+def test_thingml_port_is_not_abstract():
+    assert not inspect.isabstract(thingml_Port)
 
 
-def test_thingml::state_constructor_exists():
-    assert callable(thingml::State.__init__)
+def test_thingml_port_constructor_exists():
+    assert callable(thingml_Port.__init__)
 
 
-def test_thingml::state_constructor_args():
-    sig = inspect.signature(thingml::State.__init__)
+def test_thingml_port_constructor_args():
+    sig = inspect.signature(thingml_Port.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_thingml::enumerationliteral_is_not_abstract():
-    assert not inspect.isabstract(thingml::EnumerationLiteral)
+def test_thingml_propertyassign_is_not_abstract():
+    assert not inspect.isabstract(thingml_PropertyAssign)
 
 
-def test_thingml::enumerationliteral_constructor_exists():
-    assert callable(thingml::EnumerationLiteral.__init__)
+def test_thingml_propertyassign_constructor_exists():
+    assert callable(thingml_PropertyAssign.__init__)
 
 
-def test_thingml::enumerationliteral_constructor_args():
-    sig = inspect.signature(thingml::EnumerationLiteral.__init__)
+def test_thingml_propertyassign_constructor_args():
+    sig = inspect.signature(thingml_PropertyAssign.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_thingml::port_is_not_abstract():
-    assert not inspect.isabstract(thingml::Port)
+def test_thingml_enumerationliteral_is_not_abstract():
+    assert not inspect.isabstract(thingml_EnumerationLiteral)
 
 
-def test_thingml::port_constructor_exists():
-    assert callable(thingml::Port.__init__)
+def test_thingml_enumerationliteral_constructor_exists():
+    assert callable(thingml_EnumerationLiteral.__init__)
 
 
-def test_thingml::port_constructor_args():
-    sig = inspect.signature(thingml::Port.__init__)
+def test_thingml_enumerationliteral_constructor_args():
+    sig = inspect.signature(thingml_EnumerationLiteral.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_thingml::handler_is_not_abstract():
-    assert not inspect.isabstract(thingml::Handler)
+def test_thingml_message_is_not_abstract():
+    assert not inspect.isabstract(thingml_Message)
 
 
-def test_thingml::handler_constructor_exists():
-    assert callable(thingml::Handler.__init__)
+def test_thingml_message_constructor_exists():
+    assert callable(thingml_Message.__init__)
 
 
-def test_thingml::handler_constructor_args():
-    sig = inspect.signature(thingml::Handler.__init__)
+def test_thingml_message_constructor_args():
+    sig = inspect.signature(thingml_Message.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_thingml::variable_is_not_abstract():
-    assert not inspect.isabstract(thingml::Variable)
+def test_thingml_region_is_not_abstract():
+    assert not inspect.isabstract(thingml_Region)
 
 
-def test_thingml::variable_constructor_exists():
-    assert callable(thingml::Variable.__init__)
+def test_thingml_region_constructor_exists():
+    assert callable(thingml_Region.__init__)
 
 
-def test_thingml::variable_constructor_args():
-    sig = inspect.signature(thingml::Variable.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_thingml::message_is_not_abstract():
-    assert not inspect.isabstract(thingml::Message)
-
-
-def test_thingml::message_constructor_exists():
-    assert callable(thingml::Message.__init__)
-
-
-def test_thingml::message_constructor_args():
-    sig = inspect.signature(thingml::Message.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_thingml::region_is_not_abstract():
-    assert not inspect.isabstract(thingml::Region)
-
-
-def test_thingml::region_constructor_exists():
-    assert callable(thingml::Region.__init__)
-
-
-def test_thingml::region_constructor_args():
-    sig = inspect.signature(thingml::Region.__init__)
+def test_thingml_region_constructor_args():
+    sig = inspect.signature(thingml_Region.__init__)
     params = list(sig.parameters.keys())
     assert "history" in params, "Missing parameter 'history'"
 
-def test_thingml::region_has_history():
-    assert hasattr(thingml::Region, "history")
+def test_thingml_region_has_history():
+    assert hasattr(thingml_Region, "history")
     descriptor = None
-    for klass in thingml::Region.__mro__:
+    for klass in thingml_Region.__mro__:
         if "history" in klass.__dict__:
             descriptor = klass.__dict__["history"]
             break
@@ -794,37 +864,65 @@ def test_thingml::region_has_history():
 
 
 
-def test_thingml::function_is_not_abstract():
-    assert not inspect.isabstract(thingml::Function)
+def test_thingml_handler_is_not_abstract():
+    assert not inspect.isabstract(thingml_Handler)
 
 
-def test_thingml::function_constructor_exists():
-    assert callable(thingml::Function.__init__)
+def test_thingml_handler_constructor_exists():
+    assert callable(thingml_Handler.__init__)
 
 
-def test_thingml::function_constructor_args():
-    sig = inspect.signature(thingml::Function.__init__)
+def test_thingml_handler_constructor_args():
+    sig = inspect.signature(thingml_Handler.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_thingml::configuration_is_not_abstract():
-    assert not inspect.isabstract(thingml::Configuration)
+def test_thingml_state_is_not_abstract():
+    assert not inspect.isabstract(thingml_State)
 
 
-def test_thingml::configuration_constructor_exists():
-    assert callable(thingml::Configuration.__init__)
+def test_thingml_state_constructor_exists():
+    assert callable(thingml_State.__init__)
 
 
-def test_thingml::configuration_constructor_args():
-    sig = inspect.signature(thingml::Configuration.__init__)
+def test_thingml_state_constructor_args():
+    sig = inspect.signature(thingml_State.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_thingml_function_is_not_abstract():
+    assert not inspect.isabstract(thingml_Function)
+
+
+def test_thingml_function_constructor_exists():
+    assert callable(thingml_Function.__init__)
+
+
+def test_thingml_function_constructor_args():
+    sig = inspect.signature(thingml_Function.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_thingml_configuration_is_not_abstract():
+    assert not inspect.isabstract(thingml_Configuration)
+
+
+def test_thingml_configuration_constructor_exists():
+    assert callable(thingml_Configuration.__init__)
+
+
+def test_thingml_configuration_constructor_args():
+    sig = inspect.signature(thingml_Configuration.__init__)
     params = list(sig.parameters.keys())
     assert "fragment" in params, "Missing parameter 'fragment'"
 
-def test_thingml::configuration_has_fragment():
-    assert hasattr(thingml::Configuration, "fragment")
+def test_thingml_configuration_has_fragment():
+    assert hasattr(thingml_Configuration, "fragment")
     descriptor = None
-    for klass in thingml::Configuration.__mro__:
+    for klass in thingml_Configuration.__mro__:
         if "fragment" in klass.__dict__:
             descriptor = klass.__dict__["fragment"]
             break
@@ -832,65 +930,65 @@ def test_thingml::configuration_has_fragment():
 
 
 
-def test_thingml::type_is_not_abstract():
-    assert not inspect.isabstract(thingml::Type)
+def test_thingml_type_is_not_abstract():
+    assert not inspect.isabstract(thingml_Type)
 
 
-def test_thingml::type_constructor_exists():
-    assert callable(thingml::Type.__init__)
+def test_thingml_type_constructor_exists():
+    assert callable(thingml_Type.__init__)
 
 
-def test_thingml::type_constructor_args():
-    sig = inspect.signature(thingml::Type.__init__)
+def test_thingml_type_constructor_args():
+    sig = inspect.signature(thingml_Type.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_thingml::thingmlmodel_is_not_abstract():
-    assert not inspect.isabstract(thingml::ThingMLModel)
+def test_thingml_thingmlmodel_is_not_abstract():
+    assert not inspect.isabstract(thingml_ThingMLModel)
 
 
-def test_thingml::thingmlmodel_constructor_exists():
-    assert callable(thingml::ThingMLModel.__init__)
+def test_thingml_thingmlmodel_constructor_exists():
+    assert callable(thingml_ThingMLModel.__init__)
 
 
-def test_thingml::thingmlmodel_constructor_args():
-    sig = inspect.signature(thingml::ThingMLModel.__init__)
+def test_thingml_thingmlmodel_constructor_args():
+    sig = inspect.signature(thingml_ThingMLModel.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_thingml::instanceref_is_not_abstract():
-    assert not inspect.isabstract(thingml::InstanceRef)
+def test_thingml_instanceref_is_not_abstract():
+    assert not inspect.isabstract(thingml_InstanceRef)
 
 
-def test_thingml::instanceref_constructor_exists():
-    assert callable(thingml::InstanceRef.__init__)
+def test_thingml_instanceref_constructor_exists():
+    assert callable(thingml_InstanceRef.__init__)
 
 
-def test_thingml::instanceref_constructor_args():
-    sig = inspect.signature(thingml::InstanceRef.__init__)
+def test_thingml_instanceref_constructor_args():
+    sig = inspect.signature(thingml_InstanceRef.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_thingml::localvariable_is_not_abstract():
-    assert not inspect.isabstract(thingml::LocalVariable)
+def test_thingml_localvariable_is_not_abstract():
+    assert not inspect.isabstract(thingml_LocalVariable)
 
 
-def test_thingml::localvariable_constructor_exists():
-    assert callable(thingml::LocalVariable.__init__)
+def test_thingml_localvariable_constructor_exists():
+    assert callable(thingml_LocalVariable.__init__)
 
 
-def test_thingml::localvariable_constructor_args():
-    sig = inspect.signature(thingml::LocalVariable.__init__)
+def test_thingml_localvariable_constructor_args():
+    sig = inspect.signature(thingml_LocalVariable.__init__)
     params = list(sig.parameters.keys())
     assert "changeable" in params, "Missing parameter 'changeable'"
 
-def test_thingml::localvariable_has_changeable():
-    assert hasattr(thingml::LocalVariable, "changeable")
+def test_thingml_localvariable_has_changeable():
+    assert hasattr(thingml_LocalVariable, "changeable")
     descriptor = None
-    for klass in thingml::LocalVariable.__mro__:
+    for klass in thingml_LocalVariable.__mro__:
         if "changeable" in klass.__dict__:
             descriptor = klass.__dict__["changeable"]
             break
@@ -912,86 +1010,86 @@ def test_functioncall_constructor_args():
 
 
 
-def test_thingml::functioncallexpression_is_not_abstract():
-    assert not inspect.isabstract(thingml::FunctionCallExpression)
+def test_thingml_functioncallexpression_is_not_abstract():
+    assert not inspect.isabstract(thingml_FunctionCallExpression)
 
 
-def test_thingml::functioncallexpression_constructor_exists():
-    assert callable(thingml::FunctionCallExpression.__init__)
+def test_thingml_functioncallexpression_constructor_exists():
+    assert callable(thingml_FunctionCallExpression.__init__)
 
 
-def test_thingml::functioncallexpression_constructor_args():
-    sig = inspect.signature(thingml::FunctionCallExpression.__init__)
+def test_thingml_functioncallexpression_constructor_args():
+    sig = inspect.signature(thingml_FunctionCallExpression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_thingml::functioncallstatement_is_not_abstract():
-    assert not inspect.isabstract(thingml::FunctionCallStatement)
+def test_thingml_functioncallstatement_is_not_abstract():
+    assert not inspect.isabstract(thingml_FunctionCallStatement)
 
 
-def test_thingml::functioncallstatement_constructor_exists():
-    assert callable(thingml::FunctionCallStatement.__init__)
+def test_thingml_functioncallstatement_constructor_exists():
+    assert callable(thingml_FunctionCallStatement.__init__)
 
 
-def test_thingml::functioncallstatement_constructor_args():
-    sig = inspect.signature(thingml::FunctionCallStatement.__init__)
+def test_thingml_functioncallstatement_constructor_args():
+    sig = inspect.signature(thingml_FunctionCallStatement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_thingml::functioncall_is_not_abstract():
-    assert not inspect.isabstract(thingml::FunctionCall)
+def test_thingml_functioncall_is_not_abstract():
+    assert not inspect.isabstract(thingml_FunctionCall)
 
 
-def test_thingml::functioncall_constructor_exists():
-    assert callable(thingml::FunctionCall.__init__)
+def test_thingml_functioncall_constructor_exists():
+    assert callable(thingml_FunctionCall.__init__)
 
 
-def test_thingml::functioncall_constructor_args():
-    sig = inspect.signature(thingml::FunctionCall.__init__)
+def test_thingml_functioncall_constructor_args():
+    sig = inspect.signature(thingml_FunctionCall.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_thingml::printaction_is_not_abstract():
-    assert not inspect.isabstract(thingml::PrintAction)
+def test_thingml_printaction_is_not_abstract():
+    assert not inspect.isabstract(thingml_PrintAction)
 
 
-def test_thingml::printaction_constructor_exists():
-    assert callable(thingml::PrintAction.__init__)
+def test_thingml_printaction_constructor_exists():
+    assert callable(thingml_PrintAction.__init__)
 
 
-def test_thingml::printaction_constructor_args():
-    sig = inspect.signature(thingml::PrintAction.__init__)
+def test_thingml_printaction_constructor_args():
+    sig = inspect.signature(thingml_PrintAction.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_thingml::returnaction_is_not_abstract():
-    assert not inspect.isabstract(thingml::ReturnAction)
+def test_thingml_returnaction_is_not_abstract():
+    assert not inspect.isabstract(thingml_ReturnAction)
 
 
-def test_thingml::returnaction_constructor_exists():
-    assert callable(thingml::ReturnAction.__init__)
+def test_thingml_returnaction_constructor_exists():
+    assert callable(thingml_ReturnAction.__init__)
 
 
-def test_thingml::returnaction_constructor_args():
-    sig = inspect.signature(thingml::ReturnAction.__init__)
+def test_thingml_returnaction_constructor_args():
+    sig = inspect.signature(thingml_ReturnAction.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_thingml::expressiongroup_is_not_abstract():
-    assert not inspect.isabstract(thingml::ExpressionGroup)
+def test_thingml_expressiongroup_is_not_abstract():
+    assert not inspect.isabstract(thingml_ExpressionGroup)
 
 
-def test_thingml::expressiongroup_constructor_exists():
-    assert callable(thingml::ExpressionGroup.__init__)
+def test_thingml_expressiongroup_constructor_exists():
+    assert callable(thingml_ExpressionGroup.__init__)
 
 
-def test_thingml::expressiongroup_constructor_args():
-    sig = inspect.signature(thingml::ExpressionGroup.__init__)
+def test_thingml_expressiongroup_constructor_args():
+    sig = inspect.signature(thingml_ExpressionGroup.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1010,128 +1108,128 @@ def test_propertyreference_constructor_args():
 
 
 
-def test_thingml::dictionaryreference_is_not_abstract():
-    assert not inspect.isabstract(thingml::DictionaryReference)
+def test_thingml_dictionaryreference_is_not_abstract():
+    assert not inspect.isabstract(thingml_DictionaryReference)
 
 
-def test_thingml::dictionaryreference_constructor_exists():
-    assert callable(thingml::DictionaryReference.__init__)
+def test_thingml_dictionaryreference_constructor_exists():
+    assert callable(thingml_DictionaryReference.__init__)
 
 
-def test_thingml::dictionaryreference_constructor_args():
-    sig = inspect.signature(thingml::DictionaryReference.__init__)
+def test_thingml_dictionaryreference_constructor_args():
+    sig = inspect.signature(thingml_DictionaryReference.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_thingml::arrayindex_is_not_abstract():
-    assert not inspect.isabstract(thingml::ArrayIndex)
+def test_thingml_arrayindex_is_not_abstract():
+    assert not inspect.isabstract(thingml_ArrayIndex)
 
 
-def test_thingml::arrayindex_constructor_exists():
-    assert callable(thingml::ArrayIndex.__init__)
+def test_thingml_arrayindex_constructor_exists():
+    assert callable(thingml_ArrayIndex.__init__)
 
 
-def test_thingml::arrayindex_constructor_args():
-    sig = inspect.signature(thingml::ArrayIndex.__init__)
+def test_thingml_arrayindex_constructor_args():
+    sig = inspect.signature(thingml_ArrayIndex.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_thingml::propertyreference_is_not_abstract():
-    assert not inspect.isabstract(thingml::PropertyReference)
+def test_thingml_propertyreference_is_not_abstract():
+    assert not inspect.isabstract(thingml_PropertyReference)
 
 
-def test_thingml::propertyreference_constructor_exists():
-    assert callable(thingml::PropertyReference.__init__)
+def test_thingml_propertyreference_constructor_exists():
+    assert callable(thingml_PropertyReference.__init__)
 
 
-def test_thingml::propertyreference_constructor_args():
-    sig = inspect.signature(thingml::PropertyReference.__init__)
+def test_thingml_propertyreference_constructor_args():
+    sig = inspect.signature(thingml_PropertyReference.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_thingml::configpropertyassign_is_not_abstract():
-    assert not inspect.isabstract(thingml::ConfigPropertyAssign)
+def test_thingml_configpropertyassign_is_not_abstract():
+    assert not inspect.isabstract(thingml_ConfigPropertyAssign)
 
 
-def test_thingml::configpropertyassign_constructor_exists():
-    assert callable(thingml::ConfigPropertyAssign.__init__)
+def test_thingml_configpropertyassign_constructor_exists():
+    assert callable(thingml_ConfigPropertyAssign.__init__)
 
 
-def test_thingml::configpropertyassign_constructor_args():
-    sig = inspect.signature(thingml::ConfigPropertyAssign.__init__)
+def test_thingml_configpropertyassign_constructor_args():
+    sig = inspect.signature(thingml_ConfigPropertyAssign.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_thingml::configinclude_is_not_abstract():
-    assert not inspect.isabstract(thingml::ConfigInclude)
+def test_thingml_configinclude_is_not_abstract():
+    assert not inspect.isabstract(thingml_ConfigInclude)
 
 
-def test_thingml::configinclude_constructor_exists():
-    assert callable(thingml::ConfigInclude.__init__)
+def test_thingml_configinclude_constructor_exists():
+    assert callable(thingml_ConfigInclude.__init__)
 
 
-def test_thingml::configinclude_constructor_args():
-    sig = inspect.signature(thingml::ConfigInclude.__init__)
+def test_thingml_configinclude_constructor_args():
+    sig = inspect.signature(thingml_ConfigInclude.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_thingml::connector_is_not_abstract():
-    assert not inspect.isabstract(thingml::Connector)
+def test_thingml_connector_is_not_abstract():
+    assert not inspect.isabstract(thingml_Connector)
 
 
-def test_thingml::connector_constructor_exists():
-    assert callable(thingml::Connector.__init__)
+def test_thingml_connector_constructor_exists():
+    assert callable(thingml_Connector.__init__)
 
 
-def test_thingml::connector_constructor_args():
-    sig = inspect.signature(thingml::Connector.__init__)
+def test_thingml_connector_constructor_args():
+    sig = inspect.signature(thingml_Connector.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_thingml::instance_is_not_abstract():
-    assert not inspect.isabstract(thingml::Instance)
+def test_thingml_instance_is_not_abstract():
+    assert not inspect.isabstract(thingml_Instance)
 
 
-def test_thingml::instance_constructor_exists():
-    assert callable(thingml::Instance.__init__)
+def test_thingml_instance_constructor_exists():
+    assert callable(thingml_Instance.__init__)
 
 
-def test_thingml::instance_constructor_args():
-    sig = inspect.signature(thingml::Instance.__init__)
+def test_thingml_instance_constructor_args():
+    sig = inspect.signature(thingml_Instance.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_thingml::erroraction_is_not_abstract():
-    assert not inspect.isabstract(thingml::ErrorAction)
+def test_thingml_erroraction_is_not_abstract():
+    assert not inspect.isabstract(thingml_ErrorAction)
 
 
-def test_thingml::erroraction_constructor_exists():
-    assert callable(thingml::ErrorAction.__init__)
+def test_thingml_erroraction_constructor_exists():
+    assert callable(thingml_ErrorAction.__init__)
 
 
-def test_thingml::erroraction_constructor_args():
-    sig = inspect.signature(thingml::ErrorAction.__init__)
+def test_thingml_erroraction_constructor_args():
+    sig = inspect.signature(thingml_ErrorAction.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_thingml::binaryexpression_is_not_abstract():
-    assert not inspect.isabstract(thingml::BinaryExpression)
+def test_thingml_binaryexpression_is_not_abstract():
+    assert not inspect.isabstract(thingml_BinaryExpression)
 
 
-def test_thingml::binaryexpression_constructor_exists():
-    assert callable(thingml::BinaryExpression.__init__)
+def test_thingml_binaryexpression_constructor_exists():
+    assert callable(thingml_BinaryExpression.__init__)
 
 
-def test_thingml::binaryexpression_constructor_args():
-    sig = inspect.signature(thingml::BinaryExpression.__init__)
+def test_thingml_binaryexpression_constructor_args():
+    sig = inspect.signature(thingml_BinaryExpression.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1150,44 +1248,44 @@ def test_unaryexpression_constructor_args():
 
 
 
-def test_thingml::unaryminus_is_not_abstract():
-    assert not inspect.isabstract(thingml::UnaryMinus)
+def test_thingml_unaryminus_is_not_abstract():
+    assert not inspect.isabstract(thingml_UnaryMinus)
 
 
-def test_thingml::unaryminus_constructor_exists():
-    assert callable(thingml::UnaryMinus.__init__)
+def test_thingml_unaryminus_constructor_exists():
+    assert callable(thingml_UnaryMinus.__init__)
 
 
-def test_thingml::unaryminus_constructor_args():
-    sig = inspect.signature(thingml::UnaryMinus.__init__)
+def test_thingml_unaryminus_constructor_args():
+    sig = inspect.signature(thingml_UnaryMinus.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_thingml::notexpression_is_not_abstract():
-    assert not inspect.isabstract(thingml::NotExpression)
+def test_thingml_notexpression_is_not_abstract():
+    assert not inspect.isabstract(thingml_NotExpression)
 
 
-def test_thingml::notexpression_constructor_exists():
-    assert callable(thingml::NotExpression.__init__)
+def test_thingml_notexpression_constructor_exists():
+    assert callable(thingml_NotExpression.__init__)
 
 
-def test_thingml::notexpression_constructor_args():
-    sig = inspect.signature(thingml::NotExpression.__init__)
+def test_thingml_notexpression_constructor_args():
+    sig = inspect.signature(thingml_NotExpression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_thingml::unaryexpression_is_not_abstract():
-    assert not inspect.isabstract(thingml::UnaryExpression)
+def test_thingml_unaryexpression_is_not_abstract():
+    assert not inspect.isabstract(thingml_UnaryExpression)
 
 
-def test_thingml::unaryexpression_constructor_exists():
-    assert callable(thingml::UnaryExpression.__init__)
+def test_thingml_unaryexpression_constructor_exists():
+    assert callable(thingml_UnaryExpression.__init__)
 
 
-def test_thingml::unaryexpression_constructor_args():
-    sig = inspect.signature(thingml::UnaryExpression.__init__)
+def test_thingml_unaryexpression_constructor_args():
+    sig = inspect.signature(thingml_UnaryExpression.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1206,71 +1304,23 @@ def test_literal_constructor_args():
 
 
 
-def test_thingml::booleanliteral_is_not_abstract():
-    assert not inspect.isabstract(thingml::BooleanLiteral)
+def test_thingml_integerliteral_is_not_abstract():
+    assert not inspect.isabstract(thingml_IntegerLiteral)
 
 
-def test_thingml::booleanliteral_constructor_exists():
-    assert callable(thingml::BooleanLiteral.__init__)
+def test_thingml_integerliteral_constructor_exists():
+    assert callable(thingml_IntegerLiteral.__init__)
 
 
-def test_thingml::booleanliteral_constructor_args():
-    sig = inspect.signature(thingml::BooleanLiteral.__init__)
-    params = list(sig.parameters.keys())
-    assert "boolValue" in params, "Missing parameter 'boolValue'"
-
-def test_thingml::booleanliteral_has_boolValue():
-    assert hasattr(thingml::BooleanLiteral, "boolValue")
-    descriptor = None
-    for klass in thingml::BooleanLiteral.__mro__:
-        if "boolValue" in klass.__dict__:
-            descriptor = klass.__dict__["boolValue"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_thingml::doubleliteral_is_not_abstract():
-    assert not inspect.isabstract(thingml::DoubleLiteral)
-
-
-def test_thingml::doubleliteral_constructor_exists():
-    assert callable(thingml::DoubleLiteral.__init__)
-
-
-def test_thingml::doubleliteral_constructor_args():
-    sig = inspect.signature(thingml::DoubleLiteral.__init__)
-    params = list(sig.parameters.keys())
-    assert "doubleValue" in params, "Missing parameter 'doubleValue'"
-
-def test_thingml::doubleliteral_has_doubleValue():
-    assert hasattr(thingml::DoubleLiteral, "doubleValue")
-    descriptor = None
-    for klass in thingml::DoubleLiteral.__mro__:
-        if "doubleValue" in klass.__dict__:
-            descriptor = klass.__dict__["doubleValue"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_thingml::integerliteral_is_not_abstract():
-    assert not inspect.isabstract(thingml::IntegerLiteral)
-
-
-def test_thingml::integerliteral_constructor_exists():
-    assert callable(thingml::IntegerLiteral.__init__)
-
-
-def test_thingml::integerliteral_constructor_args():
-    sig = inspect.signature(thingml::IntegerLiteral.__init__)
+def test_thingml_integerliteral_constructor_args():
+    sig = inspect.signature(thingml_IntegerLiteral.__init__)
     params = list(sig.parameters.keys())
     assert "intValue" in params, "Missing parameter 'intValue'"
 
-def test_thingml::integerliteral_has_intValue():
-    assert hasattr(thingml::IntegerLiteral, "intValue")
+def test_thingml_integerliteral_has_intValue():
+    assert hasattr(thingml_IntegerLiteral, "intValue")
     descriptor = None
-    for klass in thingml::IntegerLiteral.__mro__:
+    for klass in thingml_IntegerLiteral.__mro__:
         if "intValue" in klass.__dict__:
             descriptor = klass.__dict__["intValue"]
             break
@@ -1278,23 +1328,71 @@ def test_thingml::integerliteral_has_intValue():
 
 
 
-def test_thingml::stringliteral_is_not_abstract():
-    assert not inspect.isabstract(thingml::StringLiteral)
+def test_thingml_booleanliteral_is_not_abstract():
+    assert not inspect.isabstract(thingml_BooleanLiteral)
 
 
-def test_thingml::stringliteral_constructor_exists():
-    assert callable(thingml::StringLiteral.__init__)
+def test_thingml_booleanliteral_constructor_exists():
+    assert callable(thingml_BooleanLiteral.__init__)
 
 
-def test_thingml::stringliteral_constructor_args():
-    sig = inspect.signature(thingml::StringLiteral.__init__)
+def test_thingml_booleanliteral_constructor_args():
+    sig = inspect.signature(thingml_BooleanLiteral.__init__)
+    params = list(sig.parameters.keys())
+    assert "boolValue" in params, "Missing parameter 'boolValue'"
+
+def test_thingml_booleanliteral_has_boolValue():
+    assert hasattr(thingml_BooleanLiteral, "boolValue")
+    descriptor = None
+    for klass in thingml_BooleanLiteral.__mro__:
+        if "boolValue" in klass.__dict__:
+            descriptor = klass.__dict__["boolValue"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_thingml_doubleliteral_is_not_abstract():
+    assert not inspect.isabstract(thingml_DoubleLiteral)
+
+
+def test_thingml_doubleliteral_constructor_exists():
+    assert callable(thingml_DoubleLiteral.__init__)
+
+
+def test_thingml_doubleliteral_constructor_args():
+    sig = inspect.signature(thingml_DoubleLiteral.__init__)
+    params = list(sig.parameters.keys())
+    assert "doubleValue" in params, "Missing parameter 'doubleValue'"
+
+def test_thingml_doubleliteral_has_doubleValue():
+    assert hasattr(thingml_DoubleLiteral, "doubleValue")
+    descriptor = None
+    for klass in thingml_DoubleLiteral.__mro__:
+        if "doubleValue" in klass.__dict__:
+            descriptor = klass.__dict__["doubleValue"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_thingml_stringliteral_is_not_abstract():
+    assert not inspect.isabstract(thingml_StringLiteral)
+
+
+def test_thingml_stringliteral_constructor_exists():
+    assert callable(thingml_StringLiteral.__init__)
+
+
+def test_thingml_stringliteral_constructor_args():
+    sig = inspect.signature(thingml_StringLiteral.__init__)
     params = list(sig.parameters.keys())
     assert "stringValue" in params, "Missing parameter 'stringValue'"
 
-def test_thingml::stringliteral_has_stringValue():
-    assert hasattr(thingml::StringLiteral, "stringValue")
+def test_thingml_stringliteral_has_stringValue():
+    assert hasattr(thingml_StringLiteral, "stringValue")
     descriptor = None
-    for klass in thingml::StringLiteral.__mro__:
+    for klass in thingml_StringLiteral.__mro__:
         if "stringValue" in klass.__dict__:
             descriptor = klass.__dict__["stringValue"]
             break
@@ -1302,16 +1400,16 @@ def test_thingml::stringliteral_has_stringValue():
 
 
 
-def test_thingml::enumliteralref_is_not_abstract():
-    assert not inspect.isabstract(thingml::EnumLiteralRef)
+def test_thingml_enumliteralref_is_not_abstract():
+    assert not inspect.isabstract(thingml_EnumLiteralRef)
 
 
-def test_thingml::enumliteralref_constructor_exists():
-    assert callable(thingml::EnumLiteralRef.__init__)
+def test_thingml_enumliteralref_constructor_exists():
+    assert callable(thingml_EnumLiteralRef.__init__)
 
 
-def test_thingml::enumliteralref_constructor_args():
-    sig = inspect.signature(thingml::EnumLiteralRef.__init__)
+def test_thingml_enumliteralref_constructor_args():
+    sig = inspect.signature(thingml_EnumLiteralRef.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1330,44 +1428,44 @@ def test_controlstructure_constructor_args():
 
 
 
-def test_thingml::conditionalaction_is_not_abstract():
-    assert not inspect.isabstract(thingml::ConditionalAction)
+def test_thingml_conditionalaction_is_not_abstract():
+    assert not inspect.isabstract(thingml_ConditionalAction)
 
 
-def test_thingml::conditionalaction_constructor_exists():
-    assert callable(thingml::ConditionalAction.__init__)
+def test_thingml_conditionalaction_constructor_exists():
+    assert callable(thingml_ConditionalAction.__init__)
 
 
-def test_thingml::conditionalaction_constructor_args():
-    sig = inspect.signature(thingml::ConditionalAction.__init__)
+def test_thingml_conditionalaction_constructor_args():
+    sig = inspect.signature(thingml_ConditionalAction.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_thingml::loopaction_is_not_abstract():
-    assert not inspect.isabstract(thingml::LoopAction)
+def test_thingml_loopaction_is_not_abstract():
+    assert not inspect.isabstract(thingml_LoopAction)
 
 
-def test_thingml::loopaction_constructor_exists():
-    assert callable(thingml::LoopAction.__init__)
+def test_thingml_loopaction_constructor_exists():
+    assert callable(thingml_LoopAction.__init__)
 
 
-def test_thingml::loopaction_constructor_args():
-    sig = inspect.signature(thingml::LoopAction.__init__)
+def test_thingml_loopaction_constructor_args():
+    sig = inspect.signature(thingml_LoopAction.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_thingml::controlstructure_is_not_abstract():
-    assert not inspect.isabstract(thingml::ControlStructure)
+def test_thingml_controlstructure_is_not_abstract():
+    assert not inspect.isabstract(thingml_ControlStructure)
 
 
-def test_thingml::controlstructure_constructor_exists():
-    assert callable(thingml::ControlStructure.__init__)
+def test_thingml_controlstructure_constructor_exists():
+    assert callable(thingml_ControlStructure.__init__)
 
 
-def test_thingml::controlstructure_constructor_args():
-    sig = inspect.signature(thingml::ControlStructure.__init__)
+def test_thingml_controlstructure_constructor_args():
+    sig = inspect.signature(thingml_ControlStructure.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1386,240 +1484,142 @@ def test_binaryexpression_constructor_args():
 
 
 
-def test_thingml::minusexpression_is_not_abstract():
-    assert not inspect.isabstract(thingml::MinusExpression)
+def test_thingml_minusexpression_is_not_abstract():
+    assert not inspect.isabstract(thingml_MinusExpression)
 
 
-def test_thingml::minusexpression_constructor_exists():
-    assert callable(thingml::MinusExpression.__init__)
+def test_thingml_minusexpression_constructor_exists():
+    assert callable(thingml_MinusExpression.__init__)
 
 
-def test_thingml::minusexpression_constructor_args():
-    sig = inspect.signature(thingml::MinusExpression.__init__)
+def test_thingml_minusexpression_constructor_args():
+    sig = inspect.signature(thingml_MinusExpression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_thingml::greaterexpression_is_not_abstract():
-    assert not inspect.isabstract(thingml::GreaterExpression)
+def test_thingml_andexpression_is_not_abstract():
+    assert not inspect.isabstract(thingml_AndExpression)
 
 
-def test_thingml::greaterexpression_constructor_exists():
-    assert callable(thingml::GreaterExpression.__init__)
+def test_thingml_andexpression_constructor_exists():
+    assert callable(thingml_AndExpression.__init__)
 
 
-def test_thingml::greaterexpression_constructor_args():
-    sig = inspect.signature(thingml::GreaterExpression.__init__)
+def test_thingml_andexpression_constructor_args():
+    sig = inspect.signature(thingml_AndExpression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_thingml::divexpression_is_not_abstract():
-    assert not inspect.isabstract(thingml::DivExpression)
+def test_thingml_equalsexpression_is_not_abstract():
+    assert not inspect.isabstract(thingml_EqualsExpression)
 
 
-def test_thingml::divexpression_constructor_exists():
-    assert callable(thingml::DivExpression.__init__)
+def test_thingml_equalsexpression_constructor_exists():
+    assert callable(thingml_EqualsExpression.__init__)
 
 
-def test_thingml::divexpression_constructor_args():
-    sig = inspect.signature(thingml::DivExpression.__init__)
+def test_thingml_equalsexpression_constructor_args():
+    sig = inspect.signature(thingml_EqualsExpression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_thingml::lowerexpression_is_not_abstract():
-    assert not inspect.isabstract(thingml::LowerExpression)
+def test_thingml_lowerexpression_is_not_abstract():
+    assert not inspect.isabstract(thingml_LowerExpression)
 
 
-def test_thingml::lowerexpression_constructor_exists():
-    assert callable(thingml::LowerExpression.__init__)
+def test_thingml_lowerexpression_constructor_exists():
+    assert callable(thingml_LowerExpression.__init__)
 
 
-def test_thingml::lowerexpression_constructor_args():
-    sig = inspect.signature(thingml::LowerExpression.__init__)
+def test_thingml_lowerexpression_constructor_args():
+    sig = inspect.signature(thingml_LowerExpression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_thingml::andexpression_is_not_abstract():
-    assert not inspect.isabstract(thingml::AndExpression)
+def test_thingml_divexpression_is_not_abstract():
+    assert not inspect.isabstract(thingml_DivExpression)
 
 
-def test_thingml::andexpression_constructor_exists():
-    assert callable(thingml::AndExpression.__init__)
+def test_thingml_divexpression_constructor_exists():
+    assert callable(thingml_DivExpression.__init__)
 
 
-def test_thingml::andexpression_constructor_args():
-    sig = inspect.signature(thingml::AndExpression.__init__)
+def test_thingml_divexpression_constructor_args():
+    sig = inspect.signature(thingml_DivExpression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_thingml::equalsexpression_is_not_abstract():
-    assert not inspect.isabstract(thingml::EqualsExpression)
+def test_thingml_modexpression_is_not_abstract():
+    assert not inspect.isabstract(thingml_ModExpression)
 
 
-def test_thingml::equalsexpression_constructor_exists():
-    assert callable(thingml::EqualsExpression.__init__)
+def test_thingml_modexpression_constructor_exists():
+    assert callable(thingml_ModExpression.__init__)
 
 
-def test_thingml::equalsexpression_constructor_args():
-    sig = inspect.signature(thingml::EqualsExpression.__init__)
+def test_thingml_modexpression_constructor_args():
+    sig = inspect.signature(thingml_ModExpression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_thingml::modexpression_is_not_abstract():
-    assert not inspect.isabstract(thingml::ModExpression)
+def test_thingml_timesexpression_is_not_abstract():
+    assert not inspect.isabstract(thingml_TimesExpression)
 
 
-def test_thingml::modexpression_constructor_exists():
-    assert callable(thingml::ModExpression.__init__)
+def test_thingml_timesexpression_constructor_exists():
+    assert callable(thingml_TimesExpression.__init__)
 
 
-def test_thingml::modexpression_constructor_args():
-    sig = inspect.signature(thingml::ModExpression.__init__)
+def test_thingml_timesexpression_constructor_args():
+    sig = inspect.signature(thingml_TimesExpression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_thingml::orexpression_is_not_abstract():
-    assert not inspect.isabstract(thingml::OrExpression)
+def test_thingml_orexpression_is_not_abstract():
+    assert not inspect.isabstract(thingml_OrExpression)
 
 
-def test_thingml::orexpression_constructor_exists():
-    assert callable(thingml::OrExpression.__init__)
+def test_thingml_orexpression_constructor_exists():
+    assert callable(thingml_OrExpression.__init__)
 
 
-def test_thingml::orexpression_constructor_args():
-    sig = inspect.signature(thingml::OrExpression.__init__)
+def test_thingml_orexpression_constructor_args():
+    sig = inspect.signature(thingml_OrExpression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_thingml::timesexpression_is_not_abstract():
-    assert not inspect.isabstract(thingml::TimesExpression)
+def test_thingml_greaterexpression_is_not_abstract():
+    assert not inspect.isabstract(thingml_GreaterExpression)
 
 
-def test_thingml::timesexpression_constructor_exists():
-    assert callable(thingml::TimesExpression.__init__)
+def test_thingml_greaterexpression_constructor_exists():
+    assert callable(thingml_GreaterExpression.__init__)
 
 
-def test_thingml::timesexpression_constructor_args():
-    sig = inspect.signature(thingml::TimesExpression.__init__)
+def test_thingml_greaterexpression_constructor_args():
+    sig = inspect.signature(thingml_GreaterExpression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_thingml::plusexpression_is_not_abstract():
-    assert not inspect.isabstract(thingml::PlusExpression)
+def test_thingml_plusexpression_is_not_abstract():
+    assert not inspect.isabstract(thingml_PlusExpression)
 
 
-def test_thingml::plusexpression_constructor_exists():
-    assert callable(thingml::PlusExpression.__init__)
+def test_thingml_plusexpression_constructor_exists():
+    assert callable(thingml_PlusExpression.__init__)
 
 
-def test_thingml::plusexpression_constructor_args():
-    sig = inspect.signature(thingml::PlusExpression.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_property_is_not_abstract():
-    assert not inspect.isabstract(Property)
-
-
-def test_property_constructor_exists():
-    assert callable(Property.__init__)
-
-
-def test_property_constructor_args():
-    sig = inspect.signature(Property.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_thingml::dictionary_is_not_abstract():
-    assert not inspect.isabstract(thingml::Dictionary)
-
-
-def test_thingml::dictionary_constructor_exists():
-    assert callable(thingml::Dictionary.__init__)
-
-
-def test_thingml::dictionary_constructor_args():
-    sig = inspect.signature(thingml::Dictionary.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_event_is_not_abstract():
-    assert not inspect.isabstract(Event)
-
-
-def test_event_constructor_exists():
-    assert callable(Event.__init__)
-
-
-def test_event_constructor_args():
-    sig = inspect.signature(Event.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_thingml::receivemessage_is_not_abstract():
-    assert not inspect.isabstract(thingml::ReceiveMessage)
-
-
-def test_thingml::receivemessage_constructor_exists():
-    assert callable(thingml::ReceiveMessage.__init__)
-
-
-def test_thingml::receivemessage_constructor_args():
-    sig = inspect.signature(thingml::ReceiveMessage.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_thingml::variableassignment_is_not_abstract():
-    assert not inspect.isabstract(thingml::VariableAssignment)
-
-
-def test_thingml::variableassignment_constructor_exists():
-    assert callable(thingml::VariableAssignment.__init__)
-
-
-def test_thingml::variableassignment_constructor_args():
-    sig = inspect.signature(thingml::VariableAssignment.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_thingml::literal_is_not_abstract():
-    assert not inspect.isabstract(thingml::Literal)
-
-
-def test_thingml::literal_constructor_exists():
-    assert callable(thingml::Literal.__init__)
-
-
-def test_thingml::literal_constructor_args():
-    sig = inspect.signature(thingml::Literal.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_thingml::eventreference_is_not_abstract():
-    assert not inspect.isabstract(thingml::EventReference)
-
-
-def test_thingml::eventreference_constructor_exists():
-    assert callable(thingml::EventReference.__init__)
-
-
-def test_thingml::eventreference_constructor_args():
-    sig = inspect.signature(thingml::EventReference.__init__)
+def test_thingml_plusexpression_constructor_args():
+    sig = inspect.signature(thingml_PlusExpression.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1634,50 +1634,71 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
+Property_strategy = st.builds(
+    Property,
+)
+thingml_Dictionary_strategy = st.builds(
+    thingml_Dictionary,
+)
+Event_strategy = st.builds(
+    Event,
+)
+thingml_ReceiveMessage_strategy = st.builds(
+    thingml_ReceiveMessage,
+)
 Port_strategy = st.builds(
     Port,
 )
-thingml::ProvidedPort_strategy = st.builds(
-    thingml::ProvidedPort,
+thingml_ProvidedPort_strategy = st.builds(
+    thingml_ProvidedPort,
 )
-thingml::RequiredPort_strategy = st.builds(
-    thingml::RequiredPort,
+thingml_RequiredPort_strategy = st.builds(
+    thingml_RequiredPort,
     optional=
         st.booleans()
 )
 Region_strategy = st.builds(
     Region,
 )
-thingml::ParallelRegion_strategy = st.builds(
-    thingml::ParallelRegion,
+thingml_ParallelRegion_strategy = st.builds(
+    thingml_ParallelRegion,
 )
 State_strategy = st.builds(
     State,
 )
-thingml::CompositeState_strategy = st.builds(
-    thingml::CompositeState,
+thingml_CompositeState_strategy = st.builds(
+    thingml_CompositeState,
 )
 Expression_strategy = st.builds(
     Expression,
 )
-thingml::ExternExpression_strategy = st.builds(
-    thingml::ExternExpression,
+thingml_EventReference_strategy = st.builds(
+    thingml_EventReference,
+)
+thingml_Literal_strategy = st.builds(
+    thingml_Literal,
+)
+thingml_ExternExpression_strategy = st.builds(
+    thingml_ExternExpression,
     expression=
         safe_text
 )
 Action_strategy = st.builds(
     Action,
 )
-thingml::ExternStatement_strategy = st.builds(
-    thingml::ExternStatement,
+thingml_VariableAssignment_strategy = st.builds(
+    thingml_VariableAssignment,
+)
+thingml_ExternStatement_strategy = st.builds(
+    thingml_ExternStatement,
     statement=
         safe_text
 )
-thingml::SendAction_strategy = st.builds(
-    thingml::SendAction,
+thingml_SendAction_strategy = st.builds(
+    thingml_SendAction,
 )
-thingml::ActionBlock_strategy = st.builds(
-    thingml::ActionBlock,
+thingml_ActionBlock_strategy = st.builds(
+    thingml_ActionBlock,
 )
 CompositeState_strategy = st.builds(
     CompositeState,
@@ -1685,67 +1706,67 @@ CompositeState_strategy = st.builds(
 ThingMLElement_strategy = st.builds(
     ThingMLElement,
 )
-thingml::AnnotatedElement_strategy = st.builds(
-    thingml::AnnotatedElement,
+thingml_Event_strategy = st.builds(
+    thingml_Event,
 )
-thingml::Event_strategy = st.builds(
-    thingml::Event,
+thingml_AnnotatedElement_strategy = st.builds(
+    thingml_AnnotatedElement,
 )
-thingml::PlatformAnnotation_strategy = st.builds(
-    thingml::PlatformAnnotation,
+thingml_PlatformAnnotation_strategy = st.builds(
+    thingml_PlatformAnnotation,
     value=
         safe_text
 )
 Handler_strategy = st.builds(
     Handler,
 )
-thingml::Transition_strategy = st.builds(
-    thingml::Transition,
+thingml_Transition_strategy = st.builds(
+    thingml_Transition,
 )
-thingml::InternalTransition_strategy = st.builds(
-    thingml::InternalTransition,
+thingml_InternalTransition_strategy = st.builds(
+    thingml_InternalTransition,
 )
 Variable_strategy = st.builds(
     Variable,
 )
-thingml::StateMachine_strategy = st.builds(
-    thingml::StateMachine,
+thingml_StateMachine_strategy = st.builds(
+    thingml_StateMachine,
 )
-thingml::Property_strategy = st.builds(
-    thingml::Property,
+thingml_Property_strategy = st.builds(
+    thingml_Property,
     changeable=
         st.booleans()
 )
 Type_strategy = st.builds(
     Type,
 )
-thingml::PrimitiveType_strategy = st.builds(
-    thingml::PrimitiveType,
+thingml_PrimitiveType_strategy = st.builds(
+    thingml_PrimitiveType,
 )
-thingml::Enumeration_strategy = st.builds(
-    thingml::Enumeration,
+thingml_Enumeration_strategy = st.builds(
+    thingml_Enumeration,
 )
-thingml::Thing_strategy = st.builds(
-    thingml::Thing,
+thingml_Thing_strategy = st.builds(
+    thingml_Thing,
     fragment=
         st.booleans()
 )
-thingml::Action_strategy = st.builds(
-    thingml::Action,
+thingml_Action_strategy = st.builds(
+    thingml_Action,
 )
-thingml::Expression_strategy = st.builds(
-    thingml::Expression,
+thingml_Expression_strategy = st.builds(
+    thingml_Expression,
 )
-thingml::TypedElement_strategy = st.builds(
-    thingml::TypedElement,
+thingml_TypedElement_strategy = st.builds(
+    thingml_TypedElement,
 )
-thingml::ThingMLElement_strategy = st.builds(
-    thingml::ThingMLElement,
+thingml_ThingMLElement_strategy = st.builds(
+    thingml_ThingMLElement,
     name=
         safe_text
 )
-thingml::Parameter_strategy = st.builds(
-    thingml::Parameter,
+thingml_Parameter_strategy = st.builds(
+    thingml_Parameter,
 )
 TypedElement_strategy = st.builds(
     TypedElement,
@@ -1753,232 +1774,228 @@ TypedElement_strategy = st.builds(
 AnnotatedElement_strategy = st.builds(
     AnnotatedElement,
 )
-thingml::PropertyAssign_strategy = st.builds(
-    thingml::PropertyAssign,
+thingml_Variable_strategy = st.builds(
+    thingml_Variable,
 )
-thingml::State_strategy = st.builds(
-    thingml::State,
+thingml_Port_strategy = st.builds(
+    thingml_Port,
 )
-thingml::EnumerationLiteral_strategy = st.builds(
-    thingml::EnumerationLiteral,
+thingml_PropertyAssign_strategy = st.builds(
+    thingml_PropertyAssign,
 )
-thingml::Port_strategy = st.builds(
-    thingml::Port,
+thingml_EnumerationLiteral_strategy = st.builds(
+    thingml_EnumerationLiteral,
 )
-thingml::Handler_strategy = st.builds(
-    thingml::Handler,
+thingml_Message_strategy = st.builds(
+    thingml_Message,
 )
-thingml::Variable_strategy = st.builds(
-    thingml::Variable,
-)
-thingml::Message_strategy = st.builds(
-    thingml::Message,
-)
-thingml::Region_strategy = st.builds(
-    thingml::Region,
+thingml_Region_strategy = st.builds(
+    thingml_Region,
     history=
         st.booleans()
 )
-thingml::Function_strategy = st.builds(
-    thingml::Function,
+thingml_Handler_strategy = st.builds(
+    thingml_Handler,
 )
-thingml::Configuration_strategy = st.builds(
-    thingml::Configuration,
+thingml_State_strategy = st.builds(
+    thingml_State,
+)
+thingml_Function_strategy = st.builds(
+    thingml_Function,
+)
+thingml_Configuration_strategy = st.builds(
+    thingml_Configuration,
     fragment=
         st.booleans()
 )
-thingml::Type_strategy = st.builds(
-    thingml::Type,
+thingml_Type_strategy = st.builds(
+    thingml_Type,
 )
-thingml::ThingMLModel_strategy = st.builds(
-    thingml::ThingMLModel,
+thingml_ThingMLModel_strategy = st.builds(
+    thingml_ThingMLModel,
 )
-thingml::InstanceRef_strategy = st.builds(
-    thingml::InstanceRef,
+thingml_InstanceRef_strategy = st.builds(
+    thingml_InstanceRef,
 )
-thingml::LocalVariable_strategy = st.builds(
-    thingml::LocalVariable,
+thingml_LocalVariable_strategy = st.builds(
+    thingml_LocalVariable,
     changeable=
         st.booleans()
 )
 FunctionCall_strategy = st.builds(
     FunctionCall,
 )
-thingml::FunctionCallExpression_strategy = st.builds(
-    thingml::FunctionCallExpression,
+thingml_FunctionCallExpression_strategy = st.builds(
+    thingml_FunctionCallExpression,
 )
-thingml::FunctionCallStatement_strategy = st.builds(
-    thingml::FunctionCallStatement,
+thingml_FunctionCallStatement_strategy = st.builds(
+    thingml_FunctionCallStatement,
 )
-thingml::FunctionCall_strategy = st.builds(
-    thingml::FunctionCall,
+thingml_FunctionCall_strategy = st.builds(
+    thingml_FunctionCall,
 )
-thingml::PrintAction_strategy = st.builds(
-    thingml::PrintAction,
+thingml_PrintAction_strategy = st.builds(
+    thingml_PrintAction,
 )
-thingml::ReturnAction_strategy = st.builds(
-    thingml::ReturnAction,
+thingml_ReturnAction_strategy = st.builds(
+    thingml_ReturnAction,
 )
-thingml::ExpressionGroup_strategy = st.builds(
-    thingml::ExpressionGroup,
+thingml_ExpressionGroup_strategy = st.builds(
+    thingml_ExpressionGroup,
 )
 PropertyReference_strategy = st.builds(
     PropertyReference,
 )
-thingml::DictionaryReference_strategy = st.builds(
-    thingml::DictionaryReference,
+thingml_DictionaryReference_strategy = st.builds(
+    thingml_DictionaryReference,
 )
-thingml::ArrayIndex_strategy = st.builds(
-    thingml::ArrayIndex,
+thingml_ArrayIndex_strategy = st.builds(
+    thingml_ArrayIndex,
 )
-thingml::PropertyReference_strategy = st.builds(
-    thingml::PropertyReference,
+thingml_PropertyReference_strategy = st.builds(
+    thingml_PropertyReference,
 )
-thingml::ConfigPropertyAssign_strategy = st.builds(
-    thingml::ConfigPropertyAssign,
+thingml_ConfigPropertyAssign_strategy = st.builds(
+    thingml_ConfigPropertyAssign,
 )
-thingml::ConfigInclude_strategy = st.builds(
-    thingml::ConfigInclude,
+thingml_ConfigInclude_strategy = st.builds(
+    thingml_ConfigInclude,
 )
-thingml::Connector_strategy = st.builds(
-    thingml::Connector,
+thingml_Connector_strategy = st.builds(
+    thingml_Connector,
 )
-thingml::Instance_strategy = st.builds(
-    thingml::Instance,
+thingml_Instance_strategy = st.builds(
+    thingml_Instance,
 )
-thingml::ErrorAction_strategy = st.builds(
-    thingml::ErrorAction,
+thingml_ErrorAction_strategy = st.builds(
+    thingml_ErrorAction,
 )
-thingml::BinaryExpression_strategy = st.builds(
-    thingml::BinaryExpression,
+thingml_BinaryExpression_strategy = st.builds(
+    thingml_BinaryExpression,
 )
 UnaryExpression_strategy = st.builds(
     UnaryExpression,
 )
-thingml::UnaryMinus_strategy = st.builds(
-    thingml::UnaryMinus,
+thingml_UnaryMinus_strategy = st.builds(
+    thingml_UnaryMinus,
 )
-thingml::NotExpression_strategy = st.builds(
-    thingml::NotExpression,
+thingml_NotExpression_strategy = st.builds(
+    thingml_NotExpression,
 )
-thingml::UnaryExpression_strategy = st.builds(
-    thingml::UnaryExpression,
+thingml_UnaryExpression_strategy = st.builds(
+    thingml_UnaryExpression,
 )
 Literal_strategy = st.builds(
     Literal,
 )
-thingml::BooleanLiteral_strategy = st.builds(
-    thingml::BooleanLiteral,
-    boolValue=
-        st.booleans()
-)
-thingml::DoubleLiteral_strategy = st.builds(
-    thingml::DoubleLiteral,
-    doubleValue=
-        st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False)
-)
-thingml::IntegerLiteral_strategy = st.builds(
-    thingml::IntegerLiteral,
+thingml_IntegerLiteral_strategy = st.builds(
+    thingml_IntegerLiteral,
     intValue=
         st.integers()
 )
-thingml::StringLiteral_strategy = st.builds(
-    thingml::StringLiteral,
+thingml_BooleanLiteral_strategy = st.builds(
+    thingml_BooleanLiteral,
+    boolValue=
+        st.booleans()
+)
+thingml_DoubleLiteral_strategy = st.builds(
+    thingml_DoubleLiteral,
+    doubleValue=
+        st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False)
+)
+thingml_StringLiteral_strategy = st.builds(
+    thingml_StringLiteral,
     stringValue=
         safe_text
 )
-thingml::EnumLiteralRef_strategy = st.builds(
-    thingml::EnumLiteralRef,
+thingml_EnumLiteralRef_strategy = st.builds(
+    thingml_EnumLiteralRef,
 )
 ControlStructure_strategy = st.builds(
     ControlStructure,
 )
-thingml::ConditionalAction_strategy = st.builds(
-    thingml::ConditionalAction,
+thingml_ConditionalAction_strategy = st.builds(
+    thingml_ConditionalAction,
 )
-thingml::LoopAction_strategy = st.builds(
-    thingml::LoopAction,
+thingml_LoopAction_strategy = st.builds(
+    thingml_LoopAction,
 )
-thingml::ControlStructure_strategy = st.builds(
-    thingml::ControlStructure,
+thingml_ControlStructure_strategy = st.builds(
+    thingml_ControlStructure,
 )
 BinaryExpression_strategy = st.builds(
     BinaryExpression,
 )
-thingml::MinusExpression_strategy = st.builds(
-    thingml::MinusExpression,
+thingml_MinusExpression_strategy = st.builds(
+    thingml_MinusExpression,
 )
-thingml::GreaterExpression_strategy = st.builds(
-    thingml::GreaterExpression,
+thingml_AndExpression_strategy = st.builds(
+    thingml_AndExpression,
 )
-thingml::DivExpression_strategy = st.builds(
-    thingml::DivExpression,
+thingml_EqualsExpression_strategy = st.builds(
+    thingml_EqualsExpression,
 )
-thingml::LowerExpression_strategy = st.builds(
-    thingml::LowerExpression,
+thingml_LowerExpression_strategy = st.builds(
+    thingml_LowerExpression,
 )
-thingml::AndExpression_strategy = st.builds(
-    thingml::AndExpression,
+thingml_DivExpression_strategy = st.builds(
+    thingml_DivExpression,
 )
-thingml::EqualsExpression_strategy = st.builds(
-    thingml::EqualsExpression,
+thingml_ModExpression_strategy = st.builds(
+    thingml_ModExpression,
 )
-thingml::ModExpression_strategy = st.builds(
-    thingml::ModExpression,
+thingml_TimesExpression_strategy = st.builds(
+    thingml_TimesExpression,
 )
-thingml::OrExpression_strategy = st.builds(
-    thingml::OrExpression,
+thingml_OrExpression_strategy = st.builds(
+    thingml_OrExpression,
 )
-thingml::TimesExpression_strategy = st.builds(
-    thingml::TimesExpression,
+thingml_GreaterExpression_strategy = st.builds(
+    thingml_GreaterExpression,
 )
-thingml::PlusExpression_strategy = st.builds(
-    thingml::PlusExpression,
+thingml_PlusExpression_strategy = st.builds(
+    thingml_PlusExpression,
 )
-Property_strategy = st.builds(
-    Property,
-)
-thingml::Dictionary_strategy = st.builds(
-    thingml::Dictionary,
-)
-Event_strategy = st.builds(
-    Event,
-)
-thingml::ReceiveMessage_strategy = st.builds(
-    thingml::ReceiveMessage,
-)
-thingml::VariableAssignment_strategy = st.builds(
-    thingml::VariableAssignment,
-)
-thingml::Literal_strategy = st.builds(
-    thingml::Literal,
-)
-thingml::EventReference_strategy = st.builds(
-    thingml::EventReference,
-)
+
+@given(instance=Property_strategy)
+@settings(max_examples=50)
+def test_property_instantiation(instance):
+    assert isinstance(instance, Property)
+
+@given(instance=thingml_Dictionary_strategy)
+@settings(max_examples=50)
+def test_thingml_dictionary_instantiation(instance):
+    assert isinstance(instance, thingml_Dictionary)
+
+@given(instance=Event_strategy)
+@settings(max_examples=50)
+def test_event_instantiation(instance):
+    assert isinstance(instance, Event)
+
+@given(instance=thingml_ReceiveMessage_strategy)
+@settings(max_examples=50)
+def test_thingml_receivemessage_instantiation(instance):
+    assert isinstance(instance, thingml_ReceiveMessage)
 
 @given(instance=Port_strategy)
 @settings(max_examples=50)
 def test_port_instantiation(instance):
     assert isinstance(instance, Port)
 
-@given(instance=thingml::ProvidedPort_strategy)
+@given(instance=thingml_ProvidedPort_strategy)
 @settings(max_examples=50)
-def test_thingml::providedport_instantiation(instance):
-    assert isinstance(instance, thingml::ProvidedPort)
+def test_thingml_providedport_instantiation(instance):
+    assert isinstance(instance, thingml_ProvidedPort)
 
-@given(instance=thingml::RequiredPort_strategy)
+@given(instance=thingml_RequiredPort_strategy)
 @settings(max_examples=50)
-def test_thingml::requiredport_instantiation(instance):
-    assert isinstance(instance, thingml::RequiredPort)
-
-@given(instance=thingml::RequiredPort_strategy)
-def test_thingml::requiredport_optional_type(instance):
-    assert isinstance(instance.optional, bool)
+def test_thingml_requiredport_instantiation(instance):
+    assert isinstance(instance, thingml_RequiredPort)
 
 
-@given(instance=thingml::RequiredPort_strategy)
-def test_thingml::requiredport_optional_setter(instance):
+
+@given(instance=thingml_RequiredPort_strategy)
+def test_thingml_requiredport_optional_setter(instance):
     original = instance.optional
     instance.optional = original
     assert instance.optional == original
@@ -1988,38 +2005,45 @@ def test_thingml::requiredport_optional_setter(instance):
 def test_region_instantiation(instance):
     assert isinstance(instance, Region)
 
-@given(instance=thingml::ParallelRegion_strategy)
+@given(instance=thingml_ParallelRegion_strategy)
 @settings(max_examples=50)
-def test_thingml::parallelregion_instantiation(instance):
-    assert isinstance(instance, thingml::ParallelRegion)
+def test_thingml_parallelregion_instantiation(instance):
+    assert isinstance(instance, thingml_ParallelRegion)
 
 @given(instance=State_strategy)
 @settings(max_examples=50)
 def test_state_instantiation(instance):
     assert isinstance(instance, State)
 
-@given(instance=thingml::CompositeState_strategy)
+@given(instance=thingml_CompositeState_strategy)
 @settings(max_examples=50)
-def test_thingml::compositestate_instantiation(instance):
-    assert isinstance(instance, thingml::CompositeState)
+def test_thingml_compositestate_instantiation(instance):
+    assert isinstance(instance, thingml_CompositeState)
 
 @given(instance=Expression_strategy)
 @settings(max_examples=50)
 def test_expression_instantiation(instance):
     assert isinstance(instance, Expression)
 
-@given(instance=thingml::ExternExpression_strategy)
+@given(instance=thingml_EventReference_strategy)
 @settings(max_examples=50)
-def test_thingml::externexpression_instantiation(instance):
-    assert isinstance(instance, thingml::ExternExpression)
+def test_thingml_eventreference_instantiation(instance):
+    assert isinstance(instance, thingml_EventReference)
 
-@given(instance=thingml::ExternExpression_strategy)
-def test_thingml::externexpression_expression_type(instance):
-    assert isinstance(instance.expression, str)
+@given(instance=thingml_Literal_strategy)
+@settings(max_examples=50)
+def test_thingml_literal_instantiation(instance):
+    assert isinstance(instance, thingml_Literal)
+
+@given(instance=thingml_ExternExpression_strategy)
+@settings(max_examples=50)
+def test_thingml_externexpression_instantiation(instance):
+    assert isinstance(instance, thingml_ExternExpression)
 
 
-@given(instance=thingml::ExternExpression_strategy)
-def test_thingml::externexpression_expression_setter(instance):
+
+@given(instance=thingml_ExternExpression_strategy)
+def test_thingml_externexpression_expression_setter(instance):
     original = instance.expression
     instance.expression = original
     assert instance.expression == original
@@ -2029,31 +2053,33 @@ def test_thingml::externexpression_expression_setter(instance):
 def test_action_instantiation(instance):
     assert isinstance(instance, Action)
 
-@given(instance=thingml::ExternStatement_strategy)
+@given(instance=thingml_VariableAssignment_strategy)
 @settings(max_examples=50)
-def test_thingml::externstatement_instantiation(instance):
-    assert isinstance(instance, thingml::ExternStatement)
+def test_thingml_variableassignment_instantiation(instance):
+    assert isinstance(instance, thingml_VariableAssignment)
 
-@given(instance=thingml::ExternStatement_strategy)
-def test_thingml::externstatement_statement_type(instance):
-    assert isinstance(instance.statement, str)
+@given(instance=thingml_ExternStatement_strategy)
+@settings(max_examples=50)
+def test_thingml_externstatement_instantiation(instance):
+    assert isinstance(instance, thingml_ExternStatement)
 
 
-@given(instance=thingml::ExternStatement_strategy)
-def test_thingml::externstatement_statement_setter(instance):
+
+@given(instance=thingml_ExternStatement_strategy)
+def test_thingml_externstatement_statement_setter(instance):
     original = instance.statement
     instance.statement = original
     assert instance.statement == original
 
-@given(instance=thingml::SendAction_strategy)
+@given(instance=thingml_SendAction_strategy)
 @settings(max_examples=50)
-def test_thingml::sendaction_instantiation(instance):
-    assert isinstance(instance, thingml::SendAction)
+def test_thingml_sendaction_instantiation(instance):
+    assert isinstance(instance, thingml_SendAction)
 
-@given(instance=thingml::ActionBlock_strategy)
+@given(instance=thingml_ActionBlock_strategy)
 @settings(max_examples=50)
-def test_thingml::actionblock_instantiation(instance):
-    assert isinstance(instance, thingml::ActionBlock)
+def test_thingml_actionblock_instantiation(instance):
+    assert isinstance(instance, thingml_ActionBlock)
 
 @given(instance=CompositeState_strategy)
 @settings(max_examples=50)
@@ -2065,28 +2091,25 @@ def test_compositestate_instantiation(instance):
 def test_thingmlelement_instantiation(instance):
     assert isinstance(instance, ThingMLElement)
 
-@given(instance=thingml::AnnotatedElement_strategy)
+@given(instance=thingml_Event_strategy)
 @settings(max_examples=50)
-def test_thingml::annotatedelement_instantiation(instance):
-    assert isinstance(instance, thingml::AnnotatedElement)
+def test_thingml_event_instantiation(instance):
+    assert isinstance(instance, thingml_Event)
 
-@given(instance=thingml::Event_strategy)
+@given(instance=thingml_AnnotatedElement_strategy)
 @settings(max_examples=50)
-def test_thingml::event_instantiation(instance):
-    assert isinstance(instance, thingml::Event)
+def test_thingml_annotatedelement_instantiation(instance):
+    assert isinstance(instance, thingml_AnnotatedElement)
 
-@given(instance=thingml::PlatformAnnotation_strategy)
+@given(instance=thingml_PlatformAnnotation_strategy)
 @settings(max_examples=50)
-def test_thingml::platformannotation_instantiation(instance):
-    assert isinstance(instance, thingml::PlatformAnnotation)
-
-@given(instance=thingml::PlatformAnnotation_strategy)
-def test_thingml::platformannotation_value_type(instance):
-    assert isinstance(instance.value, str)
+def test_thingml_platformannotation_instantiation(instance):
+    assert isinstance(instance, thingml_PlatformAnnotation)
 
 
-@given(instance=thingml::PlatformAnnotation_strategy)
-def test_thingml::platformannotation_value_setter(instance):
+
+@given(instance=thingml_PlatformAnnotation_strategy)
+def test_thingml_platformannotation_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
@@ -2096,38 +2119,35 @@ def test_thingml::platformannotation_value_setter(instance):
 def test_handler_instantiation(instance):
     assert isinstance(instance, Handler)
 
-@given(instance=thingml::Transition_strategy)
+@given(instance=thingml_Transition_strategy)
 @settings(max_examples=50)
-def test_thingml::transition_instantiation(instance):
-    assert isinstance(instance, thingml::Transition)
+def test_thingml_transition_instantiation(instance):
+    assert isinstance(instance, thingml_Transition)
 
-@given(instance=thingml::InternalTransition_strategy)
+@given(instance=thingml_InternalTransition_strategy)
 @settings(max_examples=50)
-def test_thingml::internaltransition_instantiation(instance):
-    assert isinstance(instance, thingml::InternalTransition)
+def test_thingml_internaltransition_instantiation(instance):
+    assert isinstance(instance, thingml_InternalTransition)
 
 @given(instance=Variable_strategy)
 @settings(max_examples=50)
 def test_variable_instantiation(instance):
     assert isinstance(instance, Variable)
 
-@given(instance=thingml::StateMachine_strategy)
+@given(instance=thingml_StateMachine_strategy)
 @settings(max_examples=50)
-def test_thingml::statemachine_instantiation(instance):
-    assert isinstance(instance, thingml::StateMachine)
+def test_thingml_statemachine_instantiation(instance):
+    assert isinstance(instance, thingml_StateMachine)
 
-@given(instance=thingml::Property_strategy)
+@given(instance=thingml_Property_strategy)
 @settings(max_examples=50)
-def test_thingml::property_instantiation(instance):
-    assert isinstance(instance, thingml::Property)
-
-@given(instance=thingml::Property_strategy)
-def test_thingml::property_changeable_type(instance):
-    assert isinstance(instance.changeable, bool)
+def test_thingml_property_instantiation(instance):
+    assert isinstance(instance, thingml_Property)
 
 
-@given(instance=thingml::Property_strategy)
-def test_thingml::property_changeable_setter(instance):
+
+@given(instance=thingml_Property_strategy)
+def test_thingml_property_changeable_setter(instance):
     original = instance.changeable
     instance.changeable = original
     assert instance.changeable == original
@@ -2137,67 +2157,61 @@ def test_thingml::property_changeable_setter(instance):
 def test_type_instantiation(instance):
     assert isinstance(instance, Type)
 
-@given(instance=thingml::PrimitiveType_strategy)
+@given(instance=thingml_PrimitiveType_strategy)
 @settings(max_examples=50)
-def test_thingml::primitivetype_instantiation(instance):
-    assert isinstance(instance, thingml::PrimitiveType)
+def test_thingml_primitivetype_instantiation(instance):
+    assert isinstance(instance, thingml_PrimitiveType)
 
-@given(instance=thingml::Enumeration_strategy)
+@given(instance=thingml_Enumeration_strategy)
 @settings(max_examples=50)
-def test_thingml::enumeration_instantiation(instance):
-    assert isinstance(instance, thingml::Enumeration)
+def test_thingml_enumeration_instantiation(instance):
+    assert isinstance(instance, thingml_Enumeration)
 
-@given(instance=thingml::Thing_strategy)
+@given(instance=thingml_Thing_strategy)
 @settings(max_examples=50)
-def test_thingml::thing_instantiation(instance):
-    assert isinstance(instance, thingml::Thing)
-
-@given(instance=thingml::Thing_strategy)
-def test_thingml::thing_fragment_type(instance):
-    assert isinstance(instance.fragment, bool)
+def test_thingml_thing_instantiation(instance):
+    assert isinstance(instance, thingml_Thing)
 
 
-@given(instance=thingml::Thing_strategy)
-def test_thingml::thing_fragment_setter(instance):
+
+@given(instance=thingml_Thing_strategy)
+def test_thingml_thing_fragment_setter(instance):
     original = instance.fragment
     instance.fragment = original
     assert instance.fragment == original
 
-@given(instance=thingml::Action_strategy)
+@given(instance=thingml_Action_strategy)
 @settings(max_examples=50)
-def test_thingml::action_instantiation(instance):
-    assert isinstance(instance, thingml::Action)
+def test_thingml_action_instantiation(instance):
+    assert isinstance(instance, thingml_Action)
 
-@given(instance=thingml::Expression_strategy)
+@given(instance=thingml_Expression_strategy)
 @settings(max_examples=50)
-def test_thingml::expression_instantiation(instance):
-    assert isinstance(instance, thingml::Expression)
+def test_thingml_expression_instantiation(instance):
+    assert isinstance(instance, thingml_Expression)
 
-@given(instance=thingml::TypedElement_strategy)
+@given(instance=thingml_TypedElement_strategy)
 @settings(max_examples=50)
-def test_thingml::typedelement_instantiation(instance):
-    assert isinstance(instance, thingml::TypedElement)
+def test_thingml_typedelement_instantiation(instance):
+    assert isinstance(instance, thingml_TypedElement)
 
-@given(instance=thingml::ThingMLElement_strategy)
+@given(instance=thingml_ThingMLElement_strategy)
 @settings(max_examples=50)
-def test_thingml::thingmlelement_instantiation(instance):
-    assert isinstance(instance, thingml::ThingMLElement)
-
-@given(instance=thingml::ThingMLElement_strategy)
-def test_thingml::thingmlelement_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_thingml_thingmlelement_instantiation(instance):
+    assert isinstance(instance, thingml_ThingMLElement)
 
 
-@given(instance=thingml::ThingMLElement_strategy)
-def test_thingml::thingmlelement_name_setter(instance):
+
+@given(instance=thingml_ThingMLElement_strategy)
+def test_thingml_thingmlelement_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=thingml::Parameter_strategy)
+@given(instance=thingml_Parameter_strategy)
 @settings(max_examples=50)
-def test_thingml::parameter_instantiation(instance):
-    assert isinstance(instance, thingml::Parameter)
+def test_thingml_parameter_instantiation(instance):
+    assert isinstance(instance, thingml_Parameter)
 
 @given(instance=TypedElement_strategy)
 @settings(max_examples=50)
@@ -2209,105 +2223,96 @@ def test_typedelement_instantiation(instance):
 def test_annotatedelement_instantiation(instance):
     assert isinstance(instance, AnnotatedElement)
 
-@given(instance=thingml::PropertyAssign_strategy)
+@given(instance=thingml_Variable_strategy)
 @settings(max_examples=50)
-def test_thingml::propertyassign_instantiation(instance):
-    assert isinstance(instance, thingml::PropertyAssign)
+def test_thingml_variable_instantiation(instance):
+    assert isinstance(instance, thingml_Variable)
 
-@given(instance=thingml::State_strategy)
+@given(instance=thingml_Port_strategy)
 @settings(max_examples=50)
-def test_thingml::state_instantiation(instance):
-    assert isinstance(instance, thingml::State)
+def test_thingml_port_instantiation(instance):
+    assert isinstance(instance, thingml_Port)
 
-@given(instance=thingml::EnumerationLiteral_strategy)
+@given(instance=thingml_PropertyAssign_strategy)
 @settings(max_examples=50)
-def test_thingml::enumerationliteral_instantiation(instance):
-    assert isinstance(instance, thingml::EnumerationLiteral)
+def test_thingml_propertyassign_instantiation(instance):
+    assert isinstance(instance, thingml_PropertyAssign)
 
-@given(instance=thingml::Port_strategy)
+@given(instance=thingml_EnumerationLiteral_strategy)
 @settings(max_examples=50)
-def test_thingml::port_instantiation(instance):
-    assert isinstance(instance, thingml::Port)
+def test_thingml_enumerationliteral_instantiation(instance):
+    assert isinstance(instance, thingml_EnumerationLiteral)
 
-@given(instance=thingml::Handler_strategy)
+@given(instance=thingml_Message_strategy)
 @settings(max_examples=50)
-def test_thingml::handler_instantiation(instance):
-    assert isinstance(instance, thingml::Handler)
+def test_thingml_message_instantiation(instance):
+    assert isinstance(instance, thingml_Message)
 
-@given(instance=thingml::Variable_strategy)
+@given(instance=thingml_Region_strategy)
 @settings(max_examples=50)
-def test_thingml::variable_instantiation(instance):
-    assert isinstance(instance, thingml::Variable)
-
-@given(instance=thingml::Message_strategy)
-@settings(max_examples=50)
-def test_thingml::message_instantiation(instance):
-    assert isinstance(instance, thingml::Message)
-
-@given(instance=thingml::Region_strategy)
-@settings(max_examples=50)
-def test_thingml::region_instantiation(instance):
-    assert isinstance(instance, thingml::Region)
-
-@given(instance=thingml::Region_strategy)
-def test_thingml::region_history_type(instance):
-    assert isinstance(instance.history, bool)
+def test_thingml_region_instantiation(instance):
+    assert isinstance(instance, thingml_Region)
 
 
-@given(instance=thingml::Region_strategy)
-def test_thingml::region_history_setter(instance):
+
+@given(instance=thingml_Region_strategy)
+def test_thingml_region_history_setter(instance):
     original = instance.history
     instance.history = original
     assert instance.history == original
 
-@given(instance=thingml::Function_strategy)
+@given(instance=thingml_Handler_strategy)
 @settings(max_examples=50)
-def test_thingml::function_instantiation(instance):
-    assert isinstance(instance, thingml::Function)
+def test_thingml_handler_instantiation(instance):
+    assert isinstance(instance, thingml_Handler)
 
-@given(instance=thingml::Configuration_strategy)
+@given(instance=thingml_State_strategy)
 @settings(max_examples=50)
-def test_thingml::configuration_instantiation(instance):
-    assert isinstance(instance, thingml::Configuration)
+def test_thingml_state_instantiation(instance):
+    assert isinstance(instance, thingml_State)
 
-@given(instance=thingml::Configuration_strategy)
-def test_thingml::configuration_fragment_type(instance):
-    assert isinstance(instance.fragment, bool)
+@given(instance=thingml_Function_strategy)
+@settings(max_examples=50)
+def test_thingml_function_instantiation(instance):
+    assert isinstance(instance, thingml_Function)
+
+@given(instance=thingml_Configuration_strategy)
+@settings(max_examples=50)
+def test_thingml_configuration_instantiation(instance):
+    assert isinstance(instance, thingml_Configuration)
 
 
-@given(instance=thingml::Configuration_strategy)
-def test_thingml::configuration_fragment_setter(instance):
+
+@given(instance=thingml_Configuration_strategy)
+def test_thingml_configuration_fragment_setter(instance):
     original = instance.fragment
     instance.fragment = original
     assert instance.fragment == original
 
-@given(instance=thingml::Type_strategy)
+@given(instance=thingml_Type_strategy)
 @settings(max_examples=50)
-def test_thingml::type_instantiation(instance):
-    assert isinstance(instance, thingml::Type)
+def test_thingml_type_instantiation(instance):
+    assert isinstance(instance, thingml_Type)
 
-@given(instance=thingml::ThingMLModel_strategy)
+@given(instance=thingml_ThingMLModel_strategy)
 @settings(max_examples=50)
-def test_thingml::thingmlmodel_instantiation(instance):
-    assert isinstance(instance, thingml::ThingMLModel)
+def test_thingml_thingmlmodel_instantiation(instance):
+    assert isinstance(instance, thingml_ThingMLModel)
 
-@given(instance=thingml::InstanceRef_strategy)
+@given(instance=thingml_InstanceRef_strategy)
 @settings(max_examples=50)
-def test_thingml::instanceref_instantiation(instance):
-    assert isinstance(instance, thingml::InstanceRef)
+def test_thingml_instanceref_instantiation(instance):
+    assert isinstance(instance, thingml_InstanceRef)
 
-@given(instance=thingml::LocalVariable_strategy)
+@given(instance=thingml_LocalVariable_strategy)
 @settings(max_examples=50)
-def test_thingml::localvariable_instantiation(instance):
-    assert isinstance(instance, thingml::LocalVariable)
-
-@given(instance=thingml::LocalVariable_strategy)
-def test_thingml::localvariable_changeable_type(instance):
-    assert isinstance(instance.changeable, bool)
+def test_thingml_localvariable_instantiation(instance):
+    assert isinstance(instance, thingml_LocalVariable)
 
 
-@given(instance=thingml::LocalVariable_strategy)
-def test_thingml::localvariable_changeable_setter(instance):
+
+@given(instance=thingml_LocalVariable_strategy)
+def test_thingml_localvariable_changeable_setter(instance):
     original = instance.changeable
     instance.changeable = original
     assert instance.changeable == original
@@ -2317,286 +2322,239 @@ def test_thingml::localvariable_changeable_setter(instance):
 def test_functioncall_instantiation(instance):
     assert isinstance(instance, FunctionCall)
 
-@given(instance=thingml::FunctionCallExpression_strategy)
+@given(instance=thingml_FunctionCallExpression_strategy)
 @settings(max_examples=50)
-def test_thingml::functioncallexpression_instantiation(instance):
-    assert isinstance(instance, thingml::FunctionCallExpression)
+def test_thingml_functioncallexpression_instantiation(instance):
+    assert isinstance(instance, thingml_FunctionCallExpression)
 
-@given(instance=thingml::FunctionCallStatement_strategy)
+@given(instance=thingml_FunctionCallStatement_strategy)
 @settings(max_examples=50)
-def test_thingml::functioncallstatement_instantiation(instance):
-    assert isinstance(instance, thingml::FunctionCallStatement)
+def test_thingml_functioncallstatement_instantiation(instance):
+    assert isinstance(instance, thingml_FunctionCallStatement)
 
-@given(instance=thingml::FunctionCall_strategy)
+@given(instance=thingml_FunctionCall_strategy)
 @settings(max_examples=50)
-def test_thingml::functioncall_instantiation(instance):
-    assert isinstance(instance, thingml::FunctionCall)
+def test_thingml_functioncall_instantiation(instance):
+    assert isinstance(instance, thingml_FunctionCall)
 
-@given(instance=thingml::PrintAction_strategy)
+@given(instance=thingml_PrintAction_strategy)
 @settings(max_examples=50)
-def test_thingml::printaction_instantiation(instance):
-    assert isinstance(instance, thingml::PrintAction)
+def test_thingml_printaction_instantiation(instance):
+    assert isinstance(instance, thingml_PrintAction)
 
-@given(instance=thingml::ReturnAction_strategy)
+@given(instance=thingml_ReturnAction_strategy)
 @settings(max_examples=50)
-def test_thingml::returnaction_instantiation(instance):
-    assert isinstance(instance, thingml::ReturnAction)
+def test_thingml_returnaction_instantiation(instance):
+    assert isinstance(instance, thingml_ReturnAction)
 
-@given(instance=thingml::ExpressionGroup_strategy)
+@given(instance=thingml_ExpressionGroup_strategy)
 @settings(max_examples=50)
-def test_thingml::expressiongroup_instantiation(instance):
-    assert isinstance(instance, thingml::ExpressionGroup)
+def test_thingml_expressiongroup_instantiation(instance):
+    assert isinstance(instance, thingml_ExpressionGroup)
 
 @given(instance=PropertyReference_strategy)
 @settings(max_examples=50)
 def test_propertyreference_instantiation(instance):
     assert isinstance(instance, PropertyReference)
 
-@given(instance=thingml::DictionaryReference_strategy)
+@given(instance=thingml_DictionaryReference_strategy)
 @settings(max_examples=50)
-def test_thingml::dictionaryreference_instantiation(instance):
-    assert isinstance(instance, thingml::DictionaryReference)
+def test_thingml_dictionaryreference_instantiation(instance):
+    assert isinstance(instance, thingml_DictionaryReference)
 
-@given(instance=thingml::ArrayIndex_strategy)
+@given(instance=thingml_ArrayIndex_strategy)
 @settings(max_examples=50)
-def test_thingml::arrayindex_instantiation(instance):
-    assert isinstance(instance, thingml::ArrayIndex)
+def test_thingml_arrayindex_instantiation(instance):
+    assert isinstance(instance, thingml_ArrayIndex)
 
-@given(instance=thingml::PropertyReference_strategy)
+@given(instance=thingml_PropertyReference_strategy)
 @settings(max_examples=50)
-def test_thingml::propertyreference_instantiation(instance):
-    assert isinstance(instance, thingml::PropertyReference)
+def test_thingml_propertyreference_instantiation(instance):
+    assert isinstance(instance, thingml_PropertyReference)
 
-@given(instance=thingml::ConfigPropertyAssign_strategy)
+@given(instance=thingml_ConfigPropertyAssign_strategy)
 @settings(max_examples=50)
-def test_thingml::configpropertyassign_instantiation(instance):
-    assert isinstance(instance, thingml::ConfigPropertyAssign)
+def test_thingml_configpropertyassign_instantiation(instance):
+    assert isinstance(instance, thingml_ConfigPropertyAssign)
 
-@given(instance=thingml::ConfigInclude_strategy)
+@given(instance=thingml_ConfigInclude_strategy)
 @settings(max_examples=50)
-def test_thingml::configinclude_instantiation(instance):
-    assert isinstance(instance, thingml::ConfigInclude)
+def test_thingml_configinclude_instantiation(instance):
+    assert isinstance(instance, thingml_ConfigInclude)
 
-@given(instance=thingml::Connector_strategy)
+@given(instance=thingml_Connector_strategy)
 @settings(max_examples=50)
-def test_thingml::connector_instantiation(instance):
-    assert isinstance(instance, thingml::Connector)
+def test_thingml_connector_instantiation(instance):
+    assert isinstance(instance, thingml_Connector)
 
-@given(instance=thingml::Instance_strategy)
+@given(instance=thingml_Instance_strategy)
 @settings(max_examples=50)
-def test_thingml::instance_instantiation(instance):
-    assert isinstance(instance, thingml::Instance)
+def test_thingml_instance_instantiation(instance):
+    assert isinstance(instance, thingml_Instance)
 
-@given(instance=thingml::ErrorAction_strategy)
+@given(instance=thingml_ErrorAction_strategy)
 @settings(max_examples=50)
-def test_thingml::erroraction_instantiation(instance):
-    assert isinstance(instance, thingml::ErrorAction)
+def test_thingml_erroraction_instantiation(instance):
+    assert isinstance(instance, thingml_ErrorAction)
 
-@given(instance=thingml::BinaryExpression_strategy)
+@given(instance=thingml_BinaryExpression_strategy)
 @settings(max_examples=50)
-def test_thingml::binaryexpression_instantiation(instance):
-    assert isinstance(instance, thingml::BinaryExpression)
+def test_thingml_binaryexpression_instantiation(instance):
+    assert isinstance(instance, thingml_BinaryExpression)
 
 @given(instance=UnaryExpression_strategy)
 @settings(max_examples=50)
 def test_unaryexpression_instantiation(instance):
     assert isinstance(instance, UnaryExpression)
 
-@given(instance=thingml::UnaryMinus_strategy)
+@given(instance=thingml_UnaryMinus_strategy)
 @settings(max_examples=50)
-def test_thingml::unaryminus_instantiation(instance):
-    assert isinstance(instance, thingml::UnaryMinus)
+def test_thingml_unaryminus_instantiation(instance):
+    assert isinstance(instance, thingml_UnaryMinus)
 
-@given(instance=thingml::NotExpression_strategy)
+@given(instance=thingml_NotExpression_strategy)
 @settings(max_examples=50)
-def test_thingml::notexpression_instantiation(instance):
-    assert isinstance(instance, thingml::NotExpression)
+def test_thingml_notexpression_instantiation(instance):
+    assert isinstance(instance, thingml_NotExpression)
 
-@given(instance=thingml::UnaryExpression_strategy)
+@given(instance=thingml_UnaryExpression_strategy)
 @settings(max_examples=50)
-def test_thingml::unaryexpression_instantiation(instance):
-    assert isinstance(instance, thingml::UnaryExpression)
+def test_thingml_unaryexpression_instantiation(instance):
+    assert isinstance(instance, thingml_UnaryExpression)
 
 @given(instance=Literal_strategy)
 @settings(max_examples=50)
 def test_literal_instantiation(instance):
     assert isinstance(instance, Literal)
 
-@given(instance=thingml::BooleanLiteral_strategy)
+@given(instance=thingml_IntegerLiteral_strategy)
 @settings(max_examples=50)
-def test_thingml::booleanliteral_instantiation(instance):
-    assert isinstance(instance, thingml::BooleanLiteral)
-
-@given(instance=thingml::BooleanLiteral_strategy)
-def test_thingml::booleanliteral_boolValue_type(instance):
-    assert isinstance(instance.boolValue, bool)
+def test_thingml_integerliteral_instantiation(instance):
+    assert isinstance(instance, thingml_IntegerLiteral)
 
 
-@given(instance=thingml::BooleanLiteral_strategy)
-def test_thingml::booleanliteral_boolValue_setter(instance):
-    original = instance.boolValue
-    instance.boolValue = original
-    assert instance.boolValue == original
 
-@given(instance=thingml::DoubleLiteral_strategy)
-@settings(max_examples=50)
-def test_thingml::doubleliteral_instantiation(instance):
-    assert isinstance(instance, thingml::DoubleLiteral)
-
-@given(instance=thingml::DoubleLiteral_strategy)
-def test_thingml::doubleliteral_doubleValue_type(instance):
-    assert isinstance(instance.doubleValue, float)
-
-
-@given(instance=thingml::DoubleLiteral_strategy)
-def test_thingml::doubleliteral_doubleValue_setter(instance):
-    original = instance.doubleValue
-    instance.doubleValue = original
-    assert instance.doubleValue == original
-
-@given(instance=thingml::IntegerLiteral_strategy)
-@settings(max_examples=50)
-def test_thingml::integerliteral_instantiation(instance):
-    assert isinstance(instance, thingml::IntegerLiteral)
-
-@given(instance=thingml::IntegerLiteral_strategy)
-def test_thingml::integerliteral_intValue_type(instance):
-    assert isinstance(instance.intValue, int)
-
-
-@given(instance=thingml::IntegerLiteral_strategy)
-def test_thingml::integerliteral_intValue_setter(instance):
+@given(instance=thingml_IntegerLiteral_strategy)
+def test_thingml_integerliteral_intValue_setter(instance):
     original = instance.intValue
     instance.intValue = original
     assert instance.intValue == original
 
-@given(instance=thingml::StringLiteral_strategy)
+@given(instance=thingml_BooleanLiteral_strategy)
 @settings(max_examples=50)
-def test_thingml::stringliteral_instantiation(instance):
-    assert isinstance(instance, thingml::StringLiteral)
-
-@given(instance=thingml::StringLiteral_strategy)
-def test_thingml::stringliteral_stringValue_type(instance):
-    assert isinstance(instance.stringValue, str)
+def test_thingml_booleanliteral_instantiation(instance):
+    assert isinstance(instance, thingml_BooleanLiteral)
 
 
-@given(instance=thingml::StringLiteral_strategy)
-def test_thingml::stringliteral_stringValue_setter(instance):
+
+@given(instance=thingml_BooleanLiteral_strategy)
+def test_thingml_booleanliteral_boolValue_setter(instance):
+    original = instance.boolValue
+    instance.boolValue = original
+    assert instance.boolValue == original
+
+@given(instance=thingml_DoubleLiteral_strategy)
+@settings(max_examples=50)
+def test_thingml_doubleliteral_instantiation(instance):
+    assert isinstance(instance, thingml_DoubleLiteral)
+
+
+
+@given(instance=thingml_DoubleLiteral_strategy)
+def test_thingml_doubleliteral_doubleValue_setter(instance):
+    original = instance.doubleValue
+    instance.doubleValue = original
+    assert instance.doubleValue == original
+
+@given(instance=thingml_StringLiteral_strategy)
+@settings(max_examples=50)
+def test_thingml_stringliteral_instantiation(instance):
+    assert isinstance(instance, thingml_StringLiteral)
+
+
+
+@given(instance=thingml_StringLiteral_strategy)
+def test_thingml_stringliteral_stringValue_setter(instance):
     original = instance.stringValue
     instance.stringValue = original
     assert instance.stringValue == original
 
-@given(instance=thingml::EnumLiteralRef_strategy)
+@given(instance=thingml_EnumLiteralRef_strategy)
 @settings(max_examples=50)
-def test_thingml::enumliteralref_instantiation(instance):
-    assert isinstance(instance, thingml::EnumLiteralRef)
+def test_thingml_enumliteralref_instantiation(instance):
+    assert isinstance(instance, thingml_EnumLiteralRef)
 
 @given(instance=ControlStructure_strategy)
 @settings(max_examples=50)
 def test_controlstructure_instantiation(instance):
     assert isinstance(instance, ControlStructure)
 
-@given(instance=thingml::ConditionalAction_strategy)
+@given(instance=thingml_ConditionalAction_strategy)
 @settings(max_examples=50)
-def test_thingml::conditionalaction_instantiation(instance):
-    assert isinstance(instance, thingml::ConditionalAction)
+def test_thingml_conditionalaction_instantiation(instance):
+    assert isinstance(instance, thingml_ConditionalAction)
 
-@given(instance=thingml::LoopAction_strategy)
+@given(instance=thingml_LoopAction_strategy)
 @settings(max_examples=50)
-def test_thingml::loopaction_instantiation(instance):
-    assert isinstance(instance, thingml::LoopAction)
+def test_thingml_loopaction_instantiation(instance):
+    assert isinstance(instance, thingml_LoopAction)
 
-@given(instance=thingml::ControlStructure_strategy)
+@given(instance=thingml_ControlStructure_strategy)
 @settings(max_examples=50)
-def test_thingml::controlstructure_instantiation(instance):
-    assert isinstance(instance, thingml::ControlStructure)
+def test_thingml_controlstructure_instantiation(instance):
+    assert isinstance(instance, thingml_ControlStructure)
 
 @given(instance=BinaryExpression_strategy)
 @settings(max_examples=50)
 def test_binaryexpression_instantiation(instance):
     assert isinstance(instance, BinaryExpression)
 
-@given(instance=thingml::MinusExpression_strategy)
+@given(instance=thingml_MinusExpression_strategy)
 @settings(max_examples=50)
-def test_thingml::minusexpression_instantiation(instance):
-    assert isinstance(instance, thingml::MinusExpression)
+def test_thingml_minusexpression_instantiation(instance):
+    assert isinstance(instance, thingml_MinusExpression)
 
-@given(instance=thingml::GreaterExpression_strategy)
+@given(instance=thingml_AndExpression_strategy)
 @settings(max_examples=50)
-def test_thingml::greaterexpression_instantiation(instance):
-    assert isinstance(instance, thingml::GreaterExpression)
+def test_thingml_andexpression_instantiation(instance):
+    assert isinstance(instance, thingml_AndExpression)
 
-@given(instance=thingml::DivExpression_strategy)
+@given(instance=thingml_EqualsExpression_strategy)
 @settings(max_examples=50)
-def test_thingml::divexpression_instantiation(instance):
-    assert isinstance(instance, thingml::DivExpression)
+def test_thingml_equalsexpression_instantiation(instance):
+    assert isinstance(instance, thingml_EqualsExpression)
 
-@given(instance=thingml::LowerExpression_strategy)
+@given(instance=thingml_LowerExpression_strategy)
 @settings(max_examples=50)
-def test_thingml::lowerexpression_instantiation(instance):
-    assert isinstance(instance, thingml::LowerExpression)
+def test_thingml_lowerexpression_instantiation(instance):
+    assert isinstance(instance, thingml_LowerExpression)
 
-@given(instance=thingml::AndExpression_strategy)
+@given(instance=thingml_DivExpression_strategy)
 @settings(max_examples=50)
-def test_thingml::andexpression_instantiation(instance):
-    assert isinstance(instance, thingml::AndExpression)
+def test_thingml_divexpression_instantiation(instance):
+    assert isinstance(instance, thingml_DivExpression)
 
-@given(instance=thingml::EqualsExpression_strategy)
+@given(instance=thingml_ModExpression_strategy)
 @settings(max_examples=50)
-def test_thingml::equalsexpression_instantiation(instance):
-    assert isinstance(instance, thingml::EqualsExpression)
+def test_thingml_modexpression_instantiation(instance):
+    assert isinstance(instance, thingml_ModExpression)
 
-@given(instance=thingml::ModExpression_strategy)
+@given(instance=thingml_TimesExpression_strategy)
 @settings(max_examples=50)
-def test_thingml::modexpression_instantiation(instance):
-    assert isinstance(instance, thingml::ModExpression)
+def test_thingml_timesexpression_instantiation(instance):
+    assert isinstance(instance, thingml_TimesExpression)
 
-@given(instance=thingml::OrExpression_strategy)
+@given(instance=thingml_OrExpression_strategy)
 @settings(max_examples=50)
-def test_thingml::orexpression_instantiation(instance):
-    assert isinstance(instance, thingml::OrExpression)
+def test_thingml_orexpression_instantiation(instance):
+    assert isinstance(instance, thingml_OrExpression)
 
-@given(instance=thingml::TimesExpression_strategy)
+@given(instance=thingml_GreaterExpression_strategy)
 @settings(max_examples=50)
-def test_thingml::timesexpression_instantiation(instance):
-    assert isinstance(instance, thingml::TimesExpression)
+def test_thingml_greaterexpression_instantiation(instance):
+    assert isinstance(instance, thingml_GreaterExpression)
 
-@given(instance=thingml::PlusExpression_strategy)
+@given(instance=thingml_PlusExpression_strategy)
 @settings(max_examples=50)
-def test_thingml::plusexpression_instantiation(instance):
-    assert isinstance(instance, thingml::PlusExpression)
-
-@given(instance=Property_strategy)
-@settings(max_examples=50)
-def test_property_instantiation(instance):
-    assert isinstance(instance, Property)
-
-@given(instance=thingml::Dictionary_strategy)
-@settings(max_examples=50)
-def test_thingml::dictionary_instantiation(instance):
-    assert isinstance(instance, thingml::Dictionary)
-
-@given(instance=Event_strategy)
-@settings(max_examples=50)
-def test_event_instantiation(instance):
-    assert isinstance(instance, Event)
-
-@given(instance=thingml::ReceiveMessage_strategy)
-@settings(max_examples=50)
-def test_thingml::receivemessage_instantiation(instance):
-    assert isinstance(instance, thingml::ReceiveMessage)
-
-@given(instance=thingml::VariableAssignment_strategy)
-@settings(max_examples=50)
-def test_thingml::variableassignment_instantiation(instance):
-    assert isinstance(instance, thingml::VariableAssignment)
-
-@given(instance=thingml::Literal_strategy)
-@settings(max_examples=50)
-def test_thingml::literal_instantiation(instance):
-    assert isinstance(instance, thingml::Literal)
-
-@given(instance=thingml::EventReference_strategy)
-@settings(max_examples=50)
-def test_thingml::eventreference_instantiation(instance):
-    assert isinstance(instance, thingml::EventReference)
+def test_thingml_plusexpression_instantiation(instance):
+    assert isinstance(instance, thingml_PlusExpression)

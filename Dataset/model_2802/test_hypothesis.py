@@ -3,10 +3,10 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    HardCodedTree::NodeKind,
+from python_code import (
+    HardCodedTree_NodeKind,
 )
 
 # =============================================================================
@@ -15,16 +15,16 @@ from classes import (
 
 
 
-def test_hardcodedtree::nodekind_is_not_abstract():
-    assert not inspect.isabstract(HardCodedTree::NodeKind)
+def test_hardcodedtree_nodekind_is_not_abstract():
+    assert not inspect.isabstract(HardCodedTree_NodeKind)
 
 
-def test_hardcodedtree::nodekind_constructor_exists():
-    assert callable(HardCodedTree::NodeKind.__init__)
+def test_hardcodedtree_nodekind_constructor_exists():
+    assert callable(HardCodedTree_NodeKind.__init__)
 
 
-def test_hardcodedtree::nodekind_constructor_args():
-    sig = inspect.signature(HardCodedTree::NodeKind.__init__)
+def test_hardcodedtree_nodekind_constructor_args():
+    sig = inspect.signature(HardCodedTree_NodeKind.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -39,11 +39,11 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-HardCodedTree::NodeKind_strategy = st.builds(
-    HardCodedTree::NodeKind,
+HardCodedTree_NodeKind_strategy = st.builds(
+    HardCodedTree_NodeKind,
 )
 
-@given(instance=HardCodedTree::NodeKind_strategy)
+@given(instance=HardCodedTree_NodeKind_strategy)
 @settings(max_examples=50)
-def test_hardcodedtree::nodekind_instantiation(instance):
-    assert isinstance(instance, HardCodedTree::NodeKind)
+def test_hardcodedtree_nodekind_instantiation(instance):
+    assert isinstance(instance, HardCodedTree_NodeKind)

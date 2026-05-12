@@ -3,7 +3,7 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
 from python_code import (
     MyClass37,
@@ -206,28 +206,10 @@ def test_myclass_constructor_exists():
 def test_myclass_constructor_args():
     sig = inspect.signature(MyClass.__init__)
     params = list(sig.parameters.keys())
-    assert "attribute3" in params, "Missing parameter 'attribute3'"
-    assert "TenCoSo" in params, "Missing parameter 'TenCoSo'"
     assert "attribute" in params, "Missing parameter 'attribute'"
     assert "attribute2" in params, "Missing parameter 'attribute2'"
-
-def test_myclass_has_attribute3():
-    assert hasattr(MyClass, "attribute3")
-    descriptor = None
-    for klass in MyClass.__mro__:
-        if "attribute3" in klass.__dict__:
-            descriptor = klass.__dict__["attribute3"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_myclass_has_TenCoSo():
-    assert hasattr(MyClass, "TenCoSo")
-    descriptor = None
-    for klass in MyClass.__mro__:
-        if "TenCoSo" in klass.__dict__:
-            descriptor = klass.__dict__["TenCoSo"]
-            break
-    assert isinstance(descriptor, property)
+    assert "attribute3" in params, "Missing parameter 'attribute3'"
+    assert "TenCoSo" in params, "Missing parameter 'TenCoSo'"
 
 def test_myclass_has_attribute():
     assert hasattr(MyClass, "attribute")
@@ -244,6 +226,24 @@ def test_myclass_has_attribute2():
     for klass in MyClass.__mro__:
         if "attribute2" in klass.__dict__:
             descriptor = klass.__dict__["attribute2"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_myclass_has_attribute3():
+    assert hasattr(MyClass, "attribute3")
+    descriptor = None
+    for klass in MyClass.__mro__:
+        if "attribute3" in klass.__dict__:
+            descriptor = klass.__dict__["attribute3"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_myclass_has_TenCoSo():
+    assert hasattr(MyClass, "TenCoSo")
+    descriptor = None
+    for klass in MyClass.__mro__:
+        if "TenCoSo" in klass.__dict__:
+            descriptor = klass.__dict__["TenCoSo"]
             break
     assert isinstance(descriptor, property)
 
@@ -297,13 +297,13 @@ sfbsdf_strategy = st.builds(
 )
 MyClass_strategy = st.builds(
     MyClass,
-    attribute3=
-        safe_text,
-    TenCoSo=
-        safe_text,
     attribute=
         safe_text,
     attribute2=
+        safe_text,
+    attribute3=
+        safe_text,
+    TenCoSo=
         safe_text
 )
 
@@ -372,31 +372,6 @@ def test_sfbsdf_instantiation(instance):
 def test_myclass_instantiation(instance):
     assert isinstance(instance, MyClass)
 
-@given(instance=MyClass_strategy)
-def test_myclass_attribute3_type(instance):
-    assert isinstance(instance.attribute3, str)
-
-
-@given(instance=MyClass_strategy)
-def test_myclass_attribute3_setter(instance):
-    original = instance.attribute3
-    instance.attribute3 = original
-    assert instance.attribute3 == original
-
-@given(instance=MyClass_strategy)
-def test_myclass_TenCoSo_type(instance):
-    assert isinstance(instance.TenCoSo, str)
-
-
-@given(instance=MyClass_strategy)
-def test_myclass_TenCoSo_setter(instance):
-    original = instance.TenCoSo
-    instance.TenCoSo = original
-    assert instance.TenCoSo == original
-
-@given(instance=MyClass_strategy)
-def test_myclass_attribute_type(instance):
-    assert isinstance(instance.attribute, str)
 
 
 @given(instance=MyClass_strategy)
@@ -405,9 +380,6 @@ def test_myclass_attribute_setter(instance):
     instance.attribute = original
     assert instance.attribute == original
 
-@given(instance=MyClass_strategy)
-def test_myclass_attribute2_type(instance):
-    assert isinstance(instance.attribute2, str)
 
 
 @given(instance=MyClass_strategy)
@@ -415,3 +387,19 @@ def test_myclass_attribute2_setter(instance):
     original = instance.attribute2
     instance.attribute2 = original
     assert instance.attribute2 == original
+
+
+
+@given(instance=MyClass_strategy)
+def test_myclass_attribute3_setter(instance):
+    original = instance.attribute3
+    instance.attribute3 = original
+    assert instance.attribute3 == original
+
+
+
+@given(instance=MyClass_strategy)
+def test_myclass_TenCoSo_setter(instance):
+    original = instance.TenCoSo
+    instance.TenCoSo = original
+    assert instance.TenCoSo == original

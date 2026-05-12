@@ -3,20 +3,20 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    fsm::SuperState,
-    fsm::Transition,
+from python_code import (
+    fsm_SuperState,
+    fsm_Transition,
     State,
-    fsm::TransientState,
-    fsm::SteadyState,
-    fsm::eAction,
-    fsm::Action,
+    fsm_TransientState,
+    fsm_SteadyState,
+    fsm_eAction,
+    fsm_Action,
     SuperState,
-    fsm::State,
-    fsm::InitialState,
-    fsm::FSM,
+    fsm_State,
+    fsm_InitialState,
+    fsm_FSM,
 )
 
 # =============================================================================
@@ -25,47 +25,47 @@ from classes import (
 
 
 
-def test_fsm::superstate_is_not_abstract():
-    assert not inspect.isabstract(fsm::SuperState)
+def test_fsm_superstate_is_not_abstract():
+    assert not inspect.isabstract(fsm_SuperState)
 
 
-def test_fsm::superstate_constructor_exists():
-    assert callable(fsm::SuperState.__init__)
+def test_fsm_superstate_constructor_exists():
+    assert callable(fsm_SuperState.__init__)
 
 
-def test_fsm::superstate_constructor_args():
-    sig = inspect.signature(fsm::SuperState.__init__)
+def test_fsm_superstate_constructor_args():
+    sig = inspect.signature(fsm_SuperState.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_fsm::transition_is_not_abstract():
-    assert not inspect.isabstract(fsm::Transition)
+def test_fsm_transition_is_not_abstract():
+    assert not inspect.isabstract(fsm_Transition)
 
 
-def test_fsm::transition_constructor_exists():
-    assert callable(fsm::Transition.__init__)
+def test_fsm_transition_constructor_exists():
+    assert callable(fsm_Transition.__init__)
 
 
-def test_fsm::transition_constructor_args():
-    sig = inspect.signature(fsm::Transition.__init__)
+def test_fsm_transition_constructor_args():
+    sig = inspect.signature(fsm_Transition.__init__)
     params = list(sig.parameters.keys())
     assert "action" in params, "Missing parameter 'action'"
     assert "guard" in params, "Missing parameter 'guard'"
 
-def test_fsm::transition_has_action():
-    assert hasattr(fsm::Transition, "action")
+def test_fsm_transition_has_action():
+    assert hasattr(fsm_Transition, "action")
     descriptor = None
-    for klass in fsm::Transition.__mro__:
+    for klass in fsm_Transition.__mro__:
         if "action" in klass.__dict__:
             descriptor = klass.__dict__["action"]
             break
     assert isinstance(descriptor, property)
 
-def test_fsm::transition_has_guard():
-    assert hasattr(fsm::Transition, "guard")
+def test_fsm_transition_has_guard():
+    assert hasattr(fsm_Transition, "guard")
     descriptor = None
-    for klass in fsm::Transition.__mro__:
+    for klass in fsm_Transition.__mro__:
         if "guard" in klass.__dict__:
             descriptor = klass.__dict__["guard"]
             break
@@ -87,51 +87,51 @@ def test_state_constructor_args():
 
 
 
-def test_fsm::transientstate_is_not_abstract():
-    assert not inspect.isabstract(fsm::TransientState)
+def test_fsm_transientstate_is_not_abstract():
+    assert not inspect.isabstract(fsm_TransientState)
 
 
-def test_fsm::transientstate_constructor_exists():
-    assert callable(fsm::TransientState.__init__)
+def test_fsm_transientstate_constructor_exists():
+    assert callable(fsm_TransientState.__init__)
 
 
-def test_fsm::transientstate_constructor_args():
-    sig = inspect.signature(fsm::TransientState.__init__)
+def test_fsm_transientstate_constructor_args():
+    sig = inspect.signature(fsm_TransientState.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_fsm::steadystate_is_not_abstract():
-    assert not inspect.isabstract(fsm::SteadyState)
+def test_fsm_steadystate_is_not_abstract():
+    assert not inspect.isabstract(fsm_SteadyState)
 
 
-def test_fsm::steadystate_constructor_exists():
-    assert callable(fsm::SteadyState.__init__)
+def test_fsm_steadystate_constructor_exists():
+    assert callable(fsm_SteadyState.__init__)
 
 
-def test_fsm::steadystate_constructor_args():
-    sig = inspect.signature(fsm::SteadyState.__init__)
+def test_fsm_steadystate_constructor_args():
+    sig = inspect.signature(fsm_SteadyState.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_fsm::eaction_is_not_abstract():
-    assert not inspect.isabstract(fsm::eAction)
+def test_fsm_eaction_is_not_abstract():
+    assert not inspect.isabstract(fsm_eAction)
 
 
-def test_fsm::eaction_constructor_exists():
-    assert callable(fsm::eAction.__init__)
+def test_fsm_eaction_constructor_exists():
+    assert callable(fsm_eAction.__init__)
 
 
-def test_fsm::eaction_constructor_args():
-    sig = inspect.signature(fsm::eAction.__init__)
+def test_fsm_eaction_constructor_args():
+    sig = inspect.signature(fsm_eAction.__init__)
     params = list(sig.parameters.keys())
     assert "exitLabel" in params, "Missing parameter 'exitLabel'"
 
-def test_fsm::eaction_has_exitLabel():
-    assert hasattr(fsm::eAction, "exitLabel")
+def test_fsm_eaction_has_exitLabel():
+    assert hasattr(fsm_eAction, "exitLabel")
     descriptor = None
-    for klass in fsm::eAction.__mro__:
+    for klass in fsm_eAction.__mro__:
         if "exitLabel" in klass.__dict__:
             descriptor = klass.__dict__["exitLabel"]
             break
@@ -139,23 +139,23 @@ def test_fsm::eaction_has_exitLabel():
 
 
 
-def test_fsm::action_is_not_abstract():
-    assert not inspect.isabstract(fsm::Action)
+def test_fsm_action_is_not_abstract():
+    assert not inspect.isabstract(fsm_Action)
 
 
-def test_fsm::action_constructor_exists():
-    assert callable(fsm::Action.__init__)
+def test_fsm_action_constructor_exists():
+    assert callable(fsm_Action.__init__)
 
 
-def test_fsm::action_constructor_args():
-    sig = inspect.signature(fsm::Action.__init__)
+def test_fsm_action_constructor_args():
+    sig = inspect.signature(fsm_Action.__init__)
     params = list(sig.parameters.keys())
     assert "entryLabel" in params, "Missing parameter 'entryLabel'"
 
-def test_fsm::action_has_entryLabel():
-    assert hasattr(fsm::Action, "entryLabel")
+def test_fsm_action_has_entryLabel():
+    assert hasattr(fsm_Action, "entryLabel")
     descriptor = None
-    for klass in fsm::Action.__mro__:
+    for klass in fsm_Action.__mro__:
         if "entryLabel" in klass.__dict__:
             descriptor = klass.__dict__["entryLabel"]
             break
@@ -177,23 +177,23 @@ def test_superstate_constructor_args():
 
 
 
-def test_fsm::state_is_not_abstract():
-    assert not inspect.isabstract(fsm::State)
+def test_fsm_state_is_not_abstract():
+    assert not inspect.isabstract(fsm_State)
 
 
-def test_fsm::state_constructor_exists():
-    assert callable(fsm::State.__init__)
+def test_fsm_state_constructor_exists():
+    assert callable(fsm_State.__init__)
 
 
-def test_fsm::state_constructor_args():
-    sig = inspect.signature(fsm::State.__init__)
+def test_fsm_state_constructor_args():
+    sig = inspect.signature(fsm_State.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_fsm::state_has_name():
-    assert hasattr(fsm::State, "name")
+def test_fsm_state_has_name():
+    assert hasattr(fsm_State, "name")
     descriptor = None
-    for klass in fsm::State.__mro__:
+    for klass in fsm_State.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -201,30 +201,30 @@ def test_fsm::state_has_name():
 
 
 
-def test_fsm::initialstate_is_not_abstract():
-    assert not inspect.isabstract(fsm::InitialState)
+def test_fsm_initialstate_is_not_abstract():
+    assert not inspect.isabstract(fsm_InitialState)
 
 
-def test_fsm::initialstate_constructor_exists():
-    assert callable(fsm::InitialState.__init__)
+def test_fsm_initialstate_constructor_exists():
+    assert callable(fsm_InitialState.__init__)
 
 
-def test_fsm::initialstate_constructor_args():
-    sig = inspect.signature(fsm::InitialState.__init__)
+def test_fsm_initialstate_constructor_args():
+    sig = inspect.signature(fsm_InitialState.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_fsm::fsm_is_not_abstract():
-    assert not inspect.isabstract(fsm::FSM)
+def test_fsm_fsm_is_not_abstract():
+    assert not inspect.isabstract(fsm_FSM)
 
 
-def test_fsm::fsm_constructor_exists():
-    assert callable(fsm::FSM.__init__)
+def test_fsm_fsm_constructor_exists():
+    assert callable(fsm_FSM.__init__)
 
 
-def test_fsm::fsm_constructor_args():
-    sig = inspect.signature(fsm::FSM.__init__)
+def test_fsm_fsm_constructor_args():
+    sig = inspect.signature(fsm_FSM.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -239,11 +239,11 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-fsm::SuperState_strategy = st.builds(
-    fsm::SuperState,
+fsm_SuperState_strategy = st.builds(
+    fsm_SuperState,
 )
-fsm::Transition_strategy = st.builds(
-    fsm::Transition,
+fsm_Transition_strategy = st.builds(
+    fsm_Transition,
     action=
         safe_text,
     guard=
@@ -252,65 +252,59 @@ fsm::Transition_strategy = st.builds(
 State_strategy = st.builds(
     State,
 )
-fsm::TransientState_strategy = st.builds(
-    fsm::TransientState,
+fsm_TransientState_strategy = st.builds(
+    fsm_TransientState,
 )
-fsm::SteadyState_strategy = st.builds(
-    fsm::SteadyState,
+fsm_SteadyState_strategy = st.builds(
+    fsm_SteadyState,
 )
-fsm::eAction_strategy = st.builds(
-    fsm::eAction,
+fsm_eAction_strategy = st.builds(
+    fsm_eAction,
     exitLabel=
         safe_text
 )
-fsm::Action_strategy = st.builds(
-    fsm::Action,
+fsm_Action_strategy = st.builds(
+    fsm_Action,
     entryLabel=
         safe_text
 )
 SuperState_strategy = st.builds(
     SuperState,
 )
-fsm::State_strategy = st.builds(
-    fsm::State,
+fsm_State_strategy = st.builds(
+    fsm_State,
     name=
         safe_text
 )
-fsm::InitialState_strategy = st.builds(
-    fsm::InitialState,
+fsm_InitialState_strategy = st.builds(
+    fsm_InitialState,
 )
-fsm::FSM_strategy = st.builds(
-    fsm::FSM,
+fsm_FSM_strategy = st.builds(
+    fsm_FSM,
 )
 
-@given(instance=fsm::SuperState_strategy)
+@given(instance=fsm_SuperState_strategy)
 @settings(max_examples=50)
-def test_fsm::superstate_instantiation(instance):
-    assert isinstance(instance, fsm::SuperState)
+def test_fsm_superstate_instantiation(instance):
+    assert isinstance(instance, fsm_SuperState)
 
-@given(instance=fsm::Transition_strategy)
+@given(instance=fsm_Transition_strategy)
 @settings(max_examples=50)
-def test_fsm::transition_instantiation(instance):
-    assert isinstance(instance, fsm::Transition)
-
-@given(instance=fsm::Transition_strategy)
-def test_fsm::transition_action_type(instance):
-    assert isinstance(instance.action, str)
+def test_fsm_transition_instantiation(instance):
+    assert isinstance(instance, fsm_Transition)
 
 
-@given(instance=fsm::Transition_strategy)
-def test_fsm::transition_action_setter(instance):
+
+@given(instance=fsm_Transition_strategy)
+def test_fsm_transition_action_setter(instance):
     original = instance.action
     instance.action = original
     assert instance.action == original
 
-@given(instance=fsm::Transition_strategy)
-def test_fsm::transition_guard_type(instance):
-    assert isinstance(instance.guard, str)
 
 
-@given(instance=fsm::Transition_strategy)
-def test_fsm::transition_guard_setter(instance):
+@given(instance=fsm_Transition_strategy)
+def test_fsm_transition_guard_setter(instance):
     original = instance.guard
     instance.guard = original
     assert instance.guard == original
@@ -320,44 +314,38 @@ def test_fsm::transition_guard_setter(instance):
 def test_state_instantiation(instance):
     assert isinstance(instance, State)
 
-@given(instance=fsm::TransientState_strategy)
+@given(instance=fsm_TransientState_strategy)
 @settings(max_examples=50)
-def test_fsm::transientstate_instantiation(instance):
-    assert isinstance(instance, fsm::TransientState)
+def test_fsm_transientstate_instantiation(instance):
+    assert isinstance(instance, fsm_TransientState)
 
-@given(instance=fsm::SteadyState_strategy)
+@given(instance=fsm_SteadyState_strategy)
 @settings(max_examples=50)
-def test_fsm::steadystate_instantiation(instance):
-    assert isinstance(instance, fsm::SteadyState)
+def test_fsm_steadystate_instantiation(instance):
+    assert isinstance(instance, fsm_SteadyState)
 
-@given(instance=fsm::eAction_strategy)
+@given(instance=fsm_eAction_strategy)
 @settings(max_examples=50)
-def test_fsm::eaction_instantiation(instance):
-    assert isinstance(instance, fsm::eAction)
-
-@given(instance=fsm::eAction_strategy)
-def test_fsm::eaction_exitLabel_type(instance):
-    assert isinstance(instance.exitLabel, str)
+def test_fsm_eaction_instantiation(instance):
+    assert isinstance(instance, fsm_eAction)
 
 
-@given(instance=fsm::eAction_strategy)
-def test_fsm::eaction_exitLabel_setter(instance):
+
+@given(instance=fsm_eAction_strategy)
+def test_fsm_eaction_exitLabel_setter(instance):
     original = instance.exitLabel
     instance.exitLabel = original
     assert instance.exitLabel == original
 
-@given(instance=fsm::Action_strategy)
+@given(instance=fsm_Action_strategy)
 @settings(max_examples=50)
-def test_fsm::action_instantiation(instance):
-    assert isinstance(instance, fsm::Action)
-
-@given(instance=fsm::Action_strategy)
-def test_fsm::action_entryLabel_type(instance):
-    assert isinstance(instance.entryLabel, str)
+def test_fsm_action_instantiation(instance):
+    assert isinstance(instance, fsm_Action)
 
 
-@given(instance=fsm::Action_strategy)
-def test_fsm::action_entryLabel_setter(instance):
+
+@given(instance=fsm_Action_strategy)
+def test_fsm_action_entryLabel_setter(instance):
     original = instance.entryLabel
     instance.entryLabel = original
     assert instance.entryLabel == original
@@ -367,28 +355,25 @@ def test_fsm::action_entryLabel_setter(instance):
 def test_superstate_instantiation(instance):
     assert isinstance(instance, SuperState)
 
-@given(instance=fsm::State_strategy)
+@given(instance=fsm_State_strategy)
 @settings(max_examples=50)
-def test_fsm::state_instantiation(instance):
-    assert isinstance(instance, fsm::State)
-
-@given(instance=fsm::State_strategy)
-def test_fsm::state_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_fsm_state_instantiation(instance):
+    assert isinstance(instance, fsm_State)
 
 
-@given(instance=fsm::State_strategy)
-def test_fsm::state_name_setter(instance):
+
+@given(instance=fsm_State_strategy)
+def test_fsm_state_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=fsm::InitialState_strategy)
+@given(instance=fsm_InitialState_strategy)
 @settings(max_examples=50)
-def test_fsm::initialstate_instantiation(instance):
-    assert isinstance(instance, fsm::InitialState)
+def test_fsm_initialstate_instantiation(instance):
+    assert isinstance(instance, fsm_InitialState)
 
-@given(instance=fsm::FSM_strategy)
+@given(instance=fsm_FSM_strategy)
 @settings(max_examples=50)
-def test_fsm::fsm_instantiation(instance):
-    assert isinstance(instance, fsm::FSM)
+def test_fsm_fsm_instantiation(instance):
+    assert isinstance(instance, fsm_FSM)

@@ -3,34 +3,34 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    Families::uncertainty::aFamilyRegistry,
-    uFamilyRegistry,
-    uncertainty::Families::FamilyRegistry,
-    Families::uncertainty::aMember,
-    uMember,
-    Families::uncertainty::UData,
-    ModelElement,
-    Families::uncertainty::ModelElement,
-    uncertainty::aFamilyRegistry,
-    aFamily,
-    uncertainty::aMember,
-    uncertainty::Families::Member,
-    Families::uncertainty::aFamily,
+from python_code import (
+    Families_uncertainty_aFamily,
     uFamily,
-    uncertainty::Families::Family,
-    uncertainty::UData,
-    Families::uncertainty::uFamilyRegistry,
-    Families::uncertainty::uMember,
+    uncertainty_Families_Family,
+    uncertainty_UData,
     aMember,
-    uncertainty::aFamily,
-    Families::uncertainty::uFamily,
-    uncertainty::ModelElement,
-    Families::FamilyRegistry,
-    Families::Member,
-    Families::Family,
+    uncertainty_aFamily,
+    Families_uncertainty_uFamily,
+    uncertainty_ModelElement,
+    Families_Family,
+    Families_uncertainty_aFamilyRegistry,
+    uFamilyRegistry,
+    uncertainty_Families_FamilyRegistry,
+    Families_uncertainty_aMember,
+    uMember,
+    Families_uncertainty_UData,
+    ModelElement,
+    Families_uncertainty_ModelElement,
+    uncertainty_aFamilyRegistry,
+    Families_uncertainty_uFamilyRegistry,
+    Families_FamilyRegistry,
+    aFamily,
+    uncertainty_aMember,
+    Families_uncertainty_uMember,
+    Families_Member,
+    uncertainty_Families_Member,
     OperatorType,
 )
 
@@ -40,16 +40,162 @@ from classes import (
 
 
 
-def test_families::uncertainty::afamilyregistry_is_not_abstract():
-    assert not inspect.isabstract(Families::uncertainty::aFamilyRegistry)
+def test_families_uncertainty_afamily_is_not_abstract():
+    assert not inspect.isabstract(Families_uncertainty_aFamily)
 
 
-def test_families::uncertainty::afamilyregistry_constructor_exists():
-    assert callable(Families::uncertainty::aFamilyRegistry.__init__)
+def test_families_uncertainty_afamily_constructor_exists():
+    assert callable(Families_uncertainty_aFamily.__init__)
 
 
-def test_families::uncertainty::afamilyregistry_constructor_args():
-    sig = inspect.signature(Families::uncertainty::aFamilyRegistry.__init__)
+def test_families_uncertainty_afamily_constructor_args():
+    sig = inspect.signature(Families_uncertainty_aFamily.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_ufamily_is_not_abstract():
+    assert not inspect.isabstract(uFamily)
+
+
+def test_ufamily_constructor_exists():
+    assert callable(uFamily.__init__)
+
+
+def test_ufamily_constructor_args():
+    sig = inspect.signature(uFamily.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_uncertainty_families_family_is_not_abstract():
+    assert not inspect.isabstract(uncertainty_Families_Family)
+
+
+def test_uncertainty_families_family_constructor_exists():
+    assert callable(uncertainty_Families_Family.__init__)
+
+
+def test_uncertainty_families_family_constructor_args():
+    sig = inspect.signature(uncertainty_Families_Family.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_uncertainty_udata_is_not_abstract():
+    assert not inspect.isabstract(uncertainty_UData)
+
+
+def test_uncertainty_udata_constructor_exists():
+    assert callable(uncertainty_UData.__init__)
+
+
+def test_uncertainty_udata_constructor_args():
+    sig = inspect.signature(uncertainty_UData.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_amember_is_not_abstract():
+    assert not inspect.isabstract(aMember)
+
+
+def test_amember_constructor_exists():
+    assert callable(aMember.__init__)
+
+
+def test_amember_constructor_args():
+    sig = inspect.signature(aMember.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_uncertainty_afamily_is_not_abstract():
+    assert not inspect.isabstract(uncertainty_aFamily)
+
+
+def test_uncertainty_afamily_constructor_exists():
+    assert callable(uncertainty_aFamily.__init__)
+
+
+def test_uncertainty_afamily_constructor_args():
+    sig = inspect.signature(uncertainty_aFamily.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_families_uncertainty_ufamily_is_not_abstract():
+    assert not inspect.isabstract(Families_uncertainty_uFamily)
+
+
+def test_families_uncertainty_ufamily_constructor_exists():
+    assert callable(Families_uncertainty_uFamily.__init__)
+
+
+def test_families_uncertainty_ufamily_constructor_args():
+    sig = inspect.signature(Families_uncertainty_uFamily.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_uncertainty_modelelement_is_not_abstract():
+    assert not inspect.isabstract(uncertainty_ModelElement)
+
+
+def test_uncertainty_modelelement_constructor_exists():
+    assert callable(uncertainty_ModelElement.__init__)
+
+
+def test_uncertainty_modelelement_constructor_args():
+    sig = inspect.signature(uncertainty_ModelElement.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_families_family_is_not_abstract():
+    assert not inspect.isabstract(Families_Family)
+
+
+def test_families_family_constructor_exists():
+    assert callable(Families_Family.__init__)
+
+
+def test_families_family_constructor_args():
+    sig = inspect.signature(Families_Family.__init__)
+    params = list(sig.parameters.keys())
+    assert "lastName" in params, "Missing parameter 'lastName'"
+    assert "address" in params, "Missing parameter 'address'"
+
+def test_families_family_has_lastName():
+    assert hasattr(Families_Family, "lastName")
+    descriptor = None
+    for klass in Families_Family.__mro__:
+        if "lastName" in klass.__dict__:
+            descriptor = klass.__dict__["lastName"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_families_family_has_address():
+    assert hasattr(Families_Family, "address")
+    descriptor = None
+    for klass in Families_Family.__mro__:
+        if "address" in klass.__dict__:
+            descriptor = klass.__dict__["address"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_families_uncertainty_afamilyregistry_is_not_abstract():
+    assert not inspect.isabstract(Families_uncertainty_aFamilyRegistry)
+
+
+def test_families_uncertainty_afamilyregistry_constructor_exists():
+    assert callable(Families_uncertainty_aFamilyRegistry.__init__)
+
+
+def test_families_uncertainty_afamilyregistry_constructor_args():
+    sig = inspect.signature(Families_uncertainty_aFamilyRegistry.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -68,30 +214,30 @@ def test_ufamilyregistry_constructor_args():
 
 
 
-def test_uncertainty::families::familyregistry_is_not_abstract():
-    assert not inspect.isabstract(uncertainty::Families::FamilyRegistry)
+def test_uncertainty_families_familyregistry_is_not_abstract():
+    assert not inspect.isabstract(uncertainty_Families_FamilyRegistry)
 
 
-def test_uncertainty::families::familyregistry_constructor_exists():
-    assert callable(uncertainty::Families::FamilyRegistry.__init__)
+def test_uncertainty_families_familyregistry_constructor_exists():
+    assert callable(uncertainty_Families_FamilyRegistry.__init__)
 
 
-def test_uncertainty::families::familyregistry_constructor_args():
-    sig = inspect.signature(uncertainty::Families::FamilyRegistry.__init__)
+def test_uncertainty_families_familyregistry_constructor_args():
+    sig = inspect.signature(uncertainty_Families_FamilyRegistry.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_families::uncertainty::amember_is_not_abstract():
-    assert not inspect.isabstract(Families::uncertainty::aMember)
+def test_families_uncertainty_amember_is_not_abstract():
+    assert not inspect.isabstract(Families_uncertainty_aMember)
 
 
-def test_families::uncertainty::amember_constructor_exists():
-    assert callable(Families::uncertainty::aMember.__init__)
+def test_families_uncertainty_amember_constructor_exists():
+    assert callable(Families_uncertainty_aMember.__init__)
 
 
-def test_families::uncertainty::amember_constructor_args():
-    sig = inspect.signature(Families::uncertainty::aMember.__init__)
+def test_families_uncertainty_amember_constructor_args():
+    sig = inspect.signature(Families_uncertainty_aMember.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -110,35 +256,35 @@ def test_umember_constructor_args():
 
 
 
-def test_families::uncertainty::udata_is_not_abstract():
-    assert not inspect.isabstract(Families::uncertainty::UData)
+def test_families_uncertainty_udata_is_not_abstract():
+    assert not inspect.isabstract(Families_uncertainty_UData)
 
 
-def test_families::uncertainty::udata_constructor_exists():
-    assert callable(Families::uncertainty::UData.__init__)
+def test_families_uncertainty_udata_constructor_exists():
+    assert callable(Families_uncertainty_UData.__init__)
 
 
-def test_families::uncertainty::udata_constructor_args():
-    sig = inspect.signature(Families::uncertainty::UData.__init__)
+def test_families_uncertainty_udata_constructor_args():
+    sig = inspect.signature(Families_uncertainty_UData.__init__)
     params = list(sig.parameters.keys())
-    assert "utype" in params, "Missing parameter 'utype'"
     assert "name" in params, "Missing parameter 'name'"
+    assert "utype" in params, "Missing parameter 'utype'"
 
-def test_families::uncertainty::udata_has_utype():
-    assert hasattr(Families::uncertainty::UData, "utype")
+def test_families_uncertainty_udata_has_name():
+    assert hasattr(Families_uncertainty_UData, "name")
     descriptor = None
-    for klass in Families::uncertainty::UData.__mro__:
-        if "utype" in klass.__dict__:
-            descriptor = klass.__dict__["utype"]
+    for klass in Families_uncertainty_UData.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
-def test_families::uncertainty::udata_has_name():
-    assert hasattr(Families::uncertainty::UData, "name")
+def test_families_uncertainty_udata_has_utype():
+    assert hasattr(Families_uncertainty_UData, "utype")
     descriptor = None
-    for klass in Families::uncertainty::UData.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
+    for klass in Families_uncertainty_UData.__mro__:
+        if "utype" in klass.__dict__:
+            descriptor = klass.__dict__["utype"]
             break
     assert isinstance(descriptor, property)
 
@@ -158,30 +304,58 @@ def test_modelelement_constructor_args():
 
 
 
-def test_families::uncertainty::modelelement_is_not_abstract():
-    assert not inspect.isabstract(Families::uncertainty::ModelElement)
+def test_families_uncertainty_modelelement_is_not_abstract():
+    assert not inspect.isabstract(Families_uncertainty_ModelElement)
 
 
-def test_families::uncertainty::modelelement_constructor_exists():
-    assert callable(Families::uncertainty::ModelElement.__init__)
+def test_families_uncertainty_modelelement_constructor_exists():
+    assert callable(Families_uncertainty_ModelElement.__init__)
 
 
-def test_families::uncertainty::modelelement_constructor_args():
-    sig = inspect.signature(Families::uncertainty::ModelElement.__init__)
+def test_families_uncertainty_modelelement_constructor_args():
+    sig = inspect.signature(Families_uncertainty_ModelElement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_uncertainty::afamilyregistry_is_not_abstract():
-    assert not inspect.isabstract(uncertainty::aFamilyRegistry)
+def test_uncertainty_afamilyregistry_is_not_abstract():
+    assert not inspect.isabstract(uncertainty_aFamilyRegistry)
 
 
-def test_uncertainty::afamilyregistry_constructor_exists():
-    assert callable(uncertainty::aFamilyRegistry.__init__)
+def test_uncertainty_afamilyregistry_constructor_exists():
+    assert callable(uncertainty_aFamilyRegistry.__init__)
 
 
-def test_uncertainty::afamilyregistry_constructor_args():
-    sig = inspect.signature(uncertainty::aFamilyRegistry.__init__)
+def test_uncertainty_afamilyregistry_constructor_args():
+    sig = inspect.signature(uncertainty_aFamilyRegistry.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_families_uncertainty_ufamilyregistry_is_not_abstract():
+    assert not inspect.isabstract(Families_uncertainty_uFamilyRegistry)
+
+
+def test_families_uncertainty_ufamilyregistry_constructor_exists():
+    assert callable(Families_uncertainty_uFamilyRegistry.__init__)
+
+
+def test_families_uncertainty_ufamilyregistry_constructor_args():
+    sig = inspect.signature(Families_uncertainty_uFamilyRegistry.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_families_familyregistry_is_not_abstract():
+    assert not inspect.isabstract(Families_FamilyRegistry)
+
+
+def test_families_familyregistry_constructor_exists():
+    assert callable(Families_FamilyRegistry.__init__)
+
+
+def test_families_familyregistry_constructor_args():
+    sig = inspect.signature(Families_FamilyRegistry.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -200,215 +374,61 @@ def test_afamily_constructor_args():
 
 
 
-def test_uncertainty::amember_is_not_abstract():
-    assert not inspect.isabstract(uncertainty::aMember)
+def test_uncertainty_amember_is_not_abstract():
+    assert not inspect.isabstract(uncertainty_aMember)
 
 
-def test_uncertainty::amember_constructor_exists():
-    assert callable(uncertainty::aMember.__init__)
+def test_uncertainty_amember_constructor_exists():
+    assert callable(uncertainty_aMember.__init__)
 
 
-def test_uncertainty::amember_constructor_args():
-    sig = inspect.signature(uncertainty::aMember.__init__)
+def test_uncertainty_amember_constructor_args():
+    sig = inspect.signature(uncertainty_aMember.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_uncertainty::families::member_is_not_abstract():
-    assert not inspect.isabstract(uncertainty::Families::Member)
+def test_families_uncertainty_umember_is_not_abstract():
+    assert not inspect.isabstract(Families_uncertainty_uMember)
 
 
-def test_uncertainty::families::member_constructor_exists():
-    assert callable(uncertainty::Families::Member.__init__)
+def test_families_uncertainty_umember_constructor_exists():
+    assert callable(Families_uncertainty_uMember.__init__)
 
 
-def test_uncertainty::families::member_constructor_args():
-    sig = inspect.signature(uncertainty::Families::Member.__init__)
+def test_families_uncertainty_umember_constructor_args():
+    sig = inspect.signature(Families_uncertainty_uMember.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_families::uncertainty::afamily_is_not_abstract():
-    assert not inspect.isabstract(Families::uncertainty::aFamily)
+def test_families_member_is_not_abstract():
+    assert not inspect.isabstract(Families_Member)
 
 
-def test_families::uncertainty::afamily_constructor_exists():
-    assert callable(Families::uncertainty::aFamily.__init__)
+def test_families_member_constructor_exists():
+    assert callable(Families_Member.__init__)
 
 
-def test_families::uncertainty::afamily_constructor_args():
-    sig = inspect.signature(Families::uncertainty::aFamily.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_ufamily_is_not_abstract():
-    assert not inspect.isabstract(uFamily)
-
-
-def test_ufamily_constructor_exists():
-    assert callable(uFamily.__init__)
-
-
-def test_ufamily_constructor_args():
-    sig = inspect.signature(uFamily.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_uncertainty::families::family_is_not_abstract():
-    assert not inspect.isabstract(uncertainty::Families::Family)
-
-
-def test_uncertainty::families::family_constructor_exists():
-    assert callable(uncertainty::Families::Family.__init__)
-
-
-def test_uncertainty::families::family_constructor_args():
-    sig = inspect.signature(uncertainty::Families::Family.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_uncertainty::udata_is_not_abstract():
-    assert not inspect.isabstract(uncertainty::UData)
-
-
-def test_uncertainty::udata_constructor_exists():
-    assert callable(uncertainty::UData.__init__)
-
-
-def test_uncertainty::udata_constructor_args():
-    sig = inspect.signature(uncertainty::UData.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_families::uncertainty::ufamilyregistry_is_not_abstract():
-    assert not inspect.isabstract(Families::uncertainty::uFamilyRegistry)
-
-
-def test_families::uncertainty::ufamilyregistry_constructor_exists():
-    assert callable(Families::uncertainty::uFamilyRegistry.__init__)
-
-
-def test_families::uncertainty::ufamilyregistry_constructor_args():
-    sig = inspect.signature(Families::uncertainty::uFamilyRegistry.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_families::uncertainty::umember_is_not_abstract():
-    assert not inspect.isabstract(Families::uncertainty::uMember)
-
-
-def test_families::uncertainty::umember_constructor_exists():
-    assert callable(Families::uncertainty::uMember.__init__)
-
-
-def test_families::uncertainty::umember_constructor_args():
-    sig = inspect.signature(Families::uncertainty::uMember.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_amember_is_not_abstract():
-    assert not inspect.isabstract(aMember)
-
-
-def test_amember_constructor_exists():
-    assert callable(aMember.__init__)
-
-
-def test_amember_constructor_args():
-    sig = inspect.signature(aMember.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_uncertainty::afamily_is_not_abstract():
-    assert not inspect.isabstract(uncertainty::aFamily)
-
-
-def test_uncertainty::afamily_constructor_exists():
-    assert callable(uncertainty::aFamily.__init__)
-
-
-def test_uncertainty::afamily_constructor_args():
-    sig = inspect.signature(uncertainty::aFamily.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_families::uncertainty::ufamily_is_not_abstract():
-    assert not inspect.isabstract(Families::uncertainty::uFamily)
-
-
-def test_families::uncertainty::ufamily_constructor_exists():
-    assert callable(Families::uncertainty::uFamily.__init__)
-
-
-def test_families::uncertainty::ufamily_constructor_args():
-    sig = inspect.signature(Families::uncertainty::uFamily.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_uncertainty::modelelement_is_not_abstract():
-    assert not inspect.isabstract(uncertainty::ModelElement)
-
-
-def test_uncertainty::modelelement_constructor_exists():
-    assert callable(uncertainty::ModelElement.__init__)
-
-
-def test_uncertainty::modelelement_constructor_args():
-    sig = inspect.signature(uncertainty::ModelElement.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_families::familyregistry_is_not_abstract():
-    assert not inspect.isabstract(Families::FamilyRegistry)
-
-
-def test_families::familyregistry_constructor_exists():
-    assert callable(Families::FamilyRegistry.__init__)
-
-
-def test_families::familyregistry_constructor_args():
-    sig = inspect.signature(Families::FamilyRegistry.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_families::member_is_not_abstract():
-    assert not inspect.isabstract(Families::Member)
-
-
-def test_families::member_constructor_exists():
-    assert callable(Families::Member.__init__)
-
-
-def test_families::member_constructor_args():
-    sig = inspect.signature(Families::Member.__init__)
+def test_families_member_constructor_args():
+    sig = inspect.signature(Families_Member.__init__)
     params = list(sig.parameters.keys())
     assert "age" in params, "Missing parameter 'age'"
     assert "firstName" in params, "Missing parameter 'firstName'"
 
-def test_families::member_has_age():
-    assert hasattr(Families::Member, "age")
+def test_families_member_has_age():
+    assert hasattr(Families_Member, "age")
     descriptor = None
-    for klass in Families::Member.__mro__:
+    for klass in Families_Member.__mro__:
         if "age" in klass.__dict__:
             descriptor = klass.__dict__["age"]
             break
     assert isinstance(descriptor, property)
 
-def test_families::member_has_firstName():
-    assert hasattr(Families::Member, "firstName")
+def test_families_member_has_firstName():
+    assert hasattr(Families_Member, "firstName")
     descriptor = None
-    for klass in Families::Member.__mro__:
+    for klass in Families_Member.__mro__:
         if "firstName" in klass.__dict__:
             descriptor = klass.__dict__["firstName"]
             break
@@ -416,37 +436,17 @@ def test_families::member_has_firstName():
 
 
 
-def test_families::family_is_not_abstract():
-    assert not inspect.isabstract(Families::Family)
+def test_uncertainty_families_member_is_not_abstract():
+    assert not inspect.isabstract(uncertainty_Families_Member)
 
 
-def test_families::family_constructor_exists():
-    assert callable(Families::Family.__init__)
+def test_uncertainty_families_member_constructor_exists():
+    assert callable(uncertainty_Families_Member.__init__)
 
 
-def test_families::family_constructor_args():
-    sig = inspect.signature(Families::Family.__init__)
+def test_uncertainty_families_member_constructor_args():
+    sig = inspect.signature(uncertainty_Families_Member.__init__)
     params = list(sig.parameters.keys())
-    assert "lastName" in params, "Missing parameter 'lastName'"
-    assert "address" in params, "Missing parameter 'address'"
-
-def test_families::family_has_lastName():
-    assert hasattr(Families::Family, "lastName")
-    descriptor = None
-    for klass in Families::Family.__mro__:
-        if "lastName" in klass.__dict__:
-            descriptor = klass.__dict__["lastName"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_families::family_has_address():
-    assert hasattr(Families::Family, "address")
-    descriptor = None
-    for klass in Families::Family.__mro__:
-        if "address" in klass.__dict__:
-            descriptor = klass.__dict__["address"]
-            break
-    assert isinstance(descriptor, property)
 
 def test_operatortype_exists():
     # Check that the Enumeration exists
@@ -476,281 +476,263 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-Families::uncertainty::aFamilyRegistry_strategy = st.builds(
-    Families::uncertainty::aFamilyRegistry,
-)
-uFamilyRegistry_strategy = st.builds(
-    uFamilyRegistry,
-)
-uncertainty::Families::FamilyRegistry_strategy = st.builds(
-    uncertainty::Families::FamilyRegistry,
-)
-Families::uncertainty::aMember_strategy = st.builds(
-    Families::uncertainty::aMember,
-)
-uMember_strategy = st.builds(
-    uMember,
-)
-Families::uncertainty::UData_strategy = st.builds(
-    Families::uncertainty::UData,
-    utype=
-        safe_text,
-    name=
-        safe_text
-)
-ModelElement_strategy = st.builds(
-    ModelElement,
-)
-Families::uncertainty::ModelElement_strategy = st.builds(
-    Families::uncertainty::ModelElement,
-)
-uncertainty::aFamilyRegistry_strategy = st.builds(
-    uncertainty::aFamilyRegistry,
-)
-aFamily_strategy = st.builds(
-    aFamily,
-)
-uncertainty::aMember_strategy = st.builds(
-    uncertainty::aMember,
-)
-uncertainty::Families::Member_strategy = st.builds(
-    uncertainty::Families::Member,
-)
-Families::uncertainty::aFamily_strategy = st.builds(
-    Families::uncertainty::aFamily,
+Families_uncertainty_aFamily_strategy = st.builds(
+    Families_uncertainty_aFamily,
 )
 uFamily_strategy = st.builds(
     uFamily,
 )
-uncertainty::Families::Family_strategy = st.builds(
-    uncertainty::Families::Family,
+uncertainty_Families_Family_strategy = st.builds(
+    uncertainty_Families_Family,
 )
-uncertainty::UData_strategy = st.builds(
-    uncertainty::UData,
-)
-Families::uncertainty::uFamilyRegistry_strategy = st.builds(
-    Families::uncertainty::uFamilyRegistry,
-)
-Families::uncertainty::uMember_strategy = st.builds(
-    Families::uncertainty::uMember,
+uncertainty_UData_strategy = st.builds(
+    uncertainty_UData,
 )
 aMember_strategy = st.builds(
     aMember,
 )
-uncertainty::aFamily_strategy = st.builds(
-    uncertainty::aFamily,
+uncertainty_aFamily_strategy = st.builds(
+    uncertainty_aFamily,
 )
-Families::uncertainty::uFamily_strategy = st.builds(
-    Families::uncertainty::uFamily,
+Families_uncertainty_uFamily_strategy = st.builds(
+    Families_uncertainty_uFamily,
 )
-uncertainty::ModelElement_strategy = st.builds(
-    uncertainty::ModelElement,
+uncertainty_ModelElement_strategy = st.builds(
+    uncertainty_ModelElement,
 )
-Families::FamilyRegistry_strategy = st.builds(
-    Families::FamilyRegistry,
-)
-Families::Member_strategy = st.builds(
-    Families::Member,
-    age=
-        st.integers(),
-    firstName=
-        safe_text
-)
-Families::Family_strategy = st.builds(
-    Families::Family,
+Families_Family_strategy = st.builds(
+    Families_Family,
     lastName=
         safe_text,
     address=
         safe_text
 )
+Families_uncertainty_aFamilyRegistry_strategy = st.builds(
+    Families_uncertainty_aFamilyRegistry,
+)
+uFamilyRegistry_strategy = st.builds(
+    uFamilyRegistry,
+)
+uncertainty_Families_FamilyRegistry_strategy = st.builds(
+    uncertainty_Families_FamilyRegistry,
+)
+Families_uncertainty_aMember_strategy = st.builds(
+    Families_uncertainty_aMember,
+)
+uMember_strategy = st.builds(
+    uMember,
+)
+Families_uncertainty_UData_strategy = st.builds(
+    Families_uncertainty_UData,
+    name=
+        safe_text,
+    utype=
+        safe_text
+)
+ModelElement_strategy = st.builds(
+    ModelElement,
+)
+Families_uncertainty_ModelElement_strategy = st.builds(
+    Families_uncertainty_ModelElement,
+)
+uncertainty_aFamilyRegistry_strategy = st.builds(
+    uncertainty_aFamilyRegistry,
+)
+Families_uncertainty_uFamilyRegistry_strategy = st.builds(
+    Families_uncertainty_uFamilyRegistry,
+)
+Families_FamilyRegistry_strategy = st.builds(
+    Families_FamilyRegistry,
+)
+aFamily_strategy = st.builds(
+    aFamily,
+)
+uncertainty_aMember_strategy = st.builds(
+    uncertainty_aMember,
+)
+Families_uncertainty_uMember_strategy = st.builds(
+    Families_uncertainty_uMember,
+)
+Families_Member_strategy = st.builds(
+    Families_Member,
+    age=
+        st.integers(),
+    firstName=
+        safe_text
+)
+uncertainty_Families_Member_strategy = st.builds(
+    uncertainty_Families_Member,
+)
 
-@given(instance=Families::uncertainty::aFamilyRegistry_strategy)
+@given(instance=Families_uncertainty_aFamily_strategy)
 @settings(max_examples=50)
-def test_families::uncertainty::afamilyregistry_instantiation(instance):
-    assert isinstance(instance, Families::uncertainty::aFamilyRegistry)
-
-@given(instance=uFamilyRegistry_strategy)
-@settings(max_examples=50)
-def test_ufamilyregistry_instantiation(instance):
-    assert isinstance(instance, uFamilyRegistry)
-
-@given(instance=uncertainty::Families::FamilyRegistry_strategy)
-@settings(max_examples=50)
-def test_uncertainty::families::familyregistry_instantiation(instance):
-    assert isinstance(instance, uncertainty::Families::FamilyRegistry)
-
-@given(instance=Families::uncertainty::aMember_strategy)
-@settings(max_examples=50)
-def test_families::uncertainty::amember_instantiation(instance):
-    assert isinstance(instance, Families::uncertainty::aMember)
-
-@given(instance=uMember_strategy)
-@settings(max_examples=50)
-def test_umember_instantiation(instance):
-    assert isinstance(instance, uMember)
-
-@given(instance=Families::uncertainty::UData_strategy)
-@settings(max_examples=50)
-def test_families::uncertainty::udata_instantiation(instance):
-    assert isinstance(instance, Families::uncertainty::UData)
-
-@given(instance=Families::uncertainty::UData_strategy)
-def test_families::uncertainty::udata_utype_type(instance):
-    assert isinstance(instance.utype, str)
-
-
-@given(instance=Families::uncertainty::UData_strategy)
-def test_families::uncertainty::udata_utype_setter(instance):
-    original = instance.utype
-    instance.utype = original
-    assert instance.utype == original
-
-@given(instance=Families::uncertainty::UData_strategy)
-def test_families::uncertainty::udata_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=Families::uncertainty::UData_strategy)
-def test_families::uncertainty::udata_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
-
-@given(instance=ModelElement_strategy)
-@settings(max_examples=50)
-def test_modelelement_instantiation(instance):
-    assert isinstance(instance, ModelElement)
-
-@given(instance=Families::uncertainty::ModelElement_strategy)
-@settings(max_examples=50)
-def test_families::uncertainty::modelelement_instantiation(instance):
-    assert isinstance(instance, Families::uncertainty::ModelElement)
-
-@given(instance=uncertainty::aFamilyRegistry_strategy)
-@settings(max_examples=50)
-def test_uncertainty::afamilyregistry_instantiation(instance):
-    assert isinstance(instance, uncertainty::aFamilyRegistry)
-
-@given(instance=aFamily_strategy)
-@settings(max_examples=50)
-def test_afamily_instantiation(instance):
-    assert isinstance(instance, aFamily)
-
-@given(instance=uncertainty::aMember_strategy)
-@settings(max_examples=50)
-def test_uncertainty::amember_instantiation(instance):
-    assert isinstance(instance, uncertainty::aMember)
-
-@given(instance=uncertainty::Families::Member_strategy)
-@settings(max_examples=50)
-def test_uncertainty::families::member_instantiation(instance):
-    assert isinstance(instance, uncertainty::Families::Member)
-
-@given(instance=Families::uncertainty::aFamily_strategy)
-@settings(max_examples=50)
-def test_families::uncertainty::afamily_instantiation(instance):
-    assert isinstance(instance, Families::uncertainty::aFamily)
+def test_families_uncertainty_afamily_instantiation(instance):
+    assert isinstance(instance, Families_uncertainty_aFamily)
 
 @given(instance=uFamily_strategy)
 @settings(max_examples=50)
 def test_ufamily_instantiation(instance):
     assert isinstance(instance, uFamily)
 
-@given(instance=uncertainty::Families::Family_strategy)
+@given(instance=uncertainty_Families_Family_strategy)
 @settings(max_examples=50)
-def test_uncertainty::families::family_instantiation(instance):
-    assert isinstance(instance, uncertainty::Families::Family)
+def test_uncertainty_families_family_instantiation(instance):
+    assert isinstance(instance, uncertainty_Families_Family)
 
-@given(instance=uncertainty::UData_strategy)
+@given(instance=uncertainty_UData_strategy)
 @settings(max_examples=50)
-def test_uncertainty::udata_instantiation(instance):
-    assert isinstance(instance, uncertainty::UData)
-
-@given(instance=Families::uncertainty::uFamilyRegistry_strategy)
-@settings(max_examples=50)
-def test_families::uncertainty::ufamilyregistry_instantiation(instance):
-    assert isinstance(instance, Families::uncertainty::uFamilyRegistry)
-
-@given(instance=Families::uncertainty::uMember_strategy)
-@settings(max_examples=50)
-def test_families::uncertainty::umember_instantiation(instance):
-    assert isinstance(instance, Families::uncertainty::uMember)
+def test_uncertainty_udata_instantiation(instance):
+    assert isinstance(instance, uncertainty_UData)
 
 @given(instance=aMember_strategy)
 @settings(max_examples=50)
 def test_amember_instantiation(instance):
     assert isinstance(instance, aMember)
 
-@given(instance=uncertainty::aFamily_strategy)
+@given(instance=uncertainty_aFamily_strategy)
 @settings(max_examples=50)
-def test_uncertainty::afamily_instantiation(instance):
-    assert isinstance(instance, uncertainty::aFamily)
+def test_uncertainty_afamily_instantiation(instance):
+    assert isinstance(instance, uncertainty_aFamily)
 
-@given(instance=Families::uncertainty::uFamily_strategy)
+@given(instance=Families_uncertainty_uFamily_strategy)
 @settings(max_examples=50)
-def test_families::uncertainty::ufamily_instantiation(instance):
-    assert isinstance(instance, Families::uncertainty::uFamily)
+def test_families_uncertainty_ufamily_instantiation(instance):
+    assert isinstance(instance, Families_uncertainty_uFamily)
 
-@given(instance=uncertainty::ModelElement_strategy)
+@given(instance=uncertainty_ModelElement_strategy)
 @settings(max_examples=50)
-def test_uncertainty::modelelement_instantiation(instance):
-    assert isinstance(instance, uncertainty::ModelElement)
+def test_uncertainty_modelelement_instantiation(instance):
+    assert isinstance(instance, uncertainty_ModelElement)
 
-@given(instance=Families::FamilyRegistry_strategy)
+@given(instance=Families_Family_strategy)
 @settings(max_examples=50)
-def test_families::familyregistry_instantiation(instance):
-    assert isinstance(instance, Families::FamilyRegistry)
-
-@given(instance=Families::Member_strategy)
-@settings(max_examples=50)
-def test_families::member_instantiation(instance):
-    assert isinstance(instance, Families::Member)
-
-@given(instance=Families::Member_strategy)
-def test_families::member_age_type(instance):
-    assert isinstance(instance.age, int)
+def test_families_family_instantiation(instance):
+    assert isinstance(instance, Families_Family)
 
 
-@given(instance=Families::Member_strategy)
-def test_families::member_age_setter(instance):
-    original = instance.age
-    instance.age = original
-    assert instance.age == original
 
-@given(instance=Families::Member_strategy)
-def test_families::member_firstName_type(instance):
-    assert isinstance(instance.firstName, str)
-
-
-@given(instance=Families::Member_strategy)
-def test_families::member_firstName_setter(instance):
-    original = instance.firstName
-    instance.firstName = original
-    assert instance.firstName == original
-
-@given(instance=Families::Family_strategy)
-@settings(max_examples=50)
-def test_families::family_instantiation(instance):
-    assert isinstance(instance, Families::Family)
-
-@given(instance=Families::Family_strategy)
-def test_families::family_lastName_type(instance):
-    assert isinstance(instance.lastName, str)
-
-
-@given(instance=Families::Family_strategy)
-def test_families::family_lastName_setter(instance):
+@given(instance=Families_Family_strategy)
+def test_families_family_lastName_setter(instance):
     original = instance.lastName
     instance.lastName = original
     assert instance.lastName == original
 
-@given(instance=Families::Family_strategy)
-def test_families::family_address_type(instance):
-    assert isinstance(instance.address, str)
 
 
-@given(instance=Families::Family_strategy)
-def test_families::family_address_setter(instance):
+@given(instance=Families_Family_strategy)
+def test_families_family_address_setter(instance):
     original = instance.address
     instance.address = original
     assert instance.address == original
+
+@given(instance=Families_uncertainty_aFamilyRegistry_strategy)
+@settings(max_examples=50)
+def test_families_uncertainty_afamilyregistry_instantiation(instance):
+    assert isinstance(instance, Families_uncertainty_aFamilyRegistry)
+
+@given(instance=uFamilyRegistry_strategy)
+@settings(max_examples=50)
+def test_ufamilyregistry_instantiation(instance):
+    assert isinstance(instance, uFamilyRegistry)
+
+@given(instance=uncertainty_Families_FamilyRegistry_strategy)
+@settings(max_examples=50)
+def test_uncertainty_families_familyregistry_instantiation(instance):
+    assert isinstance(instance, uncertainty_Families_FamilyRegistry)
+
+@given(instance=Families_uncertainty_aMember_strategy)
+@settings(max_examples=50)
+def test_families_uncertainty_amember_instantiation(instance):
+    assert isinstance(instance, Families_uncertainty_aMember)
+
+@given(instance=uMember_strategy)
+@settings(max_examples=50)
+def test_umember_instantiation(instance):
+    assert isinstance(instance, uMember)
+
+@given(instance=Families_uncertainty_UData_strategy)
+@settings(max_examples=50)
+def test_families_uncertainty_udata_instantiation(instance):
+    assert isinstance(instance, Families_uncertainty_UData)
+
+
+
+@given(instance=Families_uncertainty_UData_strategy)
+def test_families_uncertainty_udata_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+
+
+@given(instance=Families_uncertainty_UData_strategy)
+def test_families_uncertainty_udata_utype_setter(instance):
+    original = instance.utype
+    instance.utype = original
+    assert instance.utype == original
+
+@given(instance=ModelElement_strategy)
+@settings(max_examples=50)
+def test_modelelement_instantiation(instance):
+    assert isinstance(instance, ModelElement)
+
+@given(instance=Families_uncertainty_ModelElement_strategy)
+@settings(max_examples=50)
+def test_families_uncertainty_modelelement_instantiation(instance):
+    assert isinstance(instance, Families_uncertainty_ModelElement)
+
+@given(instance=uncertainty_aFamilyRegistry_strategy)
+@settings(max_examples=50)
+def test_uncertainty_afamilyregistry_instantiation(instance):
+    assert isinstance(instance, uncertainty_aFamilyRegistry)
+
+@given(instance=Families_uncertainty_uFamilyRegistry_strategy)
+@settings(max_examples=50)
+def test_families_uncertainty_ufamilyregistry_instantiation(instance):
+    assert isinstance(instance, Families_uncertainty_uFamilyRegistry)
+
+@given(instance=Families_FamilyRegistry_strategy)
+@settings(max_examples=50)
+def test_families_familyregistry_instantiation(instance):
+    assert isinstance(instance, Families_FamilyRegistry)
+
+@given(instance=aFamily_strategy)
+@settings(max_examples=50)
+def test_afamily_instantiation(instance):
+    assert isinstance(instance, aFamily)
+
+@given(instance=uncertainty_aMember_strategy)
+@settings(max_examples=50)
+def test_uncertainty_amember_instantiation(instance):
+    assert isinstance(instance, uncertainty_aMember)
+
+@given(instance=Families_uncertainty_uMember_strategy)
+@settings(max_examples=50)
+def test_families_uncertainty_umember_instantiation(instance):
+    assert isinstance(instance, Families_uncertainty_uMember)
+
+@given(instance=Families_Member_strategy)
+@settings(max_examples=50)
+def test_families_member_instantiation(instance):
+    assert isinstance(instance, Families_Member)
+
+
+
+@given(instance=Families_Member_strategy)
+def test_families_member_age_setter(instance):
+    original = instance.age
+    instance.age = original
+    assert instance.age == original
+
+
+
+@given(instance=Families_Member_strategy)
+def test_families_member_firstName_setter(instance):
+    original = instance.firstName
+    instance.firstName = original
+    assert instance.firstName == original
+
+@given(instance=uncertainty_Families_Member_strategy)
+@settings(max_examples=50)
+def test_uncertainty_families_member_instantiation(instance):
+    assert isinstance(instance, uncertainty_Families_Member)

@@ -3,22 +3,22 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     Stmt,
-    simpleal::Assign,
-    simpleal::Print,
+    simpleal_Assign,
+    simpleal_Print,
     ArithOp,
-    simpleal::ArithMinus,
-    simpleal::ArithPlus,
+    simpleal_ArithMinus,
+    simpleal_ArithPlus,
     Arith,
-    simpleal::ArithLit,
-    simpleal::ArithOp,
-    simpleal::VarRef,
-    simpleal::Arith,
-    simpleal::Stmt,
-    simpleal::Block,
+    simpleal_ArithOp,
+    simpleal_ArithLit,
+    simpleal_VarRef,
+    simpleal_Arith,
+    simpleal_Stmt,
+    simpleal_Block,
 )
 
 # =============================================================================
@@ -41,23 +41,23 @@ def test_stmt_constructor_args():
 
 
 
-def test_simpleal::assign_is_not_abstract():
-    assert not inspect.isabstract(simpleal::Assign)
+def test_simpleal_assign_is_not_abstract():
+    assert not inspect.isabstract(simpleal_Assign)
 
 
-def test_simpleal::assign_constructor_exists():
-    assert callable(simpleal::Assign.__init__)
+def test_simpleal_assign_constructor_exists():
+    assert callable(simpleal_Assign.__init__)
 
 
-def test_simpleal::assign_constructor_args():
-    sig = inspect.signature(simpleal::Assign.__init__)
+def test_simpleal_assign_constructor_args():
+    sig = inspect.signature(simpleal_Assign.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_simpleal::assign_has_name():
-    assert hasattr(simpleal::Assign, "name")
+def test_simpleal_assign_has_name():
+    assert hasattr(simpleal_Assign, "name")
     descriptor = None
-    for klass in simpleal::Assign.__mro__:
+    for klass in simpleal_Assign.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -65,23 +65,23 @@ def test_simpleal::assign_has_name():
 
 
 
-def test_simpleal::print_is_not_abstract():
-    assert not inspect.isabstract(simpleal::Print)
+def test_simpleal_print_is_not_abstract():
+    assert not inspect.isabstract(simpleal_Print)
 
 
-def test_simpleal::print_constructor_exists():
-    assert callable(simpleal::Print.__init__)
+def test_simpleal_print_constructor_exists():
+    assert callable(simpleal_Print.__init__)
 
 
-def test_simpleal::print_constructor_args():
-    sig = inspect.signature(simpleal::Print.__init__)
+def test_simpleal_print_constructor_args():
+    sig = inspect.signature(simpleal_Print.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_simpleal::print_has_name():
-    assert hasattr(simpleal::Print, "name")
+def test_simpleal_print_has_name():
+    assert hasattr(simpleal_Print, "name")
     descriptor = None
-    for klass in simpleal::Print.__mro__:
+    for klass in simpleal_Print.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -103,30 +103,30 @@ def test_arithop_constructor_args():
 
 
 
-def test_simpleal::arithminus_is_not_abstract():
-    assert not inspect.isabstract(simpleal::ArithMinus)
+def test_simpleal_arithminus_is_not_abstract():
+    assert not inspect.isabstract(simpleal_ArithMinus)
 
 
-def test_simpleal::arithminus_constructor_exists():
-    assert callable(simpleal::ArithMinus.__init__)
+def test_simpleal_arithminus_constructor_exists():
+    assert callable(simpleal_ArithMinus.__init__)
 
 
-def test_simpleal::arithminus_constructor_args():
-    sig = inspect.signature(simpleal::ArithMinus.__init__)
+def test_simpleal_arithminus_constructor_args():
+    sig = inspect.signature(simpleal_ArithMinus.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_simpleal::arithplus_is_not_abstract():
-    assert not inspect.isabstract(simpleal::ArithPlus)
+def test_simpleal_arithplus_is_not_abstract():
+    assert not inspect.isabstract(simpleal_ArithPlus)
 
 
-def test_simpleal::arithplus_constructor_exists():
-    assert callable(simpleal::ArithPlus.__init__)
+def test_simpleal_arithplus_constructor_exists():
+    assert callable(simpleal_ArithPlus.__init__)
 
 
-def test_simpleal::arithplus_constructor_args():
-    sig = inspect.signature(simpleal::ArithPlus.__init__)
+def test_simpleal_arithplus_constructor_args():
+    sig = inspect.signature(simpleal_ArithPlus.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -145,23 +145,37 @@ def test_arith_constructor_args():
 
 
 
-def test_simpleal::arithlit_is_not_abstract():
-    assert not inspect.isabstract(simpleal::ArithLit)
+def test_simpleal_arithop_is_not_abstract():
+    assert not inspect.isabstract(simpleal_ArithOp)
 
 
-def test_simpleal::arithlit_constructor_exists():
-    assert callable(simpleal::ArithLit.__init__)
+def test_simpleal_arithop_constructor_exists():
+    assert callable(simpleal_ArithOp.__init__)
 
 
-def test_simpleal::arithlit_constructor_args():
-    sig = inspect.signature(simpleal::ArithLit.__init__)
+def test_simpleal_arithop_constructor_args():
+    sig = inspect.signature(simpleal_ArithOp.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_simpleal_arithlit_is_not_abstract():
+    assert not inspect.isabstract(simpleal_ArithLit)
+
+
+def test_simpleal_arithlit_constructor_exists():
+    assert callable(simpleal_ArithLit.__init__)
+
+
+def test_simpleal_arithlit_constructor_args():
+    sig = inspect.signature(simpleal_ArithLit.__init__)
     params = list(sig.parameters.keys())
     assert "val" in params, "Missing parameter 'val'"
 
-def test_simpleal::arithlit_has_val():
-    assert hasattr(simpleal::ArithLit, "val")
+def test_simpleal_arithlit_has_val():
+    assert hasattr(simpleal_ArithLit, "val")
     descriptor = None
-    for klass in simpleal::ArithLit.__mro__:
+    for klass in simpleal_ArithLit.__mro__:
         if "val" in klass.__dict__:
             descriptor = klass.__dict__["val"]
             break
@@ -169,37 +183,23 @@ def test_simpleal::arithlit_has_val():
 
 
 
-def test_simpleal::arithop_is_not_abstract():
-    assert not inspect.isabstract(simpleal::ArithOp)
+def test_simpleal_varref_is_not_abstract():
+    assert not inspect.isabstract(simpleal_VarRef)
 
 
-def test_simpleal::arithop_constructor_exists():
-    assert callable(simpleal::ArithOp.__init__)
+def test_simpleal_varref_constructor_exists():
+    assert callable(simpleal_VarRef.__init__)
 
 
-def test_simpleal::arithop_constructor_args():
-    sig = inspect.signature(simpleal::ArithOp.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_simpleal::varref_is_not_abstract():
-    assert not inspect.isabstract(simpleal::VarRef)
-
-
-def test_simpleal::varref_constructor_exists():
-    assert callable(simpleal::VarRef.__init__)
-
-
-def test_simpleal::varref_constructor_args():
-    sig = inspect.signature(simpleal::VarRef.__init__)
+def test_simpleal_varref_constructor_args():
+    sig = inspect.signature(simpleal_VarRef.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_simpleal::varref_has_name():
-    assert hasattr(simpleal::VarRef, "name")
+def test_simpleal_varref_has_name():
+    assert hasattr(simpleal_VarRef, "name")
     descriptor = None
-    for klass in simpleal::VarRef.__mro__:
+    for klass in simpleal_VarRef.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -207,44 +207,44 @@ def test_simpleal::varref_has_name():
 
 
 
-def test_simpleal::arith_is_not_abstract():
-    assert not inspect.isabstract(simpleal::Arith)
+def test_simpleal_arith_is_not_abstract():
+    assert not inspect.isabstract(simpleal_Arith)
 
 
-def test_simpleal::arith_constructor_exists():
-    assert callable(simpleal::Arith.__init__)
+def test_simpleal_arith_constructor_exists():
+    assert callable(simpleal_Arith.__init__)
 
 
-def test_simpleal::arith_constructor_args():
-    sig = inspect.signature(simpleal::Arith.__init__)
+def test_simpleal_arith_constructor_args():
+    sig = inspect.signature(simpleal_Arith.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_simpleal::stmt_is_not_abstract():
-    assert not inspect.isabstract(simpleal::Stmt)
+def test_simpleal_stmt_is_not_abstract():
+    assert not inspect.isabstract(simpleal_Stmt)
 
 
-def test_simpleal::stmt_constructor_exists():
-    assert callable(simpleal::Stmt.__init__)
+def test_simpleal_stmt_constructor_exists():
+    assert callable(simpleal_Stmt.__init__)
 
 
-def test_simpleal::stmt_constructor_args():
-    sig = inspect.signature(simpleal::Stmt.__init__)
+def test_simpleal_stmt_constructor_args():
+    sig = inspect.signature(simpleal_Stmt.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_simpleal::block_is_not_abstract():
-    assert not inspect.isabstract(simpleal::Block)
+def test_simpleal_block_is_not_abstract():
+    assert not inspect.isabstract(simpleal_Block)
 
 
-def test_simpleal::block_constructor_exists():
-    assert callable(simpleal::Block.__init__)
+def test_simpleal_block_constructor_exists():
+    assert callable(simpleal_Block.__init__)
 
 
-def test_simpleal::block_constructor_args():
-    sig = inspect.signature(simpleal::Block.__init__)
+def test_simpleal_block_constructor_args():
+    sig = inspect.signature(simpleal_Block.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -262,49 +262,49 @@ safe_text = st.text(
 Stmt_strategy = st.builds(
     Stmt,
 )
-simpleal::Assign_strategy = st.builds(
-    simpleal::Assign,
+simpleal_Assign_strategy = st.builds(
+    simpleal_Assign,
     name=
         safe_text
 )
-simpleal::Print_strategy = st.builds(
-    simpleal::Print,
+simpleal_Print_strategy = st.builds(
+    simpleal_Print,
     name=
         safe_text
 )
 ArithOp_strategy = st.builds(
     ArithOp,
 )
-simpleal::ArithMinus_strategy = st.builds(
-    simpleal::ArithMinus,
+simpleal_ArithMinus_strategy = st.builds(
+    simpleal_ArithMinus,
 )
-simpleal::ArithPlus_strategy = st.builds(
-    simpleal::ArithPlus,
+simpleal_ArithPlus_strategy = st.builds(
+    simpleal_ArithPlus,
 )
 Arith_strategy = st.builds(
     Arith,
 )
-simpleal::ArithLit_strategy = st.builds(
-    simpleal::ArithLit,
+simpleal_ArithOp_strategy = st.builds(
+    simpleal_ArithOp,
+)
+simpleal_ArithLit_strategy = st.builds(
+    simpleal_ArithLit,
     val=
         st.integers()
 )
-simpleal::ArithOp_strategy = st.builds(
-    simpleal::ArithOp,
-)
-simpleal::VarRef_strategy = st.builds(
-    simpleal::VarRef,
+simpleal_VarRef_strategy = st.builds(
+    simpleal_VarRef,
     name=
         safe_text
 )
-simpleal::Arith_strategy = st.builds(
-    simpleal::Arith,
+simpleal_Arith_strategy = st.builds(
+    simpleal_Arith,
 )
-simpleal::Stmt_strategy = st.builds(
-    simpleal::Stmt,
+simpleal_Stmt_strategy = st.builds(
+    simpleal_Stmt,
 )
-simpleal::Block_strategy = st.builds(
-    simpleal::Block,
+simpleal_Block_strategy = st.builds(
+    simpleal_Block,
 )
 
 @given(instance=Stmt_strategy)
@@ -312,34 +312,28 @@ simpleal::Block_strategy = st.builds(
 def test_stmt_instantiation(instance):
     assert isinstance(instance, Stmt)
 
-@given(instance=simpleal::Assign_strategy)
+@given(instance=simpleal_Assign_strategy)
 @settings(max_examples=50)
-def test_simpleal::assign_instantiation(instance):
-    assert isinstance(instance, simpleal::Assign)
-
-@given(instance=simpleal::Assign_strategy)
-def test_simpleal::assign_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_simpleal_assign_instantiation(instance):
+    assert isinstance(instance, simpleal_Assign)
 
 
-@given(instance=simpleal::Assign_strategy)
-def test_simpleal::assign_name_setter(instance):
+
+@given(instance=simpleal_Assign_strategy)
+def test_simpleal_assign_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=simpleal::Print_strategy)
+@given(instance=simpleal_Print_strategy)
 @settings(max_examples=50)
-def test_simpleal::print_instantiation(instance):
-    assert isinstance(instance, simpleal::Print)
-
-@given(instance=simpleal::Print_strategy)
-def test_simpleal::print_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_simpleal_print_instantiation(instance):
+    assert isinstance(instance, simpleal_Print)
 
 
-@given(instance=simpleal::Print_strategy)
-def test_simpleal::print_name_setter(instance):
+
+@given(instance=simpleal_Print_strategy)
+def test_simpleal_print_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
@@ -349,69 +343,63 @@ def test_simpleal::print_name_setter(instance):
 def test_arithop_instantiation(instance):
     assert isinstance(instance, ArithOp)
 
-@given(instance=simpleal::ArithMinus_strategy)
+@given(instance=simpleal_ArithMinus_strategy)
 @settings(max_examples=50)
-def test_simpleal::arithminus_instantiation(instance):
-    assert isinstance(instance, simpleal::ArithMinus)
+def test_simpleal_arithminus_instantiation(instance):
+    assert isinstance(instance, simpleal_ArithMinus)
 
-@given(instance=simpleal::ArithPlus_strategy)
+@given(instance=simpleal_ArithPlus_strategy)
 @settings(max_examples=50)
-def test_simpleal::arithplus_instantiation(instance):
-    assert isinstance(instance, simpleal::ArithPlus)
+def test_simpleal_arithplus_instantiation(instance):
+    assert isinstance(instance, simpleal_ArithPlus)
 
 @given(instance=Arith_strategy)
 @settings(max_examples=50)
 def test_arith_instantiation(instance):
     assert isinstance(instance, Arith)
 
-@given(instance=simpleal::ArithLit_strategy)
+@given(instance=simpleal_ArithOp_strategy)
 @settings(max_examples=50)
-def test_simpleal::arithlit_instantiation(instance):
-    assert isinstance(instance, simpleal::ArithLit)
+def test_simpleal_arithop_instantiation(instance):
+    assert isinstance(instance, simpleal_ArithOp)
 
-@given(instance=simpleal::ArithLit_strategy)
-def test_simpleal::arithlit_val_type(instance):
-    assert isinstance(instance.val, int)
+@given(instance=simpleal_ArithLit_strategy)
+@settings(max_examples=50)
+def test_simpleal_arithlit_instantiation(instance):
+    assert isinstance(instance, simpleal_ArithLit)
 
 
-@given(instance=simpleal::ArithLit_strategy)
-def test_simpleal::arithlit_val_setter(instance):
+
+@given(instance=simpleal_ArithLit_strategy)
+def test_simpleal_arithlit_val_setter(instance):
     original = instance.val
     instance.val = original
     assert instance.val == original
 
-@given(instance=simpleal::ArithOp_strategy)
+@given(instance=simpleal_VarRef_strategy)
 @settings(max_examples=50)
-def test_simpleal::arithop_instantiation(instance):
-    assert isinstance(instance, simpleal::ArithOp)
-
-@given(instance=simpleal::VarRef_strategy)
-@settings(max_examples=50)
-def test_simpleal::varref_instantiation(instance):
-    assert isinstance(instance, simpleal::VarRef)
-
-@given(instance=simpleal::VarRef_strategy)
-def test_simpleal::varref_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_simpleal_varref_instantiation(instance):
+    assert isinstance(instance, simpleal_VarRef)
 
 
-@given(instance=simpleal::VarRef_strategy)
-def test_simpleal::varref_name_setter(instance):
+
+@given(instance=simpleal_VarRef_strategy)
+def test_simpleal_varref_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=simpleal::Arith_strategy)
+@given(instance=simpleal_Arith_strategy)
 @settings(max_examples=50)
-def test_simpleal::arith_instantiation(instance):
-    assert isinstance(instance, simpleal::Arith)
+def test_simpleal_arith_instantiation(instance):
+    assert isinstance(instance, simpleal_Arith)
 
-@given(instance=simpleal::Stmt_strategy)
+@given(instance=simpleal_Stmt_strategy)
 @settings(max_examples=50)
-def test_simpleal::stmt_instantiation(instance):
-    assert isinstance(instance, simpleal::Stmt)
+def test_simpleal_stmt_instantiation(instance):
+    assert isinstance(instance, simpleal_Stmt)
 
-@given(instance=simpleal::Block_strategy)
+@given(instance=simpleal_Block_strategy)
 @settings(max_examples=50)
-def test_simpleal::block_instantiation(instance):
-    assert isinstance(instance, simpleal::Block)
+def test_simpleal_block_instantiation(instance):
+    assert isinstance(instance, simpleal_Block)

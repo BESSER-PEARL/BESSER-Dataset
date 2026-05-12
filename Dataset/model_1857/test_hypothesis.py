@@ -3,35 +3,35 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    application::Recipes,
-    application::Mappers,
-    application::MappingLayer,
-    application::ApplicationMapper,
-    application::ApplicationRealm,
-    application::ApplicationRecipe,
-    application::Form,
-    application::ApplicationUIPackage,
-    application::StyleLibrary,
-    application::ApplicationStyle,
-    application::Roles,
-    application::ApplicationStyleLibraries,
-    application::ApplicationInfrastructureLayers,
-    application::ApplicationUILayer,
-    application::MessageLibrary,
-    application::Language,
-    application::ApplicationLanguages,
-    application::ApplicationMessageLibrary,
-    application::EnterpriseInfrastructure,
-    application::ApplicationInfrastructureLayer,
-    application::ApplicationMessageLibraries,
-    application::ApplicationRealms,
-    application::ApplicationMappers,
-    application::ApplicationRecipes,
-    application::Application,
-    application::ApplicationGroup,
+from python_code import (
+    application_Recipes,
+    application_Mappers,
+    application_MappingLayer,
+    application_ApplicationMapper,
+    application_ApplicationRealm,
+    application_ApplicationRecipe,
+    application_Form,
+    application_ApplicationUIPackage,
+    application_StyleLibrary,
+    application_ApplicationStyle,
+    application_Roles,
+    application_ApplicationStyleLibraries,
+    application_ApplicationInfrastructureLayers,
+    application_ApplicationUILayer,
+    application_MessageLibrary,
+    application_Language,
+    application_ApplicationLanguages,
+    application_ApplicationMessageLibrary,
+    application_EnterpriseInfrastructure,
+    application_ApplicationInfrastructureLayer,
+    application_ApplicationMessageLibraries,
+    application_ApplicationRealms,
+    application_ApplicationMappers,
+    application_ApplicationRecipes,
+    application_Application,
+    application_ApplicationGroup,
 )
 
 # =============================================================================
@@ -40,75 +40,75 @@ from classes import (
 
 
 
-def test_application::recipes_is_not_abstract():
-    assert not inspect.isabstract(application::Recipes)
+def test_application_recipes_is_not_abstract():
+    assert not inspect.isabstract(application_Recipes)
 
 
-def test_application::recipes_constructor_exists():
-    assert callable(application::Recipes.__init__)
+def test_application_recipes_constructor_exists():
+    assert callable(application_Recipes.__init__)
 
 
-def test_application::recipes_constructor_args():
-    sig = inspect.signature(application::Recipes.__init__)
+def test_application_recipes_constructor_args():
+    sig = inspect.signature(application_Recipes.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_application::mappers_is_not_abstract():
-    assert not inspect.isabstract(application::Mappers)
+def test_application_mappers_is_not_abstract():
+    assert not inspect.isabstract(application_Mappers)
 
 
-def test_application::mappers_constructor_exists():
-    assert callable(application::Mappers.__init__)
+def test_application_mappers_constructor_exists():
+    assert callable(application_Mappers.__init__)
 
 
-def test_application::mappers_constructor_args():
-    sig = inspect.signature(application::Mappers.__init__)
+def test_application_mappers_constructor_args():
+    sig = inspect.signature(application_Mappers.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_application::mappinglayer_is_not_abstract():
-    assert not inspect.isabstract(application::MappingLayer)
+def test_application_mappinglayer_is_not_abstract():
+    assert not inspect.isabstract(application_MappingLayer)
 
 
-def test_application::mappinglayer_constructor_exists():
-    assert callable(application::MappingLayer.__init__)
+def test_application_mappinglayer_constructor_exists():
+    assert callable(application_MappingLayer.__init__)
 
 
-def test_application::mappinglayer_constructor_args():
-    sig = inspect.signature(application::MappingLayer.__init__)
+def test_application_mappinglayer_constructor_args():
+    sig = inspect.signature(application_MappingLayer.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_application::applicationmapper_is_not_abstract():
-    assert not inspect.isabstract(application::ApplicationMapper)
+def test_application_applicationmapper_is_not_abstract():
+    assert not inspect.isabstract(application_ApplicationMapper)
 
 
-def test_application::applicationmapper_constructor_exists():
-    assert callable(application::ApplicationMapper.__init__)
+def test_application_applicationmapper_constructor_exists():
+    assert callable(application_ApplicationMapper.__init__)
 
 
-def test_application::applicationmapper_constructor_args():
-    sig = inspect.signature(application::ApplicationMapper.__init__)
+def test_application_applicationmapper_constructor_args():
+    sig = inspect.signature(application_ApplicationMapper.__init__)
     params = list(sig.parameters.keys())
     assert "uid" in params, "Missing parameter 'uid'"
     assert "name" in params, "Missing parameter 'name'"
 
-def test_application::applicationmapper_has_uid():
-    assert hasattr(application::ApplicationMapper, "uid")
+def test_application_applicationmapper_has_uid():
+    assert hasattr(application_ApplicationMapper, "uid")
     descriptor = None
-    for klass in application::ApplicationMapper.__mro__:
+    for klass in application_ApplicationMapper.__mro__:
         if "uid" in klass.__dict__:
             descriptor = klass.__dict__["uid"]
             break
     assert isinstance(descriptor, property)
 
-def test_application::applicationmapper_has_name():
-    assert hasattr(application::ApplicationMapper, "name")
+def test_application_applicationmapper_has_name():
+    assert hasattr(application_ApplicationMapper, "name")
     descriptor = None
-    for klass in application::ApplicationMapper.__mro__:
+    for klass in application_ApplicationMapper.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -116,67 +116,67 @@ def test_application::applicationmapper_has_name():
 
 
 
-def test_application::applicationrealm_is_not_abstract():
-    assert not inspect.isabstract(application::ApplicationRealm)
+def test_application_applicationrealm_is_not_abstract():
+    assert not inspect.isabstract(application_ApplicationRealm)
 
 
-def test_application::applicationrealm_constructor_exists():
-    assert callable(application::ApplicationRealm.__init__)
+def test_application_applicationrealm_constructor_exists():
+    assert callable(application_ApplicationRealm.__init__)
 
 
-def test_application::applicationrealm_constructor_args():
-    sig = inspect.signature(application::ApplicationRealm.__init__)
+def test_application_applicationrealm_constructor_args():
+    sig = inspect.signature(application_ApplicationRealm.__init__)
     params = list(sig.parameters.keys())
-    assert "name" in params, "Missing parameter 'name'"
     assert "uid" in params, "Missing parameter 'uid'"
+    assert "name" in params, "Missing parameter 'name'"
 
-def test_application::applicationrealm_has_name():
-    assert hasattr(application::ApplicationRealm, "name")
+def test_application_applicationrealm_has_uid():
+    assert hasattr(application_ApplicationRealm, "uid")
     descriptor = None
-    for klass in application::ApplicationRealm.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_application::applicationrealm_has_uid():
-    assert hasattr(application::ApplicationRealm, "uid")
-    descriptor = None
-    for klass in application::ApplicationRealm.__mro__:
+    for klass in application_ApplicationRealm.__mro__:
         if "uid" in klass.__dict__:
             descriptor = klass.__dict__["uid"]
             break
     assert isinstance(descriptor, property)
 
+def test_application_applicationrealm_has_name():
+    assert hasattr(application_ApplicationRealm, "name")
+    descriptor = None
+    for klass in application_ApplicationRealm.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_application::applicationrecipe_is_not_abstract():
-    assert not inspect.isabstract(application::ApplicationRecipe)
+
+def test_application_applicationrecipe_is_not_abstract():
+    assert not inspect.isabstract(application_ApplicationRecipe)
 
 
-def test_application::applicationrecipe_constructor_exists():
-    assert callable(application::ApplicationRecipe.__init__)
+def test_application_applicationrecipe_constructor_exists():
+    assert callable(application_ApplicationRecipe.__init__)
 
 
-def test_application::applicationrecipe_constructor_args():
-    sig = inspect.signature(application::ApplicationRecipe.__init__)
+def test_application_applicationrecipe_constructor_args():
+    sig = inspect.signature(application_ApplicationRecipe.__init__)
     params = list(sig.parameters.keys())
     assert "uid" in params, "Missing parameter 'uid'"
     assert "name" in params, "Missing parameter 'name'"
 
-def test_application::applicationrecipe_has_uid():
-    assert hasattr(application::ApplicationRecipe, "uid")
+def test_application_applicationrecipe_has_uid():
+    assert hasattr(application_ApplicationRecipe, "uid")
     descriptor = None
-    for klass in application::ApplicationRecipe.__mro__:
+    for klass in application_ApplicationRecipe.__mro__:
         if "uid" in klass.__dict__:
             descriptor = klass.__dict__["uid"]
             break
     assert isinstance(descriptor, property)
 
-def test_application::applicationrecipe_has_name():
-    assert hasattr(application::ApplicationRecipe, "name")
+def test_application_applicationrecipe_has_name():
+    assert hasattr(application_ApplicationRecipe, "name")
     descriptor = None
-    for klass in application::ApplicationRecipe.__mro__:
+    for klass in application_ApplicationRecipe.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -184,95 +184,47 @@ def test_application::applicationrecipe_has_name():
 
 
 
-def test_application::form_is_not_abstract():
-    assert not inspect.isabstract(application::Form)
+def test_application_form_is_not_abstract():
+    assert not inspect.isabstract(application_Form)
 
 
-def test_application::form_constructor_exists():
-    assert callable(application::Form.__init__)
+def test_application_form_constructor_exists():
+    assert callable(application_Form.__init__)
 
 
-def test_application::form_constructor_args():
-    sig = inspect.signature(application::Form.__init__)
+def test_application_form_constructor_args():
+    sig = inspect.signature(application_Form.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_application::applicationuipackage_is_not_abstract():
-    assert not inspect.isabstract(application::ApplicationUIPackage)
+def test_application_applicationuipackage_is_not_abstract():
+    assert not inspect.isabstract(application_ApplicationUIPackage)
 
 
-def test_application::applicationuipackage_constructor_exists():
-    assert callable(application::ApplicationUIPackage.__init__)
+def test_application_applicationuipackage_constructor_exists():
+    assert callable(application_ApplicationUIPackage.__init__)
 
 
-def test_application::applicationuipackage_constructor_args():
-    sig = inspect.signature(application::ApplicationUIPackage.__init__)
-    params = list(sig.parameters.keys())
-    assert "uid" in params, "Missing parameter 'uid'"
-    assert "name" in params, "Missing parameter 'name'"
-
-def test_application::applicationuipackage_has_uid():
-    assert hasattr(application::ApplicationUIPackage, "uid")
-    descriptor = None
-    for klass in application::ApplicationUIPackage.__mro__:
-        if "uid" in klass.__dict__:
-            descriptor = klass.__dict__["uid"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_application::applicationuipackage_has_name():
-    assert hasattr(application::ApplicationUIPackage, "name")
-    descriptor = None
-    for klass in application::ApplicationUIPackage.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_application::stylelibrary_is_not_abstract():
-    assert not inspect.isabstract(application::StyleLibrary)
-
-
-def test_application::stylelibrary_constructor_exists():
-    assert callable(application::StyleLibrary.__init__)
-
-
-def test_application::stylelibrary_constructor_args():
-    sig = inspect.signature(application::StyleLibrary.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_application::applicationstyle_is_not_abstract():
-    assert not inspect.isabstract(application::ApplicationStyle)
-
-
-def test_application::applicationstyle_constructor_exists():
-    assert callable(application::ApplicationStyle.__init__)
-
-
-def test_application::applicationstyle_constructor_args():
-    sig = inspect.signature(application::ApplicationStyle.__init__)
+def test_application_applicationuipackage_constructor_args():
+    sig = inspect.signature(application_ApplicationUIPackage.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
     assert "uid" in params, "Missing parameter 'uid'"
 
-def test_application::applicationstyle_has_name():
-    assert hasattr(application::ApplicationStyle, "name")
+def test_application_applicationuipackage_has_name():
+    assert hasattr(application_ApplicationUIPackage, "name")
     descriptor = None
-    for klass in application::ApplicationStyle.__mro__:
+    for klass in application_ApplicationUIPackage.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
-def test_application::applicationstyle_has_uid():
-    assert hasattr(application::ApplicationStyle, "uid")
+def test_application_applicationuipackage_has_uid():
+    assert hasattr(application_ApplicationUIPackage, "uid")
     descriptor = None
-    for klass in application::ApplicationStyle.__mro__:
+    for klass in application_ApplicationUIPackage.__mro__:
         if "uid" in klass.__dict__:
             descriptor = klass.__dict__["uid"]
             break
@@ -280,47 +232,47 @@ def test_application::applicationstyle_has_uid():
 
 
 
-def test_application::roles_is_not_abstract():
-    assert not inspect.isabstract(application::Roles)
+def test_application_stylelibrary_is_not_abstract():
+    assert not inspect.isabstract(application_StyleLibrary)
 
 
-def test_application::roles_constructor_exists():
-    assert callable(application::Roles.__init__)
+def test_application_stylelibrary_constructor_exists():
+    assert callable(application_StyleLibrary.__init__)
 
 
-def test_application::roles_constructor_args():
-    sig = inspect.signature(application::Roles.__init__)
+def test_application_stylelibrary_constructor_args():
+    sig = inspect.signature(application_StyleLibrary.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_application::applicationstylelibraries_is_not_abstract():
-    assert not inspect.isabstract(application::ApplicationStyleLibraries)
+def test_application_applicationstyle_is_not_abstract():
+    assert not inspect.isabstract(application_ApplicationStyle)
 
 
-def test_application::applicationstylelibraries_constructor_exists():
-    assert callable(application::ApplicationStyleLibraries.__init__)
+def test_application_applicationstyle_constructor_exists():
+    assert callable(application_ApplicationStyle.__init__)
 
 
-def test_application::applicationstylelibraries_constructor_args():
-    sig = inspect.signature(application::ApplicationStyleLibraries.__init__)
+def test_application_applicationstyle_constructor_args():
+    sig = inspect.signature(application_ApplicationStyle.__init__)
     params = list(sig.parameters.keys())
     assert "uid" in params, "Missing parameter 'uid'"
     assert "name" in params, "Missing parameter 'name'"
 
-def test_application::applicationstylelibraries_has_uid():
-    assert hasattr(application::ApplicationStyleLibraries, "uid")
+def test_application_applicationstyle_has_uid():
+    assert hasattr(application_ApplicationStyle, "uid")
     descriptor = None
-    for klass in application::ApplicationStyleLibraries.__mro__:
+    for klass in application_ApplicationStyle.__mro__:
         if "uid" in klass.__dict__:
             descriptor = klass.__dict__["uid"]
             break
     assert isinstance(descriptor, property)
 
-def test_application::applicationstylelibraries_has_name():
-    assert hasattr(application::ApplicationStyleLibraries, "name")
+def test_application_applicationstyle_has_name():
+    assert hasattr(application_ApplicationStyle, "name")
     descriptor = None
-    for klass in application::ApplicationStyleLibraries.__mro__:
+    for klass in application_ApplicationStyle.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -328,67 +280,47 @@ def test_application::applicationstylelibraries_has_name():
 
 
 
-def test_application::applicationinfrastructurelayers_is_not_abstract():
-    assert not inspect.isabstract(application::ApplicationInfrastructureLayers)
+def test_application_roles_is_not_abstract():
+    assert not inspect.isabstract(application_Roles)
 
 
-def test_application::applicationinfrastructurelayers_constructor_exists():
-    assert callable(application::ApplicationInfrastructureLayers.__init__)
+def test_application_roles_constructor_exists():
+    assert callable(application_Roles.__init__)
 
 
-def test_application::applicationinfrastructurelayers_constructor_args():
-    sig = inspect.signature(application::ApplicationInfrastructureLayers.__init__)
+def test_application_roles_constructor_args():
+    sig = inspect.signature(application_Roles.__init__)
     params = list(sig.parameters.keys())
-    assert "uid" in params, "Missing parameter 'uid'"
-    assert "name" in params, "Missing parameter 'name'"
-
-def test_application::applicationinfrastructurelayers_has_uid():
-    assert hasattr(application::ApplicationInfrastructureLayers, "uid")
-    descriptor = None
-    for klass in application::ApplicationInfrastructureLayers.__mro__:
-        if "uid" in klass.__dict__:
-            descriptor = klass.__dict__["uid"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_application::applicationinfrastructurelayers_has_name():
-    assert hasattr(application::ApplicationInfrastructureLayers, "name")
-    descriptor = None
-    for klass in application::ApplicationInfrastructureLayers.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
 
 
 
-def test_application::applicationuilayer_is_not_abstract():
-    assert not inspect.isabstract(application::ApplicationUILayer)
+def test_application_applicationstylelibraries_is_not_abstract():
+    assert not inspect.isabstract(application_ApplicationStyleLibraries)
 
 
-def test_application::applicationuilayer_constructor_exists():
-    assert callable(application::ApplicationUILayer.__init__)
+def test_application_applicationstylelibraries_constructor_exists():
+    assert callable(application_ApplicationStyleLibraries.__init__)
 
 
-def test_application::applicationuilayer_constructor_args():
-    sig = inspect.signature(application::ApplicationUILayer.__init__)
+def test_application_applicationstylelibraries_constructor_args():
+    sig = inspect.signature(application_ApplicationStyleLibraries.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
     assert "uid" in params, "Missing parameter 'uid'"
 
-def test_application::applicationuilayer_has_name():
-    assert hasattr(application::ApplicationUILayer, "name")
+def test_application_applicationstylelibraries_has_name():
+    assert hasattr(application_ApplicationStyleLibraries, "name")
     descriptor = None
-    for klass in application::ApplicationUILayer.__mro__:
+    for klass in application_ApplicationStyleLibraries.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
-def test_application::applicationuilayer_has_uid():
-    assert hasattr(application::ApplicationUILayer, "uid")
+def test_application_applicationstylelibraries_has_uid():
+    assert hasattr(application_ApplicationStyleLibraries, "uid")
     descriptor = None
-    for klass in application::ApplicationUILayer.__mro__:
+    for klass in application_ApplicationStyleLibraries.__mro__:
         if "uid" in klass.__dict__:
             descriptor = klass.__dict__["uid"]
             break
@@ -396,61 +328,33 @@ def test_application::applicationuilayer_has_uid():
 
 
 
-def test_application::messagelibrary_is_not_abstract():
-    assert not inspect.isabstract(application::MessageLibrary)
+def test_application_applicationinfrastructurelayers_is_not_abstract():
+    assert not inspect.isabstract(application_ApplicationInfrastructureLayers)
 
 
-def test_application::messagelibrary_constructor_exists():
-    assert callable(application::MessageLibrary.__init__)
+def test_application_applicationinfrastructurelayers_constructor_exists():
+    assert callable(application_ApplicationInfrastructureLayers.__init__)
 
 
-def test_application::messagelibrary_constructor_args():
-    sig = inspect.signature(application::MessageLibrary.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_application::language_is_not_abstract():
-    assert not inspect.isabstract(application::Language)
-
-
-def test_application::language_constructor_exists():
-    assert callable(application::Language.__init__)
-
-
-def test_application::language_constructor_args():
-    sig = inspect.signature(application::Language.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_application::applicationlanguages_is_not_abstract():
-    assert not inspect.isabstract(application::ApplicationLanguages)
-
-
-def test_application::applicationlanguages_constructor_exists():
-    assert callable(application::ApplicationLanguages.__init__)
-
-
-def test_application::applicationlanguages_constructor_args():
-    sig = inspect.signature(application::ApplicationLanguages.__init__)
+def test_application_applicationinfrastructurelayers_constructor_args():
+    sig = inspect.signature(application_ApplicationInfrastructureLayers.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
     assert "uid" in params, "Missing parameter 'uid'"
 
-def test_application::applicationlanguages_has_name():
-    assert hasattr(application::ApplicationLanguages, "name")
+def test_application_applicationinfrastructurelayers_has_name():
+    assert hasattr(application_ApplicationInfrastructureLayers, "name")
     descriptor = None
-    for klass in application::ApplicationLanguages.__mro__:
+    for klass in application_ApplicationInfrastructureLayers.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
-def test_application::applicationlanguages_has_uid():
-    assert hasattr(application::ApplicationLanguages, "uid")
+def test_application_applicationinfrastructurelayers_has_uid():
+    assert hasattr(application_ApplicationInfrastructureLayers, "uid")
     descriptor = None
-    for klass in application::ApplicationLanguages.__mro__:
+    for klass in application_ApplicationInfrastructureLayers.__mro__:
         if "uid" in klass.__dict__:
             descriptor = klass.__dict__["uid"]
             break
@@ -458,33 +362,95 @@ def test_application::applicationlanguages_has_uid():
 
 
 
-def test_application::applicationmessagelibrary_is_not_abstract():
-    assert not inspect.isabstract(application::ApplicationMessageLibrary)
+def test_application_applicationuilayer_is_not_abstract():
+    assert not inspect.isabstract(application_ApplicationUILayer)
 
 
-def test_application::applicationmessagelibrary_constructor_exists():
-    assert callable(application::ApplicationMessageLibrary.__init__)
+def test_application_applicationuilayer_constructor_exists():
+    assert callable(application_ApplicationUILayer.__init__)
 
 
-def test_application::applicationmessagelibrary_constructor_args():
-    sig = inspect.signature(application::ApplicationMessageLibrary.__init__)
+def test_application_applicationuilayer_constructor_args():
+    sig = inspect.signature(application_ApplicationUILayer.__init__)
     params = list(sig.parameters.keys())
-    assert "name" in params, "Missing parameter 'name'"
     assert "uid" in params, "Missing parameter 'uid'"
+    assert "name" in params, "Missing parameter 'name'"
 
-def test_application::applicationmessagelibrary_has_name():
-    assert hasattr(application::ApplicationMessageLibrary, "name")
+def test_application_applicationuilayer_has_uid():
+    assert hasattr(application_ApplicationUILayer, "uid")
     descriptor = None
-    for klass in application::ApplicationMessageLibrary.__mro__:
+    for klass in application_ApplicationUILayer.__mro__:
+        if "uid" in klass.__dict__:
+            descriptor = klass.__dict__["uid"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_application_applicationuilayer_has_name():
+    assert hasattr(application_ApplicationUILayer, "name")
+    descriptor = None
+    for klass in application_ApplicationUILayer.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
-def test_application::applicationmessagelibrary_has_uid():
-    assert hasattr(application::ApplicationMessageLibrary, "uid")
+
+
+def test_application_messagelibrary_is_not_abstract():
+    assert not inspect.isabstract(application_MessageLibrary)
+
+
+def test_application_messagelibrary_constructor_exists():
+    assert callable(application_MessageLibrary.__init__)
+
+
+def test_application_messagelibrary_constructor_args():
+    sig = inspect.signature(application_MessageLibrary.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_application_language_is_not_abstract():
+    assert not inspect.isabstract(application_Language)
+
+
+def test_application_language_constructor_exists():
+    assert callable(application_Language.__init__)
+
+
+def test_application_language_constructor_args():
+    sig = inspect.signature(application_Language.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_application_applicationlanguages_is_not_abstract():
+    assert not inspect.isabstract(application_ApplicationLanguages)
+
+
+def test_application_applicationlanguages_constructor_exists():
+    assert callable(application_ApplicationLanguages.__init__)
+
+
+def test_application_applicationlanguages_constructor_args():
+    sig = inspect.signature(application_ApplicationLanguages.__init__)
+    params = list(sig.parameters.keys())
+    assert "name" in params, "Missing parameter 'name'"
+    assert "uid" in params, "Missing parameter 'uid'"
+
+def test_application_applicationlanguages_has_name():
+    assert hasattr(application_ApplicationLanguages, "name")
     descriptor = None
-    for klass in application::ApplicationMessageLibrary.__mro__:
+    for klass in application_ApplicationLanguages.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_application_applicationlanguages_has_uid():
+    assert hasattr(application_ApplicationLanguages, "uid")
+    descriptor = None
+    for klass in application_ApplicationLanguages.__mro__:
         if "uid" in klass.__dict__:
             descriptor = klass.__dict__["uid"]
             break
@@ -492,47 +458,81 @@ def test_application::applicationmessagelibrary_has_uid():
 
 
 
-def test_application::enterpriseinfrastructure_is_not_abstract():
-    assert not inspect.isabstract(application::EnterpriseInfrastructure)
+def test_application_applicationmessagelibrary_is_not_abstract():
+    assert not inspect.isabstract(application_ApplicationMessageLibrary)
 
 
-def test_application::enterpriseinfrastructure_constructor_exists():
-    assert callable(application::EnterpriseInfrastructure.__init__)
+def test_application_applicationmessagelibrary_constructor_exists():
+    assert callable(application_ApplicationMessageLibrary.__init__)
 
 
-def test_application::enterpriseinfrastructure_constructor_args():
-    sig = inspect.signature(application::EnterpriseInfrastructure.__init__)
+def test_application_applicationmessagelibrary_constructor_args():
+    sig = inspect.signature(application_ApplicationMessageLibrary.__init__)
     params = list(sig.parameters.keys())
-
-
-
-def test_application::applicationinfrastructurelayer_is_not_abstract():
-    assert not inspect.isabstract(application::ApplicationInfrastructureLayer)
-
-
-def test_application::applicationinfrastructurelayer_constructor_exists():
-    assert callable(application::ApplicationInfrastructureLayer.__init__)
-
-
-def test_application::applicationinfrastructurelayer_constructor_args():
-    sig = inspect.signature(application::ApplicationInfrastructureLayer.__init__)
-    params = list(sig.parameters.keys())
-    assert "name" in params, "Missing parameter 'name'"
     assert "uid" in params, "Missing parameter 'uid'"
+    assert "name" in params, "Missing parameter 'name'"
 
-def test_application::applicationinfrastructurelayer_has_name():
-    assert hasattr(application::ApplicationInfrastructureLayer, "name")
+def test_application_applicationmessagelibrary_has_uid():
+    assert hasattr(application_ApplicationMessageLibrary, "uid")
     descriptor = None
-    for klass in application::ApplicationInfrastructureLayer.__mro__:
+    for klass in application_ApplicationMessageLibrary.__mro__:
+        if "uid" in klass.__dict__:
+            descriptor = klass.__dict__["uid"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_application_applicationmessagelibrary_has_name():
+    assert hasattr(application_ApplicationMessageLibrary, "name")
+    descriptor = None
+    for klass in application_ApplicationMessageLibrary.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
-def test_application::applicationinfrastructurelayer_has_uid():
-    assert hasattr(application::ApplicationInfrastructureLayer, "uid")
+
+
+def test_application_enterpriseinfrastructure_is_not_abstract():
+    assert not inspect.isabstract(application_EnterpriseInfrastructure)
+
+
+def test_application_enterpriseinfrastructure_constructor_exists():
+    assert callable(application_EnterpriseInfrastructure.__init__)
+
+
+def test_application_enterpriseinfrastructure_constructor_args():
+    sig = inspect.signature(application_EnterpriseInfrastructure.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_application_applicationinfrastructurelayer_is_not_abstract():
+    assert not inspect.isabstract(application_ApplicationInfrastructureLayer)
+
+
+def test_application_applicationinfrastructurelayer_constructor_exists():
+    assert callable(application_ApplicationInfrastructureLayer.__init__)
+
+
+def test_application_applicationinfrastructurelayer_constructor_args():
+    sig = inspect.signature(application_ApplicationInfrastructureLayer.__init__)
+    params = list(sig.parameters.keys())
+    assert "name" in params, "Missing parameter 'name'"
+    assert "uid" in params, "Missing parameter 'uid'"
+
+def test_application_applicationinfrastructurelayer_has_name():
+    assert hasattr(application_ApplicationInfrastructureLayer, "name")
     descriptor = None
-    for klass in application::ApplicationInfrastructureLayer.__mro__:
+    for klass in application_ApplicationInfrastructureLayer.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_application_applicationinfrastructurelayer_has_uid():
+    assert hasattr(application_ApplicationInfrastructureLayer, "uid")
+    descriptor = None
+    for klass in application_ApplicationInfrastructureLayer.__mro__:
         if "uid" in klass.__dict__:
             descriptor = klass.__dict__["uid"]
             break
@@ -540,67 +540,33 @@ def test_application::applicationinfrastructurelayer_has_uid():
 
 
 
-def test_application::applicationmessagelibraries_is_not_abstract():
-    assert not inspect.isabstract(application::ApplicationMessageLibraries)
+def test_application_applicationmessagelibraries_is_not_abstract():
+    assert not inspect.isabstract(application_ApplicationMessageLibraries)
 
 
-def test_application::applicationmessagelibraries_constructor_exists():
-    assert callable(application::ApplicationMessageLibraries.__init__)
+def test_application_applicationmessagelibraries_constructor_exists():
+    assert callable(application_ApplicationMessageLibraries.__init__)
 
 
-def test_application::applicationmessagelibraries_constructor_args():
-    sig = inspect.signature(application::ApplicationMessageLibraries.__init__)
+def test_application_applicationmessagelibraries_constructor_args():
+    sig = inspect.signature(application_ApplicationMessageLibraries.__init__)
     params = list(sig.parameters.keys())
-    assert "uid" in params, "Missing parameter 'uid'"
     assert "name" in params, "Missing parameter 'name'"
+    assert "uid" in params, "Missing parameter 'uid'"
 
-def test_application::applicationmessagelibraries_has_uid():
-    assert hasattr(application::ApplicationMessageLibraries, "uid")
+def test_application_applicationmessagelibraries_has_name():
+    assert hasattr(application_ApplicationMessageLibraries, "name")
     descriptor = None
-    for klass in application::ApplicationMessageLibraries.__mro__:
-        if "uid" in klass.__dict__:
-            descriptor = klass.__dict__["uid"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_application::applicationmessagelibraries_has_name():
-    assert hasattr(application::ApplicationMessageLibraries, "name")
-    descriptor = None
-    for klass in application::ApplicationMessageLibraries.__mro__:
+    for klass in application_ApplicationMessageLibraries.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
-
-
-def test_application::applicationrealms_is_not_abstract():
-    assert not inspect.isabstract(application::ApplicationRealms)
-
-
-def test_application::applicationrealms_constructor_exists():
-    assert callable(application::ApplicationRealms.__init__)
-
-
-def test_application::applicationrealms_constructor_args():
-    sig = inspect.signature(application::ApplicationRealms.__init__)
-    params = list(sig.parameters.keys())
-    assert "name" in params, "Missing parameter 'name'"
-    assert "uid" in params, "Missing parameter 'uid'"
-
-def test_application::applicationrealms_has_name():
-    assert hasattr(application::ApplicationRealms, "name")
+def test_application_applicationmessagelibraries_has_uid():
+    assert hasattr(application_ApplicationMessageLibraries, "uid")
     descriptor = None
-    for klass in application::ApplicationRealms.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_application::applicationrealms_has_uid():
-    assert hasattr(application::ApplicationRealms, "uid")
-    descriptor = None
-    for klass in application::ApplicationRealms.__mro__:
+    for klass in application_ApplicationMessageLibraries.__mro__:
         if "uid" in klass.__dict__:
             descriptor = klass.__dict__["uid"]
             break
@@ -608,33 +574,67 @@ def test_application::applicationrealms_has_uid():
 
 
 
-def test_application::applicationmappers_is_not_abstract():
-    assert not inspect.isabstract(application::ApplicationMappers)
+def test_application_applicationrealms_is_not_abstract():
+    assert not inspect.isabstract(application_ApplicationRealms)
 
 
-def test_application::applicationmappers_constructor_exists():
-    assert callable(application::ApplicationMappers.__init__)
+def test_application_applicationrealms_constructor_exists():
+    assert callable(application_ApplicationRealms.__init__)
 
 
-def test_application::applicationmappers_constructor_args():
-    sig = inspect.signature(application::ApplicationMappers.__init__)
+def test_application_applicationrealms_constructor_args():
+    sig = inspect.signature(application_ApplicationRealms.__init__)
     params = list(sig.parameters.keys())
-    assert "name" in params, "Missing parameter 'name'"
     assert "uid" in params, "Missing parameter 'uid'"
+    assert "name" in params, "Missing parameter 'name'"
 
-def test_application::applicationmappers_has_name():
-    assert hasattr(application::ApplicationMappers, "name")
+def test_application_applicationrealms_has_uid():
+    assert hasattr(application_ApplicationRealms, "uid")
     descriptor = None
-    for klass in application::ApplicationMappers.__mro__:
+    for klass in application_ApplicationRealms.__mro__:
+        if "uid" in klass.__dict__:
+            descriptor = klass.__dict__["uid"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_application_applicationrealms_has_name():
+    assert hasattr(application_ApplicationRealms, "name")
+    descriptor = None
+    for klass in application_ApplicationRealms.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
-def test_application::applicationmappers_has_uid():
-    assert hasattr(application::ApplicationMappers, "uid")
+
+
+def test_application_applicationmappers_is_not_abstract():
+    assert not inspect.isabstract(application_ApplicationMappers)
+
+
+def test_application_applicationmappers_constructor_exists():
+    assert callable(application_ApplicationMappers.__init__)
+
+
+def test_application_applicationmappers_constructor_args():
+    sig = inspect.signature(application_ApplicationMappers.__init__)
+    params = list(sig.parameters.keys())
+    assert "name" in params, "Missing parameter 'name'"
+    assert "uid" in params, "Missing parameter 'uid'"
+
+def test_application_applicationmappers_has_name():
+    assert hasattr(application_ApplicationMappers, "name")
     descriptor = None
-    for klass in application::ApplicationMappers.__mro__:
+    for klass in application_ApplicationMappers.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_application_applicationmappers_has_uid():
+    assert hasattr(application_ApplicationMappers, "uid")
+    descriptor = None
+    for klass in application_ApplicationMappers.__mro__:
         if "uid" in klass.__dict__:
             descriptor = klass.__dict__["uid"]
             break
@@ -642,67 +642,33 @@ def test_application::applicationmappers_has_uid():
 
 
 
-def test_application::applicationrecipes_is_not_abstract():
-    assert not inspect.isabstract(application::ApplicationRecipes)
+def test_application_applicationrecipes_is_not_abstract():
+    assert not inspect.isabstract(application_ApplicationRecipes)
 
 
-def test_application::applicationrecipes_constructor_exists():
-    assert callable(application::ApplicationRecipes.__init__)
+def test_application_applicationrecipes_constructor_exists():
+    assert callable(application_ApplicationRecipes.__init__)
 
 
-def test_application::applicationrecipes_constructor_args():
-    sig = inspect.signature(application::ApplicationRecipes.__init__)
+def test_application_applicationrecipes_constructor_args():
+    sig = inspect.signature(application_ApplicationRecipes.__init__)
     params = list(sig.parameters.keys())
-    assert "uid" in params, "Missing parameter 'uid'"
     assert "name" in params, "Missing parameter 'name'"
+    assert "uid" in params, "Missing parameter 'uid'"
 
-def test_application::applicationrecipes_has_uid():
-    assert hasattr(application::ApplicationRecipes, "uid")
+def test_application_applicationrecipes_has_name():
+    assert hasattr(application_ApplicationRecipes, "name")
     descriptor = None
-    for klass in application::ApplicationRecipes.__mro__:
-        if "uid" in klass.__dict__:
-            descriptor = klass.__dict__["uid"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_application::applicationrecipes_has_name():
-    assert hasattr(application::ApplicationRecipes, "name")
-    descriptor = None
-    for klass in application::ApplicationRecipes.__mro__:
+    for klass in application_ApplicationRecipes.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
-
-
-def test_application::application_is_not_abstract():
-    assert not inspect.isabstract(application::Application)
-
-
-def test_application::application_constructor_exists():
-    assert callable(application::Application.__init__)
-
-
-def test_application::application_constructor_args():
-    sig = inspect.signature(application::Application.__init__)
-    params = list(sig.parameters.keys())
-    assert "name" in params, "Missing parameter 'name'"
-    assert "uid" in params, "Missing parameter 'uid'"
-
-def test_application::application_has_name():
-    assert hasattr(application::Application, "name")
+def test_application_applicationrecipes_has_uid():
+    assert hasattr(application_ApplicationRecipes, "uid")
     descriptor = None
-    for klass in application::Application.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_application::application_has_uid():
-    assert hasattr(application::Application, "uid")
-    descriptor = None
-    for klass in application::Application.__mro__:
+    for klass in application_ApplicationRecipes.__mro__:
         if "uid" in klass.__dict__:
             descriptor = klass.__dict__["uid"]
             break
@@ -710,33 +676,67 @@ def test_application::application_has_uid():
 
 
 
-def test_application::applicationgroup_is_not_abstract():
-    assert not inspect.isabstract(application::ApplicationGroup)
+def test_application_application_is_not_abstract():
+    assert not inspect.isabstract(application_Application)
 
 
-def test_application::applicationgroup_constructor_exists():
-    assert callable(application::ApplicationGroup.__init__)
+def test_application_application_constructor_exists():
+    assert callable(application_Application.__init__)
 
 
-def test_application::applicationgroup_constructor_args():
-    sig = inspect.signature(application::ApplicationGroup.__init__)
+def test_application_application_constructor_args():
+    sig = inspect.signature(application_Application.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
     assert "uid" in params, "Missing parameter 'uid'"
 
-def test_application::applicationgroup_has_name():
-    assert hasattr(application::ApplicationGroup, "name")
+def test_application_application_has_name():
+    assert hasattr(application_Application, "name")
     descriptor = None
-    for klass in application::ApplicationGroup.__mro__:
+    for klass in application_Application.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
-def test_application::applicationgroup_has_uid():
-    assert hasattr(application::ApplicationGroup, "uid")
+def test_application_application_has_uid():
+    assert hasattr(application_Application, "uid")
     descriptor = None
-    for klass in application::ApplicationGroup.__mro__:
+    for klass in application_Application.__mro__:
+        if "uid" in klass.__dict__:
+            descriptor = klass.__dict__["uid"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_application_applicationgroup_is_not_abstract():
+    assert not inspect.isabstract(application_ApplicationGroup)
+
+
+def test_application_applicationgroup_constructor_exists():
+    assert callable(application_ApplicationGroup.__init__)
+
+
+def test_application_applicationgroup_constructor_args():
+    sig = inspect.signature(application_ApplicationGroup.__init__)
+    params = list(sig.parameters.keys())
+    assert "name" in params, "Missing parameter 'name'"
+    assert "uid" in params, "Missing parameter 'uid'"
+
+def test_application_applicationgroup_has_name():
+    assert hasattr(application_ApplicationGroup, "name")
+    descriptor = None
+    for klass in application_ApplicationGroup.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_application_applicationgroup_has_uid():
+    assert hasattr(application_ApplicationGroup, "uid")
+    descriptor = None
+    for klass in application_ApplicationGroup.__mro__:
         if "uid" in klass.__dict__:
             descriptor = klass.__dict__["uid"]
             break
@@ -754,653 +754,551 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-application::Recipes_strategy = st.builds(
-    application::Recipes,
+application_Recipes_strategy = st.builds(
+    application_Recipes,
 )
-application::Mappers_strategy = st.builds(
-    application::Mappers,
+application_Mappers_strategy = st.builds(
+    application_Mappers,
 )
-application::MappingLayer_strategy = st.builds(
-    application::MappingLayer,
+application_MappingLayer_strategy = st.builds(
+    application_MappingLayer,
 )
-application::ApplicationMapper_strategy = st.builds(
-    application::ApplicationMapper,
+application_ApplicationMapper_strategy = st.builds(
+    application_ApplicationMapper,
     uid=
         safe_text,
     name=
         safe_text
 )
-application::ApplicationRealm_strategy = st.builds(
-    application::ApplicationRealm,
-    name=
-        safe_text,
-    uid=
-        safe_text
-)
-application::ApplicationRecipe_strategy = st.builds(
-    application::ApplicationRecipe,
+application_ApplicationRealm_strategy = st.builds(
+    application_ApplicationRealm,
     uid=
         safe_text,
     name=
         safe_text
 )
-application::Form_strategy = st.builds(
-    application::Form,
-)
-application::ApplicationUIPackage_strategy = st.builds(
-    application::ApplicationUIPackage,
+application_ApplicationRecipe_strategy = st.builds(
+    application_ApplicationRecipe,
     uid=
         safe_text,
     name=
         safe_text
 )
-application::StyleLibrary_strategy = st.builds(
-    application::StyleLibrary,
+application_Form_strategy = st.builds(
+    application_Form,
 )
-application::ApplicationStyle_strategy = st.builds(
-    application::ApplicationStyle,
+application_ApplicationUIPackage_strategy = st.builds(
+    application_ApplicationUIPackage,
     name=
         safe_text,
     uid=
         safe_text
 )
-application::Roles_strategy = st.builds(
-    application::Roles,
+application_StyleLibrary_strategy = st.builds(
+    application_StyleLibrary,
 )
-application::ApplicationStyleLibraries_strategy = st.builds(
-    application::ApplicationStyleLibraries,
+application_ApplicationStyle_strategy = st.builds(
+    application_ApplicationStyle,
     uid=
         safe_text,
     name=
         safe_text
 )
-application::ApplicationInfrastructureLayers_strategy = st.builds(
-    application::ApplicationInfrastructureLayers,
-    uid=
-        safe_text,
-    name=
-        safe_text
+application_Roles_strategy = st.builds(
+    application_Roles,
 )
-application::ApplicationUILayer_strategy = st.builds(
-    application::ApplicationUILayer,
+application_ApplicationStyleLibraries_strategy = st.builds(
+    application_ApplicationStyleLibraries,
     name=
         safe_text,
     uid=
         safe_text
 )
-application::MessageLibrary_strategy = st.builds(
-    application::MessageLibrary,
-)
-application::Language_strategy = st.builds(
-    application::Language,
-)
-application::ApplicationLanguages_strategy = st.builds(
-    application::ApplicationLanguages,
+application_ApplicationInfrastructureLayers_strategy = st.builds(
+    application_ApplicationInfrastructureLayers,
     name=
         safe_text,
     uid=
         safe_text
 )
-application::ApplicationMessageLibrary_strategy = st.builds(
-    application::ApplicationMessageLibrary,
-    name=
-        safe_text,
-    uid=
-        safe_text
-)
-application::EnterpriseInfrastructure_strategy = st.builds(
-    application::EnterpriseInfrastructure,
-)
-application::ApplicationInfrastructureLayer_strategy = st.builds(
-    application::ApplicationInfrastructureLayer,
-    name=
-        safe_text,
-    uid=
-        safe_text
-)
-application::ApplicationMessageLibraries_strategy = st.builds(
-    application::ApplicationMessageLibraries,
+application_ApplicationUILayer_strategy = st.builds(
+    application_ApplicationUILayer,
     uid=
         safe_text,
     name=
         safe_text
 )
-application::ApplicationRealms_strategy = st.builds(
-    application::ApplicationRealms,
+application_MessageLibrary_strategy = st.builds(
+    application_MessageLibrary,
+)
+application_Language_strategy = st.builds(
+    application_Language,
+)
+application_ApplicationLanguages_strategy = st.builds(
+    application_ApplicationLanguages,
     name=
         safe_text,
     uid=
         safe_text
 )
-application::ApplicationMappers_strategy = st.builds(
-    application::ApplicationMappers,
-    name=
-        safe_text,
-    uid=
-        safe_text
-)
-application::ApplicationRecipes_strategy = st.builds(
-    application::ApplicationRecipes,
+application_ApplicationMessageLibrary_strategy = st.builds(
+    application_ApplicationMessageLibrary,
     uid=
         safe_text,
     name=
         safe_text
 )
-application::Application_strategy = st.builds(
-    application::Application,
+application_EnterpriseInfrastructure_strategy = st.builds(
+    application_EnterpriseInfrastructure,
+)
+application_ApplicationInfrastructureLayer_strategy = st.builds(
+    application_ApplicationInfrastructureLayer,
     name=
         safe_text,
     uid=
         safe_text
 )
-application::ApplicationGroup_strategy = st.builds(
-    application::ApplicationGroup,
+application_ApplicationMessageLibraries_strategy = st.builds(
+    application_ApplicationMessageLibraries,
+    name=
+        safe_text,
+    uid=
+        safe_text
+)
+application_ApplicationRealms_strategy = st.builds(
+    application_ApplicationRealms,
+    uid=
+        safe_text,
+    name=
+        safe_text
+)
+application_ApplicationMappers_strategy = st.builds(
+    application_ApplicationMappers,
+    name=
+        safe_text,
+    uid=
+        safe_text
+)
+application_ApplicationRecipes_strategy = st.builds(
+    application_ApplicationRecipes,
+    name=
+        safe_text,
+    uid=
+        safe_text
+)
+application_Application_strategy = st.builds(
+    application_Application,
+    name=
+        safe_text,
+    uid=
+        safe_text
+)
+application_ApplicationGroup_strategy = st.builds(
+    application_ApplicationGroup,
     name=
         safe_text,
     uid=
         safe_text
 )
 
-@given(instance=application::Recipes_strategy)
+@given(instance=application_Recipes_strategy)
 @settings(max_examples=50)
-def test_application::recipes_instantiation(instance):
-    assert isinstance(instance, application::Recipes)
+def test_application_recipes_instantiation(instance):
+    assert isinstance(instance, application_Recipes)
 
-@given(instance=application::Mappers_strategy)
+@given(instance=application_Mappers_strategy)
 @settings(max_examples=50)
-def test_application::mappers_instantiation(instance):
-    assert isinstance(instance, application::Mappers)
+def test_application_mappers_instantiation(instance):
+    assert isinstance(instance, application_Mappers)
 
-@given(instance=application::MappingLayer_strategy)
+@given(instance=application_MappingLayer_strategy)
 @settings(max_examples=50)
-def test_application::mappinglayer_instantiation(instance):
-    assert isinstance(instance, application::MappingLayer)
+def test_application_mappinglayer_instantiation(instance):
+    assert isinstance(instance, application_MappingLayer)
 
-@given(instance=application::ApplicationMapper_strategy)
+@given(instance=application_ApplicationMapper_strategy)
 @settings(max_examples=50)
-def test_application::applicationmapper_instantiation(instance):
-    assert isinstance(instance, application::ApplicationMapper)
-
-@given(instance=application::ApplicationMapper_strategy)
-def test_application::applicationmapper_uid_type(instance):
-    assert isinstance(instance.uid, str)
+def test_application_applicationmapper_instantiation(instance):
+    assert isinstance(instance, application_ApplicationMapper)
 
 
-@given(instance=application::ApplicationMapper_strategy)
-def test_application::applicationmapper_uid_setter(instance):
+
+@given(instance=application_ApplicationMapper_strategy)
+def test_application_applicationmapper_uid_setter(instance):
     original = instance.uid
     instance.uid = original
     assert instance.uid == original
 
-@given(instance=application::ApplicationMapper_strategy)
-def test_application::applicationmapper_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
-@given(instance=application::ApplicationMapper_strategy)
-def test_application::applicationmapper_name_setter(instance):
+@given(instance=application_ApplicationMapper_strategy)
+def test_application_applicationmapper_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=application::ApplicationRealm_strategy)
+@given(instance=application_ApplicationRealm_strategy)
 @settings(max_examples=50)
-def test_application::applicationrealm_instantiation(instance):
-    assert isinstance(instance, application::ApplicationRealm)
-
-@given(instance=application::ApplicationRealm_strategy)
-def test_application::applicationrealm_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_application_applicationrealm_instantiation(instance):
+    assert isinstance(instance, application_ApplicationRealm)
 
 
-@given(instance=application::ApplicationRealm_strategy)
-def test_application::applicationrealm_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
 
-@given(instance=application::ApplicationRealm_strategy)
-def test_application::applicationrealm_uid_type(instance):
-    assert isinstance(instance.uid, str)
-
-
-@given(instance=application::ApplicationRealm_strategy)
-def test_application::applicationrealm_uid_setter(instance):
+@given(instance=application_ApplicationRealm_strategy)
+def test_application_applicationrealm_uid_setter(instance):
     original = instance.uid
     instance.uid = original
     assert instance.uid == original
 
-@given(instance=application::ApplicationRecipe_strategy)
+
+
+@given(instance=application_ApplicationRealm_strategy)
+def test_application_applicationrealm_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+@given(instance=application_ApplicationRecipe_strategy)
 @settings(max_examples=50)
-def test_application::applicationrecipe_instantiation(instance):
-    assert isinstance(instance, application::ApplicationRecipe)
-
-@given(instance=application::ApplicationRecipe_strategy)
-def test_application::applicationrecipe_uid_type(instance):
-    assert isinstance(instance.uid, str)
+def test_application_applicationrecipe_instantiation(instance):
+    assert isinstance(instance, application_ApplicationRecipe)
 
 
-@given(instance=application::ApplicationRecipe_strategy)
-def test_application::applicationrecipe_uid_setter(instance):
+
+@given(instance=application_ApplicationRecipe_strategy)
+def test_application_applicationrecipe_uid_setter(instance):
     original = instance.uid
     instance.uid = original
     assert instance.uid == original
 
-@given(instance=application::ApplicationRecipe_strategy)
-def test_application::applicationrecipe_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
-@given(instance=application::ApplicationRecipe_strategy)
-def test_application::applicationrecipe_name_setter(instance):
+@given(instance=application_ApplicationRecipe_strategy)
+def test_application_applicationrecipe_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=application::Form_strategy)
+@given(instance=application_Form_strategy)
 @settings(max_examples=50)
-def test_application::form_instantiation(instance):
-    assert isinstance(instance, application::Form)
+def test_application_form_instantiation(instance):
+    assert isinstance(instance, application_Form)
 
-@given(instance=application::ApplicationUIPackage_strategy)
+@given(instance=application_ApplicationUIPackage_strategy)
 @settings(max_examples=50)
-def test_application::applicationuipackage_instantiation(instance):
-    assert isinstance(instance, application::ApplicationUIPackage)
-
-@given(instance=application::ApplicationUIPackage_strategy)
-def test_application::applicationuipackage_uid_type(instance):
-    assert isinstance(instance.uid, str)
+def test_application_applicationuipackage_instantiation(instance):
+    assert isinstance(instance, application_ApplicationUIPackage)
 
 
-@given(instance=application::ApplicationUIPackage_strategy)
-def test_application::applicationuipackage_uid_setter(instance):
+
+@given(instance=application_ApplicationUIPackage_strategy)
+def test_application_applicationuipackage_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+
+
+@given(instance=application_ApplicationUIPackage_strategy)
+def test_application_applicationuipackage_uid_setter(instance):
     original = instance.uid
     instance.uid = original
     assert instance.uid == original
 
-@given(instance=application::ApplicationUIPackage_strategy)
-def test_application::applicationuipackage_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=application::ApplicationUIPackage_strategy)
-def test_application::applicationuipackage_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
-
-@given(instance=application::StyleLibrary_strategy)
+@given(instance=application_StyleLibrary_strategy)
 @settings(max_examples=50)
-def test_application::stylelibrary_instantiation(instance):
-    assert isinstance(instance, application::StyleLibrary)
+def test_application_stylelibrary_instantiation(instance):
+    assert isinstance(instance, application_StyleLibrary)
 
-@given(instance=application::ApplicationStyle_strategy)
+@given(instance=application_ApplicationStyle_strategy)
 @settings(max_examples=50)
-def test_application::applicationstyle_instantiation(instance):
-    assert isinstance(instance, application::ApplicationStyle)
-
-@given(instance=application::ApplicationStyle_strategy)
-def test_application::applicationstyle_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_application_applicationstyle_instantiation(instance):
+    assert isinstance(instance, application_ApplicationStyle)
 
 
-@given(instance=application::ApplicationStyle_strategy)
-def test_application::applicationstyle_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
 
-@given(instance=application::ApplicationStyle_strategy)
-def test_application::applicationstyle_uid_type(instance):
-    assert isinstance(instance.uid, str)
-
-
-@given(instance=application::ApplicationStyle_strategy)
-def test_application::applicationstyle_uid_setter(instance):
+@given(instance=application_ApplicationStyle_strategy)
+def test_application_applicationstyle_uid_setter(instance):
     original = instance.uid
     instance.uid = original
     assert instance.uid == original
 
-@given(instance=application::Roles_strategy)
+
+
+@given(instance=application_ApplicationStyle_strategy)
+def test_application_applicationstyle_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+@given(instance=application_Roles_strategy)
 @settings(max_examples=50)
-def test_application::roles_instantiation(instance):
-    assert isinstance(instance, application::Roles)
+def test_application_roles_instantiation(instance):
+    assert isinstance(instance, application_Roles)
 
-@given(instance=application::ApplicationStyleLibraries_strategy)
+@given(instance=application_ApplicationStyleLibraries_strategy)
 @settings(max_examples=50)
-def test_application::applicationstylelibraries_instantiation(instance):
-    assert isinstance(instance, application::ApplicationStyleLibraries)
-
-@given(instance=application::ApplicationStyleLibraries_strategy)
-def test_application::applicationstylelibraries_uid_type(instance):
-    assert isinstance(instance.uid, str)
+def test_application_applicationstylelibraries_instantiation(instance):
+    assert isinstance(instance, application_ApplicationStyleLibraries)
 
 
-@given(instance=application::ApplicationStyleLibraries_strategy)
-def test_application::applicationstylelibraries_uid_setter(instance):
+
+@given(instance=application_ApplicationStyleLibraries_strategy)
+def test_application_applicationstylelibraries_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+
+
+@given(instance=application_ApplicationStyleLibraries_strategy)
+def test_application_applicationstylelibraries_uid_setter(instance):
     original = instance.uid
     instance.uid = original
     assert instance.uid == original
 
-@given(instance=application::ApplicationStyleLibraries_strategy)
-def test_application::applicationstylelibraries_name_type(instance):
-    assert isinstance(instance.name, str)
+@given(instance=application_ApplicationInfrastructureLayers_strategy)
+@settings(max_examples=50)
+def test_application_applicationinfrastructurelayers_instantiation(instance):
+    assert isinstance(instance, application_ApplicationInfrastructureLayers)
 
 
-@given(instance=application::ApplicationStyleLibraries_strategy)
-def test_application::applicationstylelibraries_name_setter(instance):
+
+@given(instance=application_ApplicationInfrastructureLayers_strategy)
+def test_application_applicationinfrastructurelayers_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=application::ApplicationInfrastructureLayers_strategy)
-@settings(max_examples=50)
-def test_application::applicationinfrastructurelayers_instantiation(instance):
-    assert isinstance(instance, application::ApplicationInfrastructureLayers)
-
-@given(instance=application::ApplicationInfrastructureLayers_strategy)
-def test_application::applicationinfrastructurelayers_uid_type(instance):
-    assert isinstance(instance.uid, str)
 
 
-@given(instance=application::ApplicationInfrastructureLayers_strategy)
-def test_application::applicationinfrastructurelayers_uid_setter(instance):
+@given(instance=application_ApplicationInfrastructureLayers_strategy)
+def test_application_applicationinfrastructurelayers_uid_setter(instance):
     original = instance.uid
     instance.uid = original
     assert instance.uid == original
 
-@given(instance=application::ApplicationInfrastructureLayers_strategy)
-def test_application::applicationinfrastructurelayers_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=application::ApplicationInfrastructureLayers_strategy)
-def test_application::applicationinfrastructurelayers_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
-
-@given(instance=application::ApplicationUILayer_strategy)
+@given(instance=application_ApplicationUILayer_strategy)
 @settings(max_examples=50)
-def test_application::applicationuilayer_instantiation(instance):
-    assert isinstance(instance, application::ApplicationUILayer)
-
-@given(instance=application::ApplicationUILayer_strategy)
-def test_application::applicationuilayer_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_application_applicationuilayer_instantiation(instance):
+    assert isinstance(instance, application_ApplicationUILayer)
 
 
-@given(instance=application::ApplicationUILayer_strategy)
-def test_application::applicationuilayer_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
 
-@given(instance=application::ApplicationUILayer_strategy)
-def test_application::applicationuilayer_uid_type(instance):
-    assert isinstance(instance.uid, str)
-
-
-@given(instance=application::ApplicationUILayer_strategy)
-def test_application::applicationuilayer_uid_setter(instance):
+@given(instance=application_ApplicationUILayer_strategy)
+def test_application_applicationuilayer_uid_setter(instance):
     original = instance.uid
     instance.uid = original
     assert instance.uid == original
 
-@given(instance=application::MessageLibrary_strategy)
-@settings(max_examples=50)
-def test_application::messagelibrary_instantiation(instance):
-    assert isinstance(instance, application::MessageLibrary)
-
-@given(instance=application::Language_strategy)
-@settings(max_examples=50)
-def test_application::language_instantiation(instance):
-    assert isinstance(instance, application::Language)
-
-@given(instance=application::ApplicationLanguages_strategy)
-@settings(max_examples=50)
-def test_application::applicationlanguages_instantiation(instance):
-    assert isinstance(instance, application::ApplicationLanguages)
-
-@given(instance=application::ApplicationLanguages_strategy)
-def test_application::applicationlanguages_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
-@given(instance=application::ApplicationLanguages_strategy)
-def test_application::applicationlanguages_name_setter(instance):
+@given(instance=application_ApplicationUILayer_strategy)
+def test_application_applicationuilayer_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=application::ApplicationLanguages_strategy)
-def test_application::applicationlanguages_uid_type(instance):
-    assert isinstance(instance.uid, str)
+@given(instance=application_MessageLibrary_strategy)
+@settings(max_examples=50)
+def test_application_messagelibrary_instantiation(instance):
+    assert isinstance(instance, application_MessageLibrary)
+
+@given(instance=application_Language_strategy)
+@settings(max_examples=50)
+def test_application_language_instantiation(instance):
+    assert isinstance(instance, application_Language)
+
+@given(instance=application_ApplicationLanguages_strategy)
+@settings(max_examples=50)
+def test_application_applicationlanguages_instantiation(instance):
+    assert isinstance(instance, application_ApplicationLanguages)
 
 
-@given(instance=application::ApplicationLanguages_strategy)
-def test_application::applicationlanguages_uid_setter(instance):
+
+@given(instance=application_ApplicationLanguages_strategy)
+def test_application_applicationlanguages_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+
+
+@given(instance=application_ApplicationLanguages_strategy)
+def test_application_applicationlanguages_uid_setter(instance):
     original = instance.uid
     instance.uid = original
     assert instance.uid == original
 
-@given(instance=application::ApplicationMessageLibrary_strategy)
+@given(instance=application_ApplicationMessageLibrary_strategy)
 @settings(max_examples=50)
-def test_application::applicationmessagelibrary_instantiation(instance):
-    assert isinstance(instance, application::ApplicationMessageLibrary)
-
-@given(instance=application::ApplicationMessageLibrary_strategy)
-def test_application::applicationmessagelibrary_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_application_applicationmessagelibrary_instantiation(instance):
+    assert isinstance(instance, application_ApplicationMessageLibrary)
 
 
-@given(instance=application::ApplicationMessageLibrary_strategy)
-def test_application::applicationmessagelibrary_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
 
-@given(instance=application::ApplicationMessageLibrary_strategy)
-def test_application::applicationmessagelibrary_uid_type(instance):
-    assert isinstance(instance.uid, str)
-
-
-@given(instance=application::ApplicationMessageLibrary_strategy)
-def test_application::applicationmessagelibrary_uid_setter(instance):
+@given(instance=application_ApplicationMessageLibrary_strategy)
+def test_application_applicationmessagelibrary_uid_setter(instance):
     original = instance.uid
     instance.uid = original
     assert instance.uid == original
 
-@given(instance=application::EnterpriseInfrastructure_strategy)
-@settings(max_examples=50)
-def test_application::enterpriseinfrastructure_instantiation(instance):
-    assert isinstance(instance, application::EnterpriseInfrastructure)
-
-@given(instance=application::ApplicationInfrastructureLayer_strategy)
-@settings(max_examples=50)
-def test_application::applicationinfrastructurelayer_instantiation(instance):
-    assert isinstance(instance, application::ApplicationInfrastructureLayer)
-
-@given(instance=application::ApplicationInfrastructureLayer_strategy)
-def test_application::applicationinfrastructurelayer_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
-@given(instance=application::ApplicationInfrastructureLayer_strategy)
-def test_application::applicationinfrastructurelayer_name_setter(instance):
+@given(instance=application_ApplicationMessageLibrary_strategy)
+def test_application_applicationmessagelibrary_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=application::ApplicationInfrastructureLayer_strategy)
-def test_application::applicationinfrastructurelayer_uid_type(instance):
-    assert isinstance(instance.uid, str)
+@given(instance=application_EnterpriseInfrastructure_strategy)
+@settings(max_examples=50)
+def test_application_enterpriseinfrastructure_instantiation(instance):
+    assert isinstance(instance, application_EnterpriseInfrastructure)
+
+@given(instance=application_ApplicationInfrastructureLayer_strategy)
+@settings(max_examples=50)
+def test_application_applicationinfrastructurelayer_instantiation(instance):
+    assert isinstance(instance, application_ApplicationInfrastructureLayer)
 
 
-@given(instance=application::ApplicationInfrastructureLayer_strategy)
-def test_application::applicationinfrastructurelayer_uid_setter(instance):
+
+@given(instance=application_ApplicationInfrastructureLayer_strategy)
+def test_application_applicationinfrastructurelayer_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+
+
+@given(instance=application_ApplicationInfrastructureLayer_strategy)
+def test_application_applicationinfrastructurelayer_uid_setter(instance):
     original = instance.uid
     instance.uid = original
     assert instance.uid == original
 
-@given(instance=application::ApplicationMessageLibraries_strategy)
+@given(instance=application_ApplicationMessageLibraries_strategy)
 @settings(max_examples=50)
-def test_application::applicationmessagelibraries_instantiation(instance):
-    assert isinstance(instance, application::ApplicationMessageLibraries)
-
-@given(instance=application::ApplicationMessageLibraries_strategy)
-def test_application::applicationmessagelibraries_uid_type(instance):
-    assert isinstance(instance.uid, str)
+def test_application_applicationmessagelibraries_instantiation(instance):
+    assert isinstance(instance, application_ApplicationMessageLibraries)
 
 
-@given(instance=application::ApplicationMessageLibraries_strategy)
-def test_application::applicationmessagelibraries_uid_setter(instance):
+
+@given(instance=application_ApplicationMessageLibraries_strategy)
+def test_application_applicationmessagelibraries_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+
+
+@given(instance=application_ApplicationMessageLibraries_strategy)
+def test_application_applicationmessagelibraries_uid_setter(instance):
     original = instance.uid
     instance.uid = original
     assert instance.uid == original
 
-@given(instance=application::ApplicationMessageLibraries_strategy)
-def test_application::applicationmessagelibraries_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=application::ApplicationMessageLibraries_strategy)
-def test_application::applicationmessagelibraries_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
-
-@given(instance=application::ApplicationRealms_strategy)
+@given(instance=application_ApplicationRealms_strategy)
 @settings(max_examples=50)
-def test_application::applicationrealms_instantiation(instance):
-    assert isinstance(instance, application::ApplicationRealms)
-
-@given(instance=application::ApplicationRealms_strategy)
-def test_application::applicationrealms_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_application_applicationrealms_instantiation(instance):
+    assert isinstance(instance, application_ApplicationRealms)
 
 
-@given(instance=application::ApplicationRealms_strategy)
-def test_application::applicationrealms_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
 
-@given(instance=application::ApplicationRealms_strategy)
-def test_application::applicationrealms_uid_type(instance):
-    assert isinstance(instance.uid, str)
-
-
-@given(instance=application::ApplicationRealms_strategy)
-def test_application::applicationrealms_uid_setter(instance):
+@given(instance=application_ApplicationRealms_strategy)
+def test_application_applicationrealms_uid_setter(instance):
     original = instance.uid
     instance.uid = original
     assert instance.uid == original
 
-@given(instance=application::ApplicationMappers_strategy)
-@settings(max_examples=50)
-def test_application::applicationmappers_instantiation(instance):
-    assert isinstance(instance, application::ApplicationMappers)
-
-@given(instance=application::ApplicationMappers_strategy)
-def test_application::applicationmappers_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
-@given(instance=application::ApplicationMappers_strategy)
-def test_application::applicationmappers_name_setter(instance):
+@given(instance=application_ApplicationRealms_strategy)
+def test_application_applicationrealms_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=application::ApplicationMappers_strategy)
-def test_application::applicationmappers_uid_type(instance):
-    assert isinstance(instance.uid, str)
+@given(instance=application_ApplicationMappers_strategy)
+@settings(max_examples=50)
+def test_application_applicationmappers_instantiation(instance):
+    assert isinstance(instance, application_ApplicationMappers)
 
 
-@given(instance=application::ApplicationMappers_strategy)
-def test_application::applicationmappers_uid_setter(instance):
+
+@given(instance=application_ApplicationMappers_strategy)
+def test_application_applicationmappers_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+
+
+@given(instance=application_ApplicationMappers_strategy)
+def test_application_applicationmappers_uid_setter(instance):
     original = instance.uid
     instance.uid = original
     assert instance.uid == original
 
-@given(instance=application::ApplicationRecipes_strategy)
+@given(instance=application_ApplicationRecipes_strategy)
 @settings(max_examples=50)
-def test_application::applicationrecipes_instantiation(instance):
-    assert isinstance(instance, application::ApplicationRecipes)
-
-@given(instance=application::ApplicationRecipes_strategy)
-def test_application::applicationrecipes_uid_type(instance):
-    assert isinstance(instance.uid, str)
+def test_application_applicationrecipes_instantiation(instance):
+    assert isinstance(instance, application_ApplicationRecipes)
 
 
-@given(instance=application::ApplicationRecipes_strategy)
-def test_application::applicationrecipes_uid_setter(instance):
+
+@given(instance=application_ApplicationRecipes_strategy)
+def test_application_applicationrecipes_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+
+
+@given(instance=application_ApplicationRecipes_strategy)
+def test_application_applicationrecipes_uid_setter(instance):
     original = instance.uid
     instance.uid = original
     assert instance.uid == original
 
-@given(instance=application::ApplicationRecipes_strategy)
-def test_application::applicationrecipes_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=application::ApplicationRecipes_strategy)
-def test_application::applicationrecipes_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
-
-@given(instance=application::Application_strategy)
+@given(instance=application_Application_strategy)
 @settings(max_examples=50)
-def test_application::application_instantiation(instance):
-    assert isinstance(instance, application::Application)
-
-@given(instance=application::Application_strategy)
-def test_application::application_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_application_application_instantiation(instance):
+    assert isinstance(instance, application_Application)
 
 
-@given(instance=application::Application_strategy)
-def test_application::application_name_setter(instance):
+
+@given(instance=application_Application_strategy)
+def test_application_application_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=application::Application_strategy)
-def test_application::application_uid_type(instance):
-    assert isinstance(instance.uid, str)
 
 
-@given(instance=application::Application_strategy)
-def test_application::application_uid_setter(instance):
+@given(instance=application_Application_strategy)
+def test_application_application_uid_setter(instance):
     original = instance.uid
     instance.uid = original
     assert instance.uid == original
 
-@given(instance=application::ApplicationGroup_strategy)
+@given(instance=application_ApplicationGroup_strategy)
 @settings(max_examples=50)
-def test_application::applicationgroup_instantiation(instance):
-    assert isinstance(instance, application::ApplicationGroup)
-
-@given(instance=application::ApplicationGroup_strategy)
-def test_application::applicationgroup_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_application_applicationgroup_instantiation(instance):
+    assert isinstance(instance, application_ApplicationGroup)
 
 
-@given(instance=application::ApplicationGroup_strategy)
-def test_application::applicationgroup_name_setter(instance):
+
+@given(instance=application_ApplicationGroup_strategy)
+def test_application_applicationgroup_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=application::ApplicationGroup_strategy)
-def test_application::applicationgroup_uid_type(instance):
-    assert isinstance(instance.uid, str)
 
 
-@given(instance=application::ApplicationGroup_strategy)
-def test_application::applicationgroup_uid_setter(instance):
+@given(instance=application_ApplicationGroup_strategy)
+def test_application_applicationgroup_uid_setter(instance):
     original = instance.uid
     instance.uid = original
     assert instance.uid == original

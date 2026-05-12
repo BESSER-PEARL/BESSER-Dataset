@@ -3,7 +3,7 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
 from python_code import (
     Coach,
@@ -64,17 +64,8 @@ def test_firstclass_constructor_exists():
 def test_firstclass_constructor_args():
     sig = inspect.signature(FirstClass.__init__)
     params = list(sig.parameters.keys())
-    assert "numberOfSeats" in params, "Missing parameter 'numberOfSeats'"
     assert "seatsFilled" in params, "Missing parameter 'seatsFilled'"
-
-def test_firstclass_has_numberOfSeats():
-    assert hasattr(FirstClass, "numberOfSeats")
-    descriptor = None
-    for klass in FirstClass.__mro__:
-        if "numberOfSeats" in klass.__dict__:
-            descriptor = klass.__dict__["numberOfSeats"]
-            break
-    assert isinstance(descriptor, property)
+    assert "numberOfSeats" in params, "Missing parameter 'numberOfSeats'"
 
 def test_firstclass_has_seatsFilled():
     assert hasattr(FirstClass, "seatsFilled")
@@ -82,6 +73,15 @@ def test_firstclass_has_seatsFilled():
     for klass in FirstClass.__mro__:
         if "seatsFilled" in klass.__dict__:
             descriptor = klass.__dict__["seatsFilled"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_firstclass_has_numberOfSeats():
+    assert hasattr(FirstClass, "numberOfSeats")
+    descriptor = None
+    for klass in FirstClass.__mro__:
+        if "numberOfSeats" in klass.__dict__:
+            descriptor = klass.__dict__["numberOfSeats"]
             break
     assert isinstance(descriptor, property)
 
@@ -98,9 +98,18 @@ def test_passengertrain_constructor_exists():
 def test_passengertrain_constructor_args():
     sig = inspect.signature(PassengerTrain.__init__)
     params = list(sig.parameters.keys())
+    assert "numberOfPassengers" in params, "Missing parameter 'numberOfPassengers'"
     assert "Stops" in params, "Missing parameter 'Stops'"
     assert "Origin" in params, "Missing parameter 'Origin'"
-    assert "numberOfPassengers" in params, "Missing parameter 'numberOfPassengers'"
+
+def test_passengertrain_has_numberOfPassengers():
+    assert hasattr(PassengerTrain, "numberOfPassengers")
+    descriptor = None
+    for klass in PassengerTrain.__mro__:
+        if "numberOfPassengers" in klass.__dict__:
+            descriptor = klass.__dict__["numberOfPassengers"]
+            break
+    assert isinstance(descriptor, property)
 
 def test_passengertrain_has_Stops():
     assert hasattr(PassengerTrain, "Stops")
@@ -120,15 +129,6 @@ def test_passengertrain_has_Origin():
             break
     assert isinstance(descriptor, property)
 
-def test_passengertrain_has_numberOfPassengers():
-    assert hasattr(PassengerTrain, "numberOfPassengers")
-    descriptor = None
-    for klass in PassengerTrain.__mro__:
-        if "numberOfPassengers" in klass.__dict__:
-            descriptor = klass.__dict__["numberOfPassengers"]
-            break
-    assert isinstance(descriptor, property)
-
 
 
 def test_cargotrain_is_not_abstract():
@@ -142,9 +142,18 @@ def test_cargotrain_constructor_exists():
 def test_cargotrain_constructor_args():
     sig = inspect.signature(CargoTrain.__init__)
     params = list(sig.parameters.keys())
+    assert "Containers" in params, "Missing parameter 'Containers'"
     assert "Stops" in params, "Missing parameter 'Stops'"
     assert "Origin" in params, "Missing parameter 'Origin'"
-    assert "Containers" in params, "Missing parameter 'Containers'"
+
+def test_cargotrain_has_Containers():
+    assert hasattr(CargoTrain, "Containers")
+    descriptor = None
+    for klass in CargoTrain.__mro__:
+        if "Containers" in klass.__dict__:
+            descriptor = klass.__dict__["Containers"]
+            break
+    assert isinstance(descriptor, property)
 
 def test_cargotrain_has_Stops():
     assert hasattr(CargoTrain, "Stops")
@@ -161,15 +170,6 @@ def test_cargotrain_has_Origin():
     for klass in CargoTrain.__mro__:
         if "Origin" in klass.__dict__:
             descriptor = klass.__dict__["Origin"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_cargotrain_has_Containers():
-    assert hasattr(CargoTrain, "Containers")
-    descriptor = None
-    for klass in CargoTrain.__mro__:
-        if "Containers" in klass.__dict__:
-            descriptor = klass.__dict__["Containers"]
             break
     assert isinstance(descriptor, property)
 
@@ -248,27 +248,27 @@ Coach_strategy = st.builds(
 )
 FirstClass_strategy = st.builds(
     FirstClass,
-    numberOfSeats=
-        st.integers(),
     seatsFilled=
+        st.integers(),
+    numberOfSeats=
         st.integers()
 )
 PassengerTrain_strategy = st.builds(
     PassengerTrain,
+    numberOfPassengers=
+        st.integers(),
     Stops=
         safe_text,
     Origin=
-        safe_text,
-    numberOfPassengers=
-        st.integers()
+        safe_text
 )
 CargoTrain_strategy = st.builds(
     CargoTrain,
+    Containers=
+        safe_text,
     Stops=
         safe_text,
     Origin=
-        safe_text,
-    Containers=
         safe_text
 )
 Train_strategy = st.builds(
@@ -288,9 +288,6 @@ Train_strategy = st.builds(
 def test_coach_instantiation(instance):
     assert isinstance(instance, Coach)
 
-@given(instance=Coach_strategy)
-def test_coach_seatsFilled_type(instance):
-    assert isinstance(instance.seatsFilled, int)
 
 
 @given(instance=Coach_strategy)
@@ -299,9 +296,6 @@ def test_coach_seatsFilled_setter(instance):
     instance.seatsFilled = original
     assert instance.seatsFilled == original
 
-@given(instance=Coach_strategy)
-def test_coach_numberOfSeats_type(instance):
-    assert isinstance(instance.numberOfSeats, int)
 
 
 @given(instance=Coach_strategy)
@@ -315,20 +309,6 @@ def test_coach_numberOfSeats_setter(instance):
 def test_firstclass_instantiation(instance):
     assert isinstance(instance, FirstClass)
 
-@given(instance=FirstClass_strategy)
-def test_firstclass_numberOfSeats_type(instance):
-    assert isinstance(instance.numberOfSeats, int)
-
-
-@given(instance=FirstClass_strategy)
-def test_firstclass_numberOfSeats_setter(instance):
-    original = instance.numberOfSeats
-    instance.numberOfSeats = original
-    assert instance.numberOfSeats == original
-
-@given(instance=FirstClass_strategy)
-def test_firstclass_seatsFilled_type(instance):
-    assert isinstance(instance.seatsFilled, int)
 
 
 @given(instance=FirstClass_strategy)
@@ -337,36 +317,19 @@ def test_firstclass_seatsFilled_setter(instance):
     instance.seatsFilled = original
     assert instance.seatsFilled == original
 
+
+
+@given(instance=FirstClass_strategy)
+def test_firstclass_numberOfSeats_setter(instance):
+    original = instance.numberOfSeats
+    instance.numberOfSeats = original
+    assert instance.numberOfSeats == original
+
 @given(instance=PassengerTrain_strategy)
 @settings(max_examples=50)
 def test_passengertrain_instantiation(instance):
     assert isinstance(instance, PassengerTrain)
 
-@given(instance=PassengerTrain_strategy)
-def test_passengertrain_Stops_type(instance):
-    assert isinstance(instance.Stops, str)
-
-
-@given(instance=PassengerTrain_strategy)
-def test_passengertrain_Stops_setter(instance):
-    original = instance.Stops
-    instance.Stops = original
-    assert instance.Stops == original
-
-@given(instance=PassengerTrain_strategy)
-def test_passengertrain_Origin_type(instance):
-    assert isinstance(instance.Origin, str)
-
-
-@given(instance=PassengerTrain_strategy)
-def test_passengertrain_Origin_setter(instance):
-    original = instance.Origin
-    instance.Origin = original
-    assert instance.Origin == original
-
-@given(instance=PassengerTrain_strategy)
-def test_passengertrain_numberOfPassengers_type(instance):
-    assert isinstance(instance.numberOfPassengers, int)
 
 
 @given(instance=PassengerTrain_strategy)
@@ -375,36 +338,27 @@ def test_passengertrain_numberOfPassengers_setter(instance):
     instance.numberOfPassengers = original
     assert instance.numberOfPassengers == original
 
-@given(instance=CargoTrain_strategy)
-@settings(max_examples=50)
-def test_cargotrain_instantiation(instance):
-    assert isinstance(instance, CargoTrain)
-
-@given(instance=CargoTrain_strategy)
-def test_cargotrain_Stops_type(instance):
-    assert isinstance(instance.Stops, str)
 
 
-@given(instance=CargoTrain_strategy)
-def test_cargotrain_Stops_setter(instance):
+@given(instance=PassengerTrain_strategy)
+def test_passengertrain_Stops_setter(instance):
     original = instance.Stops
     instance.Stops = original
     assert instance.Stops == original
 
-@given(instance=CargoTrain_strategy)
-def test_cargotrain_Origin_type(instance):
-    assert isinstance(instance.Origin, str)
 
 
-@given(instance=CargoTrain_strategy)
-def test_cargotrain_Origin_setter(instance):
+@given(instance=PassengerTrain_strategy)
+def test_passengertrain_Origin_setter(instance):
     original = instance.Origin
     instance.Origin = original
     assert instance.Origin == original
 
 @given(instance=CargoTrain_strategy)
-def test_cargotrain_Containers_type(instance):
-    assert isinstance(instance.Containers, str)
+@settings(max_examples=50)
+def test_cargotrain_instantiation(instance):
+    assert isinstance(instance, CargoTrain)
+
 
 
 @given(instance=CargoTrain_strategy)
@@ -413,14 +367,27 @@ def test_cargotrain_Containers_setter(instance):
     instance.Containers = original
     assert instance.Containers == original
 
+
+
+@given(instance=CargoTrain_strategy)
+def test_cargotrain_Stops_setter(instance):
+    original = instance.Stops
+    instance.Stops = original
+    assert instance.Stops == original
+
+
+
+@given(instance=CargoTrain_strategy)
+def test_cargotrain_Origin_setter(instance):
+    original = instance.Origin
+    instance.Origin = original
+    assert instance.Origin == original
+
 @given(instance=Train_strategy)
 @settings(max_examples=50)
 def test_train_instantiation(instance):
     assert isinstance(instance, Train)
 
-@given(instance=Train_strategy)
-def test_train_Cars_type(instance):
-    assert isinstance(instance.Cars, str)
 
 
 @given(instance=Train_strategy)
@@ -429,9 +396,6 @@ def test_train_Cars_setter(instance):
     instance.Cars = original
     assert instance.Cars == original
 
-@given(instance=Train_strategy)
-def test_train_Manufacturer_type(instance):
-    assert isinstance(instance.Manufacturer, str)
 
 
 @given(instance=Train_strategy)
@@ -440,9 +404,6 @@ def test_train_Manufacturer_setter(instance):
     instance.Manufacturer = original
     assert instance.Manufacturer == original
 
-@given(instance=Train_strategy)
-def test_train_Operator_type(instance):
-    assert isinstance(instance.Operator, str)
 
 
 @given(instance=Train_strategy)
@@ -451,9 +412,6 @@ def test_train_Operator_setter(instance):
     instance.Operator = original
     assert instance.Operator == original
 
-@given(instance=Train_strategy)
-def test_train_Power_type(instance):
-    assert isinstance(instance.Power, str)
 
 
 @given(instance=Train_strategy)

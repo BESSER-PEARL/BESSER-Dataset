@@ -3,23 +3,23 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    ezdaap::EZDaapIntelPropertyElem,
+from python_code import (
+    ezdaap_EZDaapIntelPropertyElem,
     EZDaapLibraryUnit,
-    ezdaap::EZDaapElem,
-    ezdaap::EZDaapLibraryUnit,
+    ezdaap_EZDaapElem,
+    ezdaap_EZDaapLibraryUnit,
     EZDaapIntelPropertyElem,
     EZDaapElem,
-    ezdaap::EZDaapManager,
-    ezdaap::EZDaapDictionary,
-    ezdaap::EZDaapLibrary,
-    ezdaap::EZDaapITunesInstance,
-    ezdaap::EZDaapArtist,
-    ezdaap::EZDaapAlbum,
-    ezdaap::EZDaapSong,
-    ezdaap::EZDaapPlayList,
+    ezdaap_EZDaapManager,
+    ezdaap_EZDaapDictionary,
+    ezdaap_EZDaapLibrary,
+    ezdaap_EZDaapITunesInstance,
+    ezdaap_EZDaapArtist,
+    ezdaap_EZDaapAlbum,
+    ezdaap_EZDaapSong,
+    ezdaap_EZDaapPlayList,
     DAAP_COMM_CST,
     DAAP_CONNECTION_KIND,
 )
@@ -30,23 +30,23 @@ from classes import (
 
 
 
-def test_ezdaap::ezdaapintelpropertyelem_is_not_abstract():
-    assert not inspect.isabstract(ezdaap::EZDaapIntelPropertyElem)
+def test_ezdaap_ezdaapintelpropertyelem_is_not_abstract():
+    assert not inspect.isabstract(ezdaap_EZDaapIntelPropertyElem)
 
 
-def test_ezdaap::ezdaapintelpropertyelem_constructor_exists():
-    assert callable(ezdaap::EZDaapIntelPropertyElem.__init__)
+def test_ezdaap_ezdaapintelpropertyelem_constructor_exists():
+    assert callable(ezdaap_EZDaapIntelPropertyElem.__init__)
 
 
-def test_ezdaap::ezdaapintelpropertyelem_constructor_args():
-    sig = inspect.signature(ezdaap::EZDaapIntelPropertyElem.__init__)
+def test_ezdaap_ezdaapintelpropertyelem_constructor_args():
+    sig = inspect.signature(ezdaap_EZDaapIntelPropertyElem.__init__)
     params = list(sig.parameters.keys())
     assert "license" in params, "Missing parameter 'license'"
 
-def test_ezdaap::ezdaapintelpropertyelem_has_license():
-    assert hasattr(ezdaap::EZDaapIntelPropertyElem, "license")
+def test_ezdaap_ezdaapintelpropertyelem_has_license():
+    assert hasattr(ezdaap_EZDaapIntelPropertyElem, "license")
     descriptor = None
-    for klass in ezdaap::EZDaapIntelPropertyElem.__mro__:
+    for klass in ezdaap_EZDaapIntelPropertyElem.__mro__:
         if "license" in klass.__dict__:
             descriptor = klass.__dict__["license"]
             break
@@ -68,37 +68,37 @@ def test_ezdaaplibraryunit_constructor_args():
 
 
 
-def test_ezdaap::ezdaapelem_is_not_abstract():
-    assert not inspect.isabstract(ezdaap::EZDaapElem)
+def test_ezdaap_ezdaapelem_is_not_abstract():
+    assert not inspect.isabstract(ezdaap_EZDaapElem)
 
 
-def test_ezdaap::ezdaapelem_constructor_exists():
-    assert callable(ezdaap::EZDaapElem.__init__)
+def test_ezdaap_ezdaapelem_constructor_exists():
+    assert callable(ezdaap_EZDaapElem.__init__)
 
 
-def test_ezdaap::ezdaapelem_constructor_args():
-    sig = inspect.signature(ezdaap::EZDaapElem.__init__)
+def test_ezdaap_ezdaapelem_constructor_args():
+    sig = inspect.signature(ezdaap_EZDaapElem.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ezdaap::ezdaaplibraryunit_is_not_abstract():
-    assert not inspect.isabstract(ezdaap::EZDaapLibraryUnit)
+def test_ezdaap_ezdaaplibraryunit_is_not_abstract():
+    assert not inspect.isabstract(ezdaap_EZDaapLibraryUnit)
 
 
-def test_ezdaap::ezdaaplibraryunit_constructor_exists():
-    assert callable(ezdaap::EZDaapLibraryUnit.__init__)
+def test_ezdaap_ezdaaplibraryunit_constructor_exists():
+    assert callable(ezdaap_EZDaapLibraryUnit.__init__)
 
 
-def test_ezdaap::ezdaaplibraryunit_constructor_args():
-    sig = inspect.signature(ezdaap::EZDaapLibraryUnit.__init__)
+def test_ezdaap_ezdaaplibraryunit_constructor_args():
+    sig = inspect.signature(ezdaap_EZDaapLibraryUnit.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_ezdaap::ezdaaplibraryunit_has_name():
-    assert hasattr(ezdaap::EZDaapLibraryUnit, "name")
+def test_ezdaap_ezdaaplibraryunit_has_name():
+    assert hasattr(ezdaap_EZDaapLibraryUnit, "name")
     descriptor = None
-    for klass in ezdaap::EZDaapLibraryUnit.__mro__:
+    for klass in ezdaap_EZDaapLibraryUnit.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -134,95 +134,95 @@ def test_ezdaapelem_constructor_args():
 
 
 
-def test_ezdaap::ezdaapmanager_is_not_abstract():
-    assert not inspect.isabstract(ezdaap::EZDaapManager)
+def test_ezdaap_ezdaapmanager_is_not_abstract():
+    assert not inspect.isabstract(ezdaap_EZDaapManager)
 
 
-def test_ezdaap::ezdaapmanager_constructor_exists():
-    assert callable(ezdaap::EZDaapManager.__init__)
+def test_ezdaap_ezdaapmanager_constructor_exists():
+    assert callable(ezdaap_EZDaapManager.__init__)
 
 
-def test_ezdaap::ezdaapmanager_constructor_args():
-    sig = inspect.signature(ezdaap::EZDaapManager.__init__)
+def test_ezdaap_ezdaapmanager_constructor_args():
+    sig = inspect.signature(ezdaap_EZDaapManager.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ezdaap::ezdaapdictionary_is_not_abstract():
-    assert not inspect.isabstract(ezdaap::EZDaapDictionary)
+def test_ezdaap_ezdaapdictionary_is_not_abstract():
+    assert not inspect.isabstract(ezdaap_EZDaapDictionary)
 
 
-def test_ezdaap::ezdaapdictionary_constructor_exists():
-    assert callable(ezdaap::EZDaapDictionary.__init__)
+def test_ezdaap_ezdaapdictionary_constructor_exists():
+    assert callable(ezdaap_EZDaapDictionary.__init__)
 
 
-def test_ezdaap::ezdaapdictionary_constructor_args():
-    sig = inspect.signature(ezdaap::EZDaapDictionary.__init__)
+def test_ezdaap_ezdaapdictionary_constructor_args():
+    sig = inspect.signature(ezdaap_EZDaapDictionary.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ezdaap::ezdaaplibrary_is_not_abstract():
-    assert not inspect.isabstract(ezdaap::EZDaapLibrary)
+def test_ezdaap_ezdaaplibrary_is_not_abstract():
+    assert not inspect.isabstract(ezdaap_EZDaapLibrary)
 
 
-def test_ezdaap::ezdaaplibrary_constructor_exists():
-    assert callable(ezdaap::EZDaapLibrary.__init__)
+def test_ezdaap_ezdaaplibrary_constructor_exists():
+    assert callable(ezdaap_EZDaapLibrary.__init__)
 
 
-def test_ezdaap::ezdaaplibrary_constructor_args():
-    sig = inspect.signature(ezdaap::EZDaapLibrary.__init__)
+def test_ezdaap_ezdaaplibrary_constructor_args():
+    sig = inspect.signature(ezdaap_EZDaapLibrary.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ezdaap::ezdaapitunesinstance_is_not_abstract():
-    assert not inspect.isabstract(ezdaap::EZDaapITunesInstance)
+def test_ezdaap_ezdaapitunesinstance_is_not_abstract():
+    assert not inspect.isabstract(ezdaap_EZDaapITunesInstance)
 
 
-def test_ezdaap::ezdaapitunesinstance_constructor_exists():
-    assert callable(ezdaap::EZDaapITunesInstance.__init__)
+def test_ezdaap_ezdaapitunesinstance_constructor_exists():
+    assert callable(ezdaap_EZDaapITunesInstance.__init__)
 
 
-def test_ezdaap::ezdaapitunesinstance_constructor_args():
-    sig = inspect.signature(ezdaap::EZDaapITunesInstance.__init__)
+def test_ezdaap_ezdaapitunesinstance_constructor_args():
+    sig = inspect.signature(ezdaap_EZDaapITunesInstance.__init__)
     params = list(sig.parameters.keys())
-    assert "revID" in params, "Missing parameter 'revID'"
-    assert "sessionID" in params, "Missing parameter 'sessionID'"
     assert "id" in params, "Missing parameter 'id'"
+    assert "sessionID" in params, "Missing parameter 'sessionID'"
+    assert "revID" in params, "Missing parameter 'revID'"
     assert "serverName" in params, "Missing parameter 'serverName'"
 
-def test_ezdaap::ezdaapitunesinstance_has_revID():
-    assert hasattr(ezdaap::EZDaapITunesInstance, "revID")
+def test_ezdaap_ezdaapitunesinstance_has_id():
+    assert hasattr(ezdaap_EZDaapITunesInstance, "id")
     descriptor = None
-    for klass in ezdaap::EZDaapITunesInstance.__mro__:
-        if "revID" in klass.__dict__:
-            descriptor = klass.__dict__["revID"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_ezdaap::ezdaapitunesinstance_has_sessionID():
-    assert hasattr(ezdaap::EZDaapITunesInstance, "sessionID")
-    descriptor = None
-    for klass in ezdaap::EZDaapITunesInstance.__mro__:
-        if "sessionID" in klass.__dict__:
-            descriptor = klass.__dict__["sessionID"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_ezdaap::ezdaapitunesinstance_has_id():
-    assert hasattr(ezdaap::EZDaapITunesInstance, "id")
-    descriptor = None
-    for klass in ezdaap::EZDaapITunesInstance.__mro__:
+    for klass in ezdaap_EZDaapITunesInstance.__mro__:
         if "id" in klass.__dict__:
             descriptor = klass.__dict__["id"]
             break
     assert isinstance(descriptor, property)
 
-def test_ezdaap::ezdaapitunesinstance_has_serverName():
-    assert hasattr(ezdaap::EZDaapITunesInstance, "serverName")
+def test_ezdaap_ezdaapitunesinstance_has_sessionID():
+    assert hasattr(ezdaap_EZDaapITunesInstance, "sessionID")
     descriptor = None
-    for klass in ezdaap::EZDaapITunesInstance.__mro__:
+    for klass in ezdaap_EZDaapITunesInstance.__mro__:
+        if "sessionID" in klass.__dict__:
+            descriptor = klass.__dict__["sessionID"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_ezdaap_ezdaapitunesinstance_has_revID():
+    assert hasattr(ezdaap_EZDaapITunesInstance, "revID")
+    descriptor = None
+    for klass in ezdaap_EZDaapITunesInstance.__mro__:
+        if "revID" in klass.__dict__:
+            descriptor = klass.__dict__["revID"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_ezdaap_ezdaapitunesinstance_has_serverName():
+    assert hasattr(ezdaap_EZDaapITunesInstance, "serverName")
+    descriptor = None
+    for klass in ezdaap_EZDaapITunesInstance.__mro__:
         if "serverName" in klass.__dict__:
             descriptor = klass.__dict__["serverName"]
             break
@@ -230,58 +230,58 @@ def test_ezdaap::ezdaapitunesinstance_has_serverName():
 
 
 
-def test_ezdaap::ezdaapartist_is_not_abstract():
-    assert not inspect.isabstract(ezdaap::EZDaapArtist)
+def test_ezdaap_ezdaapartist_is_not_abstract():
+    assert not inspect.isabstract(ezdaap_EZDaapArtist)
 
 
-def test_ezdaap::ezdaapartist_constructor_exists():
-    assert callable(ezdaap::EZDaapArtist.__init__)
+def test_ezdaap_ezdaapartist_constructor_exists():
+    assert callable(ezdaap_EZDaapArtist.__init__)
 
 
-def test_ezdaap::ezdaapartist_constructor_args():
-    sig = inspect.signature(ezdaap::EZDaapArtist.__init__)
+def test_ezdaap_ezdaapartist_constructor_args():
+    sig = inspect.signature(ezdaap_EZDaapArtist.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ezdaap::ezdaapalbum_is_not_abstract():
-    assert not inspect.isabstract(ezdaap::EZDaapAlbum)
+def test_ezdaap_ezdaapalbum_is_not_abstract():
+    assert not inspect.isabstract(ezdaap_EZDaapAlbum)
 
 
-def test_ezdaap::ezdaapalbum_constructor_exists():
-    assert callable(ezdaap::EZDaapAlbum.__init__)
+def test_ezdaap_ezdaapalbum_constructor_exists():
+    assert callable(ezdaap_EZDaapAlbum.__init__)
 
 
-def test_ezdaap::ezdaapalbum_constructor_args():
-    sig = inspect.signature(ezdaap::EZDaapAlbum.__init__)
+def test_ezdaap_ezdaapalbum_constructor_args():
+    sig = inspect.signature(ezdaap_EZDaapAlbum.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ezdaap::ezdaapsong_is_not_abstract():
-    assert not inspect.isabstract(ezdaap::EZDaapSong)
+def test_ezdaap_ezdaapsong_is_not_abstract():
+    assert not inspect.isabstract(ezdaap_EZDaapSong)
 
 
-def test_ezdaap::ezdaapsong_constructor_exists():
-    assert callable(ezdaap::EZDaapSong.__init__)
+def test_ezdaap_ezdaapsong_constructor_exists():
+    assert callable(ezdaap_EZDaapSong.__init__)
 
 
-def test_ezdaap::ezdaapsong_constructor_args():
-    sig = inspect.signature(ezdaap::EZDaapSong.__init__)
+def test_ezdaap_ezdaapsong_constructor_args():
+    sig = inspect.signature(ezdaap_EZDaapSong.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ezdaap::ezdaapplaylist_is_not_abstract():
-    assert not inspect.isabstract(ezdaap::EZDaapPlayList)
+def test_ezdaap_ezdaapplaylist_is_not_abstract():
+    assert not inspect.isabstract(ezdaap_EZDaapPlayList)
 
 
-def test_ezdaap::ezdaapplaylist_constructor_exists():
-    assert callable(ezdaap::EZDaapPlayList.__init__)
+def test_ezdaap_ezdaapplaylist_constructor_exists():
+    assert callable(ezdaap_EZDaapPlayList.__init__)
 
 
-def test_ezdaap::ezdaapplaylist_constructor_args():
-    sig = inspect.signature(ezdaap::EZDaapPlayList.__init__)
+def test_ezdaap_ezdaapplaylist_constructor_args():
+    sig = inspect.signature(ezdaap_EZDaapPlayList.__init__)
     params = list(sig.parameters.keys())
 
 def test_daap_comm_cst_exists():
@@ -292,8 +292,8 @@ def test_daap_comm_cst_has_all_literals():
     # Collect the names of literals in this Enumeration
     enum_literals = [lit.name for lit in DAAP_COMM_CST]
     expected_literals = [
-        "MAX_SIMULTATNEOUS_CONNECTIONS",
         "MAX_USER_SIMULTANEOUS_CONNECTION",
+        "MAX_SIMULTATNEOUS_CONNECTIONS",
         "MAX_USER_CONNECTIONS_PER_SESSION",
     ]
     # Check that all expected literals exist
@@ -327,19 +327,19 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-ezdaap::EZDaapIntelPropertyElem_strategy = st.builds(
-    ezdaap::EZDaapIntelPropertyElem,
+ezdaap_EZDaapIntelPropertyElem_strategy = st.builds(
+    ezdaap_EZDaapIntelPropertyElem,
     license=
         safe_text
 )
 EZDaapLibraryUnit_strategy = st.builds(
     EZDaapLibraryUnit,
 )
-ezdaap::EZDaapElem_strategy = st.builds(
-    ezdaap::EZDaapElem,
+ezdaap_EZDaapElem_strategy = st.builds(
+    ezdaap_EZDaapElem,
 )
-ezdaap::EZDaapLibraryUnit_strategy = st.builds(
-    ezdaap::EZDaapLibraryUnit,
+ezdaap_EZDaapLibraryUnit_strategy = st.builds(
+    ezdaap_EZDaapLibraryUnit,
     name=
         safe_text
 )
@@ -349,51 +349,48 @@ EZDaapIntelPropertyElem_strategy = st.builds(
 EZDaapElem_strategy = st.builds(
     EZDaapElem,
 )
-ezdaap::EZDaapManager_strategy = st.builds(
-    ezdaap::EZDaapManager,
+ezdaap_EZDaapManager_strategy = st.builds(
+    ezdaap_EZDaapManager,
 )
-ezdaap::EZDaapDictionary_strategy = st.builds(
-    ezdaap::EZDaapDictionary,
+ezdaap_EZDaapDictionary_strategy = st.builds(
+    ezdaap_EZDaapDictionary,
 )
-ezdaap::EZDaapLibrary_strategy = st.builds(
-    ezdaap::EZDaapLibrary,
+ezdaap_EZDaapLibrary_strategy = st.builds(
+    ezdaap_EZDaapLibrary,
 )
-ezdaap::EZDaapITunesInstance_strategy = st.builds(
-    ezdaap::EZDaapITunesInstance,
-    revID=
-        st.integers(),
-    sessionID=
-        st.integers(),
+ezdaap_EZDaapITunesInstance_strategy = st.builds(
+    ezdaap_EZDaapITunesInstance,
     id=
         safe_text,
+    sessionID=
+        st.integers(),
+    revID=
+        st.integers(),
     serverName=
         safe_text
 )
-ezdaap::EZDaapArtist_strategy = st.builds(
-    ezdaap::EZDaapArtist,
+ezdaap_EZDaapArtist_strategy = st.builds(
+    ezdaap_EZDaapArtist,
 )
-ezdaap::EZDaapAlbum_strategy = st.builds(
-    ezdaap::EZDaapAlbum,
+ezdaap_EZDaapAlbum_strategy = st.builds(
+    ezdaap_EZDaapAlbum,
 )
-ezdaap::EZDaapSong_strategy = st.builds(
-    ezdaap::EZDaapSong,
+ezdaap_EZDaapSong_strategy = st.builds(
+    ezdaap_EZDaapSong,
 )
-ezdaap::EZDaapPlayList_strategy = st.builds(
-    ezdaap::EZDaapPlayList,
+ezdaap_EZDaapPlayList_strategy = st.builds(
+    ezdaap_EZDaapPlayList,
 )
 
-@given(instance=ezdaap::EZDaapIntelPropertyElem_strategy)
+@given(instance=ezdaap_EZDaapIntelPropertyElem_strategy)
 @settings(max_examples=50)
-def test_ezdaap::ezdaapintelpropertyelem_instantiation(instance):
-    assert isinstance(instance, ezdaap::EZDaapIntelPropertyElem)
-
-@given(instance=ezdaap::EZDaapIntelPropertyElem_strategy)
-def test_ezdaap::ezdaapintelpropertyelem_license_type(instance):
-    assert isinstance(instance.license, str)
+def test_ezdaap_ezdaapintelpropertyelem_instantiation(instance):
+    assert isinstance(instance, ezdaap_EZDaapIntelPropertyElem)
 
 
-@given(instance=ezdaap::EZDaapIntelPropertyElem_strategy)
-def test_ezdaap::ezdaapintelpropertyelem_license_setter(instance):
+
+@given(instance=ezdaap_EZDaapIntelPropertyElem_strategy)
+def test_ezdaap_ezdaapintelpropertyelem_license_setter(instance):
     original = instance.license
     instance.license = original
     assert instance.license == original
@@ -403,23 +400,20 @@ def test_ezdaap::ezdaapintelpropertyelem_license_setter(instance):
 def test_ezdaaplibraryunit_instantiation(instance):
     assert isinstance(instance, EZDaapLibraryUnit)
 
-@given(instance=ezdaap::EZDaapElem_strategy)
+@given(instance=ezdaap_EZDaapElem_strategy)
 @settings(max_examples=50)
-def test_ezdaap::ezdaapelem_instantiation(instance):
-    assert isinstance(instance, ezdaap::EZDaapElem)
+def test_ezdaap_ezdaapelem_instantiation(instance):
+    assert isinstance(instance, ezdaap_EZDaapElem)
 
-@given(instance=ezdaap::EZDaapLibraryUnit_strategy)
+@given(instance=ezdaap_EZDaapLibraryUnit_strategy)
 @settings(max_examples=50)
-def test_ezdaap::ezdaaplibraryunit_instantiation(instance):
-    assert isinstance(instance, ezdaap::EZDaapLibraryUnit)
-
-@given(instance=ezdaap::EZDaapLibraryUnit_strategy)
-def test_ezdaap::ezdaaplibraryunit_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_ezdaap_ezdaaplibraryunit_instantiation(instance):
+    assert isinstance(instance, ezdaap_EZDaapLibraryUnit)
 
 
-@given(instance=ezdaap::EZDaapLibraryUnit_strategy)
-def test_ezdaap::ezdaaplibraryunit_name_setter(instance):
+
+@given(instance=ezdaap_EZDaapLibraryUnit_strategy)
+def test_ezdaap_ezdaaplibraryunit_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
@@ -434,86 +428,74 @@ def test_ezdaapintelpropertyelem_instantiation(instance):
 def test_ezdaapelem_instantiation(instance):
     assert isinstance(instance, EZDaapElem)
 
-@given(instance=ezdaap::EZDaapManager_strategy)
+@given(instance=ezdaap_EZDaapManager_strategy)
 @settings(max_examples=50)
-def test_ezdaap::ezdaapmanager_instantiation(instance):
-    assert isinstance(instance, ezdaap::EZDaapManager)
+def test_ezdaap_ezdaapmanager_instantiation(instance):
+    assert isinstance(instance, ezdaap_EZDaapManager)
 
-@given(instance=ezdaap::EZDaapDictionary_strategy)
+@given(instance=ezdaap_EZDaapDictionary_strategy)
 @settings(max_examples=50)
-def test_ezdaap::ezdaapdictionary_instantiation(instance):
-    assert isinstance(instance, ezdaap::EZDaapDictionary)
+def test_ezdaap_ezdaapdictionary_instantiation(instance):
+    assert isinstance(instance, ezdaap_EZDaapDictionary)
 
-@given(instance=ezdaap::EZDaapLibrary_strategy)
+@given(instance=ezdaap_EZDaapLibrary_strategy)
 @settings(max_examples=50)
-def test_ezdaap::ezdaaplibrary_instantiation(instance):
-    assert isinstance(instance, ezdaap::EZDaapLibrary)
+def test_ezdaap_ezdaaplibrary_instantiation(instance):
+    assert isinstance(instance, ezdaap_EZDaapLibrary)
 
-@given(instance=ezdaap::EZDaapITunesInstance_strategy)
+@given(instance=ezdaap_EZDaapITunesInstance_strategy)
 @settings(max_examples=50)
-def test_ezdaap::ezdaapitunesinstance_instantiation(instance):
-    assert isinstance(instance, ezdaap::EZDaapITunesInstance)
-
-@given(instance=ezdaap::EZDaapITunesInstance_strategy)
-def test_ezdaap::ezdaapitunesinstance_revID_type(instance):
-    assert isinstance(instance.revID, int)
+def test_ezdaap_ezdaapitunesinstance_instantiation(instance):
+    assert isinstance(instance, ezdaap_EZDaapITunesInstance)
 
 
-@given(instance=ezdaap::EZDaapITunesInstance_strategy)
-def test_ezdaap::ezdaapitunesinstance_revID_setter(instance):
-    original = instance.revID
-    instance.revID = original
-    assert instance.revID == original
 
-@given(instance=ezdaap::EZDaapITunesInstance_strategy)
-def test_ezdaap::ezdaapitunesinstance_sessionID_type(instance):
-    assert isinstance(instance.sessionID, int)
-
-
-@given(instance=ezdaap::EZDaapITunesInstance_strategy)
-def test_ezdaap::ezdaapitunesinstance_sessionID_setter(instance):
-    original = instance.sessionID
-    instance.sessionID = original
-    assert instance.sessionID == original
-
-@given(instance=ezdaap::EZDaapITunesInstance_strategy)
-def test_ezdaap::ezdaapitunesinstance_id_type(instance):
-    assert isinstance(instance.id, str)
-
-
-@given(instance=ezdaap::EZDaapITunesInstance_strategy)
-def test_ezdaap::ezdaapitunesinstance_id_setter(instance):
+@given(instance=ezdaap_EZDaapITunesInstance_strategy)
+def test_ezdaap_ezdaapitunesinstance_id_setter(instance):
     original = instance.id
     instance.id = original
     assert instance.id == original
 
-@given(instance=ezdaap::EZDaapITunesInstance_strategy)
-def test_ezdaap::ezdaapitunesinstance_serverName_type(instance):
-    assert isinstance(instance.serverName, str)
 
 
-@given(instance=ezdaap::EZDaapITunesInstance_strategy)
-def test_ezdaap::ezdaapitunesinstance_serverName_setter(instance):
+@given(instance=ezdaap_EZDaapITunesInstance_strategy)
+def test_ezdaap_ezdaapitunesinstance_sessionID_setter(instance):
+    original = instance.sessionID
+    instance.sessionID = original
+    assert instance.sessionID == original
+
+
+
+@given(instance=ezdaap_EZDaapITunesInstance_strategy)
+def test_ezdaap_ezdaapitunesinstance_revID_setter(instance):
+    original = instance.revID
+    instance.revID = original
+    assert instance.revID == original
+
+
+
+@given(instance=ezdaap_EZDaapITunesInstance_strategy)
+def test_ezdaap_ezdaapitunesinstance_serverName_setter(instance):
     original = instance.serverName
     instance.serverName = original
     assert instance.serverName == original
 
-@given(instance=ezdaap::EZDaapArtist_strategy)
+@given(instance=ezdaap_EZDaapArtist_strategy)
 @settings(max_examples=50)
-def test_ezdaap::ezdaapartist_instantiation(instance):
-    assert isinstance(instance, ezdaap::EZDaapArtist)
+def test_ezdaap_ezdaapartist_instantiation(instance):
+    assert isinstance(instance, ezdaap_EZDaapArtist)
 
-@given(instance=ezdaap::EZDaapAlbum_strategy)
+@given(instance=ezdaap_EZDaapAlbum_strategy)
 @settings(max_examples=50)
-def test_ezdaap::ezdaapalbum_instantiation(instance):
-    assert isinstance(instance, ezdaap::EZDaapAlbum)
+def test_ezdaap_ezdaapalbum_instantiation(instance):
+    assert isinstance(instance, ezdaap_EZDaapAlbum)
 
-@given(instance=ezdaap::EZDaapSong_strategy)
+@given(instance=ezdaap_EZDaapSong_strategy)
 @settings(max_examples=50)
-def test_ezdaap::ezdaapsong_instantiation(instance):
-    assert isinstance(instance, ezdaap::EZDaapSong)
+def test_ezdaap_ezdaapsong_instantiation(instance):
+    assert isinstance(instance, ezdaap_EZDaapSong)
 
-@given(instance=ezdaap::EZDaapPlayList_strategy)
+@given(instance=ezdaap_EZDaapPlayList_strategy)
 @settings(max_examples=50)
-def test_ezdaap::ezdaapplaylist_instantiation(instance):
-    assert isinstance(instance, ezdaap::EZDaapPlayList)
+def test_ezdaap_ezdaapplaylist_instantiation(instance):
+    assert isinstance(instance, ezdaap_EZDaapPlayList)

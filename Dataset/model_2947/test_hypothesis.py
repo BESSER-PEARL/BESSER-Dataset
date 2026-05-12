@@ -3,15 +3,15 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    slolpBPM::Feature,
+from python_code import (
+    slolpBPM_Feature,
     Type,
-    slolpBPM::Entity,
-    slolpBPM::Datatype,
-    slolpBPM::Type,
-    slolpBPM::DomainModel,
+    slolpBPM_Entity,
+    slolpBPM_Datatype,
+    slolpBPM_Type,
+    slolpBPM_DomainModel,
 )
 
 # =============================================================================
@@ -20,33 +20,33 @@ from classes import (
 
 
 
-def test_slolpbpm::feature_is_not_abstract():
-    assert not inspect.isabstract(slolpBPM::Feature)
+def test_slolpbpm_feature_is_not_abstract():
+    assert not inspect.isabstract(slolpBPM_Feature)
 
 
-def test_slolpbpm::feature_constructor_exists():
-    assert callable(slolpBPM::Feature.__init__)
+def test_slolpbpm_feature_constructor_exists():
+    assert callable(slolpBPM_Feature.__init__)
 
 
-def test_slolpbpm::feature_constructor_args():
-    sig = inspect.signature(slolpBPM::Feature.__init__)
+def test_slolpbpm_feature_constructor_args():
+    sig = inspect.signature(slolpBPM_Feature.__init__)
     params = list(sig.parameters.keys())
     assert "many" in params, "Missing parameter 'many'"
     assert "name" in params, "Missing parameter 'name'"
 
-def test_slolpbpm::feature_has_many():
-    assert hasattr(slolpBPM::Feature, "many")
+def test_slolpbpm_feature_has_many():
+    assert hasattr(slolpBPM_Feature, "many")
     descriptor = None
-    for klass in slolpBPM::Feature.__mro__:
+    for klass in slolpBPM_Feature.__mro__:
         if "many" in klass.__dict__:
             descriptor = klass.__dict__["many"]
             break
     assert isinstance(descriptor, property)
 
-def test_slolpbpm::feature_has_name():
-    assert hasattr(slolpBPM::Feature, "name")
+def test_slolpbpm_feature_has_name():
+    assert hasattr(slolpBPM_Feature, "name")
     descriptor = None
-    for klass in slolpBPM::Feature.__mro__:
+    for klass in slolpBPM_Feature.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -68,51 +68,51 @@ def test_type_constructor_args():
 
 
 
-def test_slolpbpm::entity_is_not_abstract():
-    assert not inspect.isabstract(slolpBPM::Entity)
+def test_slolpbpm_entity_is_not_abstract():
+    assert not inspect.isabstract(slolpBPM_Entity)
 
 
-def test_slolpbpm::entity_constructor_exists():
-    assert callable(slolpBPM::Entity.__init__)
+def test_slolpbpm_entity_constructor_exists():
+    assert callable(slolpBPM_Entity.__init__)
 
 
-def test_slolpbpm::entity_constructor_args():
-    sig = inspect.signature(slolpBPM::Entity.__init__)
+def test_slolpbpm_entity_constructor_args():
+    sig = inspect.signature(slolpBPM_Entity.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_slolpbpm::datatype_is_not_abstract():
-    assert not inspect.isabstract(slolpBPM::Datatype)
+def test_slolpbpm_datatype_is_not_abstract():
+    assert not inspect.isabstract(slolpBPM_Datatype)
 
 
-def test_slolpbpm::datatype_constructor_exists():
-    assert callable(slolpBPM::Datatype.__init__)
+def test_slolpbpm_datatype_constructor_exists():
+    assert callable(slolpBPM_Datatype.__init__)
 
 
-def test_slolpbpm::datatype_constructor_args():
-    sig = inspect.signature(slolpBPM::Datatype.__init__)
+def test_slolpbpm_datatype_constructor_args():
+    sig = inspect.signature(slolpBPM_Datatype.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_slolpbpm::type_is_not_abstract():
-    assert not inspect.isabstract(slolpBPM::Type)
+def test_slolpbpm_type_is_not_abstract():
+    assert not inspect.isabstract(slolpBPM_Type)
 
 
-def test_slolpbpm::type_constructor_exists():
-    assert callable(slolpBPM::Type.__init__)
+def test_slolpbpm_type_constructor_exists():
+    assert callable(slolpBPM_Type.__init__)
 
 
-def test_slolpbpm::type_constructor_args():
-    sig = inspect.signature(slolpBPM::Type.__init__)
+def test_slolpbpm_type_constructor_args():
+    sig = inspect.signature(slolpBPM_Type.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_slolpbpm::type_has_name():
-    assert hasattr(slolpBPM::Type, "name")
+def test_slolpbpm_type_has_name():
+    assert hasattr(slolpBPM_Type, "name")
     descriptor = None
-    for klass in slolpBPM::Type.__mro__:
+    for klass in slolpBPM_Type.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -120,16 +120,16 @@ def test_slolpbpm::type_has_name():
 
 
 
-def test_slolpbpm::domainmodel_is_not_abstract():
-    assert not inspect.isabstract(slolpBPM::DomainModel)
+def test_slolpbpm_domainmodel_is_not_abstract():
+    assert not inspect.isabstract(slolpBPM_DomainModel)
 
 
-def test_slolpbpm::domainmodel_constructor_exists():
-    assert callable(slolpBPM::DomainModel.__init__)
+def test_slolpbpm_domainmodel_constructor_exists():
+    assert callable(slolpBPM_DomainModel.__init__)
 
 
-def test_slolpbpm::domainmodel_constructor_args():
-    sig = inspect.signature(slolpBPM::DomainModel.__init__)
+def test_slolpbpm_domainmodel_constructor_args():
+    sig = inspect.signature(slolpBPM_DomainModel.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -144,8 +144,8 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-slolpBPM::Feature_strategy = st.builds(
-    slolpBPM::Feature,
+slolpBPM_Feature_strategy = st.builds(
+    slolpBPM_Feature,
     many=
         st.booleans(),
     name=
@@ -154,44 +154,38 @@ slolpBPM::Feature_strategy = st.builds(
 Type_strategy = st.builds(
     Type,
 )
-slolpBPM::Entity_strategy = st.builds(
-    slolpBPM::Entity,
+slolpBPM_Entity_strategy = st.builds(
+    slolpBPM_Entity,
 )
-slolpBPM::Datatype_strategy = st.builds(
-    slolpBPM::Datatype,
+slolpBPM_Datatype_strategy = st.builds(
+    slolpBPM_Datatype,
 )
-slolpBPM::Type_strategy = st.builds(
-    slolpBPM::Type,
+slolpBPM_Type_strategy = st.builds(
+    slolpBPM_Type,
     name=
         safe_text
 )
-slolpBPM::DomainModel_strategy = st.builds(
-    slolpBPM::DomainModel,
+slolpBPM_DomainModel_strategy = st.builds(
+    slolpBPM_DomainModel,
 )
 
-@given(instance=slolpBPM::Feature_strategy)
+@given(instance=slolpBPM_Feature_strategy)
 @settings(max_examples=50)
-def test_slolpbpm::feature_instantiation(instance):
-    assert isinstance(instance, slolpBPM::Feature)
-
-@given(instance=slolpBPM::Feature_strategy)
-def test_slolpbpm::feature_many_type(instance):
-    assert isinstance(instance.many, bool)
+def test_slolpbpm_feature_instantiation(instance):
+    assert isinstance(instance, slolpBPM_Feature)
 
 
-@given(instance=slolpBPM::Feature_strategy)
-def test_slolpbpm::feature_many_setter(instance):
+
+@given(instance=slolpBPM_Feature_strategy)
+def test_slolpbpm_feature_many_setter(instance):
     original = instance.many
     instance.many = original
     assert instance.many == original
 
-@given(instance=slolpBPM::Feature_strategy)
-def test_slolpbpm::feature_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
-@given(instance=slolpBPM::Feature_strategy)
-def test_slolpbpm::feature_name_setter(instance):
+@given(instance=slolpBPM_Feature_strategy)
+def test_slolpbpm_feature_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
@@ -201,33 +195,30 @@ def test_slolpbpm::feature_name_setter(instance):
 def test_type_instantiation(instance):
     assert isinstance(instance, Type)
 
-@given(instance=slolpBPM::Entity_strategy)
+@given(instance=slolpBPM_Entity_strategy)
 @settings(max_examples=50)
-def test_slolpbpm::entity_instantiation(instance):
-    assert isinstance(instance, slolpBPM::Entity)
+def test_slolpbpm_entity_instantiation(instance):
+    assert isinstance(instance, slolpBPM_Entity)
 
-@given(instance=slolpBPM::Datatype_strategy)
+@given(instance=slolpBPM_Datatype_strategy)
 @settings(max_examples=50)
-def test_slolpbpm::datatype_instantiation(instance):
-    assert isinstance(instance, slolpBPM::Datatype)
+def test_slolpbpm_datatype_instantiation(instance):
+    assert isinstance(instance, slolpBPM_Datatype)
 
-@given(instance=slolpBPM::Type_strategy)
+@given(instance=slolpBPM_Type_strategy)
 @settings(max_examples=50)
-def test_slolpbpm::type_instantiation(instance):
-    assert isinstance(instance, slolpBPM::Type)
-
-@given(instance=slolpBPM::Type_strategy)
-def test_slolpbpm::type_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_slolpbpm_type_instantiation(instance):
+    assert isinstance(instance, slolpBPM_Type)
 
 
-@given(instance=slolpBPM::Type_strategy)
-def test_slolpbpm::type_name_setter(instance):
+
+@given(instance=slolpBPM_Type_strategy)
+def test_slolpbpm_type_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=slolpBPM::DomainModel_strategy)
+@given(instance=slolpBPM_DomainModel_strategy)
 @settings(max_examples=50)
-def test_slolpbpm::domainmodel_instantiation(instance):
-    assert isinstance(instance, slolpBPM::DomainModel)
+def test_slolpbpm_domainmodel_instantiation(instance):
+    assert isinstance(instance, slolpBPM_DomainModel)

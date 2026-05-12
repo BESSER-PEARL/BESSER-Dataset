@@ -3,26 +3,26 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    smalluml::ElementNomme,
-    smalluml::ElementDiagramme,
+from python_code import (
+    smalluml_ElementNomme,
+    smalluml_ElementDiagramme,
     Type,
-    smalluml::Entier,
-    smalluml::Chaine,
-    smalluml::Booleen,
-    smalluml::Type,
+    smalluml_Booleen,
+    smalluml_Chaine,
+    smalluml_Entier,
+    smalluml_Type,
     ElementNomme,
-    smalluml::Cardinalite,
-    smalluml::Methode,
-    smalluml::Attribut,
+    smalluml_Attribut,
+    smalluml_Methode,
+    smalluml_Cardinalite,
     ElementDiagramme,
-    smalluml::TypeDonnee,
-    smalluml::Diagramme,
-    smalluml::Association,
-    smalluml::Enumeration,
-    smalluml::Classe,
+    smalluml_Diagramme,
+    smalluml_TypeDonnee,
+    smalluml_Enumeration,
+    smalluml_Association,
+    smalluml_Classe,
 )
 
 # =============================================================================
@@ -31,23 +31,23 @@ from classes import (
 
 
 
-def test_smalluml::elementnomme_is_not_abstract():
-    assert not inspect.isabstract(smalluml::ElementNomme)
+def test_smalluml_elementnomme_is_not_abstract():
+    assert not inspect.isabstract(smalluml_ElementNomme)
 
 
-def test_smalluml::elementnomme_constructor_exists():
-    assert callable(smalluml::ElementNomme.__init__)
+def test_smalluml_elementnomme_constructor_exists():
+    assert callable(smalluml_ElementNomme.__init__)
 
 
-def test_smalluml::elementnomme_constructor_args():
-    sig = inspect.signature(smalluml::ElementNomme.__init__)
+def test_smalluml_elementnomme_constructor_args():
+    sig = inspect.signature(smalluml_ElementNomme.__init__)
     params = list(sig.parameters.keys())
     assert "nom" in params, "Missing parameter 'nom'"
 
-def test_smalluml::elementnomme_has_nom():
-    assert hasattr(smalluml::ElementNomme, "nom")
+def test_smalluml_elementnomme_has_nom():
+    assert hasattr(smalluml_ElementNomme, "nom")
     descriptor = None
-    for klass in smalluml::ElementNomme.__mro__:
+    for klass in smalluml_ElementNomme.__mro__:
         if "nom" in klass.__dict__:
             descriptor = klass.__dict__["nom"]
             break
@@ -55,16 +55,16 @@ def test_smalluml::elementnomme_has_nom():
 
 
 
-def test_smalluml::elementdiagramme_is_not_abstract():
-    assert not inspect.isabstract(smalluml::ElementDiagramme)
+def test_smalluml_elementdiagramme_is_not_abstract():
+    assert not inspect.isabstract(smalluml_ElementDiagramme)
 
 
-def test_smalluml::elementdiagramme_constructor_exists():
-    assert callable(smalluml::ElementDiagramme.__init__)
+def test_smalluml_elementdiagramme_constructor_exists():
+    assert callable(smalluml_ElementDiagramme.__init__)
 
 
-def test_smalluml::elementdiagramme_constructor_args():
-    sig = inspect.signature(smalluml::ElementDiagramme.__init__)
+def test_smalluml_elementdiagramme_constructor_args():
+    sig = inspect.signature(smalluml_ElementDiagramme.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -83,58 +83,58 @@ def test_type_constructor_args():
 
 
 
-def test_smalluml::entier_is_not_abstract():
-    assert not inspect.isabstract(smalluml::Entier)
+def test_smalluml_booleen_is_not_abstract():
+    assert not inspect.isabstract(smalluml_Booleen)
 
 
-def test_smalluml::entier_constructor_exists():
-    assert callable(smalluml::Entier.__init__)
+def test_smalluml_booleen_constructor_exists():
+    assert callable(smalluml_Booleen.__init__)
 
 
-def test_smalluml::entier_constructor_args():
-    sig = inspect.signature(smalluml::Entier.__init__)
+def test_smalluml_booleen_constructor_args():
+    sig = inspect.signature(smalluml_Booleen.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_smalluml::chaine_is_not_abstract():
-    assert not inspect.isabstract(smalluml::Chaine)
+def test_smalluml_chaine_is_not_abstract():
+    assert not inspect.isabstract(smalluml_Chaine)
 
 
-def test_smalluml::chaine_constructor_exists():
-    assert callable(smalluml::Chaine.__init__)
+def test_smalluml_chaine_constructor_exists():
+    assert callable(smalluml_Chaine.__init__)
 
 
-def test_smalluml::chaine_constructor_args():
-    sig = inspect.signature(smalluml::Chaine.__init__)
+def test_smalluml_chaine_constructor_args():
+    sig = inspect.signature(smalluml_Chaine.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_smalluml::booleen_is_not_abstract():
-    assert not inspect.isabstract(smalluml::Booleen)
+def test_smalluml_entier_is_not_abstract():
+    assert not inspect.isabstract(smalluml_Entier)
 
 
-def test_smalluml::booleen_constructor_exists():
-    assert callable(smalluml::Booleen.__init__)
+def test_smalluml_entier_constructor_exists():
+    assert callable(smalluml_Entier.__init__)
 
 
-def test_smalluml::booleen_constructor_args():
-    sig = inspect.signature(smalluml::Booleen.__init__)
+def test_smalluml_entier_constructor_args():
+    sig = inspect.signature(smalluml_Entier.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_smalluml::type_is_not_abstract():
-    assert not inspect.isabstract(smalluml::Type)
+def test_smalluml_type_is_not_abstract():
+    assert not inspect.isabstract(smalluml_Type)
 
 
-def test_smalluml::type_constructor_exists():
-    assert callable(smalluml::Type.__init__)
+def test_smalluml_type_constructor_exists():
+    assert callable(smalluml_Type.__init__)
 
 
-def test_smalluml::type_constructor_args():
-    sig = inspect.signature(smalluml::Type.__init__)
+def test_smalluml_type_constructor_args():
+    sig = inspect.signature(smalluml_Type.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -153,57 +153,37 @@ def test_elementnomme_constructor_args():
 
 
 
-def test_smalluml::cardinalite_is_not_abstract():
-    assert not inspect.isabstract(smalluml::Cardinalite)
+def test_smalluml_attribut_is_not_abstract():
+    assert not inspect.isabstract(smalluml_Attribut)
 
 
-def test_smalluml::cardinalite_constructor_exists():
-    assert callable(smalluml::Cardinalite.__init__)
+def test_smalluml_attribut_constructor_exists():
+    assert callable(smalluml_Attribut.__init__)
 
 
-def test_smalluml::cardinalite_constructor_args():
-    sig = inspect.signature(smalluml::Cardinalite.__init__)
+def test_smalluml_attribut_constructor_args():
+    sig = inspect.signature(smalluml_Attribut.__init__)
     params = list(sig.parameters.keys())
-    assert "multipliciteSup" in params, "Missing parameter 'multipliciteSup'"
-    assert "multipliciteInf" in params, "Missing parameter 'multipliciteInf'"
-
-def test_smalluml::cardinalite_has_multipliciteSup():
-    assert hasattr(smalluml::Cardinalite, "multipliciteSup")
-    descriptor = None
-    for klass in smalluml::Cardinalite.__mro__:
-        if "multipliciteSup" in klass.__dict__:
-            descriptor = klass.__dict__["multipliciteSup"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_smalluml::cardinalite_has_multipliciteInf():
-    assert hasattr(smalluml::Cardinalite, "multipliciteInf")
-    descriptor = None
-    for klass in smalluml::Cardinalite.__mro__:
-        if "multipliciteInf" in klass.__dict__:
-            descriptor = klass.__dict__["multipliciteInf"]
-            break
-    assert isinstance(descriptor, property)
 
 
 
-def test_smalluml::methode_is_not_abstract():
-    assert not inspect.isabstract(smalluml::Methode)
+def test_smalluml_methode_is_not_abstract():
+    assert not inspect.isabstract(smalluml_Methode)
 
 
-def test_smalluml::methode_constructor_exists():
-    assert callable(smalluml::Methode.__init__)
+def test_smalluml_methode_constructor_exists():
+    assert callable(smalluml_Methode.__init__)
 
 
-def test_smalluml::methode_constructor_args():
-    sig = inspect.signature(smalluml::Methode.__init__)
+def test_smalluml_methode_constructor_args():
+    sig = inspect.signature(smalluml_Methode.__init__)
     params = list(sig.parameters.keys())
     assert "methodeAbstraite" in params, "Missing parameter 'methodeAbstraite'"
 
-def test_smalluml::methode_has_methodeAbstraite():
-    assert hasattr(smalluml::Methode, "methodeAbstraite")
+def test_smalluml_methode_has_methodeAbstraite():
+    assert hasattr(smalluml_Methode, "methodeAbstraite")
     descriptor = None
-    for klass in smalluml::Methode.__mro__:
+    for klass in smalluml_Methode.__mro__:
         if "methodeAbstraite" in klass.__dict__:
             descriptor = klass.__dict__["methodeAbstraite"]
             break
@@ -211,17 +191,37 @@ def test_smalluml::methode_has_methodeAbstraite():
 
 
 
-def test_smalluml::attribut_is_not_abstract():
-    assert not inspect.isabstract(smalluml::Attribut)
+def test_smalluml_cardinalite_is_not_abstract():
+    assert not inspect.isabstract(smalluml_Cardinalite)
 
 
-def test_smalluml::attribut_constructor_exists():
-    assert callable(smalluml::Attribut.__init__)
+def test_smalluml_cardinalite_constructor_exists():
+    assert callable(smalluml_Cardinalite.__init__)
 
 
-def test_smalluml::attribut_constructor_args():
-    sig = inspect.signature(smalluml::Attribut.__init__)
+def test_smalluml_cardinalite_constructor_args():
+    sig = inspect.signature(smalluml_Cardinalite.__init__)
     params = list(sig.parameters.keys())
+    assert "multipliciteSup" in params, "Missing parameter 'multipliciteSup'"
+    assert "multipliciteInf" in params, "Missing parameter 'multipliciteInf'"
+
+def test_smalluml_cardinalite_has_multipliciteSup():
+    assert hasattr(smalluml_Cardinalite, "multipliciteSup")
+    descriptor = None
+    for klass in smalluml_Cardinalite.__mro__:
+        if "multipliciteSup" in klass.__dict__:
+            descriptor = klass.__dict__["multipliciteSup"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_smalluml_cardinalite_has_multipliciteInf():
+    assert hasattr(smalluml_Cardinalite, "multipliciteInf")
+    descriptor = None
+    for klass in smalluml_Cardinalite.__mro__:
+        if "multipliciteInf" in klass.__dict__:
+            descriptor = klass.__dict__["multipliciteInf"]
+            break
+    assert isinstance(descriptor, property)
 
 
 
@@ -239,65 +239,51 @@ def test_elementdiagramme_constructor_args():
 
 
 
-def test_smalluml::typedonnee_is_not_abstract():
-    assert not inspect.isabstract(smalluml::TypeDonnee)
+def test_smalluml_diagramme_is_not_abstract():
+    assert not inspect.isabstract(smalluml_Diagramme)
 
 
-def test_smalluml::typedonnee_constructor_exists():
-    assert callable(smalluml::TypeDonnee.__init__)
+def test_smalluml_diagramme_constructor_exists():
+    assert callable(smalluml_Diagramme.__init__)
 
 
-def test_smalluml::typedonnee_constructor_args():
-    sig = inspect.signature(smalluml::TypeDonnee.__init__)
+def test_smalluml_diagramme_constructor_args():
+    sig = inspect.signature(smalluml_Diagramme.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_smalluml::diagramme_is_not_abstract():
-    assert not inspect.isabstract(smalluml::Diagramme)
+def test_smalluml_typedonnee_is_not_abstract():
+    assert not inspect.isabstract(smalluml_TypeDonnee)
 
 
-def test_smalluml::diagramme_constructor_exists():
-    assert callable(smalluml::Diagramme.__init__)
+def test_smalluml_typedonnee_constructor_exists():
+    assert callable(smalluml_TypeDonnee.__init__)
 
 
-def test_smalluml::diagramme_constructor_args():
-    sig = inspect.signature(smalluml::Diagramme.__init__)
+def test_smalluml_typedonnee_constructor_args():
+    sig = inspect.signature(smalluml_TypeDonnee.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_smalluml::association_is_not_abstract():
-    assert not inspect.isabstract(smalluml::Association)
+def test_smalluml_enumeration_is_not_abstract():
+    assert not inspect.isabstract(smalluml_Enumeration)
 
 
-def test_smalluml::association_constructor_exists():
-    assert callable(smalluml::Association.__init__)
+def test_smalluml_enumeration_constructor_exists():
+    assert callable(smalluml_Enumeration.__init__)
 
 
-def test_smalluml::association_constructor_args():
-    sig = inspect.signature(smalluml::Association.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_smalluml::enumeration_is_not_abstract():
-    assert not inspect.isabstract(smalluml::Enumeration)
-
-
-def test_smalluml::enumeration_constructor_exists():
-    assert callable(smalluml::Enumeration.__init__)
-
-
-def test_smalluml::enumeration_constructor_args():
-    sig = inspect.signature(smalluml::Enumeration.__init__)
+def test_smalluml_enumeration_constructor_args():
+    sig = inspect.signature(smalluml_Enumeration.__init__)
     params = list(sig.parameters.keys())
     assert "elements" in params, "Missing parameter 'elements'"
 
-def test_smalluml::enumeration_has_elements():
-    assert hasattr(smalluml::Enumeration, "elements")
+def test_smalluml_enumeration_has_elements():
+    assert hasattr(smalluml_Enumeration, "elements")
     descriptor = None
-    for klass in smalluml::Enumeration.__mro__:
+    for klass in smalluml_Enumeration.__mro__:
         if "elements" in klass.__dict__:
             descriptor = klass.__dict__["elements"]
             break
@@ -305,35 +291,49 @@ def test_smalluml::enumeration_has_elements():
 
 
 
-def test_smalluml::classe_is_not_abstract():
-    assert not inspect.isabstract(smalluml::Classe)
+def test_smalluml_association_is_not_abstract():
+    assert not inspect.isabstract(smalluml_Association)
 
 
-def test_smalluml::classe_constructor_exists():
-    assert callable(smalluml::Classe.__init__)
+def test_smalluml_association_constructor_exists():
+    assert callable(smalluml_Association.__init__)
 
 
-def test_smalluml::classe_constructor_args():
-    sig = inspect.signature(smalluml::Classe.__init__)
+def test_smalluml_association_constructor_args():
+    sig = inspect.signature(smalluml_Association.__init__)
     params = list(sig.parameters.keys())
-    assert "classeAbstraite" in params, "Missing parameter 'classeAbstraite'"
-    assert "abstrait" in params, "Missing parameter 'abstrait'"
 
-def test_smalluml::classe_has_classeAbstraite():
-    assert hasattr(smalluml::Classe, "classeAbstraite")
+
+
+def test_smalluml_classe_is_not_abstract():
+    assert not inspect.isabstract(smalluml_Classe)
+
+
+def test_smalluml_classe_constructor_exists():
+    assert callable(smalluml_Classe.__init__)
+
+
+def test_smalluml_classe_constructor_args():
+    sig = inspect.signature(smalluml_Classe.__init__)
+    params = list(sig.parameters.keys())
+    assert "abstrait" in params, "Missing parameter 'abstrait'"
+    assert "classeAbstraite" in params, "Missing parameter 'classeAbstraite'"
+
+def test_smalluml_classe_has_abstrait():
+    assert hasattr(smalluml_Classe, "abstrait")
     descriptor = None
-    for klass in smalluml::Classe.__mro__:
-        if "classeAbstraite" in klass.__dict__:
-            descriptor = klass.__dict__["classeAbstraite"]
+    for klass in smalluml_Classe.__mro__:
+        if "abstrait" in klass.__dict__:
+            descriptor = klass.__dict__["abstrait"]
             break
     assert isinstance(descriptor, property)
 
-def test_smalluml::classe_has_abstrait():
-    assert hasattr(smalluml::Classe, "abstrait")
+def test_smalluml_classe_has_classeAbstraite():
+    assert hasattr(smalluml_Classe, "classeAbstraite")
     descriptor = None
-    for klass in smalluml::Classe.__mro__:
-        if "abstrait" in klass.__dict__:
-            descriptor = klass.__dict__["abstrait"]
+    for klass in smalluml_Classe.__mro__:
+        if "classeAbstraite" in klass.__dict__:
+            descriptor = klass.__dict__["classeAbstraite"]
             break
     assert isinstance(descriptor, property)
 
@@ -349,230 +349,209 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-smalluml::ElementNomme_strategy = st.builds(
-    smalluml::ElementNomme,
+smalluml_ElementNomme_strategy = st.builds(
+    smalluml_ElementNomme,
     nom=
         safe_text
 )
-smalluml::ElementDiagramme_strategy = st.builds(
-    smalluml::ElementDiagramme,
+smalluml_ElementDiagramme_strategy = st.builds(
+    smalluml_ElementDiagramme,
 )
 Type_strategy = st.builds(
     Type,
 )
-smalluml::Entier_strategy = st.builds(
-    smalluml::Entier,
+smalluml_Booleen_strategy = st.builds(
+    smalluml_Booleen,
 )
-smalluml::Chaine_strategy = st.builds(
-    smalluml::Chaine,
+smalluml_Chaine_strategy = st.builds(
+    smalluml_Chaine,
 )
-smalluml::Booleen_strategy = st.builds(
-    smalluml::Booleen,
+smalluml_Entier_strategy = st.builds(
+    smalluml_Entier,
 )
-smalluml::Type_strategy = st.builds(
-    smalluml::Type,
+smalluml_Type_strategy = st.builds(
+    smalluml_Type,
 )
 ElementNomme_strategy = st.builds(
     ElementNomme,
 )
-smalluml::Cardinalite_strategy = st.builds(
-    smalluml::Cardinalite,
+smalluml_Attribut_strategy = st.builds(
+    smalluml_Attribut,
+)
+smalluml_Methode_strategy = st.builds(
+    smalluml_Methode,
+    methodeAbstraite=
+        st.booleans()
+)
+smalluml_Cardinalite_strategy = st.builds(
+    smalluml_Cardinalite,
     multipliciteSup=
         safe_text,
     multipliciteInf=
         safe_text
 )
-smalluml::Methode_strategy = st.builds(
-    smalluml::Methode,
-    methodeAbstraite=
-        st.booleans()
-)
-smalluml::Attribut_strategy = st.builds(
-    smalluml::Attribut,
-)
 ElementDiagramme_strategy = st.builds(
     ElementDiagramme,
 )
-smalluml::TypeDonnee_strategy = st.builds(
-    smalluml::TypeDonnee,
+smalluml_Diagramme_strategy = st.builds(
+    smalluml_Diagramme,
 )
-smalluml::Diagramme_strategy = st.builds(
-    smalluml::Diagramme,
+smalluml_TypeDonnee_strategy = st.builds(
+    smalluml_TypeDonnee,
 )
-smalluml::Association_strategy = st.builds(
-    smalluml::Association,
-)
-smalluml::Enumeration_strategy = st.builds(
-    smalluml::Enumeration,
+smalluml_Enumeration_strategy = st.builds(
+    smalluml_Enumeration,
     elements=
         safe_text
 )
-smalluml::Classe_strategy = st.builds(
-    smalluml::Classe,
-    classeAbstraite=
-        st.booleans(),
+smalluml_Association_strategy = st.builds(
+    smalluml_Association,
+)
+smalluml_Classe_strategy = st.builds(
+    smalluml_Classe,
     abstrait=
+        st.booleans(),
+    classeAbstraite=
         st.booleans()
 )
 
-@given(instance=smalluml::ElementNomme_strategy)
+@given(instance=smalluml_ElementNomme_strategy)
 @settings(max_examples=50)
-def test_smalluml::elementnomme_instantiation(instance):
-    assert isinstance(instance, smalluml::ElementNomme)
-
-@given(instance=smalluml::ElementNomme_strategy)
-def test_smalluml::elementnomme_nom_type(instance):
-    assert isinstance(instance.nom, str)
+def test_smalluml_elementnomme_instantiation(instance):
+    assert isinstance(instance, smalluml_ElementNomme)
 
 
-@given(instance=smalluml::ElementNomme_strategy)
-def test_smalluml::elementnomme_nom_setter(instance):
+
+@given(instance=smalluml_ElementNomme_strategy)
+def test_smalluml_elementnomme_nom_setter(instance):
     original = instance.nom
     instance.nom = original
     assert instance.nom == original
 
-@given(instance=smalluml::ElementDiagramme_strategy)
+@given(instance=smalluml_ElementDiagramme_strategy)
 @settings(max_examples=50)
-def test_smalluml::elementdiagramme_instantiation(instance):
-    assert isinstance(instance, smalluml::ElementDiagramme)
+def test_smalluml_elementdiagramme_instantiation(instance):
+    assert isinstance(instance, smalluml_ElementDiagramme)
 
 @given(instance=Type_strategy)
 @settings(max_examples=50)
 def test_type_instantiation(instance):
     assert isinstance(instance, Type)
 
-@given(instance=smalluml::Entier_strategy)
+@given(instance=smalluml_Booleen_strategy)
 @settings(max_examples=50)
-def test_smalluml::entier_instantiation(instance):
-    assert isinstance(instance, smalluml::Entier)
+def test_smalluml_booleen_instantiation(instance):
+    assert isinstance(instance, smalluml_Booleen)
 
-@given(instance=smalluml::Chaine_strategy)
+@given(instance=smalluml_Chaine_strategy)
 @settings(max_examples=50)
-def test_smalluml::chaine_instantiation(instance):
-    assert isinstance(instance, smalluml::Chaine)
+def test_smalluml_chaine_instantiation(instance):
+    assert isinstance(instance, smalluml_Chaine)
 
-@given(instance=smalluml::Booleen_strategy)
+@given(instance=smalluml_Entier_strategy)
 @settings(max_examples=50)
-def test_smalluml::booleen_instantiation(instance):
-    assert isinstance(instance, smalluml::Booleen)
+def test_smalluml_entier_instantiation(instance):
+    assert isinstance(instance, smalluml_Entier)
 
-@given(instance=smalluml::Type_strategy)
+@given(instance=smalluml_Type_strategy)
 @settings(max_examples=50)
-def test_smalluml::type_instantiation(instance):
-    assert isinstance(instance, smalluml::Type)
+def test_smalluml_type_instantiation(instance):
+    assert isinstance(instance, smalluml_Type)
 
 @given(instance=ElementNomme_strategy)
 @settings(max_examples=50)
 def test_elementnomme_instantiation(instance):
     assert isinstance(instance, ElementNomme)
 
-@given(instance=smalluml::Cardinalite_strategy)
+@given(instance=smalluml_Attribut_strategy)
 @settings(max_examples=50)
-def test_smalluml::cardinalite_instantiation(instance):
-    assert isinstance(instance, smalluml::Cardinalite)
+def test_smalluml_attribut_instantiation(instance):
+    assert isinstance(instance, smalluml_Attribut)
 
-@given(instance=smalluml::Cardinalite_strategy)
-def test_smalluml::cardinalite_multipliciteSup_type(instance):
-    assert isinstance(instance.multipliciteSup, str)
-
-
-@given(instance=smalluml::Cardinalite_strategy)
-def test_smalluml::cardinalite_multipliciteSup_setter(instance):
-    original = instance.multipliciteSup
-    instance.multipliciteSup = original
-    assert instance.multipliciteSup == original
-
-@given(instance=smalluml::Cardinalite_strategy)
-def test_smalluml::cardinalite_multipliciteInf_type(instance):
-    assert isinstance(instance.multipliciteInf, str)
-
-
-@given(instance=smalluml::Cardinalite_strategy)
-def test_smalluml::cardinalite_multipliciteInf_setter(instance):
-    original = instance.multipliciteInf
-    instance.multipliciteInf = original
-    assert instance.multipliciteInf == original
-
-@given(instance=smalluml::Methode_strategy)
+@given(instance=smalluml_Methode_strategy)
 @settings(max_examples=50)
-def test_smalluml::methode_instantiation(instance):
-    assert isinstance(instance, smalluml::Methode)
-
-@given(instance=smalluml::Methode_strategy)
-def test_smalluml::methode_methodeAbstraite_type(instance):
-    assert isinstance(instance.methodeAbstraite, bool)
+def test_smalluml_methode_instantiation(instance):
+    assert isinstance(instance, smalluml_Methode)
 
 
-@given(instance=smalluml::Methode_strategy)
-def test_smalluml::methode_methodeAbstraite_setter(instance):
+
+@given(instance=smalluml_Methode_strategy)
+def test_smalluml_methode_methodeAbstraite_setter(instance):
     original = instance.methodeAbstraite
     instance.methodeAbstraite = original
     assert instance.methodeAbstraite == original
 
-@given(instance=smalluml::Attribut_strategy)
+@given(instance=smalluml_Cardinalite_strategy)
 @settings(max_examples=50)
-def test_smalluml::attribut_instantiation(instance):
-    assert isinstance(instance, smalluml::Attribut)
+def test_smalluml_cardinalite_instantiation(instance):
+    assert isinstance(instance, smalluml_Cardinalite)
+
+
+
+@given(instance=smalluml_Cardinalite_strategy)
+def test_smalluml_cardinalite_multipliciteSup_setter(instance):
+    original = instance.multipliciteSup
+    instance.multipliciteSup = original
+    assert instance.multipliciteSup == original
+
+
+
+@given(instance=smalluml_Cardinalite_strategy)
+def test_smalluml_cardinalite_multipliciteInf_setter(instance):
+    original = instance.multipliciteInf
+    instance.multipliciteInf = original
+    assert instance.multipliciteInf == original
 
 @given(instance=ElementDiagramme_strategy)
 @settings(max_examples=50)
 def test_elementdiagramme_instantiation(instance):
     assert isinstance(instance, ElementDiagramme)
 
-@given(instance=smalluml::TypeDonnee_strategy)
+@given(instance=smalluml_Diagramme_strategy)
 @settings(max_examples=50)
-def test_smalluml::typedonnee_instantiation(instance):
-    assert isinstance(instance, smalluml::TypeDonnee)
+def test_smalluml_diagramme_instantiation(instance):
+    assert isinstance(instance, smalluml_Diagramme)
 
-@given(instance=smalluml::Diagramme_strategy)
+@given(instance=smalluml_TypeDonnee_strategy)
 @settings(max_examples=50)
-def test_smalluml::diagramme_instantiation(instance):
-    assert isinstance(instance, smalluml::Diagramme)
+def test_smalluml_typedonnee_instantiation(instance):
+    assert isinstance(instance, smalluml_TypeDonnee)
 
-@given(instance=smalluml::Association_strategy)
+@given(instance=smalluml_Enumeration_strategy)
 @settings(max_examples=50)
-def test_smalluml::association_instantiation(instance):
-    assert isinstance(instance, smalluml::Association)
-
-@given(instance=smalluml::Enumeration_strategy)
-@settings(max_examples=50)
-def test_smalluml::enumeration_instantiation(instance):
-    assert isinstance(instance, smalluml::Enumeration)
-
-@given(instance=smalluml::Enumeration_strategy)
-def test_smalluml::enumeration_elements_type(instance):
-    assert isinstance(instance.elements, str)
+def test_smalluml_enumeration_instantiation(instance):
+    assert isinstance(instance, smalluml_Enumeration)
 
 
-@given(instance=smalluml::Enumeration_strategy)
-def test_smalluml::enumeration_elements_setter(instance):
+
+@given(instance=smalluml_Enumeration_strategy)
+def test_smalluml_enumeration_elements_setter(instance):
     original = instance.elements
     instance.elements = original
     assert instance.elements == original
 
-@given(instance=smalluml::Classe_strategy)
+@given(instance=smalluml_Association_strategy)
 @settings(max_examples=50)
-def test_smalluml::classe_instantiation(instance):
-    assert isinstance(instance, smalluml::Classe)
+def test_smalluml_association_instantiation(instance):
+    assert isinstance(instance, smalluml_Association)
 
-@given(instance=smalluml::Classe_strategy)
-def test_smalluml::classe_classeAbstraite_type(instance):
-    assert isinstance(instance.classeAbstraite, bool)
-
-
-@given(instance=smalluml::Classe_strategy)
-def test_smalluml::classe_classeAbstraite_setter(instance):
-    original = instance.classeAbstraite
-    instance.classeAbstraite = original
-    assert instance.classeAbstraite == original
-
-@given(instance=smalluml::Classe_strategy)
-def test_smalluml::classe_abstrait_type(instance):
-    assert isinstance(instance.abstrait, bool)
+@given(instance=smalluml_Classe_strategy)
+@settings(max_examples=50)
+def test_smalluml_classe_instantiation(instance):
+    assert isinstance(instance, smalluml_Classe)
 
 
-@given(instance=smalluml::Classe_strategy)
-def test_smalluml::classe_abstrait_setter(instance):
+
+@given(instance=smalluml_Classe_strategy)
+def test_smalluml_classe_abstrait_setter(instance):
     original = instance.abstrait
     instance.abstrait = original
     assert instance.abstrait == original
+
+
+
+@given(instance=smalluml_Classe_strategy)
+def test_smalluml_classe_classeAbstraite_setter(instance):
+    original = instance.classeAbstraite
+    instance.classeAbstraite = original
+    assert instance.classeAbstraite == original

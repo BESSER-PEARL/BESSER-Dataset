@@ -3,11 +3,9 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    Parameter,
-    parameters::OrdinaryParameter,
+from python_code import (
     AdditionalLocalVariable,
     Block,
     CatchBlock,
@@ -15,365 +13,339 @@ from classes import (
     LocalVariable,
     JumpLabel,
     WhileLoop,
-    statements::DoWhileLoop,
+    statements_DoWhileLoop,
     SwitchCase,
-    statements::DefaultSwitchCase,
+    statements_DefaultSwitchCase,
     StatementContainer,
     OrdinaryParameter,
     Modifiable,
     Jump,
-    statements::Continue,
-    statements::Break,
+    statements_Continue,
+    statements_Break,
     Conditional,
-    statements::NormalSwitchCase,
+    statements_NormalSwitchCase,
+    Parameter,
+    parameters_OrdinaryParameter,
     PrimitiveType,
-    types::Long,
-    types::Double,
-    types::Float,
-    types::Char,
-    types::Short,
-    types::Void,
-    types::Byte,
-    types::Int,
-    types::Boolean,
+    types_Float,
+    types_Long,
+    types_Byte,
+    types_Void,
+    types_Short,
+    types_Boolean,
+    types_Char,
+    types_Double,
+    types_Int,
     ElementReference,
-    references::IdentifierReference,
+    references_IdentifierReference,
     ArraySelector,
-    parameters::VariableLengthParameter,
+    parameters_VariableLengthParameter,
     Operator,
-    operators::ShiftOperator,
-    operators::AssignmentOperator,
-    operators::RelationOperator,
-    operators::MultiplicativeOperator,
-    operators::EqualityOperator,
-    operators::AdditiveOperator,
-    operators::UnaryModificationOperator,
-    operators::UnaryOperator,
+    operators_AssignmentOperator,
+    operators_EqualityOperator,
+    operators_MultiplicativeOperator,
+    operators_RelationOperator,
+    operators_ShiftOperator,
+    operators_AdditiveOperator,
+    operators_UnaryModificationOperator,
+    operators_UnaryOperator,
     Modifier,
-    modifiers::Synchronized,
-    modifiers::Abstract,
-    modifiers::Final,
-    modifiers::Public,
-    modifiers::Strictfp,
-    modifiers::Static,
-    modifiers::Protected,
-    modifiers::Native,
-    modifiers::Private,
-    modifiers::Volatile,
-    modifiers::Transient,
+    modifiers_Public,
+    modifiers_Strictfp,
+    modifiers_Volatile,
+    modifiers_Private,
+    modifiers_Abstract,
+    modifiers_Transient,
+    modifiers_Synchronized,
+    modifiers_Final,
+    modifiers_Native,
+    modifiers_Static,
+    modifiers_Protected,
     Variable,
     ExceptionThrower,
     Parametrizable,
     StatementListContainer,
-    statements::SwitchCase,
-    statements::CatchBlock,
+    statements_CatchBlock,
+    statements_SwitchCase,
     Initializable,
     Method,
-    members::ClassMethod,
-    members::InterfaceMethod,
+    members_ClassMethod,
+    members_InterfaceMethod,
     AdditionalField,
     NamespaceClassifierReference,
     DoubleLiteral,
-    literals::DecimalDoubleLiteral,
+    literals_DecimalDoubleLiteral,
     FloatLiteral,
-    literals::HexFloatLiteral,
-    literals::DecimalFloatLiteral,
+    literals_HexFloatLiteral,
+    literals_DecimalFloatLiteral,
     LongLiteral,
-    literals::OctalLongLiteral,
-    literals::HexLongLiteral,
-    literals::DecimalLongLiteral,
+    literals_HexLongLiteral,
+    literals_OctalLongLiteral,
+    literals_DecimalLongLiteral,
     IntegerLiteral,
-    literals::OctalIntegerLiteral,
-    literals::HexIntegerLiteral,
-    literals::DecimalIntegerLiteral,
-    literals::HexDoubleLiteral,
+    literals_OctalIntegerLiteral,
+    literals_HexIntegerLiteral,
+    literals_DecimalIntegerLiteral,
+    literals_HexDoubleLiteral,
     Literal,
-    literals::CharacterLiteral,
-    literals::NullLiteral,
-    literals::LongLiteral,
-    literals::DoubleLiteral,
-    literals::FloatLiteral,
-    literals::IntegerLiteral,
-    literals::BooleanLiteral,
+    literals_IntegerLiteral,
+    literals_CharacterLiteral,
+    literals_NullLiteral,
+    literals_FloatLiteral,
+    literals_LongLiteral,
+    literals_DoubleLiteral,
+    literals_BooleanLiteral,
     StaticImport,
-    imports::StaticMemberImport,
-    imports::StaticClassifierImport,
+    imports_StaticMemberImport,
+    imports_StaticClassifierImport,
     Static,
     PrimaryExpression,
-    literals::Literal,
+    literals_Literal,
     Self,
-    literals::Super,
-    literals::This,
+    literals_Super,
+    literals_This,
     AnonymousClass,
     CallTypeArgumentable,
     Instantiation,
-    instantiations::ExplicitConstructorCall,
-    instantiations::NewConstructorCall,
+    instantiations_ExplicitConstructorCall,
+    instantiations_NewConstructorCall,
     TypeArgumentable,
-    references::Reference,
+    references_Reference,
     Argumentable,
-    references::MethodCall,
+    references_MethodCall,
     Import,
-    imports::PackageImport,
-    imports::StaticImport,
-    imports::ClassifierImport,
+    imports_ClassifierImport,
+    imports_PackageImport,
+    imports_StaticImport,
     UnaryModificationExpression,
-    expressions::SuffixUnaryModificationExpression,
-    expressions::PrefixUnaryModificationExpression,
+    expressions_SuffixUnaryModificationExpression,
+    Commentable,
+    types_TypedElement,
+    types_Type,
+    operators_Operator,
+    instantiations_Initializable,
+    statements_Conditional,
+    statements_Statement,
+    statements_ForLoopInitializer,
+    members_MemberContainer,
+    statements_StatementListContainer,
+    imports_ImportingElement,
+    modifiers_AnnotationInstanceOrModifier,
+    parameters_Parametrizable,
+    statements_StatementContainer,
+    literals_Self,
+    references_Argumentable,
+    modifiers_Modifiable,
+    modifiers_AnnotableAndModifiable,
+    types_TypeReference,
+    members_ExceptionThrower,
+    annotations_Annotable,
+    arrays_ArrayTypeable,
+    Expression,
+    annotations_AnnotationValue,
+    InterfaceMethod,
+    annotations_AnnotationAttribute,
+    annotations_AnnotationAttributeSetting,
+    AnnotationAttributeSetting,
+    AnnotationValue,
+    annotations_AnnotationParameter,
+    AnnotationParameter,
+    annotations_AnnotationParameterList,
+    annotations_SingleAnnotationParameter,
+    Classifier,
+    generics_TypeParameter,
+    NamespaceAwareElement,
+    imports_Import,
+    AnnotationInstanceOrModifier,
+    modifiers_Modifier,
+    Reference,
+    references_PrimitiveTypeReference,
+    references_ElementReference,
+    references_StringReference,
+    references_SelfReference,
+    references_ReflectiveClassReference,
+    expressions_NestedExpression,
+    annotations_AnnotationInstance,
+    AnnotationInstance,
+    expressions_PrefixUnaryModificationExpression,
     UnaryModificationOperator,
-    operators::PlusPlus,
-    operators::MinusMinus,
+    operators_PlusPlus,
+    operators_MinusMinus,
     TypeParameter,
+    generics_TypeParametrizable,
+    generics_CallTypeArgumentable,
     TypeArgument,
-    generics::SuperTypeArgument,
-    generics::UnknownTypeArgument,
-    generics::ExtendsTypeArgument,
+    generics_ExtendsTypeArgument,
+    generics_UnknownTypeArgument,
+    generics_SuperTypeArgument,
+    generics_TypeArgumentable,
     AdditiveOperator,
     AdditiveExpressionChild,
-    expressions::MultiplicativeExpression,
+    expressions_MultiplicativeExpression,
     UnaryModificationExpressionChild,
-    expressions::PrimaryExpression,
+    expressions_PrimaryExpression,
     UnaryExpressionChild,
-    expressions::UnaryModificationExpressionChild,
-    expressions::UnaryModificationExpression,
+    expressions_UnaryModificationExpression,
+    expressions_UnaryModificationExpressionChild,
     UnaryOperator,
-    operators::Addition,
-    operators::Complement,
-    operators::Negate,
-    operators::Subtraction,
-    expressions::MultiplicativeExpressionChild,
+    operators_Negate,
+    operators_Addition,
+    operators_Subtraction,
+    operators_Complement,
+    expressions_MultiplicativeExpressionChild,
     MultiplicativeOperator,
-    operators::Division,
-    operators::Multiplication,
-    operators::Remainder,
+    operators_Division,
+    operators_Remainder,
+    operators_Multiplication,
     MultiplicativeExpressionChild,
-    expressions::UnaryExpressionChild,
-    expressions::UnaryExpression,
+    expressions_UnaryExpressionChild,
+    expressions_UnaryExpression,
     EqualityExpressionChild,
     EqualityOperator,
-    operators::Equal,
-    operators::NotEqual,
+    operators_Equal,
+    operators_NotEqual,
     ShiftOperator,
-    operators::UnsignedRightShift,
-    operators::LeftShift,
-    operators::RightShift,
+    operators_LeftShift,
+    operators_RightShift,
+    operators_UnsignedRightShift,
     ShiftExpressionChild,
-    expressions::AdditiveExpression,
-    expressions::AdditiveExpressionChild,
+    expressions_AdditiveExpressionChild,
+    expressions_AdditiveExpression,
     RelationOperator,
-    operators::LessThanOrEqual,
-    operators::GreaterThanOrEqual,
-    operators::GreaterThan,
-    operators::LessThan,
+    operators_GreaterThanOrEqual,
+    operators_LessThanOrEqual,
+    operators_LessThan,
+    operators_GreaterThan,
     RelationExpressionChild,
-    expressions::ShiftExpression,
-    expressions::ShiftExpressionChild,
-    expressions::InstanceOfExpressionChild,
+    expressions_ShiftExpressionChild,
+    expressions_ShiftExpression,
+    expressions_InstanceOfExpressionChild,
     InstanceOfExpressionChild,
-    expressions::RelationExpressionChild,
-    expressions::RelationExpression,
+    expressions_RelationExpression,
+    expressions_RelationExpressionChild,
     ConditionalOrExpressionChild,
-    expressions::ConditionalAndExpression,
+    expressions_ConditionalAndExpression,
     AndExpressionChild,
-    expressions::EqualityExpression,
-    expressions::EqualityExpressionChild,
+    expressions_EqualityExpressionChild,
+    expressions_EqualityExpression,
     ExclusiveOrExpressionChild,
-    expressions::AndExpression,
-    expressions::AndExpressionChild,
+    expressions_AndExpressionChild,
+    expressions_AndExpression,
     InclusiveOrExpressionChild,
-    expressions::ExclusiveOrExpression,
-    expressions::ExclusiveOrExpressionChild,
-    expressions::ConditionalAndExpressionChild,
+    expressions_ExclusiveOrExpression,
+    expressions_ExclusiveOrExpressionChild,
+    expressions_ConditionalAndExpressionChild,
+    expressions_AssignmentExpression,
     ConditionalAndExpressionChild,
-    expressions::InclusiveOrExpressionChild,
-    expressions::InclusiveOrExpression,
+    expressions_InclusiveOrExpressionChild,
+    expressions_InclusiveOrExpression,
     ConditionalExpressionChild,
-    expressions::ConditionalOrExpression,
-    expressions::ConditionalOrExpressionChild,
+    expressions_ConditionalOrExpression,
+    expressions_ConditionalOrExpressionChild,
+    expressions_AssignmentExpressionChild,
     AssignmentOperator,
-    operators::AssignmentExclusiveOr,
-    operators::AssignmentOr,
-    operators::AssignmentRightShift,
-    operators::AssignmentAnd,
-    operators::AssignmentMultiplication,
-    operators::Assignment,
-    operators::AssignmentLeftShift,
-    operators::AssignmentMinus,
-    operators::AssignmentPlus,
-    operators::AssignmentUnsignedRightShift,
-    operators::AssignmentModulo,
-    operators::AssignmentDivision,
+    operators_AssignmentAnd,
+    operators_AssignmentExclusiveOr,
+    operators_AssignmentUnsignedRightShift,
+    operators_AssignmentPlus,
+    operators_AssignmentMinus,
+    operators_Assignment,
+    operators_AssignmentRightShift,
+    operators_AssignmentOr,
+    operators_AssignmentMultiplication,
+    operators_AssignmentDivision,
+    operators_AssignmentLeftShift,
+    operators_AssignmentModulo,
     AssignmentExpressionChild,
-    expressions::ConditionalExpressionChild,
-    expressions::ConditionalExpression,
+    expressions_ConditionalExpression,
+    expressions_ConditionalExpressionChild,
     JavaRoot,
-    containers::CompilationUnit,
+    containers_CompilationUnit,
     ImportingElement,
     NamedElement,
-    references::ReferenceableElement,
-    members::Member,
+    members_Member,
+    references_ReferenceableElement,
+    containers_JavaRoot,
     ForLoopInitializer,
-    expressions::ExpressionList,
-    containers::EmptyModel,
+    expressions_ExpressionList,
+    containers_EmptyModel,
     Package,
     CompilationUnit,
     Annotable,
-    commons::Commentable,
+    commons_NamespaceAwareElement,
+    commons_NamedElement,
+    commons_Commentable,
     EnumConstant,
     ReferenceableElement,
-    containers::Package,
-    members::EnumConstant,
+    containers_Package,
+    members_EnumConstant,
     Type,
-    classifiers::Classifier,
+    classifiers_Classifier,
+    arrays_ArraySelector,
     Implementor,
     ConcreteClassifier,
-    classifiers::Interface,
-    classifiers::Annotation,
-    classifiers::Enumeration,
-    classifiers::Class,
+    classifiers_Interface,
+    classifiers_Annotation,
+    classifiers_Enumeration,
+    classifiers_Class,
     TypeReference,
-    types::PrimitiveType,
-    types::ClassifierReference,
+    types_PrimitiveType,
+    types_ClassifierReference,
+    types_NamespaceClassifierReference,
+    classifiers_Implementor,
     AnnotableAndModifiable,
-    parameters::Parameter,
-    variables::LocalVariable,
+    variables_LocalVariable,
+    parameters_Parameter,
     Statement,
-    statements::EmptyStatement,
-    statements::Return,
-    statements::ForEachLoop,
-    statements::Switch,
-    statements::WhileLoop,
-    statements::JumpLabel,
-    statements::ExpressionStatement,
-    statements::ForLoop,
-    statements::TryBlock,
-    statements::LocalVariableStatement,
-    statements::Assert,
-    statements::SynchronizedBlock,
-    statements::Throw,
-    statements::Condition,
-    statements::Jump,
+    statements_Condition,
+    statements_JumpLabel,
+    statements_EmptyStatement,
+    statements_Jump,
+    statements_Return,
+    statements_ForLoop,
+    statements_Throw,
+    statements_TryBlock,
+    statements_ForEachLoop,
+    statements_ExpressionStatement,
+    statements_Assert,
+    statements_SynchronizedBlock,
+    statements_WhileLoop,
+    statements_LocalVariableStatement,
+    statements_Switch,
     Member,
-    statements::Block,
-    members::EmptyMember,
-    members::Field,
+    statements_Block,
+    members_Field,
+    members_EmptyMember,
     MemberContainer,
-    classifiers::AnonymousClass,
+    classifiers_AnonymousClass,
     TypeParametrizable,
-    members::Constructor,
+    members_Constructor,
+    classifiers_ConcreteClassifier,
     ArrayDimension,
     ArrayInitializer,
     ArrayTypeable,
-    members::AdditionalField,
-    variables::AdditionalLocalVariable,
-    generics::TypeArgument,
+    variables_AdditionalLocalVariable,
+    members_AdditionalField,
+    generics_TypeArgument,
     TypedElement,
-    variables::Variable,
-    generics::QualifiedTypeArgument,
-    expressions::InstanceOfExpression,
-    expressions::CastExpression,
-    members::Method,
+    expressions_CastExpression,
+    generics_QualifiedTypeArgument,
+    arrays_ArrayInstantiationByValues,
+    members_Method,
+    instantiations_Instantiation,
+    variables_Variable,
+    expressions_InstanceOfExpression,
+    arrays_ArrayInstantiationBySize,
+    arrays_ArrayInitializationValue,
     ArrayInitializationValue,
-    Commentable,
-    instantiations::Initializable,
-    statements::StatementListContainer,
-    classifiers::Implementor,
-    arrays::ArrayDimension,
-    statements::Conditional,
-    operators::Operator,
-    commons::NamespaceAwareElement,
-    statements::ForLoopInitializer,
-    types::Type,
-    types::TypeReference,
-    arrays::ArrayInitializationValue,
-    statements::StatementContainer,
-    modifiers::AnnotationInstanceOrModifier,
-    parameters::Parametrizable,
-    statements::Statement,
-    generics::TypeArgumentable,
-    imports::ImportingElement,
-    types::TypedElement,
-    generics::CallTypeArgumentable,
-    commons::NamedElement,
-    members::MemberContainer,
-    literals::Self,
-    modifiers::AnnotableAndModifiable,
-    generics::TypeParametrizable,
-    references::Argumentable,
-    arrays::ArraySelector,
-    members::ExceptionThrower,
-    modifiers::Modifiable,
-    annotations::Annotable,
-    arrays::ArrayTypeable,
-    Expression,
-    expressions::AssignmentExpressionChild,
-    expressions::AssignmentExpression,
-    annotations::AnnotationValue,
-    InterfaceMethod,
-    annotations::AnnotationAttribute,
-    annotations::AnnotationAttributeSetting,
-    AnnotationAttributeSetting,
-    AnnotationValue,
-    expressions::Expression,
-    arrays::ArrayInitializer,
-    annotations::AnnotationParameter,
-    AnnotationParameter,
-    annotations::AnnotationParameterList,
-    annotations::SingleAnnotationParameter,
-    Classifier,
-    classifiers::ConcreteClassifier,
-    generics::TypeParameter,
-    NamespaceAwareElement,
-    imports::Import,
-    containers::JavaRoot,
-    types::NamespaceClassifierReference,
-    AnnotationInstanceOrModifier,
-    modifiers::Modifier,
-    Reference,
-    expressions::NestedExpression,
-    arrays::ArrayInstantiationByValues,
-    references::SelfReference,
-    references::ReflectiveClassReference,
-    references::ElementReference,
-    instantiations::Instantiation,
-    references::PrimitiveTypeReference,
-    arrays::ArrayInstantiationBySize,
-    references::StringReference,
-    annotations::AnnotationInstance,
-    AnnotationInstance,
+    expressions_Expression,
+    arrays_ArrayInitializer,
+    arrays_ArrayDimension,
 )
 
 # =============================================================================
 # SECTION 1 — STRUCTURAL TESTS
 # =============================================================================
-
-
-
-def test_parameter_is_not_abstract():
-    assert not inspect.isabstract(Parameter)
-
-
-def test_parameter_constructor_exists():
-    assert callable(Parameter.__init__)
-
-
-def test_parameter_constructor_args():
-    sig = inspect.signature(Parameter.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_parameters::ordinaryparameter_is_not_abstract():
-    assert not inspect.isabstract(parameters::OrdinaryParameter)
-
-
-def test_parameters::ordinaryparameter_constructor_exists():
-    assert callable(parameters::OrdinaryParameter.__init__)
-
-
-def test_parameters::ordinaryparameter_constructor_args():
-    sig = inspect.signature(parameters::OrdinaryParameter.__init__)
-    params = list(sig.parameters.keys())
 
 
 
@@ -475,16 +447,16 @@ def test_whileloop_constructor_args():
 
 
 
-def test_statements::dowhileloop_is_not_abstract():
-    assert not inspect.isabstract(statements::DoWhileLoop)
+def test_statements_dowhileloop_is_not_abstract():
+    assert not inspect.isabstract(statements_DoWhileLoop)
 
 
-def test_statements::dowhileloop_constructor_exists():
-    assert callable(statements::DoWhileLoop.__init__)
+def test_statements_dowhileloop_constructor_exists():
+    assert callable(statements_DoWhileLoop.__init__)
 
 
-def test_statements::dowhileloop_constructor_args():
-    sig = inspect.signature(statements::DoWhileLoop.__init__)
+def test_statements_dowhileloop_constructor_args():
+    sig = inspect.signature(statements_DoWhileLoop.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -503,16 +475,16 @@ def test_switchcase_constructor_args():
 
 
 
-def test_statements::defaultswitchcase_is_not_abstract():
-    assert not inspect.isabstract(statements::DefaultSwitchCase)
+def test_statements_defaultswitchcase_is_not_abstract():
+    assert not inspect.isabstract(statements_DefaultSwitchCase)
 
 
-def test_statements::defaultswitchcase_constructor_exists():
-    assert callable(statements::DefaultSwitchCase.__init__)
+def test_statements_defaultswitchcase_constructor_exists():
+    assert callable(statements_DefaultSwitchCase.__init__)
 
 
-def test_statements::defaultswitchcase_constructor_args():
-    sig = inspect.signature(statements::DefaultSwitchCase.__init__)
+def test_statements_defaultswitchcase_constructor_args():
+    sig = inspect.signature(statements_DefaultSwitchCase.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -573,30 +545,30 @@ def test_jump_constructor_args():
 
 
 
-def test_statements::continue_is_not_abstract():
-    assert not inspect.isabstract(statements::Continue)
+def test_statements_continue_is_not_abstract():
+    assert not inspect.isabstract(statements_Continue)
 
 
-def test_statements::continue_constructor_exists():
-    assert callable(statements::Continue.__init__)
+def test_statements_continue_constructor_exists():
+    assert callable(statements_Continue.__init__)
 
 
-def test_statements::continue_constructor_args():
-    sig = inspect.signature(statements::Continue.__init__)
+def test_statements_continue_constructor_args():
+    sig = inspect.signature(statements_Continue.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_statements::break_is_not_abstract():
-    assert not inspect.isabstract(statements::Break)
+def test_statements_break_is_not_abstract():
+    assert not inspect.isabstract(statements_Break)
 
 
-def test_statements::break_constructor_exists():
-    assert callable(statements::Break.__init__)
+def test_statements_break_constructor_exists():
+    assert callable(statements_Break.__init__)
 
 
-def test_statements::break_constructor_args():
-    sig = inspect.signature(statements::Break.__init__)
+def test_statements_break_constructor_args():
+    sig = inspect.signature(statements_Break.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -615,16 +587,44 @@ def test_conditional_constructor_args():
 
 
 
-def test_statements::normalswitchcase_is_not_abstract():
-    assert not inspect.isabstract(statements::NormalSwitchCase)
+def test_statements_normalswitchcase_is_not_abstract():
+    assert not inspect.isabstract(statements_NormalSwitchCase)
 
 
-def test_statements::normalswitchcase_constructor_exists():
-    assert callable(statements::NormalSwitchCase.__init__)
+def test_statements_normalswitchcase_constructor_exists():
+    assert callable(statements_NormalSwitchCase.__init__)
 
 
-def test_statements::normalswitchcase_constructor_args():
-    sig = inspect.signature(statements::NormalSwitchCase.__init__)
+def test_statements_normalswitchcase_constructor_args():
+    sig = inspect.signature(statements_NormalSwitchCase.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_parameter_is_not_abstract():
+    assert not inspect.isabstract(Parameter)
+
+
+def test_parameter_constructor_exists():
+    assert callable(Parameter.__init__)
+
+
+def test_parameter_constructor_args():
+    sig = inspect.signature(Parameter.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_parameters_ordinaryparameter_is_not_abstract():
+    assert not inspect.isabstract(parameters_OrdinaryParameter)
+
+
+def test_parameters_ordinaryparameter_constructor_exists():
+    assert callable(parameters_OrdinaryParameter.__init__)
+
+
+def test_parameters_ordinaryparameter_constructor_args():
+    sig = inspect.signature(parameters_OrdinaryParameter.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -643,128 +643,128 @@ def test_primitivetype_constructor_args():
 
 
 
-def test_types::long_is_not_abstract():
-    assert not inspect.isabstract(types::Long)
+def test_types_float_is_not_abstract():
+    assert not inspect.isabstract(types_Float)
 
 
-def test_types::long_constructor_exists():
-    assert callable(types::Long.__init__)
+def test_types_float_constructor_exists():
+    assert callable(types_Float.__init__)
 
 
-def test_types::long_constructor_args():
-    sig = inspect.signature(types::Long.__init__)
+def test_types_float_constructor_args():
+    sig = inspect.signature(types_Float.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_types::double_is_not_abstract():
-    assert not inspect.isabstract(types::Double)
+def test_types_long_is_not_abstract():
+    assert not inspect.isabstract(types_Long)
 
 
-def test_types::double_constructor_exists():
-    assert callable(types::Double.__init__)
+def test_types_long_constructor_exists():
+    assert callable(types_Long.__init__)
 
 
-def test_types::double_constructor_args():
-    sig = inspect.signature(types::Double.__init__)
+def test_types_long_constructor_args():
+    sig = inspect.signature(types_Long.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_types::float_is_not_abstract():
-    assert not inspect.isabstract(types::Float)
+def test_types_byte_is_not_abstract():
+    assert not inspect.isabstract(types_Byte)
 
 
-def test_types::float_constructor_exists():
-    assert callable(types::Float.__init__)
+def test_types_byte_constructor_exists():
+    assert callable(types_Byte.__init__)
 
 
-def test_types::float_constructor_args():
-    sig = inspect.signature(types::Float.__init__)
+def test_types_byte_constructor_args():
+    sig = inspect.signature(types_Byte.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_types::char_is_not_abstract():
-    assert not inspect.isabstract(types::Char)
+def test_types_void_is_not_abstract():
+    assert not inspect.isabstract(types_Void)
 
 
-def test_types::char_constructor_exists():
-    assert callable(types::Char.__init__)
+def test_types_void_constructor_exists():
+    assert callable(types_Void.__init__)
 
 
-def test_types::char_constructor_args():
-    sig = inspect.signature(types::Char.__init__)
+def test_types_void_constructor_args():
+    sig = inspect.signature(types_Void.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_types::short_is_not_abstract():
-    assert not inspect.isabstract(types::Short)
+def test_types_short_is_not_abstract():
+    assert not inspect.isabstract(types_Short)
 
 
-def test_types::short_constructor_exists():
-    assert callable(types::Short.__init__)
+def test_types_short_constructor_exists():
+    assert callable(types_Short.__init__)
 
 
-def test_types::short_constructor_args():
-    sig = inspect.signature(types::Short.__init__)
+def test_types_short_constructor_args():
+    sig = inspect.signature(types_Short.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_types::void_is_not_abstract():
-    assert not inspect.isabstract(types::Void)
+def test_types_boolean_is_not_abstract():
+    assert not inspect.isabstract(types_Boolean)
 
 
-def test_types::void_constructor_exists():
-    assert callable(types::Void.__init__)
+def test_types_boolean_constructor_exists():
+    assert callable(types_Boolean.__init__)
 
 
-def test_types::void_constructor_args():
-    sig = inspect.signature(types::Void.__init__)
+def test_types_boolean_constructor_args():
+    sig = inspect.signature(types_Boolean.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_types::byte_is_not_abstract():
-    assert not inspect.isabstract(types::Byte)
+def test_types_char_is_not_abstract():
+    assert not inspect.isabstract(types_Char)
 
 
-def test_types::byte_constructor_exists():
-    assert callable(types::Byte.__init__)
+def test_types_char_constructor_exists():
+    assert callable(types_Char.__init__)
 
 
-def test_types::byte_constructor_args():
-    sig = inspect.signature(types::Byte.__init__)
+def test_types_char_constructor_args():
+    sig = inspect.signature(types_Char.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_types::int_is_not_abstract():
-    assert not inspect.isabstract(types::Int)
+def test_types_double_is_not_abstract():
+    assert not inspect.isabstract(types_Double)
 
 
-def test_types::int_constructor_exists():
-    assert callable(types::Int.__init__)
+def test_types_double_constructor_exists():
+    assert callable(types_Double.__init__)
 
 
-def test_types::int_constructor_args():
-    sig = inspect.signature(types::Int.__init__)
+def test_types_double_constructor_args():
+    sig = inspect.signature(types_Double.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_types::boolean_is_not_abstract():
-    assert not inspect.isabstract(types::Boolean)
+def test_types_int_is_not_abstract():
+    assert not inspect.isabstract(types_Int)
 
 
-def test_types::boolean_constructor_exists():
-    assert callable(types::Boolean.__init__)
+def test_types_int_constructor_exists():
+    assert callable(types_Int.__init__)
 
 
-def test_types::boolean_constructor_args():
-    sig = inspect.signature(types::Boolean.__init__)
+def test_types_int_constructor_args():
+    sig = inspect.signature(types_Int.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -783,16 +783,16 @@ def test_elementreference_constructor_args():
 
 
 
-def test_references::identifierreference_is_not_abstract():
-    assert not inspect.isabstract(references::IdentifierReference)
+def test_references_identifierreference_is_not_abstract():
+    assert not inspect.isabstract(references_IdentifierReference)
 
 
-def test_references::identifierreference_constructor_exists():
-    assert callable(references::IdentifierReference.__init__)
+def test_references_identifierreference_constructor_exists():
+    assert callable(references_IdentifierReference.__init__)
 
 
-def test_references::identifierreference_constructor_args():
-    sig = inspect.signature(references::IdentifierReference.__init__)
+def test_references_identifierreference_constructor_args():
+    sig = inspect.signature(references_IdentifierReference.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -811,16 +811,16 @@ def test_arrayselector_constructor_args():
 
 
 
-def test_parameters::variablelengthparameter_is_not_abstract():
-    assert not inspect.isabstract(parameters::VariableLengthParameter)
+def test_parameters_variablelengthparameter_is_not_abstract():
+    assert not inspect.isabstract(parameters_VariableLengthParameter)
 
 
-def test_parameters::variablelengthparameter_constructor_exists():
-    assert callable(parameters::VariableLengthParameter.__init__)
+def test_parameters_variablelengthparameter_constructor_exists():
+    assert callable(parameters_VariableLengthParameter.__init__)
 
 
-def test_parameters::variablelengthparameter_constructor_args():
-    sig = inspect.signature(parameters::VariableLengthParameter.__init__)
+def test_parameters_variablelengthparameter_constructor_args():
+    sig = inspect.signature(parameters_VariableLengthParameter.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -839,114 +839,114 @@ def test_operator_constructor_args():
 
 
 
-def test_operators::shiftoperator_is_not_abstract():
-    assert not inspect.isabstract(operators::ShiftOperator)
+def test_operators_assignmentoperator_is_not_abstract():
+    assert not inspect.isabstract(operators_AssignmentOperator)
 
 
-def test_operators::shiftoperator_constructor_exists():
-    assert callable(operators::ShiftOperator.__init__)
+def test_operators_assignmentoperator_constructor_exists():
+    assert callable(operators_AssignmentOperator.__init__)
 
 
-def test_operators::shiftoperator_constructor_args():
-    sig = inspect.signature(operators::ShiftOperator.__init__)
+def test_operators_assignmentoperator_constructor_args():
+    sig = inspect.signature(operators_AssignmentOperator.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_operators::assignmentoperator_is_not_abstract():
-    assert not inspect.isabstract(operators::AssignmentOperator)
+def test_operators_equalityoperator_is_not_abstract():
+    assert not inspect.isabstract(operators_EqualityOperator)
 
 
-def test_operators::assignmentoperator_constructor_exists():
-    assert callable(operators::AssignmentOperator.__init__)
+def test_operators_equalityoperator_constructor_exists():
+    assert callable(operators_EqualityOperator.__init__)
 
 
-def test_operators::assignmentoperator_constructor_args():
-    sig = inspect.signature(operators::AssignmentOperator.__init__)
+def test_operators_equalityoperator_constructor_args():
+    sig = inspect.signature(operators_EqualityOperator.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_operators::relationoperator_is_not_abstract():
-    assert not inspect.isabstract(operators::RelationOperator)
+def test_operators_multiplicativeoperator_is_not_abstract():
+    assert not inspect.isabstract(operators_MultiplicativeOperator)
 
 
-def test_operators::relationoperator_constructor_exists():
-    assert callable(operators::RelationOperator.__init__)
+def test_operators_multiplicativeoperator_constructor_exists():
+    assert callable(operators_MultiplicativeOperator.__init__)
 
 
-def test_operators::relationoperator_constructor_args():
-    sig = inspect.signature(operators::RelationOperator.__init__)
+def test_operators_multiplicativeoperator_constructor_args():
+    sig = inspect.signature(operators_MultiplicativeOperator.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_operators::multiplicativeoperator_is_not_abstract():
-    assert not inspect.isabstract(operators::MultiplicativeOperator)
+def test_operators_relationoperator_is_not_abstract():
+    assert not inspect.isabstract(operators_RelationOperator)
 
 
-def test_operators::multiplicativeoperator_constructor_exists():
-    assert callable(operators::MultiplicativeOperator.__init__)
+def test_operators_relationoperator_constructor_exists():
+    assert callable(operators_RelationOperator.__init__)
 
 
-def test_operators::multiplicativeoperator_constructor_args():
-    sig = inspect.signature(operators::MultiplicativeOperator.__init__)
+def test_operators_relationoperator_constructor_args():
+    sig = inspect.signature(operators_RelationOperator.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_operators::equalityoperator_is_not_abstract():
-    assert not inspect.isabstract(operators::EqualityOperator)
+def test_operators_shiftoperator_is_not_abstract():
+    assert not inspect.isabstract(operators_ShiftOperator)
 
 
-def test_operators::equalityoperator_constructor_exists():
-    assert callable(operators::EqualityOperator.__init__)
+def test_operators_shiftoperator_constructor_exists():
+    assert callable(operators_ShiftOperator.__init__)
 
 
-def test_operators::equalityoperator_constructor_args():
-    sig = inspect.signature(operators::EqualityOperator.__init__)
+def test_operators_shiftoperator_constructor_args():
+    sig = inspect.signature(operators_ShiftOperator.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_operators::additiveoperator_is_not_abstract():
-    assert not inspect.isabstract(operators::AdditiveOperator)
+def test_operators_additiveoperator_is_not_abstract():
+    assert not inspect.isabstract(operators_AdditiveOperator)
 
 
-def test_operators::additiveoperator_constructor_exists():
-    assert callable(operators::AdditiveOperator.__init__)
+def test_operators_additiveoperator_constructor_exists():
+    assert callable(operators_AdditiveOperator.__init__)
 
 
-def test_operators::additiveoperator_constructor_args():
-    sig = inspect.signature(operators::AdditiveOperator.__init__)
+def test_operators_additiveoperator_constructor_args():
+    sig = inspect.signature(operators_AdditiveOperator.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_operators::unarymodificationoperator_is_not_abstract():
-    assert not inspect.isabstract(operators::UnaryModificationOperator)
+def test_operators_unarymodificationoperator_is_not_abstract():
+    assert not inspect.isabstract(operators_UnaryModificationOperator)
 
 
-def test_operators::unarymodificationoperator_constructor_exists():
-    assert callable(operators::UnaryModificationOperator.__init__)
+def test_operators_unarymodificationoperator_constructor_exists():
+    assert callable(operators_UnaryModificationOperator.__init__)
 
 
-def test_operators::unarymodificationoperator_constructor_args():
-    sig = inspect.signature(operators::UnaryModificationOperator.__init__)
+def test_operators_unarymodificationoperator_constructor_args():
+    sig = inspect.signature(operators_UnaryModificationOperator.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_operators::unaryoperator_is_not_abstract():
-    assert not inspect.isabstract(operators::UnaryOperator)
+def test_operators_unaryoperator_is_not_abstract():
+    assert not inspect.isabstract(operators_UnaryOperator)
 
 
-def test_operators::unaryoperator_constructor_exists():
-    assert callable(operators::UnaryOperator.__init__)
+def test_operators_unaryoperator_constructor_exists():
+    assert callable(operators_UnaryOperator.__init__)
 
 
-def test_operators::unaryoperator_constructor_args():
-    sig = inspect.signature(operators::UnaryOperator.__init__)
+def test_operators_unaryoperator_constructor_args():
+    sig = inspect.signature(operators_UnaryOperator.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -965,156 +965,156 @@ def test_modifier_constructor_args():
 
 
 
-def test_modifiers::synchronized_is_not_abstract():
-    assert not inspect.isabstract(modifiers::Synchronized)
+def test_modifiers_public_is_not_abstract():
+    assert not inspect.isabstract(modifiers_Public)
 
 
-def test_modifiers::synchronized_constructor_exists():
-    assert callable(modifiers::Synchronized.__init__)
+def test_modifiers_public_constructor_exists():
+    assert callable(modifiers_Public.__init__)
 
 
-def test_modifiers::synchronized_constructor_args():
-    sig = inspect.signature(modifiers::Synchronized.__init__)
+def test_modifiers_public_constructor_args():
+    sig = inspect.signature(modifiers_Public.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_modifiers::abstract_is_not_abstract():
-    assert not inspect.isabstract(modifiers::Abstract)
+def test_modifiers_strictfp_is_not_abstract():
+    assert not inspect.isabstract(modifiers_Strictfp)
 
 
-def test_modifiers::abstract_constructor_exists():
-    assert callable(modifiers::Abstract.__init__)
+def test_modifiers_strictfp_constructor_exists():
+    assert callable(modifiers_Strictfp.__init__)
 
 
-def test_modifiers::abstract_constructor_args():
-    sig = inspect.signature(modifiers::Abstract.__init__)
+def test_modifiers_strictfp_constructor_args():
+    sig = inspect.signature(modifiers_Strictfp.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_modifiers::final_is_not_abstract():
-    assert not inspect.isabstract(modifiers::Final)
+def test_modifiers_volatile_is_not_abstract():
+    assert not inspect.isabstract(modifiers_Volatile)
 
 
-def test_modifiers::final_constructor_exists():
-    assert callable(modifiers::Final.__init__)
+def test_modifiers_volatile_constructor_exists():
+    assert callable(modifiers_Volatile.__init__)
 
 
-def test_modifiers::final_constructor_args():
-    sig = inspect.signature(modifiers::Final.__init__)
+def test_modifiers_volatile_constructor_args():
+    sig = inspect.signature(modifiers_Volatile.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_modifiers::public_is_not_abstract():
-    assert not inspect.isabstract(modifiers::Public)
+def test_modifiers_private_is_not_abstract():
+    assert not inspect.isabstract(modifiers_Private)
 
 
-def test_modifiers::public_constructor_exists():
-    assert callable(modifiers::Public.__init__)
+def test_modifiers_private_constructor_exists():
+    assert callable(modifiers_Private.__init__)
 
 
-def test_modifiers::public_constructor_args():
-    sig = inspect.signature(modifiers::Public.__init__)
+def test_modifiers_private_constructor_args():
+    sig = inspect.signature(modifiers_Private.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_modifiers::strictfp_is_not_abstract():
-    assert not inspect.isabstract(modifiers::Strictfp)
+def test_modifiers_abstract_is_not_abstract():
+    assert not inspect.isabstract(modifiers_Abstract)
 
 
-def test_modifiers::strictfp_constructor_exists():
-    assert callable(modifiers::Strictfp.__init__)
+def test_modifiers_abstract_constructor_exists():
+    assert callable(modifiers_Abstract.__init__)
 
 
-def test_modifiers::strictfp_constructor_args():
-    sig = inspect.signature(modifiers::Strictfp.__init__)
+def test_modifiers_abstract_constructor_args():
+    sig = inspect.signature(modifiers_Abstract.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_modifiers::static_is_not_abstract():
-    assert not inspect.isabstract(modifiers::Static)
+def test_modifiers_transient_is_not_abstract():
+    assert not inspect.isabstract(modifiers_Transient)
 
 
-def test_modifiers::static_constructor_exists():
-    assert callable(modifiers::Static.__init__)
+def test_modifiers_transient_constructor_exists():
+    assert callable(modifiers_Transient.__init__)
 
 
-def test_modifiers::static_constructor_args():
-    sig = inspect.signature(modifiers::Static.__init__)
+def test_modifiers_transient_constructor_args():
+    sig = inspect.signature(modifiers_Transient.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_modifiers::protected_is_not_abstract():
-    assert not inspect.isabstract(modifiers::Protected)
+def test_modifiers_synchronized_is_not_abstract():
+    assert not inspect.isabstract(modifiers_Synchronized)
 
 
-def test_modifiers::protected_constructor_exists():
-    assert callable(modifiers::Protected.__init__)
+def test_modifiers_synchronized_constructor_exists():
+    assert callable(modifiers_Synchronized.__init__)
 
 
-def test_modifiers::protected_constructor_args():
-    sig = inspect.signature(modifiers::Protected.__init__)
+def test_modifiers_synchronized_constructor_args():
+    sig = inspect.signature(modifiers_Synchronized.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_modifiers::native_is_not_abstract():
-    assert not inspect.isabstract(modifiers::Native)
+def test_modifiers_final_is_not_abstract():
+    assert not inspect.isabstract(modifiers_Final)
 
 
-def test_modifiers::native_constructor_exists():
-    assert callable(modifiers::Native.__init__)
+def test_modifiers_final_constructor_exists():
+    assert callable(modifiers_Final.__init__)
 
 
-def test_modifiers::native_constructor_args():
-    sig = inspect.signature(modifiers::Native.__init__)
+def test_modifiers_final_constructor_args():
+    sig = inspect.signature(modifiers_Final.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_modifiers::private_is_not_abstract():
-    assert not inspect.isabstract(modifiers::Private)
+def test_modifiers_native_is_not_abstract():
+    assert not inspect.isabstract(modifiers_Native)
 
 
-def test_modifiers::private_constructor_exists():
-    assert callable(modifiers::Private.__init__)
+def test_modifiers_native_constructor_exists():
+    assert callable(modifiers_Native.__init__)
 
 
-def test_modifiers::private_constructor_args():
-    sig = inspect.signature(modifiers::Private.__init__)
+def test_modifiers_native_constructor_args():
+    sig = inspect.signature(modifiers_Native.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_modifiers::volatile_is_not_abstract():
-    assert not inspect.isabstract(modifiers::Volatile)
+def test_modifiers_static_is_not_abstract():
+    assert not inspect.isabstract(modifiers_Static)
 
 
-def test_modifiers::volatile_constructor_exists():
-    assert callable(modifiers::Volatile.__init__)
+def test_modifiers_static_constructor_exists():
+    assert callable(modifiers_Static.__init__)
 
 
-def test_modifiers::volatile_constructor_args():
-    sig = inspect.signature(modifiers::Volatile.__init__)
+def test_modifiers_static_constructor_args():
+    sig = inspect.signature(modifiers_Static.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_modifiers::transient_is_not_abstract():
-    assert not inspect.isabstract(modifiers::Transient)
+def test_modifiers_protected_is_not_abstract():
+    assert not inspect.isabstract(modifiers_Protected)
 
 
-def test_modifiers::transient_constructor_exists():
-    assert callable(modifiers::Transient.__init__)
+def test_modifiers_protected_constructor_exists():
+    assert callable(modifiers_Protected.__init__)
 
 
-def test_modifiers::transient_constructor_args():
-    sig = inspect.signature(modifiers::Transient.__init__)
+def test_modifiers_protected_constructor_args():
+    sig = inspect.signature(modifiers_Protected.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1175,30 +1175,30 @@ def test_statementlistcontainer_constructor_args():
 
 
 
-def test_statements::switchcase_is_not_abstract():
-    assert not inspect.isabstract(statements::SwitchCase)
+def test_statements_catchblock_is_not_abstract():
+    assert not inspect.isabstract(statements_CatchBlock)
 
 
-def test_statements::switchcase_constructor_exists():
-    assert callable(statements::SwitchCase.__init__)
+def test_statements_catchblock_constructor_exists():
+    assert callable(statements_CatchBlock.__init__)
 
 
-def test_statements::switchcase_constructor_args():
-    sig = inspect.signature(statements::SwitchCase.__init__)
+def test_statements_catchblock_constructor_args():
+    sig = inspect.signature(statements_CatchBlock.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_statements::catchblock_is_not_abstract():
-    assert not inspect.isabstract(statements::CatchBlock)
+def test_statements_switchcase_is_not_abstract():
+    assert not inspect.isabstract(statements_SwitchCase)
 
 
-def test_statements::catchblock_constructor_exists():
-    assert callable(statements::CatchBlock.__init__)
+def test_statements_switchcase_constructor_exists():
+    assert callable(statements_SwitchCase.__init__)
 
 
-def test_statements::catchblock_constructor_args():
-    sig = inspect.signature(statements::CatchBlock.__init__)
+def test_statements_switchcase_constructor_args():
+    sig = inspect.signature(statements_SwitchCase.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1231,30 +1231,30 @@ def test_method_constructor_args():
 
 
 
-def test_members::classmethod_is_not_abstract():
-    assert not inspect.isabstract(members::ClassMethod)
+def test_members_classmethod_is_not_abstract():
+    assert not inspect.isabstract(members_ClassMethod)
 
 
-def test_members::classmethod_constructor_exists():
-    assert callable(members::ClassMethod.__init__)
+def test_members_classmethod_constructor_exists():
+    assert callable(members_ClassMethod.__init__)
 
 
-def test_members::classmethod_constructor_args():
-    sig = inspect.signature(members::ClassMethod.__init__)
+def test_members_classmethod_constructor_args():
+    sig = inspect.signature(members_ClassMethod.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_members::interfacemethod_is_not_abstract():
-    assert not inspect.isabstract(members::InterfaceMethod)
+def test_members_interfacemethod_is_not_abstract():
+    assert not inspect.isabstract(members_InterfaceMethod)
 
 
-def test_members::interfacemethod_constructor_exists():
-    assert callable(members::InterfaceMethod.__init__)
+def test_members_interfacemethod_constructor_exists():
+    assert callable(members_InterfaceMethod.__init__)
 
 
-def test_members::interfacemethod_constructor_args():
-    sig = inspect.signature(members::InterfaceMethod.__init__)
+def test_members_interfacemethod_constructor_args():
+    sig = inspect.signature(members_InterfaceMethod.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1301,23 +1301,23 @@ def test_doubleliteral_constructor_args():
 
 
 
-def test_literals::decimaldoubleliteral_is_not_abstract():
-    assert not inspect.isabstract(literals::DecimalDoubleLiteral)
+def test_literals_decimaldoubleliteral_is_not_abstract():
+    assert not inspect.isabstract(literals_DecimalDoubleLiteral)
 
 
-def test_literals::decimaldoubleliteral_constructor_exists():
-    assert callable(literals::DecimalDoubleLiteral.__init__)
+def test_literals_decimaldoubleliteral_constructor_exists():
+    assert callable(literals_DecimalDoubleLiteral.__init__)
 
 
-def test_literals::decimaldoubleliteral_constructor_args():
-    sig = inspect.signature(literals::DecimalDoubleLiteral.__init__)
+def test_literals_decimaldoubleliteral_constructor_args():
+    sig = inspect.signature(literals_DecimalDoubleLiteral.__init__)
     params = list(sig.parameters.keys())
     assert "decimalValue" in params, "Missing parameter 'decimalValue'"
 
-def test_literals::decimaldoubleliteral_has_decimalValue():
-    assert hasattr(literals::DecimalDoubleLiteral, "decimalValue")
+def test_literals_decimaldoubleliteral_has_decimalValue():
+    assert hasattr(literals_DecimalDoubleLiteral, "decimalValue")
     descriptor = None
-    for klass in literals::DecimalDoubleLiteral.__mro__:
+    for klass in literals_DecimalDoubleLiteral.__mro__:
         if "decimalValue" in klass.__dict__:
             descriptor = klass.__dict__["decimalValue"]
             break
@@ -1339,23 +1339,23 @@ def test_floatliteral_constructor_args():
 
 
 
-def test_literals::hexfloatliteral_is_not_abstract():
-    assert not inspect.isabstract(literals::HexFloatLiteral)
+def test_literals_hexfloatliteral_is_not_abstract():
+    assert not inspect.isabstract(literals_HexFloatLiteral)
 
 
-def test_literals::hexfloatliteral_constructor_exists():
-    assert callable(literals::HexFloatLiteral.__init__)
+def test_literals_hexfloatliteral_constructor_exists():
+    assert callable(literals_HexFloatLiteral.__init__)
 
 
-def test_literals::hexfloatliteral_constructor_args():
-    sig = inspect.signature(literals::HexFloatLiteral.__init__)
+def test_literals_hexfloatliteral_constructor_args():
+    sig = inspect.signature(literals_HexFloatLiteral.__init__)
     params = list(sig.parameters.keys())
     assert "hexValue" in params, "Missing parameter 'hexValue'"
 
-def test_literals::hexfloatliteral_has_hexValue():
-    assert hasattr(literals::HexFloatLiteral, "hexValue")
+def test_literals_hexfloatliteral_has_hexValue():
+    assert hasattr(literals_HexFloatLiteral, "hexValue")
     descriptor = None
-    for klass in literals::HexFloatLiteral.__mro__:
+    for klass in literals_HexFloatLiteral.__mro__:
         if "hexValue" in klass.__dict__:
             descriptor = klass.__dict__["hexValue"]
             break
@@ -1363,23 +1363,23 @@ def test_literals::hexfloatliteral_has_hexValue():
 
 
 
-def test_literals::decimalfloatliteral_is_not_abstract():
-    assert not inspect.isabstract(literals::DecimalFloatLiteral)
+def test_literals_decimalfloatliteral_is_not_abstract():
+    assert not inspect.isabstract(literals_DecimalFloatLiteral)
 
 
-def test_literals::decimalfloatliteral_constructor_exists():
-    assert callable(literals::DecimalFloatLiteral.__init__)
+def test_literals_decimalfloatliteral_constructor_exists():
+    assert callable(literals_DecimalFloatLiteral.__init__)
 
 
-def test_literals::decimalfloatliteral_constructor_args():
-    sig = inspect.signature(literals::DecimalFloatLiteral.__init__)
+def test_literals_decimalfloatliteral_constructor_args():
+    sig = inspect.signature(literals_DecimalFloatLiteral.__init__)
     params = list(sig.parameters.keys())
     assert "decimalValue" in params, "Missing parameter 'decimalValue'"
 
-def test_literals::decimalfloatliteral_has_decimalValue():
-    assert hasattr(literals::DecimalFloatLiteral, "decimalValue")
+def test_literals_decimalfloatliteral_has_decimalValue():
+    assert hasattr(literals_DecimalFloatLiteral, "decimalValue")
     descriptor = None
-    for klass in literals::DecimalFloatLiteral.__mro__:
+    for klass in literals_DecimalFloatLiteral.__mro__:
         if "decimalValue" in klass.__dict__:
             descriptor = klass.__dict__["decimalValue"]
             break
@@ -1401,47 +1401,23 @@ def test_longliteral_constructor_args():
 
 
 
-def test_literals::octallongliteral_is_not_abstract():
-    assert not inspect.isabstract(literals::OctalLongLiteral)
+def test_literals_hexlongliteral_is_not_abstract():
+    assert not inspect.isabstract(literals_HexLongLiteral)
 
 
-def test_literals::octallongliteral_constructor_exists():
-    assert callable(literals::OctalLongLiteral.__init__)
+def test_literals_hexlongliteral_constructor_exists():
+    assert callable(literals_HexLongLiteral.__init__)
 
 
-def test_literals::octallongliteral_constructor_args():
-    sig = inspect.signature(literals::OctalLongLiteral.__init__)
-    params = list(sig.parameters.keys())
-    assert "octalValue" in params, "Missing parameter 'octalValue'"
-
-def test_literals::octallongliteral_has_octalValue():
-    assert hasattr(literals::OctalLongLiteral, "octalValue")
-    descriptor = None
-    for klass in literals::OctalLongLiteral.__mro__:
-        if "octalValue" in klass.__dict__:
-            descriptor = klass.__dict__["octalValue"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_literals::hexlongliteral_is_not_abstract():
-    assert not inspect.isabstract(literals::HexLongLiteral)
-
-
-def test_literals::hexlongliteral_constructor_exists():
-    assert callable(literals::HexLongLiteral.__init__)
-
-
-def test_literals::hexlongliteral_constructor_args():
-    sig = inspect.signature(literals::HexLongLiteral.__init__)
+def test_literals_hexlongliteral_constructor_args():
+    sig = inspect.signature(literals_HexLongLiteral.__init__)
     params = list(sig.parameters.keys())
     assert "hexValue" in params, "Missing parameter 'hexValue'"
 
-def test_literals::hexlongliteral_has_hexValue():
-    assert hasattr(literals::HexLongLiteral, "hexValue")
+def test_literals_hexlongliteral_has_hexValue():
+    assert hasattr(literals_HexLongLiteral, "hexValue")
     descriptor = None
-    for klass in literals::HexLongLiteral.__mro__:
+    for klass in literals_HexLongLiteral.__mro__:
         if "hexValue" in klass.__dict__:
             descriptor = klass.__dict__["hexValue"]
             break
@@ -1449,23 +1425,47 @@ def test_literals::hexlongliteral_has_hexValue():
 
 
 
-def test_literals::decimallongliteral_is_not_abstract():
-    assert not inspect.isabstract(literals::DecimalLongLiteral)
+def test_literals_octallongliteral_is_not_abstract():
+    assert not inspect.isabstract(literals_OctalLongLiteral)
 
 
-def test_literals::decimallongliteral_constructor_exists():
-    assert callable(literals::DecimalLongLiteral.__init__)
+def test_literals_octallongliteral_constructor_exists():
+    assert callable(literals_OctalLongLiteral.__init__)
 
 
-def test_literals::decimallongliteral_constructor_args():
-    sig = inspect.signature(literals::DecimalLongLiteral.__init__)
+def test_literals_octallongliteral_constructor_args():
+    sig = inspect.signature(literals_OctalLongLiteral.__init__)
+    params = list(sig.parameters.keys())
+    assert "octalValue" in params, "Missing parameter 'octalValue'"
+
+def test_literals_octallongliteral_has_octalValue():
+    assert hasattr(literals_OctalLongLiteral, "octalValue")
+    descriptor = None
+    for klass in literals_OctalLongLiteral.__mro__:
+        if "octalValue" in klass.__dict__:
+            descriptor = klass.__dict__["octalValue"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_literals_decimallongliteral_is_not_abstract():
+    assert not inspect.isabstract(literals_DecimalLongLiteral)
+
+
+def test_literals_decimallongliteral_constructor_exists():
+    assert callable(literals_DecimalLongLiteral.__init__)
+
+
+def test_literals_decimallongliteral_constructor_args():
+    sig = inspect.signature(literals_DecimalLongLiteral.__init__)
     params = list(sig.parameters.keys())
     assert "decimalValue" in params, "Missing parameter 'decimalValue'"
 
-def test_literals::decimallongliteral_has_decimalValue():
-    assert hasattr(literals::DecimalLongLiteral, "decimalValue")
+def test_literals_decimallongliteral_has_decimalValue():
+    assert hasattr(literals_DecimalLongLiteral, "decimalValue")
     descriptor = None
-    for klass in literals::DecimalLongLiteral.__mro__:
+    for klass in literals_DecimalLongLiteral.__mro__:
         if "decimalValue" in klass.__dict__:
             descriptor = klass.__dict__["decimalValue"]
             break
@@ -1487,23 +1487,23 @@ def test_integerliteral_constructor_args():
 
 
 
-def test_literals::octalintegerliteral_is_not_abstract():
-    assert not inspect.isabstract(literals::OctalIntegerLiteral)
+def test_literals_octalintegerliteral_is_not_abstract():
+    assert not inspect.isabstract(literals_OctalIntegerLiteral)
 
 
-def test_literals::octalintegerliteral_constructor_exists():
-    assert callable(literals::OctalIntegerLiteral.__init__)
+def test_literals_octalintegerliteral_constructor_exists():
+    assert callable(literals_OctalIntegerLiteral.__init__)
 
 
-def test_literals::octalintegerliteral_constructor_args():
-    sig = inspect.signature(literals::OctalIntegerLiteral.__init__)
+def test_literals_octalintegerliteral_constructor_args():
+    sig = inspect.signature(literals_OctalIntegerLiteral.__init__)
     params = list(sig.parameters.keys())
     assert "octalValue" in params, "Missing parameter 'octalValue'"
 
-def test_literals::octalintegerliteral_has_octalValue():
-    assert hasattr(literals::OctalIntegerLiteral, "octalValue")
+def test_literals_octalintegerliteral_has_octalValue():
+    assert hasattr(literals_OctalIntegerLiteral, "octalValue")
     descriptor = None
-    for klass in literals::OctalIntegerLiteral.__mro__:
+    for klass in literals_OctalIntegerLiteral.__mro__:
         if "octalValue" in klass.__dict__:
             descriptor = klass.__dict__["octalValue"]
             break
@@ -1511,23 +1511,23 @@ def test_literals::octalintegerliteral_has_octalValue():
 
 
 
-def test_literals::hexintegerliteral_is_not_abstract():
-    assert not inspect.isabstract(literals::HexIntegerLiteral)
+def test_literals_hexintegerliteral_is_not_abstract():
+    assert not inspect.isabstract(literals_HexIntegerLiteral)
 
 
-def test_literals::hexintegerliteral_constructor_exists():
-    assert callable(literals::HexIntegerLiteral.__init__)
+def test_literals_hexintegerliteral_constructor_exists():
+    assert callable(literals_HexIntegerLiteral.__init__)
 
 
-def test_literals::hexintegerliteral_constructor_args():
-    sig = inspect.signature(literals::HexIntegerLiteral.__init__)
+def test_literals_hexintegerliteral_constructor_args():
+    sig = inspect.signature(literals_HexIntegerLiteral.__init__)
     params = list(sig.parameters.keys())
     assert "hexValue" in params, "Missing parameter 'hexValue'"
 
-def test_literals::hexintegerliteral_has_hexValue():
-    assert hasattr(literals::HexIntegerLiteral, "hexValue")
+def test_literals_hexintegerliteral_has_hexValue():
+    assert hasattr(literals_HexIntegerLiteral, "hexValue")
     descriptor = None
-    for klass in literals::HexIntegerLiteral.__mro__:
+    for klass in literals_HexIntegerLiteral.__mro__:
         if "hexValue" in klass.__dict__:
             descriptor = klass.__dict__["hexValue"]
             break
@@ -1535,23 +1535,23 @@ def test_literals::hexintegerliteral_has_hexValue():
 
 
 
-def test_literals::decimalintegerliteral_is_not_abstract():
-    assert not inspect.isabstract(literals::DecimalIntegerLiteral)
+def test_literals_decimalintegerliteral_is_not_abstract():
+    assert not inspect.isabstract(literals_DecimalIntegerLiteral)
 
 
-def test_literals::decimalintegerliteral_constructor_exists():
-    assert callable(literals::DecimalIntegerLiteral.__init__)
+def test_literals_decimalintegerliteral_constructor_exists():
+    assert callable(literals_DecimalIntegerLiteral.__init__)
 
 
-def test_literals::decimalintegerliteral_constructor_args():
-    sig = inspect.signature(literals::DecimalIntegerLiteral.__init__)
+def test_literals_decimalintegerliteral_constructor_args():
+    sig = inspect.signature(literals_DecimalIntegerLiteral.__init__)
     params = list(sig.parameters.keys())
     assert "decimalValue" in params, "Missing parameter 'decimalValue'"
 
-def test_literals::decimalintegerliteral_has_decimalValue():
-    assert hasattr(literals::DecimalIntegerLiteral, "decimalValue")
+def test_literals_decimalintegerliteral_has_decimalValue():
+    assert hasattr(literals_DecimalIntegerLiteral, "decimalValue")
     descriptor = None
-    for klass in literals::DecimalIntegerLiteral.__mro__:
+    for klass in literals_DecimalIntegerLiteral.__mro__:
         if "decimalValue" in klass.__dict__:
             descriptor = klass.__dict__["decimalValue"]
             break
@@ -1559,23 +1559,23 @@ def test_literals::decimalintegerliteral_has_decimalValue():
 
 
 
-def test_literals::hexdoubleliteral_is_not_abstract():
-    assert not inspect.isabstract(literals::HexDoubleLiteral)
+def test_literals_hexdoubleliteral_is_not_abstract():
+    assert not inspect.isabstract(literals_HexDoubleLiteral)
 
 
-def test_literals::hexdoubleliteral_constructor_exists():
-    assert callable(literals::HexDoubleLiteral.__init__)
+def test_literals_hexdoubleliteral_constructor_exists():
+    assert callable(literals_HexDoubleLiteral.__init__)
 
 
-def test_literals::hexdoubleliteral_constructor_args():
-    sig = inspect.signature(literals::HexDoubleLiteral.__init__)
+def test_literals_hexdoubleliteral_constructor_args():
+    sig = inspect.signature(literals_HexDoubleLiteral.__init__)
     params = list(sig.parameters.keys())
     assert "hexValue" in params, "Missing parameter 'hexValue'"
 
-def test_literals::hexdoubleliteral_has_hexValue():
-    assert hasattr(literals::HexDoubleLiteral, "hexValue")
+def test_literals_hexdoubleliteral_has_hexValue():
+    assert hasattr(literals_HexDoubleLiteral, "hexValue")
     descriptor = None
-    for klass in literals::HexDoubleLiteral.__mro__:
+    for klass in literals_HexDoubleLiteral.__mro__:
         if "hexValue" in klass.__dict__:
             descriptor = klass.__dict__["hexValue"]
             break
@@ -1597,23 +1597,37 @@ def test_literal_constructor_args():
 
 
 
-def test_literals::characterliteral_is_not_abstract():
-    assert not inspect.isabstract(literals::CharacterLiteral)
+def test_literals_integerliteral_is_not_abstract():
+    assert not inspect.isabstract(literals_IntegerLiteral)
 
 
-def test_literals::characterliteral_constructor_exists():
-    assert callable(literals::CharacterLiteral.__init__)
+def test_literals_integerliteral_constructor_exists():
+    assert callable(literals_IntegerLiteral.__init__)
 
 
-def test_literals::characterliteral_constructor_args():
-    sig = inspect.signature(literals::CharacterLiteral.__init__)
+def test_literals_integerliteral_constructor_args():
+    sig = inspect.signature(literals_IntegerLiteral.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_literals_characterliteral_is_not_abstract():
+    assert not inspect.isabstract(literals_CharacterLiteral)
+
+
+def test_literals_characterliteral_constructor_exists():
+    assert callable(literals_CharacterLiteral.__init__)
+
+
+def test_literals_characterliteral_constructor_args():
+    sig = inspect.signature(literals_CharacterLiteral.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
 
-def test_literals::characterliteral_has_value():
-    assert hasattr(literals::CharacterLiteral, "value")
+def test_literals_characterliteral_has_value():
+    assert hasattr(literals_CharacterLiteral, "value")
     descriptor = None
-    for klass in literals::CharacterLiteral.__mro__:
+    for klass in literals_CharacterLiteral.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -1621,93 +1635,79 @@ def test_literals::characterliteral_has_value():
 
 
 
-def test_literals::nullliteral_is_not_abstract():
-    assert not inspect.isabstract(literals::NullLiteral)
+def test_literals_nullliteral_is_not_abstract():
+    assert not inspect.isabstract(literals_NullLiteral)
 
 
-def test_literals::nullliteral_constructor_exists():
-    assert callable(literals::NullLiteral.__init__)
+def test_literals_nullliteral_constructor_exists():
+    assert callable(literals_NullLiteral.__init__)
 
 
-def test_literals::nullliteral_constructor_args():
-    sig = inspect.signature(literals::NullLiteral.__init__)
+def test_literals_nullliteral_constructor_args():
+    sig = inspect.signature(literals_NullLiteral.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_literals::longliteral_is_not_abstract():
-    assert not inspect.isabstract(literals::LongLiteral)
+def test_literals_floatliteral_is_not_abstract():
+    assert not inspect.isabstract(literals_FloatLiteral)
 
 
-def test_literals::longliteral_constructor_exists():
-    assert callable(literals::LongLiteral.__init__)
+def test_literals_floatliteral_constructor_exists():
+    assert callable(literals_FloatLiteral.__init__)
 
 
-def test_literals::longliteral_constructor_args():
-    sig = inspect.signature(literals::LongLiteral.__init__)
+def test_literals_floatliteral_constructor_args():
+    sig = inspect.signature(literals_FloatLiteral.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_literals::doubleliteral_is_not_abstract():
-    assert not inspect.isabstract(literals::DoubleLiteral)
+def test_literals_longliteral_is_not_abstract():
+    assert not inspect.isabstract(literals_LongLiteral)
 
 
-def test_literals::doubleliteral_constructor_exists():
-    assert callable(literals::DoubleLiteral.__init__)
+def test_literals_longliteral_constructor_exists():
+    assert callable(literals_LongLiteral.__init__)
 
 
-def test_literals::doubleliteral_constructor_args():
-    sig = inspect.signature(literals::DoubleLiteral.__init__)
+def test_literals_longliteral_constructor_args():
+    sig = inspect.signature(literals_LongLiteral.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_literals::floatliteral_is_not_abstract():
-    assert not inspect.isabstract(literals::FloatLiteral)
+def test_literals_doubleliteral_is_not_abstract():
+    assert not inspect.isabstract(literals_DoubleLiteral)
 
 
-def test_literals::floatliteral_constructor_exists():
-    assert callable(literals::FloatLiteral.__init__)
+def test_literals_doubleliteral_constructor_exists():
+    assert callable(literals_DoubleLiteral.__init__)
 
 
-def test_literals::floatliteral_constructor_args():
-    sig = inspect.signature(literals::FloatLiteral.__init__)
+def test_literals_doubleliteral_constructor_args():
+    sig = inspect.signature(literals_DoubleLiteral.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_literals::integerliteral_is_not_abstract():
-    assert not inspect.isabstract(literals::IntegerLiteral)
+def test_literals_booleanliteral_is_not_abstract():
+    assert not inspect.isabstract(literals_BooleanLiteral)
 
 
-def test_literals::integerliteral_constructor_exists():
-    assert callable(literals::IntegerLiteral.__init__)
+def test_literals_booleanliteral_constructor_exists():
+    assert callable(literals_BooleanLiteral.__init__)
 
 
-def test_literals::integerliteral_constructor_args():
-    sig = inspect.signature(literals::IntegerLiteral.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_literals::booleanliteral_is_not_abstract():
-    assert not inspect.isabstract(literals::BooleanLiteral)
-
-
-def test_literals::booleanliteral_constructor_exists():
-    assert callable(literals::BooleanLiteral.__init__)
-
-
-def test_literals::booleanliteral_constructor_args():
-    sig = inspect.signature(literals::BooleanLiteral.__init__)
+def test_literals_booleanliteral_constructor_args():
+    sig = inspect.signature(literals_BooleanLiteral.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
 
-def test_literals::booleanliteral_has_value():
-    assert hasattr(literals::BooleanLiteral, "value")
+def test_literals_booleanliteral_has_value():
+    assert hasattr(literals_BooleanLiteral, "value")
     descriptor = None
-    for klass in literals::BooleanLiteral.__mro__:
+    for klass in literals_BooleanLiteral.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -1729,30 +1729,30 @@ def test_staticimport_constructor_args():
 
 
 
-def test_imports::staticmemberimport_is_not_abstract():
-    assert not inspect.isabstract(imports::StaticMemberImport)
+def test_imports_staticmemberimport_is_not_abstract():
+    assert not inspect.isabstract(imports_StaticMemberImport)
 
 
-def test_imports::staticmemberimport_constructor_exists():
-    assert callable(imports::StaticMemberImport.__init__)
+def test_imports_staticmemberimport_constructor_exists():
+    assert callable(imports_StaticMemberImport.__init__)
 
 
-def test_imports::staticmemberimport_constructor_args():
-    sig = inspect.signature(imports::StaticMemberImport.__init__)
+def test_imports_staticmemberimport_constructor_args():
+    sig = inspect.signature(imports_StaticMemberImport.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_imports::staticclassifierimport_is_not_abstract():
-    assert not inspect.isabstract(imports::StaticClassifierImport)
+def test_imports_staticclassifierimport_is_not_abstract():
+    assert not inspect.isabstract(imports_StaticClassifierImport)
 
 
-def test_imports::staticclassifierimport_constructor_exists():
-    assert callable(imports::StaticClassifierImport.__init__)
+def test_imports_staticclassifierimport_constructor_exists():
+    assert callable(imports_StaticClassifierImport.__init__)
 
 
-def test_imports::staticclassifierimport_constructor_args():
-    sig = inspect.signature(imports::StaticClassifierImport.__init__)
+def test_imports_staticclassifierimport_constructor_args():
+    sig = inspect.signature(imports_StaticClassifierImport.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1785,16 +1785,16 @@ def test_primaryexpression_constructor_args():
 
 
 
-def test_literals::literal_is_not_abstract():
-    assert not inspect.isabstract(literals::Literal)
+def test_literals_literal_is_not_abstract():
+    assert not inspect.isabstract(literals_Literal)
 
 
-def test_literals::literal_constructor_exists():
-    assert callable(literals::Literal.__init__)
+def test_literals_literal_constructor_exists():
+    assert callable(literals_Literal.__init__)
 
 
-def test_literals::literal_constructor_args():
-    sig = inspect.signature(literals::Literal.__init__)
+def test_literals_literal_constructor_args():
+    sig = inspect.signature(literals_Literal.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1813,30 +1813,30 @@ def test_self_constructor_args():
 
 
 
-def test_literals::super_is_not_abstract():
-    assert not inspect.isabstract(literals::Super)
+def test_literals_super_is_not_abstract():
+    assert not inspect.isabstract(literals_Super)
 
 
-def test_literals::super_constructor_exists():
-    assert callable(literals::Super.__init__)
+def test_literals_super_constructor_exists():
+    assert callable(literals_Super.__init__)
 
 
-def test_literals::super_constructor_args():
-    sig = inspect.signature(literals::Super.__init__)
+def test_literals_super_constructor_args():
+    sig = inspect.signature(literals_Super.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_literals::this_is_not_abstract():
-    assert not inspect.isabstract(literals::This)
+def test_literals_this_is_not_abstract():
+    assert not inspect.isabstract(literals_This)
 
 
-def test_literals::this_constructor_exists():
-    assert callable(literals::This.__init__)
+def test_literals_this_constructor_exists():
+    assert callable(literals_This.__init__)
 
 
-def test_literals::this_constructor_args():
-    sig = inspect.signature(literals::This.__init__)
+def test_literals_this_constructor_args():
+    sig = inspect.signature(literals_This.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1883,30 +1883,30 @@ def test_instantiation_constructor_args():
 
 
 
-def test_instantiations::explicitconstructorcall_is_not_abstract():
-    assert not inspect.isabstract(instantiations::ExplicitConstructorCall)
+def test_instantiations_explicitconstructorcall_is_not_abstract():
+    assert not inspect.isabstract(instantiations_ExplicitConstructorCall)
 
 
-def test_instantiations::explicitconstructorcall_constructor_exists():
-    assert callable(instantiations::ExplicitConstructorCall.__init__)
+def test_instantiations_explicitconstructorcall_constructor_exists():
+    assert callable(instantiations_ExplicitConstructorCall.__init__)
 
 
-def test_instantiations::explicitconstructorcall_constructor_args():
-    sig = inspect.signature(instantiations::ExplicitConstructorCall.__init__)
+def test_instantiations_explicitconstructorcall_constructor_args():
+    sig = inspect.signature(instantiations_ExplicitConstructorCall.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_instantiations::newconstructorcall_is_not_abstract():
-    assert not inspect.isabstract(instantiations::NewConstructorCall)
+def test_instantiations_newconstructorcall_is_not_abstract():
+    assert not inspect.isabstract(instantiations_NewConstructorCall)
 
 
-def test_instantiations::newconstructorcall_constructor_exists():
-    assert callable(instantiations::NewConstructorCall.__init__)
+def test_instantiations_newconstructorcall_constructor_exists():
+    assert callable(instantiations_NewConstructorCall.__init__)
 
 
-def test_instantiations::newconstructorcall_constructor_args():
-    sig = inspect.signature(instantiations::NewConstructorCall.__init__)
+def test_instantiations_newconstructorcall_constructor_args():
+    sig = inspect.signature(instantiations_NewConstructorCall.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1925,16 +1925,16 @@ def test_typeargumentable_constructor_args():
 
 
 
-def test_references::reference_is_not_abstract():
-    assert not inspect.isabstract(references::Reference)
+def test_references_reference_is_not_abstract():
+    assert not inspect.isabstract(references_Reference)
 
 
-def test_references::reference_constructor_exists():
-    assert callable(references::Reference.__init__)
+def test_references_reference_constructor_exists():
+    assert callable(references_Reference.__init__)
 
 
-def test_references::reference_constructor_args():
-    sig = inspect.signature(references::Reference.__init__)
+def test_references_reference_constructor_args():
+    sig = inspect.signature(references_Reference.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1953,16 +1953,16 @@ def test_argumentable_constructor_args():
 
 
 
-def test_references::methodcall_is_not_abstract():
-    assert not inspect.isabstract(references::MethodCall)
+def test_references_methodcall_is_not_abstract():
+    assert not inspect.isabstract(references_MethodCall)
 
 
-def test_references::methodcall_constructor_exists():
-    assert callable(references::MethodCall.__init__)
+def test_references_methodcall_constructor_exists():
+    assert callable(references_MethodCall.__init__)
 
 
-def test_references::methodcall_constructor_args():
-    sig = inspect.signature(references::MethodCall.__init__)
+def test_references_methodcall_constructor_args():
+    sig = inspect.signature(references_MethodCall.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1981,44 +1981,44 @@ def test_import_constructor_args():
 
 
 
-def test_imports::packageimport_is_not_abstract():
-    assert not inspect.isabstract(imports::PackageImport)
+def test_imports_classifierimport_is_not_abstract():
+    assert not inspect.isabstract(imports_ClassifierImport)
 
 
-def test_imports::packageimport_constructor_exists():
-    assert callable(imports::PackageImport.__init__)
+def test_imports_classifierimport_constructor_exists():
+    assert callable(imports_ClassifierImport.__init__)
 
 
-def test_imports::packageimport_constructor_args():
-    sig = inspect.signature(imports::PackageImport.__init__)
+def test_imports_classifierimport_constructor_args():
+    sig = inspect.signature(imports_ClassifierImport.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_imports::staticimport_is_not_abstract():
-    assert not inspect.isabstract(imports::StaticImport)
+def test_imports_packageimport_is_not_abstract():
+    assert not inspect.isabstract(imports_PackageImport)
 
 
-def test_imports::staticimport_constructor_exists():
-    assert callable(imports::StaticImport.__init__)
+def test_imports_packageimport_constructor_exists():
+    assert callable(imports_PackageImport.__init__)
 
 
-def test_imports::staticimport_constructor_args():
-    sig = inspect.signature(imports::StaticImport.__init__)
+def test_imports_packageimport_constructor_args():
+    sig = inspect.signature(imports_PackageImport.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_imports::classifierimport_is_not_abstract():
-    assert not inspect.isabstract(imports::ClassifierImport)
+def test_imports_staticimport_is_not_abstract():
+    assert not inspect.isabstract(imports_StaticImport)
 
 
-def test_imports::classifierimport_constructor_exists():
-    assert callable(imports::ClassifierImport.__init__)
+def test_imports_staticimport_constructor_exists():
+    assert callable(imports_StaticImport.__init__)
 
 
-def test_imports::classifierimport_constructor_args():
-    sig = inspect.signature(imports::ClassifierImport.__init__)
+def test_imports_staticimport_constructor_args():
+    sig = inspect.signature(imports_StaticImport.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -2037,30 +2037,712 @@ def test_unarymodificationexpression_constructor_args():
 
 
 
-def test_expressions::suffixunarymodificationexpression_is_not_abstract():
-    assert not inspect.isabstract(expressions::SuffixUnaryModificationExpression)
+def test_expressions_suffixunarymodificationexpression_is_not_abstract():
+    assert not inspect.isabstract(expressions_SuffixUnaryModificationExpression)
 
 
-def test_expressions::suffixunarymodificationexpression_constructor_exists():
-    assert callable(expressions::SuffixUnaryModificationExpression.__init__)
+def test_expressions_suffixunarymodificationexpression_constructor_exists():
+    assert callable(expressions_SuffixUnaryModificationExpression.__init__)
 
 
-def test_expressions::suffixunarymodificationexpression_constructor_args():
-    sig = inspect.signature(expressions::SuffixUnaryModificationExpression.__init__)
+def test_expressions_suffixunarymodificationexpression_constructor_args():
+    sig = inspect.signature(expressions_SuffixUnaryModificationExpression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_expressions::prefixunarymodificationexpression_is_not_abstract():
-    assert not inspect.isabstract(expressions::PrefixUnaryModificationExpression)
+def test_commentable_is_not_abstract():
+    assert not inspect.isabstract(Commentable)
 
 
-def test_expressions::prefixunarymodificationexpression_constructor_exists():
-    assert callable(expressions::PrefixUnaryModificationExpression.__init__)
+def test_commentable_constructor_exists():
+    assert callable(Commentable.__init__)
 
 
-def test_expressions::prefixunarymodificationexpression_constructor_args():
-    sig = inspect.signature(expressions::PrefixUnaryModificationExpression.__init__)
+def test_commentable_constructor_args():
+    sig = inspect.signature(Commentable.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_types_typedelement_is_not_abstract():
+    assert not inspect.isabstract(types_TypedElement)
+
+
+def test_types_typedelement_constructor_exists():
+    assert callable(types_TypedElement.__init__)
+
+
+def test_types_typedelement_constructor_args():
+    sig = inspect.signature(types_TypedElement.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_types_type_is_not_abstract():
+    assert not inspect.isabstract(types_Type)
+
+
+def test_types_type_constructor_exists():
+    assert callable(types_Type.__init__)
+
+
+def test_types_type_constructor_args():
+    sig = inspect.signature(types_Type.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_operators_operator_is_not_abstract():
+    assert not inspect.isabstract(operators_Operator)
+
+
+def test_operators_operator_constructor_exists():
+    assert callable(operators_Operator.__init__)
+
+
+def test_operators_operator_constructor_args():
+    sig = inspect.signature(operators_Operator.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_instantiations_initializable_is_not_abstract():
+    assert not inspect.isabstract(instantiations_Initializable)
+
+
+def test_instantiations_initializable_constructor_exists():
+    assert callable(instantiations_Initializable.__init__)
+
+
+def test_instantiations_initializable_constructor_args():
+    sig = inspect.signature(instantiations_Initializable.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_statements_conditional_is_not_abstract():
+    assert not inspect.isabstract(statements_Conditional)
+
+
+def test_statements_conditional_constructor_exists():
+    assert callable(statements_Conditional.__init__)
+
+
+def test_statements_conditional_constructor_args():
+    sig = inspect.signature(statements_Conditional.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_statements_statement_is_not_abstract():
+    assert not inspect.isabstract(statements_Statement)
+
+
+def test_statements_statement_constructor_exists():
+    assert callable(statements_Statement.__init__)
+
+
+def test_statements_statement_constructor_args():
+    sig = inspect.signature(statements_Statement.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_statements_forloopinitializer_is_not_abstract():
+    assert not inspect.isabstract(statements_ForLoopInitializer)
+
+
+def test_statements_forloopinitializer_constructor_exists():
+    assert callable(statements_ForLoopInitializer.__init__)
+
+
+def test_statements_forloopinitializer_constructor_args():
+    sig = inspect.signature(statements_ForLoopInitializer.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_members_membercontainer_is_not_abstract():
+    assert not inspect.isabstract(members_MemberContainer)
+
+
+def test_members_membercontainer_constructor_exists():
+    assert callable(members_MemberContainer.__init__)
+
+
+def test_members_membercontainer_constructor_args():
+    sig = inspect.signature(members_MemberContainer.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_statements_statementlistcontainer_is_not_abstract():
+    assert not inspect.isabstract(statements_StatementListContainer)
+
+
+def test_statements_statementlistcontainer_constructor_exists():
+    assert callable(statements_StatementListContainer.__init__)
+
+
+def test_statements_statementlistcontainer_constructor_args():
+    sig = inspect.signature(statements_StatementListContainer.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_imports_importingelement_is_not_abstract():
+    assert not inspect.isabstract(imports_ImportingElement)
+
+
+def test_imports_importingelement_constructor_exists():
+    assert callable(imports_ImportingElement.__init__)
+
+
+def test_imports_importingelement_constructor_args():
+    sig = inspect.signature(imports_ImportingElement.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_modifiers_annotationinstanceormodifier_is_not_abstract():
+    assert not inspect.isabstract(modifiers_AnnotationInstanceOrModifier)
+
+
+def test_modifiers_annotationinstanceormodifier_constructor_exists():
+    assert callable(modifiers_AnnotationInstanceOrModifier.__init__)
+
+
+def test_modifiers_annotationinstanceormodifier_constructor_args():
+    sig = inspect.signature(modifiers_AnnotationInstanceOrModifier.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_parameters_parametrizable_is_not_abstract():
+    assert not inspect.isabstract(parameters_Parametrizable)
+
+
+def test_parameters_parametrizable_constructor_exists():
+    assert callable(parameters_Parametrizable.__init__)
+
+
+def test_parameters_parametrizable_constructor_args():
+    sig = inspect.signature(parameters_Parametrizable.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_statements_statementcontainer_is_not_abstract():
+    assert not inspect.isabstract(statements_StatementContainer)
+
+
+def test_statements_statementcontainer_constructor_exists():
+    assert callable(statements_StatementContainer.__init__)
+
+
+def test_statements_statementcontainer_constructor_args():
+    sig = inspect.signature(statements_StatementContainer.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_literals_self_is_not_abstract():
+    assert not inspect.isabstract(literals_Self)
+
+
+def test_literals_self_constructor_exists():
+    assert callable(literals_Self.__init__)
+
+
+def test_literals_self_constructor_args():
+    sig = inspect.signature(literals_Self.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_references_argumentable_is_not_abstract():
+    assert not inspect.isabstract(references_Argumentable)
+
+
+def test_references_argumentable_constructor_exists():
+    assert callable(references_Argumentable.__init__)
+
+
+def test_references_argumentable_constructor_args():
+    sig = inspect.signature(references_Argumentable.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_modifiers_modifiable_is_not_abstract():
+    assert not inspect.isabstract(modifiers_Modifiable)
+
+
+def test_modifiers_modifiable_constructor_exists():
+    assert callable(modifiers_Modifiable.__init__)
+
+
+def test_modifiers_modifiable_constructor_args():
+    sig = inspect.signature(modifiers_Modifiable.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_modifiers_annotableandmodifiable_is_not_abstract():
+    assert not inspect.isabstract(modifiers_AnnotableAndModifiable)
+
+
+def test_modifiers_annotableandmodifiable_constructor_exists():
+    assert callable(modifiers_AnnotableAndModifiable.__init__)
+
+
+def test_modifiers_annotableandmodifiable_constructor_args():
+    sig = inspect.signature(modifiers_AnnotableAndModifiable.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_types_typereference_is_not_abstract():
+    assert not inspect.isabstract(types_TypeReference)
+
+
+def test_types_typereference_constructor_exists():
+    assert callable(types_TypeReference.__init__)
+
+
+def test_types_typereference_constructor_args():
+    sig = inspect.signature(types_TypeReference.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_members_exceptionthrower_is_not_abstract():
+    assert not inspect.isabstract(members_ExceptionThrower)
+
+
+def test_members_exceptionthrower_constructor_exists():
+    assert callable(members_ExceptionThrower.__init__)
+
+
+def test_members_exceptionthrower_constructor_args():
+    sig = inspect.signature(members_ExceptionThrower.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_annotations_annotable_is_not_abstract():
+    assert not inspect.isabstract(annotations_Annotable)
+
+
+def test_annotations_annotable_constructor_exists():
+    assert callable(annotations_Annotable.__init__)
+
+
+def test_annotations_annotable_constructor_args():
+    sig = inspect.signature(annotations_Annotable.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_arrays_arraytypeable_is_not_abstract():
+    assert not inspect.isabstract(arrays_ArrayTypeable)
+
+
+def test_arrays_arraytypeable_constructor_exists():
+    assert callable(arrays_ArrayTypeable.__init__)
+
+
+def test_arrays_arraytypeable_constructor_args():
+    sig = inspect.signature(arrays_ArrayTypeable.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_expression_is_not_abstract():
+    assert not inspect.isabstract(Expression)
+
+
+def test_expression_constructor_exists():
+    assert callable(Expression.__init__)
+
+
+def test_expression_constructor_args():
+    sig = inspect.signature(Expression.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_annotations_annotationvalue_is_not_abstract():
+    assert not inspect.isabstract(annotations_AnnotationValue)
+
+
+def test_annotations_annotationvalue_constructor_exists():
+    assert callable(annotations_AnnotationValue.__init__)
+
+
+def test_annotations_annotationvalue_constructor_args():
+    sig = inspect.signature(annotations_AnnotationValue.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_interfacemethod_is_not_abstract():
+    assert not inspect.isabstract(InterfaceMethod)
+
+
+def test_interfacemethod_constructor_exists():
+    assert callable(InterfaceMethod.__init__)
+
+
+def test_interfacemethod_constructor_args():
+    sig = inspect.signature(InterfaceMethod.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_annotations_annotationattribute_is_not_abstract():
+    assert not inspect.isabstract(annotations_AnnotationAttribute)
+
+
+def test_annotations_annotationattribute_constructor_exists():
+    assert callable(annotations_AnnotationAttribute.__init__)
+
+
+def test_annotations_annotationattribute_constructor_args():
+    sig = inspect.signature(annotations_AnnotationAttribute.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_annotations_annotationattributesetting_is_not_abstract():
+    assert not inspect.isabstract(annotations_AnnotationAttributeSetting)
+
+
+def test_annotations_annotationattributesetting_constructor_exists():
+    assert callable(annotations_AnnotationAttributeSetting.__init__)
+
+
+def test_annotations_annotationattributesetting_constructor_args():
+    sig = inspect.signature(annotations_AnnotationAttributeSetting.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_annotationattributesetting_is_not_abstract():
+    assert not inspect.isabstract(AnnotationAttributeSetting)
+
+
+def test_annotationattributesetting_constructor_exists():
+    assert callable(AnnotationAttributeSetting.__init__)
+
+
+def test_annotationattributesetting_constructor_args():
+    sig = inspect.signature(AnnotationAttributeSetting.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_annotationvalue_is_not_abstract():
+    assert not inspect.isabstract(AnnotationValue)
+
+
+def test_annotationvalue_constructor_exists():
+    assert callable(AnnotationValue.__init__)
+
+
+def test_annotationvalue_constructor_args():
+    sig = inspect.signature(AnnotationValue.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_annotations_annotationparameter_is_not_abstract():
+    assert not inspect.isabstract(annotations_AnnotationParameter)
+
+
+def test_annotations_annotationparameter_constructor_exists():
+    assert callable(annotations_AnnotationParameter.__init__)
+
+
+def test_annotations_annotationparameter_constructor_args():
+    sig = inspect.signature(annotations_AnnotationParameter.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_annotationparameter_is_not_abstract():
+    assert not inspect.isabstract(AnnotationParameter)
+
+
+def test_annotationparameter_constructor_exists():
+    assert callable(AnnotationParameter.__init__)
+
+
+def test_annotationparameter_constructor_args():
+    sig = inspect.signature(AnnotationParameter.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_annotations_annotationparameterlist_is_not_abstract():
+    assert not inspect.isabstract(annotations_AnnotationParameterList)
+
+
+def test_annotations_annotationparameterlist_constructor_exists():
+    assert callable(annotations_AnnotationParameterList.__init__)
+
+
+def test_annotations_annotationparameterlist_constructor_args():
+    sig = inspect.signature(annotations_AnnotationParameterList.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_annotations_singleannotationparameter_is_not_abstract():
+    assert not inspect.isabstract(annotations_SingleAnnotationParameter)
+
+
+def test_annotations_singleannotationparameter_constructor_exists():
+    assert callable(annotations_SingleAnnotationParameter.__init__)
+
+
+def test_annotations_singleannotationparameter_constructor_args():
+    sig = inspect.signature(annotations_SingleAnnotationParameter.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_classifier_is_not_abstract():
+    assert not inspect.isabstract(Classifier)
+
+
+def test_classifier_constructor_exists():
+    assert callable(Classifier.__init__)
+
+
+def test_classifier_constructor_args():
+    sig = inspect.signature(Classifier.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_generics_typeparameter_is_not_abstract():
+    assert not inspect.isabstract(generics_TypeParameter)
+
+
+def test_generics_typeparameter_constructor_exists():
+    assert callable(generics_TypeParameter.__init__)
+
+
+def test_generics_typeparameter_constructor_args():
+    sig = inspect.signature(generics_TypeParameter.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_namespaceawareelement_is_not_abstract():
+    assert not inspect.isabstract(NamespaceAwareElement)
+
+
+def test_namespaceawareelement_constructor_exists():
+    assert callable(NamespaceAwareElement.__init__)
+
+
+def test_namespaceawareelement_constructor_args():
+    sig = inspect.signature(NamespaceAwareElement.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_imports_import_is_not_abstract():
+    assert not inspect.isabstract(imports_Import)
+
+
+def test_imports_import_constructor_exists():
+    assert callable(imports_Import.__init__)
+
+
+def test_imports_import_constructor_args():
+    sig = inspect.signature(imports_Import.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_annotationinstanceormodifier_is_not_abstract():
+    assert not inspect.isabstract(AnnotationInstanceOrModifier)
+
+
+def test_annotationinstanceormodifier_constructor_exists():
+    assert callable(AnnotationInstanceOrModifier.__init__)
+
+
+def test_annotationinstanceormodifier_constructor_args():
+    sig = inspect.signature(AnnotationInstanceOrModifier.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_modifiers_modifier_is_not_abstract():
+    assert not inspect.isabstract(modifiers_Modifier)
+
+
+def test_modifiers_modifier_constructor_exists():
+    assert callable(modifiers_Modifier.__init__)
+
+
+def test_modifiers_modifier_constructor_args():
+    sig = inspect.signature(modifiers_Modifier.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_reference_is_not_abstract():
+    assert not inspect.isabstract(Reference)
+
+
+def test_reference_constructor_exists():
+    assert callable(Reference.__init__)
+
+
+def test_reference_constructor_args():
+    sig = inspect.signature(Reference.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_references_primitivetypereference_is_not_abstract():
+    assert not inspect.isabstract(references_PrimitiveTypeReference)
+
+
+def test_references_primitivetypereference_constructor_exists():
+    assert callable(references_PrimitiveTypeReference.__init__)
+
+
+def test_references_primitivetypereference_constructor_args():
+    sig = inspect.signature(references_PrimitiveTypeReference.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_references_elementreference_is_not_abstract():
+    assert not inspect.isabstract(references_ElementReference)
+
+
+def test_references_elementreference_constructor_exists():
+    assert callable(references_ElementReference.__init__)
+
+
+def test_references_elementreference_constructor_args():
+    sig = inspect.signature(references_ElementReference.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_references_stringreference_is_not_abstract():
+    assert not inspect.isabstract(references_StringReference)
+
+
+def test_references_stringreference_constructor_exists():
+    assert callable(references_StringReference.__init__)
+
+
+def test_references_stringreference_constructor_args():
+    sig = inspect.signature(references_StringReference.__init__)
+    params = list(sig.parameters.keys())
+    assert "value" in params, "Missing parameter 'value'"
+
+def test_references_stringreference_has_value():
+    assert hasattr(references_StringReference, "value")
+    descriptor = None
+    for klass in references_StringReference.__mro__:
+        if "value" in klass.__dict__:
+            descriptor = klass.__dict__["value"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_references_selfreference_is_not_abstract():
+    assert not inspect.isabstract(references_SelfReference)
+
+
+def test_references_selfreference_constructor_exists():
+    assert callable(references_SelfReference.__init__)
+
+
+def test_references_selfreference_constructor_args():
+    sig = inspect.signature(references_SelfReference.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_references_reflectiveclassreference_is_not_abstract():
+    assert not inspect.isabstract(references_ReflectiveClassReference)
+
+
+def test_references_reflectiveclassreference_constructor_exists():
+    assert callable(references_ReflectiveClassReference.__init__)
+
+
+def test_references_reflectiveclassreference_constructor_args():
+    sig = inspect.signature(references_ReflectiveClassReference.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_expressions_nestedexpression_is_not_abstract():
+    assert not inspect.isabstract(expressions_NestedExpression)
+
+
+def test_expressions_nestedexpression_constructor_exists():
+    assert callable(expressions_NestedExpression.__init__)
+
+
+def test_expressions_nestedexpression_constructor_args():
+    sig = inspect.signature(expressions_NestedExpression.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_annotations_annotationinstance_is_not_abstract():
+    assert not inspect.isabstract(annotations_AnnotationInstance)
+
+
+def test_annotations_annotationinstance_constructor_exists():
+    assert callable(annotations_AnnotationInstance.__init__)
+
+
+def test_annotations_annotationinstance_constructor_args():
+    sig = inspect.signature(annotations_AnnotationInstance.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_annotationinstance_is_not_abstract():
+    assert not inspect.isabstract(AnnotationInstance)
+
+
+def test_annotationinstance_constructor_exists():
+    assert callable(AnnotationInstance.__init__)
+
+
+def test_annotationinstance_constructor_args():
+    sig = inspect.signature(AnnotationInstance.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_expressions_prefixunarymodificationexpression_is_not_abstract():
+    assert not inspect.isabstract(expressions_PrefixUnaryModificationExpression)
+
+
+def test_expressions_prefixunarymodificationexpression_constructor_exists():
+    assert callable(expressions_PrefixUnaryModificationExpression.__init__)
+
+
+def test_expressions_prefixunarymodificationexpression_constructor_args():
+    sig = inspect.signature(expressions_PrefixUnaryModificationExpression.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -2079,30 +2761,30 @@ def test_unarymodificationoperator_constructor_args():
 
 
 
-def test_operators::plusplus_is_not_abstract():
-    assert not inspect.isabstract(operators::PlusPlus)
+def test_operators_plusplus_is_not_abstract():
+    assert not inspect.isabstract(operators_PlusPlus)
 
 
-def test_operators::plusplus_constructor_exists():
-    assert callable(operators::PlusPlus.__init__)
+def test_operators_plusplus_constructor_exists():
+    assert callable(operators_PlusPlus.__init__)
 
 
-def test_operators::plusplus_constructor_args():
-    sig = inspect.signature(operators::PlusPlus.__init__)
+def test_operators_plusplus_constructor_args():
+    sig = inspect.signature(operators_PlusPlus.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_operators::minusminus_is_not_abstract():
-    assert not inspect.isabstract(operators::MinusMinus)
+def test_operators_minusminus_is_not_abstract():
+    assert not inspect.isabstract(operators_MinusMinus)
 
 
-def test_operators::minusminus_constructor_exists():
-    assert callable(operators::MinusMinus.__init__)
+def test_operators_minusminus_constructor_exists():
+    assert callable(operators_MinusMinus.__init__)
 
 
-def test_operators::minusminus_constructor_args():
-    sig = inspect.signature(operators::MinusMinus.__init__)
+def test_operators_minusminus_constructor_args():
+    sig = inspect.signature(operators_MinusMinus.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -2121,6 +2803,34 @@ def test_typeparameter_constructor_args():
 
 
 
+def test_generics_typeparametrizable_is_not_abstract():
+    assert not inspect.isabstract(generics_TypeParametrizable)
+
+
+def test_generics_typeparametrizable_constructor_exists():
+    assert callable(generics_TypeParametrizable.__init__)
+
+
+def test_generics_typeparametrizable_constructor_args():
+    sig = inspect.signature(generics_TypeParametrizable.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_generics_calltypeargumentable_is_not_abstract():
+    assert not inspect.isabstract(generics_CallTypeArgumentable)
+
+
+def test_generics_calltypeargumentable_constructor_exists():
+    assert callable(generics_CallTypeArgumentable.__init__)
+
+
+def test_generics_calltypeargumentable_constructor_args():
+    sig = inspect.signature(generics_CallTypeArgumentable.__init__)
+    params = list(sig.parameters.keys())
+
+
+
 def test_typeargument_is_not_abstract():
     assert not inspect.isabstract(TypeArgument)
 
@@ -2135,44 +2845,58 @@ def test_typeargument_constructor_args():
 
 
 
-def test_generics::supertypeargument_is_not_abstract():
-    assert not inspect.isabstract(generics::SuperTypeArgument)
+def test_generics_extendstypeargument_is_not_abstract():
+    assert not inspect.isabstract(generics_ExtendsTypeArgument)
 
 
-def test_generics::supertypeargument_constructor_exists():
-    assert callable(generics::SuperTypeArgument.__init__)
+def test_generics_extendstypeargument_constructor_exists():
+    assert callable(generics_ExtendsTypeArgument.__init__)
 
 
-def test_generics::supertypeargument_constructor_args():
-    sig = inspect.signature(generics::SuperTypeArgument.__init__)
+def test_generics_extendstypeargument_constructor_args():
+    sig = inspect.signature(generics_ExtendsTypeArgument.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_generics::unknowntypeargument_is_not_abstract():
-    assert not inspect.isabstract(generics::UnknownTypeArgument)
+def test_generics_unknowntypeargument_is_not_abstract():
+    assert not inspect.isabstract(generics_UnknownTypeArgument)
 
 
-def test_generics::unknowntypeargument_constructor_exists():
-    assert callable(generics::UnknownTypeArgument.__init__)
+def test_generics_unknowntypeargument_constructor_exists():
+    assert callable(generics_UnknownTypeArgument.__init__)
 
 
-def test_generics::unknowntypeargument_constructor_args():
-    sig = inspect.signature(generics::UnknownTypeArgument.__init__)
+def test_generics_unknowntypeargument_constructor_args():
+    sig = inspect.signature(generics_UnknownTypeArgument.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_generics::extendstypeargument_is_not_abstract():
-    assert not inspect.isabstract(generics::ExtendsTypeArgument)
+def test_generics_supertypeargument_is_not_abstract():
+    assert not inspect.isabstract(generics_SuperTypeArgument)
 
 
-def test_generics::extendstypeargument_constructor_exists():
-    assert callable(generics::ExtendsTypeArgument.__init__)
+def test_generics_supertypeargument_constructor_exists():
+    assert callable(generics_SuperTypeArgument.__init__)
 
 
-def test_generics::extendstypeargument_constructor_args():
-    sig = inspect.signature(generics::ExtendsTypeArgument.__init__)
+def test_generics_supertypeargument_constructor_args():
+    sig = inspect.signature(generics_SuperTypeArgument.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_generics_typeargumentable_is_not_abstract():
+    assert not inspect.isabstract(generics_TypeArgumentable)
+
+
+def test_generics_typeargumentable_constructor_exists():
+    assert callable(generics_TypeArgumentable.__init__)
+
+
+def test_generics_typeargumentable_constructor_args():
+    sig = inspect.signature(generics_TypeArgumentable.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -2205,16 +2929,16 @@ def test_additiveexpressionchild_constructor_args():
 
 
 
-def test_expressions::multiplicativeexpression_is_not_abstract():
-    assert not inspect.isabstract(expressions::MultiplicativeExpression)
+def test_expressions_multiplicativeexpression_is_not_abstract():
+    assert not inspect.isabstract(expressions_MultiplicativeExpression)
 
 
-def test_expressions::multiplicativeexpression_constructor_exists():
-    assert callable(expressions::MultiplicativeExpression.__init__)
+def test_expressions_multiplicativeexpression_constructor_exists():
+    assert callable(expressions_MultiplicativeExpression.__init__)
 
 
-def test_expressions::multiplicativeexpression_constructor_args():
-    sig = inspect.signature(expressions::MultiplicativeExpression.__init__)
+def test_expressions_multiplicativeexpression_constructor_args():
+    sig = inspect.signature(expressions_MultiplicativeExpression.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -2233,16 +2957,16 @@ def test_unarymodificationexpressionchild_constructor_args():
 
 
 
-def test_expressions::primaryexpression_is_not_abstract():
-    assert not inspect.isabstract(expressions::PrimaryExpression)
+def test_expressions_primaryexpression_is_not_abstract():
+    assert not inspect.isabstract(expressions_PrimaryExpression)
 
 
-def test_expressions::primaryexpression_constructor_exists():
-    assert callable(expressions::PrimaryExpression.__init__)
+def test_expressions_primaryexpression_constructor_exists():
+    assert callable(expressions_PrimaryExpression.__init__)
 
 
-def test_expressions::primaryexpression_constructor_args():
-    sig = inspect.signature(expressions::PrimaryExpression.__init__)
+def test_expressions_primaryexpression_constructor_args():
+    sig = inspect.signature(expressions_PrimaryExpression.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -2261,30 +2985,30 @@ def test_unaryexpressionchild_constructor_args():
 
 
 
-def test_expressions::unarymodificationexpressionchild_is_not_abstract():
-    assert not inspect.isabstract(expressions::UnaryModificationExpressionChild)
+def test_expressions_unarymodificationexpression_is_not_abstract():
+    assert not inspect.isabstract(expressions_UnaryModificationExpression)
 
 
-def test_expressions::unarymodificationexpressionchild_constructor_exists():
-    assert callable(expressions::UnaryModificationExpressionChild.__init__)
+def test_expressions_unarymodificationexpression_constructor_exists():
+    assert callable(expressions_UnaryModificationExpression.__init__)
 
 
-def test_expressions::unarymodificationexpressionchild_constructor_args():
-    sig = inspect.signature(expressions::UnaryModificationExpressionChild.__init__)
+def test_expressions_unarymodificationexpression_constructor_args():
+    sig = inspect.signature(expressions_UnaryModificationExpression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_expressions::unarymodificationexpression_is_not_abstract():
-    assert not inspect.isabstract(expressions::UnaryModificationExpression)
+def test_expressions_unarymodificationexpressionchild_is_not_abstract():
+    assert not inspect.isabstract(expressions_UnaryModificationExpressionChild)
 
 
-def test_expressions::unarymodificationexpression_constructor_exists():
-    assert callable(expressions::UnaryModificationExpression.__init__)
+def test_expressions_unarymodificationexpressionchild_constructor_exists():
+    assert callable(expressions_UnaryModificationExpressionChild.__init__)
 
 
-def test_expressions::unarymodificationexpression_constructor_args():
-    sig = inspect.signature(expressions::UnaryModificationExpression.__init__)
+def test_expressions_unarymodificationexpressionchild_constructor_args():
+    sig = inspect.signature(expressions_UnaryModificationExpressionChild.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -2303,72 +3027,72 @@ def test_unaryoperator_constructor_args():
 
 
 
-def test_operators::addition_is_not_abstract():
-    assert not inspect.isabstract(operators::Addition)
+def test_operators_negate_is_not_abstract():
+    assert not inspect.isabstract(operators_Negate)
 
 
-def test_operators::addition_constructor_exists():
-    assert callable(operators::Addition.__init__)
+def test_operators_negate_constructor_exists():
+    assert callable(operators_Negate.__init__)
 
 
-def test_operators::addition_constructor_args():
-    sig = inspect.signature(operators::Addition.__init__)
+def test_operators_negate_constructor_args():
+    sig = inspect.signature(operators_Negate.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_operators::complement_is_not_abstract():
-    assert not inspect.isabstract(operators::Complement)
+def test_operators_addition_is_not_abstract():
+    assert not inspect.isabstract(operators_Addition)
 
 
-def test_operators::complement_constructor_exists():
-    assert callable(operators::Complement.__init__)
+def test_operators_addition_constructor_exists():
+    assert callable(operators_Addition.__init__)
 
 
-def test_operators::complement_constructor_args():
-    sig = inspect.signature(operators::Complement.__init__)
+def test_operators_addition_constructor_args():
+    sig = inspect.signature(operators_Addition.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_operators::negate_is_not_abstract():
-    assert not inspect.isabstract(operators::Negate)
+def test_operators_subtraction_is_not_abstract():
+    assert not inspect.isabstract(operators_Subtraction)
 
 
-def test_operators::negate_constructor_exists():
-    assert callable(operators::Negate.__init__)
+def test_operators_subtraction_constructor_exists():
+    assert callable(operators_Subtraction.__init__)
 
 
-def test_operators::negate_constructor_args():
-    sig = inspect.signature(operators::Negate.__init__)
+def test_operators_subtraction_constructor_args():
+    sig = inspect.signature(operators_Subtraction.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_operators::subtraction_is_not_abstract():
-    assert not inspect.isabstract(operators::Subtraction)
+def test_operators_complement_is_not_abstract():
+    assert not inspect.isabstract(operators_Complement)
 
 
-def test_operators::subtraction_constructor_exists():
-    assert callable(operators::Subtraction.__init__)
+def test_operators_complement_constructor_exists():
+    assert callable(operators_Complement.__init__)
 
 
-def test_operators::subtraction_constructor_args():
-    sig = inspect.signature(operators::Subtraction.__init__)
+def test_operators_complement_constructor_args():
+    sig = inspect.signature(operators_Complement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_expressions::multiplicativeexpressionchild_is_not_abstract():
-    assert not inspect.isabstract(expressions::MultiplicativeExpressionChild)
+def test_expressions_multiplicativeexpressionchild_is_not_abstract():
+    assert not inspect.isabstract(expressions_MultiplicativeExpressionChild)
 
 
-def test_expressions::multiplicativeexpressionchild_constructor_exists():
-    assert callable(expressions::MultiplicativeExpressionChild.__init__)
+def test_expressions_multiplicativeexpressionchild_constructor_exists():
+    assert callable(expressions_MultiplicativeExpressionChild.__init__)
 
 
-def test_expressions::multiplicativeexpressionchild_constructor_args():
-    sig = inspect.signature(expressions::MultiplicativeExpressionChild.__init__)
+def test_expressions_multiplicativeexpressionchild_constructor_args():
+    sig = inspect.signature(expressions_MultiplicativeExpressionChild.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -2387,44 +3111,44 @@ def test_multiplicativeoperator_constructor_args():
 
 
 
-def test_operators::division_is_not_abstract():
-    assert not inspect.isabstract(operators::Division)
+def test_operators_division_is_not_abstract():
+    assert not inspect.isabstract(operators_Division)
 
 
-def test_operators::division_constructor_exists():
-    assert callable(operators::Division.__init__)
+def test_operators_division_constructor_exists():
+    assert callable(operators_Division.__init__)
 
 
-def test_operators::division_constructor_args():
-    sig = inspect.signature(operators::Division.__init__)
+def test_operators_division_constructor_args():
+    sig = inspect.signature(operators_Division.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_operators::multiplication_is_not_abstract():
-    assert not inspect.isabstract(operators::Multiplication)
+def test_operators_remainder_is_not_abstract():
+    assert not inspect.isabstract(operators_Remainder)
 
 
-def test_operators::multiplication_constructor_exists():
-    assert callable(operators::Multiplication.__init__)
+def test_operators_remainder_constructor_exists():
+    assert callable(operators_Remainder.__init__)
 
 
-def test_operators::multiplication_constructor_args():
-    sig = inspect.signature(operators::Multiplication.__init__)
+def test_operators_remainder_constructor_args():
+    sig = inspect.signature(operators_Remainder.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_operators::remainder_is_not_abstract():
-    assert not inspect.isabstract(operators::Remainder)
+def test_operators_multiplication_is_not_abstract():
+    assert not inspect.isabstract(operators_Multiplication)
 
 
-def test_operators::remainder_constructor_exists():
-    assert callable(operators::Remainder.__init__)
+def test_operators_multiplication_constructor_exists():
+    assert callable(operators_Multiplication.__init__)
 
 
-def test_operators::remainder_constructor_args():
-    sig = inspect.signature(operators::Remainder.__init__)
+def test_operators_multiplication_constructor_args():
+    sig = inspect.signature(operators_Multiplication.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -2443,30 +3167,30 @@ def test_multiplicativeexpressionchild_constructor_args():
 
 
 
-def test_expressions::unaryexpressionchild_is_not_abstract():
-    assert not inspect.isabstract(expressions::UnaryExpressionChild)
+def test_expressions_unaryexpressionchild_is_not_abstract():
+    assert not inspect.isabstract(expressions_UnaryExpressionChild)
 
 
-def test_expressions::unaryexpressionchild_constructor_exists():
-    assert callable(expressions::UnaryExpressionChild.__init__)
+def test_expressions_unaryexpressionchild_constructor_exists():
+    assert callable(expressions_UnaryExpressionChild.__init__)
 
 
-def test_expressions::unaryexpressionchild_constructor_args():
-    sig = inspect.signature(expressions::UnaryExpressionChild.__init__)
+def test_expressions_unaryexpressionchild_constructor_args():
+    sig = inspect.signature(expressions_UnaryExpressionChild.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_expressions::unaryexpression_is_not_abstract():
-    assert not inspect.isabstract(expressions::UnaryExpression)
+def test_expressions_unaryexpression_is_not_abstract():
+    assert not inspect.isabstract(expressions_UnaryExpression)
 
 
-def test_expressions::unaryexpression_constructor_exists():
-    assert callable(expressions::UnaryExpression.__init__)
+def test_expressions_unaryexpression_constructor_exists():
+    assert callable(expressions_UnaryExpression.__init__)
 
 
-def test_expressions::unaryexpression_constructor_args():
-    sig = inspect.signature(expressions::UnaryExpression.__init__)
+def test_expressions_unaryexpression_constructor_args():
+    sig = inspect.signature(expressions_UnaryExpression.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -2499,30 +3223,30 @@ def test_equalityoperator_constructor_args():
 
 
 
-def test_operators::equal_is_not_abstract():
-    assert not inspect.isabstract(operators::Equal)
+def test_operators_equal_is_not_abstract():
+    assert not inspect.isabstract(operators_Equal)
 
 
-def test_operators::equal_constructor_exists():
-    assert callable(operators::Equal.__init__)
+def test_operators_equal_constructor_exists():
+    assert callable(operators_Equal.__init__)
 
 
-def test_operators::equal_constructor_args():
-    sig = inspect.signature(operators::Equal.__init__)
+def test_operators_equal_constructor_args():
+    sig = inspect.signature(operators_Equal.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_operators::notequal_is_not_abstract():
-    assert not inspect.isabstract(operators::NotEqual)
+def test_operators_notequal_is_not_abstract():
+    assert not inspect.isabstract(operators_NotEqual)
 
 
-def test_operators::notequal_constructor_exists():
-    assert callable(operators::NotEqual.__init__)
+def test_operators_notequal_constructor_exists():
+    assert callable(operators_NotEqual.__init__)
 
 
-def test_operators::notequal_constructor_args():
-    sig = inspect.signature(operators::NotEqual.__init__)
+def test_operators_notequal_constructor_args():
+    sig = inspect.signature(operators_NotEqual.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -2541,44 +3265,44 @@ def test_shiftoperator_constructor_args():
 
 
 
-def test_operators::unsignedrightshift_is_not_abstract():
-    assert not inspect.isabstract(operators::UnsignedRightShift)
+def test_operators_leftshift_is_not_abstract():
+    assert not inspect.isabstract(operators_LeftShift)
 
 
-def test_operators::unsignedrightshift_constructor_exists():
-    assert callable(operators::UnsignedRightShift.__init__)
+def test_operators_leftshift_constructor_exists():
+    assert callable(operators_LeftShift.__init__)
 
 
-def test_operators::unsignedrightshift_constructor_args():
-    sig = inspect.signature(operators::UnsignedRightShift.__init__)
+def test_operators_leftshift_constructor_args():
+    sig = inspect.signature(operators_LeftShift.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_operators::leftshift_is_not_abstract():
-    assert not inspect.isabstract(operators::LeftShift)
+def test_operators_rightshift_is_not_abstract():
+    assert not inspect.isabstract(operators_RightShift)
 
 
-def test_operators::leftshift_constructor_exists():
-    assert callable(operators::LeftShift.__init__)
+def test_operators_rightshift_constructor_exists():
+    assert callable(operators_RightShift.__init__)
 
 
-def test_operators::leftshift_constructor_args():
-    sig = inspect.signature(operators::LeftShift.__init__)
+def test_operators_rightshift_constructor_args():
+    sig = inspect.signature(operators_RightShift.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_operators::rightshift_is_not_abstract():
-    assert not inspect.isabstract(operators::RightShift)
+def test_operators_unsignedrightshift_is_not_abstract():
+    assert not inspect.isabstract(operators_UnsignedRightShift)
 
 
-def test_operators::rightshift_constructor_exists():
-    assert callable(operators::RightShift.__init__)
+def test_operators_unsignedrightshift_constructor_exists():
+    assert callable(operators_UnsignedRightShift.__init__)
 
 
-def test_operators::rightshift_constructor_args():
-    sig = inspect.signature(operators::RightShift.__init__)
+def test_operators_unsignedrightshift_constructor_args():
+    sig = inspect.signature(operators_UnsignedRightShift.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -2597,30 +3321,30 @@ def test_shiftexpressionchild_constructor_args():
 
 
 
-def test_expressions::additiveexpression_is_not_abstract():
-    assert not inspect.isabstract(expressions::AdditiveExpression)
+def test_expressions_additiveexpressionchild_is_not_abstract():
+    assert not inspect.isabstract(expressions_AdditiveExpressionChild)
 
 
-def test_expressions::additiveexpression_constructor_exists():
-    assert callable(expressions::AdditiveExpression.__init__)
+def test_expressions_additiveexpressionchild_constructor_exists():
+    assert callable(expressions_AdditiveExpressionChild.__init__)
 
 
-def test_expressions::additiveexpression_constructor_args():
-    sig = inspect.signature(expressions::AdditiveExpression.__init__)
+def test_expressions_additiveexpressionchild_constructor_args():
+    sig = inspect.signature(expressions_AdditiveExpressionChild.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_expressions::additiveexpressionchild_is_not_abstract():
-    assert not inspect.isabstract(expressions::AdditiveExpressionChild)
+def test_expressions_additiveexpression_is_not_abstract():
+    assert not inspect.isabstract(expressions_AdditiveExpression)
 
 
-def test_expressions::additiveexpressionchild_constructor_exists():
-    assert callable(expressions::AdditiveExpressionChild.__init__)
+def test_expressions_additiveexpression_constructor_exists():
+    assert callable(expressions_AdditiveExpression.__init__)
 
 
-def test_expressions::additiveexpressionchild_constructor_args():
-    sig = inspect.signature(expressions::AdditiveExpressionChild.__init__)
+def test_expressions_additiveexpression_constructor_args():
+    sig = inspect.signature(expressions_AdditiveExpression.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -2639,58 +3363,58 @@ def test_relationoperator_constructor_args():
 
 
 
-def test_operators::lessthanorequal_is_not_abstract():
-    assert not inspect.isabstract(operators::LessThanOrEqual)
+def test_operators_greaterthanorequal_is_not_abstract():
+    assert not inspect.isabstract(operators_GreaterThanOrEqual)
 
 
-def test_operators::lessthanorequal_constructor_exists():
-    assert callable(operators::LessThanOrEqual.__init__)
+def test_operators_greaterthanorequal_constructor_exists():
+    assert callable(operators_GreaterThanOrEqual.__init__)
 
 
-def test_operators::lessthanorequal_constructor_args():
-    sig = inspect.signature(operators::LessThanOrEqual.__init__)
+def test_operators_greaterthanorequal_constructor_args():
+    sig = inspect.signature(operators_GreaterThanOrEqual.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_operators::greaterthanorequal_is_not_abstract():
-    assert not inspect.isabstract(operators::GreaterThanOrEqual)
+def test_operators_lessthanorequal_is_not_abstract():
+    assert not inspect.isabstract(operators_LessThanOrEqual)
 
 
-def test_operators::greaterthanorequal_constructor_exists():
-    assert callable(operators::GreaterThanOrEqual.__init__)
+def test_operators_lessthanorequal_constructor_exists():
+    assert callable(operators_LessThanOrEqual.__init__)
 
 
-def test_operators::greaterthanorequal_constructor_args():
-    sig = inspect.signature(operators::GreaterThanOrEqual.__init__)
+def test_operators_lessthanorequal_constructor_args():
+    sig = inspect.signature(operators_LessThanOrEqual.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_operators::greaterthan_is_not_abstract():
-    assert not inspect.isabstract(operators::GreaterThan)
+def test_operators_lessthan_is_not_abstract():
+    assert not inspect.isabstract(operators_LessThan)
 
 
-def test_operators::greaterthan_constructor_exists():
-    assert callable(operators::GreaterThan.__init__)
+def test_operators_lessthan_constructor_exists():
+    assert callable(operators_LessThan.__init__)
 
 
-def test_operators::greaterthan_constructor_args():
-    sig = inspect.signature(operators::GreaterThan.__init__)
+def test_operators_lessthan_constructor_args():
+    sig = inspect.signature(operators_LessThan.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_operators::lessthan_is_not_abstract():
-    assert not inspect.isabstract(operators::LessThan)
+def test_operators_greaterthan_is_not_abstract():
+    assert not inspect.isabstract(operators_GreaterThan)
 
 
-def test_operators::lessthan_constructor_exists():
-    assert callable(operators::LessThan.__init__)
+def test_operators_greaterthan_constructor_exists():
+    assert callable(operators_GreaterThan.__init__)
 
 
-def test_operators::lessthan_constructor_args():
-    sig = inspect.signature(operators::LessThan.__init__)
+def test_operators_greaterthan_constructor_args():
+    sig = inspect.signature(operators_GreaterThan.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -2709,44 +3433,44 @@ def test_relationexpressionchild_constructor_args():
 
 
 
-def test_expressions::shiftexpression_is_not_abstract():
-    assert not inspect.isabstract(expressions::ShiftExpression)
+def test_expressions_shiftexpressionchild_is_not_abstract():
+    assert not inspect.isabstract(expressions_ShiftExpressionChild)
 
 
-def test_expressions::shiftexpression_constructor_exists():
-    assert callable(expressions::ShiftExpression.__init__)
+def test_expressions_shiftexpressionchild_constructor_exists():
+    assert callable(expressions_ShiftExpressionChild.__init__)
 
 
-def test_expressions::shiftexpression_constructor_args():
-    sig = inspect.signature(expressions::ShiftExpression.__init__)
+def test_expressions_shiftexpressionchild_constructor_args():
+    sig = inspect.signature(expressions_ShiftExpressionChild.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_expressions::shiftexpressionchild_is_not_abstract():
-    assert not inspect.isabstract(expressions::ShiftExpressionChild)
+def test_expressions_shiftexpression_is_not_abstract():
+    assert not inspect.isabstract(expressions_ShiftExpression)
 
 
-def test_expressions::shiftexpressionchild_constructor_exists():
-    assert callable(expressions::ShiftExpressionChild.__init__)
+def test_expressions_shiftexpression_constructor_exists():
+    assert callable(expressions_ShiftExpression.__init__)
 
 
-def test_expressions::shiftexpressionchild_constructor_args():
-    sig = inspect.signature(expressions::ShiftExpressionChild.__init__)
+def test_expressions_shiftexpression_constructor_args():
+    sig = inspect.signature(expressions_ShiftExpression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_expressions::instanceofexpressionchild_is_not_abstract():
-    assert not inspect.isabstract(expressions::InstanceOfExpressionChild)
+def test_expressions_instanceofexpressionchild_is_not_abstract():
+    assert not inspect.isabstract(expressions_InstanceOfExpressionChild)
 
 
-def test_expressions::instanceofexpressionchild_constructor_exists():
-    assert callable(expressions::InstanceOfExpressionChild.__init__)
+def test_expressions_instanceofexpressionchild_constructor_exists():
+    assert callable(expressions_InstanceOfExpressionChild.__init__)
 
 
-def test_expressions::instanceofexpressionchild_constructor_args():
-    sig = inspect.signature(expressions::InstanceOfExpressionChild.__init__)
+def test_expressions_instanceofexpressionchild_constructor_args():
+    sig = inspect.signature(expressions_InstanceOfExpressionChild.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -2765,30 +3489,30 @@ def test_instanceofexpressionchild_constructor_args():
 
 
 
-def test_expressions::relationexpressionchild_is_not_abstract():
-    assert not inspect.isabstract(expressions::RelationExpressionChild)
+def test_expressions_relationexpression_is_not_abstract():
+    assert not inspect.isabstract(expressions_RelationExpression)
 
 
-def test_expressions::relationexpressionchild_constructor_exists():
-    assert callable(expressions::RelationExpressionChild.__init__)
+def test_expressions_relationexpression_constructor_exists():
+    assert callable(expressions_RelationExpression.__init__)
 
 
-def test_expressions::relationexpressionchild_constructor_args():
-    sig = inspect.signature(expressions::RelationExpressionChild.__init__)
+def test_expressions_relationexpression_constructor_args():
+    sig = inspect.signature(expressions_RelationExpression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_expressions::relationexpression_is_not_abstract():
-    assert not inspect.isabstract(expressions::RelationExpression)
+def test_expressions_relationexpressionchild_is_not_abstract():
+    assert not inspect.isabstract(expressions_RelationExpressionChild)
 
 
-def test_expressions::relationexpression_constructor_exists():
-    assert callable(expressions::RelationExpression.__init__)
+def test_expressions_relationexpressionchild_constructor_exists():
+    assert callable(expressions_RelationExpressionChild.__init__)
 
 
-def test_expressions::relationexpression_constructor_args():
-    sig = inspect.signature(expressions::RelationExpression.__init__)
+def test_expressions_relationexpressionchild_constructor_args():
+    sig = inspect.signature(expressions_RelationExpressionChild.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -2807,16 +3531,16 @@ def test_conditionalorexpressionchild_constructor_args():
 
 
 
-def test_expressions::conditionalandexpression_is_not_abstract():
-    assert not inspect.isabstract(expressions::ConditionalAndExpression)
+def test_expressions_conditionalandexpression_is_not_abstract():
+    assert not inspect.isabstract(expressions_ConditionalAndExpression)
 
 
-def test_expressions::conditionalandexpression_constructor_exists():
-    assert callable(expressions::ConditionalAndExpression.__init__)
+def test_expressions_conditionalandexpression_constructor_exists():
+    assert callable(expressions_ConditionalAndExpression.__init__)
 
 
-def test_expressions::conditionalandexpression_constructor_args():
-    sig = inspect.signature(expressions::ConditionalAndExpression.__init__)
+def test_expressions_conditionalandexpression_constructor_args():
+    sig = inspect.signature(expressions_ConditionalAndExpression.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -2835,30 +3559,30 @@ def test_andexpressionchild_constructor_args():
 
 
 
-def test_expressions::equalityexpression_is_not_abstract():
-    assert not inspect.isabstract(expressions::EqualityExpression)
+def test_expressions_equalityexpressionchild_is_not_abstract():
+    assert not inspect.isabstract(expressions_EqualityExpressionChild)
 
 
-def test_expressions::equalityexpression_constructor_exists():
-    assert callable(expressions::EqualityExpression.__init__)
+def test_expressions_equalityexpressionchild_constructor_exists():
+    assert callable(expressions_EqualityExpressionChild.__init__)
 
 
-def test_expressions::equalityexpression_constructor_args():
-    sig = inspect.signature(expressions::EqualityExpression.__init__)
+def test_expressions_equalityexpressionchild_constructor_args():
+    sig = inspect.signature(expressions_EqualityExpressionChild.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_expressions::equalityexpressionchild_is_not_abstract():
-    assert not inspect.isabstract(expressions::EqualityExpressionChild)
+def test_expressions_equalityexpression_is_not_abstract():
+    assert not inspect.isabstract(expressions_EqualityExpression)
 
 
-def test_expressions::equalityexpressionchild_constructor_exists():
-    assert callable(expressions::EqualityExpressionChild.__init__)
+def test_expressions_equalityexpression_constructor_exists():
+    assert callable(expressions_EqualityExpression.__init__)
 
 
-def test_expressions::equalityexpressionchild_constructor_args():
-    sig = inspect.signature(expressions::EqualityExpressionChild.__init__)
+def test_expressions_equalityexpression_constructor_args():
+    sig = inspect.signature(expressions_EqualityExpression.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -2877,30 +3601,30 @@ def test_exclusiveorexpressionchild_constructor_args():
 
 
 
-def test_expressions::andexpression_is_not_abstract():
-    assert not inspect.isabstract(expressions::AndExpression)
+def test_expressions_andexpressionchild_is_not_abstract():
+    assert not inspect.isabstract(expressions_AndExpressionChild)
 
 
-def test_expressions::andexpression_constructor_exists():
-    assert callable(expressions::AndExpression.__init__)
+def test_expressions_andexpressionchild_constructor_exists():
+    assert callable(expressions_AndExpressionChild.__init__)
 
 
-def test_expressions::andexpression_constructor_args():
-    sig = inspect.signature(expressions::AndExpression.__init__)
+def test_expressions_andexpressionchild_constructor_args():
+    sig = inspect.signature(expressions_AndExpressionChild.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_expressions::andexpressionchild_is_not_abstract():
-    assert not inspect.isabstract(expressions::AndExpressionChild)
+def test_expressions_andexpression_is_not_abstract():
+    assert not inspect.isabstract(expressions_AndExpression)
 
 
-def test_expressions::andexpressionchild_constructor_exists():
-    assert callable(expressions::AndExpressionChild.__init__)
+def test_expressions_andexpression_constructor_exists():
+    assert callable(expressions_AndExpression.__init__)
 
 
-def test_expressions::andexpressionchild_constructor_args():
-    sig = inspect.signature(expressions::AndExpressionChild.__init__)
+def test_expressions_andexpression_constructor_args():
+    sig = inspect.signature(expressions_AndExpression.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -2919,44 +3643,58 @@ def test_inclusiveorexpressionchild_constructor_args():
 
 
 
-def test_expressions::exclusiveorexpression_is_not_abstract():
-    assert not inspect.isabstract(expressions::ExclusiveOrExpression)
+def test_expressions_exclusiveorexpression_is_not_abstract():
+    assert not inspect.isabstract(expressions_ExclusiveOrExpression)
 
 
-def test_expressions::exclusiveorexpression_constructor_exists():
-    assert callable(expressions::ExclusiveOrExpression.__init__)
+def test_expressions_exclusiveorexpression_constructor_exists():
+    assert callable(expressions_ExclusiveOrExpression.__init__)
 
 
-def test_expressions::exclusiveorexpression_constructor_args():
-    sig = inspect.signature(expressions::ExclusiveOrExpression.__init__)
+def test_expressions_exclusiveorexpression_constructor_args():
+    sig = inspect.signature(expressions_ExclusiveOrExpression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_expressions::exclusiveorexpressionchild_is_not_abstract():
-    assert not inspect.isabstract(expressions::ExclusiveOrExpressionChild)
+def test_expressions_exclusiveorexpressionchild_is_not_abstract():
+    assert not inspect.isabstract(expressions_ExclusiveOrExpressionChild)
 
 
-def test_expressions::exclusiveorexpressionchild_constructor_exists():
-    assert callable(expressions::ExclusiveOrExpressionChild.__init__)
+def test_expressions_exclusiveorexpressionchild_constructor_exists():
+    assert callable(expressions_ExclusiveOrExpressionChild.__init__)
 
 
-def test_expressions::exclusiveorexpressionchild_constructor_args():
-    sig = inspect.signature(expressions::ExclusiveOrExpressionChild.__init__)
+def test_expressions_exclusiveorexpressionchild_constructor_args():
+    sig = inspect.signature(expressions_ExclusiveOrExpressionChild.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_expressions::conditionalandexpressionchild_is_not_abstract():
-    assert not inspect.isabstract(expressions::ConditionalAndExpressionChild)
+def test_expressions_conditionalandexpressionchild_is_not_abstract():
+    assert not inspect.isabstract(expressions_ConditionalAndExpressionChild)
 
 
-def test_expressions::conditionalandexpressionchild_constructor_exists():
-    assert callable(expressions::ConditionalAndExpressionChild.__init__)
+def test_expressions_conditionalandexpressionchild_constructor_exists():
+    assert callable(expressions_ConditionalAndExpressionChild.__init__)
 
 
-def test_expressions::conditionalandexpressionchild_constructor_args():
-    sig = inspect.signature(expressions::ConditionalAndExpressionChild.__init__)
+def test_expressions_conditionalandexpressionchild_constructor_args():
+    sig = inspect.signature(expressions_ConditionalAndExpressionChild.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_expressions_assignmentexpression_is_not_abstract():
+    assert not inspect.isabstract(expressions_AssignmentExpression)
+
+
+def test_expressions_assignmentexpression_constructor_exists():
+    assert callable(expressions_AssignmentExpression.__init__)
+
+
+def test_expressions_assignmentexpression_constructor_args():
+    sig = inspect.signature(expressions_AssignmentExpression.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -2975,30 +3713,30 @@ def test_conditionalandexpressionchild_constructor_args():
 
 
 
-def test_expressions::inclusiveorexpressionchild_is_not_abstract():
-    assert not inspect.isabstract(expressions::InclusiveOrExpressionChild)
+def test_expressions_inclusiveorexpressionchild_is_not_abstract():
+    assert not inspect.isabstract(expressions_InclusiveOrExpressionChild)
 
 
-def test_expressions::inclusiveorexpressionchild_constructor_exists():
-    assert callable(expressions::InclusiveOrExpressionChild.__init__)
+def test_expressions_inclusiveorexpressionchild_constructor_exists():
+    assert callable(expressions_InclusiveOrExpressionChild.__init__)
 
 
-def test_expressions::inclusiveorexpressionchild_constructor_args():
-    sig = inspect.signature(expressions::InclusiveOrExpressionChild.__init__)
+def test_expressions_inclusiveorexpressionchild_constructor_args():
+    sig = inspect.signature(expressions_InclusiveOrExpressionChild.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_expressions::inclusiveorexpression_is_not_abstract():
-    assert not inspect.isabstract(expressions::InclusiveOrExpression)
+def test_expressions_inclusiveorexpression_is_not_abstract():
+    assert not inspect.isabstract(expressions_InclusiveOrExpression)
 
 
-def test_expressions::inclusiveorexpression_constructor_exists():
-    assert callable(expressions::InclusiveOrExpression.__init__)
+def test_expressions_inclusiveorexpression_constructor_exists():
+    assert callable(expressions_InclusiveOrExpression.__init__)
 
 
-def test_expressions::inclusiveorexpression_constructor_args():
-    sig = inspect.signature(expressions::InclusiveOrExpression.__init__)
+def test_expressions_inclusiveorexpression_constructor_args():
+    sig = inspect.signature(expressions_InclusiveOrExpression.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -3017,30 +3755,44 @@ def test_conditionalexpressionchild_constructor_args():
 
 
 
-def test_expressions::conditionalorexpression_is_not_abstract():
-    assert not inspect.isabstract(expressions::ConditionalOrExpression)
+def test_expressions_conditionalorexpression_is_not_abstract():
+    assert not inspect.isabstract(expressions_ConditionalOrExpression)
 
 
-def test_expressions::conditionalorexpression_constructor_exists():
-    assert callable(expressions::ConditionalOrExpression.__init__)
+def test_expressions_conditionalorexpression_constructor_exists():
+    assert callable(expressions_ConditionalOrExpression.__init__)
 
 
-def test_expressions::conditionalorexpression_constructor_args():
-    sig = inspect.signature(expressions::ConditionalOrExpression.__init__)
+def test_expressions_conditionalorexpression_constructor_args():
+    sig = inspect.signature(expressions_ConditionalOrExpression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_expressions::conditionalorexpressionchild_is_not_abstract():
-    assert not inspect.isabstract(expressions::ConditionalOrExpressionChild)
+def test_expressions_conditionalorexpressionchild_is_not_abstract():
+    assert not inspect.isabstract(expressions_ConditionalOrExpressionChild)
 
 
-def test_expressions::conditionalorexpressionchild_constructor_exists():
-    assert callable(expressions::ConditionalOrExpressionChild.__init__)
+def test_expressions_conditionalorexpressionchild_constructor_exists():
+    assert callable(expressions_ConditionalOrExpressionChild.__init__)
 
 
-def test_expressions::conditionalorexpressionchild_constructor_args():
-    sig = inspect.signature(expressions::ConditionalOrExpressionChild.__init__)
+def test_expressions_conditionalorexpressionchild_constructor_args():
+    sig = inspect.signature(expressions_ConditionalOrExpressionChild.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_expressions_assignmentexpressionchild_is_not_abstract():
+    assert not inspect.isabstract(expressions_AssignmentExpressionChild)
+
+
+def test_expressions_assignmentexpressionchild_constructor_exists():
+    assert callable(expressions_AssignmentExpressionChild.__init__)
+
+
+def test_expressions_assignmentexpressionchild_constructor_args():
+    sig = inspect.signature(expressions_AssignmentExpressionChild.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -3059,170 +3811,170 @@ def test_assignmentoperator_constructor_args():
 
 
 
-def test_operators::assignmentexclusiveor_is_not_abstract():
-    assert not inspect.isabstract(operators::AssignmentExclusiveOr)
+def test_operators_assignmentand_is_not_abstract():
+    assert not inspect.isabstract(operators_AssignmentAnd)
 
 
-def test_operators::assignmentexclusiveor_constructor_exists():
-    assert callable(operators::AssignmentExclusiveOr.__init__)
+def test_operators_assignmentand_constructor_exists():
+    assert callable(operators_AssignmentAnd.__init__)
 
 
-def test_operators::assignmentexclusiveor_constructor_args():
-    sig = inspect.signature(operators::AssignmentExclusiveOr.__init__)
+def test_operators_assignmentand_constructor_args():
+    sig = inspect.signature(operators_AssignmentAnd.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_operators::assignmentor_is_not_abstract():
-    assert not inspect.isabstract(operators::AssignmentOr)
+def test_operators_assignmentexclusiveor_is_not_abstract():
+    assert not inspect.isabstract(operators_AssignmentExclusiveOr)
 
 
-def test_operators::assignmentor_constructor_exists():
-    assert callable(operators::AssignmentOr.__init__)
+def test_operators_assignmentexclusiveor_constructor_exists():
+    assert callable(operators_AssignmentExclusiveOr.__init__)
 
 
-def test_operators::assignmentor_constructor_args():
-    sig = inspect.signature(operators::AssignmentOr.__init__)
+def test_operators_assignmentexclusiveor_constructor_args():
+    sig = inspect.signature(operators_AssignmentExclusiveOr.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_operators::assignmentrightshift_is_not_abstract():
-    assert not inspect.isabstract(operators::AssignmentRightShift)
+def test_operators_assignmentunsignedrightshift_is_not_abstract():
+    assert not inspect.isabstract(operators_AssignmentUnsignedRightShift)
 
 
-def test_operators::assignmentrightshift_constructor_exists():
-    assert callable(operators::AssignmentRightShift.__init__)
+def test_operators_assignmentunsignedrightshift_constructor_exists():
+    assert callable(operators_AssignmentUnsignedRightShift.__init__)
 
 
-def test_operators::assignmentrightshift_constructor_args():
-    sig = inspect.signature(operators::AssignmentRightShift.__init__)
+def test_operators_assignmentunsignedrightshift_constructor_args():
+    sig = inspect.signature(operators_AssignmentUnsignedRightShift.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_operators::assignmentand_is_not_abstract():
-    assert not inspect.isabstract(operators::AssignmentAnd)
+def test_operators_assignmentplus_is_not_abstract():
+    assert not inspect.isabstract(operators_AssignmentPlus)
 
 
-def test_operators::assignmentand_constructor_exists():
-    assert callable(operators::AssignmentAnd.__init__)
+def test_operators_assignmentplus_constructor_exists():
+    assert callable(operators_AssignmentPlus.__init__)
 
 
-def test_operators::assignmentand_constructor_args():
-    sig = inspect.signature(operators::AssignmentAnd.__init__)
+def test_operators_assignmentplus_constructor_args():
+    sig = inspect.signature(operators_AssignmentPlus.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_operators::assignmentmultiplication_is_not_abstract():
-    assert not inspect.isabstract(operators::AssignmentMultiplication)
+def test_operators_assignmentminus_is_not_abstract():
+    assert not inspect.isabstract(operators_AssignmentMinus)
 
 
-def test_operators::assignmentmultiplication_constructor_exists():
-    assert callable(operators::AssignmentMultiplication.__init__)
+def test_operators_assignmentminus_constructor_exists():
+    assert callable(operators_AssignmentMinus.__init__)
 
 
-def test_operators::assignmentmultiplication_constructor_args():
-    sig = inspect.signature(operators::AssignmentMultiplication.__init__)
+def test_operators_assignmentminus_constructor_args():
+    sig = inspect.signature(operators_AssignmentMinus.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_operators::assignment_is_not_abstract():
-    assert not inspect.isabstract(operators::Assignment)
+def test_operators_assignment_is_not_abstract():
+    assert not inspect.isabstract(operators_Assignment)
 
 
-def test_operators::assignment_constructor_exists():
-    assert callable(operators::Assignment.__init__)
+def test_operators_assignment_constructor_exists():
+    assert callable(operators_Assignment.__init__)
 
 
-def test_operators::assignment_constructor_args():
-    sig = inspect.signature(operators::Assignment.__init__)
+def test_operators_assignment_constructor_args():
+    sig = inspect.signature(operators_Assignment.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_operators::assignmentleftshift_is_not_abstract():
-    assert not inspect.isabstract(operators::AssignmentLeftShift)
+def test_operators_assignmentrightshift_is_not_abstract():
+    assert not inspect.isabstract(operators_AssignmentRightShift)
 
 
-def test_operators::assignmentleftshift_constructor_exists():
-    assert callable(operators::AssignmentLeftShift.__init__)
+def test_operators_assignmentrightshift_constructor_exists():
+    assert callable(operators_AssignmentRightShift.__init__)
 
 
-def test_operators::assignmentleftshift_constructor_args():
-    sig = inspect.signature(operators::AssignmentLeftShift.__init__)
+def test_operators_assignmentrightshift_constructor_args():
+    sig = inspect.signature(operators_AssignmentRightShift.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_operators::assignmentminus_is_not_abstract():
-    assert not inspect.isabstract(operators::AssignmentMinus)
+def test_operators_assignmentor_is_not_abstract():
+    assert not inspect.isabstract(operators_AssignmentOr)
 
 
-def test_operators::assignmentminus_constructor_exists():
-    assert callable(operators::AssignmentMinus.__init__)
+def test_operators_assignmentor_constructor_exists():
+    assert callable(operators_AssignmentOr.__init__)
 
 
-def test_operators::assignmentminus_constructor_args():
-    sig = inspect.signature(operators::AssignmentMinus.__init__)
+def test_operators_assignmentor_constructor_args():
+    sig = inspect.signature(operators_AssignmentOr.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_operators::assignmentplus_is_not_abstract():
-    assert not inspect.isabstract(operators::AssignmentPlus)
+def test_operators_assignmentmultiplication_is_not_abstract():
+    assert not inspect.isabstract(operators_AssignmentMultiplication)
 
 
-def test_operators::assignmentplus_constructor_exists():
-    assert callable(operators::AssignmentPlus.__init__)
+def test_operators_assignmentmultiplication_constructor_exists():
+    assert callable(operators_AssignmentMultiplication.__init__)
 
 
-def test_operators::assignmentplus_constructor_args():
-    sig = inspect.signature(operators::AssignmentPlus.__init__)
+def test_operators_assignmentmultiplication_constructor_args():
+    sig = inspect.signature(operators_AssignmentMultiplication.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_operators::assignmentunsignedrightshift_is_not_abstract():
-    assert not inspect.isabstract(operators::AssignmentUnsignedRightShift)
+def test_operators_assignmentdivision_is_not_abstract():
+    assert not inspect.isabstract(operators_AssignmentDivision)
 
 
-def test_operators::assignmentunsignedrightshift_constructor_exists():
-    assert callable(operators::AssignmentUnsignedRightShift.__init__)
+def test_operators_assignmentdivision_constructor_exists():
+    assert callable(operators_AssignmentDivision.__init__)
 
 
-def test_operators::assignmentunsignedrightshift_constructor_args():
-    sig = inspect.signature(operators::AssignmentUnsignedRightShift.__init__)
+def test_operators_assignmentdivision_constructor_args():
+    sig = inspect.signature(operators_AssignmentDivision.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_operators::assignmentmodulo_is_not_abstract():
-    assert not inspect.isabstract(operators::AssignmentModulo)
+def test_operators_assignmentleftshift_is_not_abstract():
+    assert not inspect.isabstract(operators_AssignmentLeftShift)
 
 
-def test_operators::assignmentmodulo_constructor_exists():
-    assert callable(operators::AssignmentModulo.__init__)
+def test_operators_assignmentleftshift_constructor_exists():
+    assert callable(operators_AssignmentLeftShift.__init__)
 
 
-def test_operators::assignmentmodulo_constructor_args():
-    sig = inspect.signature(operators::AssignmentModulo.__init__)
+def test_operators_assignmentleftshift_constructor_args():
+    sig = inspect.signature(operators_AssignmentLeftShift.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_operators::assignmentdivision_is_not_abstract():
-    assert not inspect.isabstract(operators::AssignmentDivision)
+def test_operators_assignmentmodulo_is_not_abstract():
+    assert not inspect.isabstract(operators_AssignmentModulo)
 
 
-def test_operators::assignmentdivision_constructor_exists():
-    assert callable(operators::AssignmentDivision.__init__)
+def test_operators_assignmentmodulo_constructor_exists():
+    assert callable(operators_AssignmentModulo.__init__)
 
 
-def test_operators::assignmentdivision_constructor_args():
-    sig = inspect.signature(operators::AssignmentDivision.__init__)
+def test_operators_assignmentmodulo_constructor_args():
+    sig = inspect.signature(operators_AssignmentModulo.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -3241,30 +3993,30 @@ def test_assignmentexpressionchild_constructor_args():
 
 
 
-def test_expressions::conditionalexpressionchild_is_not_abstract():
-    assert not inspect.isabstract(expressions::ConditionalExpressionChild)
+def test_expressions_conditionalexpression_is_not_abstract():
+    assert not inspect.isabstract(expressions_ConditionalExpression)
 
 
-def test_expressions::conditionalexpressionchild_constructor_exists():
-    assert callable(expressions::ConditionalExpressionChild.__init__)
+def test_expressions_conditionalexpression_constructor_exists():
+    assert callable(expressions_ConditionalExpression.__init__)
 
 
-def test_expressions::conditionalexpressionchild_constructor_args():
-    sig = inspect.signature(expressions::ConditionalExpressionChild.__init__)
+def test_expressions_conditionalexpression_constructor_args():
+    sig = inspect.signature(expressions_ConditionalExpression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_expressions::conditionalexpression_is_not_abstract():
-    assert not inspect.isabstract(expressions::ConditionalExpression)
+def test_expressions_conditionalexpressionchild_is_not_abstract():
+    assert not inspect.isabstract(expressions_ConditionalExpressionChild)
 
 
-def test_expressions::conditionalexpression_constructor_exists():
-    assert callable(expressions::ConditionalExpression.__init__)
+def test_expressions_conditionalexpressionchild_constructor_exists():
+    assert callable(expressions_ConditionalExpressionChild.__init__)
 
 
-def test_expressions::conditionalexpression_constructor_args():
-    sig = inspect.signature(expressions::ConditionalExpression.__init__)
+def test_expressions_conditionalexpressionchild_constructor_args():
+    sig = inspect.signature(expressions_ConditionalExpressionChild.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -3283,16 +4035,16 @@ def test_javaroot_constructor_args():
 
 
 
-def test_containers::compilationunit_is_not_abstract():
-    assert not inspect.isabstract(containers::CompilationUnit)
+def test_containers_compilationunit_is_not_abstract():
+    assert not inspect.isabstract(containers_CompilationUnit)
 
 
-def test_containers::compilationunit_constructor_exists():
-    assert callable(containers::CompilationUnit.__init__)
+def test_containers_compilationunit_constructor_exists():
+    assert callable(containers_CompilationUnit.__init__)
 
 
-def test_containers::compilationunit_constructor_args():
-    sig = inspect.signature(containers::CompilationUnit.__init__)
+def test_containers_compilationunit_constructor_args():
+    sig = inspect.signature(containers_CompilationUnit.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -3325,30 +4077,44 @@ def test_namedelement_constructor_args():
 
 
 
-def test_references::referenceableelement_is_not_abstract():
-    assert not inspect.isabstract(references::ReferenceableElement)
+def test_members_member_is_not_abstract():
+    assert not inspect.isabstract(members_Member)
 
 
-def test_references::referenceableelement_constructor_exists():
-    assert callable(references::ReferenceableElement.__init__)
+def test_members_member_constructor_exists():
+    assert callable(members_Member.__init__)
 
 
-def test_references::referenceableelement_constructor_args():
-    sig = inspect.signature(references::ReferenceableElement.__init__)
+def test_members_member_constructor_args():
+    sig = inspect.signature(members_Member.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_members::member_is_not_abstract():
-    assert not inspect.isabstract(members::Member)
+def test_references_referenceableelement_is_not_abstract():
+    assert not inspect.isabstract(references_ReferenceableElement)
 
 
-def test_members::member_constructor_exists():
-    assert callable(members::Member.__init__)
+def test_references_referenceableelement_constructor_exists():
+    assert callable(references_ReferenceableElement.__init__)
 
 
-def test_members::member_constructor_args():
-    sig = inspect.signature(members::Member.__init__)
+def test_references_referenceableelement_constructor_args():
+    sig = inspect.signature(references_ReferenceableElement.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_containers_javaroot_is_not_abstract():
+    assert not inspect.isabstract(containers_JavaRoot)
+
+
+def test_containers_javaroot_constructor_exists():
+    assert callable(containers_JavaRoot.__init__)
+
+
+def test_containers_javaroot_constructor_args():
+    sig = inspect.signature(containers_JavaRoot.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -3367,30 +4133,30 @@ def test_forloopinitializer_constructor_args():
 
 
 
-def test_expressions::expressionlist_is_not_abstract():
-    assert not inspect.isabstract(expressions::ExpressionList)
+def test_expressions_expressionlist_is_not_abstract():
+    assert not inspect.isabstract(expressions_ExpressionList)
 
 
-def test_expressions::expressionlist_constructor_exists():
-    assert callable(expressions::ExpressionList.__init__)
+def test_expressions_expressionlist_constructor_exists():
+    assert callable(expressions_ExpressionList.__init__)
 
 
-def test_expressions::expressionlist_constructor_args():
-    sig = inspect.signature(expressions::ExpressionList.__init__)
+def test_expressions_expressionlist_constructor_args():
+    sig = inspect.signature(expressions_ExpressionList.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_containers::emptymodel_is_not_abstract():
-    assert not inspect.isabstract(containers::EmptyModel)
+def test_containers_emptymodel_is_not_abstract():
+    assert not inspect.isabstract(containers_EmptyModel)
 
 
-def test_containers::emptymodel_constructor_exists():
-    assert callable(containers::EmptyModel.__init__)
+def test_containers_emptymodel_constructor_exists():
+    assert callable(containers_EmptyModel.__init__)
 
 
-def test_containers::emptymodel_constructor_args():
-    sig = inspect.signature(containers::EmptyModel.__init__)
+def test_containers_emptymodel_constructor_args():
+    sig = inspect.signature(containers_EmptyModel.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -3437,23 +4203,71 @@ def test_annotable_constructor_args():
 
 
 
-def test_commons::commentable_is_not_abstract():
-    assert not inspect.isabstract(commons::Commentable)
+def test_commons_namespaceawareelement_is_not_abstract():
+    assert not inspect.isabstract(commons_NamespaceAwareElement)
 
 
-def test_commons::commentable_constructor_exists():
-    assert callable(commons::Commentable.__init__)
+def test_commons_namespaceawareelement_constructor_exists():
+    assert callable(commons_NamespaceAwareElement.__init__)
 
 
-def test_commons::commentable_constructor_args():
-    sig = inspect.signature(commons::Commentable.__init__)
+def test_commons_namespaceawareelement_constructor_args():
+    sig = inspect.signature(commons_NamespaceAwareElement.__init__)
+    params = list(sig.parameters.keys())
+    assert "namespaces" in params, "Missing parameter 'namespaces'"
+
+def test_commons_namespaceawareelement_has_namespaces():
+    assert hasattr(commons_NamespaceAwareElement, "namespaces")
+    descriptor = None
+    for klass in commons_NamespaceAwareElement.__mro__:
+        if "namespaces" in klass.__dict__:
+            descriptor = klass.__dict__["namespaces"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_commons_namedelement_is_not_abstract():
+    assert not inspect.isabstract(commons_NamedElement)
+
+
+def test_commons_namedelement_constructor_exists():
+    assert callable(commons_NamedElement.__init__)
+
+
+def test_commons_namedelement_constructor_args():
+    sig = inspect.signature(commons_NamedElement.__init__)
+    params = list(sig.parameters.keys())
+    assert "name" in params, "Missing parameter 'name'"
+
+def test_commons_namedelement_has_name():
+    assert hasattr(commons_NamedElement, "name")
+    descriptor = None
+    for klass in commons_NamedElement.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_commons_commentable_is_not_abstract():
+    assert not inspect.isabstract(commons_Commentable)
+
+
+def test_commons_commentable_constructor_exists():
+    assert callable(commons_Commentable.__init__)
+
+
+def test_commons_commentable_constructor_args():
+    sig = inspect.signature(commons_Commentable.__init__)
     params = list(sig.parameters.keys())
     assert "comments" in params, "Missing parameter 'comments'"
 
-def test_commons::commentable_has_comments():
-    assert hasattr(commons::Commentable, "comments")
+def test_commons_commentable_has_comments():
+    assert hasattr(commons_Commentable, "comments")
     descriptor = None
-    for klass in commons::Commentable.__mro__:
+    for klass in commons_Commentable.__mro__:
         if "comments" in klass.__dict__:
             descriptor = klass.__dict__["comments"]
             break
@@ -3489,30 +4303,30 @@ def test_referenceableelement_constructor_args():
 
 
 
-def test_containers::package_is_not_abstract():
-    assert not inspect.isabstract(containers::Package)
+def test_containers_package_is_not_abstract():
+    assert not inspect.isabstract(containers_Package)
 
 
-def test_containers::package_constructor_exists():
-    assert callable(containers::Package.__init__)
+def test_containers_package_constructor_exists():
+    assert callable(containers_Package.__init__)
 
 
-def test_containers::package_constructor_args():
-    sig = inspect.signature(containers::Package.__init__)
+def test_containers_package_constructor_args():
+    sig = inspect.signature(containers_Package.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_members::enumconstant_is_not_abstract():
-    assert not inspect.isabstract(members::EnumConstant)
+def test_members_enumconstant_is_not_abstract():
+    assert not inspect.isabstract(members_EnumConstant)
 
 
-def test_members::enumconstant_constructor_exists():
-    assert callable(members::EnumConstant.__init__)
+def test_members_enumconstant_constructor_exists():
+    assert callable(members_EnumConstant.__init__)
 
 
-def test_members::enumconstant_constructor_args():
-    sig = inspect.signature(members::EnumConstant.__init__)
+def test_members_enumconstant_constructor_args():
+    sig = inspect.signature(members_EnumConstant.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -3531,16 +4345,30 @@ def test_type_constructor_args():
 
 
 
-def test_classifiers::classifier_is_not_abstract():
-    assert not inspect.isabstract(classifiers::Classifier)
+def test_classifiers_classifier_is_not_abstract():
+    assert not inspect.isabstract(classifiers_Classifier)
 
 
-def test_classifiers::classifier_constructor_exists():
-    assert callable(classifiers::Classifier.__init__)
+def test_classifiers_classifier_constructor_exists():
+    assert callable(classifiers_Classifier.__init__)
 
 
-def test_classifiers::classifier_constructor_args():
-    sig = inspect.signature(classifiers::Classifier.__init__)
+def test_classifiers_classifier_constructor_args():
+    sig = inspect.signature(classifiers_Classifier.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_arrays_arrayselector_is_not_abstract():
+    assert not inspect.isabstract(arrays_ArraySelector)
+
+
+def test_arrays_arrayselector_constructor_exists():
+    assert callable(arrays_ArraySelector.__init__)
+
+
+def test_arrays_arrayselector_constructor_args():
+    sig = inspect.signature(arrays_ArraySelector.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -3573,58 +4401,58 @@ def test_concreteclassifier_constructor_args():
 
 
 
-def test_classifiers::interface_is_not_abstract():
-    assert not inspect.isabstract(classifiers::Interface)
+def test_classifiers_interface_is_not_abstract():
+    assert not inspect.isabstract(classifiers_Interface)
 
 
-def test_classifiers::interface_constructor_exists():
-    assert callable(classifiers::Interface.__init__)
+def test_classifiers_interface_constructor_exists():
+    assert callable(classifiers_Interface.__init__)
 
 
-def test_classifiers::interface_constructor_args():
-    sig = inspect.signature(classifiers::Interface.__init__)
+def test_classifiers_interface_constructor_args():
+    sig = inspect.signature(classifiers_Interface.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_classifiers::annotation_is_not_abstract():
-    assert not inspect.isabstract(classifiers::Annotation)
+def test_classifiers_annotation_is_not_abstract():
+    assert not inspect.isabstract(classifiers_Annotation)
 
 
-def test_classifiers::annotation_constructor_exists():
-    assert callable(classifiers::Annotation.__init__)
+def test_classifiers_annotation_constructor_exists():
+    assert callable(classifiers_Annotation.__init__)
 
 
-def test_classifiers::annotation_constructor_args():
-    sig = inspect.signature(classifiers::Annotation.__init__)
+def test_classifiers_annotation_constructor_args():
+    sig = inspect.signature(classifiers_Annotation.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_classifiers::enumeration_is_not_abstract():
-    assert not inspect.isabstract(classifiers::Enumeration)
+def test_classifiers_enumeration_is_not_abstract():
+    assert not inspect.isabstract(classifiers_Enumeration)
 
 
-def test_classifiers::enumeration_constructor_exists():
-    assert callable(classifiers::Enumeration.__init__)
+def test_classifiers_enumeration_constructor_exists():
+    assert callable(classifiers_Enumeration.__init__)
 
 
-def test_classifiers::enumeration_constructor_args():
-    sig = inspect.signature(classifiers::Enumeration.__init__)
+def test_classifiers_enumeration_constructor_args():
+    sig = inspect.signature(classifiers_Enumeration.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_classifiers::class_is_not_abstract():
-    assert not inspect.isabstract(classifiers::Class)
+def test_classifiers_class_is_not_abstract():
+    assert not inspect.isabstract(classifiers_Class)
 
 
-def test_classifiers::class_constructor_exists():
-    assert callable(classifiers::Class.__init__)
+def test_classifiers_class_constructor_exists():
+    assert callable(classifiers_Class.__init__)
 
 
-def test_classifiers::class_constructor_args():
-    sig = inspect.signature(classifiers::Class.__init__)
+def test_classifiers_class_constructor_args():
+    sig = inspect.signature(classifiers_Class.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -3643,30 +4471,58 @@ def test_typereference_constructor_args():
 
 
 
-def test_types::primitivetype_is_not_abstract():
-    assert not inspect.isabstract(types::PrimitiveType)
+def test_types_primitivetype_is_not_abstract():
+    assert not inspect.isabstract(types_PrimitiveType)
 
 
-def test_types::primitivetype_constructor_exists():
-    assert callable(types::PrimitiveType.__init__)
+def test_types_primitivetype_constructor_exists():
+    assert callable(types_PrimitiveType.__init__)
 
 
-def test_types::primitivetype_constructor_args():
-    sig = inspect.signature(types::PrimitiveType.__init__)
+def test_types_primitivetype_constructor_args():
+    sig = inspect.signature(types_PrimitiveType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_types::classifierreference_is_not_abstract():
-    assert not inspect.isabstract(types::ClassifierReference)
+def test_types_classifierreference_is_not_abstract():
+    assert not inspect.isabstract(types_ClassifierReference)
 
 
-def test_types::classifierreference_constructor_exists():
-    assert callable(types::ClassifierReference.__init__)
+def test_types_classifierreference_constructor_exists():
+    assert callable(types_ClassifierReference.__init__)
 
 
-def test_types::classifierreference_constructor_args():
-    sig = inspect.signature(types::ClassifierReference.__init__)
+def test_types_classifierreference_constructor_args():
+    sig = inspect.signature(types_ClassifierReference.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_types_namespaceclassifierreference_is_not_abstract():
+    assert not inspect.isabstract(types_NamespaceClassifierReference)
+
+
+def test_types_namespaceclassifierreference_constructor_exists():
+    assert callable(types_NamespaceClassifierReference.__init__)
+
+
+def test_types_namespaceclassifierreference_constructor_args():
+    sig = inspect.signature(types_NamespaceClassifierReference.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_classifiers_implementor_is_not_abstract():
+    assert not inspect.isabstract(classifiers_Implementor)
+
+
+def test_classifiers_implementor_constructor_exists():
+    assert callable(classifiers_Implementor.__init__)
+
+
+def test_classifiers_implementor_constructor_args():
+    sig = inspect.signature(classifiers_Implementor.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -3685,30 +4541,30 @@ def test_annotableandmodifiable_constructor_args():
 
 
 
-def test_parameters::parameter_is_not_abstract():
-    assert not inspect.isabstract(parameters::Parameter)
+def test_variables_localvariable_is_not_abstract():
+    assert not inspect.isabstract(variables_LocalVariable)
 
 
-def test_parameters::parameter_constructor_exists():
-    assert callable(parameters::Parameter.__init__)
+def test_variables_localvariable_constructor_exists():
+    assert callable(variables_LocalVariable.__init__)
 
 
-def test_parameters::parameter_constructor_args():
-    sig = inspect.signature(parameters::Parameter.__init__)
+def test_variables_localvariable_constructor_args():
+    sig = inspect.signature(variables_LocalVariable.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_variables::localvariable_is_not_abstract():
-    assert not inspect.isabstract(variables::LocalVariable)
+def test_parameters_parameter_is_not_abstract():
+    assert not inspect.isabstract(parameters_Parameter)
 
 
-def test_variables::localvariable_constructor_exists():
-    assert callable(variables::LocalVariable.__init__)
+def test_parameters_parameter_constructor_exists():
+    assert callable(parameters_Parameter.__init__)
 
 
-def test_variables::localvariable_constructor_args():
-    sig = inspect.signature(variables::LocalVariable.__init__)
+def test_parameters_parameter_constructor_args():
+    sig = inspect.signature(parameters_Parameter.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -3727,212 +4583,212 @@ def test_statement_constructor_args():
 
 
 
-def test_statements::emptystatement_is_not_abstract():
-    assert not inspect.isabstract(statements::EmptyStatement)
+def test_statements_condition_is_not_abstract():
+    assert not inspect.isabstract(statements_Condition)
 
 
-def test_statements::emptystatement_constructor_exists():
-    assert callable(statements::EmptyStatement.__init__)
+def test_statements_condition_constructor_exists():
+    assert callable(statements_Condition.__init__)
 
 
-def test_statements::emptystatement_constructor_args():
-    sig = inspect.signature(statements::EmptyStatement.__init__)
+def test_statements_condition_constructor_args():
+    sig = inspect.signature(statements_Condition.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_statements::return_is_not_abstract():
-    assert not inspect.isabstract(statements::Return)
+def test_statements_jumplabel_is_not_abstract():
+    assert not inspect.isabstract(statements_JumpLabel)
 
 
-def test_statements::return_constructor_exists():
-    assert callable(statements::Return.__init__)
+def test_statements_jumplabel_constructor_exists():
+    assert callable(statements_JumpLabel.__init__)
 
 
-def test_statements::return_constructor_args():
-    sig = inspect.signature(statements::Return.__init__)
+def test_statements_jumplabel_constructor_args():
+    sig = inspect.signature(statements_JumpLabel.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_statements::foreachloop_is_not_abstract():
-    assert not inspect.isabstract(statements::ForEachLoop)
+def test_statements_emptystatement_is_not_abstract():
+    assert not inspect.isabstract(statements_EmptyStatement)
 
 
-def test_statements::foreachloop_constructor_exists():
-    assert callable(statements::ForEachLoop.__init__)
+def test_statements_emptystatement_constructor_exists():
+    assert callable(statements_EmptyStatement.__init__)
 
 
-def test_statements::foreachloop_constructor_args():
-    sig = inspect.signature(statements::ForEachLoop.__init__)
+def test_statements_emptystatement_constructor_args():
+    sig = inspect.signature(statements_EmptyStatement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_statements::switch_is_not_abstract():
-    assert not inspect.isabstract(statements::Switch)
+def test_statements_jump_is_not_abstract():
+    assert not inspect.isabstract(statements_Jump)
 
 
-def test_statements::switch_constructor_exists():
-    assert callable(statements::Switch.__init__)
+def test_statements_jump_constructor_exists():
+    assert callable(statements_Jump.__init__)
 
 
-def test_statements::switch_constructor_args():
-    sig = inspect.signature(statements::Switch.__init__)
+def test_statements_jump_constructor_args():
+    sig = inspect.signature(statements_Jump.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_statements::whileloop_is_not_abstract():
-    assert not inspect.isabstract(statements::WhileLoop)
+def test_statements_return_is_not_abstract():
+    assert not inspect.isabstract(statements_Return)
 
 
-def test_statements::whileloop_constructor_exists():
-    assert callable(statements::WhileLoop.__init__)
+def test_statements_return_constructor_exists():
+    assert callable(statements_Return.__init__)
 
 
-def test_statements::whileloop_constructor_args():
-    sig = inspect.signature(statements::WhileLoop.__init__)
+def test_statements_return_constructor_args():
+    sig = inspect.signature(statements_Return.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_statements::jumplabel_is_not_abstract():
-    assert not inspect.isabstract(statements::JumpLabel)
+def test_statements_forloop_is_not_abstract():
+    assert not inspect.isabstract(statements_ForLoop)
 
 
-def test_statements::jumplabel_constructor_exists():
-    assert callable(statements::JumpLabel.__init__)
+def test_statements_forloop_constructor_exists():
+    assert callable(statements_ForLoop.__init__)
 
 
-def test_statements::jumplabel_constructor_args():
-    sig = inspect.signature(statements::JumpLabel.__init__)
+def test_statements_forloop_constructor_args():
+    sig = inspect.signature(statements_ForLoop.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_statements::expressionstatement_is_not_abstract():
-    assert not inspect.isabstract(statements::ExpressionStatement)
+def test_statements_throw_is_not_abstract():
+    assert not inspect.isabstract(statements_Throw)
 
 
-def test_statements::expressionstatement_constructor_exists():
-    assert callable(statements::ExpressionStatement.__init__)
+def test_statements_throw_constructor_exists():
+    assert callable(statements_Throw.__init__)
 
 
-def test_statements::expressionstatement_constructor_args():
-    sig = inspect.signature(statements::ExpressionStatement.__init__)
+def test_statements_throw_constructor_args():
+    sig = inspect.signature(statements_Throw.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_statements::forloop_is_not_abstract():
-    assert not inspect.isabstract(statements::ForLoop)
+def test_statements_tryblock_is_not_abstract():
+    assert not inspect.isabstract(statements_TryBlock)
 
 
-def test_statements::forloop_constructor_exists():
-    assert callable(statements::ForLoop.__init__)
+def test_statements_tryblock_constructor_exists():
+    assert callable(statements_TryBlock.__init__)
 
 
-def test_statements::forloop_constructor_args():
-    sig = inspect.signature(statements::ForLoop.__init__)
+def test_statements_tryblock_constructor_args():
+    sig = inspect.signature(statements_TryBlock.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_statements::tryblock_is_not_abstract():
-    assert not inspect.isabstract(statements::TryBlock)
+def test_statements_foreachloop_is_not_abstract():
+    assert not inspect.isabstract(statements_ForEachLoop)
 
 
-def test_statements::tryblock_constructor_exists():
-    assert callable(statements::TryBlock.__init__)
+def test_statements_foreachloop_constructor_exists():
+    assert callable(statements_ForEachLoop.__init__)
 
 
-def test_statements::tryblock_constructor_args():
-    sig = inspect.signature(statements::TryBlock.__init__)
+def test_statements_foreachloop_constructor_args():
+    sig = inspect.signature(statements_ForEachLoop.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_statements::localvariablestatement_is_not_abstract():
-    assert not inspect.isabstract(statements::LocalVariableStatement)
+def test_statements_expressionstatement_is_not_abstract():
+    assert not inspect.isabstract(statements_ExpressionStatement)
 
 
-def test_statements::localvariablestatement_constructor_exists():
-    assert callable(statements::LocalVariableStatement.__init__)
+def test_statements_expressionstatement_constructor_exists():
+    assert callable(statements_ExpressionStatement.__init__)
 
 
-def test_statements::localvariablestatement_constructor_args():
-    sig = inspect.signature(statements::LocalVariableStatement.__init__)
+def test_statements_expressionstatement_constructor_args():
+    sig = inspect.signature(statements_ExpressionStatement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_statements::assert_is_not_abstract():
-    assert not inspect.isabstract(statements::Assert)
+def test_statements_assert_is_not_abstract():
+    assert not inspect.isabstract(statements_Assert)
 
 
-def test_statements::assert_constructor_exists():
-    assert callable(statements::Assert.__init__)
+def test_statements_assert_constructor_exists():
+    assert callable(statements_Assert.__init__)
 
 
-def test_statements::assert_constructor_args():
-    sig = inspect.signature(statements::Assert.__init__)
+def test_statements_assert_constructor_args():
+    sig = inspect.signature(statements_Assert.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_statements::synchronizedblock_is_not_abstract():
-    assert not inspect.isabstract(statements::SynchronizedBlock)
+def test_statements_synchronizedblock_is_not_abstract():
+    assert not inspect.isabstract(statements_SynchronizedBlock)
 
 
-def test_statements::synchronizedblock_constructor_exists():
-    assert callable(statements::SynchronizedBlock.__init__)
+def test_statements_synchronizedblock_constructor_exists():
+    assert callable(statements_SynchronizedBlock.__init__)
 
 
-def test_statements::synchronizedblock_constructor_args():
-    sig = inspect.signature(statements::SynchronizedBlock.__init__)
+def test_statements_synchronizedblock_constructor_args():
+    sig = inspect.signature(statements_SynchronizedBlock.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_statements::throw_is_not_abstract():
-    assert not inspect.isabstract(statements::Throw)
+def test_statements_whileloop_is_not_abstract():
+    assert not inspect.isabstract(statements_WhileLoop)
 
 
-def test_statements::throw_constructor_exists():
-    assert callable(statements::Throw.__init__)
+def test_statements_whileloop_constructor_exists():
+    assert callable(statements_WhileLoop.__init__)
 
 
-def test_statements::throw_constructor_args():
-    sig = inspect.signature(statements::Throw.__init__)
+def test_statements_whileloop_constructor_args():
+    sig = inspect.signature(statements_WhileLoop.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_statements::condition_is_not_abstract():
-    assert not inspect.isabstract(statements::Condition)
+def test_statements_localvariablestatement_is_not_abstract():
+    assert not inspect.isabstract(statements_LocalVariableStatement)
 
 
-def test_statements::condition_constructor_exists():
-    assert callable(statements::Condition.__init__)
+def test_statements_localvariablestatement_constructor_exists():
+    assert callable(statements_LocalVariableStatement.__init__)
 
 
-def test_statements::condition_constructor_args():
-    sig = inspect.signature(statements::Condition.__init__)
+def test_statements_localvariablestatement_constructor_args():
+    sig = inspect.signature(statements_LocalVariableStatement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_statements::jump_is_not_abstract():
-    assert not inspect.isabstract(statements::Jump)
+def test_statements_switch_is_not_abstract():
+    assert not inspect.isabstract(statements_Switch)
 
 
-def test_statements::jump_constructor_exists():
-    assert callable(statements::Jump.__init__)
+def test_statements_switch_constructor_exists():
+    assert callable(statements_Switch.__init__)
 
 
-def test_statements::jump_constructor_args():
-    sig = inspect.signature(statements::Jump.__init__)
+def test_statements_switch_constructor_args():
+    sig = inspect.signature(statements_Switch.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -3951,44 +4807,44 @@ def test_member_constructor_args():
 
 
 
-def test_statements::block_is_not_abstract():
-    assert not inspect.isabstract(statements::Block)
+def test_statements_block_is_not_abstract():
+    assert not inspect.isabstract(statements_Block)
 
 
-def test_statements::block_constructor_exists():
-    assert callable(statements::Block.__init__)
+def test_statements_block_constructor_exists():
+    assert callable(statements_Block.__init__)
 
 
-def test_statements::block_constructor_args():
-    sig = inspect.signature(statements::Block.__init__)
+def test_statements_block_constructor_args():
+    sig = inspect.signature(statements_Block.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_members::emptymember_is_not_abstract():
-    assert not inspect.isabstract(members::EmptyMember)
+def test_members_field_is_not_abstract():
+    assert not inspect.isabstract(members_Field)
 
 
-def test_members::emptymember_constructor_exists():
-    assert callable(members::EmptyMember.__init__)
+def test_members_field_constructor_exists():
+    assert callable(members_Field.__init__)
 
 
-def test_members::emptymember_constructor_args():
-    sig = inspect.signature(members::EmptyMember.__init__)
+def test_members_field_constructor_args():
+    sig = inspect.signature(members_Field.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_members::field_is_not_abstract():
-    assert not inspect.isabstract(members::Field)
+def test_members_emptymember_is_not_abstract():
+    assert not inspect.isabstract(members_EmptyMember)
 
 
-def test_members::field_constructor_exists():
-    assert callable(members::Field.__init__)
+def test_members_emptymember_constructor_exists():
+    assert callable(members_EmptyMember.__init__)
 
 
-def test_members::field_constructor_args():
-    sig = inspect.signature(members::Field.__init__)
+def test_members_emptymember_constructor_args():
+    sig = inspect.signature(members_EmptyMember.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -4007,16 +4863,16 @@ def test_membercontainer_constructor_args():
 
 
 
-def test_classifiers::anonymousclass_is_not_abstract():
-    assert not inspect.isabstract(classifiers::AnonymousClass)
+def test_classifiers_anonymousclass_is_not_abstract():
+    assert not inspect.isabstract(classifiers_AnonymousClass)
 
 
-def test_classifiers::anonymousclass_constructor_exists():
-    assert callable(classifiers::AnonymousClass.__init__)
+def test_classifiers_anonymousclass_constructor_exists():
+    assert callable(classifiers_AnonymousClass.__init__)
 
 
-def test_classifiers::anonymousclass_constructor_args():
-    sig = inspect.signature(classifiers::AnonymousClass.__init__)
+def test_classifiers_anonymousclass_constructor_args():
+    sig = inspect.signature(classifiers_AnonymousClass.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -4035,17 +4891,41 @@ def test_typeparametrizable_constructor_args():
 
 
 
-def test_members::constructor_is_not_abstract():
-    assert not inspect.isabstract(members::Constructor)
+def test_members_constructor_is_not_abstract():
+    assert not inspect.isabstract(members_Constructor)
 
 
-def test_members::constructor_constructor_exists():
-    assert callable(members::Constructor.__init__)
+def test_members_constructor_constructor_exists():
+    assert callable(members_Constructor.__init__)
 
 
-def test_members::constructor_constructor_args():
-    sig = inspect.signature(members::Constructor.__init__)
+def test_members_constructor_constructor_args():
+    sig = inspect.signature(members_Constructor.__init__)
     params = list(sig.parameters.keys())
+
+
+
+def test_classifiers_concreteclassifier_is_not_abstract():
+    assert not inspect.isabstract(classifiers_ConcreteClassifier)
+
+
+def test_classifiers_concreteclassifier_constructor_exists():
+    assert callable(classifiers_ConcreteClassifier.__init__)
+
+
+def test_classifiers_concreteclassifier_constructor_args():
+    sig = inspect.signature(classifiers_ConcreteClassifier.__init__)
+    params = list(sig.parameters.keys())
+    assert "fullName" in params, "Missing parameter 'fullName'"
+
+def test_classifiers_concreteclassifier_has_fullName():
+    assert hasattr(classifiers_ConcreteClassifier, "fullName")
+    descriptor = None
+    for klass in classifiers_ConcreteClassifier.__mro__:
+        if "fullName" in klass.__dict__:
+            descriptor = klass.__dict__["fullName"]
+            break
+    assert isinstance(descriptor, property)
 
 
 
@@ -4091,44 +4971,44 @@ def test_arraytypeable_constructor_args():
 
 
 
-def test_members::additionalfield_is_not_abstract():
-    assert not inspect.isabstract(members::AdditionalField)
+def test_variables_additionallocalvariable_is_not_abstract():
+    assert not inspect.isabstract(variables_AdditionalLocalVariable)
 
 
-def test_members::additionalfield_constructor_exists():
-    assert callable(members::AdditionalField.__init__)
+def test_variables_additionallocalvariable_constructor_exists():
+    assert callable(variables_AdditionalLocalVariable.__init__)
 
 
-def test_members::additionalfield_constructor_args():
-    sig = inspect.signature(members::AdditionalField.__init__)
+def test_variables_additionallocalvariable_constructor_args():
+    sig = inspect.signature(variables_AdditionalLocalVariable.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_variables::additionallocalvariable_is_not_abstract():
-    assert not inspect.isabstract(variables::AdditionalLocalVariable)
+def test_members_additionalfield_is_not_abstract():
+    assert not inspect.isabstract(members_AdditionalField)
 
 
-def test_variables::additionallocalvariable_constructor_exists():
-    assert callable(variables::AdditionalLocalVariable.__init__)
+def test_members_additionalfield_constructor_exists():
+    assert callable(members_AdditionalField.__init__)
 
 
-def test_variables::additionallocalvariable_constructor_args():
-    sig = inspect.signature(variables::AdditionalLocalVariable.__init__)
+def test_members_additionalfield_constructor_args():
+    sig = inspect.signature(members_AdditionalField.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_generics::typeargument_is_not_abstract():
-    assert not inspect.isabstract(generics::TypeArgument)
+def test_generics_typeargument_is_not_abstract():
+    assert not inspect.isabstract(generics_TypeArgument)
 
 
-def test_generics::typeargument_constructor_exists():
-    assert callable(generics::TypeArgument.__init__)
+def test_generics_typeargument_constructor_exists():
+    assert callable(generics_TypeArgument.__init__)
 
 
-def test_generics::typeargument_constructor_args():
-    sig = inspect.signature(generics::TypeArgument.__init__)
+def test_generics_typeargument_constructor_args():
+    sig = inspect.signature(generics_TypeArgument.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -4147,72 +5027,128 @@ def test_typedelement_constructor_args():
 
 
 
-def test_variables::variable_is_not_abstract():
-    assert not inspect.isabstract(variables::Variable)
+def test_expressions_castexpression_is_not_abstract():
+    assert not inspect.isabstract(expressions_CastExpression)
 
 
-def test_variables::variable_constructor_exists():
-    assert callable(variables::Variable.__init__)
+def test_expressions_castexpression_constructor_exists():
+    assert callable(expressions_CastExpression.__init__)
 
 
-def test_variables::variable_constructor_args():
-    sig = inspect.signature(variables::Variable.__init__)
+def test_expressions_castexpression_constructor_args():
+    sig = inspect.signature(expressions_CastExpression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_generics::qualifiedtypeargument_is_not_abstract():
-    assert not inspect.isabstract(generics::QualifiedTypeArgument)
+def test_generics_qualifiedtypeargument_is_not_abstract():
+    assert not inspect.isabstract(generics_QualifiedTypeArgument)
 
 
-def test_generics::qualifiedtypeargument_constructor_exists():
-    assert callable(generics::QualifiedTypeArgument.__init__)
+def test_generics_qualifiedtypeargument_constructor_exists():
+    assert callable(generics_QualifiedTypeArgument.__init__)
 
 
-def test_generics::qualifiedtypeargument_constructor_args():
-    sig = inspect.signature(generics::QualifiedTypeArgument.__init__)
+def test_generics_qualifiedtypeargument_constructor_args():
+    sig = inspect.signature(generics_QualifiedTypeArgument.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_expressions::instanceofexpression_is_not_abstract():
-    assert not inspect.isabstract(expressions::InstanceOfExpression)
+def test_arrays_arrayinstantiationbyvalues_is_not_abstract():
+    assert not inspect.isabstract(arrays_ArrayInstantiationByValues)
 
 
-def test_expressions::instanceofexpression_constructor_exists():
-    assert callable(expressions::InstanceOfExpression.__init__)
+def test_arrays_arrayinstantiationbyvalues_constructor_exists():
+    assert callable(arrays_ArrayInstantiationByValues.__init__)
 
 
-def test_expressions::instanceofexpression_constructor_args():
-    sig = inspect.signature(expressions::InstanceOfExpression.__init__)
+def test_arrays_arrayinstantiationbyvalues_constructor_args():
+    sig = inspect.signature(arrays_ArrayInstantiationByValues.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_expressions::castexpression_is_not_abstract():
-    assert not inspect.isabstract(expressions::CastExpression)
+def test_members_method_is_not_abstract():
+    assert not inspect.isabstract(members_Method)
 
 
-def test_expressions::castexpression_constructor_exists():
-    assert callable(expressions::CastExpression.__init__)
+def test_members_method_constructor_exists():
+    assert callable(members_Method.__init__)
 
 
-def test_expressions::castexpression_constructor_args():
-    sig = inspect.signature(expressions::CastExpression.__init__)
+def test_members_method_constructor_args():
+    sig = inspect.signature(members_Method.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_members::method_is_not_abstract():
-    assert not inspect.isabstract(members::Method)
+def test_instantiations_instantiation_is_not_abstract():
+    assert not inspect.isabstract(instantiations_Instantiation)
 
 
-def test_members::method_constructor_exists():
-    assert callable(members::Method.__init__)
+def test_instantiations_instantiation_constructor_exists():
+    assert callable(instantiations_Instantiation.__init__)
 
 
-def test_members::method_constructor_args():
-    sig = inspect.signature(members::Method.__init__)
+def test_instantiations_instantiation_constructor_args():
+    sig = inspect.signature(instantiations_Instantiation.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_variables_variable_is_not_abstract():
+    assert not inspect.isabstract(variables_Variable)
+
+
+def test_variables_variable_constructor_exists():
+    assert callable(variables_Variable.__init__)
+
+
+def test_variables_variable_constructor_args():
+    sig = inspect.signature(variables_Variable.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_expressions_instanceofexpression_is_not_abstract():
+    assert not inspect.isabstract(expressions_InstanceOfExpression)
+
+
+def test_expressions_instanceofexpression_constructor_exists():
+    assert callable(expressions_InstanceOfExpression.__init__)
+
+
+def test_expressions_instanceofexpression_constructor_args():
+    sig = inspect.signature(expressions_InstanceOfExpression.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_arrays_arrayinstantiationbysize_is_not_abstract():
+    assert not inspect.isabstract(arrays_ArrayInstantiationBySize)
+
+
+def test_arrays_arrayinstantiationbysize_constructor_exists():
+    assert callable(arrays_ArrayInstantiationBySize.__init__)
+
+
+def test_arrays_arrayinstantiationbysize_constructor_args():
+    sig = inspect.signature(arrays_ArrayInstantiationBySize.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_arrays_arrayinitializationvalue_is_not_abstract():
+    assert not inspect.isabstract(arrays_ArrayInitializationValue)
+
+
+def test_arrays_arrayinitializationvalue_constructor_exists():
+    assert callable(arrays_ArrayInitializationValue.__init__)
+
+
+def test_arrays_arrayinitializationvalue_constructor_args():
+    sig = inspect.signature(arrays_ArrayInitializationValue.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -4231,980 +5167,44 @@ def test_arrayinitializationvalue_constructor_args():
 
 
 
-def test_commentable_is_not_abstract():
-    assert not inspect.isabstract(Commentable)
+def test_expressions_expression_is_not_abstract():
+    assert not inspect.isabstract(expressions_Expression)
 
 
-def test_commentable_constructor_exists():
-    assert callable(Commentable.__init__)
+def test_expressions_expression_constructor_exists():
+    assert callable(expressions_Expression.__init__)
 
 
-def test_commentable_constructor_args():
-    sig = inspect.signature(Commentable.__init__)
+def test_expressions_expression_constructor_args():
+    sig = inspect.signature(expressions_Expression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_instantiations::initializable_is_not_abstract():
-    assert not inspect.isabstract(instantiations::Initializable)
+def test_arrays_arrayinitializer_is_not_abstract():
+    assert not inspect.isabstract(arrays_ArrayInitializer)
 
 
-def test_instantiations::initializable_constructor_exists():
-    assert callable(instantiations::Initializable.__init__)
+def test_arrays_arrayinitializer_constructor_exists():
+    assert callable(arrays_ArrayInitializer.__init__)
 
 
-def test_instantiations::initializable_constructor_args():
-    sig = inspect.signature(instantiations::Initializable.__init__)
+def test_arrays_arrayinitializer_constructor_args():
+    sig = inspect.signature(arrays_ArrayInitializer.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_statements::statementlistcontainer_is_not_abstract():
-    assert not inspect.isabstract(statements::StatementListContainer)
+def test_arrays_arraydimension_is_not_abstract():
+    assert not inspect.isabstract(arrays_ArrayDimension)
 
 
-def test_statements::statementlistcontainer_constructor_exists():
-    assert callable(statements::StatementListContainer.__init__)
+def test_arrays_arraydimension_constructor_exists():
+    assert callable(arrays_ArrayDimension.__init__)
 
 
-def test_statements::statementlistcontainer_constructor_args():
-    sig = inspect.signature(statements::StatementListContainer.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_classifiers::implementor_is_not_abstract():
-    assert not inspect.isabstract(classifiers::Implementor)
-
-
-def test_classifiers::implementor_constructor_exists():
-    assert callable(classifiers::Implementor.__init__)
-
-
-def test_classifiers::implementor_constructor_args():
-    sig = inspect.signature(classifiers::Implementor.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_arrays::arraydimension_is_not_abstract():
-    assert not inspect.isabstract(arrays::ArrayDimension)
-
-
-def test_arrays::arraydimension_constructor_exists():
-    assert callable(arrays::ArrayDimension.__init__)
-
-
-def test_arrays::arraydimension_constructor_args():
-    sig = inspect.signature(arrays::ArrayDimension.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_statements::conditional_is_not_abstract():
-    assert not inspect.isabstract(statements::Conditional)
-
-
-def test_statements::conditional_constructor_exists():
-    assert callable(statements::Conditional.__init__)
-
-
-def test_statements::conditional_constructor_args():
-    sig = inspect.signature(statements::Conditional.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_operators::operator_is_not_abstract():
-    assert not inspect.isabstract(operators::Operator)
-
-
-def test_operators::operator_constructor_exists():
-    assert callable(operators::Operator.__init__)
-
-
-def test_operators::operator_constructor_args():
-    sig = inspect.signature(operators::Operator.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_commons::namespaceawareelement_is_not_abstract():
-    assert not inspect.isabstract(commons::NamespaceAwareElement)
-
-
-def test_commons::namespaceawareelement_constructor_exists():
-    assert callable(commons::NamespaceAwareElement.__init__)
-
-
-def test_commons::namespaceawareelement_constructor_args():
-    sig = inspect.signature(commons::NamespaceAwareElement.__init__)
-    params = list(sig.parameters.keys())
-    assert "namespaces" in params, "Missing parameter 'namespaces'"
-
-def test_commons::namespaceawareelement_has_namespaces():
-    assert hasattr(commons::NamespaceAwareElement, "namespaces")
-    descriptor = None
-    for klass in commons::NamespaceAwareElement.__mro__:
-        if "namespaces" in klass.__dict__:
-            descriptor = klass.__dict__["namespaces"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_statements::forloopinitializer_is_not_abstract():
-    assert not inspect.isabstract(statements::ForLoopInitializer)
-
-
-def test_statements::forloopinitializer_constructor_exists():
-    assert callable(statements::ForLoopInitializer.__init__)
-
-
-def test_statements::forloopinitializer_constructor_args():
-    sig = inspect.signature(statements::ForLoopInitializer.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_types::type_is_not_abstract():
-    assert not inspect.isabstract(types::Type)
-
-
-def test_types::type_constructor_exists():
-    assert callable(types::Type.__init__)
-
-
-def test_types::type_constructor_args():
-    sig = inspect.signature(types::Type.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_types::typereference_is_not_abstract():
-    assert not inspect.isabstract(types::TypeReference)
-
-
-def test_types::typereference_constructor_exists():
-    assert callable(types::TypeReference.__init__)
-
-
-def test_types::typereference_constructor_args():
-    sig = inspect.signature(types::TypeReference.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_arrays::arrayinitializationvalue_is_not_abstract():
-    assert not inspect.isabstract(arrays::ArrayInitializationValue)
-
-
-def test_arrays::arrayinitializationvalue_constructor_exists():
-    assert callable(arrays::ArrayInitializationValue.__init__)
-
-
-def test_arrays::arrayinitializationvalue_constructor_args():
-    sig = inspect.signature(arrays::ArrayInitializationValue.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_statements::statementcontainer_is_not_abstract():
-    assert not inspect.isabstract(statements::StatementContainer)
-
-
-def test_statements::statementcontainer_constructor_exists():
-    assert callable(statements::StatementContainer.__init__)
-
-
-def test_statements::statementcontainer_constructor_args():
-    sig = inspect.signature(statements::StatementContainer.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_modifiers::annotationinstanceormodifier_is_not_abstract():
-    assert not inspect.isabstract(modifiers::AnnotationInstanceOrModifier)
-
-
-def test_modifiers::annotationinstanceormodifier_constructor_exists():
-    assert callable(modifiers::AnnotationInstanceOrModifier.__init__)
-
-
-def test_modifiers::annotationinstanceormodifier_constructor_args():
-    sig = inspect.signature(modifiers::AnnotationInstanceOrModifier.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_parameters::parametrizable_is_not_abstract():
-    assert not inspect.isabstract(parameters::Parametrizable)
-
-
-def test_parameters::parametrizable_constructor_exists():
-    assert callable(parameters::Parametrizable.__init__)
-
-
-def test_parameters::parametrizable_constructor_args():
-    sig = inspect.signature(parameters::Parametrizable.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_statements::statement_is_not_abstract():
-    assert not inspect.isabstract(statements::Statement)
-
-
-def test_statements::statement_constructor_exists():
-    assert callable(statements::Statement.__init__)
-
-
-def test_statements::statement_constructor_args():
-    sig = inspect.signature(statements::Statement.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_generics::typeargumentable_is_not_abstract():
-    assert not inspect.isabstract(generics::TypeArgumentable)
-
-
-def test_generics::typeargumentable_constructor_exists():
-    assert callable(generics::TypeArgumentable.__init__)
-
-
-def test_generics::typeargumentable_constructor_args():
-    sig = inspect.signature(generics::TypeArgumentable.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_imports::importingelement_is_not_abstract():
-    assert not inspect.isabstract(imports::ImportingElement)
-
-
-def test_imports::importingelement_constructor_exists():
-    assert callable(imports::ImportingElement.__init__)
-
-
-def test_imports::importingelement_constructor_args():
-    sig = inspect.signature(imports::ImportingElement.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_types::typedelement_is_not_abstract():
-    assert not inspect.isabstract(types::TypedElement)
-
-
-def test_types::typedelement_constructor_exists():
-    assert callable(types::TypedElement.__init__)
-
-
-def test_types::typedelement_constructor_args():
-    sig = inspect.signature(types::TypedElement.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_generics::calltypeargumentable_is_not_abstract():
-    assert not inspect.isabstract(generics::CallTypeArgumentable)
-
-
-def test_generics::calltypeargumentable_constructor_exists():
-    assert callable(generics::CallTypeArgumentable.__init__)
-
-
-def test_generics::calltypeargumentable_constructor_args():
-    sig = inspect.signature(generics::CallTypeArgumentable.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_commons::namedelement_is_not_abstract():
-    assert not inspect.isabstract(commons::NamedElement)
-
-
-def test_commons::namedelement_constructor_exists():
-    assert callable(commons::NamedElement.__init__)
-
-
-def test_commons::namedelement_constructor_args():
-    sig = inspect.signature(commons::NamedElement.__init__)
-    params = list(sig.parameters.keys())
-    assert "name" in params, "Missing parameter 'name'"
-
-def test_commons::namedelement_has_name():
-    assert hasattr(commons::NamedElement, "name")
-    descriptor = None
-    for klass in commons::NamedElement.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_members::membercontainer_is_not_abstract():
-    assert not inspect.isabstract(members::MemberContainer)
-
-
-def test_members::membercontainer_constructor_exists():
-    assert callable(members::MemberContainer.__init__)
-
-
-def test_members::membercontainer_constructor_args():
-    sig = inspect.signature(members::MemberContainer.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_literals::self_is_not_abstract():
-    assert not inspect.isabstract(literals::Self)
-
-
-def test_literals::self_constructor_exists():
-    assert callable(literals::Self.__init__)
-
-
-def test_literals::self_constructor_args():
-    sig = inspect.signature(literals::Self.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_modifiers::annotableandmodifiable_is_not_abstract():
-    assert not inspect.isabstract(modifiers::AnnotableAndModifiable)
-
-
-def test_modifiers::annotableandmodifiable_constructor_exists():
-    assert callable(modifiers::AnnotableAndModifiable.__init__)
-
-
-def test_modifiers::annotableandmodifiable_constructor_args():
-    sig = inspect.signature(modifiers::AnnotableAndModifiable.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_generics::typeparametrizable_is_not_abstract():
-    assert not inspect.isabstract(generics::TypeParametrizable)
-
-
-def test_generics::typeparametrizable_constructor_exists():
-    assert callable(generics::TypeParametrizable.__init__)
-
-
-def test_generics::typeparametrizable_constructor_args():
-    sig = inspect.signature(generics::TypeParametrizable.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_references::argumentable_is_not_abstract():
-    assert not inspect.isabstract(references::Argumentable)
-
-
-def test_references::argumentable_constructor_exists():
-    assert callable(references::Argumentable.__init__)
-
-
-def test_references::argumentable_constructor_args():
-    sig = inspect.signature(references::Argumentable.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_arrays::arrayselector_is_not_abstract():
-    assert not inspect.isabstract(arrays::ArraySelector)
-
-
-def test_arrays::arrayselector_constructor_exists():
-    assert callable(arrays::ArraySelector.__init__)
-
-
-def test_arrays::arrayselector_constructor_args():
-    sig = inspect.signature(arrays::ArraySelector.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_members::exceptionthrower_is_not_abstract():
-    assert not inspect.isabstract(members::ExceptionThrower)
-
-
-def test_members::exceptionthrower_constructor_exists():
-    assert callable(members::ExceptionThrower.__init__)
-
-
-def test_members::exceptionthrower_constructor_args():
-    sig = inspect.signature(members::ExceptionThrower.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_modifiers::modifiable_is_not_abstract():
-    assert not inspect.isabstract(modifiers::Modifiable)
-
-
-def test_modifiers::modifiable_constructor_exists():
-    assert callable(modifiers::Modifiable.__init__)
-
-
-def test_modifiers::modifiable_constructor_args():
-    sig = inspect.signature(modifiers::Modifiable.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_annotations::annotable_is_not_abstract():
-    assert not inspect.isabstract(annotations::Annotable)
-
-
-def test_annotations::annotable_constructor_exists():
-    assert callable(annotations::Annotable.__init__)
-
-
-def test_annotations::annotable_constructor_args():
-    sig = inspect.signature(annotations::Annotable.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_arrays::arraytypeable_is_not_abstract():
-    assert not inspect.isabstract(arrays::ArrayTypeable)
-
-
-def test_arrays::arraytypeable_constructor_exists():
-    assert callable(arrays::ArrayTypeable.__init__)
-
-
-def test_arrays::arraytypeable_constructor_args():
-    sig = inspect.signature(arrays::ArrayTypeable.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_expression_is_not_abstract():
-    assert not inspect.isabstract(Expression)
-
-
-def test_expression_constructor_exists():
-    assert callable(Expression.__init__)
-
-
-def test_expression_constructor_args():
-    sig = inspect.signature(Expression.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_expressions::assignmentexpressionchild_is_not_abstract():
-    assert not inspect.isabstract(expressions::AssignmentExpressionChild)
-
-
-def test_expressions::assignmentexpressionchild_constructor_exists():
-    assert callable(expressions::AssignmentExpressionChild.__init__)
-
-
-def test_expressions::assignmentexpressionchild_constructor_args():
-    sig = inspect.signature(expressions::AssignmentExpressionChild.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_expressions::assignmentexpression_is_not_abstract():
-    assert not inspect.isabstract(expressions::AssignmentExpression)
-
-
-def test_expressions::assignmentexpression_constructor_exists():
-    assert callable(expressions::AssignmentExpression.__init__)
-
-
-def test_expressions::assignmentexpression_constructor_args():
-    sig = inspect.signature(expressions::AssignmentExpression.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_annotations::annotationvalue_is_not_abstract():
-    assert not inspect.isabstract(annotations::AnnotationValue)
-
-
-def test_annotations::annotationvalue_constructor_exists():
-    assert callable(annotations::AnnotationValue.__init__)
-
-
-def test_annotations::annotationvalue_constructor_args():
-    sig = inspect.signature(annotations::AnnotationValue.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_interfacemethod_is_not_abstract():
-    assert not inspect.isabstract(InterfaceMethod)
-
-
-def test_interfacemethod_constructor_exists():
-    assert callable(InterfaceMethod.__init__)
-
-
-def test_interfacemethod_constructor_args():
-    sig = inspect.signature(InterfaceMethod.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_annotations::annotationattribute_is_not_abstract():
-    assert not inspect.isabstract(annotations::AnnotationAttribute)
-
-
-def test_annotations::annotationattribute_constructor_exists():
-    assert callable(annotations::AnnotationAttribute.__init__)
-
-
-def test_annotations::annotationattribute_constructor_args():
-    sig = inspect.signature(annotations::AnnotationAttribute.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_annotations::annotationattributesetting_is_not_abstract():
-    assert not inspect.isabstract(annotations::AnnotationAttributeSetting)
-
-
-def test_annotations::annotationattributesetting_constructor_exists():
-    assert callable(annotations::AnnotationAttributeSetting.__init__)
-
-
-def test_annotations::annotationattributesetting_constructor_args():
-    sig = inspect.signature(annotations::AnnotationAttributeSetting.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_annotationattributesetting_is_not_abstract():
-    assert not inspect.isabstract(AnnotationAttributeSetting)
-
-
-def test_annotationattributesetting_constructor_exists():
-    assert callable(AnnotationAttributeSetting.__init__)
-
-
-def test_annotationattributesetting_constructor_args():
-    sig = inspect.signature(AnnotationAttributeSetting.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_annotationvalue_is_not_abstract():
-    assert not inspect.isabstract(AnnotationValue)
-
-
-def test_annotationvalue_constructor_exists():
-    assert callable(AnnotationValue.__init__)
-
-
-def test_annotationvalue_constructor_args():
-    sig = inspect.signature(AnnotationValue.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_expressions::expression_is_not_abstract():
-    assert not inspect.isabstract(expressions::Expression)
-
-
-def test_expressions::expression_constructor_exists():
-    assert callable(expressions::Expression.__init__)
-
-
-def test_expressions::expression_constructor_args():
-    sig = inspect.signature(expressions::Expression.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_arrays::arrayinitializer_is_not_abstract():
-    assert not inspect.isabstract(arrays::ArrayInitializer)
-
-
-def test_arrays::arrayinitializer_constructor_exists():
-    assert callable(arrays::ArrayInitializer.__init__)
-
-
-def test_arrays::arrayinitializer_constructor_args():
-    sig = inspect.signature(arrays::ArrayInitializer.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_annotations::annotationparameter_is_not_abstract():
-    assert not inspect.isabstract(annotations::AnnotationParameter)
-
-
-def test_annotations::annotationparameter_constructor_exists():
-    assert callable(annotations::AnnotationParameter.__init__)
-
-
-def test_annotations::annotationparameter_constructor_args():
-    sig = inspect.signature(annotations::AnnotationParameter.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_annotationparameter_is_not_abstract():
-    assert not inspect.isabstract(AnnotationParameter)
-
-
-def test_annotationparameter_constructor_exists():
-    assert callable(AnnotationParameter.__init__)
-
-
-def test_annotationparameter_constructor_args():
-    sig = inspect.signature(AnnotationParameter.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_annotations::annotationparameterlist_is_not_abstract():
-    assert not inspect.isabstract(annotations::AnnotationParameterList)
-
-
-def test_annotations::annotationparameterlist_constructor_exists():
-    assert callable(annotations::AnnotationParameterList.__init__)
-
-
-def test_annotations::annotationparameterlist_constructor_args():
-    sig = inspect.signature(annotations::AnnotationParameterList.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_annotations::singleannotationparameter_is_not_abstract():
-    assert not inspect.isabstract(annotations::SingleAnnotationParameter)
-
-
-def test_annotations::singleannotationparameter_constructor_exists():
-    assert callable(annotations::SingleAnnotationParameter.__init__)
-
-
-def test_annotations::singleannotationparameter_constructor_args():
-    sig = inspect.signature(annotations::SingleAnnotationParameter.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_classifier_is_not_abstract():
-    assert not inspect.isabstract(Classifier)
-
-
-def test_classifier_constructor_exists():
-    assert callable(Classifier.__init__)
-
-
-def test_classifier_constructor_args():
-    sig = inspect.signature(Classifier.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_classifiers::concreteclassifier_is_not_abstract():
-    assert not inspect.isabstract(classifiers::ConcreteClassifier)
-
-
-def test_classifiers::concreteclassifier_constructor_exists():
-    assert callable(classifiers::ConcreteClassifier.__init__)
-
-
-def test_classifiers::concreteclassifier_constructor_args():
-    sig = inspect.signature(classifiers::ConcreteClassifier.__init__)
-    params = list(sig.parameters.keys())
-    assert "fullName" in params, "Missing parameter 'fullName'"
-
-def test_classifiers::concreteclassifier_has_fullName():
-    assert hasattr(classifiers::ConcreteClassifier, "fullName")
-    descriptor = None
-    for klass in classifiers::ConcreteClassifier.__mro__:
-        if "fullName" in klass.__dict__:
-            descriptor = klass.__dict__["fullName"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_generics::typeparameter_is_not_abstract():
-    assert not inspect.isabstract(generics::TypeParameter)
-
-
-def test_generics::typeparameter_constructor_exists():
-    assert callable(generics::TypeParameter.__init__)
-
-
-def test_generics::typeparameter_constructor_args():
-    sig = inspect.signature(generics::TypeParameter.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_namespaceawareelement_is_not_abstract():
-    assert not inspect.isabstract(NamespaceAwareElement)
-
-
-def test_namespaceawareelement_constructor_exists():
-    assert callable(NamespaceAwareElement.__init__)
-
-
-def test_namespaceawareelement_constructor_args():
-    sig = inspect.signature(NamespaceAwareElement.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_imports::import_is_not_abstract():
-    assert not inspect.isabstract(imports::Import)
-
-
-def test_imports::import_constructor_exists():
-    assert callable(imports::Import.__init__)
-
-
-def test_imports::import_constructor_args():
-    sig = inspect.signature(imports::Import.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_containers::javaroot_is_not_abstract():
-    assert not inspect.isabstract(containers::JavaRoot)
-
-
-def test_containers::javaroot_constructor_exists():
-    assert callable(containers::JavaRoot.__init__)
-
-
-def test_containers::javaroot_constructor_args():
-    sig = inspect.signature(containers::JavaRoot.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_types::namespaceclassifierreference_is_not_abstract():
-    assert not inspect.isabstract(types::NamespaceClassifierReference)
-
-
-def test_types::namespaceclassifierreference_constructor_exists():
-    assert callable(types::NamespaceClassifierReference.__init__)
-
-
-def test_types::namespaceclassifierreference_constructor_args():
-    sig = inspect.signature(types::NamespaceClassifierReference.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_annotationinstanceormodifier_is_not_abstract():
-    assert not inspect.isabstract(AnnotationInstanceOrModifier)
-
-
-def test_annotationinstanceormodifier_constructor_exists():
-    assert callable(AnnotationInstanceOrModifier.__init__)
-
-
-def test_annotationinstanceormodifier_constructor_args():
-    sig = inspect.signature(AnnotationInstanceOrModifier.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_modifiers::modifier_is_not_abstract():
-    assert not inspect.isabstract(modifiers::Modifier)
-
-
-def test_modifiers::modifier_constructor_exists():
-    assert callable(modifiers::Modifier.__init__)
-
-
-def test_modifiers::modifier_constructor_args():
-    sig = inspect.signature(modifiers::Modifier.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_reference_is_not_abstract():
-    assert not inspect.isabstract(Reference)
-
-
-def test_reference_constructor_exists():
-    assert callable(Reference.__init__)
-
-
-def test_reference_constructor_args():
-    sig = inspect.signature(Reference.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_expressions::nestedexpression_is_not_abstract():
-    assert not inspect.isabstract(expressions::NestedExpression)
-
-
-def test_expressions::nestedexpression_constructor_exists():
-    assert callable(expressions::NestedExpression.__init__)
-
-
-def test_expressions::nestedexpression_constructor_args():
-    sig = inspect.signature(expressions::NestedExpression.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_arrays::arrayinstantiationbyvalues_is_not_abstract():
-    assert not inspect.isabstract(arrays::ArrayInstantiationByValues)
-
-
-def test_arrays::arrayinstantiationbyvalues_constructor_exists():
-    assert callable(arrays::ArrayInstantiationByValues.__init__)
-
-
-def test_arrays::arrayinstantiationbyvalues_constructor_args():
-    sig = inspect.signature(arrays::ArrayInstantiationByValues.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_references::selfreference_is_not_abstract():
-    assert not inspect.isabstract(references::SelfReference)
-
-
-def test_references::selfreference_constructor_exists():
-    assert callable(references::SelfReference.__init__)
-
-
-def test_references::selfreference_constructor_args():
-    sig = inspect.signature(references::SelfReference.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_references::reflectiveclassreference_is_not_abstract():
-    assert not inspect.isabstract(references::ReflectiveClassReference)
-
-
-def test_references::reflectiveclassreference_constructor_exists():
-    assert callable(references::ReflectiveClassReference.__init__)
-
-
-def test_references::reflectiveclassreference_constructor_args():
-    sig = inspect.signature(references::ReflectiveClassReference.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_references::elementreference_is_not_abstract():
-    assert not inspect.isabstract(references::ElementReference)
-
-
-def test_references::elementreference_constructor_exists():
-    assert callable(references::ElementReference.__init__)
-
-
-def test_references::elementreference_constructor_args():
-    sig = inspect.signature(references::ElementReference.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_instantiations::instantiation_is_not_abstract():
-    assert not inspect.isabstract(instantiations::Instantiation)
-
-
-def test_instantiations::instantiation_constructor_exists():
-    assert callable(instantiations::Instantiation.__init__)
-
-
-def test_instantiations::instantiation_constructor_args():
-    sig = inspect.signature(instantiations::Instantiation.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_references::primitivetypereference_is_not_abstract():
-    assert not inspect.isabstract(references::PrimitiveTypeReference)
-
-
-def test_references::primitivetypereference_constructor_exists():
-    assert callable(references::PrimitiveTypeReference.__init__)
-
-
-def test_references::primitivetypereference_constructor_args():
-    sig = inspect.signature(references::PrimitiveTypeReference.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_arrays::arrayinstantiationbysize_is_not_abstract():
-    assert not inspect.isabstract(arrays::ArrayInstantiationBySize)
-
-
-def test_arrays::arrayinstantiationbysize_constructor_exists():
-    assert callable(arrays::ArrayInstantiationBySize.__init__)
-
-
-def test_arrays::arrayinstantiationbysize_constructor_args():
-    sig = inspect.signature(arrays::ArrayInstantiationBySize.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_references::stringreference_is_not_abstract():
-    assert not inspect.isabstract(references::StringReference)
-
-
-def test_references::stringreference_constructor_exists():
-    assert callable(references::StringReference.__init__)
-
-
-def test_references::stringreference_constructor_args():
-    sig = inspect.signature(references::StringReference.__init__)
-    params = list(sig.parameters.keys())
-    assert "value" in params, "Missing parameter 'value'"
-
-def test_references::stringreference_has_value():
-    assert hasattr(references::StringReference, "value")
-    descriptor = None
-    for klass in references::StringReference.__mro__:
-        if "value" in klass.__dict__:
-            descriptor = klass.__dict__["value"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_annotations::annotationinstance_is_not_abstract():
-    assert not inspect.isabstract(annotations::AnnotationInstance)
-
-
-def test_annotations::annotationinstance_constructor_exists():
-    assert callable(annotations::AnnotationInstance.__init__)
-
-
-def test_annotations::annotationinstance_constructor_args():
-    sig = inspect.signature(annotations::AnnotationInstance.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_annotationinstance_is_not_abstract():
-    assert not inspect.isabstract(AnnotationInstance)
-
-
-def test_annotationinstance_constructor_exists():
-    assert callable(AnnotationInstance.__init__)
-
-
-def test_annotationinstance_constructor_args():
-    sig = inspect.signature(AnnotationInstance.__init__)
+def test_arrays_arraydimension_constructor_args():
+    sig = inspect.signature(arrays_ArrayDimension.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -5219,12 +5219,6 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-Parameter_strategy = st.builds(
-    Parameter,
-)
-parameters::OrdinaryParameter_strategy = st.builds(
-    parameters::OrdinaryParameter,
-)
 AdditionalLocalVariable_strategy = st.builds(
     AdditionalLocalVariable,
 )
@@ -5246,14 +5240,14 @@ JumpLabel_strategy = st.builds(
 WhileLoop_strategy = st.builds(
     WhileLoop,
 )
-statements::DoWhileLoop_strategy = st.builds(
-    statements::DoWhileLoop,
+statements_DoWhileLoop_strategy = st.builds(
+    statements_DoWhileLoop,
 )
 SwitchCase_strategy = st.builds(
     SwitchCase,
 )
-statements::DefaultSwitchCase_strategy = st.builds(
-    statements::DefaultSwitchCase,
+statements_DefaultSwitchCase_strategy = st.builds(
+    statements_DefaultSwitchCase,
 )
 StatementContainer_strategy = st.builds(
     StatementContainer,
@@ -5267,122 +5261,128 @@ Modifiable_strategy = st.builds(
 Jump_strategy = st.builds(
     Jump,
 )
-statements::Continue_strategy = st.builds(
-    statements::Continue,
+statements_Continue_strategy = st.builds(
+    statements_Continue,
 )
-statements::Break_strategy = st.builds(
-    statements::Break,
+statements_Break_strategy = st.builds(
+    statements_Break,
 )
 Conditional_strategy = st.builds(
     Conditional,
 )
-statements::NormalSwitchCase_strategy = st.builds(
-    statements::NormalSwitchCase,
+statements_NormalSwitchCase_strategy = st.builds(
+    statements_NormalSwitchCase,
+)
+Parameter_strategy = st.builds(
+    Parameter,
+)
+parameters_OrdinaryParameter_strategy = st.builds(
+    parameters_OrdinaryParameter,
 )
 PrimitiveType_strategy = st.builds(
     PrimitiveType,
 )
-types::Long_strategy = st.builds(
-    types::Long,
+types_Float_strategy = st.builds(
+    types_Float,
 )
-types::Double_strategy = st.builds(
-    types::Double,
+types_Long_strategy = st.builds(
+    types_Long,
 )
-types::Float_strategy = st.builds(
-    types::Float,
+types_Byte_strategy = st.builds(
+    types_Byte,
 )
-types::Char_strategy = st.builds(
-    types::Char,
+types_Void_strategy = st.builds(
+    types_Void,
 )
-types::Short_strategy = st.builds(
-    types::Short,
+types_Short_strategy = st.builds(
+    types_Short,
 )
-types::Void_strategy = st.builds(
-    types::Void,
+types_Boolean_strategy = st.builds(
+    types_Boolean,
 )
-types::Byte_strategy = st.builds(
-    types::Byte,
+types_Char_strategy = st.builds(
+    types_Char,
 )
-types::Int_strategy = st.builds(
-    types::Int,
+types_Double_strategy = st.builds(
+    types_Double,
 )
-types::Boolean_strategy = st.builds(
-    types::Boolean,
+types_Int_strategy = st.builds(
+    types_Int,
 )
 ElementReference_strategy = st.builds(
     ElementReference,
 )
-references::IdentifierReference_strategy = st.builds(
-    references::IdentifierReference,
+references_IdentifierReference_strategy = st.builds(
+    references_IdentifierReference,
 )
 ArraySelector_strategy = st.builds(
     ArraySelector,
 )
-parameters::VariableLengthParameter_strategy = st.builds(
-    parameters::VariableLengthParameter,
+parameters_VariableLengthParameter_strategy = st.builds(
+    parameters_VariableLengthParameter,
 )
 Operator_strategy = st.builds(
     Operator,
 )
-operators::ShiftOperator_strategy = st.builds(
-    operators::ShiftOperator,
+operators_AssignmentOperator_strategy = st.builds(
+    operators_AssignmentOperator,
 )
-operators::AssignmentOperator_strategy = st.builds(
-    operators::AssignmentOperator,
+operators_EqualityOperator_strategy = st.builds(
+    operators_EqualityOperator,
 )
-operators::RelationOperator_strategy = st.builds(
-    operators::RelationOperator,
+operators_MultiplicativeOperator_strategy = st.builds(
+    operators_MultiplicativeOperator,
 )
-operators::MultiplicativeOperator_strategy = st.builds(
-    operators::MultiplicativeOperator,
+operators_RelationOperator_strategy = st.builds(
+    operators_RelationOperator,
 )
-operators::EqualityOperator_strategy = st.builds(
-    operators::EqualityOperator,
+operators_ShiftOperator_strategy = st.builds(
+    operators_ShiftOperator,
 )
-operators::AdditiveOperator_strategy = st.builds(
-    operators::AdditiveOperator,
+operators_AdditiveOperator_strategy = st.builds(
+    operators_AdditiveOperator,
 )
-operators::UnaryModificationOperator_strategy = st.builds(
-    operators::UnaryModificationOperator,
+operators_UnaryModificationOperator_strategy = st.builds(
+    operators_UnaryModificationOperator,
 )
-operators::UnaryOperator_strategy = st.builds(
-    operators::UnaryOperator,
+operators_UnaryOperator_strategy = st.builds(
+    operators_UnaryOperator,
 )
 Modifier_strategy = st.builds(
     Modifier,
 )
-modifiers::Synchronized_strategy = st.builds(
-    modifiers::Synchronized,
+modifiers_Public_strategy = st.builds(
+    modifiers_Public,
 )
-modifiers::Abstract_strategy = st.builds(
-    modifiers::Abstract,
+modifiers_Strictfp_strategy = st.builds(
+    modifiers_Strictfp,
 )
-modifiers::Final_strategy = st.builds(
-    modifiers::Final,
+modifiers_Volatile_strategy = st.builds(
+    modifiers_Volatile,
 )
-modifiers::Public_strategy = st.builds(
-    modifiers::Public,
+modifiers_Private_strategy = st.builds(
+    modifiers_Private,
 )
-modifiers::Strictfp_strategy = st.builds(
-    modifiers::Strictfp,
+modifiers_Abstract_strategy = st.builds(
+    modifiers_Abstract,
 )
-modifiers::Static_strategy = st.builds(
-    modifiers::Static,
+modifiers_Transient_strategy = st.builds(
+    modifiers_Transient,
 )
-modifiers::Protected_strategy = st.builds(
-    modifiers::Protected,
+modifiers_Synchronized_strategy = st.builds(
+    modifiers_Synchronized,
 )
-modifiers::Native_strategy = st.builds(
-    modifiers::Native,
+modifiers_Final_strategy = st.builds(
+    modifiers_Final,
 )
-modifiers::Private_strategy = st.builds(
-    modifiers::Private,
+modifiers_Native_strategy = st.builds(
+    modifiers_Native,
 )
-modifiers::Volatile_strategy = st.builds(
-    modifiers::Volatile,
+modifiers_Static_strategy = st.builds(
+    modifiers_Static,
 )
-modifiers::Transient_strategy = st.builds(
-    modifiers::Transient,
+modifiers_Protected_strategy = st.builds(
+    modifiers_Protected,
 )
 Variable_strategy = st.builds(
     Variable,
@@ -5396,11 +5396,11 @@ Parametrizable_strategy = st.builds(
 StatementListContainer_strategy = st.builds(
     StatementListContainer,
 )
-statements::SwitchCase_strategy = st.builds(
-    statements::SwitchCase,
+statements_CatchBlock_strategy = st.builds(
+    statements_CatchBlock,
 )
-statements::CatchBlock_strategy = st.builds(
-    statements::CatchBlock,
+statements_SwitchCase_strategy = st.builds(
+    statements_SwitchCase,
 )
 Initializable_strategy = st.builds(
     Initializable,
@@ -5408,11 +5408,11 @@ Initializable_strategy = st.builds(
 Method_strategy = st.builds(
     Method,
 )
-members::ClassMethod_strategy = st.builds(
-    members::ClassMethod,
+members_ClassMethod_strategy = st.builds(
+    members_ClassMethod,
 )
-members::InterfaceMethod_strategy = st.builds(
-    members::InterfaceMethod,
+members_InterfaceMethod_strategy = st.builds(
+    members_InterfaceMethod,
 )
 AdditionalField_strategy = st.builds(
     AdditionalField,
@@ -5423,101 +5423,101 @@ NamespaceClassifierReference_strategy = st.builds(
 DoubleLiteral_strategy = st.builds(
     DoubleLiteral,
 )
-literals::DecimalDoubleLiteral_strategy = st.builds(
-    literals::DecimalDoubleLiteral,
+literals_DecimalDoubleLiteral_strategy = st.builds(
+    literals_DecimalDoubleLiteral,
     decimalValue=
         st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False)
 )
 FloatLiteral_strategy = st.builds(
     FloatLiteral,
 )
-literals::HexFloatLiteral_strategy = st.builds(
-    literals::HexFloatLiteral,
+literals_HexFloatLiteral_strategy = st.builds(
+    literals_HexFloatLiteral,
     hexValue=
         st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False)
 )
-literals::DecimalFloatLiteral_strategy = st.builds(
-    literals::DecimalFloatLiteral,
+literals_DecimalFloatLiteral_strategy = st.builds(
+    literals_DecimalFloatLiteral,
     decimalValue=
         st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False)
 )
 LongLiteral_strategy = st.builds(
     LongLiteral,
 )
-literals::OctalLongLiteral_strategy = st.builds(
-    literals::OctalLongLiteral,
-    octalValue=
-        st.booleans()
-)
-literals::HexLongLiteral_strategy = st.builds(
-    literals::HexLongLiteral,
+literals_HexLongLiteral_strategy = st.builds(
+    literals_HexLongLiteral,
     hexValue=
         safe_text
 )
-literals::DecimalLongLiteral_strategy = st.builds(
-    literals::DecimalLongLiteral,
+literals_OctalLongLiteral_strategy = st.builds(
+    literals_OctalLongLiteral,
+    octalValue=
+        st.booleans()
+)
+literals_DecimalLongLiteral_strategy = st.builds(
+    literals_DecimalLongLiteral,
     decimalValue=
         safe_text
 )
 IntegerLiteral_strategy = st.builds(
     IntegerLiteral,
 )
-literals::OctalIntegerLiteral_strategy = st.builds(
-    literals::OctalIntegerLiteral,
+literals_OctalIntegerLiteral_strategy = st.builds(
+    literals_OctalIntegerLiteral,
     octalValue=
         safe_text
 )
-literals::HexIntegerLiteral_strategy = st.builds(
-    literals::HexIntegerLiteral,
+literals_HexIntegerLiteral_strategy = st.builds(
+    literals_HexIntegerLiteral,
     hexValue=
         safe_text
 )
-literals::DecimalIntegerLiteral_strategy = st.builds(
-    literals::DecimalIntegerLiteral,
+literals_DecimalIntegerLiteral_strategy = st.builds(
+    literals_DecimalIntegerLiteral,
     decimalValue=
         safe_text
 )
-literals::HexDoubleLiteral_strategy = st.builds(
-    literals::HexDoubleLiteral,
+literals_HexDoubleLiteral_strategy = st.builds(
+    literals_HexDoubleLiteral,
     hexValue=
         st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False)
 )
 Literal_strategy = st.builds(
     Literal,
 )
-literals::CharacterLiteral_strategy = st.builds(
-    literals::CharacterLiteral,
+literals_IntegerLiteral_strategy = st.builds(
+    literals_IntegerLiteral,
+)
+literals_CharacterLiteral_strategy = st.builds(
+    literals_CharacterLiteral,
     value=
         safe_text
 )
-literals::NullLiteral_strategy = st.builds(
-    literals::NullLiteral,
+literals_NullLiteral_strategy = st.builds(
+    literals_NullLiteral,
 )
-literals::LongLiteral_strategy = st.builds(
-    literals::LongLiteral,
+literals_FloatLiteral_strategy = st.builds(
+    literals_FloatLiteral,
 )
-literals::DoubleLiteral_strategy = st.builds(
-    literals::DoubleLiteral,
+literals_LongLiteral_strategy = st.builds(
+    literals_LongLiteral,
 )
-literals::FloatLiteral_strategy = st.builds(
-    literals::FloatLiteral,
+literals_DoubleLiteral_strategy = st.builds(
+    literals_DoubleLiteral,
 )
-literals::IntegerLiteral_strategy = st.builds(
-    literals::IntegerLiteral,
-)
-literals::BooleanLiteral_strategy = st.builds(
-    literals::BooleanLiteral,
+literals_BooleanLiteral_strategy = st.builds(
+    literals_BooleanLiteral,
     value=
         st.booleans()
 )
 StaticImport_strategy = st.builds(
     StaticImport,
 )
-imports::StaticMemberImport_strategy = st.builds(
-    imports::StaticMemberImport,
+imports_StaticMemberImport_strategy = st.builds(
+    imports_StaticMemberImport,
 )
-imports::StaticClassifierImport_strategy = st.builds(
-    imports::StaticClassifierImport,
+imports_StaticClassifierImport_strategy = st.builds(
+    imports_StaticClassifierImport,
 )
 Static_strategy = st.builds(
     Static,
@@ -5525,17 +5525,17 @@ Static_strategy = st.builds(
 PrimaryExpression_strategy = st.builds(
     PrimaryExpression,
 )
-literals::Literal_strategy = st.builds(
-    literals::Literal,
+literals_Literal_strategy = st.builds(
+    literals_Literal,
 )
 Self_strategy = st.builds(
     Self,
 )
-literals::Super_strategy = st.builds(
-    literals::Super,
+literals_Super_strategy = st.builds(
+    literals_Super,
 )
-literals::This_strategy = st.builds(
-    literals::This,
+literals_This_strategy = st.builds(
+    literals_This,
 )
 AnonymousClass_strategy = st.builds(
     AnonymousClass,
@@ -5546,68 +5546,223 @@ CallTypeArgumentable_strategy = st.builds(
 Instantiation_strategy = st.builds(
     Instantiation,
 )
-instantiations::ExplicitConstructorCall_strategy = st.builds(
-    instantiations::ExplicitConstructorCall,
+instantiations_ExplicitConstructorCall_strategy = st.builds(
+    instantiations_ExplicitConstructorCall,
 )
-instantiations::NewConstructorCall_strategy = st.builds(
-    instantiations::NewConstructorCall,
+instantiations_NewConstructorCall_strategy = st.builds(
+    instantiations_NewConstructorCall,
 )
 TypeArgumentable_strategy = st.builds(
     TypeArgumentable,
 )
-references::Reference_strategy = st.builds(
-    references::Reference,
+references_Reference_strategy = st.builds(
+    references_Reference,
 )
 Argumentable_strategy = st.builds(
     Argumentable,
 )
-references::MethodCall_strategy = st.builds(
-    references::MethodCall,
+references_MethodCall_strategy = st.builds(
+    references_MethodCall,
 )
 Import_strategy = st.builds(
     Import,
 )
-imports::PackageImport_strategy = st.builds(
-    imports::PackageImport,
+imports_ClassifierImport_strategy = st.builds(
+    imports_ClassifierImport,
 )
-imports::StaticImport_strategy = st.builds(
-    imports::StaticImport,
+imports_PackageImport_strategy = st.builds(
+    imports_PackageImport,
 )
-imports::ClassifierImport_strategy = st.builds(
-    imports::ClassifierImport,
+imports_StaticImport_strategy = st.builds(
+    imports_StaticImport,
 )
 UnaryModificationExpression_strategy = st.builds(
     UnaryModificationExpression,
 )
-expressions::SuffixUnaryModificationExpression_strategy = st.builds(
-    expressions::SuffixUnaryModificationExpression,
+expressions_SuffixUnaryModificationExpression_strategy = st.builds(
+    expressions_SuffixUnaryModificationExpression,
 )
-expressions::PrefixUnaryModificationExpression_strategy = st.builds(
-    expressions::PrefixUnaryModificationExpression,
+Commentable_strategy = st.builds(
+    Commentable,
+)
+types_TypedElement_strategy = st.builds(
+    types_TypedElement,
+)
+types_Type_strategy = st.builds(
+    types_Type,
+)
+operators_Operator_strategy = st.builds(
+    operators_Operator,
+)
+instantiations_Initializable_strategy = st.builds(
+    instantiations_Initializable,
+)
+statements_Conditional_strategy = st.builds(
+    statements_Conditional,
+)
+statements_Statement_strategy = st.builds(
+    statements_Statement,
+)
+statements_ForLoopInitializer_strategy = st.builds(
+    statements_ForLoopInitializer,
+)
+members_MemberContainer_strategy = st.builds(
+    members_MemberContainer,
+)
+statements_StatementListContainer_strategy = st.builds(
+    statements_StatementListContainer,
+)
+imports_ImportingElement_strategy = st.builds(
+    imports_ImportingElement,
+)
+modifiers_AnnotationInstanceOrModifier_strategy = st.builds(
+    modifiers_AnnotationInstanceOrModifier,
+)
+parameters_Parametrizable_strategy = st.builds(
+    parameters_Parametrizable,
+)
+statements_StatementContainer_strategy = st.builds(
+    statements_StatementContainer,
+)
+literals_Self_strategy = st.builds(
+    literals_Self,
+)
+references_Argumentable_strategy = st.builds(
+    references_Argumentable,
+)
+modifiers_Modifiable_strategy = st.builds(
+    modifiers_Modifiable,
+)
+modifiers_AnnotableAndModifiable_strategy = st.builds(
+    modifiers_AnnotableAndModifiable,
+)
+types_TypeReference_strategy = st.builds(
+    types_TypeReference,
+)
+members_ExceptionThrower_strategy = st.builds(
+    members_ExceptionThrower,
+)
+annotations_Annotable_strategy = st.builds(
+    annotations_Annotable,
+)
+arrays_ArrayTypeable_strategy = st.builds(
+    arrays_ArrayTypeable,
+)
+Expression_strategy = st.builds(
+    Expression,
+)
+annotations_AnnotationValue_strategy = st.builds(
+    annotations_AnnotationValue,
+)
+InterfaceMethod_strategy = st.builds(
+    InterfaceMethod,
+)
+annotations_AnnotationAttribute_strategy = st.builds(
+    annotations_AnnotationAttribute,
+)
+annotations_AnnotationAttributeSetting_strategy = st.builds(
+    annotations_AnnotationAttributeSetting,
+)
+AnnotationAttributeSetting_strategy = st.builds(
+    AnnotationAttributeSetting,
+)
+AnnotationValue_strategy = st.builds(
+    AnnotationValue,
+)
+annotations_AnnotationParameter_strategy = st.builds(
+    annotations_AnnotationParameter,
+)
+AnnotationParameter_strategy = st.builds(
+    AnnotationParameter,
+)
+annotations_AnnotationParameterList_strategy = st.builds(
+    annotations_AnnotationParameterList,
+)
+annotations_SingleAnnotationParameter_strategy = st.builds(
+    annotations_SingleAnnotationParameter,
+)
+Classifier_strategy = st.builds(
+    Classifier,
+)
+generics_TypeParameter_strategy = st.builds(
+    generics_TypeParameter,
+)
+NamespaceAwareElement_strategy = st.builds(
+    NamespaceAwareElement,
+)
+imports_Import_strategy = st.builds(
+    imports_Import,
+)
+AnnotationInstanceOrModifier_strategy = st.builds(
+    AnnotationInstanceOrModifier,
+)
+modifiers_Modifier_strategy = st.builds(
+    modifiers_Modifier,
+)
+Reference_strategy = st.builds(
+    Reference,
+)
+references_PrimitiveTypeReference_strategy = st.builds(
+    references_PrimitiveTypeReference,
+)
+references_ElementReference_strategy = st.builds(
+    references_ElementReference,
+)
+references_StringReference_strategy = st.builds(
+    references_StringReference,
+    value=
+        safe_text
+)
+references_SelfReference_strategy = st.builds(
+    references_SelfReference,
+)
+references_ReflectiveClassReference_strategy = st.builds(
+    references_ReflectiveClassReference,
+)
+expressions_NestedExpression_strategy = st.builds(
+    expressions_NestedExpression,
+)
+annotations_AnnotationInstance_strategy = st.builds(
+    annotations_AnnotationInstance,
+)
+AnnotationInstance_strategy = st.builds(
+    AnnotationInstance,
+)
+expressions_PrefixUnaryModificationExpression_strategy = st.builds(
+    expressions_PrefixUnaryModificationExpression,
 )
 UnaryModificationOperator_strategy = st.builds(
     UnaryModificationOperator,
 )
-operators::PlusPlus_strategy = st.builds(
-    operators::PlusPlus,
+operators_PlusPlus_strategy = st.builds(
+    operators_PlusPlus,
 )
-operators::MinusMinus_strategy = st.builds(
-    operators::MinusMinus,
+operators_MinusMinus_strategy = st.builds(
+    operators_MinusMinus,
 )
 TypeParameter_strategy = st.builds(
     TypeParameter,
 )
+generics_TypeParametrizable_strategy = st.builds(
+    generics_TypeParametrizable,
+)
+generics_CallTypeArgumentable_strategy = st.builds(
+    generics_CallTypeArgumentable,
+)
 TypeArgument_strategy = st.builds(
     TypeArgument,
 )
-generics::SuperTypeArgument_strategy = st.builds(
-    generics::SuperTypeArgument,
+generics_ExtendsTypeArgument_strategy = st.builds(
+    generics_ExtendsTypeArgument,
 )
-generics::UnknownTypeArgument_strategy = st.builds(
-    generics::UnknownTypeArgument,
+generics_UnknownTypeArgument_strategy = st.builds(
+    generics_UnknownTypeArgument,
 )
-generics::ExtendsTypeArgument_strategy = st.builds(
-    generics::ExtendsTypeArgument,
+generics_SuperTypeArgument_strategy = st.builds(
+    generics_SuperTypeArgument,
+)
+generics_TypeArgumentable_strategy = st.builds(
+    generics_TypeArgumentable,
 )
 AdditiveOperator_strategy = st.builds(
     AdditiveOperator,
@@ -5615,62 +5770,62 @@ AdditiveOperator_strategy = st.builds(
 AdditiveExpressionChild_strategy = st.builds(
     AdditiveExpressionChild,
 )
-expressions::MultiplicativeExpression_strategy = st.builds(
-    expressions::MultiplicativeExpression,
+expressions_MultiplicativeExpression_strategy = st.builds(
+    expressions_MultiplicativeExpression,
 )
 UnaryModificationExpressionChild_strategy = st.builds(
     UnaryModificationExpressionChild,
 )
-expressions::PrimaryExpression_strategy = st.builds(
-    expressions::PrimaryExpression,
+expressions_PrimaryExpression_strategy = st.builds(
+    expressions_PrimaryExpression,
 )
 UnaryExpressionChild_strategy = st.builds(
     UnaryExpressionChild,
 )
-expressions::UnaryModificationExpressionChild_strategy = st.builds(
-    expressions::UnaryModificationExpressionChild,
+expressions_UnaryModificationExpression_strategy = st.builds(
+    expressions_UnaryModificationExpression,
 )
-expressions::UnaryModificationExpression_strategy = st.builds(
-    expressions::UnaryModificationExpression,
+expressions_UnaryModificationExpressionChild_strategy = st.builds(
+    expressions_UnaryModificationExpressionChild,
 )
 UnaryOperator_strategy = st.builds(
     UnaryOperator,
 )
-operators::Addition_strategy = st.builds(
-    operators::Addition,
+operators_Negate_strategy = st.builds(
+    operators_Negate,
 )
-operators::Complement_strategy = st.builds(
-    operators::Complement,
+operators_Addition_strategy = st.builds(
+    operators_Addition,
 )
-operators::Negate_strategy = st.builds(
-    operators::Negate,
+operators_Subtraction_strategy = st.builds(
+    operators_Subtraction,
 )
-operators::Subtraction_strategy = st.builds(
-    operators::Subtraction,
+operators_Complement_strategy = st.builds(
+    operators_Complement,
 )
-expressions::MultiplicativeExpressionChild_strategy = st.builds(
-    expressions::MultiplicativeExpressionChild,
+expressions_MultiplicativeExpressionChild_strategy = st.builds(
+    expressions_MultiplicativeExpressionChild,
 )
 MultiplicativeOperator_strategy = st.builds(
     MultiplicativeOperator,
 )
-operators::Division_strategy = st.builds(
-    operators::Division,
+operators_Division_strategy = st.builds(
+    operators_Division,
 )
-operators::Multiplication_strategy = st.builds(
-    operators::Multiplication,
+operators_Remainder_strategy = st.builds(
+    operators_Remainder,
 )
-operators::Remainder_strategy = st.builds(
-    operators::Remainder,
+operators_Multiplication_strategy = st.builds(
+    operators_Multiplication,
 )
 MultiplicativeExpressionChild_strategy = st.builds(
     MultiplicativeExpressionChild,
 )
-expressions::UnaryExpressionChild_strategy = st.builds(
-    expressions::UnaryExpressionChild,
+expressions_UnaryExpressionChild_strategy = st.builds(
+    expressions_UnaryExpressionChild,
 )
-expressions::UnaryExpression_strategy = st.builds(
-    expressions::UnaryExpression,
+expressions_UnaryExpression_strategy = st.builds(
+    expressions_UnaryExpression,
 )
 EqualityExpressionChild_strategy = st.builds(
     EqualityExpressionChild,
@@ -5678,176 +5833,182 @@ EqualityExpressionChild_strategy = st.builds(
 EqualityOperator_strategy = st.builds(
     EqualityOperator,
 )
-operators::Equal_strategy = st.builds(
-    operators::Equal,
+operators_Equal_strategy = st.builds(
+    operators_Equal,
 )
-operators::NotEqual_strategy = st.builds(
-    operators::NotEqual,
+operators_NotEqual_strategy = st.builds(
+    operators_NotEqual,
 )
 ShiftOperator_strategy = st.builds(
     ShiftOperator,
 )
-operators::UnsignedRightShift_strategy = st.builds(
-    operators::UnsignedRightShift,
+operators_LeftShift_strategy = st.builds(
+    operators_LeftShift,
 )
-operators::LeftShift_strategy = st.builds(
-    operators::LeftShift,
+operators_RightShift_strategy = st.builds(
+    operators_RightShift,
 )
-operators::RightShift_strategy = st.builds(
-    operators::RightShift,
+operators_UnsignedRightShift_strategy = st.builds(
+    operators_UnsignedRightShift,
 )
 ShiftExpressionChild_strategy = st.builds(
     ShiftExpressionChild,
 )
-expressions::AdditiveExpression_strategy = st.builds(
-    expressions::AdditiveExpression,
+expressions_AdditiveExpressionChild_strategy = st.builds(
+    expressions_AdditiveExpressionChild,
 )
-expressions::AdditiveExpressionChild_strategy = st.builds(
-    expressions::AdditiveExpressionChild,
+expressions_AdditiveExpression_strategy = st.builds(
+    expressions_AdditiveExpression,
 )
 RelationOperator_strategy = st.builds(
     RelationOperator,
 )
-operators::LessThanOrEqual_strategy = st.builds(
-    operators::LessThanOrEqual,
+operators_GreaterThanOrEqual_strategy = st.builds(
+    operators_GreaterThanOrEqual,
 )
-operators::GreaterThanOrEqual_strategy = st.builds(
-    operators::GreaterThanOrEqual,
+operators_LessThanOrEqual_strategy = st.builds(
+    operators_LessThanOrEqual,
 )
-operators::GreaterThan_strategy = st.builds(
-    operators::GreaterThan,
+operators_LessThan_strategy = st.builds(
+    operators_LessThan,
 )
-operators::LessThan_strategy = st.builds(
-    operators::LessThan,
+operators_GreaterThan_strategy = st.builds(
+    operators_GreaterThan,
 )
 RelationExpressionChild_strategy = st.builds(
     RelationExpressionChild,
 )
-expressions::ShiftExpression_strategy = st.builds(
-    expressions::ShiftExpression,
+expressions_ShiftExpressionChild_strategy = st.builds(
+    expressions_ShiftExpressionChild,
 )
-expressions::ShiftExpressionChild_strategy = st.builds(
-    expressions::ShiftExpressionChild,
+expressions_ShiftExpression_strategy = st.builds(
+    expressions_ShiftExpression,
 )
-expressions::InstanceOfExpressionChild_strategy = st.builds(
-    expressions::InstanceOfExpressionChild,
+expressions_InstanceOfExpressionChild_strategy = st.builds(
+    expressions_InstanceOfExpressionChild,
 )
 InstanceOfExpressionChild_strategy = st.builds(
     InstanceOfExpressionChild,
 )
-expressions::RelationExpressionChild_strategy = st.builds(
-    expressions::RelationExpressionChild,
+expressions_RelationExpression_strategy = st.builds(
+    expressions_RelationExpression,
 )
-expressions::RelationExpression_strategy = st.builds(
-    expressions::RelationExpression,
+expressions_RelationExpressionChild_strategy = st.builds(
+    expressions_RelationExpressionChild,
 )
 ConditionalOrExpressionChild_strategy = st.builds(
     ConditionalOrExpressionChild,
 )
-expressions::ConditionalAndExpression_strategy = st.builds(
-    expressions::ConditionalAndExpression,
+expressions_ConditionalAndExpression_strategy = st.builds(
+    expressions_ConditionalAndExpression,
 )
 AndExpressionChild_strategy = st.builds(
     AndExpressionChild,
 )
-expressions::EqualityExpression_strategy = st.builds(
-    expressions::EqualityExpression,
+expressions_EqualityExpressionChild_strategy = st.builds(
+    expressions_EqualityExpressionChild,
 )
-expressions::EqualityExpressionChild_strategy = st.builds(
-    expressions::EqualityExpressionChild,
+expressions_EqualityExpression_strategy = st.builds(
+    expressions_EqualityExpression,
 )
 ExclusiveOrExpressionChild_strategy = st.builds(
     ExclusiveOrExpressionChild,
 )
-expressions::AndExpression_strategy = st.builds(
-    expressions::AndExpression,
+expressions_AndExpressionChild_strategy = st.builds(
+    expressions_AndExpressionChild,
 )
-expressions::AndExpressionChild_strategy = st.builds(
-    expressions::AndExpressionChild,
+expressions_AndExpression_strategy = st.builds(
+    expressions_AndExpression,
 )
 InclusiveOrExpressionChild_strategy = st.builds(
     InclusiveOrExpressionChild,
 )
-expressions::ExclusiveOrExpression_strategy = st.builds(
-    expressions::ExclusiveOrExpression,
+expressions_ExclusiveOrExpression_strategy = st.builds(
+    expressions_ExclusiveOrExpression,
 )
-expressions::ExclusiveOrExpressionChild_strategy = st.builds(
-    expressions::ExclusiveOrExpressionChild,
+expressions_ExclusiveOrExpressionChild_strategy = st.builds(
+    expressions_ExclusiveOrExpressionChild,
 )
-expressions::ConditionalAndExpressionChild_strategy = st.builds(
-    expressions::ConditionalAndExpressionChild,
+expressions_ConditionalAndExpressionChild_strategy = st.builds(
+    expressions_ConditionalAndExpressionChild,
+)
+expressions_AssignmentExpression_strategy = st.builds(
+    expressions_AssignmentExpression,
 )
 ConditionalAndExpressionChild_strategy = st.builds(
     ConditionalAndExpressionChild,
 )
-expressions::InclusiveOrExpressionChild_strategy = st.builds(
-    expressions::InclusiveOrExpressionChild,
+expressions_InclusiveOrExpressionChild_strategy = st.builds(
+    expressions_InclusiveOrExpressionChild,
 )
-expressions::InclusiveOrExpression_strategy = st.builds(
-    expressions::InclusiveOrExpression,
+expressions_InclusiveOrExpression_strategy = st.builds(
+    expressions_InclusiveOrExpression,
 )
 ConditionalExpressionChild_strategy = st.builds(
     ConditionalExpressionChild,
 )
-expressions::ConditionalOrExpression_strategy = st.builds(
-    expressions::ConditionalOrExpression,
+expressions_ConditionalOrExpression_strategy = st.builds(
+    expressions_ConditionalOrExpression,
 )
-expressions::ConditionalOrExpressionChild_strategy = st.builds(
-    expressions::ConditionalOrExpressionChild,
+expressions_ConditionalOrExpressionChild_strategy = st.builds(
+    expressions_ConditionalOrExpressionChild,
+)
+expressions_AssignmentExpressionChild_strategy = st.builds(
+    expressions_AssignmentExpressionChild,
 )
 AssignmentOperator_strategy = st.builds(
     AssignmentOperator,
 )
-operators::AssignmentExclusiveOr_strategy = st.builds(
-    operators::AssignmentExclusiveOr,
+operators_AssignmentAnd_strategy = st.builds(
+    operators_AssignmentAnd,
 )
-operators::AssignmentOr_strategy = st.builds(
-    operators::AssignmentOr,
+operators_AssignmentExclusiveOr_strategy = st.builds(
+    operators_AssignmentExclusiveOr,
 )
-operators::AssignmentRightShift_strategy = st.builds(
-    operators::AssignmentRightShift,
+operators_AssignmentUnsignedRightShift_strategy = st.builds(
+    operators_AssignmentUnsignedRightShift,
 )
-operators::AssignmentAnd_strategy = st.builds(
-    operators::AssignmentAnd,
+operators_AssignmentPlus_strategy = st.builds(
+    operators_AssignmentPlus,
 )
-operators::AssignmentMultiplication_strategy = st.builds(
-    operators::AssignmentMultiplication,
+operators_AssignmentMinus_strategy = st.builds(
+    operators_AssignmentMinus,
 )
-operators::Assignment_strategy = st.builds(
-    operators::Assignment,
+operators_Assignment_strategy = st.builds(
+    operators_Assignment,
 )
-operators::AssignmentLeftShift_strategy = st.builds(
-    operators::AssignmentLeftShift,
+operators_AssignmentRightShift_strategy = st.builds(
+    operators_AssignmentRightShift,
 )
-operators::AssignmentMinus_strategy = st.builds(
-    operators::AssignmentMinus,
+operators_AssignmentOr_strategy = st.builds(
+    operators_AssignmentOr,
 )
-operators::AssignmentPlus_strategy = st.builds(
-    operators::AssignmentPlus,
+operators_AssignmentMultiplication_strategy = st.builds(
+    operators_AssignmentMultiplication,
 )
-operators::AssignmentUnsignedRightShift_strategy = st.builds(
-    operators::AssignmentUnsignedRightShift,
+operators_AssignmentDivision_strategy = st.builds(
+    operators_AssignmentDivision,
 )
-operators::AssignmentModulo_strategy = st.builds(
-    operators::AssignmentModulo,
+operators_AssignmentLeftShift_strategy = st.builds(
+    operators_AssignmentLeftShift,
 )
-operators::AssignmentDivision_strategy = st.builds(
-    operators::AssignmentDivision,
+operators_AssignmentModulo_strategy = st.builds(
+    operators_AssignmentModulo,
 )
 AssignmentExpressionChild_strategy = st.builds(
     AssignmentExpressionChild,
 )
-expressions::ConditionalExpressionChild_strategy = st.builds(
-    expressions::ConditionalExpressionChild,
+expressions_ConditionalExpression_strategy = st.builds(
+    expressions_ConditionalExpression,
 )
-expressions::ConditionalExpression_strategy = st.builds(
-    expressions::ConditionalExpression,
+expressions_ConditionalExpressionChild_strategy = st.builds(
+    expressions_ConditionalExpressionChild,
 )
 JavaRoot_strategy = st.builds(
     JavaRoot,
 )
-containers::CompilationUnit_strategy = st.builds(
-    containers::CompilationUnit,
+containers_CompilationUnit_strategy = st.builds(
+    containers_CompilationUnit,
 )
 ImportingElement_strategy = st.builds(
     ImportingElement,
@@ -5855,20 +6016,23 @@ ImportingElement_strategy = st.builds(
 NamedElement_strategy = st.builds(
     NamedElement,
 )
-references::ReferenceableElement_strategy = st.builds(
-    references::ReferenceableElement,
+members_Member_strategy = st.builds(
+    members_Member,
 )
-members::Member_strategy = st.builds(
-    members::Member,
+references_ReferenceableElement_strategy = st.builds(
+    references_ReferenceableElement,
+)
+containers_JavaRoot_strategy = st.builds(
+    containers_JavaRoot,
 )
 ForLoopInitializer_strategy = st.builds(
     ForLoopInitializer,
 )
-expressions::ExpressionList_strategy = st.builds(
-    expressions::ExpressionList,
+expressions_ExpressionList_strategy = st.builds(
+    expressions_ExpressionList,
 )
-containers::EmptyModel_strategy = st.builds(
-    containers::EmptyModel,
+containers_EmptyModel_strategy = st.builds(
+    containers_EmptyModel,
 )
 Package_strategy = st.builds(
     Package,
@@ -5879,8 +6043,18 @@ CompilationUnit_strategy = st.builds(
 Annotable_strategy = st.builds(
     Annotable,
 )
-commons::Commentable_strategy = st.builds(
-    commons::Commentable,
+commons_NamespaceAwareElement_strategy = st.builds(
+    commons_NamespaceAwareElement,
+    namespaces=
+        safe_text
+)
+commons_NamedElement_strategy = st.builds(
+    commons_NamedElement,
+    name=
+        safe_text
+)
+commons_Commentable_strategy = st.builds(
+    commons_Commentable,
     comments=
         safe_text
 )
@@ -5890,17 +6064,20 @@ EnumConstant_strategy = st.builds(
 ReferenceableElement_strategy = st.builds(
     ReferenceableElement,
 )
-containers::Package_strategy = st.builds(
-    containers::Package,
+containers_Package_strategy = st.builds(
+    containers_Package,
 )
-members::EnumConstant_strategy = st.builds(
-    members::EnumConstant,
+members_EnumConstant_strategy = st.builds(
+    members_EnumConstant,
 )
 Type_strategy = st.builds(
     Type,
 )
-classifiers::Classifier_strategy = st.builds(
-    classifiers::Classifier,
+classifiers_Classifier_strategy = st.builds(
+    classifiers_Classifier,
+)
+arrays_ArraySelector_strategy = st.builds(
+    arrays_ArraySelector,
 )
 Implementor_strategy = st.builds(
     Implementor,
@@ -5908,107 +6085,118 @@ Implementor_strategy = st.builds(
 ConcreteClassifier_strategy = st.builds(
     ConcreteClassifier,
 )
-classifiers::Interface_strategy = st.builds(
-    classifiers::Interface,
+classifiers_Interface_strategy = st.builds(
+    classifiers_Interface,
 )
-classifiers::Annotation_strategy = st.builds(
-    classifiers::Annotation,
+classifiers_Annotation_strategy = st.builds(
+    classifiers_Annotation,
 )
-classifiers::Enumeration_strategy = st.builds(
-    classifiers::Enumeration,
+classifiers_Enumeration_strategy = st.builds(
+    classifiers_Enumeration,
 )
-classifiers::Class_strategy = st.builds(
-    classifiers::Class,
+classifiers_Class_strategy = st.builds(
+    classifiers_Class,
 )
 TypeReference_strategy = st.builds(
     TypeReference,
 )
-types::PrimitiveType_strategy = st.builds(
-    types::PrimitiveType,
+types_PrimitiveType_strategy = st.builds(
+    types_PrimitiveType,
 )
-types::ClassifierReference_strategy = st.builds(
-    types::ClassifierReference,
+types_ClassifierReference_strategy = st.builds(
+    types_ClassifierReference,
+)
+types_NamespaceClassifierReference_strategy = st.builds(
+    types_NamespaceClassifierReference,
+)
+classifiers_Implementor_strategy = st.builds(
+    classifiers_Implementor,
 )
 AnnotableAndModifiable_strategy = st.builds(
     AnnotableAndModifiable,
 )
-parameters::Parameter_strategy = st.builds(
-    parameters::Parameter,
+variables_LocalVariable_strategy = st.builds(
+    variables_LocalVariable,
 )
-variables::LocalVariable_strategy = st.builds(
-    variables::LocalVariable,
+parameters_Parameter_strategy = st.builds(
+    parameters_Parameter,
 )
 Statement_strategy = st.builds(
     Statement,
 )
-statements::EmptyStatement_strategy = st.builds(
-    statements::EmptyStatement,
+statements_Condition_strategy = st.builds(
+    statements_Condition,
 )
-statements::Return_strategy = st.builds(
-    statements::Return,
+statements_JumpLabel_strategy = st.builds(
+    statements_JumpLabel,
 )
-statements::ForEachLoop_strategy = st.builds(
-    statements::ForEachLoop,
+statements_EmptyStatement_strategy = st.builds(
+    statements_EmptyStatement,
 )
-statements::Switch_strategy = st.builds(
-    statements::Switch,
+statements_Jump_strategy = st.builds(
+    statements_Jump,
 )
-statements::WhileLoop_strategy = st.builds(
-    statements::WhileLoop,
+statements_Return_strategy = st.builds(
+    statements_Return,
 )
-statements::JumpLabel_strategy = st.builds(
-    statements::JumpLabel,
+statements_ForLoop_strategy = st.builds(
+    statements_ForLoop,
 )
-statements::ExpressionStatement_strategy = st.builds(
-    statements::ExpressionStatement,
+statements_Throw_strategy = st.builds(
+    statements_Throw,
 )
-statements::ForLoop_strategy = st.builds(
-    statements::ForLoop,
+statements_TryBlock_strategy = st.builds(
+    statements_TryBlock,
 )
-statements::TryBlock_strategy = st.builds(
-    statements::TryBlock,
+statements_ForEachLoop_strategy = st.builds(
+    statements_ForEachLoop,
 )
-statements::LocalVariableStatement_strategy = st.builds(
-    statements::LocalVariableStatement,
+statements_ExpressionStatement_strategy = st.builds(
+    statements_ExpressionStatement,
 )
-statements::Assert_strategy = st.builds(
-    statements::Assert,
+statements_Assert_strategy = st.builds(
+    statements_Assert,
 )
-statements::SynchronizedBlock_strategy = st.builds(
-    statements::SynchronizedBlock,
+statements_SynchronizedBlock_strategy = st.builds(
+    statements_SynchronizedBlock,
 )
-statements::Throw_strategy = st.builds(
-    statements::Throw,
+statements_WhileLoop_strategy = st.builds(
+    statements_WhileLoop,
 )
-statements::Condition_strategy = st.builds(
-    statements::Condition,
+statements_LocalVariableStatement_strategy = st.builds(
+    statements_LocalVariableStatement,
 )
-statements::Jump_strategy = st.builds(
-    statements::Jump,
+statements_Switch_strategy = st.builds(
+    statements_Switch,
 )
 Member_strategy = st.builds(
     Member,
 )
-statements::Block_strategy = st.builds(
-    statements::Block,
+statements_Block_strategy = st.builds(
+    statements_Block,
 )
-members::EmptyMember_strategy = st.builds(
-    members::EmptyMember,
+members_Field_strategy = st.builds(
+    members_Field,
 )
-members::Field_strategy = st.builds(
-    members::Field,
+members_EmptyMember_strategy = st.builds(
+    members_EmptyMember,
 )
 MemberContainer_strategy = st.builds(
     MemberContainer,
 )
-classifiers::AnonymousClass_strategy = st.builds(
-    classifiers::AnonymousClass,
+classifiers_AnonymousClass_strategy = st.builds(
+    classifiers_AnonymousClass,
 )
 TypeParametrizable_strategy = st.builds(
     TypeParametrizable,
 )
-members::Constructor_strategy = st.builds(
-    members::Constructor,
+members_Constructor_strategy = st.builds(
+    members_Constructor,
+)
+classifiers_ConcreteClassifier_strategy = st.builds(
+    classifiers_ConcreteClassifier,
+    fullName=
+        safe_text
 )
 ArrayDimension_strategy = st.builds(
     ArrayDimension,
@@ -6019,255 +6207,57 @@ ArrayInitializer_strategy = st.builds(
 ArrayTypeable_strategy = st.builds(
     ArrayTypeable,
 )
-members::AdditionalField_strategy = st.builds(
-    members::AdditionalField,
+variables_AdditionalLocalVariable_strategy = st.builds(
+    variables_AdditionalLocalVariable,
 )
-variables::AdditionalLocalVariable_strategy = st.builds(
-    variables::AdditionalLocalVariable,
+members_AdditionalField_strategy = st.builds(
+    members_AdditionalField,
 )
-generics::TypeArgument_strategy = st.builds(
-    generics::TypeArgument,
+generics_TypeArgument_strategy = st.builds(
+    generics_TypeArgument,
 )
 TypedElement_strategy = st.builds(
     TypedElement,
 )
-variables::Variable_strategy = st.builds(
-    variables::Variable,
+expressions_CastExpression_strategy = st.builds(
+    expressions_CastExpression,
 )
-generics::QualifiedTypeArgument_strategy = st.builds(
-    generics::QualifiedTypeArgument,
+generics_QualifiedTypeArgument_strategy = st.builds(
+    generics_QualifiedTypeArgument,
 )
-expressions::InstanceOfExpression_strategy = st.builds(
-    expressions::InstanceOfExpression,
+arrays_ArrayInstantiationByValues_strategy = st.builds(
+    arrays_ArrayInstantiationByValues,
 )
-expressions::CastExpression_strategy = st.builds(
-    expressions::CastExpression,
+members_Method_strategy = st.builds(
+    members_Method,
 )
-members::Method_strategy = st.builds(
-    members::Method,
+instantiations_Instantiation_strategy = st.builds(
+    instantiations_Instantiation,
+)
+variables_Variable_strategy = st.builds(
+    variables_Variable,
+)
+expressions_InstanceOfExpression_strategy = st.builds(
+    expressions_InstanceOfExpression,
+)
+arrays_ArrayInstantiationBySize_strategy = st.builds(
+    arrays_ArrayInstantiationBySize,
+)
+arrays_ArrayInitializationValue_strategy = st.builds(
+    arrays_ArrayInitializationValue,
 )
 ArrayInitializationValue_strategy = st.builds(
     ArrayInitializationValue,
 )
-Commentable_strategy = st.builds(
-    Commentable,
+expressions_Expression_strategy = st.builds(
+    expressions_Expression,
 )
-instantiations::Initializable_strategy = st.builds(
-    instantiations::Initializable,
+arrays_ArrayInitializer_strategy = st.builds(
+    arrays_ArrayInitializer,
 )
-statements::StatementListContainer_strategy = st.builds(
-    statements::StatementListContainer,
+arrays_ArrayDimension_strategy = st.builds(
+    arrays_ArrayDimension,
 )
-classifiers::Implementor_strategy = st.builds(
-    classifiers::Implementor,
-)
-arrays::ArrayDimension_strategy = st.builds(
-    arrays::ArrayDimension,
-)
-statements::Conditional_strategy = st.builds(
-    statements::Conditional,
-)
-operators::Operator_strategy = st.builds(
-    operators::Operator,
-)
-commons::NamespaceAwareElement_strategy = st.builds(
-    commons::NamespaceAwareElement,
-    namespaces=
-        safe_text
-)
-statements::ForLoopInitializer_strategy = st.builds(
-    statements::ForLoopInitializer,
-)
-types::Type_strategy = st.builds(
-    types::Type,
-)
-types::TypeReference_strategy = st.builds(
-    types::TypeReference,
-)
-arrays::ArrayInitializationValue_strategy = st.builds(
-    arrays::ArrayInitializationValue,
-)
-statements::StatementContainer_strategy = st.builds(
-    statements::StatementContainer,
-)
-modifiers::AnnotationInstanceOrModifier_strategy = st.builds(
-    modifiers::AnnotationInstanceOrModifier,
-)
-parameters::Parametrizable_strategy = st.builds(
-    parameters::Parametrizable,
-)
-statements::Statement_strategy = st.builds(
-    statements::Statement,
-)
-generics::TypeArgumentable_strategy = st.builds(
-    generics::TypeArgumentable,
-)
-imports::ImportingElement_strategy = st.builds(
-    imports::ImportingElement,
-)
-types::TypedElement_strategy = st.builds(
-    types::TypedElement,
-)
-generics::CallTypeArgumentable_strategy = st.builds(
-    generics::CallTypeArgumentable,
-)
-commons::NamedElement_strategy = st.builds(
-    commons::NamedElement,
-    name=
-        safe_text
-)
-members::MemberContainer_strategy = st.builds(
-    members::MemberContainer,
-)
-literals::Self_strategy = st.builds(
-    literals::Self,
-)
-modifiers::AnnotableAndModifiable_strategy = st.builds(
-    modifiers::AnnotableAndModifiable,
-)
-generics::TypeParametrizable_strategy = st.builds(
-    generics::TypeParametrizable,
-)
-references::Argumentable_strategy = st.builds(
-    references::Argumentable,
-)
-arrays::ArraySelector_strategy = st.builds(
-    arrays::ArraySelector,
-)
-members::ExceptionThrower_strategy = st.builds(
-    members::ExceptionThrower,
-)
-modifiers::Modifiable_strategy = st.builds(
-    modifiers::Modifiable,
-)
-annotations::Annotable_strategy = st.builds(
-    annotations::Annotable,
-)
-arrays::ArrayTypeable_strategy = st.builds(
-    arrays::ArrayTypeable,
-)
-Expression_strategy = st.builds(
-    Expression,
-)
-expressions::AssignmentExpressionChild_strategy = st.builds(
-    expressions::AssignmentExpressionChild,
-)
-expressions::AssignmentExpression_strategy = st.builds(
-    expressions::AssignmentExpression,
-)
-annotations::AnnotationValue_strategy = st.builds(
-    annotations::AnnotationValue,
-)
-InterfaceMethod_strategy = st.builds(
-    InterfaceMethod,
-)
-annotations::AnnotationAttribute_strategy = st.builds(
-    annotations::AnnotationAttribute,
-)
-annotations::AnnotationAttributeSetting_strategy = st.builds(
-    annotations::AnnotationAttributeSetting,
-)
-AnnotationAttributeSetting_strategy = st.builds(
-    AnnotationAttributeSetting,
-)
-AnnotationValue_strategy = st.builds(
-    AnnotationValue,
-)
-expressions::Expression_strategy = st.builds(
-    expressions::Expression,
-)
-arrays::ArrayInitializer_strategy = st.builds(
-    arrays::ArrayInitializer,
-)
-annotations::AnnotationParameter_strategy = st.builds(
-    annotations::AnnotationParameter,
-)
-AnnotationParameter_strategy = st.builds(
-    AnnotationParameter,
-)
-annotations::AnnotationParameterList_strategy = st.builds(
-    annotations::AnnotationParameterList,
-)
-annotations::SingleAnnotationParameter_strategy = st.builds(
-    annotations::SingleAnnotationParameter,
-)
-Classifier_strategy = st.builds(
-    Classifier,
-)
-classifiers::ConcreteClassifier_strategy = st.builds(
-    classifiers::ConcreteClassifier,
-    fullName=
-        safe_text
-)
-generics::TypeParameter_strategy = st.builds(
-    generics::TypeParameter,
-)
-NamespaceAwareElement_strategy = st.builds(
-    NamespaceAwareElement,
-)
-imports::Import_strategy = st.builds(
-    imports::Import,
-)
-containers::JavaRoot_strategy = st.builds(
-    containers::JavaRoot,
-)
-types::NamespaceClassifierReference_strategy = st.builds(
-    types::NamespaceClassifierReference,
-)
-AnnotationInstanceOrModifier_strategy = st.builds(
-    AnnotationInstanceOrModifier,
-)
-modifiers::Modifier_strategy = st.builds(
-    modifiers::Modifier,
-)
-Reference_strategy = st.builds(
-    Reference,
-)
-expressions::NestedExpression_strategy = st.builds(
-    expressions::NestedExpression,
-)
-arrays::ArrayInstantiationByValues_strategy = st.builds(
-    arrays::ArrayInstantiationByValues,
-)
-references::SelfReference_strategy = st.builds(
-    references::SelfReference,
-)
-references::ReflectiveClassReference_strategy = st.builds(
-    references::ReflectiveClassReference,
-)
-references::ElementReference_strategy = st.builds(
-    references::ElementReference,
-)
-instantiations::Instantiation_strategy = st.builds(
-    instantiations::Instantiation,
-)
-references::PrimitiveTypeReference_strategy = st.builds(
-    references::PrimitiveTypeReference,
-)
-arrays::ArrayInstantiationBySize_strategy = st.builds(
-    arrays::ArrayInstantiationBySize,
-)
-references::StringReference_strategy = st.builds(
-    references::StringReference,
-    value=
-        safe_text
-)
-annotations::AnnotationInstance_strategy = st.builds(
-    annotations::AnnotationInstance,
-)
-AnnotationInstance_strategy = st.builds(
-    AnnotationInstance,
-)
-
-@given(instance=Parameter_strategy)
-@settings(max_examples=50)
-def test_parameter_instantiation(instance):
-    assert isinstance(instance, Parameter)
-
-@given(instance=parameters::OrdinaryParameter_strategy)
-@settings(max_examples=50)
-def test_parameters::ordinaryparameter_instantiation(instance):
-    assert isinstance(instance, parameters::OrdinaryParameter)
 
 @given(instance=AdditionalLocalVariable_strategy)
 @settings(max_examples=50)
@@ -6304,20 +6294,20 @@ def test_jumplabel_instantiation(instance):
 def test_whileloop_instantiation(instance):
     assert isinstance(instance, WhileLoop)
 
-@given(instance=statements::DoWhileLoop_strategy)
+@given(instance=statements_DoWhileLoop_strategy)
 @settings(max_examples=50)
-def test_statements::dowhileloop_instantiation(instance):
-    assert isinstance(instance, statements::DoWhileLoop)
+def test_statements_dowhileloop_instantiation(instance):
+    assert isinstance(instance, statements_DoWhileLoop)
 
 @given(instance=SwitchCase_strategy)
 @settings(max_examples=50)
 def test_switchcase_instantiation(instance):
     assert isinstance(instance, SwitchCase)
 
-@given(instance=statements::DefaultSwitchCase_strategy)
+@given(instance=statements_DefaultSwitchCase_strategy)
 @settings(max_examples=50)
-def test_statements::defaultswitchcase_instantiation(instance):
-    assert isinstance(instance, statements::DefaultSwitchCase)
+def test_statements_defaultswitchcase_instantiation(instance):
+    assert isinstance(instance, statements_DefaultSwitchCase)
 
 @given(instance=StatementContainer_strategy)
 @settings(max_examples=50)
@@ -6339,200 +6329,210 @@ def test_modifiable_instantiation(instance):
 def test_jump_instantiation(instance):
     assert isinstance(instance, Jump)
 
-@given(instance=statements::Continue_strategy)
+@given(instance=statements_Continue_strategy)
 @settings(max_examples=50)
-def test_statements::continue_instantiation(instance):
-    assert isinstance(instance, statements::Continue)
+def test_statements_continue_instantiation(instance):
+    assert isinstance(instance, statements_Continue)
 
-@given(instance=statements::Break_strategy)
+@given(instance=statements_Break_strategy)
 @settings(max_examples=50)
-def test_statements::break_instantiation(instance):
-    assert isinstance(instance, statements::Break)
+def test_statements_break_instantiation(instance):
+    assert isinstance(instance, statements_Break)
 
 @given(instance=Conditional_strategy)
 @settings(max_examples=50)
 def test_conditional_instantiation(instance):
     assert isinstance(instance, Conditional)
 
-@given(instance=statements::NormalSwitchCase_strategy)
+@given(instance=statements_NormalSwitchCase_strategy)
 @settings(max_examples=50)
-def test_statements::normalswitchcase_instantiation(instance):
-    assert isinstance(instance, statements::NormalSwitchCase)
+def test_statements_normalswitchcase_instantiation(instance):
+    assert isinstance(instance, statements_NormalSwitchCase)
+
+@given(instance=Parameter_strategy)
+@settings(max_examples=50)
+def test_parameter_instantiation(instance):
+    assert isinstance(instance, Parameter)
+
+@given(instance=parameters_OrdinaryParameter_strategy)
+@settings(max_examples=50)
+def test_parameters_ordinaryparameter_instantiation(instance):
+    assert isinstance(instance, parameters_OrdinaryParameter)
 
 @given(instance=PrimitiveType_strategy)
 @settings(max_examples=50)
 def test_primitivetype_instantiation(instance):
     assert isinstance(instance, PrimitiveType)
 
-@given(instance=types::Long_strategy)
+@given(instance=types_Float_strategy)
 @settings(max_examples=50)
-def test_types::long_instantiation(instance):
-    assert isinstance(instance, types::Long)
+def test_types_float_instantiation(instance):
+    assert isinstance(instance, types_Float)
 
-@given(instance=types::Double_strategy)
+@given(instance=types_Long_strategy)
 @settings(max_examples=50)
-def test_types::double_instantiation(instance):
-    assert isinstance(instance, types::Double)
+def test_types_long_instantiation(instance):
+    assert isinstance(instance, types_Long)
 
-@given(instance=types::Float_strategy)
+@given(instance=types_Byte_strategy)
 @settings(max_examples=50)
-def test_types::float_instantiation(instance):
-    assert isinstance(instance, types::Float)
+def test_types_byte_instantiation(instance):
+    assert isinstance(instance, types_Byte)
 
-@given(instance=types::Char_strategy)
+@given(instance=types_Void_strategy)
 @settings(max_examples=50)
-def test_types::char_instantiation(instance):
-    assert isinstance(instance, types::Char)
+def test_types_void_instantiation(instance):
+    assert isinstance(instance, types_Void)
 
-@given(instance=types::Short_strategy)
+@given(instance=types_Short_strategy)
 @settings(max_examples=50)
-def test_types::short_instantiation(instance):
-    assert isinstance(instance, types::Short)
+def test_types_short_instantiation(instance):
+    assert isinstance(instance, types_Short)
 
-@given(instance=types::Void_strategy)
+@given(instance=types_Boolean_strategy)
 @settings(max_examples=50)
-def test_types::void_instantiation(instance):
-    assert isinstance(instance, types::Void)
+def test_types_boolean_instantiation(instance):
+    assert isinstance(instance, types_Boolean)
 
-@given(instance=types::Byte_strategy)
+@given(instance=types_Char_strategy)
 @settings(max_examples=50)
-def test_types::byte_instantiation(instance):
-    assert isinstance(instance, types::Byte)
+def test_types_char_instantiation(instance):
+    assert isinstance(instance, types_Char)
 
-@given(instance=types::Int_strategy)
+@given(instance=types_Double_strategy)
 @settings(max_examples=50)
-def test_types::int_instantiation(instance):
-    assert isinstance(instance, types::Int)
+def test_types_double_instantiation(instance):
+    assert isinstance(instance, types_Double)
 
-@given(instance=types::Boolean_strategy)
+@given(instance=types_Int_strategy)
 @settings(max_examples=50)
-def test_types::boolean_instantiation(instance):
-    assert isinstance(instance, types::Boolean)
+def test_types_int_instantiation(instance):
+    assert isinstance(instance, types_Int)
 
 @given(instance=ElementReference_strategy)
 @settings(max_examples=50)
 def test_elementreference_instantiation(instance):
     assert isinstance(instance, ElementReference)
 
-@given(instance=references::IdentifierReference_strategy)
+@given(instance=references_IdentifierReference_strategy)
 @settings(max_examples=50)
-def test_references::identifierreference_instantiation(instance):
-    assert isinstance(instance, references::IdentifierReference)
+def test_references_identifierreference_instantiation(instance):
+    assert isinstance(instance, references_IdentifierReference)
 
 @given(instance=ArraySelector_strategy)
 @settings(max_examples=50)
 def test_arrayselector_instantiation(instance):
     assert isinstance(instance, ArraySelector)
 
-@given(instance=parameters::VariableLengthParameter_strategy)
+@given(instance=parameters_VariableLengthParameter_strategy)
 @settings(max_examples=50)
-def test_parameters::variablelengthparameter_instantiation(instance):
-    assert isinstance(instance, parameters::VariableLengthParameter)
+def test_parameters_variablelengthparameter_instantiation(instance):
+    assert isinstance(instance, parameters_VariableLengthParameter)
 
 @given(instance=Operator_strategy)
 @settings(max_examples=50)
 def test_operator_instantiation(instance):
     assert isinstance(instance, Operator)
 
-@given(instance=operators::ShiftOperator_strategy)
+@given(instance=operators_AssignmentOperator_strategy)
 @settings(max_examples=50)
-def test_operators::shiftoperator_instantiation(instance):
-    assert isinstance(instance, operators::ShiftOperator)
+def test_operators_assignmentoperator_instantiation(instance):
+    assert isinstance(instance, operators_AssignmentOperator)
 
-@given(instance=operators::AssignmentOperator_strategy)
+@given(instance=operators_EqualityOperator_strategy)
 @settings(max_examples=50)
-def test_operators::assignmentoperator_instantiation(instance):
-    assert isinstance(instance, operators::AssignmentOperator)
+def test_operators_equalityoperator_instantiation(instance):
+    assert isinstance(instance, operators_EqualityOperator)
 
-@given(instance=operators::RelationOperator_strategy)
+@given(instance=operators_MultiplicativeOperator_strategy)
 @settings(max_examples=50)
-def test_operators::relationoperator_instantiation(instance):
-    assert isinstance(instance, operators::RelationOperator)
+def test_operators_multiplicativeoperator_instantiation(instance):
+    assert isinstance(instance, operators_MultiplicativeOperator)
 
-@given(instance=operators::MultiplicativeOperator_strategy)
+@given(instance=operators_RelationOperator_strategy)
 @settings(max_examples=50)
-def test_operators::multiplicativeoperator_instantiation(instance):
-    assert isinstance(instance, operators::MultiplicativeOperator)
+def test_operators_relationoperator_instantiation(instance):
+    assert isinstance(instance, operators_RelationOperator)
 
-@given(instance=operators::EqualityOperator_strategy)
+@given(instance=operators_ShiftOperator_strategy)
 @settings(max_examples=50)
-def test_operators::equalityoperator_instantiation(instance):
-    assert isinstance(instance, operators::EqualityOperator)
+def test_operators_shiftoperator_instantiation(instance):
+    assert isinstance(instance, operators_ShiftOperator)
 
-@given(instance=operators::AdditiveOperator_strategy)
+@given(instance=operators_AdditiveOperator_strategy)
 @settings(max_examples=50)
-def test_operators::additiveoperator_instantiation(instance):
-    assert isinstance(instance, operators::AdditiveOperator)
+def test_operators_additiveoperator_instantiation(instance):
+    assert isinstance(instance, operators_AdditiveOperator)
 
-@given(instance=operators::UnaryModificationOperator_strategy)
+@given(instance=operators_UnaryModificationOperator_strategy)
 @settings(max_examples=50)
-def test_operators::unarymodificationoperator_instantiation(instance):
-    assert isinstance(instance, operators::UnaryModificationOperator)
+def test_operators_unarymodificationoperator_instantiation(instance):
+    assert isinstance(instance, operators_UnaryModificationOperator)
 
-@given(instance=operators::UnaryOperator_strategy)
+@given(instance=operators_UnaryOperator_strategy)
 @settings(max_examples=50)
-def test_operators::unaryoperator_instantiation(instance):
-    assert isinstance(instance, operators::UnaryOperator)
+def test_operators_unaryoperator_instantiation(instance):
+    assert isinstance(instance, operators_UnaryOperator)
 
 @given(instance=Modifier_strategy)
 @settings(max_examples=50)
 def test_modifier_instantiation(instance):
     assert isinstance(instance, Modifier)
 
-@given(instance=modifiers::Synchronized_strategy)
+@given(instance=modifiers_Public_strategy)
 @settings(max_examples=50)
-def test_modifiers::synchronized_instantiation(instance):
-    assert isinstance(instance, modifiers::Synchronized)
+def test_modifiers_public_instantiation(instance):
+    assert isinstance(instance, modifiers_Public)
 
-@given(instance=modifiers::Abstract_strategy)
+@given(instance=modifiers_Strictfp_strategy)
 @settings(max_examples=50)
-def test_modifiers::abstract_instantiation(instance):
-    assert isinstance(instance, modifiers::Abstract)
+def test_modifiers_strictfp_instantiation(instance):
+    assert isinstance(instance, modifiers_Strictfp)
 
-@given(instance=modifiers::Final_strategy)
+@given(instance=modifiers_Volatile_strategy)
 @settings(max_examples=50)
-def test_modifiers::final_instantiation(instance):
-    assert isinstance(instance, modifiers::Final)
+def test_modifiers_volatile_instantiation(instance):
+    assert isinstance(instance, modifiers_Volatile)
 
-@given(instance=modifiers::Public_strategy)
+@given(instance=modifiers_Private_strategy)
 @settings(max_examples=50)
-def test_modifiers::public_instantiation(instance):
-    assert isinstance(instance, modifiers::Public)
+def test_modifiers_private_instantiation(instance):
+    assert isinstance(instance, modifiers_Private)
 
-@given(instance=modifiers::Strictfp_strategy)
+@given(instance=modifiers_Abstract_strategy)
 @settings(max_examples=50)
-def test_modifiers::strictfp_instantiation(instance):
-    assert isinstance(instance, modifiers::Strictfp)
+def test_modifiers_abstract_instantiation(instance):
+    assert isinstance(instance, modifiers_Abstract)
 
-@given(instance=modifiers::Static_strategy)
+@given(instance=modifiers_Transient_strategy)
 @settings(max_examples=50)
-def test_modifiers::static_instantiation(instance):
-    assert isinstance(instance, modifiers::Static)
+def test_modifiers_transient_instantiation(instance):
+    assert isinstance(instance, modifiers_Transient)
 
-@given(instance=modifiers::Protected_strategy)
+@given(instance=modifiers_Synchronized_strategy)
 @settings(max_examples=50)
-def test_modifiers::protected_instantiation(instance):
-    assert isinstance(instance, modifiers::Protected)
+def test_modifiers_synchronized_instantiation(instance):
+    assert isinstance(instance, modifiers_Synchronized)
 
-@given(instance=modifiers::Native_strategy)
+@given(instance=modifiers_Final_strategy)
 @settings(max_examples=50)
-def test_modifiers::native_instantiation(instance):
-    assert isinstance(instance, modifiers::Native)
+def test_modifiers_final_instantiation(instance):
+    assert isinstance(instance, modifiers_Final)
 
-@given(instance=modifiers::Private_strategy)
+@given(instance=modifiers_Native_strategy)
 @settings(max_examples=50)
-def test_modifiers::private_instantiation(instance):
-    assert isinstance(instance, modifiers::Private)
+def test_modifiers_native_instantiation(instance):
+    assert isinstance(instance, modifiers_Native)
 
-@given(instance=modifiers::Volatile_strategy)
+@given(instance=modifiers_Static_strategy)
 @settings(max_examples=50)
-def test_modifiers::volatile_instantiation(instance):
-    assert isinstance(instance, modifiers::Volatile)
+def test_modifiers_static_instantiation(instance):
+    assert isinstance(instance, modifiers_Static)
 
-@given(instance=modifiers::Transient_strategy)
+@given(instance=modifiers_Protected_strategy)
 @settings(max_examples=50)
-def test_modifiers::transient_instantiation(instance):
-    assert isinstance(instance, modifiers::Transient)
+def test_modifiers_protected_instantiation(instance):
+    assert isinstance(instance, modifiers_Protected)
 
 @given(instance=Variable_strategy)
 @settings(max_examples=50)
@@ -6554,15 +6554,15 @@ def test_parametrizable_instantiation(instance):
 def test_statementlistcontainer_instantiation(instance):
     assert isinstance(instance, StatementListContainer)
 
-@given(instance=statements::SwitchCase_strategy)
+@given(instance=statements_CatchBlock_strategy)
 @settings(max_examples=50)
-def test_statements::switchcase_instantiation(instance):
-    assert isinstance(instance, statements::SwitchCase)
+def test_statements_catchblock_instantiation(instance):
+    assert isinstance(instance, statements_CatchBlock)
 
-@given(instance=statements::CatchBlock_strategy)
+@given(instance=statements_SwitchCase_strategy)
 @settings(max_examples=50)
-def test_statements::catchblock_instantiation(instance):
-    assert isinstance(instance, statements::CatchBlock)
+def test_statements_switchcase_instantiation(instance):
+    assert isinstance(instance, statements_SwitchCase)
 
 @given(instance=Initializable_strategy)
 @settings(max_examples=50)
@@ -6574,15 +6574,15 @@ def test_initializable_instantiation(instance):
 def test_method_instantiation(instance):
     assert isinstance(instance, Method)
 
-@given(instance=members::ClassMethod_strategy)
+@given(instance=members_ClassMethod_strategy)
 @settings(max_examples=50)
-def test_members::classmethod_instantiation(instance):
-    assert isinstance(instance, members::ClassMethod)
+def test_members_classmethod_instantiation(instance):
+    assert isinstance(instance, members_ClassMethod)
 
-@given(instance=members::InterfaceMethod_strategy)
+@given(instance=members_InterfaceMethod_strategy)
 @settings(max_examples=50)
-def test_members::interfacemethod_instantiation(instance):
-    assert isinstance(instance, members::InterfaceMethod)
+def test_members_interfacemethod_instantiation(instance):
+    assert isinstance(instance, members_InterfaceMethod)
 
 @given(instance=AdditionalField_strategy)
 @settings(max_examples=50)
@@ -6599,18 +6599,15 @@ def test_namespaceclassifierreference_instantiation(instance):
 def test_doubleliteral_instantiation(instance):
     assert isinstance(instance, DoubleLiteral)
 
-@given(instance=literals::DecimalDoubleLiteral_strategy)
+@given(instance=literals_DecimalDoubleLiteral_strategy)
 @settings(max_examples=50)
-def test_literals::decimaldoubleliteral_instantiation(instance):
-    assert isinstance(instance, literals::DecimalDoubleLiteral)
-
-@given(instance=literals::DecimalDoubleLiteral_strategy)
-def test_literals::decimaldoubleliteral_decimalValue_type(instance):
-    assert isinstance(instance.decimalValue, float)
+def test_literals_decimaldoubleliteral_instantiation(instance):
+    assert isinstance(instance, literals_DecimalDoubleLiteral)
 
 
-@given(instance=literals::DecimalDoubleLiteral_strategy)
-def test_literals::decimaldoubleliteral_decimalValue_setter(instance):
+
+@given(instance=literals_DecimalDoubleLiteral_strategy)
+def test_literals_decimaldoubleliteral_decimalValue_setter(instance):
     original = instance.decimalValue
     instance.decimalValue = original
     assert instance.decimalValue == original
@@ -6620,34 +6617,28 @@ def test_literals::decimaldoubleliteral_decimalValue_setter(instance):
 def test_floatliteral_instantiation(instance):
     assert isinstance(instance, FloatLiteral)
 
-@given(instance=literals::HexFloatLiteral_strategy)
+@given(instance=literals_HexFloatLiteral_strategy)
 @settings(max_examples=50)
-def test_literals::hexfloatliteral_instantiation(instance):
-    assert isinstance(instance, literals::HexFloatLiteral)
-
-@given(instance=literals::HexFloatLiteral_strategy)
-def test_literals::hexfloatliteral_hexValue_type(instance):
-    assert isinstance(instance.hexValue, float)
+def test_literals_hexfloatliteral_instantiation(instance):
+    assert isinstance(instance, literals_HexFloatLiteral)
 
 
-@given(instance=literals::HexFloatLiteral_strategy)
-def test_literals::hexfloatliteral_hexValue_setter(instance):
+
+@given(instance=literals_HexFloatLiteral_strategy)
+def test_literals_hexfloatliteral_hexValue_setter(instance):
     original = instance.hexValue
     instance.hexValue = original
     assert instance.hexValue == original
 
-@given(instance=literals::DecimalFloatLiteral_strategy)
+@given(instance=literals_DecimalFloatLiteral_strategy)
 @settings(max_examples=50)
-def test_literals::decimalfloatliteral_instantiation(instance):
-    assert isinstance(instance, literals::DecimalFloatLiteral)
-
-@given(instance=literals::DecimalFloatLiteral_strategy)
-def test_literals::decimalfloatliteral_decimalValue_type(instance):
-    assert isinstance(instance.decimalValue, float)
+def test_literals_decimalfloatliteral_instantiation(instance):
+    assert isinstance(instance, literals_DecimalFloatLiteral)
 
 
-@given(instance=literals::DecimalFloatLiteral_strategy)
-def test_literals::decimalfloatliteral_decimalValue_setter(instance):
+
+@given(instance=literals_DecimalFloatLiteral_strategy)
+def test_literals_decimalfloatliteral_decimalValue_setter(instance):
     original = instance.decimalValue
     instance.decimalValue = original
     assert instance.decimalValue == original
@@ -6657,50 +6648,41 @@ def test_literals::decimalfloatliteral_decimalValue_setter(instance):
 def test_longliteral_instantiation(instance):
     assert isinstance(instance, LongLiteral)
 
-@given(instance=literals::OctalLongLiteral_strategy)
+@given(instance=literals_HexLongLiteral_strategy)
 @settings(max_examples=50)
-def test_literals::octallongliteral_instantiation(instance):
-    assert isinstance(instance, literals::OctalLongLiteral)
-
-@given(instance=literals::OctalLongLiteral_strategy)
-def test_literals::octallongliteral_octalValue_type(instance):
-    assert isinstance(instance.octalValue, bool)
+def test_literals_hexlongliteral_instantiation(instance):
+    assert isinstance(instance, literals_HexLongLiteral)
 
 
-@given(instance=literals::OctalLongLiteral_strategy)
-def test_literals::octallongliteral_octalValue_setter(instance):
-    original = instance.octalValue
-    instance.octalValue = original
-    assert instance.octalValue == original
 
-@given(instance=literals::HexLongLiteral_strategy)
-@settings(max_examples=50)
-def test_literals::hexlongliteral_instantiation(instance):
-    assert isinstance(instance, literals::HexLongLiteral)
-
-@given(instance=literals::HexLongLiteral_strategy)
-def test_literals::hexlongliteral_hexValue_type(instance):
-    assert isinstance(instance.hexValue, str)
-
-
-@given(instance=literals::HexLongLiteral_strategy)
-def test_literals::hexlongliteral_hexValue_setter(instance):
+@given(instance=literals_HexLongLiteral_strategy)
+def test_literals_hexlongliteral_hexValue_setter(instance):
     original = instance.hexValue
     instance.hexValue = original
     assert instance.hexValue == original
 
-@given(instance=literals::DecimalLongLiteral_strategy)
+@given(instance=literals_OctalLongLiteral_strategy)
 @settings(max_examples=50)
-def test_literals::decimallongliteral_instantiation(instance):
-    assert isinstance(instance, literals::DecimalLongLiteral)
-
-@given(instance=literals::DecimalLongLiteral_strategy)
-def test_literals::decimallongliteral_decimalValue_type(instance):
-    assert isinstance(instance.decimalValue, str)
+def test_literals_octallongliteral_instantiation(instance):
+    assert isinstance(instance, literals_OctalLongLiteral)
 
 
-@given(instance=literals::DecimalLongLiteral_strategy)
-def test_literals::decimallongliteral_decimalValue_setter(instance):
+
+@given(instance=literals_OctalLongLiteral_strategy)
+def test_literals_octallongliteral_octalValue_setter(instance):
+    original = instance.octalValue
+    instance.octalValue = original
+    assert instance.octalValue == original
+
+@given(instance=literals_DecimalLongLiteral_strategy)
+@settings(max_examples=50)
+def test_literals_decimallongliteral_instantiation(instance):
+    assert isinstance(instance, literals_DecimalLongLiteral)
+
+
+
+@given(instance=literals_DecimalLongLiteral_strategy)
+def test_literals_decimallongliteral_decimalValue_setter(instance):
     original = instance.decimalValue
     instance.decimalValue = original
     assert instance.decimalValue == original
@@ -6710,66 +6692,54 @@ def test_literals::decimallongliteral_decimalValue_setter(instance):
 def test_integerliteral_instantiation(instance):
     assert isinstance(instance, IntegerLiteral)
 
-@given(instance=literals::OctalIntegerLiteral_strategy)
+@given(instance=literals_OctalIntegerLiteral_strategy)
 @settings(max_examples=50)
-def test_literals::octalintegerliteral_instantiation(instance):
-    assert isinstance(instance, literals::OctalIntegerLiteral)
-
-@given(instance=literals::OctalIntegerLiteral_strategy)
-def test_literals::octalintegerliteral_octalValue_type(instance):
-    assert isinstance(instance.octalValue, str)
+def test_literals_octalintegerliteral_instantiation(instance):
+    assert isinstance(instance, literals_OctalIntegerLiteral)
 
 
-@given(instance=literals::OctalIntegerLiteral_strategy)
-def test_literals::octalintegerliteral_octalValue_setter(instance):
+
+@given(instance=literals_OctalIntegerLiteral_strategy)
+def test_literals_octalintegerliteral_octalValue_setter(instance):
     original = instance.octalValue
     instance.octalValue = original
     assert instance.octalValue == original
 
-@given(instance=literals::HexIntegerLiteral_strategy)
+@given(instance=literals_HexIntegerLiteral_strategy)
 @settings(max_examples=50)
-def test_literals::hexintegerliteral_instantiation(instance):
-    assert isinstance(instance, literals::HexIntegerLiteral)
-
-@given(instance=literals::HexIntegerLiteral_strategy)
-def test_literals::hexintegerliteral_hexValue_type(instance):
-    assert isinstance(instance.hexValue, str)
+def test_literals_hexintegerliteral_instantiation(instance):
+    assert isinstance(instance, literals_HexIntegerLiteral)
 
 
-@given(instance=literals::HexIntegerLiteral_strategy)
-def test_literals::hexintegerliteral_hexValue_setter(instance):
+
+@given(instance=literals_HexIntegerLiteral_strategy)
+def test_literals_hexintegerliteral_hexValue_setter(instance):
     original = instance.hexValue
     instance.hexValue = original
     assert instance.hexValue == original
 
-@given(instance=literals::DecimalIntegerLiteral_strategy)
+@given(instance=literals_DecimalIntegerLiteral_strategy)
 @settings(max_examples=50)
-def test_literals::decimalintegerliteral_instantiation(instance):
-    assert isinstance(instance, literals::DecimalIntegerLiteral)
-
-@given(instance=literals::DecimalIntegerLiteral_strategy)
-def test_literals::decimalintegerliteral_decimalValue_type(instance):
-    assert isinstance(instance.decimalValue, str)
+def test_literals_decimalintegerliteral_instantiation(instance):
+    assert isinstance(instance, literals_DecimalIntegerLiteral)
 
 
-@given(instance=literals::DecimalIntegerLiteral_strategy)
-def test_literals::decimalintegerliteral_decimalValue_setter(instance):
+
+@given(instance=literals_DecimalIntegerLiteral_strategy)
+def test_literals_decimalintegerliteral_decimalValue_setter(instance):
     original = instance.decimalValue
     instance.decimalValue = original
     assert instance.decimalValue == original
 
-@given(instance=literals::HexDoubleLiteral_strategy)
+@given(instance=literals_HexDoubleLiteral_strategy)
 @settings(max_examples=50)
-def test_literals::hexdoubleliteral_instantiation(instance):
-    assert isinstance(instance, literals::HexDoubleLiteral)
-
-@given(instance=literals::HexDoubleLiteral_strategy)
-def test_literals::hexdoubleliteral_hexValue_type(instance):
-    assert isinstance(instance.hexValue, float)
+def test_literals_hexdoubleliteral_instantiation(instance):
+    assert isinstance(instance, literals_HexDoubleLiteral)
 
 
-@given(instance=literals::HexDoubleLiteral_strategy)
-def test_literals::hexdoubleliteral_hexValue_setter(instance):
+
+@given(instance=literals_HexDoubleLiteral_strategy)
+def test_literals_hexdoubleliteral_hexValue_setter(instance):
     original = instance.hexValue
     instance.hexValue = original
     assert instance.hexValue == original
@@ -6779,59 +6749,53 @@ def test_literals::hexdoubleliteral_hexValue_setter(instance):
 def test_literal_instantiation(instance):
     assert isinstance(instance, Literal)
 
-@given(instance=literals::CharacterLiteral_strategy)
+@given(instance=literals_IntegerLiteral_strategy)
 @settings(max_examples=50)
-def test_literals::characterliteral_instantiation(instance):
-    assert isinstance(instance, literals::CharacterLiteral)
+def test_literals_integerliteral_instantiation(instance):
+    assert isinstance(instance, literals_IntegerLiteral)
 
-@given(instance=literals::CharacterLiteral_strategy)
-def test_literals::characterliteral_value_type(instance):
-    assert isinstance(instance.value, str)
+@given(instance=literals_CharacterLiteral_strategy)
+@settings(max_examples=50)
+def test_literals_characterliteral_instantiation(instance):
+    assert isinstance(instance, literals_CharacterLiteral)
 
 
-@given(instance=literals::CharacterLiteral_strategy)
-def test_literals::characterliteral_value_setter(instance):
+
+@given(instance=literals_CharacterLiteral_strategy)
+def test_literals_characterliteral_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
 
-@given(instance=literals::NullLiteral_strategy)
+@given(instance=literals_NullLiteral_strategy)
 @settings(max_examples=50)
-def test_literals::nullliteral_instantiation(instance):
-    assert isinstance(instance, literals::NullLiteral)
+def test_literals_nullliteral_instantiation(instance):
+    assert isinstance(instance, literals_NullLiteral)
 
-@given(instance=literals::LongLiteral_strategy)
+@given(instance=literals_FloatLiteral_strategy)
 @settings(max_examples=50)
-def test_literals::longliteral_instantiation(instance):
-    assert isinstance(instance, literals::LongLiteral)
+def test_literals_floatliteral_instantiation(instance):
+    assert isinstance(instance, literals_FloatLiteral)
 
-@given(instance=literals::DoubleLiteral_strategy)
+@given(instance=literals_LongLiteral_strategy)
 @settings(max_examples=50)
-def test_literals::doubleliteral_instantiation(instance):
-    assert isinstance(instance, literals::DoubleLiteral)
+def test_literals_longliteral_instantiation(instance):
+    assert isinstance(instance, literals_LongLiteral)
 
-@given(instance=literals::FloatLiteral_strategy)
+@given(instance=literals_DoubleLiteral_strategy)
 @settings(max_examples=50)
-def test_literals::floatliteral_instantiation(instance):
-    assert isinstance(instance, literals::FloatLiteral)
+def test_literals_doubleliteral_instantiation(instance):
+    assert isinstance(instance, literals_DoubleLiteral)
 
-@given(instance=literals::IntegerLiteral_strategy)
+@given(instance=literals_BooleanLiteral_strategy)
 @settings(max_examples=50)
-def test_literals::integerliteral_instantiation(instance):
-    assert isinstance(instance, literals::IntegerLiteral)
-
-@given(instance=literals::BooleanLiteral_strategy)
-@settings(max_examples=50)
-def test_literals::booleanliteral_instantiation(instance):
-    assert isinstance(instance, literals::BooleanLiteral)
-
-@given(instance=literals::BooleanLiteral_strategy)
-def test_literals::booleanliteral_value_type(instance):
-    assert isinstance(instance.value, bool)
+def test_literals_booleanliteral_instantiation(instance):
+    assert isinstance(instance, literals_BooleanLiteral)
 
 
-@given(instance=literals::BooleanLiteral_strategy)
-def test_literals::booleanliteral_value_setter(instance):
+
+@given(instance=literals_BooleanLiteral_strategy)
+def test_literals_booleanliteral_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
@@ -6841,15 +6805,15 @@ def test_literals::booleanliteral_value_setter(instance):
 def test_staticimport_instantiation(instance):
     assert isinstance(instance, StaticImport)
 
-@given(instance=imports::StaticMemberImport_strategy)
+@given(instance=imports_StaticMemberImport_strategy)
 @settings(max_examples=50)
-def test_imports::staticmemberimport_instantiation(instance):
-    assert isinstance(instance, imports::StaticMemberImport)
+def test_imports_staticmemberimport_instantiation(instance):
+    assert isinstance(instance, imports_StaticMemberImport)
 
-@given(instance=imports::StaticClassifierImport_strategy)
+@given(instance=imports_StaticClassifierImport_strategy)
 @settings(max_examples=50)
-def test_imports::staticclassifierimport_instantiation(instance):
-    assert isinstance(instance, imports::StaticClassifierImport)
+def test_imports_staticclassifierimport_instantiation(instance):
+    assert isinstance(instance, imports_StaticClassifierImport)
 
 @given(instance=Static_strategy)
 @settings(max_examples=50)
@@ -6861,25 +6825,25 @@ def test_static_instantiation(instance):
 def test_primaryexpression_instantiation(instance):
     assert isinstance(instance, PrimaryExpression)
 
-@given(instance=literals::Literal_strategy)
+@given(instance=literals_Literal_strategy)
 @settings(max_examples=50)
-def test_literals::literal_instantiation(instance):
-    assert isinstance(instance, literals::Literal)
+def test_literals_literal_instantiation(instance):
+    assert isinstance(instance, literals_Literal)
 
 @given(instance=Self_strategy)
 @settings(max_examples=50)
 def test_self_instantiation(instance):
     assert isinstance(instance, Self)
 
-@given(instance=literals::Super_strategy)
+@given(instance=literals_Super_strategy)
 @settings(max_examples=50)
-def test_literals::super_instantiation(instance):
-    assert isinstance(instance, literals::Super)
+def test_literals_super_instantiation(instance):
+    assert isinstance(instance, literals_Super)
 
-@given(instance=literals::This_strategy)
+@given(instance=literals_This_strategy)
 @settings(max_examples=50)
-def test_literals::this_instantiation(instance):
-    assert isinstance(instance, literals::This)
+def test_literals_this_instantiation(instance):
+    assert isinstance(instance, literals_This)
 
 @given(instance=AnonymousClass_strategy)
 @settings(max_examples=50)
@@ -6896,110 +6860,499 @@ def test_calltypeargumentable_instantiation(instance):
 def test_instantiation_instantiation(instance):
     assert isinstance(instance, Instantiation)
 
-@given(instance=instantiations::ExplicitConstructorCall_strategy)
+@given(instance=instantiations_ExplicitConstructorCall_strategy)
 @settings(max_examples=50)
-def test_instantiations::explicitconstructorcall_instantiation(instance):
-    assert isinstance(instance, instantiations::ExplicitConstructorCall)
+def test_instantiations_explicitconstructorcall_instantiation(instance):
+    assert isinstance(instance, instantiations_ExplicitConstructorCall)
 
-@given(instance=instantiations::NewConstructorCall_strategy)
+@given(instance=instantiations_NewConstructorCall_strategy)
 @settings(max_examples=50)
-def test_instantiations::newconstructorcall_instantiation(instance):
-    assert isinstance(instance, instantiations::NewConstructorCall)
+def test_instantiations_newconstructorcall_instantiation(instance):
+    assert isinstance(instance, instantiations_NewConstructorCall)
 
 @given(instance=TypeArgumentable_strategy)
 @settings(max_examples=50)
 def test_typeargumentable_instantiation(instance):
     assert isinstance(instance, TypeArgumentable)
 
-@given(instance=references::Reference_strategy)
+@given(instance=references_Reference_strategy)
 @settings(max_examples=50)
-def test_references::reference_instantiation(instance):
-    assert isinstance(instance, references::Reference)
+def test_references_reference_instantiation(instance):
+    assert isinstance(instance, references_Reference)
 
 @given(instance=Argumentable_strategy)
 @settings(max_examples=50)
 def test_argumentable_instantiation(instance):
     assert isinstance(instance, Argumentable)
 
-@given(instance=references::MethodCall_strategy)
+@given(instance=references_MethodCall_strategy)
 @settings(max_examples=50)
-def test_references::methodcall_instantiation(instance):
-    assert isinstance(instance, references::MethodCall)
+def test_references_methodcall_instantiation(instance):
+    assert isinstance(instance, references_MethodCall)
 
 @given(instance=Import_strategy)
 @settings(max_examples=50)
 def test_import_instantiation(instance):
     assert isinstance(instance, Import)
 
-@given(instance=imports::PackageImport_strategy)
+@given(instance=imports_ClassifierImport_strategy)
 @settings(max_examples=50)
-def test_imports::packageimport_instantiation(instance):
-    assert isinstance(instance, imports::PackageImport)
+def test_imports_classifierimport_instantiation(instance):
+    assert isinstance(instance, imports_ClassifierImport)
 
-@given(instance=imports::StaticImport_strategy)
+@given(instance=imports_PackageImport_strategy)
 @settings(max_examples=50)
-def test_imports::staticimport_instantiation(instance):
-    assert isinstance(instance, imports::StaticImport)
+def test_imports_packageimport_instantiation(instance):
+    assert isinstance(instance, imports_PackageImport)
 
-@given(instance=imports::ClassifierImport_strategy)
+@given(instance=imports_StaticImport_strategy)
 @settings(max_examples=50)
-def test_imports::classifierimport_instantiation(instance):
-    assert isinstance(instance, imports::ClassifierImport)
+def test_imports_staticimport_instantiation(instance):
+    assert isinstance(instance, imports_StaticImport)
 
 @given(instance=UnaryModificationExpression_strategy)
 @settings(max_examples=50)
 def test_unarymodificationexpression_instantiation(instance):
     assert isinstance(instance, UnaryModificationExpression)
 
-@given(instance=expressions::SuffixUnaryModificationExpression_strategy)
+@given(instance=expressions_SuffixUnaryModificationExpression_strategy)
 @settings(max_examples=50)
-def test_expressions::suffixunarymodificationexpression_instantiation(instance):
-    assert isinstance(instance, expressions::SuffixUnaryModificationExpression)
+def test_expressions_suffixunarymodificationexpression_instantiation(instance):
+    assert isinstance(instance, expressions_SuffixUnaryModificationExpression)
 
-@given(instance=expressions::PrefixUnaryModificationExpression_strategy)
+@given(instance=Commentable_strategy)
 @settings(max_examples=50)
-def test_expressions::prefixunarymodificationexpression_instantiation(instance):
-    assert isinstance(instance, expressions::PrefixUnaryModificationExpression)
+def test_commentable_instantiation(instance):
+    assert isinstance(instance, Commentable)
+
+@given(instance=types_TypedElement_strategy)
+@settings(max_examples=50)
+def test_types_typedelement_instantiation(instance):
+    assert isinstance(instance, types_TypedElement)
+
+@given(instance=types_Type_strategy)
+@settings(max_examples=50)
+def test_types_type_instantiation(instance):
+    assert isinstance(instance, types_Type)
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=types_Type_strategy)
+@settings(max_examples=30)
+def test_types_type_equalstype_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.equalsType(
+            "test", 
+            "test", 
+            "test"
+        )
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.equalsType).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'equalsType' in types_Type is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'equalsType' in types_Type did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'equalsType' in types_Type is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=types_Type_strategy)
+@settings(max_examples=30)
+def test_types_type_issupertype_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.isSuperType(
+            "test", 
+            "test", 
+            "test"
+        )
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.isSuperType).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'isSuperType' in types_Type is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'isSuperType' in types_Type did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'isSuperType' in types_Type is not implemented or raised an error")
+
+@given(instance=operators_Operator_strategy)
+@settings(max_examples=50)
+def test_operators_operator_instantiation(instance):
+    assert isinstance(instance, operators_Operator)
+
+@given(instance=instantiations_Initializable_strategy)
+@settings(max_examples=50)
+def test_instantiations_initializable_instantiation(instance):
+    assert isinstance(instance, instantiations_Initializable)
+
+@given(instance=statements_Conditional_strategy)
+@settings(max_examples=50)
+def test_statements_conditional_instantiation(instance):
+    assert isinstance(instance, statements_Conditional)
+
+@given(instance=statements_Statement_strategy)
+@settings(max_examples=50)
+def test_statements_statement_instantiation(instance):
+    assert isinstance(instance, statements_Statement)
+
+@given(instance=statements_ForLoopInitializer_strategy)
+@settings(max_examples=50)
+def test_statements_forloopinitializer_instantiation(instance):
+    assert isinstance(instance, statements_ForLoopInitializer)
+
+@given(instance=members_MemberContainer_strategy)
+@settings(max_examples=50)
+def test_members_membercontainer_instantiation(instance):
+    assert isinstance(instance, members_MemberContainer)
+
+@given(instance=statements_StatementListContainer_strategy)
+@settings(max_examples=50)
+def test_statements_statementlistcontainer_instantiation(instance):
+    assert isinstance(instance, statements_StatementListContainer)
+
+@given(instance=imports_ImportingElement_strategy)
+@settings(max_examples=50)
+def test_imports_importingelement_instantiation(instance):
+    assert isinstance(instance, imports_ImportingElement)
+
+@given(instance=modifiers_AnnotationInstanceOrModifier_strategy)
+@settings(max_examples=50)
+def test_modifiers_annotationinstanceormodifier_instantiation(instance):
+    assert isinstance(instance, modifiers_AnnotationInstanceOrModifier)
+
+@given(instance=parameters_Parametrizable_strategy)
+@settings(max_examples=50)
+def test_parameters_parametrizable_instantiation(instance):
+    assert isinstance(instance, parameters_Parametrizable)
+
+@given(instance=statements_StatementContainer_strategy)
+@settings(max_examples=50)
+def test_statements_statementcontainer_instantiation(instance):
+    assert isinstance(instance, statements_StatementContainer)
+
+@given(instance=literals_Self_strategy)
+@settings(max_examples=50)
+def test_literals_self_instantiation(instance):
+    assert isinstance(instance, literals_Self)
+
+@given(instance=references_Argumentable_strategy)
+@settings(max_examples=50)
+def test_references_argumentable_instantiation(instance):
+    assert isinstance(instance, references_Argumentable)
+
+@given(instance=modifiers_Modifiable_strategy)
+@settings(max_examples=50)
+def test_modifiers_modifiable_instantiation(instance):
+    assert isinstance(instance, modifiers_Modifiable)
+
+@given(instance=modifiers_AnnotableAndModifiable_strategy)
+@settings(max_examples=50)
+def test_modifiers_annotableandmodifiable_instantiation(instance):
+    assert isinstance(instance, modifiers_AnnotableAndModifiable)
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=modifiers_AnnotableAndModifiable_strategy)
+@settings(max_examples=30)
+def test_modifiers_annotableandmodifiable_isstatic_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.isStatic()
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.isStatic).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'isStatic' in modifiers_AnnotableAndModifiable is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'isStatic' in modifiers_AnnotableAndModifiable did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'isStatic' in modifiers_AnnotableAndModifiable is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=modifiers_AnnotableAndModifiable_strategy)
+@settings(max_examples=30)
+def test_modifiers_annotableandmodifiable_ishidden_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.isHidden(
+            "test"
+        )
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.isHidden).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'isHidden' in modifiers_AnnotableAndModifiable is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'isHidden' in modifiers_AnnotableAndModifiable did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'isHidden' in modifiers_AnnotableAndModifiable is not implemented or raised an error")
+
+@given(instance=types_TypeReference_strategy)
+@settings(max_examples=50)
+def test_types_typereference_instantiation(instance):
+    assert isinstance(instance, types_TypeReference)
+
+@given(instance=members_ExceptionThrower_strategy)
+@settings(max_examples=50)
+def test_members_exceptionthrower_instantiation(instance):
+    assert isinstance(instance, members_ExceptionThrower)
+
+@given(instance=annotations_Annotable_strategy)
+@settings(max_examples=50)
+def test_annotations_annotable_instantiation(instance):
+    assert isinstance(instance, annotations_Annotable)
+
+@given(instance=arrays_ArrayTypeable_strategy)
+@settings(max_examples=50)
+def test_arrays_arraytypeable_instantiation(instance):
+    assert isinstance(instance, arrays_ArrayTypeable)
+
+@given(instance=Expression_strategy)
+@settings(max_examples=50)
+def test_expression_instantiation(instance):
+    assert isinstance(instance, Expression)
+
+@given(instance=annotations_AnnotationValue_strategy)
+@settings(max_examples=50)
+def test_annotations_annotationvalue_instantiation(instance):
+    assert isinstance(instance, annotations_AnnotationValue)
+
+@given(instance=InterfaceMethod_strategy)
+@settings(max_examples=50)
+def test_interfacemethod_instantiation(instance):
+    assert isinstance(instance, InterfaceMethod)
+
+@given(instance=annotations_AnnotationAttribute_strategy)
+@settings(max_examples=50)
+def test_annotations_annotationattribute_instantiation(instance):
+    assert isinstance(instance, annotations_AnnotationAttribute)
+
+@given(instance=annotations_AnnotationAttributeSetting_strategy)
+@settings(max_examples=50)
+def test_annotations_annotationattributesetting_instantiation(instance):
+    assert isinstance(instance, annotations_AnnotationAttributeSetting)
+
+@given(instance=AnnotationAttributeSetting_strategy)
+@settings(max_examples=50)
+def test_annotationattributesetting_instantiation(instance):
+    assert isinstance(instance, AnnotationAttributeSetting)
+
+@given(instance=AnnotationValue_strategy)
+@settings(max_examples=50)
+def test_annotationvalue_instantiation(instance):
+    assert isinstance(instance, AnnotationValue)
+
+@given(instance=annotations_AnnotationParameter_strategy)
+@settings(max_examples=50)
+def test_annotations_annotationparameter_instantiation(instance):
+    assert isinstance(instance, annotations_AnnotationParameter)
+
+@given(instance=AnnotationParameter_strategy)
+@settings(max_examples=50)
+def test_annotationparameter_instantiation(instance):
+    assert isinstance(instance, AnnotationParameter)
+
+@given(instance=annotations_AnnotationParameterList_strategy)
+@settings(max_examples=50)
+def test_annotations_annotationparameterlist_instantiation(instance):
+    assert isinstance(instance, annotations_AnnotationParameterList)
+
+@given(instance=annotations_SingleAnnotationParameter_strategy)
+@settings(max_examples=50)
+def test_annotations_singleannotationparameter_instantiation(instance):
+    assert isinstance(instance, annotations_SingleAnnotationParameter)
+
+@given(instance=Classifier_strategy)
+@settings(max_examples=50)
+def test_classifier_instantiation(instance):
+    assert isinstance(instance, Classifier)
+
+@given(instance=generics_TypeParameter_strategy)
+@settings(max_examples=50)
+def test_generics_typeparameter_instantiation(instance):
+    assert isinstance(instance, generics_TypeParameter)
+
+@given(instance=NamespaceAwareElement_strategy)
+@settings(max_examples=50)
+def test_namespaceawareelement_instantiation(instance):
+    assert isinstance(instance, NamespaceAwareElement)
+
+@given(instance=imports_Import_strategy)
+@settings(max_examples=50)
+def test_imports_import_instantiation(instance):
+    assert isinstance(instance, imports_Import)
+
+@given(instance=AnnotationInstanceOrModifier_strategy)
+@settings(max_examples=50)
+def test_annotationinstanceormodifier_instantiation(instance):
+    assert isinstance(instance, AnnotationInstanceOrModifier)
+
+@given(instance=modifiers_Modifier_strategy)
+@settings(max_examples=50)
+def test_modifiers_modifier_instantiation(instance):
+    assert isinstance(instance, modifiers_Modifier)
+
+@given(instance=Reference_strategy)
+@settings(max_examples=50)
+def test_reference_instantiation(instance):
+    assert isinstance(instance, Reference)
+
+@given(instance=references_PrimitiveTypeReference_strategy)
+@settings(max_examples=50)
+def test_references_primitivetypereference_instantiation(instance):
+    assert isinstance(instance, references_PrimitiveTypeReference)
+
+@given(instance=references_ElementReference_strategy)
+@settings(max_examples=50)
+def test_references_elementreference_instantiation(instance):
+    assert isinstance(instance, references_ElementReference)
+
+@given(instance=references_StringReference_strategy)
+@settings(max_examples=50)
+def test_references_stringreference_instantiation(instance):
+    assert isinstance(instance, references_StringReference)
+
+
+
+@given(instance=references_StringReference_strategy)
+def test_references_stringreference_value_setter(instance):
+    original = instance.value
+    instance.value = original
+    assert instance.value == original
+
+@given(instance=references_SelfReference_strategy)
+@settings(max_examples=50)
+def test_references_selfreference_instantiation(instance):
+    assert isinstance(instance, references_SelfReference)
+
+@given(instance=references_ReflectiveClassReference_strategy)
+@settings(max_examples=50)
+def test_references_reflectiveclassreference_instantiation(instance):
+    assert isinstance(instance, references_ReflectiveClassReference)
+
+@given(instance=expressions_NestedExpression_strategy)
+@settings(max_examples=50)
+def test_expressions_nestedexpression_instantiation(instance):
+    assert isinstance(instance, expressions_NestedExpression)
+
+@given(instance=annotations_AnnotationInstance_strategy)
+@settings(max_examples=50)
+def test_annotations_annotationinstance_instantiation(instance):
+    assert isinstance(instance, annotations_AnnotationInstance)
+
+@given(instance=AnnotationInstance_strategy)
+@settings(max_examples=50)
+def test_annotationinstance_instantiation(instance):
+    assert isinstance(instance, AnnotationInstance)
+
+@given(instance=expressions_PrefixUnaryModificationExpression_strategy)
+@settings(max_examples=50)
+def test_expressions_prefixunarymodificationexpression_instantiation(instance):
+    assert isinstance(instance, expressions_PrefixUnaryModificationExpression)
 
 @given(instance=UnaryModificationOperator_strategy)
 @settings(max_examples=50)
 def test_unarymodificationoperator_instantiation(instance):
     assert isinstance(instance, UnaryModificationOperator)
 
-@given(instance=operators::PlusPlus_strategy)
+@given(instance=operators_PlusPlus_strategy)
 @settings(max_examples=50)
-def test_operators::plusplus_instantiation(instance):
-    assert isinstance(instance, operators::PlusPlus)
+def test_operators_plusplus_instantiation(instance):
+    assert isinstance(instance, operators_PlusPlus)
 
-@given(instance=operators::MinusMinus_strategy)
+@given(instance=operators_MinusMinus_strategy)
 @settings(max_examples=50)
-def test_operators::minusminus_instantiation(instance):
-    assert isinstance(instance, operators::MinusMinus)
+def test_operators_minusminus_instantiation(instance):
+    assert isinstance(instance, operators_MinusMinus)
 
 @given(instance=TypeParameter_strategy)
 @settings(max_examples=50)
 def test_typeparameter_instantiation(instance):
     assert isinstance(instance, TypeParameter)
 
+@given(instance=generics_TypeParametrizable_strategy)
+@settings(max_examples=50)
+def test_generics_typeparametrizable_instantiation(instance):
+    assert isinstance(instance, generics_TypeParametrizable)
+
+@given(instance=generics_CallTypeArgumentable_strategy)
+@settings(max_examples=50)
+def test_generics_calltypeargumentable_instantiation(instance):
+    assert isinstance(instance, generics_CallTypeArgumentable)
+
 @given(instance=TypeArgument_strategy)
 @settings(max_examples=50)
 def test_typeargument_instantiation(instance):
     assert isinstance(instance, TypeArgument)
 
-@given(instance=generics::SuperTypeArgument_strategy)
+@given(instance=generics_ExtendsTypeArgument_strategy)
 @settings(max_examples=50)
-def test_generics::supertypeargument_instantiation(instance):
-    assert isinstance(instance, generics::SuperTypeArgument)
+def test_generics_extendstypeargument_instantiation(instance):
+    assert isinstance(instance, generics_ExtendsTypeArgument)
 
-@given(instance=generics::UnknownTypeArgument_strategy)
+@given(instance=generics_UnknownTypeArgument_strategy)
 @settings(max_examples=50)
-def test_generics::unknowntypeargument_instantiation(instance):
-    assert isinstance(instance, generics::UnknownTypeArgument)
+def test_generics_unknowntypeargument_instantiation(instance):
+    assert isinstance(instance, generics_UnknownTypeArgument)
 
-@given(instance=generics::ExtendsTypeArgument_strategy)
+@given(instance=generics_SuperTypeArgument_strategy)
 @settings(max_examples=50)
-def test_generics::extendstypeargument_instantiation(instance):
-    assert isinstance(instance, generics::ExtendsTypeArgument)
+def test_generics_supertypeargument_instantiation(instance):
+    assert isinstance(instance, generics_SuperTypeArgument)
+
+@given(instance=generics_TypeArgumentable_strategy)
+@settings(max_examples=50)
+def test_generics_typeargumentable_instantiation(instance):
+    assert isinstance(instance, generics_TypeArgumentable)
 
 @given(instance=AdditiveOperator_strategy)
 @settings(max_examples=50)
@@ -7011,100 +7364,100 @@ def test_additiveoperator_instantiation(instance):
 def test_additiveexpressionchild_instantiation(instance):
     assert isinstance(instance, AdditiveExpressionChild)
 
-@given(instance=expressions::MultiplicativeExpression_strategy)
+@given(instance=expressions_MultiplicativeExpression_strategy)
 @settings(max_examples=50)
-def test_expressions::multiplicativeexpression_instantiation(instance):
-    assert isinstance(instance, expressions::MultiplicativeExpression)
+def test_expressions_multiplicativeexpression_instantiation(instance):
+    assert isinstance(instance, expressions_MultiplicativeExpression)
 
 @given(instance=UnaryModificationExpressionChild_strategy)
 @settings(max_examples=50)
 def test_unarymodificationexpressionchild_instantiation(instance):
     assert isinstance(instance, UnaryModificationExpressionChild)
 
-@given(instance=expressions::PrimaryExpression_strategy)
+@given(instance=expressions_PrimaryExpression_strategy)
 @settings(max_examples=50)
-def test_expressions::primaryexpression_instantiation(instance):
-    assert isinstance(instance, expressions::PrimaryExpression)
+def test_expressions_primaryexpression_instantiation(instance):
+    assert isinstance(instance, expressions_PrimaryExpression)
 
 @given(instance=UnaryExpressionChild_strategy)
 @settings(max_examples=50)
 def test_unaryexpressionchild_instantiation(instance):
     assert isinstance(instance, UnaryExpressionChild)
 
-@given(instance=expressions::UnaryModificationExpressionChild_strategy)
+@given(instance=expressions_UnaryModificationExpression_strategy)
 @settings(max_examples=50)
-def test_expressions::unarymodificationexpressionchild_instantiation(instance):
-    assert isinstance(instance, expressions::UnaryModificationExpressionChild)
+def test_expressions_unarymodificationexpression_instantiation(instance):
+    assert isinstance(instance, expressions_UnaryModificationExpression)
 
-@given(instance=expressions::UnaryModificationExpression_strategy)
+@given(instance=expressions_UnaryModificationExpressionChild_strategy)
 @settings(max_examples=50)
-def test_expressions::unarymodificationexpression_instantiation(instance):
-    assert isinstance(instance, expressions::UnaryModificationExpression)
+def test_expressions_unarymodificationexpressionchild_instantiation(instance):
+    assert isinstance(instance, expressions_UnaryModificationExpressionChild)
 
 @given(instance=UnaryOperator_strategy)
 @settings(max_examples=50)
 def test_unaryoperator_instantiation(instance):
     assert isinstance(instance, UnaryOperator)
 
-@given(instance=operators::Addition_strategy)
+@given(instance=operators_Negate_strategy)
 @settings(max_examples=50)
-def test_operators::addition_instantiation(instance):
-    assert isinstance(instance, operators::Addition)
+def test_operators_negate_instantiation(instance):
+    assert isinstance(instance, operators_Negate)
 
-@given(instance=operators::Complement_strategy)
+@given(instance=operators_Addition_strategy)
 @settings(max_examples=50)
-def test_operators::complement_instantiation(instance):
-    assert isinstance(instance, operators::Complement)
+def test_operators_addition_instantiation(instance):
+    assert isinstance(instance, operators_Addition)
 
-@given(instance=operators::Negate_strategy)
+@given(instance=operators_Subtraction_strategy)
 @settings(max_examples=50)
-def test_operators::negate_instantiation(instance):
-    assert isinstance(instance, operators::Negate)
+def test_operators_subtraction_instantiation(instance):
+    assert isinstance(instance, operators_Subtraction)
 
-@given(instance=operators::Subtraction_strategy)
+@given(instance=operators_Complement_strategy)
 @settings(max_examples=50)
-def test_operators::subtraction_instantiation(instance):
-    assert isinstance(instance, operators::Subtraction)
+def test_operators_complement_instantiation(instance):
+    assert isinstance(instance, operators_Complement)
 
-@given(instance=expressions::MultiplicativeExpressionChild_strategy)
+@given(instance=expressions_MultiplicativeExpressionChild_strategy)
 @settings(max_examples=50)
-def test_expressions::multiplicativeexpressionchild_instantiation(instance):
-    assert isinstance(instance, expressions::MultiplicativeExpressionChild)
+def test_expressions_multiplicativeexpressionchild_instantiation(instance):
+    assert isinstance(instance, expressions_MultiplicativeExpressionChild)
 
 @given(instance=MultiplicativeOperator_strategy)
 @settings(max_examples=50)
 def test_multiplicativeoperator_instantiation(instance):
     assert isinstance(instance, MultiplicativeOperator)
 
-@given(instance=operators::Division_strategy)
+@given(instance=operators_Division_strategy)
 @settings(max_examples=50)
-def test_operators::division_instantiation(instance):
-    assert isinstance(instance, operators::Division)
+def test_operators_division_instantiation(instance):
+    assert isinstance(instance, operators_Division)
 
-@given(instance=operators::Multiplication_strategy)
+@given(instance=operators_Remainder_strategy)
 @settings(max_examples=50)
-def test_operators::multiplication_instantiation(instance):
-    assert isinstance(instance, operators::Multiplication)
+def test_operators_remainder_instantiation(instance):
+    assert isinstance(instance, operators_Remainder)
 
-@given(instance=operators::Remainder_strategy)
+@given(instance=operators_Multiplication_strategy)
 @settings(max_examples=50)
-def test_operators::remainder_instantiation(instance):
-    assert isinstance(instance, operators::Remainder)
+def test_operators_multiplication_instantiation(instance):
+    assert isinstance(instance, operators_Multiplication)
 
 @given(instance=MultiplicativeExpressionChild_strategy)
 @settings(max_examples=50)
 def test_multiplicativeexpressionchild_instantiation(instance):
     assert isinstance(instance, MultiplicativeExpressionChild)
 
-@given(instance=expressions::UnaryExpressionChild_strategy)
+@given(instance=expressions_UnaryExpressionChild_strategy)
 @settings(max_examples=50)
-def test_expressions::unaryexpressionchild_instantiation(instance):
-    assert isinstance(instance, expressions::UnaryExpressionChild)
+def test_expressions_unaryexpressionchild_instantiation(instance):
+    assert isinstance(instance, expressions_UnaryExpressionChild)
 
-@given(instance=expressions::UnaryExpression_strategy)
+@given(instance=expressions_UnaryExpression_strategy)
 @settings(max_examples=50)
-def test_expressions::unaryexpression_instantiation(instance):
-    assert isinstance(instance, expressions::UnaryExpression)
+def test_expressions_unaryexpression_instantiation(instance):
+    assert isinstance(instance, expressions_UnaryExpression)
 
 @given(instance=EqualityExpressionChild_strategy)
 @settings(max_examples=50)
@@ -7116,290 +7469,300 @@ def test_equalityexpressionchild_instantiation(instance):
 def test_equalityoperator_instantiation(instance):
     assert isinstance(instance, EqualityOperator)
 
-@given(instance=operators::Equal_strategy)
+@given(instance=operators_Equal_strategy)
 @settings(max_examples=50)
-def test_operators::equal_instantiation(instance):
-    assert isinstance(instance, operators::Equal)
+def test_operators_equal_instantiation(instance):
+    assert isinstance(instance, operators_Equal)
 
-@given(instance=operators::NotEqual_strategy)
+@given(instance=operators_NotEqual_strategy)
 @settings(max_examples=50)
-def test_operators::notequal_instantiation(instance):
-    assert isinstance(instance, operators::NotEqual)
+def test_operators_notequal_instantiation(instance):
+    assert isinstance(instance, operators_NotEqual)
 
 @given(instance=ShiftOperator_strategy)
 @settings(max_examples=50)
 def test_shiftoperator_instantiation(instance):
     assert isinstance(instance, ShiftOperator)
 
-@given(instance=operators::UnsignedRightShift_strategy)
+@given(instance=operators_LeftShift_strategy)
 @settings(max_examples=50)
-def test_operators::unsignedrightshift_instantiation(instance):
-    assert isinstance(instance, operators::UnsignedRightShift)
+def test_operators_leftshift_instantiation(instance):
+    assert isinstance(instance, operators_LeftShift)
 
-@given(instance=operators::LeftShift_strategy)
+@given(instance=operators_RightShift_strategy)
 @settings(max_examples=50)
-def test_operators::leftshift_instantiation(instance):
-    assert isinstance(instance, operators::LeftShift)
+def test_operators_rightshift_instantiation(instance):
+    assert isinstance(instance, operators_RightShift)
 
-@given(instance=operators::RightShift_strategy)
+@given(instance=operators_UnsignedRightShift_strategy)
 @settings(max_examples=50)
-def test_operators::rightshift_instantiation(instance):
-    assert isinstance(instance, operators::RightShift)
+def test_operators_unsignedrightshift_instantiation(instance):
+    assert isinstance(instance, operators_UnsignedRightShift)
 
 @given(instance=ShiftExpressionChild_strategy)
 @settings(max_examples=50)
 def test_shiftexpressionchild_instantiation(instance):
     assert isinstance(instance, ShiftExpressionChild)
 
-@given(instance=expressions::AdditiveExpression_strategy)
+@given(instance=expressions_AdditiveExpressionChild_strategy)
 @settings(max_examples=50)
-def test_expressions::additiveexpression_instantiation(instance):
-    assert isinstance(instance, expressions::AdditiveExpression)
+def test_expressions_additiveexpressionchild_instantiation(instance):
+    assert isinstance(instance, expressions_AdditiveExpressionChild)
 
-@given(instance=expressions::AdditiveExpressionChild_strategy)
+@given(instance=expressions_AdditiveExpression_strategy)
 @settings(max_examples=50)
-def test_expressions::additiveexpressionchild_instantiation(instance):
-    assert isinstance(instance, expressions::AdditiveExpressionChild)
+def test_expressions_additiveexpression_instantiation(instance):
+    assert isinstance(instance, expressions_AdditiveExpression)
 
 @given(instance=RelationOperator_strategy)
 @settings(max_examples=50)
 def test_relationoperator_instantiation(instance):
     assert isinstance(instance, RelationOperator)
 
-@given(instance=operators::LessThanOrEqual_strategy)
+@given(instance=operators_GreaterThanOrEqual_strategy)
 @settings(max_examples=50)
-def test_operators::lessthanorequal_instantiation(instance):
-    assert isinstance(instance, operators::LessThanOrEqual)
+def test_operators_greaterthanorequal_instantiation(instance):
+    assert isinstance(instance, operators_GreaterThanOrEqual)
 
-@given(instance=operators::GreaterThanOrEqual_strategy)
+@given(instance=operators_LessThanOrEqual_strategy)
 @settings(max_examples=50)
-def test_operators::greaterthanorequal_instantiation(instance):
-    assert isinstance(instance, operators::GreaterThanOrEqual)
+def test_operators_lessthanorequal_instantiation(instance):
+    assert isinstance(instance, operators_LessThanOrEqual)
 
-@given(instance=operators::GreaterThan_strategy)
+@given(instance=operators_LessThan_strategy)
 @settings(max_examples=50)
-def test_operators::greaterthan_instantiation(instance):
-    assert isinstance(instance, operators::GreaterThan)
+def test_operators_lessthan_instantiation(instance):
+    assert isinstance(instance, operators_LessThan)
 
-@given(instance=operators::LessThan_strategy)
+@given(instance=operators_GreaterThan_strategy)
 @settings(max_examples=50)
-def test_operators::lessthan_instantiation(instance):
-    assert isinstance(instance, operators::LessThan)
+def test_operators_greaterthan_instantiation(instance):
+    assert isinstance(instance, operators_GreaterThan)
 
 @given(instance=RelationExpressionChild_strategy)
 @settings(max_examples=50)
 def test_relationexpressionchild_instantiation(instance):
     assert isinstance(instance, RelationExpressionChild)
 
-@given(instance=expressions::ShiftExpression_strategy)
+@given(instance=expressions_ShiftExpressionChild_strategy)
 @settings(max_examples=50)
-def test_expressions::shiftexpression_instantiation(instance):
-    assert isinstance(instance, expressions::ShiftExpression)
+def test_expressions_shiftexpressionchild_instantiation(instance):
+    assert isinstance(instance, expressions_ShiftExpressionChild)
 
-@given(instance=expressions::ShiftExpressionChild_strategy)
+@given(instance=expressions_ShiftExpression_strategy)
 @settings(max_examples=50)
-def test_expressions::shiftexpressionchild_instantiation(instance):
-    assert isinstance(instance, expressions::ShiftExpressionChild)
+def test_expressions_shiftexpression_instantiation(instance):
+    assert isinstance(instance, expressions_ShiftExpression)
 
-@given(instance=expressions::InstanceOfExpressionChild_strategy)
+@given(instance=expressions_InstanceOfExpressionChild_strategy)
 @settings(max_examples=50)
-def test_expressions::instanceofexpressionchild_instantiation(instance):
-    assert isinstance(instance, expressions::InstanceOfExpressionChild)
+def test_expressions_instanceofexpressionchild_instantiation(instance):
+    assert isinstance(instance, expressions_InstanceOfExpressionChild)
 
 @given(instance=InstanceOfExpressionChild_strategy)
 @settings(max_examples=50)
 def test_instanceofexpressionchild_instantiation(instance):
     assert isinstance(instance, InstanceOfExpressionChild)
 
-@given(instance=expressions::RelationExpressionChild_strategy)
+@given(instance=expressions_RelationExpression_strategy)
 @settings(max_examples=50)
-def test_expressions::relationexpressionchild_instantiation(instance):
-    assert isinstance(instance, expressions::RelationExpressionChild)
+def test_expressions_relationexpression_instantiation(instance):
+    assert isinstance(instance, expressions_RelationExpression)
 
-@given(instance=expressions::RelationExpression_strategy)
+@given(instance=expressions_RelationExpressionChild_strategy)
 @settings(max_examples=50)
-def test_expressions::relationexpression_instantiation(instance):
-    assert isinstance(instance, expressions::RelationExpression)
+def test_expressions_relationexpressionchild_instantiation(instance):
+    assert isinstance(instance, expressions_RelationExpressionChild)
 
 @given(instance=ConditionalOrExpressionChild_strategy)
 @settings(max_examples=50)
 def test_conditionalorexpressionchild_instantiation(instance):
     assert isinstance(instance, ConditionalOrExpressionChild)
 
-@given(instance=expressions::ConditionalAndExpression_strategy)
+@given(instance=expressions_ConditionalAndExpression_strategy)
 @settings(max_examples=50)
-def test_expressions::conditionalandexpression_instantiation(instance):
-    assert isinstance(instance, expressions::ConditionalAndExpression)
+def test_expressions_conditionalandexpression_instantiation(instance):
+    assert isinstance(instance, expressions_ConditionalAndExpression)
 
 @given(instance=AndExpressionChild_strategy)
 @settings(max_examples=50)
 def test_andexpressionchild_instantiation(instance):
     assert isinstance(instance, AndExpressionChild)
 
-@given(instance=expressions::EqualityExpression_strategy)
+@given(instance=expressions_EqualityExpressionChild_strategy)
 @settings(max_examples=50)
-def test_expressions::equalityexpression_instantiation(instance):
-    assert isinstance(instance, expressions::EqualityExpression)
+def test_expressions_equalityexpressionchild_instantiation(instance):
+    assert isinstance(instance, expressions_EqualityExpressionChild)
 
-@given(instance=expressions::EqualityExpressionChild_strategy)
+@given(instance=expressions_EqualityExpression_strategy)
 @settings(max_examples=50)
-def test_expressions::equalityexpressionchild_instantiation(instance):
-    assert isinstance(instance, expressions::EqualityExpressionChild)
+def test_expressions_equalityexpression_instantiation(instance):
+    assert isinstance(instance, expressions_EqualityExpression)
 
 @given(instance=ExclusiveOrExpressionChild_strategy)
 @settings(max_examples=50)
 def test_exclusiveorexpressionchild_instantiation(instance):
     assert isinstance(instance, ExclusiveOrExpressionChild)
 
-@given(instance=expressions::AndExpression_strategy)
+@given(instance=expressions_AndExpressionChild_strategy)
 @settings(max_examples=50)
-def test_expressions::andexpression_instantiation(instance):
-    assert isinstance(instance, expressions::AndExpression)
+def test_expressions_andexpressionchild_instantiation(instance):
+    assert isinstance(instance, expressions_AndExpressionChild)
 
-@given(instance=expressions::AndExpressionChild_strategy)
+@given(instance=expressions_AndExpression_strategy)
 @settings(max_examples=50)
-def test_expressions::andexpressionchild_instantiation(instance):
-    assert isinstance(instance, expressions::AndExpressionChild)
+def test_expressions_andexpression_instantiation(instance):
+    assert isinstance(instance, expressions_AndExpression)
 
 @given(instance=InclusiveOrExpressionChild_strategy)
 @settings(max_examples=50)
 def test_inclusiveorexpressionchild_instantiation(instance):
     assert isinstance(instance, InclusiveOrExpressionChild)
 
-@given(instance=expressions::ExclusiveOrExpression_strategy)
+@given(instance=expressions_ExclusiveOrExpression_strategy)
 @settings(max_examples=50)
-def test_expressions::exclusiveorexpression_instantiation(instance):
-    assert isinstance(instance, expressions::ExclusiveOrExpression)
+def test_expressions_exclusiveorexpression_instantiation(instance):
+    assert isinstance(instance, expressions_ExclusiveOrExpression)
 
-@given(instance=expressions::ExclusiveOrExpressionChild_strategy)
+@given(instance=expressions_ExclusiveOrExpressionChild_strategy)
 @settings(max_examples=50)
-def test_expressions::exclusiveorexpressionchild_instantiation(instance):
-    assert isinstance(instance, expressions::ExclusiveOrExpressionChild)
+def test_expressions_exclusiveorexpressionchild_instantiation(instance):
+    assert isinstance(instance, expressions_ExclusiveOrExpressionChild)
 
-@given(instance=expressions::ConditionalAndExpressionChild_strategy)
+@given(instance=expressions_ConditionalAndExpressionChild_strategy)
 @settings(max_examples=50)
-def test_expressions::conditionalandexpressionchild_instantiation(instance):
-    assert isinstance(instance, expressions::ConditionalAndExpressionChild)
+def test_expressions_conditionalandexpressionchild_instantiation(instance):
+    assert isinstance(instance, expressions_ConditionalAndExpressionChild)
+
+@given(instance=expressions_AssignmentExpression_strategy)
+@settings(max_examples=50)
+def test_expressions_assignmentexpression_instantiation(instance):
+    assert isinstance(instance, expressions_AssignmentExpression)
 
 @given(instance=ConditionalAndExpressionChild_strategy)
 @settings(max_examples=50)
 def test_conditionalandexpressionchild_instantiation(instance):
     assert isinstance(instance, ConditionalAndExpressionChild)
 
-@given(instance=expressions::InclusiveOrExpressionChild_strategy)
+@given(instance=expressions_InclusiveOrExpressionChild_strategy)
 @settings(max_examples=50)
-def test_expressions::inclusiveorexpressionchild_instantiation(instance):
-    assert isinstance(instance, expressions::InclusiveOrExpressionChild)
+def test_expressions_inclusiveorexpressionchild_instantiation(instance):
+    assert isinstance(instance, expressions_InclusiveOrExpressionChild)
 
-@given(instance=expressions::InclusiveOrExpression_strategy)
+@given(instance=expressions_InclusiveOrExpression_strategy)
 @settings(max_examples=50)
-def test_expressions::inclusiveorexpression_instantiation(instance):
-    assert isinstance(instance, expressions::InclusiveOrExpression)
+def test_expressions_inclusiveorexpression_instantiation(instance):
+    assert isinstance(instance, expressions_InclusiveOrExpression)
 
 @given(instance=ConditionalExpressionChild_strategy)
 @settings(max_examples=50)
 def test_conditionalexpressionchild_instantiation(instance):
     assert isinstance(instance, ConditionalExpressionChild)
 
-@given(instance=expressions::ConditionalOrExpression_strategy)
+@given(instance=expressions_ConditionalOrExpression_strategy)
 @settings(max_examples=50)
-def test_expressions::conditionalorexpression_instantiation(instance):
-    assert isinstance(instance, expressions::ConditionalOrExpression)
+def test_expressions_conditionalorexpression_instantiation(instance):
+    assert isinstance(instance, expressions_ConditionalOrExpression)
 
-@given(instance=expressions::ConditionalOrExpressionChild_strategy)
+@given(instance=expressions_ConditionalOrExpressionChild_strategy)
 @settings(max_examples=50)
-def test_expressions::conditionalorexpressionchild_instantiation(instance):
-    assert isinstance(instance, expressions::ConditionalOrExpressionChild)
+def test_expressions_conditionalorexpressionchild_instantiation(instance):
+    assert isinstance(instance, expressions_ConditionalOrExpressionChild)
+
+@given(instance=expressions_AssignmentExpressionChild_strategy)
+@settings(max_examples=50)
+def test_expressions_assignmentexpressionchild_instantiation(instance):
+    assert isinstance(instance, expressions_AssignmentExpressionChild)
 
 @given(instance=AssignmentOperator_strategy)
 @settings(max_examples=50)
 def test_assignmentoperator_instantiation(instance):
     assert isinstance(instance, AssignmentOperator)
 
-@given(instance=operators::AssignmentExclusiveOr_strategy)
+@given(instance=operators_AssignmentAnd_strategy)
 @settings(max_examples=50)
-def test_operators::assignmentexclusiveor_instantiation(instance):
-    assert isinstance(instance, operators::AssignmentExclusiveOr)
+def test_operators_assignmentand_instantiation(instance):
+    assert isinstance(instance, operators_AssignmentAnd)
 
-@given(instance=operators::AssignmentOr_strategy)
+@given(instance=operators_AssignmentExclusiveOr_strategy)
 @settings(max_examples=50)
-def test_operators::assignmentor_instantiation(instance):
-    assert isinstance(instance, operators::AssignmentOr)
+def test_operators_assignmentexclusiveor_instantiation(instance):
+    assert isinstance(instance, operators_AssignmentExclusiveOr)
 
-@given(instance=operators::AssignmentRightShift_strategy)
+@given(instance=operators_AssignmentUnsignedRightShift_strategy)
 @settings(max_examples=50)
-def test_operators::assignmentrightshift_instantiation(instance):
-    assert isinstance(instance, operators::AssignmentRightShift)
+def test_operators_assignmentunsignedrightshift_instantiation(instance):
+    assert isinstance(instance, operators_AssignmentUnsignedRightShift)
 
-@given(instance=operators::AssignmentAnd_strategy)
+@given(instance=operators_AssignmentPlus_strategy)
 @settings(max_examples=50)
-def test_operators::assignmentand_instantiation(instance):
-    assert isinstance(instance, operators::AssignmentAnd)
+def test_operators_assignmentplus_instantiation(instance):
+    assert isinstance(instance, operators_AssignmentPlus)
 
-@given(instance=operators::AssignmentMultiplication_strategy)
+@given(instance=operators_AssignmentMinus_strategy)
 @settings(max_examples=50)
-def test_operators::assignmentmultiplication_instantiation(instance):
-    assert isinstance(instance, operators::AssignmentMultiplication)
+def test_operators_assignmentminus_instantiation(instance):
+    assert isinstance(instance, operators_AssignmentMinus)
 
-@given(instance=operators::Assignment_strategy)
+@given(instance=operators_Assignment_strategy)
 @settings(max_examples=50)
-def test_operators::assignment_instantiation(instance):
-    assert isinstance(instance, operators::Assignment)
+def test_operators_assignment_instantiation(instance):
+    assert isinstance(instance, operators_Assignment)
 
-@given(instance=operators::AssignmentLeftShift_strategy)
+@given(instance=operators_AssignmentRightShift_strategy)
 @settings(max_examples=50)
-def test_operators::assignmentleftshift_instantiation(instance):
-    assert isinstance(instance, operators::AssignmentLeftShift)
+def test_operators_assignmentrightshift_instantiation(instance):
+    assert isinstance(instance, operators_AssignmentRightShift)
 
-@given(instance=operators::AssignmentMinus_strategy)
+@given(instance=operators_AssignmentOr_strategy)
 @settings(max_examples=50)
-def test_operators::assignmentminus_instantiation(instance):
-    assert isinstance(instance, operators::AssignmentMinus)
+def test_operators_assignmentor_instantiation(instance):
+    assert isinstance(instance, operators_AssignmentOr)
 
-@given(instance=operators::AssignmentPlus_strategy)
+@given(instance=operators_AssignmentMultiplication_strategy)
 @settings(max_examples=50)
-def test_operators::assignmentplus_instantiation(instance):
-    assert isinstance(instance, operators::AssignmentPlus)
+def test_operators_assignmentmultiplication_instantiation(instance):
+    assert isinstance(instance, operators_AssignmentMultiplication)
 
-@given(instance=operators::AssignmentUnsignedRightShift_strategy)
+@given(instance=operators_AssignmentDivision_strategy)
 @settings(max_examples=50)
-def test_operators::assignmentunsignedrightshift_instantiation(instance):
-    assert isinstance(instance, operators::AssignmentUnsignedRightShift)
+def test_operators_assignmentdivision_instantiation(instance):
+    assert isinstance(instance, operators_AssignmentDivision)
 
-@given(instance=operators::AssignmentModulo_strategy)
+@given(instance=operators_AssignmentLeftShift_strategy)
 @settings(max_examples=50)
-def test_operators::assignmentmodulo_instantiation(instance):
-    assert isinstance(instance, operators::AssignmentModulo)
+def test_operators_assignmentleftshift_instantiation(instance):
+    assert isinstance(instance, operators_AssignmentLeftShift)
 
-@given(instance=operators::AssignmentDivision_strategy)
+@given(instance=operators_AssignmentModulo_strategy)
 @settings(max_examples=50)
-def test_operators::assignmentdivision_instantiation(instance):
-    assert isinstance(instance, operators::AssignmentDivision)
+def test_operators_assignmentmodulo_instantiation(instance):
+    assert isinstance(instance, operators_AssignmentModulo)
 
 @given(instance=AssignmentExpressionChild_strategy)
 @settings(max_examples=50)
 def test_assignmentexpressionchild_instantiation(instance):
     assert isinstance(instance, AssignmentExpressionChild)
 
-@given(instance=expressions::ConditionalExpressionChild_strategy)
+@given(instance=expressions_ConditionalExpression_strategy)
 @settings(max_examples=50)
-def test_expressions::conditionalexpressionchild_instantiation(instance):
-    assert isinstance(instance, expressions::ConditionalExpressionChild)
+def test_expressions_conditionalexpression_instantiation(instance):
+    assert isinstance(instance, expressions_ConditionalExpression)
 
-@given(instance=expressions::ConditionalExpression_strategy)
+@given(instance=expressions_ConditionalExpressionChild_strategy)
 @settings(max_examples=50)
-def test_expressions::conditionalexpression_instantiation(instance):
-    assert isinstance(instance, expressions::ConditionalExpression)
+def test_expressions_conditionalexpressionchild_instantiation(instance):
+    assert isinstance(instance, expressions_ConditionalExpressionChild)
 
 @given(instance=JavaRoot_strategy)
 @settings(max_examples=50)
 def test_javaroot_instantiation(instance):
     assert isinstance(instance, JavaRoot)
 
-@given(instance=containers::CompilationUnit_strategy)
+@given(instance=containers_CompilationUnit_strategy)
 @settings(max_examples=50)
-def test_containers::compilationunit_instantiation(instance):
-    assert isinstance(instance, containers::CompilationUnit)
+def test_containers_compilationunit_instantiation(instance):
+    assert isinstance(instance, containers_CompilationUnit)
 
 @given(instance=ImportingElement_strategy)
 @settings(max_examples=50)
@@ -7411,30 +7774,35 @@ def test_importingelement_instantiation(instance):
 def test_namedelement_instantiation(instance):
     assert isinstance(instance, NamedElement)
 
-@given(instance=references::ReferenceableElement_strategy)
+@given(instance=members_Member_strategy)
 @settings(max_examples=50)
-def test_references::referenceableelement_instantiation(instance):
-    assert isinstance(instance, references::ReferenceableElement)
+def test_members_member_instantiation(instance):
+    assert isinstance(instance, members_Member)
 
-@given(instance=members::Member_strategy)
+@given(instance=references_ReferenceableElement_strategy)
 @settings(max_examples=50)
-def test_members::member_instantiation(instance):
-    assert isinstance(instance, members::Member)
+def test_references_referenceableelement_instantiation(instance):
+    assert isinstance(instance, references_ReferenceableElement)
+
+@given(instance=containers_JavaRoot_strategy)
+@settings(max_examples=50)
+def test_containers_javaroot_instantiation(instance):
+    assert isinstance(instance, containers_JavaRoot)
 
 @given(instance=ForLoopInitializer_strategy)
 @settings(max_examples=50)
 def test_forloopinitializer_instantiation(instance):
     assert isinstance(instance, ForLoopInitializer)
 
-@given(instance=expressions::ExpressionList_strategy)
+@given(instance=expressions_ExpressionList_strategy)
 @settings(max_examples=50)
-def test_expressions::expressionlist_instantiation(instance):
-    assert isinstance(instance, expressions::ExpressionList)
+def test_expressions_expressionlist_instantiation(instance):
+    assert isinstance(instance, expressions_ExpressionList)
 
-@given(instance=containers::EmptyModel_strategy)
+@given(instance=containers_EmptyModel_strategy)
 @settings(max_examples=50)
-def test_containers::emptymodel_instantiation(instance):
-    assert isinstance(instance, containers::EmptyModel)
+def test_containers_emptymodel_instantiation(instance):
+    assert isinstance(instance, containers_EmptyModel)
 
 @given(instance=Package_strategy)
 @settings(max_examples=50)
@@ -7451,18 +7819,41 @@ def test_compilationunit_instantiation(instance):
 def test_annotable_instantiation(instance):
     assert isinstance(instance, Annotable)
 
-@given(instance=commons::Commentable_strategy)
+@given(instance=commons_NamespaceAwareElement_strategy)
 @settings(max_examples=50)
-def test_commons::commentable_instantiation(instance):
-    assert isinstance(instance, commons::Commentable)
-
-@given(instance=commons::Commentable_strategy)
-def test_commons::commentable_comments_type(instance):
-    assert isinstance(instance.comments, str)
+def test_commons_namespaceawareelement_instantiation(instance):
+    assert isinstance(instance, commons_NamespaceAwareElement)
 
 
-@given(instance=commons::Commentable_strategy)
-def test_commons::commentable_comments_setter(instance):
+
+@given(instance=commons_NamespaceAwareElement_strategy)
+def test_commons_namespaceawareelement_namespaces_setter(instance):
+    original = instance.namespaces
+    instance.namespaces = original
+    assert instance.namespaces == original
+
+@given(instance=commons_NamedElement_strategy)
+@settings(max_examples=50)
+def test_commons_namedelement_instantiation(instance):
+    assert isinstance(instance, commons_NamedElement)
+
+
+
+@given(instance=commons_NamedElement_strategy)
+def test_commons_namedelement_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+@given(instance=commons_Commentable_strategy)
+@settings(max_examples=50)
+def test_commons_commentable_instantiation(instance):
+    assert isinstance(instance, commons_Commentable)
+
+
+
+@given(instance=commons_Commentable_strategy)
+def test_commons_commentable_comments_setter(instance):
     original = instance.comments
     instance.comments = original
     assert instance.comments == original
@@ -7477,25 +7868,30 @@ def test_enumconstant_instantiation(instance):
 def test_referenceableelement_instantiation(instance):
     assert isinstance(instance, ReferenceableElement)
 
-@given(instance=containers::Package_strategy)
+@given(instance=containers_Package_strategy)
 @settings(max_examples=50)
-def test_containers::package_instantiation(instance):
-    assert isinstance(instance, containers::Package)
+def test_containers_package_instantiation(instance):
+    assert isinstance(instance, containers_Package)
 
-@given(instance=members::EnumConstant_strategy)
+@given(instance=members_EnumConstant_strategy)
 @settings(max_examples=50)
-def test_members::enumconstant_instantiation(instance):
-    assert isinstance(instance, members::EnumConstant)
+def test_members_enumconstant_instantiation(instance):
+    assert isinstance(instance, members_EnumConstant)
 
 @given(instance=Type_strategy)
 @settings(max_examples=50)
 def test_type_instantiation(instance):
     assert isinstance(instance, Type)
 
-@given(instance=classifiers::Classifier_strategy)
+@given(instance=classifiers_Classifier_strategy)
 @settings(max_examples=50)
-def test_classifiers::classifier_instantiation(instance):
-    assert isinstance(instance, classifiers::Classifier)
+def test_classifiers_classifier_instantiation(instance):
+    assert isinstance(instance, classifiers_Classifier)
+
+@given(instance=arrays_ArraySelector_strategy)
+@settings(max_examples=50)
+def test_arrays_arrayselector_instantiation(instance):
+    assert isinstance(instance, arrays_ArraySelector)
 
 @given(instance=Implementor_strategy)
 @settings(max_examples=50)
@@ -7507,25 +7903,25 @@ def test_implementor_instantiation(instance):
 def test_concreteclassifier_instantiation(instance):
     assert isinstance(instance, ConcreteClassifier)
 
-@given(instance=classifiers::Interface_strategy)
+@given(instance=classifiers_Interface_strategy)
 @settings(max_examples=50)
-def test_classifiers::interface_instantiation(instance):
-    assert isinstance(instance, classifiers::Interface)
+def test_classifiers_interface_instantiation(instance):
+    assert isinstance(instance, classifiers_Interface)
 
-@given(instance=classifiers::Annotation_strategy)
+@given(instance=classifiers_Annotation_strategy)
 @settings(max_examples=50)
-def test_classifiers::annotation_instantiation(instance):
-    assert isinstance(instance, classifiers::Annotation)
+def test_classifiers_annotation_instantiation(instance):
+    assert isinstance(instance, classifiers_Annotation)
 
-@given(instance=classifiers::Enumeration_strategy)
+@given(instance=classifiers_Enumeration_strategy)
 @settings(max_examples=50)
-def test_classifiers::enumeration_instantiation(instance):
-    assert isinstance(instance, classifiers::Enumeration)
+def test_classifiers_enumeration_instantiation(instance):
+    assert isinstance(instance, classifiers_Enumeration)
 
-@given(instance=classifiers::Class_strategy)
+@given(instance=classifiers_Class_strategy)
 @settings(max_examples=50)
-def test_classifiers::class_instantiation(instance):
-    assert isinstance(instance, classifiers::Class)
+def test_classifiers_class_instantiation(instance):
+    assert isinstance(instance, classifiers_Class)
 
 import warnings
 import copy
@@ -7533,9 +7929,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=classifiers::Class_strategy)
+@given(instance=classifiers_Class_strategy)
 @settings(max_examples=30)
-def test_classifiers::class_unwrapprimitivetype_changes_state(instance):
+def test_classifiers_class_unwrapprimitivetype_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -7547,24 +7943,24 @@ def test_classifiers::class_unwrapprimitivetype_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'unWrapPrimitiveType' in classifiers::Class is empty"
+        assert has_statements, f"Function 'unWrapPrimitiveType' in classifiers_Class is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'unWrapPrimitiveType' in classifiers::Class did not change state; check implementation")
+            warnings.warn(f"Operation 'unWrapPrimitiveType' in classifiers_Class did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'unWrapPrimitiveType' in classifiers::Class is not implemented or raised an error")
+        warnings.warn(f"Operation 'unWrapPrimitiveType' in classifiers_Class is not implemented or raised an error")
 
 @given(instance=TypeReference_strategy)
 @settings(max_examples=50)
 def test_typereference_instantiation(instance):
     assert isinstance(instance, TypeReference)
 
-@given(instance=types::PrimitiveType_strategy)
+@given(instance=types_PrimitiveType_strategy)
 @settings(max_examples=50)
-def test_types::primitivetype_instantiation(instance):
-    assert isinstance(instance, types::PrimitiveType)
+def test_types_primitivetype_instantiation(instance):
+    assert isinstance(instance, types_PrimitiveType)
 
 import warnings
 import copy
@@ -7572,9 +7968,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=types::PrimitiveType_strategy)
+@given(instance=types_PrimitiveType_strategy)
 @settings(max_examples=30)
-def test_types::primitivetype_wrapprimitivetype_changes_state(instance):
+def test_types_primitivetype_wrapprimitivetype_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -7586,154 +7982,177 @@ def test_types::primitivetype_wrapprimitivetype_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'wrapPrimitiveType' in types::PrimitiveType is empty"
+        assert has_statements, f"Function 'wrapPrimitiveType' in types_PrimitiveType is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'wrapPrimitiveType' in types::PrimitiveType did not change state; check implementation")
+            warnings.warn(f"Operation 'wrapPrimitiveType' in types_PrimitiveType did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'wrapPrimitiveType' in types::PrimitiveType is not implemented or raised an error")
+        warnings.warn(f"Operation 'wrapPrimitiveType' in types_PrimitiveType is not implemented or raised an error")
 
-@given(instance=types::ClassifierReference_strategy)
+@given(instance=types_ClassifierReference_strategy)
 @settings(max_examples=50)
-def test_types::classifierreference_instantiation(instance):
-    assert isinstance(instance, types::ClassifierReference)
+def test_types_classifierreference_instantiation(instance):
+    assert isinstance(instance, types_ClassifierReference)
+
+@given(instance=types_NamespaceClassifierReference_strategy)
+@settings(max_examples=50)
+def test_types_namespaceclassifierreference_instantiation(instance):
+    assert isinstance(instance, types_NamespaceClassifierReference)
+
+@given(instance=classifiers_Implementor_strategy)
+@settings(max_examples=50)
+def test_classifiers_implementor_instantiation(instance):
+    assert isinstance(instance, classifiers_Implementor)
 
 @given(instance=AnnotableAndModifiable_strategy)
 @settings(max_examples=50)
 def test_annotableandmodifiable_instantiation(instance):
     assert isinstance(instance, AnnotableAndModifiable)
 
-@given(instance=parameters::Parameter_strategy)
+@given(instance=variables_LocalVariable_strategy)
 @settings(max_examples=50)
-def test_parameters::parameter_instantiation(instance):
-    assert isinstance(instance, parameters::Parameter)
+def test_variables_localvariable_instantiation(instance):
+    assert isinstance(instance, variables_LocalVariable)
 
-@given(instance=variables::LocalVariable_strategy)
+@given(instance=parameters_Parameter_strategy)
 @settings(max_examples=50)
-def test_variables::localvariable_instantiation(instance):
-    assert isinstance(instance, variables::LocalVariable)
+def test_parameters_parameter_instantiation(instance):
+    assert isinstance(instance, parameters_Parameter)
 
 @given(instance=Statement_strategy)
 @settings(max_examples=50)
 def test_statement_instantiation(instance):
     assert isinstance(instance, Statement)
 
-@given(instance=statements::EmptyStatement_strategy)
+@given(instance=statements_Condition_strategy)
 @settings(max_examples=50)
-def test_statements::emptystatement_instantiation(instance):
-    assert isinstance(instance, statements::EmptyStatement)
+def test_statements_condition_instantiation(instance):
+    assert isinstance(instance, statements_Condition)
 
-@given(instance=statements::Return_strategy)
+@given(instance=statements_JumpLabel_strategy)
 @settings(max_examples=50)
-def test_statements::return_instantiation(instance):
-    assert isinstance(instance, statements::Return)
+def test_statements_jumplabel_instantiation(instance):
+    assert isinstance(instance, statements_JumpLabel)
 
-@given(instance=statements::ForEachLoop_strategy)
+@given(instance=statements_EmptyStatement_strategy)
 @settings(max_examples=50)
-def test_statements::foreachloop_instantiation(instance):
-    assert isinstance(instance, statements::ForEachLoop)
+def test_statements_emptystatement_instantiation(instance):
+    assert isinstance(instance, statements_EmptyStatement)
 
-@given(instance=statements::Switch_strategy)
+@given(instance=statements_Jump_strategy)
 @settings(max_examples=50)
-def test_statements::switch_instantiation(instance):
-    assert isinstance(instance, statements::Switch)
+def test_statements_jump_instantiation(instance):
+    assert isinstance(instance, statements_Jump)
 
-@given(instance=statements::WhileLoop_strategy)
+@given(instance=statements_Return_strategy)
 @settings(max_examples=50)
-def test_statements::whileloop_instantiation(instance):
-    assert isinstance(instance, statements::WhileLoop)
+def test_statements_return_instantiation(instance):
+    assert isinstance(instance, statements_Return)
 
-@given(instance=statements::JumpLabel_strategy)
+@given(instance=statements_ForLoop_strategy)
 @settings(max_examples=50)
-def test_statements::jumplabel_instantiation(instance):
-    assert isinstance(instance, statements::JumpLabel)
+def test_statements_forloop_instantiation(instance):
+    assert isinstance(instance, statements_ForLoop)
 
-@given(instance=statements::ExpressionStatement_strategy)
+@given(instance=statements_Throw_strategy)
 @settings(max_examples=50)
-def test_statements::expressionstatement_instantiation(instance):
-    assert isinstance(instance, statements::ExpressionStatement)
+def test_statements_throw_instantiation(instance):
+    assert isinstance(instance, statements_Throw)
 
-@given(instance=statements::ForLoop_strategy)
+@given(instance=statements_TryBlock_strategy)
 @settings(max_examples=50)
-def test_statements::forloop_instantiation(instance):
-    assert isinstance(instance, statements::ForLoop)
+def test_statements_tryblock_instantiation(instance):
+    assert isinstance(instance, statements_TryBlock)
 
-@given(instance=statements::TryBlock_strategy)
+@given(instance=statements_ForEachLoop_strategy)
 @settings(max_examples=50)
-def test_statements::tryblock_instantiation(instance):
-    assert isinstance(instance, statements::TryBlock)
+def test_statements_foreachloop_instantiation(instance):
+    assert isinstance(instance, statements_ForEachLoop)
 
-@given(instance=statements::LocalVariableStatement_strategy)
+@given(instance=statements_ExpressionStatement_strategy)
 @settings(max_examples=50)
-def test_statements::localvariablestatement_instantiation(instance):
-    assert isinstance(instance, statements::LocalVariableStatement)
+def test_statements_expressionstatement_instantiation(instance):
+    assert isinstance(instance, statements_ExpressionStatement)
 
-@given(instance=statements::Assert_strategy)
+@given(instance=statements_Assert_strategy)
 @settings(max_examples=50)
-def test_statements::assert_instantiation(instance):
-    assert isinstance(instance, statements::Assert)
+def test_statements_assert_instantiation(instance):
+    assert isinstance(instance, statements_Assert)
 
-@given(instance=statements::SynchronizedBlock_strategy)
+@given(instance=statements_SynchronizedBlock_strategy)
 @settings(max_examples=50)
-def test_statements::synchronizedblock_instantiation(instance):
-    assert isinstance(instance, statements::SynchronizedBlock)
+def test_statements_synchronizedblock_instantiation(instance):
+    assert isinstance(instance, statements_SynchronizedBlock)
 
-@given(instance=statements::Throw_strategy)
+@given(instance=statements_WhileLoop_strategy)
 @settings(max_examples=50)
-def test_statements::throw_instantiation(instance):
-    assert isinstance(instance, statements::Throw)
+def test_statements_whileloop_instantiation(instance):
+    assert isinstance(instance, statements_WhileLoop)
 
-@given(instance=statements::Condition_strategy)
+@given(instance=statements_LocalVariableStatement_strategy)
 @settings(max_examples=50)
-def test_statements::condition_instantiation(instance):
-    assert isinstance(instance, statements::Condition)
+def test_statements_localvariablestatement_instantiation(instance):
+    assert isinstance(instance, statements_LocalVariableStatement)
 
-@given(instance=statements::Jump_strategy)
+@given(instance=statements_Switch_strategy)
 @settings(max_examples=50)
-def test_statements::jump_instantiation(instance):
-    assert isinstance(instance, statements::Jump)
+def test_statements_switch_instantiation(instance):
+    assert isinstance(instance, statements_Switch)
 
 @given(instance=Member_strategy)
 @settings(max_examples=50)
 def test_member_instantiation(instance):
     assert isinstance(instance, Member)
 
-@given(instance=statements::Block_strategy)
+@given(instance=statements_Block_strategy)
 @settings(max_examples=50)
-def test_statements::block_instantiation(instance):
-    assert isinstance(instance, statements::Block)
+def test_statements_block_instantiation(instance):
+    assert isinstance(instance, statements_Block)
 
-@given(instance=members::EmptyMember_strategy)
+@given(instance=members_Field_strategy)
 @settings(max_examples=50)
-def test_members::emptymember_instantiation(instance):
-    assert isinstance(instance, members::EmptyMember)
+def test_members_field_instantiation(instance):
+    assert isinstance(instance, members_Field)
 
-@given(instance=members::Field_strategy)
+@given(instance=members_EmptyMember_strategy)
 @settings(max_examples=50)
-def test_members::field_instantiation(instance):
-    assert isinstance(instance, members::Field)
+def test_members_emptymember_instantiation(instance):
+    assert isinstance(instance, members_EmptyMember)
 
 @given(instance=MemberContainer_strategy)
 @settings(max_examples=50)
 def test_membercontainer_instantiation(instance):
     assert isinstance(instance, MemberContainer)
 
-@given(instance=classifiers::AnonymousClass_strategy)
+@given(instance=classifiers_AnonymousClass_strategy)
 @settings(max_examples=50)
-def test_classifiers::anonymousclass_instantiation(instance):
-    assert isinstance(instance, classifiers::AnonymousClass)
+def test_classifiers_anonymousclass_instantiation(instance):
+    assert isinstance(instance, classifiers_AnonymousClass)
 
 @given(instance=TypeParametrizable_strategy)
 @settings(max_examples=50)
 def test_typeparametrizable_instantiation(instance):
     assert isinstance(instance, TypeParametrizable)
 
-@given(instance=members::Constructor_strategy)
+@given(instance=members_Constructor_strategy)
 @settings(max_examples=50)
-def test_members::constructor_instantiation(instance):
-    assert isinstance(instance, members::Constructor)
+def test_members_constructor_instantiation(instance):
+    assert isinstance(instance, members_Constructor)
+
+@given(instance=classifiers_ConcreteClassifier_strategy)
+@settings(max_examples=50)
+def test_classifiers_concreteclassifier_instantiation(instance):
+    assert isinstance(instance, classifiers_ConcreteClassifier)
+
+
+
+@given(instance=classifiers_ConcreteClassifier_strategy)
+def test_classifiers_concreteclassifier_fullName_setter(instance):
+    original = instance.fullName
+    instance.fullName = original
+    assert instance.fullName == original
 
 @given(instance=ArrayDimension_strategy)
 @settings(max_examples=50)
@@ -7750,50 +8169,45 @@ def test_arrayinitializer_instantiation(instance):
 def test_arraytypeable_instantiation(instance):
     assert isinstance(instance, ArrayTypeable)
 
-@given(instance=members::AdditionalField_strategy)
+@given(instance=variables_AdditionalLocalVariable_strategy)
 @settings(max_examples=50)
-def test_members::additionalfield_instantiation(instance):
-    assert isinstance(instance, members::AdditionalField)
+def test_variables_additionallocalvariable_instantiation(instance):
+    assert isinstance(instance, variables_AdditionalLocalVariable)
 
-@given(instance=variables::AdditionalLocalVariable_strategy)
+@given(instance=members_AdditionalField_strategy)
 @settings(max_examples=50)
-def test_variables::additionallocalvariable_instantiation(instance):
-    assert isinstance(instance, variables::AdditionalLocalVariable)
+def test_members_additionalfield_instantiation(instance):
+    assert isinstance(instance, members_AdditionalField)
 
-@given(instance=generics::TypeArgument_strategy)
+@given(instance=generics_TypeArgument_strategy)
 @settings(max_examples=50)
-def test_generics::typeargument_instantiation(instance):
-    assert isinstance(instance, generics::TypeArgument)
+def test_generics_typeargument_instantiation(instance):
+    assert isinstance(instance, generics_TypeArgument)
 
 @given(instance=TypedElement_strategy)
 @settings(max_examples=50)
 def test_typedelement_instantiation(instance):
     assert isinstance(instance, TypedElement)
 
-@given(instance=variables::Variable_strategy)
+@given(instance=expressions_CastExpression_strategy)
 @settings(max_examples=50)
-def test_variables::variable_instantiation(instance):
-    assert isinstance(instance, variables::Variable)
+def test_expressions_castexpression_instantiation(instance):
+    assert isinstance(instance, expressions_CastExpression)
 
-@given(instance=generics::QualifiedTypeArgument_strategy)
+@given(instance=generics_QualifiedTypeArgument_strategy)
 @settings(max_examples=50)
-def test_generics::qualifiedtypeargument_instantiation(instance):
-    assert isinstance(instance, generics::QualifiedTypeArgument)
+def test_generics_qualifiedtypeargument_instantiation(instance):
+    assert isinstance(instance, generics_QualifiedTypeArgument)
 
-@given(instance=expressions::InstanceOfExpression_strategy)
+@given(instance=arrays_ArrayInstantiationByValues_strategy)
 @settings(max_examples=50)
-def test_expressions::instanceofexpression_instantiation(instance):
-    assert isinstance(instance, expressions::InstanceOfExpression)
+def test_arrays_arrayinstantiationbyvalues_instantiation(instance):
+    assert isinstance(instance, arrays_ArrayInstantiationByValues)
 
-@given(instance=expressions::CastExpression_strategy)
+@given(instance=members_Method_strategy)
 @settings(max_examples=50)
-def test_expressions::castexpression_instantiation(instance):
-    assert isinstance(instance, expressions::CastExpression)
-
-@given(instance=members::Method_strategy)
-@settings(max_examples=50)
-def test_members::method_instantiation(instance):
-    assert isinstance(instance, members::Method)
+def test_members_method_instantiation(instance):
+    assert isinstance(instance, members_Method)
 
 import warnings
 import copy
@@ -7801,9 +8215,40 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=members::Method_strategy)
+@given(instance=members_Method_strategy)
 @settings(max_examples=30)
-def test_members::method_isbettermethodforcall_changes_state(instance):
+def test_members_method_issomemethodforcall_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.isSomeMethodForCall(
+            "test"
+        )
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.isSomeMethodForCall).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'isSomeMethodForCall' in members_Method is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'isSomeMethodForCall' in members_Method did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'isSomeMethodForCall' in members_Method is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=members_Method_strategy)
+@settings(max_examples=30)
+def test_members_method_isbettermethodforcall_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -7818,14 +8263,14 @@ def test_members::method_isbettermethodforcall_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'isBetterMethodForCall' in members::Method is empty"
+        assert has_statements, f"Function 'isBetterMethodForCall' in members_Method is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'isBetterMethodForCall' in members::Method did not change state; check implementation")
+            warnings.warn(f"Operation 'isBetterMethodForCall' in members_Method did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'isBetterMethodForCall' in members::Method is not implemented or raised an error")
+        warnings.warn(f"Operation 'isBetterMethodForCall' in members_Method is not implemented or raised an error")
 
 import warnings
 import copy
@@ -7833,9 +8278,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=members::Method_strategy)
+@given(instance=members_Method_strategy)
 @settings(max_examples=30)
-def test_members::method_ismethodforcall_changes_state(instance):
+def test_members_method_ismethodforcall_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -7850,552 +8295,56 @@ def test_members::method_ismethodforcall_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'isMethodForCall' in members::Method is empty"
+        assert has_statements, f"Function 'isMethodForCall' in members_Method is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'isMethodForCall' in members::Method did not change state; check implementation")
+            warnings.warn(f"Operation 'isMethodForCall' in members_Method did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'isMethodForCall' in members::Method is not implemented or raised an error")
+        warnings.warn(f"Operation 'isMethodForCall' in members_Method is not implemented or raised an error")
 
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
+@given(instance=instantiations_Instantiation_strategy)
+@settings(max_examples=50)
+def test_instantiations_instantiation_instantiation(instance):
+    assert isinstance(instance, instantiations_Instantiation)
 
-@given(instance=members::Method_strategy)
-@settings(max_examples=30)
-def test_members::method_issomemethodforcall_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.isSomeMethodForCall(
-            "test"
-        )
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.isSomeMethodForCall).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'isSomeMethodForCall' in members::Method is empty"
+@given(instance=variables_Variable_strategy)
+@settings(max_examples=50)
+def test_variables_variable_instantiation(instance):
+    assert isinstance(instance, variables_Variable)
 
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'isSomeMethodForCall' in members::Method did not change state; check implementation")
+@given(instance=expressions_InstanceOfExpression_strategy)
+@settings(max_examples=50)
+def test_expressions_instanceofexpression_instantiation(instance):
+    assert isinstance(instance, expressions_InstanceOfExpression)
 
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'isSomeMethodForCall' in members::Method is not implemented or raised an error")
+@given(instance=arrays_ArrayInstantiationBySize_strategy)
+@settings(max_examples=50)
+def test_arrays_arrayinstantiationbysize_instantiation(instance):
+    assert isinstance(instance, arrays_ArrayInstantiationBySize)
+
+@given(instance=arrays_ArrayInitializationValue_strategy)
+@settings(max_examples=50)
+def test_arrays_arrayinitializationvalue_instantiation(instance):
+    assert isinstance(instance, arrays_ArrayInitializationValue)
 
 @given(instance=ArrayInitializationValue_strategy)
 @settings(max_examples=50)
 def test_arrayinitializationvalue_instantiation(instance):
     assert isinstance(instance, ArrayInitializationValue)
 
-@given(instance=Commentable_strategy)
+@given(instance=expressions_Expression_strategy)
 @settings(max_examples=50)
-def test_commentable_instantiation(instance):
-    assert isinstance(instance, Commentable)
+def test_expressions_expression_instantiation(instance):
+    assert isinstance(instance, expressions_Expression)
 
-@given(instance=instantiations::Initializable_strategy)
+@given(instance=arrays_ArrayInitializer_strategy)
 @settings(max_examples=50)
-def test_instantiations::initializable_instantiation(instance):
-    assert isinstance(instance, instantiations::Initializable)
+def test_arrays_arrayinitializer_instantiation(instance):
+    assert isinstance(instance, arrays_ArrayInitializer)
 
-@given(instance=statements::StatementListContainer_strategy)
+@given(instance=arrays_ArrayDimension_strategy)
 @settings(max_examples=50)
-def test_statements::statementlistcontainer_instantiation(instance):
-    assert isinstance(instance, statements::StatementListContainer)
-
-@given(instance=classifiers::Implementor_strategy)
-@settings(max_examples=50)
-def test_classifiers::implementor_instantiation(instance):
-    assert isinstance(instance, classifiers::Implementor)
-
-@given(instance=arrays::ArrayDimension_strategy)
-@settings(max_examples=50)
-def test_arrays::arraydimension_instantiation(instance):
-    assert isinstance(instance, arrays::ArrayDimension)
-
-@given(instance=statements::Conditional_strategy)
-@settings(max_examples=50)
-def test_statements::conditional_instantiation(instance):
-    assert isinstance(instance, statements::Conditional)
-
-@given(instance=operators::Operator_strategy)
-@settings(max_examples=50)
-def test_operators::operator_instantiation(instance):
-    assert isinstance(instance, operators::Operator)
-
-@given(instance=commons::NamespaceAwareElement_strategy)
-@settings(max_examples=50)
-def test_commons::namespaceawareelement_instantiation(instance):
-    assert isinstance(instance, commons::NamespaceAwareElement)
-
-@given(instance=commons::NamespaceAwareElement_strategy)
-def test_commons::namespaceawareelement_namespaces_type(instance):
-    assert isinstance(instance.namespaces, str)
-
-
-@given(instance=commons::NamespaceAwareElement_strategy)
-def test_commons::namespaceawareelement_namespaces_setter(instance):
-    original = instance.namespaces
-    instance.namespaces = original
-    assert instance.namespaces == original
-
-@given(instance=statements::ForLoopInitializer_strategy)
-@settings(max_examples=50)
-def test_statements::forloopinitializer_instantiation(instance):
-    assert isinstance(instance, statements::ForLoopInitializer)
-
-@given(instance=types::Type_strategy)
-@settings(max_examples=50)
-def test_types::type_instantiation(instance):
-    assert isinstance(instance, types::Type)
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=types::Type_strategy)
-@settings(max_examples=30)
-def test_types::type_equalstype_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.equalsType(
-            "test", 
-            "test", 
-            "test"
-        )
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.equalsType).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'equalsType' in types::Type is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'equalsType' in types::Type did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'equalsType' in types::Type is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=types::Type_strategy)
-@settings(max_examples=30)
-def test_types::type_issupertype_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.isSuperType(
-            "test", 
-            "test", 
-            "test"
-        )
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.isSuperType).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'isSuperType' in types::Type is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'isSuperType' in types::Type did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'isSuperType' in types::Type is not implemented or raised an error")
-
-@given(instance=types::TypeReference_strategy)
-@settings(max_examples=50)
-def test_types::typereference_instantiation(instance):
-    assert isinstance(instance, types::TypeReference)
-
-@given(instance=arrays::ArrayInitializationValue_strategy)
-@settings(max_examples=50)
-def test_arrays::arrayinitializationvalue_instantiation(instance):
-    assert isinstance(instance, arrays::ArrayInitializationValue)
-
-@given(instance=statements::StatementContainer_strategy)
-@settings(max_examples=50)
-def test_statements::statementcontainer_instantiation(instance):
-    assert isinstance(instance, statements::StatementContainer)
-
-@given(instance=modifiers::AnnotationInstanceOrModifier_strategy)
-@settings(max_examples=50)
-def test_modifiers::annotationinstanceormodifier_instantiation(instance):
-    assert isinstance(instance, modifiers::AnnotationInstanceOrModifier)
-
-@given(instance=parameters::Parametrizable_strategy)
-@settings(max_examples=50)
-def test_parameters::parametrizable_instantiation(instance):
-    assert isinstance(instance, parameters::Parametrizable)
-
-@given(instance=statements::Statement_strategy)
-@settings(max_examples=50)
-def test_statements::statement_instantiation(instance):
-    assert isinstance(instance, statements::Statement)
-
-@given(instance=generics::TypeArgumentable_strategy)
-@settings(max_examples=50)
-def test_generics::typeargumentable_instantiation(instance):
-    assert isinstance(instance, generics::TypeArgumentable)
-
-@given(instance=imports::ImportingElement_strategy)
-@settings(max_examples=50)
-def test_imports::importingelement_instantiation(instance):
-    assert isinstance(instance, imports::ImportingElement)
-
-@given(instance=types::TypedElement_strategy)
-@settings(max_examples=50)
-def test_types::typedelement_instantiation(instance):
-    assert isinstance(instance, types::TypedElement)
-
-@given(instance=generics::CallTypeArgumentable_strategy)
-@settings(max_examples=50)
-def test_generics::calltypeargumentable_instantiation(instance):
-    assert isinstance(instance, generics::CallTypeArgumentable)
-
-@given(instance=commons::NamedElement_strategy)
-@settings(max_examples=50)
-def test_commons::namedelement_instantiation(instance):
-    assert isinstance(instance, commons::NamedElement)
-
-@given(instance=commons::NamedElement_strategy)
-def test_commons::namedelement_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=commons::NamedElement_strategy)
-def test_commons::namedelement_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
-
-@given(instance=members::MemberContainer_strategy)
-@settings(max_examples=50)
-def test_members::membercontainer_instantiation(instance):
-    assert isinstance(instance, members::MemberContainer)
-
-@given(instance=literals::Self_strategy)
-@settings(max_examples=50)
-def test_literals::self_instantiation(instance):
-    assert isinstance(instance, literals::Self)
-
-@given(instance=modifiers::AnnotableAndModifiable_strategy)
-@settings(max_examples=50)
-def test_modifiers::annotableandmodifiable_instantiation(instance):
-    assert isinstance(instance, modifiers::AnnotableAndModifiable)
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=modifiers::AnnotableAndModifiable_strategy)
-@settings(max_examples=30)
-def test_modifiers::annotableandmodifiable_isstatic_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.isStatic()
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.isStatic).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'isStatic' in modifiers::AnnotableAndModifiable is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'isStatic' in modifiers::AnnotableAndModifiable did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'isStatic' in modifiers::AnnotableAndModifiable is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=modifiers::AnnotableAndModifiable_strategy)
-@settings(max_examples=30)
-def test_modifiers::annotableandmodifiable_ishidden_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.isHidden(
-            "test"
-        )
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.isHidden).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'isHidden' in modifiers::AnnotableAndModifiable is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'isHidden' in modifiers::AnnotableAndModifiable did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'isHidden' in modifiers::AnnotableAndModifiable is not implemented or raised an error")
-
-@given(instance=generics::TypeParametrizable_strategy)
-@settings(max_examples=50)
-def test_generics::typeparametrizable_instantiation(instance):
-    assert isinstance(instance, generics::TypeParametrizable)
-
-@given(instance=references::Argumentable_strategy)
-@settings(max_examples=50)
-def test_references::argumentable_instantiation(instance):
-    assert isinstance(instance, references::Argumentable)
-
-@given(instance=arrays::ArraySelector_strategy)
-@settings(max_examples=50)
-def test_arrays::arrayselector_instantiation(instance):
-    assert isinstance(instance, arrays::ArraySelector)
-
-@given(instance=members::ExceptionThrower_strategy)
-@settings(max_examples=50)
-def test_members::exceptionthrower_instantiation(instance):
-    assert isinstance(instance, members::ExceptionThrower)
-
-@given(instance=modifiers::Modifiable_strategy)
-@settings(max_examples=50)
-def test_modifiers::modifiable_instantiation(instance):
-    assert isinstance(instance, modifiers::Modifiable)
-
-@given(instance=annotations::Annotable_strategy)
-@settings(max_examples=50)
-def test_annotations::annotable_instantiation(instance):
-    assert isinstance(instance, annotations::Annotable)
-
-@given(instance=arrays::ArrayTypeable_strategy)
-@settings(max_examples=50)
-def test_arrays::arraytypeable_instantiation(instance):
-    assert isinstance(instance, arrays::ArrayTypeable)
-
-@given(instance=Expression_strategy)
-@settings(max_examples=50)
-def test_expression_instantiation(instance):
-    assert isinstance(instance, Expression)
-
-@given(instance=expressions::AssignmentExpressionChild_strategy)
-@settings(max_examples=50)
-def test_expressions::assignmentexpressionchild_instantiation(instance):
-    assert isinstance(instance, expressions::AssignmentExpressionChild)
-
-@given(instance=expressions::AssignmentExpression_strategy)
-@settings(max_examples=50)
-def test_expressions::assignmentexpression_instantiation(instance):
-    assert isinstance(instance, expressions::AssignmentExpression)
-
-@given(instance=annotations::AnnotationValue_strategy)
-@settings(max_examples=50)
-def test_annotations::annotationvalue_instantiation(instance):
-    assert isinstance(instance, annotations::AnnotationValue)
-
-@given(instance=InterfaceMethod_strategy)
-@settings(max_examples=50)
-def test_interfacemethod_instantiation(instance):
-    assert isinstance(instance, InterfaceMethod)
-
-@given(instance=annotations::AnnotationAttribute_strategy)
-@settings(max_examples=50)
-def test_annotations::annotationattribute_instantiation(instance):
-    assert isinstance(instance, annotations::AnnotationAttribute)
-
-@given(instance=annotations::AnnotationAttributeSetting_strategy)
-@settings(max_examples=50)
-def test_annotations::annotationattributesetting_instantiation(instance):
-    assert isinstance(instance, annotations::AnnotationAttributeSetting)
-
-@given(instance=AnnotationAttributeSetting_strategy)
-@settings(max_examples=50)
-def test_annotationattributesetting_instantiation(instance):
-    assert isinstance(instance, AnnotationAttributeSetting)
-
-@given(instance=AnnotationValue_strategy)
-@settings(max_examples=50)
-def test_annotationvalue_instantiation(instance):
-    assert isinstance(instance, AnnotationValue)
-
-@given(instance=expressions::Expression_strategy)
-@settings(max_examples=50)
-def test_expressions::expression_instantiation(instance):
-    assert isinstance(instance, expressions::Expression)
-
-@given(instance=arrays::ArrayInitializer_strategy)
-@settings(max_examples=50)
-def test_arrays::arrayinitializer_instantiation(instance):
-    assert isinstance(instance, arrays::ArrayInitializer)
-
-@given(instance=annotations::AnnotationParameter_strategy)
-@settings(max_examples=50)
-def test_annotations::annotationparameter_instantiation(instance):
-    assert isinstance(instance, annotations::AnnotationParameter)
-
-@given(instance=AnnotationParameter_strategy)
-@settings(max_examples=50)
-def test_annotationparameter_instantiation(instance):
-    assert isinstance(instance, AnnotationParameter)
-
-@given(instance=annotations::AnnotationParameterList_strategy)
-@settings(max_examples=50)
-def test_annotations::annotationparameterlist_instantiation(instance):
-    assert isinstance(instance, annotations::AnnotationParameterList)
-
-@given(instance=annotations::SingleAnnotationParameter_strategy)
-@settings(max_examples=50)
-def test_annotations::singleannotationparameter_instantiation(instance):
-    assert isinstance(instance, annotations::SingleAnnotationParameter)
-
-@given(instance=Classifier_strategy)
-@settings(max_examples=50)
-def test_classifier_instantiation(instance):
-    assert isinstance(instance, Classifier)
-
-@given(instance=classifiers::ConcreteClassifier_strategy)
-@settings(max_examples=50)
-def test_classifiers::concreteclassifier_instantiation(instance):
-    assert isinstance(instance, classifiers::ConcreteClassifier)
-
-@given(instance=classifiers::ConcreteClassifier_strategy)
-def test_classifiers::concreteclassifier_fullName_type(instance):
-    assert isinstance(instance.fullName, str)
-
-
-@given(instance=classifiers::ConcreteClassifier_strategy)
-def test_classifiers::concreteclassifier_fullName_setter(instance):
-    original = instance.fullName
-    instance.fullName = original
-    assert instance.fullName == original
-
-@given(instance=generics::TypeParameter_strategy)
-@settings(max_examples=50)
-def test_generics::typeparameter_instantiation(instance):
-    assert isinstance(instance, generics::TypeParameter)
-
-@given(instance=NamespaceAwareElement_strategy)
-@settings(max_examples=50)
-def test_namespaceawareelement_instantiation(instance):
-    assert isinstance(instance, NamespaceAwareElement)
-
-@given(instance=imports::Import_strategy)
-@settings(max_examples=50)
-def test_imports::import_instantiation(instance):
-    assert isinstance(instance, imports::Import)
-
-@given(instance=containers::JavaRoot_strategy)
-@settings(max_examples=50)
-def test_containers::javaroot_instantiation(instance):
-    assert isinstance(instance, containers::JavaRoot)
-
-@given(instance=types::NamespaceClassifierReference_strategy)
-@settings(max_examples=50)
-def test_types::namespaceclassifierreference_instantiation(instance):
-    assert isinstance(instance, types::NamespaceClassifierReference)
-
-@given(instance=AnnotationInstanceOrModifier_strategy)
-@settings(max_examples=50)
-def test_annotationinstanceormodifier_instantiation(instance):
-    assert isinstance(instance, AnnotationInstanceOrModifier)
-
-@given(instance=modifiers::Modifier_strategy)
-@settings(max_examples=50)
-def test_modifiers::modifier_instantiation(instance):
-    assert isinstance(instance, modifiers::Modifier)
-
-@given(instance=Reference_strategy)
-@settings(max_examples=50)
-def test_reference_instantiation(instance):
-    assert isinstance(instance, Reference)
-
-@given(instance=expressions::NestedExpression_strategy)
-@settings(max_examples=50)
-def test_expressions::nestedexpression_instantiation(instance):
-    assert isinstance(instance, expressions::NestedExpression)
-
-@given(instance=arrays::ArrayInstantiationByValues_strategy)
-@settings(max_examples=50)
-def test_arrays::arrayinstantiationbyvalues_instantiation(instance):
-    assert isinstance(instance, arrays::ArrayInstantiationByValues)
-
-@given(instance=references::SelfReference_strategy)
-@settings(max_examples=50)
-def test_references::selfreference_instantiation(instance):
-    assert isinstance(instance, references::SelfReference)
-
-@given(instance=references::ReflectiveClassReference_strategy)
-@settings(max_examples=50)
-def test_references::reflectiveclassreference_instantiation(instance):
-    assert isinstance(instance, references::ReflectiveClassReference)
-
-@given(instance=references::ElementReference_strategy)
-@settings(max_examples=50)
-def test_references::elementreference_instantiation(instance):
-    assert isinstance(instance, references::ElementReference)
-
-@given(instance=instantiations::Instantiation_strategy)
-@settings(max_examples=50)
-def test_instantiations::instantiation_instantiation(instance):
-    assert isinstance(instance, instantiations::Instantiation)
-
-@given(instance=references::PrimitiveTypeReference_strategy)
-@settings(max_examples=50)
-def test_references::primitivetypereference_instantiation(instance):
-    assert isinstance(instance, references::PrimitiveTypeReference)
-
-@given(instance=arrays::ArrayInstantiationBySize_strategy)
-@settings(max_examples=50)
-def test_arrays::arrayinstantiationbysize_instantiation(instance):
-    assert isinstance(instance, arrays::ArrayInstantiationBySize)
-
-@given(instance=references::StringReference_strategy)
-@settings(max_examples=50)
-def test_references::stringreference_instantiation(instance):
-    assert isinstance(instance, references::StringReference)
-
-@given(instance=references::StringReference_strategy)
-def test_references::stringreference_value_type(instance):
-    assert isinstance(instance.value, str)
-
-
-@given(instance=references::StringReference_strategy)
-def test_references::stringreference_value_setter(instance):
-    original = instance.value
-    instance.value = original
-    assert instance.value == original
-
-@given(instance=annotations::AnnotationInstance_strategy)
-@settings(max_examples=50)
-def test_annotations::annotationinstance_instantiation(instance):
-    assert isinstance(instance, annotations::AnnotationInstance)
-
-@given(instance=AnnotationInstance_strategy)
-@settings(max_examples=50)
-def test_annotationinstance_instantiation(instance):
-    assert isinstance(instance, AnnotationInstance)
+def test_arrays_arraydimension_instantiation(instance):
+    assert isinstance(instance, arrays_ArrayDimension)

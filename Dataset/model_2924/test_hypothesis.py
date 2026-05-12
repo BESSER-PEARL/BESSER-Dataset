@@ -3,19 +3,19 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    aGES::Feature,
+from python_code import (
+    aGES_Feature,
     Type,
-    aGES::Entity,
-    aGES::DataType,
+    aGES_Entity,
+    aGES_DataType,
     AbstractElement,
-    aGES::Import,
-    aGES::Type,
-    aGES::PackageDeclaration,
-    aGES::AbstractElement,
-    aGES::Domainmodel,
+    aGES_Import,
+    aGES_Type,
+    aGES_PackageDeclaration,
+    aGES_AbstractElement,
+    aGES_Domainmodel,
 )
 
 # =============================================================================
@@ -24,35 +24,35 @@ from classes import (
 
 
 
-def test_ages::feature_is_not_abstract():
-    assert not inspect.isabstract(aGES::Feature)
+def test_ages_feature_is_not_abstract():
+    assert not inspect.isabstract(aGES_Feature)
 
 
-def test_ages::feature_constructor_exists():
-    assert callable(aGES::Feature.__init__)
+def test_ages_feature_constructor_exists():
+    assert callable(aGES_Feature.__init__)
 
 
-def test_ages::feature_constructor_args():
-    sig = inspect.signature(aGES::Feature.__init__)
+def test_ages_feature_constructor_args():
+    sig = inspect.signature(aGES_Feature.__init__)
     params = list(sig.parameters.keys())
-    assert "many" in params, "Missing parameter 'many'"
     assert "name" in params, "Missing parameter 'name'"
+    assert "many" in params, "Missing parameter 'many'"
 
-def test_ages::feature_has_many():
-    assert hasattr(aGES::Feature, "many")
+def test_ages_feature_has_name():
+    assert hasattr(aGES_Feature, "name")
     descriptor = None
-    for klass in aGES::Feature.__mro__:
-        if "many" in klass.__dict__:
-            descriptor = klass.__dict__["many"]
+    for klass in aGES_Feature.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
-def test_ages::feature_has_name():
-    assert hasattr(aGES::Feature, "name")
+def test_ages_feature_has_many():
+    assert hasattr(aGES_Feature, "many")
     descriptor = None
-    for klass in aGES::Feature.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
+    for klass in aGES_Feature.__mro__:
+        if "many" in klass.__dict__:
+            descriptor = klass.__dict__["many"]
             break
     assert isinstance(descriptor, property)
 
@@ -72,30 +72,30 @@ def test_type_constructor_args():
 
 
 
-def test_ages::entity_is_not_abstract():
-    assert not inspect.isabstract(aGES::Entity)
+def test_ages_entity_is_not_abstract():
+    assert not inspect.isabstract(aGES_Entity)
 
 
-def test_ages::entity_constructor_exists():
-    assert callable(aGES::Entity.__init__)
+def test_ages_entity_constructor_exists():
+    assert callable(aGES_Entity.__init__)
 
 
-def test_ages::entity_constructor_args():
-    sig = inspect.signature(aGES::Entity.__init__)
+def test_ages_entity_constructor_args():
+    sig = inspect.signature(aGES_Entity.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ages::datatype_is_not_abstract():
-    assert not inspect.isabstract(aGES::DataType)
+def test_ages_datatype_is_not_abstract():
+    assert not inspect.isabstract(aGES_DataType)
 
 
-def test_ages::datatype_constructor_exists():
-    assert callable(aGES::DataType.__init__)
+def test_ages_datatype_constructor_exists():
+    assert callable(aGES_DataType.__init__)
 
 
-def test_ages::datatype_constructor_args():
-    sig = inspect.signature(aGES::DataType.__init__)
+def test_ages_datatype_constructor_args():
+    sig = inspect.signature(aGES_DataType.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -114,23 +114,23 @@ def test_abstractelement_constructor_args():
 
 
 
-def test_ages::import_is_not_abstract():
-    assert not inspect.isabstract(aGES::Import)
+def test_ages_import_is_not_abstract():
+    assert not inspect.isabstract(aGES_Import)
 
 
-def test_ages::import_constructor_exists():
-    assert callable(aGES::Import.__init__)
+def test_ages_import_constructor_exists():
+    assert callable(aGES_Import.__init__)
 
 
-def test_ages::import_constructor_args():
-    sig = inspect.signature(aGES::Import.__init__)
+def test_ages_import_constructor_args():
+    sig = inspect.signature(aGES_Import.__init__)
     params = list(sig.parameters.keys())
     assert "importedNamespace" in params, "Missing parameter 'importedNamespace'"
 
-def test_ages::import_has_importedNamespace():
-    assert hasattr(aGES::Import, "importedNamespace")
+def test_ages_import_has_importedNamespace():
+    assert hasattr(aGES_Import, "importedNamespace")
     descriptor = None
-    for klass in aGES::Import.__mro__:
+    for klass in aGES_Import.__mro__:
         if "importedNamespace" in klass.__dict__:
             descriptor = klass.__dict__["importedNamespace"]
             break
@@ -138,23 +138,23 @@ def test_ages::import_has_importedNamespace():
 
 
 
-def test_ages::type_is_not_abstract():
-    assert not inspect.isabstract(aGES::Type)
+def test_ages_type_is_not_abstract():
+    assert not inspect.isabstract(aGES_Type)
 
 
-def test_ages::type_constructor_exists():
-    assert callable(aGES::Type.__init__)
+def test_ages_type_constructor_exists():
+    assert callable(aGES_Type.__init__)
 
 
-def test_ages::type_constructor_args():
-    sig = inspect.signature(aGES::Type.__init__)
+def test_ages_type_constructor_args():
+    sig = inspect.signature(aGES_Type.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_ages::type_has_name():
-    assert hasattr(aGES::Type, "name")
+def test_ages_type_has_name():
+    assert hasattr(aGES_Type, "name")
     descriptor = None
-    for klass in aGES::Type.__mro__:
+    for klass in aGES_Type.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -162,23 +162,23 @@ def test_ages::type_has_name():
 
 
 
-def test_ages::packagedeclaration_is_not_abstract():
-    assert not inspect.isabstract(aGES::PackageDeclaration)
+def test_ages_packagedeclaration_is_not_abstract():
+    assert not inspect.isabstract(aGES_PackageDeclaration)
 
 
-def test_ages::packagedeclaration_constructor_exists():
-    assert callable(aGES::PackageDeclaration.__init__)
+def test_ages_packagedeclaration_constructor_exists():
+    assert callable(aGES_PackageDeclaration.__init__)
 
 
-def test_ages::packagedeclaration_constructor_args():
-    sig = inspect.signature(aGES::PackageDeclaration.__init__)
+def test_ages_packagedeclaration_constructor_args():
+    sig = inspect.signature(aGES_PackageDeclaration.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_ages::packagedeclaration_has_name():
-    assert hasattr(aGES::PackageDeclaration, "name")
+def test_ages_packagedeclaration_has_name():
+    assert hasattr(aGES_PackageDeclaration, "name")
     descriptor = None
-    for klass in aGES::PackageDeclaration.__mro__:
+    for klass in aGES_PackageDeclaration.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -186,30 +186,30 @@ def test_ages::packagedeclaration_has_name():
 
 
 
-def test_ages::abstractelement_is_not_abstract():
-    assert not inspect.isabstract(aGES::AbstractElement)
+def test_ages_abstractelement_is_not_abstract():
+    assert not inspect.isabstract(aGES_AbstractElement)
 
 
-def test_ages::abstractelement_constructor_exists():
-    assert callable(aGES::AbstractElement.__init__)
+def test_ages_abstractelement_constructor_exists():
+    assert callable(aGES_AbstractElement.__init__)
 
 
-def test_ages::abstractelement_constructor_args():
-    sig = inspect.signature(aGES::AbstractElement.__init__)
+def test_ages_abstractelement_constructor_args():
+    sig = inspect.signature(aGES_AbstractElement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ages::domainmodel_is_not_abstract():
-    assert not inspect.isabstract(aGES::Domainmodel)
+def test_ages_domainmodel_is_not_abstract():
+    assert not inspect.isabstract(aGES_Domainmodel)
 
 
-def test_ages::domainmodel_constructor_exists():
-    assert callable(aGES::Domainmodel.__init__)
+def test_ages_domainmodel_constructor_exists():
+    assert callable(aGES_Domainmodel.__init__)
 
 
-def test_ages::domainmodel_constructor_args():
-    sig = inspect.signature(aGES::Domainmodel.__init__)
+def test_ages_domainmodel_constructor_args():
+    sig = inspect.signature(aGES_Domainmodel.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -224,148 +224,133 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-aGES::Feature_strategy = st.builds(
-    aGES::Feature,
-    many=
-        st.booleans(),
+aGES_Feature_strategy = st.builds(
+    aGES_Feature,
     name=
-        safe_text
+        safe_text,
+    many=
+        st.booleans()
 )
 Type_strategy = st.builds(
     Type,
 )
-aGES::Entity_strategy = st.builds(
-    aGES::Entity,
+aGES_Entity_strategy = st.builds(
+    aGES_Entity,
 )
-aGES::DataType_strategy = st.builds(
-    aGES::DataType,
+aGES_DataType_strategy = st.builds(
+    aGES_DataType,
 )
 AbstractElement_strategy = st.builds(
     AbstractElement,
 )
-aGES::Import_strategy = st.builds(
-    aGES::Import,
+aGES_Import_strategy = st.builds(
+    aGES_Import,
     importedNamespace=
         safe_text
 )
-aGES::Type_strategy = st.builds(
-    aGES::Type,
+aGES_Type_strategy = st.builds(
+    aGES_Type,
     name=
         safe_text
 )
-aGES::PackageDeclaration_strategy = st.builds(
-    aGES::PackageDeclaration,
+aGES_PackageDeclaration_strategy = st.builds(
+    aGES_PackageDeclaration,
     name=
         safe_text
 )
-aGES::AbstractElement_strategy = st.builds(
-    aGES::AbstractElement,
+aGES_AbstractElement_strategy = st.builds(
+    aGES_AbstractElement,
 )
-aGES::Domainmodel_strategy = st.builds(
-    aGES::Domainmodel,
+aGES_Domainmodel_strategy = st.builds(
+    aGES_Domainmodel,
 )
 
-@given(instance=aGES::Feature_strategy)
+@given(instance=aGES_Feature_strategy)
 @settings(max_examples=50)
-def test_ages::feature_instantiation(instance):
-    assert isinstance(instance, aGES::Feature)
-
-@given(instance=aGES::Feature_strategy)
-def test_ages::feature_many_type(instance):
-    assert isinstance(instance.many, bool)
+def test_ages_feature_instantiation(instance):
+    assert isinstance(instance, aGES_Feature)
 
 
-@given(instance=aGES::Feature_strategy)
-def test_ages::feature_many_setter(instance):
-    original = instance.many
-    instance.many = original
-    assert instance.many == original
 
-@given(instance=aGES::Feature_strategy)
-def test_ages::feature_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=aGES::Feature_strategy)
-def test_ages::feature_name_setter(instance):
+@given(instance=aGES_Feature_strategy)
+def test_ages_feature_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
+
+
+
+@given(instance=aGES_Feature_strategy)
+def test_ages_feature_many_setter(instance):
+    original = instance.many
+    instance.many = original
+    assert instance.many == original
 
 @given(instance=Type_strategy)
 @settings(max_examples=50)
 def test_type_instantiation(instance):
     assert isinstance(instance, Type)
 
-@given(instance=aGES::Entity_strategy)
+@given(instance=aGES_Entity_strategy)
 @settings(max_examples=50)
-def test_ages::entity_instantiation(instance):
-    assert isinstance(instance, aGES::Entity)
+def test_ages_entity_instantiation(instance):
+    assert isinstance(instance, aGES_Entity)
 
-@given(instance=aGES::DataType_strategy)
+@given(instance=aGES_DataType_strategy)
 @settings(max_examples=50)
-def test_ages::datatype_instantiation(instance):
-    assert isinstance(instance, aGES::DataType)
+def test_ages_datatype_instantiation(instance):
+    assert isinstance(instance, aGES_DataType)
 
 @given(instance=AbstractElement_strategy)
 @settings(max_examples=50)
 def test_abstractelement_instantiation(instance):
     assert isinstance(instance, AbstractElement)
 
-@given(instance=aGES::Import_strategy)
+@given(instance=aGES_Import_strategy)
 @settings(max_examples=50)
-def test_ages::import_instantiation(instance):
-    assert isinstance(instance, aGES::Import)
-
-@given(instance=aGES::Import_strategy)
-def test_ages::import_importedNamespace_type(instance):
-    assert isinstance(instance.importedNamespace, str)
+def test_ages_import_instantiation(instance):
+    assert isinstance(instance, aGES_Import)
 
 
-@given(instance=aGES::Import_strategy)
-def test_ages::import_importedNamespace_setter(instance):
+
+@given(instance=aGES_Import_strategy)
+def test_ages_import_importedNamespace_setter(instance):
     original = instance.importedNamespace
     instance.importedNamespace = original
     assert instance.importedNamespace == original
 
-@given(instance=aGES::Type_strategy)
+@given(instance=aGES_Type_strategy)
 @settings(max_examples=50)
-def test_ages::type_instantiation(instance):
-    assert isinstance(instance, aGES::Type)
-
-@given(instance=aGES::Type_strategy)
-def test_ages::type_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_ages_type_instantiation(instance):
+    assert isinstance(instance, aGES_Type)
 
 
-@given(instance=aGES::Type_strategy)
-def test_ages::type_name_setter(instance):
+
+@given(instance=aGES_Type_strategy)
+def test_ages_type_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=aGES::PackageDeclaration_strategy)
+@given(instance=aGES_PackageDeclaration_strategy)
 @settings(max_examples=50)
-def test_ages::packagedeclaration_instantiation(instance):
-    assert isinstance(instance, aGES::PackageDeclaration)
-
-@given(instance=aGES::PackageDeclaration_strategy)
-def test_ages::packagedeclaration_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_ages_packagedeclaration_instantiation(instance):
+    assert isinstance(instance, aGES_PackageDeclaration)
 
 
-@given(instance=aGES::PackageDeclaration_strategy)
-def test_ages::packagedeclaration_name_setter(instance):
+
+@given(instance=aGES_PackageDeclaration_strategy)
+def test_ages_packagedeclaration_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=aGES::AbstractElement_strategy)
+@given(instance=aGES_AbstractElement_strategy)
 @settings(max_examples=50)
-def test_ages::abstractelement_instantiation(instance):
-    assert isinstance(instance, aGES::AbstractElement)
+def test_ages_abstractelement_instantiation(instance):
+    assert isinstance(instance, aGES_AbstractElement)
 
-@given(instance=aGES::Domainmodel_strategy)
+@given(instance=aGES_Domainmodel_strategy)
 @settings(max_examples=50)
-def test_ages::domainmodel_instantiation(instance):
-    assert isinstance(instance, aGES::Domainmodel)
+def test_ages_domainmodel_instantiation(instance):
+    assert isinstance(instance, aGES_Domainmodel)

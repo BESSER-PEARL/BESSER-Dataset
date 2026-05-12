@@ -3,18 +3,18 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     NamedElement,
-    entity::Type,
-    entity::Namespace,
-    entity::NamedElement,
-    entity::Attribute,
-    entity::Reference,
+    entity_Type,
+    entity_Namespace,
+    entity_NamedElement,
+    entity_Attribute,
+    entity_Reference,
     Type,
-    entity::Datatype,
-    entity::Entity,
+    entity_Datatype,
+    entity_Entity,
 )
 
 # =============================================================================
@@ -37,51 +37,51 @@ def test_namedelement_constructor_args():
 
 
 
-def test_entity::type_is_not_abstract():
-    assert not inspect.isabstract(entity::Type)
+def test_entity_type_is_not_abstract():
+    assert not inspect.isabstract(entity_Type)
 
 
-def test_entity::type_constructor_exists():
-    assert callable(entity::Type.__init__)
+def test_entity_type_constructor_exists():
+    assert callable(entity_Type.__init__)
 
 
-def test_entity::type_constructor_args():
-    sig = inspect.signature(entity::Type.__init__)
+def test_entity_type_constructor_args():
+    sig = inspect.signature(entity_Type.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_entity::namespace_is_not_abstract():
-    assert not inspect.isabstract(entity::Namespace)
+def test_entity_namespace_is_not_abstract():
+    assert not inspect.isabstract(entity_Namespace)
 
 
-def test_entity::namespace_constructor_exists():
-    assert callable(entity::Namespace.__init__)
+def test_entity_namespace_constructor_exists():
+    assert callable(entity_Namespace.__init__)
 
 
-def test_entity::namespace_constructor_args():
-    sig = inspect.signature(entity::Namespace.__init__)
+def test_entity_namespace_constructor_args():
+    sig = inspect.signature(entity_Namespace.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_entity::namedelement_is_not_abstract():
-    assert not inspect.isabstract(entity::NamedElement)
+def test_entity_namedelement_is_not_abstract():
+    assert not inspect.isabstract(entity_NamedElement)
 
 
-def test_entity::namedelement_constructor_exists():
-    assert callable(entity::NamedElement.__init__)
+def test_entity_namedelement_constructor_exists():
+    assert callable(entity_NamedElement.__init__)
 
 
-def test_entity::namedelement_constructor_args():
-    sig = inspect.signature(entity::NamedElement.__init__)
+def test_entity_namedelement_constructor_args():
+    sig = inspect.signature(entity_NamedElement.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_entity::namedelement_has_name():
-    assert hasattr(entity::NamedElement, "name")
+def test_entity_namedelement_has_name():
+    assert hasattr(entity_NamedElement, "name")
     descriptor = None
-    for klass in entity::NamedElement.__mro__:
+    for klass in entity_NamedElement.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -89,30 +89,30 @@ def test_entity::namedelement_has_name():
 
 
 
-def test_entity::attribute_is_not_abstract():
-    assert not inspect.isabstract(entity::Attribute)
+def test_entity_attribute_is_not_abstract():
+    assert not inspect.isabstract(entity_Attribute)
 
 
-def test_entity::attribute_constructor_exists():
-    assert callable(entity::Attribute.__init__)
+def test_entity_attribute_constructor_exists():
+    assert callable(entity_Attribute.__init__)
 
 
-def test_entity::attribute_constructor_args():
-    sig = inspect.signature(entity::Attribute.__init__)
+def test_entity_attribute_constructor_args():
+    sig = inspect.signature(entity_Attribute.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_entity::reference_is_not_abstract():
-    assert not inspect.isabstract(entity::Reference)
+def test_entity_reference_is_not_abstract():
+    assert not inspect.isabstract(entity_Reference)
 
 
-def test_entity::reference_constructor_exists():
-    assert callable(entity::Reference.__init__)
+def test_entity_reference_constructor_exists():
+    assert callable(entity_Reference.__init__)
 
 
-def test_entity::reference_constructor_args():
-    sig = inspect.signature(entity::Reference.__init__)
+def test_entity_reference_constructor_args():
+    sig = inspect.signature(entity_Reference.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -131,30 +131,30 @@ def test_type_constructor_args():
 
 
 
-def test_entity::datatype_is_not_abstract():
-    assert not inspect.isabstract(entity::Datatype)
+def test_entity_datatype_is_not_abstract():
+    assert not inspect.isabstract(entity_Datatype)
 
 
-def test_entity::datatype_constructor_exists():
-    assert callable(entity::Datatype.__init__)
+def test_entity_datatype_constructor_exists():
+    assert callable(entity_Datatype.__init__)
 
 
-def test_entity::datatype_constructor_args():
-    sig = inspect.signature(entity::Datatype.__init__)
+def test_entity_datatype_constructor_args():
+    sig = inspect.signature(entity_Datatype.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_entity::entity_is_not_abstract():
-    assert not inspect.isabstract(entity::Entity)
+def test_entity_entity_is_not_abstract():
+    assert not inspect.isabstract(entity_Entity)
 
 
-def test_entity::entity_constructor_exists():
-    assert callable(entity::Entity.__init__)
+def test_entity_entity_constructor_exists():
+    assert callable(entity_Entity.__init__)
 
 
-def test_entity::entity_constructor_args():
-    sig = inspect.signature(entity::Entity.__init__)
+def test_entity_entity_constructor_args():
+    sig = inspect.signature(entity_Entity.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -172,31 +172,31 @@ safe_text = st.text(
 NamedElement_strategy = st.builds(
     NamedElement,
 )
-entity::Type_strategy = st.builds(
-    entity::Type,
+entity_Type_strategy = st.builds(
+    entity_Type,
 )
-entity::Namespace_strategy = st.builds(
-    entity::Namespace,
+entity_Namespace_strategy = st.builds(
+    entity_Namespace,
 )
-entity::NamedElement_strategy = st.builds(
-    entity::NamedElement,
+entity_NamedElement_strategy = st.builds(
+    entity_NamedElement,
     name=
         safe_text
 )
-entity::Attribute_strategy = st.builds(
-    entity::Attribute,
+entity_Attribute_strategy = st.builds(
+    entity_Attribute,
 )
-entity::Reference_strategy = st.builds(
-    entity::Reference,
+entity_Reference_strategy = st.builds(
+    entity_Reference,
 )
 Type_strategy = st.builds(
     Type,
 )
-entity::Datatype_strategy = st.builds(
-    entity::Datatype,
+entity_Datatype_strategy = st.builds(
+    entity_Datatype,
 )
-entity::Entity_strategy = st.builds(
-    entity::Entity,
+entity_Entity_strategy = st.builds(
+    entity_Entity,
 )
 
 @given(instance=NamedElement_strategy)
@@ -204,53 +204,50 @@ entity::Entity_strategy = st.builds(
 def test_namedelement_instantiation(instance):
     assert isinstance(instance, NamedElement)
 
-@given(instance=entity::Type_strategy)
+@given(instance=entity_Type_strategy)
 @settings(max_examples=50)
-def test_entity::type_instantiation(instance):
-    assert isinstance(instance, entity::Type)
+def test_entity_type_instantiation(instance):
+    assert isinstance(instance, entity_Type)
 
-@given(instance=entity::Namespace_strategy)
+@given(instance=entity_Namespace_strategy)
 @settings(max_examples=50)
-def test_entity::namespace_instantiation(instance):
-    assert isinstance(instance, entity::Namespace)
+def test_entity_namespace_instantiation(instance):
+    assert isinstance(instance, entity_Namespace)
 
-@given(instance=entity::NamedElement_strategy)
+@given(instance=entity_NamedElement_strategy)
 @settings(max_examples=50)
-def test_entity::namedelement_instantiation(instance):
-    assert isinstance(instance, entity::NamedElement)
-
-@given(instance=entity::NamedElement_strategy)
-def test_entity::namedelement_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_entity_namedelement_instantiation(instance):
+    assert isinstance(instance, entity_NamedElement)
 
 
-@given(instance=entity::NamedElement_strategy)
-def test_entity::namedelement_name_setter(instance):
+
+@given(instance=entity_NamedElement_strategy)
+def test_entity_namedelement_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=entity::Attribute_strategy)
+@given(instance=entity_Attribute_strategy)
 @settings(max_examples=50)
-def test_entity::attribute_instantiation(instance):
-    assert isinstance(instance, entity::Attribute)
+def test_entity_attribute_instantiation(instance):
+    assert isinstance(instance, entity_Attribute)
 
-@given(instance=entity::Reference_strategy)
+@given(instance=entity_Reference_strategy)
 @settings(max_examples=50)
-def test_entity::reference_instantiation(instance):
-    assert isinstance(instance, entity::Reference)
+def test_entity_reference_instantiation(instance):
+    assert isinstance(instance, entity_Reference)
 
 @given(instance=Type_strategy)
 @settings(max_examples=50)
 def test_type_instantiation(instance):
     assert isinstance(instance, Type)
 
-@given(instance=entity::Datatype_strategy)
+@given(instance=entity_Datatype_strategy)
 @settings(max_examples=50)
-def test_entity::datatype_instantiation(instance):
-    assert isinstance(instance, entity::Datatype)
+def test_entity_datatype_instantiation(instance):
+    assert isinstance(instance, entity_Datatype)
 
-@given(instance=entity::Entity_strategy)
+@given(instance=entity_Entity_strategy)
 @settings(max_examples=50)
-def test_entity::entity_instantiation(instance):
-    assert isinstance(instance, entity::Entity)
+def test_entity_entity_instantiation(instance):
+    assert isinstance(instance, entity_Entity)

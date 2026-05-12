@@ -3,25 +3,25 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     Interface,
-    adl301::Type,
-    adl301::NamedElement,
+    adl301_Type,
+    adl301_NamedElement,
     AbstractComponent,
     Type,
     NamedElement,
-    adl301::Component,
-    adl301::Item,
-    adl301::Binding,
-    adl301::Interface,
-    adl301::Provided,
-    adl301::Required,
-    adl301::Attribute,
-    adl301::Attributes,
-    adl301::Content,
-    adl301::AbstractComponent,
+    adl301_Binding,
+    adl301_Item,
+    adl301_Component,
+    adl301_Interface,
+    adl301_Provided,
+    adl301_Required,
+    adl301_Attribute,
+    adl301_Attributes,
+    adl301_Content,
+    adl301_AbstractComponent,
 )
 
 # =============================================================================
@@ -44,23 +44,23 @@ def test_interface_constructor_args():
 
 
 
-def test_adl301::type_is_not_abstract():
-    assert not inspect.isabstract(adl301::Type)
+def test_adl301_type_is_not_abstract():
+    assert not inspect.isabstract(adl301_Type)
 
 
-def test_adl301::type_constructor_exists():
-    assert callable(adl301::Type.__init__)
+def test_adl301_type_constructor_exists():
+    assert callable(adl301_Type.__init__)
 
 
-def test_adl301::type_constructor_args():
-    sig = inspect.signature(adl301::Type.__init__)
+def test_adl301_type_constructor_args():
+    sig = inspect.signature(adl301_Type.__init__)
     params = list(sig.parameters.keys())
     assert "signature" in params, "Missing parameter 'signature'"
 
-def test_adl301::type_has_signature():
-    assert hasattr(adl301::Type, "signature")
+def test_adl301_type_has_signature():
+    assert hasattr(adl301_Type, "signature")
     descriptor = None
-    for klass in adl301::Type.__mro__:
+    for klass in adl301_Type.__mro__:
         if "signature" in klass.__dict__:
             descriptor = klass.__dict__["signature"]
             break
@@ -68,23 +68,23 @@ def test_adl301::type_has_signature():
 
 
 
-def test_adl301::namedelement_is_not_abstract():
-    assert not inspect.isabstract(adl301::NamedElement)
+def test_adl301_namedelement_is_not_abstract():
+    assert not inspect.isabstract(adl301_NamedElement)
 
 
-def test_adl301::namedelement_constructor_exists():
-    assert callable(adl301::NamedElement.__init__)
+def test_adl301_namedelement_constructor_exists():
+    assert callable(adl301_NamedElement.__init__)
 
 
-def test_adl301::namedelement_constructor_args():
-    sig = inspect.signature(adl301::NamedElement.__init__)
+def test_adl301_namedelement_constructor_args():
+    sig = inspect.signature(adl301_NamedElement.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_adl301::namedelement_has_name():
-    assert hasattr(adl301::NamedElement, "name")
+def test_adl301_namedelement_has_name():
+    assert hasattr(adl301_NamedElement, "name")
     descriptor = None
-    for klass in adl301::NamedElement.__mro__:
+    for klass in adl301_NamedElement.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -134,117 +134,117 @@ def test_namedelement_constructor_args():
 
 
 
-def test_adl301::component_is_not_abstract():
-    assert not inspect.isabstract(adl301::Component)
+def test_adl301_binding_is_not_abstract():
+    assert not inspect.isabstract(adl301_Binding)
 
 
-def test_adl301::component_constructor_exists():
-    assert callable(adl301::Component.__init__)
+def test_adl301_binding_constructor_exists():
+    assert callable(adl301_Binding.__init__)
 
 
-def test_adl301::component_constructor_args():
-    sig = inspect.signature(adl301::Component.__init__)
+def test_adl301_binding_constructor_args():
+    sig = inspect.signature(adl301_Binding.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_adl301::item_is_not_abstract():
-    assert not inspect.isabstract(adl301::Item)
+def test_adl301_item_is_not_abstract():
+    assert not inspect.isabstract(adl301_Item)
 
 
-def test_adl301::item_constructor_exists():
-    assert callable(adl301::Item.__init__)
+def test_adl301_item_constructor_exists():
+    assert callable(adl301_Item.__init__)
 
 
-def test_adl301::item_constructor_args():
-    sig = inspect.signature(adl301::Item.__init__)
+def test_adl301_item_constructor_args():
+    sig = inspect.signature(adl301_Item.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_adl301::binding_is_not_abstract():
-    assert not inspect.isabstract(adl301::Binding)
+def test_adl301_component_is_not_abstract():
+    assert not inspect.isabstract(adl301_Component)
 
 
-def test_adl301::binding_constructor_exists():
-    assert callable(adl301::Binding.__init__)
+def test_adl301_component_constructor_exists():
+    assert callable(adl301_Component.__init__)
 
 
-def test_adl301::binding_constructor_args():
-    sig = inspect.signature(adl301::Binding.__init__)
+def test_adl301_component_constructor_args():
+    sig = inspect.signature(adl301_Component.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_adl301::interface_is_not_abstract():
-    assert not inspect.isabstract(adl301::Interface)
+def test_adl301_interface_is_not_abstract():
+    assert not inspect.isabstract(adl301_Interface)
 
 
-def test_adl301::interface_constructor_exists():
-    assert callable(adl301::Interface.__init__)
+def test_adl301_interface_constructor_exists():
+    assert callable(adl301_Interface.__init__)
 
 
-def test_adl301::interface_constructor_args():
-    sig = inspect.signature(adl301::Interface.__init__)
+def test_adl301_interface_constructor_args():
+    sig = inspect.signature(adl301_Interface.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_adl301::provided_is_not_abstract():
-    assert not inspect.isabstract(adl301::Provided)
+def test_adl301_provided_is_not_abstract():
+    assert not inspect.isabstract(adl301_Provided)
 
 
-def test_adl301::provided_constructor_exists():
-    assert callable(adl301::Provided.__init__)
+def test_adl301_provided_constructor_exists():
+    assert callable(adl301_Provided.__init__)
 
 
-def test_adl301::provided_constructor_args():
-    sig = inspect.signature(adl301::Provided.__init__)
+def test_adl301_provided_constructor_args():
+    sig = inspect.signature(adl301_Provided.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_adl301::required_is_not_abstract():
-    assert not inspect.isabstract(adl301::Required)
+def test_adl301_required_is_not_abstract():
+    assert not inspect.isabstract(adl301_Required)
 
 
-def test_adl301::required_constructor_exists():
-    assert callable(adl301::Required.__init__)
+def test_adl301_required_constructor_exists():
+    assert callable(adl301_Required.__init__)
 
 
-def test_adl301::required_constructor_args():
-    sig = inspect.signature(adl301::Required.__init__)
+def test_adl301_required_constructor_args():
+    sig = inspect.signature(adl301_Required.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_adl301::attribute_is_not_abstract():
-    assert not inspect.isabstract(adl301::Attribute)
+def test_adl301_attribute_is_not_abstract():
+    assert not inspect.isabstract(adl301_Attribute)
 
 
-def test_adl301::attribute_constructor_exists():
-    assert callable(adl301::Attribute.__init__)
+def test_adl301_attribute_constructor_exists():
+    assert callable(adl301_Attribute.__init__)
 
 
-def test_adl301::attribute_constructor_args():
-    sig = inspect.signature(adl301::Attribute.__init__)
+def test_adl301_attribute_constructor_args():
+    sig = inspect.signature(adl301_Attribute.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
     assert "name" in params, "Missing parameter 'name'"
 
-def test_adl301::attribute_has_value():
-    assert hasattr(adl301::Attribute, "value")
+def test_adl301_attribute_has_value():
+    assert hasattr(adl301_Attribute, "value")
     descriptor = None
-    for klass in adl301::Attribute.__mro__:
+    for klass in adl301_Attribute.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
     assert isinstance(descriptor, property)
 
-def test_adl301::attribute_has_name():
-    assert hasattr(adl301::Attribute, "name")
+def test_adl301_attribute_has_name():
+    assert hasattr(adl301_Attribute, "name")
     descriptor = None
-    for klass in adl301::Attribute.__mro__:
+    for klass in adl301_Attribute.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -252,23 +252,23 @@ def test_adl301::attribute_has_name():
 
 
 
-def test_adl301::attributes_is_not_abstract():
-    assert not inspect.isabstract(adl301::Attributes)
+def test_adl301_attributes_is_not_abstract():
+    assert not inspect.isabstract(adl301_Attributes)
 
 
-def test_adl301::attributes_constructor_exists():
-    assert callable(adl301::Attributes.__init__)
+def test_adl301_attributes_constructor_exists():
+    assert callable(adl301_Attributes.__init__)
 
 
-def test_adl301::attributes_constructor_args():
-    sig = inspect.signature(adl301::Attributes.__init__)
+def test_adl301_attributes_constructor_args():
+    sig = inspect.signature(adl301_Attributes.__init__)
     params = list(sig.parameters.keys())
     assert "signature" in params, "Missing parameter 'signature'"
 
-def test_adl301::attributes_has_signature():
-    assert hasattr(adl301::Attributes, "signature")
+def test_adl301_attributes_has_signature():
+    assert hasattr(adl301_Attributes, "signature")
     descriptor = None
-    for klass in adl301::Attributes.__mro__:
+    for klass in adl301_Attributes.__mro__:
         if "signature" in klass.__dict__:
             descriptor = klass.__dict__["signature"]
             break
@@ -276,50 +276,50 @@ def test_adl301::attributes_has_signature():
 
 
 
-def test_adl301::content_is_not_abstract():
-    assert not inspect.isabstract(adl301::Content)
+def test_adl301_content_is_not_abstract():
+    assert not inspect.isabstract(adl301_Content)
 
 
-def test_adl301::content_constructor_exists():
-    assert callable(adl301::Content.__init__)
+def test_adl301_content_constructor_exists():
+    assert callable(adl301_Content.__init__)
 
 
-def test_adl301::content_constructor_args():
-    sig = inspect.signature(adl301::Content.__init__)
+def test_adl301_content_constructor_args():
+    sig = inspect.signature(adl301_Content.__init__)
     params = list(sig.parameters.keys())
-    assert "class_" in params, "Missing parameter 'class_'"
     assert "language" in params, "Missing parameter 'language'"
+    assert "class_" in params, "Missing parameter 'class_'"
 
-def test_adl301::content_has_class_():
-    assert hasattr(adl301::Content, "class_")
+def test_adl301_content_has_language():
+    assert hasattr(adl301_Content, "language")
     descriptor = None
-    for klass in adl301::Content.__mro__:
-        if "class_" in klass.__dict__:
-            descriptor = klass.__dict__["class_"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_adl301::content_has_language():
-    assert hasattr(adl301::Content, "language")
-    descriptor = None
-    for klass in adl301::Content.__mro__:
+    for klass in adl301_Content.__mro__:
         if "language" in klass.__dict__:
             descriptor = klass.__dict__["language"]
             break
     assert isinstance(descriptor, property)
 
+def test_adl301_content_has_class_():
+    assert hasattr(adl301_Content, "class_")
+    descriptor = None
+    for klass in adl301_Content.__mro__:
+        if "class_" in klass.__dict__:
+            descriptor = klass.__dict__["class_"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_adl301::abstractcomponent_is_not_abstract():
-    assert not inspect.isabstract(adl301::AbstractComponent)
+
+def test_adl301_abstractcomponent_is_not_abstract():
+    assert not inspect.isabstract(adl301_AbstractComponent)
 
 
-def test_adl301::abstractcomponent_constructor_exists():
-    assert callable(adl301::AbstractComponent.__init__)
+def test_adl301_abstractcomponent_constructor_exists():
+    assert callable(adl301_AbstractComponent.__init__)
 
 
-def test_adl301::abstractcomponent_constructor_args():
-    sig = inspect.signature(adl301::AbstractComponent.__init__)
+def test_adl301_abstractcomponent_constructor_args():
+    sig = inspect.signature(adl301_AbstractComponent.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -337,13 +337,13 @@ safe_text = st.text(
 Interface_strategy = st.builds(
     Interface,
 )
-adl301::Type_strategy = st.builds(
-    adl301::Type,
+adl301_Type_strategy = st.builds(
+    adl301_Type,
     signature=
         safe_text
 )
-adl301::NamedElement_strategy = st.builds(
-    adl301::NamedElement,
+adl301_NamedElement_strategy = st.builds(
+    adl301_NamedElement,
     name=
         safe_text
 )
@@ -356,45 +356,45 @@ Type_strategy = st.builds(
 NamedElement_strategy = st.builds(
     NamedElement,
 )
-adl301::Component_strategy = st.builds(
-    adl301::Component,
+adl301_Binding_strategy = st.builds(
+    adl301_Binding,
 )
-adl301::Item_strategy = st.builds(
-    adl301::Item,
+adl301_Item_strategy = st.builds(
+    adl301_Item,
 )
-adl301::Binding_strategy = st.builds(
-    adl301::Binding,
+adl301_Component_strategy = st.builds(
+    adl301_Component,
 )
-adl301::Interface_strategy = st.builds(
-    adl301::Interface,
+adl301_Interface_strategy = st.builds(
+    adl301_Interface,
 )
-adl301::Provided_strategy = st.builds(
-    adl301::Provided,
+adl301_Provided_strategy = st.builds(
+    adl301_Provided,
 )
-adl301::Required_strategy = st.builds(
-    adl301::Required,
+adl301_Required_strategy = st.builds(
+    adl301_Required,
 )
-adl301::Attribute_strategy = st.builds(
-    adl301::Attribute,
+adl301_Attribute_strategy = st.builds(
+    adl301_Attribute,
     value=
         safe_text,
     name=
         safe_text
 )
-adl301::Attributes_strategy = st.builds(
-    adl301::Attributes,
+adl301_Attributes_strategy = st.builds(
+    adl301_Attributes,
     signature=
         safe_text
 )
-adl301::Content_strategy = st.builds(
-    adl301::Content,
-    class_=
-        safe_text,
+adl301_Content_strategy = st.builds(
+    adl301_Content,
     language=
+        safe_text,
+    class_=
         safe_text
 )
-adl301::AbstractComponent_strategy = st.builds(
-    adl301::AbstractComponent,
+adl301_AbstractComponent_strategy = st.builds(
+    adl301_AbstractComponent,
 )
 
 @given(instance=Interface_strategy)
@@ -402,34 +402,28 @@ adl301::AbstractComponent_strategy = st.builds(
 def test_interface_instantiation(instance):
     assert isinstance(instance, Interface)
 
-@given(instance=adl301::Type_strategy)
+@given(instance=adl301_Type_strategy)
 @settings(max_examples=50)
-def test_adl301::type_instantiation(instance):
-    assert isinstance(instance, adl301::Type)
-
-@given(instance=adl301::Type_strategy)
-def test_adl301::type_signature_type(instance):
-    assert isinstance(instance.signature, str)
+def test_adl301_type_instantiation(instance):
+    assert isinstance(instance, adl301_Type)
 
 
-@given(instance=adl301::Type_strategy)
-def test_adl301::type_signature_setter(instance):
+
+@given(instance=adl301_Type_strategy)
+def test_adl301_type_signature_setter(instance):
     original = instance.signature
     instance.signature = original
     assert instance.signature == original
 
-@given(instance=adl301::NamedElement_strategy)
+@given(instance=adl301_NamedElement_strategy)
 @settings(max_examples=50)
-def test_adl301::namedelement_instantiation(instance):
-    assert isinstance(instance, adl301::NamedElement)
-
-@given(instance=adl301::NamedElement_strategy)
-def test_adl301::namedelement_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_adl301_namedelement_instantiation(instance):
+    assert isinstance(instance, adl301_NamedElement)
 
 
-@given(instance=adl301::NamedElement_strategy)
-def test_adl301::namedelement_name_setter(instance):
+
+@given(instance=adl301_NamedElement_strategy)
+def test_adl301_namedelement_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
@@ -449,107 +443,92 @@ def test_type_instantiation(instance):
 def test_namedelement_instantiation(instance):
     assert isinstance(instance, NamedElement)
 
-@given(instance=adl301::Component_strategy)
+@given(instance=adl301_Binding_strategy)
 @settings(max_examples=50)
-def test_adl301::component_instantiation(instance):
-    assert isinstance(instance, adl301::Component)
+def test_adl301_binding_instantiation(instance):
+    assert isinstance(instance, adl301_Binding)
 
-@given(instance=adl301::Item_strategy)
+@given(instance=adl301_Item_strategy)
 @settings(max_examples=50)
-def test_adl301::item_instantiation(instance):
-    assert isinstance(instance, adl301::Item)
+def test_adl301_item_instantiation(instance):
+    assert isinstance(instance, adl301_Item)
 
-@given(instance=adl301::Binding_strategy)
+@given(instance=adl301_Component_strategy)
 @settings(max_examples=50)
-def test_adl301::binding_instantiation(instance):
-    assert isinstance(instance, adl301::Binding)
+def test_adl301_component_instantiation(instance):
+    assert isinstance(instance, adl301_Component)
 
-@given(instance=adl301::Interface_strategy)
+@given(instance=adl301_Interface_strategy)
 @settings(max_examples=50)
-def test_adl301::interface_instantiation(instance):
-    assert isinstance(instance, adl301::Interface)
+def test_adl301_interface_instantiation(instance):
+    assert isinstance(instance, adl301_Interface)
 
-@given(instance=adl301::Provided_strategy)
+@given(instance=adl301_Provided_strategy)
 @settings(max_examples=50)
-def test_adl301::provided_instantiation(instance):
-    assert isinstance(instance, adl301::Provided)
+def test_adl301_provided_instantiation(instance):
+    assert isinstance(instance, adl301_Provided)
 
-@given(instance=adl301::Required_strategy)
+@given(instance=adl301_Required_strategy)
 @settings(max_examples=50)
-def test_adl301::required_instantiation(instance):
-    assert isinstance(instance, adl301::Required)
+def test_adl301_required_instantiation(instance):
+    assert isinstance(instance, adl301_Required)
 
-@given(instance=adl301::Attribute_strategy)
+@given(instance=adl301_Attribute_strategy)
 @settings(max_examples=50)
-def test_adl301::attribute_instantiation(instance):
-    assert isinstance(instance, adl301::Attribute)
-
-@given(instance=adl301::Attribute_strategy)
-def test_adl301::attribute_value_type(instance):
-    assert isinstance(instance.value, str)
+def test_adl301_attribute_instantiation(instance):
+    assert isinstance(instance, adl301_Attribute)
 
 
-@given(instance=adl301::Attribute_strategy)
-def test_adl301::attribute_value_setter(instance):
+
+@given(instance=adl301_Attribute_strategy)
+def test_adl301_attribute_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
 
-@given(instance=adl301::Attribute_strategy)
-def test_adl301::attribute_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
-@given(instance=adl301::Attribute_strategy)
-def test_adl301::attribute_name_setter(instance):
+@given(instance=adl301_Attribute_strategy)
+def test_adl301_attribute_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=adl301::Attributes_strategy)
+@given(instance=adl301_Attributes_strategy)
 @settings(max_examples=50)
-def test_adl301::attributes_instantiation(instance):
-    assert isinstance(instance, adl301::Attributes)
-
-@given(instance=adl301::Attributes_strategy)
-def test_adl301::attributes_signature_type(instance):
-    assert isinstance(instance.signature, str)
+def test_adl301_attributes_instantiation(instance):
+    assert isinstance(instance, adl301_Attributes)
 
 
-@given(instance=adl301::Attributes_strategy)
-def test_adl301::attributes_signature_setter(instance):
+
+@given(instance=adl301_Attributes_strategy)
+def test_adl301_attributes_signature_setter(instance):
     original = instance.signature
     instance.signature = original
     assert instance.signature == original
 
-@given(instance=adl301::Content_strategy)
+@given(instance=adl301_Content_strategy)
 @settings(max_examples=50)
-def test_adl301::content_instantiation(instance):
-    assert isinstance(instance, adl301::Content)
-
-@given(instance=adl301::Content_strategy)
-def test_adl301::content_class__type(instance):
-    assert isinstance(instance.class_, str)
+def test_adl301_content_instantiation(instance):
+    assert isinstance(instance, adl301_Content)
 
 
-@given(instance=adl301::Content_strategy)
-def test_adl301::content_class__setter(instance):
-    original = instance.class_
-    instance.class_ = original
-    assert instance.class_ == original
 
-@given(instance=adl301::Content_strategy)
-def test_adl301::content_language_type(instance):
-    assert isinstance(instance.language, str)
-
-
-@given(instance=adl301::Content_strategy)
-def test_adl301::content_language_setter(instance):
+@given(instance=adl301_Content_strategy)
+def test_adl301_content_language_setter(instance):
     original = instance.language
     instance.language = original
     assert instance.language == original
 
-@given(instance=adl301::AbstractComponent_strategy)
+
+
+@given(instance=adl301_Content_strategy)
+def test_adl301_content_class__setter(instance):
+    original = instance.class_
+    instance.class_ = original
+    assert instance.class_ == original
+
+@given(instance=adl301_AbstractComponent_strategy)
 @settings(max_examples=50)
-def test_adl301::abstractcomponent_instantiation(instance):
-    assert isinstance(instance, adl301::AbstractComponent)
+def test_adl301_abstractcomponent_instantiation(instance):
+    assert isinstance(instance, adl301_AbstractComponent)

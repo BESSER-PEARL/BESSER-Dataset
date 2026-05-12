@@ -3,7 +3,7 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
 from python_code import (
     FixedAccount,
@@ -53,17 +53,8 @@ def test_savingsaccount_constructor_exists():
 def test_savingsaccount_constructor_args():
     sig = inspect.signature(SavingsAccount.__init__)
     params = list(sig.parameters.keys())
-    assert "interestRate" in params, "Missing parameter 'interestRate'"
     assert "noticeGiven" in params, "Missing parameter 'noticeGiven'"
-
-def test_savingsaccount_has_interestRate():
-    assert hasattr(SavingsAccount, "interestRate")
-    descriptor = None
-    for klass in SavingsAccount.__mro__:
-        if "interestRate" in klass.__dict__:
-            descriptor = klass.__dict__["interestRate"]
-            break
-    assert isinstance(descriptor, property)
+    assert "interestRate" in params, "Missing parameter 'interestRate'"
 
 def test_savingsaccount_has_noticeGiven():
     assert hasattr(SavingsAccount, "noticeGiven")
@@ -71,6 +62,15 @@ def test_savingsaccount_has_noticeGiven():
     for klass in SavingsAccount.__mro__:
         if "noticeGiven" in klass.__dict__:
             descriptor = klass.__dict__["noticeGiven"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_savingsaccount_has_interestRate():
+    assert hasattr(SavingsAccount, "interestRate")
+    descriptor = None
+    for klass in SavingsAccount.__mro__:
+        if "interestRate" in klass.__dict__:
+            descriptor = klass.__dict__["interestRate"]
             break
     assert isinstance(descriptor, property)
 
@@ -87,16 +87,16 @@ def test_bankaccount_constructor_exists():
 def test_bankaccount_constructor_args():
     sig = inspect.signature(BankAccount.__init__)
     params = list(sig.parameters.keys())
-    assert "balance" in params, "Missing parameter 'balance'"
-    assert "accountHolder" in params, "Missing parameter 'accountHolder'"
     assert "accountNumber" in params, "Missing parameter 'accountNumber'"
+    assert "accountHolder" in params, "Missing parameter 'accountHolder'"
+    assert "balance" in params, "Missing parameter 'balance'"
 
-def test_bankaccount_has_balance():
-    assert hasattr(BankAccount, "balance")
+def test_bankaccount_has_accountNumber():
+    assert hasattr(BankAccount, "accountNumber")
     descriptor = None
     for klass in BankAccount.__mro__:
-        if "balance" in klass.__dict__:
-            descriptor = klass.__dict__["balance"]
+        if "accountNumber" in klass.__dict__:
+            descriptor = klass.__dict__["accountNumber"]
             break
     assert isinstance(descriptor, property)
 
@@ -109,12 +109,12 @@ def test_bankaccount_has_accountHolder():
             break
     assert isinstance(descriptor, property)
 
-def test_bankaccount_has_accountNumber():
-    assert hasattr(BankAccount, "accountNumber")
+def test_bankaccount_has_balance():
+    assert hasattr(BankAccount, "balance")
     descriptor = None
     for klass in BankAccount.__mro__:
-        if "accountNumber" in klass.__dict__:
-            descriptor = klass.__dict__["accountNumber"]
+        if "balance" in klass.__dict__:
+            descriptor = klass.__dict__["balance"]
             break
     assert isinstance(descriptor, property)
 
@@ -161,19 +161,19 @@ FixedAccount_strategy = st.builds(
 )
 SavingsAccount_strategy = st.builds(
     SavingsAccount,
-    interestRate=
-        st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False),
     noticeGiven=
-        st.booleans()
+        st.booleans(),
+    interestRate=
+        st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False)
 )
 BankAccount_strategy = st.builds(
     BankAccount,
-    balance=
-        st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False),
+    accountNumber=
+        st.integers(),
     accountHolder=
         safe_text,
-    accountNumber=
-        st.integers()
+    balance=
+        st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False)
 )
 Bank_strategy = st.builds(
     Bank,
@@ -186,9 +186,6 @@ Bank_strategy = st.builds(
 def test_fixedaccount_instantiation(instance):
     assert isinstance(instance, FixedAccount)
 
-@given(instance=FixedAccount_strategy)
-def test_fixedaccount_chequeBookNo_type(instance):
-    assert isinstance(instance.chequeBookNo, str)
 
 
 @given(instance=FixedAccount_strategy)
@@ -202,20 +199,6 @@ def test_fixedaccount_chequeBookNo_setter(instance):
 def test_savingsaccount_instantiation(instance):
     assert isinstance(instance, SavingsAccount)
 
-@given(instance=SavingsAccount_strategy)
-def test_savingsaccount_interestRate_type(instance):
-    assert isinstance(instance.interestRate, float)
-
-
-@given(instance=SavingsAccount_strategy)
-def test_savingsaccount_interestRate_setter(instance):
-    original = instance.interestRate
-    instance.interestRate = original
-    assert instance.interestRate == original
-
-@given(instance=SavingsAccount_strategy)
-def test_savingsaccount_noticeGiven_type(instance):
-    assert isinstance(instance.noticeGiven, bool)
 
 
 @given(instance=SavingsAccount_strategy)
@@ -224,36 +207,19 @@ def test_savingsaccount_noticeGiven_setter(instance):
     instance.noticeGiven = original
     assert instance.noticeGiven == original
 
+
+
+@given(instance=SavingsAccount_strategy)
+def test_savingsaccount_interestRate_setter(instance):
+    original = instance.interestRate
+    instance.interestRate = original
+    assert instance.interestRate == original
+
 @given(instance=BankAccount_strategy)
 @settings(max_examples=50)
 def test_bankaccount_instantiation(instance):
     assert isinstance(instance, BankAccount)
 
-@given(instance=BankAccount_strategy)
-def test_bankaccount_balance_type(instance):
-    assert isinstance(instance.balance, float)
-
-
-@given(instance=BankAccount_strategy)
-def test_bankaccount_balance_setter(instance):
-    original = instance.balance
-    instance.balance = original
-    assert instance.balance == original
-
-@given(instance=BankAccount_strategy)
-def test_bankaccount_accountHolder_type(instance):
-    assert isinstance(instance.accountHolder, str)
-
-
-@given(instance=BankAccount_strategy)
-def test_bankaccount_accountHolder_setter(instance):
-    original = instance.accountHolder
-    instance.accountHolder = original
-    assert instance.accountHolder == original
-
-@given(instance=BankAccount_strategy)
-def test_bankaccount_accountNumber_type(instance):
-    assert isinstance(instance.accountNumber, int)
 
 
 @given(instance=BankAccount_strategy)
@@ -262,14 +228,27 @@ def test_bankaccount_accountNumber_setter(instance):
     instance.accountNumber = original
     assert instance.accountNumber == original
 
+
+
+@given(instance=BankAccount_strategy)
+def test_bankaccount_accountHolder_setter(instance):
+    original = instance.accountHolder
+    instance.accountHolder = original
+    assert instance.accountHolder == original
+
+
+
+@given(instance=BankAccount_strategy)
+def test_bankaccount_balance_setter(instance):
+    original = instance.balance
+    instance.balance = original
+    assert instance.balance == original
+
 @given(instance=Bank_strategy)
 @settings(max_examples=50)
 def test_bank_instantiation(instance):
     assert isinstance(instance, Bank)
 
-@given(instance=Bank_strategy)
-def test_bank_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
 @given(instance=Bank_strategy)

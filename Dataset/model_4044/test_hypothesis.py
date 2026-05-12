@@ -3,36 +3,36 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    OO::concept::Dependency,
-    OO::concept::Generalization,
+from python_code import (
+    OO_concept_Dependency,
+    OO_concept_Generalization,
     StructuralFeature,
     Class,
-    OO::concept::Behavior,
+    OO_concept_Behavior,
     Feature,
-    OO::concept::StructuralFeature,
-    OO::concept::BehavioralFeature,
+    OO_concept_StructuralFeature,
+    OO_concept_BehavioralFeature,
     BehavioralFeature,
     TypedElement,
-    OO::concept::Parameter,
+    OO_concept_Parameter,
     Package,
-    OO::concept::Model,
-    OO::concept::NamedElement,
-    OO::concept::Classifier,
-    OO::concept::Property,
-    OO::concept::Operation,
+    OO_concept_Model,
+    OO_concept_NamedElement,
+    OO_concept_Classifier,
+    OO_concept_Property,
+    OO_concept_Operation,
     Type,
     Classifier,
     NamedElement,
-    OO::concept::Feature,
-    OO::concept::Type,
-    OO::concept::TypedElement,
+    OO_concept_Feature,
+    OO_concept_TypedElement,
+    OO_concept_Type,
     PackageableElement,
-    OO::concept::Class,
-    OO::concept::Package,
-    OO::concept::PackageableElement,
+    OO_concept_Class,
+    OO_concept_Package,
+    OO_concept_PackageableElement,
     VisibilityKind,
 )
 
@@ -42,30 +42,30 @@ from classes import (
 
 
 
-def test_oo::concept::dependency_is_not_abstract():
-    assert not inspect.isabstract(OO::concept::Dependency)
+def test_oo_concept_dependency_is_not_abstract():
+    assert not inspect.isabstract(OO_concept_Dependency)
 
 
-def test_oo::concept::dependency_constructor_exists():
-    assert callable(OO::concept::Dependency.__init__)
+def test_oo_concept_dependency_constructor_exists():
+    assert callable(OO_concept_Dependency.__init__)
 
 
-def test_oo::concept::dependency_constructor_args():
-    sig = inspect.signature(OO::concept::Dependency.__init__)
+def test_oo_concept_dependency_constructor_args():
+    sig = inspect.signature(OO_concept_Dependency.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_oo::concept::generalization_is_not_abstract():
-    assert not inspect.isabstract(OO::concept::Generalization)
+def test_oo_concept_generalization_is_not_abstract():
+    assert not inspect.isabstract(OO_concept_Generalization)
 
 
-def test_oo::concept::generalization_constructor_exists():
-    assert callable(OO::concept::Generalization.__init__)
+def test_oo_concept_generalization_constructor_exists():
+    assert callable(OO_concept_Generalization.__init__)
 
 
-def test_oo::concept::generalization_constructor_args():
-    sig = inspect.signature(OO::concept::Generalization.__init__)
+def test_oo_concept_generalization_constructor_args():
+    sig = inspect.signature(OO_concept_Generalization.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -98,16 +98,16 @@ def test_class_constructor_args():
 
 
 
-def test_oo::concept::behavior_is_not_abstract():
-    assert not inspect.isabstract(OO::concept::Behavior)
+def test_oo_concept_behavior_is_not_abstract():
+    assert not inspect.isabstract(OO_concept_Behavior)
 
 
-def test_oo::concept::behavior_constructor_exists():
-    assert callable(OO::concept::Behavior.__init__)
+def test_oo_concept_behavior_constructor_exists():
+    assert callable(OO_concept_Behavior.__init__)
 
 
-def test_oo::concept::behavior_constructor_args():
-    sig = inspect.signature(OO::concept::Behavior.__init__)
+def test_oo_concept_behavior_constructor_args():
+    sig = inspect.signature(OO_concept_Behavior.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -126,30 +126,30 @@ def test_feature_constructor_args():
 
 
 
-def test_oo::concept::structuralfeature_is_not_abstract():
-    assert not inspect.isabstract(OO::concept::StructuralFeature)
+def test_oo_concept_structuralfeature_is_not_abstract():
+    assert not inspect.isabstract(OO_concept_StructuralFeature)
 
 
-def test_oo::concept::structuralfeature_constructor_exists():
-    assert callable(OO::concept::StructuralFeature.__init__)
+def test_oo_concept_structuralfeature_constructor_exists():
+    assert callable(OO_concept_StructuralFeature.__init__)
 
 
-def test_oo::concept::structuralfeature_constructor_args():
-    sig = inspect.signature(OO::concept::StructuralFeature.__init__)
+def test_oo_concept_structuralfeature_constructor_args():
+    sig = inspect.signature(OO_concept_StructuralFeature.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_oo::concept::behavioralfeature_is_not_abstract():
-    assert not inspect.isabstract(OO::concept::BehavioralFeature)
+def test_oo_concept_behavioralfeature_is_not_abstract():
+    assert not inspect.isabstract(OO_concept_BehavioralFeature)
 
 
-def test_oo::concept::behavioralfeature_constructor_exists():
-    assert callable(OO::concept::BehavioralFeature.__init__)
+def test_oo_concept_behavioralfeature_constructor_exists():
+    assert callable(OO_concept_BehavioralFeature.__init__)
 
 
-def test_oo::concept::behavioralfeature_constructor_args():
-    sig = inspect.signature(OO::concept::BehavioralFeature.__init__)
+def test_oo_concept_behavioralfeature_constructor_args():
+    sig = inspect.signature(OO_concept_BehavioralFeature.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -182,16 +182,16 @@ def test_typedelement_constructor_args():
 
 
 
-def test_oo::concept::parameter_is_not_abstract():
-    assert not inspect.isabstract(OO::concept::Parameter)
+def test_oo_concept_parameter_is_not_abstract():
+    assert not inspect.isabstract(OO_concept_Parameter)
 
 
-def test_oo::concept::parameter_constructor_exists():
-    assert callable(OO::concept::Parameter.__init__)
+def test_oo_concept_parameter_constructor_exists():
+    assert callable(OO_concept_Parameter.__init__)
 
 
-def test_oo::concept::parameter_constructor_args():
-    sig = inspect.signature(OO::concept::Parameter.__init__)
+def test_oo_concept_parameter_constructor_args():
+    sig = inspect.signature(OO_concept_Parameter.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -210,102 +210,102 @@ def test_package_constructor_args():
 
 
 
-def test_oo::concept::model_is_not_abstract():
-    assert not inspect.isabstract(OO::concept::Model)
+def test_oo_concept_model_is_not_abstract():
+    assert not inspect.isabstract(OO_concept_Model)
 
 
-def test_oo::concept::model_constructor_exists():
-    assert callable(OO::concept::Model.__init__)
+def test_oo_concept_model_constructor_exists():
+    assert callable(OO_concept_Model.__init__)
 
 
-def test_oo::concept::model_constructor_args():
-    sig = inspect.signature(OO::concept::Model.__init__)
+def test_oo_concept_model_constructor_args():
+    sig = inspect.signature(OO_concept_Model.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_oo::concept::namedelement_is_not_abstract():
-    assert not inspect.isabstract(OO::concept::NamedElement)
+def test_oo_concept_namedelement_is_not_abstract():
+    assert not inspect.isabstract(OO_concept_NamedElement)
 
 
-def test_oo::concept::namedelement_constructor_exists():
-    assert callable(OO::concept::NamedElement.__init__)
+def test_oo_concept_namedelement_constructor_exists():
+    assert callable(OO_concept_NamedElement.__init__)
 
 
-def test_oo::concept::namedelement_constructor_args():
-    sig = inspect.signature(OO::concept::NamedElement.__init__)
+def test_oo_concept_namedelement_constructor_args():
+    sig = inspect.signature(OO_concept_NamedElement.__init__)
     params = list(sig.parameters.keys())
-    assert "isAbstract" in params, "Missing parameter 'isAbstract'"
     assert "visibility" in params, "Missing parameter 'visibility'"
     assert "name" in params, "Missing parameter 'name'"
+    assert "isAbstract" in params, "Missing parameter 'isAbstract'"
 
-def test_oo::concept::namedelement_has_isAbstract():
-    assert hasattr(OO::concept::NamedElement, "isAbstract")
+def test_oo_concept_namedelement_has_visibility():
+    assert hasattr(OO_concept_NamedElement, "visibility")
     descriptor = None
-    for klass in OO::concept::NamedElement.__mro__:
-        if "isAbstract" in klass.__dict__:
-            descriptor = klass.__dict__["isAbstract"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_oo::concept::namedelement_has_visibility():
-    assert hasattr(OO::concept::NamedElement, "visibility")
-    descriptor = None
-    for klass in OO::concept::NamedElement.__mro__:
+    for klass in OO_concept_NamedElement.__mro__:
         if "visibility" in klass.__dict__:
             descriptor = klass.__dict__["visibility"]
             break
     assert isinstance(descriptor, property)
 
-def test_oo::concept::namedelement_has_name():
-    assert hasattr(OO::concept::NamedElement, "name")
+def test_oo_concept_namedelement_has_name():
+    assert hasattr(OO_concept_NamedElement, "name")
     descriptor = None
-    for klass in OO::concept::NamedElement.__mro__:
+    for klass in OO_concept_NamedElement.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
+def test_oo_concept_namedelement_has_isAbstract():
+    assert hasattr(OO_concept_NamedElement, "isAbstract")
+    descriptor = None
+    for klass in OO_concept_NamedElement.__mro__:
+        if "isAbstract" in klass.__dict__:
+            descriptor = klass.__dict__["isAbstract"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_oo::concept::classifier_is_not_abstract():
-    assert not inspect.isabstract(OO::concept::Classifier)
+
+def test_oo_concept_classifier_is_not_abstract():
+    assert not inspect.isabstract(OO_concept_Classifier)
 
 
-def test_oo::concept::classifier_constructor_exists():
-    assert callable(OO::concept::Classifier.__init__)
+def test_oo_concept_classifier_constructor_exists():
+    assert callable(OO_concept_Classifier.__init__)
 
 
-def test_oo::concept::classifier_constructor_args():
-    sig = inspect.signature(OO::concept::Classifier.__init__)
+def test_oo_concept_classifier_constructor_args():
+    sig = inspect.signature(OO_concept_Classifier.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_oo::concept::property_is_not_abstract():
-    assert not inspect.isabstract(OO::concept::Property)
+def test_oo_concept_property_is_not_abstract():
+    assert not inspect.isabstract(OO_concept_Property)
 
 
-def test_oo::concept::property_constructor_exists():
-    assert callable(OO::concept::Property.__init__)
+def test_oo_concept_property_constructor_exists():
+    assert callable(OO_concept_Property.__init__)
 
 
-def test_oo::concept::property_constructor_args():
-    sig = inspect.signature(OO::concept::Property.__init__)
+def test_oo_concept_property_constructor_args():
+    sig = inspect.signature(OO_concept_Property.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_oo::concept::operation_is_not_abstract():
-    assert not inspect.isabstract(OO::concept::Operation)
+def test_oo_concept_operation_is_not_abstract():
+    assert not inspect.isabstract(OO_concept_Operation)
 
 
-def test_oo::concept::operation_constructor_exists():
-    assert callable(OO::concept::Operation.__init__)
+def test_oo_concept_operation_constructor_exists():
+    assert callable(OO_concept_Operation.__init__)
 
 
-def test_oo::concept::operation_constructor_args():
-    sig = inspect.signature(OO::concept::Operation.__init__)
+def test_oo_concept_operation_constructor_args():
+    sig = inspect.signature(OO_concept_Operation.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -352,44 +352,44 @@ def test_namedelement_constructor_args():
 
 
 
-def test_oo::concept::feature_is_not_abstract():
-    assert not inspect.isabstract(OO::concept::Feature)
+def test_oo_concept_feature_is_not_abstract():
+    assert not inspect.isabstract(OO_concept_Feature)
 
 
-def test_oo::concept::feature_constructor_exists():
-    assert callable(OO::concept::Feature.__init__)
+def test_oo_concept_feature_constructor_exists():
+    assert callable(OO_concept_Feature.__init__)
 
 
-def test_oo::concept::feature_constructor_args():
-    sig = inspect.signature(OO::concept::Feature.__init__)
+def test_oo_concept_feature_constructor_args():
+    sig = inspect.signature(OO_concept_Feature.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_oo::concept::type_is_not_abstract():
-    assert not inspect.isabstract(OO::concept::Type)
+def test_oo_concept_typedelement_is_not_abstract():
+    assert not inspect.isabstract(OO_concept_TypedElement)
 
 
-def test_oo::concept::type_constructor_exists():
-    assert callable(OO::concept::Type.__init__)
+def test_oo_concept_typedelement_constructor_exists():
+    assert callable(OO_concept_TypedElement.__init__)
 
 
-def test_oo::concept::type_constructor_args():
-    sig = inspect.signature(OO::concept::Type.__init__)
+def test_oo_concept_typedelement_constructor_args():
+    sig = inspect.signature(OO_concept_TypedElement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_oo::concept::typedelement_is_not_abstract():
-    assert not inspect.isabstract(OO::concept::TypedElement)
+def test_oo_concept_type_is_not_abstract():
+    assert not inspect.isabstract(OO_concept_Type)
 
 
-def test_oo::concept::typedelement_constructor_exists():
-    assert callable(OO::concept::TypedElement.__init__)
+def test_oo_concept_type_constructor_exists():
+    assert callable(OO_concept_Type.__init__)
 
 
-def test_oo::concept::typedelement_constructor_args():
-    sig = inspect.signature(OO::concept::TypedElement.__init__)
+def test_oo_concept_type_constructor_args():
+    sig = inspect.signature(OO_concept_Type.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -408,44 +408,44 @@ def test_packageableelement_constructor_args():
 
 
 
-def test_oo::concept::class_is_not_abstract():
-    assert not inspect.isabstract(OO::concept::Class)
+def test_oo_concept_class_is_not_abstract():
+    assert not inspect.isabstract(OO_concept_Class)
 
 
-def test_oo::concept::class_constructor_exists():
-    assert callable(OO::concept::Class.__init__)
+def test_oo_concept_class_constructor_exists():
+    assert callable(OO_concept_Class.__init__)
 
 
-def test_oo::concept::class_constructor_args():
-    sig = inspect.signature(OO::concept::Class.__init__)
+def test_oo_concept_class_constructor_args():
+    sig = inspect.signature(OO_concept_Class.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_oo::concept::package_is_not_abstract():
-    assert not inspect.isabstract(OO::concept::Package)
+def test_oo_concept_package_is_not_abstract():
+    assert not inspect.isabstract(OO_concept_Package)
 
 
-def test_oo::concept::package_constructor_exists():
-    assert callable(OO::concept::Package.__init__)
+def test_oo_concept_package_constructor_exists():
+    assert callable(OO_concept_Package.__init__)
 
 
-def test_oo::concept::package_constructor_args():
-    sig = inspect.signature(OO::concept::Package.__init__)
+def test_oo_concept_package_constructor_args():
+    sig = inspect.signature(OO_concept_Package.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_oo::concept::packageableelement_is_not_abstract():
-    assert not inspect.isabstract(OO::concept::PackageableElement)
+def test_oo_concept_packageableelement_is_not_abstract():
+    assert not inspect.isabstract(OO_concept_PackageableElement)
 
 
-def test_oo::concept::packageableelement_constructor_exists():
-    assert callable(OO::concept::PackageableElement.__init__)
+def test_oo_concept_packageableelement_constructor_exists():
+    assert callable(OO_concept_PackageableElement.__init__)
 
 
-def test_oo::concept::packageableelement_constructor_args():
-    sig = inspect.signature(OO::concept::PackageableElement.__init__)
+def test_oo_concept_packageableelement_constructor_args():
+    sig = inspect.signature(OO_concept_PackageableElement.__init__)
     params = list(sig.parameters.keys())
 
 def test_visibilitykind_exists():
@@ -456,10 +456,10 @@ def test_visibilitykind_has_all_literals():
     # Collect the names of literals in this Enumeration
     enum_literals = [lit.name for lit in VisibilityKind]
     expected_literals = [
-        "package",
         "private",
-        "public",
         "protected",
+        "public",
+        "package",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
@@ -477,11 +477,11 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-OO::concept::Dependency_strategy = st.builds(
-    OO::concept::Dependency,
+OO_concept_Dependency_strategy = st.builds(
+    OO_concept_Dependency,
 )
-OO::concept::Generalization_strategy = st.builds(
-    OO::concept::Generalization,
+OO_concept_Generalization_strategy = st.builds(
+    OO_concept_Generalization,
 )
 StructuralFeature_strategy = st.builds(
     StructuralFeature,
@@ -489,17 +489,17 @@ StructuralFeature_strategy = st.builds(
 Class_strategy = st.builds(
     Class,
 )
-OO::concept::Behavior_strategy = st.builds(
-    OO::concept::Behavior,
+OO_concept_Behavior_strategy = st.builds(
+    OO_concept_Behavior,
 )
 Feature_strategy = st.builds(
     Feature,
 )
-OO::concept::StructuralFeature_strategy = st.builds(
-    OO::concept::StructuralFeature,
+OO_concept_StructuralFeature_strategy = st.builds(
+    OO_concept_StructuralFeature,
 )
-OO::concept::BehavioralFeature_strategy = st.builds(
-    OO::concept::BehavioralFeature,
+OO_concept_BehavioralFeature_strategy = st.builds(
+    OO_concept_BehavioralFeature,
 )
 BehavioralFeature_strategy = st.builds(
     BehavioralFeature,
@@ -507,32 +507,32 @@ BehavioralFeature_strategy = st.builds(
 TypedElement_strategy = st.builds(
     TypedElement,
 )
-OO::concept::Parameter_strategy = st.builds(
-    OO::concept::Parameter,
+OO_concept_Parameter_strategy = st.builds(
+    OO_concept_Parameter,
 )
 Package_strategy = st.builds(
     Package,
 )
-OO::concept::Model_strategy = st.builds(
-    OO::concept::Model,
+OO_concept_Model_strategy = st.builds(
+    OO_concept_Model,
 )
-OO::concept::NamedElement_strategy = st.builds(
-    OO::concept::NamedElement,
-    isAbstract=
-        st.booleans(),
+OO_concept_NamedElement_strategy = st.builds(
+    OO_concept_NamedElement,
     visibility=
         safe_text,
     name=
-        safe_text
+        safe_text,
+    isAbstract=
+        st.booleans()
 )
-OO::concept::Classifier_strategy = st.builds(
-    OO::concept::Classifier,
+OO_concept_Classifier_strategy = st.builds(
+    OO_concept_Classifier,
 )
-OO::concept::Property_strategy = st.builds(
-    OO::concept::Property,
+OO_concept_Property_strategy = st.builds(
+    OO_concept_Property,
 )
-OO::concept::Operation_strategy = st.builds(
-    OO::concept::Operation,
+OO_concept_Operation_strategy = st.builds(
+    OO_concept_Operation,
 )
 Type_strategy = st.builds(
     Type,
@@ -543,37 +543,37 @@ Classifier_strategy = st.builds(
 NamedElement_strategy = st.builds(
     NamedElement,
 )
-OO::concept::Feature_strategy = st.builds(
-    OO::concept::Feature,
+OO_concept_Feature_strategy = st.builds(
+    OO_concept_Feature,
 )
-OO::concept::Type_strategy = st.builds(
-    OO::concept::Type,
+OO_concept_TypedElement_strategy = st.builds(
+    OO_concept_TypedElement,
 )
-OO::concept::TypedElement_strategy = st.builds(
-    OO::concept::TypedElement,
+OO_concept_Type_strategy = st.builds(
+    OO_concept_Type,
 )
 PackageableElement_strategy = st.builds(
     PackageableElement,
 )
-OO::concept::Class_strategy = st.builds(
-    OO::concept::Class,
+OO_concept_Class_strategy = st.builds(
+    OO_concept_Class,
 )
-OO::concept::Package_strategy = st.builds(
-    OO::concept::Package,
+OO_concept_Package_strategy = st.builds(
+    OO_concept_Package,
 )
-OO::concept::PackageableElement_strategy = st.builds(
-    OO::concept::PackageableElement,
+OO_concept_PackageableElement_strategy = st.builds(
+    OO_concept_PackageableElement,
 )
 
-@given(instance=OO::concept::Dependency_strategy)
+@given(instance=OO_concept_Dependency_strategy)
 @settings(max_examples=50)
-def test_oo::concept::dependency_instantiation(instance):
-    assert isinstance(instance, OO::concept::Dependency)
+def test_oo_concept_dependency_instantiation(instance):
+    assert isinstance(instance, OO_concept_Dependency)
 
-@given(instance=OO::concept::Generalization_strategy)
+@given(instance=OO_concept_Generalization_strategy)
 @settings(max_examples=50)
-def test_oo::concept::generalization_instantiation(instance):
-    assert isinstance(instance, OO::concept::Generalization)
+def test_oo_concept_generalization_instantiation(instance):
+    assert isinstance(instance, OO_concept_Generalization)
 
 @given(instance=StructuralFeature_strategy)
 @settings(max_examples=50)
@@ -585,25 +585,25 @@ def test_structuralfeature_instantiation(instance):
 def test_class_instantiation(instance):
     assert isinstance(instance, Class)
 
-@given(instance=OO::concept::Behavior_strategy)
+@given(instance=OO_concept_Behavior_strategy)
 @settings(max_examples=50)
-def test_oo::concept::behavior_instantiation(instance):
-    assert isinstance(instance, OO::concept::Behavior)
+def test_oo_concept_behavior_instantiation(instance):
+    assert isinstance(instance, OO_concept_Behavior)
 
 @given(instance=Feature_strategy)
 @settings(max_examples=50)
 def test_feature_instantiation(instance):
     assert isinstance(instance, Feature)
 
-@given(instance=OO::concept::StructuralFeature_strategy)
+@given(instance=OO_concept_StructuralFeature_strategy)
 @settings(max_examples=50)
-def test_oo::concept::structuralfeature_instantiation(instance):
-    assert isinstance(instance, OO::concept::StructuralFeature)
+def test_oo_concept_structuralfeature_instantiation(instance):
+    assert isinstance(instance, OO_concept_StructuralFeature)
 
-@given(instance=OO::concept::BehavioralFeature_strategy)
+@given(instance=OO_concept_BehavioralFeature_strategy)
 @settings(max_examples=50)
-def test_oo::concept::behavioralfeature_instantiation(instance):
-    assert isinstance(instance, OO::concept::BehavioralFeature)
+def test_oo_concept_behavioralfeature_instantiation(instance):
+    assert isinstance(instance, OO_concept_BehavioralFeature)
 
 @given(instance=BehavioralFeature_strategy)
 @settings(max_examples=50)
@@ -615,73 +615,64 @@ def test_behavioralfeature_instantiation(instance):
 def test_typedelement_instantiation(instance):
     assert isinstance(instance, TypedElement)
 
-@given(instance=OO::concept::Parameter_strategy)
+@given(instance=OO_concept_Parameter_strategy)
 @settings(max_examples=50)
-def test_oo::concept::parameter_instantiation(instance):
-    assert isinstance(instance, OO::concept::Parameter)
+def test_oo_concept_parameter_instantiation(instance):
+    assert isinstance(instance, OO_concept_Parameter)
 
 @given(instance=Package_strategy)
 @settings(max_examples=50)
 def test_package_instantiation(instance):
     assert isinstance(instance, Package)
 
-@given(instance=OO::concept::Model_strategy)
+@given(instance=OO_concept_Model_strategy)
 @settings(max_examples=50)
-def test_oo::concept::model_instantiation(instance):
-    assert isinstance(instance, OO::concept::Model)
+def test_oo_concept_model_instantiation(instance):
+    assert isinstance(instance, OO_concept_Model)
 
-@given(instance=OO::concept::NamedElement_strategy)
+@given(instance=OO_concept_NamedElement_strategy)
 @settings(max_examples=50)
-def test_oo::concept::namedelement_instantiation(instance):
-    assert isinstance(instance, OO::concept::NamedElement)
-
-@given(instance=OO::concept::NamedElement_strategy)
-def test_oo::concept::namedelement_isAbstract_type(instance):
-    assert isinstance(instance.isAbstract, bool)
+def test_oo_concept_namedelement_instantiation(instance):
+    assert isinstance(instance, OO_concept_NamedElement)
 
 
-@given(instance=OO::concept::NamedElement_strategy)
-def test_oo::concept::namedelement_isAbstract_setter(instance):
-    original = instance.isAbstract
-    instance.isAbstract = original
-    assert instance.isAbstract == original
 
-@given(instance=OO::concept::NamedElement_strategy)
-def test_oo::concept::namedelement_visibility_type(instance):
-    assert isinstance(instance.visibility, str)
-
-
-@given(instance=OO::concept::NamedElement_strategy)
-def test_oo::concept::namedelement_visibility_setter(instance):
+@given(instance=OO_concept_NamedElement_strategy)
+def test_oo_concept_namedelement_visibility_setter(instance):
     original = instance.visibility
     instance.visibility = original
     assert instance.visibility == original
 
-@given(instance=OO::concept::NamedElement_strategy)
-def test_oo::concept::namedelement_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
-@given(instance=OO::concept::NamedElement_strategy)
-def test_oo::concept::namedelement_name_setter(instance):
+@given(instance=OO_concept_NamedElement_strategy)
+def test_oo_concept_namedelement_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=OO::concept::Classifier_strategy)
-@settings(max_examples=50)
-def test_oo::concept::classifier_instantiation(instance):
-    assert isinstance(instance, OO::concept::Classifier)
 
-@given(instance=OO::concept::Property_strategy)
-@settings(max_examples=50)
-def test_oo::concept::property_instantiation(instance):
-    assert isinstance(instance, OO::concept::Property)
 
-@given(instance=OO::concept::Operation_strategy)
+@given(instance=OO_concept_NamedElement_strategy)
+def test_oo_concept_namedelement_isAbstract_setter(instance):
+    original = instance.isAbstract
+    instance.isAbstract = original
+    assert instance.isAbstract == original
+
+@given(instance=OO_concept_Classifier_strategy)
 @settings(max_examples=50)
-def test_oo::concept::operation_instantiation(instance):
-    assert isinstance(instance, OO::concept::Operation)
+def test_oo_concept_classifier_instantiation(instance):
+    assert isinstance(instance, OO_concept_Classifier)
+
+@given(instance=OO_concept_Property_strategy)
+@settings(max_examples=50)
+def test_oo_concept_property_instantiation(instance):
+    assert isinstance(instance, OO_concept_Property)
+
+@given(instance=OO_concept_Operation_strategy)
+@settings(max_examples=50)
+def test_oo_concept_operation_instantiation(instance):
+    assert isinstance(instance, OO_concept_Operation)
 
 @given(instance=Type_strategy)
 @settings(max_examples=50)
@@ -698,37 +689,37 @@ def test_classifier_instantiation(instance):
 def test_namedelement_instantiation(instance):
     assert isinstance(instance, NamedElement)
 
-@given(instance=OO::concept::Feature_strategy)
+@given(instance=OO_concept_Feature_strategy)
 @settings(max_examples=50)
-def test_oo::concept::feature_instantiation(instance):
-    assert isinstance(instance, OO::concept::Feature)
+def test_oo_concept_feature_instantiation(instance):
+    assert isinstance(instance, OO_concept_Feature)
 
-@given(instance=OO::concept::Type_strategy)
+@given(instance=OO_concept_TypedElement_strategy)
 @settings(max_examples=50)
-def test_oo::concept::type_instantiation(instance):
-    assert isinstance(instance, OO::concept::Type)
+def test_oo_concept_typedelement_instantiation(instance):
+    assert isinstance(instance, OO_concept_TypedElement)
 
-@given(instance=OO::concept::TypedElement_strategy)
+@given(instance=OO_concept_Type_strategy)
 @settings(max_examples=50)
-def test_oo::concept::typedelement_instantiation(instance):
-    assert isinstance(instance, OO::concept::TypedElement)
+def test_oo_concept_type_instantiation(instance):
+    assert isinstance(instance, OO_concept_Type)
 
 @given(instance=PackageableElement_strategy)
 @settings(max_examples=50)
 def test_packageableelement_instantiation(instance):
     assert isinstance(instance, PackageableElement)
 
-@given(instance=OO::concept::Class_strategy)
+@given(instance=OO_concept_Class_strategy)
 @settings(max_examples=50)
-def test_oo::concept::class_instantiation(instance):
-    assert isinstance(instance, OO::concept::Class)
+def test_oo_concept_class_instantiation(instance):
+    assert isinstance(instance, OO_concept_Class)
 
-@given(instance=OO::concept::Package_strategy)
+@given(instance=OO_concept_Package_strategy)
 @settings(max_examples=50)
-def test_oo::concept::package_instantiation(instance):
-    assert isinstance(instance, OO::concept::Package)
+def test_oo_concept_package_instantiation(instance):
+    assert isinstance(instance, OO_concept_Package)
 
-@given(instance=OO::concept::PackageableElement_strategy)
+@given(instance=OO_concept_PackageableElement_strategy)
 @settings(max_examples=50)
-def test_oo::concept::packageableelement_instantiation(instance):
-    assert isinstance(instance, OO::concept::PackageableElement)
+def test_oo_concept_packageableelement_instantiation(instance):
+    assert isinstance(instance, OO_concept_PackageableElement)

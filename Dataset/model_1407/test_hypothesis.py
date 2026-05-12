@@ -3,23 +3,23 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     SMACHState,
     ActionClient,
-    smach::ActionState,
-    smach::InitActionState,
-    smach::FinalState,
-    smach::SMACHTransition,
-    smach::SMACHState,
+    smach_ActionState,
+    smach_InitActionState,
+    smach_FinalState,
+    smach_SMACHTransition,
+    smach_SMACHState,
     Node,
-    smach::SMACHStateMachine,
-    smach::InitStraightState,
+    smach_SMACHStateMachine,
+    smach_InitStraightState,
     ServiceClient,
-    smach::ServiceState,
-    SMACHStateOutcomes,
+    smach_ServiceState,
     SMACHGoalTypes,
+    SMACHStateOutcomes,
 )
 
 # =============================================================================
@@ -56,51 +56,51 @@ def test_actionclient_constructor_args():
 
 
 
-def test_smach::actionstate_is_not_abstract():
-    assert not inspect.isabstract(smach::ActionState)
+def test_smach_actionstate_is_not_abstract():
+    assert not inspect.isabstract(smach_ActionState)
 
 
-def test_smach::actionstate_constructor_exists():
-    assert callable(smach::ActionState.__init__)
+def test_smach_actionstate_constructor_exists():
+    assert callable(smach_ActionState.__init__)
 
 
-def test_smach::actionstate_constructor_args():
-    sig = inspect.signature(smach::ActionState.__init__)
+def test_smach_actionstate_constructor_args():
+    sig = inspect.signature(smach_ActionState.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_smach::initactionstate_is_not_abstract():
-    assert not inspect.isabstract(smach::InitActionState)
+def test_smach_initactionstate_is_not_abstract():
+    assert not inspect.isabstract(smach_InitActionState)
 
 
-def test_smach::initactionstate_constructor_exists():
-    assert callable(smach::InitActionState.__init__)
+def test_smach_initactionstate_constructor_exists():
+    assert callable(smach_InitActionState.__init__)
 
 
-def test_smach::initactionstate_constructor_args():
-    sig = inspect.signature(smach::InitActionState.__init__)
+def test_smach_initactionstate_constructor_args():
+    sig = inspect.signature(smach_InitActionState.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_smach::finalstate_is_not_abstract():
-    assert not inspect.isabstract(smach::FinalState)
+def test_smach_finalstate_is_not_abstract():
+    assert not inspect.isabstract(smach_FinalState)
 
 
-def test_smach::finalstate_constructor_exists():
-    assert callable(smach::FinalState.__init__)
+def test_smach_finalstate_constructor_exists():
+    assert callable(smach_FinalState.__init__)
 
 
-def test_smach::finalstate_constructor_args():
-    sig = inspect.signature(smach::FinalState.__init__)
+def test_smach_finalstate_constructor_args():
+    sig = inspect.signature(smach_FinalState.__init__)
     params = list(sig.parameters.keys())
     assert "type" in params, "Missing parameter 'type'"
 
-def test_smach::finalstate_has_type():
-    assert hasattr(smach::FinalState, "type")
+def test_smach_finalstate_has_type():
+    assert hasattr(smach_FinalState, "type")
     descriptor = None
-    for klass in smach::FinalState.__mro__:
+    for klass in smach_FinalState.__mro__:
         if "type" in klass.__dict__:
             descriptor = klass.__dict__["type"]
             break
@@ -108,23 +108,23 @@ def test_smach::finalstate_has_type():
 
 
 
-def test_smach::smachtransition_is_not_abstract():
-    assert not inspect.isabstract(smach::SMACHTransition)
+def test_smach_smachtransition_is_not_abstract():
+    assert not inspect.isabstract(smach_SMACHTransition)
 
 
-def test_smach::smachtransition_constructor_exists():
-    assert callable(smach::SMACHTransition.__init__)
+def test_smach_smachtransition_constructor_exists():
+    assert callable(smach_SMACHTransition.__init__)
 
 
-def test_smach::smachtransition_constructor_args():
-    sig = inspect.signature(smach::SMACHTransition.__init__)
+def test_smach_smachtransition_constructor_args():
+    sig = inspect.signature(smach_SMACHTransition.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_smach::smachtransition_has_name():
-    assert hasattr(smach::SMACHTransition, "name")
+def test_smach_smachtransition_has_name():
+    assert hasattr(smach_SMACHTransition, "name")
     descriptor = None
-    for klass in smach::SMACHTransition.__mro__:
+    for klass in smach_SMACHTransition.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -132,45 +132,45 @@ def test_smach::smachtransition_has_name():
 
 
 
-def test_smach::smachstate_is_not_abstract():
-    assert not inspect.isabstract(smach::SMACHState)
+def test_smach_smachstate_is_not_abstract():
+    assert not inspect.isabstract(smach_SMACHState)
 
 
-def test_smach::smachstate_constructor_exists():
-    assert callable(smach::SMACHState.__init__)
+def test_smach_smachstate_constructor_exists():
+    assert callable(smach_SMACHState.__init__)
 
 
-def test_smach::smachstate_constructor_args():
-    sig = inspect.signature(smach::SMACHState.__init__)
+def test_smach_smachstate_constructor_args():
+    sig = inspect.signature(smach_SMACHState.__init__)
     params = list(sig.parameters.keys())
-    assert "goal" in params, "Missing parameter 'goal'"
-    assert "goal_type" in params, "Missing parameter 'goal_type'"
     assert "remap_overwrite" in params, "Missing parameter 'remap_overwrite'"
+    assert "goal_type" in params, "Missing parameter 'goal_type'"
+    assert "goal" in params, "Missing parameter 'goal'"
 
-def test_smach::smachstate_has_goal():
-    assert hasattr(smach::SMACHState, "goal")
+def test_smach_smachstate_has_remap_overwrite():
+    assert hasattr(smach_SMACHState, "remap_overwrite")
     descriptor = None
-    for klass in smach::SMACHState.__mro__:
-        if "goal" in klass.__dict__:
-            descriptor = klass.__dict__["goal"]
+    for klass in smach_SMACHState.__mro__:
+        if "remap_overwrite" in klass.__dict__:
+            descriptor = klass.__dict__["remap_overwrite"]
             break
     assert isinstance(descriptor, property)
 
-def test_smach::smachstate_has_goal_type():
-    assert hasattr(smach::SMACHState, "goal_type")
+def test_smach_smachstate_has_goal_type():
+    assert hasattr(smach_SMACHState, "goal_type")
     descriptor = None
-    for klass in smach::SMACHState.__mro__:
+    for klass in smach_SMACHState.__mro__:
         if "goal_type" in klass.__dict__:
             descriptor = klass.__dict__["goal_type"]
             break
     assert isinstance(descriptor, property)
 
-def test_smach::smachstate_has_remap_overwrite():
-    assert hasattr(smach::SMACHState, "remap_overwrite")
+def test_smach_smachstate_has_goal():
+    assert hasattr(smach_SMACHState, "goal")
     descriptor = None
-    for klass in smach::SMACHState.__mro__:
-        if "remap_overwrite" in klass.__dict__:
-            descriptor = klass.__dict__["remap_overwrite"]
+    for klass in smach_SMACHState.__mro__:
+        if "goal" in klass.__dict__:
+            descriptor = klass.__dict__["goal"]
             break
     assert isinstance(descriptor, property)
 
@@ -190,23 +190,23 @@ def test_node_constructor_args():
 
 
 
-def test_smach::smachstatemachine_is_not_abstract():
-    assert not inspect.isabstract(smach::SMACHStateMachine)
+def test_smach_smachstatemachine_is_not_abstract():
+    assert not inspect.isabstract(smach_SMACHStateMachine)
 
 
-def test_smach::smachstatemachine_constructor_exists():
-    assert callable(smach::SMACHStateMachine.__init__)
+def test_smach_smachstatemachine_constructor_exists():
+    assert callable(smach_SMACHStateMachine.__init__)
 
 
-def test_smach::smachstatemachine_constructor_args():
-    sig = inspect.signature(smach::SMACHStateMachine.__init__)
+def test_smach_smachstatemachine_constructor_args():
+    sig = inspect.signature(smach_SMACHStateMachine.__init__)
     params = list(sig.parameters.keys())
     assert "SkillInterface" in params, "Missing parameter 'SkillInterface'"
 
-def test_smach::smachstatemachine_has_SkillInterface():
-    assert hasattr(smach::SMACHStateMachine, "SkillInterface")
+def test_smach_smachstatemachine_has_SkillInterface():
+    assert hasattr(smach_SMACHStateMachine, "SkillInterface")
     descriptor = None
-    for klass in smach::SMACHStateMachine.__mro__:
+    for klass in smach_SMACHStateMachine.__mro__:
         if "SkillInterface" in klass.__dict__:
             descriptor = klass.__dict__["SkillInterface"]
             break
@@ -214,16 +214,16 @@ def test_smach::smachstatemachine_has_SkillInterface():
 
 
 
-def test_smach::initstraightstate_is_not_abstract():
-    assert not inspect.isabstract(smach::InitStraightState)
+def test_smach_initstraightstate_is_not_abstract():
+    assert not inspect.isabstract(smach_InitStraightState)
 
 
-def test_smach::initstraightstate_constructor_exists():
-    assert callable(smach::InitStraightState.__init__)
+def test_smach_initstraightstate_constructor_exists():
+    assert callable(smach_InitStraightState.__init__)
 
 
-def test_smach::initstraightstate_constructor_args():
-    sig = inspect.signature(smach::InitStraightState.__init__)
+def test_smach_initstraightstate_constructor_args():
+    sig = inspect.signature(smach_InitStraightState.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -242,33 +242,17 @@ def test_serviceclient_constructor_args():
 
 
 
-def test_smach::servicestate_is_not_abstract():
-    assert not inspect.isabstract(smach::ServiceState)
+def test_smach_servicestate_is_not_abstract():
+    assert not inspect.isabstract(smach_ServiceState)
 
 
-def test_smach::servicestate_constructor_exists():
-    assert callable(smach::ServiceState.__init__)
+def test_smach_servicestate_constructor_exists():
+    assert callable(smach_ServiceState.__init__)
 
 
-def test_smach::servicestate_constructor_args():
-    sig = inspect.signature(smach::ServiceState.__init__)
+def test_smach_servicestate_constructor_args():
+    sig = inspect.signature(smach_ServiceState.__init__)
     params = list(sig.parameters.keys())
-
-def test_smachstateoutcomes_exists():
-    # Check that the Enumeration exists
-    assert SMACHStateOutcomes is not None
-
-def test_smachstateoutcomes_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in SMACHStateOutcomes]
-    expected_literals = [
-        "succeeded",
-        "aborted",
-        "preempted",
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in SMACHStateOutcomes"
 
 def test_smachgoaltypes_exists():
     # Check that the Enumeration exists
@@ -284,6 +268,22 @@ def test_smachgoaltypes_has_all_literals():
     # Check that all expected literals exist
     for lit_name in expected_literals:
         assert lit_name in enum_literals, f"Literal '' missing in SMACHGoalTypes"
+
+def test_smachstateoutcomes_exists():
+    # Check that the Enumeration exists
+    assert SMACHStateOutcomes is not None
+
+def test_smachstateoutcomes_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in SMACHStateOutcomes]
+    expected_literals = [
+        "aborted",
+        "preempted",
+        "succeeded",
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in SMACHStateOutcomes"
 
 
 # =============================================================================
@@ -303,47 +303,47 @@ SMACHState_strategy = st.builds(
 ActionClient_strategy = st.builds(
     ActionClient,
 )
-smach::ActionState_strategy = st.builds(
-    smach::ActionState,
+smach_ActionState_strategy = st.builds(
+    smach_ActionState,
 )
-smach::InitActionState_strategy = st.builds(
-    smach::InitActionState,
+smach_InitActionState_strategy = st.builds(
+    smach_InitActionState,
 )
-smach::FinalState_strategy = st.builds(
-    smach::FinalState,
+smach_FinalState_strategy = st.builds(
+    smach_FinalState,
     type=
         safe_text
 )
-smach::SMACHTransition_strategy = st.builds(
-    smach::SMACHTransition,
+smach_SMACHTransition_strategy = st.builds(
+    smach_SMACHTransition,
     name=
         safe_text
 )
-smach::SMACHState_strategy = st.builds(
-    smach::SMACHState,
-    goal=
+smach_SMACHState_strategy = st.builds(
+    smach_SMACHState,
+    remap_overwrite=
         safe_text,
     goal_type=
         safe_text,
-    remap_overwrite=
+    goal=
         safe_text
 )
 Node_strategy = st.builds(
     Node,
 )
-smach::SMACHStateMachine_strategy = st.builds(
-    smach::SMACHStateMachine,
+smach_SMACHStateMachine_strategy = st.builds(
+    smach_SMACHStateMachine,
     SkillInterface=
         st.booleans()
 )
-smach::InitStraightState_strategy = st.builds(
-    smach::InitStraightState,
+smach_InitStraightState_strategy = st.builds(
+    smach_InitStraightState,
 )
 ServiceClient_strategy = st.builds(
     ServiceClient,
 )
-smach::ServiceState_strategy = st.builds(
-    smach::ServiceState,
+smach_ServiceState_strategy = st.builds(
+    smach_ServiceState,
 )
 
 @given(instance=SMACHState_strategy)
@@ -356,118 +356,100 @@ def test_smachstate_instantiation(instance):
 def test_actionclient_instantiation(instance):
     assert isinstance(instance, ActionClient)
 
-@given(instance=smach::ActionState_strategy)
+@given(instance=smach_ActionState_strategy)
 @settings(max_examples=50)
-def test_smach::actionstate_instantiation(instance):
-    assert isinstance(instance, smach::ActionState)
+def test_smach_actionstate_instantiation(instance):
+    assert isinstance(instance, smach_ActionState)
 
-@given(instance=smach::InitActionState_strategy)
+@given(instance=smach_InitActionState_strategy)
 @settings(max_examples=50)
-def test_smach::initactionstate_instantiation(instance):
-    assert isinstance(instance, smach::InitActionState)
+def test_smach_initactionstate_instantiation(instance):
+    assert isinstance(instance, smach_InitActionState)
 
-@given(instance=smach::FinalState_strategy)
+@given(instance=smach_FinalState_strategy)
 @settings(max_examples=50)
-def test_smach::finalstate_instantiation(instance):
-    assert isinstance(instance, smach::FinalState)
-
-@given(instance=smach::FinalState_strategy)
-def test_smach::finalstate_type_type(instance):
-    assert isinstance(instance.type, str)
+def test_smach_finalstate_instantiation(instance):
+    assert isinstance(instance, smach_FinalState)
 
 
-@given(instance=smach::FinalState_strategy)
-def test_smach::finalstate_type_setter(instance):
+
+@given(instance=smach_FinalState_strategy)
+def test_smach_finalstate_type_setter(instance):
     original = instance.type
     instance.type = original
     assert instance.type == original
 
-@given(instance=smach::SMACHTransition_strategy)
+@given(instance=smach_SMACHTransition_strategy)
 @settings(max_examples=50)
-def test_smach::smachtransition_instantiation(instance):
-    assert isinstance(instance, smach::SMACHTransition)
-
-@given(instance=smach::SMACHTransition_strategy)
-def test_smach::smachtransition_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_smach_smachtransition_instantiation(instance):
+    assert isinstance(instance, smach_SMACHTransition)
 
 
-@given(instance=smach::SMACHTransition_strategy)
-def test_smach::smachtransition_name_setter(instance):
+
+@given(instance=smach_SMACHTransition_strategy)
+def test_smach_smachtransition_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=smach::SMACHState_strategy)
+@given(instance=smach_SMACHState_strategy)
 @settings(max_examples=50)
-def test_smach::smachstate_instantiation(instance):
-    assert isinstance(instance, smach::SMACHState)
-
-@given(instance=smach::SMACHState_strategy)
-def test_smach::smachstate_goal_type(instance):
-    assert isinstance(instance.goal, str)
+def test_smach_smachstate_instantiation(instance):
+    assert isinstance(instance, smach_SMACHState)
 
 
-@given(instance=smach::SMACHState_strategy)
-def test_smach::smachstate_goal_setter(instance):
-    original = instance.goal
-    instance.goal = original
-    assert instance.goal == original
 
-@given(instance=smach::SMACHState_strategy)
-def test_smach::smachstate_goal_type_type(instance):
-    assert isinstance(instance.goal_type, str)
+@given(instance=smach_SMACHState_strategy)
+def test_smach_smachstate_remap_overwrite_setter(instance):
+    original = instance.remap_overwrite
+    instance.remap_overwrite = original
+    assert instance.remap_overwrite == original
 
 
-@given(instance=smach::SMACHState_strategy)
-def test_smach::smachstate_goal_type_setter(instance):
+
+@given(instance=smach_SMACHState_strategy)
+def test_smach_smachstate_goal_type_setter(instance):
     original = instance.goal_type
     instance.goal_type = original
     assert instance.goal_type == original
 
-@given(instance=smach::SMACHState_strategy)
-def test_smach::smachstate_remap_overwrite_type(instance):
-    assert isinstance(instance.remap_overwrite, str)
 
 
-@given(instance=smach::SMACHState_strategy)
-def test_smach::smachstate_remap_overwrite_setter(instance):
-    original = instance.remap_overwrite
-    instance.remap_overwrite = original
-    assert instance.remap_overwrite == original
+@given(instance=smach_SMACHState_strategy)
+def test_smach_smachstate_goal_setter(instance):
+    original = instance.goal
+    instance.goal = original
+    assert instance.goal == original
 
 @given(instance=Node_strategy)
 @settings(max_examples=50)
 def test_node_instantiation(instance):
     assert isinstance(instance, Node)
 
-@given(instance=smach::SMACHStateMachine_strategy)
+@given(instance=smach_SMACHStateMachine_strategy)
 @settings(max_examples=50)
-def test_smach::smachstatemachine_instantiation(instance):
-    assert isinstance(instance, smach::SMACHStateMachine)
-
-@given(instance=smach::SMACHStateMachine_strategy)
-def test_smach::smachstatemachine_SkillInterface_type(instance):
-    assert isinstance(instance.SkillInterface, bool)
+def test_smach_smachstatemachine_instantiation(instance):
+    assert isinstance(instance, smach_SMACHStateMachine)
 
 
-@given(instance=smach::SMACHStateMachine_strategy)
-def test_smach::smachstatemachine_SkillInterface_setter(instance):
+
+@given(instance=smach_SMACHStateMachine_strategy)
+def test_smach_smachstatemachine_SkillInterface_setter(instance):
     original = instance.SkillInterface
     instance.SkillInterface = original
     assert instance.SkillInterface == original
 
-@given(instance=smach::InitStraightState_strategy)
+@given(instance=smach_InitStraightState_strategy)
 @settings(max_examples=50)
-def test_smach::initstraightstate_instantiation(instance):
-    assert isinstance(instance, smach::InitStraightState)
+def test_smach_initstraightstate_instantiation(instance):
+    assert isinstance(instance, smach_InitStraightState)
 
 @given(instance=ServiceClient_strategy)
 @settings(max_examples=50)
 def test_serviceclient_instantiation(instance):
     assert isinstance(instance, ServiceClient)
 
-@given(instance=smach::ServiceState_strategy)
+@given(instance=smach_ServiceState_strategy)
 @settings(max_examples=50)
-def test_smach::servicestate_instantiation(instance):
-    assert isinstance(instance, smach::ServiceState)
+def test_smach_servicestate_instantiation(instance):
+    assert isinstance(instance, smach_ServiceState)

@@ -3,74 +3,74 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     TimeInterval,
     IntervalConstraint,
-    CommonBehavior::SimpleTime::DurationConstraint,
-    CommonBehavior::SimpleTime::TimeConstraint,
+    CommonBehavior_SimpleTime_DurationConstraint,
+    CommonBehavior_SimpleTime_TimeConstraint,
     Duration,
     Interval,
-    CommonBehavior::SimpleTime::DurationInterval,
-    CommonBehavior::SimpleTime::TimeInterval,
+    CommonBehavior_SimpleTime_DurationInterval,
+    CommonBehavior_SimpleTime_TimeInterval,
     DurationInterval,
     TimeExpression,
-    CommonBehavior::SimpleTime::TimeEvent,
-    CommonBehavior::Communications::ValueSpecification,
+    CommonBehavior_SimpleTime_TimeEvent,
+    CommonBehavior_Communications_ValueSpecification,
     ValueSpecification,
-    CommonBehavior::SimpleTime::Duration,
-    CommonBehavior::SimpleTime::Interval,
-    CommonBehavior::SimpleTime::TimeExpression,
-    CommonBehavior::Communications::Operation,
+    CommonBehavior_SimpleTime_TimeExpression,
+    CommonBehavior_SimpleTime_Duration,
+    CommonBehavior_SimpleTime_Interval,
+    CommonBehavior_Communications_Operation,
     Operation,
     MessageEvent,
-    CommonBehavior::Communications::CallEvent,
-    CommonBehavior::Communications::SignalEvent,
-    CommonBehavior::Communications::AnyReceiveEvent,
+    CommonBehavior_Communications_SignalEvent,
+    CommonBehavior_Communications_CallEvent,
+    CommonBehavior_Communications_AnyReceiveEvent,
     PackageableElement,
-    CommonBehavior::Communications::Event,
-    CommonBehavior::Communications::PackageableElement,
+    CommonBehavior_Communications_Event,
+    CommonBehavior_Communications_PackageableElement,
     Event,
-    CommonBehavior::Communications::MessageEvent,
-    CommonBehavior::Communications::ChangeEvent,
+    CommonBehavior_Communications_ChangeEvent,
+    CommonBehavior_Communications_MessageEvent,
     NamedElement,
-    CommonBehavior::Communications::Trigger,
-    CommonBehavior::Communications::NamedElement,
-    CommonBehavior::SimpleTime::Observation,
+    CommonBehavior_Communications_Trigger,
+    CommonBehavior_Communications_NamedElement,
+    CommonBehavior_SimpleTime_Observation,
     Observation,
-    CommonBehavior::SimpleTime::DurationObservation,
-    CommonBehavior::SimpleTime::TimeObservation,
-    CommonBehavior::Communications::Property,
+    CommonBehavior_SimpleTime_DurationObservation,
+    CommonBehavior_SimpleTime_TimeObservation,
+    CommonBehavior_Communications_Property,
     Property,
-    CommonBehavior::BasicBehavior::Constraint,
-    CommonBehavior::BasicBehavior::OpaqueExpression,
-    CommonBehavior::BasicBehavior::Parameter,
+    CommonBehavior_BasicBehavior_Constraint,
+    CommonBehavior_BasicBehavior_OpaqueExpression,
+    CommonBehavior_BasicBehavior_Parameter,
     Signal,
-    CommonBehavior::BasicBehavior::RedefinableElement,
+    CommonBehavior_BasicBehavior_RedefinableElement,
     Constraint,
-    CommonBehavior::SimpleTime::IntervalConstraint,
+    CommonBehavior_SimpleTime_IntervalConstraint,
     Parameter,
     BehavioralFeature,
-    CommonBehavior::Communications::Reception,
+    CommonBehavior_Communications_Reception,
     BehavioredClassifier,
     Class,
-    CommonBehavior::BasicBehavior::Behavior,
+    CommonBehavior_BasicBehavior_Behavior,
     Reception,
-    BasicBehavior::BehavioredClassifier,
-    BasicBehavior::Classifier,
-    CommonBehavior::BasicBehavior::Class,
+    BasicBehavior_BehavioredClassifier,
+    BasicBehavior_Classifier,
+    CommonBehavior_BasicBehavior_Class,
     RedefinableElement,
-    CommonBehavior::BasicBehavior::Classifier,
+    CommonBehavior_BasicBehavior_Classifier,
     Behavior,
-    CommonBehavior::BasicBehavior::OpaqueBehavior,
-    CommonBehavior::BasicBehavior::BehavioralFeature,
+    CommonBehavior_BasicBehavior_OpaqueBehavior,
+    CommonBehavior_BasicBehavior_BehavioralFeature,
     OpaqueBehavior,
-    CommonBehavior::BasicBehavior::FunctionBehavior,
+    CommonBehavior_BasicBehavior_FunctionBehavior,
     Classifier,
-    CommonBehavior::Communications::Signal,
-    CommonBehavior::Communications::Interface,
-    CommonBehavior::BasicBehavior::BehavioredClassifier,
+    CommonBehavior_Communications_Interface,
+    CommonBehavior_Communications_Signal,
+    CommonBehavior_BasicBehavior_BehavioredClassifier,
     CallConcurrencyFeature,
 )
 
@@ -108,23 +108,23 @@ def test_intervalconstraint_constructor_args():
 
 
 
-def test_commonbehavior::simpletime::durationconstraint_is_not_abstract():
-    assert not inspect.isabstract(CommonBehavior::SimpleTime::DurationConstraint)
+def test_commonbehavior_simpletime_durationconstraint_is_not_abstract():
+    assert not inspect.isabstract(CommonBehavior_SimpleTime_DurationConstraint)
 
 
-def test_commonbehavior::simpletime::durationconstraint_constructor_exists():
-    assert callable(CommonBehavior::SimpleTime::DurationConstraint.__init__)
+def test_commonbehavior_simpletime_durationconstraint_constructor_exists():
+    assert callable(CommonBehavior_SimpleTime_DurationConstraint.__init__)
 
 
-def test_commonbehavior::simpletime::durationconstraint_constructor_args():
-    sig = inspect.signature(CommonBehavior::SimpleTime::DurationConstraint.__init__)
+def test_commonbehavior_simpletime_durationconstraint_constructor_args():
+    sig = inspect.signature(CommonBehavior_SimpleTime_DurationConstraint.__init__)
     params = list(sig.parameters.keys())
     assert "firstEvent" in params, "Missing parameter 'firstEvent'"
 
-def test_commonbehavior::simpletime::durationconstraint_has_firstEvent():
-    assert hasattr(CommonBehavior::SimpleTime::DurationConstraint, "firstEvent")
+def test_commonbehavior_simpletime_durationconstraint_has_firstEvent():
+    assert hasattr(CommonBehavior_SimpleTime_DurationConstraint, "firstEvent")
     descriptor = None
-    for klass in CommonBehavior::SimpleTime::DurationConstraint.__mro__:
+    for klass in CommonBehavior_SimpleTime_DurationConstraint.__mro__:
         if "firstEvent" in klass.__dict__:
             descriptor = klass.__dict__["firstEvent"]
             break
@@ -132,23 +132,23 @@ def test_commonbehavior::simpletime::durationconstraint_has_firstEvent():
 
 
 
-def test_commonbehavior::simpletime::timeconstraint_is_not_abstract():
-    assert not inspect.isabstract(CommonBehavior::SimpleTime::TimeConstraint)
+def test_commonbehavior_simpletime_timeconstraint_is_not_abstract():
+    assert not inspect.isabstract(CommonBehavior_SimpleTime_TimeConstraint)
 
 
-def test_commonbehavior::simpletime::timeconstraint_constructor_exists():
-    assert callable(CommonBehavior::SimpleTime::TimeConstraint.__init__)
+def test_commonbehavior_simpletime_timeconstraint_constructor_exists():
+    assert callable(CommonBehavior_SimpleTime_TimeConstraint.__init__)
 
 
-def test_commonbehavior::simpletime::timeconstraint_constructor_args():
-    sig = inspect.signature(CommonBehavior::SimpleTime::TimeConstraint.__init__)
+def test_commonbehavior_simpletime_timeconstraint_constructor_args():
+    sig = inspect.signature(CommonBehavior_SimpleTime_TimeConstraint.__init__)
     params = list(sig.parameters.keys())
     assert "firstEvent" in params, "Missing parameter 'firstEvent'"
 
-def test_commonbehavior::simpletime::timeconstraint_has_firstEvent():
-    assert hasattr(CommonBehavior::SimpleTime::TimeConstraint, "firstEvent")
+def test_commonbehavior_simpletime_timeconstraint_has_firstEvent():
+    assert hasattr(CommonBehavior_SimpleTime_TimeConstraint, "firstEvent")
     descriptor = None
-    for klass in CommonBehavior::SimpleTime::TimeConstraint.__mro__:
+    for klass in CommonBehavior_SimpleTime_TimeConstraint.__mro__:
         if "firstEvent" in klass.__dict__:
             descriptor = klass.__dict__["firstEvent"]
             break
@@ -184,30 +184,30 @@ def test_interval_constructor_args():
 
 
 
-def test_commonbehavior::simpletime::durationinterval_is_not_abstract():
-    assert not inspect.isabstract(CommonBehavior::SimpleTime::DurationInterval)
+def test_commonbehavior_simpletime_durationinterval_is_not_abstract():
+    assert not inspect.isabstract(CommonBehavior_SimpleTime_DurationInterval)
 
 
-def test_commonbehavior::simpletime::durationinterval_constructor_exists():
-    assert callable(CommonBehavior::SimpleTime::DurationInterval.__init__)
+def test_commonbehavior_simpletime_durationinterval_constructor_exists():
+    assert callable(CommonBehavior_SimpleTime_DurationInterval.__init__)
 
 
-def test_commonbehavior::simpletime::durationinterval_constructor_args():
-    sig = inspect.signature(CommonBehavior::SimpleTime::DurationInterval.__init__)
+def test_commonbehavior_simpletime_durationinterval_constructor_args():
+    sig = inspect.signature(CommonBehavior_SimpleTime_DurationInterval.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_commonbehavior::simpletime::timeinterval_is_not_abstract():
-    assert not inspect.isabstract(CommonBehavior::SimpleTime::TimeInterval)
+def test_commonbehavior_simpletime_timeinterval_is_not_abstract():
+    assert not inspect.isabstract(CommonBehavior_SimpleTime_TimeInterval)
 
 
-def test_commonbehavior::simpletime::timeinterval_constructor_exists():
-    assert callable(CommonBehavior::SimpleTime::TimeInterval.__init__)
+def test_commonbehavior_simpletime_timeinterval_constructor_exists():
+    assert callable(CommonBehavior_SimpleTime_TimeInterval.__init__)
 
 
-def test_commonbehavior::simpletime::timeinterval_constructor_args():
-    sig = inspect.signature(CommonBehavior::SimpleTime::TimeInterval.__init__)
+def test_commonbehavior_simpletime_timeinterval_constructor_args():
+    sig = inspect.signature(CommonBehavior_SimpleTime_TimeInterval.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -240,23 +240,23 @@ def test_timeexpression_constructor_args():
 
 
 
-def test_commonbehavior::simpletime::timeevent_is_not_abstract():
-    assert not inspect.isabstract(CommonBehavior::SimpleTime::TimeEvent)
+def test_commonbehavior_simpletime_timeevent_is_not_abstract():
+    assert not inspect.isabstract(CommonBehavior_SimpleTime_TimeEvent)
 
 
-def test_commonbehavior::simpletime::timeevent_constructor_exists():
-    assert callable(CommonBehavior::SimpleTime::TimeEvent.__init__)
+def test_commonbehavior_simpletime_timeevent_constructor_exists():
+    assert callable(CommonBehavior_SimpleTime_TimeEvent.__init__)
 
 
-def test_commonbehavior::simpletime::timeevent_constructor_args():
-    sig = inspect.signature(CommonBehavior::SimpleTime::TimeEvent.__init__)
+def test_commonbehavior_simpletime_timeevent_constructor_args():
+    sig = inspect.signature(CommonBehavior_SimpleTime_TimeEvent.__init__)
     params = list(sig.parameters.keys())
     assert "isRelative" in params, "Missing parameter 'isRelative'"
 
-def test_commonbehavior::simpletime::timeevent_has_isRelative():
-    assert hasattr(CommonBehavior::SimpleTime::TimeEvent, "isRelative")
+def test_commonbehavior_simpletime_timeevent_has_isRelative():
+    assert hasattr(CommonBehavior_SimpleTime_TimeEvent, "isRelative")
     descriptor = None
-    for klass in CommonBehavior::SimpleTime::TimeEvent.__mro__:
+    for klass in CommonBehavior_SimpleTime_TimeEvent.__mro__:
         if "isRelative" in klass.__dict__:
             descriptor = klass.__dict__["isRelative"]
             break
@@ -264,16 +264,16 @@ def test_commonbehavior::simpletime::timeevent_has_isRelative():
 
 
 
-def test_commonbehavior::communications::valuespecification_is_not_abstract():
-    assert not inspect.isabstract(CommonBehavior::Communications::ValueSpecification)
+def test_commonbehavior_communications_valuespecification_is_not_abstract():
+    assert not inspect.isabstract(CommonBehavior_Communications_ValueSpecification)
 
 
-def test_commonbehavior::communications::valuespecification_constructor_exists():
-    assert callable(CommonBehavior::Communications::ValueSpecification.__init__)
+def test_commonbehavior_communications_valuespecification_constructor_exists():
+    assert callable(CommonBehavior_Communications_ValueSpecification.__init__)
 
 
-def test_commonbehavior::communications::valuespecification_constructor_args():
-    sig = inspect.signature(CommonBehavior::Communications::ValueSpecification.__init__)
+def test_commonbehavior_communications_valuespecification_constructor_args():
+    sig = inspect.signature(CommonBehavior_Communications_ValueSpecification.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -292,58 +292,58 @@ def test_valuespecification_constructor_args():
 
 
 
-def test_commonbehavior::simpletime::duration_is_not_abstract():
-    assert not inspect.isabstract(CommonBehavior::SimpleTime::Duration)
+def test_commonbehavior_simpletime_timeexpression_is_not_abstract():
+    assert not inspect.isabstract(CommonBehavior_SimpleTime_TimeExpression)
 
 
-def test_commonbehavior::simpletime::duration_constructor_exists():
-    assert callable(CommonBehavior::SimpleTime::Duration.__init__)
+def test_commonbehavior_simpletime_timeexpression_constructor_exists():
+    assert callable(CommonBehavior_SimpleTime_TimeExpression.__init__)
 
 
-def test_commonbehavior::simpletime::duration_constructor_args():
-    sig = inspect.signature(CommonBehavior::SimpleTime::Duration.__init__)
+def test_commonbehavior_simpletime_timeexpression_constructor_args():
+    sig = inspect.signature(CommonBehavior_SimpleTime_TimeExpression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_commonbehavior::simpletime::interval_is_not_abstract():
-    assert not inspect.isabstract(CommonBehavior::SimpleTime::Interval)
+def test_commonbehavior_simpletime_duration_is_not_abstract():
+    assert not inspect.isabstract(CommonBehavior_SimpleTime_Duration)
 
 
-def test_commonbehavior::simpletime::interval_constructor_exists():
-    assert callable(CommonBehavior::SimpleTime::Interval.__init__)
+def test_commonbehavior_simpletime_duration_constructor_exists():
+    assert callable(CommonBehavior_SimpleTime_Duration.__init__)
 
 
-def test_commonbehavior::simpletime::interval_constructor_args():
-    sig = inspect.signature(CommonBehavior::SimpleTime::Interval.__init__)
+def test_commonbehavior_simpletime_duration_constructor_args():
+    sig = inspect.signature(CommonBehavior_SimpleTime_Duration.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_commonbehavior::simpletime::timeexpression_is_not_abstract():
-    assert not inspect.isabstract(CommonBehavior::SimpleTime::TimeExpression)
+def test_commonbehavior_simpletime_interval_is_not_abstract():
+    assert not inspect.isabstract(CommonBehavior_SimpleTime_Interval)
 
 
-def test_commonbehavior::simpletime::timeexpression_constructor_exists():
-    assert callable(CommonBehavior::SimpleTime::TimeExpression.__init__)
+def test_commonbehavior_simpletime_interval_constructor_exists():
+    assert callable(CommonBehavior_SimpleTime_Interval.__init__)
 
 
-def test_commonbehavior::simpletime::timeexpression_constructor_args():
-    sig = inspect.signature(CommonBehavior::SimpleTime::TimeExpression.__init__)
+def test_commonbehavior_simpletime_interval_constructor_args():
+    sig = inspect.signature(CommonBehavior_SimpleTime_Interval.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_commonbehavior::communications::operation_is_not_abstract():
-    assert not inspect.isabstract(CommonBehavior::Communications::Operation)
+def test_commonbehavior_communications_operation_is_not_abstract():
+    assert not inspect.isabstract(CommonBehavior_Communications_Operation)
 
 
-def test_commonbehavior::communications::operation_constructor_exists():
-    assert callable(CommonBehavior::Communications::Operation.__init__)
+def test_commonbehavior_communications_operation_constructor_exists():
+    assert callable(CommonBehavior_Communications_Operation.__init__)
 
 
-def test_commonbehavior::communications::operation_constructor_args():
-    sig = inspect.signature(CommonBehavior::Communications::Operation.__init__)
+def test_commonbehavior_communications_operation_constructor_args():
+    sig = inspect.signature(CommonBehavior_Communications_Operation.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -376,44 +376,44 @@ def test_messageevent_constructor_args():
 
 
 
-def test_commonbehavior::communications::callevent_is_not_abstract():
-    assert not inspect.isabstract(CommonBehavior::Communications::CallEvent)
+def test_commonbehavior_communications_signalevent_is_not_abstract():
+    assert not inspect.isabstract(CommonBehavior_Communications_SignalEvent)
 
 
-def test_commonbehavior::communications::callevent_constructor_exists():
-    assert callable(CommonBehavior::Communications::CallEvent.__init__)
+def test_commonbehavior_communications_signalevent_constructor_exists():
+    assert callable(CommonBehavior_Communications_SignalEvent.__init__)
 
 
-def test_commonbehavior::communications::callevent_constructor_args():
-    sig = inspect.signature(CommonBehavior::Communications::CallEvent.__init__)
+def test_commonbehavior_communications_signalevent_constructor_args():
+    sig = inspect.signature(CommonBehavior_Communications_SignalEvent.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_commonbehavior::communications::signalevent_is_not_abstract():
-    assert not inspect.isabstract(CommonBehavior::Communications::SignalEvent)
+def test_commonbehavior_communications_callevent_is_not_abstract():
+    assert not inspect.isabstract(CommonBehavior_Communications_CallEvent)
 
 
-def test_commonbehavior::communications::signalevent_constructor_exists():
-    assert callable(CommonBehavior::Communications::SignalEvent.__init__)
+def test_commonbehavior_communications_callevent_constructor_exists():
+    assert callable(CommonBehavior_Communications_CallEvent.__init__)
 
 
-def test_commonbehavior::communications::signalevent_constructor_args():
-    sig = inspect.signature(CommonBehavior::Communications::SignalEvent.__init__)
+def test_commonbehavior_communications_callevent_constructor_args():
+    sig = inspect.signature(CommonBehavior_Communications_CallEvent.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_commonbehavior::communications::anyreceiveevent_is_not_abstract():
-    assert not inspect.isabstract(CommonBehavior::Communications::AnyReceiveEvent)
+def test_commonbehavior_communications_anyreceiveevent_is_not_abstract():
+    assert not inspect.isabstract(CommonBehavior_Communications_AnyReceiveEvent)
 
 
-def test_commonbehavior::communications::anyreceiveevent_constructor_exists():
-    assert callable(CommonBehavior::Communications::AnyReceiveEvent.__init__)
+def test_commonbehavior_communications_anyreceiveevent_constructor_exists():
+    assert callable(CommonBehavior_Communications_AnyReceiveEvent.__init__)
 
 
-def test_commonbehavior::communications::anyreceiveevent_constructor_args():
-    sig = inspect.signature(CommonBehavior::Communications::AnyReceiveEvent.__init__)
+def test_commonbehavior_communications_anyreceiveevent_constructor_args():
+    sig = inspect.signature(CommonBehavior_Communications_AnyReceiveEvent.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -432,30 +432,30 @@ def test_packageableelement_constructor_args():
 
 
 
-def test_commonbehavior::communications::event_is_not_abstract():
-    assert not inspect.isabstract(CommonBehavior::Communications::Event)
+def test_commonbehavior_communications_event_is_not_abstract():
+    assert not inspect.isabstract(CommonBehavior_Communications_Event)
 
 
-def test_commonbehavior::communications::event_constructor_exists():
-    assert callable(CommonBehavior::Communications::Event.__init__)
+def test_commonbehavior_communications_event_constructor_exists():
+    assert callable(CommonBehavior_Communications_Event.__init__)
 
 
-def test_commonbehavior::communications::event_constructor_args():
-    sig = inspect.signature(CommonBehavior::Communications::Event.__init__)
+def test_commonbehavior_communications_event_constructor_args():
+    sig = inspect.signature(CommonBehavior_Communications_Event.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_commonbehavior::communications::packageableelement_is_not_abstract():
-    assert not inspect.isabstract(CommonBehavior::Communications::PackageableElement)
+def test_commonbehavior_communications_packageableelement_is_not_abstract():
+    assert not inspect.isabstract(CommonBehavior_Communications_PackageableElement)
 
 
-def test_commonbehavior::communications::packageableelement_constructor_exists():
-    assert callable(CommonBehavior::Communications::PackageableElement.__init__)
+def test_commonbehavior_communications_packageableelement_constructor_exists():
+    assert callable(CommonBehavior_Communications_PackageableElement.__init__)
 
 
-def test_commonbehavior::communications::packageableelement_constructor_args():
-    sig = inspect.signature(CommonBehavior::Communications::PackageableElement.__init__)
+def test_commonbehavior_communications_packageableelement_constructor_args():
+    sig = inspect.signature(CommonBehavior_Communications_PackageableElement.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -474,30 +474,30 @@ def test_event_constructor_args():
 
 
 
-def test_commonbehavior::communications::messageevent_is_not_abstract():
-    assert not inspect.isabstract(CommonBehavior::Communications::MessageEvent)
+def test_commonbehavior_communications_changeevent_is_not_abstract():
+    assert not inspect.isabstract(CommonBehavior_Communications_ChangeEvent)
 
 
-def test_commonbehavior::communications::messageevent_constructor_exists():
-    assert callable(CommonBehavior::Communications::MessageEvent.__init__)
+def test_commonbehavior_communications_changeevent_constructor_exists():
+    assert callable(CommonBehavior_Communications_ChangeEvent.__init__)
 
 
-def test_commonbehavior::communications::messageevent_constructor_args():
-    sig = inspect.signature(CommonBehavior::Communications::MessageEvent.__init__)
+def test_commonbehavior_communications_changeevent_constructor_args():
+    sig = inspect.signature(CommonBehavior_Communications_ChangeEvent.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_commonbehavior::communications::changeevent_is_not_abstract():
-    assert not inspect.isabstract(CommonBehavior::Communications::ChangeEvent)
+def test_commonbehavior_communications_messageevent_is_not_abstract():
+    assert not inspect.isabstract(CommonBehavior_Communications_MessageEvent)
 
 
-def test_commonbehavior::communications::changeevent_constructor_exists():
-    assert callable(CommonBehavior::Communications::ChangeEvent.__init__)
+def test_commonbehavior_communications_messageevent_constructor_exists():
+    assert callable(CommonBehavior_Communications_MessageEvent.__init__)
 
 
-def test_commonbehavior::communications::changeevent_constructor_args():
-    sig = inspect.signature(CommonBehavior::Communications::ChangeEvent.__init__)
+def test_commonbehavior_communications_messageevent_constructor_args():
+    sig = inspect.signature(CommonBehavior_Communications_MessageEvent.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -516,44 +516,44 @@ def test_namedelement_constructor_args():
 
 
 
-def test_commonbehavior::communications::trigger_is_not_abstract():
-    assert not inspect.isabstract(CommonBehavior::Communications::Trigger)
+def test_commonbehavior_communications_trigger_is_not_abstract():
+    assert not inspect.isabstract(CommonBehavior_Communications_Trigger)
 
 
-def test_commonbehavior::communications::trigger_constructor_exists():
-    assert callable(CommonBehavior::Communications::Trigger.__init__)
+def test_commonbehavior_communications_trigger_constructor_exists():
+    assert callable(CommonBehavior_Communications_Trigger.__init__)
 
 
-def test_commonbehavior::communications::trigger_constructor_args():
-    sig = inspect.signature(CommonBehavior::Communications::Trigger.__init__)
+def test_commonbehavior_communications_trigger_constructor_args():
+    sig = inspect.signature(CommonBehavior_Communications_Trigger.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_commonbehavior::communications::namedelement_is_not_abstract():
-    assert not inspect.isabstract(CommonBehavior::Communications::NamedElement)
+def test_commonbehavior_communications_namedelement_is_not_abstract():
+    assert not inspect.isabstract(CommonBehavior_Communications_NamedElement)
 
 
-def test_commonbehavior::communications::namedelement_constructor_exists():
-    assert callable(CommonBehavior::Communications::NamedElement.__init__)
+def test_commonbehavior_communications_namedelement_constructor_exists():
+    assert callable(CommonBehavior_Communications_NamedElement.__init__)
 
 
-def test_commonbehavior::communications::namedelement_constructor_args():
-    sig = inspect.signature(CommonBehavior::Communications::NamedElement.__init__)
+def test_commonbehavior_communications_namedelement_constructor_args():
+    sig = inspect.signature(CommonBehavior_Communications_NamedElement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_commonbehavior::simpletime::observation_is_not_abstract():
-    assert not inspect.isabstract(CommonBehavior::SimpleTime::Observation)
+def test_commonbehavior_simpletime_observation_is_not_abstract():
+    assert not inspect.isabstract(CommonBehavior_SimpleTime_Observation)
 
 
-def test_commonbehavior::simpletime::observation_constructor_exists():
-    assert callable(CommonBehavior::SimpleTime::Observation.__init__)
+def test_commonbehavior_simpletime_observation_constructor_exists():
+    assert callable(CommonBehavior_SimpleTime_Observation.__init__)
 
 
-def test_commonbehavior::simpletime::observation_constructor_args():
-    sig = inspect.signature(CommonBehavior::SimpleTime::Observation.__init__)
+def test_commonbehavior_simpletime_observation_constructor_args():
+    sig = inspect.signature(CommonBehavior_SimpleTime_Observation.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -572,23 +572,23 @@ def test_observation_constructor_args():
 
 
 
-def test_commonbehavior::simpletime::durationobservation_is_not_abstract():
-    assert not inspect.isabstract(CommonBehavior::SimpleTime::DurationObservation)
+def test_commonbehavior_simpletime_durationobservation_is_not_abstract():
+    assert not inspect.isabstract(CommonBehavior_SimpleTime_DurationObservation)
 
 
-def test_commonbehavior::simpletime::durationobservation_constructor_exists():
-    assert callable(CommonBehavior::SimpleTime::DurationObservation.__init__)
+def test_commonbehavior_simpletime_durationobservation_constructor_exists():
+    assert callable(CommonBehavior_SimpleTime_DurationObservation.__init__)
 
 
-def test_commonbehavior::simpletime::durationobservation_constructor_args():
-    sig = inspect.signature(CommonBehavior::SimpleTime::DurationObservation.__init__)
+def test_commonbehavior_simpletime_durationobservation_constructor_args():
+    sig = inspect.signature(CommonBehavior_SimpleTime_DurationObservation.__init__)
     params = list(sig.parameters.keys())
     assert "firstEvent" in params, "Missing parameter 'firstEvent'"
 
-def test_commonbehavior::simpletime::durationobservation_has_firstEvent():
-    assert hasattr(CommonBehavior::SimpleTime::DurationObservation, "firstEvent")
+def test_commonbehavior_simpletime_durationobservation_has_firstEvent():
+    assert hasattr(CommonBehavior_SimpleTime_DurationObservation, "firstEvent")
     descriptor = None
-    for klass in CommonBehavior::SimpleTime::DurationObservation.__mro__:
+    for klass in CommonBehavior_SimpleTime_DurationObservation.__mro__:
         if "firstEvent" in klass.__dict__:
             descriptor = klass.__dict__["firstEvent"]
             break
@@ -596,23 +596,23 @@ def test_commonbehavior::simpletime::durationobservation_has_firstEvent():
 
 
 
-def test_commonbehavior::simpletime::timeobservation_is_not_abstract():
-    assert not inspect.isabstract(CommonBehavior::SimpleTime::TimeObservation)
+def test_commonbehavior_simpletime_timeobservation_is_not_abstract():
+    assert not inspect.isabstract(CommonBehavior_SimpleTime_TimeObservation)
 
 
-def test_commonbehavior::simpletime::timeobservation_constructor_exists():
-    assert callable(CommonBehavior::SimpleTime::TimeObservation.__init__)
+def test_commonbehavior_simpletime_timeobservation_constructor_exists():
+    assert callable(CommonBehavior_SimpleTime_TimeObservation.__init__)
 
 
-def test_commonbehavior::simpletime::timeobservation_constructor_args():
-    sig = inspect.signature(CommonBehavior::SimpleTime::TimeObservation.__init__)
+def test_commonbehavior_simpletime_timeobservation_constructor_args():
+    sig = inspect.signature(CommonBehavior_SimpleTime_TimeObservation.__init__)
     params = list(sig.parameters.keys())
     assert "firstEvent" in params, "Missing parameter 'firstEvent'"
 
-def test_commonbehavior::simpletime::timeobservation_has_firstEvent():
-    assert hasattr(CommonBehavior::SimpleTime::TimeObservation, "firstEvent")
+def test_commonbehavior_simpletime_timeobservation_has_firstEvent():
+    assert hasattr(CommonBehavior_SimpleTime_TimeObservation, "firstEvent")
     descriptor = None
-    for klass in CommonBehavior::SimpleTime::TimeObservation.__mro__:
+    for klass in CommonBehavior_SimpleTime_TimeObservation.__mro__:
         if "firstEvent" in klass.__dict__:
             descriptor = klass.__dict__["firstEvent"]
             break
@@ -620,16 +620,16 @@ def test_commonbehavior::simpletime::timeobservation_has_firstEvent():
 
 
 
-def test_commonbehavior::communications::property_is_not_abstract():
-    assert not inspect.isabstract(CommonBehavior::Communications::Property)
+def test_commonbehavior_communications_property_is_not_abstract():
+    assert not inspect.isabstract(CommonBehavior_Communications_Property)
 
 
-def test_commonbehavior::communications::property_constructor_exists():
-    assert callable(CommonBehavior::Communications::Property.__init__)
+def test_commonbehavior_communications_property_constructor_exists():
+    assert callable(CommonBehavior_Communications_Property.__init__)
 
 
-def test_commonbehavior::communications::property_constructor_args():
-    sig = inspect.signature(CommonBehavior::Communications::Property.__init__)
+def test_commonbehavior_communications_property_constructor_args():
+    sig = inspect.signature(CommonBehavior_Communications_Property.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -648,44 +648,44 @@ def test_property_constructor_args():
 
 
 
-def test_commonbehavior::basicbehavior::constraint_is_not_abstract():
-    assert not inspect.isabstract(CommonBehavior::BasicBehavior::Constraint)
+def test_commonbehavior_basicbehavior_constraint_is_not_abstract():
+    assert not inspect.isabstract(CommonBehavior_BasicBehavior_Constraint)
 
 
-def test_commonbehavior::basicbehavior::constraint_constructor_exists():
-    assert callable(CommonBehavior::BasicBehavior::Constraint.__init__)
+def test_commonbehavior_basicbehavior_constraint_constructor_exists():
+    assert callable(CommonBehavior_BasicBehavior_Constraint.__init__)
 
 
-def test_commonbehavior::basicbehavior::constraint_constructor_args():
-    sig = inspect.signature(CommonBehavior::BasicBehavior::Constraint.__init__)
+def test_commonbehavior_basicbehavior_constraint_constructor_args():
+    sig = inspect.signature(CommonBehavior_BasicBehavior_Constraint.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_commonbehavior::basicbehavior::opaqueexpression_is_not_abstract():
-    assert not inspect.isabstract(CommonBehavior::BasicBehavior::OpaqueExpression)
+def test_commonbehavior_basicbehavior_opaqueexpression_is_not_abstract():
+    assert not inspect.isabstract(CommonBehavior_BasicBehavior_OpaqueExpression)
 
 
-def test_commonbehavior::basicbehavior::opaqueexpression_constructor_exists():
-    assert callable(CommonBehavior::BasicBehavior::OpaqueExpression.__init__)
+def test_commonbehavior_basicbehavior_opaqueexpression_constructor_exists():
+    assert callable(CommonBehavior_BasicBehavior_OpaqueExpression.__init__)
 
 
-def test_commonbehavior::basicbehavior::opaqueexpression_constructor_args():
-    sig = inspect.signature(CommonBehavior::BasicBehavior::OpaqueExpression.__init__)
+def test_commonbehavior_basicbehavior_opaqueexpression_constructor_args():
+    sig = inspect.signature(CommonBehavior_BasicBehavior_OpaqueExpression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_commonbehavior::basicbehavior::parameter_is_not_abstract():
-    assert not inspect.isabstract(CommonBehavior::BasicBehavior::Parameter)
+def test_commonbehavior_basicbehavior_parameter_is_not_abstract():
+    assert not inspect.isabstract(CommonBehavior_BasicBehavior_Parameter)
 
 
-def test_commonbehavior::basicbehavior::parameter_constructor_exists():
-    assert callable(CommonBehavior::BasicBehavior::Parameter.__init__)
+def test_commonbehavior_basicbehavior_parameter_constructor_exists():
+    assert callable(CommonBehavior_BasicBehavior_Parameter.__init__)
 
 
-def test_commonbehavior::basicbehavior::parameter_constructor_args():
-    sig = inspect.signature(CommonBehavior::BasicBehavior::Parameter.__init__)
+def test_commonbehavior_basicbehavior_parameter_constructor_args():
+    sig = inspect.signature(CommonBehavior_BasicBehavior_Parameter.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -704,16 +704,16 @@ def test_signal_constructor_args():
 
 
 
-def test_commonbehavior::basicbehavior::redefinableelement_is_not_abstract():
-    assert not inspect.isabstract(CommonBehavior::BasicBehavior::RedefinableElement)
+def test_commonbehavior_basicbehavior_redefinableelement_is_not_abstract():
+    assert not inspect.isabstract(CommonBehavior_BasicBehavior_RedefinableElement)
 
 
-def test_commonbehavior::basicbehavior::redefinableelement_constructor_exists():
-    assert callable(CommonBehavior::BasicBehavior::RedefinableElement.__init__)
+def test_commonbehavior_basicbehavior_redefinableelement_constructor_exists():
+    assert callable(CommonBehavior_BasicBehavior_RedefinableElement.__init__)
 
 
-def test_commonbehavior::basicbehavior::redefinableelement_constructor_args():
-    sig = inspect.signature(CommonBehavior::BasicBehavior::RedefinableElement.__init__)
+def test_commonbehavior_basicbehavior_redefinableelement_constructor_args():
+    sig = inspect.signature(CommonBehavior_BasicBehavior_RedefinableElement.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -732,16 +732,16 @@ def test_constraint_constructor_args():
 
 
 
-def test_commonbehavior::simpletime::intervalconstraint_is_not_abstract():
-    assert not inspect.isabstract(CommonBehavior::SimpleTime::IntervalConstraint)
+def test_commonbehavior_simpletime_intervalconstraint_is_not_abstract():
+    assert not inspect.isabstract(CommonBehavior_SimpleTime_IntervalConstraint)
 
 
-def test_commonbehavior::simpletime::intervalconstraint_constructor_exists():
-    assert callable(CommonBehavior::SimpleTime::IntervalConstraint.__init__)
+def test_commonbehavior_simpletime_intervalconstraint_constructor_exists():
+    assert callable(CommonBehavior_SimpleTime_IntervalConstraint.__init__)
 
 
-def test_commonbehavior::simpletime::intervalconstraint_constructor_args():
-    sig = inspect.signature(CommonBehavior::SimpleTime::IntervalConstraint.__init__)
+def test_commonbehavior_simpletime_intervalconstraint_constructor_args():
+    sig = inspect.signature(CommonBehavior_SimpleTime_IntervalConstraint.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -774,16 +774,16 @@ def test_behavioralfeature_constructor_args():
 
 
 
-def test_commonbehavior::communications::reception_is_not_abstract():
-    assert not inspect.isabstract(CommonBehavior::Communications::Reception)
+def test_commonbehavior_communications_reception_is_not_abstract():
+    assert not inspect.isabstract(CommonBehavior_Communications_Reception)
 
 
-def test_commonbehavior::communications::reception_constructor_exists():
-    assert callable(CommonBehavior::Communications::Reception.__init__)
+def test_commonbehavior_communications_reception_constructor_exists():
+    assert callable(CommonBehavior_Communications_Reception.__init__)
 
 
-def test_commonbehavior::communications::reception_constructor_args():
-    sig = inspect.signature(CommonBehavior::Communications::Reception.__init__)
+def test_commonbehavior_communications_reception_constructor_args():
+    sig = inspect.signature(CommonBehavior_Communications_Reception.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -816,23 +816,23 @@ def test_class_constructor_args():
 
 
 
-def test_commonbehavior::basicbehavior::behavior_is_not_abstract():
-    assert not inspect.isabstract(CommonBehavior::BasicBehavior::Behavior)
+def test_commonbehavior_basicbehavior_behavior_is_not_abstract():
+    assert not inspect.isabstract(CommonBehavior_BasicBehavior_Behavior)
 
 
-def test_commonbehavior::basicbehavior::behavior_constructor_exists():
-    assert callable(CommonBehavior::BasicBehavior::Behavior.__init__)
+def test_commonbehavior_basicbehavior_behavior_constructor_exists():
+    assert callable(CommonBehavior_BasicBehavior_Behavior.__init__)
 
 
-def test_commonbehavior::basicbehavior::behavior_constructor_args():
-    sig = inspect.signature(CommonBehavior::BasicBehavior::Behavior.__init__)
+def test_commonbehavior_basicbehavior_behavior_constructor_args():
+    sig = inspect.signature(CommonBehavior_BasicBehavior_Behavior.__init__)
     params = list(sig.parameters.keys())
     assert "isReentrant" in params, "Missing parameter 'isReentrant'"
 
-def test_commonbehavior::basicbehavior::behavior_has_isReentrant():
-    assert hasattr(CommonBehavior::BasicBehavior::Behavior, "isReentrant")
+def test_commonbehavior_basicbehavior_behavior_has_isReentrant():
+    assert hasattr(CommonBehavior_BasicBehavior_Behavior, "isReentrant")
     descriptor = None
-    for klass in CommonBehavior::BasicBehavior::Behavior.__mro__:
+    for klass in CommonBehavior_BasicBehavior_Behavior.__mro__:
         if "isReentrant" in klass.__dict__:
             descriptor = klass.__dict__["isReentrant"]
             break
@@ -854,44 +854,44 @@ def test_reception_constructor_args():
 
 
 
-def test_basicbehavior::behavioredclassifier_is_not_abstract():
-    assert not inspect.isabstract(BasicBehavior::BehavioredClassifier)
+def test_basicbehavior_behavioredclassifier_is_not_abstract():
+    assert not inspect.isabstract(BasicBehavior_BehavioredClassifier)
 
 
-def test_basicbehavior::behavioredclassifier_constructor_exists():
-    assert callable(BasicBehavior::BehavioredClassifier.__init__)
+def test_basicbehavior_behavioredclassifier_constructor_exists():
+    assert callable(BasicBehavior_BehavioredClassifier.__init__)
 
 
-def test_basicbehavior::behavioredclassifier_constructor_args():
-    sig = inspect.signature(BasicBehavior::BehavioredClassifier.__init__)
+def test_basicbehavior_behavioredclassifier_constructor_args():
+    sig = inspect.signature(BasicBehavior_BehavioredClassifier.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_basicbehavior::classifier_is_not_abstract():
-    assert not inspect.isabstract(BasicBehavior::Classifier)
+def test_basicbehavior_classifier_is_not_abstract():
+    assert not inspect.isabstract(BasicBehavior_Classifier)
 
 
-def test_basicbehavior::classifier_constructor_exists():
-    assert callable(BasicBehavior::Classifier.__init__)
+def test_basicbehavior_classifier_constructor_exists():
+    assert callable(BasicBehavior_Classifier.__init__)
 
 
-def test_basicbehavior::classifier_constructor_args():
-    sig = inspect.signature(BasicBehavior::Classifier.__init__)
+def test_basicbehavior_classifier_constructor_args():
+    sig = inspect.signature(BasicBehavior_Classifier.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_commonbehavior::basicbehavior::class_is_not_abstract():
-    assert not inspect.isabstract(CommonBehavior::BasicBehavior::Class)
+def test_commonbehavior_basicbehavior_class_is_not_abstract():
+    assert not inspect.isabstract(CommonBehavior_BasicBehavior_Class)
 
 
-def test_commonbehavior::basicbehavior::class_constructor_exists():
-    assert callable(CommonBehavior::BasicBehavior::Class.__init__)
+def test_commonbehavior_basicbehavior_class_constructor_exists():
+    assert callable(CommonBehavior_BasicBehavior_Class.__init__)
 
 
-def test_commonbehavior::basicbehavior::class_constructor_args():
-    sig = inspect.signature(CommonBehavior::BasicBehavior::Class.__init__)
+def test_commonbehavior_basicbehavior_class_constructor_args():
+    sig = inspect.signature(CommonBehavior_BasicBehavior_Class.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -910,16 +910,16 @@ def test_redefinableelement_constructor_args():
 
 
 
-def test_commonbehavior::basicbehavior::classifier_is_not_abstract():
-    assert not inspect.isabstract(CommonBehavior::BasicBehavior::Classifier)
+def test_commonbehavior_basicbehavior_classifier_is_not_abstract():
+    assert not inspect.isabstract(CommonBehavior_BasicBehavior_Classifier)
 
 
-def test_commonbehavior::basicbehavior::classifier_constructor_exists():
-    assert callable(CommonBehavior::BasicBehavior::Classifier.__init__)
+def test_commonbehavior_basicbehavior_classifier_constructor_exists():
+    assert callable(CommonBehavior_BasicBehavior_Classifier.__init__)
 
 
-def test_commonbehavior::basicbehavior::classifier_constructor_args():
-    sig = inspect.signature(CommonBehavior::BasicBehavior::Classifier.__init__)
+def test_commonbehavior_basicbehavior_classifier_constructor_args():
+    sig = inspect.signature(CommonBehavior_BasicBehavior_Classifier.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -938,33 +938,33 @@ def test_behavior_constructor_args():
 
 
 
-def test_commonbehavior::basicbehavior::opaquebehavior_is_not_abstract():
-    assert not inspect.isabstract(CommonBehavior::BasicBehavior::OpaqueBehavior)
+def test_commonbehavior_basicbehavior_opaquebehavior_is_not_abstract():
+    assert not inspect.isabstract(CommonBehavior_BasicBehavior_OpaqueBehavior)
 
 
-def test_commonbehavior::basicbehavior::opaquebehavior_constructor_exists():
-    assert callable(CommonBehavior::BasicBehavior::OpaqueBehavior.__init__)
+def test_commonbehavior_basicbehavior_opaquebehavior_constructor_exists():
+    assert callable(CommonBehavior_BasicBehavior_OpaqueBehavior.__init__)
 
 
-def test_commonbehavior::basicbehavior::opaquebehavior_constructor_args():
-    sig = inspect.signature(CommonBehavior::BasicBehavior::OpaqueBehavior.__init__)
+def test_commonbehavior_basicbehavior_opaquebehavior_constructor_args():
+    sig = inspect.signature(CommonBehavior_BasicBehavior_OpaqueBehavior.__init__)
     params = list(sig.parameters.keys())
     assert "language" in params, "Missing parameter 'language'"
     assert "body" in params, "Missing parameter 'body'"
 
-def test_commonbehavior::basicbehavior::opaquebehavior_has_language():
-    assert hasattr(CommonBehavior::BasicBehavior::OpaqueBehavior, "language")
+def test_commonbehavior_basicbehavior_opaquebehavior_has_language():
+    assert hasattr(CommonBehavior_BasicBehavior_OpaqueBehavior, "language")
     descriptor = None
-    for klass in CommonBehavior::BasicBehavior::OpaqueBehavior.__mro__:
+    for klass in CommonBehavior_BasicBehavior_OpaqueBehavior.__mro__:
         if "language" in klass.__dict__:
             descriptor = klass.__dict__["language"]
             break
     assert isinstance(descriptor, property)
 
-def test_commonbehavior::basicbehavior::opaquebehavior_has_body():
-    assert hasattr(CommonBehavior::BasicBehavior::OpaqueBehavior, "body")
+def test_commonbehavior_basicbehavior_opaquebehavior_has_body():
+    assert hasattr(CommonBehavior_BasicBehavior_OpaqueBehavior, "body")
     descriptor = None
-    for klass in CommonBehavior::BasicBehavior::OpaqueBehavior.__mro__:
+    for klass in CommonBehavior_BasicBehavior_OpaqueBehavior.__mro__:
         if "body" in klass.__dict__:
             descriptor = klass.__dict__["body"]
             break
@@ -972,23 +972,23 @@ def test_commonbehavior::basicbehavior::opaquebehavior_has_body():
 
 
 
-def test_commonbehavior::basicbehavior::behavioralfeature_is_not_abstract():
-    assert not inspect.isabstract(CommonBehavior::BasicBehavior::BehavioralFeature)
+def test_commonbehavior_basicbehavior_behavioralfeature_is_not_abstract():
+    assert not inspect.isabstract(CommonBehavior_BasicBehavior_BehavioralFeature)
 
 
-def test_commonbehavior::basicbehavior::behavioralfeature_constructor_exists():
-    assert callable(CommonBehavior::BasicBehavior::BehavioralFeature.__init__)
+def test_commonbehavior_basicbehavior_behavioralfeature_constructor_exists():
+    assert callable(CommonBehavior_BasicBehavior_BehavioralFeature.__init__)
 
 
-def test_commonbehavior::basicbehavior::behavioralfeature_constructor_args():
-    sig = inspect.signature(CommonBehavior::BasicBehavior::BehavioralFeature.__init__)
+def test_commonbehavior_basicbehavior_behavioralfeature_constructor_args():
+    sig = inspect.signature(CommonBehavior_BasicBehavior_BehavioralFeature.__init__)
     params = list(sig.parameters.keys())
     assert "concurrency" in params, "Missing parameter 'concurrency'"
 
-def test_commonbehavior::basicbehavior::behavioralfeature_has_concurrency():
-    assert hasattr(CommonBehavior::BasicBehavior::BehavioralFeature, "concurrency")
+def test_commonbehavior_basicbehavior_behavioralfeature_has_concurrency():
+    assert hasattr(CommonBehavior_BasicBehavior_BehavioralFeature, "concurrency")
     descriptor = None
-    for klass in CommonBehavior::BasicBehavior::BehavioralFeature.__mro__:
+    for klass in CommonBehavior_BasicBehavior_BehavioralFeature.__mro__:
         if "concurrency" in klass.__dict__:
             descriptor = klass.__dict__["concurrency"]
             break
@@ -1010,16 +1010,16 @@ def test_opaquebehavior_constructor_args():
 
 
 
-def test_commonbehavior::basicbehavior::functionbehavior_is_not_abstract():
-    assert not inspect.isabstract(CommonBehavior::BasicBehavior::FunctionBehavior)
+def test_commonbehavior_basicbehavior_functionbehavior_is_not_abstract():
+    assert not inspect.isabstract(CommonBehavior_BasicBehavior_FunctionBehavior)
 
 
-def test_commonbehavior::basicbehavior::functionbehavior_constructor_exists():
-    assert callable(CommonBehavior::BasicBehavior::FunctionBehavior.__init__)
+def test_commonbehavior_basicbehavior_functionbehavior_constructor_exists():
+    assert callable(CommonBehavior_BasicBehavior_FunctionBehavior.__init__)
 
 
-def test_commonbehavior::basicbehavior::functionbehavior_constructor_args():
-    sig = inspect.signature(CommonBehavior::BasicBehavior::FunctionBehavior.__init__)
+def test_commonbehavior_basicbehavior_functionbehavior_constructor_args():
+    sig = inspect.signature(CommonBehavior_BasicBehavior_FunctionBehavior.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1038,44 +1038,44 @@ def test_classifier_constructor_args():
 
 
 
-def test_commonbehavior::communications::signal_is_not_abstract():
-    assert not inspect.isabstract(CommonBehavior::Communications::Signal)
+def test_commonbehavior_communications_interface_is_not_abstract():
+    assert not inspect.isabstract(CommonBehavior_Communications_Interface)
 
 
-def test_commonbehavior::communications::signal_constructor_exists():
-    assert callable(CommonBehavior::Communications::Signal.__init__)
+def test_commonbehavior_communications_interface_constructor_exists():
+    assert callable(CommonBehavior_Communications_Interface.__init__)
 
 
-def test_commonbehavior::communications::signal_constructor_args():
-    sig = inspect.signature(CommonBehavior::Communications::Signal.__init__)
+def test_commonbehavior_communications_interface_constructor_args():
+    sig = inspect.signature(CommonBehavior_Communications_Interface.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_commonbehavior::communications::interface_is_not_abstract():
-    assert not inspect.isabstract(CommonBehavior::Communications::Interface)
+def test_commonbehavior_communications_signal_is_not_abstract():
+    assert not inspect.isabstract(CommonBehavior_Communications_Signal)
 
 
-def test_commonbehavior::communications::interface_constructor_exists():
-    assert callable(CommonBehavior::Communications::Interface.__init__)
+def test_commonbehavior_communications_signal_constructor_exists():
+    assert callable(CommonBehavior_Communications_Signal.__init__)
 
 
-def test_commonbehavior::communications::interface_constructor_args():
-    sig = inspect.signature(CommonBehavior::Communications::Interface.__init__)
+def test_commonbehavior_communications_signal_constructor_args():
+    sig = inspect.signature(CommonBehavior_Communications_Signal.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_commonbehavior::basicbehavior::behavioredclassifier_is_not_abstract():
-    assert not inspect.isabstract(CommonBehavior::BasicBehavior::BehavioredClassifier)
+def test_commonbehavior_basicbehavior_behavioredclassifier_is_not_abstract():
+    assert not inspect.isabstract(CommonBehavior_BasicBehavior_BehavioredClassifier)
 
 
-def test_commonbehavior::basicbehavior::behavioredclassifier_constructor_exists():
-    assert callable(CommonBehavior::BasicBehavior::BehavioredClassifier.__init__)
+def test_commonbehavior_basicbehavior_behavioredclassifier_constructor_exists():
+    assert callable(CommonBehavior_BasicBehavior_BehavioredClassifier.__init__)
 
 
-def test_commonbehavior::basicbehavior::behavioredclassifier_constructor_args():
-    sig = inspect.signature(CommonBehavior::BasicBehavior::BehavioredClassifier.__init__)
+def test_commonbehavior_basicbehavior_behavioredclassifier_constructor_args():
+    sig = inspect.signature(CommonBehavior_BasicBehavior_BehavioredClassifier.__init__)
     params = list(sig.parameters.keys())
 
 def test_callconcurrencyfeature_exists():
@@ -1112,13 +1112,13 @@ TimeInterval_strategy = st.builds(
 IntervalConstraint_strategy = st.builds(
     IntervalConstraint,
 )
-CommonBehavior::SimpleTime::DurationConstraint_strategy = st.builds(
-    CommonBehavior::SimpleTime::DurationConstraint,
+CommonBehavior_SimpleTime_DurationConstraint_strategy = st.builds(
+    CommonBehavior_SimpleTime_DurationConstraint,
     firstEvent=
         st.booleans()
 )
-CommonBehavior::SimpleTime::TimeConstraint_strategy = st.builds(
-    CommonBehavior::SimpleTime::TimeConstraint,
+CommonBehavior_SimpleTime_TimeConstraint_strategy = st.builds(
+    CommonBehavior_SimpleTime_TimeConstraint,
     firstEvent=
         st.booleans()
 )
@@ -1128,11 +1128,11 @@ Duration_strategy = st.builds(
 Interval_strategy = st.builds(
     Interval,
 )
-CommonBehavior::SimpleTime::DurationInterval_strategy = st.builds(
-    CommonBehavior::SimpleTime::DurationInterval,
+CommonBehavior_SimpleTime_DurationInterval_strategy = st.builds(
+    CommonBehavior_SimpleTime_DurationInterval,
 )
-CommonBehavior::SimpleTime::TimeInterval_strategy = st.builds(
-    CommonBehavior::SimpleTime::TimeInterval,
+CommonBehavior_SimpleTime_TimeInterval_strategy = st.builds(
+    CommonBehavior_SimpleTime_TimeInterval,
 )
 DurationInterval_strategy = st.builds(
     DurationInterval,
@@ -1140,28 +1140,28 @@ DurationInterval_strategy = st.builds(
 TimeExpression_strategy = st.builds(
     TimeExpression,
 )
-CommonBehavior::SimpleTime::TimeEvent_strategy = st.builds(
-    CommonBehavior::SimpleTime::TimeEvent,
+CommonBehavior_SimpleTime_TimeEvent_strategy = st.builds(
+    CommonBehavior_SimpleTime_TimeEvent,
     isRelative=
         st.booleans()
 )
-CommonBehavior::Communications::ValueSpecification_strategy = st.builds(
-    CommonBehavior::Communications::ValueSpecification,
+CommonBehavior_Communications_ValueSpecification_strategy = st.builds(
+    CommonBehavior_Communications_ValueSpecification,
 )
 ValueSpecification_strategy = st.builds(
     ValueSpecification,
 )
-CommonBehavior::SimpleTime::Duration_strategy = st.builds(
-    CommonBehavior::SimpleTime::Duration,
+CommonBehavior_SimpleTime_TimeExpression_strategy = st.builds(
+    CommonBehavior_SimpleTime_TimeExpression,
 )
-CommonBehavior::SimpleTime::Interval_strategy = st.builds(
-    CommonBehavior::SimpleTime::Interval,
+CommonBehavior_SimpleTime_Duration_strategy = st.builds(
+    CommonBehavior_SimpleTime_Duration,
 )
-CommonBehavior::SimpleTime::TimeExpression_strategy = st.builds(
-    CommonBehavior::SimpleTime::TimeExpression,
+CommonBehavior_SimpleTime_Interval_strategy = st.builds(
+    CommonBehavior_SimpleTime_Interval,
 )
-CommonBehavior::Communications::Operation_strategy = st.builds(
-    CommonBehavior::Communications::Operation,
+CommonBehavior_Communications_Operation_strategy = st.builds(
+    CommonBehavior_Communications_Operation,
 )
 Operation_strategy = st.builds(
     Operation,
@@ -1169,84 +1169,84 @@ Operation_strategy = st.builds(
 MessageEvent_strategy = st.builds(
     MessageEvent,
 )
-CommonBehavior::Communications::CallEvent_strategy = st.builds(
-    CommonBehavior::Communications::CallEvent,
+CommonBehavior_Communications_SignalEvent_strategy = st.builds(
+    CommonBehavior_Communications_SignalEvent,
 )
-CommonBehavior::Communications::SignalEvent_strategy = st.builds(
-    CommonBehavior::Communications::SignalEvent,
+CommonBehavior_Communications_CallEvent_strategy = st.builds(
+    CommonBehavior_Communications_CallEvent,
 )
-CommonBehavior::Communications::AnyReceiveEvent_strategy = st.builds(
-    CommonBehavior::Communications::AnyReceiveEvent,
+CommonBehavior_Communications_AnyReceiveEvent_strategy = st.builds(
+    CommonBehavior_Communications_AnyReceiveEvent,
 )
 PackageableElement_strategy = st.builds(
     PackageableElement,
 )
-CommonBehavior::Communications::Event_strategy = st.builds(
-    CommonBehavior::Communications::Event,
+CommonBehavior_Communications_Event_strategy = st.builds(
+    CommonBehavior_Communications_Event,
 )
-CommonBehavior::Communications::PackageableElement_strategy = st.builds(
-    CommonBehavior::Communications::PackageableElement,
+CommonBehavior_Communications_PackageableElement_strategy = st.builds(
+    CommonBehavior_Communications_PackageableElement,
 )
 Event_strategy = st.builds(
     Event,
 )
-CommonBehavior::Communications::MessageEvent_strategy = st.builds(
-    CommonBehavior::Communications::MessageEvent,
+CommonBehavior_Communications_ChangeEvent_strategy = st.builds(
+    CommonBehavior_Communications_ChangeEvent,
 )
-CommonBehavior::Communications::ChangeEvent_strategy = st.builds(
-    CommonBehavior::Communications::ChangeEvent,
+CommonBehavior_Communications_MessageEvent_strategy = st.builds(
+    CommonBehavior_Communications_MessageEvent,
 )
 NamedElement_strategy = st.builds(
     NamedElement,
 )
-CommonBehavior::Communications::Trigger_strategy = st.builds(
-    CommonBehavior::Communications::Trigger,
+CommonBehavior_Communications_Trigger_strategy = st.builds(
+    CommonBehavior_Communications_Trigger,
 )
-CommonBehavior::Communications::NamedElement_strategy = st.builds(
-    CommonBehavior::Communications::NamedElement,
+CommonBehavior_Communications_NamedElement_strategy = st.builds(
+    CommonBehavior_Communications_NamedElement,
 )
-CommonBehavior::SimpleTime::Observation_strategy = st.builds(
-    CommonBehavior::SimpleTime::Observation,
+CommonBehavior_SimpleTime_Observation_strategy = st.builds(
+    CommonBehavior_SimpleTime_Observation,
 )
 Observation_strategy = st.builds(
     Observation,
 )
-CommonBehavior::SimpleTime::DurationObservation_strategy = st.builds(
-    CommonBehavior::SimpleTime::DurationObservation,
+CommonBehavior_SimpleTime_DurationObservation_strategy = st.builds(
+    CommonBehavior_SimpleTime_DurationObservation,
     firstEvent=
         st.booleans()
 )
-CommonBehavior::SimpleTime::TimeObservation_strategy = st.builds(
-    CommonBehavior::SimpleTime::TimeObservation,
+CommonBehavior_SimpleTime_TimeObservation_strategy = st.builds(
+    CommonBehavior_SimpleTime_TimeObservation,
     firstEvent=
         st.booleans()
 )
-CommonBehavior::Communications::Property_strategy = st.builds(
-    CommonBehavior::Communications::Property,
+CommonBehavior_Communications_Property_strategy = st.builds(
+    CommonBehavior_Communications_Property,
 )
 Property_strategy = st.builds(
     Property,
 )
-CommonBehavior::BasicBehavior::Constraint_strategy = st.builds(
-    CommonBehavior::BasicBehavior::Constraint,
+CommonBehavior_BasicBehavior_Constraint_strategy = st.builds(
+    CommonBehavior_BasicBehavior_Constraint,
 )
-CommonBehavior::BasicBehavior::OpaqueExpression_strategy = st.builds(
-    CommonBehavior::BasicBehavior::OpaqueExpression,
+CommonBehavior_BasicBehavior_OpaqueExpression_strategy = st.builds(
+    CommonBehavior_BasicBehavior_OpaqueExpression,
 )
-CommonBehavior::BasicBehavior::Parameter_strategy = st.builds(
-    CommonBehavior::BasicBehavior::Parameter,
+CommonBehavior_BasicBehavior_Parameter_strategy = st.builds(
+    CommonBehavior_BasicBehavior_Parameter,
 )
 Signal_strategy = st.builds(
     Signal,
 )
-CommonBehavior::BasicBehavior::RedefinableElement_strategy = st.builds(
-    CommonBehavior::BasicBehavior::RedefinableElement,
+CommonBehavior_BasicBehavior_RedefinableElement_strategy = st.builds(
+    CommonBehavior_BasicBehavior_RedefinableElement,
 )
 Constraint_strategy = st.builds(
     Constraint,
 )
-CommonBehavior::SimpleTime::IntervalConstraint_strategy = st.builds(
-    CommonBehavior::SimpleTime::IntervalConstraint,
+CommonBehavior_SimpleTime_IntervalConstraint_strategy = st.builds(
+    CommonBehavior_SimpleTime_IntervalConstraint,
 )
 Parameter_strategy = st.builds(
     Parameter,
@@ -1254,8 +1254,8 @@ Parameter_strategy = st.builds(
 BehavioralFeature_strategy = st.builds(
     BehavioralFeature,
 )
-CommonBehavior::Communications::Reception_strategy = st.builds(
-    CommonBehavior::Communications::Reception,
+CommonBehavior_Communications_Reception_strategy = st.builds(
+    CommonBehavior_Communications_Reception,
 )
 BehavioredClassifier_strategy = st.builds(
     BehavioredClassifier,
@@ -1263,61 +1263,61 @@ BehavioredClassifier_strategy = st.builds(
 Class_strategy = st.builds(
     Class,
 )
-CommonBehavior::BasicBehavior::Behavior_strategy = st.builds(
-    CommonBehavior::BasicBehavior::Behavior,
+CommonBehavior_BasicBehavior_Behavior_strategy = st.builds(
+    CommonBehavior_BasicBehavior_Behavior,
     isReentrant=
         st.booleans()
 )
 Reception_strategy = st.builds(
     Reception,
 )
-BasicBehavior::BehavioredClassifier_strategy = st.builds(
-    BasicBehavior::BehavioredClassifier,
+BasicBehavior_BehavioredClassifier_strategy = st.builds(
+    BasicBehavior_BehavioredClassifier,
 )
-BasicBehavior::Classifier_strategy = st.builds(
-    BasicBehavior::Classifier,
+BasicBehavior_Classifier_strategy = st.builds(
+    BasicBehavior_Classifier,
 )
-CommonBehavior::BasicBehavior::Class_strategy = st.builds(
-    CommonBehavior::BasicBehavior::Class,
+CommonBehavior_BasicBehavior_Class_strategy = st.builds(
+    CommonBehavior_BasicBehavior_Class,
 )
 RedefinableElement_strategy = st.builds(
     RedefinableElement,
 )
-CommonBehavior::BasicBehavior::Classifier_strategy = st.builds(
-    CommonBehavior::BasicBehavior::Classifier,
+CommonBehavior_BasicBehavior_Classifier_strategy = st.builds(
+    CommonBehavior_BasicBehavior_Classifier,
 )
 Behavior_strategy = st.builds(
     Behavior,
 )
-CommonBehavior::BasicBehavior::OpaqueBehavior_strategy = st.builds(
-    CommonBehavior::BasicBehavior::OpaqueBehavior,
+CommonBehavior_BasicBehavior_OpaqueBehavior_strategy = st.builds(
+    CommonBehavior_BasicBehavior_OpaqueBehavior,
     language=
         safe_text,
     body=
         safe_text
 )
-CommonBehavior::BasicBehavior::BehavioralFeature_strategy = st.builds(
-    CommonBehavior::BasicBehavior::BehavioralFeature,
+CommonBehavior_BasicBehavior_BehavioralFeature_strategy = st.builds(
+    CommonBehavior_BasicBehavior_BehavioralFeature,
     concurrency=
         safe_text
 )
 OpaqueBehavior_strategy = st.builds(
     OpaqueBehavior,
 )
-CommonBehavior::BasicBehavior::FunctionBehavior_strategy = st.builds(
-    CommonBehavior::BasicBehavior::FunctionBehavior,
+CommonBehavior_BasicBehavior_FunctionBehavior_strategy = st.builds(
+    CommonBehavior_BasicBehavior_FunctionBehavior,
 )
 Classifier_strategy = st.builds(
     Classifier,
 )
-CommonBehavior::Communications::Signal_strategy = st.builds(
-    CommonBehavior::Communications::Signal,
+CommonBehavior_Communications_Interface_strategy = st.builds(
+    CommonBehavior_Communications_Interface,
 )
-CommonBehavior::Communications::Interface_strategy = st.builds(
-    CommonBehavior::Communications::Interface,
+CommonBehavior_Communications_Signal_strategy = st.builds(
+    CommonBehavior_Communications_Signal,
 )
-CommonBehavior::BasicBehavior::BehavioredClassifier_strategy = st.builds(
-    CommonBehavior::BasicBehavior::BehavioredClassifier,
+CommonBehavior_BasicBehavior_BehavioredClassifier_strategy = st.builds(
+    CommonBehavior_BasicBehavior_BehavioredClassifier,
 )
 
 @given(instance=TimeInterval_strategy)
@@ -1330,34 +1330,28 @@ def test_timeinterval_instantiation(instance):
 def test_intervalconstraint_instantiation(instance):
     assert isinstance(instance, IntervalConstraint)
 
-@given(instance=CommonBehavior::SimpleTime::DurationConstraint_strategy)
+@given(instance=CommonBehavior_SimpleTime_DurationConstraint_strategy)
 @settings(max_examples=50)
-def test_commonbehavior::simpletime::durationconstraint_instantiation(instance):
-    assert isinstance(instance, CommonBehavior::SimpleTime::DurationConstraint)
-
-@given(instance=CommonBehavior::SimpleTime::DurationConstraint_strategy)
-def test_commonbehavior::simpletime::durationconstraint_firstEvent_type(instance):
-    assert isinstance(instance.firstEvent, bool)
+def test_commonbehavior_simpletime_durationconstraint_instantiation(instance):
+    assert isinstance(instance, CommonBehavior_SimpleTime_DurationConstraint)
 
 
-@given(instance=CommonBehavior::SimpleTime::DurationConstraint_strategy)
-def test_commonbehavior::simpletime::durationconstraint_firstEvent_setter(instance):
+
+@given(instance=CommonBehavior_SimpleTime_DurationConstraint_strategy)
+def test_commonbehavior_simpletime_durationconstraint_firstEvent_setter(instance):
     original = instance.firstEvent
     instance.firstEvent = original
     assert instance.firstEvent == original
 
-@given(instance=CommonBehavior::SimpleTime::TimeConstraint_strategy)
+@given(instance=CommonBehavior_SimpleTime_TimeConstraint_strategy)
 @settings(max_examples=50)
-def test_commonbehavior::simpletime::timeconstraint_instantiation(instance):
-    assert isinstance(instance, CommonBehavior::SimpleTime::TimeConstraint)
-
-@given(instance=CommonBehavior::SimpleTime::TimeConstraint_strategy)
-def test_commonbehavior::simpletime::timeconstraint_firstEvent_type(instance):
-    assert isinstance(instance.firstEvent, bool)
+def test_commonbehavior_simpletime_timeconstraint_instantiation(instance):
+    assert isinstance(instance, CommonBehavior_SimpleTime_TimeConstraint)
 
 
-@given(instance=CommonBehavior::SimpleTime::TimeConstraint_strategy)
-def test_commonbehavior::simpletime::timeconstraint_firstEvent_setter(instance):
+
+@given(instance=CommonBehavior_SimpleTime_TimeConstraint_strategy)
+def test_commonbehavior_simpletime_timeconstraint_firstEvent_setter(instance):
     original = instance.firstEvent
     instance.firstEvent = original
     assert instance.firstEvent == original
@@ -1372,15 +1366,15 @@ def test_duration_instantiation(instance):
 def test_interval_instantiation(instance):
     assert isinstance(instance, Interval)
 
-@given(instance=CommonBehavior::SimpleTime::DurationInterval_strategy)
+@given(instance=CommonBehavior_SimpleTime_DurationInterval_strategy)
 @settings(max_examples=50)
-def test_commonbehavior::simpletime::durationinterval_instantiation(instance):
-    assert isinstance(instance, CommonBehavior::SimpleTime::DurationInterval)
+def test_commonbehavior_simpletime_durationinterval_instantiation(instance):
+    assert isinstance(instance, CommonBehavior_SimpleTime_DurationInterval)
 
-@given(instance=CommonBehavior::SimpleTime::TimeInterval_strategy)
+@given(instance=CommonBehavior_SimpleTime_TimeInterval_strategy)
 @settings(max_examples=50)
-def test_commonbehavior::simpletime::timeinterval_instantiation(instance):
-    assert isinstance(instance, CommonBehavior::SimpleTime::TimeInterval)
+def test_commonbehavior_simpletime_timeinterval_instantiation(instance):
+    assert isinstance(instance, CommonBehavior_SimpleTime_TimeInterval)
 
 @given(instance=DurationInterval_strategy)
 @settings(max_examples=50)
@@ -1392,51 +1386,48 @@ def test_durationinterval_instantiation(instance):
 def test_timeexpression_instantiation(instance):
     assert isinstance(instance, TimeExpression)
 
-@given(instance=CommonBehavior::SimpleTime::TimeEvent_strategy)
+@given(instance=CommonBehavior_SimpleTime_TimeEvent_strategy)
 @settings(max_examples=50)
-def test_commonbehavior::simpletime::timeevent_instantiation(instance):
-    assert isinstance(instance, CommonBehavior::SimpleTime::TimeEvent)
-
-@given(instance=CommonBehavior::SimpleTime::TimeEvent_strategy)
-def test_commonbehavior::simpletime::timeevent_isRelative_type(instance):
-    assert isinstance(instance.isRelative, bool)
+def test_commonbehavior_simpletime_timeevent_instantiation(instance):
+    assert isinstance(instance, CommonBehavior_SimpleTime_TimeEvent)
 
 
-@given(instance=CommonBehavior::SimpleTime::TimeEvent_strategy)
-def test_commonbehavior::simpletime::timeevent_isRelative_setter(instance):
+
+@given(instance=CommonBehavior_SimpleTime_TimeEvent_strategy)
+def test_commonbehavior_simpletime_timeevent_isRelative_setter(instance):
     original = instance.isRelative
     instance.isRelative = original
     assert instance.isRelative == original
 
-@given(instance=CommonBehavior::Communications::ValueSpecification_strategy)
+@given(instance=CommonBehavior_Communications_ValueSpecification_strategy)
 @settings(max_examples=50)
-def test_commonbehavior::communications::valuespecification_instantiation(instance):
-    assert isinstance(instance, CommonBehavior::Communications::ValueSpecification)
+def test_commonbehavior_communications_valuespecification_instantiation(instance):
+    assert isinstance(instance, CommonBehavior_Communications_ValueSpecification)
 
 @given(instance=ValueSpecification_strategy)
 @settings(max_examples=50)
 def test_valuespecification_instantiation(instance):
     assert isinstance(instance, ValueSpecification)
 
-@given(instance=CommonBehavior::SimpleTime::Duration_strategy)
+@given(instance=CommonBehavior_SimpleTime_TimeExpression_strategy)
 @settings(max_examples=50)
-def test_commonbehavior::simpletime::duration_instantiation(instance):
-    assert isinstance(instance, CommonBehavior::SimpleTime::Duration)
+def test_commonbehavior_simpletime_timeexpression_instantiation(instance):
+    assert isinstance(instance, CommonBehavior_SimpleTime_TimeExpression)
 
-@given(instance=CommonBehavior::SimpleTime::Interval_strategy)
+@given(instance=CommonBehavior_SimpleTime_Duration_strategy)
 @settings(max_examples=50)
-def test_commonbehavior::simpletime::interval_instantiation(instance):
-    assert isinstance(instance, CommonBehavior::SimpleTime::Interval)
+def test_commonbehavior_simpletime_duration_instantiation(instance):
+    assert isinstance(instance, CommonBehavior_SimpleTime_Duration)
 
-@given(instance=CommonBehavior::SimpleTime::TimeExpression_strategy)
+@given(instance=CommonBehavior_SimpleTime_Interval_strategy)
 @settings(max_examples=50)
-def test_commonbehavior::simpletime::timeexpression_instantiation(instance):
-    assert isinstance(instance, CommonBehavior::SimpleTime::TimeExpression)
+def test_commonbehavior_simpletime_interval_instantiation(instance):
+    assert isinstance(instance, CommonBehavior_SimpleTime_Interval)
 
-@given(instance=CommonBehavior::Communications::Operation_strategy)
+@given(instance=CommonBehavior_Communications_Operation_strategy)
 @settings(max_examples=50)
-def test_commonbehavior::communications::operation_instantiation(instance):
-    assert isinstance(instance, CommonBehavior::Communications::Operation)
+def test_commonbehavior_communications_operation_instantiation(instance):
+    assert isinstance(instance, CommonBehavior_Communications_Operation)
 
 @given(instance=Operation_strategy)
 @settings(max_examples=50)
@@ -1448,152 +1439,146 @@ def test_operation_instantiation(instance):
 def test_messageevent_instantiation(instance):
     assert isinstance(instance, MessageEvent)
 
-@given(instance=CommonBehavior::Communications::CallEvent_strategy)
+@given(instance=CommonBehavior_Communications_SignalEvent_strategy)
 @settings(max_examples=50)
-def test_commonbehavior::communications::callevent_instantiation(instance):
-    assert isinstance(instance, CommonBehavior::Communications::CallEvent)
+def test_commonbehavior_communications_signalevent_instantiation(instance):
+    assert isinstance(instance, CommonBehavior_Communications_SignalEvent)
 
-@given(instance=CommonBehavior::Communications::SignalEvent_strategy)
+@given(instance=CommonBehavior_Communications_CallEvent_strategy)
 @settings(max_examples=50)
-def test_commonbehavior::communications::signalevent_instantiation(instance):
-    assert isinstance(instance, CommonBehavior::Communications::SignalEvent)
+def test_commonbehavior_communications_callevent_instantiation(instance):
+    assert isinstance(instance, CommonBehavior_Communications_CallEvent)
 
-@given(instance=CommonBehavior::Communications::AnyReceiveEvent_strategy)
+@given(instance=CommonBehavior_Communications_AnyReceiveEvent_strategy)
 @settings(max_examples=50)
-def test_commonbehavior::communications::anyreceiveevent_instantiation(instance):
-    assert isinstance(instance, CommonBehavior::Communications::AnyReceiveEvent)
+def test_commonbehavior_communications_anyreceiveevent_instantiation(instance):
+    assert isinstance(instance, CommonBehavior_Communications_AnyReceiveEvent)
 
 @given(instance=PackageableElement_strategy)
 @settings(max_examples=50)
 def test_packageableelement_instantiation(instance):
     assert isinstance(instance, PackageableElement)
 
-@given(instance=CommonBehavior::Communications::Event_strategy)
+@given(instance=CommonBehavior_Communications_Event_strategy)
 @settings(max_examples=50)
-def test_commonbehavior::communications::event_instantiation(instance):
-    assert isinstance(instance, CommonBehavior::Communications::Event)
+def test_commonbehavior_communications_event_instantiation(instance):
+    assert isinstance(instance, CommonBehavior_Communications_Event)
 
-@given(instance=CommonBehavior::Communications::PackageableElement_strategy)
+@given(instance=CommonBehavior_Communications_PackageableElement_strategy)
 @settings(max_examples=50)
-def test_commonbehavior::communications::packageableelement_instantiation(instance):
-    assert isinstance(instance, CommonBehavior::Communications::PackageableElement)
+def test_commonbehavior_communications_packageableelement_instantiation(instance):
+    assert isinstance(instance, CommonBehavior_Communications_PackageableElement)
 
 @given(instance=Event_strategy)
 @settings(max_examples=50)
 def test_event_instantiation(instance):
     assert isinstance(instance, Event)
 
-@given(instance=CommonBehavior::Communications::MessageEvent_strategy)
+@given(instance=CommonBehavior_Communications_ChangeEvent_strategy)
 @settings(max_examples=50)
-def test_commonbehavior::communications::messageevent_instantiation(instance):
-    assert isinstance(instance, CommonBehavior::Communications::MessageEvent)
+def test_commonbehavior_communications_changeevent_instantiation(instance):
+    assert isinstance(instance, CommonBehavior_Communications_ChangeEvent)
 
-@given(instance=CommonBehavior::Communications::ChangeEvent_strategy)
+@given(instance=CommonBehavior_Communications_MessageEvent_strategy)
 @settings(max_examples=50)
-def test_commonbehavior::communications::changeevent_instantiation(instance):
-    assert isinstance(instance, CommonBehavior::Communications::ChangeEvent)
+def test_commonbehavior_communications_messageevent_instantiation(instance):
+    assert isinstance(instance, CommonBehavior_Communications_MessageEvent)
 
 @given(instance=NamedElement_strategy)
 @settings(max_examples=50)
 def test_namedelement_instantiation(instance):
     assert isinstance(instance, NamedElement)
 
-@given(instance=CommonBehavior::Communications::Trigger_strategy)
+@given(instance=CommonBehavior_Communications_Trigger_strategy)
 @settings(max_examples=50)
-def test_commonbehavior::communications::trigger_instantiation(instance):
-    assert isinstance(instance, CommonBehavior::Communications::Trigger)
+def test_commonbehavior_communications_trigger_instantiation(instance):
+    assert isinstance(instance, CommonBehavior_Communications_Trigger)
 
-@given(instance=CommonBehavior::Communications::NamedElement_strategy)
+@given(instance=CommonBehavior_Communications_NamedElement_strategy)
 @settings(max_examples=50)
-def test_commonbehavior::communications::namedelement_instantiation(instance):
-    assert isinstance(instance, CommonBehavior::Communications::NamedElement)
+def test_commonbehavior_communications_namedelement_instantiation(instance):
+    assert isinstance(instance, CommonBehavior_Communications_NamedElement)
 
-@given(instance=CommonBehavior::SimpleTime::Observation_strategy)
+@given(instance=CommonBehavior_SimpleTime_Observation_strategy)
 @settings(max_examples=50)
-def test_commonbehavior::simpletime::observation_instantiation(instance):
-    assert isinstance(instance, CommonBehavior::SimpleTime::Observation)
+def test_commonbehavior_simpletime_observation_instantiation(instance):
+    assert isinstance(instance, CommonBehavior_SimpleTime_Observation)
 
 @given(instance=Observation_strategy)
 @settings(max_examples=50)
 def test_observation_instantiation(instance):
     assert isinstance(instance, Observation)
 
-@given(instance=CommonBehavior::SimpleTime::DurationObservation_strategy)
+@given(instance=CommonBehavior_SimpleTime_DurationObservation_strategy)
 @settings(max_examples=50)
-def test_commonbehavior::simpletime::durationobservation_instantiation(instance):
-    assert isinstance(instance, CommonBehavior::SimpleTime::DurationObservation)
-
-@given(instance=CommonBehavior::SimpleTime::DurationObservation_strategy)
-def test_commonbehavior::simpletime::durationobservation_firstEvent_type(instance):
-    assert isinstance(instance.firstEvent, bool)
+def test_commonbehavior_simpletime_durationobservation_instantiation(instance):
+    assert isinstance(instance, CommonBehavior_SimpleTime_DurationObservation)
 
 
-@given(instance=CommonBehavior::SimpleTime::DurationObservation_strategy)
-def test_commonbehavior::simpletime::durationobservation_firstEvent_setter(instance):
+
+@given(instance=CommonBehavior_SimpleTime_DurationObservation_strategy)
+def test_commonbehavior_simpletime_durationobservation_firstEvent_setter(instance):
     original = instance.firstEvent
     instance.firstEvent = original
     assert instance.firstEvent == original
 
-@given(instance=CommonBehavior::SimpleTime::TimeObservation_strategy)
+@given(instance=CommonBehavior_SimpleTime_TimeObservation_strategy)
 @settings(max_examples=50)
-def test_commonbehavior::simpletime::timeobservation_instantiation(instance):
-    assert isinstance(instance, CommonBehavior::SimpleTime::TimeObservation)
-
-@given(instance=CommonBehavior::SimpleTime::TimeObservation_strategy)
-def test_commonbehavior::simpletime::timeobservation_firstEvent_type(instance):
-    assert isinstance(instance.firstEvent, bool)
+def test_commonbehavior_simpletime_timeobservation_instantiation(instance):
+    assert isinstance(instance, CommonBehavior_SimpleTime_TimeObservation)
 
 
-@given(instance=CommonBehavior::SimpleTime::TimeObservation_strategy)
-def test_commonbehavior::simpletime::timeobservation_firstEvent_setter(instance):
+
+@given(instance=CommonBehavior_SimpleTime_TimeObservation_strategy)
+def test_commonbehavior_simpletime_timeobservation_firstEvent_setter(instance):
     original = instance.firstEvent
     instance.firstEvent = original
     assert instance.firstEvent == original
 
-@given(instance=CommonBehavior::Communications::Property_strategy)
+@given(instance=CommonBehavior_Communications_Property_strategy)
 @settings(max_examples=50)
-def test_commonbehavior::communications::property_instantiation(instance):
-    assert isinstance(instance, CommonBehavior::Communications::Property)
+def test_commonbehavior_communications_property_instantiation(instance):
+    assert isinstance(instance, CommonBehavior_Communications_Property)
 
 @given(instance=Property_strategy)
 @settings(max_examples=50)
 def test_property_instantiation(instance):
     assert isinstance(instance, Property)
 
-@given(instance=CommonBehavior::BasicBehavior::Constraint_strategy)
+@given(instance=CommonBehavior_BasicBehavior_Constraint_strategy)
 @settings(max_examples=50)
-def test_commonbehavior::basicbehavior::constraint_instantiation(instance):
-    assert isinstance(instance, CommonBehavior::BasicBehavior::Constraint)
+def test_commonbehavior_basicbehavior_constraint_instantiation(instance):
+    assert isinstance(instance, CommonBehavior_BasicBehavior_Constraint)
 
-@given(instance=CommonBehavior::BasicBehavior::OpaqueExpression_strategy)
+@given(instance=CommonBehavior_BasicBehavior_OpaqueExpression_strategy)
 @settings(max_examples=50)
-def test_commonbehavior::basicbehavior::opaqueexpression_instantiation(instance):
-    assert isinstance(instance, CommonBehavior::BasicBehavior::OpaqueExpression)
+def test_commonbehavior_basicbehavior_opaqueexpression_instantiation(instance):
+    assert isinstance(instance, CommonBehavior_BasicBehavior_OpaqueExpression)
 
-@given(instance=CommonBehavior::BasicBehavior::Parameter_strategy)
+@given(instance=CommonBehavior_BasicBehavior_Parameter_strategy)
 @settings(max_examples=50)
-def test_commonbehavior::basicbehavior::parameter_instantiation(instance):
-    assert isinstance(instance, CommonBehavior::BasicBehavior::Parameter)
+def test_commonbehavior_basicbehavior_parameter_instantiation(instance):
+    assert isinstance(instance, CommonBehavior_BasicBehavior_Parameter)
 
 @given(instance=Signal_strategy)
 @settings(max_examples=50)
 def test_signal_instantiation(instance):
     assert isinstance(instance, Signal)
 
-@given(instance=CommonBehavior::BasicBehavior::RedefinableElement_strategy)
+@given(instance=CommonBehavior_BasicBehavior_RedefinableElement_strategy)
 @settings(max_examples=50)
-def test_commonbehavior::basicbehavior::redefinableelement_instantiation(instance):
-    assert isinstance(instance, CommonBehavior::BasicBehavior::RedefinableElement)
+def test_commonbehavior_basicbehavior_redefinableelement_instantiation(instance):
+    assert isinstance(instance, CommonBehavior_BasicBehavior_RedefinableElement)
 
 @given(instance=Constraint_strategy)
 @settings(max_examples=50)
 def test_constraint_instantiation(instance):
     assert isinstance(instance, Constraint)
 
-@given(instance=CommonBehavior::SimpleTime::IntervalConstraint_strategy)
+@given(instance=CommonBehavior_SimpleTime_IntervalConstraint_strategy)
 @settings(max_examples=50)
-def test_commonbehavior::simpletime::intervalconstraint_instantiation(instance):
-    assert isinstance(instance, CommonBehavior::SimpleTime::IntervalConstraint)
+def test_commonbehavior_simpletime_intervalconstraint_instantiation(instance):
+    assert isinstance(instance, CommonBehavior_SimpleTime_IntervalConstraint)
 
 @given(instance=Parameter_strategy)
 @settings(max_examples=50)
@@ -1605,10 +1590,10 @@ def test_parameter_instantiation(instance):
 def test_behavioralfeature_instantiation(instance):
     assert isinstance(instance, BehavioralFeature)
 
-@given(instance=CommonBehavior::Communications::Reception_strategy)
+@given(instance=CommonBehavior_Communications_Reception_strategy)
 @settings(max_examples=50)
-def test_commonbehavior::communications::reception_instantiation(instance):
-    assert isinstance(instance, CommonBehavior::Communications::Reception)
+def test_commonbehavior_communications_reception_instantiation(instance):
+    assert isinstance(instance, CommonBehavior_Communications_Reception)
 
 @given(instance=BehavioredClassifier_strategy)
 @settings(max_examples=50)
@@ -1620,18 +1605,15 @@ def test_behavioredclassifier_instantiation(instance):
 def test_class_instantiation(instance):
     assert isinstance(instance, Class)
 
-@given(instance=CommonBehavior::BasicBehavior::Behavior_strategy)
+@given(instance=CommonBehavior_BasicBehavior_Behavior_strategy)
 @settings(max_examples=50)
-def test_commonbehavior::basicbehavior::behavior_instantiation(instance):
-    assert isinstance(instance, CommonBehavior::BasicBehavior::Behavior)
-
-@given(instance=CommonBehavior::BasicBehavior::Behavior_strategy)
-def test_commonbehavior::basicbehavior::behavior_isReentrant_type(instance):
-    assert isinstance(instance.isReentrant, bool)
+def test_commonbehavior_basicbehavior_behavior_instantiation(instance):
+    assert isinstance(instance, CommonBehavior_BasicBehavior_Behavior)
 
 
-@given(instance=CommonBehavior::BasicBehavior::Behavior_strategy)
-def test_commonbehavior::basicbehavior::behavior_isReentrant_setter(instance):
+
+@given(instance=CommonBehavior_BasicBehavior_Behavior_strategy)
+def test_commonbehavior_basicbehavior_behavior_isReentrant_setter(instance):
     original = instance.isReentrant
     instance.isReentrant = original
     assert instance.isReentrant == original
@@ -1641,75 +1623,66 @@ def test_commonbehavior::basicbehavior::behavior_isReentrant_setter(instance):
 def test_reception_instantiation(instance):
     assert isinstance(instance, Reception)
 
-@given(instance=BasicBehavior::BehavioredClassifier_strategy)
+@given(instance=BasicBehavior_BehavioredClassifier_strategy)
 @settings(max_examples=50)
-def test_basicbehavior::behavioredclassifier_instantiation(instance):
-    assert isinstance(instance, BasicBehavior::BehavioredClassifier)
+def test_basicbehavior_behavioredclassifier_instantiation(instance):
+    assert isinstance(instance, BasicBehavior_BehavioredClassifier)
 
-@given(instance=BasicBehavior::Classifier_strategy)
+@given(instance=BasicBehavior_Classifier_strategy)
 @settings(max_examples=50)
-def test_basicbehavior::classifier_instantiation(instance):
-    assert isinstance(instance, BasicBehavior::Classifier)
+def test_basicbehavior_classifier_instantiation(instance):
+    assert isinstance(instance, BasicBehavior_Classifier)
 
-@given(instance=CommonBehavior::BasicBehavior::Class_strategy)
+@given(instance=CommonBehavior_BasicBehavior_Class_strategy)
 @settings(max_examples=50)
-def test_commonbehavior::basicbehavior::class_instantiation(instance):
-    assert isinstance(instance, CommonBehavior::BasicBehavior::Class)
+def test_commonbehavior_basicbehavior_class_instantiation(instance):
+    assert isinstance(instance, CommonBehavior_BasicBehavior_Class)
 
 @given(instance=RedefinableElement_strategy)
 @settings(max_examples=50)
 def test_redefinableelement_instantiation(instance):
     assert isinstance(instance, RedefinableElement)
 
-@given(instance=CommonBehavior::BasicBehavior::Classifier_strategy)
+@given(instance=CommonBehavior_BasicBehavior_Classifier_strategy)
 @settings(max_examples=50)
-def test_commonbehavior::basicbehavior::classifier_instantiation(instance):
-    assert isinstance(instance, CommonBehavior::BasicBehavior::Classifier)
+def test_commonbehavior_basicbehavior_classifier_instantiation(instance):
+    assert isinstance(instance, CommonBehavior_BasicBehavior_Classifier)
 
 @given(instance=Behavior_strategy)
 @settings(max_examples=50)
 def test_behavior_instantiation(instance):
     assert isinstance(instance, Behavior)
 
-@given(instance=CommonBehavior::BasicBehavior::OpaqueBehavior_strategy)
+@given(instance=CommonBehavior_BasicBehavior_OpaqueBehavior_strategy)
 @settings(max_examples=50)
-def test_commonbehavior::basicbehavior::opaquebehavior_instantiation(instance):
-    assert isinstance(instance, CommonBehavior::BasicBehavior::OpaqueBehavior)
-
-@given(instance=CommonBehavior::BasicBehavior::OpaqueBehavior_strategy)
-def test_commonbehavior::basicbehavior::opaquebehavior_language_type(instance):
-    assert isinstance(instance.language, str)
+def test_commonbehavior_basicbehavior_opaquebehavior_instantiation(instance):
+    assert isinstance(instance, CommonBehavior_BasicBehavior_OpaqueBehavior)
 
 
-@given(instance=CommonBehavior::BasicBehavior::OpaqueBehavior_strategy)
-def test_commonbehavior::basicbehavior::opaquebehavior_language_setter(instance):
+
+@given(instance=CommonBehavior_BasicBehavior_OpaqueBehavior_strategy)
+def test_commonbehavior_basicbehavior_opaquebehavior_language_setter(instance):
     original = instance.language
     instance.language = original
     assert instance.language == original
 
-@given(instance=CommonBehavior::BasicBehavior::OpaqueBehavior_strategy)
-def test_commonbehavior::basicbehavior::opaquebehavior_body_type(instance):
-    assert isinstance(instance.body, str)
 
 
-@given(instance=CommonBehavior::BasicBehavior::OpaqueBehavior_strategy)
-def test_commonbehavior::basicbehavior::opaquebehavior_body_setter(instance):
+@given(instance=CommonBehavior_BasicBehavior_OpaqueBehavior_strategy)
+def test_commonbehavior_basicbehavior_opaquebehavior_body_setter(instance):
     original = instance.body
     instance.body = original
     assert instance.body == original
 
-@given(instance=CommonBehavior::BasicBehavior::BehavioralFeature_strategy)
+@given(instance=CommonBehavior_BasicBehavior_BehavioralFeature_strategy)
 @settings(max_examples=50)
-def test_commonbehavior::basicbehavior::behavioralfeature_instantiation(instance):
-    assert isinstance(instance, CommonBehavior::BasicBehavior::BehavioralFeature)
-
-@given(instance=CommonBehavior::BasicBehavior::BehavioralFeature_strategy)
-def test_commonbehavior::basicbehavior::behavioralfeature_concurrency_type(instance):
-    assert isinstance(instance.concurrency, str)
+def test_commonbehavior_basicbehavior_behavioralfeature_instantiation(instance):
+    assert isinstance(instance, CommonBehavior_BasicBehavior_BehavioralFeature)
 
 
-@given(instance=CommonBehavior::BasicBehavior::BehavioralFeature_strategy)
-def test_commonbehavior::basicbehavior::behavioralfeature_concurrency_setter(instance):
+
+@given(instance=CommonBehavior_BasicBehavior_BehavioralFeature_strategy)
+def test_commonbehavior_basicbehavior_behavioralfeature_concurrency_setter(instance):
     original = instance.concurrency
     instance.concurrency = original
     assert instance.concurrency == original
@@ -1719,27 +1692,27 @@ def test_commonbehavior::basicbehavior::behavioralfeature_concurrency_setter(ins
 def test_opaquebehavior_instantiation(instance):
     assert isinstance(instance, OpaqueBehavior)
 
-@given(instance=CommonBehavior::BasicBehavior::FunctionBehavior_strategy)
+@given(instance=CommonBehavior_BasicBehavior_FunctionBehavior_strategy)
 @settings(max_examples=50)
-def test_commonbehavior::basicbehavior::functionbehavior_instantiation(instance):
-    assert isinstance(instance, CommonBehavior::BasicBehavior::FunctionBehavior)
+def test_commonbehavior_basicbehavior_functionbehavior_instantiation(instance):
+    assert isinstance(instance, CommonBehavior_BasicBehavior_FunctionBehavior)
 
 @given(instance=Classifier_strategy)
 @settings(max_examples=50)
 def test_classifier_instantiation(instance):
     assert isinstance(instance, Classifier)
 
-@given(instance=CommonBehavior::Communications::Signal_strategy)
+@given(instance=CommonBehavior_Communications_Interface_strategy)
 @settings(max_examples=50)
-def test_commonbehavior::communications::signal_instantiation(instance):
-    assert isinstance(instance, CommonBehavior::Communications::Signal)
+def test_commonbehavior_communications_interface_instantiation(instance):
+    assert isinstance(instance, CommonBehavior_Communications_Interface)
 
-@given(instance=CommonBehavior::Communications::Interface_strategy)
+@given(instance=CommonBehavior_Communications_Signal_strategy)
 @settings(max_examples=50)
-def test_commonbehavior::communications::interface_instantiation(instance):
-    assert isinstance(instance, CommonBehavior::Communications::Interface)
+def test_commonbehavior_communications_signal_instantiation(instance):
+    assert isinstance(instance, CommonBehavior_Communications_Signal)
 
-@given(instance=CommonBehavior::BasicBehavior::BehavioredClassifier_strategy)
+@given(instance=CommonBehavior_BasicBehavior_BehavioredClassifier_strategy)
 @settings(max_examples=50)
-def test_commonbehavior::basicbehavior::behavioredclassifier_instantiation(instance):
-    assert isinstance(instance, CommonBehavior::BasicBehavior::BehavioredClassifier)
+def test_commonbehavior_basicbehavior_behavioredclassifier_instantiation(instance):
+    assert isinstance(instance, CommonBehavior_BasicBehavior_BehavioredClassifier)

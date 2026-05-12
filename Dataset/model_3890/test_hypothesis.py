@@ -3,32 +3,32 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     StateContainer,
     Named,
-    workflow::AbstractState,
-    workflow::StateTransition,
-    workflow::Workflow,
+    workflow_StateTransition,
+    workflow_AbstractState,
+    workflow_Workflow,
     IntermediateState,
-    workflow::SubProcess,
-    workflow::Decision,
-    workflow::Processing,
-    workflow::Fork,
-    workflow::Join,
-    workflow::Task,
+    workflow_Fork,
+    workflow_Decision,
+    workflow_Processing,
+    workflow_Join,
+    workflow_SubProcess,
+    workflow_Task,
     ToState,
     FromState,
     AbstractState,
-    workflow::End,
-    workflow::IntermediateState,
-    workflow::Start,
-    workflow::StateContainer,
-    workflow::ToState,
-    workflow::FromState,
+    workflow_End,
+    workflow_IntermediateState,
+    workflow_Start,
+    workflow_StateContainer,
+    workflow_ToState,
+    workflow_FromState,
     EObject,
-    workflow::Named,
+    workflow_Named,
 )
 
 # =============================================================================
@@ -65,23 +65,37 @@ def test_named_constructor_args():
 
 
 
-def test_workflow::abstractstate_is_not_abstract():
-    assert not inspect.isabstract(workflow::AbstractState)
+def test_workflow_statetransition_is_not_abstract():
+    assert not inspect.isabstract(workflow_StateTransition)
 
 
-def test_workflow::abstractstate_constructor_exists():
-    assert callable(workflow::AbstractState.__init__)
+def test_workflow_statetransition_constructor_exists():
+    assert callable(workflow_StateTransition.__init__)
 
 
-def test_workflow::abstractstate_constructor_args():
-    sig = inspect.signature(workflow::AbstractState.__init__)
+def test_workflow_statetransition_constructor_args():
+    sig = inspect.signature(workflow_StateTransition.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_workflow_abstractstate_is_not_abstract():
+    assert not inspect.isabstract(workflow_AbstractState)
+
+
+def test_workflow_abstractstate_constructor_exists():
+    assert callable(workflow_AbstractState.__init__)
+
+
+def test_workflow_abstractstate_constructor_args():
+    sig = inspect.signature(workflow_AbstractState.__init__)
     params = list(sig.parameters.keys())
     assert "associatedClass" in params, "Missing parameter 'associatedClass'"
 
-def test_workflow::abstractstate_has_associatedClass():
-    assert hasattr(workflow::AbstractState, "associatedClass")
+def test_workflow_abstractstate_has_associatedClass():
+    assert hasattr(workflow_AbstractState, "associatedClass")
     descriptor = None
-    for klass in workflow::AbstractState.__mro__:
+    for klass in workflow_AbstractState.__mro__:
         if "associatedClass" in klass.__dict__:
             descriptor = klass.__dict__["associatedClass"]
             break
@@ -89,30 +103,16 @@ def test_workflow::abstractstate_has_associatedClass():
 
 
 
-def test_workflow::statetransition_is_not_abstract():
-    assert not inspect.isabstract(workflow::StateTransition)
+def test_workflow_workflow_is_not_abstract():
+    assert not inspect.isabstract(workflow_Workflow)
 
 
-def test_workflow::statetransition_constructor_exists():
-    assert callable(workflow::StateTransition.__init__)
+def test_workflow_workflow_constructor_exists():
+    assert callable(workflow_Workflow.__init__)
 
 
-def test_workflow::statetransition_constructor_args():
-    sig = inspect.signature(workflow::StateTransition.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_workflow::workflow_is_not_abstract():
-    assert not inspect.isabstract(workflow::Workflow)
-
-
-def test_workflow::workflow_constructor_exists():
-    assert callable(workflow::Workflow.__init__)
-
-
-def test_workflow::workflow_constructor_args():
-    sig = inspect.signature(workflow::Workflow.__init__)
+def test_workflow_workflow_constructor_args():
+    sig = inspect.signature(workflow_Workflow.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -131,86 +131,86 @@ def test_intermediatestate_constructor_args():
 
 
 
-def test_workflow::subprocess_is_not_abstract():
-    assert not inspect.isabstract(workflow::SubProcess)
+def test_workflow_fork_is_not_abstract():
+    assert not inspect.isabstract(workflow_Fork)
 
 
-def test_workflow::subprocess_constructor_exists():
-    assert callable(workflow::SubProcess.__init__)
+def test_workflow_fork_constructor_exists():
+    assert callable(workflow_Fork.__init__)
 
 
-def test_workflow::subprocess_constructor_args():
-    sig = inspect.signature(workflow::SubProcess.__init__)
+def test_workflow_fork_constructor_args():
+    sig = inspect.signature(workflow_Fork.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_workflow::decision_is_not_abstract():
-    assert not inspect.isabstract(workflow::Decision)
+def test_workflow_decision_is_not_abstract():
+    assert not inspect.isabstract(workflow_Decision)
 
 
-def test_workflow::decision_constructor_exists():
-    assert callable(workflow::Decision.__init__)
+def test_workflow_decision_constructor_exists():
+    assert callable(workflow_Decision.__init__)
 
 
-def test_workflow::decision_constructor_args():
-    sig = inspect.signature(workflow::Decision.__init__)
+def test_workflow_decision_constructor_args():
+    sig = inspect.signature(workflow_Decision.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_workflow::processing_is_not_abstract():
-    assert not inspect.isabstract(workflow::Processing)
+def test_workflow_processing_is_not_abstract():
+    assert not inspect.isabstract(workflow_Processing)
 
 
-def test_workflow::processing_constructor_exists():
-    assert callable(workflow::Processing.__init__)
+def test_workflow_processing_constructor_exists():
+    assert callable(workflow_Processing.__init__)
 
 
-def test_workflow::processing_constructor_args():
-    sig = inspect.signature(workflow::Processing.__init__)
+def test_workflow_processing_constructor_args():
+    sig = inspect.signature(workflow_Processing.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_workflow::fork_is_not_abstract():
-    assert not inspect.isabstract(workflow::Fork)
+def test_workflow_join_is_not_abstract():
+    assert not inspect.isabstract(workflow_Join)
 
 
-def test_workflow::fork_constructor_exists():
-    assert callable(workflow::Fork.__init__)
+def test_workflow_join_constructor_exists():
+    assert callable(workflow_Join.__init__)
 
 
-def test_workflow::fork_constructor_args():
-    sig = inspect.signature(workflow::Fork.__init__)
+def test_workflow_join_constructor_args():
+    sig = inspect.signature(workflow_Join.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_workflow::join_is_not_abstract():
-    assert not inspect.isabstract(workflow::Join)
+def test_workflow_subprocess_is_not_abstract():
+    assert not inspect.isabstract(workflow_SubProcess)
 
 
-def test_workflow::join_constructor_exists():
-    assert callable(workflow::Join.__init__)
+def test_workflow_subprocess_constructor_exists():
+    assert callable(workflow_SubProcess.__init__)
 
 
-def test_workflow::join_constructor_args():
-    sig = inspect.signature(workflow::Join.__init__)
+def test_workflow_subprocess_constructor_args():
+    sig = inspect.signature(workflow_SubProcess.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_workflow::task_is_not_abstract():
-    assert not inspect.isabstract(workflow::Task)
+def test_workflow_task_is_not_abstract():
+    assert not inspect.isabstract(workflow_Task)
 
 
-def test_workflow::task_constructor_exists():
-    assert callable(workflow::Task.__init__)
+def test_workflow_task_constructor_exists():
+    assert callable(workflow_Task.__init__)
 
 
-def test_workflow::task_constructor_args():
-    sig = inspect.signature(workflow::Task.__init__)
+def test_workflow_task_constructor_args():
+    sig = inspect.signature(workflow_Task.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -257,86 +257,86 @@ def test_abstractstate_constructor_args():
 
 
 
-def test_workflow::end_is_not_abstract():
-    assert not inspect.isabstract(workflow::End)
+def test_workflow_end_is_not_abstract():
+    assert not inspect.isabstract(workflow_End)
 
 
-def test_workflow::end_constructor_exists():
-    assert callable(workflow::End.__init__)
+def test_workflow_end_constructor_exists():
+    assert callable(workflow_End.__init__)
 
 
-def test_workflow::end_constructor_args():
-    sig = inspect.signature(workflow::End.__init__)
+def test_workflow_end_constructor_args():
+    sig = inspect.signature(workflow_End.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_workflow::intermediatestate_is_not_abstract():
-    assert not inspect.isabstract(workflow::IntermediateState)
+def test_workflow_intermediatestate_is_not_abstract():
+    assert not inspect.isabstract(workflow_IntermediateState)
 
 
-def test_workflow::intermediatestate_constructor_exists():
-    assert callable(workflow::IntermediateState.__init__)
+def test_workflow_intermediatestate_constructor_exists():
+    assert callable(workflow_IntermediateState.__init__)
 
 
-def test_workflow::intermediatestate_constructor_args():
-    sig = inspect.signature(workflow::IntermediateState.__init__)
+def test_workflow_intermediatestate_constructor_args():
+    sig = inspect.signature(workflow_IntermediateState.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_workflow::start_is_not_abstract():
-    assert not inspect.isabstract(workflow::Start)
+def test_workflow_start_is_not_abstract():
+    assert not inspect.isabstract(workflow_Start)
 
 
-def test_workflow::start_constructor_exists():
-    assert callable(workflow::Start.__init__)
+def test_workflow_start_constructor_exists():
+    assert callable(workflow_Start.__init__)
 
 
-def test_workflow::start_constructor_args():
-    sig = inspect.signature(workflow::Start.__init__)
+def test_workflow_start_constructor_args():
+    sig = inspect.signature(workflow_Start.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_workflow::statecontainer_is_not_abstract():
-    assert not inspect.isabstract(workflow::StateContainer)
+def test_workflow_statecontainer_is_not_abstract():
+    assert not inspect.isabstract(workflow_StateContainer)
 
 
-def test_workflow::statecontainer_constructor_exists():
-    assert callable(workflow::StateContainer.__init__)
+def test_workflow_statecontainer_constructor_exists():
+    assert callable(workflow_StateContainer.__init__)
 
 
-def test_workflow::statecontainer_constructor_args():
-    sig = inspect.signature(workflow::StateContainer.__init__)
+def test_workflow_statecontainer_constructor_args():
+    sig = inspect.signature(workflow_StateContainer.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_workflow::tostate_is_not_abstract():
-    assert not inspect.isabstract(workflow::ToState)
+def test_workflow_tostate_is_not_abstract():
+    assert not inspect.isabstract(workflow_ToState)
 
 
-def test_workflow::tostate_constructor_exists():
-    assert callable(workflow::ToState.__init__)
+def test_workflow_tostate_constructor_exists():
+    assert callable(workflow_ToState.__init__)
 
 
-def test_workflow::tostate_constructor_args():
-    sig = inspect.signature(workflow::ToState.__init__)
+def test_workflow_tostate_constructor_args():
+    sig = inspect.signature(workflow_ToState.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_workflow::fromstate_is_not_abstract():
-    assert not inspect.isabstract(workflow::FromState)
+def test_workflow_fromstate_is_not_abstract():
+    assert not inspect.isabstract(workflow_FromState)
 
 
-def test_workflow::fromstate_constructor_exists():
-    assert callable(workflow::FromState.__init__)
+def test_workflow_fromstate_constructor_exists():
+    assert callable(workflow_FromState.__init__)
 
 
-def test_workflow::fromstate_constructor_args():
-    sig = inspect.signature(workflow::FromState.__init__)
+def test_workflow_fromstate_constructor_args():
+    sig = inspect.signature(workflow_FromState.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -355,23 +355,23 @@ def test_eobject_constructor_args():
 
 
 
-def test_workflow::named_is_not_abstract():
-    assert not inspect.isabstract(workflow::Named)
+def test_workflow_named_is_not_abstract():
+    assert not inspect.isabstract(workflow_Named)
 
 
-def test_workflow::named_constructor_exists():
-    assert callable(workflow::Named.__init__)
+def test_workflow_named_constructor_exists():
+    assert callable(workflow_Named.__init__)
 
 
-def test_workflow::named_constructor_args():
-    sig = inspect.signature(workflow::Named.__init__)
+def test_workflow_named_constructor_args():
+    sig = inspect.signature(workflow_Named.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_workflow::named_has_name():
-    assert hasattr(workflow::Named, "name")
+def test_workflow_named_has_name():
+    assert hasattr(workflow_Named, "name")
     descriptor = None
-    for klass in workflow::Named.__mro__:
+    for klass in workflow_Named.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -395,37 +395,37 @@ StateContainer_strategy = st.builds(
 Named_strategy = st.builds(
     Named,
 )
-workflow::AbstractState_strategy = st.builds(
-    workflow::AbstractState,
+workflow_StateTransition_strategy = st.builds(
+    workflow_StateTransition,
+)
+workflow_AbstractState_strategy = st.builds(
+    workflow_AbstractState,
     associatedClass=
         safe_text
 )
-workflow::StateTransition_strategy = st.builds(
-    workflow::StateTransition,
-)
-workflow::Workflow_strategy = st.builds(
-    workflow::Workflow,
+workflow_Workflow_strategy = st.builds(
+    workflow_Workflow,
 )
 IntermediateState_strategy = st.builds(
     IntermediateState,
 )
-workflow::SubProcess_strategy = st.builds(
-    workflow::SubProcess,
+workflow_Fork_strategy = st.builds(
+    workflow_Fork,
 )
-workflow::Decision_strategy = st.builds(
-    workflow::Decision,
+workflow_Decision_strategy = st.builds(
+    workflow_Decision,
 )
-workflow::Processing_strategy = st.builds(
-    workflow::Processing,
+workflow_Processing_strategy = st.builds(
+    workflow_Processing,
 )
-workflow::Fork_strategy = st.builds(
-    workflow::Fork,
+workflow_Join_strategy = st.builds(
+    workflow_Join,
 )
-workflow::Join_strategy = st.builds(
-    workflow::Join,
+workflow_SubProcess_strategy = st.builds(
+    workflow_SubProcess,
 )
-workflow::Task_strategy = st.builds(
-    workflow::Task,
+workflow_Task_strategy = st.builds(
+    workflow_Task,
 )
 ToState_strategy = st.builds(
     ToState,
@@ -436,29 +436,29 @@ FromState_strategy = st.builds(
 AbstractState_strategy = st.builds(
     AbstractState,
 )
-workflow::End_strategy = st.builds(
-    workflow::End,
+workflow_End_strategy = st.builds(
+    workflow_End,
 )
-workflow::IntermediateState_strategy = st.builds(
-    workflow::IntermediateState,
+workflow_IntermediateState_strategy = st.builds(
+    workflow_IntermediateState,
 )
-workflow::Start_strategy = st.builds(
-    workflow::Start,
+workflow_Start_strategy = st.builds(
+    workflow_Start,
 )
-workflow::StateContainer_strategy = st.builds(
-    workflow::StateContainer,
+workflow_StateContainer_strategy = st.builds(
+    workflow_StateContainer,
 )
-workflow::ToState_strategy = st.builds(
-    workflow::ToState,
+workflow_ToState_strategy = st.builds(
+    workflow_ToState,
 )
-workflow::FromState_strategy = st.builds(
-    workflow::FromState,
+workflow_FromState_strategy = st.builds(
+    workflow_FromState,
 )
 EObject_strategy = st.builds(
     EObject,
 )
-workflow::Named_strategy = st.builds(
-    workflow::Named,
+workflow_Named_strategy = st.builds(
+    workflow_Named,
     name=
         safe_text
 )
@@ -473,66 +473,63 @@ def test_statecontainer_instantiation(instance):
 def test_named_instantiation(instance):
     assert isinstance(instance, Named)
 
-@given(instance=workflow::AbstractState_strategy)
+@given(instance=workflow_StateTransition_strategy)
 @settings(max_examples=50)
-def test_workflow::abstractstate_instantiation(instance):
-    assert isinstance(instance, workflow::AbstractState)
+def test_workflow_statetransition_instantiation(instance):
+    assert isinstance(instance, workflow_StateTransition)
 
-@given(instance=workflow::AbstractState_strategy)
-def test_workflow::abstractstate_associatedClass_type(instance):
-    assert isinstance(instance.associatedClass, str)
+@given(instance=workflow_AbstractState_strategy)
+@settings(max_examples=50)
+def test_workflow_abstractstate_instantiation(instance):
+    assert isinstance(instance, workflow_AbstractState)
 
 
-@given(instance=workflow::AbstractState_strategy)
-def test_workflow::abstractstate_associatedClass_setter(instance):
+
+@given(instance=workflow_AbstractState_strategy)
+def test_workflow_abstractstate_associatedClass_setter(instance):
     original = instance.associatedClass
     instance.associatedClass = original
     assert instance.associatedClass == original
 
-@given(instance=workflow::StateTransition_strategy)
+@given(instance=workflow_Workflow_strategy)
 @settings(max_examples=50)
-def test_workflow::statetransition_instantiation(instance):
-    assert isinstance(instance, workflow::StateTransition)
-
-@given(instance=workflow::Workflow_strategy)
-@settings(max_examples=50)
-def test_workflow::workflow_instantiation(instance):
-    assert isinstance(instance, workflow::Workflow)
+def test_workflow_workflow_instantiation(instance):
+    assert isinstance(instance, workflow_Workflow)
 
 @given(instance=IntermediateState_strategy)
 @settings(max_examples=50)
 def test_intermediatestate_instantiation(instance):
     assert isinstance(instance, IntermediateState)
 
-@given(instance=workflow::SubProcess_strategy)
+@given(instance=workflow_Fork_strategy)
 @settings(max_examples=50)
-def test_workflow::subprocess_instantiation(instance):
-    assert isinstance(instance, workflow::SubProcess)
+def test_workflow_fork_instantiation(instance):
+    assert isinstance(instance, workflow_Fork)
 
-@given(instance=workflow::Decision_strategy)
+@given(instance=workflow_Decision_strategy)
 @settings(max_examples=50)
-def test_workflow::decision_instantiation(instance):
-    assert isinstance(instance, workflow::Decision)
+def test_workflow_decision_instantiation(instance):
+    assert isinstance(instance, workflow_Decision)
 
-@given(instance=workflow::Processing_strategy)
+@given(instance=workflow_Processing_strategy)
 @settings(max_examples=50)
-def test_workflow::processing_instantiation(instance):
-    assert isinstance(instance, workflow::Processing)
+def test_workflow_processing_instantiation(instance):
+    assert isinstance(instance, workflow_Processing)
 
-@given(instance=workflow::Fork_strategy)
+@given(instance=workflow_Join_strategy)
 @settings(max_examples=50)
-def test_workflow::fork_instantiation(instance):
-    assert isinstance(instance, workflow::Fork)
+def test_workflow_join_instantiation(instance):
+    assert isinstance(instance, workflow_Join)
 
-@given(instance=workflow::Join_strategy)
+@given(instance=workflow_SubProcess_strategy)
 @settings(max_examples=50)
-def test_workflow::join_instantiation(instance):
-    assert isinstance(instance, workflow::Join)
+def test_workflow_subprocess_instantiation(instance):
+    assert isinstance(instance, workflow_SubProcess)
 
-@given(instance=workflow::Task_strategy)
+@given(instance=workflow_Task_strategy)
 @settings(max_examples=50)
-def test_workflow::task_instantiation(instance):
-    assert isinstance(instance, workflow::Task)
+def test_workflow_task_instantiation(instance):
+    assert isinstance(instance, workflow_Task)
 
 @given(instance=ToState_strategy)
 @settings(max_examples=50)
@@ -549,53 +546,50 @@ def test_fromstate_instantiation(instance):
 def test_abstractstate_instantiation(instance):
     assert isinstance(instance, AbstractState)
 
-@given(instance=workflow::End_strategy)
+@given(instance=workflow_End_strategy)
 @settings(max_examples=50)
-def test_workflow::end_instantiation(instance):
-    assert isinstance(instance, workflow::End)
+def test_workflow_end_instantiation(instance):
+    assert isinstance(instance, workflow_End)
 
-@given(instance=workflow::IntermediateState_strategy)
+@given(instance=workflow_IntermediateState_strategy)
 @settings(max_examples=50)
-def test_workflow::intermediatestate_instantiation(instance):
-    assert isinstance(instance, workflow::IntermediateState)
+def test_workflow_intermediatestate_instantiation(instance):
+    assert isinstance(instance, workflow_IntermediateState)
 
-@given(instance=workflow::Start_strategy)
+@given(instance=workflow_Start_strategy)
 @settings(max_examples=50)
-def test_workflow::start_instantiation(instance):
-    assert isinstance(instance, workflow::Start)
+def test_workflow_start_instantiation(instance):
+    assert isinstance(instance, workflow_Start)
 
-@given(instance=workflow::StateContainer_strategy)
+@given(instance=workflow_StateContainer_strategy)
 @settings(max_examples=50)
-def test_workflow::statecontainer_instantiation(instance):
-    assert isinstance(instance, workflow::StateContainer)
+def test_workflow_statecontainer_instantiation(instance):
+    assert isinstance(instance, workflow_StateContainer)
 
-@given(instance=workflow::ToState_strategy)
+@given(instance=workflow_ToState_strategy)
 @settings(max_examples=50)
-def test_workflow::tostate_instantiation(instance):
-    assert isinstance(instance, workflow::ToState)
+def test_workflow_tostate_instantiation(instance):
+    assert isinstance(instance, workflow_ToState)
 
-@given(instance=workflow::FromState_strategy)
+@given(instance=workflow_FromState_strategy)
 @settings(max_examples=50)
-def test_workflow::fromstate_instantiation(instance):
-    assert isinstance(instance, workflow::FromState)
+def test_workflow_fromstate_instantiation(instance):
+    assert isinstance(instance, workflow_FromState)
 
 @given(instance=EObject_strategy)
 @settings(max_examples=50)
 def test_eobject_instantiation(instance):
     assert isinstance(instance, EObject)
 
-@given(instance=workflow::Named_strategy)
+@given(instance=workflow_Named_strategy)
 @settings(max_examples=50)
-def test_workflow::named_instantiation(instance):
-    assert isinstance(instance, workflow::Named)
-
-@given(instance=workflow::Named_strategy)
-def test_workflow::named_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_workflow_named_instantiation(instance):
+    assert isinstance(instance, workflow_Named)
 
 
-@given(instance=workflow::Named_strategy)
-def test_workflow::named_name_setter(instance):
+
+@given(instance=workflow_Named_strategy)
+def test_workflow_named_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original

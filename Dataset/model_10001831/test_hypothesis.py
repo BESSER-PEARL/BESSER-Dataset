@@ -3,7 +3,7 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
 from python_code import (
     MainWindow,
@@ -34,31 +34,22 @@ def test_mainwindow_constructor_exists():
 def test_mainwindow_constructor_args():
     sig = inspect.signature(MainWindow.__init__)
     params = list(sig.parameters.keys())
-    assert "_logininit" in params, "Missing parameter '_logininit'"
-    assert "nursess" in params, "Missing parameter 'nursess'"
-    assert "roomss" in params, "Missing parameter 'roomss'"
-    assert "_Loginnurs" in params, "Missing parameter '_Loginnurs'"
-    assert "itss" in params, "Missing parameter 'itss'"
-    assert "doctorss" in params, "Missing parameter 'doctorss'"
-    assert "_logicdoc" in params, "Missing parameter '_logicdoc'"
-    assert "UI" in params, "Missing parameter 'UI'"
     assert "patientss" in params, "Missing parameter 'patientss'"
+    assert "roomss" in params, "Missing parameter 'roomss'"
+    assert "UI" in params, "Missing parameter 'UI'"
+    assert "nursess" in params, "Missing parameter 'nursess'"
+    assert "_logininit" in params, "Missing parameter '_logininit'"
+    assert "doctorss" in params, "Missing parameter 'doctorss'"
+    assert "itss" in params, "Missing parameter 'itss'"
+    assert "_logicdoc" in params, "Missing parameter '_logicdoc'"
+    assert "_Loginnurs" in params, "Missing parameter '_Loginnurs'"
 
-def test_mainwindow_has__logininit():
-    assert hasattr(MainWindow, "_logininit")
+def test_mainwindow_has_patientss():
+    assert hasattr(MainWindow, "patientss")
     descriptor = None
     for klass in MainWindow.__mro__:
-        if "_logininit" in klass.__dict__:
-            descriptor = klass.__dict__["_logininit"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_mainwindow_has_nursess():
-    assert hasattr(MainWindow, "nursess")
-    descriptor = None
-    for klass in MainWindow.__mro__:
-        if "nursess" in klass.__dict__:
-            descriptor = klass.__dict__["nursess"]
+        if "patientss" in klass.__dict__:
+            descriptor = klass.__dict__["patientss"]
             break
     assert isinstance(descriptor, property)
 
@@ -71,21 +62,30 @@ def test_mainwindow_has_roomss():
             break
     assert isinstance(descriptor, property)
 
-def test_mainwindow_has__Loginnurs():
-    assert hasattr(MainWindow, "_Loginnurs")
+def test_mainwindow_has_UI():
+    assert hasattr(MainWindow, "UI")
     descriptor = None
     for klass in MainWindow.__mro__:
-        if "_Loginnurs" in klass.__dict__:
-            descriptor = klass.__dict__["_Loginnurs"]
+        if "UI" in klass.__dict__:
+            descriptor = klass.__dict__["UI"]
             break
     assert isinstance(descriptor, property)
 
-def test_mainwindow_has_itss():
-    assert hasattr(MainWindow, "itss")
+def test_mainwindow_has_nursess():
+    assert hasattr(MainWindow, "nursess")
     descriptor = None
     for klass in MainWindow.__mro__:
-        if "itss" in klass.__dict__:
-            descriptor = klass.__dict__["itss"]
+        if "nursess" in klass.__dict__:
+            descriptor = klass.__dict__["nursess"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_mainwindow_has__logininit():
+    assert hasattr(MainWindow, "_logininit")
+    descriptor = None
+    for klass in MainWindow.__mro__:
+        if "_logininit" in klass.__dict__:
+            descriptor = klass.__dict__["_logininit"]
             break
     assert isinstance(descriptor, property)
 
@@ -98,6 +98,15 @@ def test_mainwindow_has_doctorss():
             break
     assert isinstance(descriptor, property)
 
+def test_mainwindow_has_itss():
+    assert hasattr(MainWindow, "itss")
+    descriptor = None
+    for klass in MainWindow.__mro__:
+        if "itss" in klass.__dict__:
+            descriptor = klass.__dict__["itss"]
+            break
+    assert isinstance(descriptor, property)
+
 def test_mainwindow_has__logicdoc():
     assert hasattr(MainWindow, "_logicdoc")
     descriptor = None
@@ -107,21 +116,12 @@ def test_mainwindow_has__logicdoc():
             break
     assert isinstance(descriptor, property)
 
-def test_mainwindow_has_UI():
-    assert hasattr(MainWindow, "UI")
+def test_mainwindow_has__Loginnurs():
+    assert hasattr(MainWindow, "_Loginnurs")
     descriptor = None
     for klass in MainWindow.__mro__:
-        if "UI" in klass.__dict__:
-            descriptor = klass.__dict__["UI"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_mainwindow_has_patientss():
-    assert hasattr(MainWindow, "patientss")
-    descriptor = None
-    for klass in MainWindow.__mro__:
-        if "patientss" in klass.__dict__:
-            descriptor = klass.__dict__["patientss"]
+        if "_Loginnurs" in klass.__dict__:
+            descriptor = klass.__dict__["_Loginnurs"]
             break
     assert isinstance(descriptor, property)
 
@@ -138,27 +138,18 @@ def test_appointment_constructor_exists():
 def test_appointment_constructor_args():
     sig = inspect.signature(appointment.__init__)
     params = list(sig.parameters.keys())
-    assert "title" in params, "Missing parameter 'title'"
-    assert "minute" in params, "Missing parameter 'minute'"
-    assert "duration" in params, "Missing parameter 'duration'"
-    assert "hour" in params, "Missing parameter 'hour'"
     assert "day" in params, "Missing parameter 'day'"
+    assert "duration" in params, "Missing parameter 'duration'"
+    assert "minute" in params, "Missing parameter 'minute'"
+    assert "hour" in params, "Missing parameter 'hour'"
+    assert "title" in params, "Missing parameter 'title'"
 
-def test_appointment_has_title():
-    assert hasattr(appointment, "title")
+def test_appointment_has_day():
+    assert hasattr(appointment, "day")
     descriptor = None
     for klass in appointment.__mro__:
-        if "title" in klass.__dict__:
-            descriptor = klass.__dict__["title"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_appointment_has_minute():
-    assert hasattr(appointment, "minute")
-    descriptor = None
-    for klass in appointment.__mro__:
-        if "minute" in klass.__dict__:
-            descriptor = klass.__dict__["minute"]
+        if "day" in klass.__dict__:
+            descriptor = klass.__dict__["day"]
             break
     assert isinstance(descriptor, property)
 
@@ -171,6 +162,15 @@ def test_appointment_has_duration():
             break
     assert isinstance(descriptor, property)
 
+def test_appointment_has_minute():
+    assert hasattr(appointment, "minute")
+    descriptor = None
+    for klass in appointment.__mro__:
+        if "minute" in klass.__dict__:
+            descriptor = klass.__dict__["minute"]
+            break
+    assert isinstance(descriptor, property)
+
 def test_appointment_has_hour():
     assert hasattr(appointment, "hour")
     descriptor = None
@@ -180,12 +180,12 @@ def test_appointment_has_hour():
             break
     assert isinstance(descriptor, property)
 
-def test_appointment_has_day():
-    assert hasattr(appointment, "day")
+def test_appointment_has_title():
+    assert hasattr(appointment, "title")
     descriptor = None
     for klass in appointment.__mro__:
-        if "day" in klass.__dict__:
-            descriptor = klass.__dict__["day"]
+        if "title" in klass.__dict__:
+            descriptor = klass.__dict__["title"]
             break
     assert isinstance(descriptor, property)
 
@@ -202,12 +202,21 @@ def test_room_constructor_exists():
 def test_room_constructor_args():
     sig = inspect.signature(Room.__init__)
     params = list(sig.parameters.keys())
-    assert "available" in params, "Missing parameter 'available'"
-    assert "_nurs" in params, "Missing parameter '_nurs'"
-    assert "room_type" in params, "Missing parameter 'room_type'"
     assert "capasittity" in params, "Missing parameter 'capasittity'"
+    assert "available" in params, "Missing parameter 'available'"
+    assert "room_type" in params, "Missing parameter 'room_type'"
     assert "num" in params, "Missing parameter 'num'"
+    assert "_nurs" in params, "Missing parameter '_nurs'"
     assert "patients" in params, "Missing parameter 'patients'"
+
+def test_room_has_capasittity():
+    assert hasattr(Room, "capasittity")
+    descriptor = None
+    for klass in Room.__mro__:
+        if "capasittity" in klass.__dict__:
+            descriptor = klass.__dict__["capasittity"]
+            break
+    assert isinstance(descriptor, property)
 
 def test_room_has_available():
     assert hasattr(Room, "available")
@@ -215,15 +224,6 @@ def test_room_has_available():
     for klass in Room.__mro__:
         if "available" in klass.__dict__:
             descriptor = klass.__dict__["available"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_room_has__nurs():
-    assert hasattr(Room, "_nurs")
-    descriptor = None
-    for klass in Room.__mro__:
-        if "_nurs" in klass.__dict__:
-            descriptor = klass.__dict__["_nurs"]
             break
     assert isinstance(descriptor, property)
 
@@ -236,21 +236,21 @@ def test_room_has_room_type():
             break
     assert isinstance(descriptor, property)
 
-def test_room_has_capasittity():
-    assert hasattr(Room, "capasittity")
-    descriptor = None
-    for klass in Room.__mro__:
-        if "capasittity" in klass.__dict__:
-            descriptor = klass.__dict__["capasittity"]
-            break
-    assert isinstance(descriptor, property)
-
 def test_room_has_num():
     assert hasattr(Room, "num")
     descriptor = None
     for klass in Room.__mro__:
         if "num" in klass.__dict__:
             descriptor = klass.__dict__["num"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_room_has__nurs():
+    assert hasattr(Room, "_nurs")
+    descriptor = None
+    for klass in Room.__mro__:
+        if "_nurs" in klass.__dict__:
+            descriptor = klass.__dict__["_nurs"]
             break
     assert isinstance(descriptor, property)
 
@@ -276,27 +276,18 @@ def test_patient_constructor_exists():
 def test_patient_constructor_args():
     sig = inspect.signature(Patient.__init__)
     params = list(sig.parameters.keys())
-    assert "room" in params, "Missing parameter 'room'"
-    assert "duration" in params, "Missing parameter 'duration'"
+    assert "hasdoc" in params, "Missing parameter 'hasdoc'"
     assert "disease" in params, "Missing parameter 'disease'"
     assert "hasroom" in params, "Missing parameter 'hasroom'"
-    assert "hasdoc" in params, "Missing parameter 'hasdoc'"
+    assert "duration" in params, "Missing parameter 'duration'"
+    assert "room" in params, "Missing parameter 'room'"
 
-def test_patient_has_room():
-    assert hasattr(Patient, "room")
+def test_patient_has_hasdoc():
+    assert hasattr(Patient, "hasdoc")
     descriptor = None
     for klass in Patient.__mro__:
-        if "room" in klass.__dict__:
-            descriptor = klass.__dict__["room"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_patient_has_duration():
-    assert hasattr(Patient, "duration")
-    descriptor = None
-    for klass in Patient.__mro__:
-        if "duration" in klass.__dict__:
-            descriptor = klass.__dict__["duration"]
+        if "hasdoc" in klass.__dict__:
+            descriptor = klass.__dict__["hasdoc"]
             break
     assert isinstance(descriptor, property)
 
@@ -318,12 +309,21 @@ def test_patient_has_hasroom():
             break
     assert isinstance(descriptor, property)
 
-def test_patient_has_hasdoc():
-    assert hasattr(Patient, "hasdoc")
+def test_patient_has_duration():
+    assert hasattr(Patient, "duration")
     descriptor = None
     for klass in Patient.__mro__:
-        if "hasdoc" in klass.__dict__:
-            descriptor = klass.__dict__["hasdoc"]
+        if "duration" in klass.__dict__:
+            descriptor = klass.__dict__["duration"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_patient_has_room():
+    assert hasattr(Patient, "room")
+    descriptor = None
+    for klass in Patient.__mro__:
+        if "room" in klass.__dict__:
+            descriptor = klass.__dict__["room"]
             break
     assert isinstance(descriptor, property)
 
@@ -340,17 +340,8 @@ def test_it_constructor_exists():
 def test_it_constructor_args():
     sig = inspect.signature(It.__init__)
     params = list(sig.parameters.keys())
-    assert "password" in params, "Missing parameter 'password'"
     assert "name" in params, "Missing parameter 'name'"
-
-def test_it_has_password():
-    assert hasattr(It, "password")
-    descriptor = None
-    for klass in It.__mro__:
-        if "password" in klass.__dict__:
-            descriptor = klass.__dict__["password"]
-            break
-    assert isinstance(descriptor, property)
+    assert "password" in params, "Missing parameter 'password'"
 
 def test_it_has_name():
     assert hasattr(It, "name")
@@ -358,6 +349,15 @@ def test_it_has_name():
     for klass in It.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_it_has_password():
+    assert hasattr(It, "password")
+    descriptor = None
+    for klass in It.__mro__:
+        if "password" in klass.__dict__:
+            descriptor = klass.__dict__["password"]
             break
     assert isinstance(descriptor, property)
 
@@ -398,17 +398,8 @@ def test_doctor_constructor_exists():
 def test_doctor_constructor_args():
     sig = inspect.signature(doctor.__init__)
     params = list(sig.parameters.keys())
-    assert "patient" in params, "Missing parameter 'patient'"
     assert "weekappointment" in params, "Missing parameter 'weekappointment'"
-
-def test_doctor_has_patient():
-    assert hasattr(doctor, "patient")
-    descriptor = None
-    for klass in doctor.__mro__:
-        if "patient" in klass.__dict__:
-            descriptor = klass.__dict__["patient"]
-            break
-    assert isinstance(descriptor, property)
+    assert "patient" in params, "Missing parameter 'patient'"
 
 def test_doctor_has_weekappointment():
     assert hasattr(doctor, "weekappointment")
@@ -416,6 +407,15 @@ def test_doctor_has_weekappointment():
     for klass in doctor.__mro__:
         if "weekappointment" in klass.__dict__:
             descriptor = klass.__dict__["weekappointment"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_doctor_has_patient():
+    assert hasattr(doctor, "patient")
+    descriptor = None
+    for klass in doctor.__mro__:
+        if "patient" in klass.__dict__:
+            descriptor = klass.__dict__["patient"]
             break
     assert isinstance(descriptor, property)
 
@@ -432,17 +432,8 @@ def test_employee_constructor_exists():
 def test_employee_constructor_args():
     sig = inspect.signature(employee.__init__)
     params = list(sig.parameters.keys())
-    assert "password" in params, "Missing parameter 'password'"
     assert "department" in params, "Missing parameter 'department'"
-
-def test_employee_has_password():
-    assert hasattr(employee, "password")
-    descriptor = None
-    for klass in employee.__mro__:
-        if "password" in klass.__dict__:
-            descriptor = klass.__dict__["password"]
-            break
-    assert isinstance(descriptor, property)
+    assert "password" in params, "Missing parameter 'password'"
 
 def test_employee_has_department():
     assert hasattr(employee, "department")
@@ -450,6 +441,15 @@ def test_employee_has_department():
     for klass in employee.__mro__:
         if "department" in klass.__dict__:
             descriptor = klass.__dict__["department"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_employee_has_password():
+    assert hasattr(employee, "password")
+    descriptor = None
+    for klass in employee.__mro__:
+        if "password" in klass.__dict__:
+            descriptor = klass.__dict__["password"]
             break
     assert isinstance(descriptor, property)
 
@@ -501,71 +501,71 @@ safe_text = st.text(
 ).filter(lambda s: s[0].isalpha())
 MainWindow_strategy = st.builds(
     MainWindow,
-    _logininit=
-        st.none(),
-    nursess=
+    patientss=
         safe_text,
     roomss=
         safe_text,
-    _Loginnurs=
-        st.none(),
-    itss=
+    UI=
         safe_text,
+    nursess=
+        safe_text,
+    _logininit=
+        st.none(),
     doctorss=
+        safe_text,
+    itss=
         safe_text,
     _logicdoc=
         st.none(),
-    UI=
-        safe_text,
-    patientss=
-        safe_text
+    _Loginnurs=
+        st.none()
 )
 appointment_strategy = st.builds(
     appointment,
-    title=
-        safe_text,
-    minute=
+    day=
         st.integers(),
     duration=
         st.integers(),
+    minute=
+        st.integers(),
     hour=
         st.integers(),
-    day=
-        st.integers()
+    title=
+        safe_text
 )
 Room_strategy = st.builds(
     Room,
-    available=
-        st.booleans(),
-    _nurs=
-        st.none(),
-    room_type=
-        safe_text,
     capasittity=
         st.integers(),
+    available=
+        st.booleans(),
+    room_type=
+        safe_text,
     num=
         st.integers(),
+    _nurs=
+        st.none(),
     patients=
         safe_text
 )
 Patient_strategy = st.builds(
     Patient,
-    room=
-        st.integers(),
-    duration=
-        st.integers(),
+    hasdoc=
+        st.booleans(),
     disease=
         safe_text,
     hasroom=
         st.booleans(),
-    hasdoc=
-        st.booleans()
+    duration=
+        st.integers(),
+    room=
+        st.integers()
 )
 It_strategy = st.builds(
     It,
-    password=
-        safe_text,
     name=
+        safe_text,
+    password=
         safe_text
 )
 nurse_strategy = st.builds(
@@ -575,16 +575,16 @@ nurse_strategy = st.builds(
 )
 doctor_strategy = st.builds(
     doctor,
-    patient=
-        safe_text,
     weekappointment=
+        safe_text,
+    patient=
         safe_text
 )
 employee_strategy = st.builds(
     employee,
-    password=
-        safe_text,
     department=
+        safe_text,
+    password=
         safe_text
 )
 Person_strategy = st.builds(
@@ -600,97 +600,6 @@ Person_strategy = st.builds(
 def test_mainwindow_instantiation(instance):
     assert isinstance(instance, MainWindow)
 
-@given(instance=MainWindow_strategy)
-def test_mainwindow__logininit_type(instance):
-    assert isinstance(instance._logininit, it)
-
-
-@given(instance=MainWindow_strategy)
-def test_mainwindow__logininit_setter(instance):
-    original = instance._logininit
-    instance._logininit = original
-    assert instance._logininit == original
-
-@given(instance=MainWindow_strategy)
-def test_mainwindow_nursess_type(instance):
-    assert isinstance(instance.nursess, str)
-
-
-@given(instance=MainWindow_strategy)
-def test_mainwindow_nursess_setter(instance):
-    original = instance.nursess
-    instance.nursess = original
-    assert instance.nursess == original
-
-@given(instance=MainWindow_strategy)
-def test_mainwindow_roomss_type(instance):
-    assert isinstance(instance.roomss, str)
-
-
-@given(instance=MainWindow_strategy)
-def test_mainwindow_roomss_setter(instance):
-    original = instance.roomss
-    instance.roomss = original
-    assert instance.roomss == original
-
-@given(instance=MainWindow_strategy)
-def test_mainwindow__Loginnurs_type(instance):
-    assert isinstance(instance._Loginnurs, employee)
-
-
-@given(instance=MainWindow_strategy)
-def test_mainwindow__Loginnurs_setter(instance):
-    original = instance._Loginnurs
-    instance._Loginnurs = original
-    assert instance._Loginnurs == original
-
-@given(instance=MainWindow_strategy)
-def test_mainwindow_itss_type(instance):
-    assert isinstance(instance.itss, str)
-
-
-@given(instance=MainWindow_strategy)
-def test_mainwindow_itss_setter(instance):
-    original = instance.itss
-    instance.itss = original
-    assert instance.itss == original
-
-@given(instance=MainWindow_strategy)
-def test_mainwindow_doctorss_type(instance):
-    assert isinstance(instance.doctorss, str)
-
-
-@given(instance=MainWindow_strategy)
-def test_mainwindow_doctorss_setter(instance):
-    original = instance.doctorss
-    instance.doctorss = original
-    assert instance.doctorss == original
-
-@given(instance=MainWindow_strategy)
-def test_mainwindow__logicdoc_type(instance):
-    assert isinstance(instance._logicdoc, doctor)
-
-
-@given(instance=MainWindow_strategy)
-def test_mainwindow__logicdoc_setter(instance):
-    original = instance._logicdoc
-    instance._logicdoc = original
-    assert instance._logicdoc == original
-
-@given(instance=MainWindow_strategy)
-def test_mainwindow_UI_type(instance):
-    assert isinstance(instance.UI, str)
-
-
-@given(instance=MainWindow_strategy)
-def test_mainwindow_UI_setter(instance):
-    original = instance.UI
-    instance.UI = original
-    assert instance.UI == original
-
-@given(instance=MainWindow_strategy)
-def test_mainwindow_patientss_type(instance):
-    assert isinstance(instance.patientss, str)
 
 
 @given(instance=MainWindow_strategy)
@@ -699,58 +608,75 @@ def test_mainwindow_patientss_setter(instance):
     instance.patientss = original
     assert instance.patientss == original
 
+
+
+@given(instance=MainWindow_strategy)
+def test_mainwindow_roomss_setter(instance):
+    original = instance.roomss
+    instance.roomss = original
+    assert instance.roomss == original
+
+
+
+@given(instance=MainWindow_strategy)
+def test_mainwindow_UI_setter(instance):
+    original = instance.UI
+    instance.UI = original
+    assert instance.UI == original
+
+
+
+@given(instance=MainWindow_strategy)
+def test_mainwindow_nursess_setter(instance):
+    original = instance.nursess
+    instance.nursess = original
+    assert instance.nursess == original
+
+
+
+@given(instance=MainWindow_strategy)
+def test_mainwindow__logininit_setter(instance):
+    original = instance._logininit
+    instance._logininit = original
+    assert instance._logininit == original
+
+
+
+@given(instance=MainWindow_strategy)
+def test_mainwindow_doctorss_setter(instance):
+    original = instance.doctorss
+    instance.doctorss = original
+    assert instance.doctorss == original
+
+
+
+@given(instance=MainWindow_strategy)
+def test_mainwindow_itss_setter(instance):
+    original = instance.itss
+    instance.itss = original
+    assert instance.itss == original
+
+
+
+@given(instance=MainWindow_strategy)
+def test_mainwindow__logicdoc_setter(instance):
+    original = instance._logicdoc
+    instance._logicdoc = original
+    assert instance._logicdoc == original
+
+
+
+@given(instance=MainWindow_strategy)
+def test_mainwindow__Loginnurs_setter(instance):
+    original = instance._Loginnurs
+    instance._Loginnurs = original
+    assert instance._Loginnurs == original
+
 @given(instance=appointment_strategy)
 @settings(max_examples=50)
 def test_appointment_instantiation(instance):
     assert isinstance(instance, appointment)
 
-@given(instance=appointment_strategy)
-def test_appointment_title_type(instance):
-    assert isinstance(instance.title, str)
-
-
-@given(instance=appointment_strategy)
-def test_appointment_title_setter(instance):
-    original = instance.title
-    instance.title = original
-    assert instance.title == original
-
-@given(instance=appointment_strategy)
-def test_appointment_minute_type(instance):
-    assert isinstance(instance.minute, int)
-
-
-@given(instance=appointment_strategy)
-def test_appointment_minute_setter(instance):
-    original = instance.minute
-    instance.minute = original
-    assert instance.minute == original
-
-@given(instance=appointment_strategy)
-def test_appointment_duration_type(instance):
-    assert isinstance(instance.duration, int)
-
-
-@given(instance=appointment_strategy)
-def test_appointment_duration_setter(instance):
-    original = instance.duration
-    instance.duration = original
-    assert instance.duration == original
-
-@given(instance=appointment_strategy)
-def test_appointment_hour_type(instance):
-    assert isinstance(instance.hour, int)
-
-
-@given(instance=appointment_strategy)
-def test_appointment_hour_setter(instance):
-    original = instance.hour
-    instance.hour = original
-    assert instance.hour == original
-
-@given(instance=appointment_strategy)
-def test_appointment_day_type(instance):
-    assert isinstance(instance.day, int)
 
 
 @given(instance=appointment_strategy)
@@ -759,47 +685,43 @@ def test_appointment_day_setter(instance):
     instance.day = original
     assert instance.day == original
 
+
+
+@given(instance=appointment_strategy)
+def test_appointment_duration_setter(instance):
+    original = instance.duration
+    instance.duration = original
+    assert instance.duration == original
+
+
+
+@given(instance=appointment_strategy)
+def test_appointment_minute_setter(instance):
+    original = instance.minute
+    instance.minute = original
+    assert instance.minute == original
+
+
+
+@given(instance=appointment_strategy)
+def test_appointment_hour_setter(instance):
+    original = instance.hour
+    instance.hour = original
+    assert instance.hour == original
+
+
+
+@given(instance=appointment_strategy)
+def test_appointment_title_setter(instance):
+    original = instance.title
+    instance.title = original
+    assert instance.title == original
+
 @given(instance=Room_strategy)
 @settings(max_examples=50)
 def test_room_instantiation(instance):
     assert isinstance(instance, Room)
 
-@given(instance=Room_strategy)
-def test_room_available_type(instance):
-    assert isinstance(instance.available, bool)
-
-
-@given(instance=Room_strategy)
-def test_room_available_setter(instance):
-    original = instance.available
-    instance.available = original
-    assert instance.available == original
-
-@given(instance=Room_strategy)
-def test_room__nurs_type(instance):
-    assert isinstance(instance._nurs, nurse)
-
-
-@given(instance=Room_strategy)
-def test_room__nurs_setter(instance):
-    original = instance._nurs
-    instance._nurs = original
-    assert instance._nurs == original
-
-@given(instance=Room_strategy)
-def test_room_room_type_type(instance):
-    assert isinstance(instance.room_type, str)
-
-
-@given(instance=Room_strategy)
-def test_room_room_type_setter(instance):
-    original = instance.room_type
-    instance.room_type = original
-    assert instance.room_type == original
-
-@given(instance=Room_strategy)
-def test_room_capasittity_type(instance):
-    assert isinstance(instance.capasittity, int)
 
 
 @given(instance=Room_strategy)
@@ -808,9 +730,22 @@ def test_room_capasittity_setter(instance):
     instance.capasittity = original
     assert instance.capasittity == original
 
+
+
 @given(instance=Room_strategy)
-def test_room_num_type(instance):
-    assert isinstance(instance.num, int)
+def test_room_available_setter(instance):
+    original = instance.available
+    instance.available = original
+    assert instance.available == original
+
+
+
+@given(instance=Room_strategy)
+def test_room_room_type_setter(instance):
+    original = instance.room_type
+    instance.room_type = original
+    assert instance.room_type == original
+
 
 
 @given(instance=Room_strategy)
@@ -819,9 +754,14 @@ def test_room_num_setter(instance):
     instance.num = original
     assert instance.num == original
 
+
+
 @given(instance=Room_strategy)
-def test_room_patients_type(instance):
-    assert isinstance(instance.patients, str)
+def test_room__nurs_setter(instance):
+    original = instance._nurs
+    instance._nurs = original
+    assert instance._nurs == original
+
 
 
 @given(instance=Room_strategy)
@@ -835,53 +775,6 @@ def test_room_patients_setter(instance):
 def test_patient_instantiation(instance):
     assert isinstance(instance, Patient)
 
-@given(instance=Patient_strategy)
-def test_patient_room_type(instance):
-    assert isinstance(instance.room, int)
-
-
-@given(instance=Patient_strategy)
-def test_patient_room_setter(instance):
-    original = instance.room
-    instance.room = original
-    assert instance.room == original
-
-@given(instance=Patient_strategy)
-def test_patient_duration_type(instance):
-    assert isinstance(instance.duration, int)
-
-
-@given(instance=Patient_strategy)
-def test_patient_duration_setter(instance):
-    original = instance.duration
-    instance.duration = original
-    assert instance.duration == original
-
-@given(instance=Patient_strategy)
-def test_patient_disease_type(instance):
-    assert isinstance(instance.disease, str)
-
-
-@given(instance=Patient_strategy)
-def test_patient_disease_setter(instance):
-    original = instance.disease
-    instance.disease = original
-    assert instance.disease == original
-
-@given(instance=Patient_strategy)
-def test_patient_hasroom_type(instance):
-    assert isinstance(instance.hasroom, bool)
-
-
-@given(instance=Patient_strategy)
-def test_patient_hasroom_setter(instance):
-    original = instance.hasroom
-    instance.hasroom = original
-    assert instance.hasroom == original
-
-@given(instance=Patient_strategy)
-def test_patient_hasdoc_type(instance):
-    assert isinstance(instance.hasdoc, bool)
 
 
 @given(instance=Patient_strategy)
@@ -890,25 +783,43 @@ def test_patient_hasdoc_setter(instance):
     instance.hasdoc = original
     assert instance.hasdoc == original
 
+
+
+@given(instance=Patient_strategy)
+def test_patient_disease_setter(instance):
+    original = instance.disease
+    instance.disease = original
+    assert instance.disease == original
+
+
+
+@given(instance=Patient_strategy)
+def test_patient_hasroom_setter(instance):
+    original = instance.hasroom
+    instance.hasroom = original
+    assert instance.hasroom == original
+
+
+
+@given(instance=Patient_strategy)
+def test_patient_duration_setter(instance):
+    original = instance.duration
+    instance.duration = original
+    assert instance.duration == original
+
+
+
+@given(instance=Patient_strategy)
+def test_patient_room_setter(instance):
+    original = instance.room
+    instance.room = original
+    assert instance.room == original
+
 @given(instance=It_strategy)
 @settings(max_examples=50)
 def test_it_instantiation(instance):
     assert isinstance(instance, It)
 
-@given(instance=It_strategy)
-def test_it_password_type(instance):
-    assert isinstance(instance.password, str)
-
-
-@given(instance=It_strategy)
-def test_it_password_setter(instance):
-    original = instance.password
-    instance.password = original
-    assert instance.password == original
-
-@given(instance=It_strategy)
-def test_it_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
 @given(instance=It_strategy)
@@ -917,14 +828,19 @@ def test_it_name_setter(instance):
     instance.name = original
     assert instance.name == original
 
+
+
+@given(instance=It_strategy)
+def test_it_password_setter(instance):
+    original = instance.password
+    instance.password = original
+    assert instance.password == original
+
 @given(instance=nurse_strategy)
 @settings(max_examples=50)
 def test_nurse_instantiation(instance):
     assert isinstance(instance, nurse)
 
-@given(instance=nurse_strategy)
-def test_nurse__rom_type(instance):
-    assert isinstance(instance._rom, room)
 
 
 @given(instance=nurse_strategy)
@@ -938,20 +854,6 @@ def test_nurse__rom_setter(instance):
 def test_doctor_instantiation(instance):
     assert isinstance(instance, doctor)
 
-@given(instance=doctor_strategy)
-def test_doctor_patient_type(instance):
-    assert isinstance(instance.patient, str)
-
-
-@given(instance=doctor_strategy)
-def test_doctor_patient_setter(instance):
-    original = instance.patient
-    instance.patient = original
-    assert instance.patient == original
-
-@given(instance=doctor_strategy)
-def test_doctor_weekappointment_type(instance):
-    assert isinstance(instance.weekappointment, str)
 
 
 @given(instance=doctor_strategy)
@@ -960,25 +862,19 @@ def test_doctor_weekappointment_setter(instance):
     instance.weekappointment = original
     assert instance.weekappointment == original
 
+
+
+@given(instance=doctor_strategy)
+def test_doctor_patient_setter(instance):
+    original = instance.patient
+    instance.patient = original
+    assert instance.patient == original
+
 @given(instance=employee_strategy)
 @settings(max_examples=50)
 def test_employee_instantiation(instance):
     assert isinstance(instance, employee)
 
-@given(instance=employee_strategy)
-def test_employee_password_type(instance):
-    assert isinstance(instance.password, str)
-
-
-@given(instance=employee_strategy)
-def test_employee_password_setter(instance):
-    original = instance.password
-    instance.password = original
-    assert instance.password == original
-
-@given(instance=employee_strategy)
-def test_employee_department_type(instance):
-    assert isinstance(instance.department, str)
 
 
 @given(instance=employee_strategy)
@@ -987,14 +883,19 @@ def test_employee_department_setter(instance):
     instance.department = original
     assert instance.department == original
 
+
+
+@given(instance=employee_strategy)
+def test_employee_password_setter(instance):
+    original = instance.password
+    instance.password = original
+    assert instance.password == original
+
 @given(instance=Person_strategy)
 @settings(max_examples=50)
 def test_person_instantiation(instance):
     assert isinstance(instance, Person)
 
-@given(instance=Person_strategy)
-def test_person_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
 @given(instance=Person_strategy)
@@ -1003,9 +904,6 @@ def test_person_name_setter(instance):
     instance.name = original
     assert instance.name == original
 
-@given(instance=Person_strategy)
-def test_person_age_type(instance):
-    assert isinstance(instance.age, int)
 
 
 @given(instance=Person_strategy)

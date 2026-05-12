@@ -3,24 +3,24 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     AbstractComponent,
-    fragdial101::Component,
+    fragdial101_Component,
     Interface,
-    fragdial101::Attribute,
-    fragdial101::Ldflag,
-    fragdial101::Include,
-    fragdial101::Content,
-    fragdial101::Binding,
-    fragdial101::Interface,
-    fragdial101::Provided,
-    fragdial101::Required,
-    fragdial101::Controller,
-    fragdial101::Output,
-    fragdial101::Attributes,
-    fragdial101::AbstractComponent,
+    fragdial101_Attribute,
+    fragdial101_Ldflag,
+    fragdial101_Include,
+    fragdial101_Content,
+    fragdial101_Binding,
+    fragdial101_Interface,
+    fragdial101_Provided,
+    fragdial101_Required,
+    fragdial101_Controller,
+    fragdial101_Output,
+    fragdial101_Attributes,
+    fragdial101_AbstractComponent,
 )
 
 # =============================================================================
@@ -43,16 +43,16 @@ def test_abstractcomponent_constructor_args():
 
 
 
-def test_fragdial101::component_is_not_abstract():
-    assert not inspect.isabstract(fragdial101::Component)
+def test_fragdial101_component_is_not_abstract():
+    assert not inspect.isabstract(fragdial101_Component)
 
 
-def test_fragdial101::component_constructor_exists():
-    assert callable(fragdial101::Component.__init__)
+def test_fragdial101_component_constructor_exists():
+    assert callable(fragdial101_Component.__init__)
 
 
-def test_fragdial101::component_constructor_args():
-    sig = inspect.signature(fragdial101::Component.__init__)
+def test_fragdial101_component_constructor_args():
+    sig = inspect.signature(fragdial101_Component.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -71,33 +71,33 @@ def test_interface_constructor_args():
 
 
 
-def test_fragdial101::attribute_is_not_abstract():
-    assert not inspect.isabstract(fragdial101::Attribute)
+def test_fragdial101_attribute_is_not_abstract():
+    assert not inspect.isabstract(fragdial101_Attribute)
 
 
-def test_fragdial101::attribute_constructor_exists():
-    assert callable(fragdial101::Attribute.__init__)
+def test_fragdial101_attribute_constructor_exists():
+    assert callable(fragdial101_Attribute.__init__)
 
 
-def test_fragdial101::attribute_constructor_args():
-    sig = inspect.signature(fragdial101::Attribute.__init__)
+def test_fragdial101_attribute_constructor_args():
+    sig = inspect.signature(fragdial101_Attribute.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
     assert "name" in params, "Missing parameter 'name'"
 
-def test_fragdial101::attribute_has_value():
-    assert hasattr(fragdial101::Attribute, "value")
+def test_fragdial101_attribute_has_value():
+    assert hasattr(fragdial101_Attribute, "value")
     descriptor = None
-    for klass in fragdial101::Attribute.__mro__:
+    for klass in fragdial101_Attribute.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
     assert isinstance(descriptor, property)
 
-def test_fragdial101::attribute_has_name():
-    assert hasattr(fragdial101::Attribute, "name")
+def test_fragdial101_attribute_has_name():
+    assert hasattr(fragdial101_Attribute, "name")
     descriptor = None
-    for klass in fragdial101::Attribute.__mro__:
+    for klass in fragdial101_Attribute.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -105,23 +105,23 @@ def test_fragdial101::attribute_has_name():
 
 
 
-def test_fragdial101::ldflag_is_not_abstract():
-    assert not inspect.isabstract(fragdial101::Ldflag)
+def test_fragdial101_ldflag_is_not_abstract():
+    assert not inspect.isabstract(fragdial101_Ldflag)
 
 
-def test_fragdial101::ldflag_constructor_exists():
-    assert callable(fragdial101::Ldflag.__init__)
+def test_fragdial101_ldflag_constructor_exists():
+    assert callable(fragdial101_Ldflag.__init__)
 
 
-def test_fragdial101::ldflag_constructor_args():
-    sig = inspect.signature(fragdial101::Ldflag.__init__)
+def test_fragdial101_ldflag_constructor_args():
+    sig = inspect.signature(fragdial101_Ldflag.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
 
-def test_fragdial101::ldflag_has_value():
-    assert hasattr(fragdial101::Ldflag, "value")
+def test_fragdial101_ldflag_has_value():
+    assert hasattr(fragdial101_Ldflag, "value")
     descriptor = None
-    for klass in fragdial101::Ldflag.__mro__:
+    for klass in fragdial101_Ldflag.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -129,23 +129,23 @@ def test_fragdial101::ldflag_has_value():
 
 
 
-def test_fragdial101::include_is_not_abstract():
-    assert not inspect.isabstract(fragdial101::Include)
+def test_fragdial101_include_is_not_abstract():
+    assert not inspect.isabstract(fragdial101_Include)
 
 
-def test_fragdial101::include_constructor_exists():
-    assert callable(fragdial101::Include.__init__)
+def test_fragdial101_include_constructor_exists():
+    assert callable(fragdial101_Include.__init__)
 
 
-def test_fragdial101::include_constructor_args():
-    sig = inspect.signature(fragdial101::Include.__init__)
+def test_fragdial101_include_constructor_args():
+    sig = inspect.signature(fragdial101_Include.__init__)
     params = list(sig.parameters.keys())
     assert "file" in params, "Missing parameter 'file'"
 
-def test_fragdial101::include_has_file():
-    assert hasattr(fragdial101::Include, "file")
+def test_fragdial101_include_has_file():
+    assert hasattr(fragdial101_Include, "file")
     descriptor = None
-    for klass in fragdial101::Include.__mro__:
+    for klass in fragdial101_Include.__mro__:
         if "file" in klass.__dict__:
             descriptor = klass.__dict__["file"]
             break
@@ -153,173 +153,173 @@ def test_fragdial101::include_has_file():
 
 
 
-def test_fragdial101::content_is_not_abstract():
-    assert not inspect.isabstract(fragdial101::Content)
+def test_fragdial101_content_is_not_abstract():
+    assert not inspect.isabstract(fragdial101_Content)
 
 
-def test_fragdial101::content_constructor_exists():
-    assert callable(fragdial101::Content.__init__)
+def test_fragdial101_content_constructor_exists():
+    assert callable(fragdial101_Content.__init__)
 
 
-def test_fragdial101::content_constructor_args():
-    sig = inspect.signature(fragdial101::Content.__init__)
+def test_fragdial101_content_constructor_args():
+    sig = inspect.signature(fragdial101_Content.__init__)
     params = list(sig.parameters.keys())
-    assert "class_" in params, "Missing parameter 'class_'"
     assert "language" in params, "Missing parameter 'language'"
+    assert "class_" in params, "Missing parameter 'class_'"
 
-def test_fragdial101::content_has_class_():
-    assert hasattr(fragdial101::Content, "class_")
+def test_fragdial101_content_has_language():
+    assert hasattr(fragdial101_Content, "language")
     descriptor = None
-    for klass in fragdial101::Content.__mro__:
+    for klass in fragdial101_Content.__mro__:
+        if "language" in klass.__dict__:
+            descriptor = klass.__dict__["language"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_fragdial101_content_has_class_():
+    assert hasattr(fragdial101_Content, "class_")
+    descriptor = None
+    for klass in fragdial101_Content.__mro__:
         if "class_" in klass.__dict__:
             descriptor = klass.__dict__["class_"]
             break
     assert isinstance(descriptor, property)
 
-def test_fragdial101::content_has_language():
-    assert hasattr(fragdial101::Content, "language")
-    descriptor = None
-    for klass in fragdial101::Content.__mro__:
-        if "language" in klass.__dict__:
-            descriptor = klass.__dict__["language"]
-            break
-    assert isinstance(descriptor, property)
 
 
-
-def test_fragdial101::binding_is_not_abstract():
-    assert not inspect.isabstract(fragdial101::Binding)
-
-
-def test_fragdial101::binding_constructor_exists():
-    assert callable(fragdial101::Binding.__init__)
+def test_fragdial101_binding_is_not_abstract():
+    assert not inspect.isabstract(fragdial101_Binding)
 
 
-def test_fragdial101::binding_constructor_args():
-    sig = inspect.signature(fragdial101::Binding.__init__)
+def test_fragdial101_binding_constructor_exists():
+    assert callable(fragdial101_Binding.__init__)
+
+
+def test_fragdial101_binding_constructor_args():
+    sig = inspect.signature(fragdial101_Binding.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_fragdial101::interface_is_not_abstract():
-    assert not inspect.isabstract(fragdial101::Interface)
+def test_fragdial101_interface_is_not_abstract():
+    assert not inspect.isabstract(fragdial101_Interface)
 
 
-def test_fragdial101::interface_constructor_exists():
-    assert callable(fragdial101::Interface.__init__)
+def test_fragdial101_interface_constructor_exists():
+    assert callable(fragdial101_Interface.__init__)
 
 
-def test_fragdial101::interface_constructor_args():
-    sig = inspect.signature(fragdial101::Interface.__init__)
+def test_fragdial101_interface_constructor_args():
+    sig = inspect.signature(fragdial101_Interface.__init__)
     params = list(sig.parameters.keys())
-    assert "signature" in params, "Missing parameter 'signature'"
     assert "contingency" in params, "Missing parameter 'contingency'"
     assert "cardinality" in params, "Missing parameter 'cardinality'"
-    assert "name" in params, "Missing parameter 'name'"
     assert "startProperty" in params, "Missing parameter 'startProperty'"
+    assert "name" in params, "Missing parameter 'name'"
+    assert "signature" in params, "Missing parameter 'signature'"
 
-def test_fragdial101::interface_has_signature():
-    assert hasattr(fragdial101::Interface, "signature")
+def test_fragdial101_interface_has_contingency():
+    assert hasattr(fragdial101_Interface, "contingency")
     descriptor = None
-    for klass in fragdial101::Interface.__mro__:
-        if "signature" in klass.__dict__:
-            descriptor = klass.__dict__["signature"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_fragdial101::interface_has_contingency():
-    assert hasattr(fragdial101::Interface, "contingency")
-    descriptor = None
-    for klass in fragdial101::Interface.__mro__:
+    for klass in fragdial101_Interface.__mro__:
         if "contingency" in klass.__dict__:
             descriptor = klass.__dict__["contingency"]
             break
     assert isinstance(descriptor, property)
 
-def test_fragdial101::interface_has_cardinality():
-    assert hasattr(fragdial101::Interface, "cardinality")
+def test_fragdial101_interface_has_cardinality():
+    assert hasattr(fragdial101_Interface, "cardinality")
     descriptor = None
-    for klass in fragdial101::Interface.__mro__:
+    for klass in fragdial101_Interface.__mro__:
         if "cardinality" in klass.__dict__:
             descriptor = klass.__dict__["cardinality"]
             break
     assert isinstance(descriptor, property)
 
-def test_fragdial101::interface_has_name():
-    assert hasattr(fragdial101::Interface, "name")
+def test_fragdial101_interface_has_startProperty():
+    assert hasattr(fragdial101_Interface, "startProperty")
     descriptor = None
-    for klass in fragdial101::Interface.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_fragdial101::interface_has_startProperty():
-    assert hasattr(fragdial101::Interface, "startProperty")
-    descriptor = None
-    for klass in fragdial101::Interface.__mro__:
+    for klass in fragdial101_Interface.__mro__:
         if "startProperty" in klass.__dict__:
             descriptor = klass.__dict__["startProperty"]
             break
     assert isinstance(descriptor, property)
 
+def test_fragdial101_interface_has_name():
+    assert hasattr(fragdial101_Interface, "name")
+    descriptor = None
+    for klass in fragdial101_Interface.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_fragdial101_interface_has_signature():
+    assert hasattr(fragdial101_Interface, "signature")
+    descriptor = None
+    for klass in fragdial101_Interface.__mro__:
+        if "signature" in klass.__dict__:
+            descriptor = klass.__dict__["signature"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_fragdial101::provided_is_not_abstract():
-    assert not inspect.isabstract(fragdial101::Provided)
+
+def test_fragdial101_provided_is_not_abstract():
+    assert not inspect.isabstract(fragdial101_Provided)
 
 
-def test_fragdial101::provided_constructor_exists():
-    assert callable(fragdial101::Provided.__init__)
+def test_fragdial101_provided_constructor_exists():
+    assert callable(fragdial101_Provided.__init__)
 
 
-def test_fragdial101::provided_constructor_args():
-    sig = inspect.signature(fragdial101::Provided.__init__)
+def test_fragdial101_provided_constructor_args():
+    sig = inspect.signature(fragdial101_Provided.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_fragdial101::required_is_not_abstract():
-    assert not inspect.isabstract(fragdial101::Required)
+def test_fragdial101_required_is_not_abstract():
+    assert not inspect.isabstract(fragdial101_Required)
 
 
-def test_fragdial101::required_constructor_exists():
-    assert callable(fragdial101::Required.__init__)
+def test_fragdial101_required_constructor_exists():
+    assert callable(fragdial101_Required.__init__)
 
 
-def test_fragdial101::required_constructor_args():
-    sig = inspect.signature(fragdial101::Required.__init__)
+def test_fragdial101_required_constructor_args():
+    sig = inspect.signature(fragdial101_Required.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_fragdial101::controller_is_not_abstract():
-    assert not inspect.isabstract(fragdial101::Controller)
+def test_fragdial101_controller_is_not_abstract():
+    assert not inspect.isabstract(fragdial101_Controller)
 
 
-def test_fragdial101::controller_constructor_exists():
-    assert callable(fragdial101::Controller.__init__)
+def test_fragdial101_controller_constructor_exists():
+    assert callable(fragdial101_Controller.__init__)
 
 
-def test_fragdial101::controller_constructor_args():
-    sig = inspect.signature(fragdial101::Controller.__init__)
+def test_fragdial101_controller_constructor_args():
+    sig = inspect.signature(fragdial101_Controller.__init__)
     params = list(sig.parameters.keys())
     assert "language" in params, "Missing parameter 'language'"
     assert "descriptor" in params, "Missing parameter 'descriptor'"
 
-def test_fragdial101::controller_has_language():
-    assert hasattr(fragdial101::Controller, "language")
+def test_fragdial101_controller_has_language():
+    assert hasattr(fragdial101_Controller, "language")
     descriptor = None
-    for klass in fragdial101::Controller.__mro__:
+    for klass in fragdial101_Controller.__mro__:
         if "language" in klass.__dict__:
             descriptor = klass.__dict__["language"]
             break
     assert isinstance(descriptor, property)
 
-def test_fragdial101::controller_has_descriptor():
-    assert hasattr(fragdial101::Controller, "descriptor")
+def test_fragdial101_controller_has_descriptor():
+    assert hasattr(fragdial101_Controller, "descriptor")
     descriptor = None
-    for klass in fragdial101::Controller.__mro__:
+    for klass in fragdial101_Controller.__mro__:
         if "descriptor" in klass.__dict__:
             descriptor = klass.__dict__["descriptor"]
             break
@@ -327,23 +327,23 @@ def test_fragdial101::controller_has_descriptor():
 
 
 
-def test_fragdial101::output_is_not_abstract():
-    assert not inspect.isabstract(fragdial101::Output)
+def test_fragdial101_output_is_not_abstract():
+    assert not inspect.isabstract(fragdial101_Output)
 
 
-def test_fragdial101::output_constructor_exists():
-    assert callable(fragdial101::Output.__init__)
+def test_fragdial101_output_constructor_exists():
+    assert callable(fragdial101_Output.__init__)
 
 
-def test_fragdial101::output_constructor_args():
-    sig = inspect.signature(fragdial101::Output.__init__)
+def test_fragdial101_output_constructor_args():
+    sig = inspect.signature(fragdial101_Output.__init__)
     params = list(sig.parameters.keys())
     assert "format" in params, "Missing parameter 'format'"
 
-def test_fragdial101::output_has_format():
-    assert hasattr(fragdial101::Output, "format")
+def test_fragdial101_output_has_format():
+    assert hasattr(fragdial101_Output, "format")
     descriptor = None
-    for klass in fragdial101::Output.__mro__:
+    for klass in fragdial101_Output.__mro__:
         if "format" in klass.__dict__:
             descriptor = klass.__dict__["format"]
             break
@@ -351,23 +351,23 @@ def test_fragdial101::output_has_format():
 
 
 
-def test_fragdial101::attributes_is_not_abstract():
-    assert not inspect.isabstract(fragdial101::Attributes)
+def test_fragdial101_attributes_is_not_abstract():
+    assert not inspect.isabstract(fragdial101_Attributes)
 
 
-def test_fragdial101::attributes_constructor_exists():
-    assert callable(fragdial101::Attributes.__init__)
+def test_fragdial101_attributes_constructor_exists():
+    assert callable(fragdial101_Attributes.__init__)
 
 
-def test_fragdial101::attributes_constructor_args():
-    sig = inspect.signature(fragdial101::Attributes.__init__)
+def test_fragdial101_attributes_constructor_args():
+    sig = inspect.signature(fragdial101_Attributes.__init__)
     params = list(sig.parameters.keys())
     assert "signature" in params, "Missing parameter 'signature'"
 
-def test_fragdial101::attributes_has_signature():
-    assert hasattr(fragdial101::Attributes, "signature")
+def test_fragdial101_attributes_has_signature():
+    assert hasattr(fragdial101_Attributes, "signature")
     descriptor = None
-    for klass in fragdial101::Attributes.__mro__:
+    for klass in fragdial101_Attributes.__mro__:
         if "signature" in klass.__dict__:
             descriptor = klass.__dict__["signature"]
             break
@@ -375,23 +375,23 @@ def test_fragdial101::attributes_has_signature():
 
 
 
-def test_fragdial101::abstractcomponent_is_not_abstract():
-    assert not inspect.isabstract(fragdial101::AbstractComponent)
+def test_fragdial101_abstractcomponent_is_not_abstract():
+    assert not inspect.isabstract(fragdial101_AbstractComponent)
 
 
-def test_fragdial101::abstractcomponent_constructor_exists():
-    assert callable(fragdial101::AbstractComponent.__init__)
+def test_fragdial101_abstractcomponent_constructor_exists():
+    assert callable(fragdial101_AbstractComponent.__init__)
 
 
-def test_fragdial101::abstractcomponent_constructor_args():
-    sig = inspect.signature(fragdial101::AbstractComponent.__init__)
+def test_fragdial101_abstractcomponent_constructor_args():
+    sig = inspect.signature(fragdial101_AbstractComponent.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_fragdial101::abstractcomponent_has_name():
-    assert hasattr(fragdial101::AbstractComponent, "name")
+def test_fragdial101_abstractcomponent_has_name():
+    assert hasattr(fragdial101_AbstractComponent, "name")
     descriptor = None
-    for klass in fragdial101::AbstractComponent.__mro__:
+    for klass in fragdial101_AbstractComponent.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -412,77 +412,77 @@ safe_text = st.text(
 AbstractComponent_strategy = st.builds(
     AbstractComponent,
 )
-fragdial101::Component_strategy = st.builds(
-    fragdial101::Component,
+fragdial101_Component_strategy = st.builds(
+    fragdial101_Component,
 )
 Interface_strategy = st.builds(
     Interface,
 )
-fragdial101::Attribute_strategy = st.builds(
-    fragdial101::Attribute,
+fragdial101_Attribute_strategy = st.builds(
+    fragdial101_Attribute,
     value=
         safe_text,
     name=
         safe_text
 )
-fragdial101::Ldflag_strategy = st.builds(
-    fragdial101::Ldflag,
+fragdial101_Ldflag_strategy = st.builds(
+    fragdial101_Ldflag,
     value=
         safe_text
 )
-fragdial101::Include_strategy = st.builds(
-    fragdial101::Include,
+fragdial101_Include_strategy = st.builds(
+    fragdial101_Include,
     file=
         safe_text
 )
-fragdial101::Content_strategy = st.builds(
-    fragdial101::Content,
-    class_=
-        safe_text,
+fragdial101_Content_strategy = st.builds(
+    fragdial101_Content,
     language=
+        safe_text,
+    class_=
         safe_text
 )
-fragdial101::Binding_strategy = st.builds(
-    fragdial101::Binding,
+fragdial101_Binding_strategy = st.builds(
+    fragdial101_Binding,
 )
-fragdial101::Interface_strategy = st.builds(
-    fragdial101::Interface,
-    signature=
-        safe_text,
+fragdial101_Interface_strategy = st.builds(
+    fragdial101_Interface,
     contingency=
         safe_text,
     cardinality=
         safe_text,
+    startProperty=
+        safe_text,
     name=
         safe_text,
-    startProperty=
+    signature=
         safe_text
 )
-fragdial101::Provided_strategy = st.builds(
-    fragdial101::Provided,
+fragdial101_Provided_strategy = st.builds(
+    fragdial101_Provided,
 )
-fragdial101::Required_strategy = st.builds(
-    fragdial101::Required,
+fragdial101_Required_strategy = st.builds(
+    fragdial101_Required,
 )
-fragdial101::Controller_strategy = st.builds(
-    fragdial101::Controller,
+fragdial101_Controller_strategy = st.builds(
+    fragdial101_Controller,
     language=
         safe_text,
     descriptor=
         safe_text
 )
-fragdial101::Output_strategy = st.builds(
-    fragdial101::Output,
+fragdial101_Output_strategy = st.builds(
+    fragdial101_Output,
     format=
         safe_text
 )
-fragdial101::Attributes_strategy = st.builds(
-    fragdial101::Attributes,
+fragdial101_Attributes_strategy = st.builds(
+    fragdial101_Attributes,
     signature=
         safe_text
 )
-fragdial101::AbstractComponent_strategy = st.builds(
-    fragdial101::AbstractComponent,
+fragdial101_AbstractComponent_strategy = st.builds(
+    fragdial101_AbstractComponent,
     name=
         safe_text
 )
@@ -492,248 +492,200 @@ fragdial101::AbstractComponent_strategy = st.builds(
 def test_abstractcomponent_instantiation(instance):
     assert isinstance(instance, AbstractComponent)
 
-@given(instance=fragdial101::Component_strategy)
+@given(instance=fragdial101_Component_strategy)
 @settings(max_examples=50)
-def test_fragdial101::component_instantiation(instance):
-    assert isinstance(instance, fragdial101::Component)
+def test_fragdial101_component_instantiation(instance):
+    assert isinstance(instance, fragdial101_Component)
 
 @given(instance=Interface_strategy)
 @settings(max_examples=50)
 def test_interface_instantiation(instance):
     assert isinstance(instance, Interface)
 
-@given(instance=fragdial101::Attribute_strategy)
+@given(instance=fragdial101_Attribute_strategy)
 @settings(max_examples=50)
-def test_fragdial101::attribute_instantiation(instance):
-    assert isinstance(instance, fragdial101::Attribute)
-
-@given(instance=fragdial101::Attribute_strategy)
-def test_fragdial101::attribute_value_type(instance):
-    assert isinstance(instance.value, str)
+def test_fragdial101_attribute_instantiation(instance):
+    assert isinstance(instance, fragdial101_Attribute)
 
 
-@given(instance=fragdial101::Attribute_strategy)
-def test_fragdial101::attribute_value_setter(instance):
+
+@given(instance=fragdial101_Attribute_strategy)
+def test_fragdial101_attribute_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
 
-@given(instance=fragdial101::Attribute_strategy)
-def test_fragdial101::attribute_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
-@given(instance=fragdial101::Attribute_strategy)
-def test_fragdial101::attribute_name_setter(instance):
+@given(instance=fragdial101_Attribute_strategy)
+def test_fragdial101_attribute_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=fragdial101::Ldflag_strategy)
+@given(instance=fragdial101_Ldflag_strategy)
 @settings(max_examples=50)
-def test_fragdial101::ldflag_instantiation(instance):
-    assert isinstance(instance, fragdial101::Ldflag)
-
-@given(instance=fragdial101::Ldflag_strategy)
-def test_fragdial101::ldflag_value_type(instance):
-    assert isinstance(instance.value, str)
+def test_fragdial101_ldflag_instantiation(instance):
+    assert isinstance(instance, fragdial101_Ldflag)
 
 
-@given(instance=fragdial101::Ldflag_strategy)
-def test_fragdial101::ldflag_value_setter(instance):
+
+@given(instance=fragdial101_Ldflag_strategy)
+def test_fragdial101_ldflag_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
 
-@given(instance=fragdial101::Include_strategy)
+@given(instance=fragdial101_Include_strategy)
 @settings(max_examples=50)
-def test_fragdial101::include_instantiation(instance):
-    assert isinstance(instance, fragdial101::Include)
-
-@given(instance=fragdial101::Include_strategy)
-def test_fragdial101::include_file_type(instance):
-    assert isinstance(instance.file, str)
+def test_fragdial101_include_instantiation(instance):
+    assert isinstance(instance, fragdial101_Include)
 
 
-@given(instance=fragdial101::Include_strategy)
-def test_fragdial101::include_file_setter(instance):
+
+@given(instance=fragdial101_Include_strategy)
+def test_fragdial101_include_file_setter(instance):
     original = instance.file
     instance.file = original
     assert instance.file == original
 
-@given(instance=fragdial101::Content_strategy)
+@given(instance=fragdial101_Content_strategy)
 @settings(max_examples=50)
-def test_fragdial101::content_instantiation(instance):
-    assert isinstance(instance, fragdial101::Content)
-
-@given(instance=fragdial101::Content_strategy)
-def test_fragdial101::content_class__type(instance):
-    assert isinstance(instance.class_, str)
+def test_fragdial101_content_instantiation(instance):
+    assert isinstance(instance, fragdial101_Content)
 
 
-@given(instance=fragdial101::Content_strategy)
-def test_fragdial101::content_class__setter(instance):
+
+@given(instance=fragdial101_Content_strategy)
+def test_fragdial101_content_language_setter(instance):
+    original = instance.language
+    instance.language = original
+    assert instance.language == original
+
+
+
+@given(instance=fragdial101_Content_strategy)
+def test_fragdial101_content_class__setter(instance):
     original = instance.class_
     instance.class_ = original
     assert instance.class_ == original
 
-@given(instance=fragdial101::Content_strategy)
-def test_fragdial101::content_language_type(instance):
-    assert isinstance(instance.language, str)
-
-
-@given(instance=fragdial101::Content_strategy)
-def test_fragdial101::content_language_setter(instance):
-    original = instance.language
-    instance.language = original
-    assert instance.language == original
-
-@given(instance=fragdial101::Binding_strategy)
+@given(instance=fragdial101_Binding_strategy)
 @settings(max_examples=50)
-def test_fragdial101::binding_instantiation(instance):
-    assert isinstance(instance, fragdial101::Binding)
+def test_fragdial101_binding_instantiation(instance):
+    assert isinstance(instance, fragdial101_Binding)
 
-@given(instance=fragdial101::Interface_strategy)
+@given(instance=fragdial101_Interface_strategy)
 @settings(max_examples=50)
-def test_fragdial101::interface_instantiation(instance):
-    assert isinstance(instance, fragdial101::Interface)
-
-@given(instance=fragdial101::Interface_strategy)
-def test_fragdial101::interface_signature_type(instance):
-    assert isinstance(instance.signature, str)
+def test_fragdial101_interface_instantiation(instance):
+    assert isinstance(instance, fragdial101_Interface)
 
 
-@given(instance=fragdial101::Interface_strategy)
-def test_fragdial101::interface_signature_setter(instance):
-    original = instance.signature
-    instance.signature = original
-    assert instance.signature == original
 
-@given(instance=fragdial101::Interface_strategy)
-def test_fragdial101::interface_contingency_type(instance):
-    assert isinstance(instance.contingency, str)
-
-
-@given(instance=fragdial101::Interface_strategy)
-def test_fragdial101::interface_contingency_setter(instance):
+@given(instance=fragdial101_Interface_strategy)
+def test_fragdial101_interface_contingency_setter(instance):
     original = instance.contingency
     instance.contingency = original
     assert instance.contingency == original
 
-@given(instance=fragdial101::Interface_strategy)
-def test_fragdial101::interface_cardinality_type(instance):
-    assert isinstance(instance.cardinality, str)
 
 
-@given(instance=fragdial101::Interface_strategy)
-def test_fragdial101::interface_cardinality_setter(instance):
+@given(instance=fragdial101_Interface_strategy)
+def test_fragdial101_interface_cardinality_setter(instance):
     original = instance.cardinality
     instance.cardinality = original
     assert instance.cardinality == original
 
-@given(instance=fragdial101::Interface_strategy)
-def test_fragdial101::interface_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
-@given(instance=fragdial101::Interface_strategy)
-def test_fragdial101::interface_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
-
-@given(instance=fragdial101::Interface_strategy)
-def test_fragdial101::interface_startProperty_type(instance):
-    assert isinstance(instance.startProperty, str)
-
-
-@given(instance=fragdial101::Interface_strategy)
-def test_fragdial101::interface_startProperty_setter(instance):
+@given(instance=fragdial101_Interface_strategy)
+def test_fragdial101_interface_startProperty_setter(instance):
     original = instance.startProperty
     instance.startProperty = original
     assert instance.startProperty == original
 
-@given(instance=fragdial101::Provided_strategy)
-@settings(max_examples=50)
-def test_fragdial101::provided_instantiation(instance):
-    assert isinstance(instance, fragdial101::Provided)
-
-@given(instance=fragdial101::Required_strategy)
-@settings(max_examples=50)
-def test_fragdial101::required_instantiation(instance):
-    assert isinstance(instance, fragdial101::Required)
-
-@given(instance=fragdial101::Controller_strategy)
-@settings(max_examples=50)
-def test_fragdial101::controller_instantiation(instance):
-    assert isinstance(instance, fragdial101::Controller)
-
-@given(instance=fragdial101::Controller_strategy)
-def test_fragdial101::controller_language_type(instance):
-    assert isinstance(instance.language, str)
 
 
-@given(instance=fragdial101::Controller_strategy)
-def test_fragdial101::controller_language_setter(instance):
-    original = instance.language
-    instance.language = original
-    assert instance.language == original
-
-@given(instance=fragdial101::Controller_strategy)
-def test_fragdial101::controller_descriptor_type(instance):
-    assert isinstance(instance.descriptor, str)
+@given(instance=fragdial101_Interface_strategy)
+def test_fragdial101_interface_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
 
 
-@given(instance=fragdial101::Controller_strategy)
-def test_fragdial101::controller_descriptor_setter(instance):
-    original = instance.descriptor
-    instance.descriptor = original
-    assert instance.descriptor == original
 
-@given(instance=fragdial101::Output_strategy)
-@settings(max_examples=50)
-def test_fragdial101::output_instantiation(instance):
-    assert isinstance(instance, fragdial101::Output)
-
-@given(instance=fragdial101::Output_strategy)
-def test_fragdial101::output_format_type(instance):
-    assert isinstance(instance.format, str)
-
-
-@given(instance=fragdial101::Output_strategy)
-def test_fragdial101::output_format_setter(instance):
-    original = instance.format
-    instance.format = original
-    assert instance.format == original
-
-@given(instance=fragdial101::Attributes_strategy)
-@settings(max_examples=50)
-def test_fragdial101::attributes_instantiation(instance):
-    assert isinstance(instance, fragdial101::Attributes)
-
-@given(instance=fragdial101::Attributes_strategy)
-def test_fragdial101::attributes_signature_type(instance):
-    assert isinstance(instance.signature, str)
-
-
-@given(instance=fragdial101::Attributes_strategy)
-def test_fragdial101::attributes_signature_setter(instance):
+@given(instance=fragdial101_Interface_strategy)
+def test_fragdial101_interface_signature_setter(instance):
     original = instance.signature
     instance.signature = original
     assert instance.signature == original
 
-@given(instance=fragdial101::AbstractComponent_strategy)
+@given(instance=fragdial101_Provided_strategy)
 @settings(max_examples=50)
-def test_fragdial101::abstractcomponent_instantiation(instance):
-    assert isinstance(instance, fragdial101::AbstractComponent)
+def test_fragdial101_provided_instantiation(instance):
+    assert isinstance(instance, fragdial101_Provided)
 
-@given(instance=fragdial101::AbstractComponent_strategy)
-def test_fragdial101::abstractcomponent_name_type(instance):
-    assert isinstance(instance.name, str)
+@given(instance=fragdial101_Required_strategy)
+@settings(max_examples=50)
+def test_fragdial101_required_instantiation(instance):
+    assert isinstance(instance, fragdial101_Required)
+
+@given(instance=fragdial101_Controller_strategy)
+@settings(max_examples=50)
+def test_fragdial101_controller_instantiation(instance):
+    assert isinstance(instance, fragdial101_Controller)
 
 
-@given(instance=fragdial101::AbstractComponent_strategy)
-def test_fragdial101::abstractcomponent_name_setter(instance):
+
+@given(instance=fragdial101_Controller_strategy)
+def test_fragdial101_controller_language_setter(instance):
+    original = instance.language
+    instance.language = original
+    assert instance.language == original
+
+
+
+@given(instance=fragdial101_Controller_strategy)
+def test_fragdial101_controller_descriptor_setter(instance):
+    original = instance.descriptor
+    instance.descriptor = original
+    assert instance.descriptor == original
+
+@given(instance=fragdial101_Output_strategy)
+@settings(max_examples=50)
+def test_fragdial101_output_instantiation(instance):
+    assert isinstance(instance, fragdial101_Output)
+
+
+
+@given(instance=fragdial101_Output_strategy)
+def test_fragdial101_output_format_setter(instance):
+    original = instance.format
+    instance.format = original
+    assert instance.format == original
+
+@given(instance=fragdial101_Attributes_strategy)
+@settings(max_examples=50)
+def test_fragdial101_attributes_instantiation(instance):
+    assert isinstance(instance, fragdial101_Attributes)
+
+
+
+@given(instance=fragdial101_Attributes_strategy)
+def test_fragdial101_attributes_signature_setter(instance):
+    original = instance.signature
+    instance.signature = original
+    assert instance.signature == original
+
+@given(instance=fragdial101_AbstractComponent_strategy)
+@settings(max_examples=50)
+def test_fragdial101_abstractcomponent_instantiation(instance):
+    assert isinstance(instance, fragdial101_AbstractComponent)
+
+
+
+@given(instance=fragdial101_AbstractComponent_strategy)
+def test_fragdial101_abstractcomponent_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original

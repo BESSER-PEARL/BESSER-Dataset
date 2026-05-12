@@ -3,74 +3,74 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     Literal,
-    jPQL::FloatLiteral,
-    jPQL::BooleanLiteral,
-    jPQL::NullLiteral,
-    jPQL::IntegerLiteral,
+    jPQL_FloatLiteral,
+    jPQL_BooleanLiteral,
+    jPQL_NullLiteral,
+    jPQL_IntegerLiteral,
     Variable,
-    jPQL::ParameterExpression,
+    jPQL_ParameterExpression,
     OrderBySpec,
-    jPQL::StringLiteral,
-    jPQL::Float,
+    jPQL_StringLiteral,
+    jPQL_Float,
     FromJoin,
-    jPQL::InnerJoin,
-    jPQL::LeftJoin,
-    jPQL::Join,
-    jPQL::FromJoin,
+    jPQL_LeftJoin,
+    jPQL_InnerJoin,
+    jPQL_Join,
+    jPQL_FromJoin,
     Expression,
-    jPQL::MultiplicationExpression,
-    jPQL::ExpressionTerm,
-    jPQL::ComparisonOperatorExpression,
-    jPQL::AdditionExpression,
-    jPQL::AndExpression,
-    jPQL::FunctionExpression,
-    jPQL::OrExpression,
+    jPQL_OrExpression,
+    jPQL_AndExpression,
+    jPQL_AdditionExpression,
+    jPQL_FunctionExpression,
+    jPQL_MultiplicationExpression,
+    jPQL_ExpressionTerm,
+    jPQL_ComparisonOperatorExpression,
     SelectAggregateExpression,
-    jPQL::MinAggregate,
-    jPQL::CountAggregate,
-    jPQL::MaxAggregate,
-    jPQL::SumAggregate,
-    jPQL::AvgAggregate,
+    jPQL_CountAggregate,
+    jPQL_MinAggregate,
+    jPQL_SumAggregate,
+    jPQL_MaxAggregate,
+    jPQL_AvgAggregate,
     SelectExpression,
-    jPQL::SelectConstructorExpression,
-    jPQL::SelectAggregateExpression,
-    jPQL::SelectExpression,
-    jPQL::DeleteClause,
-    jPQL::Literal,
+    jPQL_SelectConstructorExpression,
+    jPQL_SelectAggregateExpression,
+    jPQL_SelectExpression,
+    jPQL_DeleteClause,
+    jPQL_Literal,
     FromEntry,
-    jPQL::FromCollection,
-    jPQL::FromClass,
-    jPQL::VariableDeclaration,
-    jPQL::UpdateClause,
-    jPQL::OrderBySpec,
-    jPQL::Expression,
-    jPQL::HavingClause,
-    jPQL::AliasAttributeExpression,
-    jPQL::OrderByClause,
-    jPQL::GroupByClause,
-    jPQL::FromClause,
-    jPQL::SelectClause,
+    jPQL_FromCollection,
+    jPQL_FromClass,
+    jPQL_VariableDeclaration,
+    jPQL_UpdateClause,
+    jPQL_OrderBySpec,
+    jPQL_Expression,
+    jPQL_HavingClause,
+    jPQL_AliasAttributeExpression,
+    jPQL_OrderByClause,
+    jPQL_GroupByClause,
+    jPQL_FromClause,
+    jPQL_SelectClause,
     ExpressionTerm,
-    jPQL::Variable,
+    jPQL_Variable,
     JPQLQuery,
-    jPQL::DeleteStatement,
-    jPQL::UpdateStatement,
-    jPQL::SelectStatement,
-    jPQL::WhereClause,
-    jPQL::UpdateItem,
-    jPQL::FromEntry,
-    jPQL::SetClause,
-    jPQL::JPQLQuery,
-    OrderByDirection,
+    jPQL_UpdateStatement,
+    jPQL_DeleteStatement,
+    jPQL_SelectStatement,
+    jPQL_WhereClause,
+    jPQL_UpdateItem,
+    jPQL_FromEntry,
+    jPQL_SetClause,
+    jPQL_JPQLQuery,
+    MultiplicationOperator,
+    ComparisonOperator,
+    UnaryOperator,
     TrimSpec,
     AdditionOperator,
-    UnaryOperator,
-    ComparisonOperator,
-    MultiplicationOperator,
+    OrderByDirection,
 )
 
 # =============================================================================
@@ -93,37 +93,37 @@ def test_literal_constructor_args():
 
 
 
-def test_jpql::floatliteral_is_not_abstract():
-    assert not inspect.isabstract(jPQL::FloatLiteral)
+def test_jpql_floatliteral_is_not_abstract():
+    assert not inspect.isabstract(jPQL_FloatLiteral)
 
 
-def test_jpql::floatliteral_constructor_exists():
-    assert callable(jPQL::FloatLiteral.__init__)
+def test_jpql_floatliteral_constructor_exists():
+    assert callable(jPQL_FloatLiteral.__init__)
 
 
-def test_jpql::floatliteral_constructor_args():
-    sig = inspect.signature(jPQL::FloatLiteral.__init__)
+def test_jpql_floatliteral_constructor_args():
+    sig = inspect.signature(jPQL_FloatLiteral.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_jpql::booleanliteral_is_not_abstract():
-    assert not inspect.isabstract(jPQL::BooleanLiteral)
+def test_jpql_booleanliteral_is_not_abstract():
+    assert not inspect.isabstract(jPQL_BooleanLiteral)
 
 
-def test_jpql::booleanliteral_constructor_exists():
-    assert callable(jPQL::BooleanLiteral.__init__)
+def test_jpql_booleanliteral_constructor_exists():
+    assert callable(jPQL_BooleanLiteral.__init__)
 
 
-def test_jpql::booleanliteral_constructor_args():
-    sig = inspect.signature(jPQL::BooleanLiteral.__init__)
+def test_jpql_booleanliteral_constructor_args():
+    sig = inspect.signature(jPQL_BooleanLiteral.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
 
-def test_jpql::booleanliteral_has_value():
-    assert hasattr(jPQL::BooleanLiteral, "value")
+def test_jpql_booleanliteral_has_value():
+    assert hasattr(jPQL_BooleanLiteral, "value")
     descriptor = None
-    for klass in jPQL::BooleanLiteral.__mro__:
+    for klass in jPQL_BooleanLiteral.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -131,23 +131,23 @@ def test_jpql::booleanliteral_has_value():
 
 
 
-def test_jpql::nullliteral_is_not_abstract():
-    assert not inspect.isabstract(jPQL::NullLiteral)
+def test_jpql_nullliteral_is_not_abstract():
+    assert not inspect.isabstract(jPQL_NullLiteral)
 
 
-def test_jpql::nullliteral_constructor_exists():
-    assert callable(jPQL::NullLiteral.__init__)
+def test_jpql_nullliteral_constructor_exists():
+    assert callable(jPQL_NullLiteral.__init__)
 
 
-def test_jpql::nullliteral_constructor_args():
-    sig = inspect.signature(jPQL::NullLiteral.__init__)
+def test_jpql_nullliteral_constructor_args():
+    sig = inspect.signature(jPQL_NullLiteral.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
 
-def test_jpql::nullliteral_has_value():
-    assert hasattr(jPQL::NullLiteral, "value")
+def test_jpql_nullliteral_has_value():
+    assert hasattr(jPQL_NullLiteral, "value")
     descriptor = None
-    for klass in jPQL::NullLiteral.__mro__:
+    for klass in jPQL_NullLiteral.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -155,23 +155,23 @@ def test_jpql::nullliteral_has_value():
 
 
 
-def test_jpql::integerliteral_is_not_abstract():
-    assert not inspect.isabstract(jPQL::IntegerLiteral)
+def test_jpql_integerliteral_is_not_abstract():
+    assert not inspect.isabstract(jPQL_IntegerLiteral)
 
 
-def test_jpql::integerliteral_constructor_exists():
-    assert callable(jPQL::IntegerLiteral.__init__)
+def test_jpql_integerliteral_constructor_exists():
+    assert callable(jPQL_IntegerLiteral.__init__)
 
 
-def test_jpql::integerliteral_constructor_args():
-    sig = inspect.signature(jPQL::IntegerLiteral.__init__)
+def test_jpql_integerliteral_constructor_args():
+    sig = inspect.signature(jPQL_IntegerLiteral.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
 
-def test_jpql::integerliteral_has_value():
-    assert hasattr(jPQL::IntegerLiteral, "value")
+def test_jpql_integerliteral_has_value():
+    assert hasattr(jPQL_IntegerLiteral, "value")
     descriptor = None
-    for klass in jPQL::IntegerLiteral.__mro__:
+    for klass in jPQL_IntegerLiteral.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -193,33 +193,33 @@ def test_variable_constructor_args():
 
 
 
-def test_jpql::parameterexpression_is_not_abstract():
-    assert not inspect.isabstract(jPQL::ParameterExpression)
+def test_jpql_parameterexpression_is_not_abstract():
+    assert not inspect.isabstract(jPQL_ParameterExpression)
 
 
-def test_jpql::parameterexpression_constructor_exists():
-    assert callable(jPQL::ParameterExpression.__init__)
+def test_jpql_parameterexpression_constructor_exists():
+    assert callable(jPQL_ParameterExpression.__init__)
 
 
-def test_jpql::parameterexpression_constructor_args():
-    sig = inspect.signature(jPQL::ParameterExpression.__init__)
+def test_jpql_parameterexpression_constructor_args():
+    sig = inspect.signature(jPQL_ParameterExpression.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
     assert "index" in params, "Missing parameter 'index'"
 
-def test_jpql::parameterexpression_has_name():
-    assert hasattr(jPQL::ParameterExpression, "name")
+def test_jpql_parameterexpression_has_name():
+    assert hasattr(jPQL_ParameterExpression, "name")
     descriptor = None
-    for klass in jPQL::ParameterExpression.__mro__:
+    for klass in jPQL_ParameterExpression.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
-def test_jpql::parameterexpression_has_index():
-    assert hasattr(jPQL::ParameterExpression, "index")
+def test_jpql_parameterexpression_has_index():
+    assert hasattr(jPQL_ParameterExpression, "index")
     descriptor = None
-    for klass in jPQL::ParameterExpression.__mro__:
+    for klass in jPQL_ParameterExpression.__mro__:
         if "index" in klass.__dict__:
             descriptor = klass.__dict__["index"]
             break
@@ -241,23 +241,23 @@ def test_orderbyspec_constructor_args():
 
 
 
-def test_jpql::stringliteral_is_not_abstract():
-    assert not inspect.isabstract(jPQL::StringLiteral)
+def test_jpql_stringliteral_is_not_abstract():
+    assert not inspect.isabstract(jPQL_StringLiteral)
 
 
-def test_jpql::stringliteral_constructor_exists():
-    assert callable(jPQL::StringLiteral.__init__)
+def test_jpql_stringliteral_constructor_exists():
+    assert callable(jPQL_StringLiteral.__init__)
 
 
-def test_jpql::stringliteral_constructor_args():
-    sig = inspect.signature(jPQL::StringLiteral.__init__)
+def test_jpql_stringliteral_constructor_args():
+    sig = inspect.signature(jPQL_StringLiteral.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
 
-def test_jpql::stringliteral_has_value():
-    assert hasattr(jPQL::StringLiteral, "value")
+def test_jpql_stringliteral_has_value():
+    assert hasattr(jPQL_StringLiteral, "value")
     descriptor = None
-    for klass in jPQL::StringLiteral.__mro__:
+    for klass in jPQL_StringLiteral.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -265,33 +265,33 @@ def test_jpql::stringliteral_has_value():
 
 
 
-def test_jpql::float_is_not_abstract():
-    assert not inspect.isabstract(jPQL::Float)
+def test_jpql_float_is_not_abstract():
+    assert not inspect.isabstract(jPQL_Float)
 
 
-def test_jpql::float_constructor_exists():
-    assert callable(jPQL::Float.__init__)
+def test_jpql_float_constructor_exists():
+    assert callable(jPQL_Float.__init__)
 
 
-def test_jpql::float_constructor_args():
-    sig = inspect.signature(jPQL::Float.__init__)
+def test_jpql_float_constructor_args():
+    sig = inspect.signature(jPQL_Float.__init__)
     params = list(sig.parameters.keys())
     assert "fractionValue" in params, "Missing parameter 'fractionValue'"
     assert "integerValue" in params, "Missing parameter 'integerValue'"
 
-def test_jpql::float_has_fractionValue():
-    assert hasattr(jPQL::Float, "fractionValue")
+def test_jpql_float_has_fractionValue():
+    assert hasattr(jPQL_Float, "fractionValue")
     descriptor = None
-    for klass in jPQL::Float.__mro__:
+    for klass in jPQL_Float.__mro__:
         if "fractionValue" in klass.__dict__:
             descriptor = klass.__dict__["fractionValue"]
             break
     assert isinstance(descriptor, property)
 
-def test_jpql::float_has_integerValue():
-    assert hasattr(jPQL::Float, "integerValue")
+def test_jpql_float_has_integerValue():
+    assert hasattr(jPQL_Float, "integerValue")
     descriptor = None
-    for klass in jPQL::Float.__mro__:
+    for klass in jPQL_Float.__mro__:
         if "integerValue" in klass.__dict__:
             descriptor = klass.__dict__["integerValue"]
             break
@@ -313,37 +313,23 @@ def test_fromjoin_constructor_args():
 
 
 
-def test_jpql::innerjoin_is_not_abstract():
-    assert not inspect.isabstract(jPQL::InnerJoin)
+def test_jpql_leftjoin_is_not_abstract():
+    assert not inspect.isabstract(jPQL_LeftJoin)
 
 
-def test_jpql::innerjoin_constructor_exists():
-    assert callable(jPQL::InnerJoin.__init__)
+def test_jpql_leftjoin_constructor_exists():
+    assert callable(jPQL_LeftJoin.__init__)
 
 
-def test_jpql::innerjoin_constructor_args():
-    sig = inspect.signature(jPQL::InnerJoin.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_jpql::leftjoin_is_not_abstract():
-    assert not inspect.isabstract(jPQL::LeftJoin)
-
-
-def test_jpql::leftjoin_constructor_exists():
-    assert callable(jPQL::LeftJoin.__init__)
-
-
-def test_jpql::leftjoin_constructor_args():
-    sig = inspect.signature(jPQL::LeftJoin.__init__)
+def test_jpql_leftjoin_constructor_args():
+    sig = inspect.signature(jPQL_LeftJoin.__init__)
     params = list(sig.parameters.keys())
     assert "isOuter" in params, "Missing parameter 'isOuter'"
 
-def test_jpql::leftjoin_has_isOuter():
-    assert hasattr(jPQL::LeftJoin, "isOuter")
+def test_jpql_leftjoin_has_isOuter():
+    assert hasattr(jPQL_LeftJoin, "isOuter")
     descriptor = None
-    for klass in jPQL::LeftJoin.__mro__:
+    for klass in jPQL_LeftJoin.__mro__:
         if "isOuter" in klass.__dict__:
             descriptor = klass.__dict__["isOuter"]
             break
@@ -351,37 +337,51 @@ def test_jpql::leftjoin_has_isOuter():
 
 
 
-def test_jpql::join_is_not_abstract():
-    assert not inspect.isabstract(jPQL::Join)
+def test_jpql_innerjoin_is_not_abstract():
+    assert not inspect.isabstract(jPQL_InnerJoin)
 
 
-def test_jpql::join_constructor_exists():
-    assert callable(jPQL::Join.__init__)
+def test_jpql_innerjoin_constructor_exists():
+    assert callable(jPQL_InnerJoin.__init__)
 
 
-def test_jpql::join_constructor_args():
-    sig = inspect.signature(jPQL::Join.__init__)
+def test_jpql_innerjoin_constructor_args():
+    sig = inspect.signature(jPQL_InnerJoin.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_jpql::fromjoin_is_not_abstract():
-    assert not inspect.isabstract(jPQL::FromJoin)
+def test_jpql_join_is_not_abstract():
+    assert not inspect.isabstract(jPQL_Join)
 
 
-def test_jpql::fromjoin_constructor_exists():
-    assert callable(jPQL::FromJoin.__init__)
+def test_jpql_join_constructor_exists():
+    assert callable(jPQL_Join.__init__)
 
 
-def test_jpql::fromjoin_constructor_args():
-    sig = inspect.signature(jPQL::FromJoin.__init__)
+def test_jpql_join_constructor_args():
+    sig = inspect.signature(jPQL_Join.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_jpql_fromjoin_is_not_abstract():
+    assert not inspect.isabstract(jPQL_FromJoin)
+
+
+def test_jpql_fromjoin_constructor_exists():
+    assert callable(jPQL_FromJoin.__init__)
+
+
+def test_jpql_fromjoin_constructor_args():
+    sig = inspect.signature(jPQL_FromJoin.__init__)
     params = list(sig.parameters.keys())
     assert "isFetch" in params, "Missing parameter 'isFetch'"
 
-def test_jpql::fromjoin_has_isFetch():
-    assert hasattr(jPQL::FromJoin, "isFetch")
+def test_jpql_fromjoin_has_isFetch():
+    assert hasattr(jPQL_FromJoin, "isFetch")
     descriptor = None
-    for klass in jPQL::FromJoin.__mro__:
+    for klass in jPQL_FromJoin.__mro__:
         if "isFetch" in klass.__dict__:
             descriptor = klass.__dict__["isFetch"]
             break
@@ -403,23 +403,51 @@ def test_expression_constructor_args():
 
 
 
-def test_jpql::multiplicationexpression_is_not_abstract():
-    assert not inspect.isabstract(jPQL::MultiplicationExpression)
+def test_jpql_orexpression_is_not_abstract():
+    assert not inspect.isabstract(jPQL_OrExpression)
 
 
-def test_jpql::multiplicationexpression_constructor_exists():
-    assert callable(jPQL::MultiplicationExpression.__init__)
+def test_jpql_orexpression_constructor_exists():
+    assert callable(jPQL_OrExpression.__init__)
 
 
-def test_jpql::multiplicationexpression_constructor_args():
-    sig = inspect.signature(jPQL::MultiplicationExpression.__init__)
+def test_jpql_orexpression_constructor_args():
+    sig = inspect.signature(jPQL_OrExpression.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_jpql_andexpression_is_not_abstract():
+    assert not inspect.isabstract(jPQL_AndExpression)
+
+
+def test_jpql_andexpression_constructor_exists():
+    assert callable(jPQL_AndExpression.__init__)
+
+
+def test_jpql_andexpression_constructor_args():
+    sig = inspect.signature(jPQL_AndExpression.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_jpql_additionexpression_is_not_abstract():
+    assert not inspect.isabstract(jPQL_AdditionExpression)
+
+
+def test_jpql_additionexpression_constructor_exists():
+    assert callable(jPQL_AdditionExpression.__init__)
+
+
+def test_jpql_additionexpression_constructor_args():
+    sig = inspect.signature(jPQL_AdditionExpression.__init__)
     params = list(sig.parameters.keys())
     assert "operator" in params, "Missing parameter 'operator'"
 
-def test_jpql::multiplicationexpression_has_operator():
-    assert hasattr(jPQL::MultiplicationExpression, "operator")
+def test_jpql_additionexpression_has_operator():
+    assert hasattr(jPQL_AdditionExpression, "operator")
     descriptor = None
-    for klass in jPQL::MultiplicationExpression.__mro__:
+    for klass in jPQL_AdditionExpression.__mro__:
         if "operator" in klass.__dict__:
             descriptor = klass.__dict__["operator"]
             break
@@ -427,127 +455,99 @@ def test_jpql::multiplicationexpression_has_operator():
 
 
 
-def test_jpql::expressionterm_is_not_abstract():
-    assert not inspect.isabstract(jPQL::ExpressionTerm)
+def test_jpql_functionexpression_is_not_abstract():
+    assert not inspect.isabstract(jPQL_FunctionExpression)
 
 
-def test_jpql::expressionterm_constructor_exists():
-    assert callable(jPQL::ExpressionTerm.__init__)
+def test_jpql_functionexpression_constructor_exists():
+    assert callable(jPQL_FunctionExpression.__init__)
 
 
-def test_jpql::expressionterm_constructor_args():
-    sig = inspect.signature(jPQL::ExpressionTerm.__init__)
+def test_jpql_functionexpression_constructor_args():
+    sig = inspect.signature(jPQL_FunctionExpression.__init__)
     params = list(sig.parameters.keys())
-
-
-
-def test_jpql::comparisonoperatorexpression_is_not_abstract():
-    assert not inspect.isabstract(jPQL::ComparisonOperatorExpression)
-
-
-def test_jpql::comparisonoperatorexpression_constructor_exists():
-    assert callable(jPQL::ComparisonOperatorExpression.__init__)
-
-
-def test_jpql::comparisonoperatorexpression_constructor_args():
-    sig = inspect.signature(jPQL::ComparisonOperatorExpression.__init__)
-    params = list(sig.parameters.keys())
-    assert "operator" in params, "Missing parameter 'operator'"
-
-def test_jpql::comparisonoperatorexpression_has_operator():
-    assert hasattr(jPQL::ComparisonOperatorExpression, "operator")
-    descriptor = None
-    for klass in jPQL::ComparisonOperatorExpression.__mro__:
-        if "operator" in klass.__dict__:
-            descriptor = klass.__dict__["operator"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_jpql::additionexpression_is_not_abstract():
-    assert not inspect.isabstract(jPQL::AdditionExpression)
-
-
-def test_jpql::additionexpression_constructor_exists():
-    assert callable(jPQL::AdditionExpression.__init__)
-
-
-def test_jpql::additionexpression_constructor_args():
-    sig = inspect.signature(jPQL::AdditionExpression.__init__)
-    params = list(sig.parameters.keys())
-    assert "operator" in params, "Missing parameter 'operator'"
-
-def test_jpql::additionexpression_has_operator():
-    assert hasattr(jPQL::AdditionExpression, "operator")
-    descriptor = None
-    for klass in jPQL::AdditionExpression.__mro__:
-        if "operator" in klass.__dict__:
-            descriptor = klass.__dict__["operator"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_jpql::andexpression_is_not_abstract():
-    assert not inspect.isabstract(jPQL::AndExpression)
-
-
-def test_jpql::andexpression_constructor_exists():
-    assert callable(jPQL::AndExpression.__init__)
-
-
-def test_jpql::andexpression_constructor_args():
-    sig = inspect.signature(jPQL::AndExpression.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_jpql::functionexpression_is_not_abstract():
-    assert not inspect.isabstract(jPQL::FunctionExpression)
-
-
-def test_jpql::functionexpression_constructor_exists():
-    assert callable(jPQL::FunctionExpression.__init__)
-
-
-def test_jpql::functionexpression_constructor_args():
-    sig = inspect.signature(jPQL::FunctionExpression.__init__)
-    params = list(sig.parameters.keys())
-    assert "trimSpec" in params, "Missing parameter 'trimSpec'"
     assert "name" in params, "Missing parameter 'name'"
+    assert "trimSpec" in params, "Missing parameter 'trimSpec'"
 
-def test_jpql::functionexpression_has_trimSpec():
-    assert hasattr(jPQL::FunctionExpression, "trimSpec")
+def test_jpql_functionexpression_has_name():
+    assert hasattr(jPQL_FunctionExpression, "name")
     descriptor = None
-    for klass in jPQL::FunctionExpression.__mro__:
-        if "trimSpec" in klass.__dict__:
-            descriptor = klass.__dict__["trimSpec"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_jpql::functionexpression_has_name():
-    assert hasattr(jPQL::FunctionExpression, "name")
-    descriptor = None
-    for klass in jPQL::FunctionExpression.__mro__:
+    for klass in jPQL_FunctionExpression.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
+def test_jpql_functionexpression_has_trimSpec():
+    assert hasattr(jPQL_FunctionExpression, "trimSpec")
+    descriptor = None
+    for klass in jPQL_FunctionExpression.__mro__:
+        if "trimSpec" in klass.__dict__:
+            descriptor = klass.__dict__["trimSpec"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_jpql::orexpression_is_not_abstract():
-    assert not inspect.isabstract(jPQL::OrExpression)
+
+def test_jpql_multiplicationexpression_is_not_abstract():
+    assert not inspect.isabstract(jPQL_MultiplicationExpression)
 
 
-def test_jpql::orexpression_constructor_exists():
-    assert callable(jPQL::OrExpression.__init__)
+def test_jpql_multiplicationexpression_constructor_exists():
+    assert callable(jPQL_MultiplicationExpression.__init__)
 
 
-def test_jpql::orexpression_constructor_args():
-    sig = inspect.signature(jPQL::OrExpression.__init__)
+def test_jpql_multiplicationexpression_constructor_args():
+    sig = inspect.signature(jPQL_MultiplicationExpression.__init__)
     params = list(sig.parameters.keys())
+    assert "operator" in params, "Missing parameter 'operator'"
+
+def test_jpql_multiplicationexpression_has_operator():
+    assert hasattr(jPQL_MultiplicationExpression, "operator")
+    descriptor = None
+    for klass in jPQL_MultiplicationExpression.__mro__:
+        if "operator" in klass.__dict__:
+            descriptor = klass.__dict__["operator"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_jpql_expressionterm_is_not_abstract():
+    assert not inspect.isabstract(jPQL_ExpressionTerm)
+
+
+def test_jpql_expressionterm_constructor_exists():
+    assert callable(jPQL_ExpressionTerm.__init__)
+
+
+def test_jpql_expressionterm_constructor_args():
+    sig = inspect.signature(jPQL_ExpressionTerm.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_jpql_comparisonoperatorexpression_is_not_abstract():
+    assert not inspect.isabstract(jPQL_ComparisonOperatorExpression)
+
+
+def test_jpql_comparisonoperatorexpression_constructor_exists():
+    assert callable(jPQL_ComparisonOperatorExpression.__init__)
+
+
+def test_jpql_comparisonoperatorexpression_constructor_args():
+    sig = inspect.signature(jPQL_ComparisonOperatorExpression.__init__)
+    params = list(sig.parameters.keys())
+    assert "operator" in params, "Missing parameter 'operator'"
+
+def test_jpql_comparisonoperatorexpression_has_operator():
+    assert hasattr(jPQL_ComparisonOperatorExpression, "operator")
+    descriptor = None
+    for klass in jPQL_ComparisonOperatorExpression.__mro__:
+        if "operator" in klass.__dict__:
+            descriptor = klass.__dict__["operator"]
+            break
+    assert isinstance(descriptor, property)
 
 
 
@@ -565,72 +565,72 @@ def test_selectaggregateexpression_constructor_args():
 
 
 
-def test_jpql::minaggregate_is_not_abstract():
-    assert not inspect.isabstract(jPQL::MinAggregate)
+def test_jpql_countaggregate_is_not_abstract():
+    assert not inspect.isabstract(jPQL_CountAggregate)
 
 
-def test_jpql::minaggregate_constructor_exists():
-    assert callable(jPQL::MinAggregate.__init__)
+def test_jpql_countaggregate_constructor_exists():
+    assert callable(jPQL_CountAggregate.__init__)
 
 
-def test_jpql::minaggregate_constructor_args():
-    sig = inspect.signature(jPQL::MinAggregate.__init__)
+def test_jpql_countaggregate_constructor_args():
+    sig = inspect.signature(jPQL_CountAggregate.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_jpql::countaggregate_is_not_abstract():
-    assert not inspect.isabstract(jPQL::CountAggregate)
+def test_jpql_minaggregate_is_not_abstract():
+    assert not inspect.isabstract(jPQL_MinAggregate)
 
 
-def test_jpql::countaggregate_constructor_exists():
-    assert callable(jPQL::CountAggregate.__init__)
+def test_jpql_minaggregate_constructor_exists():
+    assert callable(jPQL_MinAggregate.__init__)
 
 
-def test_jpql::countaggregate_constructor_args():
-    sig = inspect.signature(jPQL::CountAggregate.__init__)
+def test_jpql_minaggregate_constructor_args():
+    sig = inspect.signature(jPQL_MinAggregate.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_jpql::maxaggregate_is_not_abstract():
-    assert not inspect.isabstract(jPQL::MaxAggregate)
+def test_jpql_sumaggregate_is_not_abstract():
+    assert not inspect.isabstract(jPQL_SumAggregate)
 
 
-def test_jpql::maxaggregate_constructor_exists():
-    assert callable(jPQL::MaxAggregate.__init__)
+def test_jpql_sumaggregate_constructor_exists():
+    assert callable(jPQL_SumAggregate.__init__)
 
 
-def test_jpql::maxaggregate_constructor_args():
-    sig = inspect.signature(jPQL::MaxAggregate.__init__)
+def test_jpql_sumaggregate_constructor_args():
+    sig = inspect.signature(jPQL_SumAggregate.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_jpql::sumaggregate_is_not_abstract():
-    assert not inspect.isabstract(jPQL::SumAggregate)
+def test_jpql_maxaggregate_is_not_abstract():
+    assert not inspect.isabstract(jPQL_MaxAggregate)
 
 
-def test_jpql::sumaggregate_constructor_exists():
-    assert callable(jPQL::SumAggregate.__init__)
+def test_jpql_maxaggregate_constructor_exists():
+    assert callable(jPQL_MaxAggregate.__init__)
 
 
-def test_jpql::sumaggregate_constructor_args():
-    sig = inspect.signature(jPQL::SumAggregate.__init__)
+def test_jpql_maxaggregate_constructor_args():
+    sig = inspect.signature(jPQL_MaxAggregate.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_jpql::avgaggregate_is_not_abstract():
-    assert not inspect.isabstract(jPQL::AvgAggregate)
+def test_jpql_avgaggregate_is_not_abstract():
+    assert not inspect.isabstract(jPQL_AvgAggregate)
 
 
-def test_jpql::avgaggregate_constructor_exists():
-    assert callable(jPQL::AvgAggregate.__init__)
+def test_jpql_avgaggregate_constructor_exists():
+    assert callable(jPQL_AvgAggregate.__init__)
 
 
-def test_jpql::avgaggregate_constructor_args():
-    sig = inspect.signature(jPQL::AvgAggregate.__init__)
+def test_jpql_avgaggregate_constructor_args():
+    sig = inspect.signature(jPQL_AvgAggregate.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -649,23 +649,23 @@ def test_selectexpression_constructor_args():
 
 
 
-def test_jpql::selectconstructorexpression_is_not_abstract():
-    assert not inspect.isabstract(jPQL::SelectConstructorExpression)
+def test_jpql_selectconstructorexpression_is_not_abstract():
+    assert not inspect.isabstract(jPQL_SelectConstructorExpression)
 
 
-def test_jpql::selectconstructorexpression_constructor_exists():
-    assert callable(jPQL::SelectConstructorExpression.__init__)
+def test_jpql_selectconstructorexpression_constructor_exists():
+    assert callable(jPQL_SelectConstructorExpression.__init__)
 
 
-def test_jpql::selectconstructorexpression_constructor_args():
-    sig = inspect.signature(jPQL::SelectConstructorExpression.__init__)
+def test_jpql_selectconstructorexpression_constructor_args():
+    sig = inspect.signature(jPQL_SelectConstructorExpression.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_jpql::selectconstructorexpression_has_name():
-    assert hasattr(jPQL::SelectConstructorExpression, "name")
+def test_jpql_selectconstructorexpression_has_name():
+    assert hasattr(jPQL_SelectConstructorExpression, "name")
     descriptor = None
-    for klass in jPQL::SelectConstructorExpression.__mro__:
+    for klass in jPQL_SelectConstructorExpression.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -673,23 +673,23 @@ def test_jpql::selectconstructorexpression_has_name():
 
 
 
-def test_jpql::selectaggregateexpression_is_not_abstract():
-    assert not inspect.isabstract(jPQL::SelectAggregateExpression)
+def test_jpql_selectaggregateexpression_is_not_abstract():
+    assert not inspect.isabstract(jPQL_SelectAggregateExpression)
 
 
-def test_jpql::selectaggregateexpression_constructor_exists():
-    assert callable(jPQL::SelectAggregateExpression.__init__)
+def test_jpql_selectaggregateexpression_constructor_exists():
+    assert callable(jPQL_SelectAggregateExpression.__init__)
 
 
-def test_jpql::selectaggregateexpression_constructor_args():
-    sig = inspect.signature(jPQL::SelectAggregateExpression.__init__)
+def test_jpql_selectaggregateexpression_constructor_args():
+    sig = inspect.signature(jPQL_SelectAggregateExpression.__init__)
     params = list(sig.parameters.keys())
     assert "isDistinct" in params, "Missing parameter 'isDistinct'"
 
-def test_jpql::selectaggregateexpression_has_isDistinct():
-    assert hasattr(jPQL::SelectAggregateExpression, "isDistinct")
+def test_jpql_selectaggregateexpression_has_isDistinct():
+    assert hasattr(jPQL_SelectAggregateExpression, "isDistinct")
     descriptor = None
-    for klass in jPQL::SelectAggregateExpression.__mro__:
+    for klass in jPQL_SelectAggregateExpression.__mro__:
         if "isDistinct" in klass.__dict__:
             descriptor = klass.__dict__["isDistinct"]
             break
@@ -697,44 +697,44 @@ def test_jpql::selectaggregateexpression_has_isDistinct():
 
 
 
-def test_jpql::selectexpression_is_not_abstract():
-    assert not inspect.isabstract(jPQL::SelectExpression)
+def test_jpql_selectexpression_is_not_abstract():
+    assert not inspect.isabstract(jPQL_SelectExpression)
 
 
-def test_jpql::selectexpression_constructor_exists():
-    assert callable(jPQL::SelectExpression.__init__)
+def test_jpql_selectexpression_constructor_exists():
+    assert callable(jPQL_SelectExpression.__init__)
 
 
-def test_jpql::selectexpression_constructor_args():
-    sig = inspect.signature(jPQL::SelectExpression.__init__)
+def test_jpql_selectexpression_constructor_args():
+    sig = inspect.signature(jPQL_SelectExpression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_jpql::deleteclause_is_not_abstract():
-    assert not inspect.isabstract(jPQL::DeleteClause)
+def test_jpql_deleteclause_is_not_abstract():
+    assert not inspect.isabstract(jPQL_DeleteClause)
 
 
-def test_jpql::deleteclause_constructor_exists():
-    assert callable(jPQL::DeleteClause.__init__)
+def test_jpql_deleteclause_constructor_exists():
+    assert callable(jPQL_DeleteClause.__init__)
 
 
-def test_jpql::deleteclause_constructor_args():
-    sig = inspect.signature(jPQL::DeleteClause.__init__)
+def test_jpql_deleteclause_constructor_args():
+    sig = inspect.signature(jPQL_DeleteClause.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_jpql::literal_is_not_abstract():
-    assert not inspect.isabstract(jPQL::Literal)
+def test_jpql_literal_is_not_abstract():
+    assert not inspect.isabstract(jPQL_Literal)
 
 
-def test_jpql::literal_constructor_exists():
-    assert callable(jPQL::Literal.__init__)
+def test_jpql_literal_constructor_exists():
+    assert callable(jPQL_Literal.__init__)
 
 
-def test_jpql::literal_constructor_args():
-    sig = inspect.signature(jPQL::Literal.__init__)
+def test_jpql_literal_constructor_args():
+    sig = inspect.signature(jPQL_Literal.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -753,37 +753,37 @@ def test_fromentry_constructor_args():
 
 
 
-def test_jpql::fromcollection_is_not_abstract():
-    assert not inspect.isabstract(jPQL::FromCollection)
+def test_jpql_fromcollection_is_not_abstract():
+    assert not inspect.isabstract(jPQL_FromCollection)
 
 
-def test_jpql::fromcollection_constructor_exists():
-    assert callable(jPQL::FromCollection.__init__)
+def test_jpql_fromcollection_constructor_exists():
+    assert callable(jPQL_FromCollection.__init__)
 
 
-def test_jpql::fromcollection_constructor_args():
-    sig = inspect.signature(jPQL::FromCollection.__init__)
+def test_jpql_fromcollection_constructor_args():
+    sig = inspect.signature(jPQL_FromCollection.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_jpql::fromclass_is_not_abstract():
-    assert not inspect.isabstract(jPQL::FromClass)
+def test_jpql_fromclass_is_not_abstract():
+    assert not inspect.isabstract(jPQL_FromClass)
 
 
-def test_jpql::fromclass_constructor_exists():
-    assert callable(jPQL::FromClass.__init__)
+def test_jpql_fromclass_constructor_exists():
+    assert callable(jPQL_FromClass.__init__)
 
 
-def test_jpql::fromclass_constructor_args():
-    sig = inspect.signature(jPQL::FromClass.__init__)
+def test_jpql_fromclass_constructor_args():
+    sig = inspect.signature(jPQL_FromClass.__init__)
     params = list(sig.parameters.keys())
     assert "type" in params, "Missing parameter 'type'"
 
-def test_jpql::fromclass_has_type():
-    assert hasattr(jPQL::FromClass, "type")
+def test_jpql_fromclass_has_type():
+    assert hasattr(jPQL_FromClass, "type")
     descriptor = None
-    for klass in jPQL::FromClass.__mro__:
+    for klass in jPQL_FromClass.__mro__:
         if "type" in klass.__dict__:
             descriptor = klass.__dict__["type"]
             break
@@ -791,23 +791,23 @@ def test_jpql::fromclass_has_type():
 
 
 
-def test_jpql::variabledeclaration_is_not_abstract():
-    assert not inspect.isabstract(jPQL::VariableDeclaration)
+def test_jpql_variabledeclaration_is_not_abstract():
+    assert not inspect.isabstract(jPQL_VariableDeclaration)
 
 
-def test_jpql::variabledeclaration_constructor_exists():
-    assert callable(jPQL::VariableDeclaration.__init__)
+def test_jpql_variabledeclaration_constructor_exists():
+    assert callable(jPQL_VariableDeclaration.__init__)
 
 
-def test_jpql::variabledeclaration_constructor_args():
-    sig = inspect.signature(jPQL::VariableDeclaration.__init__)
+def test_jpql_variabledeclaration_constructor_args():
+    sig = inspect.signature(jPQL_VariableDeclaration.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_jpql::variabledeclaration_has_name():
-    assert hasattr(jPQL::VariableDeclaration, "name")
+def test_jpql_variabledeclaration_has_name():
+    assert hasattr(jPQL_VariableDeclaration, "name")
     descriptor = None
-    for klass in jPQL::VariableDeclaration.__mro__:
+    for klass in jPQL_VariableDeclaration.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -815,61 +815,61 @@ def test_jpql::variabledeclaration_has_name():
 
 
 
-def test_jpql::updateclause_is_not_abstract():
-    assert not inspect.isabstract(jPQL::UpdateClause)
+def test_jpql_updateclause_is_not_abstract():
+    assert not inspect.isabstract(jPQL_UpdateClause)
 
 
-def test_jpql::updateclause_constructor_exists():
-    assert callable(jPQL::UpdateClause.__init__)
+def test_jpql_updateclause_constructor_exists():
+    assert callable(jPQL_UpdateClause.__init__)
 
 
-def test_jpql::updateclause_constructor_args():
-    sig = inspect.signature(jPQL::UpdateClause.__init__)
+def test_jpql_updateclause_constructor_args():
+    sig = inspect.signature(jPQL_UpdateClause.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_jpql::orderbyspec_is_not_abstract():
-    assert not inspect.isabstract(jPQL::OrderBySpec)
+def test_jpql_orderbyspec_is_not_abstract():
+    assert not inspect.isabstract(jPQL_OrderBySpec)
 
 
-def test_jpql::orderbyspec_constructor_exists():
-    assert callable(jPQL::OrderBySpec.__init__)
+def test_jpql_orderbyspec_constructor_exists():
+    assert callable(jPQL_OrderBySpec.__init__)
 
 
-def test_jpql::orderbyspec_constructor_args():
-    sig = inspect.signature(jPQL::OrderBySpec.__init__)
+def test_jpql_orderbyspec_constructor_args():
+    sig = inspect.signature(jPQL_OrderBySpec.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_jpql::expression_is_not_abstract():
-    assert not inspect.isabstract(jPQL::Expression)
+def test_jpql_expression_is_not_abstract():
+    assert not inspect.isabstract(jPQL_Expression)
 
 
-def test_jpql::expression_constructor_exists():
-    assert callable(jPQL::Expression.__init__)
+def test_jpql_expression_constructor_exists():
+    assert callable(jPQL_Expression.__init__)
 
 
-def test_jpql::expression_constructor_args():
-    sig = inspect.signature(jPQL::Expression.__init__)
+def test_jpql_expression_constructor_args():
+    sig = inspect.signature(jPQL_Expression.__init__)
     params = list(sig.parameters.keys())
     assert "unaryOperator" in params, "Missing parameter 'unaryOperator'"
     assert "isNot" in params, "Missing parameter 'isNot'"
 
-def test_jpql::expression_has_unaryOperator():
-    assert hasattr(jPQL::Expression, "unaryOperator")
+def test_jpql_expression_has_unaryOperator():
+    assert hasattr(jPQL_Expression, "unaryOperator")
     descriptor = None
-    for klass in jPQL::Expression.__mro__:
+    for klass in jPQL_Expression.__mro__:
         if "unaryOperator" in klass.__dict__:
             descriptor = klass.__dict__["unaryOperator"]
             break
     assert isinstance(descriptor, property)
 
-def test_jpql::expression_has_isNot():
-    assert hasattr(jPQL::Expression, "isNot")
+def test_jpql_expression_has_isNot():
+    assert hasattr(jPQL_Expression, "isNot")
     descriptor = None
-    for klass in jPQL::Expression.__mro__:
+    for klass in jPQL_Expression.__mro__:
         if "isNot" in klass.__dict__:
             descriptor = klass.__dict__["isNot"]
             break
@@ -877,47 +877,47 @@ def test_jpql::expression_has_isNot():
 
 
 
-def test_jpql::havingclause_is_not_abstract():
-    assert not inspect.isabstract(jPQL::HavingClause)
+def test_jpql_havingclause_is_not_abstract():
+    assert not inspect.isabstract(jPQL_HavingClause)
 
 
-def test_jpql::havingclause_constructor_exists():
-    assert callable(jPQL::HavingClause.__init__)
+def test_jpql_havingclause_constructor_exists():
+    assert callable(jPQL_HavingClause.__init__)
 
 
-def test_jpql::havingclause_constructor_args():
-    sig = inspect.signature(jPQL::HavingClause.__init__)
+def test_jpql_havingclause_constructor_args():
+    sig = inspect.signature(jPQL_HavingClause.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_jpql::aliasattributeexpression_is_not_abstract():
-    assert not inspect.isabstract(jPQL::AliasAttributeExpression)
+def test_jpql_aliasattributeexpression_is_not_abstract():
+    assert not inspect.isabstract(jPQL_AliasAttributeExpression)
 
 
-def test_jpql::aliasattributeexpression_constructor_exists():
-    assert callable(jPQL::AliasAttributeExpression.__init__)
+def test_jpql_aliasattributeexpression_constructor_exists():
+    assert callable(jPQL_AliasAttributeExpression.__init__)
 
 
-def test_jpql::aliasattributeexpression_constructor_args():
-    sig = inspect.signature(jPQL::AliasAttributeExpression.__init__)
+def test_jpql_aliasattributeexpression_constructor_args():
+    sig = inspect.signature(jPQL_AliasAttributeExpression.__init__)
     params = list(sig.parameters.keys())
     assert "direction" in params, "Missing parameter 'direction'"
     assert "attributes" in params, "Missing parameter 'attributes'"
 
-def test_jpql::aliasattributeexpression_has_direction():
-    assert hasattr(jPQL::AliasAttributeExpression, "direction")
+def test_jpql_aliasattributeexpression_has_direction():
+    assert hasattr(jPQL_AliasAttributeExpression, "direction")
     descriptor = None
-    for klass in jPQL::AliasAttributeExpression.__mro__:
+    for klass in jPQL_AliasAttributeExpression.__mro__:
         if "direction" in klass.__dict__:
             descriptor = klass.__dict__["direction"]
             break
     assert isinstance(descriptor, property)
 
-def test_jpql::aliasattributeexpression_has_attributes():
-    assert hasattr(jPQL::AliasAttributeExpression, "attributes")
+def test_jpql_aliasattributeexpression_has_attributes():
+    assert hasattr(jPQL_AliasAttributeExpression, "attributes")
     descriptor = None
-    for klass in jPQL::AliasAttributeExpression.__mro__:
+    for klass in jPQL_AliasAttributeExpression.__mro__:
         if "attributes" in klass.__dict__:
             descriptor = klass.__dict__["attributes"]
             break
@@ -925,65 +925,65 @@ def test_jpql::aliasattributeexpression_has_attributes():
 
 
 
-def test_jpql::orderbyclause_is_not_abstract():
-    assert not inspect.isabstract(jPQL::OrderByClause)
+def test_jpql_orderbyclause_is_not_abstract():
+    assert not inspect.isabstract(jPQL_OrderByClause)
 
 
-def test_jpql::orderbyclause_constructor_exists():
-    assert callable(jPQL::OrderByClause.__init__)
+def test_jpql_orderbyclause_constructor_exists():
+    assert callable(jPQL_OrderByClause.__init__)
 
 
-def test_jpql::orderbyclause_constructor_args():
-    sig = inspect.signature(jPQL::OrderByClause.__init__)
+def test_jpql_orderbyclause_constructor_args():
+    sig = inspect.signature(jPQL_OrderByClause.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_jpql::groupbyclause_is_not_abstract():
-    assert not inspect.isabstract(jPQL::GroupByClause)
+def test_jpql_groupbyclause_is_not_abstract():
+    assert not inspect.isabstract(jPQL_GroupByClause)
 
 
-def test_jpql::groupbyclause_constructor_exists():
-    assert callable(jPQL::GroupByClause.__init__)
+def test_jpql_groupbyclause_constructor_exists():
+    assert callable(jPQL_GroupByClause.__init__)
 
 
-def test_jpql::groupbyclause_constructor_args():
-    sig = inspect.signature(jPQL::GroupByClause.__init__)
+def test_jpql_groupbyclause_constructor_args():
+    sig = inspect.signature(jPQL_GroupByClause.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_jpql::fromclause_is_not_abstract():
-    assert not inspect.isabstract(jPQL::FromClause)
+def test_jpql_fromclause_is_not_abstract():
+    assert not inspect.isabstract(jPQL_FromClause)
 
 
-def test_jpql::fromclause_constructor_exists():
-    assert callable(jPQL::FromClause.__init__)
+def test_jpql_fromclause_constructor_exists():
+    assert callable(jPQL_FromClause.__init__)
 
 
-def test_jpql::fromclause_constructor_args():
-    sig = inspect.signature(jPQL::FromClause.__init__)
+def test_jpql_fromclause_constructor_args():
+    sig = inspect.signature(jPQL_FromClause.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_jpql::selectclause_is_not_abstract():
-    assert not inspect.isabstract(jPQL::SelectClause)
+def test_jpql_selectclause_is_not_abstract():
+    assert not inspect.isabstract(jPQL_SelectClause)
 
 
-def test_jpql::selectclause_constructor_exists():
-    assert callable(jPQL::SelectClause.__init__)
+def test_jpql_selectclause_constructor_exists():
+    assert callable(jPQL_SelectClause.__init__)
 
 
-def test_jpql::selectclause_constructor_args():
-    sig = inspect.signature(jPQL::SelectClause.__init__)
+def test_jpql_selectclause_constructor_args():
+    sig = inspect.signature(jPQL_SelectClause.__init__)
     params = list(sig.parameters.keys())
     assert "isDistinct" in params, "Missing parameter 'isDistinct'"
 
-def test_jpql::selectclause_has_isDistinct():
-    assert hasattr(jPQL::SelectClause, "isDistinct")
+def test_jpql_selectclause_has_isDistinct():
+    assert hasattr(jPQL_SelectClause, "isDistinct")
     descriptor = None
-    for klass in jPQL::SelectClause.__mro__:
+    for klass in jPQL_SelectClause.__mro__:
         if "isDistinct" in klass.__dict__:
             descriptor = klass.__dict__["isDistinct"]
             break
@@ -1005,16 +1005,16 @@ def test_expressionterm_constructor_args():
 
 
 
-def test_jpql::variable_is_not_abstract():
-    assert not inspect.isabstract(jPQL::Variable)
+def test_jpql_variable_is_not_abstract():
+    assert not inspect.isabstract(jPQL_Variable)
 
 
-def test_jpql::variable_constructor_exists():
-    assert callable(jPQL::Variable.__init__)
+def test_jpql_variable_constructor_exists():
+    assert callable(jPQL_Variable.__init__)
 
 
-def test_jpql::variable_constructor_args():
-    sig = inspect.signature(jPQL::Variable.__init__)
+def test_jpql_variable_constructor_args():
+    sig = inspect.signature(jPQL_Variable.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1033,161 +1033,149 @@ def test_jpqlquery_constructor_args():
 
 
 
-def test_jpql::deletestatement_is_not_abstract():
-    assert not inspect.isabstract(jPQL::DeleteStatement)
+def test_jpql_updatestatement_is_not_abstract():
+    assert not inspect.isabstract(jPQL_UpdateStatement)
 
 
-def test_jpql::deletestatement_constructor_exists():
-    assert callable(jPQL::DeleteStatement.__init__)
+def test_jpql_updatestatement_constructor_exists():
+    assert callable(jPQL_UpdateStatement.__init__)
 
 
-def test_jpql::deletestatement_constructor_args():
-    sig = inspect.signature(jPQL::DeleteStatement.__init__)
+def test_jpql_updatestatement_constructor_args():
+    sig = inspect.signature(jPQL_UpdateStatement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_jpql::updatestatement_is_not_abstract():
-    assert not inspect.isabstract(jPQL::UpdateStatement)
+def test_jpql_deletestatement_is_not_abstract():
+    assert not inspect.isabstract(jPQL_DeleteStatement)
 
 
-def test_jpql::updatestatement_constructor_exists():
-    assert callable(jPQL::UpdateStatement.__init__)
+def test_jpql_deletestatement_constructor_exists():
+    assert callable(jPQL_DeleteStatement.__init__)
 
 
-def test_jpql::updatestatement_constructor_args():
-    sig = inspect.signature(jPQL::UpdateStatement.__init__)
+def test_jpql_deletestatement_constructor_args():
+    sig = inspect.signature(jPQL_DeleteStatement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_jpql::selectstatement_is_not_abstract():
-    assert not inspect.isabstract(jPQL::SelectStatement)
+def test_jpql_selectstatement_is_not_abstract():
+    assert not inspect.isabstract(jPQL_SelectStatement)
 
 
-def test_jpql::selectstatement_constructor_exists():
-    assert callable(jPQL::SelectStatement.__init__)
+def test_jpql_selectstatement_constructor_exists():
+    assert callable(jPQL_SelectStatement.__init__)
 
 
-def test_jpql::selectstatement_constructor_args():
-    sig = inspect.signature(jPQL::SelectStatement.__init__)
+def test_jpql_selectstatement_constructor_args():
+    sig = inspect.signature(jPQL_SelectStatement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_jpql::whereclause_is_not_abstract():
-    assert not inspect.isabstract(jPQL::WhereClause)
+def test_jpql_whereclause_is_not_abstract():
+    assert not inspect.isabstract(jPQL_WhereClause)
 
 
-def test_jpql::whereclause_constructor_exists():
-    assert callable(jPQL::WhereClause.__init__)
+def test_jpql_whereclause_constructor_exists():
+    assert callable(jPQL_WhereClause.__init__)
 
 
-def test_jpql::whereclause_constructor_args():
-    sig = inspect.signature(jPQL::WhereClause.__init__)
+def test_jpql_whereclause_constructor_args():
+    sig = inspect.signature(jPQL_WhereClause.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_jpql::updateitem_is_not_abstract():
-    assert not inspect.isabstract(jPQL::UpdateItem)
+def test_jpql_updateitem_is_not_abstract():
+    assert not inspect.isabstract(jPQL_UpdateItem)
 
 
-def test_jpql::updateitem_constructor_exists():
-    assert callable(jPQL::UpdateItem.__init__)
+def test_jpql_updateitem_constructor_exists():
+    assert callable(jPQL_UpdateItem.__init__)
 
 
-def test_jpql::updateitem_constructor_args():
-    sig = inspect.signature(jPQL::UpdateItem.__init__)
+def test_jpql_updateitem_constructor_args():
+    sig = inspect.signature(jPQL_UpdateItem.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_jpql::fromentry_is_not_abstract():
-    assert not inspect.isabstract(jPQL::FromEntry)
+def test_jpql_fromentry_is_not_abstract():
+    assert not inspect.isabstract(jPQL_FromEntry)
 
 
-def test_jpql::fromentry_constructor_exists():
-    assert callable(jPQL::FromEntry.__init__)
+def test_jpql_fromentry_constructor_exists():
+    assert callable(jPQL_FromEntry.__init__)
 
 
-def test_jpql::fromentry_constructor_args():
-    sig = inspect.signature(jPQL::FromEntry.__init__)
+def test_jpql_fromentry_constructor_args():
+    sig = inspect.signature(jPQL_FromEntry.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_jpql::setclause_is_not_abstract():
-    assert not inspect.isabstract(jPQL::SetClause)
+def test_jpql_setclause_is_not_abstract():
+    assert not inspect.isabstract(jPQL_SetClause)
 
 
-def test_jpql::setclause_constructor_exists():
-    assert callable(jPQL::SetClause.__init__)
+def test_jpql_setclause_constructor_exists():
+    assert callable(jPQL_SetClause.__init__)
 
 
-def test_jpql::setclause_constructor_args():
-    sig = inspect.signature(jPQL::SetClause.__init__)
+def test_jpql_setclause_constructor_args():
+    sig = inspect.signature(jPQL_SetClause.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_jpql::jpqlquery_is_not_abstract():
-    assert not inspect.isabstract(jPQL::JPQLQuery)
+def test_jpql_jpqlquery_is_not_abstract():
+    assert not inspect.isabstract(jPQL_JPQLQuery)
 
 
-def test_jpql::jpqlquery_constructor_exists():
-    assert callable(jPQL::JPQLQuery.__init__)
+def test_jpql_jpqlquery_constructor_exists():
+    assert callable(jPQL_JPQLQuery.__init__)
 
 
-def test_jpql::jpqlquery_constructor_args():
-    sig = inspect.signature(jPQL::JPQLQuery.__init__)
+def test_jpql_jpqlquery_constructor_args():
+    sig = inspect.signature(jPQL_JPQLQuery.__init__)
     params = list(sig.parameters.keys())
 
-def test_orderbydirection_exists():
+def test_multiplicationoperator_exists():
     # Check that the Enumeration exists
-    assert OrderByDirection is not None
+    assert MultiplicationOperator is not None
 
-def test_orderbydirection_has_all_literals():
+def test_multiplicationoperator_has_all_literals():
     # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in OrderByDirection]
+    enum_literals = [lit.name for lit in MultiplicationOperator]
     expected_literals = [
-        "asc",
-        "desc",
+        "multiply",
+        "divide",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in OrderByDirection"
+        assert lit_name in enum_literals, f"Literal '' missing in MultiplicationOperator"
 
-def test_trimspec_exists():
+def test_comparisonoperator_exists():
     # Check that the Enumeration exists
-    assert TrimSpec is not None
+    assert ComparisonOperator is not None
 
-def test_trimspec_has_all_literals():
+def test_comparisonoperator_has_all_literals():
     # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in TrimSpec]
+    enum_literals = [lit.name for lit in ComparisonOperator]
     expected_literals = [
-        "both",
-        "leading",
-        "trailing",
+        "lessThen",
+        "equal",
+        "greaterThen",
+        "notEqual",
+        "greaterEqual",
+        "lessEqual",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in TrimSpec"
-
-def test_additionoperator_exists():
-    # Check that the Enumeration exists
-    assert AdditionOperator is not None
-
-def test_additionoperator_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in AdditionOperator]
-    expected_literals = [
-        "subtract",
-        "add",
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in AdditionOperator"
+        assert lit_name in enum_literals, f"Literal '' missing in ComparisonOperator"
 
 def test_unaryoperator_exists():
     # Check that the Enumeration exists
@@ -1205,39 +1193,51 @@ def test_unaryoperator_has_all_literals():
     for lit_name in expected_literals:
         assert lit_name in enum_literals, f"Literal '' missing in UnaryOperator"
 
-def test_comparisonoperator_exists():
+def test_trimspec_exists():
     # Check that the Enumeration exists
-    assert ComparisonOperator is not None
+    assert TrimSpec is not None
 
-def test_comparisonoperator_has_all_literals():
+def test_trimspec_has_all_literals():
     # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in ComparisonOperator]
+    enum_literals = [lit.name for lit in TrimSpec]
     expected_literals = [
-        "notEqual",
-        "equal",
-        "greaterThen",
-        "lessThen",
-        "greaterEqual",
-        "lessEqual",
+        "leading",
+        "both",
+        "trailing",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in ComparisonOperator"
+        assert lit_name in enum_literals, f"Literal '' missing in TrimSpec"
 
-def test_multiplicationoperator_exists():
+def test_additionoperator_exists():
     # Check that the Enumeration exists
-    assert MultiplicationOperator is not None
+    assert AdditionOperator is not None
 
-def test_multiplicationoperator_has_all_literals():
+def test_additionoperator_has_all_literals():
     # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in MultiplicationOperator]
+    enum_literals = [lit.name for lit in AdditionOperator]
     expected_literals = [
-        "divide",
-        "multiply",
+        "add",
+        "subtract",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in MultiplicationOperator"
+        assert lit_name in enum_literals, f"Literal '' missing in AdditionOperator"
+
+def test_orderbydirection_exists():
+    # Check that the Enumeration exists
+    assert OrderByDirection is not None
+
+def test_orderbydirection_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in OrderByDirection]
+    expected_literals = [
+        "desc",
+        "asc",
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in OrderByDirection"
 
 
 # =============================================================================
@@ -1254,29 +1254,29 @@ safe_text = st.text(
 Literal_strategy = st.builds(
     Literal,
 )
-jPQL::FloatLiteral_strategy = st.builds(
-    jPQL::FloatLiteral,
+jPQL_FloatLiteral_strategy = st.builds(
+    jPQL_FloatLiteral,
 )
-jPQL::BooleanLiteral_strategy = st.builds(
-    jPQL::BooleanLiteral,
+jPQL_BooleanLiteral_strategy = st.builds(
+    jPQL_BooleanLiteral,
     value=
         safe_text
 )
-jPQL::NullLiteral_strategy = st.builds(
-    jPQL::NullLiteral,
+jPQL_NullLiteral_strategy = st.builds(
+    jPQL_NullLiteral,
     value=
         safe_text
 )
-jPQL::IntegerLiteral_strategy = st.builds(
-    jPQL::IntegerLiteral,
+jPQL_IntegerLiteral_strategy = st.builds(
+    jPQL_IntegerLiteral,
     value=
         st.integers()
 )
 Variable_strategy = st.builds(
     Variable,
 )
-jPQL::ParameterExpression_strategy = st.builds(
-    jPQL::ParameterExpression,
+jPQL_ParameterExpression_strategy = st.builds(
+    jPQL_ParameterExpression,
     name=
         safe_text,
     index=
@@ -1285,13 +1285,13 @@ jPQL::ParameterExpression_strategy = st.builds(
 OrderBySpec_strategy = st.builds(
     OrderBySpec,
 )
-jPQL::StringLiteral_strategy = st.builds(
-    jPQL::StringLiteral,
+jPQL_StringLiteral_strategy = st.builds(
+    jPQL_StringLiteral,
     value=
         safe_text
 )
-jPQL::Float_strategy = st.builds(
-    jPQL::Float,
+jPQL_Float_strategy = st.builds(
+    jPQL_Float,
     fractionValue=
         st.integers(),
     integerValue=
@@ -1300,181 +1300,181 @@ jPQL::Float_strategy = st.builds(
 FromJoin_strategy = st.builds(
     FromJoin,
 )
-jPQL::InnerJoin_strategy = st.builds(
-    jPQL::InnerJoin,
-)
-jPQL::LeftJoin_strategy = st.builds(
-    jPQL::LeftJoin,
+jPQL_LeftJoin_strategy = st.builds(
+    jPQL_LeftJoin,
     isOuter=
         st.booleans()
 )
-jPQL::Join_strategy = st.builds(
-    jPQL::Join,
+jPQL_InnerJoin_strategy = st.builds(
+    jPQL_InnerJoin,
 )
-jPQL::FromJoin_strategy = st.builds(
-    jPQL::FromJoin,
+jPQL_Join_strategy = st.builds(
+    jPQL_Join,
+)
+jPQL_FromJoin_strategy = st.builds(
+    jPQL_FromJoin,
     isFetch=
         st.booleans()
 )
 Expression_strategy = st.builds(
     Expression,
 )
-jPQL::MultiplicationExpression_strategy = st.builds(
-    jPQL::MultiplicationExpression,
+jPQL_OrExpression_strategy = st.builds(
+    jPQL_OrExpression,
+)
+jPQL_AndExpression_strategy = st.builds(
+    jPQL_AndExpression,
+)
+jPQL_AdditionExpression_strategy = st.builds(
+    jPQL_AdditionExpression,
     operator=
         safe_text
 )
-jPQL::ExpressionTerm_strategy = st.builds(
-    jPQL::ExpressionTerm,
-)
-jPQL::ComparisonOperatorExpression_strategy = st.builds(
-    jPQL::ComparisonOperatorExpression,
-    operator=
-        safe_text
-)
-jPQL::AdditionExpression_strategy = st.builds(
-    jPQL::AdditionExpression,
-    operator=
-        safe_text
-)
-jPQL::AndExpression_strategy = st.builds(
-    jPQL::AndExpression,
-)
-jPQL::FunctionExpression_strategy = st.builds(
-    jPQL::FunctionExpression,
-    trimSpec=
-        safe_text,
+jPQL_FunctionExpression_strategy = st.builds(
+    jPQL_FunctionExpression,
     name=
+        safe_text,
+    trimSpec=
         safe_text
 )
-jPQL::OrExpression_strategy = st.builds(
-    jPQL::OrExpression,
+jPQL_MultiplicationExpression_strategy = st.builds(
+    jPQL_MultiplicationExpression,
+    operator=
+        safe_text
+)
+jPQL_ExpressionTerm_strategy = st.builds(
+    jPQL_ExpressionTerm,
+)
+jPQL_ComparisonOperatorExpression_strategy = st.builds(
+    jPQL_ComparisonOperatorExpression,
+    operator=
+        safe_text
 )
 SelectAggregateExpression_strategy = st.builds(
     SelectAggregateExpression,
 )
-jPQL::MinAggregate_strategy = st.builds(
-    jPQL::MinAggregate,
+jPQL_CountAggregate_strategy = st.builds(
+    jPQL_CountAggregate,
 )
-jPQL::CountAggregate_strategy = st.builds(
-    jPQL::CountAggregate,
+jPQL_MinAggregate_strategy = st.builds(
+    jPQL_MinAggregate,
 )
-jPQL::MaxAggregate_strategy = st.builds(
-    jPQL::MaxAggregate,
+jPQL_SumAggregate_strategy = st.builds(
+    jPQL_SumAggregate,
 )
-jPQL::SumAggregate_strategy = st.builds(
-    jPQL::SumAggregate,
+jPQL_MaxAggregate_strategy = st.builds(
+    jPQL_MaxAggregate,
 )
-jPQL::AvgAggregate_strategy = st.builds(
-    jPQL::AvgAggregate,
+jPQL_AvgAggregate_strategy = st.builds(
+    jPQL_AvgAggregate,
 )
 SelectExpression_strategy = st.builds(
     SelectExpression,
 )
-jPQL::SelectConstructorExpression_strategy = st.builds(
-    jPQL::SelectConstructorExpression,
+jPQL_SelectConstructorExpression_strategy = st.builds(
+    jPQL_SelectConstructorExpression,
     name=
         safe_text
 )
-jPQL::SelectAggregateExpression_strategy = st.builds(
-    jPQL::SelectAggregateExpression,
+jPQL_SelectAggregateExpression_strategy = st.builds(
+    jPQL_SelectAggregateExpression,
     isDistinct=
         st.booleans()
 )
-jPQL::SelectExpression_strategy = st.builds(
-    jPQL::SelectExpression,
+jPQL_SelectExpression_strategy = st.builds(
+    jPQL_SelectExpression,
 )
-jPQL::DeleteClause_strategy = st.builds(
-    jPQL::DeleteClause,
+jPQL_DeleteClause_strategy = st.builds(
+    jPQL_DeleteClause,
 )
-jPQL::Literal_strategy = st.builds(
-    jPQL::Literal,
+jPQL_Literal_strategy = st.builds(
+    jPQL_Literal,
 )
 FromEntry_strategy = st.builds(
     FromEntry,
 )
-jPQL::FromCollection_strategy = st.builds(
-    jPQL::FromCollection,
+jPQL_FromCollection_strategy = st.builds(
+    jPQL_FromCollection,
 )
-jPQL::FromClass_strategy = st.builds(
-    jPQL::FromClass,
+jPQL_FromClass_strategy = st.builds(
+    jPQL_FromClass,
     type=
         safe_text
 )
-jPQL::VariableDeclaration_strategy = st.builds(
-    jPQL::VariableDeclaration,
+jPQL_VariableDeclaration_strategy = st.builds(
+    jPQL_VariableDeclaration,
     name=
         safe_text
 )
-jPQL::UpdateClause_strategy = st.builds(
-    jPQL::UpdateClause,
+jPQL_UpdateClause_strategy = st.builds(
+    jPQL_UpdateClause,
 )
-jPQL::OrderBySpec_strategy = st.builds(
-    jPQL::OrderBySpec,
+jPQL_OrderBySpec_strategy = st.builds(
+    jPQL_OrderBySpec,
 )
-jPQL::Expression_strategy = st.builds(
-    jPQL::Expression,
+jPQL_Expression_strategy = st.builds(
+    jPQL_Expression,
     unaryOperator=
         safe_text,
     isNot=
         st.booleans()
 )
-jPQL::HavingClause_strategy = st.builds(
-    jPQL::HavingClause,
+jPQL_HavingClause_strategy = st.builds(
+    jPQL_HavingClause,
 )
-jPQL::AliasAttributeExpression_strategy = st.builds(
-    jPQL::AliasAttributeExpression,
+jPQL_AliasAttributeExpression_strategy = st.builds(
+    jPQL_AliasAttributeExpression,
     direction=
         safe_text,
     attributes=
         safe_text
 )
-jPQL::OrderByClause_strategy = st.builds(
-    jPQL::OrderByClause,
+jPQL_OrderByClause_strategy = st.builds(
+    jPQL_OrderByClause,
 )
-jPQL::GroupByClause_strategy = st.builds(
-    jPQL::GroupByClause,
+jPQL_GroupByClause_strategy = st.builds(
+    jPQL_GroupByClause,
 )
-jPQL::FromClause_strategy = st.builds(
-    jPQL::FromClause,
+jPQL_FromClause_strategy = st.builds(
+    jPQL_FromClause,
 )
-jPQL::SelectClause_strategy = st.builds(
-    jPQL::SelectClause,
+jPQL_SelectClause_strategy = st.builds(
+    jPQL_SelectClause,
     isDistinct=
         st.booleans()
 )
 ExpressionTerm_strategy = st.builds(
     ExpressionTerm,
 )
-jPQL::Variable_strategy = st.builds(
-    jPQL::Variable,
+jPQL_Variable_strategy = st.builds(
+    jPQL_Variable,
 )
 JPQLQuery_strategy = st.builds(
     JPQLQuery,
 )
-jPQL::DeleteStatement_strategy = st.builds(
-    jPQL::DeleteStatement,
+jPQL_UpdateStatement_strategy = st.builds(
+    jPQL_UpdateStatement,
 )
-jPQL::UpdateStatement_strategy = st.builds(
-    jPQL::UpdateStatement,
+jPQL_DeleteStatement_strategy = st.builds(
+    jPQL_DeleteStatement,
 )
-jPQL::SelectStatement_strategy = st.builds(
-    jPQL::SelectStatement,
+jPQL_SelectStatement_strategy = st.builds(
+    jPQL_SelectStatement,
 )
-jPQL::WhereClause_strategy = st.builds(
-    jPQL::WhereClause,
+jPQL_WhereClause_strategy = st.builds(
+    jPQL_WhereClause,
 )
-jPQL::UpdateItem_strategy = st.builds(
-    jPQL::UpdateItem,
+jPQL_UpdateItem_strategy = st.builds(
+    jPQL_UpdateItem,
 )
-jPQL::FromEntry_strategy = st.builds(
-    jPQL::FromEntry,
+jPQL_FromEntry_strategy = st.builds(
+    jPQL_FromEntry,
 )
-jPQL::SetClause_strategy = st.builds(
-    jPQL::SetClause,
+jPQL_SetClause_strategy = st.builds(
+    jPQL_SetClause,
 )
-jPQL::JPQLQuery_strategy = st.builds(
-    jPQL::JPQLQuery,
+jPQL_JPQLQuery_strategy = st.builds(
+    jPQL_JPQLQuery,
 )
 
 @given(instance=Literal_strategy)
@@ -1482,55 +1482,46 @@ jPQL::JPQLQuery_strategy = st.builds(
 def test_literal_instantiation(instance):
     assert isinstance(instance, Literal)
 
-@given(instance=jPQL::FloatLiteral_strategy)
+@given(instance=jPQL_FloatLiteral_strategy)
 @settings(max_examples=50)
-def test_jpql::floatliteral_instantiation(instance):
-    assert isinstance(instance, jPQL::FloatLiteral)
+def test_jpql_floatliteral_instantiation(instance):
+    assert isinstance(instance, jPQL_FloatLiteral)
 
-@given(instance=jPQL::BooleanLiteral_strategy)
+@given(instance=jPQL_BooleanLiteral_strategy)
 @settings(max_examples=50)
-def test_jpql::booleanliteral_instantiation(instance):
-    assert isinstance(instance, jPQL::BooleanLiteral)
-
-@given(instance=jPQL::BooleanLiteral_strategy)
-def test_jpql::booleanliteral_value_type(instance):
-    assert isinstance(instance.value, str)
+def test_jpql_booleanliteral_instantiation(instance):
+    assert isinstance(instance, jPQL_BooleanLiteral)
 
 
-@given(instance=jPQL::BooleanLiteral_strategy)
-def test_jpql::booleanliteral_value_setter(instance):
+
+@given(instance=jPQL_BooleanLiteral_strategy)
+def test_jpql_booleanliteral_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
 
-@given(instance=jPQL::NullLiteral_strategy)
+@given(instance=jPQL_NullLiteral_strategy)
 @settings(max_examples=50)
-def test_jpql::nullliteral_instantiation(instance):
-    assert isinstance(instance, jPQL::NullLiteral)
-
-@given(instance=jPQL::NullLiteral_strategy)
-def test_jpql::nullliteral_value_type(instance):
-    assert isinstance(instance.value, str)
+def test_jpql_nullliteral_instantiation(instance):
+    assert isinstance(instance, jPQL_NullLiteral)
 
 
-@given(instance=jPQL::NullLiteral_strategy)
-def test_jpql::nullliteral_value_setter(instance):
+
+@given(instance=jPQL_NullLiteral_strategy)
+def test_jpql_nullliteral_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
 
-@given(instance=jPQL::IntegerLiteral_strategy)
+@given(instance=jPQL_IntegerLiteral_strategy)
 @settings(max_examples=50)
-def test_jpql::integerliteral_instantiation(instance):
-    assert isinstance(instance, jPQL::IntegerLiteral)
-
-@given(instance=jPQL::IntegerLiteral_strategy)
-def test_jpql::integerliteral_value_type(instance):
-    assert isinstance(instance.value, int)
+def test_jpql_integerliteral_instantiation(instance):
+    assert isinstance(instance, jPQL_IntegerLiteral)
 
 
-@given(instance=jPQL::IntegerLiteral_strategy)
-def test_jpql::integerliteral_value_setter(instance):
+
+@given(instance=jPQL_IntegerLiteral_strategy)
+def test_jpql_integerliteral_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
@@ -1540,29 +1531,23 @@ def test_jpql::integerliteral_value_setter(instance):
 def test_variable_instantiation(instance):
     assert isinstance(instance, Variable)
 
-@given(instance=jPQL::ParameterExpression_strategy)
+@given(instance=jPQL_ParameterExpression_strategy)
 @settings(max_examples=50)
-def test_jpql::parameterexpression_instantiation(instance):
-    assert isinstance(instance, jPQL::ParameterExpression)
-
-@given(instance=jPQL::ParameterExpression_strategy)
-def test_jpql::parameterexpression_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_jpql_parameterexpression_instantiation(instance):
+    assert isinstance(instance, jPQL_ParameterExpression)
 
 
-@given(instance=jPQL::ParameterExpression_strategy)
-def test_jpql::parameterexpression_name_setter(instance):
+
+@given(instance=jPQL_ParameterExpression_strategy)
+def test_jpql_parameterexpression_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=jPQL::ParameterExpression_strategy)
-def test_jpql::parameterexpression_index_type(instance):
-    assert isinstance(instance.index, int)
 
 
-@given(instance=jPQL::ParameterExpression_strategy)
-def test_jpql::parameterexpression_index_setter(instance):
+@given(instance=jPQL_ParameterExpression_strategy)
+def test_jpql_parameterexpression_index_setter(instance):
     original = instance.index
     instance.index = original
     assert instance.index == original
@@ -1572,45 +1557,36 @@ def test_jpql::parameterexpression_index_setter(instance):
 def test_orderbyspec_instantiation(instance):
     assert isinstance(instance, OrderBySpec)
 
-@given(instance=jPQL::StringLiteral_strategy)
+@given(instance=jPQL_StringLiteral_strategy)
 @settings(max_examples=50)
-def test_jpql::stringliteral_instantiation(instance):
-    assert isinstance(instance, jPQL::StringLiteral)
-
-@given(instance=jPQL::StringLiteral_strategy)
-def test_jpql::stringliteral_value_type(instance):
-    assert isinstance(instance.value, str)
+def test_jpql_stringliteral_instantiation(instance):
+    assert isinstance(instance, jPQL_StringLiteral)
 
 
-@given(instance=jPQL::StringLiteral_strategy)
-def test_jpql::stringliteral_value_setter(instance):
+
+@given(instance=jPQL_StringLiteral_strategy)
+def test_jpql_stringliteral_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
 
-@given(instance=jPQL::Float_strategy)
+@given(instance=jPQL_Float_strategy)
 @settings(max_examples=50)
-def test_jpql::float_instantiation(instance):
-    assert isinstance(instance, jPQL::Float)
-
-@given(instance=jPQL::Float_strategy)
-def test_jpql::float_fractionValue_type(instance):
-    assert isinstance(instance.fractionValue, int)
+def test_jpql_float_instantiation(instance):
+    assert isinstance(instance, jPQL_Float)
 
 
-@given(instance=jPQL::Float_strategy)
-def test_jpql::float_fractionValue_setter(instance):
+
+@given(instance=jPQL_Float_strategy)
+def test_jpql_float_fractionValue_setter(instance):
     original = instance.fractionValue
     instance.fractionValue = original
     assert instance.fractionValue == original
 
-@given(instance=jPQL::Float_strategy)
-def test_jpql::float_integerValue_type(instance):
-    assert isinstance(instance.integerValue, int)
 
 
-@given(instance=jPQL::Float_strategy)
-def test_jpql::float_integerValue_setter(instance):
+@given(instance=jPQL_Float_strategy)
+def test_jpql_float_integerValue_setter(instance):
     original = instance.integerValue
     instance.integerValue = original
     assert instance.integerValue == original
@@ -1620,44 +1596,38 @@ def test_jpql::float_integerValue_setter(instance):
 def test_fromjoin_instantiation(instance):
     assert isinstance(instance, FromJoin)
 
-@given(instance=jPQL::InnerJoin_strategy)
+@given(instance=jPQL_LeftJoin_strategy)
 @settings(max_examples=50)
-def test_jpql::innerjoin_instantiation(instance):
-    assert isinstance(instance, jPQL::InnerJoin)
-
-@given(instance=jPQL::LeftJoin_strategy)
-@settings(max_examples=50)
-def test_jpql::leftjoin_instantiation(instance):
-    assert isinstance(instance, jPQL::LeftJoin)
-
-@given(instance=jPQL::LeftJoin_strategy)
-def test_jpql::leftjoin_isOuter_type(instance):
-    assert isinstance(instance.isOuter, bool)
+def test_jpql_leftjoin_instantiation(instance):
+    assert isinstance(instance, jPQL_LeftJoin)
 
 
-@given(instance=jPQL::LeftJoin_strategy)
-def test_jpql::leftjoin_isOuter_setter(instance):
+
+@given(instance=jPQL_LeftJoin_strategy)
+def test_jpql_leftjoin_isOuter_setter(instance):
     original = instance.isOuter
     instance.isOuter = original
     assert instance.isOuter == original
 
-@given(instance=jPQL::Join_strategy)
+@given(instance=jPQL_InnerJoin_strategy)
 @settings(max_examples=50)
-def test_jpql::join_instantiation(instance):
-    assert isinstance(instance, jPQL::Join)
+def test_jpql_innerjoin_instantiation(instance):
+    assert isinstance(instance, jPQL_InnerJoin)
 
-@given(instance=jPQL::FromJoin_strategy)
+@given(instance=jPQL_Join_strategy)
 @settings(max_examples=50)
-def test_jpql::fromjoin_instantiation(instance):
-    assert isinstance(instance, jPQL::FromJoin)
+def test_jpql_join_instantiation(instance):
+    assert isinstance(instance, jPQL_Join)
 
-@given(instance=jPQL::FromJoin_strategy)
-def test_jpql::fromjoin_isFetch_type(instance):
-    assert isinstance(instance.isFetch, bool)
+@given(instance=jPQL_FromJoin_strategy)
+@settings(max_examples=50)
+def test_jpql_fromjoin_instantiation(instance):
+    assert isinstance(instance, jPQL_FromJoin)
 
 
-@given(instance=jPQL::FromJoin_strategy)
-def test_jpql::fromjoin_isFetch_setter(instance):
+
+@given(instance=jPQL_FromJoin_strategy)
+def test_jpql_fromjoin_isFetch_setter(instance):
     original = instance.isFetch
     instance.isFetch = original
     assert instance.isFetch == original
@@ -1667,316 +1637,274 @@ def test_jpql::fromjoin_isFetch_setter(instance):
 def test_expression_instantiation(instance):
     assert isinstance(instance, Expression)
 
-@given(instance=jPQL::MultiplicationExpression_strategy)
+@given(instance=jPQL_OrExpression_strategy)
 @settings(max_examples=50)
-def test_jpql::multiplicationexpression_instantiation(instance):
-    assert isinstance(instance, jPQL::MultiplicationExpression)
+def test_jpql_orexpression_instantiation(instance):
+    assert isinstance(instance, jPQL_OrExpression)
 
-@given(instance=jPQL::MultiplicationExpression_strategy)
-def test_jpql::multiplicationexpression_operator_type(instance):
-    assert isinstance(instance.operator, str)
+@given(instance=jPQL_AndExpression_strategy)
+@settings(max_examples=50)
+def test_jpql_andexpression_instantiation(instance):
+    assert isinstance(instance, jPQL_AndExpression)
+
+@given(instance=jPQL_AdditionExpression_strategy)
+@settings(max_examples=50)
+def test_jpql_additionexpression_instantiation(instance):
+    assert isinstance(instance, jPQL_AdditionExpression)
 
 
-@given(instance=jPQL::MultiplicationExpression_strategy)
-def test_jpql::multiplicationexpression_operator_setter(instance):
+
+@given(instance=jPQL_AdditionExpression_strategy)
+def test_jpql_additionexpression_operator_setter(instance):
     original = instance.operator
     instance.operator = original
     assert instance.operator == original
 
-@given(instance=jPQL::ExpressionTerm_strategy)
+@given(instance=jPQL_FunctionExpression_strategy)
 @settings(max_examples=50)
-def test_jpql::expressionterm_instantiation(instance):
-    assert isinstance(instance, jPQL::ExpressionTerm)
-
-@given(instance=jPQL::ComparisonOperatorExpression_strategy)
-@settings(max_examples=50)
-def test_jpql::comparisonoperatorexpression_instantiation(instance):
-    assert isinstance(instance, jPQL::ComparisonOperatorExpression)
-
-@given(instance=jPQL::ComparisonOperatorExpression_strategy)
-def test_jpql::comparisonoperatorexpression_operator_type(instance):
-    assert isinstance(instance.operator, str)
+def test_jpql_functionexpression_instantiation(instance):
+    assert isinstance(instance, jPQL_FunctionExpression)
 
 
-@given(instance=jPQL::ComparisonOperatorExpression_strategy)
-def test_jpql::comparisonoperatorexpression_operator_setter(instance):
-    original = instance.operator
-    instance.operator = original
-    assert instance.operator == original
 
-@given(instance=jPQL::AdditionExpression_strategy)
-@settings(max_examples=50)
-def test_jpql::additionexpression_instantiation(instance):
-    assert isinstance(instance, jPQL::AdditionExpression)
-
-@given(instance=jPQL::AdditionExpression_strategy)
-def test_jpql::additionexpression_operator_type(instance):
-    assert isinstance(instance.operator, str)
-
-
-@given(instance=jPQL::AdditionExpression_strategy)
-def test_jpql::additionexpression_operator_setter(instance):
-    original = instance.operator
-    instance.operator = original
-    assert instance.operator == original
-
-@given(instance=jPQL::AndExpression_strategy)
-@settings(max_examples=50)
-def test_jpql::andexpression_instantiation(instance):
-    assert isinstance(instance, jPQL::AndExpression)
-
-@given(instance=jPQL::FunctionExpression_strategy)
-@settings(max_examples=50)
-def test_jpql::functionexpression_instantiation(instance):
-    assert isinstance(instance, jPQL::FunctionExpression)
-
-@given(instance=jPQL::FunctionExpression_strategy)
-def test_jpql::functionexpression_trimSpec_type(instance):
-    assert isinstance(instance.trimSpec, str)
-
-
-@given(instance=jPQL::FunctionExpression_strategy)
-def test_jpql::functionexpression_trimSpec_setter(instance):
-    original = instance.trimSpec
-    instance.trimSpec = original
-    assert instance.trimSpec == original
-
-@given(instance=jPQL::FunctionExpression_strategy)
-def test_jpql::functionexpression_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=jPQL::FunctionExpression_strategy)
-def test_jpql::functionexpression_name_setter(instance):
+@given(instance=jPQL_FunctionExpression_strategy)
+def test_jpql_functionexpression_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=jPQL::OrExpression_strategy)
+
+
+@given(instance=jPQL_FunctionExpression_strategy)
+def test_jpql_functionexpression_trimSpec_setter(instance):
+    original = instance.trimSpec
+    instance.trimSpec = original
+    assert instance.trimSpec == original
+
+@given(instance=jPQL_MultiplicationExpression_strategy)
 @settings(max_examples=50)
-def test_jpql::orexpression_instantiation(instance):
-    assert isinstance(instance, jPQL::OrExpression)
+def test_jpql_multiplicationexpression_instantiation(instance):
+    assert isinstance(instance, jPQL_MultiplicationExpression)
+
+
+
+@given(instance=jPQL_MultiplicationExpression_strategy)
+def test_jpql_multiplicationexpression_operator_setter(instance):
+    original = instance.operator
+    instance.operator = original
+    assert instance.operator == original
+
+@given(instance=jPQL_ExpressionTerm_strategy)
+@settings(max_examples=50)
+def test_jpql_expressionterm_instantiation(instance):
+    assert isinstance(instance, jPQL_ExpressionTerm)
+
+@given(instance=jPQL_ComparisonOperatorExpression_strategy)
+@settings(max_examples=50)
+def test_jpql_comparisonoperatorexpression_instantiation(instance):
+    assert isinstance(instance, jPQL_ComparisonOperatorExpression)
+
+
+
+@given(instance=jPQL_ComparisonOperatorExpression_strategy)
+def test_jpql_comparisonoperatorexpression_operator_setter(instance):
+    original = instance.operator
+    instance.operator = original
+    assert instance.operator == original
 
 @given(instance=SelectAggregateExpression_strategy)
 @settings(max_examples=50)
 def test_selectaggregateexpression_instantiation(instance):
     assert isinstance(instance, SelectAggregateExpression)
 
-@given(instance=jPQL::MinAggregate_strategy)
+@given(instance=jPQL_CountAggregate_strategy)
 @settings(max_examples=50)
-def test_jpql::minaggregate_instantiation(instance):
-    assert isinstance(instance, jPQL::MinAggregate)
+def test_jpql_countaggregate_instantiation(instance):
+    assert isinstance(instance, jPQL_CountAggregate)
 
-@given(instance=jPQL::CountAggregate_strategy)
+@given(instance=jPQL_MinAggregate_strategy)
 @settings(max_examples=50)
-def test_jpql::countaggregate_instantiation(instance):
-    assert isinstance(instance, jPQL::CountAggregate)
+def test_jpql_minaggregate_instantiation(instance):
+    assert isinstance(instance, jPQL_MinAggregate)
 
-@given(instance=jPQL::MaxAggregate_strategy)
+@given(instance=jPQL_SumAggregate_strategy)
 @settings(max_examples=50)
-def test_jpql::maxaggregate_instantiation(instance):
-    assert isinstance(instance, jPQL::MaxAggregate)
+def test_jpql_sumaggregate_instantiation(instance):
+    assert isinstance(instance, jPQL_SumAggregate)
 
-@given(instance=jPQL::SumAggregate_strategy)
+@given(instance=jPQL_MaxAggregate_strategy)
 @settings(max_examples=50)
-def test_jpql::sumaggregate_instantiation(instance):
-    assert isinstance(instance, jPQL::SumAggregate)
+def test_jpql_maxaggregate_instantiation(instance):
+    assert isinstance(instance, jPQL_MaxAggregate)
 
-@given(instance=jPQL::AvgAggregate_strategy)
+@given(instance=jPQL_AvgAggregate_strategy)
 @settings(max_examples=50)
-def test_jpql::avgaggregate_instantiation(instance):
-    assert isinstance(instance, jPQL::AvgAggregate)
+def test_jpql_avgaggregate_instantiation(instance):
+    assert isinstance(instance, jPQL_AvgAggregate)
 
 @given(instance=SelectExpression_strategy)
 @settings(max_examples=50)
 def test_selectexpression_instantiation(instance):
     assert isinstance(instance, SelectExpression)
 
-@given(instance=jPQL::SelectConstructorExpression_strategy)
+@given(instance=jPQL_SelectConstructorExpression_strategy)
 @settings(max_examples=50)
-def test_jpql::selectconstructorexpression_instantiation(instance):
-    assert isinstance(instance, jPQL::SelectConstructorExpression)
-
-@given(instance=jPQL::SelectConstructorExpression_strategy)
-def test_jpql::selectconstructorexpression_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_jpql_selectconstructorexpression_instantiation(instance):
+    assert isinstance(instance, jPQL_SelectConstructorExpression)
 
 
-@given(instance=jPQL::SelectConstructorExpression_strategy)
-def test_jpql::selectconstructorexpression_name_setter(instance):
+
+@given(instance=jPQL_SelectConstructorExpression_strategy)
+def test_jpql_selectconstructorexpression_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=jPQL::SelectAggregateExpression_strategy)
+@given(instance=jPQL_SelectAggregateExpression_strategy)
 @settings(max_examples=50)
-def test_jpql::selectaggregateexpression_instantiation(instance):
-    assert isinstance(instance, jPQL::SelectAggregateExpression)
-
-@given(instance=jPQL::SelectAggregateExpression_strategy)
-def test_jpql::selectaggregateexpression_isDistinct_type(instance):
-    assert isinstance(instance.isDistinct, bool)
+def test_jpql_selectaggregateexpression_instantiation(instance):
+    assert isinstance(instance, jPQL_SelectAggregateExpression)
 
 
-@given(instance=jPQL::SelectAggregateExpression_strategy)
-def test_jpql::selectaggregateexpression_isDistinct_setter(instance):
+
+@given(instance=jPQL_SelectAggregateExpression_strategy)
+def test_jpql_selectaggregateexpression_isDistinct_setter(instance):
     original = instance.isDistinct
     instance.isDistinct = original
     assert instance.isDistinct == original
 
-@given(instance=jPQL::SelectExpression_strategy)
+@given(instance=jPQL_SelectExpression_strategy)
 @settings(max_examples=50)
-def test_jpql::selectexpression_instantiation(instance):
-    assert isinstance(instance, jPQL::SelectExpression)
+def test_jpql_selectexpression_instantiation(instance):
+    assert isinstance(instance, jPQL_SelectExpression)
 
-@given(instance=jPQL::DeleteClause_strategy)
+@given(instance=jPQL_DeleteClause_strategy)
 @settings(max_examples=50)
-def test_jpql::deleteclause_instantiation(instance):
-    assert isinstance(instance, jPQL::DeleteClause)
+def test_jpql_deleteclause_instantiation(instance):
+    assert isinstance(instance, jPQL_DeleteClause)
 
-@given(instance=jPQL::Literal_strategy)
+@given(instance=jPQL_Literal_strategy)
 @settings(max_examples=50)
-def test_jpql::literal_instantiation(instance):
-    assert isinstance(instance, jPQL::Literal)
+def test_jpql_literal_instantiation(instance):
+    assert isinstance(instance, jPQL_Literal)
 
 @given(instance=FromEntry_strategy)
 @settings(max_examples=50)
 def test_fromentry_instantiation(instance):
     assert isinstance(instance, FromEntry)
 
-@given(instance=jPQL::FromCollection_strategy)
+@given(instance=jPQL_FromCollection_strategy)
 @settings(max_examples=50)
-def test_jpql::fromcollection_instantiation(instance):
-    assert isinstance(instance, jPQL::FromCollection)
+def test_jpql_fromcollection_instantiation(instance):
+    assert isinstance(instance, jPQL_FromCollection)
 
-@given(instance=jPQL::FromClass_strategy)
+@given(instance=jPQL_FromClass_strategy)
 @settings(max_examples=50)
-def test_jpql::fromclass_instantiation(instance):
-    assert isinstance(instance, jPQL::FromClass)
-
-@given(instance=jPQL::FromClass_strategy)
-def test_jpql::fromclass_type_type(instance):
-    assert isinstance(instance.type, str)
+def test_jpql_fromclass_instantiation(instance):
+    assert isinstance(instance, jPQL_FromClass)
 
 
-@given(instance=jPQL::FromClass_strategy)
-def test_jpql::fromclass_type_setter(instance):
+
+@given(instance=jPQL_FromClass_strategy)
+def test_jpql_fromclass_type_setter(instance):
     original = instance.type
     instance.type = original
     assert instance.type == original
 
-@given(instance=jPQL::VariableDeclaration_strategy)
+@given(instance=jPQL_VariableDeclaration_strategy)
 @settings(max_examples=50)
-def test_jpql::variabledeclaration_instantiation(instance):
-    assert isinstance(instance, jPQL::VariableDeclaration)
-
-@given(instance=jPQL::VariableDeclaration_strategy)
-def test_jpql::variabledeclaration_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_jpql_variabledeclaration_instantiation(instance):
+    assert isinstance(instance, jPQL_VariableDeclaration)
 
 
-@given(instance=jPQL::VariableDeclaration_strategy)
-def test_jpql::variabledeclaration_name_setter(instance):
+
+@given(instance=jPQL_VariableDeclaration_strategy)
+def test_jpql_variabledeclaration_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=jPQL::UpdateClause_strategy)
+@given(instance=jPQL_UpdateClause_strategy)
 @settings(max_examples=50)
-def test_jpql::updateclause_instantiation(instance):
-    assert isinstance(instance, jPQL::UpdateClause)
+def test_jpql_updateclause_instantiation(instance):
+    assert isinstance(instance, jPQL_UpdateClause)
 
-@given(instance=jPQL::OrderBySpec_strategy)
+@given(instance=jPQL_OrderBySpec_strategy)
 @settings(max_examples=50)
-def test_jpql::orderbyspec_instantiation(instance):
-    assert isinstance(instance, jPQL::OrderBySpec)
+def test_jpql_orderbyspec_instantiation(instance):
+    assert isinstance(instance, jPQL_OrderBySpec)
 
-@given(instance=jPQL::Expression_strategy)
+@given(instance=jPQL_Expression_strategy)
 @settings(max_examples=50)
-def test_jpql::expression_instantiation(instance):
-    assert isinstance(instance, jPQL::Expression)
-
-@given(instance=jPQL::Expression_strategy)
-def test_jpql::expression_unaryOperator_type(instance):
-    assert isinstance(instance.unaryOperator, str)
+def test_jpql_expression_instantiation(instance):
+    assert isinstance(instance, jPQL_Expression)
 
 
-@given(instance=jPQL::Expression_strategy)
-def test_jpql::expression_unaryOperator_setter(instance):
+
+@given(instance=jPQL_Expression_strategy)
+def test_jpql_expression_unaryOperator_setter(instance):
     original = instance.unaryOperator
     instance.unaryOperator = original
     assert instance.unaryOperator == original
 
-@given(instance=jPQL::Expression_strategy)
-def test_jpql::expression_isNot_type(instance):
-    assert isinstance(instance.isNot, bool)
 
 
-@given(instance=jPQL::Expression_strategy)
-def test_jpql::expression_isNot_setter(instance):
+@given(instance=jPQL_Expression_strategy)
+def test_jpql_expression_isNot_setter(instance):
     original = instance.isNot
     instance.isNot = original
     assert instance.isNot == original
 
-@given(instance=jPQL::HavingClause_strategy)
+@given(instance=jPQL_HavingClause_strategy)
 @settings(max_examples=50)
-def test_jpql::havingclause_instantiation(instance):
-    assert isinstance(instance, jPQL::HavingClause)
+def test_jpql_havingclause_instantiation(instance):
+    assert isinstance(instance, jPQL_HavingClause)
 
-@given(instance=jPQL::AliasAttributeExpression_strategy)
+@given(instance=jPQL_AliasAttributeExpression_strategy)
 @settings(max_examples=50)
-def test_jpql::aliasattributeexpression_instantiation(instance):
-    assert isinstance(instance, jPQL::AliasAttributeExpression)
-
-@given(instance=jPQL::AliasAttributeExpression_strategy)
-def test_jpql::aliasattributeexpression_direction_type(instance):
-    assert isinstance(instance.direction, str)
+def test_jpql_aliasattributeexpression_instantiation(instance):
+    assert isinstance(instance, jPQL_AliasAttributeExpression)
 
 
-@given(instance=jPQL::AliasAttributeExpression_strategy)
-def test_jpql::aliasattributeexpression_direction_setter(instance):
+
+@given(instance=jPQL_AliasAttributeExpression_strategy)
+def test_jpql_aliasattributeexpression_direction_setter(instance):
     original = instance.direction
     instance.direction = original
     assert instance.direction == original
 
-@given(instance=jPQL::AliasAttributeExpression_strategy)
-def test_jpql::aliasattributeexpression_attributes_type(instance):
-    assert isinstance(instance.attributes, str)
 
 
-@given(instance=jPQL::AliasAttributeExpression_strategy)
-def test_jpql::aliasattributeexpression_attributes_setter(instance):
+@given(instance=jPQL_AliasAttributeExpression_strategy)
+def test_jpql_aliasattributeexpression_attributes_setter(instance):
     original = instance.attributes
     instance.attributes = original
     assert instance.attributes == original
 
-@given(instance=jPQL::OrderByClause_strategy)
+@given(instance=jPQL_OrderByClause_strategy)
 @settings(max_examples=50)
-def test_jpql::orderbyclause_instantiation(instance):
-    assert isinstance(instance, jPQL::OrderByClause)
+def test_jpql_orderbyclause_instantiation(instance):
+    assert isinstance(instance, jPQL_OrderByClause)
 
-@given(instance=jPQL::GroupByClause_strategy)
+@given(instance=jPQL_GroupByClause_strategy)
 @settings(max_examples=50)
-def test_jpql::groupbyclause_instantiation(instance):
-    assert isinstance(instance, jPQL::GroupByClause)
+def test_jpql_groupbyclause_instantiation(instance):
+    assert isinstance(instance, jPQL_GroupByClause)
 
-@given(instance=jPQL::FromClause_strategy)
+@given(instance=jPQL_FromClause_strategy)
 @settings(max_examples=50)
-def test_jpql::fromclause_instantiation(instance):
-    assert isinstance(instance, jPQL::FromClause)
+def test_jpql_fromclause_instantiation(instance):
+    assert isinstance(instance, jPQL_FromClause)
 
-@given(instance=jPQL::SelectClause_strategy)
+@given(instance=jPQL_SelectClause_strategy)
 @settings(max_examples=50)
-def test_jpql::selectclause_instantiation(instance):
-    assert isinstance(instance, jPQL::SelectClause)
-
-@given(instance=jPQL::SelectClause_strategy)
-def test_jpql::selectclause_isDistinct_type(instance):
-    assert isinstance(instance.isDistinct, bool)
+def test_jpql_selectclause_instantiation(instance):
+    assert isinstance(instance, jPQL_SelectClause)
 
 
-@given(instance=jPQL::SelectClause_strategy)
-def test_jpql::selectclause_isDistinct_setter(instance):
+
+@given(instance=jPQL_SelectClause_strategy)
+def test_jpql_selectclause_isDistinct_setter(instance):
     original = instance.isDistinct
     instance.isDistinct = original
     assert instance.isDistinct == original
@@ -1986,52 +1914,52 @@ def test_jpql::selectclause_isDistinct_setter(instance):
 def test_expressionterm_instantiation(instance):
     assert isinstance(instance, ExpressionTerm)
 
-@given(instance=jPQL::Variable_strategy)
+@given(instance=jPQL_Variable_strategy)
 @settings(max_examples=50)
-def test_jpql::variable_instantiation(instance):
-    assert isinstance(instance, jPQL::Variable)
+def test_jpql_variable_instantiation(instance):
+    assert isinstance(instance, jPQL_Variable)
 
 @given(instance=JPQLQuery_strategy)
 @settings(max_examples=50)
 def test_jpqlquery_instantiation(instance):
     assert isinstance(instance, JPQLQuery)
 
-@given(instance=jPQL::DeleteStatement_strategy)
+@given(instance=jPQL_UpdateStatement_strategy)
 @settings(max_examples=50)
-def test_jpql::deletestatement_instantiation(instance):
-    assert isinstance(instance, jPQL::DeleteStatement)
+def test_jpql_updatestatement_instantiation(instance):
+    assert isinstance(instance, jPQL_UpdateStatement)
 
-@given(instance=jPQL::UpdateStatement_strategy)
+@given(instance=jPQL_DeleteStatement_strategy)
 @settings(max_examples=50)
-def test_jpql::updatestatement_instantiation(instance):
-    assert isinstance(instance, jPQL::UpdateStatement)
+def test_jpql_deletestatement_instantiation(instance):
+    assert isinstance(instance, jPQL_DeleteStatement)
 
-@given(instance=jPQL::SelectStatement_strategy)
+@given(instance=jPQL_SelectStatement_strategy)
 @settings(max_examples=50)
-def test_jpql::selectstatement_instantiation(instance):
-    assert isinstance(instance, jPQL::SelectStatement)
+def test_jpql_selectstatement_instantiation(instance):
+    assert isinstance(instance, jPQL_SelectStatement)
 
-@given(instance=jPQL::WhereClause_strategy)
+@given(instance=jPQL_WhereClause_strategy)
 @settings(max_examples=50)
-def test_jpql::whereclause_instantiation(instance):
-    assert isinstance(instance, jPQL::WhereClause)
+def test_jpql_whereclause_instantiation(instance):
+    assert isinstance(instance, jPQL_WhereClause)
 
-@given(instance=jPQL::UpdateItem_strategy)
+@given(instance=jPQL_UpdateItem_strategy)
 @settings(max_examples=50)
-def test_jpql::updateitem_instantiation(instance):
-    assert isinstance(instance, jPQL::UpdateItem)
+def test_jpql_updateitem_instantiation(instance):
+    assert isinstance(instance, jPQL_UpdateItem)
 
-@given(instance=jPQL::FromEntry_strategy)
+@given(instance=jPQL_FromEntry_strategy)
 @settings(max_examples=50)
-def test_jpql::fromentry_instantiation(instance):
-    assert isinstance(instance, jPQL::FromEntry)
+def test_jpql_fromentry_instantiation(instance):
+    assert isinstance(instance, jPQL_FromEntry)
 
-@given(instance=jPQL::SetClause_strategy)
+@given(instance=jPQL_SetClause_strategy)
 @settings(max_examples=50)
-def test_jpql::setclause_instantiation(instance):
-    assert isinstance(instance, jPQL::SetClause)
+def test_jpql_setclause_instantiation(instance):
+    assert isinstance(instance, jPQL_SetClause)
 
-@given(instance=jPQL::JPQLQuery_strategy)
+@given(instance=jPQL_JPQLQuery_strategy)
 @settings(max_examples=50)
-def test_jpql::jpqlquery_instantiation(instance):
-    assert isinstance(instance, jPQL::JPQLQuery)
+def test_jpql_jpqlquery_instantiation(instance):
+    assert isinstance(instance, jPQL_JPQLQuery)

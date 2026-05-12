@@ -3,11 +3,11 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    AB::A,
-    AB::B,
+from python_code import (
+    AB_A,
+    AB_B,
 )
 
 # =============================================================================
@@ -16,23 +16,23 @@ from classes import (
 
 
 
-def test_ab::a_is_not_abstract():
-    assert not inspect.isabstract(AB::A)
+def test_ab_a_is_not_abstract():
+    assert not inspect.isabstract(AB_A)
 
 
-def test_ab::a_constructor_exists():
-    assert callable(AB::A.__init__)
+def test_ab_a_constructor_exists():
+    assert callable(AB_A.__init__)
 
 
-def test_ab::a_constructor_args():
-    sig = inspect.signature(AB::A.__init__)
+def test_ab_a_constructor_args():
+    sig = inspect.signature(AB_A.__init__)
     params = list(sig.parameters.keys())
     assert "i" in params, "Missing parameter 'i'"
 
-def test_ab::a_has_i():
-    assert hasattr(AB::A, "i")
+def test_ab_a_has_i():
+    assert hasattr(AB_A, "i")
     descriptor = None
-    for klass in AB::A.__mro__:
+    for klass in AB_A.__mro__:
         if "i" in klass.__dict__:
             descriptor = klass.__dict__["i"]
             break
@@ -40,23 +40,23 @@ def test_ab::a_has_i():
 
 
 
-def test_ab::b_is_not_abstract():
-    assert not inspect.isabstract(AB::B)
+def test_ab_b_is_not_abstract():
+    assert not inspect.isabstract(AB_B)
 
 
-def test_ab::b_constructor_exists():
-    assert callable(AB::B.__init__)
+def test_ab_b_constructor_exists():
+    assert callable(AB_B.__init__)
 
 
-def test_ab::b_constructor_args():
-    sig = inspect.signature(AB::B.__init__)
+def test_ab_b_constructor_args():
+    sig = inspect.signature(AB_B.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_ab::b_has_name():
-    assert hasattr(AB::B, "name")
+def test_ab_b_has_name():
+    assert hasattr(AB_B, "name")
     descriptor = None
-    for klass in AB::B.__mro__:
+    for klass in AB_B.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -74,45 +74,39 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-AB::A_strategy = st.builds(
-    AB::A,
+AB_A_strategy = st.builds(
+    AB_A,
     i=
         st.integers()
 )
-AB::B_strategy = st.builds(
-    AB::B,
+AB_B_strategy = st.builds(
+    AB_B,
     name=
         safe_text
 )
 
-@given(instance=AB::A_strategy)
+@given(instance=AB_A_strategy)
 @settings(max_examples=50)
-def test_ab::a_instantiation(instance):
-    assert isinstance(instance, AB::A)
-
-@given(instance=AB::A_strategy)
-def test_ab::a_i_type(instance):
-    assert isinstance(instance.i, int)
+def test_ab_a_instantiation(instance):
+    assert isinstance(instance, AB_A)
 
 
-@given(instance=AB::A_strategy)
-def test_ab::a_i_setter(instance):
+
+@given(instance=AB_A_strategy)
+def test_ab_a_i_setter(instance):
     original = instance.i
     instance.i = original
     assert instance.i == original
 
-@given(instance=AB::B_strategy)
+@given(instance=AB_B_strategy)
 @settings(max_examples=50)
-def test_ab::b_instantiation(instance):
-    assert isinstance(instance, AB::B)
-
-@given(instance=AB::B_strategy)
-def test_ab::b_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_ab_b_instantiation(instance):
+    assert isinstance(instance, AB_B)
 
 
-@given(instance=AB::B_strategy)
-def test_ab::b_name_setter(instance):
+
+@given(instance=AB_B_strategy)
+def test_ab_b_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original

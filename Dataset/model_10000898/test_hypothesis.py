@@ -3,14 +3,12 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
 from python_code import (
     MyClass,
     Receive_Payment_UseCase,
     Reserve_a_Ticket_UseCase,
-    Travel_Agent_Actor,
-    User___Passenger_Actor,
     Travel_Agent_Fee_UseCase,
     Pay_Travel_Agent_UseCase,
     Invalid_Details_UseCase,
@@ -25,6 +23,8 @@ from python_code import (
     Create_Account_UseCase,
     Register__Login_UseCase,
     Airline_Agency_Actor,
+    Travel_Agent_Actor,
+    User___Passenger_Actor,
 )
 
 # =============================================================================
@@ -71,34 +71,6 @@ def test_reserve_a_ticket_usecase_constructor_exists():
 
 def test_reserve_a_ticket_usecase_constructor_args():
     sig = inspect.signature(Reserve_a_Ticket_UseCase.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_travel_agent_actor_is_not_abstract():
-    assert not inspect.isabstract(Travel_Agent_Actor)
-
-
-def test_travel_agent_actor_constructor_exists():
-    assert callable(Travel_Agent_Actor.__init__)
-
-
-def test_travel_agent_actor_constructor_args():
-    sig = inspect.signature(Travel_Agent_Actor.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_user___passenger_actor_is_not_abstract():
-    assert not inspect.isabstract(User___Passenger_Actor)
-
-
-def test_user___passenger_actor_constructor_exists():
-    assert callable(User___Passenger_Actor.__init__)
-
-
-def test_user___passenger_actor_constructor_args():
-    sig = inspect.signature(User___Passenger_Actor.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -298,6 +270,34 @@ def test_airline_agency_actor_constructor_args():
     params = list(sig.parameters.keys())
 
 
+
+def test_travel_agent_actor_is_not_abstract():
+    assert not inspect.isabstract(Travel_Agent_Actor)
+
+
+def test_travel_agent_actor_constructor_exists():
+    assert callable(Travel_Agent_Actor.__init__)
+
+
+def test_travel_agent_actor_constructor_args():
+    sig = inspect.signature(Travel_Agent_Actor.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_user___passenger_actor_is_not_abstract():
+    assert not inspect.isabstract(User___Passenger_Actor)
+
+
+def test_user___passenger_actor_constructor_exists():
+    assert callable(User___Passenger_Actor.__init__)
+
+
+def test_user___passenger_actor_constructor_args():
+    sig = inspect.signature(User___Passenger_Actor.__init__)
+    params = list(sig.parameters.keys())
+
+
 # =============================================================================
 # HYPOTHESIS STRATEGIES
 # =============================================================================
@@ -317,12 +317,6 @@ Receive_Payment_UseCase_strategy = st.builds(
 )
 Reserve_a_Ticket_UseCase_strategy = st.builds(
     Reserve_a_Ticket_UseCase,
-)
-Travel_Agent_Actor_strategy = st.builds(
-    Travel_Agent_Actor,
-)
-User___Passenger_Actor_strategy = st.builds(
-    User___Passenger_Actor,
 )
 Travel_Agent_Fee_UseCase_strategy = st.builds(
     Travel_Agent_Fee_UseCase,
@@ -366,6 +360,12 @@ Register__Login_UseCase_strategy = st.builds(
 Airline_Agency_Actor_strategy = st.builds(
     Airline_Agency_Actor,
 )
+Travel_Agent_Actor_strategy = st.builds(
+    Travel_Agent_Actor,
+)
+User___Passenger_Actor_strategy = st.builds(
+    User___Passenger_Actor,
+)
 
 @given(instance=MyClass_strategy)
 @settings(max_examples=50)
@@ -381,16 +381,6 @@ def test_receive_payment_usecase_instantiation(instance):
 @settings(max_examples=50)
 def test_reserve_a_ticket_usecase_instantiation(instance):
     assert isinstance(instance, Reserve_a_Ticket_UseCase)
-
-@given(instance=Travel_Agent_Actor_strategy)
-@settings(max_examples=50)
-def test_travel_agent_actor_instantiation(instance):
-    assert isinstance(instance, Travel_Agent_Actor)
-
-@given(instance=User___Passenger_Actor_strategy)
-@settings(max_examples=50)
-def test_user___passenger_actor_instantiation(instance):
-    assert isinstance(instance, User___Passenger_Actor)
 
 @given(instance=Travel_Agent_Fee_UseCase_strategy)
 @settings(max_examples=50)
@@ -461,3 +451,13 @@ def test_register__login_usecase_instantiation(instance):
 @settings(max_examples=50)
 def test_airline_agency_actor_instantiation(instance):
     assert isinstance(instance, Airline_Agency_Actor)
+
+@given(instance=Travel_Agent_Actor_strategy)
+@settings(max_examples=50)
+def test_travel_agent_actor_instantiation(instance):
+    assert isinstance(instance, Travel_Agent_Actor)
+
+@given(instance=User___Passenger_Actor_strategy)
+@settings(max_examples=50)
+def test_user___passenger_actor_instantiation(instance):
+    assert isinstance(instance, User___Passenger_Actor)

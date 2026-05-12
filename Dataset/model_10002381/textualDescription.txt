@@ -1,0 +1,8 @@
+The model has 4 class(es).
+The class 'Table' has the following attributes: 'avaliable' of type bool; 'numSeats' of type int; 'table_id' of type str.
+The class 'ReservationManagementSystem' has the following attributes: 'bookings' of type str.
+The class 'Booking' has the following attributes: 'contact_no' of type int; 'booking_id' of type int; 'startTime' of type str; 'endTime' of type str; 'email_id' of type str; 'reservedTables' of type str; 'customer_name' of type str; 'date' of type date.
+The class 'CustomerUI' has no attributes.
+'Booking' (role 'reservedBy5', cardinality 0..*) is associated with 'Table' (role 'Table_Booking_04', cardinality 0..*).
+'ReservationManagementSystem' (role 'booking2', cardinality 0..*) is associated with 'Booking' (role 'ReservationManagementSystem_Booking_13', cardinality 0..*).
+'ReservationManagementSystem' (role 'interacts1', cardinality 0..*) is associated with 'CustomerUI' (role 'CustomerUI_ReservationManagementSystem_00', cardinality 0..*).

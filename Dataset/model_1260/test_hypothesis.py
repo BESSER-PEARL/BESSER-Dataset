@@ -3,12 +3,12 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     NamedElement,
-    family::Family,
-    family::NamedElement,
+    family_Family,
+    family_NamedElement,
 )
 
 # =============================================================================
@@ -31,67 +31,67 @@ def test_namedelement_constructor_args():
 
 
 
-def test_family::family_is_not_abstract():
-    assert not inspect.isabstract(family::Family)
+def test_family_family_is_not_abstract():
+    assert not inspect.isabstract(family_Family)
 
 
-def test_family::family_constructor_exists():
-    assert callable(family::Family.__init__)
+def test_family_family_constructor_exists():
+    assert callable(family_Family.__init__)
 
 
-def test_family::family_constructor_args():
-    sig = inspect.signature(family::Family.__init__)
+def test_family_family_constructor_args():
+    sig = inspect.signature(family_Family.__init__)
     params = list(sig.parameters.keys())
+    assert "father" in params, "Missing parameter 'father'"
     assert "mother" in params, "Missing parameter 'mother'"
     assert "children" in params, "Missing parameter 'children'"
-    assert "father" in params, "Missing parameter 'father'"
 
-def test_family::family_has_mother():
-    assert hasattr(family::Family, "mother")
+def test_family_family_has_father():
+    assert hasattr(family_Family, "father")
     descriptor = None
-    for klass in family::Family.__mro__:
-        if "mother" in klass.__dict__:
-            descriptor = klass.__dict__["mother"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_family::family_has_children():
-    assert hasattr(family::Family, "children")
-    descriptor = None
-    for klass in family::Family.__mro__:
-        if "children" in klass.__dict__:
-            descriptor = klass.__dict__["children"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_family::family_has_father():
-    assert hasattr(family::Family, "father")
-    descriptor = None
-    for klass in family::Family.__mro__:
+    for klass in family_Family.__mro__:
         if "father" in klass.__dict__:
             descriptor = klass.__dict__["father"]
             break
     assert isinstance(descriptor, property)
 
+def test_family_family_has_mother():
+    assert hasattr(family_Family, "mother")
+    descriptor = None
+    for klass in family_Family.__mro__:
+        if "mother" in klass.__dict__:
+            descriptor = klass.__dict__["mother"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_family_family_has_children():
+    assert hasattr(family_Family, "children")
+    descriptor = None
+    for klass in family_Family.__mro__:
+        if "children" in klass.__dict__:
+            descriptor = klass.__dict__["children"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_family::namedelement_is_not_abstract():
-    assert not inspect.isabstract(family::NamedElement)
+
+def test_family_namedelement_is_not_abstract():
+    assert not inspect.isabstract(family_NamedElement)
 
 
-def test_family::namedelement_constructor_exists():
-    assert callable(family::NamedElement.__init__)
+def test_family_namedelement_constructor_exists():
+    assert callable(family_NamedElement.__init__)
 
 
-def test_family::namedelement_constructor_args():
-    sig = inspect.signature(family::NamedElement.__init__)
+def test_family_namedelement_constructor_args():
+    sig = inspect.signature(family_NamedElement.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_family::namedelement_has_name():
-    assert hasattr(family::NamedElement, "name")
+def test_family_namedelement_has_name():
+    assert hasattr(family_NamedElement, "name")
     descriptor = None
-    for klass in family::NamedElement.__mro__:
+    for klass in family_NamedElement.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -112,17 +112,17 @@ safe_text = st.text(
 NamedElement_strategy = st.builds(
     NamedElement,
 )
-family::Family_strategy = st.builds(
-    family::Family,
+family_Family_strategy = st.builds(
+    family_Family,
+    father=
+        safe_text,
     mother=
         safe_text,
     children=
-        safe_text,
-    father=
         safe_text
 )
-family::NamedElement_strategy = st.builds(
-    family::NamedElement,
+family_NamedElement_strategy = st.builds(
+    family_NamedElement,
     name=
         safe_text
 )
@@ -132,56 +132,44 @@ family::NamedElement_strategy = st.builds(
 def test_namedelement_instantiation(instance):
     assert isinstance(instance, NamedElement)
 
-@given(instance=family::Family_strategy)
+@given(instance=family_Family_strategy)
 @settings(max_examples=50)
-def test_family::family_instantiation(instance):
-    assert isinstance(instance, family::Family)
-
-@given(instance=family::Family_strategy)
-def test_family::family_mother_type(instance):
-    assert isinstance(instance.mother, str)
+def test_family_family_instantiation(instance):
+    assert isinstance(instance, family_Family)
 
 
-@given(instance=family::Family_strategy)
-def test_family::family_mother_setter(instance):
-    original = instance.mother
-    instance.mother = original
-    assert instance.mother == original
 
-@given(instance=family::Family_strategy)
-def test_family::family_children_type(instance):
-    assert isinstance(instance.children, str)
-
-
-@given(instance=family::Family_strategy)
-def test_family::family_children_setter(instance):
-    original = instance.children
-    instance.children = original
-    assert instance.children == original
-
-@given(instance=family::Family_strategy)
-def test_family::family_father_type(instance):
-    assert isinstance(instance.father, str)
-
-
-@given(instance=family::Family_strategy)
-def test_family::family_father_setter(instance):
+@given(instance=family_Family_strategy)
+def test_family_family_father_setter(instance):
     original = instance.father
     instance.father = original
     assert instance.father == original
 
-@given(instance=family::NamedElement_strategy)
+
+
+@given(instance=family_Family_strategy)
+def test_family_family_mother_setter(instance):
+    original = instance.mother
+    instance.mother = original
+    assert instance.mother == original
+
+
+
+@given(instance=family_Family_strategy)
+def test_family_family_children_setter(instance):
+    original = instance.children
+    instance.children = original
+    assert instance.children == original
+
+@given(instance=family_NamedElement_strategy)
 @settings(max_examples=50)
-def test_family::namedelement_instantiation(instance):
-    assert isinstance(instance, family::NamedElement)
-
-@given(instance=family::NamedElement_strategy)
-def test_family::namedelement_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_family_namedelement_instantiation(instance):
+    assert isinstance(instance, family_NamedElement)
 
 
-@given(instance=family::NamedElement_strategy)
-def test_family::namedelement_name_setter(instance):
+
+@given(instance=family_NamedElement_strategy)
+def test_family_namedelement_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original

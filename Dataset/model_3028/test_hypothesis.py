@@ -3,27 +3,31 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    ElementarySymbol,
-    dbl::IdSymbol,
-    L1SyntaxExpression,
-    dbl::PlainSymbolReference,
-    dbl::CallPart,
-    Annotation,
-    PredefinedId,
-    dbl::MetaLiteral,
-    dbl::SizeOfArray,
-    dbl::AnnotationLiteral,
-    dbl::SuperLiteral,
-    dbl::TypeLiteral,
-    dbl::MeLiteral,
-    dbl::PredefinedId,
+from python_code import (
+    Module,
+    Class,
+    dbl_ExpansionPart,
+    Variable,
+    dbl_CreateIdStatement,
+    QuotedCode,
+    dbl_QuotedModuleContent,
+    dbl_QuotedClassContent,
+    dbl_QuotedStatements,
+    dbl_QuotedExpression,
+    dbl_QuotedCode,
+    ExpansionPart,
+    dbl_ExpandVariablePart,
+    dbl_ExpandTextPart,
+    PlainSymbolReference,
+    L2SyntaxExpression,
+    dbl_SymbolSequence,
+    dbl_PredefinedId,
     VariableAccess,
-    dbl::MetaAccess,
+    dbl_MetaAccess,
     ElementAccess,
-    dbl::TypeAccess,
+    dbl_TypeAccess,
     L3Expr,
     L4Expr,
     L5Expr,
@@ -31,166 +35,162 @@ from classes import (
     L7Expr,
     L8Expr,
     BinaryOperator,
-    dbl::Greater,
-    dbl::LessEqual,
-    dbl::Minus,
-    dbl::InstanceOf,
-    dbl::Plus,
-    dbl::GreaterEqual,
-    dbl::And,
-    dbl::Equal,
-    dbl::NotEqual,
-    dbl::Mul,
-    dbl::Less,
-    dbl::Or,
+    dbl_And,
+    dbl_Equal,
+    dbl_GreaterEqual,
+    dbl_Plus,
+    dbl_Mul,
+    dbl_Minus,
+    dbl_LessEqual,
+    dbl_InstanceOf,
+    dbl_NotEqual,
+    dbl_Less,
+    dbl_Greater,
+    dbl_Or,
     L1Expr,
-    dbl::TrueLiteral,
-    dbl::StringLiteral,
-    dbl::NullLiteral,
-    dbl::ActiveLiteral,
-    dbl::TimeLiteral,
-    dbl::FalseLiteral,
-    dbl::DoubleLiteral,
-    dbl::IntLiteral,
+    dbl_NullLiteral,
+    dbl_IntLiteral,
+    dbl_FalseLiteral,
+    dbl_ActiveLiteral,
+    dbl_TimeLiteral,
+    dbl_TrueLiteral,
+    dbl_StringLiteral,
+    dbl_DoubleLiteral,
     L2Expr,
     UnaryOperator,
-    dbl::Not,
-    dbl::Neg,
-    dbl::Div,
-    dbl::Mod,
-    dbl::SwitchCase,
+    dbl_Not,
+    dbl_Neg,
+    dbl_Div,
+    dbl_Mod,
+    dbl_SwitchCase,
     LoopStatement,
-    dbl::WhileStatement,
+    dbl_WhileStatement,
     Expression,
-    dbl::BinaryOperator,
-    dbl::L3Expr,
-    dbl::L7Expr,
-    dbl::ElementAccess,
-    dbl::UnaryOperator,
-    dbl::ParseExpr,
-    dbl::L2Expr,
-    dbl::L9Expr,
-    dbl::L8Expr,
-    dbl::L6Expr,
-    dbl::L5Expr,
-    dbl::L4Expr,
-    dbl::L1Expr,
-    dbl::LocalScope,
+    dbl_ExpandExpression,
+    dbl_L3Expr,
+    dbl_L4Expr,
+    dbl_BinaryOperator,
+    dbl_L6Expr,
+    dbl_CodeQuoteExpression,
+    dbl_ParseExpr,
+    dbl_L7Expr,
+    dbl_MetaExpr,
+    dbl_ElementAccess,
+    dbl_L9Expr,
+    dbl_L5Expr,
+    dbl_UnaryOperator,
+    dbl_L2Expr,
+    dbl_L8Expr,
+    dbl_L1Expr,
+    dbl_LocalScope,
     AnnotateableElement,
-    dbl::VariableAccess,
+    dbl_VariableAccess,
     Statement,
-    dbl::IfStatement,
-    dbl::SimpleStatement,
-    dbl::LoopStatement,
-    dbl::NamedElement,
+    dbl_TestStatement,
+    dbl_SimpleStatement,
+    dbl_ExpandStatement,
+    dbl_IfStatement,
+    dbl_LoopStatement,
+    dbl_NamedElement,
     SimpleStatement,
-    dbl::Yield,
-    dbl::Terminate,
-    dbl::YieldTo,
-    dbl::ActivateObject,
-    dbl::BreakStatement,
-    dbl::ContinueStatement,
-    dbl::Print,
-    dbl::Wait,
-    dbl::Return,
-    dbl::FunctionCall,
-    dbl::WaitUntil,
-    dbl::Assignment,
-    dbl::SwitchStatement,
-    dbl::Advance,
-    dbl::Reactivate,
+    dbl_SwitchStatement,
+    dbl_ActivateObject,
+    dbl_ExpansionStatement,
+    dbl_TargetStatement,
+    dbl_Assignment,
+    dbl_Return,
+    dbl_Wait,
+    dbl_Yield,
+    dbl_Print,
+    dbl_Reactivate,
+    dbl_ContinueStatement,
+    dbl_Terminate,
+    dbl_WaitUntil,
+    dbl_FunctionCall,
+    dbl_BreakStatement,
+    dbl_YieldTo,
+    dbl_Advance,
     AbstractVariable,
     TypedElement,
-    dbl::CreateObject,
-    dbl::Cast,
+    dbl_Cast,
+    dbl_CreateObject,
     PrimitiveType,
-    dbl::BoolType,
-    dbl::IntType,
-    dbl::StringType,
-    dbl::DoubleType,
-    dbl::VoidType,
+    dbl_DoubleType,
+    dbl_BoolType,
+    dbl_StringType,
+    dbl_IntType,
+    dbl_VoidType,
     Type,
-    dbl::IdExpr,
-    dbl::PrimitiveType,
-    dbl::TypedElement,
-    dbl::ArrayDimension,
-    dbl::Type,
+    dbl_IdExpr,
+    dbl_PrimitiveType,
+    dbl_TypedElement,
+    dbl_ArrayDimension,
+    dbl_Type,
     Concept,
-    dbl::SuperClassSpecification,
-    dbl::NativeBinding,
-    dbl::Parameter,
+    dbl_SuperClassSpecification,
+    dbl_NativeBinding,
+    dbl_Parameter,
     LocalScope,
-    dbl::Constructor,
-    dbl::LocalScopeStatement,
-    dbl::ForStatement,
+    dbl_ForStatement,
+    dbl_LocalScopeStatement,
+    dbl_Constructor,
     ConstructiveExtensionAtContentExtensionPoint,
-    dbl::Import,
-    dbl::Model,
+    dbl_Import,
+    dbl_Model,
     Construct,
     NamedElement,
-    dbl::Class,
-    dbl::Module,
-    dbl::AbstractVariable,
-    dbl::ExtensibleElement,
+    dbl_Class,
+    dbl_StructuralSymbolReference,
+    dbl_AbstractVariable,
+    dbl_Pattern,
+    dbl_Module,
+    dbl_ExtensibleElement,
     ConstructiveExtension,
-    dbl::ClassContentExtension,
-    dbl::ModuleContentExtension,
-    dbl::ConstructiveExtensionAtContentExtensionPoint,
+    dbl_ClassContentExtension,
+    dbl_ModuleContentExtension,
+    dbl_ConstructiveExtensionAtContentExtensionPoint,
     ExtensibleElement,
-    dbl::SyntaxDefinition,
-    dbl::Expression,
-    dbl::ExtensionSemantics,
-    dbl::Statement,
-    dbl::Extension,
-    dbl::ConstructiveExtension,
-    dbl::AnnotateableElement,
-    dbl::AnnotationItem,
-    dbl::Annotation,
-    dbl::Variable,
-    dbl::Function,
-    dbl::ExpandExpr,
-    dbl::Construct,
-    dbl::TestStatement,
-    dbl::Pattern,
-    Module,
-    Class,
-    dbl::ExpansionPart,
-    dbl::ExpansionStatement,
-    Variable,
-    dbl::CreateIdStatement,
-    dbl::TargetStatement,
-    dbl::MetaExpr,
-    QuotedCode,
-    dbl::QuotedModuleContent,
-    dbl::QuotedStatements,
-    dbl::QuotedClassContent,
-    dbl::QuotedExpression,
-    dbl::QuotedCode,
-    dbl::CodeQuoteExpression,
-    dbl::ExpandStatement,
-    dbl::ExpandExpression,
-    ExpansionPart,
-    dbl::ExpandVariablePart,
-    dbl::ExpandTextPart,
-    PlainSymbolReference,
-    dbl::StructuralSymbolReference,
-    L2SyntaxExpression,
-    dbl::SymbolSequence,
+    dbl_SyntaxDefinition,
+    dbl_Expression,
+    dbl_Statement,
+    dbl_Extension,
+    dbl_ExtensionSemantics,
+    dbl_ConstructiveExtension,
+    dbl_AnnotateableElement,
+    dbl_AnnotationItem,
+    dbl_Annotation,
+    dbl_Variable,
+    dbl_Function,
+    dbl_ExpandExpr,
+    dbl_Construct,
     SyntaxExpression,
-    dbl::L1SyntaxExpression,
-    dbl::L2SyntaxExpression,
-    dbl::L3SyntaxExpression,
-    dbl::SyntaxExpression,
+    dbl_L1SyntaxExpression,
+    dbl_L2SyntaxExpression,
+    dbl_L3SyntaxExpression,
+    dbl_SyntaxExpression,
     ComplexSymbol,
-    dbl::Concept,
-    dbl::MetaSymbol,
+    dbl_MetaSymbol,
+    dbl_Concept,
     SyntaxSymbolClassifier,
-    dbl::ElementarySymbol,
-    dbl::ComplexSymbol,
-    dbl::SyntaxSymbolClassifier,
-    dbl::Keyword,
-    dbl::StringSymbol,
-    dbl::IntSymbol,
+    dbl_ComplexSymbol,
+    dbl_SyntaxSymbolClassifier,
+    ElementarySymbol,
+    dbl_StringSymbol,
+    dbl_Keyword,
+    dbl_IntSymbol,
+    dbl_IdSymbol,
+    dbl_ElementarySymbol,
+    L1SyntaxExpression,
+    dbl_PlainSymbolReference,
+    dbl_CallPart,
+    Annotation,
+    PredefinedId,
+    dbl_MetaLiteral,
+    dbl_SuperLiteral,
+    dbl_TypeLiteral,
+    dbl_AnnotationLiteral,
+    dbl_SizeOfArray,
+    dbl_MeLiteral,
 )
 
 # =============================================================================
@@ -199,198 +199,264 @@ from classes import (
 
 
 
-def test_elementarysymbol_is_not_abstract():
-    assert not inspect.isabstract(ElementarySymbol)
+def test_module_is_not_abstract():
+    assert not inspect.isabstract(Module)
 
 
-def test_elementarysymbol_constructor_exists():
-    assert callable(ElementarySymbol.__init__)
+def test_module_constructor_exists():
+    assert callable(Module.__init__)
 
 
-def test_elementarysymbol_constructor_args():
-    sig = inspect.signature(ElementarySymbol.__init__)
+def test_module_constructor_args():
+    sig = inspect.signature(Module.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_dbl::idsymbol_is_not_abstract():
-    assert not inspect.isabstract(dbl::IdSymbol)
+def test_class_is_not_abstract():
+    assert not inspect.isabstract(Class)
 
 
-def test_dbl::idsymbol_constructor_exists():
-    assert callable(dbl::IdSymbol.__init__)
+def test_class_constructor_exists():
+    assert callable(Class.__init__)
 
 
-def test_dbl::idsymbol_constructor_args():
-    sig = inspect.signature(dbl::IdSymbol.__init__)
+def test_class_constructor_args():
+    sig = inspect.signature(Class.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_l1syntaxexpression_is_not_abstract():
-    assert not inspect.isabstract(L1SyntaxExpression)
+def test_dbl_expansionpart_is_not_abstract():
+    assert not inspect.isabstract(dbl_ExpansionPart)
 
 
-def test_l1syntaxexpression_constructor_exists():
-    assert callable(L1SyntaxExpression.__init__)
+def test_dbl_expansionpart_constructor_exists():
+    assert callable(dbl_ExpansionPart.__init__)
 
 
-def test_l1syntaxexpression_constructor_args():
-    sig = inspect.signature(L1SyntaxExpression.__init__)
+def test_dbl_expansionpart_constructor_args():
+    sig = inspect.signature(dbl_ExpansionPart.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_dbl::plainsymbolreference_is_not_abstract():
-    assert not inspect.isabstract(dbl::PlainSymbolReference)
+def test_variable_is_not_abstract():
+    assert not inspect.isabstract(Variable)
 
 
-def test_dbl::plainsymbolreference_constructor_exists():
-    assert callable(dbl::PlainSymbolReference.__init__)
+def test_variable_constructor_exists():
+    assert callable(Variable.__init__)
 
 
-def test_dbl::plainsymbolreference_constructor_args():
-    sig = inspect.signature(dbl::PlainSymbolReference.__init__)
+def test_variable_constructor_args():
+    sig = inspect.signature(Variable.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_dbl::callpart_is_not_abstract():
-    assert not inspect.isabstract(dbl::CallPart)
+def test_dbl_createidstatement_is_not_abstract():
+    assert not inspect.isabstract(dbl_CreateIdStatement)
 
 
-def test_dbl::callpart_constructor_exists():
-    assert callable(dbl::CallPart.__init__)
+def test_dbl_createidstatement_constructor_exists():
+    assert callable(dbl_CreateIdStatement.__init__)
 
 
-def test_dbl::callpart_constructor_args():
-    sig = inspect.signature(dbl::CallPart.__init__)
+def test_dbl_createidstatement_constructor_args():
+    sig = inspect.signature(dbl_CreateIdStatement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_annotation_is_not_abstract():
-    assert not inspect.isabstract(Annotation)
+def test_quotedcode_is_not_abstract():
+    assert not inspect.isabstract(QuotedCode)
 
 
-def test_annotation_constructor_exists():
-    assert callable(Annotation.__init__)
+def test_quotedcode_constructor_exists():
+    assert callable(QuotedCode.__init__)
 
 
-def test_annotation_constructor_args():
-    sig = inspect.signature(Annotation.__init__)
+def test_quotedcode_constructor_args():
+    sig = inspect.signature(QuotedCode.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_predefinedid_is_not_abstract():
-    assert not inspect.isabstract(PredefinedId)
+def test_dbl_quotedmodulecontent_is_not_abstract():
+    assert not inspect.isabstract(dbl_QuotedModuleContent)
 
 
-def test_predefinedid_constructor_exists():
-    assert callable(PredefinedId.__init__)
+def test_dbl_quotedmodulecontent_constructor_exists():
+    assert callable(dbl_QuotedModuleContent.__init__)
 
 
-def test_predefinedid_constructor_args():
-    sig = inspect.signature(PredefinedId.__init__)
+def test_dbl_quotedmodulecontent_constructor_args():
+    sig = inspect.signature(dbl_QuotedModuleContent.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_dbl::metaliteral_is_not_abstract():
-    assert not inspect.isabstract(dbl::MetaLiteral)
+def test_dbl_quotedclasscontent_is_not_abstract():
+    assert not inspect.isabstract(dbl_QuotedClassContent)
 
 
-def test_dbl::metaliteral_constructor_exists():
-    assert callable(dbl::MetaLiteral.__init__)
+def test_dbl_quotedclasscontent_constructor_exists():
+    assert callable(dbl_QuotedClassContent.__init__)
 
 
-def test_dbl::metaliteral_constructor_args():
-    sig = inspect.signature(dbl::MetaLiteral.__init__)
+def test_dbl_quotedclasscontent_constructor_args():
+    sig = inspect.signature(dbl_QuotedClassContent.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_dbl::sizeofarray_is_not_abstract():
-    assert not inspect.isabstract(dbl::SizeOfArray)
+def test_dbl_quotedstatements_is_not_abstract():
+    assert not inspect.isabstract(dbl_QuotedStatements)
 
 
-def test_dbl::sizeofarray_constructor_exists():
-    assert callable(dbl::SizeOfArray.__init__)
+def test_dbl_quotedstatements_constructor_exists():
+    assert callable(dbl_QuotedStatements.__init__)
 
 
-def test_dbl::sizeofarray_constructor_args():
-    sig = inspect.signature(dbl::SizeOfArray.__init__)
+def test_dbl_quotedstatements_constructor_args():
+    sig = inspect.signature(dbl_QuotedStatements.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_dbl::annotationliteral_is_not_abstract():
-    assert not inspect.isabstract(dbl::AnnotationLiteral)
+def test_dbl_quotedexpression_is_not_abstract():
+    assert not inspect.isabstract(dbl_QuotedExpression)
 
 
-def test_dbl::annotationliteral_constructor_exists():
-    assert callable(dbl::AnnotationLiteral.__init__)
+def test_dbl_quotedexpression_constructor_exists():
+    assert callable(dbl_QuotedExpression.__init__)
 
 
-def test_dbl::annotationliteral_constructor_args():
-    sig = inspect.signature(dbl::AnnotationLiteral.__init__)
+def test_dbl_quotedexpression_constructor_args():
+    sig = inspect.signature(dbl_QuotedExpression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_dbl::superliteral_is_not_abstract():
-    assert not inspect.isabstract(dbl::SuperLiteral)
+def test_dbl_quotedcode_is_not_abstract():
+    assert not inspect.isabstract(dbl_QuotedCode)
 
 
-def test_dbl::superliteral_constructor_exists():
-    assert callable(dbl::SuperLiteral.__init__)
+def test_dbl_quotedcode_constructor_exists():
+    assert callable(dbl_QuotedCode.__init__)
 
 
-def test_dbl::superliteral_constructor_args():
-    sig = inspect.signature(dbl::SuperLiteral.__init__)
+def test_dbl_quotedcode_constructor_args():
+    sig = inspect.signature(dbl_QuotedCode.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_dbl::typeliteral_is_not_abstract():
-    assert not inspect.isabstract(dbl::TypeLiteral)
+def test_expansionpart_is_not_abstract():
+    assert not inspect.isabstract(ExpansionPart)
 
 
-def test_dbl::typeliteral_constructor_exists():
-    assert callable(dbl::TypeLiteral.__init__)
+def test_expansionpart_constructor_exists():
+    assert callable(ExpansionPart.__init__)
 
 
-def test_dbl::typeliteral_constructor_args():
-    sig = inspect.signature(dbl::TypeLiteral.__init__)
+def test_expansionpart_constructor_args():
+    sig = inspect.signature(ExpansionPart.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_dbl::meliteral_is_not_abstract():
-    assert not inspect.isabstract(dbl::MeLiteral)
+def test_dbl_expandvariablepart_is_not_abstract():
+    assert not inspect.isabstract(dbl_ExpandVariablePart)
 
 
-def test_dbl::meliteral_constructor_exists():
-    assert callable(dbl::MeLiteral.__init__)
+def test_dbl_expandvariablepart_constructor_exists():
+    assert callable(dbl_ExpandVariablePart.__init__)
 
 
-def test_dbl::meliteral_constructor_args():
-    sig = inspect.signature(dbl::MeLiteral.__init__)
+def test_dbl_expandvariablepart_constructor_args():
+    sig = inspect.signature(dbl_ExpandVariablePart.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_dbl::predefinedid_is_not_abstract():
-    assert not inspect.isabstract(dbl::PredefinedId)
+def test_dbl_expandtextpart_is_not_abstract():
+    assert not inspect.isabstract(dbl_ExpandTextPart)
 
 
-def test_dbl::predefinedid_constructor_exists():
-    assert callable(dbl::PredefinedId.__init__)
+def test_dbl_expandtextpart_constructor_exists():
+    assert callable(dbl_ExpandTextPart.__init__)
 
 
-def test_dbl::predefinedid_constructor_args():
-    sig = inspect.signature(dbl::PredefinedId.__init__)
+def test_dbl_expandtextpart_constructor_args():
+    sig = inspect.signature(dbl_ExpandTextPart.__init__)
+    params = list(sig.parameters.keys())
+    assert "text" in params, "Missing parameter 'text'"
+
+def test_dbl_expandtextpart_has_text():
+    assert hasattr(dbl_ExpandTextPart, "text")
+    descriptor = None
+    for klass in dbl_ExpandTextPart.__mro__:
+        if "text" in klass.__dict__:
+            descriptor = klass.__dict__["text"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_plainsymbolreference_is_not_abstract():
+    assert not inspect.isabstract(PlainSymbolReference)
+
+
+def test_plainsymbolreference_constructor_exists():
+    assert callable(PlainSymbolReference.__init__)
+
+
+def test_plainsymbolreference_constructor_args():
+    sig = inspect.signature(PlainSymbolReference.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_l2syntaxexpression_is_not_abstract():
+    assert not inspect.isabstract(L2SyntaxExpression)
+
+
+def test_l2syntaxexpression_constructor_exists():
+    assert callable(L2SyntaxExpression.__init__)
+
+
+def test_l2syntaxexpression_constructor_args():
+    sig = inspect.signature(L2SyntaxExpression.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_dbl_symbolsequence_is_not_abstract():
+    assert not inspect.isabstract(dbl_SymbolSequence)
+
+
+def test_dbl_symbolsequence_constructor_exists():
+    assert callable(dbl_SymbolSequence.__init__)
+
+
+def test_dbl_symbolsequence_constructor_args():
+    sig = inspect.signature(dbl_SymbolSequence.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_dbl_predefinedid_is_not_abstract():
+    assert not inspect.isabstract(dbl_PredefinedId)
+
+
+def test_dbl_predefinedid_constructor_exists():
+    assert callable(dbl_PredefinedId.__init__)
+
+
+def test_dbl_predefinedid_constructor_args():
+    sig = inspect.signature(dbl_PredefinedId.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -409,16 +475,16 @@ def test_variableaccess_constructor_args():
 
 
 
-def test_dbl::metaaccess_is_not_abstract():
-    assert not inspect.isabstract(dbl::MetaAccess)
+def test_dbl_metaaccess_is_not_abstract():
+    assert not inspect.isabstract(dbl_MetaAccess)
 
 
-def test_dbl::metaaccess_constructor_exists():
-    assert callable(dbl::MetaAccess.__init__)
+def test_dbl_metaaccess_constructor_exists():
+    assert callable(dbl_MetaAccess.__init__)
 
 
-def test_dbl::metaaccess_constructor_args():
-    sig = inspect.signature(dbl::MetaAccess.__init__)
+def test_dbl_metaaccess_constructor_args():
+    sig = inspect.signature(dbl_MetaAccess.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -437,16 +503,16 @@ def test_elementaccess_constructor_args():
 
 
 
-def test_dbl::typeaccess_is_not_abstract():
-    assert not inspect.isabstract(dbl::TypeAccess)
+def test_dbl_typeaccess_is_not_abstract():
+    assert not inspect.isabstract(dbl_TypeAccess)
 
 
-def test_dbl::typeaccess_constructor_exists():
-    assert callable(dbl::TypeAccess.__init__)
+def test_dbl_typeaccess_constructor_exists():
+    assert callable(dbl_TypeAccess.__init__)
 
 
-def test_dbl::typeaccess_constructor_args():
-    sig = inspect.signature(dbl::TypeAccess.__init__)
+def test_dbl_typeaccess_constructor_args():
+    sig = inspect.signature(dbl_TypeAccess.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -549,170 +615,170 @@ def test_binaryoperator_constructor_args():
 
 
 
-def test_dbl::greater_is_not_abstract():
-    assert not inspect.isabstract(dbl::Greater)
+def test_dbl_and_is_not_abstract():
+    assert not inspect.isabstract(dbl_And)
 
 
-def test_dbl::greater_constructor_exists():
-    assert callable(dbl::Greater.__init__)
+def test_dbl_and_constructor_exists():
+    assert callable(dbl_And.__init__)
 
 
-def test_dbl::greater_constructor_args():
-    sig = inspect.signature(dbl::Greater.__init__)
+def test_dbl_and_constructor_args():
+    sig = inspect.signature(dbl_And.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_dbl::lessequal_is_not_abstract():
-    assert not inspect.isabstract(dbl::LessEqual)
+def test_dbl_equal_is_not_abstract():
+    assert not inspect.isabstract(dbl_Equal)
 
 
-def test_dbl::lessequal_constructor_exists():
-    assert callable(dbl::LessEqual.__init__)
+def test_dbl_equal_constructor_exists():
+    assert callable(dbl_Equal.__init__)
 
 
-def test_dbl::lessequal_constructor_args():
-    sig = inspect.signature(dbl::LessEqual.__init__)
+def test_dbl_equal_constructor_args():
+    sig = inspect.signature(dbl_Equal.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_dbl::minus_is_not_abstract():
-    assert not inspect.isabstract(dbl::Minus)
+def test_dbl_greaterequal_is_not_abstract():
+    assert not inspect.isabstract(dbl_GreaterEqual)
 
 
-def test_dbl::minus_constructor_exists():
-    assert callable(dbl::Minus.__init__)
+def test_dbl_greaterequal_constructor_exists():
+    assert callable(dbl_GreaterEqual.__init__)
 
 
-def test_dbl::minus_constructor_args():
-    sig = inspect.signature(dbl::Minus.__init__)
+def test_dbl_greaterequal_constructor_args():
+    sig = inspect.signature(dbl_GreaterEqual.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_dbl::instanceof_is_not_abstract():
-    assert not inspect.isabstract(dbl::InstanceOf)
+def test_dbl_plus_is_not_abstract():
+    assert not inspect.isabstract(dbl_Plus)
 
 
-def test_dbl::instanceof_constructor_exists():
-    assert callable(dbl::InstanceOf.__init__)
+def test_dbl_plus_constructor_exists():
+    assert callable(dbl_Plus.__init__)
 
 
-def test_dbl::instanceof_constructor_args():
-    sig = inspect.signature(dbl::InstanceOf.__init__)
+def test_dbl_plus_constructor_args():
+    sig = inspect.signature(dbl_Plus.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_dbl::plus_is_not_abstract():
-    assert not inspect.isabstract(dbl::Plus)
+def test_dbl_mul_is_not_abstract():
+    assert not inspect.isabstract(dbl_Mul)
 
 
-def test_dbl::plus_constructor_exists():
-    assert callable(dbl::Plus.__init__)
+def test_dbl_mul_constructor_exists():
+    assert callable(dbl_Mul.__init__)
 
 
-def test_dbl::plus_constructor_args():
-    sig = inspect.signature(dbl::Plus.__init__)
+def test_dbl_mul_constructor_args():
+    sig = inspect.signature(dbl_Mul.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_dbl::greaterequal_is_not_abstract():
-    assert not inspect.isabstract(dbl::GreaterEqual)
+def test_dbl_minus_is_not_abstract():
+    assert not inspect.isabstract(dbl_Minus)
 
 
-def test_dbl::greaterequal_constructor_exists():
-    assert callable(dbl::GreaterEqual.__init__)
+def test_dbl_minus_constructor_exists():
+    assert callable(dbl_Minus.__init__)
 
 
-def test_dbl::greaterequal_constructor_args():
-    sig = inspect.signature(dbl::GreaterEqual.__init__)
+def test_dbl_minus_constructor_args():
+    sig = inspect.signature(dbl_Minus.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_dbl::and_is_not_abstract():
-    assert not inspect.isabstract(dbl::And)
+def test_dbl_lessequal_is_not_abstract():
+    assert not inspect.isabstract(dbl_LessEqual)
 
 
-def test_dbl::and_constructor_exists():
-    assert callable(dbl::And.__init__)
+def test_dbl_lessequal_constructor_exists():
+    assert callable(dbl_LessEqual.__init__)
 
 
-def test_dbl::and_constructor_args():
-    sig = inspect.signature(dbl::And.__init__)
+def test_dbl_lessequal_constructor_args():
+    sig = inspect.signature(dbl_LessEqual.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_dbl::equal_is_not_abstract():
-    assert not inspect.isabstract(dbl::Equal)
+def test_dbl_instanceof_is_not_abstract():
+    assert not inspect.isabstract(dbl_InstanceOf)
 
 
-def test_dbl::equal_constructor_exists():
-    assert callable(dbl::Equal.__init__)
+def test_dbl_instanceof_constructor_exists():
+    assert callable(dbl_InstanceOf.__init__)
 
 
-def test_dbl::equal_constructor_args():
-    sig = inspect.signature(dbl::Equal.__init__)
+def test_dbl_instanceof_constructor_args():
+    sig = inspect.signature(dbl_InstanceOf.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_dbl::notequal_is_not_abstract():
-    assert not inspect.isabstract(dbl::NotEqual)
+def test_dbl_notequal_is_not_abstract():
+    assert not inspect.isabstract(dbl_NotEqual)
 
 
-def test_dbl::notequal_constructor_exists():
-    assert callable(dbl::NotEqual.__init__)
+def test_dbl_notequal_constructor_exists():
+    assert callable(dbl_NotEqual.__init__)
 
 
-def test_dbl::notequal_constructor_args():
-    sig = inspect.signature(dbl::NotEqual.__init__)
+def test_dbl_notequal_constructor_args():
+    sig = inspect.signature(dbl_NotEqual.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_dbl::mul_is_not_abstract():
-    assert not inspect.isabstract(dbl::Mul)
+def test_dbl_less_is_not_abstract():
+    assert not inspect.isabstract(dbl_Less)
 
 
-def test_dbl::mul_constructor_exists():
-    assert callable(dbl::Mul.__init__)
+def test_dbl_less_constructor_exists():
+    assert callable(dbl_Less.__init__)
 
 
-def test_dbl::mul_constructor_args():
-    sig = inspect.signature(dbl::Mul.__init__)
+def test_dbl_less_constructor_args():
+    sig = inspect.signature(dbl_Less.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_dbl::less_is_not_abstract():
-    assert not inspect.isabstract(dbl::Less)
+def test_dbl_greater_is_not_abstract():
+    assert not inspect.isabstract(dbl_Greater)
 
 
-def test_dbl::less_constructor_exists():
-    assert callable(dbl::Less.__init__)
+def test_dbl_greater_constructor_exists():
+    assert callable(dbl_Greater.__init__)
 
 
-def test_dbl::less_constructor_args():
-    sig = inspect.signature(dbl::Less.__init__)
+def test_dbl_greater_constructor_args():
+    sig = inspect.signature(dbl_Greater.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_dbl::or_is_not_abstract():
-    assert not inspect.isabstract(dbl::Or)
+def test_dbl_or_is_not_abstract():
+    assert not inspect.isabstract(dbl_Or)
 
 
-def test_dbl::or_constructor_exists():
-    assert callable(dbl::Or.__init__)
+def test_dbl_or_constructor_exists():
+    assert callable(dbl_Or.__init__)
 
 
-def test_dbl::or_constructor_args():
-    sig = inspect.signature(dbl::Or.__init__)
+def test_dbl_or_constructor_args():
+    sig = inspect.signature(dbl_Or.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -731,37 +797,37 @@ def test_l1expr_constructor_args():
 
 
 
-def test_dbl::trueliteral_is_not_abstract():
-    assert not inspect.isabstract(dbl::TrueLiteral)
+def test_dbl_nullliteral_is_not_abstract():
+    assert not inspect.isabstract(dbl_NullLiteral)
 
 
-def test_dbl::trueliteral_constructor_exists():
-    assert callable(dbl::TrueLiteral.__init__)
+def test_dbl_nullliteral_constructor_exists():
+    assert callable(dbl_NullLiteral.__init__)
 
 
-def test_dbl::trueliteral_constructor_args():
-    sig = inspect.signature(dbl::TrueLiteral.__init__)
+def test_dbl_nullliteral_constructor_args():
+    sig = inspect.signature(dbl_NullLiteral.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_dbl::stringliteral_is_not_abstract():
-    assert not inspect.isabstract(dbl::StringLiteral)
+def test_dbl_intliteral_is_not_abstract():
+    assert not inspect.isabstract(dbl_IntLiteral)
 
 
-def test_dbl::stringliteral_constructor_exists():
-    assert callable(dbl::StringLiteral.__init__)
+def test_dbl_intliteral_constructor_exists():
+    assert callable(dbl_IntLiteral.__init__)
 
 
-def test_dbl::stringliteral_constructor_args():
-    sig = inspect.signature(dbl::StringLiteral.__init__)
+def test_dbl_intliteral_constructor_args():
+    sig = inspect.signature(dbl_IntLiteral.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
 
-def test_dbl::stringliteral_has_value():
-    assert hasattr(dbl::StringLiteral, "value")
+def test_dbl_intliteral_has_value():
+    assert hasattr(dbl_IntLiteral, "value")
     descriptor = None
-    for klass in dbl::StringLiteral.__mro__:
+    for klass in dbl_IntLiteral.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -769,79 +835,79 @@ def test_dbl::stringliteral_has_value():
 
 
 
-def test_dbl::nullliteral_is_not_abstract():
-    assert not inspect.isabstract(dbl::NullLiteral)
+def test_dbl_falseliteral_is_not_abstract():
+    assert not inspect.isabstract(dbl_FalseLiteral)
 
 
-def test_dbl::nullliteral_constructor_exists():
-    assert callable(dbl::NullLiteral.__init__)
+def test_dbl_falseliteral_constructor_exists():
+    assert callable(dbl_FalseLiteral.__init__)
 
 
-def test_dbl::nullliteral_constructor_args():
-    sig = inspect.signature(dbl::NullLiteral.__init__)
+def test_dbl_falseliteral_constructor_args():
+    sig = inspect.signature(dbl_FalseLiteral.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_dbl::activeliteral_is_not_abstract():
-    assert not inspect.isabstract(dbl::ActiveLiteral)
+def test_dbl_activeliteral_is_not_abstract():
+    assert not inspect.isabstract(dbl_ActiveLiteral)
 
 
-def test_dbl::activeliteral_constructor_exists():
-    assert callable(dbl::ActiveLiteral.__init__)
+def test_dbl_activeliteral_constructor_exists():
+    assert callable(dbl_ActiveLiteral.__init__)
 
 
-def test_dbl::activeliteral_constructor_args():
-    sig = inspect.signature(dbl::ActiveLiteral.__init__)
+def test_dbl_activeliteral_constructor_args():
+    sig = inspect.signature(dbl_ActiveLiteral.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_dbl::timeliteral_is_not_abstract():
-    assert not inspect.isabstract(dbl::TimeLiteral)
+def test_dbl_timeliteral_is_not_abstract():
+    assert not inspect.isabstract(dbl_TimeLiteral)
 
 
-def test_dbl::timeliteral_constructor_exists():
-    assert callable(dbl::TimeLiteral.__init__)
+def test_dbl_timeliteral_constructor_exists():
+    assert callable(dbl_TimeLiteral.__init__)
 
 
-def test_dbl::timeliteral_constructor_args():
-    sig = inspect.signature(dbl::TimeLiteral.__init__)
+def test_dbl_timeliteral_constructor_args():
+    sig = inspect.signature(dbl_TimeLiteral.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_dbl::falseliteral_is_not_abstract():
-    assert not inspect.isabstract(dbl::FalseLiteral)
+def test_dbl_trueliteral_is_not_abstract():
+    assert not inspect.isabstract(dbl_TrueLiteral)
 
 
-def test_dbl::falseliteral_constructor_exists():
-    assert callable(dbl::FalseLiteral.__init__)
+def test_dbl_trueliteral_constructor_exists():
+    assert callable(dbl_TrueLiteral.__init__)
 
 
-def test_dbl::falseliteral_constructor_args():
-    sig = inspect.signature(dbl::FalseLiteral.__init__)
+def test_dbl_trueliteral_constructor_args():
+    sig = inspect.signature(dbl_TrueLiteral.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_dbl::doubleliteral_is_not_abstract():
-    assert not inspect.isabstract(dbl::DoubleLiteral)
+def test_dbl_stringliteral_is_not_abstract():
+    assert not inspect.isabstract(dbl_StringLiteral)
 
 
-def test_dbl::doubleliteral_constructor_exists():
-    assert callable(dbl::DoubleLiteral.__init__)
+def test_dbl_stringliteral_constructor_exists():
+    assert callable(dbl_StringLiteral.__init__)
 
 
-def test_dbl::doubleliteral_constructor_args():
-    sig = inspect.signature(dbl::DoubleLiteral.__init__)
+def test_dbl_stringliteral_constructor_args():
+    sig = inspect.signature(dbl_StringLiteral.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
 
-def test_dbl::doubleliteral_has_value():
-    assert hasattr(dbl::DoubleLiteral, "value")
+def test_dbl_stringliteral_has_value():
+    assert hasattr(dbl_StringLiteral, "value")
     descriptor = None
-    for klass in dbl::DoubleLiteral.__mro__:
+    for klass in dbl_StringLiteral.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -849,23 +915,23 @@ def test_dbl::doubleliteral_has_value():
 
 
 
-def test_dbl::intliteral_is_not_abstract():
-    assert not inspect.isabstract(dbl::IntLiteral)
+def test_dbl_doubleliteral_is_not_abstract():
+    assert not inspect.isabstract(dbl_DoubleLiteral)
 
 
-def test_dbl::intliteral_constructor_exists():
-    assert callable(dbl::IntLiteral.__init__)
+def test_dbl_doubleliteral_constructor_exists():
+    assert callable(dbl_DoubleLiteral.__init__)
 
 
-def test_dbl::intliteral_constructor_args():
-    sig = inspect.signature(dbl::IntLiteral.__init__)
+def test_dbl_doubleliteral_constructor_args():
+    sig = inspect.signature(dbl_DoubleLiteral.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
 
-def test_dbl::intliteral_has_value():
-    assert hasattr(dbl::IntLiteral, "value")
+def test_dbl_doubleliteral_has_value():
+    assert hasattr(dbl_DoubleLiteral, "value")
     descriptor = None
-    for klass in dbl::IntLiteral.__mro__:
+    for klass in dbl_DoubleLiteral.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -901,72 +967,72 @@ def test_unaryoperator_constructor_args():
 
 
 
-def test_dbl::not_is_not_abstract():
-    assert not inspect.isabstract(dbl::Not)
+def test_dbl_not_is_not_abstract():
+    assert not inspect.isabstract(dbl_Not)
 
 
-def test_dbl::not_constructor_exists():
-    assert callable(dbl::Not.__init__)
+def test_dbl_not_constructor_exists():
+    assert callable(dbl_Not.__init__)
 
 
-def test_dbl::not_constructor_args():
-    sig = inspect.signature(dbl::Not.__init__)
+def test_dbl_not_constructor_args():
+    sig = inspect.signature(dbl_Not.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_dbl::neg_is_not_abstract():
-    assert not inspect.isabstract(dbl::Neg)
+def test_dbl_neg_is_not_abstract():
+    assert not inspect.isabstract(dbl_Neg)
 
 
-def test_dbl::neg_constructor_exists():
-    assert callable(dbl::Neg.__init__)
+def test_dbl_neg_constructor_exists():
+    assert callable(dbl_Neg.__init__)
 
 
-def test_dbl::neg_constructor_args():
-    sig = inspect.signature(dbl::Neg.__init__)
+def test_dbl_neg_constructor_args():
+    sig = inspect.signature(dbl_Neg.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_dbl::div_is_not_abstract():
-    assert not inspect.isabstract(dbl::Div)
+def test_dbl_div_is_not_abstract():
+    assert not inspect.isabstract(dbl_Div)
 
 
-def test_dbl::div_constructor_exists():
-    assert callable(dbl::Div.__init__)
+def test_dbl_div_constructor_exists():
+    assert callable(dbl_Div.__init__)
 
 
-def test_dbl::div_constructor_args():
-    sig = inspect.signature(dbl::Div.__init__)
+def test_dbl_div_constructor_args():
+    sig = inspect.signature(dbl_Div.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_dbl::mod_is_not_abstract():
-    assert not inspect.isabstract(dbl::Mod)
+def test_dbl_mod_is_not_abstract():
+    assert not inspect.isabstract(dbl_Mod)
 
 
-def test_dbl::mod_constructor_exists():
-    assert callable(dbl::Mod.__init__)
+def test_dbl_mod_constructor_exists():
+    assert callable(dbl_Mod.__init__)
 
 
-def test_dbl::mod_constructor_args():
-    sig = inspect.signature(dbl::Mod.__init__)
+def test_dbl_mod_constructor_args():
+    sig = inspect.signature(dbl_Mod.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_dbl::switchcase_is_not_abstract():
-    assert not inspect.isabstract(dbl::SwitchCase)
+def test_dbl_switchcase_is_not_abstract():
+    assert not inspect.isabstract(dbl_SwitchCase)
 
 
-def test_dbl::switchcase_constructor_exists():
-    assert callable(dbl::SwitchCase.__init__)
+def test_dbl_switchcase_constructor_exists():
+    assert callable(dbl_SwitchCase.__init__)
 
 
-def test_dbl::switchcase_constructor_args():
-    sig = inspect.signature(dbl::SwitchCase.__init__)
+def test_dbl_switchcase_constructor_args():
+    sig = inspect.signature(dbl_SwitchCase.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -985,16 +1051,16 @@ def test_loopstatement_constructor_args():
 
 
 
-def test_dbl::whilestatement_is_not_abstract():
-    assert not inspect.isabstract(dbl::WhileStatement)
+def test_dbl_whilestatement_is_not_abstract():
+    assert not inspect.isabstract(dbl_WhileStatement)
 
 
-def test_dbl::whilestatement_constructor_exists():
-    assert callable(dbl::WhileStatement.__init__)
+def test_dbl_whilestatement_constructor_exists():
+    assert callable(dbl_WhileStatement.__init__)
 
 
-def test_dbl::whilestatement_constructor_args():
-    sig = inspect.signature(dbl::WhileStatement.__init__)
+def test_dbl_whilestatement_constructor_args():
+    sig = inspect.signature(dbl_WhileStatement.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1013,198 +1079,240 @@ def test_expression_constructor_args():
 
 
 
-def test_dbl::binaryoperator_is_not_abstract():
-    assert not inspect.isabstract(dbl::BinaryOperator)
+def test_dbl_expandexpression_is_not_abstract():
+    assert not inspect.isabstract(dbl_ExpandExpression)
 
 
-def test_dbl::binaryoperator_constructor_exists():
-    assert callable(dbl::BinaryOperator.__init__)
+def test_dbl_expandexpression_constructor_exists():
+    assert callable(dbl_ExpandExpression.__init__)
 
 
-def test_dbl::binaryoperator_constructor_args():
-    sig = inspect.signature(dbl::BinaryOperator.__init__)
+def test_dbl_expandexpression_constructor_args():
+    sig = inspect.signature(dbl_ExpandExpression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_dbl::l3expr_is_not_abstract():
-    assert not inspect.isabstract(dbl::L3Expr)
+def test_dbl_l3expr_is_not_abstract():
+    assert not inspect.isabstract(dbl_L3Expr)
 
 
-def test_dbl::l3expr_constructor_exists():
-    assert callable(dbl::L3Expr.__init__)
+def test_dbl_l3expr_constructor_exists():
+    assert callable(dbl_L3Expr.__init__)
 
 
-def test_dbl::l3expr_constructor_args():
-    sig = inspect.signature(dbl::L3Expr.__init__)
+def test_dbl_l3expr_constructor_args():
+    sig = inspect.signature(dbl_L3Expr.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_dbl::l7expr_is_not_abstract():
-    assert not inspect.isabstract(dbl::L7Expr)
+def test_dbl_l4expr_is_not_abstract():
+    assert not inspect.isabstract(dbl_L4Expr)
 
 
-def test_dbl::l7expr_constructor_exists():
-    assert callable(dbl::L7Expr.__init__)
+def test_dbl_l4expr_constructor_exists():
+    assert callable(dbl_L4Expr.__init__)
 
 
-def test_dbl::l7expr_constructor_args():
-    sig = inspect.signature(dbl::L7Expr.__init__)
+def test_dbl_l4expr_constructor_args():
+    sig = inspect.signature(dbl_L4Expr.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_dbl::elementaccess_is_not_abstract():
-    assert not inspect.isabstract(dbl::ElementAccess)
+def test_dbl_binaryoperator_is_not_abstract():
+    assert not inspect.isabstract(dbl_BinaryOperator)
 
 
-def test_dbl::elementaccess_constructor_exists():
-    assert callable(dbl::ElementAccess.__init__)
+def test_dbl_binaryoperator_constructor_exists():
+    assert callable(dbl_BinaryOperator.__init__)
 
 
-def test_dbl::elementaccess_constructor_args():
-    sig = inspect.signature(dbl::ElementAccess.__init__)
+def test_dbl_binaryoperator_constructor_args():
+    sig = inspect.signature(dbl_BinaryOperator.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_dbl::unaryoperator_is_not_abstract():
-    assert not inspect.isabstract(dbl::UnaryOperator)
+def test_dbl_l6expr_is_not_abstract():
+    assert not inspect.isabstract(dbl_L6Expr)
 
 
-def test_dbl::unaryoperator_constructor_exists():
-    assert callable(dbl::UnaryOperator.__init__)
+def test_dbl_l6expr_constructor_exists():
+    assert callable(dbl_L6Expr.__init__)
 
 
-def test_dbl::unaryoperator_constructor_args():
-    sig = inspect.signature(dbl::UnaryOperator.__init__)
+def test_dbl_l6expr_constructor_args():
+    sig = inspect.signature(dbl_L6Expr.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_dbl::parseexpr_is_not_abstract():
-    assert not inspect.isabstract(dbl::ParseExpr)
+def test_dbl_codequoteexpression_is_not_abstract():
+    assert not inspect.isabstract(dbl_CodeQuoteExpression)
 
 
-def test_dbl::parseexpr_constructor_exists():
-    assert callable(dbl::ParseExpr.__init__)
+def test_dbl_codequoteexpression_constructor_exists():
+    assert callable(dbl_CodeQuoteExpression.__init__)
 
 
-def test_dbl::parseexpr_constructor_args():
-    sig = inspect.signature(dbl::ParseExpr.__init__)
+def test_dbl_codequoteexpression_constructor_args():
+    sig = inspect.signature(dbl_CodeQuoteExpression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_dbl::l2expr_is_not_abstract():
-    assert not inspect.isabstract(dbl::L2Expr)
+def test_dbl_parseexpr_is_not_abstract():
+    assert not inspect.isabstract(dbl_ParseExpr)
 
 
-def test_dbl::l2expr_constructor_exists():
-    assert callable(dbl::L2Expr.__init__)
+def test_dbl_parseexpr_constructor_exists():
+    assert callable(dbl_ParseExpr.__init__)
 
 
-def test_dbl::l2expr_constructor_args():
-    sig = inspect.signature(dbl::L2Expr.__init__)
+def test_dbl_parseexpr_constructor_args():
+    sig = inspect.signature(dbl_ParseExpr.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_dbl::l9expr_is_not_abstract():
-    assert not inspect.isabstract(dbl::L9Expr)
+def test_dbl_l7expr_is_not_abstract():
+    assert not inspect.isabstract(dbl_L7Expr)
 
 
-def test_dbl::l9expr_constructor_exists():
-    assert callable(dbl::L9Expr.__init__)
+def test_dbl_l7expr_constructor_exists():
+    assert callable(dbl_L7Expr.__init__)
 
 
-def test_dbl::l9expr_constructor_args():
-    sig = inspect.signature(dbl::L9Expr.__init__)
+def test_dbl_l7expr_constructor_args():
+    sig = inspect.signature(dbl_L7Expr.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_dbl::l8expr_is_not_abstract():
-    assert not inspect.isabstract(dbl::L8Expr)
+def test_dbl_metaexpr_is_not_abstract():
+    assert not inspect.isabstract(dbl_MetaExpr)
 
 
-def test_dbl::l8expr_constructor_exists():
-    assert callable(dbl::L8Expr.__init__)
+def test_dbl_metaexpr_constructor_exists():
+    assert callable(dbl_MetaExpr.__init__)
 
 
-def test_dbl::l8expr_constructor_args():
-    sig = inspect.signature(dbl::L8Expr.__init__)
+def test_dbl_metaexpr_constructor_args():
+    sig = inspect.signature(dbl_MetaExpr.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_dbl::l6expr_is_not_abstract():
-    assert not inspect.isabstract(dbl::L6Expr)
+def test_dbl_elementaccess_is_not_abstract():
+    assert not inspect.isabstract(dbl_ElementAccess)
 
 
-def test_dbl::l6expr_constructor_exists():
-    assert callable(dbl::L6Expr.__init__)
+def test_dbl_elementaccess_constructor_exists():
+    assert callable(dbl_ElementAccess.__init__)
 
 
-def test_dbl::l6expr_constructor_args():
-    sig = inspect.signature(dbl::L6Expr.__init__)
+def test_dbl_elementaccess_constructor_args():
+    sig = inspect.signature(dbl_ElementAccess.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_dbl::l5expr_is_not_abstract():
-    assert not inspect.isabstract(dbl::L5Expr)
+def test_dbl_l9expr_is_not_abstract():
+    assert not inspect.isabstract(dbl_L9Expr)
 
 
-def test_dbl::l5expr_constructor_exists():
-    assert callable(dbl::L5Expr.__init__)
+def test_dbl_l9expr_constructor_exists():
+    assert callable(dbl_L9Expr.__init__)
 
 
-def test_dbl::l5expr_constructor_args():
-    sig = inspect.signature(dbl::L5Expr.__init__)
+def test_dbl_l9expr_constructor_args():
+    sig = inspect.signature(dbl_L9Expr.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_dbl::l4expr_is_not_abstract():
-    assert not inspect.isabstract(dbl::L4Expr)
+def test_dbl_l5expr_is_not_abstract():
+    assert not inspect.isabstract(dbl_L5Expr)
 
 
-def test_dbl::l4expr_constructor_exists():
-    assert callable(dbl::L4Expr.__init__)
+def test_dbl_l5expr_constructor_exists():
+    assert callable(dbl_L5Expr.__init__)
 
 
-def test_dbl::l4expr_constructor_args():
-    sig = inspect.signature(dbl::L4Expr.__init__)
+def test_dbl_l5expr_constructor_args():
+    sig = inspect.signature(dbl_L5Expr.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_dbl::l1expr_is_not_abstract():
-    assert not inspect.isabstract(dbl::L1Expr)
+def test_dbl_unaryoperator_is_not_abstract():
+    assert not inspect.isabstract(dbl_UnaryOperator)
 
 
-def test_dbl::l1expr_constructor_exists():
-    assert callable(dbl::L1Expr.__init__)
+def test_dbl_unaryoperator_constructor_exists():
+    assert callable(dbl_UnaryOperator.__init__)
 
 
-def test_dbl::l1expr_constructor_args():
-    sig = inspect.signature(dbl::L1Expr.__init__)
+def test_dbl_unaryoperator_constructor_args():
+    sig = inspect.signature(dbl_UnaryOperator.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_dbl::localscope_is_not_abstract():
-    assert not inspect.isabstract(dbl::LocalScope)
+def test_dbl_l2expr_is_not_abstract():
+    assert not inspect.isabstract(dbl_L2Expr)
 
 
-def test_dbl::localscope_constructor_exists():
-    assert callable(dbl::LocalScope.__init__)
+def test_dbl_l2expr_constructor_exists():
+    assert callable(dbl_L2Expr.__init__)
 
 
-def test_dbl::localscope_constructor_args():
-    sig = inspect.signature(dbl::LocalScope.__init__)
+def test_dbl_l2expr_constructor_args():
+    sig = inspect.signature(dbl_L2Expr.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_dbl_l8expr_is_not_abstract():
+    assert not inspect.isabstract(dbl_L8Expr)
+
+
+def test_dbl_l8expr_constructor_exists():
+    assert callable(dbl_L8Expr.__init__)
+
+
+def test_dbl_l8expr_constructor_args():
+    sig = inspect.signature(dbl_L8Expr.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_dbl_l1expr_is_not_abstract():
+    assert not inspect.isabstract(dbl_L1Expr)
+
+
+def test_dbl_l1expr_constructor_exists():
+    assert callable(dbl_L1Expr.__init__)
+
+
+def test_dbl_l1expr_constructor_args():
+    sig = inspect.signature(dbl_L1Expr.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_dbl_localscope_is_not_abstract():
+    assert not inspect.isabstract(dbl_LocalScope)
+
+
+def test_dbl_localscope_constructor_exists():
+    assert callable(dbl_LocalScope.__init__)
+
+
+def test_dbl_localscope_constructor_args():
+    sig = inspect.signature(dbl_LocalScope.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1223,16 +1331,16 @@ def test_annotateableelement_constructor_args():
 
 
 
-def test_dbl::variableaccess_is_not_abstract():
-    assert not inspect.isabstract(dbl::VariableAccess)
+def test_dbl_variableaccess_is_not_abstract():
+    assert not inspect.isabstract(dbl_VariableAccess)
 
 
-def test_dbl::variableaccess_constructor_exists():
-    assert callable(dbl::VariableAccess.__init__)
+def test_dbl_variableaccess_constructor_exists():
+    assert callable(dbl_VariableAccess.__init__)
 
 
-def test_dbl::variableaccess_constructor_args():
-    sig = inspect.signature(dbl::VariableAccess.__init__)
+def test_dbl_variableaccess_constructor_args():
+    sig = inspect.signature(dbl_VariableAccess.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1251,65 +1359,103 @@ def test_statement_constructor_args():
 
 
 
-def test_dbl::ifstatement_is_not_abstract():
-    assert not inspect.isabstract(dbl::IfStatement)
+def test_dbl_teststatement_is_not_abstract():
+    assert not inspect.isabstract(dbl_TestStatement)
 
 
-def test_dbl::ifstatement_constructor_exists():
-    assert callable(dbl::IfStatement.__init__)
+def test_dbl_teststatement_constructor_exists():
+    assert callable(dbl_TestStatement.__init__)
 
 
-def test_dbl::ifstatement_constructor_args():
-    sig = inspect.signature(dbl::IfStatement.__init__)
+def test_dbl_teststatement_constructor_args():
+    sig = inspect.signature(dbl_TestStatement.__init__)
+    params = list(sig.parameters.keys())
+    assert "value" in params, "Missing parameter 'value'"
+
+def test_dbl_teststatement_has_value():
+    assert hasattr(dbl_TestStatement, "value")
+    descriptor = None
+    for klass in dbl_TestStatement.__mro__:
+        if "value" in klass.__dict__:
+            descriptor = klass.__dict__["value"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_dbl_simplestatement_is_not_abstract():
+    assert not inspect.isabstract(dbl_SimpleStatement)
+
+
+def test_dbl_simplestatement_constructor_exists():
+    assert callable(dbl_SimpleStatement.__init__)
+
+
+def test_dbl_simplestatement_constructor_args():
+    sig = inspect.signature(dbl_SimpleStatement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_dbl::simplestatement_is_not_abstract():
-    assert not inspect.isabstract(dbl::SimpleStatement)
+def test_dbl_expandstatement_is_not_abstract():
+    assert not inspect.isabstract(dbl_ExpandStatement)
 
 
-def test_dbl::simplestatement_constructor_exists():
-    assert callable(dbl::SimpleStatement.__init__)
+def test_dbl_expandstatement_constructor_exists():
+    assert callable(dbl_ExpandStatement.__init__)
 
 
-def test_dbl::simplestatement_constructor_args():
-    sig = inspect.signature(dbl::SimpleStatement.__init__)
+def test_dbl_expandstatement_constructor_args():
+    sig = inspect.signature(dbl_ExpandStatement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_dbl::loopstatement_is_not_abstract():
-    assert not inspect.isabstract(dbl::LoopStatement)
+def test_dbl_ifstatement_is_not_abstract():
+    assert not inspect.isabstract(dbl_IfStatement)
 
 
-def test_dbl::loopstatement_constructor_exists():
-    assert callable(dbl::LoopStatement.__init__)
+def test_dbl_ifstatement_constructor_exists():
+    assert callable(dbl_IfStatement.__init__)
 
 
-def test_dbl::loopstatement_constructor_args():
-    sig = inspect.signature(dbl::LoopStatement.__init__)
+def test_dbl_ifstatement_constructor_args():
+    sig = inspect.signature(dbl_IfStatement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_dbl::namedelement_is_not_abstract():
-    assert not inspect.isabstract(dbl::NamedElement)
+def test_dbl_loopstatement_is_not_abstract():
+    assert not inspect.isabstract(dbl_LoopStatement)
 
 
-def test_dbl::namedelement_constructor_exists():
-    assert callable(dbl::NamedElement.__init__)
+def test_dbl_loopstatement_constructor_exists():
+    assert callable(dbl_LoopStatement.__init__)
 
 
-def test_dbl::namedelement_constructor_args():
-    sig = inspect.signature(dbl::NamedElement.__init__)
+def test_dbl_loopstatement_constructor_args():
+    sig = inspect.signature(dbl_LoopStatement.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_dbl_namedelement_is_not_abstract():
+    assert not inspect.isabstract(dbl_NamedElement)
+
+
+def test_dbl_namedelement_constructor_exists():
+    assert callable(dbl_NamedElement.__init__)
+
+
+def test_dbl_namedelement_constructor_args():
+    sig = inspect.signature(dbl_NamedElement.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_dbl::namedelement_has_name():
-    assert hasattr(dbl::NamedElement, "name")
+def test_dbl_namedelement_has_name():
+    assert hasattr(dbl_NamedElement, "name")
     descriptor = None
-    for klass in dbl::NamedElement.__mro__:
+    for klass in dbl_NamedElement.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -1331,65 +1477,37 @@ def test_simplestatement_constructor_args():
 
 
 
-def test_dbl::yield_is_not_abstract():
-    assert not inspect.isabstract(dbl::Yield)
+def test_dbl_switchstatement_is_not_abstract():
+    assert not inspect.isabstract(dbl_SwitchStatement)
 
 
-def test_dbl::yield_constructor_exists():
-    assert callable(dbl::Yield.__init__)
+def test_dbl_switchstatement_constructor_exists():
+    assert callable(dbl_SwitchStatement.__init__)
 
 
-def test_dbl::yield_constructor_args():
-    sig = inspect.signature(dbl::Yield.__init__)
+def test_dbl_switchstatement_constructor_args():
+    sig = inspect.signature(dbl_SwitchStatement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_dbl::terminate_is_not_abstract():
-    assert not inspect.isabstract(dbl::Terminate)
+def test_dbl_activateobject_is_not_abstract():
+    assert not inspect.isabstract(dbl_ActivateObject)
 
 
-def test_dbl::terminate_constructor_exists():
-    assert callable(dbl::Terminate.__init__)
+def test_dbl_activateobject_constructor_exists():
+    assert callable(dbl_ActivateObject.__init__)
 
 
-def test_dbl::terminate_constructor_args():
-    sig = inspect.signature(dbl::Terminate.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_dbl::yieldto_is_not_abstract():
-    assert not inspect.isabstract(dbl::YieldTo)
-
-
-def test_dbl::yieldto_constructor_exists():
-    assert callable(dbl::YieldTo.__init__)
-
-
-def test_dbl::yieldto_constructor_args():
-    sig = inspect.signature(dbl::YieldTo.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_dbl::activateobject_is_not_abstract():
-    assert not inspect.isabstract(dbl::ActivateObject)
-
-
-def test_dbl::activateobject_constructor_exists():
-    assert callable(dbl::ActivateObject.__init__)
-
-
-def test_dbl::activateobject_constructor_args():
-    sig = inspect.signature(dbl::ActivateObject.__init__)
+def test_dbl_activateobject_constructor_args():
+    sig = inspect.signature(dbl_ActivateObject.__init__)
     params = list(sig.parameters.keys())
     assert "priority" in params, "Missing parameter 'priority'"
 
-def test_dbl::activateobject_has_priority():
-    assert hasattr(dbl::ActivateObject, "priority")
+def test_dbl_activateobject_has_priority():
+    assert hasattr(dbl_ActivateObject, "priority")
     descriptor = None
-    for klass in dbl::ActivateObject.__mro__:
+    for klass in dbl_ActivateObject.__mro__:
         if "priority" in klass.__dict__:
             descriptor = klass.__dict__["priority"]
             break
@@ -1397,156 +1515,242 @@ def test_dbl::activateobject_has_priority():
 
 
 
-def test_dbl::breakstatement_is_not_abstract():
-    assert not inspect.isabstract(dbl::BreakStatement)
+def test_dbl_expansionstatement_is_not_abstract():
+    assert not inspect.isabstract(dbl_ExpansionStatement)
 
 
-def test_dbl::breakstatement_constructor_exists():
-    assert callable(dbl::BreakStatement.__init__)
+def test_dbl_expansionstatement_constructor_exists():
+    assert callable(dbl_ExpansionStatement.__init__)
 
 
-def test_dbl::breakstatement_constructor_args():
-    sig = inspect.signature(dbl::BreakStatement.__init__)
+def test_dbl_expansionstatement_constructor_args():
+    sig = inspect.signature(dbl_ExpansionStatement.__init__)
+    params = list(sig.parameters.keys())
+    assert "classContext" in params, "Missing parameter 'classContext'"
+    assert "functionContext" in params, "Missing parameter 'functionContext'"
+    assert "variableContext" in params, "Missing parameter 'variableContext'"
+
+def test_dbl_expansionstatement_has_classContext():
+    assert hasattr(dbl_ExpansionStatement, "classContext")
+    descriptor = None
+    for klass in dbl_ExpansionStatement.__mro__:
+        if "classContext" in klass.__dict__:
+            descriptor = klass.__dict__["classContext"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_dbl_expansionstatement_has_functionContext():
+    assert hasattr(dbl_ExpansionStatement, "functionContext")
+    descriptor = None
+    for klass in dbl_ExpansionStatement.__mro__:
+        if "functionContext" in klass.__dict__:
+            descriptor = klass.__dict__["functionContext"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_dbl_expansionstatement_has_variableContext():
+    assert hasattr(dbl_ExpansionStatement, "variableContext")
+    descriptor = None
+    for klass in dbl_ExpansionStatement.__mro__:
+        if "variableContext" in klass.__dict__:
+            descriptor = klass.__dict__["variableContext"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_dbl_targetstatement_is_not_abstract():
+    assert not inspect.isabstract(dbl_TargetStatement)
+
+
+def test_dbl_targetstatement_constructor_exists():
+    assert callable(dbl_TargetStatement.__init__)
+
+
+def test_dbl_targetstatement_constructor_args():
+    sig = inspect.signature(dbl_TargetStatement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_dbl::continuestatement_is_not_abstract():
-    assert not inspect.isabstract(dbl::ContinueStatement)
+def test_dbl_assignment_is_not_abstract():
+    assert not inspect.isabstract(dbl_Assignment)
 
 
-def test_dbl::continuestatement_constructor_exists():
-    assert callable(dbl::ContinueStatement.__init__)
+def test_dbl_assignment_constructor_exists():
+    assert callable(dbl_Assignment.__init__)
 
 
-def test_dbl::continuestatement_constructor_args():
-    sig = inspect.signature(dbl::ContinueStatement.__init__)
+def test_dbl_assignment_constructor_args():
+    sig = inspect.signature(dbl_Assignment.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_dbl::print_is_not_abstract():
-    assert not inspect.isabstract(dbl::Print)
+def test_dbl_return_is_not_abstract():
+    assert not inspect.isabstract(dbl_Return)
 
 
-def test_dbl::print_constructor_exists():
-    assert callable(dbl::Print.__init__)
+def test_dbl_return_constructor_exists():
+    assert callable(dbl_Return.__init__)
 
 
-def test_dbl::print_constructor_args():
-    sig = inspect.signature(dbl::Print.__init__)
+def test_dbl_return_constructor_args():
+    sig = inspect.signature(dbl_Return.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_dbl::wait_is_not_abstract():
-    assert not inspect.isabstract(dbl::Wait)
+def test_dbl_wait_is_not_abstract():
+    assert not inspect.isabstract(dbl_Wait)
 
 
-def test_dbl::wait_constructor_exists():
-    assert callable(dbl::Wait.__init__)
+def test_dbl_wait_constructor_exists():
+    assert callable(dbl_Wait.__init__)
 
 
-def test_dbl::wait_constructor_args():
-    sig = inspect.signature(dbl::Wait.__init__)
+def test_dbl_wait_constructor_args():
+    sig = inspect.signature(dbl_Wait.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_dbl::return_is_not_abstract():
-    assert not inspect.isabstract(dbl::Return)
+def test_dbl_yield_is_not_abstract():
+    assert not inspect.isabstract(dbl_Yield)
 
 
-def test_dbl::return_constructor_exists():
-    assert callable(dbl::Return.__init__)
+def test_dbl_yield_constructor_exists():
+    assert callable(dbl_Yield.__init__)
 
 
-def test_dbl::return_constructor_args():
-    sig = inspect.signature(dbl::Return.__init__)
+def test_dbl_yield_constructor_args():
+    sig = inspect.signature(dbl_Yield.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_dbl::functioncall_is_not_abstract():
-    assert not inspect.isabstract(dbl::FunctionCall)
+def test_dbl_print_is_not_abstract():
+    assert not inspect.isabstract(dbl_Print)
 
 
-def test_dbl::functioncall_constructor_exists():
-    assert callable(dbl::FunctionCall.__init__)
+def test_dbl_print_constructor_exists():
+    assert callable(dbl_Print.__init__)
 
 
-def test_dbl::functioncall_constructor_args():
-    sig = inspect.signature(dbl::FunctionCall.__init__)
+def test_dbl_print_constructor_args():
+    sig = inspect.signature(dbl_Print.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_dbl::waituntil_is_not_abstract():
-    assert not inspect.isabstract(dbl::WaitUntil)
+def test_dbl_reactivate_is_not_abstract():
+    assert not inspect.isabstract(dbl_Reactivate)
 
 
-def test_dbl::waituntil_constructor_exists():
-    assert callable(dbl::WaitUntil.__init__)
+def test_dbl_reactivate_constructor_exists():
+    assert callable(dbl_Reactivate.__init__)
 
 
-def test_dbl::waituntil_constructor_args():
-    sig = inspect.signature(dbl::WaitUntil.__init__)
+def test_dbl_reactivate_constructor_args():
+    sig = inspect.signature(dbl_Reactivate.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_dbl::assignment_is_not_abstract():
-    assert not inspect.isabstract(dbl::Assignment)
+def test_dbl_continuestatement_is_not_abstract():
+    assert not inspect.isabstract(dbl_ContinueStatement)
 
 
-def test_dbl::assignment_constructor_exists():
-    assert callable(dbl::Assignment.__init__)
+def test_dbl_continuestatement_constructor_exists():
+    assert callable(dbl_ContinueStatement.__init__)
 
 
-def test_dbl::assignment_constructor_args():
-    sig = inspect.signature(dbl::Assignment.__init__)
+def test_dbl_continuestatement_constructor_args():
+    sig = inspect.signature(dbl_ContinueStatement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_dbl::switchstatement_is_not_abstract():
-    assert not inspect.isabstract(dbl::SwitchStatement)
+def test_dbl_terminate_is_not_abstract():
+    assert not inspect.isabstract(dbl_Terminate)
 
 
-def test_dbl::switchstatement_constructor_exists():
-    assert callable(dbl::SwitchStatement.__init__)
+def test_dbl_terminate_constructor_exists():
+    assert callable(dbl_Terminate.__init__)
 
 
-def test_dbl::switchstatement_constructor_args():
-    sig = inspect.signature(dbl::SwitchStatement.__init__)
+def test_dbl_terminate_constructor_args():
+    sig = inspect.signature(dbl_Terminate.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_dbl::advance_is_not_abstract():
-    assert not inspect.isabstract(dbl::Advance)
+def test_dbl_waituntil_is_not_abstract():
+    assert not inspect.isabstract(dbl_WaitUntil)
 
 
-def test_dbl::advance_constructor_exists():
-    assert callable(dbl::Advance.__init__)
+def test_dbl_waituntil_constructor_exists():
+    assert callable(dbl_WaitUntil.__init__)
 
 
-def test_dbl::advance_constructor_args():
-    sig = inspect.signature(dbl::Advance.__init__)
+def test_dbl_waituntil_constructor_args():
+    sig = inspect.signature(dbl_WaitUntil.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_dbl::reactivate_is_not_abstract():
-    assert not inspect.isabstract(dbl::Reactivate)
+def test_dbl_functioncall_is_not_abstract():
+    assert not inspect.isabstract(dbl_FunctionCall)
 
 
-def test_dbl::reactivate_constructor_exists():
-    assert callable(dbl::Reactivate.__init__)
+def test_dbl_functioncall_constructor_exists():
+    assert callable(dbl_FunctionCall.__init__)
 
 
-def test_dbl::reactivate_constructor_args():
-    sig = inspect.signature(dbl::Reactivate.__init__)
+def test_dbl_functioncall_constructor_args():
+    sig = inspect.signature(dbl_FunctionCall.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_dbl_breakstatement_is_not_abstract():
+    assert not inspect.isabstract(dbl_BreakStatement)
+
+
+def test_dbl_breakstatement_constructor_exists():
+    assert callable(dbl_BreakStatement.__init__)
+
+
+def test_dbl_breakstatement_constructor_args():
+    sig = inspect.signature(dbl_BreakStatement.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_dbl_yieldto_is_not_abstract():
+    assert not inspect.isabstract(dbl_YieldTo)
+
+
+def test_dbl_yieldto_constructor_exists():
+    assert callable(dbl_YieldTo.__init__)
+
+
+def test_dbl_yieldto_constructor_args():
+    sig = inspect.signature(dbl_YieldTo.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_dbl_advance_is_not_abstract():
+    assert not inspect.isabstract(dbl_Advance)
+
+
+def test_dbl_advance_constructor_exists():
+    assert callable(dbl_Advance.__init__)
+
+
+def test_dbl_advance_constructor_args():
+    sig = inspect.signature(dbl_Advance.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1579,30 +1783,30 @@ def test_typedelement_constructor_args():
 
 
 
-def test_dbl::createobject_is_not_abstract():
-    assert not inspect.isabstract(dbl::CreateObject)
+def test_dbl_cast_is_not_abstract():
+    assert not inspect.isabstract(dbl_Cast)
 
 
-def test_dbl::createobject_constructor_exists():
-    assert callable(dbl::CreateObject.__init__)
+def test_dbl_cast_constructor_exists():
+    assert callable(dbl_Cast.__init__)
 
 
-def test_dbl::createobject_constructor_args():
-    sig = inspect.signature(dbl::CreateObject.__init__)
+def test_dbl_cast_constructor_args():
+    sig = inspect.signature(dbl_Cast.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_dbl::cast_is_not_abstract():
-    assert not inspect.isabstract(dbl::Cast)
+def test_dbl_createobject_is_not_abstract():
+    assert not inspect.isabstract(dbl_CreateObject)
 
 
-def test_dbl::cast_constructor_exists():
-    assert callable(dbl::Cast.__init__)
+def test_dbl_createobject_constructor_exists():
+    assert callable(dbl_CreateObject.__init__)
 
 
-def test_dbl::cast_constructor_args():
-    sig = inspect.signature(dbl::Cast.__init__)
+def test_dbl_createobject_constructor_args():
+    sig = inspect.signature(dbl_CreateObject.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1621,72 +1825,72 @@ def test_primitivetype_constructor_args():
 
 
 
-def test_dbl::booltype_is_not_abstract():
-    assert not inspect.isabstract(dbl::BoolType)
+def test_dbl_doubletype_is_not_abstract():
+    assert not inspect.isabstract(dbl_DoubleType)
 
 
-def test_dbl::booltype_constructor_exists():
-    assert callable(dbl::BoolType.__init__)
+def test_dbl_doubletype_constructor_exists():
+    assert callable(dbl_DoubleType.__init__)
 
 
-def test_dbl::booltype_constructor_args():
-    sig = inspect.signature(dbl::BoolType.__init__)
+def test_dbl_doubletype_constructor_args():
+    sig = inspect.signature(dbl_DoubleType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_dbl::inttype_is_not_abstract():
-    assert not inspect.isabstract(dbl::IntType)
+def test_dbl_booltype_is_not_abstract():
+    assert not inspect.isabstract(dbl_BoolType)
 
 
-def test_dbl::inttype_constructor_exists():
-    assert callable(dbl::IntType.__init__)
+def test_dbl_booltype_constructor_exists():
+    assert callable(dbl_BoolType.__init__)
 
 
-def test_dbl::inttype_constructor_args():
-    sig = inspect.signature(dbl::IntType.__init__)
+def test_dbl_booltype_constructor_args():
+    sig = inspect.signature(dbl_BoolType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_dbl::stringtype_is_not_abstract():
-    assert not inspect.isabstract(dbl::StringType)
+def test_dbl_stringtype_is_not_abstract():
+    assert not inspect.isabstract(dbl_StringType)
 
 
-def test_dbl::stringtype_constructor_exists():
-    assert callable(dbl::StringType.__init__)
+def test_dbl_stringtype_constructor_exists():
+    assert callable(dbl_StringType.__init__)
 
 
-def test_dbl::stringtype_constructor_args():
-    sig = inspect.signature(dbl::StringType.__init__)
+def test_dbl_stringtype_constructor_args():
+    sig = inspect.signature(dbl_StringType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_dbl::doubletype_is_not_abstract():
-    assert not inspect.isabstract(dbl::DoubleType)
+def test_dbl_inttype_is_not_abstract():
+    assert not inspect.isabstract(dbl_IntType)
 
 
-def test_dbl::doubletype_constructor_exists():
-    assert callable(dbl::DoubleType.__init__)
+def test_dbl_inttype_constructor_exists():
+    assert callable(dbl_IntType.__init__)
 
 
-def test_dbl::doubletype_constructor_args():
-    sig = inspect.signature(dbl::DoubleType.__init__)
+def test_dbl_inttype_constructor_args():
+    sig = inspect.signature(dbl_IntType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_dbl::voidtype_is_not_abstract():
-    assert not inspect.isabstract(dbl::VoidType)
+def test_dbl_voidtype_is_not_abstract():
+    assert not inspect.isabstract(dbl_VoidType)
 
 
-def test_dbl::voidtype_constructor_exists():
-    assert callable(dbl::VoidType.__init__)
+def test_dbl_voidtype_constructor_exists():
+    assert callable(dbl_VoidType.__init__)
 
 
-def test_dbl::voidtype_constructor_args():
-    sig = inspect.signature(dbl::VoidType.__init__)
+def test_dbl_voidtype_constructor_args():
+    sig = inspect.signature(dbl_VoidType.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1705,72 +1909,72 @@ def test_type_constructor_args():
 
 
 
-def test_dbl::idexpr_is_not_abstract():
-    assert not inspect.isabstract(dbl::IdExpr)
+def test_dbl_idexpr_is_not_abstract():
+    assert not inspect.isabstract(dbl_IdExpr)
 
 
-def test_dbl::idexpr_constructor_exists():
-    assert callable(dbl::IdExpr.__init__)
+def test_dbl_idexpr_constructor_exists():
+    assert callable(dbl_IdExpr.__init__)
 
 
-def test_dbl::idexpr_constructor_args():
-    sig = inspect.signature(dbl::IdExpr.__init__)
+def test_dbl_idexpr_constructor_args():
+    sig = inspect.signature(dbl_IdExpr.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_dbl::primitivetype_is_not_abstract():
-    assert not inspect.isabstract(dbl::PrimitiveType)
+def test_dbl_primitivetype_is_not_abstract():
+    assert not inspect.isabstract(dbl_PrimitiveType)
 
 
-def test_dbl::primitivetype_constructor_exists():
-    assert callable(dbl::PrimitiveType.__init__)
+def test_dbl_primitivetype_constructor_exists():
+    assert callable(dbl_PrimitiveType.__init__)
 
 
-def test_dbl::primitivetype_constructor_args():
-    sig = inspect.signature(dbl::PrimitiveType.__init__)
+def test_dbl_primitivetype_constructor_args():
+    sig = inspect.signature(dbl_PrimitiveType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_dbl::typedelement_is_not_abstract():
-    assert not inspect.isabstract(dbl::TypedElement)
+def test_dbl_typedelement_is_not_abstract():
+    assert not inspect.isabstract(dbl_TypedElement)
 
 
-def test_dbl::typedelement_constructor_exists():
-    assert callable(dbl::TypedElement.__init__)
+def test_dbl_typedelement_constructor_exists():
+    assert callable(dbl_TypedElement.__init__)
 
 
-def test_dbl::typedelement_constructor_args():
-    sig = inspect.signature(dbl::TypedElement.__init__)
+def test_dbl_typedelement_constructor_args():
+    sig = inspect.signature(dbl_TypedElement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_dbl::arraydimension_is_not_abstract():
-    assert not inspect.isabstract(dbl::ArrayDimension)
+def test_dbl_arraydimension_is_not_abstract():
+    assert not inspect.isabstract(dbl_ArrayDimension)
 
 
-def test_dbl::arraydimension_constructor_exists():
-    assert callable(dbl::ArrayDimension.__init__)
+def test_dbl_arraydimension_constructor_exists():
+    assert callable(dbl_ArrayDimension.__init__)
 
 
-def test_dbl::arraydimension_constructor_args():
-    sig = inspect.signature(dbl::ArrayDimension.__init__)
+def test_dbl_arraydimension_constructor_args():
+    sig = inspect.signature(dbl_ArrayDimension.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_dbl::type_is_not_abstract():
-    assert not inspect.isabstract(dbl::Type)
+def test_dbl_type_is_not_abstract():
+    assert not inspect.isabstract(dbl_Type)
 
 
-def test_dbl::type_constructor_exists():
-    assert callable(dbl::Type.__init__)
+def test_dbl_type_constructor_exists():
+    assert callable(dbl_Type.__init__)
 
 
-def test_dbl::type_constructor_args():
-    sig = inspect.signature(dbl::Type.__init__)
+def test_dbl_type_constructor_args():
+    sig = inspect.signature(dbl_Type.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1789,47 +1993,47 @@ def test_concept_constructor_args():
 
 
 
-def test_dbl::superclassspecification_is_not_abstract():
-    assert not inspect.isabstract(dbl::SuperClassSpecification)
+def test_dbl_superclassspecification_is_not_abstract():
+    assert not inspect.isabstract(dbl_SuperClassSpecification)
 
 
-def test_dbl::superclassspecification_constructor_exists():
-    assert callable(dbl::SuperClassSpecification.__init__)
+def test_dbl_superclassspecification_constructor_exists():
+    assert callable(dbl_SuperClassSpecification.__init__)
 
 
-def test_dbl::superclassspecification_constructor_args():
-    sig = inspect.signature(dbl::SuperClassSpecification.__init__)
+def test_dbl_superclassspecification_constructor_args():
+    sig = inspect.signature(dbl_SuperClassSpecification.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_dbl::nativebinding_is_not_abstract():
-    assert not inspect.isabstract(dbl::NativeBinding)
+def test_dbl_nativebinding_is_not_abstract():
+    assert not inspect.isabstract(dbl_NativeBinding)
 
 
-def test_dbl::nativebinding_constructor_exists():
-    assert callable(dbl::NativeBinding.__init__)
+def test_dbl_nativebinding_constructor_exists():
+    assert callable(dbl_NativeBinding.__init__)
 
 
-def test_dbl::nativebinding_constructor_args():
-    sig = inspect.signature(dbl::NativeBinding.__init__)
+def test_dbl_nativebinding_constructor_args():
+    sig = inspect.signature(dbl_NativeBinding.__init__)
     params = list(sig.parameters.keys())
     assert "targetType" in params, "Missing parameter 'targetType'"
     assert "targetLanguage" in params, "Missing parameter 'targetLanguage'"
 
-def test_dbl::nativebinding_has_targetType():
-    assert hasattr(dbl::NativeBinding, "targetType")
+def test_dbl_nativebinding_has_targetType():
+    assert hasattr(dbl_NativeBinding, "targetType")
     descriptor = None
-    for klass in dbl::NativeBinding.__mro__:
+    for klass in dbl_NativeBinding.__mro__:
         if "targetType" in klass.__dict__:
             descriptor = klass.__dict__["targetType"]
             break
     assert isinstance(descriptor, property)
 
-def test_dbl::nativebinding_has_targetLanguage():
-    assert hasattr(dbl::NativeBinding, "targetLanguage")
+def test_dbl_nativebinding_has_targetLanguage():
+    assert hasattr(dbl_NativeBinding, "targetLanguage")
     descriptor = None
-    for klass in dbl::NativeBinding.__mro__:
+    for klass in dbl_NativeBinding.__mro__:
         if "targetLanguage" in klass.__dict__:
             descriptor = klass.__dict__["targetLanguage"]
             break
@@ -1837,16 +2041,16 @@ def test_dbl::nativebinding_has_targetLanguage():
 
 
 
-def test_dbl::parameter_is_not_abstract():
-    assert not inspect.isabstract(dbl::Parameter)
+def test_dbl_parameter_is_not_abstract():
+    assert not inspect.isabstract(dbl_Parameter)
 
 
-def test_dbl::parameter_constructor_exists():
-    assert callable(dbl::Parameter.__init__)
+def test_dbl_parameter_constructor_exists():
+    assert callable(dbl_Parameter.__init__)
 
 
-def test_dbl::parameter_constructor_args():
-    sig = inspect.signature(dbl::Parameter.__init__)
+def test_dbl_parameter_constructor_args():
+    sig = inspect.signature(dbl_Parameter.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1865,44 +2069,44 @@ def test_localscope_constructor_args():
 
 
 
-def test_dbl::constructor_is_not_abstract():
-    assert not inspect.isabstract(dbl::Constructor)
+def test_dbl_forstatement_is_not_abstract():
+    assert not inspect.isabstract(dbl_ForStatement)
 
 
-def test_dbl::constructor_constructor_exists():
-    assert callable(dbl::Constructor.__init__)
+def test_dbl_forstatement_constructor_exists():
+    assert callable(dbl_ForStatement.__init__)
 
 
-def test_dbl::constructor_constructor_args():
-    sig = inspect.signature(dbl::Constructor.__init__)
+def test_dbl_forstatement_constructor_args():
+    sig = inspect.signature(dbl_ForStatement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_dbl::localscopestatement_is_not_abstract():
-    assert not inspect.isabstract(dbl::LocalScopeStatement)
+def test_dbl_localscopestatement_is_not_abstract():
+    assert not inspect.isabstract(dbl_LocalScopeStatement)
 
 
-def test_dbl::localscopestatement_constructor_exists():
-    assert callable(dbl::LocalScopeStatement.__init__)
+def test_dbl_localscopestatement_constructor_exists():
+    assert callable(dbl_LocalScopeStatement.__init__)
 
 
-def test_dbl::localscopestatement_constructor_args():
-    sig = inspect.signature(dbl::LocalScopeStatement.__init__)
+def test_dbl_localscopestatement_constructor_args():
+    sig = inspect.signature(dbl_LocalScopeStatement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_dbl::forstatement_is_not_abstract():
-    assert not inspect.isabstract(dbl::ForStatement)
+def test_dbl_constructor_is_not_abstract():
+    assert not inspect.isabstract(dbl_Constructor)
 
 
-def test_dbl::forstatement_constructor_exists():
-    assert callable(dbl::ForStatement.__init__)
+def test_dbl_constructor_constructor_exists():
+    assert callable(dbl_Constructor.__init__)
 
 
-def test_dbl::forstatement_constructor_args():
-    sig = inspect.signature(dbl::ForStatement.__init__)
+def test_dbl_constructor_constructor_args():
+    sig = inspect.signature(dbl_Constructor.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1921,23 +2125,23 @@ def test_constructiveextensionatcontentextensionpoint_constructor_args():
 
 
 
-def test_dbl::import_is_not_abstract():
-    assert not inspect.isabstract(dbl::Import)
+def test_dbl_import_is_not_abstract():
+    assert not inspect.isabstract(dbl_Import)
 
 
-def test_dbl::import_constructor_exists():
-    assert callable(dbl::Import.__init__)
+def test_dbl_import_constructor_exists():
+    assert callable(dbl_Import.__init__)
 
 
-def test_dbl::import_constructor_args():
-    sig = inspect.signature(dbl::Import.__init__)
+def test_dbl_import_constructor_args():
+    sig = inspect.signature(dbl_Import.__init__)
     params = list(sig.parameters.keys())
     assert "file" in params, "Missing parameter 'file'"
 
-def test_dbl::import_has_file():
-    assert hasattr(dbl::Import, "file")
+def test_dbl_import_has_file():
+    assert hasattr(dbl_Import, "file")
     descriptor = None
-    for klass in dbl::Import.__mro__:
+    for klass in dbl_Import.__mro__:
         if "file" in klass.__dict__:
             descriptor = klass.__dict__["file"]
             break
@@ -1945,16 +2149,16 @@ def test_dbl::import_has_file():
 
 
 
-def test_dbl::model_is_not_abstract():
-    assert not inspect.isabstract(dbl::Model)
+def test_dbl_model_is_not_abstract():
+    assert not inspect.isabstract(dbl_Model)
 
 
-def test_dbl::model_constructor_exists():
-    assert callable(dbl::Model.__init__)
+def test_dbl_model_constructor_exists():
+    assert callable(dbl_Model.__init__)
 
 
-def test_dbl::model_constructor_args():
-    sig = inspect.signature(dbl::Model.__init__)
+def test_dbl_model_constructor_args():
+    sig = inspect.signature(dbl_Model.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1987,23 +2191,23 @@ def test_namedelement_constructor_args():
 
 
 
-def test_dbl::class_is_not_abstract():
-    assert not inspect.isabstract(dbl::Class)
+def test_dbl_class_is_not_abstract():
+    assert not inspect.isabstract(dbl_Class)
 
 
-def test_dbl::class_constructor_exists():
-    assert callable(dbl::Class.__init__)
+def test_dbl_class_constructor_exists():
+    assert callable(dbl_Class.__init__)
 
 
-def test_dbl::class_constructor_args():
-    sig = inspect.signature(dbl::Class.__init__)
+def test_dbl_class_constructor_args():
+    sig = inspect.signature(dbl_Class.__init__)
     params = list(sig.parameters.keys())
     assert "active" in params, "Missing parameter 'active'"
 
-def test_dbl::class_has_active():
-    assert hasattr(dbl::Class, "active")
+def test_dbl_class_has_active():
+    assert hasattr(dbl_Class, "active")
     descriptor = None
-    for klass in dbl::Class.__mro__:
+    for klass in dbl_Class.__mro__:
         if "active" in klass.__dict__:
             descriptor = klass.__dict__["active"]
             break
@@ -2011,61 +2215,139 @@ def test_dbl::class_has_active():
 
 
 
-def test_dbl::module_is_not_abstract():
-    assert not inspect.isabstract(dbl::Module)
+def test_dbl_structuralsymbolreference_is_not_abstract():
+    assert not inspect.isabstract(dbl_StructuralSymbolReference)
 
 
-def test_dbl::module_constructor_exists():
-    assert callable(dbl::Module.__init__)
+def test_dbl_structuralsymbolreference_constructor_exists():
+    assert callable(dbl_StructuralSymbolReference.__init__)
 
 
-def test_dbl::module_constructor_args():
-    sig = inspect.signature(dbl::Module.__init__)
+def test_dbl_structuralsymbolreference_constructor_args():
+    sig = inspect.signature(dbl_StructuralSymbolReference.__init__)
+    params = list(sig.parameters.keys())
+    assert "localScopedReference" in params, "Missing parameter 'localScopedReference'"
+    assert "composite" in params, "Missing parameter 'composite'"
+    assert "globalScopedReference" in params, "Missing parameter 'globalScopedReference'"
+    assert "list" in params, "Missing parameter 'list'"
+
+def test_dbl_structuralsymbolreference_has_localScopedReference():
+    assert hasattr(dbl_StructuralSymbolReference, "localScopedReference")
+    descriptor = None
+    for klass in dbl_StructuralSymbolReference.__mro__:
+        if "localScopedReference" in klass.__dict__:
+            descriptor = klass.__dict__["localScopedReference"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_dbl_structuralsymbolreference_has_composite():
+    assert hasattr(dbl_StructuralSymbolReference, "composite")
+    descriptor = None
+    for klass in dbl_StructuralSymbolReference.__mro__:
+        if "composite" in klass.__dict__:
+            descriptor = klass.__dict__["composite"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_dbl_structuralsymbolreference_has_globalScopedReference():
+    assert hasattr(dbl_StructuralSymbolReference, "globalScopedReference")
+    descriptor = None
+    for klass in dbl_StructuralSymbolReference.__mro__:
+        if "globalScopedReference" in klass.__dict__:
+            descriptor = klass.__dict__["globalScopedReference"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_dbl_structuralsymbolreference_has_list():
+    assert hasattr(dbl_StructuralSymbolReference, "list")
+    descriptor = None
+    for klass in dbl_StructuralSymbolReference.__mro__:
+        if "list" in klass.__dict__:
+            descriptor = klass.__dict__["list"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_dbl_abstractvariable_is_not_abstract():
+    assert not inspect.isabstract(dbl_AbstractVariable)
+
+
+def test_dbl_abstractvariable_constructor_exists():
+    assert callable(dbl_AbstractVariable.__init__)
+
+
+def test_dbl_abstractvariable_constructor_args():
+    sig = inspect.signature(dbl_AbstractVariable.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_dbl::abstractvariable_is_not_abstract():
-    assert not inspect.isabstract(dbl::AbstractVariable)
+def test_dbl_pattern_is_not_abstract():
+    assert not inspect.isabstract(dbl_Pattern)
 
 
-def test_dbl::abstractvariable_constructor_exists():
-    assert callable(dbl::AbstractVariable.__init__)
+def test_dbl_pattern_constructor_exists():
+    assert callable(dbl_Pattern.__init__)
 
 
-def test_dbl::abstractvariable_constructor_args():
-    sig = inspect.signature(dbl::AbstractVariable.__init__)
+def test_dbl_pattern_constructor_args():
+    sig = inspect.signature(dbl_Pattern.__init__)
+    params = list(sig.parameters.keys())
+    assert "top" in params, "Missing parameter 'top'"
+
+def test_dbl_pattern_has_top():
+    assert hasattr(dbl_Pattern, "top")
+    descriptor = None
+    for klass in dbl_Pattern.__mro__:
+        if "top" in klass.__dict__:
+            descriptor = klass.__dict__["top"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_dbl_module_is_not_abstract():
+    assert not inspect.isabstract(dbl_Module)
+
+
+def test_dbl_module_constructor_exists():
+    assert callable(dbl_Module.__init__)
+
+
+def test_dbl_module_constructor_args():
+    sig = inspect.signature(dbl_Module.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_dbl::extensibleelement_is_not_abstract():
-    assert not inspect.isabstract(dbl::ExtensibleElement)
+def test_dbl_extensibleelement_is_not_abstract():
+    assert not inspect.isabstract(dbl_ExtensibleElement)
 
 
-def test_dbl::extensibleelement_constructor_exists():
-    assert callable(dbl::ExtensibleElement.__init__)
+def test_dbl_extensibleelement_constructor_exists():
+    assert callable(dbl_ExtensibleElement.__init__)
 
 
-def test_dbl::extensibleelement_constructor_args():
-    sig = inspect.signature(dbl::ExtensibleElement.__init__)
+def test_dbl_extensibleelement_constructor_args():
+    sig = inspect.signature(dbl_ExtensibleElement.__init__)
     params = list(sig.parameters.keys())
     assert "instanceOfExtensionDefinition" in params, "Missing parameter 'instanceOfExtensionDefinition'"
     assert "concreteSyntax" in params, "Missing parameter 'concreteSyntax'"
 
-def test_dbl::extensibleelement_has_instanceOfExtensionDefinition():
-    assert hasattr(dbl::ExtensibleElement, "instanceOfExtensionDefinition")
+def test_dbl_extensibleelement_has_instanceOfExtensionDefinition():
+    assert hasattr(dbl_ExtensibleElement, "instanceOfExtensionDefinition")
     descriptor = None
-    for klass in dbl::ExtensibleElement.__mro__:
+    for klass in dbl_ExtensibleElement.__mro__:
         if "instanceOfExtensionDefinition" in klass.__dict__:
             descriptor = klass.__dict__["instanceOfExtensionDefinition"]
             break
     assert isinstance(descriptor, property)
 
-def test_dbl::extensibleelement_has_concreteSyntax():
-    assert hasattr(dbl::ExtensibleElement, "concreteSyntax")
+def test_dbl_extensibleelement_has_concreteSyntax():
+    assert hasattr(dbl_ExtensibleElement, "concreteSyntax")
     descriptor = None
-    for klass in dbl::ExtensibleElement.__mro__:
+    for klass in dbl_ExtensibleElement.__mro__:
         if "concreteSyntax" in klass.__dict__:
             descriptor = klass.__dict__["concreteSyntax"]
             break
@@ -2087,44 +2369,44 @@ def test_constructiveextension_constructor_args():
 
 
 
-def test_dbl::classcontentextension_is_not_abstract():
-    assert not inspect.isabstract(dbl::ClassContentExtension)
+def test_dbl_classcontentextension_is_not_abstract():
+    assert not inspect.isabstract(dbl_ClassContentExtension)
 
 
-def test_dbl::classcontentextension_constructor_exists():
-    assert callable(dbl::ClassContentExtension.__init__)
+def test_dbl_classcontentextension_constructor_exists():
+    assert callable(dbl_ClassContentExtension.__init__)
 
 
-def test_dbl::classcontentextension_constructor_args():
-    sig = inspect.signature(dbl::ClassContentExtension.__init__)
+def test_dbl_classcontentextension_constructor_args():
+    sig = inspect.signature(dbl_ClassContentExtension.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_dbl::modulecontentextension_is_not_abstract():
-    assert not inspect.isabstract(dbl::ModuleContentExtension)
+def test_dbl_modulecontentextension_is_not_abstract():
+    assert not inspect.isabstract(dbl_ModuleContentExtension)
 
 
-def test_dbl::modulecontentextension_constructor_exists():
-    assert callable(dbl::ModuleContentExtension.__init__)
+def test_dbl_modulecontentextension_constructor_exists():
+    assert callable(dbl_ModuleContentExtension.__init__)
 
 
-def test_dbl::modulecontentextension_constructor_args():
-    sig = inspect.signature(dbl::ModuleContentExtension.__init__)
+def test_dbl_modulecontentextension_constructor_args():
+    sig = inspect.signature(dbl_ModuleContentExtension.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_dbl::constructiveextensionatcontentextensionpoint_is_not_abstract():
-    assert not inspect.isabstract(dbl::ConstructiveExtensionAtContentExtensionPoint)
+def test_dbl_constructiveextensionatcontentextensionpoint_is_not_abstract():
+    assert not inspect.isabstract(dbl_ConstructiveExtensionAtContentExtensionPoint)
 
 
-def test_dbl::constructiveextensionatcontentextensionpoint_constructor_exists():
-    assert callable(dbl::ConstructiveExtensionAtContentExtensionPoint.__init__)
+def test_dbl_constructiveextensionatcontentextensionpoint_constructor_exists():
+    assert callable(dbl_ConstructiveExtensionAtContentExtensionPoint.__init__)
 
 
-def test_dbl::constructiveextensionatcontentextensionpoint_constructor_args():
-    sig = inspect.signature(dbl::ConstructiveExtensionAtContentExtensionPoint.__init__)
+def test_dbl_constructiveextensionatcontentextensionpoint_constructor_args():
+    sig = inspect.signature(dbl_ConstructiveExtensionAtContentExtensionPoint.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -2143,131 +2425,131 @@ def test_extensibleelement_constructor_args():
 
 
 
-def test_dbl::syntaxdefinition_is_not_abstract():
-    assert not inspect.isabstract(dbl::SyntaxDefinition)
+def test_dbl_syntaxdefinition_is_not_abstract():
+    assert not inspect.isabstract(dbl_SyntaxDefinition)
 
 
-def test_dbl::syntaxdefinition_constructor_exists():
-    assert callable(dbl::SyntaxDefinition.__init__)
+def test_dbl_syntaxdefinition_constructor_exists():
+    assert callable(dbl_SyntaxDefinition.__init__)
 
 
-def test_dbl::syntaxdefinition_constructor_args():
-    sig = inspect.signature(dbl::SyntaxDefinition.__init__)
+def test_dbl_syntaxdefinition_constructor_args():
+    sig = inspect.signature(dbl_SyntaxDefinition.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_dbl::expression_is_not_abstract():
-    assert not inspect.isabstract(dbl::Expression)
+def test_dbl_expression_is_not_abstract():
+    assert not inspect.isabstract(dbl_Expression)
 
 
-def test_dbl::expression_constructor_exists():
-    assert callable(dbl::Expression.__init__)
+def test_dbl_expression_constructor_exists():
+    assert callable(dbl_Expression.__init__)
 
 
-def test_dbl::expression_constructor_args():
-    sig = inspect.signature(dbl::Expression.__init__)
+def test_dbl_expression_constructor_args():
+    sig = inspect.signature(dbl_Expression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_dbl::extensionsemantics_is_not_abstract():
-    assert not inspect.isabstract(dbl::ExtensionSemantics)
+def test_dbl_statement_is_not_abstract():
+    assert not inspect.isabstract(dbl_Statement)
 
 
-def test_dbl::extensionsemantics_constructor_exists():
-    assert callable(dbl::ExtensionSemantics.__init__)
+def test_dbl_statement_constructor_exists():
+    assert callable(dbl_Statement.__init__)
 
 
-def test_dbl::extensionsemantics_constructor_args():
-    sig = inspect.signature(dbl::ExtensionSemantics.__init__)
+def test_dbl_statement_constructor_args():
+    sig = inspect.signature(dbl_Statement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_dbl::statement_is_not_abstract():
-    assert not inspect.isabstract(dbl::Statement)
+def test_dbl_extension_is_not_abstract():
+    assert not inspect.isabstract(dbl_Extension)
 
 
-def test_dbl::statement_constructor_exists():
-    assert callable(dbl::Statement.__init__)
+def test_dbl_extension_constructor_exists():
+    assert callable(dbl_Extension.__init__)
 
 
-def test_dbl::statement_constructor_args():
-    sig = inspect.signature(dbl::Statement.__init__)
+def test_dbl_extension_constructor_args():
+    sig = inspect.signature(dbl_Extension.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_dbl::extension_is_not_abstract():
-    assert not inspect.isabstract(dbl::Extension)
+def test_dbl_extensionsemantics_is_not_abstract():
+    assert not inspect.isabstract(dbl_ExtensionSemantics)
 
 
-def test_dbl::extension_constructor_exists():
-    assert callable(dbl::Extension.__init__)
+def test_dbl_extensionsemantics_constructor_exists():
+    assert callable(dbl_ExtensionSemantics.__init__)
 
 
-def test_dbl::extension_constructor_args():
-    sig = inspect.signature(dbl::Extension.__init__)
+def test_dbl_extensionsemantics_constructor_args():
+    sig = inspect.signature(dbl_ExtensionSemantics.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_dbl::constructiveextension_is_not_abstract():
-    assert not inspect.isabstract(dbl::ConstructiveExtension)
+def test_dbl_constructiveextension_is_not_abstract():
+    assert not inspect.isabstract(dbl_ConstructiveExtension)
 
 
-def test_dbl::constructiveextension_constructor_exists():
-    assert callable(dbl::ConstructiveExtension.__init__)
+def test_dbl_constructiveextension_constructor_exists():
+    assert callable(dbl_ConstructiveExtension.__init__)
 
 
-def test_dbl::constructiveextension_constructor_args():
-    sig = inspect.signature(dbl::ConstructiveExtension.__init__)
+def test_dbl_constructiveextension_constructor_args():
+    sig = inspect.signature(dbl_ConstructiveExtension.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_dbl::annotateableelement_is_not_abstract():
-    assert not inspect.isabstract(dbl::AnnotateableElement)
+def test_dbl_annotateableelement_is_not_abstract():
+    assert not inspect.isabstract(dbl_AnnotateableElement)
 
 
-def test_dbl::annotateableelement_constructor_exists():
-    assert callable(dbl::AnnotateableElement.__init__)
+def test_dbl_annotateableelement_constructor_exists():
+    assert callable(dbl_AnnotateableElement.__init__)
 
 
-def test_dbl::annotateableelement_constructor_args():
-    sig = inspect.signature(dbl::AnnotateableElement.__init__)
+def test_dbl_annotateableelement_constructor_args():
+    sig = inspect.signature(dbl_AnnotateableElement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_dbl::annotationitem_is_not_abstract():
-    assert not inspect.isabstract(dbl::AnnotationItem)
+def test_dbl_annotationitem_is_not_abstract():
+    assert not inspect.isabstract(dbl_AnnotationItem)
 
 
-def test_dbl::annotationitem_constructor_exists():
-    assert callable(dbl::AnnotationItem.__init__)
+def test_dbl_annotationitem_constructor_exists():
+    assert callable(dbl_AnnotationItem.__init__)
 
 
-def test_dbl::annotationitem_constructor_args():
-    sig = inspect.signature(dbl::AnnotationItem.__init__)
+def test_dbl_annotationitem_constructor_args():
+    sig = inspect.signature(dbl_AnnotationItem.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
     assert "key" in params, "Missing parameter 'key'"
 
-def test_dbl::annotationitem_has_value():
-    assert hasattr(dbl::AnnotationItem, "value")
+def test_dbl_annotationitem_has_value():
+    assert hasattr(dbl_AnnotationItem, "value")
     descriptor = None
-    for klass in dbl::AnnotationItem.__mro__:
+    for klass in dbl_AnnotationItem.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
     assert isinstance(descriptor, property)
 
-def test_dbl::annotationitem_has_key():
-    assert hasattr(dbl::AnnotationItem, "key")
+def test_dbl_annotationitem_has_key():
+    assert hasattr(dbl_AnnotationItem, "key")
     descriptor = None
-    for klass in dbl::AnnotationItem.__mro__:
+    for klass in dbl_AnnotationItem.__mro__:
         if "key" in klass.__dict__:
             descriptor = klass.__dict__["key"]
             break
@@ -2275,586 +2557,122 @@ def test_dbl::annotationitem_has_key():
 
 
 
-def test_dbl::annotation_is_not_abstract():
-    assert not inspect.isabstract(dbl::Annotation)
+def test_dbl_annotation_is_not_abstract():
+    assert not inspect.isabstract(dbl_Annotation)
 
 
-def test_dbl::annotation_constructor_exists():
-    assert callable(dbl::Annotation.__init__)
+def test_dbl_annotation_constructor_exists():
+    assert callable(dbl_Annotation.__init__)
 
 
-def test_dbl::annotation_constructor_args():
-    sig = inspect.signature(dbl::Annotation.__init__)
+def test_dbl_annotation_constructor_args():
+    sig = inspect.signature(dbl_Annotation.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_dbl::variable_is_not_abstract():
-    assert not inspect.isabstract(dbl::Variable)
+def test_dbl_variable_is_not_abstract():
+    assert not inspect.isabstract(dbl_Variable)
 
 
-def test_dbl::variable_constructor_exists():
-    assert callable(dbl::Variable.__init__)
+def test_dbl_variable_constructor_exists():
+    assert callable(dbl_Variable.__init__)
 
 
-def test_dbl::variable_constructor_args():
-    sig = inspect.signature(dbl::Variable.__init__)
+def test_dbl_variable_constructor_args():
+    sig = inspect.signature(dbl_Variable.__init__)
     params = list(sig.parameters.keys())
-    assert "control" in params, "Missing parameter 'control'"
     assert "class_" in params, "Missing parameter 'class_'"
+    assert "control" in params, "Missing parameter 'control'"
 
-def test_dbl::variable_has_control():
-    assert hasattr(dbl::Variable, "control")
+def test_dbl_variable_has_class_():
+    assert hasattr(dbl_Variable, "class_")
     descriptor = None
-    for klass in dbl::Variable.__mro__:
+    for klass in dbl_Variable.__mro__:
+        if "class_" in klass.__dict__:
+            descriptor = klass.__dict__["class_"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_dbl_variable_has_control():
+    assert hasattr(dbl_Variable, "control")
+    descriptor = None
+    for klass in dbl_Variable.__mro__:
         if "control" in klass.__dict__:
             descriptor = klass.__dict__["control"]
             break
     assert isinstance(descriptor, property)
 
-def test_dbl::variable_has_class_():
-    assert hasattr(dbl::Variable, "class_")
-    descriptor = None
-    for klass in dbl::Variable.__mro__:
-        if "class_" in klass.__dict__:
-            descriptor = klass.__dict__["class_"]
-            break
-    assert isinstance(descriptor, property)
 
 
-
-def test_dbl::function_is_not_abstract():
-    assert not inspect.isabstract(dbl::Function)
-
-
-def test_dbl::function_constructor_exists():
-    assert callable(dbl::Function.__init__)
+def test_dbl_function_is_not_abstract():
+    assert not inspect.isabstract(dbl_Function)
 
 
-def test_dbl::function_constructor_args():
-    sig = inspect.signature(dbl::Function.__init__)
+def test_dbl_function_constructor_exists():
+    assert callable(dbl_Function.__init__)
+
+
+def test_dbl_function_constructor_args():
+    sig = inspect.signature(dbl_Function.__init__)
     params = list(sig.parameters.keys())
-    assert "detached" in params, "Missing parameter 'detached'"
     assert "abstract" in params, "Missing parameter 'abstract'"
     assert "class_" in params, "Missing parameter 'class_'"
+    assert "detached" in params, "Missing parameter 'detached'"
 
-def test_dbl::function_has_detached():
-    assert hasattr(dbl::Function, "detached")
+def test_dbl_function_has_abstract():
+    assert hasattr(dbl_Function, "abstract")
     descriptor = None
-    for klass in dbl::Function.__mro__:
-        if "detached" in klass.__dict__:
-            descriptor = klass.__dict__["detached"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_dbl::function_has_abstract():
-    assert hasattr(dbl::Function, "abstract")
-    descriptor = None
-    for klass in dbl::Function.__mro__:
+    for klass in dbl_Function.__mro__:
         if "abstract" in klass.__dict__:
             descriptor = klass.__dict__["abstract"]
             break
     assert isinstance(descriptor, property)
 
-def test_dbl::function_has_class_():
-    assert hasattr(dbl::Function, "class_")
+def test_dbl_function_has_class_():
+    assert hasattr(dbl_Function, "class_")
     descriptor = None
-    for klass in dbl::Function.__mro__:
+    for klass in dbl_Function.__mro__:
         if "class_" in klass.__dict__:
             descriptor = klass.__dict__["class_"]
             break
     assert isinstance(descriptor, property)
 
-
-
-def test_dbl::expandexpr_is_not_abstract():
-    assert not inspect.isabstract(dbl::ExpandExpr)
-
-
-def test_dbl::expandexpr_constructor_exists():
-    assert callable(dbl::ExpandExpr.__init__)
-
-
-def test_dbl::expandexpr_constructor_args():
-    sig = inspect.signature(dbl::ExpandExpr.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_dbl::construct_is_not_abstract():
-    assert not inspect.isabstract(dbl::Construct)
-
-
-def test_dbl::construct_constructor_exists():
-    assert callable(dbl::Construct.__init__)
-
-
-def test_dbl::construct_constructor_args():
-    sig = inspect.signature(dbl::Construct.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_dbl::teststatement_is_not_abstract():
-    assert not inspect.isabstract(dbl::TestStatement)
-
-
-def test_dbl::teststatement_constructor_exists():
-    assert callable(dbl::TestStatement.__init__)
-
-
-def test_dbl::teststatement_constructor_args():
-    sig = inspect.signature(dbl::TestStatement.__init__)
-    params = list(sig.parameters.keys())
-    assert "value" in params, "Missing parameter 'value'"
-
-def test_dbl::teststatement_has_value():
-    assert hasattr(dbl::TestStatement, "value")
+def test_dbl_function_has_detached():
+    assert hasattr(dbl_Function, "detached")
     descriptor = None
-    for klass in dbl::TestStatement.__mro__:
-        if "value" in klass.__dict__:
-            descriptor = klass.__dict__["value"]
+    for klass in dbl_Function.__mro__:
+        if "detached" in klass.__dict__:
+            descriptor = klass.__dict__["detached"]
             break
     assert isinstance(descriptor, property)
 
 
 
-def test_dbl::pattern_is_not_abstract():
-    assert not inspect.isabstract(dbl::Pattern)
+def test_dbl_expandexpr_is_not_abstract():
+    assert not inspect.isabstract(dbl_ExpandExpr)
 
 
-def test_dbl::pattern_constructor_exists():
-    assert callable(dbl::Pattern.__init__)
+def test_dbl_expandexpr_constructor_exists():
+    assert callable(dbl_ExpandExpr.__init__)
 
 
-def test_dbl::pattern_constructor_args():
-    sig = inspect.signature(dbl::Pattern.__init__)
-    params = list(sig.parameters.keys())
-    assert "top" in params, "Missing parameter 'top'"
-
-def test_dbl::pattern_has_top():
-    assert hasattr(dbl::Pattern, "top")
-    descriptor = None
-    for klass in dbl::Pattern.__mro__:
-        if "top" in klass.__dict__:
-            descriptor = klass.__dict__["top"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_module_is_not_abstract():
-    assert not inspect.isabstract(Module)
-
-
-def test_module_constructor_exists():
-    assert callable(Module.__init__)
-
-
-def test_module_constructor_args():
-    sig = inspect.signature(Module.__init__)
+def test_dbl_expandexpr_constructor_args():
+    sig = inspect.signature(dbl_ExpandExpr.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_class_is_not_abstract():
-    assert not inspect.isabstract(Class)
+def test_dbl_construct_is_not_abstract():
+    assert not inspect.isabstract(dbl_Construct)
 
 
-def test_class_constructor_exists():
-    assert callable(Class.__init__)
+def test_dbl_construct_constructor_exists():
+    assert callable(dbl_Construct.__init__)
 
 
-def test_class_constructor_args():
-    sig = inspect.signature(Class.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_dbl::expansionpart_is_not_abstract():
-    assert not inspect.isabstract(dbl::ExpansionPart)
-
-
-def test_dbl::expansionpart_constructor_exists():
-    assert callable(dbl::ExpansionPart.__init__)
-
-
-def test_dbl::expansionpart_constructor_args():
-    sig = inspect.signature(dbl::ExpansionPart.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_dbl::expansionstatement_is_not_abstract():
-    assert not inspect.isabstract(dbl::ExpansionStatement)
-
-
-def test_dbl::expansionstatement_constructor_exists():
-    assert callable(dbl::ExpansionStatement.__init__)
-
-
-def test_dbl::expansionstatement_constructor_args():
-    sig = inspect.signature(dbl::ExpansionStatement.__init__)
-    params = list(sig.parameters.keys())
-    assert "variableContext" in params, "Missing parameter 'variableContext'"
-    assert "classContext" in params, "Missing parameter 'classContext'"
-    assert "functionContext" in params, "Missing parameter 'functionContext'"
-
-def test_dbl::expansionstatement_has_variableContext():
-    assert hasattr(dbl::ExpansionStatement, "variableContext")
-    descriptor = None
-    for klass in dbl::ExpansionStatement.__mro__:
-        if "variableContext" in klass.__dict__:
-            descriptor = klass.__dict__["variableContext"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_dbl::expansionstatement_has_classContext():
-    assert hasattr(dbl::ExpansionStatement, "classContext")
-    descriptor = None
-    for klass in dbl::ExpansionStatement.__mro__:
-        if "classContext" in klass.__dict__:
-            descriptor = klass.__dict__["classContext"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_dbl::expansionstatement_has_functionContext():
-    assert hasattr(dbl::ExpansionStatement, "functionContext")
-    descriptor = None
-    for klass in dbl::ExpansionStatement.__mro__:
-        if "functionContext" in klass.__dict__:
-            descriptor = klass.__dict__["functionContext"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_variable_is_not_abstract():
-    assert not inspect.isabstract(Variable)
-
-
-def test_variable_constructor_exists():
-    assert callable(Variable.__init__)
-
-
-def test_variable_constructor_args():
-    sig = inspect.signature(Variable.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_dbl::createidstatement_is_not_abstract():
-    assert not inspect.isabstract(dbl::CreateIdStatement)
-
-
-def test_dbl::createidstatement_constructor_exists():
-    assert callable(dbl::CreateIdStatement.__init__)
-
-
-def test_dbl::createidstatement_constructor_args():
-    sig = inspect.signature(dbl::CreateIdStatement.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_dbl::targetstatement_is_not_abstract():
-    assert not inspect.isabstract(dbl::TargetStatement)
-
-
-def test_dbl::targetstatement_constructor_exists():
-    assert callable(dbl::TargetStatement.__init__)
-
-
-def test_dbl::targetstatement_constructor_args():
-    sig = inspect.signature(dbl::TargetStatement.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_dbl::metaexpr_is_not_abstract():
-    assert not inspect.isabstract(dbl::MetaExpr)
-
-
-def test_dbl::metaexpr_constructor_exists():
-    assert callable(dbl::MetaExpr.__init__)
-
-
-def test_dbl::metaexpr_constructor_args():
-    sig = inspect.signature(dbl::MetaExpr.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_quotedcode_is_not_abstract():
-    assert not inspect.isabstract(QuotedCode)
-
-
-def test_quotedcode_constructor_exists():
-    assert callable(QuotedCode.__init__)
-
-
-def test_quotedcode_constructor_args():
-    sig = inspect.signature(QuotedCode.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_dbl::quotedmodulecontent_is_not_abstract():
-    assert not inspect.isabstract(dbl::QuotedModuleContent)
-
-
-def test_dbl::quotedmodulecontent_constructor_exists():
-    assert callable(dbl::QuotedModuleContent.__init__)
-
-
-def test_dbl::quotedmodulecontent_constructor_args():
-    sig = inspect.signature(dbl::QuotedModuleContent.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_dbl::quotedstatements_is_not_abstract():
-    assert not inspect.isabstract(dbl::QuotedStatements)
-
-
-def test_dbl::quotedstatements_constructor_exists():
-    assert callable(dbl::QuotedStatements.__init__)
-
-
-def test_dbl::quotedstatements_constructor_args():
-    sig = inspect.signature(dbl::QuotedStatements.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_dbl::quotedclasscontent_is_not_abstract():
-    assert not inspect.isabstract(dbl::QuotedClassContent)
-
-
-def test_dbl::quotedclasscontent_constructor_exists():
-    assert callable(dbl::QuotedClassContent.__init__)
-
-
-def test_dbl::quotedclasscontent_constructor_args():
-    sig = inspect.signature(dbl::QuotedClassContent.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_dbl::quotedexpression_is_not_abstract():
-    assert not inspect.isabstract(dbl::QuotedExpression)
-
-
-def test_dbl::quotedexpression_constructor_exists():
-    assert callable(dbl::QuotedExpression.__init__)
-
-
-def test_dbl::quotedexpression_constructor_args():
-    sig = inspect.signature(dbl::QuotedExpression.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_dbl::quotedcode_is_not_abstract():
-    assert not inspect.isabstract(dbl::QuotedCode)
-
-
-def test_dbl::quotedcode_constructor_exists():
-    assert callable(dbl::QuotedCode.__init__)
-
-
-def test_dbl::quotedcode_constructor_args():
-    sig = inspect.signature(dbl::QuotedCode.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_dbl::codequoteexpression_is_not_abstract():
-    assert not inspect.isabstract(dbl::CodeQuoteExpression)
-
-
-def test_dbl::codequoteexpression_constructor_exists():
-    assert callable(dbl::CodeQuoteExpression.__init__)
-
-
-def test_dbl::codequoteexpression_constructor_args():
-    sig = inspect.signature(dbl::CodeQuoteExpression.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_dbl::expandstatement_is_not_abstract():
-    assert not inspect.isabstract(dbl::ExpandStatement)
-
-
-def test_dbl::expandstatement_constructor_exists():
-    assert callable(dbl::ExpandStatement.__init__)
-
-
-def test_dbl::expandstatement_constructor_args():
-    sig = inspect.signature(dbl::ExpandStatement.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_dbl::expandexpression_is_not_abstract():
-    assert not inspect.isabstract(dbl::ExpandExpression)
-
-
-def test_dbl::expandexpression_constructor_exists():
-    assert callable(dbl::ExpandExpression.__init__)
-
-
-def test_dbl::expandexpression_constructor_args():
-    sig = inspect.signature(dbl::ExpandExpression.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_expansionpart_is_not_abstract():
-    assert not inspect.isabstract(ExpansionPart)
-
-
-def test_expansionpart_constructor_exists():
-    assert callable(ExpansionPart.__init__)
-
-
-def test_expansionpart_constructor_args():
-    sig = inspect.signature(ExpansionPart.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_dbl::expandvariablepart_is_not_abstract():
-    assert not inspect.isabstract(dbl::ExpandVariablePart)
-
-
-def test_dbl::expandvariablepart_constructor_exists():
-    assert callable(dbl::ExpandVariablePart.__init__)
-
-
-def test_dbl::expandvariablepart_constructor_args():
-    sig = inspect.signature(dbl::ExpandVariablePart.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_dbl::expandtextpart_is_not_abstract():
-    assert not inspect.isabstract(dbl::ExpandTextPart)
-
-
-def test_dbl::expandtextpart_constructor_exists():
-    assert callable(dbl::ExpandTextPart.__init__)
-
-
-def test_dbl::expandtextpart_constructor_args():
-    sig = inspect.signature(dbl::ExpandTextPart.__init__)
-    params = list(sig.parameters.keys())
-    assert "text" in params, "Missing parameter 'text'"
-
-def test_dbl::expandtextpart_has_text():
-    assert hasattr(dbl::ExpandTextPart, "text")
-    descriptor = None
-    for klass in dbl::ExpandTextPart.__mro__:
-        if "text" in klass.__dict__:
-            descriptor = klass.__dict__["text"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_plainsymbolreference_is_not_abstract():
-    assert not inspect.isabstract(PlainSymbolReference)
-
-
-def test_plainsymbolreference_constructor_exists():
-    assert callable(PlainSymbolReference.__init__)
-
-
-def test_plainsymbolreference_constructor_args():
-    sig = inspect.signature(PlainSymbolReference.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_dbl::structuralsymbolreference_is_not_abstract():
-    assert not inspect.isabstract(dbl::StructuralSymbolReference)
-
-
-def test_dbl::structuralsymbolreference_constructor_exists():
-    assert callable(dbl::StructuralSymbolReference.__init__)
-
-
-def test_dbl::structuralsymbolreference_constructor_args():
-    sig = inspect.signature(dbl::StructuralSymbolReference.__init__)
-    params = list(sig.parameters.keys())
-    assert "localScopedReference" in params, "Missing parameter 'localScopedReference'"
-    assert "list" in params, "Missing parameter 'list'"
-    assert "composite" in params, "Missing parameter 'composite'"
-    assert "globalScopedReference" in params, "Missing parameter 'globalScopedReference'"
-
-def test_dbl::structuralsymbolreference_has_localScopedReference():
-    assert hasattr(dbl::StructuralSymbolReference, "localScopedReference")
-    descriptor = None
-    for klass in dbl::StructuralSymbolReference.__mro__:
-        if "localScopedReference" in klass.__dict__:
-            descriptor = klass.__dict__["localScopedReference"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_dbl::structuralsymbolreference_has_list():
-    assert hasattr(dbl::StructuralSymbolReference, "list")
-    descriptor = None
-    for klass in dbl::StructuralSymbolReference.__mro__:
-        if "list" in klass.__dict__:
-            descriptor = klass.__dict__["list"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_dbl::structuralsymbolreference_has_composite():
-    assert hasattr(dbl::StructuralSymbolReference, "composite")
-    descriptor = None
-    for klass in dbl::StructuralSymbolReference.__mro__:
-        if "composite" in klass.__dict__:
-            descriptor = klass.__dict__["composite"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_dbl::structuralsymbolreference_has_globalScopedReference():
-    assert hasattr(dbl::StructuralSymbolReference, "globalScopedReference")
-    descriptor = None
-    for klass in dbl::StructuralSymbolReference.__mro__:
-        if "globalScopedReference" in klass.__dict__:
-            descriptor = klass.__dict__["globalScopedReference"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_l2syntaxexpression_is_not_abstract():
-    assert not inspect.isabstract(L2SyntaxExpression)
-
-
-def test_l2syntaxexpression_constructor_exists():
-    assert callable(L2SyntaxExpression.__init__)
-
-
-def test_l2syntaxexpression_constructor_args():
-    sig = inspect.signature(L2SyntaxExpression.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_dbl::symbolsequence_is_not_abstract():
-    assert not inspect.isabstract(dbl::SymbolSequence)
-
-
-def test_dbl::symbolsequence_constructor_exists():
-    assert callable(dbl::SymbolSequence.__init__)
-
-
-def test_dbl::symbolsequence_constructor_args():
-    sig = inspect.signature(dbl::SymbolSequence.__init__)
+def test_dbl_construct_constructor_args():
+    sig = inspect.signature(dbl_Construct.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -2873,58 +2691,58 @@ def test_syntaxexpression_constructor_args():
 
 
 
-def test_dbl::l1syntaxexpression_is_not_abstract():
-    assert not inspect.isabstract(dbl::L1SyntaxExpression)
+def test_dbl_l1syntaxexpression_is_not_abstract():
+    assert not inspect.isabstract(dbl_L1SyntaxExpression)
 
 
-def test_dbl::l1syntaxexpression_constructor_exists():
-    assert callable(dbl::L1SyntaxExpression.__init__)
+def test_dbl_l1syntaxexpression_constructor_exists():
+    assert callable(dbl_L1SyntaxExpression.__init__)
 
 
-def test_dbl::l1syntaxexpression_constructor_args():
-    sig = inspect.signature(dbl::L1SyntaxExpression.__init__)
+def test_dbl_l1syntaxexpression_constructor_args():
+    sig = inspect.signature(dbl_L1SyntaxExpression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_dbl::l2syntaxexpression_is_not_abstract():
-    assert not inspect.isabstract(dbl::L2SyntaxExpression)
+def test_dbl_l2syntaxexpression_is_not_abstract():
+    assert not inspect.isabstract(dbl_L2SyntaxExpression)
 
 
-def test_dbl::l2syntaxexpression_constructor_exists():
-    assert callable(dbl::L2SyntaxExpression.__init__)
+def test_dbl_l2syntaxexpression_constructor_exists():
+    assert callable(dbl_L2SyntaxExpression.__init__)
 
 
-def test_dbl::l2syntaxexpression_constructor_args():
-    sig = inspect.signature(dbl::L2SyntaxExpression.__init__)
+def test_dbl_l2syntaxexpression_constructor_args():
+    sig = inspect.signature(dbl_L2SyntaxExpression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_dbl::l3syntaxexpression_is_not_abstract():
-    assert not inspect.isabstract(dbl::L3SyntaxExpression)
+def test_dbl_l3syntaxexpression_is_not_abstract():
+    assert not inspect.isabstract(dbl_L3SyntaxExpression)
 
 
-def test_dbl::l3syntaxexpression_constructor_exists():
-    assert callable(dbl::L3SyntaxExpression.__init__)
+def test_dbl_l3syntaxexpression_constructor_exists():
+    assert callable(dbl_L3SyntaxExpression.__init__)
 
 
-def test_dbl::l3syntaxexpression_constructor_args():
-    sig = inspect.signature(dbl::L3SyntaxExpression.__init__)
+def test_dbl_l3syntaxexpression_constructor_args():
+    sig = inspect.signature(dbl_L3SyntaxExpression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_dbl::syntaxexpression_is_not_abstract():
-    assert not inspect.isabstract(dbl::SyntaxExpression)
+def test_dbl_syntaxexpression_is_not_abstract():
+    assert not inspect.isabstract(dbl_SyntaxExpression)
 
 
-def test_dbl::syntaxexpression_constructor_exists():
-    assert callable(dbl::SyntaxExpression.__init__)
+def test_dbl_syntaxexpression_constructor_exists():
+    assert callable(dbl_SyntaxExpression.__init__)
 
 
-def test_dbl::syntaxexpression_constructor_args():
-    sig = inspect.signature(dbl::SyntaxExpression.__init__)
+def test_dbl_syntaxexpression_constructor_args():
+    sig = inspect.signature(dbl_SyntaxExpression.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -2943,30 +2761,30 @@ def test_complexsymbol_constructor_args():
 
 
 
-def test_dbl::concept_is_not_abstract():
-    assert not inspect.isabstract(dbl::Concept)
+def test_dbl_metasymbol_is_not_abstract():
+    assert not inspect.isabstract(dbl_MetaSymbol)
 
 
-def test_dbl::concept_constructor_exists():
-    assert callable(dbl::Concept.__init__)
+def test_dbl_metasymbol_constructor_exists():
+    assert callable(dbl_MetaSymbol.__init__)
 
 
-def test_dbl::concept_constructor_args():
-    sig = inspect.signature(dbl::Concept.__init__)
+def test_dbl_metasymbol_constructor_args():
+    sig = inspect.signature(dbl_MetaSymbol.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_dbl::metasymbol_is_not_abstract():
-    assert not inspect.isabstract(dbl::MetaSymbol)
+def test_dbl_concept_is_not_abstract():
+    assert not inspect.isabstract(dbl_Concept)
 
 
-def test_dbl::metasymbol_constructor_exists():
-    assert callable(dbl::MetaSymbol.__init__)
+def test_dbl_concept_constructor_exists():
+    assert callable(dbl_Concept.__init__)
 
 
-def test_dbl::metasymbol_constructor_args():
-    sig = inspect.signature(dbl::MetaSymbol.__init__)
+def test_dbl_concept_constructor_args():
+    sig = inspect.signature(dbl_Concept.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -2985,65 +2803,79 @@ def test_syntaxsymbolclassifier_constructor_args():
 
 
 
-def test_dbl::elementarysymbol_is_not_abstract():
-    assert not inspect.isabstract(dbl::ElementarySymbol)
+def test_dbl_complexsymbol_is_not_abstract():
+    assert not inspect.isabstract(dbl_ComplexSymbol)
 
 
-def test_dbl::elementarysymbol_constructor_exists():
-    assert callable(dbl::ElementarySymbol.__init__)
+def test_dbl_complexsymbol_constructor_exists():
+    assert callable(dbl_ComplexSymbol.__init__)
 
 
-def test_dbl::elementarysymbol_constructor_args():
-    sig = inspect.signature(dbl::ElementarySymbol.__init__)
+def test_dbl_complexsymbol_constructor_args():
+    sig = inspect.signature(dbl_ComplexSymbol.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_dbl::complexsymbol_is_not_abstract():
-    assert not inspect.isabstract(dbl::ComplexSymbol)
+def test_dbl_syntaxsymbolclassifier_is_not_abstract():
+    assert not inspect.isabstract(dbl_SyntaxSymbolClassifier)
 
 
-def test_dbl::complexsymbol_constructor_exists():
-    assert callable(dbl::ComplexSymbol.__init__)
+def test_dbl_syntaxsymbolclassifier_constructor_exists():
+    assert callable(dbl_SyntaxSymbolClassifier.__init__)
 
 
-def test_dbl::complexsymbol_constructor_args():
-    sig = inspect.signature(dbl::ComplexSymbol.__init__)
+def test_dbl_syntaxsymbolclassifier_constructor_args():
+    sig = inspect.signature(dbl_SyntaxSymbolClassifier.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_dbl::syntaxsymbolclassifier_is_not_abstract():
-    assert not inspect.isabstract(dbl::SyntaxSymbolClassifier)
+def test_elementarysymbol_is_not_abstract():
+    assert not inspect.isabstract(ElementarySymbol)
 
 
-def test_dbl::syntaxsymbolclassifier_constructor_exists():
-    assert callable(dbl::SyntaxSymbolClassifier.__init__)
+def test_elementarysymbol_constructor_exists():
+    assert callable(ElementarySymbol.__init__)
 
 
-def test_dbl::syntaxsymbolclassifier_constructor_args():
-    sig = inspect.signature(dbl::SyntaxSymbolClassifier.__init__)
+def test_elementarysymbol_constructor_args():
+    sig = inspect.signature(ElementarySymbol.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_dbl::keyword_is_not_abstract():
-    assert not inspect.isabstract(dbl::Keyword)
+def test_dbl_stringsymbol_is_not_abstract():
+    assert not inspect.isabstract(dbl_StringSymbol)
 
 
-def test_dbl::keyword_constructor_exists():
-    assert callable(dbl::Keyword.__init__)
+def test_dbl_stringsymbol_constructor_exists():
+    assert callable(dbl_StringSymbol.__init__)
 
 
-def test_dbl::keyword_constructor_args():
-    sig = inspect.signature(dbl::Keyword.__init__)
+def test_dbl_stringsymbol_constructor_args():
+    sig = inspect.signature(dbl_StringSymbol.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_dbl_keyword_is_not_abstract():
+    assert not inspect.isabstract(dbl_Keyword)
+
+
+def test_dbl_keyword_constructor_exists():
+    assert callable(dbl_Keyword.__init__)
+
+
+def test_dbl_keyword_constructor_args():
+    sig = inspect.signature(dbl_Keyword.__init__)
     params = list(sig.parameters.keys())
     assert "keyword" in params, "Missing parameter 'keyword'"
 
-def test_dbl::keyword_has_keyword():
-    assert hasattr(dbl::Keyword, "keyword")
+def test_dbl_keyword_has_keyword():
+    assert hasattr(dbl_Keyword, "keyword")
     descriptor = None
-    for klass in dbl::Keyword.__mro__:
+    for klass in dbl_Keyword.__mro__:
         if "keyword" in klass.__dict__:
             descriptor = klass.__dict__["keyword"]
             break
@@ -3051,30 +2883,198 @@ def test_dbl::keyword_has_keyword():
 
 
 
-def test_dbl::stringsymbol_is_not_abstract():
-    assert not inspect.isabstract(dbl::StringSymbol)
+def test_dbl_intsymbol_is_not_abstract():
+    assert not inspect.isabstract(dbl_IntSymbol)
 
 
-def test_dbl::stringsymbol_constructor_exists():
-    assert callable(dbl::StringSymbol.__init__)
+def test_dbl_intsymbol_constructor_exists():
+    assert callable(dbl_IntSymbol.__init__)
 
 
-def test_dbl::stringsymbol_constructor_args():
-    sig = inspect.signature(dbl::StringSymbol.__init__)
+def test_dbl_intsymbol_constructor_args():
+    sig = inspect.signature(dbl_IntSymbol.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_dbl::intsymbol_is_not_abstract():
-    assert not inspect.isabstract(dbl::IntSymbol)
+def test_dbl_idsymbol_is_not_abstract():
+    assert not inspect.isabstract(dbl_IdSymbol)
 
 
-def test_dbl::intsymbol_constructor_exists():
-    assert callable(dbl::IntSymbol.__init__)
+def test_dbl_idsymbol_constructor_exists():
+    assert callable(dbl_IdSymbol.__init__)
 
 
-def test_dbl::intsymbol_constructor_args():
-    sig = inspect.signature(dbl::IntSymbol.__init__)
+def test_dbl_idsymbol_constructor_args():
+    sig = inspect.signature(dbl_IdSymbol.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_dbl_elementarysymbol_is_not_abstract():
+    assert not inspect.isabstract(dbl_ElementarySymbol)
+
+
+def test_dbl_elementarysymbol_constructor_exists():
+    assert callable(dbl_ElementarySymbol.__init__)
+
+
+def test_dbl_elementarysymbol_constructor_args():
+    sig = inspect.signature(dbl_ElementarySymbol.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_l1syntaxexpression_is_not_abstract():
+    assert not inspect.isabstract(L1SyntaxExpression)
+
+
+def test_l1syntaxexpression_constructor_exists():
+    assert callable(L1SyntaxExpression.__init__)
+
+
+def test_l1syntaxexpression_constructor_args():
+    sig = inspect.signature(L1SyntaxExpression.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_dbl_plainsymbolreference_is_not_abstract():
+    assert not inspect.isabstract(dbl_PlainSymbolReference)
+
+
+def test_dbl_plainsymbolreference_constructor_exists():
+    assert callable(dbl_PlainSymbolReference.__init__)
+
+
+def test_dbl_plainsymbolreference_constructor_args():
+    sig = inspect.signature(dbl_PlainSymbolReference.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_dbl_callpart_is_not_abstract():
+    assert not inspect.isabstract(dbl_CallPart)
+
+
+def test_dbl_callpart_constructor_exists():
+    assert callable(dbl_CallPart.__init__)
+
+
+def test_dbl_callpart_constructor_args():
+    sig = inspect.signature(dbl_CallPart.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_annotation_is_not_abstract():
+    assert not inspect.isabstract(Annotation)
+
+
+def test_annotation_constructor_exists():
+    assert callable(Annotation.__init__)
+
+
+def test_annotation_constructor_args():
+    sig = inspect.signature(Annotation.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_predefinedid_is_not_abstract():
+    assert not inspect.isabstract(PredefinedId)
+
+
+def test_predefinedid_constructor_exists():
+    assert callable(PredefinedId.__init__)
+
+
+def test_predefinedid_constructor_args():
+    sig = inspect.signature(PredefinedId.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_dbl_metaliteral_is_not_abstract():
+    assert not inspect.isabstract(dbl_MetaLiteral)
+
+
+def test_dbl_metaliteral_constructor_exists():
+    assert callable(dbl_MetaLiteral.__init__)
+
+
+def test_dbl_metaliteral_constructor_args():
+    sig = inspect.signature(dbl_MetaLiteral.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_dbl_superliteral_is_not_abstract():
+    assert not inspect.isabstract(dbl_SuperLiteral)
+
+
+def test_dbl_superliteral_constructor_exists():
+    assert callable(dbl_SuperLiteral.__init__)
+
+
+def test_dbl_superliteral_constructor_args():
+    sig = inspect.signature(dbl_SuperLiteral.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_dbl_typeliteral_is_not_abstract():
+    assert not inspect.isabstract(dbl_TypeLiteral)
+
+
+def test_dbl_typeliteral_constructor_exists():
+    assert callable(dbl_TypeLiteral.__init__)
+
+
+def test_dbl_typeliteral_constructor_args():
+    sig = inspect.signature(dbl_TypeLiteral.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_dbl_annotationliteral_is_not_abstract():
+    assert not inspect.isabstract(dbl_AnnotationLiteral)
+
+
+def test_dbl_annotationliteral_constructor_exists():
+    assert callable(dbl_AnnotationLiteral.__init__)
+
+
+def test_dbl_annotationliteral_constructor_args():
+    sig = inspect.signature(dbl_AnnotationLiteral.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_dbl_sizeofarray_is_not_abstract():
+    assert not inspect.isabstract(dbl_SizeOfArray)
+
+
+def test_dbl_sizeofarray_constructor_exists():
+    assert callable(dbl_SizeOfArray.__init__)
+
+
+def test_dbl_sizeofarray_constructor_args():
+    sig = inspect.signature(dbl_SizeOfArray.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_dbl_meliteral_is_not_abstract():
+    assert not inspect.isabstract(dbl_MeLiteral)
+
+
+def test_dbl_meliteral_constructor_exists():
+    assert callable(dbl_MeLiteral.__init__)
+
+
+def test_dbl_meliteral_constructor_args():
+    sig = inspect.signature(dbl_MeLiteral.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -3089,59 +3089,73 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-ElementarySymbol_strategy = st.builds(
-    ElementarySymbol,
+Module_strategy = st.builds(
+    Module,
 )
-dbl::IdSymbol_strategy = st.builds(
-    dbl::IdSymbol,
+Class_strategy = st.builds(
+    Class,
 )
-L1SyntaxExpression_strategy = st.builds(
-    L1SyntaxExpression,
+dbl_ExpansionPart_strategy = st.builds(
+    dbl_ExpansionPart,
 )
-dbl::PlainSymbolReference_strategy = st.builds(
-    dbl::PlainSymbolReference,
+Variable_strategy = st.builds(
+    Variable,
 )
-dbl::CallPart_strategy = st.builds(
-    dbl::CallPart,
+dbl_CreateIdStatement_strategy = st.builds(
+    dbl_CreateIdStatement,
 )
-Annotation_strategy = st.builds(
-    Annotation,
+QuotedCode_strategy = st.builds(
+    QuotedCode,
 )
-PredefinedId_strategy = st.builds(
-    PredefinedId,
+dbl_QuotedModuleContent_strategy = st.builds(
+    dbl_QuotedModuleContent,
 )
-dbl::MetaLiteral_strategy = st.builds(
-    dbl::MetaLiteral,
+dbl_QuotedClassContent_strategy = st.builds(
+    dbl_QuotedClassContent,
 )
-dbl::SizeOfArray_strategy = st.builds(
-    dbl::SizeOfArray,
+dbl_QuotedStatements_strategy = st.builds(
+    dbl_QuotedStatements,
 )
-dbl::AnnotationLiteral_strategy = st.builds(
-    dbl::AnnotationLiteral,
+dbl_QuotedExpression_strategy = st.builds(
+    dbl_QuotedExpression,
 )
-dbl::SuperLiteral_strategy = st.builds(
-    dbl::SuperLiteral,
+dbl_QuotedCode_strategy = st.builds(
+    dbl_QuotedCode,
 )
-dbl::TypeLiteral_strategy = st.builds(
-    dbl::TypeLiteral,
+ExpansionPart_strategy = st.builds(
+    ExpansionPart,
 )
-dbl::MeLiteral_strategy = st.builds(
-    dbl::MeLiteral,
+dbl_ExpandVariablePart_strategy = st.builds(
+    dbl_ExpandVariablePart,
 )
-dbl::PredefinedId_strategy = st.builds(
-    dbl::PredefinedId,
+dbl_ExpandTextPart_strategy = st.builds(
+    dbl_ExpandTextPart,
+    text=
+        safe_text
+)
+PlainSymbolReference_strategy = st.builds(
+    PlainSymbolReference,
+)
+L2SyntaxExpression_strategy = st.builds(
+    L2SyntaxExpression,
+)
+dbl_SymbolSequence_strategy = st.builds(
+    dbl_SymbolSequence,
+)
+dbl_PredefinedId_strategy = st.builds(
+    dbl_PredefinedId,
 )
 VariableAccess_strategy = st.builds(
     VariableAccess,
 )
-dbl::MetaAccess_strategy = st.builds(
-    dbl::MetaAccess,
+dbl_MetaAccess_strategy = st.builds(
+    dbl_MetaAccess,
 )
 ElementAccess_strategy = st.builds(
     ElementAccess,
 )
-dbl::TypeAccess_strategy = st.builds(
-    dbl::TypeAccess,
+dbl_TypeAccess_strategy = st.builds(
+    dbl_TypeAccess,
 )
 L3Expr_strategy = st.builds(
     L3Expr,
@@ -3164,74 +3178,74 @@ L8Expr_strategy = st.builds(
 BinaryOperator_strategy = st.builds(
     BinaryOperator,
 )
-dbl::Greater_strategy = st.builds(
-    dbl::Greater,
+dbl_And_strategy = st.builds(
+    dbl_And,
 )
-dbl::LessEqual_strategy = st.builds(
-    dbl::LessEqual,
+dbl_Equal_strategy = st.builds(
+    dbl_Equal,
 )
-dbl::Minus_strategy = st.builds(
-    dbl::Minus,
+dbl_GreaterEqual_strategy = st.builds(
+    dbl_GreaterEqual,
 )
-dbl::InstanceOf_strategy = st.builds(
-    dbl::InstanceOf,
+dbl_Plus_strategy = st.builds(
+    dbl_Plus,
 )
-dbl::Plus_strategy = st.builds(
-    dbl::Plus,
+dbl_Mul_strategy = st.builds(
+    dbl_Mul,
 )
-dbl::GreaterEqual_strategy = st.builds(
-    dbl::GreaterEqual,
+dbl_Minus_strategy = st.builds(
+    dbl_Minus,
 )
-dbl::And_strategy = st.builds(
-    dbl::And,
+dbl_LessEqual_strategy = st.builds(
+    dbl_LessEqual,
 )
-dbl::Equal_strategy = st.builds(
-    dbl::Equal,
+dbl_InstanceOf_strategy = st.builds(
+    dbl_InstanceOf,
 )
-dbl::NotEqual_strategy = st.builds(
-    dbl::NotEqual,
+dbl_NotEqual_strategy = st.builds(
+    dbl_NotEqual,
 )
-dbl::Mul_strategy = st.builds(
-    dbl::Mul,
+dbl_Less_strategy = st.builds(
+    dbl_Less,
 )
-dbl::Less_strategy = st.builds(
-    dbl::Less,
+dbl_Greater_strategy = st.builds(
+    dbl_Greater,
 )
-dbl::Or_strategy = st.builds(
-    dbl::Or,
+dbl_Or_strategy = st.builds(
+    dbl_Or,
 )
 L1Expr_strategy = st.builds(
     L1Expr,
 )
-dbl::TrueLiteral_strategy = st.builds(
-    dbl::TrueLiteral,
+dbl_NullLiteral_strategy = st.builds(
+    dbl_NullLiteral,
 )
-dbl::StringLiteral_strategy = st.builds(
-    dbl::StringLiteral,
+dbl_IntLiteral_strategy = st.builds(
+    dbl_IntLiteral,
+    value=
+        st.integers()
+)
+dbl_FalseLiteral_strategy = st.builds(
+    dbl_FalseLiteral,
+)
+dbl_ActiveLiteral_strategy = st.builds(
+    dbl_ActiveLiteral,
+)
+dbl_TimeLiteral_strategy = st.builds(
+    dbl_TimeLiteral,
+)
+dbl_TrueLiteral_strategy = st.builds(
+    dbl_TrueLiteral,
+)
+dbl_StringLiteral_strategy = st.builds(
+    dbl_StringLiteral,
     value=
         safe_text
 )
-dbl::NullLiteral_strategy = st.builds(
-    dbl::NullLiteral,
-)
-dbl::ActiveLiteral_strategy = st.builds(
-    dbl::ActiveLiteral,
-)
-dbl::TimeLiteral_strategy = st.builds(
-    dbl::TimeLiteral,
-)
-dbl::FalseLiteral_strategy = st.builds(
-    dbl::FalseLiteral,
-)
-dbl::DoubleLiteral_strategy = st.builds(
-    dbl::DoubleLiteral,
+dbl_DoubleLiteral_strategy = st.builds(
+    dbl_DoubleLiteral,
     value=
         st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False)
-)
-dbl::IntLiteral_strategy = st.builds(
-    dbl::IntLiteral,
-    value=
-        st.integers()
 )
 L2Expr_strategy = st.builds(
     L2Expr,
@@ -3239,144 +3253,173 @@ L2Expr_strategy = st.builds(
 UnaryOperator_strategy = st.builds(
     UnaryOperator,
 )
-dbl::Not_strategy = st.builds(
-    dbl::Not,
+dbl_Not_strategy = st.builds(
+    dbl_Not,
 )
-dbl::Neg_strategy = st.builds(
-    dbl::Neg,
+dbl_Neg_strategy = st.builds(
+    dbl_Neg,
 )
-dbl::Div_strategy = st.builds(
-    dbl::Div,
+dbl_Div_strategy = st.builds(
+    dbl_Div,
 )
-dbl::Mod_strategy = st.builds(
-    dbl::Mod,
+dbl_Mod_strategy = st.builds(
+    dbl_Mod,
 )
-dbl::SwitchCase_strategy = st.builds(
-    dbl::SwitchCase,
+dbl_SwitchCase_strategy = st.builds(
+    dbl_SwitchCase,
 )
 LoopStatement_strategy = st.builds(
     LoopStatement,
 )
-dbl::WhileStatement_strategy = st.builds(
-    dbl::WhileStatement,
+dbl_WhileStatement_strategy = st.builds(
+    dbl_WhileStatement,
 )
 Expression_strategy = st.builds(
     Expression,
 )
-dbl::BinaryOperator_strategy = st.builds(
-    dbl::BinaryOperator,
+dbl_ExpandExpression_strategy = st.builds(
+    dbl_ExpandExpression,
 )
-dbl::L3Expr_strategy = st.builds(
-    dbl::L3Expr,
+dbl_L3Expr_strategy = st.builds(
+    dbl_L3Expr,
 )
-dbl::L7Expr_strategy = st.builds(
-    dbl::L7Expr,
+dbl_L4Expr_strategy = st.builds(
+    dbl_L4Expr,
 )
-dbl::ElementAccess_strategy = st.builds(
-    dbl::ElementAccess,
+dbl_BinaryOperator_strategy = st.builds(
+    dbl_BinaryOperator,
 )
-dbl::UnaryOperator_strategy = st.builds(
-    dbl::UnaryOperator,
+dbl_L6Expr_strategy = st.builds(
+    dbl_L6Expr,
 )
-dbl::ParseExpr_strategy = st.builds(
-    dbl::ParseExpr,
+dbl_CodeQuoteExpression_strategy = st.builds(
+    dbl_CodeQuoteExpression,
 )
-dbl::L2Expr_strategy = st.builds(
-    dbl::L2Expr,
+dbl_ParseExpr_strategy = st.builds(
+    dbl_ParseExpr,
 )
-dbl::L9Expr_strategy = st.builds(
-    dbl::L9Expr,
+dbl_L7Expr_strategy = st.builds(
+    dbl_L7Expr,
 )
-dbl::L8Expr_strategy = st.builds(
-    dbl::L8Expr,
+dbl_MetaExpr_strategy = st.builds(
+    dbl_MetaExpr,
 )
-dbl::L6Expr_strategy = st.builds(
-    dbl::L6Expr,
+dbl_ElementAccess_strategy = st.builds(
+    dbl_ElementAccess,
 )
-dbl::L5Expr_strategy = st.builds(
-    dbl::L5Expr,
+dbl_L9Expr_strategy = st.builds(
+    dbl_L9Expr,
 )
-dbl::L4Expr_strategy = st.builds(
-    dbl::L4Expr,
+dbl_L5Expr_strategy = st.builds(
+    dbl_L5Expr,
 )
-dbl::L1Expr_strategy = st.builds(
-    dbl::L1Expr,
+dbl_UnaryOperator_strategy = st.builds(
+    dbl_UnaryOperator,
 )
-dbl::LocalScope_strategy = st.builds(
-    dbl::LocalScope,
+dbl_L2Expr_strategy = st.builds(
+    dbl_L2Expr,
+)
+dbl_L8Expr_strategy = st.builds(
+    dbl_L8Expr,
+)
+dbl_L1Expr_strategy = st.builds(
+    dbl_L1Expr,
+)
+dbl_LocalScope_strategy = st.builds(
+    dbl_LocalScope,
 )
 AnnotateableElement_strategy = st.builds(
     AnnotateableElement,
 )
-dbl::VariableAccess_strategy = st.builds(
-    dbl::VariableAccess,
+dbl_VariableAccess_strategy = st.builds(
+    dbl_VariableAccess,
 )
 Statement_strategy = st.builds(
     Statement,
 )
-dbl::IfStatement_strategy = st.builds(
-    dbl::IfStatement,
+dbl_TestStatement_strategy = st.builds(
+    dbl_TestStatement,
+    value=
+        st.integers()
 )
-dbl::SimpleStatement_strategy = st.builds(
-    dbl::SimpleStatement,
+dbl_SimpleStatement_strategy = st.builds(
+    dbl_SimpleStatement,
 )
-dbl::LoopStatement_strategy = st.builds(
-    dbl::LoopStatement,
+dbl_ExpandStatement_strategy = st.builds(
+    dbl_ExpandStatement,
 )
-dbl::NamedElement_strategy = st.builds(
-    dbl::NamedElement,
+dbl_IfStatement_strategy = st.builds(
+    dbl_IfStatement,
+)
+dbl_LoopStatement_strategy = st.builds(
+    dbl_LoopStatement,
+)
+dbl_NamedElement_strategy = st.builds(
+    dbl_NamedElement,
     name=
         safe_text
 )
 SimpleStatement_strategy = st.builds(
     SimpleStatement,
 )
-dbl::Yield_strategy = st.builds(
-    dbl::Yield,
+dbl_SwitchStatement_strategy = st.builds(
+    dbl_SwitchStatement,
 )
-dbl::Terminate_strategy = st.builds(
-    dbl::Terminate,
-)
-dbl::YieldTo_strategy = st.builds(
-    dbl::YieldTo,
-)
-dbl::ActivateObject_strategy = st.builds(
-    dbl::ActivateObject,
+dbl_ActivateObject_strategy = st.builds(
+    dbl_ActivateObject,
     priority=
         st.integers()
 )
-dbl::BreakStatement_strategy = st.builds(
-    dbl::BreakStatement,
+dbl_ExpansionStatement_strategy = st.builds(
+    dbl_ExpansionStatement,
+    classContext=
+        st.booleans(),
+    functionContext=
+        st.booleans(),
+    variableContext=
+        st.booleans()
 )
-dbl::ContinueStatement_strategy = st.builds(
-    dbl::ContinueStatement,
+dbl_TargetStatement_strategy = st.builds(
+    dbl_TargetStatement,
 )
-dbl::Print_strategy = st.builds(
-    dbl::Print,
+dbl_Assignment_strategy = st.builds(
+    dbl_Assignment,
 )
-dbl::Wait_strategy = st.builds(
-    dbl::Wait,
+dbl_Return_strategy = st.builds(
+    dbl_Return,
 )
-dbl::Return_strategy = st.builds(
-    dbl::Return,
+dbl_Wait_strategy = st.builds(
+    dbl_Wait,
 )
-dbl::FunctionCall_strategy = st.builds(
-    dbl::FunctionCall,
+dbl_Yield_strategy = st.builds(
+    dbl_Yield,
 )
-dbl::WaitUntil_strategy = st.builds(
-    dbl::WaitUntil,
+dbl_Print_strategy = st.builds(
+    dbl_Print,
 )
-dbl::Assignment_strategy = st.builds(
-    dbl::Assignment,
+dbl_Reactivate_strategy = st.builds(
+    dbl_Reactivate,
 )
-dbl::SwitchStatement_strategy = st.builds(
-    dbl::SwitchStatement,
+dbl_ContinueStatement_strategy = st.builds(
+    dbl_ContinueStatement,
 )
-dbl::Advance_strategy = st.builds(
-    dbl::Advance,
+dbl_Terminate_strategy = st.builds(
+    dbl_Terminate,
 )
-dbl::Reactivate_strategy = st.builds(
-    dbl::Reactivate,
+dbl_WaitUntil_strategy = st.builds(
+    dbl_WaitUntil,
+)
+dbl_FunctionCall_strategy = st.builds(
+    dbl_FunctionCall,
+)
+dbl_BreakStatement_strategy = st.builds(
+    dbl_BreakStatement,
+)
+dbl_YieldTo_strategy = st.builds(
+    dbl_YieldTo,
+)
+dbl_Advance_strategy = st.builds(
+    dbl_Advance,
 )
 AbstractVariable_strategy = st.builds(
     AbstractVariable,
@@ -3384,86 +3427,86 @@ AbstractVariable_strategy = st.builds(
 TypedElement_strategy = st.builds(
     TypedElement,
 )
-dbl::CreateObject_strategy = st.builds(
-    dbl::CreateObject,
+dbl_Cast_strategy = st.builds(
+    dbl_Cast,
 )
-dbl::Cast_strategy = st.builds(
-    dbl::Cast,
+dbl_CreateObject_strategy = st.builds(
+    dbl_CreateObject,
 )
 PrimitiveType_strategy = st.builds(
     PrimitiveType,
 )
-dbl::BoolType_strategy = st.builds(
-    dbl::BoolType,
+dbl_DoubleType_strategy = st.builds(
+    dbl_DoubleType,
 )
-dbl::IntType_strategy = st.builds(
-    dbl::IntType,
+dbl_BoolType_strategy = st.builds(
+    dbl_BoolType,
 )
-dbl::StringType_strategy = st.builds(
-    dbl::StringType,
+dbl_StringType_strategy = st.builds(
+    dbl_StringType,
 )
-dbl::DoubleType_strategy = st.builds(
-    dbl::DoubleType,
+dbl_IntType_strategy = st.builds(
+    dbl_IntType,
 )
-dbl::VoidType_strategy = st.builds(
-    dbl::VoidType,
+dbl_VoidType_strategy = st.builds(
+    dbl_VoidType,
 )
 Type_strategy = st.builds(
     Type,
 )
-dbl::IdExpr_strategy = st.builds(
-    dbl::IdExpr,
+dbl_IdExpr_strategy = st.builds(
+    dbl_IdExpr,
 )
-dbl::PrimitiveType_strategy = st.builds(
-    dbl::PrimitiveType,
+dbl_PrimitiveType_strategy = st.builds(
+    dbl_PrimitiveType,
 )
-dbl::TypedElement_strategy = st.builds(
-    dbl::TypedElement,
+dbl_TypedElement_strategy = st.builds(
+    dbl_TypedElement,
 )
-dbl::ArrayDimension_strategy = st.builds(
-    dbl::ArrayDimension,
+dbl_ArrayDimension_strategy = st.builds(
+    dbl_ArrayDimension,
 )
-dbl::Type_strategy = st.builds(
-    dbl::Type,
+dbl_Type_strategy = st.builds(
+    dbl_Type,
 )
 Concept_strategy = st.builds(
     Concept,
 )
-dbl::SuperClassSpecification_strategy = st.builds(
-    dbl::SuperClassSpecification,
+dbl_SuperClassSpecification_strategy = st.builds(
+    dbl_SuperClassSpecification,
 )
-dbl::NativeBinding_strategy = st.builds(
-    dbl::NativeBinding,
+dbl_NativeBinding_strategy = st.builds(
+    dbl_NativeBinding,
     targetType=
         safe_text,
     targetLanguage=
         safe_text
 )
-dbl::Parameter_strategy = st.builds(
-    dbl::Parameter,
+dbl_Parameter_strategy = st.builds(
+    dbl_Parameter,
 )
 LocalScope_strategy = st.builds(
     LocalScope,
 )
-dbl::Constructor_strategy = st.builds(
-    dbl::Constructor,
+dbl_ForStatement_strategy = st.builds(
+    dbl_ForStatement,
 )
-dbl::LocalScopeStatement_strategy = st.builds(
-    dbl::LocalScopeStatement,
+dbl_LocalScopeStatement_strategy = st.builds(
+    dbl_LocalScopeStatement,
 )
-dbl::ForStatement_strategy = st.builds(
-    dbl::ForStatement,
+dbl_Constructor_strategy = st.builds(
+    dbl_Constructor,
 )
 ConstructiveExtensionAtContentExtensionPoint_strategy = st.builds(
     ConstructiveExtensionAtContentExtensionPoint,
 )
-dbl::Import_strategy = st.builds(
-    dbl::Import,
+dbl_Import_strategy = st.builds(
+    dbl_Import,
     file=
         safe_text
 )
-dbl::Model_strategy = st.builds(
-    dbl::Model,
+dbl_Model_strategy = st.builds(
+    dbl_Model,
 )
 Construct_strategy = st.builds(
     Construct,
@@ -3471,19 +3514,35 @@ Construct_strategy = st.builds(
 NamedElement_strategy = st.builds(
     NamedElement,
 )
-dbl::Class_strategy = st.builds(
-    dbl::Class,
+dbl_Class_strategy = st.builds(
+    dbl_Class,
     active=
         st.booleans()
 )
-dbl::Module_strategy = st.builds(
-    dbl::Module,
+dbl_StructuralSymbolReference_strategy = st.builds(
+    dbl_StructuralSymbolReference,
+    localScopedReference=
+        st.booleans(),
+    composite=
+        st.booleans(),
+    globalScopedReference=
+        st.booleans(),
+    list=
+        st.booleans()
 )
-dbl::AbstractVariable_strategy = st.builds(
-    dbl::AbstractVariable,
+dbl_AbstractVariable_strategy = st.builds(
+    dbl_AbstractVariable,
 )
-dbl::ExtensibleElement_strategy = st.builds(
-    dbl::ExtensibleElement,
+dbl_Pattern_strategy = st.builds(
+    dbl_Pattern,
+    top=
+        st.booleans()
+)
+dbl_Module_strategy = st.builds(
+    dbl_Module,
+)
+dbl_ExtensibleElement_strategy = st.builds(
+    dbl_ExtensibleElement,
     instanceOfExtensionDefinition=
         st.booleans(),
     concreteSyntax=
@@ -3492,306 +3551,275 @@ dbl::ExtensibleElement_strategy = st.builds(
 ConstructiveExtension_strategy = st.builds(
     ConstructiveExtension,
 )
-dbl::ClassContentExtension_strategy = st.builds(
-    dbl::ClassContentExtension,
+dbl_ClassContentExtension_strategy = st.builds(
+    dbl_ClassContentExtension,
 )
-dbl::ModuleContentExtension_strategy = st.builds(
-    dbl::ModuleContentExtension,
+dbl_ModuleContentExtension_strategy = st.builds(
+    dbl_ModuleContentExtension,
 )
-dbl::ConstructiveExtensionAtContentExtensionPoint_strategy = st.builds(
-    dbl::ConstructiveExtensionAtContentExtensionPoint,
+dbl_ConstructiveExtensionAtContentExtensionPoint_strategy = st.builds(
+    dbl_ConstructiveExtensionAtContentExtensionPoint,
 )
 ExtensibleElement_strategy = st.builds(
     ExtensibleElement,
 )
-dbl::SyntaxDefinition_strategy = st.builds(
-    dbl::SyntaxDefinition,
+dbl_SyntaxDefinition_strategy = st.builds(
+    dbl_SyntaxDefinition,
 )
-dbl::Expression_strategy = st.builds(
-    dbl::Expression,
+dbl_Expression_strategy = st.builds(
+    dbl_Expression,
 )
-dbl::ExtensionSemantics_strategy = st.builds(
-    dbl::ExtensionSemantics,
+dbl_Statement_strategy = st.builds(
+    dbl_Statement,
 )
-dbl::Statement_strategy = st.builds(
-    dbl::Statement,
+dbl_Extension_strategy = st.builds(
+    dbl_Extension,
 )
-dbl::Extension_strategy = st.builds(
-    dbl::Extension,
+dbl_ExtensionSemantics_strategy = st.builds(
+    dbl_ExtensionSemantics,
 )
-dbl::ConstructiveExtension_strategy = st.builds(
-    dbl::ConstructiveExtension,
+dbl_ConstructiveExtension_strategy = st.builds(
+    dbl_ConstructiveExtension,
 )
-dbl::AnnotateableElement_strategy = st.builds(
-    dbl::AnnotateableElement,
+dbl_AnnotateableElement_strategy = st.builds(
+    dbl_AnnotateableElement,
 )
-dbl::AnnotationItem_strategy = st.builds(
-    dbl::AnnotationItem,
+dbl_AnnotationItem_strategy = st.builds(
+    dbl_AnnotationItem,
     value=
         safe_text,
     key=
         safe_text
 )
-dbl::Annotation_strategy = st.builds(
-    dbl::Annotation,
+dbl_Annotation_strategy = st.builds(
+    dbl_Annotation,
 )
-dbl::Variable_strategy = st.builds(
-    dbl::Variable,
-    control=
-        st.booleans(),
+dbl_Variable_strategy = st.builds(
+    dbl_Variable,
     class_=
+        st.booleans(),
+    control=
         st.booleans()
 )
-dbl::Function_strategy = st.builds(
-    dbl::Function,
-    detached=
-        st.booleans(),
+dbl_Function_strategy = st.builds(
+    dbl_Function,
     abstract=
         st.booleans(),
     class_=
+        st.booleans(),
+    detached=
         st.booleans()
 )
-dbl::ExpandExpr_strategy = st.builds(
-    dbl::ExpandExpr,
+dbl_ExpandExpr_strategy = st.builds(
+    dbl_ExpandExpr,
 )
-dbl::Construct_strategy = st.builds(
-    dbl::Construct,
-)
-dbl::TestStatement_strategy = st.builds(
-    dbl::TestStatement,
-    value=
-        st.integers()
-)
-dbl::Pattern_strategy = st.builds(
-    dbl::Pattern,
-    top=
-        st.booleans()
-)
-Module_strategy = st.builds(
-    Module,
-)
-Class_strategy = st.builds(
-    Class,
-)
-dbl::ExpansionPart_strategy = st.builds(
-    dbl::ExpansionPart,
-)
-dbl::ExpansionStatement_strategy = st.builds(
-    dbl::ExpansionStatement,
-    variableContext=
-        st.booleans(),
-    classContext=
-        st.booleans(),
-    functionContext=
-        st.booleans()
-)
-Variable_strategy = st.builds(
-    Variable,
-)
-dbl::CreateIdStatement_strategy = st.builds(
-    dbl::CreateIdStatement,
-)
-dbl::TargetStatement_strategy = st.builds(
-    dbl::TargetStatement,
-)
-dbl::MetaExpr_strategy = st.builds(
-    dbl::MetaExpr,
-)
-QuotedCode_strategy = st.builds(
-    QuotedCode,
-)
-dbl::QuotedModuleContent_strategy = st.builds(
-    dbl::QuotedModuleContent,
-)
-dbl::QuotedStatements_strategy = st.builds(
-    dbl::QuotedStatements,
-)
-dbl::QuotedClassContent_strategy = st.builds(
-    dbl::QuotedClassContent,
-)
-dbl::QuotedExpression_strategy = st.builds(
-    dbl::QuotedExpression,
-)
-dbl::QuotedCode_strategy = st.builds(
-    dbl::QuotedCode,
-)
-dbl::CodeQuoteExpression_strategy = st.builds(
-    dbl::CodeQuoteExpression,
-)
-dbl::ExpandStatement_strategy = st.builds(
-    dbl::ExpandStatement,
-)
-dbl::ExpandExpression_strategy = st.builds(
-    dbl::ExpandExpression,
-)
-ExpansionPart_strategy = st.builds(
-    ExpansionPart,
-)
-dbl::ExpandVariablePart_strategy = st.builds(
-    dbl::ExpandVariablePart,
-)
-dbl::ExpandTextPart_strategy = st.builds(
-    dbl::ExpandTextPart,
-    text=
-        safe_text
-)
-PlainSymbolReference_strategy = st.builds(
-    PlainSymbolReference,
-)
-dbl::StructuralSymbolReference_strategy = st.builds(
-    dbl::StructuralSymbolReference,
-    localScopedReference=
-        st.booleans(),
-    list=
-        st.booleans(),
-    composite=
-        st.booleans(),
-    globalScopedReference=
-        st.booleans()
-)
-L2SyntaxExpression_strategy = st.builds(
-    L2SyntaxExpression,
-)
-dbl::SymbolSequence_strategy = st.builds(
-    dbl::SymbolSequence,
+dbl_Construct_strategy = st.builds(
+    dbl_Construct,
 )
 SyntaxExpression_strategy = st.builds(
     SyntaxExpression,
 )
-dbl::L1SyntaxExpression_strategy = st.builds(
-    dbl::L1SyntaxExpression,
+dbl_L1SyntaxExpression_strategy = st.builds(
+    dbl_L1SyntaxExpression,
 )
-dbl::L2SyntaxExpression_strategy = st.builds(
-    dbl::L2SyntaxExpression,
+dbl_L2SyntaxExpression_strategy = st.builds(
+    dbl_L2SyntaxExpression,
 )
-dbl::L3SyntaxExpression_strategy = st.builds(
-    dbl::L3SyntaxExpression,
+dbl_L3SyntaxExpression_strategy = st.builds(
+    dbl_L3SyntaxExpression,
 )
-dbl::SyntaxExpression_strategy = st.builds(
-    dbl::SyntaxExpression,
+dbl_SyntaxExpression_strategy = st.builds(
+    dbl_SyntaxExpression,
 )
 ComplexSymbol_strategy = st.builds(
     ComplexSymbol,
 )
-dbl::Concept_strategy = st.builds(
-    dbl::Concept,
+dbl_MetaSymbol_strategy = st.builds(
+    dbl_MetaSymbol,
 )
-dbl::MetaSymbol_strategy = st.builds(
-    dbl::MetaSymbol,
+dbl_Concept_strategy = st.builds(
+    dbl_Concept,
 )
 SyntaxSymbolClassifier_strategy = st.builds(
     SyntaxSymbolClassifier,
 )
-dbl::ElementarySymbol_strategy = st.builds(
-    dbl::ElementarySymbol,
+dbl_ComplexSymbol_strategy = st.builds(
+    dbl_ComplexSymbol,
 )
-dbl::ComplexSymbol_strategy = st.builds(
-    dbl::ComplexSymbol,
+dbl_SyntaxSymbolClassifier_strategy = st.builds(
+    dbl_SyntaxSymbolClassifier,
 )
-dbl::SyntaxSymbolClassifier_strategy = st.builds(
-    dbl::SyntaxSymbolClassifier,
+ElementarySymbol_strategy = st.builds(
+    ElementarySymbol,
 )
-dbl::Keyword_strategy = st.builds(
-    dbl::Keyword,
+dbl_StringSymbol_strategy = st.builds(
+    dbl_StringSymbol,
+)
+dbl_Keyword_strategy = st.builds(
+    dbl_Keyword,
     keyword=
         safe_text
 )
-dbl::StringSymbol_strategy = st.builds(
-    dbl::StringSymbol,
+dbl_IntSymbol_strategy = st.builds(
+    dbl_IntSymbol,
 )
-dbl::IntSymbol_strategy = st.builds(
-    dbl::IntSymbol,
+dbl_IdSymbol_strategy = st.builds(
+    dbl_IdSymbol,
+)
+dbl_ElementarySymbol_strategy = st.builds(
+    dbl_ElementarySymbol,
+)
+L1SyntaxExpression_strategy = st.builds(
+    L1SyntaxExpression,
+)
+dbl_PlainSymbolReference_strategy = st.builds(
+    dbl_PlainSymbolReference,
+)
+dbl_CallPart_strategy = st.builds(
+    dbl_CallPart,
+)
+Annotation_strategy = st.builds(
+    Annotation,
+)
+PredefinedId_strategy = st.builds(
+    PredefinedId,
+)
+dbl_MetaLiteral_strategy = st.builds(
+    dbl_MetaLiteral,
+)
+dbl_SuperLiteral_strategy = st.builds(
+    dbl_SuperLiteral,
+)
+dbl_TypeLiteral_strategy = st.builds(
+    dbl_TypeLiteral,
+)
+dbl_AnnotationLiteral_strategy = st.builds(
+    dbl_AnnotationLiteral,
+)
+dbl_SizeOfArray_strategy = st.builds(
+    dbl_SizeOfArray,
+)
+dbl_MeLiteral_strategy = st.builds(
+    dbl_MeLiteral,
 )
 
-@given(instance=ElementarySymbol_strategy)
+@given(instance=Module_strategy)
 @settings(max_examples=50)
-def test_elementarysymbol_instantiation(instance):
-    assert isinstance(instance, ElementarySymbol)
+def test_module_instantiation(instance):
+    assert isinstance(instance, Module)
 
-@given(instance=dbl::IdSymbol_strategy)
+@given(instance=Class_strategy)
 @settings(max_examples=50)
-def test_dbl::idsymbol_instantiation(instance):
-    assert isinstance(instance, dbl::IdSymbol)
+def test_class_instantiation(instance):
+    assert isinstance(instance, Class)
 
-@given(instance=L1SyntaxExpression_strategy)
+@given(instance=dbl_ExpansionPart_strategy)
 @settings(max_examples=50)
-def test_l1syntaxexpression_instantiation(instance):
-    assert isinstance(instance, L1SyntaxExpression)
+def test_dbl_expansionpart_instantiation(instance):
+    assert isinstance(instance, dbl_ExpansionPart)
 
-@given(instance=dbl::PlainSymbolReference_strategy)
+@given(instance=Variable_strategy)
 @settings(max_examples=50)
-def test_dbl::plainsymbolreference_instantiation(instance):
-    assert isinstance(instance, dbl::PlainSymbolReference)
+def test_variable_instantiation(instance):
+    assert isinstance(instance, Variable)
 
-@given(instance=dbl::CallPart_strategy)
+@given(instance=dbl_CreateIdStatement_strategy)
 @settings(max_examples=50)
-def test_dbl::callpart_instantiation(instance):
-    assert isinstance(instance, dbl::CallPart)
+def test_dbl_createidstatement_instantiation(instance):
+    assert isinstance(instance, dbl_CreateIdStatement)
 
-@given(instance=Annotation_strategy)
+@given(instance=QuotedCode_strategy)
 @settings(max_examples=50)
-def test_annotation_instantiation(instance):
-    assert isinstance(instance, Annotation)
+def test_quotedcode_instantiation(instance):
+    assert isinstance(instance, QuotedCode)
 
-@given(instance=PredefinedId_strategy)
+@given(instance=dbl_QuotedModuleContent_strategy)
 @settings(max_examples=50)
-def test_predefinedid_instantiation(instance):
-    assert isinstance(instance, PredefinedId)
+def test_dbl_quotedmodulecontent_instantiation(instance):
+    assert isinstance(instance, dbl_QuotedModuleContent)
 
-@given(instance=dbl::MetaLiteral_strategy)
+@given(instance=dbl_QuotedClassContent_strategy)
 @settings(max_examples=50)
-def test_dbl::metaliteral_instantiation(instance):
-    assert isinstance(instance, dbl::MetaLiteral)
+def test_dbl_quotedclasscontent_instantiation(instance):
+    assert isinstance(instance, dbl_QuotedClassContent)
 
-@given(instance=dbl::SizeOfArray_strategy)
+@given(instance=dbl_QuotedStatements_strategy)
 @settings(max_examples=50)
-def test_dbl::sizeofarray_instantiation(instance):
-    assert isinstance(instance, dbl::SizeOfArray)
+def test_dbl_quotedstatements_instantiation(instance):
+    assert isinstance(instance, dbl_QuotedStatements)
 
-@given(instance=dbl::AnnotationLiteral_strategy)
+@given(instance=dbl_QuotedExpression_strategy)
 @settings(max_examples=50)
-def test_dbl::annotationliteral_instantiation(instance):
-    assert isinstance(instance, dbl::AnnotationLiteral)
+def test_dbl_quotedexpression_instantiation(instance):
+    assert isinstance(instance, dbl_QuotedExpression)
 
-@given(instance=dbl::SuperLiteral_strategy)
+@given(instance=dbl_QuotedCode_strategy)
 @settings(max_examples=50)
-def test_dbl::superliteral_instantiation(instance):
-    assert isinstance(instance, dbl::SuperLiteral)
+def test_dbl_quotedcode_instantiation(instance):
+    assert isinstance(instance, dbl_QuotedCode)
 
-@given(instance=dbl::TypeLiteral_strategy)
+@given(instance=ExpansionPart_strategy)
 @settings(max_examples=50)
-def test_dbl::typeliteral_instantiation(instance):
-    assert isinstance(instance, dbl::TypeLiteral)
+def test_expansionpart_instantiation(instance):
+    assert isinstance(instance, ExpansionPart)
 
-@given(instance=dbl::MeLiteral_strategy)
+@given(instance=dbl_ExpandVariablePart_strategy)
 @settings(max_examples=50)
-def test_dbl::meliteral_instantiation(instance):
-    assert isinstance(instance, dbl::MeLiteral)
+def test_dbl_expandvariablepart_instantiation(instance):
+    assert isinstance(instance, dbl_ExpandVariablePart)
 
-@given(instance=dbl::PredefinedId_strategy)
+@given(instance=dbl_ExpandTextPart_strategy)
 @settings(max_examples=50)
-def test_dbl::predefinedid_instantiation(instance):
-    assert isinstance(instance, dbl::PredefinedId)
+def test_dbl_expandtextpart_instantiation(instance):
+    assert isinstance(instance, dbl_ExpandTextPart)
+
+
+
+@given(instance=dbl_ExpandTextPart_strategy)
+def test_dbl_expandtextpart_text_setter(instance):
+    original = instance.text
+    instance.text = original
+    assert instance.text == original
+
+@given(instance=PlainSymbolReference_strategy)
+@settings(max_examples=50)
+def test_plainsymbolreference_instantiation(instance):
+    assert isinstance(instance, PlainSymbolReference)
+
+@given(instance=L2SyntaxExpression_strategy)
+@settings(max_examples=50)
+def test_l2syntaxexpression_instantiation(instance):
+    assert isinstance(instance, L2SyntaxExpression)
+
+@given(instance=dbl_SymbolSequence_strategy)
+@settings(max_examples=50)
+def test_dbl_symbolsequence_instantiation(instance):
+    assert isinstance(instance, dbl_SymbolSequence)
+
+@given(instance=dbl_PredefinedId_strategy)
+@settings(max_examples=50)
+def test_dbl_predefinedid_instantiation(instance):
+    assert isinstance(instance, dbl_PredefinedId)
 
 @given(instance=VariableAccess_strategy)
 @settings(max_examples=50)
 def test_variableaccess_instantiation(instance):
     assert isinstance(instance, VariableAccess)
 
-@given(instance=dbl::MetaAccess_strategy)
+@given(instance=dbl_MetaAccess_strategy)
 @settings(max_examples=50)
-def test_dbl::metaaccess_instantiation(instance):
-    assert isinstance(instance, dbl::MetaAccess)
+def test_dbl_metaaccess_instantiation(instance):
+    assert isinstance(instance, dbl_MetaAccess)
 
 @given(instance=ElementAccess_strategy)
 @settings(max_examples=50)
 def test_elementaccess_instantiation(instance):
     assert isinstance(instance, ElementAccess)
 
-@given(instance=dbl::TypeAccess_strategy)
+@given(instance=dbl_TypeAccess_strategy)
 @settings(max_examples=50)
-def test_dbl::typeaccess_instantiation(instance):
-    assert isinstance(instance, dbl::TypeAccess)
+def test_dbl_typeaccess_instantiation(instance):
+    assert isinstance(instance, dbl_TypeAccess)
 
 @given(instance=L3Expr_strategy)
 @settings(max_examples=50)
@@ -3828,140 +3856,131 @@ def test_l8expr_instantiation(instance):
 def test_binaryoperator_instantiation(instance):
     assert isinstance(instance, BinaryOperator)
 
-@given(instance=dbl::Greater_strategy)
+@given(instance=dbl_And_strategy)
 @settings(max_examples=50)
-def test_dbl::greater_instantiation(instance):
-    assert isinstance(instance, dbl::Greater)
+def test_dbl_and_instantiation(instance):
+    assert isinstance(instance, dbl_And)
 
-@given(instance=dbl::LessEqual_strategy)
+@given(instance=dbl_Equal_strategy)
 @settings(max_examples=50)
-def test_dbl::lessequal_instantiation(instance):
-    assert isinstance(instance, dbl::LessEqual)
+def test_dbl_equal_instantiation(instance):
+    assert isinstance(instance, dbl_Equal)
 
-@given(instance=dbl::Minus_strategy)
+@given(instance=dbl_GreaterEqual_strategy)
 @settings(max_examples=50)
-def test_dbl::minus_instantiation(instance):
-    assert isinstance(instance, dbl::Minus)
+def test_dbl_greaterequal_instantiation(instance):
+    assert isinstance(instance, dbl_GreaterEqual)
 
-@given(instance=dbl::InstanceOf_strategy)
+@given(instance=dbl_Plus_strategy)
 @settings(max_examples=50)
-def test_dbl::instanceof_instantiation(instance):
-    assert isinstance(instance, dbl::InstanceOf)
+def test_dbl_plus_instantiation(instance):
+    assert isinstance(instance, dbl_Plus)
 
-@given(instance=dbl::Plus_strategy)
+@given(instance=dbl_Mul_strategy)
 @settings(max_examples=50)
-def test_dbl::plus_instantiation(instance):
-    assert isinstance(instance, dbl::Plus)
+def test_dbl_mul_instantiation(instance):
+    assert isinstance(instance, dbl_Mul)
 
-@given(instance=dbl::GreaterEqual_strategy)
+@given(instance=dbl_Minus_strategy)
 @settings(max_examples=50)
-def test_dbl::greaterequal_instantiation(instance):
-    assert isinstance(instance, dbl::GreaterEqual)
+def test_dbl_minus_instantiation(instance):
+    assert isinstance(instance, dbl_Minus)
 
-@given(instance=dbl::And_strategy)
+@given(instance=dbl_LessEqual_strategy)
 @settings(max_examples=50)
-def test_dbl::and_instantiation(instance):
-    assert isinstance(instance, dbl::And)
+def test_dbl_lessequal_instantiation(instance):
+    assert isinstance(instance, dbl_LessEqual)
 
-@given(instance=dbl::Equal_strategy)
+@given(instance=dbl_InstanceOf_strategy)
 @settings(max_examples=50)
-def test_dbl::equal_instantiation(instance):
-    assert isinstance(instance, dbl::Equal)
+def test_dbl_instanceof_instantiation(instance):
+    assert isinstance(instance, dbl_InstanceOf)
 
-@given(instance=dbl::NotEqual_strategy)
+@given(instance=dbl_NotEqual_strategy)
 @settings(max_examples=50)
-def test_dbl::notequal_instantiation(instance):
-    assert isinstance(instance, dbl::NotEqual)
+def test_dbl_notequal_instantiation(instance):
+    assert isinstance(instance, dbl_NotEqual)
 
-@given(instance=dbl::Mul_strategy)
+@given(instance=dbl_Less_strategy)
 @settings(max_examples=50)
-def test_dbl::mul_instantiation(instance):
-    assert isinstance(instance, dbl::Mul)
+def test_dbl_less_instantiation(instance):
+    assert isinstance(instance, dbl_Less)
 
-@given(instance=dbl::Less_strategy)
+@given(instance=dbl_Greater_strategy)
 @settings(max_examples=50)
-def test_dbl::less_instantiation(instance):
-    assert isinstance(instance, dbl::Less)
+def test_dbl_greater_instantiation(instance):
+    assert isinstance(instance, dbl_Greater)
 
-@given(instance=dbl::Or_strategy)
+@given(instance=dbl_Or_strategy)
 @settings(max_examples=50)
-def test_dbl::or_instantiation(instance):
-    assert isinstance(instance, dbl::Or)
+def test_dbl_or_instantiation(instance):
+    assert isinstance(instance, dbl_Or)
 
 @given(instance=L1Expr_strategy)
 @settings(max_examples=50)
 def test_l1expr_instantiation(instance):
     assert isinstance(instance, L1Expr)
 
-@given(instance=dbl::TrueLiteral_strategy)
+@given(instance=dbl_NullLiteral_strategy)
 @settings(max_examples=50)
-def test_dbl::trueliteral_instantiation(instance):
-    assert isinstance(instance, dbl::TrueLiteral)
+def test_dbl_nullliteral_instantiation(instance):
+    assert isinstance(instance, dbl_NullLiteral)
 
-@given(instance=dbl::StringLiteral_strategy)
+@given(instance=dbl_IntLiteral_strategy)
 @settings(max_examples=50)
-def test_dbl::stringliteral_instantiation(instance):
-    assert isinstance(instance, dbl::StringLiteral)
-
-@given(instance=dbl::StringLiteral_strategy)
-def test_dbl::stringliteral_value_type(instance):
-    assert isinstance(instance.value, str)
+def test_dbl_intliteral_instantiation(instance):
+    assert isinstance(instance, dbl_IntLiteral)
 
 
-@given(instance=dbl::StringLiteral_strategy)
-def test_dbl::stringliteral_value_setter(instance):
+
+@given(instance=dbl_IntLiteral_strategy)
+def test_dbl_intliteral_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
 
-@given(instance=dbl::NullLiteral_strategy)
+@given(instance=dbl_FalseLiteral_strategy)
 @settings(max_examples=50)
-def test_dbl::nullliteral_instantiation(instance):
-    assert isinstance(instance, dbl::NullLiteral)
+def test_dbl_falseliteral_instantiation(instance):
+    assert isinstance(instance, dbl_FalseLiteral)
 
-@given(instance=dbl::ActiveLiteral_strategy)
+@given(instance=dbl_ActiveLiteral_strategy)
 @settings(max_examples=50)
-def test_dbl::activeliteral_instantiation(instance):
-    assert isinstance(instance, dbl::ActiveLiteral)
+def test_dbl_activeliteral_instantiation(instance):
+    assert isinstance(instance, dbl_ActiveLiteral)
 
-@given(instance=dbl::TimeLiteral_strategy)
+@given(instance=dbl_TimeLiteral_strategy)
 @settings(max_examples=50)
-def test_dbl::timeliteral_instantiation(instance):
-    assert isinstance(instance, dbl::TimeLiteral)
+def test_dbl_timeliteral_instantiation(instance):
+    assert isinstance(instance, dbl_TimeLiteral)
 
-@given(instance=dbl::FalseLiteral_strategy)
+@given(instance=dbl_TrueLiteral_strategy)
 @settings(max_examples=50)
-def test_dbl::falseliteral_instantiation(instance):
-    assert isinstance(instance, dbl::FalseLiteral)
+def test_dbl_trueliteral_instantiation(instance):
+    assert isinstance(instance, dbl_TrueLiteral)
 
-@given(instance=dbl::DoubleLiteral_strategy)
+@given(instance=dbl_StringLiteral_strategy)
 @settings(max_examples=50)
-def test_dbl::doubleliteral_instantiation(instance):
-    assert isinstance(instance, dbl::DoubleLiteral)
-
-@given(instance=dbl::DoubleLiteral_strategy)
-def test_dbl::doubleliteral_value_type(instance):
-    assert isinstance(instance.value, float)
+def test_dbl_stringliteral_instantiation(instance):
+    assert isinstance(instance, dbl_StringLiteral)
 
 
-@given(instance=dbl::DoubleLiteral_strategy)
-def test_dbl::doubleliteral_value_setter(instance):
+
+@given(instance=dbl_StringLiteral_strategy)
+def test_dbl_stringliteral_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
 
-@given(instance=dbl::IntLiteral_strategy)
+@given(instance=dbl_DoubleLiteral_strategy)
 @settings(max_examples=50)
-def test_dbl::intliteral_instantiation(instance):
-    assert isinstance(instance, dbl::IntLiteral)
-
-@given(instance=dbl::IntLiteral_strategy)
-def test_dbl::intliteral_value_type(instance):
-    assert isinstance(instance.value, int)
+def test_dbl_doubleliteral_instantiation(instance):
+    assert isinstance(instance, dbl_DoubleLiteral)
 
 
-@given(instance=dbl::IntLiteral_strategy)
-def test_dbl::intliteral_value_setter(instance):
+
+@given(instance=dbl_DoubleLiteral_strategy)
+def test_dbl_doubleliteral_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
@@ -3976,158 +3995,188 @@ def test_l2expr_instantiation(instance):
 def test_unaryoperator_instantiation(instance):
     assert isinstance(instance, UnaryOperator)
 
-@given(instance=dbl::Not_strategy)
+@given(instance=dbl_Not_strategy)
 @settings(max_examples=50)
-def test_dbl::not_instantiation(instance):
-    assert isinstance(instance, dbl::Not)
+def test_dbl_not_instantiation(instance):
+    assert isinstance(instance, dbl_Not)
 
-@given(instance=dbl::Neg_strategy)
+@given(instance=dbl_Neg_strategy)
 @settings(max_examples=50)
-def test_dbl::neg_instantiation(instance):
-    assert isinstance(instance, dbl::Neg)
+def test_dbl_neg_instantiation(instance):
+    assert isinstance(instance, dbl_Neg)
 
-@given(instance=dbl::Div_strategy)
+@given(instance=dbl_Div_strategy)
 @settings(max_examples=50)
-def test_dbl::div_instantiation(instance):
-    assert isinstance(instance, dbl::Div)
+def test_dbl_div_instantiation(instance):
+    assert isinstance(instance, dbl_Div)
 
-@given(instance=dbl::Mod_strategy)
+@given(instance=dbl_Mod_strategy)
 @settings(max_examples=50)
-def test_dbl::mod_instantiation(instance):
-    assert isinstance(instance, dbl::Mod)
+def test_dbl_mod_instantiation(instance):
+    assert isinstance(instance, dbl_Mod)
 
-@given(instance=dbl::SwitchCase_strategy)
+@given(instance=dbl_SwitchCase_strategy)
 @settings(max_examples=50)
-def test_dbl::switchcase_instantiation(instance):
-    assert isinstance(instance, dbl::SwitchCase)
+def test_dbl_switchcase_instantiation(instance):
+    assert isinstance(instance, dbl_SwitchCase)
 
 @given(instance=LoopStatement_strategy)
 @settings(max_examples=50)
 def test_loopstatement_instantiation(instance):
     assert isinstance(instance, LoopStatement)
 
-@given(instance=dbl::WhileStatement_strategy)
+@given(instance=dbl_WhileStatement_strategy)
 @settings(max_examples=50)
-def test_dbl::whilestatement_instantiation(instance):
-    assert isinstance(instance, dbl::WhileStatement)
+def test_dbl_whilestatement_instantiation(instance):
+    assert isinstance(instance, dbl_WhileStatement)
 
 @given(instance=Expression_strategy)
 @settings(max_examples=50)
 def test_expression_instantiation(instance):
     assert isinstance(instance, Expression)
 
-@given(instance=dbl::BinaryOperator_strategy)
+@given(instance=dbl_ExpandExpression_strategy)
 @settings(max_examples=50)
-def test_dbl::binaryoperator_instantiation(instance):
-    assert isinstance(instance, dbl::BinaryOperator)
+def test_dbl_expandexpression_instantiation(instance):
+    assert isinstance(instance, dbl_ExpandExpression)
 
-@given(instance=dbl::L3Expr_strategy)
+@given(instance=dbl_L3Expr_strategy)
 @settings(max_examples=50)
-def test_dbl::l3expr_instantiation(instance):
-    assert isinstance(instance, dbl::L3Expr)
+def test_dbl_l3expr_instantiation(instance):
+    assert isinstance(instance, dbl_L3Expr)
 
-@given(instance=dbl::L7Expr_strategy)
+@given(instance=dbl_L4Expr_strategy)
 @settings(max_examples=50)
-def test_dbl::l7expr_instantiation(instance):
-    assert isinstance(instance, dbl::L7Expr)
+def test_dbl_l4expr_instantiation(instance):
+    assert isinstance(instance, dbl_L4Expr)
 
-@given(instance=dbl::ElementAccess_strategy)
+@given(instance=dbl_BinaryOperator_strategy)
 @settings(max_examples=50)
-def test_dbl::elementaccess_instantiation(instance):
-    assert isinstance(instance, dbl::ElementAccess)
+def test_dbl_binaryoperator_instantiation(instance):
+    assert isinstance(instance, dbl_BinaryOperator)
 
-@given(instance=dbl::UnaryOperator_strategy)
+@given(instance=dbl_L6Expr_strategy)
 @settings(max_examples=50)
-def test_dbl::unaryoperator_instantiation(instance):
-    assert isinstance(instance, dbl::UnaryOperator)
+def test_dbl_l6expr_instantiation(instance):
+    assert isinstance(instance, dbl_L6Expr)
 
-@given(instance=dbl::ParseExpr_strategy)
+@given(instance=dbl_CodeQuoteExpression_strategy)
 @settings(max_examples=50)
-def test_dbl::parseexpr_instantiation(instance):
-    assert isinstance(instance, dbl::ParseExpr)
+def test_dbl_codequoteexpression_instantiation(instance):
+    assert isinstance(instance, dbl_CodeQuoteExpression)
 
-@given(instance=dbl::L2Expr_strategy)
+@given(instance=dbl_ParseExpr_strategy)
 @settings(max_examples=50)
-def test_dbl::l2expr_instantiation(instance):
-    assert isinstance(instance, dbl::L2Expr)
+def test_dbl_parseexpr_instantiation(instance):
+    assert isinstance(instance, dbl_ParseExpr)
 
-@given(instance=dbl::L9Expr_strategy)
+@given(instance=dbl_L7Expr_strategy)
 @settings(max_examples=50)
-def test_dbl::l9expr_instantiation(instance):
-    assert isinstance(instance, dbl::L9Expr)
+def test_dbl_l7expr_instantiation(instance):
+    assert isinstance(instance, dbl_L7Expr)
 
-@given(instance=dbl::L8Expr_strategy)
+@given(instance=dbl_MetaExpr_strategy)
 @settings(max_examples=50)
-def test_dbl::l8expr_instantiation(instance):
-    assert isinstance(instance, dbl::L8Expr)
+def test_dbl_metaexpr_instantiation(instance):
+    assert isinstance(instance, dbl_MetaExpr)
 
-@given(instance=dbl::L6Expr_strategy)
+@given(instance=dbl_ElementAccess_strategy)
 @settings(max_examples=50)
-def test_dbl::l6expr_instantiation(instance):
-    assert isinstance(instance, dbl::L6Expr)
+def test_dbl_elementaccess_instantiation(instance):
+    assert isinstance(instance, dbl_ElementAccess)
 
-@given(instance=dbl::L5Expr_strategy)
+@given(instance=dbl_L9Expr_strategy)
 @settings(max_examples=50)
-def test_dbl::l5expr_instantiation(instance):
-    assert isinstance(instance, dbl::L5Expr)
+def test_dbl_l9expr_instantiation(instance):
+    assert isinstance(instance, dbl_L9Expr)
 
-@given(instance=dbl::L4Expr_strategy)
+@given(instance=dbl_L5Expr_strategy)
 @settings(max_examples=50)
-def test_dbl::l4expr_instantiation(instance):
-    assert isinstance(instance, dbl::L4Expr)
+def test_dbl_l5expr_instantiation(instance):
+    assert isinstance(instance, dbl_L5Expr)
 
-@given(instance=dbl::L1Expr_strategy)
+@given(instance=dbl_UnaryOperator_strategy)
 @settings(max_examples=50)
-def test_dbl::l1expr_instantiation(instance):
-    assert isinstance(instance, dbl::L1Expr)
+def test_dbl_unaryoperator_instantiation(instance):
+    assert isinstance(instance, dbl_UnaryOperator)
 
-@given(instance=dbl::LocalScope_strategy)
+@given(instance=dbl_L2Expr_strategy)
 @settings(max_examples=50)
-def test_dbl::localscope_instantiation(instance):
-    assert isinstance(instance, dbl::LocalScope)
+def test_dbl_l2expr_instantiation(instance):
+    assert isinstance(instance, dbl_L2Expr)
+
+@given(instance=dbl_L8Expr_strategy)
+@settings(max_examples=50)
+def test_dbl_l8expr_instantiation(instance):
+    assert isinstance(instance, dbl_L8Expr)
+
+@given(instance=dbl_L1Expr_strategy)
+@settings(max_examples=50)
+def test_dbl_l1expr_instantiation(instance):
+    assert isinstance(instance, dbl_L1Expr)
+
+@given(instance=dbl_LocalScope_strategy)
+@settings(max_examples=50)
+def test_dbl_localscope_instantiation(instance):
+    assert isinstance(instance, dbl_LocalScope)
 
 @given(instance=AnnotateableElement_strategy)
 @settings(max_examples=50)
 def test_annotateableelement_instantiation(instance):
     assert isinstance(instance, AnnotateableElement)
 
-@given(instance=dbl::VariableAccess_strategy)
+@given(instance=dbl_VariableAccess_strategy)
 @settings(max_examples=50)
-def test_dbl::variableaccess_instantiation(instance):
-    assert isinstance(instance, dbl::VariableAccess)
+def test_dbl_variableaccess_instantiation(instance):
+    assert isinstance(instance, dbl_VariableAccess)
 
 @given(instance=Statement_strategy)
 @settings(max_examples=50)
 def test_statement_instantiation(instance):
     assert isinstance(instance, Statement)
 
-@given(instance=dbl::IfStatement_strategy)
+@given(instance=dbl_TestStatement_strategy)
 @settings(max_examples=50)
-def test_dbl::ifstatement_instantiation(instance):
-    assert isinstance(instance, dbl::IfStatement)
+def test_dbl_teststatement_instantiation(instance):
+    assert isinstance(instance, dbl_TestStatement)
 
-@given(instance=dbl::SimpleStatement_strategy)
+
+
+@given(instance=dbl_TestStatement_strategy)
+def test_dbl_teststatement_value_setter(instance):
+    original = instance.value
+    instance.value = original
+    assert instance.value == original
+
+@given(instance=dbl_SimpleStatement_strategy)
 @settings(max_examples=50)
-def test_dbl::simplestatement_instantiation(instance):
-    assert isinstance(instance, dbl::SimpleStatement)
+def test_dbl_simplestatement_instantiation(instance):
+    assert isinstance(instance, dbl_SimpleStatement)
 
-@given(instance=dbl::LoopStatement_strategy)
+@given(instance=dbl_ExpandStatement_strategy)
 @settings(max_examples=50)
-def test_dbl::loopstatement_instantiation(instance):
-    assert isinstance(instance, dbl::LoopStatement)
+def test_dbl_expandstatement_instantiation(instance):
+    assert isinstance(instance, dbl_ExpandStatement)
 
-@given(instance=dbl::NamedElement_strategy)
+@given(instance=dbl_IfStatement_strategy)
 @settings(max_examples=50)
-def test_dbl::namedelement_instantiation(instance):
-    assert isinstance(instance, dbl::NamedElement)
+def test_dbl_ifstatement_instantiation(instance):
+    assert isinstance(instance, dbl_IfStatement)
 
-@given(instance=dbl::NamedElement_strategy)
-def test_dbl::namedelement_name_type(instance):
-    assert isinstance(instance.name, str)
+@given(instance=dbl_LoopStatement_strategy)
+@settings(max_examples=50)
+def test_dbl_loopstatement_instantiation(instance):
+    assert isinstance(instance, dbl_LoopStatement)
+
+@given(instance=dbl_NamedElement_strategy)
+@settings(max_examples=50)
+def test_dbl_namedelement_instantiation(instance):
+    assert isinstance(instance, dbl_NamedElement)
 
 
-@given(instance=dbl::NamedElement_strategy)
-def test_dbl::namedelement_name_setter(instance):
+
+@given(instance=dbl_NamedElement_strategy)
+def test_dbl_namedelement_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
@@ -4137,91 +4186,122 @@ def test_dbl::namedelement_name_setter(instance):
 def test_simplestatement_instantiation(instance):
     assert isinstance(instance, SimpleStatement)
 
-@given(instance=dbl::Yield_strategy)
+@given(instance=dbl_SwitchStatement_strategy)
 @settings(max_examples=50)
-def test_dbl::yield_instantiation(instance):
-    assert isinstance(instance, dbl::Yield)
+def test_dbl_switchstatement_instantiation(instance):
+    assert isinstance(instance, dbl_SwitchStatement)
 
-@given(instance=dbl::Terminate_strategy)
+@given(instance=dbl_ActivateObject_strategy)
 @settings(max_examples=50)
-def test_dbl::terminate_instantiation(instance):
-    assert isinstance(instance, dbl::Terminate)
-
-@given(instance=dbl::YieldTo_strategy)
-@settings(max_examples=50)
-def test_dbl::yieldto_instantiation(instance):
-    assert isinstance(instance, dbl::YieldTo)
-
-@given(instance=dbl::ActivateObject_strategy)
-@settings(max_examples=50)
-def test_dbl::activateobject_instantiation(instance):
-    assert isinstance(instance, dbl::ActivateObject)
-
-@given(instance=dbl::ActivateObject_strategy)
-def test_dbl::activateobject_priority_type(instance):
-    assert isinstance(instance.priority, int)
+def test_dbl_activateobject_instantiation(instance):
+    assert isinstance(instance, dbl_ActivateObject)
 
 
-@given(instance=dbl::ActivateObject_strategy)
-def test_dbl::activateobject_priority_setter(instance):
+
+@given(instance=dbl_ActivateObject_strategy)
+def test_dbl_activateobject_priority_setter(instance):
     original = instance.priority
     instance.priority = original
     assert instance.priority == original
 
-@given(instance=dbl::BreakStatement_strategy)
+@given(instance=dbl_ExpansionStatement_strategy)
 @settings(max_examples=50)
-def test_dbl::breakstatement_instantiation(instance):
-    assert isinstance(instance, dbl::BreakStatement)
+def test_dbl_expansionstatement_instantiation(instance):
+    assert isinstance(instance, dbl_ExpansionStatement)
 
-@given(instance=dbl::ContinueStatement_strategy)
-@settings(max_examples=50)
-def test_dbl::continuestatement_instantiation(instance):
-    assert isinstance(instance, dbl::ContinueStatement)
 
-@given(instance=dbl::Print_strategy)
-@settings(max_examples=50)
-def test_dbl::print_instantiation(instance):
-    assert isinstance(instance, dbl::Print)
 
-@given(instance=dbl::Wait_strategy)
-@settings(max_examples=50)
-def test_dbl::wait_instantiation(instance):
-    assert isinstance(instance, dbl::Wait)
+@given(instance=dbl_ExpansionStatement_strategy)
+def test_dbl_expansionstatement_classContext_setter(instance):
+    original = instance.classContext
+    instance.classContext = original
+    assert instance.classContext == original
 
-@given(instance=dbl::Return_strategy)
-@settings(max_examples=50)
-def test_dbl::return_instantiation(instance):
-    assert isinstance(instance, dbl::Return)
 
-@given(instance=dbl::FunctionCall_strategy)
-@settings(max_examples=50)
-def test_dbl::functioncall_instantiation(instance):
-    assert isinstance(instance, dbl::FunctionCall)
 
-@given(instance=dbl::WaitUntil_strategy)
-@settings(max_examples=50)
-def test_dbl::waituntil_instantiation(instance):
-    assert isinstance(instance, dbl::WaitUntil)
+@given(instance=dbl_ExpansionStatement_strategy)
+def test_dbl_expansionstatement_functionContext_setter(instance):
+    original = instance.functionContext
+    instance.functionContext = original
+    assert instance.functionContext == original
 
-@given(instance=dbl::Assignment_strategy)
-@settings(max_examples=50)
-def test_dbl::assignment_instantiation(instance):
-    assert isinstance(instance, dbl::Assignment)
 
-@given(instance=dbl::SwitchStatement_strategy)
-@settings(max_examples=50)
-def test_dbl::switchstatement_instantiation(instance):
-    assert isinstance(instance, dbl::SwitchStatement)
 
-@given(instance=dbl::Advance_strategy)
-@settings(max_examples=50)
-def test_dbl::advance_instantiation(instance):
-    assert isinstance(instance, dbl::Advance)
+@given(instance=dbl_ExpansionStatement_strategy)
+def test_dbl_expansionstatement_variableContext_setter(instance):
+    original = instance.variableContext
+    instance.variableContext = original
+    assert instance.variableContext == original
 
-@given(instance=dbl::Reactivate_strategy)
+@given(instance=dbl_TargetStatement_strategy)
 @settings(max_examples=50)
-def test_dbl::reactivate_instantiation(instance):
-    assert isinstance(instance, dbl::Reactivate)
+def test_dbl_targetstatement_instantiation(instance):
+    assert isinstance(instance, dbl_TargetStatement)
+
+@given(instance=dbl_Assignment_strategy)
+@settings(max_examples=50)
+def test_dbl_assignment_instantiation(instance):
+    assert isinstance(instance, dbl_Assignment)
+
+@given(instance=dbl_Return_strategy)
+@settings(max_examples=50)
+def test_dbl_return_instantiation(instance):
+    assert isinstance(instance, dbl_Return)
+
+@given(instance=dbl_Wait_strategy)
+@settings(max_examples=50)
+def test_dbl_wait_instantiation(instance):
+    assert isinstance(instance, dbl_Wait)
+
+@given(instance=dbl_Yield_strategy)
+@settings(max_examples=50)
+def test_dbl_yield_instantiation(instance):
+    assert isinstance(instance, dbl_Yield)
+
+@given(instance=dbl_Print_strategy)
+@settings(max_examples=50)
+def test_dbl_print_instantiation(instance):
+    assert isinstance(instance, dbl_Print)
+
+@given(instance=dbl_Reactivate_strategy)
+@settings(max_examples=50)
+def test_dbl_reactivate_instantiation(instance):
+    assert isinstance(instance, dbl_Reactivate)
+
+@given(instance=dbl_ContinueStatement_strategy)
+@settings(max_examples=50)
+def test_dbl_continuestatement_instantiation(instance):
+    assert isinstance(instance, dbl_ContinueStatement)
+
+@given(instance=dbl_Terminate_strategy)
+@settings(max_examples=50)
+def test_dbl_terminate_instantiation(instance):
+    assert isinstance(instance, dbl_Terminate)
+
+@given(instance=dbl_WaitUntil_strategy)
+@settings(max_examples=50)
+def test_dbl_waituntil_instantiation(instance):
+    assert isinstance(instance, dbl_WaitUntil)
+
+@given(instance=dbl_FunctionCall_strategy)
+@settings(max_examples=50)
+def test_dbl_functioncall_instantiation(instance):
+    assert isinstance(instance, dbl_FunctionCall)
+
+@given(instance=dbl_BreakStatement_strategy)
+@settings(max_examples=50)
+def test_dbl_breakstatement_instantiation(instance):
+    assert isinstance(instance, dbl_BreakStatement)
+
+@given(instance=dbl_YieldTo_strategy)
+@settings(max_examples=50)
+def test_dbl_yieldto_instantiation(instance):
+    assert isinstance(instance, dbl_YieldTo)
+
+@given(instance=dbl_Advance_strategy)
+@settings(max_examples=50)
+def test_dbl_advance_instantiation(instance):
+    assert isinstance(instance, dbl_Advance)
 
 @given(instance=AbstractVariable_strategy)
 @settings(max_examples=50)
@@ -4233,163 +4313,154 @@ def test_abstractvariable_instantiation(instance):
 def test_typedelement_instantiation(instance):
     assert isinstance(instance, TypedElement)
 
-@given(instance=dbl::CreateObject_strategy)
+@given(instance=dbl_Cast_strategy)
 @settings(max_examples=50)
-def test_dbl::createobject_instantiation(instance):
-    assert isinstance(instance, dbl::CreateObject)
+def test_dbl_cast_instantiation(instance):
+    assert isinstance(instance, dbl_Cast)
 
-@given(instance=dbl::Cast_strategy)
+@given(instance=dbl_CreateObject_strategy)
 @settings(max_examples=50)
-def test_dbl::cast_instantiation(instance):
-    assert isinstance(instance, dbl::Cast)
+def test_dbl_createobject_instantiation(instance):
+    assert isinstance(instance, dbl_CreateObject)
 
 @given(instance=PrimitiveType_strategy)
 @settings(max_examples=50)
 def test_primitivetype_instantiation(instance):
     assert isinstance(instance, PrimitiveType)
 
-@given(instance=dbl::BoolType_strategy)
+@given(instance=dbl_DoubleType_strategy)
 @settings(max_examples=50)
-def test_dbl::booltype_instantiation(instance):
-    assert isinstance(instance, dbl::BoolType)
+def test_dbl_doubletype_instantiation(instance):
+    assert isinstance(instance, dbl_DoubleType)
 
-@given(instance=dbl::IntType_strategy)
+@given(instance=dbl_BoolType_strategy)
 @settings(max_examples=50)
-def test_dbl::inttype_instantiation(instance):
-    assert isinstance(instance, dbl::IntType)
+def test_dbl_booltype_instantiation(instance):
+    assert isinstance(instance, dbl_BoolType)
 
-@given(instance=dbl::StringType_strategy)
+@given(instance=dbl_StringType_strategy)
 @settings(max_examples=50)
-def test_dbl::stringtype_instantiation(instance):
-    assert isinstance(instance, dbl::StringType)
+def test_dbl_stringtype_instantiation(instance):
+    assert isinstance(instance, dbl_StringType)
 
-@given(instance=dbl::DoubleType_strategy)
+@given(instance=dbl_IntType_strategy)
 @settings(max_examples=50)
-def test_dbl::doubletype_instantiation(instance):
-    assert isinstance(instance, dbl::DoubleType)
+def test_dbl_inttype_instantiation(instance):
+    assert isinstance(instance, dbl_IntType)
 
-@given(instance=dbl::VoidType_strategy)
+@given(instance=dbl_VoidType_strategy)
 @settings(max_examples=50)
-def test_dbl::voidtype_instantiation(instance):
-    assert isinstance(instance, dbl::VoidType)
+def test_dbl_voidtype_instantiation(instance):
+    assert isinstance(instance, dbl_VoidType)
 
 @given(instance=Type_strategy)
 @settings(max_examples=50)
 def test_type_instantiation(instance):
     assert isinstance(instance, Type)
 
-@given(instance=dbl::IdExpr_strategy)
+@given(instance=dbl_IdExpr_strategy)
 @settings(max_examples=50)
-def test_dbl::idexpr_instantiation(instance):
-    assert isinstance(instance, dbl::IdExpr)
+def test_dbl_idexpr_instantiation(instance):
+    assert isinstance(instance, dbl_IdExpr)
 
-@given(instance=dbl::PrimitiveType_strategy)
+@given(instance=dbl_PrimitiveType_strategy)
 @settings(max_examples=50)
-def test_dbl::primitivetype_instantiation(instance):
-    assert isinstance(instance, dbl::PrimitiveType)
+def test_dbl_primitivetype_instantiation(instance):
+    assert isinstance(instance, dbl_PrimitiveType)
 
-@given(instance=dbl::TypedElement_strategy)
+@given(instance=dbl_TypedElement_strategy)
 @settings(max_examples=50)
-def test_dbl::typedelement_instantiation(instance):
-    assert isinstance(instance, dbl::TypedElement)
+def test_dbl_typedelement_instantiation(instance):
+    assert isinstance(instance, dbl_TypedElement)
 
-@given(instance=dbl::ArrayDimension_strategy)
+@given(instance=dbl_ArrayDimension_strategy)
 @settings(max_examples=50)
-def test_dbl::arraydimension_instantiation(instance):
-    assert isinstance(instance, dbl::ArrayDimension)
+def test_dbl_arraydimension_instantiation(instance):
+    assert isinstance(instance, dbl_ArrayDimension)
 
-@given(instance=dbl::Type_strategy)
+@given(instance=dbl_Type_strategy)
 @settings(max_examples=50)
-def test_dbl::type_instantiation(instance):
-    assert isinstance(instance, dbl::Type)
+def test_dbl_type_instantiation(instance):
+    assert isinstance(instance, dbl_Type)
 
 @given(instance=Concept_strategy)
 @settings(max_examples=50)
 def test_concept_instantiation(instance):
     assert isinstance(instance, Concept)
 
-@given(instance=dbl::SuperClassSpecification_strategy)
+@given(instance=dbl_SuperClassSpecification_strategy)
 @settings(max_examples=50)
-def test_dbl::superclassspecification_instantiation(instance):
-    assert isinstance(instance, dbl::SuperClassSpecification)
+def test_dbl_superclassspecification_instantiation(instance):
+    assert isinstance(instance, dbl_SuperClassSpecification)
 
-@given(instance=dbl::NativeBinding_strategy)
+@given(instance=dbl_NativeBinding_strategy)
 @settings(max_examples=50)
-def test_dbl::nativebinding_instantiation(instance):
-    assert isinstance(instance, dbl::NativeBinding)
-
-@given(instance=dbl::NativeBinding_strategy)
-def test_dbl::nativebinding_targetType_type(instance):
-    assert isinstance(instance.targetType, str)
+def test_dbl_nativebinding_instantiation(instance):
+    assert isinstance(instance, dbl_NativeBinding)
 
 
-@given(instance=dbl::NativeBinding_strategy)
-def test_dbl::nativebinding_targetType_setter(instance):
+
+@given(instance=dbl_NativeBinding_strategy)
+def test_dbl_nativebinding_targetType_setter(instance):
     original = instance.targetType
     instance.targetType = original
     assert instance.targetType == original
 
-@given(instance=dbl::NativeBinding_strategy)
-def test_dbl::nativebinding_targetLanguage_type(instance):
-    assert isinstance(instance.targetLanguage, str)
 
 
-@given(instance=dbl::NativeBinding_strategy)
-def test_dbl::nativebinding_targetLanguage_setter(instance):
+@given(instance=dbl_NativeBinding_strategy)
+def test_dbl_nativebinding_targetLanguage_setter(instance):
     original = instance.targetLanguage
     instance.targetLanguage = original
     assert instance.targetLanguage == original
 
-@given(instance=dbl::Parameter_strategy)
+@given(instance=dbl_Parameter_strategy)
 @settings(max_examples=50)
-def test_dbl::parameter_instantiation(instance):
-    assert isinstance(instance, dbl::Parameter)
+def test_dbl_parameter_instantiation(instance):
+    assert isinstance(instance, dbl_Parameter)
 
 @given(instance=LocalScope_strategy)
 @settings(max_examples=50)
 def test_localscope_instantiation(instance):
     assert isinstance(instance, LocalScope)
 
-@given(instance=dbl::Constructor_strategy)
+@given(instance=dbl_ForStatement_strategy)
 @settings(max_examples=50)
-def test_dbl::constructor_instantiation(instance):
-    assert isinstance(instance, dbl::Constructor)
+def test_dbl_forstatement_instantiation(instance):
+    assert isinstance(instance, dbl_ForStatement)
 
-@given(instance=dbl::LocalScopeStatement_strategy)
+@given(instance=dbl_LocalScopeStatement_strategy)
 @settings(max_examples=50)
-def test_dbl::localscopestatement_instantiation(instance):
-    assert isinstance(instance, dbl::LocalScopeStatement)
+def test_dbl_localscopestatement_instantiation(instance):
+    assert isinstance(instance, dbl_LocalScopeStatement)
 
-@given(instance=dbl::ForStatement_strategy)
+@given(instance=dbl_Constructor_strategy)
 @settings(max_examples=50)
-def test_dbl::forstatement_instantiation(instance):
-    assert isinstance(instance, dbl::ForStatement)
+def test_dbl_constructor_instantiation(instance):
+    assert isinstance(instance, dbl_Constructor)
 
 @given(instance=ConstructiveExtensionAtContentExtensionPoint_strategy)
 @settings(max_examples=50)
 def test_constructiveextensionatcontentextensionpoint_instantiation(instance):
     assert isinstance(instance, ConstructiveExtensionAtContentExtensionPoint)
 
-@given(instance=dbl::Import_strategy)
+@given(instance=dbl_Import_strategy)
 @settings(max_examples=50)
-def test_dbl::import_instantiation(instance):
-    assert isinstance(instance, dbl::Import)
-
-@given(instance=dbl::Import_strategy)
-def test_dbl::import_file_type(instance):
-    assert isinstance(instance.file, str)
+def test_dbl_import_instantiation(instance):
+    assert isinstance(instance, dbl_Import)
 
 
-@given(instance=dbl::Import_strategy)
-def test_dbl::import_file_setter(instance):
+
+@given(instance=dbl_Import_strategy)
+def test_dbl_import_file_setter(instance):
     original = instance.file
     instance.file = original
     assert instance.file == original
 
-@given(instance=dbl::Model_strategy)
+@given(instance=dbl_Model_strategy)
 @settings(max_examples=50)
-def test_dbl::model_instantiation(instance):
-    assert isinstance(instance, dbl::Model)
+def test_dbl_model_instantiation(instance):
+    assert isinstance(instance, dbl_Model)
 
 @given(instance=Construct_strategy)
 @settings(max_examples=50)
@@ -4401,55 +4472,96 @@ def test_construct_instantiation(instance):
 def test_namedelement_instantiation(instance):
     assert isinstance(instance, NamedElement)
 
-@given(instance=dbl::Class_strategy)
+@given(instance=dbl_Class_strategy)
 @settings(max_examples=50)
-def test_dbl::class_instantiation(instance):
-    assert isinstance(instance, dbl::Class)
-
-@given(instance=dbl::Class_strategy)
-def test_dbl::class_active_type(instance):
-    assert isinstance(instance.active, bool)
+def test_dbl_class_instantiation(instance):
+    assert isinstance(instance, dbl_Class)
 
 
-@given(instance=dbl::Class_strategy)
-def test_dbl::class_active_setter(instance):
+
+@given(instance=dbl_Class_strategy)
+def test_dbl_class_active_setter(instance):
     original = instance.active
     instance.active = original
     assert instance.active == original
 
-@given(instance=dbl::Module_strategy)
+@given(instance=dbl_StructuralSymbolReference_strategy)
 @settings(max_examples=50)
-def test_dbl::module_instantiation(instance):
-    assert isinstance(instance, dbl::Module)
+def test_dbl_structuralsymbolreference_instantiation(instance):
+    assert isinstance(instance, dbl_StructuralSymbolReference)
 
-@given(instance=dbl::AbstractVariable_strategy)
+
+
+@given(instance=dbl_StructuralSymbolReference_strategy)
+def test_dbl_structuralsymbolreference_localScopedReference_setter(instance):
+    original = instance.localScopedReference
+    instance.localScopedReference = original
+    assert instance.localScopedReference == original
+
+
+
+@given(instance=dbl_StructuralSymbolReference_strategy)
+def test_dbl_structuralsymbolreference_composite_setter(instance):
+    original = instance.composite
+    instance.composite = original
+    assert instance.composite == original
+
+
+
+@given(instance=dbl_StructuralSymbolReference_strategy)
+def test_dbl_structuralsymbolreference_globalScopedReference_setter(instance):
+    original = instance.globalScopedReference
+    instance.globalScopedReference = original
+    assert instance.globalScopedReference == original
+
+
+
+@given(instance=dbl_StructuralSymbolReference_strategy)
+def test_dbl_structuralsymbolreference_list_setter(instance):
+    original = instance.list
+    instance.list = original
+    assert instance.list == original
+
+@given(instance=dbl_AbstractVariable_strategy)
 @settings(max_examples=50)
-def test_dbl::abstractvariable_instantiation(instance):
-    assert isinstance(instance, dbl::AbstractVariable)
+def test_dbl_abstractvariable_instantiation(instance):
+    assert isinstance(instance, dbl_AbstractVariable)
 
-@given(instance=dbl::ExtensibleElement_strategy)
+@given(instance=dbl_Pattern_strategy)
 @settings(max_examples=50)
-def test_dbl::extensibleelement_instantiation(instance):
-    assert isinstance(instance, dbl::ExtensibleElement)
-
-@given(instance=dbl::ExtensibleElement_strategy)
-def test_dbl::extensibleelement_instanceOfExtensionDefinition_type(instance):
-    assert isinstance(instance.instanceOfExtensionDefinition, bool)
+def test_dbl_pattern_instantiation(instance):
+    assert isinstance(instance, dbl_Pattern)
 
 
-@given(instance=dbl::ExtensibleElement_strategy)
-def test_dbl::extensibleelement_instanceOfExtensionDefinition_setter(instance):
+
+@given(instance=dbl_Pattern_strategy)
+def test_dbl_pattern_top_setter(instance):
+    original = instance.top
+    instance.top = original
+    assert instance.top == original
+
+@given(instance=dbl_Module_strategy)
+@settings(max_examples=50)
+def test_dbl_module_instantiation(instance):
+    assert isinstance(instance, dbl_Module)
+
+@given(instance=dbl_ExtensibleElement_strategy)
+@settings(max_examples=50)
+def test_dbl_extensibleelement_instantiation(instance):
+    assert isinstance(instance, dbl_ExtensibleElement)
+
+
+
+@given(instance=dbl_ExtensibleElement_strategy)
+def test_dbl_extensibleelement_instanceOfExtensionDefinition_setter(instance):
     original = instance.instanceOfExtensionDefinition
     instance.instanceOfExtensionDefinition = original
     assert instance.instanceOfExtensionDefinition == original
 
-@given(instance=dbl::ExtensibleElement_strategy)
-def test_dbl::extensibleelement_concreteSyntax_type(instance):
-    assert isinstance(instance.concreteSyntax, str)
 
 
-@given(instance=dbl::ExtensibleElement_strategy)
-def test_dbl::extensibleelement_concreteSyntax_setter(instance):
+@given(instance=dbl_ExtensibleElement_strategy)
+def test_dbl_extensibleelement_concreteSyntax_setter(instance):
     original = instance.concreteSyntax
     instance.concreteSyntax = original
     assert instance.concreteSyntax == original
@@ -4459,490 +4571,291 @@ def test_dbl::extensibleelement_concreteSyntax_setter(instance):
 def test_constructiveextension_instantiation(instance):
     assert isinstance(instance, ConstructiveExtension)
 
-@given(instance=dbl::ClassContentExtension_strategy)
+@given(instance=dbl_ClassContentExtension_strategy)
 @settings(max_examples=50)
-def test_dbl::classcontentextension_instantiation(instance):
-    assert isinstance(instance, dbl::ClassContentExtension)
+def test_dbl_classcontentextension_instantiation(instance):
+    assert isinstance(instance, dbl_ClassContentExtension)
 
-@given(instance=dbl::ModuleContentExtension_strategy)
+@given(instance=dbl_ModuleContentExtension_strategy)
 @settings(max_examples=50)
-def test_dbl::modulecontentextension_instantiation(instance):
-    assert isinstance(instance, dbl::ModuleContentExtension)
+def test_dbl_modulecontentextension_instantiation(instance):
+    assert isinstance(instance, dbl_ModuleContentExtension)
 
-@given(instance=dbl::ConstructiveExtensionAtContentExtensionPoint_strategy)
+@given(instance=dbl_ConstructiveExtensionAtContentExtensionPoint_strategy)
 @settings(max_examples=50)
-def test_dbl::constructiveextensionatcontentextensionpoint_instantiation(instance):
-    assert isinstance(instance, dbl::ConstructiveExtensionAtContentExtensionPoint)
+def test_dbl_constructiveextensionatcontentextensionpoint_instantiation(instance):
+    assert isinstance(instance, dbl_ConstructiveExtensionAtContentExtensionPoint)
 
 @given(instance=ExtensibleElement_strategy)
 @settings(max_examples=50)
 def test_extensibleelement_instantiation(instance):
     assert isinstance(instance, ExtensibleElement)
 
-@given(instance=dbl::SyntaxDefinition_strategy)
+@given(instance=dbl_SyntaxDefinition_strategy)
 @settings(max_examples=50)
-def test_dbl::syntaxdefinition_instantiation(instance):
-    assert isinstance(instance, dbl::SyntaxDefinition)
+def test_dbl_syntaxdefinition_instantiation(instance):
+    assert isinstance(instance, dbl_SyntaxDefinition)
 
-@given(instance=dbl::Expression_strategy)
+@given(instance=dbl_Expression_strategy)
 @settings(max_examples=50)
-def test_dbl::expression_instantiation(instance):
-    assert isinstance(instance, dbl::Expression)
+def test_dbl_expression_instantiation(instance):
+    assert isinstance(instance, dbl_Expression)
 
-@given(instance=dbl::ExtensionSemantics_strategy)
+@given(instance=dbl_Statement_strategy)
 @settings(max_examples=50)
-def test_dbl::extensionsemantics_instantiation(instance):
-    assert isinstance(instance, dbl::ExtensionSemantics)
+def test_dbl_statement_instantiation(instance):
+    assert isinstance(instance, dbl_Statement)
 
-@given(instance=dbl::Statement_strategy)
+@given(instance=dbl_Extension_strategy)
 @settings(max_examples=50)
-def test_dbl::statement_instantiation(instance):
-    assert isinstance(instance, dbl::Statement)
+def test_dbl_extension_instantiation(instance):
+    assert isinstance(instance, dbl_Extension)
 
-@given(instance=dbl::Extension_strategy)
+@given(instance=dbl_ExtensionSemantics_strategy)
 @settings(max_examples=50)
-def test_dbl::extension_instantiation(instance):
-    assert isinstance(instance, dbl::Extension)
+def test_dbl_extensionsemantics_instantiation(instance):
+    assert isinstance(instance, dbl_ExtensionSemantics)
 
-@given(instance=dbl::ConstructiveExtension_strategy)
+@given(instance=dbl_ConstructiveExtension_strategy)
 @settings(max_examples=50)
-def test_dbl::constructiveextension_instantiation(instance):
-    assert isinstance(instance, dbl::ConstructiveExtension)
+def test_dbl_constructiveextension_instantiation(instance):
+    assert isinstance(instance, dbl_ConstructiveExtension)
 
-@given(instance=dbl::AnnotateableElement_strategy)
+@given(instance=dbl_AnnotateableElement_strategy)
 @settings(max_examples=50)
-def test_dbl::annotateableelement_instantiation(instance):
-    assert isinstance(instance, dbl::AnnotateableElement)
+def test_dbl_annotateableelement_instantiation(instance):
+    assert isinstance(instance, dbl_AnnotateableElement)
 
-@given(instance=dbl::AnnotationItem_strategy)
+@given(instance=dbl_AnnotationItem_strategy)
 @settings(max_examples=50)
-def test_dbl::annotationitem_instantiation(instance):
-    assert isinstance(instance, dbl::AnnotationItem)
-
-@given(instance=dbl::AnnotationItem_strategy)
-def test_dbl::annotationitem_value_type(instance):
-    assert isinstance(instance.value, str)
+def test_dbl_annotationitem_instantiation(instance):
+    assert isinstance(instance, dbl_AnnotationItem)
 
 
-@given(instance=dbl::AnnotationItem_strategy)
-def test_dbl::annotationitem_value_setter(instance):
+
+@given(instance=dbl_AnnotationItem_strategy)
+def test_dbl_annotationitem_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
 
-@given(instance=dbl::AnnotationItem_strategy)
-def test_dbl::annotationitem_key_type(instance):
-    assert isinstance(instance.key, str)
 
 
-@given(instance=dbl::AnnotationItem_strategy)
-def test_dbl::annotationitem_key_setter(instance):
+@given(instance=dbl_AnnotationItem_strategy)
+def test_dbl_annotationitem_key_setter(instance):
     original = instance.key
     instance.key = original
     assert instance.key == original
 
-@given(instance=dbl::Annotation_strategy)
+@given(instance=dbl_Annotation_strategy)
 @settings(max_examples=50)
-def test_dbl::annotation_instantiation(instance):
-    assert isinstance(instance, dbl::Annotation)
+def test_dbl_annotation_instantiation(instance):
+    assert isinstance(instance, dbl_Annotation)
 
-@given(instance=dbl::Variable_strategy)
+@given(instance=dbl_Variable_strategy)
 @settings(max_examples=50)
-def test_dbl::variable_instantiation(instance):
-    assert isinstance(instance, dbl::Variable)
-
-@given(instance=dbl::Variable_strategy)
-def test_dbl::variable_control_type(instance):
-    assert isinstance(instance.control, bool)
+def test_dbl_variable_instantiation(instance):
+    assert isinstance(instance, dbl_Variable)
 
 
-@given(instance=dbl::Variable_strategy)
-def test_dbl::variable_control_setter(instance):
+
+@given(instance=dbl_Variable_strategy)
+def test_dbl_variable_class__setter(instance):
+    original = instance.class_
+    instance.class_ = original
+    assert instance.class_ == original
+
+
+
+@given(instance=dbl_Variable_strategy)
+def test_dbl_variable_control_setter(instance):
     original = instance.control
     instance.control = original
     assert instance.control == original
 
-@given(instance=dbl::Variable_strategy)
-def test_dbl::variable_class__type(instance):
-    assert isinstance(instance.class_, bool)
-
-
-@given(instance=dbl::Variable_strategy)
-def test_dbl::variable_class__setter(instance):
-    original = instance.class_
-    instance.class_ = original
-    assert instance.class_ == original
-
-@given(instance=dbl::Function_strategy)
+@given(instance=dbl_Function_strategy)
 @settings(max_examples=50)
-def test_dbl::function_instantiation(instance):
-    assert isinstance(instance, dbl::Function)
-
-@given(instance=dbl::Function_strategy)
-def test_dbl::function_detached_type(instance):
-    assert isinstance(instance.detached, bool)
+def test_dbl_function_instantiation(instance):
+    assert isinstance(instance, dbl_Function)
 
 
-@given(instance=dbl::Function_strategy)
-def test_dbl::function_detached_setter(instance):
-    original = instance.detached
-    instance.detached = original
-    assert instance.detached == original
 
-@given(instance=dbl::Function_strategy)
-def test_dbl::function_abstract_type(instance):
-    assert isinstance(instance.abstract, bool)
-
-
-@given(instance=dbl::Function_strategy)
-def test_dbl::function_abstract_setter(instance):
+@given(instance=dbl_Function_strategy)
+def test_dbl_function_abstract_setter(instance):
     original = instance.abstract
     instance.abstract = original
     assert instance.abstract == original
 
-@given(instance=dbl::Function_strategy)
-def test_dbl::function_class__type(instance):
-    assert isinstance(instance.class_, bool)
 
 
-@given(instance=dbl::Function_strategy)
-def test_dbl::function_class__setter(instance):
+@given(instance=dbl_Function_strategy)
+def test_dbl_function_class__setter(instance):
     original = instance.class_
     instance.class_ = original
     assert instance.class_ == original
 
-@given(instance=dbl::ExpandExpr_strategy)
+
+
+@given(instance=dbl_Function_strategy)
+def test_dbl_function_detached_setter(instance):
+    original = instance.detached
+    instance.detached = original
+    assert instance.detached == original
+
+@given(instance=dbl_ExpandExpr_strategy)
 @settings(max_examples=50)
-def test_dbl::expandexpr_instantiation(instance):
-    assert isinstance(instance, dbl::ExpandExpr)
+def test_dbl_expandexpr_instantiation(instance):
+    assert isinstance(instance, dbl_ExpandExpr)
 
-@given(instance=dbl::Construct_strategy)
+@given(instance=dbl_Construct_strategy)
 @settings(max_examples=50)
-def test_dbl::construct_instantiation(instance):
-    assert isinstance(instance, dbl::Construct)
-
-@given(instance=dbl::TestStatement_strategy)
-@settings(max_examples=50)
-def test_dbl::teststatement_instantiation(instance):
-    assert isinstance(instance, dbl::TestStatement)
-
-@given(instance=dbl::TestStatement_strategy)
-def test_dbl::teststatement_value_type(instance):
-    assert isinstance(instance.value, int)
-
-
-@given(instance=dbl::TestStatement_strategy)
-def test_dbl::teststatement_value_setter(instance):
-    original = instance.value
-    instance.value = original
-    assert instance.value == original
-
-@given(instance=dbl::Pattern_strategy)
-@settings(max_examples=50)
-def test_dbl::pattern_instantiation(instance):
-    assert isinstance(instance, dbl::Pattern)
-
-@given(instance=dbl::Pattern_strategy)
-def test_dbl::pattern_top_type(instance):
-    assert isinstance(instance.top, bool)
-
-
-@given(instance=dbl::Pattern_strategy)
-def test_dbl::pattern_top_setter(instance):
-    original = instance.top
-    instance.top = original
-    assert instance.top == original
-
-@given(instance=Module_strategy)
-@settings(max_examples=50)
-def test_module_instantiation(instance):
-    assert isinstance(instance, Module)
-
-@given(instance=Class_strategy)
-@settings(max_examples=50)
-def test_class_instantiation(instance):
-    assert isinstance(instance, Class)
-
-@given(instance=dbl::ExpansionPart_strategy)
-@settings(max_examples=50)
-def test_dbl::expansionpart_instantiation(instance):
-    assert isinstance(instance, dbl::ExpansionPart)
-
-@given(instance=dbl::ExpansionStatement_strategy)
-@settings(max_examples=50)
-def test_dbl::expansionstatement_instantiation(instance):
-    assert isinstance(instance, dbl::ExpansionStatement)
-
-@given(instance=dbl::ExpansionStatement_strategy)
-def test_dbl::expansionstatement_variableContext_type(instance):
-    assert isinstance(instance.variableContext, bool)
-
-
-@given(instance=dbl::ExpansionStatement_strategy)
-def test_dbl::expansionstatement_variableContext_setter(instance):
-    original = instance.variableContext
-    instance.variableContext = original
-    assert instance.variableContext == original
-
-@given(instance=dbl::ExpansionStatement_strategy)
-def test_dbl::expansionstatement_classContext_type(instance):
-    assert isinstance(instance.classContext, bool)
-
-
-@given(instance=dbl::ExpansionStatement_strategy)
-def test_dbl::expansionstatement_classContext_setter(instance):
-    original = instance.classContext
-    instance.classContext = original
-    assert instance.classContext == original
-
-@given(instance=dbl::ExpansionStatement_strategy)
-def test_dbl::expansionstatement_functionContext_type(instance):
-    assert isinstance(instance.functionContext, bool)
-
-
-@given(instance=dbl::ExpansionStatement_strategy)
-def test_dbl::expansionstatement_functionContext_setter(instance):
-    original = instance.functionContext
-    instance.functionContext = original
-    assert instance.functionContext == original
-
-@given(instance=Variable_strategy)
-@settings(max_examples=50)
-def test_variable_instantiation(instance):
-    assert isinstance(instance, Variable)
-
-@given(instance=dbl::CreateIdStatement_strategy)
-@settings(max_examples=50)
-def test_dbl::createidstatement_instantiation(instance):
-    assert isinstance(instance, dbl::CreateIdStatement)
-
-@given(instance=dbl::TargetStatement_strategy)
-@settings(max_examples=50)
-def test_dbl::targetstatement_instantiation(instance):
-    assert isinstance(instance, dbl::TargetStatement)
-
-@given(instance=dbl::MetaExpr_strategy)
-@settings(max_examples=50)
-def test_dbl::metaexpr_instantiation(instance):
-    assert isinstance(instance, dbl::MetaExpr)
-
-@given(instance=QuotedCode_strategy)
-@settings(max_examples=50)
-def test_quotedcode_instantiation(instance):
-    assert isinstance(instance, QuotedCode)
-
-@given(instance=dbl::QuotedModuleContent_strategy)
-@settings(max_examples=50)
-def test_dbl::quotedmodulecontent_instantiation(instance):
-    assert isinstance(instance, dbl::QuotedModuleContent)
-
-@given(instance=dbl::QuotedStatements_strategy)
-@settings(max_examples=50)
-def test_dbl::quotedstatements_instantiation(instance):
-    assert isinstance(instance, dbl::QuotedStatements)
-
-@given(instance=dbl::QuotedClassContent_strategy)
-@settings(max_examples=50)
-def test_dbl::quotedclasscontent_instantiation(instance):
-    assert isinstance(instance, dbl::QuotedClassContent)
-
-@given(instance=dbl::QuotedExpression_strategy)
-@settings(max_examples=50)
-def test_dbl::quotedexpression_instantiation(instance):
-    assert isinstance(instance, dbl::QuotedExpression)
-
-@given(instance=dbl::QuotedCode_strategy)
-@settings(max_examples=50)
-def test_dbl::quotedcode_instantiation(instance):
-    assert isinstance(instance, dbl::QuotedCode)
-
-@given(instance=dbl::CodeQuoteExpression_strategy)
-@settings(max_examples=50)
-def test_dbl::codequoteexpression_instantiation(instance):
-    assert isinstance(instance, dbl::CodeQuoteExpression)
-
-@given(instance=dbl::ExpandStatement_strategy)
-@settings(max_examples=50)
-def test_dbl::expandstatement_instantiation(instance):
-    assert isinstance(instance, dbl::ExpandStatement)
-
-@given(instance=dbl::ExpandExpression_strategy)
-@settings(max_examples=50)
-def test_dbl::expandexpression_instantiation(instance):
-    assert isinstance(instance, dbl::ExpandExpression)
-
-@given(instance=ExpansionPart_strategy)
-@settings(max_examples=50)
-def test_expansionpart_instantiation(instance):
-    assert isinstance(instance, ExpansionPart)
-
-@given(instance=dbl::ExpandVariablePart_strategy)
-@settings(max_examples=50)
-def test_dbl::expandvariablepart_instantiation(instance):
-    assert isinstance(instance, dbl::ExpandVariablePart)
-
-@given(instance=dbl::ExpandTextPart_strategy)
-@settings(max_examples=50)
-def test_dbl::expandtextpart_instantiation(instance):
-    assert isinstance(instance, dbl::ExpandTextPart)
-
-@given(instance=dbl::ExpandTextPart_strategy)
-def test_dbl::expandtextpart_text_type(instance):
-    assert isinstance(instance.text, str)
-
-
-@given(instance=dbl::ExpandTextPart_strategy)
-def test_dbl::expandtextpart_text_setter(instance):
-    original = instance.text
-    instance.text = original
-    assert instance.text == original
-
-@given(instance=PlainSymbolReference_strategy)
-@settings(max_examples=50)
-def test_plainsymbolreference_instantiation(instance):
-    assert isinstance(instance, PlainSymbolReference)
-
-@given(instance=dbl::StructuralSymbolReference_strategy)
-@settings(max_examples=50)
-def test_dbl::structuralsymbolreference_instantiation(instance):
-    assert isinstance(instance, dbl::StructuralSymbolReference)
-
-@given(instance=dbl::StructuralSymbolReference_strategy)
-def test_dbl::structuralsymbolreference_localScopedReference_type(instance):
-    assert isinstance(instance.localScopedReference, bool)
-
-
-@given(instance=dbl::StructuralSymbolReference_strategy)
-def test_dbl::structuralsymbolreference_localScopedReference_setter(instance):
-    original = instance.localScopedReference
-    instance.localScopedReference = original
-    assert instance.localScopedReference == original
-
-@given(instance=dbl::StructuralSymbolReference_strategy)
-def test_dbl::structuralsymbolreference_list_type(instance):
-    assert isinstance(instance.list, bool)
-
-
-@given(instance=dbl::StructuralSymbolReference_strategy)
-def test_dbl::structuralsymbolreference_list_setter(instance):
-    original = instance.list
-    instance.list = original
-    assert instance.list == original
-
-@given(instance=dbl::StructuralSymbolReference_strategy)
-def test_dbl::structuralsymbolreference_composite_type(instance):
-    assert isinstance(instance.composite, bool)
-
-
-@given(instance=dbl::StructuralSymbolReference_strategy)
-def test_dbl::structuralsymbolreference_composite_setter(instance):
-    original = instance.composite
-    instance.composite = original
-    assert instance.composite == original
-
-@given(instance=dbl::StructuralSymbolReference_strategy)
-def test_dbl::structuralsymbolreference_globalScopedReference_type(instance):
-    assert isinstance(instance.globalScopedReference, bool)
-
-
-@given(instance=dbl::StructuralSymbolReference_strategy)
-def test_dbl::structuralsymbolreference_globalScopedReference_setter(instance):
-    original = instance.globalScopedReference
-    instance.globalScopedReference = original
-    assert instance.globalScopedReference == original
-
-@given(instance=L2SyntaxExpression_strategy)
-@settings(max_examples=50)
-def test_l2syntaxexpression_instantiation(instance):
-    assert isinstance(instance, L2SyntaxExpression)
-
-@given(instance=dbl::SymbolSequence_strategy)
-@settings(max_examples=50)
-def test_dbl::symbolsequence_instantiation(instance):
-    assert isinstance(instance, dbl::SymbolSequence)
+def test_dbl_construct_instantiation(instance):
+    assert isinstance(instance, dbl_Construct)
 
 @given(instance=SyntaxExpression_strategy)
 @settings(max_examples=50)
 def test_syntaxexpression_instantiation(instance):
     assert isinstance(instance, SyntaxExpression)
 
-@given(instance=dbl::L1SyntaxExpression_strategy)
+@given(instance=dbl_L1SyntaxExpression_strategy)
 @settings(max_examples=50)
-def test_dbl::l1syntaxexpression_instantiation(instance):
-    assert isinstance(instance, dbl::L1SyntaxExpression)
+def test_dbl_l1syntaxexpression_instantiation(instance):
+    assert isinstance(instance, dbl_L1SyntaxExpression)
 
-@given(instance=dbl::L2SyntaxExpression_strategy)
+@given(instance=dbl_L2SyntaxExpression_strategy)
 @settings(max_examples=50)
-def test_dbl::l2syntaxexpression_instantiation(instance):
-    assert isinstance(instance, dbl::L2SyntaxExpression)
+def test_dbl_l2syntaxexpression_instantiation(instance):
+    assert isinstance(instance, dbl_L2SyntaxExpression)
 
-@given(instance=dbl::L3SyntaxExpression_strategy)
+@given(instance=dbl_L3SyntaxExpression_strategy)
 @settings(max_examples=50)
-def test_dbl::l3syntaxexpression_instantiation(instance):
-    assert isinstance(instance, dbl::L3SyntaxExpression)
+def test_dbl_l3syntaxexpression_instantiation(instance):
+    assert isinstance(instance, dbl_L3SyntaxExpression)
 
-@given(instance=dbl::SyntaxExpression_strategy)
+@given(instance=dbl_SyntaxExpression_strategy)
 @settings(max_examples=50)
-def test_dbl::syntaxexpression_instantiation(instance):
-    assert isinstance(instance, dbl::SyntaxExpression)
+def test_dbl_syntaxexpression_instantiation(instance):
+    assert isinstance(instance, dbl_SyntaxExpression)
 
 @given(instance=ComplexSymbol_strategy)
 @settings(max_examples=50)
 def test_complexsymbol_instantiation(instance):
     assert isinstance(instance, ComplexSymbol)
 
-@given(instance=dbl::Concept_strategy)
+@given(instance=dbl_MetaSymbol_strategy)
 @settings(max_examples=50)
-def test_dbl::concept_instantiation(instance):
-    assert isinstance(instance, dbl::Concept)
+def test_dbl_metasymbol_instantiation(instance):
+    assert isinstance(instance, dbl_MetaSymbol)
 
-@given(instance=dbl::MetaSymbol_strategy)
+@given(instance=dbl_Concept_strategy)
 @settings(max_examples=50)
-def test_dbl::metasymbol_instantiation(instance):
-    assert isinstance(instance, dbl::MetaSymbol)
+def test_dbl_concept_instantiation(instance):
+    assert isinstance(instance, dbl_Concept)
 
 @given(instance=SyntaxSymbolClassifier_strategy)
 @settings(max_examples=50)
 def test_syntaxsymbolclassifier_instantiation(instance):
     assert isinstance(instance, SyntaxSymbolClassifier)
 
-@given(instance=dbl::ElementarySymbol_strategy)
+@given(instance=dbl_ComplexSymbol_strategy)
 @settings(max_examples=50)
-def test_dbl::elementarysymbol_instantiation(instance):
-    assert isinstance(instance, dbl::ElementarySymbol)
+def test_dbl_complexsymbol_instantiation(instance):
+    assert isinstance(instance, dbl_ComplexSymbol)
 
-@given(instance=dbl::ComplexSymbol_strategy)
+@given(instance=dbl_SyntaxSymbolClassifier_strategy)
 @settings(max_examples=50)
-def test_dbl::complexsymbol_instantiation(instance):
-    assert isinstance(instance, dbl::ComplexSymbol)
+def test_dbl_syntaxsymbolclassifier_instantiation(instance):
+    assert isinstance(instance, dbl_SyntaxSymbolClassifier)
 
-@given(instance=dbl::SyntaxSymbolClassifier_strategy)
+@given(instance=ElementarySymbol_strategy)
 @settings(max_examples=50)
-def test_dbl::syntaxsymbolclassifier_instantiation(instance):
-    assert isinstance(instance, dbl::SyntaxSymbolClassifier)
+def test_elementarysymbol_instantiation(instance):
+    assert isinstance(instance, ElementarySymbol)
 
-@given(instance=dbl::Keyword_strategy)
+@given(instance=dbl_StringSymbol_strategy)
 @settings(max_examples=50)
-def test_dbl::keyword_instantiation(instance):
-    assert isinstance(instance, dbl::Keyword)
+def test_dbl_stringsymbol_instantiation(instance):
+    assert isinstance(instance, dbl_StringSymbol)
 
-@given(instance=dbl::Keyword_strategy)
-def test_dbl::keyword_keyword_type(instance):
-    assert isinstance(instance.keyword, str)
+@given(instance=dbl_Keyword_strategy)
+@settings(max_examples=50)
+def test_dbl_keyword_instantiation(instance):
+    assert isinstance(instance, dbl_Keyword)
 
 
-@given(instance=dbl::Keyword_strategy)
-def test_dbl::keyword_keyword_setter(instance):
+
+@given(instance=dbl_Keyword_strategy)
+def test_dbl_keyword_keyword_setter(instance):
     original = instance.keyword
     instance.keyword = original
     assert instance.keyword == original
 
-@given(instance=dbl::StringSymbol_strategy)
+@given(instance=dbl_IntSymbol_strategy)
 @settings(max_examples=50)
-def test_dbl::stringsymbol_instantiation(instance):
-    assert isinstance(instance, dbl::StringSymbol)
+def test_dbl_intsymbol_instantiation(instance):
+    assert isinstance(instance, dbl_IntSymbol)
 
-@given(instance=dbl::IntSymbol_strategy)
+@given(instance=dbl_IdSymbol_strategy)
 @settings(max_examples=50)
-def test_dbl::intsymbol_instantiation(instance):
-    assert isinstance(instance, dbl::IntSymbol)
+def test_dbl_idsymbol_instantiation(instance):
+    assert isinstance(instance, dbl_IdSymbol)
+
+@given(instance=dbl_ElementarySymbol_strategy)
+@settings(max_examples=50)
+def test_dbl_elementarysymbol_instantiation(instance):
+    assert isinstance(instance, dbl_ElementarySymbol)
+
+@given(instance=L1SyntaxExpression_strategy)
+@settings(max_examples=50)
+def test_l1syntaxexpression_instantiation(instance):
+    assert isinstance(instance, L1SyntaxExpression)
+
+@given(instance=dbl_PlainSymbolReference_strategy)
+@settings(max_examples=50)
+def test_dbl_plainsymbolreference_instantiation(instance):
+    assert isinstance(instance, dbl_PlainSymbolReference)
+
+@given(instance=dbl_CallPart_strategy)
+@settings(max_examples=50)
+def test_dbl_callpart_instantiation(instance):
+    assert isinstance(instance, dbl_CallPart)
+
+@given(instance=Annotation_strategy)
+@settings(max_examples=50)
+def test_annotation_instantiation(instance):
+    assert isinstance(instance, Annotation)
+
+@given(instance=PredefinedId_strategy)
+@settings(max_examples=50)
+def test_predefinedid_instantiation(instance):
+    assert isinstance(instance, PredefinedId)
+
+@given(instance=dbl_MetaLiteral_strategy)
+@settings(max_examples=50)
+def test_dbl_metaliteral_instantiation(instance):
+    assert isinstance(instance, dbl_MetaLiteral)
+
+@given(instance=dbl_SuperLiteral_strategy)
+@settings(max_examples=50)
+def test_dbl_superliteral_instantiation(instance):
+    assert isinstance(instance, dbl_SuperLiteral)
+
+@given(instance=dbl_TypeLiteral_strategy)
+@settings(max_examples=50)
+def test_dbl_typeliteral_instantiation(instance):
+    assert isinstance(instance, dbl_TypeLiteral)
+
+@given(instance=dbl_AnnotationLiteral_strategy)
+@settings(max_examples=50)
+def test_dbl_annotationliteral_instantiation(instance):
+    assert isinstance(instance, dbl_AnnotationLiteral)
+
+@given(instance=dbl_SizeOfArray_strategy)
+@settings(max_examples=50)
+def test_dbl_sizeofarray_instantiation(instance):
+    assert isinstance(instance, dbl_SizeOfArray)
+
+@given(instance=dbl_MeLiteral_strategy)
+@settings(max_examples=50)
+def test_dbl_meliteral_instantiation(instance):
+    assert isinstance(instance, dbl_MeLiteral)

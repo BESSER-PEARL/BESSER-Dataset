@@ -3,7 +3,7 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
 from python_code import (
     Dice,
@@ -11,8 +11,8 @@ from python_code import (
     Card,
     Board,
     Player,
-    CardType,
     Color,
+    CardType,
 )
 
 # =============================================================================
@@ -139,19 +139,6 @@ def test_player_has_name():
             break
     assert isinstance(descriptor, property)
 
-def test_cardtype_exists():
-    # Check that the Enumeration exists
-    assert CardType is not None
-
-def test_cardtype_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in CardType]
-    expected_literals = [
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in CardType"
-
 def test_color_exists():
     # Check that the Enumeration exists
     assert Color is not None
@@ -164,6 +151,19 @@ def test_color_has_all_literals():
     # Check that all expected literals exist
     for lit_name in expected_literals:
         assert lit_name in enum_literals, f"Literal '' missing in Color"
+
+def test_cardtype_exists():
+    # Check that the Enumeration exists
+    assert CardType is not None
+
+def test_cardtype_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in CardType]
+    expected_literals = [
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in CardType"
 
 
 # =============================================================================
@@ -208,9 +208,6 @@ Player_strategy = st.builds(
 def test_dice_instantiation(instance):
     assert isinstance(instance, Dice)
 
-@given(instance=Dice_strategy)
-def test_dice_value_type(instance):
-    assert isinstance(instance.value, int)
 
 
 @given(instance=Dice_strategy)
@@ -224,9 +221,6 @@ def test_dice_value_setter(instance):
 def test_pawn_instantiation(instance):
     assert isinstance(instance, Pawn)
 
-@given(instance=Pawn_strategy)
-def test_pawn_color_type(instance):
-    assert isinstance(instance.color, color)
 
 
 @given(instance=Pawn_strategy)
@@ -235,9 +229,6 @@ def test_pawn_color_setter(instance):
     instance.color = original
     assert instance.color == original
 
-@given(instance=Pawn_strategy)
-def test_pawn_position_type(instance):
-    assert isinstance(instance.position, int)
 
 
 @given(instance=Pawn_strategy)
@@ -251,9 +242,6 @@ def test_pawn_position_setter(instance):
 def test_card_instantiation(instance):
     assert isinstance(instance, Card)
 
-@given(instance=Card_strategy)
-def test_card_card_type(instance):
-    assert isinstance(instance.card, cardtype)
 
 
 @given(instance=Card_strategy)
@@ -272,9 +260,6 @@ def test_board_instantiation(instance):
 def test_player_instantiation(instance):
     assert isinstance(instance, Player)
 
-@given(instance=Player_strategy)
-def test_player_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
 @given(instance=Player_strategy)

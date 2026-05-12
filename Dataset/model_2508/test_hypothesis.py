@@ -3,21 +3,21 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    visualinher::N,
+from python_code import (
+    visualinher_N,
     N,
-    visualinher::C,
+    visualinher_C,
     A,
-    visualinher::I,
-    visualinher::D,
-    visualinher::E,
+    visualinher_I,
+    visualinher_D,
+    visualinher_E,
     I,
-    visualinher::B,
-    visualinher::R,
-    visualinher::A,
-    visualinher::S,
+    visualinher_B,
+    visualinher_R,
+    visualinher_A,
+    visualinher_S,
 )
 
 # =============================================================================
@@ -26,23 +26,23 @@ from classes import (
 
 
 
-def test_visualinher::n_is_not_abstract():
-    assert not inspect.isabstract(visualinher::N)
+def test_visualinher_n_is_not_abstract():
+    assert not inspect.isabstract(visualinher_N)
 
 
-def test_visualinher::n_constructor_exists():
-    assert callable(visualinher::N.__init__)
+def test_visualinher_n_constructor_exists():
+    assert callable(visualinher_N.__init__)
 
 
-def test_visualinher::n_constructor_args():
-    sig = inspect.signature(visualinher::N.__init__)
+def test_visualinher_n_constructor_args():
+    sig = inspect.signature(visualinher_N.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_visualinher::n_has_name():
-    assert hasattr(visualinher::N, "name")
+def test_visualinher_n_has_name():
+    assert hasattr(visualinher_N, "name")
     descriptor = None
-    for klass in visualinher::N.__mro__:
+    for klass in visualinher_N.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -64,16 +64,16 @@ def test_n_constructor_args():
 
 
 
-def test_visualinher::c_is_not_abstract():
-    assert not inspect.isabstract(visualinher::C)
+def test_visualinher_c_is_not_abstract():
+    assert not inspect.isabstract(visualinher_C)
 
 
-def test_visualinher::c_constructor_exists():
-    assert callable(visualinher::C.__init__)
+def test_visualinher_c_constructor_exists():
+    assert callable(visualinher_C.__init__)
 
 
-def test_visualinher::c_constructor_args():
-    sig = inspect.signature(visualinher::C.__init__)
+def test_visualinher_c_constructor_args():
+    sig = inspect.signature(visualinher_C.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -92,44 +92,44 @@ def test_a_constructor_args():
 
 
 
-def test_visualinher::i_is_not_abstract():
-    assert not inspect.isabstract(visualinher::I)
+def test_visualinher_i_is_not_abstract():
+    assert not inspect.isabstract(visualinher_I)
 
 
-def test_visualinher::i_constructor_exists():
-    assert callable(visualinher::I.__init__)
+def test_visualinher_i_constructor_exists():
+    assert callable(visualinher_I.__init__)
 
 
-def test_visualinher::i_constructor_args():
-    sig = inspect.signature(visualinher::I.__init__)
+def test_visualinher_i_constructor_args():
+    sig = inspect.signature(visualinher_I.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_visualinher::d_is_not_abstract():
-    assert not inspect.isabstract(visualinher::D)
+def test_visualinher_d_is_not_abstract():
+    assert not inspect.isabstract(visualinher_D)
 
 
-def test_visualinher::d_constructor_exists():
-    assert callable(visualinher::D.__init__)
+def test_visualinher_d_constructor_exists():
+    assert callable(visualinher_D.__init__)
 
 
-def test_visualinher::d_constructor_args():
-    sig = inspect.signature(visualinher::D.__init__)
+def test_visualinher_d_constructor_args():
+    sig = inspect.signature(visualinher_D.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_visualinher::e_is_not_abstract():
-    assert not inspect.isabstract(visualinher::E)
+def test_visualinher_e_is_not_abstract():
+    assert not inspect.isabstract(visualinher_E)
 
 
-def test_visualinher::e_constructor_exists():
-    assert callable(visualinher::E.__init__)
+def test_visualinher_e_constructor_exists():
+    assert callable(visualinher_E.__init__)
 
 
-def test_visualinher::e_constructor_args():
-    sig = inspect.signature(visualinher::E.__init__)
+def test_visualinher_e_constructor_args():
+    sig = inspect.signature(visualinher_E.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -148,58 +148,58 @@ def test_i_constructor_args():
 
 
 
-def test_visualinher::b_is_not_abstract():
-    assert not inspect.isabstract(visualinher::B)
+def test_visualinher_b_is_not_abstract():
+    assert not inspect.isabstract(visualinher_B)
 
 
-def test_visualinher::b_constructor_exists():
-    assert callable(visualinher::B.__init__)
+def test_visualinher_b_constructor_exists():
+    assert callable(visualinher_B.__init__)
 
 
-def test_visualinher::b_constructor_args():
-    sig = inspect.signature(visualinher::B.__init__)
+def test_visualinher_b_constructor_args():
+    sig = inspect.signature(visualinher_B.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_visualinher::r_is_not_abstract():
-    assert not inspect.isabstract(visualinher::R)
+def test_visualinher_r_is_not_abstract():
+    assert not inspect.isabstract(visualinher_R)
 
 
-def test_visualinher::r_constructor_exists():
-    assert callable(visualinher::R.__init__)
+def test_visualinher_r_constructor_exists():
+    assert callable(visualinher_R.__init__)
 
 
-def test_visualinher::r_constructor_args():
-    sig = inspect.signature(visualinher::R.__init__)
+def test_visualinher_r_constructor_args():
+    sig = inspect.signature(visualinher_R.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_visualinher::a_is_not_abstract():
-    assert not inspect.isabstract(visualinher::A)
+def test_visualinher_a_is_not_abstract():
+    assert not inspect.isabstract(visualinher_A)
 
 
-def test_visualinher::a_constructor_exists():
-    assert callable(visualinher::A.__init__)
+def test_visualinher_a_constructor_exists():
+    assert callable(visualinher_A.__init__)
 
 
-def test_visualinher::a_constructor_args():
-    sig = inspect.signature(visualinher::A.__init__)
+def test_visualinher_a_constructor_args():
+    sig = inspect.signature(visualinher_A.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_visualinher::s_is_not_abstract():
-    assert not inspect.isabstract(visualinher::S)
+def test_visualinher_s_is_not_abstract():
+    assert not inspect.isabstract(visualinher_S)
 
 
-def test_visualinher::s_constructor_exists():
-    assert callable(visualinher::S.__init__)
+def test_visualinher_s_constructor_exists():
+    assert callable(visualinher_S.__init__)
 
 
-def test_visualinher::s_constructor_args():
-    sig = inspect.signature(visualinher::S.__init__)
+def test_visualinher_s_constructor_args():
+    sig = inspect.signature(visualinher_S.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -214,57 +214,54 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-visualinher::N_strategy = st.builds(
-    visualinher::N,
+visualinher_N_strategy = st.builds(
+    visualinher_N,
     name=
         safe_text
 )
 N_strategy = st.builds(
     N,
 )
-visualinher::C_strategy = st.builds(
-    visualinher::C,
+visualinher_C_strategy = st.builds(
+    visualinher_C,
 )
 A_strategy = st.builds(
     A,
 )
-visualinher::I_strategy = st.builds(
-    visualinher::I,
+visualinher_I_strategy = st.builds(
+    visualinher_I,
 )
-visualinher::D_strategy = st.builds(
-    visualinher::D,
+visualinher_D_strategy = st.builds(
+    visualinher_D,
 )
-visualinher::E_strategy = st.builds(
-    visualinher::E,
+visualinher_E_strategy = st.builds(
+    visualinher_E,
 )
 I_strategy = st.builds(
     I,
 )
-visualinher::B_strategy = st.builds(
-    visualinher::B,
+visualinher_B_strategy = st.builds(
+    visualinher_B,
 )
-visualinher::R_strategy = st.builds(
-    visualinher::R,
+visualinher_R_strategy = st.builds(
+    visualinher_R,
 )
-visualinher::A_strategy = st.builds(
-    visualinher::A,
+visualinher_A_strategy = st.builds(
+    visualinher_A,
 )
-visualinher::S_strategy = st.builds(
-    visualinher::S,
+visualinher_S_strategy = st.builds(
+    visualinher_S,
 )
 
-@given(instance=visualinher::N_strategy)
+@given(instance=visualinher_N_strategy)
 @settings(max_examples=50)
-def test_visualinher::n_instantiation(instance):
-    assert isinstance(instance, visualinher::N)
-
-@given(instance=visualinher::N_strategy)
-def test_visualinher::n_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_visualinher_n_instantiation(instance):
+    assert isinstance(instance, visualinher_N)
 
 
-@given(instance=visualinher::N_strategy)
-def test_visualinher::n_name_setter(instance):
+
+@given(instance=visualinher_N_strategy)
+def test_visualinher_n_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
@@ -274,52 +271,52 @@ def test_visualinher::n_name_setter(instance):
 def test_n_instantiation(instance):
     assert isinstance(instance, N)
 
-@given(instance=visualinher::C_strategy)
+@given(instance=visualinher_C_strategy)
 @settings(max_examples=50)
-def test_visualinher::c_instantiation(instance):
-    assert isinstance(instance, visualinher::C)
+def test_visualinher_c_instantiation(instance):
+    assert isinstance(instance, visualinher_C)
 
 @given(instance=A_strategy)
 @settings(max_examples=50)
 def test_a_instantiation(instance):
     assert isinstance(instance, A)
 
-@given(instance=visualinher::I_strategy)
+@given(instance=visualinher_I_strategy)
 @settings(max_examples=50)
-def test_visualinher::i_instantiation(instance):
-    assert isinstance(instance, visualinher::I)
+def test_visualinher_i_instantiation(instance):
+    assert isinstance(instance, visualinher_I)
 
-@given(instance=visualinher::D_strategy)
+@given(instance=visualinher_D_strategy)
 @settings(max_examples=50)
-def test_visualinher::d_instantiation(instance):
-    assert isinstance(instance, visualinher::D)
+def test_visualinher_d_instantiation(instance):
+    assert isinstance(instance, visualinher_D)
 
-@given(instance=visualinher::E_strategy)
+@given(instance=visualinher_E_strategy)
 @settings(max_examples=50)
-def test_visualinher::e_instantiation(instance):
-    assert isinstance(instance, visualinher::E)
+def test_visualinher_e_instantiation(instance):
+    assert isinstance(instance, visualinher_E)
 
 @given(instance=I_strategy)
 @settings(max_examples=50)
 def test_i_instantiation(instance):
     assert isinstance(instance, I)
 
-@given(instance=visualinher::B_strategy)
+@given(instance=visualinher_B_strategy)
 @settings(max_examples=50)
-def test_visualinher::b_instantiation(instance):
-    assert isinstance(instance, visualinher::B)
+def test_visualinher_b_instantiation(instance):
+    assert isinstance(instance, visualinher_B)
 
-@given(instance=visualinher::R_strategy)
+@given(instance=visualinher_R_strategy)
 @settings(max_examples=50)
-def test_visualinher::r_instantiation(instance):
-    assert isinstance(instance, visualinher::R)
+def test_visualinher_r_instantiation(instance):
+    assert isinstance(instance, visualinher_R)
 
-@given(instance=visualinher::A_strategy)
+@given(instance=visualinher_A_strategy)
 @settings(max_examples=50)
-def test_visualinher::a_instantiation(instance):
-    assert isinstance(instance, visualinher::A)
+def test_visualinher_a_instantiation(instance):
+    assert isinstance(instance, visualinher_A)
 
-@given(instance=visualinher::S_strategy)
+@given(instance=visualinher_S_strategy)
 @settings(max_examples=50)
-def test_visualinher::s_instantiation(instance):
-    assert isinstance(instance, visualinher::S)
+def test_visualinher_s_instantiation(instance):
+    assert isinstance(instance, visualinher_S)

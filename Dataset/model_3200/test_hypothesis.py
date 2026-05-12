@@ -3,144 +3,144 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    iot2::Trace,
-    IntegerExpression,
-    iot2::IntegerComparisonExpression,
-    iot2::IntegerCalculationExpression,
-    iot2::Token,
-    iot2::Input,
-    iot2::InputValue,
-    BooleanExpression,
-    iot2::BooleanBinaryExpression,
-    iot2::BooleanUnaryExpression,
-    Action,
-    iot2::OpaqueAction,
-    ExecutableNode,
-    iot2::Action,
-    ActivityNode,
-    iot2::ExecutableNode,
-    iot2::ControlNode,
-    ActivityEdge,
-    iot2::ControlFlow,
-    Value,
-    iot2::IntegerValue,
-    iot2::BooleanValue,
-    Variable,
-    iot2::BooleanVariable,
-    iot2::IntegerVariable,
-    iot2::Value,
+from python_code import (
+    iot2_Value,
     FinalNode,
-    iot2::ActivityFinalNode,
+    iot2_ActivityFinalNode,
     ControlNode,
-    iot2::FinalNode,
-    iot2::DecisionNode,
-    iot2::ForkNode,
-    iot2::JoinNode,
-    iot2::MergeNode,
-    iot2::InitialNode,
+    iot2_FinalNode,
+    iot2_ForkNode,
+    iot2_MergeNode,
+    iot2_DecisionNode,
+    iot2_JoinNode,
+    iot2_InitialNode,
     Expression,
-    iot2::Expression::Multiplication,
-    iot2::Expression::Minus,
-    iot2::Expression::Larger,
-    iot2::IntegerExpression,
-    iot2::Expression::False,
-    iot2::Expression::True,
-    iot2::Expression::Negate,
-    iot2::Expression::Larger::Equal,
-    iot2::Expression::Function,
-    iot2::BooleanExpression,
-    iot2::Expression::Number,
-    iot2::Expression::CallMemberFunction,
-    iot2::Expression::AccessArray,
-    iot2::Expression::VariableName,
-    iot2::Expression::Equal,
-    iot2::Expression::Division,
-    iot2::Expression::Smaller::Equal,
-    iot2::Expression::Not::Equal,
-    iot2::Expression::Or,
-    iot2::Expression::AccessMember,
-    iot2::Expression::Smaller,
-    iot2::Expression::Exponentiation,
-    iot2::Expression::Length,
-    iot2::Expression::Concatenation,
-    iot2::Expression::Modulo,
-    iot2::Expression::VarArgs,
-    iot2::Expression::And,
-    iot2::Expression::Plus,
-    iot2::Expression::String,
-    iot2::Expression::Invert,
-    iot2::Expression::CallFunction,
-    iot2::Expression::Nil,
-    Statement::FunctioncallOrAssignment,
-    iot2::Statement::CallFunction,
-    iot2::Statement::CallMemberFunction,
-    iot2::Statement::Assignment,
-    LastStatement::Return,
-    iot2::LastStatement::ReturnWithValue,
+    iot2_Expression_CallMemberFunction,
+    iot2_Expression_Exponentiation,
+    iot2_Expression_Equal,
+    iot2_Expression_AccessArray,
+    iot2_Expression_String,
+    iot2_Expression_Smaller_Equal,
+    iot2_Expression_Negate,
+    iot2_Expression_Plus,
+    iot2_Expression_Or,
+    iot2_Expression_CallFunction,
+    iot2_Expression_Not_Equal,
+    iot2_Expression_Division,
+    iot2_Expression_Smaller,
+    iot2_Expression_Length,
+    iot2_Expression_Larger_Equal,
+    iot2_Expression_Modulo,
+    iot2_Expression_Number,
+    iot2_Expression_Invert,
+    iot2_Expression_Multiplication,
+    iot2_Expression_Concatenation,
+    iot2_Expression_AccessMember,
+    iot2_Expression_And,
+    iot2_Expression_VarArgs,
+    iot2_Expression_True,
+    iot2_Expression_Function,
+    iot2_Expression_False,
+    iot2_Expression_VariableName,
+    iot2_Expression_Larger,
+    iot2_Expression_Minus,
+    iot2_Expression_Nil,
+    Statement_FunctioncallOrAssignment,
+    iot2_Statement_CallMemberFunction,
+    iot2_Statement_CallFunction,
+    iot2_Statement_Assignment,
+    LastStatement_Return,
+    iot2_LastStatement_ReturnWithValue,
     Field,
-    iot2::Field::AppendEntryToTable,
-    iot2::Field::AddEntryToTable,
-    iot2::Field::AddEntryToTable::Brackets,
-    iot2::Functioncall::Arguments,
-    iot2::Expression::TableConstructor,
-    iot2::Statement::If::Then::Else::ElseIfPart,
-    iot2::Function,
-    iot2::Expression,
+    iot2_Field_AddEntryToTable,
+    iot2_Field_AppendEntryToTable,
+    iot2_Field_AddEntryToTable_Brackets,
+    iot2_Functioncall_Arguments,
+    iot2_Expression_TableConstructor,
+    iot2_Statement_If_Then_Else_ElseIfPart,
+    iot2_Function,
+    iot2_Expression,
     IDLType,
     Statement,
-    iot2::Statement::Local::Variable::Declaration,
-    iot2::Statement::If::Then::Else,
-    iot2::Statement::LocalFunction::Declaration,
-    iot2::Statement::For::Numeric,
-    iot2::Statement::FunctioncallOrAssignment,
-    iot2::Statement::Repeat,
-    iot2::Statement::While,
-    iot2::Statement::GlobalFunction::Declaration,
-    iot2::Statement::For::Generic,
-    iot2::Statement::Block,
+    iot2_Statement_Repeat,
+    iot2_Statement_FunctioncallOrAssignment,
+    iot2_Statement_For_Generic,
+    iot2_Statement_Local_Variable_Declaration,
+    iot2_Statement_LocalFunction_Declaration,
+    iot2_Statement_While,
+    iot2_Statement_GlobalFunction_Declaration,
+    iot2_Statement_For_Numeric,
+    iot2_Statement_If_Then_Else,
+    iot2_Statement_Block,
     LastStatement,
-    iot2::LastStatement::Break,
-    iot2::LastStatement::Return,
-    iot2::LastStatement,
-    iot2::Statement,
+    iot2_LastStatement_Break,
+    iot2_LastStatement_Return,
+    iot2_LastStatement,
+    iot2_Statement,
     Chunk,
-    iot2::Chunk,
-    iot2::PrimitiveDef,
+    iot2_Chunk,
+    iot2_PrimitiveDef,
     Typed,
-    iot2::Field,
-    iot2::ParameterDef,
+    iot2_Field,
+    iot2_ParameterDef,
     Contained,
-    iot2::Variable,
+    iot2_Variable,
     NamedElement,
-    iot2::ActivityNode,
-    iot2::ActivityEdge,
-    iot2::TypedefDef,
-    iot2::IDLType,
-    iot2::Typed,
-    iot2::NamedElement,
-    iot2::Container,
-    iot2::Contained,
-    iot2::Block,
-    iot2::ExceptionDef,
+    iot2_ActivityNode,
+    iot2_ActivityEdge,
+    iot2_TypedefDef,
+    iot2_IDLType,
+    iot2_Typed,
+    iot2_NamedElement,
+    iot2_Container,
+    iot2_Contained,
+    iot2_Block,
+    iot2_ExceptionDef,
     HWComponent,
-    iot2::Actuator,
-    iot2::Sensor,
-    iot2::OperationDef,
-    iot2::Activity,
-    iot2::Sketch,
-    iot2::Board,
-    iot2::HWComponent,
-    iot2::System,
-    IntegerCalculationOperator,
-    PrimitiveKind,
-    BooleanUnaryOperator,
+    iot2_Actuator,
+    iot2_Sensor,
+    iot2_OperationDef,
+    iot2_Activity,
+    iot2_Sketch,
+    iot2_Board,
+    iot2_HWComponent,
+    iot2_System,
+    iot2_Trace,
+    IntegerExpression,
+    iot2_IntegerComparisonExpression,
+    iot2_IntegerCalculationExpression,
+    iot2_BooleanExpression,
+    iot2_Token,
+    iot2_Input,
+    iot2_InputValue,
+    BooleanExpression,
+    iot2_BooleanBinaryExpression,
+    iot2_BooleanUnaryExpression,
+    Action,
+    iot2_OpaqueAction,
+    ExecutableNode,
+    iot2_Action,
+    ActivityNode,
+    iot2_ExecutableNode,
+    iot2_ControlNode,
+    ActivityEdge,
+    iot2_ControlFlow,
+    iot2_IntegerExpression,
+    Value,
+    iot2_IntegerValue,
+    iot2_BooleanValue,
+    Variable,
+    iot2_BooleanVariable,
+    iot2_IntegerVariable,
     IntegerComparisonOperator,
-    BooleanBinaryOperator,
-    ParameterMode,
     BoardType,
+    BooleanUnaryOperator,
+    ParameterMode,
+    PrimitiveKind,
+    IntegerCalculationOperator,
+    BooleanBinaryOperator,
 )
 
 # =============================================================================
@@ -149,426 +149,16 @@ from classes import (
 
 
 
-def test_iot2::trace_is_not_abstract():
-    assert not inspect.isabstract(iot2::Trace)
+def test_iot2_value_is_not_abstract():
+    assert not inspect.isabstract(iot2_Value)
 
 
-def test_iot2::trace_constructor_exists():
-    assert callable(iot2::Trace.__init__)
+def test_iot2_value_constructor_exists():
+    assert callable(iot2_Value.__init__)
 
 
-def test_iot2::trace_constructor_args():
-    sig = inspect.signature(iot2::Trace.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_integerexpression_is_not_abstract():
-    assert not inspect.isabstract(IntegerExpression)
-
-
-def test_integerexpression_constructor_exists():
-    assert callable(IntegerExpression.__init__)
-
-
-def test_integerexpression_constructor_args():
-    sig = inspect.signature(IntegerExpression.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_iot2::integercomparisonexpression_is_not_abstract():
-    assert not inspect.isabstract(iot2::IntegerComparisonExpression)
-
-
-def test_iot2::integercomparisonexpression_constructor_exists():
-    assert callable(iot2::IntegerComparisonExpression.__init__)
-
-
-def test_iot2::integercomparisonexpression_constructor_args():
-    sig = inspect.signature(iot2::IntegerComparisonExpression.__init__)
-    params = list(sig.parameters.keys())
-    assert "operator" in params, "Missing parameter 'operator'"
-
-def test_iot2::integercomparisonexpression_has_operator():
-    assert hasattr(iot2::IntegerComparisonExpression, "operator")
-    descriptor = None
-    for klass in iot2::IntegerComparisonExpression.__mro__:
-        if "operator" in klass.__dict__:
-            descriptor = klass.__dict__["operator"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_iot2::integercalculationexpression_is_not_abstract():
-    assert not inspect.isabstract(iot2::IntegerCalculationExpression)
-
-
-def test_iot2::integercalculationexpression_constructor_exists():
-    assert callable(iot2::IntegerCalculationExpression.__init__)
-
-
-def test_iot2::integercalculationexpression_constructor_args():
-    sig = inspect.signature(iot2::IntegerCalculationExpression.__init__)
-    params = list(sig.parameters.keys())
-    assert "operator" in params, "Missing parameter 'operator'"
-
-def test_iot2::integercalculationexpression_has_operator():
-    assert hasattr(iot2::IntegerCalculationExpression, "operator")
-    descriptor = None
-    for klass in iot2::IntegerCalculationExpression.__mro__:
-        if "operator" in klass.__dict__:
-            descriptor = klass.__dict__["operator"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_iot2::token_is_not_abstract():
-    assert not inspect.isabstract(iot2::Token)
-
-
-def test_iot2::token_constructor_exists():
-    assert callable(iot2::Token.__init__)
-
-
-def test_iot2::token_constructor_args():
-    sig = inspect.signature(iot2::Token.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_iot2::input_is_not_abstract():
-    assert not inspect.isabstract(iot2::Input)
-
-
-def test_iot2::input_constructor_exists():
-    assert callable(iot2::Input.__init__)
-
-
-def test_iot2::input_constructor_args():
-    sig = inspect.signature(iot2::Input.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_iot2::inputvalue_is_not_abstract():
-    assert not inspect.isabstract(iot2::InputValue)
-
-
-def test_iot2::inputvalue_constructor_exists():
-    assert callable(iot2::InputValue.__init__)
-
-
-def test_iot2::inputvalue_constructor_args():
-    sig = inspect.signature(iot2::InputValue.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_booleanexpression_is_not_abstract():
-    assert not inspect.isabstract(BooleanExpression)
-
-
-def test_booleanexpression_constructor_exists():
-    assert callable(BooleanExpression.__init__)
-
-
-def test_booleanexpression_constructor_args():
-    sig = inspect.signature(BooleanExpression.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_iot2::booleanbinaryexpression_is_not_abstract():
-    assert not inspect.isabstract(iot2::BooleanBinaryExpression)
-
-
-def test_iot2::booleanbinaryexpression_constructor_exists():
-    assert callable(iot2::BooleanBinaryExpression.__init__)
-
-
-def test_iot2::booleanbinaryexpression_constructor_args():
-    sig = inspect.signature(iot2::BooleanBinaryExpression.__init__)
-    params = list(sig.parameters.keys())
-    assert "operator" in params, "Missing parameter 'operator'"
-
-def test_iot2::booleanbinaryexpression_has_operator():
-    assert hasattr(iot2::BooleanBinaryExpression, "operator")
-    descriptor = None
-    for klass in iot2::BooleanBinaryExpression.__mro__:
-        if "operator" in klass.__dict__:
-            descriptor = klass.__dict__["operator"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_iot2::booleanunaryexpression_is_not_abstract():
-    assert not inspect.isabstract(iot2::BooleanUnaryExpression)
-
-
-def test_iot2::booleanunaryexpression_constructor_exists():
-    assert callable(iot2::BooleanUnaryExpression.__init__)
-
-
-def test_iot2::booleanunaryexpression_constructor_args():
-    sig = inspect.signature(iot2::BooleanUnaryExpression.__init__)
-    params = list(sig.parameters.keys())
-    assert "operator" in params, "Missing parameter 'operator'"
-
-def test_iot2::booleanunaryexpression_has_operator():
-    assert hasattr(iot2::BooleanUnaryExpression, "operator")
-    descriptor = None
-    for klass in iot2::BooleanUnaryExpression.__mro__:
-        if "operator" in klass.__dict__:
-            descriptor = klass.__dict__["operator"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_action_is_not_abstract():
-    assert not inspect.isabstract(Action)
-
-
-def test_action_constructor_exists():
-    assert callable(Action.__init__)
-
-
-def test_action_constructor_args():
-    sig = inspect.signature(Action.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_iot2::opaqueaction_is_not_abstract():
-    assert not inspect.isabstract(iot2::OpaqueAction)
-
-
-def test_iot2::opaqueaction_constructor_exists():
-    assert callable(iot2::OpaqueAction.__init__)
-
-
-def test_iot2::opaqueaction_constructor_args():
-    sig = inspect.signature(iot2::OpaqueAction.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_executablenode_is_not_abstract():
-    assert not inspect.isabstract(ExecutableNode)
-
-
-def test_executablenode_constructor_exists():
-    assert callable(ExecutableNode.__init__)
-
-
-def test_executablenode_constructor_args():
-    sig = inspect.signature(ExecutableNode.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_iot2::action_is_not_abstract():
-    assert not inspect.isabstract(iot2::Action)
-
-
-def test_iot2::action_constructor_exists():
-    assert callable(iot2::Action.__init__)
-
-
-def test_iot2::action_constructor_args():
-    sig = inspect.signature(iot2::Action.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_activitynode_is_not_abstract():
-    assert not inspect.isabstract(ActivityNode)
-
-
-def test_activitynode_constructor_exists():
-    assert callable(ActivityNode.__init__)
-
-
-def test_activitynode_constructor_args():
-    sig = inspect.signature(ActivityNode.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_iot2::executablenode_is_not_abstract():
-    assert not inspect.isabstract(iot2::ExecutableNode)
-
-
-def test_iot2::executablenode_constructor_exists():
-    assert callable(iot2::ExecutableNode.__init__)
-
-
-def test_iot2::executablenode_constructor_args():
-    sig = inspect.signature(iot2::ExecutableNode.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_iot2::controlnode_is_not_abstract():
-    assert not inspect.isabstract(iot2::ControlNode)
-
-
-def test_iot2::controlnode_constructor_exists():
-    assert callable(iot2::ControlNode.__init__)
-
-
-def test_iot2::controlnode_constructor_args():
-    sig = inspect.signature(iot2::ControlNode.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_activityedge_is_not_abstract():
-    assert not inspect.isabstract(ActivityEdge)
-
-
-def test_activityedge_constructor_exists():
-    assert callable(ActivityEdge.__init__)
-
-
-def test_activityedge_constructor_args():
-    sig = inspect.signature(ActivityEdge.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_iot2::controlflow_is_not_abstract():
-    assert not inspect.isabstract(iot2::ControlFlow)
-
-
-def test_iot2::controlflow_constructor_exists():
-    assert callable(iot2::ControlFlow.__init__)
-
-
-def test_iot2::controlflow_constructor_args():
-    sig = inspect.signature(iot2::ControlFlow.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_value_is_not_abstract():
-    assert not inspect.isabstract(Value)
-
-
-def test_value_constructor_exists():
-    assert callable(Value.__init__)
-
-
-def test_value_constructor_args():
-    sig = inspect.signature(Value.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_iot2::integervalue_is_not_abstract():
-    assert not inspect.isabstract(iot2::IntegerValue)
-
-
-def test_iot2::integervalue_constructor_exists():
-    assert callable(iot2::IntegerValue.__init__)
-
-
-def test_iot2::integervalue_constructor_args():
-    sig = inspect.signature(iot2::IntegerValue.__init__)
-    params = list(sig.parameters.keys())
-    assert "value" in params, "Missing parameter 'value'"
-
-def test_iot2::integervalue_has_value():
-    assert hasattr(iot2::IntegerValue, "value")
-    descriptor = None
-    for klass in iot2::IntegerValue.__mro__:
-        if "value" in klass.__dict__:
-            descriptor = klass.__dict__["value"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_iot2::booleanvalue_is_not_abstract():
-    assert not inspect.isabstract(iot2::BooleanValue)
-
-
-def test_iot2::booleanvalue_constructor_exists():
-    assert callable(iot2::BooleanValue.__init__)
-
-
-def test_iot2::booleanvalue_constructor_args():
-    sig = inspect.signature(iot2::BooleanValue.__init__)
-    params = list(sig.parameters.keys())
-    assert "value" in params, "Missing parameter 'value'"
-
-def test_iot2::booleanvalue_has_value():
-    assert hasattr(iot2::BooleanValue, "value")
-    descriptor = None
-    for klass in iot2::BooleanValue.__mro__:
-        if "value" in klass.__dict__:
-            descriptor = klass.__dict__["value"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_variable_is_not_abstract():
-    assert not inspect.isabstract(Variable)
-
-
-def test_variable_constructor_exists():
-    assert callable(Variable.__init__)
-
-
-def test_variable_constructor_args():
-    sig = inspect.signature(Variable.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_iot2::booleanvariable_is_not_abstract():
-    assert not inspect.isabstract(iot2::BooleanVariable)
-
-
-def test_iot2::booleanvariable_constructor_exists():
-    assert callable(iot2::BooleanVariable.__init__)
-
-
-def test_iot2::booleanvariable_constructor_args():
-    sig = inspect.signature(iot2::BooleanVariable.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_iot2::integervariable_is_not_abstract():
-    assert not inspect.isabstract(iot2::IntegerVariable)
-
-
-def test_iot2::integervariable_constructor_exists():
-    assert callable(iot2::IntegerVariable.__init__)
-
-
-def test_iot2::integervariable_constructor_args():
-    sig = inspect.signature(iot2::IntegerVariable.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_iot2::value_is_not_abstract():
-    assert not inspect.isabstract(iot2::Value)
-
-
-def test_iot2::value_constructor_exists():
-    assert callable(iot2::Value.__init__)
-
-
-def test_iot2::value_constructor_args():
-    sig = inspect.signature(iot2::Value.__init__)
+def test_iot2_value_constructor_args():
+    sig = inspect.signature(iot2_Value.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -587,16 +177,16 @@ def test_finalnode_constructor_args():
 
 
 
-def test_iot2::activityfinalnode_is_not_abstract():
-    assert not inspect.isabstract(iot2::ActivityFinalNode)
+def test_iot2_activityfinalnode_is_not_abstract():
+    assert not inspect.isabstract(iot2_ActivityFinalNode)
 
 
-def test_iot2::activityfinalnode_constructor_exists():
-    assert callable(iot2::ActivityFinalNode.__init__)
+def test_iot2_activityfinalnode_constructor_exists():
+    assert callable(iot2_ActivityFinalNode.__init__)
 
 
-def test_iot2::activityfinalnode_constructor_args():
-    sig = inspect.signature(iot2::ActivityFinalNode.__init__)
+def test_iot2_activityfinalnode_constructor_args():
+    sig = inspect.signature(iot2_ActivityFinalNode.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -615,86 +205,86 @@ def test_controlnode_constructor_args():
 
 
 
-def test_iot2::finalnode_is_not_abstract():
-    assert not inspect.isabstract(iot2::FinalNode)
+def test_iot2_finalnode_is_not_abstract():
+    assert not inspect.isabstract(iot2_FinalNode)
 
 
-def test_iot2::finalnode_constructor_exists():
-    assert callable(iot2::FinalNode.__init__)
+def test_iot2_finalnode_constructor_exists():
+    assert callable(iot2_FinalNode.__init__)
 
 
-def test_iot2::finalnode_constructor_args():
-    sig = inspect.signature(iot2::FinalNode.__init__)
+def test_iot2_finalnode_constructor_args():
+    sig = inspect.signature(iot2_FinalNode.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_iot2::decisionnode_is_not_abstract():
-    assert not inspect.isabstract(iot2::DecisionNode)
+def test_iot2_forknode_is_not_abstract():
+    assert not inspect.isabstract(iot2_ForkNode)
 
 
-def test_iot2::decisionnode_constructor_exists():
-    assert callable(iot2::DecisionNode.__init__)
+def test_iot2_forknode_constructor_exists():
+    assert callable(iot2_ForkNode.__init__)
 
 
-def test_iot2::decisionnode_constructor_args():
-    sig = inspect.signature(iot2::DecisionNode.__init__)
+def test_iot2_forknode_constructor_args():
+    sig = inspect.signature(iot2_ForkNode.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_iot2::forknode_is_not_abstract():
-    assert not inspect.isabstract(iot2::ForkNode)
+def test_iot2_mergenode_is_not_abstract():
+    assert not inspect.isabstract(iot2_MergeNode)
 
 
-def test_iot2::forknode_constructor_exists():
-    assert callable(iot2::ForkNode.__init__)
+def test_iot2_mergenode_constructor_exists():
+    assert callable(iot2_MergeNode.__init__)
 
 
-def test_iot2::forknode_constructor_args():
-    sig = inspect.signature(iot2::ForkNode.__init__)
+def test_iot2_mergenode_constructor_args():
+    sig = inspect.signature(iot2_MergeNode.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_iot2::joinnode_is_not_abstract():
-    assert not inspect.isabstract(iot2::JoinNode)
+def test_iot2_decisionnode_is_not_abstract():
+    assert not inspect.isabstract(iot2_DecisionNode)
 
 
-def test_iot2::joinnode_constructor_exists():
-    assert callable(iot2::JoinNode.__init__)
+def test_iot2_decisionnode_constructor_exists():
+    assert callable(iot2_DecisionNode.__init__)
 
 
-def test_iot2::joinnode_constructor_args():
-    sig = inspect.signature(iot2::JoinNode.__init__)
+def test_iot2_decisionnode_constructor_args():
+    sig = inspect.signature(iot2_DecisionNode.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_iot2::mergenode_is_not_abstract():
-    assert not inspect.isabstract(iot2::MergeNode)
+def test_iot2_joinnode_is_not_abstract():
+    assert not inspect.isabstract(iot2_JoinNode)
 
 
-def test_iot2::mergenode_constructor_exists():
-    assert callable(iot2::MergeNode.__init__)
+def test_iot2_joinnode_constructor_exists():
+    assert callable(iot2_JoinNode.__init__)
 
 
-def test_iot2::mergenode_constructor_args():
-    sig = inspect.signature(iot2::MergeNode.__init__)
+def test_iot2_joinnode_constructor_args():
+    sig = inspect.signature(iot2_JoinNode.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_iot2::initialnode_is_not_abstract():
-    assert not inspect.isabstract(iot2::InitialNode)
+def test_iot2_initialnode_is_not_abstract():
+    assert not inspect.isabstract(iot2_InitialNode)
 
 
-def test_iot2::initialnode_constructor_exists():
-    assert callable(iot2::InitialNode.__init__)
+def test_iot2_initialnode_constructor_exists():
+    assert callable(iot2_InitialNode.__init__)
 
 
-def test_iot2::initialnode_constructor_args():
-    sig = inspect.signature(iot2::InitialNode.__init__)
+def test_iot2_initialnode_constructor_args():
+    sig = inspect.signature(iot2_InitialNode.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -713,187 +303,23 @@ def test_expression_constructor_args():
 
 
 
-def test_iot2::expression::multiplication_is_not_abstract():
-    assert not inspect.isabstract(iot2::Expression::Multiplication)
+def test_iot2_expression_callmemberfunction_is_not_abstract():
+    assert not inspect.isabstract(iot2_Expression_CallMemberFunction)
 
 
-def test_iot2::expression::multiplication_constructor_exists():
-    assert callable(iot2::Expression::Multiplication.__init__)
+def test_iot2_expression_callmemberfunction_constructor_exists():
+    assert callable(iot2_Expression_CallMemberFunction.__init__)
 
 
-def test_iot2::expression::multiplication_constructor_args():
-    sig = inspect.signature(iot2::Expression::Multiplication.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_iot2::expression::minus_is_not_abstract():
-    assert not inspect.isabstract(iot2::Expression::Minus)
-
-
-def test_iot2::expression::minus_constructor_exists():
-    assert callable(iot2::Expression::Minus.__init__)
-
-
-def test_iot2::expression::minus_constructor_args():
-    sig = inspect.signature(iot2::Expression::Minus.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_iot2::expression::larger_is_not_abstract():
-    assert not inspect.isabstract(iot2::Expression::Larger)
-
-
-def test_iot2::expression::larger_constructor_exists():
-    assert callable(iot2::Expression::Larger.__init__)
-
-
-def test_iot2::expression::larger_constructor_args():
-    sig = inspect.signature(iot2::Expression::Larger.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_iot2::integerexpression_is_not_abstract():
-    assert not inspect.isabstract(iot2::IntegerExpression)
-
-
-def test_iot2::integerexpression_constructor_exists():
-    assert callable(iot2::IntegerExpression.__init__)
-
-
-def test_iot2::integerexpression_constructor_args():
-    sig = inspect.signature(iot2::IntegerExpression.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_iot2::expression::false_is_not_abstract():
-    assert not inspect.isabstract(iot2::Expression::False)
-
-
-def test_iot2::expression::false_constructor_exists():
-    assert callable(iot2::Expression::False.__init__)
-
-
-def test_iot2::expression::false_constructor_args():
-    sig = inspect.signature(iot2::Expression::False.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_iot2::expression::true_is_not_abstract():
-    assert not inspect.isabstract(iot2::Expression::True)
-
-
-def test_iot2::expression::true_constructor_exists():
-    assert callable(iot2::Expression::True.__init__)
-
-
-def test_iot2::expression::true_constructor_args():
-    sig = inspect.signature(iot2::Expression::True.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_iot2::expression::negate_is_not_abstract():
-    assert not inspect.isabstract(iot2::Expression::Negate)
-
-
-def test_iot2::expression::negate_constructor_exists():
-    assert callable(iot2::Expression::Negate.__init__)
-
-
-def test_iot2::expression::negate_constructor_args():
-    sig = inspect.signature(iot2::Expression::Negate.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_iot2::expression::larger::equal_is_not_abstract():
-    assert not inspect.isabstract(iot2::Expression::Larger::Equal)
-
-
-def test_iot2::expression::larger::equal_constructor_exists():
-    assert callable(iot2::Expression::Larger::Equal.__init__)
-
-
-def test_iot2::expression::larger::equal_constructor_args():
-    sig = inspect.signature(iot2::Expression::Larger::Equal.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_iot2::expression::function_is_not_abstract():
-    assert not inspect.isabstract(iot2::Expression::Function)
-
-
-def test_iot2::expression::function_constructor_exists():
-    assert callable(iot2::Expression::Function.__init__)
-
-
-def test_iot2::expression::function_constructor_args():
-    sig = inspect.signature(iot2::Expression::Function.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_iot2::booleanexpression_is_not_abstract():
-    assert not inspect.isabstract(iot2::BooleanExpression)
-
-
-def test_iot2::booleanexpression_constructor_exists():
-    assert callable(iot2::BooleanExpression.__init__)
-
-
-def test_iot2::booleanexpression_constructor_args():
-    sig = inspect.signature(iot2::BooleanExpression.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_iot2::expression::number_is_not_abstract():
-    assert not inspect.isabstract(iot2::Expression::Number)
-
-
-def test_iot2::expression::number_constructor_exists():
-    assert callable(iot2::Expression::Number.__init__)
-
-
-def test_iot2::expression::number_constructor_args():
-    sig = inspect.signature(iot2::Expression::Number.__init__)
-    params = list(sig.parameters.keys())
-    assert "value" in params, "Missing parameter 'value'"
-
-def test_iot2::expression::number_has_value():
-    assert hasattr(iot2::Expression::Number, "value")
-    descriptor = None
-    for klass in iot2::Expression::Number.__mro__:
-        if "value" in klass.__dict__:
-            descriptor = klass.__dict__["value"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_iot2::expression::callmemberfunction_is_not_abstract():
-    assert not inspect.isabstract(iot2::Expression::CallMemberFunction)
-
-
-def test_iot2::expression::callmemberfunction_constructor_exists():
-    assert callable(iot2::Expression::CallMemberFunction.__init__)
-
-
-def test_iot2::expression::callmemberfunction_constructor_args():
-    sig = inspect.signature(iot2::Expression::CallMemberFunction.__init__)
+def test_iot2_expression_callmemberfunction_constructor_args():
+    sig = inspect.signature(iot2_Expression_CallMemberFunction.__init__)
     params = list(sig.parameters.keys())
     assert "memberFunctionName" in params, "Missing parameter 'memberFunctionName'"
 
-def test_iot2::expression::callmemberfunction_has_memberFunctionName():
-    assert hasattr(iot2::Expression::CallMemberFunction, "memberFunctionName")
+def test_iot2_expression_callmemberfunction_has_memberFunctionName():
+    assert hasattr(iot2_Expression_CallMemberFunction, "memberFunctionName")
     descriptor = None
-    for klass in iot2::Expression::CallMemberFunction.__mro__:
+    for klass in iot2_Expression_CallMemberFunction.__mro__:
         if "memberFunctionName" in klass.__dict__:
             descriptor = klass.__dict__["memberFunctionName"]
             break
@@ -901,131 +327,309 @@ def test_iot2::expression::callmemberfunction_has_memberFunctionName():
 
 
 
-def test_iot2::expression::accessarray_is_not_abstract():
-    assert not inspect.isabstract(iot2::Expression::AccessArray)
+def test_iot2_expression_exponentiation_is_not_abstract():
+    assert not inspect.isabstract(iot2_Expression_Exponentiation)
 
 
-def test_iot2::expression::accessarray_constructor_exists():
-    assert callable(iot2::Expression::AccessArray.__init__)
+def test_iot2_expression_exponentiation_constructor_exists():
+    assert callable(iot2_Expression_Exponentiation.__init__)
 
 
-def test_iot2::expression::accessarray_constructor_args():
-    sig = inspect.signature(iot2::Expression::AccessArray.__init__)
+def test_iot2_expression_exponentiation_constructor_args():
+    sig = inspect.signature(iot2_Expression_Exponentiation.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_iot2::expression::variablename_is_not_abstract():
-    assert not inspect.isabstract(iot2::Expression::VariableName)
+def test_iot2_expression_equal_is_not_abstract():
+    assert not inspect.isabstract(iot2_Expression_Equal)
 
 
-def test_iot2::expression::variablename_constructor_exists():
-    assert callable(iot2::Expression::VariableName.__init__)
+def test_iot2_expression_equal_constructor_exists():
+    assert callable(iot2_Expression_Equal.__init__)
 
 
-def test_iot2::expression::variablename_constructor_args():
-    sig = inspect.signature(iot2::Expression::VariableName.__init__)
+def test_iot2_expression_equal_constructor_args():
+    sig = inspect.signature(iot2_Expression_Equal.__init__)
     params = list(sig.parameters.keys())
-    assert "variable" in params, "Missing parameter 'variable'"
 
-def test_iot2::expression::variablename_has_variable():
-    assert hasattr(iot2::Expression::VariableName, "variable")
+
+
+def test_iot2_expression_accessarray_is_not_abstract():
+    assert not inspect.isabstract(iot2_Expression_AccessArray)
+
+
+def test_iot2_expression_accessarray_constructor_exists():
+    assert callable(iot2_Expression_AccessArray.__init__)
+
+
+def test_iot2_expression_accessarray_constructor_args():
+    sig = inspect.signature(iot2_Expression_AccessArray.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_iot2_expression_string_is_not_abstract():
+    assert not inspect.isabstract(iot2_Expression_String)
+
+
+def test_iot2_expression_string_constructor_exists():
+    assert callable(iot2_Expression_String.__init__)
+
+
+def test_iot2_expression_string_constructor_args():
+    sig = inspect.signature(iot2_Expression_String.__init__)
+    params = list(sig.parameters.keys())
+    assert "value" in params, "Missing parameter 'value'"
+
+def test_iot2_expression_string_has_value():
+    assert hasattr(iot2_Expression_String, "value")
     descriptor = None
-    for klass in iot2::Expression::VariableName.__mro__:
-        if "variable" in klass.__dict__:
-            descriptor = klass.__dict__["variable"]
+    for klass in iot2_Expression_String.__mro__:
+        if "value" in klass.__dict__:
+            descriptor = klass.__dict__["value"]
             break
     assert isinstance(descriptor, property)
 
 
 
-def test_iot2::expression::equal_is_not_abstract():
-    assert not inspect.isabstract(iot2::Expression::Equal)
+def test_iot2_expression_smaller_equal_is_not_abstract():
+    assert not inspect.isabstract(iot2_Expression_Smaller_Equal)
 
 
-def test_iot2::expression::equal_constructor_exists():
-    assert callable(iot2::Expression::Equal.__init__)
+def test_iot2_expression_smaller_equal_constructor_exists():
+    assert callable(iot2_Expression_Smaller_Equal.__init__)
 
 
-def test_iot2::expression::equal_constructor_args():
-    sig = inspect.signature(iot2::Expression::Equal.__init__)
+def test_iot2_expression_smaller_equal_constructor_args():
+    sig = inspect.signature(iot2_Expression_Smaller_Equal.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_iot2::expression::division_is_not_abstract():
-    assert not inspect.isabstract(iot2::Expression::Division)
+def test_iot2_expression_negate_is_not_abstract():
+    assert not inspect.isabstract(iot2_Expression_Negate)
 
 
-def test_iot2::expression::division_constructor_exists():
-    assert callable(iot2::Expression::Division.__init__)
+def test_iot2_expression_negate_constructor_exists():
+    assert callable(iot2_Expression_Negate.__init__)
 
 
-def test_iot2::expression::division_constructor_args():
-    sig = inspect.signature(iot2::Expression::Division.__init__)
+def test_iot2_expression_negate_constructor_args():
+    sig = inspect.signature(iot2_Expression_Negate.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_iot2::expression::smaller::equal_is_not_abstract():
-    assert not inspect.isabstract(iot2::Expression::Smaller::Equal)
+def test_iot2_expression_plus_is_not_abstract():
+    assert not inspect.isabstract(iot2_Expression_Plus)
 
 
-def test_iot2::expression::smaller::equal_constructor_exists():
-    assert callable(iot2::Expression::Smaller::Equal.__init__)
+def test_iot2_expression_plus_constructor_exists():
+    assert callable(iot2_Expression_Plus.__init__)
 
 
-def test_iot2::expression::smaller::equal_constructor_args():
-    sig = inspect.signature(iot2::Expression::Smaller::Equal.__init__)
+def test_iot2_expression_plus_constructor_args():
+    sig = inspect.signature(iot2_Expression_Plus.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_iot2::expression::not::equal_is_not_abstract():
-    assert not inspect.isabstract(iot2::Expression::Not::Equal)
+def test_iot2_expression_or_is_not_abstract():
+    assert not inspect.isabstract(iot2_Expression_Or)
 
 
-def test_iot2::expression::not::equal_constructor_exists():
-    assert callable(iot2::Expression::Not::Equal.__init__)
+def test_iot2_expression_or_constructor_exists():
+    assert callable(iot2_Expression_Or.__init__)
 
 
-def test_iot2::expression::not::equal_constructor_args():
-    sig = inspect.signature(iot2::Expression::Not::Equal.__init__)
+def test_iot2_expression_or_constructor_args():
+    sig = inspect.signature(iot2_Expression_Or.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_iot2::expression::or_is_not_abstract():
-    assert not inspect.isabstract(iot2::Expression::Or)
+def test_iot2_expression_callfunction_is_not_abstract():
+    assert not inspect.isabstract(iot2_Expression_CallFunction)
 
 
-def test_iot2::expression::or_constructor_exists():
-    assert callable(iot2::Expression::Or.__init__)
+def test_iot2_expression_callfunction_constructor_exists():
+    assert callable(iot2_Expression_CallFunction.__init__)
 
 
-def test_iot2::expression::or_constructor_args():
-    sig = inspect.signature(iot2::Expression::Or.__init__)
+def test_iot2_expression_callfunction_constructor_args():
+    sig = inspect.signature(iot2_Expression_CallFunction.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_iot2::expression::accessmember_is_not_abstract():
-    assert not inspect.isabstract(iot2::Expression::AccessMember)
+def test_iot2_expression_not_equal_is_not_abstract():
+    assert not inspect.isabstract(iot2_Expression_Not_Equal)
 
 
-def test_iot2::expression::accessmember_constructor_exists():
-    assert callable(iot2::Expression::AccessMember.__init__)
+def test_iot2_expression_not_equal_constructor_exists():
+    assert callable(iot2_Expression_Not_Equal.__init__)
 
 
-def test_iot2::expression::accessmember_constructor_args():
-    sig = inspect.signature(iot2::Expression::AccessMember.__init__)
+def test_iot2_expression_not_equal_constructor_args():
+    sig = inspect.signature(iot2_Expression_Not_Equal.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_iot2_expression_division_is_not_abstract():
+    assert not inspect.isabstract(iot2_Expression_Division)
+
+
+def test_iot2_expression_division_constructor_exists():
+    assert callable(iot2_Expression_Division.__init__)
+
+
+def test_iot2_expression_division_constructor_args():
+    sig = inspect.signature(iot2_Expression_Division.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_iot2_expression_smaller_is_not_abstract():
+    assert not inspect.isabstract(iot2_Expression_Smaller)
+
+
+def test_iot2_expression_smaller_constructor_exists():
+    assert callable(iot2_Expression_Smaller.__init__)
+
+
+def test_iot2_expression_smaller_constructor_args():
+    sig = inspect.signature(iot2_Expression_Smaller.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_iot2_expression_length_is_not_abstract():
+    assert not inspect.isabstract(iot2_Expression_Length)
+
+
+def test_iot2_expression_length_constructor_exists():
+    assert callable(iot2_Expression_Length.__init__)
+
+
+def test_iot2_expression_length_constructor_args():
+    sig = inspect.signature(iot2_Expression_Length.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_iot2_expression_larger_equal_is_not_abstract():
+    assert not inspect.isabstract(iot2_Expression_Larger_Equal)
+
+
+def test_iot2_expression_larger_equal_constructor_exists():
+    assert callable(iot2_Expression_Larger_Equal.__init__)
+
+
+def test_iot2_expression_larger_equal_constructor_args():
+    sig = inspect.signature(iot2_Expression_Larger_Equal.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_iot2_expression_modulo_is_not_abstract():
+    assert not inspect.isabstract(iot2_Expression_Modulo)
+
+
+def test_iot2_expression_modulo_constructor_exists():
+    assert callable(iot2_Expression_Modulo.__init__)
+
+
+def test_iot2_expression_modulo_constructor_args():
+    sig = inspect.signature(iot2_Expression_Modulo.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_iot2_expression_number_is_not_abstract():
+    assert not inspect.isabstract(iot2_Expression_Number)
+
+
+def test_iot2_expression_number_constructor_exists():
+    assert callable(iot2_Expression_Number.__init__)
+
+
+def test_iot2_expression_number_constructor_args():
+    sig = inspect.signature(iot2_Expression_Number.__init__)
+    params = list(sig.parameters.keys())
+    assert "value" in params, "Missing parameter 'value'"
+
+def test_iot2_expression_number_has_value():
+    assert hasattr(iot2_Expression_Number, "value")
+    descriptor = None
+    for klass in iot2_Expression_Number.__mro__:
+        if "value" in klass.__dict__:
+            descriptor = klass.__dict__["value"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_iot2_expression_invert_is_not_abstract():
+    assert not inspect.isabstract(iot2_Expression_Invert)
+
+
+def test_iot2_expression_invert_constructor_exists():
+    assert callable(iot2_Expression_Invert.__init__)
+
+
+def test_iot2_expression_invert_constructor_args():
+    sig = inspect.signature(iot2_Expression_Invert.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_iot2_expression_multiplication_is_not_abstract():
+    assert not inspect.isabstract(iot2_Expression_Multiplication)
+
+
+def test_iot2_expression_multiplication_constructor_exists():
+    assert callable(iot2_Expression_Multiplication.__init__)
+
+
+def test_iot2_expression_multiplication_constructor_args():
+    sig = inspect.signature(iot2_Expression_Multiplication.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_iot2_expression_concatenation_is_not_abstract():
+    assert not inspect.isabstract(iot2_Expression_Concatenation)
+
+
+def test_iot2_expression_concatenation_constructor_exists():
+    assert callable(iot2_Expression_Concatenation.__init__)
+
+
+def test_iot2_expression_concatenation_constructor_args():
+    sig = inspect.signature(iot2_Expression_Concatenation.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_iot2_expression_accessmember_is_not_abstract():
+    assert not inspect.isabstract(iot2_Expression_AccessMember)
+
+
+def test_iot2_expression_accessmember_constructor_exists():
+    assert callable(iot2_Expression_AccessMember.__init__)
+
+
+def test_iot2_expression_accessmember_constructor_args():
+    sig = inspect.signature(iot2_Expression_AccessMember.__init__)
     params = list(sig.parameters.keys())
     assert "memberName" in params, "Missing parameter 'memberName'"
 
-def test_iot2::expression::accessmember_has_memberName():
-    assert hasattr(iot2::Expression::AccessMember, "memberName")
+def test_iot2_expression_accessmember_has_memberName():
+    assert hasattr(iot2_Expression_AccessMember, "memberName")
     descriptor = None
-    for klass in iot2::Expression::AccessMember.__mro__:
+    for klass in iot2_Expression_AccessMember.__mro__:
         if "memberName" in klass.__dict__:
             descriptor = klass.__dict__["memberName"]
             break
@@ -1033,229 +637,173 @@ def test_iot2::expression::accessmember_has_memberName():
 
 
 
-def test_iot2::expression::smaller_is_not_abstract():
-    assert not inspect.isabstract(iot2::Expression::Smaller)
+def test_iot2_expression_and_is_not_abstract():
+    assert not inspect.isabstract(iot2_Expression_And)
 
 
-def test_iot2::expression::smaller_constructor_exists():
-    assert callable(iot2::Expression::Smaller.__init__)
+def test_iot2_expression_and_constructor_exists():
+    assert callable(iot2_Expression_And.__init__)
 
 
-def test_iot2::expression::smaller_constructor_args():
-    sig = inspect.signature(iot2::Expression::Smaller.__init__)
+def test_iot2_expression_and_constructor_args():
+    sig = inspect.signature(iot2_Expression_And.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_iot2::expression::exponentiation_is_not_abstract():
-    assert not inspect.isabstract(iot2::Expression::Exponentiation)
+def test_iot2_expression_varargs_is_not_abstract():
+    assert not inspect.isabstract(iot2_Expression_VarArgs)
 
 
-def test_iot2::expression::exponentiation_constructor_exists():
-    assert callable(iot2::Expression::Exponentiation.__init__)
+def test_iot2_expression_varargs_constructor_exists():
+    assert callable(iot2_Expression_VarArgs.__init__)
 
 
-def test_iot2::expression::exponentiation_constructor_args():
-    sig = inspect.signature(iot2::Expression::Exponentiation.__init__)
+def test_iot2_expression_varargs_constructor_args():
+    sig = inspect.signature(iot2_Expression_VarArgs.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_iot2::expression::length_is_not_abstract():
-    assert not inspect.isabstract(iot2::Expression::Length)
+def test_iot2_expression_true_is_not_abstract():
+    assert not inspect.isabstract(iot2_Expression_True)
 
 
-def test_iot2::expression::length_constructor_exists():
-    assert callable(iot2::Expression::Length.__init__)
+def test_iot2_expression_true_constructor_exists():
+    assert callable(iot2_Expression_True.__init__)
 
 
-def test_iot2::expression::length_constructor_args():
-    sig = inspect.signature(iot2::Expression::Length.__init__)
+def test_iot2_expression_true_constructor_args():
+    sig = inspect.signature(iot2_Expression_True.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_iot2::expression::concatenation_is_not_abstract():
-    assert not inspect.isabstract(iot2::Expression::Concatenation)
+def test_iot2_expression_function_is_not_abstract():
+    assert not inspect.isabstract(iot2_Expression_Function)
 
 
-def test_iot2::expression::concatenation_constructor_exists():
-    assert callable(iot2::Expression::Concatenation.__init__)
+def test_iot2_expression_function_constructor_exists():
+    assert callable(iot2_Expression_Function.__init__)
 
 
-def test_iot2::expression::concatenation_constructor_args():
-    sig = inspect.signature(iot2::Expression::Concatenation.__init__)
+def test_iot2_expression_function_constructor_args():
+    sig = inspect.signature(iot2_Expression_Function.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_iot2::expression::modulo_is_not_abstract():
-    assert not inspect.isabstract(iot2::Expression::Modulo)
+def test_iot2_expression_false_is_not_abstract():
+    assert not inspect.isabstract(iot2_Expression_False)
 
 
-def test_iot2::expression::modulo_constructor_exists():
-    assert callable(iot2::Expression::Modulo.__init__)
+def test_iot2_expression_false_constructor_exists():
+    assert callable(iot2_Expression_False.__init__)
 
 
-def test_iot2::expression::modulo_constructor_args():
-    sig = inspect.signature(iot2::Expression::Modulo.__init__)
+def test_iot2_expression_false_constructor_args():
+    sig = inspect.signature(iot2_Expression_False.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_iot2::expression::varargs_is_not_abstract():
-    assert not inspect.isabstract(iot2::Expression::VarArgs)
+def test_iot2_expression_variablename_is_not_abstract():
+    assert not inspect.isabstract(iot2_Expression_VariableName)
 
 
-def test_iot2::expression::varargs_constructor_exists():
-    assert callable(iot2::Expression::VarArgs.__init__)
+def test_iot2_expression_variablename_constructor_exists():
+    assert callable(iot2_Expression_VariableName.__init__)
 
 
-def test_iot2::expression::varargs_constructor_args():
-    sig = inspect.signature(iot2::Expression::VarArgs.__init__)
+def test_iot2_expression_variablename_constructor_args():
+    sig = inspect.signature(iot2_Expression_VariableName.__init__)
     params = list(sig.parameters.keys())
+    assert "variable" in params, "Missing parameter 'variable'"
 
-
-
-def test_iot2::expression::and_is_not_abstract():
-    assert not inspect.isabstract(iot2::Expression::And)
-
-
-def test_iot2::expression::and_constructor_exists():
-    assert callable(iot2::Expression::And.__init__)
-
-
-def test_iot2::expression::and_constructor_args():
-    sig = inspect.signature(iot2::Expression::And.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_iot2::expression::plus_is_not_abstract():
-    assert not inspect.isabstract(iot2::Expression::Plus)
-
-
-def test_iot2::expression::plus_constructor_exists():
-    assert callable(iot2::Expression::Plus.__init__)
-
-
-def test_iot2::expression::plus_constructor_args():
-    sig = inspect.signature(iot2::Expression::Plus.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_iot2::expression::string_is_not_abstract():
-    assert not inspect.isabstract(iot2::Expression::String)
-
-
-def test_iot2::expression::string_constructor_exists():
-    assert callable(iot2::Expression::String.__init__)
-
-
-def test_iot2::expression::string_constructor_args():
-    sig = inspect.signature(iot2::Expression::String.__init__)
-    params = list(sig.parameters.keys())
-    assert "value" in params, "Missing parameter 'value'"
-
-def test_iot2::expression::string_has_value():
-    assert hasattr(iot2::Expression::String, "value")
+def test_iot2_expression_variablename_has_variable():
+    assert hasattr(iot2_Expression_VariableName, "variable")
     descriptor = None
-    for klass in iot2::Expression::String.__mro__:
-        if "value" in klass.__dict__:
-            descriptor = klass.__dict__["value"]
+    for klass in iot2_Expression_VariableName.__mro__:
+        if "variable" in klass.__dict__:
+            descriptor = klass.__dict__["variable"]
             break
     assert isinstance(descriptor, property)
 
 
 
-def test_iot2::expression::invert_is_not_abstract():
-    assert not inspect.isabstract(iot2::Expression::Invert)
+def test_iot2_expression_larger_is_not_abstract():
+    assert not inspect.isabstract(iot2_Expression_Larger)
 
 
-def test_iot2::expression::invert_constructor_exists():
-    assert callable(iot2::Expression::Invert.__init__)
+def test_iot2_expression_larger_constructor_exists():
+    assert callable(iot2_Expression_Larger.__init__)
 
 
-def test_iot2::expression::invert_constructor_args():
-    sig = inspect.signature(iot2::Expression::Invert.__init__)
+def test_iot2_expression_larger_constructor_args():
+    sig = inspect.signature(iot2_Expression_Larger.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_iot2::expression::callfunction_is_not_abstract():
-    assert not inspect.isabstract(iot2::Expression::CallFunction)
+def test_iot2_expression_minus_is_not_abstract():
+    assert not inspect.isabstract(iot2_Expression_Minus)
 
 
-def test_iot2::expression::callfunction_constructor_exists():
-    assert callable(iot2::Expression::CallFunction.__init__)
+def test_iot2_expression_minus_constructor_exists():
+    assert callable(iot2_Expression_Minus.__init__)
 
 
-def test_iot2::expression::callfunction_constructor_args():
-    sig = inspect.signature(iot2::Expression::CallFunction.__init__)
+def test_iot2_expression_minus_constructor_args():
+    sig = inspect.signature(iot2_Expression_Minus.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_iot2::expression::nil_is_not_abstract():
-    assert not inspect.isabstract(iot2::Expression::Nil)
+def test_iot2_expression_nil_is_not_abstract():
+    assert not inspect.isabstract(iot2_Expression_Nil)
 
 
-def test_iot2::expression::nil_constructor_exists():
-    assert callable(iot2::Expression::Nil.__init__)
+def test_iot2_expression_nil_constructor_exists():
+    assert callable(iot2_Expression_Nil.__init__)
 
 
-def test_iot2::expression::nil_constructor_args():
-    sig = inspect.signature(iot2::Expression::Nil.__init__)
+def test_iot2_expression_nil_constructor_args():
+    sig = inspect.signature(iot2_Expression_Nil.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_statement::functioncallorassignment_is_not_abstract():
-    assert not inspect.isabstract(Statement::FunctioncallOrAssignment)
+def test_statement_functioncallorassignment_is_not_abstract():
+    assert not inspect.isabstract(Statement_FunctioncallOrAssignment)
 
 
-def test_statement::functioncallorassignment_constructor_exists():
-    assert callable(Statement::FunctioncallOrAssignment.__init__)
+def test_statement_functioncallorassignment_constructor_exists():
+    assert callable(Statement_FunctioncallOrAssignment.__init__)
 
 
-def test_statement::functioncallorassignment_constructor_args():
-    sig = inspect.signature(Statement::FunctioncallOrAssignment.__init__)
+def test_statement_functioncallorassignment_constructor_args():
+    sig = inspect.signature(Statement_FunctioncallOrAssignment.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_iot2::statement::callfunction_is_not_abstract():
-    assert not inspect.isabstract(iot2::Statement::CallFunction)
+def test_iot2_statement_callmemberfunction_is_not_abstract():
+    assert not inspect.isabstract(iot2_Statement_CallMemberFunction)
 
 
-def test_iot2::statement::callfunction_constructor_exists():
-    assert callable(iot2::Statement::CallFunction.__init__)
+def test_iot2_statement_callmemberfunction_constructor_exists():
+    assert callable(iot2_Statement_CallMemberFunction.__init__)
 
 
-def test_iot2::statement::callfunction_constructor_args():
-    sig = inspect.signature(iot2::Statement::CallFunction.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_iot2::statement::callmemberfunction_is_not_abstract():
-    assert not inspect.isabstract(iot2::Statement::CallMemberFunction)
-
-
-def test_iot2::statement::callmemberfunction_constructor_exists():
-    assert callable(iot2::Statement::CallMemberFunction.__init__)
-
-
-def test_iot2::statement::callmemberfunction_constructor_args():
-    sig = inspect.signature(iot2::Statement::CallMemberFunction.__init__)
+def test_iot2_statement_callmemberfunction_constructor_args():
+    sig = inspect.signature(iot2_Statement_CallMemberFunction.__init__)
     params = list(sig.parameters.keys())
     assert "memberFunctionName" in params, "Missing parameter 'memberFunctionName'"
 
-def test_iot2::statement::callmemberfunction_has_memberFunctionName():
-    assert hasattr(iot2::Statement::CallMemberFunction, "memberFunctionName")
+def test_iot2_statement_callmemberfunction_has_memberFunctionName():
+    assert hasattr(iot2_Statement_CallMemberFunction, "memberFunctionName")
     descriptor = None
-    for klass in iot2::Statement::CallMemberFunction.__mro__:
+    for klass in iot2_Statement_CallMemberFunction.__mro__:
         if "memberFunctionName" in klass.__dict__:
             descriptor = klass.__dict__["memberFunctionName"]
             break
@@ -1263,44 +811,58 @@ def test_iot2::statement::callmemberfunction_has_memberFunctionName():
 
 
 
-def test_iot2::statement::assignment_is_not_abstract():
-    assert not inspect.isabstract(iot2::Statement::Assignment)
+def test_iot2_statement_callfunction_is_not_abstract():
+    assert not inspect.isabstract(iot2_Statement_CallFunction)
 
 
-def test_iot2::statement::assignment_constructor_exists():
-    assert callable(iot2::Statement::Assignment.__init__)
+def test_iot2_statement_callfunction_constructor_exists():
+    assert callable(iot2_Statement_CallFunction.__init__)
 
 
-def test_iot2::statement::assignment_constructor_args():
-    sig = inspect.signature(iot2::Statement::Assignment.__init__)
+def test_iot2_statement_callfunction_constructor_args():
+    sig = inspect.signature(iot2_Statement_CallFunction.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_laststatement::return_is_not_abstract():
-    assert not inspect.isabstract(LastStatement::Return)
+def test_iot2_statement_assignment_is_not_abstract():
+    assert not inspect.isabstract(iot2_Statement_Assignment)
 
 
-def test_laststatement::return_constructor_exists():
-    assert callable(LastStatement::Return.__init__)
+def test_iot2_statement_assignment_constructor_exists():
+    assert callable(iot2_Statement_Assignment.__init__)
 
 
-def test_laststatement::return_constructor_args():
-    sig = inspect.signature(LastStatement::Return.__init__)
+def test_iot2_statement_assignment_constructor_args():
+    sig = inspect.signature(iot2_Statement_Assignment.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_iot2::laststatement::returnwithvalue_is_not_abstract():
-    assert not inspect.isabstract(iot2::LastStatement::ReturnWithValue)
+def test_laststatement_return_is_not_abstract():
+    assert not inspect.isabstract(LastStatement_Return)
 
 
-def test_iot2::laststatement::returnwithvalue_constructor_exists():
-    assert callable(iot2::LastStatement::ReturnWithValue.__init__)
+def test_laststatement_return_constructor_exists():
+    assert callable(LastStatement_Return.__init__)
 
 
-def test_iot2::laststatement::returnwithvalue_constructor_args():
-    sig = inspect.signature(iot2::LastStatement::ReturnWithValue.__init__)
+def test_laststatement_return_constructor_args():
+    sig = inspect.signature(LastStatement_Return.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_iot2_laststatement_returnwithvalue_is_not_abstract():
+    assert not inspect.isabstract(iot2_LastStatement_ReturnWithValue)
+
+
+def test_iot2_laststatement_returnwithvalue_constructor_exists():
+    assert callable(iot2_LastStatement_ReturnWithValue.__init__)
+
+
+def test_iot2_laststatement_returnwithvalue_constructor_args():
+    sig = inspect.signature(iot2_LastStatement_ReturnWithValue.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1319,37 +881,23 @@ def test_field_constructor_args():
 
 
 
-def test_iot2::field::appendentrytotable_is_not_abstract():
-    assert not inspect.isabstract(iot2::Field::AppendEntryToTable)
+def test_iot2_field_addentrytotable_is_not_abstract():
+    assert not inspect.isabstract(iot2_Field_AddEntryToTable)
 
 
-def test_iot2::field::appendentrytotable_constructor_exists():
-    assert callable(iot2::Field::AppendEntryToTable.__init__)
+def test_iot2_field_addentrytotable_constructor_exists():
+    assert callable(iot2_Field_AddEntryToTable.__init__)
 
 
-def test_iot2::field::appendentrytotable_constructor_args():
-    sig = inspect.signature(iot2::Field::AppendEntryToTable.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_iot2::field::addentrytotable_is_not_abstract():
-    assert not inspect.isabstract(iot2::Field::AddEntryToTable)
-
-
-def test_iot2::field::addentrytotable_constructor_exists():
-    assert callable(iot2::Field::AddEntryToTable.__init__)
-
-
-def test_iot2::field::addentrytotable_constructor_args():
-    sig = inspect.signature(iot2::Field::AddEntryToTable.__init__)
+def test_iot2_field_addentrytotable_constructor_args():
+    sig = inspect.signature(iot2_Field_AddEntryToTable.__init__)
     params = list(sig.parameters.keys())
     assert "key" in params, "Missing parameter 'key'"
 
-def test_iot2::field::addentrytotable_has_key():
-    assert hasattr(iot2::Field::AddEntryToTable, "key")
+def test_iot2_field_addentrytotable_has_key():
+    assert hasattr(iot2_Field_AddEntryToTable, "key")
     descriptor = None
-    for klass in iot2::Field::AddEntryToTable.__mro__:
+    for klass in iot2_Field_AddEntryToTable.__mro__:
         if "key" in klass.__dict__:
             descriptor = klass.__dict__["key"]
             break
@@ -1357,89 +905,103 @@ def test_iot2::field::addentrytotable_has_key():
 
 
 
-def test_iot2::field::addentrytotable::brackets_is_not_abstract():
-    assert not inspect.isabstract(iot2::Field::AddEntryToTable::Brackets)
+def test_iot2_field_appendentrytotable_is_not_abstract():
+    assert not inspect.isabstract(iot2_Field_AppendEntryToTable)
 
 
-def test_iot2::field::addentrytotable::brackets_constructor_exists():
-    assert callable(iot2::Field::AddEntryToTable::Brackets.__init__)
+def test_iot2_field_appendentrytotable_constructor_exists():
+    assert callable(iot2_Field_AppendEntryToTable.__init__)
 
 
-def test_iot2::field::addentrytotable::brackets_constructor_args():
-    sig = inspect.signature(iot2::Field::AddEntryToTable::Brackets.__init__)
+def test_iot2_field_appendentrytotable_constructor_args():
+    sig = inspect.signature(iot2_Field_AppendEntryToTable.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_iot2::functioncall::arguments_is_not_abstract():
-    assert not inspect.isabstract(iot2::Functioncall::Arguments)
+def test_iot2_field_addentrytotable_brackets_is_not_abstract():
+    assert not inspect.isabstract(iot2_Field_AddEntryToTable_Brackets)
 
 
-def test_iot2::functioncall::arguments_constructor_exists():
-    assert callable(iot2::Functioncall::Arguments.__init__)
+def test_iot2_field_addentrytotable_brackets_constructor_exists():
+    assert callable(iot2_Field_AddEntryToTable_Brackets.__init__)
 
 
-def test_iot2::functioncall::arguments_constructor_args():
-    sig = inspect.signature(iot2::Functioncall::Arguments.__init__)
+def test_iot2_field_addentrytotable_brackets_constructor_args():
+    sig = inspect.signature(iot2_Field_AddEntryToTable_Brackets.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_iot2::expression::tableconstructor_is_not_abstract():
-    assert not inspect.isabstract(iot2::Expression::TableConstructor)
+def test_iot2_functioncall_arguments_is_not_abstract():
+    assert not inspect.isabstract(iot2_Functioncall_Arguments)
 
 
-def test_iot2::expression::tableconstructor_constructor_exists():
-    assert callable(iot2::Expression::TableConstructor.__init__)
+def test_iot2_functioncall_arguments_constructor_exists():
+    assert callable(iot2_Functioncall_Arguments.__init__)
 
 
-def test_iot2::expression::tableconstructor_constructor_args():
-    sig = inspect.signature(iot2::Expression::TableConstructor.__init__)
+def test_iot2_functioncall_arguments_constructor_args():
+    sig = inspect.signature(iot2_Functioncall_Arguments.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_iot2::statement::if::then::else::elseifpart_is_not_abstract():
-    assert not inspect.isabstract(iot2::Statement::If::Then::Else::ElseIfPart)
+def test_iot2_expression_tableconstructor_is_not_abstract():
+    assert not inspect.isabstract(iot2_Expression_TableConstructor)
 
 
-def test_iot2::statement::if::then::else::elseifpart_constructor_exists():
-    assert callable(iot2::Statement::If::Then::Else::ElseIfPart.__init__)
+def test_iot2_expression_tableconstructor_constructor_exists():
+    assert callable(iot2_Expression_TableConstructor.__init__)
 
 
-def test_iot2::statement::if::then::else::elseifpart_constructor_args():
-    sig = inspect.signature(iot2::Statement::If::Then::Else::ElseIfPart.__init__)
+def test_iot2_expression_tableconstructor_constructor_args():
+    sig = inspect.signature(iot2_Expression_TableConstructor.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_iot2::function_is_not_abstract():
-    assert not inspect.isabstract(iot2::Function)
+def test_iot2_statement_if_then_else_elseifpart_is_not_abstract():
+    assert not inspect.isabstract(iot2_Statement_If_Then_Else_ElseIfPart)
 
 
-def test_iot2::function_constructor_exists():
-    assert callable(iot2::Function.__init__)
+def test_iot2_statement_if_then_else_elseifpart_constructor_exists():
+    assert callable(iot2_Statement_If_Then_Else_ElseIfPart.__init__)
 
 
-def test_iot2::function_constructor_args():
-    sig = inspect.signature(iot2::Function.__init__)
+def test_iot2_statement_if_then_else_elseifpart_constructor_args():
+    sig = inspect.signature(iot2_Statement_If_Then_Else_ElseIfPart.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_iot2_function_is_not_abstract():
+    assert not inspect.isabstract(iot2_Function)
+
+
+def test_iot2_function_constructor_exists():
+    assert callable(iot2_Function.__init__)
+
+
+def test_iot2_function_constructor_args():
+    sig = inspect.signature(iot2_Function.__init__)
     params = list(sig.parameters.keys())
     assert "varArgs" in params, "Missing parameter 'varArgs'"
     assert "parameters" in params, "Missing parameter 'parameters'"
 
-def test_iot2::function_has_varArgs():
-    assert hasattr(iot2::Function, "varArgs")
+def test_iot2_function_has_varArgs():
+    assert hasattr(iot2_Function, "varArgs")
     descriptor = None
-    for klass in iot2::Function.__mro__:
+    for klass in iot2_Function.__mro__:
         if "varArgs" in klass.__dict__:
             descriptor = klass.__dict__["varArgs"]
             break
     assert isinstance(descriptor, property)
 
-def test_iot2::function_has_parameters():
-    assert hasattr(iot2::Function, "parameters")
+def test_iot2_function_has_parameters():
+    assert hasattr(iot2_Function, "parameters")
     descriptor = None
-    for klass in iot2::Function.__mro__:
+    for klass in iot2_Function.__mro__:
         if "parameters" in klass.__dict__:
             descriptor = klass.__dict__["parameters"]
             break
@@ -1447,16 +1009,16 @@ def test_iot2::function_has_parameters():
 
 
 
-def test_iot2::expression_is_not_abstract():
-    assert not inspect.isabstract(iot2::Expression)
+def test_iot2_expression_is_not_abstract():
+    assert not inspect.isabstract(iot2_Expression)
 
 
-def test_iot2::expression_constructor_exists():
-    assert callable(iot2::Expression.__init__)
+def test_iot2_expression_constructor_exists():
+    assert callable(iot2_Expression.__init__)
 
 
-def test_iot2::expression_constructor_args():
-    sig = inspect.signature(iot2::Expression.__init__)
+def test_iot2_expression_constructor_args():
+    sig = inspect.signature(iot2_Expression.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1489,185 +1051,51 @@ def test_statement_constructor_args():
 
 
 
-def test_iot2::statement::local::variable::declaration_is_not_abstract():
-    assert not inspect.isabstract(iot2::Statement::Local::Variable::Declaration)
+def test_iot2_statement_repeat_is_not_abstract():
+    assert not inspect.isabstract(iot2_Statement_Repeat)
 
 
-def test_iot2::statement::local::variable::declaration_constructor_exists():
-    assert callable(iot2::Statement::Local::Variable::Declaration.__init__)
+def test_iot2_statement_repeat_constructor_exists():
+    assert callable(iot2_Statement_Repeat.__init__)
 
 
-def test_iot2::statement::local::variable::declaration_constructor_args():
-    sig = inspect.signature(iot2::Statement::Local::Variable::Declaration.__init__)
-    params = list(sig.parameters.keys())
-    assert "variableNames" in params, "Missing parameter 'variableNames'"
-
-def test_iot2::statement::local::variable::declaration_has_variableNames():
-    assert hasattr(iot2::Statement::Local::Variable::Declaration, "variableNames")
-    descriptor = None
-    for klass in iot2::Statement::Local::Variable::Declaration.__mro__:
-        if "variableNames" in klass.__dict__:
-            descriptor = klass.__dict__["variableNames"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_iot2::statement::if::then::else_is_not_abstract():
-    assert not inspect.isabstract(iot2::Statement::If::Then::Else)
-
-
-def test_iot2::statement::if::then::else_constructor_exists():
-    assert callable(iot2::Statement::If::Then::Else.__init__)
-
-
-def test_iot2::statement::if::then::else_constructor_args():
-    sig = inspect.signature(iot2::Statement::If::Then::Else.__init__)
+def test_iot2_statement_repeat_constructor_args():
+    sig = inspect.signature(iot2_Statement_Repeat.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_iot2::statement::localfunction::declaration_is_not_abstract():
-    assert not inspect.isabstract(iot2::Statement::LocalFunction::Declaration)
+def test_iot2_statement_functioncallorassignment_is_not_abstract():
+    assert not inspect.isabstract(iot2_Statement_FunctioncallOrAssignment)
 
 
-def test_iot2::statement::localfunction::declaration_constructor_exists():
-    assert callable(iot2::Statement::LocalFunction::Declaration.__init__)
+def test_iot2_statement_functioncallorassignment_constructor_exists():
+    assert callable(iot2_Statement_FunctioncallOrAssignment.__init__)
 
 
-def test_iot2::statement::localfunction::declaration_constructor_args():
-    sig = inspect.signature(iot2::Statement::LocalFunction::Declaration.__init__)
-    params = list(sig.parameters.keys())
-    assert "functionName" in params, "Missing parameter 'functionName'"
-
-def test_iot2::statement::localfunction::declaration_has_functionName():
-    assert hasattr(iot2::Statement::LocalFunction::Declaration, "functionName")
-    descriptor = None
-    for klass in iot2::Statement::LocalFunction::Declaration.__mro__:
-        if "functionName" in klass.__dict__:
-            descriptor = klass.__dict__["functionName"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_iot2::statement::for::numeric_is_not_abstract():
-    assert not inspect.isabstract(iot2::Statement::For::Numeric)
-
-
-def test_iot2::statement::for::numeric_constructor_exists():
-    assert callable(iot2::Statement::For::Numeric.__init__)
-
-
-def test_iot2::statement::for::numeric_constructor_args():
-    sig = inspect.signature(iot2::Statement::For::Numeric.__init__)
-    params = list(sig.parameters.keys())
-    assert "iteratorName" in params, "Missing parameter 'iteratorName'"
-
-def test_iot2::statement::for::numeric_has_iteratorName():
-    assert hasattr(iot2::Statement::For::Numeric, "iteratorName")
-    descriptor = None
-    for klass in iot2::Statement::For::Numeric.__mro__:
-        if "iteratorName" in klass.__dict__:
-            descriptor = klass.__dict__["iteratorName"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_iot2::statement::functioncallorassignment_is_not_abstract():
-    assert not inspect.isabstract(iot2::Statement::FunctioncallOrAssignment)
-
-
-def test_iot2::statement::functioncallorassignment_constructor_exists():
-    assert callable(iot2::Statement::FunctioncallOrAssignment.__init__)
-
-
-def test_iot2::statement::functioncallorassignment_constructor_args():
-    sig = inspect.signature(iot2::Statement::FunctioncallOrAssignment.__init__)
+def test_iot2_statement_functioncallorassignment_constructor_args():
+    sig = inspect.signature(iot2_Statement_FunctioncallOrAssignment.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_iot2::statement::repeat_is_not_abstract():
-    assert not inspect.isabstract(iot2::Statement::Repeat)
+def test_iot2_statement_for_generic_is_not_abstract():
+    assert not inspect.isabstract(iot2_Statement_For_Generic)
 
 
-def test_iot2::statement::repeat_constructor_exists():
-    assert callable(iot2::Statement::Repeat.__init__)
+def test_iot2_statement_for_generic_constructor_exists():
+    assert callable(iot2_Statement_For_Generic.__init__)
 
 
-def test_iot2::statement::repeat_constructor_args():
-    sig = inspect.signature(iot2::Statement::Repeat.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_iot2::statement::while_is_not_abstract():
-    assert not inspect.isabstract(iot2::Statement::While)
-
-
-def test_iot2::statement::while_constructor_exists():
-    assert callable(iot2::Statement::While.__init__)
-
-
-def test_iot2::statement::while_constructor_args():
-    sig = inspect.signature(iot2::Statement::While.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_iot2::statement::globalfunction::declaration_is_not_abstract():
-    assert not inspect.isabstract(iot2::Statement::GlobalFunction::Declaration)
-
-
-def test_iot2::statement::globalfunction::declaration_constructor_exists():
-    assert callable(iot2::Statement::GlobalFunction::Declaration.__init__)
-
-
-def test_iot2::statement::globalfunction::declaration_constructor_args():
-    sig = inspect.signature(iot2::Statement::GlobalFunction::Declaration.__init__)
-    params = list(sig.parameters.keys())
-    assert "functionName" in params, "Missing parameter 'functionName'"
-    assert "prefix" in params, "Missing parameter 'prefix'"
-
-def test_iot2::statement::globalfunction::declaration_has_functionName():
-    assert hasattr(iot2::Statement::GlobalFunction::Declaration, "functionName")
-    descriptor = None
-    for klass in iot2::Statement::GlobalFunction::Declaration.__mro__:
-        if "functionName" in klass.__dict__:
-            descriptor = klass.__dict__["functionName"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_iot2::statement::globalfunction::declaration_has_prefix():
-    assert hasattr(iot2::Statement::GlobalFunction::Declaration, "prefix")
-    descriptor = None
-    for klass in iot2::Statement::GlobalFunction::Declaration.__mro__:
-        if "prefix" in klass.__dict__:
-            descriptor = klass.__dict__["prefix"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_iot2::statement::for::generic_is_not_abstract():
-    assert not inspect.isabstract(iot2::Statement::For::Generic)
-
-
-def test_iot2::statement::for::generic_constructor_exists():
-    assert callable(iot2::Statement::For::Generic.__init__)
-
-
-def test_iot2::statement::for::generic_constructor_args():
-    sig = inspect.signature(iot2::Statement::For::Generic.__init__)
+def test_iot2_statement_for_generic_constructor_args():
+    sig = inspect.signature(iot2_Statement_For_Generic.__init__)
     params = list(sig.parameters.keys())
     assert "names" in params, "Missing parameter 'names'"
 
-def test_iot2::statement::for::generic_has_names():
-    assert hasattr(iot2::Statement::For::Generic, "names")
+def test_iot2_statement_for_generic_has_names():
+    assert hasattr(iot2_Statement_For_Generic, "names")
     descriptor = None
-    for klass in iot2::Statement::For::Generic.__mro__:
+    for klass in iot2_Statement_For_Generic.__mro__:
         if "names" in klass.__dict__:
             descriptor = klass.__dict__["names"]
             break
@@ -1675,16 +1103,150 @@ def test_iot2::statement::for::generic_has_names():
 
 
 
-def test_iot2::statement::block_is_not_abstract():
-    assert not inspect.isabstract(iot2::Statement::Block)
+def test_iot2_statement_local_variable_declaration_is_not_abstract():
+    assert not inspect.isabstract(iot2_Statement_Local_Variable_Declaration)
 
 
-def test_iot2::statement::block_constructor_exists():
-    assert callable(iot2::Statement::Block.__init__)
+def test_iot2_statement_local_variable_declaration_constructor_exists():
+    assert callable(iot2_Statement_Local_Variable_Declaration.__init__)
 
 
-def test_iot2::statement::block_constructor_args():
-    sig = inspect.signature(iot2::Statement::Block.__init__)
+def test_iot2_statement_local_variable_declaration_constructor_args():
+    sig = inspect.signature(iot2_Statement_Local_Variable_Declaration.__init__)
+    params = list(sig.parameters.keys())
+    assert "variableNames" in params, "Missing parameter 'variableNames'"
+
+def test_iot2_statement_local_variable_declaration_has_variableNames():
+    assert hasattr(iot2_Statement_Local_Variable_Declaration, "variableNames")
+    descriptor = None
+    for klass in iot2_Statement_Local_Variable_Declaration.__mro__:
+        if "variableNames" in klass.__dict__:
+            descriptor = klass.__dict__["variableNames"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_iot2_statement_localfunction_declaration_is_not_abstract():
+    assert not inspect.isabstract(iot2_Statement_LocalFunction_Declaration)
+
+
+def test_iot2_statement_localfunction_declaration_constructor_exists():
+    assert callable(iot2_Statement_LocalFunction_Declaration.__init__)
+
+
+def test_iot2_statement_localfunction_declaration_constructor_args():
+    sig = inspect.signature(iot2_Statement_LocalFunction_Declaration.__init__)
+    params = list(sig.parameters.keys())
+    assert "functionName" in params, "Missing parameter 'functionName'"
+
+def test_iot2_statement_localfunction_declaration_has_functionName():
+    assert hasattr(iot2_Statement_LocalFunction_Declaration, "functionName")
+    descriptor = None
+    for klass in iot2_Statement_LocalFunction_Declaration.__mro__:
+        if "functionName" in klass.__dict__:
+            descriptor = klass.__dict__["functionName"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_iot2_statement_while_is_not_abstract():
+    assert not inspect.isabstract(iot2_Statement_While)
+
+
+def test_iot2_statement_while_constructor_exists():
+    assert callable(iot2_Statement_While.__init__)
+
+
+def test_iot2_statement_while_constructor_args():
+    sig = inspect.signature(iot2_Statement_While.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_iot2_statement_globalfunction_declaration_is_not_abstract():
+    assert not inspect.isabstract(iot2_Statement_GlobalFunction_Declaration)
+
+
+def test_iot2_statement_globalfunction_declaration_constructor_exists():
+    assert callable(iot2_Statement_GlobalFunction_Declaration.__init__)
+
+
+def test_iot2_statement_globalfunction_declaration_constructor_args():
+    sig = inspect.signature(iot2_Statement_GlobalFunction_Declaration.__init__)
+    params = list(sig.parameters.keys())
+    assert "prefix" in params, "Missing parameter 'prefix'"
+    assert "functionName" in params, "Missing parameter 'functionName'"
+
+def test_iot2_statement_globalfunction_declaration_has_prefix():
+    assert hasattr(iot2_Statement_GlobalFunction_Declaration, "prefix")
+    descriptor = None
+    for klass in iot2_Statement_GlobalFunction_Declaration.__mro__:
+        if "prefix" in klass.__dict__:
+            descriptor = klass.__dict__["prefix"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_iot2_statement_globalfunction_declaration_has_functionName():
+    assert hasattr(iot2_Statement_GlobalFunction_Declaration, "functionName")
+    descriptor = None
+    for klass in iot2_Statement_GlobalFunction_Declaration.__mro__:
+        if "functionName" in klass.__dict__:
+            descriptor = klass.__dict__["functionName"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_iot2_statement_for_numeric_is_not_abstract():
+    assert not inspect.isabstract(iot2_Statement_For_Numeric)
+
+
+def test_iot2_statement_for_numeric_constructor_exists():
+    assert callable(iot2_Statement_For_Numeric.__init__)
+
+
+def test_iot2_statement_for_numeric_constructor_args():
+    sig = inspect.signature(iot2_Statement_For_Numeric.__init__)
+    params = list(sig.parameters.keys())
+    assert "iteratorName" in params, "Missing parameter 'iteratorName'"
+
+def test_iot2_statement_for_numeric_has_iteratorName():
+    assert hasattr(iot2_Statement_For_Numeric, "iteratorName")
+    descriptor = None
+    for klass in iot2_Statement_For_Numeric.__mro__:
+        if "iteratorName" in klass.__dict__:
+            descriptor = klass.__dict__["iteratorName"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_iot2_statement_if_then_else_is_not_abstract():
+    assert not inspect.isabstract(iot2_Statement_If_Then_Else)
+
+
+def test_iot2_statement_if_then_else_constructor_exists():
+    assert callable(iot2_Statement_If_Then_Else.__init__)
+
+
+def test_iot2_statement_if_then_else_constructor_args():
+    sig = inspect.signature(iot2_Statement_If_Then_Else.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_iot2_statement_block_is_not_abstract():
+    assert not inspect.isabstract(iot2_Statement_Block)
+
+
+def test_iot2_statement_block_constructor_exists():
+    assert callable(iot2_Statement_Block.__init__)
+
+
+def test_iot2_statement_block_constructor_args():
+    sig = inspect.signature(iot2_Statement_Block.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1703,58 +1265,58 @@ def test_laststatement_constructor_args():
 
 
 
-def test_iot2::laststatement::break_is_not_abstract():
-    assert not inspect.isabstract(iot2::LastStatement::Break)
+def test_iot2_laststatement_break_is_not_abstract():
+    assert not inspect.isabstract(iot2_LastStatement_Break)
 
 
-def test_iot2::laststatement::break_constructor_exists():
-    assert callable(iot2::LastStatement::Break.__init__)
+def test_iot2_laststatement_break_constructor_exists():
+    assert callable(iot2_LastStatement_Break.__init__)
 
 
-def test_iot2::laststatement::break_constructor_args():
-    sig = inspect.signature(iot2::LastStatement::Break.__init__)
+def test_iot2_laststatement_break_constructor_args():
+    sig = inspect.signature(iot2_LastStatement_Break.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_iot2::laststatement::return_is_not_abstract():
-    assert not inspect.isabstract(iot2::LastStatement::Return)
+def test_iot2_laststatement_return_is_not_abstract():
+    assert not inspect.isabstract(iot2_LastStatement_Return)
 
 
-def test_iot2::laststatement::return_constructor_exists():
-    assert callable(iot2::LastStatement::Return.__init__)
+def test_iot2_laststatement_return_constructor_exists():
+    assert callable(iot2_LastStatement_Return.__init__)
 
 
-def test_iot2::laststatement::return_constructor_args():
-    sig = inspect.signature(iot2::LastStatement::Return.__init__)
+def test_iot2_laststatement_return_constructor_args():
+    sig = inspect.signature(iot2_LastStatement_Return.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_iot2::laststatement_is_not_abstract():
-    assert not inspect.isabstract(iot2::LastStatement)
+def test_iot2_laststatement_is_not_abstract():
+    assert not inspect.isabstract(iot2_LastStatement)
 
 
-def test_iot2::laststatement_constructor_exists():
-    assert callable(iot2::LastStatement.__init__)
+def test_iot2_laststatement_constructor_exists():
+    assert callable(iot2_LastStatement.__init__)
 
 
-def test_iot2::laststatement_constructor_args():
-    sig = inspect.signature(iot2::LastStatement.__init__)
+def test_iot2_laststatement_constructor_args():
+    sig = inspect.signature(iot2_LastStatement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_iot2::statement_is_not_abstract():
-    assert not inspect.isabstract(iot2::Statement)
+def test_iot2_statement_is_not_abstract():
+    assert not inspect.isabstract(iot2_Statement)
 
 
-def test_iot2::statement_constructor_exists():
-    assert callable(iot2::Statement.__init__)
+def test_iot2_statement_constructor_exists():
+    assert callable(iot2_Statement.__init__)
 
 
-def test_iot2::statement_constructor_args():
-    sig = inspect.signature(iot2::Statement.__init__)
+def test_iot2_statement_constructor_args():
+    sig = inspect.signature(iot2_Statement.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1773,37 +1335,37 @@ def test_chunk_constructor_args():
 
 
 
-def test_iot2::chunk_is_not_abstract():
-    assert not inspect.isabstract(iot2::Chunk)
+def test_iot2_chunk_is_not_abstract():
+    assert not inspect.isabstract(iot2_Chunk)
 
 
-def test_iot2::chunk_constructor_exists():
-    assert callable(iot2::Chunk.__init__)
+def test_iot2_chunk_constructor_exists():
+    assert callable(iot2_Chunk.__init__)
 
 
-def test_iot2::chunk_constructor_args():
-    sig = inspect.signature(iot2::Chunk.__init__)
+def test_iot2_chunk_constructor_args():
+    sig = inspect.signature(iot2_Chunk.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_iot2::primitivedef_is_not_abstract():
-    assert not inspect.isabstract(iot2::PrimitiveDef)
+def test_iot2_primitivedef_is_not_abstract():
+    assert not inspect.isabstract(iot2_PrimitiveDef)
 
 
-def test_iot2::primitivedef_constructor_exists():
-    assert callable(iot2::PrimitiveDef.__init__)
+def test_iot2_primitivedef_constructor_exists():
+    assert callable(iot2_PrimitiveDef.__init__)
 
 
-def test_iot2::primitivedef_constructor_args():
-    sig = inspect.signature(iot2::PrimitiveDef.__init__)
+def test_iot2_primitivedef_constructor_args():
+    sig = inspect.signature(iot2_PrimitiveDef.__init__)
     params = list(sig.parameters.keys())
     assert "kind" in params, "Missing parameter 'kind'"
 
-def test_iot2::primitivedef_has_kind():
-    assert hasattr(iot2::PrimitiveDef, "kind")
+def test_iot2_primitivedef_has_kind():
+    assert hasattr(iot2_PrimitiveDef, "kind")
     descriptor = None
-    for klass in iot2::PrimitiveDef.__mro__:
+    for klass in iot2_PrimitiveDef.__mro__:
         if "kind" in klass.__dict__:
             descriptor = klass.__dict__["kind"]
             break
@@ -1825,23 +1387,23 @@ def test_typed_constructor_args():
 
 
 
-def test_iot2::field_is_not_abstract():
-    assert not inspect.isabstract(iot2::Field)
+def test_iot2_field_is_not_abstract():
+    assert not inspect.isabstract(iot2_Field)
 
 
-def test_iot2::field_constructor_exists():
-    assert callable(iot2::Field.__init__)
+def test_iot2_field_constructor_exists():
+    assert callable(iot2_Field.__init__)
 
 
-def test_iot2::field_constructor_args():
-    sig = inspect.signature(iot2::Field.__init__)
+def test_iot2_field_constructor_args():
+    sig = inspect.signature(iot2_Field.__init__)
     params = list(sig.parameters.keys())
     assert "identifier" in params, "Missing parameter 'identifier'"
 
-def test_iot2::field_has_identifier():
-    assert hasattr(iot2::Field, "identifier")
+def test_iot2_field_has_identifier():
+    assert hasattr(iot2_Field, "identifier")
     descriptor = None
-    for klass in iot2::Field.__mro__:
+    for klass in iot2_Field.__mro__:
         if "identifier" in klass.__dict__:
             descriptor = klass.__dict__["identifier"]
             break
@@ -1849,33 +1411,33 @@ def test_iot2::field_has_identifier():
 
 
 
-def test_iot2::parameterdef_is_not_abstract():
-    assert not inspect.isabstract(iot2::ParameterDef)
+def test_iot2_parameterdef_is_not_abstract():
+    assert not inspect.isabstract(iot2_ParameterDef)
 
 
-def test_iot2::parameterdef_constructor_exists():
-    assert callable(iot2::ParameterDef.__init__)
+def test_iot2_parameterdef_constructor_exists():
+    assert callable(iot2_ParameterDef.__init__)
 
 
-def test_iot2::parameterdef_constructor_args():
-    sig = inspect.signature(iot2::ParameterDef.__init__)
+def test_iot2_parameterdef_constructor_args():
+    sig = inspect.signature(iot2_ParameterDef.__init__)
     params = list(sig.parameters.keys())
     assert "direction" in params, "Missing parameter 'direction'"
     assert "identifier" in params, "Missing parameter 'identifier'"
 
-def test_iot2::parameterdef_has_direction():
-    assert hasattr(iot2::ParameterDef, "direction")
+def test_iot2_parameterdef_has_direction():
+    assert hasattr(iot2_ParameterDef, "direction")
     descriptor = None
-    for klass in iot2::ParameterDef.__mro__:
+    for klass in iot2_ParameterDef.__mro__:
         if "direction" in klass.__dict__:
             descriptor = klass.__dict__["direction"]
             break
     assert isinstance(descriptor, property)
 
-def test_iot2::parameterdef_has_identifier():
-    assert hasattr(iot2::ParameterDef, "identifier")
+def test_iot2_parameterdef_has_identifier():
+    assert hasattr(iot2_ParameterDef, "identifier")
     descriptor = None
-    for klass in iot2::ParameterDef.__mro__:
+    for klass in iot2_ParameterDef.__mro__:
         if "identifier" in klass.__dict__:
             descriptor = klass.__dict__["identifier"]
             break
@@ -1897,23 +1459,23 @@ def test_contained_constructor_args():
 
 
 
-def test_iot2::variable_is_not_abstract():
-    assert not inspect.isabstract(iot2::Variable)
+def test_iot2_variable_is_not_abstract():
+    assert not inspect.isabstract(iot2_Variable)
 
 
-def test_iot2::variable_constructor_exists():
-    assert callable(iot2::Variable.__init__)
+def test_iot2_variable_constructor_exists():
+    assert callable(iot2_Variable.__init__)
 
 
-def test_iot2::variable_constructor_args():
-    sig = inspect.signature(iot2::Variable.__init__)
+def test_iot2_variable_constructor_args():
+    sig = inspect.signature(iot2_Variable.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_iot2::variable_has_name():
-    assert hasattr(iot2::Variable, "name")
+def test_iot2_variable_has_name():
+    assert hasattr(iot2_Variable, "name")
     descriptor = None
-    for klass in iot2::Variable.__mro__:
+    for klass in iot2_Variable.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -1935,23 +1497,23 @@ def test_namedelement_constructor_args():
 
 
 
-def test_iot2::activitynode_is_not_abstract():
-    assert not inspect.isabstract(iot2::ActivityNode)
+def test_iot2_activitynode_is_not_abstract():
+    assert not inspect.isabstract(iot2_ActivityNode)
 
 
-def test_iot2::activitynode_constructor_exists():
-    assert callable(iot2::ActivityNode.__init__)
+def test_iot2_activitynode_constructor_exists():
+    assert callable(iot2_ActivityNode.__init__)
 
 
-def test_iot2::activitynode_constructor_args():
-    sig = inspect.signature(iot2::ActivityNode.__init__)
+def test_iot2_activitynode_constructor_args():
+    sig = inspect.signature(iot2_ActivityNode.__init__)
     params = list(sig.parameters.keys())
     assert "running" in params, "Missing parameter 'running'"
 
-def test_iot2::activitynode_has_running():
-    assert hasattr(iot2::ActivityNode, "running")
+def test_iot2_activitynode_has_running():
+    assert hasattr(iot2_ActivityNode, "running")
     descriptor = None
-    for klass in iot2::ActivityNode.__mro__:
+    for klass in iot2_ActivityNode.__mro__:
         if "running" in klass.__dict__:
             descriptor = klass.__dict__["running"]
             break
@@ -1959,51 +1521,51 @@ def test_iot2::activitynode_has_running():
 
 
 
-def test_iot2::activityedge_is_not_abstract():
-    assert not inspect.isabstract(iot2::ActivityEdge)
+def test_iot2_activityedge_is_not_abstract():
+    assert not inspect.isabstract(iot2_ActivityEdge)
 
 
-def test_iot2::activityedge_constructor_exists():
-    assert callable(iot2::ActivityEdge.__init__)
+def test_iot2_activityedge_constructor_exists():
+    assert callable(iot2_ActivityEdge.__init__)
 
 
-def test_iot2::activityedge_constructor_args():
-    sig = inspect.signature(iot2::ActivityEdge.__init__)
+def test_iot2_activityedge_constructor_args():
+    sig = inspect.signature(iot2_ActivityEdge.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_iot2::typedefdef_is_not_abstract():
-    assert not inspect.isabstract(iot2::TypedefDef)
+def test_iot2_typedefdef_is_not_abstract():
+    assert not inspect.isabstract(iot2_TypedefDef)
 
 
-def test_iot2::typedefdef_constructor_exists():
-    assert callable(iot2::TypedefDef.__init__)
+def test_iot2_typedefdef_constructor_exists():
+    assert callable(iot2_TypedefDef.__init__)
 
 
-def test_iot2::typedefdef_constructor_args():
-    sig = inspect.signature(iot2::TypedefDef.__init__)
+def test_iot2_typedefdef_constructor_args():
+    sig = inspect.signature(iot2_TypedefDef.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_iot2::idltype_is_not_abstract():
-    assert not inspect.isabstract(iot2::IDLType)
+def test_iot2_idltype_is_not_abstract():
+    assert not inspect.isabstract(iot2_IDLType)
 
 
-def test_iot2::idltype_constructor_exists():
-    assert callable(iot2::IDLType.__init__)
+def test_iot2_idltype_constructor_exists():
+    assert callable(iot2_IDLType.__init__)
 
 
-def test_iot2::idltype_constructor_args():
-    sig = inspect.signature(iot2::IDLType.__init__)
+def test_iot2_idltype_constructor_args():
+    sig = inspect.signature(iot2_IDLType.__init__)
     params = list(sig.parameters.keys())
     assert "typeCode" in params, "Missing parameter 'typeCode'"
 
-def test_iot2::idltype_has_typeCode():
-    assert hasattr(iot2::IDLType, "typeCode")
+def test_iot2_idltype_has_typeCode():
+    assert hasattr(iot2_IDLType, "typeCode")
     descriptor = None
-    for klass in iot2::IDLType.__mro__:
+    for klass in iot2_IDLType.__mro__:
         if "typeCode" in klass.__dict__:
             descriptor = klass.__dict__["typeCode"]
             break
@@ -2011,143 +1573,143 @@ def test_iot2::idltype_has_typeCode():
 
 
 
-def test_iot2::typed_is_not_abstract():
-    assert not inspect.isabstract(iot2::Typed)
+def test_iot2_typed_is_not_abstract():
+    assert not inspect.isabstract(iot2_Typed)
 
 
-def test_iot2::typed_constructor_exists():
-    assert callable(iot2::Typed.__init__)
+def test_iot2_typed_constructor_exists():
+    assert callable(iot2_Typed.__init__)
 
 
-def test_iot2::typed_constructor_args():
-    sig = inspect.signature(iot2::Typed.__init__)
+def test_iot2_typed_constructor_args():
+    sig = inspect.signature(iot2_Typed.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_iot2::namedelement_is_not_abstract():
-    assert not inspect.isabstract(iot2::NamedElement)
+def test_iot2_namedelement_is_not_abstract():
+    assert not inspect.isabstract(iot2_NamedElement)
 
 
-def test_iot2::namedelement_constructor_exists():
-    assert callable(iot2::NamedElement.__init__)
+def test_iot2_namedelement_constructor_exists():
+    assert callable(iot2_NamedElement.__init__)
 
 
-def test_iot2::namedelement_constructor_args():
-    sig = inspect.signature(iot2::NamedElement.__init__)
+def test_iot2_namedelement_constructor_args():
+    sig = inspect.signature(iot2_NamedElement.__init__)
     params = list(sig.parameters.keys())
-    assert "identifier" in params, "Missing parameter 'identifier'"
     assert "name" in params, "Missing parameter 'name'"
+    assert "identifier" in params, "Missing parameter 'identifier'"
 
-def test_iot2::namedelement_has_identifier():
-    assert hasattr(iot2::NamedElement, "identifier")
+def test_iot2_namedelement_has_name():
+    assert hasattr(iot2_NamedElement, "name")
     descriptor = None
-    for klass in iot2::NamedElement.__mro__:
-        if "identifier" in klass.__dict__:
-            descriptor = klass.__dict__["identifier"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_iot2::namedelement_has_name():
-    assert hasattr(iot2::NamedElement, "name")
-    descriptor = None
-    for klass in iot2::NamedElement.__mro__:
+    for klass in iot2_NamedElement.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
+def test_iot2_namedelement_has_identifier():
+    assert hasattr(iot2_NamedElement, "identifier")
+    descriptor = None
+    for klass in iot2_NamedElement.__mro__:
+        if "identifier" in klass.__dict__:
+            descriptor = klass.__dict__["identifier"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_iot2::container_is_not_abstract():
-    assert not inspect.isabstract(iot2::Container)
+
+def test_iot2_container_is_not_abstract():
+    assert not inspect.isabstract(iot2_Container)
 
 
-def test_iot2::container_constructor_exists():
-    assert callable(iot2::Container.__init__)
+def test_iot2_container_constructor_exists():
+    assert callable(iot2_Container.__init__)
 
 
-def test_iot2::container_constructor_args():
-    sig = inspect.signature(iot2::Container.__init__)
+def test_iot2_container_constructor_args():
+    sig = inspect.signature(iot2_Container.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_iot2::contained_is_not_abstract():
-    assert not inspect.isabstract(iot2::Contained)
+def test_iot2_contained_is_not_abstract():
+    assert not inspect.isabstract(iot2_Contained)
 
 
-def test_iot2::contained_constructor_exists():
-    assert callable(iot2::Contained.__init__)
+def test_iot2_contained_constructor_exists():
+    assert callable(iot2_Contained.__init__)
 
 
-def test_iot2::contained_constructor_args():
-    sig = inspect.signature(iot2::Contained.__init__)
+def test_iot2_contained_constructor_args():
+    sig = inspect.signature(iot2_Contained.__init__)
     params = list(sig.parameters.keys())
-    assert "version" in params, "Missing parameter 'version'"
-    assert "absoluteName" in params, "Missing parameter 'absoluteName'"
     assert "repositoryId" in params, "Missing parameter 'repositoryId'"
+    assert "absoluteName" in params, "Missing parameter 'absoluteName'"
+    assert "version" in params, "Missing parameter 'version'"
 
-def test_iot2::contained_has_version():
-    assert hasattr(iot2::Contained, "version")
+def test_iot2_contained_has_repositoryId():
+    assert hasattr(iot2_Contained, "repositoryId")
     descriptor = None
-    for klass in iot2::Contained.__mro__:
-        if "version" in klass.__dict__:
-            descriptor = klass.__dict__["version"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_iot2::contained_has_absoluteName():
-    assert hasattr(iot2::Contained, "absoluteName")
-    descriptor = None
-    for klass in iot2::Contained.__mro__:
-        if "absoluteName" in klass.__dict__:
-            descriptor = klass.__dict__["absoluteName"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_iot2::contained_has_repositoryId():
-    assert hasattr(iot2::Contained, "repositoryId")
-    descriptor = None
-    for klass in iot2::Contained.__mro__:
+    for klass in iot2_Contained.__mro__:
         if "repositoryId" in klass.__dict__:
             descriptor = klass.__dict__["repositoryId"]
             break
     assert isinstance(descriptor, property)
 
+def test_iot2_contained_has_absoluteName():
+    assert hasattr(iot2_Contained, "absoluteName")
+    descriptor = None
+    for klass in iot2_Contained.__mro__:
+        if "absoluteName" in klass.__dict__:
+            descriptor = klass.__dict__["absoluteName"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_iot2_contained_has_version():
+    assert hasattr(iot2_Contained, "version")
+    descriptor = None
+    for klass in iot2_Contained.__mro__:
+        if "version" in klass.__dict__:
+            descriptor = klass.__dict__["version"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_iot2::block_is_not_abstract():
-    assert not inspect.isabstract(iot2::Block)
+
+def test_iot2_block_is_not_abstract():
+    assert not inspect.isabstract(iot2_Block)
 
 
-def test_iot2::block_constructor_exists():
-    assert callable(iot2::Block.__init__)
+def test_iot2_block_constructor_exists():
+    assert callable(iot2_Block.__init__)
 
 
-def test_iot2::block_constructor_args():
-    sig = inspect.signature(iot2::Block.__init__)
+def test_iot2_block_constructor_args():
+    sig = inspect.signature(iot2_Block.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_iot2::exceptiondef_is_not_abstract():
-    assert not inspect.isabstract(iot2::ExceptionDef)
+def test_iot2_exceptiondef_is_not_abstract():
+    assert not inspect.isabstract(iot2_ExceptionDef)
 
 
-def test_iot2::exceptiondef_constructor_exists():
-    assert callable(iot2::ExceptionDef.__init__)
+def test_iot2_exceptiondef_constructor_exists():
+    assert callable(iot2_ExceptionDef.__init__)
 
 
-def test_iot2::exceptiondef_constructor_args():
-    sig = inspect.signature(iot2::ExceptionDef.__init__)
+def test_iot2_exceptiondef_constructor_args():
+    sig = inspect.signature(iot2_ExceptionDef.__init__)
     params = list(sig.parameters.keys())
     assert "typeCode" in params, "Missing parameter 'typeCode'"
 
-def test_iot2::exceptiondef_has_typeCode():
-    assert hasattr(iot2::ExceptionDef, "typeCode")
+def test_iot2_exceptiondef_has_typeCode():
+    assert hasattr(iot2_ExceptionDef, "typeCode")
     descriptor = None
-    for klass in iot2::ExceptionDef.__mro__:
+    for klass in iot2_ExceptionDef.__mro__:
         if "typeCode" in klass.__dict__:
             descriptor = klass.__dict__["typeCode"]
             break
@@ -2169,61 +1731,61 @@ def test_hwcomponent_constructor_args():
 
 
 
-def test_iot2::actuator_is_not_abstract():
-    assert not inspect.isabstract(iot2::Actuator)
+def test_iot2_actuator_is_not_abstract():
+    assert not inspect.isabstract(iot2_Actuator)
 
 
-def test_iot2::actuator_constructor_exists():
-    assert callable(iot2::Actuator.__init__)
+def test_iot2_actuator_constructor_exists():
+    assert callable(iot2_Actuator.__init__)
 
 
-def test_iot2::actuator_constructor_args():
-    sig = inspect.signature(iot2::Actuator.__init__)
+def test_iot2_actuator_constructor_args():
+    sig = inspect.signature(iot2_Actuator.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_iot2::sensor_is_not_abstract():
-    assert not inspect.isabstract(iot2::Sensor)
+def test_iot2_sensor_is_not_abstract():
+    assert not inspect.isabstract(iot2_Sensor)
 
 
-def test_iot2::sensor_constructor_exists():
-    assert callable(iot2::Sensor.__init__)
+def test_iot2_sensor_constructor_exists():
+    assert callable(iot2_Sensor.__init__)
 
 
-def test_iot2::sensor_constructor_args():
-    sig = inspect.signature(iot2::Sensor.__init__)
+def test_iot2_sensor_constructor_args():
+    sig = inspect.signature(iot2_Sensor.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_iot2::operationdef_is_not_abstract():
-    assert not inspect.isabstract(iot2::OperationDef)
+def test_iot2_operationdef_is_not_abstract():
+    assert not inspect.isabstract(iot2_OperationDef)
 
 
-def test_iot2::operationdef_constructor_exists():
-    assert callable(iot2::OperationDef.__init__)
+def test_iot2_operationdef_constructor_exists():
+    assert callable(iot2_OperationDef.__init__)
 
 
-def test_iot2::operationdef_constructor_args():
-    sig = inspect.signature(iot2::OperationDef.__init__)
+def test_iot2_operationdef_constructor_args():
+    sig = inspect.signature(iot2_OperationDef.__init__)
     params = list(sig.parameters.keys())
     assert "isOneway" in params, "Missing parameter 'isOneway'"
     assert "contexts" in params, "Missing parameter 'contexts'"
 
-def test_iot2::operationdef_has_isOneway():
-    assert hasattr(iot2::OperationDef, "isOneway")
+def test_iot2_operationdef_has_isOneway():
+    assert hasattr(iot2_OperationDef, "isOneway")
     descriptor = None
-    for klass in iot2::OperationDef.__mro__:
+    for klass in iot2_OperationDef.__mro__:
         if "isOneway" in klass.__dict__:
             descriptor = klass.__dict__["isOneway"]
             break
     assert isinstance(descriptor, property)
 
-def test_iot2::operationdef_has_contexts():
-    assert hasattr(iot2::OperationDef, "contexts")
+def test_iot2_operationdef_has_contexts():
+    assert hasattr(iot2_OperationDef, "contexts")
     descriptor = None
-    for klass in iot2::OperationDef.__mro__:
+    for klass in iot2_OperationDef.__mro__:
         if "contexts" in klass.__dict__:
             descriptor = klass.__dict__["contexts"]
             break
@@ -2231,61 +1793,61 @@ def test_iot2::operationdef_has_contexts():
 
 
 
-def test_iot2::activity_is_not_abstract():
-    assert not inspect.isabstract(iot2::Activity)
+def test_iot2_activity_is_not_abstract():
+    assert not inspect.isabstract(iot2_Activity)
 
 
-def test_iot2::activity_constructor_exists():
-    assert callable(iot2::Activity.__init__)
+def test_iot2_activity_constructor_exists():
+    assert callable(iot2_Activity.__init__)
 
 
-def test_iot2::activity_constructor_args():
-    sig = inspect.signature(iot2::Activity.__init__)
+def test_iot2_activity_constructor_args():
+    sig = inspect.signature(iot2_Activity.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_iot2::sketch_is_not_abstract():
-    assert not inspect.isabstract(iot2::Sketch)
+def test_iot2_sketch_is_not_abstract():
+    assert not inspect.isabstract(iot2_Sketch)
 
 
-def test_iot2::sketch_constructor_exists():
-    assert callable(iot2::Sketch.__init__)
+def test_iot2_sketch_constructor_exists():
+    assert callable(iot2_Sketch.__init__)
 
 
-def test_iot2::sketch_constructor_args():
-    sig = inspect.signature(iot2::Sketch.__init__)
+def test_iot2_sketch_constructor_args():
+    sig = inspect.signature(iot2_Sketch.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_iot2::board_is_not_abstract():
-    assert not inspect.isabstract(iot2::Board)
+def test_iot2_board_is_not_abstract():
+    assert not inspect.isabstract(iot2_Board)
 
 
-def test_iot2::board_constructor_exists():
-    assert callable(iot2::Board.__init__)
+def test_iot2_board_constructor_exists():
+    assert callable(iot2_Board.__init__)
 
 
-def test_iot2::board_constructor_args():
-    sig = inspect.signature(iot2::Board.__init__)
+def test_iot2_board_constructor_args():
+    sig = inspect.signature(iot2_Board.__init__)
     params = list(sig.parameters.keys())
     assert "type" in params, "Missing parameter 'type'"
     assert "name" in params, "Missing parameter 'name'"
 
-def test_iot2::board_has_type():
-    assert hasattr(iot2::Board, "type")
+def test_iot2_board_has_type():
+    assert hasattr(iot2_Board, "type")
     descriptor = None
-    for klass in iot2::Board.__mro__:
+    for klass in iot2_Board.__mro__:
         if "type" in klass.__dict__:
             descriptor = klass.__dict__["type"]
             break
     assert isinstance(descriptor, property)
 
-def test_iot2::board_has_name():
-    assert hasattr(iot2::Board, "name")
+def test_iot2_board_has_name():
+    assert hasattr(iot2_Board, "name")
     descriptor = None
-    for klass in iot2::Board.__mro__:
+    for klass in iot2_Board.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -2293,23 +1855,23 @@ def test_iot2::board_has_name():
 
 
 
-def test_iot2::hwcomponent_is_not_abstract():
-    assert not inspect.isabstract(iot2::HWComponent)
+def test_iot2_hwcomponent_is_not_abstract():
+    assert not inspect.isabstract(iot2_HWComponent)
 
 
-def test_iot2::hwcomponent_constructor_exists():
-    assert callable(iot2::HWComponent.__init__)
+def test_iot2_hwcomponent_constructor_exists():
+    assert callable(iot2_HWComponent.__init__)
 
 
-def test_iot2::hwcomponent_constructor_args():
-    sig = inspect.signature(iot2::HWComponent.__init__)
+def test_iot2_hwcomponent_constructor_args():
+    sig = inspect.signature(iot2_HWComponent.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_iot2::hwcomponent_has_name():
-    assert hasattr(iot2::HWComponent, "name")
+def test_iot2_hwcomponent_has_name():
+    assert hasattr(iot2_HWComponent, "name")
     descriptor = None
-    for klass in iot2::HWComponent.__mro__:
+    for klass in iot2_HWComponent.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -2317,76 +1879,499 @@ def test_iot2::hwcomponent_has_name():
 
 
 
-def test_iot2::system_is_not_abstract():
-    assert not inspect.isabstract(iot2::System)
+def test_iot2_system_is_not_abstract():
+    assert not inspect.isabstract(iot2_System)
 
 
-def test_iot2::system_constructor_exists():
-    assert callable(iot2::System.__init__)
+def test_iot2_system_constructor_exists():
+    assert callable(iot2_System.__init__)
 
 
-def test_iot2::system_constructor_args():
-    sig = inspect.signature(iot2::System.__init__)
+def test_iot2_system_constructor_args():
+    sig = inspect.signature(iot2_System.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_iot2::system_has_name():
-    assert hasattr(iot2::System, "name")
+def test_iot2_system_has_name():
+    assert hasattr(iot2_System, "name")
     descriptor = None
-    for klass in iot2::System.__mro__:
+    for klass in iot2_System.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
-def test_integercalculationoperator_exists():
-    # Check that the Enumeration exists
-    assert IntegerCalculationOperator is not None
 
-def test_integercalculationoperator_has_all_literals():
+
+def test_iot2_trace_is_not_abstract():
+    assert not inspect.isabstract(iot2_Trace)
+
+
+def test_iot2_trace_constructor_exists():
+    assert callable(iot2_Trace.__init__)
+
+
+def test_iot2_trace_constructor_args():
+    sig = inspect.signature(iot2_Trace.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_integerexpression_is_not_abstract():
+    assert not inspect.isabstract(IntegerExpression)
+
+
+def test_integerexpression_constructor_exists():
+    assert callable(IntegerExpression.__init__)
+
+
+def test_integerexpression_constructor_args():
+    sig = inspect.signature(IntegerExpression.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_iot2_integercomparisonexpression_is_not_abstract():
+    assert not inspect.isabstract(iot2_IntegerComparisonExpression)
+
+
+def test_iot2_integercomparisonexpression_constructor_exists():
+    assert callable(iot2_IntegerComparisonExpression.__init__)
+
+
+def test_iot2_integercomparisonexpression_constructor_args():
+    sig = inspect.signature(iot2_IntegerComparisonExpression.__init__)
+    params = list(sig.parameters.keys())
+    assert "operator" in params, "Missing parameter 'operator'"
+
+def test_iot2_integercomparisonexpression_has_operator():
+    assert hasattr(iot2_IntegerComparisonExpression, "operator")
+    descriptor = None
+    for klass in iot2_IntegerComparisonExpression.__mro__:
+        if "operator" in klass.__dict__:
+            descriptor = klass.__dict__["operator"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_iot2_integercalculationexpression_is_not_abstract():
+    assert not inspect.isabstract(iot2_IntegerCalculationExpression)
+
+
+def test_iot2_integercalculationexpression_constructor_exists():
+    assert callable(iot2_IntegerCalculationExpression.__init__)
+
+
+def test_iot2_integercalculationexpression_constructor_args():
+    sig = inspect.signature(iot2_IntegerCalculationExpression.__init__)
+    params = list(sig.parameters.keys())
+    assert "operator" in params, "Missing parameter 'operator'"
+
+def test_iot2_integercalculationexpression_has_operator():
+    assert hasattr(iot2_IntegerCalculationExpression, "operator")
+    descriptor = None
+    for klass in iot2_IntegerCalculationExpression.__mro__:
+        if "operator" in klass.__dict__:
+            descriptor = klass.__dict__["operator"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_iot2_booleanexpression_is_not_abstract():
+    assert not inspect.isabstract(iot2_BooleanExpression)
+
+
+def test_iot2_booleanexpression_constructor_exists():
+    assert callable(iot2_BooleanExpression.__init__)
+
+
+def test_iot2_booleanexpression_constructor_args():
+    sig = inspect.signature(iot2_BooleanExpression.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_iot2_token_is_not_abstract():
+    assert not inspect.isabstract(iot2_Token)
+
+
+def test_iot2_token_constructor_exists():
+    assert callable(iot2_Token.__init__)
+
+
+def test_iot2_token_constructor_args():
+    sig = inspect.signature(iot2_Token.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_iot2_input_is_not_abstract():
+    assert not inspect.isabstract(iot2_Input)
+
+
+def test_iot2_input_constructor_exists():
+    assert callable(iot2_Input.__init__)
+
+
+def test_iot2_input_constructor_args():
+    sig = inspect.signature(iot2_Input.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_iot2_inputvalue_is_not_abstract():
+    assert not inspect.isabstract(iot2_InputValue)
+
+
+def test_iot2_inputvalue_constructor_exists():
+    assert callable(iot2_InputValue.__init__)
+
+
+def test_iot2_inputvalue_constructor_args():
+    sig = inspect.signature(iot2_InputValue.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_booleanexpression_is_not_abstract():
+    assert not inspect.isabstract(BooleanExpression)
+
+
+def test_booleanexpression_constructor_exists():
+    assert callable(BooleanExpression.__init__)
+
+
+def test_booleanexpression_constructor_args():
+    sig = inspect.signature(BooleanExpression.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_iot2_booleanbinaryexpression_is_not_abstract():
+    assert not inspect.isabstract(iot2_BooleanBinaryExpression)
+
+
+def test_iot2_booleanbinaryexpression_constructor_exists():
+    assert callable(iot2_BooleanBinaryExpression.__init__)
+
+
+def test_iot2_booleanbinaryexpression_constructor_args():
+    sig = inspect.signature(iot2_BooleanBinaryExpression.__init__)
+    params = list(sig.parameters.keys())
+    assert "operator" in params, "Missing parameter 'operator'"
+
+def test_iot2_booleanbinaryexpression_has_operator():
+    assert hasattr(iot2_BooleanBinaryExpression, "operator")
+    descriptor = None
+    for klass in iot2_BooleanBinaryExpression.__mro__:
+        if "operator" in klass.__dict__:
+            descriptor = klass.__dict__["operator"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_iot2_booleanunaryexpression_is_not_abstract():
+    assert not inspect.isabstract(iot2_BooleanUnaryExpression)
+
+
+def test_iot2_booleanunaryexpression_constructor_exists():
+    assert callable(iot2_BooleanUnaryExpression.__init__)
+
+
+def test_iot2_booleanunaryexpression_constructor_args():
+    sig = inspect.signature(iot2_BooleanUnaryExpression.__init__)
+    params = list(sig.parameters.keys())
+    assert "operator" in params, "Missing parameter 'operator'"
+
+def test_iot2_booleanunaryexpression_has_operator():
+    assert hasattr(iot2_BooleanUnaryExpression, "operator")
+    descriptor = None
+    for klass in iot2_BooleanUnaryExpression.__mro__:
+        if "operator" in klass.__dict__:
+            descriptor = klass.__dict__["operator"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_action_is_not_abstract():
+    assert not inspect.isabstract(Action)
+
+
+def test_action_constructor_exists():
+    assert callable(Action.__init__)
+
+
+def test_action_constructor_args():
+    sig = inspect.signature(Action.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_iot2_opaqueaction_is_not_abstract():
+    assert not inspect.isabstract(iot2_OpaqueAction)
+
+
+def test_iot2_opaqueaction_constructor_exists():
+    assert callable(iot2_OpaqueAction.__init__)
+
+
+def test_iot2_opaqueaction_constructor_args():
+    sig = inspect.signature(iot2_OpaqueAction.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_executablenode_is_not_abstract():
+    assert not inspect.isabstract(ExecutableNode)
+
+
+def test_executablenode_constructor_exists():
+    assert callable(ExecutableNode.__init__)
+
+
+def test_executablenode_constructor_args():
+    sig = inspect.signature(ExecutableNode.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_iot2_action_is_not_abstract():
+    assert not inspect.isabstract(iot2_Action)
+
+
+def test_iot2_action_constructor_exists():
+    assert callable(iot2_Action.__init__)
+
+
+def test_iot2_action_constructor_args():
+    sig = inspect.signature(iot2_Action.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_activitynode_is_not_abstract():
+    assert not inspect.isabstract(ActivityNode)
+
+
+def test_activitynode_constructor_exists():
+    assert callable(ActivityNode.__init__)
+
+
+def test_activitynode_constructor_args():
+    sig = inspect.signature(ActivityNode.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_iot2_executablenode_is_not_abstract():
+    assert not inspect.isabstract(iot2_ExecutableNode)
+
+
+def test_iot2_executablenode_constructor_exists():
+    assert callable(iot2_ExecutableNode.__init__)
+
+
+def test_iot2_executablenode_constructor_args():
+    sig = inspect.signature(iot2_ExecutableNode.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_iot2_controlnode_is_not_abstract():
+    assert not inspect.isabstract(iot2_ControlNode)
+
+
+def test_iot2_controlnode_constructor_exists():
+    assert callable(iot2_ControlNode.__init__)
+
+
+def test_iot2_controlnode_constructor_args():
+    sig = inspect.signature(iot2_ControlNode.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_activityedge_is_not_abstract():
+    assert not inspect.isabstract(ActivityEdge)
+
+
+def test_activityedge_constructor_exists():
+    assert callable(ActivityEdge.__init__)
+
+
+def test_activityedge_constructor_args():
+    sig = inspect.signature(ActivityEdge.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_iot2_controlflow_is_not_abstract():
+    assert not inspect.isabstract(iot2_ControlFlow)
+
+
+def test_iot2_controlflow_constructor_exists():
+    assert callable(iot2_ControlFlow.__init__)
+
+
+def test_iot2_controlflow_constructor_args():
+    sig = inspect.signature(iot2_ControlFlow.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_iot2_integerexpression_is_not_abstract():
+    assert not inspect.isabstract(iot2_IntegerExpression)
+
+
+def test_iot2_integerexpression_constructor_exists():
+    assert callable(iot2_IntegerExpression.__init__)
+
+
+def test_iot2_integerexpression_constructor_args():
+    sig = inspect.signature(iot2_IntegerExpression.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_value_is_not_abstract():
+    assert not inspect.isabstract(Value)
+
+
+def test_value_constructor_exists():
+    assert callable(Value.__init__)
+
+
+def test_value_constructor_args():
+    sig = inspect.signature(Value.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_iot2_integervalue_is_not_abstract():
+    assert not inspect.isabstract(iot2_IntegerValue)
+
+
+def test_iot2_integervalue_constructor_exists():
+    assert callable(iot2_IntegerValue.__init__)
+
+
+def test_iot2_integervalue_constructor_args():
+    sig = inspect.signature(iot2_IntegerValue.__init__)
+    params = list(sig.parameters.keys())
+    assert "value" in params, "Missing parameter 'value'"
+
+def test_iot2_integervalue_has_value():
+    assert hasattr(iot2_IntegerValue, "value")
+    descriptor = None
+    for klass in iot2_IntegerValue.__mro__:
+        if "value" in klass.__dict__:
+            descriptor = klass.__dict__["value"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_iot2_booleanvalue_is_not_abstract():
+    assert not inspect.isabstract(iot2_BooleanValue)
+
+
+def test_iot2_booleanvalue_constructor_exists():
+    assert callable(iot2_BooleanValue.__init__)
+
+
+def test_iot2_booleanvalue_constructor_args():
+    sig = inspect.signature(iot2_BooleanValue.__init__)
+    params = list(sig.parameters.keys())
+    assert "value" in params, "Missing parameter 'value'"
+
+def test_iot2_booleanvalue_has_value():
+    assert hasattr(iot2_BooleanValue, "value")
+    descriptor = None
+    for klass in iot2_BooleanValue.__mro__:
+        if "value" in klass.__dict__:
+            descriptor = klass.__dict__["value"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_variable_is_not_abstract():
+    assert not inspect.isabstract(Variable)
+
+
+def test_variable_constructor_exists():
+    assert callable(Variable.__init__)
+
+
+def test_variable_constructor_args():
+    sig = inspect.signature(Variable.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_iot2_booleanvariable_is_not_abstract():
+    assert not inspect.isabstract(iot2_BooleanVariable)
+
+
+def test_iot2_booleanvariable_constructor_exists():
+    assert callable(iot2_BooleanVariable.__init__)
+
+
+def test_iot2_booleanvariable_constructor_args():
+    sig = inspect.signature(iot2_BooleanVariable.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_iot2_integervariable_is_not_abstract():
+    assert not inspect.isabstract(iot2_IntegerVariable)
+
+
+def test_iot2_integervariable_constructor_exists():
+    assert callable(iot2_IntegerVariable.__init__)
+
+
+def test_iot2_integervariable_constructor_args():
+    sig = inspect.signature(iot2_IntegerVariable.__init__)
+    params = list(sig.parameters.keys())
+
+def test_integercomparisonoperator_exists():
+    # Check that the Enumeration exists
+    assert IntegerComparisonOperator is not None
+
+def test_integercomparisonoperator_has_all_literals():
     # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in IntegerCalculationOperator]
+    enum_literals = [lit.name for lit in IntegerComparisonOperator]
     expected_literals = [
-        "ADD",
-        "SUBRACT",
+        "SMALLER_EQUALS",
+        "GREATER",
+        "GREATER_EQUALS",
+        "SMALLER",
+        "EQUALS",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in IntegerCalculationOperator"
+        assert lit_name in enum_literals, f"Literal '' missing in IntegerComparisonOperator"
 
-def test_primitivekind_exists():
+def test_boardtype_exists():
     # Check that the Enumeration exists
-    assert PrimitiveKind is not None
+    assert BoardType is not None
 
-def test_primitivekind_has_all_literals():
+def test_boardtype_has_all_literals():
     # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in PrimitiveKind]
+    enum_literals = [lit.name for lit in BoardType]
     expected_literals = [
-        "PK_NULL",
-        "PK_ULONGLONG",
-        "PK_BOOLEAN",
-        "PK_OBJREF",
-        "PK_VOID",
-        "PK_LONGLONG",
-        "PK_OCTET",
-        "PK_WSTRING",
-        "PK_ULONG",
-        "PK_USHORT",
-        "PK_STRING",
-        "PK_SHORT",
-        "PK_DOUBLE",
-        "PK_TYPECODE",
-        "PK_PRINCIPAL",
-        "PK_CHAR",
-        "PK_WCHAR",
-        "PK_FLOAT",
-        "PK_LONG",
-        "PK_ANY",
-        "PK_LONGDOUBLE",
+        "BeagleBoard",
+        "RaspberryPi",
+        "Arduino",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in PrimitiveKind"
+        assert lit_name in enum_literals, f"Literal '' missing in BoardType"
 
 def test_booleanunaryoperator_exists():
     # Check that the Enumeration exists
@@ -2402,23 +2387,70 @@ def test_booleanunaryoperator_has_all_literals():
     for lit_name in expected_literals:
         assert lit_name in enum_literals, f"Literal '' missing in BooleanUnaryOperator"
 
-def test_integercomparisonoperator_exists():
+def test_parametermode_exists():
     # Check that the Enumeration exists
-    assert IntegerComparisonOperator is not None
+    assert ParameterMode is not None
 
-def test_integercomparisonoperator_has_all_literals():
+def test_parametermode_has_all_literals():
     # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in IntegerComparisonOperator]
+    enum_literals = [lit.name for lit in ParameterMode]
     expected_literals = [
-        "SMALLER",
-        "GREATER",
-        "SMALLER_EQUALS",
-        "GREATER_EQUALS",
-        "EQUALS",
+        "PARAM_IN",
+        "PARAM_INOUT",
+        "PARAM_OUT",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in IntegerComparisonOperator"
+        assert lit_name in enum_literals, f"Literal '' missing in ParameterMode"
+
+def test_primitivekind_exists():
+    # Check that the Enumeration exists
+    assert PrimitiveKind is not None
+
+def test_primitivekind_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in PrimitiveKind]
+    expected_literals = [
+        "PK_DOUBLE",
+        "PK_LONG",
+        "PK_ANY",
+        "PK_TYPECODE",
+        "PK_WSTRING",
+        "PK_LONGLONG",
+        "PK_CHAR",
+        "PK_NULL",
+        "PK_ULONGLONG",
+        "PK_USHORT",
+        "PK_OBJREF",
+        "PK_ULONG",
+        "PK_FLOAT",
+        "PK_SHORT",
+        "PK_OCTET",
+        "PK_VOID",
+        "PK_WCHAR",
+        "PK_LONGDOUBLE",
+        "PK_STRING",
+        "PK_BOOLEAN",
+        "PK_PRINCIPAL",
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in PrimitiveKind"
+
+def test_integercalculationoperator_exists():
+    # Check that the Enumeration exists
+    assert IntegerCalculationOperator is not None
+
+def test_integercalculationoperator_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in IntegerCalculationOperator]
+    expected_literals = [
+        "SUBRACT",
+        "ADD",
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in IntegerCalculationOperator"
 
 def test_booleanbinaryoperator_exists():
     # Check that the Enumeration exists
@@ -2435,38 +2467,6 @@ def test_booleanbinaryoperator_has_all_literals():
     for lit_name in expected_literals:
         assert lit_name in enum_literals, f"Literal '' missing in BooleanBinaryOperator"
 
-def test_parametermode_exists():
-    # Check that the Enumeration exists
-    assert ParameterMode is not None
-
-def test_parametermode_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in ParameterMode]
-    expected_literals = [
-        "PARAM_OUT",
-        "PARAM_INOUT",
-        "PARAM_IN",
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in ParameterMode"
-
-def test_boardtype_exists():
-    # Check that the Enumeration exists
-    assert BoardType is not None
-
-def test_boardtype_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in BoardType]
-    expected_literals = [
-        "Arduino",
-        "RaspberryPi",
-        "BeagleBoard",
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in BoardType"
-
 
 # =============================================================================
 # HYPOTHESIS STRATEGIES
@@ -2479,284 +2479,191 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-iot2::Trace_strategy = st.builds(
-    iot2::Trace,
-)
-IntegerExpression_strategy = st.builds(
-    IntegerExpression,
-)
-iot2::IntegerComparisonExpression_strategy = st.builds(
-    iot2::IntegerComparisonExpression,
-    operator=
-        safe_text
-)
-iot2::IntegerCalculationExpression_strategy = st.builds(
-    iot2::IntegerCalculationExpression,
-    operator=
-        safe_text
-)
-iot2::Token_strategy = st.builds(
-    iot2::Token,
-)
-iot2::Input_strategy = st.builds(
-    iot2::Input,
-)
-iot2::InputValue_strategy = st.builds(
-    iot2::InputValue,
-)
-BooleanExpression_strategy = st.builds(
-    BooleanExpression,
-)
-iot2::BooleanBinaryExpression_strategy = st.builds(
-    iot2::BooleanBinaryExpression,
-    operator=
-        safe_text
-)
-iot2::BooleanUnaryExpression_strategy = st.builds(
-    iot2::BooleanUnaryExpression,
-    operator=
-        safe_text
-)
-Action_strategy = st.builds(
-    Action,
-)
-iot2::OpaqueAction_strategy = st.builds(
-    iot2::OpaqueAction,
-)
-ExecutableNode_strategy = st.builds(
-    ExecutableNode,
-)
-iot2::Action_strategy = st.builds(
-    iot2::Action,
-)
-ActivityNode_strategy = st.builds(
-    ActivityNode,
-)
-iot2::ExecutableNode_strategy = st.builds(
-    iot2::ExecutableNode,
-)
-iot2::ControlNode_strategy = st.builds(
-    iot2::ControlNode,
-)
-ActivityEdge_strategy = st.builds(
-    ActivityEdge,
-)
-iot2::ControlFlow_strategy = st.builds(
-    iot2::ControlFlow,
-)
-Value_strategy = st.builds(
-    Value,
-)
-iot2::IntegerValue_strategy = st.builds(
-    iot2::IntegerValue,
-    value=
-        st.integers()
-)
-iot2::BooleanValue_strategy = st.builds(
-    iot2::BooleanValue,
-    value=
-        st.booleans()
-)
-Variable_strategy = st.builds(
-    Variable,
-)
-iot2::BooleanVariable_strategy = st.builds(
-    iot2::BooleanVariable,
-)
-iot2::IntegerVariable_strategy = st.builds(
-    iot2::IntegerVariable,
-)
-iot2::Value_strategy = st.builds(
-    iot2::Value,
+iot2_Value_strategy = st.builds(
+    iot2_Value,
 )
 FinalNode_strategy = st.builds(
     FinalNode,
 )
-iot2::ActivityFinalNode_strategy = st.builds(
-    iot2::ActivityFinalNode,
+iot2_ActivityFinalNode_strategy = st.builds(
+    iot2_ActivityFinalNode,
 )
 ControlNode_strategy = st.builds(
     ControlNode,
 )
-iot2::FinalNode_strategy = st.builds(
-    iot2::FinalNode,
+iot2_FinalNode_strategy = st.builds(
+    iot2_FinalNode,
 )
-iot2::DecisionNode_strategy = st.builds(
-    iot2::DecisionNode,
+iot2_ForkNode_strategy = st.builds(
+    iot2_ForkNode,
 )
-iot2::ForkNode_strategy = st.builds(
-    iot2::ForkNode,
+iot2_MergeNode_strategy = st.builds(
+    iot2_MergeNode,
 )
-iot2::JoinNode_strategy = st.builds(
-    iot2::JoinNode,
+iot2_DecisionNode_strategy = st.builds(
+    iot2_DecisionNode,
 )
-iot2::MergeNode_strategy = st.builds(
-    iot2::MergeNode,
+iot2_JoinNode_strategy = st.builds(
+    iot2_JoinNode,
 )
-iot2::InitialNode_strategy = st.builds(
-    iot2::InitialNode,
+iot2_InitialNode_strategy = st.builds(
+    iot2_InitialNode,
 )
 Expression_strategy = st.builds(
     Expression,
 )
-iot2::Expression::Multiplication_strategy = st.builds(
-    iot2::Expression::Multiplication,
+iot2_Expression_CallMemberFunction_strategy = st.builds(
+    iot2_Expression_CallMemberFunction,
+    memberFunctionName=
+        safe_text
 )
-iot2::Expression::Minus_strategy = st.builds(
-    iot2::Expression::Minus,
+iot2_Expression_Exponentiation_strategy = st.builds(
+    iot2_Expression_Exponentiation,
 )
-iot2::Expression::Larger_strategy = st.builds(
-    iot2::Expression::Larger,
+iot2_Expression_Equal_strategy = st.builds(
+    iot2_Expression_Equal,
 )
-iot2::IntegerExpression_strategy = st.builds(
-    iot2::IntegerExpression,
+iot2_Expression_AccessArray_strategy = st.builds(
+    iot2_Expression_AccessArray,
 )
-iot2::Expression::False_strategy = st.builds(
-    iot2::Expression::False,
+iot2_Expression_String_strategy = st.builds(
+    iot2_Expression_String,
+    value=
+        safe_text
 )
-iot2::Expression::True_strategy = st.builds(
-    iot2::Expression::True,
+iot2_Expression_Smaller_Equal_strategy = st.builds(
+    iot2_Expression_Smaller_Equal,
 )
-iot2::Expression::Negate_strategy = st.builds(
-    iot2::Expression::Negate,
+iot2_Expression_Negate_strategy = st.builds(
+    iot2_Expression_Negate,
 )
-iot2::Expression::Larger::Equal_strategy = st.builds(
-    iot2::Expression::Larger::Equal,
+iot2_Expression_Plus_strategy = st.builds(
+    iot2_Expression_Plus,
 )
-iot2::Expression::Function_strategy = st.builds(
-    iot2::Expression::Function,
+iot2_Expression_Or_strategy = st.builds(
+    iot2_Expression_Or,
 )
-iot2::BooleanExpression_strategy = st.builds(
-    iot2::BooleanExpression,
+iot2_Expression_CallFunction_strategy = st.builds(
+    iot2_Expression_CallFunction,
 )
-iot2::Expression::Number_strategy = st.builds(
-    iot2::Expression::Number,
+iot2_Expression_Not_Equal_strategy = st.builds(
+    iot2_Expression_Not_Equal,
+)
+iot2_Expression_Division_strategy = st.builds(
+    iot2_Expression_Division,
+)
+iot2_Expression_Smaller_strategy = st.builds(
+    iot2_Expression_Smaller,
+)
+iot2_Expression_Length_strategy = st.builds(
+    iot2_Expression_Length,
+)
+iot2_Expression_Larger_Equal_strategy = st.builds(
+    iot2_Expression_Larger_Equal,
+)
+iot2_Expression_Modulo_strategy = st.builds(
+    iot2_Expression_Modulo,
+)
+iot2_Expression_Number_strategy = st.builds(
+    iot2_Expression_Number,
     value=
         st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False)
 )
-iot2::Expression::CallMemberFunction_strategy = st.builds(
-    iot2::Expression::CallMemberFunction,
-    memberFunctionName=
-        safe_text
+iot2_Expression_Invert_strategy = st.builds(
+    iot2_Expression_Invert,
 )
-iot2::Expression::AccessArray_strategy = st.builds(
-    iot2::Expression::AccessArray,
+iot2_Expression_Multiplication_strategy = st.builds(
+    iot2_Expression_Multiplication,
 )
-iot2::Expression::VariableName_strategy = st.builds(
-    iot2::Expression::VariableName,
-    variable=
-        safe_text
+iot2_Expression_Concatenation_strategy = st.builds(
+    iot2_Expression_Concatenation,
 )
-iot2::Expression::Equal_strategy = st.builds(
-    iot2::Expression::Equal,
-)
-iot2::Expression::Division_strategy = st.builds(
-    iot2::Expression::Division,
-)
-iot2::Expression::Smaller::Equal_strategy = st.builds(
-    iot2::Expression::Smaller::Equal,
-)
-iot2::Expression::Not::Equal_strategy = st.builds(
-    iot2::Expression::Not::Equal,
-)
-iot2::Expression::Or_strategy = st.builds(
-    iot2::Expression::Or,
-)
-iot2::Expression::AccessMember_strategy = st.builds(
-    iot2::Expression::AccessMember,
+iot2_Expression_AccessMember_strategy = st.builds(
+    iot2_Expression_AccessMember,
     memberName=
         safe_text
 )
-iot2::Expression::Smaller_strategy = st.builds(
-    iot2::Expression::Smaller,
+iot2_Expression_And_strategy = st.builds(
+    iot2_Expression_And,
 )
-iot2::Expression::Exponentiation_strategy = st.builds(
-    iot2::Expression::Exponentiation,
+iot2_Expression_VarArgs_strategy = st.builds(
+    iot2_Expression_VarArgs,
 )
-iot2::Expression::Length_strategy = st.builds(
-    iot2::Expression::Length,
+iot2_Expression_True_strategy = st.builds(
+    iot2_Expression_True,
 )
-iot2::Expression::Concatenation_strategy = st.builds(
-    iot2::Expression::Concatenation,
+iot2_Expression_Function_strategy = st.builds(
+    iot2_Expression_Function,
 )
-iot2::Expression::Modulo_strategy = st.builds(
-    iot2::Expression::Modulo,
+iot2_Expression_False_strategy = st.builds(
+    iot2_Expression_False,
 )
-iot2::Expression::VarArgs_strategy = st.builds(
-    iot2::Expression::VarArgs,
-)
-iot2::Expression::And_strategy = st.builds(
-    iot2::Expression::And,
-)
-iot2::Expression::Plus_strategy = st.builds(
-    iot2::Expression::Plus,
-)
-iot2::Expression::String_strategy = st.builds(
-    iot2::Expression::String,
-    value=
+iot2_Expression_VariableName_strategy = st.builds(
+    iot2_Expression_VariableName,
+    variable=
         safe_text
 )
-iot2::Expression::Invert_strategy = st.builds(
-    iot2::Expression::Invert,
+iot2_Expression_Larger_strategy = st.builds(
+    iot2_Expression_Larger,
 )
-iot2::Expression::CallFunction_strategy = st.builds(
-    iot2::Expression::CallFunction,
+iot2_Expression_Minus_strategy = st.builds(
+    iot2_Expression_Minus,
 )
-iot2::Expression::Nil_strategy = st.builds(
-    iot2::Expression::Nil,
+iot2_Expression_Nil_strategy = st.builds(
+    iot2_Expression_Nil,
 )
-Statement::FunctioncallOrAssignment_strategy = st.builds(
-    Statement::FunctioncallOrAssignment,
+Statement_FunctioncallOrAssignment_strategy = st.builds(
+    Statement_FunctioncallOrAssignment,
 )
-iot2::Statement::CallFunction_strategy = st.builds(
-    iot2::Statement::CallFunction,
-)
-iot2::Statement::CallMemberFunction_strategy = st.builds(
-    iot2::Statement::CallMemberFunction,
+iot2_Statement_CallMemberFunction_strategy = st.builds(
+    iot2_Statement_CallMemberFunction,
     memberFunctionName=
         safe_text
 )
-iot2::Statement::Assignment_strategy = st.builds(
-    iot2::Statement::Assignment,
+iot2_Statement_CallFunction_strategy = st.builds(
+    iot2_Statement_CallFunction,
 )
-LastStatement::Return_strategy = st.builds(
-    LastStatement::Return,
+iot2_Statement_Assignment_strategy = st.builds(
+    iot2_Statement_Assignment,
 )
-iot2::LastStatement::ReturnWithValue_strategy = st.builds(
-    iot2::LastStatement::ReturnWithValue,
+LastStatement_Return_strategy = st.builds(
+    LastStatement_Return,
+)
+iot2_LastStatement_ReturnWithValue_strategy = st.builds(
+    iot2_LastStatement_ReturnWithValue,
 )
 Field_strategy = st.builds(
     Field,
 )
-iot2::Field::AppendEntryToTable_strategy = st.builds(
-    iot2::Field::AppendEntryToTable,
-)
-iot2::Field::AddEntryToTable_strategy = st.builds(
-    iot2::Field::AddEntryToTable,
+iot2_Field_AddEntryToTable_strategy = st.builds(
+    iot2_Field_AddEntryToTable,
     key=
         safe_text
 )
-iot2::Field::AddEntryToTable::Brackets_strategy = st.builds(
-    iot2::Field::AddEntryToTable::Brackets,
+iot2_Field_AppendEntryToTable_strategy = st.builds(
+    iot2_Field_AppendEntryToTable,
 )
-iot2::Functioncall::Arguments_strategy = st.builds(
-    iot2::Functioncall::Arguments,
+iot2_Field_AddEntryToTable_Brackets_strategy = st.builds(
+    iot2_Field_AddEntryToTable_Brackets,
 )
-iot2::Expression::TableConstructor_strategy = st.builds(
-    iot2::Expression::TableConstructor,
+iot2_Functioncall_Arguments_strategy = st.builds(
+    iot2_Functioncall_Arguments,
 )
-iot2::Statement::If::Then::Else::ElseIfPart_strategy = st.builds(
-    iot2::Statement::If::Then::Else::ElseIfPart,
+iot2_Expression_TableConstructor_strategy = st.builds(
+    iot2_Expression_TableConstructor,
 )
-iot2::Function_strategy = st.builds(
-    iot2::Function,
+iot2_Statement_If_Then_Else_ElseIfPart_strategy = st.builds(
+    iot2_Statement_If_Then_Else_ElseIfPart,
+)
+iot2_Function_strategy = st.builds(
+    iot2_Function,
     varArgs=
         st.booleans(),
     parameters=
         safe_text
 )
-iot2::Expression_strategy = st.builds(
-    iot2::Expression,
+iot2_Expression_strategy = st.builds(
+    iot2_Expression,
 )
 IDLType_strategy = st.builds(
     IDLType,
@@ -2764,84 +2671,84 @@ IDLType_strategy = st.builds(
 Statement_strategy = st.builds(
     Statement,
 )
-iot2::Statement::Local::Variable::Declaration_strategy = st.builds(
-    iot2::Statement::Local::Variable::Declaration,
-    variableNames=
-        safe_text
+iot2_Statement_Repeat_strategy = st.builds(
+    iot2_Statement_Repeat,
 )
-iot2::Statement::If::Then::Else_strategy = st.builds(
-    iot2::Statement::If::Then::Else,
+iot2_Statement_FunctioncallOrAssignment_strategy = st.builds(
+    iot2_Statement_FunctioncallOrAssignment,
 )
-iot2::Statement::LocalFunction::Declaration_strategy = st.builds(
-    iot2::Statement::LocalFunction::Declaration,
-    functionName=
-        safe_text
-)
-iot2::Statement::For::Numeric_strategy = st.builds(
-    iot2::Statement::For::Numeric,
-    iteratorName=
-        safe_text
-)
-iot2::Statement::FunctioncallOrAssignment_strategy = st.builds(
-    iot2::Statement::FunctioncallOrAssignment,
-)
-iot2::Statement::Repeat_strategy = st.builds(
-    iot2::Statement::Repeat,
-)
-iot2::Statement::While_strategy = st.builds(
-    iot2::Statement::While,
-)
-iot2::Statement::GlobalFunction::Declaration_strategy = st.builds(
-    iot2::Statement::GlobalFunction::Declaration,
-    functionName=
-        safe_text,
-    prefix=
-        safe_text
-)
-iot2::Statement::For::Generic_strategy = st.builds(
-    iot2::Statement::For::Generic,
+iot2_Statement_For_Generic_strategy = st.builds(
+    iot2_Statement_For_Generic,
     names=
         safe_text
 )
-iot2::Statement::Block_strategy = st.builds(
-    iot2::Statement::Block,
+iot2_Statement_Local_Variable_Declaration_strategy = st.builds(
+    iot2_Statement_Local_Variable_Declaration,
+    variableNames=
+        safe_text
+)
+iot2_Statement_LocalFunction_Declaration_strategy = st.builds(
+    iot2_Statement_LocalFunction_Declaration,
+    functionName=
+        safe_text
+)
+iot2_Statement_While_strategy = st.builds(
+    iot2_Statement_While,
+)
+iot2_Statement_GlobalFunction_Declaration_strategy = st.builds(
+    iot2_Statement_GlobalFunction_Declaration,
+    prefix=
+        safe_text,
+    functionName=
+        safe_text
+)
+iot2_Statement_For_Numeric_strategy = st.builds(
+    iot2_Statement_For_Numeric,
+    iteratorName=
+        safe_text
+)
+iot2_Statement_If_Then_Else_strategy = st.builds(
+    iot2_Statement_If_Then_Else,
+)
+iot2_Statement_Block_strategy = st.builds(
+    iot2_Statement_Block,
 )
 LastStatement_strategy = st.builds(
     LastStatement,
 )
-iot2::LastStatement::Break_strategy = st.builds(
-    iot2::LastStatement::Break,
+iot2_LastStatement_Break_strategy = st.builds(
+    iot2_LastStatement_Break,
 )
-iot2::LastStatement::Return_strategy = st.builds(
-    iot2::LastStatement::Return,
+iot2_LastStatement_Return_strategy = st.builds(
+    iot2_LastStatement_Return,
 )
-iot2::LastStatement_strategy = st.builds(
-    iot2::LastStatement,
+iot2_LastStatement_strategy = st.builds(
+    iot2_LastStatement,
 )
-iot2::Statement_strategy = st.builds(
-    iot2::Statement,
+iot2_Statement_strategy = st.builds(
+    iot2_Statement,
 )
 Chunk_strategy = st.builds(
     Chunk,
 )
-iot2::Chunk_strategy = st.builds(
-    iot2::Chunk,
+iot2_Chunk_strategy = st.builds(
+    iot2_Chunk,
 )
-iot2::PrimitiveDef_strategy = st.builds(
-    iot2::PrimitiveDef,
+iot2_PrimitiveDef_strategy = st.builds(
+    iot2_PrimitiveDef,
     kind=
         safe_text
 )
 Typed_strategy = st.builds(
     Typed,
 )
-iot2::Field_strategy = st.builds(
-    iot2::Field,
+iot2_Field_strategy = st.builds(
+    iot2_Field,
     identifier=
         safe_text
 )
-iot2::ParameterDef_strategy = st.builds(
-    iot2::ParameterDef,
+iot2_ParameterDef_strategy = st.builds(
+    iot2_ParameterDef,
     direction=
         safe_text,
     identifier=
@@ -2850,679 +2757,544 @@ iot2::ParameterDef_strategy = st.builds(
 Contained_strategy = st.builds(
     Contained,
 )
-iot2::Variable_strategy = st.builds(
-    iot2::Variable,
+iot2_Variable_strategy = st.builds(
+    iot2_Variable,
     name=
         safe_text
 )
 NamedElement_strategy = st.builds(
     NamedElement,
 )
-iot2::ActivityNode_strategy = st.builds(
-    iot2::ActivityNode,
+iot2_ActivityNode_strategy = st.builds(
+    iot2_ActivityNode,
     running=
         st.booleans()
 )
-iot2::ActivityEdge_strategy = st.builds(
-    iot2::ActivityEdge,
+iot2_ActivityEdge_strategy = st.builds(
+    iot2_ActivityEdge,
 )
-iot2::TypedefDef_strategy = st.builds(
-    iot2::TypedefDef,
+iot2_TypedefDef_strategy = st.builds(
+    iot2_TypedefDef,
 )
-iot2::IDLType_strategy = st.builds(
-    iot2::IDLType,
+iot2_IDLType_strategy = st.builds(
+    iot2_IDLType,
     typeCode=
         safe_text
 )
-iot2::Typed_strategy = st.builds(
-    iot2::Typed,
+iot2_Typed_strategy = st.builds(
+    iot2_Typed,
 )
-iot2::NamedElement_strategy = st.builds(
-    iot2::NamedElement,
-    identifier=
-        safe_text,
+iot2_NamedElement_strategy = st.builds(
+    iot2_NamedElement,
     name=
+        safe_text,
+    identifier=
         safe_text
 )
-iot2::Container_strategy = st.builds(
-    iot2::Container,
+iot2_Container_strategy = st.builds(
+    iot2_Container,
 )
-iot2::Contained_strategy = st.builds(
-    iot2::Contained,
-    version=
+iot2_Contained_strategy = st.builds(
+    iot2_Contained,
+    repositoryId=
         safe_text,
     absoluteName=
         safe_text,
-    repositoryId=
+    version=
         safe_text
 )
-iot2::Block_strategy = st.builds(
-    iot2::Block,
+iot2_Block_strategy = st.builds(
+    iot2_Block,
 )
-iot2::ExceptionDef_strategy = st.builds(
-    iot2::ExceptionDef,
+iot2_ExceptionDef_strategy = st.builds(
+    iot2_ExceptionDef,
     typeCode=
         safe_text
 )
 HWComponent_strategy = st.builds(
     HWComponent,
 )
-iot2::Actuator_strategy = st.builds(
-    iot2::Actuator,
+iot2_Actuator_strategy = st.builds(
+    iot2_Actuator,
 )
-iot2::Sensor_strategy = st.builds(
-    iot2::Sensor,
+iot2_Sensor_strategy = st.builds(
+    iot2_Sensor,
 )
-iot2::OperationDef_strategy = st.builds(
-    iot2::OperationDef,
+iot2_OperationDef_strategy = st.builds(
+    iot2_OperationDef,
     isOneway=
         st.booleans(),
     contexts=
         safe_text
 )
-iot2::Activity_strategy = st.builds(
-    iot2::Activity,
+iot2_Activity_strategy = st.builds(
+    iot2_Activity,
 )
-iot2::Sketch_strategy = st.builds(
-    iot2::Sketch,
+iot2_Sketch_strategy = st.builds(
+    iot2_Sketch,
 )
-iot2::Board_strategy = st.builds(
-    iot2::Board,
+iot2_Board_strategy = st.builds(
+    iot2_Board,
     type=
         safe_text,
     name=
         safe_text
 )
-iot2::HWComponent_strategy = st.builds(
-    iot2::HWComponent,
+iot2_HWComponent_strategy = st.builds(
+    iot2_HWComponent,
     name=
         safe_text
 )
-iot2::System_strategy = st.builds(
-    iot2::System,
+iot2_System_strategy = st.builds(
+    iot2_System,
     name=
         safe_text
 )
+iot2_Trace_strategy = st.builds(
+    iot2_Trace,
+)
+IntegerExpression_strategy = st.builds(
+    IntegerExpression,
+)
+iot2_IntegerComparisonExpression_strategy = st.builds(
+    iot2_IntegerComparisonExpression,
+    operator=
+        safe_text
+)
+iot2_IntegerCalculationExpression_strategy = st.builds(
+    iot2_IntegerCalculationExpression,
+    operator=
+        safe_text
+)
+iot2_BooleanExpression_strategy = st.builds(
+    iot2_BooleanExpression,
+)
+iot2_Token_strategy = st.builds(
+    iot2_Token,
+)
+iot2_Input_strategy = st.builds(
+    iot2_Input,
+)
+iot2_InputValue_strategy = st.builds(
+    iot2_InputValue,
+)
+BooleanExpression_strategy = st.builds(
+    BooleanExpression,
+)
+iot2_BooleanBinaryExpression_strategy = st.builds(
+    iot2_BooleanBinaryExpression,
+    operator=
+        safe_text
+)
+iot2_BooleanUnaryExpression_strategy = st.builds(
+    iot2_BooleanUnaryExpression,
+    operator=
+        safe_text
+)
+Action_strategy = st.builds(
+    Action,
+)
+iot2_OpaqueAction_strategy = st.builds(
+    iot2_OpaqueAction,
+)
+ExecutableNode_strategy = st.builds(
+    ExecutableNode,
+)
+iot2_Action_strategy = st.builds(
+    iot2_Action,
+)
+ActivityNode_strategy = st.builds(
+    ActivityNode,
+)
+iot2_ExecutableNode_strategy = st.builds(
+    iot2_ExecutableNode,
+)
+iot2_ControlNode_strategy = st.builds(
+    iot2_ControlNode,
+)
+ActivityEdge_strategy = st.builds(
+    ActivityEdge,
+)
+iot2_ControlFlow_strategy = st.builds(
+    iot2_ControlFlow,
+)
+iot2_IntegerExpression_strategy = st.builds(
+    iot2_IntegerExpression,
+)
+Value_strategy = st.builds(
+    Value,
+)
+iot2_IntegerValue_strategy = st.builds(
+    iot2_IntegerValue,
+    value=
+        st.integers()
+)
+iot2_BooleanValue_strategy = st.builds(
+    iot2_BooleanValue,
+    value=
+        st.booleans()
+)
+Variable_strategy = st.builds(
+    Variable,
+)
+iot2_BooleanVariable_strategy = st.builds(
+    iot2_BooleanVariable,
+)
+iot2_IntegerVariable_strategy = st.builds(
+    iot2_IntegerVariable,
+)
 
-@given(instance=iot2::Trace_strategy)
+@given(instance=iot2_Value_strategy)
 @settings(max_examples=50)
-def test_iot2::trace_instantiation(instance):
-    assert isinstance(instance, iot2::Trace)
-
-@given(instance=IntegerExpression_strategy)
-@settings(max_examples=50)
-def test_integerexpression_instantiation(instance):
-    assert isinstance(instance, IntegerExpression)
-
-@given(instance=iot2::IntegerComparisonExpression_strategy)
-@settings(max_examples=50)
-def test_iot2::integercomparisonexpression_instantiation(instance):
-    assert isinstance(instance, iot2::IntegerComparisonExpression)
-
-@given(instance=iot2::IntegerComparisonExpression_strategy)
-def test_iot2::integercomparisonexpression_operator_type(instance):
-    assert isinstance(instance.operator, str)
-
-
-@given(instance=iot2::IntegerComparisonExpression_strategy)
-def test_iot2::integercomparisonexpression_operator_setter(instance):
-    original = instance.operator
-    instance.operator = original
-    assert instance.operator == original
-
-@given(instance=iot2::IntegerCalculationExpression_strategy)
-@settings(max_examples=50)
-def test_iot2::integercalculationexpression_instantiation(instance):
-    assert isinstance(instance, iot2::IntegerCalculationExpression)
-
-@given(instance=iot2::IntegerCalculationExpression_strategy)
-def test_iot2::integercalculationexpression_operator_type(instance):
-    assert isinstance(instance.operator, str)
-
-
-@given(instance=iot2::IntegerCalculationExpression_strategy)
-def test_iot2::integercalculationexpression_operator_setter(instance):
-    original = instance.operator
-    instance.operator = original
-    assert instance.operator == original
-
-@given(instance=iot2::Token_strategy)
-@settings(max_examples=50)
-def test_iot2::token_instantiation(instance):
-    assert isinstance(instance, iot2::Token)
-
-@given(instance=iot2::Input_strategy)
-@settings(max_examples=50)
-def test_iot2::input_instantiation(instance):
-    assert isinstance(instance, iot2::Input)
-
-@given(instance=iot2::InputValue_strategy)
-@settings(max_examples=50)
-def test_iot2::inputvalue_instantiation(instance):
-    assert isinstance(instance, iot2::InputValue)
-
-@given(instance=BooleanExpression_strategy)
-@settings(max_examples=50)
-def test_booleanexpression_instantiation(instance):
-    assert isinstance(instance, BooleanExpression)
-
-@given(instance=iot2::BooleanBinaryExpression_strategy)
-@settings(max_examples=50)
-def test_iot2::booleanbinaryexpression_instantiation(instance):
-    assert isinstance(instance, iot2::BooleanBinaryExpression)
-
-@given(instance=iot2::BooleanBinaryExpression_strategy)
-def test_iot2::booleanbinaryexpression_operator_type(instance):
-    assert isinstance(instance.operator, str)
-
-
-@given(instance=iot2::BooleanBinaryExpression_strategy)
-def test_iot2::booleanbinaryexpression_operator_setter(instance):
-    original = instance.operator
-    instance.operator = original
-    assert instance.operator == original
-
-@given(instance=iot2::BooleanUnaryExpression_strategy)
-@settings(max_examples=50)
-def test_iot2::booleanunaryexpression_instantiation(instance):
-    assert isinstance(instance, iot2::BooleanUnaryExpression)
-
-@given(instance=iot2::BooleanUnaryExpression_strategy)
-def test_iot2::booleanunaryexpression_operator_type(instance):
-    assert isinstance(instance.operator, str)
-
-
-@given(instance=iot2::BooleanUnaryExpression_strategy)
-def test_iot2::booleanunaryexpression_operator_setter(instance):
-    original = instance.operator
-    instance.operator = original
-    assert instance.operator == original
-
-@given(instance=Action_strategy)
-@settings(max_examples=50)
-def test_action_instantiation(instance):
-    assert isinstance(instance, Action)
-
-@given(instance=iot2::OpaqueAction_strategy)
-@settings(max_examples=50)
-def test_iot2::opaqueaction_instantiation(instance):
-    assert isinstance(instance, iot2::OpaqueAction)
-
-@given(instance=ExecutableNode_strategy)
-@settings(max_examples=50)
-def test_executablenode_instantiation(instance):
-    assert isinstance(instance, ExecutableNode)
-
-@given(instance=iot2::Action_strategy)
-@settings(max_examples=50)
-def test_iot2::action_instantiation(instance):
-    assert isinstance(instance, iot2::Action)
-
-@given(instance=ActivityNode_strategy)
-@settings(max_examples=50)
-def test_activitynode_instantiation(instance):
-    assert isinstance(instance, ActivityNode)
-
-@given(instance=iot2::ExecutableNode_strategy)
-@settings(max_examples=50)
-def test_iot2::executablenode_instantiation(instance):
-    assert isinstance(instance, iot2::ExecutableNode)
-
-@given(instance=iot2::ControlNode_strategy)
-@settings(max_examples=50)
-def test_iot2::controlnode_instantiation(instance):
-    assert isinstance(instance, iot2::ControlNode)
-
-@given(instance=ActivityEdge_strategy)
-@settings(max_examples=50)
-def test_activityedge_instantiation(instance):
-    assert isinstance(instance, ActivityEdge)
-
-@given(instance=iot2::ControlFlow_strategy)
-@settings(max_examples=50)
-def test_iot2::controlflow_instantiation(instance):
-    assert isinstance(instance, iot2::ControlFlow)
-
-@given(instance=Value_strategy)
-@settings(max_examples=50)
-def test_value_instantiation(instance):
-    assert isinstance(instance, Value)
-
-@given(instance=iot2::IntegerValue_strategy)
-@settings(max_examples=50)
-def test_iot2::integervalue_instantiation(instance):
-    assert isinstance(instance, iot2::IntegerValue)
-
-@given(instance=iot2::IntegerValue_strategy)
-def test_iot2::integervalue_value_type(instance):
-    assert isinstance(instance.value, int)
-
-
-@given(instance=iot2::IntegerValue_strategy)
-def test_iot2::integervalue_value_setter(instance):
-    original = instance.value
-    instance.value = original
-    assert instance.value == original
-
-@given(instance=iot2::BooleanValue_strategy)
-@settings(max_examples=50)
-def test_iot2::booleanvalue_instantiation(instance):
-    assert isinstance(instance, iot2::BooleanValue)
-
-@given(instance=iot2::BooleanValue_strategy)
-def test_iot2::booleanvalue_value_type(instance):
-    assert isinstance(instance.value, bool)
-
-
-@given(instance=iot2::BooleanValue_strategy)
-def test_iot2::booleanvalue_value_setter(instance):
-    original = instance.value
-    instance.value = original
-    assert instance.value == original
-
-@given(instance=Variable_strategy)
-@settings(max_examples=50)
-def test_variable_instantiation(instance):
-    assert isinstance(instance, Variable)
-
-@given(instance=iot2::BooleanVariable_strategy)
-@settings(max_examples=50)
-def test_iot2::booleanvariable_instantiation(instance):
-    assert isinstance(instance, iot2::BooleanVariable)
-
-@given(instance=iot2::IntegerVariable_strategy)
-@settings(max_examples=50)
-def test_iot2::integervariable_instantiation(instance):
-    assert isinstance(instance, iot2::IntegerVariable)
-
-@given(instance=iot2::Value_strategy)
-@settings(max_examples=50)
-def test_iot2::value_instantiation(instance):
-    assert isinstance(instance, iot2::Value)
+def test_iot2_value_instantiation(instance):
+    assert isinstance(instance, iot2_Value)
 
 @given(instance=FinalNode_strategy)
 @settings(max_examples=50)
 def test_finalnode_instantiation(instance):
     assert isinstance(instance, FinalNode)
 
-@given(instance=iot2::ActivityFinalNode_strategy)
+@given(instance=iot2_ActivityFinalNode_strategy)
 @settings(max_examples=50)
-def test_iot2::activityfinalnode_instantiation(instance):
-    assert isinstance(instance, iot2::ActivityFinalNode)
+def test_iot2_activityfinalnode_instantiation(instance):
+    assert isinstance(instance, iot2_ActivityFinalNode)
 
 @given(instance=ControlNode_strategy)
 @settings(max_examples=50)
 def test_controlnode_instantiation(instance):
     assert isinstance(instance, ControlNode)
 
-@given(instance=iot2::FinalNode_strategy)
+@given(instance=iot2_FinalNode_strategy)
 @settings(max_examples=50)
-def test_iot2::finalnode_instantiation(instance):
-    assert isinstance(instance, iot2::FinalNode)
+def test_iot2_finalnode_instantiation(instance):
+    assert isinstance(instance, iot2_FinalNode)
 
-@given(instance=iot2::DecisionNode_strategy)
+@given(instance=iot2_ForkNode_strategy)
 @settings(max_examples=50)
-def test_iot2::decisionnode_instantiation(instance):
-    assert isinstance(instance, iot2::DecisionNode)
+def test_iot2_forknode_instantiation(instance):
+    assert isinstance(instance, iot2_ForkNode)
 
-@given(instance=iot2::ForkNode_strategy)
+@given(instance=iot2_MergeNode_strategy)
 @settings(max_examples=50)
-def test_iot2::forknode_instantiation(instance):
-    assert isinstance(instance, iot2::ForkNode)
+def test_iot2_mergenode_instantiation(instance):
+    assert isinstance(instance, iot2_MergeNode)
 
-@given(instance=iot2::JoinNode_strategy)
+@given(instance=iot2_DecisionNode_strategy)
 @settings(max_examples=50)
-def test_iot2::joinnode_instantiation(instance):
-    assert isinstance(instance, iot2::JoinNode)
+def test_iot2_decisionnode_instantiation(instance):
+    assert isinstance(instance, iot2_DecisionNode)
 
-@given(instance=iot2::MergeNode_strategy)
+@given(instance=iot2_JoinNode_strategy)
 @settings(max_examples=50)
-def test_iot2::mergenode_instantiation(instance):
-    assert isinstance(instance, iot2::MergeNode)
+def test_iot2_joinnode_instantiation(instance):
+    assert isinstance(instance, iot2_JoinNode)
 
-@given(instance=iot2::InitialNode_strategy)
+@given(instance=iot2_InitialNode_strategy)
 @settings(max_examples=50)
-def test_iot2::initialnode_instantiation(instance):
-    assert isinstance(instance, iot2::InitialNode)
+def test_iot2_initialnode_instantiation(instance):
+    assert isinstance(instance, iot2_InitialNode)
 
 @given(instance=Expression_strategy)
 @settings(max_examples=50)
 def test_expression_instantiation(instance):
     assert isinstance(instance, Expression)
 
-@given(instance=iot2::Expression::Multiplication_strategy)
+@given(instance=iot2_Expression_CallMemberFunction_strategy)
 @settings(max_examples=50)
-def test_iot2::expression::multiplication_instantiation(instance):
-    assert isinstance(instance, iot2::Expression::Multiplication)
-
-@given(instance=iot2::Expression::Minus_strategy)
-@settings(max_examples=50)
-def test_iot2::expression::minus_instantiation(instance):
-    assert isinstance(instance, iot2::Expression::Minus)
-
-@given(instance=iot2::Expression::Larger_strategy)
-@settings(max_examples=50)
-def test_iot2::expression::larger_instantiation(instance):
-    assert isinstance(instance, iot2::Expression::Larger)
-
-@given(instance=iot2::IntegerExpression_strategy)
-@settings(max_examples=50)
-def test_iot2::integerexpression_instantiation(instance):
-    assert isinstance(instance, iot2::IntegerExpression)
-
-@given(instance=iot2::Expression::False_strategy)
-@settings(max_examples=50)
-def test_iot2::expression::false_instantiation(instance):
-    assert isinstance(instance, iot2::Expression::False)
-
-@given(instance=iot2::Expression::True_strategy)
-@settings(max_examples=50)
-def test_iot2::expression::true_instantiation(instance):
-    assert isinstance(instance, iot2::Expression::True)
-
-@given(instance=iot2::Expression::Negate_strategy)
-@settings(max_examples=50)
-def test_iot2::expression::negate_instantiation(instance):
-    assert isinstance(instance, iot2::Expression::Negate)
-
-@given(instance=iot2::Expression::Larger::Equal_strategy)
-@settings(max_examples=50)
-def test_iot2::expression::larger::equal_instantiation(instance):
-    assert isinstance(instance, iot2::Expression::Larger::Equal)
-
-@given(instance=iot2::Expression::Function_strategy)
-@settings(max_examples=50)
-def test_iot2::expression::function_instantiation(instance):
-    assert isinstance(instance, iot2::Expression::Function)
-
-@given(instance=iot2::BooleanExpression_strategy)
-@settings(max_examples=50)
-def test_iot2::booleanexpression_instantiation(instance):
-    assert isinstance(instance, iot2::BooleanExpression)
-
-@given(instance=iot2::Expression::Number_strategy)
-@settings(max_examples=50)
-def test_iot2::expression::number_instantiation(instance):
-    assert isinstance(instance, iot2::Expression::Number)
-
-@given(instance=iot2::Expression::Number_strategy)
-def test_iot2::expression::number_value_type(instance):
-    assert isinstance(instance.value, float)
+def test_iot2_expression_callmemberfunction_instantiation(instance):
+    assert isinstance(instance, iot2_Expression_CallMemberFunction)
 
 
-@given(instance=iot2::Expression::Number_strategy)
-def test_iot2::expression::number_value_setter(instance):
-    original = instance.value
-    instance.value = original
-    assert instance.value == original
 
-@given(instance=iot2::Expression::CallMemberFunction_strategy)
-@settings(max_examples=50)
-def test_iot2::expression::callmemberfunction_instantiation(instance):
-    assert isinstance(instance, iot2::Expression::CallMemberFunction)
-
-@given(instance=iot2::Expression::CallMemberFunction_strategy)
-def test_iot2::expression::callmemberfunction_memberFunctionName_type(instance):
-    assert isinstance(instance.memberFunctionName, str)
-
-
-@given(instance=iot2::Expression::CallMemberFunction_strategy)
-def test_iot2::expression::callmemberfunction_memberFunctionName_setter(instance):
+@given(instance=iot2_Expression_CallMemberFunction_strategy)
+def test_iot2_expression_callmemberfunction_memberFunctionName_setter(instance):
     original = instance.memberFunctionName
     instance.memberFunctionName = original
     assert instance.memberFunctionName == original
 
-@given(instance=iot2::Expression::AccessArray_strategy)
+@given(instance=iot2_Expression_Exponentiation_strategy)
 @settings(max_examples=50)
-def test_iot2::expression::accessarray_instantiation(instance):
-    assert isinstance(instance, iot2::Expression::AccessArray)
+def test_iot2_expression_exponentiation_instantiation(instance):
+    assert isinstance(instance, iot2_Expression_Exponentiation)
 
-@given(instance=iot2::Expression::VariableName_strategy)
+@given(instance=iot2_Expression_Equal_strategy)
 @settings(max_examples=50)
-def test_iot2::expression::variablename_instantiation(instance):
-    assert isinstance(instance, iot2::Expression::VariableName)
+def test_iot2_expression_equal_instantiation(instance):
+    assert isinstance(instance, iot2_Expression_Equal)
 
-@given(instance=iot2::Expression::VariableName_strategy)
-def test_iot2::expression::variablename_variable_type(instance):
-    assert isinstance(instance.variable, str)
-
-
-@given(instance=iot2::Expression::VariableName_strategy)
-def test_iot2::expression::variablename_variable_setter(instance):
-    original = instance.variable
-    instance.variable = original
-    assert instance.variable == original
-
-@given(instance=iot2::Expression::Equal_strategy)
+@given(instance=iot2_Expression_AccessArray_strategy)
 @settings(max_examples=50)
-def test_iot2::expression::equal_instantiation(instance):
-    assert isinstance(instance, iot2::Expression::Equal)
+def test_iot2_expression_accessarray_instantiation(instance):
+    assert isinstance(instance, iot2_Expression_AccessArray)
 
-@given(instance=iot2::Expression::Division_strategy)
+@given(instance=iot2_Expression_String_strategy)
 @settings(max_examples=50)
-def test_iot2::expression::division_instantiation(instance):
-    assert isinstance(instance, iot2::Expression::Division)
+def test_iot2_expression_string_instantiation(instance):
+    assert isinstance(instance, iot2_Expression_String)
 
-@given(instance=iot2::Expression::Smaller::Equal_strategy)
+
+
+@given(instance=iot2_Expression_String_strategy)
+def test_iot2_expression_string_value_setter(instance):
+    original = instance.value
+    instance.value = original
+    assert instance.value == original
+
+@given(instance=iot2_Expression_Smaller_Equal_strategy)
 @settings(max_examples=50)
-def test_iot2::expression::smaller::equal_instantiation(instance):
-    assert isinstance(instance, iot2::Expression::Smaller::Equal)
+def test_iot2_expression_smaller_equal_instantiation(instance):
+    assert isinstance(instance, iot2_Expression_Smaller_Equal)
 
-@given(instance=iot2::Expression::Not::Equal_strategy)
+@given(instance=iot2_Expression_Negate_strategy)
 @settings(max_examples=50)
-def test_iot2::expression::not::equal_instantiation(instance):
-    assert isinstance(instance, iot2::Expression::Not::Equal)
+def test_iot2_expression_negate_instantiation(instance):
+    assert isinstance(instance, iot2_Expression_Negate)
 
-@given(instance=iot2::Expression::Or_strategy)
+@given(instance=iot2_Expression_Plus_strategy)
 @settings(max_examples=50)
-def test_iot2::expression::or_instantiation(instance):
-    assert isinstance(instance, iot2::Expression::Or)
+def test_iot2_expression_plus_instantiation(instance):
+    assert isinstance(instance, iot2_Expression_Plus)
 
-@given(instance=iot2::Expression::AccessMember_strategy)
+@given(instance=iot2_Expression_Or_strategy)
 @settings(max_examples=50)
-def test_iot2::expression::accessmember_instantiation(instance):
-    assert isinstance(instance, iot2::Expression::AccessMember)
+def test_iot2_expression_or_instantiation(instance):
+    assert isinstance(instance, iot2_Expression_Or)
 
-@given(instance=iot2::Expression::AccessMember_strategy)
-def test_iot2::expression::accessmember_memberName_type(instance):
-    assert isinstance(instance.memberName, str)
+@given(instance=iot2_Expression_CallFunction_strategy)
+@settings(max_examples=50)
+def test_iot2_expression_callfunction_instantiation(instance):
+    assert isinstance(instance, iot2_Expression_CallFunction)
+
+@given(instance=iot2_Expression_Not_Equal_strategy)
+@settings(max_examples=50)
+def test_iot2_expression_not_equal_instantiation(instance):
+    assert isinstance(instance, iot2_Expression_Not_Equal)
+
+@given(instance=iot2_Expression_Division_strategy)
+@settings(max_examples=50)
+def test_iot2_expression_division_instantiation(instance):
+    assert isinstance(instance, iot2_Expression_Division)
+
+@given(instance=iot2_Expression_Smaller_strategy)
+@settings(max_examples=50)
+def test_iot2_expression_smaller_instantiation(instance):
+    assert isinstance(instance, iot2_Expression_Smaller)
+
+@given(instance=iot2_Expression_Length_strategy)
+@settings(max_examples=50)
+def test_iot2_expression_length_instantiation(instance):
+    assert isinstance(instance, iot2_Expression_Length)
+
+@given(instance=iot2_Expression_Larger_Equal_strategy)
+@settings(max_examples=50)
+def test_iot2_expression_larger_equal_instantiation(instance):
+    assert isinstance(instance, iot2_Expression_Larger_Equal)
+
+@given(instance=iot2_Expression_Modulo_strategy)
+@settings(max_examples=50)
+def test_iot2_expression_modulo_instantiation(instance):
+    assert isinstance(instance, iot2_Expression_Modulo)
+
+@given(instance=iot2_Expression_Number_strategy)
+@settings(max_examples=50)
+def test_iot2_expression_number_instantiation(instance):
+    assert isinstance(instance, iot2_Expression_Number)
 
 
-@given(instance=iot2::Expression::AccessMember_strategy)
-def test_iot2::expression::accessmember_memberName_setter(instance):
+
+@given(instance=iot2_Expression_Number_strategy)
+def test_iot2_expression_number_value_setter(instance):
+    original = instance.value
+    instance.value = original
+    assert instance.value == original
+
+@given(instance=iot2_Expression_Invert_strategy)
+@settings(max_examples=50)
+def test_iot2_expression_invert_instantiation(instance):
+    assert isinstance(instance, iot2_Expression_Invert)
+
+@given(instance=iot2_Expression_Multiplication_strategy)
+@settings(max_examples=50)
+def test_iot2_expression_multiplication_instantiation(instance):
+    assert isinstance(instance, iot2_Expression_Multiplication)
+
+@given(instance=iot2_Expression_Concatenation_strategy)
+@settings(max_examples=50)
+def test_iot2_expression_concatenation_instantiation(instance):
+    assert isinstance(instance, iot2_Expression_Concatenation)
+
+@given(instance=iot2_Expression_AccessMember_strategy)
+@settings(max_examples=50)
+def test_iot2_expression_accessmember_instantiation(instance):
+    assert isinstance(instance, iot2_Expression_AccessMember)
+
+
+
+@given(instance=iot2_Expression_AccessMember_strategy)
+def test_iot2_expression_accessmember_memberName_setter(instance):
     original = instance.memberName
     instance.memberName = original
     assert instance.memberName == original
 
-@given(instance=iot2::Expression::Smaller_strategy)
+@given(instance=iot2_Expression_And_strategy)
 @settings(max_examples=50)
-def test_iot2::expression::smaller_instantiation(instance):
-    assert isinstance(instance, iot2::Expression::Smaller)
+def test_iot2_expression_and_instantiation(instance):
+    assert isinstance(instance, iot2_Expression_And)
 
-@given(instance=iot2::Expression::Exponentiation_strategy)
+@given(instance=iot2_Expression_VarArgs_strategy)
 @settings(max_examples=50)
-def test_iot2::expression::exponentiation_instantiation(instance):
-    assert isinstance(instance, iot2::Expression::Exponentiation)
+def test_iot2_expression_varargs_instantiation(instance):
+    assert isinstance(instance, iot2_Expression_VarArgs)
 
-@given(instance=iot2::Expression::Length_strategy)
+@given(instance=iot2_Expression_True_strategy)
 @settings(max_examples=50)
-def test_iot2::expression::length_instantiation(instance):
-    assert isinstance(instance, iot2::Expression::Length)
+def test_iot2_expression_true_instantiation(instance):
+    assert isinstance(instance, iot2_Expression_True)
 
-@given(instance=iot2::Expression::Concatenation_strategy)
+@given(instance=iot2_Expression_Function_strategy)
 @settings(max_examples=50)
-def test_iot2::expression::concatenation_instantiation(instance):
-    assert isinstance(instance, iot2::Expression::Concatenation)
+def test_iot2_expression_function_instantiation(instance):
+    assert isinstance(instance, iot2_Expression_Function)
 
-@given(instance=iot2::Expression::Modulo_strategy)
+@given(instance=iot2_Expression_False_strategy)
 @settings(max_examples=50)
-def test_iot2::expression::modulo_instantiation(instance):
-    assert isinstance(instance, iot2::Expression::Modulo)
+def test_iot2_expression_false_instantiation(instance):
+    assert isinstance(instance, iot2_Expression_False)
 
-@given(instance=iot2::Expression::VarArgs_strategy)
+@given(instance=iot2_Expression_VariableName_strategy)
 @settings(max_examples=50)
-def test_iot2::expression::varargs_instantiation(instance):
-    assert isinstance(instance, iot2::Expression::VarArgs)
+def test_iot2_expression_variablename_instantiation(instance):
+    assert isinstance(instance, iot2_Expression_VariableName)
 
-@given(instance=iot2::Expression::And_strategy)
+
+
+@given(instance=iot2_Expression_VariableName_strategy)
+def test_iot2_expression_variablename_variable_setter(instance):
+    original = instance.variable
+    instance.variable = original
+    assert instance.variable == original
+
+@given(instance=iot2_Expression_Larger_strategy)
 @settings(max_examples=50)
-def test_iot2::expression::and_instantiation(instance):
-    assert isinstance(instance, iot2::Expression::And)
+def test_iot2_expression_larger_instantiation(instance):
+    assert isinstance(instance, iot2_Expression_Larger)
 
-@given(instance=iot2::Expression::Plus_strategy)
+@given(instance=iot2_Expression_Minus_strategy)
 @settings(max_examples=50)
-def test_iot2::expression::plus_instantiation(instance):
-    assert isinstance(instance, iot2::Expression::Plus)
+def test_iot2_expression_minus_instantiation(instance):
+    assert isinstance(instance, iot2_Expression_Minus)
 
-@given(instance=iot2::Expression::String_strategy)
+@given(instance=iot2_Expression_Nil_strategy)
 @settings(max_examples=50)
-def test_iot2::expression::string_instantiation(instance):
-    assert isinstance(instance, iot2::Expression::String)
+def test_iot2_expression_nil_instantiation(instance):
+    assert isinstance(instance, iot2_Expression_Nil)
 
-@given(instance=iot2::Expression::String_strategy)
-def test_iot2::expression::string_value_type(instance):
-    assert isinstance(instance.value, str)
-
-
-@given(instance=iot2::Expression::String_strategy)
-def test_iot2::expression::string_value_setter(instance):
-    original = instance.value
-    instance.value = original
-    assert instance.value == original
-
-@given(instance=iot2::Expression::Invert_strategy)
+@given(instance=Statement_FunctioncallOrAssignment_strategy)
 @settings(max_examples=50)
-def test_iot2::expression::invert_instantiation(instance):
-    assert isinstance(instance, iot2::Expression::Invert)
+def test_statement_functioncallorassignment_instantiation(instance):
+    assert isinstance(instance, Statement_FunctioncallOrAssignment)
 
-@given(instance=iot2::Expression::CallFunction_strategy)
+@given(instance=iot2_Statement_CallMemberFunction_strategy)
 @settings(max_examples=50)
-def test_iot2::expression::callfunction_instantiation(instance):
-    assert isinstance(instance, iot2::Expression::CallFunction)
-
-@given(instance=iot2::Expression::Nil_strategy)
-@settings(max_examples=50)
-def test_iot2::expression::nil_instantiation(instance):
-    assert isinstance(instance, iot2::Expression::Nil)
-
-@given(instance=Statement::FunctioncallOrAssignment_strategy)
-@settings(max_examples=50)
-def test_statement::functioncallorassignment_instantiation(instance):
-    assert isinstance(instance, Statement::FunctioncallOrAssignment)
-
-@given(instance=iot2::Statement::CallFunction_strategy)
-@settings(max_examples=50)
-def test_iot2::statement::callfunction_instantiation(instance):
-    assert isinstance(instance, iot2::Statement::CallFunction)
-
-@given(instance=iot2::Statement::CallMemberFunction_strategy)
-@settings(max_examples=50)
-def test_iot2::statement::callmemberfunction_instantiation(instance):
-    assert isinstance(instance, iot2::Statement::CallMemberFunction)
-
-@given(instance=iot2::Statement::CallMemberFunction_strategy)
-def test_iot2::statement::callmemberfunction_memberFunctionName_type(instance):
-    assert isinstance(instance.memberFunctionName, str)
+def test_iot2_statement_callmemberfunction_instantiation(instance):
+    assert isinstance(instance, iot2_Statement_CallMemberFunction)
 
 
-@given(instance=iot2::Statement::CallMemberFunction_strategy)
-def test_iot2::statement::callmemberfunction_memberFunctionName_setter(instance):
+
+@given(instance=iot2_Statement_CallMemberFunction_strategy)
+def test_iot2_statement_callmemberfunction_memberFunctionName_setter(instance):
     original = instance.memberFunctionName
     instance.memberFunctionName = original
     assert instance.memberFunctionName == original
 
-@given(instance=iot2::Statement::Assignment_strategy)
+@given(instance=iot2_Statement_CallFunction_strategy)
 @settings(max_examples=50)
-def test_iot2::statement::assignment_instantiation(instance):
-    assert isinstance(instance, iot2::Statement::Assignment)
+def test_iot2_statement_callfunction_instantiation(instance):
+    assert isinstance(instance, iot2_Statement_CallFunction)
 
-@given(instance=LastStatement::Return_strategy)
+@given(instance=iot2_Statement_Assignment_strategy)
 @settings(max_examples=50)
-def test_laststatement::return_instantiation(instance):
-    assert isinstance(instance, LastStatement::Return)
+def test_iot2_statement_assignment_instantiation(instance):
+    assert isinstance(instance, iot2_Statement_Assignment)
 
-@given(instance=iot2::LastStatement::ReturnWithValue_strategy)
+@given(instance=LastStatement_Return_strategy)
 @settings(max_examples=50)
-def test_iot2::laststatement::returnwithvalue_instantiation(instance):
-    assert isinstance(instance, iot2::LastStatement::ReturnWithValue)
+def test_laststatement_return_instantiation(instance):
+    assert isinstance(instance, LastStatement_Return)
+
+@given(instance=iot2_LastStatement_ReturnWithValue_strategy)
+@settings(max_examples=50)
+def test_iot2_laststatement_returnwithvalue_instantiation(instance):
+    assert isinstance(instance, iot2_LastStatement_ReturnWithValue)
 
 @given(instance=Field_strategy)
 @settings(max_examples=50)
 def test_field_instantiation(instance):
     assert isinstance(instance, Field)
 
-@given(instance=iot2::Field::AppendEntryToTable_strategy)
+@given(instance=iot2_Field_AddEntryToTable_strategy)
 @settings(max_examples=50)
-def test_iot2::field::appendentrytotable_instantiation(instance):
-    assert isinstance(instance, iot2::Field::AppendEntryToTable)
-
-@given(instance=iot2::Field::AddEntryToTable_strategy)
-@settings(max_examples=50)
-def test_iot2::field::addentrytotable_instantiation(instance):
-    assert isinstance(instance, iot2::Field::AddEntryToTable)
-
-@given(instance=iot2::Field::AddEntryToTable_strategy)
-def test_iot2::field::addentrytotable_key_type(instance):
-    assert isinstance(instance.key, str)
+def test_iot2_field_addentrytotable_instantiation(instance):
+    assert isinstance(instance, iot2_Field_AddEntryToTable)
 
 
-@given(instance=iot2::Field::AddEntryToTable_strategy)
-def test_iot2::field::addentrytotable_key_setter(instance):
+
+@given(instance=iot2_Field_AddEntryToTable_strategy)
+def test_iot2_field_addentrytotable_key_setter(instance):
     original = instance.key
     instance.key = original
     assert instance.key == original
 
-@given(instance=iot2::Field::AddEntryToTable::Brackets_strategy)
+@given(instance=iot2_Field_AppendEntryToTable_strategy)
 @settings(max_examples=50)
-def test_iot2::field::addentrytotable::brackets_instantiation(instance):
-    assert isinstance(instance, iot2::Field::AddEntryToTable::Brackets)
+def test_iot2_field_appendentrytotable_instantiation(instance):
+    assert isinstance(instance, iot2_Field_AppendEntryToTable)
 
-@given(instance=iot2::Functioncall::Arguments_strategy)
+@given(instance=iot2_Field_AddEntryToTable_Brackets_strategy)
 @settings(max_examples=50)
-def test_iot2::functioncall::arguments_instantiation(instance):
-    assert isinstance(instance, iot2::Functioncall::Arguments)
+def test_iot2_field_addentrytotable_brackets_instantiation(instance):
+    assert isinstance(instance, iot2_Field_AddEntryToTable_Brackets)
 
-@given(instance=iot2::Expression::TableConstructor_strategy)
+@given(instance=iot2_Functioncall_Arguments_strategy)
 @settings(max_examples=50)
-def test_iot2::expression::tableconstructor_instantiation(instance):
-    assert isinstance(instance, iot2::Expression::TableConstructor)
+def test_iot2_functioncall_arguments_instantiation(instance):
+    assert isinstance(instance, iot2_Functioncall_Arguments)
 
-@given(instance=iot2::Statement::If::Then::Else::ElseIfPart_strategy)
+@given(instance=iot2_Expression_TableConstructor_strategy)
 @settings(max_examples=50)
-def test_iot2::statement::if::then::else::elseifpart_instantiation(instance):
-    assert isinstance(instance, iot2::Statement::If::Then::Else::ElseIfPart)
+def test_iot2_expression_tableconstructor_instantiation(instance):
+    assert isinstance(instance, iot2_Expression_TableConstructor)
 
-@given(instance=iot2::Function_strategy)
+@given(instance=iot2_Statement_If_Then_Else_ElseIfPart_strategy)
 @settings(max_examples=50)
-def test_iot2::function_instantiation(instance):
-    assert isinstance(instance, iot2::Function)
+def test_iot2_statement_if_then_else_elseifpart_instantiation(instance):
+    assert isinstance(instance, iot2_Statement_If_Then_Else_ElseIfPart)
 
-@given(instance=iot2::Function_strategy)
-def test_iot2::function_varArgs_type(instance):
-    assert isinstance(instance.varArgs, bool)
+@given(instance=iot2_Function_strategy)
+@settings(max_examples=50)
+def test_iot2_function_instantiation(instance):
+    assert isinstance(instance, iot2_Function)
 
 
-@given(instance=iot2::Function_strategy)
-def test_iot2::function_varArgs_setter(instance):
+
+@given(instance=iot2_Function_strategy)
+def test_iot2_function_varArgs_setter(instance):
     original = instance.varArgs
     instance.varArgs = original
     assert instance.varArgs == original
 
-@given(instance=iot2::Function_strategy)
-def test_iot2::function_parameters_type(instance):
-    assert isinstance(instance.parameters, str)
 
 
-@given(instance=iot2::Function_strategy)
-def test_iot2::function_parameters_setter(instance):
+@given(instance=iot2_Function_strategy)
+def test_iot2_function_parameters_setter(instance):
     original = instance.parameters
     instance.parameters = original
     assert instance.parameters == original
 
-@given(instance=iot2::Expression_strategy)
+@given(instance=iot2_Expression_strategy)
 @settings(max_examples=50)
-def test_iot2::expression_instantiation(instance):
-    assert isinstance(instance, iot2::Expression)
+def test_iot2_expression_instantiation(instance):
+    assert isinstance(instance, iot2_Expression)
 
 @given(instance=IDLType_strategy)
 @settings(max_examples=50)
@@ -3534,169 +3306,148 @@ def test_idltype_instantiation(instance):
 def test_statement_instantiation(instance):
     assert isinstance(instance, Statement)
 
-@given(instance=iot2::Statement::Local::Variable::Declaration_strategy)
+@given(instance=iot2_Statement_Repeat_strategy)
 @settings(max_examples=50)
-def test_iot2::statement::local::variable::declaration_instantiation(instance):
-    assert isinstance(instance, iot2::Statement::Local::Variable::Declaration)
+def test_iot2_statement_repeat_instantiation(instance):
+    assert isinstance(instance, iot2_Statement_Repeat)
 
-@given(instance=iot2::Statement::Local::Variable::Declaration_strategy)
-def test_iot2::statement::local::variable::declaration_variableNames_type(instance):
-    assert isinstance(instance.variableNames, str)
-
-
-@given(instance=iot2::Statement::Local::Variable::Declaration_strategy)
-def test_iot2::statement::local::variable::declaration_variableNames_setter(instance):
-    original = instance.variableNames
-    instance.variableNames = original
-    assert instance.variableNames == original
-
-@given(instance=iot2::Statement::If::Then::Else_strategy)
+@given(instance=iot2_Statement_FunctioncallOrAssignment_strategy)
 @settings(max_examples=50)
-def test_iot2::statement::if::then::else_instantiation(instance):
-    assert isinstance(instance, iot2::Statement::If::Then::Else)
+def test_iot2_statement_functioncallorassignment_instantiation(instance):
+    assert isinstance(instance, iot2_Statement_FunctioncallOrAssignment)
 
-@given(instance=iot2::Statement::LocalFunction::Declaration_strategy)
+@given(instance=iot2_Statement_For_Generic_strategy)
 @settings(max_examples=50)
-def test_iot2::statement::localfunction::declaration_instantiation(instance):
-    assert isinstance(instance, iot2::Statement::LocalFunction::Declaration)
-
-@given(instance=iot2::Statement::LocalFunction::Declaration_strategy)
-def test_iot2::statement::localfunction::declaration_functionName_type(instance):
-    assert isinstance(instance.functionName, str)
+def test_iot2_statement_for_generic_instantiation(instance):
+    assert isinstance(instance, iot2_Statement_For_Generic)
 
 
-@given(instance=iot2::Statement::LocalFunction::Declaration_strategy)
-def test_iot2::statement::localfunction::declaration_functionName_setter(instance):
-    original = instance.functionName
-    instance.functionName = original
-    assert instance.functionName == original
 
-@given(instance=iot2::Statement::For::Numeric_strategy)
-@settings(max_examples=50)
-def test_iot2::statement::for::numeric_instantiation(instance):
-    assert isinstance(instance, iot2::Statement::For::Numeric)
-
-@given(instance=iot2::Statement::For::Numeric_strategy)
-def test_iot2::statement::for::numeric_iteratorName_type(instance):
-    assert isinstance(instance.iteratorName, str)
-
-
-@given(instance=iot2::Statement::For::Numeric_strategy)
-def test_iot2::statement::for::numeric_iteratorName_setter(instance):
-    original = instance.iteratorName
-    instance.iteratorName = original
-    assert instance.iteratorName == original
-
-@given(instance=iot2::Statement::FunctioncallOrAssignment_strategy)
-@settings(max_examples=50)
-def test_iot2::statement::functioncallorassignment_instantiation(instance):
-    assert isinstance(instance, iot2::Statement::FunctioncallOrAssignment)
-
-@given(instance=iot2::Statement::Repeat_strategy)
-@settings(max_examples=50)
-def test_iot2::statement::repeat_instantiation(instance):
-    assert isinstance(instance, iot2::Statement::Repeat)
-
-@given(instance=iot2::Statement::While_strategy)
-@settings(max_examples=50)
-def test_iot2::statement::while_instantiation(instance):
-    assert isinstance(instance, iot2::Statement::While)
-
-@given(instance=iot2::Statement::GlobalFunction::Declaration_strategy)
-@settings(max_examples=50)
-def test_iot2::statement::globalfunction::declaration_instantiation(instance):
-    assert isinstance(instance, iot2::Statement::GlobalFunction::Declaration)
-
-@given(instance=iot2::Statement::GlobalFunction::Declaration_strategy)
-def test_iot2::statement::globalfunction::declaration_functionName_type(instance):
-    assert isinstance(instance.functionName, str)
-
-
-@given(instance=iot2::Statement::GlobalFunction::Declaration_strategy)
-def test_iot2::statement::globalfunction::declaration_functionName_setter(instance):
-    original = instance.functionName
-    instance.functionName = original
-    assert instance.functionName == original
-
-@given(instance=iot2::Statement::GlobalFunction::Declaration_strategy)
-def test_iot2::statement::globalfunction::declaration_prefix_type(instance):
-    assert isinstance(instance.prefix, str)
-
-
-@given(instance=iot2::Statement::GlobalFunction::Declaration_strategy)
-def test_iot2::statement::globalfunction::declaration_prefix_setter(instance):
-    original = instance.prefix
-    instance.prefix = original
-    assert instance.prefix == original
-
-@given(instance=iot2::Statement::For::Generic_strategy)
-@settings(max_examples=50)
-def test_iot2::statement::for::generic_instantiation(instance):
-    assert isinstance(instance, iot2::Statement::For::Generic)
-
-@given(instance=iot2::Statement::For::Generic_strategy)
-def test_iot2::statement::for::generic_names_type(instance):
-    assert isinstance(instance.names, str)
-
-
-@given(instance=iot2::Statement::For::Generic_strategy)
-def test_iot2::statement::for::generic_names_setter(instance):
+@given(instance=iot2_Statement_For_Generic_strategy)
+def test_iot2_statement_for_generic_names_setter(instance):
     original = instance.names
     instance.names = original
     assert instance.names == original
 
-@given(instance=iot2::Statement::Block_strategy)
+@given(instance=iot2_Statement_Local_Variable_Declaration_strategy)
 @settings(max_examples=50)
-def test_iot2::statement::block_instantiation(instance):
-    assert isinstance(instance, iot2::Statement::Block)
+def test_iot2_statement_local_variable_declaration_instantiation(instance):
+    assert isinstance(instance, iot2_Statement_Local_Variable_Declaration)
+
+
+
+@given(instance=iot2_Statement_Local_Variable_Declaration_strategy)
+def test_iot2_statement_local_variable_declaration_variableNames_setter(instance):
+    original = instance.variableNames
+    instance.variableNames = original
+    assert instance.variableNames == original
+
+@given(instance=iot2_Statement_LocalFunction_Declaration_strategy)
+@settings(max_examples=50)
+def test_iot2_statement_localfunction_declaration_instantiation(instance):
+    assert isinstance(instance, iot2_Statement_LocalFunction_Declaration)
+
+
+
+@given(instance=iot2_Statement_LocalFunction_Declaration_strategy)
+def test_iot2_statement_localfunction_declaration_functionName_setter(instance):
+    original = instance.functionName
+    instance.functionName = original
+    assert instance.functionName == original
+
+@given(instance=iot2_Statement_While_strategy)
+@settings(max_examples=50)
+def test_iot2_statement_while_instantiation(instance):
+    assert isinstance(instance, iot2_Statement_While)
+
+@given(instance=iot2_Statement_GlobalFunction_Declaration_strategy)
+@settings(max_examples=50)
+def test_iot2_statement_globalfunction_declaration_instantiation(instance):
+    assert isinstance(instance, iot2_Statement_GlobalFunction_Declaration)
+
+
+
+@given(instance=iot2_Statement_GlobalFunction_Declaration_strategy)
+def test_iot2_statement_globalfunction_declaration_prefix_setter(instance):
+    original = instance.prefix
+    instance.prefix = original
+    assert instance.prefix == original
+
+
+
+@given(instance=iot2_Statement_GlobalFunction_Declaration_strategy)
+def test_iot2_statement_globalfunction_declaration_functionName_setter(instance):
+    original = instance.functionName
+    instance.functionName = original
+    assert instance.functionName == original
+
+@given(instance=iot2_Statement_For_Numeric_strategy)
+@settings(max_examples=50)
+def test_iot2_statement_for_numeric_instantiation(instance):
+    assert isinstance(instance, iot2_Statement_For_Numeric)
+
+
+
+@given(instance=iot2_Statement_For_Numeric_strategy)
+def test_iot2_statement_for_numeric_iteratorName_setter(instance):
+    original = instance.iteratorName
+    instance.iteratorName = original
+    assert instance.iteratorName == original
+
+@given(instance=iot2_Statement_If_Then_Else_strategy)
+@settings(max_examples=50)
+def test_iot2_statement_if_then_else_instantiation(instance):
+    assert isinstance(instance, iot2_Statement_If_Then_Else)
+
+@given(instance=iot2_Statement_Block_strategy)
+@settings(max_examples=50)
+def test_iot2_statement_block_instantiation(instance):
+    assert isinstance(instance, iot2_Statement_Block)
 
 @given(instance=LastStatement_strategy)
 @settings(max_examples=50)
 def test_laststatement_instantiation(instance):
     assert isinstance(instance, LastStatement)
 
-@given(instance=iot2::LastStatement::Break_strategy)
+@given(instance=iot2_LastStatement_Break_strategy)
 @settings(max_examples=50)
-def test_iot2::laststatement::break_instantiation(instance):
-    assert isinstance(instance, iot2::LastStatement::Break)
+def test_iot2_laststatement_break_instantiation(instance):
+    assert isinstance(instance, iot2_LastStatement_Break)
 
-@given(instance=iot2::LastStatement::Return_strategy)
+@given(instance=iot2_LastStatement_Return_strategy)
 @settings(max_examples=50)
-def test_iot2::laststatement::return_instantiation(instance):
-    assert isinstance(instance, iot2::LastStatement::Return)
+def test_iot2_laststatement_return_instantiation(instance):
+    assert isinstance(instance, iot2_LastStatement_Return)
 
-@given(instance=iot2::LastStatement_strategy)
+@given(instance=iot2_LastStatement_strategy)
 @settings(max_examples=50)
-def test_iot2::laststatement_instantiation(instance):
-    assert isinstance(instance, iot2::LastStatement)
+def test_iot2_laststatement_instantiation(instance):
+    assert isinstance(instance, iot2_LastStatement)
 
-@given(instance=iot2::Statement_strategy)
+@given(instance=iot2_Statement_strategy)
 @settings(max_examples=50)
-def test_iot2::statement_instantiation(instance):
-    assert isinstance(instance, iot2::Statement)
+def test_iot2_statement_instantiation(instance):
+    assert isinstance(instance, iot2_Statement)
 
 @given(instance=Chunk_strategy)
 @settings(max_examples=50)
 def test_chunk_instantiation(instance):
     assert isinstance(instance, Chunk)
 
-@given(instance=iot2::Chunk_strategy)
+@given(instance=iot2_Chunk_strategy)
 @settings(max_examples=50)
-def test_iot2::chunk_instantiation(instance):
-    assert isinstance(instance, iot2::Chunk)
+def test_iot2_chunk_instantiation(instance):
+    assert isinstance(instance, iot2_Chunk)
 
-@given(instance=iot2::PrimitiveDef_strategy)
+@given(instance=iot2_PrimitiveDef_strategy)
 @settings(max_examples=50)
-def test_iot2::primitivedef_instantiation(instance):
-    assert isinstance(instance, iot2::PrimitiveDef)
-
-@given(instance=iot2::PrimitiveDef_strategy)
-def test_iot2::primitivedef_kind_type(instance):
-    assert isinstance(instance.kind, str)
+def test_iot2_primitivedef_instantiation(instance):
+    assert isinstance(instance, iot2_PrimitiveDef)
 
 
-@given(instance=iot2::PrimitiveDef_strategy)
-def test_iot2::primitivedef_kind_setter(instance):
+
+@given(instance=iot2_PrimitiveDef_strategy)
+def test_iot2_primitivedef_kind_setter(instance):
     original = instance.kind
     instance.kind = original
     assert instance.kind == original
@@ -3706,45 +3457,36 @@ def test_iot2::primitivedef_kind_setter(instance):
 def test_typed_instantiation(instance):
     assert isinstance(instance, Typed)
 
-@given(instance=iot2::Field_strategy)
+@given(instance=iot2_Field_strategy)
 @settings(max_examples=50)
-def test_iot2::field_instantiation(instance):
-    assert isinstance(instance, iot2::Field)
-
-@given(instance=iot2::Field_strategy)
-def test_iot2::field_identifier_type(instance):
-    assert isinstance(instance.identifier, str)
+def test_iot2_field_instantiation(instance):
+    assert isinstance(instance, iot2_Field)
 
 
-@given(instance=iot2::Field_strategy)
-def test_iot2::field_identifier_setter(instance):
+
+@given(instance=iot2_Field_strategy)
+def test_iot2_field_identifier_setter(instance):
     original = instance.identifier
     instance.identifier = original
     assert instance.identifier == original
 
-@given(instance=iot2::ParameterDef_strategy)
+@given(instance=iot2_ParameterDef_strategy)
 @settings(max_examples=50)
-def test_iot2::parameterdef_instantiation(instance):
-    assert isinstance(instance, iot2::ParameterDef)
-
-@given(instance=iot2::ParameterDef_strategy)
-def test_iot2::parameterdef_direction_type(instance):
-    assert isinstance(instance.direction, str)
+def test_iot2_parameterdef_instantiation(instance):
+    assert isinstance(instance, iot2_ParameterDef)
 
 
-@given(instance=iot2::ParameterDef_strategy)
-def test_iot2::parameterdef_direction_setter(instance):
+
+@given(instance=iot2_ParameterDef_strategy)
+def test_iot2_parameterdef_direction_setter(instance):
     original = instance.direction
     instance.direction = original
     assert instance.direction == original
 
-@given(instance=iot2::ParameterDef_strategy)
-def test_iot2::parameterdef_identifier_type(instance):
-    assert isinstance(instance.identifier, str)
 
 
-@given(instance=iot2::ParameterDef_strategy)
-def test_iot2::parameterdef_identifier_setter(instance):
+@given(instance=iot2_ParameterDef_strategy)
+def test_iot2_parameterdef_identifier_setter(instance):
     original = instance.identifier
     instance.identifier = original
     assert instance.identifier == original
@@ -3754,18 +3496,15 @@ def test_iot2::parameterdef_identifier_setter(instance):
 def test_contained_instantiation(instance):
     assert isinstance(instance, Contained)
 
-@given(instance=iot2::Variable_strategy)
+@given(instance=iot2_Variable_strategy)
 @settings(max_examples=50)
-def test_iot2::variable_instantiation(instance):
-    assert isinstance(instance, iot2::Variable)
-
-@given(instance=iot2::Variable_strategy)
-def test_iot2::variable_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_iot2_variable_instantiation(instance):
+    assert isinstance(instance, iot2_Variable)
 
 
-@given(instance=iot2::Variable_strategy)
-def test_iot2::variable_name_setter(instance):
+
+@given(instance=iot2_Variable_strategy)
+def test_iot2_variable_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
@@ -3775,140 +3514,116 @@ def test_iot2::variable_name_setter(instance):
 def test_namedelement_instantiation(instance):
     assert isinstance(instance, NamedElement)
 
-@given(instance=iot2::ActivityNode_strategy)
+@given(instance=iot2_ActivityNode_strategy)
 @settings(max_examples=50)
-def test_iot2::activitynode_instantiation(instance):
-    assert isinstance(instance, iot2::ActivityNode)
-
-@given(instance=iot2::ActivityNode_strategy)
-def test_iot2::activitynode_running_type(instance):
-    assert isinstance(instance.running, bool)
+def test_iot2_activitynode_instantiation(instance):
+    assert isinstance(instance, iot2_ActivityNode)
 
 
-@given(instance=iot2::ActivityNode_strategy)
-def test_iot2::activitynode_running_setter(instance):
+
+@given(instance=iot2_ActivityNode_strategy)
+def test_iot2_activitynode_running_setter(instance):
     original = instance.running
     instance.running = original
     assert instance.running == original
 
-@given(instance=iot2::ActivityEdge_strategy)
+@given(instance=iot2_ActivityEdge_strategy)
 @settings(max_examples=50)
-def test_iot2::activityedge_instantiation(instance):
-    assert isinstance(instance, iot2::ActivityEdge)
+def test_iot2_activityedge_instantiation(instance):
+    assert isinstance(instance, iot2_ActivityEdge)
 
-@given(instance=iot2::TypedefDef_strategy)
+@given(instance=iot2_TypedefDef_strategy)
 @settings(max_examples=50)
-def test_iot2::typedefdef_instantiation(instance):
-    assert isinstance(instance, iot2::TypedefDef)
+def test_iot2_typedefdef_instantiation(instance):
+    assert isinstance(instance, iot2_TypedefDef)
 
-@given(instance=iot2::IDLType_strategy)
+@given(instance=iot2_IDLType_strategy)
 @settings(max_examples=50)
-def test_iot2::idltype_instantiation(instance):
-    assert isinstance(instance, iot2::IDLType)
-
-@given(instance=iot2::IDLType_strategy)
-def test_iot2::idltype_typeCode_type(instance):
-    assert isinstance(instance.typeCode, str)
+def test_iot2_idltype_instantiation(instance):
+    assert isinstance(instance, iot2_IDLType)
 
 
-@given(instance=iot2::IDLType_strategy)
-def test_iot2::idltype_typeCode_setter(instance):
+
+@given(instance=iot2_IDLType_strategy)
+def test_iot2_idltype_typeCode_setter(instance):
     original = instance.typeCode
     instance.typeCode = original
     assert instance.typeCode == original
 
-@given(instance=iot2::Typed_strategy)
+@given(instance=iot2_Typed_strategy)
 @settings(max_examples=50)
-def test_iot2::typed_instantiation(instance):
-    assert isinstance(instance, iot2::Typed)
+def test_iot2_typed_instantiation(instance):
+    assert isinstance(instance, iot2_Typed)
 
-@given(instance=iot2::NamedElement_strategy)
+@given(instance=iot2_NamedElement_strategy)
 @settings(max_examples=50)
-def test_iot2::namedelement_instantiation(instance):
-    assert isinstance(instance, iot2::NamedElement)
-
-@given(instance=iot2::NamedElement_strategy)
-def test_iot2::namedelement_identifier_type(instance):
-    assert isinstance(instance.identifier, str)
+def test_iot2_namedelement_instantiation(instance):
+    assert isinstance(instance, iot2_NamedElement)
 
 
-@given(instance=iot2::NamedElement_strategy)
-def test_iot2::namedelement_identifier_setter(instance):
-    original = instance.identifier
-    instance.identifier = original
-    assert instance.identifier == original
 
-@given(instance=iot2::NamedElement_strategy)
-def test_iot2::namedelement_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=iot2::NamedElement_strategy)
-def test_iot2::namedelement_name_setter(instance):
+@given(instance=iot2_NamedElement_strategy)
+def test_iot2_namedelement_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=iot2::Container_strategy)
+
+
+@given(instance=iot2_NamedElement_strategy)
+def test_iot2_namedelement_identifier_setter(instance):
+    original = instance.identifier
+    instance.identifier = original
+    assert instance.identifier == original
+
+@given(instance=iot2_Container_strategy)
 @settings(max_examples=50)
-def test_iot2::container_instantiation(instance):
-    assert isinstance(instance, iot2::Container)
+def test_iot2_container_instantiation(instance):
+    assert isinstance(instance, iot2_Container)
 
-@given(instance=iot2::Contained_strategy)
+@given(instance=iot2_Contained_strategy)
 @settings(max_examples=50)
-def test_iot2::contained_instantiation(instance):
-    assert isinstance(instance, iot2::Contained)
-
-@given(instance=iot2::Contained_strategy)
-def test_iot2::contained_version_type(instance):
-    assert isinstance(instance.version, str)
+def test_iot2_contained_instantiation(instance):
+    assert isinstance(instance, iot2_Contained)
 
 
-@given(instance=iot2::Contained_strategy)
-def test_iot2::contained_version_setter(instance):
-    original = instance.version
-    instance.version = original
-    assert instance.version == original
 
-@given(instance=iot2::Contained_strategy)
-def test_iot2::contained_absoluteName_type(instance):
-    assert isinstance(instance.absoluteName, str)
-
-
-@given(instance=iot2::Contained_strategy)
-def test_iot2::contained_absoluteName_setter(instance):
-    original = instance.absoluteName
-    instance.absoluteName = original
-    assert instance.absoluteName == original
-
-@given(instance=iot2::Contained_strategy)
-def test_iot2::contained_repositoryId_type(instance):
-    assert isinstance(instance.repositoryId, str)
-
-
-@given(instance=iot2::Contained_strategy)
-def test_iot2::contained_repositoryId_setter(instance):
+@given(instance=iot2_Contained_strategy)
+def test_iot2_contained_repositoryId_setter(instance):
     original = instance.repositoryId
     instance.repositoryId = original
     assert instance.repositoryId == original
 
-@given(instance=iot2::Block_strategy)
+
+
+@given(instance=iot2_Contained_strategy)
+def test_iot2_contained_absoluteName_setter(instance):
+    original = instance.absoluteName
+    instance.absoluteName = original
+    assert instance.absoluteName == original
+
+
+
+@given(instance=iot2_Contained_strategy)
+def test_iot2_contained_version_setter(instance):
+    original = instance.version
+    instance.version = original
+    assert instance.version == original
+
+@given(instance=iot2_Block_strategy)
 @settings(max_examples=50)
-def test_iot2::block_instantiation(instance):
-    assert isinstance(instance, iot2::Block)
+def test_iot2_block_instantiation(instance):
+    assert isinstance(instance, iot2_Block)
 
-@given(instance=iot2::ExceptionDef_strategy)
+@given(instance=iot2_ExceptionDef_strategy)
 @settings(max_examples=50)
-def test_iot2::exceptiondef_instantiation(instance):
-    assert isinstance(instance, iot2::ExceptionDef)
-
-@given(instance=iot2::ExceptionDef_strategy)
-def test_iot2::exceptiondef_typeCode_type(instance):
-    assert isinstance(instance.typeCode, str)
+def test_iot2_exceptiondef_instantiation(instance):
+    assert isinstance(instance, iot2_ExceptionDef)
 
 
-@given(instance=iot2::ExceptionDef_strategy)
-def test_iot2::exceptiondef_typeCode_setter(instance):
+
+@given(instance=iot2_ExceptionDef_strategy)
+def test_iot2_exceptiondef_typeCode_setter(instance):
     original = instance.typeCode
     instance.typeCode = original
     assert instance.typeCode == original
@@ -3918,108 +3633,273 @@ def test_iot2::exceptiondef_typeCode_setter(instance):
 def test_hwcomponent_instantiation(instance):
     assert isinstance(instance, HWComponent)
 
-@given(instance=iot2::Actuator_strategy)
+@given(instance=iot2_Actuator_strategy)
 @settings(max_examples=50)
-def test_iot2::actuator_instantiation(instance):
-    assert isinstance(instance, iot2::Actuator)
+def test_iot2_actuator_instantiation(instance):
+    assert isinstance(instance, iot2_Actuator)
 
-@given(instance=iot2::Sensor_strategy)
+@given(instance=iot2_Sensor_strategy)
 @settings(max_examples=50)
-def test_iot2::sensor_instantiation(instance):
-    assert isinstance(instance, iot2::Sensor)
+def test_iot2_sensor_instantiation(instance):
+    assert isinstance(instance, iot2_Sensor)
 
-@given(instance=iot2::OperationDef_strategy)
+@given(instance=iot2_OperationDef_strategy)
 @settings(max_examples=50)
-def test_iot2::operationdef_instantiation(instance):
-    assert isinstance(instance, iot2::OperationDef)
-
-@given(instance=iot2::OperationDef_strategy)
-def test_iot2::operationdef_isOneway_type(instance):
-    assert isinstance(instance.isOneway, bool)
+def test_iot2_operationdef_instantiation(instance):
+    assert isinstance(instance, iot2_OperationDef)
 
 
-@given(instance=iot2::OperationDef_strategy)
-def test_iot2::operationdef_isOneway_setter(instance):
+
+@given(instance=iot2_OperationDef_strategy)
+def test_iot2_operationdef_isOneway_setter(instance):
     original = instance.isOneway
     instance.isOneway = original
     assert instance.isOneway == original
 
-@given(instance=iot2::OperationDef_strategy)
-def test_iot2::operationdef_contexts_type(instance):
-    assert isinstance(instance.contexts, str)
 
 
-@given(instance=iot2::OperationDef_strategy)
-def test_iot2::operationdef_contexts_setter(instance):
+@given(instance=iot2_OperationDef_strategy)
+def test_iot2_operationdef_contexts_setter(instance):
     original = instance.contexts
     instance.contexts = original
     assert instance.contexts == original
 
-@given(instance=iot2::Activity_strategy)
+@given(instance=iot2_Activity_strategy)
 @settings(max_examples=50)
-def test_iot2::activity_instantiation(instance):
-    assert isinstance(instance, iot2::Activity)
+def test_iot2_activity_instantiation(instance):
+    assert isinstance(instance, iot2_Activity)
 
-@given(instance=iot2::Sketch_strategy)
+@given(instance=iot2_Sketch_strategy)
 @settings(max_examples=50)
-def test_iot2::sketch_instantiation(instance):
-    assert isinstance(instance, iot2::Sketch)
+def test_iot2_sketch_instantiation(instance):
+    assert isinstance(instance, iot2_Sketch)
 
-@given(instance=iot2::Board_strategy)
+@given(instance=iot2_Board_strategy)
 @settings(max_examples=50)
-def test_iot2::board_instantiation(instance):
-    assert isinstance(instance, iot2::Board)
-
-@given(instance=iot2::Board_strategy)
-def test_iot2::board_type_type(instance):
-    assert isinstance(instance.type, str)
+def test_iot2_board_instantiation(instance):
+    assert isinstance(instance, iot2_Board)
 
 
-@given(instance=iot2::Board_strategy)
-def test_iot2::board_type_setter(instance):
+
+@given(instance=iot2_Board_strategy)
+def test_iot2_board_type_setter(instance):
     original = instance.type
     instance.type = original
     assert instance.type == original
 
-@given(instance=iot2::Board_strategy)
-def test_iot2::board_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
-@given(instance=iot2::Board_strategy)
-def test_iot2::board_name_setter(instance):
+@given(instance=iot2_Board_strategy)
+def test_iot2_board_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=iot2::HWComponent_strategy)
+@given(instance=iot2_HWComponent_strategy)
 @settings(max_examples=50)
-def test_iot2::hwcomponent_instantiation(instance):
-    assert isinstance(instance, iot2::HWComponent)
-
-@given(instance=iot2::HWComponent_strategy)
-def test_iot2::hwcomponent_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_iot2_hwcomponent_instantiation(instance):
+    assert isinstance(instance, iot2_HWComponent)
 
 
-@given(instance=iot2::HWComponent_strategy)
-def test_iot2::hwcomponent_name_setter(instance):
+
+@given(instance=iot2_HWComponent_strategy)
+def test_iot2_hwcomponent_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=iot2::System_strategy)
+@given(instance=iot2_System_strategy)
 @settings(max_examples=50)
-def test_iot2::system_instantiation(instance):
-    assert isinstance(instance, iot2::System)
-
-@given(instance=iot2::System_strategy)
-def test_iot2::system_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_iot2_system_instantiation(instance):
+    assert isinstance(instance, iot2_System)
 
 
-@given(instance=iot2::System_strategy)
-def test_iot2::system_name_setter(instance):
+
+@given(instance=iot2_System_strategy)
+def test_iot2_system_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
+
+@given(instance=iot2_Trace_strategy)
+@settings(max_examples=50)
+def test_iot2_trace_instantiation(instance):
+    assert isinstance(instance, iot2_Trace)
+
+@given(instance=IntegerExpression_strategy)
+@settings(max_examples=50)
+def test_integerexpression_instantiation(instance):
+    assert isinstance(instance, IntegerExpression)
+
+@given(instance=iot2_IntegerComparisonExpression_strategy)
+@settings(max_examples=50)
+def test_iot2_integercomparisonexpression_instantiation(instance):
+    assert isinstance(instance, iot2_IntegerComparisonExpression)
+
+
+
+@given(instance=iot2_IntegerComparisonExpression_strategy)
+def test_iot2_integercomparisonexpression_operator_setter(instance):
+    original = instance.operator
+    instance.operator = original
+    assert instance.operator == original
+
+@given(instance=iot2_IntegerCalculationExpression_strategy)
+@settings(max_examples=50)
+def test_iot2_integercalculationexpression_instantiation(instance):
+    assert isinstance(instance, iot2_IntegerCalculationExpression)
+
+
+
+@given(instance=iot2_IntegerCalculationExpression_strategy)
+def test_iot2_integercalculationexpression_operator_setter(instance):
+    original = instance.operator
+    instance.operator = original
+    assert instance.operator == original
+
+@given(instance=iot2_BooleanExpression_strategy)
+@settings(max_examples=50)
+def test_iot2_booleanexpression_instantiation(instance):
+    assert isinstance(instance, iot2_BooleanExpression)
+
+@given(instance=iot2_Token_strategy)
+@settings(max_examples=50)
+def test_iot2_token_instantiation(instance):
+    assert isinstance(instance, iot2_Token)
+
+@given(instance=iot2_Input_strategy)
+@settings(max_examples=50)
+def test_iot2_input_instantiation(instance):
+    assert isinstance(instance, iot2_Input)
+
+@given(instance=iot2_InputValue_strategy)
+@settings(max_examples=50)
+def test_iot2_inputvalue_instantiation(instance):
+    assert isinstance(instance, iot2_InputValue)
+
+@given(instance=BooleanExpression_strategy)
+@settings(max_examples=50)
+def test_booleanexpression_instantiation(instance):
+    assert isinstance(instance, BooleanExpression)
+
+@given(instance=iot2_BooleanBinaryExpression_strategy)
+@settings(max_examples=50)
+def test_iot2_booleanbinaryexpression_instantiation(instance):
+    assert isinstance(instance, iot2_BooleanBinaryExpression)
+
+
+
+@given(instance=iot2_BooleanBinaryExpression_strategy)
+def test_iot2_booleanbinaryexpression_operator_setter(instance):
+    original = instance.operator
+    instance.operator = original
+    assert instance.operator == original
+
+@given(instance=iot2_BooleanUnaryExpression_strategy)
+@settings(max_examples=50)
+def test_iot2_booleanunaryexpression_instantiation(instance):
+    assert isinstance(instance, iot2_BooleanUnaryExpression)
+
+
+
+@given(instance=iot2_BooleanUnaryExpression_strategy)
+def test_iot2_booleanunaryexpression_operator_setter(instance):
+    original = instance.operator
+    instance.operator = original
+    assert instance.operator == original
+
+@given(instance=Action_strategy)
+@settings(max_examples=50)
+def test_action_instantiation(instance):
+    assert isinstance(instance, Action)
+
+@given(instance=iot2_OpaqueAction_strategy)
+@settings(max_examples=50)
+def test_iot2_opaqueaction_instantiation(instance):
+    assert isinstance(instance, iot2_OpaqueAction)
+
+@given(instance=ExecutableNode_strategy)
+@settings(max_examples=50)
+def test_executablenode_instantiation(instance):
+    assert isinstance(instance, ExecutableNode)
+
+@given(instance=iot2_Action_strategy)
+@settings(max_examples=50)
+def test_iot2_action_instantiation(instance):
+    assert isinstance(instance, iot2_Action)
+
+@given(instance=ActivityNode_strategy)
+@settings(max_examples=50)
+def test_activitynode_instantiation(instance):
+    assert isinstance(instance, ActivityNode)
+
+@given(instance=iot2_ExecutableNode_strategy)
+@settings(max_examples=50)
+def test_iot2_executablenode_instantiation(instance):
+    assert isinstance(instance, iot2_ExecutableNode)
+
+@given(instance=iot2_ControlNode_strategy)
+@settings(max_examples=50)
+def test_iot2_controlnode_instantiation(instance):
+    assert isinstance(instance, iot2_ControlNode)
+
+@given(instance=ActivityEdge_strategy)
+@settings(max_examples=50)
+def test_activityedge_instantiation(instance):
+    assert isinstance(instance, ActivityEdge)
+
+@given(instance=iot2_ControlFlow_strategy)
+@settings(max_examples=50)
+def test_iot2_controlflow_instantiation(instance):
+    assert isinstance(instance, iot2_ControlFlow)
+
+@given(instance=iot2_IntegerExpression_strategy)
+@settings(max_examples=50)
+def test_iot2_integerexpression_instantiation(instance):
+    assert isinstance(instance, iot2_IntegerExpression)
+
+@given(instance=Value_strategy)
+@settings(max_examples=50)
+def test_value_instantiation(instance):
+    assert isinstance(instance, Value)
+
+@given(instance=iot2_IntegerValue_strategy)
+@settings(max_examples=50)
+def test_iot2_integervalue_instantiation(instance):
+    assert isinstance(instance, iot2_IntegerValue)
+
+
+
+@given(instance=iot2_IntegerValue_strategy)
+def test_iot2_integervalue_value_setter(instance):
+    original = instance.value
+    instance.value = original
+    assert instance.value == original
+
+@given(instance=iot2_BooleanValue_strategy)
+@settings(max_examples=50)
+def test_iot2_booleanvalue_instantiation(instance):
+    assert isinstance(instance, iot2_BooleanValue)
+
+
+
+@given(instance=iot2_BooleanValue_strategy)
+def test_iot2_booleanvalue_value_setter(instance):
+    original = instance.value
+    instance.value = original
+    assert instance.value == original
+
+@given(instance=Variable_strategy)
+@settings(max_examples=50)
+def test_variable_instantiation(instance):
+    assert isinstance(instance, Variable)
+
+@given(instance=iot2_BooleanVariable_strategy)
+@settings(max_examples=50)
+def test_iot2_booleanvariable_instantiation(instance):
+    assert isinstance(instance, iot2_BooleanVariable)
+
+@given(instance=iot2_IntegerVariable_strategy)
+@settings(max_examples=50)
+def test_iot2_integervariable_instantiation(instance):
+    assert isinstance(instance, iot2_IntegerVariable)

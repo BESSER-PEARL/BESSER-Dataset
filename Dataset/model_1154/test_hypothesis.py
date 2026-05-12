@@ -3,12 +3,12 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    model::Transition,
-    model::State,
-    model::FSM,
+from python_code import (
+    model_Transition,
+    model_State,
+    model_FSM,
 )
 
 # =============================================================================
@@ -17,23 +17,23 @@ from classes import (
 
 
 
-def test_model::transition_is_not_abstract():
-    assert not inspect.isabstract(model::Transition)
+def test_model_transition_is_not_abstract():
+    assert not inspect.isabstract(model_Transition)
 
 
-def test_model::transition_constructor_exists():
-    assert callable(model::Transition.__init__)
+def test_model_transition_constructor_exists():
+    assert callable(model_Transition.__init__)
 
 
-def test_model::transition_constructor_args():
-    sig = inspect.signature(model::Transition.__init__)
+def test_model_transition_constructor_args():
+    sig = inspect.signature(model_Transition.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_model::transition_has_name():
-    assert hasattr(model::Transition, "name")
+def test_model_transition_has_name():
+    assert hasattr(model_Transition, "name")
     descriptor = None
-    for klass in model::Transition.__mro__:
+    for klass in model_Transition.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -41,23 +41,23 @@ def test_model::transition_has_name():
 
 
 
-def test_model::state_is_not_abstract():
-    assert not inspect.isabstract(model::State)
+def test_model_state_is_not_abstract():
+    assert not inspect.isabstract(model_State)
 
 
-def test_model::state_constructor_exists():
-    assert callable(model::State.__init__)
+def test_model_state_constructor_exists():
+    assert callable(model_State.__init__)
 
 
-def test_model::state_constructor_args():
-    sig = inspect.signature(model::State.__init__)
+def test_model_state_constructor_args():
+    sig = inspect.signature(model_State.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_model::state_has_name():
-    assert hasattr(model::State, "name")
+def test_model_state_has_name():
+    assert hasattr(model_State, "name")
     descriptor = None
-    for klass in model::State.__mro__:
+    for klass in model_State.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -65,23 +65,23 @@ def test_model::state_has_name():
 
 
 
-def test_model::fsm_is_not_abstract():
-    assert not inspect.isabstract(model::FSM)
+def test_model_fsm_is_not_abstract():
+    assert not inspect.isabstract(model_FSM)
 
 
-def test_model::fsm_constructor_exists():
-    assert callable(model::FSM.__init__)
+def test_model_fsm_constructor_exists():
+    assert callable(model_FSM.__init__)
 
 
-def test_model::fsm_constructor_args():
-    sig = inspect.signature(model::FSM.__init__)
+def test_model_fsm_constructor_args():
+    sig = inspect.signature(model_FSM.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_model::fsm_has_name():
-    assert hasattr(model::FSM, "name")
+def test_model_fsm_has_name():
+    assert hasattr(model_FSM, "name")
     descriptor = None
-    for klass in model::FSM.__mro__:
+    for klass in model_FSM.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -99,66 +99,57 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-model::Transition_strategy = st.builds(
-    model::Transition,
+model_Transition_strategy = st.builds(
+    model_Transition,
     name=
         safe_text
 )
-model::State_strategy = st.builds(
-    model::State,
+model_State_strategy = st.builds(
+    model_State,
     name=
         safe_text
 )
-model::FSM_strategy = st.builds(
-    model::FSM,
+model_FSM_strategy = st.builds(
+    model_FSM,
     name=
         safe_text
 )
 
-@given(instance=model::Transition_strategy)
+@given(instance=model_Transition_strategy)
 @settings(max_examples=50)
-def test_model::transition_instantiation(instance):
-    assert isinstance(instance, model::Transition)
-
-@given(instance=model::Transition_strategy)
-def test_model::transition_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_model_transition_instantiation(instance):
+    assert isinstance(instance, model_Transition)
 
 
-@given(instance=model::Transition_strategy)
-def test_model::transition_name_setter(instance):
+
+@given(instance=model_Transition_strategy)
+def test_model_transition_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=model::State_strategy)
+@given(instance=model_State_strategy)
 @settings(max_examples=50)
-def test_model::state_instantiation(instance):
-    assert isinstance(instance, model::State)
-
-@given(instance=model::State_strategy)
-def test_model::state_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_model_state_instantiation(instance):
+    assert isinstance(instance, model_State)
 
 
-@given(instance=model::State_strategy)
-def test_model::state_name_setter(instance):
+
+@given(instance=model_State_strategy)
+def test_model_state_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=model::FSM_strategy)
+@given(instance=model_FSM_strategy)
 @settings(max_examples=50)
-def test_model::fsm_instantiation(instance):
-    assert isinstance(instance, model::FSM)
-
-@given(instance=model::FSM_strategy)
-def test_model::fsm_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_model_fsm_instantiation(instance):
+    assert isinstance(instance, model_FSM)
 
 
-@given(instance=model::FSM_strategy)
-def test_model::fsm_name_setter(instance):
+
+@given(instance=model_FSM_strategy)
+def test_model_fsm_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original

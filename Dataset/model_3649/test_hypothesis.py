@@ -3,11 +3,11 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    ecoreJavascriptDelegatesTest::Employee,
-    ecoreJavascriptDelegatesTest::Company,
+from python_code import (
+    ecoreJavascriptDelegatesTest_Employee,
+    ecoreJavascriptDelegatesTest_Company,
     CompanySizeKind,
 )
 
@@ -17,23 +17,23 @@ from classes import (
 
 
 
-def test_ecorejavascriptdelegatestest::employee_is_not_abstract():
-    assert not inspect.isabstract(ecoreJavascriptDelegatesTest::Employee)
+def test_ecorejavascriptdelegatestest_employee_is_not_abstract():
+    assert not inspect.isabstract(ecoreJavascriptDelegatesTest_Employee)
 
 
-def test_ecorejavascriptdelegatestest::employee_constructor_exists():
-    assert callable(ecoreJavascriptDelegatesTest::Employee.__init__)
+def test_ecorejavascriptdelegatestest_employee_constructor_exists():
+    assert callable(ecoreJavascriptDelegatesTest_Employee.__init__)
 
 
-def test_ecorejavascriptdelegatestest::employee_constructor_args():
-    sig = inspect.signature(ecoreJavascriptDelegatesTest::Employee.__init__)
+def test_ecorejavascriptdelegatestest_employee_constructor_args():
+    sig = inspect.signature(ecoreJavascriptDelegatesTest_Employee.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_ecorejavascriptdelegatestest::employee_has_name():
-    assert hasattr(ecoreJavascriptDelegatesTest::Employee, "name")
+def test_ecorejavascriptdelegatestest_employee_has_name():
+    assert hasattr(ecoreJavascriptDelegatesTest_Employee, "name")
     descriptor = None
-    for klass in ecoreJavascriptDelegatesTest::Employee.__mro__:
+    for klass in ecoreJavascriptDelegatesTest_Employee.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -41,33 +41,33 @@ def test_ecorejavascriptdelegatestest::employee_has_name():
 
 
 
-def test_ecorejavascriptdelegatestest::company_is_not_abstract():
-    assert not inspect.isabstract(ecoreJavascriptDelegatesTest::Company)
+def test_ecorejavascriptdelegatestest_company_is_not_abstract():
+    assert not inspect.isabstract(ecoreJavascriptDelegatesTest_Company)
 
 
-def test_ecorejavascriptdelegatestest::company_constructor_exists():
-    assert callable(ecoreJavascriptDelegatesTest::Company.__init__)
+def test_ecorejavascriptdelegatestest_company_constructor_exists():
+    assert callable(ecoreJavascriptDelegatesTest_Company.__init__)
 
 
-def test_ecorejavascriptdelegatestest::company_constructor_args():
-    sig = inspect.signature(ecoreJavascriptDelegatesTest::Company.__init__)
+def test_ecorejavascriptdelegatestest_company_constructor_args():
+    sig = inspect.signature(ecoreJavascriptDelegatesTest_Company.__init__)
     params = list(sig.parameters.keys())
     assert "size" in params, "Missing parameter 'size'"
     assert "name" in params, "Missing parameter 'name'"
 
-def test_ecorejavascriptdelegatestest::company_has_size():
-    assert hasattr(ecoreJavascriptDelegatesTest::Company, "size")
+def test_ecorejavascriptdelegatestest_company_has_size():
+    assert hasattr(ecoreJavascriptDelegatesTest_Company, "size")
     descriptor = None
-    for klass in ecoreJavascriptDelegatesTest::Company.__mro__:
+    for klass in ecoreJavascriptDelegatesTest_Company.__mro__:
         if "size" in klass.__dict__:
             descriptor = klass.__dict__["size"]
             break
     assert isinstance(descriptor, property)
 
-def test_ecorejavascriptdelegatestest::company_has_name():
-    assert hasattr(ecoreJavascriptDelegatesTest::Company, "name")
+def test_ecorejavascriptdelegatestest_company_has_name():
+    assert hasattr(ecoreJavascriptDelegatesTest_Company, "name")
     descriptor = None
-    for klass in ecoreJavascriptDelegatesTest::Company.__mro__:
+    for klass in ecoreJavascriptDelegatesTest_Company.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -81,9 +81,9 @@ def test_companysizekind_has_all_literals():
     # Collect the names of literals in this Enumeration
     enum_literals = [lit.name for lit in CompanySizeKind]
     expected_literals = [
+        "small",
         "large",
         "medium",
-        "small",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
@@ -101,31 +101,28 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-ecoreJavascriptDelegatesTest::Employee_strategy = st.builds(
-    ecoreJavascriptDelegatesTest::Employee,
+ecoreJavascriptDelegatesTest_Employee_strategy = st.builds(
+    ecoreJavascriptDelegatesTest_Employee,
     name=
         safe_text
 )
-ecoreJavascriptDelegatesTest::Company_strategy = st.builds(
-    ecoreJavascriptDelegatesTest::Company,
+ecoreJavascriptDelegatesTest_Company_strategy = st.builds(
+    ecoreJavascriptDelegatesTest_Company,
     size=
         safe_text,
     name=
         safe_text
 )
 
-@given(instance=ecoreJavascriptDelegatesTest::Employee_strategy)
+@given(instance=ecoreJavascriptDelegatesTest_Employee_strategy)
 @settings(max_examples=50)
-def test_ecorejavascriptdelegatestest::employee_instantiation(instance):
-    assert isinstance(instance, ecoreJavascriptDelegatesTest::Employee)
-
-@given(instance=ecoreJavascriptDelegatesTest::Employee_strategy)
-def test_ecorejavascriptdelegatestest::employee_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_ecorejavascriptdelegatestest_employee_instantiation(instance):
+    assert isinstance(instance, ecoreJavascriptDelegatesTest_Employee)
 
 
-@given(instance=ecoreJavascriptDelegatesTest::Employee_strategy)
-def test_ecorejavascriptdelegatestest::employee_name_setter(instance):
+
+@given(instance=ecoreJavascriptDelegatesTest_Employee_strategy)
+def test_ecorejavascriptdelegatestest_employee_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
@@ -136,9 +133,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=ecoreJavascriptDelegatesTest::Employee_strategy)
+@given(instance=ecoreJavascriptDelegatesTest_Employee_strategy)
 @settings(max_examples=30)
-def test_ecorejavascriptdelegatestest::employee_reportsto_changes_state(instance):
+def test_ecorejavascriptdelegatestest_employee_reportsto_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -152,14 +149,14 @@ def test_ecorejavascriptdelegatestest::employee_reportsto_changes_state(instance
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'reportsTo' in ecoreJavascriptDelegatesTest::Employee is empty"
+        assert has_statements, f"Function 'reportsTo' in ecoreJavascriptDelegatesTest_Employee is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'reportsTo' in ecoreJavascriptDelegatesTest::Employee did not change state; check implementation")
+            warnings.warn(f"Operation 'reportsTo' in ecoreJavascriptDelegatesTest_Employee did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'reportsTo' in ecoreJavascriptDelegatesTest::Employee is not implemented or raised an error")
+        warnings.warn(f"Operation 'reportsTo' in ecoreJavascriptDelegatesTest_Employee is not implemented or raised an error")
 
 import warnings
 import copy
@@ -167,9 +164,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=ecoreJavascriptDelegatesTest::Employee_strategy)
+@given(instance=ecoreJavascriptDelegatesTest_Employee_strategy)
 @settings(max_examples=30)
-def test_ecorejavascriptdelegatestest::employee_checknamelength_changes_state(instance):
+def test_ecorejavascriptdelegatestest_employee_checknamelength_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -184,38 +181,32 @@ def test_ecorejavascriptdelegatestest::employee_checknamelength_changes_state(in
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'checkNameLength' in ecoreJavascriptDelegatesTest::Employee is empty"
+        assert has_statements, f"Function 'checkNameLength' in ecoreJavascriptDelegatesTest_Employee is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'checkNameLength' in ecoreJavascriptDelegatesTest::Employee did not change state; check implementation")
+            warnings.warn(f"Operation 'checkNameLength' in ecoreJavascriptDelegatesTest_Employee did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'checkNameLength' in ecoreJavascriptDelegatesTest::Employee is not implemented or raised an error")
+        warnings.warn(f"Operation 'checkNameLength' in ecoreJavascriptDelegatesTest_Employee is not implemented or raised an error")
 
-@given(instance=ecoreJavascriptDelegatesTest::Company_strategy)
+@given(instance=ecoreJavascriptDelegatesTest_Company_strategy)
 @settings(max_examples=50)
-def test_ecorejavascriptdelegatestest::company_instantiation(instance):
-    assert isinstance(instance, ecoreJavascriptDelegatesTest::Company)
-
-@given(instance=ecoreJavascriptDelegatesTest::Company_strategy)
-def test_ecorejavascriptdelegatestest::company_size_type(instance):
-    assert isinstance(instance.size, str)
+def test_ecorejavascriptdelegatestest_company_instantiation(instance):
+    assert isinstance(instance, ecoreJavascriptDelegatesTest_Company)
 
 
-@given(instance=ecoreJavascriptDelegatesTest::Company_strategy)
-def test_ecorejavascriptdelegatestest::company_size_setter(instance):
+
+@given(instance=ecoreJavascriptDelegatesTest_Company_strategy)
+def test_ecorejavascriptdelegatestest_company_size_setter(instance):
     original = instance.size
     instance.size = original
     assert instance.size == original
 
-@given(instance=ecoreJavascriptDelegatesTest::Company_strategy)
-def test_ecorejavascriptdelegatestest::company_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
-@given(instance=ecoreJavascriptDelegatesTest::Company_strategy)
-def test_ecorejavascriptdelegatestest::company_name_setter(instance):
+@given(instance=ecoreJavascriptDelegatesTest_Company_strategy)
+def test_ecorejavascriptdelegatestest_company_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original

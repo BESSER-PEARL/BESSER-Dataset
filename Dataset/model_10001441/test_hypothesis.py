@@ -3,7 +3,7 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
 from python_code import (
     Controlleur_Actor,
@@ -60,18 +60,9 @@ def test_analyse2_avisglobal_constructor_exists():
 def test_analyse2_avisglobal_constructor_args():
     sig = inspect.signature(Analyse2_AvisGlobal.__init__)
     params = list(sig.parameters.keys())
-    assert "Commentaires" in params, "Missing parameter 'Commentaires'"
     assert "notes" in params, "Missing parameter 'notes'"
+    assert "Commentaires" in params, "Missing parameter 'Commentaires'"
     assert "nbAvis" in params, "Missing parameter 'nbAvis'"
-
-def test_analyse2_avisglobal_has_Commentaires():
-    assert hasattr(Analyse2_AvisGlobal, "Commentaires")
-    descriptor = None
-    for klass in Analyse2_AvisGlobal.__mro__:
-        if "Commentaires" in klass.__dict__:
-            descriptor = klass.__dict__["Commentaires"]
-            break
-    assert isinstance(descriptor, property)
 
 def test_analyse2_avisglobal_has_notes():
     assert hasattr(Analyse2_AvisGlobal, "notes")
@@ -79,6 +70,15 @@ def test_analyse2_avisglobal_has_notes():
     for klass in Analyse2_AvisGlobal.__mro__:
         if "notes" in klass.__dict__:
             descriptor = klass.__dict__["notes"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_analyse2_avisglobal_has_Commentaires():
+    assert hasattr(Analyse2_AvisGlobal, "Commentaires")
+    descriptor = None
+    for klass in Analyse2_AvisGlobal.__mro__:
+        if "Commentaires" in klass.__dict__:
+            descriptor = klass.__dict__["Commentaires"]
             break
     assert isinstance(descriptor, property)
 
@@ -118,11 +118,29 @@ def test_analyse2_criteres_constructor_exists():
 def test_analyse2_criteres_constructor_args():
     sig = inspect.signature(Analyse2_Criteres.__init__)
     params = list(sig.parameters.keys())
+    assert "qualit_" in params, "Missing parameter 'qualit_'"
+    assert "rapportQualitePrix" in params, "Missing parameter 'rapportQualitePrix'"
     assert "rapidite" in params, "Missing parameter 'rapidite'"
     assert "amabilite" in params, "Missing parameter 'amabilite'"
     assert "respectHoraires" in params, "Missing parameter 'respectHoraires'"
-    assert "qualit_" in params, "Missing parameter 'qualit_'"
-    assert "rapportQualitePrix" in params, "Missing parameter 'rapportQualitePrix'"
+
+def test_analyse2_criteres_has_qualit_():
+    assert hasattr(Analyse2_Criteres, "qualit_")
+    descriptor = None
+    for klass in Analyse2_Criteres.__mro__:
+        if "qualit_" in klass.__dict__:
+            descriptor = klass.__dict__["qualit_"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_analyse2_criteres_has_rapportQualitePrix():
+    assert hasattr(Analyse2_Criteres, "rapportQualitePrix")
+    descriptor = None
+    for klass in Analyse2_Criteres.__mro__:
+        if "rapportQualitePrix" in klass.__dict__:
+            descriptor = klass.__dict__["rapportQualitePrix"]
+            break
+    assert isinstance(descriptor, property)
 
 def test_analyse2_criteres_has_rapidite():
     assert hasattr(Analyse2_Criteres, "rapidite")
@@ -151,24 +169,6 @@ def test_analyse2_criteres_has_respectHoraires():
             break
     assert isinstance(descriptor, property)
 
-def test_analyse2_criteres_has_qualit_():
-    assert hasattr(Analyse2_Criteres, "qualit_")
-    descriptor = None
-    for klass in Analyse2_Criteres.__mro__:
-        if "qualit_" in klass.__dict__:
-            descriptor = klass.__dict__["qualit_"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_analyse2_criteres_has_rapportQualitePrix():
-    assert hasattr(Analyse2_Criteres, "rapportQualitePrix")
-    descriptor = None
-    for klass in Analyse2_Criteres.__mro__:
-        if "rapportQualitePrix" in klass.__dict__:
-            descriptor = klass.__dict__["rapportQualitePrix"]
-            break
-    assert isinstance(descriptor, property)
-
 
 
 def test_analyse2_compte_is_not_abstract():
@@ -182,17 +182,8 @@ def test_analyse2_compte_constructor_exists():
 def test_analyse2_compte_constructor_args():
     sig = inspect.signature(Analyse2_Compte.__init__)
     params = list(sig.parameters.keys())
-    assert "motdepasse" in params, "Missing parameter 'motdepasse'"
     assert "login" in params, "Missing parameter 'login'"
-
-def test_analyse2_compte_has_motdepasse():
-    assert hasattr(Analyse2_Compte, "motdepasse")
-    descriptor = None
-    for klass in Analyse2_Compte.__mro__:
-        if "motdepasse" in klass.__dict__:
-            descriptor = klass.__dict__["motdepasse"]
-            break
-    assert isinstance(descriptor, property)
+    assert "motdepasse" in params, "Missing parameter 'motdepasse'"
 
 def test_analyse2_compte_has_login():
     assert hasattr(Analyse2_Compte, "login")
@@ -200,6 +191,15 @@ def test_analyse2_compte_has_login():
     for klass in Analyse2_Compte.__mro__:
         if "login" in klass.__dict__:
             descriptor = klass.__dict__["login"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_analyse2_compte_has_motdepasse():
+    assert hasattr(Analyse2_Compte, "motdepasse")
+    descriptor = None
+    for klass in Analyse2_Compte.__mro__:
+        if "motdepasse" in klass.__dict__:
+            descriptor = klass.__dict__["motdepasse"]
             break
     assert isinstance(descriptor, property)
 
@@ -231,8 +231,8 @@ def test_analyse2_review_constructor_args():
     sig = inspect.signature(Analyse2_Review.__init__)
     params = list(sig.parameters.keys())
     assert "lesNotes" in params, "Missing parameter 'lesNotes'"
-    assert "Commentaire" in params, "Missing parameter 'Commentaire'"
     assert "utilite" in params, "Missing parameter 'utilite'"
+    assert "Commentaire" in params, "Missing parameter 'Commentaire'"
 
 def test_analyse2_review_has_lesNotes():
     assert hasattr(Analyse2_Review, "lesNotes")
@@ -243,21 +243,21 @@ def test_analyse2_review_has_lesNotes():
             break
     assert isinstance(descriptor, property)
 
-def test_analyse2_review_has_Commentaire():
-    assert hasattr(Analyse2_Review, "Commentaire")
-    descriptor = None
-    for klass in Analyse2_Review.__mro__:
-        if "Commentaire" in klass.__dict__:
-            descriptor = klass.__dict__["Commentaire"]
-            break
-    assert isinstance(descriptor, property)
-
 def test_analyse2_review_has_utilite():
     assert hasattr(Analyse2_Review, "utilite")
     descriptor = None
     for klass in Analyse2_Review.__mro__:
         if "utilite" in klass.__dict__:
             descriptor = klass.__dict__["utilite"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_analyse2_review_has_Commentaire():
+    assert hasattr(Analyse2_Review, "Commentaire")
+    descriptor = None
+    for klass in Analyse2_Review.__mro__:
+        if "Commentaire" in klass.__dict__:
+            descriptor = klass.__dict__["Commentaire"]
             break
     assert isinstance(descriptor, property)
 
@@ -274,71 +274,35 @@ def test_analyse2_fast_food_constructor_exists():
 def test_analyse2_fast_food_constructor_args():
     sig = inspect.signature(Analyse2_Fast_Food.__init__)
     params = list(sig.parameters.keys())
-    assert "Adresse" in params, "Missing parameter 'Adresse'"
-    assert "Ville" in params, "Missing parameter 'Ville'"
-    assert "prixMax" in params, "Missing parameter 'prixMax'"
-    assert "reviews" in params, "Missing parameter 'reviews'"
-    assert "siteDeCommande" in params, "Missing parameter 'siteDeCommande'"
-    assert "description" in params, "Missing parameter 'description'"
-    assert "nom" in params, "Missing parameter 'nom'"
     assert "prixMin" in params, "Missing parameter 'prixMin'"
-    assert "nbPlaces" in params, "Missing parameter 'nbPlaces'"
-    assert "horaires" in params, "Missing parameter 'horaires'"
-    assert "photos" in params, "Missing parameter 'photos'"
-    assert "numeroTel" in params, "Missing parameter 'numeroTel'"
     assert "proprietaire" in params, "Missing parameter 'proprietaire'"
+    assert "nom" in params, "Missing parameter 'nom'"
+    assert "nbPlaces" in params, "Missing parameter 'nbPlaces'"
+    assert "prixMax" in params, "Missing parameter 'prixMax'"
+    assert "photos" in params, "Missing parameter 'photos'"
+    assert "siteDeCommande" in params, "Missing parameter 'siteDeCommande'"
+    assert "Ville" in params, "Missing parameter 'Ville'"
+    assert "horaires" in params, "Missing parameter 'horaires'"
+    assert "description" in params, "Missing parameter 'description'"
+    assert "reviews" in params, "Missing parameter 'reviews'"
+    assert "numeroTel" in params, "Missing parameter 'numeroTel'"
+    assert "Adresse" in params, "Missing parameter 'Adresse'"
 
-def test_analyse2_fast_food_has_Adresse():
-    assert hasattr(Analyse2_Fast_Food, "Adresse")
+def test_analyse2_fast_food_has_prixMin():
+    assert hasattr(Analyse2_Fast_Food, "prixMin")
     descriptor = None
     for klass in Analyse2_Fast_Food.__mro__:
-        if "Adresse" in klass.__dict__:
-            descriptor = klass.__dict__["Adresse"]
+        if "prixMin" in klass.__dict__:
+            descriptor = klass.__dict__["prixMin"]
             break
     assert isinstance(descriptor, property)
 
-def test_analyse2_fast_food_has_Ville():
-    assert hasattr(Analyse2_Fast_Food, "Ville")
+def test_analyse2_fast_food_has_proprietaire():
+    assert hasattr(Analyse2_Fast_Food, "proprietaire")
     descriptor = None
     for klass in Analyse2_Fast_Food.__mro__:
-        if "Ville" in klass.__dict__:
-            descriptor = klass.__dict__["Ville"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_analyse2_fast_food_has_prixMax():
-    assert hasattr(Analyse2_Fast_Food, "prixMax")
-    descriptor = None
-    for klass in Analyse2_Fast_Food.__mro__:
-        if "prixMax" in klass.__dict__:
-            descriptor = klass.__dict__["prixMax"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_analyse2_fast_food_has_reviews():
-    assert hasattr(Analyse2_Fast_Food, "reviews")
-    descriptor = None
-    for klass in Analyse2_Fast_Food.__mro__:
-        if "reviews" in klass.__dict__:
-            descriptor = klass.__dict__["reviews"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_analyse2_fast_food_has_siteDeCommande():
-    assert hasattr(Analyse2_Fast_Food, "siteDeCommande")
-    descriptor = None
-    for klass in Analyse2_Fast_Food.__mro__:
-        if "siteDeCommande" in klass.__dict__:
-            descriptor = klass.__dict__["siteDeCommande"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_analyse2_fast_food_has_description():
-    assert hasattr(Analyse2_Fast_Food, "description")
-    descriptor = None
-    for klass in Analyse2_Fast_Food.__mro__:
-        if "description" in klass.__dict__:
-            descriptor = klass.__dict__["description"]
+        if "proprietaire" in klass.__dict__:
+            descriptor = klass.__dict__["proprietaire"]
             break
     assert isinstance(descriptor, property)
 
@@ -351,15 +315,6 @@ def test_analyse2_fast_food_has_nom():
             break
     assert isinstance(descriptor, property)
 
-def test_analyse2_fast_food_has_prixMin():
-    assert hasattr(Analyse2_Fast_Food, "prixMin")
-    descriptor = None
-    for klass in Analyse2_Fast_Food.__mro__:
-        if "prixMin" in klass.__dict__:
-            descriptor = klass.__dict__["prixMin"]
-            break
-    assert isinstance(descriptor, property)
-
 def test_analyse2_fast_food_has_nbPlaces():
     assert hasattr(Analyse2_Fast_Food, "nbPlaces")
     descriptor = None
@@ -369,12 +324,12 @@ def test_analyse2_fast_food_has_nbPlaces():
             break
     assert isinstance(descriptor, property)
 
-def test_analyse2_fast_food_has_horaires():
-    assert hasattr(Analyse2_Fast_Food, "horaires")
+def test_analyse2_fast_food_has_prixMax():
+    assert hasattr(Analyse2_Fast_Food, "prixMax")
     descriptor = None
     for klass in Analyse2_Fast_Food.__mro__:
-        if "horaires" in klass.__dict__:
-            descriptor = klass.__dict__["horaires"]
+        if "prixMax" in klass.__dict__:
+            descriptor = klass.__dict__["prixMax"]
             break
     assert isinstance(descriptor, property)
 
@@ -387,6 +342,51 @@ def test_analyse2_fast_food_has_photos():
             break
     assert isinstance(descriptor, property)
 
+def test_analyse2_fast_food_has_siteDeCommande():
+    assert hasattr(Analyse2_Fast_Food, "siteDeCommande")
+    descriptor = None
+    for klass in Analyse2_Fast_Food.__mro__:
+        if "siteDeCommande" in klass.__dict__:
+            descriptor = klass.__dict__["siteDeCommande"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_analyse2_fast_food_has_Ville():
+    assert hasattr(Analyse2_Fast_Food, "Ville")
+    descriptor = None
+    for klass in Analyse2_Fast_Food.__mro__:
+        if "Ville" in klass.__dict__:
+            descriptor = klass.__dict__["Ville"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_analyse2_fast_food_has_horaires():
+    assert hasattr(Analyse2_Fast_Food, "horaires")
+    descriptor = None
+    for klass in Analyse2_Fast_Food.__mro__:
+        if "horaires" in klass.__dict__:
+            descriptor = klass.__dict__["horaires"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_analyse2_fast_food_has_description():
+    assert hasattr(Analyse2_Fast_Food, "description")
+    descriptor = None
+    for klass in Analyse2_Fast_Food.__mro__:
+        if "description" in klass.__dict__:
+            descriptor = klass.__dict__["description"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_analyse2_fast_food_has_reviews():
+    assert hasattr(Analyse2_Fast_Food, "reviews")
+    descriptor = None
+    for klass in Analyse2_Fast_Food.__mro__:
+        if "reviews" in klass.__dict__:
+            descriptor = klass.__dict__["reviews"]
+            break
+    assert isinstance(descriptor, property)
+
 def test_analyse2_fast_food_has_numeroTel():
     assert hasattr(Analyse2_Fast_Food, "numeroTel")
     descriptor = None
@@ -396,12 +396,12 @@ def test_analyse2_fast_food_has_numeroTel():
             break
     assert isinstance(descriptor, property)
 
-def test_analyse2_fast_food_has_proprietaire():
-    assert hasattr(Analyse2_Fast_Food, "proprietaire")
+def test_analyse2_fast_food_has_Adresse():
+    assert hasattr(Analyse2_Fast_Food, "Adresse")
     descriptor = None
     for klass in Analyse2_Fast_Food.__mro__:
-        if "proprietaire" in klass.__dict__:
-            descriptor = klass.__dict__["proprietaire"]
+        if "Adresse" in klass.__dict__:
+            descriptor = klass.__dict__["Adresse"]
             break
     assert isinstance(descriptor, property)
 
@@ -418,29 +418,11 @@ def test_pr_sentation_constructor_exists():
 def test_pr_sentation_constructor_args():
     sig = inspect.signature(Pr_sentation.__init__)
     params = list(sig.parameters.keys())
-    assert "adresse" in params, "Missing parameter 'adresse'"
-    assert "siteDeCommande" in params, "Missing parameter 'siteDeCommande'"
     assert "numTel" in params, "Missing parameter 'numTel'"
+    assert "adresse" in params, "Missing parameter 'adresse'"
     assert "ouverture" in params, "Missing parameter 'ouverture'"
     assert "description" in params, "Missing parameter 'description'"
-
-def test_pr_sentation_has_adresse():
-    assert hasattr(Pr_sentation, "adresse")
-    descriptor = None
-    for klass in Pr_sentation.__mro__:
-        if "adresse" in klass.__dict__:
-            descriptor = klass.__dict__["adresse"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_pr_sentation_has_siteDeCommande():
-    assert hasattr(Pr_sentation, "siteDeCommande")
-    descriptor = None
-    for klass in Pr_sentation.__mro__:
-        if "siteDeCommande" in klass.__dict__:
-            descriptor = klass.__dict__["siteDeCommande"]
-            break
-    assert isinstance(descriptor, property)
+    assert "siteDeCommande" in params, "Missing parameter 'siteDeCommande'"
 
 def test_pr_sentation_has_numTel():
     assert hasattr(Pr_sentation, "numTel")
@@ -448,6 +430,15 @@ def test_pr_sentation_has_numTel():
     for klass in Pr_sentation.__mro__:
         if "numTel" in klass.__dict__:
             descriptor = klass.__dict__["numTel"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_pr_sentation_has_adresse():
+    assert hasattr(Pr_sentation, "adresse")
+    descriptor = None
+    for klass in Pr_sentation.__mro__:
+        if "adresse" in klass.__dict__:
+            descriptor = klass.__dict__["adresse"]
             break
     assert isinstance(descriptor, property)
 
@@ -466,6 +457,15 @@ def test_pr_sentation_has_description():
     for klass in Pr_sentation.__mro__:
         if "description" in klass.__dict__:
             descriptor = klass.__dict__["description"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_pr_sentation_has_siteDeCommande():
+    assert hasattr(Pr_sentation, "siteDeCommande")
+    descriptor = None
+    for klass in Pr_sentation.__mro__:
+        if "siteDeCommande" in klass.__dict__:
+            descriptor = klass.__dict__["siteDeCommande"]
             break
     assert isinstance(descriptor, property)
 
@@ -530,28 +530,10 @@ def test_avisglobal_constructor_exists():
 def test_avisglobal_constructor_args():
     sig = inspect.signature(AvisGlobal.__init__)
     params = list(sig.parameters.keys())
-    assert "diagramme" in params, "Missing parameter 'diagramme'"
-    assert "Commentaires" in params, "Missing parameter 'Commentaires'"
     assert "nbAvis" in params, "Missing parameter 'nbAvis'"
+    assert "diagramme" in params, "Missing parameter 'diagramme'"
     assert "note" in params, "Missing parameter 'note'"
-
-def test_avisglobal_has_diagramme():
-    assert hasattr(AvisGlobal, "diagramme")
-    descriptor = None
-    for klass in AvisGlobal.__mro__:
-        if "diagramme" in klass.__dict__:
-            descriptor = klass.__dict__["diagramme"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_avisglobal_has_Commentaires():
-    assert hasattr(AvisGlobal, "Commentaires")
-    descriptor = None
-    for klass in AvisGlobal.__mro__:
-        if "Commentaires" in klass.__dict__:
-            descriptor = klass.__dict__["Commentaires"]
-            break
-    assert isinstance(descriptor, property)
+    assert "Commentaires" in params, "Missing parameter 'Commentaires'"
 
 def test_avisglobal_has_nbAvis():
     assert hasattr(AvisGlobal, "nbAvis")
@@ -562,12 +544,30 @@ def test_avisglobal_has_nbAvis():
             break
     assert isinstance(descriptor, property)
 
+def test_avisglobal_has_diagramme():
+    assert hasattr(AvisGlobal, "diagramme")
+    descriptor = None
+    for klass in AvisGlobal.__mro__:
+        if "diagramme" in klass.__dict__:
+            descriptor = klass.__dict__["diagramme"]
+            break
+    assert isinstance(descriptor, property)
+
 def test_avisglobal_has_note():
     assert hasattr(AvisGlobal, "note")
     descriptor = None
     for klass in AvisGlobal.__mro__:
         if "note" in klass.__dict__:
             descriptor = klass.__dict__["note"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_avisglobal_has_Commentaires():
+    assert hasattr(AvisGlobal, "Commentaires")
+    descriptor = None
+    for klass in AvisGlobal.__mro__:
+        if "Commentaires" in klass.__dict__:
+            descriptor = klass.__dict__["Commentaires"]
             break
     assert isinstance(descriptor, property)
 
@@ -622,18 +622,18 @@ def test_analyse_criteres_constructor_exists():
 def test_analyse_criteres_constructor_args():
     sig = inspect.signature(Analyse_Criteres.__init__)
     params = list(sig.parameters.keys())
-    assert "amabilite" in params, "Missing parameter 'amabilite'"
-    assert "rapidite" in params, "Missing parameter 'rapidite'"
     assert "respectHoraires" in params, "Missing parameter 'respectHoraires'"
+    assert "rapidite" in params, "Missing parameter 'rapidite'"
     assert "qualit_" in params, "Missing parameter 'qualit_'"
     assert "rapportQualitePrix" in params, "Missing parameter 'rapportQualitePrix'"
+    assert "amabilite" in params, "Missing parameter 'amabilite'"
 
-def test_analyse_criteres_has_amabilite():
-    assert hasattr(Analyse_Criteres, "amabilite")
+def test_analyse_criteres_has_respectHoraires():
+    assert hasattr(Analyse_Criteres, "respectHoraires")
     descriptor = None
     for klass in Analyse_Criteres.__mro__:
-        if "amabilite" in klass.__dict__:
-            descriptor = klass.__dict__["amabilite"]
+        if "respectHoraires" in klass.__dict__:
+            descriptor = klass.__dict__["respectHoraires"]
             break
     assert isinstance(descriptor, property)
 
@@ -643,15 +643,6 @@ def test_analyse_criteres_has_rapidite():
     for klass in Analyse_Criteres.__mro__:
         if "rapidite" in klass.__dict__:
             descriptor = klass.__dict__["rapidite"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_analyse_criteres_has_respectHoraires():
-    assert hasattr(Analyse_Criteres, "respectHoraires")
-    descriptor = None
-    for klass in Analyse_Criteres.__mro__:
-        if "respectHoraires" in klass.__dict__:
-            descriptor = klass.__dict__["respectHoraires"]
             break
     assert isinstance(descriptor, property)
 
@@ -670,6 +661,15 @@ def test_analyse_criteres_has_rapportQualitePrix():
     for klass in Analyse_Criteres.__mro__:
         if "rapportQualitePrix" in klass.__dict__:
             descriptor = klass.__dict__["rapportQualitePrix"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_analyse_criteres_has_amabilite():
+    assert hasattr(Analyse_Criteres, "amabilite")
+    descriptor = None
+    for klass in Analyse_Criteres.__mro__:
+        if "amabilite" in klass.__dict__:
+            descriptor = klass.__dict__["amabilite"]
             break
     assert isinstance(descriptor, property)
 
@@ -734,18 +734,9 @@ def test_analyse_review_constructor_exists():
 def test_analyse_review_constructor_args():
     sig = inspect.signature(Analyse_Review.__init__)
     params = list(sig.parameters.keys())
-    assert "NoteGlobale" in params, "Missing parameter 'NoteGlobale'"
     assert "lesNotes" in params, "Missing parameter 'lesNotes'"
+    assert "NoteGlobale" in params, "Missing parameter 'NoteGlobale'"
     assert "Commentaire" in params, "Missing parameter 'Commentaire'"
-
-def test_analyse_review_has_NoteGlobale():
-    assert hasattr(Analyse_Review, "NoteGlobale")
-    descriptor = None
-    for klass in Analyse_Review.__mro__:
-        if "NoteGlobale" in klass.__dict__:
-            descriptor = klass.__dict__["NoteGlobale"]
-            break
-    assert isinstance(descriptor, property)
 
 def test_analyse_review_has_lesNotes():
     assert hasattr(Analyse_Review, "lesNotes")
@@ -753,6 +744,15 @@ def test_analyse_review_has_lesNotes():
     for klass in Analyse_Review.__mro__:
         if "lesNotes" in klass.__dict__:
             descriptor = klass.__dict__["lesNotes"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_analyse_review_has_NoteGlobale():
+    assert hasattr(Analyse_Review, "NoteGlobale")
+    descriptor = None
+    for klass in Analyse_Review.__mro__:
+        if "NoteGlobale" in klass.__dict__:
+            descriptor = klass.__dict__["NoteGlobale"]
             break
     assert isinstance(descriptor, property)
 
@@ -778,53 +778,17 @@ def test_analyse_fast_food_constructor_exists():
 def test_analyse_fast_food_constructor_args():
     sig = inspect.signature(Analyse_Fast_Food.__init__)
     params = list(sig.parameters.keys())
-    assert "notes" in params, "Missing parameter 'notes'"
-    assert "prixMin" in params, "Missing parameter 'prixMin'"
-    assert "nom" in params, "Missing parameter 'nom'"
-    assert "Ville" in params, "Missing parameter 'Ville'"
     assert "numeroTel" in params, "Missing parameter 'numeroTel'"
-    assert "Adresse" in params, "Missing parameter 'Adresse'"
-    assert "proprietaire" in params, "Missing parameter 'proprietaire'"
-    assert "nbPlaces" in params, "Missing parameter 'nbPlaces'"
     assert "photos" in params, "Missing parameter 'photos'"
     assert "prixMax" in params, "Missing parameter 'prixMax'"
     assert "horaires" in params, "Missing parameter 'horaires'"
-
-def test_analyse_fast_food_has_notes():
-    assert hasattr(Analyse_Fast_Food, "notes")
-    descriptor = None
-    for klass in Analyse_Fast_Food.__mro__:
-        if "notes" in klass.__dict__:
-            descriptor = klass.__dict__["notes"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_analyse_fast_food_has_prixMin():
-    assert hasattr(Analyse_Fast_Food, "prixMin")
-    descriptor = None
-    for klass in Analyse_Fast_Food.__mro__:
-        if "prixMin" in klass.__dict__:
-            descriptor = klass.__dict__["prixMin"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_analyse_fast_food_has_nom():
-    assert hasattr(Analyse_Fast_Food, "nom")
-    descriptor = None
-    for klass in Analyse_Fast_Food.__mro__:
-        if "nom" in klass.__dict__:
-            descriptor = klass.__dict__["nom"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_analyse_fast_food_has_Ville():
-    assert hasattr(Analyse_Fast_Food, "Ville")
-    descriptor = None
-    for klass in Analyse_Fast_Food.__mro__:
-        if "Ville" in klass.__dict__:
-            descriptor = klass.__dict__["Ville"]
-            break
-    assert isinstance(descriptor, property)
+    assert "Adresse" in params, "Missing parameter 'Adresse'"
+    assert "Ville" in params, "Missing parameter 'Ville'"
+    assert "prixMin" in params, "Missing parameter 'prixMin'"
+    assert "nom" in params, "Missing parameter 'nom'"
+    assert "nbPlaces" in params, "Missing parameter 'nbPlaces'"
+    assert "notes" in params, "Missing parameter 'notes'"
+    assert "proprietaire" in params, "Missing parameter 'proprietaire'"
 
 def test_analyse_fast_food_has_numeroTel():
     assert hasattr(Analyse_Fast_Food, "numeroTel")
@@ -832,33 +796,6 @@ def test_analyse_fast_food_has_numeroTel():
     for klass in Analyse_Fast_Food.__mro__:
         if "numeroTel" in klass.__dict__:
             descriptor = klass.__dict__["numeroTel"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_analyse_fast_food_has_Adresse():
-    assert hasattr(Analyse_Fast_Food, "Adresse")
-    descriptor = None
-    for klass in Analyse_Fast_Food.__mro__:
-        if "Adresse" in klass.__dict__:
-            descriptor = klass.__dict__["Adresse"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_analyse_fast_food_has_proprietaire():
-    assert hasattr(Analyse_Fast_Food, "proprietaire")
-    descriptor = None
-    for klass in Analyse_Fast_Food.__mro__:
-        if "proprietaire" in klass.__dict__:
-            descriptor = klass.__dict__["proprietaire"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_analyse_fast_food_has_nbPlaces():
-    assert hasattr(Analyse_Fast_Food, "nbPlaces")
-    descriptor = None
-    for klass in Analyse_Fast_Food.__mro__:
-        if "nbPlaces" in klass.__dict__:
-            descriptor = klass.__dict__["nbPlaces"]
             break
     assert isinstance(descriptor, property)
 
@@ -886,6 +823,69 @@ def test_analyse_fast_food_has_horaires():
     for klass in Analyse_Fast_Food.__mro__:
         if "horaires" in klass.__dict__:
             descriptor = klass.__dict__["horaires"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_analyse_fast_food_has_Adresse():
+    assert hasattr(Analyse_Fast_Food, "Adresse")
+    descriptor = None
+    for klass in Analyse_Fast_Food.__mro__:
+        if "Adresse" in klass.__dict__:
+            descriptor = klass.__dict__["Adresse"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_analyse_fast_food_has_Ville():
+    assert hasattr(Analyse_Fast_Food, "Ville")
+    descriptor = None
+    for klass in Analyse_Fast_Food.__mro__:
+        if "Ville" in klass.__dict__:
+            descriptor = klass.__dict__["Ville"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_analyse_fast_food_has_prixMin():
+    assert hasattr(Analyse_Fast_Food, "prixMin")
+    descriptor = None
+    for klass in Analyse_Fast_Food.__mro__:
+        if "prixMin" in klass.__dict__:
+            descriptor = klass.__dict__["prixMin"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_analyse_fast_food_has_nom():
+    assert hasattr(Analyse_Fast_Food, "nom")
+    descriptor = None
+    for klass in Analyse_Fast_Food.__mro__:
+        if "nom" in klass.__dict__:
+            descriptor = klass.__dict__["nom"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_analyse_fast_food_has_nbPlaces():
+    assert hasattr(Analyse_Fast_Food, "nbPlaces")
+    descriptor = None
+    for klass in Analyse_Fast_Food.__mro__:
+        if "nbPlaces" in klass.__dict__:
+            descriptor = klass.__dict__["nbPlaces"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_analyse_fast_food_has_notes():
+    assert hasattr(Analyse_Fast_Food, "notes")
+    descriptor = None
+    for klass in Analyse_Fast_Food.__mro__:
+        if "notes" in klass.__dict__:
+            descriptor = klass.__dict__["notes"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_analyse_fast_food_has_proprietaire():
+    assert hasattr(Analyse_Fast_Food, "proprietaire")
+    descriptor = None
+    for klass in Analyse_Fast_Food.__mro__:
+        if "proprietaire" in klass.__dict__:
+            descriptor = klass.__dict__["proprietaire"]
             break
     assert isinstance(descriptor, property)
 
@@ -932,9 +932,9 @@ Controlleur_Actor_strategy = st.builds(
 )
 Analyse2_AvisGlobal_strategy = st.builds(
     Analyse2_AvisGlobal,
-    Commentaires=
-        safe_text,
     notes=
+        safe_text,
+    Commentaires=
         safe_text,
     nbAvis=
         st.integers()
@@ -944,22 +944,22 @@ Analyse2_Moderateurs_strategy = st.builds(
 )
 Analyse2_Criteres_strategy = st.builds(
     Analyse2_Criteres,
+    qualit_=
+        st.integers(),
+    rapportQualitePrix=
+        st.integers(),
     rapidite=
         st.integers(),
     amabilite=
         st.integers(),
     respectHoraires=
-        st.integers(),
-    qualit_=
-        st.integers(),
-    rapportQualitePrix=
         st.integers()
 )
 Analyse2_Compte_strategy = st.builds(
     Analyse2_Compte,
-    motdepasse=
-        safe_text,
     login=
+        safe_text,
+    motdepasse=
         safe_text
 )
 Analyse2_Utilisateur_strategy = st.builds(
@@ -969,51 +969,51 @@ Analyse2_Review_strategy = st.builds(
     Analyse2_Review,
     lesNotes=
         safe_text,
-    Commentaire=
-        safe_text,
     utilite=
+        safe_text,
+    Commentaire=
         safe_text
 )
 Analyse2_Fast_Food_strategy = st.builds(
     Analyse2_Fast_Food,
-    Adresse=
-        safe_text,
-    Ville=
-        safe_text,
-    prixMax=
+    prixMin=
         st.integers(),
-    reviews=
-        safe_text,
-    siteDeCommande=
-        safe_text,
-    description=
+    proprietaire=
         safe_text,
     nom=
         safe_text,
-    prixMin=
-        st.integers(),
     nbPlaces=
         st.integers(),
+    prixMax=
+        st.integers(),
+    photos=
+        safe_text,
+    siteDeCommande=
+        safe_text,
+    Ville=
+        safe_text,
     horaires=
         safe_text,
-    photos=
+    description=
+        safe_text,
+    reviews=
         safe_text,
     numeroTel=
         safe_text,
-    proprietaire=
+    Adresse=
         safe_text
 )
 Pr_sentation_strategy = st.builds(
     Pr_sentation,
-    adresse=
-        safe_text,
-    siteDeCommande=
-        safe_text,
     numTel=
+        safe_text,
+    adresse=
         safe_text,
     ouverture=
         safe_text,
     description=
+        safe_text,
+    siteDeCommande=
         safe_text
 )
 Photo_strategy = st.builds(
@@ -1028,13 +1028,13 @@ Commentaire_strategy = st.builds(
 )
 AvisGlobal_strategy = st.builds(
     AvisGlobal,
-    diagramme=
-        safe_text,
-    Commentaires=
-        safe_text,
     nbAvis=
         st.integers(),
+    diagramme=
+        safe_text,
     note=
+        safe_text,
+    Commentaires=
         safe_text
 )
 FicheRestaurant_strategy = st.builds(
@@ -1047,15 +1047,15 @@ Analyse_Moderateurs_strategy = st.builds(
 )
 Analyse_Criteres_strategy = st.builds(
     Analyse_Criteres,
-    amabilite=
+    respectHoraires=
         st.integers(),
     rapidite=
-        st.integers(),
-    respectHoraires=
         st.integers(),
     qualit_=
         st.integers(),
     rapportQualitePrix=
+        st.integers(),
+    amabilite=
         st.integers()
 )
 Analyse_Compte_strategy = st.builds(
@@ -1070,36 +1070,36 @@ Analyse_Utilisateur_strategy = st.builds(
 )
 Analyse_Review_strategy = st.builds(
     Analyse_Review,
-    NoteGlobale=
-        st.integers(),
     lesNotes=
         safe_text,
+    NoteGlobale=
+        st.integers(),
     Commentaire=
         safe_text
 )
 Analyse_Fast_Food_strategy = st.builds(
     Analyse_Fast_Food,
-    notes=
-        safe_text,
-    prixMin=
-        st.integers(),
-    nom=
-        safe_text,
-    Ville=
-        safe_text,
     numeroTel=
         safe_text,
-    Adresse=
-        safe_text,
-    proprietaire=
-        safe_text,
-    nbPlaces=
-        st.integers(),
     photos=
         safe_text,
     prixMax=
         st.integers(),
     horaires=
+        safe_text,
+    Adresse=
+        safe_text,
+    Ville=
+        safe_text,
+    prixMin=
+        st.integers(),
+    nom=
+        safe_text,
+    nbPlaces=
+        st.integers(),
+    notes=
+        safe_text,
+    proprietaire=
         safe_text
 )
 
@@ -1113,20 +1113,6 @@ def test_controlleur_actor_instantiation(instance):
 def test_analyse2_avisglobal_instantiation(instance):
     assert isinstance(instance, Analyse2_AvisGlobal)
 
-@given(instance=Analyse2_AvisGlobal_strategy)
-def test_analyse2_avisglobal_Commentaires_type(instance):
-    assert isinstance(instance.Commentaires, str)
-
-
-@given(instance=Analyse2_AvisGlobal_strategy)
-def test_analyse2_avisglobal_Commentaires_setter(instance):
-    original = instance.Commentaires
-    instance.Commentaires = original
-    assert instance.Commentaires == original
-
-@given(instance=Analyse2_AvisGlobal_strategy)
-def test_analyse2_avisglobal_notes_type(instance):
-    assert isinstance(instance.notes, str)
 
 
 @given(instance=Analyse2_AvisGlobal_strategy)
@@ -1135,9 +1121,14 @@ def test_analyse2_avisglobal_notes_setter(instance):
     instance.notes = original
     assert instance.notes == original
 
+
+
 @given(instance=Analyse2_AvisGlobal_strategy)
-def test_analyse2_avisglobal_nbAvis_type(instance):
-    assert isinstance(instance.nbAvis, int)
+def test_analyse2_avisglobal_Commentaires_setter(instance):
+    original = instance.Commentaires
+    instance.Commentaires = original
+    assert instance.Commentaires == original
+
 
 
 @given(instance=Analyse2_AvisGlobal_strategy)
@@ -1156,42 +1147,6 @@ def test_analyse2_moderateurs_instantiation(instance):
 def test_analyse2_criteres_instantiation(instance):
     assert isinstance(instance, Analyse2_Criteres)
 
-@given(instance=Analyse2_Criteres_strategy)
-def test_analyse2_criteres_rapidite_type(instance):
-    assert isinstance(instance.rapidite, int)
-
-
-@given(instance=Analyse2_Criteres_strategy)
-def test_analyse2_criteres_rapidite_setter(instance):
-    original = instance.rapidite
-    instance.rapidite = original
-    assert instance.rapidite == original
-
-@given(instance=Analyse2_Criteres_strategy)
-def test_analyse2_criteres_amabilite_type(instance):
-    assert isinstance(instance.amabilite, int)
-
-
-@given(instance=Analyse2_Criteres_strategy)
-def test_analyse2_criteres_amabilite_setter(instance):
-    original = instance.amabilite
-    instance.amabilite = original
-    assert instance.amabilite == original
-
-@given(instance=Analyse2_Criteres_strategy)
-def test_analyse2_criteres_respectHoraires_type(instance):
-    assert isinstance(instance.respectHoraires, int)
-
-
-@given(instance=Analyse2_Criteres_strategy)
-def test_analyse2_criteres_respectHoraires_setter(instance):
-    original = instance.respectHoraires
-    instance.respectHoraires = original
-    assert instance.respectHoraires == original
-
-@given(instance=Analyse2_Criteres_strategy)
-def test_analyse2_criteres_qualit__type(instance):
-    assert isinstance(instance.qualit_, int)
 
 
 @given(instance=Analyse2_Criteres_strategy)
@@ -1200,9 +1155,6 @@ def test_analyse2_criteres_qualit__setter(instance):
     instance.qualit_ = original
     assert instance.qualit_ == original
 
-@given(instance=Analyse2_Criteres_strategy)
-def test_analyse2_criteres_rapportQualitePrix_type(instance):
-    assert isinstance(instance.rapportQualitePrix, int)
 
 
 @given(instance=Analyse2_Criteres_strategy)
@@ -1211,25 +1163,35 @@ def test_analyse2_criteres_rapportQualitePrix_setter(instance):
     instance.rapportQualitePrix = original
     assert instance.rapportQualitePrix == original
 
+
+
+@given(instance=Analyse2_Criteres_strategy)
+def test_analyse2_criteres_rapidite_setter(instance):
+    original = instance.rapidite
+    instance.rapidite = original
+    assert instance.rapidite == original
+
+
+
+@given(instance=Analyse2_Criteres_strategy)
+def test_analyse2_criteres_amabilite_setter(instance):
+    original = instance.amabilite
+    instance.amabilite = original
+    assert instance.amabilite == original
+
+
+
+@given(instance=Analyse2_Criteres_strategy)
+def test_analyse2_criteres_respectHoraires_setter(instance):
+    original = instance.respectHoraires
+    instance.respectHoraires = original
+    assert instance.respectHoraires == original
+
 @given(instance=Analyse2_Compte_strategy)
 @settings(max_examples=50)
 def test_analyse2_compte_instantiation(instance):
     assert isinstance(instance, Analyse2_Compte)
 
-@given(instance=Analyse2_Compte_strategy)
-def test_analyse2_compte_motdepasse_type(instance):
-    assert isinstance(instance.motdepasse, str)
-
-
-@given(instance=Analyse2_Compte_strategy)
-def test_analyse2_compte_motdepasse_setter(instance):
-    original = instance.motdepasse
-    instance.motdepasse = original
-    assert instance.motdepasse == original
-
-@given(instance=Analyse2_Compte_strategy)
-def test_analyse2_compte_login_type(instance):
-    assert isinstance(instance.login, str)
 
 
 @given(instance=Analyse2_Compte_strategy)
@@ -1237,6 +1199,14 @@ def test_analyse2_compte_login_setter(instance):
     original = instance.login
     instance.login = original
     assert instance.login == original
+
+
+
+@given(instance=Analyse2_Compte_strategy)
+def test_analyse2_compte_motdepasse_setter(instance):
+    original = instance.motdepasse
+    instance.motdepasse = original
+    assert instance.motdepasse == original
 
 @given(instance=Analyse2_Utilisateur_strategy)
 @settings(max_examples=50)
@@ -1248,9 +1218,6 @@ def test_analyse2_utilisateur_instantiation(instance):
 def test_analyse2_review_instantiation(instance):
     assert isinstance(instance, Analyse2_Review)
 
-@given(instance=Analyse2_Review_strategy)
-def test_analyse2_review_lesNotes_type(instance):
-    assert isinstance(instance.lesNotes, str)
 
 
 @given(instance=Analyse2_Review_strategy)
@@ -1259,20 +1226,6 @@ def test_analyse2_review_lesNotes_setter(instance):
     instance.lesNotes = original
     assert instance.lesNotes == original
 
-@given(instance=Analyse2_Review_strategy)
-def test_analyse2_review_Commentaire_type(instance):
-    assert isinstance(instance.Commentaire, str)
-
-
-@given(instance=Analyse2_Review_strategy)
-def test_analyse2_review_Commentaire_setter(instance):
-    original = instance.Commentaire
-    instance.Commentaire = original
-    assert instance.Commentaire == original
-
-@given(instance=Analyse2_Review_strategy)
-def test_analyse2_review_utilite_type(instance):
-    assert isinstance(instance.utilite, str)
 
 
 @given(instance=Analyse2_Review_strategy)
@@ -1281,91 +1234,19 @@ def test_analyse2_review_utilite_setter(instance):
     instance.utilite = original
     assert instance.utilite == original
 
+
+
+@given(instance=Analyse2_Review_strategy)
+def test_analyse2_review_Commentaire_setter(instance):
+    original = instance.Commentaire
+    instance.Commentaire = original
+    assert instance.Commentaire == original
+
 @given(instance=Analyse2_Fast_Food_strategy)
 @settings(max_examples=50)
 def test_analyse2_fast_food_instantiation(instance):
     assert isinstance(instance, Analyse2_Fast_Food)
 
-@given(instance=Analyse2_Fast_Food_strategy)
-def test_analyse2_fast_food_Adresse_type(instance):
-    assert isinstance(instance.Adresse, str)
-
-
-@given(instance=Analyse2_Fast_Food_strategy)
-def test_analyse2_fast_food_Adresse_setter(instance):
-    original = instance.Adresse
-    instance.Adresse = original
-    assert instance.Adresse == original
-
-@given(instance=Analyse2_Fast_Food_strategy)
-def test_analyse2_fast_food_Ville_type(instance):
-    assert isinstance(instance.Ville, str)
-
-
-@given(instance=Analyse2_Fast_Food_strategy)
-def test_analyse2_fast_food_Ville_setter(instance):
-    original = instance.Ville
-    instance.Ville = original
-    assert instance.Ville == original
-
-@given(instance=Analyse2_Fast_Food_strategy)
-def test_analyse2_fast_food_prixMax_type(instance):
-    assert isinstance(instance.prixMax, int)
-
-
-@given(instance=Analyse2_Fast_Food_strategy)
-def test_analyse2_fast_food_prixMax_setter(instance):
-    original = instance.prixMax
-    instance.prixMax = original
-    assert instance.prixMax == original
-
-@given(instance=Analyse2_Fast_Food_strategy)
-def test_analyse2_fast_food_reviews_type(instance):
-    assert isinstance(instance.reviews, str)
-
-
-@given(instance=Analyse2_Fast_Food_strategy)
-def test_analyse2_fast_food_reviews_setter(instance):
-    original = instance.reviews
-    instance.reviews = original
-    assert instance.reviews == original
-
-@given(instance=Analyse2_Fast_Food_strategy)
-def test_analyse2_fast_food_siteDeCommande_type(instance):
-    assert isinstance(instance.siteDeCommande, str)
-
-
-@given(instance=Analyse2_Fast_Food_strategy)
-def test_analyse2_fast_food_siteDeCommande_setter(instance):
-    original = instance.siteDeCommande
-    instance.siteDeCommande = original
-    assert instance.siteDeCommande == original
-
-@given(instance=Analyse2_Fast_Food_strategy)
-def test_analyse2_fast_food_description_type(instance):
-    assert isinstance(instance.description, str)
-
-
-@given(instance=Analyse2_Fast_Food_strategy)
-def test_analyse2_fast_food_description_setter(instance):
-    original = instance.description
-    instance.description = original
-    assert instance.description == original
-
-@given(instance=Analyse2_Fast_Food_strategy)
-def test_analyse2_fast_food_nom_type(instance):
-    assert isinstance(instance.nom, str)
-
-
-@given(instance=Analyse2_Fast_Food_strategy)
-def test_analyse2_fast_food_nom_setter(instance):
-    original = instance.nom
-    instance.nom = original
-    assert instance.nom == original
-
-@given(instance=Analyse2_Fast_Food_strategy)
-def test_analyse2_fast_food_prixMin_type(instance):
-    assert isinstance(instance.prixMin, int)
 
 
 @given(instance=Analyse2_Fast_Food_strategy)
@@ -1374,53 +1255,6 @@ def test_analyse2_fast_food_prixMin_setter(instance):
     instance.prixMin = original
     assert instance.prixMin == original
 
-@given(instance=Analyse2_Fast_Food_strategy)
-def test_analyse2_fast_food_nbPlaces_type(instance):
-    assert isinstance(instance.nbPlaces, int)
-
-
-@given(instance=Analyse2_Fast_Food_strategy)
-def test_analyse2_fast_food_nbPlaces_setter(instance):
-    original = instance.nbPlaces
-    instance.nbPlaces = original
-    assert instance.nbPlaces == original
-
-@given(instance=Analyse2_Fast_Food_strategy)
-def test_analyse2_fast_food_horaires_type(instance):
-    assert isinstance(instance.horaires, str)
-
-
-@given(instance=Analyse2_Fast_Food_strategy)
-def test_analyse2_fast_food_horaires_setter(instance):
-    original = instance.horaires
-    instance.horaires = original
-    assert instance.horaires == original
-
-@given(instance=Analyse2_Fast_Food_strategy)
-def test_analyse2_fast_food_photos_type(instance):
-    assert isinstance(instance.photos, str)
-
-
-@given(instance=Analyse2_Fast_Food_strategy)
-def test_analyse2_fast_food_photos_setter(instance):
-    original = instance.photos
-    instance.photos = original
-    assert instance.photos == original
-
-@given(instance=Analyse2_Fast_Food_strategy)
-def test_analyse2_fast_food_numeroTel_type(instance):
-    assert isinstance(instance.numeroTel, str)
-
-
-@given(instance=Analyse2_Fast_Food_strategy)
-def test_analyse2_fast_food_numeroTel_setter(instance):
-    original = instance.numeroTel
-    instance.numeroTel = original
-    assert instance.numeroTel == original
-
-@given(instance=Analyse2_Fast_Food_strategy)
-def test_analyse2_fast_food_proprietaire_type(instance):
-    assert isinstance(instance.proprietaire, str)
 
 
 @given(instance=Analyse2_Fast_Food_strategy)
@@ -1429,36 +1263,99 @@ def test_analyse2_fast_food_proprietaire_setter(instance):
     instance.proprietaire = original
     assert instance.proprietaire == original
 
+
+
+@given(instance=Analyse2_Fast_Food_strategy)
+def test_analyse2_fast_food_nom_setter(instance):
+    original = instance.nom
+    instance.nom = original
+    assert instance.nom == original
+
+
+
+@given(instance=Analyse2_Fast_Food_strategy)
+def test_analyse2_fast_food_nbPlaces_setter(instance):
+    original = instance.nbPlaces
+    instance.nbPlaces = original
+    assert instance.nbPlaces == original
+
+
+
+@given(instance=Analyse2_Fast_Food_strategy)
+def test_analyse2_fast_food_prixMax_setter(instance):
+    original = instance.prixMax
+    instance.prixMax = original
+    assert instance.prixMax == original
+
+
+
+@given(instance=Analyse2_Fast_Food_strategy)
+def test_analyse2_fast_food_photos_setter(instance):
+    original = instance.photos
+    instance.photos = original
+    assert instance.photos == original
+
+
+
+@given(instance=Analyse2_Fast_Food_strategy)
+def test_analyse2_fast_food_siteDeCommande_setter(instance):
+    original = instance.siteDeCommande
+    instance.siteDeCommande = original
+    assert instance.siteDeCommande == original
+
+
+
+@given(instance=Analyse2_Fast_Food_strategy)
+def test_analyse2_fast_food_Ville_setter(instance):
+    original = instance.Ville
+    instance.Ville = original
+    assert instance.Ville == original
+
+
+
+@given(instance=Analyse2_Fast_Food_strategy)
+def test_analyse2_fast_food_horaires_setter(instance):
+    original = instance.horaires
+    instance.horaires = original
+    assert instance.horaires == original
+
+
+
+@given(instance=Analyse2_Fast_Food_strategy)
+def test_analyse2_fast_food_description_setter(instance):
+    original = instance.description
+    instance.description = original
+    assert instance.description == original
+
+
+
+@given(instance=Analyse2_Fast_Food_strategy)
+def test_analyse2_fast_food_reviews_setter(instance):
+    original = instance.reviews
+    instance.reviews = original
+    assert instance.reviews == original
+
+
+
+@given(instance=Analyse2_Fast_Food_strategy)
+def test_analyse2_fast_food_numeroTel_setter(instance):
+    original = instance.numeroTel
+    instance.numeroTel = original
+    assert instance.numeroTel == original
+
+
+
+@given(instance=Analyse2_Fast_Food_strategy)
+def test_analyse2_fast_food_Adresse_setter(instance):
+    original = instance.Adresse
+    instance.Adresse = original
+    assert instance.Adresse == original
+
 @given(instance=Pr_sentation_strategy)
 @settings(max_examples=50)
 def test_pr_sentation_instantiation(instance):
     assert isinstance(instance, Pr_sentation)
 
-@given(instance=Pr_sentation_strategy)
-def test_pr_sentation_adresse_type(instance):
-    assert isinstance(instance.adresse, str)
-
-
-@given(instance=Pr_sentation_strategy)
-def test_pr_sentation_adresse_setter(instance):
-    original = instance.adresse
-    instance.adresse = original
-    assert instance.adresse == original
-
-@given(instance=Pr_sentation_strategy)
-def test_pr_sentation_siteDeCommande_type(instance):
-    assert isinstance(instance.siteDeCommande, str)
-
-
-@given(instance=Pr_sentation_strategy)
-def test_pr_sentation_siteDeCommande_setter(instance):
-    original = instance.siteDeCommande
-    instance.siteDeCommande = original
-    assert instance.siteDeCommande == original
-
-@given(instance=Pr_sentation_strategy)
-def test_pr_sentation_numTel_type(instance):
-    assert isinstance(instance.numTel, str)
 
 
 @given(instance=Pr_sentation_strategy)
@@ -1467,9 +1364,14 @@ def test_pr_sentation_numTel_setter(instance):
     instance.numTel = original
     assert instance.numTel == original
 
+
+
 @given(instance=Pr_sentation_strategy)
-def test_pr_sentation_ouverture_type(instance):
-    assert isinstance(instance.ouverture, str)
+def test_pr_sentation_adresse_setter(instance):
+    original = instance.adresse
+    instance.adresse = original
+    assert instance.adresse == original
+
 
 
 @given(instance=Pr_sentation_strategy)
@@ -1478,9 +1380,6 @@ def test_pr_sentation_ouverture_setter(instance):
     instance.ouverture = original
     assert instance.ouverture == original
 
-@given(instance=Pr_sentation_strategy)
-def test_pr_sentation_description_type(instance):
-    assert isinstance(instance.description, str)
 
 
 @given(instance=Pr_sentation_strategy)
@@ -1488,6 +1387,14 @@ def test_pr_sentation_description_setter(instance):
     original = instance.description
     instance.description = original
     assert instance.description == original
+
+
+
+@given(instance=Pr_sentation_strategy)
+def test_pr_sentation_siteDeCommande_setter(instance):
+    original = instance.siteDeCommande
+    instance.siteDeCommande = original
+    assert instance.siteDeCommande == original
 
 @given(instance=Photo_strategy)
 @settings(max_examples=50)
@@ -1499,9 +1406,6 @@ def test_photo_instantiation(instance):
 def test_commentaire_instantiation(instance):
     assert isinstance(instance, Commentaire)
 
-@given(instance=Commentaire_strategy)
-def test_commentaire_commentaire_type(instance):
-    assert isinstance(instance.commentaire, str)
 
 
 @given(instance=Commentaire_strategy)
@@ -1510,9 +1414,6 @@ def test_commentaire_commentaire_setter(instance):
     instance.commentaire = original
     assert instance.commentaire == original
 
-@given(instance=Commentaire_strategy)
-def test_commentaire_auteur_type(instance):
-    assert isinstance(instance.auteur, analyse_compte)
 
 
 @given(instance=Commentaire_strategy)
@@ -1526,31 +1427,6 @@ def test_commentaire_auteur_setter(instance):
 def test_avisglobal_instantiation(instance):
     assert isinstance(instance, AvisGlobal)
 
-@given(instance=AvisGlobal_strategy)
-def test_avisglobal_diagramme_type(instance):
-    assert isinstance(instance.diagramme, str)
-
-
-@given(instance=AvisGlobal_strategy)
-def test_avisglobal_diagramme_setter(instance):
-    original = instance.diagramme
-    instance.diagramme = original
-    assert instance.diagramme == original
-
-@given(instance=AvisGlobal_strategy)
-def test_avisglobal_Commentaires_type(instance):
-    assert isinstance(instance.Commentaires, str)
-
-
-@given(instance=AvisGlobal_strategy)
-def test_avisglobal_Commentaires_setter(instance):
-    original = instance.Commentaires
-    instance.Commentaires = original
-    assert instance.Commentaires == original
-
-@given(instance=AvisGlobal_strategy)
-def test_avisglobal_nbAvis_type(instance):
-    assert isinstance(instance.nbAvis, int)
 
 
 @given(instance=AvisGlobal_strategy)
@@ -1559,9 +1435,14 @@ def test_avisglobal_nbAvis_setter(instance):
     instance.nbAvis = original
     assert instance.nbAvis == original
 
+
+
 @given(instance=AvisGlobal_strategy)
-def test_avisglobal_note_type(instance):
-    assert isinstance(instance.note, str)
+def test_avisglobal_diagramme_setter(instance):
+    original = instance.diagramme
+    instance.diagramme = original
+    assert instance.diagramme == original
+
 
 
 @given(instance=AvisGlobal_strategy)
@@ -1570,14 +1451,19 @@ def test_avisglobal_note_setter(instance):
     instance.note = original
     assert instance.note == original
 
+
+
+@given(instance=AvisGlobal_strategy)
+def test_avisglobal_Commentaires_setter(instance):
+    original = instance.Commentaires
+    instance.Commentaires = original
+    assert instance.Commentaires == original
+
 @given(instance=FicheRestaurant_strategy)
 @settings(max_examples=50)
 def test_ficherestaurant_instantiation(instance):
     assert isinstance(instance, FicheRestaurant)
 
-@given(instance=FicheRestaurant_strategy)
-def test_ficherestaurant_nom_type(instance):
-    assert isinstance(instance.nom, str)
 
 
 @given(instance=FicheRestaurant_strategy)
@@ -1596,31 +1482,6 @@ def test_analyse_moderateurs_instantiation(instance):
 def test_analyse_criteres_instantiation(instance):
     assert isinstance(instance, Analyse_Criteres)
 
-@given(instance=Analyse_Criteres_strategy)
-def test_analyse_criteres_amabilite_type(instance):
-    assert isinstance(instance.amabilite, int)
-
-
-@given(instance=Analyse_Criteres_strategy)
-def test_analyse_criteres_amabilite_setter(instance):
-    original = instance.amabilite
-    instance.amabilite = original
-    assert instance.amabilite == original
-
-@given(instance=Analyse_Criteres_strategy)
-def test_analyse_criteres_rapidite_type(instance):
-    assert isinstance(instance.rapidite, int)
-
-
-@given(instance=Analyse_Criteres_strategy)
-def test_analyse_criteres_rapidite_setter(instance):
-    original = instance.rapidite
-    instance.rapidite = original
-    assert instance.rapidite == original
-
-@given(instance=Analyse_Criteres_strategy)
-def test_analyse_criteres_respectHoraires_type(instance):
-    assert isinstance(instance.respectHoraires, int)
 
 
 @given(instance=Analyse_Criteres_strategy)
@@ -1629,9 +1490,14 @@ def test_analyse_criteres_respectHoraires_setter(instance):
     instance.respectHoraires = original
     assert instance.respectHoraires == original
 
+
+
 @given(instance=Analyse_Criteres_strategy)
-def test_analyse_criteres_qualit__type(instance):
-    assert isinstance(instance.qualit_, int)
+def test_analyse_criteres_rapidite_setter(instance):
+    original = instance.rapidite
+    instance.rapidite = original
+    assert instance.rapidite == original
+
 
 
 @given(instance=Analyse_Criteres_strategy)
@@ -1640,9 +1506,6 @@ def test_analyse_criteres_qualit__setter(instance):
     instance.qualit_ = original
     assert instance.qualit_ == original
 
-@given(instance=Analyse_Criteres_strategy)
-def test_analyse_criteres_rapportQualitePrix_type(instance):
-    assert isinstance(instance.rapportQualitePrix, int)
 
 
 @given(instance=Analyse_Criteres_strategy)
@@ -1651,14 +1514,19 @@ def test_analyse_criteres_rapportQualitePrix_setter(instance):
     instance.rapportQualitePrix = original
     assert instance.rapportQualitePrix == original
 
+
+
+@given(instance=Analyse_Criteres_strategy)
+def test_analyse_criteres_amabilite_setter(instance):
+    original = instance.amabilite
+    instance.amabilite = original
+    assert instance.amabilite == original
+
 @given(instance=Analyse_Compte_strategy)
 @settings(max_examples=50)
 def test_analyse_compte_instantiation(instance):
     assert isinstance(instance, Analyse_Compte)
 
-@given(instance=Analyse_Compte_strategy)
-def test_analyse_compte_motdepasse_type(instance):
-    assert isinstance(instance.motdepasse, str)
 
 
 @given(instance=Analyse_Compte_strategy)
@@ -1667,9 +1535,6 @@ def test_analyse_compte_motdepasse_setter(instance):
     instance.motdepasse = original
     assert instance.motdepasse == original
 
-@given(instance=Analyse_Compte_strategy)
-def test_analyse_compte_login_type(instance):
-    assert isinstance(instance.login, str)
 
 
 @given(instance=Analyse_Compte_strategy)
@@ -1688,20 +1553,6 @@ def test_analyse_utilisateur_instantiation(instance):
 def test_analyse_review_instantiation(instance):
     assert isinstance(instance, Analyse_Review)
 
-@given(instance=Analyse_Review_strategy)
-def test_analyse_review_NoteGlobale_type(instance):
-    assert isinstance(instance.NoteGlobale, int)
-
-
-@given(instance=Analyse_Review_strategy)
-def test_analyse_review_NoteGlobale_setter(instance):
-    original = instance.NoteGlobale
-    instance.NoteGlobale = original
-    assert instance.NoteGlobale == original
-
-@given(instance=Analyse_Review_strategy)
-def test_analyse_review_lesNotes_type(instance):
-    assert isinstance(instance.lesNotes, str)
 
 
 @given(instance=Analyse_Review_strategy)
@@ -1710,9 +1561,14 @@ def test_analyse_review_lesNotes_setter(instance):
     instance.lesNotes = original
     assert instance.lesNotes == original
 
+
+
 @given(instance=Analyse_Review_strategy)
-def test_analyse_review_Commentaire_type(instance):
-    assert isinstance(instance.Commentaire, str)
+def test_analyse_review_NoteGlobale_setter(instance):
+    original = instance.NoteGlobale
+    instance.NoteGlobale = original
+    assert instance.NoteGlobale == original
+
 
 
 @given(instance=Analyse_Review_strategy)
@@ -1726,53 +1582,6 @@ def test_analyse_review_Commentaire_setter(instance):
 def test_analyse_fast_food_instantiation(instance):
     assert isinstance(instance, Analyse_Fast_Food)
 
-@given(instance=Analyse_Fast_Food_strategy)
-def test_analyse_fast_food_notes_type(instance):
-    assert isinstance(instance.notes, str)
-
-
-@given(instance=Analyse_Fast_Food_strategy)
-def test_analyse_fast_food_notes_setter(instance):
-    original = instance.notes
-    instance.notes = original
-    assert instance.notes == original
-
-@given(instance=Analyse_Fast_Food_strategy)
-def test_analyse_fast_food_prixMin_type(instance):
-    assert isinstance(instance.prixMin, int)
-
-
-@given(instance=Analyse_Fast_Food_strategy)
-def test_analyse_fast_food_prixMin_setter(instance):
-    original = instance.prixMin
-    instance.prixMin = original
-    assert instance.prixMin == original
-
-@given(instance=Analyse_Fast_Food_strategy)
-def test_analyse_fast_food_nom_type(instance):
-    assert isinstance(instance.nom, str)
-
-
-@given(instance=Analyse_Fast_Food_strategy)
-def test_analyse_fast_food_nom_setter(instance):
-    original = instance.nom
-    instance.nom = original
-    assert instance.nom == original
-
-@given(instance=Analyse_Fast_Food_strategy)
-def test_analyse_fast_food_Ville_type(instance):
-    assert isinstance(instance.Ville, str)
-
-
-@given(instance=Analyse_Fast_Food_strategy)
-def test_analyse_fast_food_Ville_setter(instance):
-    original = instance.Ville
-    instance.Ville = original
-    assert instance.Ville == original
-
-@given(instance=Analyse_Fast_Food_strategy)
-def test_analyse_fast_food_numeroTel_type(instance):
-    assert isinstance(instance.numeroTel, str)
 
 
 @given(instance=Analyse_Fast_Food_strategy)
@@ -1781,42 +1590,6 @@ def test_analyse_fast_food_numeroTel_setter(instance):
     instance.numeroTel = original
     assert instance.numeroTel == original
 
-@given(instance=Analyse_Fast_Food_strategy)
-def test_analyse_fast_food_Adresse_type(instance):
-    assert isinstance(instance.Adresse, str)
-
-
-@given(instance=Analyse_Fast_Food_strategy)
-def test_analyse_fast_food_Adresse_setter(instance):
-    original = instance.Adresse
-    instance.Adresse = original
-    assert instance.Adresse == original
-
-@given(instance=Analyse_Fast_Food_strategy)
-def test_analyse_fast_food_proprietaire_type(instance):
-    assert isinstance(instance.proprietaire, str)
-
-
-@given(instance=Analyse_Fast_Food_strategy)
-def test_analyse_fast_food_proprietaire_setter(instance):
-    original = instance.proprietaire
-    instance.proprietaire = original
-    assert instance.proprietaire == original
-
-@given(instance=Analyse_Fast_Food_strategy)
-def test_analyse_fast_food_nbPlaces_type(instance):
-    assert isinstance(instance.nbPlaces, int)
-
-
-@given(instance=Analyse_Fast_Food_strategy)
-def test_analyse_fast_food_nbPlaces_setter(instance):
-    original = instance.nbPlaces
-    instance.nbPlaces = original
-    assert instance.nbPlaces == original
-
-@given(instance=Analyse_Fast_Food_strategy)
-def test_analyse_fast_food_photos_type(instance):
-    assert isinstance(instance.photos, str)
 
 
 @given(instance=Analyse_Fast_Food_strategy)
@@ -1825,9 +1598,6 @@ def test_analyse_fast_food_photos_setter(instance):
     instance.photos = original
     assert instance.photos == original
 
-@given(instance=Analyse_Fast_Food_strategy)
-def test_analyse_fast_food_prixMax_type(instance):
-    assert isinstance(instance.prixMax, int)
 
 
 @given(instance=Analyse_Fast_Food_strategy)
@@ -1836,9 +1606,6 @@ def test_analyse_fast_food_prixMax_setter(instance):
     instance.prixMax = original
     assert instance.prixMax == original
 
-@given(instance=Analyse_Fast_Food_strategy)
-def test_analyse_fast_food_horaires_type(instance):
-    assert isinstance(instance.horaires, str)
 
 
 @given(instance=Analyse_Fast_Food_strategy)
@@ -1846,3 +1613,59 @@ def test_analyse_fast_food_horaires_setter(instance):
     original = instance.horaires
     instance.horaires = original
     assert instance.horaires == original
+
+
+
+@given(instance=Analyse_Fast_Food_strategy)
+def test_analyse_fast_food_Adresse_setter(instance):
+    original = instance.Adresse
+    instance.Adresse = original
+    assert instance.Adresse == original
+
+
+
+@given(instance=Analyse_Fast_Food_strategy)
+def test_analyse_fast_food_Ville_setter(instance):
+    original = instance.Ville
+    instance.Ville = original
+    assert instance.Ville == original
+
+
+
+@given(instance=Analyse_Fast_Food_strategy)
+def test_analyse_fast_food_prixMin_setter(instance):
+    original = instance.prixMin
+    instance.prixMin = original
+    assert instance.prixMin == original
+
+
+
+@given(instance=Analyse_Fast_Food_strategy)
+def test_analyse_fast_food_nom_setter(instance):
+    original = instance.nom
+    instance.nom = original
+    assert instance.nom == original
+
+
+
+@given(instance=Analyse_Fast_Food_strategy)
+def test_analyse_fast_food_nbPlaces_setter(instance):
+    original = instance.nbPlaces
+    instance.nbPlaces = original
+    assert instance.nbPlaces == original
+
+
+
+@given(instance=Analyse_Fast_Food_strategy)
+def test_analyse_fast_food_notes_setter(instance):
+    original = instance.notes
+    instance.notes = original
+    assert instance.notes == original
+
+
+
+@given(instance=Analyse_Fast_Food_strategy)
+def test_analyse_fast_food_proprietaire_setter(instance):
+    original = instance.proprietaire
+    instance.proprietaire = original
+    assert instance.proprietaire == original

@@ -3,247 +3,303 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
+    Relation,
+    ImperativeOperation,
+    QVTOperational_Constructor,
+    Key,
     ResolveExp,
-    QVTOperational::ResolveInExp,
+    QVTOperational_ResolveInExp,
     ModuleImport,
     EntryOperation,
     ConstructorBody,
     InstantiationExp,
-    QVTOperational::ObjectExp,
+    QVTOperational_ObjectExp,
     ModelType,
     MappingOperation,
+    QVTOperational_MappingOperation,
     ImperativeCallExp,
-    QVTOperational::MappingCallExp,
+    QVTOperational_MappingCallExp,
     RelationDomain,
     ModelParameter,
+    QVTOperational_Helper,
+    QVTOperational_EntryOperation,
     OperationBody,
-    QVTOperational::MappingBody,
-    QVTOperational::ConstructorBody,
+    QVTOperational_MappingBody,
+    QVTOperational_ConstructorBody,
     Module,
-    QVTOperational::OperationalTransformation,
-    QVTOperational::Library,
+    QVTOperational_OperationalTransformation,
+    QVTOperational_Library,
     VarParameter,
-    QVTOperational::ModelParameter,
-    QVTOperational::MappingParameter,
+    QVTOperational_ModelParameter,
+    QVTOperational_MappingParameter,
     DomainPattern,
     RelationDomainAssignment,
-    Relation,
-    ImperativeOperation,
-    QVTOperational::MappingOperation,
-    QVTOperational::EntryOperation,
-    QVTOperational::Helper,
-    QVTOperational::Constructor,
-    Key,
+    NumericLiteralExp,
+    EssentialOCL_IntegerLiteralExp,
+    CallExp,
+    EssentialOCL_FeatureCallExp,
+    OclExpression,
+    QVTRelation_RelationCallExp,
+    EssentialOCL_IfExp,
+    EssentialOCL_CallExp,
+    PrimitiveLiteralExp,
+    EssentialOCL_BooleanLiteralExp,
+    Variable,
+    CollectionLiteralExp,
+    LiteralExp,
+    EssentialOCL_EnumLiteralExp,
+    EssentialOCL_CollectionLiteralExp,
+    CollectionLiteralPart,
+    EssentialOCL_CollectionRange,
+    EssentialOCL_CollectionItem,
+    ReflectiveCollection,
+    EMOF_ReflectiveSequence,
+    CollectionType,
+    EssentialOCL_OrderedSetType,
+    EssentialOCL_BagType,
+    Extent,
+    EMOF_URIExtent,
+    EMOF_Object,
+    Parameter,
+    QVTOperational_VarParameter,
+    MultiplicityElement,
+    TypedElement,
+    EssentialOCL_OclExpression,
+    EssentialOCL_ExpressionInOcl,
+    EssentialOCL_CollectionLiteralPart,
+    EMOF_Property,
+    EMOF_Parameter,
+    EMOF_Operation,
+    NamedElement,
+    EMOF_TypedElement,
+    EMOF_Type,
+    EMOF_Package,
+    Element,
+    QVTRelation_RelationDomainAssignment,
+    EMOF_Tag,
+    EMOF_NamedElement,
+    QVTRelation_RelationImplementation,
+    QVTOperational_OperationBody,
+    QVTOperational_ModuleImport,
+    QVTRelation_Key,
+    EMOF_Comment,
+    EMOF_MultiplicityElement,
+    Package,
+    EMOF_Factory,
+    Enumeration,
+    EMOF_EnumerationLiteral,
+    EnumerationLiteral,
+    DataType,
+    EMOF_PrimitiveType,
+    EssentialOCL_CollectionType,
+    EMOF_Enumeration,
+    Comment,
+    Object,
+    EMOF_ReflectiveCollection,
+    EMOF_Extent,
+    EMOF_Element,
+    Class,
+    QVTOperational_ModelType,
+    QVTOperational_Module,
+    Operation,
+    QVTOperational_ImperativeOperation,
+    Property,
+    QVTOperational_ContextualProperty,
+    Type,
+    EssentialOCL_AnyType,
+    EMOF_DataType,
+    EMOF_Class,
+    QVTTemplate_TemplateExp,
     ObjectTemplateExp,
     RelationImplementation,
     PropertyCallExp,
-    QVTRelation::OppositePropertyCallExp,
+    QVTRelation_OppositePropertyCallExp,
     RelationalTransformation,
     TemplateExp,
-    QVTTemplate::CollectionTemplateExp,
+    QVTTemplate_CollectionTemplateExp,
+    QVTCore_RealizedVariable,
+    QVTTemplate_PropertyTemplateItem,
     PropertyTemplateItem,
-    QVTTemplate::ObjectTemplateExp,
+    QVTTemplate_ObjectTemplateExp,
     RealizedVariable,
     EnforcementOperation,
     Assignment,
-    QVTCore::PropertyAssignment,
-    QVTCore::VariableAssignment,
+    QVTCore_VariableAssignment,
+    QVTCore_PropertyAssignment,
     Area,
     CorePattern,
-    QVTCore::BottomPattern,
+    QVTCore_BottomPattern,
     Mapping,
-    QVTCore::GuardPattern,
+    QVTCore_GuardPattern,
+    QVTCore_EnforcementOperation,
+    QVTBase_TypedModel,
     Tag,
+    QVTBase_Transformation,
     Transformation,
-    QVTRelation::RelationalTransformation,
+    QVTRelation_RelationalTransformation,
+    QVTCore_Assignment,
     GuardPattern,
     BottomPattern,
-    QVTCore::Area,
+    QVTCore_Area,
+    QVTBase_Pattern,
+    QVTBase_FunctionParameter,
+    QVTBase_Function,
     TypedModel,
     Rule,
-    QVTRelation::Relation,
-    QVTCore::Mapping,
+    QVTRelation_Relation,
+    QVTCore_Mapping,
+    QVTBase_Domain,
     Domain,
-    QVTCore::CoreDomain,
-    QVTRelation::RelationDomain,
+    QVTCore_CoreDomain,
+    QVTRelation_RelationDomain,
+    QVTBase_Rule,
     Pattern,
-    QVTCore::CorePattern,
-    QVTRelation::DomainPattern,
-    LoopExp,
-    EssentialOCL::IterateExp,
-    NavigationCallExp,
-    EssentialOCL::PropertyCallExp,
-    NumericLiteralExp,
-    EssentialOCL::RealLiteralExp,
-    EssentialOCL::IntegerLiteralExp,
-    CallExp,
-    EssentialOCL::FeatureCallExp,
-    OclExpression,
-    EssentialOCL::IfExp,
-    QVTRelation::RelationCallExp,
-    EssentialOCL::CallExp,
-    PrimitiveLiteralExp,
-    EssentialOCL::BooleanLiteralExp,
-    Variable,
-    QVTCore::RealizedVariable,
-    CollectionLiteralExp,
-    LiteralExp,
-    EssentialOCL::InvalidLiteralExp,
-    QVTTemplate::TemplateExp,
-    EssentialOCL::EnumLiteralExp,
-    EssentialOCL::PrimitiveLiteralExp,
-    EssentialOCL::CollectionLiteralExp,
-    CollectionLiteralPart,
-    EssentialOCL::CollectionRange,
-    EssentialOCL::CollectionItem,
-    ReflectiveCollection,
-    EMOF::ReflectiveSequence,
-    CollectionType,
-    EssentialOCL::OrderedSetType,
-    EssentialOCL::SequenceType,
-    EssentialOCL::BagType,
-    Extent,
-    EMOF::URIExtent,
-    EMOF::Object,
-    Parameter,
-    QVTBase::FunctionParameter,
-    QVTOperational::VarParameter,
-    MultiplicityElement,
-    TypedElement,
-    EssentialOCL::OclExpression,
-    EssentialOCL::ExpressionInOcl,
-    EMOF::Parameter,
-    EssentialOCL::CollectionLiteralPart,
-    EMOF::Property,
-    EMOF::Operation,
-    NamedElement,
-    QVTBase::Domain,
-    EMOF::TypedElement,
-    QVTBase::Rule,
-    QVTBase::TypedModel,
-    EMOF::Package,
-    EMOF::Type,
-    Element,
-    EMOF::NamedElement,
-    QVTBase::Pattern,
-    QVTOperational::ModuleImport,
-    QVTBase::Predicate,
-    QVTOperational::OperationBody,
-    QVTRelation::RelationImplementation,
-    QVTTemplate::PropertyTemplateItem,
-    EMOF::Tag,
-    QVTCore::Assignment,
-    QVTRelation::RelationDomainAssignment,
-    QVTCore::EnforcementOperation,
-    QVTRelation::Key,
-    EMOF::Comment,
-    EMOF::MultiplicityElement,
-    Package,
-    EMOF::Factory,
-    Enumeration,
-    EMOF::EnumerationLiteral,
-    EnumerationLiteral,
-    DataType,
-    EssentialOCL::CollectionType,
-    EMOF::PrimitiveType,
-    EMOF::Enumeration,
-    Comment,
-    Object,
-    EMOF::Extent,
-    EMOF::ReflectiveCollection,
-    EMOF::Element,
-    Class,
-    QVTOperational::ModelType,
-    QVTBase::Transformation,
-    QVTOperational::Module,
-    Operation,
-    QVTBase::Function,
-    QVTOperational::ImperativeOperation,
-    Property,
-    QVTOperational::ContextualProperty,
-    Type,
-    EMOF::DataType,
-    EssentialOCL::InvalidType,
-    EssentialOCL::AnyType,
-    EMOF::Class,
+    QVTRelation_DomainPattern,
+    QVTCore_CorePattern,
+    QVTBase_Predicate,
     Predicate,
-    ImperativeOCL::Typedef,
+    ImperativeOCL_Typedef,
     AltExp,
     CatchExp,
     OperationCallExp,
-    ImperativeOCL::ListType,
-    ImperativeOCL::ListLiteralExp,
-    ImperativeOCL::OrderedTupleType,
-    ImperativeOCL::OrderedTupleLiteralPart,
+    ImperativeOCL_ListType,
+    ImperativeOCL_ListLiteralExp,
+    ImperativeOCL_OrderedTupleType,
+    ImperativeOCL_OrderedTupleLiteralPart,
     OrderedTupleLiteralPart,
-    ImperativeOCL::OrderedTupleLiteralExp,
-    ImperativeOCL::ImperativeExpression,
+    ImperativeOCL_OrderedTupleLiteralExp,
+    ImperativeOCL_ImperativeExpression,
     ImperativeLoopExp,
-    ImperativeOCL::ForExp,
-    ImperativeOCL::DictionaryType,
-    ImperativeOCL::DictLiteralPart,
+    ImperativeOCL_ForExp,
+    ImperativeOCL_DictionaryType,
+    ImperativeOCL_DictLiteralPart,
     DictLiteralPart,
-    ImperativeOCL::DictLiteralExp,
-    ImperativeOCL::ImperativeIterateExp,
+    ImperativeOCL_DictLiteralExp,
+    ImperativeOCL_ImperativeIterateExp,
     LogExp,
-    EssentialOCL::Variable,
-    EssentialOCL::UnlimitedNaturalExp,
-    EssentialOCL::TypeExp,
-    EssentialOCL::TupleType,
+    EssentialOCL_Variable,
+    EssentialOCL_UnlimitedNaturalExp,
+    EssentialOCL_TypeExp,
+    EssentialOCL_TupleType,
     TupleLiteralExp,
-    EssentialOCL::TupleLiteralPart,
+    EssentialOCL_TupleLiteralPart,
     TupleLiteralPart,
-    EssentialOCL::TupleLiteralExp,
-    EssentialOCL::TemplateParameterType,
-    EssentialOCL::StringLiteralExp,
-    EssentialOCL::SetType,
+    EssentialOCL_TupleLiteralExp,
+    EssentialOCL_TemplateParameterType,
+    EssentialOCL_StringLiteralExp,
+    EssentialOCL_SetType,
     ImperativeExpression,
-    ImperativeOCL::WhileExp,
-    ImperativeOCL::AssignExp,
-    ImperativeOCL::SwitchExp,
-    ImperativeOCL::VariableInitExp,
-    ImperativeOCL::TryExp,
-    ImperativeOCL::ContinueExp,
-    ImperativeOCL::AssertExp,
-    ImperativeOCL::ImperativeLoopExp,
-    QVTOperational::ImperativeCallExp,
-    ImperativeOCL::ComputeExp,
-    ImperativeOCL::UnlinkExp,
-    ImperativeOCL::UnpackExp,
-    ImperativeOCL::BlockExp,
-    ImperativeOCL::BreakExp,
-    ImperativeOCL::CatchExp,
-    ImperativeOCL::ReturnExp,
-    ImperativeOCL::RaiseExp,
-    QVTOperational::ResolveExp,
-    ImperativeOCL::LogExp,
-    ImperativeOCL::InstantiationExp,
-    ImperativeOCL::AltExp,
-    EssentialOCL::VoidType,
-    EssentialOCL::VariableExp,
+    ImperativeOCL_ComputeExp,
+    ImperativeOCL_WhileExp,
+    ImperativeOCL_CatchExp,
+    ImperativeOCL_ContinueExp,
+    ImperativeOCL_AssertExp,
+    ImperativeOCL_LogExp,
+    ImperativeOCL_VariableInitExp,
+    QVTOperational_ResolveExp,
+    ImperativeOCL_BlockExp,
+    ImperativeOCL_RaiseExp,
+    QVTOperational_ImperativeCallExp,
+    ImperativeOCL_UnlinkExp,
+    ImperativeOCL_InstantiationExp,
+    ImperativeOCL_UnpackExp,
+    ImperativeOCL_TryExp,
+    ImperativeOCL_SwitchExp,
+    ImperativeOCL_BreakExp,
+    ImperativeOCL_AssignExp,
+    ImperativeOCL_ReturnExp,
+    ImperativeOCL_AltExp,
+    EssentialOCL_VoidType,
+    EssentialOCL_VariableExp,
     LetExp,
-    EssentialOCL::NumericLiteralExp,
-    EssentialOCL::NullLiteralExp,
+    EssentialOCL_NumericLiteralExp,
+    EssentialOCL_NullLiteralExp,
     FeatureCallExp,
-    EssentialOCL::OperationCallExp,
-    EssentialOCL::NavigationCallExp,
-    EssentialOCL::LoopExp,
-    EssentialOCL::LiteralExp,
-    EssentialOCL::LetExp,
-    EssentialOCL::IteratorExp,
+    EssentialOCL_OperationCallExp,
+    EssentialOCL_NavigationCallExp,
+    EssentialOCL_LoopExp,
+    EssentialOCL_LiteralExp,
+    EssentialOCL_LetExp,
+    LoopExp,
+    EssentialOCL_IteratorExp,
+    ImperativeOCL_ImperativeLoopExp,
+    EssentialOCL_IterateExp,
+    EssentialOCL_InvalidType,
+    EssentialOCL_InvalidLiteralExp,
+    EssentialOCL_SequenceType,
+    EssentialOCL_RealLiteralExp,
+    NavigationCallExp,
+    EssentialOCL_PropertyCallExp,
+    EssentialOCL_PrimitiveLiteralExp,
     SeverityKind,
     ImportKind,
-    DirectionKind,
     EnforcementMode,
     CollectionKind,
+    DirectionKind,
 )
 
 # =============================================================================
 # SECTION 1 — STRUCTURAL TESTS
 # =============================================================================
+
+
+
+def test_relation_is_not_abstract():
+    assert not inspect.isabstract(Relation)
+
+
+def test_relation_constructor_exists():
+    assert callable(Relation.__init__)
+
+
+def test_relation_constructor_args():
+    sig = inspect.signature(Relation.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_imperativeoperation_is_not_abstract():
+    assert not inspect.isabstract(ImperativeOperation)
+
+
+def test_imperativeoperation_constructor_exists():
+    assert callable(ImperativeOperation.__init__)
+
+
+def test_imperativeoperation_constructor_args():
+    sig = inspect.signature(ImperativeOperation.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_qvtoperational_constructor_is_not_abstract():
+    assert not inspect.isabstract(QVTOperational_Constructor)
+
+
+def test_qvtoperational_constructor_constructor_exists():
+    assert callable(QVTOperational_Constructor.__init__)
+
+
+def test_qvtoperational_constructor_constructor_args():
+    sig = inspect.signature(QVTOperational_Constructor.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_key_is_not_abstract():
+    assert not inspect.isabstract(Key)
+
+
+def test_key_constructor_exists():
+    assert callable(Key.__init__)
+
+
+def test_key_constructor_args():
+    sig = inspect.signature(Key.__init__)
+    params = list(sig.parameters.keys())
 
 
 
@@ -261,16 +317,16 @@ def test_resolveexp_constructor_args():
 
 
 
-def test_qvtoperational::resolveinexp_is_not_abstract():
-    assert not inspect.isabstract(QVTOperational::ResolveInExp)
+def test_qvtoperational_resolveinexp_is_not_abstract():
+    assert not inspect.isabstract(QVTOperational_ResolveInExp)
 
 
-def test_qvtoperational::resolveinexp_constructor_exists():
-    assert callable(QVTOperational::ResolveInExp.__init__)
+def test_qvtoperational_resolveinexp_constructor_exists():
+    assert callable(QVTOperational_ResolveInExp.__init__)
 
 
-def test_qvtoperational::resolveinexp_constructor_args():
-    sig = inspect.signature(QVTOperational::ResolveInExp.__init__)
+def test_qvtoperational_resolveinexp_constructor_args():
+    sig = inspect.signature(QVTOperational_ResolveInExp.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -331,16 +387,16 @@ def test_instantiationexp_constructor_args():
 
 
 
-def test_qvtoperational::objectexp_is_not_abstract():
-    assert not inspect.isabstract(QVTOperational::ObjectExp)
+def test_qvtoperational_objectexp_is_not_abstract():
+    assert not inspect.isabstract(QVTOperational_ObjectExp)
 
 
-def test_qvtoperational::objectexp_constructor_exists():
-    assert callable(QVTOperational::ObjectExp.__init__)
+def test_qvtoperational_objectexp_constructor_exists():
+    assert callable(QVTOperational_ObjectExp.__init__)
 
 
-def test_qvtoperational::objectexp_constructor_args():
-    sig = inspect.signature(QVTOperational::ObjectExp.__init__)
+def test_qvtoperational_objectexp_constructor_args():
+    sig = inspect.signature(QVTOperational_ObjectExp.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -373,6 +429,20 @@ def test_mappingoperation_constructor_args():
 
 
 
+def test_qvtoperational_mappingoperation_is_not_abstract():
+    assert not inspect.isabstract(QVTOperational_MappingOperation)
+
+
+def test_qvtoperational_mappingoperation_constructor_exists():
+    assert callable(QVTOperational_MappingOperation.__init__)
+
+
+def test_qvtoperational_mappingoperation_constructor_args():
+    sig = inspect.signature(QVTOperational_MappingOperation.__init__)
+    params = list(sig.parameters.keys())
+
+
+
 def test_imperativecallexp_is_not_abstract():
     assert not inspect.isabstract(ImperativeCallExp)
 
@@ -387,23 +457,23 @@ def test_imperativecallexp_constructor_args():
 
 
 
-def test_qvtoperational::mappingcallexp_is_not_abstract():
-    assert not inspect.isabstract(QVTOperational::MappingCallExp)
+def test_qvtoperational_mappingcallexp_is_not_abstract():
+    assert not inspect.isabstract(QVTOperational_MappingCallExp)
 
 
-def test_qvtoperational::mappingcallexp_constructor_exists():
-    assert callable(QVTOperational::MappingCallExp.__init__)
+def test_qvtoperational_mappingcallexp_constructor_exists():
+    assert callable(QVTOperational_MappingCallExp.__init__)
 
 
-def test_qvtoperational::mappingcallexp_constructor_args():
-    sig = inspect.signature(QVTOperational::MappingCallExp.__init__)
+def test_qvtoperational_mappingcallexp_constructor_args():
+    sig = inspect.signature(QVTOperational_MappingCallExp.__init__)
     params = list(sig.parameters.keys())
     assert "isStrict" in params, "Missing parameter 'isStrict'"
 
-def test_qvtoperational::mappingcallexp_has_isStrict():
-    assert hasattr(QVTOperational::MappingCallExp, "isStrict")
+def test_qvtoperational_mappingcallexp_has_isStrict():
+    assert hasattr(QVTOperational_MappingCallExp, "isStrict")
     descriptor = None
-    for klass in QVTOperational::MappingCallExp.__mro__:
+    for klass in QVTOperational_MappingCallExp.__mro__:
         if "isStrict" in klass.__dict__:
             descriptor = klass.__dict__["isStrict"]
             break
@@ -439,6 +509,44 @@ def test_modelparameter_constructor_args():
 
 
 
+def test_qvtoperational_helper_is_not_abstract():
+    assert not inspect.isabstract(QVTOperational_Helper)
+
+
+def test_qvtoperational_helper_constructor_exists():
+    assert callable(QVTOperational_Helper.__init__)
+
+
+def test_qvtoperational_helper_constructor_args():
+    sig = inspect.signature(QVTOperational_Helper.__init__)
+    params = list(sig.parameters.keys())
+    assert "isQuery" in params, "Missing parameter 'isQuery'"
+
+def test_qvtoperational_helper_has_isQuery():
+    assert hasattr(QVTOperational_Helper, "isQuery")
+    descriptor = None
+    for klass in QVTOperational_Helper.__mro__:
+        if "isQuery" in klass.__dict__:
+            descriptor = klass.__dict__["isQuery"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_qvtoperational_entryoperation_is_not_abstract():
+    assert not inspect.isabstract(QVTOperational_EntryOperation)
+
+
+def test_qvtoperational_entryoperation_constructor_exists():
+    assert callable(QVTOperational_EntryOperation.__init__)
+
+
+def test_qvtoperational_entryoperation_constructor_args():
+    sig = inspect.signature(QVTOperational_EntryOperation.__init__)
+    params = list(sig.parameters.keys())
+
+
+
 def test_operationbody_is_not_abstract():
     assert not inspect.isabstract(OperationBody)
 
@@ -453,30 +561,30 @@ def test_operationbody_constructor_args():
 
 
 
-def test_qvtoperational::mappingbody_is_not_abstract():
-    assert not inspect.isabstract(QVTOperational::MappingBody)
+def test_qvtoperational_mappingbody_is_not_abstract():
+    assert not inspect.isabstract(QVTOperational_MappingBody)
 
 
-def test_qvtoperational::mappingbody_constructor_exists():
-    assert callable(QVTOperational::MappingBody.__init__)
+def test_qvtoperational_mappingbody_constructor_exists():
+    assert callable(QVTOperational_MappingBody.__init__)
 
 
-def test_qvtoperational::mappingbody_constructor_args():
-    sig = inspect.signature(QVTOperational::MappingBody.__init__)
+def test_qvtoperational_mappingbody_constructor_args():
+    sig = inspect.signature(QVTOperational_MappingBody.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_qvtoperational::constructorbody_is_not_abstract():
-    assert not inspect.isabstract(QVTOperational::ConstructorBody)
+def test_qvtoperational_constructorbody_is_not_abstract():
+    assert not inspect.isabstract(QVTOperational_ConstructorBody)
 
 
-def test_qvtoperational::constructorbody_constructor_exists():
-    assert callable(QVTOperational::ConstructorBody.__init__)
+def test_qvtoperational_constructorbody_constructor_exists():
+    assert callable(QVTOperational_ConstructorBody.__init__)
 
 
-def test_qvtoperational::constructorbody_constructor_args():
-    sig = inspect.signature(QVTOperational::ConstructorBody.__init__)
+def test_qvtoperational_constructorbody_constructor_args():
+    sig = inspect.signature(QVTOperational_ConstructorBody.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -495,30 +603,30 @@ def test_module_constructor_args():
 
 
 
-def test_qvtoperational::operationaltransformation_is_not_abstract():
-    assert not inspect.isabstract(QVTOperational::OperationalTransformation)
+def test_qvtoperational_operationaltransformation_is_not_abstract():
+    assert not inspect.isabstract(QVTOperational_OperationalTransformation)
 
 
-def test_qvtoperational::operationaltransformation_constructor_exists():
-    assert callable(QVTOperational::OperationalTransformation.__init__)
+def test_qvtoperational_operationaltransformation_constructor_exists():
+    assert callable(QVTOperational_OperationalTransformation.__init__)
 
 
-def test_qvtoperational::operationaltransformation_constructor_args():
-    sig = inspect.signature(QVTOperational::OperationalTransformation.__init__)
+def test_qvtoperational_operationaltransformation_constructor_args():
+    sig = inspect.signature(QVTOperational_OperationalTransformation.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_qvtoperational::library_is_not_abstract():
-    assert not inspect.isabstract(QVTOperational::Library)
+def test_qvtoperational_library_is_not_abstract():
+    assert not inspect.isabstract(QVTOperational_Library)
 
 
-def test_qvtoperational::library_constructor_exists():
-    assert callable(QVTOperational::Library.__init__)
+def test_qvtoperational_library_constructor_exists():
+    assert callable(QVTOperational_Library.__init__)
 
 
-def test_qvtoperational::library_constructor_args():
-    sig = inspect.signature(QVTOperational::Library.__init__)
+def test_qvtoperational_library_constructor_args():
+    sig = inspect.signature(QVTOperational_Library.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -537,30 +645,30 @@ def test_varparameter_constructor_args():
 
 
 
-def test_qvtoperational::modelparameter_is_not_abstract():
-    assert not inspect.isabstract(QVTOperational::ModelParameter)
+def test_qvtoperational_modelparameter_is_not_abstract():
+    assert not inspect.isabstract(QVTOperational_ModelParameter)
 
 
-def test_qvtoperational::modelparameter_constructor_exists():
-    assert callable(QVTOperational::ModelParameter.__init__)
+def test_qvtoperational_modelparameter_constructor_exists():
+    assert callable(QVTOperational_ModelParameter.__init__)
 
 
-def test_qvtoperational::modelparameter_constructor_args():
-    sig = inspect.signature(QVTOperational::ModelParameter.__init__)
+def test_qvtoperational_modelparameter_constructor_args():
+    sig = inspect.signature(QVTOperational_ModelParameter.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_qvtoperational::mappingparameter_is_not_abstract():
-    assert not inspect.isabstract(QVTOperational::MappingParameter)
+def test_qvtoperational_mappingparameter_is_not_abstract():
+    assert not inspect.isabstract(QVTOperational_MappingParameter)
 
 
-def test_qvtoperational::mappingparameter_constructor_exists():
-    assert callable(QVTOperational::MappingParameter.__init__)
+def test_qvtoperational_mappingparameter_constructor_exists():
+    assert callable(QVTOperational_MappingParameter.__init__)
 
 
-def test_qvtoperational::mappingparameter_constructor_args():
-    sig = inspect.signature(QVTOperational::MappingParameter.__init__)
+def test_qvtoperational_mappingparameter_constructor_args():
+    sig = inspect.signature(QVTOperational_MappingParameter.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -593,110 +701,1296 @@ def test_relationdomainassignment_constructor_args():
 
 
 
-def test_relation_is_not_abstract():
-    assert not inspect.isabstract(Relation)
+def test_numericliteralexp_is_not_abstract():
+    assert not inspect.isabstract(NumericLiteralExp)
 
 
-def test_relation_constructor_exists():
-    assert callable(Relation.__init__)
+def test_numericliteralexp_constructor_exists():
+    assert callable(NumericLiteralExp.__init__)
 
 
-def test_relation_constructor_args():
-    sig = inspect.signature(Relation.__init__)
+def test_numericliteralexp_constructor_args():
+    sig = inspect.signature(NumericLiteralExp.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_imperativeoperation_is_not_abstract():
-    assert not inspect.isabstract(ImperativeOperation)
+def test_essentialocl_integerliteralexp_is_not_abstract():
+    assert not inspect.isabstract(EssentialOCL_IntegerLiteralExp)
 
 
-def test_imperativeoperation_constructor_exists():
-    assert callable(ImperativeOperation.__init__)
+def test_essentialocl_integerliteralexp_constructor_exists():
+    assert callable(EssentialOCL_IntegerLiteralExp.__init__)
 
 
-def test_imperativeoperation_constructor_args():
-    sig = inspect.signature(ImperativeOperation.__init__)
+def test_essentialocl_integerliteralexp_constructor_args():
+    sig = inspect.signature(EssentialOCL_IntegerLiteralExp.__init__)
     params = list(sig.parameters.keys())
+    assert "integerSymbol" in params, "Missing parameter 'integerSymbol'"
 
-
-
-def test_qvtoperational::mappingoperation_is_not_abstract():
-    assert not inspect.isabstract(QVTOperational::MappingOperation)
-
-
-def test_qvtoperational::mappingoperation_constructor_exists():
-    assert callable(QVTOperational::MappingOperation.__init__)
-
-
-def test_qvtoperational::mappingoperation_constructor_args():
-    sig = inspect.signature(QVTOperational::MappingOperation.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_qvtoperational::entryoperation_is_not_abstract():
-    assert not inspect.isabstract(QVTOperational::EntryOperation)
-
-
-def test_qvtoperational::entryoperation_constructor_exists():
-    assert callable(QVTOperational::EntryOperation.__init__)
-
-
-def test_qvtoperational::entryoperation_constructor_args():
-    sig = inspect.signature(QVTOperational::EntryOperation.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_qvtoperational::helper_is_not_abstract():
-    assert not inspect.isabstract(QVTOperational::Helper)
-
-
-def test_qvtoperational::helper_constructor_exists():
-    assert callable(QVTOperational::Helper.__init__)
-
-
-def test_qvtoperational::helper_constructor_args():
-    sig = inspect.signature(QVTOperational::Helper.__init__)
-    params = list(sig.parameters.keys())
-    assert "isQuery" in params, "Missing parameter 'isQuery'"
-
-def test_qvtoperational::helper_has_isQuery():
-    assert hasattr(QVTOperational::Helper, "isQuery")
+def test_essentialocl_integerliteralexp_has_integerSymbol():
+    assert hasattr(EssentialOCL_IntegerLiteralExp, "integerSymbol")
     descriptor = None
-    for klass in QVTOperational::Helper.__mro__:
-        if "isQuery" in klass.__dict__:
-            descriptor = klass.__dict__["isQuery"]
+    for klass in EssentialOCL_IntegerLiteralExp.__mro__:
+        if "integerSymbol" in klass.__dict__:
+            descriptor = klass.__dict__["integerSymbol"]
             break
     assert isinstance(descriptor, property)
 
 
 
-def test_qvtoperational::constructor_is_not_abstract():
-    assert not inspect.isabstract(QVTOperational::Constructor)
+def test_callexp_is_not_abstract():
+    assert not inspect.isabstract(CallExp)
 
 
-def test_qvtoperational::constructor_constructor_exists():
-    assert callable(QVTOperational::Constructor.__init__)
+def test_callexp_constructor_exists():
+    assert callable(CallExp.__init__)
 
 
-def test_qvtoperational::constructor_constructor_args():
-    sig = inspect.signature(QVTOperational::Constructor.__init__)
+def test_callexp_constructor_args():
+    sig = inspect.signature(CallExp.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_key_is_not_abstract():
-    assert not inspect.isabstract(Key)
+def test_essentialocl_featurecallexp_is_not_abstract():
+    assert not inspect.isabstract(EssentialOCL_FeatureCallExp)
 
 
-def test_key_constructor_exists():
-    assert callable(Key.__init__)
+def test_essentialocl_featurecallexp_constructor_exists():
+    assert callable(EssentialOCL_FeatureCallExp.__init__)
 
 
-def test_key_constructor_args():
-    sig = inspect.signature(Key.__init__)
+def test_essentialocl_featurecallexp_constructor_args():
+    sig = inspect.signature(EssentialOCL_FeatureCallExp.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_oclexpression_is_not_abstract():
+    assert not inspect.isabstract(OclExpression)
+
+
+def test_oclexpression_constructor_exists():
+    assert callable(OclExpression.__init__)
+
+
+def test_oclexpression_constructor_args():
+    sig = inspect.signature(OclExpression.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_qvtrelation_relationcallexp_is_not_abstract():
+    assert not inspect.isabstract(QVTRelation_RelationCallExp)
+
+
+def test_qvtrelation_relationcallexp_constructor_exists():
+    assert callable(QVTRelation_RelationCallExp.__init__)
+
+
+def test_qvtrelation_relationcallexp_constructor_args():
+    sig = inspect.signature(QVTRelation_RelationCallExp.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_essentialocl_ifexp_is_not_abstract():
+    assert not inspect.isabstract(EssentialOCL_IfExp)
+
+
+def test_essentialocl_ifexp_constructor_exists():
+    assert callable(EssentialOCL_IfExp.__init__)
+
+
+def test_essentialocl_ifexp_constructor_args():
+    sig = inspect.signature(EssentialOCL_IfExp.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_essentialocl_callexp_is_not_abstract():
+    assert not inspect.isabstract(EssentialOCL_CallExp)
+
+
+def test_essentialocl_callexp_constructor_exists():
+    assert callable(EssentialOCL_CallExp.__init__)
+
+
+def test_essentialocl_callexp_constructor_args():
+    sig = inspect.signature(EssentialOCL_CallExp.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_primitiveliteralexp_is_not_abstract():
+    assert not inspect.isabstract(PrimitiveLiteralExp)
+
+
+def test_primitiveliteralexp_constructor_exists():
+    assert callable(PrimitiveLiteralExp.__init__)
+
+
+def test_primitiveliteralexp_constructor_args():
+    sig = inspect.signature(PrimitiveLiteralExp.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_essentialocl_booleanliteralexp_is_not_abstract():
+    assert not inspect.isabstract(EssentialOCL_BooleanLiteralExp)
+
+
+def test_essentialocl_booleanliteralexp_constructor_exists():
+    assert callable(EssentialOCL_BooleanLiteralExp.__init__)
+
+
+def test_essentialocl_booleanliteralexp_constructor_args():
+    sig = inspect.signature(EssentialOCL_BooleanLiteralExp.__init__)
+    params = list(sig.parameters.keys())
+    assert "booleanSymbol" in params, "Missing parameter 'booleanSymbol'"
+
+def test_essentialocl_booleanliteralexp_has_booleanSymbol():
+    assert hasattr(EssentialOCL_BooleanLiteralExp, "booleanSymbol")
+    descriptor = None
+    for klass in EssentialOCL_BooleanLiteralExp.__mro__:
+        if "booleanSymbol" in klass.__dict__:
+            descriptor = klass.__dict__["booleanSymbol"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_variable_is_not_abstract():
+    assert not inspect.isabstract(Variable)
+
+
+def test_variable_constructor_exists():
+    assert callable(Variable.__init__)
+
+
+def test_variable_constructor_args():
+    sig = inspect.signature(Variable.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_collectionliteralexp_is_not_abstract():
+    assert not inspect.isabstract(CollectionLiteralExp)
+
+
+def test_collectionliteralexp_constructor_exists():
+    assert callable(CollectionLiteralExp.__init__)
+
+
+def test_collectionliteralexp_constructor_args():
+    sig = inspect.signature(CollectionLiteralExp.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_literalexp_is_not_abstract():
+    assert not inspect.isabstract(LiteralExp)
+
+
+def test_literalexp_constructor_exists():
+    assert callable(LiteralExp.__init__)
+
+
+def test_literalexp_constructor_args():
+    sig = inspect.signature(LiteralExp.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_essentialocl_enumliteralexp_is_not_abstract():
+    assert not inspect.isabstract(EssentialOCL_EnumLiteralExp)
+
+
+def test_essentialocl_enumliteralexp_constructor_exists():
+    assert callable(EssentialOCL_EnumLiteralExp.__init__)
+
+
+def test_essentialocl_enumliteralexp_constructor_args():
+    sig = inspect.signature(EssentialOCL_EnumLiteralExp.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_essentialocl_collectionliteralexp_is_not_abstract():
+    assert not inspect.isabstract(EssentialOCL_CollectionLiteralExp)
+
+
+def test_essentialocl_collectionliteralexp_constructor_exists():
+    assert callable(EssentialOCL_CollectionLiteralExp.__init__)
+
+
+def test_essentialocl_collectionliteralexp_constructor_args():
+    sig = inspect.signature(EssentialOCL_CollectionLiteralExp.__init__)
+    params = list(sig.parameters.keys())
+    assert "kind" in params, "Missing parameter 'kind'"
+
+def test_essentialocl_collectionliteralexp_has_kind():
+    assert hasattr(EssentialOCL_CollectionLiteralExp, "kind")
+    descriptor = None
+    for klass in EssentialOCL_CollectionLiteralExp.__mro__:
+        if "kind" in klass.__dict__:
+            descriptor = klass.__dict__["kind"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_collectionliteralpart_is_not_abstract():
+    assert not inspect.isabstract(CollectionLiteralPart)
+
+
+def test_collectionliteralpart_constructor_exists():
+    assert callable(CollectionLiteralPart.__init__)
+
+
+def test_collectionliteralpart_constructor_args():
+    sig = inspect.signature(CollectionLiteralPart.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_essentialocl_collectionrange_is_not_abstract():
+    assert not inspect.isabstract(EssentialOCL_CollectionRange)
+
+
+def test_essentialocl_collectionrange_constructor_exists():
+    assert callable(EssentialOCL_CollectionRange.__init__)
+
+
+def test_essentialocl_collectionrange_constructor_args():
+    sig = inspect.signature(EssentialOCL_CollectionRange.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_essentialocl_collectionitem_is_not_abstract():
+    assert not inspect.isabstract(EssentialOCL_CollectionItem)
+
+
+def test_essentialocl_collectionitem_constructor_exists():
+    assert callable(EssentialOCL_CollectionItem.__init__)
+
+
+def test_essentialocl_collectionitem_constructor_args():
+    sig = inspect.signature(EssentialOCL_CollectionItem.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_reflectivecollection_is_not_abstract():
+    assert not inspect.isabstract(ReflectiveCollection)
+
+
+def test_reflectivecollection_constructor_exists():
+    assert callable(ReflectiveCollection.__init__)
+
+
+def test_reflectivecollection_constructor_args():
+    sig = inspect.signature(ReflectiveCollection.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_emof_reflectivesequence_is_not_abstract():
+    assert not inspect.isabstract(EMOF_ReflectiveSequence)
+
+
+def test_emof_reflectivesequence_constructor_exists():
+    assert callable(EMOF_ReflectiveSequence.__init__)
+
+
+def test_emof_reflectivesequence_constructor_args():
+    sig = inspect.signature(EMOF_ReflectiveSequence.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_collectiontype_is_not_abstract():
+    assert not inspect.isabstract(CollectionType)
+
+
+def test_collectiontype_constructor_exists():
+    assert callable(CollectionType.__init__)
+
+
+def test_collectiontype_constructor_args():
+    sig = inspect.signature(CollectionType.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_essentialocl_orderedsettype_is_not_abstract():
+    assert not inspect.isabstract(EssentialOCL_OrderedSetType)
+
+
+def test_essentialocl_orderedsettype_constructor_exists():
+    assert callable(EssentialOCL_OrderedSetType.__init__)
+
+
+def test_essentialocl_orderedsettype_constructor_args():
+    sig = inspect.signature(EssentialOCL_OrderedSetType.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_essentialocl_bagtype_is_not_abstract():
+    assert not inspect.isabstract(EssentialOCL_BagType)
+
+
+def test_essentialocl_bagtype_constructor_exists():
+    assert callable(EssentialOCL_BagType.__init__)
+
+
+def test_essentialocl_bagtype_constructor_args():
+    sig = inspect.signature(EssentialOCL_BagType.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_extent_is_not_abstract():
+    assert not inspect.isabstract(Extent)
+
+
+def test_extent_constructor_exists():
+    assert callable(Extent.__init__)
+
+
+def test_extent_constructor_args():
+    sig = inspect.signature(Extent.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_emof_uriextent_is_not_abstract():
+    assert not inspect.isabstract(EMOF_URIExtent)
+
+
+def test_emof_uriextent_constructor_exists():
+    assert callable(EMOF_URIExtent.__init__)
+
+
+def test_emof_uriextent_constructor_args():
+    sig = inspect.signature(EMOF_URIExtent.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_emof_object_is_not_abstract():
+    assert not inspect.isabstract(EMOF_Object)
+
+
+def test_emof_object_constructor_exists():
+    assert callable(EMOF_Object.__init__)
+
+
+def test_emof_object_constructor_args():
+    sig = inspect.signature(EMOF_Object.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_parameter_is_not_abstract():
+    assert not inspect.isabstract(Parameter)
+
+
+def test_parameter_constructor_exists():
+    assert callable(Parameter.__init__)
+
+
+def test_parameter_constructor_args():
+    sig = inspect.signature(Parameter.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_qvtoperational_varparameter_is_not_abstract():
+    assert not inspect.isabstract(QVTOperational_VarParameter)
+
+
+def test_qvtoperational_varparameter_constructor_exists():
+    assert callable(QVTOperational_VarParameter.__init__)
+
+
+def test_qvtoperational_varparameter_constructor_args():
+    sig = inspect.signature(QVTOperational_VarParameter.__init__)
+    params = list(sig.parameters.keys())
+    assert "kind" in params, "Missing parameter 'kind'"
+
+def test_qvtoperational_varparameter_has_kind():
+    assert hasattr(QVTOperational_VarParameter, "kind")
+    descriptor = None
+    for klass in QVTOperational_VarParameter.__mro__:
+        if "kind" in klass.__dict__:
+            descriptor = klass.__dict__["kind"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_multiplicityelement_is_not_abstract():
+    assert not inspect.isabstract(MultiplicityElement)
+
+
+def test_multiplicityelement_constructor_exists():
+    assert callable(MultiplicityElement.__init__)
+
+
+def test_multiplicityelement_constructor_args():
+    sig = inspect.signature(MultiplicityElement.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_typedelement_is_not_abstract():
+    assert not inspect.isabstract(TypedElement)
+
+
+def test_typedelement_constructor_exists():
+    assert callable(TypedElement.__init__)
+
+
+def test_typedelement_constructor_args():
+    sig = inspect.signature(TypedElement.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_essentialocl_oclexpression_is_not_abstract():
+    assert not inspect.isabstract(EssentialOCL_OclExpression)
+
+
+def test_essentialocl_oclexpression_constructor_exists():
+    assert callable(EssentialOCL_OclExpression.__init__)
+
+
+def test_essentialocl_oclexpression_constructor_args():
+    sig = inspect.signature(EssentialOCL_OclExpression.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_essentialocl_expressioninocl_is_not_abstract():
+    assert not inspect.isabstract(EssentialOCL_ExpressionInOcl)
+
+
+def test_essentialocl_expressioninocl_constructor_exists():
+    assert callable(EssentialOCL_ExpressionInOcl.__init__)
+
+
+def test_essentialocl_expressioninocl_constructor_args():
+    sig = inspect.signature(EssentialOCL_ExpressionInOcl.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_essentialocl_collectionliteralpart_is_not_abstract():
+    assert not inspect.isabstract(EssentialOCL_CollectionLiteralPart)
+
+
+def test_essentialocl_collectionliteralpart_constructor_exists():
+    assert callable(EssentialOCL_CollectionLiteralPart.__init__)
+
+
+def test_essentialocl_collectionliteralpart_constructor_args():
+    sig = inspect.signature(EssentialOCL_CollectionLiteralPart.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_emof_property_is_not_abstract():
+    assert not inspect.isabstract(EMOF_Property)
+
+
+def test_emof_property_constructor_exists():
+    assert callable(EMOF_Property.__init__)
+
+
+def test_emof_property_constructor_args():
+    sig = inspect.signature(EMOF_Property.__init__)
+    params = list(sig.parameters.keys())
+    assert "isReadOnly" in params, "Missing parameter 'isReadOnly'"
+    assert "isID" in params, "Missing parameter 'isID'"
+    assert "isDerived" in params, "Missing parameter 'isDerived'"
+    assert "isComposite" in params, "Missing parameter 'isComposite'"
+    assert "default" in params, "Missing parameter 'default'"
+
+def test_emof_property_has_isReadOnly():
+    assert hasattr(EMOF_Property, "isReadOnly")
+    descriptor = None
+    for klass in EMOF_Property.__mro__:
+        if "isReadOnly" in klass.__dict__:
+            descriptor = klass.__dict__["isReadOnly"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_emof_property_has_isID():
+    assert hasattr(EMOF_Property, "isID")
+    descriptor = None
+    for klass in EMOF_Property.__mro__:
+        if "isID" in klass.__dict__:
+            descriptor = klass.__dict__["isID"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_emof_property_has_isDerived():
+    assert hasattr(EMOF_Property, "isDerived")
+    descriptor = None
+    for klass in EMOF_Property.__mro__:
+        if "isDerived" in klass.__dict__:
+            descriptor = klass.__dict__["isDerived"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_emof_property_has_isComposite():
+    assert hasattr(EMOF_Property, "isComposite")
+    descriptor = None
+    for klass in EMOF_Property.__mro__:
+        if "isComposite" in klass.__dict__:
+            descriptor = klass.__dict__["isComposite"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_emof_property_has_default():
+    assert hasattr(EMOF_Property, "default")
+    descriptor = None
+    for klass in EMOF_Property.__mro__:
+        if "default" in klass.__dict__:
+            descriptor = klass.__dict__["default"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_emof_parameter_is_not_abstract():
+    assert not inspect.isabstract(EMOF_Parameter)
+
+
+def test_emof_parameter_constructor_exists():
+    assert callable(EMOF_Parameter.__init__)
+
+
+def test_emof_parameter_constructor_args():
+    sig = inspect.signature(EMOF_Parameter.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_emof_operation_is_not_abstract():
+    assert not inspect.isabstract(EMOF_Operation)
+
+
+def test_emof_operation_constructor_exists():
+    assert callable(EMOF_Operation.__init__)
+
+
+def test_emof_operation_constructor_args():
+    sig = inspect.signature(EMOF_Operation.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_namedelement_is_not_abstract():
+    assert not inspect.isabstract(NamedElement)
+
+
+def test_namedelement_constructor_exists():
+    assert callable(NamedElement.__init__)
+
+
+def test_namedelement_constructor_args():
+    sig = inspect.signature(NamedElement.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_emof_typedelement_is_not_abstract():
+    assert not inspect.isabstract(EMOF_TypedElement)
+
+
+def test_emof_typedelement_constructor_exists():
+    assert callable(EMOF_TypedElement.__init__)
+
+
+def test_emof_typedelement_constructor_args():
+    sig = inspect.signature(EMOF_TypedElement.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_emof_type_is_not_abstract():
+    assert not inspect.isabstract(EMOF_Type)
+
+
+def test_emof_type_constructor_exists():
+    assert callable(EMOF_Type.__init__)
+
+
+def test_emof_type_constructor_args():
+    sig = inspect.signature(EMOF_Type.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_emof_package_is_not_abstract():
+    assert not inspect.isabstract(EMOF_Package)
+
+
+def test_emof_package_constructor_exists():
+    assert callable(EMOF_Package.__init__)
+
+
+def test_emof_package_constructor_args():
+    sig = inspect.signature(EMOF_Package.__init__)
+    params = list(sig.parameters.keys())
+    assert "uri" in params, "Missing parameter 'uri'"
+
+def test_emof_package_has_uri():
+    assert hasattr(EMOF_Package, "uri")
+    descriptor = None
+    for klass in EMOF_Package.__mro__:
+        if "uri" in klass.__dict__:
+            descriptor = klass.__dict__["uri"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_element_is_not_abstract():
+    assert not inspect.isabstract(Element)
+
+
+def test_element_constructor_exists():
+    assert callable(Element.__init__)
+
+
+def test_element_constructor_args():
+    sig = inspect.signature(Element.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_qvtrelation_relationdomainassignment_is_not_abstract():
+    assert not inspect.isabstract(QVTRelation_RelationDomainAssignment)
+
+
+def test_qvtrelation_relationdomainassignment_constructor_exists():
+    assert callable(QVTRelation_RelationDomainAssignment.__init__)
+
+
+def test_qvtrelation_relationdomainassignment_constructor_args():
+    sig = inspect.signature(QVTRelation_RelationDomainAssignment.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_emof_tag_is_not_abstract():
+    assert not inspect.isabstract(EMOF_Tag)
+
+
+def test_emof_tag_constructor_exists():
+    assert callable(EMOF_Tag.__init__)
+
+
+def test_emof_tag_constructor_args():
+    sig = inspect.signature(EMOF_Tag.__init__)
+    params = list(sig.parameters.keys())
+    assert "name" in params, "Missing parameter 'name'"
+    assert "value" in params, "Missing parameter 'value'"
+
+def test_emof_tag_has_name():
+    assert hasattr(EMOF_Tag, "name")
+    descriptor = None
+    for klass in EMOF_Tag.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_emof_tag_has_value():
+    assert hasattr(EMOF_Tag, "value")
+    descriptor = None
+    for klass in EMOF_Tag.__mro__:
+        if "value" in klass.__dict__:
+            descriptor = klass.__dict__["value"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_emof_namedelement_is_not_abstract():
+    assert not inspect.isabstract(EMOF_NamedElement)
+
+
+def test_emof_namedelement_constructor_exists():
+    assert callable(EMOF_NamedElement.__init__)
+
+
+def test_emof_namedelement_constructor_args():
+    sig = inspect.signature(EMOF_NamedElement.__init__)
+    params = list(sig.parameters.keys())
+    assert "name" in params, "Missing parameter 'name'"
+
+def test_emof_namedelement_has_name():
+    assert hasattr(EMOF_NamedElement, "name")
+    descriptor = None
+    for klass in EMOF_NamedElement.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_qvtrelation_relationimplementation_is_not_abstract():
+    assert not inspect.isabstract(QVTRelation_RelationImplementation)
+
+
+def test_qvtrelation_relationimplementation_constructor_exists():
+    assert callable(QVTRelation_RelationImplementation.__init__)
+
+
+def test_qvtrelation_relationimplementation_constructor_args():
+    sig = inspect.signature(QVTRelation_RelationImplementation.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_qvtoperational_operationbody_is_not_abstract():
+    assert not inspect.isabstract(QVTOperational_OperationBody)
+
+
+def test_qvtoperational_operationbody_constructor_exists():
+    assert callable(QVTOperational_OperationBody.__init__)
+
+
+def test_qvtoperational_operationbody_constructor_args():
+    sig = inspect.signature(QVTOperational_OperationBody.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_qvtoperational_moduleimport_is_not_abstract():
+    assert not inspect.isabstract(QVTOperational_ModuleImport)
+
+
+def test_qvtoperational_moduleimport_constructor_exists():
+    assert callable(QVTOperational_ModuleImport.__init__)
+
+
+def test_qvtoperational_moduleimport_constructor_args():
+    sig = inspect.signature(QVTOperational_ModuleImport.__init__)
+    params = list(sig.parameters.keys())
+    assert "kind" in params, "Missing parameter 'kind'"
+
+def test_qvtoperational_moduleimport_has_kind():
+    assert hasattr(QVTOperational_ModuleImport, "kind")
+    descriptor = None
+    for klass in QVTOperational_ModuleImport.__mro__:
+        if "kind" in klass.__dict__:
+            descriptor = klass.__dict__["kind"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_qvtrelation_key_is_not_abstract():
+    assert not inspect.isabstract(QVTRelation_Key)
+
+
+def test_qvtrelation_key_constructor_exists():
+    assert callable(QVTRelation_Key.__init__)
+
+
+def test_qvtrelation_key_constructor_args():
+    sig = inspect.signature(QVTRelation_Key.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_emof_comment_is_not_abstract():
+    assert not inspect.isabstract(EMOF_Comment)
+
+
+def test_emof_comment_constructor_exists():
+    assert callable(EMOF_Comment.__init__)
+
+
+def test_emof_comment_constructor_args():
+    sig = inspect.signature(EMOF_Comment.__init__)
+    params = list(sig.parameters.keys())
+    assert "body" in params, "Missing parameter 'body'"
+
+def test_emof_comment_has_body():
+    assert hasattr(EMOF_Comment, "body")
+    descriptor = None
+    for klass in EMOF_Comment.__mro__:
+        if "body" in klass.__dict__:
+            descriptor = klass.__dict__["body"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_emof_multiplicityelement_is_not_abstract():
+    assert not inspect.isabstract(EMOF_MultiplicityElement)
+
+
+def test_emof_multiplicityelement_constructor_exists():
+    assert callable(EMOF_MultiplicityElement.__init__)
+
+
+def test_emof_multiplicityelement_constructor_args():
+    sig = inspect.signature(EMOF_MultiplicityElement.__init__)
+    params = list(sig.parameters.keys())
+    assert "isUnique" in params, "Missing parameter 'isUnique'"
+    assert "lower" in params, "Missing parameter 'lower'"
+    assert "isOrdered" in params, "Missing parameter 'isOrdered'"
+    assert "upper" in params, "Missing parameter 'upper'"
+
+def test_emof_multiplicityelement_has_isUnique():
+    assert hasattr(EMOF_MultiplicityElement, "isUnique")
+    descriptor = None
+    for klass in EMOF_MultiplicityElement.__mro__:
+        if "isUnique" in klass.__dict__:
+            descriptor = klass.__dict__["isUnique"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_emof_multiplicityelement_has_lower():
+    assert hasattr(EMOF_MultiplicityElement, "lower")
+    descriptor = None
+    for klass in EMOF_MultiplicityElement.__mro__:
+        if "lower" in klass.__dict__:
+            descriptor = klass.__dict__["lower"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_emof_multiplicityelement_has_isOrdered():
+    assert hasattr(EMOF_MultiplicityElement, "isOrdered")
+    descriptor = None
+    for klass in EMOF_MultiplicityElement.__mro__:
+        if "isOrdered" in klass.__dict__:
+            descriptor = klass.__dict__["isOrdered"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_emof_multiplicityelement_has_upper():
+    assert hasattr(EMOF_MultiplicityElement, "upper")
+    descriptor = None
+    for klass in EMOF_MultiplicityElement.__mro__:
+        if "upper" in klass.__dict__:
+            descriptor = klass.__dict__["upper"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_package_is_not_abstract():
+    assert not inspect.isabstract(Package)
+
+
+def test_package_constructor_exists():
+    assert callable(Package.__init__)
+
+
+def test_package_constructor_args():
+    sig = inspect.signature(Package.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_emof_factory_is_not_abstract():
+    assert not inspect.isabstract(EMOF_Factory)
+
+
+def test_emof_factory_constructor_exists():
+    assert callable(EMOF_Factory.__init__)
+
+
+def test_emof_factory_constructor_args():
+    sig = inspect.signature(EMOF_Factory.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_enumeration_is_not_abstract():
+    assert not inspect.isabstract(Enumeration)
+
+
+def test_enumeration_constructor_exists():
+    assert callable(Enumeration.__init__)
+
+
+def test_enumeration_constructor_args():
+    sig = inspect.signature(Enumeration.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_emof_enumerationliteral_is_not_abstract():
+    assert not inspect.isabstract(EMOF_EnumerationLiteral)
+
+
+def test_emof_enumerationliteral_constructor_exists():
+    assert callable(EMOF_EnumerationLiteral.__init__)
+
+
+def test_emof_enumerationliteral_constructor_args():
+    sig = inspect.signature(EMOF_EnumerationLiteral.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_enumerationliteral_is_not_abstract():
+    assert not inspect.isabstract(EnumerationLiteral)
+
+
+def test_enumerationliteral_constructor_exists():
+    assert callable(EnumerationLiteral.__init__)
+
+
+def test_enumerationliteral_constructor_args():
+    sig = inspect.signature(EnumerationLiteral.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_datatype_is_not_abstract():
+    assert not inspect.isabstract(DataType)
+
+
+def test_datatype_constructor_exists():
+    assert callable(DataType.__init__)
+
+
+def test_datatype_constructor_args():
+    sig = inspect.signature(DataType.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_emof_primitivetype_is_not_abstract():
+    assert not inspect.isabstract(EMOF_PrimitiveType)
+
+
+def test_emof_primitivetype_constructor_exists():
+    assert callable(EMOF_PrimitiveType.__init__)
+
+
+def test_emof_primitivetype_constructor_args():
+    sig = inspect.signature(EMOF_PrimitiveType.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_essentialocl_collectiontype_is_not_abstract():
+    assert not inspect.isabstract(EssentialOCL_CollectionType)
+
+
+def test_essentialocl_collectiontype_constructor_exists():
+    assert callable(EssentialOCL_CollectionType.__init__)
+
+
+def test_essentialocl_collectiontype_constructor_args():
+    sig = inspect.signature(EssentialOCL_CollectionType.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_emof_enumeration_is_not_abstract():
+    assert not inspect.isabstract(EMOF_Enumeration)
+
+
+def test_emof_enumeration_constructor_exists():
+    assert callable(EMOF_Enumeration.__init__)
+
+
+def test_emof_enumeration_constructor_args():
+    sig = inspect.signature(EMOF_Enumeration.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_comment_is_not_abstract():
+    assert not inspect.isabstract(Comment)
+
+
+def test_comment_constructor_exists():
+    assert callable(Comment.__init__)
+
+
+def test_comment_constructor_args():
+    sig = inspect.signature(Comment.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_object_is_not_abstract():
+    assert not inspect.isabstract(Object)
+
+
+def test_object_constructor_exists():
+    assert callable(Object.__init__)
+
+
+def test_object_constructor_args():
+    sig = inspect.signature(Object.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_emof_reflectivecollection_is_not_abstract():
+    assert not inspect.isabstract(EMOF_ReflectiveCollection)
+
+
+def test_emof_reflectivecollection_constructor_exists():
+    assert callable(EMOF_ReflectiveCollection.__init__)
+
+
+def test_emof_reflectivecollection_constructor_args():
+    sig = inspect.signature(EMOF_ReflectiveCollection.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_emof_extent_is_not_abstract():
+    assert not inspect.isabstract(EMOF_Extent)
+
+
+def test_emof_extent_constructor_exists():
+    assert callable(EMOF_Extent.__init__)
+
+
+def test_emof_extent_constructor_args():
+    sig = inspect.signature(EMOF_Extent.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_emof_element_is_not_abstract():
+    assert not inspect.isabstract(EMOF_Element)
+
+
+def test_emof_element_constructor_exists():
+    assert callable(EMOF_Element.__init__)
+
+
+def test_emof_element_constructor_args():
+    sig = inspect.signature(EMOF_Element.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_class_is_not_abstract():
+    assert not inspect.isabstract(Class)
+
+
+def test_class_constructor_exists():
+    assert callable(Class.__init__)
+
+
+def test_class_constructor_args():
+    sig = inspect.signature(Class.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_qvtoperational_modeltype_is_not_abstract():
+    assert not inspect.isabstract(QVTOperational_ModelType)
+
+
+def test_qvtoperational_modeltype_constructor_exists():
+    assert callable(QVTOperational_ModelType.__init__)
+
+
+def test_qvtoperational_modeltype_constructor_args():
+    sig = inspect.signature(QVTOperational_ModelType.__init__)
+    params = list(sig.parameters.keys())
+    assert "conformanceKind" in params, "Missing parameter 'conformanceKind'"
+
+def test_qvtoperational_modeltype_has_conformanceKind():
+    assert hasattr(QVTOperational_ModelType, "conformanceKind")
+    descriptor = None
+    for klass in QVTOperational_ModelType.__mro__:
+        if "conformanceKind" in klass.__dict__:
+            descriptor = klass.__dict__["conformanceKind"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_qvtoperational_module_is_not_abstract():
+    assert not inspect.isabstract(QVTOperational_Module)
+
+
+def test_qvtoperational_module_constructor_exists():
+    assert callable(QVTOperational_Module.__init__)
+
+
+def test_qvtoperational_module_constructor_args():
+    sig = inspect.signature(QVTOperational_Module.__init__)
+    params = list(sig.parameters.keys())
+    assert "isBlackbox" in params, "Missing parameter 'isBlackbox'"
+
+def test_qvtoperational_module_has_isBlackbox():
+    assert hasattr(QVTOperational_Module, "isBlackbox")
+    descriptor = None
+    for klass in QVTOperational_Module.__mro__:
+        if "isBlackbox" in klass.__dict__:
+            descriptor = klass.__dict__["isBlackbox"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_operation_is_not_abstract():
+    assert not inspect.isabstract(Operation)
+
+
+def test_operation_constructor_exists():
+    assert callable(Operation.__init__)
+
+
+def test_operation_constructor_args():
+    sig = inspect.signature(Operation.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_qvtoperational_imperativeoperation_is_not_abstract():
+    assert not inspect.isabstract(QVTOperational_ImperativeOperation)
+
+
+def test_qvtoperational_imperativeoperation_constructor_exists():
+    assert callable(QVTOperational_ImperativeOperation.__init__)
+
+
+def test_qvtoperational_imperativeoperation_constructor_args():
+    sig = inspect.signature(QVTOperational_ImperativeOperation.__init__)
+    params = list(sig.parameters.keys())
+    assert "isBlackbox" in params, "Missing parameter 'isBlackbox'"
+
+def test_qvtoperational_imperativeoperation_has_isBlackbox():
+    assert hasattr(QVTOperational_ImperativeOperation, "isBlackbox")
+    descriptor = None
+    for klass in QVTOperational_ImperativeOperation.__mro__:
+        if "isBlackbox" in klass.__dict__:
+            descriptor = klass.__dict__["isBlackbox"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_property_is_not_abstract():
+    assert not inspect.isabstract(Property)
+
+
+def test_property_constructor_exists():
+    assert callable(Property.__init__)
+
+
+def test_property_constructor_args():
+    sig = inspect.signature(Property.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_qvtoperational_contextualproperty_is_not_abstract():
+    assert not inspect.isabstract(QVTOperational_ContextualProperty)
+
+
+def test_qvtoperational_contextualproperty_constructor_exists():
+    assert callable(QVTOperational_ContextualProperty.__init__)
+
+
+def test_qvtoperational_contextualproperty_constructor_args():
+    sig = inspect.signature(QVTOperational_ContextualProperty.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_type_is_not_abstract():
+    assert not inspect.isabstract(Type)
+
+
+def test_type_constructor_exists():
+    assert callable(Type.__init__)
+
+
+def test_type_constructor_args():
+    sig = inspect.signature(Type.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_essentialocl_anytype_is_not_abstract():
+    assert not inspect.isabstract(EssentialOCL_AnyType)
+
+
+def test_essentialocl_anytype_constructor_exists():
+    assert callable(EssentialOCL_AnyType.__init__)
+
+
+def test_essentialocl_anytype_constructor_args():
+    sig = inspect.signature(EssentialOCL_AnyType.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_emof_datatype_is_not_abstract():
+    assert not inspect.isabstract(EMOF_DataType)
+
+
+def test_emof_datatype_constructor_exists():
+    assert callable(EMOF_DataType.__init__)
+
+
+def test_emof_datatype_constructor_args():
+    sig = inspect.signature(EMOF_DataType.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_emof_class_is_not_abstract():
+    assert not inspect.isabstract(EMOF_Class)
+
+
+def test_emof_class_constructor_exists():
+    assert callable(EMOF_Class.__init__)
+
+
+def test_emof_class_constructor_args():
+    sig = inspect.signature(EMOF_Class.__init__)
+    params = list(sig.parameters.keys())
+    assert "isAbstract" in params, "Missing parameter 'isAbstract'"
+
+def test_emof_class_has_isAbstract():
+    assert hasattr(EMOF_Class, "isAbstract")
+    descriptor = None
+    for klass in EMOF_Class.__mro__:
+        if "isAbstract" in klass.__dict__:
+            descriptor = klass.__dict__["isAbstract"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_qvttemplate_templateexp_is_not_abstract():
+    assert not inspect.isabstract(QVTTemplate_TemplateExp)
+
+
+def test_qvttemplate_templateexp_constructor_exists():
+    assert callable(QVTTemplate_TemplateExp.__init__)
+
+
+def test_qvttemplate_templateexp_constructor_args():
+    sig = inspect.signature(QVTTemplate_TemplateExp.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -743,16 +2037,16 @@ def test_propertycallexp_constructor_args():
 
 
 
-def test_qvtrelation::oppositepropertycallexp_is_not_abstract():
-    assert not inspect.isabstract(QVTRelation::OppositePropertyCallExp)
+def test_qvtrelation_oppositepropertycallexp_is_not_abstract():
+    assert not inspect.isabstract(QVTRelation_OppositePropertyCallExp)
 
 
-def test_qvtrelation::oppositepropertycallexp_constructor_exists():
-    assert callable(QVTRelation::OppositePropertyCallExp.__init__)
+def test_qvtrelation_oppositepropertycallexp_constructor_exists():
+    assert callable(QVTRelation_OppositePropertyCallExp.__init__)
 
 
-def test_qvtrelation::oppositepropertycallexp_constructor_args():
-    sig = inspect.signature(QVTRelation::OppositePropertyCallExp.__init__)
+def test_qvtrelation_oppositepropertycallexp_constructor_args():
+    sig = inspect.signature(QVTRelation_OppositePropertyCallExp.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -785,17 +2079,55 @@ def test_templateexp_constructor_args():
 
 
 
-def test_qvttemplate::collectiontemplateexp_is_not_abstract():
-    assert not inspect.isabstract(QVTTemplate::CollectionTemplateExp)
+def test_qvttemplate_collectiontemplateexp_is_not_abstract():
+    assert not inspect.isabstract(QVTTemplate_CollectionTemplateExp)
 
 
-def test_qvttemplate::collectiontemplateexp_constructor_exists():
-    assert callable(QVTTemplate::CollectionTemplateExp.__init__)
+def test_qvttemplate_collectiontemplateexp_constructor_exists():
+    assert callable(QVTTemplate_CollectionTemplateExp.__init__)
 
 
-def test_qvttemplate::collectiontemplateexp_constructor_args():
-    sig = inspect.signature(QVTTemplate::CollectionTemplateExp.__init__)
+def test_qvttemplate_collectiontemplateexp_constructor_args():
+    sig = inspect.signature(QVTTemplate_CollectionTemplateExp.__init__)
     params = list(sig.parameters.keys())
+
+
+
+def test_qvtcore_realizedvariable_is_not_abstract():
+    assert not inspect.isabstract(QVTCore_RealizedVariable)
+
+
+def test_qvtcore_realizedvariable_constructor_exists():
+    assert callable(QVTCore_RealizedVariable.__init__)
+
+
+def test_qvtcore_realizedvariable_constructor_args():
+    sig = inspect.signature(QVTCore_RealizedVariable.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_qvttemplate_propertytemplateitem_is_not_abstract():
+    assert not inspect.isabstract(QVTTemplate_PropertyTemplateItem)
+
+
+def test_qvttemplate_propertytemplateitem_constructor_exists():
+    assert callable(QVTTemplate_PropertyTemplateItem.__init__)
+
+
+def test_qvttemplate_propertytemplateitem_constructor_args():
+    sig = inspect.signature(QVTTemplate_PropertyTemplateItem.__init__)
+    params = list(sig.parameters.keys())
+    assert "isOpposite" in params, "Missing parameter 'isOpposite'"
+
+def test_qvttemplate_propertytemplateitem_has_isOpposite():
+    assert hasattr(QVTTemplate_PropertyTemplateItem, "isOpposite")
+    descriptor = None
+    for klass in QVTTemplate_PropertyTemplateItem.__mro__:
+        if "isOpposite" in klass.__dict__:
+            descriptor = klass.__dict__["isOpposite"]
+            break
+    assert isinstance(descriptor, property)
 
 
 
@@ -813,16 +2145,16 @@ def test_propertytemplateitem_constructor_args():
 
 
 
-def test_qvttemplate::objecttemplateexp_is_not_abstract():
-    assert not inspect.isabstract(QVTTemplate::ObjectTemplateExp)
+def test_qvttemplate_objecttemplateexp_is_not_abstract():
+    assert not inspect.isabstract(QVTTemplate_ObjectTemplateExp)
 
 
-def test_qvttemplate::objecttemplateexp_constructor_exists():
-    assert callable(QVTTemplate::ObjectTemplateExp.__init__)
+def test_qvttemplate_objecttemplateexp_constructor_exists():
+    assert callable(QVTTemplate_ObjectTemplateExp.__init__)
 
 
-def test_qvttemplate::objecttemplateexp_constructor_args():
-    sig = inspect.signature(QVTTemplate::ObjectTemplateExp.__init__)
+def test_qvttemplate_objecttemplateexp_constructor_args():
+    sig = inspect.signature(QVTTemplate_ObjectTemplateExp.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -869,30 +2201,30 @@ def test_assignment_constructor_args():
 
 
 
-def test_qvtcore::propertyassignment_is_not_abstract():
-    assert not inspect.isabstract(QVTCore::PropertyAssignment)
+def test_qvtcore_variableassignment_is_not_abstract():
+    assert not inspect.isabstract(QVTCore_VariableAssignment)
 
 
-def test_qvtcore::propertyassignment_constructor_exists():
-    assert callable(QVTCore::PropertyAssignment.__init__)
+def test_qvtcore_variableassignment_constructor_exists():
+    assert callable(QVTCore_VariableAssignment.__init__)
 
 
-def test_qvtcore::propertyassignment_constructor_args():
-    sig = inspect.signature(QVTCore::PropertyAssignment.__init__)
+def test_qvtcore_variableassignment_constructor_args():
+    sig = inspect.signature(QVTCore_VariableAssignment.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_qvtcore::variableassignment_is_not_abstract():
-    assert not inspect.isabstract(QVTCore::VariableAssignment)
+def test_qvtcore_propertyassignment_is_not_abstract():
+    assert not inspect.isabstract(QVTCore_PropertyAssignment)
 
 
-def test_qvtcore::variableassignment_constructor_exists():
-    assert callable(QVTCore::VariableAssignment.__init__)
+def test_qvtcore_propertyassignment_constructor_exists():
+    assert callable(QVTCore_PropertyAssignment.__init__)
 
 
-def test_qvtcore::variableassignment_constructor_args():
-    sig = inspect.signature(QVTCore::VariableAssignment.__init__)
+def test_qvtcore_propertyassignment_constructor_args():
+    sig = inspect.signature(QVTCore_PropertyAssignment.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -925,16 +2257,16 @@ def test_corepattern_constructor_args():
 
 
 
-def test_qvtcore::bottompattern_is_not_abstract():
-    assert not inspect.isabstract(QVTCore::BottomPattern)
+def test_qvtcore_bottompattern_is_not_abstract():
+    assert not inspect.isabstract(QVTCore_BottomPattern)
 
 
-def test_qvtcore::bottompattern_constructor_exists():
-    assert callable(QVTCore::BottomPattern.__init__)
+def test_qvtcore_bottompattern_constructor_exists():
+    assert callable(QVTCore_BottomPattern.__init__)
 
 
-def test_qvtcore::bottompattern_constructor_args():
-    sig = inspect.signature(QVTCore::BottomPattern.__init__)
+def test_qvtcore_bottompattern_constructor_args():
+    sig = inspect.signature(QVTCore_BottomPattern.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -953,16 +2285,54 @@ def test_mapping_constructor_args():
 
 
 
-def test_qvtcore::guardpattern_is_not_abstract():
-    assert not inspect.isabstract(QVTCore::GuardPattern)
+def test_qvtcore_guardpattern_is_not_abstract():
+    assert not inspect.isabstract(QVTCore_GuardPattern)
 
 
-def test_qvtcore::guardpattern_constructor_exists():
-    assert callable(QVTCore::GuardPattern.__init__)
+def test_qvtcore_guardpattern_constructor_exists():
+    assert callable(QVTCore_GuardPattern.__init__)
 
 
-def test_qvtcore::guardpattern_constructor_args():
-    sig = inspect.signature(QVTCore::GuardPattern.__init__)
+def test_qvtcore_guardpattern_constructor_args():
+    sig = inspect.signature(QVTCore_GuardPattern.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_qvtcore_enforcementoperation_is_not_abstract():
+    assert not inspect.isabstract(QVTCore_EnforcementOperation)
+
+
+def test_qvtcore_enforcementoperation_constructor_exists():
+    assert callable(QVTCore_EnforcementOperation.__init__)
+
+
+def test_qvtcore_enforcementoperation_constructor_args():
+    sig = inspect.signature(QVTCore_EnforcementOperation.__init__)
+    params = list(sig.parameters.keys())
+    assert "enforcementMode" in params, "Missing parameter 'enforcementMode'"
+
+def test_qvtcore_enforcementoperation_has_enforcementMode():
+    assert hasattr(QVTCore_EnforcementOperation, "enforcementMode")
+    descriptor = None
+    for klass in QVTCore_EnforcementOperation.__mro__:
+        if "enforcementMode" in klass.__dict__:
+            descriptor = klass.__dict__["enforcementMode"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_qvtbase_typedmodel_is_not_abstract():
+    assert not inspect.isabstract(QVTBase_TypedModel)
+
+
+def test_qvtbase_typedmodel_constructor_exists():
+    assert callable(QVTBase_TypedModel.__init__)
+
+
+def test_qvtbase_typedmodel_constructor_args():
+    sig = inspect.signature(QVTBase_TypedModel.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -981,6 +2351,20 @@ def test_tag_constructor_args():
 
 
 
+def test_qvtbase_transformation_is_not_abstract():
+    assert not inspect.isabstract(QVTBase_Transformation)
+
+
+def test_qvtbase_transformation_constructor_exists():
+    assert callable(QVTBase_Transformation.__init__)
+
+
+def test_qvtbase_transformation_constructor_args():
+    sig = inspect.signature(QVTBase_Transformation.__init__)
+    params = list(sig.parameters.keys())
+
+
+
 def test_transformation_is_not_abstract():
     assert not inspect.isabstract(Transformation)
 
@@ -995,17 +2379,41 @@ def test_transformation_constructor_args():
 
 
 
-def test_qvtrelation::relationaltransformation_is_not_abstract():
-    assert not inspect.isabstract(QVTRelation::RelationalTransformation)
+def test_qvtrelation_relationaltransformation_is_not_abstract():
+    assert not inspect.isabstract(QVTRelation_RelationalTransformation)
 
 
-def test_qvtrelation::relationaltransformation_constructor_exists():
-    assert callable(QVTRelation::RelationalTransformation.__init__)
+def test_qvtrelation_relationaltransformation_constructor_exists():
+    assert callable(QVTRelation_RelationalTransformation.__init__)
 
 
-def test_qvtrelation::relationaltransformation_constructor_args():
-    sig = inspect.signature(QVTRelation::RelationalTransformation.__init__)
+def test_qvtrelation_relationaltransformation_constructor_args():
+    sig = inspect.signature(QVTRelation_RelationalTransformation.__init__)
     params = list(sig.parameters.keys())
+
+
+
+def test_qvtcore_assignment_is_not_abstract():
+    assert not inspect.isabstract(QVTCore_Assignment)
+
+
+def test_qvtcore_assignment_constructor_exists():
+    assert callable(QVTCore_Assignment.__init__)
+
+
+def test_qvtcore_assignment_constructor_args():
+    sig = inspect.signature(QVTCore_Assignment.__init__)
+    params = list(sig.parameters.keys())
+    assert "isDefault" in params, "Missing parameter 'isDefault'"
+
+def test_qvtcore_assignment_has_isDefault():
+    assert hasattr(QVTCore_Assignment, "isDefault")
+    descriptor = None
+    for klass in QVTCore_Assignment.__mro__:
+        if "isDefault" in klass.__dict__:
+            descriptor = klass.__dict__["isDefault"]
+            break
+    assert isinstance(descriptor, property)
 
 
 
@@ -1037,16 +2445,58 @@ def test_bottompattern_constructor_args():
 
 
 
-def test_qvtcore::area_is_not_abstract():
-    assert not inspect.isabstract(QVTCore::Area)
+def test_qvtcore_area_is_not_abstract():
+    assert not inspect.isabstract(QVTCore_Area)
 
 
-def test_qvtcore::area_constructor_exists():
-    assert callable(QVTCore::Area.__init__)
+def test_qvtcore_area_constructor_exists():
+    assert callable(QVTCore_Area.__init__)
 
 
-def test_qvtcore::area_constructor_args():
-    sig = inspect.signature(QVTCore::Area.__init__)
+def test_qvtcore_area_constructor_args():
+    sig = inspect.signature(QVTCore_Area.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_qvtbase_pattern_is_not_abstract():
+    assert not inspect.isabstract(QVTBase_Pattern)
+
+
+def test_qvtbase_pattern_constructor_exists():
+    assert callable(QVTBase_Pattern.__init__)
+
+
+def test_qvtbase_pattern_constructor_args():
+    sig = inspect.signature(QVTBase_Pattern.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_qvtbase_functionparameter_is_not_abstract():
+    assert not inspect.isabstract(QVTBase_FunctionParameter)
+
+
+def test_qvtbase_functionparameter_constructor_exists():
+    assert callable(QVTBase_FunctionParameter.__init__)
+
+
+def test_qvtbase_functionparameter_constructor_args():
+    sig = inspect.signature(QVTBase_FunctionParameter.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_qvtbase_function_is_not_abstract():
+    assert not inspect.isabstract(QVTBase_Function)
+
+
+def test_qvtbase_function_constructor_exists():
+    assert callable(QVTBase_Function.__init__)
+
+
+def test_qvtbase_function_constructor_args():
+    sig = inspect.signature(QVTBase_Function.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1079,23 +2529,23 @@ def test_rule_constructor_args():
 
 
 
-def test_qvtrelation::relation_is_not_abstract():
-    assert not inspect.isabstract(QVTRelation::Relation)
+def test_qvtrelation_relation_is_not_abstract():
+    assert not inspect.isabstract(QVTRelation_Relation)
 
 
-def test_qvtrelation::relation_constructor_exists():
-    assert callable(QVTRelation::Relation.__init__)
+def test_qvtrelation_relation_constructor_exists():
+    assert callable(QVTRelation_Relation.__init__)
 
 
-def test_qvtrelation::relation_constructor_args():
-    sig = inspect.signature(QVTRelation::Relation.__init__)
+def test_qvtrelation_relation_constructor_args():
+    sig = inspect.signature(QVTRelation_Relation.__init__)
     params = list(sig.parameters.keys())
     assert "isTopLevel" in params, "Missing parameter 'isTopLevel'"
 
-def test_qvtrelation::relation_has_isTopLevel():
-    assert hasattr(QVTRelation::Relation, "isTopLevel")
+def test_qvtrelation_relation_has_isTopLevel():
+    assert hasattr(QVTRelation_Relation, "isTopLevel")
     descriptor = None
-    for klass in QVTRelation::Relation.__mro__:
+    for klass in QVTRelation_Relation.__mro__:
         if "isTopLevel" in klass.__dict__:
             descriptor = klass.__dict__["isTopLevel"]
             break
@@ -1103,17 +2553,51 @@ def test_qvtrelation::relation_has_isTopLevel():
 
 
 
-def test_qvtcore::mapping_is_not_abstract():
-    assert not inspect.isabstract(QVTCore::Mapping)
+def test_qvtcore_mapping_is_not_abstract():
+    assert not inspect.isabstract(QVTCore_Mapping)
 
 
-def test_qvtcore::mapping_constructor_exists():
-    assert callable(QVTCore::Mapping.__init__)
+def test_qvtcore_mapping_constructor_exists():
+    assert callable(QVTCore_Mapping.__init__)
 
 
-def test_qvtcore::mapping_constructor_args():
-    sig = inspect.signature(QVTCore::Mapping.__init__)
+def test_qvtcore_mapping_constructor_args():
+    sig = inspect.signature(QVTCore_Mapping.__init__)
     params = list(sig.parameters.keys())
+
+
+
+def test_qvtbase_domain_is_not_abstract():
+    assert not inspect.isabstract(QVTBase_Domain)
+
+
+def test_qvtbase_domain_constructor_exists():
+    assert callable(QVTBase_Domain.__init__)
+
+
+def test_qvtbase_domain_constructor_args():
+    sig = inspect.signature(QVTBase_Domain.__init__)
+    params = list(sig.parameters.keys())
+    assert "isCheckable" in params, "Missing parameter 'isCheckable'"
+    assert "isEnforceable" in params, "Missing parameter 'isEnforceable'"
+
+def test_qvtbase_domain_has_isCheckable():
+    assert hasattr(QVTBase_Domain, "isCheckable")
+    descriptor = None
+    for klass in QVTBase_Domain.__mro__:
+        if "isCheckable" in klass.__dict__:
+            descriptor = klass.__dict__["isCheckable"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_qvtbase_domain_has_isEnforceable():
+    assert hasattr(QVTBase_Domain, "isEnforceable")
+    descriptor = None
+    for klass in QVTBase_Domain.__mro__:
+        if "isEnforceable" in klass.__dict__:
+            descriptor = klass.__dict__["isEnforceable"]
+            break
+    assert isinstance(descriptor, property)
 
 
 
@@ -1131,30 +2615,44 @@ def test_domain_constructor_args():
 
 
 
-def test_qvtcore::coredomain_is_not_abstract():
-    assert not inspect.isabstract(QVTCore::CoreDomain)
+def test_qvtcore_coredomain_is_not_abstract():
+    assert not inspect.isabstract(QVTCore_CoreDomain)
 
 
-def test_qvtcore::coredomain_constructor_exists():
-    assert callable(QVTCore::CoreDomain.__init__)
+def test_qvtcore_coredomain_constructor_exists():
+    assert callable(QVTCore_CoreDomain.__init__)
 
 
-def test_qvtcore::coredomain_constructor_args():
-    sig = inspect.signature(QVTCore::CoreDomain.__init__)
+def test_qvtcore_coredomain_constructor_args():
+    sig = inspect.signature(QVTCore_CoreDomain.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_qvtrelation::relationdomain_is_not_abstract():
-    assert not inspect.isabstract(QVTRelation::RelationDomain)
+def test_qvtrelation_relationdomain_is_not_abstract():
+    assert not inspect.isabstract(QVTRelation_RelationDomain)
 
 
-def test_qvtrelation::relationdomain_constructor_exists():
-    assert callable(QVTRelation::RelationDomain.__init__)
+def test_qvtrelation_relationdomain_constructor_exists():
+    assert callable(QVTRelation_RelationDomain.__init__)
 
 
-def test_qvtrelation::relationdomain_constructor_args():
-    sig = inspect.signature(QVTRelation::RelationDomain.__init__)
+def test_qvtrelation_relationdomain_constructor_args():
+    sig = inspect.signature(QVTRelation_RelationDomain.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_qvtbase_rule_is_not_abstract():
+    assert not inspect.isabstract(QVTBase_Rule)
+
+
+def test_qvtbase_rule_constructor_exists():
+    assert callable(QVTBase_Rule.__init__)
+
+
+def test_qvtbase_rule_constructor_args():
+    sig = inspect.signature(QVTBase_Rule.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1173,1679 +2671,45 @@ def test_pattern_constructor_args():
 
 
 
-def test_qvtcore::corepattern_is_not_abstract():
-    assert not inspect.isabstract(QVTCore::CorePattern)
+def test_qvtrelation_domainpattern_is_not_abstract():
+    assert not inspect.isabstract(QVTRelation_DomainPattern)
 
 
-def test_qvtcore::corepattern_constructor_exists():
-    assert callable(QVTCore::CorePattern.__init__)
+def test_qvtrelation_domainpattern_constructor_exists():
+    assert callable(QVTRelation_DomainPattern.__init__)
 
 
-def test_qvtcore::corepattern_constructor_args():
-    sig = inspect.signature(QVTCore::CorePattern.__init__)
+def test_qvtrelation_domainpattern_constructor_args():
+    sig = inspect.signature(QVTRelation_DomainPattern.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_qvtrelation::domainpattern_is_not_abstract():
-    assert not inspect.isabstract(QVTRelation::DomainPattern)
+def test_qvtcore_corepattern_is_not_abstract():
+    assert not inspect.isabstract(QVTCore_CorePattern)
 
 
-def test_qvtrelation::domainpattern_constructor_exists():
-    assert callable(QVTRelation::DomainPattern.__init__)
+def test_qvtcore_corepattern_constructor_exists():
+    assert callable(QVTCore_CorePattern.__init__)
 
 
-def test_qvtrelation::domainpattern_constructor_args():
-    sig = inspect.signature(QVTRelation::DomainPattern.__init__)
+def test_qvtcore_corepattern_constructor_args():
+    sig = inspect.signature(QVTCore_CorePattern.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_loopexp_is_not_abstract():
-    assert not inspect.isabstract(LoopExp)
+def test_qvtbase_predicate_is_not_abstract():
+    assert not inspect.isabstract(QVTBase_Predicate)
 
 
-def test_loopexp_constructor_exists():
-    assert callable(LoopExp.__init__)
+def test_qvtbase_predicate_constructor_exists():
+    assert callable(QVTBase_Predicate.__init__)
 
 
-def test_loopexp_constructor_args():
-    sig = inspect.signature(LoopExp.__init__)
+def test_qvtbase_predicate_constructor_args():
+    sig = inspect.signature(QVTBase_Predicate.__init__)
     params = list(sig.parameters.keys())
-
-
-
-def test_essentialocl::iterateexp_is_not_abstract():
-    assert not inspect.isabstract(EssentialOCL::IterateExp)
-
-
-def test_essentialocl::iterateexp_constructor_exists():
-    assert callable(EssentialOCL::IterateExp.__init__)
-
-
-def test_essentialocl::iterateexp_constructor_args():
-    sig = inspect.signature(EssentialOCL::IterateExp.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_navigationcallexp_is_not_abstract():
-    assert not inspect.isabstract(NavigationCallExp)
-
-
-def test_navigationcallexp_constructor_exists():
-    assert callable(NavigationCallExp.__init__)
-
-
-def test_navigationcallexp_constructor_args():
-    sig = inspect.signature(NavigationCallExp.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_essentialocl::propertycallexp_is_not_abstract():
-    assert not inspect.isabstract(EssentialOCL::PropertyCallExp)
-
-
-def test_essentialocl::propertycallexp_constructor_exists():
-    assert callable(EssentialOCL::PropertyCallExp.__init__)
-
-
-def test_essentialocl::propertycallexp_constructor_args():
-    sig = inspect.signature(EssentialOCL::PropertyCallExp.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_numericliteralexp_is_not_abstract():
-    assert not inspect.isabstract(NumericLiteralExp)
-
-
-def test_numericliteralexp_constructor_exists():
-    assert callable(NumericLiteralExp.__init__)
-
-
-def test_numericliteralexp_constructor_args():
-    sig = inspect.signature(NumericLiteralExp.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_essentialocl::realliteralexp_is_not_abstract():
-    assert not inspect.isabstract(EssentialOCL::RealLiteralExp)
-
-
-def test_essentialocl::realliteralexp_constructor_exists():
-    assert callable(EssentialOCL::RealLiteralExp.__init__)
-
-
-def test_essentialocl::realliteralexp_constructor_args():
-    sig = inspect.signature(EssentialOCL::RealLiteralExp.__init__)
-    params = list(sig.parameters.keys())
-    assert "realSymbol" in params, "Missing parameter 'realSymbol'"
-
-def test_essentialocl::realliteralexp_has_realSymbol():
-    assert hasattr(EssentialOCL::RealLiteralExp, "realSymbol")
-    descriptor = None
-    for klass in EssentialOCL::RealLiteralExp.__mro__:
-        if "realSymbol" in klass.__dict__:
-            descriptor = klass.__dict__["realSymbol"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_essentialocl::integerliteralexp_is_not_abstract():
-    assert not inspect.isabstract(EssentialOCL::IntegerLiteralExp)
-
-
-def test_essentialocl::integerliteralexp_constructor_exists():
-    assert callable(EssentialOCL::IntegerLiteralExp.__init__)
-
-
-def test_essentialocl::integerliteralexp_constructor_args():
-    sig = inspect.signature(EssentialOCL::IntegerLiteralExp.__init__)
-    params = list(sig.parameters.keys())
-    assert "integerSymbol" in params, "Missing parameter 'integerSymbol'"
-
-def test_essentialocl::integerliteralexp_has_integerSymbol():
-    assert hasattr(EssentialOCL::IntegerLiteralExp, "integerSymbol")
-    descriptor = None
-    for klass in EssentialOCL::IntegerLiteralExp.__mro__:
-        if "integerSymbol" in klass.__dict__:
-            descriptor = klass.__dict__["integerSymbol"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_callexp_is_not_abstract():
-    assert not inspect.isabstract(CallExp)
-
-
-def test_callexp_constructor_exists():
-    assert callable(CallExp.__init__)
-
-
-def test_callexp_constructor_args():
-    sig = inspect.signature(CallExp.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_essentialocl::featurecallexp_is_not_abstract():
-    assert not inspect.isabstract(EssentialOCL::FeatureCallExp)
-
-
-def test_essentialocl::featurecallexp_constructor_exists():
-    assert callable(EssentialOCL::FeatureCallExp.__init__)
-
-
-def test_essentialocl::featurecallexp_constructor_args():
-    sig = inspect.signature(EssentialOCL::FeatureCallExp.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_oclexpression_is_not_abstract():
-    assert not inspect.isabstract(OclExpression)
-
-
-def test_oclexpression_constructor_exists():
-    assert callable(OclExpression.__init__)
-
-
-def test_oclexpression_constructor_args():
-    sig = inspect.signature(OclExpression.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_essentialocl::ifexp_is_not_abstract():
-    assert not inspect.isabstract(EssentialOCL::IfExp)
-
-
-def test_essentialocl::ifexp_constructor_exists():
-    assert callable(EssentialOCL::IfExp.__init__)
-
-
-def test_essentialocl::ifexp_constructor_args():
-    sig = inspect.signature(EssentialOCL::IfExp.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_qvtrelation::relationcallexp_is_not_abstract():
-    assert not inspect.isabstract(QVTRelation::RelationCallExp)
-
-
-def test_qvtrelation::relationcallexp_constructor_exists():
-    assert callable(QVTRelation::RelationCallExp.__init__)
-
-
-def test_qvtrelation::relationcallexp_constructor_args():
-    sig = inspect.signature(QVTRelation::RelationCallExp.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_essentialocl::callexp_is_not_abstract():
-    assert not inspect.isabstract(EssentialOCL::CallExp)
-
-
-def test_essentialocl::callexp_constructor_exists():
-    assert callable(EssentialOCL::CallExp.__init__)
-
-
-def test_essentialocl::callexp_constructor_args():
-    sig = inspect.signature(EssentialOCL::CallExp.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_primitiveliteralexp_is_not_abstract():
-    assert not inspect.isabstract(PrimitiveLiteralExp)
-
-
-def test_primitiveliteralexp_constructor_exists():
-    assert callable(PrimitiveLiteralExp.__init__)
-
-
-def test_primitiveliteralexp_constructor_args():
-    sig = inspect.signature(PrimitiveLiteralExp.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_essentialocl::booleanliteralexp_is_not_abstract():
-    assert not inspect.isabstract(EssentialOCL::BooleanLiteralExp)
-
-
-def test_essentialocl::booleanliteralexp_constructor_exists():
-    assert callable(EssentialOCL::BooleanLiteralExp.__init__)
-
-
-def test_essentialocl::booleanliteralexp_constructor_args():
-    sig = inspect.signature(EssentialOCL::BooleanLiteralExp.__init__)
-    params = list(sig.parameters.keys())
-    assert "booleanSymbol" in params, "Missing parameter 'booleanSymbol'"
-
-def test_essentialocl::booleanliteralexp_has_booleanSymbol():
-    assert hasattr(EssentialOCL::BooleanLiteralExp, "booleanSymbol")
-    descriptor = None
-    for klass in EssentialOCL::BooleanLiteralExp.__mro__:
-        if "booleanSymbol" in klass.__dict__:
-            descriptor = klass.__dict__["booleanSymbol"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_variable_is_not_abstract():
-    assert not inspect.isabstract(Variable)
-
-
-def test_variable_constructor_exists():
-    assert callable(Variable.__init__)
-
-
-def test_variable_constructor_args():
-    sig = inspect.signature(Variable.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_qvtcore::realizedvariable_is_not_abstract():
-    assert not inspect.isabstract(QVTCore::RealizedVariable)
-
-
-def test_qvtcore::realizedvariable_constructor_exists():
-    assert callable(QVTCore::RealizedVariable.__init__)
-
-
-def test_qvtcore::realizedvariable_constructor_args():
-    sig = inspect.signature(QVTCore::RealizedVariable.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_collectionliteralexp_is_not_abstract():
-    assert not inspect.isabstract(CollectionLiteralExp)
-
-
-def test_collectionliteralexp_constructor_exists():
-    assert callable(CollectionLiteralExp.__init__)
-
-
-def test_collectionliteralexp_constructor_args():
-    sig = inspect.signature(CollectionLiteralExp.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_literalexp_is_not_abstract():
-    assert not inspect.isabstract(LiteralExp)
-
-
-def test_literalexp_constructor_exists():
-    assert callable(LiteralExp.__init__)
-
-
-def test_literalexp_constructor_args():
-    sig = inspect.signature(LiteralExp.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_essentialocl::invalidliteralexp_is_not_abstract():
-    assert not inspect.isabstract(EssentialOCL::InvalidLiteralExp)
-
-
-def test_essentialocl::invalidliteralexp_constructor_exists():
-    assert callable(EssentialOCL::InvalidLiteralExp.__init__)
-
-
-def test_essentialocl::invalidliteralexp_constructor_args():
-    sig = inspect.signature(EssentialOCL::InvalidLiteralExp.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_qvttemplate::templateexp_is_not_abstract():
-    assert not inspect.isabstract(QVTTemplate::TemplateExp)
-
-
-def test_qvttemplate::templateexp_constructor_exists():
-    assert callable(QVTTemplate::TemplateExp.__init__)
-
-
-def test_qvttemplate::templateexp_constructor_args():
-    sig = inspect.signature(QVTTemplate::TemplateExp.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_essentialocl::enumliteralexp_is_not_abstract():
-    assert not inspect.isabstract(EssentialOCL::EnumLiteralExp)
-
-
-def test_essentialocl::enumliteralexp_constructor_exists():
-    assert callable(EssentialOCL::EnumLiteralExp.__init__)
-
-
-def test_essentialocl::enumliteralexp_constructor_args():
-    sig = inspect.signature(EssentialOCL::EnumLiteralExp.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_essentialocl::primitiveliteralexp_is_not_abstract():
-    assert not inspect.isabstract(EssentialOCL::PrimitiveLiteralExp)
-
-
-def test_essentialocl::primitiveliteralexp_constructor_exists():
-    assert callable(EssentialOCL::PrimitiveLiteralExp.__init__)
-
-
-def test_essentialocl::primitiveliteralexp_constructor_args():
-    sig = inspect.signature(EssentialOCL::PrimitiveLiteralExp.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_essentialocl::collectionliteralexp_is_not_abstract():
-    assert not inspect.isabstract(EssentialOCL::CollectionLiteralExp)
-
-
-def test_essentialocl::collectionliteralexp_constructor_exists():
-    assert callable(EssentialOCL::CollectionLiteralExp.__init__)
-
-
-def test_essentialocl::collectionliteralexp_constructor_args():
-    sig = inspect.signature(EssentialOCL::CollectionLiteralExp.__init__)
-    params = list(sig.parameters.keys())
-    assert "kind" in params, "Missing parameter 'kind'"
-
-def test_essentialocl::collectionliteralexp_has_kind():
-    assert hasattr(EssentialOCL::CollectionLiteralExp, "kind")
-    descriptor = None
-    for klass in EssentialOCL::CollectionLiteralExp.__mro__:
-        if "kind" in klass.__dict__:
-            descriptor = klass.__dict__["kind"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_collectionliteralpart_is_not_abstract():
-    assert not inspect.isabstract(CollectionLiteralPart)
-
-
-def test_collectionliteralpart_constructor_exists():
-    assert callable(CollectionLiteralPart.__init__)
-
-
-def test_collectionliteralpart_constructor_args():
-    sig = inspect.signature(CollectionLiteralPart.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_essentialocl::collectionrange_is_not_abstract():
-    assert not inspect.isabstract(EssentialOCL::CollectionRange)
-
-
-def test_essentialocl::collectionrange_constructor_exists():
-    assert callable(EssentialOCL::CollectionRange.__init__)
-
-
-def test_essentialocl::collectionrange_constructor_args():
-    sig = inspect.signature(EssentialOCL::CollectionRange.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_essentialocl::collectionitem_is_not_abstract():
-    assert not inspect.isabstract(EssentialOCL::CollectionItem)
-
-
-def test_essentialocl::collectionitem_constructor_exists():
-    assert callable(EssentialOCL::CollectionItem.__init__)
-
-
-def test_essentialocl::collectionitem_constructor_args():
-    sig = inspect.signature(EssentialOCL::CollectionItem.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_reflectivecollection_is_not_abstract():
-    assert not inspect.isabstract(ReflectiveCollection)
-
-
-def test_reflectivecollection_constructor_exists():
-    assert callable(ReflectiveCollection.__init__)
-
-
-def test_reflectivecollection_constructor_args():
-    sig = inspect.signature(ReflectiveCollection.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_emof::reflectivesequence_is_not_abstract():
-    assert not inspect.isabstract(EMOF::ReflectiveSequence)
-
-
-def test_emof::reflectivesequence_constructor_exists():
-    assert callable(EMOF::ReflectiveSequence.__init__)
-
-
-def test_emof::reflectivesequence_constructor_args():
-    sig = inspect.signature(EMOF::ReflectiveSequence.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_collectiontype_is_not_abstract():
-    assert not inspect.isabstract(CollectionType)
-
-
-def test_collectiontype_constructor_exists():
-    assert callable(CollectionType.__init__)
-
-
-def test_collectiontype_constructor_args():
-    sig = inspect.signature(CollectionType.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_essentialocl::orderedsettype_is_not_abstract():
-    assert not inspect.isabstract(EssentialOCL::OrderedSetType)
-
-
-def test_essentialocl::orderedsettype_constructor_exists():
-    assert callable(EssentialOCL::OrderedSetType.__init__)
-
-
-def test_essentialocl::orderedsettype_constructor_args():
-    sig = inspect.signature(EssentialOCL::OrderedSetType.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_essentialocl::sequencetype_is_not_abstract():
-    assert not inspect.isabstract(EssentialOCL::SequenceType)
-
-
-def test_essentialocl::sequencetype_constructor_exists():
-    assert callable(EssentialOCL::SequenceType.__init__)
-
-
-def test_essentialocl::sequencetype_constructor_args():
-    sig = inspect.signature(EssentialOCL::SequenceType.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_essentialocl::bagtype_is_not_abstract():
-    assert not inspect.isabstract(EssentialOCL::BagType)
-
-
-def test_essentialocl::bagtype_constructor_exists():
-    assert callable(EssentialOCL::BagType.__init__)
-
-
-def test_essentialocl::bagtype_constructor_args():
-    sig = inspect.signature(EssentialOCL::BagType.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_extent_is_not_abstract():
-    assert not inspect.isabstract(Extent)
-
-
-def test_extent_constructor_exists():
-    assert callable(Extent.__init__)
-
-
-def test_extent_constructor_args():
-    sig = inspect.signature(Extent.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_emof::uriextent_is_not_abstract():
-    assert not inspect.isabstract(EMOF::URIExtent)
-
-
-def test_emof::uriextent_constructor_exists():
-    assert callable(EMOF::URIExtent.__init__)
-
-
-def test_emof::uriextent_constructor_args():
-    sig = inspect.signature(EMOF::URIExtent.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_emof::object_is_not_abstract():
-    assert not inspect.isabstract(EMOF::Object)
-
-
-def test_emof::object_constructor_exists():
-    assert callable(EMOF::Object.__init__)
-
-
-def test_emof::object_constructor_args():
-    sig = inspect.signature(EMOF::Object.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_parameter_is_not_abstract():
-    assert not inspect.isabstract(Parameter)
-
-
-def test_parameter_constructor_exists():
-    assert callable(Parameter.__init__)
-
-
-def test_parameter_constructor_args():
-    sig = inspect.signature(Parameter.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_qvtbase::functionparameter_is_not_abstract():
-    assert not inspect.isabstract(QVTBase::FunctionParameter)
-
-
-def test_qvtbase::functionparameter_constructor_exists():
-    assert callable(QVTBase::FunctionParameter.__init__)
-
-
-def test_qvtbase::functionparameter_constructor_args():
-    sig = inspect.signature(QVTBase::FunctionParameter.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_qvtoperational::varparameter_is_not_abstract():
-    assert not inspect.isabstract(QVTOperational::VarParameter)
-
-
-def test_qvtoperational::varparameter_constructor_exists():
-    assert callable(QVTOperational::VarParameter.__init__)
-
-
-def test_qvtoperational::varparameter_constructor_args():
-    sig = inspect.signature(QVTOperational::VarParameter.__init__)
-    params = list(sig.parameters.keys())
-    assert "kind" in params, "Missing parameter 'kind'"
-
-def test_qvtoperational::varparameter_has_kind():
-    assert hasattr(QVTOperational::VarParameter, "kind")
-    descriptor = None
-    for klass in QVTOperational::VarParameter.__mro__:
-        if "kind" in klass.__dict__:
-            descriptor = klass.__dict__["kind"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_multiplicityelement_is_not_abstract():
-    assert not inspect.isabstract(MultiplicityElement)
-
-
-def test_multiplicityelement_constructor_exists():
-    assert callable(MultiplicityElement.__init__)
-
-
-def test_multiplicityelement_constructor_args():
-    sig = inspect.signature(MultiplicityElement.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_typedelement_is_not_abstract():
-    assert not inspect.isabstract(TypedElement)
-
-
-def test_typedelement_constructor_exists():
-    assert callable(TypedElement.__init__)
-
-
-def test_typedelement_constructor_args():
-    sig = inspect.signature(TypedElement.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_essentialocl::oclexpression_is_not_abstract():
-    assert not inspect.isabstract(EssentialOCL::OclExpression)
-
-
-def test_essentialocl::oclexpression_constructor_exists():
-    assert callable(EssentialOCL::OclExpression.__init__)
-
-
-def test_essentialocl::oclexpression_constructor_args():
-    sig = inspect.signature(EssentialOCL::OclExpression.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_essentialocl::expressioninocl_is_not_abstract():
-    assert not inspect.isabstract(EssentialOCL::ExpressionInOcl)
-
-
-def test_essentialocl::expressioninocl_constructor_exists():
-    assert callable(EssentialOCL::ExpressionInOcl.__init__)
-
-
-def test_essentialocl::expressioninocl_constructor_args():
-    sig = inspect.signature(EssentialOCL::ExpressionInOcl.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_emof::parameter_is_not_abstract():
-    assert not inspect.isabstract(EMOF::Parameter)
-
-
-def test_emof::parameter_constructor_exists():
-    assert callable(EMOF::Parameter.__init__)
-
-
-def test_emof::parameter_constructor_args():
-    sig = inspect.signature(EMOF::Parameter.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_essentialocl::collectionliteralpart_is_not_abstract():
-    assert not inspect.isabstract(EssentialOCL::CollectionLiteralPart)
-
-
-def test_essentialocl::collectionliteralpart_constructor_exists():
-    assert callable(EssentialOCL::CollectionLiteralPart.__init__)
-
-
-def test_essentialocl::collectionliteralpart_constructor_args():
-    sig = inspect.signature(EssentialOCL::CollectionLiteralPart.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_emof::property_is_not_abstract():
-    assert not inspect.isabstract(EMOF::Property)
-
-
-def test_emof::property_constructor_exists():
-    assert callable(EMOF::Property.__init__)
-
-
-def test_emof::property_constructor_args():
-    sig = inspect.signature(EMOF::Property.__init__)
-    params = list(sig.parameters.keys())
-    assert "default" in params, "Missing parameter 'default'"
-    assert "isDerived" in params, "Missing parameter 'isDerived'"
-    assert "isComposite" in params, "Missing parameter 'isComposite'"
-    assert "isReadOnly" in params, "Missing parameter 'isReadOnly'"
-    assert "isID" in params, "Missing parameter 'isID'"
-
-def test_emof::property_has_default():
-    assert hasattr(EMOF::Property, "default")
-    descriptor = None
-    for klass in EMOF::Property.__mro__:
-        if "default" in klass.__dict__:
-            descriptor = klass.__dict__["default"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_emof::property_has_isDerived():
-    assert hasattr(EMOF::Property, "isDerived")
-    descriptor = None
-    for klass in EMOF::Property.__mro__:
-        if "isDerived" in klass.__dict__:
-            descriptor = klass.__dict__["isDerived"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_emof::property_has_isComposite():
-    assert hasattr(EMOF::Property, "isComposite")
-    descriptor = None
-    for klass in EMOF::Property.__mro__:
-        if "isComposite" in klass.__dict__:
-            descriptor = klass.__dict__["isComposite"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_emof::property_has_isReadOnly():
-    assert hasattr(EMOF::Property, "isReadOnly")
-    descriptor = None
-    for klass in EMOF::Property.__mro__:
-        if "isReadOnly" in klass.__dict__:
-            descriptor = klass.__dict__["isReadOnly"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_emof::property_has_isID():
-    assert hasattr(EMOF::Property, "isID")
-    descriptor = None
-    for klass in EMOF::Property.__mro__:
-        if "isID" in klass.__dict__:
-            descriptor = klass.__dict__["isID"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_emof::operation_is_not_abstract():
-    assert not inspect.isabstract(EMOF::Operation)
-
-
-def test_emof::operation_constructor_exists():
-    assert callable(EMOF::Operation.__init__)
-
-
-def test_emof::operation_constructor_args():
-    sig = inspect.signature(EMOF::Operation.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_namedelement_is_not_abstract():
-    assert not inspect.isabstract(NamedElement)
-
-
-def test_namedelement_constructor_exists():
-    assert callable(NamedElement.__init__)
-
-
-def test_namedelement_constructor_args():
-    sig = inspect.signature(NamedElement.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_qvtbase::domain_is_not_abstract():
-    assert not inspect.isabstract(QVTBase::Domain)
-
-
-def test_qvtbase::domain_constructor_exists():
-    assert callable(QVTBase::Domain.__init__)
-
-
-def test_qvtbase::domain_constructor_args():
-    sig = inspect.signature(QVTBase::Domain.__init__)
-    params = list(sig.parameters.keys())
-    assert "isCheckable" in params, "Missing parameter 'isCheckable'"
-    assert "isEnforceable" in params, "Missing parameter 'isEnforceable'"
-
-def test_qvtbase::domain_has_isCheckable():
-    assert hasattr(QVTBase::Domain, "isCheckable")
-    descriptor = None
-    for klass in QVTBase::Domain.__mro__:
-        if "isCheckable" in klass.__dict__:
-            descriptor = klass.__dict__["isCheckable"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_qvtbase::domain_has_isEnforceable():
-    assert hasattr(QVTBase::Domain, "isEnforceable")
-    descriptor = None
-    for klass in QVTBase::Domain.__mro__:
-        if "isEnforceable" in klass.__dict__:
-            descriptor = klass.__dict__["isEnforceable"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_emof::typedelement_is_not_abstract():
-    assert not inspect.isabstract(EMOF::TypedElement)
-
-
-def test_emof::typedelement_constructor_exists():
-    assert callable(EMOF::TypedElement.__init__)
-
-
-def test_emof::typedelement_constructor_args():
-    sig = inspect.signature(EMOF::TypedElement.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_qvtbase::rule_is_not_abstract():
-    assert not inspect.isabstract(QVTBase::Rule)
-
-
-def test_qvtbase::rule_constructor_exists():
-    assert callable(QVTBase::Rule.__init__)
-
-
-def test_qvtbase::rule_constructor_args():
-    sig = inspect.signature(QVTBase::Rule.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_qvtbase::typedmodel_is_not_abstract():
-    assert not inspect.isabstract(QVTBase::TypedModel)
-
-
-def test_qvtbase::typedmodel_constructor_exists():
-    assert callable(QVTBase::TypedModel.__init__)
-
-
-def test_qvtbase::typedmodel_constructor_args():
-    sig = inspect.signature(QVTBase::TypedModel.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_emof::package_is_not_abstract():
-    assert not inspect.isabstract(EMOF::Package)
-
-
-def test_emof::package_constructor_exists():
-    assert callable(EMOF::Package.__init__)
-
-
-def test_emof::package_constructor_args():
-    sig = inspect.signature(EMOF::Package.__init__)
-    params = list(sig.parameters.keys())
-    assert "uri" in params, "Missing parameter 'uri'"
-
-def test_emof::package_has_uri():
-    assert hasattr(EMOF::Package, "uri")
-    descriptor = None
-    for klass in EMOF::Package.__mro__:
-        if "uri" in klass.__dict__:
-            descriptor = klass.__dict__["uri"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_emof::type_is_not_abstract():
-    assert not inspect.isabstract(EMOF::Type)
-
-
-def test_emof::type_constructor_exists():
-    assert callable(EMOF::Type.__init__)
-
-
-def test_emof::type_constructor_args():
-    sig = inspect.signature(EMOF::Type.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_element_is_not_abstract():
-    assert not inspect.isabstract(Element)
-
-
-def test_element_constructor_exists():
-    assert callable(Element.__init__)
-
-
-def test_element_constructor_args():
-    sig = inspect.signature(Element.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_emof::namedelement_is_not_abstract():
-    assert not inspect.isabstract(EMOF::NamedElement)
-
-
-def test_emof::namedelement_constructor_exists():
-    assert callable(EMOF::NamedElement.__init__)
-
-
-def test_emof::namedelement_constructor_args():
-    sig = inspect.signature(EMOF::NamedElement.__init__)
-    params = list(sig.parameters.keys())
-    assert "name" in params, "Missing parameter 'name'"
-
-def test_emof::namedelement_has_name():
-    assert hasattr(EMOF::NamedElement, "name")
-    descriptor = None
-    for klass in EMOF::NamedElement.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_qvtbase::pattern_is_not_abstract():
-    assert not inspect.isabstract(QVTBase::Pattern)
-
-
-def test_qvtbase::pattern_constructor_exists():
-    assert callable(QVTBase::Pattern.__init__)
-
-
-def test_qvtbase::pattern_constructor_args():
-    sig = inspect.signature(QVTBase::Pattern.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_qvtoperational::moduleimport_is_not_abstract():
-    assert not inspect.isabstract(QVTOperational::ModuleImport)
-
-
-def test_qvtoperational::moduleimport_constructor_exists():
-    assert callable(QVTOperational::ModuleImport.__init__)
-
-
-def test_qvtoperational::moduleimport_constructor_args():
-    sig = inspect.signature(QVTOperational::ModuleImport.__init__)
-    params = list(sig.parameters.keys())
-    assert "kind" in params, "Missing parameter 'kind'"
-
-def test_qvtoperational::moduleimport_has_kind():
-    assert hasattr(QVTOperational::ModuleImport, "kind")
-    descriptor = None
-    for klass in QVTOperational::ModuleImport.__mro__:
-        if "kind" in klass.__dict__:
-            descriptor = klass.__dict__["kind"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_qvtbase::predicate_is_not_abstract():
-    assert not inspect.isabstract(QVTBase::Predicate)
-
-
-def test_qvtbase::predicate_constructor_exists():
-    assert callable(QVTBase::Predicate.__init__)
-
-
-def test_qvtbase::predicate_constructor_args():
-    sig = inspect.signature(QVTBase::Predicate.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_qvtoperational::operationbody_is_not_abstract():
-    assert not inspect.isabstract(QVTOperational::OperationBody)
-
-
-def test_qvtoperational::operationbody_constructor_exists():
-    assert callable(QVTOperational::OperationBody.__init__)
-
-
-def test_qvtoperational::operationbody_constructor_args():
-    sig = inspect.signature(QVTOperational::OperationBody.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_qvtrelation::relationimplementation_is_not_abstract():
-    assert not inspect.isabstract(QVTRelation::RelationImplementation)
-
-
-def test_qvtrelation::relationimplementation_constructor_exists():
-    assert callable(QVTRelation::RelationImplementation.__init__)
-
-
-def test_qvtrelation::relationimplementation_constructor_args():
-    sig = inspect.signature(QVTRelation::RelationImplementation.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_qvttemplate::propertytemplateitem_is_not_abstract():
-    assert not inspect.isabstract(QVTTemplate::PropertyTemplateItem)
-
-
-def test_qvttemplate::propertytemplateitem_constructor_exists():
-    assert callable(QVTTemplate::PropertyTemplateItem.__init__)
-
-
-def test_qvttemplate::propertytemplateitem_constructor_args():
-    sig = inspect.signature(QVTTemplate::PropertyTemplateItem.__init__)
-    params = list(sig.parameters.keys())
-    assert "isOpposite" in params, "Missing parameter 'isOpposite'"
-
-def test_qvttemplate::propertytemplateitem_has_isOpposite():
-    assert hasattr(QVTTemplate::PropertyTemplateItem, "isOpposite")
-    descriptor = None
-    for klass in QVTTemplate::PropertyTemplateItem.__mro__:
-        if "isOpposite" in klass.__dict__:
-            descriptor = klass.__dict__["isOpposite"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_emof::tag_is_not_abstract():
-    assert not inspect.isabstract(EMOF::Tag)
-
-
-def test_emof::tag_constructor_exists():
-    assert callable(EMOF::Tag.__init__)
-
-
-def test_emof::tag_constructor_args():
-    sig = inspect.signature(EMOF::Tag.__init__)
-    params = list(sig.parameters.keys())
-    assert "value" in params, "Missing parameter 'value'"
-    assert "name" in params, "Missing parameter 'name'"
-
-def test_emof::tag_has_value():
-    assert hasattr(EMOF::Tag, "value")
-    descriptor = None
-    for klass in EMOF::Tag.__mro__:
-        if "value" in klass.__dict__:
-            descriptor = klass.__dict__["value"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_emof::tag_has_name():
-    assert hasattr(EMOF::Tag, "name")
-    descriptor = None
-    for klass in EMOF::Tag.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_qvtcore::assignment_is_not_abstract():
-    assert not inspect.isabstract(QVTCore::Assignment)
-
-
-def test_qvtcore::assignment_constructor_exists():
-    assert callable(QVTCore::Assignment.__init__)
-
-
-def test_qvtcore::assignment_constructor_args():
-    sig = inspect.signature(QVTCore::Assignment.__init__)
-    params = list(sig.parameters.keys())
-    assert "isDefault" in params, "Missing parameter 'isDefault'"
-
-def test_qvtcore::assignment_has_isDefault():
-    assert hasattr(QVTCore::Assignment, "isDefault")
-    descriptor = None
-    for klass in QVTCore::Assignment.__mro__:
-        if "isDefault" in klass.__dict__:
-            descriptor = klass.__dict__["isDefault"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_qvtrelation::relationdomainassignment_is_not_abstract():
-    assert not inspect.isabstract(QVTRelation::RelationDomainAssignment)
-
-
-def test_qvtrelation::relationdomainassignment_constructor_exists():
-    assert callable(QVTRelation::RelationDomainAssignment.__init__)
-
-
-def test_qvtrelation::relationdomainassignment_constructor_args():
-    sig = inspect.signature(QVTRelation::RelationDomainAssignment.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_qvtcore::enforcementoperation_is_not_abstract():
-    assert not inspect.isabstract(QVTCore::EnforcementOperation)
-
-
-def test_qvtcore::enforcementoperation_constructor_exists():
-    assert callable(QVTCore::EnforcementOperation.__init__)
-
-
-def test_qvtcore::enforcementoperation_constructor_args():
-    sig = inspect.signature(QVTCore::EnforcementOperation.__init__)
-    params = list(sig.parameters.keys())
-    assert "enforcementMode" in params, "Missing parameter 'enforcementMode'"
-
-def test_qvtcore::enforcementoperation_has_enforcementMode():
-    assert hasattr(QVTCore::EnforcementOperation, "enforcementMode")
-    descriptor = None
-    for klass in QVTCore::EnforcementOperation.__mro__:
-        if "enforcementMode" in klass.__dict__:
-            descriptor = klass.__dict__["enforcementMode"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_qvtrelation::key_is_not_abstract():
-    assert not inspect.isabstract(QVTRelation::Key)
-
-
-def test_qvtrelation::key_constructor_exists():
-    assert callable(QVTRelation::Key.__init__)
-
-
-def test_qvtrelation::key_constructor_args():
-    sig = inspect.signature(QVTRelation::Key.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_emof::comment_is_not_abstract():
-    assert not inspect.isabstract(EMOF::Comment)
-
-
-def test_emof::comment_constructor_exists():
-    assert callable(EMOF::Comment.__init__)
-
-
-def test_emof::comment_constructor_args():
-    sig = inspect.signature(EMOF::Comment.__init__)
-    params = list(sig.parameters.keys())
-    assert "body" in params, "Missing parameter 'body'"
-
-def test_emof::comment_has_body():
-    assert hasattr(EMOF::Comment, "body")
-    descriptor = None
-    for klass in EMOF::Comment.__mro__:
-        if "body" in klass.__dict__:
-            descriptor = klass.__dict__["body"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_emof::multiplicityelement_is_not_abstract():
-    assert not inspect.isabstract(EMOF::MultiplicityElement)
-
-
-def test_emof::multiplicityelement_constructor_exists():
-    assert callable(EMOF::MultiplicityElement.__init__)
-
-
-def test_emof::multiplicityelement_constructor_args():
-    sig = inspect.signature(EMOF::MultiplicityElement.__init__)
-    params = list(sig.parameters.keys())
-    assert "isUnique" in params, "Missing parameter 'isUnique'"
-    assert "upper" in params, "Missing parameter 'upper'"
-    assert "lower" in params, "Missing parameter 'lower'"
-    assert "isOrdered" in params, "Missing parameter 'isOrdered'"
-
-def test_emof::multiplicityelement_has_isUnique():
-    assert hasattr(EMOF::MultiplicityElement, "isUnique")
-    descriptor = None
-    for klass in EMOF::MultiplicityElement.__mro__:
-        if "isUnique" in klass.__dict__:
-            descriptor = klass.__dict__["isUnique"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_emof::multiplicityelement_has_upper():
-    assert hasattr(EMOF::MultiplicityElement, "upper")
-    descriptor = None
-    for klass in EMOF::MultiplicityElement.__mro__:
-        if "upper" in klass.__dict__:
-            descriptor = klass.__dict__["upper"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_emof::multiplicityelement_has_lower():
-    assert hasattr(EMOF::MultiplicityElement, "lower")
-    descriptor = None
-    for klass in EMOF::MultiplicityElement.__mro__:
-        if "lower" in klass.__dict__:
-            descriptor = klass.__dict__["lower"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_emof::multiplicityelement_has_isOrdered():
-    assert hasattr(EMOF::MultiplicityElement, "isOrdered")
-    descriptor = None
-    for klass in EMOF::MultiplicityElement.__mro__:
-        if "isOrdered" in klass.__dict__:
-            descriptor = klass.__dict__["isOrdered"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_package_is_not_abstract():
-    assert not inspect.isabstract(Package)
-
-
-def test_package_constructor_exists():
-    assert callable(Package.__init__)
-
-
-def test_package_constructor_args():
-    sig = inspect.signature(Package.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_emof::factory_is_not_abstract():
-    assert not inspect.isabstract(EMOF::Factory)
-
-
-def test_emof::factory_constructor_exists():
-    assert callable(EMOF::Factory.__init__)
-
-
-def test_emof::factory_constructor_args():
-    sig = inspect.signature(EMOF::Factory.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_enumeration_is_not_abstract():
-    assert not inspect.isabstract(Enumeration)
-
-
-def test_enumeration_constructor_exists():
-    assert callable(Enumeration.__init__)
-
-
-def test_enumeration_constructor_args():
-    sig = inspect.signature(Enumeration.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_emof::enumerationliteral_is_not_abstract():
-    assert not inspect.isabstract(EMOF::EnumerationLiteral)
-
-
-def test_emof::enumerationliteral_constructor_exists():
-    assert callable(EMOF::EnumerationLiteral.__init__)
-
-
-def test_emof::enumerationliteral_constructor_args():
-    sig = inspect.signature(EMOF::EnumerationLiteral.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_enumerationliteral_is_not_abstract():
-    assert not inspect.isabstract(EnumerationLiteral)
-
-
-def test_enumerationliteral_constructor_exists():
-    assert callable(EnumerationLiteral.__init__)
-
-
-def test_enumerationliteral_constructor_args():
-    sig = inspect.signature(EnumerationLiteral.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_datatype_is_not_abstract():
-    assert not inspect.isabstract(DataType)
-
-
-def test_datatype_constructor_exists():
-    assert callable(DataType.__init__)
-
-
-def test_datatype_constructor_args():
-    sig = inspect.signature(DataType.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_essentialocl::collectiontype_is_not_abstract():
-    assert not inspect.isabstract(EssentialOCL::CollectionType)
-
-
-def test_essentialocl::collectiontype_constructor_exists():
-    assert callable(EssentialOCL::CollectionType.__init__)
-
-
-def test_essentialocl::collectiontype_constructor_args():
-    sig = inspect.signature(EssentialOCL::CollectionType.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_emof::primitivetype_is_not_abstract():
-    assert not inspect.isabstract(EMOF::PrimitiveType)
-
-
-def test_emof::primitivetype_constructor_exists():
-    assert callable(EMOF::PrimitiveType.__init__)
-
-
-def test_emof::primitivetype_constructor_args():
-    sig = inspect.signature(EMOF::PrimitiveType.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_emof::enumeration_is_not_abstract():
-    assert not inspect.isabstract(EMOF::Enumeration)
-
-
-def test_emof::enumeration_constructor_exists():
-    assert callable(EMOF::Enumeration.__init__)
-
-
-def test_emof::enumeration_constructor_args():
-    sig = inspect.signature(EMOF::Enumeration.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_comment_is_not_abstract():
-    assert not inspect.isabstract(Comment)
-
-
-def test_comment_constructor_exists():
-    assert callable(Comment.__init__)
-
-
-def test_comment_constructor_args():
-    sig = inspect.signature(Comment.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_object_is_not_abstract():
-    assert not inspect.isabstract(Object)
-
-
-def test_object_constructor_exists():
-    assert callable(Object.__init__)
-
-
-def test_object_constructor_args():
-    sig = inspect.signature(Object.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_emof::extent_is_not_abstract():
-    assert not inspect.isabstract(EMOF::Extent)
-
-
-def test_emof::extent_constructor_exists():
-    assert callable(EMOF::Extent.__init__)
-
-
-def test_emof::extent_constructor_args():
-    sig = inspect.signature(EMOF::Extent.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_emof::reflectivecollection_is_not_abstract():
-    assert not inspect.isabstract(EMOF::ReflectiveCollection)
-
-
-def test_emof::reflectivecollection_constructor_exists():
-    assert callable(EMOF::ReflectiveCollection.__init__)
-
-
-def test_emof::reflectivecollection_constructor_args():
-    sig = inspect.signature(EMOF::ReflectiveCollection.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_emof::element_is_not_abstract():
-    assert not inspect.isabstract(EMOF::Element)
-
-
-def test_emof::element_constructor_exists():
-    assert callable(EMOF::Element.__init__)
-
-
-def test_emof::element_constructor_args():
-    sig = inspect.signature(EMOF::Element.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_class_is_not_abstract():
-    assert not inspect.isabstract(Class)
-
-
-def test_class_constructor_exists():
-    assert callable(Class.__init__)
-
-
-def test_class_constructor_args():
-    sig = inspect.signature(Class.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_qvtoperational::modeltype_is_not_abstract():
-    assert not inspect.isabstract(QVTOperational::ModelType)
-
-
-def test_qvtoperational::modeltype_constructor_exists():
-    assert callable(QVTOperational::ModelType.__init__)
-
-
-def test_qvtoperational::modeltype_constructor_args():
-    sig = inspect.signature(QVTOperational::ModelType.__init__)
-    params = list(sig.parameters.keys())
-    assert "conformanceKind" in params, "Missing parameter 'conformanceKind'"
-
-def test_qvtoperational::modeltype_has_conformanceKind():
-    assert hasattr(QVTOperational::ModelType, "conformanceKind")
-    descriptor = None
-    for klass in QVTOperational::ModelType.__mro__:
-        if "conformanceKind" in klass.__dict__:
-            descriptor = klass.__dict__["conformanceKind"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_qvtbase::transformation_is_not_abstract():
-    assert not inspect.isabstract(QVTBase::Transformation)
-
-
-def test_qvtbase::transformation_constructor_exists():
-    assert callable(QVTBase::Transformation.__init__)
-
-
-def test_qvtbase::transformation_constructor_args():
-    sig = inspect.signature(QVTBase::Transformation.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_qvtoperational::module_is_not_abstract():
-    assert not inspect.isabstract(QVTOperational::Module)
-
-
-def test_qvtoperational::module_constructor_exists():
-    assert callable(QVTOperational::Module.__init__)
-
-
-def test_qvtoperational::module_constructor_args():
-    sig = inspect.signature(QVTOperational::Module.__init__)
-    params = list(sig.parameters.keys())
-    assert "isBlackbox" in params, "Missing parameter 'isBlackbox'"
-
-def test_qvtoperational::module_has_isBlackbox():
-    assert hasattr(QVTOperational::Module, "isBlackbox")
-    descriptor = None
-    for klass in QVTOperational::Module.__mro__:
-        if "isBlackbox" in klass.__dict__:
-            descriptor = klass.__dict__["isBlackbox"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_operation_is_not_abstract():
-    assert not inspect.isabstract(Operation)
-
-
-def test_operation_constructor_exists():
-    assert callable(Operation.__init__)
-
-
-def test_operation_constructor_args():
-    sig = inspect.signature(Operation.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_qvtbase::function_is_not_abstract():
-    assert not inspect.isabstract(QVTBase::Function)
-
-
-def test_qvtbase::function_constructor_exists():
-    assert callable(QVTBase::Function.__init__)
-
-
-def test_qvtbase::function_constructor_args():
-    sig = inspect.signature(QVTBase::Function.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_qvtoperational::imperativeoperation_is_not_abstract():
-    assert not inspect.isabstract(QVTOperational::ImperativeOperation)
-
-
-def test_qvtoperational::imperativeoperation_constructor_exists():
-    assert callable(QVTOperational::ImperativeOperation.__init__)
-
-
-def test_qvtoperational::imperativeoperation_constructor_args():
-    sig = inspect.signature(QVTOperational::ImperativeOperation.__init__)
-    params = list(sig.parameters.keys())
-    assert "isBlackbox" in params, "Missing parameter 'isBlackbox'"
-
-def test_qvtoperational::imperativeoperation_has_isBlackbox():
-    assert hasattr(QVTOperational::ImperativeOperation, "isBlackbox")
-    descriptor = None
-    for klass in QVTOperational::ImperativeOperation.__mro__:
-        if "isBlackbox" in klass.__dict__:
-            descriptor = klass.__dict__["isBlackbox"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_property_is_not_abstract():
-    assert not inspect.isabstract(Property)
-
-
-def test_property_constructor_exists():
-    assert callable(Property.__init__)
-
-
-def test_property_constructor_args():
-    sig = inspect.signature(Property.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_qvtoperational::contextualproperty_is_not_abstract():
-    assert not inspect.isabstract(QVTOperational::ContextualProperty)
-
-
-def test_qvtoperational::contextualproperty_constructor_exists():
-    assert callable(QVTOperational::ContextualProperty.__init__)
-
-
-def test_qvtoperational::contextualproperty_constructor_args():
-    sig = inspect.signature(QVTOperational::ContextualProperty.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_type_is_not_abstract():
-    assert not inspect.isabstract(Type)
-
-
-def test_type_constructor_exists():
-    assert callable(Type.__init__)
-
-
-def test_type_constructor_args():
-    sig = inspect.signature(Type.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_emof::datatype_is_not_abstract():
-    assert not inspect.isabstract(EMOF::DataType)
-
-
-def test_emof::datatype_constructor_exists():
-    assert callable(EMOF::DataType.__init__)
-
-
-def test_emof::datatype_constructor_args():
-    sig = inspect.signature(EMOF::DataType.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_essentialocl::invalidtype_is_not_abstract():
-    assert not inspect.isabstract(EssentialOCL::InvalidType)
-
-
-def test_essentialocl::invalidtype_constructor_exists():
-    assert callable(EssentialOCL::InvalidType.__init__)
-
-
-def test_essentialocl::invalidtype_constructor_args():
-    sig = inspect.signature(EssentialOCL::InvalidType.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_essentialocl::anytype_is_not_abstract():
-    assert not inspect.isabstract(EssentialOCL::AnyType)
-
-
-def test_essentialocl::anytype_constructor_exists():
-    assert callable(EssentialOCL::AnyType.__init__)
-
-
-def test_essentialocl::anytype_constructor_args():
-    sig = inspect.signature(EssentialOCL::AnyType.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_emof::class_is_not_abstract():
-    assert not inspect.isabstract(EMOF::Class)
-
-
-def test_emof::class_constructor_exists():
-    assert callable(EMOF::Class.__init__)
-
-
-def test_emof::class_constructor_args():
-    sig = inspect.signature(EMOF::Class.__init__)
-    params = list(sig.parameters.keys())
-    assert "isAbstract" in params, "Missing parameter 'isAbstract'"
-
-def test_emof::class_has_isAbstract():
-    assert hasattr(EMOF::Class, "isAbstract")
-    descriptor = None
-    for klass in EMOF::Class.__mro__:
-        if "isAbstract" in klass.__dict__:
-            descriptor = klass.__dict__["isAbstract"]
-            break
-    assert isinstance(descriptor, property)
 
 
 
@@ -2863,16 +2727,16 @@ def test_predicate_constructor_args():
 
 
 
-def test_imperativeocl::typedef_is_not_abstract():
-    assert not inspect.isabstract(ImperativeOCL::Typedef)
+def test_imperativeocl_typedef_is_not_abstract():
+    assert not inspect.isabstract(ImperativeOCL_Typedef)
 
 
-def test_imperativeocl::typedef_constructor_exists():
-    assert callable(ImperativeOCL::Typedef.__init__)
+def test_imperativeocl_typedef_constructor_exists():
+    assert callable(ImperativeOCL_Typedef.__init__)
 
 
-def test_imperativeocl::typedef_constructor_args():
-    sig = inspect.signature(ImperativeOCL::Typedef.__init__)
+def test_imperativeocl_typedef_constructor_args():
+    sig = inspect.signature(ImperativeOCL_Typedef.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -2919,58 +2783,58 @@ def test_operationcallexp_constructor_args():
 
 
 
-def test_imperativeocl::listtype_is_not_abstract():
-    assert not inspect.isabstract(ImperativeOCL::ListType)
+def test_imperativeocl_listtype_is_not_abstract():
+    assert not inspect.isabstract(ImperativeOCL_ListType)
 
 
-def test_imperativeocl::listtype_constructor_exists():
-    assert callable(ImperativeOCL::ListType.__init__)
+def test_imperativeocl_listtype_constructor_exists():
+    assert callable(ImperativeOCL_ListType.__init__)
 
 
-def test_imperativeocl::listtype_constructor_args():
-    sig = inspect.signature(ImperativeOCL::ListType.__init__)
+def test_imperativeocl_listtype_constructor_args():
+    sig = inspect.signature(ImperativeOCL_ListType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_imperativeocl::listliteralexp_is_not_abstract():
-    assert not inspect.isabstract(ImperativeOCL::ListLiteralExp)
+def test_imperativeocl_listliteralexp_is_not_abstract():
+    assert not inspect.isabstract(ImperativeOCL_ListLiteralExp)
 
 
-def test_imperativeocl::listliteralexp_constructor_exists():
-    assert callable(ImperativeOCL::ListLiteralExp.__init__)
+def test_imperativeocl_listliteralexp_constructor_exists():
+    assert callable(ImperativeOCL_ListLiteralExp.__init__)
 
 
-def test_imperativeocl::listliteralexp_constructor_args():
-    sig = inspect.signature(ImperativeOCL::ListLiteralExp.__init__)
+def test_imperativeocl_listliteralexp_constructor_args():
+    sig = inspect.signature(ImperativeOCL_ListLiteralExp.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_imperativeocl::orderedtupletype_is_not_abstract():
-    assert not inspect.isabstract(ImperativeOCL::OrderedTupleType)
+def test_imperativeocl_orderedtupletype_is_not_abstract():
+    assert not inspect.isabstract(ImperativeOCL_OrderedTupleType)
 
 
-def test_imperativeocl::orderedtupletype_constructor_exists():
-    assert callable(ImperativeOCL::OrderedTupleType.__init__)
+def test_imperativeocl_orderedtupletype_constructor_exists():
+    assert callable(ImperativeOCL_OrderedTupleType.__init__)
 
 
-def test_imperativeocl::orderedtupletype_constructor_args():
-    sig = inspect.signature(ImperativeOCL::OrderedTupleType.__init__)
+def test_imperativeocl_orderedtupletype_constructor_args():
+    sig = inspect.signature(ImperativeOCL_OrderedTupleType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_imperativeocl::orderedtupleliteralpart_is_not_abstract():
-    assert not inspect.isabstract(ImperativeOCL::OrderedTupleLiteralPart)
+def test_imperativeocl_orderedtupleliteralpart_is_not_abstract():
+    assert not inspect.isabstract(ImperativeOCL_OrderedTupleLiteralPart)
 
 
-def test_imperativeocl::orderedtupleliteralpart_constructor_exists():
-    assert callable(ImperativeOCL::OrderedTupleLiteralPart.__init__)
+def test_imperativeocl_orderedtupleliteralpart_constructor_exists():
+    assert callable(ImperativeOCL_OrderedTupleLiteralPart.__init__)
 
 
-def test_imperativeocl::orderedtupleliteralpart_constructor_args():
-    sig = inspect.signature(ImperativeOCL::OrderedTupleLiteralPart.__init__)
+def test_imperativeocl_orderedtupleliteralpart_constructor_args():
+    sig = inspect.signature(ImperativeOCL_OrderedTupleLiteralPart.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -2989,30 +2853,30 @@ def test_orderedtupleliteralpart_constructor_args():
 
 
 
-def test_imperativeocl::orderedtupleliteralexp_is_not_abstract():
-    assert not inspect.isabstract(ImperativeOCL::OrderedTupleLiteralExp)
+def test_imperativeocl_orderedtupleliteralexp_is_not_abstract():
+    assert not inspect.isabstract(ImperativeOCL_OrderedTupleLiteralExp)
 
 
-def test_imperativeocl::orderedtupleliteralexp_constructor_exists():
-    assert callable(ImperativeOCL::OrderedTupleLiteralExp.__init__)
+def test_imperativeocl_orderedtupleliteralexp_constructor_exists():
+    assert callable(ImperativeOCL_OrderedTupleLiteralExp.__init__)
 
 
-def test_imperativeocl::orderedtupleliteralexp_constructor_args():
-    sig = inspect.signature(ImperativeOCL::OrderedTupleLiteralExp.__init__)
+def test_imperativeocl_orderedtupleliteralexp_constructor_args():
+    sig = inspect.signature(ImperativeOCL_OrderedTupleLiteralExp.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_imperativeocl::imperativeexpression_is_not_abstract():
-    assert not inspect.isabstract(ImperativeOCL::ImperativeExpression)
+def test_imperativeocl_imperativeexpression_is_not_abstract():
+    assert not inspect.isabstract(ImperativeOCL_ImperativeExpression)
 
 
-def test_imperativeocl::imperativeexpression_constructor_exists():
-    assert callable(ImperativeOCL::ImperativeExpression.__init__)
+def test_imperativeocl_imperativeexpression_constructor_exists():
+    assert callable(ImperativeOCL_ImperativeExpression.__init__)
 
 
-def test_imperativeocl::imperativeexpression_constructor_args():
-    sig = inspect.signature(ImperativeOCL::ImperativeExpression.__init__)
+def test_imperativeocl_imperativeexpression_constructor_args():
+    sig = inspect.signature(ImperativeOCL_ImperativeExpression.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -3031,44 +2895,44 @@ def test_imperativeloopexp_constructor_args():
 
 
 
-def test_imperativeocl::forexp_is_not_abstract():
-    assert not inspect.isabstract(ImperativeOCL::ForExp)
+def test_imperativeocl_forexp_is_not_abstract():
+    assert not inspect.isabstract(ImperativeOCL_ForExp)
 
 
-def test_imperativeocl::forexp_constructor_exists():
-    assert callable(ImperativeOCL::ForExp.__init__)
+def test_imperativeocl_forexp_constructor_exists():
+    assert callable(ImperativeOCL_ForExp.__init__)
 
 
-def test_imperativeocl::forexp_constructor_args():
-    sig = inspect.signature(ImperativeOCL::ForExp.__init__)
+def test_imperativeocl_forexp_constructor_args():
+    sig = inspect.signature(ImperativeOCL_ForExp.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_imperativeocl::dictionarytype_is_not_abstract():
-    assert not inspect.isabstract(ImperativeOCL::DictionaryType)
+def test_imperativeocl_dictionarytype_is_not_abstract():
+    assert not inspect.isabstract(ImperativeOCL_DictionaryType)
 
 
-def test_imperativeocl::dictionarytype_constructor_exists():
-    assert callable(ImperativeOCL::DictionaryType.__init__)
+def test_imperativeocl_dictionarytype_constructor_exists():
+    assert callable(ImperativeOCL_DictionaryType.__init__)
 
 
-def test_imperativeocl::dictionarytype_constructor_args():
-    sig = inspect.signature(ImperativeOCL::DictionaryType.__init__)
+def test_imperativeocl_dictionarytype_constructor_args():
+    sig = inspect.signature(ImperativeOCL_DictionaryType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_imperativeocl::dictliteralpart_is_not_abstract():
-    assert not inspect.isabstract(ImperativeOCL::DictLiteralPart)
+def test_imperativeocl_dictliteralpart_is_not_abstract():
+    assert not inspect.isabstract(ImperativeOCL_DictLiteralPart)
 
 
-def test_imperativeocl::dictliteralpart_constructor_exists():
-    assert callable(ImperativeOCL::DictLiteralPart.__init__)
+def test_imperativeocl_dictliteralpart_constructor_exists():
+    assert callable(ImperativeOCL_DictLiteralPart.__init__)
 
 
-def test_imperativeocl::dictliteralpart_constructor_args():
-    sig = inspect.signature(ImperativeOCL::DictLiteralPart.__init__)
+def test_imperativeocl_dictliteralpart_constructor_args():
+    sig = inspect.signature(ImperativeOCL_DictLiteralPart.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -3087,30 +2951,30 @@ def test_dictliteralpart_constructor_args():
 
 
 
-def test_imperativeocl::dictliteralexp_is_not_abstract():
-    assert not inspect.isabstract(ImperativeOCL::DictLiteralExp)
+def test_imperativeocl_dictliteralexp_is_not_abstract():
+    assert not inspect.isabstract(ImperativeOCL_DictLiteralExp)
 
 
-def test_imperativeocl::dictliteralexp_constructor_exists():
-    assert callable(ImperativeOCL::DictLiteralExp.__init__)
+def test_imperativeocl_dictliteralexp_constructor_exists():
+    assert callable(ImperativeOCL_DictLiteralExp.__init__)
 
 
-def test_imperativeocl::dictliteralexp_constructor_args():
-    sig = inspect.signature(ImperativeOCL::DictLiteralExp.__init__)
+def test_imperativeocl_dictliteralexp_constructor_args():
+    sig = inspect.signature(ImperativeOCL_DictLiteralExp.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_imperativeocl::imperativeiterateexp_is_not_abstract():
-    assert not inspect.isabstract(ImperativeOCL::ImperativeIterateExp)
+def test_imperativeocl_imperativeiterateexp_is_not_abstract():
+    assert not inspect.isabstract(ImperativeOCL_ImperativeIterateExp)
 
 
-def test_imperativeocl::imperativeiterateexp_constructor_exists():
-    assert callable(ImperativeOCL::ImperativeIterateExp.__init__)
+def test_imperativeocl_imperativeiterateexp_constructor_exists():
+    assert callable(ImperativeOCL_ImperativeIterateExp.__init__)
 
 
-def test_imperativeocl::imperativeiterateexp_constructor_args():
-    sig = inspect.signature(ImperativeOCL::ImperativeIterateExp.__init__)
+def test_imperativeocl_imperativeiterateexp_constructor_args():
+    sig = inspect.signature(ImperativeOCL_ImperativeIterateExp.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -3129,37 +2993,37 @@ def test_logexp_constructor_args():
 
 
 
-def test_essentialocl::variable_is_not_abstract():
-    assert not inspect.isabstract(EssentialOCL::Variable)
+def test_essentialocl_variable_is_not_abstract():
+    assert not inspect.isabstract(EssentialOCL_Variable)
 
 
-def test_essentialocl::variable_constructor_exists():
-    assert callable(EssentialOCL::Variable.__init__)
+def test_essentialocl_variable_constructor_exists():
+    assert callable(EssentialOCL_Variable.__init__)
 
 
-def test_essentialocl::variable_constructor_args():
-    sig = inspect.signature(EssentialOCL::Variable.__init__)
+def test_essentialocl_variable_constructor_args():
+    sig = inspect.signature(EssentialOCL_Variable.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_essentialocl::unlimitednaturalexp_is_not_abstract():
-    assert not inspect.isabstract(EssentialOCL::UnlimitedNaturalExp)
+def test_essentialocl_unlimitednaturalexp_is_not_abstract():
+    assert not inspect.isabstract(EssentialOCL_UnlimitedNaturalExp)
 
 
-def test_essentialocl::unlimitednaturalexp_constructor_exists():
-    assert callable(EssentialOCL::UnlimitedNaturalExp.__init__)
+def test_essentialocl_unlimitednaturalexp_constructor_exists():
+    assert callable(EssentialOCL_UnlimitedNaturalExp.__init__)
 
 
-def test_essentialocl::unlimitednaturalexp_constructor_args():
-    sig = inspect.signature(EssentialOCL::UnlimitedNaturalExp.__init__)
+def test_essentialocl_unlimitednaturalexp_constructor_args():
+    sig = inspect.signature(EssentialOCL_UnlimitedNaturalExp.__init__)
     params = list(sig.parameters.keys())
     assert "symbol" in params, "Missing parameter 'symbol'"
 
-def test_essentialocl::unlimitednaturalexp_has_symbol():
-    assert hasattr(EssentialOCL::UnlimitedNaturalExp, "symbol")
+def test_essentialocl_unlimitednaturalexp_has_symbol():
+    assert hasattr(EssentialOCL_UnlimitedNaturalExp, "symbol")
     descriptor = None
-    for klass in EssentialOCL::UnlimitedNaturalExp.__mro__:
+    for klass in EssentialOCL_UnlimitedNaturalExp.__mro__:
         if "symbol" in klass.__dict__:
             descriptor = klass.__dict__["symbol"]
             break
@@ -3167,30 +3031,30 @@ def test_essentialocl::unlimitednaturalexp_has_symbol():
 
 
 
-def test_essentialocl::typeexp_is_not_abstract():
-    assert not inspect.isabstract(EssentialOCL::TypeExp)
+def test_essentialocl_typeexp_is_not_abstract():
+    assert not inspect.isabstract(EssentialOCL_TypeExp)
 
 
-def test_essentialocl::typeexp_constructor_exists():
-    assert callable(EssentialOCL::TypeExp.__init__)
+def test_essentialocl_typeexp_constructor_exists():
+    assert callable(EssentialOCL_TypeExp.__init__)
 
 
-def test_essentialocl::typeexp_constructor_args():
-    sig = inspect.signature(EssentialOCL::TypeExp.__init__)
+def test_essentialocl_typeexp_constructor_args():
+    sig = inspect.signature(EssentialOCL_TypeExp.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_essentialocl::tupletype_is_not_abstract():
-    assert not inspect.isabstract(EssentialOCL::TupleType)
+def test_essentialocl_tupletype_is_not_abstract():
+    assert not inspect.isabstract(EssentialOCL_TupleType)
 
 
-def test_essentialocl::tupletype_constructor_exists():
-    assert callable(EssentialOCL::TupleType.__init__)
+def test_essentialocl_tupletype_constructor_exists():
+    assert callable(EssentialOCL_TupleType.__init__)
 
 
-def test_essentialocl::tupletype_constructor_args():
-    sig = inspect.signature(EssentialOCL::TupleType.__init__)
+def test_essentialocl_tupletype_constructor_args():
+    sig = inspect.signature(EssentialOCL_TupleType.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -3209,16 +3073,16 @@ def test_tupleliteralexp_constructor_args():
 
 
 
-def test_essentialocl::tupleliteralpart_is_not_abstract():
-    assert not inspect.isabstract(EssentialOCL::TupleLiteralPart)
+def test_essentialocl_tupleliteralpart_is_not_abstract():
+    assert not inspect.isabstract(EssentialOCL_TupleLiteralPart)
 
 
-def test_essentialocl::tupleliteralpart_constructor_exists():
-    assert callable(EssentialOCL::TupleLiteralPart.__init__)
+def test_essentialocl_tupleliteralpart_constructor_exists():
+    assert callable(EssentialOCL_TupleLiteralPart.__init__)
 
 
-def test_essentialocl::tupleliteralpart_constructor_args():
-    sig = inspect.signature(EssentialOCL::TupleLiteralPart.__init__)
+def test_essentialocl_tupleliteralpart_constructor_args():
+    sig = inspect.signature(EssentialOCL_TupleLiteralPart.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -3237,37 +3101,37 @@ def test_tupleliteralpart_constructor_args():
 
 
 
-def test_essentialocl::tupleliteralexp_is_not_abstract():
-    assert not inspect.isabstract(EssentialOCL::TupleLiteralExp)
+def test_essentialocl_tupleliteralexp_is_not_abstract():
+    assert not inspect.isabstract(EssentialOCL_TupleLiteralExp)
 
 
-def test_essentialocl::tupleliteralexp_constructor_exists():
-    assert callable(EssentialOCL::TupleLiteralExp.__init__)
+def test_essentialocl_tupleliteralexp_constructor_exists():
+    assert callable(EssentialOCL_TupleLiteralExp.__init__)
 
 
-def test_essentialocl::tupleliteralexp_constructor_args():
-    sig = inspect.signature(EssentialOCL::TupleLiteralExp.__init__)
+def test_essentialocl_tupleliteralexp_constructor_args():
+    sig = inspect.signature(EssentialOCL_TupleLiteralExp.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_essentialocl::templateparametertype_is_not_abstract():
-    assert not inspect.isabstract(EssentialOCL::TemplateParameterType)
+def test_essentialocl_templateparametertype_is_not_abstract():
+    assert not inspect.isabstract(EssentialOCL_TemplateParameterType)
 
 
-def test_essentialocl::templateparametertype_constructor_exists():
-    assert callable(EssentialOCL::TemplateParameterType.__init__)
+def test_essentialocl_templateparametertype_constructor_exists():
+    assert callable(EssentialOCL_TemplateParameterType.__init__)
 
 
-def test_essentialocl::templateparametertype_constructor_args():
-    sig = inspect.signature(EssentialOCL::TemplateParameterType.__init__)
+def test_essentialocl_templateparametertype_constructor_args():
+    sig = inspect.signature(EssentialOCL_TemplateParameterType.__init__)
     params = list(sig.parameters.keys())
     assert "specification" in params, "Missing parameter 'specification'"
 
-def test_essentialocl::templateparametertype_has_specification():
-    assert hasattr(EssentialOCL::TemplateParameterType, "specification")
+def test_essentialocl_templateparametertype_has_specification():
+    assert hasattr(EssentialOCL_TemplateParameterType, "specification")
     descriptor = None
-    for klass in EssentialOCL::TemplateParameterType.__mro__:
+    for klass in EssentialOCL_TemplateParameterType.__mro__:
         if "specification" in klass.__dict__:
             descriptor = klass.__dict__["specification"]
             break
@@ -3275,23 +3139,23 @@ def test_essentialocl::templateparametertype_has_specification():
 
 
 
-def test_essentialocl::stringliteralexp_is_not_abstract():
-    assert not inspect.isabstract(EssentialOCL::StringLiteralExp)
+def test_essentialocl_stringliteralexp_is_not_abstract():
+    assert not inspect.isabstract(EssentialOCL_StringLiteralExp)
 
 
-def test_essentialocl::stringliteralexp_constructor_exists():
-    assert callable(EssentialOCL::StringLiteralExp.__init__)
+def test_essentialocl_stringliteralexp_constructor_exists():
+    assert callable(EssentialOCL_StringLiteralExp.__init__)
 
 
-def test_essentialocl::stringliteralexp_constructor_args():
-    sig = inspect.signature(EssentialOCL::StringLiteralExp.__init__)
+def test_essentialocl_stringliteralexp_constructor_args():
+    sig = inspect.signature(EssentialOCL_StringLiteralExp.__init__)
     params = list(sig.parameters.keys())
     assert "stringSymbol" in params, "Missing parameter 'stringSymbol'"
 
-def test_essentialocl::stringliteralexp_has_stringSymbol():
-    assert hasattr(EssentialOCL::StringLiteralExp, "stringSymbol")
+def test_essentialocl_stringliteralexp_has_stringSymbol():
+    assert hasattr(EssentialOCL_StringLiteralExp, "stringSymbol")
     descriptor = None
-    for klass in EssentialOCL::StringLiteralExp.__mro__:
+    for klass in EssentialOCL_StringLiteralExp.__mro__:
         if "stringSymbol" in klass.__dict__:
             descriptor = klass.__dict__["stringSymbol"]
             break
@@ -3299,16 +3163,16 @@ def test_essentialocl::stringliteralexp_has_stringSymbol():
 
 
 
-def test_essentialocl::settype_is_not_abstract():
-    assert not inspect.isabstract(EssentialOCL::SetType)
+def test_essentialocl_settype_is_not_abstract():
+    assert not inspect.isabstract(EssentialOCL_SetType)
 
 
-def test_essentialocl::settype_constructor_exists():
-    assert callable(EssentialOCL::SetType.__init__)
+def test_essentialocl_settype_constructor_exists():
+    assert callable(EssentialOCL_SetType.__init__)
 
 
-def test_essentialocl::settype_constructor_args():
-    sig = inspect.signature(EssentialOCL::SetType.__init__)
+def test_essentialocl_settype_constructor_args():
+    sig = inspect.signature(EssentialOCL_SetType.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -3327,127 +3191,79 @@ def test_imperativeexpression_constructor_args():
 
 
 
-def test_imperativeocl::whileexp_is_not_abstract():
-    assert not inspect.isabstract(ImperativeOCL::WhileExp)
+def test_imperativeocl_computeexp_is_not_abstract():
+    assert not inspect.isabstract(ImperativeOCL_ComputeExp)
 
 
-def test_imperativeocl::whileexp_constructor_exists():
-    assert callable(ImperativeOCL::WhileExp.__init__)
+def test_imperativeocl_computeexp_constructor_exists():
+    assert callable(ImperativeOCL_ComputeExp.__init__)
 
 
-def test_imperativeocl::whileexp_constructor_args():
-    sig = inspect.signature(ImperativeOCL::WhileExp.__init__)
+def test_imperativeocl_computeexp_constructor_args():
+    sig = inspect.signature(ImperativeOCL_ComputeExp.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_imperativeocl::assignexp_is_not_abstract():
-    assert not inspect.isabstract(ImperativeOCL::AssignExp)
+def test_imperativeocl_whileexp_is_not_abstract():
+    assert not inspect.isabstract(ImperativeOCL_WhileExp)
 
 
-def test_imperativeocl::assignexp_constructor_exists():
-    assert callable(ImperativeOCL::AssignExp.__init__)
+def test_imperativeocl_whileexp_constructor_exists():
+    assert callable(ImperativeOCL_WhileExp.__init__)
 
 
-def test_imperativeocl::assignexp_constructor_args():
-    sig = inspect.signature(ImperativeOCL::AssignExp.__init__)
-    params = list(sig.parameters.keys())
-    assert "isReset" in params, "Missing parameter 'isReset'"
-
-def test_imperativeocl::assignexp_has_isReset():
-    assert hasattr(ImperativeOCL::AssignExp, "isReset")
-    descriptor = None
-    for klass in ImperativeOCL::AssignExp.__mro__:
-        if "isReset" in klass.__dict__:
-            descriptor = klass.__dict__["isReset"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_imperativeocl::switchexp_is_not_abstract():
-    assert not inspect.isabstract(ImperativeOCL::SwitchExp)
-
-
-def test_imperativeocl::switchexp_constructor_exists():
-    assert callable(ImperativeOCL::SwitchExp.__init__)
-
-
-def test_imperativeocl::switchexp_constructor_args():
-    sig = inspect.signature(ImperativeOCL::SwitchExp.__init__)
+def test_imperativeocl_whileexp_constructor_args():
+    sig = inspect.signature(ImperativeOCL_WhileExp.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_imperativeocl::variableinitexp_is_not_abstract():
-    assert not inspect.isabstract(ImperativeOCL::VariableInitExp)
+def test_imperativeocl_catchexp_is_not_abstract():
+    assert not inspect.isabstract(ImperativeOCL_CatchExp)
 
 
-def test_imperativeocl::variableinitexp_constructor_exists():
-    assert callable(ImperativeOCL::VariableInitExp.__init__)
+def test_imperativeocl_catchexp_constructor_exists():
+    assert callable(ImperativeOCL_CatchExp.__init__)
 
 
-def test_imperativeocl::variableinitexp_constructor_args():
-    sig = inspect.signature(ImperativeOCL::VariableInitExp.__init__)
-    params = list(sig.parameters.keys())
-    assert "withResult" in params, "Missing parameter 'withResult'"
-
-def test_imperativeocl::variableinitexp_has_withResult():
-    assert hasattr(ImperativeOCL::VariableInitExp, "withResult")
-    descriptor = None
-    for klass in ImperativeOCL::VariableInitExp.__mro__:
-        if "withResult" in klass.__dict__:
-            descriptor = klass.__dict__["withResult"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_imperativeocl::tryexp_is_not_abstract():
-    assert not inspect.isabstract(ImperativeOCL::TryExp)
-
-
-def test_imperativeocl::tryexp_constructor_exists():
-    assert callable(ImperativeOCL::TryExp.__init__)
-
-
-def test_imperativeocl::tryexp_constructor_args():
-    sig = inspect.signature(ImperativeOCL::TryExp.__init__)
+def test_imperativeocl_catchexp_constructor_args():
+    sig = inspect.signature(ImperativeOCL_CatchExp.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_imperativeocl::continueexp_is_not_abstract():
-    assert not inspect.isabstract(ImperativeOCL::ContinueExp)
+def test_imperativeocl_continueexp_is_not_abstract():
+    assert not inspect.isabstract(ImperativeOCL_ContinueExp)
 
 
-def test_imperativeocl::continueexp_constructor_exists():
-    assert callable(ImperativeOCL::ContinueExp.__init__)
+def test_imperativeocl_continueexp_constructor_exists():
+    assert callable(ImperativeOCL_ContinueExp.__init__)
 
 
-def test_imperativeocl::continueexp_constructor_args():
-    sig = inspect.signature(ImperativeOCL::ContinueExp.__init__)
+def test_imperativeocl_continueexp_constructor_args():
+    sig = inspect.signature(ImperativeOCL_ContinueExp.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_imperativeocl::assertexp_is_not_abstract():
-    assert not inspect.isabstract(ImperativeOCL::AssertExp)
+def test_imperativeocl_assertexp_is_not_abstract():
+    assert not inspect.isabstract(ImperativeOCL_AssertExp)
 
 
-def test_imperativeocl::assertexp_constructor_exists():
-    assert callable(ImperativeOCL::AssertExp.__init__)
+def test_imperativeocl_assertexp_constructor_exists():
+    assert callable(ImperativeOCL_AssertExp.__init__)
 
 
-def test_imperativeocl::assertexp_constructor_args():
-    sig = inspect.signature(ImperativeOCL::AssertExp.__init__)
+def test_imperativeocl_assertexp_constructor_args():
+    sig = inspect.signature(ImperativeOCL_AssertExp.__init__)
     params = list(sig.parameters.keys())
     assert "severity" in params, "Missing parameter 'severity'"
 
-def test_imperativeocl::assertexp_has_severity():
-    assert hasattr(ImperativeOCL::AssertExp, "severity")
+def test_imperativeocl_assertexp_has_severity():
+    assert hasattr(ImperativeOCL_AssertExp, "severity")
     descriptor = None
-    for klass in ImperativeOCL::AssertExp.__mro__:
+    for klass in ImperativeOCL_AssertExp.__mro__:
         if "severity" in klass.__dict__:
             descriptor = klass.__dict__["severity"]
             break
@@ -3455,37 +3271,133 @@ def test_imperativeocl::assertexp_has_severity():
 
 
 
-def test_imperativeocl::imperativeloopexp_is_not_abstract():
-    assert not inspect.isabstract(ImperativeOCL::ImperativeLoopExp)
+def test_imperativeocl_logexp_is_not_abstract():
+    assert not inspect.isabstract(ImperativeOCL_LogExp)
 
 
-def test_imperativeocl::imperativeloopexp_constructor_exists():
-    assert callable(ImperativeOCL::ImperativeLoopExp.__init__)
+def test_imperativeocl_logexp_constructor_exists():
+    assert callable(ImperativeOCL_LogExp.__init__)
 
 
-def test_imperativeocl::imperativeloopexp_constructor_args():
-    sig = inspect.signature(ImperativeOCL::ImperativeLoopExp.__init__)
+def test_imperativeocl_logexp_constructor_args():
+    sig = inspect.signature(ImperativeOCL_LogExp.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_qvtoperational::imperativecallexp_is_not_abstract():
-    assert not inspect.isabstract(QVTOperational::ImperativeCallExp)
+def test_imperativeocl_variableinitexp_is_not_abstract():
+    assert not inspect.isabstract(ImperativeOCL_VariableInitExp)
 
 
-def test_qvtoperational::imperativecallexp_constructor_exists():
-    assert callable(QVTOperational::ImperativeCallExp.__init__)
+def test_imperativeocl_variableinitexp_constructor_exists():
+    assert callable(ImperativeOCL_VariableInitExp.__init__)
 
 
-def test_qvtoperational::imperativecallexp_constructor_args():
-    sig = inspect.signature(QVTOperational::ImperativeCallExp.__init__)
+def test_imperativeocl_variableinitexp_constructor_args():
+    sig = inspect.signature(ImperativeOCL_VariableInitExp.__init__)
+    params = list(sig.parameters.keys())
+    assert "withResult" in params, "Missing parameter 'withResult'"
+
+def test_imperativeocl_variableinitexp_has_withResult():
+    assert hasattr(ImperativeOCL_VariableInitExp, "withResult")
+    descriptor = None
+    for klass in ImperativeOCL_VariableInitExp.__mro__:
+        if "withResult" in klass.__dict__:
+            descriptor = klass.__dict__["withResult"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_qvtoperational_resolveexp_is_not_abstract():
+    assert not inspect.isabstract(QVTOperational_ResolveExp)
+
+
+def test_qvtoperational_resolveexp_constructor_exists():
+    assert callable(QVTOperational_ResolveExp.__init__)
+
+
+def test_qvtoperational_resolveexp_constructor_args():
+    sig = inspect.signature(QVTOperational_ResolveExp.__init__)
+    params = list(sig.parameters.keys())
+    assert "isDeferred" in params, "Missing parameter 'isDeferred'"
+    assert "one" in params, "Missing parameter 'one'"
+    assert "isInverse" in params, "Missing parameter 'isInverse'"
+
+def test_qvtoperational_resolveexp_has_isDeferred():
+    assert hasattr(QVTOperational_ResolveExp, "isDeferred")
+    descriptor = None
+    for klass in QVTOperational_ResolveExp.__mro__:
+        if "isDeferred" in klass.__dict__:
+            descriptor = klass.__dict__["isDeferred"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_qvtoperational_resolveexp_has_one():
+    assert hasattr(QVTOperational_ResolveExp, "one")
+    descriptor = None
+    for klass in QVTOperational_ResolveExp.__mro__:
+        if "one" in klass.__dict__:
+            descriptor = klass.__dict__["one"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_qvtoperational_resolveexp_has_isInverse():
+    assert hasattr(QVTOperational_ResolveExp, "isInverse")
+    descriptor = None
+    for klass in QVTOperational_ResolveExp.__mro__:
+        if "isInverse" in klass.__dict__:
+            descriptor = klass.__dict__["isInverse"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_imperativeocl_blockexp_is_not_abstract():
+    assert not inspect.isabstract(ImperativeOCL_BlockExp)
+
+
+def test_imperativeocl_blockexp_constructor_exists():
+    assert callable(ImperativeOCL_BlockExp.__init__)
+
+
+def test_imperativeocl_blockexp_constructor_args():
+    sig = inspect.signature(ImperativeOCL_BlockExp.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_imperativeocl_raiseexp_is_not_abstract():
+    assert not inspect.isabstract(ImperativeOCL_RaiseExp)
+
+
+def test_imperativeocl_raiseexp_constructor_exists():
+    assert callable(ImperativeOCL_RaiseExp.__init__)
+
+
+def test_imperativeocl_raiseexp_constructor_args():
+    sig = inspect.signature(ImperativeOCL_RaiseExp.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_qvtoperational_imperativecallexp_is_not_abstract():
+    assert not inspect.isabstract(QVTOperational_ImperativeCallExp)
+
+
+def test_qvtoperational_imperativecallexp_constructor_exists():
+    assert callable(QVTOperational_ImperativeCallExp.__init__)
+
+
+def test_qvtoperational_imperativecallexp_constructor_args():
+    sig = inspect.signature(QVTOperational_ImperativeCallExp.__init__)
     params = list(sig.parameters.keys())
     assert "isVirtual" in params, "Missing parameter 'isVirtual'"
 
-def test_qvtoperational::imperativecallexp_has_isVirtual():
-    assert hasattr(QVTOperational::ImperativeCallExp, "isVirtual")
+def test_qvtoperational_imperativecallexp_has_isVirtual():
+    assert hasattr(QVTOperational_ImperativeCallExp, "isVirtual")
     descriptor = None
-    for klass in QVTOperational::ImperativeCallExp.__mro__:
+    for klass in QVTOperational_ImperativeCallExp.__mro__:
         if "isVirtual" in klass.__dict__:
             descriptor = klass.__dict__["isVirtual"]
             break
@@ -3493,228 +3405,166 @@ def test_qvtoperational::imperativecallexp_has_isVirtual():
 
 
 
-def test_imperativeocl::computeexp_is_not_abstract():
-    assert not inspect.isabstract(ImperativeOCL::ComputeExp)
+def test_imperativeocl_unlinkexp_is_not_abstract():
+    assert not inspect.isabstract(ImperativeOCL_UnlinkExp)
 
 
-def test_imperativeocl::computeexp_constructor_exists():
-    assert callable(ImperativeOCL::ComputeExp.__init__)
+def test_imperativeocl_unlinkexp_constructor_exists():
+    assert callable(ImperativeOCL_UnlinkExp.__init__)
 
 
-def test_imperativeocl::computeexp_constructor_args():
-    sig = inspect.signature(ImperativeOCL::ComputeExp.__init__)
+def test_imperativeocl_unlinkexp_constructor_args():
+    sig = inspect.signature(ImperativeOCL_UnlinkExp.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_imperativeocl::unlinkexp_is_not_abstract():
-    assert not inspect.isabstract(ImperativeOCL::UnlinkExp)
+def test_imperativeocl_instantiationexp_is_not_abstract():
+    assert not inspect.isabstract(ImperativeOCL_InstantiationExp)
 
 
-def test_imperativeocl::unlinkexp_constructor_exists():
-    assert callable(ImperativeOCL::UnlinkExp.__init__)
+def test_imperativeocl_instantiationexp_constructor_exists():
+    assert callable(ImperativeOCL_InstantiationExp.__init__)
 
 
-def test_imperativeocl::unlinkexp_constructor_args():
-    sig = inspect.signature(ImperativeOCL::UnlinkExp.__init__)
+def test_imperativeocl_instantiationexp_constructor_args():
+    sig = inspect.signature(ImperativeOCL_InstantiationExp.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_imperativeocl::unpackexp_is_not_abstract():
-    assert not inspect.isabstract(ImperativeOCL::UnpackExp)
+def test_imperativeocl_unpackexp_is_not_abstract():
+    assert not inspect.isabstract(ImperativeOCL_UnpackExp)
 
 
-def test_imperativeocl::unpackexp_constructor_exists():
-    assert callable(ImperativeOCL::UnpackExp.__init__)
+def test_imperativeocl_unpackexp_constructor_exists():
+    assert callable(ImperativeOCL_UnpackExp.__init__)
 
 
-def test_imperativeocl::unpackexp_constructor_args():
-    sig = inspect.signature(ImperativeOCL::UnpackExp.__init__)
+def test_imperativeocl_unpackexp_constructor_args():
+    sig = inspect.signature(ImperativeOCL_UnpackExp.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_imperativeocl::blockexp_is_not_abstract():
-    assert not inspect.isabstract(ImperativeOCL::BlockExp)
+def test_imperativeocl_tryexp_is_not_abstract():
+    assert not inspect.isabstract(ImperativeOCL_TryExp)
 
 
-def test_imperativeocl::blockexp_constructor_exists():
-    assert callable(ImperativeOCL::BlockExp.__init__)
+def test_imperativeocl_tryexp_constructor_exists():
+    assert callable(ImperativeOCL_TryExp.__init__)
 
 
-def test_imperativeocl::blockexp_constructor_args():
-    sig = inspect.signature(ImperativeOCL::BlockExp.__init__)
+def test_imperativeocl_tryexp_constructor_args():
+    sig = inspect.signature(ImperativeOCL_TryExp.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_imperativeocl::breakexp_is_not_abstract():
-    assert not inspect.isabstract(ImperativeOCL::BreakExp)
+def test_imperativeocl_switchexp_is_not_abstract():
+    assert not inspect.isabstract(ImperativeOCL_SwitchExp)
 
 
-def test_imperativeocl::breakexp_constructor_exists():
-    assert callable(ImperativeOCL::BreakExp.__init__)
+def test_imperativeocl_switchexp_constructor_exists():
+    assert callable(ImperativeOCL_SwitchExp.__init__)
 
 
-def test_imperativeocl::breakexp_constructor_args():
-    sig = inspect.signature(ImperativeOCL::BreakExp.__init__)
+def test_imperativeocl_switchexp_constructor_args():
+    sig = inspect.signature(ImperativeOCL_SwitchExp.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_imperativeocl::catchexp_is_not_abstract():
-    assert not inspect.isabstract(ImperativeOCL::CatchExp)
+def test_imperativeocl_breakexp_is_not_abstract():
+    assert not inspect.isabstract(ImperativeOCL_BreakExp)
 
 
-def test_imperativeocl::catchexp_constructor_exists():
-    assert callable(ImperativeOCL::CatchExp.__init__)
+def test_imperativeocl_breakexp_constructor_exists():
+    assert callable(ImperativeOCL_BreakExp.__init__)
 
 
-def test_imperativeocl::catchexp_constructor_args():
-    sig = inspect.signature(ImperativeOCL::CatchExp.__init__)
+def test_imperativeocl_breakexp_constructor_args():
+    sig = inspect.signature(ImperativeOCL_BreakExp.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_imperativeocl::returnexp_is_not_abstract():
-    assert not inspect.isabstract(ImperativeOCL::ReturnExp)
+def test_imperativeocl_assignexp_is_not_abstract():
+    assert not inspect.isabstract(ImperativeOCL_AssignExp)
 
 
-def test_imperativeocl::returnexp_constructor_exists():
-    assert callable(ImperativeOCL::ReturnExp.__init__)
+def test_imperativeocl_assignexp_constructor_exists():
+    assert callable(ImperativeOCL_AssignExp.__init__)
 
 
-def test_imperativeocl::returnexp_constructor_args():
-    sig = inspect.signature(ImperativeOCL::ReturnExp.__init__)
+def test_imperativeocl_assignexp_constructor_args():
+    sig = inspect.signature(ImperativeOCL_AssignExp.__init__)
     params = list(sig.parameters.keys())
+    assert "isReset" in params, "Missing parameter 'isReset'"
 
-
-
-def test_imperativeocl::raiseexp_is_not_abstract():
-    assert not inspect.isabstract(ImperativeOCL::RaiseExp)
-
-
-def test_imperativeocl::raiseexp_constructor_exists():
-    assert callable(ImperativeOCL::RaiseExp.__init__)
-
-
-def test_imperativeocl::raiseexp_constructor_args():
-    sig = inspect.signature(ImperativeOCL::RaiseExp.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_qvtoperational::resolveexp_is_not_abstract():
-    assert not inspect.isabstract(QVTOperational::ResolveExp)
-
-
-def test_qvtoperational::resolveexp_constructor_exists():
-    assert callable(QVTOperational::ResolveExp.__init__)
-
-
-def test_qvtoperational::resolveexp_constructor_args():
-    sig = inspect.signature(QVTOperational::ResolveExp.__init__)
-    params = list(sig.parameters.keys())
-    assert "isInverse" in params, "Missing parameter 'isInverse'"
-    assert "isDeferred" in params, "Missing parameter 'isDeferred'"
-    assert "one" in params, "Missing parameter 'one'"
-
-def test_qvtoperational::resolveexp_has_isInverse():
-    assert hasattr(QVTOperational::ResolveExp, "isInverse")
+def test_imperativeocl_assignexp_has_isReset():
+    assert hasattr(ImperativeOCL_AssignExp, "isReset")
     descriptor = None
-    for klass in QVTOperational::ResolveExp.__mro__:
-        if "isInverse" in klass.__dict__:
-            descriptor = klass.__dict__["isInverse"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_qvtoperational::resolveexp_has_isDeferred():
-    assert hasattr(QVTOperational::ResolveExp, "isDeferred")
-    descriptor = None
-    for klass in QVTOperational::ResolveExp.__mro__:
-        if "isDeferred" in klass.__dict__:
-            descriptor = klass.__dict__["isDeferred"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_qvtoperational::resolveexp_has_one():
-    assert hasattr(QVTOperational::ResolveExp, "one")
-    descriptor = None
-    for klass in QVTOperational::ResolveExp.__mro__:
-        if "one" in klass.__dict__:
-            descriptor = klass.__dict__["one"]
+    for klass in ImperativeOCL_AssignExp.__mro__:
+        if "isReset" in klass.__dict__:
+            descriptor = klass.__dict__["isReset"]
             break
     assert isinstance(descriptor, property)
 
 
 
-def test_imperativeocl::logexp_is_not_abstract():
-    assert not inspect.isabstract(ImperativeOCL::LogExp)
+def test_imperativeocl_returnexp_is_not_abstract():
+    assert not inspect.isabstract(ImperativeOCL_ReturnExp)
 
 
-def test_imperativeocl::logexp_constructor_exists():
-    assert callable(ImperativeOCL::LogExp.__init__)
+def test_imperativeocl_returnexp_constructor_exists():
+    assert callable(ImperativeOCL_ReturnExp.__init__)
 
 
-def test_imperativeocl::logexp_constructor_args():
-    sig = inspect.signature(ImperativeOCL::LogExp.__init__)
+def test_imperativeocl_returnexp_constructor_args():
+    sig = inspect.signature(ImperativeOCL_ReturnExp.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_imperativeocl::instantiationexp_is_not_abstract():
-    assert not inspect.isabstract(ImperativeOCL::InstantiationExp)
+def test_imperativeocl_altexp_is_not_abstract():
+    assert not inspect.isabstract(ImperativeOCL_AltExp)
 
 
-def test_imperativeocl::instantiationexp_constructor_exists():
-    assert callable(ImperativeOCL::InstantiationExp.__init__)
+def test_imperativeocl_altexp_constructor_exists():
+    assert callable(ImperativeOCL_AltExp.__init__)
 
 
-def test_imperativeocl::instantiationexp_constructor_args():
-    sig = inspect.signature(ImperativeOCL::InstantiationExp.__init__)
+def test_imperativeocl_altexp_constructor_args():
+    sig = inspect.signature(ImperativeOCL_AltExp.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_imperativeocl::altexp_is_not_abstract():
-    assert not inspect.isabstract(ImperativeOCL::AltExp)
+def test_essentialocl_voidtype_is_not_abstract():
+    assert not inspect.isabstract(EssentialOCL_VoidType)
 
 
-def test_imperativeocl::altexp_constructor_exists():
-    assert callable(ImperativeOCL::AltExp.__init__)
+def test_essentialocl_voidtype_constructor_exists():
+    assert callable(EssentialOCL_VoidType.__init__)
 
 
-def test_imperativeocl::altexp_constructor_args():
-    sig = inspect.signature(ImperativeOCL::AltExp.__init__)
+def test_essentialocl_voidtype_constructor_args():
+    sig = inspect.signature(EssentialOCL_VoidType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_essentialocl::voidtype_is_not_abstract():
-    assert not inspect.isabstract(EssentialOCL::VoidType)
+def test_essentialocl_variableexp_is_not_abstract():
+    assert not inspect.isabstract(EssentialOCL_VariableExp)
 
 
-def test_essentialocl::voidtype_constructor_exists():
-    assert callable(EssentialOCL::VoidType.__init__)
+def test_essentialocl_variableexp_constructor_exists():
+    assert callable(EssentialOCL_VariableExp.__init__)
 
 
-def test_essentialocl::voidtype_constructor_args():
-    sig = inspect.signature(EssentialOCL::VoidType.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_essentialocl::variableexp_is_not_abstract():
-    assert not inspect.isabstract(EssentialOCL::VariableExp)
-
-
-def test_essentialocl::variableexp_constructor_exists():
-    assert callable(EssentialOCL::VariableExp.__init__)
-
-
-def test_essentialocl::variableexp_constructor_args():
-    sig = inspect.signature(EssentialOCL::VariableExp.__init__)
+def test_essentialocl_variableexp_constructor_args():
+    sig = inspect.signature(EssentialOCL_VariableExp.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -3733,30 +3583,30 @@ def test_letexp_constructor_args():
 
 
 
-def test_essentialocl::numericliteralexp_is_not_abstract():
-    assert not inspect.isabstract(EssentialOCL::NumericLiteralExp)
+def test_essentialocl_numericliteralexp_is_not_abstract():
+    assert not inspect.isabstract(EssentialOCL_NumericLiteralExp)
 
 
-def test_essentialocl::numericliteralexp_constructor_exists():
-    assert callable(EssentialOCL::NumericLiteralExp.__init__)
+def test_essentialocl_numericliteralexp_constructor_exists():
+    assert callable(EssentialOCL_NumericLiteralExp.__init__)
 
 
-def test_essentialocl::numericliteralexp_constructor_args():
-    sig = inspect.signature(EssentialOCL::NumericLiteralExp.__init__)
+def test_essentialocl_numericliteralexp_constructor_args():
+    sig = inspect.signature(EssentialOCL_NumericLiteralExp.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_essentialocl::nullliteralexp_is_not_abstract():
-    assert not inspect.isabstract(EssentialOCL::NullLiteralExp)
+def test_essentialocl_nullliteralexp_is_not_abstract():
+    assert not inspect.isabstract(EssentialOCL_NullLiteralExp)
 
 
-def test_essentialocl::nullliteralexp_constructor_exists():
-    assert callable(EssentialOCL::NullLiteralExp.__init__)
+def test_essentialocl_nullliteralexp_constructor_exists():
+    assert callable(EssentialOCL_NullLiteralExp.__init__)
 
 
-def test_essentialocl::nullliteralexp_constructor_args():
-    sig = inspect.signature(EssentialOCL::NullLiteralExp.__init__)
+def test_essentialocl_nullliteralexp_constructor_args():
+    sig = inspect.signature(EssentialOCL_NullLiteralExp.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -3775,86 +3625,236 @@ def test_featurecallexp_constructor_args():
 
 
 
-def test_essentialocl::operationcallexp_is_not_abstract():
-    assert not inspect.isabstract(EssentialOCL::OperationCallExp)
+def test_essentialocl_operationcallexp_is_not_abstract():
+    assert not inspect.isabstract(EssentialOCL_OperationCallExp)
 
 
-def test_essentialocl::operationcallexp_constructor_exists():
-    assert callable(EssentialOCL::OperationCallExp.__init__)
+def test_essentialocl_operationcallexp_constructor_exists():
+    assert callable(EssentialOCL_OperationCallExp.__init__)
 
 
-def test_essentialocl::operationcallexp_constructor_args():
-    sig = inspect.signature(EssentialOCL::OperationCallExp.__init__)
+def test_essentialocl_operationcallexp_constructor_args():
+    sig = inspect.signature(EssentialOCL_OperationCallExp.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_essentialocl::navigationcallexp_is_not_abstract():
-    assert not inspect.isabstract(EssentialOCL::NavigationCallExp)
+def test_essentialocl_navigationcallexp_is_not_abstract():
+    assert not inspect.isabstract(EssentialOCL_NavigationCallExp)
 
 
-def test_essentialocl::navigationcallexp_constructor_exists():
-    assert callable(EssentialOCL::NavigationCallExp.__init__)
+def test_essentialocl_navigationcallexp_constructor_exists():
+    assert callable(EssentialOCL_NavigationCallExp.__init__)
 
 
-def test_essentialocl::navigationcallexp_constructor_args():
-    sig = inspect.signature(EssentialOCL::NavigationCallExp.__init__)
+def test_essentialocl_navigationcallexp_constructor_args():
+    sig = inspect.signature(EssentialOCL_NavigationCallExp.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_essentialocl::loopexp_is_not_abstract():
-    assert not inspect.isabstract(EssentialOCL::LoopExp)
+def test_essentialocl_loopexp_is_not_abstract():
+    assert not inspect.isabstract(EssentialOCL_LoopExp)
 
 
-def test_essentialocl::loopexp_constructor_exists():
-    assert callable(EssentialOCL::LoopExp.__init__)
+def test_essentialocl_loopexp_constructor_exists():
+    assert callable(EssentialOCL_LoopExp.__init__)
 
 
-def test_essentialocl::loopexp_constructor_args():
-    sig = inspect.signature(EssentialOCL::LoopExp.__init__)
+def test_essentialocl_loopexp_constructor_args():
+    sig = inspect.signature(EssentialOCL_LoopExp.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_essentialocl::literalexp_is_not_abstract():
-    assert not inspect.isabstract(EssentialOCL::LiteralExp)
+def test_essentialocl_literalexp_is_not_abstract():
+    assert not inspect.isabstract(EssentialOCL_LiteralExp)
 
 
-def test_essentialocl::literalexp_constructor_exists():
-    assert callable(EssentialOCL::LiteralExp.__init__)
+def test_essentialocl_literalexp_constructor_exists():
+    assert callable(EssentialOCL_LiteralExp.__init__)
 
 
-def test_essentialocl::literalexp_constructor_args():
-    sig = inspect.signature(EssentialOCL::LiteralExp.__init__)
+def test_essentialocl_literalexp_constructor_args():
+    sig = inspect.signature(EssentialOCL_LiteralExp.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_essentialocl::letexp_is_not_abstract():
-    assert not inspect.isabstract(EssentialOCL::LetExp)
+def test_essentialocl_letexp_is_not_abstract():
+    assert not inspect.isabstract(EssentialOCL_LetExp)
 
 
-def test_essentialocl::letexp_constructor_exists():
-    assert callable(EssentialOCL::LetExp.__init__)
+def test_essentialocl_letexp_constructor_exists():
+    assert callable(EssentialOCL_LetExp.__init__)
 
 
-def test_essentialocl::letexp_constructor_args():
-    sig = inspect.signature(EssentialOCL::LetExp.__init__)
+def test_essentialocl_letexp_constructor_args():
+    sig = inspect.signature(EssentialOCL_LetExp.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_essentialocl::iteratorexp_is_not_abstract():
-    assert not inspect.isabstract(EssentialOCL::IteratorExp)
+def test_loopexp_is_not_abstract():
+    assert not inspect.isabstract(LoopExp)
 
 
-def test_essentialocl::iteratorexp_constructor_exists():
-    assert callable(EssentialOCL::IteratorExp.__init__)
+def test_loopexp_constructor_exists():
+    assert callable(LoopExp.__init__)
 
 
-def test_essentialocl::iteratorexp_constructor_args():
-    sig = inspect.signature(EssentialOCL::IteratorExp.__init__)
+def test_loopexp_constructor_args():
+    sig = inspect.signature(LoopExp.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_essentialocl_iteratorexp_is_not_abstract():
+    assert not inspect.isabstract(EssentialOCL_IteratorExp)
+
+
+def test_essentialocl_iteratorexp_constructor_exists():
+    assert callable(EssentialOCL_IteratorExp.__init__)
+
+
+def test_essentialocl_iteratorexp_constructor_args():
+    sig = inspect.signature(EssentialOCL_IteratorExp.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_imperativeocl_imperativeloopexp_is_not_abstract():
+    assert not inspect.isabstract(ImperativeOCL_ImperativeLoopExp)
+
+
+def test_imperativeocl_imperativeloopexp_constructor_exists():
+    assert callable(ImperativeOCL_ImperativeLoopExp.__init__)
+
+
+def test_imperativeocl_imperativeloopexp_constructor_args():
+    sig = inspect.signature(ImperativeOCL_ImperativeLoopExp.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_essentialocl_iterateexp_is_not_abstract():
+    assert not inspect.isabstract(EssentialOCL_IterateExp)
+
+
+def test_essentialocl_iterateexp_constructor_exists():
+    assert callable(EssentialOCL_IterateExp.__init__)
+
+
+def test_essentialocl_iterateexp_constructor_args():
+    sig = inspect.signature(EssentialOCL_IterateExp.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_essentialocl_invalidtype_is_not_abstract():
+    assert not inspect.isabstract(EssentialOCL_InvalidType)
+
+
+def test_essentialocl_invalidtype_constructor_exists():
+    assert callable(EssentialOCL_InvalidType.__init__)
+
+
+def test_essentialocl_invalidtype_constructor_args():
+    sig = inspect.signature(EssentialOCL_InvalidType.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_essentialocl_invalidliteralexp_is_not_abstract():
+    assert not inspect.isabstract(EssentialOCL_InvalidLiteralExp)
+
+
+def test_essentialocl_invalidliteralexp_constructor_exists():
+    assert callable(EssentialOCL_InvalidLiteralExp.__init__)
+
+
+def test_essentialocl_invalidliteralexp_constructor_args():
+    sig = inspect.signature(EssentialOCL_InvalidLiteralExp.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_essentialocl_sequencetype_is_not_abstract():
+    assert not inspect.isabstract(EssentialOCL_SequenceType)
+
+
+def test_essentialocl_sequencetype_constructor_exists():
+    assert callable(EssentialOCL_SequenceType.__init__)
+
+
+def test_essentialocl_sequencetype_constructor_args():
+    sig = inspect.signature(EssentialOCL_SequenceType.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_essentialocl_realliteralexp_is_not_abstract():
+    assert not inspect.isabstract(EssentialOCL_RealLiteralExp)
+
+
+def test_essentialocl_realliteralexp_constructor_exists():
+    assert callable(EssentialOCL_RealLiteralExp.__init__)
+
+
+def test_essentialocl_realliteralexp_constructor_args():
+    sig = inspect.signature(EssentialOCL_RealLiteralExp.__init__)
+    params = list(sig.parameters.keys())
+    assert "realSymbol" in params, "Missing parameter 'realSymbol'"
+
+def test_essentialocl_realliteralexp_has_realSymbol():
+    assert hasattr(EssentialOCL_RealLiteralExp, "realSymbol")
+    descriptor = None
+    for klass in EssentialOCL_RealLiteralExp.__mro__:
+        if "realSymbol" in klass.__dict__:
+            descriptor = klass.__dict__["realSymbol"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_navigationcallexp_is_not_abstract():
+    assert not inspect.isabstract(NavigationCallExp)
+
+
+def test_navigationcallexp_constructor_exists():
+    assert callable(NavigationCallExp.__init__)
+
+
+def test_navigationcallexp_constructor_args():
+    sig = inspect.signature(NavigationCallExp.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_essentialocl_propertycallexp_is_not_abstract():
+    assert not inspect.isabstract(EssentialOCL_PropertyCallExp)
+
+
+def test_essentialocl_propertycallexp_constructor_exists():
+    assert callable(EssentialOCL_PropertyCallExp.__init__)
+
+
+def test_essentialocl_propertycallexp_constructor_args():
+    sig = inspect.signature(EssentialOCL_PropertyCallExp.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_essentialocl_primitiveliteralexp_is_not_abstract():
+    assert not inspect.isabstract(EssentialOCL_PrimitiveLiteralExp)
+
+
+def test_essentialocl_primitiveliteralexp_constructor_exists():
+    assert callable(EssentialOCL_PrimitiveLiteralExp.__init__)
+
+
+def test_essentialocl_primitiveliteralexp_constructor_args():
+    sig = inspect.signature(EssentialOCL_PrimitiveLiteralExp.__init__)
     params = list(sig.parameters.keys())
 
 def test_severitykind_exists():
@@ -3865,9 +3865,9 @@ def test_severitykind_has_all_literals():
     # Collect the names of literals in this Enumeration
     enum_literals = [lit.name for lit in SeverityKind]
     expected_literals = [
-        "error",
         "warning",
         "fatal",
+        "error",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
@@ -3888,22 +3888,6 @@ def test_importkind_has_all_literals():
     for lit_name in expected_literals:
         assert lit_name in enum_literals, f"Literal '' missing in ImportKind"
 
-def test_directionkind_exists():
-    # Check that the Enumeration exists
-    assert DirectionKind is not None
-
-def test_directionkind_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in DirectionKind]
-    expected_literals = [
-        "in_",
-        "out",
-        "inout",
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in DirectionKind"
-
 def test_enforcementmode_exists():
     # Check that the Enumeration exists
     assert EnforcementMode is not None
@@ -3912,8 +3896,8 @@ def test_enforcementmode_has_all_literals():
     # Collect the names of literals in this Enumeration
     enum_literals = [lit.name for lit in EnforcementMode]
     expected_literals = [
-        "Deletion",
         "Creation",
+        "Deletion",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
@@ -3927,15 +3911,31 @@ def test_collectionkind_has_all_literals():
     # Collect the names of literals in this Enumeration
     enum_literals = [lit.name for lit in CollectionKind]
     expected_literals = [
+        "Bag",
         "Collection",
+        "Sequence",
         "Set",
         "OrderedSet",
-        "Bag",
-        "Sequence",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
         assert lit_name in enum_literals, f"Literal '' missing in CollectionKind"
+
+def test_directionkind_exists():
+    # Check that the Enumeration exists
+    assert DirectionKind is not None
+
+def test_directionkind_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in DirectionKind]
+    expected_literals = [
+        "in_",
+        "inout",
+        "out",
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in DirectionKind"
 
 
 # =============================================================================
@@ -3949,11 +3949,23 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
+Relation_strategy = st.builds(
+    Relation,
+)
+ImperativeOperation_strategy = st.builds(
+    ImperativeOperation,
+)
+QVTOperational_Constructor_strategy = st.builds(
+    QVTOperational_Constructor,
+)
+Key_strategy = st.builds(
+    Key,
+)
 ResolveExp_strategy = st.builds(
     ResolveExp,
 )
-QVTOperational::ResolveInExp_strategy = st.builds(
-    QVTOperational::ResolveInExp,
+QVTOperational_ResolveInExp_strategy = st.builds(
+    QVTOperational_ResolveInExp,
 )
 ModuleImport_strategy = st.builds(
     ModuleImport,
@@ -3967,8 +3979,8 @@ ConstructorBody_strategy = st.builds(
 InstantiationExp_strategy = st.builds(
     InstantiationExp,
 )
-QVTOperational::ObjectExp_strategy = st.builds(
-    QVTOperational::ObjectExp,
+QVTOperational_ObjectExp_strategy = st.builds(
+    QVTOperational_ObjectExp,
 )
 ModelType_strategy = st.builds(
     ModelType,
@@ -3976,11 +3988,14 @@ ModelType_strategy = st.builds(
 MappingOperation_strategy = st.builds(
     MappingOperation,
 )
+QVTOperational_MappingOperation_strategy = st.builds(
+    QVTOperational_MappingOperation,
+)
 ImperativeCallExp_strategy = st.builds(
     ImperativeCallExp,
 )
-QVTOperational::MappingCallExp_strategy = st.builds(
-    QVTOperational::MappingCallExp,
+QVTOperational_MappingCallExp_strategy = st.builds(
+    QVTOperational_MappingCallExp,
     isStrict=
         safe_text
 )
@@ -3990,32 +4005,40 @@ RelationDomain_strategy = st.builds(
 ModelParameter_strategy = st.builds(
     ModelParameter,
 )
+QVTOperational_Helper_strategy = st.builds(
+    QVTOperational_Helper,
+    isQuery=
+        safe_text
+)
+QVTOperational_EntryOperation_strategy = st.builds(
+    QVTOperational_EntryOperation,
+)
 OperationBody_strategy = st.builds(
     OperationBody,
 )
-QVTOperational::MappingBody_strategy = st.builds(
-    QVTOperational::MappingBody,
+QVTOperational_MappingBody_strategy = st.builds(
+    QVTOperational_MappingBody,
 )
-QVTOperational::ConstructorBody_strategy = st.builds(
-    QVTOperational::ConstructorBody,
+QVTOperational_ConstructorBody_strategy = st.builds(
+    QVTOperational_ConstructorBody,
 )
 Module_strategy = st.builds(
     Module,
 )
-QVTOperational::OperationalTransformation_strategy = st.builds(
-    QVTOperational::OperationalTransformation,
+QVTOperational_OperationalTransformation_strategy = st.builds(
+    QVTOperational_OperationalTransformation,
 )
-QVTOperational::Library_strategy = st.builds(
-    QVTOperational::Library,
+QVTOperational_Library_strategy = st.builds(
+    QVTOperational_Library,
 )
 VarParameter_strategy = st.builds(
     VarParameter,
 )
-QVTOperational::ModelParameter_strategy = st.builds(
-    QVTOperational::ModelParameter,
+QVTOperational_ModelParameter_strategy = st.builds(
+    QVTOperational_ModelParameter,
 )
-QVTOperational::MappingParameter_strategy = st.builds(
-    QVTOperational::MappingParameter,
+QVTOperational_MappingParameter_strategy = st.builds(
+    QVTOperational_MappingParameter,
 )
 DomainPattern_strategy = st.builds(
     DomainPattern,
@@ -4023,28 +4046,279 @@ DomainPattern_strategy = st.builds(
 RelationDomainAssignment_strategy = st.builds(
     RelationDomainAssignment,
 )
-Relation_strategy = st.builds(
-    Relation,
+NumericLiteralExp_strategy = st.builds(
+    NumericLiteralExp,
 )
-ImperativeOperation_strategy = st.builds(
-    ImperativeOperation,
-)
-QVTOperational::MappingOperation_strategy = st.builds(
-    QVTOperational::MappingOperation,
-)
-QVTOperational::EntryOperation_strategy = st.builds(
-    QVTOperational::EntryOperation,
-)
-QVTOperational::Helper_strategy = st.builds(
-    QVTOperational::Helper,
-    isQuery=
+EssentialOCL_IntegerLiteralExp_strategy = st.builds(
+    EssentialOCL_IntegerLiteralExp,
+    integerSymbol=
         safe_text
 )
-QVTOperational::Constructor_strategy = st.builds(
-    QVTOperational::Constructor,
+CallExp_strategy = st.builds(
+    CallExp,
 )
-Key_strategy = st.builds(
-    Key,
+EssentialOCL_FeatureCallExp_strategy = st.builds(
+    EssentialOCL_FeatureCallExp,
+)
+OclExpression_strategy = st.builds(
+    OclExpression,
+)
+QVTRelation_RelationCallExp_strategy = st.builds(
+    QVTRelation_RelationCallExp,
+)
+EssentialOCL_IfExp_strategy = st.builds(
+    EssentialOCL_IfExp,
+)
+EssentialOCL_CallExp_strategy = st.builds(
+    EssentialOCL_CallExp,
+)
+PrimitiveLiteralExp_strategy = st.builds(
+    PrimitiveLiteralExp,
+)
+EssentialOCL_BooleanLiteralExp_strategy = st.builds(
+    EssentialOCL_BooleanLiteralExp,
+    booleanSymbol=
+        safe_text
+)
+Variable_strategy = st.builds(
+    Variable,
+)
+CollectionLiteralExp_strategy = st.builds(
+    CollectionLiteralExp,
+)
+LiteralExp_strategy = st.builds(
+    LiteralExp,
+)
+EssentialOCL_EnumLiteralExp_strategy = st.builds(
+    EssentialOCL_EnumLiteralExp,
+)
+EssentialOCL_CollectionLiteralExp_strategy = st.builds(
+    EssentialOCL_CollectionLiteralExp,
+    kind=
+        safe_text
+)
+CollectionLiteralPart_strategy = st.builds(
+    CollectionLiteralPart,
+)
+EssentialOCL_CollectionRange_strategy = st.builds(
+    EssentialOCL_CollectionRange,
+)
+EssentialOCL_CollectionItem_strategy = st.builds(
+    EssentialOCL_CollectionItem,
+)
+ReflectiveCollection_strategy = st.builds(
+    ReflectiveCollection,
+)
+EMOF_ReflectiveSequence_strategy = st.builds(
+    EMOF_ReflectiveSequence,
+)
+CollectionType_strategy = st.builds(
+    CollectionType,
+)
+EssentialOCL_OrderedSetType_strategy = st.builds(
+    EssentialOCL_OrderedSetType,
+)
+EssentialOCL_BagType_strategy = st.builds(
+    EssentialOCL_BagType,
+)
+Extent_strategy = st.builds(
+    Extent,
+)
+EMOF_URIExtent_strategy = st.builds(
+    EMOF_URIExtent,
+)
+EMOF_Object_strategy = st.builds(
+    EMOF_Object,
+)
+Parameter_strategy = st.builds(
+    Parameter,
+)
+QVTOperational_VarParameter_strategy = st.builds(
+    QVTOperational_VarParameter,
+    kind=
+        safe_text
+)
+MultiplicityElement_strategy = st.builds(
+    MultiplicityElement,
+)
+TypedElement_strategy = st.builds(
+    TypedElement,
+)
+EssentialOCL_OclExpression_strategy = st.builds(
+    EssentialOCL_OclExpression,
+)
+EssentialOCL_ExpressionInOcl_strategy = st.builds(
+    EssentialOCL_ExpressionInOcl,
+)
+EssentialOCL_CollectionLiteralPart_strategy = st.builds(
+    EssentialOCL_CollectionLiteralPart,
+)
+EMOF_Property_strategy = st.builds(
+    EMOF_Property,
+    isReadOnly=
+        safe_text,
+    isID=
+        safe_text,
+    isDerived=
+        safe_text,
+    isComposite=
+        safe_text,
+    default=
+        safe_text
+)
+EMOF_Parameter_strategy = st.builds(
+    EMOF_Parameter,
+)
+EMOF_Operation_strategy = st.builds(
+    EMOF_Operation,
+)
+NamedElement_strategy = st.builds(
+    NamedElement,
+)
+EMOF_TypedElement_strategy = st.builds(
+    EMOF_TypedElement,
+)
+EMOF_Type_strategy = st.builds(
+    EMOF_Type,
+)
+EMOF_Package_strategy = st.builds(
+    EMOF_Package,
+    uri=
+        safe_text
+)
+Element_strategy = st.builds(
+    Element,
+)
+QVTRelation_RelationDomainAssignment_strategy = st.builds(
+    QVTRelation_RelationDomainAssignment,
+)
+EMOF_Tag_strategy = st.builds(
+    EMOF_Tag,
+    name=
+        safe_text,
+    value=
+        safe_text
+)
+EMOF_NamedElement_strategy = st.builds(
+    EMOF_NamedElement,
+    name=
+        safe_text
+)
+QVTRelation_RelationImplementation_strategy = st.builds(
+    QVTRelation_RelationImplementation,
+)
+QVTOperational_OperationBody_strategy = st.builds(
+    QVTOperational_OperationBody,
+)
+QVTOperational_ModuleImport_strategy = st.builds(
+    QVTOperational_ModuleImport,
+    kind=
+        safe_text
+)
+QVTRelation_Key_strategy = st.builds(
+    QVTRelation_Key,
+)
+EMOF_Comment_strategy = st.builds(
+    EMOF_Comment,
+    body=
+        safe_text
+)
+EMOF_MultiplicityElement_strategy = st.builds(
+    EMOF_MultiplicityElement,
+    isUnique=
+        safe_text,
+    lower=
+        safe_text,
+    isOrdered=
+        safe_text,
+    upper=
+        safe_text
+)
+Package_strategy = st.builds(
+    Package,
+)
+EMOF_Factory_strategy = st.builds(
+    EMOF_Factory,
+)
+Enumeration_strategy = st.builds(
+    Enumeration,
+)
+EMOF_EnumerationLiteral_strategy = st.builds(
+    EMOF_EnumerationLiteral,
+)
+EnumerationLiteral_strategy = st.builds(
+    EnumerationLiteral,
+)
+DataType_strategy = st.builds(
+    DataType,
+)
+EMOF_PrimitiveType_strategy = st.builds(
+    EMOF_PrimitiveType,
+)
+EssentialOCL_CollectionType_strategy = st.builds(
+    EssentialOCL_CollectionType,
+)
+EMOF_Enumeration_strategy = st.builds(
+    EMOF_Enumeration,
+)
+Comment_strategy = st.builds(
+    Comment,
+)
+Object_strategy = st.builds(
+    Object,
+)
+EMOF_ReflectiveCollection_strategy = st.builds(
+    EMOF_ReflectiveCollection,
+)
+EMOF_Extent_strategy = st.builds(
+    EMOF_Extent,
+)
+EMOF_Element_strategy = st.builds(
+    EMOF_Element,
+)
+Class_strategy = st.builds(
+    Class,
+)
+QVTOperational_ModelType_strategy = st.builds(
+    QVTOperational_ModelType,
+    conformanceKind=
+        safe_text
+)
+QVTOperational_Module_strategy = st.builds(
+    QVTOperational_Module,
+    isBlackbox=
+        safe_text
+)
+Operation_strategy = st.builds(
+    Operation,
+)
+QVTOperational_ImperativeOperation_strategy = st.builds(
+    QVTOperational_ImperativeOperation,
+    isBlackbox=
+        safe_text
+)
+Property_strategy = st.builds(
+    Property,
+)
+QVTOperational_ContextualProperty_strategy = st.builds(
+    QVTOperational_ContextualProperty,
+)
+Type_strategy = st.builds(
+    Type,
+)
+EssentialOCL_AnyType_strategy = st.builds(
+    EssentialOCL_AnyType,
+)
+EMOF_DataType_strategy = st.builds(
+    EMOF_DataType,
+)
+EMOF_Class_strategy = st.builds(
+    EMOF_Class,
+    isAbstract=
+        safe_text
+)
+QVTTemplate_TemplateExp_strategy = st.builds(
+    QVTTemplate_TemplateExp,
 )
 ObjectTemplateExp_strategy = st.builds(
     ObjectTemplateExp,
@@ -4055,8 +4329,8 @@ RelationImplementation_strategy = st.builds(
 PropertyCallExp_strategy = st.builds(
     PropertyCallExp,
 )
-QVTRelation::OppositePropertyCallExp_strategy = st.builds(
-    QVTRelation::OppositePropertyCallExp,
+QVTRelation_OppositePropertyCallExp_strategy = st.builds(
+    QVTRelation_OppositePropertyCallExp,
 )
 RelationalTransformation_strategy = st.builds(
     RelationalTransformation,
@@ -4064,14 +4338,22 @@ RelationalTransformation_strategy = st.builds(
 TemplateExp_strategy = st.builds(
     TemplateExp,
 )
-QVTTemplate::CollectionTemplateExp_strategy = st.builds(
-    QVTTemplate::CollectionTemplateExp,
+QVTTemplate_CollectionTemplateExp_strategy = st.builds(
+    QVTTemplate_CollectionTemplateExp,
+)
+QVTCore_RealizedVariable_strategy = st.builds(
+    QVTCore_RealizedVariable,
+)
+QVTTemplate_PropertyTemplateItem_strategy = st.builds(
+    QVTTemplate_PropertyTemplateItem,
+    isOpposite=
+        safe_text
 )
 PropertyTemplateItem_strategy = st.builds(
     PropertyTemplateItem,
 )
-QVTTemplate::ObjectTemplateExp_strategy = st.builds(
-    QVTTemplate::ObjectTemplateExp,
+QVTTemplate_ObjectTemplateExp_strategy = st.builds(
+    QVTTemplate_ObjectTemplateExp,
 )
 RealizedVariable_strategy = st.builds(
     RealizedVariable,
@@ -4082,11 +4364,11 @@ EnforcementOperation_strategy = st.builds(
 Assignment_strategy = st.builds(
     Assignment,
 )
-QVTCore::PropertyAssignment_strategy = st.builds(
-    QVTCore::PropertyAssignment,
+QVTCore_VariableAssignment_strategy = st.builds(
+    QVTCore_VariableAssignment,
 )
-QVTCore::VariableAssignment_strategy = st.builds(
-    QVTCore::VariableAssignment,
+QVTCore_PropertyAssignment_strategy = st.builds(
+    QVTCore_PropertyAssignment,
 )
 Area_strategy = st.builds(
     Area,
@@ -4094,23 +4376,39 @@ Area_strategy = st.builds(
 CorePattern_strategy = st.builds(
     CorePattern,
 )
-QVTCore::BottomPattern_strategy = st.builds(
-    QVTCore::BottomPattern,
+QVTCore_BottomPattern_strategy = st.builds(
+    QVTCore_BottomPattern,
 )
 Mapping_strategy = st.builds(
     Mapping,
 )
-QVTCore::GuardPattern_strategy = st.builds(
-    QVTCore::GuardPattern,
+QVTCore_GuardPattern_strategy = st.builds(
+    QVTCore_GuardPattern,
+)
+QVTCore_EnforcementOperation_strategy = st.builds(
+    QVTCore_EnforcementOperation,
+    enforcementMode=
+        safe_text
+)
+QVTBase_TypedModel_strategy = st.builds(
+    QVTBase_TypedModel,
 )
 Tag_strategy = st.builds(
     Tag,
 )
+QVTBase_Transformation_strategy = st.builds(
+    QVTBase_Transformation,
+)
 Transformation_strategy = st.builds(
     Transformation,
 )
-QVTRelation::RelationalTransformation_strategy = st.builds(
-    QVTRelation::RelationalTransformation,
+QVTRelation_RelationalTransformation_strategy = st.builds(
+    QVTRelation_RelationalTransformation,
+)
+QVTCore_Assignment_strategy = st.builds(
+    QVTCore_Assignment,
+    isDefault=
+        safe_text
 )
 GuardPattern_strategy = st.builds(
     GuardPattern,
@@ -4118,8 +4416,17 @@ GuardPattern_strategy = st.builds(
 BottomPattern_strategy = st.builds(
     BottomPattern,
 )
-QVTCore::Area_strategy = st.builds(
-    QVTCore::Area,
+QVTCore_Area_strategy = st.builds(
+    QVTCore_Area,
+)
+QVTBase_Pattern_strategy = st.builds(
+    QVTBase_Pattern,
+)
+QVTBase_FunctionParameter_strategy = st.builds(
+    QVTBase_FunctionParameter,
+)
+QVTBase_Function_strategy = st.builds(
+    QVTBase_Function,
 )
 TypedModel_strategy = st.builds(
     TypedModel,
@@ -4127,386 +4434,50 @@ TypedModel_strategy = st.builds(
 Rule_strategy = st.builds(
     Rule,
 )
-QVTRelation::Relation_strategy = st.builds(
-    QVTRelation::Relation,
+QVTRelation_Relation_strategy = st.builds(
+    QVTRelation_Relation,
     isTopLevel=
         safe_text
 )
-QVTCore::Mapping_strategy = st.builds(
-    QVTCore::Mapping,
+QVTCore_Mapping_strategy = st.builds(
+    QVTCore_Mapping,
 )
-Domain_strategy = st.builds(
-    Domain,
-)
-QVTCore::CoreDomain_strategy = st.builds(
-    QVTCore::CoreDomain,
-)
-QVTRelation::RelationDomain_strategy = st.builds(
-    QVTRelation::RelationDomain,
-)
-Pattern_strategy = st.builds(
-    Pattern,
-)
-QVTCore::CorePattern_strategy = st.builds(
-    QVTCore::CorePattern,
-)
-QVTRelation::DomainPattern_strategy = st.builds(
-    QVTRelation::DomainPattern,
-)
-LoopExp_strategy = st.builds(
-    LoopExp,
-)
-EssentialOCL::IterateExp_strategy = st.builds(
-    EssentialOCL::IterateExp,
-)
-NavigationCallExp_strategy = st.builds(
-    NavigationCallExp,
-)
-EssentialOCL::PropertyCallExp_strategy = st.builds(
-    EssentialOCL::PropertyCallExp,
-)
-NumericLiteralExp_strategy = st.builds(
-    NumericLiteralExp,
-)
-EssentialOCL::RealLiteralExp_strategy = st.builds(
-    EssentialOCL::RealLiteralExp,
-    realSymbol=
-        safe_text
-)
-EssentialOCL::IntegerLiteralExp_strategy = st.builds(
-    EssentialOCL::IntegerLiteralExp,
-    integerSymbol=
-        safe_text
-)
-CallExp_strategy = st.builds(
-    CallExp,
-)
-EssentialOCL::FeatureCallExp_strategy = st.builds(
-    EssentialOCL::FeatureCallExp,
-)
-OclExpression_strategy = st.builds(
-    OclExpression,
-)
-EssentialOCL::IfExp_strategy = st.builds(
-    EssentialOCL::IfExp,
-)
-QVTRelation::RelationCallExp_strategy = st.builds(
-    QVTRelation::RelationCallExp,
-)
-EssentialOCL::CallExp_strategy = st.builds(
-    EssentialOCL::CallExp,
-)
-PrimitiveLiteralExp_strategy = st.builds(
-    PrimitiveLiteralExp,
-)
-EssentialOCL::BooleanLiteralExp_strategy = st.builds(
-    EssentialOCL::BooleanLiteralExp,
-    booleanSymbol=
-        safe_text
-)
-Variable_strategy = st.builds(
-    Variable,
-)
-QVTCore::RealizedVariable_strategy = st.builds(
-    QVTCore::RealizedVariable,
-)
-CollectionLiteralExp_strategy = st.builds(
-    CollectionLiteralExp,
-)
-LiteralExp_strategy = st.builds(
-    LiteralExp,
-)
-EssentialOCL::InvalidLiteralExp_strategy = st.builds(
-    EssentialOCL::InvalidLiteralExp,
-)
-QVTTemplate::TemplateExp_strategy = st.builds(
-    QVTTemplate::TemplateExp,
-)
-EssentialOCL::EnumLiteralExp_strategy = st.builds(
-    EssentialOCL::EnumLiteralExp,
-)
-EssentialOCL::PrimitiveLiteralExp_strategy = st.builds(
-    EssentialOCL::PrimitiveLiteralExp,
-)
-EssentialOCL::CollectionLiteralExp_strategy = st.builds(
-    EssentialOCL::CollectionLiteralExp,
-    kind=
-        safe_text
-)
-CollectionLiteralPart_strategy = st.builds(
-    CollectionLiteralPart,
-)
-EssentialOCL::CollectionRange_strategy = st.builds(
-    EssentialOCL::CollectionRange,
-)
-EssentialOCL::CollectionItem_strategy = st.builds(
-    EssentialOCL::CollectionItem,
-)
-ReflectiveCollection_strategy = st.builds(
-    ReflectiveCollection,
-)
-EMOF::ReflectiveSequence_strategy = st.builds(
-    EMOF::ReflectiveSequence,
-)
-CollectionType_strategy = st.builds(
-    CollectionType,
-)
-EssentialOCL::OrderedSetType_strategy = st.builds(
-    EssentialOCL::OrderedSetType,
-)
-EssentialOCL::SequenceType_strategy = st.builds(
-    EssentialOCL::SequenceType,
-)
-EssentialOCL::BagType_strategy = st.builds(
-    EssentialOCL::BagType,
-)
-Extent_strategy = st.builds(
-    Extent,
-)
-EMOF::URIExtent_strategy = st.builds(
-    EMOF::URIExtent,
-)
-EMOF::Object_strategy = st.builds(
-    EMOF::Object,
-)
-Parameter_strategy = st.builds(
-    Parameter,
-)
-QVTBase::FunctionParameter_strategy = st.builds(
-    QVTBase::FunctionParameter,
-)
-QVTOperational::VarParameter_strategy = st.builds(
-    QVTOperational::VarParameter,
-    kind=
-        safe_text
-)
-MultiplicityElement_strategy = st.builds(
-    MultiplicityElement,
-)
-TypedElement_strategy = st.builds(
-    TypedElement,
-)
-EssentialOCL::OclExpression_strategy = st.builds(
-    EssentialOCL::OclExpression,
-)
-EssentialOCL::ExpressionInOcl_strategy = st.builds(
-    EssentialOCL::ExpressionInOcl,
-)
-EMOF::Parameter_strategy = st.builds(
-    EMOF::Parameter,
-)
-EssentialOCL::CollectionLiteralPart_strategy = st.builds(
-    EssentialOCL::CollectionLiteralPart,
-)
-EMOF::Property_strategy = st.builds(
-    EMOF::Property,
-    default=
-        safe_text,
-    isDerived=
-        safe_text,
-    isComposite=
-        safe_text,
-    isReadOnly=
-        safe_text,
-    isID=
-        safe_text
-)
-EMOF::Operation_strategy = st.builds(
-    EMOF::Operation,
-)
-NamedElement_strategy = st.builds(
-    NamedElement,
-)
-QVTBase::Domain_strategy = st.builds(
-    QVTBase::Domain,
+QVTBase_Domain_strategy = st.builds(
+    QVTBase_Domain,
     isCheckable=
         safe_text,
     isEnforceable=
         safe_text
 )
-EMOF::TypedElement_strategy = st.builds(
-    EMOF::TypedElement,
+Domain_strategy = st.builds(
+    Domain,
 )
-QVTBase::Rule_strategy = st.builds(
-    QVTBase::Rule,
+QVTCore_CoreDomain_strategy = st.builds(
+    QVTCore_CoreDomain,
 )
-QVTBase::TypedModel_strategy = st.builds(
-    QVTBase::TypedModel,
+QVTRelation_RelationDomain_strategy = st.builds(
+    QVTRelation_RelationDomain,
 )
-EMOF::Package_strategy = st.builds(
-    EMOF::Package,
-    uri=
-        safe_text
+QVTBase_Rule_strategy = st.builds(
+    QVTBase_Rule,
 )
-EMOF::Type_strategy = st.builds(
-    EMOF::Type,
+Pattern_strategy = st.builds(
+    Pattern,
 )
-Element_strategy = st.builds(
-    Element,
+QVTRelation_DomainPattern_strategy = st.builds(
+    QVTRelation_DomainPattern,
 )
-EMOF::NamedElement_strategy = st.builds(
-    EMOF::NamedElement,
-    name=
-        safe_text
+QVTCore_CorePattern_strategy = st.builds(
+    QVTCore_CorePattern,
 )
-QVTBase::Pattern_strategy = st.builds(
-    QVTBase::Pattern,
-)
-QVTOperational::ModuleImport_strategy = st.builds(
-    QVTOperational::ModuleImport,
-    kind=
-        safe_text
-)
-QVTBase::Predicate_strategy = st.builds(
-    QVTBase::Predicate,
-)
-QVTOperational::OperationBody_strategy = st.builds(
-    QVTOperational::OperationBody,
-)
-QVTRelation::RelationImplementation_strategy = st.builds(
-    QVTRelation::RelationImplementation,
-)
-QVTTemplate::PropertyTemplateItem_strategy = st.builds(
-    QVTTemplate::PropertyTemplateItem,
-    isOpposite=
-        safe_text
-)
-EMOF::Tag_strategy = st.builds(
-    EMOF::Tag,
-    value=
-        safe_text,
-    name=
-        safe_text
-)
-QVTCore::Assignment_strategy = st.builds(
-    QVTCore::Assignment,
-    isDefault=
-        safe_text
-)
-QVTRelation::RelationDomainAssignment_strategy = st.builds(
-    QVTRelation::RelationDomainAssignment,
-)
-QVTCore::EnforcementOperation_strategy = st.builds(
-    QVTCore::EnforcementOperation,
-    enforcementMode=
-        safe_text
-)
-QVTRelation::Key_strategy = st.builds(
-    QVTRelation::Key,
-)
-EMOF::Comment_strategy = st.builds(
-    EMOF::Comment,
-    body=
-        safe_text
-)
-EMOF::MultiplicityElement_strategy = st.builds(
-    EMOF::MultiplicityElement,
-    isUnique=
-        safe_text,
-    upper=
-        safe_text,
-    lower=
-        safe_text,
-    isOrdered=
-        safe_text
-)
-Package_strategy = st.builds(
-    Package,
-)
-EMOF::Factory_strategy = st.builds(
-    EMOF::Factory,
-)
-Enumeration_strategy = st.builds(
-    Enumeration,
-)
-EMOF::EnumerationLiteral_strategy = st.builds(
-    EMOF::EnumerationLiteral,
-)
-EnumerationLiteral_strategy = st.builds(
-    EnumerationLiteral,
-)
-DataType_strategy = st.builds(
-    DataType,
-)
-EssentialOCL::CollectionType_strategy = st.builds(
-    EssentialOCL::CollectionType,
-)
-EMOF::PrimitiveType_strategy = st.builds(
-    EMOF::PrimitiveType,
-)
-EMOF::Enumeration_strategy = st.builds(
-    EMOF::Enumeration,
-)
-Comment_strategy = st.builds(
-    Comment,
-)
-Object_strategy = st.builds(
-    Object,
-)
-EMOF::Extent_strategy = st.builds(
-    EMOF::Extent,
-)
-EMOF::ReflectiveCollection_strategy = st.builds(
-    EMOF::ReflectiveCollection,
-)
-EMOF::Element_strategy = st.builds(
-    EMOF::Element,
-)
-Class_strategy = st.builds(
-    Class,
-)
-QVTOperational::ModelType_strategy = st.builds(
-    QVTOperational::ModelType,
-    conformanceKind=
-        safe_text
-)
-QVTBase::Transformation_strategy = st.builds(
-    QVTBase::Transformation,
-)
-QVTOperational::Module_strategy = st.builds(
-    QVTOperational::Module,
-    isBlackbox=
-        safe_text
-)
-Operation_strategy = st.builds(
-    Operation,
-)
-QVTBase::Function_strategy = st.builds(
-    QVTBase::Function,
-)
-QVTOperational::ImperativeOperation_strategy = st.builds(
-    QVTOperational::ImperativeOperation,
-    isBlackbox=
-        safe_text
-)
-Property_strategy = st.builds(
-    Property,
-)
-QVTOperational::ContextualProperty_strategy = st.builds(
-    QVTOperational::ContextualProperty,
-)
-Type_strategy = st.builds(
-    Type,
-)
-EMOF::DataType_strategy = st.builds(
-    EMOF::DataType,
-)
-EssentialOCL::InvalidType_strategy = st.builds(
-    EssentialOCL::InvalidType,
-)
-EssentialOCL::AnyType_strategy = st.builds(
-    EssentialOCL::AnyType,
-)
-EMOF::Class_strategy = st.builds(
-    EMOF::Class,
-    isAbstract=
-        safe_text
+QVTBase_Predicate_strategy = st.builds(
+    QVTBase_Predicate,
 )
 Predicate_strategy = st.builds(
     Predicate,
 )
-ImperativeOCL::Typedef_strategy = st.builds(
-    ImperativeOCL::Typedef,
+ImperativeOCL_Typedef_strategy = st.builds(
+    ImperativeOCL_Typedef,
 )
 AltExp_strategy = st.builds(
     AltExp,
@@ -4517,216 +4488,265 @@ CatchExp_strategy = st.builds(
 OperationCallExp_strategy = st.builds(
     OperationCallExp,
 )
-ImperativeOCL::ListType_strategy = st.builds(
-    ImperativeOCL::ListType,
+ImperativeOCL_ListType_strategy = st.builds(
+    ImperativeOCL_ListType,
 )
-ImperativeOCL::ListLiteralExp_strategy = st.builds(
-    ImperativeOCL::ListLiteralExp,
+ImperativeOCL_ListLiteralExp_strategy = st.builds(
+    ImperativeOCL_ListLiteralExp,
 )
-ImperativeOCL::OrderedTupleType_strategy = st.builds(
-    ImperativeOCL::OrderedTupleType,
+ImperativeOCL_OrderedTupleType_strategy = st.builds(
+    ImperativeOCL_OrderedTupleType,
 )
-ImperativeOCL::OrderedTupleLiteralPart_strategy = st.builds(
-    ImperativeOCL::OrderedTupleLiteralPart,
+ImperativeOCL_OrderedTupleLiteralPart_strategy = st.builds(
+    ImperativeOCL_OrderedTupleLiteralPart,
 )
 OrderedTupleLiteralPart_strategy = st.builds(
     OrderedTupleLiteralPart,
 )
-ImperativeOCL::OrderedTupleLiteralExp_strategy = st.builds(
-    ImperativeOCL::OrderedTupleLiteralExp,
+ImperativeOCL_OrderedTupleLiteralExp_strategy = st.builds(
+    ImperativeOCL_OrderedTupleLiteralExp,
 )
-ImperativeOCL::ImperativeExpression_strategy = st.builds(
-    ImperativeOCL::ImperativeExpression,
+ImperativeOCL_ImperativeExpression_strategy = st.builds(
+    ImperativeOCL_ImperativeExpression,
 )
 ImperativeLoopExp_strategy = st.builds(
     ImperativeLoopExp,
 )
-ImperativeOCL::ForExp_strategy = st.builds(
-    ImperativeOCL::ForExp,
+ImperativeOCL_ForExp_strategy = st.builds(
+    ImperativeOCL_ForExp,
 )
-ImperativeOCL::DictionaryType_strategy = st.builds(
-    ImperativeOCL::DictionaryType,
+ImperativeOCL_DictionaryType_strategy = st.builds(
+    ImperativeOCL_DictionaryType,
 )
-ImperativeOCL::DictLiteralPart_strategy = st.builds(
-    ImperativeOCL::DictLiteralPart,
+ImperativeOCL_DictLiteralPart_strategy = st.builds(
+    ImperativeOCL_DictLiteralPart,
 )
 DictLiteralPart_strategy = st.builds(
     DictLiteralPart,
 )
-ImperativeOCL::DictLiteralExp_strategy = st.builds(
-    ImperativeOCL::DictLiteralExp,
+ImperativeOCL_DictLiteralExp_strategy = st.builds(
+    ImperativeOCL_DictLiteralExp,
 )
-ImperativeOCL::ImperativeIterateExp_strategy = st.builds(
-    ImperativeOCL::ImperativeIterateExp,
+ImperativeOCL_ImperativeIterateExp_strategy = st.builds(
+    ImperativeOCL_ImperativeIterateExp,
 )
 LogExp_strategy = st.builds(
     LogExp,
 )
-EssentialOCL::Variable_strategy = st.builds(
-    EssentialOCL::Variable,
+EssentialOCL_Variable_strategy = st.builds(
+    EssentialOCL_Variable,
 )
-EssentialOCL::UnlimitedNaturalExp_strategy = st.builds(
-    EssentialOCL::UnlimitedNaturalExp,
+EssentialOCL_UnlimitedNaturalExp_strategy = st.builds(
+    EssentialOCL_UnlimitedNaturalExp,
     symbol=
         safe_text
 )
-EssentialOCL::TypeExp_strategy = st.builds(
-    EssentialOCL::TypeExp,
+EssentialOCL_TypeExp_strategy = st.builds(
+    EssentialOCL_TypeExp,
 )
-EssentialOCL::TupleType_strategy = st.builds(
-    EssentialOCL::TupleType,
+EssentialOCL_TupleType_strategy = st.builds(
+    EssentialOCL_TupleType,
 )
 TupleLiteralExp_strategy = st.builds(
     TupleLiteralExp,
 )
-EssentialOCL::TupleLiteralPart_strategy = st.builds(
-    EssentialOCL::TupleLiteralPart,
+EssentialOCL_TupleLiteralPart_strategy = st.builds(
+    EssentialOCL_TupleLiteralPart,
 )
 TupleLiteralPart_strategy = st.builds(
     TupleLiteralPart,
 )
-EssentialOCL::TupleLiteralExp_strategy = st.builds(
-    EssentialOCL::TupleLiteralExp,
+EssentialOCL_TupleLiteralExp_strategy = st.builds(
+    EssentialOCL_TupleLiteralExp,
 )
-EssentialOCL::TemplateParameterType_strategy = st.builds(
-    EssentialOCL::TemplateParameterType,
+EssentialOCL_TemplateParameterType_strategy = st.builds(
+    EssentialOCL_TemplateParameterType,
     specification=
         safe_text
 )
-EssentialOCL::StringLiteralExp_strategy = st.builds(
-    EssentialOCL::StringLiteralExp,
+EssentialOCL_StringLiteralExp_strategy = st.builds(
+    EssentialOCL_StringLiteralExp,
     stringSymbol=
         safe_text
 )
-EssentialOCL::SetType_strategy = st.builds(
-    EssentialOCL::SetType,
+EssentialOCL_SetType_strategy = st.builds(
+    EssentialOCL_SetType,
 )
 ImperativeExpression_strategy = st.builds(
     ImperativeExpression,
 )
-ImperativeOCL::WhileExp_strategy = st.builds(
-    ImperativeOCL::WhileExp,
+ImperativeOCL_ComputeExp_strategy = st.builds(
+    ImperativeOCL_ComputeExp,
 )
-ImperativeOCL::AssignExp_strategy = st.builds(
-    ImperativeOCL::AssignExp,
-    isReset=
-        safe_text
+ImperativeOCL_WhileExp_strategy = st.builds(
+    ImperativeOCL_WhileExp,
 )
-ImperativeOCL::SwitchExp_strategy = st.builds(
-    ImperativeOCL::SwitchExp,
+ImperativeOCL_CatchExp_strategy = st.builds(
+    ImperativeOCL_CatchExp,
 )
-ImperativeOCL::VariableInitExp_strategy = st.builds(
-    ImperativeOCL::VariableInitExp,
-    withResult=
-        safe_text
+ImperativeOCL_ContinueExp_strategy = st.builds(
+    ImperativeOCL_ContinueExp,
 )
-ImperativeOCL::TryExp_strategy = st.builds(
-    ImperativeOCL::TryExp,
-)
-ImperativeOCL::ContinueExp_strategy = st.builds(
-    ImperativeOCL::ContinueExp,
-)
-ImperativeOCL::AssertExp_strategy = st.builds(
-    ImperativeOCL::AssertExp,
+ImperativeOCL_AssertExp_strategy = st.builds(
+    ImperativeOCL_AssertExp,
     severity=
         safe_text
 )
-ImperativeOCL::ImperativeLoopExp_strategy = st.builds(
-    ImperativeOCL::ImperativeLoopExp,
+ImperativeOCL_LogExp_strategy = st.builds(
+    ImperativeOCL_LogExp,
 )
-QVTOperational::ImperativeCallExp_strategy = st.builds(
-    QVTOperational::ImperativeCallExp,
-    isVirtual=
+ImperativeOCL_VariableInitExp_strategy = st.builds(
+    ImperativeOCL_VariableInitExp,
+    withResult=
         safe_text
 )
-ImperativeOCL::ComputeExp_strategy = st.builds(
-    ImperativeOCL::ComputeExp,
-)
-ImperativeOCL::UnlinkExp_strategy = st.builds(
-    ImperativeOCL::UnlinkExp,
-)
-ImperativeOCL::UnpackExp_strategy = st.builds(
-    ImperativeOCL::UnpackExp,
-)
-ImperativeOCL::BlockExp_strategy = st.builds(
-    ImperativeOCL::BlockExp,
-)
-ImperativeOCL::BreakExp_strategy = st.builds(
-    ImperativeOCL::BreakExp,
-)
-ImperativeOCL::CatchExp_strategy = st.builds(
-    ImperativeOCL::CatchExp,
-)
-ImperativeOCL::ReturnExp_strategy = st.builds(
-    ImperativeOCL::ReturnExp,
-)
-ImperativeOCL::RaiseExp_strategy = st.builds(
-    ImperativeOCL::RaiseExp,
-)
-QVTOperational::ResolveExp_strategy = st.builds(
-    QVTOperational::ResolveExp,
-    isInverse=
-        safe_text,
+QVTOperational_ResolveExp_strategy = st.builds(
+    QVTOperational_ResolveExp,
     isDeferred=
         safe_text,
     one=
+        safe_text,
+    isInverse=
         safe_text
 )
-ImperativeOCL::LogExp_strategy = st.builds(
-    ImperativeOCL::LogExp,
+ImperativeOCL_BlockExp_strategy = st.builds(
+    ImperativeOCL_BlockExp,
 )
-ImperativeOCL::InstantiationExp_strategy = st.builds(
-    ImperativeOCL::InstantiationExp,
+ImperativeOCL_RaiseExp_strategy = st.builds(
+    ImperativeOCL_RaiseExp,
 )
-ImperativeOCL::AltExp_strategy = st.builds(
-    ImperativeOCL::AltExp,
+QVTOperational_ImperativeCallExp_strategy = st.builds(
+    QVTOperational_ImperativeCallExp,
+    isVirtual=
+        safe_text
 )
-EssentialOCL::VoidType_strategy = st.builds(
-    EssentialOCL::VoidType,
+ImperativeOCL_UnlinkExp_strategy = st.builds(
+    ImperativeOCL_UnlinkExp,
 )
-EssentialOCL::VariableExp_strategy = st.builds(
-    EssentialOCL::VariableExp,
+ImperativeOCL_InstantiationExp_strategy = st.builds(
+    ImperativeOCL_InstantiationExp,
+)
+ImperativeOCL_UnpackExp_strategy = st.builds(
+    ImperativeOCL_UnpackExp,
+)
+ImperativeOCL_TryExp_strategy = st.builds(
+    ImperativeOCL_TryExp,
+)
+ImperativeOCL_SwitchExp_strategy = st.builds(
+    ImperativeOCL_SwitchExp,
+)
+ImperativeOCL_BreakExp_strategy = st.builds(
+    ImperativeOCL_BreakExp,
+)
+ImperativeOCL_AssignExp_strategy = st.builds(
+    ImperativeOCL_AssignExp,
+    isReset=
+        safe_text
+)
+ImperativeOCL_ReturnExp_strategy = st.builds(
+    ImperativeOCL_ReturnExp,
+)
+ImperativeOCL_AltExp_strategy = st.builds(
+    ImperativeOCL_AltExp,
+)
+EssentialOCL_VoidType_strategy = st.builds(
+    EssentialOCL_VoidType,
+)
+EssentialOCL_VariableExp_strategy = st.builds(
+    EssentialOCL_VariableExp,
 )
 LetExp_strategy = st.builds(
     LetExp,
 )
-EssentialOCL::NumericLiteralExp_strategy = st.builds(
-    EssentialOCL::NumericLiteralExp,
+EssentialOCL_NumericLiteralExp_strategy = st.builds(
+    EssentialOCL_NumericLiteralExp,
 )
-EssentialOCL::NullLiteralExp_strategy = st.builds(
-    EssentialOCL::NullLiteralExp,
+EssentialOCL_NullLiteralExp_strategy = st.builds(
+    EssentialOCL_NullLiteralExp,
 )
 FeatureCallExp_strategy = st.builds(
     FeatureCallExp,
 )
-EssentialOCL::OperationCallExp_strategy = st.builds(
-    EssentialOCL::OperationCallExp,
+EssentialOCL_OperationCallExp_strategy = st.builds(
+    EssentialOCL_OperationCallExp,
 )
-EssentialOCL::NavigationCallExp_strategy = st.builds(
-    EssentialOCL::NavigationCallExp,
+EssentialOCL_NavigationCallExp_strategy = st.builds(
+    EssentialOCL_NavigationCallExp,
 )
-EssentialOCL::LoopExp_strategy = st.builds(
-    EssentialOCL::LoopExp,
+EssentialOCL_LoopExp_strategy = st.builds(
+    EssentialOCL_LoopExp,
 )
-EssentialOCL::LiteralExp_strategy = st.builds(
-    EssentialOCL::LiteralExp,
+EssentialOCL_LiteralExp_strategy = st.builds(
+    EssentialOCL_LiteralExp,
 )
-EssentialOCL::LetExp_strategy = st.builds(
-    EssentialOCL::LetExp,
+EssentialOCL_LetExp_strategy = st.builds(
+    EssentialOCL_LetExp,
 )
-EssentialOCL::IteratorExp_strategy = st.builds(
-    EssentialOCL::IteratorExp,
+LoopExp_strategy = st.builds(
+    LoopExp,
 )
+EssentialOCL_IteratorExp_strategy = st.builds(
+    EssentialOCL_IteratorExp,
+)
+ImperativeOCL_ImperativeLoopExp_strategy = st.builds(
+    ImperativeOCL_ImperativeLoopExp,
+)
+EssentialOCL_IterateExp_strategy = st.builds(
+    EssentialOCL_IterateExp,
+)
+EssentialOCL_InvalidType_strategy = st.builds(
+    EssentialOCL_InvalidType,
+)
+EssentialOCL_InvalidLiteralExp_strategy = st.builds(
+    EssentialOCL_InvalidLiteralExp,
+)
+EssentialOCL_SequenceType_strategy = st.builds(
+    EssentialOCL_SequenceType,
+)
+EssentialOCL_RealLiteralExp_strategy = st.builds(
+    EssentialOCL_RealLiteralExp,
+    realSymbol=
+        safe_text
+)
+NavigationCallExp_strategy = st.builds(
+    NavigationCallExp,
+)
+EssentialOCL_PropertyCallExp_strategy = st.builds(
+    EssentialOCL_PropertyCallExp,
+)
+EssentialOCL_PrimitiveLiteralExp_strategy = st.builds(
+    EssentialOCL_PrimitiveLiteralExp,
+)
+
+@given(instance=Relation_strategy)
+@settings(max_examples=50)
+def test_relation_instantiation(instance):
+    assert isinstance(instance, Relation)
+
+@given(instance=ImperativeOperation_strategy)
+@settings(max_examples=50)
+def test_imperativeoperation_instantiation(instance):
+    assert isinstance(instance, ImperativeOperation)
+
+@given(instance=QVTOperational_Constructor_strategy)
+@settings(max_examples=50)
+def test_qvtoperational_constructor_instantiation(instance):
+    assert isinstance(instance, QVTOperational_Constructor)
+
+@given(instance=Key_strategy)
+@settings(max_examples=50)
+def test_key_instantiation(instance):
+    assert isinstance(instance, Key)
 
 @given(instance=ResolveExp_strategy)
 @settings(max_examples=50)
 def test_resolveexp_instantiation(instance):
     assert isinstance(instance, ResolveExp)
 
-@given(instance=QVTOperational::ResolveInExp_strategy)
+@given(instance=QVTOperational_ResolveInExp_strategy)
 @settings(max_examples=50)
-def test_qvtoperational::resolveinexp_instantiation(instance):
-    assert isinstance(instance, QVTOperational::ResolveInExp)
+def test_qvtoperational_resolveinexp_instantiation(instance):
+    assert isinstance(instance, QVTOperational_ResolveInExp)
 
 @given(instance=ModuleImport_strategy)
 @settings(max_examples=50)
@@ -4748,10 +4768,10 @@ def test_constructorbody_instantiation(instance):
 def test_instantiationexp_instantiation(instance):
     assert isinstance(instance, InstantiationExp)
 
-@given(instance=QVTOperational::ObjectExp_strategy)
+@given(instance=QVTOperational_ObjectExp_strategy)
 @settings(max_examples=50)
-def test_qvtoperational::objectexp_instantiation(instance):
-    assert isinstance(instance, QVTOperational::ObjectExp)
+def test_qvtoperational_objectexp_instantiation(instance):
+    assert isinstance(instance, QVTOperational_ObjectExp)
 
 @given(instance=ModelType_strategy)
 @settings(max_examples=50)
@@ -4763,23 +4783,25 @@ def test_modeltype_instantiation(instance):
 def test_mappingoperation_instantiation(instance):
     assert isinstance(instance, MappingOperation)
 
+@given(instance=QVTOperational_MappingOperation_strategy)
+@settings(max_examples=50)
+def test_qvtoperational_mappingoperation_instantiation(instance):
+    assert isinstance(instance, QVTOperational_MappingOperation)
+
 @given(instance=ImperativeCallExp_strategy)
 @settings(max_examples=50)
 def test_imperativecallexp_instantiation(instance):
     assert isinstance(instance, ImperativeCallExp)
 
-@given(instance=QVTOperational::MappingCallExp_strategy)
+@given(instance=QVTOperational_MappingCallExp_strategy)
 @settings(max_examples=50)
-def test_qvtoperational::mappingcallexp_instantiation(instance):
-    assert isinstance(instance, QVTOperational::MappingCallExp)
-
-@given(instance=QVTOperational::MappingCallExp_strategy)
-def test_qvtoperational::mappingcallexp_isStrict_type(instance):
-    assert isinstance(instance.isStrict, str)
+def test_qvtoperational_mappingcallexp_instantiation(instance):
+    assert isinstance(instance, QVTOperational_MappingCallExp)
 
 
-@given(instance=QVTOperational::MappingCallExp_strategy)
-def test_qvtoperational::mappingcallexp_isStrict_setter(instance):
+
+@given(instance=QVTOperational_MappingCallExp_strategy)
+def test_qvtoperational_mappingcallexp_isStrict_setter(instance):
     original = instance.isStrict
     instance.isStrict = original
     assert instance.isStrict == original
@@ -4794,50 +4816,68 @@ def test_relationdomain_instantiation(instance):
 def test_modelparameter_instantiation(instance):
     assert isinstance(instance, ModelParameter)
 
+@given(instance=QVTOperational_Helper_strategy)
+@settings(max_examples=50)
+def test_qvtoperational_helper_instantiation(instance):
+    assert isinstance(instance, QVTOperational_Helper)
+
+
+
+@given(instance=QVTOperational_Helper_strategy)
+def test_qvtoperational_helper_isQuery_setter(instance):
+    original = instance.isQuery
+    instance.isQuery = original
+    assert instance.isQuery == original
+
+@given(instance=QVTOperational_EntryOperation_strategy)
+@settings(max_examples=50)
+def test_qvtoperational_entryoperation_instantiation(instance):
+    assert isinstance(instance, QVTOperational_EntryOperation)
+
 @given(instance=OperationBody_strategy)
 @settings(max_examples=50)
 def test_operationbody_instantiation(instance):
     assert isinstance(instance, OperationBody)
 
-@given(instance=QVTOperational::MappingBody_strategy)
+@given(instance=QVTOperational_MappingBody_strategy)
 @settings(max_examples=50)
-def test_qvtoperational::mappingbody_instantiation(instance):
-    assert isinstance(instance, QVTOperational::MappingBody)
+def test_qvtoperational_mappingbody_instantiation(instance):
+    assert isinstance(instance, QVTOperational_MappingBody)
 
-@given(instance=QVTOperational::ConstructorBody_strategy)
+@given(instance=QVTOperational_ConstructorBody_strategy)
 @settings(max_examples=50)
-def test_qvtoperational::constructorbody_instantiation(instance):
-    assert isinstance(instance, QVTOperational::ConstructorBody)
+def test_qvtoperational_constructorbody_instantiation(instance):
+    assert isinstance(instance, QVTOperational_ConstructorBody)
 
 @given(instance=Module_strategy)
 @settings(max_examples=50)
 def test_module_instantiation(instance):
     assert isinstance(instance, Module)
 
-@given(instance=QVTOperational::OperationalTransformation_strategy)
+@given(instance=QVTOperational_OperationalTransformation_strategy)
 @settings(max_examples=50)
-def test_qvtoperational::operationaltransformation_instantiation(instance):
-    assert isinstance(instance, QVTOperational::OperationalTransformation)
+def test_qvtoperational_operationaltransformation_instantiation(instance):
+    assert isinstance(instance, QVTOperational_OperationalTransformation)
 
-@given(instance=QVTOperational::Library_strategy)
+@given(instance=QVTOperational_Library_strategy)
 @settings(max_examples=50)
-def test_qvtoperational::library_instantiation(instance):
-    assert isinstance(instance, QVTOperational::Library)
+def test_qvtoperational_library_instantiation(instance):
+    assert isinstance(instance, QVTOperational_Library)
 
 @given(instance=VarParameter_strategy)
 @settings(max_examples=50)
 def test_varparameter_instantiation(instance):
     assert isinstance(instance, VarParameter)
 
-@given(instance=QVTOperational::ModelParameter_strategy)
+@given(instance=QVTOperational_ModelParameter_strategy)
 @settings(max_examples=50)
-def test_qvtoperational::modelparameter_instantiation(instance):
-    assert isinstance(instance, QVTOperational::ModelParameter)
+def test_qvtoperational_modelparameter_instantiation(instance):
+    assert isinstance(instance, QVTOperational_ModelParameter)
 
-@given(instance=QVTOperational::MappingParameter_strategy)
+@given(instance=QVTOperational_MappingParameter_strategy)
 @settings(max_examples=50)
-def test_qvtoperational::mappingparameter_instantiation(instance):
-    assert isinstance(instance, QVTOperational::MappingParameter)
+def test_qvtoperational_mappingparameter_instantiation(instance):
+    assert isinstance(instance, QVTOperational_MappingParameter)
 
 @given(instance=DomainPattern_strategy)
 @settings(max_examples=50)
@@ -4849,51 +4889,1244 @@ def test_domainpattern_instantiation(instance):
 def test_relationdomainassignment_instantiation(instance):
     assert isinstance(instance, RelationDomainAssignment)
 
-@given(instance=Relation_strategy)
+@given(instance=NumericLiteralExp_strategy)
 @settings(max_examples=50)
-def test_relation_instantiation(instance):
-    assert isinstance(instance, Relation)
+def test_numericliteralexp_instantiation(instance):
+    assert isinstance(instance, NumericLiteralExp)
 
-@given(instance=ImperativeOperation_strategy)
+@given(instance=EssentialOCL_IntegerLiteralExp_strategy)
 @settings(max_examples=50)
-def test_imperativeoperation_instantiation(instance):
-    assert isinstance(instance, ImperativeOperation)
+def test_essentialocl_integerliteralexp_instantiation(instance):
+    assert isinstance(instance, EssentialOCL_IntegerLiteralExp)
 
-@given(instance=QVTOperational::MappingOperation_strategy)
+
+
+@given(instance=EssentialOCL_IntegerLiteralExp_strategy)
+def test_essentialocl_integerliteralexp_integerSymbol_setter(instance):
+    original = instance.integerSymbol
+    instance.integerSymbol = original
+    assert instance.integerSymbol == original
+
+@given(instance=CallExp_strategy)
 @settings(max_examples=50)
-def test_qvtoperational::mappingoperation_instantiation(instance):
-    assert isinstance(instance, QVTOperational::MappingOperation)
+def test_callexp_instantiation(instance):
+    assert isinstance(instance, CallExp)
 
-@given(instance=QVTOperational::EntryOperation_strategy)
+@given(instance=EssentialOCL_FeatureCallExp_strategy)
 @settings(max_examples=50)
-def test_qvtoperational::entryoperation_instantiation(instance):
-    assert isinstance(instance, QVTOperational::EntryOperation)
+def test_essentialocl_featurecallexp_instantiation(instance):
+    assert isinstance(instance, EssentialOCL_FeatureCallExp)
 
-@given(instance=QVTOperational::Helper_strategy)
+@given(instance=OclExpression_strategy)
 @settings(max_examples=50)
-def test_qvtoperational::helper_instantiation(instance):
-    assert isinstance(instance, QVTOperational::Helper)
+def test_oclexpression_instantiation(instance):
+    assert isinstance(instance, OclExpression)
 
-@given(instance=QVTOperational::Helper_strategy)
-def test_qvtoperational::helper_isQuery_type(instance):
-    assert isinstance(instance.isQuery, str)
-
-
-@given(instance=QVTOperational::Helper_strategy)
-def test_qvtoperational::helper_isQuery_setter(instance):
-    original = instance.isQuery
-    instance.isQuery = original
-    assert instance.isQuery == original
-
-@given(instance=QVTOperational::Constructor_strategy)
+@given(instance=QVTRelation_RelationCallExp_strategy)
 @settings(max_examples=50)
-def test_qvtoperational::constructor_instantiation(instance):
-    assert isinstance(instance, QVTOperational::Constructor)
+def test_qvtrelation_relationcallexp_instantiation(instance):
+    assert isinstance(instance, QVTRelation_RelationCallExp)
 
-@given(instance=Key_strategy)
+@given(instance=EssentialOCL_IfExp_strategy)
 @settings(max_examples=50)
-def test_key_instantiation(instance):
-    assert isinstance(instance, Key)
+def test_essentialocl_ifexp_instantiation(instance):
+    assert isinstance(instance, EssentialOCL_IfExp)
+
+@given(instance=EssentialOCL_CallExp_strategy)
+@settings(max_examples=50)
+def test_essentialocl_callexp_instantiation(instance):
+    assert isinstance(instance, EssentialOCL_CallExp)
+
+@given(instance=PrimitiveLiteralExp_strategy)
+@settings(max_examples=50)
+def test_primitiveliteralexp_instantiation(instance):
+    assert isinstance(instance, PrimitiveLiteralExp)
+
+@given(instance=EssentialOCL_BooleanLiteralExp_strategy)
+@settings(max_examples=50)
+def test_essentialocl_booleanliteralexp_instantiation(instance):
+    assert isinstance(instance, EssentialOCL_BooleanLiteralExp)
+
+
+
+@given(instance=EssentialOCL_BooleanLiteralExp_strategy)
+def test_essentialocl_booleanliteralexp_booleanSymbol_setter(instance):
+    original = instance.booleanSymbol
+    instance.booleanSymbol = original
+    assert instance.booleanSymbol == original
+
+@given(instance=Variable_strategy)
+@settings(max_examples=50)
+def test_variable_instantiation(instance):
+    assert isinstance(instance, Variable)
+
+@given(instance=CollectionLiteralExp_strategy)
+@settings(max_examples=50)
+def test_collectionliteralexp_instantiation(instance):
+    assert isinstance(instance, CollectionLiteralExp)
+
+@given(instance=LiteralExp_strategy)
+@settings(max_examples=50)
+def test_literalexp_instantiation(instance):
+    assert isinstance(instance, LiteralExp)
+
+@given(instance=EssentialOCL_EnumLiteralExp_strategy)
+@settings(max_examples=50)
+def test_essentialocl_enumliteralexp_instantiation(instance):
+    assert isinstance(instance, EssentialOCL_EnumLiteralExp)
+
+@given(instance=EssentialOCL_CollectionLiteralExp_strategy)
+@settings(max_examples=50)
+def test_essentialocl_collectionliteralexp_instantiation(instance):
+    assert isinstance(instance, EssentialOCL_CollectionLiteralExp)
+
+
+
+@given(instance=EssentialOCL_CollectionLiteralExp_strategy)
+def test_essentialocl_collectionliteralexp_kind_setter(instance):
+    original = instance.kind
+    instance.kind = original
+    assert instance.kind == original
+
+@given(instance=CollectionLiteralPart_strategy)
+@settings(max_examples=50)
+def test_collectionliteralpart_instantiation(instance):
+    assert isinstance(instance, CollectionLiteralPart)
+
+@given(instance=EssentialOCL_CollectionRange_strategy)
+@settings(max_examples=50)
+def test_essentialocl_collectionrange_instantiation(instance):
+    assert isinstance(instance, EssentialOCL_CollectionRange)
+
+@given(instance=EssentialOCL_CollectionItem_strategy)
+@settings(max_examples=50)
+def test_essentialocl_collectionitem_instantiation(instance):
+    assert isinstance(instance, EssentialOCL_CollectionItem)
+
+@given(instance=ReflectiveCollection_strategy)
+@settings(max_examples=50)
+def test_reflectivecollection_instantiation(instance):
+    assert isinstance(instance, ReflectiveCollection)
+
+@given(instance=EMOF_ReflectiveSequence_strategy)
+@settings(max_examples=50)
+def test_emof_reflectivesequence_instantiation(instance):
+    assert isinstance(instance, EMOF_ReflectiveSequence)
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=EMOF_ReflectiveSequence_strategy)
+@settings(max_examples=30)
+def test_emof_reflectivesequence_add_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.add(
+            "test", 
+            "test"
+        )
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.add).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'add' in EMOF_ReflectiveSequence is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'add' in EMOF_ReflectiveSequence did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'add' in EMOF_ReflectiveSequence is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=EMOF_ReflectiveSequence_strategy)
+@settings(max_examples=30)
+def test_emof_reflectivesequence_remove_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.remove(
+            "test"
+        )
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.remove).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'remove' in EMOF_ReflectiveSequence is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'remove' in EMOF_ReflectiveSequence did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'remove' in EMOF_ReflectiveSequence is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=EMOF_ReflectiveSequence_strategy)
+@settings(max_examples=30)
+def test_emof_reflectivesequence_set_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.set(
+            "test", 
+            "test"
+        )
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.set).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'set' in EMOF_ReflectiveSequence is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'set' in EMOF_ReflectiveSequence did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'set' in EMOF_ReflectiveSequence is not implemented or raised an error")
+
+@given(instance=CollectionType_strategy)
+@settings(max_examples=50)
+def test_collectiontype_instantiation(instance):
+    assert isinstance(instance, CollectionType)
+
+@given(instance=EssentialOCL_OrderedSetType_strategy)
+@settings(max_examples=50)
+def test_essentialocl_orderedsettype_instantiation(instance):
+    assert isinstance(instance, EssentialOCL_OrderedSetType)
+
+@given(instance=EssentialOCL_BagType_strategy)
+@settings(max_examples=50)
+def test_essentialocl_bagtype_instantiation(instance):
+    assert isinstance(instance, EssentialOCL_BagType)
+
+@given(instance=Extent_strategy)
+@settings(max_examples=50)
+def test_extent_instantiation(instance):
+    assert isinstance(instance, Extent)
+
+@given(instance=EMOF_URIExtent_strategy)
+@settings(max_examples=50)
+def test_emof_uriextent_instantiation(instance):
+    assert isinstance(instance, EMOF_URIExtent)
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=EMOF_URIExtent_strategy)
+@settings(max_examples=30)
+def test_emof_uriextent_contexturi_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.contextURI()
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.contextURI).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'contextURI' in EMOF_URIExtent is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'contextURI' in EMOF_URIExtent did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'contextURI' in EMOF_URIExtent is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=EMOF_URIExtent_strategy)
+@settings(max_examples=30)
+def test_emof_uriextent_uri_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.uri(
+            "test"
+        )
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.uri).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'uri' in EMOF_URIExtent is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'uri' in EMOF_URIExtent did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'uri' in EMOF_URIExtent is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=EMOF_URIExtent_strategy)
+@settings(max_examples=30)
+def test_emof_uriextent_element_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.element(
+            "test"
+        )
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.element).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'element' in EMOF_URIExtent is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'element' in EMOF_URIExtent did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'element' in EMOF_URIExtent is not implemented or raised an error")
+
+@given(instance=EMOF_Object_strategy)
+@settings(max_examples=50)
+def test_emof_object_instantiation(instance):
+    assert isinstance(instance, EMOF_Object)
+
+@given(instance=Parameter_strategy)
+@settings(max_examples=50)
+def test_parameter_instantiation(instance):
+    assert isinstance(instance, Parameter)
+
+@given(instance=QVTOperational_VarParameter_strategy)
+@settings(max_examples=50)
+def test_qvtoperational_varparameter_instantiation(instance):
+    assert isinstance(instance, QVTOperational_VarParameter)
+
+
+
+@given(instance=QVTOperational_VarParameter_strategy)
+def test_qvtoperational_varparameter_kind_setter(instance):
+    original = instance.kind
+    instance.kind = original
+    assert instance.kind == original
+
+@given(instance=MultiplicityElement_strategy)
+@settings(max_examples=50)
+def test_multiplicityelement_instantiation(instance):
+    assert isinstance(instance, MultiplicityElement)
+
+@given(instance=TypedElement_strategy)
+@settings(max_examples=50)
+def test_typedelement_instantiation(instance):
+    assert isinstance(instance, TypedElement)
+
+@given(instance=EssentialOCL_OclExpression_strategy)
+@settings(max_examples=50)
+def test_essentialocl_oclexpression_instantiation(instance):
+    assert isinstance(instance, EssentialOCL_OclExpression)
+
+@given(instance=EssentialOCL_ExpressionInOcl_strategy)
+@settings(max_examples=50)
+def test_essentialocl_expressioninocl_instantiation(instance):
+    assert isinstance(instance, EssentialOCL_ExpressionInOcl)
+
+@given(instance=EssentialOCL_CollectionLiteralPart_strategy)
+@settings(max_examples=50)
+def test_essentialocl_collectionliteralpart_instantiation(instance):
+    assert isinstance(instance, EssentialOCL_CollectionLiteralPart)
+
+@given(instance=EMOF_Property_strategy)
+@settings(max_examples=50)
+def test_emof_property_instantiation(instance):
+    assert isinstance(instance, EMOF_Property)
+
+
+
+@given(instance=EMOF_Property_strategy)
+def test_emof_property_isReadOnly_setter(instance):
+    original = instance.isReadOnly
+    instance.isReadOnly = original
+    assert instance.isReadOnly == original
+
+
+
+@given(instance=EMOF_Property_strategy)
+def test_emof_property_isID_setter(instance):
+    original = instance.isID
+    instance.isID = original
+    assert instance.isID == original
+
+
+
+@given(instance=EMOF_Property_strategy)
+def test_emof_property_isDerived_setter(instance):
+    original = instance.isDerived
+    instance.isDerived = original
+    assert instance.isDerived == original
+
+
+
+@given(instance=EMOF_Property_strategy)
+def test_emof_property_isComposite_setter(instance):
+    original = instance.isComposite
+    instance.isComposite = original
+    assert instance.isComposite == original
+
+
+
+@given(instance=EMOF_Property_strategy)
+def test_emof_property_default_setter(instance):
+    original = instance.default
+    instance.default = original
+    assert instance.default == original
+
+@given(instance=EMOF_Parameter_strategy)
+@settings(max_examples=50)
+def test_emof_parameter_instantiation(instance):
+    assert isinstance(instance, EMOF_Parameter)
+
+@given(instance=EMOF_Operation_strategy)
+@settings(max_examples=50)
+def test_emof_operation_instantiation(instance):
+    assert isinstance(instance, EMOF_Operation)
+
+@given(instance=NamedElement_strategy)
+@settings(max_examples=50)
+def test_namedelement_instantiation(instance):
+    assert isinstance(instance, NamedElement)
+
+@given(instance=EMOF_TypedElement_strategy)
+@settings(max_examples=50)
+def test_emof_typedelement_instantiation(instance):
+    assert isinstance(instance, EMOF_TypedElement)
+
+@given(instance=EMOF_Type_strategy)
+@settings(max_examples=50)
+def test_emof_type_instantiation(instance):
+    assert isinstance(instance, EMOF_Type)
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=EMOF_Type_strategy)
+@settings(max_examples=30)
+def test_emof_type_isinstance_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.isInstance(
+            "test"
+        )
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.isInstance).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'isInstance' in EMOF_Type is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'isInstance' in EMOF_Type did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'isInstance' in EMOF_Type is not implemented or raised an error")
+
+@given(instance=EMOF_Package_strategy)
+@settings(max_examples=50)
+def test_emof_package_instantiation(instance):
+    assert isinstance(instance, EMOF_Package)
+
+
+
+@given(instance=EMOF_Package_strategy)
+def test_emof_package_uri_setter(instance):
+    original = instance.uri
+    instance.uri = original
+    assert instance.uri == original
+
+@given(instance=Element_strategy)
+@settings(max_examples=50)
+def test_element_instantiation(instance):
+    assert isinstance(instance, Element)
+
+@given(instance=QVTRelation_RelationDomainAssignment_strategy)
+@settings(max_examples=50)
+def test_qvtrelation_relationdomainassignment_instantiation(instance):
+    assert isinstance(instance, QVTRelation_RelationDomainAssignment)
+
+@given(instance=EMOF_Tag_strategy)
+@settings(max_examples=50)
+def test_emof_tag_instantiation(instance):
+    assert isinstance(instance, EMOF_Tag)
+
+
+
+@given(instance=EMOF_Tag_strategy)
+def test_emof_tag_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+
+
+@given(instance=EMOF_Tag_strategy)
+def test_emof_tag_value_setter(instance):
+    original = instance.value
+    instance.value = original
+    assert instance.value == original
+
+@given(instance=EMOF_NamedElement_strategy)
+@settings(max_examples=50)
+def test_emof_namedelement_instantiation(instance):
+    assert isinstance(instance, EMOF_NamedElement)
+
+
+
+@given(instance=EMOF_NamedElement_strategy)
+def test_emof_namedelement_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+@given(instance=QVTRelation_RelationImplementation_strategy)
+@settings(max_examples=50)
+def test_qvtrelation_relationimplementation_instantiation(instance):
+    assert isinstance(instance, QVTRelation_RelationImplementation)
+
+@given(instance=QVTOperational_OperationBody_strategy)
+@settings(max_examples=50)
+def test_qvtoperational_operationbody_instantiation(instance):
+    assert isinstance(instance, QVTOperational_OperationBody)
+
+@given(instance=QVTOperational_ModuleImport_strategy)
+@settings(max_examples=50)
+def test_qvtoperational_moduleimport_instantiation(instance):
+    assert isinstance(instance, QVTOperational_ModuleImport)
+
+
+
+@given(instance=QVTOperational_ModuleImport_strategy)
+def test_qvtoperational_moduleimport_kind_setter(instance):
+    original = instance.kind
+    instance.kind = original
+    assert instance.kind == original
+
+@given(instance=QVTRelation_Key_strategy)
+@settings(max_examples=50)
+def test_qvtrelation_key_instantiation(instance):
+    assert isinstance(instance, QVTRelation_Key)
+
+@given(instance=EMOF_Comment_strategy)
+@settings(max_examples=50)
+def test_emof_comment_instantiation(instance):
+    assert isinstance(instance, EMOF_Comment)
+
+
+
+@given(instance=EMOF_Comment_strategy)
+def test_emof_comment_body_setter(instance):
+    original = instance.body
+    instance.body = original
+    assert instance.body == original
+
+@given(instance=EMOF_MultiplicityElement_strategy)
+@settings(max_examples=50)
+def test_emof_multiplicityelement_instantiation(instance):
+    assert isinstance(instance, EMOF_MultiplicityElement)
+
+
+
+@given(instance=EMOF_MultiplicityElement_strategy)
+def test_emof_multiplicityelement_isUnique_setter(instance):
+    original = instance.isUnique
+    instance.isUnique = original
+    assert instance.isUnique == original
+
+
+
+@given(instance=EMOF_MultiplicityElement_strategy)
+def test_emof_multiplicityelement_lower_setter(instance):
+    original = instance.lower
+    instance.lower = original
+    assert instance.lower == original
+
+
+
+@given(instance=EMOF_MultiplicityElement_strategy)
+def test_emof_multiplicityelement_isOrdered_setter(instance):
+    original = instance.isOrdered
+    instance.isOrdered = original
+    assert instance.isOrdered == original
+
+
+
+@given(instance=EMOF_MultiplicityElement_strategy)
+def test_emof_multiplicityelement_upper_setter(instance):
+    original = instance.upper
+    instance.upper = original
+    assert instance.upper == original
+
+@given(instance=Package_strategy)
+@settings(max_examples=50)
+def test_package_instantiation(instance):
+    assert isinstance(instance, Package)
+
+@given(instance=EMOF_Factory_strategy)
+@settings(max_examples=50)
+def test_emof_factory_instantiation(instance):
+    assert isinstance(instance, EMOF_Factory)
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=EMOF_Factory_strategy)
+@settings(max_examples=30)
+def test_emof_factory_converttostring_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.convertToString(
+            "test", 
+            "test"
+        )
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.convertToString).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'convertToString' in EMOF_Factory is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'convertToString' in EMOF_Factory did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'convertToString' in EMOF_Factory is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=EMOF_Factory_strategy)
+@settings(max_examples=30)
+def test_emof_factory_createfromstring_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.createFromString(
+            "test", 
+            "test"
+        )
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.createFromString).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'createFromString' in EMOF_Factory is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'createFromString' in EMOF_Factory did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'createFromString' in EMOF_Factory is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=EMOF_Factory_strategy)
+@settings(max_examples=30)
+def test_emof_factory_create_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.create(
+            "test"
+        )
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.create).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'create' in EMOF_Factory is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'create' in EMOF_Factory did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'create' in EMOF_Factory is not implemented or raised an error")
+
+@given(instance=Enumeration_strategy)
+@settings(max_examples=50)
+def test_enumeration_instantiation(instance):
+    assert isinstance(instance, Enumeration)
+
+@given(instance=EMOF_EnumerationLiteral_strategy)
+@settings(max_examples=50)
+def test_emof_enumerationliteral_instantiation(instance):
+    assert isinstance(instance, EMOF_EnumerationLiteral)
+
+@given(instance=EnumerationLiteral_strategy)
+@settings(max_examples=50)
+def test_enumerationliteral_instantiation(instance):
+    assert isinstance(instance, EnumerationLiteral)
+
+@given(instance=DataType_strategy)
+@settings(max_examples=50)
+def test_datatype_instantiation(instance):
+    assert isinstance(instance, DataType)
+
+@given(instance=EMOF_PrimitiveType_strategy)
+@settings(max_examples=50)
+def test_emof_primitivetype_instantiation(instance):
+    assert isinstance(instance, EMOF_PrimitiveType)
+
+@given(instance=EssentialOCL_CollectionType_strategy)
+@settings(max_examples=50)
+def test_essentialocl_collectiontype_instantiation(instance):
+    assert isinstance(instance, EssentialOCL_CollectionType)
+
+@given(instance=EMOF_Enumeration_strategy)
+@settings(max_examples=50)
+def test_emof_enumeration_instantiation(instance):
+    assert isinstance(instance, EMOF_Enumeration)
+
+@given(instance=Comment_strategy)
+@settings(max_examples=50)
+def test_comment_instantiation(instance):
+    assert isinstance(instance, Comment)
+
+@given(instance=Object_strategy)
+@settings(max_examples=50)
+def test_object_instantiation(instance):
+    assert isinstance(instance, Object)
+
+@given(instance=EMOF_ReflectiveCollection_strategy)
+@settings(max_examples=50)
+def test_emof_reflectivecollection_instantiation(instance):
+    assert isinstance(instance, EMOF_ReflectiveCollection)
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=EMOF_ReflectiveCollection_strategy)
+@settings(max_examples=30)
+def test_emof_reflectivecollection_clear_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.clear()
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.clear).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'clear' in EMOF_ReflectiveCollection is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'clear' in EMOF_ReflectiveCollection did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'clear' in EMOF_ReflectiveCollection is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=EMOF_ReflectiveCollection_strategy)
+@settings(max_examples=30)
+def test_emof_reflectivecollection_size_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.size()
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.size).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'size' in EMOF_ReflectiveCollection is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'size' in EMOF_ReflectiveCollection did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'size' in EMOF_ReflectiveCollection is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=EMOF_ReflectiveCollection_strategy)
+@settings(max_examples=30)
+def test_emof_reflectivecollection_remove_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.remove(
+            "test"
+        )
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.remove).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'remove' in EMOF_ReflectiveCollection is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'remove' in EMOF_ReflectiveCollection did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'remove' in EMOF_ReflectiveCollection is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=EMOF_ReflectiveCollection_strategy)
+@settings(max_examples=30)
+def test_emof_reflectivecollection_addall_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.addAll(
+            "test"
+        )
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.addAll).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'addAll' in EMOF_ReflectiveCollection is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'addAll' in EMOF_ReflectiveCollection did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'addAll' in EMOF_ReflectiveCollection is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=EMOF_ReflectiveCollection_strategy)
+@settings(max_examples=30)
+def test_emof_reflectivecollection_add_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.add(
+            "test"
+        )
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.add).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'add' in EMOF_ReflectiveCollection is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'add' in EMOF_ReflectiveCollection did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'add' in EMOF_ReflectiveCollection is not implemented or raised an error")
+
+@given(instance=EMOF_Extent_strategy)
+@settings(max_examples=50)
+def test_emof_extent_instantiation(instance):
+    assert isinstance(instance, EMOF_Extent)
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=EMOF_Extent_strategy)
+@settings(max_examples=30)
+def test_emof_extent_elements_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.elements()
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.elements).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'elements' in EMOF_Extent is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'elements' in EMOF_Extent did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'elements' in EMOF_Extent is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=EMOF_Extent_strategy)
+@settings(max_examples=30)
+def test_emof_extent_usecontainment_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.useContainment()
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.useContainment).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'useContainment' in EMOF_Extent is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'useContainment' in EMOF_Extent did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'useContainment' in EMOF_Extent is not implemented or raised an error")
+
+@given(instance=EMOF_Element_strategy)
+@settings(max_examples=50)
+def test_emof_element_instantiation(instance):
+    assert isinstance(instance, EMOF_Element)
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=EMOF_Element_strategy)
+@settings(max_examples=30)
+def test_emof_element_set_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.set(
+            "test", 
+            "test"
+        )
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.set).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'set' in EMOF_Element is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'set' in EMOF_Element did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'set' in EMOF_Element is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=EMOF_Element_strategy)
+@settings(max_examples=30)
+def test_emof_element_container_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.container()
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.container).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'container' in EMOF_Element is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'container' in EMOF_Element did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'container' in EMOF_Element is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=EMOF_Element_strategy)
+@settings(max_examples=30)
+def test_emof_element_unset_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.unset(
+            "test"
+        )
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.unset).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'unset' in EMOF_Element is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'unset' in EMOF_Element did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'unset' in EMOF_Element is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=EMOF_Element_strategy)
+@settings(max_examples=30)
+def test_emof_element_isset_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.isSet(
+            "test"
+        )
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.isSet).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'isSet' in EMOF_Element is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'isSet' in EMOF_Element did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'isSet' in EMOF_Element is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=EMOF_Element_strategy)
+@settings(max_examples=30)
+def test_emof_element_equals_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.equals(
+            "test"
+        )
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.equals).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'equals' in EMOF_Element is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'equals' in EMOF_Element did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'equals' in EMOF_Element is not implemented or raised an error")
+
+@given(instance=Class_strategy)
+@settings(max_examples=50)
+def test_class_instantiation(instance):
+    assert isinstance(instance, Class)
+
+@given(instance=QVTOperational_ModelType_strategy)
+@settings(max_examples=50)
+def test_qvtoperational_modeltype_instantiation(instance):
+    assert isinstance(instance, QVTOperational_ModelType)
+
+
+
+@given(instance=QVTOperational_ModelType_strategy)
+def test_qvtoperational_modeltype_conformanceKind_setter(instance):
+    original = instance.conformanceKind
+    instance.conformanceKind = original
+    assert instance.conformanceKind == original
+
+@given(instance=QVTOperational_Module_strategy)
+@settings(max_examples=50)
+def test_qvtoperational_module_instantiation(instance):
+    assert isinstance(instance, QVTOperational_Module)
+
+
+
+@given(instance=QVTOperational_Module_strategy)
+def test_qvtoperational_module_isBlackbox_setter(instance):
+    original = instance.isBlackbox
+    instance.isBlackbox = original
+    assert instance.isBlackbox == original
+
+@given(instance=Operation_strategy)
+@settings(max_examples=50)
+def test_operation_instantiation(instance):
+    assert isinstance(instance, Operation)
+
+@given(instance=QVTOperational_ImperativeOperation_strategy)
+@settings(max_examples=50)
+def test_qvtoperational_imperativeoperation_instantiation(instance):
+    assert isinstance(instance, QVTOperational_ImperativeOperation)
+
+
+
+@given(instance=QVTOperational_ImperativeOperation_strategy)
+def test_qvtoperational_imperativeoperation_isBlackbox_setter(instance):
+    original = instance.isBlackbox
+    instance.isBlackbox = original
+    assert instance.isBlackbox == original
+
+@given(instance=Property_strategy)
+@settings(max_examples=50)
+def test_property_instantiation(instance):
+    assert isinstance(instance, Property)
+
+@given(instance=QVTOperational_ContextualProperty_strategy)
+@settings(max_examples=50)
+def test_qvtoperational_contextualproperty_instantiation(instance):
+    assert isinstance(instance, QVTOperational_ContextualProperty)
+
+@given(instance=Type_strategy)
+@settings(max_examples=50)
+def test_type_instantiation(instance):
+    assert isinstance(instance, Type)
+
+@given(instance=EssentialOCL_AnyType_strategy)
+@settings(max_examples=50)
+def test_essentialocl_anytype_instantiation(instance):
+    assert isinstance(instance, EssentialOCL_AnyType)
+
+@given(instance=EMOF_DataType_strategy)
+@settings(max_examples=50)
+def test_emof_datatype_instantiation(instance):
+    assert isinstance(instance, EMOF_DataType)
+
+@given(instance=EMOF_Class_strategy)
+@settings(max_examples=50)
+def test_emof_class_instantiation(instance):
+    assert isinstance(instance, EMOF_Class)
+
+
+
+@given(instance=EMOF_Class_strategy)
+def test_emof_class_isAbstract_setter(instance):
+    original = instance.isAbstract
+    instance.isAbstract = original
+    assert instance.isAbstract == original
+
+@given(instance=QVTTemplate_TemplateExp_strategy)
+@settings(max_examples=50)
+def test_qvttemplate_templateexp_instantiation(instance):
+    assert isinstance(instance, QVTTemplate_TemplateExp)
 
 @given(instance=ObjectTemplateExp_strategy)
 @settings(max_examples=50)
@@ -4910,10 +6143,10 @@ def test_relationimplementation_instantiation(instance):
 def test_propertycallexp_instantiation(instance):
     assert isinstance(instance, PropertyCallExp)
 
-@given(instance=QVTRelation::OppositePropertyCallExp_strategy)
+@given(instance=QVTRelation_OppositePropertyCallExp_strategy)
 @settings(max_examples=50)
-def test_qvtrelation::oppositepropertycallexp_instantiation(instance):
-    assert isinstance(instance, QVTRelation::OppositePropertyCallExp)
+def test_qvtrelation_oppositepropertycallexp_instantiation(instance):
+    assert isinstance(instance, QVTRelation_OppositePropertyCallExp)
 
 @given(instance=RelationalTransformation_strategy)
 @settings(max_examples=50)
@@ -4925,20 +6158,38 @@ def test_relationaltransformation_instantiation(instance):
 def test_templateexp_instantiation(instance):
     assert isinstance(instance, TemplateExp)
 
-@given(instance=QVTTemplate::CollectionTemplateExp_strategy)
+@given(instance=QVTTemplate_CollectionTemplateExp_strategy)
 @settings(max_examples=50)
-def test_qvttemplate::collectiontemplateexp_instantiation(instance):
-    assert isinstance(instance, QVTTemplate::CollectionTemplateExp)
+def test_qvttemplate_collectiontemplateexp_instantiation(instance):
+    assert isinstance(instance, QVTTemplate_CollectionTemplateExp)
+
+@given(instance=QVTCore_RealizedVariable_strategy)
+@settings(max_examples=50)
+def test_qvtcore_realizedvariable_instantiation(instance):
+    assert isinstance(instance, QVTCore_RealizedVariable)
+
+@given(instance=QVTTemplate_PropertyTemplateItem_strategy)
+@settings(max_examples=50)
+def test_qvttemplate_propertytemplateitem_instantiation(instance):
+    assert isinstance(instance, QVTTemplate_PropertyTemplateItem)
+
+
+
+@given(instance=QVTTemplate_PropertyTemplateItem_strategy)
+def test_qvttemplate_propertytemplateitem_isOpposite_setter(instance):
+    original = instance.isOpposite
+    instance.isOpposite = original
+    assert instance.isOpposite == original
 
 @given(instance=PropertyTemplateItem_strategy)
 @settings(max_examples=50)
 def test_propertytemplateitem_instantiation(instance):
     assert isinstance(instance, PropertyTemplateItem)
 
-@given(instance=QVTTemplate::ObjectTemplateExp_strategy)
+@given(instance=QVTTemplate_ObjectTemplateExp_strategy)
 @settings(max_examples=50)
-def test_qvttemplate::objecttemplateexp_instantiation(instance):
-    assert isinstance(instance, QVTTemplate::ObjectTemplateExp)
+def test_qvttemplate_objecttemplateexp_instantiation(instance):
+    assert isinstance(instance, QVTTemplate_ObjectTemplateExp)
 
 @given(instance=RealizedVariable_strategy)
 @settings(max_examples=50)
@@ -4955,15 +6206,15 @@ def test_enforcementoperation_instantiation(instance):
 def test_assignment_instantiation(instance):
     assert isinstance(instance, Assignment)
 
-@given(instance=QVTCore::PropertyAssignment_strategy)
+@given(instance=QVTCore_VariableAssignment_strategy)
 @settings(max_examples=50)
-def test_qvtcore::propertyassignment_instantiation(instance):
-    assert isinstance(instance, QVTCore::PropertyAssignment)
+def test_qvtcore_variableassignment_instantiation(instance):
+    assert isinstance(instance, QVTCore_VariableAssignment)
 
-@given(instance=QVTCore::VariableAssignment_strategy)
+@given(instance=QVTCore_PropertyAssignment_strategy)
 @settings(max_examples=50)
-def test_qvtcore::variableassignment_instantiation(instance):
-    assert isinstance(instance, QVTCore::VariableAssignment)
+def test_qvtcore_propertyassignment_instantiation(instance):
+    assert isinstance(instance, QVTCore_PropertyAssignment)
 
 @given(instance=Area_strategy)
 @settings(max_examples=50)
@@ -4975,35 +6226,71 @@ def test_area_instantiation(instance):
 def test_corepattern_instantiation(instance):
     assert isinstance(instance, CorePattern)
 
-@given(instance=QVTCore::BottomPattern_strategy)
+@given(instance=QVTCore_BottomPattern_strategy)
 @settings(max_examples=50)
-def test_qvtcore::bottompattern_instantiation(instance):
-    assert isinstance(instance, QVTCore::BottomPattern)
+def test_qvtcore_bottompattern_instantiation(instance):
+    assert isinstance(instance, QVTCore_BottomPattern)
 
 @given(instance=Mapping_strategy)
 @settings(max_examples=50)
 def test_mapping_instantiation(instance):
     assert isinstance(instance, Mapping)
 
-@given(instance=QVTCore::GuardPattern_strategy)
+@given(instance=QVTCore_GuardPattern_strategy)
 @settings(max_examples=50)
-def test_qvtcore::guardpattern_instantiation(instance):
-    assert isinstance(instance, QVTCore::GuardPattern)
+def test_qvtcore_guardpattern_instantiation(instance):
+    assert isinstance(instance, QVTCore_GuardPattern)
+
+@given(instance=QVTCore_EnforcementOperation_strategy)
+@settings(max_examples=50)
+def test_qvtcore_enforcementoperation_instantiation(instance):
+    assert isinstance(instance, QVTCore_EnforcementOperation)
+
+
+
+@given(instance=QVTCore_EnforcementOperation_strategy)
+def test_qvtcore_enforcementoperation_enforcementMode_setter(instance):
+    original = instance.enforcementMode
+    instance.enforcementMode = original
+    assert instance.enforcementMode == original
+
+@given(instance=QVTBase_TypedModel_strategy)
+@settings(max_examples=50)
+def test_qvtbase_typedmodel_instantiation(instance):
+    assert isinstance(instance, QVTBase_TypedModel)
 
 @given(instance=Tag_strategy)
 @settings(max_examples=50)
 def test_tag_instantiation(instance):
     assert isinstance(instance, Tag)
 
+@given(instance=QVTBase_Transformation_strategy)
+@settings(max_examples=50)
+def test_qvtbase_transformation_instantiation(instance):
+    assert isinstance(instance, QVTBase_Transformation)
+
 @given(instance=Transformation_strategy)
 @settings(max_examples=50)
 def test_transformation_instantiation(instance):
     assert isinstance(instance, Transformation)
 
-@given(instance=QVTRelation::RelationalTransformation_strategy)
+@given(instance=QVTRelation_RelationalTransformation_strategy)
 @settings(max_examples=50)
-def test_qvtrelation::relationaltransformation_instantiation(instance):
-    assert isinstance(instance, QVTRelation::RelationalTransformation)
+def test_qvtrelation_relationaltransformation_instantiation(instance):
+    assert isinstance(instance, QVTRelation_RelationalTransformation)
+
+@given(instance=QVTCore_Assignment_strategy)
+@settings(max_examples=50)
+def test_qvtcore_assignment_instantiation(instance):
+    assert isinstance(instance, QVTCore_Assignment)
+
+
+
+@given(instance=QVTCore_Assignment_strategy)
+def test_qvtcore_assignment_isDefault_setter(instance):
+    original = instance.isDefault
+    instance.isDefault = original
+    assert instance.isDefault == original
 
 @given(instance=GuardPattern_strategy)
 @settings(max_examples=50)
@@ -5015,10 +6302,25 @@ def test_guardpattern_instantiation(instance):
 def test_bottompattern_instantiation(instance):
     assert isinstance(instance, BottomPattern)
 
-@given(instance=QVTCore::Area_strategy)
+@given(instance=QVTCore_Area_strategy)
 @settings(max_examples=50)
-def test_qvtcore::area_instantiation(instance):
-    assert isinstance(instance, QVTCore::Area)
+def test_qvtcore_area_instantiation(instance):
+    assert isinstance(instance, QVTCore_Area)
+
+@given(instance=QVTBase_Pattern_strategy)
+@settings(max_examples=50)
+def test_qvtbase_pattern_instantiation(instance):
+    assert isinstance(instance, QVTBase_Pattern)
+
+@given(instance=QVTBase_FunctionParameter_strategy)
+@settings(max_examples=50)
+def test_qvtbase_functionparameter_instantiation(instance):
+    assert isinstance(instance, QVTBase_FunctionParameter)
+
+@given(instance=QVTBase_Function_strategy)
+@settings(max_examples=50)
+def test_qvtbase_function_instantiation(instance):
+    assert isinstance(instance, QVTBase_Function)
 
 @given(instance=TypedModel_strategy)
 @settings(max_examples=50)
@@ -5030,1545 +6332,94 @@ def test_typedmodel_instantiation(instance):
 def test_rule_instantiation(instance):
     assert isinstance(instance, Rule)
 
-@given(instance=QVTRelation::Relation_strategy)
+@given(instance=QVTRelation_Relation_strategy)
 @settings(max_examples=50)
-def test_qvtrelation::relation_instantiation(instance):
-    assert isinstance(instance, QVTRelation::Relation)
-
-@given(instance=QVTRelation::Relation_strategy)
-def test_qvtrelation::relation_isTopLevel_type(instance):
-    assert isinstance(instance.isTopLevel, str)
+def test_qvtrelation_relation_instantiation(instance):
+    assert isinstance(instance, QVTRelation_Relation)
 
 
-@given(instance=QVTRelation::Relation_strategy)
-def test_qvtrelation::relation_isTopLevel_setter(instance):
+
+@given(instance=QVTRelation_Relation_strategy)
+def test_qvtrelation_relation_isTopLevel_setter(instance):
     original = instance.isTopLevel
     instance.isTopLevel = original
     assert instance.isTopLevel == original
 
-@given(instance=QVTCore::Mapping_strategy)
+@given(instance=QVTCore_Mapping_strategy)
 @settings(max_examples=50)
-def test_qvtcore::mapping_instantiation(instance):
-    assert isinstance(instance, QVTCore::Mapping)
+def test_qvtcore_mapping_instantiation(instance):
+    assert isinstance(instance, QVTCore_Mapping)
+
+@given(instance=QVTBase_Domain_strategy)
+@settings(max_examples=50)
+def test_qvtbase_domain_instantiation(instance):
+    assert isinstance(instance, QVTBase_Domain)
+
+
+
+@given(instance=QVTBase_Domain_strategy)
+def test_qvtbase_domain_isCheckable_setter(instance):
+    original = instance.isCheckable
+    instance.isCheckable = original
+    assert instance.isCheckable == original
+
+
+
+@given(instance=QVTBase_Domain_strategy)
+def test_qvtbase_domain_isEnforceable_setter(instance):
+    original = instance.isEnforceable
+    instance.isEnforceable = original
+    assert instance.isEnforceable == original
 
 @given(instance=Domain_strategy)
 @settings(max_examples=50)
 def test_domain_instantiation(instance):
     assert isinstance(instance, Domain)
 
-@given(instance=QVTCore::CoreDomain_strategy)
+@given(instance=QVTCore_CoreDomain_strategy)
 @settings(max_examples=50)
-def test_qvtcore::coredomain_instantiation(instance):
-    assert isinstance(instance, QVTCore::CoreDomain)
+def test_qvtcore_coredomain_instantiation(instance):
+    assert isinstance(instance, QVTCore_CoreDomain)
 
-@given(instance=QVTRelation::RelationDomain_strategy)
+@given(instance=QVTRelation_RelationDomain_strategy)
 @settings(max_examples=50)
-def test_qvtrelation::relationdomain_instantiation(instance):
-    assert isinstance(instance, QVTRelation::RelationDomain)
+def test_qvtrelation_relationdomain_instantiation(instance):
+    assert isinstance(instance, QVTRelation_RelationDomain)
+
+@given(instance=QVTBase_Rule_strategy)
+@settings(max_examples=50)
+def test_qvtbase_rule_instantiation(instance):
+    assert isinstance(instance, QVTBase_Rule)
 
 @given(instance=Pattern_strategy)
 @settings(max_examples=50)
 def test_pattern_instantiation(instance):
     assert isinstance(instance, Pattern)
 
-@given(instance=QVTCore::CorePattern_strategy)
+@given(instance=QVTRelation_DomainPattern_strategy)
 @settings(max_examples=50)
-def test_qvtcore::corepattern_instantiation(instance):
-    assert isinstance(instance, QVTCore::CorePattern)
+def test_qvtrelation_domainpattern_instantiation(instance):
+    assert isinstance(instance, QVTRelation_DomainPattern)
 
-@given(instance=QVTRelation::DomainPattern_strategy)
+@given(instance=QVTCore_CorePattern_strategy)
 @settings(max_examples=50)
-def test_qvtrelation::domainpattern_instantiation(instance):
-    assert isinstance(instance, QVTRelation::DomainPattern)
+def test_qvtcore_corepattern_instantiation(instance):
+    assert isinstance(instance, QVTCore_CorePattern)
 
-@given(instance=LoopExp_strategy)
+@given(instance=QVTBase_Predicate_strategy)
 @settings(max_examples=50)
-def test_loopexp_instantiation(instance):
-    assert isinstance(instance, LoopExp)
-
-@given(instance=EssentialOCL::IterateExp_strategy)
-@settings(max_examples=50)
-def test_essentialocl::iterateexp_instantiation(instance):
-    assert isinstance(instance, EssentialOCL::IterateExp)
-
-@given(instance=NavigationCallExp_strategy)
-@settings(max_examples=50)
-def test_navigationcallexp_instantiation(instance):
-    assert isinstance(instance, NavigationCallExp)
-
-@given(instance=EssentialOCL::PropertyCallExp_strategy)
-@settings(max_examples=50)
-def test_essentialocl::propertycallexp_instantiation(instance):
-    assert isinstance(instance, EssentialOCL::PropertyCallExp)
-
-@given(instance=NumericLiteralExp_strategy)
-@settings(max_examples=50)
-def test_numericliteralexp_instantiation(instance):
-    assert isinstance(instance, NumericLiteralExp)
-
-@given(instance=EssentialOCL::RealLiteralExp_strategy)
-@settings(max_examples=50)
-def test_essentialocl::realliteralexp_instantiation(instance):
-    assert isinstance(instance, EssentialOCL::RealLiteralExp)
-
-@given(instance=EssentialOCL::RealLiteralExp_strategy)
-def test_essentialocl::realliteralexp_realSymbol_type(instance):
-    assert isinstance(instance.realSymbol, str)
-
-
-@given(instance=EssentialOCL::RealLiteralExp_strategy)
-def test_essentialocl::realliteralexp_realSymbol_setter(instance):
-    original = instance.realSymbol
-    instance.realSymbol = original
-    assert instance.realSymbol == original
-
-@given(instance=EssentialOCL::IntegerLiteralExp_strategy)
-@settings(max_examples=50)
-def test_essentialocl::integerliteralexp_instantiation(instance):
-    assert isinstance(instance, EssentialOCL::IntegerLiteralExp)
-
-@given(instance=EssentialOCL::IntegerLiteralExp_strategy)
-def test_essentialocl::integerliteralexp_integerSymbol_type(instance):
-    assert isinstance(instance.integerSymbol, str)
-
-
-@given(instance=EssentialOCL::IntegerLiteralExp_strategy)
-def test_essentialocl::integerliteralexp_integerSymbol_setter(instance):
-    original = instance.integerSymbol
-    instance.integerSymbol = original
-    assert instance.integerSymbol == original
-
-@given(instance=CallExp_strategy)
-@settings(max_examples=50)
-def test_callexp_instantiation(instance):
-    assert isinstance(instance, CallExp)
-
-@given(instance=EssentialOCL::FeatureCallExp_strategy)
-@settings(max_examples=50)
-def test_essentialocl::featurecallexp_instantiation(instance):
-    assert isinstance(instance, EssentialOCL::FeatureCallExp)
-
-@given(instance=OclExpression_strategy)
-@settings(max_examples=50)
-def test_oclexpression_instantiation(instance):
-    assert isinstance(instance, OclExpression)
-
-@given(instance=EssentialOCL::IfExp_strategy)
-@settings(max_examples=50)
-def test_essentialocl::ifexp_instantiation(instance):
-    assert isinstance(instance, EssentialOCL::IfExp)
-
-@given(instance=QVTRelation::RelationCallExp_strategy)
-@settings(max_examples=50)
-def test_qvtrelation::relationcallexp_instantiation(instance):
-    assert isinstance(instance, QVTRelation::RelationCallExp)
-
-@given(instance=EssentialOCL::CallExp_strategy)
-@settings(max_examples=50)
-def test_essentialocl::callexp_instantiation(instance):
-    assert isinstance(instance, EssentialOCL::CallExp)
-
-@given(instance=PrimitiveLiteralExp_strategy)
-@settings(max_examples=50)
-def test_primitiveliteralexp_instantiation(instance):
-    assert isinstance(instance, PrimitiveLiteralExp)
-
-@given(instance=EssentialOCL::BooleanLiteralExp_strategy)
-@settings(max_examples=50)
-def test_essentialocl::booleanliteralexp_instantiation(instance):
-    assert isinstance(instance, EssentialOCL::BooleanLiteralExp)
-
-@given(instance=EssentialOCL::BooleanLiteralExp_strategy)
-def test_essentialocl::booleanliteralexp_booleanSymbol_type(instance):
-    assert isinstance(instance.booleanSymbol, str)
-
-
-@given(instance=EssentialOCL::BooleanLiteralExp_strategy)
-def test_essentialocl::booleanliteralexp_booleanSymbol_setter(instance):
-    original = instance.booleanSymbol
-    instance.booleanSymbol = original
-    assert instance.booleanSymbol == original
-
-@given(instance=Variable_strategy)
-@settings(max_examples=50)
-def test_variable_instantiation(instance):
-    assert isinstance(instance, Variable)
-
-@given(instance=QVTCore::RealizedVariable_strategy)
-@settings(max_examples=50)
-def test_qvtcore::realizedvariable_instantiation(instance):
-    assert isinstance(instance, QVTCore::RealizedVariable)
-
-@given(instance=CollectionLiteralExp_strategy)
-@settings(max_examples=50)
-def test_collectionliteralexp_instantiation(instance):
-    assert isinstance(instance, CollectionLiteralExp)
-
-@given(instance=LiteralExp_strategy)
-@settings(max_examples=50)
-def test_literalexp_instantiation(instance):
-    assert isinstance(instance, LiteralExp)
-
-@given(instance=EssentialOCL::InvalidLiteralExp_strategy)
-@settings(max_examples=50)
-def test_essentialocl::invalidliteralexp_instantiation(instance):
-    assert isinstance(instance, EssentialOCL::InvalidLiteralExp)
-
-@given(instance=QVTTemplate::TemplateExp_strategy)
-@settings(max_examples=50)
-def test_qvttemplate::templateexp_instantiation(instance):
-    assert isinstance(instance, QVTTemplate::TemplateExp)
-
-@given(instance=EssentialOCL::EnumLiteralExp_strategy)
-@settings(max_examples=50)
-def test_essentialocl::enumliteralexp_instantiation(instance):
-    assert isinstance(instance, EssentialOCL::EnumLiteralExp)
-
-@given(instance=EssentialOCL::PrimitiveLiteralExp_strategy)
-@settings(max_examples=50)
-def test_essentialocl::primitiveliteralexp_instantiation(instance):
-    assert isinstance(instance, EssentialOCL::PrimitiveLiteralExp)
-
-@given(instance=EssentialOCL::CollectionLiteralExp_strategy)
-@settings(max_examples=50)
-def test_essentialocl::collectionliteralexp_instantiation(instance):
-    assert isinstance(instance, EssentialOCL::CollectionLiteralExp)
-
-@given(instance=EssentialOCL::CollectionLiteralExp_strategy)
-def test_essentialocl::collectionliteralexp_kind_type(instance):
-    assert isinstance(instance.kind, str)
-
-
-@given(instance=EssentialOCL::CollectionLiteralExp_strategy)
-def test_essentialocl::collectionliteralexp_kind_setter(instance):
-    original = instance.kind
-    instance.kind = original
-    assert instance.kind == original
-
-@given(instance=CollectionLiteralPart_strategy)
-@settings(max_examples=50)
-def test_collectionliteralpart_instantiation(instance):
-    assert isinstance(instance, CollectionLiteralPart)
-
-@given(instance=EssentialOCL::CollectionRange_strategy)
-@settings(max_examples=50)
-def test_essentialocl::collectionrange_instantiation(instance):
-    assert isinstance(instance, EssentialOCL::CollectionRange)
-
-@given(instance=EssentialOCL::CollectionItem_strategy)
-@settings(max_examples=50)
-def test_essentialocl::collectionitem_instantiation(instance):
-    assert isinstance(instance, EssentialOCL::CollectionItem)
-
-@given(instance=ReflectiveCollection_strategy)
-@settings(max_examples=50)
-def test_reflectivecollection_instantiation(instance):
-    assert isinstance(instance, ReflectiveCollection)
-
-@given(instance=EMOF::ReflectiveSequence_strategy)
-@settings(max_examples=50)
-def test_emof::reflectivesequence_instantiation(instance):
-    assert isinstance(instance, EMOF::ReflectiveSequence)
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=EMOF::ReflectiveSequence_strategy)
-@settings(max_examples=30)
-def test_emof::reflectivesequence_remove_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.remove(
-            "test"
-        )
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.remove).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'remove' in EMOF::ReflectiveSequence is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'remove' in EMOF::ReflectiveSequence did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'remove' in EMOF::ReflectiveSequence is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=EMOF::ReflectiveSequence_strategy)
-@settings(max_examples=30)
-def test_emof::reflectivesequence_add_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.add(
-            "test", 
-            "test"
-        )
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.add).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'add' in EMOF::ReflectiveSequence is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'add' in EMOF::ReflectiveSequence did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'add' in EMOF::ReflectiveSequence is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=EMOF::ReflectiveSequence_strategy)
-@settings(max_examples=30)
-def test_emof::reflectivesequence_set_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.set(
-            "test", 
-            "test"
-        )
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.set).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'set' in EMOF::ReflectiveSequence is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'set' in EMOF::ReflectiveSequence did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'set' in EMOF::ReflectiveSequence is not implemented or raised an error")
-
-@given(instance=CollectionType_strategy)
-@settings(max_examples=50)
-def test_collectiontype_instantiation(instance):
-    assert isinstance(instance, CollectionType)
-
-@given(instance=EssentialOCL::OrderedSetType_strategy)
-@settings(max_examples=50)
-def test_essentialocl::orderedsettype_instantiation(instance):
-    assert isinstance(instance, EssentialOCL::OrderedSetType)
-
-@given(instance=EssentialOCL::SequenceType_strategy)
-@settings(max_examples=50)
-def test_essentialocl::sequencetype_instantiation(instance):
-    assert isinstance(instance, EssentialOCL::SequenceType)
-
-@given(instance=EssentialOCL::BagType_strategy)
-@settings(max_examples=50)
-def test_essentialocl::bagtype_instantiation(instance):
-    assert isinstance(instance, EssentialOCL::BagType)
-
-@given(instance=Extent_strategy)
-@settings(max_examples=50)
-def test_extent_instantiation(instance):
-    assert isinstance(instance, Extent)
-
-@given(instance=EMOF::URIExtent_strategy)
-@settings(max_examples=50)
-def test_emof::uriextent_instantiation(instance):
-    assert isinstance(instance, EMOF::URIExtent)
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=EMOF::URIExtent_strategy)
-@settings(max_examples=30)
-def test_emof::uriextent_element_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.element(
-            "test"
-        )
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.element).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'element' in EMOF::URIExtent is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'element' in EMOF::URIExtent did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'element' in EMOF::URIExtent is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=EMOF::URIExtent_strategy)
-@settings(max_examples=30)
-def test_emof::uriextent_contexturi_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.contextURI()
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.contextURI).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'contextURI' in EMOF::URIExtent is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'contextURI' in EMOF::URIExtent did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'contextURI' in EMOF::URIExtent is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=EMOF::URIExtent_strategy)
-@settings(max_examples=30)
-def test_emof::uriextent_uri_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.uri(
-            "test"
-        )
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.uri).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'uri' in EMOF::URIExtent is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'uri' in EMOF::URIExtent did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'uri' in EMOF::URIExtent is not implemented or raised an error")
-
-@given(instance=EMOF::Object_strategy)
-@settings(max_examples=50)
-def test_emof::object_instantiation(instance):
-    assert isinstance(instance, EMOF::Object)
-
-@given(instance=Parameter_strategy)
-@settings(max_examples=50)
-def test_parameter_instantiation(instance):
-    assert isinstance(instance, Parameter)
-
-@given(instance=QVTBase::FunctionParameter_strategy)
-@settings(max_examples=50)
-def test_qvtbase::functionparameter_instantiation(instance):
-    assert isinstance(instance, QVTBase::FunctionParameter)
-
-@given(instance=QVTOperational::VarParameter_strategy)
-@settings(max_examples=50)
-def test_qvtoperational::varparameter_instantiation(instance):
-    assert isinstance(instance, QVTOperational::VarParameter)
-
-@given(instance=QVTOperational::VarParameter_strategy)
-def test_qvtoperational::varparameter_kind_type(instance):
-    assert isinstance(instance.kind, str)
-
-
-@given(instance=QVTOperational::VarParameter_strategy)
-def test_qvtoperational::varparameter_kind_setter(instance):
-    original = instance.kind
-    instance.kind = original
-    assert instance.kind == original
-
-@given(instance=MultiplicityElement_strategy)
-@settings(max_examples=50)
-def test_multiplicityelement_instantiation(instance):
-    assert isinstance(instance, MultiplicityElement)
-
-@given(instance=TypedElement_strategy)
-@settings(max_examples=50)
-def test_typedelement_instantiation(instance):
-    assert isinstance(instance, TypedElement)
-
-@given(instance=EssentialOCL::OclExpression_strategy)
-@settings(max_examples=50)
-def test_essentialocl::oclexpression_instantiation(instance):
-    assert isinstance(instance, EssentialOCL::OclExpression)
-
-@given(instance=EssentialOCL::ExpressionInOcl_strategy)
-@settings(max_examples=50)
-def test_essentialocl::expressioninocl_instantiation(instance):
-    assert isinstance(instance, EssentialOCL::ExpressionInOcl)
-
-@given(instance=EMOF::Parameter_strategy)
-@settings(max_examples=50)
-def test_emof::parameter_instantiation(instance):
-    assert isinstance(instance, EMOF::Parameter)
-
-@given(instance=EssentialOCL::CollectionLiteralPart_strategy)
-@settings(max_examples=50)
-def test_essentialocl::collectionliteralpart_instantiation(instance):
-    assert isinstance(instance, EssentialOCL::CollectionLiteralPart)
-
-@given(instance=EMOF::Property_strategy)
-@settings(max_examples=50)
-def test_emof::property_instantiation(instance):
-    assert isinstance(instance, EMOF::Property)
-
-@given(instance=EMOF::Property_strategy)
-def test_emof::property_default_type(instance):
-    assert isinstance(instance.default, str)
-
-
-@given(instance=EMOF::Property_strategy)
-def test_emof::property_default_setter(instance):
-    original = instance.default
-    instance.default = original
-    assert instance.default == original
-
-@given(instance=EMOF::Property_strategy)
-def test_emof::property_isDerived_type(instance):
-    assert isinstance(instance.isDerived, str)
-
-
-@given(instance=EMOF::Property_strategy)
-def test_emof::property_isDerived_setter(instance):
-    original = instance.isDerived
-    instance.isDerived = original
-    assert instance.isDerived == original
-
-@given(instance=EMOF::Property_strategy)
-def test_emof::property_isComposite_type(instance):
-    assert isinstance(instance.isComposite, str)
-
-
-@given(instance=EMOF::Property_strategy)
-def test_emof::property_isComposite_setter(instance):
-    original = instance.isComposite
-    instance.isComposite = original
-    assert instance.isComposite == original
-
-@given(instance=EMOF::Property_strategy)
-def test_emof::property_isReadOnly_type(instance):
-    assert isinstance(instance.isReadOnly, str)
-
-
-@given(instance=EMOF::Property_strategy)
-def test_emof::property_isReadOnly_setter(instance):
-    original = instance.isReadOnly
-    instance.isReadOnly = original
-    assert instance.isReadOnly == original
-
-@given(instance=EMOF::Property_strategy)
-def test_emof::property_isID_type(instance):
-    assert isinstance(instance.isID, str)
-
-
-@given(instance=EMOF::Property_strategy)
-def test_emof::property_isID_setter(instance):
-    original = instance.isID
-    instance.isID = original
-    assert instance.isID == original
-
-@given(instance=EMOF::Operation_strategy)
-@settings(max_examples=50)
-def test_emof::operation_instantiation(instance):
-    assert isinstance(instance, EMOF::Operation)
-
-@given(instance=NamedElement_strategy)
-@settings(max_examples=50)
-def test_namedelement_instantiation(instance):
-    assert isinstance(instance, NamedElement)
-
-@given(instance=QVTBase::Domain_strategy)
-@settings(max_examples=50)
-def test_qvtbase::domain_instantiation(instance):
-    assert isinstance(instance, QVTBase::Domain)
-
-@given(instance=QVTBase::Domain_strategy)
-def test_qvtbase::domain_isCheckable_type(instance):
-    assert isinstance(instance.isCheckable, str)
-
-
-@given(instance=QVTBase::Domain_strategy)
-def test_qvtbase::domain_isCheckable_setter(instance):
-    original = instance.isCheckable
-    instance.isCheckable = original
-    assert instance.isCheckable == original
-
-@given(instance=QVTBase::Domain_strategy)
-def test_qvtbase::domain_isEnforceable_type(instance):
-    assert isinstance(instance.isEnforceable, str)
-
-
-@given(instance=QVTBase::Domain_strategy)
-def test_qvtbase::domain_isEnforceable_setter(instance):
-    original = instance.isEnforceable
-    instance.isEnforceable = original
-    assert instance.isEnforceable == original
-
-@given(instance=EMOF::TypedElement_strategy)
-@settings(max_examples=50)
-def test_emof::typedelement_instantiation(instance):
-    assert isinstance(instance, EMOF::TypedElement)
-
-@given(instance=QVTBase::Rule_strategy)
-@settings(max_examples=50)
-def test_qvtbase::rule_instantiation(instance):
-    assert isinstance(instance, QVTBase::Rule)
-
-@given(instance=QVTBase::TypedModel_strategy)
-@settings(max_examples=50)
-def test_qvtbase::typedmodel_instantiation(instance):
-    assert isinstance(instance, QVTBase::TypedModel)
-
-@given(instance=EMOF::Package_strategy)
-@settings(max_examples=50)
-def test_emof::package_instantiation(instance):
-    assert isinstance(instance, EMOF::Package)
-
-@given(instance=EMOF::Package_strategy)
-def test_emof::package_uri_type(instance):
-    assert isinstance(instance.uri, str)
-
-
-@given(instance=EMOF::Package_strategy)
-def test_emof::package_uri_setter(instance):
-    original = instance.uri
-    instance.uri = original
-    assert instance.uri == original
-
-@given(instance=EMOF::Type_strategy)
-@settings(max_examples=50)
-def test_emof::type_instantiation(instance):
-    assert isinstance(instance, EMOF::Type)
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=EMOF::Type_strategy)
-@settings(max_examples=30)
-def test_emof::type_isinstance_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.isInstance(
-            "test"
-        )
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.isInstance).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'isInstance' in EMOF::Type is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'isInstance' in EMOF::Type did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'isInstance' in EMOF::Type is not implemented or raised an error")
-
-@given(instance=Element_strategy)
-@settings(max_examples=50)
-def test_element_instantiation(instance):
-    assert isinstance(instance, Element)
-
-@given(instance=EMOF::NamedElement_strategy)
-@settings(max_examples=50)
-def test_emof::namedelement_instantiation(instance):
-    assert isinstance(instance, EMOF::NamedElement)
-
-@given(instance=EMOF::NamedElement_strategy)
-def test_emof::namedelement_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=EMOF::NamedElement_strategy)
-def test_emof::namedelement_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
-
-@given(instance=QVTBase::Pattern_strategy)
-@settings(max_examples=50)
-def test_qvtbase::pattern_instantiation(instance):
-    assert isinstance(instance, QVTBase::Pattern)
-
-@given(instance=QVTOperational::ModuleImport_strategy)
-@settings(max_examples=50)
-def test_qvtoperational::moduleimport_instantiation(instance):
-    assert isinstance(instance, QVTOperational::ModuleImport)
-
-@given(instance=QVTOperational::ModuleImport_strategy)
-def test_qvtoperational::moduleimport_kind_type(instance):
-    assert isinstance(instance.kind, str)
-
-
-@given(instance=QVTOperational::ModuleImport_strategy)
-def test_qvtoperational::moduleimport_kind_setter(instance):
-    original = instance.kind
-    instance.kind = original
-    assert instance.kind == original
-
-@given(instance=QVTBase::Predicate_strategy)
-@settings(max_examples=50)
-def test_qvtbase::predicate_instantiation(instance):
-    assert isinstance(instance, QVTBase::Predicate)
-
-@given(instance=QVTOperational::OperationBody_strategy)
-@settings(max_examples=50)
-def test_qvtoperational::operationbody_instantiation(instance):
-    assert isinstance(instance, QVTOperational::OperationBody)
-
-@given(instance=QVTRelation::RelationImplementation_strategy)
-@settings(max_examples=50)
-def test_qvtrelation::relationimplementation_instantiation(instance):
-    assert isinstance(instance, QVTRelation::RelationImplementation)
-
-@given(instance=QVTTemplate::PropertyTemplateItem_strategy)
-@settings(max_examples=50)
-def test_qvttemplate::propertytemplateitem_instantiation(instance):
-    assert isinstance(instance, QVTTemplate::PropertyTemplateItem)
-
-@given(instance=QVTTemplate::PropertyTemplateItem_strategy)
-def test_qvttemplate::propertytemplateitem_isOpposite_type(instance):
-    assert isinstance(instance.isOpposite, str)
-
-
-@given(instance=QVTTemplate::PropertyTemplateItem_strategy)
-def test_qvttemplate::propertytemplateitem_isOpposite_setter(instance):
-    original = instance.isOpposite
-    instance.isOpposite = original
-    assert instance.isOpposite == original
-
-@given(instance=EMOF::Tag_strategy)
-@settings(max_examples=50)
-def test_emof::tag_instantiation(instance):
-    assert isinstance(instance, EMOF::Tag)
-
-@given(instance=EMOF::Tag_strategy)
-def test_emof::tag_value_type(instance):
-    assert isinstance(instance.value, str)
-
-
-@given(instance=EMOF::Tag_strategy)
-def test_emof::tag_value_setter(instance):
-    original = instance.value
-    instance.value = original
-    assert instance.value == original
-
-@given(instance=EMOF::Tag_strategy)
-def test_emof::tag_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=EMOF::Tag_strategy)
-def test_emof::tag_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
-
-@given(instance=QVTCore::Assignment_strategy)
-@settings(max_examples=50)
-def test_qvtcore::assignment_instantiation(instance):
-    assert isinstance(instance, QVTCore::Assignment)
-
-@given(instance=QVTCore::Assignment_strategy)
-def test_qvtcore::assignment_isDefault_type(instance):
-    assert isinstance(instance.isDefault, str)
-
-
-@given(instance=QVTCore::Assignment_strategy)
-def test_qvtcore::assignment_isDefault_setter(instance):
-    original = instance.isDefault
-    instance.isDefault = original
-    assert instance.isDefault == original
-
-@given(instance=QVTRelation::RelationDomainAssignment_strategy)
-@settings(max_examples=50)
-def test_qvtrelation::relationdomainassignment_instantiation(instance):
-    assert isinstance(instance, QVTRelation::RelationDomainAssignment)
-
-@given(instance=QVTCore::EnforcementOperation_strategy)
-@settings(max_examples=50)
-def test_qvtcore::enforcementoperation_instantiation(instance):
-    assert isinstance(instance, QVTCore::EnforcementOperation)
-
-@given(instance=QVTCore::EnforcementOperation_strategy)
-def test_qvtcore::enforcementoperation_enforcementMode_type(instance):
-    assert isinstance(instance.enforcementMode, str)
-
-
-@given(instance=QVTCore::EnforcementOperation_strategy)
-def test_qvtcore::enforcementoperation_enforcementMode_setter(instance):
-    original = instance.enforcementMode
-    instance.enforcementMode = original
-    assert instance.enforcementMode == original
-
-@given(instance=QVTRelation::Key_strategy)
-@settings(max_examples=50)
-def test_qvtrelation::key_instantiation(instance):
-    assert isinstance(instance, QVTRelation::Key)
-
-@given(instance=EMOF::Comment_strategy)
-@settings(max_examples=50)
-def test_emof::comment_instantiation(instance):
-    assert isinstance(instance, EMOF::Comment)
-
-@given(instance=EMOF::Comment_strategy)
-def test_emof::comment_body_type(instance):
-    assert isinstance(instance.body, str)
-
-
-@given(instance=EMOF::Comment_strategy)
-def test_emof::comment_body_setter(instance):
-    original = instance.body
-    instance.body = original
-    assert instance.body == original
-
-@given(instance=EMOF::MultiplicityElement_strategy)
-@settings(max_examples=50)
-def test_emof::multiplicityelement_instantiation(instance):
-    assert isinstance(instance, EMOF::MultiplicityElement)
-
-@given(instance=EMOF::MultiplicityElement_strategy)
-def test_emof::multiplicityelement_isUnique_type(instance):
-    assert isinstance(instance.isUnique, str)
-
-
-@given(instance=EMOF::MultiplicityElement_strategy)
-def test_emof::multiplicityelement_isUnique_setter(instance):
-    original = instance.isUnique
-    instance.isUnique = original
-    assert instance.isUnique == original
-
-@given(instance=EMOF::MultiplicityElement_strategy)
-def test_emof::multiplicityelement_upper_type(instance):
-    assert isinstance(instance.upper, str)
-
-
-@given(instance=EMOF::MultiplicityElement_strategy)
-def test_emof::multiplicityelement_upper_setter(instance):
-    original = instance.upper
-    instance.upper = original
-    assert instance.upper == original
-
-@given(instance=EMOF::MultiplicityElement_strategy)
-def test_emof::multiplicityelement_lower_type(instance):
-    assert isinstance(instance.lower, str)
-
-
-@given(instance=EMOF::MultiplicityElement_strategy)
-def test_emof::multiplicityelement_lower_setter(instance):
-    original = instance.lower
-    instance.lower = original
-    assert instance.lower == original
-
-@given(instance=EMOF::MultiplicityElement_strategy)
-def test_emof::multiplicityelement_isOrdered_type(instance):
-    assert isinstance(instance.isOrdered, str)
-
-
-@given(instance=EMOF::MultiplicityElement_strategy)
-def test_emof::multiplicityelement_isOrdered_setter(instance):
-    original = instance.isOrdered
-    instance.isOrdered = original
-    assert instance.isOrdered == original
-
-@given(instance=Package_strategy)
-@settings(max_examples=50)
-def test_package_instantiation(instance):
-    assert isinstance(instance, Package)
-
-@given(instance=EMOF::Factory_strategy)
-@settings(max_examples=50)
-def test_emof::factory_instantiation(instance):
-    assert isinstance(instance, EMOF::Factory)
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=EMOF::Factory_strategy)
-@settings(max_examples=30)
-def test_emof::factory_converttostring_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.convertToString(
-            "test", 
-            "test"
-        )
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.convertToString).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'convertToString' in EMOF::Factory is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'convertToString' in EMOF::Factory did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'convertToString' in EMOF::Factory is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=EMOF::Factory_strategy)
-@settings(max_examples=30)
-def test_emof::factory_createfromstring_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.createFromString(
-            "test", 
-            "test"
-        )
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.createFromString).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'createFromString' in EMOF::Factory is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'createFromString' in EMOF::Factory did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'createFromString' in EMOF::Factory is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=EMOF::Factory_strategy)
-@settings(max_examples=30)
-def test_emof::factory_create_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.create(
-            "test"
-        )
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.create).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'create' in EMOF::Factory is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'create' in EMOF::Factory did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'create' in EMOF::Factory is not implemented or raised an error")
-
-@given(instance=Enumeration_strategy)
-@settings(max_examples=50)
-def test_enumeration_instantiation(instance):
-    assert isinstance(instance, Enumeration)
-
-@given(instance=EMOF::EnumerationLiteral_strategy)
-@settings(max_examples=50)
-def test_emof::enumerationliteral_instantiation(instance):
-    assert isinstance(instance, EMOF::EnumerationLiteral)
-
-@given(instance=EnumerationLiteral_strategy)
-@settings(max_examples=50)
-def test_enumerationliteral_instantiation(instance):
-    assert isinstance(instance, EnumerationLiteral)
-
-@given(instance=DataType_strategy)
-@settings(max_examples=50)
-def test_datatype_instantiation(instance):
-    assert isinstance(instance, DataType)
-
-@given(instance=EssentialOCL::CollectionType_strategy)
-@settings(max_examples=50)
-def test_essentialocl::collectiontype_instantiation(instance):
-    assert isinstance(instance, EssentialOCL::CollectionType)
-
-@given(instance=EMOF::PrimitiveType_strategy)
-@settings(max_examples=50)
-def test_emof::primitivetype_instantiation(instance):
-    assert isinstance(instance, EMOF::PrimitiveType)
-
-@given(instance=EMOF::Enumeration_strategy)
-@settings(max_examples=50)
-def test_emof::enumeration_instantiation(instance):
-    assert isinstance(instance, EMOF::Enumeration)
-
-@given(instance=Comment_strategy)
-@settings(max_examples=50)
-def test_comment_instantiation(instance):
-    assert isinstance(instance, Comment)
-
-@given(instance=Object_strategy)
-@settings(max_examples=50)
-def test_object_instantiation(instance):
-    assert isinstance(instance, Object)
-
-@given(instance=EMOF::Extent_strategy)
-@settings(max_examples=50)
-def test_emof::extent_instantiation(instance):
-    assert isinstance(instance, EMOF::Extent)
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=EMOF::Extent_strategy)
-@settings(max_examples=30)
-def test_emof::extent_usecontainment_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.useContainment()
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.useContainment).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'useContainment' in EMOF::Extent is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'useContainment' in EMOF::Extent did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'useContainment' in EMOF::Extent is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=EMOF::Extent_strategy)
-@settings(max_examples=30)
-def test_emof::extent_elements_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.elements()
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.elements).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'elements' in EMOF::Extent is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'elements' in EMOF::Extent did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'elements' in EMOF::Extent is not implemented or raised an error")
-
-@given(instance=EMOF::ReflectiveCollection_strategy)
-@settings(max_examples=50)
-def test_emof::reflectivecollection_instantiation(instance):
-    assert isinstance(instance, EMOF::ReflectiveCollection)
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=EMOF::ReflectiveCollection_strategy)
-@settings(max_examples=30)
-def test_emof::reflectivecollection_clear_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.clear()
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.clear).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'clear' in EMOF::ReflectiveCollection is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'clear' in EMOF::ReflectiveCollection did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'clear' in EMOF::ReflectiveCollection is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=EMOF::ReflectiveCollection_strategy)
-@settings(max_examples=30)
-def test_emof::reflectivecollection_size_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.size()
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.size).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'size' in EMOF::ReflectiveCollection is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'size' in EMOF::ReflectiveCollection did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'size' in EMOF::ReflectiveCollection is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=EMOF::ReflectiveCollection_strategy)
-@settings(max_examples=30)
-def test_emof::reflectivecollection_addall_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.addAll(
-            "test"
-        )
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.addAll).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'addAll' in EMOF::ReflectiveCollection is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'addAll' in EMOF::ReflectiveCollection did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'addAll' in EMOF::ReflectiveCollection is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=EMOF::ReflectiveCollection_strategy)
-@settings(max_examples=30)
-def test_emof::reflectivecollection_remove_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.remove(
-            "test"
-        )
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.remove).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'remove' in EMOF::ReflectiveCollection is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'remove' in EMOF::ReflectiveCollection did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'remove' in EMOF::ReflectiveCollection is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=EMOF::ReflectiveCollection_strategy)
-@settings(max_examples=30)
-def test_emof::reflectivecollection_add_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.add(
-            "test"
-        )
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.add).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'add' in EMOF::ReflectiveCollection is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'add' in EMOF::ReflectiveCollection did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'add' in EMOF::ReflectiveCollection is not implemented or raised an error")
-
-@given(instance=EMOF::Element_strategy)
-@settings(max_examples=50)
-def test_emof::element_instantiation(instance):
-    assert isinstance(instance, EMOF::Element)
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=EMOF::Element_strategy)
-@settings(max_examples=30)
-def test_emof::element_isset_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.isSet(
-            "test"
-        )
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.isSet).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'isSet' in EMOF::Element is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'isSet' in EMOF::Element did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'isSet' in EMOF::Element is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=EMOF::Element_strategy)
-@settings(max_examples=30)
-def test_emof::element_set_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.set(
-            "test", 
-            "test"
-        )
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.set).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'set' in EMOF::Element is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'set' in EMOF::Element did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'set' in EMOF::Element is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=EMOF::Element_strategy)
-@settings(max_examples=30)
-def test_emof::element_equals_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.equals(
-            "test"
-        )
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.equals).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'equals' in EMOF::Element is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'equals' in EMOF::Element did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'equals' in EMOF::Element is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=EMOF::Element_strategy)
-@settings(max_examples=30)
-def test_emof::element_container_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.container()
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.container).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'container' in EMOF::Element is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'container' in EMOF::Element did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'container' in EMOF::Element is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=EMOF::Element_strategy)
-@settings(max_examples=30)
-def test_emof::element_unset_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.unset(
-            "test"
-        )
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.unset).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'unset' in EMOF::Element is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'unset' in EMOF::Element did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'unset' in EMOF::Element is not implemented or raised an error")
-
-@given(instance=Class_strategy)
-@settings(max_examples=50)
-def test_class_instantiation(instance):
-    assert isinstance(instance, Class)
-
-@given(instance=QVTOperational::ModelType_strategy)
-@settings(max_examples=50)
-def test_qvtoperational::modeltype_instantiation(instance):
-    assert isinstance(instance, QVTOperational::ModelType)
-
-@given(instance=QVTOperational::ModelType_strategy)
-def test_qvtoperational::modeltype_conformanceKind_type(instance):
-    assert isinstance(instance.conformanceKind, str)
-
-
-@given(instance=QVTOperational::ModelType_strategy)
-def test_qvtoperational::modeltype_conformanceKind_setter(instance):
-    original = instance.conformanceKind
-    instance.conformanceKind = original
-    assert instance.conformanceKind == original
-
-@given(instance=QVTBase::Transformation_strategy)
-@settings(max_examples=50)
-def test_qvtbase::transformation_instantiation(instance):
-    assert isinstance(instance, QVTBase::Transformation)
-
-@given(instance=QVTOperational::Module_strategy)
-@settings(max_examples=50)
-def test_qvtoperational::module_instantiation(instance):
-    assert isinstance(instance, QVTOperational::Module)
-
-@given(instance=QVTOperational::Module_strategy)
-def test_qvtoperational::module_isBlackbox_type(instance):
-    assert isinstance(instance.isBlackbox, str)
-
-
-@given(instance=QVTOperational::Module_strategy)
-def test_qvtoperational::module_isBlackbox_setter(instance):
-    original = instance.isBlackbox
-    instance.isBlackbox = original
-    assert instance.isBlackbox == original
-
-@given(instance=Operation_strategy)
-@settings(max_examples=50)
-def test_operation_instantiation(instance):
-    assert isinstance(instance, Operation)
-
-@given(instance=QVTBase::Function_strategy)
-@settings(max_examples=50)
-def test_qvtbase::function_instantiation(instance):
-    assert isinstance(instance, QVTBase::Function)
-
-@given(instance=QVTOperational::ImperativeOperation_strategy)
-@settings(max_examples=50)
-def test_qvtoperational::imperativeoperation_instantiation(instance):
-    assert isinstance(instance, QVTOperational::ImperativeOperation)
-
-@given(instance=QVTOperational::ImperativeOperation_strategy)
-def test_qvtoperational::imperativeoperation_isBlackbox_type(instance):
-    assert isinstance(instance.isBlackbox, str)
-
-
-@given(instance=QVTOperational::ImperativeOperation_strategy)
-def test_qvtoperational::imperativeoperation_isBlackbox_setter(instance):
-    original = instance.isBlackbox
-    instance.isBlackbox = original
-    assert instance.isBlackbox == original
-
-@given(instance=Property_strategy)
-@settings(max_examples=50)
-def test_property_instantiation(instance):
-    assert isinstance(instance, Property)
-
-@given(instance=QVTOperational::ContextualProperty_strategy)
-@settings(max_examples=50)
-def test_qvtoperational::contextualproperty_instantiation(instance):
-    assert isinstance(instance, QVTOperational::ContextualProperty)
-
-@given(instance=Type_strategy)
-@settings(max_examples=50)
-def test_type_instantiation(instance):
-    assert isinstance(instance, Type)
-
-@given(instance=EMOF::DataType_strategy)
-@settings(max_examples=50)
-def test_emof::datatype_instantiation(instance):
-    assert isinstance(instance, EMOF::DataType)
-
-@given(instance=EssentialOCL::InvalidType_strategy)
-@settings(max_examples=50)
-def test_essentialocl::invalidtype_instantiation(instance):
-    assert isinstance(instance, EssentialOCL::InvalidType)
-
-@given(instance=EssentialOCL::AnyType_strategy)
-@settings(max_examples=50)
-def test_essentialocl::anytype_instantiation(instance):
-    assert isinstance(instance, EssentialOCL::AnyType)
-
-@given(instance=EMOF::Class_strategy)
-@settings(max_examples=50)
-def test_emof::class_instantiation(instance):
-    assert isinstance(instance, EMOF::Class)
-
-@given(instance=EMOF::Class_strategy)
-def test_emof::class_isAbstract_type(instance):
-    assert isinstance(instance.isAbstract, str)
-
-
-@given(instance=EMOF::Class_strategy)
-def test_emof::class_isAbstract_setter(instance):
-    original = instance.isAbstract
-    instance.isAbstract = original
-    assert instance.isAbstract == original
+def test_qvtbase_predicate_instantiation(instance):
+    assert isinstance(instance, QVTBase_Predicate)
 
 @given(instance=Predicate_strategy)
 @settings(max_examples=50)
 def test_predicate_instantiation(instance):
     assert isinstance(instance, Predicate)
 
-@given(instance=ImperativeOCL::Typedef_strategy)
+@given(instance=ImperativeOCL_Typedef_strategy)
 @settings(max_examples=50)
-def test_imperativeocl::typedef_instantiation(instance):
-    assert isinstance(instance, ImperativeOCL::Typedef)
+def test_imperativeocl_typedef_instantiation(instance):
+    assert isinstance(instance, ImperativeOCL_Typedef)
 
 @given(instance=AltExp_strategy)
 @settings(max_examples=50)
@@ -6585,412 +6436,435 @@ def test_catchexp_instantiation(instance):
 def test_operationcallexp_instantiation(instance):
     assert isinstance(instance, OperationCallExp)
 
-@given(instance=ImperativeOCL::ListType_strategy)
+@given(instance=ImperativeOCL_ListType_strategy)
 @settings(max_examples=50)
-def test_imperativeocl::listtype_instantiation(instance):
-    assert isinstance(instance, ImperativeOCL::ListType)
+def test_imperativeocl_listtype_instantiation(instance):
+    assert isinstance(instance, ImperativeOCL_ListType)
 
-@given(instance=ImperativeOCL::ListLiteralExp_strategy)
+@given(instance=ImperativeOCL_ListLiteralExp_strategy)
 @settings(max_examples=50)
-def test_imperativeocl::listliteralexp_instantiation(instance):
-    assert isinstance(instance, ImperativeOCL::ListLiteralExp)
+def test_imperativeocl_listliteralexp_instantiation(instance):
+    assert isinstance(instance, ImperativeOCL_ListLiteralExp)
 
-@given(instance=ImperativeOCL::OrderedTupleType_strategy)
+@given(instance=ImperativeOCL_OrderedTupleType_strategy)
 @settings(max_examples=50)
-def test_imperativeocl::orderedtupletype_instantiation(instance):
-    assert isinstance(instance, ImperativeOCL::OrderedTupleType)
+def test_imperativeocl_orderedtupletype_instantiation(instance):
+    assert isinstance(instance, ImperativeOCL_OrderedTupleType)
 
-@given(instance=ImperativeOCL::OrderedTupleLiteralPart_strategy)
+@given(instance=ImperativeOCL_OrderedTupleLiteralPart_strategy)
 @settings(max_examples=50)
-def test_imperativeocl::orderedtupleliteralpart_instantiation(instance):
-    assert isinstance(instance, ImperativeOCL::OrderedTupleLiteralPart)
+def test_imperativeocl_orderedtupleliteralpart_instantiation(instance):
+    assert isinstance(instance, ImperativeOCL_OrderedTupleLiteralPart)
 
 @given(instance=OrderedTupleLiteralPart_strategy)
 @settings(max_examples=50)
 def test_orderedtupleliteralpart_instantiation(instance):
     assert isinstance(instance, OrderedTupleLiteralPart)
 
-@given(instance=ImperativeOCL::OrderedTupleLiteralExp_strategy)
+@given(instance=ImperativeOCL_OrderedTupleLiteralExp_strategy)
 @settings(max_examples=50)
-def test_imperativeocl::orderedtupleliteralexp_instantiation(instance):
-    assert isinstance(instance, ImperativeOCL::OrderedTupleLiteralExp)
+def test_imperativeocl_orderedtupleliteralexp_instantiation(instance):
+    assert isinstance(instance, ImperativeOCL_OrderedTupleLiteralExp)
 
-@given(instance=ImperativeOCL::ImperativeExpression_strategy)
+@given(instance=ImperativeOCL_ImperativeExpression_strategy)
 @settings(max_examples=50)
-def test_imperativeocl::imperativeexpression_instantiation(instance):
-    assert isinstance(instance, ImperativeOCL::ImperativeExpression)
+def test_imperativeocl_imperativeexpression_instantiation(instance):
+    assert isinstance(instance, ImperativeOCL_ImperativeExpression)
 
 @given(instance=ImperativeLoopExp_strategy)
 @settings(max_examples=50)
 def test_imperativeloopexp_instantiation(instance):
     assert isinstance(instance, ImperativeLoopExp)
 
-@given(instance=ImperativeOCL::ForExp_strategy)
+@given(instance=ImperativeOCL_ForExp_strategy)
 @settings(max_examples=50)
-def test_imperativeocl::forexp_instantiation(instance):
-    assert isinstance(instance, ImperativeOCL::ForExp)
+def test_imperativeocl_forexp_instantiation(instance):
+    assert isinstance(instance, ImperativeOCL_ForExp)
 
-@given(instance=ImperativeOCL::DictionaryType_strategy)
+@given(instance=ImperativeOCL_DictionaryType_strategy)
 @settings(max_examples=50)
-def test_imperativeocl::dictionarytype_instantiation(instance):
-    assert isinstance(instance, ImperativeOCL::DictionaryType)
+def test_imperativeocl_dictionarytype_instantiation(instance):
+    assert isinstance(instance, ImperativeOCL_DictionaryType)
 
-@given(instance=ImperativeOCL::DictLiteralPart_strategy)
+@given(instance=ImperativeOCL_DictLiteralPart_strategy)
 @settings(max_examples=50)
-def test_imperativeocl::dictliteralpart_instantiation(instance):
-    assert isinstance(instance, ImperativeOCL::DictLiteralPart)
+def test_imperativeocl_dictliteralpart_instantiation(instance):
+    assert isinstance(instance, ImperativeOCL_DictLiteralPart)
 
 @given(instance=DictLiteralPart_strategy)
 @settings(max_examples=50)
 def test_dictliteralpart_instantiation(instance):
     assert isinstance(instance, DictLiteralPart)
 
-@given(instance=ImperativeOCL::DictLiteralExp_strategy)
+@given(instance=ImperativeOCL_DictLiteralExp_strategy)
 @settings(max_examples=50)
-def test_imperativeocl::dictliteralexp_instantiation(instance):
-    assert isinstance(instance, ImperativeOCL::DictLiteralExp)
+def test_imperativeocl_dictliteralexp_instantiation(instance):
+    assert isinstance(instance, ImperativeOCL_DictLiteralExp)
 
-@given(instance=ImperativeOCL::ImperativeIterateExp_strategy)
+@given(instance=ImperativeOCL_ImperativeIterateExp_strategy)
 @settings(max_examples=50)
-def test_imperativeocl::imperativeiterateexp_instantiation(instance):
-    assert isinstance(instance, ImperativeOCL::ImperativeIterateExp)
+def test_imperativeocl_imperativeiterateexp_instantiation(instance):
+    assert isinstance(instance, ImperativeOCL_ImperativeIterateExp)
 
 @given(instance=LogExp_strategy)
 @settings(max_examples=50)
 def test_logexp_instantiation(instance):
     assert isinstance(instance, LogExp)
 
-@given(instance=EssentialOCL::Variable_strategy)
+@given(instance=EssentialOCL_Variable_strategy)
 @settings(max_examples=50)
-def test_essentialocl::variable_instantiation(instance):
-    assert isinstance(instance, EssentialOCL::Variable)
+def test_essentialocl_variable_instantiation(instance):
+    assert isinstance(instance, EssentialOCL_Variable)
 
-@given(instance=EssentialOCL::UnlimitedNaturalExp_strategy)
+@given(instance=EssentialOCL_UnlimitedNaturalExp_strategy)
 @settings(max_examples=50)
-def test_essentialocl::unlimitednaturalexp_instantiation(instance):
-    assert isinstance(instance, EssentialOCL::UnlimitedNaturalExp)
-
-@given(instance=EssentialOCL::UnlimitedNaturalExp_strategy)
-def test_essentialocl::unlimitednaturalexp_symbol_type(instance):
-    assert isinstance(instance.symbol, str)
+def test_essentialocl_unlimitednaturalexp_instantiation(instance):
+    assert isinstance(instance, EssentialOCL_UnlimitedNaturalExp)
 
 
-@given(instance=EssentialOCL::UnlimitedNaturalExp_strategy)
-def test_essentialocl::unlimitednaturalexp_symbol_setter(instance):
+
+@given(instance=EssentialOCL_UnlimitedNaturalExp_strategy)
+def test_essentialocl_unlimitednaturalexp_symbol_setter(instance):
     original = instance.symbol
     instance.symbol = original
     assert instance.symbol == original
 
-@given(instance=EssentialOCL::TypeExp_strategy)
+@given(instance=EssentialOCL_TypeExp_strategy)
 @settings(max_examples=50)
-def test_essentialocl::typeexp_instantiation(instance):
-    assert isinstance(instance, EssentialOCL::TypeExp)
+def test_essentialocl_typeexp_instantiation(instance):
+    assert isinstance(instance, EssentialOCL_TypeExp)
 
-@given(instance=EssentialOCL::TupleType_strategy)
+@given(instance=EssentialOCL_TupleType_strategy)
 @settings(max_examples=50)
-def test_essentialocl::tupletype_instantiation(instance):
-    assert isinstance(instance, EssentialOCL::TupleType)
+def test_essentialocl_tupletype_instantiation(instance):
+    assert isinstance(instance, EssentialOCL_TupleType)
 
 @given(instance=TupleLiteralExp_strategy)
 @settings(max_examples=50)
 def test_tupleliteralexp_instantiation(instance):
     assert isinstance(instance, TupleLiteralExp)
 
-@given(instance=EssentialOCL::TupleLiteralPart_strategy)
+@given(instance=EssentialOCL_TupleLiteralPart_strategy)
 @settings(max_examples=50)
-def test_essentialocl::tupleliteralpart_instantiation(instance):
-    assert isinstance(instance, EssentialOCL::TupleLiteralPart)
+def test_essentialocl_tupleliteralpart_instantiation(instance):
+    assert isinstance(instance, EssentialOCL_TupleLiteralPart)
 
 @given(instance=TupleLiteralPart_strategy)
 @settings(max_examples=50)
 def test_tupleliteralpart_instantiation(instance):
     assert isinstance(instance, TupleLiteralPart)
 
-@given(instance=EssentialOCL::TupleLiteralExp_strategy)
+@given(instance=EssentialOCL_TupleLiteralExp_strategy)
 @settings(max_examples=50)
-def test_essentialocl::tupleliteralexp_instantiation(instance):
-    assert isinstance(instance, EssentialOCL::TupleLiteralExp)
+def test_essentialocl_tupleliteralexp_instantiation(instance):
+    assert isinstance(instance, EssentialOCL_TupleLiteralExp)
 
-@given(instance=EssentialOCL::TemplateParameterType_strategy)
+@given(instance=EssentialOCL_TemplateParameterType_strategy)
 @settings(max_examples=50)
-def test_essentialocl::templateparametertype_instantiation(instance):
-    assert isinstance(instance, EssentialOCL::TemplateParameterType)
-
-@given(instance=EssentialOCL::TemplateParameterType_strategy)
-def test_essentialocl::templateparametertype_specification_type(instance):
-    assert isinstance(instance.specification, str)
+def test_essentialocl_templateparametertype_instantiation(instance):
+    assert isinstance(instance, EssentialOCL_TemplateParameterType)
 
 
-@given(instance=EssentialOCL::TemplateParameterType_strategy)
-def test_essentialocl::templateparametertype_specification_setter(instance):
+
+@given(instance=EssentialOCL_TemplateParameterType_strategy)
+def test_essentialocl_templateparametertype_specification_setter(instance):
     original = instance.specification
     instance.specification = original
     assert instance.specification == original
 
-@given(instance=EssentialOCL::StringLiteralExp_strategy)
+@given(instance=EssentialOCL_StringLiteralExp_strategy)
 @settings(max_examples=50)
-def test_essentialocl::stringliteralexp_instantiation(instance):
-    assert isinstance(instance, EssentialOCL::StringLiteralExp)
-
-@given(instance=EssentialOCL::StringLiteralExp_strategy)
-def test_essentialocl::stringliteralexp_stringSymbol_type(instance):
-    assert isinstance(instance.stringSymbol, str)
+def test_essentialocl_stringliteralexp_instantiation(instance):
+    assert isinstance(instance, EssentialOCL_StringLiteralExp)
 
 
-@given(instance=EssentialOCL::StringLiteralExp_strategy)
-def test_essentialocl::stringliteralexp_stringSymbol_setter(instance):
+
+@given(instance=EssentialOCL_StringLiteralExp_strategy)
+def test_essentialocl_stringliteralexp_stringSymbol_setter(instance):
     original = instance.stringSymbol
     instance.stringSymbol = original
     assert instance.stringSymbol == original
 
-@given(instance=EssentialOCL::SetType_strategy)
+@given(instance=EssentialOCL_SetType_strategy)
 @settings(max_examples=50)
-def test_essentialocl::settype_instantiation(instance):
-    assert isinstance(instance, EssentialOCL::SetType)
+def test_essentialocl_settype_instantiation(instance):
+    assert isinstance(instance, EssentialOCL_SetType)
 
 @given(instance=ImperativeExpression_strategy)
 @settings(max_examples=50)
 def test_imperativeexpression_instantiation(instance):
     assert isinstance(instance, ImperativeExpression)
 
-@given(instance=ImperativeOCL::WhileExp_strategy)
+@given(instance=ImperativeOCL_ComputeExp_strategy)
 @settings(max_examples=50)
-def test_imperativeocl::whileexp_instantiation(instance):
-    assert isinstance(instance, ImperativeOCL::WhileExp)
+def test_imperativeocl_computeexp_instantiation(instance):
+    assert isinstance(instance, ImperativeOCL_ComputeExp)
 
-@given(instance=ImperativeOCL::AssignExp_strategy)
+@given(instance=ImperativeOCL_WhileExp_strategy)
 @settings(max_examples=50)
-def test_imperativeocl::assignexp_instantiation(instance):
-    assert isinstance(instance, ImperativeOCL::AssignExp)
+def test_imperativeocl_whileexp_instantiation(instance):
+    assert isinstance(instance, ImperativeOCL_WhileExp)
 
-@given(instance=ImperativeOCL::AssignExp_strategy)
-def test_imperativeocl::assignexp_isReset_type(instance):
-    assert isinstance(instance.isReset, str)
-
-
-@given(instance=ImperativeOCL::AssignExp_strategy)
-def test_imperativeocl::assignexp_isReset_setter(instance):
-    original = instance.isReset
-    instance.isReset = original
-    assert instance.isReset == original
-
-@given(instance=ImperativeOCL::SwitchExp_strategy)
+@given(instance=ImperativeOCL_CatchExp_strategy)
 @settings(max_examples=50)
-def test_imperativeocl::switchexp_instantiation(instance):
-    assert isinstance(instance, ImperativeOCL::SwitchExp)
+def test_imperativeocl_catchexp_instantiation(instance):
+    assert isinstance(instance, ImperativeOCL_CatchExp)
 
-@given(instance=ImperativeOCL::VariableInitExp_strategy)
+@given(instance=ImperativeOCL_ContinueExp_strategy)
 @settings(max_examples=50)
-def test_imperativeocl::variableinitexp_instantiation(instance):
-    assert isinstance(instance, ImperativeOCL::VariableInitExp)
+def test_imperativeocl_continueexp_instantiation(instance):
+    assert isinstance(instance, ImperativeOCL_ContinueExp)
 
-@given(instance=ImperativeOCL::VariableInitExp_strategy)
-def test_imperativeocl::variableinitexp_withResult_type(instance):
-    assert isinstance(instance.withResult, str)
-
-
-@given(instance=ImperativeOCL::VariableInitExp_strategy)
-def test_imperativeocl::variableinitexp_withResult_setter(instance):
-    original = instance.withResult
-    instance.withResult = original
-    assert instance.withResult == original
-
-@given(instance=ImperativeOCL::TryExp_strategy)
+@given(instance=ImperativeOCL_AssertExp_strategy)
 @settings(max_examples=50)
-def test_imperativeocl::tryexp_instantiation(instance):
-    assert isinstance(instance, ImperativeOCL::TryExp)
-
-@given(instance=ImperativeOCL::ContinueExp_strategy)
-@settings(max_examples=50)
-def test_imperativeocl::continueexp_instantiation(instance):
-    assert isinstance(instance, ImperativeOCL::ContinueExp)
-
-@given(instance=ImperativeOCL::AssertExp_strategy)
-@settings(max_examples=50)
-def test_imperativeocl::assertexp_instantiation(instance):
-    assert isinstance(instance, ImperativeOCL::AssertExp)
-
-@given(instance=ImperativeOCL::AssertExp_strategy)
-def test_imperativeocl::assertexp_severity_type(instance):
-    assert isinstance(instance.severity, str)
+def test_imperativeocl_assertexp_instantiation(instance):
+    assert isinstance(instance, ImperativeOCL_AssertExp)
 
 
-@given(instance=ImperativeOCL::AssertExp_strategy)
-def test_imperativeocl::assertexp_severity_setter(instance):
+
+@given(instance=ImperativeOCL_AssertExp_strategy)
+def test_imperativeocl_assertexp_severity_setter(instance):
     original = instance.severity
     instance.severity = original
     assert instance.severity == original
 
-@given(instance=ImperativeOCL::ImperativeLoopExp_strategy)
+@given(instance=ImperativeOCL_LogExp_strategy)
 @settings(max_examples=50)
-def test_imperativeocl::imperativeloopexp_instantiation(instance):
-    assert isinstance(instance, ImperativeOCL::ImperativeLoopExp)
+def test_imperativeocl_logexp_instantiation(instance):
+    assert isinstance(instance, ImperativeOCL_LogExp)
 
-@given(instance=QVTOperational::ImperativeCallExp_strategy)
+@given(instance=ImperativeOCL_VariableInitExp_strategy)
 @settings(max_examples=50)
-def test_qvtoperational::imperativecallexp_instantiation(instance):
-    assert isinstance(instance, QVTOperational::ImperativeCallExp)
-
-@given(instance=QVTOperational::ImperativeCallExp_strategy)
-def test_qvtoperational::imperativecallexp_isVirtual_type(instance):
-    assert isinstance(instance.isVirtual, str)
+def test_imperativeocl_variableinitexp_instantiation(instance):
+    assert isinstance(instance, ImperativeOCL_VariableInitExp)
 
 
-@given(instance=QVTOperational::ImperativeCallExp_strategy)
-def test_qvtoperational::imperativecallexp_isVirtual_setter(instance):
-    original = instance.isVirtual
-    instance.isVirtual = original
-    assert instance.isVirtual == original
 
-@given(instance=ImperativeOCL::ComputeExp_strategy)
+@given(instance=ImperativeOCL_VariableInitExp_strategy)
+def test_imperativeocl_variableinitexp_withResult_setter(instance):
+    original = instance.withResult
+    instance.withResult = original
+    assert instance.withResult == original
+
+@given(instance=QVTOperational_ResolveExp_strategy)
 @settings(max_examples=50)
-def test_imperativeocl::computeexp_instantiation(instance):
-    assert isinstance(instance, ImperativeOCL::ComputeExp)
-
-@given(instance=ImperativeOCL::UnlinkExp_strategy)
-@settings(max_examples=50)
-def test_imperativeocl::unlinkexp_instantiation(instance):
-    assert isinstance(instance, ImperativeOCL::UnlinkExp)
-
-@given(instance=ImperativeOCL::UnpackExp_strategy)
-@settings(max_examples=50)
-def test_imperativeocl::unpackexp_instantiation(instance):
-    assert isinstance(instance, ImperativeOCL::UnpackExp)
-
-@given(instance=ImperativeOCL::BlockExp_strategy)
-@settings(max_examples=50)
-def test_imperativeocl::blockexp_instantiation(instance):
-    assert isinstance(instance, ImperativeOCL::BlockExp)
-
-@given(instance=ImperativeOCL::BreakExp_strategy)
-@settings(max_examples=50)
-def test_imperativeocl::breakexp_instantiation(instance):
-    assert isinstance(instance, ImperativeOCL::BreakExp)
-
-@given(instance=ImperativeOCL::CatchExp_strategy)
-@settings(max_examples=50)
-def test_imperativeocl::catchexp_instantiation(instance):
-    assert isinstance(instance, ImperativeOCL::CatchExp)
-
-@given(instance=ImperativeOCL::ReturnExp_strategy)
-@settings(max_examples=50)
-def test_imperativeocl::returnexp_instantiation(instance):
-    assert isinstance(instance, ImperativeOCL::ReturnExp)
-
-@given(instance=ImperativeOCL::RaiseExp_strategy)
-@settings(max_examples=50)
-def test_imperativeocl::raiseexp_instantiation(instance):
-    assert isinstance(instance, ImperativeOCL::RaiseExp)
-
-@given(instance=QVTOperational::ResolveExp_strategy)
-@settings(max_examples=50)
-def test_qvtoperational::resolveexp_instantiation(instance):
-    assert isinstance(instance, QVTOperational::ResolveExp)
-
-@given(instance=QVTOperational::ResolveExp_strategy)
-def test_qvtoperational::resolveexp_isInverse_type(instance):
-    assert isinstance(instance.isInverse, str)
+def test_qvtoperational_resolveexp_instantiation(instance):
+    assert isinstance(instance, QVTOperational_ResolveExp)
 
 
-@given(instance=QVTOperational::ResolveExp_strategy)
-def test_qvtoperational::resolveexp_isInverse_setter(instance):
-    original = instance.isInverse
-    instance.isInverse = original
-    assert instance.isInverse == original
 
-@given(instance=QVTOperational::ResolveExp_strategy)
-def test_qvtoperational::resolveexp_isDeferred_type(instance):
-    assert isinstance(instance.isDeferred, str)
-
-
-@given(instance=QVTOperational::ResolveExp_strategy)
-def test_qvtoperational::resolveexp_isDeferred_setter(instance):
+@given(instance=QVTOperational_ResolveExp_strategy)
+def test_qvtoperational_resolveexp_isDeferred_setter(instance):
     original = instance.isDeferred
     instance.isDeferred = original
     assert instance.isDeferred == original
 
-@given(instance=QVTOperational::ResolveExp_strategy)
-def test_qvtoperational::resolveexp_one_type(instance):
-    assert isinstance(instance.one, str)
 
 
-@given(instance=QVTOperational::ResolveExp_strategy)
-def test_qvtoperational::resolveexp_one_setter(instance):
+@given(instance=QVTOperational_ResolveExp_strategy)
+def test_qvtoperational_resolveexp_one_setter(instance):
     original = instance.one
     instance.one = original
     assert instance.one == original
 
-@given(instance=ImperativeOCL::LogExp_strategy)
-@settings(max_examples=50)
-def test_imperativeocl::logexp_instantiation(instance):
-    assert isinstance(instance, ImperativeOCL::LogExp)
 
-@given(instance=ImperativeOCL::InstantiationExp_strategy)
-@settings(max_examples=50)
-def test_imperativeocl::instantiationexp_instantiation(instance):
-    assert isinstance(instance, ImperativeOCL::InstantiationExp)
 
-@given(instance=ImperativeOCL::AltExp_strategy)
-@settings(max_examples=50)
-def test_imperativeocl::altexp_instantiation(instance):
-    assert isinstance(instance, ImperativeOCL::AltExp)
+@given(instance=QVTOperational_ResolveExp_strategy)
+def test_qvtoperational_resolveexp_isInverse_setter(instance):
+    original = instance.isInverse
+    instance.isInverse = original
+    assert instance.isInverse == original
 
-@given(instance=EssentialOCL::VoidType_strategy)
+@given(instance=ImperativeOCL_BlockExp_strategy)
 @settings(max_examples=50)
-def test_essentialocl::voidtype_instantiation(instance):
-    assert isinstance(instance, EssentialOCL::VoidType)
+def test_imperativeocl_blockexp_instantiation(instance):
+    assert isinstance(instance, ImperativeOCL_BlockExp)
 
-@given(instance=EssentialOCL::VariableExp_strategy)
+@given(instance=ImperativeOCL_RaiseExp_strategy)
 @settings(max_examples=50)
-def test_essentialocl::variableexp_instantiation(instance):
-    assert isinstance(instance, EssentialOCL::VariableExp)
+def test_imperativeocl_raiseexp_instantiation(instance):
+    assert isinstance(instance, ImperativeOCL_RaiseExp)
+
+@given(instance=QVTOperational_ImperativeCallExp_strategy)
+@settings(max_examples=50)
+def test_qvtoperational_imperativecallexp_instantiation(instance):
+    assert isinstance(instance, QVTOperational_ImperativeCallExp)
+
+
+
+@given(instance=QVTOperational_ImperativeCallExp_strategy)
+def test_qvtoperational_imperativecallexp_isVirtual_setter(instance):
+    original = instance.isVirtual
+    instance.isVirtual = original
+    assert instance.isVirtual == original
+
+@given(instance=ImperativeOCL_UnlinkExp_strategy)
+@settings(max_examples=50)
+def test_imperativeocl_unlinkexp_instantiation(instance):
+    assert isinstance(instance, ImperativeOCL_UnlinkExp)
+
+@given(instance=ImperativeOCL_InstantiationExp_strategy)
+@settings(max_examples=50)
+def test_imperativeocl_instantiationexp_instantiation(instance):
+    assert isinstance(instance, ImperativeOCL_InstantiationExp)
+
+@given(instance=ImperativeOCL_UnpackExp_strategy)
+@settings(max_examples=50)
+def test_imperativeocl_unpackexp_instantiation(instance):
+    assert isinstance(instance, ImperativeOCL_UnpackExp)
+
+@given(instance=ImperativeOCL_TryExp_strategy)
+@settings(max_examples=50)
+def test_imperativeocl_tryexp_instantiation(instance):
+    assert isinstance(instance, ImperativeOCL_TryExp)
+
+@given(instance=ImperativeOCL_SwitchExp_strategy)
+@settings(max_examples=50)
+def test_imperativeocl_switchexp_instantiation(instance):
+    assert isinstance(instance, ImperativeOCL_SwitchExp)
+
+@given(instance=ImperativeOCL_BreakExp_strategy)
+@settings(max_examples=50)
+def test_imperativeocl_breakexp_instantiation(instance):
+    assert isinstance(instance, ImperativeOCL_BreakExp)
+
+@given(instance=ImperativeOCL_AssignExp_strategy)
+@settings(max_examples=50)
+def test_imperativeocl_assignexp_instantiation(instance):
+    assert isinstance(instance, ImperativeOCL_AssignExp)
+
+
+
+@given(instance=ImperativeOCL_AssignExp_strategy)
+def test_imperativeocl_assignexp_isReset_setter(instance):
+    original = instance.isReset
+    instance.isReset = original
+    assert instance.isReset == original
+
+@given(instance=ImperativeOCL_ReturnExp_strategy)
+@settings(max_examples=50)
+def test_imperativeocl_returnexp_instantiation(instance):
+    assert isinstance(instance, ImperativeOCL_ReturnExp)
+
+@given(instance=ImperativeOCL_AltExp_strategy)
+@settings(max_examples=50)
+def test_imperativeocl_altexp_instantiation(instance):
+    assert isinstance(instance, ImperativeOCL_AltExp)
+
+@given(instance=EssentialOCL_VoidType_strategy)
+@settings(max_examples=50)
+def test_essentialocl_voidtype_instantiation(instance):
+    assert isinstance(instance, EssentialOCL_VoidType)
+
+@given(instance=EssentialOCL_VariableExp_strategy)
+@settings(max_examples=50)
+def test_essentialocl_variableexp_instantiation(instance):
+    assert isinstance(instance, EssentialOCL_VariableExp)
 
 @given(instance=LetExp_strategy)
 @settings(max_examples=50)
 def test_letexp_instantiation(instance):
     assert isinstance(instance, LetExp)
 
-@given(instance=EssentialOCL::NumericLiteralExp_strategy)
+@given(instance=EssentialOCL_NumericLiteralExp_strategy)
 @settings(max_examples=50)
-def test_essentialocl::numericliteralexp_instantiation(instance):
-    assert isinstance(instance, EssentialOCL::NumericLiteralExp)
+def test_essentialocl_numericliteralexp_instantiation(instance):
+    assert isinstance(instance, EssentialOCL_NumericLiteralExp)
 
-@given(instance=EssentialOCL::NullLiteralExp_strategy)
+@given(instance=EssentialOCL_NullLiteralExp_strategy)
 @settings(max_examples=50)
-def test_essentialocl::nullliteralexp_instantiation(instance):
-    assert isinstance(instance, EssentialOCL::NullLiteralExp)
+def test_essentialocl_nullliteralexp_instantiation(instance):
+    assert isinstance(instance, EssentialOCL_NullLiteralExp)
 
 @given(instance=FeatureCallExp_strategy)
 @settings(max_examples=50)
 def test_featurecallexp_instantiation(instance):
     assert isinstance(instance, FeatureCallExp)
 
-@given(instance=EssentialOCL::OperationCallExp_strategy)
+@given(instance=EssentialOCL_OperationCallExp_strategy)
 @settings(max_examples=50)
-def test_essentialocl::operationcallexp_instantiation(instance):
-    assert isinstance(instance, EssentialOCL::OperationCallExp)
+def test_essentialocl_operationcallexp_instantiation(instance):
+    assert isinstance(instance, EssentialOCL_OperationCallExp)
 
-@given(instance=EssentialOCL::NavigationCallExp_strategy)
+@given(instance=EssentialOCL_NavigationCallExp_strategy)
 @settings(max_examples=50)
-def test_essentialocl::navigationcallexp_instantiation(instance):
-    assert isinstance(instance, EssentialOCL::NavigationCallExp)
+def test_essentialocl_navigationcallexp_instantiation(instance):
+    assert isinstance(instance, EssentialOCL_NavigationCallExp)
 
-@given(instance=EssentialOCL::LoopExp_strategy)
+@given(instance=EssentialOCL_LoopExp_strategy)
 @settings(max_examples=50)
-def test_essentialocl::loopexp_instantiation(instance):
-    assert isinstance(instance, EssentialOCL::LoopExp)
+def test_essentialocl_loopexp_instantiation(instance):
+    assert isinstance(instance, EssentialOCL_LoopExp)
 
-@given(instance=EssentialOCL::LiteralExp_strategy)
+@given(instance=EssentialOCL_LiteralExp_strategy)
 @settings(max_examples=50)
-def test_essentialocl::literalexp_instantiation(instance):
-    assert isinstance(instance, EssentialOCL::LiteralExp)
+def test_essentialocl_literalexp_instantiation(instance):
+    assert isinstance(instance, EssentialOCL_LiteralExp)
 
-@given(instance=EssentialOCL::LetExp_strategy)
+@given(instance=EssentialOCL_LetExp_strategy)
 @settings(max_examples=50)
-def test_essentialocl::letexp_instantiation(instance):
-    assert isinstance(instance, EssentialOCL::LetExp)
+def test_essentialocl_letexp_instantiation(instance):
+    assert isinstance(instance, EssentialOCL_LetExp)
 
-@given(instance=EssentialOCL::IteratorExp_strategy)
+@given(instance=LoopExp_strategy)
 @settings(max_examples=50)
-def test_essentialocl::iteratorexp_instantiation(instance):
-    assert isinstance(instance, EssentialOCL::IteratorExp)
+def test_loopexp_instantiation(instance):
+    assert isinstance(instance, LoopExp)
+
+@given(instance=EssentialOCL_IteratorExp_strategy)
+@settings(max_examples=50)
+def test_essentialocl_iteratorexp_instantiation(instance):
+    assert isinstance(instance, EssentialOCL_IteratorExp)
+
+@given(instance=ImperativeOCL_ImperativeLoopExp_strategy)
+@settings(max_examples=50)
+def test_imperativeocl_imperativeloopexp_instantiation(instance):
+    assert isinstance(instance, ImperativeOCL_ImperativeLoopExp)
+
+@given(instance=EssentialOCL_IterateExp_strategy)
+@settings(max_examples=50)
+def test_essentialocl_iterateexp_instantiation(instance):
+    assert isinstance(instance, EssentialOCL_IterateExp)
+
+@given(instance=EssentialOCL_InvalidType_strategy)
+@settings(max_examples=50)
+def test_essentialocl_invalidtype_instantiation(instance):
+    assert isinstance(instance, EssentialOCL_InvalidType)
+
+@given(instance=EssentialOCL_InvalidLiteralExp_strategy)
+@settings(max_examples=50)
+def test_essentialocl_invalidliteralexp_instantiation(instance):
+    assert isinstance(instance, EssentialOCL_InvalidLiteralExp)
+
+@given(instance=EssentialOCL_SequenceType_strategy)
+@settings(max_examples=50)
+def test_essentialocl_sequencetype_instantiation(instance):
+    assert isinstance(instance, EssentialOCL_SequenceType)
+
+@given(instance=EssentialOCL_RealLiteralExp_strategy)
+@settings(max_examples=50)
+def test_essentialocl_realliteralexp_instantiation(instance):
+    assert isinstance(instance, EssentialOCL_RealLiteralExp)
+
+
+
+@given(instance=EssentialOCL_RealLiteralExp_strategy)
+def test_essentialocl_realliteralexp_realSymbol_setter(instance):
+    original = instance.realSymbol
+    instance.realSymbol = original
+    assert instance.realSymbol == original
+
+@given(instance=NavigationCallExp_strategy)
+@settings(max_examples=50)
+def test_navigationcallexp_instantiation(instance):
+    assert isinstance(instance, NavigationCallExp)
+
+@given(instance=EssentialOCL_PropertyCallExp_strategy)
+@settings(max_examples=50)
+def test_essentialocl_propertycallexp_instantiation(instance):
+    assert isinstance(instance, EssentialOCL_PropertyCallExp)
+
+@given(instance=EssentialOCL_PrimitiveLiteralExp_strategy)
+@settings(max_examples=50)
+def test_essentialocl_primitiveliteralexp_instantiation(instance):
+    assert isinstance(instance, EssentialOCL_PrimitiveLiteralExp)

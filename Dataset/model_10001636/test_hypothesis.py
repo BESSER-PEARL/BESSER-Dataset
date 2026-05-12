@@ -3,7 +3,7 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
 from python_code import (
     Elevator,
@@ -60,9 +60,6 @@ Elevator_strategy = st.builds(
 def test_elevator_instantiation(instance):
     assert isinstance(instance, Elevator)
 
-@given(instance=Elevator_strategy)
-def test_elevator_Floor_type(instance):
-    assert isinstance(instance.Floor, int)
 
 
 @given(instance=Elevator_strategy)

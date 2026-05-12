@@ -3,7 +3,7 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
 from python_code import (
     recieve_attendance_sms_external,
@@ -199,17 +199,8 @@ def test_admin_constructor_exists():
 def test_admin_constructor_args():
     sig = inspect.signature(ADMIN.__init__)
     params = list(sig.parameters.keys())
-    assert "password" in params, "Missing parameter 'password'"
     assert "id" in params, "Missing parameter 'id'"
-
-def test_admin_has_password():
-    assert hasattr(ADMIN, "password")
-    descriptor = None
-    for klass in ADMIN.__mro__:
-        if "password" in klass.__dict__:
-            descriptor = klass.__dict__["password"]
-            break
-    assert isinstance(descriptor, property)
+    assert "password" in params, "Missing parameter 'password'"
 
 def test_admin_has_id():
     assert hasattr(ADMIN, "id")
@@ -217,6 +208,15 @@ def test_admin_has_id():
     for klass in ADMIN.__mro__:
         if "id" in klass.__dict__:
             descriptor = klass.__dict__["id"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_admin_has_password():
+    assert hasattr(ADMIN, "password")
+    descriptor = None
+    for klass in ADMIN.__mro__:
+        if "password" in klass.__dict__:
+            descriptor = klass.__dict__["password"]
             break
     assert isinstance(descriptor, property)
 
@@ -233,9 +233,18 @@ def test_parent_constructor_exists():
 def test_parent_constructor_args():
     sig = inspect.signature(PARENT.__init__)
     params = list(sig.parameters.keys())
+    assert "phoneNumber" in params, "Missing parameter 'phoneNumber'"
     assert "password" in params, "Missing parameter 'password'"
     assert "id" in params, "Missing parameter 'id'"
-    assert "phoneNumber" in params, "Missing parameter 'phoneNumber'"
+
+def test_parent_has_phoneNumber():
+    assert hasattr(PARENT, "phoneNumber")
+    descriptor = None
+    for klass in PARENT.__mro__:
+        if "phoneNumber" in klass.__dict__:
+            descriptor = klass.__dict__["phoneNumber"]
+            break
+    assert isinstance(descriptor, property)
 
 def test_parent_has_password():
     assert hasattr(PARENT, "password")
@@ -252,15 +261,6 @@ def test_parent_has_id():
     for klass in PARENT.__mro__:
         if "id" in klass.__dict__:
             descriptor = klass.__dict__["id"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_parent_has_phoneNumber():
-    assert hasattr(PARENT, "phoneNumber")
-    descriptor = None
-    for klass in PARENT.__mro__:
-        if "phoneNumber" in klass.__dict__:
-            descriptor = klass.__dict__["phoneNumber"]
             break
     assert isinstance(descriptor, property)
 
@@ -449,19 +449,19 @@ take_attendance_call_external_strategy = st.builds(
 )
 ADMIN_strategy = st.builds(
     ADMIN,
-    password=
-        safe_text,
     id=
+        safe_text,
+    password=
         safe_text
 )
 PARENT_strategy = st.builds(
     PARENT,
+    phoneNumber=
+        st.integers(),
     password=
         safe_text,
     id=
-        safe_text,
-    phoneNumber=
-        st.integers()
+        safe_text
 )
 STUDENT_strategy = st.builds(
     STUDENT,
@@ -553,20 +553,6 @@ def test_take_attendance_call_external_instantiation(instance):
 def test_admin_instantiation(instance):
     assert isinstance(instance, ADMIN)
 
-@given(instance=ADMIN_strategy)
-def test_admin_password_type(instance):
-    assert isinstance(instance.password, str)
-
-
-@given(instance=ADMIN_strategy)
-def test_admin_password_setter(instance):
-    original = instance.password
-    instance.password = original
-    assert instance.password == original
-
-@given(instance=ADMIN_strategy)
-def test_admin_id_type(instance):
-    assert isinstance(instance.id, str)
 
 
 @given(instance=ADMIN_strategy)
@@ -575,36 +561,19 @@ def test_admin_id_setter(instance):
     instance.id = original
     assert instance.id == original
 
-@given(instance=PARENT_strategy)
-@settings(max_examples=50)
-def test_parent_instantiation(instance):
-    assert isinstance(instance, PARENT)
-
-@given(instance=PARENT_strategy)
-def test_parent_password_type(instance):
-    assert isinstance(instance.password, str)
 
 
-@given(instance=PARENT_strategy)
-def test_parent_password_setter(instance):
+@given(instance=ADMIN_strategy)
+def test_admin_password_setter(instance):
     original = instance.password
     instance.password = original
     assert instance.password == original
 
 @given(instance=PARENT_strategy)
-def test_parent_id_type(instance):
-    assert isinstance(instance.id, str)
+@settings(max_examples=50)
+def test_parent_instantiation(instance):
+    assert isinstance(instance, PARENT)
 
-
-@given(instance=PARENT_strategy)
-def test_parent_id_setter(instance):
-    original = instance.id
-    instance.id = original
-    assert instance.id == original
-
-@given(instance=PARENT_strategy)
-def test_parent_phoneNumber_type(instance):
-    assert isinstance(instance.phoneNumber, int)
 
 
 @given(instance=PARENT_strategy)
@@ -613,14 +582,27 @@ def test_parent_phoneNumber_setter(instance):
     instance.phoneNumber = original
     assert instance.phoneNumber == original
 
+
+
+@given(instance=PARENT_strategy)
+def test_parent_password_setter(instance):
+    original = instance.password
+    instance.password = original
+    assert instance.password == original
+
+
+
+@given(instance=PARENT_strategy)
+def test_parent_id_setter(instance):
+    original = instance.id
+    instance.id = original
+    assert instance.id == original
+
 @given(instance=STUDENT_strategy)
 @settings(max_examples=50)
 def test_student_instantiation(instance):
     assert isinstance(instance, STUDENT)
 
-@given(instance=STUDENT_strategy)
-def test_student_password_type(instance):
-    assert isinstance(instance.password, str)
 
 
 @given(instance=STUDENT_strategy)
@@ -629,9 +611,6 @@ def test_student_password_setter(instance):
     instance.password = original
     assert instance.password == original
 
-@given(instance=STUDENT_strategy)
-def test_student_id_type(instance):
-    assert isinstance(instance.id, str)
 
 
 @given(instance=STUDENT_strategy)
@@ -645,9 +624,6 @@ def test_student_id_setter(instance):
 def test_faculty_instantiation(instance):
     assert isinstance(instance, FACULTY)
 
-@given(instance=FACULTY_strategy)
-def test_faculty_password_type(instance):
-    assert isinstance(instance.password, str)
 
 
 @given(instance=FACULTY_strategy)
@@ -656,9 +632,6 @@ def test_faculty_password_setter(instance):
     instance.password = original
     assert instance.password == original
 
-@given(instance=FACULTY_strategy)
-def test_faculty_id_type(instance):
-    assert isinstance(instance.id, str)
 
 
 @given(instance=FACULTY_strategy)

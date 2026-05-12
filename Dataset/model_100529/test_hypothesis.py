@@ -3,22 +3,22 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     Actor,
-    UseCase::NamedElement,
-    UseCase::BehavioredClassifier,
-    UseCase::UseCaseContainer,
-    UseCase::Include,
+    UseCase_NamedElement,
+    UseCase_BehavioredClassifier,
+    UseCase_UseCaseContainer,
+    UseCase_Include,
     Extend,
     Include,
     NamedElement,
-    UseCase::Association,
-    UseCase::UseCase,
-    UseCase::Actor,
+    UseCase_UseCase,
+    UseCase_Association,
+    UseCase_Actor,
     UseCase,
-    UseCase::Extend,
+    UseCase_Extend,
 )
 
 # =============================================================================
@@ -41,23 +41,23 @@ def test_actor_constructor_args():
 
 
 
-def test_usecase::namedelement_is_not_abstract():
-    assert not inspect.isabstract(UseCase::NamedElement)
+def test_usecase_namedelement_is_not_abstract():
+    assert not inspect.isabstract(UseCase_NamedElement)
 
 
-def test_usecase::namedelement_constructor_exists():
-    assert callable(UseCase::NamedElement.__init__)
+def test_usecase_namedelement_constructor_exists():
+    assert callable(UseCase_NamedElement.__init__)
 
 
-def test_usecase::namedelement_constructor_args():
-    sig = inspect.signature(UseCase::NamedElement.__init__)
+def test_usecase_namedelement_constructor_args():
+    sig = inspect.signature(UseCase_NamedElement.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_usecase::namedelement_has_name():
-    assert hasattr(UseCase::NamedElement, "name")
+def test_usecase_namedelement_has_name():
+    assert hasattr(UseCase_NamedElement, "name")
     descriptor = None
-    for klass in UseCase::NamedElement.__mro__:
+    for klass in UseCase_NamedElement.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -65,44 +65,44 @@ def test_usecase::namedelement_has_name():
 
 
 
-def test_usecase::behavioredclassifier_is_not_abstract():
-    assert not inspect.isabstract(UseCase::BehavioredClassifier)
+def test_usecase_behavioredclassifier_is_not_abstract():
+    assert not inspect.isabstract(UseCase_BehavioredClassifier)
 
 
-def test_usecase::behavioredclassifier_constructor_exists():
-    assert callable(UseCase::BehavioredClassifier.__init__)
+def test_usecase_behavioredclassifier_constructor_exists():
+    assert callable(UseCase_BehavioredClassifier.__init__)
 
 
-def test_usecase::behavioredclassifier_constructor_args():
-    sig = inspect.signature(UseCase::BehavioredClassifier.__init__)
+def test_usecase_behavioredclassifier_constructor_args():
+    sig = inspect.signature(UseCase_BehavioredClassifier.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_usecase::usecasecontainer_is_not_abstract():
-    assert not inspect.isabstract(UseCase::UseCaseContainer)
+def test_usecase_usecasecontainer_is_not_abstract():
+    assert not inspect.isabstract(UseCase_UseCaseContainer)
 
 
-def test_usecase::usecasecontainer_constructor_exists():
-    assert callable(UseCase::UseCaseContainer.__init__)
+def test_usecase_usecasecontainer_constructor_exists():
+    assert callable(UseCase_UseCaseContainer.__init__)
 
 
-def test_usecase::usecasecontainer_constructor_args():
-    sig = inspect.signature(UseCase::UseCaseContainer.__init__)
+def test_usecase_usecasecontainer_constructor_args():
+    sig = inspect.signature(UseCase_UseCaseContainer.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_usecase::include_is_not_abstract():
-    assert not inspect.isabstract(UseCase::Include)
+def test_usecase_include_is_not_abstract():
+    assert not inspect.isabstract(UseCase_Include)
 
 
-def test_usecase::include_constructor_exists():
-    assert callable(UseCase::Include.__init__)
+def test_usecase_include_constructor_exists():
+    assert callable(UseCase_Include.__init__)
 
 
-def test_usecase::include_constructor_args():
-    sig = inspect.signature(UseCase::Include.__init__)
+def test_usecase_include_constructor_args():
+    sig = inspect.signature(UseCase_Include.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -149,44 +149,44 @@ def test_namedelement_constructor_args():
 
 
 
-def test_usecase::association_is_not_abstract():
-    assert not inspect.isabstract(UseCase::Association)
+def test_usecase_usecase_is_not_abstract():
+    assert not inspect.isabstract(UseCase_UseCase)
 
 
-def test_usecase::association_constructor_exists():
-    assert callable(UseCase::Association.__init__)
+def test_usecase_usecase_constructor_exists():
+    assert callable(UseCase_UseCase.__init__)
 
 
-def test_usecase::association_constructor_args():
-    sig = inspect.signature(UseCase::Association.__init__)
+def test_usecase_usecase_constructor_args():
+    sig = inspect.signature(UseCase_UseCase.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_usecase::usecase_is_not_abstract():
-    assert not inspect.isabstract(UseCase::UseCase)
+def test_usecase_association_is_not_abstract():
+    assert not inspect.isabstract(UseCase_Association)
 
 
-def test_usecase::usecase_constructor_exists():
-    assert callable(UseCase::UseCase.__init__)
+def test_usecase_association_constructor_exists():
+    assert callable(UseCase_Association.__init__)
 
 
-def test_usecase::usecase_constructor_args():
-    sig = inspect.signature(UseCase::UseCase.__init__)
+def test_usecase_association_constructor_args():
+    sig = inspect.signature(UseCase_Association.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_usecase::actor_is_not_abstract():
-    assert not inspect.isabstract(UseCase::Actor)
+def test_usecase_actor_is_not_abstract():
+    assert not inspect.isabstract(UseCase_Actor)
 
 
-def test_usecase::actor_constructor_exists():
-    assert callable(UseCase::Actor.__init__)
+def test_usecase_actor_constructor_exists():
+    assert callable(UseCase_Actor.__init__)
 
 
-def test_usecase::actor_constructor_args():
-    sig = inspect.signature(UseCase::Actor.__init__)
+def test_usecase_actor_constructor_args():
+    sig = inspect.signature(UseCase_Actor.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -205,16 +205,16 @@ def test_usecase_constructor_args():
 
 
 
-def test_usecase::extend_is_not_abstract():
-    assert not inspect.isabstract(UseCase::Extend)
+def test_usecase_extend_is_not_abstract():
+    assert not inspect.isabstract(UseCase_Extend)
 
 
-def test_usecase::extend_constructor_exists():
-    assert callable(UseCase::Extend.__init__)
+def test_usecase_extend_constructor_exists():
+    assert callable(UseCase_Extend.__init__)
 
 
-def test_usecase::extend_constructor_args():
-    sig = inspect.signature(UseCase::Extend.__init__)
+def test_usecase_extend_constructor_args():
+    sig = inspect.signature(UseCase_Extend.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -232,19 +232,19 @@ safe_text = st.text(
 Actor_strategy = st.builds(
     Actor,
 )
-UseCase::NamedElement_strategy = st.builds(
-    UseCase::NamedElement,
+UseCase_NamedElement_strategy = st.builds(
+    UseCase_NamedElement,
     name=
         safe_text
 )
-UseCase::BehavioredClassifier_strategy = st.builds(
-    UseCase::BehavioredClassifier,
+UseCase_BehavioredClassifier_strategy = st.builds(
+    UseCase_BehavioredClassifier,
 )
-UseCase::UseCaseContainer_strategy = st.builds(
-    UseCase::UseCaseContainer,
+UseCase_UseCaseContainer_strategy = st.builds(
+    UseCase_UseCaseContainer,
 )
-UseCase::Include_strategy = st.builds(
-    UseCase::Include,
+UseCase_Include_strategy = st.builds(
+    UseCase_Include,
 )
 Extend_strategy = st.builds(
     Extend,
@@ -255,20 +255,20 @@ Include_strategy = st.builds(
 NamedElement_strategy = st.builds(
     NamedElement,
 )
-UseCase::Association_strategy = st.builds(
-    UseCase::Association,
+UseCase_UseCase_strategy = st.builds(
+    UseCase_UseCase,
 )
-UseCase::UseCase_strategy = st.builds(
-    UseCase::UseCase,
+UseCase_Association_strategy = st.builds(
+    UseCase_Association,
 )
-UseCase::Actor_strategy = st.builds(
-    UseCase::Actor,
+UseCase_Actor_strategy = st.builds(
+    UseCase_Actor,
 )
 UseCase_strategy = st.builds(
     UseCase,
 )
-UseCase::Extend_strategy = st.builds(
-    UseCase::Extend,
+UseCase_Extend_strategy = st.builds(
+    UseCase_Extend,
 )
 
 @given(instance=Actor_strategy)
@@ -276,36 +276,33 @@ UseCase::Extend_strategy = st.builds(
 def test_actor_instantiation(instance):
     assert isinstance(instance, Actor)
 
-@given(instance=UseCase::NamedElement_strategy)
+@given(instance=UseCase_NamedElement_strategy)
 @settings(max_examples=50)
-def test_usecase::namedelement_instantiation(instance):
-    assert isinstance(instance, UseCase::NamedElement)
-
-@given(instance=UseCase::NamedElement_strategy)
-def test_usecase::namedelement_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_usecase_namedelement_instantiation(instance):
+    assert isinstance(instance, UseCase_NamedElement)
 
 
-@given(instance=UseCase::NamedElement_strategy)
-def test_usecase::namedelement_name_setter(instance):
+
+@given(instance=UseCase_NamedElement_strategy)
+def test_usecase_namedelement_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=UseCase::BehavioredClassifier_strategy)
+@given(instance=UseCase_BehavioredClassifier_strategy)
 @settings(max_examples=50)
-def test_usecase::behavioredclassifier_instantiation(instance):
-    assert isinstance(instance, UseCase::BehavioredClassifier)
+def test_usecase_behavioredclassifier_instantiation(instance):
+    assert isinstance(instance, UseCase_BehavioredClassifier)
 
-@given(instance=UseCase::UseCaseContainer_strategy)
+@given(instance=UseCase_UseCaseContainer_strategy)
 @settings(max_examples=50)
-def test_usecase::usecasecontainer_instantiation(instance):
-    assert isinstance(instance, UseCase::UseCaseContainer)
+def test_usecase_usecasecontainer_instantiation(instance):
+    assert isinstance(instance, UseCase_UseCaseContainer)
 
-@given(instance=UseCase::Include_strategy)
+@given(instance=UseCase_Include_strategy)
 @settings(max_examples=50)
-def test_usecase::include_instantiation(instance):
-    assert isinstance(instance, UseCase::Include)
+def test_usecase_include_instantiation(instance):
+    assert isinstance(instance, UseCase_Include)
 
 @given(instance=Extend_strategy)
 @settings(max_examples=50)
@@ -322,27 +319,27 @@ def test_include_instantiation(instance):
 def test_namedelement_instantiation(instance):
     assert isinstance(instance, NamedElement)
 
-@given(instance=UseCase::Association_strategy)
+@given(instance=UseCase_UseCase_strategy)
 @settings(max_examples=50)
-def test_usecase::association_instantiation(instance):
-    assert isinstance(instance, UseCase::Association)
+def test_usecase_usecase_instantiation(instance):
+    assert isinstance(instance, UseCase_UseCase)
 
-@given(instance=UseCase::UseCase_strategy)
+@given(instance=UseCase_Association_strategy)
 @settings(max_examples=50)
-def test_usecase::usecase_instantiation(instance):
-    assert isinstance(instance, UseCase::UseCase)
+def test_usecase_association_instantiation(instance):
+    assert isinstance(instance, UseCase_Association)
 
-@given(instance=UseCase::Actor_strategy)
+@given(instance=UseCase_Actor_strategy)
 @settings(max_examples=50)
-def test_usecase::actor_instantiation(instance):
-    assert isinstance(instance, UseCase::Actor)
+def test_usecase_actor_instantiation(instance):
+    assert isinstance(instance, UseCase_Actor)
 
 @given(instance=UseCase_strategy)
 @settings(max_examples=50)
 def test_usecase_instantiation(instance):
     assert isinstance(instance, UseCase)
 
-@given(instance=UseCase::Extend_strategy)
+@given(instance=UseCase_Extend_strategy)
 @settings(max_examples=50)
-def test_usecase::extend_instantiation(instance):
-    assert isinstance(instance, UseCase::Extend)
+def test_usecase_extend_instantiation(instance):
+    assert isinstance(instance, UseCase_Extend)

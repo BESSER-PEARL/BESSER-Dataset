@@ -3,80 +3,80 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     AbstractCExpression,
-    model::CUnparsedExpression,
-    model::CConditionalExpression,
+    model_CUnparsedExpression,
+    model_CConditionalExpression,
     AbstractCStatement,
-    model::CIfStatement,
-    model::CExpressionStatement,
-    model::CUnparsedStatement,
-    model::CBlockStatement,
+    model_CIfStatement,
+    model_CUnparsedStatement,
+    model_CExpressionStatement,
+    model_CBlockStatement,
     AbstractMMethodDeclaration,
     AbstractMMethodImplementation,
-    model::MMethodImplementationParameter,
+    model_MMethodImplementationParameter,
     AbstractMMethodLike,
     AbstractMImplementableMethodDeclaration,
-    model::MDeclaredMethodImplementation,
-    model::AbstractMImplementableMethodDeclaration,
-    model::MDirectMethodImplementation,
-    model::MImplicitMethodDeclaration,
-    model::MAbstractClassMethodDeclaration,
+    model_MDeclaredMethodImplementation,
+    model_AbstractMImplementableMethodDeclaration,
+    model_MDirectMethodImplementation,
+    model_MImplicitMethodDeclaration,
+    model_MAbstractClassMethodDeclaration,
     AbstractMClassFieldDeclaration,
     AbstractMFieldDeclaration,
-    model::AbstractMClassFieldDeclaration,
-    model::AbstractCExpression,
+    model_AbstractMClassFieldDeclaration,
+    model_AbstractCExpression,
     AbstractMTypeWithNameDeclaration,
-    model::CDeclarationStatement,
-    model::MConstructorParameter,
-    model::MMethodDeclarationParameter,
-    model::AbstractMMethodDeclaration,
-    model::AbstractMFieldDeclaration,
-    model::MInterfaceMethodDeclaration,
-    model::MConstantInterfaceFieldDeclaration,
+    model_AbstractMMethodDeclaration,
+    model_MMethodDeclarationParameter,
+    model_CDeclarationStatement,
+    model_MConstructorParameter,
+    model_AbstractMFieldDeclaration,
+    model_MInterfaceMethodDeclaration,
+    model_MConstantInterfaceFieldDeclaration,
     AbstractMInterface,
     MDeclaredClass,
-    model::MAbstractDeclaredClass,
+    model_MAbstractDeclaredClass,
     AbstractMExternalType,
-    model::MExternalInterface,
-    model::MNativeMethodDeclaration,
-    model::AbstractMMethodImplementation,
-    model::MConstructor,
-    model::MInstanceClassFieldDeclaration,
-    model::MStaticClassFieldDeclaration,
+    model_MExternalInterface,
+    model_MNativeMethodDeclaration,
+    model_AbstractMMethodImplementation,
+    model_MConstructor,
+    model_MInstanceClassFieldDeclaration,
+    model_MStaticClassFieldDeclaration,
     AbstractMDeclaredType,
-    model::MDeclaredInterface,
+    model_MDeclaredInterface,
     AbstractMClass,
-    model::MExternalClass,
-    model::MDeclaredClass,
+    model_MExternalClass,
+    model_MDeclaredClass,
     AbstractMType,
-    model::AbstractMInterface,
-    model::AbstractMClass,
-    model::AbstractMTypeWithNameDeclaration,
-    model::AbstractCStatement,
+    model_AbstractMInterface,
+    model_AbstractMClass,
+    model_AbstractMTypeWithNameDeclaration,
+    model_AbstractCStatement,
     AbstractModifiers,
-    model::AbstractMMethodLike,
-    model::AbstractModifiers,
+    model_AbstractMMethodLike,
+    model_AbstractModifiers,
     AbstractMTypeReference,
-    model::MExternalTypeReference,
-    model::MPrimitiveTypeReference,
-    model::MDeclaredTypeReference,
-    model::AbstractMTypeReference,
-    model::AbstractMType,
+    model_MExternalTypeReference,
+    model_MPrimitiveTypeReference,
+    model_MDeclaredTypeReference,
+    model_AbstractMTypeReference,
+    model_AbstractMType,
     AbstractMTypeContainer,
-    model::AbstractMDeclaredType,
-    model::AbstractMTypeContainer,
+    model_AbstractMDeclaredType,
+    model_AbstractMTypeContainer,
     AbstractMResource,
-    model::MCompilationUnit,
-    model::MResource,
-    model::AbstractMResource,
-    model::AbstractMExternalType,
+    model_MCompilationUnit,
+    model_MResource,
+    model_AbstractMResource,
+    model_AbstractMExternalType,
     AbstractMPackageContainer,
-    model::MRoot,
-    model::MPackage,
-    model::AbstractMPackageContainer,
+    model_MRoot,
+    model_MPackage,
+    model_AbstractMPackageContainer,
     MPrimitiveTypes,
     MVisibility,
 )
@@ -101,23 +101,23 @@ def test_abstractcexpression_constructor_args():
 
 
 
-def test_model::cunparsedexpression_is_not_abstract():
-    assert not inspect.isabstract(model::CUnparsedExpression)
+def test_model_cunparsedexpression_is_not_abstract():
+    assert not inspect.isabstract(model_CUnparsedExpression)
 
 
-def test_model::cunparsedexpression_constructor_exists():
-    assert callable(model::CUnparsedExpression.__init__)
+def test_model_cunparsedexpression_constructor_exists():
+    assert callable(model_CUnparsedExpression.__init__)
 
 
-def test_model::cunparsedexpression_constructor_args():
-    sig = inspect.signature(model::CUnparsedExpression.__init__)
+def test_model_cunparsedexpression_constructor_args():
+    sig = inspect.signature(model_CUnparsedExpression.__init__)
     params = list(sig.parameters.keys())
     assert "code" in params, "Missing parameter 'code'"
 
-def test_model::cunparsedexpression_has_code():
-    assert hasattr(model::CUnparsedExpression, "code")
+def test_model_cunparsedexpression_has_code():
+    assert hasattr(model_CUnparsedExpression, "code")
     descriptor = None
-    for klass in model::CUnparsedExpression.__mro__:
+    for klass in model_CUnparsedExpression.__mro__:
         if "code" in klass.__dict__:
             descriptor = klass.__dict__["code"]
             break
@@ -125,16 +125,16 @@ def test_model::cunparsedexpression_has_code():
 
 
 
-def test_model::cconditionalexpression_is_not_abstract():
-    assert not inspect.isabstract(model::CConditionalExpression)
+def test_model_cconditionalexpression_is_not_abstract():
+    assert not inspect.isabstract(model_CConditionalExpression)
 
 
-def test_model::cconditionalexpression_constructor_exists():
-    assert callable(model::CConditionalExpression.__init__)
+def test_model_cconditionalexpression_constructor_exists():
+    assert callable(model_CConditionalExpression.__init__)
 
 
-def test_model::cconditionalexpression_constructor_args():
-    sig = inspect.signature(model::CConditionalExpression.__init__)
+def test_model_cconditionalexpression_constructor_args():
+    sig = inspect.signature(model_CConditionalExpression.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -153,51 +153,37 @@ def test_abstractcstatement_constructor_args():
 
 
 
-def test_model::cifstatement_is_not_abstract():
-    assert not inspect.isabstract(model::CIfStatement)
+def test_model_cifstatement_is_not_abstract():
+    assert not inspect.isabstract(model_CIfStatement)
 
 
-def test_model::cifstatement_constructor_exists():
-    assert callable(model::CIfStatement.__init__)
+def test_model_cifstatement_constructor_exists():
+    assert callable(model_CIfStatement.__init__)
 
 
-def test_model::cifstatement_constructor_args():
-    sig = inspect.signature(model::CIfStatement.__init__)
+def test_model_cifstatement_constructor_args():
+    sig = inspect.signature(model_CIfStatement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_model::cexpressionstatement_is_not_abstract():
-    assert not inspect.isabstract(model::CExpressionStatement)
+def test_model_cunparsedstatement_is_not_abstract():
+    assert not inspect.isabstract(model_CUnparsedStatement)
 
 
-def test_model::cexpressionstatement_constructor_exists():
-    assert callable(model::CExpressionStatement.__init__)
+def test_model_cunparsedstatement_constructor_exists():
+    assert callable(model_CUnparsedStatement.__init__)
 
 
-def test_model::cexpressionstatement_constructor_args():
-    sig = inspect.signature(model::CExpressionStatement.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_model::cunparsedstatement_is_not_abstract():
-    assert not inspect.isabstract(model::CUnparsedStatement)
-
-
-def test_model::cunparsedstatement_constructor_exists():
-    assert callable(model::CUnparsedStatement.__init__)
-
-
-def test_model::cunparsedstatement_constructor_args():
-    sig = inspect.signature(model::CUnparsedStatement.__init__)
+def test_model_cunparsedstatement_constructor_args():
+    sig = inspect.signature(model_CUnparsedStatement.__init__)
     params = list(sig.parameters.keys())
     assert "code" in params, "Missing parameter 'code'"
 
-def test_model::cunparsedstatement_has_code():
-    assert hasattr(model::CUnparsedStatement, "code")
+def test_model_cunparsedstatement_has_code():
+    assert hasattr(model_CUnparsedStatement, "code")
     descriptor = None
-    for klass in model::CUnparsedStatement.__mro__:
+    for klass in model_CUnparsedStatement.__mro__:
         if "code" in klass.__dict__:
             descriptor = klass.__dict__["code"]
             break
@@ -205,16 +191,30 @@ def test_model::cunparsedstatement_has_code():
 
 
 
-def test_model::cblockstatement_is_not_abstract():
-    assert not inspect.isabstract(model::CBlockStatement)
+def test_model_cexpressionstatement_is_not_abstract():
+    assert not inspect.isabstract(model_CExpressionStatement)
 
 
-def test_model::cblockstatement_constructor_exists():
-    assert callable(model::CBlockStatement.__init__)
+def test_model_cexpressionstatement_constructor_exists():
+    assert callable(model_CExpressionStatement.__init__)
 
 
-def test_model::cblockstatement_constructor_args():
-    sig = inspect.signature(model::CBlockStatement.__init__)
+def test_model_cexpressionstatement_constructor_args():
+    sig = inspect.signature(model_CExpressionStatement.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_model_cblockstatement_is_not_abstract():
+    assert not inspect.isabstract(model_CBlockStatement)
+
+
+def test_model_cblockstatement_constructor_exists():
+    assert callable(model_CBlockStatement.__init__)
+
+
+def test_model_cblockstatement_constructor_args():
+    sig = inspect.signature(model_CBlockStatement.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -247,35 +247,35 @@ def test_abstractmmethodimplementation_constructor_args():
 
 
 
-def test_model::mmethodimplementationparameter_is_not_abstract():
-    assert not inspect.isabstract(model::MMethodImplementationParameter)
+def test_model_mmethodimplementationparameter_is_not_abstract():
+    assert not inspect.isabstract(model_MMethodImplementationParameter)
 
 
-def test_model::mmethodimplementationparameter_constructor_exists():
-    assert callable(model::MMethodImplementationParameter.__init__)
+def test_model_mmethodimplementationparameter_constructor_exists():
+    assert callable(model_MMethodImplementationParameter.__init__)
 
 
-def test_model::mmethodimplementationparameter_constructor_args():
-    sig = inspect.signature(model::MMethodImplementationParameter.__init__)
+def test_model_mmethodimplementationparameter_constructor_args():
+    sig = inspect.signature(model_MMethodImplementationParameter.__init__)
     params = list(sig.parameters.keys())
-    assert "final" in params, "Missing parameter 'final'"
     assert "name" in params, "Missing parameter 'name'"
+    assert "final" in params, "Missing parameter 'final'"
 
-def test_model::mmethodimplementationparameter_has_final():
-    assert hasattr(model::MMethodImplementationParameter, "final")
+def test_model_mmethodimplementationparameter_has_name():
+    assert hasattr(model_MMethodImplementationParameter, "name")
     descriptor = None
-    for klass in model::MMethodImplementationParameter.__mro__:
-        if "final" in klass.__dict__:
-            descriptor = klass.__dict__["final"]
+    for klass in model_MMethodImplementationParameter.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
-def test_model::mmethodimplementationparameter_has_name():
-    assert hasattr(model::MMethodImplementationParameter, "name")
+def test_model_mmethodimplementationparameter_has_final():
+    assert hasattr(model_MMethodImplementationParameter, "final")
     descriptor = None
-    for klass in model::MMethodImplementationParameter.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
+    for klass in model_MMethodImplementationParameter.__mro__:
+        if "final" in klass.__dict__:
+            descriptor = klass.__dict__["final"]
             break
     assert isinstance(descriptor, property)
 
@@ -309,79 +309,79 @@ def test_abstractmimplementablemethoddeclaration_constructor_args():
 
 
 
-def test_model::mdeclaredmethodimplementation_is_not_abstract():
-    assert not inspect.isabstract(model::MDeclaredMethodImplementation)
+def test_model_mdeclaredmethodimplementation_is_not_abstract():
+    assert not inspect.isabstract(model_MDeclaredMethodImplementation)
 
 
-def test_model::mdeclaredmethodimplementation_constructor_exists():
-    assert callable(model::MDeclaredMethodImplementation.__init__)
+def test_model_mdeclaredmethodimplementation_constructor_exists():
+    assert callable(model_MDeclaredMethodImplementation.__init__)
 
 
-def test_model::mdeclaredmethodimplementation_constructor_args():
-    sig = inspect.signature(model::MDeclaredMethodImplementation.__init__)
+def test_model_mdeclaredmethodimplementation_constructor_args():
+    sig = inspect.signature(model_MDeclaredMethodImplementation.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_model::abstractmimplementablemethoddeclaration_is_not_abstract():
-    assert not inspect.isabstract(model::AbstractMImplementableMethodDeclaration)
+def test_model_abstractmimplementablemethoddeclaration_is_not_abstract():
+    assert not inspect.isabstract(model_AbstractMImplementableMethodDeclaration)
 
 
-def test_model::abstractmimplementablemethoddeclaration_constructor_exists():
-    assert callable(model::AbstractMImplementableMethodDeclaration.__init__)
+def test_model_abstractmimplementablemethoddeclaration_constructor_exists():
+    assert callable(model_AbstractMImplementableMethodDeclaration.__init__)
 
 
-def test_model::abstractmimplementablemethoddeclaration_constructor_args():
-    sig = inspect.signature(model::AbstractMImplementableMethodDeclaration.__init__)
+def test_model_abstractmimplementablemethoddeclaration_constructor_args():
+    sig = inspect.signature(model_AbstractMImplementableMethodDeclaration.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_model::mdirectmethodimplementation_is_not_abstract():
-    assert not inspect.isabstract(model::MDirectMethodImplementation)
+def test_model_mdirectmethodimplementation_is_not_abstract():
+    assert not inspect.isabstract(model_MDirectMethodImplementation)
 
 
-def test_model::mdirectmethodimplementation_constructor_exists():
-    assert callable(model::MDirectMethodImplementation.__init__)
+def test_model_mdirectmethodimplementation_constructor_exists():
+    assert callable(model_MDirectMethodImplementation.__init__)
 
 
-def test_model::mdirectmethodimplementation_constructor_args():
-    sig = inspect.signature(model::MDirectMethodImplementation.__init__)
+def test_model_mdirectmethodimplementation_constructor_args():
+    sig = inspect.signature(model_MDirectMethodImplementation.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_model::mimplicitmethoddeclaration_is_not_abstract():
-    assert not inspect.isabstract(model::MImplicitMethodDeclaration)
+def test_model_mimplicitmethoddeclaration_is_not_abstract():
+    assert not inspect.isabstract(model_MImplicitMethodDeclaration)
 
 
-def test_model::mimplicitmethoddeclaration_constructor_exists():
-    assert callable(model::MImplicitMethodDeclaration.__init__)
+def test_model_mimplicitmethoddeclaration_constructor_exists():
+    assert callable(model_MImplicitMethodDeclaration.__init__)
 
 
-def test_model::mimplicitmethoddeclaration_constructor_args():
-    sig = inspect.signature(model::MImplicitMethodDeclaration.__init__)
+def test_model_mimplicitmethoddeclaration_constructor_args():
+    sig = inspect.signature(model_MImplicitMethodDeclaration.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_model::mabstractclassmethoddeclaration_is_not_abstract():
-    assert not inspect.isabstract(model::MAbstractClassMethodDeclaration)
+def test_model_mabstractclassmethoddeclaration_is_not_abstract():
+    assert not inspect.isabstract(model_MAbstractClassMethodDeclaration)
 
 
-def test_model::mabstractclassmethoddeclaration_constructor_exists():
-    assert callable(model::MAbstractClassMethodDeclaration.__init__)
+def test_model_mabstractclassmethoddeclaration_constructor_exists():
+    assert callable(model_MAbstractClassMethodDeclaration.__init__)
 
 
-def test_model::mabstractclassmethoddeclaration_constructor_args():
-    sig = inspect.signature(model::MAbstractClassMethodDeclaration.__init__)
+def test_model_mabstractclassmethoddeclaration_constructor_args():
+    sig = inspect.signature(model_MAbstractClassMethodDeclaration.__init__)
     params = list(sig.parameters.keys())
     assert "visibility" in params, "Missing parameter 'visibility'"
 
-def test_model::mabstractclassmethoddeclaration_has_visibility():
-    assert hasattr(model::MAbstractClassMethodDeclaration, "visibility")
+def test_model_mabstractclassmethoddeclaration_has_visibility():
+    assert hasattr(model_MAbstractClassMethodDeclaration, "visibility")
     descriptor = None
-    for klass in model::MAbstractClassMethodDeclaration.__mro__:
+    for klass in model_MAbstractClassMethodDeclaration.__mro__:
         if "visibility" in klass.__dict__:
             descriptor = klass.__dict__["visibility"]
             break
@@ -417,33 +417,33 @@ def test_abstractmfielddeclaration_constructor_args():
 
 
 
-def test_model::abstractmclassfielddeclaration_is_not_abstract():
-    assert not inspect.isabstract(model::AbstractMClassFieldDeclaration)
+def test_model_abstractmclassfielddeclaration_is_not_abstract():
+    assert not inspect.isabstract(model_AbstractMClassFieldDeclaration)
 
 
-def test_model::abstractmclassfielddeclaration_constructor_exists():
-    assert callable(model::AbstractMClassFieldDeclaration.__init__)
+def test_model_abstractmclassfielddeclaration_constructor_exists():
+    assert callable(model_AbstractMClassFieldDeclaration.__init__)
 
 
-def test_model::abstractmclassfielddeclaration_constructor_args():
-    sig = inspect.signature(model::AbstractMClassFieldDeclaration.__init__)
+def test_model_abstractmclassfielddeclaration_constructor_args():
+    sig = inspect.signature(model_AbstractMClassFieldDeclaration.__init__)
     params = list(sig.parameters.keys())
     assert "visibility" in params, "Missing parameter 'visibility'"
     assert "final" in params, "Missing parameter 'final'"
 
-def test_model::abstractmclassfielddeclaration_has_visibility():
-    assert hasattr(model::AbstractMClassFieldDeclaration, "visibility")
+def test_model_abstractmclassfielddeclaration_has_visibility():
+    assert hasattr(model_AbstractMClassFieldDeclaration, "visibility")
     descriptor = None
-    for klass in model::AbstractMClassFieldDeclaration.__mro__:
+    for klass in model_AbstractMClassFieldDeclaration.__mro__:
         if "visibility" in klass.__dict__:
             descriptor = klass.__dict__["visibility"]
             break
     assert isinstance(descriptor, property)
 
-def test_model::abstractmclassfielddeclaration_has_final():
-    assert hasattr(model::AbstractMClassFieldDeclaration, "final")
+def test_model_abstractmclassfielddeclaration_has_final():
+    assert hasattr(model_AbstractMClassFieldDeclaration, "final")
     descriptor = None
-    for klass in model::AbstractMClassFieldDeclaration.__mro__:
+    for klass in model_AbstractMClassFieldDeclaration.__mro__:
         if "final" in klass.__dict__:
             descriptor = klass.__dict__["final"]
             break
@@ -451,16 +451,16 @@ def test_model::abstractmclassfielddeclaration_has_final():
 
 
 
-def test_model::abstractcexpression_is_not_abstract():
-    assert not inspect.isabstract(model::AbstractCExpression)
+def test_model_abstractcexpression_is_not_abstract():
+    assert not inspect.isabstract(model_AbstractCExpression)
 
 
-def test_model::abstractcexpression_constructor_exists():
-    assert callable(model::AbstractCExpression.__init__)
+def test_model_abstractcexpression_constructor_exists():
+    assert callable(model_AbstractCExpression.__init__)
 
 
-def test_model::abstractcexpression_constructor_args():
-    sig = inspect.signature(model::AbstractCExpression.__init__)
+def test_model_abstractcexpression_constructor_args():
+    sig = inspect.signature(model_AbstractCExpression.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -479,23 +479,51 @@ def test_abstractmtypewithnamedeclaration_constructor_args():
 
 
 
-def test_model::cdeclarationstatement_is_not_abstract():
-    assert not inspect.isabstract(model::CDeclarationStatement)
+def test_model_abstractmmethoddeclaration_is_not_abstract():
+    assert not inspect.isabstract(model_AbstractMMethodDeclaration)
 
 
-def test_model::cdeclarationstatement_constructor_exists():
-    assert callable(model::CDeclarationStatement.__init__)
+def test_model_abstractmmethoddeclaration_constructor_exists():
+    assert callable(model_AbstractMMethodDeclaration.__init__)
 
 
-def test_model::cdeclarationstatement_constructor_args():
-    sig = inspect.signature(model::CDeclarationStatement.__init__)
+def test_model_abstractmmethoddeclaration_constructor_args():
+    sig = inspect.signature(model_AbstractMMethodDeclaration.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_model_mmethoddeclarationparameter_is_not_abstract():
+    assert not inspect.isabstract(model_MMethodDeclarationParameter)
+
+
+def test_model_mmethoddeclarationparameter_constructor_exists():
+    assert callable(model_MMethodDeclarationParameter.__init__)
+
+
+def test_model_mmethoddeclarationparameter_constructor_args():
+    sig = inspect.signature(model_MMethodDeclarationParameter.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_model_cdeclarationstatement_is_not_abstract():
+    assert not inspect.isabstract(model_CDeclarationStatement)
+
+
+def test_model_cdeclarationstatement_constructor_exists():
+    assert callable(model_CDeclarationStatement.__init__)
+
+
+def test_model_cdeclarationstatement_constructor_args():
+    sig = inspect.signature(model_CDeclarationStatement.__init__)
     params = list(sig.parameters.keys())
     assert "final" in params, "Missing parameter 'final'"
 
-def test_model::cdeclarationstatement_has_final():
-    assert hasattr(model::CDeclarationStatement, "final")
+def test_model_cdeclarationstatement_has_final():
+    assert hasattr(model_CDeclarationStatement, "final")
     descriptor = None
-    for klass in model::CDeclarationStatement.__mro__:
+    for klass in model_CDeclarationStatement.__mro__:
         if "final" in klass.__dict__:
             descriptor = klass.__dict__["final"]
             break
@@ -503,23 +531,23 @@ def test_model::cdeclarationstatement_has_final():
 
 
 
-def test_model::mconstructorparameter_is_not_abstract():
-    assert not inspect.isabstract(model::MConstructorParameter)
+def test_model_mconstructorparameter_is_not_abstract():
+    assert not inspect.isabstract(model_MConstructorParameter)
 
 
-def test_model::mconstructorparameter_constructor_exists():
-    assert callable(model::MConstructorParameter.__init__)
+def test_model_mconstructorparameter_constructor_exists():
+    assert callable(model_MConstructorParameter.__init__)
 
 
-def test_model::mconstructorparameter_constructor_args():
-    sig = inspect.signature(model::MConstructorParameter.__init__)
+def test_model_mconstructorparameter_constructor_args():
+    sig = inspect.signature(model_MConstructorParameter.__init__)
     params = list(sig.parameters.keys())
     assert "final" in params, "Missing parameter 'final'"
 
-def test_model::mconstructorparameter_has_final():
-    assert hasattr(model::MConstructorParameter, "final")
+def test_model_mconstructorparameter_has_final():
+    assert hasattr(model_MConstructorParameter, "final")
     descriptor = None
-    for klass in model::MConstructorParameter.__mro__:
+    for klass in model_MConstructorParameter.__mro__:
         if "final" in klass.__dict__:
             descriptor = klass.__dict__["final"]
             break
@@ -527,72 +555,44 @@ def test_model::mconstructorparameter_has_final():
 
 
 
-def test_model::mmethoddeclarationparameter_is_not_abstract():
-    assert not inspect.isabstract(model::MMethodDeclarationParameter)
+def test_model_abstractmfielddeclaration_is_not_abstract():
+    assert not inspect.isabstract(model_AbstractMFieldDeclaration)
 
 
-def test_model::mmethoddeclarationparameter_constructor_exists():
-    assert callable(model::MMethodDeclarationParameter.__init__)
+def test_model_abstractmfielddeclaration_constructor_exists():
+    assert callable(model_AbstractMFieldDeclaration.__init__)
 
 
-def test_model::mmethoddeclarationparameter_constructor_args():
-    sig = inspect.signature(model::MMethodDeclarationParameter.__init__)
+def test_model_abstractmfielddeclaration_constructor_args():
+    sig = inspect.signature(model_AbstractMFieldDeclaration.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_model::abstractmmethoddeclaration_is_not_abstract():
-    assert not inspect.isabstract(model::AbstractMMethodDeclaration)
+def test_model_minterfacemethoddeclaration_is_not_abstract():
+    assert not inspect.isabstract(model_MInterfaceMethodDeclaration)
 
 
-def test_model::abstractmmethoddeclaration_constructor_exists():
-    assert callable(model::AbstractMMethodDeclaration.__init__)
+def test_model_minterfacemethoddeclaration_constructor_exists():
+    assert callable(model_MInterfaceMethodDeclaration.__init__)
 
 
-def test_model::abstractmmethoddeclaration_constructor_args():
-    sig = inspect.signature(model::AbstractMMethodDeclaration.__init__)
+def test_model_minterfacemethoddeclaration_constructor_args():
+    sig = inspect.signature(model_MInterfaceMethodDeclaration.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_model::abstractmfielddeclaration_is_not_abstract():
-    assert not inspect.isabstract(model::AbstractMFieldDeclaration)
+def test_model_mconstantinterfacefielddeclaration_is_not_abstract():
+    assert not inspect.isabstract(model_MConstantInterfaceFieldDeclaration)
 
 
-def test_model::abstractmfielddeclaration_constructor_exists():
-    assert callable(model::AbstractMFieldDeclaration.__init__)
+def test_model_mconstantinterfacefielddeclaration_constructor_exists():
+    assert callable(model_MConstantInterfaceFieldDeclaration.__init__)
 
 
-def test_model::abstractmfielddeclaration_constructor_args():
-    sig = inspect.signature(model::AbstractMFieldDeclaration.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_model::minterfacemethoddeclaration_is_not_abstract():
-    assert not inspect.isabstract(model::MInterfaceMethodDeclaration)
-
-
-def test_model::minterfacemethoddeclaration_constructor_exists():
-    assert callable(model::MInterfaceMethodDeclaration.__init__)
-
-
-def test_model::minterfacemethoddeclaration_constructor_args():
-    sig = inspect.signature(model::MInterfaceMethodDeclaration.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_model::mconstantinterfacefielddeclaration_is_not_abstract():
-    assert not inspect.isabstract(model::MConstantInterfaceFieldDeclaration)
-
-
-def test_model::mconstantinterfacefielddeclaration_constructor_exists():
-    assert callable(model::MConstantInterfaceFieldDeclaration.__init__)
-
-
-def test_model::mconstantinterfacefielddeclaration_constructor_args():
-    sig = inspect.signature(model::MConstantInterfaceFieldDeclaration.__init__)
+def test_model_mconstantinterfacefielddeclaration_constructor_args():
+    sig = inspect.signature(model_MConstantInterfaceFieldDeclaration.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -625,16 +625,16 @@ def test_mdeclaredclass_constructor_args():
 
 
 
-def test_model::mabstractdeclaredclass_is_not_abstract():
-    assert not inspect.isabstract(model::MAbstractDeclaredClass)
+def test_model_mabstractdeclaredclass_is_not_abstract():
+    assert not inspect.isabstract(model_MAbstractDeclaredClass)
 
 
-def test_model::mabstractdeclaredclass_constructor_exists():
-    assert callable(model::MAbstractDeclaredClass.__init__)
+def test_model_mabstractdeclaredclass_constructor_exists():
+    assert callable(model_MAbstractDeclaredClass.__init__)
 
 
-def test_model::mabstractdeclaredclass_constructor_args():
-    sig = inspect.signature(model::MAbstractDeclaredClass.__init__)
+def test_model_mabstractdeclaredclass_constructor_args():
+    sig = inspect.signature(model_MAbstractDeclaredClass.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -653,79 +653,79 @@ def test_abstractmexternaltype_constructor_args():
 
 
 
-def test_model::mexternalinterface_is_not_abstract():
-    assert not inspect.isabstract(model::MExternalInterface)
+def test_model_mexternalinterface_is_not_abstract():
+    assert not inspect.isabstract(model_MExternalInterface)
 
 
-def test_model::mexternalinterface_constructor_exists():
-    assert callable(model::MExternalInterface.__init__)
+def test_model_mexternalinterface_constructor_exists():
+    assert callable(model_MExternalInterface.__init__)
 
 
-def test_model::mexternalinterface_constructor_args():
-    sig = inspect.signature(model::MExternalInterface.__init__)
+def test_model_mexternalinterface_constructor_args():
+    sig = inspect.signature(model_MExternalInterface.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_model::mnativemethoddeclaration_is_not_abstract():
-    assert not inspect.isabstract(model::MNativeMethodDeclaration)
+def test_model_mnativemethoddeclaration_is_not_abstract():
+    assert not inspect.isabstract(model_MNativeMethodDeclaration)
 
 
-def test_model::mnativemethoddeclaration_constructor_exists():
-    assert callable(model::MNativeMethodDeclaration.__init__)
+def test_model_mnativemethoddeclaration_constructor_exists():
+    assert callable(model_MNativeMethodDeclaration.__init__)
 
 
-def test_model::mnativemethoddeclaration_constructor_args():
-    sig = inspect.signature(model::MNativeMethodDeclaration.__init__)
+def test_model_mnativemethoddeclaration_constructor_args():
+    sig = inspect.signature(model_MNativeMethodDeclaration.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_model::abstractmmethodimplementation_is_not_abstract():
-    assert not inspect.isabstract(model::AbstractMMethodImplementation)
+def test_model_abstractmmethodimplementation_is_not_abstract():
+    assert not inspect.isabstract(model_AbstractMMethodImplementation)
 
 
-def test_model::abstractmmethodimplementation_constructor_exists():
-    assert callable(model::AbstractMMethodImplementation.__init__)
+def test_model_abstractmmethodimplementation_constructor_exists():
+    assert callable(model_AbstractMMethodImplementation.__init__)
 
 
-def test_model::abstractmmethodimplementation_constructor_args():
-    sig = inspect.signature(model::AbstractMMethodImplementation.__init__)
+def test_model_abstractmmethodimplementation_constructor_args():
+    sig = inspect.signature(model_AbstractMMethodImplementation.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_model::mconstructor_is_not_abstract():
-    assert not inspect.isabstract(model::MConstructor)
+def test_model_mconstructor_is_not_abstract():
+    assert not inspect.isabstract(model_MConstructor)
 
 
-def test_model::mconstructor_constructor_exists():
-    assert callable(model::MConstructor.__init__)
+def test_model_mconstructor_constructor_exists():
+    assert callable(model_MConstructor.__init__)
 
 
-def test_model::mconstructor_constructor_args():
-    sig = inspect.signature(model::MConstructor.__init__)
+def test_model_mconstructor_constructor_args():
+    sig = inspect.signature(model_MConstructor.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_model::minstanceclassfielddeclaration_is_not_abstract():
-    assert not inspect.isabstract(model::MInstanceClassFieldDeclaration)
+def test_model_minstanceclassfielddeclaration_is_not_abstract():
+    assert not inspect.isabstract(model_MInstanceClassFieldDeclaration)
 
 
-def test_model::minstanceclassfielddeclaration_constructor_exists():
-    assert callable(model::MInstanceClassFieldDeclaration.__init__)
+def test_model_minstanceclassfielddeclaration_constructor_exists():
+    assert callable(model_MInstanceClassFieldDeclaration.__init__)
 
 
-def test_model::minstanceclassfielddeclaration_constructor_args():
-    sig = inspect.signature(model::MInstanceClassFieldDeclaration.__init__)
+def test_model_minstanceclassfielddeclaration_constructor_args():
+    sig = inspect.signature(model_MInstanceClassFieldDeclaration.__init__)
     params = list(sig.parameters.keys())
     assert "transient" in params, "Missing parameter 'transient'"
 
-def test_model::minstanceclassfielddeclaration_has_transient():
-    assert hasattr(model::MInstanceClassFieldDeclaration, "transient")
+def test_model_minstanceclassfielddeclaration_has_transient():
+    assert hasattr(model_MInstanceClassFieldDeclaration, "transient")
     descriptor = None
-    for klass in model::MInstanceClassFieldDeclaration.__mro__:
+    for klass in model_MInstanceClassFieldDeclaration.__mro__:
         if "transient" in klass.__dict__:
             descriptor = klass.__dict__["transient"]
             break
@@ -733,16 +733,16 @@ def test_model::minstanceclassfielddeclaration_has_transient():
 
 
 
-def test_model::mstaticclassfielddeclaration_is_not_abstract():
-    assert not inspect.isabstract(model::MStaticClassFieldDeclaration)
+def test_model_mstaticclassfielddeclaration_is_not_abstract():
+    assert not inspect.isabstract(model_MStaticClassFieldDeclaration)
 
 
-def test_model::mstaticclassfielddeclaration_constructor_exists():
-    assert callable(model::MStaticClassFieldDeclaration.__init__)
+def test_model_mstaticclassfielddeclaration_constructor_exists():
+    assert callable(model_MStaticClassFieldDeclaration.__init__)
 
 
-def test_model::mstaticclassfielddeclaration_constructor_args():
-    sig = inspect.signature(model::MStaticClassFieldDeclaration.__init__)
+def test_model_mstaticclassfielddeclaration_constructor_args():
+    sig = inspect.signature(model_MStaticClassFieldDeclaration.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -761,16 +761,16 @@ def test_abstractmdeclaredtype_constructor_args():
 
 
 
-def test_model::mdeclaredinterface_is_not_abstract():
-    assert not inspect.isabstract(model::MDeclaredInterface)
+def test_model_mdeclaredinterface_is_not_abstract():
+    assert not inspect.isabstract(model_MDeclaredInterface)
 
 
-def test_model::mdeclaredinterface_constructor_exists():
-    assert callable(model::MDeclaredInterface.__init__)
+def test_model_mdeclaredinterface_constructor_exists():
+    assert callable(model_MDeclaredInterface.__init__)
 
 
-def test_model::mdeclaredinterface_constructor_args():
-    sig = inspect.signature(model::MDeclaredInterface.__init__)
+def test_model_mdeclaredinterface_constructor_args():
+    sig = inspect.signature(model_MDeclaredInterface.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -789,30 +789,30 @@ def test_abstractmclass_constructor_args():
 
 
 
-def test_model::mexternalclass_is_not_abstract():
-    assert not inspect.isabstract(model::MExternalClass)
+def test_model_mexternalclass_is_not_abstract():
+    assert not inspect.isabstract(model_MExternalClass)
 
 
-def test_model::mexternalclass_constructor_exists():
-    assert callable(model::MExternalClass.__init__)
+def test_model_mexternalclass_constructor_exists():
+    assert callable(model_MExternalClass.__init__)
 
 
-def test_model::mexternalclass_constructor_args():
-    sig = inspect.signature(model::MExternalClass.__init__)
+def test_model_mexternalclass_constructor_args():
+    sig = inspect.signature(model_MExternalClass.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_model::mdeclaredclass_is_not_abstract():
-    assert not inspect.isabstract(model::MDeclaredClass)
+def test_model_mdeclaredclass_is_not_abstract():
+    assert not inspect.isabstract(model_MDeclaredClass)
 
 
-def test_model::mdeclaredclass_constructor_exists():
-    assert callable(model::MDeclaredClass.__init__)
+def test_model_mdeclaredclass_constructor_exists():
+    assert callable(model_MDeclaredClass.__init__)
 
 
-def test_model::mdeclaredclass_constructor_args():
-    sig = inspect.signature(model::MDeclaredClass.__init__)
+def test_model_mdeclaredclass_constructor_args():
+    sig = inspect.signature(model_MDeclaredClass.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -831,51 +831,51 @@ def test_abstractmtype_constructor_args():
 
 
 
-def test_model::abstractminterface_is_not_abstract():
-    assert not inspect.isabstract(model::AbstractMInterface)
+def test_model_abstractminterface_is_not_abstract():
+    assert not inspect.isabstract(model_AbstractMInterface)
 
 
-def test_model::abstractminterface_constructor_exists():
-    assert callable(model::AbstractMInterface.__init__)
+def test_model_abstractminterface_constructor_exists():
+    assert callable(model_AbstractMInterface.__init__)
 
 
-def test_model::abstractminterface_constructor_args():
-    sig = inspect.signature(model::AbstractMInterface.__init__)
+def test_model_abstractminterface_constructor_args():
+    sig = inspect.signature(model_AbstractMInterface.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_model::abstractmclass_is_not_abstract():
-    assert not inspect.isabstract(model::AbstractMClass)
+def test_model_abstractmclass_is_not_abstract():
+    assert not inspect.isabstract(model_AbstractMClass)
 
 
-def test_model::abstractmclass_constructor_exists():
-    assert callable(model::AbstractMClass.__init__)
+def test_model_abstractmclass_constructor_exists():
+    assert callable(model_AbstractMClass.__init__)
 
 
-def test_model::abstractmclass_constructor_args():
-    sig = inspect.signature(model::AbstractMClass.__init__)
+def test_model_abstractmclass_constructor_args():
+    sig = inspect.signature(model_AbstractMClass.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_model::abstractmtypewithnamedeclaration_is_not_abstract():
-    assert not inspect.isabstract(model::AbstractMTypeWithNameDeclaration)
+def test_model_abstractmtypewithnamedeclaration_is_not_abstract():
+    assert not inspect.isabstract(model_AbstractMTypeWithNameDeclaration)
 
 
-def test_model::abstractmtypewithnamedeclaration_constructor_exists():
-    assert callable(model::AbstractMTypeWithNameDeclaration.__init__)
+def test_model_abstractmtypewithnamedeclaration_constructor_exists():
+    assert callable(model_AbstractMTypeWithNameDeclaration.__init__)
 
 
-def test_model::abstractmtypewithnamedeclaration_constructor_args():
-    sig = inspect.signature(model::AbstractMTypeWithNameDeclaration.__init__)
+def test_model_abstractmtypewithnamedeclaration_constructor_args():
+    sig = inspect.signature(model_AbstractMTypeWithNameDeclaration.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_model::abstractmtypewithnamedeclaration_has_name():
-    assert hasattr(model::AbstractMTypeWithNameDeclaration, "name")
+def test_model_abstractmtypewithnamedeclaration_has_name():
+    assert hasattr(model_AbstractMTypeWithNameDeclaration, "name")
     descriptor = None
-    for klass in model::AbstractMTypeWithNameDeclaration.__mro__:
+    for klass in model_AbstractMTypeWithNameDeclaration.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -883,16 +883,16 @@ def test_model::abstractmtypewithnamedeclaration_has_name():
 
 
 
-def test_model::abstractcstatement_is_not_abstract():
-    assert not inspect.isabstract(model::AbstractCStatement)
+def test_model_abstractcstatement_is_not_abstract():
+    assert not inspect.isabstract(model_AbstractCStatement)
 
 
-def test_model::abstractcstatement_constructor_exists():
-    assert callable(model::AbstractCStatement.__init__)
+def test_model_abstractcstatement_constructor_exists():
+    assert callable(model_AbstractCStatement.__init__)
 
 
-def test_model::abstractcstatement_constructor_args():
-    sig = inspect.signature(model::AbstractCStatement.__init__)
+def test_model_abstractcstatement_constructor_args():
+    sig = inspect.signature(model_AbstractCStatement.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -911,59 +911,59 @@ def test_abstractmodifiers_constructor_args():
 
 
 
-def test_model::abstractmmethodlike_is_not_abstract():
-    assert not inspect.isabstract(model::AbstractMMethodLike)
+def test_model_abstractmmethodlike_is_not_abstract():
+    assert not inspect.isabstract(model_AbstractMMethodLike)
 
 
-def test_model::abstractmmethodlike_constructor_exists():
-    assert callable(model::AbstractMMethodLike.__init__)
+def test_model_abstractmmethodlike_constructor_exists():
+    assert callable(model_AbstractMMethodLike.__init__)
 
 
-def test_model::abstractmmethodlike_constructor_args():
-    sig = inspect.signature(model::AbstractMMethodLike.__init__)
+def test_model_abstractmmethodlike_constructor_args():
+    sig = inspect.signature(model_AbstractMMethodLike.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_model::abstractmodifiers_is_not_abstract():
-    assert not inspect.isabstract(model::AbstractModifiers)
+def test_model_abstractmodifiers_is_not_abstract():
+    assert not inspect.isabstract(model_AbstractModifiers)
 
 
-def test_model::abstractmodifiers_constructor_exists():
-    assert callable(model::AbstractModifiers.__init__)
+def test_model_abstractmodifiers_constructor_exists():
+    assert callable(model_AbstractModifiers.__init__)
 
 
-def test_model::abstractmodifiers_constructor_args():
-    sig = inspect.signature(model::AbstractModifiers.__init__)
+def test_model_abstractmodifiers_constructor_args():
+    sig = inspect.signature(model_AbstractModifiers.__init__)
     params = list(sig.parameters.keys())
-    assert "synchronized" in params, "Missing parameter 'synchronized'"
-    assert "visibility" in params, "Missing parameter 'visibility'"
     assert "final" in params, "Missing parameter 'final'"
+    assert "visibility" in params, "Missing parameter 'visibility'"
+    assert "synchronized" in params, "Missing parameter 'synchronized'"
 
-def test_model::abstractmodifiers_has_synchronized():
-    assert hasattr(model::AbstractModifiers, "synchronized")
+def test_model_abstractmodifiers_has_final():
+    assert hasattr(model_AbstractModifiers, "final")
     descriptor = None
-    for klass in model::AbstractModifiers.__mro__:
-        if "synchronized" in klass.__dict__:
-            descriptor = klass.__dict__["synchronized"]
+    for klass in model_AbstractModifiers.__mro__:
+        if "final" in klass.__dict__:
+            descriptor = klass.__dict__["final"]
             break
     assert isinstance(descriptor, property)
 
-def test_model::abstractmodifiers_has_visibility():
-    assert hasattr(model::AbstractModifiers, "visibility")
+def test_model_abstractmodifiers_has_visibility():
+    assert hasattr(model_AbstractModifiers, "visibility")
     descriptor = None
-    for klass in model::AbstractModifiers.__mro__:
+    for klass in model_AbstractModifiers.__mro__:
         if "visibility" in klass.__dict__:
             descriptor = klass.__dict__["visibility"]
             break
     assert isinstance(descriptor, property)
 
-def test_model::abstractmodifiers_has_final():
-    assert hasattr(model::AbstractModifiers, "final")
+def test_model_abstractmodifiers_has_synchronized():
+    assert hasattr(model_AbstractModifiers, "synchronized")
     descriptor = None
-    for klass in model::AbstractModifiers.__mro__:
-        if "final" in klass.__dict__:
-            descriptor = klass.__dict__["final"]
+    for klass in model_AbstractModifiers.__mro__:
+        if "synchronized" in klass.__dict__:
+            descriptor = klass.__dict__["synchronized"]
             break
     assert isinstance(descriptor, property)
 
@@ -983,37 +983,37 @@ def test_abstractmtypereference_constructor_args():
 
 
 
-def test_model::mexternaltypereference_is_not_abstract():
-    assert not inspect.isabstract(model::MExternalTypeReference)
+def test_model_mexternaltypereference_is_not_abstract():
+    assert not inspect.isabstract(model_MExternalTypeReference)
 
 
-def test_model::mexternaltypereference_constructor_exists():
-    assert callable(model::MExternalTypeReference.__init__)
+def test_model_mexternaltypereference_constructor_exists():
+    assert callable(model_MExternalTypeReference.__init__)
 
 
-def test_model::mexternaltypereference_constructor_args():
-    sig = inspect.signature(model::MExternalTypeReference.__init__)
+def test_model_mexternaltypereference_constructor_args():
+    sig = inspect.signature(model_MExternalTypeReference.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_model::mprimitivetypereference_is_not_abstract():
-    assert not inspect.isabstract(model::MPrimitiveTypeReference)
+def test_model_mprimitivetypereference_is_not_abstract():
+    assert not inspect.isabstract(model_MPrimitiveTypeReference)
 
 
-def test_model::mprimitivetypereference_constructor_exists():
-    assert callable(model::MPrimitiveTypeReference.__init__)
+def test_model_mprimitivetypereference_constructor_exists():
+    assert callable(model_MPrimitiveTypeReference.__init__)
 
 
-def test_model::mprimitivetypereference_constructor_args():
-    sig = inspect.signature(model::MPrimitiveTypeReference.__init__)
+def test_model_mprimitivetypereference_constructor_args():
+    sig = inspect.signature(model_MPrimitiveTypeReference.__init__)
     params = list(sig.parameters.keys())
     assert "type" in params, "Missing parameter 'type'"
 
-def test_model::mprimitivetypereference_has_type():
-    assert hasattr(model::MPrimitiveTypeReference, "type")
+def test_model_mprimitivetypereference_has_type():
+    assert hasattr(model_MPrimitiveTypeReference, "type")
     descriptor = None
-    for klass in model::MPrimitiveTypeReference.__mro__:
+    for klass in model_MPrimitiveTypeReference.__mro__:
         if "type" in klass.__dict__:
             descriptor = klass.__dict__["type"]
             break
@@ -1021,37 +1021,37 @@ def test_model::mprimitivetypereference_has_type():
 
 
 
-def test_model::mdeclaredtypereference_is_not_abstract():
-    assert not inspect.isabstract(model::MDeclaredTypeReference)
+def test_model_mdeclaredtypereference_is_not_abstract():
+    assert not inspect.isabstract(model_MDeclaredTypeReference)
 
 
-def test_model::mdeclaredtypereference_constructor_exists():
-    assert callable(model::MDeclaredTypeReference.__init__)
+def test_model_mdeclaredtypereference_constructor_exists():
+    assert callable(model_MDeclaredTypeReference.__init__)
 
 
-def test_model::mdeclaredtypereference_constructor_args():
-    sig = inspect.signature(model::MDeclaredTypeReference.__init__)
+def test_model_mdeclaredtypereference_constructor_args():
+    sig = inspect.signature(model_MDeclaredTypeReference.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_model::abstractmtypereference_is_not_abstract():
-    assert not inspect.isabstract(model::AbstractMTypeReference)
+def test_model_abstractmtypereference_is_not_abstract():
+    assert not inspect.isabstract(model_AbstractMTypeReference)
 
 
-def test_model::abstractmtypereference_constructor_exists():
-    assert callable(model::AbstractMTypeReference.__init__)
+def test_model_abstractmtypereference_constructor_exists():
+    assert callable(model_AbstractMTypeReference.__init__)
 
 
-def test_model::abstractmtypereference_constructor_args():
-    sig = inspect.signature(model::AbstractMTypeReference.__init__)
+def test_model_abstractmtypereference_constructor_args():
+    sig = inspect.signature(model_AbstractMTypeReference.__init__)
     params = list(sig.parameters.keys())
     assert "array" in params, "Missing parameter 'array'"
 
-def test_model::abstractmtypereference_has_array():
-    assert hasattr(model::AbstractMTypeReference, "array")
+def test_model_abstractmtypereference_has_array():
+    assert hasattr(model_AbstractMTypeReference, "array")
     descriptor = None
-    for klass in model::AbstractMTypeReference.__mro__:
+    for klass in model_AbstractMTypeReference.__mro__:
         if "array" in klass.__dict__:
             descriptor = klass.__dict__["array"]
             break
@@ -1059,16 +1059,16 @@ def test_model::abstractmtypereference_has_array():
 
 
 
-def test_model::abstractmtype_is_not_abstract():
-    assert not inspect.isabstract(model::AbstractMType)
+def test_model_abstractmtype_is_not_abstract():
+    assert not inspect.isabstract(model_AbstractMType)
 
 
-def test_model::abstractmtype_constructor_exists():
-    assert callable(model::AbstractMType.__init__)
+def test_model_abstractmtype_constructor_exists():
+    assert callable(model_AbstractMType.__init__)
 
 
-def test_model::abstractmtype_constructor_args():
-    sig = inspect.signature(model::AbstractMType.__init__)
+def test_model_abstractmtype_constructor_args():
+    sig = inspect.signature(model_AbstractMType.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1087,23 +1087,23 @@ def test_abstractmtypecontainer_constructor_args():
 
 
 
-def test_model::abstractmdeclaredtype_is_not_abstract():
-    assert not inspect.isabstract(model::AbstractMDeclaredType)
+def test_model_abstractmdeclaredtype_is_not_abstract():
+    assert not inspect.isabstract(model_AbstractMDeclaredType)
 
 
-def test_model::abstractmdeclaredtype_constructor_exists():
-    assert callable(model::AbstractMDeclaredType.__init__)
+def test_model_abstractmdeclaredtype_constructor_exists():
+    assert callable(model_AbstractMDeclaredType.__init__)
 
 
-def test_model::abstractmdeclaredtype_constructor_args():
-    sig = inspect.signature(model::AbstractMDeclaredType.__init__)
+def test_model_abstractmdeclaredtype_constructor_args():
+    sig = inspect.signature(model_AbstractMDeclaredType.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_model::abstractmdeclaredtype_has_name():
-    assert hasattr(model::AbstractMDeclaredType, "name")
+def test_model_abstractmdeclaredtype_has_name():
+    assert hasattr(model_AbstractMDeclaredType, "name")
     descriptor = None
-    for klass in model::AbstractMDeclaredType.__mro__:
+    for klass in model_AbstractMDeclaredType.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -1111,16 +1111,16 @@ def test_model::abstractmdeclaredtype_has_name():
 
 
 
-def test_model::abstractmtypecontainer_is_not_abstract():
-    assert not inspect.isabstract(model::AbstractMTypeContainer)
+def test_model_abstractmtypecontainer_is_not_abstract():
+    assert not inspect.isabstract(model_AbstractMTypeContainer)
 
 
-def test_model::abstractmtypecontainer_constructor_exists():
-    assert callable(model::AbstractMTypeContainer.__init__)
+def test_model_abstractmtypecontainer_constructor_exists():
+    assert callable(model_AbstractMTypeContainer.__init__)
 
 
-def test_model::abstractmtypecontainer_constructor_args():
-    sig = inspect.signature(model::AbstractMTypeContainer.__init__)
+def test_model_abstractmtypecontainer_constructor_args():
+    sig = inspect.signature(model_AbstractMTypeContainer.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1139,37 +1139,37 @@ def test_abstractmresource_constructor_args():
 
 
 
-def test_model::mcompilationunit_is_not_abstract():
-    assert not inspect.isabstract(model::MCompilationUnit)
+def test_model_mcompilationunit_is_not_abstract():
+    assert not inspect.isabstract(model_MCompilationUnit)
 
 
-def test_model::mcompilationunit_constructor_exists():
-    assert callable(model::MCompilationUnit.__init__)
+def test_model_mcompilationunit_constructor_exists():
+    assert callable(model_MCompilationUnit.__init__)
 
 
-def test_model::mcompilationunit_constructor_args():
-    sig = inspect.signature(model::MCompilationUnit.__init__)
+def test_model_mcompilationunit_constructor_args():
+    sig = inspect.signature(model_MCompilationUnit.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_model::mresource_is_not_abstract():
-    assert not inspect.isabstract(model::MResource)
+def test_model_mresource_is_not_abstract():
+    assert not inspect.isabstract(model_MResource)
 
 
-def test_model::mresource_constructor_exists():
-    assert callable(model::MResource.__init__)
+def test_model_mresource_constructor_exists():
+    assert callable(model_MResource.__init__)
 
 
-def test_model::mresource_constructor_args():
-    sig = inspect.signature(model::MResource.__init__)
+def test_model_mresource_constructor_args():
+    sig = inspect.signature(model_MResource.__init__)
     params = list(sig.parameters.keys())
     assert "content" in params, "Missing parameter 'content'"
 
-def test_model::mresource_has_content():
-    assert hasattr(model::MResource, "content")
+def test_model_mresource_has_content():
+    assert hasattr(model_MResource, "content")
     descriptor = None
-    for klass in model::MResource.__mro__:
+    for klass in model_MResource.__mro__:
         if "content" in klass.__dict__:
             descriptor = klass.__dict__["content"]
             break
@@ -1177,57 +1177,57 @@ def test_model::mresource_has_content():
 
 
 
-def test_model::abstractmresource_is_not_abstract():
-    assert not inspect.isabstract(model::AbstractMResource)
+def test_model_abstractmresource_is_not_abstract():
+    assert not inspect.isabstract(model_AbstractMResource)
 
 
-def test_model::abstractmresource_constructor_exists():
-    assert callable(model::AbstractMResource.__init__)
+def test_model_abstractmresource_constructor_exists():
+    assert callable(model_AbstractMResource.__init__)
 
 
-def test_model::abstractmresource_constructor_args():
-    sig = inspect.signature(model::AbstractMResource.__init__)
+def test_model_abstractmresource_constructor_args():
+    sig = inspect.signature(model_AbstractMResource.__init__)
     params = list(sig.parameters.keys())
-    assert "derived" in params, "Missing parameter 'derived'"
     assert "name" in params, "Missing parameter 'name'"
+    assert "derived" in params, "Missing parameter 'derived'"
 
-def test_model::abstractmresource_has_derived():
-    assert hasattr(model::AbstractMResource, "derived")
+def test_model_abstractmresource_has_name():
+    assert hasattr(model_AbstractMResource, "name")
     descriptor = None
-    for klass in model::AbstractMResource.__mro__:
-        if "derived" in klass.__dict__:
-            descriptor = klass.__dict__["derived"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_model::abstractmresource_has_name():
-    assert hasattr(model::AbstractMResource, "name")
-    descriptor = None
-    for klass in model::AbstractMResource.__mro__:
+    for klass in model_AbstractMResource.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
+def test_model_abstractmresource_has_derived():
+    assert hasattr(model_AbstractMResource, "derived")
+    descriptor = None
+    for klass in model_AbstractMResource.__mro__:
+        if "derived" in klass.__dict__:
+            descriptor = klass.__dict__["derived"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_model::abstractmexternaltype_is_not_abstract():
-    assert not inspect.isabstract(model::AbstractMExternalType)
+
+def test_model_abstractmexternaltype_is_not_abstract():
+    assert not inspect.isabstract(model_AbstractMExternalType)
 
 
-def test_model::abstractmexternaltype_constructor_exists():
-    assert callable(model::AbstractMExternalType.__init__)
+def test_model_abstractmexternaltype_constructor_exists():
+    assert callable(model_AbstractMExternalType.__init__)
 
 
-def test_model::abstractmexternaltype_constructor_args():
-    sig = inspect.signature(model::AbstractMExternalType.__init__)
+def test_model_abstractmexternaltype_constructor_args():
+    sig = inspect.signature(model_AbstractMExternalType.__init__)
     params = list(sig.parameters.keys())
     assert "fullQualifiedName" in params, "Missing parameter 'fullQualifiedName'"
 
-def test_model::abstractmexternaltype_has_fullQualifiedName():
-    assert hasattr(model::AbstractMExternalType, "fullQualifiedName")
+def test_model_abstractmexternaltype_has_fullQualifiedName():
+    assert hasattr(model_AbstractMExternalType, "fullQualifiedName")
     descriptor = None
-    for klass in model::AbstractMExternalType.__mro__:
+    for klass in model_AbstractMExternalType.__mro__:
         if "fullQualifiedName" in klass.__dict__:
             descriptor = klass.__dict__["fullQualifiedName"]
             break
@@ -1249,37 +1249,37 @@ def test_abstractmpackagecontainer_constructor_args():
 
 
 
-def test_model::mroot_is_not_abstract():
-    assert not inspect.isabstract(model::MRoot)
+def test_model_mroot_is_not_abstract():
+    assert not inspect.isabstract(model_MRoot)
 
 
-def test_model::mroot_constructor_exists():
-    assert callable(model::MRoot.__init__)
+def test_model_mroot_constructor_exists():
+    assert callable(model_MRoot.__init__)
 
 
-def test_model::mroot_constructor_args():
-    sig = inspect.signature(model::MRoot.__init__)
+def test_model_mroot_constructor_args():
+    sig = inspect.signature(model_MRoot.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_model::mpackage_is_not_abstract():
-    assert not inspect.isabstract(model::MPackage)
+def test_model_mpackage_is_not_abstract():
+    assert not inspect.isabstract(model_MPackage)
 
 
-def test_model::mpackage_constructor_exists():
-    assert callable(model::MPackage.__init__)
+def test_model_mpackage_constructor_exists():
+    assert callable(model_MPackage.__init__)
 
 
-def test_model::mpackage_constructor_args():
-    sig = inspect.signature(model::MPackage.__init__)
+def test_model_mpackage_constructor_args():
+    sig = inspect.signature(model_MPackage.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_model::mpackage_has_name():
-    assert hasattr(model::MPackage, "name")
+def test_model_mpackage_has_name():
+    assert hasattr(model_MPackage, "name")
     descriptor = None
-    for klass in model::MPackage.__mro__:
+    for klass in model_MPackage.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -1287,16 +1287,16 @@ def test_model::mpackage_has_name():
 
 
 
-def test_model::abstractmpackagecontainer_is_not_abstract():
-    assert not inspect.isabstract(model::AbstractMPackageContainer)
+def test_model_abstractmpackagecontainer_is_not_abstract():
+    assert not inspect.isabstract(model_AbstractMPackageContainer)
 
 
-def test_model::abstractmpackagecontainer_constructor_exists():
-    assert callable(model::AbstractMPackageContainer.__init__)
+def test_model_abstractmpackagecontainer_constructor_exists():
+    assert callable(model_AbstractMPackageContainer.__init__)
 
 
-def test_model::abstractmpackagecontainer_constructor_args():
-    sig = inspect.signature(model::AbstractMPackageContainer.__init__)
+def test_model_abstractmpackagecontainer_constructor_args():
+    sig = inspect.signature(model_AbstractMPackageContainer.__init__)
     params = list(sig.parameters.keys())
 
 def test_mprimitivetypes_exists():
@@ -1307,14 +1307,14 @@ def test_mprimitivetypes_has_all_literals():
     # Collect the names of literals in this Enumeration
     enum_literals = [lit.name for lit in MPrimitiveTypes]
     expected_literals = [
-        "int",
-        "char",
         "boolean",
-        "byte",
-        "short",
         "long",
-        "double",
+        "byte",
         "float",
+        "double",
+        "char",
+        "int",
+        "short",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
@@ -1328,10 +1328,10 @@ def test_mvisibility_has_all_literals():
     # Collect the names of literals in this Enumeration
     enum_literals = [lit.name for lit in MVisibility]
     expected_literals = [
-        "PROTECTED",
-        "PRIVATE",
-        "DEFAULT",
         "PUBLIC",
+        "DEFAULT",
+        "PRIVATE",
+        "PROTECTED",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
@@ -1352,30 +1352,30 @@ safe_text = st.text(
 AbstractCExpression_strategy = st.builds(
     AbstractCExpression,
 )
-model::CUnparsedExpression_strategy = st.builds(
-    model::CUnparsedExpression,
+model_CUnparsedExpression_strategy = st.builds(
+    model_CUnparsedExpression,
     code=
         safe_text
 )
-model::CConditionalExpression_strategy = st.builds(
-    model::CConditionalExpression,
+model_CConditionalExpression_strategy = st.builds(
+    model_CConditionalExpression,
 )
 AbstractCStatement_strategy = st.builds(
     AbstractCStatement,
 )
-model::CIfStatement_strategy = st.builds(
-    model::CIfStatement,
+model_CIfStatement_strategy = st.builds(
+    model_CIfStatement,
 )
-model::CExpressionStatement_strategy = st.builds(
-    model::CExpressionStatement,
-)
-model::CUnparsedStatement_strategy = st.builds(
-    model::CUnparsedStatement,
+model_CUnparsedStatement_strategy = st.builds(
+    model_CUnparsedStatement,
     code=
         safe_text
 )
-model::CBlockStatement_strategy = st.builds(
-    model::CBlockStatement,
+model_CExpressionStatement_strategy = st.builds(
+    model_CExpressionStatement,
+)
+model_CBlockStatement_strategy = st.builds(
+    model_CBlockStatement,
 )
 AbstractMMethodDeclaration_strategy = st.builds(
     AbstractMMethodDeclaration,
@@ -1383,12 +1383,12 @@ AbstractMMethodDeclaration_strategy = st.builds(
 AbstractMMethodImplementation_strategy = st.builds(
     AbstractMMethodImplementation,
 )
-model::MMethodImplementationParameter_strategy = st.builds(
-    model::MMethodImplementationParameter,
-    final=
-        st.booleans(),
+model_MMethodImplementationParameter_strategy = st.builds(
+    model_MMethodImplementationParameter,
     name=
-        safe_text
+        safe_text,
+    final=
+        st.booleans()
 )
 AbstractMMethodLike_strategy = st.builds(
     AbstractMMethodLike,
@@ -1396,20 +1396,20 @@ AbstractMMethodLike_strategy = st.builds(
 AbstractMImplementableMethodDeclaration_strategy = st.builds(
     AbstractMImplementableMethodDeclaration,
 )
-model::MDeclaredMethodImplementation_strategy = st.builds(
-    model::MDeclaredMethodImplementation,
+model_MDeclaredMethodImplementation_strategy = st.builds(
+    model_MDeclaredMethodImplementation,
 )
-model::AbstractMImplementableMethodDeclaration_strategy = st.builds(
-    model::AbstractMImplementableMethodDeclaration,
+model_AbstractMImplementableMethodDeclaration_strategy = st.builds(
+    model_AbstractMImplementableMethodDeclaration,
 )
-model::MDirectMethodImplementation_strategy = st.builds(
-    model::MDirectMethodImplementation,
+model_MDirectMethodImplementation_strategy = st.builds(
+    model_MDirectMethodImplementation,
 )
-model::MImplicitMethodDeclaration_strategy = st.builds(
-    model::MImplicitMethodDeclaration,
+model_MImplicitMethodDeclaration_strategy = st.builds(
+    model_MImplicitMethodDeclaration,
 )
-model::MAbstractClassMethodDeclaration_strategy = st.builds(
-    model::MAbstractClassMethodDeclaration,
+model_MAbstractClassMethodDeclaration_strategy = st.builds(
+    model_MAbstractClassMethodDeclaration,
     visibility=
         safe_text
 )
@@ -1419,43 +1419,43 @@ AbstractMClassFieldDeclaration_strategy = st.builds(
 AbstractMFieldDeclaration_strategy = st.builds(
     AbstractMFieldDeclaration,
 )
-model::AbstractMClassFieldDeclaration_strategy = st.builds(
-    model::AbstractMClassFieldDeclaration,
+model_AbstractMClassFieldDeclaration_strategy = st.builds(
+    model_AbstractMClassFieldDeclaration,
     visibility=
         safe_text,
     final=
         st.booleans()
 )
-model::AbstractCExpression_strategy = st.builds(
-    model::AbstractCExpression,
+model_AbstractCExpression_strategy = st.builds(
+    model_AbstractCExpression,
 )
 AbstractMTypeWithNameDeclaration_strategy = st.builds(
     AbstractMTypeWithNameDeclaration,
 )
-model::CDeclarationStatement_strategy = st.builds(
-    model::CDeclarationStatement,
+model_AbstractMMethodDeclaration_strategy = st.builds(
+    model_AbstractMMethodDeclaration,
+)
+model_MMethodDeclarationParameter_strategy = st.builds(
+    model_MMethodDeclarationParameter,
+)
+model_CDeclarationStatement_strategy = st.builds(
+    model_CDeclarationStatement,
     final=
         st.booleans()
 )
-model::MConstructorParameter_strategy = st.builds(
-    model::MConstructorParameter,
+model_MConstructorParameter_strategy = st.builds(
+    model_MConstructorParameter,
     final=
         st.booleans()
 )
-model::MMethodDeclarationParameter_strategy = st.builds(
-    model::MMethodDeclarationParameter,
+model_AbstractMFieldDeclaration_strategy = st.builds(
+    model_AbstractMFieldDeclaration,
 )
-model::AbstractMMethodDeclaration_strategy = st.builds(
-    model::AbstractMMethodDeclaration,
+model_MInterfaceMethodDeclaration_strategy = st.builds(
+    model_MInterfaceMethodDeclaration,
 )
-model::AbstractMFieldDeclaration_strategy = st.builds(
-    model::AbstractMFieldDeclaration,
-)
-model::MInterfaceMethodDeclaration_strategy = st.builds(
-    model::MInterfaceMethodDeclaration,
-)
-model::MConstantInterfaceFieldDeclaration_strategy = st.builds(
-    model::MConstantInterfaceFieldDeclaration,
+model_MConstantInterfaceFieldDeclaration_strategy = st.builds(
+    model_MConstantInterfaceFieldDeclaration,
 )
 AbstractMInterface_strategy = st.builds(
     AbstractMInterface,
@@ -1463,148 +1463,148 @@ AbstractMInterface_strategy = st.builds(
 MDeclaredClass_strategy = st.builds(
     MDeclaredClass,
 )
-model::MAbstractDeclaredClass_strategy = st.builds(
-    model::MAbstractDeclaredClass,
+model_MAbstractDeclaredClass_strategy = st.builds(
+    model_MAbstractDeclaredClass,
 )
 AbstractMExternalType_strategy = st.builds(
     AbstractMExternalType,
 )
-model::MExternalInterface_strategy = st.builds(
-    model::MExternalInterface,
+model_MExternalInterface_strategy = st.builds(
+    model_MExternalInterface,
 )
-model::MNativeMethodDeclaration_strategy = st.builds(
-    model::MNativeMethodDeclaration,
+model_MNativeMethodDeclaration_strategy = st.builds(
+    model_MNativeMethodDeclaration,
 )
-model::AbstractMMethodImplementation_strategy = st.builds(
-    model::AbstractMMethodImplementation,
+model_AbstractMMethodImplementation_strategy = st.builds(
+    model_AbstractMMethodImplementation,
 )
-model::MConstructor_strategy = st.builds(
-    model::MConstructor,
+model_MConstructor_strategy = st.builds(
+    model_MConstructor,
 )
-model::MInstanceClassFieldDeclaration_strategy = st.builds(
-    model::MInstanceClassFieldDeclaration,
+model_MInstanceClassFieldDeclaration_strategy = st.builds(
+    model_MInstanceClassFieldDeclaration,
     transient=
         st.booleans()
 )
-model::MStaticClassFieldDeclaration_strategy = st.builds(
-    model::MStaticClassFieldDeclaration,
+model_MStaticClassFieldDeclaration_strategy = st.builds(
+    model_MStaticClassFieldDeclaration,
 )
 AbstractMDeclaredType_strategy = st.builds(
     AbstractMDeclaredType,
 )
-model::MDeclaredInterface_strategy = st.builds(
-    model::MDeclaredInterface,
+model_MDeclaredInterface_strategy = st.builds(
+    model_MDeclaredInterface,
 )
 AbstractMClass_strategy = st.builds(
     AbstractMClass,
 )
-model::MExternalClass_strategy = st.builds(
-    model::MExternalClass,
+model_MExternalClass_strategy = st.builds(
+    model_MExternalClass,
 )
-model::MDeclaredClass_strategy = st.builds(
-    model::MDeclaredClass,
+model_MDeclaredClass_strategy = st.builds(
+    model_MDeclaredClass,
 )
 AbstractMType_strategy = st.builds(
     AbstractMType,
 )
-model::AbstractMInterface_strategy = st.builds(
-    model::AbstractMInterface,
+model_AbstractMInterface_strategy = st.builds(
+    model_AbstractMInterface,
 )
-model::AbstractMClass_strategy = st.builds(
-    model::AbstractMClass,
+model_AbstractMClass_strategy = st.builds(
+    model_AbstractMClass,
 )
-model::AbstractMTypeWithNameDeclaration_strategy = st.builds(
-    model::AbstractMTypeWithNameDeclaration,
+model_AbstractMTypeWithNameDeclaration_strategy = st.builds(
+    model_AbstractMTypeWithNameDeclaration,
     name=
         safe_text
 )
-model::AbstractCStatement_strategy = st.builds(
-    model::AbstractCStatement,
+model_AbstractCStatement_strategy = st.builds(
+    model_AbstractCStatement,
 )
 AbstractModifiers_strategy = st.builds(
     AbstractModifiers,
 )
-model::AbstractMMethodLike_strategy = st.builds(
-    model::AbstractMMethodLike,
+model_AbstractMMethodLike_strategy = st.builds(
+    model_AbstractMMethodLike,
 )
-model::AbstractModifiers_strategy = st.builds(
-    model::AbstractModifiers,
-    synchronized=
+model_AbstractModifiers_strategy = st.builds(
+    model_AbstractModifiers,
+    final=
         st.booleans(),
     visibility=
         safe_text,
-    final=
+    synchronized=
         st.booleans()
 )
 AbstractMTypeReference_strategy = st.builds(
     AbstractMTypeReference,
 )
-model::MExternalTypeReference_strategy = st.builds(
-    model::MExternalTypeReference,
+model_MExternalTypeReference_strategy = st.builds(
+    model_MExternalTypeReference,
 )
-model::MPrimitiveTypeReference_strategy = st.builds(
-    model::MPrimitiveTypeReference,
+model_MPrimitiveTypeReference_strategy = st.builds(
+    model_MPrimitiveTypeReference,
     type=
         safe_text
 )
-model::MDeclaredTypeReference_strategy = st.builds(
-    model::MDeclaredTypeReference,
+model_MDeclaredTypeReference_strategy = st.builds(
+    model_MDeclaredTypeReference,
 )
-model::AbstractMTypeReference_strategy = st.builds(
-    model::AbstractMTypeReference,
+model_AbstractMTypeReference_strategy = st.builds(
+    model_AbstractMTypeReference,
     array=
         st.booleans()
 )
-model::AbstractMType_strategy = st.builds(
-    model::AbstractMType,
+model_AbstractMType_strategy = st.builds(
+    model_AbstractMType,
 )
 AbstractMTypeContainer_strategy = st.builds(
     AbstractMTypeContainer,
 )
-model::AbstractMDeclaredType_strategy = st.builds(
-    model::AbstractMDeclaredType,
+model_AbstractMDeclaredType_strategy = st.builds(
+    model_AbstractMDeclaredType,
     name=
         safe_text
 )
-model::AbstractMTypeContainer_strategy = st.builds(
-    model::AbstractMTypeContainer,
+model_AbstractMTypeContainer_strategy = st.builds(
+    model_AbstractMTypeContainer,
 )
 AbstractMResource_strategy = st.builds(
     AbstractMResource,
 )
-model::MCompilationUnit_strategy = st.builds(
-    model::MCompilationUnit,
+model_MCompilationUnit_strategy = st.builds(
+    model_MCompilationUnit,
 )
-model::MResource_strategy = st.builds(
-    model::MResource,
+model_MResource_strategy = st.builds(
+    model_MResource,
     content=
         safe_text
 )
-model::AbstractMResource_strategy = st.builds(
-    model::AbstractMResource,
-    derived=
-        st.booleans(),
+model_AbstractMResource_strategy = st.builds(
+    model_AbstractMResource,
     name=
-        safe_text
+        safe_text,
+    derived=
+        st.booleans()
 )
-model::AbstractMExternalType_strategy = st.builds(
-    model::AbstractMExternalType,
+model_AbstractMExternalType_strategy = st.builds(
+    model_AbstractMExternalType,
     fullQualifiedName=
         safe_text
 )
 AbstractMPackageContainer_strategy = st.builds(
     AbstractMPackageContainer,
 )
-model::MRoot_strategy = st.builds(
-    model::MRoot,
+model_MRoot_strategy = st.builds(
+    model_MRoot,
 )
-model::MPackage_strategy = st.builds(
-    model::MPackage,
+model_MPackage_strategy = st.builds(
+    model_MPackage,
     name=
         safe_text
 )
-model::AbstractMPackageContainer_strategy = st.builds(
-    model::AbstractMPackageContainer,
+model_AbstractMPackageContainer_strategy = st.builds(
+    model_AbstractMPackageContainer,
 )
 
 @given(instance=AbstractCExpression_strategy)
@@ -1612,62 +1612,56 @@ model::AbstractMPackageContainer_strategy = st.builds(
 def test_abstractcexpression_instantiation(instance):
     assert isinstance(instance, AbstractCExpression)
 
-@given(instance=model::CUnparsedExpression_strategy)
+@given(instance=model_CUnparsedExpression_strategy)
 @settings(max_examples=50)
-def test_model::cunparsedexpression_instantiation(instance):
-    assert isinstance(instance, model::CUnparsedExpression)
-
-@given(instance=model::CUnparsedExpression_strategy)
-def test_model::cunparsedexpression_code_type(instance):
-    assert isinstance(instance.code, str)
+def test_model_cunparsedexpression_instantiation(instance):
+    assert isinstance(instance, model_CUnparsedExpression)
 
 
-@given(instance=model::CUnparsedExpression_strategy)
-def test_model::cunparsedexpression_code_setter(instance):
+
+@given(instance=model_CUnparsedExpression_strategy)
+def test_model_cunparsedexpression_code_setter(instance):
     original = instance.code
     instance.code = original
     assert instance.code == original
 
-@given(instance=model::CConditionalExpression_strategy)
+@given(instance=model_CConditionalExpression_strategy)
 @settings(max_examples=50)
-def test_model::cconditionalexpression_instantiation(instance):
-    assert isinstance(instance, model::CConditionalExpression)
+def test_model_cconditionalexpression_instantiation(instance):
+    assert isinstance(instance, model_CConditionalExpression)
 
 @given(instance=AbstractCStatement_strategy)
 @settings(max_examples=50)
 def test_abstractcstatement_instantiation(instance):
     assert isinstance(instance, AbstractCStatement)
 
-@given(instance=model::CIfStatement_strategy)
+@given(instance=model_CIfStatement_strategy)
 @settings(max_examples=50)
-def test_model::cifstatement_instantiation(instance):
-    assert isinstance(instance, model::CIfStatement)
+def test_model_cifstatement_instantiation(instance):
+    assert isinstance(instance, model_CIfStatement)
 
-@given(instance=model::CExpressionStatement_strategy)
+@given(instance=model_CUnparsedStatement_strategy)
 @settings(max_examples=50)
-def test_model::cexpressionstatement_instantiation(instance):
-    assert isinstance(instance, model::CExpressionStatement)
-
-@given(instance=model::CUnparsedStatement_strategy)
-@settings(max_examples=50)
-def test_model::cunparsedstatement_instantiation(instance):
-    assert isinstance(instance, model::CUnparsedStatement)
-
-@given(instance=model::CUnparsedStatement_strategy)
-def test_model::cunparsedstatement_code_type(instance):
-    assert isinstance(instance.code, str)
+def test_model_cunparsedstatement_instantiation(instance):
+    assert isinstance(instance, model_CUnparsedStatement)
 
 
-@given(instance=model::CUnparsedStatement_strategy)
-def test_model::cunparsedstatement_code_setter(instance):
+
+@given(instance=model_CUnparsedStatement_strategy)
+def test_model_cunparsedstatement_code_setter(instance):
     original = instance.code
     instance.code = original
     assert instance.code == original
 
-@given(instance=model::CBlockStatement_strategy)
+@given(instance=model_CExpressionStatement_strategy)
 @settings(max_examples=50)
-def test_model::cblockstatement_instantiation(instance):
-    assert isinstance(instance, model::CBlockStatement)
+def test_model_cexpressionstatement_instantiation(instance):
+    assert isinstance(instance, model_CExpressionStatement)
+
+@given(instance=model_CBlockStatement_strategy)
+@settings(max_examples=50)
+def test_model_cblockstatement_instantiation(instance):
+    assert isinstance(instance, model_CBlockStatement)
 
 @given(instance=AbstractMMethodDeclaration_strategy)
 @settings(max_examples=50)
@@ -1679,32 +1673,26 @@ def test_abstractmmethoddeclaration_instantiation(instance):
 def test_abstractmmethodimplementation_instantiation(instance):
     assert isinstance(instance, AbstractMMethodImplementation)
 
-@given(instance=model::MMethodImplementationParameter_strategy)
+@given(instance=model_MMethodImplementationParameter_strategy)
 @settings(max_examples=50)
-def test_model::mmethodimplementationparameter_instantiation(instance):
-    assert isinstance(instance, model::MMethodImplementationParameter)
-
-@given(instance=model::MMethodImplementationParameter_strategy)
-def test_model::mmethodimplementationparameter_final_type(instance):
-    assert isinstance(instance.final, bool)
+def test_model_mmethodimplementationparameter_instantiation(instance):
+    assert isinstance(instance, model_MMethodImplementationParameter)
 
 
-@given(instance=model::MMethodImplementationParameter_strategy)
-def test_model::mmethodimplementationparameter_final_setter(instance):
-    original = instance.final
-    instance.final = original
-    assert instance.final == original
 
-@given(instance=model::MMethodImplementationParameter_strategy)
-def test_model::mmethodimplementationparameter_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=model::MMethodImplementationParameter_strategy)
-def test_model::mmethodimplementationparameter_name_setter(instance):
+@given(instance=model_MMethodImplementationParameter_strategy)
+def test_model_mmethodimplementationparameter_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
+
+
+
+@given(instance=model_MMethodImplementationParameter_strategy)
+def test_model_mmethodimplementationparameter_final_setter(instance):
+    original = instance.final
+    instance.final = original
+    assert instance.final == original
 
 @given(instance=AbstractMMethodLike_strategy)
 @settings(max_examples=50)
@@ -1716,38 +1704,35 @@ def test_abstractmmethodlike_instantiation(instance):
 def test_abstractmimplementablemethoddeclaration_instantiation(instance):
     assert isinstance(instance, AbstractMImplementableMethodDeclaration)
 
-@given(instance=model::MDeclaredMethodImplementation_strategy)
+@given(instance=model_MDeclaredMethodImplementation_strategy)
 @settings(max_examples=50)
-def test_model::mdeclaredmethodimplementation_instantiation(instance):
-    assert isinstance(instance, model::MDeclaredMethodImplementation)
+def test_model_mdeclaredmethodimplementation_instantiation(instance):
+    assert isinstance(instance, model_MDeclaredMethodImplementation)
 
-@given(instance=model::AbstractMImplementableMethodDeclaration_strategy)
+@given(instance=model_AbstractMImplementableMethodDeclaration_strategy)
 @settings(max_examples=50)
-def test_model::abstractmimplementablemethoddeclaration_instantiation(instance):
-    assert isinstance(instance, model::AbstractMImplementableMethodDeclaration)
+def test_model_abstractmimplementablemethoddeclaration_instantiation(instance):
+    assert isinstance(instance, model_AbstractMImplementableMethodDeclaration)
 
-@given(instance=model::MDirectMethodImplementation_strategy)
+@given(instance=model_MDirectMethodImplementation_strategy)
 @settings(max_examples=50)
-def test_model::mdirectmethodimplementation_instantiation(instance):
-    assert isinstance(instance, model::MDirectMethodImplementation)
+def test_model_mdirectmethodimplementation_instantiation(instance):
+    assert isinstance(instance, model_MDirectMethodImplementation)
 
-@given(instance=model::MImplicitMethodDeclaration_strategy)
+@given(instance=model_MImplicitMethodDeclaration_strategy)
 @settings(max_examples=50)
-def test_model::mimplicitmethoddeclaration_instantiation(instance):
-    assert isinstance(instance, model::MImplicitMethodDeclaration)
+def test_model_mimplicitmethoddeclaration_instantiation(instance):
+    assert isinstance(instance, model_MImplicitMethodDeclaration)
 
-@given(instance=model::MAbstractClassMethodDeclaration_strategy)
+@given(instance=model_MAbstractClassMethodDeclaration_strategy)
 @settings(max_examples=50)
-def test_model::mabstractclassmethoddeclaration_instantiation(instance):
-    assert isinstance(instance, model::MAbstractClassMethodDeclaration)
-
-@given(instance=model::MAbstractClassMethodDeclaration_strategy)
-def test_model::mabstractclassmethoddeclaration_visibility_type(instance):
-    assert isinstance(instance.visibility, str)
+def test_model_mabstractclassmethoddeclaration_instantiation(instance):
+    assert isinstance(instance, model_MAbstractClassMethodDeclaration)
 
 
-@given(instance=model::MAbstractClassMethodDeclaration_strategy)
-def test_model::mabstractclassmethoddeclaration_visibility_setter(instance):
+
+@given(instance=model_MAbstractClassMethodDeclaration_strategy)
+def test_model_mabstractclassmethoddeclaration_visibility_setter(instance):
     original = instance.visibility
     instance.visibility = original
     assert instance.visibility == original
@@ -1762,99 +1747,87 @@ def test_abstractmclassfielddeclaration_instantiation(instance):
 def test_abstractmfielddeclaration_instantiation(instance):
     assert isinstance(instance, AbstractMFieldDeclaration)
 
-@given(instance=model::AbstractMClassFieldDeclaration_strategy)
+@given(instance=model_AbstractMClassFieldDeclaration_strategy)
 @settings(max_examples=50)
-def test_model::abstractmclassfielddeclaration_instantiation(instance):
-    assert isinstance(instance, model::AbstractMClassFieldDeclaration)
-
-@given(instance=model::AbstractMClassFieldDeclaration_strategy)
-def test_model::abstractmclassfielddeclaration_visibility_type(instance):
-    assert isinstance(instance.visibility, str)
+def test_model_abstractmclassfielddeclaration_instantiation(instance):
+    assert isinstance(instance, model_AbstractMClassFieldDeclaration)
 
 
-@given(instance=model::AbstractMClassFieldDeclaration_strategy)
-def test_model::abstractmclassfielddeclaration_visibility_setter(instance):
+
+@given(instance=model_AbstractMClassFieldDeclaration_strategy)
+def test_model_abstractmclassfielddeclaration_visibility_setter(instance):
     original = instance.visibility
     instance.visibility = original
     assert instance.visibility == original
 
-@given(instance=model::AbstractMClassFieldDeclaration_strategy)
-def test_model::abstractmclassfielddeclaration_final_type(instance):
-    assert isinstance(instance.final, bool)
 
 
-@given(instance=model::AbstractMClassFieldDeclaration_strategy)
-def test_model::abstractmclassfielddeclaration_final_setter(instance):
+@given(instance=model_AbstractMClassFieldDeclaration_strategy)
+def test_model_abstractmclassfielddeclaration_final_setter(instance):
     original = instance.final
     instance.final = original
     assert instance.final == original
 
-@given(instance=model::AbstractCExpression_strategy)
+@given(instance=model_AbstractCExpression_strategy)
 @settings(max_examples=50)
-def test_model::abstractcexpression_instantiation(instance):
-    assert isinstance(instance, model::AbstractCExpression)
+def test_model_abstractcexpression_instantiation(instance):
+    assert isinstance(instance, model_AbstractCExpression)
 
 @given(instance=AbstractMTypeWithNameDeclaration_strategy)
 @settings(max_examples=50)
 def test_abstractmtypewithnamedeclaration_instantiation(instance):
     assert isinstance(instance, AbstractMTypeWithNameDeclaration)
 
-@given(instance=model::CDeclarationStatement_strategy)
+@given(instance=model_AbstractMMethodDeclaration_strategy)
 @settings(max_examples=50)
-def test_model::cdeclarationstatement_instantiation(instance):
-    assert isinstance(instance, model::CDeclarationStatement)
+def test_model_abstractmmethoddeclaration_instantiation(instance):
+    assert isinstance(instance, model_AbstractMMethodDeclaration)
 
-@given(instance=model::CDeclarationStatement_strategy)
-def test_model::cdeclarationstatement_final_type(instance):
-    assert isinstance(instance.final, bool)
+@given(instance=model_MMethodDeclarationParameter_strategy)
+@settings(max_examples=50)
+def test_model_mmethoddeclarationparameter_instantiation(instance):
+    assert isinstance(instance, model_MMethodDeclarationParameter)
+
+@given(instance=model_CDeclarationStatement_strategy)
+@settings(max_examples=50)
+def test_model_cdeclarationstatement_instantiation(instance):
+    assert isinstance(instance, model_CDeclarationStatement)
 
 
-@given(instance=model::CDeclarationStatement_strategy)
-def test_model::cdeclarationstatement_final_setter(instance):
+
+@given(instance=model_CDeclarationStatement_strategy)
+def test_model_cdeclarationstatement_final_setter(instance):
     original = instance.final
     instance.final = original
     assert instance.final == original
 
-@given(instance=model::MConstructorParameter_strategy)
+@given(instance=model_MConstructorParameter_strategy)
 @settings(max_examples=50)
-def test_model::mconstructorparameter_instantiation(instance):
-    assert isinstance(instance, model::MConstructorParameter)
-
-@given(instance=model::MConstructorParameter_strategy)
-def test_model::mconstructorparameter_final_type(instance):
-    assert isinstance(instance.final, bool)
+def test_model_mconstructorparameter_instantiation(instance):
+    assert isinstance(instance, model_MConstructorParameter)
 
 
-@given(instance=model::MConstructorParameter_strategy)
-def test_model::mconstructorparameter_final_setter(instance):
+
+@given(instance=model_MConstructorParameter_strategy)
+def test_model_mconstructorparameter_final_setter(instance):
     original = instance.final
     instance.final = original
     assert instance.final == original
 
-@given(instance=model::MMethodDeclarationParameter_strategy)
+@given(instance=model_AbstractMFieldDeclaration_strategy)
 @settings(max_examples=50)
-def test_model::mmethoddeclarationparameter_instantiation(instance):
-    assert isinstance(instance, model::MMethodDeclarationParameter)
+def test_model_abstractmfielddeclaration_instantiation(instance):
+    assert isinstance(instance, model_AbstractMFieldDeclaration)
 
-@given(instance=model::AbstractMMethodDeclaration_strategy)
+@given(instance=model_MInterfaceMethodDeclaration_strategy)
 @settings(max_examples=50)
-def test_model::abstractmmethoddeclaration_instantiation(instance):
-    assert isinstance(instance, model::AbstractMMethodDeclaration)
+def test_model_minterfacemethoddeclaration_instantiation(instance):
+    assert isinstance(instance, model_MInterfaceMethodDeclaration)
 
-@given(instance=model::AbstractMFieldDeclaration_strategy)
+@given(instance=model_MConstantInterfaceFieldDeclaration_strategy)
 @settings(max_examples=50)
-def test_model::abstractmfielddeclaration_instantiation(instance):
-    assert isinstance(instance, model::AbstractMFieldDeclaration)
-
-@given(instance=model::MInterfaceMethodDeclaration_strategy)
-@settings(max_examples=50)
-def test_model::minterfacemethoddeclaration_instantiation(instance):
-    assert isinstance(instance, model::MInterfaceMethodDeclaration)
-
-@given(instance=model::MConstantInterfaceFieldDeclaration_strategy)
-@settings(max_examples=50)
-def test_model::mconstantinterfacefielddeclaration_instantiation(instance):
-    assert isinstance(instance, model::MConstantInterfaceFieldDeclaration)
+def test_model_mconstantinterfacefielddeclaration_instantiation(instance):
+    assert isinstance(instance, model_MConstantInterfaceFieldDeclaration)
 
 @given(instance=AbstractMInterface_strategy)
 @settings(max_examples=50)
@@ -1866,309 +1839,273 @@ def test_abstractminterface_instantiation(instance):
 def test_mdeclaredclass_instantiation(instance):
     assert isinstance(instance, MDeclaredClass)
 
-@given(instance=model::MAbstractDeclaredClass_strategy)
+@given(instance=model_MAbstractDeclaredClass_strategy)
 @settings(max_examples=50)
-def test_model::mabstractdeclaredclass_instantiation(instance):
-    assert isinstance(instance, model::MAbstractDeclaredClass)
+def test_model_mabstractdeclaredclass_instantiation(instance):
+    assert isinstance(instance, model_MAbstractDeclaredClass)
 
 @given(instance=AbstractMExternalType_strategy)
 @settings(max_examples=50)
 def test_abstractmexternaltype_instantiation(instance):
     assert isinstance(instance, AbstractMExternalType)
 
-@given(instance=model::MExternalInterface_strategy)
+@given(instance=model_MExternalInterface_strategy)
 @settings(max_examples=50)
-def test_model::mexternalinterface_instantiation(instance):
-    assert isinstance(instance, model::MExternalInterface)
+def test_model_mexternalinterface_instantiation(instance):
+    assert isinstance(instance, model_MExternalInterface)
 
-@given(instance=model::MNativeMethodDeclaration_strategy)
+@given(instance=model_MNativeMethodDeclaration_strategy)
 @settings(max_examples=50)
-def test_model::mnativemethoddeclaration_instantiation(instance):
-    assert isinstance(instance, model::MNativeMethodDeclaration)
+def test_model_mnativemethoddeclaration_instantiation(instance):
+    assert isinstance(instance, model_MNativeMethodDeclaration)
 
-@given(instance=model::AbstractMMethodImplementation_strategy)
+@given(instance=model_AbstractMMethodImplementation_strategy)
 @settings(max_examples=50)
-def test_model::abstractmmethodimplementation_instantiation(instance):
-    assert isinstance(instance, model::AbstractMMethodImplementation)
+def test_model_abstractmmethodimplementation_instantiation(instance):
+    assert isinstance(instance, model_AbstractMMethodImplementation)
 
-@given(instance=model::MConstructor_strategy)
+@given(instance=model_MConstructor_strategy)
 @settings(max_examples=50)
-def test_model::mconstructor_instantiation(instance):
-    assert isinstance(instance, model::MConstructor)
+def test_model_mconstructor_instantiation(instance):
+    assert isinstance(instance, model_MConstructor)
 
-@given(instance=model::MInstanceClassFieldDeclaration_strategy)
+@given(instance=model_MInstanceClassFieldDeclaration_strategy)
 @settings(max_examples=50)
-def test_model::minstanceclassfielddeclaration_instantiation(instance):
-    assert isinstance(instance, model::MInstanceClassFieldDeclaration)
-
-@given(instance=model::MInstanceClassFieldDeclaration_strategy)
-def test_model::minstanceclassfielddeclaration_transient_type(instance):
-    assert isinstance(instance.transient, bool)
+def test_model_minstanceclassfielddeclaration_instantiation(instance):
+    assert isinstance(instance, model_MInstanceClassFieldDeclaration)
 
 
-@given(instance=model::MInstanceClassFieldDeclaration_strategy)
-def test_model::minstanceclassfielddeclaration_transient_setter(instance):
+
+@given(instance=model_MInstanceClassFieldDeclaration_strategy)
+def test_model_minstanceclassfielddeclaration_transient_setter(instance):
     original = instance.transient
     instance.transient = original
     assert instance.transient == original
 
-@given(instance=model::MStaticClassFieldDeclaration_strategy)
+@given(instance=model_MStaticClassFieldDeclaration_strategy)
 @settings(max_examples=50)
-def test_model::mstaticclassfielddeclaration_instantiation(instance):
-    assert isinstance(instance, model::MStaticClassFieldDeclaration)
+def test_model_mstaticclassfielddeclaration_instantiation(instance):
+    assert isinstance(instance, model_MStaticClassFieldDeclaration)
 
 @given(instance=AbstractMDeclaredType_strategy)
 @settings(max_examples=50)
 def test_abstractmdeclaredtype_instantiation(instance):
     assert isinstance(instance, AbstractMDeclaredType)
 
-@given(instance=model::MDeclaredInterface_strategy)
+@given(instance=model_MDeclaredInterface_strategy)
 @settings(max_examples=50)
-def test_model::mdeclaredinterface_instantiation(instance):
-    assert isinstance(instance, model::MDeclaredInterface)
+def test_model_mdeclaredinterface_instantiation(instance):
+    assert isinstance(instance, model_MDeclaredInterface)
 
 @given(instance=AbstractMClass_strategy)
 @settings(max_examples=50)
 def test_abstractmclass_instantiation(instance):
     assert isinstance(instance, AbstractMClass)
 
-@given(instance=model::MExternalClass_strategy)
+@given(instance=model_MExternalClass_strategy)
 @settings(max_examples=50)
-def test_model::mexternalclass_instantiation(instance):
-    assert isinstance(instance, model::MExternalClass)
+def test_model_mexternalclass_instantiation(instance):
+    assert isinstance(instance, model_MExternalClass)
 
-@given(instance=model::MDeclaredClass_strategy)
+@given(instance=model_MDeclaredClass_strategy)
 @settings(max_examples=50)
-def test_model::mdeclaredclass_instantiation(instance):
-    assert isinstance(instance, model::MDeclaredClass)
+def test_model_mdeclaredclass_instantiation(instance):
+    assert isinstance(instance, model_MDeclaredClass)
 
 @given(instance=AbstractMType_strategy)
 @settings(max_examples=50)
 def test_abstractmtype_instantiation(instance):
     assert isinstance(instance, AbstractMType)
 
-@given(instance=model::AbstractMInterface_strategy)
+@given(instance=model_AbstractMInterface_strategy)
 @settings(max_examples=50)
-def test_model::abstractminterface_instantiation(instance):
-    assert isinstance(instance, model::AbstractMInterface)
+def test_model_abstractminterface_instantiation(instance):
+    assert isinstance(instance, model_AbstractMInterface)
 
-@given(instance=model::AbstractMClass_strategy)
+@given(instance=model_AbstractMClass_strategy)
 @settings(max_examples=50)
-def test_model::abstractmclass_instantiation(instance):
-    assert isinstance(instance, model::AbstractMClass)
+def test_model_abstractmclass_instantiation(instance):
+    assert isinstance(instance, model_AbstractMClass)
 
-@given(instance=model::AbstractMTypeWithNameDeclaration_strategy)
+@given(instance=model_AbstractMTypeWithNameDeclaration_strategy)
 @settings(max_examples=50)
-def test_model::abstractmtypewithnamedeclaration_instantiation(instance):
-    assert isinstance(instance, model::AbstractMTypeWithNameDeclaration)
-
-@given(instance=model::AbstractMTypeWithNameDeclaration_strategy)
-def test_model::abstractmtypewithnamedeclaration_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_model_abstractmtypewithnamedeclaration_instantiation(instance):
+    assert isinstance(instance, model_AbstractMTypeWithNameDeclaration)
 
 
-@given(instance=model::AbstractMTypeWithNameDeclaration_strategy)
-def test_model::abstractmtypewithnamedeclaration_name_setter(instance):
+
+@given(instance=model_AbstractMTypeWithNameDeclaration_strategy)
+def test_model_abstractmtypewithnamedeclaration_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=model::AbstractCStatement_strategy)
+@given(instance=model_AbstractCStatement_strategy)
 @settings(max_examples=50)
-def test_model::abstractcstatement_instantiation(instance):
-    assert isinstance(instance, model::AbstractCStatement)
+def test_model_abstractcstatement_instantiation(instance):
+    assert isinstance(instance, model_AbstractCStatement)
 
 @given(instance=AbstractModifiers_strategy)
 @settings(max_examples=50)
 def test_abstractmodifiers_instantiation(instance):
     assert isinstance(instance, AbstractModifiers)
 
-@given(instance=model::AbstractMMethodLike_strategy)
+@given(instance=model_AbstractMMethodLike_strategy)
 @settings(max_examples=50)
-def test_model::abstractmmethodlike_instantiation(instance):
-    assert isinstance(instance, model::AbstractMMethodLike)
+def test_model_abstractmmethodlike_instantiation(instance):
+    assert isinstance(instance, model_AbstractMMethodLike)
 
-@given(instance=model::AbstractModifiers_strategy)
+@given(instance=model_AbstractModifiers_strategy)
 @settings(max_examples=50)
-def test_model::abstractmodifiers_instantiation(instance):
-    assert isinstance(instance, model::AbstractModifiers)
-
-@given(instance=model::AbstractModifiers_strategy)
-def test_model::abstractmodifiers_synchronized_type(instance):
-    assert isinstance(instance.synchronized, bool)
+def test_model_abstractmodifiers_instantiation(instance):
+    assert isinstance(instance, model_AbstractModifiers)
 
 
-@given(instance=model::AbstractModifiers_strategy)
-def test_model::abstractmodifiers_synchronized_setter(instance):
-    original = instance.synchronized
-    instance.synchronized = original
-    assert instance.synchronized == original
 
-@given(instance=model::AbstractModifiers_strategy)
-def test_model::abstractmodifiers_visibility_type(instance):
-    assert isinstance(instance.visibility, str)
+@given(instance=model_AbstractModifiers_strategy)
+def test_model_abstractmodifiers_final_setter(instance):
+    original = instance.final
+    instance.final = original
+    assert instance.final == original
 
 
-@given(instance=model::AbstractModifiers_strategy)
-def test_model::abstractmodifiers_visibility_setter(instance):
+
+@given(instance=model_AbstractModifiers_strategy)
+def test_model_abstractmodifiers_visibility_setter(instance):
     original = instance.visibility
     instance.visibility = original
     assert instance.visibility == original
 
-@given(instance=model::AbstractModifiers_strategy)
-def test_model::abstractmodifiers_final_type(instance):
-    assert isinstance(instance.final, bool)
 
 
-@given(instance=model::AbstractModifiers_strategy)
-def test_model::abstractmodifiers_final_setter(instance):
-    original = instance.final
-    instance.final = original
-    assert instance.final == original
+@given(instance=model_AbstractModifiers_strategy)
+def test_model_abstractmodifiers_synchronized_setter(instance):
+    original = instance.synchronized
+    instance.synchronized = original
+    assert instance.synchronized == original
 
 @given(instance=AbstractMTypeReference_strategy)
 @settings(max_examples=50)
 def test_abstractmtypereference_instantiation(instance):
     assert isinstance(instance, AbstractMTypeReference)
 
-@given(instance=model::MExternalTypeReference_strategy)
+@given(instance=model_MExternalTypeReference_strategy)
 @settings(max_examples=50)
-def test_model::mexternaltypereference_instantiation(instance):
-    assert isinstance(instance, model::MExternalTypeReference)
+def test_model_mexternaltypereference_instantiation(instance):
+    assert isinstance(instance, model_MExternalTypeReference)
 
-@given(instance=model::MPrimitiveTypeReference_strategy)
+@given(instance=model_MPrimitiveTypeReference_strategy)
 @settings(max_examples=50)
-def test_model::mprimitivetypereference_instantiation(instance):
-    assert isinstance(instance, model::MPrimitiveTypeReference)
-
-@given(instance=model::MPrimitiveTypeReference_strategy)
-def test_model::mprimitivetypereference_type_type(instance):
-    assert isinstance(instance.type, str)
+def test_model_mprimitivetypereference_instantiation(instance):
+    assert isinstance(instance, model_MPrimitiveTypeReference)
 
 
-@given(instance=model::MPrimitiveTypeReference_strategy)
-def test_model::mprimitivetypereference_type_setter(instance):
+
+@given(instance=model_MPrimitiveTypeReference_strategy)
+def test_model_mprimitivetypereference_type_setter(instance):
     original = instance.type
     instance.type = original
     assert instance.type == original
 
-@given(instance=model::MDeclaredTypeReference_strategy)
+@given(instance=model_MDeclaredTypeReference_strategy)
 @settings(max_examples=50)
-def test_model::mdeclaredtypereference_instantiation(instance):
-    assert isinstance(instance, model::MDeclaredTypeReference)
+def test_model_mdeclaredtypereference_instantiation(instance):
+    assert isinstance(instance, model_MDeclaredTypeReference)
 
-@given(instance=model::AbstractMTypeReference_strategy)
+@given(instance=model_AbstractMTypeReference_strategy)
 @settings(max_examples=50)
-def test_model::abstractmtypereference_instantiation(instance):
-    assert isinstance(instance, model::AbstractMTypeReference)
-
-@given(instance=model::AbstractMTypeReference_strategy)
-def test_model::abstractmtypereference_array_type(instance):
-    assert isinstance(instance.array, bool)
+def test_model_abstractmtypereference_instantiation(instance):
+    assert isinstance(instance, model_AbstractMTypeReference)
 
 
-@given(instance=model::AbstractMTypeReference_strategy)
-def test_model::abstractmtypereference_array_setter(instance):
+
+@given(instance=model_AbstractMTypeReference_strategy)
+def test_model_abstractmtypereference_array_setter(instance):
     original = instance.array
     instance.array = original
     assert instance.array == original
 
-@given(instance=model::AbstractMType_strategy)
+@given(instance=model_AbstractMType_strategy)
 @settings(max_examples=50)
-def test_model::abstractmtype_instantiation(instance):
-    assert isinstance(instance, model::AbstractMType)
+def test_model_abstractmtype_instantiation(instance):
+    assert isinstance(instance, model_AbstractMType)
 
 @given(instance=AbstractMTypeContainer_strategy)
 @settings(max_examples=50)
 def test_abstractmtypecontainer_instantiation(instance):
     assert isinstance(instance, AbstractMTypeContainer)
 
-@given(instance=model::AbstractMDeclaredType_strategy)
+@given(instance=model_AbstractMDeclaredType_strategy)
 @settings(max_examples=50)
-def test_model::abstractmdeclaredtype_instantiation(instance):
-    assert isinstance(instance, model::AbstractMDeclaredType)
-
-@given(instance=model::AbstractMDeclaredType_strategy)
-def test_model::abstractmdeclaredtype_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_model_abstractmdeclaredtype_instantiation(instance):
+    assert isinstance(instance, model_AbstractMDeclaredType)
 
 
-@given(instance=model::AbstractMDeclaredType_strategy)
-def test_model::abstractmdeclaredtype_name_setter(instance):
+
+@given(instance=model_AbstractMDeclaredType_strategy)
+def test_model_abstractmdeclaredtype_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=model::AbstractMTypeContainer_strategy)
+@given(instance=model_AbstractMTypeContainer_strategy)
 @settings(max_examples=50)
-def test_model::abstractmtypecontainer_instantiation(instance):
-    assert isinstance(instance, model::AbstractMTypeContainer)
+def test_model_abstractmtypecontainer_instantiation(instance):
+    assert isinstance(instance, model_AbstractMTypeContainer)
 
 @given(instance=AbstractMResource_strategy)
 @settings(max_examples=50)
 def test_abstractmresource_instantiation(instance):
     assert isinstance(instance, AbstractMResource)
 
-@given(instance=model::MCompilationUnit_strategy)
+@given(instance=model_MCompilationUnit_strategy)
 @settings(max_examples=50)
-def test_model::mcompilationunit_instantiation(instance):
-    assert isinstance(instance, model::MCompilationUnit)
+def test_model_mcompilationunit_instantiation(instance):
+    assert isinstance(instance, model_MCompilationUnit)
 
-@given(instance=model::MResource_strategy)
+@given(instance=model_MResource_strategy)
 @settings(max_examples=50)
-def test_model::mresource_instantiation(instance):
-    assert isinstance(instance, model::MResource)
-
-@given(instance=model::MResource_strategy)
-def test_model::mresource_content_type(instance):
-    assert isinstance(instance.content, str)
+def test_model_mresource_instantiation(instance):
+    assert isinstance(instance, model_MResource)
 
 
-@given(instance=model::MResource_strategy)
-def test_model::mresource_content_setter(instance):
+
+@given(instance=model_MResource_strategy)
+def test_model_mresource_content_setter(instance):
     original = instance.content
     instance.content = original
     assert instance.content == original
 
-@given(instance=model::AbstractMResource_strategy)
+@given(instance=model_AbstractMResource_strategy)
 @settings(max_examples=50)
-def test_model::abstractmresource_instantiation(instance):
-    assert isinstance(instance, model::AbstractMResource)
-
-@given(instance=model::AbstractMResource_strategy)
-def test_model::abstractmresource_derived_type(instance):
-    assert isinstance(instance.derived, bool)
+def test_model_abstractmresource_instantiation(instance):
+    assert isinstance(instance, model_AbstractMResource)
 
 
-@given(instance=model::AbstractMResource_strategy)
-def test_model::abstractmresource_derived_setter(instance):
-    original = instance.derived
-    instance.derived = original
-    assert instance.derived == original
 
-@given(instance=model::AbstractMResource_strategy)
-def test_model::abstractmresource_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=model::AbstractMResource_strategy)
-def test_model::abstractmresource_name_setter(instance):
+@given(instance=model_AbstractMResource_strategy)
+def test_model_abstractmresource_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=model::AbstractMExternalType_strategy)
+
+
+@given(instance=model_AbstractMResource_strategy)
+def test_model_abstractmresource_derived_setter(instance):
+    original = instance.derived
+    instance.derived = original
+    assert instance.derived == original
+
+@given(instance=model_AbstractMExternalType_strategy)
 @settings(max_examples=50)
-def test_model::abstractmexternaltype_instantiation(instance):
-    assert isinstance(instance, model::AbstractMExternalType)
-
-@given(instance=model::AbstractMExternalType_strategy)
-def test_model::abstractmexternaltype_fullQualifiedName_type(instance):
-    assert isinstance(instance.fullQualifiedName, str)
+def test_model_abstractmexternaltype_instantiation(instance):
+    assert isinstance(instance, model_AbstractMExternalType)
 
 
-@given(instance=model::AbstractMExternalType_strategy)
-def test_model::abstractmexternaltype_fullQualifiedName_setter(instance):
+
+@given(instance=model_AbstractMExternalType_strategy)
+def test_model_abstractmexternaltype_fullQualifiedName_setter(instance):
     original = instance.fullQualifiedName
     instance.fullQualifiedName = original
     assert instance.fullQualifiedName == original
@@ -2178,28 +2115,25 @@ def test_model::abstractmexternaltype_fullQualifiedName_setter(instance):
 def test_abstractmpackagecontainer_instantiation(instance):
     assert isinstance(instance, AbstractMPackageContainer)
 
-@given(instance=model::MRoot_strategy)
+@given(instance=model_MRoot_strategy)
 @settings(max_examples=50)
-def test_model::mroot_instantiation(instance):
-    assert isinstance(instance, model::MRoot)
+def test_model_mroot_instantiation(instance):
+    assert isinstance(instance, model_MRoot)
 
-@given(instance=model::MPackage_strategy)
+@given(instance=model_MPackage_strategy)
 @settings(max_examples=50)
-def test_model::mpackage_instantiation(instance):
-    assert isinstance(instance, model::MPackage)
-
-@given(instance=model::MPackage_strategy)
-def test_model::mpackage_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_model_mpackage_instantiation(instance):
+    assert isinstance(instance, model_MPackage)
 
 
-@given(instance=model::MPackage_strategy)
-def test_model::mpackage_name_setter(instance):
+
+@given(instance=model_MPackage_strategy)
+def test_model_mpackage_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=model::AbstractMPackageContainer_strategy)
+@given(instance=model_AbstractMPackageContainer_strategy)
 @settings(max_examples=50)
-def test_model::abstractmpackagecontainer_instantiation(instance):
-    assert isinstance(instance, model::AbstractMPackageContainer)
+def test_model_abstractmpackagecontainer_instantiation(instance):
+    assert isinstance(instance, model_AbstractMPackageContainer)

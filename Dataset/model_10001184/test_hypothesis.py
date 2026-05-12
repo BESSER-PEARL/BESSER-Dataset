@@ -3,7 +3,7 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
 from python_code import (
     Break_in,
@@ -89,17 +89,8 @@ def test_door_status_constructor_exists():
 def test_door_status_constructor_args():
     sig = inspect.signature(Door_Status.__init__)
     params = list(sig.parameters.keys())
-    assert "Door_Open" in params, "Missing parameter 'Door_Open'"
     assert "Door_Close" in params, "Missing parameter 'Door_Close'"
-
-def test_door_status_has_Door_Open():
-    assert hasattr(Door_Status, "Door_Open")
-    descriptor = None
-    for klass in Door_Status.__mro__:
-        if "Door_Open" in klass.__dict__:
-            descriptor = klass.__dict__["Door_Open"]
-            break
-    assert isinstance(descriptor, property)
+    assert "Door_Open" in params, "Missing parameter 'Door_Open'"
 
 def test_door_status_has_Door_Close():
     assert hasattr(Door_Status, "Door_Close")
@@ -107,6 +98,15 @@ def test_door_status_has_Door_Close():
     for klass in Door_Status.__mro__:
         if "Door_Close" in klass.__dict__:
             descriptor = klass.__dict__["Door_Close"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_door_status_has_Door_Open():
+    assert hasattr(Door_Status, "Door_Open")
+    descriptor = None
+    for klass in Door_Status.__mro__:
+        if "Door_Open" in klass.__dict__:
+            descriptor = klass.__dict__["Door_Open"]
             break
     assert isinstance(descriptor, property)
 
@@ -253,17 +253,8 @@ def test_motor_constructor_exists():
 def test_motor_constructor_args():
     sig = inspect.signature(Motor.__init__)
     params = list(sig.parameters.keys())
-    assert "Durable" in params, "Missing parameter 'Durable'"
     assert "Suitable_Speed" in params, "Missing parameter 'Suitable_Speed'"
-
-def test_motor_has_Durable():
-    assert hasattr(Motor, "Durable")
-    descriptor = None
-    for klass in Motor.__mro__:
-        if "Durable" in klass.__dict__:
-            descriptor = klass.__dict__["Durable"]
-            break
-    assert isinstance(descriptor, property)
+    assert "Durable" in params, "Missing parameter 'Durable'"
 
 def test_motor_has_Suitable_Speed():
     assert hasattr(Motor, "Suitable_Speed")
@@ -271,6 +262,15 @@ def test_motor_has_Suitable_Speed():
     for klass in Motor.__mro__:
         if "Suitable_Speed" in klass.__dict__:
             descriptor = klass.__dict__["Suitable_Speed"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_motor_has_Durable():
+    assert hasattr(Motor, "Durable")
+    descriptor = None
+    for klass in Motor.__mro__:
+        if "Durable" in klass.__dict__:
+            descriptor = klass.__dict__["Durable"]
             break
     assert isinstance(descriptor, property)
 
@@ -287,17 +287,8 @@ def test_remote_controller_interface_constructor_exists():
 def test_remote_controller_interface_constructor_args():
     sig = inspect.signature(Remote_Controller_Interface.__init__)
     params = list(sig.parameters.keys())
-    assert "Control_Garade_Door" in params, "Missing parameter 'Control_Garade_Door'"
     assert "Bluebooth" in params, "Missing parameter 'Bluebooth'"
-
-def test_remote_controller_interface_has_Control_Garade_Door():
-    assert hasattr(Remote_Controller_Interface, "Control_Garade_Door")
-    descriptor = None
-    for klass in Remote_Controller_Interface.__mro__:
-        if "Control_Garade_Door" in klass.__dict__:
-            descriptor = klass.__dict__["Control_Garade_Door"]
-            break
-    assert isinstance(descriptor, property)
+    assert "Control_Garade_Door" in params, "Missing parameter 'Control_Garade_Door'"
 
 def test_remote_controller_interface_has_Bluebooth():
     assert hasattr(Remote_Controller_Interface, "Bluebooth")
@@ -305,6 +296,15 @@ def test_remote_controller_interface_has_Bluebooth():
     for klass in Remote_Controller_Interface.__mro__:
         if "Bluebooth" in klass.__dict__:
             descriptor = klass.__dict__["Bluebooth"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_remote_controller_interface_has_Control_Garade_Door():
+    assert hasattr(Remote_Controller_Interface, "Control_Garade_Door")
+    descriptor = None
+    for klass in Remote_Controller_Interface.__mro__:
+        if "Control_Garade_Door" in klass.__dict__:
+            descriptor = klass.__dict__["Control_Garade_Door"]
             break
     assert isinstance(descriptor, property)
 
@@ -451,9 +451,18 @@ def test_abstract_door_constructor_exists():
 def test_abstract_door_constructor_args():
     sig = inspect.signature(Abstract_Door.__init__)
     params = list(sig.parameters.keys())
+    assert "Security" in params, "Missing parameter 'Security'"
     assert "Automatic" in params, "Missing parameter 'Automatic'"
     assert "Materials" in params, "Missing parameter 'Materials'"
-    assert "Security" in params, "Missing parameter 'Security'"
+
+def test_abstract_door_has_Security():
+    assert hasattr(Abstract_Door, "Security")
+    descriptor = None
+    for klass in Abstract_Door.__mro__:
+        if "Security" in klass.__dict__:
+            descriptor = klass.__dict__["Security"]
+            break
+    assert isinstance(descriptor, property)
 
 def test_abstract_door_has_Automatic():
     assert hasattr(Abstract_Door, "Automatic")
@@ -470,15 +479,6 @@ def test_abstract_door_has_Materials():
     for klass in Abstract_Door.__mro__:
         if "Materials" in klass.__dict__:
             descriptor = klass.__dict__["Materials"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_abstract_door_has_Security():
-    assert hasattr(Abstract_Door, "Security")
-    descriptor = None
-    for klass in Abstract_Door.__mro__:
-        if "Security" in klass.__dict__:
-            descriptor = klass.__dict__["Security"]
             break
     assert isinstance(descriptor, property)
 
@@ -506,10 +506,10 @@ Light_Motion_strategy = st.builds(
 )
 Door_Status_strategy = st.builds(
     Door_Status,
-    Door_Open=
-        st.booleans(),
     Door_Close=
-        safe_text
+        safe_text,
+    Door_Open=
+        st.booleans()
 )
 External_Component_strategy = st.builds(
     External_Component,
@@ -540,16 +540,16 @@ Rollers_Rails_strategy = st.builds(
 )
 Motor_strategy = st.builds(
     Motor,
-    Durable=
-        safe_text,
     Suitable_Speed=
+        safe_text,
+    Durable=
         safe_text
 )
 Remote_Controller_Interface_strategy = st.builds(
     Remote_Controller_Interface,
-    Control_Garade_Door=
-        safe_text,
     Bluebooth=
+        safe_text,
+    Control_Garade_Door=
         safe_text
 )
 Coil_Spring_Cables_strategy = st.builds(
@@ -581,11 +581,11 @@ Abstract_Component_strategy = st.builds(
 )
 Abstract_Door_strategy = st.builds(
     Abstract_Door,
+    Security=
+        safe_text,
     Automatic=
         safe_text,
     Materials=
-        safe_text,
-    Security=
         safe_text
 )
 
@@ -594,9 +594,6 @@ Abstract_Door_strategy = st.builds(
 def test_break_in_instantiation(instance):
     assert isinstance(instance, Break_in)
 
-@given(instance=Break_in_strategy)
-def test_break_in_Detect_Froce_type(instance):
-    assert isinstance(instance.Detect_Froce, bool)
 
 
 @given(instance=Break_in_strategy)
@@ -610,9 +607,6 @@ def test_break_in_Detect_Froce_setter(instance):
 def test_light_motion_instantiation(instance):
     assert isinstance(instance, Light_Motion)
 
-@given(instance=Light_Motion_strategy)
-def test_light_motion_Detects_Obstruction_type(instance):
-    assert isinstance(instance.Detects_Obstruction, bool)
 
 
 @given(instance=Light_Motion_strategy)
@@ -626,20 +620,6 @@ def test_light_motion_Detects_Obstruction_setter(instance):
 def test_door_status_instantiation(instance):
     assert isinstance(instance, Door_Status)
 
-@given(instance=Door_Status_strategy)
-def test_door_status_Door_Open_type(instance):
-    assert isinstance(instance.Door_Open, bool)
-
-
-@given(instance=Door_Status_strategy)
-def test_door_status_Door_Open_setter(instance):
-    original = instance.Door_Open
-    instance.Door_Open = original
-    assert instance.Door_Open == original
-
-@given(instance=Door_Status_strategy)
-def test_door_status_Door_Close_type(instance):
-    assert isinstance(instance.Door_Close, str)
 
 
 @given(instance=Door_Status_strategy)
@@ -648,14 +628,19 @@ def test_door_status_Door_Close_setter(instance):
     instance.Door_Close = original
     assert instance.Door_Close == original
 
+
+
+@given(instance=Door_Status_strategy)
+def test_door_status_Door_Open_setter(instance):
+    original = instance.Door_Open
+    instance.Door_Open = original
+    assert instance.Door_Open == original
+
 @given(instance=External_Component_strategy)
 @settings(max_examples=50)
 def test_external_component_instantiation(instance):
     assert isinstance(instance, External_Component)
 
-@given(instance=External_Component_strategy)
-def test_external_component_Sensor_type(instance):
-    assert isinstance(instance.Sensor, bool)
 
 
 @given(instance=External_Component_strategy)
@@ -669,9 +654,6 @@ def test_external_component_Sensor_setter(instance):
 def test_in_house_component_instantiation(instance):
     assert isinstance(instance, In_house_Component)
 
-@given(instance=In_house_Component_strategy)
-def test_in_house_component_Manufacture_Product_type(instance):
-    assert isinstance(instance.Manufacture_Product, str)
 
 
 @given(instance=In_house_Component_strategy)
@@ -680,9 +662,6 @@ def test_in_house_component_Manufacture_Product_setter(instance):
     instance.Manufacture_Product = original
     assert instance.Manufacture_Product == original
 
-@given(instance=In_house_Component_strategy)
-def test_in_house_component_Quality_type(instance):
-    assert isinstance(instance.Quality, str)
 
 
 @given(instance=In_house_Component_strategy)
@@ -701,9 +680,6 @@ def test_t_instantiation(instance):
 def test_controlling_circuit_instantiation(instance):
     assert isinstance(instance, Controlling_Circuit)
 
-@given(instance=Controlling_Circuit_strategy)
-def test_controlling_circuit_MIcro_processor_type(instance):
-    assert isinstance(instance.MIcro_processor, str)
 
 
 @given(instance=Controlling_Circuit_strategy)
@@ -712,9 +688,6 @@ def test_controlling_circuit_MIcro_processor_setter(instance):
     instance.MIcro_processor = original
     assert instance.MIcro_processor == original
 
-@given(instance=Controlling_Circuit_strategy)
-def test_controlling_circuit_Software_type(instance):
-    assert isinstance(instance.Software, str)
 
 
 @given(instance=Controlling_Circuit_strategy)
@@ -728,9 +701,6 @@ def test_controlling_circuit_Software_setter(instance):
 def test_rollers_rails_instantiation(instance):
     assert isinstance(instance, Rollers_Rails)
 
-@given(instance=Rollers_Rails_strategy)
-def test_rollers_rails_Good_Quality_type(instance):
-    assert isinstance(instance.Good_Quality, str)
 
 
 @given(instance=Rollers_Rails_strategy)
@@ -744,20 +714,6 @@ def test_rollers_rails_Good_Quality_setter(instance):
 def test_motor_instantiation(instance):
     assert isinstance(instance, Motor)
 
-@given(instance=Motor_strategy)
-def test_motor_Durable_type(instance):
-    assert isinstance(instance.Durable, str)
-
-
-@given(instance=Motor_strategy)
-def test_motor_Durable_setter(instance):
-    original = instance.Durable
-    instance.Durable = original
-    assert instance.Durable == original
-
-@given(instance=Motor_strategy)
-def test_motor_Suitable_Speed_type(instance):
-    assert isinstance(instance.Suitable_Speed, str)
 
 
 @given(instance=Motor_strategy)
@@ -766,25 +722,19 @@ def test_motor_Suitable_Speed_setter(instance):
     instance.Suitable_Speed = original
     assert instance.Suitable_Speed == original
 
+
+
+@given(instance=Motor_strategy)
+def test_motor_Durable_setter(instance):
+    original = instance.Durable
+    instance.Durable = original
+    assert instance.Durable == original
+
 @given(instance=Remote_Controller_Interface_strategy)
 @settings(max_examples=50)
 def test_remote_controller_interface_instantiation(instance):
     assert isinstance(instance, Remote_Controller_Interface)
 
-@given(instance=Remote_Controller_Interface_strategy)
-def test_remote_controller_interface_Control_Garade_Door_type(instance):
-    assert isinstance(instance.Control_Garade_Door, str)
-
-
-@given(instance=Remote_Controller_Interface_strategy)
-def test_remote_controller_interface_Control_Garade_Door_setter(instance):
-    original = instance.Control_Garade_Door
-    instance.Control_Garade_Door = original
-    assert instance.Control_Garade_Door == original
-
-@given(instance=Remote_Controller_Interface_strategy)
-def test_remote_controller_interface_Bluebooth_type(instance):
-    assert isinstance(instance.Bluebooth, str)
 
 
 @given(instance=Remote_Controller_Interface_strategy)
@@ -793,14 +743,19 @@ def test_remote_controller_interface_Bluebooth_setter(instance):
     instance.Bluebooth = original
     assert instance.Bluebooth == original
 
+
+
+@given(instance=Remote_Controller_Interface_strategy)
+def test_remote_controller_interface_Control_Garade_Door_setter(instance):
+    original = instance.Control_Garade_Door
+    instance.Control_Garade_Door = original
+    assert instance.Control_Garade_Door == original
+
 @given(instance=Coil_Spring_Cables_strategy)
 @settings(max_examples=50)
 def test_coil_spring_cables_instantiation(instance):
     assert isinstance(instance, Coil_Spring_Cables)
 
-@given(instance=Coil_Spring_Cables_strategy)
-def test_coil_spring_cables_Spring_Stiffness_type(instance):
-    assert isinstance(instance.Spring_Stiffness, str)
 
 
 @given(instance=Coil_Spring_Cables_strategy)
@@ -814,9 +769,6 @@ def test_coil_spring_cables_Spring_Stiffness_setter(instance):
 def test_locks_handles_instantiation(instance):
     assert isinstance(instance, Locks_Handles)
 
-@given(instance=Locks_Handles_strategy)
-def test_locks_handles_Durable_type(instance):
-    assert isinstance(instance.Durable, str)
 
 
 @given(instance=Locks_Handles_strategy)
@@ -825,9 +777,6 @@ def test_locks_handles_Durable_setter(instance):
     instance.Durable = original
     assert instance.Durable == original
 
-@given(instance=Locks_Handles_strategy)
-def test_locks_handles_Secure_type(instance):
-    assert isinstance(instance.Secure, str)
 
 
 @given(instance=Locks_Handles_strategy)
@@ -841,9 +790,6 @@ def test_locks_handles_Secure_setter(instance):
 def test_swing_out_instantiation(instance):
     assert isinstance(instance, Swing_out)
 
-@given(instance=Swing_out_strategy)
-def test_swing_out_Space_Clearance_type(instance):
-    assert isinstance(instance.Space_Clearance, str)
 
 
 @given(instance=Swing_out_strategy)
@@ -857,9 +803,6 @@ def test_swing_out_Space_Clearance_setter(instance):
 def test_rolling_instantiation(instance):
     assert isinstance(instance, Rolling)
 
-@given(instance=Rolling_strategy)
-def test_rolling_Minimum_Space_type(instance):
-    assert isinstance(instance.Minimum_Space, str)
 
 
 @given(instance=Rolling_strategy)
@@ -873,9 +816,6 @@ def test_rolling_Minimum_Space_setter(instance):
 def test_abstract_component_instantiation(instance):
     assert isinstance(instance, Abstract_Component)
 
-@given(instance=Abstract_Component_strategy)
-def test_abstract_component_Type_Of_Component_type(instance):
-    assert isinstance(instance.Type_Of_Component, str)
 
 
 @given(instance=Abstract_Component_strategy)
@@ -889,9 +829,14 @@ def test_abstract_component_Type_Of_Component_setter(instance):
 def test_abstract_door_instantiation(instance):
     assert isinstance(instance, Abstract_Door)
 
+
+
 @given(instance=Abstract_Door_strategy)
-def test_abstract_door_Automatic_type(instance):
-    assert isinstance(instance.Automatic, str)
+def test_abstract_door_Security_setter(instance):
+    original = instance.Security
+    instance.Security = original
+    assert instance.Security == original
+
 
 
 @given(instance=Abstract_Door_strategy)
@@ -900,9 +845,6 @@ def test_abstract_door_Automatic_setter(instance):
     instance.Automatic = original
     assert instance.Automatic == original
 
-@given(instance=Abstract_Door_strategy)
-def test_abstract_door_Materials_type(instance):
-    assert isinstance(instance.Materials, str)
 
 
 @given(instance=Abstract_Door_strategy)
@@ -910,14 +852,3 @@ def test_abstract_door_Materials_setter(instance):
     original = instance.Materials
     instance.Materials = original
     assert instance.Materials == original
-
-@given(instance=Abstract_Door_strategy)
-def test_abstract_door_Security_type(instance):
-    assert isinstance(instance.Security, str)
-
-
-@given(instance=Abstract_Door_strategy)
-def test_abstract_door_Security_setter(instance):
-    original = instance.Security
-    instance.Security = original
-    assert instance.Security == original

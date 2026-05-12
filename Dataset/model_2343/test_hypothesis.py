@@ -3,12 +3,12 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    PersonCompany::Company,
-    PersonCompany::Job,
-    PersonCompany::Person,
+from python_code import (
+    PersonCompany_Company,
+    PersonCompany_Job,
+    PersonCompany_Person,
 )
 
 # =============================================================================
@@ -17,23 +17,23 @@ from classes import (
 
 
 
-def test_personcompany::company_is_not_abstract():
-    assert not inspect.isabstract(PersonCompany::Company)
+def test_personcompany_company_is_not_abstract():
+    assert not inspect.isabstract(PersonCompany_Company)
 
 
-def test_personcompany::company_constructor_exists():
-    assert callable(PersonCompany::Company.__init__)
+def test_personcompany_company_constructor_exists():
+    assert callable(PersonCompany_Company.__init__)
 
 
-def test_personcompany::company_constructor_args():
-    sig = inspect.signature(PersonCompany::Company.__init__)
+def test_personcompany_company_constructor_args():
+    sig = inspect.signature(PersonCompany_Company.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_personcompany::company_has_name():
-    assert hasattr(PersonCompany::Company, "name")
+def test_personcompany_company_has_name():
+    assert hasattr(PersonCompany_Company, "name")
     descriptor = None
-    for klass in PersonCompany::Company.__mro__:
+    for klass in PersonCompany_Company.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -41,23 +41,23 @@ def test_personcompany::company_has_name():
 
 
 
-def test_personcompany::job_is_not_abstract():
-    assert not inspect.isabstract(PersonCompany::Job)
+def test_personcompany_job_is_not_abstract():
+    assert not inspect.isabstract(PersonCompany_Job)
 
 
-def test_personcompany::job_constructor_exists():
-    assert callable(PersonCompany::Job.__init__)
+def test_personcompany_job_constructor_exists():
+    assert callable(PersonCompany_Job.__init__)
 
 
-def test_personcompany::job_constructor_args():
-    sig = inspect.signature(PersonCompany::Job.__init__)
+def test_personcompany_job_constructor_args():
+    sig = inspect.signature(PersonCompany_Job.__init__)
     params = list(sig.parameters.keys())
     assert "salary" in params, "Missing parameter 'salary'"
 
-def test_personcompany::job_has_salary():
-    assert hasattr(PersonCompany::Job, "salary")
+def test_personcompany_job_has_salary():
+    assert hasattr(PersonCompany_Job, "salary")
     descriptor = None
-    for klass in PersonCompany::Job.__mro__:
+    for klass in PersonCompany_Job.__mro__:
         if "salary" in klass.__dict__:
             descriptor = klass.__dict__["salary"]
             break
@@ -65,23 +65,23 @@ def test_personcompany::job_has_salary():
 
 
 
-def test_personcompany::person_is_not_abstract():
-    assert not inspect.isabstract(PersonCompany::Person)
+def test_personcompany_person_is_not_abstract():
+    assert not inspect.isabstract(PersonCompany_Person)
 
 
-def test_personcompany::person_constructor_exists():
-    assert callable(PersonCompany::Person.__init__)
+def test_personcompany_person_constructor_exists():
+    assert callable(PersonCompany_Person.__init__)
 
 
-def test_personcompany::person_constructor_args():
-    sig = inspect.signature(PersonCompany::Person.__init__)
+def test_personcompany_person_constructor_args():
+    sig = inspect.signature(PersonCompany_Person.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_personcompany::person_has_name():
-    assert hasattr(PersonCompany::Person, "name")
+def test_personcompany_person_has_name():
+    assert hasattr(PersonCompany_Person, "name")
     descriptor = None
-    for klass in PersonCompany::Person.__mro__:
+    for klass in PersonCompany_Person.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -99,34 +99,31 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-PersonCompany::Company_strategy = st.builds(
-    PersonCompany::Company,
+PersonCompany_Company_strategy = st.builds(
+    PersonCompany_Company,
     name=
         safe_text
 )
-PersonCompany::Job_strategy = st.builds(
-    PersonCompany::Job,
+PersonCompany_Job_strategy = st.builds(
+    PersonCompany_Job,
     salary=
         st.integers()
 )
-PersonCompany::Person_strategy = st.builds(
-    PersonCompany::Person,
+PersonCompany_Person_strategy = st.builds(
+    PersonCompany_Person,
     name=
         safe_text
 )
 
-@given(instance=PersonCompany::Company_strategy)
+@given(instance=PersonCompany_Company_strategy)
 @settings(max_examples=50)
-def test_personcompany::company_instantiation(instance):
-    assert isinstance(instance, PersonCompany::Company)
-
-@given(instance=PersonCompany::Company_strategy)
-def test_personcompany::company_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_personcompany_company_instantiation(instance):
+    assert isinstance(instance, PersonCompany_Company)
 
 
-@given(instance=PersonCompany::Company_strategy)
-def test_personcompany::company_name_setter(instance):
+
+@given(instance=PersonCompany_Company_strategy)
+def test_personcompany_company_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
@@ -137,9 +134,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=PersonCompany::Company_strategy)
+@given(instance=PersonCompany_Company_strategy)
 @settings(max_examples=30)
-def test_personcompany::company_employee_changes_state(instance):
+def test_personcompany_company_employee_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -151,27 +148,24 @@ def test_personcompany::company_employee_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'employee' in PersonCompany::Company is empty"
+        assert has_statements, f"Function 'employee' in PersonCompany_Company is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'employee' in PersonCompany::Company did not change state; check implementation")
+            warnings.warn(f"Operation 'employee' in PersonCompany_Company did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'employee' in PersonCompany::Company is not implemented or raised an error")
+        warnings.warn(f"Operation 'employee' in PersonCompany_Company is not implemented or raised an error")
 
-@given(instance=PersonCompany::Job_strategy)
+@given(instance=PersonCompany_Job_strategy)
 @settings(max_examples=50)
-def test_personcompany::job_instantiation(instance):
-    assert isinstance(instance, PersonCompany::Job)
-
-@given(instance=PersonCompany::Job_strategy)
-def test_personcompany::job_salary_type(instance):
-    assert isinstance(instance.salary, int)
+def test_personcompany_job_instantiation(instance):
+    assert isinstance(instance, PersonCompany_Job)
 
 
-@given(instance=PersonCompany::Job_strategy)
-def test_personcompany::job_salary_setter(instance):
+
+@given(instance=PersonCompany_Job_strategy)
+def test_personcompany_job_salary_setter(instance):
     original = instance.salary
     instance.salary = original
     assert instance.salary == original
@@ -182,9 +176,67 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=PersonCompany::Job_strategy)
+@given(instance=PersonCompany_Job_strategy)
 @settings(max_examples=30)
-def test_personcompany::job_workerplusonset_changes_state(instance):
+def test_personcompany_job_workerplus_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.workerPlus()
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.workerPlus).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'workerPlus' in PersonCompany_Job is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'workerPlus' in PersonCompany_Job did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'workerPlus' in PersonCompany_Job is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=PersonCompany_Job_strategy)
+@settings(max_examples=30)
+def test_personcompany_job_bossplus_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.bossPlus()
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.bossPlus).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'bossPlus' in PersonCompany_Job is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'bossPlus' in PersonCompany_Job did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'bossPlus' in PersonCompany_Job is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=PersonCompany_Job_strategy)
+@settings(max_examples=30)
+def test_personcompany_job_workerplusonset_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -198,85 +250,24 @@ def test_personcompany::job_workerplusonset_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'workerPlusOnSet' in PersonCompany::Job is empty"
+        assert has_statements, f"Function 'workerPlusOnSet' in PersonCompany_Job is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'workerPlusOnSet' in PersonCompany::Job did not change state; check implementation")
+            warnings.warn(f"Operation 'workerPlusOnSet' in PersonCompany_Job did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'workerPlusOnSet' in PersonCompany::Job is not implemented or raised an error")
+        warnings.warn(f"Operation 'workerPlusOnSet' in PersonCompany_Job is not implemented or raised an error")
 
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=PersonCompany::Job_strategy)
-@settings(max_examples=30)
-def test_personcompany::job_bossplus_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.bossPlus()
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.bossPlus).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'bossPlus' in PersonCompany::Job is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'bossPlus' in PersonCompany::Job did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'bossPlus' in PersonCompany::Job is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=PersonCompany::Job_strategy)
-@settings(max_examples=30)
-def test_personcompany::job_workerplus_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.workerPlus()
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.workerPlus).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'workerPlus' in PersonCompany::Job is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'workerPlus' in PersonCompany::Job did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'workerPlus' in PersonCompany::Job is not implemented or raised an error")
-
-@given(instance=PersonCompany::Person_strategy)
+@given(instance=PersonCompany_Person_strategy)
 @settings(max_examples=50)
-def test_personcompany::person_instantiation(instance):
-    assert isinstance(instance, PersonCompany::Person)
-
-@given(instance=PersonCompany::Person_strategy)
-def test_personcompany::person_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_personcompany_person_instantiation(instance):
+    assert isinstance(instance, PersonCompany_Person)
 
 
-@given(instance=PersonCompany::Person_strategy)
-def test_personcompany::person_name_setter(instance):
+
+@given(instance=PersonCompany_Person_strategy)
+def test_personcompany_person_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
@@ -287,9 +278,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=PersonCompany::Person_strategy)
+@given(instance=PersonCompany_Person_strategy)
 @settings(max_examples=30)
-def test_personcompany::person_employer_changes_state(instance):
+def test_personcompany_person_employer_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -301,11 +292,11 @@ def test_personcompany::person_employer_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'employer' in PersonCompany::Person is empty"
+        assert has_statements, f"Function 'employer' in PersonCompany_Person is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'employer' in PersonCompany::Person did not change state; check implementation")
+            warnings.warn(f"Operation 'employer' in PersonCompany_Person did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'employer' in PersonCompany::Person is not implemented or raised an error")
+        warnings.warn(f"Operation 'employer' in PersonCompany_Person is not implemented or raised an error")

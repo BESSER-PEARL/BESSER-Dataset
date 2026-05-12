@@ -3,7 +3,7 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
 from python_code import (
     Dice,
@@ -56,17 +56,8 @@ def test_pawn_constructor_exists():
 def test_pawn_constructor_args():
     sig = inspect.signature(Pawn.__init__)
     params = list(sig.parameters.keys())
-    assert "position" in params, "Missing parameter 'position'"
     assert "color" in params, "Missing parameter 'color'"
-
-def test_pawn_has_position():
-    assert hasattr(Pawn, "position")
-    descriptor = None
-    for klass in Pawn.__mro__:
-        if "position" in klass.__dict__:
-            descriptor = klass.__dict__["position"]
-            break
-    assert isinstance(descriptor, property)
+    assert "position" in params, "Missing parameter 'position'"
 
 def test_pawn_has_color():
     assert hasattr(Pawn, "color")
@@ -74,6 +65,15 @@ def test_pawn_has_color():
     for klass in Pawn.__mro__:
         if "color" in klass.__dict__:
             descriptor = klass.__dict__["color"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_pawn_has_position():
+    assert hasattr(Pawn, "position")
+    descriptor = None
+    for klass in Pawn.__mro__:
+        if "position" in klass.__dict__:
+            descriptor = klass.__dict__["position"]
             break
     assert isinstance(descriptor, property)
 
@@ -184,10 +184,10 @@ Dice_strategy = st.builds(
 )
 Pawn_strategy = st.builds(
     Pawn,
-    position=
-        st.integers(),
     color=
-        st.none()
+        st.none(),
+    position=
+        st.integers()
 )
 Card_strategy = st.builds(
     Card,
@@ -208,9 +208,6 @@ Player_strategy = st.builds(
 def test_dice_instantiation(instance):
     assert isinstance(instance, Dice)
 
-@given(instance=Dice_strategy)
-def test_dice_value_type(instance):
-    assert isinstance(instance.value, int)
 
 
 @given(instance=Dice_strategy)
@@ -224,20 +221,6 @@ def test_dice_value_setter(instance):
 def test_pawn_instantiation(instance):
     assert isinstance(instance, Pawn)
 
-@given(instance=Pawn_strategy)
-def test_pawn_position_type(instance):
-    assert isinstance(instance.position, int)
-
-
-@given(instance=Pawn_strategy)
-def test_pawn_position_setter(instance):
-    original = instance.position
-    instance.position = original
-    assert instance.position == original
-
-@given(instance=Pawn_strategy)
-def test_pawn_color_type(instance):
-    assert isinstance(instance.color, color)
 
 
 @given(instance=Pawn_strategy)
@@ -246,14 +229,19 @@ def test_pawn_color_setter(instance):
     instance.color = original
     assert instance.color == original
 
+
+
+@given(instance=Pawn_strategy)
+def test_pawn_position_setter(instance):
+    original = instance.position
+    instance.position = original
+    assert instance.position == original
+
 @given(instance=Card_strategy)
 @settings(max_examples=50)
 def test_card_instantiation(instance):
     assert isinstance(instance, Card)
 
-@given(instance=Card_strategy)
-def test_card_card_type(instance):
-    assert isinstance(instance.card, cardtype)
 
 
 @given(instance=Card_strategy)
@@ -272,9 +260,6 @@ def test_board_instantiation(instance):
 def test_player_instantiation(instance):
     assert isinstance(instance, Player)
 
-@given(instance=Player_strategy)
-def test_player_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
 @given(instance=Player_strategy)

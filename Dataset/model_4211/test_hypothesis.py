@@ -3,14 +3,14 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     Element,
-    myDsl::Greeting,
-    myDsl::Person,
-    myDsl::Element,
-    myDsl::Model,
+    myDsl_Greeting,
+    myDsl_Person,
+    myDsl_Element,
+    myDsl_Model,
 )
 
 # =============================================================================
@@ -33,37 +33,37 @@ def test_element_constructor_args():
 
 
 
-def test_mydsl::greeting_is_not_abstract():
-    assert not inspect.isabstract(myDsl::Greeting)
+def test_mydsl_greeting_is_not_abstract():
+    assert not inspect.isabstract(myDsl_Greeting)
 
 
-def test_mydsl::greeting_constructor_exists():
-    assert callable(myDsl::Greeting.__init__)
+def test_mydsl_greeting_constructor_exists():
+    assert callable(myDsl_Greeting.__init__)
 
 
-def test_mydsl::greeting_constructor_args():
-    sig = inspect.signature(myDsl::Greeting.__init__)
+def test_mydsl_greeting_constructor_args():
+    sig = inspect.signature(myDsl_Greeting.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_mydsl::person_is_not_abstract():
-    assert not inspect.isabstract(myDsl::Person)
+def test_mydsl_person_is_not_abstract():
+    assert not inspect.isabstract(myDsl_Person)
 
 
-def test_mydsl::person_constructor_exists():
-    assert callable(myDsl::Person.__init__)
+def test_mydsl_person_constructor_exists():
+    assert callable(myDsl_Person.__init__)
 
 
-def test_mydsl::person_constructor_args():
-    sig = inspect.signature(myDsl::Person.__init__)
+def test_mydsl_person_constructor_args():
+    sig = inspect.signature(myDsl_Person.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_mydsl::person_has_name():
-    assert hasattr(myDsl::Person, "name")
+def test_mydsl_person_has_name():
+    assert hasattr(myDsl_Person, "name")
     descriptor = None
-    for klass in myDsl::Person.__mro__:
+    for klass in myDsl_Person.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -71,30 +71,30 @@ def test_mydsl::person_has_name():
 
 
 
-def test_mydsl::element_is_not_abstract():
-    assert not inspect.isabstract(myDsl::Element)
+def test_mydsl_element_is_not_abstract():
+    assert not inspect.isabstract(myDsl_Element)
 
 
-def test_mydsl::element_constructor_exists():
-    assert callable(myDsl::Element.__init__)
+def test_mydsl_element_constructor_exists():
+    assert callable(myDsl_Element.__init__)
 
 
-def test_mydsl::element_constructor_args():
-    sig = inspect.signature(myDsl::Element.__init__)
+def test_mydsl_element_constructor_args():
+    sig = inspect.signature(myDsl_Element.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_mydsl::model_is_not_abstract():
-    assert not inspect.isabstract(myDsl::Model)
+def test_mydsl_model_is_not_abstract():
+    assert not inspect.isabstract(myDsl_Model)
 
 
-def test_mydsl::model_constructor_exists():
-    assert callable(myDsl::Model.__init__)
+def test_mydsl_model_constructor_exists():
+    assert callable(myDsl_Model.__init__)
 
 
-def test_mydsl::model_constructor_args():
-    sig = inspect.signature(myDsl::Model.__init__)
+def test_mydsl_model_constructor_args():
+    sig = inspect.signature(myDsl_Model.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -112,19 +112,19 @@ safe_text = st.text(
 Element_strategy = st.builds(
     Element,
 )
-myDsl::Greeting_strategy = st.builds(
-    myDsl::Greeting,
+myDsl_Greeting_strategy = st.builds(
+    myDsl_Greeting,
 )
-myDsl::Person_strategy = st.builds(
-    myDsl::Person,
+myDsl_Person_strategy = st.builds(
+    myDsl_Person,
     name=
         safe_text
 )
-myDsl::Element_strategy = st.builds(
-    myDsl::Element,
+myDsl_Element_strategy = st.builds(
+    myDsl_Element,
 )
-myDsl::Model_strategy = st.builds(
-    myDsl::Model,
+myDsl_Model_strategy = st.builds(
+    myDsl_Model,
 )
 
 @given(instance=Element_strategy)
@@ -132,33 +132,30 @@ myDsl::Model_strategy = st.builds(
 def test_element_instantiation(instance):
     assert isinstance(instance, Element)
 
-@given(instance=myDsl::Greeting_strategy)
+@given(instance=myDsl_Greeting_strategy)
 @settings(max_examples=50)
-def test_mydsl::greeting_instantiation(instance):
-    assert isinstance(instance, myDsl::Greeting)
+def test_mydsl_greeting_instantiation(instance):
+    assert isinstance(instance, myDsl_Greeting)
 
-@given(instance=myDsl::Person_strategy)
+@given(instance=myDsl_Person_strategy)
 @settings(max_examples=50)
-def test_mydsl::person_instantiation(instance):
-    assert isinstance(instance, myDsl::Person)
-
-@given(instance=myDsl::Person_strategy)
-def test_mydsl::person_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_mydsl_person_instantiation(instance):
+    assert isinstance(instance, myDsl_Person)
 
 
-@given(instance=myDsl::Person_strategy)
-def test_mydsl::person_name_setter(instance):
+
+@given(instance=myDsl_Person_strategy)
+def test_mydsl_person_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=myDsl::Element_strategy)
+@given(instance=myDsl_Element_strategy)
 @settings(max_examples=50)
-def test_mydsl::element_instantiation(instance):
-    assert isinstance(instance, myDsl::Element)
+def test_mydsl_element_instantiation(instance):
+    assert isinstance(instance, myDsl_Element)
 
-@given(instance=myDsl::Model_strategy)
+@given(instance=myDsl_Model_strategy)
 @settings(max_examples=50)
-def test_mydsl::model_instantiation(instance):
-    assert isinstance(instance, myDsl::Model)
+def test_mydsl_model_instantiation(instance):
+    assert isinstance(instance, myDsl_Model)

@@ -3,17 +3,17 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     A,
-    e::X,
-    e::C,
-    e::Z,
+    e_X,
+    e_C,
+    e_Z,
     Y,
-    e::B,
-    e::A,
-    e::Y,
+    e_B,
+    e_A,
+    e_Y,
 )
 
 # =============================================================================
@@ -36,37 +36,37 @@ def test_a_constructor_args():
 
 
 
-def test_e::x_is_not_abstract():
-    assert not inspect.isabstract(e::X)
+def test_e_x_is_not_abstract():
+    assert not inspect.isabstract(e_X)
 
 
-def test_e::x_constructor_exists():
-    assert callable(e::X.__init__)
+def test_e_x_constructor_exists():
+    assert callable(e_X.__init__)
 
 
-def test_e::x_constructor_args():
-    sig = inspect.signature(e::X.__init__)
+def test_e_x_constructor_args():
+    sig = inspect.signature(e_X.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_e::c_is_not_abstract():
-    assert not inspect.isabstract(e::C)
+def test_e_c_is_not_abstract():
+    assert not inspect.isabstract(e_C)
 
 
-def test_e::c_constructor_exists():
-    assert callable(e::C.__init__)
+def test_e_c_constructor_exists():
+    assert callable(e_C.__init__)
 
 
-def test_e::c_constructor_args():
-    sig = inspect.signature(e::C.__init__)
+def test_e_c_constructor_args():
+    sig = inspect.signature(e_C.__init__)
     params = list(sig.parameters.keys())
     assert "c" in params, "Missing parameter 'c'"
 
-def test_e::c_has_c():
-    assert hasattr(e::C, "c")
+def test_e_c_has_c():
+    assert hasattr(e_C, "c")
     descriptor = None
-    for klass in e::C.__mro__:
+    for klass in e_C.__mro__:
         if "c" in klass.__dict__:
             descriptor = klass.__dict__["c"]
             break
@@ -74,23 +74,23 @@ def test_e::c_has_c():
 
 
 
-def test_e::z_is_not_abstract():
-    assert not inspect.isabstract(e::Z)
+def test_e_z_is_not_abstract():
+    assert not inspect.isabstract(e_Z)
 
 
-def test_e::z_constructor_exists():
-    assert callable(e::Z.__init__)
+def test_e_z_constructor_exists():
+    assert callable(e_Z.__init__)
 
 
-def test_e::z_constructor_args():
-    sig = inspect.signature(e::Z.__init__)
+def test_e_z_constructor_args():
+    sig = inspect.signature(e_Z.__init__)
     params = list(sig.parameters.keys())
     assert "b" in params, "Missing parameter 'b'"
 
-def test_e::z_has_b():
-    assert hasattr(e::Z, "b")
+def test_e_z_has_b():
+    assert hasattr(e_Z, "b")
     descriptor = None
-    for klass in e::Z.__mro__:
+    for klass in e_Z.__mro__:
         if "b" in klass.__dict__:
             descriptor = klass.__dict__["b"]
             break
@@ -112,23 +112,23 @@ def test_y_constructor_args():
 
 
 
-def test_e::b_is_not_abstract():
-    assert not inspect.isabstract(e::B)
+def test_e_b_is_not_abstract():
+    assert not inspect.isabstract(e_B)
 
 
-def test_e::b_constructor_exists():
-    assert callable(e::B.__init__)
+def test_e_b_constructor_exists():
+    assert callable(e_B.__init__)
 
 
-def test_e::b_constructor_args():
-    sig = inspect.signature(e::B.__init__)
+def test_e_b_constructor_args():
+    sig = inspect.signature(e_B.__init__)
     params = list(sig.parameters.keys())
     assert "c" in params, "Missing parameter 'c'"
 
-def test_e::b_has_c():
-    assert hasattr(e::B, "c")
+def test_e_b_has_c():
+    assert hasattr(e_B, "c")
     descriptor = None
-    for klass in e::B.__mro__:
+    for klass in e_B.__mro__:
         if "c" in klass.__dict__:
             descriptor = klass.__dict__["c"]
             break
@@ -136,57 +136,57 @@ def test_e::b_has_c():
 
 
 
-def test_e::a_is_not_abstract():
-    assert not inspect.isabstract(e::A)
+def test_e_a_is_not_abstract():
+    assert not inspect.isabstract(e_A)
 
 
-def test_e::a_constructor_exists():
-    assert callable(e::A.__init__)
+def test_e_a_constructor_exists():
+    assert callable(e_A.__init__)
 
 
-def test_e::a_constructor_args():
-    sig = inspect.signature(e::A.__init__)
+def test_e_a_constructor_args():
+    sig = inspect.signature(e_A.__init__)
     params = list(sig.parameters.keys())
-    assert "b" in params, "Missing parameter 'b'"
     assert "a" in params, "Missing parameter 'a'"
+    assert "b" in params, "Missing parameter 'b'"
 
-def test_e::a_has_b():
-    assert hasattr(e::A, "b")
+def test_e_a_has_a():
+    assert hasattr(e_A, "a")
     descriptor = None
-    for klass in e::A.__mro__:
-        if "b" in klass.__dict__:
-            descriptor = klass.__dict__["b"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_e::a_has_a():
-    assert hasattr(e::A, "a")
-    descriptor = None
-    for klass in e::A.__mro__:
+    for klass in e_A.__mro__:
         if "a" in klass.__dict__:
             descriptor = klass.__dict__["a"]
             break
     assert isinstance(descriptor, property)
 
+def test_e_a_has_b():
+    assert hasattr(e_A, "b")
+    descriptor = None
+    for klass in e_A.__mro__:
+        if "b" in klass.__dict__:
+            descriptor = klass.__dict__["b"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_e::y_is_not_abstract():
-    assert not inspect.isabstract(e::Y)
+
+def test_e_y_is_not_abstract():
+    assert not inspect.isabstract(e_Y)
 
 
-def test_e::y_constructor_exists():
-    assert callable(e::Y.__init__)
+def test_e_y_constructor_exists():
+    assert callable(e_Y.__init__)
 
 
-def test_e::y_constructor_args():
-    sig = inspect.signature(e::Y.__init__)
+def test_e_y_constructor_args():
+    sig = inspect.signature(e_Y.__init__)
     params = list(sig.parameters.keys())
     assert "a" in params, "Missing parameter 'a'"
 
-def test_e::y_has_a():
-    assert hasattr(e::Y, "a")
+def test_e_y_has_a():
+    assert hasattr(e_Y, "a")
     descriptor = None
-    for klass in e::Y.__mro__:
+    for klass in e_Y.__mro__:
         if "a" in klass.__dict__:
             descriptor = klass.__dict__["a"]
             break
@@ -207,36 +207,36 @@ safe_text = st.text(
 A_strategy = st.builds(
     A,
 )
-e::X_strategy = st.builds(
-    e::X,
+e_X_strategy = st.builds(
+    e_X,
 )
-e::C_strategy = st.builds(
-    e::C,
+e_C_strategy = st.builds(
+    e_C,
     c=
         st.integers()
 )
-e::Z_strategy = st.builds(
-    e::Z,
+e_Z_strategy = st.builds(
+    e_Z,
     b=
         st.integers()
 )
 Y_strategy = st.builds(
     Y,
 )
-e::B_strategy = st.builds(
-    e::B,
+e_B_strategy = st.builds(
+    e_B,
     c=
         st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False)
 )
-e::A_strategy = st.builds(
-    e::A,
-    b=
-        safe_text,
+e_A_strategy = st.builds(
+    e_A,
     a=
+        safe_text,
+    b=
         safe_text
 )
-e::Y_strategy = st.builds(
-    e::Y,
+e_Y_strategy = st.builds(
+    e_Y,
     a=
         safe_text
 )
@@ -246,10 +246,10 @@ e::Y_strategy = st.builds(
 def test_a_instantiation(instance):
     assert isinstance(instance, A)
 
-@given(instance=e::X_strategy)
+@given(instance=e_X_strategy)
 @settings(max_examples=50)
-def test_e::x_instantiation(instance):
-    assert isinstance(instance, e::X)
+def test_e_x_instantiation(instance):
+    assert isinstance(instance, e_X)
 
 import warnings
 import copy
@@ -257,9 +257,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=e::X_strategy)
+@given(instance=e_X_strategy)
 @settings(max_examples=30)
-def test_e::x_bar_changes_state(instance):
+def test_e_x_bar_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -273,43 +273,37 @@ def test_e::x_bar_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'bar' in e::X is empty"
+        assert has_statements, f"Function 'bar' in e_X is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'bar' in e::X did not change state; check implementation")
+            warnings.warn(f"Operation 'bar' in e_X did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'bar' in e::X is not implemented or raised an error")
+        warnings.warn(f"Operation 'bar' in e_X is not implemented or raised an error")
 
-@given(instance=e::C_strategy)
+@given(instance=e_C_strategy)
 @settings(max_examples=50)
-def test_e::c_instantiation(instance):
-    assert isinstance(instance, e::C)
-
-@given(instance=e::C_strategy)
-def test_e::c_c_type(instance):
-    assert isinstance(instance.c, int)
+def test_e_c_instantiation(instance):
+    assert isinstance(instance, e_C)
 
 
-@given(instance=e::C_strategy)
-def test_e::c_c_setter(instance):
+
+@given(instance=e_C_strategy)
+def test_e_c_c_setter(instance):
     original = instance.c
     instance.c = original
     assert instance.c == original
 
-@given(instance=e::Z_strategy)
+@given(instance=e_Z_strategy)
 @settings(max_examples=50)
-def test_e::z_instantiation(instance):
-    assert isinstance(instance, e::Z)
-
-@given(instance=e::Z_strategy)
-def test_e::z_b_type(instance):
-    assert isinstance(instance.b, int)
+def test_e_z_instantiation(instance):
+    assert isinstance(instance, e_Z)
 
 
-@given(instance=e::Z_strategy)
-def test_e::z_b_setter(instance):
+
+@given(instance=e_Z_strategy)
+def test_e_z_b_setter(instance):
     original = instance.b
     instance.b = original
     assert instance.b == original
@@ -319,48 +313,39 @@ def test_e::z_b_setter(instance):
 def test_y_instantiation(instance):
     assert isinstance(instance, Y)
 
-@given(instance=e::B_strategy)
+@given(instance=e_B_strategy)
 @settings(max_examples=50)
-def test_e::b_instantiation(instance):
-    assert isinstance(instance, e::B)
-
-@given(instance=e::B_strategy)
-def test_e::b_c_type(instance):
-    assert isinstance(instance.c, float)
+def test_e_b_instantiation(instance):
+    assert isinstance(instance, e_B)
 
 
-@given(instance=e::B_strategy)
-def test_e::b_c_setter(instance):
+
+@given(instance=e_B_strategy)
+def test_e_b_c_setter(instance):
     original = instance.c
     instance.c = original
     assert instance.c == original
 
-@given(instance=e::A_strategy)
+@given(instance=e_A_strategy)
 @settings(max_examples=50)
-def test_e::a_instantiation(instance):
-    assert isinstance(instance, e::A)
-
-@given(instance=e::A_strategy)
-def test_e::a_b_type(instance):
-    assert isinstance(instance.b, str)
+def test_e_a_instantiation(instance):
+    assert isinstance(instance, e_A)
 
 
-@given(instance=e::A_strategy)
-def test_e::a_b_setter(instance):
-    original = instance.b
-    instance.b = original
-    assert instance.b == original
 
-@given(instance=e::A_strategy)
-def test_e::a_a_type(instance):
-    assert isinstance(instance.a, str)
-
-
-@given(instance=e::A_strategy)
-def test_e::a_a_setter(instance):
+@given(instance=e_A_strategy)
+def test_e_a_a_setter(instance):
     original = instance.a
     instance.a = original
     assert instance.a == original
+
+
+
+@given(instance=e_A_strategy)
+def test_e_a_b_setter(instance):
+    original = instance.b
+    instance.b = original
+    assert instance.b == original
 
 import warnings
 import copy
@@ -368,9 +353,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=e::A_strategy)
+@given(instance=e_A_strategy)
 @settings(max_examples=30)
-def test_e::a_foo_changes_state(instance):
+def test_e_a_foo_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -385,27 +370,24 @@ def test_e::a_foo_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'foo' in e::A is empty"
+        assert has_statements, f"Function 'foo' in e_A is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'foo' in e::A did not change state; check implementation")
+            warnings.warn(f"Operation 'foo' in e_A did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'foo' in e::A is not implemented or raised an error")
+        warnings.warn(f"Operation 'foo' in e_A is not implemented or raised an error")
 
-@given(instance=e::Y_strategy)
+@given(instance=e_Y_strategy)
 @settings(max_examples=50)
-def test_e::y_instantiation(instance):
-    assert isinstance(instance, e::Y)
-
-@given(instance=e::Y_strategy)
-def test_e::y_a_type(instance):
-    assert isinstance(instance.a, str)
+def test_e_y_instantiation(instance):
+    assert isinstance(instance, e_Y)
 
 
-@given(instance=e::Y_strategy)
-def test_e::y_a_setter(instance):
+
+@given(instance=e_Y_strategy)
+def test_e_y_a_setter(instance):
     original = instance.a
     instance.a = original
     assert instance.a == original

@@ -3,7 +3,7 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
 from python_code import (
     Payment,
@@ -152,18 +152,9 @@ def test_delivery_constructor_exists():
 def test_delivery_constructor_args():
     sig = inspect.signature(Delivery.__init__)
     params = list(sig.parameters.keys())
-    assert "Type" in params, "Missing parameter 'Type'"
     assert "Date" in params, "Missing parameter 'Date'"
     assert "Name" in params, "Missing parameter 'Name'"
-
-def test_delivery_has_Type():
-    assert hasattr(Delivery, "Type")
-    descriptor = None
-    for klass in Delivery.__mro__:
-        if "Type" in klass.__dict__:
-            descriptor = klass.__dict__["Type"]
-            break
-    assert isinstance(descriptor, property)
+    assert "Type" in params, "Missing parameter 'Type'"
 
 def test_delivery_has_Date():
     assert hasattr(Delivery, "Date")
@@ -183,6 +174,15 @@ def test_delivery_has_Name():
             break
     assert isinstance(descriptor, property)
 
+def test_delivery_has_Type():
+    assert hasattr(Delivery, "Type")
+    descriptor = None
+    for klass in Delivery.__mro__:
+        if "Type" in klass.__dict__:
+            descriptor = klass.__dict__["Type"]
+            break
+    assert isinstance(descriptor, property)
+
 
 
 def test_order_is_not_abstract():
@@ -197,8 +197,8 @@ def test_order_constructor_args():
     sig = inspect.signature(Order.__init__)
     params = list(sig.parameters.keys())
     assert "Type" in params, "Missing parameter 'Type'"
-    assert "Quantity" in params, "Missing parameter 'Quantity'"
     assert "Size" in params, "Missing parameter 'Size'"
+    assert "Quantity" in params, "Missing parameter 'Quantity'"
     assert "ID" in params, "Missing parameter 'ID'"
 
 def test_order_has_Type():
@@ -210,21 +210,21 @@ def test_order_has_Type():
             break
     assert isinstance(descriptor, property)
 
-def test_order_has_Quantity():
-    assert hasattr(Order, "Quantity")
-    descriptor = None
-    for klass in Order.__mro__:
-        if "Quantity" in klass.__dict__:
-            descriptor = klass.__dict__["Quantity"]
-            break
-    assert isinstance(descriptor, property)
-
 def test_order_has_Size():
     assert hasattr(Order, "Size")
     descriptor = None
     for klass in Order.__mro__:
         if "Size" in klass.__dict__:
             descriptor = klass.__dict__["Size"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_order_has_Quantity():
+    assert hasattr(Order, "Quantity")
+    descriptor = None
+    for klass in Order.__mro__:
+        if "Quantity" in klass.__dict__:
+            descriptor = klass.__dict__["Quantity"]
             break
     assert isinstance(descriptor, property)
 
@@ -276,20 +276,20 @@ User_strategy = st.builds(
 )
 Delivery_strategy = st.builds(
     Delivery,
-    Type=
-        safe_text,
     Date=
         safe_text,
     Name=
+        safe_text,
+    Type=
         safe_text
 )
 Order_strategy = st.builds(
     Order,
     Type=
         safe_text,
-    Quantity=
-        st.integers(),
     Size=
+        st.integers(),
+    Quantity=
         st.integers(),
     ID=
         st.integers()
@@ -300,9 +300,6 @@ Order_strategy = st.builds(
 def test_payment_instantiation(instance):
     assert isinstance(instance, Payment)
 
-@given(instance=Payment_strategy)
-def test_payment_Date_off_type(instance):
-    assert isinstance(instance.Date_off, str)
 
 
 @given(instance=Payment_strategy)
@@ -311,9 +308,6 @@ def test_payment_Date_off_setter(instance):
     instance.Date_off = original
     assert instance.Date_off == original
 
-@given(instance=Payment_strategy)
-def test_payment_Amount_type(instance):
-    assert isinstance(instance.Amount, int)
 
 
 @given(instance=Payment_strategy)
@@ -327,9 +321,6 @@ def test_payment_Amount_setter(instance):
 def test_discription_instantiation(instance):
     assert isinstance(instance, Discription)
 
-@given(instance=Discription_strategy)
-def test_discription_Discription_type(instance):
-    assert isinstance(instance.Discription, str)
 
 
 @given(instance=Discription_strategy)
@@ -338,9 +329,6 @@ def test_discription_Discription_setter(instance):
     instance.Discription = original
     assert instance.Discription == original
 
-@given(instance=Discription_strategy)
-def test_discription_Email_type(instance):
-    assert isinstance(instance.Email, str)
 
 
 @given(instance=Discription_strategy)
@@ -354,9 +342,6 @@ def test_discription_Email_setter(instance):
 def test_user_instantiation(instance):
     assert isinstance(instance, User)
 
-@given(instance=User_strategy)
-def test_user_Email_type(instance):
-    assert isinstance(instance.Email, str)
 
 
 @given(instance=User_strategy)
@@ -365,9 +350,6 @@ def test_user_Email_setter(instance):
     instance.Email = original
     assert instance.Email == original
 
-@given(instance=User_strategy)
-def test_user_Phone_num_type(instance):
-    assert isinstance(instance.Phone_num, int)
 
 
 @given(instance=User_strategy)
@@ -376,9 +358,6 @@ def test_user_Phone_num_setter(instance):
     instance.Phone_num = original
     assert instance.Phone_num == original
 
-@given(instance=User_strategy)
-def test_user_Address_type(instance):
-    assert isinstance(instance.Address, str)
 
 
 @given(instance=User_strategy)
@@ -387,9 +366,6 @@ def test_user_Address_setter(instance):
     instance.Address = original
     assert instance.Address == original
 
-@given(instance=User_strategy)
-def test_user_Name_type(instance):
-    assert isinstance(instance.Name, str)
 
 
 @given(instance=User_strategy)
@@ -403,20 +379,6 @@ def test_user_Name_setter(instance):
 def test_delivery_instantiation(instance):
     assert isinstance(instance, Delivery)
 
-@given(instance=Delivery_strategy)
-def test_delivery_Type_type(instance):
-    assert isinstance(instance.Type, str)
-
-
-@given(instance=Delivery_strategy)
-def test_delivery_Type_setter(instance):
-    original = instance.Type
-    instance.Type = original
-    assert instance.Type == original
-
-@given(instance=Delivery_strategy)
-def test_delivery_Date_type(instance):
-    assert isinstance(instance.Date, str)
 
 
 @given(instance=Delivery_strategy)
@@ -425,9 +387,6 @@ def test_delivery_Date_setter(instance):
     instance.Date = original
     assert instance.Date == original
 
-@given(instance=Delivery_strategy)
-def test_delivery_Name_type(instance):
-    assert isinstance(instance.Name, str)
 
 
 @given(instance=Delivery_strategy)
@@ -436,14 +395,19 @@ def test_delivery_Name_setter(instance):
     instance.Name = original
     assert instance.Name == original
 
+
+
+@given(instance=Delivery_strategy)
+def test_delivery_Type_setter(instance):
+    original = instance.Type
+    instance.Type = original
+    assert instance.Type == original
+
 @given(instance=Order_strategy)
 @settings(max_examples=50)
 def test_order_instantiation(instance):
     assert isinstance(instance, Order)
 
-@given(instance=Order_strategy)
-def test_order_Type_type(instance):
-    assert isinstance(instance.Type, str)
 
 
 @given(instance=Order_strategy)
@@ -452,20 +416,6 @@ def test_order_Type_setter(instance):
     instance.Type = original
     assert instance.Type == original
 
-@given(instance=Order_strategy)
-def test_order_Quantity_type(instance):
-    assert isinstance(instance.Quantity, int)
-
-
-@given(instance=Order_strategy)
-def test_order_Quantity_setter(instance):
-    original = instance.Quantity
-    instance.Quantity = original
-    assert instance.Quantity == original
-
-@given(instance=Order_strategy)
-def test_order_Size_type(instance):
-    assert isinstance(instance.Size, int)
 
 
 @given(instance=Order_strategy)
@@ -474,9 +424,14 @@ def test_order_Size_setter(instance):
     instance.Size = original
     assert instance.Size == original
 
+
+
 @given(instance=Order_strategy)
-def test_order_ID_type(instance):
-    assert isinstance(instance.ID, int)
+def test_order_Quantity_setter(instance):
+    original = instance.Quantity
+    instance.Quantity = original
+    assert instance.Quantity == original
+
 
 
 @given(instance=Order_strategy)

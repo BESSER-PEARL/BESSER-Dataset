@@ -3,17 +3,17 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    SkillGraph::Node,
-    SkillGraph::Requirement,
-    SkillGraph::Edge,
-    SkillGraph::Equation,
-    SkillGraph::Graph,
-    SkillGraph::Parameter,
-    Category,
+from python_code import (
+    SkillGraph_Node,
+    SkillGraph_Requirement,
+    SkillGraph_Edge,
+    SkillGraph_Equation,
+    SkillGraph_Graph,
+    SkillGraph_Parameter,
     Type,
+    Category,
 )
 
 # =============================================================================
@@ -22,87 +22,87 @@ from classes import (
 
 
 
-def test_skillgraph::node_is_not_abstract():
-    assert not inspect.isabstract(SkillGraph::Node)
+def test_skillgraph_node_is_not_abstract():
+    assert not inspect.isabstract(SkillGraph_Node)
 
 
-def test_skillgraph::node_constructor_exists():
-    assert callable(SkillGraph::Node.__init__)
+def test_skillgraph_node_constructor_exists():
+    assert callable(SkillGraph_Node.__init__)
 
 
-def test_skillgraph::node_constructor_args():
-    sig = inspect.signature(SkillGraph::Node.__init__)
+def test_skillgraph_node_constructor_args():
+    sig = inspect.signature(SkillGraph_Node.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
-    assert "programPath" in params, "Missing parameter 'programPath'"
     assert "category" in params, "Missing parameter 'category'"
+    assert "programPath" in params, "Missing parameter 'programPath'"
 
-def test_skillgraph::node_has_name():
-    assert hasattr(SkillGraph::Node, "name")
+def test_skillgraph_node_has_name():
+    assert hasattr(SkillGraph_Node, "name")
     descriptor = None
-    for klass in SkillGraph::Node.__mro__:
+    for klass in SkillGraph_Node.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
-def test_skillgraph::node_has_programPath():
-    assert hasattr(SkillGraph::Node, "programPath")
+def test_skillgraph_node_has_category():
+    assert hasattr(SkillGraph_Node, "category")
     descriptor = None
-    for klass in SkillGraph::Node.__mro__:
-        if "programPath" in klass.__dict__:
-            descriptor = klass.__dict__["programPath"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_skillgraph::node_has_category():
-    assert hasattr(SkillGraph::Node, "category")
-    descriptor = None
-    for klass in SkillGraph::Node.__mro__:
+    for klass in SkillGraph_Node.__mro__:
         if "category" in klass.__dict__:
             descriptor = klass.__dict__["category"]
             break
     assert isinstance(descriptor, property)
 
+def test_skillgraph_node_has_programPath():
+    assert hasattr(SkillGraph_Node, "programPath")
+    descriptor = None
+    for klass in SkillGraph_Node.__mro__:
+        if "programPath" in klass.__dict__:
+            descriptor = klass.__dict__["programPath"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_skillgraph::requirement_is_not_abstract():
-    assert not inspect.isabstract(SkillGraph::Requirement)
+
+def test_skillgraph_requirement_is_not_abstract():
+    assert not inspect.isabstract(SkillGraph_Requirement)
 
 
-def test_skillgraph::requirement_constructor_exists():
-    assert callable(SkillGraph::Requirement.__init__)
+def test_skillgraph_requirement_constructor_exists():
+    assert callable(SkillGraph_Requirement.__init__)
 
 
-def test_skillgraph::requirement_constructor_args():
-    sig = inspect.signature(SkillGraph::Requirement.__init__)
+def test_skillgraph_requirement_constructor_args():
+    sig = inspect.signature(SkillGraph_Requirement.__init__)
     params = list(sig.parameters.keys())
     assert "term" in params, "Missing parameter 'term'"
     assert "type" in params, "Missing parameter 'type'"
     assert "comment" in params, "Missing parameter 'comment'"
 
-def test_skillgraph::requirement_has_term():
-    assert hasattr(SkillGraph::Requirement, "term")
+def test_skillgraph_requirement_has_term():
+    assert hasattr(SkillGraph_Requirement, "term")
     descriptor = None
-    for klass in SkillGraph::Requirement.__mro__:
+    for klass in SkillGraph_Requirement.__mro__:
         if "term" in klass.__dict__:
             descriptor = klass.__dict__["term"]
             break
     assert isinstance(descriptor, property)
 
-def test_skillgraph::requirement_has_type():
-    assert hasattr(SkillGraph::Requirement, "type")
+def test_skillgraph_requirement_has_type():
+    assert hasattr(SkillGraph_Requirement, "type")
     descriptor = None
-    for klass in SkillGraph::Requirement.__mro__:
+    for klass in SkillGraph_Requirement.__mro__:
         if "type" in klass.__dict__:
             descriptor = klass.__dict__["type"]
             break
     assert isinstance(descriptor, property)
 
-def test_skillgraph::requirement_has_comment():
-    assert hasattr(SkillGraph::Requirement, "comment")
+def test_skillgraph_requirement_has_comment():
+    assert hasattr(SkillGraph_Requirement, "comment")
     descriptor = None
-    for klass in SkillGraph::Requirement.__mro__:
+    for klass in SkillGraph_Requirement.__mro__:
         if "comment" in klass.__dict__:
             descriptor = klass.__dict__["comment"]
             break
@@ -110,37 +110,37 @@ def test_skillgraph::requirement_has_comment():
 
 
 
-def test_skillgraph::edge_is_not_abstract():
-    assert not inspect.isabstract(SkillGraph::Edge)
+def test_skillgraph_edge_is_not_abstract():
+    assert not inspect.isabstract(SkillGraph_Edge)
 
 
-def test_skillgraph::edge_constructor_exists():
-    assert callable(SkillGraph::Edge.__init__)
+def test_skillgraph_edge_constructor_exists():
+    assert callable(SkillGraph_Edge.__init__)
 
 
-def test_skillgraph::edge_constructor_args():
-    sig = inspect.signature(SkillGraph::Edge.__init__)
+def test_skillgraph_edge_constructor_args():
+    sig = inspect.signature(SkillGraph_Edge.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_skillgraph::equation_is_not_abstract():
-    assert not inspect.isabstract(SkillGraph::Equation)
+def test_skillgraph_equation_is_not_abstract():
+    assert not inspect.isabstract(SkillGraph_Equation)
 
 
-def test_skillgraph::equation_constructor_exists():
-    assert callable(SkillGraph::Equation.__init__)
+def test_skillgraph_equation_constructor_exists():
+    assert callable(SkillGraph_Equation.__init__)
 
 
-def test_skillgraph::equation_constructor_args():
-    sig = inspect.signature(SkillGraph::Equation.__init__)
+def test_skillgraph_equation_constructor_args():
+    sig = inspect.signature(SkillGraph_Equation.__init__)
     params = list(sig.parameters.keys())
     assert "equation" in params, "Missing parameter 'equation'"
 
-def test_skillgraph::equation_has_equation():
-    assert hasattr(SkillGraph::Equation, "equation")
+def test_skillgraph_equation_has_equation():
+    assert hasattr(SkillGraph_Equation, "equation")
     descriptor = None
-    for klass in SkillGraph::Equation.__mro__:
+    for klass in SkillGraph_Equation.__mro__:
         if "equation" in klass.__dict__:
             descriptor = klass.__dict__["equation"]
             break
@@ -148,101 +148,81 @@ def test_skillgraph::equation_has_equation():
 
 
 
-def test_skillgraph::graph_is_not_abstract():
-    assert not inspect.isabstract(SkillGraph::Graph)
+def test_skillgraph_graph_is_not_abstract():
+    assert not inspect.isabstract(SkillGraph_Graph)
 
 
-def test_skillgraph::graph_constructor_exists():
-    assert callable(SkillGraph::Graph.__init__)
+def test_skillgraph_graph_constructor_exists():
+    assert callable(SkillGraph_Graph.__init__)
 
 
-def test_skillgraph::graph_constructor_args():
-    sig = inspect.signature(SkillGraph::Graph.__init__)
+def test_skillgraph_graph_constructor_args():
+    sig = inspect.signature(SkillGraph_Graph.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_skillgraph::parameter_is_not_abstract():
-    assert not inspect.isabstract(SkillGraph::Parameter)
+def test_skillgraph_parameter_is_not_abstract():
+    assert not inspect.isabstract(SkillGraph_Parameter)
 
 
-def test_skillgraph::parameter_constructor_exists():
-    assert callable(SkillGraph::Parameter.__init__)
+def test_skillgraph_parameter_constructor_exists():
+    assert callable(SkillGraph_Parameter.__init__)
 
 
-def test_skillgraph::parameter_constructor_args():
-    sig = inspect.signature(SkillGraph::Parameter.__init__)
+def test_skillgraph_parameter_constructor_args():
+    sig = inspect.signature(SkillGraph_Parameter.__init__)
     params = list(sig.parameters.keys())
-    assert "abbreviation" in params, "Missing parameter 'abbreviation'"
+    assert "name" in params, "Missing parameter 'name'"
+    assert "unit" in params, "Missing parameter 'unit'"
     assert "variable" in params, "Missing parameter 'variable'"
     assert "defaultValue" in params, "Missing parameter 'defaultValue'"
-    assert "unit" in params, "Missing parameter 'unit'"
-    assert "name" in params, "Missing parameter 'name'"
+    assert "abbreviation" in params, "Missing parameter 'abbreviation'"
 
-def test_skillgraph::parameter_has_abbreviation():
-    assert hasattr(SkillGraph::Parameter, "abbreviation")
+def test_skillgraph_parameter_has_name():
+    assert hasattr(SkillGraph_Parameter, "name")
     descriptor = None
-    for klass in SkillGraph::Parameter.__mro__:
-        if "abbreviation" in klass.__dict__:
-            descriptor = klass.__dict__["abbreviation"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_skillgraph::parameter_has_variable():
-    assert hasattr(SkillGraph::Parameter, "variable")
-    descriptor = None
-    for klass in SkillGraph::Parameter.__mro__:
-        if "variable" in klass.__dict__:
-            descriptor = klass.__dict__["variable"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_skillgraph::parameter_has_defaultValue():
-    assert hasattr(SkillGraph::Parameter, "defaultValue")
-    descriptor = None
-    for klass in SkillGraph::Parameter.__mro__:
-        if "defaultValue" in klass.__dict__:
-            descriptor = klass.__dict__["defaultValue"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_skillgraph::parameter_has_unit():
-    assert hasattr(SkillGraph::Parameter, "unit")
-    descriptor = None
-    for klass in SkillGraph::Parameter.__mro__:
-        if "unit" in klass.__dict__:
-            descriptor = klass.__dict__["unit"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_skillgraph::parameter_has_name():
-    assert hasattr(SkillGraph::Parameter, "name")
-    descriptor = None
-    for klass in SkillGraph::Parameter.__mro__:
+    for klass in SkillGraph_Parameter.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
-def test_category_exists():
-    # Check that the Enumeration exists
-    assert Category is not None
+def test_skillgraph_parameter_has_unit():
+    assert hasattr(SkillGraph_Parameter, "unit")
+    descriptor = None
+    for klass in SkillGraph_Parameter.__mro__:
+        if "unit" in klass.__dict__:
+            descriptor = klass.__dict__["unit"]
+            break
+    assert isinstance(descriptor, property)
 
-def test_category_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in Category]
-    expected_literals = [
-        "sensor",
-        "action",
-        "planning",
-        "perception",
-        "main",
-        "actuator",
-        "observable_external_behavior",
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in Category"
+def test_skillgraph_parameter_has_variable():
+    assert hasattr(SkillGraph_Parameter, "variable")
+    descriptor = None
+    for klass in SkillGraph_Parameter.__mro__:
+        if "variable" in klass.__dict__:
+            descriptor = klass.__dict__["variable"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_skillgraph_parameter_has_defaultValue():
+    assert hasattr(SkillGraph_Parameter, "defaultValue")
+    descriptor = None
+    for klass in SkillGraph_Parameter.__mro__:
+        if "defaultValue" in klass.__dict__:
+            descriptor = klass.__dict__["defaultValue"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_skillgraph_parameter_has_abbreviation():
+    assert hasattr(SkillGraph_Parameter, "abbreviation")
+    descriptor = None
+    for klass in SkillGraph_Parameter.__mro__:
+        if "abbreviation" in klass.__dict__:
+            descriptor = klass.__dict__["abbreviation"]
+            break
+    assert isinstance(descriptor, property)
 
 def test_type_exists():
     # Check that the Enumeration exists
@@ -253,12 +233,32 @@ def test_type_has_all_literals():
     enum_literals = [lit.name for lit in Type]
     expected_literals = [
         "Functional_Safety_Requirement",
-        "Technical_Requirement",
         "Technical_Safety_Requirement",
+        "Technical_Requirement",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
         assert lit_name in enum_literals, f"Literal '' missing in Type"
+
+def test_category_exists():
+    # Check that the Enumeration exists
+    assert Category is not None
+
+def test_category_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in Category]
+    expected_literals = [
+        "perception",
+        "main",
+        "planning",
+        "observable_external_behavior",
+        "action",
+        "sensor",
+        "actuator",
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in Category"
 
 
 # =============================================================================
@@ -272,17 +272,17 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-SkillGraph::Node_strategy = st.builds(
-    SkillGraph::Node,
+SkillGraph_Node_strategy = st.builds(
+    SkillGraph_Node,
     name=
         safe_text,
-    programPath=
-        safe_text,
     category=
+        safe_text,
+    programPath=
         safe_text
 )
-SkillGraph::Requirement_strategy = st.builds(
-    SkillGraph::Requirement,
+SkillGraph_Requirement_strategy = st.builds(
+    SkillGraph_Requirement,
     term=
         safe_text,
     type=
@@ -290,189 +290,153 @@ SkillGraph::Requirement_strategy = st.builds(
     comment=
         safe_text
 )
-SkillGraph::Edge_strategy = st.builds(
-    SkillGraph::Edge,
+SkillGraph_Edge_strategy = st.builds(
+    SkillGraph_Edge,
 )
-SkillGraph::Equation_strategy = st.builds(
-    SkillGraph::Equation,
+SkillGraph_Equation_strategy = st.builds(
+    SkillGraph_Equation,
     equation=
         safe_text
 )
-SkillGraph::Graph_strategy = st.builds(
-    SkillGraph::Graph,
+SkillGraph_Graph_strategy = st.builds(
+    SkillGraph_Graph,
 )
-SkillGraph::Parameter_strategy = st.builds(
-    SkillGraph::Parameter,
-    abbreviation=
+SkillGraph_Parameter_strategy = st.builds(
+    SkillGraph_Parameter,
+    name=
+        safe_text,
+    unit=
         safe_text,
     variable=
         st.booleans(),
     defaultValue=
         safe_text,
-    unit=
-        safe_text,
-    name=
+    abbreviation=
         safe_text
 )
 
-@given(instance=SkillGraph::Node_strategy)
+@given(instance=SkillGraph_Node_strategy)
 @settings(max_examples=50)
-def test_skillgraph::node_instantiation(instance):
-    assert isinstance(instance, SkillGraph::Node)
-
-@given(instance=SkillGraph::Node_strategy)
-def test_skillgraph::node_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_skillgraph_node_instantiation(instance):
+    assert isinstance(instance, SkillGraph_Node)
 
 
-@given(instance=SkillGraph::Node_strategy)
-def test_skillgraph::node_name_setter(instance):
+
+@given(instance=SkillGraph_Node_strategy)
+def test_skillgraph_node_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=SkillGraph::Node_strategy)
-def test_skillgraph::node_programPath_type(instance):
-    assert isinstance(instance.programPath, str)
 
 
-@given(instance=SkillGraph::Node_strategy)
-def test_skillgraph::node_programPath_setter(instance):
-    original = instance.programPath
-    instance.programPath = original
-    assert instance.programPath == original
-
-@given(instance=SkillGraph::Node_strategy)
-def test_skillgraph::node_category_type(instance):
-    assert isinstance(instance.category, str)
-
-
-@given(instance=SkillGraph::Node_strategy)
-def test_skillgraph::node_category_setter(instance):
+@given(instance=SkillGraph_Node_strategy)
+def test_skillgraph_node_category_setter(instance):
     original = instance.category
     instance.category = original
     assert instance.category == original
 
-@given(instance=SkillGraph::Requirement_strategy)
+
+
+@given(instance=SkillGraph_Node_strategy)
+def test_skillgraph_node_programPath_setter(instance):
+    original = instance.programPath
+    instance.programPath = original
+    assert instance.programPath == original
+
+@given(instance=SkillGraph_Requirement_strategy)
 @settings(max_examples=50)
-def test_skillgraph::requirement_instantiation(instance):
-    assert isinstance(instance, SkillGraph::Requirement)
-
-@given(instance=SkillGraph::Requirement_strategy)
-def test_skillgraph::requirement_term_type(instance):
-    assert isinstance(instance.term, str)
+def test_skillgraph_requirement_instantiation(instance):
+    assert isinstance(instance, SkillGraph_Requirement)
 
 
-@given(instance=SkillGraph::Requirement_strategy)
-def test_skillgraph::requirement_term_setter(instance):
+
+@given(instance=SkillGraph_Requirement_strategy)
+def test_skillgraph_requirement_term_setter(instance):
     original = instance.term
     instance.term = original
     assert instance.term == original
 
-@given(instance=SkillGraph::Requirement_strategy)
-def test_skillgraph::requirement_type_type(instance):
-    assert isinstance(instance.type, str)
 
 
-@given(instance=SkillGraph::Requirement_strategy)
-def test_skillgraph::requirement_type_setter(instance):
+@given(instance=SkillGraph_Requirement_strategy)
+def test_skillgraph_requirement_type_setter(instance):
     original = instance.type
     instance.type = original
     assert instance.type == original
 
-@given(instance=SkillGraph::Requirement_strategy)
-def test_skillgraph::requirement_comment_type(instance):
-    assert isinstance(instance.comment, str)
 
 
-@given(instance=SkillGraph::Requirement_strategy)
-def test_skillgraph::requirement_comment_setter(instance):
+@given(instance=SkillGraph_Requirement_strategy)
+def test_skillgraph_requirement_comment_setter(instance):
     original = instance.comment
     instance.comment = original
     assert instance.comment == original
 
-@given(instance=SkillGraph::Edge_strategy)
+@given(instance=SkillGraph_Edge_strategy)
 @settings(max_examples=50)
-def test_skillgraph::edge_instantiation(instance):
-    assert isinstance(instance, SkillGraph::Edge)
+def test_skillgraph_edge_instantiation(instance):
+    assert isinstance(instance, SkillGraph_Edge)
 
-@given(instance=SkillGraph::Equation_strategy)
+@given(instance=SkillGraph_Equation_strategy)
 @settings(max_examples=50)
-def test_skillgraph::equation_instantiation(instance):
-    assert isinstance(instance, SkillGraph::Equation)
-
-@given(instance=SkillGraph::Equation_strategy)
-def test_skillgraph::equation_equation_type(instance):
-    assert isinstance(instance.equation, str)
+def test_skillgraph_equation_instantiation(instance):
+    assert isinstance(instance, SkillGraph_Equation)
 
 
-@given(instance=SkillGraph::Equation_strategy)
-def test_skillgraph::equation_equation_setter(instance):
+
+@given(instance=SkillGraph_Equation_strategy)
+def test_skillgraph_equation_equation_setter(instance):
     original = instance.equation
     instance.equation = original
     assert instance.equation == original
 
-@given(instance=SkillGraph::Graph_strategy)
+@given(instance=SkillGraph_Graph_strategy)
 @settings(max_examples=50)
-def test_skillgraph::graph_instantiation(instance):
-    assert isinstance(instance, SkillGraph::Graph)
+def test_skillgraph_graph_instantiation(instance):
+    assert isinstance(instance, SkillGraph_Graph)
 
-@given(instance=SkillGraph::Parameter_strategy)
+@given(instance=SkillGraph_Parameter_strategy)
 @settings(max_examples=50)
-def test_skillgraph::parameter_instantiation(instance):
-    assert isinstance(instance, SkillGraph::Parameter)
-
-@given(instance=SkillGraph::Parameter_strategy)
-def test_skillgraph::parameter_abbreviation_type(instance):
-    assert isinstance(instance.abbreviation, str)
+def test_skillgraph_parameter_instantiation(instance):
+    assert isinstance(instance, SkillGraph_Parameter)
 
 
-@given(instance=SkillGraph::Parameter_strategy)
-def test_skillgraph::parameter_abbreviation_setter(instance):
-    original = instance.abbreviation
-    instance.abbreviation = original
-    assert instance.abbreviation == original
 
-@given(instance=SkillGraph::Parameter_strategy)
-def test_skillgraph::parameter_variable_type(instance):
-    assert isinstance(instance.variable, bool)
+@given(instance=SkillGraph_Parameter_strategy)
+def test_skillgraph_parameter_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
 
 
-@given(instance=SkillGraph::Parameter_strategy)
-def test_skillgraph::parameter_variable_setter(instance):
-    original = instance.variable
-    instance.variable = original
-    assert instance.variable == original
 
-@given(instance=SkillGraph::Parameter_strategy)
-def test_skillgraph::parameter_defaultValue_type(instance):
-    assert isinstance(instance.defaultValue, str)
-
-
-@given(instance=SkillGraph::Parameter_strategy)
-def test_skillgraph::parameter_defaultValue_setter(instance):
-    original = instance.defaultValue
-    instance.defaultValue = original
-    assert instance.defaultValue == original
-
-@given(instance=SkillGraph::Parameter_strategy)
-def test_skillgraph::parameter_unit_type(instance):
-    assert isinstance(instance.unit, str)
-
-
-@given(instance=SkillGraph::Parameter_strategy)
-def test_skillgraph::parameter_unit_setter(instance):
+@given(instance=SkillGraph_Parameter_strategy)
+def test_skillgraph_parameter_unit_setter(instance):
     original = instance.unit
     instance.unit = original
     assert instance.unit == original
 
-@given(instance=SkillGraph::Parameter_strategy)
-def test_skillgraph::parameter_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
-@given(instance=SkillGraph::Parameter_strategy)
-def test_skillgraph::parameter_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
+@given(instance=SkillGraph_Parameter_strategy)
+def test_skillgraph_parameter_variable_setter(instance):
+    original = instance.variable
+    instance.variable = original
+    assert instance.variable == original
+
+
+
+@given(instance=SkillGraph_Parameter_strategy)
+def test_skillgraph_parameter_defaultValue_setter(instance):
+    original = instance.defaultValue
+    instance.defaultValue = original
+    assert instance.defaultValue == original
+
+
+
+@given(instance=SkillGraph_Parameter_strategy)
+def test_skillgraph_parameter_abbreviation_setter(instance):
+    original = instance.abbreviation
+    instance.abbreviation = original
+    assert instance.abbreviation == original

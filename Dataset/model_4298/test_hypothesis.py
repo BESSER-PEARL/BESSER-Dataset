@@ -3,30 +3,30 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    metrics::MetricValueRange,
-    metrics::Value,
-    metrics::MetricSource,
-    metrics::DateTimeRange,
-    metrics::MappingStatistic,
-    metrics::Metric,
+from python_code import (
+    metrics_MetricValueRange,
+    metrics_Value,
+    metrics_MetricSource,
+    metrics_DateTimeRange,
+    metrics_MappingStatistic,
+    metrics_Metric,
     DataKind,
-    metrics::ValueDataKind,
-    metrics::IdentifierDataKind,
+    metrics_ValueDataKind,
+    metrics_IdentifierDataKind,
     MappingRecord,
-    metrics::MappingRecordXLS,
-    metrics::MappingRecord,
+    metrics_MappingRecordXLS,
+    metrics_MappingRecord,
     Mapping,
-    metrics::MappingRDBMS,
-    metrics::MappingXLS,
-    metrics::MappingCSV,
-    metrics::Mapping,
-    metrics::DataKind,
+    metrics_MappingXLS,
+    metrics_MappingRDBMS,
+    metrics_MappingCSV,
+    metrics_Mapping,
+    metrics_DataKind,
     ValueKindType,
-    KindHintType,
     ObjectNameType,
+    KindHintType,
 )
 
 # =============================================================================
@@ -35,43 +35,43 @@ from classes import (
 
 
 
-def test_metrics::metricvaluerange_is_not_abstract():
-    assert not inspect.isabstract(metrics::MetricValueRange)
+def test_metrics_metricvaluerange_is_not_abstract():
+    assert not inspect.isabstract(metrics_MetricValueRange)
 
 
-def test_metrics::metricvaluerange_constructor_exists():
-    assert callable(metrics::MetricValueRange.__init__)
+def test_metrics_metricvaluerange_constructor_exists():
+    assert callable(metrics_MetricValueRange.__init__)
 
 
-def test_metrics::metricvaluerange_constructor_args():
-    sig = inspect.signature(metrics::MetricValueRange.__init__)
+def test_metrics_metricvaluerange_constructor_args():
+    sig = inspect.signature(metrics_MetricValueRange.__init__)
     params = list(sig.parameters.keys())
-    assert "name" in params, "Missing parameter 'name'"
     assert "kindHint" in params, "Missing parameter 'kindHint'"
+    assert "name" in params, "Missing parameter 'name'"
     assert "periodHint" in params, "Missing parameter 'periodHint'"
 
-def test_metrics::metricvaluerange_has_name():
-    assert hasattr(metrics::MetricValueRange, "name")
+def test_metrics_metricvaluerange_has_kindHint():
+    assert hasattr(metrics_MetricValueRange, "kindHint")
     descriptor = None
-    for klass in metrics::MetricValueRange.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_metrics::metricvaluerange_has_kindHint():
-    assert hasattr(metrics::MetricValueRange, "kindHint")
-    descriptor = None
-    for klass in metrics::MetricValueRange.__mro__:
+    for klass in metrics_MetricValueRange.__mro__:
         if "kindHint" in klass.__dict__:
             descriptor = klass.__dict__["kindHint"]
             break
     assert isinstance(descriptor, property)
 
-def test_metrics::metricvaluerange_has_periodHint():
-    assert hasattr(metrics::MetricValueRange, "periodHint")
+def test_metrics_metricvaluerange_has_name():
+    assert hasattr(metrics_MetricValueRange, "name")
     descriptor = None
-    for klass in metrics::MetricValueRange.__mro__:
+    for klass in metrics_MetricValueRange.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_metrics_metricvaluerange_has_periodHint():
+    assert hasattr(metrics_MetricValueRange, "periodHint")
+    descriptor = None
+    for klass in metrics_MetricValueRange.__mro__:
         if "periodHint" in klass.__dict__:
             descriptor = klass.__dict__["periodHint"]
             break
@@ -79,85 +79,85 @@ def test_metrics::metricvaluerange_has_periodHint():
 
 
 
-def test_metrics::value_is_not_abstract():
-    assert not inspect.isabstract(metrics::Value)
+def test_metrics_value_is_not_abstract():
+    assert not inspect.isabstract(metrics_Value)
 
 
-def test_metrics::value_constructor_exists():
-    assert callable(metrics::Value.__init__)
+def test_metrics_value_constructor_exists():
+    assert callable(metrics_Value.__init__)
 
 
-def test_metrics::value_constructor_args():
-    sig = inspect.signature(metrics::Value.__init__)
+def test_metrics_value_constructor_args():
+    sig = inspect.signature(metrics_Value.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_metrics::metricsource_is_not_abstract():
-    assert not inspect.isabstract(metrics::MetricSource)
+def test_metrics_metricsource_is_not_abstract():
+    assert not inspect.isabstract(metrics_MetricSource)
 
 
-def test_metrics::metricsource_constructor_exists():
-    assert callable(metrics::MetricSource.__init__)
+def test_metrics_metricsource_constructor_exists():
+    assert callable(metrics_MetricSource.__init__)
 
 
-def test_metrics::metricsource_constructor_args():
-    sig = inspect.signature(metrics::MetricSource.__init__)
+def test_metrics_metricsource_constructor_args():
+    sig = inspect.signature(metrics_MetricSource.__init__)
     params = list(sig.parameters.keys())
-    assert "name" in params, "Missing parameter 'name'"
     assert "metricLocation" in params, "Missing parameter 'metricLocation'"
+    assert "name" in params, "Missing parameter 'name'"
 
-def test_metrics::metricsource_has_name():
-    assert hasattr(metrics::MetricSource, "name")
+def test_metrics_metricsource_has_metricLocation():
+    assert hasattr(metrics_MetricSource, "metricLocation")
     descriptor = None
-    for klass in metrics::MetricSource.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_metrics::metricsource_has_metricLocation():
-    assert hasattr(metrics::MetricSource, "metricLocation")
-    descriptor = None
-    for klass in metrics::MetricSource.__mro__:
+    for klass in metrics_MetricSource.__mro__:
         if "metricLocation" in klass.__dict__:
             descriptor = klass.__dict__["metricLocation"]
             break
     assert isinstance(descriptor, property)
 
+def test_metrics_metricsource_has_name():
+    assert hasattr(metrics_MetricSource, "name")
+    descriptor = None
+    for klass in metrics_MetricSource.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_metrics::datetimerange_is_not_abstract():
-    assert not inspect.isabstract(metrics::DateTimeRange)
+
+def test_metrics_datetimerange_is_not_abstract():
+    assert not inspect.isabstract(metrics_DateTimeRange)
 
 
-def test_metrics::datetimerange_constructor_exists():
-    assert callable(metrics::DateTimeRange.__init__)
+def test_metrics_datetimerange_constructor_exists():
+    assert callable(metrics_DateTimeRange.__init__)
 
 
-def test_metrics::datetimerange_constructor_args():
-    sig = inspect.signature(metrics::DateTimeRange.__init__)
+def test_metrics_datetimerange_constructor_args():
+    sig = inspect.signature(metrics_DateTimeRange.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_metrics::mappingstatistic_is_not_abstract():
-    assert not inspect.isabstract(metrics::MappingStatistic)
+def test_metrics_mappingstatistic_is_not_abstract():
+    assert not inspect.isabstract(metrics_MappingStatistic)
 
 
-def test_metrics::mappingstatistic_constructor_exists():
-    assert callable(metrics::MappingStatistic.__init__)
+def test_metrics_mappingstatistic_constructor_exists():
+    assert callable(metrics_MappingStatistic.__init__)
 
 
-def test_metrics::mappingstatistic_constructor_args():
-    sig = inspect.signature(metrics::MappingStatistic.__init__)
+def test_metrics_mappingstatistic_constructor_args():
+    sig = inspect.signature(metrics_MappingStatistic.__init__)
     params = list(sig.parameters.keys())
     assert "totalRecords" in params, "Missing parameter 'totalRecords'"
 
-def test_metrics::mappingstatistic_has_totalRecords():
-    assert hasattr(metrics::MappingStatistic, "totalRecords")
+def test_metrics_mappingstatistic_has_totalRecords():
+    assert hasattr(metrics_MappingStatistic, "totalRecords")
     descriptor = None
-    for klass in metrics::MappingStatistic.__mro__:
+    for klass in metrics_MappingStatistic.__mro__:
         if "totalRecords" in klass.__dict__:
             descriptor = klass.__dict__["totalRecords"]
             break
@@ -165,75 +165,75 @@ def test_metrics::mappingstatistic_has_totalRecords():
 
 
 
-def test_metrics::metric_is_not_abstract():
-    assert not inspect.isabstract(metrics::Metric)
+def test_metrics_metric_is_not_abstract():
+    assert not inspect.isabstract(metrics_Metric)
 
 
-def test_metrics::metric_constructor_exists():
-    assert callable(metrics::Metric.__init__)
+def test_metrics_metric_constructor_exists():
+    assert callable(metrics_Metric.__init__)
 
 
-def test_metrics::metric_constructor_args():
-    sig = inspect.signature(metrics::Metric.__init__)
+def test_metrics_metric_constructor_args():
+    sig = inspect.signature(metrics_Metric.__init__)
     params = list(sig.parameters.keys())
-    assert "name" in params, "Missing parameter 'name'"
-    assert "measurementKind" in params, "Missing parameter 'measurementKind'"
     assert "unitRef" in params, "Missing parameter 'unitRef'"
     assert "metricCalculation" in params, "Missing parameter 'metricCalculation'"
-    assert "measurementPoint" in params, "Missing parameter 'measurementPoint'"
     assert "description" in params, "Missing parameter 'description'"
+    assert "measurementPoint" in params, "Missing parameter 'measurementPoint'"
+    assert "measurementKind" in params, "Missing parameter 'measurementKind'"
+    assert "name" in params, "Missing parameter 'name'"
 
-def test_metrics::metric_has_name():
-    assert hasattr(metrics::Metric, "name")
+def test_metrics_metric_has_unitRef():
+    assert hasattr(metrics_Metric, "unitRef")
     descriptor = None
-    for klass in metrics::Metric.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_metrics::metric_has_measurementKind():
-    assert hasattr(metrics::Metric, "measurementKind")
-    descriptor = None
-    for klass in metrics::Metric.__mro__:
-        if "measurementKind" in klass.__dict__:
-            descriptor = klass.__dict__["measurementKind"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_metrics::metric_has_unitRef():
-    assert hasattr(metrics::Metric, "unitRef")
-    descriptor = None
-    for klass in metrics::Metric.__mro__:
+    for klass in metrics_Metric.__mro__:
         if "unitRef" in klass.__dict__:
             descriptor = klass.__dict__["unitRef"]
             break
     assert isinstance(descriptor, property)
 
-def test_metrics::metric_has_metricCalculation():
-    assert hasattr(metrics::Metric, "metricCalculation")
+def test_metrics_metric_has_metricCalculation():
+    assert hasattr(metrics_Metric, "metricCalculation")
     descriptor = None
-    for klass in metrics::Metric.__mro__:
+    for klass in metrics_Metric.__mro__:
         if "metricCalculation" in klass.__dict__:
             descriptor = klass.__dict__["metricCalculation"]
             break
     assert isinstance(descriptor, property)
 
-def test_metrics::metric_has_measurementPoint():
-    assert hasattr(metrics::Metric, "measurementPoint")
+def test_metrics_metric_has_description():
+    assert hasattr(metrics_Metric, "description")
     descriptor = None
-    for klass in metrics::Metric.__mro__:
+    for klass in metrics_Metric.__mro__:
+        if "description" in klass.__dict__:
+            descriptor = klass.__dict__["description"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_metrics_metric_has_measurementPoint():
+    assert hasattr(metrics_Metric, "measurementPoint")
+    descriptor = None
+    for klass in metrics_Metric.__mro__:
         if "measurementPoint" in klass.__dict__:
             descriptor = klass.__dict__["measurementPoint"]
             break
     assert isinstance(descriptor, property)
 
-def test_metrics::metric_has_description():
-    assert hasattr(metrics::Metric, "description")
+def test_metrics_metric_has_measurementKind():
+    assert hasattr(metrics_Metric, "measurementKind")
     descriptor = None
-    for klass in metrics::Metric.__mro__:
-        if "description" in klass.__dict__:
-            descriptor = klass.__dict__["description"]
+    for klass in metrics_Metric.__mro__:
+        if "measurementKind" in klass.__dict__:
+            descriptor = klass.__dict__["measurementKind"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_metrics_metric_has_name():
+    assert hasattr(metrics_Metric, "name")
+    descriptor = None
+    for klass in metrics_Metric.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
@@ -253,23 +253,23 @@ def test_datakind_constructor_args():
 
 
 
-def test_metrics::valuedatakind_is_not_abstract():
-    assert not inspect.isabstract(metrics::ValueDataKind)
+def test_metrics_valuedatakind_is_not_abstract():
+    assert not inspect.isabstract(metrics_ValueDataKind)
 
 
-def test_metrics::valuedatakind_constructor_exists():
-    assert callable(metrics::ValueDataKind.__init__)
+def test_metrics_valuedatakind_constructor_exists():
+    assert callable(metrics_ValueDataKind.__init__)
 
 
-def test_metrics::valuedatakind_constructor_args():
-    sig = inspect.signature(metrics::ValueDataKind.__init__)
+def test_metrics_valuedatakind_constructor_args():
+    sig = inspect.signature(metrics_ValueDataKind.__init__)
     params = list(sig.parameters.keys())
     assert "valueKind" in params, "Missing parameter 'valueKind'"
 
-def test_metrics::valuedatakind_has_valueKind():
-    assert hasattr(metrics::ValueDataKind, "valueKind")
+def test_metrics_valuedatakind_has_valueKind():
+    assert hasattr(metrics_ValueDataKind, "valueKind")
     descriptor = None
-    for klass in metrics::ValueDataKind.__mro__:
+    for klass in metrics_ValueDataKind.__mro__:
         if "valueKind" in klass.__dict__:
             descriptor = klass.__dict__["valueKind"]
             break
@@ -277,33 +277,33 @@ def test_metrics::valuedatakind_has_valueKind():
 
 
 
-def test_metrics::identifierdatakind_is_not_abstract():
-    assert not inspect.isabstract(metrics::IdentifierDataKind)
+def test_metrics_identifierdatakind_is_not_abstract():
+    assert not inspect.isabstract(metrics_IdentifierDataKind)
 
 
-def test_metrics::identifierdatakind_constructor_exists():
-    assert callable(metrics::IdentifierDataKind.__init__)
+def test_metrics_identifierdatakind_constructor_exists():
+    assert callable(metrics_IdentifierDataKind.__init__)
 
 
-def test_metrics::identifierdatakind_constructor_args():
-    sig = inspect.signature(metrics::IdentifierDataKind.__init__)
+def test_metrics_identifierdatakind_constructor_args():
+    sig = inspect.signature(metrics_IdentifierDataKind.__init__)
     params = list(sig.parameters.keys())
     assert "objectAttribute" in params, "Missing parameter 'objectAttribute'"
     assert "objectName" in params, "Missing parameter 'objectName'"
 
-def test_metrics::identifierdatakind_has_objectAttribute():
-    assert hasattr(metrics::IdentifierDataKind, "objectAttribute")
+def test_metrics_identifierdatakind_has_objectAttribute():
+    assert hasattr(metrics_IdentifierDataKind, "objectAttribute")
     descriptor = None
-    for klass in metrics::IdentifierDataKind.__mro__:
+    for klass in metrics_IdentifierDataKind.__mro__:
         if "objectAttribute" in klass.__dict__:
             descriptor = klass.__dict__["objectAttribute"]
             break
     assert isinstance(descriptor, property)
 
-def test_metrics::identifierdatakind_has_objectName():
-    assert hasattr(metrics::IdentifierDataKind, "objectName")
+def test_metrics_identifierdatakind_has_objectName():
+    assert hasattr(metrics_IdentifierDataKind, "objectName")
     descriptor = None
-    for klass in metrics::IdentifierDataKind.__mro__:
+    for klass in metrics_IdentifierDataKind.__mro__:
         if "objectName" in klass.__dict__:
             descriptor = klass.__dict__["objectName"]
             break
@@ -325,33 +325,33 @@ def test_mappingrecord_constructor_args():
 
 
 
-def test_metrics::mappingrecordxls_is_not_abstract():
-    assert not inspect.isabstract(metrics::MappingRecordXLS)
+def test_metrics_mappingrecordxls_is_not_abstract():
+    assert not inspect.isabstract(metrics_MappingRecordXLS)
 
 
-def test_metrics::mappingrecordxls_constructor_exists():
-    assert callable(metrics::MappingRecordXLS.__init__)
+def test_metrics_mappingrecordxls_constructor_exists():
+    assert callable(metrics_MappingRecordXLS.__init__)
 
 
-def test_metrics::mappingrecordxls_constructor_args():
-    sig = inspect.signature(metrics::MappingRecordXLS.__init__)
+def test_metrics_mappingrecordxls_constructor_args():
+    sig = inspect.signature(metrics_MappingRecordXLS.__init__)
     params = list(sig.parameters.keys())
     assert "row" in params, "Missing parameter 'row'"
     assert "column" in params, "Missing parameter 'column'"
 
-def test_metrics::mappingrecordxls_has_row():
-    assert hasattr(metrics::MappingRecordXLS, "row")
+def test_metrics_mappingrecordxls_has_row():
+    assert hasattr(metrics_MappingRecordXLS, "row")
     descriptor = None
-    for klass in metrics::MappingRecordXLS.__mro__:
+    for klass in metrics_MappingRecordXLS.__mro__:
         if "row" in klass.__dict__:
             descriptor = klass.__dict__["row"]
             break
     assert isinstance(descriptor, property)
 
-def test_metrics::mappingrecordxls_has_column():
-    assert hasattr(metrics::MappingRecordXLS, "column")
+def test_metrics_mappingrecordxls_has_column():
+    assert hasattr(metrics_MappingRecordXLS, "column")
     descriptor = None
-    for klass in metrics::MappingRecordXLS.__mro__:
+    for klass in metrics_MappingRecordXLS.__mro__:
         if "column" in klass.__dict__:
             descriptor = klass.__dict__["column"]
             break
@@ -359,16 +359,16 @@ def test_metrics::mappingrecordxls_has_column():
 
 
 
-def test_metrics::mappingrecord_is_not_abstract():
-    assert not inspect.isabstract(metrics::MappingRecord)
+def test_metrics_mappingrecord_is_not_abstract():
+    assert not inspect.isabstract(metrics_MappingRecord)
 
 
-def test_metrics::mappingrecord_constructor_exists():
-    assert callable(metrics::MappingRecord.__init__)
+def test_metrics_mappingrecord_constructor_exists():
+    assert callable(metrics_MappingRecord.__init__)
 
 
-def test_metrics::mappingrecord_constructor_args():
-    sig = inspect.signature(metrics::MappingRecord.__init__)
+def test_metrics_mappingrecord_constructor_args():
+    sig = inspect.signature(metrics_MappingRecord.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -387,112 +387,112 @@ def test_mapping_constructor_args():
 
 
 
-def test_metrics::mappingrdbms_is_not_abstract():
-    assert not inspect.isabstract(metrics::MappingRDBMS)
+def test_metrics_mappingxls_is_not_abstract():
+    assert not inspect.isabstract(metrics_MappingXLS)
 
 
-def test_metrics::mappingrdbms_constructor_exists():
-    assert callable(metrics::MappingRDBMS.__init__)
+def test_metrics_mappingxls_constructor_exists():
+    assert callable(metrics_MappingXLS.__init__)
 
 
-def test_metrics::mappingrdbms_constructor_args():
-    sig = inspect.signature(metrics::MappingRDBMS.__init__)
+def test_metrics_mappingxls_constructor_args():
+    sig = inspect.signature(metrics_MappingXLS.__init__)
     params = list(sig.parameters.keys())
-
-
-
-def test_metrics::mappingxls_is_not_abstract():
-    assert not inspect.isabstract(metrics::MappingXLS)
-
-
-def test_metrics::mappingxls_constructor_exists():
-    assert callable(metrics::MappingXLS.__init__)
-
-
-def test_metrics::mappingxls_constructor_args():
-    sig = inspect.signature(metrics::MappingXLS.__init__)
-    params = list(sig.parameters.keys())
-    assert "sheetNumber" in params, "Missing parameter 'sheetNumber'"
-    assert "headerRow" in params, "Missing parameter 'headerRow'"
     assert "columnHeaders" in params, "Missing parameter 'columnHeaders'"
+    assert "sheetNumber" in params, "Missing parameter 'sheetNumber'"
     assert "firstDataRow" in params, "Missing parameter 'firstDataRow'"
+    assert "headerRow" in params, "Missing parameter 'headerRow'"
 
-def test_metrics::mappingxls_has_sheetNumber():
-    assert hasattr(metrics::MappingXLS, "sheetNumber")
+def test_metrics_mappingxls_has_columnHeaders():
+    assert hasattr(metrics_MappingXLS, "columnHeaders")
     descriptor = None
-    for klass in metrics::MappingXLS.__mro__:
-        if "sheetNumber" in klass.__dict__:
-            descriptor = klass.__dict__["sheetNumber"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_metrics::mappingxls_has_headerRow():
-    assert hasattr(metrics::MappingXLS, "headerRow")
-    descriptor = None
-    for klass in metrics::MappingXLS.__mro__:
-        if "headerRow" in klass.__dict__:
-            descriptor = klass.__dict__["headerRow"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_metrics::mappingxls_has_columnHeaders():
-    assert hasattr(metrics::MappingXLS, "columnHeaders")
-    descriptor = None
-    for klass in metrics::MappingXLS.__mro__:
+    for klass in metrics_MappingXLS.__mro__:
         if "columnHeaders" in klass.__dict__:
             descriptor = klass.__dict__["columnHeaders"]
             break
     assert isinstance(descriptor, property)
 
-def test_metrics::mappingxls_has_firstDataRow():
-    assert hasattr(metrics::MappingXLS, "firstDataRow")
+def test_metrics_mappingxls_has_sheetNumber():
+    assert hasattr(metrics_MappingXLS, "sheetNumber")
     descriptor = None
-    for klass in metrics::MappingXLS.__mro__:
+    for klass in metrics_MappingXLS.__mro__:
+        if "sheetNumber" in klass.__dict__:
+            descriptor = klass.__dict__["sheetNumber"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_metrics_mappingxls_has_firstDataRow():
+    assert hasattr(metrics_MappingXLS, "firstDataRow")
+    descriptor = None
+    for klass in metrics_MappingXLS.__mro__:
         if "firstDataRow" in klass.__dict__:
             descriptor = klass.__dict__["firstDataRow"]
             break
     assert isinstance(descriptor, property)
 
+def test_metrics_mappingxls_has_headerRow():
+    assert hasattr(metrics_MappingXLS, "headerRow")
+    descriptor = None
+    for klass in metrics_MappingXLS.__mro__:
+        if "headerRow" in klass.__dict__:
+            descriptor = klass.__dict__["headerRow"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_metrics::mappingcsv_is_not_abstract():
-    assert not inspect.isabstract(metrics::MappingCSV)
+
+def test_metrics_mappingrdbms_is_not_abstract():
+    assert not inspect.isabstract(metrics_MappingRDBMS)
 
 
-def test_metrics::mappingcsv_constructor_exists():
-    assert callable(metrics::MappingCSV.__init__)
+def test_metrics_mappingrdbms_constructor_exists():
+    assert callable(metrics_MappingRDBMS.__init__)
 
 
-def test_metrics::mappingcsv_constructor_args():
-    sig = inspect.signature(metrics::MappingCSV.__init__)
+def test_metrics_mappingrdbms_constructor_args():
+    sig = inspect.signature(metrics_MappingRDBMS.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_metrics::mapping_is_not_abstract():
-    assert not inspect.isabstract(metrics::Mapping)
+def test_metrics_mappingcsv_is_not_abstract():
+    assert not inspect.isabstract(metrics_MappingCSV)
 
 
-def test_metrics::mapping_constructor_exists():
-    assert callable(metrics::Mapping.__init__)
+def test_metrics_mappingcsv_constructor_exists():
+    assert callable(metrics_MappingCSV.__init__)
 
 
-def test_metrics::mapping_constructor_args():
-    sig = inspect.signature(metrics::Mapping.__init__)
+def test_metrics_mappingcsv_constructor_args():
+    sig = inspect.signature(metrics_MappingCSV.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_metrics::datakind_is_not_abstract():
-    assert not inspect.isabstract(metrics::DataKind)
+def test_metrics_mapping_is_not_abstract():
+    assert not inspect.isabstract(metrics_Mapping)
 
 
-def test_metrics::datakind_constructor_exists():
-    assert callable(metrics::DataKind.__init__)
+def test_metrics_mapping_constructor_exists():
+    assert callable(metrics_Mapping.__init__)
 
 
-def test_metrics::datakind_constructor_args():
-    sig = inspect.signature(metrics::DataKind.__init__)
+def test_metrics_mapping_constructor_args():
+    sig = inspect.signature(metrics_Mapping.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_metrics_datakind_is_not_abstract():
+    assert not inspect.isabstract(metrics_DataKind)
+
+
+def test_metrics_datakind_constructor_exists():
+    assert callable(metrics_DataKind.__init__)
+
+
+def test_metrics_datakind_constructor_args():
+    sig = inspect.signature(metrics_DataKind.__init__)
     params = list(sig.parameters.keys())
 
 def test_valuekindtype_exists():
@@ -511,6 +511,22 @@ def test_valuekindtype_has_all_literals():
     for lit_name in expected_literals:
         assert lit_name in enum_literals, f"Literal '' missing in ValueKindType"
 
+def test_objectnametype_exists():
+    # Check that the Enumeration exists
+    assert ObjectNameType is not None
+
+def test_objectnametype_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in ObjectNameType]
+    expected_literals = [
+        "NODE",
+        "EQUIPMENT",
+        "FUNCTION",
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in ObjectNameType"
+
 def test_kindhinttype_exists():
     # Check that the Enumeration exists
     assert KindHintType is not None
@@ -526,22 +542,6 @@ def test_kindhinttype_has_all_literals():
     for lit_name in expected_literals:
         assert lit_name in enum_literals, f"Literal '' missing in KindHintType"
 
-def test_objectnametype_exists():
-    # Check that the Enumeration exists
-    assert ObjectNameType is not None
-
-def test_objectnametype_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in ObjectNameType]
-    expected_literals = [
-        "EQUIPMENT",
-        "NODE",
-        "FUNCTION",
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in ObjectNameType"
-
 
 # =============================================================================
 # HYPOTHESIS STRATEGIES
@@ -554,58 +554,58 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-metrics::MetricValueRange_strategy = st.builds(
-    metrics::MetricValueRange,
-    name=
-        safe_text,
+metrics_MetricValueRange_strategy = st.builds(
+    metrics_MetricValueRange,
     kindHint=
+        safe_text,
+    name=
         safe_text,
     periodHint=
         safe_text
 )
-metrics::Value_strategy = st.builds(
-    metrics::Value,
+metrics_Value_strategy = st.builds(
+    metrics_Value,
 )
-metrics::MetricSource_strategy = st.builds(
-    metrics::MetricSource,
-    name=
-        safe_text,
+metrics_MetricSource_strategy = st.builds(
+    metrics_MetricSource,
     metricLocation=
+        safe_text,
+    name=
         safe_text
 )
-metrics::DateTimeRange_strategy = st.builds(
-    metrics::DateTimeRange,
+metrics_DateTimeRange_strategy = st.builds(
+    metrics_DateTimeRange,
 )
-metrics::MappingStatistic_strategy = st.builds(
-    metrics::MappingStatistic,
+metrics_MappingStatistic_strategy = st.builds(
+    metrics_MappingStatistic,
     totalRecords=
         safe_text
 )
-metrics::Metric_strategy = st.builds(
-    metrics::Metric,
-    name=
-        safe_text,
-    measurementKind=
-        safe_text,
+metrics_Metric_strategy = st.builds(
+    metrics_Metric,
     unitRef=
         safe_text,
     metricCalculation=
         safe_text,
+    description=
+        safe_text,
     measurementPoint=
         safe_text,
-    description=
+    measurementKind=
+        safe_text,
+    name=
         safe_text
 )
 DataKind_strategy = st.builds(
     DataKind,
 )
-metrics::ValueDataKind_strategy = st.builds(
-    metrics::ValueDataKind,
+metrics_ValueDataKind_strategy = st.builds(
+    metrics_ValueDataKind,
     valueKind=
         safe_text
 )
-metrics::IdentifierDataKind_strategy = st.builds(
-    metrics::IdentifierDataKind,
+metrics_IdentifierDataKind_strategy = st.builds(
+    metrics_IdentifierDataKind,
     objectAttribute=
         safe_text,
     objectName=
@@ -614,249 +614,204 @@ metrics::IdentifierDataKind_strategy = st.builds(
 MappingRecord_strategy = st.builds(
     MappingRecord,
 )
-metrics::MappingRecordXLS_strategy = st.builds(
-    metrics::MappingRecordXLS,
+metrics_MappingRecordXLS_strategy = st.builds(
+    metrics_MappingRecordXLS,
     row=
         safe_text,
     column=
         safe_text
 )
-metrics::MappingRecord_strategy = st.builds(
-    metrics::MappingRecord,
+metrics_MappingRecord_strategy = st.builds(
+    metrics_MappingRecord,
 )
 Mapping_strategy = st.builds(
     Mapping,
 )
-metrics::MappingRDBMS_strategy = st.builds(
-    metrics::MappingRDBMS,
-)
-metrics::MappingXLS_strategy = st.builds(
-    metrics::MappingXLS,
-    sheetNumber=
-        safe_text,
-    headerRow=
-        safe_text,
+metrics_MappingXLS_strategy = st.builds(
+    metrics_MappingXLS,
     columnHeaders=
         safe_text,
+    sheetNumber=
+        safe_text,
     firstDataRow=
+        safe_text,
+    headerRow=
         safe_text
 )
-metrics::MappingCSV_strategy = st.builds(
-    metrics::MappingCSV,
+metrics_MappingRDBMS_strategy = st.builds(
+    metrics_MappingRDBMS,
 )
-metrics::Mapping_strategy = st.builds(
-    metrics::Mapping,
+metrics_MappingCSV_strategy = st.builds(
+    metrics_MappingCSV,
 )
-metrics::DataKind_strategy = st.builds(
-    metrics::DataKind,
+metrics_Mapping_strategy = st.builds(
+    metrics_Mapping,
+)
+metrics_DataKind_strategy = st.builds(
+    metrics_DataKind,
 )
 
-@given(instance=metrics::MetricValueRange_strategy)
+@given(instance=metrics_MetricValueRange_strategy)
 @settings(max_examples=50)
-def test_metrics::metricvaluerange_instantiation(instance):
-    assert isinstance(instance, metrics::MetricValueRange)
-
-@given(instance=metrics::MetricValueRange_strategy)
-def test_metrics::metricvaluerange_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_metrics_metricvaluerange_instantiation(instance):
+    assert isinstance(instance, metrics_MetricValueRange)
 
 
-@given(instance=metrics::MetricValueRange_strategy)
-def test_metrics::metricvaluerange_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
 
-@given(instance=metrics::MetricValueRange_strategy)
-def test_metrics::metricvaluerange_kindHint_type(instance):
-    assert isinstance(instance.kindHint, str)
-
-
-@given(instance=metrics::MetricValueRange_strategy)
-def test_metrics::metricvaluerange_kindHint_setter(instance):
+@given(instance=metrics_MetricValueRange_strategy)
+def test_metrics_metricvaluerange_kindHint_setter(instance):
     original = instance.kindHint
     instance.kindHint = original
     assert instance.kindHint == original
 
-@given(instance=metrics::MetricValueRange_strategy)
-def test_metrics::metricvaluerange_periodHint_type(instance):
-    assert isinstance(instance.periodHint, str)
 
 
-@given(instance=metrics::MetricValueRange_strategy)
-def test_metrics::metricvaluerange_periodHint_setter(instance):
+@given(instance=metrics_MetricValueRange_strategy)
+def test_metrics_metricvaluerange_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+
+
+@given(instance=metrics_MetricValueRange_strategy)
+def test_metrics_metricvaluerange_periodHint_setter(instance):
     original = instance.periodHint
     instance.periodHint = original
     assert instance.periodHint == original
 
-@given(instance=metrics::Value_strategy)
+@given(instance=metrics_Value_strategy)
 @settings(max_examples=50)
-def test_metrics::value_instantiation(instance):
-    assert isinstance(instance, metrics::Value)
+def test_metrics_value_instantiation(instance):
+    assert isinstance(instance, metrics_Value)
 
-@given(instance=metrics::MetricSource_strategy)
+@given(instance=metrics_MetricSource_strategy)
 @settings(max_examples=50)
-def test_metrics::metricsource_instantiation(instance):
-    assert isinstance(instance, metrics::MetricSource)
-
-@given(instance=metrics::MetricSource_strategy)
-def test_metrics::metricsource_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_metrics_metricsource_instantiation(instance):
+    assert isinstance(instance, metrics_MetricSource)
 
 
-@given(instance=metrics::MetricSource_strategy)
-def test_metrics::metricsource_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
 
-@given(instance=metrics::MetricSource_strategy)
-def test_metrics::metricsource_metricLocation_type(instance):
-    assert isinstance(instance.metricLocation, str)
-
-
-@given(instance=metrics::MetricSource_strategy)
-def test_metrics::metricsource_metricLocation_setter(instance):
+@given(instance=metrics_MetricSource_strategy)
+def test_metrics_metricsource_metricLocation_setter(instance):
     original = instance.metricLocation
     instance.metricLocation = original
     assert instance.metricLocation == original
 
-@given(instance=metrics::DateTimeRange_strategy)
-@settings(max_examples=50)
-def test_metrics::datetimerange_instantiation(instance):
-    assert isinstance(instance, metrics::DateTimeRange)
-
-@given(instance=metrics::MappingStatistic_strategy)
-@settings(max_examples=50)
-def test_metrics::mappingstatistic_instantiation(instance):
-    assert isinstance(instance, metrics::MappingStatistic)
-
-@given(instance=metrics::MappingStatistic_strategy)
-def test_metrics::mappingstatistic_totalRecords_type(instance):
-    assert isinstance(instance.totalRecords, str)
 
 
-@given(instance=metrics::MappingStatistic_strategy)
-def test_metrics::mappingstatistic_totalRecords_setter(instance):
-    original = instance.totalRecords
-    instance.totalRecords = original
-    assert instance.totalRecords == original
-
-@given(instance=metrics::Metric_strategy)
-@settings(max_examples=50)
-def test_metrics::metric_instantiation(instance):
-    assert isinstance(instance, metrics::Metric)
-
-@given(instance=metrics::Metric_strategy)
-def test_metrics::metric_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=metrics::Metric_strategy)
-def test_metrics::metric_name_setter(instance):
+@given(instance=metrics_MetricSource_strategy)
+def test_metrics_metricsource_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=metrics::Metric_strategy)
-def test_metrics::metric_measurementKind_type(instance):
-    assert isinstance(instance.measurementKind, str)
+@given(instance=metrics_DateTimeRange_strategy)
+@settings(max_examples=50)
+def test_metrics_datetimerange_instantiation(instance):
+    assert isinstance(instance, metrics_DateTimeRange)
+
+@given(instance=metrics_MappingStatistic_strategy)
+@settings(max_examples=50)
+def test_metrics_mappingstatistic_instantiation(instance):
+    assert isinstance(instance, metrics_MappingStatistic)
 
 
-@given(instance=metrics::Metric_strategy)
-def test_metrics::metric_measurementKind_setter(instance):
-    original = instance.measurementKind
-    instance.measurementKind = original
-    assert instance.measurementKind == original
 
-@given(instance=metrics::Metric_strategy)
-def test_metrics::metric_unitRef_type(instance):
-    assert isinstance(instance.unitRef, str)
+@given(instance=metrics_MappingStatistic_strategy)
+def test_metrics_mappingstatistic_totalRecords_setter(instance):
+    original = instance.totalRecords
+    instance.totalRecords = original
+    assert instance.totalRecords == original
+
+@given(instance=metrics_Metric_strategy)
+@settings(max_examples=50)
+def test_metrics_metric_instantiation(instance):
+    assert isinstance(instance, metrics_Metric)
 
 
-@given(instance=metrics::Metric_strategy)
-def test_metrics::metric_unitRef_setter(instance):
+
+@given(instance=metrics_Metric_strategy)
+def test_metrics_metric_unitRef_setter(instance):
     original = instance.unitRef
     instance.unitRef = original
     assert instance.unitRef == original
 
-@given(instance=metrics::Metric_strategy)
-def test_metrics::metric_metricCalculation_type(instance):
-    assert isinstance(instance.metricCalculation, str)
 
 
-@given(instance=metrics::Metric_strategy)
-def test_metrics::metric_metricCalculation_setter(instance):
+@given(instance=metrics_Metric_strategy)
+def test_metrics_metric_metricCalculation_setter(instance):
     original = instance.metricCalculation
     instance.metricCalculation = original
     assert instance.metricCalculation == original
 
-@given(instance=metrics::Metric_strategy)
-def test_metrics::metric_measurementPoint_type(instance):
-    assert isinstance(instance.measurementPoint, str)
 
 
-@given(instance=metrics::Metric_strategy)
-def test_metrics::metric_measurementPoint_setter(instance):
+@given(instance=metrics_Metric_strategy)
+def test_metrics_metric_description_setter(instance):
+    original = instance.description
+    instance.description = original
+    assert instance.description == original
+
+
+
+@given(instance=metrics_Metric_strategy)
+def test_metrics_metric_measurementPoint_setter(instance):
     original = instance.measurementPoint
     instance.measurementPoint = original
     assert instance.measurementPoint == original
 
-@given(instance=metrics::Metric_strategy)
-def test_metrics::metric_description_type(instance):
-    assert isinstance(instance.description, str)
 
 
-@given(instance=metrics::Metric_strategy)
-def test_metrics::metric_description_setter(instance):
-    original = instance.description
-    instance.description = original
-    assert instance.description == original
+@given(instance=metrics_Metric_strategy)
+def test_metrics_metric_measurementKind_setter(instance):
+    original = instance.measurementKind
+    instance.measurementKind = original
+    assert instance.measurementKind == original
+
+
+
+@given(instance=metrics_Metric_strategy)
+def test_metrics_metric_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
 
 @given(instance=DataKind_strategy)
 @settings(max_examples=50)
 def test_datakind_instantiation(instance):
     assert isinstance(instance, DataKind)
 
-@given(instance=metrics::ValueDataKind_strategy)
+@given(instance=metrics_ValueDataKind_strategy)
 @settings(max_examples=50)
-def test_metrics::valuedatakind_instantiation(instance):
-    assert isinstance(instance, metrics::ValueDataKind)
-
-@given(instance=metrics::ValueDataKind_strategy)
-def test_metrics::valuedatakind_valueKind_type(instance):
-    assert isinstance(instance.valueKind, str)
+def test_metrics_valuedatakind_instantiation(instance):
+    assert isinstance(instance, metrics_ValueDataKind)
 
 
-@given(instance=metrics::ValueDataKind_strategy)
-def test_metrics::valuedatakind_valueKind_setter(instance):
+
+@given(instance=metrics_ValueDataKind_strategy)
+def test_metrics_valuedatakind_valueKind_setter(instance):
     original = instance.valueKind
     instance.valueKind = original
     assert instance.valueKind == original
 
-@given(instance=metrics::IdentifierDataKind_strategy)
+@given(instance=metrics_IdentifierDataKind_strategy)
 @settings(max_examples=50)
-def test_metrics::identifierdatakind_instantiation(instance):
-    assert isinstance(instance, metrics::IdentifierDataKind)
-
-@given(instance=metrics::IdentifierDataKind_strategy)
-def test_metrics::identifierdatakind_objectAttribute_type(instance):
-    assert isinstance(instance.objectAttribute, str)
+def test_metrics_identifierdatakind_instantiation(instance):
+    assert isinstance(instance, metrics_IdentifierDataKind)
 
 
-@given(instance=metrics::IdentifierDataKind_strategy)
-def test_metrics::identifierdatakind_objectAttribute_setter(instance):
+
+@given(instance=metrics_IdentifierDataKind_strategy)
+def test_metrics_identifierdatakind_objectAttribute_setter(instance):
     original = instance.objectAttribute
     instance.objectAttribute = original
     assert instance.objectAttribute == original
 
-@given(instance=metrics::IdentifierDataKind_strategy)
-def test_metrics::identifierdatakind_objectName_type(instance):
-    assert isinstance(instance.objectName, str)
 
 
-@given(instance=metrics::IdentifierDataKind_strategy)
-def test_metrics::identifierdatakind_objectName_setter(instance):
+@given(instance=metrics_IdentifierDataKind_strategy)
+def test_metrics_identifierdatakind_objectName_setter(instance):
     original = instance.objectName
     instance.objectName = original
     assert instance.objectName == original
@@ -866,108 +821,90 @@ def test_metrics::identifierdatakind_objectName_setter(instance):
 def test_mappingrecord_instantiation(instance):
     assert isinstance(instance, MappingRecord)
 
-@given(instance=metrics::MappingRecordXLS_strategy)
+@given(instance=metrics_MappingRecordXLS_strategy)
 @settings(max_examples=50)
-def test_metrics::mappingrecordxls_instantiation(instance):
-    assert isinstance(instance, metrics::MappingRecordXLS)
-
-@given(instance=metrics::MappingRecordXLS_strategy)
-def test_metrics::mappingrecordxls_row_type(instance):
-    assert isinstance(instance.row, str)
+def test_metrics_mappingrecordxls_instantiation(instance):
+    assert isinstance(instance, metrics_MappingRecordXLS)
 
 
-@given(instance=metrics::MappingRecordXLS_strategy)
-def test_metrics::mappingrecordxls_row_setter(instance):
+
+@given(instance=metrics_MappingRecordXLS_strategy)
+def test_metrics_mappingrecordxls_row_setter(instance):
     original = instance.row
     instance.row = original
     assert instance.row == original
 
-@given(instance=metrics::MappingRecordXLS_strategy)
-def test_metrics::mappingrecordxls_column_type(instance):
-    assert isinstance(instance.column, str)
 
 
-@given(instance=metrics::MappingRecordXLS_strategy)
-def test_metrics::mappingrecordxls_column_setter(instance):
+@given(instance=metrics_MappingRecordXLS_strategy)
+def test_metrics_mappingrecordxls_column_setter(instance):
     original = instance.column
     instance.column = original
     assert instance.column == original
 
-@given(instance=metrics::MappingRecord_strategy)
+@given(instance=metrics_MappingRecord_strategy)
 @settings(max_examples=50)
-def test_metrics::mappingrecord_instantiation(instance):
-    assert isinstance(instance, metrics::MappingRecord)
+def test_metrics_mappingrecord_instantiation(instance):
+    assert isinstance(instance, metrics_MappingRecord)
 
 @given(instance=Mapping_strategy)
 @settings(max_examples=50)
 def test_mapping_instantiation(instance):
     assert isinstance(instance, Mapping)
 
-@given(instance=metrics::MappingRDBMS_strategy)
+@given(instance=metrics_MappingXLS_strategy)
 @settings(max_examples=50)
-def test_metrics::mappingrdbms_instantiation(instance):
-    assert isinstance(instance, metrics::MappingRDBMS)
-
-@given(instance=metrics::MappingXLS_strategy)
-@settings(max_examples=50)
-def test_metrics::mappingxls_instantiation(instance):
-    assert isinstance(instance, metrics::MappingXLS)
-
-@given(instance=metrics::MappingXLS_strategy)
-def test_metrics::mappingxls_sheetNumber_type(instance):
-    assert isinstance(instance.sheetNumber, str)
+def test_metrics_mappingxls_instantiation(instance):
+    assert isinstance(instance, metrics_MappingXLS)
 
 
-@given(instance=metrics::MappingXLS_strategy)
-def test_metrics::mappingxls_sheetNumber_setter(instance):
-    original = instance.sheetNumber
-    instance.sheetNumber = original
-    assert instance.sheetNumber == original
 
-@given(instance=metrics::MappingXLS_strategy)
-def test_metrics::mappingxls_headerRow_type(instance):
-    assert isinstance(instance.headerRow, str)
-
-
-@given(instance=metrics::MappingXLS_strategy)
-def test_metrics::mappingxls_headerRow_setter(instance):
-    original = instance.headerRow
-    instance.headerRow = original
-    assert instance.headerRow == original
-
-@given(instance=metrics::MappingXLS_strategy)
-def test_metrics::mappingxls_columnHeaders_type(instance):
-    assert isinstance(instance.columnHeaders, str)
-
-
-@given(instance=metrics::MappingXLS_strategy)
-def test_metrics::mappingxls_columnHeaders_setter(instance):
+@given(instance=metrics_MappingXLS_strategy)
+def test_metrics_mappingxls_columnHeaders_setter(instance):
     original = instance.columnHeaders
     instance.columnHeaders = original
     assert instance.columnHeaders == original
 
-@given(instance=metrics::MappingXLS_strategy)
-def test_metrics::mappingxls_firstDataRow_type(instance):
-    assert isinstance(instance.firstDataRow, str)
 
 
-@given(instance=metrics::MappingXLS_strategy)
-def test_metrics::mappingxls_firstDataRow_setter(instance):
+@given(instance=metrics_MappingXLS_strategy)
+def test_metrics_mappingxls_sheetNumber_setter(instance):
+    original = instance.sheetNumber
+    instance.sheetNumber = original
+    assert instance.sheetNumber == original
+
+
+
+@given(instance=metrics_MappingXLS_strategy)
+def test_metrics_mappingxls_firstDataRow_setter(instance):
     original = instance.firstDataRow
     instance.firstDataRow = original
     assert instance.firstDataRow == original
 
-@given(instance=metrics::MappingCSV_strategy)
-@settings(max_examples=50)
-def test_metrics::mappingcsv_instantiation(instance):
-    assert isinstance(instance, metrics::MappingCSV)
 
-@given(instance=metrics::Mapping_strategy)
-@settings(max_examples=50)
-def test_metrics::mapping_instantiation(instance):
-    assert isinstance(instance, metrics::Mapping)
 
-@given(instance=metrics::DataKind_strategy)
+@given(instance=metrics_MappingXLS_strategy)
+def test_metrics_mappingxls_headerRow_setter(instance):
+    original = instance.headerRow
+    instance.headerRow = original
+    assert instance.headerRow == original
+
+@given(instance=metrics_MappingRDBMS_strategy)
 @settings(max_examples=50)
-def test_metrics::datakind_instantiation(instance):
-    assert isinstance(instance, metrics::DataKind)
+def test_metrics_mappingrdbms_instantiation(instance):
+    assert isinstance(instance, metrics_MappingRDBMS)
+
+@given(instance=metrics_MappingCSV_strategy)
+@settings(max_examples=50)
+def test_metrics_mappingcsv_instantiation(instance):
+    assert isinstance(instance, metrics_MappingCSV)
+
+@given(instance=metrics_Mapping_strategy)
+@settings(max_examples=50)
+def test_metrics_mapping_instantiation(instance):
+    assert isinstance(instance, metrics_Mapping)
+
+@given(instance=metrics_DataKind_strategy)
+@settings(max_examples=50)
+def test_metrics_datakind_instantiation(instance):
+    assert isinstance(instance, metrics_DataKind)

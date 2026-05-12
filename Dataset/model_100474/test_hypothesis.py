@@ -3,18 +3,18 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    stm::GuardCall,
-    stm::Parameter,
-    stm::State,
-    stm::Transition,
-    stm::SelfEvent,
-    stm::Guard,
-    stm::Command,
-    stm::Event,
-    stm::Statemachine,
+from python_code import (
+    stm_GuardCall,
+    stm_Parameter,
+    stm_State,
+    stm_Transition,
+    stm_SelfEvent,
+    stm_Guard,
+    stm_Command,
+    stm_Event,
+    stm_Statemachine,
 )
 
 # =============================================================================
@@ -23,23 +23,23 @@ from classes import (
 
 
 
-def test_stm::guardcall_is_not_abstract():
-    assert not inspect.isabstract(stm::GuardCall)
+def test_stm_guardcall_is_not_abstract():
+    assert not inspect.isabstract(stm_GuardCall)
 
 
-def test_stm::guardcall_constructor_exists():
-    assert callable(stm::GuardCall.__init__)
+def test_stm_guardcall_constructor_exists():
+    assert callable(stm_GuardCall.__init__)
 
 
-def test_stm::guardcall_constructor_args():
-    sig = inspect.signature(stm::GuardCall.__init__)
+def test_stm_guardcall_constructor_args():
+    sig = inspect.signature(stm_GuardCall.__init__)
     params = list(sig.parameters.keys())
     assert "parameters" in params, "Missing parameter 'parameters'"
 
-def test_stm::guardcall_has_parameters():
-    assert hasattr(stm::GuardCall, "parameters")
+def test_stm_guardcall_has_parameters():
+    assert hasattr(stm_GuardCall, "parameters")
     descriptor = None
-    for klass in stm::GuardCall.__mro__:
+    for klass in stm_GuardCall.__mro__:
         if "parameters" in klass.__dict__:
             descriptor = klass.__dict__["parameters"]
             break
@@ -47,33 +47,33 @@ def test_stm::guardcall_has_parameters():
 
 
 
-def test_stm::parameter_is_not_abstract():
-    assert not inspect.isabstract(stm::Parameter)
+def test_stm_parameter_is_not_abstract():
+    assert not inspect.isabstract(stm_Parameter)
 
 
-def test_stm::parameter_constructor_exists():
-    assert callable(stm::Parameter.__init__)
+def test_stm_parameter_constructor_exists():
+    assert callable(stm_Parameter.__init__)
 
 
-def test_stm::parameter_constructor_args():
-    sig = inspect.signature(stm::Parameter.__init__)
+def test_stm_parameter_constructor_args():
+    sig = inspect.signature(stm_Parameter.__init__)
     params = list(sig.parameters.keys())
     assert "type" in params, "Missing parameter 'type'"
     assert "name" in params, "Missing parameter 'name'"
 
-def test_stm::parameter_has_type():
-    assert hasattr(stm::Parameter, "type")
+def test_stm_parameter_has_type():
+    assert hasattr(stm_Parameter, "type")
     descriptor = None
-    for klass in stm::Parameter.__mro__:
+    for klass in stm_Parameter.__mro__:
         if "type" in klass.__dict__:
             descriptor = klass.__dict__["type"]
             break
     assert isinstance(descriptor, property)
 
-def test_stm::parameter_has_name():
-    assert hasattr(stm::Parameter, "name")
+def test_stm_parameter_has_name():
+    assert hasattr(stm_Parameter, "name")
     descriptor = None
-    for klass in stm::Parameter.__mro__:
+    for klass in stm_Parameter.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -81,23 +81,23 @@ def test_stm::parameter_has_name():
 
 
 
-def test_stm::state_is_not_abstract():
-    assert not inspect.isabstract(stm::State)
+def test_stm_state_is_not_abstract():
+    assert not inspect.isabstract(stm_State)
 
 
-def test_stm::state_constructor_exists():
-    assert callable(stm::State.__init__)
+def test_stm_state_constructor_exists():
+    assert callable(stm_State.__init__)
 
 
-def test_stm::state_constructor_args():
-    sig = inspect.signature(stm::State.__init__)
+def test_stm_state_constructor_args():
+    sig = inspect.signature(stm_State.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_stm::state_has_name():
-    assert hasattr(stm::State, "name")
+def test_stm_state_has_name():
+    assert hasattr(stm_State, "name")
     descriptor = None
-    for klass in stm::State.__mro__:
+    for klass in stm_State.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -105,51 +105,51 @@ def test_stm::state_has_name():
 
 
 
-def test_stm::transition_is_not_abstract():
-    assert not inspect.isabstract(stm::Transition)
+def test_stm_transition_is_not_abstract():
+    assert not inspect.isabstract(stm_Transition)
 
 
-def test_stm::transition_constructor_exists():
-    assert callable(stm::Transition.__init__)
+def test_stm_transition_constructor_exists():
+    assert callable(stm_Transition.__init__)
 
 
-def test_stm::transition_constructor_args():
-    sig = inspect.signature(stm::Transition.__init__)
+def test_stm_transition_constructor_args():
+    sig = inspect.signature(stm_Transition.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_stm::selfevent_is_not_abstract():
-    assert not inspect.isabstract(stm::SelfEvent)
+def test_stm_selfevent_is_not_abstract():
+    assert not inspect.isabstract(stm_SelfEvent)
 
 
-def test_stm::selfevent_constructor_exists():
-    assert callable(stm::SelfEvent.__init__)
+def test_stm_selfevent_constructor_exists():
+    assert callable(stm_SelfEvent.__init__)
 
 
-def test_stm::selfevent_constructor_args():
-    sig = inspect.signature(stm::SelfEvent.__init__)
+def test_stm_selfevent_constructor_args():
+    sig = inspect.signature(stm_SelfEvent.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_stm::guard_is_not_abstract():
-    assert not inspect.isabstract(stm::Guard)
+def test_stm_guard_is_not_abstract():
+    assert not inspect.isabstract(stm_Guard)
 
 
-def test_stm::guard_constructor_exists():
-    assert callable(stm::Guard.__init__)
+def test_stm_guard_constructor_exists():
+    assert callable(stm_Guard.__init__)
 
 
-def test_stm::guard_constructor_args():
-    sig = inspect.signature(stm::Guard.__init__)
+def test_stm_guard_constructor_args():
+    sig = inspect.signature(stm_Guard.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_stm::guard_has_name():
-    assert hasattr(stm::Guard, "name")
+def test_stm_guard_has_name():
+    assert hasattr(stm_Guard, "name")
     descriptor = None
-    for klass in stm::Guard.__mro__:
+    for klass in stm_Guard.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -157,23 +157,23 @@ def test_stm::guard_has_name():
 
 
 
-def test_stm::command_is_not_abstract():
-    assert not inspect.isabstract(stm::Command)
+def test_stm_command_is_not_abstract():
+    assert not inspect.isabstract(stm_Command)
 
 
-def test_stm::command_constructor_exists():
-    assert callable(stm::Command.__init__)
+def test_stm_command_constructor_exists():
+    assert callable(stm_Command.__init__)
 
 
-def test_stm::command_constructor_args():
-    sig = inspect.signature(stm::Command.__init__)
+def test_stm_command_constructor_args():
+    sig = inspect.signature(stm_Command.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_stm::command_has_name():
-    assert hasattr(stm::Command, "name")
+def test_stm_command_has_name():
+    assert hasattr(stm_Command, "name")
     descriptor = None
-    for klass in stm::Command.__mro__:
+    for klass in stm_Command.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -181,23 +181,23 @@ def test_stm::command_has_name():
 
 
 
-def test_stm::event_is_not_abstract():
-    assert not inspect.isabstract(stm::Event)
+def test_stm_event_is_not_abstract():
+    assert not inspect.isabstract(stm_Event)
 
 
-def test_stm::event_constructor_exists():
-    assert callable(stm::Event.__init__)
+def test_stm_event_constructor_exists():
+    assert callable(stm_Event.__init__)
 
 
-def test_stm::event_constructor_args():
-    sig = inspect.signature(stm::Event.__init__)
+def test_stm_event_constructor_args():
+    sig = inspect.signature(stm_Event.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_stm::event_has_name():
-    assert hasattr(stm::Event, "name")
+def test_stm_event_has_name():
+    assert hasattr(stm_Event, "name")
     descriptor = None
-    for klass in stm::Event.__mro__:
+    for klass in stm_Event.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -205,16 +205,16 @@ def test_stm::event_has_name():
 
 
 
-def test_stm::statemachine_is_not_abstract():
-    assert not inspect.isabstract(stm::Statemachine)
+def test_stm_statemachine_is_not_abstract():
+    assert not inspect.isabstract(stm_Statemachine)
 
 
-def test_stm::statemachine_constructor_exists():
-    assert callable(stm::Statemachine.__init__)
+def test_stm_statemachine_constructor_exists():
+    assert callable(stm_Statemachine.__init__)
 
 
-def test_stm::statemachine_constructor_args():
-    sig = inspect.signature(stm::Statemachine.__init__)
+def test_stm_statemachine_constructor_args():
+    sig = inspect.signature(stm_Statemachine.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -229,166 +229,145 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-stm::GuardCall_strategy = st.builds(
-    stm::GuardCall,
+stm_GuardCall_strategy = st.builds(
+    stm_GuardCall,
     parameters=
         safe_text
 )
-stm::Parameter_strategy = st.builds(
-    stm::Parameter,
+stm_Parameter_strategy = st.builds(
+    stm_Parameter,
     type=
         safe_text,
     name=
         safe_text
 )
-stm::State_strategy = st.builds(
-    stm::State,
+stm_State_strategy = st.builds(
+    stm_State,
     name=
         safe_text
 )
-stm::Transition_strategy = st.builds(
-    stm::Transition,
+stm_Transition_strategy = st.builds(
+    stm_Transition,
 )
-stm::SelfEvent_strategy = st.builds(
-    stm::SelfEvent,
+stm_SelfEvent_strategy = st.builds(
+    stm_SelfEvent,
 )
-stm::Guard_strategy = st.builds(
-    stm::Guard,
+stm_Guard_strategy = st.builds(
+    stm_Guard,
     name=
         safe_text
 )
-stm::Command_strategy = st.builds(
-    stm::Command,
+stm_Command_strategy = st.builds(
+    stm_Command,
     name=
         safe_text
 )
-stm::Event_strategy = st.builds(
-    stm::Event,
+stm_Event_strategy = st.builds(
+    stm_Event,
     name=
         safe_text
 )
-stm::Statemachine_strategy = st.builds(
-    stm::Statemachine,
+stm_Statemachine_strategy = st.builds(
+    stm_Statemachine,
 )
 
-@given(instance=stm::GuardCall_strategy)
+@given(instance=stm_GuardCall_strategy)
 @settings(max_examples=50)
-def test_stm::guardcall_instantiation(instance):
-    assert isinstance(instance, stm::GuardCall)
-
-@given(instance=stm::GuardCall_strategy)
-def test_stm::guardcall_parameters_type(instance):
-    assert isinstance(instance.parameters, str)
+def test_stm_guardcall_instantiation(instance):
+    assert isinstance(instance, stm_GuardCall)
 
 
-@given(instance=stm::GuardCall_strategy)
-def test_stm::guardcall_parameters_setter(instance):
+
+@given(instance=stm_GuardCall_strategy)
+def test_stm_guardcall_parameters_setter(instance):
     original = instance.parameters
     instance.parameters = original
     assert instance.parameters == original
 
-@given(instance=stm::Parameter_strategy)
+@given(instance=stm_Parameter_strategy)
 @settings(max_examples=50)
-def test_stm::parameter_instantiation(instance):
-    assert isinstance(instance, stm::Parameter)
-
-@given(instance=stm::Parameter_strategy)
-def test_stm::parameter_type_type(instance):
-    assert isinstance(instance.type, str)
+def test_stm_parameter_instantiation(instance):
+    assert isinstance(instance, stm_Parameter)
 
 
-@given(instance=stm::Parameter_strategy)
-def test_stm::parameter_type_setter(instance):
+
+@given(instance=stm_Parameter_strategy)
+def test_stm_parameter_type_setter(instance):
     original = instance.type
     instance.type = original
     assert instance.type == original
 
-@given(instance=stm::Parameter_strategy)
-def test_stm::parameter_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
-@given(instance=stm::Parameter_strategy)
-def test_stm::parameter_name_setter(instance):
+@given(instance=stm_Parameter_strategy)
+def test_stm_parameter_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=stm::State_strategy)
+@given(instance=stm_State_strategy)
 @settings(max_examples=50)
-def test_stm::state_instantiation(instance):
-    assert isinstance(instance, stm::State)
-
-@given(instance=stm::State_strategy)
-def test_stm::state_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_stm_state_instantiation(instance):
+    assert isinstance(instance, stm_State)
 
 
-@given(instance=stm::State_strategy)
-def test_stm::state_name_setter(instance):
+
+@given(instance=stm_State_strategy)
+def test_stm_state_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=stm::Transition_strategy)
+@given(instance=stm_Transition_strategy)
 @settings(max_examples=50)
-def test_stm::transition_instantiation(instance):
-    assert isinstance(instance, stm::Transition)
+def test_stm_transition_instantiation(instance):
+    assert isinstance(instance, stm_Transition)
 
-@given(instance=stm::SelfEvent_strategy)
+@given(instance=stm_SelfEvent_strategy)
 @settings(max_examples=50)
-def test_stm::selfevent_instantiation(instance):
-    assert isinstance(instance, stm::SelfEvent)
+def test_stm_selfevent_instantiation(instance):
+    assert isinstance(instance, stm_SelfEvent)
 
-@given(instance=stm::Guard_strategy)
+@given(instance=stm_Guard_strategy)
 @settings(max_examples=50)
-def test_stm::guard_instantiation(instance):
-    assert isinstance(instance, stm::Guard)
-
-@given(instance=stm::Guard_strategy)
-def test_stm::guard_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_stm_guard_instantiation(instance):
+    assert isinstance(instance, stm_Guard)
 
 
-@given(instance=stm::Guard_strategy)
-def test_stm::guard_name_setter(instance):
+
+@given(instance=stm_Guard_strategy)
+def test_stm_guard_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=stm::Command_strategy)
+@given(instance=stm_Command_strategy)
 @settings(max_examples=50)
-def test_stm::command_instantiation(instance):
-    assert isinstance(instance, stm::Command)
-
-@given(instance=stm::Command_strategy)
-def test_stm::command_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_stm_command_instantiation(instance):
+    assert isinstance(instance, stm_Command)
 
 
-@given(instance=stm::Command_strategy)
-def test_stm::command_name_setter(instance):
+
+@given(instance=stm_Command_strategy)
+def test_stm_command_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=stm::Event_strategy)
+@given(instance=stm_Event_strategy)
 @settings(max_examples=50)
-def test_stm::event_instantiation(instance):
-    assert isinstance(instance, stm::Event)
-
-@given(instance=stm::Event_strategy)
-def test_stm::event_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_stm_event_instantiation(instance):
+    assert isinstance(instance, stm_Event)
 
 
-@given(instance=stm::Event_strategy)
-def test_stm::event_name_setter(instance):
+
+@given(instance=stm_Event_strategy)
+def test_stm_event_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=stm::Statemachine_strategy)
+@given(instance=stm_Statemachine_strategy)
 @settings(max_examples=50)
-def test_stm::statemachine_instantiation(instance):
-    assert isinstance(instance, stm::Statemachine)
+def test_stm_statemachine_instantiation(instance):
+    assert isinstance(instance, stm_Statemachine)

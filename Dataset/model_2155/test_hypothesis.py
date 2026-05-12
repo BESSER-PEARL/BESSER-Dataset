@@ -3,12 +3,12 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    dfg::DfgEdge,
-    dfg::DfgVertex,
-    dfg::DfgGraph,
+from python_code import (
+    dfg_DfgEdge,
+    dfg_DfgVertex,
+    dfg_DfgGraph,
 )
 
 # =============================================================================
@@ -17,23 +17,23 @@ from classes import (
 
 
 
-def test_dfg::dfgedge_is_not_abstract():
-    assert not inspect.isabstract(dfg::DfgEdge)
+def test_dfg_dfgedge_is_not_abstract():
+    assert not inspect.isabstract(dfg_DfgEdge)
 
 
-def test_dfg::dfgedge_constructor_exists():
-    assert callable(dfg::DfgEdge.__init__)
+def test_dfg_dfgedge_constructor_exists():
+    assert callable(dfg_DfgEdge.__init__)
 
 
-def test_dfg::dfgedge_constructor_args():
-    sig = inspect.signature(dfg::DfgEdge.__init__)
+def test_dfg_dfgedge_constructor_args():
+    sig = inspect.signature(dfg_DfgEdge.__init__)
     params = list(sig.parameters.keys())
     assert "label" in params, "Missing parameter 'label'"
 
-def test_dfg::dfgedge_has_label():
-    assert hasattr(dfg::DfgEdge, "label")
+def test_dfg_dfgedge_has_label():
+    assert hasattr(dfg_DfgEdge, "label")
     descriptor = None
-    for klass in dfg::DfgEdge.__mro__:
+    for klass in dfg_DfgEdge.__mro__:
         if "label" in klass.__dict__:
             descriptor = klass.__dict__["label"]
             break
@@ -41,23 +41,23 @@ def test_dfg::dfgedge_has_label():
 
 
 
-def test_dfg::dfgvertex_is_not_abstract():
-    assert not inspect.isabstract(dfg::DfgVertex)
+def test_dfg_dfgvertex_is_not_abstract():
+    assert not inspect.isabstract(dfg_DfgVertex)
 
 
-def test_dfg::dfgvertex_constructor_exists():
-    assert callable(dfg::DfgVertex.__init__)
+def test_dfg_dfgvertex_constructor_exists():
+    assert callable(dfg_DfgVertex.__init__)
 
 
-def test_dfg::dfgvertex_constructor_args():
-    sig = inspect.signature(dfg::DfgVertex.__init__)
+def test_dfg_dfgvertex_constructor_args():
+    sig = inspect.signature(dfg_DfgVertex.__init__)
     params = list(sig.parameters.keys())
     assert "mappings" in params, "Missing parameter 'mappings'"
 
-def test_dfg::dfgvertex_has_mappings():
-    assert hasattr(dfg::DfgVertex, "mappings")
+def test_dfg_dfgvertex_has_mappings():
+    assert hasattr(dfg_DfgVertex, "mappings")
     descriptor = None
-    for klass in dfg::DfgVertex.__mro__:
+    for klass in dfg_DfgVertex.__mro__:
         if "mappings" in klass.__dict__:
             descriptor = klass.__dict__["mappings"]
             break
@@ -65,16 +65,16 @@ def test_dfg::dfgvertex_has_mappings():
 
 
 
-def test_dfg::dfggraph_is_not_abstract():
-    assert not inspect.isabstract(dfg::DfgGraph)
+def test_dfg_dfggraph_is_not_abstract():
+    assert not inspect.isabstract(dfg_DfgGraph)
 
 
-def test_dfg::dfggraph_constructor_exists():
-    assert callable(dfg::DfgGraph.__init__)
+def test_dfg_dfggraph_constructor_exists():
+    assert callable(dfg_DfgGraph.__init__)
 
 
-def test_dfg::dfggraph_constructor_args():
-    sig = inspect.signature(dfg::DfgGraph.__init__)
+def test_dfg_dfggraph_constructor_args():
+    sig = inspect.signature(dfg_DfgGraph.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -89,53 +89,47 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-dfg::DfgEdge_strategy = st.builds(
-    dfg::DfgEdge,
+dfg_DfgEdge_strategy = st.builds(
+    dfg_DfgEdge,
     label=
         safe_text
 )
-dfg::DfgVertex_strategy = st.builds(
-    dfg::DfgVertex,
+dfg_DfgVertex_strategy = st.builds(
+    dfg_DfgVertex,
     mappings=
         safe_text
 )
-dfg::DfgGraph_strategy = st.builds(
-    dfg::DfgGraph,
+dfg_DfgGraph_strategy = st.builds(
+    dfg_DfgGraph,
 )
 
-@given(instance=dfg::DfgEdge_strategy)
+@given(instance=dfg_DfgEdge_strategy)
 @settings(max_examples=50)
-def test_dfg::dfgedge_instantiation(instance):
-    assert isinstance(instance, dfg::DfgEdge)
-
-@given(instance=dfg::DfgEdge_strategy)
-def test_dfg::dfgedge_label_type(instance):
-    assert isinstance(instance.label, str)
+def test_dfg_dfgedge_instantiation(instance):
+    assert isinstance(instance, dfg_DfgEdge)
 
 
-@given(instance=dfg::DfgEdge_strategy)
-def test_dfg::dfgedge_label_setter(instance):
+
+@given(instance=dfg_DfgEdge_strategy)
+def test_dfg_dfgedge_label_setter(instance):
     original = instance.label
     instance.label = original
     assert instance.label == original
 
-@given(instance=dfg::DfgVertex_strategy)
+@given(instance=dfg_DfgVertex_strategy)
 @settings(max_examples=50)
-def test_dfg::dfgvertex_instantiation(instance):
-    assert isinstance(instance, dfg::DfgVertex)
-
-@given(instance=dfg::DfgVertex_strategy)
-def test_dfg::dfgvertex_mappings_type(instance):
-    assert isinstance(instance.mappings, str)
+def test_dfg_dfgvertex_instantiation(instance):
+    assert isinstance(instance, dfg_DfgVertex)
 
 
-@given(instance=dfg::DfgVertex_strategy)
-def test_dfg::dfgvertex_mappings_setter(instance):
+
+@given(instance=dfg_DfgVertex_strategy)
+def test_dfg_dfgvertex_mappings_setter(instance):
     original = instance.mappings
     instance.mappings = original
     assert instance.mappings == original
 
-@given(instance=dfg::DfgGraph_strategy)
+@given(instance=dfg_DfgGraph_strategy)
 @settings(max_examples=50)
-def test_dfg::dfggraph_instantiation(instance):
-    assert isinstance(instance, dfg::DfgGraph)
+def test_dfg_dfggraph_instantiation(instance):
+    assert isinstance(instance, dfg_DfgGraph)

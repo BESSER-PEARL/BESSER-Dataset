@@ -3,80 +3,80 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     FRAME,
-    Html::IFRAME,
-    Html::NOFRAME,
-    Html::FRAME,
-    Html::PARAM,
-    Html::APPLET,
-    Html::DD,
-    Html::DT,
-    Html::DL,
+    Html_IFRAME,
+    Html_NOFRAME,
+    Html_FRAME,
+    Html_PARAM,
+    Html_APPLET,
+    Html_DD,
+    Html_DT,
+    Html_DL,
     ListElement,
-    Html::UL,
-    Html::LI,
-    Html::OL,
-    Html::ListElement,
-    Html::FRAMESET,
-    Html::OBJECT,
-    Html::INPUT,
-    Html::FORM,
+    Html_UL,
+    Html_LI,
+    Html_OL,
+    Html_ListElement,
+    Html_FRAMESET,
+    Html_OBJECT,
+    Html_INPUT,
+    Html_FORM,
     TD,
-    Html::TH,
+    Html_TH,
     TABLE,
-    Html::OPTION,
-    Html::SELECT,
-    Html::TEXTAREA,
+    Html_OPTION,
+    Html_SELECT,
+    Html_TEXTAREA,
     TR,
     TABLEElement,
-    Html::TD,
-    Html::TR,
-    Html::TABLE,
+    Html_TD,
+    Html_TR,
+    Html_TABLE,
     HTML,
     HEADElement,
-    Html::LINK,
-    Html::TITLE,
+    Html_TITLE,
+    Html_LINK,
     HTMLElement,
-    Html::BODY,
-    Html::HEADElement,
-    Html::HEAD,
-    Html::HTMLElement,
+    Html_BODY,
+    Html_HEADElement,
+    Html_HEAD,
+    Html_HTMLElement,
     BODY,
-    Html::BODYElement,
+    Html_BODYElement,
     HEAD,
-    Html::HTML,
+    Html_HTML,
     BODYElement,
-    Html::STYLE,
-    Html::A,
-    Html::STRONG,
-    Html::I,
-    Html::TT,
-    Html::SUP,
-    Html::MAP,
-    Html::PRE,
-    Html::STRIKE,
-    Html::SMALL,
-    Html::FONT,
-    Html::H3,
-    Html::EMBED,
-    Html::DIV,
-    Html::IMG,
-    Html::BR,
-    Html::P,
-    Html::H1,
-    Html::NOEMBED,
-    Html::BIG,
-    Html::H4,
-    Html::EM,
-    Html::TABLEElement,
-    Html::B,
-    Html::SUB,
-    Html::SPAN,
-    Html::H2,
-    Html::AREA,
+    Html_PRE,
+    Html_H3,
+    Html_H1,
+    Html_H2,
+    Html_NOEMBED,
+    Html_STYLE,
+    Html_SUB,
+    Html_EM,
+    Html_DIV,
+    Html_SUP,
+    Html_STRIKE,
+    Html_AREA,
+    Html_H4,
+    Html_B,
+    Html_TT,
+    Html_BIG,
+    Html_IMG,
+    Html_I,
+    Html_TABLEElement,
+    Html_BR,
+    Html_P,
+    Html_MAP,
+    Html_SPAN,
+    Html_A,
+    Html_EMBED,
+    Html_FONT,
+    Html_STRONG,
+    Html_SMALL,
 )
 
 # =============================================================================
@@ -99,135 +99,135 @@ def test_frame_constructor_args():
 
 
 
-def test_html::iframe_is_not_abstract():
-    assert not inspect.isabstract(Html::IFRAME)
+def test_html_iframe_is_not_abstract():
+    assert not inspect.isabstract(Html_IFRAME)
 
 
-def test_html::iframe_constructor_exists():
-    assert callable(Html::IFRAME.__init__)
+def test_html_iframe_constructor_exists():
+    assert callable(Html_IFRAME.__init__)
 
 
-def test_html::iframe_constructor_args():
-    sig = inspect.signature(Html::IFRAME.__init__)
+def test_html_iframe_constructor_args():
+    sig = inspect.signature(Html_IFRAME.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_html::noframe_is_not_abstract():
-    assert not inspect.isabstract(Html::NOFRAME)
+def test_html_noframe_is_not_abstract():
+    assert not inspect.isabstract(Html_NOFRAME)
 
 
-def test_html::noframe_constructor_exists():
-    assert callable(Html::NOFRAME.__init__)
+def test_html_noframe_constructor_exists():
+    assert callable(Html_NOFRAME.__init__)
 
 
-def test_html::noframe_constructor_args():
-    sig = inspect.signature(Html::NOFRAME.__init__)
+def test_html_noframe_constructor_args():
+    sig = inspect.signature(Html_NOFRAME.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_html::frame_is_not_abstract():
-    assert not inspect.isabstract(Html::FRAME)
+def test_html_frame_is_not_abstract():
+    assert not inspect.isabstract(Html_FRAME)
 
 
-def test_html::frame_constructor_exists():
-    assert callable(Html::FRAME.__init__)
+def test_html_frame_constructor_exists():
+    assert callable(Html_FRAME.__init__)
 
 
-def test_html::frame_constructor_args():
-    sig = inspect.signature(Html::FRAME.__init__)
+def test_html_frame_constructor_args():
+    sig = inspect.signature(Html_FRAME.__init__)
     params = list(sig.parameters.keys())
     assert "src" in params, "Missing parameter 'src'"
-    assert "noresize" in params, "Missing parameter 'noresize'"
     assert "scrolling" in params, "Missing parameter 'scrolling'"
+    assert "noresize" in params, "Missing parameter 'noresize'"
     assert "marginwidth" in params, "Missing parameter 'marginwidth'"
-    assert "name" in params, "Missing parameter 'name'"
     assert "marginheight" in params, "Missing parameter 'marginheight'"
+    assert "name" in params, "Missing parameter 'name'"
 
-def test_html::frame_has_src():
-    assert hasattr(Html::FRAME, "src")
+def test_html_frame_has_src():
+    assert hasattr(Html_FRAME, "src")
     descriptor = None
-    for klass in Html::FRAME.__mro__:
+    for klass in Html_FRAME.__mro__:
         if "src" in klass.__dict__:
             descriptor = klass.__dict__["src"]
             break
     assert isinstance(descriptor, property)
 
-def test_html::frame_has_noresize():
-    assert hasattr(Html::FRAME, "noresize")
+def test_html_frame_has_scrolling():
+    assert hasattr(Html_FRAME, "scrolling")
     descriptor = None
-    for klass in Html::FRAME.__mro__:
-        if "noresize" in klass.__dict__:
-            descriptor = klass.__dict__["noresize"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_html::frame_has_scrolling():
-    assert hasattr(Html::FRAME, "scrolling")
-    descriptor = None
-    for klass in Html::FRAME.__mro__:
+    for klass in Html_FRAME.__mro__:
         if "scrolling" in klass.__dict__:
             descriptor = klass.__dict__["scrolling"]
             break
     assert isinstance(descriptor, property)
 
-def test_html::frame_has_marginwidth():
-    assert hasattr(Html::FRAME, "marginwidth")
+def test_html_frame_has_noresize():
+    assert hasattr(Html_FRAME, "noresize")
     descriptor = None
-    for klass in Html::FRAME.__mro__:
+    for klass in Html_FRAME.__mro__:
+        if "noresize" in klass.__dict__:
+            descriptor = klass.__dict__["noresize"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_html_frame_has_marginwidth():
+    assert hasattr(Html_FRAME, "marginwidth")
+    descriptor = None
+    for klass in Html_FRAME.__mro__:
         if "marginwidth" in klass.__dict__:
             descriptor = klass.__dict__["marginwidth"]
             break
     assert isinstance(descriptor, property)
 
-def test_html::frame_has_name():
-    assert hasattr(Html::FRAME, "name")
+def test_html_frame_has_marginheight():
+    assert hasattr(Html_FRAME, "marginheight")
     descriptor = None
-    for klass in Html::FRAME.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_html::frame_has_marginheight():
-    assert hasattr(Html::FRAME, "marginheight")
-    descriptor = None
-    for klass in Html::FRAME.__mro__:
+    for klass in Html_FRAME.__mro__:
         if "marginheight" in klass.__dict__:
             descriptor = klass.__dict__["marginheight"]
             break
     assert isinstance(descriptor, property)
 
-
-
-def test_html::param_is_not_abstract():
-    assert not inspect.isabstract(Html::PARAM)
-
-
-def test_html::param_constructor_exists():
-    assert callable(Html::PARAM.__init__)
-
-
-def test_html::param_constructor_args():
-    sig = inspect.signature(Html::PARAM.__init__)
-    params = list(sig.parameters.keys())
-    assert "name" in params, "Missing parameter 'name'"
-    assert "paramValue" in params, "Missing parameter 'paramValue'"
-
-def test_html::param_has_name():
-    assert hasattr(Html::PARAM, "name")
+def test_html_frame_has_name():
+    assert hasattr(Html_FRAME, "name")
     descriptor = None
-    for klass in Html::PARAM.__mro__:
+    for klass in Html_FRAME.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
-def test_html::param_has_paramValue():
-    assert hasattr(Html::PARAM, "paramValue")
+
+
+def test_html_param_is_not_abstract():
+    assert not inspect.isabstract(Html_PARAM)
+
+
+def test_html_param_constructor_exists():
+    assert callable(Html_PARAM.__init__)
+
+
+def test_html_param_constructor_args():
+    sig = inspect.signature(Html_PARAM.__init__)
+    params = list(sig.parameters.keys())
+    assert "name" in params, "Missing parameter 'name'"
+    assert "paramValue" in params, "Missing parameter 'paramValue'"
+
+def test_html_param_has_name():
+    assert hasattr(Html_PARAM, "name")
     descriptor = None
-    for klass in Html::PARAM.__mro__:
+    for klass in Html_PARAM.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_html_param_has_paramValue():
+    assert hasattr(Html_PARAM, "paramValue")
+    descriptor = None
+    for klass in Html_PARAM.__mro__:
         if "paramValue" in klass.__dict__:
             descriptor = klass.__dict__["paramValue"]
             break
@@ -235,118 +235,118 @@ def test_html::param_has_paramValue():
 
 
 
-def test_html::applet_is_not_abstract():
-    assert not inspect.isabstract(Html::APPLET)
+def test_html_applet_is_not_abstract():
+    assert not inspect.isabstract(Html_APPLET)
 
 
-def test_html::applet_constructor_exists():
-    assert callable(Html::APPLET.__init__)
+def test_html_applet_constructor_exists():
+    assert callable(Html_APPLET.__init__)
 
 
-def test_html::applet_constructor_args():
-    sig = inspect.signature(Html::APPLET.__init__)
+def test_html_applet_constructor_args():
+    sig = inspect.signature(Html_APPLET.__init__)
     params = list(sig.parameters.keys())
-    assert "width" in params, "Missing parameter 'width'"
-    assert "src" in params, "Missing parameter 'src'"
-    assert "align" in params, "Missing parameter 'align'"
     assert "class_" in params, "Missing parameter 'class_'"
+    assert "src" in params, "Missing parameter 'src'"
     assert "applet" in params, "Missing parameter 'applet'"
     assert "height" in params, "Missing parameter 'height'"
+    assert "align" in params, "Missing parameter 'align'"
+    assert "width" in params, "Missing parameter 'width'"
 
-def test_html::applet_has_width():
-    assert hasattr(Html::APPLET, "width")
+def test_html_applet_has_class_():
+    assert hasattr(Html_APPLET, "class_")
     descriptor = None
-    for klass in Html::APPLET.__mro__:
-        if "width" in klass.__dict__:
-            descriptor = klass.__dict__["width"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_html::applet_has_src():
-    assert hasattr(Html::APPLET, "src")
-    descriptor = None
-    for klass in Html::APPLET.__mro__:
-        if "src" in klass.__dict__:
-            descriptor = klass.__dict__["src"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_html::applet_has_align():
-    assert hasattr(Html::APPLET, "align")
-    descriptor = None
-    for klass in Html::APPLET.__mro__:
-        if "align" in klass.__dict__:
-            descriptor = klass.__dict__["align"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_html::applet_has_class_():
-    assert hasattr(Html::APPLET, "class_")
-    descriptor = None
-    for klass in Html::APPLET.__mro__:
+    for klass in Html_APPLET.__mro__:
         if "class_" in klass.__dict__:
             descriptor = klass.__dict__["class_"]
             break
     assert isinstance(descriptor, property)
 
-def test_html::applet_has_applet():
-    assert hasattr(Html::APPLET, "applet")
+def test_html_applet_has_src():
+    assert hasattr(Html_APPLET, "src")
     descriptor = None
-    for klass in Html::APPLET.__mro__:
+    for klass in Html_APPLET.__mro__:
+        if "src" in klass.__dict__:
+            descriptor = klass.__dict__["src"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_html_applet_has_applet():
+    assert hasattr(Html_APPLET, "applet")
+    descriptor = None
+    for klass in Html_APPLET.__mro__:
         if "applet" in klass.__dict__:
             descriptor = klass.__dict__["applet"]
             break
     assert isinstance(descriptor, property)
 
-def test_html::applet_has_height():
-    assert hasattr(Html::APPLET, "height")
+def test_html_applet_has_height():
+    assert hasattr(Html_APPLET, "height")
     descriptor = None
-    for klass in Html::APPLET.__mro__:
+    for klass in Html_APPLET.__mro__:
         if "height" in klass.__dict__:
             descriptor = klass.__dict__["height"]
             break
     assert isinstance(descriptor, property)
 
+def test_html_applet_has_align():
+    assert hasattr(Html_APPLET, "align")
+    descriptor = None
+    for klass in Html_APPLET.__mro__:
+        if "align" in klass.__dict__:
+            descriptor = klass.__dict__["align"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_html_applet_has_width():
+    assert hasattr(Html_APPLET, "width")
+    descriptor = None
+    for klass in Html_APPLET.__mro__:
+        if "width" in klass.__dict__:
+            descriptor = klass.__dict__["width"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_html::dd_is_not_abstract():
-    assert not inspect.isabstract(Html::DD)
+
+def test_html_dd_is_not_abstract():
+    assert not inspect.isabstract(Html_DD)
 
 
-def test_html::dd_constructor_exists():
-    assert callable(Html::DD.__init__)
+def test_html_dd_constructor_exists():
+    assert callable(Html_DD.__init__)
 
 
-def test_html::dd_constructor_args():
-    sig = inspect.signature(Html::DD.__init__)
+def test_html_dd_constructor_args():
+    sig = inspect.signature(Html_DD.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_html::dt_is_not_abstract():
-    assert not inspect.isabstract(Html::DT)
+def test_html_dt_is_not_abstract():
+    assert not inspect.isabstract(Html_DT)
 
 
-def test_html::dt_constructor_exists():
-    assert callable(Html::DT.__init__)
+def test_html_dt_constructor_exists():
+    assert callable(Html_DT.__init__)
 
 
-def test_html::dt_constructor_args():
-    sig = inspect.signature(Html::DT.__init__)
+def test_html_dt_constructor_args():
+    sig = inspect.signature(Html_DT.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_html::dl_is_not_abstract():
-    assert not inspect.isabstract(Html::DL)
+def test_html_dl_is_not_abstract():
+    assert not inspect.isabstract(Html_DL)
 
 
-def test_html::dl_constructor_exists():
-    assert callable(Html::DL.__init__)
+def test_html_dl_constructor_exists():
+    assert callable(Html_DL.__init__)
 
 
-def test_html::dl_constructor_args():
-    sig = inspect.signature(Html::DL.__init__)
+def test_html_dl_constructor_args():
+    sig = inspect.signature(Html_DL.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -365,37 +365,37 @@ def test_listelement_constructor_args():
 
 
 
-def test_html::ul_is_not_abstract():
-    assert not inspect.isabstract(Html::UL)
+def test_html_ul_is_not_abstract():
+    assert not inspect.isabstract(Html_UL)
 
 
-def test_html::ul_constructor_exists():
-    assert callable(Html::UL.__init__)
+def test_html_ul_constructor_exists():
+    assert callable(Html_UL.__init__)
 
 
-def test_html::ul_constructor_args():
-    sig = inspect.signature(Html::UL.__init__)
+def test_html_ul_constructor_args():
+    sig = inspect.signature(Html_UL.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_html::li_is_not_abstract():
-    assert not inspect.isabstract(Html::LI)
+def test_html_li_is_not_abstract():
+    assert not inspect.isabstract(Html_LI)
 
 
-def test_html::li_constructor_exists():
-    assert callable(Html::LI.__init__)
+def test_html_li_constructor_exists():
+    assert callable(Html_LI.__init__)
 
 
-def test_html::li_constructor_args():
-    sig = inspect.signature(Html::LI.__init__)
+def test_html_li_constructor_args():
+    sig = inspect.signature(Html_LI.__init__)
     params = list(sig.parameters.keys())
     assert "liValue" in params, "Missing parameter 'liValue'"
 
-def test_html::li_has_liValue():
-    assert hasattr(Html::LI, "liValue")
+def test_html_li_has_liValue():
+    assert hasattr(Html_LI, "liValue")
     descriptor = None
-    for klass in Html::LI.__mro__:
+    for klass in Html_LI.__mro__:
         if "liValue" in klass.__dict__:
             descriptor = klass.__dict__["liValue"]
             break
@@ -403,23 +403,23 @@ def test_html::li_has_liValue():
 
 
 
-def test_html::ol_is_not_abstract():
-    assert not inspect.isabstract(Html::OL)
+def test_html_ol_is_not_abstract():
+    assert not inspect.isabstract(Html_OL)
 
 
-def test_html::ol_constructor_exists():
-    assert callable(Html::OL.__init__)
+def test_html_ol_constructor_exists():
+    assert callable(Html_OL.__init__)
 
 
-def test_html::ol_constructor_args():
-    sig = inspect.signature(Html::OL.__init__)
+def test_html_ol_constructor_args():
+    sig = inspect.signature(Html_OL.__init__)
     params = list(sig.parameters.keys())
     assert "start" in params, "Missing parameter 'start'"
 
-def test_html::ol_has_start():
-    assert hasattr(Html::OL, "start")
+def test_html_ol_has_start():
+    assert hasattr(Html_OL, "start")
     descriptor = None
-    for klass in Html::OL.__mro__:
+    for klass in Html_OL.__mro__:
         if "start" in klass.__dict__:
             descriptor = klass.__dict__["start"]
             break
@@ -427,23 +427,23 @@ def test_html::ol_has_start():
 
 
 
-def test_html::listelement_is_not_abstract():
-    assert not inspect.isabstract(Html::ListElement)
+def test_html_listelement_is_not_abstract():
+    assert not inspect.isabstract(Html_ListElement)
 
 
-def test_html::listelement_constructor_exists():
-    assert callable(Html::ListElement.__init__)
+def test_html_listelement_constructor_exists():
+    assert callable(Html_ListElement.__init__)
 
 
-def test_html::listelement_constructor_args():
-    sig = inspect.signature(Html::ListElement.__init__)
+def test_html_listelement_constructor_args():
+    sig = inspect.signature(Html_ListElement.__init__)
     params = list(sig.parameters.keys())
     assert "type" in params, "Missing parameter 'type'"
 
-def test_html::listelement_has_type():
-    assert hasattr(Html::ListElement, "type")
+def test_html_listelement_has_type():
+    assert hasattr(Html_ListElement, "type")
     descriptor = None
-    for klass in Html::ListElement.__mro__:
+    for klass in Html_ListElement.__mro__:
         if "type" in klass.__dict__:
             descriptor = klass.__dict__["type"]
             break
@@ -451,63 +451,63 @@ def test_html::listelement_has_type():
 
 
 
-def test_html::frameset_is_not_abstract():
-    assert not inspect.isabstract(Html::FRAMESET)
+def test_html_frameset_is_not_abstract():
+    assert not inspect.isabstract(Html_FRAMESET)
 
 
-def test_html::frameset_constructor_exists():
-    assert callable(Html::FRAMESET.__init__)
+def test_html_frameset_constructor_exists():
+    assert callable(Html_FRAMESET.__init__)
 
 
-def test_html::frameset_constructor_args():
-    sig = inspect.signature(Html::FRAMESET.__init__)
+def test_html_frameset_constructor_args():
+    sig = inspect.signature(Html_FRAMESET.__init__)
     params = list(sig.parameters.keys())
-    assert "rows" in params, "Missing parameter 'rows'"
-    assert "border" in params, "Missing parameter 'border'"
-    assert "framespacing" in params, "Missing parameter 'framespacing'"
     assert "frameborder" in params, "Missing parameter 'frameborder'"
+    assert "rows" in params, "Missing parameter 'rows'"
+    assert "framespacing" in params, "Missing parameter 'framespacing'"
+    assert "border" in params, "Missing parameter 'border'"
     assert "cols" in params, "Missing parameter 'cols'"
 
-def test_html::frameset_has_rows():
-    assert hasattr(Html::FRAMESET, "rows")
+def test_html_frameset_has_frameborder():
+    assert hasattr(Html_FRAMESET, "frameborder")
     descriptor = None
-    for klass in Html::FRAMESET.__mro__:
-        if "rows" in klass.__dict__:
-            descriptor = klass.__dict__["rows"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_html::frameset_has_border():
-    assert hasattr(Html::FRAMESET, "border")
-    descriptor = None
-    for klass in Html::FRAMESET.__mro__:
-        if "border" in klass.__dict__:
-            descriptor = klass.__dict__["border"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_html::frameset_has_framespacing():
-    assert hasattr(Html::FRAMESET, "framespacing")
-    descriptor = None
-    for klass in Html::FRAMESET.__mro__:
-        if "framespacing" in klass.__dict__:
-            descriptor = klass.__dict__["framespacing"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_html::frameset_has_frameborder():
-    assert hasattr(Html::FRAMESET, "frameborder")
-    descriptor = None
-    for klass in Html::FRAMESET.__mro__:
+    for klass in Html_FRAMESET.__mro__:
         if "frameborder" in klass.__dict__:
             descriptor = klass.__dict__["frameborder"]
             break
     assert isinstance(descriptor, property)
 
-def test_html::frameset_has_cols():
-    assert hasattr(Html::FRAMESET, "cols")
+def test_html_frameset_has_rows():
+    assert hasattr(Html_FRAMESET, "rows")
     descriptor = None
-    for klass in Html::FRAMESET.__mro__:
+    for klass in Html_FRAMESET.__mro__:
+        if "rows" in klass.__dict__:
+            descriptor = klass.__dict__["rows"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_html_frameset_has_framespacing():
+    assert hasattr(Html_FRAMESET, "framespacing")
+    descriptor = None
+    for klass in Html_FRAMESET.__mro__:
+        if "framespacing" in klass.__dict__:
+            descriptor = klass.__dict__["framespacing"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_html_frameset_has_border():
+    assert hasattr(Html_FRAMESET, "border")
+    descriptor = None
+    for klass in Html_FRAMESET.__mro__:
+        if "border" in klass.__dict__:
+            descriptor = klass.__dict__["border"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_html_frameset_has_cols():
+    assert hasattr(Html_FRAMESET, "cols")
+    descriptor = None
+    for klass in Html_FRAMESET.__mro__:
         if "cols" in klass.__dict__:
             descriptor = klass.__dict__["cols"]
             break
@@ -515,53 +515,53 @@ def test_html::frameset_has_cols():
 
 
 
-def test_html::object_is_not_abstract():
-    assert not inspect.isabstract(Html::OBJECT)
+def test_html_object_is_not_abstract():
+    assert not inspect.isabstract(Html_OBJECT)
 
 
-def test_html::object_constructor_exists():
-    assert callable(Html::OBJECT.__init__)
+def test_html_object_constructor_exists():
+    assert callable(Html_OBJECT.__init__)
 
 
-def test_html::object_constructor_args():
-    sig = inspect.signature(Html::OBJECT.__init__)
+def test_html_object_constructor_args():
+    sig = inspect.signature(Html_OBJECT.__init__)
     params = list(sig.parameters.keys())
     assert "standby" in params, "Missing parameter 'standby'"
-    assert "classid" in params, "Missing parameter 'classid'"
     assert "type" in params, "Missing parameter 'type'"
+    assert "classid" in params, "Missing parameter 'classid'"
     assert "data" in params, "Missing parameter 'data'"
 
-def test_html::object_has_standby():
-    assert hasattr(Html::OBJECT, "standby")
+def test_html_object_has_standby():
+    assert hasattr(Html_OBJECT, "standby")
     descriptor = None
-    for klass in Html::OBJECT.__mro__:
+    for klass in Html_OBJECT.__mro__:
         if "standby" in klass.__dict__:
             descriptor = klass.__dict__["standby"]
             break
     assert isinstance(descriptor, property)
 
-def test_html::object_has_classid():
-    assert hasattr(Html::OBJECT, "classid")
+def test_html_object_has_type():
+    assert hasattr(Html_OBJECT, "type")
     descriptor = None
-    for klass in Html::OBJECT.__mro__:
-        if "classid" in klass.__dict__:
-            descriptor = klass.__dict__["classid"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_html::object_has_type():
-    assert hasattr(Html::OBJECT, "type")
-    descriptor = None
-    for klass in Html::OBJECT.__mro__:
+    for klass in Html_OBJECT.__mro__:
         if "type" in klass.__dict__:
             descriptor = klass.__dict__["type"]
             break
     assert isinstance(descriptor, property)
 
-def test_html::object_has_data():
-    assert hasattr(Html::OBJECT, "data")
+def test_html_object_has_classid():
+    assert hasattr(Html_OBJECT, "classid")
     descriptor = None
-    for klass in Html::OBJECT.__mro__:
+    for klass in Html_OBJECT.__mro__:
+        if "classid" in klass.__dict__:
+            descriptor = klass.__dict__["classid"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_html_object_has_data():
+    assert hasattr(Html_OBJECT, "data")
+    descriptor = None
+    for klass in Html_OBJECT.__mro__:
         if "data" in klass.__dict__:
             descriptor = klass.__dict__["data"]
             break
@@ -569,93 +569,93 @@ def test_html::object_has_data():
 
 
 
-def test_html::input_is_not_abstract():
-    assert not inspect.isabstract(Html::INPUT)
+def test_html_input_is_not_abstract():
+    assert not inspect.isabstract(Html_INPUT)
 
 
-def test_html::input_constructor_exists():
-    assert callable(Html::INPUT.__init__)
+def test_html_input_constructor_exists():
+    assert callable(Html_INPUT.__init__)
 
 
-def test_html::input_constructor_args():
-    sig = inspect.signature(Html::INPUT.__init__)
+def test_html_input_constructor_args():
+    sig = inspect.signature(Html_INPUT.__init__)
     params = list(sig.parameters.keys())
-    assert "size" in params, "Missing parameter 'size'"
-    assert "align" in params, "Missing parameter 'align'"
-    assert "checked" in params, "Missing parameter 'checked'"
     assert "src" in params, "Missing parameter 'src'"
+    assert "checked" in params, "Missing parameter 'checked'"
     assert "inputValue" in params, "Missing parameter 'inputValue'"
-    assert "type" in params, "Missing parameter 'type'"
+    assert "align" in params, "Missing parameter 'align'"
+    assert "size" in params, "Missing parameter 'size'"
     assert "maxlength" in params, "Missing parameter 'maxlength'"
+    assert "type" in params, "Missing parameter 'type'"
     assert "name" in params, "Missing parameter 'name'"
 
-def test_html::input_has_size():
-    assert hasattr(Html::INPUT, "size")
+def test_html_input_has_src():
+    assert hasattr(Html_INPUT, "src")
     descriptor = None
-    for klass in Html::INPUT.__mro__:
-        if "size" in klass.__dict__:
-            descriptor = klass.__dict__["size"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_html::input_has_align():
-    assert hasattr(Html::INPUT, "align")
-    descriptor = None
-    for klass in Html::INPUT.__mro__:
-        if "align" in klass.__dict__:
-            descriptor = klass.__dict__["align"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_html::input_has_checked():
-    assert hasattr(Html::INPUT, "checked")
-    descriptor = None
-    for klass in Html::INPUT.__mro__:
-        if "checked" in klass.__dict__:
-            descriptor = klass.__dict__["checked"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_html::input_has_src():
-    assert hasattr(Html::INPUT, "src")
-    descriptor = None
-    for klass in Html::INPUT.__mro__:
+    for klass in Html_INPUT.__mro__:
         if "src" in klass.__dict__:
             descriptor = klass.__dict__["src"]
             break
     assert isinstance(descriptor, property)
 
-def test_html::input_has_inputValue():
-    assert hasattr(Html::INPUT, "inputValue")
+def test_html_input_has_checked():
+    assert hasattr(Html_INPUT, "checked")
     descriptor = None
-    for klass in Html::INPUT.__mro__:
+    for klass in Html_INPUT.__mro__:
+        if "checked" in klass.__dict__:
+            descriptor = klass.__dict__["checked"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_html_input_has_inputValue():
+    assert hasattr(Html_INPUT, "inputValue")
+    descriptor = None
+    for klass in Html_INPUT.__mro__:
         if "inputValue" in klass.__dict__:
             descriptor = klass.__dict__["inputValue"]
             break
     assert isinstance(descriptor, property)
 
-def test_html::input_has_type():
-    assert hasattr(Html::INPUT, "type")
+def test_html_input_has_align():
+    assert hasattr(Html_INPUT, "align")
     descriptor = None
-    for klass in Html::INPUT.__mro__:
-        if "type" in klass.__dict__:
-            descriptor = klass.__dict__["type"]
+    for klass in Html_INPUT.__mro__:
+        if "align" in klass.__dict__:
+            descriptor = klass.__dict__["align"]
             break
     assert isinstance(descriptor, property)
 
-def test_html::input_has_maxlength():
-    assert hasattr(Html::INPUT, "maxlength")
+def test_html_input_has_size():
+    assert hasattr(Html_INPUT, "size")
     descriptor = None
-    for klass in Html::INPUT.__mro__:
+    for klass in Html_INPUT.__mro__:
+        if "size" in klass.__dict__:
+            descriptor = klass.__dict__["size"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_html_input_has_maxlength():
+    assert hasattr(Html_INPUT, "maxlength")
+    descriptor = None
+    for klass in Html_INPUT.__mro__:
         if "maxlength" in klass.__dict__:
             descriptor = klass.__dict__["maxlength"]
             break
     assert isinstance(descriptor, property)
 
-def test_html::input_has_name():
-    assert hasattr(Html::INPUT, "name")
+def test_html_input_has_type():
+    assert hasattr(Html_INPUT, "type")
     descriptor = None
-    for klass in Html::INPUT.__mro__:
+    for klass in Html_INPUT.__mro__:
+        if "type" in klass.__dict__:
+            descriptor = klass.__dict__["type"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_html_input_has_name():
+    assert hasattr(Html_INPUT, "name")
+    descriptor = None
+    for klass in Html_INPUT.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -663,35 +663,35 @@ def test_html::input_has_name():
 
 
 
-def test_html::form_is_not_abstract():
-    assert not inspect.isabstract(Html::FORM)
+def test_html_form_is_not_abstract():
+    assert not inspect.isabstract(Html_FORM)
 
 
-def test_html::form_constructor_exists():
-    assert callable(Html::FORM.__init__)
+def test_html_form_constructor_exists():
+    assert callable(Html_FORM.__init__)
 
 
-def test_html::form_constructor_args():
-    sig = inspect.signature(Html::FORM.__init__)
+def test_html_form_constructor_args():
+    sig = inspect.signature(Html_FORM.__init__)
     params = list(sig.parameters.keys())
-    assert "method" in params, "Missing parameter 'method'"
     assert "action" in params, "Missing parameter 'action'"
+    assert "method" in params, "Missing parameter 'method'"
 
-def test_html::form_has_method():
-    assert hasattr(Html::FORM, "method")
+def test_html_form_has_action():
+    assert hasattr(Html_FORM, "action")
     descriptor = None
-    for klass in Html::FORM.__mro__:
-        if "method" in klass.__dict__:
-            descriptor = klass.__dict__["method"]
+    for klass in Html_FORM.__mro__:
+        if "action" in klass.__dict__:
+            descriptor = klass.__dict__["action"]
             break
     assert isinstance(descriptor, property)
 
-def test_html::form_has_action():
-    assert hasattr(Html::FORM, "action")
+def test_html_form_has_method():
+    assert hasattr(Html_FORM, "method")
     descriptor = None
-    for klass in Html::FORM.__mro__:
-        if "action" in klass.__dict__:
-            descriptor = klass.__dict__["action"]
+    for klass in Html_FORM.__mro__:
+        if "method" in klass.__dict__:
+            descriptor = klass.__dict__["method"]
             break
     assert isinstance(descriptor, property)
 
@@ -711,16 +711,16 @@ def test_td_constructor_args():
 
 
 
-def test_html::th_is_not_abstract():
-    assert not inspect.isabstract(Html::TH)
+def test_html_th_is_not_abstract():
+    assert not inspect.isabstract(Html_TH)
 
 
-def test_html::th_constructor_exists():
-    assert callable(Html::TH.__init__)
+def test_html_th_constructor_exists():
+    assert callable(Html_TH.__init__)
 
 
-def test_html::th_constructor_args():
-    sig = inspect.signature(Html::TH.__init__)
+def test_html_th_constructor_args():
+    sig = inspect.signature(Html_TH.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -739,33 +739,33 @@ def test_table_constructor_args():
 
 
 
-def test_html::option_is_not_abstract():
-    assert not inspect.isabstract(Html::OPTION)
+def test_html_option_is_not_abstract():
+    assert not inspect.isabstract(Html_OPTION)
 
 
-def test_html::option_constructor_exists():
-    assert callable(Html::OPTION.__init__)
+def test_html_option_constructor_exists():
+    assert callable(Html_OPTION.__init__)
 
 
-def test_html::option_constructor_args():
-    sig = inspect.signature(Html::OPTION.__init__)
+def test_html_option_constructor_args():
+    sig = inspect.signature(Html_OPTION.__init__)
     params = list(sig.parameters.keys())
     assert "selected" in params, "Missing parameter 'selected'"
     assert "optionValue" in params, "Missing parameter 'optionValue'"
 
-def test_html::option_has_selected():
-    assert hasattr(Html::OPTION, "selected")
+def test_html_option_has_selected():
+    assert hasattr(Html_OPTION, "selected")
     descriptor = None
-    for klass in Html::OPTION.__mro__:
+    for klass in Html_OPTION.__mro__:
         if "selected" in klass.__dict__:
             descriptor = klass.__dict__["selected"]
             break
     assert isinstance(descriptor, property)
 
-def test_html::option_has_optionValue():
-    assert hasattr(Html::OPTION, "optionValue")
+def test_html_option_has_optionValue():
+    assert hasattr(Html_OPTION, "optionValue")
     descriptor = None
-    for klass in Html::OPTION.__mro__:
+    for klass in Html_OPTION.__mro__:
         if "optionValue" in klass.__dict__:
             descriptor = klass.__dict__["optionValue"]
             break
@@ -773,89 +773,89 @@ def test_html::option_has_optionValue():
 
 
 
-def test_html::select_is_not_abstract():
-    assert not inspect.isabstract(Html::SELECT)
+def test_html_select_is_not_abstract():
+    assert not inspect.isabstract(Html_SELECT)
 
 
-def test_html::select_constructor_exists():
-    assert callable(Html::SELECT.__init__)
+def test_html_select_constructor_exists():
+    assert callable(Html_SELECT.__init__)
 
 
-def test_html::select_constructor_args():
-    sig = inspect.signature(Html::SELECT.__init__)
+def test_html_select_constructor_args():
+    sig = inspect.signature(Html_SELECT.__init__)
     params = list(sig.parameters.keys())
+    assert "name" in params, "Missing parameter 'name'"
     assert "size" in params, "Missing parameter 'size'"
     assert "multiple" in params, "Missing parameter 'multiple'"
-    assert "name" in params, "Missing parameter 'name'"
 
-def test_html::select_has_size():
-    assert hasattr(Html::SELECT, "size")
+def test_html_select_has_name():
+    assert hasattr(Html_SELECT, "name")
     descriptor = None
-    for klass in Html::SELECT.__mro__:
+    for klass in Html_SELECT.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_html_select_has_size():
+    assert hasattr(Html_SELECT, "size")
+    descriptor = None
+    for klass in Html_SELECT.__mro__:
         if "size" in klass.__dict__:
             descriptor = klass.__dict__["size"]
             break
     assert isinstance(descriptor, property)
 
-def test_html::select_has_multiple():
-    assert hasattr(Html::SELECT, "multiple")
+def test_html_select_has_multiple():
+    assert hasattr(Html_SELECT, "multiple")
     descriptor = None
-    for klass in Html::SELECT.__mro__:
+    for klass in Html_SELECT.__mro__:
         if "multiple" in klass.__dict__:
             descriptor = klass.__dict__["multiple"]
             break
     assert isinstance(descriptor, property)
 
-def test_html::select_has_name():
-    assert hasattr(Html::SELECT, "name")
+
+
+def test_html_textarea_is_not_abstract():
+    assert not inspect.isabstract(Html_TEXTAREA)
+
+
+def test_html_textarea_constructor_exists():
+    assert callable(Html_TEXTAREA.__init__)
+
+
+def test_html_textarea_constructor_args():
+    sig = inspect.signature(Html_TEXTAREA.__init__)
+    params = list(sig.parameters.keys())
+    assert "name" in params, "Missing parameter 'name'"
+    assert "rows" in params, "Missing parameter 'rows'"
+    assert "cols" in params, "Missing parameter 'cols'"
+
+def test_html_textarea_has_name():
+    assert hasattr(Html_TEXTAREA, "name")
     descriptor = None
-    for klass in Html::SELECT.__mro__:
+    for klass in Html_TEXTAREA.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
-
-
-def test_html::textarea_is_not_abstract():
-    assert not inspect.isabstract(Html::TEXTAREA)
-
-
-def test_html::textarea_constructor_exists():
-    assert callable(Html::TEXTAREA.__init__)
-
-
-def test_html::textarea_constructor_args():
-    sig = inspect.signature(Html::TEXTAREA.__init__)
-    params = list(sig.parameters.keys())
-    assert "cols" in params, "Missing parameter 'cols'"
-    assert "rows" in params, "Missing parameter 'rows'"
-    assert "name" in params, "Missing parameter 'name'"
-
-def test_html::textarea_has_cols():
-    assert hasattr(Html::TEXTAREA, "cols")
+def test_html_textarea_has_rows():
+    assert hasattr(Html_TEXTAREA, "rows")
     descriptor = None
-    for klass in Html::TEXTAREA.__mro__:
-        if "cols" in klass.__dict__:
-            descriptor = klass.__dict__["cols"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_html::textarea_has_rows():
-    assert hasattr(Html::TEXTAREA, "rows")
-    descriptor = None
-    for klass in Html::TEXTAREA.__mro__:
+    for klass in Html_TEXTAREA.__mro__:
         if "rows" in klass.__dict__:
             descriptor = klass.__dict__["rows"]
             break
     assert isinstance(descriptor, property)
 
-def test_html::textarea_has_name():
-    assert hasattr(Html::TEXTAREA, "name")
+def test_html_textarea_has_cols():
+    assert hasattr(Html_TEXTAREA, "cols")
     descriptor = None
-    for klass in Html::TEXTAREA.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
+    for klass in Html_TEXTAREA.__mro__:
+        if "cols" in klass.__dict__:
+            descriptor = klass.__dict__["cols"]
             break
     assert isinstance(descriptor, property)
 
@@ -889,97 +889,97 @@ def test_tableelement_constructor_args():
 
 
 
-def test_html::td_is_not_abstract():
-    assert not inspect.isabstract(Html::TD)
+def test_html_td_is_not_abstract():
+    assert not inspect.isabstract(Html_TD)
 
 
-def test_html::td_constructor_exists():
-    assert callable(Html::TD.__init__)
+def test_html_td_constructor_exists():
+    assert callable(Html_TD.__init__)
 
 
-def test_html::td_constructor_args():
-    sig = inspect.signature(Html::TD.__init__)
+def test_html_td_constructor_args():
+    sig = inspect.signature(Html_TD.__init__)
     params = list(sig.parameters.keys())
     assert "align" in params, "Missing parameter 'align'"
-    assert "colspan" in params, "Missing parameter 'colspan'"
+    assert "valign" in params, "Missing parameter 'valign'"
     assert "rowspan" in params, "Missing parameter 'rowspan'"
     assert "width" in params, "Missing parameter 'width'"
-    assert "valign" in params, "Missing parameter 'valign'"
+    assert "colspan" in params, "Missing parameter 'colspan'"
 
-def test_html::td_has_align():
-    assert hasattr(Html::TD, "align")
+def test_html_td_has_align():
+    assert hasattr(Html_TD, "align")
     descriptor = None
-    for klass in Html::TD.__mro__:
+    for klass in Html_TD.__mro__:
         if "align" in klass.__dict__:
             descriptor = klass.__dict__["align"]
             break
     assert isinstance(descriptor, property)
 
-def test_html::td_has_colspan():
-    assert hasattr(Html::TD, "colspan")
+def test_html_td_has_valign():
+    assert hasattr(Html_TD, "valign")
     descriptor = None
-    for klass in Html::TD.__mro__:
-        if "colspan" in klass.__dict__:
-            descriptor = klass.__dict__["colspan"]
+    for klass in Html_TD.__mro__:
+        if "valign" in klass.__dict__:
+            descriptor = klass.__dict__["valign"]
             break
     assert isinstance(descriptor, property)
 
-def test_html::td_has_rowspan():
-    assert hasattr(Html::TD, "rowspan")
+def test_html_td_has_rowspan():
+    assert hasattr(Html_TD, "rowspan")
     descriptor = None
-    for klass in Html::TD.__mro__:
+    for klass in Html_TD.__mro__:
         if "rowspan" in klass.__dict__:
             descriptor = klass.__dict__["rowspan"]
             break
     assert isinstance(descriptor, property)
 
-def test_html::td_has_width():
-    assert hasattr(Html::TD, "width")
+def test_html_td_has_width():
+    assert hasattr(Html_TD, "width")
     descriptor = None
-    for klass in Html::TD.__mro__:
+    for klass in Html_TD.__mro__:
         if "width" in klass.__dict__:
             descriptor = klass.__dict__["width"]
             break
     assert isinstance(descriptor, property)
 
-def test_html::td_has_valign():
-    assert hasattr(Html::TD, "valign")
+def test_html_td_has_colspan():
+    assert hasattr(Html_TD, "colspan")
     descriptor = None
-    for klass in Html::TD.__mro__:
-        if "valign" in klass.__dict__:
-            descriptor = klass.__dict__["valign"]
+    for klass in Html_TD.__mro__:
+        if "colspan" in klass.__dict__:
+            descriptor = klass.__dict__["colspan"]
             break
     assert isinstance(descriptor, property)
 
 
 
-def test_html::tr_is_not_abstract():
-    assert not inspect.isabstract(Html::TR)
+def test_html_tr_is_not_abstract():
+    assert not inspect.isabstract(Html_TR)
 
 
-def test_html::tr_constructor_exists():
-    assert callable(Html::TR.__init__)
+def test_html_tr_constructor_exists():
+    assert callable(Html_TR.__init__)
 
 
-def test_html::tr_constructor_args():
-    sig = inspect.signature(Html::TR.__init__)
+def test_html_tr_constructor_args():
+    sig = inspect.signature(Html_TR.__init__)
     params = list(sig.parameters.keys())
     assert "align" in params, "Missing parameter 'align'"
     assert "valign" in params, "Missing parameter 'valign'"
 
-def test_html::tr_has_align():
-    assert hasattr(Html::TR, "align")
+def test_html_tr_has_align():
+    assert hasattr(Html_TR, "align")
     descriptor = None
-    for klass in Html::TR.__mro__:
+    for klass in Html_TR.__mro__:
         if "align" in klass.__dict__:
             descriptor = klass.__dict__["align"]
             break
     assert isinstance(descriptor, property)
 
-def test_html::tr_has_valign():
-    assert hasattr(Html::TR, "valign")
+def test_html_tr_has_valign():
+    assert hasattr(Html_TR, "valign")
     descriptor = None
-    for klass in Html::TR.__mro__:
+    for klass in Html_TR.__mro__:
         if "valign" in klass.__dict__:
             descriptor = klass.__dict__["valign"]
             break
@@ -987,55 +987,55 @@ def test_html::tr_has_valign():
 
 
 
-def test_html::table_is_not_abstract():
-    assert not inspect.isabstract(Html::TABLE)
+def test_html_table_is_not_abstract():
+    assert not inspect.isabstract(Html_TABLE)
 
 
-def test_html::table_constructor_exists():
-    assert callable(Html::TABLE.__init__)
+def test_html_table_constructor_exists():
+    assert callable(Html_TABLE.__init__)
 
 
-def test_html::table_constructor_args():
-    sig = inspect.signature(Html::TABLE.__init__)
+def test_html_table_constructor_args():
+    sig = inspect.signature(Html_TABLE.__init__)
     params = list(sig.parameters.keys())
-    assert "border" in params, "Missing parameter 'border'"
-    assert "cellpadding" in params, "Missing parameter 'cellpadding'"
     assert "width" in params, "Missing parameter 'width'"
+    assert "cellpadding" in params, "Missing parameter 'cellpadding'"
     assert "cellspacing" in params, "Missing parameter 'cellspacing'"
+    assert "border" in params, "Missing parameter 'border'"
 
-def test_html::table_has_border():
-    assert hasattr(Html::TABLE, "border")
+def test_html_table_has_width():
+    assert hasattr(Html_TABLE, "width")
     descriptor = None
-    for klass in Html::TABLE.__mro__:
-        if "border" in klass.__dict__:
-            descriptor = klass.__dict__["border"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_html::table_has_cellpadding():
-    assert hasattr(Html::TABLE, "cellpadding")
-    descriptor = None
-    for klass in Html::TABLE.__mro__:
-        if "cellpadding" in klass.__dict__:
-            descriptor = klass.__dict__["cellpadding"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_html::table_has_width():
-    assert hasattr(Html::TABLE, "width")
-    descriptor = None
-    for klass in Html::TABLE.__mro__:
+    for klass in Html_TABLE.__mro__:
         if "width" in klass.__dict__:
             descriptor = klass.__dict__["width"]
             break
     assert isinstance(descriptor, property)
 
-def test_html::table_has_cellspacing():
-    assert hasattr(Html::TABLE, "cellspacing")
+def test_html_table_has_cellpadding():
+    assert hasattr(Html_TABLE, "cellpadding")
     descriptor = None
-    for klass in Html::TABLE.__mro__:
+    for klass in Html_TABLE.__mro__:
+        if "cellpadding" in klass.__dict__:
+            descriptor = klass.__dict__["cellpadding"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_html_table_has_cellspacing():
+    assert hasattr(Html_TABLE, "cellspacing")
+    descriptor = None
+    for klass in Html_TABLE.__mro__:
         if "cellspacing" in klass.__dict__:
             descriptor = klass.__dict__["cellspacing"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_html_table_has_border():
+    assert hasattr(Html_TABLE, "border")
+    descriptor = None
+    for klass in Html_TABLE.__mro__:
+        if "border" in klass.__dict__:
+            descriptor = klass.__dict__["border"]
             break
     assert isinstance(descriptor, property)
 
@@ -1069,61 +1069,61 @@ def test_headelement_constructor_args():
 
 
 
-def test_html::link_is_not_abstract():
-    assert not inspect.isabstract(Html::LINK)
+def test_html_title_is_not_abstract():
+    assert not inspect.isabstract(Html_TITLE)
 
 
-def test_html::link_constructor_exists():
-    assert callable(Html::LINK.__init__)
+def test_html_title_constructor_exists():
+    assert callable(Html_TITLE.__init__)
 
 
-def test_html::link_constructor_args():
-    sig = inspect.signature(Html::LINK.__init__)
+def test_html_title_constructor_args():
+    sig = inspect.signature(Html_TITLE.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_html_link_is_not_abstract():
+    assert not inspect.isabstract(Html_LINK)
+
+
+def test_html_link_constructor_exists():
+    assert callable(Html_LINK.__init__)
+
+
+def test_html_link_constructor_args():
+    sig = inspect.signature(Html_LINK.__init__)
     params = list(sig.parameters.keys())
     assert "ahref" in params, "Missing parameter 'ahref'"
     assert "rel" in params, "Missing parameter 'rel'"
     assert "type" in params, "Missing parameter 'type'"
 
-def test_html::link_has_ahref():
-    assert hasattr(Html::LINK, "ahref")
+def test_html_link_has_ahref():
+    assert hasattr(Html_LINK, "ahref")
     descriptor = None
-    for klass in Html::LINK.__mro__:
+    for klass in Html_LINK.__mro__:
         if "ahref" in klass.__dict__:
             descriptor = klass.__dict__["ahref"]
             break
     assert isinstance(descriptor, property)
 
-def test_html::link_has_rel():
-    assert hasattr(Html::LINK, "rel")
+def test_html_link_has_rel():
+    assert hasattr(Html_LINK, "rel")
     descriptor = None
-    for klass in Html::LINK.__mro__:
+    for klass in Html_LINK.__mro__:
         if "rel" in klass.__dict__:
             descriptor = klass.__dict__["rel"]
             break
     assert isinstance(descriptor, property)
 
-def test_html::link_has_type():
-    assert hasattr(Html::LINK, "type")
+def test_html_link_has_type():
+    assert hasattr(Html_LINK, "type")
     descriptor = None
-    for klass in Html::LINK.__mro__:
+    for klass in Html_LINK.__mro__:
         if "type" in klass.__dict__:
             descriptor = klass.__dict__["type"]
             break
     assert isinstance(descriptor, property)
-
-
-
-def test_html::title_is_not_abstract():
-    assert not inspect.isabstract(Html::TITLE)
-
-
-def test_html::title_constructor_exists():
-    assert callable(Html::TITLE.__init__)
-
-
-def test_html::title_constructor_args():
-    sig = inspect.signature(Html::TITLE.__init__)
-    params = list(sig.parameters.keys())
 
 
 
@@ -1141,155 +1141,155 @@ def test_htmlelement_constructor_args():
 
 
 
-def test_html::body_is_not_abstract():
-    assert not inspect.isabstract(Html::BODY)
+def test_html_body_is_not_abstract():
+    assert not inspect.isabstract(Html_BODY)
 
 
-def test_html::body_constructor_exists():
-    assert callable(Html::BODY.__init__)
+def test_html_body_constructor_exists():
+    assert callable(Html_BODY.__init__)
 
 
-def test_html::body_constructor_args():
-    sig = inspect.signature(Html::BODY.__init__)
+def test_html_body_constructor_args():
+    sig = inspect.signature(Html_BODY.__init__)
     params = list(sig.parameters.keys())
     assert "bgcolor" in params, "Missing parameter 'bgcolor'"
     assert "background" in params, "Missing parameter 'background'"
-    assert "link" in params, "Missing parameter 'link'"
-    assert "text" in params, "Missing parameter 'text'"
     assert "vlink" in params, "Missing parameter 'vlink'"
     assert "alink" in params, "Missing parameter 'alink'"
+    assert "text" in params, "Missing parameter 'text'"
+    assert "link" in params, "Missing parameter 'link'"
 
-def test_html::body_has_bgcolor():
-    assert hasattr(Html::BODY, "bgcolor")
+def test_html_body_has_bgcolor():
+    assert hasattr(Html_BODY, "bgcolor")
     descriptor = None
-    for klass in Html::BODY.__mro__:
+    for klass in Html_BODY.__mro__:
         if "bgcolor" in klass.__dict__:
             descriptor = klass.__dict__["bgcolor"]
             break
     assert isinstance(descriptor, property)
 
-def test_html::body_has_background():
-    assert hasattr(Html::BODY, "background")
+def test_html_body_has_background():
+    assert hasattr(Html_BODY, "background")
     descriptor = None
-    for klass in Html::BODY.__mro__:
+    for klass in Html_BODY.__mro__:
         if "background" in klass.__dict__:
             descriptor = klass.__dict__["background"]
             break
     assert isinstance(descriptor, property)
 
-def test_html::body_has_link():
-    assert hasattr(Html::BODY, "link")
+def test_html_body_has_vlink():
+    assert hasattr(Html_BODY, "vlink")
     descriptor = None
-    for klass in Html::BODY.__mro__:
-        if "link" in klass.__dict__:
-            descriptor = klass.__dict__["link"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_html::body_has_text():
-    assert hasattr(Html::BODY, "text")
-    descriptor = None
-    for klass in Html::BODY.__mro__:
-        if "text" in klass.__dict__:
-            descriptor = klass.__dict__["text"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_html::body_has_vlink():
-    assert hasattr(Html::BODY, "vlink")
-    descriptor = None
-    for klass in Html::BODY.__mro__:
+    for klass in Html_BODY.__mro__:
         if "vlink" in klass.__dict__:
             descriptor = klass.__dict__["vlink"]
             break
     assert isinstance(descriptor, property)
 
-def test_html::body_has_alink():
-    assert hasattr(Html::BODY, "alink")
+def test_html_body_has_alink():
+    assert hasattr(Html_BODY, "alink")
     descriptor = None
-    for klass in Html::BODY.__mro__:
+    for klass in Html_BODY.__mro__:
         if "alink" in klass.__dict__:
             descriptor = klass.__dict__["alink"]
             break
     assert isinstance(descriptor, property)
 
+def test_html_body_has_text():
+    assert hasattr(Html_BODY, "text")
+    descriptor = None
+    for klass in Html_BODY.__mro__:
+        if "text" in klass.__dict__:
+            descriptor = klass.__dict__["text"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_html_body_has_link():
+    assert hasattr(Html_BODY, "link")
+    descriptor = None
+    for klass in Html_BODY.__mro__:
+        if "link" in klass.__dict__:
+            descriptor = klass.__dict__["link"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_html::headelement_is_not_abstract():
-    assert not inspect.isabstract(Html::HEADElement)
+
+def test_html_headelement_is_not_abstract():
+    assert not inspect.isabstract(Html_HEADElement)
 
 
-def test_html::headelement_constructor_exists():
-    assert callable(Html::HEADElement.__init__)
+def test_html_headelement_constructor_exists():
+    assert callable(Html_HEADElement.__init__)
 
 
-def test_html::headelement_constructor_args():
-    sig = inspect.signature(Html::HEADElement.__init__)
+def test_html_headelement_constructor_args():
+    sig = inspect.signature(Html_HEADElement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_html::head_is_not_abstract():
-    assert not inspect.isabstract(Html::HEAD)
+def test_html_head_is_not_abstract():
+    assert not inspect.isabstract(Html_HEAD)
 
 
-def test_html::head_constructor_exists():
-    assert callable(Html::HEAD.__init__)
+def test_html_head_constructor_exists():
+    assert callable(Html_HEAD.__init__)
 
 
-def test_html::head_constructor_args():
-    sig = inspect.signature(Html::HEAD.__init__)
+def test_html_head_constructor_args():
+    sig = inspect.signature(Html_HEAD.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_html::htmlelement_is_not_abstract():
-    assert not inspect.isabstract(Html::HTMLElement)
+def test_html_htmlelement_is_not_abstract():
+    assert not inspect.isabstract(Html_HTMLElement)
 
 
-def test_html::htmlelement_constructor_exists():
-    assert callable(Html::HTMLElement.__init__)
+def test_html_htmlelement_constructor_exists():
+    assert callable(Html_HTMLElement.__init__)
 
 
-def test_html::htmlelement_constructor_args():
-    sig = inspect.signature(Html::HTMLElement.__init__)
+def test_html_htmlelement_constructor_args():
+    sig = inspect.signature(Html_HTMLElement.__init__)
     params = list(sig.parameters.keys())
     assert "title" in params, "Missing parameter 'title'"
-    assert "value" in params, "Missing parameter 'value'"
     assert "class_" in params, "Missing parameter 'class_'"
+    assert "value" in params, "Missing parameter 'value'"
     assert "id" in params, "Missing parameter 'id'"
 
-def test_html::htmlelement_has_title():
-    assert hasattr(Html::HTMLElement, "title")
+def test_html_htmlelement_has_title():
+    assert hasattr(Html_HTMLElement, "title")
     descriptor = None
-    for klass in Html::HTMLElement.__mro__:
+    for klass in Html_HTMLElement.__mro__:
         if "title" in klass.__dict__:
             descriptor = klass.__dict__["title"]
             break
     assert isinstance(descriptor, property)
 
-def test_html::htmlelement_has_value():
-    assert hasattr(Html::HTMLElement, "value")
+def test_html_htmlelement_has_class_():
+    assert hasattr(Html_HTMLElement, "class_")
     descriptor = None
-    for klass in Html::HTMLElement.__mro__:
-        if "value" in klass.__dict__:
-            descriptor = klass.__dict__["value"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_html::htmlelement_has_class_():
-    assert hasattr(Html::HTMLElement, "class_")
-    descriptor = None
-    for klass in Html::HTMLElement.__mro__:
+    for klass in Html_HTMLElement.__mro__:
         if "class_" in klass.__dict__:
             descriptor = klass.__dict__["class_"]
             break
     assert isinstance(descriptor, property)
 
-def test_html::htmlelement_has_id():
-    assert hasattr(Html::HTMLElement, "id")
+def test_html_htmlelement_has_value():
+    assert hasattr(Html_HTMLElement, "value")
     descriptor = None
-    for klass in Html::HTMLElement.__mro__:
+    for klass in Html_HTMLElement.__mro__:
+        if "value" in klass.__dict__:
+            descriptor = klass.__dict__["value"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_html_htmlelement_has_id():
+    assert hasattr(Html_HTMLElement, "id")
+    descriptor = None
+    for klass in Html_HTMLElement.__mro__:
         if "id" in klass.__dict__:
             descriptor = klass.__dict__["id"]
             break
@@ -1311,16 +1311,16 @@ def test_body_constructor_args():
 
 
 
-def test_html::bodyelement_is_not_abstract():
-    assert not inspect.isabstract(Html::BODYElement)
+def test_html_bodyelement_is_not_abstract():
+    assert not inspect.isabstract(Html_BODYElement)
 
 
-def test_html::bodyelement_constructor_exists():
-    assert callable(Html::BODYElement.__init__)
+def test_html_bodyelement_constructor_exists():
+    assert callable(Html_BODYElement.__init__)
 
 
-def test_html::bodyelement_constructor_args():
-    sig = inspect.signature(Html::BODYElement.__init__)
+def test_html_bodyelement_constructor_args():
+    sig = inspect.signature(Html_BODYElement.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1339,16 +1339,16 @@ def test_head_constructor_args():
 
 
 
-def test_html::html_is_not_abstract():
-    assert not inspect.isabstract(Html::HTML)
+def test_html_html_is_not_abstract():
+    assert not inspect.isabstract(Html_HTML)
 
 
-def test_html::html_constructor_exists():
-    assert callable(Html::HTML.__init__)
+def test_html_html_constructor_exists():
+    assert callable(Html_HTML.__init__)
 
 
-def test_html::html_constructor_args():
-    sig = inspect.signature(Html::HTML.__init__)
+def test_html_html_constructor_args():
+    sig = inspect.signature(Html_HTML.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1367,581 +1367,425 @@ def test_bodyelement_constructor_args():
 
 
 
-def test_html::style_is_not_abstract():
-    assert not inspect.isabstract(Html::STYLE)
+def test_html_pre_is_not_abstract():
+    assert not inspect.isabstract(Html_PRE)
 
 
-def test_html::style_constructor_exists():
-    assert callable(Html::STYLE.__init__)
+def test_html_pre_constructor_exists():
+    assert callable(Html_PRE.__init__)
 
 
-def test_html::style_constructor_args():
-    sig = inspect.signature(Html::STYLE.__init__)
+def test_html_pre_constructor_args():
+    sig = inspect.signature(Html_PRE.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_html::a_is_not_abstract():
-    assert not inspect.isabstract(Html::A)
+def test_html_h3_is_not_abstract():
+    assert not inspect.isabstract(Html_H3)
 
 
-def test_html::a_constructor_exists():
-    assert callable(Html::A.__init__)
+def test_html_h3_constructor_exists():
+    assert callable(Html_H3.__init__)
 
 
-def test_html::a_constructor_args():
-    sig = inspect.signature(Html::A.__init__)
+def test_html_h3_constructor_args():
+    sig = inspect.signature(Html_H3.__init__)
     params = list(sig.parameters.keys())
-    assert "name" in params, "Missing parameter 'name'"
-    assert "ahref" in params, "Missing parameter 'ahref'"
 
-def test_html::a_has_name():
-    assert hasattr(Html::A, "name")
+
+
+def test_html_h1_is_not_abstract():
+    assert not inspect.isabstract(Html_H1)
+
+
+def test_html_h1_constructor_exists():
+    assert callable(Html_H1.__init__)
+
+
+def test_html_h1_constructor_args():
+    sig = inspect.signature(Html_H1.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_html_h2_is_not_abstract():
+    assert not inspect.isabstract(Html_H2)
+
+
+def test_html_h2_constructor_exists():
+    assert callable(Html_H2.__init__)
+
+
+def test_html_h2_constructor_args():
+    sig = inspect.signature(Html_H2.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_html_noembed_is_not_abstract():
+    assert not inspect.isabstract(Html_NOEMBED)
+
+
+def test_html_noembed_constructor_exists():
+    assert callable(Html_NOEMBED.__init__)
+
+
+def test_html_noembed_constructor_args():
+    sig = inspect.signature(Html_NOEMBED.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_html_style_is_not_abstract():
+    assert not inspect.isabstract(Html_STYLE)
+
+
+def test_html_style_constructor_exists():
+    assert callable(Html_STYLE.__init__)
+
+
+def test_html_style_constructor_args():
+    sig = inspect.signature(Html_STYLE.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_html_sub_is_not_abstract():
+    assert not inspect.isabstract(Html_SUB)
+
+
+def test_html_sub_constructor_exists():
+    assert callable(Html_SUB.__init__)
+
+
+def test_html_sub_constructor_args():
+    sig = inspect.signature(Html_SUB.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_html_em_is_not_abstract():
+    assert not inspect.isabstract(Html_EM)
+
+
+def test_html_em_constructor_exists():
+    assert callable(Html_EM.__init__)
+
+
+def test_html_em_constructor_args():
+    sig = inspect.signature(Html_EM.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_html_div_is_not_abstract():
+    assert not inspect.isabstract(Html_DIV)
+
+
+def test_html_div_constructor_exists():
+    assert callable(Html_DIV.__init__)
+
+
+def test_html_div_constructor_args():
+    sig = inspect.signature(Html_DIV.__init__)
+    params = list(sig.parameters.keys())
+    assert "align" in params, "Missing parameter 'align'"
+
+def test_html_div_has_align():
+    assert hasattr(Html_DIV, "align")
     descriptor = None
-    for klass in Html::A.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
+    for klass in Html_DIV.__mro__:
+        if "align" in klass.__dict__:
+            descriptor = klass.__dict__["align"]
             break
     assert isinstance(descriptor, property)
 
-def test_html::a_has_ahref():
-    assert hasattr(Html::A, "ahref")
+
+
+def test_html_sup_is_not_abstract():
+    assert not inspect.isabstract(Html_SUP)
+
+
+def test_html_sup_constructor_exists():
+    assert callable(Html_SUP.__init__)
+
+
+def test_html_sup_constructor_args():
+    sig = inspect.signature(Html_SUP.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_html_strike_is_not_abstract():
+    assert not inspect.isabstract(Html_STRIKE)
+
+
+def test_html_strike_constructor_exists():
+    assert callable(Html_STRIKE.__init__)
+
+
+def test_html_strike_constructor_args():
+    sig = inspect.signature(Html_STRIKE.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_html_area_is_not_abstract():
+    assert not inspect.isabstract(Html_AREA)
+
+
+def test_html_area_constructor_exists():
+    assert callable(Html_AREA.__init__)
+
+
+def test_html_area_constructor_args():
+    sig = inspect.signature(Html_AREA.__init__)
+    params = list(sig.parameters.keys())
+    assert "coords" in params, "Missing parameter 'coords'"
+    assert "ahref" in params, "Missing parameter 'ahref'"
+    assert "shape" in params, "Missing parameter 'shape'"
+
+def test_html_area_has_coords():
+    assert hasattr(Html_AREA, "coords")
     descriptor = None
-    for klass in Html::A.__mro__:
+    for klass in Html_AREA.__mro__:
+        if "coords" in klass.__dict__:
+            descriptor = klass.__dict__["coords"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_html_area_has_ahref():
+    assert hasattr(Html_AREA, "ahref")
+    descriptor = None
+    for klass in Html_AREA.__mro__:
         if "ahref" in klass.__dict__:
             descriptor = klass.__dict__["ahref"]
             break
     assert isinstance(descriptor, property)
 
-
-
-def test_html::strong_is_not_abstract():
-    assert not inspect.isabstract(Html::STRONG)
-
-
-def test_html::strong_constructor_exists():
-    assert callable(Html::STRONG.__init__)
-
-
-def test_html::strong_constructor_args():
-    sig = inspect.signature(Html::STRONG.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_html::i_is_not_abstract():
-    assert not inspect.isabstract(Html::I)
-
-
-def test_html::i_constructor_exists():
-    assert callable(Html::I.__init__)
-
-
-def test_html::i_constructor_args():
-    sig = inspect.signature(Html::I.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_html::tt_is_not_abstract():
-    assert not inspect.isabstract(Html::TT)
-
-
-def test_html::tt_constructor_exists():
-    assert callable(Html::TT.__init__)
-
-
-def test_html::tt_constructor_args():
-    sig = inspect.signature(Html::TT.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_html::sup_is_not_abstract():
-    assert not inspect.isabstract(Html::SUP)
-
-
-def test_html::sup_constructor_exists():
-    assert callable(Html::SUP.__init__)
-
-
-def test_html::sup_constructor_args():
-    sig = inspect.signature(Html::SUP.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_html::map_is_not_abstract():
-    assert not inspect.isabstract(Html::MAP)
-
-
-def test_html::map_constructor_exists():
-    assert callable(Html::MAP.__init__)
-
-
-def test_html::map_constructor_args():
-    sig = inspect.signature(Html::MAP.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_html::pre_is_not_abstract():
-    assert not inspect.isabstract(Html::PRE)
-
-
-def test_html::pre_constructor_exists():
-    assert callable(Html::PRE.__init__)
-
-
-def test_html::pre_constructor_args():
-    sig = inspect.signature(Html::PRE.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_html::strike_is_not_abstract():
-    assert not inspect.isabstract(Html::STRIKE)
-
-
-def test_html::strike_constructor_exists():
-    assert callable(Html::STRIKE.__init__)
-
-
-def test_html::strike_constructor_args():
-    sig = inspect.signature(Html::STRIKE.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_html::small_is_not_abstract():
-    assert not inspect.isabstract(Html::SMALL)
-
-
-def test_html::small_constructor_exists():
-    assert callable(Html::SMALL.__init__)
-
-
-def test_html::small_constructor_args():
-    sig = inspect.signature(Html::SMALL.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_html::font_is_not_abstract():
-    assert not inspect.isabstract(Html::FONT)
-
-
-def test_html::font_constructor_exists():
-    assert callable(Html::FONT.__init__)
-
-
-def test_html::font_constructor_args():
-    sig = inspect.signature(Html::FONT.__init__)
-    params = list(sig.parameters.keys())
-    assert "size" in params, "Missing parameter 'size'"
-    assert "face" in params, "Missing parameter 'face'"
-    assert "color" in params, "Missing parameter 'color'"
-
-def test_html::font_has_size():
-    assert hasattr(Html::FONT, "size")
+def test_html_area_has_shape():
+    assert hasattr(Html_AREA, "shape")
     descriptor = None
-    for klass in Html::FONT.__mro__:
-        if "size" in klass.__dict__:
-            descriptor = klass.__dict__["size"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_html::font_has_face():
-    assert hasattr(Html::FONT, "face")
-    descriptor = None
-    for klass in Html::FONT.__mro__:
-        if "face" in klass.__dict__:
-            descriptor = klass.__dict__["face"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_html::font_has_color():
-    assert hasattr(Html::FONT, "color")
-    descriptor = None
-    for klass in Html::FONT.__mro__:
-        if "color" in klass.__dict__:
-            descriptor = klass.__dict__["color"]
+    for klass in Html_AREA.__mro__:
+        if "shape" in klass.__dict__:
+            descriptor = klass.__dict__["shape"]
             break
     assert isinstance(descriptor, property)
 
 
 
-def test_html::h3_is_not_abstract():
-    assert not inspect.isabstract(Html::H3)
+def test_html_h4_is_not_abstract():
+    assert not inspect.isabstract(Html_H4)
 
 
-def test_html::h3_constructor_exists():
-    assert callable(Html::H3.__init__)
+def test_html_h4_constructor_exists():
+    assert callable(Html_H4.__init__)
 
 
-def test_html::h3_constructor_args():
-    sig = inspect.signature(Html::H3.__init__)
+def test_html_h4_constructor_args():
+    sig = inspect.signature(Html_H4.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_html::embed_is_not_abstract():
-    assert not inspect.isabstract(Html::EMBED)
+def test_html_b_is_not_abstract():
+    assert not inspect.isabstract(Html_B)
 
 
-def test_html::embed_constructor_exists():
-    assert callable(Html::EMBED.__init__)
+def test_html_b_constructor_exists():
+    assert callable(Html_B.__init__)
 
 
-def test_html::embed_constructor_args():
-    sig = inspect.signature(Html::EMBED.__init__)
+def test_html_b_constructor_args():
+    sig = inspect.signature(Html_B.__init__)
     params = list(sig.parameters.keys())
-    assert "src" in params, "Missing parameter 'src'"
-    assert "hspace" in params, "Missing parameter 'hspace'"
-    assert "width" in params, "Missing parameter 'width'"
-    assert "align" in params, "Missing parameter 'align'"
-    assert "height" in params, "Missing parameter 'height'"
-    assert "border" in params, "Missing parameter 'border'"
-    assert "vspace" in params, "Missing parameter 'vspace'"
-
-def test_html::embed_has_src():
-    assert hasattr(Html::EMBED, "src")
-    descriptor = None
-    for klass in Html::EMBED.__mro__:
-        if "src" in klass.__dict__:
-            descriptor = klass.__dict__["src"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_html::embed_has_hspace():
-    assert hasattr(Html::EMBED, "hspace")
-    descriptor = None
-    for klass in Html::EMBED.__mro__:
-        if "hspace" in klass.__dict__:
-            descriptor = klass.__dict__["hspace"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_html::embed_has_width():
-    assert hasattr(Html::EMBED, "width")
-    descriptor = None
-    for klass in Html::EMBED.__mro__:
-        if "width" in klass.__dict__:
-            descriptor = klass.__dict__["width"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_html::embed_has_align():
-    assert hasattr(Html::EMBED, "align")
-    descriptor = None
-    for klass in Html::EMBED.__mro__:
-        if "align" in klass.__dict__:
-            descriptor = klass.__dict__["align"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_html::embed_has_height():
-    assert hasattr(Html::EMBED, "height")
-    descriptor = None
-    for klass in Html::EMBED.__mro__:
-        if "height" in klass.__dict__:
-            descriptor = klass.__dict__["height"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_html::embed_has_border():
-    assert hasattr(Html::EMBED, "border")
-    descriptor = None
-    for klass in Html::EMBED.__mro__:
-        if "border" in klass.__dict__:
-            descriptor = klass.__dict__["border"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_html::embed_has_vspace():
-    assert hasattr(Html::EMBED, "vspace")
-    descriptor = None
-    for klass in Html::EMBED.__mro__:
-        if "vspace" in klass.__dict__:
-            descriptor = klass.__dict__["vspace"]
-            break
-    assert isinstance(descriptor, property)
 
 
 
-def test_html::div_is_not_abstract():
-    assert not inspect.isabstract(Html::DIV)
+def test_html_tt_is_not_abstract():
+    assert not inspect.isabstract(Html_TT)
 
 
-def test_html::div_constructor_exists():
-    assert callable(Html::DIV.__init__)
+def test_html_tt_constructor_exists():
+    assert callable(Html_TT.__init__)
 
 
-def test_html::div_constructor_args():
-    sig = inspect.signature(Html::DIV.__init__)
+def test_html_tt_constructor_args():
+    sig = inspect.signature(Html_TT.__init__)
     params = list(sig.parameters.keys())
-    assert "align" in params, "Missing parameter 'align'"
-
-def test_html::div_has_align():
-    assert hasattr(Html::DIV, "align")
-    descriptor = None
-    for klass in Html::DIV.__mro__:
-        if "align" in klass.__dict__:
-            descriptor = klass.__dict__["align"]
-            break
-    assert isinstance(descriptor, property)
 
 
 
-def test_html::img_is_not_abstract():
-    assert not inspect.isabstract(Html::IMG)
+def test_html_big_is_not_abstract():
+    assert not inspect.isabstract(Html_BIG)
 
 
-def test_html::img_constructor_exists():
-    assert callable(Html::IMG.__init__)
+def test_html_big_constructor_exists():
+    assert callable(Html_BIG.__init__)
 
 
-def test_html::img_constructor_args():
-    sig = inspect.signature(Html::IMG.__init__)
+def test_html_big_constructor_args():
+    sig = inspect.signature(Html_BIG.__init__)
     params = list(sig.parameters.keys())
-    assert "src" in params, "Missing parameter 'src'"
-    assert "width" in params, "Missing parameter 'width'"
-    assert "ismap" in params, "Missing parameter 'ismap'"
-    assert "hspace" in params, "Missing parameter 'hspace'"
-    assert "vspace" in params, "Missing parameter 'vspace'"
-    assert "border" in params, "Missing parameter 'border'"
+
+
+
+def test_html_img_is_not_abstract():
+    assert not inspect.isabstract(Html_IMG)
+
+
+def test_html_img_constructor_exists():
+    assert callable(Html_IMG.__init__)
+
+
+def test_html_img_constructor_args():
+    sig = inspect.signature(Html_IMG.__init__)
+    params = list(sig.parameters.keys())
     assert "alt" in params, "Missing parameter 'alt'"
-    assert "align" in params, "Missing parameter 'align'"
-    assert "height" in params, "Missing parameter 'height'"
+    assert "ismap" in params, "Missing parameter 'ismap'"
     assert "usemap" in params, "Missing parameter 'usemap'"
+    assert "border" in params, "Missing parameter 'border'"
+    assert "src" in params, "Missing parameter 'src'"
+    assert "vspace" in params, "Missing parameter 'vspace'"
+    assert "height" in params, "Missing parameter 'height'"
+    assert "hspace" in params, "Missing parameter 'hspace'"
+    assert "align" in params, "Missing parameter 'align'"
+    assert "width" in params, "Missing parameter 'width'"
 
-def test_html::img_has_src():
-    assert hasattr(Html::IMG, "src")
+def test_html_img_has_alt():
+    assert hasattr(Html_IMG, "alt")
     descriptor = None
-    for klass in Html::IMG.__mro__:
-        if "src" in klass.__dict__:
-            descriptor = klass.__dict__["src"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_html::img_has_width():
-    assert hasattr(Html::IMG, "width")
-    descriptor = None
-    for klass in Html::IMG.__mro__:
-        if "width" in klass.__dict__:
-            descriptor = klass.__dict__["width"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_html::img_has_ismap():
-    assert hasattr(Html::IMG, "ismap")
-    descriptor = None
-    for klass in Html::IMG.__mro__:
-        if "ismap" in klass.__dict__:
-            descriptor = klass.__dict__["ismap"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_html::img_has_hspace():
-    assert hasattr(Html::IMG, "hspace")
-    descriptor = None
-    for klass in Html::IMG.__mro__:
-        if "hspace" in klass.__dict__:
-            descriptor = klass.__dict__["hspace"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_html::img_has_vspace():
-    assert hasattr(Html::IMG, "vspace")
-    descriptor = None
-    for klass in Html::IMG.__mro__:
-        if "vspace" in klass.__dict__:
-            descriptor = klass.__dict__["vspace"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_html::img_has_border():
-    assert hasattr(Html::IMG, "border")
-    descriptor = None
-    for klass in Html::IMG.__mro__:
-        if "border" in klass.__dict__:
-            descriptor = klass.__dict__["border"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_html::img_has_alt():
-    assert hasattr(Html::IMG, "alt")
-    descriptor = None
-    for klass in Html::IMG.__mro__:
+    for klass in Html_IMG.__mro__:
         if "alt" in klass.__dict__:
             descriptor = klass.__dict__["alt"]
             break
     assert isinstance(descriptor, property)
 
-def test_html::img_has_align():
-    assert hasattr(Html::IMG, "align")
+def test_html_img_has_ismap():
+    assert hasattr(Html_IMG, "ismap")
     descriptor = None
-    for klass in Html::IMG.__mro__:
-        if "align" in klass.__dict__:
-            descriptor = klass.__dict__["align"]
+    for klass in Html_IMG.__mro__:
+        if "ismap" in klass.__dict__:
+            descriptor = klass.__dict__["ismap"]
             break
     assert isinstance(descriptor, property)
 
-def test_html::img_has_height():
-    assert hasattr(Html::IMG, "height")
+def test_html_img_has_usemap():
+    assert hasattr(Html_IMG, "usemap")
     descriptor = None
-    for klass in Html::IMG.__mro__:
-        if "height" in klass.__dict__:
-            descriptor = klass.__dict__["height"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_html::img_has_usemap():
-    assert hasattr(Html::IMG, "usemap")
-    descriptor = None
-    for klass in Html::IMG.__mro__:
+    for klass in Html_IMG.__mro__:
         if "usemap" in klass.__dict__:
             descriptor = klass.__dict__["usemap"]
             break
     assert isinstance(descriptor, property)
 
-
-
-def test_html::br_is_not_abstract():
-    assert not inspect.isabstract(Html::BR)
-
-
-def test_html::br_constructor_exists():
-    assert callable(Html::BR.__init__)
-
-
-def test_html::br_constructor_args():
-    sig = inspect.signature(Html::BR.__init__)
-    params = list(sig.parameters.keys())
-    assert "clear" in params, "Missing parameter 'clear'"
-
-def test_html::br_has_clear():
-    assert hasattr(Html::BR, "clear")
+def test_html_img_has_border():
+    assert hasattr(Html_IMG, "border")
     descriptor = None
-    for klass in Html::BR.__mro__:
-        if "clear" in klass.__dict__:
-            descriptor = klass.__dict__["clear"]
+    for klass in Html_IMG.__mro__:
+        if "border" in klass.__dict__:
+            descriptor = klass.__dict__["border"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_html_img_has_src():
+    assert hasattr(Html_IMG, "src")
+    descriptor = None
+    for klass in Html_IMG.__mro__:
+        if "src" in klass.__dict__:
+            descriptor = klass.__dict__["src"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_html_img_has_vspace():
+    assert hasattr(Html_IMG, "vspace")
+    descriptor = None
+    for klass in Html_IMG.__mro__:
+        if "vspace" in klass.__dict__:
+            descriptor = klass.__dict__["vspace"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_html_img_has_height():
+    assert hasattr(Html_IMG, "height")
+    descriptor = None
+    for klass in Html_IMG.__mro__:
+        if "height" in klass.__dict__:
+            descriptor = klass.__dict__["height"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_html_img_has_hspace():
+    assert hasattr(Html_IMG, "hspace")
+    descriptor = None
+    for klass in Html_IMG.__mro__:
+        if "hspace" in klass.__dict__:
+            descriptor = klass.__dict__["hspace"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_html_img_has_align():
+    assert hasattr(Html_IMG, "align")
+    descriptor = None
+    for klass in Html_IMG.__mro__:
+        if "align" in klass.__dict__:
+            descriptor = klass.__dict__["align"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_html_img_has_width():
+    assert hasattr(Html_IMG, "width")
+    descriptor = None
+    for klass in Html_IMG.__mro__:
+        if "width" in klass.__dict__:
+            descriptor = klass.__dict__["width"]
             break
     assert isinstance(descriptor, property)
 
 
 
-def test_html::p_is_not_abstract():
-    assert not inspect.isabstract(Html::P)
+def test_html_i_is_not_abstract():
+    assert not inspect.isabstract(Html_I)
 
 
-def test_html::p_constructor_exists():
-    assert callable(Html::P.__init__)
+def test_html_i_constructor_exists():
+    assert callable(Html_I.__init__)
 
 
-def test_html::p_constructor_args():
-    sig = inspect.signature(Html::P.__init__)
+def test_html_i_constructor_args():
+    sig = inspect.signature(Html_I.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_html::h1_is_not_abstract():
-    assert not inspect.isabstract(Html::H1)
+def test_html_tableelement_is_not_abstract():
+    assert not inspect.isabstract(Html_TABLEElement)
 
 
-def test_html::h1_constructor_exists():
-    assert callable(Html::H1.__init__)
+def test_html_tableelement_constructor_exists():
+    assert callable(Html_TABLEElement.__init__)
 
 
-def test_html::h1_constructor_args():
-    sig = inspect.signature(Html::H1.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_html::noembed_is_not_abstract():
-    assert not inspect.isabstract(Html::NOEMBED)
-
-
-def test_html::noembed_constructor_exists():
-    assert callable(Html::NOEMBED.__init__)
-
-
-def test_html::noembed_constructor_args():
-    sig = inspect.signature(Html::NOEMBED.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_html::big_is_not_abstract():
-    assert not inspect.isabstract(Html::BIG)
-
-
-def test_html::big_constructor_exists():
-    assert callable(Html::BIG.__init__)
-
-
-def test_html::big_constructor_args():
-    sig = inspect.signature(Html::BIG.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_html::h4_is_not_abstract():
-    assert not inspect.isabstract(Html::H4)
-
-
-def test_html::h4_constructor_exists():
-    assert callable(Html::H4.__init__)
-
-
-def test_html::h4_constructor_args():
-    sig = inspect.signature(Html::H4.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_html::em_is_not_abstract():
-    assert not inspect.isabstract(Html::EM)
-
-
-def test_html::em_constructor_exists():
-    assert callable(Html::EM.__init__)
-
-
-def test_html::em_constructor_args():
-    sig = inspect.signature(Html::EM.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_html::tableelement_is_not_abstract():
-    assert not inspect.isabstract(Html::TABLEElement)
-
-
-def test_html::tableelement_constructor_exists():
-    assert callable(Html::TABLEElement.__init__)
-
-
-def test_html::tableelement_constructor_args():
-    sig = inspect.signature(Html::TABLEElement.__init__)
+def test_html_tableelement_constructor_args():
+    sig = inspect.signature(Html_TABLEElement.__init__)
     params = list(sig.parameters.keys())
     assert "background" in params, "Missing parameter 'background'"
     assert "bgcolor" in params, "Missing parameter 'bgcolor'"
 
-def test_html::tableelement_has_background():
-    assert hasattr(Html::TABLEElement, "background")
+def test_html_tableelement_has_background():
+    assert hasattr(Html_TABLEElement, "background")
     descriptor = None
-    for klass in Html::TABLEElement.__mro__:
+    for klass in Html_TABLEElement.__mro__:
         if "background" in klass.__dict__:
             descriptor = klass.__dict__["background"]
             break
     assert isinstance(descriptor, property)
 
-def test_html::tableelement_has_bgcolor():
-    assert hasattr(Html::TABLEElement, "bgcolor")
+def test_html_tableelement_has_bgcolor():
+    assert hasattr(Html_TABLEElement, "bgcolor")
     descriptor = None
-    for klass in Html::TABLEElement.__mro__:
+    for klass in Html_TABLEElement.__mro__:
         if "bgcolor" in klass.__dict__:
             descriptor = klass.__dict__["bgcolor"]
             break
@@ -1949,51 +1793,75 @@ def test_html::tableelement_has_bgcolor():
 
 
 
-def test_html::b_is_not_abstract():
-    assert not inspect.isabstract(Html::B)
+def test_html_br_is_not_abstract():
+    assert not inspect.isabstract(Html_BR)
 
 
-def test_html::b_constructor_exists():
-    assert callable(Html::B.__init__)
+def test_html_br_constructor_exists():
+    assert callable(Html_BR.__init__)
 
 
-def test_html::b_constructor_args():
-    sig = inspect.signature(Html::B.__init__)
+def test_html_br_constructor_args():
+    sig = inspect.signature(Html_BR.__init__)
+    params = list(sig.parameters.keys())
+    assert "clear" in params, "Missing parameter 'clear'"
+
+def test_html_br_has_clear():
+    assert hasattr(Html_BR, "clear")
+    descriptor = None
+    for klass in Html_BR.__mro__:
+        if "clear" in klass.__dict__:
+            descriptor = klass.__dict__["clear"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_html_p_is_not_abstract():
+    assert not inspect.isabstract(Html_P)
+
+
+def test_html_p_constructor_exists():
+    assert callable(Html_P.__init__)
+
+
+def test_html_p_constructor_args():
+    sig = inspect.signature(Html_P.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_html::sub_is_not_abstract():
-    assert not inspect.isabstract(Html::SUB)
+def test_html_map_is_not_abstract():
+    assert not inspect.isabstract(Html_MAP)
 
 
-def test_html::sub_constructor_exists():
-    assert callable(Html::SUB.__init__)
+def test_html_map_constructor_exists():
+    assert callable(Html_MAP.__init__)
 
 
-def test_html::sub_constructor_args():
-    sig = inspect.signature(Html::SUB.__init__)
+def test_html_map_constructor_args():
+    sig = inspect.signature(Html_MAP.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_html::span_is_not_abstract():
-    assert not inspect.isabstract(Html::SPAN)
+def test_html_span_is_not_abstract():
+    assert not inspect.isabstract(Html_SPAN)
 
 
-def test_html::span_constructor_exists():
-    assert callable(Html::SPAN.__init__)
+def test_html_span_constructor_exists():
+    assert callable(Html_SPAN.__init__)
 
 
-def test_html::span_constructor_args():
-    sig = inspect.signature(Html::SPAN.__init__)
+def test_html_span_constructor_args():
+    sig = inspect.signature(Html_SPAN.__init__)
     params = list(sig.parameters.keys())
     assert "style" in params, "Missing parameter 'style'"
 
-def test_html::span_has_style():
-    assert hasattr(Html::SPAN, "style")
+def test_html_span_has_style():
+    assert hasattr(Html_SPAN, "style")
     descriptor = None
-    for klass in Html::SPAN.__mro__:
+    for klass in Html_SPAN.__mro__:
         if "style" in klass.__dict__:
             descriptor = klass.__dict__["style"]
             break
@@ -2001,61 +1869,193 @@ def test_html::span_has_style():
 
 
 
-def test_html::h2_is_not_abstract():
-    assert not inspect.isabstract(Html::H2)
+def test_html_a_is_not_abstract():
+    assert not inspect.isabstract(Html_A)
 
 
-def test_html::h2_constructor_exists():
-    assert callable(Html::H2.__init__)
+def test_html_a_constructor_exists():
+    assert callable(Html_A.__init__)
 
 
-def test_html::h2_constructor_args():
-    sig = inspect.signature(Html::H2.__init__)
+def test_html_a_constructor_args():
+    sig = inspect.signature(Html_A.__init__)
     params = list(sig.parameters.keys())
-
-
-
-def test_html::area_is_not_abstract():
-    assert not inspect.isabstract(Html::AREA)
-
-
-def test_html::area_constructor_exists():
-    assert callable(Html::AREA.__init__)
-
-
-def test_html::area_constructor_args():
-    sig = inspect.signature(Html::AREA.__init__)
-    params = list(sig.parameters.keys())
-    assert "coords" in params, "Missing parameter 'coords'"
-    assert "shape" in params, "Missing parameter 'shape'"
     assert "ahref" in params, "Missing parameter 'ahref'"
+    assert "name" in params, "Missing parameter 'name'"
 
-def test_html::area_has_coords():
-    assert hasattr(Html::AREA, "coords")
+def test_html_a_has_ahref():
+    assert hasattr(Html_A, "ahref")
     descriptor = None
-    for klass in Html::AREA.__mro__:
-        if "coords" in klass.__dict__:
-            descriptor = klass.__dict__["coords"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_html::area_has_shape():
-    assert hasattr(Html::AREA, "shape")
-    descriptor = None
-    for klass in Html::AREA.__mro__:
-        if "shape" in klass.__dict__:
-            descriptor = klass.__dict__["shape"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_html::area_has_ahref():
-    assert hasattr(Html::AREA, "ahref")
-    descriptor = None
-    for klass in Html::AREA.__mro__:
+    for klass in Html_A.__mro__:
         if "ahref" in klass.__dict__:
             descriptor = klass.__dict__["ahref"]
             break
     assert isinstance(descriptor, property)
+
+def test_html_a_has_name():
+    assert hasattr(Html_A, "name")
+    descriptor = None
+    for klass in Html_A.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_html_embed_is_not_abstract():
+    assert not inspect.isabstract(Html_EMBED)
+
+
+def test_html_embed_constructor_exists():
+    assert callable(Html_EMBED.__init__)
+
+
+def test_html_embed_constructor_args():
+    sig = inspect.signature(Html_EMBED.__init__)
+    params = list(sig.parameters.keys())
+    assert "align" in params, "Missing parameter 'align'"
+    assert "src" in params, "Missing parameter 'src'"
+    assert "border" in params, "Missing parameter 'border'"
+    assert "hspace" in params, "Missing parameter 'hspace'"
+    assert "vspace" in params, "Missing parameter 'vspace'"
+    assert "width" in params, "Missing parameter 'width'"
+    assert "height" in params, "Missing parameter 'height'"
+
+def test_html_embed_has_align():
+    assert hasattr(Html_EMBED, "align")
+    descriptor = None
+    for klass in Html_EMBED.__mro__:
+        if "align" in klass.__dict__:
+            descriptor = klass.__dict__["align"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_html_embed_has_src():
+    assert hasattr(Html_EMBED, "src")
+    descriptor = None
+    for klass in Html_EMBED.__mro__:
+        if "src" in klass.__dict__:
+            descriptor = klass.__dict__["src"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_html_embed_has_border():
+    assert hasattr(Html_EMBED, "border")
+    descriptor = None
+    for klass in Html_EMBED.__mro__:
+        if "border" in klass.__dict__:
+            descriptor = klass.__dict__["border"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_html_embed_has_hspace():
+    assert hasattr(Html_EMBED, "hspace")
+    descriptor = None
+    for klass in Html_EMBED.__mro__:
+        if "hspace" in klass.__dict__:
+            descriptor = klass.__dict__["hspace"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_html_embed_has_vspace():
+    assert hasattr(Html_EMBED, "vspace")
+    descriptor = None
+    for klass in Html_EMBED.__mro__:
+        if "vspace" in klass.__dict__:
+            descriptor = klass.__dict__["vspace"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_html_embed_has_width():
+    assert hasattr(Html_EMBED, "width")
+    descriptor = None
+    for klass in Html_EMBED.__mro__:
+        if "width" in klass.__dict__:
+            descriptor = klass.__dict__["width"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_html_embed_has_height():
+    assert hasattr(Html_EMBED, "height")
+    descriptor = None
+    for klass in Html_EMBED.__mro__:
+        if "height" in klass.__dict__:
+            descriptor = klass.__dict__["height"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_html_font_is_not_abstract():
+    assert not inspect.isabstract(Html_FONT)
+
+
+def test_html_font_constructor_exists():
+    assert callable(Html_FONT.__init__)
+
+
+def test_html_font_constructor_args():
+    sig = inspect.signature(Html_FONT.__init__)
+    params = list(sig.parameters.keys())
+    assert "size" in params, "Missing parameter 'size'"
+    assert "color" in params, "Missing parameter 'color'"
+    assert "face" in params, "Missing parameter 'face'"
+
+def test_html_font_has_size():
+    assert hasattr(Html_FONT, "size")
+    descriptor = None
+    for klass in Html_FONT.__mro__:
+        if "size" in klass.__dict__:
+            descriptor = klass.__dict__["size"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_html_font_has_color():
+    assert hasattr(Html_FONT, "color")
+    descriptor = None
+    for klass in Html_FONT.__mro__:
+        if "color" in klass.__dict__:
+            descriptor = klass.__dict__["color"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_html_font_has_face():
+    assert hasattr(Html_FONT, "face")
+    descriptor = None
+    for klass in Html_FONT.__mro__:
+        if "face" in klass.__dict__:
+            descriptor = klass.__dict__["face"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_html_strong_is_not_abstract():
+    assert not inspect.isabstract(Html_STRONG)
+
+
+def test_html_strong_constructor_exists():
+    assert callable(Html_STRONG.__init__)
+
+
+def test_html_strong_constructor_args():
+    sig = inspect.signature(Html_STRONG.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_html_small_is_not_abstract():
+    assert not inspect.isabstract(Html_SMALL)
+
+
+def test_html_small_constructor_exists():
+    assert callable(Html_SMALL.__init__)
+
+
+def test_html_small_constructor_args():
+    sig = inspect.signature(Html_SMALL.__init__)
+    params = list(sig.parameters.keys())
 
 
 # =============================================================================
@@ -2072,161 +2072,161 @@ safe_text = st.text(
 FRAME_strategy = st.builds(
     FRAME,
 )
-Html::IFRAME_strategy = st.builds(
-    Html::IFRAME,
+Html_IFRAME_strategy = st.builds(
+    Html_IFRAME,
 )
-Html::NOFRAME_strategy = st.builds(
-    Html::NOFRAME,
+Html_NOFRAME_strategy = st.builds(
+    Html_NOFRAME,
 )
-Html::FRAME_strategy = st.builds(
-    Html::FRAME,
+Html_FRAME_strategy = st.builds(
+    Html_FRAME,
     src=
-        safe_text,
-    noresize=
         safe_text,
     scrolling=
         safe_text,
+    noresize=
+        safe_text,
     marginwidth=
         safe_text,
-    name=
-        safe_text,
     marginheight=
+        safe_text,
+    name=
         safe_text
 )
-Html::PARAM_strategy = st.builds(
-    Html::PARAM,
+Html_PARAM_strategy = st.builds(
+    Html_PARAM,
     name=
         safe_text,
     paramValue=
         safe_text
 )
-Html::APPLET_strategy = st.builds(
-    Html::APPLET,
-    width=
+Html_APPLET_strategy = st.builds(
+    Html_APPLET,
+    class_=
         safe_text,
     src=
-        safe_text,
-    align=
-        safe_text,
-    class_=
         safe_text,
     applet=
         safe_text,
     height=
+        safe_text,
+    align=
+        safe_text,
+    width=
         safe_text
 )
-Html::DD_strategy = st.builds(
-    Html::DD,
+Html_DD_strategy = st.builds(
+    Html_DD,
 )
-Html::DT_strategy = st.builds(
-    Html::DT,
+Html_DT_strategy = st.builds(
+    Html_DT,
 )
-Html::DL_strategy = st.builds(
-    Html::DL,
+Html_DL_strategy = st.builds(
+    Html_DL,
 )
 ListElement_strategy = st.builds(
     ListElement,
 )
-Html::UL_strategy = st.builds(
-    Html::UL,
+Html_UL_strategy = st.builds(
+    Html_UL,
 )
-Html::LI_strategy = st.builds(
-    Html::LI,
+Html_LI_strategy = st.builds(
+    Html_LI,
     liValue=
         safe_text
 )
-Html::OL_strategy = st.builds(
-    Html::OL,
+Html_OL_strategy = st.builds(
+    Html_OL,
     start=
         safe_text
 )
-Html::ListElement_strategy = st.builds(
-    Html::ListElement,
+Html_ListElement_strategy = st.builds(
+    Html_ListElement,
     type=
         safe_text
 )
-Html::FRAMESET_strategy = st.builds(
-    Html::FRAMESET,
-    rows=
+Html_FRAMESET_strategy = st.builds(
+    Html_FRAMESET,
+    frameborder=
         safe_text,
-    border=
+    rows=
         safe_text,
     framespacing=
         safe_text,
-    frameborder=
+    border=
         safe_text,
     cols=
         safe_text
 )
-Html::OBJECT_strategy = st.builds(
-    Html::OBJECT,
+Html_OBJECT_strategy = st.builds(
+    Html_OBJECT,
     standby=
         safe_text,
-    classid=
-        safe_text,
     type=
+        safe_text,
+    classid=
         safe_text,
     data=
         safe_text
 )
-Html::INPUT_strategy = st.builds(
-    Html::INPUT,
-    size=
-        safe_text,
-    align=
+Html_INPUT_strategy = st.builds(
+    Html_INPUT,
+    src=
         safe_text,
     checked=
         safe_text,
-    src=
-        safe_text,
     inputValue=
         safe_text,
-    type=
+    align=
+        safe_text,
+    size=
         safe_text,
     maxlength=
+        safe_text,
+    type=
         safe_text,
     name=
         safe_text
 )
-Html::FORM_strategy = st.builds(
-    Html::FORM,
-    method=
-        safe_text,
+Html_FORM_strategy = st.builds(
+    Html_FORM,
     action=
+        safe_text,
+    method=
         safe_text
 )
 TD_strategy = st.builds(
     TD,
 )
-Html::TH_strategy = st.builds(
-    Html::TH,
+Html_TH_strategy = st.builds(
+    Html_TH,
 )
 TABLE_strategy = st.builds(
     TABLE,
 )
-Html::OPTION_strategy = st.builds(
-    Html::OPTION,
+Html_OPTION_strategy = st.builds(
+    Html_OPTION,
     selected=
         safe_text,
     optionValue=
         safe_text
 )
-Html::SELECT_strategy = st.builds(
-    Html::SELECT,
+Html_SELECT_strategy = st.builds(
+    Html_SELECT,
+    name=
+        safe_text,
     size=
         safe_text,
     multiple=
-        safe_text,
-    name=
         safe_text
 )
-Html::TEXTAREA_strategy = st.builds(
-    Html::TEXTAREA,
-    cols=
+Html_TEXTAREA_strategy = st.builds(
+    Html_TEXTAREA,
+    name=
         safe_text,
     rows=
         safe_text,
-    name=
+    cols=
         safe_text
 )
 TR_strategy = st.builds(
@@ -2235,35 +2235,35 @@ TR_strategy = st.builds(
 TABLEElement_strategy = st.builds(
     TABLEElement,
 )
-Html::TD_strategy = st.builds(
-    Html::TD,
+Html_TD_strategy = st.builds(
+    Html_TD,
     align=
         safe_text,
-    colspan=
+    valign=
         safe_text,
     rowspan=
         safe_text,
     width=
         safe_text,
-    valign=
+    colspan=
         safe_text
 )
-Html::TR_strategy = st.builds(
-    Html::TR,
+Html_TR_strategy = st.builds(
+    Html_TR,
     align=
         safe_text,
     valign=
         safe_text
 )
-Html::TABLE_strategy = st.builds(
-    Html::TABLE,
-    border=
+Html_TABLE_strategy = st.builds(
+    Html_TABLE,
+    width=
         safe_text,
     cellpadding=
         safe_text,
-    width=
-        safe_text,
     cellspacing=
+        safe_text,
+    border=
         safe_text
 )
 HTML_strategy = st.builds(
@@ -2272,8 +2272,11 @@ HTML_strategy = st.builds(
 HEADElement_strategy = st.builds(
     HEADElement,
 )
-Html::LINK_strategy = st.builds(
-    Html::LINK,
+Html_TITLE_strategy = st.builds(
+    Html_TITLE,
+)
+Html_LINK_strategy = st.builds(
+    Html_LINK,
     ahref=
         safe_text,
     rel=
@@ -2281,40 +2284,37 @@ Html::LINK_strategy = st.builds(
     type=
         safe_text
 )
-Html::TITLE_strategy = st.builds(
-    Html::TITLE,
-)
 HTMLElement_strategy = st.builds(
     HTMLElement,
 )
-Html::BODY_strategy = st.builds(
-    Html::BODY,
+Html_BODY_strategy = st.builds(
+    Html_BODY,
     bgcolor=
         safe_text,
     background=
         safe_text,
-    link=
-        safe_text,
-    text=
-        safe_text,
     vlink=
         safe_text,
     alink=
+        safe_text,
+    text=
+        safe_text,
+    link=
         safe_text
 )
-Html::HEADElement_strategy = st.builds(
-    Html::HEADElement,
+Html_HEADElement_strategy = st.builds(
+    Html_HEADElement,
 )
-Html::HEAD_strategy = st.builds(
-    Html::HEAD,
+Html_HEAD_strategy = st.builds(
+    Html_HEAD,
 )
-Html::HTMLElement_strategy = st.builds(
-    Html::HTMLElement,
+Html_HTMLElement_strategy = st.builds(
+    Html_HTMLElement,
     title=
         safe_text,
-    value=
-        safe_text,
     class_=
+        safe_text,
+    value=
         safe_text,
     id=
         safe_text
@@ -2322,161 +2322,161 @@ Html::HTMLElement_strategy = st.builds(
 BODY_strategy = st.builds(
     BODY,
 )
-Html::BODYElement_strategy = st.builds(
-    Html::BODYElement,
+Html_BODYElement_strategy = st.builds(
+    Html_BODYElement,
 )
 HEAD_strategy = st.builds(
     HEAD,
 )
-Html::HTML_strategy = st.builds(
-    Html::HTML,
+Html_HTML_strategy = st.builds(
+    Html_HTML,
 )
 BODYElement_strategy = st.builds(
     BODYElement,
 )
-Html::STYLE_strategy = st.builds(
-    Html::STYLE,
+Html_PRE_strategy = st.builds(
+    Html_PRE,
 )
-Html::A_strategy = st.builds(
-    Html::A,
-    name=
+Html_H3_strategy = st.builds(
+    Html_H3,
+)
+Html_H1_strategy = st.builds(
+    Html_H1,
+)
+Html_H2_strategy = st.builds(
+    Html_H2,
+)
+Html_NOEMBED_strategy = st.builds(
+    Html_NOEMBED,
+)
+Html_STYLE_strategy = st.builds(
+    Html_STYLE,
+)
+Html_SUB_strategy = st.builds(
+    Html_SUB,
+)
+Html_EM_strategy = st.builds(
+    Html_EM,
+)
+Html_DIV_strategy = st.builds(
+    Html_DIV,
+    align=
+        safe_text
+)
+Html_SUP_strategy = st.builds(
+    Html_SUP,
+)
+Html_STRIKE_strategy = st.builds(
+    Html_STRIKE,
+)
+Html_AREA_strategy = st.builds(
+    Html_AREA,
+    coords=
         safe_text,
     ahref=
+        safe_text,
+    shape=
         safe_text
 )
-Html::STRONG_strategy = st.builds(
-    Html::STRONG,
+Html_H4_strategy = st.builds(
+    Html_H4,
 )
-Html::I_strategy = st.builds(
-    Html::I,
+Html_B_strategy = st.builds(
+    Html_B,
 )
-Html::TT_strategy = st.builds(
-    Html::TT,
+Html_TT_strategy = st.builds(
+    Html_TT,
 )
-Html::SUP_strategy = st.builds(
-    Html::SUP,
+Html_BIG_strategy = st.builds(
+    Html_BIG,
 )
-Html::MAP_strategy = st.builds(
-    Html::MAP,
-)
-Html::PRE_strategy = st.builds(
-    Html::PRE,
-)
-Html::STRIKE_strategy = st.builds(
-    Html::STRIKE,
-)
-Html::SMALL_strategy = st.builds(
-    Html::SMALL,
-)
-Html::FONT_strategy = st.builds(
-    Html::FONT,
-    size=
-        safe_text,
-    face=
-        safe_text,
-    color=
-        safe_text
-)
-Html::H3_strategy = st.builds(
-    Html::H3,
-)
-Html::EMBED_strategy = st.builds(
-    Html::EMBED,
-    src=
-        safe_text,
-    hspace=
-        safe_text,
-    width=
-        safe_text,
-    align=
-        safe_text,
-    height=
-        safe_text,
-    border=
-        safe_text,
-    vspace=
-        safe_text
-)
-Html::DIV_strategy = st.builds(
-    Html::DIV,
-    align=
-        safe_text
-)
-Html::IMG_strategy = st.builds(
-    Html::IMG,
-    src=
-        safe_text,
-    width=
+Html_IMG_strategy = st.builds(
+    Html_IMG,
+    alt=
         safe_text,
     ismap=
         safe_text,
-    hspace=
-        safe_text,
-    vspace=
+    usemap=
         safe_text,
     border=
         safe_text,
-    alt=
+    src=
         safe_text,
-    align=
+    vspace=
         safe_text,
     height=
         safe_text,
-    usemap=
+    hspace=
+        safe_text,
+    align=
+        safe_text,
+    width=
         safe_text
 )
-Html::BR_strategy = st.builds(
-    Html::BR,
-    clear=
-        safe_text
+Html_I_strategy = st.builds(
+    Html_I,
 )
-Html::P_strategy = st.builds(
-    Html::P,
-)
-Html::H1_strategy = st.builds(
-    Html::H1,
-)
-Html::NOEMBED_strategy = st.builds(
-    Html::NOEMBED,
-)
-Html::BIG_strategy = st.builds(
-    Html::BIG,
-)
-Html::H4_strategy = st.builds(
-    Html::H4,
-)
-Html::EM_strategy = st.builds(
-    Html::EM,
-)
-Html::TABLEElement_strategy = st.builds(
-    Html::TABLEElement,
+Html_TABLEElement_strategy = st.builds(
+    Html_TABLEElement,
     background=
         safe_text,
     bgcolor=
         safe_text
 )
-Html::B_strategy = st.builds(
-    Html::B,
+Html_BR_strategy = st.builds(
+    Html_BR,
+    clear=
+        safe_text
 )
-Html::SUB_strategy = st.builds(
-    Html::SUB,
+Html_P_strategy = st.builds(
+    Html_P,
 )
-Html::SPAN_strategy = st.builds(
-    Html::SPAN,
+Html_MAP_strategy = st.builds(
+    Html_MAP,
+)
+Html_SPAN_strategy = st.builds(
+    Html_SPAN,
     style=
         safe_text
 )
-Html::H2_strategy = st.builds(
-    Html::H2,
-)
-Html::AREA_strategy = st.builds(
-    Html::AREA,
-    coords=
-        safe_text,
-    shape=
-        safe_text,
+Html_A_strategy = st.builds(
+    Html_A,
     ahref=
+        safe_text,
+    name=
         safe_text
+)
+Html_EMBED_strategy = st.builds(
+    Html_EMBED,
+    align=
+        safe_text,
+    src=
+        safe_text,
+    border=
+        safe_text,
+    hspace=
+        safe_text,
+    vspace=
+        safe_text,
+    width=
+        safe_text,
+    height=
+        safe_text
+)
+Html_FONT_strategy = st.builds(
+    Html_FONT,
+    size=
+        safe_text,
+    color=
+        safe_text,
+    face=
+        safe_text
+)
+Html_STRONG_strategy = st.builds(
+    Html_STRONG,
+)
+Html_SMALL_strategy = st.builds(
+    Html_SMALL,
 )
 
 @given(instance=FRAME_strategy)
@@ -2484,604 +2484,472 @@ Html::AREA_strategy = st.builds(
 def test_frame_instantiation(instance):
     assert isinstance(instance, FRAME)
 
-@given(instance=Html::IFRAME_strategy)
+@given(instance=Html_IFRAME_strategy)
 @settings(max_examples=50)
-def test_html::iframe_instantiation(instance):
-    assert isinstance(instance, Html::IFRAME)
+def test_html_iframe_instantiation(instance):
+    assert isinstance(instance, Html_IFRAME)
 
-@given(instance=Html::NOFRAME_strategy)
+@given(instance=Html_NOFRAME_strategy)
 @settings(max_examples=50)
-def test_html::noframe_instantiation(instance):
-    assert isinstance(instance, Html::NOFRAME)
+def test_html_noframe_instantiation(instance):
+    assert isinstance(instance, Html_NOFRAME)
 
-@given(instance=Html::FRAME_strategy)
+@given(instance=Html_FRAME_strategy)
 @settings(max_examples=50)
-def test_html::frame_instantiation(instance):
-    assert isinstance(instance, Html::FRAME)
-
-@given(instance=Html::FRAME_strategy)
-def test_html::frame_src_type(instance):
-    assert isinstance(instance.src, str)
+def test_html_frame_instantiation(instance):
+    assert isinstance(instance, Html_FRAME)
 
 
-@given(instance=Html::FRAME_strategy)
-def test_html::frame_src_setter(instance):
+
+@given(instance=Html_FRAME_strategy)
+def test_html_frame_src_setter(instance):
     original = instance.src
     instance.src = original
     assert instance.src == original
 
-@given(instance=Html::FRAME_strategy)
-def test_html::frame_noresize_type(instance):
-    assert isinstance(instance.noresize, str)
 
 
-@given(instance=Html::FRAME_strategy)
-def test_html::frame_noresize_setter(instance):
-    original = instance.noresize
-    instance.noresize = original
-    assert instance.noresize == original
-
-@given(instance=Html::FRAME_strategy)
-def test_html::frame_scrolling_type(instance):
-    assert isinstance(instance.scrolling, str)
-
-
-@given(instance=Html::FRAME_strategy)
-def test_html::frame_scrolling_setter(instance):
+@given(instance=Html_FRAME_strategy)
+def test_html_frame_scrolling_setter(instance):
     original = instance.scrolling
     instance.scrolling = original
     assert instance.scrolling == original
 
-@given(instance=Html::FRAME_strategy)
-def test_html::frame_marginwidth_type(instance):
-    assert isinstance(instance.marginwidth, str)
 
 
-@given(instance=Html::FRAME_strategy)
-def test_html::frame_marginwidth_setter(instance):
+@given(instance=Html_FRAME_strategy)
+def test_html_frame_noresize_setter(instance):
+    original = instance.noresize
+    instance.noresize = original
+    assert instance.noresize == original
+
+
+
+@given(instance=Html_FRAME_strategy)
+def test_html_frame_marginwidth_setter(instance):
     original = instance.marginwidth
     instance.marginwidth = original
     assert instance.marginwidth == original
 
-@given(instance=Html::FRAME_strategy)
-def test_html::frame_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
-@given(instance=Html::FRAME_strategy)
-def test_html::frame_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
-
-@given(instance=Html::FRAME_strategy)
-def test_html::frame_marginheight_type(instance):
-    assert isinstance(instance.marginheight, str)
-
-
-@given(instance=Html::FRAME_strategy)
-def test_html::frame_marginheight_setter(instance):
+@given(instance=Html_FRAME_strategy)
+def test_html_frame_marginheight_setter(instance):
     original = instance.marginheight
     instance.marginheight = original
     assert instance.marginheight == original
 
-@given(instance=Html::PARAM_strategy)
-@settings(max_examples=50)
-def test_html::param_instantiation(instance):
-    assert isinstance(instance, Html::PARAM)
-
-@given(instance=Html::PARAM_strategy)
-def test_html::param_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
-@given(instance=Html::PARAM_strategy)
-def test_html::param_name_setter(instance):
+@given(instance=Html_FRAME_strategy)
+def test_html_frame_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=Html::PARAM_strategy)
-def test_html::param_paramValue_type(instance):
-    assert isinstance(instance.paramValue, str)
+@given(instance=Html_PARAM_strategy)
+@settings(max_examples=50)
+def test_html_param_instantiation(instance):
+    assert isinstance(instance, Html_PARAM)
 
 
-@given(instance=Html::PARAM_strategy)
-def test_html::param_paramValue_setter(instance):
+
+@given(instance=Html_PARAM_strategy)
+def test_html_param_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+
+
+@given(instance=Html_PARAM_strategy)
+def test_html_param_paramValue_setter(instance):
     original = instance.paramValue
     instance.paramValue = original
     assert instance.paramValue == original
 
-@given(instance=Html::APPLET_strategy)
+@given(instance=Html_APPLET_strategy)
 @settings(max_examples=50)
-def test_html::applet_instantiation(instance):
-    assert isinstance(instance, Html::APPLET)
-
-@given(instance=Html::APPLET_strategy)
-def test_html::applet_width_type(instance):
-    assert isinstance(instance.width, str)
+def test_html_applet_instantiation(instance):
+    assert isinstance(instance, Html_APPLET)
 
 
-@given(instance=Html::APPLET_strategy)
-def test_html::applet_width_setter(instance):
-    original = instance.width
-    instance.width = original
-    assert instance.width == original
 
-@given(instance=Html::APPLET_strategy)
-def test_html::applet_src_type(instance):
-    assert isinstance(instance.src, str)
-
-
-@given(instance=Html::APPLET_strategy)
-def test_html::applet_src_setter(instance):
-    original = instance.src
-    instance.src = original
-    assert instance.src == original
-
-@given(instance=Html::APPLET_strategy)
-def test_html::applet_align_type(instance):
-    assert isinstance(instance.align, str)
-
-
-@given(instance=Html::APPLET_strategy)
-def test_html::applet_align_setter(instance):
-    original = instance.align
-    instance.align = original
-    assert instance.align == original
-
-@given(instance=Html::APPLET_strategy)
-def test_html::applet_class__type(instance):
-    assert isinstance(instance.class_, str)
-
-
-@given(instance=Html::APPLET_strategy)
-def test_html::applet_class__setter(instance):
+@given(instance=Html_APPLET_strategy)
+def test_html_applet_class__setter(instance):
     original = instance.class_
     instance.class_ = original
     assert instance.class_ == original
 
-@given(instance=Html::APPLET_strategy)
-def test_html::applet_applet_type(instance):
-    assert isinstance(instance.applet, str)
 
 
-@given(instance=Html::APPLET_strategy)
-def test_html::applet_applet_setter(instance):
+@given(instance=Html_APPLET_strategy)
+def test_html_applet_src_setter(instance):
+    original = instance.src
+    instance.src = original
+    assert instance.src == original
+
+
+
+@given(instance=Html_APPLET_strategy)
+def test_html_applet_applet_setter(instance):
     original = instance.applet
     instance.applet = original
     assert instance.applet == original
 
-@given(instance=Html::APPLET_strategy)
-def test_html::applet_height_type(instance):
-    assert isinstance(instance.height, str)
 
 
-@given(instance=Html::APPLET_strategy)
-def test_html::applet_height_setter(instance):
+@given(instance=Html_APPLET_strategy)
+def test_html_applet_height_setter(instance):
     original = instance.height
     instance.height = original
     assert instance.height == original
 
-@given(instance=Html::DD_strategy)
-@settings(max_examples=50)
-def test_html::dd_instantiation(instance):
-    assert isinstance(instance, Html::DD)
 
-@given(instance=Html::DT_strategy)
-@settings(max_examples=50)
-def test_html::dt_instantiation(instance):
-    assert isinstance(instance, Html::DT)
 
-@given(instance=Html::DL_strategy)
+@given(instance=Html_APPLET_strategy)
+def test_html_applet_align_setter(instance):
+    original = instance.align
+    instance.align = original
+    assert instance.align == original
+
+
+
+@given(instance=Html_APPLET_strategy)
+def test_html_applet_width_setter(instance):
+    original = instance.width
+    instance.width = original
+    assert instance.width == original
+
+@given(instance=Html_DD_strategy)
 @settings(max_examples=50)
-def test_html::dl_instantiation(instance):
-    assert isinstance(instance, Html::DL)
+def test_html_dd_instantiation(instance):
+    assert isinstance(instance, Html_DD)
+
+@given(instance=Html_DT_strategy)
+@settings(max_examples=50)
+def test_html_dt_instantiation(instance):
+    assert isinstance(instance, Html_DT)
+
+@given(instance=Html_DL_strategy)
+@settings(max_examples=50)
+def test_html_dl_instantiation(instance):
+    assert isinstance(instance, Html_DL)
 
 @given(instance=ListElement_strategy)
 @settings(max_examples=50)
 def test_listelement_instantiation(instance):
     assert isinstance(instance, ListElement)
 
-@given(instance=Html::UL_strategy)
+@given(instance=Html_UL_strategy)
 @settings(max_examples=50)
-def test_html::ul_instantiation(instance):
-    assert isinstance(instance, Html::UL)
+def test_html_ul_instantiation(instance):
+    assert isinstance(instance, Html_UL)
 
-@given(instance=Html::LI_strategy)
+@given(instance=Html_LI_strategy)
 @settings(max_examples=50)
-def test_html::li_instantiation(instance):
-    assert isinstance(instance, Html::LI)
-
-@given(instance=Html::LI_strategy)
-def test_html::li_liValue_type(instance):
-    assert isinstance(instance.liValue, str)
+def test_html_li_instantiation(instance):
+    assert isinstance(instance, Html_LI)
 
 
-@given(instance=Html::LI_strategy)
-def test_html::li_liValue_setter(instance):
+
+@given(instance=Html_LI_strategy)
+def test_html_li_liValue_setter(instance):
     original = instance.liValue
     instance.liValue = original
     assert instance.liValue == original
 
-@given(instance=Html::OL_strategy)
+@given(instance=Html_OL_strategy)
 @settings(max_examples=50)
-def test_html::ol_instantiation(instance):
-    assert isinstance(instance, Html::OL)
-
-@given(instance=Html::OL_strategy)
-def test_html::ol_start_type(instance):
-    assert isinstance(instance.start, str)
+def test_html_ol_instantiation(instance):
+    assert isinstance(instance, Html_OL)
 
 
-@given(instance=Html::OL_strategy)
-def test_html::ol_start_setter(instance):
+
+@given(instance=Html_OL_strategy)
+def test_html_ol_start_setter(instance):
     original = instance.start
     instance.start = original
     assert instance.start == original
 
-@given(instance=Html::ListElement_strategy)
+@given(instance=Html_ListElement_strategy)
 @settings(max_examples=50)
-def test_html::listelement_instantiation(instance):
-    assert isinstance(instance, Html::ListElement)
-
-@given(instance=Html::ListElement_strategy)
-def test_html::listelement_type_type(instance):
-    assert isinstance(instance.type, str)
+def test_html_listelement_instantiation(instance):
+    assert isinstance(instance, Html_ListElement)
 
 
-@given(instance=Html::ListElement_strategy)
-def test_html::listelement_type_setter(instance):
+
+@given(instance=Html_ListElement_strategy)
+def test_html_listelement_type_setter(instance):
     original = instance.type
     instance.type = original
     assert instance.type == original
 
-@given(instance=Html::FRAMESET_strategy)
+@given(instance=Html_FRAMESET_strategy)
 @settings(max_examples=50)
-def test_html::frameset_instantiation(instance):
-    assert isinstance(instance, Html::FRAMESET)
-
-@given(instance=Html::FRAMESET_strategy)
-def test_html::frameset_rows_type(instance):
-    assert isinstance(instance.rows, str)
+def test_html_frameset_instantiation(instance):
+    assert isinstance(instance, Html_FRAMESET)
 
 
-@given(instance=Html::FRAMESET_strategy)
-def test_html::frameset_rows_setter(instance):
-    original = instance.rows
-    instance.rows = original
-    assert instance.rows == original
 
-@given(instance=Html::FRAMESET_strategy)
-def test_html::frameset_border_type(instance):
-    assert isinstance(instance.border, str)
-
-
-@given(instance=Html::FRAMESET_strategy)
-def test_html::frameset_border_setter(instance):
-    original = instance.border
-    instance.border = original
-    assert instance.border == original
-
-@given(instance=Html::FRAMESET_strategy)
-def test_html::frameset_framespacing_type(instance):
-    assert isinstance(instance.framespacing, str)
-
-
-@given(instance=Html::FRAMESET_strategy)
-def test_html::frameset_framespacing_setter(instance):
-    original = instance.framespacing
-    instance.framespacing = original
-    assert instance.framespacing == original
-
-@given(instance=Html::FRAMESET_strategy)
-def test_html::frameset_frameborder_type(instance):
-    assert isinstance(instance.frameborder, str)
-
-
-@given(instance=Html::FRAMESET_strategy)
-def test_html::frameset_frameborder_setter(instance):
+@given(instance=Html_FRAMESET_strategy)
+def test_html_frameset_frameborder_setter(instance):
     original = instance.frameborder
     instance.frameborder = original
     assert instance.frameborder == original
 
-@given(instance=Html::FRAMESET_strategy)
-def test_html::frameset_cols_type(instance):
-    assert isinstance(instance.cols, str)
 
 
-@given(instance=Html::FRAMESET_strategy)
-def test_html::frameset_cols_setter(instance):
+@given(instance=Html_FRAMESET_strategy)
+def test_html_frameset_rows_setter(instance):
+    original = instance.rows
+    instance.rows = original
+    assert instance.rows == original
+
+
+
+@given(instance=Html_FRAMESET_strategy)
+def test_html_frameset_framespacing_setter(instance):
+    original = instance.framespacing
+    instance.framespacing = original
+    assert instance.framespacing == original
+
+
+
+@given(instance=Html_FRAMESET_strategy)
+def test_html_frameset_border_setter(instance):
+    original = instance.border
+    instance.border = original
+    assert instance.border == original
+
+
+
+@given(instance=Html_FRAMESET_strategy)
+def test_html_frameset_cols_setter(instance):
     original = instance.cols
     instance.cols = original
     assert instance.cols == original
 
-@given(instance=Html::OBJECT_strategy)
+@given(instance=Html_OBJECT_strategy)
 @settings(max_examples=50)
-def test_html::object_instantiation(instance):
-    assert isinstance(instance, Html::OBJECT)
-
-@given(instance=Html::OBJECT_strategy)
-def test_html::object_standby_type(instance):
-    assert isinstance(instance.standby, str)
+def test_html_object_instantiation(instance):
+    assert isinstance(instance, Html_OBJECT)
 
 
-@given(instance=Html::OBJECT_strategy)
-def test_html::object_standby_setter(instance):
+
+@given(instance=Html_OBJECT_strategy)
+def test_html_object_standby_setter(instance):
     original = instance.standby
     instance.standby = original
     assert instance.standby == original
 
-@given(instance=Html::OBJECT_strategy)
-def test_html::object_classid_type(instance):
-    assert isinstance(instance.classid, str)
 
 
-@given(instance=Html::OBJECT_strategy)
-def test_html::object_classid_setter(instance):
+@given(instance=Html_OBJECT_strategy)
+def test_html_object_type_setter(instance):
+    original = instance.type
+    instance.type = original
+    assert instance.type == original
+
+
+
+@given(instance=Html_OBJECT_strategy)
+def test_html_object_classid_setter(instance):
     original = instance.classid
     instance.classid = original
     assert instance.classid == original
 
-@given(instance=Html::OBJECT_strategy)
-def test_html::object_type_type(instance):
-    assert isinstance(instance.type, str)
 
 
-@given(instance=Html::OBJECT_strategy)
-def test_html::object_type_setter(instance):
-    original = instance.type
-    instance.type = original
-    assert instance.type == original
-
-@given(instance=Html::OBJECT_strategy)
-def test_html::object_data_type(instance):
-    assert isinstance(instance.data, str)
-
-
-@given(instance=Html::OBJECT_strategy)
-def test_html::object_data_setter(instance):
+@given(instance=Html_OBJECT_strategy)
+def test_html_object_data_setter(instance):
     original = instance.data
     instance.data = original
     assert instance.data == original
 
-@given(instance=Html::INPUT_strategy)
+@given(instance=Html_INPUT_strategy)
 @settings(max_examples=50)
-def test_html::input_instantiation(instance):
-    assert isinstance(instance, Html::INPUT)
-
-@given(instance=Html::INPUT_strategy)
-def test_html::input_size_type(instance):
-    assert isinstance(instance.size, str)
+def test_html_input_instantiation(instance):
+    assert isinstance(instance, Html_INPUT)
 
 
-@given(instance=Html::INPUT_strategy)
-def test_html::input_size_setter(instance):
-    original = instance.size
-    instance.size = original
-    assert instance.size == original
 
-@given(instance=Html::INPUT_strategy)
-def test_html::input_align_type(instance):
-    assert isinstance(instance.align, str)
-
-
-@given(instance=Html::INPUT_strategy)
-def test_html::input_align_setter(instance):
-    original = instance.align
-    instance.align = original
-    assert instance.align == original
-
-@given(instance=Html::INPUT_strategy)
-def test_html::input_checked_type(instance):
-    assert isinstance(instance.checked, str)
-
-
-@given(instance=Html::INPUT_strategy)
-def test_html::input_checked_setter(instance):
-    original = instance.checked
-    instance.checked = original
-    assert instance.checked == original
-
-@given(instance=Html::INPUT_strategy)
-def test_html::input_src_type(instance):
-    assert isinstance(instance.src, str)
-
-
-@given(instance=Html::INPUT_strategy)
-def test_html::input_src_setter(instance):
+@given(instance=Html_INPUT_strategy)
+def test_html_input_src_setter(instance):
     original = instance.src
     instance.src = original
     assert instance.src == original
 
-@given(instance=Html::INPUT_strategy)
-def test_html::input_inputValue_type(instance):
-    assert isinstance(instance.inputValue, str)
 
 
-@given(instance=Html::INPUT_strategy)
-def test_html::input_inputValue_setter(instance):
+@given(instance=Html_INPUT_strategy)
+def test_html_input_checked_setter(instance):
+    original = instance.checked
+    instance.checked = original
+    assert instance.checked == original
+
+
+
+@given(instance=Html_INPUT_strategy)
+def test_html_input_inputValue_setter(instance):
     original = instance.inputValue
     instance.inputValue = original
     assert instance.inputValue == original
 
-@given(instance=Html::INPUT_strategy)
-def test_html::input_type_type(instance):
-    assert isinstance(instance.type, str)
 
 
-@given(instance=Html::INPUT_strategy)
-def test_html::input_type_setter(instance):
-    original = instance.type
-    instance.type = original
-    assert instance.type == original
-
-@given(instance=Html::INPUT_strategy)
-def test_html::input_maxlength_type(instance):
-    assert isinstance(instance.maxlength, str)
+@given(instance=Html_INPUT_strategy)
+def test_html_input_align_setter(instance):
+    original = instance.align
+    instance.align = original
+    assert instance.align == original
 
 
-@given(instance=Html::INPUT_strategy)
-def test_html::input_maxlength_setter(instance):
+
+@given(instance=Html_INPUT_strategy)
+def test_html_input_size_setter(instance):
+    original = instance.size
+    instance.size = original
+    assert instance.size == original
+
+
+
+@given(instance=Html_INPUT_strategy)
+def test_html_input_maxlength_setter(instance):
     original = instance.maxlength
     instance.maxlength = original
     assert instance.maxlength == original
 
-@given(instance=Html::INPUT_strategy)
-def test_html::input_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
-@given(instance=Html::INPUT_strategy)
-def test_html::input_name_setter(instance):
+@given(instance=Html_INPUT_strategy)
+def test_html_input_type_setter(instance):
+    original = instance.type
+    instance.type = original
+    assert instance.type == original
+
+
+
+@given(instance=Html_INPUT_strategy)
+def test_html_input_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=Html::FORM_strategy)
+@given(instance=Html_FORM_strategy)
 @settings(max_examples=50)
-def test_html::form_instantiation(instance):
-    assert isinstance(instance, Html::FORM)
-
-@given(instance=Html::FORM_strategy)
-def test_html::form_method_type(instance):
-    assert isinstance(instance.method, str)
+def test_html_form_instantiation(instance):
+    assert isinstance(instance, Html_FORM)
 
 
-@given(instance=Html::FORM_strategy)
-def test_html::form_method_setter(instance):
-    original = instance.method
-    instance.method = original
-    assert instance.method == original
 
-@given(instance=Html::FORM_strategy)
-def test_html::form_action_type(instance):
-    assert isinstance(instance.action, str)
-
-
-@given(instance=Html::FORM_strategy)
-def test_html::form_action_setter(instance):
+@given(instance=Html_FORM_strategy)
+def test_html_form_action_setter(instance):
     original = instance.action
     instance.action = original
     assert instance.action == original
+
+
+
+@given(instance=Html_FORM_strategy)
+def test_html_form_method_setter(instance):
+    original = instance.method
+    instance.method = original
+    assert instance.method == original
 
 @given(instance=TD_strategy)
 @settings(max_examples=50)
 def test_td_instantiation(instance):
     assert isinstance(instance, TD)
 
-@given(instance=Html::TH_strategy)
+@given(instance=Html_TH_strategy)
 @settings(max_examples=50)
-def test_html::th_instantiation(instance):
-    assert isinstance(instance, Html::TH)
+def test_html_th_instantiation(instance):
+    assert isinstance(instance, Html_TH)
 
 @given(instance=TABLE_strategy)
 @settings(max_examples=50)
 def test_table_instantiation(instance):
     assert isinstance(instance, TABLE)
 
-@given(instance=Html::OPTION_strategy)
+@given(instance=Html_OPTION_strategy)
 @settings(max_examples=50)
-def test_html::option_instantiation(instance):
-    assert isinstance(instance, Html::OPTION)
-
-@given(instance=Html::OPTION_strategy)
-def test_html::option_selected_type(instance):
-    assert isinstance(instance.selected, str)
+def test_html_option_instantiation(instance):
+    assert isinstance(instance, Html_OPTION)
 
 
-@given(instance=Html::OPTION_strategy)
-def test_html::option_selected_setter(instance):
+
+@given(instance=Html_OPTION_strategy)
+def test_html_option_selected_setter(instance):
     original = instance.selected
     instance.selected = original
     assert instance.selected == original
 
-@given(instance=Html::OPTION_strategy)
-def test_html::option_optionValue_type(instance):
-    assert isinstance(instance.optionValue, str)
 
 
-@given(instance=Html::OPTION_strategy)
-def test_html::option_optionValue_setter(instance):
+@given(instance=Html_OPTION_strategy)
+def test_html_option_optionValue_setter(instance):
     original = instance.optionValue
     instance.optionValue = original
     assert instance.optionValue == original
 
-@given(instance=Html::SELECT_strategy)
+@given(instance=Html_SELECT_strategy)
 @settings(max_examples=50)
-def test_html::select_instantiation(instance):
-    assert isinstance(instance, Html::SELECT)
-
-@given(instance=Html::SELECT_strategy)
-def test_html::select_size_type(instance):
-    assert isinstance(instance.size, str)
+def test_html_select_instantiation(instance):
+    assert isinstance(instance, Html_SELECT)
 
 
-@given(instance=Html::SELECT_strategy)
-def test_html::select_size_setter(instance):
+
+@given(instance=Html_SELECT_strategy)
+def test_html_select_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+
+
+@given(instance=Html_SELECT_strategy)
+def test_html_select_size_setter(instance):
     original = instance.size
     instance.size = original
     assert instance.size == original
 
-@given(instance=Html::SELECT_strategy)
-def test_html::select_multiple_type(instance):
-    assert isinstance(instance.multiple, str)
 
 
-@given(instance=Html::SELECT_strategy)
-def test_html::select_multiple_setter(instance):
+@given(instance=Html_SELECT_strategy)
+def test_html_select_multiple_setter(instance):
     original = instance.multiple
     instance.multiple = original
     assert instance.multiple == original
 
-@given(instance=Html::SELECT_strategy)
-def test_html::select_name_type(instance):
-    assert isinstance(instance.name, str)
+@given(instance=Html_TEXTAREA_strategy)
+@settings(max_examples=50)
+def test_html_textarea_instantiation(instance):
+    assert isinstance(instance, Html_TEXTAREA)
 
 
-@given(instance=Html::SELECT_strategy)
-def test_html::select_name_setter(instance):
+
+@given(instance=Html_TEXTAREA_strategy)
+def test_html_textarea_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=Html::TEXTAREA_strategy)
-@settings(max_examples=50)
-def test_html::textarea_instantiation(instance):
-    assert isinstance(instance, Html::TEXTAREA)
-
-@given(instance=Html::TEXTAREA_strategy)
-def test_html::textarea_cols_type(instance):
-    assert isinstance(instance.cols, str)
 
 
-@given(instance=Html::TEXTAREA_strategy)
-def test_html::textarea_cols_setter(instance):
-    original = instance.cols
-    instance.cols = original
-    assert instance.cols == original
-
-@given(instance=Html::TEXTAREA_strategy)
-def test_html::textarea_rows_type(instance):
-    assert isinstance(instance.rows, str)
-
-
-@given(instance=Html::TEXTAREA_strategy)
-def test_html::textarea_rows_setter(instance):
+@given(instance=Html_TEXTAREA_strategy)
+def test_html_textarea_rows_setter(instance):
     original = instance.rows
     instance.rows = original
     assert instance.rows == original
 
-@given(instance=Html::TEXTAREA_strategy)
-def test_html::textarea_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
-@given(instance=Html::TEXTAREA_strategy)
-def test_html::textarea_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
+@given(instance=Html_TEXTAREA_strategy)
+def test_html_textarea_cols_setter(instance):
+    original = instance.cols
+    instance.cols = original
+    assert instance.cols == original
 
 @given(instance=TR_strategy)
 @settings(max_examples=50)
@@ -3093,141 +2961,108 @@ def test_tr_instantiation(instance):
 def test_tableelement_instantiation(instance):
     assert isinstance(instance, TABLEElement)
 
-@given(instance=Html::TD_strategy)
+@given(instance=Html_TD_strategy)
 @settings(max_examples=50)
-def test_html::td_instantiation(instance):
-    assert isinstance(instance, Html::TD)
-
-@given(instance=Html::TD_strategy)
-def test_html::td_align_type(instance):
-    assert isinstance(instance.align, str)
+def test_html_td_instantiation(instance):
+    assert isinstance(instance, Html_TD)
 
 
-@given(instance=Html::TD_strategy)
-def test_html::td_align_setter(instance):
+
+@given(instance=Html_TD_strategy)
+def test_html_td_align_setter(instance):
     original = instance.align
     instance.align = original
     assert instance.align == original
 
-@given(instance=Html::TD_strategy)
-def test_html::td_colspan_type(instance):
-    assert isinstance(instance.colspan, str)
 
 
-@given(instance=Html::TD_strategy)
-def test_html::td_colspan_setter(instance):
-    original = instance.colspan
-    instance.colspan = original
-    assert instance.colspan == original
-
-@given(instance=Html::TD_strategy)
-def test_html::td_rowspan_type(instance):
-    assert isinstance(instance.rowspan, str)
+@given(instance=Html_TD_strategy)
+def test_html_td_valign_setter(instance):
+    original = instance.valign
+    instance.valign = original
+    assert instance.valign == original
 
 
-@given(instance=Html::TD_strategy)
-def test_html::td_rowspan_setter(instance):
+
+@given(instance=Html_TD_strategy)
+def test_html_td_rowspan_setter(instance):
     original = instance.rowspan
     instance.rowspan = original
     assert instance.rowspan == original
 
-@given(instance=Html::TD_strategy)
-def test_html::td_width_type(instance):
-    assert isinstance(instance.width, str)
 
 
-@given(instance=Html::TD_strategy)
-def test_html::td_width_setter(instance):
+@given(instance=Html_TD_strategy)
+def test_html_td_width_setter(instance):
     original = instance.width
     instance.width = original
     assert instance.width == original
 
-@given(instance=Html::TD_strategy)
-def test_html::td_valign_type(instance):
-    assert isinstance(instance.valign, str)
 
 
-@given(instance=Html::TD_strategy)
-def test_html::td_valign_setter(instance):
-    original = instance.valign
-    instance.valign = original
-    assert instance.valign == original
+@given(instance=Html_TD_strategy)
+def test_html_td_colspan_setter(instance):
+    original = instance.colspan
+    instance.colspan = original
+    assert instance.colspan == original
 
-@given(instance=Html::TR_strategy)
+@given(instance=Html_TR_strategy)
 @settings(max_examples=50)
-def test_html::tr_instantiation(instance):
-    assert isinstance(instance, Html::TR)
-
-@given(instance=Html::TR_strategy)
-def test_html::tr_align_type(instance):
-    assert isinstance(instance.align, str)
+def test_html_tr_instantiation(instance):
+    assert isinstance(instance, Html_TR)
 
 
-@given(instance=Html::TR_strategy)
-def test_html::tr_align_setter(instance):
+
+@given(instance=Html_TR_strategy)
+def test_html_tr_align_setter(instance):
     original = instance.align
     instance.align = original
     assert instance.align == original
 
-@given(instance=Html::TR_strategy)
-def test_html::tr_valign_type(instance):
-    assert isinstance(instance.valign, str)
 
 
-@given(instance=Html::TR_strategy)
-def test_html::tr_valign_setter(instance):
+@given(instance=Html_TR_strategy)
+def test_html_tr_valign_setter(instance):
     original = instance.valign
     instance.valign = original
     assert instance.valign == original
 
-@given(instance=Html::TABLE_strategy)
+@given(instance=Html_TABLE_strategy)
 @settings(max_examples=50)
-def test_html::table_instantiation(instance):
-    assert isinstance(instance, Html::TABLE)
-
-@given(instance=Html::TABLE_strategy)
-def test_html::table_border_type(instance):
-    assert isinstance(instance.border, str)
+def test_html_table_instantiation(instance):
+    assert isinstance(instance, Html_TABLE)
 
 
-@given(instance=Html::TABLE_strategy)
-def test_html::table_border_setter(instance):
-    original = instance.border
-    instance.border = original
-    assert instance.border == original
 
-@given(instance=Html::TABLE_strategy)
-def test_html::table_cellpadding_type(instance):
-    assert isinstance(instance.cellpadding, str)
-
-
-@given(instance=Html::TABLE_strategy)
-def test_html::table_cellpadding_setter(instance):
-    original = instance.cellpadding
-    instance.cellpadding = original
-    assert instance.cellpadding == original
-
-@given(instance=Html::TABLE_strategy)
-def test_html::table_width_type(instance):
-    assert isinstance(instance.width, str)
-
-
-@given(instance=Html::TABLE_strategy)
-def test_html::table_width_setter(instance):
+@given(instance=Html_TABLE_strategy)
+def test_html_table_width_setter(instance):
     original = instance.width
     instance.width = original
     assert instance.width == original
 
-@given(instance=Html::TABLE_strategy)
-def test_html::table_cellspacing_type(instance):
-    assert isinstance(instance.cellspacing, str)
 
 
-@given(instance=Html::TABLE_strategy)
-def test_html::table_cellspacing_setter(instance):
+@given(instance=Html_TABLE_strategy)
+def test_html_table_cellpadding_setter(instance):
+    original = instance.cellpadding
+    instance.cellpadding = original
+    assert instance.cellpadding == original
+
+
+
+@given(instance=Html_TABLE_strategy)
+def test_html_table_cellspacing_setter(instance):
     original = instance.cellspacing
     instance.cellspacing = original
     assert instance.cellspacing == original
+
+
+
+@given(instance=Html_TABLE_strategy)
+def test_html_table_border_setter(instance):
+    original = instance.border
+    instance.border = original
+    assert instance.border == original
 
 @given(instance=HTML_strategy)
 @settings(max_examples=50)
@@ -3239,180 +3074,141 @@ def test_html_instantiation(instance):
 def test_headelement_instantiation(instance):
     assert isinstance(instance, HEADElement)
 
-@given(instance=Html::LINK_strategy)
+@given(instance=Html_TITLE_strategy)
 @settings(max_examples=50)
-def test_html::link_instantiation(instance):
-    assert isinstance(instance, Html::LINK)
+def test_html_title_instantiation(instance):
+    assert isinstance(instance, Html_TITLE)
 
-@given(instance=Html::LINK_strategy)
-def test_html::link_ahref_type(instance):
-    assert isinstance(instance.ahref, str)
+@given(instance=Html_LINK_strategy)
+@settings(max_examples=50)
+def test_html_link_instantiation(instance):
+    assert isinstance(instance, Html_LINK)
 
 
-@given(instance=Html::LINK_strategy)
-def test_html::link_ahref_setter(instance):
+
+@given(instance=Html_LINK_strategy)
+def test_html_link_ahref_setter(instance):
     original = instance.ahref
     instance.ahref = original
     assert instance.ahref == original
 
-@given(instance=Html::LINK_strategy)
-def test_html::link_rel_type(instance):
-    assert isinstance(instance.rel, str)
 
 
-@given(instance=Html::LINK_strategy)
-def test_html::link_rel_setter(instance):
+@given(instance=Html_LINK_strategy)
+def test_html_link_rel_setter(instance):
     original = instance.rel
     instance.rel = original
     assert instance.rel == original
 
-@given(instance=Html::LINK_strategy)
-def test_html::link_type_type(instance):
-    assert isinstance(instance.type, str)
 
 
-@given(instance=Html::LINK_strategy)
-def test_html::link_type_setter(instance):
+@given(instance=Html_LINK_strategy)
+def test_html_link_type_setter(instance):
     original = instance.type
     instance.type = original
     assert instance.type == original
-
-@given(instance=Html::TITLE_strategy)
-@settings(max_examples=50)
-def test_html::title_instantiation(instance):
-    assert isinstance(instance, Html::TITLE)
 
 @given(instance=HTMLElement_strategy)
 @settings(max_examples=50)
 def test_htmlelement_instantiation(instance):
     assert isinstance(instance, HTMLElement)
 
-@given(instance=Html::BODY_strategy)
+@given(instance=Html_BODY_strategy)
 @settings(max_examples=50)
-def test_html::body_instantiation(instance):
-    assert isinstance(instance, Html::BODY)
-
-@given(instance=Html::BODY_strategy)
-def test_html::body_bgcolor_type(instance):
-    assert isinstance(instance.bgcolor, str)
+def test_html_body_instantiation(instance):
+    assert isinstance(instance, Html_BODY)
 
 
-@given(instance=Html::BODY_strategy)
-def test_html::body_bgcolor_setter(instance):
+
+@given(instance=Html_BODY_strategy)
+def test_html_body_bgcolor_setter(instance):
     original = instance.bgcolor
     instance.bgcolor = original
     assert instance.bgcolor == original
 
-@given(instance=Html::BODY_strategy)
-def test_html::body_background_type(instance):
-    assert isinstance(instance.background, str)
 
 
-@given(instance=Html::BODY_strategy)
-def test_html::body_background_setter(instance):
+@given(instance=Html_BODY_strategy)
+def test_html_body_background_setter(instance):
     original = instance.background
     instance.background = original
     assert instance.background == original
 
-@given(instance=Html::BODY_strategy)
-def test_html::body_link_type(instance):
-    assert isinstance(instance.link, str)
 
 
-@given(instance=Html::BODY_strategy)
-def test_html::body_link_setter(instance):
-    original = instance.link
-    instance.link = original
-    assert instance.link == original
-
-@given(instance=Html::BODY_strategy)
-def test_html::body_text_type(instance):
-    assert isinstance(instance.text, str)
-
-
-@given(instance=Html::BODY_strategy)
-def test_html::body_text_setter(instance):
-    original = instance.text
-    instance.text = original
-    assert instance.text == original
-
-@given(instance=Html::BODY_strategy)
-def test_html::body_vlink_type(instance):
-    assert isinstance(instance.vlink, str)
-
-
-@given(instance=Html::BODY_strategy)
-def test_html::body_vlink_setter(instance):
+@given(instance=Html_BODY_strategy)
+def test_html_body_vlink_setter(instance):
     original = instance.vlink
     instance.vlink = original
     assert instance.vlink == original
 
-@given(instance=Html::BODY_strategy)
-def test_html::body_alink_type(instance):
-    assert isinstance(instance.alink, str)
 
 
-@given(instance=Html::BODY_strategy)
-def test_html::body_alink_setter(instance):
+@given(instance=Html_BODY_strategy)
+def test_html_body_alink_setter(instance):
     original = instance.alink
     instance.alink = original
     assert instance.alink == original
 
-@given(instance=Html::HEADElement_strategy)
+
+
+@given(instance=Html_BODY_strategy)
+def test_html_body_text_setter(instance):
+    original = instance.text
+    instance.text = original
+    assert instance.text == original
+
+
+
+@given(instance=Html_BODY_strategy)
+def test_html_body_link_setter(instance):
+    original = instance.link
+    instance.link = original
+    assert instance.link == original
+
+@given(instance=Html_HEADElement_strategy)
 @settings(max_examples=50)
-def test_html::headelement_instantiation(instance):
-    assert isinstance(instance, Html::HEADElement)
+def test_html_headelement_instantiation(instance):
+    assert isinstance(instance, Html_HEADElement)
 
-@given(instance=Html::HEAD_strategy)
+@given(instance=Html_HEAD_strategy)
 @settings(max_examples=50)
-def test_html::head_instantiation(instance):
-    assert isinstance(instance, Html::HEAD)
+def test_html_head_instantiation(instance):
+    assert isinstance(instance, Html_HEAD)
 
-@given(instance=Html::HTMLElement_strategy)
+@given(instance=Html_HTMLElement_strategy)
 @settings(max_examples=50)
-def test_html::htmlelement_instantiation(instance):
-    assert isinstance(instance, Html::HTMLElement)
-
-@given(instance=Html::HTMLElement_strategy)
-def test_html::htmlelement_title_type(instance):
-    assert isinstance(instance.title, str)
+def test_html_htmlelement_instantiation(instance):
+    assert isinstance(instance, Html_HTMLElement)
 
 
-@given(instance=Html::HTMLElement_strategy)
-def test_html::htmlelement_title_setter(instance):
+
+@given(instance=Html_HTMLElement_strategy)
+def test_html_htmlelement_title_setter(instance):
     original = instance.title
     instance.title = original
     assert instance.title == original
 
-@given(instance=Html::HTMLElement_strategy)
-def test_html::htmlelement_value_type(instance):
-    assert isinstance(instance.value, str)
 
 
-@given(instance=Html::HTMLElement_strategy)
-def test_html::htmlelement_value_setter(instance):
-    original = instance.value
-    instance.value = original
-    assert instance.value == original
-
-@given(instance=Html::HTMLElement_strategy)
-def test_html::htmlelement_class__type(instance):
-    assert isinstance(instance.class_, str)
-
-
-@given(instance=Html::HTMLElement_strategy)
-def test_html::htmlelement_class__setter(instance):
+@given(instance=Html_HTMLElement_strategy)
+def test_html_htmlelement_class__setter(instance):
     original = instance.class_
     instance.class_ = original
     assert instance.class_ == original
 
-@given(instance=Html::HTMLElement_strategy)
-def test_html::htmlelement_id_type(instance):
-    assert isinstance(instance.id, str)
 
 
-@given(instance=Html::HTMLElement_strategy)
-def test_html::htmlelement_id_setter(instance):
+@given(instance=Html_HTMLElement_strategy)
+def test_html_htmlelement_value_setter(instance):
+    original = instance.value
+    instance.value = original
+    assert instance.value == original
+
+
+
+@given(instance=Html_HTMLElement_strategy)
+def test_html_htmlelement_id_setter(instance):
     original = instance.id
     instance.id = original
     assert instance.id == original
@@ -3422,492 +3218,402 @@ def test_html::htmlelement_id_setter(instance):
 def test_body_instantiation(instance):
     assert isinstance(instance, BODY)
 
-@given(instance=Html::BODYElement_strategy)
+@given(instance=Html_BODYElement_strategy)
 @settings(max_examples=50)
-def test_html::bodyelement_instantiation(instance):
-    assert isinstance(instance, Html::BODYElement)
+def test_html_bodyelement_instantiation(instance):
+    assert isinstance(instance, Html_BODYElement)
 
 @given(instance=HEAD_strategy)
 @settings(max_examples=50)
 def test_head_instantiation(instance):
     assert isinstance(instance, HEAD)
 
-@given(instance=Html::HTML_strategy)
+@given(instance=Html_HTML_strategy)
 @settings(max_examples=50)
-def test_html::html_instantiation(instance):
-    assert isinstance(instance, Html::HTML)
+def test_html_html_instantiation(instance):
+    assert isinstance(instance, Html_HTML)
 
 @given(instance=BODYElement_strategy)
 @settings(max_examples=50)
 def test_bodyelement_instantiation(instance):
     assert isinstance(instance, BODYElement)
 
-@given(instance=Html::STYLE_strategy)
+@given(instance=Html_PRE_strategy)
 @settings(max_examples=50)
-def test_html::style_instantiation(instance):
-    assert isinstance(instance, Html::STYLE)
+def test_html_pre_instantiation(instance):
+    assert isinstance(instance, Html_PRE)
 
-@given(instance=Html::A_strategy)
+@given(instance=Html_H3_strategy)
 @settings(max_examples=50)
-def test_html::a_instantiation(instance):
-    assert isinstance(instance, Html::A)
+def test_html_h3_instantiation(instance):
+    assert isinstance(instance, Html_H3)
 
-@given(instance=Html::A_strategy)
-def test_html::a_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=Html::A_strategy)
-def test_html::a_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
-
-@given(instance=Html::A_strategy)
-def test_html::a_ahref_type(instance):
-    assert isinstance(instance.ahref, str)
-
-
-@given(instance=Html::A_strategy)
-def test_html::a_ahref_setter(instance):
-    original = instance.ahref
-    instance.ahref = original
-    assert instance.ahref == original
-
-@given(instance=Html::STRONG_strategy)
+@given(instance=Html_H1_strategy)
 @settings(max_examples=50)
-def test_html::strong_instantiation(instance):
-    assert isinstance(instance, Html::STRONG)
+def test_html_h1_instantiation(instance):
+    assert isinstance(instance, Html_H1)
 
-@given(instance=Html::I_strategy)
+@given(instance=Html_H2_strategy)
 @settings(max_examples=50)
-def test_html::i_instantiation(instance):
-    assert isinstance(instance, Html::I)
+def test_html_h2_instantiation(instance):
+    assert isinstance(instance, Html_H2)
 
-@given(instance=Html::TT_strategy)
+@given(instance=Html_NOEMBED_strategy)
 @settings(max_examples=50)
-def test_html::tt_instantiation(instance):
-    assert isinstance(instance, Html::TT)
+def test_html_noembed_instantiation(instance):
+    assert isinstance(instance, Html_NOEMBED)
 
-@given(instance=Html::SUP_strategy)
+@given(instance=Html_STYLE_strategy)
 @settings(max_examples=50)
-def test_html::sup_instantiation(instance):
-    assert isinstance(instance, Html::SUP)
+def test_html_style_instantiation(instance):
+    assert isinstance(instance, Html_STYLE)
 
-@given(instance=Html::MAP_strategy)
+@given(instance=Html_SUB_strategy)
 @settings(max_examples=50)
-def test_html::map_instantiation(instance):
-    assert isinstance(instance, Html::MAP)
+def test_html_sub_instantiation(instance):
+    assert isinstance(instance, Html_SUB)
 
-@given(instance=Html::PRE_strategy)
+@given(instance=Html_EM_strategy)
 @settings(max_examples=50)
-def test_html::pre_instantiation(instance):
-    assert isinstance(instance, Html::PRE)
+def test_html_em_instantiation(instance):
+    assert isinstance(instance, Html_EM)
 
-@given(instance=Html::STRIKE_strategy)
+@given(instance=Html_DIV_strategy)
 @settings(max_examples=50)
-def test_html::strike_instantiation(instance):
-    assert isinstance(instance, Html::STRIKE)
-
-@given(instance=Html::SMALL_strategy)
-@settings(max_examples=50)
-def test_html::small_instantiation(instance):
-    assert isinstance(instance, Html::SMALL)
-
-@given(instance=Html::FONT_strategy)
-@settings(max_examples=50)
-def test_html::font_instantiation(instance):
-    assert isinstance(instance, Html::FONT)
-
-@given(instance=Html::FONT_strategy)
-def test_html::font_size_type(instance):
-    assert isinstance(instance.size, str)
+def test_html_div_instantiation(instance):
+    assert isinstance(instance, Html_DIV)
 
 
-@given(instance=Html::FONT_strategy)
-def test_html::font_size_setter(instance):
-    original = instance.size
-    instance.size = original
-    assert instance.size == original
 
-@given(instance=Html::FONT_strategy)
-def test_html::font_face_type(instance):
-    assert isinstance(instance.face, str)
-
-
-@given(instance=Html::FONT_strategy)
-def test_html::font_face_setter(instance):
-    original = instance.face
-    instance.face = original
-    assert instance.face == original
-
-@given(instance=Html::FONT_strategy)
-def test_html::font_color_type(instance):
-    assert isinstance(instance.color, str)
-
-
-@given(instance=Html::FONT_strategy)
-def test_html::font_color_setter(instance):
-    original = instance.color
-    instance.color = original
-    assert instance.color == original
-
-@given(instance=Html::H3_strategy)
-@settings(max_examples=50)
-def test_html::h3_instantiation(instance):
-    assert isinstance(instance, Html::H3)
-
-@given(instance=Html::EMBED_strategy)
-@settings(max_examples=50)
-def test_html::embed_instantiation(instance):
-    assert isinstance(instance, Html::EMBED)
-
-@given(instance=Html::EMBED_strategy)
-def test_html::embed_src_type(instance):
-    assert isinstance(instance.src, str)
-
-
-@given(instance=Html::EMBED_strategy)
-def test_html::embed_src_setter(instance):
-    original = instance.src
-    instance.src = original
-    assert instance.src == original
-
-@given(instance=Html::EMBED_strategy)
-def test_html::embed_hspace_type(instance):
-    assert isinstance(instance.hspace, str)
-
-
-@given(instance=Html::EMBED_strategy)
-def test_html::embed_hspace_setter(instance):
-    original = instance.hspace
-    instance.hspace = original
-    assert instance.hspace == original
-
-@given(instance=Html::EMBED_strategy)
-def test_html::embed_width_type(instance):
-    assert isinstance(instance.width, str)
-
-
-@given(instance=Html::EMBED_strategy)
-def test_html::embed_width_setter(instance):
-    original = instance.width
-    instance.width = original
-    assert instance.width == original
-
-@given(instance=Html::EMBED_strategy)
-def test_html::embed_align_type(instance):
-    assert isinstance(instance.align, str)
-
-
-@given(instance=Html::EMBED_strategy)
-def test_html::embed_align_setter(instance):
+@given(instance=Html_DIV_strategy)
+def test_html_div_align_setter(instance):
     original = instance.align
     instance.align = original
     assert instance.align == original
 
-@given(instance=Html::EMBED_strategy)
-def test_html::embed_height_type(instance):
-    assert isinstance(instance.height, str)
-
-
-@given(instance=Html::EMBED_strategy)
-def test_html::embed_height_setter(instance):
-    original = instance.height
-    instance.height = original
-    assert instance.height == original
-
-@given(instance=Html::EMBED_strategy)
-def test_html::embed_border_type(instance):
-    assert isinstance(instance.border, str)
-
-
-@given(instance=Html::EMBED_strategy)
-def test_html::embed_border_setter(instance):
-    original = instance.border
-    instance.border = original
-    assert instance.border == original
-
-@given(instance=Html::EMBED_strategy)
-def test_html::embed_vspace_type(instance):
-    assert isinstance(instance.vspace, str)
-
-
-@given(instance=Html::EMBED_strategy)
-def test_html::embed_vspace_setter(instance):
-    original = instance.vspace
-    instance.vspace = original
-    assert instance.vspace == original
-
-@given(instance=Html::DIV_strategy)
+@given(instance=Html_SUP_strategy)
 @settings(max_examples=50)
-def test_html::div_instantiation(instance):
-    assert isinstance(instance, Html::DIV)
+def test_html_sup_instantiation(instance):
+    assert isinstance(instance, Html_SUP)
 
-@given(instance=Html::DIV_strategy)
-def test_html::div_align_type(instance):
-    assert isinstance(instance.align, str)
-
-
-@given(instance=Html::DIV_strategy)
-def test_html::div_align_setter(instance):
-    original = instance.align
-    instance.align = original
-    assert instance.align == original
-
-@given(instance=Html::IMG_strategy)
+@given(instance=Html_STRIKE_strategy)
 @settings(max_examples=50)
-def test_html::img_instantiation(instance):
-    assert isinstance(instance, Html::IMG)
+def test_html_strike_instantiation(instance):
+    assert isinstance(instance, Html_STRIKE)
 
-@given(instance=Html::IMG_strategy)
-def test_html::img_src_type(instance):
-    assert isinstance(instance.src, str)
-
-
-@given(instance=Html::IMG_strategy)
-def test_html::img_src_setter(instance):
-    original = instance.src
-    instance.src = original
-    assert instance.src == original
-
-@given(instance=Html::IMG_strategy)
-def test_html::img_width_type(instance):
-    assert isinstance(instance.width, str)
-
-
-@given(instance=Html::IMG_strategy)
-def test_html::img_width_setter(instance):
-    original = instance.width
-    instance.width = original
-    assert instance.width == original
-
-@given(instance=Html::IMG_strategy)
-def test_html::img_ismap_type(instance):
-    assert isinstance(instance.ismap, str)
-
-
-@given(instance=Html::IMG_strategy)
-def test_html::img_ismap_setter(instance):
-    original = instance.ismap
-    instance.ismap = original
-    assert instance.ismap == original
-
-@given(instance=Html::IMG_strategy)
-def test_html::img_hspace_type(instance):
-    assert isinstance(instance.hspace, str)
-
-
-@given(instance=Html::IMG_strategy)
-def test_html::img_hspace_setter(instance):
-    original = instance.hspace
-    instance.hspace = original
-    assert instance.hspace == original
-
-@given(instance=Html::IMG_strategy)
-def test_html::img_vspace_type(instance):
-    assert isinstance(instance.vspace, str)
-
-
-@given(instance=Html::IMG_strategy)
-def test_html::img_vspace_setter(instance):
-    original = instance.vspace
-    instance.vspace = original
-    assert instance.vspace == original
-
-@given(instance=Html::IMG_strategy)
-def test_html::img_border_type(instance):
-    assert isinstance(instance.border, str)
-
-
-@given(instance=Html::IMG_strategy)
-def test_html::img_border_setter(instance):
-    original = instance.border
-    instance.border = original
-    assert instance.border == original
-
-@given(instance=Html::IMG_strategy)
-def test_html::img_alt_type(instance):
-    assert isinstance(instance.alt, str)
-
-
-@given(instance=Html::IMG_strategy)
-def test_html::img_alt_setter(instance):
-    original = instance.alt
-    instance.alt = original
-    assert instance.alt == original
-
-@given(instance=Html::IMG_strategy)
-def test_html::img_align_type(instance):
-    assert isinstance(instance.align, str)
-
-
-@given(instance=Html::IMG_strategy)
-def test_html::img_align_setter(instance):
-    original = instance.align
-    instance.align = original
-    assert instance.align == original
-
-@given(instance=Html::IMG_strategy)
-def test_html::img_height_type(instance):
-    assert isinstance(instance.height, str)
-
-
-@given(instance=Html::IMG_strategy)
-def test_html::img_height_setter(instance):
-    original = instance.height
-    instance.height = original
-    assert instance.height == original
-
-@given(instance=Html::IMG_strategy)
-def test_html::img_usemap_type(instance):
-    assert isinstance(instance.usemap, str)
-
-
-@given(instance=Html::IMG_strategy)
-def test_html::img_usemap_setter(instance):
-    original = instance.usemap
-    instance.usemap = original
-    assert instance.usemap == original
-
-@given(instance=Html::BR_strategy)
+@given(instance=Html_AREA_strategy)
 @settings(max_examples=50)
-def test_html::br_instantiation(instance):
-    assert isinstance(instance, Html::BR)
-
-@given(instance=Html::BR_strategy)
-def test_html::br_clear_type(instance):
-    assert isinstance(instance.clear, str)
+def test_html_area_instantiation(instance):
+    assert isinstance(instance, Html_AREA)
 
 
-@given(instance=Html::BR_strategy)
-def test_html::br_clear_setter(instance):
-    original = instance.clear
-    instance.clear = original
-    assert instance.clear == original
 
-@given(instance=Html::P_strategy)
-@settings(max_examples=50)
-def test_html::p_instantiation(instance):
-    assert isinstance(instance, Html::P)
-
-@given(instance=Html::H1_strategy)
-@settings(max_examples=50)
-def test_html::h1_instantiation(instance):
-    assert isinstance(instance, Html::H1)
-
-@given(instance=Html::NOEMBED_strategy)
-@settings(max_examples=50)
-def test_html::noembed_instantiation(instance):
-    assert isinstance(instance, Html::NOEMBED)
-
-@given(instance=Html::BIG_strategy)
-@settings(max_examples=50)
-def test_html::big_instantiation(instance):
-    assert isinstance(instance, Html::BIG)
-
-@given(instance=Html::H4_strategy)
-@settings(max_examples=50)
-def test_html::h4_instantiation(instance):
-    assert isinstance(instance, Html::H4)
-
-@given(instance=Html::EM_strategy)
-@settings(max_examples=50)
-def test_html::em_instantiation(instance):
-    assert isinstance(instance, Html::EM)
-
-@given(instance=Html::TABLEElement_strategy)
-@settings(max_examples=50)
-def test_html::tableelement_instantiation(instance):
-    assert isinstance(instance, Html::TABLEElement)
-
-@given(instance=Html::TABLEElement_strategy)
-def test_html::tableelement_background_type(instance):
-    assert isinstance(instance.background, str)
-
-
-@given(instance=Html::TABLEElement_strategy)
-def test_html::tableelement_background_setter(instance):
-    original = instance.background
-    instance.background = original
-    assert instance.background == original
-
-@given(instance=Html::TABLEElement_strategy)
-def test_html::tableelement_bgcolor_type(instance):
-    assert isinstance(instance.bgcolor, str)
-
-
-@given(instance=Html::TABLEElement_strategy)
-def test_html::tableelement_bgcolor_setter(instance):
-    original = instance.bgcolor
-    instance.bgcolor = original
-    assert instance.bgcolor == original
-
-@given(instance=Html::B_strategy)
-@settings(max_examples=50)
-def test_html::b_instantiation(instance):
-    assert isinstance(instance, Html::B)
-
-@given(instance=Html::SUB_strategy)
-@settings(max_examples=50)
-def test_html::sub_instantiation(instance):
-    assert isinstance(instance, Html::SUB)
-
-@given(instance=Html::SPAN_strategy)
-@settings(max_examples=50)
-def test_html::span_instantiation(instance):
-    assert isinstance(instance, Html::SPAN)
-
-@given(instance=Html::SPAN_strategy)
-def test_html::span_style_type(instance):
-    assert isinstance(instance.style, str)
-
-
-@given(instance=Html::SPAN_strategy)
-def test_html::span_style_setter(instance):
-    original = instance.style
-    instance.style = original
-    assert instance.style == original
-
-@given(instance=Html::H2_strategy)
-@settings(max_examples=50)
-def test_html::h2_instantiation(instance):
-    assert isinstance(instance, Html::H2)
-
-@given(instance=Html::AREA_strategy)
-@settings(max_examples=50)
-def test_html::area_instantiation(instance):
-    assert isinstance(instance, Html::AREA)
-
-@given(instance=Html::AREA_strategy)
-def test_html::area_coords_type(instance):
-    assert isinstance(instance.coords, str)
-
-
-@given(instance=Html::AREA_strategy)
-def test_html::area_coords_setter(instance):
+@given(instance=Html_AREA_strategy)
+def test_html_area_coords_setter(instance):
     original = instance.coords
     instance.coords = original
     assert instance.coords == original
 
-@given(instance=Html::AREA_strategy)
-def test_html::area_shape_type(instance):
-    assert isinstance(instance.shape, str)
 
 
-@given(instance=Html::AREA_strategy)
-def test_html::area_shape_setter(instance):
+@given(instance=Html_AREA_strategy)
+def test_html_area_ahref_setter(instance):
+    original = instance.ahref
+    instance.ahref = original
+    assert instance.ahref == original
+
+
+
+@given(instance=Html_AREA_strategy)
+def test_html_area_shape_setter(instance):
     original = instance.shape
     instance.shape = original
     assert instance.shape == original
 
-@given(instance=Html::AREA_strategy)
-def test_html::area_ahref_type(instance):
-    assert isinstance(instance.ahref, str)
+@given(instance=Html_H4_strategy)
+@settings(max_examples=50)
+def test_html_h4_instantiation(instance):
+    assert isinstance(instance, Html_H4)
+
+@given(instance=Html_B_strategy)
+@settings(max_examples=50)
+def test_html_b_instantiation(instance):
+    assert isinstance(instance, Html_B)
+
+@given(instance=Html_TT_strategy)
+@settings(max_examples=50)
+def test_html_tt_instantiation(instance):
+    assert isinstance(instance, Html_TT)
+
+@given(instance=Html_BIG_strategy)
+@settings(max_examples=50)
+def test_html_big_instantiation(instance):
+    assert isinstance(instance, Html_BIG)
+
+@given(instance=Html_IMG_strategy)
+@settings(max_examples=50)
+def test_html_img_instantiation(instance):
+    assert isinstance(instance, Html_IMG)
 
 
-@given(instance=Html::AREA_strategy)
-def test_html::area_ahref_setter(instance):
+
+@given(instance=Html_IMG_strategy)
+def test_html_img_alt_setter(instance):
+    original = instance.alt
+    instance.alt = original
+    assert instance.alt == original
+
+
+
+@given(instance=Html_IMG_strategy)
+def test_html_img_ismap_setter(instance):
+    original = instance.ismap
+    instance.ismap = original
+    assert instance.ismap == original
+
+
+
+@given(instance=Html_IMG_strategy)
+def test_html_img_usemap_setter(instance):
+    original = instance.usemap
+    instance.usemap = original
+    assert instance.usemap == original
+
+
+
+@given(instance=Html_IMG_strategy)
+def test_html_img_border_setter(instance):
+    original = instance.border
+    instance.border = original
+    assert instance.border == original
+
+
+
+@given(instance=Html_IMG_strategy)
+def test_html_img_src_setter(instance):
+    original = instance.src
+    instance.src = original
+    assert instance.src == original
+
+
+
+@given(instance=Html_IMG_strategy)
+def test_html_img_vspace_setter(instance):
+    original = instance.vspace
+    instance.vspace = original
+    assert instance.vspace == original
+
+
+
+@given(instance=Html_IMG_strategy)
+def test_html_img_height_setter(instance):
+    original = instance.height
+    instance.height = original
+    assert instance.height == original
+
+
+
+@given(instance=Html_IMG_strategy)
+def test_html_img_hspace_setter(instance):
+    original = instance.hspace
+    instance.hspace = original
+    assert instance.hspace == original
+
+
+
+@given(instance=Html_IMG_strategy)
+def test_html_img_align_setter(instance):
+    original = instance.align
+    instance.align = original
+    assert instance.align == original
+
+
+
+@given(instance=Html_IMG_strategy)
+def test_html_img_width_setter(instance):
+    original = instance.width
+    instance.width = original
+    assert instance.width == original
+
+@given(instance=Html_I_strategy)
+@settings(max_examples=50)
+def test_html_i_instantiation(instance):
+    assert isinstance(instance, Html_I)
+
+@given(instance=Html_TABLEElement_strategy)
+@settings(max_examples=50)
+def test_html_tableelement_instantiation(instance):
+    assert isinstance(instance, Html_TABLEElement)
+
+
+
+@given(instance=Html_TABLEElement_strategy)
+def test_html_tableelement_background_setter(instance):
+    original = instance.background
+    instance.background = original
+    assert instance.background == original
+
+
+
+@given(instance=Html_TABLEElement_strategy)
+def test_html_tableelement_bgcolor_setter(instance):
+    original = instance.bgcolor
+    instance.bgcolor = original
+    assert instance.bgcolor == original
+
+@given(instance=Html_BR_strategy)
+@settings(max_examples=50)
+def test_html_br_instantiation(instance):
+    assert isinstance(instance, Html_BR)
+
+
+
+@given(instance=Html_BR_strategy)
+def test_html_br_clear_setter(instance):
+    original = instance.clear
+    instance.clear = original
+    assert instance.clear == original
+
+@given(instance=Html_P_strategy)
+@settings(max_examples=50)
+def test_html_p_instantiation(instance):
+    assert isinstance(instance, Html_P)
+
+@given(instance=Html_MAP_strategy)
+@settings(max_examples=50)
+def test_html_map_instantiation(instance):
+    assert isinstance(instance, Html_MAP)
+
+@given(instance=Html_SPAN_strategy)
+@settings(max_examples=50)
+def test_html_span_instantiation(instance):
+    assert isinstance(instance, Html_SPAN)
+
+
+
+@given(instance=Html_SPAN_strategy)
+def test_html_span_style_setter(instance):
+    original = instance.style
+    instance.style = original
+    assert instance.style == original
+
+@given(instance=Html_A_strategy)
+@settings(max_examples=50)
+def test_html_a_instantiation(instance):
+    assert isinstance(instance, Html_A)
+
+
+
+@given(instance=Html_A_strategy)
+def test_html_a_ahref_setter(instance):
     original = instance.ahref
     instance.ahref = original
     assert instance.ahref == original
+
+
+
+@given(instance=Html_A_strategy)
+def test_html_a_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+@given(instance=Html_EMBED_strategy)
+@settings(max_examples=50)
+def test_html_embed_instantiation(instance):
+    assert isinstance(instance, Html_EMBED)
+
+
+
+@given(instance=Html_EMBED_strategy)
+def test_html_embed_align_setter(instance):
+    original = instance.align
+    instance.align = original
+    assert instance.align == original
+
+
+
+@given(instance=Html_EMBED_strategy)
+def test_html_embed_src_setter(instance):
+    original = instance.src
+    instance.src = original
+    assert instance.src == original
+
+
+
+@given(instance=Html_EMBED_strategy)
+def test_html_embed_border_setter(instance):
+    original = instance.border
+    instance.border = original
+    assert instance.border == original
+
+
+
+@given(instance=Html_EMBED_strategy)
+def test_html_embed_hspace_setter(instance):
+    original = instance.hspace
+    instance.hspace = original
+    assert instance.hspace == original
+
+
+
+@given(instance=Html_EMBED_strategy)
+def test_html_embed_vspace_setter(instance):
+    original = instance.vspace
+    instance.vspace = original
+    assert instance.vspace == original
+
+
+
+@given(instance=Html_EMBED_strategy)
+def test_html_embed_width_setter(instance):
+    original = instance.width
+    instance.width = original
+    assert instance.width == original
+
+
+
+@given(instance=Html_EMBED_strategy)
+def test_html_embed_height_setter(instance):
+    original = instance.height
+    instance.height = original
+    assert instance.height == original
+
+@given(instance=Html_FONT_strategy)
+@settings(max_examples=50)
+def test_html_font_instantiation(instance):
+    assert isinstance(instance, Html_FONT)
+
+
+
+@given(instance=Html_FONT_strategy)
+def test_html_font_size_setter(instance):
+    original = instance.size
+    instance.size = original
+    assert instance.size == original
+
+
+
+@given(instance=Html_FONT_strategy)
+def test_html_font_color_setter(instance):
+    original = instance.color
+    instance.color = original
+    assert instance.color == original
+
+
+
+@given(instance=Html_FONT_strategy)
+def test_html_font_face_setter(instance):
+    original = instance.face
+    instance.face = original
+    assert instance.face == original
+
+@given(instance=Html_STRONG_strategy)
+@settings(max_examples=50)
+def test_html_strong_instantiation(instance):
+    assert isinstance(instance, Html_STRONG)
+
+@given(instance=Html_SMALL_strategy)
+@settings(max_examples=50)
+def test_html_small_instantiation(instance):
+    assert isinstance(instance, Html_SMALL)

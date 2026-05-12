@@ -3,14 +3,14 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    automaticexperiment::EStructuralFeature,
+from python_code import (
+    automaticexperiment_EStructuralFeature,
     Identifiable,
-    automaticexperiment::AutomaticExperiment,
-    automaticexperiment::ModifiableParameter,
-    automaticexperiment::Scenario,
+    automaticexperiment_AutomaticExperiment,
+    automaticexperiment_ModifiableParameter,
+    automaticexperiment_Scenario,
 )
 
 # =============================================================================
@@ -19,16 +19,16 @@ from classes import (
 
 
 
-def test_automaticexperiment::estructuralfeature_is_not_abstract():
-    assert not inspect.isabstract(automaticexperiment::EStructuralFeature)
+def test_automaticexperiment_estructuralfeature_is_not_abstract():
+    assert not inspect.isabstract(automaticexperiment_EStructuralFeature)
 
 
-def test_automaticexperiment::estructuralfeature_constructor_exists():
-    assert callable(automaticexperiment::EStructuralFeature.__init__)
+def test_automaticexperiment_estructuralfeature_constructor_exists():
+    assert callable(automaticexperiment_EStructuralFeature.__init__)
 
 
-def test_automaticexperiment::estructuralfeature_constructor_args():
-    sig = inspect.signature(automaticexperiment::EStructuralFeature.__init__)
+def test_automaticexperiment_estructuralfeature_constructor_args():
+    sig = inspect.signature(automaticexperiment_EStructuralFeature.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -47,164 +47,164 @@ def test_identifiable_constructor_args():
 
 
 
-def test_automaticexperiment::automaticexperiment_is_not_abstract():
-    assert not inspect.isabstract(automaticexperiment::AutomaticExperiment)
+def test_automaticexperiment_automaticexperiment_is_not_abstract():
+    assert not inspect.isabstract(automaticexperiment_AutomaticExperiment)
 
 
-def test_automaticexperiment::automaticexperiment_constructor_exists():
-    assert callable(automaticexperiment::AutomaticExperiment.__init__)
+def test_automaticexperiment_automaticexperiment_constructor_exists():
+    assert callable(automaticexperiment_AutomaticExperiment.__init__)
 
 
-def test_automaticexperiment::automaticexperiment_constructor_args():
-    sig = inspect.signature(automaticexperiment::AutomaticExperiment.__init__)
+def test_automaticexperiment_automaticexperiment_constructor_args():
+    sig = inspect.signature(automaticexperiment_AutomaticExperiment.__init__)
     params = list(sig.parameters.keys())
-    assert "referanceDataDir" in params, "Missing parameter 'referanceDataDir'"
-    assert "errorFunction" in params, "Missing parameter 'errorFunction'"
-    assert "reInit" in params, "Missing parameter 'reInit'"
     assert "tolerance" in params, "Missing parameter 'tolerance'"
-    assert "maximumNumberOfIterations" in params, "Missing parameter 'maximumNumberOfIterations'"
+    assert "errorFunction" in params, "Missing parameter 'errorFunction'"
     assert "errorAnalysisAlgorithm" in params, "Missing parameter 'errorAnalysisAlgorithm'"
+    assert "reInit" in params, "Missing parameter 'reInit'"
+    assert "maximumNumberOfIterations" in params, "Missing parameter 'maximumNumberOfIterations'"
+    assert "referanceDataDir" in params, "Missing parameter 'referanceDataDir'"
 
-def test_automaticexperiment::automaticexperiment_has_referanceDataDir():
-    assert hasattr(automaticexperiment::AutomaticExperiment, "referanceDataDir")
+def test_automaticexperiment_automaticexperiment_has_tolerance():
+    assert hasattr(automaticexperiment_AutomaticExperiment, "tolerance")
     descriptor = None
-    for klass in automaticexperiment::AutomaticExperiment.__mro__:
-        if "referanceDataDir" in klass.__dict__:
-            descriptor = klass.__dict__["referanceDataDir"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_automaticexperiment::automaticexperiment_has_errorFunction():
-    assert hasattr(automaticexperiment::AutomaticExperiment, "errorFunction")
-    descriptor = None
-    for klass in automaticexperiment::AutomaticExperiment.__mro__:
-        if "errorFunction" in klass.__dict__:
-            descriptor = klass.__dict__["errorFunction"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_automaticexperiment::automaticexperiment_has_reInit():
-    assert hasattr(automaticexperiment::AutomaticExperiment, "reInit")
-    descriptor = None
-    for klass in automaticexperiment::AutomaticExperiment.__mro__:
-        if "reInit" in klass.__dict__:
-            descriptor = klass.__dict__["reInit"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_automaticexperiment::automaticexperiment_has_tolerance():
-    assert hasattr(automaticexperiment::AutomaticExperiment, "tolerance")
-    descriptor = None
-    for klass in automaticexperiment::AutomaticExperiment.__mro__:
+    for klass in automaticexperiment_AutomaticExperiment.__mro__:
         if "tolerance" in klass.__dict__:
             descriptor = klass.__dict__["tolerance"]
             break
     assert isinstance(descriptor, property)
 
-def test_automaticexperiment::automaticexperiment_has_maximumNumberOfIterations():
-    assert hasattr(automaticexperiment::AutomaticExperiment, "maximumNumberOfIterations")
+def test_automaticexperiment_automaticexperiment_has_errorFunction():
+    assert hasattr(automaticexperiment_AutomaticExperiment, "errorFunction")
     descriptor = None
-    for klass in automaticexperiment::AutomaticExperiment.__mro__:
-        if "maximumNumberOfIterations" in klass.__dict__:
-            descriptor = klass.__dict__["maximumNumberOfIterations"]
+    for klass in automaticexperiment_AutomaticExperiment.__mro__:
+        if "errorFunction" in klass.__dict__:
+            descriptor = klass.__dict__["errorFunction"]
             break
     assert isinstance(descriptor, property)
 
-def test_automaticexperiment::automaticexperiment_has_errorAnalysisAlgorithm():
-    assert hasattr(automaticexperiment::AutomaticExperiment, "errorAnalysisAlgorithm")
+def test_automaticexperiment_automaticexperiment_has_errorAnalysisAlgorithm():
+    assert hasattr(automaticexperiment_AutomaticExperiment, "errorAnalysisAlgorithm")
     descriptor = None
-    for klass in automaticexperiment::AutomaticExperiment.__mro__:
+    for klass in automaticexperiment_AutomaticExperiment.__mro__:
         if "errorAnalysisAlgorithm" in klass.__dict__:
             descriptor = klass.__dict__["errorAnalysisAlgorithm"]
             break
     assert isinstance(descriptor, property)
 
-
-
-def test_automaticexperiment::modifiableparameter_is_not_abstract():
-    assert not inspect.isabstract(automaticexperiment::ModifiableParameter)
-
-
-def test_automaticexperiment::modifiableparameter_constructor_exists():
-    assert callable(automaticexperiment::ModifiableParameter.__init__)
-
-
-def test_automaticexperiment::modifiableparameter_constructor_args():
-    sig = inspect.signature(automaticexperiment::ModifiableParameter.__init__)
-    params = list(sig.parameters.keys())
-    assert "upperBound" in params, "Missing parameter 'upperBound'"
-    assert "featureName" in params, "Missing parameter 'featureName'"
-    assert "step" in params, "Missing parameter 'step'"
-    assert "lowerBound" in params, "Missing parameter 'lowerBound'"
-    assert "initialValue" in params, "Missing parameter 'initialValue'"
-    assert "targetURI" in params, "Missing parameter 'targetURI'"
-
-def test_automaticexperiment::modifiableparameter_has_upperBound():
-    assert hasattr(automaticexperiment::ModifiableParameter, "upperBound")
+def test_automaticexperiment_automaticexperiment_has_reInit():
+    assert hasattr(automaticexperiment_AutomaticExperiment, "reInit")
     descriptor = None
-    for klass in automaticexperiment::ModifiableParameter.__mro__:
-        if "upperBound" in klass.__dict__:
-            descriptor = klass.__dict__["upperBound"]
+    for klass in automaticexperiment_AutomaticExperiment.__mro__:
+        if "reInit" in klass.__dict__:
+            descriptor = klass.__dict__["reInit"]
             break
     assert isinstance(descriptor, property)
 
-def test_automaticexperiment::modifiableparameter_has_featureName():
-    assert hasattr(automaticexperiment::ModifiableParameter, "featureName")
+def test_automaticexperiment_automaticexperiment_has_maximumNumberOfIterations():
+    assert hasattr(automaticexperiment_AutomaticExperiment, "maximumNumberOfIterations")
     descriptor = None
-    for klass in automaticexperiment::ModifiableParameter.__mro__:
+    for klass in automaticexperiment_AutomaticExperiment.__mro__:
+        if "maximumNumberOfIterations" in klass.__dict__:
+            descriptor = klass.__dict__["maximumNumberOfIterations"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_automaticexperiment_automaticexperiment_has_referanceDataDir():
+    assert hasattr(automaticexperiment_AutomaticExperiment, "referanceDataDir")
+    descriptor = None
+    for klass in automaticexperiment_AutomaticExperiment.__mro__:
+        if "referanceDataDir" in klass.__dict__:
+            descriptor = klass.__dict__["referanceDataDir"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_automaticexperiment_modifiableparameter_is_not_abstract():
+    assert not inspect.isabstract(automaticexperiment_ModifiableParameter)
+
+
+def test_automaticexperiment_modifiableparameter_constructor_exists():
+    assert callable(automaticexperiment_ModifiableParameter.__init__)
+
+
+def test_automaticexperiment_modifiableparameter_constructor_args():
+    sig = inspect.signature(automaticexperiment_ModifiableParameter.__init__)
+    params = list(sig.parameters.keys())
+    assert "featureName" in params, "Missing parameter 'featureName'"
+    assert "targetURI" in params, "Missing parameter 'targetURI'"
+    assert "lowerBound" in params, "Missing parameter 'lowerBound'"
+    assert "upperBound" in params, "Missing parameter 'upperBound'"
+    assert "initialValue" in params, "Missing parameter 'initialValue'"
+    assert "step" in params, "Missing parameter 'step'"
+
+def test_automaticexperiment_modifiableparameter_has_featureName():
+    assert hasattr(automaticexperiment_ModifiableParameter, "featureName")
+    descriptor = None
+    for klass in automaticexperiment_ModifiableParameter.__mro__:
         if "featureName" in klass.__dict__:
             descriptor = klass.__dict__["featureName"]
             break
     assert isinstance(descriptor, property)
 
-def test_automaticexperiment::modifiableparameter_has_step():
-    assert hasattr(automaticexperiment::ModifiableParameter, "step")
+def test_automaticexperiment_modifiableparameter_has_targetURI():
+    assert hasattr(automaticexperiment_ModifiableParameter, "targetURI")
     descriptor = None
-    for klass in automaticexperiment::ModifiableParameter.__mro__:
-        if "step" in klass.__dict__:
-            descriptor = klass.__dict__["step"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_automaticexperiment::modifiableparameter_has_lowerBound():
-    assert hasattr(automaticexperiment::ModifiableParameter, "lowerBound")
-    descriptor = None
-    for klass in automaticexperiment::ModifiableParameter.__mro__:
-        if "lowerBound" in klass.__dict__:
-            descriptor = klass.__dict__["lowerBound"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_automaticexperiment::modifiableparameter_has_initialValue():
-    assert hasattr(automaticexperiment::ModifiableParameter, "initialValue")
-    descriptor = None
-    for klass in automaticexperiment::ModifiableParameter.__mro__:
-        if "initialValue" in klass.__dict__:
-            descriptor = klass.__dict__["initialValue"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_automaticexperiment::modifiableparameter_has_targetURI():
-    assert hasattr(automaticexperiment::ModifiableParameter, "targetURI")
-    descriptor = None
-    for klass in automaticexperiment::ModifiableParameter.__mro__:
+    for klass in automaticexperiment_ModifiableParameter.__mro__:
         if "targetURI" in klass.__dict__:
             descriptor = klass.__dict__["targetURI"]
             break
     assert isinstance(descriptor, property)
 
+def test_automaticexperiment_modifiableparameter_has_lowerBound():
+    assert hasattr(automaticexperiment_ModifiableParameter, "lowerBound")
+    descriptor = None
+    for klass in automaticexperiment_ModifiableParameter.__mro__:
+        if "lowerBound" in klass.__dict__:
+            descriptor = klass.__dict__["lowerBound"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_automaticexperiment_modifiableparameter_has_upperBound():
+    assert hasattr(automaticexperiment_ModifiableParameter, "upperBound")
+    descriptor = None
+    for klass in automaticexperiment_ModifiableParameter.__mro__:
+        if "upperBound" in klass.__dict__:
+            descriptor = klass.__dict__["upperBound"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_automaticexperiment_modifiableparameter_has_initialValue():
+    assert hasattr(automaticexperiment_ModifiableParameter, "initialValue")
+    descriptor = None
+    for klass in automaticexperiment_ModifiableParameter.__mro__:
+        if "initialValue" in klass.__dict__:
+            descriptor = klass.__dict__["initialValue"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_automaticexperiment_modifiableparameter_has_step():
+    assert hasattr(automaticexperiment_ModifiableParameter, "step")
+    descriptor = None
+    for klass in automaticexperiment_ModifiableParameter.__mro__:
+        if "step" in klass.__dict__:
+            descriptor = klass.__dict__["step"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_automaticexperiment::scenario_is_not_abstract():
-    assert not inspect.isabstract(automaticexperiment::Scenario)
+
+def test_automaticexperiment_scenario_is_not_abstract():
+    assert not inspect.isabstract(automaticexperiment_Scenario)
 
 
-def test_automaticexperiment::scenario_constructor_exists():
-    assert callable(automaticexperiment::Scenario.__init__)
+def test_automaticexperiment_scenario_constructor_exists():
+    assert callable(automaticexperiment_Scenario.__init__)
 
 
-def test_automaticexperiment::scenario_constructor_args():
-    sig = inspect.signature(automaticexperiment::Scenario.__init__)
+def test_automaticexperiment_scenario_constructor_args():
+    sig = inspect.signature(automaticexperiment_Scenario.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -219,199 +219,163 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-automaticexperiment::EStructuralFeature_strategy = st.builds(
-    automaticexperiment::EStructuralFeature,
+automaticexperiment_EStructuralFeature_strategy = st.builds(
+    automaticexperiment_EStructuralFeature,
 )
 Identifiable_strategy = st.builds(
     Identifiable,
 )
-automaticexperiment::AutomaticExperiment_strategy = st.builds(
-    automaticexperiment::AutomaticExperiment,
-    referanceDataDir=
-        safe_text,
+automaticexperiment_AutomaticExperiment_strategy = st.builds(
+    automaticexperiment_AutomaticExperiment,
+    tolerance=
+        st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False),
     errorFunction=
+        safe_text,
+    errorAnalysisAlgorithm=
         safe_text,
     reInit=
         st.booleans(),
-    tolerance=
-        st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False),
     maximumNumberOfIterations=
         safe_text,
-    errorAnalysisAlgorithm=
+    referanceDataDir=
         safe_text
 )
-automaticexperiment::ModifiableParameter_strategy = st.builds(
-    automaticexperiment::ModifiableParameter,
-    upperBound=
-        st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False),
+automaticexperiment_ModifiableParameter_strategy = st.builds(
+    automaticexperiment_ModifiableParameter,
     featureName=
         safe_text,
-    step=
-        st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False),
+    targetURI=
+        safe_text,
     lowerBound=
+        st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False),
+    upperBound=
         st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False),
     initialValue=
         st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False),
-    targetURI=
-        safe_text
+    step=
+        st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False)
 )
-automaticexperiment::Scenario_strategy = st.builds(
-    automaticexperiment::Scenario,
+automaticexperiment_Scenario_strategy = st.builds(
+    automaticexperiment_Scenario,
 )
 
-@given(instance=automaticexperiment::EStructuralFeature_strategy)
+@given(instance=automaticexperiment_EStructuralFeature_strategy)
 @settings(max_examples=50)
-def test_automaticexperiment::estructuralfeature_instantiation(instance):
-    assert isinstance(instance, automaticexperiment::EStructuralFeature)
+def test_automaticexperiment_estructuralfeature_instantiation(instance):
+    assert isinstance(instance, automaticexperiment_EStructuralFeature)
 
 @given(instance=Identifiable_strategy)
 @settings(max_examples=50)
 def test_identifiable_instantiation(instance):
     assert isinstance(instance, Identifiable)
 
-@given(instance=automaticexperiment::AutomaticExperiment_strategy)
+@given(instance=automaticexperiment_AutomaticExperiment_strategy)
 @settings(max_examples=50)
-def test_automaticexperiment::automaticexperiment_instantiation(instance):
-    assert isinstance(instance, automaticexperiment::AutomaticExperiment)
-
-@given(instance=automaticexperiment::AutomaticExperiment_strategy)
-def test_automaticexperiment::automaticexperiment_referanceDataDir_type(instance):
-    assert isinstance(instance.referanceDataDir, str)
+def test_automaticexperiment_automaticexperiment_instantiation(instance):
+    assert isinstance(instance, automaticexperiment_AutomaticExperiment)
 
 
-@given(instance=automaticexperiment::AutomaticExperiment_strategy)
-def test_automaticexperiment::automaticexperiment_referanceDataDir_setter(instance):
-    original = instance.referanceDataDir
-    instance.referanceDataDir = original
-    assert instance.referanceDataDir == original
 
-@given(instance=automaticexperiment::AutomaticExperiment_strategy)
-def test_automaticexperiment::automaticexperiment_errorFunction_type(instance):
-    assert isinstance(instance.errorFunction, str)
-
-
-@given(instance=automaticexperiment::AutomaticExperiment_strategy)
-def test_automaticexperiment::automaticexperiment_errorFunction_setter(instance):
-    original = instance.errorFunction
-    instance.errorFunction = original
-    assert instance.errorFunction == original
-
-@given(instance=automaticexperiment::AutomaticExperiment_strategy)
-def test_automaticexperiment::automaticexperiment_reInit_type(instance):
-    assert isinstance(instance.reInit, bool)
-
-
-@given(instance=automaticexperiment::AutomaticExperiment_strategy)
-def test_automaticexperiment::automaticexperiment_reInit_setter(instance):
-    original = instance.reInit
-    instance.reInit = original
-    assert instance.reInit == original
-
-@given(instance=automaticexperiment::AutomaticExperiment_strategy)
-def test_automaticexperiment::automaticexperiment_tolerance_type(instance):
-    assert isinstance(instance.tolerance, float)
-
-
-@given(instance=automaticexperiment::AutomaticExperiment_strategy)
-def test_automaticexperiment::automaticexperiment_tolerance_setter(instance):
+@given(instance=automaticexperiment_AutomaticExperiment_strategy)
+def test_automaticexperiment_automaticexperiment_tolerance_setter(instance):
     original = instance.tolerance
     instance.tolerance = original
     assert instance.tolerance == original
 
-@given(instance=automaticexperiment::AutomaticExperiment_strategy)
-def test_automaticexperiment::automaticexperiment_maximumNumberOfIterations_type(instance):
-    assert isinstance(instance.maximumNumberOfIterations, str)
 
 
-@given(instance=automaticexperiment::AutomaticExperiment_strategy)
-def test_automaticexperiment::automaticexperiment_maximumNumberOfIterations_setter(instance):
-    original = instance.maximumNumberOfIterations
-    instance.maximumNumberOfIterations = original
-    assert instance.maximumNumberOfIterations == original
-
-@given(instance=automaticexperiment::AutomaticExperiment_strategy)
-def test_automaticexperiment::automaticexperiment_errorAnalysisAlgorithm_type(instance):
-    assert isinstance(instance.errorAnalysisAlgorithm, str)
+@given(instance=automaticexperiment_AutomaticExperiment_strategy)
+def test_automaticexperiment_automaticexperiment_errorFunction_setter(instance):
+    original = instance.errorFunction
+    instance.errorFunction = original
+    assert instance.errorFunction == original
 
 
-@given(instance=automaticexperiment::AutomaticExperiment_strategy)
-def test_automaticexperiment::automaticexperiment_errorAnalysisAlgorithm_setter(instance):
+
+@given(instance=automaticexperiment_AutomaticExperiment_strategy)
+def test_automaticexperiment_automaticexperiment_errorAnalysisAlgorithm_setter(instance):
     original = instance.errorAnalysisAlgorithm
     instance.errorAnalysisAlgorithm = original
     assert instance.errorAnalysisAlgorithm == original
 
-@given(instance=automaticexperiment::ModifiableParameter_strategy)
+
+
+@given(instance=automaticexperiment_AutomaticExperiment_strategy)
+def test_automaticexperiment_automaticexperiment_reInit_setter(instance):
+    original = instance.reInit
+    instance.reInit = original
+    assert instance.reInit == original
+
+
+
+@given(instance=automaticexperiment_AutomaticExperiment_strategy)
+def test_automaticexperiment_automaticexperiment_maximumNumberOfIterations_setter(instance):
+    original = instance.maximumNumberOfIterations
+    instance.maximumNumberOfIterations = original
+    assert instance.maximumNumberOfIterations == original
+
+
+
+@given(instance=automaticexperiment_AutomaticExperiment_strategy)
+def test_automaticexperiment_automaticexperiment_referanceDataDir_setter(instance):
+    original = instance.referanceDataDir
+    instance.referanceDataDir = original
+    assert instance.referanceDataDir == original
+
+@given(instance=automaticexperiment_ModifiableParameter_strategy)
 @settings(max_examples=50)
-def test_automaticexperiment::modifiableparameter_instantiation(instance):
-    assert isinstance(instance, automaticexperiment::ModifiableParameter)
-
-@given(instance=automaticexperiment::ModifiableParameter_strategy)
-def test_automaticexperiment::modifiableparameter_upperBound_type(instance):
-    assert isinstance(instance.upperBound, float)
+def test_automaticexperiment_modifiableparameter_instantiation(instance):
+    assert isinstance(instance, automaticexperiment_ModifiableParameter)
 
 
-@given(instance=automaticexperiment::ModifiableParameter_strategy)
-def test_automaticexperiment::modifiableparameter_upperBound_setter(instance):
-    original = instance.upperBound
-    instance.upperBound = original
-    assert instance.upperBound == original
 
-@given(instance=automaticexperiment::ModifiableParameter_strategy)
-def test_automaticexperiment::modifiableparameter_featureName_type(instance):
-    assert isinstance(instance.featureName, str)
-
-
-@given(instance=automaticexperiment::ModifiableParameter_strategy)
-def test_automaticexperiment::modifiableparameter_featureName_setter(instance):
+@given(instance=automaticexperiment_ModifiableParameter_strategy)
+def test_automaticexperiment_modifiableparameter_featureName_setter(instance):
     original = instance.featureName
     instance.featureName = original
     assert instance.featureName == original
 
-@given(instance=automaticexperiment::ModifiableParameter_strategy)
-def test_automaticexperiment::modifiableparameter_step_type(instance):
-    assert isinstance(instance.step, float)
 
 
-@given(instance=automaticexperiment::ModifiableParameter_strategy)
-def test_automaticexperiment::modifiableparameter_step_setter(instance):
-    original = instance.step
-    instance.step = original
-    assert instance.step == original
-
-@given(instance=automaticexperiment::ModifiableParameter_strategy)
-def test_automaticexperiment::modifiableparameter_lowerBound_type(instance):
-    assert isinstance(instance.lowerBound, float)
-
-
-@given(instance=automaticexperiment::ModifiableParameter_strategy)
-def test_automaticexperiment::modifiableparameter_lowerBound_setter(instance):
-    original = instance.lowerBound
-    instance.lowerBound = original
-    assert instance.lowerBound == original
-
-@given(instance=automaticexperiment::ModifiableParameter_strategy)
-def test_automaticexperiment::modifiableparameter_initialValue_type(instance):
-    assert isinstance(instance.initialValue, float)
-
-
-@given(instance=automaticexperiment::ModifiableParameter_strategy)
-def test_automaticexperiment::modifiableparameter_initialValue_setter(instance):
-    original = instance.initialValue
-    instance.initialValue = original
-    assert instance.initialValue == original
-
-@given(instance=automaticexperiment::ModifiableParameter_strategy)
-def test_automaticexperiment::modifiableparameter_targetURI_type(instance):
-    assert isinstance(instance.targetURI, str)
-
-
-@given(instance=automaticexperiment::ModifiableParameter_strategy)
-def test_automaticexperiment::modifiableparameter_targetURI_setter(instance):
+@given(instance=automaticexperiment_ModifiableParameter_strategy)
+def test_automaticexperiment_modifiableparameter_targetURI_setter(instance):
     original = instance.targetURI
     instance.targetURI = original
     assert instance.targetURI == original
 
-@given(instance=automaticexperiment::Scenario_strategy)
+
+
+@given(instance=automaticexperiment_ModifiableParameter_strategy)
+def test_automaticexperiment_modifiableparameter_lowerBound_setter(instance):
+    original = instance.lowerBound
+    instance.lowerBound = original
+    assert instance.lowerBound == original
+
+
+
+@given(instance=automaticexperiment_ModifiableParameter_strategy)
+def test_automaticexperiment_modifiableparameter_upperBound_setter(instance):
+    original = instance.upperBound
+    instance.upperBound = original
+    assert instance.upperBound == original
+
+
+
+@given(instance=automaticexperiment_ModifiableParameter_strategy)
+def test_automaticexperiment_modifiableparameter_initialValue_setter(instance):
+    original = instance.initialValue
+    instance.initialValue = original
+    assert instance.initialValue == original
+
+
+
+@given(instance=automaticexperiment_ModifiableParameter_strategy)
+def test_automaticexperiment_modifiableparameter_step_setter(instance):
+    original = instance.step
+    instance.step = original
+    assert instance.step == original
+
+@given(instance=automaticexperiment_Scenario_strategy)
 @settings(max_examples=50)
-def test_automaticexperiment::scenario_instantiation(instance):
-    assert isinstance(instance, automaticexperiment::Scenario)
+def test_automaticexperiment_scenario_instantiation(instance):
+    assert isinstance(instance, automaticexperiment_Scenario)

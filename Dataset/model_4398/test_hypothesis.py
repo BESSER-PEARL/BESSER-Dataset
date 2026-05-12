@@ -3,122 +3,122 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     AngleOperation,
     QuantityScalarOperation,
-    raspirover::AngleScalarDivide,
-    raspirover::AngleScalarMultiply,
+    raspirover_AngleScalarDivide,
+    raspirover_AngleScalarMultiply,
     QuantityHomogenousOperation,
-    raspirover::AngleAdd,
-    raspirover::AngleSubtract,
-    raspirover::AngleGreater,
-    raspirover::AngleSmaller,
-    raspirover::AngleDistinct,
-    raspirover::AngleEquals,
+    raspirover_AngleAdd,
+    raspirover_AngleEquals,
+    raspirover_AngleSmaller,
+    raspirover_AngleDistinct,
+    raspirover_AngleGreater,
+    raspirover_AngleSubtract,
     LengthOperation,
-    raspirover::LengthGreater,
-    raspirover::LengthDistinct,
-    raspirover::LengthSmaller,
-    raspirover::LengthSubtract,
-    raspirover::LengthScalarMultiply,
-    raspirover::LengthEquals,
-    raspirover::LengthScalarDivide,
-    raspirover::LengthAdd,
+    raspirover_LengthScalarMultiply,
+    raspirover_LengthSmaller,
+    raspirover_LengthDistinct,
+    raspirover_LengthScalarDivide,
+    raspirover_LengthGreater,
+    raspirover_LengthSubtract,
+    raspirover_LengthEquals,
+    raspirover_LengthAdd,
     QuantityOperation,
-    raspirover::AngleOperation,
-    raspirover::QuantityScalarOperation,
-    raspirover::QuantityHomogenousOperation,
-    raspirover::QuantityComparisonOperation,
-    raspirover::QuantityArithmeticOperation,
-    raspirover::LengthOperation,
-    raspirover::QuantityOperation,
+    raspirover_QuantityScalarOperation,
+    raspirover_AngleOperation,
+    raspirover_QuantityComparisonOperation,
+    raspirover_QuantityHomogenousOperation,
+    raspirover_QuantityArithmeticOperation,
+    raspirover_LengthOperation,
+    raspirover_QuantityOperation,
     Quantity,
-    raspirover::Angle,
-    raspirover::Length,
+    raspirover_Angle,
+    raspirover_Length,
     AngleUnit,
-    raspirover::Turn,
-    raspirover::Gradian,
-    raspirover::Degree,
-    raspirover::Radian,
+    raspirover_Degree,
+    raspirover_Turn,
+    raspirover_Gradian,
+    raspirover_Radian,
     ImperialSystemUnit,
-    raspirover::Statement,
-    raspirover::Param,
-    raspirover::NamedElement,
-    Module,
-    raspirover::ArduinoModule,
-    ArduinoModule,
-    raspirover::ArduinoAnalogModule,
-    raspirover::ArduinoDigitalModule,
-    Pin,
-    raspirover::Instruction,
-    raspirover::Block,
-    raspirover::RoverProgram,
-    raspirover::Project,
-    NamedElement,
-    raspirover::Module,
-    raspirover::Pin,
-    raspirover::Sketch,
-    raspirover::Board,
-    raspirover::AnalogPin,
-    raspirover::DigitalPin,
-    Board,
-    raspirover::RasPiBoard,
     LengthUnit,
-    raspirover::Foot,
-    raspirover::Inch,
-    raspirover::Yard,
+    raspirover_Yard,
+    raspirover_Inch,
+    raspirover_Foot,
     MetricSystemUnit,
-    raspirover::Millimeter,
-    raspirover::Meter,
-    raspirover::Centimeter,
+    raspirover_Meter,
+    raspirover_Millimeter,
+    raspirover_Centimeter,
     Unit,
-    raspirover::AngleUnit,
-    raspirover::ImperialSystemUnit,
-    raspirover::MetricSystemUnit,
-    raspirover::LengthUnit,
-    raspirover::Unit,
+    raspirover_MetricSystemUnit,
+    raspirover_ImperialSystemUnit,
+    raspirover_AngleUnit,
+    raspirover_LengthUnit,
+    raspirover_Unit,
     Action,
-    raspirover::BackwardAction,
-    raspirover::StopAction,
-    raspirover::LogAction,
-    raspirover::ForwardMinAction,
-    raspirover::SendAction,
-    raspirover::TurnDegAction,
-    raspirover::TurnAction,
-    raspirover::BackwardMinAction,
-    raspirover::ForwardAction,
-    raspirover::Quantity,
+    raspirover_TurnDegAction,
+    raspirover_ForwardMinAction,
+    raspirover_LogAction,
+    raspirover_BackwardAction,
+    raspirover_StopAction,
+    raspirover_SendAction,
+    raspirover_TurnAction,
+    raspirover_BackwardMinAction,
+    raspirover_ForwardAction,
+    raspirover_Quantity,
     RoverValue,
-    raspirover::StringValue,
-    raspirover::BooleanValue,
-    raspirover::NumberValue,
+    raspirover_StringValue,
+    raspirover_BooleanValue,
+    raspirover_NumberValue,
     RoverExpression,
-    raspirover::BooleanExpression,
-    raspirover::StringExpression,
-    raspirover::NumericExpression,
+    raspirover_StringExpression,
+    raspirover_BooleanExpression,
+    raspirover_NumericExpression,
     BooleanValue,
     StringValue,
     NumberValue,
     Query,
-    raspirover::MessageQuery,
-    raspirover::ObstacleQuery,
-    raspirover::HumidityQuery,
-    raspirover::TemperatureQuery,
-    raspirover::Query,
-    raspirover::RoverExpression,
-    raspirover::RoverValue,
+    raspirover_ObstacleQuery,
+    raspirover_HumidityQuery,
+    raspirover_MessageQuery,
+    raspirover_TemperatureQuery,
+    raspirover_Query,
+    raspirover_RoverExpression,
+    raspirover_RoverValue,
     Statement,
-    raspirover::VarAssignment,
-    raspirover::VarRef,
-    raspirover::Conditional,
-    raspirover::Loop,
-    raspirover::RclBlock,
-    raspirover::Action,
-    BooleanOperator,
-    StringOperator,
+    raspirover_VarRef,
+    raspirover_Conditional,
+    raspirover_Action,
+    raspirover_Loop,
+    raspirover_VarAssignment,
+    raspirover_Statement,
+    raspirover_RclBlock,
+    raspirover_Param,
+    raspirover_NamedElement,
+    Module,
+    raspirover_ArduinoModule,
+    ArduinoModule,
+    raspirover_ArduinoAnalogModule,
+    raspirover_ArduinoDigitalModule,
+    Pin,
+    raspirover_Instruction,
+    raspirover_Block,
+    raspirover_RoverProgram,
+    raspirover_Project,
+    NamedElement,
+    raspirover_Pin,
+    raspirover_Module,
+    raspirover_Sketch,
+    raspirover_Board,
+    raspirover_AnalogPin,
+    raspirover_DigitalPin,
+    Board,
+    raspirover_RasPiBoard,
     NumericOperator,
+    StringOperator,
+    BooleanOperator,
 )
 
 # =============================================================================
@@ -155,30 +155,30 @@ def test_quantityscalaroperation_constructor_args():
 
 
 
-def test_raspirover::anglescalardivide_is_not_abstract():
-    assert not inspect.isabstract(raspirover::AngleScalarDivide)
+def test_raspirover_anglescalardivide_is_not_abstract():
+    assert not inspect.isabstract(raspirover_AngleScalarDivide)
 
 
-def test_raspirover::anglescalardivide_constructor_exists():
-    assert callable(raspirover::AngleScalarDivide.__init__)
+def test_raspirover_anglescalardivide_constructor_exists():
+    assert callable(raspirover_AngleScalarDivide.__init__)
 
 
-def test_raspirover::anglescalardivide_constructor_args():
-    sig = inspect.signature(raspirover::AngleScalarDivide.__init__)
+def test_raspirover_anglescalardivide_constructor_args():
+    sig = inspect.signature(raspirover_AngleScalarDivide.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_raspirover::anglescalarmultiply_is_not_abstract():
-    assert not inspect.isabstract(raspirover::AngleScalarMultiply)
+def test_raspirover_anglescalarmultiply_is_not_abstract():
+    assert not inspect.isabstract(raspirover_AngleScalarMultiply)
 
 
-def test_raspirover::anglescalarmultiply_constructor_exists():
-    assert callable(raspirover::AngleScalarMultiply.__init__)
+def test_raspirover_anglescalarmultiply_constructor_exists():
+    assert callable(raspirover_AngleScalarMultiply.__init__)
 
 
-def test_raspirover::anglescalarmultiply_constructor_args():
-    sig = inspect.signature(raspirover::AngleScalarMultiply.__init__)
+def test_raspirover_anglescalarmultiply_constructor_args():
+    sig = inspect.signature(raspirover_AngleScalarMultiply.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -197,86 +197,86 @@ def test_quantityhomogenousoperation_constructor_args():
 
 
 
-def test_raspirover::angleadd_is_not_abstract():
-    assert not inspect.isabstract(raspirover::AngleAdd)
+def test_raspirover_angleadd_is_not_abstract():
+    assert not inspect.isabstract(raspirover_AngleAdd)
 
 
-def test_raspirover::angleadd_constructor_exists():
-    assert callable(raspirover::AngleAdd.__init__)
+def test_raspirover_angleadd_constructor_exists():
+    assert callable(raspirover_AngleAdd.__init__)
 
 
-def test_raspirover::angleadd_constructor_args():
-    sig = inspect.signature(raspirover::AngleAdd.__init__)
+def test_raspirover_angleadd_constructor_args():
+    sig = inspect.signature(raspirover_AngleAdd.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_raspirover::anglesubtract_is_not_abstract():
-    assert not inspect.isabstract(raspirover::AngleSubtract)
+def test_raspirover_angleequals_is_not_abstract():
+    assert not inspect.isabstract(raspirover_AngleEquals)
 
 
-def test_raspirover::anglesubtract_constructor_exists():
-    assert callable(raspirover::AngleSubtract.__init__)
+def test_raspirover_angleequals_constructor_exists():
+    assert callable(raspirover_AngleEquals.__init__)
 
 
-def test_raspirover::anglesubtract_constructor_args():
-    sig = inspect.signature(raspirover::AngleSubtract.__init__)
+def test_raspirover_angleequals_constructor_args():
+    sig = inspect.signature(raspirover_AngleEquals.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_raspirover::anglegreater_is_not_abstract():
-    assert not inspect.isabstract(raspirover::AngleGreater)
+def test_raspirover_anglesmaller_is_not_abstract():
+    assert not inspect.isabstract(raspirover_AngleSmaller)
 
 
-def test_raspirover::anglegreater_constructor_exists():
-    assert callable(raspirover::AngleGreater.__init__)
+def test_raspirover_anglesmaller_constructor_exists():
+    assert callable(raspirover_AngleSmaller.__init__)
 
 
-def test_raspirover::anglegreater_constructor_args():
-    sig = inspect.signature(raspirover::AngleGreater.__init__)
+def test_raspirover_anglesmaller_constructor_args():
+    sig = inspect.signature(raspirover_AngleSmaller.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_raspirover::anglesmaller_is_not_abstract():
-    assert not inspect.isabstract(raspirover::AngleSmaller)
+def test_raspirover_angledistinct_is_not_abstract():
+    assert not inspect.isabstract(raspirover_AngleDistinct)
 
 
-def test_raspirover::anglesmaller_constructor_exists():
-    assert callable(raspirover::AngleSmaller.__init__)
+def test_raspirover_angledistinct_constructor_exists():
+    assert callable(raspirover_AngleDistinct.__init__)
 
 
-def test_raspirover::anglesmaller_constructor_args():
-    sig = inspect.signature(raspirover::AngleSmaller.__init__)
+def test_raspirover_angledistinct_constructor_args():
+    sig = inspect.signature(raspirover_AngleDistinct.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_raspirover::angledistinct_is_not_abstract():
-    assert not inspect.isabstract(raspirover::AngleDistinct)
+def test_raspirover_anglegreater_is_not_abstract():
+    assert not inspect.isabstract(raspirover_AngleGreater)
 
 
-def test_raspirover::angledistinct_constructor_exists():
-    assert callable(raspirover::AngleDistinct.__init__)
+def test_raspirover_anglegreater_constructor_exists():
+    assert callable(raspirover_AngleGreater.__init__)
 
 
-def test_raspirover::angledistinct_constructor_args():
-    sig = inspect.signature(raspirover::AngleDistinct.__init__)
+def test_raspirover_anglegreater_constructor_args():
+    sig = inspect.signature(raspirover_AngleGreater.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_raspirover::angleequals_is_not_abstract():
-    assert not inspect.isabstract(raspirover::AngleEquals)
+def test_raspirover_anglesubtract_is_not_abstract():
+    assert not inspect.isabstract(raspirover_AngleSubtract)
 
 
-def test_raspirover::angleequals_constructor_exists():
-    assert callable(raspirover::AngleEquals.__init__)
+def test_raspirover_anglesubtract_constructor_exists():
+    assert callable(raspirover_AngleSubtract.__init__)
 
 
-def test_raspirover::angleequals_constructor_args():
-    sig = inspect.signature(raspirover::AngleEquals.__init__)
+def test_raspirover_anglesubtract_constructor_args():
+    sig = inspect.signature(raspirover_AngleSubtract.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -295,114 +295,114 @@ def test_lengthoperation_constructor_args():
 
 
 
-def test_raspirover::lengthgreater_is_not_abstract():
-    assert not inspect.isabstract(raspirover::LengthGreater)
+def test_raspirover_lengthscalarmultiply_is_not_abstract():
+    assert not inspect.isabstract(raspirover_LengthScalarMultiply)
 
 
-def test_raspirover::lengthgreater_constructor_exists():
-    assert callable(raspirover::LengthGreater.__init__)
+def test_raspirover_lengthscalarmultiply_constructor_exists():
+    assert callable(raspirover_LengthScalarMultiply.__init__)
 
 
-def test_raspirover::lengthgreater_constructor_args():
-    sig = inspect.signature(raspirover::LengthGreater.__init__)
+def test_raspirover_lengthscalarmultiply_constructor_args():
+    sig = inspect.signature(raspirover_LengthScalarMultiply.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_raspirover::lengthdistinct_is_not_abstract():
-    assert not inspect.isabstract(raspirover::LengthDistinct)
+def test_raspirover_lengthsmaller_is_not_abstract():
+    assert not inspect.isabstract(raspirover_LengthSmaller)
 
 
-def test_raspirover::lengthdistinct_constructor_exists():
-    assert callable(raspirover::LengthDistinct.__init__)
+def test_raspirover_lengthsmaller_constructor_exists():
+    assert callable(raspirover_LengthSmaller.__init__)
 
 
-def test_raspirover::lengthdistinct_constructor_args():
-    sig = inspect.signature(raspirover::LengthDistinct.__init__)
+def test_raspirover_lengthsmaller_constructor_args():
+    sig = inspect.signature(raspirover_LengthSmaller.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_raspirover::lengthsmaller_is_not_abstract():
-    assert not inspect.isabstract(raspirover::LengthSmaller)
+def test_raspirover_lengthdistinct_is_not_abstract():
+    assert not inspect.isabstract(raspirover_LengthDistinct)
 
 
-def test_raspirover::lengthsmaller_constructor_exists():
-    assert callable(raspirover::LengthSmaller.__init__)
+def test_raspirover_lengthdistinct_constructor_exists():
+    assert callable(raspirover_LengthDistinct.__init__)
 
 
-def test_raspirover::lengthsmaller_constructor_args():
-    sig = inspect.signature(raspirover::LengthSmaller.__init__)
+def test_raspirover_lengthdistinct_constructor_args():
+    sig = inspect.signature(raspirover_LengthDistinct.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_raspirover::lengthsubtract_is_not_abstract():
-    assert not inspect.isabstract(raspirover::LengthSubtract)
+def test_raspirover_lengthscalardivide_is_not_abstract():
+    assert not inspect.isabstract(raspirover_LengthScalarDivide)
 
 
-def test_raspirover::lengthsubtract_constructor_exists():
-    assert callable(raspirover::LengthSubtract.__init__)
+def test_raspirover_lengthscalardivide_constructor_exists():
+    assert callable(raspirover_LengthScalarDivide.__init__)
 
 
-def test_raspirover::lengthsubtract_constructor_args():
-    sig = inspect.signature(raspirover::LengthSubtract.__init__)
+def test_raspirover_lengthscalardivide_constructor_args():
+    sig = inspect.signature(raspirover_LengthScalarDivide.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_raspirover::lengthscalarmultiply_is_not_abstract():
-    assert not inspect.isabstract(raspirover::LengthScalarMultiply)
+def test_raspirover_lengthgreater_is_not_abstract():
+    assert not inspect.isabstract(raspirover_LengthGreater)
 
 
-def test_raspirover::lengthscalarmultiply_constructor_exists():
-    assert callable(raspirover::LengthScalarMultiply.__init__)
+def test_raspirover_lengthgreater_constructor_exists():
+    assert callable(raspirover_LengthGreater.__init__)
 
 
-def test_raspirover::lengthscalarmultiply_constructor_args():
-    sig = inspect.signature(raspirover::LengthScalarMultiply.__init__)
+def test_raspirover_lengthgreater_constructor_args():
+    sig = inspect.signature(raspirover_LengthGreater.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_raspirover::lengthequals_is_not_abstract():
-    assert not inspect.isabstract(raspirover::LengthEquals)
+def test_raspirover_lengthsubtract_is_not_abstract():
+    assert not inspect.isabstract(raspirover_LengthSubtract)
 
 
-def test_raspirover::lengthequals_constructor_exists():
-    assert callable(raspirover::LengthEquals.__init__)
+def test_raspirover_lengthsubtract_constructor_exists():
+    assert callable(raspirover_LengthSubtract.__init__)
 
 
-def test_raspirover::lengthequals_constructor_args():
-    sig = inspect.signature(raspirover::LengthEquals.__init__)
+def test_raspirover_lengthsubtract_constructor_args():
+    sig = inspect.signature(raspirover_LengthSubtract.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_raspirover::lengthscalardivide_is_not_abstract():
-    assert not inspect.isabstract(raspirover::LengthScalarDivide)
+def test_raspirover_lengthequals_is_not_abstract():
+    assert not inspect.isabstract(raspirover_LengthEquals)
 
 
-def test_raspirover::lengthscalardivide_constructor_exists():
-    assert callable(raspirover::LengthScalarDivide.__init__)
+def test_raspirover_lengthequals_constructor_exists():
+    assert callable(raspirover_LengthEquals.__init__)
 
 
-def test_raspirover::lengthscalardivide_constructor_args():
-    sig = inspect.signature(raspirover::LengthScalarDivide.__init__)
+def test_raspirover_lengthequals_constructor_args():
+    sig = inspect.signature(raspirover_LengthEquals.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_raspirover::lengthadd_is_not_abstract():
-    assert not inspect.isabstract(raspirover::LengthAdd)
+def test_raspirover_lengthadd_is_not_abstract():
+    assert not inspect.isabstract(raspirover_LengthAdd)
 
 
-def test_raspirover::lengthadd_constructor_exists():
-    assert callable(raspirover::LengthAdd.__init__)
+def test_raspirover_lengthadd_constructor_exists():
+    assert callable(raspirover_LengthAdd.__init__)
 
 
-def test_raspirover::lengthadd_constructor_args():
-    sig = inspect.signature(raspirover::LengthAdd.__init__)
+def test_raspirover_lengthadd_constructor_args():
+    sig = inspect.signature(raspirover_LengthAdd.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -421,37 +421,23 @@ def test_quantityoperation_constructor_args():
 
 
 
-def test_raspirover::angleoperation_is_not_abstract():
-    assert not inspect.isabstract(raspirover::AngleOperation)
+def test_raspirover_quantityscalaroperation_is_not_abstract():
+    assert not inspect.isabstract(raspirover_QuantityScalarOperation)
 
 
-def test_raspirover::angleoperation_constructor_exists():
-    assert callable(raspirover::AngleOperation.__init__)
+def test_raspirover_quantityscalaroperation_constructor_exists():
+    assert callable(raspirover_QuantityScalarOperation.__init__)
 
 
-def test_raspirover::angleoperation_constructor_args():
-    sig = inspect.signature(raspirover::AngleOperation.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_raspirover::quantityscalaroperation_is_not_abstract():
-    assert not inspect.isabstract(raspirover::QuantityScalarOperation)
-
-
-def test_raspirover::quantityscalaroperation_constructor_exists():
-    assert callable(raspirover::QuantityScalarOperation.__init__)
-
-
-def test_raspirover::quantityscalaroperation_constructor_args():
-    sig = inspect.signature(raspirover::QuantityScalarOperation.__init__)
+def test_raspirover_quantityscalaroperation_constructor_args():
+    sig = inspect.signature(raspirover_QuantityScalarOperation.__init__)
     params = list(sig.parameters.keys())
     assert "rhs" in params, "Missing parameter 'rhs'"
 
-def test_raspirover::quantityscalaroperation_has_rhs():
-    assert hasattr(raspirover::QuantityScalarOperation, "rhs")
+def test_raspirover_quantityscalaroperation_has_rhs():
+    assert hasattr(raspirover_QuantityScalarOperation, "rhs")
     descriptor = None
-    for klass in raspirover::QuantityScalarOperation.__mro__:
+    for klass in raspirover_QuantityScalarOperation.__mro__:
         if "rhs" in klass.__dict__:
             descriptor = klass.__dict__["rhs"]
             break
@@ -459,72 +445,86 @@ def test_raspirover::quantityscalaroperation_has_rhs():
 
 
 
-def test_raspirover::quantityhomogenousoperation_is_not_abstract():
-    assert not inspect.isabstract(raspirover::QuantityHomogenousOperation)
+def test_raspirover_angleoperation_is_not_abstract():
+    assert not inspect.isabstract(raspirover_AngleOperation)
 
 
-def test_raspirover::quantityhomogenousoperation_constructor_exists():
-    assert callable(raspirover::QuantityHomogenousOperation.__init__)
+def test_raspirover_angleoperation_constructor_exists():
+    assert callable(raspirover_AngleOperation.__init__)
 
 
-def test_raspirover::quantityhomogenousoperation_constructor_args():
-    sig = inspect.signature(raspirover::QuantityHomogenousOperation.__init__)
+def test_raspirover_angleoperation_constructor_args():
+    sig = inspect.signature(raspirover_AngleOperation.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_raspirover::quantitycomparisonoperation_is_not_abstract():
-    assert not inspect.isabstract(raspirover::QuantityComparisonOperation)
+def test_raspirover_quantitycomparisonoperation_is_not_abstract():
+    assert not inspect.isabstract(raspirover_QuantityComparisonOperation)
 
 
-def test_raspirover::quantitycomparisonoperation_constructor_exists():
-    assert callable(raspirover::QuantityComparisonOperation.__init__)
+def test_raspirover_quantitycomparisonoperation_constructor_exists():
+    assert callable(raspirover_QuantityComparisonOperation.__init__)
 
 
-def test_raspirover::quantitycomparisonoperation_constructor_args():
-    sig = inspect.signature(raspirover::QuantityComparisonOperation.__init__)
+def test_raspirover_quantitycomparisonoperation_constructor_args():
+    sig = inspect.signature(raspirover_QuantityComparisonOperation.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_raspirover::quantityarithmeticoperation_is_not_abstract():
-    assert not inspect.isabstract(raspirover::QuantityArithmeticOperation)
+def test_raspirover_quantityhomogenousoperation_is_not_abstract():
+    assert not inspect.isabstract(raspirover_QuantityHomogenousOperation)
 
 
-def test_raspirover::quantityarithmeticoperation_constructor_exists():
-    assert callable(raspirover::QuantityArithmeticOperation.__init__)
+def test_raspirover_quantityhomogenousoperation_constructor_exists():
+    assert callable(raspirover_QuantityHomogenousOperation.__init__)
 
 
-def test_raspirover::quantityarithmeticoperation_constructor_args():
-    sig = inspect.signature(raspirover::QuantityArithmeticOperation.__init__)
+def test_raspirover_quantityhomogenousoperation_constructor_args():
+    sig = inspect.signature(raspirover_QuantityHomogenousOperation.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_raspirover::lengthoperation_is_not_abstract():
-    assert not inspect.isabstract(raspirover::LengthOperation)
+def test_raspirover_quantityarithmeticoperation_is_not_abstract():
+    assert not inspect.isabstract(raspirover_QuantityArithmeticOperation)
 
 
-def test_raspirover::lengthoperation_constructor_exists():
-    assert callable(raspirover::LengthOperation.__init__)
+def test_raspirover_quantityarithmeticoperation_constructor_exists():
+    assert callable(raspirover_QuantityArithmeticOperation.__init__)
 
 
-def test_raspirover::lengthoperation_constructor_args():
-    sig = inspect.signature(raspirover::LengthOperation.__init__)
+def test_raspirover_quantityarithmeticoperation_constructor_args():
+    sig = inspect.signature(raspirover_QuantityArithmeticOperation.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_raspirover::quantityoperation_is_not_abstract():
-    assert not inspect.isabstract(raspirover::QuantityOperation)
+def test_raspirover_lengthoperation_is_not_abstract():
+    assert not inspect.isabstract(raspirover_LengthOperation)
 
 
-def test_raspirover::quantityoperation_constructor_exists():
-    assert callable(raspirover::QuantityOperation.__init__)
+def test_raspirover_lengthoperation_constructor_exists():
+    assert callable(raspirover_LengthOperation.__init__)
 
 
-def test_raspirover::quantityoperation_constructor_args():
-    sig = inspect.signature(raspirover::QuantityOperation.__init__)
+def test_raspirover_lengthoperation_constructor_args():
+    sig = inspect.signature(raspirover_LengthOperation.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_raspirover_quantityoperation_is_not_abstract():
+    assert not inspect.isabstract(raspirover_QuantityOperation)
+
+
+def test_raspirover_quantityoperation_constructor_exists():
+    assert callable(raspirover_QuantityOperation.__init__)
+
+
+def test_raspirover_quantityoperation_constructor_args():
+    sig = inspect.signature(raspirover_QuantityOperation.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -543,30 +543,30 @@ def test_quantity_constructor_args():
 
 
 
-def test_raspirover::angle_is_not_abstract():
-    assert not inspect.isabstract(raspirover::Angle)
+def test_raspirover_angle_is_not_abstract():
+    assert not inspect.isabstract(raspirover_Angle)
 
 
-def test_raspirover::angle_constructor_exists():
-    assert callable(raspirover::Angle.__init__)
+def test_raspirover_angle_constructor_exists():
+    assert callable(raspirover_Angle.__init__)
 
 
-def test_raspirover::angle_constructor_args():
-    sig = inspect.signature(raspirover::Angle.__init__)
+def test_raspirover_angle_constructor_args():
+    sig = inspect.signature(raspirover_Angle.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_raspirover::length_is_not_abstract():
-    assert not inspect.isabstract(raspirover::Length)
+def test_raspirover_length_is_not_abstract():
+    assert not inspect.isabstract(raspirover_Length)
 
 
-def test_raspirover::length_constructor_exists():
-    assert callable(raspirover::Length.__init__)
+def test_raspirover_length_constructor_exists():
+    assert callable(raspirover_Length.__init__)
 
 
-def test_raspirover::length_constructor_args():
-    sig = inspect.signature(raspirover::Length.__init__)
+def test_raspirover_length_constructor_args():
+    sig = inspect.signature(raspirover_Length.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -585,58 +585,58 @@ def test_angleunit_constructor_args():
 
 
 
-def test_raspirover::turn_is_not_abstract():
-    assert not inspect.isabstract(raspirover::Turn)
+def test_raspirover_degree_is_not_abstract():
+    assert not inspect.isabstract(raspirover_Degree)
 
 
-def test_raspirover::turn_constructor_exists():
-    assert callable(raspirover::Turn.__init__)
+def test_raspirover_degree_constructor_exists():
+    assert callable(raspirover_Degree.__init__)
 
 
-def test_raspirover::turn_constructor_args():
-    sig = inspect.signature(raspirover::Turn.__init__)
+def test_raspirover_degree_constructor_args():
+    sig = inspect.signature(raspirover_Degree.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_raspirover::gradian_is_not_abstract():
-    assert not inspect.isabstract(raspirover::Gradian)
+def test_raspirover_turn_is_not_abstract():
+    assert not inspect.isabstract(raspirover_Turn)
 
 
-def test_raspirover::gradian_constructor_exists():
-    assert callable(raspirover::Gradian.__init__)
+def test_raspirover_turn_constructor_exists():
+    assert callable(raspirover_Turn.__init__)
 
 
-def test_raspirover::gradian_constructor_args():
-    sig = inspect.signature(raspirover::Gradian.__init__)
+def test_raspirover_turn_constructor_args():
+    sig = inspect.signature(raspirover_Turn.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_raspirover::degree_is_not_abstract():
-    assert not inspect.isabstract(raspirover::Degree)
+def test_raspirover_gradian_is_not_abstract():
+    assert not inspect.isabstract(raspirover_Gradian)
 
 
-def test_raspirover::degree_constructor_exists():
-    assert callable(raspirover::Degree.__init__)
+def test_raspirover_gradian_constructor_exists():
+    assert callable(raspirover_Gradian.__init__)
 
 
-def test_raspirover::degree_constructor_args():
-    sig = inspect.signature(raspirover::Degree.__init__)
+def test_raspirover_gradian_constructor_args():
+    sig = inspect.signature(raspirover_Gradian.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_raspirover::radian_is_not_abstract():
-    assert not inspect.isabstract(raspirover::Radian)
+def test_raspirover_radian_is_not_abstract():
+    assert not inspect.isabstract(raspirover_Radian)
 
 
-def test_raspirover::radian_constructor_exists():
-    assert callable(raspirover::Radian.__init__)
+def test_raspirover_radian_constructor_exists():
+    assert callable(raspirover_Radian.__init__)
 
 
-def test_raspirover::radian_constructor_args():
-    sig = inspect.signature(raspirover::Radian.__init__)
+def test_raspirover_radian_constructor_args():
+    sig = inspect.signature(raspirover_Radian.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -655,354 +655,6 @@ def test_imperialsystemunit_constructor_args():
 
 
 
-def test_raspirover::statement_is_not_abstract():
-    assert not inspect.isabstract(raspirover::Statement)
-
-
-def test_raspirover::statement_constructor_exists():
-    assert callable(raspirover::Statement.__init__)
-
-
-def test_raspirover::statement_constructor_args():
-    sig = inspect.signature(raspirover::Statement.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_raspirover::param_is_not_abstract():
-    assert not inspect.isabstract(raspirover::Param)
-
-
-def test_raspirover::param_constructor_exists():
-    assert callable(raspirover::Param.__init__)
-
-
-def test_raspirover::param_constructor_args():
-    sig = inspect.signature(raspirover::Param.__init__)
-    params = list(sig.parameters.keys())
-    assert "name" in params, "Missing parameter 'name'"
-
-def test_raspirover::param_has_name():
-    assert hasattr(raspirover::Param, "name")
-    descriptor = None
-    for klass in raspirover::Param.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_raspirover::namedelement_is_not_abstract():
-    assert not inspect.isabstract(raspirover::NamedElement)
-
-
-def test_raspirover::namedelement_constructor_exists():
-    assert callable(raspirover::NamedElement.__init__)
-
-
-def test_raspirover::namedelement_constructor_args():
-    sig = inspect.signature(raspirover::NamedElement.__init__)
-    params = list(sig.parameters.keys())
-    assert "name" in params, "Missing parameter 'name'"
-
-def test_raspirover::namedelement_has_name():
-    assert hasattr(raspirover::NamedElement, "name")
-    descriptor = None
-    for klass in raspirover::NamedElement.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_module_is_not_abstract():
-    assert not inspect.isabstract(Module)
-
-
-def test_module_constructor_exists():
-    assert callable(Module.__init__)
-
-
-def test_module_constructor_args():
-    sig = inspect.signature(Module.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_raspirover::arduinomodule_is_not_abstract():
-    assert not inspect.isabstract(raspirover::ArduinoModule)
-
-
-def test_raspirover::arduinomodule_constructor_exists():
-    assert callable(raspirover::ArduinoModule.__init__)
-
-
-def test_raspirover::arduinomodule_constructor_args():
-    sig = inspect.signature(raspirover::ArduinoModule.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_arduinomodule_is_not_abstract():
-    assert not inspect.isabstract(ArduinoModule)
-
-
-def test_arduinomodule_constructor_exists():
-    assert callable(ArduinoModule.__init__)
-
-
-def test_arduinomodule_constructor_args():
-    sig = inspect.signature(ArduinoModule.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_raspirover::arduinoanalogmodule_is_not_abstract():
-    assert not inspect.isabstract(raspirover::ArduinoAnalogModule)
-
-
-def test_raspirover::arduinoanalogmodule_constructor_exists():
-    assert callable(raspirover::ArduinoAnalogModule.__init__)
-
-
-def test_raspirover::arduinoanalogmodule_constructor_args():
-    sig = inspect.signature(raspirover::ArduinoAnalogModule.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_raspirover::arduinodigitalmodule_is_not_abstract():
-    assert not inspect.isabstract(raspirover::ArduinoDigitalModule)
-
-
-def test_raspirover::arduinodigitalmodule_constructor_exists():
-    assert callable(raspirover::ArduinoDigitalModule.__init__)
-
-
-def test_raspirover::arduinodigitalmodule_constructor_args():
-    sig = inspect.signature(raspirover::ArduinoDigitalModule.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_pin_is_not_abstract():
-    assert not inspect.isabstract(Pin)
-
-
-def test_pin_constructor_exists():
-    assert callable(Pin.__init__)
-
-
-def test_pin_constructor_args():
-    sig = inspect.signature(Pin.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_raspirover::instruction_is_not_abstract():
-    assert not inspect.isabstract(raspirover::Instruction)
-
-
-def test_raspirover::instruction_constructor_exists():
-    assert callable(raspirover::Instruction.__init__)
-
-
-def test_raspirover::instruction_constructor_args():
-    sig = inspect.signature(raspirover::Instruction.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_raspirover::block_is_not_abstract():
-    assert not inspect.isabstract(raspirover::Block)
-
-
-def test_raspirover::block_constructor_exists():
-    assert callable(raspirover::Block.__init__)
-
-
-def test_raspirover::block_constructor_args():
-    sig = inspect.signature(raspirover::Block.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_raspirover::roverprogram_is_not_abstract():
-    assert not inspect.isabstract(raspirover::RoverProgram)
-
-
-def test_raspirover::roverprogram_constructor_exists():
-    assert callable(raspirover::RoverProgram.__init__)
-
-
-def test_raspirover::roverprogram_constructor_args():
-    sig = inspect.signature(raspirover::RoverProgram.__init__)
-    params = list(sig.parameters.keys())
-    assert "name" in params, "Missing parameter 'name'"
-
-def test_raspirover::roverprogram_has_name():
-    assert hasattr(raspirover::RoverProgram, "name")
-    descriptor = None
-    for klass in raspirover::RoverProgram.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_raspirover::project_is_not_abstract():
-    assert not inspect.isabstract(raspirover::Project)
-
-
-def test_raspirover::project_constructor_exists():
-    assert callable(raspirover::Project.__init__)
-
-
-def test_raspirover::project_constructor_args():
-    sig = inspect.signature(raspirover::Project.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_namedelement_is_not_abstract():
-    assert not inspect.isabstract(NamedElement)
-
-
-def test_namedelement_constructor_exists():
-    assert callable(NamedElement.__init__)
-
-
-def test_namedelement_constructor_args():
-    sig = inspect.signature(NamedElement.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_raspirover::module_is_not_abstract():
-    assert not inspect.isabstract(raspirover::Module)
-
-
-def test_raspirover::module_constructor_exists():
-    assert callable(raspirover::Module.__init__)
-
-
-def test_raspirover::module_constructor_args():
-    sig = inspect.signature(raspirover::Module.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_raspirover::pin_is_not_abstract():
-    assert not inspect.isabstract(raspirover::Pin)
-
-
-def test_raspirover::pin_constructor_exists():
-    assert callable(raspirover::Pin.__init__)
-
-
-def test_raspirover::pin_constructor_args():
-    sig = inspect.signature(raspirover::Pin.__init__)
-    params = list(sig.parameters.keys())
-    assert "level" in params, "Missing parameter 'level'"
-
-def test_raspirover::pin_has_level():
-    assert hasattr(raspirover::Pin, "level")
-    descriptor = None
-    for klass in raspirover::Pin.__mro__:
-        if "level" in klass.__dict__:
-            descriptor = klass.__dict__["level"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_raspirover::sketch_is_not_abstract():
-    assert not inspect.isabstract(raspirover::Sketch)
-
-
-def test_raspirover::sketch_constructor_exists():
-    assert callable(raspirover::Sketch.__init__)
-
-
-def test_raspirover::sketch_constructor_args():
-    sig = inspect.signature(raspirover::Sketch.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_raspirover::board_is_not_abstract():
-    assert not inspect.isabstract(raspirover::Board)
-
-
-def test_raspirover::board_constructor_exists():
-    assert callable(raspirover::Board.__init__)
-
-
-def test_raspirover::board_constructor_args():
-    sig = inspect.signature(raspirover::Board.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_raspirover::analogpin_is_not_abstract():
-    assert not inspect.isabstract(raspirover::AnalogPin)
-
-
-def test_raspirover::analogpin_constructor_exists():
-    assert callable(raspirover::AnalogPin.__init__)
-
-
-def test_raspirover::analogpin_constructor_args():
-    sig = inspect.signature(raspirover::AnalogPin.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_raspirover::digitalpin_is_not_abstract():
-    assert not inspect.isabstract(raspirover::DigitalPin)
-
-
-def test_raspirover::digitalpin_constructor_exists():
-    assert callable(raspirover::DigitalPin.__init__)
-
-
-def test_raspirover::digitalpin_constructor_args():
-    sig = inspect.signature(raspirover::DigitalPin.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_board_is_not_abstract():
-    assert not inspect.isabstract(Board)
-
-
-def test_board_constructor_exists():
-    assert callable(Board.__init__)
-
-
-def test_board_constructor_args():
-    sig = inspect.signature(Board.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_raspirover::raspiboard_is_not_abstract():
-    assert not inspect.isabstract(raspirover::RasPiBoard)
-
-
-def test_raspirover::raspiboard_constructor_exists():
-    assert callable(raspirover::RasPiBoard.__init__)
-
-
-def test_raspirover::raspiboard_constructor_args():
-    sig = inspect.signature(raspirover::RasPiBoard.__init__)
-    params = list(sig.parameters.keys())
-
-
-
 def test_lengthunit_is_not_abstract():
     assert not inspect.isabstract(LengthUnit)
 
@@ -1017,44 +669,44 @@ def test_lengthunit_constructor_args():
 
 
 
-def test_raspirover::foot_is_not_abstract():
-    assert not inspect.isabstract(raspirover::Foot)
+def test_raspirover_yard_is_not_abstract():
+    assert not inspect.isabstract(raspirover_Yard)
 
 
-def test_raspirover::foot_constructor_exists():
-    assert callable(raspirover::Foot.__init__)
+def test_raspirover_yard_constructor_exists():
+    assert callable(raspirover_Yard.__init__)
 
 
-def test_raspirover::foot_constructor_args():
-    sig = inspect.signature(raspirover::Foot.__init__)
+def test_raspirover_yard_constructor_args():
+    sig = inspect.signature(raspirover_Yard.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_raspirover::inch_is_not_abstract():
-    assert not inspect.isabstract(raspirover::Inch)
+def test_raspirover_inch_is_not_abstract():
+    assert not inspect.isabstract(raspirover_Inch)
 
 
-def test_raspirover::inch_constructor_exists():
-    assert callable(raspirover::Inch.__init__)
+def test_raspirover_inch_constructor_exists():
+    assert callable(raspirover_Inch.__init__)
 
 
-def test_raspirover::inch_constructor_args():
-    sig = inspect.signature(raspirover::Inch.__init__)
+def test_raspirover_inch_constructor_args():
+    sig = inspect.signature(raspirover_Inch.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_raspirover::yard_is_not_abstract():
-    assert not inspect.isabstract(raspirover::Yard)
+def test_raspirover_foot_is_not_abstract():
+    assert not inspect.isabstract(raspirover_Foot)
 
 
-def test_raspirover::yard_constructor_exists():
-    assert callable(raspirover::Yard.__init__)
+def test_raspirover_foot_constructor_exists():
+    assert callable(raspirover_Foot.__init__)
 
 
-def test_raspirover::yard_constructor_args():
-    sig = inspect.signature(raspirover::Yard.__init__)
+def test_raspirover_foot_constructor_args():
+    sig = inspect.signature(raspirover_Foot.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1073,44 +725,44 @@ def test_metricsystemunit_constructor_args():
 
 
 
-def test_raspirover::millimeter_is_not_abstract():
-    assert not inspect.isabstract(raspirover::Millimeter)
+def test_raspirover_meter_is_not_abstract():
+    assert not inspect.isabstract(raspirover_Meter)
 
 
-def test_raspirover::millimeter_constructor_exists():
-    assert callable(raspirover::Millimeter.__init__)
+def test_raspirover_meter_constructor_exists():
+    assert callable(raspirover_Meter.__init__)
 
 
-def test_raspirover::millimeter_constructor_args():
-    sig = inspect.signature(raspirover::Millimeter.__init__)
+def test_raspirover_meter_constructor_args():
+    sig = inspect.signature(raspirover_Meter.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_raspirover::meter_is_not_abstract():
-    assert not inspect.isabstract(raspirover::Meter)
+def test_raspirover_millimeter_is_not_abstract():
+    assert not inspect.isabstract(raspirover_Millimeter)
 
 
-def test_raspirover::meter_constructor_exists():
-    assert callable(raspirover::Meter.__init__)
+def test_raspirover_millimeter_constructor_exists():
+    assert callable(raspirover_Millimeter.__init__)
 
 
-def test_raspirover::meter_constructor_args():
-    sig = inspect.signature(raspirover::Meter.__init__)
+def test_raspirover_millimeter_constructor_args():
+    sig = inspect.signature(raspirover_Millimeter.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_raspirover::centimeter_is_not_abstract():
-    assert not inspect.isabstract(raspirover::Centimeter)
+def test_raspirover_centimeter_is_not_abstract():
+    assert not inspect.isabstract(raspirover_Centimeter)
 
 
-def test_raspirover::centimeter_constructor_exists():
-    assert callable(raspirover::Centimeter.__init__)
+def test_raspirover_centimeter_constructor_exists():
+    assert callable(raspirover_Centimeter.__init__)
 
 
-def test_raspirover::centimeter_constructor_args():
-    sig = inspect.signature(raspirover::Centimeter.__init__)
+def test_raspirover_centimeter_constructor_args():
+    sig = inspect.signature(raspirover_Centimeter.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1129,72 +781,72 @@ def test_unit_constructor_args():
 
 
 
-def test_raspirover::angleunit_is_not_abstract():
-    assert not inspect.isabstract(raspirover::AngleUnit)
+def test_raspirover_metricsystemunit_is_not_abstract():
+    assert not inspect.isabstract(raspirover_MetricSystemUnit)
 
 
-def test_raspirover::angleunit_constructor_exists():
-    assert callable(raspirover::AngleUnit.__init__)
+def test_raspirover_metricsystemunit_constructor_exists():
+    assert callable(raspirover_MetricSystemUnit.__init__)
 
 
-def test_raspirover::angleunit_constructor_args():
-    sig = inspect.signature(raspirover::AngleUnit.__init__)
+def test_raspirover_metricsystemunit_constructor_args():
+    sig = inspect.signature(raspirover_MetricSystemUnit.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_raspirover::imperialsystemunit_is_not_abstract():
-    assert not inspect.isabstract(raspirover::ImperialSystemUnit)
+def test_raspirover_imperialsystemunit_is_not_abstract():
+    assert not inspect.isabstract(raspirover_ImperialSystemUnit)
 
 
-def test_raspirover::imperialsystemunit_constructor_exists():
-    assert callable(raspirover::ImperialSystemUnit.__init__)
+def test_raspirover_imperialsystemunit_constructor_exists():
+    assert callable(raspirover_ImperialSystemUnit.__init__)
 
 
-def test_raspirover::imperialsystemunit_constructor_args():
-    sig = inspect.signature(raspirover::ImperialSystemUnit.__init__)
+def test_raspirover_imperialsystemunit_constructor_args():
+    sig = inspect.signature(raspirover_ImperialSystemUnit.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_raspirover::metricsystemunit_is_not_abstract():
-    assert not inspect.isabstract(raspirover::MetricSystemUnit)
+def test_raspirover_angleunit_is_not_abstract():
+    assert not inspect.isabstract(raspirover_AngleUnit)
 
 
-def test_raspirover::metricsystemunit_constructor_exists():
-    assert callable(raspirover::MetricSystemUnit.__init__)
+def test_raspirover_angleunit_constructor_exists():
+    assert callable(raspirover_AngleUnit.__init__)
 
 
-def test_raspirover::metricsystemunit_constructor_args():
-    sig = inspect.signature(raspirover::MetricSystemUnit.__init__)
+def test_raspirover_angleunit_constructor_args():
+    sig = inspect.signature(raspirover_AngleUnit.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_raspirover::lengthunit_is_not_abstract():
-    assert not inspect.isabstract(raspirover::LengthUnit)
+def test_raspirover_lengthunit_is_not_abstract():
+    assert not inspect.isabstract(raspirover_LengthUnit)
 
 
-def test_raspirover::lengthunit_constructor_exists():
-    assert callable(raspirover::LengthUnit.__init__)
+def test_raspirover_lengthunit_constructor_exists():
+    assert callable(raspirover_LengthUnit.__init__)
 
 
-def test_raspirover::lengthunit_constructor_args():
-    sig = inspect.signature(raspirover::LengthUnit.__init__)
+def test_raspirover_lengthunit_constructor_args():
+    sig = inspect.signature(raspirover_LengthUnit.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_raspirover::unit_is_not_abstract():
-    assert not inspect.isabstract(raspirover::Unit)
+def test_raspirover_unit_is_not_abstract():
+    assert not inspect.isabstract(raspirover_Unit)
 
 
-def test_raspirover::unit_constructor_exists():
-    assert callable(raspirover::Unit.__init__)
+def test_raspirover_unit_constructor_exists():
+    assert callable(raspirover_Unit.__init__)
 
 
-def test_raspirover::unit_constructor_args():
-    sig = inspect.signature(raspirover::Unit.__init__)
+def test_raspirover_unit_constructor_args():
+    sig = inspect.signature(raspirover_Unit.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1213,51 +865,51 @@ def test_action_constructor_args():
 
 
 
-def test_raspirover::backwardaction_is_not_abstract():
-    assert not inspect.isabstract(raspirover::BackwardAction)
+def test_raspirover_turndegaction_is_not_abstract():
+    assert not inspect.isabstract(raspirover_TurnDegAction)
 
 
-def test_raspirover::backwardaction_constructor_exists():
-    assert callable(raspirover::BackwardAction.__init__)
+def test_raspirover_turndegaction_constructor_exists():
+    assert callable(raspirover_TurnDegAction.__init__)
 
 
-def test_raspirover::backwardaction_constructor_args():
-    sig = inspect.signature(raspirover::BackwardAction.__init__)
+def test_raspirover_turndegaction_constructor_args():
+    sig = inspect.signature(raspirover_TurnDegAction.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_raspirover::stopaction_is_not_abstract():
-    assert not inspect.isabstract(raspirover::StopAction)
+def test_raspirover_forwardminaction_is_not_abstract():
+    assert not inspect.isabstract(raspirover_ForwardMinAction)
 
 
-def test_raspirover::stopaction_constructor_exists():
-    assert callable(raspirover::StopAction.__init__)
+def test_raspirover_forwardminaction_constructor_exists():
+    assert callable(raspirover_ForwardMinAction.__init__)
 
 
-def test_raspirover::stopaction_constructor_args():
-    sig = inspect.signature(raspirover::StopAction.__init__)
+def test_raspirover_forwardminaction_constructor_args():
+    sig = inspect.signature(raspirover_ForwardMinAction.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_raspirover::logaction_is_not_abstract():
-    assert not inspect.isabstract(raspirover::LogAction)
+def test_raspirover_logaction_is_not_abstract():
+    assert not inspect.isabstract(raspirover_LogAction)
 
 
-def test_raspirover::logaction_constructor_exists():
-    assert callable(raspirover::LogAction.__init__)
+def test_raspirover_logaction_constructor_exists():
+    assert callable(raspirover_LogAction.__init__)
 
 
-def test_raspirover::logaction_constructor_args():
-    sig = inspect.signature(raspirover::LogAction.__init__)
+def test_raspirover_logaction_constructor_args():
+    sig = inspect.signature(raspirover_LogAction.__init__)
     params = list(sig.parameters.keys())
     assert "message" in params, "Missing parameter 'message'"
 
-def test_raspirover::logaction_has_message():
-    assert hasattr(raspirover::LogAction, "message")
+def test_raspirover_logaction_has_message():
+    assert hasattr(raspirover_LogAction, "message")
     descriptor = None
-    for klass in raspirover::LogAction.__mro__:
+    for klass in raspirover_LogAction.__mro__:
         if "message" in klass.__dict__:
             descriptor = klass.__dict__["message"]
             break
@@ -1265,37 +917,51 @@ def test_raspirover::logaction_has_message():
 
 
 
-def test_raspirover::forwardminaction_is_not_abstract():
-    assert not inspect.isabstract(raspirover::ForwardMinAction)
+def test_raspirover_backwardaction_is_not_abstract():
+    assert not inspect.isabstract(raspirover_BackwardAction)
 
 
-def test_raspirover::forwardminaction_constructor_exists():
-    assert callable(raspirover::ForwardMinAction.__init__)
+def test_raspirover_backwardaction_constructor_exists():
+    assert callable(raspirover_BackwardAction.__init__)
 
 
-def test_raspirover::forwardminaction_constructor_args():
-    sig = inspect.signature(raspirover::ForwardMinAction.__init__)
+def test_raspirover_backwardaction_constructor_args():
+    sig = inspect.signature(raspirover_BackwardAction.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_raspirover::sendaction_is_not_abstract():
-    assert not inspect.isabstract(raspirover::SendAction)
+def test_raspirover_stopaction_is_not_abstract():
+    assert not inspect.isabstract(raspirover_StopAction)
 
 
-def test_raspirover::sendaction_constructor_exists():
-    assert callable(raspirover::SendAction.__init__)
+def test_raspirover_stopaction_constructor_exists():
+    assert callable(raspirover_StopAction.__init__)
 
 
-def test_raspirover::sendaction_constructor_args():
-    sig = inspect.signature(raspirover::SendAction.__init__)
+def test_raspirover_stopaction_constructor_args():
+    sig = inspect.signature(raspirover_StopAction.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_raspirover_sendaction_is_not_abstract():
+    assert not inspect.isabstract(raspirover_SendAction)
+
+
+def test_raspirover_sendaction_constructor_exists():
+    assert callable(raspirover_SendAction.__init__)
+
+
+def test_raspirover_sendaction_constructor_args():
+    sig = inspect.signature(raspirover_SendAction.__init__)
     params = list(sig.parameters.keys())
     assert "message" in params, "Missing parameter 'message'"
 
-def test_raspirover::sendaction_has_message():
-    assert hasattr(raspirover::SendAction, "message")
+def test_raspirover_sendaction_has_message():
+    assert hasattr(raspirover_SendAction, "message")
     descriptor = None
-    for klass in raspirover::SendAction.__mro__:
+    for klass in raspirover_SendAction.__mro__:
         if "message" in klass.__dict__:
             descriptor = klass.__dict__["message"]
             break
@@ -1303,79 +969,65 @@ def test_raspirover::sendaction_has_message():
 
 
 
-def test_raspirover::turndegaction_is_not_abstract():
-    assert not inspect.isabstract(raspirover::TurnDegAction)
+def test_raspirover_turnaction_is_not_abstract():
+    assert not inspect.isabstract(raspirover_TurnAction)
 
 
-def test_raspirover::turndegaction_constructor_exists():
-    assert callable(raspirover::TurnDegAction.__init__)
+def test_raspirover_turnaction_constructor_exists():
+    assert callable(raspirover_TurnAction.__init__)
 
 
-def test_raspirover::turndegaction_constructor_args():
-    sig = inspect.signature(raspirover::TurnDegAction.__init__)
+def test_raspirover_turnaction_constructor_args():
+    sig = inspect.signature(raspirover_TurnAction.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_raspirover::turnaction_is_not_abstract():
-    assert not inspect.isabstract(raspirover::TurnAction)
+def test_raspirover_backwardminaction_is_not_abstract():
+    assert not inspect.isabstract(raspirover_BackwardMinAction)
 
 
-def test_raspirover::turnaction_constructor_exists():
-    assert callable(raspirover::TurnAction.__init__)
+def test_raspirover_backwardminaction_constructor_exists():
+    assert callable(raspirover_BackwardMinAction.__init__)
 
 
-def test_raspirover::turnaction_constructor_args():
-    sig = inspect.signature(raspirover::TurnAction.__init__)
+def test_raspirover_backwardminaction_constructor_args():
+    sig = inspect.signature(raspirover_BackwardMinAction.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_raspirover::backwardminaction_is_not_abstract():
-    assert not inspect.isabstract(raspirover::BackwardMinAction)
+def test_raspirover_forwardaction_is_not_abstract():
+    assert not inspect.isabstract(raspirover_ForwardAction)
 
 
-def test_raspirover::backwardminaction_constructor_exists():
-    assert callable(raspirover::BackwardMinAction.__init__)
+def test_raspirover_forwardaction_constructor_exists():
+    assert callable(raspirover_ForwardAction.__init__)
 
 
-def test_raspirover::backwardminaction_constructor_args():
-    sig = inspect.signature(raspirover::BackwardMinAction.__init__)
+def test_raspirover_forwardaction_constructor_args():
+    sig = inspect.signature(raspirover_ForwardAction.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_raspirover::forwardaction_is_not_abstract():
-    assert not inspect.isabstract(raspirover::ForwardAction)
+def test_raspirover_quantity_is_not_abstract():
+    assert not inspect.isabstract(raspirover_Quantity)
 
 
-def test_raspirover::forwardaction_constructor_exists():
-    assert callable(raspirover::ForwardAction.__init__)
+def test_raspirover_quantity_constructor_exists():
+    assert callable(raspirover_Quantity.__init__)
 
 
-def test_raspirover::forwardaction_constructor_args():
-    sig = inspect.signature(raspirover::ForwardAction.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_raspirover::quantity_is_not_abstract():
-    assert not inspect.isabstract(raspirover::Quantity)
-
-
-def test_raspirover::quantity_constructor_exists():
-    assert callable(raspirover::Quantity.__init__)
-
-
-def test_raspirover::quantity_constructor_args():
-    sig = inspect.signature(raspirover::Quantity.__init__)
+def test_raspirover_quantity_constructor_args():
+    sig = inspect.signature(raspirover_Quantity.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
 
-def test_raspirover::quantity_has_value():
-    assert hasattr(raspirover::Quantity, "value")
+def test_raspirover_quantity_has_value():
+    assert hasattr(raspirover_Quantity, "value")
     descriptor = None
-    for klass in raspirover::Quantity.__mro__:
+    for klass in raspirover_Quantity.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -1397,23 +1049,23 @@ def test_rovervalue_constructor_args():
 
 
 
-def test_raspirover::stringvalue_is_not_abstract():
-    assert not inspect.isabstract(raspirover::StringValue)
+def test_raspirover_stringvalue_is_not_abstract():
+    assert not inspect.isabstract(raspirover_StringValue)
 
 
-def test_raspirover::stringvalue_constructor_exists():
-    assert callable(raspirover::StringValue.__init__)
+def test_raspirover_stringvalue_constructor_exists():
+    assert callable(raspirover_StringValue.__init__)
 
 
-def test_raspirover::stringvalue_constructor_args():
-    sig = inspect.signature(raspirover::StringValue.__init__)
+def test_raspirover_stringvalue_constructor_args():
+    sig = inspect.signature(raspirover_StringValue.__init__)
     params = list(sig.parameters.keys())
     assert "sValue" in params, "Missing parameter 'sValue'"
 
-def test_raspirover::stringvalue_has_sValue():
-    assert hasattr(raspirover::StringValue, "sValue")
+def test_raspirover_stringvalue_has_sValue():
+    assert hasattr(raspirover_StringValue, "sValue")
     descriptor = None
-    for klass in raspirover::StringValue.__mro__:
+    for klass in raspirover_StringValue.__mro__:
         if "sValue" in klass.__dict__:
             descriptor = klass.__dict__["sValue"]
             break
@@ -1421,23 +1073,23 @@ def test_raspirover::stringvalue_has_sValue():
 
 
 
-def test_raspirover::booleanvalue_is_not_abstract():
-    assert not inspect.isabstract(raspirover::BooleanValue)
+def test_raspirover_booleanvalue_is_not_abstract():
+    assert not inspect.isabstract(raspirover_BooleanValue)
 
 
-def test_raspirover::booleanvalue_constructor_exists():
-    assert callable(raspirover::BooleanValue.__init__)
+def test_raspirover_booleanvalue_constructor_exists():
+    assert callable(raspirover_BooleanValue.__init__)
 
 
-def test_raspirover::booleanvalue_constructor_args():
-    sig = inspect.signature(raspirover::BooleanValue.__init__)
+def test_raspirover_booleanvalue_constructor_args():
+    sig = inspect.signature(raspirover_BooleanValue.__init__)
     params = list(sig.parameters.keys())
     assert "bValue" in params, "Missing parameter 'bValue'"
 
-def test_raspirover::booleanvalue_has_bValue():
-    assert hasattr(raspirover::BooleanValue, "bValue")
+def test_raspirover_booleanvalue_has_bValue():
+    assert hasattr(raspirover_BooleanValue, "bValue")
     descriptor = None
-    for klass in raspirover::BooleanValue.__mro__:
+    for klass in raspirover_BooleanValue.__mro__:
         if "bValue" in klass.__dict__:
             descriptor = klass.__dict__["bValue"]
             break
@@ -1445,23 +1097,23 @@ def test_raspirover::booleanvalue_has_bValue():
 
 
 
-def test_raspirover::numbervalue_is_not_abstract():
-    assert not inspect.isabstract(raspirover::NumberValue)
+def test_raspirover_numbervalue_is_not_abstract():
+    assert not inspect.isabstract(raspirover_NumberValue)
 
 
-def test_raspirover::numbervalue_constructor_exists():
-    assert callable(raspirover::NumberValue.__init__)
+def test_raspirover_numbervalue_constructor_exists():
+    assert callable(raspirover_NumberValue.__init__)
 
 
-def test_raspirover::numbervalue_constructor_args():
-    sig = inspect.signature(raspirover::NumberValue.__init__)
+def test_raspirover_numbervalue_constructor_args():
+    sig = inspect.signature(raspirover_NumberValue.__init__)
     params = list(sig.parameters.keys())
     assert "nValue" in params, "Missing parameter 'nValue'"
 
-def test_raspirover::numbervalue_has_nValue():
-    assert hasattr(raspirover::NumberValue, "nValue")
+def test_raspirover_numbervalue_has_nValue():
+    assert hasattr(raspirover_NumberValue, "nValue")
     descriptor = None
-    for klass in raspirover::NumberValue.__mro__:
+    for klass in raspirover_NumberValue.__mro__:
         if "nValue" in klass.__dict__:
             descriptor = klass.__dict__["nValue"]
             break
@@ -1483,23 +1135,23 @@ def test_roverexpression_constructor_args():
 
 
 
-def test_raspirover::booleanexpression_is_not_abstract():
-    assert not inspect.isabstract(raspirover::BooleanExpression)
+def test_raspirover_stringexpression_is_not_abstract():
+    assert not inspect.isabstract(raspirover_StringExpression)
 
 
-def test_raspirover::booleanexpression_constructor_exists():
-    assert callable(raspirover::BooleanExpression.__init__)
+def test_raspirover_stringexpression_constructor_exists():
+    assert callable(raspirover_StringExpression.__init__)
 
 
-def test_raspirover::booleanexpression_constructor_args():
-    sig = inspect.signature(raspirover::BooleanExpression.__init__)
+def test_raspirover_stringexpression_constructor_args():
+    sig = inspect.signature(raspirover_StringExpression.__init__)
     params = list(sig.parameters.keys())
     assert "op" in params, "Missing parameter 'op'"
 
-def test_raspirover::booleanexpression_has_op():
-    assert hasattr(raspirover::BooleanExpression, "op")
+def test_raspirover_stringexpression_has_op():
+    assert hasattr(raspirover_StringExpression, "op")
     descriptor = None
-    for klass in raspirover::BooleanExpression.__mro__:
+    for klass in raspirover_StringExpression.__mro__:
         if "op" in klass.__dict__:
             descriptor = klass.__dict__["op"]
             break
@@ -1507,23 +1159,23 @@ def test_raspirover::booleanexpression_has_op():
 
 
 
-def test_raspirover::stringexpression_is_not_abstract():
-    assert not inspect.isabstract(raspirover::StringExpression)
+def test_raspirover_booleanexpression_is_not_abstract():
+    assert not inspect.isabstract(raspirover_BooleanExpression)
 
 
-def test_raspirover::stringexpression_constructor_exists():
-    assert callable(raspirover::StringExpression.__init__)
+def test_raspirover_booleanexpression_constructor_exists():
+    assert callable(raspirover_BooleanExpression.__init__)
 
 
-def test_raspirover::stringexpression_constructor_args():
-    sig = inspect.signature(raspirover::StringExpression.__init__)
+def test_raspirover_booleanexpression_constructor_args():
+    sig = inspect.signature(raspirover_BooleanExpression.__init__)
     params = list(sig.parameters.keys())
     assert "op" in params, "Missing parameter 'op'"
 
-def test_raspirover::stringexpression_has_op():
-    assert hasattr(raspirover::StringExpression, "op")
+def test_raspirover_booleanexpression_has_op():
+    assert hasattr(raspirover_BooleanExpression, "op")
     descriptor = None
-    for klass in raspirover::StringExpression.__mro__:
+    for klass in raspirover_BooleanExpression.__mro__:
         if "op" in klass.__dict__:
             descriptor = klass.__dict__["op"]
             break
@@ -1531,23 +1183,23 @@ def test_raspirover::stringexpression_has_op():
 
 
 
-def test_raspirover::numericexpression_is_not_abstract():
-    assert not inspect.isabstract(raspirover::NumericExpression)
+def test_raspirover_numericexpression_is_not_abstract():
+    assert not inspect.isabstract(raspirover_NumericExpression)
 
 
-def test_raspirover::numericexpression_constructor_exists():
-    assert callable(raspirover::NumericExpression.__init__)
+def test_raspirover_numericexpression_constructor_exists():
+    assert callable(raspirover_NumericExpression.__init__)
 
 
-def test_raspirover::numericexpression_constructor_args():
-    sig = inspect.signature(raspirover::NumericExpression.__init__)
+def test_raspirover_numericexpression_constructor_args():
+    sig = inspect.signature(raspirover_NumericExpression.__init__)
     params = list(sig.parameters.keys())
     assert "op" in params, "Missing parameter 'op'"
 
-def test_raspirover::numericexpression_has_op():
-    assert hasattr(raspirover::NumericExpression, "op")
+def test_raspirover_numericexpression_has_op():
+    assert hasattr(raspirover_NumericExpression, "op")
     descriptor = None
-    for klass in raspirover::NumericExpression.__mro__:
+    for klass in raspirover_NumericExpression.__mro__:
         if "op" in klass.__dict__:
             descriptor = klass.__dict__["op"]
             break
@@ -1611,37 +1263,23 @@ def test_query_constructor_args():
 
 
 
-def test_raspirover::messagequery_is_not_abstract():
-    assert not inspect.isabstract(raspirover::MessageQuery)
+def test_raspirover_obstaclequery_is_not_abstract():
+    assert not inspect.isabstract(raspirover_ObstacleQuery)
 
 
-def test_raspirover::messagequery_constructor_exists():
-    assert callable(raspirover::MessageQuery.__init__)
+def test_raspirover_obstaclequery_constructor_exists():
+    assert callable(raspirover_ObstacleQuery.__init__)
 
 
-def test_raspirover::messagequery_constructor_args():
-    sig = inspect.signature(raspirover::MessageQuery.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_raspirover::obstaclequery_is_not_abstract():
-    assert not inspect.isabstract(raspirover::ObstacleQuery)
-
-
-def test_raspirover::obstaclequery_constructor_exists():
-    assert callable(raspirover::ObstacleQuery.__init__)
-
-
-def test_raspirover::obstaclequery_constructor_args():
-    sig = inspect.signature(raspirover::ObstacleQuery.__init__)
+def test_raspirover_obstaclequery_constructor_args():
+    sig = inspect.signature(raspirover_ObstacleQuery.__init__)
     params = list(sig.parameters.keys())
     assert "front" in params, "Missing parameter 'front'"
 
-def test_raspirover::obstaclequery_has_front():
-    assert hasattr(raspirover::ObstacleQuery, "front")
+def test_raspirover_obstaclequery_has_front():
+    assert hasattr(raspirover_ObstacleQuery, "front")
     descriptor = None
-    for klass in raspirover::ObstacleQuery.__mro__:
+    for klass in raspirover_ObstacleQuery.__mro__:
         if "front" in klass.__dict__:
             descriptor = klass.__dict__["front"]
             break
@@ -1649,72 +1287,86 @@ def test_raspirover::obstaclequery_has_front():
 
 
 
-def test_raspirover::humidityquery_is_not_abstract():
-    assert not inspect.isabstract(raspirover::HumidityQuery)
+def test_raspirover_humidityquery_is_not_abstract():
+    assert not inspect.isabstract(raspirover_HumidityQuery)
 
 
-def test_raspirover::humidityquery_constructor_exists():
-    assert callable(raspirover::HumidityQuery.__init__)
+def test_raspirover_humidityquery_constructor_exists():
+    assert callable(raspirover_HumidityQuery.__init__)
 
 
-def test_raspirover::humidityquery_constructor_args():
-    sig = inspect.signature(raspirover::HumidityQuery.__init__)
+def test_raspirover_humidityquery_constructor_args():
+    sig = inspect.signature(raspirover_HumidityQuery.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_raspirover::temperaturequery_is_not_abstract():
-    assert not inspect.isabstract(raspirover::TemperatureQuery)
+def test_raspirover_messagequery_is_not_abstract():
+    assert not inspect.isabstract(raspirover_MessageQuery)
 
 
-def test_raspirover::temperaturequery_constructor_exists():
-    assert callable(raspirover::TemperatureQuery.__init__)
+def test_raspirover_messagequery_constructor_exists():
+    assert callable(raspirover_MessageQuery.__init__)
 
 
-def test_raspirover::temperaturequery_constructor_args():
-    sig = inspect.signature(raspirover::TemperatureQuery.__init__)
+def test_raspirover_messagequery_constructor_args():
+    sig = inspect.signature(raspirover_MessageQuery.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_raspirover::query_is_not_abstract():
-    assert not inspect.isabstract(raspirover::Query)
+def test_raspirover_temperaturequery_is_not_abstract():
+    assert not inspect.isabstract(raspirover_TemperatureQuery)
 
 
-def test_raspirover::query_constructor_exists():
-    assert callable(raspirover::Query.__init__)
+def test_raspirover_temperaturequery_constructor_exists():
+    assert callable(raspirover_TemperatureQuery.__init__)
 
 
-def test_raspirover::query_constructor_args():
-    sig = inspect.signature(raspirover::Query.__init__)
+def test_raspirover_temperaturequery_constructor_args():
+    sig = inspect.signature(raspirover_TemperatureQuery.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_raspirover::roverexpression_is_not_abstract():
-    assert not inspect.isabstract(raspirover::RoverExpression)
+def test_raspirover_query_is_not_abstract():
+    assert not inspect.isabstract(raspirover_Query)
 
 
-def test_raspirover::roverexpression_constructor_exists():
-    assert callable(raspirover::RoverExpression.__init__)
+def test_raspirover_query_constructor_exists():
+    assert callable(raspirover_Query.__init__)
 
 
-def test_raspirover::roverexpression_constructor_args():
-    sig = inspect.signature(raspirover::RoverExpression.__init__)
+def test_raspirover_query_constructor_args():
+    sig = inspect.signature(raspirover_Query.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_raspirover::rovervalue_is_not_abstract():
-    assert not inspect.isabstract(raspirover::RoverValue)
+def test_raspirover_roverexpression_is_not_abstract():
+    assert not inspect.isabstract(raspirover_RoverExpression)
 
 
-def test_raspirover::rovervalue_constructor_exists():
-    assert callable(raspirover::RoverValue.__init__)
+def test_raspirover_roverexpression_constructor_exists():
+    assert callable(raspirover_RoverExpression.__init__)
 
 
-def test_raspirover::rovervalue_constructor_args():
-    sig = inspect.signature(raspirover::RoverValue.__init__)
+def test_raspirover_roverexpression_constructor_args():
+    sig = inspect.signature(raspirover_RoverExpression.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_raspirover_rovervalue_is_not_abstract():
+    assert not inspect.isabstract(raspirover_RoverValue)
+
+
+def test_raspirover_rovervalue_constructor_exists():
+    assert callable(raspirover_RoverValue.__init__)
+
+
+def test_raspirover_rovervalue_constructor_args():
+    sig = inspect.signature(raspirover_RoverValue.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1733,23 +1385,23 @@ def test_statement_constructor_args():
 
 
 
-def test_raspirover::varassignment_is_not_abstract():
-    assert not inspect.isabstract(raspirover::VarAssignment)
+def test_raspirover_varref_is_not_abstract():
+    assert not inspect.isabstract(raspirover_VarRef)
 
 
-def test_raspirover::varassignment_constructor_exists():
-    assert callable(raspirover::VarAssignment.__init__)
+def test_raspirover_varref_constructor_exists():
+    assert callable(raspirover_VarRef.__init__)
 
 
-def test_raspirover::varassignment_constructor_args():
-    sig = inspect.signature(raspirover::VarAssignment.__init__)
+def test_raspirover_varref_constructor_args():
+    sig = inspect.signature(raspirover_VarRef.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_raspirover::varassignment_has_name():
-    assert hasattr(raspirover::VarAssignment, "name")
+def test_raspirover_varref_has_name():
+    assert hasattr(raspirover_VarRef, "name")
     descriptor = None
-    for klass in raspirover::VarAssignment.__mro__:
+    for klass in raspirover_VarRef.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -1757,23 +1409,65 @@ def test_raspirover::varassignment_has_name():
 
 
 
-def test_raspirover::varref_is_not_abstract():
-    assert not inspect.isabstract(raspirover::VarRef)
+def test_raspirover_conditional_is_not_abstract():
+    assert not inspect.isabstract(raspirover_Conditional)
 
 
-def test_raspirover::varref_constructor_exists():
-    assert callable(raspirover::VarRef.__init__)
+def test_raspirover_conditional_constructor_exists():
+    assert callable(raspirover_Conditional.__init__)
 
 
-def test_raspirover::varref_constructor_args():
-    sig = inspect.signature(raspirover::VarRef.__init__)
+def test_raspirover_conditional_constructor_args():
+    sig = inspect.signature(raspirover_Conditional.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_raspirover_action_is_not_abstract():
+    assert not inspect.isabstract(raspirover_Action)
+
+
+def test_raspirover_action_constructor_exists():
+    assert callable(raspirover_Action.__init__)
+
+
+def test_raspirover_action_constructor_args():
+    sig = inspect.signature(raspirover_Action.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_raspirover_loop_is_not_abstract():
+    assert not inspect.isabstract(raspirover_Loop)
+
+
+def test_raspirover_loop_constructor_exists():
+    assert callable(raspirover_Loop.__init__)
+
+
+def test_raspirover_loop_constructor_args():
+    sig = inspect.signature(raspirover_Loop.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_raspirover_varassignment_is_not_abstract():
+    assert not inspect.isabstract(raspirover_VarAssignment)
+
+
+def test_raspirover_varassignment_constructor_exists():
+    assert callable(raspirover_VarAssignment.__init__)
+
+
+def test_raspirover_varassignment_constructor_args():
+    sig = inspect.signature(raspirover_VarAssignment.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_raspirover::varref_has_name():
-    assert hasattr(raspirover::VarRef, "name")
+def test_raspirover_varassignment_has_name():
+    assert hasattr(raspirover_VarAssignment, "name")
     descriptor = None
-    for klass in raspirover::VarRef.__mro__:
+    for klass in raspirover_VarAssignment.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -1781,74 +1475,384 @@ def test_raspirover::varref_has_name():
 
 
 
-def test_raspirover::conditional_is_not_abstract():
-    assert not inspect.isabstract(raspirover::Conditional)
+def test_raspirover_statement_is_not_abstract():
+    assert not inspect.isabstract(raspirover_Statement)
 
 
-def test_raspirover::conditional_constructor_exists():
-    assert callable(raspirover::Conditional.__init__)
+def test_raspirover_statement_constructor_exists():
+    assert callable(raspirover_Statement.__init__)
 
 
-def test_raspirover::conditional_constructor_args():
-    sig = inspect.signature(raspirover::Conditional.__init__)
+def test_raspirover_statement_constructor_args():
+    sig = inspect.signature(raspirover_Statement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_raspirover::loop_is_not_abstract():
-    assert not inspect.isabstract(raspirover::Loop)
+def test_raspirover_rclblock_is_not_abstract():
+    assert not inspect.isabstract(raspirover_RclBlock)
 
 
-def test_raspirover::loop_constructor_exists():
-    assert callable(raspirover::Loop.__init__)
+def test_raspirover_rclblock_constructor_exists():
+    assert callable(raspirover_RclBlock.__init__)
 
 
-def test_raspirover::loop_constructor_args():
-    sig = inspect.signature(raspirover::Loop.__init__)
+def test_raspirover_rclblock_constructor_args():
+    sig = inspect.signature(raspirover_RclBlock.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_raspirover::rclblock_is_not_abstract():
-    assert not inspect.isabstract(raspirover::RclBlock)
+def test_raspirover_param_is_not_abstract():
+    assert not inspect.isabstract(raspirover_Param)
 
 
-def test_raspirover::rclblock_constructor_exists():
-    assert callable(raspirover::RclBlock.__init__)
+def test_raspirover_param_constructor_exists():
+    assert callable(raspirover_Param.__init__)
 
 
-def test_raspirover::rclblock_constructor_args():
-    sig = inspect.signature(raspirover::RclBlock.__init__)
+def test_raspirover_param_constructor_args():
+    sig = inspect.signature(raspirover_Param.__init__)
+    params = list(sig.parameters.keys())
+    assert "name" in params, "Missing parameter 'name'"
+
+def test_raspirover_param_has_name():
+    assert hasattr(raspirover_Param, "name")
+    descriptor = None
+    for klass in raspirover_Param.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_raspirover_namedelement_is_not_abstract():
+    assert not inspect.isabstract(raspirover_NamedElement)
+
+
+def test_raspirover_namedelement_constructor_exists():
+    assert callable(raspirover_NamedElement.__init__)
+
+
+def test_raspirover_namedelement_constructor_args():
+    sig = inspect.signature(raspirover_NamedElement.__init__)
+    params = list(sig.parameters.keys())
+    assert "name" in params, "Missing parameter 'name'"
+
+def test_raspirover_namedelement_has_name():
+    assert hasattr(raspirover_NamedElement, "name")
+    descriptor = None
+    for klass in raspirover_NamedElement.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_module_is_not_abstract():
+    assert not inspect.isabstract(Module)
+
+
+def test_module_constructor_exists():
+    assert callable(Module.__init__)
+
+
+def test_module_constructor_args():
+    sig = inspect.signature(Module.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_raspirover::action_is_not_abstract():
-    assert not inspect.isabstract(raspirover::Action)
+def test_raspirover_arduinomodule_is_not_abstract():
+    assert not inspect.isabstract(raspirover_ArduinoModule)
 
 
-def test_raspirover::action_constructor_exists():
-    assert callable(raspirover::Action.__init__)
+def test_raspirover_arduinomodule_constructor_exists():
+    assert callable(raspirover_ArduinoModule.__init__)
 
 
-def test_raspirover::action_constructor_args():
-    sig = inspect.signature(raspirover::Action.__init__)
+def test_raspirover_arduinomodule_constructor_args():
+    sig = inspect.signature(raspirover_ArduinoModule.__init__)
     params = list(sig.parameters.keys())
 
-def test_booleanoperator_exists():
+
+
+def test_arduinomodule_is_not_abstract():
+    assert not inspect.isabstract(ArduinoModule)
+
+
+def test_arduinomodule_constructor_exists():
+    assert callable(ArduinoModule.__init__)
+
+
+def test_arduinomodule_constructor_args():
+    sig = inspect.signature(ArduinoModule.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_raspirover_arduinoanalogmodule_is_not_abstract():
+    assert not inspect.isabstract(raspirover_ArduinoAnalogModule)
+
+
+def test_raspirover_arduinoanalogmodule_constructor_exists():
+    assert callable(raspirover_ArduinoAnalogModule.__init__)
+
+
+def test_raspirover_arduinoanalogmodule_constructor_args():
+    sig = inspect.signature(raspirover_ArduinoAnalogModule.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_raspirover_arduinodigitalmodule_is_not_abstract():
+    assert not inspect.isabstract(raspirover_ArduinoDigitalModule)
+
+
+def test_raspirover_arduinodigitalmodule_constructor_exists():
+    assert callable(raspirover_ArduinoDigitalModule.__init__)
+
+
+def test_raspirover_arduinodigitalmodule_constructor_args():
+    sig = inspect.signature(raspirover_ArduinoDigitalModule.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_pin_is_not_abstract():
+    assert not inspect.isabstract(Pin)
+
+
+def test_pin_constructor_exists():
+    assert callable(Pin.__init__)
+
+
+def test_pin_constructor_args():
+    sig = inspect.signature(Pin.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_raspirover_instruction_is_not_abstract():
+    assert not inspect.isabstract(raspirover_Instruction)
+
+
+def test_raspirover_instruction_constructor_exists():
+    assert callable(raspirover_Instruction.__init__)
+
+
+def test_raspirover_instruction_constructor_args():
+    sig = inspect.signature(raspirover_Instruction.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_raspirover_block_is_not_abstract():
+    assert not inspect.isabstract(raspirover_Block)
+
+
+def test_raspirover_block_constructor_exists():
+    assert callable(raspirover_Block.__init__)
+
+
+def test_raspirover_block_constructor_args():
+    sig = inspect.signature(raspirover_Block.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_raspirover_roverprogram_is_not_abstract():
+    assert not inspect.isabstract(raspirover_RoverProgram)
+
+
+def test_raspirover_roverprogram_constructor_exists():
+    assert callable(raspirover_RoverProgram.__init__)
+
+
+def test_raspirover_roverprogram_constructor_args():
+    sig = inspect.signature(raspirover_RoverProgram.__init__)
+    params = list(sig.parameters.keys())
+    assert "name" in params, "Missing parameter 'name'"
+
+def test_raspirover_roverprogram_has_name():
+    assert hasattr(raspirover_RoverProgram, "name")
+    descriptor = None
+    for klass in raspirover_RoverProgram.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_raspirover_project_is_not_abstract():
+    assert not inspect.isabstract(raspirover_Project)
+
+
+def test_raspirover_project_constructor_exists():
+    assert callable(raspirover_Project.__init__)
+
+
+def test_raspirover_project_constructor_args():
+    sig = inspect.signature(raspirover_Project.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_namedelement_is_not_abstract():
+    assert not inspect.isabstract(NamedElement)
+
+
+def test_namedelement_constructor_exists():
+    assert callable(NamedElement.__init__)
+
+
+def test_namedelement_constructor_args():
+    sig = inspect.signature(NamedElement.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_raspirover_pin_is_not_abstract():
+    assert not inspect.isabstract(raspirover_Pin)
+
+
+def test_raspirover_pin_constructor_exists():
+    assert callable(raspirover_Pin.__init__)
+
+
+def test_raspirover_pin_constructor_args():
+    sig = inspect.signature(raspirover_Pin.__init__)
+    params = list(sig.parameters.keys())
+    assert "level" in params, "Missing parameter 'level'"
+
+def test_raspirover_pin_has_level():
+    assert hasattr(raspirover_Pin, "level")
+    descriptor = None
+    for klass in raspirover_Pin.__mro__:
+        if "level" in klass.__dict__:
+            descriptor = klass.__dict__["level"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_raspirover_module_is_not_abstract():
+    assert not inspect.isabstract(raspirover_Module)
+
+
+def test_raspirover_module_constructor_exists():
+    assert callable(raspirover_Module.__init__)
+
+
+def test_raspirover_module_constructor_args():
+    sig = inspect.signature(raspirover_Module.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_raspirover_sketch_is_not_abstract():
+    assert not inspect.isabstract(raspirover_Sketch)
+
+
+def test_raspirover_sketch_constructor_exists():
+    assert callable(raspirover_Sketch.__init__)
+
+
+def test_raspirover_sketch_constructor_args():
+    sig = inspect.signature(raspirover_Sketch.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_raspirover_board_is_not_abstract():
+    assert not inspect.isabstract(raspirover_Board)
+
+
+def test_raspirover_board_constructor_exists():
+    assert callable(raspirover_Board.__init__)
+
+
+def test_raspirover_board_constructor_args():
+    sig = inspect.signature(raspirover_Board.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_raspirover_analogpin_is_not_abstract():
+    assert not inspect.isabstract(raspirover_AnalogPin)
+
+
+def test_raspirover_analogpin_constructor_exists():
+    assert callable(raspirover_AnalogPin.__init__)
+
+
+def test_raspirover_analogpin_constructor_args():
+    sig = inspect.signature(raspirover_AnalogPin.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_raspirover_digitalpin_is_not_abstract():
+    assert not inspect.isabstract(raspirover_DigitalPin)
+
+
+def test_raspirover_digitalpin_constructor_exists():
+    assert callable(raspirover_DigitalPin.__init__)
+
+
+def test_raspirover_digitalpin_constructor_args():
+    sig = inspect.signature(raspirover_DigitalPin.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_board_is_not_abstract():
+    assert not inspect.isabstract(Board)
+
+
+def test_board_constructor_exists():
+    assert callable(Board.__init__)
+
+
+def test_board_constructor_args():
+    sig = inspect.signature(Board.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_raspirover_raspiboard_is_not_abstract():
+    assert not inspect.isabstract(raspirover_RasPiBoard)
+
+
+def test_raspirover_raspiboard_constructor_exists():
+    assert callable(raspirover_RasPiBoard.__init__)
+
+
+def test_raspirover_raspiboard_constructor_args():
+    sig = inspect.signature(raspirover_RasPiBoard.__init__)
+    params = list(sig.parameters.keys())
+
+def test_numericoperator_exists():
     # Check that the Enumeration exists
-    assert BooleanOperator is not None
+    assert NumericOperator is not None
 
-def test_booleanoperator_has_all_literals():
+def test_numericoperator_has_all_literals():
     # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in BooleanOperator]
+    enum_literals = [lit.name for lit in NumericOperator]
     expected_literals = [
-        "eq",
+        "geq",
+        "leq",
         "neq",
+        "lt",
+        "gt",
+        "eq",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in BooleanOperator"
+        assert lit_name in enum_literals, f"Literal '' missing in NumericOperator"
 
 def test_stringoperator_exists():
     # Check that the Enumeration exists
@@ -1865,24 +1869,20 @@ def test_stringoperator_has_all_literals():
     for lit_name in expected_literals:
         assert lit_name in enum_literals, f"Literal '' missing in StringOperator"
 
-def test_numericoperator_exists():
+def test_booleanoperator_exists():
     # Check that the Enumeration exists
-    assert NumericOperator is not None
+    assert BooleanOperator is not None
 
-def test_numericoperator_has_all_literals():
+def test_booleanoperator_has_all_literals():
     # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in NumericOperator]
+    enum_literals = [lit.name for lit in BooleanOperator]
     expected_literals = [
-        "geq",
         "eq",
-        "leq",
-        "lt",
         "neq",
-        "gt",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in NumericOperator"
+        assert lit_name in enum_literals, f"Literal '' missing in BooleanOperator"
 
 
 # =============================================================================
@@ -1902,301 +1902,227 @@ AngleOperation_strategy = st.builds(
 QuantityScalarOperation_strategy = st.builds(
     QuantityScalarOperation,
 )
-raspirover::AngleScalarDivide_strategy = st.builds(
-    raspirover::AngleScalarDivide,
+raspirover_AngleScalarDivide_strategy = st.builds(
+    raspirover_AngleScalarDivide,
 )
-raspirover::AngleScalarMultiply_strategy = st.builds(
-    raspirover::AngleScalarMultiply,
+raspirover_AngleScalarMultiply_strategy = st.builds(
+    raspirover_AngleScalarMultiply,
 )
 QuantityHomogenousOperation_strategy = st.builds(
     QuantityHomogenousOperation,
 )
-raspirover::AngleAdd_strategy = st.builds(
-    raspirover::AngleAdd,
+raspirover_AngleAdd_strategy = st.builds(
+    raspirover_AngleAdd,
 )
-raspirover::AngleSubtract_strategy = st.builds(
-    raspirover::AngleSubtract,
+raspirover_AngleEquals_strategy = st.builds(
+    raspirover_AngleEquals,
 )
-raspirover::AngleGreater_strategy = st.builds(
-    raspirover::AngleGreater,
+raspirover_AngleSmaller_strategy = st.builds(
+    raspirover_AngleSmaller,
 )
-raspirover::AngleSmaller_strategy = st.builds(
-    raspirover::AngleSmaller,
+raspirover_AngleDistinct_strategy = st.builds(
+    raspirover_AngleDistinct,
 )
-raspirover::AngleDistinct_strategy = st.builds(
-    raspirover::AngleDistinct,
+raspirover_AngleGreater_strategy = st.builds(
+    raspirover_AngleGreater,
 )
-raspirover::AngleEquals_strategy = st.builds(
-    raspirover::AngleEquals,
+raspirover_AngleSubtract_strategy = st.builds(
+    raspirover_AngleSubtract,
 )
 LengthOperation_strategy = st.builds(
     LengthOperation,
 )
-raspirover::LengthGreater_strategy = st.builds(
-    raspirover::LengthGreater,
+raspirover_LengthScalarMultiply_strategy = st.builds(
+    raspirover_LengthScalarMultiply,
 )
-raspirover::LengthDistinct_strategy = st.builds(
-    raspirover::LengthDistinct,
+raspirover_LengthSmaller_strategy = st.builds(
+    raspirover_LengthSmaller,
 )
-raspirover::LengthSmaller_strategy = st.builds(
-    raspirover::LengthSmaller,
+raspirover_LengthDistinct_strategy = st.builds(
+    raspirover_LengthDistinct,
 )
-raspirover::LengthSubtract_strategy = st.builds(
-    raspirover::LengthSubtract,
+raspirover_LengthScalarDivide_strategy = st.builds(
+    raspirover_LengthScalarDivide,
 )
-raspirover::LengthScalarMultiply_strategy = st.builds(
-    raspirover::LengthScalarMultiply,
+raspirover_LengthGreater_strategy = st.builds(
+    raspirover_LengthGreater,
 )
-raspirover::LengthEquals_strategy = st.builds(
-    raspirover::LengthEquals,
+raspirover_LengthSubtract_strategy = st.builds(
+    raspirover_LengthSubtract,
 )
-raspirover::LengthScalarDivide_strategy = st.builds(
-    raspirover::LengthScalarDivide,
+raspirover_LengthEquals_strategy = st.builds(
+    raspirover_LengthEquals,
 )
-raspirover::LengthAdd_strategy = st.builds(
-    raspirover::LengthAdd,
+raspirover_LengthAdd_strategy = st.builds(
+    raspirover_LengthAdd,
 )
 QuantityOperation_strategy = st.builds(
     QuantityOperation,
 )
-raspirover::AngleOperation_strategy = st.builds(
-    raspirover::AngleOperation,
-)
-raspirover::QuantityScalarOperation_strategy = st.builds(
-    raspirover::QuantityScalarOperation,
+raspirover_QuantityScalarOperation_strategy = st.builds(
+    raspirover_QuantityScalarOperation,
     rhs=
         st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False)
 )
-raspirover::QuantityHomogenousOperation_strategy = st.builds(
-    raspirover::QuantityHomogenousOperation,
+raspirover_AngleOperation_strategy = st.builds(
+    raspirover_AngleOperation,
 )
-raspirover::QuantityComparisonOperation_strategy = st.builds(
-    raspirover::QuantityComparisonOperation,
+raspirover_QuantityComparisonOperation_strategy = st.builds(
+    raspirover_QuantityComparisonOperation,
 )
-raspirover::QuantityArithmeticOperation_strategy = st.builds(
-    raspirover::QuantityArithmeticOperation,
+raspirover_QuantityHomogenousOperation_strategy = st.builds(
+    raspirover_QuantityHomogenousOperation,
 )
-raspirover::LengthOperation_strategy = st.builds(
-    raspirover::LengthOperation,
+raspirover_QuantityArithmeticOperation_strategy = st.builds(
+    raspirover_QuantityArithmeticOperation,
 )
-raspirover::QuantityOperation_strategy = st.builds(
-    raspirover::QuantityOperation,
+raspirover_LengthOperation_strategy = st.builds(
+    raspirover_LengthOperation,
+)
+raspirover_QuantityOperation_strategy = st.builds(
+    raspirover_QuantityOperation,
 )
 Quantity_strategy = st.builds(
     Quantity,
 )
-raspirover::Angle_strategy = st.builds(
-    raspirover::Angle,
+raspirover_Angle_strategy = st.builds(
+    raspirover_Angle,
 )
-raspirover::Length_strategy = st.builds(
-    raspirover::Length,
+raspirover_Length_strategy = st.builds(
+    raspirover_Length,
 )
 AngleUnit_strategy = st.builds(
     AngleUnit,
 )
-raspirover::Turn_strategy = st.builds(
-    raspirover::Turn,
+raspirover_Degree_strategy = st.builds(
+    raspirover_Degree,
 )
-raspirover::Gradian_strategy = st.builds(
-    raspirover::Gradian,
+raspirover_Turn_strategy = st.builds(
+    raspirover_Turn,
 )
-raspirover::Degree_strategy = st.builds(
-    raspirover::Degree,
+raspirover_Gradian_strategy = st.builds(
+    raspirover_Gradian,
 )
-raspirover::Radian_strategy = st.builds(
-    raspirover::Radian,
+raspirover_Radian_strategy = st.builds(
+    raspirover_Radian,
 )
 ImperialSystemUnit_strategy = st.builds(
     ImperialSystemUnit,
 )
-raspirover::Statement_strategy = st.builds(
-    raspirover::Statement,
-)
-raspirover::Param_strategy = st.builds(
-    raspirover::Param,
-    name=
-        safe_text
-)
-raspirover::NamedElement_strategy = st.builds(
-    raspirover::NamedElement,
-    name=
-        safe_text
-)
-Module_strategy = st.builds(
-    Module,
-)
-raspirover::ArduinoModule_strategy = st.builds(
-    raspirover::ArduinoModule,
-)
-ArduinoModule_strategy = st.builds(
-    ArduinoModule,
-)
-raspirover::ArduinoAnalogModule_strategy = st.builds(
-    raspirover::ArduinoAnalogModule,
-)
-raspirover::ArduinoDigitalModule_strategy = st.builds(
-    raspirover::ArduinoDigitalModule,
-)
-Pin_strategy = st.builds(
-    Pin,
-)
-raspirover::Instruction_strategy = st.builds(
-    raspirover::Instruction,
-)
-raspirover::Block_strategy = st.builds(
-    raspirover::Block,
-)
-raspirover::RoverProgram_strategy = st.builds(
-    raspirover::RoverProgram,
-    name=
-        safe_text
-)
-raspirover::Project_strategy = st.builds(
-    raspirover::Project,
-)
-NamedElement_strategy = st.builds(
-    NamedElement,
-)
-raspirover::Module_strategy = st.builds(
-    raspirover::Module,
-)
-raspirover::Pin_strategy = st.builds(
-    raspirover::Pin,
-    level=
-        st.integers()
-)
-raspirover::Sketch_strategy = st.builds(
-    raspirover::Sketch,
-)
-raspirover::Board_strategy = st.builds(
-    raspirover::Board,
-)
-raspirover::AnalogPin_strategy = st.builds(
-    raspirover::AnalogPin,
-)
-raspirover::DigitalPin_strategy = st.builds(
-    raspirover::DigitalPin,
-)
-Board_strategy = st.builds(
-    Board,
-)
-raspirover::RasPiBoard_strategy = st.builds(
-    raspirover::RasPiBoard,
-)
 LengthUnit_strategy = st.builds(
     LengthUnit,
 )
-raspirover::Foot_strategy = st.builds(
-    raspirover::Foot,
+raspirover_Yard_strategy = st.builds(
+    raspirover_Yard,
 )
-raspirover::Inch_strategy = st.builds(
-    raspirover::Inch,
+raspirover_Inch_strategy = st.builds(
+    raspirover_Inch,
 )
-raspirover::Yard_strategy = st.builds(
-    raspirover::Yard,
+raspirover_Foot_strategy = st.builds(
+    raspirover_Foot,
 )
 MetricSystemUnit_strategy = st.builds(
     MetricSystemUnit,
 )
-raspirover::Millimeter_strategy = st.builds(
-    raspirover::Millimeter,
+raspirover_Meter_strategy = st.builds(
+    raspirover_Meter,
 )
-raspirover::Meter_strategy = st.builds(
-    raspirover::Meter,
+raspirover_Millimeter_strategy = st.builds(
+    raspirover_Millimeter,
 )
-raspirover::Centimeter_strategy = st.builds(
-    raspirover::Centimeter,
+raspirover_Centimeter_strategy = st.builds(
+    raspirover_Centimeter,
 )
 Unit_strategy = st.builds(
     Unit,
 )
-raspirover::AngleUnit_strategy = st.builds(
-    raspirover::AngleUnit,
+raspirover_MetricSystemUnit_strategy = st.builds(
+    raspirover_MetricSystemUnit,
 )
-raspirover::ImperialSystemUnit_strategy = st.builds(
-    raspirover::ImperialSystemUnit,
+raspirover_ImperialSystemUnit_strategy = st.builds(
+    raspirover_ImperialSystemUnit,
 )
-raspirover::MetricSystemUnit_strategy = st.builds(
-    raspirover::MetricSystemUnit,
+raspirover_AngleUnit_strategy = st.builds(
+    raspirover_AngleUnit,
 )
-raspirover::LengthUnit_strategy = st.builds(
-    raspirover::LengthUnit,
+raspirover_LengthUnit_strategy = st.builds(
+    raspirover_LengthUnit,
 )
-raspirover::Unit_strategy = st.builds(
-    raspirover::Unit,
+raspirover_Unit_strategy = st.builds(
+    raspirover_Unit,
 )
 Action_strategy = st.builds(
     Action,
 )
-raspirover::BackwardAction_strategy = st.builds(
-    raspirover::BackwardAction,
+raspirover_TurnDegAction_strategy = st.builds(
+    raspirover_TurnDegAction,
 )
-raspirover::StopAction_strategy = st.builds(
-    raspirover::StopAction,
+raspirover_ForwardMinAction_strategy = st.builds(
+    raspirover_ForwardMinAction,
 )
-raspirover::LogAction_strategy = st.builds(
-    raspirover::LogAction,
+raspirover_LogAction_strategy = st.builds(
+    raspirover_LogAction,
     message=
         safe_text
 )
-raspirover::ForwardMinAction_strategy = st.builds(
-    raspirover::ForwardMinAction,
+raspirover_BackwardAction_strategy = st.builds(
+    raspirover_BackwardAction,
 )
-raspirover::SendAction_strategy = st.builds(
-    raspirover::SendAction,
+raspirover_StopAction_strategy = st.builds(
+    raspirover_StopAction,
+)
+raspirover_SendAction_strategy = st.builds(
+    raspirover_SendAction,
     message=
         safe_text
 )
-raspirover::TurnDegAction_strategy = st.builds(
-    raspirover::TurnDegAction,
+raspirover_TurnAction_strategy = st.builds(
+    raspirover_TurnAction,
 )
-raspirover::TurnAction_strategy = st.builds(
-    raspirover::TurnAction,
+raspirover_BackwardMinAction_strategy = st.builds(
+    raspirover_BackwardMinAction,
 )
-raspirover::BackwardMinAction_strategy = st.builds(
-    raspirover::BackwardMinAction,
+raspirover_ForwardAction_strategy = st.builds(
+    raspirover_ForwardAction,
 )
-raspirover::ForwardAction_strategy = st.builds(
-    raspirover::ForwardAction,
-)
-raspirover::Quantity_strategy = st.builds(
-    raspirover::Quantity,
+raspirover_Quantity_strategy = st.builds(
+    raspirover_Quantity,
     value=
         safe_text
 )
 RoverValue_strategy = st.builds(
     RoverValue,
 )
-raspirover::StringValue_strategy = st.builds(
-    raspirover::StringValue,
+raspirover_StringValue_strategy = st.builds(
+    raspirover_StringValue,
     sValue=
         st.booleans()
 )
-raspirover::BooleanValue_strategy = st.builds(
-    raspirover::BooleanValue,
+raspirover_BooleanValue_strategy = st.builds(
+    raspirover_BooleanValue,
     bValue=
         st.booleans()
 )
-raspirover::NumberValue_strategy = st.builds(
-    raspirover::NumberValue,
+raspirover_NumberValue_strategy = st.builds(
+    raspirover_NumberValue,
     nValue=
         safe_text
 )
 RoverExpression_strategy = st.builds(
     RoverExpression,
 )
-raspirover::BooleanExpression_strategy = st.builds(
-    raspirover::BooleanExpression,
-    op=
-        safe_text
-)
-raspirover::StringExpression_strategy = st.builds(
-    raspirover::StringExpression,
+raspirover_StringExpression_strategy = st.builds(
+    raspirover_StringExpression,
     op=
         st.booleans()
 )
-raspirover::NumericExpression_strategy = st.builds(
-    raspirover::NumericExpression,
+raspirover_BooleanExpression_strategy = st.builds(
+    raspirover_BooleanExpression,
+    op=
+        safe_text
+)
+raspirover_NumericExpression_strategy = st.builds(
+    raspirover_NumericExpression,
     op=
         st.booleans()
 )
@@ -2212,53 +2138,127 @@ NumberValue_strategy = st.builds(
 Query_strategy = st.builds(
     Query,
 )
-raspirover::MessageQuery_strategy = st.builds(
-    raspirover::MessageQuery,
-)
-raspirover::ObstacleQuery_strategy = st.builds(
-    raspirover::ObstacleQuery,
+raspirover_ObstacleQuery_strategy = st.builds(
+    raspirover_ObstacleQuery,
     front=
         st.booleans()
 )
-raspirover::HumidityQuery_strategy = st.builds(
-    raspirover::HumidityQuery,
+raspirover_HumidityQuery_strategy = st.builds(
+    raspirover_HumidityQuery,
 )
-raspirover::TemperatureQuery_strategy = st.builds(
-    raspirover::TemperatureQuery,
+raspirover_MessageQuery_strategy = st.builds(
+    raspirover_MessageQuery,
 )
-raspirover::Query_strategy = st.builds(
-    raspirover::Query,
+raspirover_TemperatureQuery_strategy = st.builds(
+    raspirover_TemperatureQuery,
 )
-raspirover::RoverExpression_strategy = st.builds(
-    raspirover::RoverExpression,
+raspirover_Query_strategy = st.builds(
+    raspirover_Query,
 )
-raspirover::RoverValue_strategy = st.builds(
-    raspirover::RoverValue,
+raspirover_RoverExpression_strategy = st.builds(
+    raspirover_RoverExpression,
+)
+raspirover_RoverValue_strategy = st.builds(
+    raspirover_RoverValue,
 )
 Statement_strategy = st.builds(
     Statement,
 )
-raspirover::VarAssignment_strategy = st.builds(
-    raspirover::VarAssignment,
-    name=
-        st.booleans()
-)
-raspirover::VarRef_strategy = st.builds(
-    raspirover::VarRef,
+raspirover_VarRef_strategy = st.builds(
+    raspirover_VarRef,
     name=
         st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False)
 )
-raspirover::Conditional_strategy = st.builds(
-    raspirover::Conditional,
+raspirover_Conditional_strategy = st.builds(
+    raspirover_Conditional,
 )
-raspirover::Loop_strategy = st.builds(
-    raspirover::Loop,
+raspirover_Action_strategy = st.builds(
+    raspirover_Action,
 )
-raspirover::RclBlock_strategy = st.builds(
-    raspirover::RclBlock,
+raspirover_Loop_strategy = st.builds(
+    raspirover_Loop,
 )
-raspirover::Action_strategy = st.builds(
-    raspirover::Action,
+raspirover_VarAssignment_strategy = st.builds(
+    raspirover_VarAssignment,
+    name=
+        st.booleans()
+)
+raspirover_Statement_strategy = st.builds(
+    raspirover_Statement,
+)
+raspirover_RclBlock_strategy = st.builds(
+    raspirover_RclBlock,
+)
+raspirover_Param_strategy = st.builds(
+    raspirover_Param,
+    name=
+        safe_text
+)
+raspirover_NamedElement_strategy = st.builds(
+    raspirover_NamedElement,
+    name=
+        safe_text
+)
+Module_strategy = st.builds(
+    Module,
+)
+raspirover_ArduinoModule_strategy = st.builds(
+    raspirover_ArduinoModule,
+)
+ArduinoModule_strategy = st.builds(
+    ArduinoModule,
+)
+raspirover_ArduinoAnalogModule_strategy = st.builds(
+    raspirover_ArduinoAnalogModule,
+)
+raspirover_ArduinoDigitalModule_strategy = st.builds(
+    raspirover_ArduinoDigitalModule,
+)
+Pin_strategy = st.builds(
+    Pin,
+)
+raspirover_Instruction_strategy = st.builds(
+    raspirover_Instruction,
+)
+raspirover_Block_strategy = st.builds(
+    raspirover_Block,
+)
+raspirover_RoverProgram_strategy = st.builds(
+    raspirover_RoverProgram,
+    name=
+        safe_text
+)
+raspirover_Project_strategy = st.builds(
+    raspirover_Project,
+)
+NamedElement_strategy = st.builds(
+    NamedElement,
+)
+raspirover_Pin_strategy = st.builds(
+    raspirover_Pin,
+    level=
+        st.integers()
+)
+raspirover_Module_strategy = st.builds(
+    raspirover_Module,
+)
+raspirover_Sketch_strategy = st.builds(
+    raspirover_Sketch,
+)
+raspirover_Board_strategy = st.builds(
+    raspirover_Board,
+)
+raspirover_AnalogPin_strategy = st.builds(
+    raspirover_AnalogPin,
+)
+raspirover_DigitalPin_strategy = st.builds(
+    raspirover_DigitalPin,
+)
+Board_strategy = st.builds(
+    Board,
+)
+raspirover_RasPiBoard_strategy = st.builds(
+    raspirover_RasPiBoard,
 )
 
 @given(instance=AngleOperation_strategy)
@@ -2271,156 +2271,153 @@ def test_angleoperation_instantiation(instance):
 def test_quantityscalaroperation_instantiation(instance):
     assert isinstance(instance, QuantityScalarOperation)
 
-@given(instance=raspirover::AngleScalarDivide_strategy)
+@given(instance=raspirover_AngleScalarDivide_strategy)
 @settings(max_examples=50)
-def test_raspirover::anglescalardivide_instantiation(instance):
-    assert isinstance(instance, raspirover::AngleScalarDivide)
+def test_raspirover_anglescalardivide_instantiation(instance):
+    assert isinstance(instance, raspirover_AngleScalarDivide)
 
-@given(instance=raspirover::AngleScalarMultiply_strategy)
+@given(instance=raspirover_AngleScalarMultiply_strategy)
 @settings(max_examples=50)
-def test_raspirover::anglescalarmultiply_instantiation(instance):
-    assert isinstance(instance, raspirover::AngleScalarMultiply)
+def test_raspirover_anglescalarmultiply_instantiation(instance):
+    assert isinstance(instance, raspirover_AngleScalarMultiply)
 
 @given(instance=QuantityHomogenousOperation_strategy)
 @settings(max_examples=50)
 def test_quantityhomogenousoperation_instantiation(instance):
     assert isinstance(instance, QuantityHomogenousOperation)
 
-@given(instance=raspirover::AngleAdd_strategy)
+@given(instance=raspirover_AngleAdd_strategy)
 @settings(max_examples=50)
-def test_raspirover::angleadd_instantiation(instance):
-    assert isinstance(instance, raspirover::AngleAdd)
+def test_raspirover_angleadd_instantiation(instance):
+    assert isinstance(instance, raspirover_AngleAdd)
 
-@given(instance=raspirover::AngleSubtract_strategy)
+@given(instance=raspirover_AngleEquals_strategy)
 @settings(max_examples=50)
-def test_raspirover::anglesubtract_instantiation(instance):
-    assert isinstance(instance, raspirover::AngleSubtract)
+def test_raspirover_angleequals_instantiation(instance):
+    assert isinstance(instance, raspirover_AngleEquals)
 
-@given(instance=raspirover::AngleGreater_strategy)
+@given(instance=raspirover_AngleSmaller_strategy)
 @settings(max_examples=50)
-def test_raspirover::anglegreater_instantiation(instance):
-    assert isinstance(instance, raspirover::AngleGreater)
+def test_raspirover_anglesmaller_instantiation(instance):
+    assert isinstance(instance, raspirover_AngleSmaller)
 
-@given(instance=raspirover::AngleSmaller_strategy)
+@given(instance=raspirover_AngleDistinct_strategy)
 @settings(max_examples=50)
-def test_raspirover::anglesmaller_instantiation(instance):
-    assert isinstance(instance, raspirover::AngleSmaller)
+def test_raspirover_angledistinct_instantiation(instance):
+    assert isinstance(instance, raspirover_AngleDistinct)
 
-@given(instance=raspirover::AngleDistinct_strategy)
+@given(instance=raspirover_AngleGreater_strategy)
 @settings(max_examples=50)
-def test_raspirover::angledistinct_instantiation(instance):
-    assert isinstance(instance, raspirover::AngleDistinct)
+def test_raspirover_anglegreater_instantiation(instance):
+    assert isinstance(instance, raspirover_AngleGreater)
 
-@given(instance=raspirover::AngleEquals_strategy)
+@given(instance=raspirover_AngleSubtract_strategy)
 @settings(max_examples=50)
-def test_raspirover::angleequals_instantiation(instance):
-    assert isinstance(instance, raspirover::AngleEquals)
+def test_raspirover_anglesubtract_instantiation(instance):
+    assert isinstance(instance, raspirover_AngleSubtract)
 
 @given(instance=LengthOperation_strategy)
 @settings(max_examples=50)
 def test_lengthoperation_instantiation(instance):
     assert isinstance(instance, LengthOperation)
 
-@given(instance=raspirover::LengthGreater_strategy)
+@given(instance=raspirover_LengthScalarMultiply_strategy)
 @settings(max_examples=50)
-def test_raspirover::lengthgreater_instantiation(instance):
-    assert isinstance(instance, raspirover::LengthGreater)
+def test_raspirover_lengthscalarmultiply_instantiation(instance):
+    assert isinstance(instance, raspirover_LengthScalarMultiply)
 
-@given(instance=raspirover::LengthDistinct_strategy)
+@given(instance=raspirover_LengthSmaller_strategy)
 @settings(max_examples=50)
-def test_raspirover::lengthdistinct_instantiation(instance):
-    assert isinstance(instance, raspirover::LengthDistinct)
+def test_raspirover_lengthsmaller_instantiation(instance):
+    assert isinstance(instance, raspirover_LengthSmaller)
 
-@given(instance=raspirover::LengthSmaller_strategy)
+@given(instance=raspirover_LengthDistinct_strategy)
 @settings(max_examples=50)
-def test_raspirover::lengthsmaller_instantiation(instance):
-    assert isinstance(instance, raspirover::LengthSmaller)
+def test_raspirover_lengthdistinct_instantiation(instance):
+    assert isinstance(instance, raspirover_LengthDistinct)
 
-@given(instance=raspirover::LengthSubtract_strategy)
+@given(instance=raspirover_LengthScalarDivide_strategy)
 @settings(max_examples=50)
-def test_raspirover::lengthsubtract_instantiation(instance):
-    assert isinstance(instance, raspirover::LengthSubtract)
+def test_raspirover_lengthscalardivide_instantiation(instance):
+    assert isinstance(instance, raspirover_LengthScalarDivide)
 
-@given(instance=raspirover::LengthScalarMultiply_strategy)
+@given(instance=raspirover_LengthGreater_strategy)
 @settings(max_examples=50)
-def test_raspirover::lengthscalarmultiply_instantiation(instance):
-    assert isinstance(instance, raspirover::LengthScalarMultiply)
+def test_raspirover_lengthgreater_instantiation(instance):
+    assert isinstance(instance, raspirover_LengthGreater)
 
-@given(instance=raspirover::LengthEquals_strategy)
+@given(instance=raspirover_LengthSubtract_strategy)
 @settings(max_examples=50)
-def test_raspirover::lengthequals_instantiation(instance):
-    assert isinstance(instance, raspirover::LengthEquals)
+def test_raspirover_lengthsubtract_instantiation(instance):
+    assert isinstance(instance, raspirover_LengthSubtract)
 
-@given(instance=raspirover::LengthScalarDivide_strategy)
+@given(instance=raspirover_LengthEquals_strategy)
 @settings(max_examples=50)
-def test_raspirover::lengthscalardivide_instantiation(instance):
-    assert isinstance(instance, raspirover::LengthScalarDivide)
+def test_raspirover_lengthequals_instantiation(instance):
+    assert isinstance(instance, raspirover_LengthEquals)
 
-@given(instance=raspirover::LengthAdd_strategy)
+@given(instance=raspirover_LengthAdd_strategy)
 @settings(max_examples=50)
-def test_raspirover::lengthadd_instantiation(instance):
-    assert isinstance(instance, raspirover::LengthAdd)
+def test_raspirover_lengthadd_instantiation(instance):
+    assert isinstance(instance, raspirover_LengthAdd)
 
 @given(instance=QuantityOperation_strategy)
 @settings(max_examples=50)
 def test_quantityoperation_instantiation(instance):
     assert isinstance(instance, QuantityOperation)
 
-@given(instance=raspirover::AngleOperation_strategy)
+@given(instance=raspirover_QuantityScalarOperation_strategy)
 @settings(max_examples=50)
-def test_raspirover::angleoperation_instantiation(instance):
-    assert isinstance(instance, raspirover::AngleOperation)
-
-@given(instance=raspirover::QuantityScalarOperation_strategy)
-@settings(max_examples=50)
-def test_raspirover::quantityscalaroperation_instantiation(instance):
-    assert isinstance(instance, raspirover::QuantityScalarOperation)
-
-@given(instance=raspirover::QuantityScalarOperation_strategy)
-def test_raspirover::quantityscalaroperation_rhs_type(instance):
-    assert isinstance(instance.rhs, float)
+def test_raspirover_quantityscalaroperation_instantiation(instance):
+    assert isinstance(instance, raspirover_QuantityScalarOperation)
 
 
-@given(instance=raspirover::QuantityScalarOperation_strategy)
-def test_raspirover::quantityscalaroperation_rhs_setter(instance):
+
+@given(instance=raspirover_QuantityScalarOperation_strategy)
+def test_raspirover_quantityscalaroperation_rhs_setter(instance):
     original = instance.rhs
     instance.rhs = original
     assert instance.rhs == original
 
-@given(instance=raspirover::QuantityHomogenousOperation_strategy)
+@given(instance=raspirover_AngleOperation_strategy)
 @settings(max_examples=50)
-def test_raspirover::quantityhomogenousoperation_instantiation(instance):
-    assert isinstance(instance, raspirover::QuantityHomogenousOperation)
+def test_raspirover_angleoperation_instantiation(instance):
+    assert isinstance(instance, raspirover_AngleOperation)
 
-@given(instance=raspirover::QuantityComparisonOperation_strategy)
+@given(instance=raspirover_QuantityComparisonOperation_strategy)
 @settings(max_examples=50)
-def test_raspirover::quantitycomparisonoperation_instantiation(instance):
-    assert isinstance(instance, raspirover::QuantityComparisonOperation)
+def test_raspirover_quantitycomparisonoperation_instantiation(instance):
+    assert isinstance(instance, raspirover_QuantityComparisonOperation)
 
-@given(instance=raspirover::QuantityArithmeticOperation_strategy)
+@given(instance=raspirover_QuantityHomogenousOperation_strategy)
 @settings(max_examples=50)
-def test_raspirover::quantityarithmeticoperation_instantiation(instance):
-    assert isinstance(instance, raspirover::QuantityArithmeticOperation)
+def test_raspirover_quantityhomogenousoperation_instantiation(instance):
+    assert isinstance(instance, raspirover_QuantityHomogenousOperation)
 
-@given(instance=raspirover::LengthOperation_strategy)
+@given(instance=raspirover_QuantityArithmeticOperation_strategy)
 @settings(max_examples=50)
-def test_raspirover::lengthoperation_instantiation(instance):
-    assert isinstance(instance, raspirover::LengthOperation)
+def test_raspirover_quantityarithmeticoperation_instantiation(instance):
+    assert isinstance(instance, raspirover_QuantityArithmeticOperation)
 
-@given(instance=raspirover::QuantityOperation_strategy)
+@given(instance=raspirover_LengthOperation_strategy)
 @settings(max_examples=50)
-def test_raspirover::quantityoperation_instantiation(instance):
-    assert isinstance(instance, raspirover::QuantityOperation)
+def test_raspirover_lengthoperation_instantiation(instance):
+    assert isinstance(instance, raspirover_LengthOperation)
+
+@given(instance=raspirover_QuantityOperation_strategy)
+@settings(max_examples=50)
+def test_raspirover_quantityoperation_instantiation(instance):
+    assert isinstance(instance, raspirover_QuantityOperation)
 
 @given(instance=Quantity_strategy)
 @settings(max_examples=50)
 def test_quantity_instantiation(instance):
     assert isinstance(instance, Quantity)
 
-@given(instance=raspirover::Angle_strategy)
+@given(instance=raspirover_Angle_strategy)
 @settings(max_examples=50)
-def test_raspirover::angle_instantiation(instance):
-    assert isinstance(instance, raspirover::Angle)
+def test_raspirover_angle_instantiation(instance):
+    assert isinstance(instance, raspirover_Angle)
 
 import warnings
 import copy
@@ -2428,9 +2425,38 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=raspirover::Angle_strategy)
+@given(instance=raspirover_Angle_strategy)
 @settings(max_examples=30)
-def test_raspirover::angle_torad_changes_state(instance):
+def test_raspirover_angle_print_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.print()
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.print).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'print' in raspirover_Angle is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'print' in raspirover_Angle did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'print' in raspirover_Angle is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=raspirover_Angle_strategy)
+@settings(max_examples=30)
+def test_raspirover_angle_torad_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -2442,48 +2468,19 @@ def test_raspirover::angle_torad_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'toRad' in raspirover::Angle is empty"
+        assert has_statements, f"Function 'toRad' in raspirover_Angle is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'toRad' in raspirover::Angle did not change state; check implementation")
+            warnings.warn(f"Operation 'toRad' in raspirover_Angle did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'toRad' in raspirover::Angle is not implemented or raised an error")
+        warnings.warn(f"Operation 'toRad' in raspirover_Angle is not implemented or raised an error")
 
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=raspirover::Angle_strategy)
-@settings(max_examples=30)
-def test_raspirover::angle_print_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.print()
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.print).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'print' in raspirover::Angle is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'print' in raspirover::Angle did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'print' in raspirover::Angle is not implemented or raised an error")
-
-@given(instance=raspirover::Length_strategy)
+@given(instance=raspirover_Length_strategy)
 @settings(max_examples=50)
-def test_raspirover::length_instantiation(instance):
-    assert isinstance(instance, raspirover::Length)
+def test_raspirover_length_instantiation(instance):
+    assert isinstance(instance, raspirover_Length)
 
 import warnings
 import copy
@@ -2491,38 +2488,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=raspirover::Length_strategy)
+@given(instance=raspirover_Length_strategy)
 @settings(max_examples=30)
-def test_raspirover::length_print_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.print()
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.print).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'print' in raspirover::Length is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'print' in raspirover::Length did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'print' in raspirover::Length is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=raspirover::Length_strategy)
-@settings(max_examples=30)
-def test_raspirover::length_tocm_changes_state(instance):
+def test_raspirover_length_tocm_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -2534,24 +2502,53 @@ def test_raspirover::length_tocm_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'toCm' in raspirover::Length is empty"
+        assert has_statements, f"Function 'toCm' in raspirover_Length is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'toCm' in raspirover::Length did not change state; check implementation")
+            warnings.warn(f"Operation 'toCm' in raspirover_Length did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'toCm' in raspirover::Length is not implemented or raised an error")
+        warnings.warn(f"Operation 'toCm' in raspirover_Length is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=raspirover_Length_strategy)
+@settings(max_examples=30)
+def test_raspirover_length_print_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.print()
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.print).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'print' in raspirover_Length is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'print' in raspirover_Length did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'print' in raspirover_Length is not implemented or raised an error")
 
 @given(instance=AngleUnit_strategy)
 @settings(max_examples=50)
 def test_angleunit_instantiation(instance):
     assert isinstance(instance, AngleUnit)
 
-@given(instance=raspirover::Turn_strategy)
+@given(instance=raspirover_Degree_strategy)
 @settings(max_examples=50)
-def test_raspirover::turn_instantiation(instance):
-    assert isinstance(instance, raspirover::Turn)
+def test_raspirover_degree_instantiation(instance):
+    assert isinstance(instance, raspirover_Degree)
 
 import warnings
 import copy
@@ -2559,9 +2556,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=raspirover::Turn_strategy)
+@given(instance=raspirover_Degree_strategy)
 @settings(max_examples=30)
-def test_raspirover::turn_torad_changes_state(instance):
+def test_raspirover_degree_torad_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -2575,19 +2572,19 @@ def test_raspirover::turn_torad_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'toRad' in raspirover::Turn is empty"
+        assert has_statements, f"Function 'toRad' in raspirover_Degree is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'toRad' in raspirover::Turn did not change state; check implementation")
+            warnings.warn(f"Operation 'toRad' in raspirover_Degree did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'toRad' in raspirover::Turn is not implemented or raised an error")
+        warnings.warn(f"Operation 'toRad' in raspirover_Degree is not implemented or raised an error")
 
-@given(instance=raspirover::Gradian_strategy)
+@given(instance=raspirover_Turn_strategy)
 @settings(max_examples=50)
-def test_raspirover::gradian_instantiation(instance):
-    assert isinstance(instance, raspirover::Gradian)
+def test_raspirover_turn_instantiation(instance):
+    assert isinstance(instance, raspirover_Turn)
 
 import warnings
 import copy
@@ -2595,9 +2592,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=raspirover::Gradian_strategy)
+@given(instance=raspirover_Turn_strategy)
 @settings(max_examples=30)
-def test_raspirover::gradian_torad_changes_state(instance):
+def test_raspirover_turn_torad_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -2611,19 +2608,19 @@ def test_raspirover::gradian_torad_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'toRad' in raspirover::Gradian is empty"
+        assert has_statements, f"Function 'toRad' in raspirover_Turn is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'toRad' in raspirover::Gradian did not change state; check implementation")
+            warnings.warn(f"Operation 'toRad' in raspirover_Turn did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'toRad' in raspirover::Gradian is not implemented or raised an error")
+        warnings.warn(f"Operation 'toRad' in raspirover_Turn is not implemented or raised an error")
 
-@given(instance=raspirover::Degree_strategy)
+@given(instance=raspirover_Gradian_strategy)
 @settings(max_examples=50)
-def test_raspirover::degree_instantiation(instance):
-    assert isinstance(instance, raspirover::Degree)
+def test_raspirover_gradian_instantiation(instance):
+    assert isinstance(instance, raspirover_Gradian)
 
 import warnings
 import copy
@@ -2631,9 +2628,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=raspirover::Degree_strategy)
+@given(instance=raspirover_Gradian_strategy)
 @settings(max_examples=30)
-def test_raspirover::degree_torad_changes_state(instance):
+def test_raspirover_gradian_torad_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -2647,19 +2644,19 @@ def test_raspirover::degree_torad_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'toRad' in raspirover::Degree is empty"
+        assert has_statements, f"Function 'toRad' in raspirover_Gradian is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'toRad' in raspirover::Degree did not change state; check implementation")
+            warnings.warn(f"Operation 'toRad' in raspirover_Gradian did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'toRad' in raspirover::Degree is not implemented or raised an error")
+        warnings.warn(f"Operation 'toRad' in raspirover_Gradian is not implemented or raised an error")
 
-@given(instance=raspirover::Radian_strategy)
+@given(instance=raspirover_Radian_strategy)
 @settings(max_examples=50)
-def test_raspirover::radian_instantiation(instance):
-    assert isinstance(instance, raspirover::Radian)
+def test_raspirover_radian_instantiation(instance):
+    assert isinstance(instance, raspirover_Radian)
 
 import warnings
 import copy
@@ -2667,9 +2664,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=raspirover::Radian_strategy)
+@given(instance=raspirover_Radian_strategy)
 @settings(max_examples=30)
-def test_raspirover::radian_torad_changes_state(instance):
+def test_raspirover_radian_torad_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -2683,389 +2680,29 @@ def test_raspirover::radian_torad_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'toRad' in raspirover::Radian is empty"
+        assert has_statements, f"Function 'toRad' in raspirover_Radian is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'toRad' in raspirover::Radian did not change state; check implementation")
+            warnings.warn(f"Operation 'toRad' in raspirover_Radian did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'toRad' in raspirover::Radian is not implemented or raised an error")
+        warnings.warn(f"Operation 'toRad' in raspirover_Radian is not implemented or raised an error")
 
 @given(instance=ImperialSystemUnit_strategy)
 @settings(max_examples=50)
 def test_imperialsystemunit_instantiation(instance):
     assert isinstance(instance, ImperialSystemUnit)
 
-@given(instance=raspirover::Statement_strategy)
-@settings(max_examples=50)
-def test_raspirover::statement_instantiation(instance):
-    assert isinstance(instance, raspirover::Statement)
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=raspirover::Statement_strategy)
-@settings(max_examples=30)
-def test_raspirover::statement_eval_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.eval()
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.eval).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'eval' in raspirover::Statement is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'eval' in raspirover::Statement did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'eval' in raspirover::Statement is not implemented or raised an error")
-
-@given(instance=raspirover::Param_strategy)
-@settings(max_examples=50)
-def test_raspirover::param_instantiation(instance):
-    assert isinstance(instance, raspirover::Param)
-
-@given(instance=raspirover::Param_strategy)
-def test_raspirover::param_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=raspirover::Param_strategy)
-def test_raspirover::param_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
-
-@given(instance=raspirover::NamedElement_strategy)
-@settings(max_examples=50)
-def test_raspirover::namedelement_instantiation(instance):
-    assert isinstance(instance, raspirover::NamedElement)
-
-@given(instance=raspirover::NamedElement_strategy)
-def test_raspirover::namedelement_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=raspirover::NamedElement_strategy)
-def test_raspirover::namedelement_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
-
-@given(instance=Module_strategy)
-@settings(max_examples=50)
-def test_module_instantiation(instance):
-    assert isinstance(instance, Module)
-
-@given(instance=raspirover::ArduinoModule_strategy)
-@settings(max_examples=50)
-def test_raspirover::arduinomodule_instantiation(instance):
-    assert isinstance(instance, raspirover::ArduinoModule)
-
-@given(instance=ArduinoModule_strategy)
-@settings(max_examples=50)
-def test_arduinomodule_instantiation(instance):
-    assert isinstance(instance, ArduinoModule)
-
-@given(instance=raspirover::ArduinoAnalogModule_strategy)
-@settings(max_examples=50)
-def test_raspirover::arduinoanalogmodule_instantiation(instance):
-    assert isinstance(instance, raspirover::ArduinoAnalogModule)
-
-@given(instance=raspirover::ArduinoDigitalModule_strategy)
-@settings(max_examples=50)
-def test_raspirover::arduinodigitalmodule_instantiation(instance):
-    assert isinstance(instance, raspirover::ArduinoDigitalModule)
-
-@given(instance=Pin_strategy)
-@settings(max_examples=50)
-def test_pin_instantiation(instance):
-    assert isinstance(instance, Pin)
-
-@given(instance=raspirover::Instruction_strategy)
-@settings(max_examples=50)
-def test_raspirover::instruction_instantiation(instance):
-    assert isinstance(instance, raspirover::Instruction)
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=raspirover::Instruction_strategy)
-@settings(max_examples=30)
-def test_raspirover::instruction_execute_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.execute()
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.execute).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'execute' in raspirover::Instruction is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'execute' in raspirover::Instruction did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'execute' in raspirover::Instruction is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=raspirover::Instruction_strategy)
-@settings(max_examples=30)
-def test_raspirover::instruction_finalize_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.finalize()
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.finalize).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'finalize' in raspirover::Instruction is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'finalize' in raspirover::Instruction did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'finalize' in raspirover::Instruction is not implemented or raised an error")
-
-@given(instance=raspirover::Block_strategy)
-@settings(max_examples=50)
-def test_raspirover::block_instantiation(instance):
-    assert isinstance(instance, raspirover::Block)
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=raspirover::Block_strategy)
-@settings(max_examples=30)
-def test_raspirover::block_execute_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.execute()
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.execute).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'execute' in raspirover::Block is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'execute' in raspirover::Block did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'execute' in raspirover::Block is not implemented or raised an error")
-
-@given(instance=raspirover::RoverProgram_strategy)
-@settings(max_examples=50)
-def test_raspirover::roverprogram_instantiation(instance):
-    assert isinstance(instance, raspirover::RoverProgram)
-
-@given(instance=raspirover::RoverProgram_strategy)
-def test_raspirover::roverprogram_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=raspirover::RoverProgram_strategy)
-def test_raspirover::roverprogram_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=raspirover::RoverProgram_strategy)
-@settings(max_examples=30)
-def test_raspirover::roverprogram_bindvar_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.bindVar(
-            "test", 
-            "test"
-        )
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.bindVar).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'bindVar' in raspirover::RoverProgram is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'bindVar' in raspirover::RoverProgram did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'bindVar' in raspirover::RoverProgram is not implemented or raised an error")
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=raspirover::RoverProgram_strategy)
-@settings(max_examples=30)
-def test_raspirover::roverprogram_run_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.run()
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.run).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'run' in raspirover::RoverProgram is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'run' in raspirover::RoverProgram did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'run' in raspirover::RoverProgram is not implemented or raised an error")
-
-@given(instance=raspirover::Project_strategy)
-@settings(max_examples=50)
-def test_raspirover::project_instantiation(instance):
-    assert isinstance(instance, raspirover::Project)
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=raspirover::Project_strategy)
-@settings(max_examples=30)
-def test_raspirover::project_execute_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.execute()
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.execute).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'execute' in raspirover::Project is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'execute' in raspirover::Project did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'execute' in raspirover::Project is not implemented or raised an error")
-
-@given(instance=NamedElement_strategy)
-@settings(max_examples=50)
-def test_namedelement_instantiation(instance):
-    assert isinstance(instance, NamedElement)
-
-@given(instance=raspirover::Module_strategy)
-@settings(max_examples=50)
-def test_raspirover::module_instantiation(instance):
-    assert isinstance(instance, raspirover::Module)
-
-@given(instance=raspirover::Pin_strategy)
-@settings(max_examples=50)
-def test_raspirover::pin_instantiation(instance):
-    assert isinstance(instance, raspirover::Pin)
-
-@given(instance=raspirover::Pin_strategy)
-def test_raspirover::pin_level_type(instance):
-    assert isinstance(instance.level, int)
-
-
-@given(instance=raspirover::Pin_strategy)
-def test_raspirover::pin_level_setter(instance):
-    original = instance.level
-    instance.level = original
-    assert instance.level == original
-
-@given(instance=raspirover::Sketch_strategy)
-@settings(max_examples=50)
-def test_raspirover::sketch_instantiation(instance):
-    assert isinstance(instance, raspirover::Sketch)
-
-@given(instance=raspirover::Board_strategy)
-@settings(max_examples=50)
-def test_raspirover::board_instantiation(instance):
-    assert isinstance(instance, raspirover::Board)
-
-@given(instance=raspirover::AnalogPin_strategy)
-@settings(max_examples=50)
-def test_raspirover::analogpin_instantiation(instance):
-    assert isinstance(instance, raspirover::AnalogPin)
-
-@given(instance=raspirover::DigitalPin_strategy)
-@settings(max_examples=50)
-def test_raspirover::digitalpin_instantiation(instance):
-    assert isinstance(instance, raspirover::DigitalPin)
-
-@given(instance=Board_strategy)
-@settings(max_examples=50)
-def test_board_instantiation(instance):
-    assert isinstance(instance, Board)
-
-@given(instance=raspirover::RasPiBoard_strategy)
-@settings(max_examples=50)
-def test_raspirover::raspiboard_instantiation(instance):
-    assert isinstance(instance, raspirover::RasPiBoard)
-
 @given(instance=LengthUnit_strategy)
 @settings(max_examples=50)
 def test_lengthunit_instantiation(instance):
     assert isinstance(instance, LengthUnit)
 
-@given(instance=raspirover::Foot_strategy)
+@given(instance=raspirover_Yard_strategy)
 @settings(max_examples=50)
-def test_raspirover::foot_instantiation(instance):
-    assert isinstance(instance, raspirover::Foot)
+def test_raspirover_yard_instantiation(instance):
+    assert isinstance(instance, raspirover_Yard)
 
 import warnings
 import copy
@@ -3073,9 +2710,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=raspirover::Foot_strategy)
+@given(instance=raspirover_Yard_strategy)
 @settings(max_examples=30)
-def test_raspirover::foot_tocm_changes_state(instance):
+def test_raspirover_yard_tocm_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -3089,19 +2726,19 @@ def test_raspirover::foot_tocm_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'toCm' in raspirover::Foot is empty"
+        assert has_statements, f"Function 'toCm' in raspirover_Yard is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'toCm' in raspirover::Foot did not change state; check implementation")
+            warnings.warn(f"Operation 'toCm' in raspirover_Yard did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'toCm' in raspirover::Foot is not implemented or raised an error")
+        warnings.warn(f"Operation 'toCm' in raspirover_Yard is not implemented or raised an error")
 
-@given(instance=raspirover::Inch_strategy)
+@given(instance=raspirover_Inch_strategy)
 @settings(max_examples=50)
-def test_raspirover::inch_instantiation(instance):
-    assert isinstance(instance, raspirover::Inch)
+def test_raspirover_inch_instantiation(instance):
+    assert isinstance(instance, raspirover_Inch)
 
 import warnings
 import copy
@@ -3109,9 +2746,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=raspirover::Inch_strategy)
+@given(instance=raspirover_Inch_strategy)
 @settings(max_examples=30)
-def test_raspirover::inch_tocm_changes_state(instance):
+def test_raspirover_inch_tocm_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -3125,19 +2762,19 @@ def test_raspirover::inch_tocm_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'toCm' in raspirover::Inch is empty"
+        assert has_statements, f"Function 'toCm' in raspirover_Inch is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'toCm' in raspirover::Inch did not change state; check implementation")
+            warnings.warn(f"Operation 'toCm' in raspirover_Inch did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'toCm' in raspirover::Inch is not implemented or raised an error")
+        warnings.warn(f"Operation 'toCm' in raspirover_Inch is not implemented or raised an error")
 
-@given(instance=raspirover::Yard_strategy)
+@given(instance=raspirover_Foot_strategy)
 @settings(max_examples=50)
-def test_raspirover::yard_instantiation(instance):
-    assert isinstance(instance, raspirover::Yard)
+def test_raspirover_foot_instantiation(instance):
+    assert isinstance(instance, raspirover_Foot)
 
 import warnings
 import copy
@@ -3145,9 +2782,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=raspirover::Yard_strategy)
+@given(instance=raspirover_Foot_strategy)
 @settings(max_examples=30)
-def test_raspirover::yard_tocm_changes_state(instance):
+def test_raspirover_foot_tocm_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -3161,24 +2798,24 @@ def test_raspirover::yard_tocm_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'toCm' in raspirover::Yard is empty"
+        assert has_statements, f"Function 'toCm' in raspirover_Foot is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'toCm' in raspirover::Yard did not change state; check implementation")
+            warnings.warn(f"Operation 'toCm' in raspirover_Foot did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'toCm' in raspirover::Yard is not implemented or raised an error")
+        warnings.warn(f"Operation 'toCm' in raspirover_Foot is not implemented or raised an error")
 
 @given(instance=MetricSystemUnit_strategy)
 @settings(max_examples=50)
 def test_metricsystemunit_instantiation(instance):
     assert isinstance(instance, MetricSystemUnit)
 
-@given(instance=raspirover::Millimeter_strategy)
+@given(instance=raspirover_Meter_strategy)
 @settings(max_examples=50)
-def test_raspirover::millimeter_instantiation(instance):
-    assert isinstance(instance, raspirover::Millimeter)
+def test_raspirover_meter_instantiation(instance):
+    assert isinstance(instance, raspirover_Meter)
 
 import warnings
 import copy
@@ -3186,9 +2823,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=raspirover::Millimeter_strategy)
+@given(instance=raspirover_Meter_strategy)
 @settings(max_examples=30)
-def test_raspirover::millimeter_tocm_changes_state(instance):
+def test_raspirover_meter_tocm_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -3202,19 +2839,19 @@ def test_raspirover::millimeter_tocm_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'toCm' in raspirover::Millimeter is empty"
+        assert has_statements, f"Function 'toCm' in raspirover_Meter is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'toCm' in raspirover::Millimeter did not change state; check implementation")
+            warnings.warn(f"Operation 'toCm' in raspirover_Meter did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'toCm' in raspirover::Millimeter is not implemented or raised an error")
+        warnings.warn(f"Operation 'toCm' in raspirover_Meter is not implemented or raised an error")
 
-@given(instance=raspirover::Meter_strategy)
+@given(instance=raspirover_Millimeter_strategy)
 @settings(max_examples=50)
-def test_raspirover::meter_instantiation(instance):
-    assert isinstance(instance, raspirover::Meter)
+def test_raspirover_millimeter_instantiation(instance):
+    assert isinstance(instance, raspirover_Millimeter)
 
 import warnings
 import copy
@@ -3222,9 +2859,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=raspirover::Meter_strategy)
+@given(instance=raspirover_Millimeter_strategy)
 @settings(max_examples=30)
-def test_raspirover::meter_tocm_changes_state(instance):
+def test_raspirover_millimeter_tocm_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -3238,19 +2875,19 @@ def test_raspirover::meter_tocm_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'toCm' in raspirover::Meter is empty"
+        assert has_statements, f"Function 'toCm' in raspirover_Millimeter is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'toCm' in raspirover::Meter did not change state; check implementation")
+            warnings.warn(f"Operation 'toCm' in raspirover_Millimeter did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'toCm' in raspirover::Meter is not implemented or raised an error")
+        warnings.warn(f"Operation 'toCm' in raspirover_Millimeter is not implemented or raised an error")
 
-@given(instance=raspirover::Centimeter_strategy)
+@given(instance=raspirover_Centimeter_strategy)
 @settings(max_examples=50)
-def test_raspirover::centimeter_instantiation(instance):
-    assert isinstance(instance, raspirover::Centimeter)
+def test_raspirover_centimeter_instantiation(instance):
+    assert isinstance(instance, raspirover_Centimeter)
 
 import warnings
 import copy
@@ -3258,9 +2895,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=raspirover::Centimeter_strategy)
+@given(instance=raspirover_Centimeter_strategy)
 @settings(max_examples=30)
-def test_raspirover::centimeter_tocm_changes_state(instance):
+def test_raspirover_centimeter_tocm_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -3274,24 +2911,34 @@ def test_raspirover::centimeter_tocm_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'toCm' in raspirover::Centimeter is empty"
+        assert has_statements, f"Function 'toCm' in raspirover_Centimeter is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'toCm' in raspirover::Centimeter did not change state; check implementation")
+            warnings.warn(f"Operation 'toCm' in raspirover_Centimeter did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'toCm' in raspirover::Centimeter is not implemented or raised an error")
+        warnings.warn(f"Operation 'toCm' in raspirover_Centimeter is not implemented or raised an error")
 
 @given(instance=Unit_strategy)
 @settings(max_examples=50)
 def test_unit_instantiation(instance):
     assert isinstance(instance, Unit)
 
-@given(instance=raspirover::AngleUnit_strategy)
+@given(instance=raspirover_MetricSystemUnit_strategy)
 @settings(max_examples=50)
-def test_raspirover::angleunit_instantiation(instance):
-    assert isinstance(instance, raspirover::AngleUnit)
+def test_raspirover_metricsystemunit_instantiation(instance):
+    assert isinstance(instance, raspirover_MetricSystemUnit)
+
+@given(instance=raspirover_ImperialSystemUnit_strategy)
+@settings(max_examples=50)
+def test_raspirover_imperialsystemunit_instantiation(instance):
+    assert isinstance(instance, raspirover_ImperialSystemUnit)
+
+@given(instance=raspirover_AngleUnit_strategy)
+@settings(max_examples=50)
+def test_raspirover_angleunit_instantiation(instance):
+    assert isinstance(instance, raspirover_AngleUnit)
 
 import warnings
 import copy
@@ -3299,9 +2946,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=raspirover::AngleUnit_strategy)
+@given(instance=raspirover_AngleUnit_strategy)
 @settings(max_examples=30)
-def test_raspirover::angleunit_torad_changes_state(instance):
+def test_raspirover_angleunit_torad_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -3315,29 +2962,19 @@ def test_raspirover::angleunit_torad_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'toRad' in raspirover::AngleUnit is empty"
+        assert has_statements, f"Function 'toRad' in raspirover_AngleUnit is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'toRad' in raspirover::AngleUnit did not change state; check implementation")
+            warnings.warn(f"Operation 'toRad' in raspirover_AngleUnit did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'toRad' in raspirover::AngleUnit is not implemented or raised an error")
+        warnings.warn(f"Operation 'toRad' in raspirover_AngleUnit is not implemented or raised an error")
 
-@given(instance=raspirover::ImperialSystemUnit_strategy)
+@given(instance=raspirover_LengthUnit_strategy)
 @settings(max_examples=50)
-def test_raspirover::imperialsystemunit_instantiation(instance):
-    assert isinstance(instance, raspirover::ImperialSystemUnit)
-
-@given(instance=raspirover::MetricSystemUnit_strategy)
-@settings(max_examples=50)
-def test_raspirover::metricsystemunit_instantiation(instance):
-    assert isinstance(instance, raspirover::MetricSystemUnit)
-
-@given(instance=raspirover::LengthUnit_strategy)
-@settings(max_examples=50)
-def test_raspirover::lengthunit_instantiation(instance):
-    assert isinstance(instance, raspirover::LengthUnit)
+def test_raspirover_lengthunit_instantiation(instance):
+    assert isinstance(instance, raspirover_LengthUnit)
 
 import warnings
 import copy
@@ -3345,9 +2982,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=raspirover::LengthUnit_strategy)
+@given(instance=raspirover_LengthUnit_strategy)
 @settings(max_examples=30)
-def test_raspirover::lengthunit_tocm_changes_state(instance):
+def test_raspirover_lengthunit_tocm_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -3361,29 +2998,29 @@ def test_raspirover::lengthunit_tocm_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'toCm' in raspirover::LengthUnit is empty"
+        assert has_statements, f"Function 'toCm' in raspirover_LengthUnit is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'toCm' in raspirover::LengthUnit did not change state; check implementation")
+            warnings.warn(f"Operation 'toCm' in raspirover_LengthUnit did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'toCm' in raspirover::LengthUnit is not implemented or raised an error")
+        warnings.warn(f"Operation 'toCm' in raspirover_LengthUnit is not implemented or raised an error")
 
-@given(instance=raspirover::Unit_strategy)
+@given(instance=raspirover_Unit_strategy)
 @settings(max_examples=50)
-def test_raspirover::unit_instantiation(instance):
-    assert isinstance(instance, raspirover::Unit)
+def test_raspirover_unit_instantiation(instance):
+    assert isinstance(instance, raspirover_Unit)
 
 @given(instance=Action_strategy)
 @settings(max_examples=50)
 def test_action_instantiation(instance):
     assert isinstance(instance, Action)
 
-@given(instance=raspirover::BackwardAction_strategy)
+@given(instance=raspirover_TurnDegAction_strategy)
 @settings(max_examples=50)
-def test_raspirover::backwardaction_instantiation(instance):
-    assert isinstance(instance, raspirover::BackwardAction)
+def test_raspirover_turndegaction_instantiation(instance):
+    assert isinstance(instance, raspirover_TurnDegAction)
 
 import warnings
 import copy
@@ -3391,9 +3028,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=raspirover::BackwardAction_strategy)
+@given(instance=raspirover_TurnDegAction_strategy)
 @settings(max_examples=30)
-def test_raspirover::backwardaction_eval_changes_state(instance):
+def test_raspirover_turndegaction_eval_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -3405,19 +3042,19 @@ def test_raspirover::backwardaction_eval_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'eval' in raspirover::BackwardAction is empty"
+        assert has_statements, f"Function 'eval' in raspirover_TurnDegAction is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'eval' in raspirover::BackwardAction did not change state; check implementation")
+            warnings.warn(f"Operation 'eval' in raspirover_TurnDegAction did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'eval' in raspirover::BackwardAction is not implemented or raised an error")
+        warnings.warn(f"Operation 'eval' in raspirover_TurnDegAction is not implemented or raised an error")
 
-@given(instance=raspirover::StopAction_strategy)
+@given(instance=raspirover_ForwardMinAction_strategy)
 @settings(max_examples=50)
-def test_raspirover::stopaction_instantiation(instance):
-    assert isinstance(instance, raspirover::StopAction)
+def test_raspirover_forwardminaction_instantiation(instance):
+    assert isinstance(instance, raspirover_ForwardMinAction)
 
 import warnings
 import copy
@@ -3425,9 +3062,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=raspirover::StopAction_strategy)
+@given(instance=raspirover_ForwardMinAction_strategy)
 @settings(max_examples=30)
-def test_raspirover::stopaction_eval_changes_state(instance):
+def test_raspirover_forwardminaction_eval_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -3439,27 +3076,24 @@ def test_raspirover::stopaction_eval_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'eval' in raspirover::StopAction is empty"
+        assert has_statements, f"Function 'eval' in raspirover_ForwardMinAction is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'eval' in raspirover::StopAction did not change state; check implementation")
+            warnings.warn(f"Operation 'eval' in raspirover_ForwardMinAction did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'eval' in raspirover::StopAction is not implemented or raised an error")
+        warnings.warn(f"Operation 'eval' in raspirover_ForwardMinAction is not implemented or raised an error")
 
-@given(instance=raspirover::LogAction_strategy)
+@given(instance=raspirover_LogAction_strategy)
 @settings(max_examples=50)
-def test_raspirover::logaction_instantiation(instance):
-    assert isinstance(instance, raspirover::LogAction)
-
-@given(instance=raspirover::LogAction_strategy)
-def test_raspirover::logaction_message_type(instance):
-    assert isinstance(instance.message, str)
+def test_raspirover_logaction_instantiation(instance):
+    assert isinstance(instance, raspirover_LogAction)
 
 
-@given(instance=raspirover::LogAction_strategy)
-def test_raspirover::logaction_message_setter(instance):
+
+@given(instance=raspirover_LogAction_strategy)
+def test_raspirover_logaction_message_setter(instance):
     original = instance.message
     instance.message = original
     assert instance.message == original
@@ -3470,9 +3104,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=raspirover::LogAction_strategy)
+@given(instance=raspirover_LogAction_strategy)
 @settings(max_examples=30)
-def test_raspirover::logaction_eval_changes_state(instance):
+def test_raspirover_logaction_eval_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -3484,19 +3118,19 @@ def test_raspirover::logaction_eval_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'eval' in raspirover::LogAction is empty"
+        assert has_statements, f"Function 'eval' in raspirover_LogAction is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'eval' in raspirover::LogAction did not change state; check implementation")
+            warnings.warn(f"Operation 'eval' in raspirover_LogAction did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'eval' in raspirover::LogAction is not implemented or raised an error")
+        warnings.warn(f"Operation 'eval' in raspirover_LogAction is not implemented or raised an error")
 
-@given(instance=raspirover::ForwardMinAction_strategy)
+@given(instance=raspirover_BackwardAction_strategy)
 @settings(max_examples=50)
-def test_raspirover::forwardminaction_instantiation(instance):
-    assert isinstance(instance, raspirover::ForwardMinAction)
+def test_raspirover_backwardaction_instantiation(instance):
+    assert isinstance(instance, raspirover_BackwardAction)
 
 import warnings
 import copy
@@ -3504,9 +3138,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=raspirover::ForwardMinAction_strategy)
+@given(instance=raspirover_BackwardAction_strategy)
 @settings(max_examples=30)
-def test_raspirover::forwardminaction_eval_changes_state(instance):
+def test_raspirover_backwardaction_eval_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -3518,27 +3152,58 @@ def test_raspirover::forwardminaction_eval_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'eval' in raspirover::ForwardMinAction is empty"
+        assert has_statements, f"Function 'eval' in raspirover_BackwardAction is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'eval' in raspirover::ForwardMinAction did not change state; check implementation")
+            warnings.warn(f"Operation 'eval' in raspirover_BackwardAction did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'eval' in raspirover::ForwardMinAction is not implemented or raised an error")
+        warnings.warn(f"Operation 'eval' in raspirover_BackwardAction is not implemented or raised an error")
 
-@given(instance=raspirover::SendAction_strategy)
+@given(instance=raspirover_StopAction_strategy)
 @settings(max_examples=50)
-def test_raspirover::sendaction_instantiation(instance):
-    assert isinstance(instance, raspirover::SendAction)
+def test_raspirover_stopaction_instantiation(instance):
+    assert isinstance(instance, raspirover_StopAction)
 
-@given(instance=raspirover::SendAction_strategy)
-def test_raspirover::sendaction_message_type(instance):
-    assert isinstance(instance.message, str)
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=raspirover_StopAction_strategy)
+@settings(max_examples=30)
+def test_raspirover_stopaction_eval_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.eval()
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.eval).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'eval' in raspirover_StopAction is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'eval' in raspirover_StopAction did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'eval' in raspirover_StopAction is not implemented or raised an error")
+
+@given(instance=raspirover_SendAction_strategy)
+@settings(max_examples=50)
+def test_raspirover_sendaction_instantiation(instance):
+    assert isinstance(instance, raspirover_SendAction)
 
 
-@given(instance=raspirover::SendAction_strategy)
-def test_raspirover::sendaction_message_setter(instance):
+
+@given(instance=raspirover_SendAction_strategy)
+def test_raspirover_sendaction_message_setter(instance):
     original = instance.message
     instance.message = original
     assert instance.message == original
@@ -3549,9 +3214,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=raspirover::SendAction_strategy)
+@given(instance=raspirover_SendAction_strategy)
 @settings(max_examples=30)
-def test_raspirover::sendaction_eval_changes_state(instance):
+def test_raspirover_sendaction_eval_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -3563,19 +3228,19 @@ def test_raspirover::sendaction_eval_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'eval' in raspirover::SendAction is empty"
+        assert has_statements, f"Function 'eval' in raspirover_SendAction is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'eval' in raspirover::SendAction did not change state; check implementation")
+            warnings.warn(f"Operation 'eval' in raspirover_SendAction did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'eval' in raspirover::SendAction is not implemented or raised an error")
+        warnings.warn(f"Operation 'eval' in raspirover_SendAction is not implemented or raised an error")
 
-@given(instance=raspirover::TurnDegAction_strategy)
+@given(instance=raspirover_TurnAction_strategy)
 @settings(max_examples=50)
-def test_raspirover::turndegaction_instantiation(instance):
-    assert isinstance(instance, raspirover::TurnDegAction)
+def test_raspirover_turnaction_instantiation(instance):
+    assert isinstance(instance, raspirover_TurnAction)
 
 import warnings
 import copy
@@ -3583,9 +3248,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=raspirover::TurnDegAction_strategy)
+@given(instance=raspirover_TurnAction_strategy)
 @settings(max_examples=30)
-def test_raspirover::turndegaction_eval_changes_state(instance):
+def test_raspirover_turnaction_eval_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -3597,19 +3262,19 @@ def test_raspirover::turndegaction_eval_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'eval' in raspirover::TurnDegAction is empty"
+        assert has_statements, f"Function 'eval' in raspirover_TurnAction is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'eval' in raspirover::TurnDegAction did not change state; check implementation")
+            warnings.warn(f"Operation 'eval' in raspirover_TurnAction did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'eval' in raspirover::TurnDegAction is not implemented or raised an error")
+        warnings.warn(f"Operation 'eval' in raspirover_TurnAction is not implemented or raised an error")
 
-@given(instance=raspirover::TurnAction_strategy)
+@given(instance=raspirover_BackwardMinAction_strategy)
 @settings(max_examples=50)
-def test_raspirover::turnaction_instantiation(instance):
-    assert isinstance(instance, raspirover::TurnAction)
+def test_raspirover_backwardminaction_instantiation(instance):
+    assert isinstance(instance, raspirover_BackwardMinAction)
 
 import warnings
 import copy
@@ -3617,9 +3282,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=raspirover::TurnAction_strategy)
+@given(instance=raspirover_BackwardMinAction_strategy)
 @settings(max_examples=30)
-def test_raspirover::turnaction_eval_changes_state(instance):
+def test_raspirover_backwardminaction_eval_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -3631,19 +3296,19 @@ def test_raspirover::turnaction_eval_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'eval' in raspirover::TurnAction is empty"
+        assert has_statements, f"Function 'eval' in raspirover_BackwardMinAction is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'eval' in raspirover::TurnAction did not change state; check implementation")
+            warnings.warn(f"Operation 'eval' in raspirover_BackwardMinAction did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'eval' in raspirover::TurnAction is not implemented or raised an error")
+        warnings.warn(f"Operation 'eval' in raspirover_BackwardMinAction is not implemented or raised an error")
 
-@given(instance=raspirover::BackwardMinAction_strategy)
+@given(instance=raspirover_ForwardAction_strategy)
 @settings(max_examples=50)
-def test_raspirover::backwardminaction_instantiation(instance):
-    assert isinstance(instance, raspirover::BackwardMinAction)
+def test_raspirover_forwardaction_instantiation(instance):
+    assert isinstance(instance, raspirover_ForwardAction)
 
 import warnings
 import copy
@@ -3651,9 +3316,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=raspirover::BackwardMinAction_strategy)
+@given(instance=raspirover_ForwardAction_strategy)
 @settings(max_examples=30)
-def test_raspirover::backwardminaction_eval_changes_state(instance):
+def test_raspirover_forwardaction_eval_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -3665,61 +3330,24 @@ def test_raspirover::backwardminaction_eval_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'eval' in raspirover::BackwardMinAction is empty"
+        assert has_statements, f"Function 'eval' in raspirover_ForwardAction is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'eval' in raspirover::BackwardMinAction did not change state; check implementation")
+            warnings.warn(f"Operation 'eval' in raspirover_ForwardAction did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'eval' in raspirover::BackwardMinAction is not implemented or raised an error")
+        warnings.warn(f"Operation 'eval' in raspirover_ForwardAction is not implemented or raised an error")
 
-@given(instance=raspirover::ForwardAction_strategy)
+@given(instance=raspirover_Quantity_strategy)
 @settings(max_examples=50)
-def test_raspirover::forwardaction_instantiation(instance):
-    assert isinstance(instance, raspirover::ForwardAction)
-
-import warnings
-import copy
-import inspect
-import ast
-from hypothesis import given, settings
-
-@given(instance=raspirover::ForwardAction_strategy)
-@settings(max_examples=30)
-def test_raspirover::forwardaction_eval_changes_state(instance):
-    before = copy.deepcopy(instance)
-    try:
-        # Call operation with dummy parameters
-        instance.eval()
-        if instance.__dict__ != before.__dict__:
-            return  # test passes
-        # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.eval).strip()
-        tree = ast.parse(source)
-        body = tree.body[0].body  # function body
-        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'eval' in raspirover::ForwardAction is empty"
-
-        # Check for state change (WARN if no change)
-        if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'eval' in raspirover::ForwardAction did not change state; check implementation")
-
-    except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'eval' in raspirover::ForwardAction is not implemented or raised an error")
-
-@given(instance=raspirover::Quantity_strategy)
-@settings(max_examples=50)
-def test_raspirover::quantity_instantiation(instance):
-    assert isinstance(instance, raspirover::Quantity)
-
-@given(instance=raspirover::Quantity_strategy)
-def test_raspirover::quantity_value_type(instance):
-    assert isinstance(instance.value, str)
+def test_raspirover_quantity_instantiation(instance):
+    assert isinstance(instance, raspirover_Quantity)
 
 
-@given(instance=raspirover::Quantity_strategy)
-def test_raspirover::quantity_value_setter(instance):
+
+@given(instance=raspirover_Quantity_strategy)
+def test_raspirover_quantity_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
@@ -3730,9 +3358,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=raspirover::Quantity_strategy)
+@given(instance=raspirover_Quantity_strategy)
 @settings(max_examples=30)
-def test_raspirover::quantity_print_changes_state(instance):
+def test_raspirover_quantity_print_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -3744,64 +3372,55 @@ def test_raspirover::quantity_print_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'print' in raspirover::Quantity is empty"
+        assert has_statements, f"Function 'print' in raspirover_Quantity is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'print' in raspirover::Quantity did not change state; check implementation")
+            warnings.warn(f"Operation 'print' in raspirover_Quantity did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'print' in raspirover::Quantity is not implemented or raised an error")
+        warnings.warn(f"Operation 'print' in raspirover_Quantity is not implemented or raised an error")
 
 @given(instance=RoverValue_strategy)
 @settings(max_examples=50)
 def test_rovervalue_instantiation(instance):
     assert isinstance(instance, RoverValue)
 
-@given(instance=raspirover::StringValue_strategy)
+@given(instance=raspirover_StringValue_strategy)
 @settings(max_examples=50)
-def test_raspirover::stringvalue_instantiation(instance):
-    assert isinstance(instance, raspirover::StringValue)
-
-@given(instance=raspirover::StringValue_strategy)
-def test_raspirover::stringvalue_sValue_type(instance):
-    assert isinstance(instance.sValue, bool)
+def test_raspirover_stringvalue_instantiation(instance):
+    assert isinstance(instance, raspirover_StringValue)
 
 
-@given(instance=raspirover::StringValue_strategy)
-def test_raspirover::stringvalue_sValue_setter(instance):
+
+@given(instance=raspirover_StringValue_strategy)
+def test_raspirover_stringvalue_sValue_setter(instance):
     original = instance.sValue
     instance.sValue = original
     assert instance.sValue == original
 
-@given(instance=raspirover::BooleanValue_strategy)
+@given(instance=raspirover_BooleanValue_strategy)
 @settings(max_examples=50)
-def test_raspirover::booleanvalue_instantiation(instance):
-    assert isinstance(instance, raspirover::BooleanValue)
-
-@given(instance=raspirover::BooleanValue_strategy)
-def test_raspirover::booleanvalue_bValue_type(instance):
-    assert isinstance(instance.bValue, bool)
+def test_raspirover_booleanvalue_instantiation(instance):
+    assert isinstance(instance, raspirover_BooleanValue)
 
 
-@given(instance=raspirover::BooleanValue_strategy)
-def test_raspirover::booleanvalue_bValue_setter(instance):
+
+@given(instance=raspirover_BooleanValue_strategy)
+def test_raspirover_booleanvalue_bValue_setter(instance):
     original = instance.bValue
     instance.bValue = original
     assert instance.bValue == original
 
-@given(instance=raspirover::NumberValue_strategy)
+@given(instance=raspirover_NumberValue_strategy)
 @settings(max_examples=50)
-def test_raspirover::numbervalue_instantiation(instance):
-    assert isinstance(instance, raspirover::NumberValue)
-
-@given(instance=raspirover::NumberValue_strategy)
-def test_raspirover::numbervalue_nValue_type(instance):
-    assert isinstance(instance.nValue, str)
+def test_raspirover_numbervalue_instantiation(instance):
+    assert isinstance(instance, raspirover_NumberValue)
 
 
-@given(instance=raspirover::NumberValue_strategy)
-def test_raspirover::numbervalue_nValue_setter(instance):
+
+@given(instance=raspirover_NumberValue_strategy)
+def test_raspirover_numbervalue_nValue_setter(instance):
     original = instance.nValue
     instance.nValue = original
     assert instance.nValue == original
@@ -3812,9 +3431,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=raspirover::NumberValue_strategy)
+@given(instance=raspirover_NumberValue_strategy)
 @settings(max_examples=30)
-def test_raspirover::numbervalue_print_changes_state(instance):
+def test_raspirover_numbervalue_print_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -3826,32 +3445,29 @@ def test_raspirover::numbervalue_print_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'print' in raspirover::NumberValue is empty"
+        assert has_statements, f"Function 'print' in raspirover_NumberValue is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'print' in raspirover::NumberValue did not change state; check implementation")
+            warnings.warn(f"Operation 'print' in raspirover_NumberValue did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'print' in raspirover::NumberValue is not implemented or raised an error")
+        warnings.warn(f"Operation 'print' in raspirover_NumberValue is not implemented or raised an error")
 
 @given(instance=RoverExpression_strategy)
 @settings(max_examples=50)
 def test_roverexpression_instantiation(instance):
     assert isinstance(instance, RoverExpression)
 
-@given(instance=raspirover::BooleanExpression_strategy)
+@given(instance=raspirover_StringExpression_strategy)
 @settings(max_examples=50)
-def test_raspirover::booleanexpression_instantiation(instance):
-    assert isinstance(instance, raspirover::BooleanExpression)
-
-@given(instance=raspirover::BooleanExpression_strategy)
-def test_raspirover::booleanexpression_op_type(instance):
-    assert isinstance(instance.op, str)
+def test_raspirover_stringexpression_instantiation(instance):
+    assert isinstance(instance, raspirover_StringExpression)
 
 
-@given(instance=raspirover::BooleanExpression_strategy)
-def test_raspirover::booleanexpression_op_setter(instance):
+
+@given(instance=raspirover_StringExpression_strategy)
+def test_raspirover_stringexpression_op_setter(instance):
     original = instance.op
     instance.op = original
     assert instance.op == original
@@ -3862,9 +3478,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=raspirover::BooleanExpression_strategy)
+@given(instance=raspirover_StringExpression_strategy)
 @settings(max_examples=30)
-def test_raspirover::booleanexpression_eval_changes_state(instance):
+def test_raspirover_stringexpression_eval_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -3876,27 +3492,24 @@ def test_raspirover::booleanexpression_eval_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'eval' in raspirover::BooleanExpression is empty"
+        assert has_statements, f"Function 'eval' in raspirover_StringExpression is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'eval' in raspirover::BooleanExpression did not change state; check implementation")
+            warnings.warn(f"Operation 'eval' in raspirover_StringExpression did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'eval' in raspirover::BooleanExpression is not implemented or raised an error")
+        warnings.warn(f"Operation 'eval' in raspirover_StringExpression is not implemented or raised an error")
 
-@given(instance=raspirover::StringExpression_strategy)
+@given(instance=raspirover_BooleanExpression_strategy)
 @settings(max_examples=50)
-def test_raspirover::stringexpression_instantiation(instance):
-    assert isinstance(instance, raspirover::StringExpression)
-
-@given(instance=raspirover::StringExpression_strategy)
-def test_raspirover::stringexpression_op_type(instance):
-    assert isinstance(instance.op, bool)
+def test_raspirover_booleanexpression_instantiation(instance):
+    assert isinstance(instance, raspirover_BooleanExpression)
 
 
-@given(instance=raspirover::StringExpression_strategy)
-def test_raspirover::stringexpression_op_setter(instance):
+
+@given(instance=raspirover_BooleanExpression_strategy)
+def test_raspirover_booleanexpression_op_setter(instance):
     original = instance.op
     instance.op = original
     assert instance.op == original
@@ -3907,9 +3520,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=raspirover::StringExpression_strategy)
+@given(instance=raspirover_BooleanExpression_strategy)
 @settings(max_examples=30)
-def test_raspirover::stringexpression_eval_changes_state(instance):
+def test_raspirover_booleanexpression_eval_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -3921,27 +3534,24 @@ def test_raspirover::stringexpression_eval_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'eval' in raspirover::StringExpression is empty"
+        assert has_statements, f"Function 'eval' in raspirover_BooleanExpression is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'eval' in raspirover::StringExpression did not change state; check implementation")
+            warnings.warn(f"Operation 'eval' in raspirover_BooleanExpression did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'eval' in raspirover::StringExpression is not implemented or raised an error")
+        warnings.warn(f"Operation 'eval' in raspirover_BooleanExpression is not implemented or raised an error")
 
-@given(instance=raspirover::NumericExpression_strategy)
+@given(instance=raspirover_NumericExpression_strategy)
 @settings(max_examples=50)
-def test_raspirover::numericexpression_instantiation(instance):
-    assert isinstance(instance, raspirover::NumericExpression)
-
-@given(instance=raspirover::NumericExpression_strategy)
-def test_raspirover::numericexpression_op_type(instance):
-    assert isinstance(instance.op, bool)
+def test_raspirover_numericexpression_instantiation(instance):
+    assert isinstance(instance, raspirover_NumericExpression)
 
 
-@given(instance=raspirover::NumericExpression_strategy)
-def test_raspirover::numericexpression_op_setter(instance):
+
+@given(instance=raspirover_NumericExpression_strategy)
+def test_raspirover_numericexpression_op_setter(instance):
     original = instance.op
     instance.op = original
     assert instance.op == original
@@ -3952,9 +3562,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=raspirover::NumericExpression_strategy)
+@given(instance=raspirover_NumericExpression_strategy)
 @settings(max_examples=30)
-def test_raspirover::numericexpression_eval_changes_state(instance):
+def test_raspirover_numericexpression_eval_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -3966,14 +3576,14 @@ def test_raspirover::numericexpression_eval_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'eval' in raspirover::NumericExpression is empty"
+        assert has_statements, f"Function 'eval' in raspirover_NumericExpression is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'eval' in raspirover::NumericExpression did not change state; check implementation")
+            warnings.warn(f"Operation 'eval' in raspirover_NumericExpression did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'eval' in raspirover::NumericExpression is not implemented or raised an error")
+        warnings.warn(f"Operation 'eval' in raspirover_NumericExpression is not implemented or raised an error")
 
 @given(instance=BooleanValue_strategy)
 @settings(max_examples=50)
@@ -3995,46 +3605,43 @@ def test_numbervalue_instantiation(instance):
 def test_query_instantiation(instance):
     assert isinstance(instance, Query)
 
-@given(instance=raspirover::MessageQuery_strategy)
+@given(instance=raspirover_ObstacleQuery_strategy)
 @settings(max_examples=50)
-def test_raspirover::messagequery_instantiation(instance):
-    assert isinstance(instance, raspirover::MessageQuery)
-
-@given(instance=raspirover::ObstacleQuery_strategy)
-@settings(max_examples=50)
-def test_raspirover::obstaclequery_instantiation(instance):
-    assert isinstance(instance, raspirover::ObstacleQuery)
-
-@given(instance=raspirover::ObstacleQuery_strategy)
-def test_raspirover::obstaclequery_front_type(instance):
-    assert isinstance(instance.front, bool)
+def test_raspirover_obstaclequery_instantiation(instance):
+    assert isinstance(instance, raspirover_ObstacleQuery)
 
 
-@given(instance=raspirover::ObstacleQuery_strategy)
-def test_raspirover::obstaclequery_front_setter(instance):
+
+@given(instance=raspirover_ObstacleQuery_strategy)
+def test_raspirover_obstaclequery_front_setter(instance):
     original = instance.front
     instance.front = original
     assert instance.front == original
 
-@given(instance=raspirover::HumidityQuery_strategy)
+@given(instance=raspirover_HumidityQuery_strategy)
 @settings(max_examples=50)
-def test_raspirover::humidityquery_instantiation(instance):
-    assert isinstance(instance, raspirover::HumidityQuery)
+def test_raspirover_humidityquery_instantiation(instance):
+    assert isinstance(instance, raspirover_HumidityQuery)
 
-@given(instance=raspirover::TemperatureQuery_strategy)
+@given(instance=raspirover_MessageQuery_strategy)
 @settings(max_examples=50)
-def test_raspirover::temperaturequery_instantiation(instance):
-    assert isinstance(instance, raspirover::TemperatureQuery)
+def test_raspirover_messagequery_instantiation(instance):
+    assert isinstance(instance, raspirover_MessageQuery)
 
-@given(instance=raspirover::Query_strategy)
+@given(instance=raspirover_TemperatureQuery_strategy)
 @settings(max_examples=50)
-def test_raspirover::query_instantiation(instance):
-    assert isinstance(instance, raspirover::Query)
+def test_raspirover_temperaturequery_instantiation(instance):
+    assert isinstance(instance, raspirover_TemperatureQuery)
 
-@given(instance=raspirover::RoverExpression_strategy)
+@given(instance=raspirover_Query_strategy)
 @settings(max_examples=50)
-def test_raspirover::roverexpression_instantiation(instance):
-    assert isinstance(instance, raspirover::RoverExpression)
+def test_raspirover_query_instantiation(instance):
+    assert isinstance(instance, raspirover_Query)
+
+@given(instance=raspirover_RoverExpression_strategy)
+@settings(max_examples=50)
+def test_raspirover_roverexpression_instantiation(instance):
+    assert isinstance(instance, raspirover_RoverExpression)
 
 import warnings
 import copy
@@ -4042,9 +3649,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=raspirover::RoverExpression_strategy)
+@given(instance=raspirover_RoverExpression_strategy)
 @settings(max_examples=30)
-def test_raspirover::roverexpression_eval_changes_state(instance):
+def test_raspirover_roverexpression_eval_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -4056,37 +3663,34 @@ def test_raspirover::roverexpression_eval_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'eval' in raspirover::RoverExpression is empty"
+        assert has_statements, f"Function 'eval' in raspirover_RoverExpression is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'eval' in raspirover::RoverExpression did not change state; check implementation")
+            warnings.warn(f"Operation 'eval' in raspirover_RoverExpression did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'eval' in raspirover::RoverExpression is not implemented or raised an error")
+        warnings.warn(f"Operation 'eval' in raspirover_RoverExpression is not implemented or raised an error")
 
-@given(instance=raspirover::RoverValue_strategy)
+@given(instance=raspirover_RoverValue_strategy)
 @settings(max_examples=50)
-def test_raspirover::rovervalue_instantiation(instance):
-    assert isinstance(instance, raspirover::RoverValue)
+def test_raspirover_rovervalue_instantiation(instance):
+    assert isinstance(instance, raspirover_RoverValue)
 
 @given(instance=Statement_strategy)
 @settings(max_examples=50)
 def test_statement_instantiation(instance):
     assert isinstance(instance, Statement)
 
-@given(instance=raspirover::VarAssignment_strategy)
+@given(instance=raspirover_VarRef_strategy)
 @settings(max_examples=50)
-def test_raspirover::varassignment_instantiation(instance):
-    assert isinstance(instance, raspirover::VarAssignment)
-
-@given(instance=raspirover::VarAssignment_strategy)
-def test_raspirover::varassignment_name_type(instance):
-    assert isinstance(instance.name, bool)
+def test_raspirover_varref_instantiation(instance):
+    assert isinstance(instance, raspirover_VarRef)
 
 
-@given(instance=raspirover::VarAssignment_strategy)
-def test_raspirover::varassignment_name_setter(instance):
+
+@given(instance=raspirover_VarRef_strategy)
+def test_raspirover_varref_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
@@ -4097,9 +3701,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=raspirover::VarAssignment_strategy)
+@given(instance=raspirover_VarRef_strategy)
 @settings(max_examples=30)
-def test_raspirover::varassignment_eval_changes_state(instance):
+def test_raspirover_varref_eval_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -4111,27 +3715,97 @@ def test_raspirover::varassignment_eval_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'eval' in raspirover::VarAssignment is empty"
+        assert has_statements, f"Function 'eval' in raspirover_VarRef is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'eval' in raspirover::VarAssignment did not change state; check implementation")
+            warnings.warn(f"Operation 'eval' in raspirover_VarRef did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'eval' in raspirover::VarAssignment is not implemented or raised an error")
+        warnings.warn(f"Operation 'eval' in raspirover_VarRef is not implemented or raised an error")
 
-@given(instance=raspirover::VarRef_strategy)
+@given(instance=raspirover_Conditional_strategy)
 @settings(max_examples=50)
-def test_raspirover::varref_instantiation(instance):
-    assert isinstance(instance, raspirover::VarRef)
+def test_raspirover_conditional_instantiation(instance):
+    assert isinstance(instance, raspirover_Conditional)
 
-@given(instance=raspirover::VarRef_strategy)
-def test_raspirover::varref_name_type(instance):
-    assert isinstance(instance.name, float)
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=raspirover_Conditional_strategy)
+@settings(max_examples=30)
+def test_raspirover_conditional_eval_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.eval()
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.eval).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'eval' in raspirover_Conditional is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'eval' in raspirover_Conditional did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'eval' in raspirover_Conditional is not implemented or raised an error")
+
+@given(instance=raspirover_Action_strategy)
+@settings(max_examples=50)
+def test_raspirover_action_instantiation(instance):
+    assert isinstance(instance, raspirover_Action)
+
+@given(instance=raspirover_Loop_strategy)
+@settings(max_examples=50)
+def test_raspirover_loop_instantiation(instance):
+    assert isinstance(instance, raspirover_Loop)
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=raspirover_Loop_strategy)
+@settings(max_examples=30)
+def test_raspirover_loop_eval_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.eval()
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.eval).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'eval' in raspirover_Loop is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'eval' in raspirover_Loop did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'eval' in raspirover_Loop is not implemented or raised an error")
+
+@given(instance=raspirover_VarAssignment_strategy)
+@settings(max_examples=50)
+def test_raspirover_varassignment_instantiation(instance):
+    assert isinstance(instance, raspirover_VarAssignment)
 
 
-@given(instance=raspirover::VarRef_strategy)
-def test_raspirover::varref_name_setter(instance):
+
+@given(instance=raspirover_VarAssignment_strategy)
+def test_raspirover_varassignment_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
@@ -4142,9 +3816,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=raspirover::VarRef_strategy)
+@given(instance=raspirover_VarAssignment_strategy)
 @settings(max_examples=30)
-def test_raspirover::varref_eval_changes_state(instance):
+def test_raspirover_varassignment_eval_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -4156,19 +3830,19 @@ def test_raspirover::varref_eval_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'eval' in raspirover::VarRef is empty"
+        assert has_statements, f"Function 'eval' in raspirover_VarAssignment is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'eval' in raspirover::VarRef did not change state; check implementation")
+            warnings.warn(f"Operation 'eval' in raspirover_VarAssignment did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'eval' in raspirover::VarRef is not implemented or raised an error")
+        warnings.warn(f"Operation 'eval' in raspirover_VarAssignment is not implemented or raised an error")
 
-@given(instance=raspirover::Conditional_strategy)
+@given(instance=raspirover_Statement_strategy)
 @settings(max_examples=50)
-def test_raspirover::conditional_instantiation(instance):
-    assert isinstance(instance, raspirover::Conditional)
+def test_raspirover_statement_instantiation(instance):
+    assert isinstance(instance, raspirover_Statement)
 
 import warnings
 import copy
@@ -4176,9 +3850,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=raspirover::Conditional_strategy)
+@given(instance=raspirover_Statement_strategy)
 @settings(max_examples=30)
-def test_raspirover::conditional_eval_changes_state(instance):
+def test_raspirover_statement_eval_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -4190,19 +3864,19 @@ def test_raspirover::conditional_eval_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'eval' in raspirover::Conditional is empty"
+        assert has_statements, f"Function 'eval' in raspirover_Statement is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'eval' in raspirover::Conditional did not change state; check implementation")
+            warnings.warn(f"Operation 'eval' in raspirover_Statement did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'eval' in raspirover::Conditional is not implemented or raised an error")
+        warnings.warn(f"Operation 'eval' in raspirover_Statement is not implemented or raised an error")
 
-@given(instance=raspirover::Loop_strategy)
+@given(instance=raspirover_RclBlock_strategy)
 @settings(max_examples=50)
-def test_raspirover::loop_instantiation(instance):
-    assert isinstance(instance, raspirover::Loop)
+def test_raspirover_rclblock_instantiation(instance):
+    assert isinstance(instance, raspirover_RclBlock)
 
 import warnings
 import copy
@@ -4210,9 +3884,9 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=raspirover::Loop_strategy)
+@given(instance=raspirover_RclBlock_strategy)
 @settings(max_examples=30)
-def test_raspirover::loop_eval_changes_state(instance):
+def test_raspirover_rclblock_eval_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
@@ -4224,19 +3898,75 @@ def test_raspirover::loop_eval_changes_state(instance):
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'eval' in raspirover::Loop is empty"
+        assert has_statements, f"Function 'eval' in raspirover_RclBlock is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'eval' in raspirover::Loop did not change state; check implementation")
+            warnings.warn(f"Operation 'eval' in raspirover_RclBlock did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'eval' in raspirover::Loop is not implemented or raised an error")
+        warnings.warn(f"Operation 'eval' in raspirover_RclBlock is not implemented or raised an error")
 
-@given(instance=raspirover::RclBlock_strategy)
+@given(instance=raspirover_Param_strategy)
 @settings(max_examples=50)
-def test_raspirover::rclblock_instantiation(instance):
-    assert isinstance(instance, raspirover::RclBlock)
+def test_raspirover_param_instantiation(instance):
+    assert isinstance(instance, raspirover_Param)
+
+
+
+@given(instance=raspirover_Param_strategy)
+def test_raspirover_param_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+@given(instance=raspirover_NamedElement_strategy)
+@settings(max_examples=50)
+def test_raspirover_namedelement_instantiation(instance):
+    assert isinstance(instance, raspirover_NamedElement)
+
+
+
+@given(instance=raspirover_NamedElement_strategy)
+def test_raspirover_namedelement_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+@given(instance=Module_strategy)
+@settings(max_examples=50)
+def test_module_instantiation(instance):
+    assert isinstance(instance, Module)
+
+@given(instance=raspirover_ArduinoModule_strategy)
+@settings(max_examples=50)
+def test_raspirover_arduinomodule_instantiation(instance):
+    assert isinstance(instance, raspirover_ArduinoModule)
+
+@given(instance=ArduinoModule_strategy)
+@settings(max_examples=50)
+def test_arduinomodule_instantiation(instance):
+    assert isinstance(instance, ArduinoModule)
+
+@given(instance=raspirover_ArduinoAnalogModule_strategy)
+@settings(max_examples=50)
+def test_raspirover_arduinoanalogmodule_instantiation(instance):
+    assert isinstance(instance, raspirover_ArduinoAnalogModule)
+
+@given(instance=raspirover_ArduinoDigitalModule_strategy)
+@settings(max_examples=50)
+def test_raspirover_arduinodigitalmodule_instantiation(instance):
+    assert isinstance(instance, raspirover_ArduinoDigitalModule)
+
+@given(instance=Pin_strategy)
+@settings(max_examples=50)
+def test_pin_instantiation(instance):
+    assert isinstance(instance, Pin)
+
+@given(instance=raspirover_Instruction_strategy)
+@settings(max_examples=50)
+def test_raspirover_instruction_instantiation(instance):
+    assert isinstance(instance, raspirover_Instruction)
 
 import warnings
 import copy
@@ -4244,30 +3974,249 @@ import inspect
 import ast
 from hypothesis import given, settings
 
-@given(instance=raspirover::RclBlock_strategy)
+@given(instance=raspirover_Instruction_strategy)
 @settings(max_examples=30)
-def test_raspirover::rclblock_eval_changes_state(instance):
+def test_raspirover_instruction_finalize_changes_state(instance):
     before = copy.deepcopy(instance)
     try:
         # Call operation with dummy parameters
-        instance.eval()
+        instance.finalize()
         if instance.__dict__ != before.__dict__:
             return  # test passes
         # Check that function exists and is non-empty (FAIL if empty)
-        source = inspect.getsource(instance.eval).strip()
+        source = inspect.getsource(instance.finalize).strip()
         tree = ast.parse(source)
         body = tree.body[0].body  # function body
         has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
-        assert has_statements, f"Function 'eval' in raspirover::RclBlock is empty"
+        assert has_statements, f"Function 'finalize' in raspirover_Instruction is empty"
 
         # Check for state change (WARN if no change)
         if instance.__dict__ == before.__dict__:
-            warnings.warn(f"Operation 'eval' in raspirover::RclBlock did not change state; check implementation")
+            warnings.warn(f"Operation 'finalize' in raspirover_Instruction did not change state; check implementation")
 
     except (AttributeError, NotImplementedError, TypeError):
-        warnings.warn(f"Operation 'eval' in raspirover::RclBlock is not implemented or raised an error")
+        warnings.warn(f"Operation 'finalize' in raspirover_Instruction is not implemented or raised an error")
 
-@given(instance=raspirover::Action_strategy)
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=raspirover_Instruction_strategy)
+@settings(max_examples=30)
+def test_raspirover_instruction_execute_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.execute()
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.execute).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'execute' in raspirover_Instruction is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'execute' in raspirover_Instruction did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'execute' in raspirover_Instruction is not implemented or raised an error")
+
+@given(instance=raspirover_Block_strategy)
 @settings(max_examples=50)
-def test_raspirover::action_instantiation(instance):
-    assert isinstance(instance, raspirover::Action)
+def test_raspirover_block_instantiation(instance):
+    assert isinstance(instance, raspirover_Block)
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=raspirover_Block_strategy)
+@settings(max_examples=30)
+def test_raspirover_block_execute_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.execute()
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.execute).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'execute' in raspirover_Block is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'execute' in raspirover_Block did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'execute' in raspirover_Block is not implemented or raised an error")
+
+@given(instance=raspirover_RoverProgram_strategy)
+@settings(max_examples=50)
+def test_raspirover_roverprogram_instantiation(instance):
+    assert isinstance(instance, raspirover_RoverProgram)
+
+
+
+@given(instance=raspirover_RoverProgram_strategy)
+def test_raspirover_roverprogram_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=raspirover_RoverProgram_strategy)
+@settings(max_examples=30)
+def test_raspirover_roverprogram_bindvar_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.bindVar(
+            "test", 
+            "test"
+        )
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.bindVar).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'bindVar' in raspirover_RoverProgram is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'bindVar' in raspirover_RoverProgram did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'bindVar' in raspirover_RoverProgram is not implemented or raised an error")
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=raspirover_RoverProgram_strategy)
+@settings(max_examples=30)
+def test_raspirover_roverprogram_run_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.run()
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.run).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'run' in raspirover_RoverProgram is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'run' in raspirover_RoverProgram did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'run' in raspirover_RoverProgram is not implemented or raised an error")
+
+@given(instance=raspirover_Project_strategy)
+@settings(max_examples=50)
+def test_raspirover_project_instantiation(instance):
+    assert isinstance(instance, raspirover_Project)
+
+import warnings
+import copy
+import inspect
+import ast
+from hypothesis import given, settings
+
+@given(instance=raspirover_Project_strategy)
+@settings(max_examples=30)
+def test_raspirover_project_execute_changes_state(instance):
+    before = copy.deepcopy(instance)
+    try:
+        # Call operation with dummy parameters
+        instance.execute()
+        if instance.__dict__ != before.__dict__:
+            return  # test passes
+        # Check that function exists and is non-empty (FAIL if empty)
+        source = inspect.getsource(instance.execute).strip()
+        tree = ast.parse(source)
+        body = tree.body[0].body  # function body
+        has_statements = len(body) > 0 and not all(isinstance(stmt, ast.Pass) for stmt in body)
+        assert has_statements, f"Function 'execute' in raspirover_Project is empty"
+
+        # Check for state change (WARN if no change)
+        if instance.__dict__ == before.__dict__:
+            warnings.warn(f"Operation 'execute' in raspirover_Project did not change state; check implementation")
+
+    except (AttributeError, NotImplementedError, TypeError):
+        warnings.warn(f"Operation 'execute' in raspirover_Project is not implemented or raised an error")
+
+@given(instance=NamedElement_strategy)
+@settings(max_examples=50)
+def test_namedelement_instantiation(instance):
+    assert isinstance(instance, NamedElement)
+
+@given(instance=raspirover_Pin_strategy)
+@settings(max_examples=50)
+def test_raspirover_pin_instantiation(instance):
+    assert isinstance(instance, raspirover_Pin)
+
+
+
+@given(instance=raspirover_Pin_strategy)
+def test_raspirover_pin_level_setter(instance):
+    original = instance.level
+    instance.level = original
+    assert instance.level == original
+
+@given(instance=raspirover_Module_strategy)
+@settings(max_examples=50)
+def test_raspirover_module_instantiation(instance):
+    assert isinstance(instance, raspirover_Module)
+
+@given(instance=raspirover_Sketch_strategy)
+@settings(max_examples=50)
+def test_raspirover_sketch_instantiation(instance):
+    assert isinstance(instance, raspirover_Sketch)
+
+@given(instance=raspirover_Board_strategy)
+@settings(max_examples=50)
+def test_raspirover_board_instantiation(instance):
+    assert isinstance(instance, raspirover_Board)
+
+@given(instance=raspirover_AnalogPin_strategy)
+@settings(max_examples=50)
+def test_raspirover_analogpin_instantiation(instance):
+    assert isinstance(instance, raspirover_AnalogPin)
+
+@given(instance=raspirover_DigitalPin_strategy)
+@settings(max_examples=50)
+def test_raspirover_digitalpin_instantiation(instance):
+    assert isinstance(instance, raspirover_DigitalPin)
+
+@given(instance=Board_strategy)
+@settings(max_examples=50)
+def test_board_instantiation(instance):
+    assert isinstance(instance, Board)
+
+@given(instance=raspirover_RasPiBoard_strategy)
+@settings(max_examples=50)
+def test_raspirover_raspiboard_instantiation(instance):
+    assert isinstance(instance, raspirover_RasPiBoard)

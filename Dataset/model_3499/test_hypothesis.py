@@ -3,22 +3,22 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    FeatureModel::Feature,
+from python_code import (
+    FeatureModel_Feature,
     ConfigConstraint,
-    FeatureModel::Or,
-    FeatureModel::Xor,
-    FeatureModel::And,
-    FeatureModel::RootFeature,
-    FeatureModel::FeatureModel,
+    FeatureModel_Or,
+    FeatureModel_Xor,
+    FeatureModel_And,
+    FeatureModel_RootFeature,
+    FeatureModel_FeatureModel,
     Constraint,
-    FeatureModel::Constraint,
-    FeatureModel::ConfigConstraint,
-    FeatureModel::FeatureConstraint,
-    kind,
+    FeatureModel_Constraint,
+    FeatureModel_ConfigConstraint,
+    FeatureModel_FeatureConstraint,
     Type,
+    kind,
 )
 
 # =============================================================================
@@ -27,33 +27,33 @@ from classes import (
 
 
 
-def test_featuremodel::feature_is_not_abstract():
-    assert not inspect.isabstract(FeatureModel::Feature)
+def test_featuremodel_feature_is_not_abstract():
+    assert not inspect.isabstract(FeatureModel_Feature)
 
 
-def test_featuremodel::feature_constructor_exists():
-    assert callable(FeatureModel::Feature.__init__)
+def test_featuremodel_feature_constructor_exists():
+    assert callable(FeatureModel_Feature.__init__)
 
 
-def test_featuremodel::feature_constructor_args():
-    sig = inspect.signature(FeatureModel::Feature.__init__)
+def test_featuremodel_feature_constructor_args():
+    sig = inspect.signature(FeatureModel_Feature.__init__)
     params = list(sig.parameters.keys())
     assert "id" in params, "Missing parameter 'id'"
     assert "name" in params, "Missing parameter 'name'"
 
-def test_featuremodel::feature_has_id():
-    assert hasattr(FeatureModel::Feature, "id")
+def test_featuremodel_feature_has_id():
+    assert hasattr(FeatureModel_Feature, "id")
     descriptor = None
-    for klass in FeatureModel::Feature.__mro__:
+    for klass in FeatureModel_Feature.__mro__:
         if "id" in klass.__dict__:
             descriptor = klass.__dict__["id"]
             break
     assert isinstance(descriptor, property)
 
-def test_featuremodel::feature_has_name():
-    assert hasattr(FeatureModel::Feature, "name")
+def test_featuremodel_feature_has_name():
+    assert hasattr(FeatureModel_Feature, "name")
     descriptor = None
-    for klass in FeatureModel::Feature.__mro__:
+    for klass in FeatureModel_Feature.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -75,72 +75,72 @@ def test_configconstraint_constructor_args():
 
 
 
-def test_featuremodel::or_is_not_abstract():
-    assert not inspect.isabstract(FeatureModel::Or)
+def test_featuremodel_or_is_not_abstract():
+    assert not inspect.isabstract(FeatureModel_Or)
 
 
-def test_featuremodel::or_constructor_exists():
-    assert callable(FeatureModel::Or.__init__)
+def test_featuremodel_or_constructor_exists():
+    assert callable(FeatureModel_Or.__init__)
 
 
-def test_featuremodel::or_constructor_args():
-    sig = inspect.signature(FeatureModel::Or.__init__)
+def test_featuremodel_or_constructor_args():
+    sig = inspect.signature(FeatureModel_Or.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_featuremodel::xor_is_not_abstract():
-    assert not inspect.isabstract(FeatureModel::Xor)
+def test_featuremodel_xor_is_not_abstract():
+    assert not inspect.isabstract(FeatureModel_Xor)
 
 
-def test_featuremodel::xor_constructor_exists():
-    assert callable(FeatureModel::Xor.__init__)
+def test_featuremodel_xor_constructor_exists():
+    assert callable(FeatureModel_Xor.__init__)
 
 
-def test_featuremodel::xor_constructor_args():
-    sig = inspect.signature(FeatureModel::Xor.__init__)
+def test_featuremodel_xor_constructor_args():
+    sig = inspect.signature(FeatureModel_Xor.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_featuremodel::and_is_not_abstract():
-    assert not inspect.isabstract(FeatureModel::And)
+def test_featuremodel_and_is_not_abstract():
+    assert not inspect.isabstract(FeatureModel_And)
 
 
-def test_featuremodel::and_constructor_exists():
-    assert callable(FeatureModel::And.__init__)
+def test_featuremodel_and_constructor_exists():
+    assert callable(FeatureModel_And.__init__)
 
 
-def test_featuremodel::and_constructor_args():
-    sig = inspect.signature(FeatureModel::And.__init__)
+def test_featuremodel_and_constructor_args():
+    sig = inspect.signature(FeatureModel_And.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_featuremodel::rootfeature_is_not_abstract():
-    assert not inspect.isabstract(FeatureModel::RootFeature)
+def test_featuremodel_rootfeature_is_not_abstract():
+    assert not inspect.isabstract(FeatureModel_RootFeature)
 
 
-def test_featuremodel::rootfeature_constructor_exists():
-    assert callable(FeatureModel::RootFeature.__init__)
+def test_featuremodel_rootfeature_constructor_exists():
+    assert callable(FeatureModel_RootFeature.__init__)
 
 
-def test_featuremodel::rootfeature_constructor_args():
-    sig = inspect.signature(FeatureModel::RootFeature.__init__)
+def test_featuremodel_rootfeature_constructor_args():
+    sig = inspect.signature(FeatureModel_RootFeature.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_featuremodel::featuremodel_is_not_abstract():
-    assert not inspect.isabstract(FeatureModel::FeatureModel)
+def test_featuremodel_featuremodel_is_not_abstract():
+    assert not inspect.isabstract(FeatureModel_FeatureModel)
 
 
-def test_featuremodel::featuremodel_constructor_exists():
-    assert callable(FeatureModel::FeatureModel.__init__)
+def test_featuremodel_featuremodel_constructor_exists():
+    assert callable(FeatureModel_FeatureModel.__init__)
 
 
-def test_featuremodel::featuremodel_constructor_args():
-    sig = inspect.signature(FeatureModel::FeatureModel.__init__)
+def test_featuremodel_featuremodel_constructor_args():
+    sig = inspect.signature(FeatureModel_FeatureModel.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -159,37 +159,37 @@ def test_constraint_constructor_args():
 
 
 
-def test_featuremodel::constraint_is_not_abstract():
-    assert not inspect.isabstract(FeatureModel::Constraint)
+def test_featuremodel_constraint_is_not_abstract():
+    assert not inspect.isabstract(FeatureModel_Constraint)
 
 
-def test_featuremodel::constraint_constructor_exists():
-    assert callable(FeatureModel::Constraint.__init__)
+def test_featuremodel_constraint_constructor_exists():
+    assert callable(FeatureModel_Constraint.__init__)
 
 
-def test_featuremodel::constraint_constructor_args():
-    sig = inspect.signature(FeatureModel::Constraint.__init__)
+def test_featuremodel_constraint_constructor_args():
+    sig = inspect.signature(FeatureModel_Constraint.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_featuremodel::configconstraint_is_not_abstract():
-    assert not inspect.isabstract(FeatureModel::ConfigConstraint)
+def test_featuremodel_configconstraint_is_not_abstract():
+    assert not inspect.isabstract(FeatureModel_ConfigConstraint)
 
 
-def test_featuremodel::configconstraint_constructor_exists():
-    assert callable(FeatureModel::ConfigConstraint.__init__)
+def test_featuremodel_configconstraint_constructor_exists():
+    assert callable(FeatureModel_ConfigConstraint.__init__)
 
 
-def test_featuremodel::configconstraint_constructor_args():
-    sig = inspect.signature(FeatureModel::ConfigConstraint.__init__)
+def test_featuremodel_configconstraint_constructor_args():
+    sig = inspect.signature(FeatureModel_ConfigConstraint.__init__)
     params = list(sig.parameters.keys())
     assert "kind" in params, "Missing parameter 'kind'"
 
-def test_featuremodel::configconstraint_has_kind():
-    assert hasattr(FeatureModel::ConfigConstraint, "kind")
+def test_featuremodel_configconstraint_has_kind():
+    assert hasattr(FeatureModel_ConfigConstraint, "kind")
     descriptor = None
-    for klass in FeatureModel::ConfigConstraint.__mro__:
+    for klass in FeatureModel_ConfigConstraint.__mro__:
         if "kind" in klass.__dict__:
             descriptor = klass.__dict__["kind"]
             break
@@ -197,42 +197,27 @@ def test_featuremodel::configconstraint_has_kind():
 
 
 
-def test_featuremodel::featureconstraint_is_not_abstract():
-    assert not inspect.isabstract(FeatureModel::FeatureConstraint)
+def test_featuremodel_featureconstraint_is_not_abstract():
+    assert not inspect.isabstract(FeatureModel_FeatureConstraint)
 
 
-def test_featuremodel::featureconstraint_constructor_exists():
-    assert callable(FeatureModel::FeatureConstraint.__init__)
+def test_featuremodel_featureconstraint_constructor_exists():
+    assert callable(FeatureModel_FeatureConstraint.__init__)
 
 
-def test_featuremodel::featureconstraint_constructor_args():
-    sig = inspect.signature(FeatureModel::FeatureConstraint.__init__)
+def test_featuremodel_featureconstraint_constructor_args():
+    sig = inspect.signature(FeatureModel_FeatureConstraint.__init__)
     params = list(sig.parameters.keys())
     assert "type" in params, "Missing parameter 'type'"
 
-def test_featuremodel::featureconstraint_has_type():
-    assert hasattr(FeatureModel::FeatureConstraint, "type")
+def test_featuremodel_featureconstraint_has_type():
+    assert hasattr(FeatureModel_FeatureConstraint, "type")
     descriptor = None
-    for klass in FeatureModel::FeatureConstraint.__mro__:
+    for klass in FeatureModel_FeatureConstraint.__mro__:
         if "type" in klass.__dict__:
             descriptor = klass.__dict__["type"]
             break
     assert isinstance(descriptor, property)
-
-def test_kind_exists():
-    # Check that the Enumeration exists
-    assert kind is not None
-
-def test_kind_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in kind]
-    expected_literals = [
-        "mandatory",
-        "optional",
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in kind"
 
 def test_type_exists():
     # Check that the Enumeration exists
@@ -249,6 +234,21 @@ def test_type_has_all_literals():
     for lit_name in expected_literals:
         assert lit_name in enum_literals, f"Literal '' missing in Type"
 
+def test_kind_exists():
+    # Check that the Enumeration exists
+    assert kind is not None
+
+def test_kind_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in kind]
+    expected_literals = [
+        "optional",
+        "mandatory",
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in kind"
+
 
 # =============================================================================
 # HYPOTHESIS STRATEGIES
@@ -261,8 +261,8 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-FeatureModel::Feature_strategy = st.builds(
-    FeatureModel::Feature,
+FeatureModel_Feature_strategy = st.builds(
+    FeatureModel_Feature,
     id=
         st.integers(),
     name=
@@ -271,61 +271,55 @@ FeatureModel::Feature_strategy = st.builds(
 ConfigConstraint_strategy = st.builds(
     ConfigConstraint,
 )
-FeatureModel::Or_strategy = st.builds(
-    FeatureModel::Or,
+FeatureModel_Or_strategy = st.builds(
+    FeatureModel_Or,
 )
-FeatureModel::Xor_strategy = st.builds(
-    FeatureModel::Xor,
+FeatureModel_Xor_strategy = st.builds(
+    FeatureModel_Xor,
 )
-FeatureModel::And_strategy = st.builds(
-    FeatureModel::And,
+FeatureModel_And_strategy = st.builds(
+    FeatureModel_And,
 )
-FeatureModel::RootFeature_strategy = st.builds(
-    FeatureModel::RootFeature,
+FeatureModel_RootFeature_strategy = st.builds(
+    FeatureModel_RootFeature,
 )
-FeatureModel::FeatureModel_strategy = st.builds(
-    FeatureModel::FeatureModel,
+FeatureModel_FeatureModel_strategy = st.builds(
+    FeatureModel_FeatureModel,
 )
 Constraint_strategy = st.builds(
     Constraint,
 )
-FeatureModel::Constraint_strategy = st.builds(
-    FeatureModel::Constraint,
+FeatureModel_Constraint_strategy = st.builds(
+    FeatureModel_Constraint,
 )
-FeatureModel::ConfigConstraint_strategy = st.builds(
-    FeatureModel::ConfigConstraint,
+FeatureModel_ConfigConstraint_strategy = st.builds(
+    FeatureModel_ConfigConstraint,
     kind=
         safe_text
 )
-FeatureModel::FeatureConstraint_strategy = st.builds(
-    FeatureModel::FeatureConstraint,
+FeatureModel_FeatureConstraint_strategy = st.builds(
+    FeatureModel_FeatureConstraint,
     type=
         safe_text
 )
 
-@given(instance=FeatureModel::Feature_strategy)
+@given(instance=FeatureModel_Feature_strategy)
 @settings(max_examples=50)
-def test_featuremodel::feature_instantiation(instance):
-    assert isinstance(instance, FeatureModel::Feature)
-
-@given(instance=FeatureModel::Feature_strategy)
-def test_featuremodel::feature_id_type(instance):
-    assert isinstance(instance.id, int)
+def test_featuremodel_feature_instantiation(instance):
+    assert isinstance(instance, FeatureModel_Feature)
 
 
-@given(instance=FeatureModel::Feature_strategy)
-def test_featuremodel::feature_id_setter(instance):
+
+@given(instance=FeatureModel_Feature_strategy)
+def test_featuremodel_feature_id_setter(instance):
     original = instance.id
     instance.id = original
     assert instance.id == original
 
-@given(instance=FeatureModel::Feature_strategy)
-def test_featuremodel::feature_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
-@given(instance=FeatureModel::Feature_strategy)
-def test_featuremodel::feature_name_setter(instance):
+@given(instance=FeatureModel_Feature_strategy)
+def test_featuremodel_feature_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
@@ -335,69 +329,63 @@ def test_featuremodel::feature_name_setter(instance):
 def test_configconstraint_instantiation(instance):
     assert isinstance(instance, ConfigConstraint)
 
-@given(instance=FeatureModel::Or_strategy)
+@given(instance=FeatureModel_Or_strategy)
 @settings(max_examples=50)
-def test_featuremodel::or_instantiation(instance):
-    assert isinstance(instance, FeatureModel::Or)
+def test_featuremodel_or_instantiation(instance):
+    assert isinstance(instance, FeatureModel_Or)
 
-@given(instance=FeatureModel::Xor_strategy)
+@given(instance=FeatureModel_Xor_strategy)
 @settings(max_examples=50)
-def test_featuremodel::xor_instantiation(instance):
-    assert isinstance(instance, FeatureModel::Xor)
+def test_featuremodel_xor_instantiation(instance):
+    assert isinstance(instance, FeatureModel_Xor)
 
-@given(instance=FeatureModel::And_strategy)
+@given(instance=FeatureModel_And_strategy)
 @settings(max_examples=50)
-def test_featuremodel::and_instantiation(instance):
-    assert isinstance(instance, FeatureModel::And)
+def test_featuremodel_and_instantiation(instance):
+    assert isinstance(instance, FeatureModel_And)
 
-@given(instance=FeatureModel::RootFeature_strategy)
+@given(instance=FeatureModel_RootFeature_strategy)
 @settings(max_examples=50)
-def test_featuremodel::rootfeature_instantiation(instance):
-    assert isinstance(instance, FeatureModel::RootFeature)
+def test_featuremodel_rootfeature_instantiation(instance):
+    assert isinstance(instance, FeatureModel_RootFeature)
 
-@given(instance=FeatureModel::FeatureModel_strategy)
+@given(instance=FeatureModel_FeatureModel_strategy)
 @settings(max_examples=50)
-def test_featuremodel::featuremodel_instantiation(instance):
-    assert isinstance(instance, FeatureModel::FeatureModel)
+def test_featuremodel_featuremodel_instantiation(instance):
+    assert isinstance(instance, FeatureModel_FeatureModel)
 
 @given(instance=Constraint_strategy)
 @settings(max_examples=50)
 def test_constraint_instantiation(instance):
     assert isinstance(instance, Constraint)
 
-@given(instance=FeatureModel::Constraint_strategy)
+@given(instance=FeatureModel_Constraint_strategy)
 @settings(max_examples=50)
-def test_featuremodel::constraint_instantiation(instance):
-    assert isinstance(instance, FeatureModel::Constraint)
+def test_featuremodel_constraint_instantiation(instance):
+    assert isinstance(instance, FeatureModel_Constraint)
 
-@given(instance=FeatureModel::ConfigConstraint_strategy)
+@given(instance=FeatureModel_ConfigConstraint_strategy)
 @settings(max_examples=50)
-def test_featuremodel::configconstraint_instantiation(instance):
-    assert isinstance(instance, FeatureModel::ConfigConstraint)
-
-@given(instance=FeatureModel::ConfigConstraint_strategy)
-def test_featuremodel::configconstraint_kind_type(instance):
-    assert isinstance(instance.kind, str)
+def test_featuremodel_configconstraint_instantiation(instance):
+    assert isinstance(instance, FeatureModel_ConfigConstraint)
 
 
-@given(instance=FeatureModel::ConfigConstraint_strategy)
-def test_featuremodel::configconstraint_kind_setter(instance):
+
+@given(instance=FeatureModel_ConfigConstraint_strategy)
+def test_featuremodel_configconstraint_kind_setter(instance):
     original = instance.kind
     instance.kind = original
     assert instance.kind == original
 
-@given(instance=FeatureModel::FeatureConstraint_strategy)
+@given(instance=FeatureModel_FeatureConstraint_strategy)
 @settings(max_examples=50)
-def test_featuremodel::featureconstraint_instantiation(instance):
-    assert isinstance(instance, FeatureModel::FeatureConstraint)
-
-@given(instance=FeatureModel::FeatureConstraint_strategy)
-def test_featuremodel::featureconstraint_type_type(instance):
-    assert isinstance(instance.type, str)
+def test_featuremodel_featureconstraint_instantiation(instance):
+    assert isinstance(instance, FeatureModel_FeatureConstraint)
 
 
-@given(instance=FeatureModel::FeatureConstraint_strategy)
-def test_featuremodel::featureconstraint_type_setter(instance):
+
+@given(instance=FeatureModel_FeatureConstraint_strategy)
+def test_featuremodel_featureconstraint_type_setter(instance):
     original = instance.type
     instance.type = original
     assert instance.type == original

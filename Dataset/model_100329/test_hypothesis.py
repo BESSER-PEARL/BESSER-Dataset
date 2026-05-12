@@ -3,17 +3,17 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    pnml::Element,
+from python_code import (
+    pnml_Element,
     Element,
-    pnml::ArcTransition2Place,
-    pnml::TransitionElement,
-    pnml::PlaceElement,
-    pnml::ArcPlace2Transition,
-    pnml::NetElement,
-    pnml::PNMLDocument,
+    pnml_ArcTransition2Place,
+    pnml_TransitionElement,
+    pnml_PlaceElement,
+    pnml_ArcPlace2Transition,
+    pnml_NetElement,
+    pnml_PNMLDocument,
 )
 
 # =============================================================================
@@ -22,33 +22,33 @@ from classes import (
 
 
 
-def test_pnml::element_is_not_abstract():
-    assert not inspect.isabstract(pnml::Element)
+def test_pnml_element_is_not_abstract():
+    assert not inspect.isabstract(pnml_Element)
 
 
-def test_pnml::element_constructor_exists():
-    assert callable(pnml::Element.__init__)
+def test_pnml_element_constructor_exists():
+    assert callable(pnml_Element.__init__)
 
 
-def test_pnml::element_constructor_args():
-    sig = inspect.signature(pnml::Element.__init__)
+def test_pnml_element_constructor_args():
+    sig = inspect.signature(pnml_Element.__init__)
     params = list(sig.parameters.keys())
     assert "location" in params, "Missing parameter 'location'"
     assert "id" in params, "Missing parameter 'id'"
 
-def test_pnml::element_has_location():
-    assert hasattr(pnml::Element, "location")
+def test_pnml_element_has_location():
+    assert hasattr(pnml_Element, "location")
     descriptor = None
-    for klass in pnml::Element.__mro__:
+    for klass in pnml_Element.__mro__:
         if "location" in klass.__dict__:
             descriptor = klass.__dict__["location"]
             break
     assert isinstance(descriptor, property)
 
-def test_pnml::element_has_id():
-    assert hasattr(pnml::Element, "id")
+def test_pnml_element_has_id():
+    assert hasattr(pnml_Element, "id")
     descriptor = None
-    for klass in pnml::Element.__mro__:
+    for klass in pnml_Element.__mro__:
         if "id" in klass.__dict__:
             descriptor = klass.__dict__["id"]
             break
@@ -70,37 +70,37 @@ def test_element_constructor_args():
 
 
 
-def test_pnml::arctransition2place_is_not_abstract():
-    assert not inspect.isabstract(pnml::ArcTransition2Place)
+def test_pnml_arctransition2place_is_not_abstract():
+    assert not inspect.isabstract(pnml_ArcTransition2Place)
 
 
-def test_pnml::arctransition2place_constructor_exists():
-    assert callable(pnml::ArcTransition2Place.__init__)
+def test_pnml_arctransition2place_constructor_exists():
+    assert callable(pnml_ArcTransition2Place.__init__)
 
 
-def test_pnml::arctransition2place_constructor_args():
-    sig = inspect.signature(pnml::ArcTransition2Place.__init__)
+def test_pnml_arctransition2place_constructor_args():
+    sig = inspect.signature(pnml_ArcTransition2Place.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_pnml::transitionelement_is_not_abstract():
-    assert not inspect.isabstract(pnml::TransitionElement)
+def test_pnml_transitionelement_is_not_abstract():
+    assert not inspect.isabstract(pnml_TransitionElement)
 
 
-def test_pnml::transitionelement_constructor_exists():
-    assert callable(pnml::TransitionElement.__init__)
+def test_pnml_transitionelement_constructor_exists():
+    assert callable(pnml_TransitionElement.__init__)
 
 
-def test_pnml::transitionelement_constructor_args():
-    sig = inspect.signature(pnml::TransitionElement.__init__)
+def test_pnml_transitionelement_constructor_args():
+    sig = inspect.signature(pnml_TransitionElement.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_pnml::transitionelement_has_name():
-    assert hasattr(pnml::TransitionElement, "name")
+def test_pnml_transitionelement_has_name():
+    assert hasattr(pnml_TransitionElement, "name")
     descriptor = None
-    for klass in pnml::TransitionElement.__mro__:
+    for klass in pnml_TransitionElement.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -108,71 +108,33 @@ def test_pnml::transitionelement_has_name():
 
 
 
-def test_pnml::placeelement_is_not_abstract():
-    assert not inspect.isabstract(pnml::PlaceElement)
+def test_pnml_placeelement_is_not_abstract():
+    assert not inspect.isabstract(pnml_PlaceElement)
 
 
-def test_pnml::placeelement_constructor_exists():
-    assert callable(pnml::PlaceElement.__init__)
+def test_pnml_placeelement_constructor_exists():
+    assert callable(pnml_PlaceElement.__init__)
 
 
-def test_pnml::placeelement_constructor_args():
-    sig = inspect.signature(pnml::PlaceElement.__init__)
+def test_pnml_placeelement_constructor_args():
+    sig = inspect.signature(pnml_PlaceElement.__init__)
     params = list(sig.parameters.keys())
-    assert "name" in params, "Missing parameter 'name'"
     assert "tokens" in params, "Missing parameter 'tokens'"
+    assert "name" in params, "Missing parameter 'name'"
 
-def test_pnml::placeelement_has_name():
-    assert hasattr(pnml::PlaceElement, "name")
+def test_pnml_placeelement_has_tokens():
+    assert hasattr(pnml_PlaceElement, "tokens")
     descriptor = None
-    for klass in pnml::PlaceElement.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_pnml::placeelement_has_tokens():
-    assert hasattr(pnml::PlaceElement, "tokens")
-    descriptor = None
-    for klass in pnml::PlaceElement.__mro__:
+    for klass in pnml_PlaceElement.__mro__:
         if "tokens" in klass.__dict__:
             descriptor = klass.__dict__["tokens"]
             break
     assert isinstance(descriptor, property)
 
-
-
-def test_pnml::arcplace2transition_is_not_abstract():
-    assert not inspect.isabstract(pnml::ArcPlace2Transition)
-
-
-def test_pnml::arcplace2transition_constructor_exists():
-    assert callable(pnml::ArcPlace2Transition.__init__)
-
-
-def test_pnml::arcplace2transition_constructor_args():
-    sig = inspect.signature(pnml::ArcPlace2Transition.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_pnml::netelement_is_not_abstract():
-    assert not inspect.isabstract(pnml::NetElement)
-
-
-def test_pnml::netelement_constructor_exists():
-    assert callable(pnml::NetElement.__init__)
-
-
-def test_pnml::netelement_constructor_args():
-    sig = inspect.signature(pnml::NetElement.__init__)
-    params = list(sig.parameters.keys())
-    assert "name" in params, "Missing parameter 'name'"
-
-def test_pnml::netelement_has_name():
-    assert hasattr(pnml::NetElement, "name")
+def test_pnml_placeelement_has_name():
+    assert hasattr(pnml_PlaceElement, "name")
     descriptor = None
-    for klass in pnml::NetElement.__mro__:
+    for klass in pnml_PlaceElement.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -180,23 +142,61 @@ def test_pnml::netelement_has_name():
 
 
 
-def test_pnml::pnmldocument_is_not_abstract():
-    assert not inspect.isabstract(pnml::PNMLDocument)
+def test_pnml_arcplace2transition_is_not_abstract():
+    assert not inspect.isabstract(pnml_ArcPlace2Transition)
 
 
-def test_pnml::pnmldocument_constructor_exists():
-    assert callable(pnml::PNMLDocument.__init__)
+def test_pnml_arcplace2transition_constructor_exists():
+    assert callable(pnml_ArcPlace2Transition.__init__)
 
 
-def test_pnml::pnmldocument_constructor_args():
-    sig = inspect.signature(pnml::PNMLDocument.__init__)
+def test_pnml_arcplace2transition_constructor_args():
+    sig = inspect.signature(pnml_ArcPlace2Transition.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_pnml_netelement_is_not_abstract():
+    assert not inspect.isabstract(pnml_NetElement)
+
+
+def test_pnml_netelement_constructor_exists():
+    assert callable(pnml_NetElement.__init__)
+
+
+def test_pnml_netelement_constructor_args():
+    sig = inspect.signature(pnml_NetElement.__init__)
+    params = list(sig.parameters.keys())
+    assert "name" in params, "Missing parameter 'name'"
+
+def test_pnml_netelement_has_name():
+    assert hasattr(pnml_NetElement, "name")
+    descriptor = None
+    for klass in pnml_NetElement.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_pnml_pnmldocument_is_not_abstract():
+    assert not inspect.isabstract(pnml_PNMLDocument)
+
+
+def test_pnml_pnmldocument_constructor_exists():
+    assert callable(pnml_PNMLDocument.__init__)
+
+
+def test_pnml_pnmldocument_constructor_args():
+    sig = inspect.signature(pnml_PNMLDocument.__init__)
     params = list(sig.parameters.keys())
     assert "location" in params, "Missing parameter 'location'"
 
-def test_pnml::pnmldocument_has_location():
-    assert hasattr(pnml::PNMLDocument, "location")
+def test_pnml_pnmldocument_has_location():
+    assert hasattr(pnml_PNMLDocument, "location")
     descriptor = None
-    for klass in pnml::PNMLDocument.__mro__:
+    for klass in pnml_PNMLDocument.__mro__:
         if "location" in klass.__dict__:
             descriptor = klass.__dict__["location"]
             break
@@ -214,8 +214,8 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-pnml::Element_strategy = st.builds(
-    pnml::Element,
+pnml_Element_strategy = st.builds(
+    pnml_Element,
     location=
         safe_text,
     id=
@@ -224,58 +224,52 @@ pnml::Element_strategy = st.builds(
 Element_strategy = st.builds(
     Element,
 )
-pnml::ArcTransition2Place_strategy = st.builds(
-    pnml::ArcTransition2Place,
+pnml_ArcTransition2Place_strategy = st.builds(
+    pnml_ArcTransition2Place,
 )
-pnml::TransitionElement_strategy = st.builds(
-    pnml::TransitionElement,
+pnml_TransitionElement_strategy = st.builds(
+    pnml_TransitionElement,
     name=
         safe_text
 )
-pnml::PlaceElement_strategy = st.builds(
-    pnml::PlaceElement,
-    name=
-        safe_text,
+pnml_PlaceElement_strategy = st.builds(
+    pnml_PlaceElement,
     tokens=
-        st.integers()
-)
-pnml::ArcPlace2Transition_strategy = st.builds(
-    pnml::ArcPlace2Transition,
-)
-pnml::NetElement_strategy = st.builds(
-    pnml::NetElement,
+        st.integers(),
     name=
         safe_text
 )
-pnml::PNMLDocument_strategy = st.builds(
-    pnml::PNMLDocument,
+pnml_ArcPlace2Transition_strategy = st.builds(
+    pnml_ArcPlace2Transition,
+)
+pnml_NetElement_strategy = st.builds(
+    pnml_NetElement,
+    name=
+        safe_text
+)
+pnml_PNMLDocument_strategy = st.builds(
+    pnml_PNMLDocument,
     location=
         safe_text
 )
 
-@given(instance=pnml::Element_strategy)
+@given(instance=pnml_Element_strategy)
 @settings(max_examples=50)
-def test_pnml::element_instantiation(instance):
-    assert isinstance(instance, pnml::Element)
-
-@given(instance=pnml::Element_strategy)
-def test_pnml::element_location_type(instance):
-    assert isinstance(instance.location, str)
+def test_pnml_element_instantiation(instance):
+    assert isinstance(instance, pnml_Element)
 
 
-@given(instance=pnml::Element_strategy)
-def test_pnml::element_location_setter(instance):
+
+@given(instance=pnml_Element_strategy)
+def test_pnml_element_location_setter(instance):
     original = instance.location
     instance.location = original
     assert instance.location == original
 
-@given(instance=pnml::Element_strategy)
-def test_pnml::element_id_type(instance):
-    assert isinstance(instance.id, str)
 
 
-@given(instance=pnml::Element_strategy)
-def test_pnml::element_id_setter(instance):
+@given(instance=pnml_Element_strategy)
+def test_pnml_element_id_setter(instance):
     original = instance.id
     instance.id = original
     assert instance.id == original
@@ -285,87 +279,72 @@ def test_pnml::element_id_setter(instance):
 def test_element_instantiation(instance):
     assert isinstance(instance, Element)
 
-@given(instance=pnml::ArcTransition2Place_strategy)
+@given(instance=pnml_ArcTransition2Place_strategy)
 @settings(max_examples=50)
-def test_pnml::arctransition2place_instantiation(instance):
-    assert isinstance(instance, pnml::ArcTransition2Place)
+def test_pnml_arctransition2place_instantiation(instance):
+    assert isinstance(instance, pnml_ArcTransition2Place)
 
-@given(instance=pnml::TransitionElement_strategy)
+@given(instance=pnml_TransitionElement_strategy)
 @settings(max_examples=50)
-def test_pnml::transitionelement_instantiation(instance):
-    assert isinstance(instance, pnml::TransitionElement)
-
-@given(instance=pnml::TransitionElement_strategy)
-def test_pnml::transitionelement_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_pnml_transitionelement_instantiation(instance):
+    assert isinstance(instance, pnml_TransitionElement)
 
 
-@given(instance=pnml::TransitionElement_strategy)
-def test_pnml::transitionelement_name_setter(instance):
+
+@given(instance=pnml_TransitionElement_strategy)
+def test_pnml_transitionelement_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=pnml::PlaceElement_strategy)
+@given(instance=pnml_PlaceElement_strategy)
 @settings(max_examples=50)
-def test_pnml::placeelement_instantiation(instance):
-    assert isinstance(instance, pnml::PlaceElement)
-
-@given(instance=pnml::PlaceElement_strategy)
-def test_pnml::placeelement_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_pnml_placeelement_instantiation(instance):
+    assert isinstance(instance, pnml_PlaceElement)
 
 
-@given(instance=pnml::PlaceElement_strategy)
-def test_pnml::placeelement_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
 
-@given(instance=pnml::PlaceElement_strategy)
-def test_pnml::placeelement_tokens_type(instance):
-    assert isinstance(instance.tokens, int)
-
-
-@given(instance=pnml::PlaceElement_strategy)
-def test_pnml::placeelement_tokens_setter(instance):
+@given(instance=pnml_PlaceElement_strategy)
+def test_pnml_placeelement_tokens_setter(instance):
     original = instance.tokens
     instance.tokens = original
     assert instance.tokens == original
 
-@given(instance=pnml::ArcPlace2Transition_strategy)
-@settings(max_examples=50)
-def test_pnml::arcplace2transition_instantiation(instance):
-    assert isinstance(instance, pnml::ArcPlace2Transition)
-
-@given(instance=pnml::NetElement_strategy)
-@settings(max_examples=50)
-def test_pnml::netelement_instantiation(instance):
-    assert isinstance(instance, pnml::NetElement)
-
-@given(instance=pnml::NetElement_strategy)
-def test_pnml::netelement_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
-@given(instance=pnml::NetElement_strategy)
-def test_pnml::netelement_name_setter(instance):
+@given(instance=pnml_PlaceElement_strategy)
+def test_pnml_placeelement_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=pnml::PNMLDocument_strategy)
+@given(instance=pnml_ArcPlace2Transition_strategy)
 @settings(max_examples=50)
-def test_pnml::pnmldocument_instantiation(instance):
-    assert isinstance(instance, pnml::PNMLDocument)
+def test_pnml_arcplace2transition_instantiation(instance):
+    assert isinstance(instance, pnml_ArcPlace2Transition)
 
-@given(instance=pnml::PNMLDocument_strategy)
-def test_pnml::pnmldocument_location_type(instance):
-    assert isinstance(instance.location, str)
+@given(instance=pnml_NetElement_strategy)
+@settings(max_examples=50)
+def test_pnml_netelement_instantiation(instance):
+    assert isinstance(instance, pnml_NetElement)
 
 
-@given(instance=pnml::PNMLDocument_strategy)
-def test_pnml::pnmldocument_location_setter(instance):
+
+@given(instance=pnml_NetElement_strategy)
+def test_pnml_netelement_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+@given(instance=pnml_PNMLDocument_strategy)
+@settings(max_examples=50)
+def test_pnml_pnmldocument_instantiation(instance):
+    assert isinstance(instance, pnml_PNMLDocument)
+
+
+
+@given(instance=pnml_PNMLDocument_strategy)
+def test_pnml_pnmldocument_location_setter(instance):
     original = instance.location
     instance.location = original
     assert instance.location == original

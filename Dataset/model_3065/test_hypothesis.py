@@ -3,38 +3,38 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     Condition,
-    forms::CompositeCondition,
-    forms::AttributeValueCondition,
-    forms::Condition,
+    forms_CompositeCondition,
+    forms_AttributeValueCondition,
+    forms_Condition,
     AttributePageElement,
-    forms::TimeSelectionField,
-    forms::TextArea,
-    forms::SelectionField,
-    forms::DateSelectionField,
-    forms::TextField,
+    forms_SelectionField,
+    forms_TimeSelectionField,
+    forms_DateSelectionField,
+    forms_TextArea,
+    forms_TextField,
     PageElement,
-    forms::RelationshipPageElement,
-    forms::AttributePageElement,
-    forms::PageElement,
-    forms::Page,
-    forms::Column,
+    forms_RelationshipPageElement,
+    forms_AttributePageElement,
+    forms_PageElement,
+    forms_Page,
+    forms_Column,
     RelationshipPageElement,
-    forms::Table,
-    forms::List,
-    forms::Literal,
-    forms::Enumeration,
-    forms::Relationship,
-    forms::Form,
-    forms::Entity,
-    forms::EFML,
-    forms::Attribute,
-    Operators,
-    ConditionType,
+    forms_Table,
+    forms_List,
+    forms_Literal,
+    forms_Enumeration,
+    forms_Relationship,
+    forms_Form,
+    forms_Entity,
+    forms_EFML,
+    forms_Attribute,
     AttributeType,
+    ConditionType,
+    Operators,
 )
 
 # =============================================================================
@@ -57,23 +57,23 @@ def test_condition_constructor_args():
 
 
 
-def test_forms::compositecondition_is_not_abstract():
-    assert not inspect.isabstract(forms::CompositeCondition)
+def test_forms_compositecondition_is_not_abstract():
+    assert not inspect.isabstract(forms_CompositeCondition)
 
 
-def test_forms::compositecondition_constructor_exists():
-    assert callable(forms::CompositeCondition.__init__)
+def test_forms_compositecondition_constructor_exists():
+    assert callable(forms_CompositeCondition.__init__)
 
 
-def test_forms::compositecondition_constructor_args():
-    sig = inspect.signature(forms::CompositeCondition.__init__)
+def test_forms_compositecondition_constructor_args():
+    sig = inspect.signature(forms_CompositeCondition.__init__)
     params = list(sig.parameters.keys())
     assert "operator" in params, "Missing parameter 'operator'"
 
-def test_forms::compositecondition_has_operator():
-    assert hasattr(forms::CompositeCondition, "operator")
+def test_forms_compositecondition_has_operator():
+    assert hasattr(forms_CompositeCondition, "operator")
     descriptor = None
-    for klass in forms::CompositeCondition.__mro__:
+    for klass in forms_CompositeCondition.__mro__:
         if "operator" in klass.__dict__:
             descriptor = klass.__dict__["operator"]
             break
@@ -81,23 +81,23 @@ def test_forms::compositecondition_has_operator():
 
 
 
-def test_forms::attributevaluecondition_is_not_abstract():
-    assert not inspect.isabstract(forms::AttributeValueCondition)
+def test_forms_attributevaluecondition_is_not_abstract():
+    assert not inspect.isabstract(forms_AttributeValueCondition)
 
 
-def test_forms::attributevaluecondition_constructor_exists():
-    assert callable(forms::AttributeValueCondition.__init__)
+def test_forms_attributevaluecondition_constructor_exists():
+    assert callable(forms_AttributeValueCondition.__init__)
 
 
-def test_forms::attributevaluecondition_constructor_args():
-    sig = inspect.signature(forms::AttributeValueCondition.__init__)
+def test_forms_attributevaluecondition_constructor_args():
+    sig = inspect.signature(forms_AttributeValueCondition.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
 
-def test_forms::attributevaluecondition_has_value():
-    assert hasattr(forms::AttributeValueCondition, "value")
+def test_forms_attributevaluecondition_has_value():
+    assert hasattr(forms_AttributeValueCondition, "value")
     descriptor = None
-    for klass in forms::AttributeValueCondition.__mro__:
+    for klass in forms_AttributeValueCondition.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -105,35 +105,35 @@ def test_forms::attributevaluecondition_has_value():
 
 
 
-def test_forms::condition_is_not_abstract():
-    assert not inspect.isabstract(forms::Condition)
+def test_forms_condition_is_not_abstract():
+    assert not inspect.isabstract(forms_Condition)
 
 
-def test_forms::condition_constructor_exists():
-    assert callable(forms::Condition.__init__)
+def test_forms_condition_constructor_exists():
+    assert callable(forms_Condition.__init__)
 
 
-def test_forms::condition_constructor_args():
-    sig = inspect.signature(forms::Condition.__init__)
+def test_forms_condition_constructor_args():
+    sig = inspect.signature(forms_Condition.__init__)
     params = list(sig.parameters.keys())
-    assert "conditionID" in params, "Missing parameter 'conditionID'"
     assert "type" in params, "Missing parameter 'type'"
+    assert "conditionID" in params, "Missing parameter 'conditionID'"
 
-def test_forms::condition_has_conditionID():
-    assert hasattr(forms::Condition, "conditionID")
+def test_forms_condition_has_type():
+    assert hasattr(forms_Condition, "type")
     descriptor = None
-    for klass in forms::Condition.__mro__:
-        if "conditionID" in klass.__dict__:
-            descriptor = klass.__dict__["conditionID"]
+    for klass in forms_Condition.__mro__:
+        if "type" in klass.__dict__:
+            descriptor = klass.__dict__["type"]
             break
     assert isinstance(descriptor, property)
 
-def test_forms::condition_has_type():
-    assert hasattr(forms::Condition, "type")
+def test_forms_condition_has_conditionID():
+    assert hasattr(forms_Condition, "conditionID")
     descriptor = None
-    for klass in forms::Condition.__mro__:
-        if "type" in klass.__dict__:
-            descriptor = klass.__dict__["type"]
+    for klass in forms_Condition.__mro__:
+        if "conditionID" in klass.__dict__:
+            descriptor = klass.__dict__["conditionID"]
             break
     assert isinstance(descriptor, property)
 
@@ -153,79 +153,79 @@ def test_attributepageelement_constructor_args():
 
 
 
-def test_forms::timeselectionfield_is_not_abstract():
-    assert not inspect.isabstract(forms::TimeSelectionField)
+def test_forms_selectionfield_is_not_abstract():
+    assert not inspect.isabstract(forms_SelectionField)
 
 
-def test_forms::timeselectionfield_constructor_exists():
-    assert callable(forms::TimeSelectionField.__init__)
+def test_forms_selectionfield_constructor_exists():
+    assert callable(forms_SelectionField.__init__)
 
 
-def test_forms::timeselectionfield_constructor_args():
-    sig = inspect.signature(forms::TimeSelectionField.__init__)
+def test_forms_selectionfield_constructor_args():
+    sig = inspect.signature(forms_SelectionField.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_forms::textarea_is_not_abstract():
-    assert not inspect.isabstract(forms::TextArea)
+def test_forms_timeselectionfield_is_not_abstract():
+    assert not inspect.isabstract(forms_TimeSelectionField)
 
 
-def test_forms::textarea_constructor_exists():
-    assert callable(forms::TextArea.__init__)
+def test_forms_timeselectionfield_constructor_exists():
+    assert callable(forms_TimeSelectionField.__init__)
 
 
-def test_forms::textarea_constructor_args():
-    sig = inspect.signature(forms::TextArea.__init__)
+def test_forms_timeselectionfield_constructor_args():
+    sig = inspect.signature(forms_TimeSelectionField.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_forms::selectionfield_is_not_abstract():
-    assert not inspect.isabstract(forms::SelectionField)
+def test_forms_dateselectionfield_is_not_abstract():
+    assert not inspect.isabstract(forms_DateSelectionField)
 
 
-def test_forms::selectionfield_constructor_exists():
-    assert callable(forms::SelectionField.__init__)
+def test_forms_dateselectionfield_constructor_exists():
+    assert callable(forms_DateSelectionField.__init__)
 
 
-def test_forms::selectionfield_constructor_args():
-    sig = inspect.signature(forms::SelectionField.__init__)
+def test_forms_dateselectionfield_constructor_args():
+    sig = inspect.signature(forms_DateSelectionField.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_forms::dateselectionfield_is_not_abstract():
-    assert not inspect.isabstract(forms::DateSelectionField)
+def test_forms_textarea_is_not_abstract():
+    assert not inspect.isabstract(forms_TextArea)
 
 
-def test_forms::dateselectionfield_constructor_exists():
-    assert callable(forms::DateSelectionField.__init__)
+def test_forms_textarea_constructor_exists():
+    assert callable(forms_TextArea.__init__)
 
 
-def test_forms::dateselectionfield_constructor_args():
-    sig = inspect.signature(forms::DateSelectionField.__init__)
+def test_forms_textarea_constructor_args():
+    sig = inspect.signature(forms_TextArea.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_forms::textfield_is_not_abstract():
-    assert not inspect.isabstract(forms::TextField)
+def test_forms_textfield_is_not_abstract():
+    assert not inspect.isabstract(forms_TextField)
 
 
-def test_forms::textfield_constructor_exists():
-    assert callable(forms::TextField.__init__)
+def test_forms_textfield_constructor_exists():
+    assert callable(forms_TextField.__init__)
 
 
-def test_forms::textfield_constructor_args():
-    sig = inspect.signature(forms::TextField.__init__)
+def test_forms_textfield_constructor_args():
+    sig = inspect.signature(forms_TextField.__init__)
     params = list(sig.parameters.keys())
     assert "format" in params, "Missing parameter 'format'"
 
-def test_forms::textfield_has_format():
-    assert hasattr(forms::TextField, "format")
+def test_forms_textfield_has_format():
+    assert hasattr(forms_TextField, "format")
     descriptor = None
-    for klass in forms::TextField.__mro__:
+    for klass in forms_TextField.__mro__:
         if "format" in klass.__dict__:
             descriptor = klass.__dict__["format"]
             break
@@ -247,85 +247,85 @@ def test_pageelement_constructor_args():
 
 
 
-def test_forms::relationshippageelement_is_not_abstract():
-    assert not inspect.isabstract(forms::RelationshipPageElement)
+def test_forms_relationshippageelement_is_not_abstract():
+    assert not inspect.isabstract(forms_RelationshipPageElement)
 
 
-def test_forms::relationshippageelement_constructor_exists():
-    assert callable(forms::RelationshipPageElement.__init__)
+def test_forms_relationshippageelement_constructor_exists():
+    assert callable(forms_RelationshipPageElement.__init__)
 
 
-def test_forms::relationshippageelement_constructor_args():
-    sig = inspect.signature(forms::RelationshipPageElement.__init__)
+def test_forms_relationshippageelement_constructor_args():
+    sig = inspect.signature(forms_RelationshipPageElement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_forms::attributepageelement_is_not_abstract():
-    assert not inspect.isabstract(forms::AttributePageElement)
+def test_forms_attributepageelement_is_not_abstract():
+    assert not inspect.isabstract(forms_AttributePageElement)
 
 
-def test_forms::attributepageelement_constructor_exists():
-    assert callable(forms::AttributePageElement.__init__)
+def test_forms_attributepageelement_constructor_exists():
+    assert callable(forms_AttributePageElement.__init__)
 
 
-def test_forms::attributepageelement_constructor_args():
-    sig = inspect.signature(forms::AttributePageElement.__init__)
+def test_forms_attributepageelement_constructor_args():
+    sig = inspect.signature(forms_AttributePageElement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_forms::pageelement_is_not_abstract():
-    assert not inspect.isabstract(forms::PageElement)
+def test_forms_pageelement_is_not_abstract():
+    assert not inspect.isabstract(forms_PageElement)
 
 
-def test_forms::pageelement_constructor_exists():
-    assert callable(forms::PageElement.__init__)
+def test_forms_pageelement_constructor_exists():
+    assert callable(forms_PageElement.__init__)
 
 
-def test_forms::pageelement_constructor_args():
-    sig = inspect.signature(forms::PageElement.__init__)
+def test_forms_pageelement_constructor_args():
+    sig = inspect.signature(forms_PageElement.__init__)
     params = list(sig.parameters.keys())
-    assert "label" in params, "Missing parameter 'label'"
     assert "elementID" in params, "Missing parameter 'elementID'"
+    assert "label" in params, "Missing parameter 'label'"
 
-def test_forms::pageelement_has_label():
-    assert hasattr(forms::PageElement, "label")
+def test_forms_pageelement_has_elementID():
+    assert hasattr(forms_PageElement, "elementID")
     descriptor = None
-    for klass in forms::PageElement.__mro__:
-        if "label" in klass.__dict__:
-            descriptor = klass.__dict__["label"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_forms::pageelement_has_elementID():
-    assert hasattr(forms::PageElement, "elementID")
-    descriptor = None
-    for klass in forms::PageElement.__mro__:
+    for klass in forms_PageElement.__mro__:
         if "elementID" in klass.__dict__:
             descriptor = klass.__dict__["elementID"]
             break
     assert isinstance(descriptor, property)
 
+def test_forms_pageelement_has_label():
+    assert hasattr(forms_PageElement, "label")
+    descriptor = None
+    for klass in forms_PageElement.__mro__:
+        if "label" in klass.__dict__:
+            descriptor = klass.__dict__["label"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_forms::page_is_not_abstract():
-    assert not inspect.isabstract(forms::Page)
+
+def test_forms_page_is_not_abstract():
+    assert not inspect.isabstract(forms_Page)
 
 
-def test_forms::page_constructor_exists():
-    assert callable(forms::Page.__init__)
+def test_forms_page_constructor_exists():
+    assert callable(forms_Page.__init__)
 
 
-def test_forms::page_constructor_args():
-    sig = inspect.signature(forms::Page.__init__)
+def test_forms_page_constructor_args():
+    sig = inspect.signature(forms_Page.__init__)
     params = list(sig.parameters.keys())
     assert "title" in params, "Missing parameter 'title'"
 
-def test_forms::page_has_title():
-    assert hasattr(forms::Page, "title")
+def test_forms_page_has_title():
+    assert hasattr(forms_Page, "title")
     descriptor = None
-    for klass in forms::Page.__mro__:
+    for klass in forms_Page.__mro__:
         if "title" in klass.__dict__:
             descriptor = klass.__dict__["title"]
             break
@@ -333,16 +333,16 @@ def test_forms::page_has_title():
 
 
 
-def test_forms::column_is_not_abstract():
-    assert not inspect.isabstract(forms::Column)
+def test_forms_column_is_not_abstract():
+    assert not inspect.isabstract(forms_Column)
 
 
-def test_forms::column_constructor_exists():
-    assert callable(forms::Column.__init__)
+def test_forms_column_constructor_exists():
+    assert callable(forms_Column.__init__)
 
 
-def test_forms::column_constructor_args():
-    sig = inspect.signature(forms::Column.__init__)
+def test_forms_column_constructor_args():
+    sig = inspect.signature(forms_Column.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -361,85 +361,61 @@ def test_relationshippageelement_constructor_args():
 
 
 
-def test_forms::table_is_not_abstract():
-    assert not inspect.isabstract(forms::Table)
+def test_forms_table_is_not_abstract():
+    assert not inspect.isabstract(forms_Table)
 
 
-def test_forms::table_constructor_exists():
-    assert callable(forms::Table.__init__)
+def test_forms_table_constructor_exists():
+    assert callable(forms_Table.__init__)
 
 
-def test_forms::table_constructor_args():
-    sig = inspect.signature(forms::Table.__init__)
+def test_forms_table_constructor_args():
+    sig = inspect.signature(forms_Table.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_forms::list_is_not_abstract():
-    assert not inspect.isabstract(forms::List)
+def test_forms_list_is_not_abstract():
+    assert not inspect.isabstract(forms_List)
 
 
-def test_forms::list_constructor_exists():
-    assert callable(forms::List.__init__)
+def test_forms_list_constructor_exists():
+    assert callable(forms_List.__init__)
 
 
-def test_forms::list_constructor_args():
-    sig = inspect.signature(forms::List.__init__)
+def test_forms_list_constructor_args():
+    sig = inspect.signature(forms_List.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_forms::literal_is_not_abstract():
-    assert not inspect.isabstract(forms::Literal)
+def test_forms_literal_is_not_abstract():
+    assert not inspect.isabstract(forms_Literal)
 
 
-def test_forms::literal_constructor_exists():
-    assert callable(forms::Literal.__init__)
+def test_forms_literal_constructor_exists():
+    assert callable(forms_Literal.__init__)
 
 
-def test_forms::literal_constructor_args():
-    sig = inspect.signature(forms::Literal.__init__)
+def test_forms_literal_constructor_args():
+    sig = inspect.signature(forms_Literal.__init__)
     params = list(sig.parameters.keys())
-    assert "name" in params, "Missing parameter 'name'"
     assert "value" in params, "Missing parameter 'value'"
+    assert "name" in params, "Missing parameter 'name'"
 
-def test_forms::literal_has_name():
-    assert hasattr(forms::Literal, "name")
+def test_forms_literal_has_value():
+    assert hasattr(forms_Literal, "value")
     descriptor = None
-    for klass in forms::Literal.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_forms::literal_has_value():
-    assert hasattr(forms::Literal, "value")
-    descriptor = None
-    for klass in forms::Literal.__mro__:
+    for klass in forms_Literal.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
     assert isinstance(descriptor, property)
 
-
-
-def test_forms::enumeration_is_not_abstract():
-    assert not inspect.isabstract(forms::Enumeration)
-
-
-def test_forms::enumeration_constructor_exists():
-    assert callable(forms::Enumeration.__init__)
-
-
-def test_forms::enumeration_constructor_args():
-    sig = inspect.signature(forms::Enumeration.__init__)
-    params = list(sig.parameters.keys())
-    assert "name" in params, "Missing parameter 'name'"
-
-def test_forms::enumeration_has_name():
-    assert hasattr(forms::Enumeration, "name")
+def test_forms_literal_has_name():
+    assert hasattr(forms_Literal, "name")
     descriptor = None
-    for klass in forms::Enumeration.__mro__:
+    for klass in forms_Literal.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -447,121 +423,121 @@ def test_forms::enumeration_has_name():
 
 
 
-def test_forms::relationship_is_not_abstract():
-    assert not inspect.isabstract(forms::Relationship)
+def test_forms_enumeration_is_not_abstract():
+    assert not inspect.isabstract(forms_Enumeration)
 
 
-def test_forms::relationship_constructor_exists():
-    assert callable(forms::Relationship.__init__)
+def test_forms_enumeration_constructor_exists():
+    assert callable(forms_Enumeration.__init__)
 
 
-def test_forms::relationship_constructor_args():
-    sig = inspect.signature(forms::Relationship.__init__)
+def test_forms_enumeration_constructor_args():
+    sig = inspect.signature(forms_Enumeration.__init__)
+    params = list(sig.parameters.keys())
+    assert "name" in params, "Missing parameter 'name'"
+
+def test_forms_enumeration_has_name():
+    assert hasattr(forms_Enumeration, "name")
+    descriptor = None
+    for klass in forms_Enumeration.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_forms_relationship_is_not_abstract():
+    assert not inspect.isabstract(forms_Relationship)
+
+
+def test_forms_relationship_constructor_exists():
+    assert callable(forms_Relationship.__init__)
+
+
+def test_forms_relationship_constructor_args():
+    sig = inspect.signature(forms_Relationship.__init__)
     params = list(sig.parameters.keys())
     assert "upperBound" in params, "Missing parameter 'upperBound'"
-    assert "name" in params, "Missing parameter 'name'"
     assert "lowerBound" in params, "Missing parameter 'lowerBound'"
+    assert "name" in params, "Missing parameter 'name'"
 
-def test_forms::relationship_has_upperBound():
-    assert hasattr(forms::Relationship, "upperBound")
+def test_forms_relationship_has_upperBound():
+    assert hasattr(forms_Relationship, "upperBound")
     descriptor = None
-    for klass in forms::Relationship.__mro__:
+    for klass in forms_Relationship.__mro__:
         if "upperBound" in klass.__dict__:
             descriptor = klass.__dict__["upperBound"]
             break
     assert isinstance(descriptor, property)
 
-def test_forms::relationship_has_name():
-    assert hasattr(forms::Relationship, "name")
+def test_forms_relationship_has_lowerBound():
+    assert hasattr(forms_Relationship, "lowerBound")
     descriptor = None
-    for klass in forms::Relationship.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_forms::relationship_has_lowerBound():
-    assert hasattr(forms::Relationship, "lowerBound")
-    descriptor = None
-    for klass in forms::Relationship.__mro__:
+    for klass in forms_Relationship.__mro__:
         if "lowerBound" in klass.__dict__:
             descriptor = klass.__dict__["lowerBound"]
             break
     assert isinstance(descriptor, property)
 
-
-
-def test_forms::form_is_not_abstract():
-    assert not inspect.isabstract(forms::Form)
-
-
-def test_forms::form_constructor_exists():
-    assert callable(forms::Form.__init__)
-
-
-def test_forms::form_constructor_args():
-    sig = inspect.signature(forms::Form.__init__)
-    params = list(sig.parameters.keys())
-    assert "title" in params, "Missing parameter 'title'"
-    assert "description" in params, "Missing parameter 'description'"
-    assert "name" in params, "Missing parameter 'name'"
-    assert "mainForm" in params, "Missing parameter 'mainForm'"
-
-def test_forms::form_has_title():
-    assert hasattr(forms::Form, "title")
+def test_forms_relationship_has_name():
+    assert hasattr(forms_Relationship, "name")
     descriptor = None
-    for klass in forms::Form.__mro__:
-        if "title" in klass.__dict__:
-            descriptor = klass.__dict__["title"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_forms::form_has_description():
-    assert hasattr(forms::Form, "description")
-    descriptor = None
-    for klass in forms::Form.__mro__:
-        if "description" in klass.__dict__:
-            descriptor = klass.__dict__["description"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_forms::form_has_name():
-    assert hasattr(forms::Form, "name")
-    descriptor = None
-    for klass in forms::Form.__mro__:
+    for klass in forms_Relationship.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
-def test_forms::form_has_mainForm():
-    assert hasattr(forms::Form, "mainForm")
+
+
+def test_forms_form_is_not_abstract():
+    assert not inspect.isabstract(forms_Form)
+
+
+def test_forms_form_constructor_exists():
+    assert callable(forms_Form.__init__)
+
+
+def test_forms_form_constructor_args():
+    sig = inspect.signature(forms_Form.__init__)
+    params = list(sig.parameters.keys())
+    assert "mainForm" in params, "Missing parameter 'mainForm'"
+    assert "description" in params, "Missing parameter 'description'"
+    assert "title" in params, "Missing parameter 'title'"
+    assert "name" in params, "Missing parameter 'name'"
+
+def test_forms_form_has_mainForm():
+    assert hasattr(forms_Form, "mainForm")
     descriptor = None
-    for klass in forms::Form.__mro__:
+    for klass in forms_Form.__mro__:
         if "mainForm" in klass.__dict__:
             descriptor = klass.__dict__["mainForm"]
             break
     assert isinstance(descriptor, property)
 
-
-
-def test_forms::entity_is_not_abstract():
-    assert not inspect.isabstract(forms::Entity)
-
-
-def test_forms::entity_constructor_exists():
-    assert callable(forms::Entity.__init__)
-
-
-def test_forms::entity_constructor_args():
-    sig = inspect.signature(forms::Entity.__init__)
-    params = list(sig.parameters.keys())
-    assert "name" in params, "Missing parameter 'name'"
-
-def test_forms::entity_has_name():
-    assert hasattr(forms::Entity, "name")
+def test_forms_form_has_description():
+    assert hasattr(forms_Form, "description")
     descriptor = None
-    for klass in forms::Entity.__mro__:
+    for klass in forms_Form.__mro__:
+        if "description" in klass.__dict__:
+            descriptor = klass.__dict__["description"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_forms_form_has_title():
+    assert hasattr(forms_Form, "title")
+    descriptor = None
+    for klass in forms_Form.__mro__:
+        if "title" in klass.__dict__:
+            descriptor = klass.__dict__["title"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_forms_form_has_name():
+    assert hasattr(forms_Form, "name")
+    descriptor = None
+    for klass in forms_Form.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -569,93 +545,85 @@ def test_forms::entity_has_name():
 
 
 
-def test_forms::efml_is_not_abstract():
-    assert not inspect.isabstract(forms::EFML)
+def test_forms_entity_is_not_abstract():
+    assert not inspect.isabstract(forms_Entity)
 
 
-def test_forms::efml_constructor_exists():
-    assert callable(forms::EFML.__init__)
+def test_forms_entity_constructor_exists():
+    assert callable(forms_Entity.__init__)
 
 
-def test_forms::efml_constructor_args():
-    sig = inspect.signature(forms::EFML.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_forms::attribute_is_not_abstract():
-    assert not inspect.isabstract(forms::Attribute)
-
-
-def test_forms::attribute_constructor_exists():
-    assert callable(forms::Attribute.__init__)
-
-
-def test_forms::attribute_constructor_args():
-    sig = inspect.signature(forms::Attribute.__init__)
+def test_forms_entity_constructor_args():
+    sig = inspect.signature(forms_Entity.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
+
+def test_forms_entity_has_name():
+    assert hasattr(forms_Entity, "name")
+    descriptor = None
+    for klass in forms_Entity.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_forms_efml_is_not_abstract():
+    assert not inspect.isabstract(forms_EFML)
+
+
+def test_forms_efml_constructor_exists():
+    assert callable(forms_EFML.__init__)
+
+
+def test_forms_efml_constructor_args():
+    sig = inspect.signature(forms_EFML.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_forms_attribute_is_not_abstract():
+    assert not inspect.isabstract(forms_Attribute)
+
+
+def test_forms_attribute_constructor_exists():
+    assert callable(forms_Attribute.__init__)
+
+
+def test_forms_attribute_constructor_args():
+    sig = inspect.signature(forms_Attribute.__init__)
+    params = list(sig.parameters.keys())
     assert "type" in params, "Missing parameter 'type'"
+    assert "name" in params, "Missing parameter 'name'"
     assert "mandatory" in params, "Missing parameter 'mandatory'"
 
-def test_forms::attribute_has_name():
-    assert hasattr(forms::Attribute, "name")
+def test_forms_attribute_has_type():
+    assert hasattr(forms_Attribute, "type")
     descriptor = None
-    for klass in forms::Attribute.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_forms::attribute_has_type():
-    assert hasattr(forms::Attribute, "type")
-    descriptor = None
-    for klass in forms::Attribute.__mro__:
+    for klass in forms_Attribute.__mro__:
         if "type" in klass.__dict__:
             descriptor = klass.__dict__["type"]
             break
     assert isinstance(descriptor, property)
 
-def test_forms::attribute_has_mandatory():
-    assert hasattr(forms::Attribute, "mandatory")
+def test_forms_attribute_has_name():
+    assert hasattr(forms_Attribute, "name")
     descriptor = None
-    for klass in forms::Attribute.__mro__:
+    for klass in forms_Attribute.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_forms_attribute_has_mandatory():
+    assert hasattr(forms_Attribute, "mandatory")
+    descriptor = None
+    for klass in forms_Attribute.__mro__:
         if "mandatory" in klass.__dict__:
             descriptor = klass.__dict__["mandatory"]
             break
     assert isinstance(descriptor, property)
-
-def test_operators_exists():
-    # Check that the Enumeration exists
-    assert Operators is not None
-
-def test_operators_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in Operators]
-    expected_literals = [
-        "AND",
-        "OR",
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in Operators"
-
-def test_conditiontype_exists():
-    # Check that the Enumeration exists
-    assert ConditionType is not None
-
-def test_conditiontype_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in ConditionType]
-    expected_literals = [
-        "Enable",
-        "Disable",
-        "Hide",
-        "Show",
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in ConditionType"
 
 def test_attributetype_exists():
     # Check that the Enumeration exists
@@ -665,19 +633,51 @@ def test_attributetype_has_all_literals():
     # Collect the names of literals in this Enumeration
     enum_literals = [lit.name for lit in AttributeType]
     expected_literals = [
-        "None_",
-        "Email",
+        "Integer",
+        "String",
         "Text",
         "Time",
-        "String",
-        "Boolean",
         "Year",
+        "Email",
+        "Boolean",
+        "None_",
         "Date",
-        "Integer",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
         assert lit_name in enum_literals, f"Literal '' missing in AttributeType"
+
+def test_conditiontype_exists():
+    # Check that the Enumeration exists
+    assert ConditionType is not None
+
+def test_conditiontype_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in ConditionType]
+    expected_literals = [
+        "Hide",
+        "Enable",
+        "Disable",
+        "Show",
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in ConditionType"
+
+def test_operators_exists():
+    # Check that the Enumeration exists
+    assert Operators is not None
+
+def test_operators_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in Operators]
+    expected_literals = [
+        "OR",
+        "AND",
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in Operators"
 
 
 # =============================================================================
@@ -694,121 +694,121 @@ safe_text = st.text(
 Condition_strategy = st.builds(
     Condition,
 )
-forms::CompositeCondition_strategy = st.builds(
-    forms::CompositeCondition,
+forms_CompositeCondition_strategy = st.builds(
+    forms_CompositeCondition,
     operator=
         safe_text
 )
-forms::AttributeValueCondition_strategy = st.builds(
-    forms::AttributeValueCondition,
+forms_AttributeValueCondition_strategy = st.builds(
+    forms_AttributeValueCondition,
     value=
         safe_text
 )
-forms::Condition_strategy = st.builds(
-    forms::Condition,
-    conditionID=
-        safe_text,
+forms_Condition_strategy = st.builds(
+    forms_Condition,
     type=
+        safe_text,
+    conditionID=
         safe_text
 )
 AttributePageElement_strategy = st.builds(
     AttributePageElement,
 )
-forms::TimeSelectionField_strategy = st.builds(
-    forms::TimeSelectionField,
+forms_SelectionField_strategy = st.builds(
+    forms_SelectionField,
 )
-forms::TextArea_strategy = st.builds(
-    forms::TextArea,
+forms_TimeSelectionField_strategy = st.builds(
+    forms_TimeSelectionField,
 )
-forms::SelectionField_strategy = st.builds(
-    forms::SelectionField,
+forms_DateSelectionField_strategy = st.builds(
+    forms_DateSelectionField,
 )
-forms::DateSelectionField_strategy = st.builds(
-    forms::DateSelectionField,
+forms_TextArea_strategy = st.builds(
+    forms_TextArea,
 )
-forms::TextField_strategy = st.builds(
-    forms::TextField,
+forms_TextField_strategy = st.builds(
+    forms_TextField,
     format=
         safe_text
 )
 PageElement_strategy = st.builds(
     PageElement,
 )
-forms::RelationshipPageElement_strategy = st.builds(
-    forms::RelationshipPageElement,
+forms_RelationshipPageElement_strategy = st.builds(
+    forms_RelationshipPageElement,
 )
-forms::AttributePageElement_strategy = st.builds(
-    forms::AttributePageElement,
+forms_AttributePageElement_strategy = st.builds(
+    forms_AttributePageElement,
 )
-forms::PageElement_strategy = st.builds(
-    forms::PageElement,
-    label=
-        safe_text,
+forms_PageElement_strategy = st.builds(
+    forms_PageElement,
     elementID=
+        safe_text,
+    label=
         safe_text
 )
-forms::Page_strategy = st.builds(
-    forms::Page,
+forms_Page_strategy = st.builds(
+    forms_Page,
     title=
         safe_text
 )
-forms::Column_strategy = st.builds(
-    forms::Column,
+forms_Column_strategy = st.builds(
+    forms_Column,
 )
 RelationshipPageElement_strategy = st.builds(
     RelationshipPageElement,
 )
-forms::Table_strategy = st.builds(
-    forms::Table,
+forms_Table_strategy = st.builds(
+    forms_Table,
 )
-forms::List_strategy = st.builds(
-    forms::List,
+forms_List_strategy = st.builds(
+    forms_List,
 )
-forms::Literal_strategy = st.builds(
-    forms::Literal,
-    name=
-        safe_text,
+forms_Literal_strategy = st.builds(
+    forms_Literal,
     value=
-        safe_text
-)
-forms::Enumeration_strategy = st.builds(
-    forms::Enumeration,
+        safe_text,
     name=
         safe_text
 )
-forms::Relationship_strategy = st.builds(
-    forms::Relationship,
+forms_Enumeration_strategy = st.builds(
+    forms_Enumeration,
+    name=
+        safe_text
+)
+forms_Relationship_strategy = st.builds(
+    forms_Relationship,
     upperBound=
         st.integers(),
-    name=
-        safe_text,
     lowerBound=
-        st.integers()
-)
-forms::Form_strategy = st.builds(
-    forms::Form,
-    title=
-        safe_text,
-    description=
-        safe_text,
-    name=
-        safe_text,
-    mainForm=
-        st.booleans()
-)
-forms::Entity_strategy = st.builds(
-    forms::Entity,
+        st.integers(),
     name=
         safe_text
 )
-forms::EFML_strategy = st.builds(
-    forms::EFML,
-)
-forms::Attribute_strategy = st.builds(
-    forms::Attribute,
-    name=
+forms_Form_strategy = st.builds(
+    forms_Form,
+    mainForm=
+        st.booleans(),
+    description=
         safe_text,
+    title=
+        safe_text,
+    name=
+        safe_text
+)
+forms_Entity_strategy = st.builds(
+    forms_Entity,
+    name=
+        safe_text
+)
+forms_EFML_strategy = st.builds(
+    forms_EFML,
+)
+forms_Attribute_strategy = st.builds(
+    forms_Attribute,
     type=
+        safe_text,
+    name=
         safe_text,
     mandatory=
         st.booleans()
@@ -819,102 +819,87 @@ forms::Attribute_strategy = st.builds(
 def test_condition_instantiation(instance):
     assert isinstance(instance, Condition)
 
-@given(instance=forms::CompositeCondition_strategy)
+@given(instance=forms_CompositeCondition_strategy)
 @settings(max_examples=50)
-def test_forms::compositecondition_instantiation(instance):
-    assert isinstance(instance, forms::CompositeCondition)
-
-@given(instance=forms::CompositeCondition_strategy)
-def test_forms::compositecondition_operator_type(instance):
-    assert isinstance(instance.operator, str)
+def test_forms_compositecondition_instantiation(instance):
+    assert isinstance(instance, forms_CompositeCondition)
 
 
-@given(instance=forms::CompositeCondition_strategy)
-def test_forms::compositecondition_operator_setter(instance):
+
+@given(instance=forms_CompositeCondition_strategy)
+def test_forms_compositecondition_operator_setter(instance):
     original = instance.operator
     instance.operator = original
     assert instance.operator == original
 
-@given(instance=forms::AttributeValueCondition_strategy)
+@given(instance=forms_AttributeValueCondition_strategy)
 @settings(max_examples=50)
-def test_forms::attributevaluecondition_instantiation(instance):
-    assert isinstance(instance, forms::AttributeValueCondition)
-
-@given(instance=forms::AttributeValueCondition_strategy)
-def test_forms::attributevaluecondition_value_type(instance):
-    assert isinstance(instance.value, str)
+def test_forms_attributevaluecondition_instantiation(instance):
+    assert isinstance(instance, forms_AttributeValueCondition)
 
 
-@given(instance=forms::AttributeValueCondition_strategy)
-def test_forms::attributevaluecondition_value_setter(instance):
+
+@given(instance=forms_AttributeValueCondition_strategy)
+def test_forms_attributevaluecondition_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
 
-@given(instance=forms::Condition_strategy)
+@given(instance=forms_Condition_strategy)
 @settings(max_examples=50)
-def test_forms::condition_instantiation(instance):
-    assert isinstance(instance, forms::Condition)
-
-@given(instance=forms::Condition_strategy)
-def test_forms::condition_conditionID_type(instance):
-    assert isinstance(instance.conditionID, str)
+def test_forms_condition_instantiation(instance):
+    assert isinstance(instance, forms_Condition)
 
 
-@given(instance=forms::Condition_strategy)
-def test_forms::condition_conditionID_setter(instance):
-    original = instance.conditionID
-    instance.conditionID = original
-    assert instance.conditionID == original
 
-@given(instance=forms::Condition_strategy)
-def test_forms::condition_type_type(instance):
-    assert isinstance(instance.type, str)
-
-
-@given(instance=forms::Condition_strategy)
-def test_forms::condition_type_setter(instance):
+@given(instance=forms_Condition_strategy)
+def test_forms_condition_type_setter(instance):
     original = instance.type
     instance.type = original
     assert instance.type == original
+
+
+
+@given(instance=forms_Condition_strategy)
+def test_forms_condition_conditionID_setter(instance):
+    original = instance.conditionID
+    instance.conditionID = original
+    assert instance.conditionID == original
 
 @given(instance=AttributePageElement_strategy)
 @settings(max_examples=50)
 def test_attributepageelement_instantiation(instance):
     assert isinstance(instance, AttributePageElement)
 
-@given(instance=forms::TimeSelectionField_strategy)
+@given(instance=forms_SelectionField_strategy)
 @settings(max_examples=50)
-def test_forms::timeselectionfield_instantiation(instance):
-    assert isinstance(instance, forms::TimeSelectionField)
+def test_forms_selectionfield_instantiation(instance):
+    assert isinstance(instance, forms_SelectionField)
 
-@given(instance=forms::TextArea_strategy)
+@given(instance=forms_TimeSelectionField_strategy)
 @settings(max_examples=50)
-def test_forms::textarea_instantiation(instance):
-    assert isinstance(instance, forms::TextArea)
+def test_forms_timeselectionfield_instantiation(instance):
+    assert isinstance(instance, forms_TimeSelectionField)
 
-@given(instance=forms::SelectionField_strategy)
+@given(instance=forms_DateSelectionField_strategy)
 @settings(max_examples=50)
-def test_forms::selectionfield_instantiation(instance):
-    assert isinstance(instance, forms::SelectionField)
+def test_forms_dateselectionfield_instantiation(instance):
+    assert isinstance(instance, forms_DateSelectionField)
 
-@given(instance=forms::DateSelectionField_strategy)
+@given(instance=forms_TextArea_strategy)
 @settings(max_examples=50)
-def test_forms::dateselectionfield_instantiation(instance):
-    assert isinstance(instance, forms::DateSelectionField)
+def test_forms_textarea_instantiation(instance):
+    assert isinstance(instance, forms_TextArea)
 
-@given(instance=forms::TextField_strategy)
+@given(instance=forms_TextField_strategy)
 @settings(max_examples=50)
-def test_forms::textfield_instantiation(instance):
-    assert isinstance(instance, forms::TextField)
-
-@given(instance=forms::TextField_strategy)
-def test_forms::textfield_format_type(instance):
-    assert isinstance(instance.format, str)
+def test_forms_textfield_instantiation(instance):
+    assert isinstance(instance, forms_TextField)
 
 
-@given(instance=forms::TextField_strategy)
-def test_forms::textfield_format_setter(instance):
+
+@given(instance=forms_TextField_strategy)
+def test_forms_textfield_format_setter(instance):
     original = instance.format
     instance.format = original
     assert instance.format == original
@@ -924,264 +909,213 @@ def test_forms::textfield_format_setter(instance):
 def test_pageelement_instantiation(instance):
     assert isinstance(instance, PageElement)
 
-@given(instance=forms::RelationshipPageElement_strategy)
+@given(instance=forms_RelationshipPageElement_strategy)
 @settings(max_examples=50)
-def test_forms::relationshippageelement_instantiation(instance):
-    assert isinstance(instance, forms::RelationshipPageElement)
+def test_forms_relationshippageelement_instantiation(instance):
+    assert isinstance(instance, forms_RelationshipPageElement)
 
-@given(instance=forms::AttributePageElement_strategy)
+@given(instance=forms_AttributePageElement_strategy)
 @settings(max_examples=50)
-def test_forms::attributepageelement_instantiation(instance):
-    assert isinstance(instance, forms::AttributePageElement)
+def test_forms_attributepageelement_instantiation(instance):
+    assert isinstance(instance, forms_AttributePageElement)
 
-@given(instance=forms::PageElement_strategy)
+@given(instance=forms_PageElement_strategy)
 @settings(max_examples=50)
-def test_forms::pageelement_instantiation(instance):
-    assert isinstance(instance, forms::PageElement)
-
-@given(instance=forms::PageElement_strategy)
-def test_forms::pageelement_label_type(instance):
-    assert isinstance(instance.label, str)
+def test_forms_pageelement_instantiation(instance):
+    assert isinstance(instance, forms_PageElement)
 
 
-@given(instance=forms::PageElement_strategy)
-def test_forms::pageelement_label_setter(instance):
-    original = instance.label
-    instance.label = original
-    assert instance.label == original
 
-@given(instance=forms::PageElement_strategy)
-def test_forms::pageelement_elementID_type(instance):
-    assert isinstance(instance.elementID, str)
-
-
-@given(instance=forms::PageElement_strategy)
-def test_forms::pageelement_elementID_setter(instance):
+@given(instance=forms_PageElement_strategy)
+def test_forms_pageelement_elementID_setter(instance):
     original = instance.elementID
     instance.elementID = original
     assert instance.elementID == original
 
-@given(instance=forms::Page_strategy)
+
+
+@given(instance=forms_PageElement_strategy)
+def test_forms_pageelement_label_setter(instance):
+    original = instance.label
+    instance.label = original
+    assert instance.label == original
+
+@given(instance=forms_Page_strategy)
 @settings(max_examples=50)
-def test_forms::page_instantiation(instance):
-    assert isinstance(instance, forms::Page)
-
-@given(instance=forms::Page_strategy)
-def test_forms::page_title_type(instance):
-    assert isinstance(instance.title, str)
+def test_forms_page_instantiation(instance):
+    assert isinstance(instance, forms_Page)
 
 
-@given(instance=forms::Page_strategy)
-def test_forms::page_title_setter(instance):
+
+@given(instance=forms_Page_strategy)
+def test_forms_page_title_setter(instance):
     original = instance.title
     instance.title = original
     assert instance.title == original
 
-@given(instance=forms::Column_strategy)
+@given(instance=forms_Column_strategy)
 @settings(max_examples=50)
-def test_forms::column_instantiation(instance):
-    assert isinstance(instance, forms::Column)
+def test_forms_column_instantiation(instance):
+    assert isinstance(instance, forms_Column)
 
 @given(instance=RelationshipPageElement_strategy)
 @settings(max_examples=50)
 def test_relationshippageelement_instantiation(instance):
     assert isinstance(instance, RelationshipPageElement)
 
-@given(instance=forms::Table_strategy)
+@given(instance=forms_Table_strategy)
 @settings(max_examples=50)
-def test_forms::table_instantiation(instance):
-    assert isinstance(instance, forms::Table)
+def test_forms_table_instantiation(instance):
+    assert isinstance(instance, forms_Table)
 
-@given(instance=forms::List_strategy)
+@given(instance=forms_List_strategy)
 @settings(max_examples=50)
-def test_forms::list_instantiation(instance):
-    assert isinstance(instance, forms::List)
+def test_forms_list_instantiation(instance):
+    assert isinstance(instance, forms_List)
 
-@given(instance=forms::Literal_strategy)
+@given(instance=forms_Literal_strategy)
 @settings(max_examples=50)
-def test_forms::literal_instantiation(instance):
-    assert isinstance(instance, forms::Literal)
-
-@given(instance=forms::Literal_strategy)
-def test_forms::literal_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_forms_literal_instantiation(instance):
+    assert isinstance(instance, forms_Literal)
 
 
-@given(instance=forms::Literal_strategy)
-def test_forms::literal_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
 
-@given(instance=forms::Literal_strategy)
-def test_forms::literal_value_type(instance):
-    assert isinstance(instance.value, str)
-
-
-@given(instance=forms::Literal_strategy)
-def test_forms::literal_value_setter(instance):
+@given(instance=forms_Literal_strategy)
+def test_forms_literal_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
 
-@given(instance=forms::Enumeration_strategy)
-@settings(max_examples=50)
-def test_forms::enumeration_instantiation(instance):
-    assert isinstance(instance, forms::Enumeration)
-
-@given(instance=forms::Enumeration_strategy)
-def test_forms::enumeration_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
-@given(instance=forms::Enumeration_strategy)
-def test_forms::enumeration_name_setter(instance):
+@given(instance=forms_Literal_strategy)
+def test_forms_literal_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=forms::Relationship_strategy)
+@given(instance=forms_Enumeration_strategy)
 @settings(max_examples=50)
-def test_forms::relationship_instantiation(instance):
-    assert isinstance(instance, forms::Relationship)
-
-@given(instance=forms::Relationship_strategy)
-def test_forms::relationship_upperBound_type(instance):
-    assert isinstance(instance.upperBound, int)
+def test_forms_enumeration_instantiation(instance):
+    assert isinstance(instance, forms_Enumeration)
 
 
-@given(instance=forms::Relationship_strategy)
-def test_forms::relationship_upperBound_setter(instance):
+
+@given(instance=forms_Enumeration_strategy)
+def test_forms_enumeration_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+@given(instance=forms_Relationship_strategy)
+@settings(max_examples=50)
+def test_forms_relationship_instantiation(instance):
+    assert isinstance(instance, forms_Relationship)
+
+
+
+@given(instance=forms_Relationship_strategy)
+def test_forms_relationship_upperBound_setter(instance):
     original = instance.upperBound
     instance.upperBound = original
     assert instance.upperBound == original
 
-@given(instance=forms::Relationship_strategy)
-def test_forms::relationship_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
-@given(instance=forms::Relationship_strategy)
-def test_forms::relationship_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
-
-@given(instance=forms::Relationship_strategy)
-def test_forms::relationship_lowerBound_type(instance):
-    assert isinstance(instance.lowerBound, int)
-
-
-@given(instance=forms::Relationship_strategy)
-def test_forms::relationship_lowerBound_setter(instance):
+@given(instance=forms_Relationship_strategy)
+def test_forms_relationship_lowerBound_setter(instance):
     original = instance.lowerBound
     instance.lowerBound = original
     assert instance.lowerBound == original
 
-@given(instance=forms::Form_strategy)
-@settings(max_examples=50)
-def test_forms::form_instantiation(instance):
-    assert isinstance(instance, forms::Form)
-
-@given(instance=forms::Form_strategy)
-def test_forms::form_title_type(instance):
-    assert isinstance(instance.title, str)
 
 
-@given(instance=forms::Form_strategy)
-def test_forms::form_title_setter(instance):
-    original = instance.title
-    instance.title = original
-    assert instance.title == original
-
-@given(instance=forms::Form_strategy)
-def test_forms::form_description_type(instance):
-    assert isinstance(instance.description, str)
-
-
-@given(instance=forms::Form_strategy)
-def test_forms::form_description_setter(instance):
-    original = instance.description
-    instance.description = original
-    assert instance.description == original
-
-@given(instance=forms::Form_strategy)
-def test_forms::form_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=forms::Form_strategy)
-def test_forms::form_name_setter(instance):
+@given(instance=forms_Relationship_strategy)
+def test_forms_relationship_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=forms::Form_strategy)
-def test_forms::form_mainForm_type(instance):
-    assert isinstance(instance.mainForm, bool)
+@given(instance=forms_Form_strategy)
+@settings(max_examples=50)
+def test_forms_form_instantiation(instance):
+    assert isinstance(instance, forms_Form)
 
 
-@given(instance=forms::Form_strategy)
-def test_forms::form_mainForm_setter(instance):
+
+@given(instance=forms_Form_strategy)
+def test_forms_form_mainForm_setter(instance):
     original = instance.mainForm
     instance.mainForm = original
     assert instance.mainForm == original
 
-@given(instance=forms::Entity_strategy)
-@settings(max_examples=50)
-def test_forms::entity_instantiation(instance):
-    assert isinstance(instance, forms::Entity)
-
-@given(instance=forms::Entity_strategy)
-def test_forms::entity_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
-@given(instance=forms::Entity_strategy)
-def test_forms::entity_name_setter(instance):
+@given(instance=forms_Form_strategy)
+def test_forms_form_description_setter(instance):
+    original = instance.description
+    instance.description = original
+    assert instance.description == original
+
+
+
+@given(instance=forms_Form_strategy)
+def test_forms_form_title_setter(instance):
+    original = instance.title
+    instance.title = original
+    assert instance.title == original
+
+
+
+@given(instance=forms_Form_strategy)
+def test_forms_form_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=forms::EFML_strategy)
+@given(instance=forms_Entity_strategy)
 @settings(max_examples=50)
-def test_forms::efml_instantiation(instance):
-    assert isinstance(instance, forms::EFML)
-
-@given(instance=forms::Attribute_strategy)
-@settings(max_examples=50)
-def test_forms::attribute_instantiation(instance):
-    assert isinstance(instance, forms::Attribute)
-
-@given(instance=forms::Attribute_strategy)
-def test_forms::attribute_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_forms_entity_instantiation(instance):
+    assert isinstance(instance, forms_Entity)
 
 
-@given(instance=forms::Attribute_strategy)
-def test_forms::attribute_name_setter(instance):
+
+@given(instance=forms_Entity_strategy)
+def test_forms_entity_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=forms::Attribute_strategy)
-def test_forms::attribute_type_type(instance):
-    assert isinstance(instance.type, str)
+@given(instance=forms_EFML_strategy)
+@settings(max_examples=50)
+def test_forms_efml_instantiation(instance):
+    assert isinstance(instance, forms_EFML)
+
+@given(instance=forms_Attribute_strategy)
+@settings(max_examples=50)
+def test_forms_attribute_instantiation(instance):
+    assert isinstance(instance, forms_Attribute)
 
 
-@given(instance=forms::Attribute_strategy)
-def test_forms::attribute_type_setter(instance):
+
+@given(instance=forms_Attribute_strategy)
+def test_forms_attribute_type_setter(instance):
     original = instance.type
     instance.type = original
     assert instance.type == original
 
-@given(instance=forms::Attribute_strategy)
-def test_forms::attribute_mandatory_type(instance):
-    assert isinstance(instance.mandatory, bool)
 
 
-@given(instance=forms::Attribute_strategy)
-def test_forms::attribute_mandatory_setter(instance):
+@given(instance=forms_Attribute_strategy)
+def test_forms_attribute_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+
+
+@given(instance=forms_Attribute_strategy)
+def test_forms_attribute_mandatory_setter(instance):
     original = instance.mandatory
     instance.mandatory = original
     assert instance.mandatory == original

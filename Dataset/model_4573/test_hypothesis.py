@@ -3,75 +3,75 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    LastStatement::Return,
-    lua::LastStatement::ReturnWithValue,
+from python_code import (
+    LastStatement_Return,
+    lua_LastStatement_ReturnWithValue,
     Field,
-    lua::Field::AddEntryToTable,
-    lua::Field::AppendEntryToTable,
-    lua::Field::AddEntryToTable::Brackets,
-    lua::Functioncall::Arguments,
-    lua::Field,
+    lua_Field_AppendEntryToTable,
+    lua_Field_AddEntryToTable,
+    lua_Field_AddEntryToTable_Brackets,
+    lua_Functioncall_Arguments,
+    lua_Field,
     Expression,
-    lua::Expression::CallMemberFunction,
-    lua::Expression::Plus,
-    lua::Expression::AccessArray,
-    lua::Expression::TableConstructor,
-    lua::Expression::CallFunction,
-    lua::Expression::False,
-    lua::Expression::Larger::Equal,
-    lua::Expression::Function,
-    lua::Expression::Not::Equal,
-    lua::Expression::String,
-    lua::Expression::Number,
-    lua::Expression::Smaller,
-    lua::Expression::Length,
-    lua::Expression::VarArgs,
-    lua::Expression::Concatenation,
-    lua::Expression::True,
-    lua::Expression::Or,
-    lua::Expression::And,
-    lua::Expression::Modulo,
-    lua::Expression::Invert,
-    lua::Expression::Negate,
-    lua::Expression::Larger,
-    lua::Expression::Smaller::Equal,
-    lua::Expression::Multiplication,
-    lua::Expression::Division,
-    lua::Expression::Minus,
-    lua::Expression::AccessMember,
-    lua::Expression::VariableName,
-    lua::Expression::Exponentiation,
-    lua::Expression::Equal,
-    lua::Expression::Nil,
-    Statement::FunctioncallOrAssignment,
-    lua::Statement::Assignment,
-    lua::Statement::CallFunction,
-    lua::Statement::CallMemberFunction,
-    lua::Function,
-    lua::Statement::If::Then::Else::ElseIfPart,
-    lua::Expression,
+    lua_Expression_Division,
+    lua_Expression_CallFunction,
+    lua_Expression_VarArgs,
+    lua_Expression_CallMemberFunction,
+    lua_Expression_TableConstructor,
+    lua_Expression_Invert,
+    lua_Expression_Length,
+    lua_Expression_Larger_Equal,
+    lua_Expression_Modulo,
+    lua_Expression_And,
+    lua_Expression_Multiplication,
+    lua_Expression_Plus,
+    lua_Expression_Larger,
+    lua_Expression_False,
+    lua_Expression_String,
+    lua_Expression_VariableName,
+    lua_Expression_True,
+    lua_Expression_Function,
+    lua_Expression_Equal,
+    lua_Expression_Negate,
+    lua_Expression_Minus,
+    lua_Expression_AccessMember,
+    lua_Expression_Concatenation,
+    lua_Expression_Not_Equal,
+    lua_Expression_Number,
+    lua_Expression_Smaller_Equal,
+    lua_Expression_AccessArray,
+    lua_Expression_Smaller,
+    lua_Expression_Exponentiation,
+    lua_Expression_Or,
+    lua_Expression_Nil,
+    Statement_FunctioncallOrAssignment,
+    lua_Statement_Assignment,
+    lua_Statement_CallMemberFunction,
+    lua_Statement_CallFunction,
+    lua_Function,
+    lua_Statement_If_Then_Else_ElseIfPart,
+    lua_Expression,
     Statement,
-    lua::Statement::FunctioncallOrAssignment,
-    lua::Statement::For::Numeric,
-    lua::Statement::Repeat,
-    lua::Statement::Local::Variable::Declaration,
-    lua::Statement::LocalFunction::Declaration,
-    lua::Statement::If::Then::Else,
-    lua::Statement::For::Generic,
-    lua::Statement::While,
-    lua::Statement::GlobalFunction::Declaration,
-    lua::Statement::Block,
+    lua_Statement_If_Then_Else,
+    lua_Statement_While,
+    lua_Statement_FunctioncallOrAssignment,
+    lua_Statement_GlobalFunction_Declaration,
+    lua_Statement_Local_Variable_Declaration,
+    lua_Statement_For_Generic,
+    lua_Statement_Repeat,
+    lua_Statement_LocalFunction_Declaration,
+    lua_Statement_For_Numeric,
+    lua_Statement_Block,
     LastStatement,
-    lua::LastStatement::Break,
-    lua::LastStatement::Return,
-    lua::LastStatement,
-    lua::Statement,
+    lua_LastStatement_Break,
+    lua_LastStatement_Return,
+    lua_LastStatement,
+    lua_Statement,
     Chunk,
-    lua::Block,
-    lua::Chunk,
+    lua_Block,
+    lua_Chunk,
 )
 
 # =============================================================================
@@ -80,30 +80,30 @@ from classes import (
 
 
 
-def test_laststatement::return_is_not_abstract():
-    assert not inspect.isabstract(LastStatement::Return)
+def test_laststatement_return_is_not_abstract():
+    assert not inspect.isabstract(LastStatement_Return)
 
 
-def test_laststatement::return_constructor_exists():
-    assert callable(LastStatement::Return.__init__)
+def test_laststatement_return_constructor_exists():
+    assert callable(LastStatement_Return.__init__)
 
 
-def test_laststatement::return_constructor_args():
-    sig = inspect.signature(LastStatement::Return.__init__)
+def test_laststatement_return_constructor_args():
+    sig = inspect.signature(LastStatement_Return.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_lua::laststatement::returnwithvalue_is_not_abstract():
-    assert not inspect.isabstract(lua::LastStatement::ReturnWithValue)
+def test_lua_laststatement_returnwithvalue_is_not_abstract():
+    assert not inspect.isabstract(lua_LastStatement_ReturnWithValue)
 
 
-def test_lua::laststatement::returnwithvalue_constructor_exists():
-    assert callable(lua::LastStatement::ReturnWithValue.__init__)
+def test_lua_laststatement_returnwithvalue_constructor_exists():
+    assert callable(lua_LastStatement_ReturnWithValue.__init__)
 
 
-def test_lua::laststatement::returnwithvalue_constructor_args():
-    sig = inspect.signature(lua::LastStatement::ReturnWithValue.__init__)
+def test_lua_laststatement_returnwithvalue_constructor_args():
+    sig = inspect.signature(lua_LastStatement_ReturnWithValue.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -122,23 +122,37 @@ def test_field_constructor_args():
 
 
 
-def test_lua::field::addentrytotable_is_not_abstract():
-    assert not inspect.isabstract(lua::Field::AddEntryToTable)
+def test_lua_field_appendentrytotable_is_not_abstract():
+    assert not inspect.isabstract(lua_Field_AppendEntryToTable)
 
 
-def test_lua::field::addentrytotable_constructor_exists():
-    assert callable(lua::Field::AddEntryToTable.__init__)
+def test_lua_field_appendentrytotable_constructor_exists():
+    assert callable(lua_Field_AppendEntryToTable.__init__)
 
 
-def test_lua::field::addentrytotable_constructor_args():
-    sig = inspect.signature(lua::Field::AddEntryToTable.__init__)
+def test_lua_field_appendentrytotable_constructor_args():
+    sig = inspect.signature(lua_Field_AppendEntryToTable.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_lua_field_addentrytotable_is_not_abstract():
+    assert not inspect.isabstract(lua_Field_AddEntryToTable)
+
+
+def test_lua_field_addentrytotable_constructor_exists():
+    assert callable(lua_Field_AddEntryToTable.__init__)
+
+
+def test_lua_field_addentrytotable_constructor_args():
+    sig = inspect.signature(lua_Field_AddEntryToTable.__init__)
     params = list(sig.parameters.keys())
     assert "key" in params, "Missing parameter 'key'"
 
-def test_lua::field::addentrytotable_has_key():
-    assert hasattr(lua::Field::AddEntryToTable, "key")
+def test_lua_field_addentrytotable_has_key():
+    assert hasattr(lua_Field_AddEntryToTable, "key")
     descriptor = None
-    for klass in lua::Field::AddEntryToTable.__mro__:
+    for klass in lua_Field_AddEntryToTable.__mro__:
         if "key" in klass.__dict__:
             descriptor = klass.__dict__["key"]
             break
@@ -146,58 +160,44 @@ def test_lua::field::addentrytotable_has_key():
 
 
 
-def test_lua::field::appendentrytotable_is_not_abstract():
-    assert not inspect.isabstract(lua::Field::AppendEntryToTable)
+def test_lua_field_addentrytotable_brackets_is_not_abstract():
+    assert not inspect.isabstract(lua_Field_AddEntryToTable_Brackets)
 
 
-def test_lua::field::appendentrytotable_constructor_exists():
-    assert callable(lua::Field::AppendEntryToTable.__init__)
+def test_lua_field_addentrytotable_brackets_constructor_exists():
+    assert callable(lua_Field_AddEntryToTable_Brackets.__init__)
 
 
-def test_lua::field::appendentrytotable_constructor_args():
-    sig = inspect.signature(lua::Field::AppendEntryToTable.__init__)
+def test_lua_field_addentrytotable_brackets_constructor_args():
+    sig = inspect.signature(lua_Field_AddEntryToTable_Brackets.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_lua::field::addentrytotable::brackets_is_not_abstract():
-    assert not inspect.isabstract(lua::Field::AddEntryToTable::Brackets)
+def test_lua_functioncall_arguments_is_not_abstract():
+    assert not inspect.isabstract(lua_Functioncall_Arguments)
 
 
-def test_lua::field::addentrytotable::brackets_constructor_exists():
-    assert callable(lua::Field::AddEntryToTable::Brackets.__init__)
+def test_lua_functioncall_arguments_constructor_exists():
+    assert callable(lua_Functioncall_Arguments.__init__)
 
 
-def test_lua::field::addentrytotable::brackets_constructor_args():
-    sig = inspect.signature(lua::Field::AddEntryToTable::Brackets.__init__)
+def test_lua_functioncall_arguments_constructor_args():
+    sig = inspect.signature(lua_Functioncall_Arguments.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_lua::functioncall::arguments_is_not_abstract():
-    assert not inspect.isabstract(lua::Functioncall::Arguments)
+def test_lua_field_is_not_abstract():
+    assert not inspect.isabstract(lua_Field)
 
 
-def test_lua::functioncall::arguments_constructor_exists():
-    assert callable(lua::Functioncall::Arguments.__init__)
+def test_lua_field_constructor_exists():
+    assert callable(lua_Field.__init__)
 
 
-def test_lua::functioncall::arguments_constructor_args():
-    sig = inspect.signature(lua::Functioncall::Arguments.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_lua::field_is_not_abstract():
-    assert not inspect.isabstract(lua::Field)
-
-
-def test_lua::field_constructor_exists():
-    assert callable(lua::Field.__init__)
-
-
-def test_lua::field_constructor_args():
-    sig = inspect.signature(lua::Field.__init__)
+def test_lua_field_constructor_args():
+    sig = inspect.signature(lua_Field.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -216,23 +216,65 @@ def test_expression_constructor_args():
 
 
 
-def test_lua::expression::callmemberfunction_is_not_abstract():
-    assert not inspect.isabstract(lua::Expression::CallMemberFunction)
+def test_lua_expression_division_is_not_abstract():
+    assert not inspect.isabstract(lua_Expression_Division)
 
 
-def test_lua::expression::callmemberfunction_constructor_exists():
-    assert callable(lua::Expression::CallMemberFunction.__init__)
+def test_lua_expression_division_constructor_exists():
+    assert callable(lua_Expression_Division.__init__)
 
 
-def test_lua::expression::callmemberfunction_constructor_args():
-    sig = inspect.signature(lua::Expression::CallMemberFunction.__init__)
+def test_lua_expression_division_constructor_args():
+    sig = inspect.signature(lua_Expression_Division.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_lua_expression_callfunction_is_not_abstract():
+    assert not inspect.isabstract(lua_Expression_CallFunction)
+
+
+def test_lua_expression_callfunction_constructor_exists():
+    assert callable(lua_Expression_CallFunction.__init__)
+
+
+def test_lua_expression_callfunction_constructor_args():
+    sig = inspect.signature(lua_Expression_CallFunction.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_lua_expression_varargs_is_not_abstract():
+    assert not inspect.isabstract(lua_Expression_VarArgs)
+
+
+def test_lua_expression_varargs_constructor_exists():
+    assert callable(lua_Expression_VarArgs.__init__)
+
+
+def test_lua_expression_varargs_constructor_args():
+    sig = inspect.signature(lua_Expression_VarArgs.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_lua_expression_callmemberfunction_is_not_abstract():
+    assert not inspect.isabstract(lua_Expression_CallMemberFunction)
+
+
+def test_lua_expression_callmemberfunction_constructor_exists():
+    assert callable(lua_Expression_CallMemberFunction.__init__)
+
+
+def test_lua_expression_callmemberfunction_constructor_args():
+    sig = inspect.signature(lua_Expression_CallMemberFunction.__init__)
     params = list(sig.parameters.keys())
     assert "memberFunctionName" in params, "Missing parameter 'memberFunctionName'"
 
-def test_lua::expression::callmemberfunction_has_memberFunctionName():
-    assert hasattr(lua::Expression::CallMemberFunction, "memberFunctionName")
+def test_lua_expression_callmemberfunction_has_memberFunctionName():
+    assert hasattr(lua_Expression_CallMemberFunction, "memberFunctionName")
     descriptor = None
-    for klass in lua::Expression::CallMemberFunction.__mro__:
+    for klass in lua_Expression_CallMemberFunction.__mro__:
         if "memberFunctionName" in klass.__dict__:
             descriptor = klass.__dict__["memberFunctionName"]
             break
@@ -240,135 +282,163 @@ def test_lua::expression::callmemberfunction_has_memberFunctionName():
 
 
 
-def test_lua::expression::plus_is_not_abstract():
-    assert not inspect.isabstract(lua::Expression::Plus)
+def test_lua_expression_tableconstructor_is_not_abstract():
+    assert not inspect.isabstract(lua_Expression_TableConstructor)
 
 
-def test_lua::expression::plus_constructor_exists():
-    assert callable(lua::Expression::Plus.__init__)
+def test_lua_expression_tableconstructor_constructor_exists():
+    assert callable(lua_Expression_TableConstructor.__init__)
 
 
-def test_lua::expression::plus_constructor_args():
-    sig = inspect.signature(lua::Expression::Plus.__init__)
+def test_lua_expression_tableconstructor_constructor_args():
+    sig = inspect.signature(lua_Expression_TableConstructor.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_lua::expression::accessarray_is_not_abstract():
-    assert not inspect.isabstract(lua::Expression::AccessArray)
+def test_lua_expression_invert_is_not_abstract():
+    assert not inspect.isabstract(lua_Expression_Invert)
 
 
-def test_lua::expression::accessarray_constructor_exists():
-    assert callable(lua::Expression::AccessArray.__init__)
+def test_lua_expression_invert_constructor_exists():
+    assert callable(lua_Expression_Invert.__init__)
 
 
-def test_lua::expression::accessarray_constructor_args():
-    sig = inspect.signature(lua::Expression::AccessArray.__init__)
+def test_lua_expression_invert_constructor_args():
+    sig = inspect.signature(lua_Expression_Invert.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_lua::expression::tableconstructor_is_not_abstract():
-    assert not inspect.isabstract(lua::Expression::TableConstructor)
+def test_lua_expression_length_is_not_abstract():
+    assert not inspect.isabstract(lua_Expression_Length)
 
 
-def test_lua::expression::tableconstructor_constructor_exists():
-    assert callable(lua::Expression::TableConstructor.__init__)
+def test_lua_expression_length_constructor_exists():
+    assert callable(lua_Expression_Length.__init__)
 
 
-def test_lua::expression::tableconstructor_constructor_args():
-    sig = inspect.signature(lua::Expression::TableConstructor.__init__)
+def test_lua_expression_length_constructor_args():
+    sig = inspect.signature(lua_Expression_Length.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_lua::expression::callfunction_is_not_abstract():
-    assert not inspect.isabstract(lua::Expression::CallFunction)
+def test_lua_expression_larger_equal_is_not_abstract():
+    assert not inspect.isabstract(lua_Expression_Larger_Equal)
 
 
-def test_lua::expression::callfunction_constructor_exists():
-    assert callable(lua::Expression::CallFunction.__init__)
+def test_lua_expression_larger_equal_constructor_exists():
+    assert callable(lua_Expression_Larger_Equal.__init__)
 
 
-def test_lua::expression::callfunction_constructor_args():
-    sig = inspect.signature(lua::Expression::CallFunction.__init__)
+def test_lua_expression_larger_equal_constructor_args():
+    sig = inspect.signature(lua_Expression_Larger_Equal.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_lua::expression::false_is_not_abstract():
-    assert not inspect.isabstract(lua::Expression::False)
+def test_lua_expression_modulo_is_not_abstract():
+    assert not inspect.isabstract(lua_Expression_Modulo)
 
 
-def test_lua::expression::false_constructor_exists():
-    assert callable(lua::Expression::False.__init__)
+def test_lua_expression_modulo_constructor_exists():
+    assert callable(lua_Expression_Modulo.__init__)
 
 
-def test_lua::expression::false_constructor_args():
-    sig = inspect.signature(lua::Expression::False.__init__)
+def test_lua_expression_modulo_constructor_args():
+    sig = inspect.signature(lua_Expression_Modulo.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_lua::expression::larger::equal_is_not_abstract():
-    assert not inspect.isabstract(lua::Expression::Larger::Equal)
+def test_lua_expression_and_is_not_abstract():
+    assert not inspect.isabstract(lua_Expression_And)
 
 
-def test_lua::expression::larger::equal_constructor_exists():
-    assert callable(lua::Expression::Larger::Equal.__init__)
+def test_lua_expression_and_constructor_exists():
+    assert callable(lua_Expression_And.__init__)
 
 
-def test_lua::expression::larger::equal_constructor_args():
-    sig = inspect.signature(lua::Expression::Larger::Equal.__init__)
+def test_lua_expression_and_constructor_args():
+    sig = inspect.signature(lua_Expression_And.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_lua::expression::function_is_not_abstract():
-    assert not inspect.isabstract(lua::Expression::Function)
+def test_lua_expression_multiplication_is_not_abstract():
+    assert not inspect.isabstract(lua_Expression_Multiplication)
 
 
-def test_lua::expression::function_constructor_exists():
-    assert callable(lua::Expression::Function.__init__)
+def test_lua_expression_multiplication_constructor_exists():
+    assert callable(lua_Expression_Multiplication.__init__)
 
 
-def test_lua::expression::function_constructor_args():
-    sig = inspect.signature(lua::Expression::Function.__init__)
+def test_lua_expression_multiplication_constructor_args():
+    sig = inspect.signature(lua_Expression_Multiplication.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_lua::expression::not::equal_is_not_abstract():
-    assert not inspect.isabstract(lua::Expression::Not::Equal)
+def test_lua_expression_plus_is_not_abstract():
+    assert not inspect.isabstract(lua_Expression_Plus)
 
 
-def test_lua::expression::not::equal_constructor_exists():
-    assert callable(lua::Expression::Not::Equal.__init__)
+def test_lua_expression_plus_constructor_exists():
+    assert callable(lua_Expression_Plus.__init__)
 
 
-def test_lua::expression::not::equal_constructor_args():
-    sig = inspect.signature(lua::Expression::Not::Equal.__init__)
+def test_lua_expression_plus_constructor_args():
+    sig = inspect.signature(lua_Expression_Plus.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_lua::expression::string_is_not_abstract():
-    assert not inspect.isabstract(lua::Expression::String)
+def test_lua_expression_larger_is_not_abstract():
+    assert not inspect.isabstract(lua_Expression_Larger)
 
 
-def test_lua::expression::string_constructor_exists():
-    assert callable(lua::Expression::String.__init__)
+def test_lua_expression_larger_constructor_exists():
+    assert callable(lua_Expression_Larger.__init__)
 
 
-def test_lua::expression::string_constructor_args():
-    sig = inspect.signature(lua::Expression::String.__init__)
+def test_lua_expression_larger_constructor_args():
+    sig = inspect.signature(lua_Expression_Larger.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_lua_expression_false_is_not_abstract():
+    assert not inspect.isabstract(lua_Expression_False)
+
+
+def test_lua_expression_false_constructor_exists():
+    assert callable(lua_Expression_False.__init__)
+
+
+def test_lua_expression_false_constructor_args():
+    sig = inspect.signature(lua_Expression_False.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_lua_expression_string_is_not_abstract():
+    assert not inspect.isabstract(lua_Expression_String)
+
+
+def test_lua_expression_string_constructor_exists():
+    assert callable(lua_Expression_String.__init__)
+
+
+def test_lua_expression_string_constructor_args():
+    sig = inspect.signature(lua_Expression_String.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
 
-def test_lua::expression::string_has_value():
-    assert hasattr(lua::Expression::String, "value")
+def test_lua_expression_string_has_value():
+    assert hasattr(lua_Expression_String, "value")
     descriptor = None
-    for klass in lua::Expression::String.__mro__:
+    for klass in lua_Expression_String.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -376,281 +446,23 @@ def test_lua::expression::string_has_value():
 
 
 
-def test_lua::expression::number_is_not_abstract():
-    assert not inspect.isabstract(lua::Expression::Number)
+def test_lua_expression_variablename_is_not_abstract():
+    assert not inspect.isabstract(lua_Expression_VariableName)
 
 
-def test_lua::expression::number_constructor_exists():
-    assert callable(lua::Expression::Number.__init__)
+def test_lua_expression_variablename_constructor_exists():
+    assert callable(lua_Expression_VariableName.__init__)
 
 
-def test_lua::expression::number_constructor_args():
-    sig = inspect.signature(lua::Expression::Number.__init__)
-    params = list(sig.parameters.keys())
-    assert "value" in params, "Missing parameter 'value'"
-
-def test_lua::expression::number_has_value():
-    assert hasattr(lua::Expression::Number, "value")
-    descriptor = None
-    for klass in lua::Expression::Number.__mro__:
-        if "value" in klass.__dict__:
-            descriptor = klass.__dict__["value"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_lua::expression::smaller_is_not_abstract():
-    assert not inspect.isabstract(lua::Expression::Smaller)
-
-
-def test_lua::expression::smaller_constructor_exists():
-    assert callable(lua::Expression::Smaller.__init__)
-
-
-def test_lua::expression::smaller_constructor_args():
-    sig = inspect.signature(lua::Expression::Smaller.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_lua::expression::length_is_not_abstract():
-    assert not inspect.isabstract(lua::Expression::Length)
-
-
-def test_lua::expression::length_constructor_exists():
-    assert callable(lua::Expression::Length.__init__)
-
-
-def test_lua::expression::length_constructor_args():
-    sig = inspect.signature(lua::Expression::Length.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_lua::expression::varargs_is_not_abstract():
-    assert not inspect.isabstract(lua::Expression::VarArgs)
-
-
-def test_lua::expression::varargs_constructor_exists():
-    assert callable(lua::Expression::VarArgs.__init__)
-
-
-def test_lua::expression::varargs_constructor_args():
-    sig = inspect.signature(lua::Expression::VarArgs.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_lua::expression::concatenation_is_not_abstract():
-    assert not inspect.isabstract(lua::Expression::Concatenation)
-
-
-def test_lua::expression::concatenation_constructor_exists():
-    assert callable(lua::Expression::Concatenation.__init__)
-
-
-def test_lua::expression::concatenation_constructor_args():
-    sig = inspect.signature(lua::Expression::Concatenation.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_lua::expression::true_is_not_abstract():
-    assert not inspect.isabstract(lua::Expression::True)
-
-
-def test_lua::expression::true_constructor_exists():
-    assert callable(lua::Expression::True.__init__)
-
-
-def test_lua::expression::true_constructor_args():
-    sig = inspect.signature(lua::Expression::True.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_lua::expression::or_is_not_abstract():
-    assert not inspect.isabstract(lua::Expression::Or)
-
-
-def test_lua::expression::or_constructor_exists():
-    assert callable(lua::Expression::Or.__init__)
-
-
-def test_lua::expression::or_constructor_args():
-    sig = inspect.signature(lua::Expression::Or.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_lua::expression::and_is_not_abstract():
-    assert not inspect.isabstract(lua::Expression::And)
-
-
-def test_lua::expression::and_constructor_exists():
-    assert callable(lua::Expression::And.__init__)
-
-
-def test_lua::expression::and_constructor_args():
-    sig = inspect.signature(lua::Expression::And.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_lua::expression::modulo_is_not_abstract():
-    assert not inspect.isabstract(lua::Expression::Modulo)
-
-
-def test_lua::expression::modulo_constructor_exists():
-    assert callable(lua::Expression::Modulo.__init__)
-
-
-def test_lua::expression::modulo_constructor_args():
-    sig = inspect.signature(lua::Expression::Modulo.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_lua::expression::invert_is_not_abstract():
-    assert not inspect.isabstract(lua::Expression::Invert)
-
-
-def test_lua::expression::invert_constructor_exists():
-    assert callable(lua::Expression::Invert.__init__)
-
-
-def test_lua::expression::invert_constructor_args():
-    sig = inspect.signature(lua::Expression::Invert.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_lua::expression::negate_is_not_abstract():
-    assert not inspect.isabstract(lua::Expression::Negate)
-
-
-def test_lua::expression::negate_constructor_exists():
-    assert callable(lua::Expression::Negate.__init__)
-
-
-def test_lua::expression::negate_constructor_args():
-    sig = inspect.signature(lua::Expression::Negate.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_lua::expression::larger_is_not_abstract():
-    assert not inspect.isabstract(lua::Expression::Larger)
-
-
-def test_lua::expression::larger_constructor_exists():
-    assert callable(lua::Expression::Larger.__init__)
-
-
-def test_lua::expression::larger_constructor_args():
-    sig = inspect.signature(lua::Expression::Larger.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_lua::expression::smaller::equal_is_not_abstract():
-    assert not inspect.isabstract(lua::Expression::Smaller::Equal)
-
-
-def test_lua::expression::smaller::equal_constructor_exists():
-    assert callable(lua::Expression::Smaller::Equal.__init__)
-
-
-def test_lua::expression::smaller::equal_constructor_args():
-    sig = inspect.signature(lua::Expression::Smaller::Equal.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_lua::expression::multiplication_is_not_abstract():
-    assert not inspect.isabstract(lua::Expression::Multiplication)
-
-
-def test_lua::expression::multiplication_constructor_exists():
-    assert callable(lua::Expression::Multiplication.__init__)
-
-
-def test_lua::expression::multiplication_constructor_args():
-    sig = inspect.signature(lua::Expression::Multiplication.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_lua::expression::division_is_not_abstract():
-    assert not inspect.isabstract(lua::Expression::Division)
-
-
-def test_lua::expression::division_constructor_exists():
-    assert callable(lua::Expression::Division.__init__)
-
-
-def test_lua::expression::division_constructor_args():
-    sig = inspect.signature(lua::Expression::Division.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_lua::expression::minus_is_not_abstract():
-    assert not inspect.isabstract(lua::Expression::Minus)
-
-
-def test_lua::expression::minus_constructor_exists():
-    assert callable(lua::Expression::Minus.__init__)
-
-
-def test_lua::expression::minus_constructor_args():
-    sig = inspect.signature(lua::Expression::Minus.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_lua::expression::accessmember_is_not_abstract():
-    assert not inspect.isabstract(lua::Expression::AccessMember)
-
-
-def test_lua::expression::accessmember_constructor_exists():
-    assert callable(lua::Expression::AccessMember.__init__)
-
-
-def test_lua::expression::accessmember_constructor_args():
-    sig = inspect.signature(lua::Expression::AccessMember.__init__)
-    params = list(sig.parameters.keys())
-    assert "memberName" in params, "Missing parameter 'memberName'"
-
-def test_lua::expression::accessmember_has_memberName():
-    assert hasattr(lua::Expression::AccessMember, "memberName")
-    descriptor = None
-    for klass in lua::Expression::AccessMember.__mro__:
-        if "memberName" in klass.__dict__:
-            descriptor = klass.__dict__["memberName"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_lua::expression::variablename_is_not_abstract():
-    assert not inspect.isabstract(lua::Expression::VariableName)
-
-
-def test_lua::expression::variablename_constructor_exists():
-    assert callable(lua::Expression::VariableName.__init__)
-
-
-def test_lua::expression::variablename_constructor_args():
-    sig = inspect.signature(lua::Expression::VariableName.__init__)
+def test_lua_expression_variablename_constructor_args():
+    sig = inspect.signature(lua_Expression_VariableName.__init__)
     params = list(sig.parameters.keys())
     assert "variable" in params, "Missing parameter 'variable'"
 
-def test_lua::expression::variablename_has_variable():
-    assert hasattr(lua::Expression::VariableName, "variable")
+def test_lua_expression_variablename_has_variable():
+    assert hasattr(lua_Expression_VariableName, "variable")
     descriptor = None
-    for klass in lua::Expression::VariableName.__mro__:
+    for klass in lua_Expression_VariableName.__mro__:
         if "variable" in klass.__dict__:
             descriptor = klass.__dict__["variable"]
             break
@@ -658,107 +470,281 @@ def test_lua::expression::variablename_has_variable():
 
 
 
-def test_lua::expression::exponentiation_is_not_abstract():
-    assert not inspect.isabstract(lua::Expression::Exponentiation)
+def test_lua_expression_true_is_not_abstract():
+    assert not inspect.isabstract(lua_Expression_True)
 
 
-def test_lua::expression::exponentiation_constructor_exists():
-    assert callable(lua::Expression::Exponentiation.__init__)
+def test_lua_expression_true_constructor_exists():
+    assert callable(lua_Expression_True.__init__)
 
 
-def test_lua::expression::exponentiation_constructor_args():
-    sig = inspect.signature(lua::Expression::Exponentiation.__init__)
+def test_lua_expression_true_constructor_args():
+    sig = inspect.signature(lua_Expression_True.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_lua::expression::equal_is_not_abstract():
-    assert not inspect.isabstract(lua::Expression::Equal)
+def test_lua_expression_function_is_not_abstract():
+    assert not inspect.isabstract(lua_Expression_Function)
 
 
-def test_lua::expression::equal_constructor_exists():
-    assert callable(lua::Expression::Equal.__init__)
+def test_lua_expression_function_constructor_exists():
+    assert callable(lua_Expression_Function.__init__)
 
 
-def test_lua::expression::equal_constructor_args():
-    sig = inspect.signature(lua::Expression::Equal.__init__)
+def test_lua_expression_function_constructor_args():
+    sig = inspect.signature(lua_Expression_Function.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_lua::expression::nil_is_not_abstract():
-    assert not inspect.isabstract(lua::Expression::Nil)
+def test_lua_expression_equal_is_not_abstract():
+    assert not inspect.isabstract(lua_Expression_Equal)
 
 
-def test_lua::expression::nil_constructor_exists():
-    assert callable(lua::Expression::Nil.__init__)
+def test_lua_expression_equal_constructor_exists():
+    assert callable(lua_Expression_Equal.__init__)
 
 
-def test_lua::expression::nil_constructor_args():
-    sig = inspect.signature(lua::Expression::Nil.__init__)
+def test_lua_expression_equal_constructor_args():
+    sig = inspect.signature(lua_Expression_Equal.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_statement::functioncallorassignment_is_not_abstract():
-    assert not inspect.isabstract(Statement::FunctioncallOrAssignment)
+def test_lua_expression_negate_is_not_abstract():
+    assert not inspect.isabstract(lua_Expression_Negate)
 
 
-def test_statement::functioncallorassignment_constructor_exists():
-    assert callable(Statement::FunctioncallOrAssignment.__init__)
+def test_lua_expression_negate_constructor_exists():
+    assert callable(lua_Expression_Negate.__init__)
 
 
-def test_statement::functioncallorassignment_constructor_args():
-    sig = inspect.signature(Statement::FunctioncallOrAssignment.__init__)
+def test_lua_expression_negate_constructor_args():
+    sig = inspect.signature(lua_Expression_Negate.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_lua::statement::assignment_is_not_abstract():
-    assert not inspect.isabstract(lua::Statement::Assignment)
+def test_lua_expression_minus_is_not_abstract():
+    assert not inspect.isabstract(lua_Expression_Minus)
 
 
-def test_lua::statement::assignment_constructor_exists():
-    assert callable(lua::Statement::Assignment.__init__)
+def test_lua_expression_minus_constructor_exists():
+    assert callable(lua_Expression_Minus.__init__)
 
 
-def test_lua::statement::assignment_constructor_args():
-    sig = inspect.signature(lua::Statement::Assignment.__init__)
+def test_lua_expression_minus_constructor_args():
+    sig = inspect.signature(lua_Expression_Minus.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_lua::statement::callfunction_is_not_abstract():
-    assert not inspect.isabstract(lua::Statement::CallFunction)
+def test_lua_expression_accessmember_is_not_abstract():
+    assert not inspect.isabstract(lua_Expression_AccessMember)
 
 
-def test_lua::statement::callfunction_constructor_exists():
-    assert callable(lua::Statement::CallFunction.__init__)
+def test_lua_expression_accessmember_constructor_exists():
+    assert callable(lua_Expression_AccessMember.__init__)
 
 
-def test_lua::statement::callfunction_constructor_args():
-    sig = inspect.signature(lua::Statement::CallFunction.__init__)
+def test_lua_expression_accessmember_constructor_args():
+    sig = inspect.signature(lua_Expression_AccessMember.__init__)
+    params = list(sig.parameters.keys())
+    assert "memberName" in params, "Missing parameter 'memberName'"
+
+def test_lua_expression_accessmember_has_memberName():
+    assert hasattr(lua_Expression_AccessMember, "memberName")
+    descriptor = None
+    for klass in lua_Expression_AccessMember.__mro__:
+        if "memberName" in klass.__dict__:
+            descriptor = klass.__dict__["memberName"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_lua_expression_concatenation_is_not_abstract():
+    assert not inspect.isabstract(lua_Expression_Concatenation)
+
+
+def test_lua_expression_concatenation_constructor_exists():
+    assert callable(lua_Expression_Concatenation.__init__)
+
+
+def test_lua_expression_concatenation_constructor_args():
+    sig = inspect.signature(lua_Expression_Concatenation.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_lua::statement::callmemberfunction_is_not_abstract():
-    assert not inspect.isabstract(lua::Statement::CallMemberFunction)
+def test_lua_expression_not_equal_is_not_abstract():
+    assert not inspect.isabstract(lua_Expression_Not_Equal)
 
 
-def test_lua::statement::callmemberfunction_constructor_exists():
-    assert callable(lua::Statement::CallMemberFunction.__init__)
+def test_lua_expression_not_equal_constructor_exists():
+    assert callable(lua_Expression_Not_Equal.__init__)
 
 
-def test_lua::statement::callmemberfunction_constructor_args():
-    sig = inspect.signature(lua::Statement::CallMemberFunction.__init__)
+def test_lua_expression_not_equal_constructor_args():
+    sig = inspect.signature(lua_Expression_Not_Equal.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_lua_expression_number_is_not_abstract():
+    assert not inspect.isabstract(lua_Expression_Number)
+
+
+def test_lua_expression_number_constructor_exists():
+    assert callable(lua_Expression_Number.__init__)
+
+
+def test_lua_expression_number_constructor_args():
+    sig = inspect.signature(lua_Expression_Number.__init__)
+    params = list(sig.parameters.keys())
+    assert "value" in params, "Missing parameter 'value'"
+
+def test_lua_expression_number_has_value():
+    assert hasattr(lua_Expression_Number, "value")
+    descriptor = None
+    for klass in lua_Expression_Number.__mro__:
+        if "value" in klass.__dict__:
+            descriptor = klass.__dict__["value"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_lua_expression_smaller_equal_is_not_abstract():
+    assert not inspect.isabstract(lua_Expression_Smaller_Equal)
+
+
+def test_lua_expression_smaller_equal_constructor_exists():
+    assert callable(lua_Expression_Smaller_Equal.__init__)
+
+
+def test_lua_expression_smaller_equal_constructor_args():
+    sig = inspect.signature(lua_Expression_Smaller_Equal.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_lua_expression_accessarray_is_not_abstract():
+    assert not inspect.isabstract(lua_Expression_AccessArray)
+
+
+def test_lua_expression_accessarray_constructor_exists():
+    assert callable(lua_Expression_AccessArray.__init__)
+
+
+def test_lua_expression_accessarray_constructor_args():
+    sig = inspect.signature(lua_Expression_AccessArray.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_lua_expression_smaller_is_not_abstract():
+    assert not inspect.isabstract(lua_Expression_Smaller)
+
+
+def test_lua_expression_smaller_constructor_exists():
+    assert callable(lua_Expression_Smaller.__init__)
+
+
+def test_lua_expression_smaller_constructor_args():
+    sig = inspect.signature(lua_Expression_Smaller.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_lua_expression_exponentiation_is_not_abstract():
+    assert not inspect.isabstract(lua_Expression_Exponentiation)
+
+
+def test_lua_expression_exponentiation_constructor_exists():
+    assert callable(lua_Expression_Exponentiation.__init__)
+
+
+def test_lua_expression_exponentiation_constructor_args():
+    sig = inspect.signature(lua_Expression_Exponentiation.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_lua_expression_or_is_not_abstract():
+    assert not inspect.isabstract(lua_Expression_Or)
+
+
+def test_lua_expression_or_constructor_exists():
+    assert callable(lua_Expression_Or.__init__)
+
+
+def test_lua_expression_or_constructor_args():
+    sig = inspect.signature(lua_Expression_Or.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_lua_expression_nil_is_not_abstract():
+    assert not inspect.isabstract(lua_Expression_Nil)
+
+
+def test_lua_expression_nil_constructor_exists():
+    assert callable(lua_Expression_Nil.__init__)
+
+
+def test_lua_expression_nil_constructor_args():
+    sig = inspect.signature(lua_Expression_Nil.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_statement_functioncallorassignment_is_not_abstract():
+    assert not inspect.isabstract(Statement_FunctioncallOrAssignment)
+
+
+def test_statement_functioncallorassignment_constructor_exists():
+    assert callable(Statement_FunctioncallOrAssignment.__init__)
+
+
+def test_statement_functioncallorassignment_constructor_args():
+    sig = inspect.signature(Statement_FunctioncallOrAssignment.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_lua_statement_assignment_is_not_abstract():
+    assert not inspect.isabstract(lua_Statement_Assignment)
+
+
+def test_lua_statement_assignment_constructor_exists():
+    assert callable(lua_Statement_Assignment.__init__)
+
+
+def test_lua_statement_assignment_constructor_args():
+    sig = inspect.signature(lua_Statement_Assignment.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_lua_statement_callmemberfunction_is_not_abstract():
+    assert not inspect.isabstract(lua_Statement_CallMemberFunction)
+
+
+def test_lua_statement_callmemberfunction_constructor_exists():
+    assert callable(lua_Statement_CallMemberFunction.__init__)
+
+
+def test_lua_statement_callmemberfunction_constructor_args():
+    sig = inspect.signature(lua_Statement_CallMemberFunction.__init__)
     params = list(sig.parameters.keys())
     assert "memberFunctionName" in params, "Missing parameter 'memberFunctionName'"
 
-def test_lua::statement::callmemberfunction_has_memberFunctionName():
-    assert hasattr(lua::Statement::CallMemberFunction, "memberFunctionName")
+def test_lua_statement_callmemberfunction_has_memberFunctionName():
+    assert hasattr(lua_Statement_CallMemberFunction, "memberFunctionName")
     descriptor = None
-    for klass in lua::Statement::CallMemberFunction.__mro__:
+    for klass in lua_Statement_CallMemberFunction.__mro__:
         if "memberFunctionName" in klass.__dict__:
             descriptor = klass.__dict__["memberFunctionName"]
             break
@@ -766,64 +752,78 @@ def test_lua::statement::callmemberfunction_has_memberFunctionName():
 
 
 
-def test_lua::function_is_not_abstract():
-    assert not inspect.isabstract(lua::Function)
+def test_lua_statement_callfunction_is_not_abstract():
+    assert not inspect.isabstract(lua_Statement_CallFunction)
 
 
-def test_lua::function_constructor_exists():
-    assert callable(lua::Function.__init__)
+def test_lua_statement_callfunction_constructor_exists():
+    assert callable(lua_Statement_CallFunction.__init__)
 
 
-def test_lua::function_constructor_args():
-    sig = inspect.signature(lua::Function.__init__)
+def test_lua_statement_callfunction_constructor_args():
+    sig = inspect.signature(lua_Statement_CallFunction.__init__)
     params = list(sig.parameters.keys())
-    assert "parameters" in params, "Missing parameter 'parameters'"
+
+
+
+def test_lua_function_is_not_abstract():
+    assert not inspect.isabstract(lua_Function)
+
+
+def test_lua_function_constructor_exists():
+    assert callable(lua_Function.__init__)
+
+
+def test_lua_function_constructor_args():
+    sig = inspect.signature(lua_Function.__init__)
+    params = list(sig.parameters.keys())
     assert "varArgs" in params, "Missing parameter 'varArgs'"
+    assert "parameters" in params, "Missing parameter 'parameters'"
 
-def test_lua::function_has_parameters():
-    assert hasattr(lua::Function, "parameters")
+def test_lua_function_has_varArgs():
+    assert hasattr(lua_Function, "varArgs")
     descriptor = None
-    for klass in lua::Function.__mro__:
-        if "parameters" in klass.__dict__:
-            descriptor = klass.__dict__["parameters"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_lua::function_has_varArgs():
-    assert hasattr(lua::Function, "varArgs")
-    descriptor = None
-    for klass in lua::Function.__mro__:
+    for klass in lua_Function.__mro__:
         if "varArgs" in klass.__dict__:
             descriptor = klass.__dict__["varArgs"]
             break
     assert isinstance(descriptor, property)
 
+def test_lua_function_has_parameters():
+    assert hasattr(lua_Function, "parameters")
+    descriptor = None
+    for klass in lua_Function.__mro__:
+        if "parameters" in klass.__dict__:
+            descriptor = klass.__dict__["parameters"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_lua::statement::if::then::else::elseifpart_is_not_abstract():
-    assert not inspect.isabstract(lua::Statement::If::Then::Else::ElseIfPart)
+
+def test_lua_statement_if_then_else_elseifpart_is_not_abstract():
+    assert not inspect.isabstract(lua_Statement_If_Then_Else_ElseIfPart)
 
 
-def test_lua::statement::if::then::else::elseifpart_constructor_exists():
-    assert callable(lua::Statement::If::Then::Else::ElseIfPart.__init__)
+def test_lua_statement_if_then_else_elseifpart_constructor_exists():
+    assert callable(lua_Statement_If_Then_Else_ElseIfPart.__init__)
 
 
-def test_lua::statement::if::then::else::elseifpart_constructor_args():
-    sig = inspect.signature(lua::Statement::If::Then::Else::ElseIfPart.__init__)
+def test_lua_statement_if_then_else_elseifpart_constructor_args():
+    sig = inspect.signature(lua_Statement_If_Then_Else_ElseIfPart.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_lua::expression_is_not_abstract():
-    assert not inspect.isabstract(lua::Expression)
+def test_lua_expression_is_not_abstract():
+    assert not inspect.isabstract(lua_Expression)
 
 
-def test_lua::expression_constructor_exists():
-    assert callable(lua::Expression.__init__)
+def test_lua_expression_constructor_exists():
+    assert callable(lua_Expression.__init__)
 
 
-def test_lua::expression_constructor_args():
-    sig = inspect.signature(lua::Expression.__init__)
+def test_lua_expression_constructor_args():
+    sig = inspect.signature(lua_Expression.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -842,185 +842,75 @@ def test_statement_constructor_args():
 
 
 
-def test_lua::statement::functioncallorassignment_is_not_abstract():
-    assert not inspect.isabstract(lua::Statement::FunctioncallOrAssignment)
+def test_lua_statement_if_then_else_is_not_abstract():
+    assert not inspect.isabstract(lua_Statement_If_Then_Else)
 
 
-def test_lua::statement::functioncallorassignment_constructor_exists():
-    assert callable(lua::Statement::FunctioncallOrAssignment.__init__)
+def test_lua_statement_if_then_else_constructor_exists():
+    assert callable(lua_Statement_If_Then_Else.__init__)
 
 
-def test_lua::statement::functioncallorassignment_constructor_args():
-    sig = inspect.signature(lua::Statement::FunctioncallOrAssignment.__init__)
+def test_lua_statement_if_then_else_constructor_args():
+    sig = inspect.signature(lua_Statement_If_Then_Else.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_lua::statement::for::numeric_is_not_abstract():
-    assert not inspect.isabstract(lua::Statement::For::Numeric)
+def test_lua_statement_while_is_not_abstract():
+    assert not inspect.isabstract(lua_Statement_While)
 
 
-def test_lua::statement::for::numeric_constructor_exists():
-    assert callable(lua::Statement::For::Numeric.__init__)
+def test_lua_statement_while_constructor_exists():
+    assert callable(lua_Statement_While.__init__)
 
 
-def test_lua::statement::for::numeric_constructor_args():
-    sig = inspect.signature(lua::Statement::For::Numeric.__init__)
-    params = list(sig.parameters.keys())
-    assert "iteratorName" in params, "Missing parameter 'iteratorName'"
-
-def test_lua::statement::for::numeric_has_iteratorName():
-    assert hasattr(lua::Statement::For::Numeric, "iteratorName")
-    descriptor = None
-    for klass in lua::Statement::For::Numeric.__mro__:
-        if "iteratorName" in klass.__dict__:
-            descriptor = klass.__dict__["iteratorName"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_lua::statement::repeat_is_not_abstract():
-    assert not inspect.isabstract(lua::Statement::Repeat)
-
-
-def test_lua::statement::repeat_constructor_exists():
-    assert callable(lua::Statement::Repeat.__init__)
-
-
-def test_lua::statement::repeat_constructor_args():
-    sig = inspect.signature(lua::Statement::Repeat.__init__)
+def test_lua_statement_while_constructor_args():
+    sig = inspect.signature(lua_Statement_While.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_lua::statement::local::variable::declaration_is_not_abstract():
-    assert not inspect.isabstract(lua::Statement::Local::Variable::Declaration)
+def test_lua_statement_functioncallorassignment_is_not_abstract():
+    assert not inspect.isabstract(lua_Statement_FunctioncallOrAssignment)
 
 
-def test_lua::statement::local::variable::declaration_constructor_exists():
-    assert callable(lua::Statement::Local::Variable::Declaration.__init__)
+def test_lua_statement_functioncallorassignment_constructor_exists():
+    assert callable(lua_Statement_FunctioncallOrAssignment.__init__)
 
 
-def test_lua::statement::local::variable::declaration_constructor_args():
-    sig = inspect.signature(lua::Statement::Local::Variable::Declaration.__init__)
-    params = list(sig.parameters.keys())
-    assert "variableNames" in params, "Missing parameter 'variableNames'"
-
-def test_lua::statement::local::variable::declaration_has_variableNames():
-    assert hasattr(lua::Statement::Local::Variable::Declaration, "variableNames")
-    descriptor = None
-    for klass in lua::Statement::Local::Variable::Declaration.__mro__:
-        if "variableNames" in klass.__dict__:
-            descriptor = klass.__dict__["variableNames"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_lua::statement::localfunction::declaration_is_not_abstract():
-    assert not inspect.isabstract(lua::Statement::LocalFunction::Declaration)
-
-
-def test_lua::statement::localfunction::declaration_constructor_exists():
-    assert callable(lua::Statement::LocalFunction::Declaration.__init__)
-
-
-def test_lua::statement::localfunction::declaration_constructor_args():
-    sig = inspect.signature(lua::Statement::LocalFunction::Declaration.__init__)
-    params = list(sig.parameters.keys())
-    assert "functionName" in params, "Missing parameter 'functionName'"
-
-def test_lua::statement::localfunction::declaration_has_functionName():
-    assert hasattr(lua::Statement::LocalFunction::Declaration, "functionName")
-    descriptor = None
-    for klass in lua::Statement::LocalFunction::Declaration.__mro__:
-        if "functionName" in klass.__dict__:
-            descriptor = klass.__dict__["functionName"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_lua::statement::if::then::else_is_not_abstract():
-    assert not inspect.isabstract(lua::Statement::If::Then::Else)
-
-
-def test_lua::statement::if::then::else_constructor_exists():
-    assert callable(lua::Statement::If::Then::Else.__init__)
-
-
-def test_lua::statement::if::then::else_constructor_args():
-    sig = inspect.signature(lua::Statement::If::Then::Else.__init__)
+def test_lua_statement_functioncallorassignment_constructor_args():
+    sig = inspect.signature(lua_Statement_FunctioncallOrAssignment.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_lua::statement::for::generic_is_not_abstract():
-    assert not inspect.isabstract(lua::Statement::For::Generic)
+def test_lua_statement_globalfunction_declaration_is_not_abstract():
+    assert not inspect.isabstract(lua_Statement_GlobalFunction_Declaration)
 
 
-def test_lua::statement::for::generic_constructor_exists():
-    assert callable(lua::Statement::For::Generic.__init__)
+def test_lua_statement_globalfunction_declaration_constructor_exists():
+    assert callable(lua_Statement_GlobalFunction_Declaration.__init__)
 
 
-def test_lua::statement::for::generic_constructor_args():
-    sig = inspect.signature(lua::Statement::For::Generic.__init__)
-    params = list(sig.parameters.keys())
-    assert "names" in params, "Missing parameter 'names'"
-
-def test_lua::statement::for::generic_has_names():
-    assert hasattr(lua::Statement::For::Generic, "names")
-    descriptor = None
-    for klass in lua::Statement::For::Generic.__mro__:
-        if "names" in klass.__dict__:
-            descriptor = klass.__dict__["names"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_lua::statement::while_is_not_abstract():
-    assert not inspect.isabstract(lua::Statement::While)
-
-
-def test_lua::statement::while_constructor_exists():
-    assert callable(lua::Statement::While.__init__)
-
-
-def test_lua::statement::while_constructor_args():
-    sig = inspect.signature(lua::Statement::While.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_lua::statement::globalfunction::declaration_is_not_abstract():
-    assert not inspect.isabstract(lua::Statement::GlobalFunction::Declaration)
-
-
-def test_lua::statement::globalfunction::declaration_constructor_exists():
-    assert callable(lua::Statement::GlobalFunction::Declaration.__init__)
-
-
-def test_lua::statement::globalfunction::declaration_constructor_args():
-    sig = inspect.signature(lua::Statement::GlobalFunction::Declaration.__init__)
+def test_lua_statement_globalfunction_declaration_constructor_args():
+    sig = inspect.signature(lua_Statement_GlobalFunction_Declaration.__init__)
     params = list(sig.parameters.keys())
     assert "functionName" in params, "Missing parameter 'functionName'"
     assert "prefix" in params, "Missing parameter 'prefix'"
 
-def test_lua::statement::globalfunction::declaration_has_functionName():
-    assert hasattr(lua::Statement::GlobalFunction::Declaration, "functionName")
+def test_lua_statement_globalfunction_declaration_has_functionName():
+    assert hasattr(lua_Statement_GlobalFunction_Declaration, "functionName")
     descriptor = None
-    for klass in lua::Statement::GlobalFunction::Declaration.__mro__:
+    for klass in lua_Statement_GlobalFunction_Declaration.__mro__:
         if "functionName" in klass.__dict__:
             descriptor = klass.__dict__["functionName"]
             break
     assert isinstance(descriptor, property)
 
-def test_lua::statement::globalfunction::declaration_has_prefix():
-    assert hasattr(lua::Statement::GlobalFunction::Declaration, "prefix")
+def test_lua_statement_globalfunction_declaration_has_prefix():
+    assert hasattr(lua_Statement_GlobalFunction_Declaration, "prefix")
     descriptor = None
-    for klass in lua::Statement::GlobalFunction::Declaration.__mro__:
+    for klass in lua_Statement_GlobalFunction_Declaration.__mro__:
         if "prefix" in klass.__dict__:
             descriptor = klass.__dict__["prefix"]
             break
@@ -1028,16 +918,126 @@ def test_lua::statement::globalfunction::declaration_has_prefix():
 
 
 
-def test_lua::statement::block_is_not_abstract():
-    assert not inspect.isabstract(lua::Statement::Block)
+def test_lua_statement_local_variable_declaration_is_not_abstract():
+    assert not inspect.isabstract(lua_Statement_Local_Variable_Declaration)
 
 
-def test_lua::statement::block_constructor_exists():
-    assert callable(lua::Statement::Block.__init__)
+def test_lua_statement_local_variable_declaration_constructor_exists():
+    assert callable(lua_Statement_Local_Variable_Declaration.__init__)
 
 
-def test_lua::statement::block_constructor_args():
-    sig = inspect.signature(lua::Statement::Block.__init__)
+def test_lua_statement_local_variable_declaration_constructor_args():
+    sig = inspect.signature(lua_Statement_Local_Variable_Declaration.__init__)
+    params = list(sig.parameters.keys())
+    assert "variableNames" in params, "Missing parameter 'variableNames'"
+
+def test_lua_statement_local_variable_declaration_has_variableNames():
+    assert hasattr(lua_Statement_Local_Variable_Declaration, "variableNames")
+    descriptor = None
+    for klass in lua_Statement_Local_Variable_Declaration.__mro__:
+        if "variableNames" in klass.__dict__:
+            descriptor = klass.__dict__["variableNames"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_lua_statement_for_generic_is_not_abstract():
+    assert not inspect.isabstract(lua_Statement_For_Generic)
+
+
+def test_lua_statement_for_generic_constructor_exists():
+    assert callable(lua_Statement_For_Generic.__init__)
+
+
+def test_lua_statement_for_generic_constructor_args():
+    sig = inspect.signature(lua_Statement_For_Generic.__init__)
+    params = list(sig.parameters.keys())
+    assert "names" in params, "Missing parameter 'names'"
+
+def test_lua_statement_for_generic_has_names():
+    assert hasattr(lua_Statement_For_Generic, "names")
+    descriptor = None
+    for klass in lua_Statement_For_Generic.__mro__:
+        if "names" in klass.__dict__:
+            descriptor = klass.__dict__["names"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_lua_statement_repeat_is_not_abstract():
+    assert not inspect.isabstract(lua_Statement_Repeat)
+
+
+def test_lua_statement_repeat_constructor_exists():
+    assert callable(lua_Statement_Repeat.__init__)
+
+
+def test_lua_statement_repeat_constructor_args():
+    sig = inspect.signature(lua_Statement_Repeat.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_lua_statement_localfunction_declaration_is_not_abstract():
+    assert not inspect.isabstract(lua_Statement_LocalFunction_Declaration)
+
+
+def test_lua_statement_localfunction_declaration_constructor_exists():
+    assert callable(lua_Statement_LocalFunction_Declaration.__init__)
+
+
+def test_lua_statement_localfunction_declaration_constructor_args():
+    sig = inspect.signature(lua_Statement_LocalFunction_Declaration.__init__)
+    params = list(sig.parameters.keys())
+    assert "functionName" in params, "Missing parameter 'functionName'"
+
+def test_lua_statement_localfunction_declaration_has_functionName():
+    assert hasattr(lua_Statement_LocalFunction_Declaration, "functionName")
+    descriptor = None
+    for klass in lua_Statement_LocalFunction_Declaration.__mro__:
+        if "functionName" in klass.__dict__:
+            descriptor = klass.__dict__["functionName"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_lua_statement_for_numeric_is_not_abstract():
+    assert not inspect.isabstract(lua_Statement_For_Numeric)
+
+
+def test_lua_statement_for_numeric_constructor_exists():
+    assert callable(lua_Statement_For_Numeric.__init__)
+
+
+def test_lua_statement_for_numeric_constructor_args():
+    sig = inspect.signature(lua_Statement_For_Numeric.__init__)
+    params = list(sig.parameters.keys())
+    assert "iteratorName" in params, "Missing parameter 'iteratorName'"
+
+def test_lua_statement_for_numeric_has_iteratorName():
+    assert hasattr(lua_Statement_For_Numeric, "iteratorName")
+    descriptor = None
+    for klass in lua_Statement_For_Numeric.__mro__:
+        if "iteratorName" in klass.__dict__:
+            descriptor = klass.__dict__["iteratorName"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_lua_statement_block_is_not_abstract():
+    assert not inspect.isabstract(lua_Statement_Block)
+
+
+def test_lua_statement_block_constructor_exists():
+    assert callable(lua_Statement_Block.__init__)
+
+
+def test_lua_statement_block_constructor_args():
+    sig = inspect.signature(lua_Statement_Block.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1056,58 +1056,58 @@ def test_laststatement_constructor_args():
 
 
 
-def test_lua::laststatement::break_is_not_abstract():
-    assert not inspect.isabstract(lua::LastStatement::Break)
+def test_lua_laststatement_break_is_not_abstract():
+    assert not inspect.isabstract(lua_LastStatement_Break)
 
 
-def test_lua::laststatement::break_constructor_exists():
-    assert callable(lua::LastStatement::Break.__init__)
+def test_lua_laststatement_break_constructor_exists():
+    assert callable(lua_LastStatement_Break.__init__)
 
 
-def test_lua::laststatement::break_constructor_args():
-    sig = inspect.signature(lua::LastStatement::Break.__init__)
+def test_lua_laststatement_break_constructor_args():
+    sig = inspect.signature(lua_LastStatement_Break.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_lua::laststatement::return_is_not_abstract():
-    assert not inspect.isabstract(lua::LastStatement::Return)
+def test_lua_laststatement_return_is_not_abstract():
+    assert not inspect.isabstract(lua_LastStatement_Return)
 
 
-def test_lua::laststatement::return_constructor_exists():
-    assert callable(lua::LastStatement::Return.__init__)
+def test_lua_laststatement_return_constructor_exists():
+    assert callable(lua_LastStatement_Return.__init__)
 
 
-def test_lua::laststatement::return_constructor_args():
-    sig = inspect.signature(lua::LastStatement::Return.__init__)
+def test_lua_laststatement_return_constructor_args():
+    sig = inspect.signature(lua_LastStatement_Return.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_lua::laststatement_is_not_abstract():
-    assert not inspect.isabstract(lua::LastStatement)
+def test_lua_laststatement_is_not_abstract():
+    assert not inspect.isabstract(lua_LastStatement)
 
 
-def test_lua::laststatement_constructor_exists():
-    assert callable(lua::LastStatement.__init__)
+def test_lua_laststatement_constructor_exists():
+    assert callable(lua_LastStatement.__init__)
 
 
-def test_lua::laststatement_constructor_args():
-    sig = inspect.signature(lua::LastStatement.__init__)
+def test_lua_laststatement_constructor_args():
+    sig = inspect.signature(lua_LastStatement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_lua::statement_is_not_abstract():
-    assert not inspect.isabstract(lua::Statement)
+def test_lua_statement_is_not_abstract():
+    assert not inspect.isabstract(lua_Statement)
 
 
-def test_lua::statement_constructor_exists():
-    assert callable(lua::Statement.__init__)
+def test_lua_statement_constructor_exists():
+    assert callable(lua_Statement.__init__)
 
 
-def test_lua::statement_constructor_args():
-    sig = inspect.signature(lua::Statement.__init__)
+def test_lua_statement_constructor_args():
+    sig = inspect.signature(lua_Statement.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1126,30 +1126,30 @@ def test_chunk_constructor_args():
 
 
 
-def test_lua::block_is_not_abstract():
-    assert not inspect.isabstract(lua::Block)
+def test_lua_block_is_not_abstract():
+    assert not inspect.isabstract(lua_Block)
 
 
-def test_lua::block_constructor_exists():
-    assert callable(lua::Block.__init__)
+def test_lua_block_constructor_exists():
+    assert callable(lua_Block.__init__)
 
 
-def test_lua::block_constructor_args():
-    sig = inspect.signature(lua::Block.__init__)
+def test_lua_block_constructor_args():
+    sig = inspect.signature(lua_Block.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_lua::chunk_is_not_abstract():
-    assert not inspect.isabstract(lua::Chunk)
+def test_lua_chunk_is_not_abstract():
+    assert not inspect.isabstract(lua_Chunk)
 
 
-def test_lua::chunk_constructor_exists():
-    assert callable(lua::Chunk.__init__)
+def test_lua_chunk_constructor_exists():
+    assert callable(lua_Chunk.__init__)
 
 
-def test_lua::chunk_constructor_args():
-    sig = inspect.signature(lua::Chunk.__init__)
+def test_lua_chunk_constructor_args():
+    sig = inspect.signature(lua_Chunk.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1164,726 +1164,681 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-LastStatement::Return_strategy = st.builds(
-    LastStatement::Return,
+LastStatement_Return_strategy = st.builds(
+    LastStatement_Return,
 )
-lua::LastStatement::ReturnWithValue_strategy = st.builds(
-    lua::LastStatement::ReturnWithValue,
+lua_LastStatement_ReturnWithValue_strategy = st.builds(
+    lua_LastStatement_ReturnWithValue,
 )
 Field_strategy = st.builds(
     Field,
 )
-lua::Field::AddEntryToTable_strategy = st.builds(
-    lua::Field::AddEntryToTable,
+lua_Field_AppendEntryToTable_strategy = st.builds(
+    lua_Field_AppendEntryToTable,
+)
+lua_Field_AddEntryToTable_strategy = st.builds(
+    lua_Field_AddEntryToTable,
     key=
         safe_text
 )
-lua::Field::AppendEntryToTable_strategy = st.builds(
-    lua::Field::AppendEntryToTable,
+lua_Field_AddEntryToTable_Brackets_strategy = st.builds(
+    lua_Field_AddEntryToTable_Brackets,
 )
-lua::Field::AddEntryToTable::Brackets_strategy = st.builds(
-    lua::Field::AddEntryToTable::Brackets,
+lua_Functioncall_Arguments_strategy = st.builds(
+    lua_Functioncall_Arguments,
 )
-lua::Functioncall::Arguments_strategy = st.builds(
-    lua::Functioncall::Arguments,
-)
-lua::Field_strategy = st.builds(
-    lua::Field,
+lua_Field_strategy = st.builds(
+    lua_Field,
 )
 Expression_strategy = st.builds(
     Expression,
 )
-lua::Expression::CallMemberFunction_strategy = st.builds(
-    lua::Expression::CallMemberFunction,
+lua_Expression_Division_strategy = st.builds(
+    lua_Expression_Division,
+)
+lua_Expression_CallFunction_strategy = st.builds(
+    lua_Expression_CallFunction,
+)
+lua_Expression_VarArgs_strategy = st.builds(
+    lua_Expression_VarArgs,
+)
+lua_Expression_CallMemberFunction_strategy = st.builds(
+    lua_Expression_CallMemberFunction,
     memberFunctionName=
         safe_text
 )
-lua::Expression::Plus_strategy = st.builds(
-    lua::Expression::Plus,
+lua_Expression_TableConstructor_strategy = st.builds(
+    lua_Expression_TableConstructor,
 )
-lua::Expression::AccessArray_strategy = st.builds(
-    lua::Expression::AccessArray,
+lua_Expression_Invert_strategy = st.builds(
+    lua_Expression_Invert,
 )
-lua::Expression::TableConstructor_strategy = st.builds(
-    lua::Expression::TableConstructor,
+lua_Expression_Length_strategy = st.builds(
+    lua_Expression_Length,
 )
-lua::Expression::CallFunction_strategy = st.builds(
-    lua::Expression::CallFunction,
+lua_Expression_Larger_Equal_strategy = st.builds(
+    lua_Expression_Larger_Equal,
 )
-lua::Expression::False_strategy = st.builds(
-    lua::Expression::False,
+lua_Expression_Modulo_strategy = st.builds(
+    lua_Expression_Modulo,
 )
-lua::Expression::Larger::Equal_strategy = st.builds(
-    lua::Expression::Larger::Equal,
+lua_Expression_And_strategy = st.builds(
+    lua_Expression_And,
 )
-lua::Expression::Function_strategy = st.builds(
-    lua::Expression::Function,
+lua_Expression_Multiplication_strategy = st.builds(
+    lua_Expression_Multiplication,
 )
-lua::Expression::Not::Equal_strategy = st.builds(
-    lua::Expression::Not::Equal,
+lua_Expression_Plus_strategy = st.builds(
+    lua_Expression_Plus,
 )
-lua::Expression::String_strategy = st.builds(
-    lua::Expression::String,
+lua_Expression_Larger_strategy = st.builds(
+    lua_Expression_Larger,
+)
+lua_Expression_False_strategy = st.builds(
+    lua_Expression_False,
+)
+lua_Expression_String_strategy = st.builds(
+    lua_Expression_String,
     value=
         safe_text
 )
-lua::Expression::Number_strategy = st.builds(
-    lua::Expression::Number,
-    value=
-        st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False)
-)
-lua::Expression::Smaller_strategy = st.builds(
-    lua::Expression::Smaller,
-)
-lua::Expression::Length_strategy = st.builds(
-    lua::Expression::Length,
-)
-lua::Expression::VarArgs_strategy = st.builds(
-    lua::Expression::VarArgs,
-)
-lua::Expression::Concatenation_strategy = st.builds(
-    lua::Expression::Concatenation,
-)
-lua::Expression::True_strategy = st.builds(
-    lua::Expression::True,
-)
-lua::Expression::Or_strategy = st.builds(
-    lua::Expression::Or,
-)
-lua::Expression::And_strategy = st.builds(
-    lua::Expression::And,
-)
-lua::Expression::Modulo_strategy = st.builds(
-    lua::Expression::Modulo,
-)
-lua::Expression::Invert_strategy = st.builds(
-    lua::Expression::Invert,
-)
-lua::Expression::Negate_strategy = st.builds(
-    lua::Expression::Negate,
-)
-lua::Expression::Larger_strategy = st.builds(
-    lua::Expression::Larger,
-)
-lua::Expression::Smaller::Equal_strategy = st.builds(
-    lua::Expression::Smaller::Equal,
-)
-lua::Expression::Multiplication_strategy = st.builds(
-    lua::Expression::Multiplication,
-)
-lua::Expression::Division_strategy = st.builds(
-    lua::Expression::Division,
-)
-lua::Expression::Minus_strategy = st.builds(
-    lua::Expression::Minus,
-)
-lua::Expression::AccessMember_strategy = st.builds(
-    lua::Expression::AccessMember,
-    memberName=
-        safe_text
-)
-lua::Expression::VariableName_strategy = st.builds(
-    lua::Expression::VariableName,
+lua_Expression_VariableName_strategy = st.builds(
+    lua_Expression_VariableName,
     variable=
         safe_text
 )
-lua::Expression::Exponentiation_strategy = st.builds(
-    lua::Expression::Exponentiation,
+lua_Expression_True_strategy = st.builds(
+    lua_Expression_True,
 )
-lua::Expression::Equal_strategy = st.builds(
-    lua::Expression::Equal,
+lua_Expression_Function_strategy = st.builds(
+    lua_Expression_Function,
 )
-lua::Expression::Nil_strategy = st.builds(
-    lua::Expression::Nil,
+lua_Expression_Equal_strategy = st.builds(
+    lua_Expression_Equal,
 )
-Statement::FunctioncallOrAssignment_strategy = st.builds(
-    Statement::FunctioncallOrAssignment,
+lua_Expression_Negate_strategy = st.builds(
+    lua_Expression_Negate,
 )
-lua::Statement::Assignment_strategy = st.builds(
-    lua::Statement::Assignment,
+lua_Expression_Minus_strategy = st.builds(
+    lua_Expression_Minus,
 )
-lua::Statement::CallFunction_strategy = st.builds(
-    lua::Statement::CallFunction,
+lua_Expression_AccessMember_strategy = st.builds(
+    lua_Expression_AccessMember,
+    memberName=
+        safe_text
 )
-lua::Statement::CallMemberFunction_strategy = st.builds(
-    lua::Statement::CallMemberFunction,
+lua_Expression_Concatenation_strategy = st.builds(
+    lua_Expression_Concatenation,
+)
+lua_Expression_Not_Equal_strategy = st.builds(
+    lua_Expression_Not_Equal,
+)
+lua_Expression_Number_strategy = st.builds(
+    lua_Expression_Number,
+    value=
+        st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False)
+)
+lua_Expression_Smaller_Equal_strategy = st.builds(
+    lua_Expression_Smaller_Equal,
+)
+lua_Expression_AccessArray_strategy = st.builds(
+    lua_Expression_AccessArray,
+)
+lua_Expression_Smaller_strategy = st.builds(
+    lua_Expression_Smaller,
+)
+lua_Expression_Exponentiation_strategy = st.builds(
+    lua_Expression_Exponentiation,
+)
+lua_Expression_Or_strategy = st.builds(
+    lua_Expression_Or,
+)
+lua_Expression_Nil_strategy = st.builds(
+    lua_Expression_Nil,
+)
+Statement_FunctioncallOrAssignment_strategy = st.builds(
+    Statement_FunctioncallOrAssignment,
+)
+lua_Statement_Assignment_strategy = st.builds(
+    lua_Statement_Assignment,
+)
+lua_Statement_CallMemberFunction_strategy = st.builds(
+    lua_Statement_CallMemberFunction,
     memberFunctionName=
         safe_text
 )
-lua::Function_strategy = st.builds(
-    lua::Function,
-    parameters=
-        safe_text,
+lua_Statement_CallFunction_strategy = st.builds(
+    lua_Statement_CallFunction,
+)
+lua_Function_strategy = st.builds(
+    lua_Function,
     varArgs=
-        st.booleans()
+        st.booleans(),
+    parameters=
+        safe_text
 )
-lua::Statement::If::Then::Else::ElseIfPart_strategy = st.builds(
-    lua::Statement::If::Then::Else::ElseIfPart,
+lua_Statement_If_Then_Else_ElseIfPart_strategy = st.builds(
+    lua_Statement_If_Then_Else_ElseIfPart,
 )
-lua::Expression_strategy = st.builds(
-    lua::Expression,
+lua_Expression_strategy = st.builds(
+    lua_Expression,
 )
 Statement_strategy = st.builds(
     Statement,
 )
-lua::Statement::FunctioncallOrAssignment_strategy = st.builds(
-    lua::Statement::FunctioncallOrAssignment,
+lua_Statement_If_Then_Else_strategy = st.builds(
+    lua_Statement_If_Then_Else,
 )
-lua::Statement::For::Numeric_strategy = st.builds(
-    lua::Statement::For::Numeric,
-    iteratorName=
-        safe_text
+lua_Statement_While_strategy = st.builds(
+    lua_Statement_While,
 )
-lua::Statement::Repeat_strategy = st.builds(
-    lua::Statement::Repeat,
+lua_Statement_FunctioncallOrAssignment_strategy = st.builds(
+    lua_Statement_FunctioncallOrAssignment,
 )
-lua::Statement::Local::Variable::Declaration_strategy = st.builds(
-    lua::Statement::Local::Variable::Declaration,
-    variableNames=
-        safe_text
-)
-lua::Statement::LocalFunction::Declaration_strategy = st.builds(
-    lua::Statement::LocalFunction::Declaration,
-    functionName=
-        safe_text
-)
-lua::Statement::If::Then::Else_strategy = st.builds(
-    lua::Statement::If::Then::Else,
-)
-lua::Statement::For::Generic_strategy = st.builds(
-    lua::Statement::For::Generic,
-    names=
-        safe_text
-)
-lua::Statement::While_strategy = st.builds(
-    lua::Statement::While,
-)
-lua::Statement::GlobalFunction::Declaration_strategy = st.builds(
-    lua::Statement::GlobalFunction::Declaration,
+lua_Statement_GlobalFunction_Declaration_strategy = st.builds(
+    lua_Statement_GlobalFunction_Declaration,
     functionName=
         safe_text,
     prefix=
         safe_text
 )
-lua::Statement::Block_strategy = st.builds(
-    lua::Statement::Block,
+lua_Statement_Local_Variable_Declaration_strategy = st.builds(
+    lua_Statement_Local_Variable_Declaration,
+    variableNames=
+        safe_text
+)
+lua_Statement_For_Generic_strategy = st.builds(
+    lua_Statement_For_Generic,
+    names=
+        safe_text
+)
+lua_Statement_Repeat_strategy = st.builds(
+    lua_Statement_Repeat,
+)
+lua_Statement_LocalFunction_Declaration_strategy = st.builds(
+    lua_Statement_LocalFunction_Declaration,
+    functionName=
+        safe_text
+)
+lua_Statement_For_Numeric_strategy = st.builds(
+    lua_Statement_For_Numeric,
+    iteratorName=
+        safe_text
+)
+lua_Statement_Block_strategy = st.builds(
+    lua_Statement_Block,
 )
 LastStatement_strategy = st.builds(
     LastStatement,
 )
-lua::LastStatement::Break_strategy = st.builds(
-    lua::LastStatement::Break,
+lua_LastStatement_Break_strategy = st.builds(
+    lua_LastStatement_Break,
 )
-lua::LastStatement::Return_strategy = st.builds(
-    lua::LastStatement::Return,
+lua_LastStatement_Return_strategy = st.builds(
+    lua_LastStatement_Return,
 )
-lua::LastStatement_strategy = st.builds(
-    lua::LastStatement,
+lua_LastStatement_strategy = st.builds(
+    lua_LastStatement,
 )
-lua::Statement_strategy = st.builds(
-    lua::Statement,
+lua_Statement_strategy = st.builds(
+    lua_Statement,
 )
 Chunk_strategy = st.builds(
     Chunk,
 )
-lua::Block_strategy = st.builds(
-    lua::Block,
+lua_Block_strategy = st.builds(
+    lua_Block,
 )
-lua::Chunk_strategy = st.builds(
-    lua::Chunk,
+lua_Chunk_strategy = st.builds(
+    lua_Chunk,
 )
 
-@given(instance=LastStatement::Return_strategy)
+@given(instance=LastStatement_Return_strategy)
 @settings(max_examples=50)
-def test_laststatement::return_instantiation(instance):
-    assert isinstance(instance, LastStatement::Return)
+def test_laststatement_return_instantiation(instance):
+    assert isinstance(instance, LastStatement_Return)
 
-@given(instance=lua::LastStatement::ReturnWithValue_strategy)
+@given(instance=lua_LastStatement_ReturnWithValue_strategy)
 @settings(max_examples=50)
-def test_lua::laststatement::returnwithvalue_instantiation(instance):
-    assert isinstance(instance, lua::LastStatement::ReturnWithValue)
+def test_lua_laststatement_returnwithvalue_instantiation(instance):
+    assert isinstance(instance, lua_LastStatement_ReturnWithValue)
 
 @given(instance=Field_strategy)
 @settings(max_examples=50)
 def test_field_instantiation(instance):
     assert isinstance(instance, Field)
 
-@given(instance=lua::Field::AddEntryToTable_strategy)
+@given(instance=lua_Field_AppendEntryToTable_strategy)
 @settings(max_examples=50)
-def test_lua::field::addentrytotable_instantiation(instance):
-    assert isinstance(instance, lua::Field::AddEntryToTable)
+def test_lua_field_appendentrytotable_instantiation(instance):
+    assert isinstance(instance, lua_Field_AppendEntryToTable)
 
-@given(instance=lua::Field::AddEntryToTable_strategy)
-def test_lua::field::addentrytotable_key_type(instance):
-    assert isinstance(instance.key, str)
+@given(instance=lua_Field_AddEntryToTable_strategy)
+@settings(max_examples=50)
+def test_lua_field_addentrytotable_instantiation(instance):
+    assert isinstance(instance, lua_Field_AddEntryToTable)
 
 
-@given(instance=lua::Field::AddEntryToTable_strategy)
-def test_lua::field::addentrytotable_key_setter(instance):
+
+@given(instance=lua_Field_AddEntryToTable_strategy)
+def test_lua_field_addentrytotable_key_setter(instance):
     original = instance.key
     instance.key = original
     assert instance.key == original
 
-@given(instance=lua::Field::AppendEntryToTable_strategy)
+@given(instance=lua_Field_AddEntryToTable_Brackets_strategy)
 @settings(max_examples=50)
-def test_lua::field::appendentrytotable_instantiation(instance):
-    assert isinstance(instance, lua::Field::AppendEntryToTable)
+def test_lua_field_addentrytotable_brackets_instantiation(instance):
+    assert isinstance(instance, lua_Field_AddEntryToTable_Brackets)
 
-@given(instance=lua::Field::AddEntryToTable::Brackets_strategy)
+@given(instance=lua_Functioncall_Arguments_strategy)
 @settings(max_examples=50)
-def test_lua::field::addentrytotable::brackets_instantiation(instance):
-    assert isinstance(instance, lua::Field::AddEntryToTable::Brackets)
+def test_lua_functioncall_arguments_instantiation(instance):
+    assert isinstance(instance, lua_Functioncall_Arguments)
 
-@given(instance=lua::Functioncall::Arguments_strategy)
+@given(instance=lua_Field_strategy)
 @settings(max_examples=50)
-def test_lua::functioncall::arguments_instantiation(instance):
-    assert isinstance(instance, lua::Functioncall::Arguments)
-
-@given(instance=lua::Field_strategy)
-@settings(max_examples=50)
-def test_lua::field_instantiation(instance):
-    assert isinstance(instance, lua::Field)
+def test_lua_field_instantiation(instance):
+    assert isinstance(instance, lua_Field)
 
 @given(instance=Expression_strategy)
 @settings(max_examples=50)
 def test_expression_instantiation(instance):
     assert isinstance(instance, Expression)
 
-@given(instance=lua::Expression::CallMemberFunction_strategy)
+@given(instance=lua_Expression_Division_strategy)
 @settings(max_examples=50)
-def test_lua::expression::callmemberfunction_instantiation(instance):
-    assert isinstance(instance, lua::Expression::CallMemberFunction)
+def test_lua_expression_division_instantiation(instance):
+    assert isinstance(instance, lua_Expression_Division)
 
-@given(instance=lua::Expression::CallMemberFunction_strategy)
-def test_lua::expression::callmemberfunction_memberFunctionName_type(instance):
-    assert isinstance(instance.memberFunctionName, str)
+@given(instance=lua_Expression_CallFunction_strategy)
+@settings(max_examples=50)
+def test_lua_expression_callfunction_instantiation(instance):
+    assert isinstance(instance, lua_Expression_CallFunction)
+
+@given(instance=lua_Expression_VarArgs_strategy)
+@settings(max_examples=50)
+def test_lua_expression_varargs_instantiation(instance):
+    assert isinstance(instance, lua_Expression_VarArgs)
+
+@given(instance=lua_Expression_CallMemberFunction_strategy)
+@settings(max_examples=50)
+def test_lua_expression_callmemberfunction_instantiation(instance):
+    assert isinstance(instance, lua_Expression_CallMemberFunction)
 
 
-@given(instance=lua::Expression::CallMemberFunction_strategy)
-def test_lua::expression::callmemberfunction_memberFunctionName_setter(instance):
+
+@given(instance=lua_Expression_CallMemberFunction_strategy)
+def test_lua_expression_callmemberfunction_memberFunctionName_setter(instance):
     original = instance.memberFunctionName
     instance.memberFunctionName = original
     assert instance.memberFunctionName == original
 
-@given(instance=lua::Expression::Plus_strategy)
+@given(instance=lua_Expression_TableConstructor_strategy)
 @settings(max_examples=50)
-def test_lua::expression::plus_instantiation(instance):
-    assert isinstance(instance, lua::Expression::Plus)
+def test_lua_expression_tableconstructor_instantiation(instance):
+    assert isinstance(instance, lua_Expression_TableConstructor)
 
-@given(instance=lua::Expression::AccessArray_strategy)
+@given(instance=lua_Expression_Invert_strategy)
 @settings(max_examples=50)
-def test_lua::expression::accessarray_instantiation(instance):
-    assert isinstance(instance, lua::Expression::AccessArray)
+def test_lua_expression_invert_instantiation(instance):
+    assert isinstance(instance, lua_Expression_Invert)
 
-@given(instance=lua::Expression::TableConstructor_strategy)
+@given(instance=lua_Expression_Length_strategy)
 @settings(max_examples=50)
-def test_lua::expression::tableconstructor_instantiation(instance):
-    assert isinstance(instance, lua::Expression::TableConstructor)
+def test_lua_expression_length_instantiation(instance):
+    assert isinstance(instance, lua_Expression_Length)
 
-@given(instance=lua::Expression::CallFunction_strategy)
+@given(instance=lua_Expression_Larger_Equal_strategy)
 @settings(max_examples=50)
-def test_lua::expression::callfunction_instantiation(instance):
-    assert isinstance(instance, lua::Expression::CallFunction)
+def test_lua_expression_larger_equal_instantiation(instance):
+    assert isinstance(instance, lua_Expression_Larger_Equal)
 
-@given(instance=lua::Expression::False_strategy)
+@given(instance=lua_Expression_Modulo_strategy)
 @settings(max_examples=50)
-def test_lua::expression::false_instantiation(instance):
-    assert isinstance(instance, lua::Expression::False)
+def test_lua_expression_modulo_instantiation(instance):
+    assert isinstance(instance, lua_Expression_Modulo)
 
-@given(instance=lua::Expression::Larger::Equal_strategy)
+@given(instance=lua_Expression_And_strategy)
 @settings(max_examples=50)
-def test_lua::expression::larger::equal_instantiation(instance):
-    assert isinstance(instance, lua::Expression::Larger::Equal)
+def test_lua_expression_and_instantiation(instance):
+    assert isinstance(instance, lua_Expression_And)
 
-@given(instance=lua::Expression::Function_strategy)
+@given(instance=lua_Expression_Multiplication_strategy)
 @settings(max_examples=50)
-def test_lua::expression::function_instantiation(instance):
-    assert isinstance(instance, lua::Expression::Function)
+def test_lua_expression_multiplication_instantiation(instance):
+    assert isinstance(instance, lua_Expression_Multiplication)
 
-@given(instance=lua::Expression::Not::Equal_strategy)
+@given(instance=lua_Expression_Plus_strategy)
 @settings(max_examples=50)
-def test_lua::expression::not::equal_instantiation(instance):
-    assert isinstance(instance, lua::Expression::Not::Equal)
+def test_lua_expression_plus_instantiation(instance):
+    assert isinstance(instance, lua_Expression_Plus)
 
-@given(instance=lua::Expression::String_strategy)
+@given(instance=lua_Expression_Larger_strategy)
 @settings(max_examples=50)
-def test_lua::expression::string_instantiation(instance):
-    assert isinstance(instance, lua::Expression::String)
+def test_lua_expression_larger_instantiation(instance):
+    assert isinstance(instance, lua_Expression_Larger)
 
-@given(instance=lua::Expression::String_strategy)
-def test_lua::expression::string_value_type(instance):
-    assert isinstance(instance.value, str)
+@given(instance=lua_Expression_False_strategy)
+@settings(max_examples=50)
+def test_lua_expression_false_instantiation(instance):
+    assert isinstance(instance, lua_Expression_False)
+
+@given(instance=lua_Expression_String_strategy)
+@settings(max_examples=50)
+def test_lua_expression_string_instantiation(instance):
+    assert isinstance(instance, lua_Expression_String)
 
 
-@given(instance=lua::Expression::String_strategy)
-def test_lua::expression::string_value_setter(instance):
+
+@given(instance=lua_Expression_String_strategy)
+def test_lua_expression_string_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
 
-@given(instance=lua::Expression::Number_strategy)
+@given(instance=lua_Expression_VariableName_strategy)
 @settings(max_examples=50)
-def test_lua::expression::number_instantiation(instance):
-    assert isinstance(instance, lua::Expression::Number)
-
-@given(instance=lua::Expression::Number_strategy)
-def test_lua::expression::number_value_type(instance):
-    assert isinstance(instance.value, float)
+def test_lua_expression_variablename_instantiation(instance):
+    assert isinstance(instance, lua_Expression_VariableName)
 
 
-@given(instance=lua::Expression::Number_strategy)
-def test_lua::expression::number_value_setter(instance):
-    original = instance.value
-    instance.value = original
-    assert instance.value == original
 
-@given(instance=lua::Expression::Smaller_strategy)
-@settings(max_examples=50)
-def test_lua::expression::smaller_instantiation(instance):
-    assert isinstance(instance, lua::Expression::Smaller)
-
-@given(instance=lua::Expression::Length_strategy)
-@settings(max_examples=50)
-def test_lua::expression::length_instantiation(instance):
-    assert isinstance(instance, lua::Expression::Length)
-
-@given(instance=lua::Expression::VarArgs_strategy)
-@settings(max_examples=50)
-def test_lua::expression::varargs_instantiation(instance):
-    assert isinstance(instance, lua::Expression::VarArgs)
-
-@given(instance=lua::Expression::Concatenation_strategy)
-@settings(max_examples=50)
-def test_lua::expression::concatenation_instantiation(instance):
-    assert isinstance(instance, lua::Expression::Concatenation)
-
-@given(instance=lua::Expression::True_strategy)
-@settings(max_examples=50)
-def test_lua::expression::true_instantiation(instance):
-    assert isinstance(instance, lua::Expression::True)
-
-@given(instance=lua::Expression::Or_strategy)
-@settings(max_examples=50)
-def test_lua::expression::or_instantiation(instance):
-    assert isinstance(instance, lua::Expression::Or)
-
-@given(instance=lua::Expression::And_strategy)
-@settings(max_examples=50)
-def test_lua::expression::and_instantiation(instance):
-    assert isinstance(instance, lua::Expression::And)
-
-@given(instance=lua::Expression::Modulo_strategy)
-@settings(max_examples=50)
-def test_lua::expression::modulo_instantiation(instance):
-    assert isinstance(instance, lua::Expression::Modulo)
-
-@given(instance=lua::Expression::Invert_strategy)
-@settings(max_examples=50)
-def test_lua::expression::invert_instantiation(instance):
-    assert isinstance(instance, lua::Expression::Invert)
-
-@given(instance=lua::Expression::Negate_strategy)
-@settings(max_examples=50)
-def test_lua::expression::negate_instantiation(instance):
-    assert isinstance(instance, lua::Expression::Negate)
-
-@given(instance=lua::Expression::Larger_strategy)
-@settings(max_examples=50)
-def test_lua::expression::larger_instantiation(instance):
-    assert isinstance(instance, lua::Expression::Larger)
-
-@given(instance=lua::Expression::Smaller::Equal_strategy)
-@settings(max_examples=50)
-def test_lua::expression::smaller::equal_instantiation(instance):
-    assert isinstance(instance, lua::Expression::Smaller::Equal)
-
-@given(instance=lua::Expression::Multiplication_strategy)
-@settings(max_examples=50)
-def test_lua::expression::multiplication_instantiation(instance):
-    assert isinstance(instance, lua::Expression::Multiplication)
-
-@given(instance=lua::Expression::Division_strategy)
-@settings(max_examples=50)
-def test_lua::expression::division_instantiation(instance):
-    assert isinstance(instance, lua::Expression::Division)
-
-@given(instance=lua::Expression::Minus_strategy)
-@settings(max_examples=50)
-def test_lua::expression::minus_instantiation(instance):
-    assert isinstance(instance, lua::Expression::Minus)
-
-@given(instance=lua::Expression::AccessMember_strategy)
-@settings(max_examples=50)
-def test_lua::expression::accessmember_instantiation(instance):
-    assert isinstance(instance, lua::Expression::AccessMember)
-
-@given(instance=lua::Expression::AccessMember_strategy)
-def test_lua::expression::accessmember_memberName_type(instance):
-    assert isinstance(instance.memberName, str)
-
-
-@given(instance=lua::Expression::AccessMember_strategy)
-def test_lua::expression::accessmember_memberName_setter(instance):
-    original = instance.memberName
-    instance.memberName = original
-    assert instance.memberName == original
-
-@given(instance=lua::Expression::VariableName_strategy)
-@settings(max_examples=50)
-def test_lua::expression::variablename_instantiation(instance):
-    assert isinstance(instance, lua::Expression::VariableName)
-
-@given(instance=lua::Expression::VariableName_strategy)
-def test_lua::expression::variablename_variable_type(instance):
-    assert isinstance(instance.variable, str)
-
-
-@given(instance=lua::Expression::VariableName_strategy)
-def test_lua::expression::variablename_variable_setter(instance):
+@given(instance=lua_Expression_VariableName_strategy)
+def test_lua_expression_variablename_variable_setter(instance):
     original = instance.variable
     instance.variable = original
     assert instance.variable == original
 
-@given(instance=lua::Expression::Exponentiation_strategy)
+@given(instance=lua_Expression_True_strategy)
 @settings(max_examples=50)
-def test_lua::expression::exponentiation_instantiation(instance):
-    assert isinstance(instance, lua::Expression::Exponentiation)
+def test_lua_expression_true_instantiation(instance):
+    assert isinstance(instance, lua_Expression_True)
 
-@given(instance=lua::Expression::Equal_strategy)
+@given(instance=lua_Expression_Function_strategy)
 @settings(max_examples=50)
-def test_lua::expression::equal_instantiation(instance):
-    assert isinstance(instance, lua::Expression::Equal)
+def test_lua_expression_function_instantiation(instance):
+    assert isinstance(instance, lua_Expression_Function)
 
-@given(instance=lua::Expression::Nil_strategy)
+@given(instance=lua_Expression_Equal_strategy)
 @settings(max_examples=50)
-def test_lua::expression::nil_instantiation(instance):
-    assert isinstance(instance, lua::Expression::Nil)
+def test_lua_expression_equal_instantiation(instance):
+    assert isinstance(instance, lua_Expression_Equal)
 
-@given(instance=Statement::FunctioncallOrAssignment_strategy)
+@given(instance=lua_Expression_Negate_strategy)
 @settings(max_examples=50)
-def test_statement::functioncallorassignment_instantiation(instance):
-    assert isinstance(instance, Statement::FunctioncallOrAssignment)
+def test_lua_expression_negate_instantiation(instance):
+    assert isinstance(instance, lua_Expression_Negate)
 
-@given(instance=lua::Statement::Assignment_strategy)
+@given(instance=lua_Expression_Minus_strategy)
 @settings(max_examples=50)
-def test_lua::statement::assignment_instantiation(instance):
-    assert isinstance(instance, lua::Statement::Assignment)
+def test_lua_expression_minus_instantiation(instance):
+    assert isinstance(instance, lua_Expression_Minus)
 
-@given(instance=lua::Statement::CallFunction_strategy)
+@given(instance=lua_Expression_AccessMember_strategy)
 @settings(max_examples=50)
-def test_lua::statement::callfunction_instantiation(instance):
-    assert isinstance(instance, lua::Statement::CallFunction)
+def test_lua_expression_accessmember_instantiation(instance):
+    assert isinstance(instance, lua_Expression_AccessMember)
 
-@given(instance=lua::Statement::CallMemberFunction_strategy)
+
+
+@given(instance=lua_Expression_AccessMember_strategy)
+def test_lua_expression_accessmember_memberName_setter(instance):
+    original = instance.memberName
+    instance.memberName = original
+    assert instance.memberName == original
+
+@given(instance=lua_Expression_Concatenation_strategy)
 @settings(max_examples=50)
-def test_lua::statement::callmemberfunction_instantiation(instance):
-    assert isinstance(instance, lua::Statement::CallMemberFunction)
+def test_lua_expression_concatenation_instantiation(instance):
+    assert isinstance(instance, lua_Expression_Concatenation)
 
-@given(instance=lua::Statement::CallMemberFunction_strategy)
-def test_lua::statement::callmemberfunction_memberFunctionName_type(instance):
-    assert isinstance(instance.memberFunctionName, str)
+@given(instance=lua_Expression_Not_Equal_strategy)
+@settings(max_examples=50)
+def test_lua_expression_not_equal_instantiation(instance):
+    assert isinstance(instance, lua_Expression_Not_Equal)
+
+@given(instance=lua_Expression_Number_strategy)
+@settings(max_examples=50)
+def test_lua_expression_number_instantiation(instance):
+    assert isinstance(instance, lua_Expression_Number)
 
 
-@given(instance=lua::Statement::CallMemberFunction_strategy)
-def test_lua::statement::callmemberfunction_memberFunctionName_setter(instance):
+
+@given(instance=lua_Expression_Number_strategy)
+def test_lua_expression_number_value_setter(instance):
+    original = instance.value
+    instance.value = original
+    assert instance.value == original
+
+@given(instance=lua_Expression_Smaller_Equal_strategy)
+@settings(max_examples=50)
+def test_lua_expression_smaller_equal_instantiation(instance):
+    assert isinstance(instance, lua_Expression_Smaller_Equal)
+
+@given(instance=lua_Expression_AccessArray_strategy)
+@settings(max_examples=50)
+def test_lua_expression_accessarray_instantiation(instance):
+    assert isinstance(instance, lua_Expression_AccessArray)
+
+@given(instance=lua_Expression_Smaller_strategy)
+@settings(max_examples=50)
+def test_lua_expression_smaller_instantiation(instance):
+    assert isinstance(instance, lua_Expression_Smaller)
+
+@given(instance=lua_Expression_Exponentiation_strategy)
+@settings(max_examples=50)
+def test_lua_expression_exponentiation_instantiation(instance):
+    assert isinstance(instance, lua_Expression_Exponentiation)
+
+@given(instance=lua_Expression_Or_strategy)
+@settings(max_examples=50)
+def test_lua_expression_or_instantiation(instance):
+    assert isinstance(instance, lua_Expression_Or)
+
+@given(instance=lua_Expression_Nil_strategy)
+@settings(max_examples=50)
+def test_lua_expression_nil_instantiation(instance):
+    assert isinstance(instance, lua_Expression_Nil)
+
+@given(instance=Statement_FunctioncallOrAssignment_strategy)
+@settings(max_examples=50)
+def test_statement_functioncallorassignment_instantiation(instance):
+    assert isinstance(instance, Statement_FunctioncallOrAssignment)
+
+@given(instance=lua_Statement_Assignment_strategy)
+@settings(max_examples=50)
+def test_lua_statement_assignment_instantiation(instance):
+    assert isinstance(instance, lua_Statement_Assignment)
+
+@given(instance=lua_Statement_CallMemberFunction_strategy)
+@settings(max_examples=50)
+def test_lua_statement_callmemberfunction_instantiation(instance):
+    assert isinstance(instance, lua_Statement_CallMemberFunction)
+
+
+
+@given(instance=lua_Statement_CallMemberFunction_strategy)
+def test_lua_statement_callmemberfunction_memberFunctionName_setter(instance):
     original = instance.memberFunctionName
     instance.memberFunctionName = original
     assert instance.memberFunctionName == original
 
-@given(instance=lua::Function_strategy)
+@given(instance=lua_Statement_CallFunction_strategy)
 @settings(max_examples=50)
-def test_lua::function_instantiation(instance):
-    assert isinstance(instance, lua::Function)
+def test_lua_statement_callfunction_instantiation(instance):
+    assert isinstance(instance, lua_Statement_CallFunction)
 
-@given(instance=lua::Function_strategy)
-def test_lua::function_parameters_type(instance):
-    assert isinstance(instance.parameters, str)
-
-
-@given(instance=lua::Function_strategy)
-def test_lua::function_parameters_setter(instance):
-    original = instance.parameters
-    instance.parameters = original
-    assert instance.parameters == original
-
-@given(instance=lua::Function_strategy)
-def test_lua::function_varArgs_type(instance):
-    assert isinstance(instance.varArgs, bool)
+@given(instance=lua_Function_strategy)
+@settings(max_examples=50)
+def test_lua_function_instantiation(instance):
+    assert isinstance(instance, lua_Function)
 
 
-@given(instance=lua::Function_strategy)
-def test_lua::function_varArgs_setter(instance):
+
+@given(instance=lua_Function_strategy)
+def test_lua_function_varArgs_setter(instance):
     original = instance.varArgs
     instance.varArgs = original
     assert instance.varArgs == original
 
-@given(instance=lua::Statement::If::Then::Else::ElseIfPart_strategy)
-@settings(max_examples=50)
-def test_lua::statement::if::then::else::elseifpart_instantiation(instance):
-    assert isinstance(instance, lua::Statement::If::Then::Else::ElseIfPart)
 
-@given(instance=lua::Expression_strategy)
+
+@given(instance=lua_Function_strategy)
+def test_lua_function_parameters_setter(instance):
+    original = instance.parameters
+    instance.parameters = original
+    assert instance.parameters == original
+
+@given(instance=lua_Statement_If_Then_Else_ElseIfPart_strategy)
 @settings(max_examples=50)
-def test_lua::expression_instantiation(instance):
-    assert isinstance(instance, lua::Expression)
+def test_lua_statement_if_then_else_elseifpart_instantiation(instance):
+    assert isinstance(instance, lua_Statement_If_Then_Else_ElseIfPart)
+
+@given(instance=lua_Expression_strategy)
+@settings(max_examples=50)
+def test_lua_expression_instantiation(instance):
+    assert isinstance(instance, lua_Expression)
 
 @given(instance=Statement_strategy)
 @settings(max_examples=50)
 def test_statement_instantiation(instance):
     assert isinstance(instance, Statement)
 
-@given(instance=lua::Statement::FunctioncallOrAssignment_strategy)
+@given(instance=lua_Statement_If_Then_Else_strategy)
 @settings(max_examples=50)
-def test_lua::statement::functioncallorassignment_instantiation(instance):
-    assert isinstance(instance, lua::Statement::FunctioncallOrAssignment)
+def test_lua_statement_if_then_else_instantiation(instance):
+    assert isinstance(instance, lua_Statement_If_Then_Else)
 
-@given(instance=lua::Statement::For::Numeric_strategy)
+@given(instance=lua_Statement_While_strategy)
 @settings(max_examples=50)
-def test_lua::statement::for::numeric_instantiation(instance):
-    assert isinstance(instance, lua::Statement::For::Numeric)
+def test_lua_statement_while_instantiation(instance):
+    assert isinstance(instance, lua_Statement_While)
 
-@given(instance=lua::Statement::For::Numeric_strategy)
-def test_lua::statement::for::numeric_iteratorName_type(instance):
-    assert isinstance(instance.iteratorName, str)
-
-
-@given(instance=lua::Statement::For::Numeric_strategy)
-def test_lua::statement::for::numeric_iteratorName_setter(instance):
-    original = instance.iteratorName
-    instance.iteratorName = original
-    assert instance.iteratorName == original
-
-@given(instance=lua::Statement::Repeat_strategy)
+@given(instance=lua_Statement_FunctioncallOrAssignment_strategy)
 @settings(max_examples=50)
-def test_lua::statement::repeat_instantiation(instance):
-    assert isinstance(instance, lua::Statement::Repeat)
+def test_lua_statement_functioncallorassignment_instantiation(instance):
+    assert isinstance(instance, lua_Statement_FunctioncallOrAssignment)
 
-@given(instance=lua::Statement::Local::Variable::Declaration_strategy)
+@given(instance=lua_Statement_GlobalFunction_Declaration_strategy)
 @settings(max_examples=50)
-def test_lua::statement::local::variable::declaration_instantiation(instance):
-    assert isinstance(instance, lua::Statement::Local::Variable::Declaration)
-
-@given(instance=lua::Statement::Local::Variable::Declaration_strategy)
-def test_lua::statement::local::variable::declaration_variableNames_type(instance):
-    assert isinstance(instance.variableNames, str)
+def test_lua_statement_globalfunction_declaration_instantiation(instance):
+    assert isinstance(instance, lua_Statement_GlobalFunction_Declaration)
 
 
-@given(instance=lua::Statement::Local::Variable::Declaration_strategy)
-def test_lua::statement::local::variable::declaration_variableNames_setter(instance):
-    original = instance.variableNames
-    instance.variableNames = original
-    assert instance.variableNames == original
 
-@given(instance=lua::Statement::LocalFunction::Declaration_strategy)
-@settings(max_examples=50)
-def test_lua::statement::localfunction::declaration_instantiation(instance):
-    assert isinstance(instance, lua::Statement::LocalFunction::Declaration)
-
-@given(instance=lua::Statement::LocalFunction::Declaration_strategy)
-def test_lua::statement::localfunction::declaration_functionName_type(instance):
-    assert isinstance(instance.functionName, str)
-
-
-@given(instance=lua::Statement::LocalFunction::Declaration_strategy)
-def test_lua::statement::localfunction::declaration_functionName_setter(instance):
+@given(instance=lua_Statement_GlobalFunction_Declaration_strategy)
+def test_lua_statement_globalfunction_declaration_functionName_setter(instance):
     original = instance.functionName
     instance.functionName = original
     assert instance.functionName == original
 
-@given(instance=lua::Statement::If::Then::Else_strategy)
-@settings(max_examples=50)
-def test_lua::statement::if::then::else_instantiation(instance):
-    assert isinstance(instance, lua::Statement::If::Then::Else)
-
-@given(instance=lua::Statement::For::Generic_strategy)
-@settings(max_examples=50)
-def test_lua::statement::for::generic_instantiation(instance):
-    assert isinstance(instance, lua::Statement::For::Generic)
-
-@given(instance=lua::Statement::For::Generic_strategy)
-def test_lua::statement::for::generic_names_type(instance):
-    assert isinstance(instance.names, str)
 
 
-@given(instance=lua::Statement::For::Generic_strategy)
-def test_lua::statement::for::generic_names_setter(instance):
-    original = instance.names
-    instance.names = original
-    assert instance.names == original
-
-@given(instance=lua::Statement::While_strategy)
-@settings(max_examples=50)
-def test_lua::statement::while_instantiation(instance):
-    assert isinstance(instance, lua::Statement::While)
-
-@given(instance=lua::Statement::GlobalFunction::Declaration_strategy)
-@settings(max_examples=50)
-def test_lua::statement::globalfunction::declaration_instantiation(instance):
-    assert isinstance(instance, lua::Statement::GlobalFunction::Declaration)
-
-@given(instance=lua::Statement::GlobalFunction::Declaration_strategy)
-def test_lua::statement::globalfunction::declaration_functionName_type(instance):
-    assert isinstance(instance.functionName, str)
-
-
-@given(instance=lua::Statement::GlobalFunction::Declaration_strategy)
-def test_lua::statement::globalfunction::declaration_functionName_setter(instance):
-    original = instance.functionName
-    instance.functionName = original
-    assert instance.functionName == original
-
-@given(instance=lua::Statement::GlobalFunction::Declaration_strategy)
-def test_lua::statement::globalfunction::declaration_prefix_type(instance):
-    assert isinstance(instance.prefix, str)
-
-
-@given(instance=lua::Statement::GlobalFunction::Declaration_strategy)
-def test_lua::statement::globalfunction::declaration_prefix_setter(instance):
+@given(instance=lua_Statement_GlobalFunction_Declaration_strategy)
+def test_lua_statement_globalfunction_declaration_prefix_setter(instance):
     original = instance.prefix
     instance.prefix = original
     assert instance.prefix == original
 
-@given(instance=lua::Statement::Block_strategy)
+@given(instance=lua_Statement_Local_Variable_Declaration_strategy)
 @settings(max_examples=50)
-def test_lua::statement::block_instantiation(instance):
-    assert isinstance(instance, lua::Statement::Block)
+def test_lua_statement_local_variable_declaration_instantiation(instance):
+    assert isinstance(instance, lua_Statement_Local_Variable_Declaration)
+
+
+
+@given(instance=lua_Statement_Local_Variable_Declaration_strategy)
+def test_lua_statement_local_variable_declaration_variableNames_setter(instance):
+    original = instance.variableNames
+    instance.variableNames = original
+    assert instance.variableNames == original
+
+@given(instance=lua_Statement_For_Generic_strategy)
+@settings(max_examples=50)
+def test_lua_statement_for_generic_instantiation(instance):
+    assert isinstance(instance, lua_Statement_For_Generic)
+
+
+
+@given(instance=lua_Statement_For_Generic_strategy)
+def test_lua_statement_for_generic_names_setter(instance):
+    original = instance.names
+    instance.names = original
+    assert instance.names == original
+
+@given(instance=lua_Statement_Repeat_strategy)
+@settings(max_examples=50)
+def test_lua_statement_repeat_instantiation(instance):
+    assert isinstance(instance, lua_Statement_Repeat)
+
+@given(instance=lua_Statement_LocalFunction_Declaration_strategy)
+@settings(max_examples=50)
+def test_lua_statement_localfunction_declaration_instantiation(instance):
+    assert isinstance(instance, lua_Statement_LocalFunction_Declaration)
+
+
+
+@given(instance=lua_Statement_LocalFunction_Declaration_strategy)
+def test_lua_statement_localfunction_declaration_functionName_setter(instance):
+    original = instance.functionName
+    instance.functionName = original
+    assert instance.functionName == original
+
+@given(instance=lua_Statement_For_Numeric_strategy)
+@settings(max_examples=50)
+def test_lua_statement_for_numeric_instantiation(instance):
+    assert isinstance(instance, lua_Statement_For_Numeric)
+
+
+
+@given(instance=lua_Statement_For_Numeric_strategy)
+def test_lua_statement_for_numeric_iteratorName_setter(instance):
+    original = instance.iteratorName
+    instance.iteratorName = original
+    assert instance.iteratorName == original
+
+@given(instance=lua_Statement_Block_strategy)
+@settings(max_examples=50)
+def test_lua_statement_block_instantiation(instance):
+    assert isinstance(instance, lua_Statement_Block)
 
 @given(instance=LastStatement_strategy)
 @settings(max_examples=50)
 def test_laststatement_instantiation(instance):
     assert isinstance(instance, LastStatement)
 
-@given(instance=lua::LastStatement::Break_strategy)
+@given(instance=lua_LastStatement_Break_strategy)
 @settings(max_examples=50)
-def test_lua::laststatement::break_instantiation(instance):
-    assert isinstance(instance, lua::LastStatement::Break)
+def test_lua_laststatement_break_instantiation(instance):
+    assert isinstance(instance, lua_LastStatement_Break)
 
-@given(instance=lua::LastStatement::Return_strategy)
+@given(instance=lua_LastStatement_Return_strategy)
 @settings(max_examples=50)
-def test_lua::laststatement::return_instantiation(instance):
-    assert isinstance(instance, lua::LastStatement::Return)
+def test_lua_laststatement_return_instantiation(instance):
+    assert isinstance(instance, lua_LastStatement_Return)
 
-@given(instance=lua::LastStatement_strategy)
+@given(instance=lua_LastStatement_strategy)
 @settings(max_examples=50)
-def test_lua::laststatement_instantiation(instance):
-    assert isinstance(instance, lua::LastStatement)
+def test_lua_laststatement_instantiation(instance):
+    assert isinstance(instance, lua_LastStatement)
 
-@given(instance=lua::Statement_strategy)
+@given(instance=lua_Statement_strategy)
 @settings(max_examples=50)
-def test_lua::statement_instantiation(instance):
-    assert isinstance(instance, lua::Statement)
+def test_lua_statement_instantiation(instance):
+    assert isinstance(instance, lua_Statement)
 
 @given(instance=Chunk_strategy)
 @settings(max_examples=50)
 def test_chunk_instantiation(instance):
     assert isinstance(instance, Chunk)
 
-@given(instance=lua::Block_strategy)
+@given(instance=lua_Block_strategy)
 @settings(max_examples=50)
-def test_lua::block_instantiation(instance):
-    assert isinstance(instance, lua::Block)
+def test_lua_block_instantiation(instance):
+    assert isinstance(instance, lua_Block)
 
-@given(instance=lua::Chunk_strategy)
+@given(instance=lua_Chunk_strategy)
 @settings(max_examples=50)
-def test_lua::chunk_instantiation(instance):
-    assert isinstance(instance, lua::Chunk)
+def test_lua_chunk_instantiation(instance):
+    assert isinstance(instance, lua_Chunk)

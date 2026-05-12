@@ -3,21 +3,21 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    docbook::Identifiable,
+from python_code import (
+    docbook_Identifiable,
     Section,
-    docbook::Sect2,
-    docbook::Sect1,
+    docbook_Sect2,
+    docbook_Sect1,
     TitledElement,
-    docbook::Section,
-    docbook::Article,
+    docbook_Section,
+    docbook_Article,
     Identifiable,
-    docbook::Book,
-    docbook::TitledElement,
-    docbook::Para,
-    docbook::DocBook,
+    docbook_Para,
+    docbook_TitledElement,
+    docbook_Book,
+    docbook_DocBook,
 )
 
 # =============================================================================
@@ -26,23 +26,23 @@ from classes import (
 
 
 
-def test_docbook::identifiable_is_not_abstract():
-    assert not inspect.isabstract(docbook::Identifiable)
+def test_docbook_identifiable_is_not_abstract():
+    assert not inspect.isabstract(docbook_Identifiable)
 
 
-def test_docbook::identifiable_constructor_exists():
-    assert callable(docbook::Identifiable.__init__)
+def test_docbook_identifiable_constructor_exists():
+    assert callable(docbook_Identifiable.__init__)
 
 
-def test_docbook::identifiable_constructor_args():
-    sig = inspect.signature(docbook::Identifiable.__init__)
+def test_docbook_identifiable_constructor_args():
+    sig = inspect.signature(docbook_Identifiable.__init__)
     params = list(sig.parameters.keys())
     assert "id" in params, "Missing parameter 'id'"
 
-def test_docbook::identifiable_has_id():
-    assert hasattr(docbook::Identifiable, "id")
+def test_docbook_identifiable_has_id():
+    assert hasattr(docbook_Identifiable, "id")
     descriptor = None
-    for klass in docbook::Identifiable.__mro__:
+    for klass in docbook_Identifiable.__mro__:
         if "id" in klass.__dict__:
             descriptor = klass.__dict__["id"]
             break
@@ -64,30 +64,30 @@ def test_section_constructor_args():
 
 
 
-def test_docbook::sect2_is_not_abstract():
-    assert not inspect.isabstract(docbook::Sect2)
+def test_docbook_sect2_is_not_abstract():
+    assert not inspect.isabstract(docbook_Sect2)
 
 
-def test_docbook::sect2_constructor_exists():
-    assert callable(docbook::Sect2.__init__)
+def test_docbook_sect2_constructor_exists():
+    assert callable(docbook_Sect2.__init__)
 
 
-def test_docbook::sect2_constructor_args():
-    sig = inspect.signature(docbook::Sect2.__init__)
+def test_docbook_sect2_constructor_args():
+    sig = inspect.signature(docbook_Sect2.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_docbook::sect1_is_not_abstract():
-    assert not inspect.isabstract(docbook::Sect1)
+def test_docbook_sect1_is_not_abstract():
+    assert not inspect.isabstract(docbook_Sect1)
 
 
-def test_docbook::sect1_constructor_exists():
-    assert callable(docbook::Sect1.__init__)
+def test_docbook_sect1_constructor_exists():
+    assert callable(docbook_Sect1.__init__)
 
 
-def test_docbook::sect1_constructor_args():
-    sig = inspect.signature(docbook::Sect1.__init__)
+def test_docbook_sect1_constructor_args():
+    sig = inspect.signature(docbook_Sect1.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -106,30 +106,30 @@ def test_titledelement_constructor_args():
 
 
 
-def test_docbook::section_is_not_abstract():
-    assert not inspect.isabstract(docbook::Section)
+def test_docbook_section_is_not_abstract():
+    assert not inspect.isabstract(docbook_Section)
 
 
-def test_docbook::section_constructor_exists():
-    assert callable(docbook::Section.__init__)
+def test_docbook_section_constructor_exists():
+    assert callable(docbook_Section.__init__)
 
 
-def test_docbook::section_constructor_args():
-    sig = inspect.signature(docbook::Section.__init__)
+def test_docbook_section_constructor_args():
+    sig = inspect.signature(docbook_Section.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_docbook::article_is_not_abstract():
-    assert not inspect.isabstract(docbook::Article)
+def test_docbook_article_is_not_abstract():
+    assert not inspect.isabstract(docbook_Article)
 
 
-def test_docbook::article_constructor_exists():
-    assert callable(docbook::Article.__init__)
+def test_docbook_article_constructor_exists():
+    assert callable(docbook_Article.__init__)
 
 
-def test_docbook::article_constructor_args():
-    sig = inspect.signature(docbook::Article.__init__)
+def test_docbook_article_constructor_args():
+    sig = inspect.signature(docbook_Article.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -148,61 +148,23 @@ def test_identifiable_constructor_args():
 
 
 
-def test_docbook::book_is_not_abstract():
-    assert not inspect.isabstract(docbook::Book)
+def test_docbook_para_is_not_abstract():
+    assert not inspect.isabstract(docbook_Para)
 
 
-def test_docbook::book_constructor_exists():
-    assert callable(docbook::Book.__init__)
+def test_docbook_para_constructor_exists():
+    assert callable(docbook_Para.__init__)
 
 
-def test_docbook::book_constructor_args():
-    sig = inspect.signature(docbook::Book.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_docbook::titledelement_is_not_abstract():
-    assert not inspect.isabstract(docbook::TitledElement)
-
-
-def test_docbook::titledelement_constructor_exists():
-    assert callable(docbook::TitledElement.__init__)
-
-
-def test_docbook::titledelement_constructor_args():
-    sig = inspect.signature(docbook::TitledElement.__init__)
-    params = list(sig.parameters.keys())
-    assert "title" in params, "Missing parameter 'title'"
-
-def test_docbook::titledelement_has_title():
-    assert hasattr(docbook::TitledElement, "title")
-    descriptor = None
-    for klass in docbook::TitledElement.__mro__:
-        if "title" in klass.__dict__:
-            descriptor = klass.__dict__["title"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_docbook::para_is_not_abstract():
-    assert not inspect.isabstract(docbook::Para)
-
-
-def test_docbook::para_constructor_exists():
-    assert callable(docbook::Para.__init__)
-
-
-def test_docbook::para_constructor_args():
-    sig = inspect.signature(docbook::Para.__init__)
+def test_docbook_para_constructor_args():
+    sig = inspect.signature(docbook_Para.__init__)
     params = list(sig.parameters.keys())
     assert "content" in params, "Missing parameter 'content'"
 
-def test_docbook::para_has_content():
-    assert hasattr(docbook::Para, "content")
+def test_docbook_para_has_content():
+    assert hasattr(docbook_Para, "content")
     descriptor = None
-    for klass in docbook::Para.__mro__:
+    for klass in docbook_Para.__mro__:
         if "content" in klass.__dict__:
             descriptor = klass.__dict__["content"]
             break
@@ -210,16 +172,54 @@ def test_docbook::para_has_content():
 
 
 
-def test_docbook::docbook_is_not_abstract():
-    assert not inspect.isabstract(docbook::DocBook)
+def test_docbook_titledelement_is_not_abstract():
+    assert not inspect.isabstract(docbook_TitledElement)
 
 
-def test_docbook::docbook_constructor_exists():
-    assert callable(docbook::DocBook.__init__)
+def test_docbook_titledelement_constructor_exists():
+    assert callable(docbook_TitledElement.__init__)
 
 
-def test_docbook::docbook_constructor_args():
-    sig = inspect.signature(docbook::DocBook.__init__)
+def test_docbook_titledelement_constructor_args():
+    sig = inspect.signature(docbook_TitledElement.__init__)
+    params = list(sig.parameters.keys())
+    assert "title" in params, "Missing parameter 'title'"
+
+def test_docbook_titledelement_has_title():
+    assert hasattr(docbook_TitledElement, "title")
+    descriptor = None
+    for klass in docbook_TitledElement.__mro__:
+        if "title" in klass.__dict__:
+            descriptor = klass.__dict__["title"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_docbook_book_is_not_abstract():
+    assert not inspect.isabstract(docbook_Book)
+
+
+def test_docbook_book_constructor_exists():
+    assert callable(docbook_Book.__init__)
+
+
+def test_docbook_book_constructor_args():
+    sig = inspect.signature(docbook_Book.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_docbook_docbook_is_not_abstract():
+    assert not inspect.isabstract(docbook_DocBook)
+
+
+def test_docbook_docbook_constructor_exists():
+    assert callable(docbook_DocBook.__init__)
+
+
+def test_docbook_docbook_constructor_args():
+    sig = inspect.signature(docbook_DocBook.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -234,61 +234,58 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-docbook::Identifiable_strategy = st.builds(
-    docbook::Identifiable,
+docbook_Identifiable_strategy = st.builds(
+    docbook_Identifiable,
     id=
         safe_text
 )
 Section_strategy = st.builds(
     Section,
 )
-docbook::Sect2_strategy = st.builds(
-    docbook::Sect2,
+docbook_Sect2_strategy = st.builds(
+    docbook_Sect2,
 )
-docbook::Sect1_strategy = st.builds(
-    docbook::Sect1,
+docbook_Sect1_strategy = st.builds(
+    docbook_Sect1,
 )
 TitledElement_strategy = st.builds(
     TitledElement,
 )
-docbook::Section_strategy = st.builds(
-    docbook::Section,
+docbook_Section_strategy = st.builds(
+    docbook_Section,
 )
-docbook::Article_strategy = st.builds(
-    docbook::Article,
+docbook_Article_strategy = st.builds(
+    docbook_Article,
 )
 Identifiable_strategy = st.builds(
     Identifiable,
 )
-docbook::Book_strategy = st.builds(
-    docbook::Book,
-)
-docbook::TitledElement_strategy = st.builds(
-    docbook::TitledElement,
-    title=
-        safe_text
-)
-docbook::Para_strategy = st.builds(
-    docbook::Para,
+docbook_Para_strategy = st.builds(
+    docbook_Para,
     content=
         safe_text
 )
-docbook::DocBook_strategy = st.builds(
-    docbook::DocBook,
+docbook_TitledElement_strategy = st.builds(
+    docbook_TitledElement,
+    title=
+        safe_text
+)
+docbook_Book_strategy = st.builds(
+    docbook_Book,
+)
+docbook_DocBook_strategy = st.builds(
+    docbook_DocBook,
 )
 
-@given(instance=docbook::Identifiable_strategy)
+@given(instance=docbook_Identifiable_strategy)
 @settings(max_examples=50)
-def test_docbook::identifiable_instantiation(instance):
-    assert isinstance(instance, docbook::Identifiable)
-
-@given(instance=docbook::Identifiable_strategy)
-def test_docbook::identifiable_id_type(instance):
-    assert isinstance(instance.id, str)
+def test_docbook_identifiable_instantiation(instance):
+    assert isinstance(instance, docbook_Identifiable)
 
 
-@given(instance=docbook::Identifiable_strategy)
-def test_docbook::identifiable_id_setter(instance):
+
+@given(instance=docbook_Identifiable_strategy)
+def test_docbook_identifiable_id_setter(instance):
     original = instance.id
     instance.id = original
     assert instance.id == original
@@ -298,74 +295,68 @@ def test_docbook::identifiable_id_setter(instance):
 def test_section_instantiation(instance):
     assert isinstance(instance, Section)
 
-@given(instance=docbook::Sect2_strategy)
+@given(instance=docbook_Sect2_strategy)
 @settings(max_examples=50)
-def test_docbook::sect2_instantiation(instance):
-    assert isinstance(instance, docbook::Sect2)
+def test_docbook_sect2_instantiation(instance):
+    assert isinstance(instance, docbook_Sect2)
 
-@given(instance=docbook::Sect1_strategy)
+@given(instance=docbook_Sect1_strategy)
 @settings(max_examples=50)
-def test_docbook::sect1_instantiation(instance):
-    assert isinstance(instance, docbook::Sect1)
+def test_docbook_sect1_instantiation(instance):
+    assert isinstance(instance, docbook_Sect1)
 
 @given(instance=TitledElement_strategy)
 @settings(max_examples=50)
 def test_titledelement_instantiation(instance):
     assert isinstance(instance, TitledElement)
 
-@given(instance=docbook::Section_strategy)
+@given(instance=docbook_Section_strategy)
 @settings(max_examples=50)
-def test_docbook::section_instantiation(instance):
-    assert isinstance(instance, docbook::Section)
+def test_docbook_section_instantiation(instance):
+    assert isinstance(instance, docbook_Section)
 
-@given(instance=docbook::Article_strategy)
+@given(instance=docbook_Article_strategy)
 @settings(max_examples=50)
-def test_docbook::article_instantiation(instance):
-    assert isinstance(instance, docbook::Article)
+def test_docbook_article_instantiation(instance):
+    assert isinstance(instance, docbook_Article)
 
 @given(instance=Identifiable_strategy)
 @settings(max_examples=50)
 def test_identifiable_instantiation(instance):
     assert isinstance(instance, Identifiable)
 
-@given(instance=docbook::Book_strategy)
+@given(instance=docbook_Para_strategy)
 @settings(max_examples=50)
-def test_docbook::book_instantiation(instance):
-    assert isinstance(instance, docbook::Book)
-
-@given(instance=docbook::TitledElement_strategy)
-@settings(max_examples=50)
-def test_docbook::titledelement_instantiation(instance):
-    assert isinstance(instance, docbook::TitledElement)
-
-@given(instance=docbook::TitledElement_strategy)
-def test_docbook::titledelement_title_type(instance):
-    assert isinstance(instance.title, str)
+def test_docbook_para_instantiation(instance):
+    assert isinstance(instance, docbook_Para)
 
 
-@given(instance=docbook::TitledElement_strategy)
-def test_docbook::titledelement_title_setter(instance):
-    original = instance.title
-    instance.title = original
-    assert instance.title == original
 
-@given(instance=docbook::Para_strategy)
-@settings(max_examples=50)
-def test_docbook::para_instantiation(instance):
-    assert isinstance(instance, docbook::Para)
-
-@given(instance=docbook::Para_strategy)
-def test_docbook::para_content_type(instance):
-    assert isinstance(instance.content, str)
-
-
-@given(instance=docbook::Para_strategy)
-def test_docbook::para_content_setter(instance):
+@given(instance=docbook_Para_strategy)
+def test_docbook_para_content_setter(instance):
     original = instance.content
     instance.content = original
     assert instance.content == original
 
-@given(instance=docbook::DocBook_strategy)
+@given(instance=docbook_TitledElement_strategy)
 @settings(max_examples=50)
-def test_docbook::docbook_instantiation(instance):
-    assert isinstance(instance, docbook::DocBook)
+def test_docbook_titledelement_instantiation(instance):
+    assert isinstance(instance, docbook_TitledElement)
+
+
+
+@given(instance=docbook_TitledElement_strategy)
+def test_docbook_titledelement_title_setter(instance):
+    original = instance.title
+    instance.title = original
+    assert instance.title == original
+
+@given(instance=docbook_Book_strategy)
+@settings(max_examples=50)
+def test_docbook_book_instantiation(instance):
+    assert isinstance(instance, docbook_Book)
+
+@given(instance=docbook_DocBook_strategy)
+@settings(max_examples=50)
+def test_docbook_docbook_instantiation(instance):
+    assert isinstance(instance, docbook_DocBook)

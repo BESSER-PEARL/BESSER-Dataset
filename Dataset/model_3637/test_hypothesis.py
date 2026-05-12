@@ -3,13 +3,13 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    DFAAutomaton::Symbol,
-    DFAAutomaton::Transition,
-    DFAAutomaton::State,
-    DFAAutomaton::Automaton,
+from python_code import (
+    DFAAutomaton_Symbol,
+    DFAAutomaton_Transition,
+    DFAAutomaton_State,
+    DFAAutomaton_Automaton,
 )
 
 # =============================================================================
@@ -18,23 +18,23 @@ from classes import (
 
 
 
-def test_dfaautomaton::symbol_is_not_abstract():
-    assert not inspect.isabstract(DFAAutomaton::Symbol)
+def test_dfaautomaton_symbol_is_not_abstract():
+    assert not inspect.isabstract(DFAAutomaton_Symbol)
 
 
-def test_dfaautomaton::symbol_constructor_exists():
-    assert callable(DFAAutomaton::Symbol.__init__)
+def test_dfaautomaton_symbol_constructor_exists():
+    assert callable(DFAAutomaton_Symbol.__init__)
 
 
-def test_dfaautomaton::symbol_constructor_args():
-    sig = inspect.signature(DFAAutomaton::Symbol.__init__)
+def test_dfaautomaton_symbol_constructor_args():
+    sig = inspect.signature(DFAAutomaton_Symbol.__init__)
     params = list(sig.parameters.keys())
     assert "symbol" in params, "Missing parameter 'symbol'"
 
-def test_dfaautomaton::symbol_has_symbol():
-    assert hasattr(DFAAutomaton::Symbol, "symbol")
+def test_dfaautomaton_symbol_has_symbol():
+    assert hasattr(DFAAutomaton_Symbol, "symbol")
     descriptor = None
-    for klass in DFAAutomaton::Symbol.__mro__:
+    for klass in DFAAutomaton_Symbol.__mro__:
         if "symbol" in klass.__dict__:
             descriptor = klass.__dict__["symbol"]
             break
@@ -42,81 +42,81 @@ def test_dfaautomaton::symbol_has_symbol():
 
 
 
-def test_dfaautomaton::transition_is_not_abstract():
-    assert not inspect.isabstract(DFAAutomaton::Transition)
+def test_dfaautomaton_transition_is_not_abstract():
+    assert not inspect.isabstract(DFAAutomaton_Transition)
 
 
-def test_dfaautomaton::transition_constructor_exists():
-    assert callable(DFAAutomaton::Transition.__init__)
+def test_dfaautomaton_transition_constructor_exists():
+    assert callable(DFAAutomaton_Transition.__init__)
 
 
-def test_dfaautomaton::transition_constructor_args():
-    sig = inspect.signature(DFAAutomaton::Transition.__init__)
+def test_dfaautomaton_transition_constructor_args():
+    sig = inspect.signature(DFAAutomaton_Transition.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_dfaautomaton::state_is_not_abstract():
-    assert not inspect.isabstract(DFAAutomaton::State)
+def test_dfaautomaton_state_is_not_abstract():
+    assert not inspect.isabstract(DFAAutomaton_State)
 
 
-def test_dfaautomaton::state_constructor_exists():
-    assert callable(DFAAutomaton::State.__init__)
+def test_dfaautomaton_state_constructor_exists():
+    assert callable(DFAAutomaton_State.__init__)
 
 
-def test_dfaautomaton::state_constructor_args():
-    sig = inspect.signature(DFAAutomaton::State.__init__)
+def test_dfaautomaton_state_constructor_args():
+    sig = inspect.signature(DFAAutomaton_State.__init__)
     params = list(sig.parameters.keys())
     assert "isInitial" in params, "Missing parameter 'isInitial'"
-    assert "isFinal" in params, "Missing parameter 'isFinal'"
     assert "name" in params, "Missing parameter 'name'"
+    assert "isFinal" in params, "Missing parameter 'isFinal'"
 
-def test_dfaautomaton::state_has_isInitial():
-    assert hasattr(DFAAutomaton::State, "isInitial")
+def test_dfaautomaton_state_has_isInitial():
+    assert hasattr(DFAAutomaton_State, "isInitial")
     descriptor = None
-    for klass in DFAAutomaton::State.__mro__:
+    for klass in DFAAutomaton_State.__mro__:
         if "isInitial" in klass.__dict__:
             descriptor = klass.__dict__["isInitial"]
             break
     assert isinstance(descriptor, property)
 
-def test_dfaautomaton::state_has_isFinal():
-    assert hasattr(DFAAutomaton::State, "isFinal")
+def test_dfaautomaton_state_has_name():
+    assert hasattr(DFAAutomaton_State, "name")
     descriptor = None
-    for klass in DFAAutomaton::State.__mro__:
-        if "isFinal" in klass.__dict__:
-            descriptor = klass.__dict__["isFinal"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_dfaautomaton::state_has_name():
-    assert hasattr(DFAAutomaton::State, "name")
-    descriptor = None
-    for klass in DFAAutomaton::State.__mro__:
+    for klass in DFAAutomaton_State.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
+def test_dfaautomaton_state_has_isFinal():
+    assert hasattr(DFAAutomaton_State, "isFinal")
+    descriptor = None
+    for klass in DFAAutomaton_State.__mro__:
+        if "isFinal" in klass.__dict__:
+            descriptor = klass.__dict__["isFinal"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_dfaautomaton::automaton_is_not_abstract():
-    assert not inspect.isabstract(DFAAutomaton::Automaton)
+
+def test_dfaautomaton_automaton_is_not_abstract():
+    assert not inspect.isabstract(DFAAutomaton_Automaton)
 
 
-def test_dfaautomaton::automaton_constructor_exists():
-    assert callable(DFAAutomaton::Automaton.__init__)
+def test_dfaautomaton_automaton_constructor_exists():
+    assert callable(DFAAutomaton_Automaton.__init__)
 
 
-def test_dfaautomaton::automaton_constructor_args():
-    sig = inspect.signature(DFAAutomaton::Automaton.__init__)
+def test_dfaautomaton_automaton_constructor_args():
+    sig = inspect.signature(DFAAutomaton_Automaton.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_dfaautomaton::automaton_has_name():
-    assert hasattr(DFAAutomaton::Automaton, "name")
+def test_dfaautomaton_automaton_has_name():
+    assert hasattr(DFAAutomaton_Automaton, "name")
     descriptor = None
-    for klass in DFAAutomaton::Automaton.__mro__:
+    for klass in DFAAutomaton_Automaton.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -134,100 +134,85 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-DFAAutomaton::Symbol_strategy = st.builds(
-    DFAAutomaton::Symbol,
+DFAAutomaton_Symbol_strategy = st.builds(
+    DFAAutomaton_Symbol,
     symbol=
         safe_text
 )
-DFAAutomaton::Transition_strategy = st.builds(
-    DFAAutomaton::Transition,
+DFAAutomaton_Transition_strategy = st.builds(
+    DFAAutomaton_Transition,
 )
-DFAAutomaton::State_strategy = st.builds(
-    DFAAutomaton::State,
+DFAAutomaton_State_strategy = st.builds(
+    DFAAutomaton_State,
     isInitial=
         st.booleans(),
+    name=
+        safe_text,
     isFinal=
-        st.booleans(),
-    name=
-        safe_text
+        st.booleans()
 )
-DFAAutomaton::Automaton_strategy = st.builds(
-    DFAAutomaton::Automaton,
+DFAAutomaton_Automaton_strategy = st.builds(
+    DFAAutomaton_Automaton,
     name=
         safe_text
 )
 
-@given(instance=DFAAutomaton::Symbol_strategy)
+@given(instance=DFAAutomaton_Symbol_strategy)
 @settings(max_examples=50)
-def test_dfaautomaton::symbol_instantiation(instance):
-    assert isinstance(instance, DFAAutomaton::Symbol)
-
-@given(instance=DFAAutomaton::Symbol_strategy)
-def test_dfaautomaton::symbol_symbol_type(instance):
-    assert isinstance(instance.symbol, str)
+def test_dfaautomaton_symbol_instantiation(instance):
+    assert isinstance(instance, DFAAutomaton_Symbol)
 
 
-@given(instance=DFAAutomaton::Symbol_strategy)
-def test_dfaautomaton::symbol_symbol_setter(instance):
+
+@given(instance=DFAAutomaton_Symbol_strategy)
+def test_dfaautomaton_symbol_symbol_setter(instance):
     original = instance.symbol
     instance.symbol = original
     assert instance.symbol == original
 
-@given(instance=DFAAutomaton::Transition_strategy)
+@given(instance=DFAAutomaton_Transition_strategy)
 @settings(max_examples=50)
-def test_dfaautomaton::transition_instantiation(instance):
-    assert isinstance(instance, DFAAutomaton::Transition)
+def test_dfaautomaton_transition_instantiation(instance):
+    assert isinstance(instance, DFAAutomaton_Transition)
 
-@given(instance=DFAAutomaton::State_strategy)
+@given(instance=DFAAutomaton_State_strategy)
 @settings(max_examples=50)
-def test_dfaautomaton::state_instantiation(instance):
-    assert isinstance(instance, DFAAutomaton::State)
-
-@given(instance=DFAAutomaton::State_strategy)
-def test_dfaautomaton::state_isInitial_type(instance):
-    assert isinstance(instance.isInitial, bool)
+def test_dfaautomaton_state_instantiation(instance):
+    assert isinstance(instance, DFAAutomaton_State)
 
 
-@given(instance=DFAAutomaton::State_strategy)
-def test_dfaautomaton::state_isInitial_setter(instance):
+
+@given(instance=DFAAutomaton_State_strategy)
+def test_dfaautomaton_state_isInitial_setter(instance):
     original = instance.isInitial
     instance.isInitial = original
     assert instance.isInitial == original
 
-@given(instance=DFAAutomaton::State_strategy)
-def test_dfaautomaton::state_isFinal_type(instance):
-    assert isinstance(instance.isFinal, bool)
 
 
-@given(instance=DFAAutomaton::State_strategy)
-def test_dfaautomaton::state_isFinal_setter(instance):
-    original = instance.isFinal
-    instance.isFinal = original
-    assert instance.isFinal == original
-
-@given(instance=DFAAutomaton::State_strategy)
-def test_dfaautomaton::state_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=DFAAutomaton::State_strategy)
-def test_dfaautomaton::state_name_setter(instance):
+@given(instance=DFAAutomaton_State_strategy)
+def test_dfaautomaton_state_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=DFAAutomaton::Automaton_strategy)
+
+
+@given(instance=DFAAutomaton_State_strategy)
+def test_dfaautomaton_state_isFinal_setter(instance):
+    original = instance.isFinal
+    instance.isFinal = original
+    assert instance.isFinal == original
+
+@given(instance=DFAAutomaton_Automaton_strategy)
 @settings(max_examples=50)
-def test_dfaautomaton::automaton_instantiation(instance):
-    assert isinstance(instance, DFAAutomaton::Automaton)
-
-@given(instance=DFAAutomaton::Automaton_strategy)
-def test_dfaautomaton::automaton_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_dfaautomaton_automaton_instantiation(instance):
+    assert isinstance(instance, DFAAutomaton_Automaton)
 
 
-@given(instance=DFAAutomaton::Automaton_strategy)
-def test_dfaautomaton::automaton_name_setter(instance):
+
+@given(instance=DFAAutomaton_Automaton_strategy)
+def test_dfaautomaton_automaton_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original

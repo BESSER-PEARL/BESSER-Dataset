@@ -3,7 +3,7 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
 from python_code import (
     Logout_external,
@@ -74,16 +74,16 @@ def test_manager2_constructor_exists():
 def test_manager2_constructor_args():
     sig = inspect.signature(Manager2.__init__)
     params = list(sig.parameters.keys())
-    assert "name" in params, "Missing parameter 'name'"
-    assert "id" in params, "Missing parameter 'id'"
     assert "password" in params, "Missing parameter 'password'"
+    assert "id" in params, "Missing parameter 'id'"
+    assert "name" in params, "Missing parameter 'name'"
 
-def test_manager2_has_name():
-    assert hasattr(Manager2, "name")
+def test_manager2_has_password():
+    assert hasattr(Manager2, "password")
     descriptor = None
     for klass in Manager2.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
+        if "password" in klass.__dict__:
+            descriptor = klass.__dict__["password"]
             break
     assert isinstance(descriptor, property)
 
@@ -96,12 +96,12 @@ def test_manager2_has_id():
             break
     assert isinstance(descriptor, property)
 
-def test_manager2_has_password():
-    assert hasattr(Manager2, "password")
+def test_manager2_has_name():
+    assert hasattr(Manager2, "name")
     descriptor = None
     for klass in Manager2.__mro__:
-        if "password" in klass.__dict__:
-            descriptor = klass.__dict__["password"]
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
@@ -118,17 +118,8 @@ def test_customer1_constructor_exists():
 def test_customer1_constructor_args():
     sig = inspect.signature(Customer1.__init__)
     params = list(sig.parameters.keys())
-    assert "Customer_Name" in params, "Missing parameter 'Customer_Name'"
     assert "S" in params, "Missing parameter 'S'"
-
-def test_customer1_has_Customer_Name():
-    assert hasattr(Customer1, "Customer_Name")
-    descriptor = None
-    for klass in Customer1.__mro__:
-        if "Customer_Name" in klass.__dict__:
-            descriptor = klass.__dict__["Customer_Name"]
-            break
-    assert isinstance(descriptor, property)
+    assert "Customer_Name" in params, "Missing parameter 'Customer_Name'"
 
 def test_customer1_has_S():
     assert hasattr(Customer1, "S")
@@ -136,6 +127,15 @@ def test_customer1_has_S():
     for klass in Customer1.__mro__:
         if "S" in klass.__dict__:
             descriptor = klass.__dict__["S"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_customer1_has_Customer_Name():
+    assert hasattr(Customer1, "Customer_Name")
+    descriptor = None
+    for klass in Customer1.__mro__:
+        if "Customer_Name" in klass.__dict__:
+            descriptor = klass.__dict__["Customer_Name"]
             break
     assert isinstance(descriptor, property)
 
@@ -152,18 +152,9 @@ def test_manager1_constructor_exists():
 def test_manager1_constructor_args():
     sig = inspect.signature(Manager1.__init__)
     params = list(sig.parameters.keys())
-    assert "Manager_id" in params, "Missing parameter 'Manager_id'"
     assert "Password" in params, "Missing parameter 'Password'"
     assert "Name" in params, "Missing parameter 'Name'"
-
-def test_manager1_has_Manager_id():
-    assert hasattr(Manager1, "Manager_id")
-    descriptor = None
-    for klass in Manager1.__mro__:
-        if "Manager_id" in klass.__dict__:
-            descriptor = klass.__dict__["Manager_id"]
-            break
-    assert isinstance(descriptor, property)
+    assert "Manager_id" in params, "Missing parameter 'Manager_id'"
 
 def test_manager1_has_Password():
     assert hasattr(Manager1, "Password")
@@ -183,6 +174,15 @@ def test_manager1_has_Name():
             break
     assert isinstance(descriptor, property)
 
+def test_manager1_has_Manager_id():
+    assert hasattr(Manager1, "Manager_id")
+    descriptor = None
+    for klass in Manager1.__mro__:
+        if "Manager_id" in klass.__dict__:
+            descriptor = klass.__dict__["Manager_id"]
+            break
+    assert isinstance(descriptor, property)
+
 
 
 def test_order_is_not_abstract():
@@ -196,17 +196,8 @@ def test_order_constructor_exists():
 def test_order_constructor_args():
     sig = inspect.signature(Order.__init__)
     params = list(sig.parameters.keys())
-    assert "id" in params, "Missing parameter 'id'"
     assert "name" in params, "Missing parameter 'name'"
-
-def test_order_has_id():
-    assert hasattr(Order, "id")
-    descriptor = None
-    for klass in Order.__mro__:
-        if "id" in klass.__dict__:
-            descriptor = klass.__dict__["id"]
-            break
-    assert isinstance(descriptor, property)
+    assert "id" in params, "Missing parameter 'id'"
 
 def test_order_has_name():
     assert hasattr(Order, "name")
@@ -214,6 +205,15 @@ def test_order_has_name():
     for klass in Order.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_order_has_id():
+    assert hasattr(Order, "id")
+    descriptor = None
+    for klass in Order.__mro__:
+        if "id" in klass.__dict__:
+            descriptor = klass.__dict__["id"]
             break
     assert isinstance(descriptor, property)
 
@@ -298,33 +298,15 @@ def test_employee1_constructor_exists():
 def test_employee1_constructor_args():
     sig = inspect.signature(Employee1.__init__)
     params = list(sig.parameters.keys())
-    assert "UserName" in params, "Missing parameter 'UserName'"
-    assert "attribute" in params, "Missing parameter 'attribute'"
     assert "Salary" in params, "Missing parameter 'Salary'"
-    assert "Email" in params, "Missing parameter 'Email'"
-    assert "contact_no" in params, "Missing parameter 'contact_no'"
-    assert "name" in params, "Missing parameter 'name'"
-    assert "Emp_Address" in params, "Missing parameter 'Emp_Address'"
     assert "password" in params, "Missing parameter 'password'"
     assert "Emp_Dep" in params, "Missing parameter 'Emp_Dep'"
-
-def test_employee1_has_UserName():
-    assert hasattr(Employee1, "UserName")
-    descriptor = None
-    for klass in Employee1.__mro__:
-        if "UserName" in klass.__dict__:
-            descriptor = klass.__dict__["UserName"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_employee1_has_attribute():
-    assert hasattr(Employee1, "attribute")
-    descriptor = None
-    for klass in Employee1.__mro__:
-        if "attribute" in klass.__dict__:
-            descriptor = klass.__dict__["attribute"]
-            break
-    assert isinstance(descriptor, property)
+    assert "Email" in params, "Missing parameter 'Email'"
+    assert "name" in params, "Missing parameter 'name'"
+    assert "contact_no" in params, "Missing parameter 'contact_no'"
+    assert "Emp_Address" in params, "Missing parameter 'Emp_Address'"
+    assert "UserName" in params, "Missing parameter 'UserName'"
+    assert "attribute" in params, "Missing parameter 'attribute'"
 
 def test_employee1_has_Salary():
     assert hasattr(Employee1, "Salary")
@@ -332,42 +314,6 @@ def test_employee1_has_Salary():
     for klass in Employee1.__mro__:
         if "Salary" in klass.__dict__:
             descriptor = klass.__dict__["Salary"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_employee1_has_Email():
-    assert hasattr(Employee1, "Email")
-    descriptor = None
-    for klass in Employee1.__mro__:
-        if "Email" in klass.__dict__:
-            descriptor = klass.__dict__["Email"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_employee1_has_contact_no():
-    assert hasattr(Employee1, "contact_no")
-    descriptor = None
-    for klass in Employee1.__mro__:
-        if "contact_no" in klass.__dict__:
-            descriptor = klass.__dict__["contact_no"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_employee1_has_name():
-    assert hasattr(Employee1, "name")
-    descriptor = None
-    for klass in Employee1.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_employee1_has_Emp_Address():
-    assert hasattr(Employee1, "Emp_Address")
-    descriptor = None
-    for klass in Employee1.__mro__:
-        if "Emp_Address" in klass.__dict__:
-            descriptor = klass.__dict__["Emp_Address"]
             break
     assert isinstance(descriptor, property)
 
@@ -389,6 +335,60 @@ def test_employee1_has_Emp_Dep():
             break
     assert isinstance(descriptor, property)
 
+def test_employee1_has_Email():
+    assert hasattr(Employee1, "Email")
+    descriptor = None
+    for klass in Employee1.__mro__:
+        if "Email" in klass.__dict__:
+            descriptor = klass.__dict__["Email"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_employee1_has_name():
+    assert hasattr(Employee1, "name")
+    descriptor = None
+    for klass in Employee1.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_employee1_has_contact_no():
+    assert hasattr(Employee1, "contact_no")
+    descriptor = None
+    for klass in Employee1.__mro__:
+        if "contact_no" in klass.__dict__:
+            descriptor = klass.__dict__["contact_no"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_employee1_has_Emp_Address():
+    assert hasattr(Employee1, "Emp_Address")
+    descriptor = None
+    for klass in Employee1.__mro__:
+        if "Emp_Address" in klass.__dict__:
+            descriptor = klass.__dict__["Emp_Address"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_employee1_has_UserName():
+    assert hasattr(Employee1, "UserName")
+    descriptor = None
+    for klass in Employee1.__mro__:
+        if "UserName" in klass.__dict__:
+            descriptor = klass.__dict__["UserName"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_employee1_has_attribute():
+    assert hasattr(Employee1, "attribute")
+    descriptor = None
+    for klass in Employee1.__mro__:
+        if "attribute" in klass.__dict__:
+            descriptor = klass.__dict__["attribute"]
+            break
+    assert isinstance(descriptor, property)
+
 
 
 def test_admin1_is_not_abstract():
@@ -402,17 +402,8 @@ def test_admin1_constructor_exists():
 def test_admin1_constructor_args():
     sig = inspect.signature(Admin1.__init__)
     params = list(sig.parameters.keys())
-    assert "UserName" in params, "Missing parameter 'UserName'"
     assert "password" in params, "Missing parameter 'password'"
-
-def test_admin1_has_UserName():
-    assert hasattr(Admin1, "UserName")
-    descriptor = None
-    for klass in Admin1.__mro__:
-        if "UserName" in klass.__dict__:
-            descriptor = klass.__dict__["UserName"]
-            break
-    assert isinstance(descriptor, property)
+    assert "UserName" in params, "Missing parameter 'UserName'"
 
 def test_admin1_has_password():
     assert hasattr(Admin1, "password")
@@ -420,6 +411,15 @@ def test_admin1_has_password():
     for klass in Admin1.__mro__:
         if "password" in klass.__dict__:
             descriptor = klass.__dict__["password"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_admin1_has_UserName():
+    assert hasattr(Admin1, "UserName")
+    descriptor = None
+    for klass in Admin1.__mro__:
+        if "UserName" in klass.__dict__:
+            descriptor = klass.__dict__["UserName"]
             break
     assert isinstance(descriptor, property)
 
@@ -436,17 +436,8 @@ def test_users1_constructor_exists():
 def test_users1_constructor_args():
     sig = inspect.signature(Users1.__init__)
     params = list(sig.parameters.keys())
-    assert "id" in params, "Missing parameter 'id'"
     assert "password" in params, "Missing parameter 'password'"
-
-def test_users1_has_id():
-    assert hasattr(Users1, "id")
-    descriptor = None
-    for klass in Users1.__mro__:
-        if "id" in klass.__dict__:
-            descriptor = klass.__dict__["id"]
-            break
-    assert isinstance(descriptor, property)
+    assert "id" in params, "Missing parameter 'id'"
 
 def test_users1_has_password():
     assert hasattr(Users1, "password")
@@ -454,6 +445,15 @@ def test_users1_has_password():
     for klass in Users1.__mro__:
         if "password" in klass.__dict__:
             descriptor = klass.__dict__["password"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_users1_has_id():
+    assert hasattr(Users1, "id")
+    descriptor = None
+    for klass in Users1.__mro__:
+        if "id" in klass.__dict__:
+            descriptor = klass.__dict__["id"]
             break
     assert isinstance(descriptor, property)
 
@@ -470,17 +470,8 @@ def test_admin_constructor_exists():
 def test_admin_constructor_args():
     sig = inspect.signature(Admin.__init__)
     params = list(sig.parameters.keys())
-    assert "UserName" in params, "Missing parameter 'UserName'"
     assert "Password" in params, "Missing parameter 'Password'"
-
-def test_admin_has_UserName():
-    assert hasattr(Admin, "UserName")
-    descriptor = None
-    for klass in Admin.__mro__:
-        if "UserName" in klass.__dict__:
-            descriptor = klass.__dict__["UserName"]
-            break
-    assert isinstance(descriptor, property)
+    assert "UserName" in params, "Missing parameter 'UserName'"
 
 def test_admin_has_Password():
     assert hasattr(Admin, "Password")
@@ -488,6 +479,15 @@ def test_admin_has_Password():
     for klass in Admin.__mro__:
         if "Password" in klass.__dict__:
             descriptor = klass.__dict__["Password"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_admin_has_UserName():
+    assert hasattr(Admin, "UserName")
+    descriptor = None
+    for klass in Admin.__mro__:
+        if "UserName" in klass.__dict__:
+            descriptor = klass.__dict__["UserName"]
             break
     assert isinstance(descriptor, property)
 
@@ -608,48 +608,12 @@ def test_leave_constructor_exists():
 def test_leave_constructor_args():
     sig = inspect.signature(Leave.__init__)
     params = list(sig.parameters.keys())
-    assert "Leave_EndDate" in params, "Missing parameter 'Leave_EndDate'"
-    assert "leave_id" in params, "Missing parameter 'leave_id'"
-    assert "Leave_Status" in params, "Missing parameter 'Leave_Status'"
-    assert "Leave_Title" in params, "Missing parameter 'Leave_Title'"
     assert "Emp_Id" in params, "Missing parameter 'Emp_Id'"
     assert "Leave_detail" in params, "Missing parameter 'Leave_detail'"
-
-def test_leave_has_Leave_EndDate():
-    assert hasattr(Leave, "Leave_EndDate")
-    descriptor = None
-    for klass in Leave.__mro__:
-        if "Leave_EndDate" in klass.__dict__:
-            descriptor = klass.__dict__["Leave_EndDate"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_leave_has_leave_id():
-    assert hasattr(Leave, "leave_id")
-    descriptor = None
-    for klass in Leave.__mro__:
-        if "leave_id" in klass.__dict__:
-            descriptor = klass.__dict__["leave_id"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_leave_has_Leave_Status():
-    assert hasattr(Leave, "Leave_Status")
-    descriptor = None
-    for klass in Leave.__mro__:
-        if "Leave_Status" in klass.__dict__:
-            descriptor = klass.__dict__["Leave_Status"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_leave_has_Leave_Title():
-    assert hasattr(Leave, "Leave_Title")
-    descriptor = None
-    for klass in Leave.__mro__:
-        if "Leave_Title" in klass.__dict__:
-            descriptor = klass.__dict__["Leave_Title"]
-            break
-    assert isinstance(descriptor, property)
+    assert "Leave_Title" in params, "Missing parameter 'Leave_Title'"
+    assert "Leave_Status" in params, "Missing parameter 'Leave_Status'"
+    assert "leave_id" in params, "Missing parameter 'leave_id'"
+    assert "Leave_EndDate" in params, "Missing parameter 'Leave_EndDate'"
 
 def test_leave_has_Emp_Id():
     assert hasattr(Leave, "Emp_Id")
@@ -669,6 +633,42 @@ def test_leave_has_Leave_detail():
             break
     assert isinstance(descriptor, property)
 
+def test_leave_has_Leave_Title():
+    assert hasattr(Leave, "Leave_Title")
+    descriptor = None
+    for klass in Leave.__mro__:
+        if "Leave_Title" in klass.__dict__:
+            descriptor = klass.__dict__["Leave_Title"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_leave_has_Leave_Status():
+    assert hasattr(Leave, "Leave_Status")
+    descriptor = None
+    for klass in Leave.__mro__:
+        if "Leave_Status" in klass.__dict__:
+            descriptor = klass.__dict__["Leave_Status"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_leave_has_leave_id():
+    assert hasattr(Leave, "leave_id")
+    descriptor = None
+    for klass in Leave.__mro__:
+        if "leave_id" in klass.__dict__:
+            descriptor = klass.__dict__["leave_id"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_leave_has_Leave_EndDate():
+    assert hasattr(Leave, "Leave_EndDate")
+    descriptor = None
+    for klass in Leave.__mro__:
+        if "Leave_EndDate" in klass.__dict__:
+            descriptor = klass.__dict__["Leave_EndDate"]
+            break
+    assert isinstance(descriptor, property)
+
 
 
 def test_salary_is_not_abstract():
@@ -682,19 +682,19 @@ def test_salary_constructor_exists():
 def test_salary_constructor_args():
     sig = inspect.signature(Salary.__init__)
     params = list(sig.parameters.keys())
-    assert "Emp_Id" in params, "Missing parameter 'Emp_Id'"
-    assert "Sly_Netgross" in params, "Missing parameter 'Sly_Netgross'"
-    assert "Sly_Decrement" in params, "Missing parameter 'Sly_Decrement'"
     assert "Sly_Basic" in params, "Missing parameter 'Sly_Basic'"
-    assert "Sly_Increment" in params, "Missing parameter 'Sly_Increment'"
+    assert "Sly_Netgross" in params, "Missing parameter 'Sly_Netgross'"
     assert "OverTime" in params, "Missing parameter 'OverTime'"
+    assert "Sly_Decrement" in params, "Missing parameter 'Sly_Decrement'"
+    assert "Sly_Increment" in params, "Missing parameter 'Sly_Increment'"
+    assert "Emp_Id" in params, "Missing parameter 'Emp_Id'"
 
-def test_salary_has_Emp_Id():
-    assert hasattr(Salary, "Emp_Id")
+def test_salary_has_Sly_Basic():
+    assert hasattr(Salary, "Sly_Basic")
     descriptor = None
     for klass in Salary.__mro__:
-        if "Emp_Id" in klass.__dict__:
-            descriptor = klass.__dict__["Emp_Id"]
+        if "Sly_Basic" in klass.__dict__:
+            descriptor = klass.__dict__["Sly_Basic"]
             break
     assert isinstance(descriptor, property)
 
@@ -707,21 +707,21 @@ def test_salary_has_Sly_Netgross():
             break
     assert isinstance(descriptor, property)
 
+def test_salary_has_OverTime():
+    assert hasattr(Salary, "OverTime")
+    descriptor = None
+    for klass in Salary.__mro__:
+        if "OverTime" in klass.__dict__:
+            descriptor = klass.__dict__["OverTime"]
+            break
+    assert isinstance(descriptor, property)
+
 def test_salary_has_Sly_Decrement():
     assert hasattr(Salary, "Sly_Decrement")
     descriptor = None
     for klass in Salary.__mro__:
         if "Sly_Decrement" in klass.__dict__:
             descriptor = klass.__dict__["Sly_Decrement"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_salary_has_Sly_Basic():
-    assert hasattr(Salary, "Sly_Basic")
-    descriptor = None
-    for klass in Salary.__mro__:
-        if "Sly_Basic" in klass.__dict__:
-            descriptor = klass.__dict__["Sly_Basic"]
             break
     assert isinstance(descriptor, property)
 
@@ -734,12 +734,12 @@ def test_salary_has_Sly_Increment():
             break
     assert isinstance(descriptor, property)
 
-def test_salary_has_OverTime():
-    assert hasattr(Salary, "OverTime")
+def test_salary_has_Emp_Id():
+    assert hasattr(Salary, "Emp_Id")
     descriptor = None
     for klass in Salary.__mro__:
-        if "OverTime" in klass.__dict__:
-            descriptor = klass.__dict__["OverTime"]
+        if "Emp_Id" in klass.__dict__:
+            descriptor = klass.__dict__["Emp_Id"]
             break
     assert isinstance(descriptor, property)
 
@@ -756,21 +756,30 @@ def test_employee_constructor_exists():
 def test_employee_constructor_args():
     sig = inspect.signature(Employee.__init__)
     params = list(sig.parameters.keys())
-    assert "Emp_Salary" in params, "Missing parameter 'Emp_Salary'"
+    assert "Password" in params, "Missing parameter 'Password'"
+    assert "Emp_Address" in params, "Missing parameter 'Emp_Address'"
     assert "Emp_Id" in params, "Missing parameter 'Emp_Id'"
     assert "Emp_Department" in params, "Missing parameter 'Emp_Department'"
-    assert "Emp_Name" in params, "Missing parameter 'Emp_Name'"
-    assert "Password" in params, "Missing parameter 'Password'"
     assert "Emp_Email" in params, "Missing parameter 'Emp_Email'"
+    assert "Emp_Salary" in params, "Missing parameter 'Emp_Salary'"
+    assert "Emp_Name" in params, "Missing parameter 'Emp_Name'"
     assert "Emp_ContactNo" in params, "Missing parameter 'Emp_ContactNo'"
-    assert "Emp_Address" in params, "Missing parameter 'Emp_Address'"
 
-def test_employee_has_Emp_Salary():
-    assert hasattr(Employee, "Emp_Salary")
+def test_employee_has_Password():
+    assert hasattr(Employee, "Password")
     descriptor = None
     for klass in Employee.__mro__:
-        if "Emp_Salary" in klass.__dict__:
-            descriptor = klass.__dict__["Emp_Salary"]
+        if "Password" in klass.__dict__:
+            descriptor = klass.__dict__["Password"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_employee_has_Emp_Address():
+    assert hasattr(Employee, "Emp_Address")
+    descriptor = None
+    for klass in Employee.__mro__:
+        if "Emp_Address" in klass.__dict__:
+            descriptor = klass.__dict__["Emp_Address"]
             break
     assert isinstance(descriptor, property)
 
@@ -792,24 +801,6 @@ def test_employee_has_Emp_Department():
             break
     assert isinstance(descriptor, property)
 
-def test_employee_has_Emp_Name():
-    assert hasattr(Employee, "Emp_Name")
-    descriptor = None
-    for klass in Employee.__mro__:
-        if "Emp_Name" in klass.__dict__:
-            descriptor = klass.__dict__["Emp_Name"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_employee_has_Password():
-    assert hasattr(Employee, "Password")
-    descriptor = None
-    for klass in Employee.__mro__:
-        if "Password" in klass.__dict__:
-            descriptor = klass.__dict__["Password"]
-            break
-    assert isinstance(descriptor, property)
-
 def test_employee_has_Emp_Email():
     assert hasattr(Employee, "Emp_Email")
     descriptor = None
@@ -819,21 +810,30 @@ def test_employee_has_Emp_Email():
             break
     assert isinstance(descriptor, property)
 
+def test_employee_has_Emp_Salary():
+    assert hasattr(Employee, "Emp_Salary")
+    descriptor = None
+    for klass in Employee.__mro__:
+        if "Emp_Salary" in klass.__dict__:
+            descriptor = klass.__dict__["Emp_Salary"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_employee_has_Emp_Name():
+    assert hasattr(Employee, "Emp_Name")
+    descriptor = None
+    for klass in Employee.__mro__:
+        if "Emp_Name" in klass.__dict__:
+            descriptor = klass.__dict__["Emp_Name"]
+            break
+    assert isinstance(descriptor, property)
+
 def test_employee_has_Emp_ContactNo():
     assert hasattr(Employee, "Emp_ContactNo")
     descriptor = None
     for klass in Employee.__mro__:
         if "Emp_ContactNo" in klass.__dict__:
             descriptor = klass.__dict__["Emp_ContactNo"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_employee_has_Emp_Address():
-    assert hasattr(Employee, "Emp_Address")
-    descriptor = None
-    for klass in Employee.__mro__:
-        if "Emp_Address" in klass.__dict__:
-            descriptor = klass.__dict__["Emp_Address"]
             break
     assert isinstance(descriptor, property)
 
@@ -857,35 +857,35 @@ Login_external_strategy = st.builds(
 )
 Manager2_strategy = st.builds(
     Manager2,
-    name=
+    password=
         safe_text,
     id=
         st.integers(),
-    password=
+    name=
         safe_text
 )
 Customer1_strategy = st.builds(
     Customer1,
-    Customer_Name=
-        safe_text,
     S=
+        safe_text,
+    Customer_Name=
         safe_text
 )
 Manager1_strategy = st.builds(
     Manager1,
-    Manager_id=
-        st.integers(),
     Password=
         safe_text,
     Name=
-        safe_text
+        safe_text,
+    Manager_id=
+        st.integers()
 )
 Order_strategy = st.builds(
     Order,
-    id=
-        st.integers(),
     name=
-        safe_text
+        safe_text,
+    id=
+        st.integers()
 )
 Manager_strategy = st.builds(
     Manager,
@@ -903,44 +903,44 @@ Customer_strategy = st.builds(
 )
 Employee1_strategy = st.builds(
     Employee1,
-    UserName=
-        safe_text,
-    attribute=
-        safe_text,
     Salary=
         st.integers(),
-    Email=
-        safe_text,
-    contact_no=
-        st.integers(),
-    name=
-        safe_text,
-    Emp_Address=
-        safe_text,
     password=
         safe_text,
     Emp_Dep=
+        safe_text,
+    Email=
+        safe_text,
+    name=
+        safe_text,
+    contact_no=
+        st.integers(),
+    Emp_Address=
+        safe_text,
+    UserName=
+        safe_text,
+    attribute=
         safe_text
 )
 Admin1_strategy = st.builds(
     Admin1,
-    UserName=
-        safe_text,
     password=
+        safe_text,
+    UserName=
         safe_text
 )
 Users1_strategy = st.builds(
     Users1,
-    id=
-        safe_text,
     password=
+        safe_text,
+    id=
         safe_text
 )
 Admin_strategy = st.builds(
     Admin,
-    UserName=
-        safe_text,
     Password=
+        safe_text,
+    UserName=
         safe_text
 )
 Employee_Actor_strategy = st.builds(
@@ -967,51 +967,51 @@ Users_strategy = st.builds(
 )
 Leave_strategy = st.builds(
     Leave,
-    Leave_EndDate=
-        st.dates(),
-    leave_id=
-        st.integers(),
-    Leave_Status=
-        safe_text,
-    Leave_Title=
-        safe_text,
     Emp_Id=
         st.integers(),
     Leave_detail=
-        safe_text
+        safe_text,
+    Leave_Title=
+        safe_text,
+    Leave_Status=
+        safe_text,
+    leave_id=
+        st.integers(),
+    Leave_EndDate=
+        st.dates()
 )
 Salary_strategy = st.builds(
     Salary,
-    Emp_Id=
-        st.integers(),
+    Sly_Basic=
+        st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False),
     Sly_Netgross=
         st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False),
+    OverTime=
+        safe_text,
     Sly_Decrement=
-        st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False),
-    Sly_Basic=
         st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False),
     Sly_Increment=
         st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False),
-    OverTime=
-        safe_text
+    Emp_Id=
+        st.integers()
 )
 Employee_strategy = st.builds(
     Employee,
-    Emp_Salary=
-        st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False),
+    Password=
+        safe_text,
+    Emp_Address=
+        safe_text,
     Emp_Id=
         st.integers(),
     Emp_Department=
         safe_text,
-    Emp_Name=
-        safe_text,
-    Password=
-        safe_text,
     Emp_Email=
         safe_text,
-    Emp_ContactNo=
+    Emp_Salary=
+        st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False),
+    Emp_Name=
         safe_text,
-    Emp_Address=
+    Emp_ContactNo=
         safe_text
 )
 
@@ -1030,31 +1030,6 @@ def test_login_external_instantiation(instance):
 def test_manager2_instantiation(instance):
     assert isinstance(instance, Manager2)
 
-@given(instance=Manager2_strategy)
-def test_manager2_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=Manager2_strategy)
-def test_manager2_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
-
-@given(instance=Manager2_strategy)
-def test_manager2_id_type(instance):
-    assert isinstance(instance.id, int)
-
-
-@given(instance=Manager2_strategy)
-def test_manager2_id_setter(instance):
-    original = instance.id
-    instance.id = original
-    assert instance.id == original
-
-@given(instance=Manager2_strategy)
-def test_manager2_password_type(instance):
-    assert isinstance(instance.password, str)
 
 
 @given(instance=Manager2_strategy)
@@ -1063,25 +1038,27 @@ def test_manager2_password_setter(instance):
     instance.password = original
     assert instance.password == original
 
+
+
+@given(instance=Manager2_strategy)
+def test_manager2_id_setter(instance):
+    original = instance.id
+    instance.id = original
+    assert instance.id == original
+
+
+
+@given(instance=Manager2_strategy)
+def test_manager2_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
 @given(instance=Customer1_strategy)
 @settings(max_examples=50)
 def test_customer1_instantiation(instance):
     assert isinstance(instance, Customer1)
 
-@given(instance=Customer1_strategy)
-def test_customer1_Customer_Name_type(instance):
-    assert isinstance(instance.Customer_Name, str)
-
-
-@given(instance=Customer1_strategy)
-def test_customer1_Customer_Name_setter(instance):
-    original = instance.Customer_Name
-    instance.Customer_Name = original
-    assert instance.Customer_Name == original
-
-@given(instance=Customer1_strategy)
-def test_customer1_S_type(instance):
-    assert isinstance(instance.S, str)
 
 
 @given(instance=Customer1_strategy)
@@ -1090,25 +1067,19 @@ def test_customer1_S_setter(instance):
     instance.S = original
     assert instance.S == original
 
+
+
+@given(instance=Customer1_strategy)
+def test_customer1_Customer_Name_setter(instance):
+    original = instance.Customer_Name
+    instance.Customer_Name = original
+    assert instance.Customer_Name == original
+
 @given(instance=Manager1_strategy)
 @settings(max_examples=50)
 def test_manager1_instantiation(instance):
     assert isinstance(instance, Manager1)
 
-@given(instance=Manager1_strategy)
-def test_manager1_Manager_id_type(instance):
-    assert isinstance(instance.Manager_id, int)
-
-
-@given(instance=Manager1_strategy)
-def test_manager1_Manager_id_setter(instance):
-    original = instance.Manager_id
-    instance.Manager_id = original
-    assert instance.Manager_id == original
-
-@given(instance=Manager1_strategy)
-def test_manager1_Password_type(instance):
-    assert isinstance(instance.Password, str)
 
 
 @given(instance=Manager1_strategy)
@@ -1117,9 +1088,6 @@ def test_manager1_Password_setter(instance):
     instance.Password = original
     assert instance.Password == original
 
-@given(instance=Manager1_strategy)
-def test_manager1_Name_type(instance):
-    assert isinstance(instance.Name, str)
 
 
 @given(instance=Manager1_strategy)
@@ -1128,25 +1096,19 @@ def test_manager1_Name_setter(instance):
     instance.Name = original
     assert instance.Name == original
 
+
+
+@given(instance=Manager1_strategy)
+def test_manager1_Manager_id_setter(instance):
+    original = instance.Manager_id
+    instance.Manager_id = original
+    assert instance.Manager_id == original
+
 @given(instance=Order_strategy)
 @settings(max_examples=50)
 def test_order_instantiation(instance):
     assert isinstance(instance, Order)
 
-@given(instance=Order_strategy)
-def test_order_id_type(instance):
-    assert isinstance(instance.id, int)
-
-
-@given(instance=Order_strategy)
-def test_order_id_setter(instance):
-    original = instance.id
-    instance.id = original
-    assert instance.id == original
-
-@given(instance=Order_strategy)
-def test_order_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
 @given(instance=Order_strategy)
@@ -1155,14 +1117,19 @@ def test_order_name_setter(instance):
     instance.name = original
     assert instance.name == original
 
+
+
+@given(instance=Order_strategy)
+def test_order_id_setter(instance):
+    original = instance.id
+    instance.id = original
+    assert instance.id == original
+
 @given(instance=Manager_strategy)
 @settings(max_examples=50)
 def test_manager_instantiation(instance):
     assert isinstance(instance, Manager)
 
-@given(instance=Manager_strategy)
-def test_manager_password_type(instance):
-    assert isinstance(instance.password, str)
 
 
 @given(instance=Manager_strategy)
@@ -1171,9 +1138,6 @@ def test_manager_password_setter(instance):
     instance.password = original
     assert instance.password == original
 
-@given(instance=Manager_strategy)
-def test_manager_UserName_type(instance):
-    assert isinstance(instance.UserName, str)
 
 
 @given(instance=Manager_strategy)
@@ -1187,9 +1151,6 @@ def test_manager_UserName_setter(instance):
 def test_customer_instantiation(instance):
     assert isinstance(instance, Customer)
 
-@given(instance=Customer_strategy)
-def test_customer_password_type(instance):
-    assert isinstance(instance.password, str)
 
 
 @given(instance=Customer_strategy)
@@ -1198,9 +1159,6 @@ def test_customer_password_setter(instance):
     instance.password = original
     assert instance.password == original
 
-@given(instance=Customer_strategy)
-def test_customer_UserName_type(instance):
-    assert isinstance(instance.UserName, str)
 
 
 @given(instance=Customer_strategy)
@@ -1214,31 +1172,6 @@ def test_customer_UserName_setter(instance):
 def test_employee1_instantiation(instance):
     assert isinstance(instance, Employee1)
 
-@given(instance=Employee1_strategy)
-def test_employee1_UserName_type(instance):
-    assert isinstance(instance.UserName, str)
-
-
-@given(instance=Employee1_strategy)
-def test_employee1_UserName_setter(instance):
-    original = instance.UserName
-    instance.UserName = original
-    assert instance.UserName == original
-
-@given(instance=Employee1_strategy)
-def test_employee1_attribute_type(instance):
-    assert isinstance(instance.attribute, str)
-
-
-@given(instance=Employee1_strategy)
-def test_employee1_attribute_setter(instance):
-    original = instance.attribute
-    instance.attribute = original
-    assert instance.attribute == original
-
-@given(instance=Employee1_strategy)
-def test_employee1_Salary_type(instance):
-    assert isinstance(instance.Salary, int)
 
 
 @given(instance=Employee1_strategy)
@@ -1247,53 +1180,6 @@ def test_employee1_Salary_setter(instance):
     instance.Salary = original
     assert instance.Salary == original
 
-@given(instance=Employee1_strategy)
-def test_employee1_Email_type(instance):
-    assert isinstance(instance.Email, str)
-
-
-@given(instance=Employee1_strategy)
-def test_employee1_Email_setter(instance):
-    original = instance.Email
-    instance.Email = original
-    assert instance.Email == original
-
-@given(instance=Employee1_strategy)
-def test_employee1_contact_no_type(instance):
-    assert isinstance(instance.contact_no, int)
-
-
-@given(instance=Employee1_strategy)
-def test_employee1_contact_no_setter(instance):
-    original = instance.contact_no
-    instance.contact_no = original
-    assert instance.contact_no == original
-
-@given(instance=Employee1_strategy)
-def test_employee1_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=Employee1_strategy)
-def test_employee1_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
-
-@given(instance=Employee1_strategy)
-def test_employee1_Emp_Address_type(instance):
-    assert isinstance(instance.Emp_Address, str)
-
-
-@given(instance=Employee1_strategy)
-def test_employee1_Emp_Address_setter(instance):
-    original = instance.Emp_Address
-    instance.Emp_Address = original
-    assert instance.Emp_Address == original
-
-@given(instance=Employee1_strategy)
-def test_employee1_password_type(instance):
-    assert isinstance(instance.password, str)
 
 
 @given(instance=Employee1_strategy)
@@ -1302,9 +1188,6 @@ def test_employee1_password_setter(instance):
     instance.password = original
     assert instance.password == original
 
-@given(instance=Employee1_strategy)
-def test_employee1_Emp_Dep_type(instance):
-    assert isinstance(instance.Emp_Dep, str)
 
 
 @given(instance=Employee1_strategy)
@@ -1313,25 +1196,59 @@ def test_employee1_Emp_Dep_setter(instance):
     instance.Emp_Dep = original
     assert instance.Emp_Dep == original
 
+
+
+@given(instance=Employee1_strategy)
+def test_employee1_Email_setter(instance):
+    original = instance.Email
+    instance.Email = original
+    assert instance.Email == original
+
+
+
+@given(instance=Employee1_strategy)
+def test_employee1_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+
+
+@given(instance=Employee1_strategy)
+def test_employee1_contact_no_setter(instance):
+    original = instance.contact_no
+    instance.contact_no = original
+    assert instance.contact_no == original
+
+
+
+@given(instance=Employee1_strategy)
+def test_employee1_Emp_Address_setter(instance):
+    original = instance.Emp_Address
+    instance.Emp_Address = original
+    assert instance.Emp_Address == original
+
+
+
+@given(instance=Employee1_strategy)
+def test_employee1_UserName_setter(instance):
+    original = instance.UserName
+    instance.UserName = original
+    assert instance.UserName == original
+
+
+
+@given(instance=Employee1_strategy)
+def test_employee1_attribute_setter(instance):
+    original = instance.attribute
+    instance.attribute = original
+    assert instance.attribute == original
+
 @given(instance=Admin1_strategy)
 @settings(max_examples=50)
 def test_admin1_instantiation(instance):
     assert isinstance(instance, Admin1)
 
-@given(instance=Admin1_strategy)
-def test_admin1_UserName_type(instance):
-    assert isinstance(instance.UserName, str)
-
-
-@given(instance=Admin1_strategy)
-def test_admin1_UserName_setter(instance):
-    original = instance.UserName
-    instance.UserName = original
-    assert instance.UserName == original
-
-@given(instance=Admin1_strategy)
-def test_admin1_password_type(instance):
-    assert isinstance(instance.password, str)
 
 
 @given(instance=Admin1_strategy)
@@ -1340,25 +1257,19 @@ def test_admin1_password_setter(instance):
     instance.password = original
     assert instance.password == original
 
+
+
+@given(instance=Admin1_strategy)
+def test_admin1_UserName_setter(instance):
+    original = instance.UserName
+    instance.UserName = original
+    assert instance.UserName == original
+
 @given(instance=Users1_strategy)
 @settings(max_examples=50)
 def test_users1_instantiation(instance):
     assert isinstance(instance, Users1)
 
-@given(instance=Users1_strategy)
-def test_users1_id_type(instance):
-    assert isinstance(instance.id, str)
-
-
-@given(instance=Users1_strategy)
-def test_users1_id_setter(instance):
-    original = instance.id
-    instance.id = original
-    assert instance.id == original
-
-@given(instance=Users1_strategy)
-def test_users1_password_type(instance):
-    assert isinstance(instance.password, str)
 
 
 @given(instance=Users1_strategy)
@@ -1367,25 +1278,19 @@ def test_users1_password_setter(instance):
     instance.password = original
     assert instance.password == original
 
+
+
+@given(instance=Users1_strategy)
+def test_users1_id_setter(instance):
+    original = instance.id
+    instance.id = original
+    assert instance.id == original
+
 @given(instance=Admin_strategy)
 @settings(max_examples=50)
 def test_admin_instantiation(instance):
     assert isinstance(instance, Admin)
 
-@given(instance=Admin_strategy)
-def test_admin_UserName_type(instance):
-    assert isinstance(instance.UserName, str)
-
-
-@given(instance=Admin_strategy)
-def test_admin_UserName_setter(instance):
-    original = instance.UserName
-    instance.UserName = original
-    assert instance.UserName == original
-
-@given(instance=Admin_strategy)
-def test_admin_Password_type(instance):
-    assert isinstance(instance.Password, str)
 
 
 @given(instance=Admin_strategy)
@@ -1393,6 +1298,14 @@ def test_admin_Password_setter(instance):
     original = instance.Password
     instance.Password = original
     assert instance.Password == original
+
+
+
+@given(instance=Admin_strategy)
+def test_admin_UserName_setter(instance):
+    original = instance.UserName
+    instance.UserName = original
+    assert instance.UserName == original
 
 @given(instance=Employee_Actor_strategy)
 @settings(max_examples=50)
@@ -1424,9 +1337,6 @@ def test_employee_management_system_component_instantiation(instance):
 def test_users_instantiation(instance):
     assert isinstance(instance, Users)
 
-@given(instance=Users_strategy)
-def test_users_Password_type(instance):
-    assert isinstance(instance.Password, str)
 
 
 @given(instance=Users_strategy)
@@ -1435,9 +1345,6 @@ def test_users_Password_setter(instance):
     instance.Password = original
     assert instance.Password == original
 
-@given(instance=Users_strategy)
-def test_users_UserName_type(instance):
-    assert isinstance(instance.UserName, str)
 
 
 @given(instance=Users_strategy)
@@ -1451,53 +1358,6 @@ def test_users_UserName_setter(instance):
 def test_leave_instantiation(instance):
     assert isinstance(instance, Leave)
 
-@given(instance=Leave_strategy)
-def test_leave_Leave_EndDate_type(instance):
-    assert isinstance(instance.Leave_EndDate, date)
-
-
-@given(instance=Leave_strategy)
-def test_leave_Leave_EndDate_setter(instance):
-    original = instance.Leave_EndDate
-    instance.Leave_EndDate = original
-    assert instance.Leave_EndDate == original
-
-@given(instance=Leave_strategy)
-def test_leave_leave_id_type(instance):
-    assert isinstance(instance.leave_id, int)
-
-
-@given(instance=Leave_strategy)
-def test_leave_leave_id_setter(instance):
-    original = instance.leave_id
-    instance.leave_id = original
-    assert instance.leave_id == original
-
-@given(instance=Leave_strategy)
-def test_leave_Leave_Status_type(instance):
-    assert isinstance(instance.Leave_Status, str)
-
-
-@given(instance=Leave_strategy)
-def test_leave_Leave_Status_setter(instance):
-    original = instance.Leave_Status
-    instance.Leave_Status = original
-    assert instance.Leave_Status == original
-
-@given(instance=Leave_strategy)
-def test_leave_Leave_Title_type(instance):
-    assert isinstance(instance.Leave_Title, str)
-
-
-@given(instance=Leave_strategy)
-def test_leave_Leave_Title_setter(instance):
-    original = instance.Leave_Title
-    instance.Leave_Title = original
-    assert instance.Leave_Title == original
-
-@given(instance=Leave_strategy)
-def test_leave_Emp_Id_type(instance):
-    assert isinstance(instance.Emp_Id, int)
 
 
 @given(instance=Leave_strategy)
@@ -1506,9 +1366,6 @@ def test_leave_Emp_Id_setter(instance):
     instance.Emp_Id = original
     assert instance.Emp_Id == original
 
-@given(instance=Leave_strategy)
-def test_leave_Leave_detail_type(instance):
-    assert isinstance(instance.Leave_detail, str)
 
 
 @given(instance=Leave_strategy)
@@ -1517,47 +1374,43 @@ def test_leave_Leave_detail_setter(instance):
     instance.Leave_detail = original
     assert instance.Leave_detail == original
 
+
+
+@given(instance=Leave_strategy)
+def test_leave_Leave_Title_setter(instance):
+    original = instance.Leave_Title
+    instance.Leave_Title = original
+    assert instance.Leave_Title == original
+
+
+
+@given(instance=Leave_strategy)
+def test_leave_Leave_Status_setter(instance):
+    original = instance.Leave_Status
+    instance.Leave_Status = original
+    assert instance.Leave_Status == original
+
+
+
+@given(instance=Leave_strategy)
+def test_leave_leave_id_setter(instance):
+    original = instance.leave_id
+    instance.leave_id = original
+    assert instance.leave_id == original
+
+
+
+@given(instance=Leave_strategy)
+def test_leave_Leave_EndDate_setter(instance):
+    original = instance.Leave_EndDate
+    instance.Leave_EndDate = original
+    assert instance.Leave_EndDate == original
+
 @given(instance=Salary_strategy)
 @settings(max_examples=50)
 def test_salary_instantiation(instance):
     assert isinstance(instance, Salary)
 
-@given(instance=Salary_strategy)
-def test_salary_Emp_Id_type(instance):
-    assert isinstance(instance.Emp_Id, int)
-
-
-@given(instance=Salary_strategy)
-def test_salary_Emp_Id_setter(instance):
-    original = instance.Emp_Id
-    instance.Emp_Id = original
-    assert instance.Emp_Id == original
-
-@given(instance=Salary_strategy)
-def test_salary_Sly_Netgross_type(instance):
-    assert isinstance(instance.Sly_Netgross, float)
-
-
-@given(instance=Salary_strategy)
-def test_salary_Sly_Netgross_setter(instance):
-    original = instance.Sly_Netgross
-    instance.Sly_Netgross = original
-    assert instance.Sly_Netgross == original
-
-@given(instance=Salary_strategy)
-def test_salary_Sly_Decrement_type(instance):
-    assert isinstance(instance.Sly_Decrement, float)
-
-
-@given(instance=Salary_strategy)
-def test_salary_Sly_Decrement_setter(instance):
-    original = instance.Sly_Decrement
-    instance.Sly_Decrement = original
-    assert instance.Sly_Decrement == original
-
-@given(instance=Salary_strategy)
-def test_salary_Sly_Basic_type(instance):
-    assert isinstance(instance.Sly_Basic, float)
 
 
 @given(instance=Salary_strategy)
@@ -1566,20 +1419,14 @@ def test_salary_Sly_Basic_setter(instance):
     instance.Sly_Basic = original
     assert instance.Sly_Basic == original
 
-@given(instance=Salary_strategy)
-def test_salary_Sly_Increment_type(instance):
-    assert isinstance(instance.Sly_Increment, float)
 
 
 @given(instance=Salary_strategy)
-def test_salary_Sly_Increment_setter(instance):
-    original = instance.Sly_Increment
-    instance.Sly_Increment = original
-    assert instance.Sly_Increment == original
+def test_salary_Sly_Netgross_setter(instance):
+    original = instance.Sly_Netgross
+    instance.Sly_Netgross = original
+    assert instance.Sly_Netgross == original
 
-@given(instance=Salary_strategy)
-def test_salary_OverTime_type(instance):
-    assert isinstance(instance.OverTime, str)
 
 
 @given(instance=Salary_strategy)
@@ -1588,58 +1435,35 @@ def test_salary_OverTime_setter(instance):
     instance.OverTime = original
     assert instance.OverTime == original
 
-@given(instance=Employee_strategy)
-@settings(max_examples=50)
-def test_employee_instantiation(instance):
-    assert isinstance(instance, Employee)
-
-@given(instance=Employee_strategy)
-def test_employee_Emp_Salary_type(instance):
-    assert isinstance(instance.Emp_Salary, float)
 
 
-@given(instance=Employee_strategy)
-def test_employee_Emp_Salary_setter(instance):
-    original = instance.Emp_Salary
-    instance.Emp_Salary = original
-    assert instance.Emp_Salary == original
-
-@given(instance=Employee_strategy)
-def test_employee_Emp_Id_type(instance):
-    assert isinstance(instance.Emp_Id, int)
+@given(instance=Salary_strategy)
+def test_salary_Sly_Decrement_setter(instance):
+    original = instance.Sly_Decrement
+    instance.Sly_Decrement = original
+    assert instance.Sly_Decrement == original
 
 
-@given(instance=Employee_strategy)
-def test_employee_Emp_Id_setter(instance):
+
+@given(instance=Salary_strategy)
+def test_salary_Sly_Increment_setter(instance):
+    original = instance.Sly_Increment
+    instance.Sly_Increment = original
+    assert instance.Sly_Increment == original
+
+
+
+@given(instance=Salary_strategy)
+def test_salary_Emp_Id_setter(instance):
     original = instance.Emp_Id
     instance.Emp_Id = original
     assert instance.Emp_Id == original
 
 @given(instance=Employee_strategy)
-def test_employee_Emp_Department_type(instance):
-    assert isinstance(instance.Emp_Department, str)
+@settings(max_examples=50)
+def test_employee_instantiation(instance):
+    assert isinstance(instance, Employee)
 
-
-@given(instance=Employee_strategy)
-def test_employee_Emp_Department_setter(instance):
-    original = instance.Emp_Department
-    instance.Emp_Department = original
-    assert instance.Emp_Department == original
-
-@given(instance=Employee_strategy)
-def test_employee_Emp_Name_type(instance):
-    assert isinstance(instance.Emp_Name, str)
-
-
-@given(instance=Employee_strategy)
-def test_employee_Emp_Name_setter(instance):
-    original = instance.Emp_Name
-    instance.Emp_Name = original
-    assert instance.Emp_Name == original
-
-@given(instance=Employee_strategy)
-def test_employee_Password_type(instance):
-    assert isinstance(instance.Password, str)
 
 
 @given(instance=Employee_strategy)
@@ -1648,9 +1472,30 @@ def test_employee_Password_setter(instance):
     instance.Password = original
     assert instance.Password == original
 
+
+
 @given(instance=Employee_strategy)
-def test_employee_Emp_Email_type(instance):
-    assert isinstance(instance.Emp_Email, str)
+def test_employee_Emp_Address_setter(instance):
+    original = instance.Emp_Address
+    instance.Emp_Address = original
+    assert instance.Emp_Address == original
+
+
+
+@given(instance=Employee_strategy)
+def test_employee_Emp_Id_setter(instance):
+    original = instance.Emp_Id
+    instance.Emp_Id = original
+    assert instance.Emp_Id == original
+
+
+
+@given(instance=Employee_strategy)
+def test_employee_Emp_Department_setter(instance):
+    original = instance.Emp_Department
+    instance.Emp_Department = original
+    assert instance.Emp_Department == original
+
 
 
 @given(instance=Employee_strategy)
@@ -1659,9 +1504,22 @@ def test_employee_Emp_Email_setter(instance):
     instance.Emp_Email = original
     assert instance.Emp_Email == original
 
+
+
 @given(instance=Employee_strategy)
-def test_employee_Emp_ContactNo_type(instance):
-    assert isinstance(instance.Emp_ContactNo, str)
+def test_employee_Emp_Salary_setter(instance):
+    original = instance.Emp_Salary
+    instance.Emp_Salary = original
+    assert instance.Emp_Salary == original
+
+
+
+@given(instance=Employee_strategy)
+def test_employee_Emp_Name_setter(instance):
+    original = instance.Emp_Name
+    instance.Emp_Name = original
+    assert instance.Emp_Name == original
+
 
 
 @given(instance=Employee_strategy)
@@ -1669,14 +1527,3 @@ def test_employee_Emp_ContactNo_setter(instance):
     original = instance.Emp_ContactNo
     instance.Emp_ContactNo = original
     assert instance.Emp_ContactNo == original
-
-@given(instance=Employee_strategy)
-def test_employee_Emp_Address_type(instance):
-    assert isinstance(instance.Emp_Address, str)
-
-
-@given(instance=Employee_strategy)
-def test_employee_Emp_Address_setter(instance):
-    original = instance.Emp_Address
-    instance.Emp_Address = original
-    assert instance.Emp_Address == original

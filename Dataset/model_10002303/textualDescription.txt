@@ -1,0 +1,51 @@
+The model has 36 class(es).
+The class 'GenerateSummary_UseCase' has no attributes.
+The class 'SendNotification_UseCase' has no attributes.
+The class 'Application_Actor' has no attributes.
+The class 'LeaveBalanceQuery' has no attributes.
+The class 'Apply_Leave_UseCase' has no attributes.
+The class 'Admin_Actor' has no attributes.
+The class 'Query_Leave_History_UseCase' has no attributes.
+The class 'Cancel_Leaves_UseCase' has no attributes.
+The class 'CancelLeaveRequest' has no attributes.
+The class 'ApplyLeaveRequest' has no attributes.
+The class 'LeaveHistoryQuery' has the following attributes: 'fromDate' of type date; 'toDate' of type date.
+The class 'Employee_Actor' has no attributes.
+The class 'Request' has the following attributes: 'leaveApplication' of type LeaveApplication; 'requestId' of type str.
+The class 'Update_Calendar_UseCase' has no attributes.
+The class 'CreateUser_UseCase' has no attributes.
+The class 'AutoApproval_UseCase' has no attributes.
+The class 'Approver_Jobs_UseCase' has no attributes.
+The class 'LeaveApplication' has the following attributes: 'fromDate' of type date; 'reason' of type str; 'approverComments' of type str; 'toDate' of type date; 'employeeId' of type str; 'applicationId' of type str; 'status' of type str.
+The class 'Change_Password_UseCase' has no attributes.
+The class 'EligibilityQuery' has no attributes.
+The class 'Employee' has the following attributes: 'leavesTaken' of type str; 'managerId' of type str; 'noOfLeaves' of type int; 'employeeId' of type str; 'jobLevel' of type int; 'password' of type str; 'employeeName' of type str.
+The class 'Withdraw_Application_UseCase' has no attributes.
+The class 'UpdateCalendar' has no attributes.
+The class 'ApproveOrRejectStatus' has no attributes.
+The class 'Login_UseCase' has no attributes.
+The class 'Query_Eligibility_UseCase' has no attributes.
+The class 'Approve_RejectRequests_UseCase' has no attributes.
+The class 'LoginAction' has the following attributes: 'employee' of type Employee_Actor.
+The class 'WithdrawLeaveRequest' has no attributes.
+The class 'LeaveStatusQuery' has no attributes.
+The class 'CreateUserAction' has the following attributes: 'employee' of type Employee_Actor.
+The class 'ApplicationUtils' has no attributes.
+The class 'Credit_Leaves_UseCase' has no attributes.
+The class 'Query_Leave_Balance_UseCase' has no attributes.
+The class 'Leave_Request_Status_UseCase' has no attributes.
+The class 'Query' has the following attributes: 'requestId' of type str; 'user' of type Employee_Actor.
+The enumeration 'LeaveStatus' does not specify any literals.
+'Update_Calendar_UseCase' (role 'admin17', cardinality 0..*) is associated with 'Admin_Actor' (role 'update_Calendar16', cardinality 0..*).
+'Employee_Actor' (role 'leave_Request_Status10', cardinality 0..*) is associated with 'Leave_Request_Status_UseCase' (role 'employee11', cardinality 0..*).
+'Apply_Leave_UseCase' (role 'employee9', cardinality 0..*) is associated with 'Employee_Actor' (role 'apply_Leave8', cardinality 0..*).
+'AutoApproval_UseCase' (role 'application23', cardinality 0..*) is associated with 'Application_Actor' (role 'autoApproval22', cardinality 0..*).
+'Application_Actor' (role 'sendNotification18', cardinality 0..*) is associated with 'SendNotification_UseCase' (role 'application19', cardinality 0..*).
+'GenerateSummary_UseCase' (role 'application25', cardinality 0..*) is associated with 'Application_Actor' (role 'generateSummary24', cardinality 0..*).
+'Credit_Leaves_UseCase' (role 'application20', cardinality 0..*) is associated with 'Application_Actor' (role 'credit_Leaves21', cardinality 0..*).
+'Query_Eligibility_UseCase' (role 'user3', cardinality 0..*) is associated with 'Employee_Actor' (role 'query_Eligibility2', cardinality 0..*).
+'Admin_Actor' (role 'createUser14', cardinality 0..*) is associated with 'CreateUser_UseCase' (role 'admin15', cardinality 0..*).
+'Employee_Actor' (role 'query_Leave_History6', cardinality 0..*) is associated with 'Query_Leave_History_UseCase' (role 'user7', cardinality 0..*).
+'Query_Leave_Balance_UseCase' (role 'user5', cardinality 0..*) is associated with 'Employee_Actor' (role 'query_Leave_Balance4', cardinality 0..*).
+'Approver_Jobs_UseCase' (role 'employee13', cardinality 0..*) is associated with 'Employee_Actor' (role 'approver_Jobs12', cardinality 0..*).
+'Employee_Actor' (role 'login0', cardinality 0..*) is associated with 'Login_UseCase' (role 'user1', cardinality 0..*).

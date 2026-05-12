@@ -3,17 +3,17 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     AbstractTransition,
-    ptn104::And,
-    ptn104::Or,
-    ptn104::Token,
-    ptn104::AbstractNode,
+    ptn104_And,
+    ptn104_Or,
+    ptn104_Token,
+    ptn104_AbstractNode,
     AbstractNode,
-    ptn104::AbstractTransition,
-    ptn104::Place,
+    ptn104_AbstractTransition,
+    ptn104_Place,
 )
 
 # =============================================================================
@@ -36,65 +36,65 @@ def test_abstracttransition_constructor_args():
 
 
 
-def test_ptn104::and_is_not_abstract():
-    assert not inspect.isabstract(ptn104::And)
+def test_ptn104_and_is_not_abstract():
+    assert not inspect.isabstract(ptn104_And)
 
 
-def test_ptn104::and_constructor_exists():
-    assert callable(ptn104::And.__init__)
+def test_ptn104_and_constructor_exists():
+    assert callable(ptn104_And.__init__)
 
 
-def test_ptn104::and_constructor_args():
-    sig = inspect.signature(ptn104::And.__init__)
+def test_ptn104_and_constructor_args():
+    sig = inspect.signature(ptn104_And.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ptn104::or_is_not_abstract():
-    assert not inspect.isabstract(ptn104::Or)
+def test_ptn104_or_is_not_abstract():
+    assert not inspect.isabstract(ptn104_Or)
 
 
-def test_ptn104::or_constructor_exists():
-    assert callable(ptn104::Or.__init__)
+def test_ptn104_or_constructor_exists():
+    assert callable(ptn104_Or.__init__)
 
 
-def test_ptn104::or_constructor_args():
-    sig = inspect.signature(ptn104::Or.__init__)
+def test_ptn104_or_constructor_args():
+    sig = inspect.signature(ptn104_Or.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ptn104::token_is_not_abstract():
-    assert not inspect.isabstract(ptn104::Token)
+def test_ptn104_token_is_not_abstract():
+    assert not inspect.isabstract(ptn104_Token)
 
 
-def test_ptn104::token_constructor_exists():
-    assert callable(ptn104::Token.__init__)
+def test_ptn104_token_constructor_exists():
+    assert callable(ptn104_Token.__init__)
 
 
-def test_ptn104::token_constructor_args():
-    sig = inspect.signature(ptn104::Token.__init__)
+def test_ptn104_token_constructor_args():
+    sig = inspect.signature(ptn104_Token.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_ptn104::abstractnode_is_not_abstract():
-    assert not inspect.isabstract(ptn104::AbstractNode)
+def test_ptn104_abstractnode_is_not_abstract():
+    assert not inspect.isabstract(ptn104_AbstractNode)
 
 
-def test_ptn104::abstractnode_constructor_exists():
-    assert callable(ptn104::AbstractNode.__init__)
+def test_ptn104_abstractnode_constructor_exists():
+    assert callable(ptn104_AbstractNode.__init__)
 
 
-def test_ptn104::abstractnode_constructor_args():
-    sig = inspect.signature(ptn104::AbstractNode.__init__)
+def test_ptn104_abstractnode_constructor_args():
+    sig = inspect.signature(ptn104_AbstractNode.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_ptn104::abstractnode_has_name():
-    assert hasattr(ptn104::AbstractNode, "name")
+def test_ptn104_abstractnode_has_name():
+    assert hasattr(ptn104_AbstractNode, "name")
     descriptor = None
-    for klass in ptn104::AbstractNode.__mro__:
+    for klass in ptn104_AbstractNode.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -116,23 +116,23 @@ def test_abstractnode_constructor_args():
 
 
 
-def test_ptn104::abstracttransition_is_not_abstract():
-    assert not inspect.isabstract(ptn104::AbstractTransition)
+def test_ptn104_abstracttransition_is_not_abstract():
+    assert not inspect.isabstract(ptn104_AbstractTransition)
 
 
-def test_ptn104::abstracttransition_constructor_exists():
-    assert callable(ptn104::AbstractTransition.__init__)
+def test_ptn104_abstracttransition_constructor_exists():
+    assert callable(ptn104_AbstractTransition.__init__)
 
 
-def test_ptn104::abstracttransition_constructor_args():
-    sig = inspect.signature(ptn104::AbstractTransition.__init__)
+def test_ptn104_abstracttransition_constructor_args():
+    sig = inspect.signature(ptn104_AbstractTransition.__init__)
     params = list(sig.parameters.keys())
     assert "guard" in params, "Missing parameter 'guard'"
 
-def test_ptn104::abstracttransition_has_guard():
-    assert hasattr(ptn104::AbstractTransition, "guard")
+def test_ptn104_abstracttransition_has_guard():
+    assert hasattr(ptn104_AbstractTransition, "guard")
     descriptor = None
-    for klass in ptn104::AbstractTransition.__mro__:
+    for klass in ptn104_AbstractTransition.__mro__:
         if "guard" in klass.__dict__:
             descriptor = klass.__dict__["guard"]
             break
@@ -140,16 +140,16 @@ def test_ptn104::abstracttransition_has_guard():
 
 
 
-def test_ptn104::place_is_not_abstract():
-    assert not inspect.isabstract(ptn104::Place)
+def test_ptn104_place_is_not_abstract():
+    assert not inspect.isabstract(ptn104_Place)
 
 
-def test_ptn104::place_constructor_exists():
-    assert callable(ptn104::Place.__init__)
+def test_ptn104_place_constructor_exists():
+    assert callable(ptn104_Place.__init__)
 
 
-def test_ptn104::place_constructor_args():
-    sig = inspect.signature(ptn104::Place.__init__)
+def test_ptn104_place_constructor_args():
+    sig = inspect.signature(ptn104_Place.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -167,30 +167,30 @@ safe_text = st.text(
 AbstractTransition_strategy = st.builds(
     AbstractTransition,
 )
-ptn104::And_strategy = st.builds(
-    ptn104::And,
+ptn104_And_strategy = st.builds(
+    ptn104_And,
 )
-ptn104::Or_strategy = st.builds(
-    ptn104::Or,
+ptn104_Or_strategy = st.builds(
+    ptn104_Or,
 )
-ptn104::Token_strategy = st.builds(
-    ptn104::Token,
+ptn104_Token_strategy = st.builds(
+    ptn104_Token,
 )
-ptn104::AbstractNode_strategy = st.builds(
-    ptn104::AbstractNode,
+ptn104_AbstractNode_strategy = st.builds(
+    ptn104_AbstractNode,
     name=
         safe_text
 )
 AbstractNode_strategy = st.builds(
     AbstractNode,
 )
-ptn104::AbstractTransition_strategy = st.builds(
-    ptn104::AbstractTransition,
+ptn104_AbstractTransition_strategy = st.builds(
+    ptn104_AbstractTransition,
     guard=
         safe_text
 )
-ptn104::Place_strategy = st.builds(
-    ptn104::Place,
+ptn104_Place_strategy = st.builds(
+    ptn104_Place,
 )
 
 @given(instance=AbstractTransition_strategy)
@@ -198,33 +198,30 @@ ptn104::Place_strategy = st.builds(
 def test_abstracttransition_instantiation(instance):
     assert isinstance(instance, AbstractTransition)
 
-@given(instance=ptn104::And_strategy)
+@given(instance=ptn104_And_strategy)
 @settings(max_examples=50)
-def test_ptn104::and_instantiation(instance):
-    assert isinstance(instance, ptn104::And)
+def test_ptn104_and_instantiation(instance):
+    assert isinstance(instance, ptn104_And)
 
-@given(instance=ptn104::Or_strategy)
+@given(instance=ptn104_Or_strategy)
 @settings(max_examples=50)
-def test_ptn104::or_instantiation(instance):
-    assert isinstance(instance, ptn104::Or)
+def test_ptn104_or_instantiation(instance):
+    assert isinstance(instance, ptn104_Or)
 
-@given(instance=ptn104::Token_strategy)
+@given(instance=ptn104_Token_strategy)
 @settings(max_examples=50)
-def test_ptn104::token_instantiation(instance):
-    assert isinstance(instance, ptn104::Token)
+def test_ptn104_token_instantiation(instance):
+    assert isinstance(instance, ptn104_Token)
 
-@given(instance=ptn104::AbstractNode_strategy)
+@given(instance=ptn104_AbstractNode_strategy)
 @settings(max_examples=50)
-def test_ptn104::abstractnode_instantiation(instance):
-    assert isinstance(instance, ptn104::AbstractNode)
-
-@given(instance=ptn104::AbstractNode_strategy)
-def test_ptn104::abstractnode_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_ptn104_abstractnode_instantiation(instance):
+    assert isinstance(instance, ptn104_AbstractNode)
 
 
-@given(instance=ptn104::AbstractNode_strategy)
-def test_ptn104::abstractnode_name_setter(instance):
+
+@given(instance=ptn104_AbstractNode_strategy)
+def test_ptn104_abstractnode_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
@@ -234,23 +231,20 @@ def test_ptn104::abstractnode_name_setter(instance):
 def test_abstractnode_instantiation(instance):
     assert isinstance(instance, AbstractNode)
 
-@given(instance=ptn104::AbstractTransition_strategy)
+@given(instance=ptn104_AbstractTransition_strategy)
 @settings(max_examples=50)
-def test_ptn104::abstracttransition_instantiation(instance):
-    assert isinstance(instance, ptn104::AbstractTransition)
-
-@given(instance=ptn104::AbstractTransition_strategy)
-def test_ptn104::abstracttransition_guard_type(instance):
-    assert isinstance(instance.guard, str)
+def test_ptn104_abstracttransition_instantiation(instance):
+    assert isinstance(instance, ptn104_AbstractTransition)
 
 
-@given(instance=ptn104::AbstractTransition_strategy)
-def test_ptn104::abstracttransition_guard_setter(instance):
+
+@given(instance=ptn104_AbstractTransition_strategy)
+def test_ptn104_abstracttransition_guard_setter(instance):
     original = instance.guard
     instance.guard = original
     assert instance.guard == original
 
-@given(instance=ptn104::Place_strategy)
+@given(instance=ptn104_Place_strategy)
 @settings(max_examples=50)
-def test_ptn104::place_instantiation(instance):
-    assert isinstance(instance, ptn104::Place)
+def test_ptn104_place_instantiation(instance):
+    assert isinstance(instance, ptn104_Place)

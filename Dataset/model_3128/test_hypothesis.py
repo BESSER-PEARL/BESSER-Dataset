@@ -3,17 +3,17 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     Classifier,
-    class::DataType,
-    class::Class,
+    class_DataType,
+    class_Class,
     NamedElt,
-    class::Classifier,
-    class::Package,
-    class::NamedElt,
-    class::Attribute,
+    class_Classifier,
+    class_Package,
+    class_NamedElt,
+    class_Attribute,
 )
 
 # =============================================================================
@@ -36,37 +36,37 @@ def test_classifier_constructor_args():
 
 
 
-def test_class::datatype_is_not_abstract():
-    assert not inspect.isabstract(class::DataType)
+def test_class_datatype_is_not_abstract():
+    assert not inspect.isabstract(class_DataType)
 
 
-def test_class::datatype_constructor_exists():
-    assert callable(class::DataType.__init__)
+def test_class_datatype_constructor_exists():
+    assert callable(class_DataType.__init__)
 
 
-def test_class::datatype_constructor_args():
-    sig = inspect.signature(class::DataType.__init__)
+def test_class_datatype_constructor_args():
+    sig = inspect.signature(class_DataType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_class::class_is_not_abstract():
-    assert not inspect.isabstract(class::Class)
+def test_class_class_is_not_abstract():
+    assert not inspect.isabstract(class_Class)
 
 
-def test_class::class_constructor_exists():
-    assert callable(class::Class.__init__)
+def test_class_class_constructor_exists():
+    assert callable(class_Class.__init__)
 
 
-def test_class::class_constructor_args():
-    sig = inspect.signature(class::Class.__init__)
+def test_class_class_constructor_args():
+    sig = inspect.signature(class_Class.__init__)
     params = list(sig.parameters.keys())
     assert "isAbstract" in params, "Missing parameter 'isAbstract'"
 
-def test_class::class_has_isAbstract():
-    assert hasattr(class::Class, "isAbstract")
+def test_class_class_has_isAbstract():
+    assert hasattr(class_Class, "isAbstract")
     descriptor = None
-    for klass in class::Class.__mro__:
+    for klass in class_Class.__mro__:
         if "isAbstract" in klass.__dict__:
             descriptor = klass.__dict__["isAbstract"]
             break
@@ -88,51 +88,51 @@ def test_namedelt_constructor_args():
 
 
 
-def test_class::classifier_is_not_abstract():
-    assert not inspect.isabstract(class::Classifier)
+def test_class_classifier_is_not_abstract():
+    assert not inspect.isabstract(class_Classifier)
 
 
-def test_class::classifier_constructor_exists():
-    assert callable(class::Classifier.__init__)
+def test_class_classifier_constructor_exists():
+    assert callable(class_Classifier.__init__)
 
 
-def test_class::classifier_constructor_args():
-    sig = inspect.signature(class::Classifier.__init__)
+def test_class_classifier_constructor_args():
+    sig = inspect.signature(class_Classifier.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_class::package_is_not_abstract():
-    assert not inspect.isabstract(class::Package)
+def test_class_package_is_not_abstract():
+    assert not inspect.isabstract(class_Package)
 
 
-def test_class::package_constructor_exists():
-    assert callable(class::Package.__init__)
+def test_class_package_constructor_exists():
+    assert callable(class_Package.__init__)
 
 
-def test_class::package_constructor_args():
-    sig = inspect.signature(class::Package.__init__)
+def test_class_package_constructor_args():
+    sig = inspect.signature(class_Package.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_class::namedelt_is_not_abstract():
-    assert not inspect.isabstract(class::NamedElt)
+def test_class_namedelt_is_not_abstract():
+    assert not inspect.isabstract(class_NamedElt)
 
 
-def test_class::namedelt_constructor_exists():
-    assert callable(class::NamedElt.__init__)
+def test_class_namedelt_constructor_exists():
+    assert callable(class_NamedElt.__init__)
 
 
-def test_class::namedelt_constructor_args():
-    sig = inspect.signature(class::NamedElt.__init__)
+def test_class_namedelt_constructor_args():
+    sig = inspect.signature(class_NamedElt.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_class::namedelt_has_name():
-    assert hasattr(class::NamedElt, "name")
+def test_class_namedelt_has_name():
+    assert hasattr(class_NamedElt, "name")
     descriptor = None
-    for klass in class::NamedElt.__mro__:
+    for klass in class_NamedElt.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -140,23 +140,23 @@ def test_class::namedelt_has_name():
 
 
 
-def test_class::attribute_is_not_abstract():
-    assert not inspect.isabstract(class::Attribute)
+def test_class_attribute_is_not_abstract():
+    assert not inspect.isabstract(class_Attribute)
 
 
-def test_class::attribute_constructor_exists():
-    assert callable(class::Attribute.__init__)
+def test_class_attribute_constructor_exists():
+    assert callable(class_Attribute.__init__)
 
 
-def test_class::attribute_constructor_args():
-    sig = inspect.signature(class::Attribute.__init__)
+def test_class_attribute_constructor_args():
+    sig = inspect.signature(class_Attribute.__init__)
     params = list(sig.parameters.keys())
     assert "multiValued" in params, "Missing parameter 'multiValued'"
 
-def test_class::attribute_has_multiValued():
-    assert hasattr(class::Attribute, "multiValued")
+def test_class_attribute_has_multiValued():
+    assert hasattr(class_Attribute, "multiValued")
     descriptor = None
-    for klass in class::Attribute.__mro__:
+    for klass in class_Attribute.__mro__:
         if "multiValued" in klass.__dict__:
             descriptor = klass.__dict__["multiValued"]
             break
@@ -177,30 +177,30 @@ safe_text = st.text(
 Classifier_strategy = st.builds(
     Classifier,
 )
-class::DataType_strategy = st.builds(
-    class::DataType,
+class_DataType_strategy = st.builds(
+    class_DataType,
 )
-class::Class_strategy = st.builds(
-    class::Class,
+class_Class_strategy = st.builds(
+    class_Class,
     isAbstract=
         st.booleans()
 )
 NamedElt_strategy = st.builds(
     NamedElt,
 )
-class::Classifier_strategy = st.builds(
-    class::Classifier,
+class_Classifier_strategy = st.builds(
+    class_Classifier,
 )
-class::Package_strategy = st.builds(
-    class::Package,
+class_Package_strategy = st.builds(
+    class_Package,
 )
-class::NamedElt_strategy = st.builds(
-    class::NamedElt,
+class_NamedElt_strategy = st.builds(
+    class_NamedElt,
     name=
         safe_text
 )
-class::Attribute_strategy = st.builds(
-    class::Attribute,
+class_Attribute_strategy = st.builds(
+    class_Attribute,
     multiValued=
         st.booleans()
 )
@@ -210,23 +210,20 @@ class::Attribute_strategy = st.builds(
 def test_classifier_instantiation(instance):
     assert isinstance(instance, Classifier)
 
-@given(instance=class::DataType_strategy)
+@given(instance=class_DataType_strategy)
 @settings(max_examples=50)
-def test_class::datatype_instantiation(instance):
-    assert isinstance(instance, class::DataType)
+def test_class_datatype_instantiation(instance):
+    assert isinstance(instance, class_DataType)
 
-@given(instance=class::Class_strategy)
+@given(instance=class_Class_strategy)
 @settings(max_examples=50)
-def test_class::class_instantiation(instance):
-    assert isinstance(instance, class::Class)
-
-@given(instance=class::Class_strategy)
-def test_class::class_isAbstract_type(instance):
-    assert isinstance(instance.isAbstract, bool)
+def test_class_class_instantiation(instance):
+    assert isinstance(instance, class_Class)
 
 
-@given(instance=class::Class_strategy)
-def test_class::class_isAbstract_setter(instance):
+
+@given(instance=class_Class_strategy)
+def test_class_class_isAbstract_setter(instance):
     original = instance.isAbstract
     instance.isAbstract = original
     assert instance.isAbstract == original
@@ -236,44 +233,38 @@ def test_class::class_isAbstract_setter(instance):
 def test_namedelt_instantiation(instance):
     assert isinstance(instance, NamedElt)
 
-@given(instance=class::Classifier_strategy)
+@given(instance=class_Classifier_strategy)
 @settings(max_examples=50)
-def test_class::classifier_instantiation(instance):
-    assert isinstance(instance, class::Classifier)
+def test_class_classifier_instantiation(instance):
+    assert isinstance(instance, class_Classifier)
 
-@given(instance=class::Package_strategy)
+@given(instance=class_Package_strategy)
 @settings(max_examples=50)
-def test_class::package_instantiation(instance):
-    assert isinstance(instance, class::Package)
+def test_class_package_instantiation(instance):
+    assert isinstance(instance, class_Package)
 
-@given(instance=class::NamedElt_strategy)
+@given(instance=class_NamedElt_strategy)
 @settings(max_examples=50)
-def test_class::namedelt_instantiation(instance):
-    assert isinstance(instance, class::NamedElt)
-
-@given(instance=class::NamedElt_strategy)
-def test_class::namedelt_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_class_namedelt_instantiation(instance):
+    assert isinstance(instance, class_NamedElt)
 
 
-@given(instance=class::NamedElt_strategy)
-def test_class::namedelt_name_setter(instance):
+
+@given(instance=class_NamedElt_strategy)
+def test_class_namedelt_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=class::Attribute_strategy)
+@given(instance=class_Attribute_strategy)
 @settings(max_examples=50)
-def test_class::attribute_instantiation(instance):
-    assert isinstance(instance, class::Attribute)
-
-@given(instance=class::Attribute_strategy)
-def test_class::attribute_multiValued_type(instance):
-    assert isinstance(instance.multiValued, bool)
+def test_class_attribute_instantiation(instance):
+    assert isinstance(instance, class_Attribute)
 
 
-@given(instance=class::Attribute_strategy)
-def test_class::attribute_multiValued_setter(instance):
+
+@given(instance=class_Attribute_strategy)
+def test_class_attribute_multiValued_setter(instance):
     original = instance.multiValued
     instance.multiValued = original
     assert instance.multiValued == original

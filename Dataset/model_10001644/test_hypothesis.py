@@ -3,7 +3,7 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
 from python_code import (
     Discription,
@@ -86,17 +86,17 @@ def test_order_constructor_exists():
 def test_order_constructor_args():
     sig = inspect.signature(Order.__init__)
     params = list(sig.parameters.keys())
-    assert "Type_" in params, "Missing parameter 'Type_'"
-    assert "Quantity" in params, "Missing parameter 'Quantity'"
     assert "Size_" in params, "Missing parameter 'Size_'"
+    assert "Quantity" in params, "Missing parameter 'Quantity'"
     assert "ID_" in params, "Missing parameter 'ID_'"
+    assert "Type_" in params, "Missing parameter 'Type_'"
 
-def test_order_has_Type_():
-    assert hasattr(Order, "Type_")
+def test_order_has_Size_():
+    assert hasattr(Order, "Size_")
     descriptor = None
     for klass in Order.__mro__:
-        if "Type_" in klass.__dict__:
-            descriptor = klass.__dict__["Type_"]
+        if "Size_" in klass.__dict__:
+            descriptor = klass.__dict__["Size_"]
             break
     assert isinstance(descriptor, property)
 
@@ -109,21 +109,21 @@ def test_order_has_Quantity():
             break
     assert isinstance(descriptor, property)
 
-def test_order_has_Size_():
-    assert hasattr(Order, "Size_")
-    descriptor = None
-    for klass in Order.__mro__:
-        if "Size_" in klass.__dict__:
-            descriptor = klass.__dict__["Size_"]
-            break
-    assert isinstance(descriptor, property)
-
 def test_order_has_ID_():
     assert hasattr(Order, "ID_")
     descriptor = None
     for klass in Order.__mro__:
         if "ID_" in klass.__dict__:
             descriptor = klass.__dict__["ID_"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_order_has_Type_():
+    assert hasattr(Order, "Type_")
+    descriptor = None
+    for klass in Order.__mro__:
+        if "Type_" in klass.__dict__:
+            descriptor = klass.__dict__["Type_"]
             break
     assert isinstance(descriptor, property)
 
@@ -153,14 +153,14 @@ Delivery_strategy = st.builds(
 )
 Order_strategy = st.builds(
     Order,
-    Type_=
-        safe_text,
-    Quantity=
-        st.integers(),
     Size_=
         st.integers(),
+    Quantity=
+        st.integers(),
     ID_=
-        st.integers()
+        st.integers(),
+    Type_=
+        safe_text
 )
 
 @given(instance=Discription_strategy)
@@ -188,31 +188,6 @@ def test_delivery_instantiation(instance):
 def test_order_instantiation(instance):
     assert isinstance(instance, Order)
 
-@given(instance=Order_strategy)
-def test_order_Type__type(instance):
-    assert isinstance(instance.Type_, str)
-
-
-@given(instance=Order_strategy)
-def test_order_Type__setter(instance):
-    original = instance.Type_
-    instance.Type_ = original
-    assert instance.Type_ == original
-
-@given(instance=Order_strategy)
-def test_order_Quantity_type(instance):
-    assert isinstance(instance.Quantity, int)
-
-
-@given(instance=Order_strategy)
-def test_order_Quantity_setter(instance):
-    original = instance.Quantity
-    instance.Quantity = original
-    assert instance.Quantity == original
-
-@given(instance=Order_strategy)
-def test_order_Size__type(instance):
-    assert isinstance(instance.Size_, int)
 
 
 @given(instance=Order_strategy)
@@ -221,9 +196,14 @@ def test_order_Size__setter(instance):
     instance.Size_ = original
     assert instance.Size_ == original
 
+
+
 @given(instance=Order_strategy)
-def test_order_ID__type(instance):
-    assert isinstance(instance.ID_, int)
+def test_order_Quantity_setter(instance):
+    original = instance.Quantity
+    instance.Quantity = original
+    assert instance.Quantity == original
+
 
 
 @given(instance=Order_strategy)
@@ -231,3 +211,11 @@ def test_order_ID__setter(instance):
     original = instance.ID_
     instance.ID_ = original
     assert instance.ID_ == original
+
+
+
+@given(instance=Order_strategy)
+def test_order_Type__setter(instance):
+    original = instance.Type_
+    instance.Type_ = original
+    assert instance.Type_ == original

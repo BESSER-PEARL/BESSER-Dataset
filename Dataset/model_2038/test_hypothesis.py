@@ -3,12 +3,12 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    etatma::State,
-    etatma::Transition,
-    etatma::StateMachine,
+from python_code import (
+    etatma_State,
+    etatma_Transition,
+    etatma_StateMachine,
 )
 
 # =============================================================================
@@ -17,23 +17,23 @@ from classes import (
 
 
 
-def test_etatma::state_is_not_abstract():
-    assert not inspect.isabstract(etatma::State)
+def test_etatma_state_is_not_abstract():
+    assert not inspect.isabstract(etatma_State)
 
 
-def test_etatma::state_constructor_exists():
-    assert callable(etatma::State.__init__)
+def test_etatma_state_constructor_exists():
+    assert callable(etatma_State.__init__)
 
 
-def test_etatma::state_constructor_args():
-    sig = inspect.signature(etatma::State.__init__)
+def test_etatma_state_constructor_args():
+    sig = inspect.signature(etatma_State.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_etatma::state_has_name():
-    assert hasattr(etatma::State, "name")
+def test_etatma_state_has_name():
+    assert hasattr(etatma_State, "name")
     descriptor = None
-    for klass in etatma::State.__mro__:
+    for klass in etatma_State.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -41,23 +41,23 @@ def test_etatma::state_has_name():
 
 
 
-def test_etatma::transition_is_not_abstract():
-    assert not inspect.isabstract(etatma::Transition)
+def test_etatma_transition_is_not_abstract():
+    assert not inspect.isabstract(etatma_Transition)
 
 
-def test_etatma::transition_constructor_exists():
-    assert callable(etatma::Transition.__init__)
+def test_etatma_transition_constructor_exists():
+    assert callable(etatma_Transition.__init__)
 
 
-def test_etatma::transition_constructor_args():
-    sig = inspect.signature(etatma::Transition.__init__)
+def test_etatma_transition_constructor_args():
+    sig = inspect.signature(etatma_Transition.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_etatma::transition_has_name():
-    assert hasattr(etatma::Transition, "name")
+def test_etatma_transition_has_name():
+    assert hasattr(etatma_Transition, "name")
     descriptor = None
-    for klass in etatma::Transition.__mro__:
+    for klass in etatma_Transition.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -65,23 +65,23 @@ def test_etatma::transition_has_name():
 
 
 
-def test_etatma::statemachine_is_not_abstract():
-    assert not inspect.isabstract(etatma::StateMachine)
+def test_etatma_statemachine_is_not_abstract():
+    assert not inspect.isabstract(etatma_StateMachine)
 
 
-def test_etatma::statemachine_constructor_exists():
-    assert callable(etatma::StateMachine.__init__)
+def test_etatma_statemachine_constructor_exists():
+    assert callable(etatma_StateMachine.__init__)
 
 
-def test_etatma::statemachine_constructor_args():
-    sig = inspect.signature(etatma::StateMachine.__init__)
+def test_etatma_statemachine_constructor_args():
+    sig = inspect.signature(etatma_StateMachine.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_etatma::statemachine_has_name():
-    assert hasattr(etatma::StateMachine, "name")
+def test_etatma_statemachine_has_name():
+    assert hasattr(etatma_StateMachine, "name")
     descriptor = None
-    for klass in etatma::StateMachine.__mro__:
+    for klass in etatma_StateMachine.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -99,66 +99,57 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-etatma::State_strategy = st.builds(
-    etatma::State,
+etatma_State_strategy = st.builds(
+    etatma_State,
     name=
         safe_text
 )
-etatma::Transition_strategy = st.builds(
-    etatma::Transition,
+etatma_Transition_strategy = st.builds(
+    etatma_Transition,
     name=
         safe_text
 )
-etatma::StateMachine_strategy = st.builds(
-    etatma::StateMachine,
+etatma_StateMachine_strategy = st.builds(
+    etatma_StateMachine,
     name=
         safe_text
 )
 
-@given(instance=etatma::State_strategy)
+@given(instance=etatma_State_strategy)
 @settings(max_examples=50)
-def test_etatma::state_instantiation(instance):
-    assert isinstance(instance, etatma::State)
-
-@given(instance=etatma::State_strategy)
-def test_etatma::state_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_etatma_state_instantiation(instance):
+    assert isinstance(instance, etatma_State)
 
 
-@given(instance=etatma::State_strategy)
-def test_etatma::state_name_setter(instance):
+
+@given(instance=etatma_State_strategy)
+def test_etatma_state_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=etatma::Transition_strategy)
+@given(instance=etatma_Transition_strategy)
 @settings(max_examples=50)
-def test_etatma::transition_instantiation(instance):
-    assert isinstance(instance, etatma::Transition)
-
-@given(instance=etatma::Transition_strategy)
-def test_etatma::transition_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_etatma_transition_instantiation(instance):
+    assert isinstance(instance, etatma_Transition)
 
 
-@given(instance=etatma::Transition_strategy)
-def test_etatma::transition_name_setter(instance):
+
+@given(instance=etatma_Transition_strategy)
+def test_etatma_transition_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=etatma::StateMachine_strategy)
+@given(instance=etatma_StateMachine_strategy)
 @settings(max_examples=50)
-def test_etatma::statemachine_instantiation(instance):
-    assert isinstance(instance, etatma::StateMachine)
-
-@given(instance=etatma::StateMachine_strategy)
-def test_etatma::statemachine_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_etatma_statemachine_instantiation(instance):
+    assert isinstance(instance, etatma_StateMachine)
 
 
-@given(instance=etatma::StateMachine_strategy)
-def test_etatma::statemachine_name_setter(instance):
+
+@given(instance=etatma_StateMachine_strategy)
+def test_etatma_statemachine_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original

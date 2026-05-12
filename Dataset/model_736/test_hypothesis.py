@@ -3,79 +3,79 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    art::implem::ComponentImplementation,
-    art::type::DictionaryDefaultValue,
-    art::implem::TypeImplementation,
+from python_code import (
+    art_implem_ComponentImplementation,
+    art_type_DictionaryDefaultValue,
+    art_implem_TypeImplementation,
     TypeImplementation,
-    art::implem::OSGiType,
+    art_implem_OSGiType,
     TypeGroup,
-    type::art::DataType,
+    type_art_DataType,
     PortId,
-    type::AbstractPort,
+    type_AbstractPort,
     CardinalityElement,
-    art::type::Port,
+    art_type_Port,
     TypedElement,
-    art::type::Attribute,
-    art::type::Parameter,
+    art_type_Attribute,
+    art_type_Parameter,
     Parameter,
     Operation,
     DelegationBinding,
     ComponentInstance,
-    art::instance::CompositeInstance,
-    art::instance::PrimitiveInstance,
+    art_instance_CompositeInstance,
+    art_instance_PrimitiveInstance,
     Attribute,
-    art::type::Dictionary,
-    art::type::BasicAttribute,
+    art_type_BasicAttribute,
+    art_type_Dictionary,
     DictionaryDefaultValue,
-    art::instance::Entry,
+    art_instance_Entry,
     Dictionary,
     Entry,
-    art::instance::OtherEntry,
-    art::instance::DefaultEntry,
+    art_instance_OtherEntry,
+    art_instance_DefaultEntry,
     BasicAttribute,
-    art::instance::AttributeInstance,
+    art_instance_AttributeInstance,
     AbstractPort,
-    art::type::PortCollection,
+    art_type_PortCollection,
     Binding,
-    art::instance::DelegationBinding,
-    art::instance::TransmissionBinding,
-    art::instance::Binding,
-    art::NamedElement,
+    art_instance_DelegationBinding,
+    art_instance_TransmissionBinding,
+    art_instance_Binding,
+    art_NamedElement,
     InstanceGroup,
     ComponentImplementation,
-    art::implem::OSGiComponent,
-    art::implem::FractalComponent,
+    art_implem_OSGiComponent,
+    art_implem_FractalComponent,
     TransmissionBinding,
     AttributeInstance,
-    art::instance::DictionaryValuedAttribute,
-    art::instance::ValuedAttribute,
+    art_instance_DictionaryValuedAttribute,
+    art_instance_ValuedAttribute,
     Group,
-    art::group::TypeGroup,
-    art::group::InstanceGroup,
+    art_group_InstanceGroup,
+    art_group_TypeGroup,
     ComponentType,
-    art::type::CompositeType,
-    art::type::PrimitiveType,
+    art_type_PrimitiveType,
+    art_type_CompositeType,
     Service,
-    art::type::ControlService,
-    art::type::FunctionalService,
+    art_type_FunctionalService,
+    art_type_ControlService,
     CompositeInstance,
     ModelElement,
-    art::type::Service,
-    art::type::ComponentType,
-    art::type::Operation,
-    art::CardinalityElement,
-    art::DataType,
-    art::instance::ComponentInstance,
-    art::TypedElement,
-    art::System,
+    art_DataType,
+    art_type_ComponentType,
+    art_instance_ComponentInstance,
+    art_type_Service,
+    art_TypedElement,
+    art_type_Operation,
+    art_CardinalityElement,
+    art_System,
     NamedElement,
-    art::type::AbstractPort,
-    art::group::Group,
-    art::type::PortId,
-    art::ModelElement,
+    art_group_Group,
+    art_type_PortId,
+    art_type_AbstractPort,
+    art_ModelElement,
     InstanceState,
     PortRole,
 )
@@ -86,64 +86,64 @@ from classes import (
 
 
 
-def test_art::implem::componentimplementation_is_not_abstract():
-    assert not inspect.isabstract(art::implem::ComponentImplementation)
+def test_art_implem_componentimplementation_is_not_abstract():
+    assert not inspect.isabstract(art_implem_ComponentImplementation)
 
 
-def test_art::implem::componentimplementation_constructor_exists():
-    assert callable(art::implem::ComponentImplementation.__init__)
+def test_art_implem_componentimplementation_constructor_exists():
+    assert callable(art_implem_ComponentImplementation.__init__)
 
 
-def test_art::implem::componentimplementation_constructor_args():
-    sig = inspect.signature(art::implem::ComponentImplementation.__init__)
+def test_art_implem_componentimplementation_constructor_args():
+    sig = inspect.signature(art_implem_ComponentImplementation.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_art::type::dictionarydefaultvalue_is_not_abstract():
-    assert not inspect.isabstract(art::type::DictionaryDefaultValue)
+def test_art_type_dictionarydefaultvalue_is_not_abstract():
+    assert not inspect.isabstract(art_type_DictionaryDefaultValue)
 
 
-def test_art::type::dictionarydefaultvalue_constructor_exists():
-    assert callable(art::type::DictionaryDefaultValue.__init__)
+def test_art_type_dictionarydefaultvalue_constructor_exists():
+    assert callable(art_type_DictionaryDefaultValue.__init__)
 
 
-def test_art::type::dictionarydefaultvalue_constructor_args():
-    sig = inspect.signature(art::type::DictionaryDefaultValue.__init__)
+def test_art_type_dictionarydefaultvalue_constructor_args():
+    sig = inspect.signature(art_type_DictionaryDefaultValue.__init__)
     params = list(sig.parameters.keys())
-    assert "value" in params, "Missing parameter 'value'"
     assert "key" in params, "Missing parameter 'key'"
+    assert "value" in params, "Missing parameter 'value'"
 
-def test_art::type::dictionarydefaultvalue_has_value():
-    assert hasattr(art::type::DictionaryDefaultValue, "value")
+def test_art_type_dictionarydefaultvalue_has_key():
+    assert hasattr(art_type_DictionaryDefaultValue, "key")
     descriptor = None
-    for klass in art::type::DictionaryDefaultValue.__mro__:
-        if "value" in klass.__dict__:
-            descriptor = klass.__dict__["value"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_art::type::dictionarydefaultvalue_has_key():
-    assert hasattr(art::type::DictionaryDefaultValue, "key")
-    descriptor = None
-    for klass in art::type::DictionaryDefaultValue.__mro__:
+    for klass in art_type_DictionaryDefaultValue.__mro__:
         if "key" in klass.__dict__:
             descriptor = klass.__dict__["key"]
             break
     assert isinstance(descriptor, property)
 
+def test_art_type_dictionarydefaultvalue_has_value():
+    assert hasattr(art_type_DictionaryDefaultValue, "value")
+    descriptor = None
+    for klass in art_type_DictionaryDefaultValue.__mro__:
+        if "value" in klass.__dict__:
+            descriptor = klass.__dict__["value"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_art::implem::typeimplementation_is_not_abstract():
-    assert not inspect.isabstract(art::implem::TypeImplementation)
+
+def test_art_implem_typeimplementation_is_not_abstract():
+    assert not inspect.isabstract(art_implem_TypeImplementation)
 
 
-def test_art::implem::typeimplementation_constructor_exists():
-    assert callable(art::implem::TypeImplementation.__init__)
+def test_art_implem_typeimplementation_constructor_exists():
+    assert callable(art_implem_TypeImplementation.__init__)
 
 
-def test_art::implem::typeimplementation_constructor_args():
-    sig = inspect.signature(art::implem::TypeImplementation.__init__)
+def test_art_implem_typeimplementation_constructor_args():
+    sig = inspect.signature(art_implem_TypeImplementation.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -162,23 +162,23 @@ def test_typeimplementation_constructor_args():
 
 
 
-def test_art::implem::osgitype_is_not_abstract():
-    assert not inspect.isabstract(art::implem::OSGiType)
+def test_art_implem_osgitype_is_not_abstract():
+    assert not inspect.isabstract(art_implem_OSGiType)
 
 
-def test_art::implem::osgitype_constructor_exists():
-    assert callable(art::implem::OSGiType.__init__)
+def test_art_implem_osgitype_constructor_exists():
+    assert callable(art_implem_OSGiType.__init__)
 
 
-def test_art::implem::osgitype_constructor_args():
-    sig = inspect.signature(art::implem::OSGiType.__init__)
+def test_art_implem_osgitype_constructor_args():
+    sig = inspect.signature(art_implem_OSGiType.__init__)
     params = list(sig.parameters.keys())
     assert "generateInstanceBundle" in params, "Missing parameter 'generateInstanceBundle'"
 
-def test_art::implem::osgitype_has_generateInstanceBundle():
-    assert hasattr(art::implem::OSGiType, "generateInstanceBundle")
+def test_art_implem_osgitype_has_generateInstanceBundle():
+    assert hasattr(art_implem_OSGiType, "generateInstanceBundle")
     descriptor = None
-    for klass in art::implem::OSGiType.__mro__:
+    for klass in art_implem_OSGiType.__mro__:
         if "generateInstanceBundle" in klass.__dict__:
             descriptor = klass.__dict__["generateInstanceBundle"]
             break
@@ -200,16 +200,16 @@ def test_typegroup_constructor_args():
 
 
 
-def test_type::art::datatype_is_not_abstract():
-    assert not inspect.isabstract(type::art::DataType)
+def test_type_art_datatype_is_not_abstract():
+    assert not inspect.isabstract(type_art_DataType)
 
 
-def test_type::art::datatype_constructor_exists():
-    assert callable(type::art::DataType.__init__)
+def test_type_art_datatype_constructor_exists():
+    assert callable(type_art_DataType.__init__)
 
 
-def test_type::art::datatype_constructor_args():
-    sig = inspect.signature(type::art::DataType.__init__)
+def test_type_art_datatype_constructor_args():
+    sig = inspect.signature(type_art_DataType.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -228,16 +228,16 @@ def test_portid_constructor_args():
 
 
 
-def test_type::abstractport_is_not_abstract():
-    assert not inspect.isabstract(type::AbstractPort)
+def test_type_abstractport_is_not_abstract():
+    assert not inspect.isabstract(type_AbstractPort)
 
 
-def test_type::abstractport_constructor_exists():
-    assert callable(type::AbstractPort.__init__)
+def test_type_abstractport_constructor_exists():
+    assert callable(type_AbstractPort.__init__)
 
 
-def test_type::abstractport_constructor_args():
-    sig = inspect.signature(type::AbstractPort.__init__)
+def test_type_abstractport_constructor_args():
+    sig = inspect.signature(type_AbstractPort.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -256,23 +256,23 @@ def test_cardinalityelement_constructor_args():
 
 
 
-def test_art::type::port_is_not_abstract():
-    assert not inspect.isabstract(art::type::Port)
+def test_art_type_port_is_not_abstract():
+    assert not inspect.isabstract(art_type_Port)
 
 
-def test_art::type::port_constructor_exists():
-    assert callable(art::type::Port.__init__)
+def test_art_type_port_constructor_exists():
+    assert callable(art_type_Port.__init__)
 
 
-def test_art::type::port_constructor_args():
-    sig = inspect.signature(art::type::Port.__init__)
+def test_art_type_port_constructor_args():
+    sig = inspect.signature(art_type_Port.__init__)
     params = list(sig.parameters.keys())
     assert "isOptional" in params, "Missing parameter 'isOptional'"
 
-def test_art::type::port_has_isOptional():
-    assert hasattr(art::type::Port, "isOptional")
+def test_art_type_port_has_isOptional():
+    assert hasattr(art_type_Port, "isOptional")
     descriptor = None
-    for klass in art::type::Port.__mro__:
+    for klass in art_type_Port.__mro__:
         if "isOptional" in klass.__dict__:
             descriptor = klass.__dict__["isOptional"]
             break
@@ -294,30 +294,30 @@ def test_typedelement_constructor_args():
 
 
 
-def test_art::type::attribute_is_not_abstract():
-    assert not inspect.isabstract(art::type::Attribute)
+def test_art_type_attribute_is_not_abstract():
+    assert not inspect.isabstract(art_type_Attribute)
 
 
-def test_art::type::attribute_constructor_exists():
-    assert callable(art::type::Attribute.__init__)
+def test_art_type_attribute_constructor_exists():
+    assert callable(art_type_Attribute.__init__)
 
 
-def test_art::type::attribute_constructor_args():
-    sig = inspect.signature(art::type::Attribute.__init__)
+def test_art_type_attribute_constructor_args():
+    sig = inspect.signature(art_type_Attribute.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_art::type::parameter_is_not_abstract():
-    assert not inspect.isabstract(art::type::Parameter)
+def test_art_type_parameter_is_not_abstract():
+    assert not inspect.isabstract(art_type_Parameter)
 
 
-def test_art::type::parameter_constructor_exists():
-    assert callable(art::type::Parameter.__init__)
+def test_art_type_parameter_constructor_exists():
+    assert callable(art_type_Parameter.__init__)
 
 
-def test_art::type::parameter_constructor_args():
-    sig = inspect.signature(art::type::Parameter.__init__)
+def test_art_type_parameter_constructor_args():
+    sig = inspect.signature(art_type_Parameter.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -378,30 +378,30 @@ def test_componentinstance_constructor_args():
 
 
 
-def test_art::instance::compositeinstance_is_not_abstract():
-    assert not inspect.isabstract(art::instance::CompositeInstance)
+def test_art_instance_compositeinstance_is_not_abstract():
+    assert not inspect.isabstract(art_instance_CompositeInstance)
 
 
-def test_art::instance::compositeinstance_constructor_exists():
-    assert callable(art::instance::CompositeInstance.__init__)
+def test_art_instance_compositeinstance_constructor_exists():
+    assert callable(art_instance_CompositeInstance.__init__)
 
 
-def test_art::instance::compositeinstance_constructor_args():
-    sig = inspect.signature(art::instance::CompositeInstance.__init__)
+def test_art_instance_compositeinstance_constructor_args():
+    sig = inspect.signature(art_instance_CompositeInstance.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_art::instance::primitiveinstance_is_not_abstract():
-    assert not inspect.isabstract(art::instance::PrimitiveInstance)
+def test_art_instance_primitiveinstance_is_not_abstract():
+    assert not inspect.isabstract(art_instance_PrimitiveInstance)
 
 
-def test_art::instance::primitiveinstance_constructor_exists():
-    assert callable(art::instance::PrimitiveInstance.__init__)
+def test_art_instance_primitiveinstance_constructor_exists():
+    assert callable(art_instance_PrimitiveInstance.__init__)
 
 
-def test_art::instance::primitiveinstance_constructor_args():
-    sig = inspect.signature(art::instance::PrimitiveInstance.__init__)
+def test_art_instance_primitiveinstance_constructor_args():
+    sig = inspect.signature(art_instance_PrimitiveInstance.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -420,41 +420,41 @@ def test_attribute_constructor_args():
 
 
 
-def test_art::type::dictionary_is_not_abstract():
-    assert not inspect.isabstract(art::type::Dictionary)
+def test_art_type_basicattribute_is_not_abstract():
+    assert not inspect.isabstract(art_type_BasicAttribute)
 
 
-def test_art::type::dictionary_constructor_exists():
-    assert callable(art::type::Dictionary.__init__)
+def test_art_type_basicattribute_constructor_exists():
+    assert callable(art_type_BasicAttribute.__init__)
 
 
-def test_art::type::dictionary_constructor_args():
-    sig = inspect.signature(art::type::Dictionary.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_art::type::basicattribute_is_not_abstract():
-    assert not inspect.isabstract(art::type::BasicAttribute)
-
-
-def test_art::type::basicattribute_constructor_exists():
-    assert callable(art::type::BasicAttribute.__init__)
-
-
-def test_art::type::basicattribute_constructor_args():
-    sig = inspect.signature(art::type::BasicAttribute.__init__)
+def test_art_type_basicattribute_constructor_args():
+    sig = inspect.signature(art_type_BasicAttribute.__init__)
     params = list(sig.parameters.keys())
     assert "defaultValue" in params, "Missing parameter 'defaultValue'"
 
-def test_art::type::basicattribute_has_defaultValue():
-    assert hasattr(art::type::BasicAttribute, "defaultValue")
+def test_art_type_basicattribute_has_defaultValue():
+    assert hasattr(art_type_BasicAttribute, "defaultValue")
     descriptor = None
-    for klass in art::type::BasicAttribute.__mro__:
+    for klass in art_type_BasicAttribute.__mro__:
         if "defaultValue" in klass.__dict__:
             descriptor = klass.__dict__["defaultValue"]
             break
     assert isinstance(descriptor, property)
+
+
+
+def test_art_type_dictionary_is_not_abstract():
+    assert not inspect.isabstract(art_type_Dictionary)
+
+
+def test_art_type_dictionary_constructor_exists():
+    assert callable(art_type_Dictionary.__init__)
+
+
+def test_art_type_dictionary_constructor_args():
+    sig = inspect.signature(art_type_Dictionary.__init__)
+    params = list(sig.parameters.keys())
 
 
 
@@ -472,23 +472,23 @@ def test_dictionarydefaultvalue_constructor_args():
 
 
 
-def test_art::instance::entry_is_not_abstract():
-    assert not inspect.isabstract(art::instance::Entry)
+def test_art_instance_entry_is_not_abstract():
+    assert not inspect.isabstract(art_instance_Entry)
 
 
-def test_art::instance::entry_constructor_exists():
-    assert callable(art::instance::Entry.__init__)
+def test_art_instance_entry_constructor_exists():
+    assert callable(art_instance_Entry.__init__)
 
 
-def test_art::instance::entry_constructor_args():
-    sig = inspect.signature(art::instance::Entry.__init__)
+def test_art_instance_entry_constructor_args():
+    sig = inspect.signature(art_instance_Entry.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
 
-def test_art::instance::entry_has_value():
-    assert hasattr(art::instance::Entry, "value")
+def test_art_instance_entry_has_value():
+    assert hasattr(art_instance_Entry, "value")
     descriptor = None
-    for klass in art::instance::Entry.__mro__:
+    for klass in art_instance_Entry.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -524,23 +524,23 @@ def test_entry_constructor_args():
 
 
 
-def test_art::instance::otherentry_is_not_abstract():
-    assert not inspect.isabstract(art::instance::OtherEntry)
+def test_art_instance_otherentry_is_not_abstract():
+    assert not inspect.isabstract(art_instance_OtherEntry)
 
 
-def test_art::instance::otherentry_constructor_exists():
-    assert callable(art::instance::OtherEntry.__init__)
+def test_art_instance_otherentry_constructor_exists():
+    assert callable(art_instance_OtherEntry.__init__)
 
 
-def test_art::instance::otherentry_constructor_args():
-    sig = inspect.signature(art::instance::OtherEntry.__init__)
+def test_art_instance_otherentry_constructor_args():
+    sig = inspect.signature(art_instance_OtherEntry.__init__)
     params = list(sig.parameters.keys())
     assert "key" in params, "Missing parameter 'key'"
 
-def test_art::instance::otherentry_has_key():
-    assert hasattr(art::instance::OtherEntry, "key")
+def test_art_instance_otherentry_has_key():
+    assert hasattr(art_instance_OtherEntry, "key")
     descriptor = None
-    for klass in art::instance::OtherEntry.__mro__:
+    for klass in art_instance_OtherEntry.__mro__:
         if "key" in klass.__dict__:
             descriptor = klass.__dict__["key"]
             break
@@ -548,16 +548,16 @@ def test_art::instance::otherentry_has_key():
 
 
 
-def test_art::instance::defaultentry_is_not_abstract():
-    assert not inspect.isabstract(art::instance::DefaultEntry)
+def test_art_instance_defaultentry_is_not_abstract():
+    assert not inspect.isabstract(art_instance_DefaultEntry)
 
 
-def test_art::instance::defaultentry_constructor_exists():
-    assert callable(art::instance::DefaultEntry.__init__)
+def test_art_instance_defaultentry_constructor_exists():
+    assert callable(art_instance_DefaultEntry.__init__)
 
 
-def test_art::instance::defaultentry_constructor_args():
-    sig = inspect.signature(art::instance::DefaultEntry.__init__)
+def test_art_instance_defaultentry_constructor_args():
+    sig = inspect.signature(art_instance_DefaultEntry.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -576,16 +576,16 @@ def test_basicattribute_constructor_args():
 
 
 
-def test_art::instance::attributeinstance_is_not_abstract():
-    assert not inspect.isabstract(art::instance::AttributeInstance)
+def test_art_instance_attributeinstance_is_not_abstract():
+    assert not inspect.isabstract(art_instance_AttributeInstance)
 
 
-def test_art::instance::attributeinstance_constructor_exists():
-    assert callable(art::instance::AttributeInstance.__init__)
+def test_art_instance_attributeinstance_constructor_exists():
+    assert callable(art_instance_AttributeInstance.__init__)
 
 
-def test_art::instance::attributeinstance_constructor_args():
-    sig = inspect.signature(art::instance::AttributeInstance.__init__)
+def test_art_instance_attributeinstance_constructor_args():
+    sig = inspect.signature(art_instance_AttributeInstance.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -604,16 +604,16 @@ def test_abstractport_constructor_args():
 
 
 
-def test_art::type::portcollection_is_not_abstract():
-    assert not inspect.isabstract(art::type::PortCollection)
+def test_art_type_portcollection_is_not_abstract():
+    assert not inspect.isabstract(art_type_PortCollection)
 
 
-def test_art::type::portcollection_constructor_exists():
-    assert callable(art::type::PortCollection.__init__)
+def test_art_type_portcollection_constructor_exists():
+    assert callable(art_type_PortCollection.__init__)
 
 
-def test_art::type::portcollection_constructor_args():
-    sig = inspect.signature(art::type::PortCollection.__init__)
+def test_art_type_portcollection_constructor_args():
+    sig = inspect.signature(art_type_PortCollection.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -632,51 +632,51 @@ def test_binding_constructor_args():
 
 
 
-def test_art::instance::delegationbinding_is_not_abstract():
-    assert not inspect.isabstract(art::instance::DelegationBinding)
+def test_art_instance_delegationbinding_is_not_abstract():
+    assert not inspect.isabstract(art_instance_DelegationBinding)
 
 
-def test_art::instance::delegationbinding_constructor_exists():
-    assert callable(art::instance::DelegationBinding.__init__)
+def test_art_instance_delegationbinding_constructor_exists():
+    assert callable(art_instance_DelegationBinding.__init__)
 
 
-def test_art::instance::delegationbinding_constructor_args():
-    sig = inspect.signature(art::instance::DelegationBinding.__init__)
+def test_art_instance_delegationbinding_constructor_args():
+    sig = inspect.signature(art_instance_DelegationBinding.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_art::instance::transmissionbinding_is_not_abstract():
-    assert not inspect.isabstract(art::instance::TransmissionBinding)
+def test_art_instance_transmissionbinding_is_not_abstract():
+    assert not inspect.isabstract(art_instance_TransmissionBinding)
 
 
-def test_art::instance::transmissionbinding_constructor_exists():
-    assert callable(art::instance::TransmissionBinding.__init__)
+def test_art_instance_transmissionbinding_constructor_exists():
+    assert callable(art_instance_TransmissionBinding.__init__)
 
 
-def test_art::instance::transmissionbinding_constructor_args():
-    sig = inspect.signature(art::instance::TransmissionBinding.__init__)
+def test_art_instance_transmissionbinding_constructor_args():
+    sig = inspect.signature(art_instance_TransmissionBinding.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_art::instance::binding_is_not_abstract():
-    assert not inspect.isabstract(art::instance::Binding)
+def test_art_instance_binding_is_not_abstract():
+    assert not inspect.isabstract(art_instance_Binding)
 
 
-def test_art::instance::binding_constructor_exists():
-    assert callable(art::instance::Binding.__init__)
+def test_art_instance_binding_constructor_exists():
+    assert callable(art_instance_Binding.__init__)
 
 
-def test_art::instance::binding_constructor_args():
-    sig = inspect.signature(art::instance::Binding.__init__)
+def test_art_instance_binding_constructor_args():
+    sig = inspect.signature(art_instance_Binding.__init__)
     params = list(sig.parameters.keys())
     assert "id" in params, "Missing parameter 'id'"
 
-def test_art::instance::binding_has_id():
-    assert hasattr(art::instance::Binding, "id")
+def test_art_instance_binding_has_id():
+    assert hasattr(art_instance_Binding, "id")
     descriptor = None
-    for klass in art::instance::Binding.__mro__:
+    for klass in art_instance_Binding.__mro__:
         if "id" in klass.__dict__:
             descriptor = klass.__dict__["id"]
             break
@@ -684,23 +684,23 @@ def test_art::instance::binding_has_id():
 
 
 
-def test_art::namedelement_is_not_abstract():
-    assert not inspect.isabstract(art::NamedElement)
+def test_art_namedelement_is_not_abstract():
+    assert not inspect.isabstract(art_NamedElement)
 
 
-def test_art::namedelement_constructor_exists():
-    assert callable(art::NamedElement.__init__)
+def test_art_namedelement_constructor_exists():
+    assert callable(art_NamedElement.__init__)
 
 
-def test_art::namedelement_constructor_args():
-    sig = inspect.signature(art::NamedElement.__init__)
+def test_art_namedelement_constructor_args():
+    sig = inspect.signature(art_NamedElement.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_art::namedelement_has_name():
-    assert hasattr(art::NamedElement, "name")
+def test_art_namedelement_has_name():
+    assert hasattr(art_NamedElement, "name")
     descriptor = None
-    for klass in art::NamedElement.__mro__:
+    for klass in art_NamedElement.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -736,23 +736,23 @@ def test_componentimplementation_constructor_args():
 
 
 
-def test_art::implem::osgicomponent_is_not_abstract():
-    assert not inspect.isabstract(art::implem::OSGiComponent)
+def test_art_implem_osgicomponent_is_not_abstract():
+    assert not inspect.isabstract(art_implem_OSGiComponent)
 
 
-def test_art::implem::osgicomponent_constructor_exists():
-    assert callable(art::implem::OSGiComponent.__init__)
+def test_art_implem_osgicomponent_constructor_exists():
+    assert callable(art_implem_OSGiComponent.__init__)
 
 
-def test_art::implem::osgicomponent_constructor_args():
-    sig = inspect.signature(art::implem::OSGiComponent.__init__)
+def test_art_implem_osgicomponent_constructor_args():
+    sig = inspect.signature(art_implem_OSGiComponent.__init__)
     params = list(sig.parameters.keys())
     assert "implementingClass" in params, "Missing parameter 'implementingClass'"
 
-def test_art::implem::osgicomponent_has_implementingClass():
-    assert hasattr(art::implem::OSGiComponent, "implementingClass")
+def test_art_implem_osgicomponent_has_implementingClass():
+    assert hasattr(art_implem_OSGiComponent, "implementingClass")
     descriptor = None
-    for klass in art::implem::OSGiComponent.__mro__:
+    for klass in art_implem_OSGiComponent.__mro__:
         if "implementingClass" in klass.__dict__:
             descriptor = klass.__dict__["implementingClass"]
             break
@@ -760,35 +760,35 @@ def test_art::implem::osgicomponent_has_implementingClass():
 
 
 
-def test_art::implem::fractalcomponent_is_not_abstract():
-    assert not inspect.isabstract(art::implem::FractalComponent)
+def test_art_implem_fractalcomponent_is_not_abstract():
+    assert not inspect.isabstract(art_implem_FractalComponent)
 
 
-def test_art::implem::fractalcomponent_constructor_exists():
-    assert callable(art::implem::FractalComponent.__init__)
+def test_art_implem_fractalcomponent_constructor_exists():
+    assert callable(art_implem_FractalComponent.__init__)
 
 
-def test_art::implem::fractalcomponent_constructor_args():
-    sig = inspect.signature(art::implem::FractalComponent.__init__)
+def test_art_implem_fractalcomponent_constructor_args():
+    sig = inspect.signature(art_implem_FractalComponent.__init__)
     params = list(sig.parameters.keys())
-    assert "controllerDesc" in params, "Missing parameter 'controllerDesc'"
     assert "contentDesc" in params, "Missing parameter 'contentDesc'"
+    assert "controllerDesc" in params, "Missing parameter 'controllerDesc'"
 
-def test_art::implem::fractalcomponent_has_controllerDesc():
-    assert hasattr(art::implem::FractalComponent, "controllerDesc")
+def test_art_implem_fractalcomponent_has_contentDesc():
+    assert hasattr(art_implem_FractalComponent, "contentDesc")
     descriptor = None
-    for klass in art::implem::FractalComponent.__mro__:
-        if "controllerDesc" in klass.__dict__:
-            descriptor = klass.__dict__["controllerDesc"]
+    for klass in art_implem_FractalComponent.__mro__:
+        if "contentDesc" in klass.__dict__:
+            descriptor = klass.__dict__["contentDesc"]
             break
     assert isinstance(descriptor, property)
 
-def test_art::implem::fractalcomponent_has_contentDesc():
-    assert hasattr(art::implem::FractalComponent, "contentDesc")
+def test_art_implem_fractalcomponent_has_controllerDesc():
+    assert hasattr(art_implem_FractalComponent, "controllerDesc")
     descriptor = None
-    for klass in art::implem::FractalComponent.__mro__:
-        if "contentDesc" in klass.__dict__:
-            descriptor = klass.__dict__["contentDesc"]
+    for klass in art_implem_FractalComponent.__mro__:
+        if "controllerDesc" in klass.__dict__:
+            descriptor = klass.__dict__["controllerDesc"]
             break
     assert isinstance(descriptor, property)
 
@@ -822,37 +822,37 @@ def test_attributeinstance_constructor_args():
 
 
 
-def test_art::instance::dictionaryvaluedattribute_is_not_abstract():
-    assert not inspect.isabstract(art::instance::DictionaryValuedAttribute)
+def test_art_instance_dictionaryvaluedattribute_is_not_abstract():
+    assert not inspect.isabstract(art_instance_DictionaryValuedAttribute)
 
 
-def test_art::instance::dictionaryvaluedattribute_constructor_exists():
-    assert callable(art::instance::DictionaryValuedAttribute.__init__)
+def test_art_instance_dictionaryvaluedattribute_constructor_exists():
+    assert callable(art_instance_DictionaryValuedAttribute.__init__)
 
 
-def test_art::instance::dictionaryvaluedattribute_constructor_args():
-    sig = inspect.signature(art::instance::DictionaryValuedAttribute.__init__)
+def test_art_instance_dictionaryvaluedattribute_constructor_args():
+    sig = inspect.signature(art_instance_DictionaryValuedAttribute.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_art::instance::valuedattribute_is_not_abstract():
-    assert not inspect.isabstract(art::instance::ValuedAttribute)
+def test_art_instance_valuedattribute_is_not_abstract():
+    assert not inspect.isabstract(art_instance_ValuedAttribute)
 
 
-def test_art::instance::valuedattribute_constructor_exists():
-    assert callable(art::instance::ValuedAttribute.__init__)
+def test_art_instance_valuedattribute_constructor_exists():
+    assert callable(art_instance_ValuedAttribute.__init__)
 
 
-def test_art::instance::valuedattribute_constructor_args():
-    sig = inspect.signature(art::instance::ValuedAttribute.__init__)
+def test_art_instance_valuedattribute_constructor_args():
+    sig = inspect.signature(art_instance_ValuedAttribute.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
 
-def test_art::instance::valuedattribute_has_value():
-    assert hasattr(art::instance::ValuedAttribute, "value")
+def test_art_instance_valuedattribute_has_value():
+    assert hasattr(art_instance_ValuedAttribute, "value")
     descriptor = None
-    for klass in art::instance::ValuedAttribute.__mro__:
+    for klass in art_instance_ValuedAttribute.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -874,30 +874,30 @@ def test_group_constructor_args():
 
 
 
-def test_art::group::typegroup_is_not_abstract():
-    assert not inspect.isabstract(art::group::TypeGroup)
+def test_art_group_instancegroup_is_not_abstract():
+    assert not inspect.isabstract(art_group_InstanceGroup)
 
 
-def test_art::group::typegroup_constructor_exists():
-    assert callable(art::group::TypeGroup.__init__)
+def test_art_group_instancegroup_constructor_exists():
+    assert callable(art_group_InstanceGroup.__init__)
 
 
-def test_art::group::typegroup_constructor_args():
-    sig = inspect.signature(art::group::TypeGroup.__init__)
+def test_art_group_instancegroup_constructor_args():
+    sig = inspect.signature(art_group_InstanceGroup.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_art::group::instancegroup_is_not_abstract():
-    assert not inspect.isabstract(art::group::InstanceGroup)
+def test_art_group_typegroup_is_not_abstract():
+    assert not inspect.isabstract(art_group_TypeGroup)
 
 
-def test_art::group::instancegroup_constructor_exists():
-    assert callable(art::group::InstanceGroup.__init__)
+def test_art_group_typegroup_constructor_exists():
+    assert callable(art_group_TypeGroup.__init__)
 
 
-def test_art::group::instancegroup_constructor_args():
-    sig = inspect.signature(art::group::InstanceGroup.__init__)
+def test_art_group_typegroup_constructor_args():
+    sig = inspect.signature(art_group_TypeGroup.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -916,30 +916,30 @@ def test_componenttype_constructor_args():
 
 
 
-def test_art::type::compositetype_is_not_abstract():
-    assert not inspect.isabstract(art::type::CompositeType)
+def test_art_type_primitivetype_is_not_abstract():
+    assert not inspect.isabstract(art_type_PrimitiveType)
 
 
-def test_art::type::compositetype_constructor_exists():
-    assert callable(art::type::CompositeType.__init__)
+def test_art_type_primitivetype_constructor_exists():
+    assert callable(art_type_PrimitiveType.__init__)
 
 
-def test_art::type::compositetype_constructor_args():
-    sig = inspect.signature(art::type::CompositeType.__init__)
+def test_art_type_primitivetype_constructor_args():
+    sig = inspect.signature(art_type_PrimitiveType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_art::type::primitivetype_is_not_abstract():
-    assert not inspect.isabstract(art::type::PrimitiveType)
+def test_art_type_compositetype_is_not_abstract():
+    assert not inspect.isabstract(art_type_CompositeType)
 
 
-def test_art::type::primitivetype_constructor_exists():
-    assert callable(art::type::PrimitiveType.__init__)
+def test_art_type_compositetype_constructor_exists():
+    assert callable(art_type_CompositeType.__init__)
 
 
-def test_art::type::primitivetype_constructor_args():
-    sig = inspect.signature(art::type::PrimitiveType.__init__)
+def test_art_type_compositetype_constructor_args():
+    sig = inspect.signature(art_type_CompositeType.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -958,30 +958,30 @@ def test_service_constructor_args():
 
 
 
-def test_art::type::controlservice_is_not_abstract():
-    assert not inspect.isabstract(art::type::ControlService)
+def test_art_type_functionalservice_is_not_abstract():
+    assert not inspect.isabstract(art_type_FunctionalService)
 
 
-def test_art::type::controlservice_constructor_exists():
-    assert callable(art::type::ControlService.__init__)
+def test_art_type_functionalservice_constructor_exists():
+    assert callable(art_type_FunctionalService.__init__)
 
 
-def test_art::type::controlservice_constructor_args():
-    sig = inspect.signature(art::type::ControlService.__init__)
+def test_art_type_functionalservice_constructor_args():
+    sig = inspect.signature(art_type_FunctionalService.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_art::type::functionalservice_is_not_abstract():
-    assert not inspect.isabstract(art::type::FunctionalService)
+def test_art_type_controlservice_is_not_abstract():
+    assert not inspect.isabstract(art_type_ControlService)
 
 
-def test_art::type::functionalservice_constructor_exists():
-    assert callable(art::type::FunctionalService.__init__)
+def test_art_type_controlservice_constructor_exists():
+    assert callable(art_type_ControlService.__init__)
 
 
-def test_art::type::functionalservice_constructor_args():
-    sig = inspect.signature(art::type::FunctionalService.__init__)
+def test_art_type_controlservice_constructor_args():
+    sig = inspect.signature(art_type_ControlService.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1014,113 +1014,51 @@ def test_modelelement_constructor_args():
 
 
 
-def test_art::type::service_is_not_abstract():
-    assert not inspect.isabstract(art::type::Service)
+def test_art_datatype_is_not_abstract():
+    assert not inspect.isabstract(art_DataType)
 
 
-def test_art::type::service_constructor_exists():
-    assert callable(art::type::Service.__init__)
+def test_art_datatype_constructor_exists():
+    assert callable(art_DataType.__init__)
 
 
-def test_art::type::service_constructor_args():
-    sig = inspect.signature(art::type::Service.__init__)
+def test_art_datatype_constructor_args():
+    sig = inspect.signature(art_DataType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_art::type::componenttype_is_not_abstract():
-    assert not inspect.isabstract(art::type::ComponentType)
+def test_art_type_componenttype_is_not_abstract():
+    assert not inspect.isabstract(art_type_ComponentType)
 
 
-def test_art::type::componenttype_constructor_exists():
-    assert callable(art::type::ComponentType.__init__)
+def test_art_type_componenttype_constructor_exists():
+    assert callable(art_type_ComponentType.__init__)
 
 
-def test_art::type::componenttype_constructor_args():
-    sig = inspect.signature(art::type::ComponentType.__init__)
+def test_art_type_componenttype_constructor_args():
+    sig = inspect.signature(art_type_ComponentType.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_art::type::operation_is_not_abstract():
-    assert not inspect.isabstract(art::type::Operation)
+def test_art_instance_componentinstance_is_not_abstract():
+    assert not inspect.isabstract(art_instance_ComponentInstance)
 
 
-def test_art::type::operation_constructor_exists():
-    assert callable(art::type::Operation.__init__)
+def test_art_instance_componentinstance_constructor_exists():
+    assert callable(art_instance_ComponentInstance.__init__)
 
 
-def test_art::type::operation_constructor_args():
-    sig = inspect.signature(art::type::Operation.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_art::cardinalityelement_is_not_abstract():
-    assert not inspect.isabstract(art::CardinalityElement)
-
-
-def test_art::cardinalityelement_constructor_exists():
-    assert callable(art::CardinalityElement.__init__)
-
-
-def test_art::cardinalityelement_constructor_args():
-    sig = inspect.signature(art::CardinalityElement.__init__)
-    params = list(sig.parameters.keys())
-    assert "lower" in params, "Missing parameter 'lower'"
-    assert "upper" in params, "Missing parameter 'upper'"
-
-def test_art::cardinalityelement_has_lower():
-    assert hasattr(art::CardinalityElement, "lower")
-    descriptor = None
-    for klass in art::CardinalityElement.__mro__:
-        if "lower" in klass.__dict__:
-            descriptor = klass.__dict__["lower"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_art::cardinalityelement_has_upper():
-    assert hasattr(art::CardinalityElement, "upper")
-    descriptor = None
-    for klass in art::CardinalityElement.__mro__:
-        if "upper" in klass.__dict__:
-            descriptor = klass.__dict__["upper"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_art::datatype_is_not_abstract():
-    assert not inspect.isabstract(art::DataType)
-
-
-def test_art::datatype_constructor_exists():
-    assert callable(art::DataType.__init__)
-
-
-def test_art::datatype_constructor_args():
-    sig = inspect.signature(art::DataType.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_art::instance::componentinstance_is_not_abstract():
-    assert not inspect.isabstract(art::instance::ComponentInstance)
-
-
-def test_art::instance::componentinstance_constructor_exists():
-    assert callable(art::instance::ComponentInstance.__init__)
-
-
-def test_art::instance::componentinstance_constructor_args():
-    sig = inspect.signature(art::instance::ComponentInstance.__init__)
+def test_art_instance_componentinstance_constructor_args():
+    sig = inspect.signature(art_instance_ComponentInstance.__init__)
     params = list(sig.parameters.keys())
     assert "state" in params, "Missing parameter 'state'"
 
-def test_art::instance::componentinstance_has_state():
-    assert hasattr(art::instance::ComponentInstance, "state")
+def test_art_instance_componentinstance_has_state():
+    assert hasattr(art_instance_ComponentInstance, "state")
     descriptor = None
-    for klass in art::instance::ComponentInstance.__mro__:
+    for klass in art_instance_ComponentInstance.__mro__:
         if "state" in klass.__dict__:
             descriptor = klass.__dict__["state"]
             break
@@ -1128,30 +1066,92 @@ def test_art::instance::componentinstance_has_state():
 
 
 
-def test_art::typedelement_is_not_abstract():
-    assert not inspect.isabstract(art::TypedElement)
+def test_art_type_service_is_not_abstract():
+    assert not inspect.isabstract(art_type_Service)
 
 
-def test_art::typedelement_constructor_exists():
-    assert callable(art::TypedElement.__init__)
+def test_art_type_service_constructor_exists():
+    assert callable(art_type_Service.__init__)
 
 
-def test_art::typedelement_constructor_args():
-    sig = inspect.signature(art::TypedElement.__init__)
+def test_art_type_service_constructor_args():
+    sig = inspect.signature(art_type_Service.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_art::system_is_not_abstract():
-    assert not inspect.isabstract(art::System)
+def test_art_typedelement_is_not_abstract():
+    assert not inspect.isabstract(art_TypedElement)
 
 
-def test_art::system_constructor_exists():
-    assert callable(art::System.__init__)
+def test_art_typedelement_constructor_exists():
+    assert callable(art_TypedElement.__init__)
 
 
-def test_art::system_constructor_args():
-    sig = inspect.signature(art::System.__init__)
+def test_art_typedelement_constructor_args():
+    sig = inspect.signature(art_TypedElement.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_art_type_operation_is_not_abstract():
+    assert not inspect.isabstract(art_type_Operation)
+
+
+def test_art_type_operation_constructor_exists():
+    assert callable(art_type_Operation.__init__)
+
+
+def test_art_type_operation_constructor_args():
+    sig = inspect.signature(art_type_Operation.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_art_cardinalityelement_is_not_abstract():
+    assert not inspect.isabstract(art_CardinalityElement)
+
+
+def test_art_cardinalityelement_constructor_exists():
+    assert callable(art_CardinalityElement.__init__)
+
+
+def test_art_cardinalityelement_constructor_args():
+    sig = inspect.signature(art_CardinalityElement.__init__)
+    params = list(sig.parameters.keys())
+    assert "lower" in params, "Missing parameter 'lower'"
+    assert "upper" in params, "Missing parameter 'upper'"
+
+def test_art_cardinalityelement_has_lower():
+    assert hasattr(art_CardinalityElement, "lower")
+    descriptor = None
+    for klass in art_CardinalityElement.__mro__:
+        if "lower" in klass.__dict__:
+            descriptor = klass.__dict__["lower"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_art_cardinalityelement_has_upper():
+    assert hasattr(art_CardinalityElement, "upper")
+    descriptor = None
+    for klass in art_CardinalityElement.__mro__:
+        if "upper" in klass.__dict__:
+            descriptor = klass.__dict__["upper"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_art_system_is_not_abstract():
+    assert not inspect.isabstract(art_System)
+
+
+def test_art_system_constructor_exists():
+    assert callable(art_System.__init__)
+
+
+def test_art_system_constructor_args():
+    sig = inspect.signature(art_System.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1170,23 +1170,51 @@ def test_namedelement_constructor_args():
 
 
 
-def test_art::type::abstractport_is_not_abstract():
-    assert not inspect.isabstract(art::type::AbstractPort)
+def test_art_group_group_is_not_abstract():
+    assert not inspect.isabstract(art_group_Group)
 
 
-def test_art::type::abstractport_constructor_exists():
-    assert callable(art::type::AbstractPort.__init__)
+def test_art_group_group_constructor_exists():
+    assert callable(art_group_Group.__init__)
 
 
-def test_art::type::abstractport_constructor_args():
-    sig = inspect.signature(art::type::AbstractPort.__init__)
+def test_art_group_group_constructor_args():
+    sig = inspect.signature(art_group_Group.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_art_type_portid_is_not_abstract():
+    assert not inspect.isabstract(art_type_PortId)
+
+
+def test_art_type_portid_constructor_exists():
+    assert callable(art_type_PortId.__init__)
+
+
+def test_art_type_portid_constructor_args():
+    sig = inspect.signature(art_type_PortId.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_art_type_abstractport_is_not_abstract():
+    assert not inspect.isabstract(art_type_AbstractPort)
+
+
+def test_art_type_abstractport_constructor_exists():
+    assert callable(art_type_AbstractPort.__init__)
+
+
+def test_art_type_abstractport_constructor_args():
+    sig = inspect.signature(art_type_AbstractPort.__init__)
     params = list(sig.parameters.keys())
     assert "role" in params, "Missing parameter 'role'"
 
-def test_art::type::abstractport_has_role():
-    assert hasattr(art::type::AbstractPort, "role")
+def test_art_type_abstractport_has_role():
+    assert hasattr(art_type_AbstractPort, "role")
     descriptor = None
-    for klass in art::type::AbstractPort.__mro__:
+    for klass in art_type_AbstractPort.__mro__:
         if "role" in klass.__dict__:
             descriptor = klass.__dict__["role"]
             break
@@ -1194,44 +1222,16 @@ def test_art::type::abstractport_has_role():
 
 
 
-def test_art::group::group_is_not_abstract():
-    assert not inspect.isabstract(art::group::Group)
+def test_art_modelelement_is_not_abstract():
+    assert not inspect.isabstract(art_ModelElement)
 
 
-def test_art::group::group_constructor_exists():
-    assert callable(art::group::Group.__init__)
+def test_art_modelelement_constructor_exists():
+    assert callable(art_ModelElement.__init__)
 
 
-def test_art::group::group_constructor_args():
-    sig = inspect.signature(art::group::Group.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_art::type::portid_is_not_abstract():
-    assert not inspect.isabstract(art::type::PortId)
-
-
-def test_art::type::portid_constructor_exists():
-    assert callable(art::type::PortId.__init__)
-
-
-def test_art::type::portid_constructor_args():
-    sig = inspect.signature(art::type::PortId.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_art::modelelement_is_not_abstract():
-    assert not inspect.isabstract(art::ModelElement)
-
-
-def test_art::modelelement_constructor_exists():
-    assert callable(art::ModelElement.__init__)
-
-
-def test_art::modelelement_constructor_args():
-    sig = inspect.signature(art::ModelElement.__init__)
+def test_art_modelelement_constructor_args():
+    sig = inspect.signature(art_ModelElement.__init__)
     params = list(sig.parameters.keys())
 
 def test_instancestate_exists():
@@ -1242,8 +1242,8 @@ def test_instancestate_has_all_literals():
     # Collect the names of literals in this Enumeration
     enum_literals = [lit.name for lit in InstanceState]
     expected_literals = [
-        "OFF",
         "ON",
+        "OFF",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
@@ -1257,8 +1257,8 @@ def test_portrole_has_all_literals():
     # Collect the names of literals in this Enumeration
     enum_literals = [lit.name for lit in PortRole]
     expected_literals = [
-        "server",
         "client",
+        "server",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
@@ -1276,55 +1276,55 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-art::implem::ComponentImplementation_strategy = st.builds(
-    art::implem::ComponentImplementation,
+art_implem_ComponentImplementation_strategy = st.builds(
+    art_implem_ComponentImplementation,
 )
-art::type::DictionaryDefaultValue_strategy = st.builds(
-    art::type::DictionaryDefaultValue,
-    value=
-        safe_text,
+art_type_DictionaryDefaultValue_strategy = st.builds(
+    art_type_DictionaryDefaultValue,
     key=
+        safe_text,
+    value=
         safe_text
 )
-art::implem::TypeImplementation_strategy = st.builds(
-    art::implem::TypeImplementation,
+art_implem_TypeImplementation_strategy = st.builds(
+    art_implem_TypeImplementation,
 )
 TypeImplementation_strategy = st.builds(
     TypeImplementation,
 )
-art::implem::OSGiType_strategy = st.builds(
-    art::implem::OSGiType,
+art_implem_OSGiType_strategy = st.builds(
+    art_implem_OSGiType,
     generateInstanceBundle=
         safe_text
 )
 TypeGroup_strategy = st.builds(
     TypeGroup,
 )
-type::art::DataType_strategy = st.builds(
-    type::art::DataType,
+type_art_DataType_strategy = st.builds(
+    type_art_DataType,
 )
 PortId_strategy = st.builds(
     PortId,
 )
-type::AbstractPort_strategy = st.builds(
-    type::AbstractPort,
+type_AbstractPort_strategy = st.builds(
+    type_AbstractPort,
 )
 CardinalityElement_strategy = st.builds(
     CardinalityElement,
 )
-art::type::Port_strategy = st.builds(
-    art::type::Port,
+art_type_Port_strategy = st.builds(
+    art_type_Port,
     isOptional=
         safe_text
 )
 TypedElement_strategy = st.builds(
     TypedElement,
 )
-art::type::Attribute_strategy = st.builds(
-    art::type::Attribute,
+art_type_Attribute_strategy = st.builds(
+    art_type_Attribute,
 )
-art::type::Parameter_strategy = st.builds(
-    art::type::Parameter,
+art_type_Parameter_strategy = st.builds(
+    art_type_Parameter,
 )
 Parameter_strategy = st.builds(
     Parameter,
@@ -1338,28 +1338,28 @@ DelegationBinding_strategy = st.builds(
 ComponentInstance_strategy = st.builds(
     ComponentInstance,
 )
-art::instance::CompositeInstance_strategy = st.builds(
-    art::instance::CompositeInstance,
+art_instance_CompositeInstance_strategy = st.builds(
+    art_instance_CompositeInstance,
 )
-art::instance::PrimitiveInstance_strategy = st.builds(
-    art::instance::PrimitiveInstance,
+art_instance_PrimitiveInstance_strategy = st.builds(
+    art_instance_PrimitiveInstance,
 )
 Attribute_strategy = st.builds(
     Attribute,
 )
-art::type::Dictionary_strategy = st.builds(
-    art::type::Dictionary,
-)
-art::type::BasicAttribute_strategy = st.builds(
-    art::type::BasicAttribute,
+art_type_BasicAttribute_strategy = st.builds(
+    art_type_BasicAttribute,
     defaultValue=
         safe_text
+)
+art_type_Dictionary_strategy = st.builds(
+    art_type_Dictionary,
 )
 DictionaryDefaultValue_strategy = st.builds(
     DictionaryDefaultValue,
 )
-art::instance::Entry_strategy = st.builds(
-    art::instance::Entry,
+art_instance_Entry_strategy = st.builds(
+    art_instance_Entry,
     value=
         safe_text
 )
@@ -1369,42 +1369,42 @@ Dictionary_strategy = st.builds(
 Entry_strategy = st.builds(
     Entry,
 )
-art::instance::OtherEntry_strategy = st.builds(
-    art::instance::OtherEntry,
+art_instance_OtherEntry_strategy = st.builds(
+    art_instance_OtherEntry,
     key=
         safe_text
 )
-art::instance::DefaultEntry_strategy = st.builds(
-    art::instance::DefaultEntry,
+art_instance_DefaultEntry_strategy = st.builds(
+    art_instance_DefaultEntry,
 )
 BasicAttribute_strategy = st.builds(
     BasicAttribute,
 )
-art::instance::AttributeInstance_strategy = st.builds(
-    art::instance::AttributeInstance,
+art_instance_AttributeInstance_strategy = st.builds(
+    art_instance_AttributeInstance,
 )
 AbstractPort_strategy = st.builds(
     AbstractPort,
 )
-art::type::PortCollection_strategy = st.builds(
-    art::type::PortCollection,
+art_type_PortCollection_strategy = st.builds(
+    art_type_PortCollection,
 )
 Binding_strategy = st.builds(
     Binding,
 )
-art::instance::DelegationBinding_strategy = st.builds(
-    art::instance::DelegationBinding,
+art_instance_DelegationBinding_strategy = st.builds(
+    art_instance_DelegationBinding,
 )
-art::instance::TransmissionBinding_strategy = st.builds(
-    art::instance::TransmissionBinding,
+art_instance_TransmissionBinding_strategy = st.builds(
+    art_instance_TransmissionBinding,
 )
-art::instance::Binding_strategy = st.builds(
-    art::instance::Binding,
+art_instance_Binding_strategy = st.builds(
+    art_instance_Binding,
     id=
         safe_text
 )
-art::NamedElement_strategy = st.builds(
-    art::NamedElement,
+art_NamedElement_strategy = st.builds(
+    art_NamedElement,
     name=
         safe_text
 )
@@ -1414,16 +1414,16 @@ InstanceGroup_strategy = st.builds(
 ComponentImplementation_strategy = st.builds(
     ComponentImplementation,
 )
-art::implem::OSGiComponent_strategy = st.builds(
-    art::implem::OSGiComponent,
+art_implem_OSGiComponent_strategy = st.builds(
+    art_implem_OSGiComponent,
     implementingClass=
         safe_text
 )
-art::implem::FractalComponent_strategy = st.builds(
-    art::implem::FractalComponent,
-    controllerDesc=
-        safe_text,
+art_implem_FractalComponent_strategy = st.builds(
+    art_implem_FractalComponent,
     contentDesc=
+        safe_text,
+    controllerDesc=
         safe_text
 )
 TransmissionBinding_strategy = st.builds(
@@ -1432,40 +1432,40 @@ TransmissionBinding_strategy = st.builds(
 AttributeInstance_strategy = st.builds(
     AttributeInstance,
 )
-art::instance::DictionaryValuedAttribute_strategy = st.builds(
-    art::instance::DictionaryValuedAttribute,
+art_instance_DictionaryValuedAttribute_strategy = st.builds(
+    art_instance_DictionaryValuedAttribute,
 )
-art::instance::ValuedAttribute_strategy = st.builds(
-    art::instance::ValuedAttribute,
+art_instance_ValuedAttribute_strategy = st.builds(
+    art_instance_ValuedAttribute,
     value=
         safe_text
 )
 Group_strategy = st.builds(
     Group,
 )
-art::group::TypeGroup_strategy = st.builds(
-    art::group::TypeGroup,
+art_group_InstanceGroup_strategy = st.builds(
+    art_group_InstanceGroup,
 )
-art::group::InstanceGroup_strategy = st.builds(
-    art::group::InstanceGroup,
+art_group_TypeGroup_strategy = st.builds(
+    art_group_TypeGroup,
 )
 ComponentType_strategy = st.builds(
     ComponentType,
 )
-art::type::CompositeType_strategy = st.builds(
-    art::type::CompositeType,
+art_type_PrimitiveType_strategy = st.builds(
+    art_type_PrimitiveType,
 )
-art::type::PrimitiveType_strategy = st.builds(
-    art::type::PrimitiveType,
+art_type_CompositeType_strategy = st.builds(
+    art_type_CompositeType,
 )
 Service_strategy = st.builds(
     Service,
 )
-art::type::ControlService_strategy = st.builds(
-    art::type::ControlService,
+art_type_FunctionalService_strategy = st.builds(
+    art_type_FunctionalService,
 )
-art::type::FunctionalService_strategy = st.builds(
-    art::type::FunctionalService,
+art_type_ControlService_strategy = st.builds(
+    art_type_ControlService,
 )
 CompositeInstance_strategy = st.builds(
     CompositeInstance,
@@ -1473,108 +1473,99 @@ CompositeInstance_strategy = st.builds(
 ModelElement_strategy = st.builds(
     ModelElement,
 )
-art::type::Service_strategy = st.builds(
-    art::type::Service,
+art_DataType_strategy = st.builds(
+    art_DataType,
 )
-art::type::ComponentType_strategy = st.builds(
-    art::type::ComponentType,
+art_type_ComponentType_strategy = st.builds(
+    art_type_ComponentType,
 )
-art::type::Operation_strategy = st.builds(
-    art::type::Operation,
+art_instance_ComponentInstance_strategy = st.builds(
+    art_instance_ComponentInstance,
+    state=
+        safe_text
 )
-art::CardinalityElement_strategy = st.builds(
-    art::CardinalityElement,
+art_type_Service_strategy = st.builds(
+    art_type_Service,
+)
+art_TypedElement_strategy = st.builds(
+    art_TypedElement,
+)
+art_type_Operation_strategy = st.builds(
+    art_type_Operation,
+)
+art_CardinalityElement_strategy = st.builds(
+    art_CardinalityElement,
     lower=
         safe_text,
     upper=
         safe_text
 )
-art::DataType_strategy = st.builds(
-    art::DataType,
-)
-art::instance::ComponentInstance_strategy = st.builds(
-    art::instance::ComponentInstance,
-    state=
-        safe_text
-)
-art::TypedElement_strategy = st.builds(
-    art::TypedElement,
-)
-art::System_strategy = st.builds(
-    art::System,
+art_System_strategy = st.builds(
+    art_System,
 )
 NamedElement_strategy = st.builds(
     NamedElement,
 )
-art::type::AbstractPort_strategy = st.builds(
-    art::type::AbstractPort,
+art_group_Group_strategy = st.builds(
+    art_group_Group,
+)
+art_type_PortId_strategy = st.builds(
+    art_type_PortId,
+)
+art_type_AbstractPort_strategy = st.builds(
+    art_type_AbstractPort,
     role=
         safe_text
 )
-art::group::Group_strategy = st.builds(
-    art::group::Group,
-)
-art::type::PortId_strategy = st.builds(
-    art::type::PortId,
-)
-art::ModelElement_strategy = st.builds(
-    art::ModelElement,
+art_ModelElement_strategy = st.builds(
+    art_ModelElement,
 )
 
-@given(instance=art::implem::ComponentImplementation_strategy)
+@given(instance=art_implem_ComponentImplementation_strategy)
 @settings(max_examples=50)
-def test_art::implem::componentimplementation_instantiation(instance):
-    assert isinstance(instance, art::implem::ComponentImplementation)
+def test_art_implem_componentimplementation_instantiation(instance):
+    assert isinstance(instance, art_implem_ComponentImplementation)
 
-@given(instance=art::type::DictionaryDefaultValue_strategy)
+@given(instance=art_type_DictionaryDefaultValue_strategy)
 @settings(max_examples=50)
-def test_art::type::dictionarydefaultvalue_instantiation(instance):
-    assert isinstance(instance, art::type::DictionaryDefaultValue)
-
-@given(instance=art::type::DictionaryDefaultValue_strategy)
-def test_art::type::dictionarydefaultvalue_value_type(instance):
-    assert isinstance(instance.value, str)
+def test_art_type_dictionarydefaultvalue_instantiation(instance):
+    assert isinstance(instance, art_type_DictionaryDefaultValue)
 
 
-@given(instance=art::type::DictionaryDefaultValue_strategy)
-def test_art::type::dictionarydefaultvalue_value_setter(instance):
-    original = instance.value
-    instance.value = original
-    assert instance.value == original
 
-@given(instance=art::type::DictionaryDefaultValue_strategy)
-def test_art::type::dictionarydefaultvalue_key_type(instance):
-    assert isinstance(instance.key, str)
-
-
-@given(instance=art::type::DictionaryDefaultValue_strategy)
-def test_art::type::dictionarydefaultvalue_key_setter(instance):
+@given(instance=art_type_DictionaryDefaultValue_strategy)
+def test_art_type_dictionarydefaultvalue_key_setter(instance):
     original = instance.key
     instance.key = original
     assert instance.key == original
 
-@given(instance=art::implem::TypeImplementation_strategy)
+
+
+@given(instance=art_type_DictionaryDefaultValue_strategy)
+def test_art_type_dictionarydefaultvalue_value_setter(instance):
+    original = instance.value
+    instance.value = original
+    assert instance.value == original
+
+@given(instance=art_implem_TypeImplementation_strategy)
 @settings(max_examples=50)
-def test_art::implem::typeimplementation_instantiation(instance):
-    assert isinstance(instance, art::implem::TypeImplementation)
+def test_art_implem_typeimplementation_instantiation(instance):
+    assert isinstance(instance, art_implem_TypeImplementation)
 
 @given(instance=TypeImplementation_strategy)
 @settings(max_examples=50)
 def test_typeimplementation_instantiation(instance):
     assert isinstance(instance, TypeImplementation)
 
-@given(instance=art::implem::OSGiType_strategy)
+@given(instance=art_implem_OSGiType_strategy)
 @settings(max_examples=50)
-def test_art::implem::osgitype_instantiation(instance):
-    assert isinstance(instance, art::implem::OSGiType)
-
-@given(instance=art::implem::OSGiType_strategy)
-def test_art::implem::osgitype_generateInstanceBundle_type(instance):
-    assert isinstance(instance.generateInstanceBundle, str)
+def test_art_implem_osgitype_instantiation(instance):
+    assert isinstance(instance, art_implem_OSGiType)
 
 
-@given(instance=art::implem::OSGiType_strategy)
-def test_art::implem::osgitype_generateInstanceBundle_setter(instance):
+
+@given(instance=art_implem_OSGiType_strategy)
+def test_art_implem_osgitype_generateInstanceBundle_setter(instance):
     original = instance.generateInstanceBundle
     instance.generateInstanceBundle = original
     assert instance.generateInstanceBundle == original
@@ -1584,38 +1575,35 @@ def test_art::implem::osgitype_generateInstanceBundle_setter(instance):
 def test_typegroup_instantiation(instance):
     assert isinstance(instance, TypeGroup)
 
-@given(instance=type::art::DataType_strategy)
+@given(instance=type_art_DataType_strategy)
 @settings(max_examples=50)
-def test_type::art::datatype_instantiation(instance):
-    assert isinstance(instance, type::art::DataType)
+def test_type_art_datatype_instantiation(instance):
+    assert isinstance(instance, type_art_DataType)
 
 @given(instance=PortId_strategy)
 @settings(max_examples=50)
 def test_portid_instantiation(instance):
     assert isinstance(instance, PortId)
 
-@given(instance=type::AbstractPort_strategy)
+@given(instance=type_AbstractPort_strategy)
 @settings(max_examples=50)
-def test_type::abstractport_instantiation(instance):
-    assert isinstance(instance, type::AbstractPort)
+def test_type_abstractport_instantiation(instance):
+    assert isinstance(instance, type_AbstractPort)
 
 @given(instance=CardinalityElement_strategy)
 @settings(max_examples=50)
 def test_cardinalityelement_instantiation(instance):
     assert isinstance(instance, CardinalityElement)
 
-@given(instance=art::type::Port_strategy)
+@given(instance=art_type_Port_strategy)
 @settings(max_examples=50)
-def test_art::type::port_instantiation(instance):
-    assert isinstance(instance, art::type::Port)
-
-@given(instance=art::type::Port_strategy)
-def test_art::type::port_isOptional_type(instance):
-    assert isinstance(instance.isOptional, str)
+def test_art_type_port_instantiation(instance):
+    assert isinstance(instance, art_type_Port)
 
 
-@given(instance=art::type::Port_strategy)
-def test_art::type::port_isOptional_setter(instance):
+
+@given(instance=art_type_Port_strategy)
+def test_art_type_port_isOptional_setter(instance):
     original = instance.isOptional
     instance.isOptional = original
     assert instance.isOptional == original
@@ -1625,15 +1613,15 @@ def test_art::type::port_isOptional_setter(instance):
 def test_typedelement_instantiation(instance):
     assert isinstance(instance, TypedElement)
 
-@given(instance=art::type::Attribute_strategy)
+@given(instance=art_type_Attribute_strategy)
 @settings(max_examples=50)
-def test_art::type::attribute_instantiation(instance):
-    assert isinstance(instance, art::type::Attribute)
+def test_art_type_attribute_instantiation(instance):
+    assert isinstance(instance, art_type_Attribute)
 
-@given(instance=art::type::Parameter_strategy)
+@given(instance=art_type_Parameter_strategy)
 @settings(max_examples=50)
-def test_art::type::parameter_instantiation(instance):
-    assert isinstance(instance, art::type::Parameter)
+def test_art_type_parameter_instantiation(instance):
+    assert isinstance(instance, art_type_Parameter)
 
 @given(instance=Parameter_strategy)
 @settings(max_examples=50)
@@ -1655,59 +1643,53 @@ def test_delegationbinding_instantiation(instance):
 def test_componentinstance_instantiation(instance):
     assert isinstance(instance, ComponentInstance)
 
-@given(instance=art::instance::CompositeInstance_strategy)
+@given(instance=art_instance_CompositeInstance_strategy)
 @settings(max_examples=50)
-def test_art::instance::compositeinstance_instantiation(instance):
-    assert isinstance(instance, art::instance::CompositeInstance)
+def test_art_instance_compositeinstance_instantiation(instance):
+    assert isinstance(instance, art_instance_CompositeInstance)
 
-@given(instance=art::instance::PrimitiveInstance_strategy)
+@given(instance=art_instance_PrimitiveInstance_strategy)
 @settings(max_examples=50)
-def test_art::instance::primitiveinstance_instantiation(instance):
-    assert isinstance(instance, art::instance::PrimitiveInstance)
+def test_art_instance_primitiveinstance_instantiation(instance):
+    assert isinstance(instance, art_instance_PrimitiveInstance)
 
 @given(instance=Attribute_strategy)
 @settings(max_examples=50)
 def test_attribute_instantiation(instance):
     assert isinstance(instance, Attribute)
 
-@given(instance=art::type::Dictionary_strategy)
+@given(instance=art_type_BasicAttribute_strategy)
 @settings(max_examples=50)
-def test_art::type::dictionary_instantiation(instance):
-    assert isinstance(instance, art::type::Dictionary)
-
-@given(instance=art::type::BasicAttribute_strategy)
-@settings(max_examples=50)
-def test_art::type::basicattribute_instantiation(instance):
-    assert isinstance(instance, art::type::BasicAttribute)
-
-@given(instance=art::type::BasicAttribute_strategy)
-def test_art::type::basicattribute_defaultValue_type(instance):
-    assert isinstance(instance.defaultValue, str)
+def test_art_type_basicattribute_instantiation(instance):
+    assert isinstance(instance, art_type_BasicAttribute)
 
 
-@given(instance=art::type::BasicAttribute_strategy)
-def test_art::type::basicattribute_defaultValue_setter(instance):
+
+@given(instance=art_type_BasicAttribute_strategy)
+def test_art_type_basicattribute_defaultValue_setter(instance):
     original = instance.defaultValue
     instance.defaultValue = original
     assert instance.defaultValue == original
+
+@given(instance=art_type_Dictionary_strategy)
+@settings(max_examples=50)
+def test_art_type_dictionary_instantiation(instance):
+    assert isinstance(instance, art_type_Dictionary)
 
 @given(instance=DictionaryDefaultValue_strategy)
 @settings(max_examples=50)
 def test_dictionarydefaultvalue_instantiation(instance):
     assert isinstance(instance, DictionaryDefaultValue)
 
-@given(instance=art::instance::Entry_strategy)
+@given(instance=art_instance_Entry_strategy)
 @settings(max_examples=50)
-def test_art::instance::entry_instantiation(instance):
-    assert isinstance(instance, art::instance::Entry)
-
-@given(instance=art::instance::Entry_strategy)
-def test_art::instance::entry_value_type(instance):
-    assert isinstance(instance.value, str)
+def test_art_instance_entry_instantiation(instance):
+    assert isinstance(instance, art_instance_Entry)
 
 
-@given(instance=art::instance::Entry_strategy)
-def test_art::instance::entry_value_setter(instance):
+
+@given(instance=art_instance_Entry_strategy)
+def test_art_instance_entry_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
@@ -1722,90 +1704,81 @@ def test_dictionary_instantiation(instance):
 def test_entry_instantiation(instance):
     assert isinstance(instance, Entry)
 
-@given(instance=art::instance::OtherEntry_strategy)
+@given(instance=art_instance_OtherEntry_strategy)
 @settings(max_examples=50)
-def test_art::instance::otherentry_instantiation(instance):
-    assert isinstance(instance, art::instance::OtherEntry)
-
-@given(instance=art::instance::OtherEntry_strategy)
-def test_art::instance::otherentry_key_type(instance):
-    assert isinstance(instance.key, str)
+def test_art_instance_otherentry_instantiation(instance):
+    assert isinstance(instance, art_instance_OtherEntry)
 
 
-@given(instance=art::instance::OtherEntry_strategy)
-def test_art::instance::otherentry_key_setter(instance):
+
+@given(instance=art_instance_OtherEntry_strategy)
+def test_art_instance_otherentry_key_setter(instance):
     original = instance.key
     instance.key = original
     assert instance.key == original
 
-@given(instance=art::instance::DefaultEntry_strategy)
+@given(instance=art_instance_DefaultEntry_strategy)
 @settings(max_examples=50)
-def test_art::instance::defaultentry_instantiation(instance):
-    assert isinstance(instance, art::instance::DefaultEntry)
+def test_art_instance_defaultentry_instantiation(instance):
+    assert isinstance(instance, art_instance_DefaultEntry)
 
 @given(instance=BasicAttribute_strategy)
 @settings(max_examples=50)
 def test_basicattribute_instantiation(instance):
     assert isinstance(instance, BasicAttribute)
 
-@given(instance=art::instance::AttributeInstance_strategy)
+@given(instance=art_instance_AttributeInstance_strategy)
 @settings(max_examples=50)
-def test_art::instance::attributeinstance_instantiation(instance):
-    assert isinstance(instance, art::instance::AttributeInstance)
+def test_art_instance_attributeinstance_instantiation(instance):
+    assert isinstance(instance, art_instance_AttributeInstance)
 
 @given(instance=AbstractPort_strategy)
 @settings(max_examples=50)
 def test_abstractport_instantiation(instance):
     assert isinstance(instance, AbstractPort)
 
-@given(instance=art::type::PortCollection_strategy)
+@given(instance=art_type_PortCollection_strategy)
 @settings(max_examples=50)
-def test_art::type::portcollection_instantiation(instance):
-    assert isinstance(instance, art::type::PortCollection)
+def test_art_type_portcollection_instantiation(instance):
+    assert isinstance(instance, art_type_PortCollection)
 
 @given(instance=Binding_strategy)
 @settings(max_examples=50)
 def test_binding_instantiation(instance):
     assert isinstance(instance, Binding)
 
-@given(instance=art::instance::DelegationBinding_strategy)
+@given(instance=art_instance_DelegationBinding_strategy)
 @settings(max_examples=50)
-def test_art::instance::delegationbinding_instantiation(instance):
-    assert isinstance(instance, art::instance::DelegationBinding)
+def test_art_instance_delegationbinding_instantiation(instance):
+    assert isinstance(instance, art_instance_DelegationBinding)
 
-@given(instance=art::instance::TransmissionBinding_strategy)
+@given(instance=art_instance_TransmissionBinding_strategy)
 @settings(max_examples=50)
-def test_art::instance::transmissionbinding_instantiation(instance):
-    assert isinstance(instance, art::instance::TransmissionBinding)
+def test_art_instance_transmissionbinding_instantiation(instance):
+    assert isinstance(instance, art_instance_TransmissionBinding)
 
-@given(instance=art::instance::Binding_strategy)
+@given(instance=art_instance_Binding_strategy)
 @settings(max_examples=50)
-def test_art::instance::binding_instantiation(instance):
-    assert isinstance(instance, art::instance::Binding)
-
-@given(instance=art::instance::Binding_strategy)
-def test_art::instance::binding_id_type(instance):
-    assert isinstance(instance.id, str)
+def test_art_instance_binding_instantiation(instance):
+    assert isinstance(instance, art_instance_Binding)
 
 
-@given(instance=art::instance::Binding_strategy)
-def test_art::instance::binding_id_setter(instance):
+
+@given(instance=art_instance_Binding_strategy)
+def test_art_instance_binding_id_setter(instance):
     original = instance.id
     instance.id = original
     assert instance.id == original
 
-@given(instance=art::NamedElement_strategy)
+@given(instance=art_NamedElement_strategy)
 @settings(max_examples=50)
-def test_art::namedelement_instantiation(instance):
-    assert isinstance(instance, art::NamedElement)
-
-@given(instance=art::NamedElement_strategy)
-def test_art::namedelement_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_art_namedelement_instantiation(instance):
+    assert isinstance(instance, art_NamedElement)
 
 
-@given(instance=art::NamedElement_strategy)
-def test_art::namedelement_name_setter(instance):
+
+@given(instance=art_NamedElement_strategy)
+def test_art_namedelement_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
@@ -1820,48 +1793,39 @@ def test_instancegroup_instantiation(instance):
 def test_componentimplementation_instantiation(instance):
     assert isinstance(instance, ComponentImplementation)
 
-@given(instance=art::implem::OSGiComponent_strategy)
+@given(instance=art_implem_OSGiComponent_strategy)
 @settings(max_examples=50)
-def test_art::implem::osgicomponent_instantiation(instance):
-    assert isinstance(instance, art::implem::OSGiComponent)
-
-@given(instance=art::implem::OSGiComponent_strategy)
-def test_art::implem::osgicomponent_implementingClass_type(instance):
-    assert isinstance(instance.implementingClass, str)
+def test_art_implem_osgicomponent_instantiation(instance):
+    assert isinstance(instance, art_implem_OSGiComponent)
 
 
-@given(instance=art::implem::OSGiComponent_strategy)
-def test_art::implem::osgicomponent_implementingClass_setter(instance):
+
+@given(instance=art_implem_OSGiComponent_strategy)
+def test_art_implem_osgicomponent_implementingClass_setter(instance):
     original = instance.implementingClass
     instance.implementingClass = original
     assert instance.implementingClass == original
 
-@given(instance=art::implem::FractalComponent_strategy)
+@given(instance=art_implem_FractalComponent_strategy)
 @settings(max_examples=50)
-def test_art::implem::fractalcomponent_instantiation(instance):
-    assert isinstance(instance, art::implem::FractalComponent)
-
-@given(instance=art::implem::FractalComponent_strategy)
-def test_art::implem::fractalcomponent_controllerDesc_type(instance):
-    assert isinstance(instance.controllerDesc, str)
+def test_art_implem_fractalcomponent_instantiation(instance):
+    assert isinstance(instance, art_implem_FractalComponent)
 
 
-@given(instance=art::implem::FractalComponent_strategy)
-def test_art::implem::fractalcomponent_controllerDesc_setter(instance):
-    original = instance.controllerDesc
-    instance.controllerDesc = original
-    assert instance.controllerDesc == original
 
-@given(instance=art::implem::FractalComponent_strategy)
-def test_art::implem::fractalcomponent_contentDesc_type(instance):
-    assert isinstance(instance.contentDesc, str)
-
-
-@given(instance=art::implem::FractalComponent_strategy)
-def test_art::implem::fractalcomponent_contentDesc_setter(instance):
+@given(instance=art_implem_FractalComponent_strategy)
+def test_art_implem_fractalcomponent_contentDesc_setter(instance):
     original = instance.contentDesc
     instance.contentDesc = original
     assert instance.contentDesc == original
+
+
+
+@given(instance=art_implem_FractalComponent_strategy)
+def test_art_implem_fractalcomponent_controllerDesc_setter(instance):
+    original = instance.controllerDesc
+    instance.controllerDesc = original
+    assert instance.controllerDesc == original
 
 @given(instance=TransmissionBinding_strategy)
 @settings(max_examples=50)
@@ -1873,23 +1837,20 @@ def test_transmissionbinding_instantiation(instance):
 def test_attributeinstance_instantiation(instance):
     assert isinstance(instance, AttributeInstance)
 
-@given(instance=art::instance::DictionaryValuedAttribute_strategy)
+@given(instance=art_instance_DictionaryValuedAttribute_strategy)
 @settings(max_examples=50)
-def test_art::instance::dictionaryvaluedattribute_instantiation(instance):
-    assert isinstance(instance, art::instance::DictionaryValuedAttribute)
+def test_art_instance_dictionaryvaluedattribute_instantiation(instance):
+    assert isinstance(instance, art_instance_DictionaryValuedAttribute)
 
-@given(instance=art::instance::ValuedAttribute_strategy)
+@given(instance=art_instance_ValuedAttribute_strategy)
 @settings(max_examples=50)
-def test_art::instance::valuedattribute_instantiation(instance):
-    assert isinstance(instance, art::instance::ValuedAttribute)
-
-@given(instance=art::instance::ValuedAttribute_strategy)
-def test_art::instance::valuedattribute_value_type(instance):
-    assert isinstance(instance.value, str)
+def test_art_instance_valuedattribute_instantiation(instance):
+    assert isinstance(instance, art_instance_ValuedAttribute)
 
 
-@given(instance=art::instance::ValuedAttribute_strategy)
-def test_art::instance::valuedattribute_value_setter(instance):
+
+@given(instance=art_instance_ValuedAttribute_strategy)
+def test_art_instance_valuedattribute_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
@@ -1899,45 +1860,45 @@ def test_art::instance::valuedattribute_value_setter(instance):
 def test_group_instantiation(instance):
     assert isinstance(instance, Group)
 
-@given(instance=art::group::TypeGroup_strategy)
+@given(instance=art_group_InstanceGroup_strategy)
 @settings(max_examples=50)
-def test_art::group::typegroup_instantiation(instance):
-    assert isinstance(instance, art::group::TypeGroup)
+def test_art_group_instancegroup_instantiation(instance):
+    assert isinstance(instance, art_group_InstanceGroup)
 
-@given(instance=art::group::InstanceGroup_strategy)
+@given(instance=art_group_TypeGroup_strategy)
 @settings(max_examples=50)
-def test_art::group::instancegroup_instantiation(instance):
-    assert isinstance(instance, art::group::InstanceGroup)
+def test_art_group_typegroup_instantiation(instance):
+    assert isinstance(instance, art_group_TypeGroup)
 
 @given(instance=ComponentType_strategy)
 @settings(max_examples=50)
 def test_componenttype_instantiation(instance):
     assert isinstance(instance, ComponentType)
 
-@given(instance=art::type::CompositeType_strategy)
+@given(instance=art_type_PrimitiveType_strategy)
 @settings(max_examples=50)
-def test_art::type::compositetype_instantiation(instance):
-    assert isinstance(instance, art::type::CompositeType)
+def test_art_type_primitivetype_instantiation(instance):
+    assert isinstance(instance, art_type_PrimitiveType)
 
-@given(instance=art::type::PrimitiveType_strategy)
+@given(instance=art_type_CompositeType_strategy)
 @settings(max_examples=50)
-def test_art::type::primitivetype_instantiation(instance):
-    assert isinstance(instance, art::type::PrimitiveType)
+def test_art_type_compositetype_instantiation(instance):
+    assert isinstance(instance, art_type_CompositeType)
 
 @given(instance=Service_strategy)
 @settings(max_examples=50)
 def test_service_instantiation(instance):
     assert isinstance(instance, Service)
 
-@given(instance=art::type::ControlService_strategy)
+@given(instance=art_type_FunctionalService_strategy)
 @settings(max_examples=50)
-def test_art::type::controlservice_instantiation(instance):
-    assert isinstance(instance, art::type::ControlService)
+def test_art_type_functionalservice_instantiation(instance):
+    assert isinstance(instance, art_type_FunctionalService)
 
-@given(instance=art::type::FunctionalService_strategy)
+@given(instance=art_type_ControlService_strategy)
 @settings(max_examples=50)
-def test_art::type::functionalservice_instantiation(instance):
-    assert isinstance(instance, art::type::FunctionalService)
+def test_art_type_controlservice_instantiation(instance):
+    assert isinstance(instance, art_type_ControlService)
 
 @given(instance=CompositeInstance_strategy)
 @settings(max_examples=50)
@@ -1949,111 +1910,99 @@ def test_compositeinstance_instantiation(instance):
 def test_modelelement_instantiation(instance):
     assert isinstance(instance, ModelElement)
 
-@given(instance=art::type::Service_strategy)
+@given(instance=art_DataType_strategy)
 @settings(max_examples=50)
-def test_art::type::service_instantiation(instance):
-    assert isinstance(instance, art::type::Service)
+def test_art_datatype_instantiation(instance):
+    assert isinstance(instance, art_DataType)
 
-@given(instance=art::type::ComponentType_strategy)
+@given(instance=art_type_ComponentType_strategy)
 @settings(max_examples=50)
-def test_art::type::componenttype_instantiation(instance):
-    assert isinstance(instance, art::type::ComponentType)
+def test_art_type_componenttype_instantiation(instance):
+    assert isinstance(instance, art_type_ComponentType)
 
-@given(instance=art::type::Operation_strategy)
+@given(instance=art_instance_ComponentInstance_strategy)
 @settings(max_examples=50)
-def test_art::type::operation_instantiation(instance):
-    assert isinstance(instance, art::type::Operation)
-
-@given(instance=art::CardinalityElement_strategy)
-@settings(max_examples=50)
-def test_art::cardinalityelement_instantiation(instance):
-    assert isinstance(instance, art::CardinalityElement)
-
-@given(instance=art::CardinalityElement_strategy)
-def test_art::cardinalityelement_lower_type(instance):
-    assert isinstance(instance.lower, str)
+def test_art_instance_componentinstance_instantiation(instance):
+    assert isinstance(instance, art_instance_ComponentInstance)
 
 
-@given(instance=art::CardinalityElement_strategy)
-def test_art::cardinalityelement_lower_setter(instance):
-    original = instance.lower
-    instance.lower = original
-    assert instance.lower == original
 
-@given(instance=art::CardinalityElement_strategy)
-def test_art::cardinalityelement_upper_type(instance):
-    assert isinstance(instance.upper, str)
-
-
-@given(instance=art::CardinalityElement_strategy)
-def test_art::cardinalityelement_upper_setter(instance):
-    original = instance.upper
-    instance.upper = original
-    assert instance.upper == original
-
-@given(instance=art::DataType_strategy)
-@settings(max_examples=50)
-def test_art::datatype_instantiation(instance):
-    assert isinstance(instance, art::DataType)
-
-@given(instance=art::instance::ComponentInstance_strategy)
-@settings(max_examples=50)
-def test_art::instance::componentinstance_instantiation(instance):
-    assert isinstance(instance, art::instance::ComponentInstance)
-
-@given(instance=art::instance::ComponentInstance_strategy)
-def test_art::instance::componentinstance_state_type(instance):
-    assert isinstance(instance.state, str)
-
-
-@given(instance=art::instance::ComponentInstance_strategy)
-def test_art::instance::componentinstance_state_setter(instance):
+@given(instance=art_instance_ComponentInstance_strategy)
+def test_art_instance_componentinstance_state_setter(instance):
     original = instance.state
     instance.state = original
     assert instance.state == original
 
-@given(instance=art::TypedElement_strategy)
+@given(instance=art_type_Service_strategy)
 @settings(max_examples=50)
-def test_art::typedelement_instantiation(instance):
-    assert isinstance(instance, art::TypedElement)
+def test_art_type_service_instantiation(instance):
+    assert isinstance(instance, art_type_Service)
 
-@given(instance=art::System_strategy)
+@given(instance=art_TypedElement_strategy)
 @settings(max_examples=50)
-def test_art::system_instantiation(instance):
-    assert isinstance(instance, art::System)
+def test_art_typedelement_instantiation(instance):
+    assert isinstance(instance, art_TypedElement)
+
+@given(instance=art_type_Operation_strategy)
+@settings(max_examples=50)
+def test_art_type_operation_instantiation(instance):
+    assert isinstance(instance, art_type_Operation)
+
+@given(instance=art_CardinalityElement_strategy)
+@settings(max_examples=50)
+def test_art_cardinalityelement_instantiation(instance):
+    assert isinstance(instance, art_CardinalityElement)
+
+
+
+@given(instance=art_CardinalityElement_strategy)
+def test_art_cardinalityelement_lower_setter(instance):
+    original = instance.lower
+    instance.lower = original
+    assert instance.lower == original
+
+
+
+@given(instance=art_CardinalityElement_strategy)
+def test_art_cardinalityelement_upper_setter(instance):
+    original = instance.upper
+    instance.upper = original
+    assert instance.upper == original
+
+@given(instance=art_System_strategy)
+@settings(max_examples=50)
+def test_art_system_instantiation(instance):
+    assert isinstance(instance, art_System)
 
 @given(instance=NamedElement_strategy)
 @settings(max_examples=50)
 def test_namedelement_instantiation(instance):
     assert isinstance(instance, NamedElement)
 
-@given(instance=art::type::AbstractPort_strategy)
+@given(instance=art_group_Group_strategy)
 @settings(max_examples=50)
-def test_art::type::abstractport_instantiation(instance):
-    assert isinstance(instance, art::type::AbstractPort)
+def test_art_group_group_instantiation(instance):
+    assert isinstance(instance, art_group_Group)
 
-@given(instance=art::type::AbstractPort_strategy)
-def test_art::type::abstractport_role_type(instance):
-    assert isinstance(instance.role, str)
+@given(instance=art_type_PortId_strategy)
+@settings(max_examples=50)
+def test_art_type_portid_instantiation(instance):
+    assert isinstance(instance, art_type_PortId)
+
+@given(instance=art_type_AbstractPort_strategy)
+@settings(max_examples=50)
+def test_art_type_abstractport_instantiation(instance):
+    assert isinstance(instance, art_type_AbstractPort)
 
 
-@given(instance=art::type::AbstractPort_strategy)
-def test_art::type::abstractport_role_setter(instance):
+
+@given(instance=art_type_AbstractPort_strategy)
+def test_art_type_abstractport_role_setter(instance):
     original = instance.role
     instance.role = original
     assert instance.role == original
 
-@given(instance=art::group::Group_strategy)
+@given(instance=art_ModelElement_strategy)
 @settings(max_examples=50)
-def test_art::group::group_instantiation(instance):
-    assert isinstance(instance, art::group::Group)
-
-@given(instance=art::type::PortId_strategy)
-@settings(max_examples=50)
-def test_art::type::portid_instantiation(instance):
-    assert isinstance(instance, art::type::PortId)
-
-@given(instance=art::ModelElement_strategy)
-@settings(max_examples=50)
-def test_art::modelelement_instantiation(instance):
-    assert isinstance(instance, art::ModelElement)
+def test_art_modelelement_instantiation(instance):
+    assert isinstance(instance, art_ModelElement)

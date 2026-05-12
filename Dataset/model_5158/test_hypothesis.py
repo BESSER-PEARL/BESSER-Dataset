@@ -3,11 +3,11 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    depcycle::B,
-    depcycle::A,
+from python_code import (
+    depcycle_B,
+    depcycle_A,
 )
 
 # =============================================================================
@@ -16,30 +16,30 @@ from classes import (
 
 
 
-def test_depcycle::b_is_not_abstract():
-    assert not inspect.isabstract(depcycle::B)
+def test_depcycle_b_is_not_abstract():
+    assert not inspect.isabstract(depcycle_B)
 
 
-def test_depcycle::b_constructor_exists():
-    assert callable(depcycle::B.__init__)
+def test_depcycle_b_constructor_exists():
+    assert callable(depcycle_B.__init__)
 
 
-def test_depcycle::b_constructor_args():
-    sig = inspect.signature(depcycle::B.__init__)
+def test_depcycle_b_constructor_args():
+    sig = inspect.signature(depcycle_B.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_depcycle::a_is_not_abstract():
-    assert not inspect.isabstract(depcycle::A)
+def test_depcycle_a_is_not_abstract():
+    assert not inspect.isabstract(depcycle_A)
 
 
-def test_depcycle::a_constructor_exists():
-    assert callable(depcycle::A.__init__)
+def test_depcycle_a_constructor_exists():
+    assert callable(depcycle_A.__init__)
 
 
-def test_depcycle::a_constructor_args():
-    sig = inspect.signature(depcycle::A.__init__)
+def test_depcycle_a_constructor_args():
+    sig = inspect.signature(depcycle_A.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -54,19 +54,19 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-depcycle::B_strategy = st.builds(
-    depcycle::B,
+depcycle_B_strategy = st.builds(
+    depcycle_B,
 )
-depcycle::A_strategy = st.builds(
-    depcycle::A,
+depcycle_A_strategy = st.builds(
+    depcycle_A,
 )
 
-@given(instance=depcycle::B_strategy)
+@given(instance=depcycle_B_strategy)
 @settings(max_examples=50)
-def test_depcycle::b_instantiation(instance):
-    assert isinstance(instance, depcycle::B)
+def test_depcycle_b_instantiation(instance):
+    assert isinstance(instance, depcycle_B)
 
-@given(instance=depcycle::A_strategy)
+@given(instance=depcycle_A_strategy)
 @settings(max_examples=50)
-def test_depcycle::a_instantiation(instance):
-    assert isinstance(instance, depcycle::A)
+def test_depcycle_a_instantiation(instance):
+    assert isinstance(instance, depcycle_A)

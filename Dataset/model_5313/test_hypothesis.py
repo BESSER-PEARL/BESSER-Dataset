@@ -3,11 +3,11 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    LHS::B,
-    LHS::A,
+from python_code import (
+    LHS_B,
+    LHS_A,
 )
 
 # =============================================================================
@@ -16,23 +16,23 @@ from classes import (
 
 
 
-def test_lhs::b_is_not_abstract():
-    assert not inspect.isabstract(LHS::B)
+def test_lhs_b_is_not_abstract():
+    assert not inspect.isabstract(LHS_B)
 
 
-def test_lhs::b_constructor_exists():
-    assert callable(LHS::B.__init__)
+def test_lhs_b_constructor_exists():
+    assert callable(LHS_B.__init__)
 
 
-def test_lhs::b_constructor_args():
-    sig = inspect.signature(LHS::B.__init__)
+def test_lhs_b_constructor_args():
+    sig = inspect.signature(LHS_B.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_lhs::b_has_name():
-    assert hasattr(LHS::B, "name")
+def test_lhs_b_has_name():
+    assert hasattr(LHS_B, "name")
     descriptor = None
-    for klass in LHS::B.__mro__:
+    for klass in LHS_B.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -40,23 +40,23 @@ def test_lhs::b_has_name():
 
 
 
-def test_lhs::a_is_not_abstract():
-    assert not inspect.isabstract(LHS::A)
+def test_lhs_a_is_not_abstract():
+    assert not inspect.isabstract(LHS_A)
 
 
-def test_lhs::a_constructor_exists():
-    assert callable(LHS::A.__init__)
+def test_lhs_a_constructor_exists():
+    assert callable(LHS_A.__init__)
 
 
-def test_lhs::a_constructor_args():
-    sig = inspect.signature(LHS::A.__init__)
+def test_lhs_a_constructor_args():
+    sig = inspect.signature(LHS_A.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_lhs::a_has_name():
-    assert hasattr(LHS::A, "name")
+def test_lhs_a_has_name():
+    assert hasattr(LHS_A, "name")
     descriptor = None
-    for klass in LHS::A.__mro__:
+    for klass in LHS_A.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -74,45 +74,39 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-LHS::B_strategy = st.builds(
-    LHS::B,
+LHS_B_strategy = st.builds(
+    LHS_B,
     name=
         safe_text
 )
-LHS::A_strategy = st.builds(
-    LHS::A,
+LHS_A_strategy = st.builds(
+    LHS_A,
     name=
         safe_text
 )
 
-@given(instance=LHS::B_strategy)
+@given(instance=LHS_B_strategy)
 @settings(max_examples=50)
-def test_lhs::b_instantiation(instance):
-    assert isinstance(instance, LHS::B)
-
-@given(instance=LHS::B_strategy)
-def test_lhs::b_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_lhs_b_instantiation(instance):
+    assert isinstance(instance, LHS_B)
 
 
-@given(instance=LHS::B_strategy)
-def test_lhs::b_name_setter(instance):
+
+@given(instance=LHS_B_strategy)
+def test_lhs_b_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=LHS::A_strategy)
+@given(instance=LHS_A_strategy)
 @settings(max_examples=50)
-def test_lhs::a_instantiation(instance):
-    assert isinstance(instance, LHS::A)
-
-@given(instance=LHS::A_strategy)
-def test_lhs::a_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_lhs_a_instantiation(instance):
+    assert isinstance(instance, LHS_A)
 
 
-@given(instance=LHS::A_strategy)
-def test_lhs::a_name_setter(instance):
+
+@given(instance=LHS_A_strategy)
+def test_lhs_a_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original

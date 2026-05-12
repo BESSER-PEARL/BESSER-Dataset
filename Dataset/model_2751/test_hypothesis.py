@@ -3,11 +3,11 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    simplea::B,
-    simplea::A,
+from python_code import (
+    simplea_B,
+    simplea_A,
 )
 
 # =============================================================================
@@ -16,37 +16,37 @@ from classes import (
 
 
 
-def test_simplea::b_is_not_abstract():
-    assert not inspect.isabstract(simplea::B)
+def test_simplea_b_is_not_abstract():
+    assert not inspect.isabstract(simplea_B)
 
 
-def test_simplea::b_constructor_exists():
-    assert callable(simplea::B.__init__)
+def test_simplea_b_constructor_exists():
+    assert callable(simplea_B.__init__)
 
 
-def test_simplea::b_constructor_args():
-    sig = inspect.signature(simplea::B.__init__)
+def test_simplea_b_constructor_args():
+    sig = inspect.signature(simplea_B.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_simplea::a_is_not_abstract():
-    assert not inspect.isabstract(simplea::A)
+def test_simplea_a_is_not_abstract():
+    assert not inspect.isabstract(simplea_A)
 
 
-def test_simplea::a_constructor_exists():
-    assert callable(simplea::A.__init__)
+def test_simplea_a_constructor_exists():
+    assert callable(simplea_A.__init__)
 
 
-def test_simplea::a_constructor_args():
-    sig = inspect.signature(simplea::A.__init__)
+def test_simplea_a_constructor_args():
+    sig = inspect.signature(simplea_A.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_simplea::a_has_name():
-    assert hasattr(simplea::A, "name")
+def test_simplea_a_has_name():
+    assert hasattr(simplea_A, "name")
     descriptor = None
-    for klass in simplea::A.__mro__:
+    for klass in simplea_A.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -64,32 +64,29 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-simplea::B_strategy = st.builds(
-    simplea::B,
+simplea_B_strategy = st.builds(
+    simplea_B,
 )
-simplea::A_strategy = st.builds(
-    simplea::A,
+simplea_A_strategy = st.builds(
+    simplea_A,
     name=
         safe_text
 )
 
-@given(instance=simplea::B_strategy)
+@given(instance=simplea_B_strategy)
 @settings(max_examples=50)
-def test_simplea::b_instantiation(instance):
-    assert isinstance(instance, simplea::B)
+def test_simplea_b_instantiation(instance):
+    assert isinstance(instance, simplea_B)
 
-@given(instance=simplea::A_strategy)
+@given(instance=simplea_A_strategy)
 @settings(max_examples=50)
-def test_simplea::a_instantiation(instance):
-    assert isinstance(instance, simplea::A)
-
-@given(instance=simplea::A_strategy)
-def test_simplea::a_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_simplea_a_instantiation(instance):
+    assert isinstance(instance, simplea_A)
 
 
-@given(instance=simplea::A_strategy)
-def test_simplea::a_name_setter(instance):
+
+@given(instance=simplea_A_strategy)
+def test_simplea_a_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original

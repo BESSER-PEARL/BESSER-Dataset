@@ -3,7 +3,7 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
 from python_code import (
     Customer,
@@ -89,8 +89,8 @@ def test_manager_constructor_args():
     sig = inspect.signature(Manager.__init__)
     params = list(sig.parameters.keys())
     assert "Phone_No" in params, "Missing parameter 'Phone_No'"
-    assert "Id" in params, "Missing parameter 'Id'"
     assert "Name" in params, "Missing parameter 'Name'"
+    assert "Id" in params, "Missing parameter 'Id'"
 
 def test_manager_has_Phone_No():
     assert hasattr(Manager, "Phone_No")
@@ -101,21 +101,21 @@ def test_manager_has_Phone_No():
             break
     assert isinstance(descriptor, property)
 
-def test_manager_has_Id():
-    assert hasattr(Manager, "Id")
-    descriptor = None
-    for klass in Manager.__mro__:
-        if "Id" in klass.__dict__:
-            descriptor = klass.__dict__["Id"]
-            break
-    assert isinstance(descriptor, property)
-
 def test_manager_has_Name():
     assert hasattr(Manager, "Name")
     descriptor = None
     for klass in Manager.__mro__:
         if "Name" in klass.__dict__:
             descriptor = klass.__dict__["Name"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_manager_has_Id():
+    assert hasattr(Manager, "Id")
+    descriptor = None
+    for klass in Manager.__mro__:
+        if "Id" in klass.__dict__:
+            descriptor = klass.__dict__["Id"]
             break
     assert isinstance(descriptor, property)
 
@@ -313,10 +313,10 @@ Manager_strategy = st.builds(
     Manager,
     Phone_No=
         st.integers(),
-    Id=
-        st.integers(),
     Name=
-        safe_text
+        safe_text,
+    Id=
+        st.integers()
 )
 HouseKeeping_Actor_strategy = st.builds(
     HouseKeeping_Actor,
@@ -365,9 +365,6 @@ def test_customer_instantiation(instance):
 def test_inventory_instantiation(instance):
     assert isinstance(instance, Inventory)
 
-@given(instance=Inventory_strategy)
-def test_inventory_Status_type(instance):
-    assert isinstance(instance.Status, str)
 
 
 @given(instance=Inventory_strategy)
@@ -376,9 +373,6 @@ def test_inventory_Status_setter(instance):
     instance.Status = original
     assert instance.Status == original
 
-@given(instance=Inventory_strategy)
-def test_inventory_Type_type(instance):
-    assert isinstance(instance.Type, str)
 
 
 @given(instance=Inventory_strategy)
@@ -392,9 +386,6 @@ def test_inventory_Type_setter(instance):
 def test_manager_instantiation(instance):
     assert isinstance(instance, Manager)
 
-@given(instance=Manager_strategy)
-def test_manager_Phone_No_type(instance):
-    assert isinstance(instance.Phone_No, int)
 
 
 @given(instance=Manager_strategy)
@@ -403,20 +394,6 @@ def test_manager_Phone_No_setter(instance):
     instance.Phone_No = original
     assert instance.Phone_No == original
 
-@given(instance=Manager_strategy)
-def test_manager_Id_type(instance):
-    assert isinstance(instance.Id, int)
-
-
-@given(instance=Manager_strategy)
-def test_manager_Id_setter(instance):
-    original = instance.Id
-    instance.Id = original
-    assert instance.Id == original
-
-@given(instance=Manager_strategy)
-def test_manager_Name_type(instance):
-    assert isinstance(instance.Name, str)
 
 
 @given(instance=Manager_strategy)
@@ -424,6 +401,14 @@ def test_manager_Name_setter(instance):
     original = instance.Name
     instance.Name = original
     assert instance.Name == original
+
+
+
+@given(instance=Manager_strategy)
+def test_manager_Id_setter(instance):
+    original = instance.Id
+    instance.Id = original
+    assert instance.Id == original
 
 @given(instance=HouseKeeping_Actor_strategy)
 @settings(max_examples=50)

@@ -1,0 +1,20 @@
+The model has 15 class(es).
+The class 'JObject' has no attributes.
+The class 'Wait' has no attributes.
+The class 'JStr' has the following attributes: 'value' of type str.
+The class 'JNum' has the following attributes: 'value' of type int.
+The class 'Retraction' has no attributes.
+The class 'JValue_Interface' has no attributes.
+The class 'JArray' has the following attributes: 'value' of type str.
+The class 'JValueVisitor_Interface' has no attributes.
+The class 'JMember' has the following attributes: 'nom' of type str.
+The class 'JBool' has the following attributes: 'value' of type bool.
+The class 'JValueJSONPrintVisitor' has no attributes.
+The class 'Contexte' has no attributes.
+The class 'Protraction' has no attributes.
+The class 'State_Interface' has no attributes.
+The class 'JNull' has the following attributes: 'value' of type str.
+'JObject' (role 'JObject_JMember_00', cardinality 0..*) is associated with 'JMember' (role 'JObject_JMember_11', cardinality 0..*).
+'JValue_Interface' (role 'jArray5', cardinality 0..*) is associated with 'JArray' (role 'value4', cardinality 0..*).
+'Contexte' (role 'state6', cardinality 0..*) is associated with 'State_Interface' (role 'contexte7', cardinality 0..*).
+'JValue_Interface' (role 'jMember3', cardinality 0..*) is associated with 'JMember' (role 'jValue2', cardinality 0..*).

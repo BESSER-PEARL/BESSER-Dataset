@@ -3,53 +3,53 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     InstitutionEntry,
     NotedEntry,
     InProceedings,
-    BIBTEXML::Conference,
+    BIBTEXML_Conference,
     Proceedings,
     ThesisEntry,
-    BIBTEXML::MastersThesis,
-    BIBTEXML::PhdThesis,
+    BIBTEXML_MastersThesis,
+    BIBTEXML_PhdThesis,
     SchoolEntry,
     DatedEntry,
     BookTitledEntry,
     Book,
-    BIBTEXML::InCollection,
-    BIBTEXML::InBook,
+    BIBTEXML_InCollection,
+    BIBTEXML_InBook,
     PublisheredEntry,
     EditoredEntry,
     JournalEntry,
     TitledEntry,
-    BIBTEXML::Proceedings,
-    BIBTEXML::Booklet,
-    BIBTEXML::Author,
+    BIBTEXML_Proceedings,
+    BIBTEXML_Booklet,
+    BIBTEXML_Author,
     AuthoredEntry,
-    BIBTEXML::Manual,
-    BIBTEXML::ThesisEntry,
-    BIBTEXML::TechReport,
-    BIBTEXML::Unpublished,
-    BIBTEXML::InProceedings,
-    BIBTEXML::Book,
-    BIBTEXML::Article,
+    BIBTEXML_InProceedings,
+    BIBTEXML_TechReport,
+    BIBTEXML_Book,
+    BIBTEXML_Manual,
+    BIBTEXML_ThesisEntry,
+    BIBTEXML_Unpublished,
+    BIBTEXML_Article,
     Entry,
-    BIBTEXML::Misc,
-    BIBTEXML::BibtexFile,
-    BIBTEXML::SchoolEntry,
-    BIBTEXML::PublisheredEntry,
-    BIBTEXML::NotedEntry,
-    BIBTEXML::TitledEntry,
-    BIBTEXML::JournalEntry,
-    BIBTEXML::DatedEntry,
-    BIBTEXML::EditoredEntry,
-    BIBTEXML::InstitutionEntry,
-    BIBTEXML::BookTitledEntry,
+    BIBTEXML_Misc,
+    BIBTEXML_BibtexFile,
+    BIBTEXML_SchoolEntry,
+    BIBTEXML_PublisheredEntry,
+    BIBTEXML_NotedEntry,
+    BIBTEXML_TitledEntry,
+    BIBTEXML_JournalEntry,
+    BIBTEXML_DatedEntry,
+    BIBTEXML_EditoredEntry,
+    BIBTEXML_InstitutionEntry,
+    BIBTEXML_BookTitledEntry,
     Author,
-    BIBTEXML::AuthoredEntry,
-    BIBTEXML::Entry,
+    BIBTEXML_AuthoredEntry,
+    BIBTEXML_Entry,
 )
 
 # =============================================================================
@@ -100,16 +100,16 @@ def test_inproceedings_constructor_args():
 
 
 
-def test_bibtexml::conference_is_not_abstract():
-    assert not inspect.isabstract(BIBTEXML::Conference)
+def test_bibtexml_conference_is_not_abstract():
+    assert not inspect.isabstract(BIBTEXML_Conference)
 
 
-def test_bibtexml::conference_constructor_exists():
-    assert callable(BIBTEXML::Conference.__init__)
+def test_bibtexml_conference_constructor_exists():
+    assert callable(BIBTEXML_Conference.__init__)
 
 
-def test_bibtexml::conference_constructor_args():
-    sig = inspect.signature(BIBTEXML::Conference.__init__)
+def test_bibtexml_conference_constructor_args():
+    sig = inspect.signature(BIBTEXML_Conference.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -142,30 +142,30 @@ def test_thesisentry_constructor_args():
 
 
 
-def test_bibtexml::mastersthesis_is_not_abstract():
-    assert not inspect.isabstract(BIBTEXML::MastersThesis)
+def test_bibtexml_mastersthesis_is_not_abstract():
+    assert not inspect.isabstract(BIBTEXML_MastersThesis)
 
 
-def test_bibtexml::mastersthesis_constructor_exists():
-    assert callable(BIBTEXML::MastersThesis.__init__)
+def test_bibtexml_mastersthesis_constructor_exists():
+    assert callable(BIBTEXML_MastersThesis.__init__)
 
 
-def test_bibtexml::mastersthesis_constructor_args():
-    sig = inspect.signature(BIBTEXML::MastersThesis.__init__)
+def test_bibtexml_mastersthesis_constructor_args():
+    sig = inspect.signature(BIBTEXML_MastersThesis.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_bibtexml::phdthesis_is_not_abstract():
-    assert not inspect.isabstract(BIBTEXML::PhdThesis)
+def test_bibtexml_phdthesis_is_not_abstract():
+    assert not inspect.isabstract(BIBTEXML_PhdThesis)
 
 
-def test_bibtexml::phdthesis_constructor_exists():
-    assert callable(BIBTEXML::PhdThesis.__init__)
+def test_bibtexml_phdthesis_constructor_exists():
+    assert callable(BIBTEXML_PhdThesis.__init__)
 
 
-def test_bibtexml::phdthesis_constructor_args():
-    sig = inspect.signature(BIBTEXML::PhdThesis.__init__)
+def test_bibtexml_phdthesis_constructor_args():
+    sig = inspect.signature(BIBTEXML_PhdThesis.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -226,33 +226,33 @@ def test_book_constructor_args():
 
 
 
-def test_bibtexml::incollection_is_not_abstract():
-    assert not inspect.isabstract(BIBTEXML::InCollection)
+def test_bibtexml_incollection_is_not_abstract():
+    assert not inspect.isabstract(BIBTEXML_InCollection)
 
 
-def test_bibtexml::incollection_constructor_exists():
-    assert callable(BIBTEXML::InCollection.__init__)
+def test_bibtexml_incollection_constructor_exists():
+    assert callable(BIBTEXML_InCollection.__init__)
 
 
-def test_bibtexml::incollection_constructor_args():
-    sig = inspect.signature(BIBTEXML::InCollection.__init__)
+def test_bibtexml_incollection_constructor_args():
+    sig = inspect.signature(BIBTEXML_InCollection.__init__)
     params = list(sig.parameters.keys())
     assert "type" in params, "Missing parameter 'type'"
     assert "chapter" in params, "Missing parameter 'chapter'"
 
-def test_bibtexml::incollection_has_type():
-    assert hasattr(BIBTEXML::InCollection, "type")
+def test_bibtexml_incollection_has_type():
+    assert hasattr(BIBTEXML_InCollection, "type")
     descriptor = None
-    for klass in BIBTEXML::InCollection.__mro__:
+    for klass in BIBTEXML_InCollection.__mro__:
         if "type" in klass.__dict__:
             descriptor = klass.__dict__["type"]
             break
     assert isinstance(descriptor, property)
 
-def test_bibtexml::incollection_has_chapter():
-    assert hasattr(BIBTEXML::InCollection, "chapter")
+def test_bibtexml_incollection_has_chapter():
+    assert hasattr(BIBTEXML_InCollection, "chapter")
     descriptor = None
-    for klass in BIBTEXML::InCollection.__mro__:
+    for klass in BIBTEXML_InCollection.__mro__:
         if "chapter" in klass.__dict__:
             descriptor = klass.__dict__["chapter"]
             break
@@ -260,33 +260,33 @@ def test_bibtexml::incollection_has_chapter():
 
 
 
-def test_bibtexml::inbook_is_not_abstract():
-    assert not inspect.isabstract(BIBTEXML::InBook)
+def test_bibtexml_inbook_is_not_abstract():
+    assert not inspect.isabstract(BIBTEXML_InBook)
 
 
-def test_bibtexml::inbook_constructor_exists():
-    assert callable(BIBTEXML::InBook.__init__)
+def test_bibtexml_inbook_constructor_exists():
+    assert callable(BIBTEXML_InBook.__init__)
 
 
-def test_bibtexml::inbook_constructor_args():
-    sig = inspect.signature(BIBTEXML::InBook.__init__)
+def test_bibtexml_inbook_constructor_args():
+    sig = inspect.signature(BIBTEXML_InBook.__init__)
     params = list(sig.parameters.keys())
     assert "chapter" in params, "Missing parameter 'chapter'"
     assert "type" in params, "Missing parameter 'type'"
 
-def test_bibtexml::inbook_has_chapter():
-    assert hasattr(BIBTEXML::InBook, "chapter")
+def test_bibtexml_inbook_has_chapter():
+    assert hasattr(BIBTEXML_InBook, "chapter")
     descriptor = None
-    for klass in BIBTEXML::InBook.__mro__:
+    for klass in BIBTEXML_InBook.__mro__:
         if "chapter" in klass.__dict__:
             descriptor = klass.__dict__["chapter"]
             break
     assert isinstance(descriptor, property)
 
-def test_bibtexml::inbook_has_type():
-    assert hasattr(BIBTEXML::InBook, "type")
+def test_bibtexml_inbook_has_type():
+    assert hasattr(BIBTEXML_InBook, "type")
     descriptor = None
-    for klass in BIBTEXML::InBook.__mro__:
+    for klass in BIBTEXML_InBook.__mro__:
         if "type" in klass.__dict__:
             descriptor = klass.__dict__["type"]
             break
@@ -350,161 +350,161 @@ def test_titledentry_constructor_args():
 
 
 
-def test_bibtexml::proceedings_is_not_abstract():
-    assert not inspect.isabstract(BIBTEXML::Proceedings)
+def test_bibtexml_proceedings_is_not_abstract():
+    assert not inspect.isabstract(BIBTEXML_Proceedings)
 
 
-def test_bibtexml::proceedings_constructor_exists():
-    assert callable(BIBTEXML::Proceedings.__init__)
+def test_bibtexml_proceedings_constructor_exists():
+    assert callable(BIBTEXML_Proceedings.__init__)
 
 
-def test_bibtexml::proceedings_constructor_args():
-    sig = inspect.signature(BIBTEXML::Proceedings.__init__)
+def test_bibtexml_proceedings_constructor_args():
+    sig = inspect.signature(BIBTEXML_Proceedings.__init__)
     params = list(sig.parameters.keys())
-    assert "series" in params, "Missing parameter 'series'"
     assert "editor" in params, "Missing parameter 'editor'"
-    assert "number" in params, "Missing parameter 'number'"
-    assert "publisher" in params, "Missing parameter 'publisher'"
+    assert "series" in params, "Missing parameter 'series'"
     assert "address" in params, "Missing parameter 'address'"
     assert "volume" in params, "Missing parameter 'volume'"
-    assert "note" in params, "Missing parameter 'note'"
+    assert "number" in params, "Missing parameter 'number'"
     assert "organization" in params, "Missing parameter 'organization'"
+    assert "note" in params, "Missing parameter 'note'"
+    assert "publisher" in params, "Missing parameter 'publisher'"
 
-def test_bibtexml::proceedings_has_series():
-    assert hasattr(BIBTEXML::Proceedings, "series")
+def test_bibtexml_proceedings_has_editor():
+    assert hasattr(BIBTEXML_Proceedings, "editor")
     descriptor = None
-    for klass in BIBTEXML::Proceedings.__mro__:
-        if "series" in klass.__dict__:
-            descriptor = klass.__dict__["series"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_bibtexml::proceedings_has_editor():
-    assert hasattr(BIBTEXML::Proceedings, "editor")
-    descriptor = None
-    for klass in BIBTEXML::Proceedings.__mro__:
+    for klass in BIBTEXML_Proceedings.__mro__:
         if "editor" in klass.__dict__:
             descriptor = klass.__dict__["editor"]
             break
     assert isinstance(descriptor, property)
 
-def test_bibtexml::proceedings_has_number():
-    assert hasattr(BIBTEXML::Proceedings, "number")
+def test_bibtexml_proceedings_has_series():
+    assert hasattr(BIBTEXML_Proceedings, "series")
     descriptor = None
-    for klass in BIBTEXML::Proceedings.__mro__:
-        if "number" in klass.__dict__:
-            descriptor = klass.__dict__["number"]
+    for klass in BIBTEXML_Proceedings.__mro__:
+        if "series" in klass.__dict__:
+            descriptor = klass.__dict__["series"]
             break
     assert isinstance(descriptor, property)
 
-def test_bibtexml::proceedings_has_publisher():
-    assert hasattr(BIBTEXML::Proceedings, "publisher")
+def test_bibtexml_proceedings_has_address():
+    assert hasattr(BIBTEXML_Proceedings, "address")
     descriptor = None
-    for klass in BIBTEXML::Proceedings.__mro__:
-        if "publisher" in klass.__dict__:
-            descriptor = klass.__dict__["publisher"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_bibtexml::proceedings_has_address():
-    assert hasattr(BIBTEXML::Proceedings, "address")
-    descriptor = None
-    for klass in BIBTEXML::Proceedings.__mro__:
+    for klass in BIBTEXML_Proceedings.__mro__:
         if "address" in klass.__dict__:
             descriptor = klass.__dict__["address"]
             break
     assert isinstance(descriptor, property)
 
-def test_bibtexml::proceedings_has_volume():
-    assert hasattr(BIBTEXML::Proceedings, "volume")
+def test_bibtexml_proceedings_has_volume():
+    assert hasattr(BIBTEXML_Proceedings, "volume")
     descriptor = None
-    for klass in BIBTEXML::Proceedings.__mro__:
+    for klass in BIBTEXML_Proceedings.__mro__:
         if "volume" in klass.__dict__:
             descriptor = klass.__dict__["volume"]
             break
     assert isinstance(descriptor, property)
 
-def test_bibtexml::proceedings_has_note():
-    assert hasattr(BIBTEXML::Proceedings, "note")
+def test_bibtexml_proceedings_has_number():
+    assert hasattr(BIBTEXML_Proceedings, "number")
     descriptor = None
-    for klass in BIBTEXML::Proceedings.__mro__:
-        if "note" in klass.__dict__:
-            descriptor = klass.__dict__["note"]
+    for klass in BIBTEXML_Proceedings.__mro__:
+        if "number" in klass.__dict__:
+            descriptor = klass.__dict__["number"]
             break
     assert isinstance(descriptor, property)
 
-def test_bibtexml::proceedings_has_organization():
-    assert hasattr(BIBTEXML::Proceedings, "organization")
+def test_bibtexml_proceedings_has_organization():
+    assert hasattr(BIBTEXML_Proceedings, "organization")
     descriptor = None
-    for klass in BIBTEXML::Proceedings.__mro__:
+    for klass in BIBTEXML_Proceedings.__mro__:
         if "organization" in klass.__dict__:
             descriptor = klass.__dict__["organization"]
             break
     assert isinstance(descriptor, property)
 
-
-
-def test_bibtexml::booklet_is_not_abstract():
-    assert not inspect.isabstract(BIBTEXML::Booklet)
-
-
-def test_bibtexml::booklet_constructor_exists():
-    assert callable(BIBTEXML::Booklet.__init__)
-
-
-def test_bibtexml::booklet_constructor_args():
-    sig = inspect.signature(BIBTEXML::Booklet.__init__)
-    params = list(sig.parameters.keys())
-    assert "address" in params, "Missing parameter 'address'"
-    assert "note" in params, "Missing parameter 'note'"
-    assert "howpublished" in params, "Missing parameter 'howpublished'"
-
-def test_bibtexml::booklet_has_address():
-    assert hasattr(BIBTEXML::Booklet, "address")
+def test_bibtexml_proceedings_has_note():
+    assert hasattr(BIBTEXML_Proceedings, "note")
     descriptor = None
-    for klass in BIBTEXML::Booklet.__mro__:
-        if "address" in klass.__dict__:
-            descriptor = klass.__dict__["address"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_bibtexml::booklet_has_note():
-    assert hasattr(BIBTEXML::Booklet, "note")
-    descriptor = None
-    for klass in BIBTEXML::Booklet.__mro__:
+    for klass in BIBTEXML_Proceedings.__mro__:
         if "note" in klass.__dict__:
             descriptor = klass.__dict__["note"]
             break
     assert isinstance(descriptor, property)
 
-def test_bibtexml::booklet_has_howpublished():
-    assert hasattr(BIBTEXML::Booklet, "howpublished")
+def test_bibtexml_proceedings_has_publisher():
+    assert hasattr(BIBTEXML_Proceedings, "publisher")
     descriptor = None
-    for klass in BIBTEXML::Booklet.__mro__:
-        if "howpublished" in klass.__dict__:
-            descriptor = klass.__dict__["howpublished"]
+    for klass in BIBTEXML_Proceedings.__mro__:
+        if "publisher" in klass.__dict__:
+            descriptor = klass.__dict__["publisher"]
             break
     assert isinstance(descriptor, property)
 
 
 
-def test_bibtexml::author_is_not_abstract():
-    assert not inspect.isabstract(BIBTEXML::Author)
+def test_bibtexml_booklet_is_not_abstract():
+    assert not inspect.isabstract(BIBTEXML_Booklet)
 
 
-def test_bibtexml::author_constructor_exists():
-    assert callable(BIBTEXML::Author.__init__)
+def test_bibtexml_booklet_constructor_exists():
+    assert callable(BIBTEXML_Booklet.__init__)
 
 
-def test_bibtexml::author_constructor_args():
-    sig = inspect.signature(BIBTEXML::Author.__init__)
+def test_bibtexml_booklet_constructor_args():
+    sig = inspect.signature(BIBTEXML_Booklet.__init__)
+    params = list(sig.parameters.keys())
+    assert "address" in params, "Missing parameter 'address'"
+    assert "howpublished" in params, "Missing parameter 'howpublished'"
+    assert "note" in params, "Missing parameter 'note'"
+
+def test_bibtexml_booklet_has_address():
+    assert hasattr(BIBTEXML_Booklet, "address")
+    descriptor = None
+    for klass in BIBTEXML_Booklet.__mro__:
+        if "address" in klass.__dict__:
+            descriptor = klass.__dict__["address"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_bibtexml_booklet_has_howpublished():
+    assert hasattr(BIBTEXML_Booklet, "howpublished")
+    descriptor = None
+    for klass in BIBTEXML_Booklet.__mro__:
+        if "howpublished" in klass.__dict__:
+            descriptor = klass.__dict__["howpublished"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_bibtexml_booklet_has_note():
+    assert hasattr(BIBTEXML_Booklet, "note")
+    descriptor = None
+    for klass in BIBTEXML_Booklet.__mro__:
+        if "note" in klass.__dict__:
+            descriptor = klass.__dict__["note"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_bibtexml_author_is_not_abstract():
+    assert not inspect.isabstract(BIBTEXML_Author)
+
+
+def test_bibtexml_author_constructor_exists():
+    assert callable(BIBTEXML_Author.__init__)
+
+
+def test_bibtexml_author_constructor_args():
+    sig = inspect.signature(BIBTEXML_Author.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_bibtexml::author_has_name():
-    assert hasattr(BIBTEXML::Author, "name")
+def test_bibtexml_author_has_name():
+    assert hasattr(BIBTEXML_Author, "name")
     descriptor = None
-    for klass in BIBTEXML::Author.__mro__:
+    for klass in BIBTEXML_Author.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -526,189 +526,23 @@ def test_authoredentry_constructor_args():
 
 
 
-def test_bibtexml::manual_is_not_abstract():
-    assert not inspect.isabstract(BIBTEXML::Manual)
+def test_bibtexml_inproceedings_is_not_abstract():
+    assert not inspect.isabstract(BIBTEXML_InProceedings)
 
 
-def test_bibtexml::manual_constructor_exists():
-    assert callable(BIBTEXML::Manual.__init__)
+def test_bibtexml_inproceedings_constructor_exists():
+    assert callable(BIBTEXML_InProceedings.__init__)
 
 
-def test_bibtexml::manual_constructor_args():
-    sig = inspect.signature(BIBTEXML::Manual.__init__)
-    params = list(sig.parameters.keys())
-    assert "note" in params, "Missing parameter 'note'"
-    assert "organization" in params, "Missing parameter 'organization'"
-    assert "address" in params, "Missing parameter 'address'"
-    assert "edition" in params, "Missing parameter 'edition'"
-
-def test_bibtexml::manual_has_note():
-    assert hasattr(BIBTEXML::Manual, "note")
-    descriptor = None
-    for klass in BIBTEXML::Manual.__mro__:
-        if "note" in klass.__dict__:
-            descriptor = klass.__dict__["note"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_bibtexml::manual_has_organization():
-    assert hasattr(BIBTEXML::Manual, "organization")
-    descriptor = None
-    for klass in BIBTEXML::Manual.__mro__:
-        if "organization" in klass.__dict__:
-            descriptor = klass.__dict__["organization"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_bibtexml::manual_has_address():
-    assert hasattr(BIBTEXML::Manual, "address")
-    descriptor = None
-    for klass in BIBTEXML::Manual.__mro__:
-        if "address" in klass.__dict__:
-            descriptor = klass.__dict__["address"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_bibtexml::manual_has_edition():
-    assert hasattr(BIBTEXML::Manual, "edition")
-    descriptor = None
-    for klass in BIBTEXML::Manual.__mro__:
-        if "edition" in klass.__dict__:
-            descriptor = klass.__dict__["edition"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_bibtexml::thesisentry_is_not_abstract():
-    assert not inspect.isabstract(BIBTEXML::ThesisEntry)
-
-
-def test_bibtexml::thesisentry_constructor_exists():
-    assert callable(BIBTEXML::ThesisEntry.__init__)
-
-
-def test_bibtexml::thesisentry_constructor_args():
-    sig = inspect.signature(BIBTEXML::ThesisEntry.__init__)
-    params = list(sig.parameters.keys())
-    assert "note" in params, "Missing parameter 'note'"
-    assert "address" in params, "Missing parameter 'address'"
-    assert "type" in params, "Missing parameter 'type'"
-
-def test_bibtexml::thesisentry_has_note():
-    assert hasattr(BIBTEXML::ThesisEntry, "note")
-    descriptor = None
-    for klass in BIBTEXML::ThesisEntry.__mro__:
-        if "note" in klass.__dict__:
-            descriptor = klass.__dict__["note"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_bibtexml::thesisentry_has_address():
-    assert hasattr(BIBTEXML::ThesisEntry, "address")
-    descriptor = None
-    for klass in BIBTEXML::ThesisEntry.__mro__:
-        if "address" in klass.__dict__:
-            descriptor = klass.__dict__["address"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_bibtexml::thesisentry_has_type():
-    assert hasattr(BIBTEXML::ThesisEntry, "type")
-    descriptor = None
-    for klass in BIBTEXML::ThesisEntry.__mro__:
-        if "type" in klass.__dict__:
-            descriptor = klass.__dict__["type"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_bibtexml::techreport_is_not_abstract():
-    assert not inspect.isabstract(BIBTEXML::TechReport)
-
-
-def test_bibtexml::techreport_constructor_exists():
-    assert callable(BIBTEXML::TechReport.__init__)
-
-
-def test_bibtexml::techreport_constructor_args():
-    sig = inspect.signature(BIBTEXML::TechReport.__init__)
-    params = list(sig.parameters.keys())
-    assert "number" in params, "Missing parameter 'number'"
-    assert "address" in params, "Missing parameter 'address'"
-    assert "type" in params, "Missing parameter 'type'"
-    assert "note" in params, "Missing parameter 'note'"
-
-def test_bibtexml::techreport_has_number():
-    assert hasattr(BIBTEXML::TechReport, "number")
-    descriptor = None
-    for klass in BIBTEXML::TechReport.__mro__:
-        if "number" in klass.__dict__:
-            descriptor = klass.__dict__["number"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_bibtexml::techreport_has_address():
-    assert hasattr(BIBTEXML::TechReport, "address")
-    descriptor = None
-    for klass in BIBTEXML::TechReport.__mro__:
-        if "address" in klass.__dict__:
-            descriptor = klass.__dict__["address"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_bibtexml::techreport_has_type():
-    assert hasattr(BIBTEXML::TechReport, "type")
-    descriptor = None
-    for klass in BIBTEXML::TechReport.__mro__:
-        if "type" in klass.__dict__:
-            descriptor = klass.__dict__["type"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_bibtexml::techreport_has_note():
-    assert hasattr(BIBTEXML::TechReport, "note")
-    descriptor = None
-    for klass in BIBTEXML::TechReport.__mro__:
-        if "note" in klass.__dict__:
-            descriptor = klass.__dict__["note"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_bibtexml::unpublished_is_not_abstract():
-    assert not inspect.isabstract(BIBTEXML::Unpublished)
-
-
-def test_bibtexml::unpublished_constructor_exists():
-    assert callable(BIBTEXML::Unpublished.__init__)
-
-
-def test_bibtexml::unpublished_constructor_args():
-    sig = inspect.signature(BIBTEXML::Unpublished.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_bibtexml::inproceedings_is_not_abstract():
-    assert not inspect.isabstract(BIBTEXML::InProceedings)
-
-
-def test_bibtexml::inproceedings_constructor_exists():
-    assert callable(BIBTEXML::InProceedings.__init__)
-
-
-def test_bibtexml::inproceedings_constructor_args():
-    sig = inspect.signature(BIBTEXML::InProceedings.__init__)
+def test_bibtexml_inproceedings_constructor_args():
+    sig = inspect.signature(BIBTEXML_InProceedings.__init__)
     params = list(sig.parameters.keys())
     assert "pages" in params, "Missing parameter 'pages'"
 
-def test_bibtexml::inproceedings_has_pages():
-    assert hasattr(BIBTEXML::InProceedings, "pages")
+def test_bibtexml_inproceedings_has_pages():
+    assert hasattr(BIBTEXML_InProceedings, "pages")
     descriptor = None
-    for klass in BIBTEXML::InProceedings.__mro__:
+    for klass in BIBTEXML_InProceedings.__mro__:
         if "pages" in klass.__dict__:
             descriptor = klass.__dict__["pages"]
             break
@@ -716,73 +550,181 @@ def test_bibtexml::inproceedings_has_pages():
 
 
 
-def test_bibtexml::book_is_not_abstract():
-    assert not inspect.isabstract(BIBTEXML::Book)
+def test_bibtexml_techreport_is_not_abstract():
+    assert not inspect.isabstract(BIBTEXML_TechReport)
 
 
-def test_bibtexml::book_constructor_exists():
-    assert callable(BIBTEXML::Book.__init__)
+def test_bibtexml_techreport_constructor_exists():
+    assert callable(BIBTEXML_TechReport.__init__)
 
 
-def test_bibtexml::book_constructor_args():
-    sig = inspect.signature(BIBTEXML::Book.__init__)
+def test_bibtexml_techreport_constructor_args():
+    sig = inspect.signature(BIBTEXML_TechReport.__init__)
     params = list(sig.parameters.keys())
-    assert "number" in params, "Missing parameter 'number'"
-    assert "volume" in params, "Missing parameter 'volume'"
+    assert "type" in params, "Missing parameter 'type'"
     assert "note" in params, "Missing parameter 'note'"
-    assert "series" in params, "Missing parameter 'series'"
-    assert "edition" in params, "Missing parameter 'edition'"
+    assert "number" in params, "Missing parameter 'number'"
     assert "address" in params, "Missing parameter 'address'"
 
-def test_bibtexml::book_has_number():
-    assert hasattr(BIBTEXML::Book, "number")
+def test_bibtexml_techreport_has_type():
+    assert hasattr(BIBTEXML_TechReport, "type")
     descriptor = None
-    for klass in BIBTEXML::Book.__mro__:
-        if "number" in klass.__dict__:
-            descriptor = klass.__dict__["number"]
+    for klass in BIBTEXML_TechReport.__mro__:
+        if "type" in klass.__dict__:
+            descriptor = klass.__dict__["type"]
             break
     assert isinstance(descriptor, property)
 
-def test_bibtexml::book_has_volume():
-    assert hasattr(BIBTEXML::Book, "volume")
+def test_bibtexml_techreport_has_note():
+    assert hasattr(BIBTEXML_TechReport, "note")
     descriptor = None
-    for klass in BIBTEXML::Book.__mro__:
-        if "volume" in klass.__dict__:
-            descriptor = klass.__dict__["volume"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_bibtexml::book_has_note():
-    assert hasattr(BIBTEXML::Book, "note")
-    descriptor = None
-    for klass in BIBTEXML::Book.__mro__:
+    for klass in BIBTEXML_TechReport.__mro__:
         if "note" in klass.__dict__:
             descriptor = klass.__dict__["note"]
             break
     assert isinstance(descriptor, property)
 
-def test_bibtexml::book_has_series():
-    assert hasattr(BIBTEXML::Book, "series")
+def test_bibtexml_techreport_has_number():
+    assert hasattr(BIBTEXML_TechReport, "number")
     descriptor = None
-    for klass in BIBTEXML::Book.__mro__:
+    for klass in BIBTEXML_TechReport.__mro__:
+        if "number" in klass.__dict__:
+            descriptor = klass.__dict__["number"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_bibtexml_techreport_has_address():
+    assert hasattr(BIBTEXML_TechReport, "address")
+    descriptor = None
+    for klass in BIBTEXML_TechReport.__mro__:
+        if "address" in klass.__dict__:
+            descriptor = klass.__dict__["address"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_bibtexml_book_is_not_abstract():
+    assert not inspect.isabstract(BIBTEXML_Book)
+
+
+def test_bibtexml_book_constructor_exists():
+    assert callable(BIBTEXML_Book.__init__)
+
+
+def test_bibtexml_book_constructor_args():
+    sig = inspect.signature(BIBTEXML_Book.__init__)
+    params = list(sig.parameters.keys())
+    assert "note" in params, "Missing parameter 'note'"
+    assert "address" in params, "Missing parameter 'address'"
+    assert "volume" in params, "Missing parameter 'volume'"
+    assert "number" in params, "Missing parameter 'number'"
+    assert "edition" in params, "Missing parameter 'edition'"
+    assert "series" in params, "Missing parameter 'series'"
+
+def test_bibtexml_book_has_note():
+    assert hasattr(BIBTEXML_Book, "note")
+    descriptor = None
+    for klass in BIBTEXML_Book.__mro__:
+        if "note" in klass.__dict__:
+            descriptor = klass.__dict__["note"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_bibtexml_book_has_address():
+    assert hasattr(BIBTEXML_Book, "address")
+    descriptor = None
+    for klass in BIBTEXML_Book.__mro__:
+        if "address" in klass.__dict__:
+            descriptor = klass.__dict__["address"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_bibtexml_book_has_volume():
+    assert hasattr(BIBTEXML_Book, "volume")
+    descriptor = None
+    for klass in BIBTEXML_Book.__mro__:
+        if "volume" in klass.__dict__:
+            descriptor = klass.__dict__["volume"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_bibtexml_book_has_number():
+    assert hasattr(BIBTEXML_Book, "number")
+    descriptor = None
+    for klass in BIBTEXML_Book.__mro__:
+        if "number" in klass.__dict__:
+            descriptor = klass.__dict__["number"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_bibtexml_book_has_edition():
+    assert hasattr(BIBTEXML_Book, "edition")
+    descriptor = None
+    for klass in BIBTEXML_Book.__mro__:
+        if "edition" in klass.__dict__:
+            descriptor = klass.__dict__["edition"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_bibtexml_book_has_series():
+    assert hasattr(BIBTEXML_Book, "series")
+    descriptor = None
+    for klass in BIBTEXML_Book.__mro__:
         if "series" in klass.__dict__:
             descriptor = klass.__dict__["series"]
             break
     assert isinstance(descriptor, property)
 
-def test_bibtexml::book_has_edition():
-    assert hasattr(BIBTEXML::Book, "edition")
+
+
+def test_bibtexml_manual_is_not_abstract():
+    assert not inspect.isabstract(BIBTEXML_Manual)
+
+
+def test_bibtexml_manual_constructor_exists():
+    assert callable(BIBTEXML_Manual.__init__)
+
+
+def test_bibtexml_manual_constructor_args():
+    sig = inspect.signature(BIBTEXML_Manual.__init__)
+    params = list(sig.parameters.keys())
+    assert "edition" in params, "Missing parameter 'edition'"
+    assert "organization" in params, "Missing parameter 'organization'"
+    assert "note" in params, "Missing parameter 'note'"
+    assert "address" in params, "Missing parameter 'address'"
+
+def test_bibtexml_manual_has_edition():
+    assert hasattr(BIBTEXML_Manual, "edition")
     descriptor = None
-    for klass in BIBTEXML::Book.__mro__:
+    for klass in BIBTEXML_Manual.__mro__:
         if "edition" in klass.__dict__:
             descriptor = klass.__dict__["edition"]
             break
     assert isinstance(descriptor, property)
 
-def test_bibtexml::book_has_address():
-    assert hasattr(BIBTEXML::Book, "address")
+def test_bibtexml_manual_has_organization():
+    assert hasattr(BIBTEXML_Manual, "organization")
     descriptor = None
-    for klass in BIBTEXML::Book.__mro__:
+    for klass in BIBTEXML_Manual.__mro__:
+        if "organization" in klass.__dict__:
+            descriptor = klass.__dict__["organization"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_bibtexml_manual_has_note():
+    assert hasattr(BIBTEXML_Manual, "note")
+    descriptor = None
+    for klass in BIBTEXML_Manual.__mro__:
+        if "note" in klass.__dict__:
+            descriptor = klass.__dict__["note"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_bibtexml_manual_has_address():
+    assert hasattr(BIBTEXML_Manual, "address")
+    descriptor = None
+    for klass in BIBTEXML_Manual.__mro__:
         if "address" in klass.__dict__:
             descriptor = klass.__dict__["address"]
             break
@@ -790,55 +732,113 @@ def test_bibtexml::book_has_address():
 
 
 
-def test_bibtexml::article_is_not_abstract():
-    assert not inspect.isabstract(BIBTEXML::Article)
+def test_bibtexml_thesisentry_is_not_abstract():
+    assert not inspect.isabstract(BIBTEXML_ThesisEntry)
 
 
-def test_bibtexml::article_constructor_exists():
-    assert callable(BIBTEXML::Article.__init__)
+def test_bibtexml_thesisentry_constructor_exists():
+    assert callable(BIBTEXML_ThesisEntry.__init__)
 
 
-def test_bibtexml::article_constructor_args():
-    sig = inspect.signature(BIBTEXML::Article.__init__)
+def test_bibtexml_thesisentry_constructor_args():
+    sig = inspect.signature(BIBTEXML_ThesisEntry.__init__)
     params = list(sig.parameters.keys())
-    assert "pages" in params, "Missing parameter 'pages'"
-    assert "volume" in params, "Missing parameter 'volume'"
+    assert "note" in params, "Missing parameter 'note'"
+    assert "type" in params, "Missing parameter 'type'"
+    assert "address" in params, "Missing parameter 'address'"
+
+def test_bibtexml_thesisentry_has_note():
+    assert hasattr(BIBTEXML_ThesisEntry, "note")
+    descriptor = None
+    for klass in BIBTEXML_ThesisEntry.__mro__:
+        if "note" in klass.__dict__:
+            descriptor = klass.__dict__["note"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_bibtexml_thesisentry_has_type():
+    assert hasattr(BIBTEXML_ThesisEntry, "type")
+    descriptor = None
+    for klass in BIBTEXML_ThesisEntry.__mro__:
+        if "type" in klass.__dict__:
+            descriptor = klass.__dict__["type"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_bibtexml_thesisentry_has_address():
+    assert hasattr(BIBTEXML_ThesisEntry, "address")
+    descriptor = None
+    for klass in BIBTEXML_ThesisEntry.__mro__:
+        if "address" in klass.__dict__:
+            descriptor = klass.__dict__["address"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_bibtexml_unpublished_is_not_abstract():
+    assert not inspect.isabstract(BIBTEXML_Unpublished)
+
+
+def test_bibtexml_unpublished_constructor_exists():
+    assert callable(BIBTEXML_Unpublished.__init__)
+
+
+def test_bibtexml_unpublished_constructor_args():
+    sig = inspect.signature(BIBTEXML_Unpublished.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_bibtexml_article_is_not_abstract():
+    assert not inspect.isabstract(BIBTEXML_Article)
+
+
+def test_bibtexml_article_constructor_exists():
+    assert callable(BIBTEXML_Article.__init__)
+
+
+def test_bibtexml_article_constructor_args():
+    sig = inspect.signature(BIBTEXML_Article.__init__)
+    params = list(sig.parameters.keys())
     assert "number" in params, "Missing parameter 'number'"
     assert "note" in params, "Missing parameter 'note'"
+    assert "pages" in params, "Missing parameter 'pages'"
+    assert "volume" in params, "Missing parameter 'volume'"
 
-def test_bibtexml::article_has_pages():
-    assert hasattr(BIBTEXML::Article, "pages")
+def test_bibtexml_article_has_number():
+    assert hasattr(BIBTEXML_Article, "number")
     descriptor = None
-    for klass in BIBTEXML::Article.__mro__:
-        if "pages" in klass.__dict__:
-            descriptor = klass.__dict__["pages"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_bibtexml::article_has_volume():
-    assert hasattr(BIBTEXML::Article, "volume")
-    descriptor = None
-    for klass in BIBTEXML::Article.__mro__:
-        if "volume" in klass.__dict__:
-            descriptor = klass.__dict__["volume"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_bibtexml::article_has_number():
-    assert hasattr(BIBTEXML::Article, "number")
-    descriptor = None
-    for klass in BIBTEXML::Article.__mro__:
+    for klass in BIBTEXML_Article.__mro__:
         if "number" in klass.__dict__:
             descriptor = klass.__dict__["number"]
             break
     assert isinstance(descriptor, property)
 
-def test_bibtexml::article_has_note():
-    assert hasattr(BIBTEXML::Article, "note")
+def test_bibtexml_article_has_note():
+    assert hasattr(BIBTEXML_Article, "note")
     descriptor = None
-    for klass in BIBTEXML::Article.__mro__:
+    for klass in BIBTEXML_Article.__mro__:
         if "note" in klass.__dict__:
             descriptor = klass.__dict__["note"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_bibtexml_article_has_pages():
+    assert hasattr(BIBTEXML_Article, "pages")
+    descriptor = None
+    for klass in BIBTEXML_Article.__mro__:
+        if "pages" in klass.__dict__:
+            descriptor = klass.__dict__["pages"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_bibtexml_article_has_volume():
+    assert hasattr(BIBTEXML_Article, "volume")
+    descriptor = None
+    for klass in BIBTEXML_Article.__mro__:
+        if "volume" in klass.__dict__:
+            descriptor = klass.__dict__["volume"]
             break
     assert isinstance(descriptor, property)
 
@@ -858,101 +858,101 @@ def test_entry_constructor_args():
 
 
 
-def test_bibtexml::misc_is_not_abstract():
-    assert not inspect.isabstract(BIBTEXML::Misc)
+def test_bibtexml_misc_is_not_abstract():
+    assert not inspect.isabstract(BIBTEXML_Misc)
 
 
-def test_bibtexml::misc_constructor_exists():
-    assert callable(BIBTEXML::Misc.__init__)
+def test_bibtexml_misc_constructor_exists():
+    assert callable(BIBTEXML_Misc.__init__)
 
 
-def test_bibtexml::misc_constructor_args():
-    sig = inspect.signature(BIBTEXML::Misc.__init__)
+def test_bibtexml_misc_constructor_args():
+    sig = inspect.signature(BIBTEXML_Misc.__init__)
     params = list(sig.parameters.keys())
-    assert "note" in params, "Missing parameter 'note'"
-    assert "howpublished" in params, "Missing parameter 'howpublished'"
-    assert "title" in params, "Missing parameter 'title'"
-    assert "month" in params, "Missing parameter 'month'"
     assert "year" in params, "Missing parameter 'year'"
+    assert "title" in params, "Missing parameter 'title'"
+    assert "note" in params, "Missing parameter 'note'"
+    assert "month" in params, "Missing parameter 'month'"
+    assert "howpublished" in params, "Missing parameter 'howpublished'"
 
-def test_bibtexml::misc_has_note():
-    assert hasattr(BIBTEXML::Misc, "note")
+def test_bibtexml_misc_has_year():
+    assert hasattr(BIBTEXML_Misc, "year")
     descriptor = None
-    for klass in BIBTEXML::Misc.__mro__:
-        if "note" in klass.__dict__:
-            descriptor = klass.__dict__["note"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_bibtexml::misc_has_howpublished():
-    assert hasattr(BIBTEXML::Misc, "howpublished")
-    descriptor = None
-    for klass in BIBTEXML::Misc.__mro__:
-        if "howpublished" in klass.__dict__:
-            descriptor = klass.__dict__["howpublished"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_bibtexml::misc_has_title():
-    assert hasattr(BIBTEXML::Misc, "title")
-    descriptor = None
-    for klass in BIBTEXML::Misc.__mro__:
-        if "title" in klass.__dict__:
-            descriptor = klass.__dict__["title"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_bibtexml::misc_has_month():
-    assert hasattr(BIBTEXML::Misc, "month")
-    descriptor = None
-    for klass in BIBTEXML::Misc.__mro__:
-        if "month" in klass.__dict__:
-            descriptor = klass.__dict__["month"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_bibtexml::misc_has_year():
-    assert hasattr(BIBTEXML::Misc, "year")
-    descriptor = None
-    for klass in BIBTEXML::Misc.__mro__:
+    for klass in BIBTEXML_Misc.__mro__:
         if "year" in klass.__dict__:
             descriptor = klass.__dict__["year"]
             break
     assert isinstance(descriptor, property)
 
+def test_bibtexml_misc_has_title():
+    assert hasattr(BIBTEXML_Misc, "title")
+    descriptor = None
+    for klass in BIBTEXML_Misc.__mro__:
+        if "title" in klass.__dict__:
+            descriptor = klass.__dict__["title"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_bibtexml_misc_has_note():
+    assert hasattr(BIBTEXML_Misc, "note")
+    descriptor = None
+    for klass in BIBTEXML_Misc.__mro__:
+        if "note" in klass.__dict__:
+            descriptor = klass.__dict__["note"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_bibtexml_misc_has_month():
+    assert hasattr(BIBTEXML_Misc, "month")
+    descriptor = None
+    for klass in BIBTEXML_Misc.__mro__:
+        if "month" in klass.__dict__:
+            descriptor = klass.__dict__["month"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_bibtexml_misc_has_howpublished():
+    assert hasattr(BIBTEXML_Misc, "howpublished")
+    descriptor = None
+    for klass in BIBTEXML_Misc.__mro__:
+        if "howpublished" in klass.__dict__:
+            descriptor = klass.__dict__["howpublished"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_bibtexml::bibtexfile_is_not_abstract():
-    assert not inspect.isabstract(BIBTEXML::BibtexFile)
+
+def test_bibtexml_bibtexfile_is_not_abstract():
+    assert not inspect.isabstract(BIBTEXML_BibtexFile)
 
 
-def test_bibtexml::bibtexfile_constructor_exists():
-    assert callable(BIBTEXML::BibtexFile.__init__)
+def test_bibtexml_bibtexfile_constructor_exists():
+    assert callable(BIBTEXML_BibtexFile.__init__)
 
 
-def test_bibtexml::bibtexfile_constructor_args():
-    sig = inspect.signature(BIBTEXML::BibtexFile.__init__)
+def test_bibtexml_bibtexfile_constructor_args():
+    sig = inspect.signature(BIBTEXML_BibtexFile.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_bibtexml::schoolentry_is_not_abstract():
-    assert not inspect.isabstract(BIBTEXML::SchoolEntry)
+def test_bibtexml_schoolentry_is_not_abstract():
+    assert not inspect.isabstract(BIBTEXML_SchoolEntry)
 
 
-def test_bibtexml::schoolentry_constructor_exists():
-    assert callable(BIBTEXML::SchoolEntry.__init__)
+def test_bibtexml_schoolentry_constructor_exists():
+    assert callable(BIBTEXML_SchoolEntry.__init__)
 
 
-def test_bibtexml::schoolentry_constructor_args():
-    sig = inspect.signature(BIBTEXML::SchoolEntry.__init__)
+def test_bibtexml_schoolentry_constructor_args():
+    sig = inspect.signature(BIBTEXML_SchoolEntry.__init__)
     params = list(sig.parameters.keys())
     assert "school" in params, "Missing parameter 'school'"
 
-def test_bibtexml::schoolentry_has_school():
-    assert hasattr(BIBTEXML::SchoolEntry, "school")
+def test_bibtexml_schoolentry_has_school():
+    assert hasattr(BIBTEXML_SchoolEntry, "school")
     descriptor = None
-    for klass in BIBTEXML::SchoolEntry.__mro__:
+    for klass in BIBTEXML_SchoolEntry.__mro__:
         if "school" in klass.__dict__:
             descriptor = klass.__dict__["school"]
             break
@@ -960,23 +960,23 @@ def test_bibtexml::schoolentry_has_school():
 
 
 
-def test_bibtexml::publisheredentry_is_not_abstract():
-    assert not inspect.isabstract(BIBTEXML::PublisheredEntry)
+def test_bibtexml_publisheredentry_is_not_abstract():
+    assert not inspect.isabstract(BIBTEXML_PublisheredEntry)
 
 
-def test_bibtexml::publisheredentry_constructor_exists():
-    assert callable(BIBTEXML::PublisheredEntry.__init__)
+def test_bibtexml_publisheredentry_constructor_exists():
+    assert callable(BIBTEXML_PublisheredEntry.__init__)
 
 
-def test_bibtexml::publisheredentry_constructor_args():
-    sig = inspect.signature(BIBTEXML::PublisheredEntry.__init__)
+def test_bibtexml_publisheredentry_constructor_args():
+    sig = inspect.signature(BIBTEXML_PublisheredEntry.__init__)
     params = list(sig.parameters.keys())
     assert "publisher" in params, "Missing parameter 'publisher'"
 
-def test_bibtexml::publisheredentry_has_publisher():
-    assert hasattr(BIBTEXML::PublisheredEntry, "publisher")
+def test_bibtexml_publisheredentry_has_publisher():
+    assert hasattr(BIBTEXML_PublisheredEntry, "publisher")
     descriptor = None
-    for klass in BIBTEXML::PublisheredEntry.__mro__:
+    for klass in BIBTEXML_PublisheredEntry.__mro__:
         if "publisher" in klass.__dict__:
             descriptor = klass.__dict__["publisher"]
             break
@@ -984,23 +984,23 @@ def test_bibtexml::publisheredentry_has_publisher():
 
 
 
-def test_bibtexml::notedentry_is_not_abstract():
-    assert not inspect.isabstract(BIBTEXML::NotedEntry)
+def test_bibtexml_notedentry_is_not_abstract():
+    assert not inspect.isabstract(BIBTEXML_NotedEntry)
 
 
-def test_bibtexml::notedentry_constructor_exists():
-    assert callable(BIBTEXML::NotedEntry.__init__)
+def test_bibtexml_notedentry_constructor_exists():
+    assert callable(BIBTEXML_NotedEntry.__init__)
 
 
-def test_bibtexml::notedentry_constructor_args():
-    sig = inspect.signature(BIBTEXML::NotedEntry.__init__)
+def test_bibtexml_notedentry_constructor_args():
+    sig = inspect.signature(BIBTEXML_NotedEntry.__init__)
     params = list(sig.parameters.keys())
     assert "note" in params, "Missing parameter 'note'"
 
-def test_bibtexml::notedentry_has_note():
-    assert hasattr(BIBTEXML::NotedEntry, "note")
+def test_bibtexml_notedentry_has_note():
+    assert hasattr(BIBTEXML_NotedEntry, "note")
     descriptor = None
-    for klass in BIBTEXML::NotedEntry.__mro__:
+    for klass in BIBTEXML_NotedEntry.__mro__:
         if "note" in klass.__dict__:
             descriptor = klass.__dict__["note"]
             break
@@ -1008,23 +1008,23 @@ def test_bibtexml::notedentry_has_note():
 
 
 
-def test_bibtexml::titledentry_is_not_abstract():
-    assert not inspect.isabstract(BIBTEXML::TitledEntry)
+def test_bibtexml_titledentry_is_not_abstract():
+    assert not inspect.isabstract(BIBTEXML_TitledEntry)
 
 
-def test_bibtexml::titledentry_constructor_exists():
-    assert callable(BIBTEXML::TitledEntry.__init__)
+def test_bibtexml_titledentry_constructor_exists():
+    assert callable(BIBTEXML_TitledEntry.__init__)
 
 
-def test_bibtexml::titledentry_constructor_args():
-    sig = inspect.signature(BIBTEXML::TitledEntry.__init__)
+def test_bibtexml_titledentry_constructor_args():
+    sig = inspect.signature(BIBTEXML_TitledEntry.__init__)
     params = list(sig.parameters.keys())
     assert "title" in params, "Missing parameter 'title'"
 
-def test_bibtexml::titledentry_has_title():
-    assert hasattr(BIBTEXML::TitledEntry, "title")
+def test_bibtexml_titledentry_has_title():
+    assert hasattr(BIBTEXML_TitledEntry, "title")
     descriptor = None
-    for klass in BIBTEXML::TitledEntry.__mro__:
+    for klass in BIBTEXML_TitledEntry.__mro__:
         if "title" in klass.__dict__:
             descriptor = klass.__dict__["title"]
             break
@@ -1032,23 +1032,23 @@ def test_bibtexml::titledentry_has_title():
 
 
 
-def test_bibtexml::journalentry_is_not_abstract():
-    assert not inspect.isabstract(BIBTEXML::JournalEntry)
+def test_bibtexml_journalentry_is_not_abstract():
+    assert not inspect.isabstract(BIBTEXML_JournalEntry)
 
 
-def test_bibtexml::journalentry_constructor_exists():
-    assert callable(BIBTEXML::JournalEntry.__init__)
+def test_bibtexml_journalentry_constructor_exists():
+    assert callable(BIBTEXML_JournalEntry.__init__)
 
 
-def test_bibtexml::journalentry_constructor_args():
-    sig = inspect.signature(BIBTEXML::JournalEntry.__init__)
+def test_bibtexml_journalentry_constructor_args():
+    sig = inspect.signature(BIBTEXML_JournalEntry.__init__)
     params = list(sig.parameters.keys())
     assert "journal" in params, "Missing parameter 'journal'"
 
-def test_bibtexml::journalentry_has_journal():
-    assert hasattr(BIBTEXML::JournalEntry, "journal")
+def test_bibtexml_journalentry_has_journal():
+    assert hasattr(BIBTEXML_JournalEntry, "journal")
     descriptor = None
-    for klass in BIBTEXML::JournalEntry.__mro__:
+    for klass in BIBTEXML_JournalEntry.__mro__:
         if "journal" in klass.__dict__:
             descriptor = klass.__dict__["journal"]
             break
@@ -1056,57 +1056,57 @@ def test_bibtexml::journalentry_has_journal():
 
 
 
-def test_bibtexml::datedentry_is_not_abstract():
-    assert not inspect.isabstract(BIBTEXML::DatedEntry)
+def test_bibtexml_datedentry_is_not_abstract():
+    assert not inspect.isabstract(BIBTEXML_DatedEntry)
 
 
-def test_bibtexml::datedentry_constructor_exists():
-    assert callable(BIBTEXML::DatedEntry.__init__)
+def test_bibtexml_datedentry_constructor_exists():
+    assert callable(BIBTEXML_DatedEntry.__init__)
 
 
-def test_bibtexml::datedentry_constructor_args():
-    sig = inspect.signature(BIBTEXML::DatedEntry.__init__)
+def test_bibtexml_datedentry_constructor_args():
+    sig = inspect.signature(BIBTEXML_DatedEntry.__init__)
     params = list(sig.parameters.keys())
-    assert "year" in params, "Missing parameter 'year'"
     assert "month" in params, "Missing parameter 'month'"
+    assert "year" in params, "Missing parameter 'year'"
 
-def test_bibtexml::datedentry_has_year():
-    assert hasattr(BIBTEXML::DatedEntry, "year")
+def test_bibtexml_datedentry_has_month():
+    assert hasattr(BIBTEXML_DatedEntry, "month")
     descriptor = None
-    for klass in BIBTEXML::DatedEntry.__mro__:
-        if "year" in klass.__dict__:
-            descriptor = klass.__dict__["year"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_bibtexml::datedentry_has_month():
-    assert hasattr(BIBTEXML::DatedEntry, "month")
-    descriptor = None
-    for klass in BIBTEXML::DatedEntry.__mro__:
+    for klass in BIBTEXML_DatedEntry.__mro__:
         if "month" in klass.__dict__:
             descriptor = klass.__dict__["month"]
             break
     assert isinstance(descriptor, property)
 
+def test_bibtexml_datedentry_has_year():
+    assert hasattr(BIBTEXML_DatedEntry, "year")
+    descriptor = None
+    for klass in BIBTEXML_DatedEntry.__mro__:
+        if "year" in klass.__dict__:
+            descriptor = klass.__dict__["year"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_bibtexml::editoredentry_is_not_abstract():
-    assert not inspect.isabstract(BIBTEXML::EditoredEntry)
+
+def test_bibtexml_editoredentry_is_not_abstract():
+    assert not inspect.isabstract(BIBTEXML_EditoredEntry)
 
 
-def test_bibtexml::editoredentry_constructor_exists():
-    assert callable(BIBTEXML::EditoredEntry.__init__)
+def test_bibtexml_editoredentry_constructor_exists():
+    assert callable(BIBTEXML_EditoredEntry.__init__)
 
 
-def test_bibtexml::editoredentry_constructor_args():
-    sig = inspect.signature(BIBTEXML::EditoredEntry.__init__)
+def test_bibtexml_editoredentry_constructor_args():
+    sig = inspect.signature(BIBTEXML_EditoredEntry.__init__)
     params = list(sig.parameters.keys())
     assert "editor" in params, "Missing parameter 'editor'"
 
-def test_bibtexml::editoredentry_has_editor():
-    assert hasattr(BIBTEXML::EditoredEntry, "editor")
+def test_bibtexml_editoredentry_has_editor():
+    assert hasattr(BIBTEXML_EditoredEntry, "editor")
     descriptor = None
-    for klass in BIBTEXML::EditoredEntry.__mro__:
+    for klass in BIBTEXML_EditoredEntry.__mro__:
         if "editor" in klass.__dict__:
             descriptor = klass.__dict__["editor"]
             break
@@ -1114,23 +1114,23 @@ def test_bibtexml::editoredentry_has_editor():
 
 
 
-def test_bibtexml::institutionentry_is_not_abstract():
-    assert not inspect.isabstract(BIBTEXML::InstitutionEntry)
+def test_bibtexml_institutionentry_is_not_abstract():
+    assert not inspect.isabstract(BIBTEXML_InstitutionEntry)
 
 
-def test_bibtexml::institutionentry_constructor_exists():
-    assert callable(BIBTEXML::InstitutionEntry.__init__)
+def test_bibtexml_institutionentry_constructor_exists():
+    assert callable(BIBTEXML_InstitutionEntry.__init__)
 
 
-def test_bibtexml::institutionentry_constructor_args():
-    sig = inspect.signature(BIBTEXML::InstitutionEntry.__init__)
+def test_bibtexml_institutionentry_constructor_args():
+    sig = inspect.signature(BIBTEXML_InstitutionEntry.__init__)
     params = list(sig.parameters.keys())
     assert "institution" in params, "Missing parameter 'institution'"
 
-def test_bibtexml::institutionentry_has_institution():
-    assert hasattr(BIBTEXML::InstitutionEntry, "institution")
+def test_bibtexml_institutionentry_has_institution():
+    assert hasattr(BIBTEXML_InstitutionEntry, "institution")
     descriptor = None
-    for klass in BIBTEXML::InstitutionEntry.__mro__:
+    for klass in BIBTEXML_InstitutionEntry.__mro__:
         if "institution" in klass.__dict__:
             descriptor = klass.__dict__["institution"]
             break
@@ -1138,23 +1138,23 @@ def test_bibtexml::institutionentry_has_institution():
 
 
 
-def test_bibtexml::booktitledentry_is_not_abstract():
-    assert not inspect.isabstract(BIBTEXML::BookTitledEntry)
+def test_bibtexml_booktitledentry_is_not_abstract():
+    assert not inspect.isabstract(BIBTEXML_BookTitledEntry)
 
 
-def test_bibtexml::booktitledentry_constructor_exists():
-    assert callable(BIBTEXML::BookTitledEntry.__init__)
+def test_bibtexml_booktitledentry_constructor_exists():
+    assert callable(BIBTEXML_BookTitledEntry.__init__)
 
 
-def test_bibtexml::booktitledentry_constructor_args():
-    sig = inspect.signature(BIBTEXML::BookTitledEntry.__init__)
+def test_bibtexml_booktitledentry_constructor_args():
+    sig = inspect.signature(BIBTEXML_BookTitledEntry.__init__)
     params = list(sig.parameters.keys())
     assert "booktitle" in params, "Missing parameter 'booktitle'"
 
-def test_bibtexml::booktitledentry_has_booktitle():
-    assert hasattr(BIBTEXML::BookTitledEntry, "booktitle")
+def test_bibtexml_booktitledentry_has_booktitle():
+    assert hasattr(BIBTEXML_BookTitledEntry, "booktitle")
     descriptor = None
-    for klass in BIBTEXML::BookTitledEntry.__mro__:
+    for klass in BIBTEXML_BookTitledEntry.__mro__:
         if "booktitle" in klass.__dict__:
             descriptor = klass.__dict__["booktitle"]
             break
@@ -1176,47 +1176,47 @@ def test_author_constructor_args():
 
 
 
-def test_bibtexml::authoredentry_is_not_abstract():
-    assert not inspect.isabstract(BIBTEXML::AuthoredEntry)
+def test_bibtexml_authoredentry_is_not_abstract():
+    assert not inspect.isabstract(BIBTEXML_AuthoredEntry)
 
 
-def test_bibtexml::authoredentry_constructor_exists():
-    assert callable(BIBTEXML::AuthoredEntry.__init__)
+def test_bibtexml_authoredentry_constructor_exists():
+    assert callable(BIBTEXML_AuthoredEntry.__init__)
 
 
-def test_bibtexml::authoredentry_constructor_args():
-    sig = inspect.signature(BIBTEXML::AuthoredEntry.__init__)
+def test_bibtexml_authoredentry_constructor_args():
+    sig = inspect.signature(BIBTEXML_AuthoredEntry.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_bibtexml::entry_is_not_abstract():
-    assert not inspect.isabstract(BIBTEXML::Entry)
+def test_bibtexml_entry_is_not_abstract():
+    assert not inspect.isabstract(BIBTEXML_Entry)
 
 
-def test_bibtexml::entry_constructor_exists():
-    assert callable(BIBTEXML::Entry.__init__)
+def test_bibtexml_entry_constructor_exists():
+    assert callable(BIBTEXML_Entry.__init__)
 
 
-def test_bibtexml::entry_constructor_args():
-    sig = inspect.signature(BIBTEXML::Entry.__init__)
+def test_bibtexml_entry_constructor_args():
+    sig = inspect.signature(BIBTEXML_Entry.__init__)
     params = list(sig.parameters.keys())
     assert "abstract" in params, "Missing parameter 'abstract'"
     assert "id" in params, "Missing parameter 'id'"
 
-def test_bibtexml::entry_has_abstract():
-    assert hasattr(BIBTEXML::Entry, "abstract")
+def test_bibtexml_entry_has_abstract():
+    assert hasattr(BIBTEXML_Entry, "abstract")
     descriptor = None
-    for klass in BIBTEXML::Entry.__mro__:
+    for klass in BIBTEXML_Entry.__mro__:
         if "abstract" in klass.__dict__:
             descriptor = klass.__dict__["abstract"]
             break
     assert isinstance(descriptor, property)
 
-def test_bibtexml::entry_has_id():
-    assert hasattr(BIBTEXML::Entry, "id")
+def test_bibtexml_entry_has_id():
+    assert hasattr(BIBTEXML_Entry, "id")
     descriptor = None
-    for klass in BIBTEXML::Entry.__mro__:
+    for klass in BIBTEXML_Entry.__mro__:
         if "id" in klass.__dict__:
             descriptor = klass.__dict__["id"]
             break
@@ -1243,8 +1243,8 @@ NotedEntry_strategy = st.builds(
 InProceedings_strategy = st.builds(
     InProceedings,
 )
-BIBTEXML::Conference_strategy = st.builds(
-    BIBTEXML::Conference,
+BIBTEXML_Conference_strategy = st.builds(
+    BIBTEXML_Conference,
 )
 Proceedings_strategy = st.builds(
     Proceedings,
@@ -1252,11 +1252,11 @@ Proceedings_strategy = st.builds(
 ThesisEntry_strategy = st.builds(
     ThesisEntry,
 )
-BIBTEXML::MastersThesis_strategy = st.builds(
-    BIBTEXML::MastersThesis,
+BIBTEXML_MastersThesis_strategy = st.builds(
+    BIBTEXML_MastersThesis,
 )
-BIBTEXML::PhdThesis_strategy = st.builds(
-    BIBTEXML::PhdThesis,
+BIBTEXML_PhdThesis_strategy = st.builds(
+    BIBTEXML_PhdThesis,
 )
 SchoolEntry_strategy = st.builds(
     SchoolEntry,
@@ -1270,15 +1270,15 @@ BookTitledEntry_strategy = st.builds(
 Book_strategy = st.builds(
     Book,
 )
-BIBTEXML::InCollection_strategy = st.builds(
-    BIBTEXML::InCollection,
+BIBTEXML_InCollection_strategy = st.builds(
+    BIBTEXML_InCollection,
     type=
         safe_text,
     chapter=
         safe_text
 )
-BIBTEXML::InBook_strategy = st.builds(
-    BIBTEXML::InBook,
+BIBTEXML_InBook_strategy = st.builds(
+    BIBTEXML_InBook,
     chapter=
         safe_text,
     type=
@@ -1296,181 +1296,181 @@ JournalEntry_strategy = st.builds(
 TitledEntry_strategy = st.builds(
     TitledEntry,
 )
-BIBTEXML::Proceedings_strategy = st.builds(
-    BIBTEXML::Proceedings,
-    series=
-        safe_text,
+BIBTEXML_Proceedings_strategy = st.builds(
+    BIBTEXML_Proceedings,
     editor=
         safe_text,
-    number=
-        safe_text,
-    publisher=
+    series=
         safe_text,
     address=
         safe_text,
     volume=
         safe_text,
-    note=
+    number=
         safe_text,
     organization=
-        safe_text
-)
-BIBTEXML::Booklet_strategy = st.builds(
-    BIBTEXML::Booklet,
-    address=
         safe_text,
     note=
         safe_text,
-    howpublished=
+    publisher=
         safe_text
 )
-BIBTEXML::Author_strategy = st.builds(
-    BIBTEXML::Author,
+BIBTEXML_Booklet_strategy = st.builds(
+    BIBTEXML_Booklet,
+    address=
+        safe_text,
+    howpublished=
+        safe_text,
+    note=
+        safe_text
+)
+BIBTEXML_Author_strategy = st.builds(
+    BIBTEXML_Author,
     name=
         safe_text
 )
 AuthoredEntry_strategy = st.builds(
     AuthoredEntry,
 )
-BIBTEXML::Manual_strategy = st.builds(
-    BIBTEXML::Manual,
+BIBTEXML_InProceedings_strategy = st.builds(
+    BIBTEXML_InProceedings,
+    pages=
+        safe_text
+)
+BIBTEXML_TechReport_strategy = st.builds(
+    BIBTEXML_TechReport,
+    type=
+        safe_text,
     note=
+        safe_text,
+    number=
+        safe_text,
+    address=
+        safe_text
+)
+BIBTEXML_Book_strategy = st.builds(
+    BIBTEXML_Book,
+    note=
+        safe_text,
+    address=
+        safe_text,
+    volume=
+        safe_text,
+    number=
+        safe_text,
+    edition=
+        safe_text,
+    series=
+        safe_text
+)
+BIBTEXML_Manual_strategy = st.builds(
+    BIBTEXML_Manual,
+    edition=
         safe_text,
     organization=
         safe_text,
-    address=
-        safe_text,
-    edition=
-        safe_text
-)
-BIBTEXML::ThesisEntry_strategy = st.builds(
-    BIBTEXML::ThesisEntry,
     note=
         safe_text,
     address=
-        safe_text,
-    type=
         safe_text
 )
-BIBTEXML::TechReport_strategy = st.builds(
-    BIBTEXML::TechReport,
-    number=
-        safe_text,
-    address=
+BIBTEXML_ThesisEntry_strategy = st.builds(
+    BIBTEXML_ThesisEntry,
+    note=
         safe_text,
     type=
         safe_text,
-    note=
-        safe_text
-)
-BIBTEXML::Unpublished_strategy = st.builds(
-    BIBTEXML::Unpublished,
-)
-BIBTEXML::InProceedings_strategy = st.builds(
-    BIBTEXML::InProceedings,
-    pages=
-        safe_text
-)
-BIBTEXML::Book_strategy = st.builds(
-    BIBTEXML::Book,
-    number=
-        safe_text,
-    volume=
-        safe_text,
-    note=
-        safe_text,
-    series=
-        safe_text,
-    edition=
-        safe_text,
     address=
         safe_text
 )
-BIBTEXML::Article_strategy = st.builds(
-    BIBTEXML::Article,
-    pages=
-        safe_text,
-    volume=
-        safe_text,
+BIBTEXML_Unpublished_strategy = st.builds(
+    BIBTEXML_Unpublished,
+)
+BIBTEXML_Article_strategy = st.builds(
+    BIBTEXML_Article,
     number=
         safe_text,
     note=
+        safe_text,
+    pages=
+        safe_text,
+    volume=
         safe_text
 )
 Entry_strategy = st.builds(
     Entry,
 )
-BIBTEXML::Misc_strategy = st.builds(
-    BIBTEXML::Misc,
-    note=
-        safe_text,
-    howpublished=
+BIBTEXML_Misc_strategy = st.builds(
+    BIBTEXML_Misc,
+    year=
         safe_text,
     title=
         safe_text,
+    note=
+        safe_text,
     month=
         safe_text,
-    year=
+    howpublished=
         safe_text
 )
-BIBTEXML::BibtexFile_strategy = st.builds(
-    BIBTEXML::BibtexFile,
+BIBTEXML_BibtexFile_strategy = st.builds(
+    BIBTEXML_BibtexFile,
 )
-BIBTEXML::SchoolEntry_strategy = st.builds(
-    BIBTEXML::SchoolEntry,
+BIBTEXML_SchoolEntry_strategy = st.builds(
+    BIBTEXML_SchoolEntry,
     school=
         safe_text
 )
-BIBTEXML::PublisheredEntry_strategy = st.builds(
-    BIBTEXML::PublisheredEntry,
+BIBTEXML_PublisheredEntry_strategy = st.builds(
+    BIBTEXML_PublisheredEntry,
     publisher=
         safe_text
 )
-BIBTEXML::NotedEntry_strategy = st.builds(
-    BIBTEXML::NotedEntry,
+BIBTEXML_NotedEntry_strategy = st.builds(
+    BIBTEXML_NotedEntry,
     note=
         safe_text
 )
-BIBTEXML::TitledEntry_strategy = st.builds(
-    BIBTEXML::TitledEntry,
+BIBTEXML_TitledEntry_strategy = st.builds(
+    BIBTEXML_TitledEntry,
     title=
         safe_text
 )
-BIBTEXML::JournalEntry_strategy = st.builds(
-    BIBTEXML::JournalEntry,
+BIBTEXML_JournalEntry_strategy = st.builds(
+    BIBTEXML_JournalEntry,
     journal=
         safe_text
 )
-BIBTEXML::DatedEntry_strategy = st.builds(
-    BIBTEXML::DatedEntry,
-    year=
-        safe_text,
+BIBTEXML_DatedEntry_strategy = st.builds(
+    BIBTEXML_DatedEntry,
     month=
+        safe_text,
+    year=
         safe_text
 )
-BIBTEXML::EditoredEntry_strategy = st.builds(
-    BIBTEXML::EditoredEntry,
+BIBTEXML_EditoredEntry_strategy = st.builds(
+    BIBTEXML_EditoredEntry,
     editor=
         safe_text
 )
-BIBTEXML::InstitutionEntry_strategy = st.builds(
-    BIBTEXML::InstitutionEntry,
+BIBTEXML_InstitutionEntry_strategy = st.builds(
+    BIBTEXML_InstitutionEntry,
     institution=
         safe_text
 )
-BIBTEXML::BookTitledEntry_strategy = st.builds(
-    BIBTEXML::BookTitledEntry,
+BIBTEXML_BookTitledEntry_strategy = st.builds(
+    BIBTEXML_BookTitledEntry,
     booktitle=
         safe_text
 )
 Author_strategy = st.builds(
     Author,
 )
-BIBTEXML::AuthoredEntry_strategy = st.builds(
-    BIBTEXML::AuthoredEntry,
+BIBTEXML_AuthoredEntry_strategy = st.builds(
+    BIBTEXML_AuthoredEntry,
 )
-BIBTEXML::Entry_strategy = st.builds(
-    BIBTEXML::Entry,
+BIBTEXML_Entry_strategy = st.builds(
+    BIBTEXML_Entry,
     abstract=
         safe_text,
     id=
@@ -1492,10 +1492,10 @@ def test_notedentry_instantiation(instance):
 def test_inproceedings_instantiation(instance):
     assert isinstance(instance, InProceedings)
 
-@given(instance=BIBTEXML::Conference_strategy)
+@given(instance=BIBTEXML_Conference_strategy)
 @settings(max_examples=50)
-def test_bibtexml::conference_instantiation(instance):
-    assert isinstance(instance, BIBTEXML::Conference)
+def test_bibtexml_conference_instantiation(instance):
+    assert isinstance(instance, BIBTEXML_Conference)
 
 @given(instance=Proceedings_strategy)
 @settings(max_examples=50)
@@ -1507,15 +1507,15 @@ def test_proceedings_instantiation(instance):
 def test_thesisentry_instantiation(instance):
     assert isinstance(instance, ThesisEntry)
 
-@given(instance=BIBTEXML::MastersThesis_strategy)
+@given(instance=BIBTEXML_MastersThesis_strategy)
 @settings(max_examples=50)
-def test_bibtexml::mastersthesis_instantiation(instance):
-    assert isinstance(instance, BIBTEXML::MastersThesis)
+def test_bibtexml_mastersthesis_instantiation(instance):
+    assert isinstance(instance, BIBTEXML_MastersThesis)
 
-@given(instance=BIBTEXML::PhdThesis_strategy)
+@given(instance=BIBTEXML_PhdThesis_strategy)
 @settings(max_examples=50)
-def test_bibtexml::phdthesis_instantiation(instance):
-    assert isinstance(instance, BIBTEXML::PhdThesis)
+def test_bibtexml_phdthesis_instantiation(instance):
+    assert isinstance(instance, BIBTEXML_PhdThesis)
 
 @given(instance=SchoolEntry_strategy)
 @settings(max_examples=50)
@@ -1537,56 +1537,44 @@ def test_booktitledentry_instantiation(instance):
 def test_book_instantiation(instance):
     assert isinstance(instance, Book)
 
-@given(instance=BIBTEXML::InCollection_strategy)
+@given(instance=BIBTEXML_InCollection_strategy)
 @settings(max_examples=50)
-def test_bibtexml::incollection_instantiation(instance):
-    assert isinstance(instance, BIBTEXML::InCollection)
-
-@given(instance=BIBTEXML::InCollection_strategy)
-def test_bibtexml::incollection_type_type(instance):
-    assert isinstance(instance.type, str)
+def test_bibtexml_incollection_instantiation(instance):
+    assert isinstance(instance, BIBTEXML_InCollection)
 
 
-@given(instance=BIBTEXML::InCollection_strategy)
-def test_bibtexml::incollection_type_setter(instance):
+
+@given(instance=BIBTEXML_InCollection_strategy)
+def test_bibtexml_incollection_type_setter(instance):
     original = instance.type
     instance.type = original
     assert instance.type == original
 
-@given(instance=BIBTEXML::InCollection_strategy)
-def test_bibtexml::incollection_chapter_type(instance):
-    assert isinstance(instance.chapter, str)
 
 
-@given(instance=BIBTEXML::InCollection_strategy)
-def test_bibtexml::incollection_chapter_setter(instance):
+@given(instance=BIBTEXML_InCollection_strategy)
+def test_bibtexml_incollection_chapter_setter(instance):
     original = instance.chapter
     instance.chapter = original
     assert instance.chapter == original
 
-@given(instance=BIBTEXML::InBook_strategy)
+@given(instance=BIBTEXML_InBook_strategy)
 @settings(max_examples=50)
-def test_bibtexml::inbook_instantiation(instance):
-    assert isinstance(instance, BIBTEXML::InBook)
-
-@given(instance=BIBTEXML::InBook_strategy)
-def test_bibtexml::inbook_chapter_type(instance):
-    assert isinstance(instance.chapter, str)
+def test_bibtexml_inbook_instantiation(instance):
+    assert isinstance(instance, BIBTEXML_InBook)
 
 
-@given(instance=BIBTEXML::InBook_strategy)
-def test_bibtexml::inbook_chapter_setter(instance):
+
+@given(instance=BIBTEXML_InBook_strategy)
+def test_bibtexml_inbook_chapter_setter(instance):
     original = instance.chapter
     instance.chapter = original
     assert instance.chapter == original
 
-@given(instance=BIBTEXML::InBook_strategy)
-def test_bibtexml::inbook_type_type(instance):
-    assert isinstance(instance.type, str)
 
 
-@given(instance=BIBTEXML::InBook_strategy)
-def test_bibtexml::inbook_type_setter(instance):
+@given(instance=BIBTEXML_InBook_strategy)
+def test_bibtexml_inbook_type_setter(instance):
     original = instance.type
     instance.type = original
     assert instance.type == original
@@ -1611,149 +1599,113 @@ def test_journalentry_instantiation(instance):
 def test_titledentry_instantiation(instance):
     assert isinstance(instance, TitledEntry)
 
-@given(instance=BIBTEXML::Proceedings_strategy)
+@given(instance=BIBTEXML_Proceedings_strategy)
 @settings(max_examples=50)
-def test_bibtexml::proceedings_instantiation(instance):
-    assert isinstance(instance, BIBTEXML::Proceedings)
-
-@given(instance=BIBTEXML::Proceedings_strategy)
-def test_bibtexml::proceedings_series_type(instance):
-    assert isinstance(instance.series, str)
+def test_bibtexml_proceedings_instantiation(instance):
+    assert isinstance(instance, BIBTEXML_Proceedings)
 
 
-@given(instance=BIBTEXML::Proceedings_strategy)
-def test_bibtexml::proceedings_series_setter(instance):
-    original = instance.series
-    instance.series = original
-    assert instance.series == original
 
-@given(instance=BIBTEXML::Proceedings_strategy)
-def test_bibtexml::proceedings_editor_type(instance):
-    assert isinstance(instance.editor, str)
-
-
-@given(instance=BIBTEXML::Proceedings_strategy)
-def test_bibtexml::proceedings_editor_setter(instance):
+@given(instance=BIBTEXML_Proceedings_strategy)
+def test_bibtexml_proceedings_editor_setter(instance):
     original = instance.editor
     instance.editor = original
     assert instance.editor == original
 
-@given(instance=BIBTEXML::Proceedings_strategy)
-def test_bibtexml::proceedings_number_type(instance):
-    assert isinstance(instance.number, str)
 
 
-@given(instance=BIBTEXML::Proceedings_strategy)
-def test_bibtexml::proceedings_number_setter(instance):
-    original = instance.number
-    instance.number = original
-    assert instance.number == original
-
-@given(instance=BIBTEXML::Proceedings_strategy)
-def test_bibtexml::proceedings_publisher_type(instance):
-    assert isinstance(instance.publisher, str)
+@given(instance=BIBTEXML_Proceedings_strategy)
+def test_bibtexml_proceedings_series_setter(instance):
+    original = instance.series
+    instance.series = original
+    assert instance.series == original
 
 
-@given(instance=BIBTEXML::Proceedings_strategy)
-def test_bibtexml::proceedings_publisher_setter(instance):
-    original = instance.publisher
-    instance.publisher = original
-    assert instance.publisher == original
 
-@given(instance=BIBTEXML::Proceedings_strategy)
-def test_bibtexml::proceedings_address_type(instance):
-    assert isinstance(instance.address, str)
-
-
-@given(instance=BIBTEXML::Proceedings_strategy)
-def test_bibtexml::proceedings_address_setter(instance):
+@given(instance=BIBTEXML_Proceedings_strategy)
+def test_bibtexml_proceedings_address_setter(instance):
     original = instance.address
     instance.address = original
     assert instance.address == original
 
-@given(instance=BIBTEXML::Proceedings_strategy)
-def test_bibtexml::proceedings_volume_type(instance):
-    assert isinstance(instance.volume, str)
 
 
-@given(instance=BIBTEXML::Proceedings_strategy)
-def test_bibtexml::proceedings_volume_setter(instance):
+@given(instance=BIBTEXML_Proceedings_strategy)
+def test_bibtexml_proceedings_volume_setter(instance):
     original = instance.volume
     instance.volume = original
     assert instance.volume == original
 
-@given(instance=BIBTEXML::Proceedings_strategy)
-def test_bibtexml::proceedings_note_type(instance):
-    assert isinstance(instance.note, str)
 
 
-@given(instance=BIBTEXML::Proceedings_strategy)
-def test_bibtexml::proceedings_note_setter(instance):
-    original = instance.note
-    instance.note = original
-    assert instance.note == original
-
-@given(instance=BIBTEXML::Proceedings_strategy)
-def test_bibtexml::proceedings_organization_type(instance):
-    assert isinstance(instance.organization, str)
+@given(instance=BIBTEXML_Proceedings_strategy)
+def test_bibtexml_proceedings_number_setter(instance):
+    original = instance.number
+    instance.number = original
+    assert instance.number == original
 
 
-@given(instance=BIBTEXML::Proceedings_strategy)
-def test_bibtexml::proceedings_organization_setter(instance):
+
+@given(instance=BIBTEXML_Proceedings_strategy)
+def test_bibtexml_proceedings_organization_setter(instance):
     original = instance.organization
     instance.organization = original
     assert instance.organization == original
 
-@given(instance=BIBTEXML::Booklet_strategy)
-@settings(max_examples=50)
-def test_bibtexml::booklet_instantiation(instance):
-    assert isinstance(instance, BIBTEXML::Booklet)
-
-@given(instance=BIBTEXML::Booklet_strategy)
-def test_bibtexml::booklet_address_type(instance):
-    assert isinstance(instance.address, str)
 
 
-@given(instance=BIBTEXML::Booklet_strategy)
-def test_bibtexml::booklet_address_setter(instance):
-    original = instance.address
-    instance.address = original
-    assert instance.address == original
-
-@given(instance=BIBTEXML::Booklet_strategy)
-def test_bibtexml::booklet_note_type(instance):
-    assert isinstance(instance.note, str)
-
-
-@given(instance=BIBTEXML::Booklet_strategy)
-def test_bibtexml::booklet_note_setter(instance):
+@given(instance=BIBTEXML_Proceedings_strategy)
+def test_bibtexml_proceedings_note_setter(instance):
     original = instance.note
     instance.note = original
     assert instance.note == original
 
-@given(instance=BIBTEXML::Booklet_strategy)
-def test_bibtexml::booklet_howpublished_type(instance):
-    assert isinstance(instance.howpublished, str)
 
 
-@given(instance=BIBTEXML::Booklet_strategy)
-def test_bibtexml::booklet_howpublished_setter(instance):
+@given(instance=BIBTEXML_Proceedings_strategy)
+def test_bibtexml_proceedings_publisher_setter(instance):
+    original = instance.publisher
+    instance.publisher = original
+    assert instance.publisher == original
+
+@given(instance=BIBTEXML_Booklet_strategy)
+@settings(max_examples=50)
+def test_bibtexml_booklet_instantiation(instance):
+    assert isinstance(instance, BIBTEXML_Booklet)
+
+
+
+@given(instance=BIBTEXML_Booklet_strategy)
+def test_bibtexml_booklet_address_setter(instance):
+    original = instance.address
+    instance.address = original
+    assert instance.address == original
+
+
+
+@given(instance=BIBTEXML_Booklet_strategy)
+def test_bibtexml_booklet_howpublished_setter(instance):
     original = instance.howpublished
     instance.howpublished = original
     assert instance.howpublished == original
 
-@given(instance=BIBTEXML::Author_strategy)
+
+
+@given(instance=BIBTEXML_Booklet_strategy)
+def test_bibtexml_booklet_note_setter(instance):
+    original = instance.note
+    instance.note = original
+    assert instance.note == original
+
+@given(instance=BIBTEXML_Author_strategy)
 @settings(max_examples=50)
-def test_bibtexml::author_instantiation(instance):
-    assert isinstance(instance, BIBTEXML::Author)
-
-@given(instance=BIBTEXML::Author_strategy)
-def test_bibtexml::author_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_bibtexml_author_instantiation(instance):
+    assert isinstance(instance, BIBTEXML_Author)
 
 
-@given(instance=BIBTEXML::Author_strategy)
-def test_bibtexml::author_name_setter(instance):
+
+@given(instance=BIBTEXML_Author_strategy)
+def test_bibtexml_author_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
@@ -1763,504 +1715,393 @@ def test_bibtexml::author_name_setter(instance):
 def test_authoredentry_instantiation(instance):
     assert isinstance(instance, AuthoredEntry)
 
-@given(instance=BIBTEXML::Manual_strategy)
+@given(instance=BIBTEXML_InProceedings_strategy)
 @settings(max_examples=50)
-def test_bibtexml::manual_instantiation(instance):
-    assert isinstance(instance, BIBTEXML::Manual)
-
-@given(instance=BIBTEXML::Manual_strategy)
-def test_bibtexml::manual_note_type(instance):
-    assert isinstance(instance.note, str)
+def test_bibtexml_inproceedings_instantiation(instance):
+    assert isinstance(instance, BIBTEXML_InProceedings)
 
 
-@given(instance=BIBTEXML::Manual_strategy)
-def test_bibtexml::manual_note_setter(instance):
-    original = instance.note
-    instance.note = original
-    assert instance.note == original
 
-@given(instance=BIBTEXML::Manual_strategy)
-def test_bibtexml::manual_organization_type(instance):
-    assert isinstance(instance.organization, str)
-
-
-@given(instance=BIBTEXML::Manual_strategy)
-def test_bibtexml::manual_organization_setter(instance):
-    original = instance.organization
-    instance.organization = original
-    assert instance.organization == original
-
-@given(instance=BIBTEXML::Manual_strategy)
-def test_bibtexml::manual_address_type(instance):
-    assert isinstance(instance.address, str)
-
-
-@given(instance=BIBTEXML::Manual_strategy)
-def test_bibtexml::manual_address_setter(instance):
-    original = instance.address
-    instance.address = original
-    assert instance.address == original
-
-@given(instance=BIBTEXML::Manual_strategy)
-def test_bibtexml::manual_edition_type(instance):
-    assert isinstance(instance.edition, str)
-
-
-@given(instance=BIBTEXML::Manual_strategy)
-def test_bibtexml::manual_edition_setter(instance):
-    original = instance.edition
-    instance.edition = original
-    assert instance.edition == original
-
-@given(instance=BIBTEXML::ThesisEntry_strategy)
-@settings(max_examples=50)
-def test_bibtexml::thesisentry_instantiation(instance):
-    assert isinstance(instance, BIBTEXML::ThesisEntry)
-
-@given(instance=BIBTEXML::ThesisEntry_strategy)
-def test_bibtexml::thesisentry_note_type(instance):
-    assert isinstance(instance.note, str)
-
-
-@given(instance=BIBTEXML::ThesisEntry_strategy)
-def test_bibtexml::thesisentry_note_setter(instance):
-    original = instance.note
-    instance.note = original
-    assert instance.note == original
-
-@given(instance=BIBTEXML::ThesisEntry_strategy)
-def test_bibtexml::thesisentry_address_type(instance):
-    assert isinstance(instance.address, str)
-
-
-@given(instance=BIBTEXML::ThesisEntry_strategy)
-def test_bibtexml::thesisentry_address_setter(instance):
-    original = instance.address
-    instance.address = original
-    assert instance.address == original
-
-@given(instance=BIBTEXML::ThesisEntry_strategy)
-def test_bibtexml::thesisentry_type_type(instance):
-    assert isinstance(instance.type, str)
-
-
-@given(instance=BIBTEXML::ThesisEntry_strategy)
-def test_bibtexml::thesisentry_type_setter(instance):
-    original = instance.type
-    instance.type = original
-    assert instance.type == original
-
-@given(instance=BIBTEXML::TechReport_strategy)
-@settings(max_examples=50)
-def test_bibtexml::techreport_instantiation(instance):
-    assert isinstance(instance, BIBTEXML::TechReport)
-
-@given(instance=BIBTEXML::TechReport_strategy)
-def test_bibtexml::techreport_number_type(instance):
-    assert isinstance(instance.number, str)
-
-
-@given(instance=BIBTEXML::TechReport_strategy)
-def test_bibtexml::techreport_number_setter(instance):
-    original = instance.number
-    instance.number = original
-    assert instance.number == original
-
-@given(instance=BIBTEXML::TechReport_strategy)
-def test_bibtexml::techreport_address_type(instance):
-    assert isinstance(instance.address, str)
-
-
-@given(instance=BIBTEXML::TechReport_strategy)
-def test_bibtexml::techreport_address_setter(instance):
-    original = instance.address
-    instance.address = original
-    assert instance.address == original
-
-@given(instance=BIBTEXML::TechReport_strategy)
-def test_bibtexml::techreport_type_type(instance):
-    assert isinstance(instance.type, str)
-
-
-@given(instance=BIBTEXML::TechReport_strategy)
-def test_bibtexml::techreport_type_setter(instance):
-    original = instance.type
-    instance.type = original
-    assert instance.type == original
-
-@given(instance=BIBTEXML::TechReport_strategy)
-def test_bibtexml::techreport_note_type(instance):
-    assert isinstance(instance.note, str)
-
-
-@given(instance=BIBTEXML::TechReport_strategy)
-def test_bibtexml::techreport_note_setter(instance):
-    original = instance.note
-    instance.note = original
-    assert instance.note == original
-
-@given(instance=BIBTEXML::Unpublished_strategy)
-@settings(max_examples=50)
-def test_bibtexml::unpublished_instantiation(instance):
-    assert isinstance(instance, BIBTEXML::Unpublished)
-
-@given(instance=BIBTEXML::InProceedings_strategy)
-@settings(max_examples=50)
-def test_bibtexml::inproceedings_instantiation(instance):
-    assert isinstance(instance, BIBTEXML::InProceedings)
-
-@given(instance=BIBTEXML::InProceedings_strategy)
-def test_bibtexml::inproceedings_pages_type(instance):
-    assert isinstance(instance.pages, str)
-
-
-@given(instance=BIBTEXML::InProceedings_strategy)
-def test_bibtexml::inproceedings_pages_setter(instance):
+@given(instance=BIBTEXML_InProceedings_strategy)
+def test_bibtexml_inproceedings_pages_setter(instance):
     original = instance.pages
     instance.pages = original
     assert instance.pages == original
 
-@given(instance=BIBTEXML::Book_strategy)
+@given(instance=BIBTEXML_TechReport_strategy)
 @settings(max_examples=50)
-def test_bibtexml::book_instantiation(instance):
-    assert isinstance(instance, BIBTEXML::Book)
-
-@given(instance=BIBTEXML::Book_strategy)
-def test_bibtexml::book_number_type(instance):
-    assert isinstance(instance.number, str)
+def test_bibtexml_techreport_instantiation(instance):
+    assert isinstance(instance, BIBTEXML_TechReport)
 
 
-@given(instance=BIBTEXML::Book_strategy)
-def test_bibtexml::book_number_setter(instance):
-    original = instance.number
-    instance.number = original
-    assert instance.number == original
 
-@given(instance=BIBTEXML::Book_strategy)
-def test_bibtexml::book_volume_type(instance):
-    assert isinstance(instance.volume, str)
+@given(instance=BIBTEXML_TechReport_strategy)
+def test_bibtexml_techreport_type_setter(instance):
+    original = instance.type
+    instance.type = original
+    assert instance.type == original
 
 
-@given(instance=BIBTEXML::Book_strategy)
-def test_bibtexml::book_volume_setter(instance):
-    original = instance.volume
-    instance.volume = original
-    assert instance.volume == original
 
-@given(instance=BIBTEXML::Book_strategy)
-def test_bibtexml::book_note_type(instance):
-    assert isinstance(instance.note, str)
-
-
-@given(instance=BIBTEXML::Book_strategy)
-def test_bibtexml::book_note_setter(instance):
+@given(instance=BIBTEXML_TechReport_strategy)
+def test_bibtexml_techreport_note_setter(instance):
     original = instance.note
     instance.note = original
     assert instance.note == original
 
-@given(instance=BIBTEXML::Book_strategy)
-def test_bibtexml::book_series_type(instance):
-    assert isinstance(instance.series, str)
 
 
-@given(instance=BIBTEXML::Book_strategy)
-def test_bibtexml::book_series_setter(instance):
+@given(instance=BIBTEXML_TechReport_strategy)
+def test_bibtexml_techreport_number_setter(instance):
+    original = instance.number
+    instance.number = original
+    assert instance.number == original
+
+
+
+@given(instance=BIBTEXML_TechReport_strategy)
+def test_bibtexml_techreport_address_setter(instance):
+    original = instance.address
+    instance.address = original
+    assert instance.address == original
+
+@given(instance=BIBTEXML_Book_strategy)
+@settings(max_examples=50)
+def test_bibtexml_book_instantiation(instance):
+    assert isinstance(instance, BIBTEXML_Book)
+
+
+
+@given(instance=BIBTEXML_Book_strategy)
+def test_bibtexml_book_note_setter(instance):
+    original = instance.note
+    instance.note = original
+    assert instance.note == original
+
+
+
+@given(instance=BIBTEXML_Book_strategy)
+def test_bibtexml_book_address_setter(instance):
+    original = instance.address
+    instance.address = original
+    assert instance.address == original
+
+
+
+@given(instance=BIBTEXML_Book_strategy)
+def test_bibtexml_book_volume_setter(instance):
+    original = instance.volume
+    instance.volume = original
+    assert instance.volume == original
+
+
+
+@given(instance=BIBTEXML_Book_strategy)
+def test_bibtexml_book_number_setter(instance):
+    original = instance.number
+    instance.number = original
+    assert instance.number == original
+
+
+
+@given(instance=BIBTEXML_Book_strategy)
+def test_bibtexml_book_edition_setter(instance):
+    original = instance.edition
+    instance.edition = original
+    assert instance.edition == original
+
+
+
+@given(instance=BIBTEXML_Book_strategy)
+def test_bibtexml_book_series_setter(instance):
     original = instance.series
     instance.series = original
     assert instance.series == original
 
-@given(instance=BIBTEXML::Book_strategy)
-def test_bibtexml::book_edition_type(instance):
-    assert isinstance(instance.edition, str)
+@given(instance=BIBTEXML_Manual_strategy)
+@settings(max_examples=50)
+def test_bibtexml_manual_instantiation(instance):
+    assert isinstance(instance, BIBTEXML_Manual)
 
 
-@given(instance=BIBTEXML::Book_strategy)
-def test_bibtexml::book_edition_setter(instance):
+
+@given(instance=BIBTEXML_Manual_strategy)
+def test_bibtexml_manual_edition_setter(instance):
     original = instance.edition
     instance.edition = original
     assert instance.edition == original
 
-@given(instance=BIBTEXML::Book_strategy)
-def test_bibtexml::book_address_type(instance):
-    assert isinstance(instance.address, str)
 
 
-@given(instance=BIBTEXML::Book_strategy)
-def test_bibtexml::book_address_setter(instance):
+@given(instance=BIBTEXML_Manual_strategy)
+def test_bibtexml_manual_organization_setter(instance):
+    original = instance.organization
+    instance.organization = original
+    assert instance.organization == original
+
+
+
+@given(instance=BIBTEXML_Manual_strategy)
+def test_bibtexml_manual_note_setter(instance):
+    original = instance.note
+    instance.note = original
+    assert instance.note == original
+
+
+
+@given(instance=BIBTEXML_Manual_strategy)
+def test_bibtexml_manual_address_setter(instance):
     original = instance.address
     instance.address = original
     assert instance.address == original
 
-@given(instance=BIBTEXML::Article_strategy)
+@given(instance=BIBTEXML_ThesisEntry_strategy)
 @settings(max_examples=50)
-def test_bibtexml::article_instantiation(instance):
-    assert isinstance(instance, BIBTEXML::Article)
-
-@given(instance=BIBTEXML::Article_strategy)
-def test_bibtexml::article_pages_type(instance):
-    assert isinstance(instance.pages, str)
+def test_bibtexml_thesisentry_instantiation(instance):
+    assert isinstance(instance, BIBTEXML_ThesisEntry)
 
 
-@given(instance=BIBTEXML::Article_strategy)
-def test_bibtexml::article_pages_setter(instance):
-    original = instance.pages
-    instance.pages = original
-    assert instance.pages == original
 
-@given(instance=BIBTEXML::Article_strategy)
-def test_bibtexml::article_volume_type(instance):
-    assert isinstance(instance.volume, str)
+@given(instance=BIBTEXML_ThesisEntry_strategy)
+def test_bibtexml_thesisentry_note_setter(instance):
+    original = instance.note
+    instance.note = original
+    assert instance.note == original
 
 
-@given(instance=BIBTEXML::Article_strategy)
-def test_bibtexml::article_volume_setter(instance):
-    original = instance.volume
-    instance.volume = original
-    assert instance.volume == original
 
-@given(instance=BIBTEXML::Article_strategy)
-def test_bibtexml::article_number_type(instance):
-    assert isinstance(instance.number, str)
+@given(instance=BIBTEXML_ThesisEntry_strategy)
+def test_bibtexml_thesisentry_type_setter(instance):
+    original = instance.type
+    instance.type = original
+    assert instance.type == original
 
 
-@given(instance=BIBTEXML::Article_strategy)
-def test_bibtexml::article_number_setter(instance):
+
+@given(instance=BIBTEXML_ThesisEntry_strategy)
+def test_bibtexml_thesisentry_address_setter(instance):
+    original = instance.address
+    instance.address = original
+    assert instance.address == original
+
+@given(instance=BIBTEXML_Unpublished_strategy)
+@settings(max_examples=50)
+def test_bibtexml_unpublished_instantiation(instance):
+    assert isinstance(instance, BIBTEXML_Unpublished)
+
+@given(instance=BIBTEXML_Article_strategy)
+@settings(max_examples=50)
+def test_bibtexml_article_instantiation(instance):
+    assert isinstance(instance, BIBTEXML_Article)
+
+
+
+@given(instance=BIBTEXML_Article_strategy)
+def test_bibtexml_article_number_setter(instance):
     original = instance.number
     instance.number = original
     assert instance.number == original
 
-@given(instance=BIBTEXML::Article_strategy)
-def test_bibtexml::article_note_type(instance):
-    assert isinstance(instance.note, str)
 
 
-@given(instance=BIBTEXML::Article_strategy)
-def test_bibtexml::article_note_setter(instance):
+@given(instance=BIBTEXML_Article_strategy)
+def test_bibtexml_article_note_setter(instance):
     original = instance.note
     instance.note = original
     assert instance.note == original
+
+
+
+@given(instance=BIBTEXML_Article_strategy)
+def test_bibtexml_article_pages_setter(instance):
+    original = instance.pages
+    instance.pages = original
+    assert instance.pages == original
+
+
+
+@given(instance=BIBTEXML_Article_strategy)
+def test_bibtexml_article_volume_setter(instance):
+    original = instance.volume
+    instance.volume = original
+    assert instance.volume == original
 
 @given(instance=Entry_strategy)
 @settings(max_examples=50)
 def test_entry_instantiation(instance):
     assert isinstance(instance, Entry)
 
-@given(instance=BIBTEXML::Misc_strategy)
+@given(instance=BIBTEXML_Misc_strategy)
 @settings(max_examples=50)
-def test_bibtexml::misc_instantiation(instance):
-    assert isinstance(instance, BIBTEXML::Misc)
-
-@given(instance=BIBTEXML::Misc_strategy)
-def test_bibtexml::misc_note_type(instance):
-    assert isinstance(instance.note, str)
+def test_bibtexml_misc_instantiation(instance):
+    assert isinstance(instance, BIBTEXML_Misc)
 
 
-@given(instance=BIBTEXML::Misc_strategy)
-def test_bibtexml::misc_note_setter(instance):
+
+@given(instance=BIBTEXML_Misc_strategy)
+def test_bibtexml_misc_year_setter(instance):
+    original = instance.year
+    instance.year = original
+    assert instance.year == original
+
+
+
+@given(instance=BIBTEXML_Misc_strategy)
+def test_bibtexml_misc_title_setter(instance):
+    original = instance.title
+    instance.title = original
+    assert instance.title == original
+
+
+
+@given(instance=BIBTEXML_Misc_strategy)
+def test_bibtexml_misc_note_setter(instance):
     original = instance.note
     instance.note = original
     assert instance.note == original
 
-@given(instance=BIBTEXML::Misc_strategy)
-def test_bibtexml::misc_howpublished_type(instance):
-    assert isinstance(instance.howpublished, str)
 
 
-@given(instance=BIBTEXML::Misc_strategy)
-def test_bibtexml::misc_howpublished_setter(instance):
+@given(instance=BIBTEXML_Misc_strategy)
+def test_bibtexml_misc_month_setter(instance):
+    original = instance.month
+    instance.month = original
+    assert instance.month == original
+
+
+
+@given(instance=BIBTEXML_Misc_strategy)
+def test_bibtexml_misc_howpublished_setter(instance):
     original = instance.howpublished
     instance.howpublished = original
     assert instance.howpublished == original
 
-@given(instance=BIBTEXML::Misc_strategy)
-def test_bibtexml::misc_title_type(instance):
-    assert isinstance(instance.title, str)
-
-
-@given(instance=BIBTEXML::Misc_strategy)
-def test_bibtexml::misc_title_setter(instance):
-    original = instance.title
-    instance.title = original
-    assert instance.title == original
-
-@given(instance=BIBTEXML::Misc_strategy)
-def test_bibtexml::misc_month_type(instance):
-    assert isinstance(instance.month, str)
-
-
-@given(instance=BIBTEXML::Misc_strategy)
-def test_bibtexml::misc_month_setter(instance):
-    original = instance.month
-    instance.month = original
-    assert instance.month == original
-
-@given(instance=BIBTEXML::Misc_strategy)
-def test_bibtexml::misc_year_type(instance):
-    assert isinstance(instance.year, str)
-
-
-@given(instance=BIBTEXML::Misc_strategy)
-def test_bibtexml::misc_year_setter(instance):
-    original = instance.year
-    instance.year = original
-    assert instance.year == original
-
-@given(instance=BIBTEXML::BibtexFile_strategy)
+@given(instance=BIBTEXML_BibtexFile_strategy)
 @settings(max_examples=50)
-def test_bibtexml::bibtexfile_instantiation(instance):
-    assert isinstance(instance, BIBTEXML::BibtexFile)
+def test_bibtexml_bibtexfile_instantiation(instance):
+    assert isinstance(instance, BIBTEXML_BibtexFile)
 
-@given(instance=BIBTEXML::SchoolEntry_strategy)
+@given(instance=BIBTEXML_SchoolEntry_strategy)
 @settings(max_examples=50)
-def test_bibtexml::schoolentry_instantiation(instance):
-    assert isinstance(instance, BIBTEXML::SchoolEntry)
-
-@given(instance=BIBTEXML::SchoolEntry_strategy)
-def test_bibtexml::schoolentry_school_type(instance):
-    assert isinstance(instance.school, str)
+def test_bibtexml_schoolentry_instantiation(instance):
+    assert isinstance(instance, BIBTEXML_SchoolEntry)
 
 
-@given(instance=BIBTEXML::SchoolEntry_strategy)
-def test_bibtexml::schoolentry_school_setter(instance):
+
+@given(instance=BIBTEXML_SchoolEntry_strategy)
+def test_bibtexml_schoolentry_school_setter(instance):
     original = instance.school
     instance.school = original
     assert instance.school == original
 
-@given(instance=BIBTEXML::PublisheredEntry_strategy)
+@given(instance=BIBTEXML_PublisheredEntry_strategy)
 @settings(max_examples=50)
-def test_bibtexml::publisheredentry_instantiation(instance):
-    assert isinstance(instance, BIBTEXML::PublisheredEntry)
-
-@given(instance=BIBTEXML::PublisheredEntry_strategy)
-def test_bibtexml::publisheredentry_publisher_type(instance):
-    assert isinstance(instance.publisher, str)
+def test_bibtexml_publisheredentry_instantiation(instance):
+    assert isinstance(instance, BIBTEXML_PublisheredEntry)
 
 
-@given(instance=BIBTEXML::PublisheredEntry_strategy)
-def test_bibtexml::publisheredentry_publisher_setter(instance):
+
+@given(instance=BIBTEXML_PublisheredEntry_strategy)
+def test_bibtexml_publisheredentry_publisher_setter(instance):
     original = instance.publisher
     instance.publisher = original
     assert instance.publisher == original
 
-@given(instance=BIBTEXML::NotedEntry_strategy)
+@given(instance=BIBTEXML_NotedEntry_strategy)
 @settings(max_examples=50)
-def test_bibtexml::notedentry_instantiation(instance):
-    assert isinstance(instance, BIBTEXML::NotedEntry)
-
-@given(instance=BIBTEXML::NotedEntry_strategy)
-def test_bibtexml::notedentry_note_type(instance):
-    assert isinstance(instance.note, str)
+def test_bibtexml_notedentry_instantiation(instance):
+    assert isinstance(instance, BIBTEXML_NotedEntry)
 
 
-@given(instance=BIBTEXML::NotedEntry_strategy)
-def test_bibtexml::notedentry_note_setter(instance):
+
+@given(instance=BIBTEXML_NotedEntry_strategy)
+def test_bibtexml_notedentry_note_setter(instance):
     original = instance.note
     instance.note = original
     assert instance.note == original
 
-@given(instance=BIBTEXML::TitledEntry_strategy)
+@given(instance=BIBTEXML_TitledEntry_strategy)
 @settings(max_examples=50)
-def test_bibtexml::titledentry_instantiation(instance):
-    assert isinstance(instance, BIBTEXML::TitledEntry)
-
-@given(instance=BIBTEXML::TitledEntry_strategy)
-def test_bibtexml::titledentry_title_type(instance):
-    assert isinstance(instance.title, str)
+def test_bibtexml_titledentry_instantiation(instance):
+    assert isinstance(instance, BIBTEXML_TitledEntry)
 
 
-@given(instance=BIBTEXML::TitledEntry_strategy)
-def test_bibtexml::titledentry_title_setter(instance):
+
+@given(instance=BIBTEXML_TitledEntry_strategy)
+def test_bibtexml_titledentry_title_setter(instance):
     original = instance.title
     instance.title = original
     assert instance.title == original
 
-@given(instance=BIBTEXML::JournalEntry_strategy)
+@given(instance=BIBTEXML_JournalEntry_strategy)
 @settings(max_examples=50)
-def test_bibtexml::journalentry_instantiation(instance):
-    assert isinstance(instance, BIBTEXML::JournalEntry)
-
-@given(instance=BIBTEXML::JournalEntry_strategy)
-def test_bibtexml::journalentry_journal_type(instance):
-    assert isinstance(instance.journal, str)
+def test_bibtexml_journalentry_instantiation(instance):
+    assert isinstance(instance, BIBTEXML_JournalEntry)
 
 
-@given(instance=BIBTEXML::JournalEntry_strategy)
-def test_bibtexml::journalentry_journal_setter(instance):
+
+@given(instance=BIBTEXML_JournalEntry_strategy)
+def test_bibtexml_journalentry_journal_setter(instance):
     original = instance.journal
     instance.journal = original
     assert instance.journal == original
 
-@given(instance=BIBTEXML::DatedEntry_strategy)
+@given(instance=BIBTEXML_DatedEntry_strategy)
 @settings(max_examples=50)
-def test_bibtexml::datedentry_instantiation(instance):
-    assert isinstance(instance, BIBTEXML::DatedEntry)
-
-@given(instance=BIBTEXML::DatedEntry_strategy)
-def test_bibtexml::datedentry_year_type(instance):
-    assert isinstance(instance.year, str)
+def test_bibtexml_datedentry_instantiation(instance):
+    assert isinstance(instance, BIBTEXML_DatedEntry)
 
 
-@given(instance=BIBTEXML::DatedEntry_strategy)
-def test_bibtexml::datedentry_year_setter(instance):
-    original = instance.year
-    instance.year = original
-    assert instance.year == original
 
-@given(instance=BIBTEXML::DatedEntry_strategy)
-def test_bibtexml::datedentry_month_type(instance):
-    assert isinstance(instance.month, str)
-
-
-@given(instance=BIBTEXML::DatedEntry_strategy)
-def test_bibtexml::datedentry_month_setter(instance):
+@given(instance=BIBTEXML_DatedEntry_strategy)
+def test_bibtexml_datedentry_month_setter(instance):
     original = instance.month
     instance.month = original
     assert instance.month == original
 
-@given(instance=BIBTEXML::EditoredEntry_strategy)
+
+
+@given(instance=BIBTEXML_DatedEntry_strategy)
+def test_bibtexml_datedentry_year_setter(instance):
+    original = instance.year
+    instance.year = original
+    assert instance.year == original
+
+@given(instance=BIBTEXML_EditoredEntry_strategy)
 @settings(max_examples=50)
-def test_bibtexml::editoredentry_instantiation(instance):
-    assert isinstance(instance, BIBTEXML::EditoredEntry)
-
-@given(instance=BIBTEXML::EditoredEntry_strategy)
-def test_bibtexml::editoredentry_editor_type(instance):
-    assert isinstance(instance.editor, str)
+def test_bibtexml_editoredentry_instantiation(instance):
+    assert isinstance(instance, BIBTEXML_EditoredEntry)
 
 
-@given(instance=BIBTEXML::EditoredEntry_strategy)
-def test_bibtexml::editoredentry_editor_setter(instance):
+
+@given(instance=BIBTEXML_EditoredEntry_strategy)
+def test_bibtexml_editoredentry_editor_setter(instance):
     original = instance.editor
     instance.editor = original
     assert instance.editor == original
 
-@given(instance=BIBTEXML::InstitutionEntry_strategy)
+@given(instance=BIBTEXML_InstitutionEntry_strategy)
 @settings(max_examples=50)
-def test_bibtexml::institutionentry_instantiation(instance):
-    assert isinstance(instance, BIBTEXML::InstitutionEntry)
-
-@given(instance=BIBTEXML::InstitutionEntry_strategy)
-def test_bibtexml::institutionentry_institution_type(instance):
-    assert isinstance(instance.institution, str)
+def test_bibtexml_institutionentry_instantiation(instance):
+    assert isinstance(instance, BIBTEXML_InstitutionEntry)
 
 
-@given(instance=BIBTEXML::InstitutionEntry_strategy)
-def test_bibtexml::institutionentry_institution_setter(instance):
+
+@given(instance=BIBTEXML_InstitutionEntry_strategy)
+def test_bibtexml_institutionentry_institution_setter(instance):
     original = instance.institution
     instance.institution = original
     assert instance.institution == original
 
-@given(instance=BIBTEXML::BookTitledEntry_strategy)
+@given(instance=BIBTEXML_BookTitledEntry_strategy)
 @settings(max_examples=50)
-def test_bibtexml::booktitledentry_instantiation(instance):
-    assert isinstance(instance, BIBTEXML::BookTitledEntry)
-
-@given(instance=BIBTEXML::BookTitledEntry_strategy)
-def test_bibtexml::booktitledentry_booktitle_type(instance):
-    assert isinstance(instance.booktitle, str)
+def test_bibtexml_booktitledentry_instantiation(instance):
+    assert isinstance(instance, BIBTEXML_BookTitledEntry)
 
 
-@given(instance=BIBTEXML::BookTitledEntry_strategy)
-def test_bibtexml::booktitledentry_booktitle_setter(instance):
+
+@given(instance=BIBTEXML_BookTitledEntry_strategy)
+def test_bibtexml_booktitledentry_booktitle_setter(instance):
     original = instance.booktitle
     instance.booktitle = original
     assert instance.booktitle == original
@@ -2270,34 +2111,28 @@ def test_bibtexml::booktitledentry_booktitle_setter(instance):
 def test_author_instantiation(instance):
     assert isinstance(instance, Author)
 
-@given(instance=BIBTEXML::AuthoredEntry_strategy)
+@given(instance=BIBTEXML_AuthoredEntry_strategy)
 @settings(max_examples=50)
-def test_bibtexml::authoredentry_instantiation(instance):
-    assert isinstance(instance, BIBTEXML::AuthoredEntry)
+def test_bibtexml_authoredentry_instantiation(instance):
+    assert isinstance(instance, BIBTEXML_AuthoredEntry)
 
-@given(instance=BIBTEXML::Entry_strategy)
+@given(instance=BIBTEXML_Entry_strategy)
 @settings(max_examples=50)
-def test_bibtexml::entry_instantiation(instance):
-    assert isinstance(instance, BIBTEXML::Entry)
-
-@given(instance=BIBTEXML::Entry_strategy)
-def test_bibtexml::entry_abstract_type(instance):
-    assert isinstance(instance.abstract, str)
+def test_bibtexml_entry_instantiation(instance):
+    assert isinstance(instance, BIBTEXML_Entry)
 
 
-@given(instance=BIBTEXML::Entry_strategy)
-def test_bibtexml::entry_abstract_setter(instance):
+
+@given(instance=BIBTEXML_Entry_strategy)
+def test_bibtexml_entry_abstract_setter(instance):
     original = instance.abstract
     instance.abstract = original
     assert instance.abstract == original
 
-@given(instance=BIBTEXML::Entry_strategy)
-def test_bibtexml::entry_id_type(instance):
-    assert isinstance(instance.id, str)
 
 
-@given(instance=BIBTEXML::Entry_strategy)
-def test_bibtexml::entry_id_setter(instance):
+@given(instance=BIBTEXML_Entry_strategy)
+def test_bibtexml_entry_id_setter(instance):
     original = instance.id
     instance.id = original
     assert instance.id == original

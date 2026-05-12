@@ -3,10 +3,9 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
 from python_code import (
-    mypackage_MyClass,
     mypackage5_MyClass4,
     mypackage5_MyClass3,
     mypackage5_MyClass2,
@@ -26,25 +25,12 @@ from python_code import (
     mypackage_MyClass4,
     mypackage_MyClass3,
     mypackage_MyClass2,
+    mypackage_MyClass,
 )
 
 # =============================================================================
 # SECTION 1 — STRUCTURAL TESTS
 # =============================================================================
-
-
-
-def test_mypackage_myclass_is_not_abstract():
-    assert not inspect.isabstract(mypackage_MyClass)
-
-
-def test_mypackage_myclass_constructor_exists():
-    assert callable(mypackage_MyClass.__init__)
-
-
-def test_mypackage_myclass_constructor_args():
-    sig = inspect.signature(mypackage_MyClass.__init__)
-    params = list(sig.parameters.keys())
 
 
 
@@ -313,6 +299,20 @@ def test_mypackage_myclass2_constructor_args():
     params = list(sig.parameters.keys())
 
 
+
+def test_mypackage_myclass_is_not_abstract():
+    assert not inspect.isabstract(mypackage_MyClass)
+
+
+def test_mypackage_myclass_constructor_exists():
+    assert callable(mypackage_MyClass.__init__)
+
+
+def test_mypackage_myclass_constructor_args():
+    sig = inspect.signature(mypackage_MyClass.__init__)
+    params = list(sig.parameters.keys())
+
+
 # =============================================================================
 # HYPOTHESIS STRATEGIES
 # =============================================================================
@@ -324,9 +324,6 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-mypackage_MyClass_strategy = st.builds(
-    mypackage_MyClass,
-)
 mypackage5_MyClass4_strategy = st.builds(
     mypackage5_MyClass4,
 )
@@ -384,11 +381,9 @@ mypackage_MyClass3_strategy = st.builds(
 mypackage_MyClass2_strategy = st.builds(
     mypackage_MyClass2,
 )
-
-@given(instance=mypackage_MyClass_strategy)
-@settings(max_examples=50)
-def test_mypackage_myclass_instantiation(instance):
-    assert isinstance(instance, mypackage_MyClass)
+mypackage_MyClass_strategy = st.builds(
+    mypackage_MyClass,
+)
 
 @given(instance=mypackage5_MyClass4_strategy)
 @settings(max_examples=50)
@@ -484,3 +479,8 @@ def test_mypackage_myclass3_instantiation(instance):
 @settings(max_examples=50)
 def test_mypackage_myclass2_instantiation(instance):
     assert isinstance(instance, mypackage_MyClass2)
+
+@given(instance=mypackage_MyClass_strategy)
+@settings(max_examples=50)
+def test_mypackage_myclass_instantiation(instance):
+    assert isinstance(instance, mypackage_MyClass)

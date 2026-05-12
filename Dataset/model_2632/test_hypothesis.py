@@ -3,34 +3,34 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    modeldraw::EEnumLiteral,
-    modeldraw::Enumerator,
+from python_code import (
+    modeldraw_EEnumLiteral,
+    modeldraw_Enumerator,
     Relation,
-    modeldraw::Level,
-    modeldraw::Edge,
-    modeldraw::EAttribute,
+    modeldraw_Level,
+    modeldraw_Edge,
+    modeldraw_EAttribute,
     Item,
-    modeldraw::NamedItem,
-    modeldraw::Information,
-    modeldraw::NodeEnumerator,
-    modeldraw::BooleanAttribute,
-    modeldraw::MutatorDraw,
-    modeldraw::EClass,
-    modeldraw::Item,
-    modeldraw::EReference,
+    modeldraw_BooleanAttribute,
+    modeldraw_NodeEnumerator,
+    modeldraw_NamedItem,
+    modeldraw_Information,
+    modeldraw_MutatorDraw,
+    modeldraw_EClass,
+    modeldraw_Item,
+    modeldraw_EReference,
     NamedItem,
-    modeldraw::Content,
-    modeldraw::Node,
-    modeldraw::Relation,
-    NodeType,
+    modeldraw_Node,
+    modeldraw_Relation,
+    modeldraw_Content,
     NodeStyle,
-    Decoration,
-    NodeShape,
     DrawType,
+    NodeShape,
     NodeColor,
+    NodeType,
+    Decoration,
 )
 
 # =============================================================================
@@ -39,37 +39,37 @@ from classes import (
 
 
 
-def test_modeldraw::eenumliteral_is_not_abstract():
-    assert not inspect.isabstract(modeldraw::EEnumLiteral)
+def test_modeldraw_eenumliteral_is_not_abstract():
+    assert not inspect.isabstract(modeldraw_EEnumLiteral)
 
 
-def test_modeldraw::eenumliteral_constructor_exists():
-    assert callable(modeldraw::EEnumLiteral.__init__)
+def test_modeldraw_eenumliteral_constructor_exists():
+    assert callable(modeldraw_EEnumLiteral.__init__)
 
 
-def test_modeldraw::eenumliteral_constructor_args():
-    sig = inspect.signature(modeldraw::EEnumLiteral.__init__)
+def test_modeldraw_eenumliteral_constructor_args():
+    sig = inspect.signature(modeldraw_EEnumLiteral.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_modeldraw::enumerator_is_not_abstract():
-    assert not inspect.isabstract(modeldraw::Enumerator)
+def test_modeldraw_enumerator_is_not_abstract():
+    assert not inspect.isabstract(modeldraw_Enumerator)
 
 
-def test_modeldraw::enumerator_constructor_exists():
-    assert callable(modeldraw::Enumerator.__init__)
+def test_modeldraw_enumerator_constructor_exists():
+    assert callable(modeldraw_Enumerator.__init__)
 
 
-def test_modeldraw::enumerator_constructor_args():
-    sig = inspect.signature(modeldraw::Enumerator.__init__)
+def test_modeldraw_enumerator_constructor_args():
+    sig = inspect.signature(modeldraw_Enumerator.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
 
-def test_modeldraw::enumerator_has_value():
-    assert hasattr(modeldraw::Enumerator, "value")
+def test_modeldraw_enumerator_has_value():
+    assert hasattr(modeldraw_Enumerator, "value")
     descriptor = None
-    for klass in modeldraw::Enumerator.__mro__:
+    for klass in modeldraw_Enumerator.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -91,44 +91,44 @@ def test_relation_constructor_args():
 
 
 
-def test_modeldraw::level_is_not_abstract():
-    assert not inspect.isabstract(modeldraw::Level)
+def test_modeldraw_level_is_not_abstract():
+    assert not inspect.isabstract(modeldraw_Level)
 
 
-def test_modeldraw::level_constructor_exists():
-    assert callable(modeldraw::Level.__init__)
+def test_modeldraw_level_constructor_exists():
+    assert callable(modeldraw_Level.__init__)
 
 
-def test_modeldraw::level_constructor_args():
-    sig = inspect.signature(modeldraw::Level.__init__)
+def test_modeldraw_level_constructor_args():
+    sig = inspect.signature(modeldraw_Level.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_modeldraw::edge_is_not_abstract():
-    assert not inspect.isabstract(modeldraw::Edge)
+def test_modeldraw_edge_is_not_abstract():
+    assert not inspect.isabstract(modeldraw_Edge)
 
 
-def test_modeldraw::edge_constructor_exists():
-    assert callable(modeldraw::Edge.__init__)
+def test_modeldraw_edge_constructor_exists():
+    assert callable(modeldraw_Edge.__init__)
 
 
-def test_modeldraw::edge_constructor_args():
-    sig = inspect.signature(modeldraw::Edge.__init__)
+def test_modeldraw_edge_constructor_args():
+    sig = inspect.signature(modeldraw_Edge.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_modeldraw::eattribute_is_not_abstract():
-    assert not inspect.isabstract(modeldraw::EAttribute)
+def test_modeldraw_eattribute_is_not_abstract():
+    assert not inspect.isabstract(modeldraw_EAttribute)
 
 
-def test_modeldraw::eattribute_constructor_exists():
-    assert callable(modeldraw::EAttribute.__init__)
+def test_modeldraw_eattribute_constructor_exists():
+    assert callable(modeldraw_EAttribute.__init__)
 
 
-def test_modeldraw::eattribute_constructor_args():
-    sig = inspect.signature(modeldraw::EAttribute.__init__)
+def test_modeldraw_eattribute_constructor_args():
+    sig = inspect.signature(modeldraw_EAttribute.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -147,65 +147,23 @@ def test_item_constructor_args():
 
 
 
-def test_modeldraw::nameditem_is_not_abstract():
-    assert not inspect.isabstract(modeldraw::NamedItem)
+def test_modeldraw_booleanattribute_is_not_abstract():
+    assert not inspect.isabstract(modeldraw_BooleanAttribute)
 
 
-def test_modeldraw::nameditem_constructor_exists():
-    assert callable(modeldraw::NamedItem.__init__)
+def test_modeldraw_booleanattribute_constructor_exists():
+    assert callable(modeldraw_BooleanAttribute.__init__)
 
 
-def test_modeldraw::nameditem_constructor_args():
-    sig = inspect.signature(modeldraw::NamedItem.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_modeldraw::information_is_not_abstract():
-    assert not inspect.isabstract(modeldraw::Information)
-
-
-def test_modeldraw::information_constructor_exists():
-    assert callable(modeldraw::Information.__init__)
-
-
-def test_modeldraw::information_constructor_args():
-    sig = inspect.signature(modeldraw::Information.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_modeldraw::nodeenumerator_is_not_abstract():
-    assert not inspect.isabstract(modeldraw::NodeEnumerator)
-
-
-def test_modeldraw::nodeenumerator_constructor_exists():
-    assert callable(modeldraw::NodeEnumerator.__init__)
-
-
-def test_modeldraw::nodeenumerator_constructor_args():
-    sig = inspect.signature(modeldraw::NodeEnumerator.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_modeldraw::booleanattribute_is_not_abstract():
-    assert not inspect.isabstract(modeldraw::BooleanAttribute)
-
-
-def test_modeldraw::booleanattribute_constructor_exists():
-    assert callable(modeldraw::BooleanAttribute.__init__)
-
-
-def test_modeldraw::booleanattribute_constructor_args():
-    sig = inspect.signature(modeldraw::BooleanAttribute.__init__)
+def test_modeldraw_booleanattribute_constructor_args():
+    sig = inspect.signature(modeldraw_BooleanAttribute.__init__)
     params = list(sig.parameters.keys())
     assert "negation" in params, "Missing parameter 'negation'"
 
-def test_modeldraw::booleanattribute_has_negation():
-    assert hasattr(modeldraw::BooleanAttribute, "negation")
+def test_modeldraw_booleanattribute_has_negation():
+    assert hasattr(modeldraw_BooleanAttribute, "negation")
     descriptor = None
-    for klass in modeldraw::BooleanAttribute.__mro__:
+    for klass in modeldraw_BooleanAttribute.__mro__:
         if "negation" in klass.__dict__:
             descriptor = klass.__dict__["negation"]
             break
@@ -213,33 +171,75 @@ def test_modeldraw::booleanattribute_has_negation():
 
 
 
-def test_modeldraw::mutatordraw_is_not_abstract():
-    assert not inspect.isabstract(modeldraw::MutatorDraw)
+def test_modeldraw_nodeenumerator_is_not_abstract():
+    assert not inspect.isabstract(modeldraw_NodeEnumerator)
 
 
-def test_modeldraw::mutatordraw_constructor_exists():
-    assert callable(modeldraw::MutatorDraw.__init__)
+def test_modeldraw_nodeenumerator_constructor_exists():
+    assert callable(modeldraw_NodeEnumerator.__init__)
 
 
-def test_modeldraw::mutatordraw_constructor_args():
-    sig = inspect.signature(modeldraw::MutatorDraw.__init__)
+def test_modeldraw_nodeenumerator_constructor_args():
+    sig = inspect.signature(modeldraw_NodeEnumerator.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_modeldraw_nameditem_is_not_abstract():
+    assert not inspect.isabstract(modeldraw_NamedItem)
+
+
+def test_modeldraw_nameditem_constructor_exists():
+    assert callable(modeldraw_NamedItem.__init__)
+
+
+def test_modeldraw_nameditem_constructor_args():
+    sig = inspect.signature(modeldraw_NamedItem.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_modeldraw_information_is_not_abstract():
+    assert not inspect.isabstract(modeldraw_Information)
+
+
+def test_modeldraw_information_constructor_exists():
+    assert callable(modeldraw_Information.__init__)
+
+
+def test_modeldraw_information_constructor_args():
+    sig = inspect.signature(modeldraw_Information.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_modeldraw_mutatordraw_is_not_abstract():
+    assert not inspect.isabstract(modeldraw_MutatorDraw)
+
+
+def test_modeldraw_mutatordraw_constructor_exists():
+    assert callable(modeldraw_MutatorDraw.__init__)
+
+
+def test_modeldraw_mutatordraw_constructor_args():
+    sig = inspect.signature(modeldraw_MutatorDraw.__init__)
     params = list(sig.parameters.keys())
     assert "metamodel" in params, "Missing parameter 'metamodel'"
     assert "type" in params, "Missing parameter 'type'"
 
-def test_modeldraw::mutatordraw_has_metamodel():
-    assert hasattr(modeldraw::MutatorDraw, "metamodel")
+def test_modeldraw_mutatordraw_has_metamodel():
+    assert hasattr(modeldraw_MutatorDraw, "metamodel")
     descriptor = None
-    for klass in modeldraw::MutatorDraw.__mro__:
+    for klass in modeldraw_MutatorDraw.__mro__:
         if "metamodel" in klass.__dict__:
             descriptor = klass.__dict__["metamodel"]
             break
     assert isinstance(descriptor, property)
 
-def test_modeldraw::mutatordraw_has_type():
-    assert hasattr(modeldraw::MutatorDraw, "type")
+def test_modeldraw_mutatordraw_has_type():
+    assert hasattr(modeldraw_MutatorDraw, "type")
     descriptor = None
-    for klass in modeldraw::MutatorDraw.__mro__:
+    for klass in modeldraw_MutatorDraw.__mro__:
         if "type" in klass.__dict__:
             descriptor = klass.__dict__["type"]
             break
@@ -247,44 +247,44 @@ def test_modeldraw::mutatordraw_has_type():
 
 
 
-def test_modeldraw::eclass_is_not_abstract():
-    assert not inspect.isabstract(modeldraw::EClass)
+def test_modeldraw_eclass_is_not_abstract():
+    assert not inspect.isabstract(modeldraw_EClass)
 
 
-def test_modeldraw::eclass_constructor_exists():
-    assert callable(modeldraw::EClass.__init__)
+def test_modeldraw_eclass_constructor_exists():
+    assert callable(modeldraw_EClass.__init__)
 
 
-def test_modeldraw::eclass_constructor_args():
-    sig = inspect.signature(modeldraw::EClass.__init__)
+def test_modeldraw_eclass_constructor_args():
+    sig = inspect.signature(modeldraw_EClass.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_modeldraw::item_is_not_abstract():
-    assert not inspect.isabstract(modeldraw::Item)
+def test_modeldraw_item_is_not_abstract():
+    assert not inspect.isabstract(modeldraw_Item)
 
 
-def test_modeldraw::item_constructor_exists():
-    assert callable(modeldraw::Item.__init__)
+def test_modeldraw_item_constructor_exists():
+    assert callable(modeldraw_Item.__init__)
 
 
-def test_modeldraw::item_constructor_args():
-    sig = inspect.signature(modeldraw::Item.__init__)
+def test_modeldraw_item_constructor_args():
+    sig = inspect.signature(modeldraw_Item.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_modeldraw::ereference_is_not_abstract():
-    assert not inspect.isabstract(modeldraw::EReference)
+def test_modeldraw_ereference_is_not_abstract():
+    assert not inspect.isabstract(modeldraw_EReference)
 
 
-def test_modeldraw::ereference_constructor_exists():
-    assert callable(modeldraw::EReference.__init__)
+def test_modeldraw_ereference_constructor_exists():
+    assert callable(modeldraw_EReference.__init__)
 
 
-def test_modeldraw::ereference_constructor_args():
-    sig = inspect.signature(modeldraw::EReference.__init__)
+def test_modeldraw_ereference_constructor_args():
+    sig = inspect.signature(modeldraw_EReference.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -303,115 +303,175 @@ def test_nameditem_constructor_args():
 
 
 
-def test_modeldraw::content_is_not_abstract():
-    assert not inspect.isabstract(modeldraw::Content)
+def test_modeldraw_node_is_not_abstract():
+    assert not inspect.isabstract(modeldraw_Node)
 
 
-def test_modeldraw::content_constructor_exists():
-    assert callable(modeldraw::Content.__init__)
+def test_modeldraw_node_constructor_exists():
+    assert callable(modeldraw_Node.__init__)
 
 
-def test_modeldraw::content_constructor_args():
-    sig = inspect.signature(modeldraw::Content.__init__)
+def test_modeldraw_node_constructor_args():
+    sig = inspect.signature(modeldraw_Node.__init__)
     params = list(sig.parameters.keys())
-    assert "symbol" in params, "Missing parameter 'symbol'"
-
-def test_modeldraw::content_has_symbol():
-    assert hasattr(modeldraw::Content, "symbol")
-    descriptor = None
-    for klass in modeldraw::Content.__mro__:
-        if "symbol" in klass.__dict__:
-            descriptor = klass.__dict__["symbol"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_modeldraw::node_is_not_abstract():
-    assert not inspect.isabstract(modeldraw::Node)
-
-
-def test_modeldraw::node_constructor_exists():
-    assert callable(modeldraw::Node.__init__)
-
-
-def test_modeldraw::node_constructor_args():
-    sig = inspect.signature(modeldraw::Node.__init__)
-    params = list(sig.parameters.keys())
+    assert "color" in params, "Missing parameter 'color'"
+    assert "shape" in params, "Missing parameter 'shape'"
     assert "style" in params, "Missing parameter 'style'"
     assert "type" in params, "Missing parameter 'type'"
-    assert "shape" in params, "Missing parameter 'shape'"
-    assert "color" in params, "Missing parameter 'color'"
 
-def test_modeldraw::node_has_style():
-    assert hasattr(modeldraw::Node, "style")
+def test_modeldraw_node_has_color():
+    assert hasattr(modeldraw_Node, "color")
     descriptor = None
-    for klass in modeldraw::Node.__mro__:
-        if "style" in klass.__dict__:
-            descriptor = klass.__dict__["style"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_modeldraw::node_has_type():
-    assert hasattr(modeldraw::Node, "type")
-    descriptor = None
-    for klass in modeldraw::Node.__mro__:
-        if "type" in klass.__dict__:
-            descriptor = klass.__dict__["type"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_modeldraw::node_has_shape():
-    assert hasattr(modeldraw::Node, "shape")
-    descriptor = None
-    for klass in modeldraw::Node.__mro__:
-        if "shape" in klass.__dict__:
-            descriptor = klass.__dict__["shape"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_modeldraw::node_has_color():
-    assert hasattr(modeldraw::Node, "color")
-    descriptor = None
-    for klass in modeldraw::Node.__mro__:
+    for klass in modeldraw_Node.__mro__:
         if "color" in klass.__dict__:
             descriptor = klass.__dict__["color"]
             break
     assert isinstance(descriptor, property)
 
-
-
-def test_modeldraw::relation_is_not_abstract():
-    assert not inspect.isabstract(modeldraw::Relation)
-
-
-def test_modeldraw::relation_constructor_exists():
-    assert callable(modeldraw::Relation.__init__)
-
-
-def test_modeldraw::relation_constructor_args():
-    sig = inspect.signature(modeldraw::Relation.__init__)
-    params = list(sig.parameters.keys())
-    assert "tar_decoration" in params, "Missing parameter 'tar_decoration'"
-    assert "src_decoration" in params, "Missing parameter 'src_decoration'"
-
-def test_modeldraw::relation_has_tar_decoration():
-    assert hasattr(modeldraw::Relation, "tar_decoration")
+def test_modeldraw_node_has_shape():
+    assert hasattr(modeldraw_Node, "shape")
     descriptor = None
-    for klass in modeldraw::Relation.__mro__:
+    for klass in modeldraw_Node.__mro__:
+        if "shape" in klass.__dict__:
+            descriptor = klass.__dict__["shape"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_modeldraw_node_has_style():
+    assert hasattr(modeldraw_Node, "style")
+    descriptor = None
+    for klass in modeldraw_Node.__mro__:
+        if "style" in klass.__dict__:
+            descriptor = klass.__dict__["style"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_modeldraw_node_has_type():
+    assert hasattr(modeldraw_Node, "type")
+    descriptor = None
+    for klass in modeldraw_Node.__mro__:
+        if "type" in klass.__dict__:
+            descriptor = klass.__dict__["type"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_modeldraw_relation_is_not_abstract():
+    assert not inspect.isabstract(modeldraw_Relation)
+
+
+def test_modeldraw_relation_constructor_exists():
+    assert callable(modeldraw_Relation.__init__)
+
+
+def test_modeldraw_relation_constructor_args():
+    sig = inspect.signature(modeldraw_Relation.__init__)
+    params = list(sig.parameters.keys())
+    assert "src_decoration" in params, "Missing parameter 'src_decoration'"
+    assert "tar_decoration" in params, "Missing parameter 'tar_decoration'"
+
+def test_modeldraw_relation_has_src_decoration():
+    assert hasattr(modeldraw_Relation, "src_decoration")
+    descriptor = None
+    for klass in modeldraw_Relation.__mro__:
+        if "src_decoration" in klass.__dict__:
+            descriptor = klass.__dict__["src_decoration"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_modeldraw_relation_has_tar_decoration():
+    assert hasattr(modeldraw_Relation, "tar_decoration")
+    descriptor = None
+    for klass in modeldraw_Relation.__mro__:
         if "tar_decoration" in klass.__dict__:
             descriptor = klass.__dict__["tar_decoration"]
             break
     assert isinstance(descriptor, property)
 
-def test_modeldraw::relation_has_src_decoration():
-    assert hasattr(modeldraw::Relation, "src_decoration")
+
+
+def test_modeldraw_content_is_not_abstract():
+    assert not inspect.isabstract(modeldraw_Content)
+
+
+def test_modeldraw_content_constructor_exists():
+    assert callable(modeldraw_Content.__init__)
+
+
+def test_modeldraw_content_constructor_args():
+    sig = inspect.signature(modeldraw_Content.__init__)
+    params = list(sig.parameters.keys())
+    assert "symbol" in params, "Missing parameter 'symbol'"
+
+def test_modeldraw_content_has_symbol():
+    assert hasattr(modeldraw_Content, "symbol")
     descriptor = None
-    for klass in modeldraw::Relation.__mro__:
-        if "src_decoration" in klass.__dict__:
-            descriptor = klass.__dict__["src_decoration"]
+    for klass in modeldraw_Content.__mro__:
+        if "symbol" in klass.__dict__:
+            descriptor = klass.__dict__["symbol"]
             break
     assert isinstance(descriptor, property)
+
+def test_nodestyle_exists():
+    # Check that the Enumeration exists
+    assert NodeStyle is not None
+
+def test_nodestyle_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in NodeStyle]
+    expected_literals = [
+        "none",
+        "underline",
+        "italic",
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in NodeStyle"
+
+def test_drawtype_exists():
+    # Check that the Enumeration exists
+    assert DrawType is not None
+
+def test_drawtype_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in DrawType]
+    expected_literals = [
+        "diagram",
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in DrawType"
+
+def test_nodeshape_exists():
+    # Check that the Enumeration exists
+    assert NodeShape is not None
+
+def test_nodeshape_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in NodeShape]
+    expected_literals = [
+        "circle",
+        "record",
+        "doublecircle",
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in NodeShape"
+
+def test_nodecolor_exists():
+    # Check that the Enumeration exists
+    assert NodeColor is not None
+
+def test_nodecolor_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in NodeColor]
+    expected_literals = [
+        "gray95",
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in NodeColor"
 
 def test_nodetype_exists():
     # Check that the Enumeration exists
@@ -428,22 +488,6 @@ def test_nodetype_has_all_literals():
     for lit_name in expected_literals:
         assert lit_name in enum_literals, f"Literal '' missing in NodeType"
 
-def test_nodestyle_exists():
-    # Check that the Enumeration exists
-    assert NodeStyle is not None
-
-def test_nodestyle_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in NodeStyle]
-    expected_literals = [
-        "underline",
-        "italic",
-        "none",
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in NodeStyle"
-
 def test_decoration_exists():
     # Check that the Enumeration exists
     assert Decoration is not None
@@ -452,60 +496,16 @@ def test_decoration_has_all_literals():
     # Collect the names of literals in this Enumeration
     enum_literals = [lit.name for lit in Decoration]
     expected_literals = [
-        "none",
-        "open",
-        "empty",
-        "triangle",
-        "diamond",
         "odiamond",
+        "open",
+        "none",
+        "triangle",
+        "empty",
+        "diamond",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
         assert lit_name in enum_literals, f"Literal '' missing in Decoration"
-
-def test_nodeshape_exists():
-    # Check that the Enumeration exists
-    assert NodeShape is not None
-
-def test_nodeshape_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in NodeShape]
-    expected_literals = [
-        "record",
-        "circle",
-        "doublecircle",
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in NodeShape"
-
-def test_drawtype_exists():
-    # Check that the Enumeration exists
-    assert DrawType is not None
-
-def test_drawtype_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in DrawType]
-    expected_literals = [
-        "diagram",
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in DrawType"
-
-def test_nodecolor_exists():
-    # Check that the Enumeration exists
-    assert NodeColor is not None
-
-def test_nodecolor_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in NodeColor]
-    expected_literals = [
-        "gray95",
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in NodeColor"
 
 
 # =============================================================================
@@ -519,103 +519,100 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-modeldraw::EEnumLiteral_strategy = st.builds(
-    modeldraw::EEnumLiteral,
+modeldraw_EEnumLiteral_strategy = st.builds(
+    modeldraw_EEnumLiteral,
 )
-modeldraw::Enumerator_strategy = st.builds(
-    modeldraw::Enumerator,
+modeldraw_Enumerator_strategy = st.builds(
+    modeldraw_Enumerator,
     value=
         safe_text
 )
 Relation_strategy = st.builds(
     Relation,
 )
-modeldraw::Level_strategy = st.builds(
-    modeldraw::Level,
+modeldraw_Level_strategy = st.builds(
+    modeldraw_Level,
 )
-modeldraw::Edge_strategy = st.builds(
-    modeldraw::Edge,
+modeldraw_Edge_strategy = st.builds(
+    modeldraw_Edge,
 )
-modeldraw::EAttribute_strategy = st.builds(
-    modeldraw::EAttribute,
+modeldraw_EAttribute_strategy = st.builds(
+    modeldraw_EAttribute,
 )
 Item_strategy = st.builds(
     Item,
 )
-modeldraw::NamedItem_strategy = st.builds(
-    modeldraw::NamedItem,
-)
-modeldraw::Information_strategy = st.builds(
-    modeldraw::Information,
-)
-modeldraw::NodeEnumerator_strategy = st.builds(
-    modeldraw::NodeEnumerator,
-)
-modeldraw::BooleanAttribute_strategy = st.builds(
-    modeldraw::BooleanAttribute,
+modeldraw_BooleanAttribute_strategy = st.builds(
+    modeldraw_BooleanAttribute,
     negation=
         st.booleans()
 )
-modeldraw::MutatorDraw_strategy = st.builds(
-    modeldraw::MutatorDraw,
+modeldraw_NodeEnumerator_strategy = st.builds(
+    modeldraw_NodeEnumerator,
+)
+modeldraw_NamedItem_strategy = st.builds(
+    modeldraw_NamedItem,
+)
+modeldraw_Information_strategy = st.builds(
+    modeldraw_Information,
+)
+modeldraw_MutatorDraw_strategy = st.builds(
+    modeldraw_MutatorDraw,
     metamodel=
         safe_text,
     type=
         safe_text
 )
-modeldraw::EClass_strategy = st.builds(
-    modeldraw::EClass,
+modeldraw_EClass_strategy = st.builds(
+    modeldraw_EClass,
 )
-modeldraw::Item_strategy = st.builds(
-    modeldraw::Item,
+modeldraw_Item_strategy = st.builds(
+    modeldraw_Item,
 )
-modeldraw::EReference_strategy = st.builds(
-    modeldraw::EReference,
+modeldraw_EReference_strategy = st.builds(
+    modeldraw_EReference,
 )
 NamedItem_strategy = st.builds(
     NamedItem,
 )
-modeldraw::Content_strategy = st.builds(
-    modeldraw::Content,
-    symbol=
-        safe_text
-)
-modeldraw::Node_strategy = st.builds(
-    modeldraw::Node,
-    style=
-        safe_text,
-    type=
+modeldraw_Node_strategy = st.builds(
+    modeldraw_Node,
+    color=
         safe_text,
     shape=
         safe_text,
-    color=
-        safe_text
-)
-modeldraw::Relation_strategy = st.builds(
-    modeldraw::Relation,
-    tar_decoration=
+    style=
         safe_text,
+    type=
+        safe_text
+)
+modeldraw_Relation_strategy = st.builds(
+    modeldraw_Relation,
     src_decoration=
+        safe_text,
+    tar_decoration=
+        safe_text
+)
+modeldraw_Content_strategy = st.builds(
+    modeldraw_Content,
+    symbol=
         safe_text
 )
 
-@given(instance=modeldraw::EEnumLiteral_strategy)
+@given(instance=modeldraw_EEnumLiteral_strategy)
 @settings(max_examples=50)
-def test_modeldraw::eenumliteral_instantiation(instance):
-    assert isinstance(instance, modeldraw::EEnumLiteral)
+def test_modeldraw_eenumliteral_instantiation(instance):
+    assert isinstance(instance, modeldraw_EEnumLiteral)
 
-@given(instance=modeldraw::Enumerator_strategy)
+@given(instance=modeldraw_Enumerator_strategy)
 @settings(max_examples=50)
-def test_modeldraw::enumerator_instantiation(instance):
-    assert isinstance(instance, modeldraw::Enumerator)
-
-@given(instance=modeldraw::Enumerator_strategy)
-def test_modeldraw::enumerator_value_type(instance):
-    assert isinstance(instance.value, str)
+def test_modeldraw_enumerator_instantiation(instance):
+    assert isinstance(instance, modeldraw_Enumerator)
 
 
-@given(instance=modeldraw::Enumerator_strategy)
-def test_modeldraw::enumerator_value_setter(instance):
+
+@given(instance=modeldraw_Enumerator_strategy)
+def test_modeldraw_enumerator_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
@@ -625,192 +622,162 @@ def test_modeldraw::enumerator_value_setter(instance):
 def test_relation_instantiation(instance):
     assert isinstance(instance, Relation)
 
-@given(instance=modeldraw::Level_strategy)
+@given(instance=modeldraw_Level_strategy)
 @settings(max_examples=50)
-def test_modeldraw::level_instantiation(instance):
-    assert isinstance(instance, modeldraw::Level)
+def test_modeldraw_level_instantiation(instance):
+    assert isinstance(instance, modeldraw_Level)
 
-@given(instance=modeldraw::Edge_strategy)
+@given(instance=modeldraw_Edge_strategy)
 @settings(max_examples=50)
-def test_modeldraw::edge_instantiation(instance):
-    assert isinstance(instance, modeldraw::Edge)
+def test_modeldraw_edge_instantiation(instance):
+    assert isinstance(instance, modeldraw_Edge)
 
-@given(instance=modeldraw::EAttribute_strategy)
+@given(instance=modeldraw_EAttribute_strategy)
 @settings(max_examples=50)
-def test_modeldraw::eattribute_instantiation(instance):
-    assert isinstance(instance, modeldraw::EAttribute)
+def test_modeldraw_eattribute_instantiation(instance):
+    assert isinstance(instance, modeldraw_EAttribute)
 
 @given(instance=Item_strategy)
 @settings(max_examples=50)
 def test_item_instantiation(instance):
     assert isinstance(instance, Item)
 
-@given(instance=modeldraw::NamedItem_strategy)
+@given(instance=modeldraw_BooleanAttribute_strategy)
 @settings(max_examples=50)
-def test_modeldraw::nameditem_instantiation(instance):
-    assert isinstance(instance, modeldraw::NamedItem)
-
-@given(instance=modeldraw::Information_strategy)
-@settings(max_examples=50)
-def test_modeldraw::information_instantiation(instance):
-    assert isinstance(instance, modeldraw::Information)
-
-@given(instance=modeldraw::NodeEnumerator_strategy)
-@settings(max_examples=50)
-def test_modeldraw::nodeenumerator_instantiation(instance):
-    assert isinstance(instance, modeldraw::NodeEnumerator)
-
-@given(instance=modeldraw::BooleanAttribute_strategy)
-@settings(max_examples=50)
-def test_modeldraw::booleanattribute_instantiation(instance):
-    assert isinstance(instance, modeldraw::BooleanAttribute)
-
-@given(instance=modeldraw::BooleanAttribute_strategy)
-def test_modeldraw::booleanattribute_negation_type(instance):
-    assert isinstance(instance.negation, bool)
+def test_modeldraw_booleanattribute_instantiation(instance):
+    assert isinstance(instance, modeldraw_BooleanAttribute)
 
 
-@given(instance=modeldraw::BooleanAttribute_strategy)
-def test_modeldraw::booleanattribute_negation_setter(instance):
+
+@given(instance=modeldraw_BooleanAttribute_strategy)
+def test_modeldraw_booleanattribute_negation_setter(instance):
     original = instance.negation
     instance.negation = original
     assert instance.negation == original
 
-@given(instance=modeldraw::MutatorDraw_strategy)
+@given(instance=modeldraw_NodeEnumerator_strategy)
 @settings(max_examples=50)
-def test_modeldraw::mutatordraw_instantiation(instance):
-    assert isinstance(instance, modeldraw::MutatorDraw)
+def test_modeldraw_nodeenumerator_instantiation(instance):
+    assert isinstance(instance, modeldraw_NodeEnumerator)
 
-@given(instance=modeldraw::MutatorDraw_strategy)
-def test_modeldraw::mutatordraw_metamodel_type(instance):
-    assert isinstance(instance.metamodel, str)
+@given(instance=modeldraw_NamedItem_strategy)
+@settings(max_examples=50)
+def test_modeldraw_nameditem_instantiation(instance):
+    assert isinstance(instance, modeldraw_NamedItem)
+
+@given(instance=modeldraw_Information_strategy)
+@settings(max_examples=50)
+def test_modeldraw_information_instantiation(instance):
+    assert isinstance(instance, modeldraw_Information)
+
+@given(instance=modeldraw_MutatorDraw_strategy)
+@settings(max_examples=50)
+def test_modeldraw_mutatordraw_instantiation(instance):
+    assert isinstance(instance, modeldraw_MutatorDraw)
 
 
-@given(instance=modeldraw::MutatorDraw_strategy)
-def test_modeldraw::mutatordraw_metamodel_setter(instance):
+
+@given(instance=modeldraw_MutatorDraw_strategy)
+def test_modeldraw_mutatordraw_metamodel_setter(instance):
     original = instance.metamodel
     instance.metamodel = original
     assert instance.metamodel == original
 
-@given(instance=modeldraw::MutatorDraw_strategy)
-def test_modeldraw::mutatordraw_type_type(instance):
-    assert isinstance(instance.type, str)
 
 
-@given(instance=modeldraw::MutatorDraw_strategy)
-def test_modeldraw::mutatordraw_type_setter(instance):
+@given(instance=modeldraw_MutatorDraw_strategy)
+def test_modeldraw_mutatordraw_type_setter(instance):
     original = instance.type
     instance.type = original
     assert instance.type == original
 
-@given(instance=modeldraw::EClass_strategy)
+@given(instance=modeldraw_EClass_strategy)
 @settings(max_examples=50)
-def test_modeldraw::eclass_instantiation(instance):
-    assert isinstance(instance, modeldraw::EClass)
+def test_modeldraw_eclass_instantiation(instance):
+    assert isinstance(instance, modeldraw_EClass)
 
-@given(instance=modeldraw::Item_strategy)
+@given(instance=modeldraw_Item_strategy)
 @settings(max_examples=50)
-def test_modeldraw::item_instantiation(instance):
-    assert isinstance(instance, modeldraw::Item)
+def test_modeldraw_item_instantiation(instance):
+    assert isinstance(instance, modeldraw_Item)
 
-@given(instance=modeldraw::EReference_strategy)
+@given(instance=modeldraw_EReference_strategy)
 @settings(max_examples=50)
-def test_modeldraw::ereference_instantiation(instance):
-    assert isinstance(instance, modeldraw::EReference)
+def test_modeldraw_ereference_instantiation(instance):
+    assert isinstance(instance, modeldraw_EReference)
 
 @given(instance=NamedItem_strategy)
 @settings(max_examples=50)
 def test_nameditem_instantiation(instance):
     assert isinstance(instance, NamedItem)
 
-@given(instance=modeldraw::Content_strategy)
+@given(instance=modeldraw_Node_strategy)
 @settings(max_examples=50)
-def test_modeldraw::content_instantiation(instance):
-    assert isinstance(instance, modeldraw::Content)
-
-@given(instance=modeldraw::Content_strategy)
-def test_modeldraw::content_symbol_type(instance):
-    assert isinstance(instance.symbol, str)
+def test_modeldraw_node_instantiation(instance):
+    assert isinstance(instance, modeldraw_Node)
 
 
-@given(instance=modeldraw::Content_strategy)
-def test_modeldraw::content_symbol_setter(instance):
-    original = instance.symbol
-    instance.symbol = original
-    assert instance.symbol == original
 
-@given(instance=modeldraw::Node_strategy)
-@settings(max_examples=50)
-def test_modeldraw::node_instantiation(instance):
-    assert isinstance(instance, modeldraw::Node)
-
-@given(instance=modeldraw::Node_strategy)
-def test_modeldraw::node_style_type(instance):
-    assert isinstance(instance.style, str)
-
-
-@given(instance=modeldraw::Node_strategy)
-def test_modeldraw::node_style_setter(instance):
-    original = instance.style
-    instance.style = original
-    assert instance.style == original
-
-@given(instance=modeldraw::Node_strategy)
-def test_modeldraw::node_type_type(instance):
-    assert isinstance(instance.type, str)
-
-
-@given(instance=modeldraw::Node_strategy)
-def test_modeldraw::node_type_setter(instance):
-    original = instance.type
-    instance.type = original
-    assert instance.type == original
-
-@given(instance=modeldraw::Node_strategy)
-def test_modeldraw::node_shape_type(instance):
-    assert isinstance(instance.shape, str)
-
-
-@given(instance=modeldraw::Node_strategy)
-def test_modeldraw::node_shape_setter(instance):
-    original = instance.shape
-    instance.shape = original
-    assert instance.shape == original
-
-@given(instance=modeldraw::Node_strategy)
-def test_modeldraw::node_color_type(instance):
-    assert isinstance(instance.color, str)
-
-
-@given(instance=modeldraw::Node_strategy)
-def test_modeldraw::node_color_setter(instance):
+@given(instance=modeldraw_Node_strategy)
+def test_modeldraw_node_color_setter(instance):
     original = instance.color
     instance.color = original
     assert instance.color == original
 
-@given(instance=modeldraw::Relation_strategy)
+
+
+@given(instance=modeldraw_Node_strategy)
+def test_modeldraw_node_shape_setter(instance):
+    original = instance.shape
+    instance.shape = original
+    assert instance.shape == original
+
+
+
+@given(instance=modeldraw_Node_strategy)
+def test_modeldraw_node_style_setter(instance):
+    original = instance.style
+    instance.style = original
+    assert instance.style == original
+
+
+
+@given(instance=modeldraw_Node_strategy)
+def test_modeldraw_node_type_setter(instance):
+    original = instance.type
+    instance.type = original
+    assert instance.type == original
+
+@given(instance=modeldraw_Relation_strategy)
 @settings(max_examples=50)
-def test_modeldraw::relation_instantiation(instance):
-    assert isinstance(instance, modeldraw::Relation)
-
-@given(instance=modeldraw::Relation_strategy)
-def test_modeldraw::relation_tar_decoration_type(instance):
-    assert isinstance(instance.tar_decoration, str)
+def test_modeldraw_relation_instantiation(instance):
+    assert isinstance(instance, modeldraw_Relation)
 
 
-@given(instance=modeldraw::Relation_strategy)
-def test_modeldraw::relation_tar_decoration_setter(instance):
+
+@given(instance=modeldraw_Relation_strategy)
+def test_modeldraw_relation_src_decoration_setter(instance):
+    original = instance.src_decoration
+    instance.src_decoration = original
+    assert instance.src_decoration == original
+
+
+
+@given(instance=modeldraw_Relation_strategy)
+def test_modeldraw_relation_tar_decoration_setter(instance):
     original = instance.tar_decoration
     instance.tar_decoration = original
     assert instance.tar_decoration == original
 
-@given(instance=modeldraw::Relation_strategy)
-def test_modeldraw::relation_src_decoration_type(instance):
-    assert isinstance(instance.src_decoration, str)
+@given(instance=modeldraw_Content_strategy)
+@settings(max_examples=50)
+def test_modeldraw_content_instantiation(instance):
+    assert isinstance(instance, modeldraw_Content)
 
 
-@given(instance=modeldraw::Relation_strategy)
-def test_modeldraw::relation_src_decoration_setter(instance):
-    original = instance.src_decoration
-    instance.src_decoration = original
-    assert instance.src_decoration == original
+
+@given(instance=modeldraw_Content_strategy)
+def test_modeldraw_content_symbol_setter(instance):
+    original = instance.symbol
+    instance.symbol = original
+    assert instance.symbol == original

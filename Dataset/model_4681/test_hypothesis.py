@@ -3,30 +3,30 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     Value,
-    imp::BoolValue,
-    imp::IntValue,
+    imp_BoolValue,
+    imp_IntValue,
     Expr,
-    imp::Binary,
-    imp::Unary,
-    imp::Var,
-    imp::IntConst,
-    imp::Value,
-    imp::StringToValueMap,
-    imp::Store,
-    imp::Stmt,
-    imp::Expr,
+    imp_Binary,
+    imp_Unary,
+    imp_Var,
+    imp_IntConst,
+    imp_Value,
+    imp_StringToValueMap,
+    imp_Store,
+    imp_Stmt,
+    imp_Expr,
     Stmt,
-    imp::While,
-    imp::Assign,
-    imp::Block,
-    imp::If,
-    imp::Skip,
-    UnaryOp,
+    imp_If,
+    imp_Block,
+    imp_Assign,
+    imp_While,
+    imp_Skip,
     BinaryOp,
+    UnaryOp,
 )
 
 # =============================================================================
@@ -49,23 +49,23 @@ def test_value_constructor_args():
 
 
 
-def test_imp::boolvalue_is_not_abstract():
-    assert not inspect.isabstract(imp::BoolValue)
+def test_imp_boolvalue_is_not_abstract():
+    assert not inspect.isabstract(imp_BoolValue)
 
 
-def test_imp::boolvalue_constructor_exists():
-    assert callable(imp::BoolValue.__init__)
+def test_imp_boolvalue_constructor_exists():
+    assert callable(imp_BoolValue.__init__)
 
 
-def test_imp::boolvalue_constructor_args():
-    sig = inspect.signature(imp::BoolValue.__init__)
+def test_imp_boolvalue_constructor_args():
+    sig = inspect.signature(imp_BoolValue.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
 
-def test_imp::boolvalue_has_value():
-    assert hasattr(imp::BoolValue, "value")
+def test_imp_boolvalue_has_value():
+    assert hasattr(imp_BoolValue, "value")
     descriptor = None
-    for klass in imp::BoolValue.__mro__:
+    for klass in imp_BoolValue.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -73,23 +73,23 @@ def test_imp::boolvalue_has_value():
 
 
 
-def test_imp::intvalue_is_not_abstract():
-    assert not inspect.isabstract(imp::IntValue)
+def test_imp_intvalue_is_not_abstract():
+    assert not inspect.isabstract(imp_IntValue)
 
 
-def test_imp::intvalue_constructor_exists():
-    assert callable(imp::IntValue.__init__)
+def test_imp_intvalue_constructor_exists():
+    assert callable(imp_IntValue.__init__)
 
 
-def test_imp::intvalue_constructor_args():
-    sig = inspect.signature(imp::IntValue.__init__)
+def test_imp_intvalue_constructor_args():
+    sig = inspect.signature(imp_IntValue.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
 
-def test_imp::intvalue_has_value():
-    assert hasattr(imp::IntValue, "value")
+def test_imp_intvalue_has_value():
+    assert hasattr(imp_IntValue, "value")
     descriptor = None
-    for klass in imp::IntValue.__mro__:
+    for klass in imp_IntValue.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -111,23 +111,23 @@ def test_expr_constructor_args():
 
 
 
-def test_imp::binary_is_not_abstract():
-    assert not inspect.isabstract(imp::Binary)
+def test_imp_binary_is_not_abstract():
+    assert not inspect.isabstract(imp_Binary)
 
 
-def test_imp::binary_constructor_exists():
-    assert callable(imp::Binary.__init__)
+def test_imp_binary_constructor_exists():
+    assert callable(imp_Binary.__init__)
 
 
-def test_imp::binary_constructor_args():
-    sig = inspect.signature(imp::Binary.__init__)
+def test_imp_binary_constructor_args():
+    sig = inspect.signature(imp_Binary.__init__)
     params = list(sig.parameters.keys())
     assert "op" in params, "Missing parameter 'op'"
 
-def test_imp::binary_has_op():
-    assert hasattr(imp::Binary, "op")
+def test_imp_binary_has_op():
+    assert hasattr(imp_Binary, "op")
     descriptor = None
-    for klass in imp::Binary.__mro__:
+    for klass in imp_Binary.__mro__:
         if "op" in klass.__dict__:
             descriptor = klass.__dict__["op"]
             break
@@ -135,23 +135,23 @@ def test_imp::binary_has_op():
 
 
 
-def test_imp::unary_is_not_abstract():
-    assert not inspect.isabstract(imp::Unary)
+def test_imp_unary_is_not_abstract():
+    assert not inspect.isabstract(imp_Unary)
 
 
-def test_imp::unary_constructor_exists():
-    assert callable(imp::Unary.__init__)
+def test_imp_unary_constructor_exists():
+    assert callable(imp_Unary.__init__)
 
 
-def test_imp::unary_constructor_args():
-    sig = inspect.signature(imp::Unary.__init__)
+def test_imp_unary_constructor_args():
+    sig = inspect.signature(imp_Unary.__init__)
     params = list(sig.parameters.keys())
     assert "op" in params, "Missing parameter 'op'"
 
-def test_imp::unary_has_op():
-    assert hasattr(imp::Unary, "op")
+def test_imp_unary_has_op():
+    assert hasattr(imp_Unary, "op")
     descriptor = None
-    for klass in imp::Unary.__mro__:
+    for klass in imp_Unary.__mro__:
         if "op" in klass.__dict__:
             descriptor = klass.__dict__["op"]
             break
@@ -159,23 +159,23 @@ def test_imp::unary_has_op():
 
 
 
-def test_imp::var_is_not_abstract():
-    assert not inspect.isabstract(imp::Var)
+def test_imp_var_is_not_abstract():
+    assert not inspect.isabstract(imp_Var)
 
 
-def test_imp::var_constructor_exists():
-    assert callable(imp::Var.__init__)
+def test_imp_var_constructor_exists():
+    assert callable(imp_Var.__init__)
 
 
-def test_imp::var_constructor_args():
-    sig = inspect.signature(imp::Var.__init__)
+def test_imp_var_constructor_args():
+    sig = inspect.signature(imp_Var.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_imp::var_has_name():
-    assert hasattr(imp::Var, "name")
+def test_imp_var_has_name():
+    assert hasattr(imp_Var, "name")
     descriptor = None
-    for klass in imp::Var.__mro__:
+    for klass in imp_Var.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -183,23 +183,23 @@ def test_imp::var_has_name():
 
 
 
-def test_imp::intconst_is_not_abstract():
-    assert not inspect.isabstract(imp::IntConst)
+def test_imp_intconst_is_not_abstract():
+    assert not inspect.isabstract(imp_IntConst)
 
 
-def test_imp::intconst_constructor_exists():
-    assert callable(imp::IntConst.__init__)
+def test_imp_intconst_constructor_exists():
+    assert callable(imp_IntConst.__init__)
 
 
-def test_imp::intconst_constructor_args():
-    sig = inspect.signature(imp::IntConst.__init__)
+def test_imp_intconst_constructor_args():
+    sig = inspect.signature(imp_IntConst.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
 
-def test_imp::intconst_has_value():
-    assert hasattr(imp::IntConst, "value")
+def test_imp_intconst_has_value():
+    assert hasattr(imp_IntConst, "value")
     descriptor = None
-    for klass in imp::IntConst.__mro__:
+    for klass in imp_IntConst.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -207,37 +207,37 @@ def test_imp::intconst_has_value():
 
 
 
-def test_imp::value_is_not_abstract():
-    assert not inspect.isabstract(imp::Value)
+def test_imp_value_is_not_abstract():
+    assert not inspect.isabstract(imp_Value)
 
 
-def test_imp::value_constructor_exists():
-    assert callable(imp::Value.__init__)
+def test_imp_value_constructor_exists():
+    assert callable(imp_Value.__init__)
 
 
-def test_imp::value_constructor_args():
-    sig = inspect.signature(imp::Value.__init__)
+def test_imp_value_constructor_args():
+    sig = inspect.signature(imp_Value.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_imp::stringtovaluemap_is_not_abstract():
-    assert not inspect.isabstract(imp::StringToValueMap)
+def test_imp_stringtovaluemap_is_not_abstract():
+    assert not inspect.isabstract(imp_StringToValueMap)
 
 
-def test_imp::stringtovaluemap_constructor_exists():
-    assert callable(imp::StringToValueMap.__init__)
+def test_imp_stringtovaluemap_constructor_exists():
+    assert callable(imp_StringToValueMap.__init__)
 
 
-def test_imp::stringtovaluemap_constructor_args():
-    sig = inspect.signature(imp::StringToValueMap.__init__)
+def test_imp_stringtovaluemap_constructor_args():
+    sig = inspect.signature(imp_StringToValueMap.__init__)
     params = list(sig.parameters.keys())
     assert "key" in params, "Missing parameter 'key'"
 
-def test_imp::stringtovaluemap_has_key():
-    assert hasattr(imp::StringToValueMap, "key")
+def test_imp_stringtovaluemap_has_key():
+    assert hasattr(imp_StringToValueMap, "key")
     descriptor = None
-    for klass in imp::StringToValueMap.__mro__:
+    for klass in imp_StringToValueMap.__mro__:
         if "key" in klass.__dict__:
             descriptor = klass.__dict__["key"]
             break
@@ -245,44 +245,44 @@ def test_imp::stringtovaluemap_has_key():
 
 
 
-def test_imp::store_is_not_abstract():
-    assert not inspect.isabstract(imp::Store)
+def test_imp_store_is_not_abstract():
+    assert not inspect.isabstract(imp_Store)
 
 
-def test_imp::store_constructor_exists():
-    assert callable(imp::Store.__init__)
+def test_imp_store_constructor_exists():
+    assert callable(imp_Store.__init__)
 
 
-def test_imp::store_constructor_args():
-    sig = inspect.signature(imp::Store.__init__)
+def test_imp_store_constructor_args():
+    sig = inspect.signature(imp_Store.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_imp::stmt_is_not_abstract():
-    assert not inspect.isabstract(imp::Stmt)
+def test_imp_stmt_is_not_abstract():
+    assert not inspect.isabstract(imp_Stmt)
 
 
-def test_imp::stmt_constructor_exists():
-    assert callable(imp::Stmt.__init__)
+def test_imp_stmt_constructor_exists():
+    assert callable(imp_Stmt.__init__)
 
 
-def test_imp::stmt_constructor_args():
-    sig = inspect.signature(imp::Stmt.__init__)
+def test_imp_stmt_constructor_args():
+    sig = inspect.signature(imp_Stmt.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_imp::expr_is_not_abstract():
-    assert not inspect.isabstract(imp::Expr)
+def test_imp_expr_is_not_abstract():
+    assert not inspect.isabstract(imp_Expr)
 
 
-def test_imp::expr_constructor_exists():
-    assert callable(imp::Expr.__init__)
+def test_imp_expr_constructor_exists():
+    assert callable(imp_Expr.__init__)
 
 
-def test_imp::expr_constructor_args():
-    sig = inspect.signature(imp::Expr.__init__)
+def test_imp_expr_constructor_args():
+    sig = inspect.signature(imp_Expr.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -301,37 +301,51 @@ def test_stmt_constructor_args():
 
 
 
-def test_imp::while_is_not_abstract():
-    assert not inspect.isabstract(imp::While)
+def test_imp_if_is_not_abstract():
+    assert not inspect.isabstract(imp_If)
 
 
-def test_imp::while_constructor_exists():
-    assert callable(imp::While.__init__)
+def test_imp_if_constructor_exists():
+    assert callable(imp_If.__init__)
 
 
-def test_imp::while_constructor_args():
-    sig = inspect.signature(imp::While.__init__)
+def test_imp_if_constructor_args():
+    sig = inspect.signature(imp_If.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_imp::assign_is_not_abstract():
-    assert not inspect.isabstract(imp::Assign)
+def test_imp_block_is_not_abstract():
+    assert not inspect.isabstract(imp_Block)
 
 
-def test_imp::assign_constructor_exists():
-    assert callable(imp::Assign.__init__)
+def test_imp_block_constructor_exists():
+    assert callable(imp_Block.__init__)
 
 
-def test_imp::assign_constructor_args():
-    sig = inspect.signature(imp::Assign.__init__)
+def test_imp_block_constructor_args():
+    sig = inspect.signature(imp_Block.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_imp_assign_is_not_abstract():
+    assert not inspect.isabstract(imp_Assign)
+
+
+def test_imp_assign_constructor_exists():
+    assert callable(imp_Assign.__init__)
+
+
+def test_imp_assign_constructor_args():
+    sig = inspect.signature(imp_Assign.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_imp::assign_has_name():
-    assert hasattr(imp::Assign, "name")
+def test_imp_assign_has_name():
+    assert hasattr(imp_Assign, "name")
     descriptor = None
-    for klass in imp::Assign.__mro__:
+    for klass in imp_Assign.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -339,60 +353,31 @@ def test_imp::assign_has_name():
 
 
 
-def test_imp::block_is_not_abstract():
-    assert not inspect.isabstract(imp::Block)
+def test_imp_while_is_not_abstract():
+    assert not inspect.isabstract(imp_While)
 
 
-def test_imp::block_constructor_exists():
-    assert callable(imp::Block.__init__)
+def test_imp_while_constructor_exists():
+    assert callable(imp_While.__init__)
 
 
-def test_imp::block_constructor_args():
-    sig = inspect.signature(imp::Block.__init__)
+def test_imp_while_constructor_args():
+    sig = inspect.signature(imp_While.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_imp::if_is_not_abstract():
-    assert not inspect.isabstract(imp::If)
+def test_imp_skip_is_not_abstract():
+    assert not inspect.isabstract(imp_Skip)
 
 
-def test_imp::if_constructor_exists():
-    assert callable(imp::If.__init__)
+def test_imp_skip_constructor_exists():
+    assert callable(imp_Skip.__init__)
 
 
-def test_imp::if_constructor_args():
-    sig = inspect.signature(imp::If.__init__)
+def test_imp_skip_constructor_args():
+    sig = inspect.signature(imp_Skip.__init__)
     params = list(sig.parameters.keys())
-
-
-
-def test_imp::skip_is_not_abstract():
-    assert not inspect.isabstract(imp::Skip)
-
-
-def test_imp::skip_constructor_exists():
-    assert callable(imp::Skip.__init__)
-
-
-def test_imp::skip_constructor_args():
-    sig = inspect.signature(imp::Skip.__init__)
-    params = list(sig.parameters.keys())
-
-def test_unaryop_exists():
-    # Check that the Enumeration exists
-    assert UnaryOp is not None
-
-def test_unaryop_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in UnaryOp]
-    expected_literals = [
-        "NOT",
-        "NEGATE",
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in UnaryOp"
 
 def test_binaryop_exists():
     # Check that the Enumeration exists
@@ -402,20 +387,35 @@ def test_binaryop_has_all_literals():
     # Collect the names of literals in this Enumeration
     enum_literals = [lit.name for lit in BinaryOp]
     expected_literals = [
+        "ADD",
+        "MUL",
+        "GT",
         "OR",
+        "LEQ",
         "EQ",
-        "AND",
         "LT",
         "GEQ",
         "SUB",
-        "LEQ",
-        "GT",
-        "MUL",
-        "ADD",
+        "AND",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
         assert lit_name in enum_literals, f"Literal '' missing in BinaryOp"
+
+def test_unaryop_exists():
+    # Check that the Enumeration exists
+    assert UnaryOp is not None
+
+def test_unaryop_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in UnaryOp]
+    expected_literals = [
+        "NEGATE",
+        "NOT",
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in UnaryOp"
 
 
 # =============================================================================
@@ -432,75 +432,75 @@ safe_text = st.text(
 Value_strategy = st.builds(
     Value,
 )
-imp::BoolValue_strategy = st.builds(
-    imp::BoolValue,
+imp_BoolValue_strategy = st.builds(
+    imp_BoolValue,
     value=
         st.booleans()
 )
-imp::IntValue_strategy = st.builds(
-    imp::IntValue,
+imp_IntValue_strategy = st.builds(
+    imp_IntValue,
     value=
         st.integers()
 )
 Expr_strategy = st.builds(
     Expr,
 )
-imp::Binary_strategy = st.builds(
-    imp::Binary,
+imp_Binary_strategy = st.builds(
+    imp_Binary,
     op=
         safe_text
 )
-imp::Unary_strategy = st.builds(
-    imp::Unary,
+imp_Unary_strategy = st.builds(
+    imp_Unary,
     op=
         safe_text
 )
-imp::Var_strategy = st.builds(
-    imp::Var,
+imp_Var_strategy = st.builds(
+    imp_Var,
     name=
         safe_text
 )
-imp::IntConst_strategy = st.builds(
-    imp::IntConst,
+imp_IntConst_strategy = st.builds(
+    imp_IntConst,
     value=
         st.integers()
 )
-imp::Value_strategy = st.builds(
-    imp::Value,
+imp_Value_strategy = st.builds(
+    imp_Value,
 )
-imp::StringToValueMap_strategy = st.builds(
-    imp::StringToValueMap,
+imp_StringToValueMap_strategy = st.builds(
+    imp_StringToValueMap,
     key=
         safe_text
 )
-imp::Store_strategy = st.builds(
-    imp::Store,
+imp_Store_strategy = st.builds(
+    imp_Store,
 )
-imp::Stmt_strategy = st.builds(
-    imp::Stmt,
+imp_Stmt_strategy = st.builds(
+    imp_Stmt,
 )
-imp::Expr_strategy = st.builds(
-    imp::Expr,
+imp_Expr_strategy = st.builds(
+    imp_Expr,
 )
 Stmt_strategy = st.builds(
     Stmt,
 )
-imp::While_strategy = st.builds(
-    imp::While,
+imp_If_strategy = st.builds(
+    imp_If,
 )
-imp::Assign_strategy = st.builds(
-    imp::Assign,
+imp_Block_strategy = st.builds(
+    imp_Block,
+)
+imp_Assign_strategy = st.builds(
+    imp_Assign,
     name=
         safe_text
 )
-imp::Block_strategy = st.builds(
-    imp::Block,
+imp_While_strategy = st.builds(
+    imp_While,
 )
-imp::If_strategy = st.builds(
-    imp::If,
-)
-imp::Skip_strategy = st.builds(
-    imp::Skip,
+imp_Skip_strategy = st.builds(
+    imp_Skip,
 )
 
 @given(instance=Value_strategy)
@@ -508,34 +508,28 @@ imp::Skip_strategy = st.builds(
 def test_value_instantiation(instance):
     assert isinstance(instance, Value)
 
-@given(instance=imp::BoolValue_strategy)
+@given(instance=imp_BoolValue_strategy)
 @settings(max_examples=50)
-def test_imp::boolvalue_instantiation(instance):
-    assert isinstance(instance, imp::BoolValue)
-
-@given(instance=imp::BoolValue_strategy)
-def test_imp::boolvalue_value_type(instance):
-    assert isinstance(instance.value, bool)
+def test_imp_boolvalue_instantiation(instance):
+    assert isinstance(instance, imp_BoolValue)
 
 
-@given(instance=imp::BoolValue_strategy)
-def test_imp::boolvalue_value_setter(instance):
+
+@given(instance=imp_BoolValue_strategy)
+def test_imp_boolvalue_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
 
-@given(instance=imp::IntValue_strategy)
+@given(instance=imp_IntValue_strategy)
 @settings(max_examples=50)
-def test_imp::intvalue_instantiation(instance):
-    assert isinstance(instance, imp::IntValue)
-
-@given(instance=imp::IntValue_strategy)
-def test_imp::intvalue_value_type(instance):
-    assert isinstance(instance.value, int)
+def test_imp_intvalue_instantiation(instance):
+    assert isinstance(instance, imp_IntValue)
 
 
-@given(instance=imp::IntValue_strategy)
-def test_imp::intvalue_value_setter(instance):
+
+@given(instance=imp_IntValue_strategy)
+def test_imp_intvalue_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
@@ -545,143 +539,125 @@ def test_imp::intvalue_value_setter(instance):
 def test_expr_instantiation(instance):
     assert isinstance(instance, Expr)
 
-@given(instance=imp::Binary_strategy)
+@given(instance=imp_Binary_strategy)
 @settings(max_examples=50)
-def test_imp::binary_instantiation(instance):
-    assert isinstance(instance, imp::Binary)
-
-@given(instance=imp::Binary_strategy)
-def test_imp::binary_op_type(instance):
-    assert isinstance(instance.op, str)
+def test_imp_binary_instantiation(instance):
+    assert isinstance(instance, imp_Binary)
 
 
-@given(instance=imp::Binary_strategy)
-def test_imp::binary_op_setter(instance):
+
+@given(instance=imp_Binary_strategy)
+def test_imp_binary_op_setter(instance):
     original = instance.op
     instance.op = original
     assert instance.op == original
 
-@given(instance=imp::Unary_strategy)
+@given(instance=imp_Unary_strategy)
 @settings(max_examples=50)
-def test_imp::unary_instantiation(instance):
-    assert isinstance(instance, imp::Unary)
-
-@given(instance=imp::Unary_strategy)
-def test_imp::unary_op_type(instance):
-    assert isinstance(instance.op, str)
+def test_imp_unary_instantiation(instance):
+    assert isinstance(instance, imp_Unary)
 
 
-@given(instance=imp::Unary_strategy)
-def test_imp::unary_op_setter(instance):
+
+@given(instance=imp_Unary_strategy)
+def test_imp_unary_op_setter(instance):
     original = instance.op
     instance.op = original
     assert instance.op == original
 
-@given(instance=imp::Var_strategy)
+@given(instance=imp_Var_strategy)
 @settings(max_examples=50)
-def test_imp::var_instantiation(instance):
-    assert isinstance(instance, imp::Var)
-
-@given(instance=imp::Var_strategy)
-def test_imp::var_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_imp_var_instantiation(instance):
+    assert isinstance(instance, imp_Var)
 
 
-@given(instance=imp::Var_strategy)
-def test_imp::var_name_setter(instance):
+
+@given(instance=imp_Var_strategy)
+def test_imp_var_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=imp::IntConst_strategy)
+@given(instance=imp_IntConst_strategy)
 @settings(max_examples=50)
-def test_imp::intconst_instantiation(instance):
-    assert isinstance(instance, imp::IntConst)
-
-@given(instance=imp::IntConst_strategy)
-def test_imp::intconst_value_type(instance):
-    assert isinstance(instance.value, int)
+def test_imp_intconst_instantiation(instance):
+    assert isinstance(instance, imp_IntConst)
 
 
-@given(instance=imp::IntConst_strategy)
-def test_imp::intconst_value_setter(instance):
+
+@given(instance=imp_IntConst_strategy)
+def test_imp_intconst_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
 
-@given(instance=imp::Value_strategy)
+@given(instance=imp_Value_strategy)
 @settings(max_examples=50)
-def test_imp::value_instantiation(instance):
-    assert isinstance(instance, imp::Value)
+def test_imp_value_instantiation(instance):
+    assert isinstance(instance, imp_Value)
 
-@given(instance=imp::StringToValueMap_strategy)
+@given(instance=imp_StringToValueMap_strategy)
 @settings(max_examples=50)
-def test_imp::stringtovaluemap_instantiation(instance):
-    assert isinstance(instance, imp::StringToValueMap)
-
-@given(instance=imp::StringToValueMap_strategy)
-def test_imp::stringtovaluemap_key_type(instance):
-    assert isinstance(instance.key, str)
+def test_imp_stringtovaluemap_instantiation(instance):
+    assert isinstance(instance, imp_StringToValueMap)
 
 
-@given(instance=imp::StringToValueMap_strategy)
-def test_imp::stringtovaluemap_key_setter(instance):
+
+@given(instance=imp_StringToValueMap_strategy)
+def test_imp_stringtovaluemap_key_setter(instance):
     original = instance.key
     instance.key = original
     assert instance.key == original
 
-@given(instance=imp::Store_strategy)
+@given(instance=imp_Store_strategy)
 @settings(max_examples=50)
-def test_imp::store_instantiation(instance):
-    assert isinstance(instance, imp::Store)
+def test_imp_store_instantiation(instance):
+    assert isinstance(instance, imp_Store)
 
-@given(instance=imp::Stmt_strategy)
+@given(instance=imp_Stmt_strategy)
 @settings(max_examples=50)
-def test_imp::stmt_instantiation(instance):
-    assert isinstance(instance, imp::Stmt)
+def test_imp_stmt_instantiation(instance):
+    assert isinstance(instance, imp_Stmt)
 
-@given(instance=imp::Expr_strategy)
+@given(instance=imp_Expr_strategy)
 @settings(max_examples=50)
-def test_imp::expr_instantiation(instance):
-    assert isinstance(instance, imp::Expr)
+def test_imp_expr_instantiation(instance):
+    assert isinstance(instance, imp_Expr)
 
 @given(instance=Stmt_strategy)
 @settings(max_examples=50)
 def test_stmt_instantiation(instance):
     assert isinstance(instance, Stmt)
 
-@given(instance=imp::While_strategy)
+@given(instance=imp_If_strategy)
 @settings(max_examples=50)
-def test_imp::while_instantiation(instance):
-    assert isinstance(instance, imp::While)
+def test_imp_if_instantiation(instance):
+    assert isinstance(instance, imp_If)
 
-@given(instance=imp::Assign_strategy)
+@given(instance=imp_Block_strategy)
 @settings(max_examples=50)
-def test_imp::assign_instantiation(instance):
-    assert isinstance(instance, imp::Assign)
+def test_imp_block_instantiation(instance):
+    assert isinstance(instance, imp_Block)
 
-@given(instance=imp::Assign_strategy)
-def test_imp::assign_name_type(instance):
-    assert isinstance(instance.name, str)
+@given(instance=imp_Assign_strategy)
+@settings(max_examples=50)
+def test_imp_assign_instantiation(instance):
+    assert isinstance(instance, imp_Assign)
 
 
-@given(instance=imp::Assign_strategy)
-def test_imp::assign_name_setter(instance):
+
+@given(instance=imp_Assign_strategy)
+def test_imp_assign_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=imp::Block_strategy)
+@given(instance=imp_While_strategy)
 @settings(max_examples=50)
-def test_imp::block_instantiation(instance):
-    assert isinstance(instance, imp::Block)
+def test_imp_while_instantiation(instance):
+    assert isinstance(instance, imp_While)
 
-@given(instance=imp::If_strategy)
+@given(instance=imp_Skip_strategy)
 @settings(max_examples=50)
-def test_imp::if_instantiation(instance):
-    assert isinstance(instance, imp::If)
-
-@given(instance=imp::Skip_strategy)
-@settings(max_examples=50)
-def test_imp::skip_instantiation(instance):
-    assert isinstance(instance, imp::Skip)
+def test_imp_skip_instantiation(instance):
+    assert isinstance(instance, imp_Skip)

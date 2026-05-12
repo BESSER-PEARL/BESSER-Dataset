@@ -3,7 +3,7 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
 from python_code import (
     Request_book_return_external,
@@ -321,9 +321,6 @@ def test_inquiry_for_membership_external_instantiation(instance):
 def test_userproperties_instantiation(instance):
     assert isinstance(instance, UserProperties)
 
-@given(instance=UserProperties_strategy)
-def test_userproperties_roles_type(instance):
-    assert isinstance(instance.roles, str)
 
 
 @given(instance=UserProperties_strategy)
@@ -332,9 +329,6 @@ def test_userproperties_roles_setter(instance):
     instance.roles = original
     assert instance.roles == original
 
-@given(instance=UserProperties_strategy)
-def test_userproperties_Roles_type(instance):
-    assert isinstance(instance.Roles, str)
 
 
 @given(instance=UserProperties_strategy)

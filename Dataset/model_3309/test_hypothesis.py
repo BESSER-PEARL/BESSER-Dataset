@@ -3,11 +3,11 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     Solver,
-    fd::FiniteDifference,
+    fd_FiniteDifference,
 )
 
 # =============================================================================
@@ -30,16 +30,16 @@ def test_solver_constructor_args():
 
 
 
-def test_fd::finitedifference_is_not_abstract():
-    assert not inspect.isabstract(fd::FiniteDifference)
+def test_fd_finitedifference_is_not_abstract():
+    assert not inspect.isabstract(fd_FiniteDifference)
 
 
-def test_fd::finitedifference_constructor_exists():
-    assert callable(fd::FiniteDifference.__init__)
+def test_fd_finitedifference_constructor_exists():
+    assert callable(fd_FiniteDifference.__init__)
 
 
-def test_fd::finitedifference_constructor_args():
-    sig = inspect.signature(fd::FiniteDifference.__init__)
+def test_fd_finitedifference_constructor_args():
+    sig = inspect.signature(fd_FiniteDifference.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -57,8 +57,8 @@ safe_text = st.text(
 Solver_strategy = st.builds(
     Solver,
 )
-fd::FiniteDifference_strategy = st.builds(
-    fd::FiniteDifference,
+fd_FiniteDifference_strategy = st.builds(
+    fd_FiniteDifference,
 )
 
 @given(instance=Solver_strategy)
@@ -66,7 +66,7 @@ fd::FiniteDifference_strategy = st.builds(
 def test_solver_instantiation(instance):
     assert isinstance(instance, Solver)
 
-@given(instance=fd::FiniteDifference_strategy)
+@given(instance=fd_FiniteDifference_strategy)
 @settings(max_examples=50)
-def test_fd::finitedifference_instantiation(instance):
-    assert isinstance(instance, fd::FiniteDifference)
+def test_fd_finitedifference_instantiation(instance):
+    assert isinstance(instance, fd_FiniteDifference)

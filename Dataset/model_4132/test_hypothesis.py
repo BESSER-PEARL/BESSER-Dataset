@@ -3,50 +3,50 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     PrimaryExpression,
-    cool::AssignmentExpression,
-    cool::NegationExpression,
-    cool::DispatchExpression,
-    cool::IntegerCompositeExpression,
-    cool::IsvoidExpression,
-    cool::LoopExpression,
-    cool::BlockExpression,
-    cool::LetExpression,
-    cool::ConditionalExpression,
-    cool::NewExpression,
-    cool::SelfTypeLiteral,
+    cool_IsvoidExpression,
+    cool_NegationExpression,
+    cool_AssignmentExpression,
+    cool_ConditionalExpression,
+    cool_CaseExpression,
+    cool_LoopExpression,
+    cool_IntegerCompositeExpression,
+    cool_NewExpression,
+    cool_DispatchExpression,
+    cool_BlockExpression,
+    cool_LetExpression,
+    cool_SelfTypeLiteral,
     Expression,
-    cool::CompareExpression,
-    cool::PrimaryExpression,
-    cool::Expression,
-    Feature::,
-    cool::Method,
-    cool::Attr,
-    cool::Type,
+    cool_Minus,
+    cool_MultiplicationExpression,
+    cool_AdditionExpression,
+    cool_Div,
+    cool_CompareExpression,
+    cool_PrimaryExpression,
+    cool_Expression,
+    Feature_,
+    cool_Method,
+    cool_Attr,
+    cool_Type,
     IdentifiableElement,
-    cool::Formal,
-    cool::Feature::,
+    cool_Case,
+    cool_Feature_,
+    cool_LetDeclaration,
+    cool_Formal,
     Type,
-    cool::ParenExpression,
+    cool_ParenExpression,
     Literal,
-    cool::BooleanLiteral,
-    cool::StringLiteral,
-    cool::NumberLiteral,
-    cool::Literal,
-    cool::IdentifiableElement,
-    cool::IdentifierRefExpression,
-    cool::Class::,
-    cool::Program,
-    cool::Div,
-    cool::MultiplicationExpression,
-    cool::Minus,
-    cool::AdditionExpression,
-    cool::Case,
-    cool::CaseExpression,
-    cool::LetDeclaration,
+    cool_StringLiteral,
+    cool_BooleanLiteral,
+    cool_NumberLiteral,
+    cool_Literal,
+    cool_IdentifiableElement,
+    cool_IdentifierRefExpression,
+    cool_Class_,
+    cool_Program,
 )
 
 # =============================================================================
@@ -69,23 +69,51 @@ def test_primaryexpression_constructor_args():
 
 
 
-def test_cool::assignmentexpression_is_not_abstract():
-    assert not inspect.isabstract(cool::AssignmentExpression)
+def test_cool_isvoidexpression_is_not_abstract():
+    assert not inspect.isabstract(cool_IsvoidExpression)
 
 
-def test_cool::assignmentexpression_constructor_exists():
-    assert callable(cool::AssignmentExpression.__init__)
+def test_cool_isvoidexpression_constructor_exists():
+    assert callable(cool_IsvoidExpression.__init__)
 
 
-def test_cool::assignmentexpression_constructor_args():
-    sig = inspect.signature(cool::AssignmentExpression.__init__)
+def test_cool_isvoidexpression_constructor_args():
+    sig = inspect.signature(cool_IsvoidExpression.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_cool_negationexpression_is_not_abstract():
+    assert not inspect.isabstract(cool_NegationExpression)
+
+
+def test_cool_negationexpression_constructor_exists():
+    assert callable(cool_NegationExpression.__init__)
+
+
+def test_cool_negationexpression_constructor_args():
+    sig = inspect.signature(cool_NegationExpression.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_cool_assignmentexpression_is_not_abstract():
+    assert not inspect.isabstract(cool_AssignmentExpression)
+
+
+def test_cool_assignmentexpression_constructor_exists():
+    assert callable(cool_AssignmentExpression.__init__)
+
+
+def test_cool_assignmentexpression_constructor_args():
+    sig = inspect.signature(cool_AssignmentExpression.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_cool::assignmentexpression_has_name():
-    assert hasattr(cool::AssignmentExpression, "name")
+def test_cool_assignmentexpression_has_name():
+    assert hasattr(cool_AssignmentExpression, "name")
     descriptor = None
-    for klass in cool::AssignmentExpression.__mro__:
+    for klass in cool_AssignmentExpression.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -93,142 +121,128 @@ def test_cool::assignmentexpression_has_name():
 
 
 
-def test_cool::negationexpression_is_not_abstract():
-    assert not inspect.isabstract(cool::NegationExpression)
+def test_cool_conditionalexpression_is_not_abstract():
+    assert not inspect.isabstract(cool_ConditionalExpression)
 
 
-def test_cool::negationexpression_constructor_exists():
-    assert callable(cool::NegationExpression.__init__)
+def test_cool_conditionalexpression_constructor_exists():
+    assert callable(cool_ConditionalExpression.__init__)
 
 
-def test_cool::negationexpression_constructor_args():
-    sig = inspect.signature(cool::NegationExpression.__init__)
+def test_cool_conditionalexpression_constructor_args():
+    sig = inspect.signature(cool_ConditionalExpression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_cool::dispatchexpression_is_not_abstract():
-    assert not inspect.isabstract(cool::DispatchExpression)
+def test_cool_caseexpression_is_not_abstract():
+    assert not inspect.isabstract(cool_CaseExpression)
 
 
-def test_cool::dispatchexpression_constructor_exists():
-    assert callable(cool::DispatchExpression.__init__)
+def test_cool_caseexpression_constructor_exists():
+    assert callable(cool_CaseExpression.__init__)
 
 
-def test_cool::dispatchexpression_constructor_args():
-    sig = inspect.signature(cool::DispatchExpression.__init__)
+def test_cool_caseexpression_constructor_args():
+    sig = inspect.signature(cool_CaseExpression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_cool::integercompositeexpression_is_not_abstract():
-    assert not inspect.isabstract(cool::IntegerCompositeExpression)
+def test_cool_loopexpression_is_not_abstract():
+    assert not inspect.isabstract(cool_LoopExpression)
 
 
-def test_cool::integercompositeexpression_constructor_exists():
-    assert callable(cool::IntegerCompositeExpression.__init__)
+def test_cool_loopexpression_constructor_exists():
+    assert callable(cool_LoopExpression.__init__)
 
 
-def test_cool::integercompositeexpression_constructor_args():
-    sig = inspect.signature(cool::IntegerCompositeExpression.__init__)
+def test_cool_loopexpression_constructor_args():
+    sig = inspect.signature(cool_LoopExpression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_cool::isvoidexpression_is_not_abstract():
-    assert not inspect.isabstract(cool::IsvoidExpression)
+def test_cool_integercompositeexpression_is_not_abstract():
+    assert not inspect.isabstract(cool_IntegerCompositeExpression)
 
 
-def test_cool::isvoidexpression_constructor_exists():
-    assert callable(cool::IsvoidExpression.__init__)
+def test_cool_integercompositeexpression_constructor_exists():
+    assert callable(cool_IntegerCompositeExpression.__init__)
 
 
-def test_cool::isvoidexpression_constructor_args():
-    sig = inspect.signature(cool::IsvoidExpression.__init__)
+def test_cool_integercompositeexpression_constructor_args():
+    sig = inspect.signature(cool_IntegerCompositeExpression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_cool::loopexpression_is_not_abstract():
-    assert not inspect.isabstract(cool::LoopExpression)
+def test_cool_newexpression_is_not_abstract():
+    assert not inspect.isabstract(cool_NewExpression)
 
 
-def test_cool::loopexpression_constructor_exists():
-    assert callable(cool::LoopExpression.__init__)
+def test_cool_newexpression_constructor_exists():
+    assert callable(cool_NewExpression.__init__)
 
 
-def test_cool::loopexpression_constructor_args():
-    sig = inspect.signature(cool::LoopExpression.__init__)
+def test_cool_newexpression_constructor_args():
+    sig = inspect.signature(cool_NewExpression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_cool::blockexpression_is_not_abstract():
-    assert not inspect.isabstract(cool::BlockExpression)
+def test_cool_dispatchexpression_is_not_abstract():
+    assert not inspect.isabstract(cool_DispatchExpression)
 
 
-def test_cool::blockexpression_constructor_exists():
-    assert callable(cool::BlockExpression.__init__)
+def test_cool_dispatchexpression_constructor_exists():
+    assert callable(cool_DispatchExpression.__init__)
 
 
-def test_cool::blockexpression_constructor_args():
-    sig = inspect.signature(cool::BlockExpression.__init__)
+def test_cool_dispatchexpression_constructor_args():
+    sig = inspect.signature(cool_DispatchExpression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_cool::letexpression_is_not_abstract():
-    assert not inspect.isabstract(cool::LetExpression)
+def test_cool_blockexpression_is_not_abstract():
+    assert not inspect.isabstract(cool_BlockExpression)
 
 
-def test_cool::letexpression_constructor_exists():
-    assert callable(cool::LetExpression.__init__)
+def test_cool_blockexpression_constructor_exists():
+    assert callable(cool_BlockExpression.__init__)
 
 
-def test_cool::letexpression_constructor_args():
-    sig = inspect.signature(cool::LetExpression.__init__)
+def test_cool_blockexpression_constructor_args():
+    sig = inspect.signature(cool_BlockExpression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_cool::conditionalexpression_is_not_abstract():
-    assert not inspect.isabstract(cool::ConditionalExpression)
+def test_cool_letexpression_is_not_abstract():
+    assert not inspect.isabstract(cool_LetExpression)
 
 
-def test_cool::conditionalexpression_constructor_exists():
-    assert callable(cool::ConditionalExpression.__init__)
+def test_cool_letexpression_constructor_exists():
+    assert callable(cool_LetExpression.__init__)
 
 
-def test_cool::conditionalexpression_constructor_args():
-    sig = inspect.signature(cool::ConditionalExpression.__init__)
+def test_cool_letexpression_constructor_args():
+    sig = inspect.signature(cool_LetExpression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_cool::newexpression_is_not_abstract():
-    assert not inspect.isabstract(cool::NewExpression)
+def test_cool_selftypeliteral_is_not_abstract():
+    assert not inspect.isabstract(cool_SelfTypeLiteral)
 
 
-def test_cool::newexpression_constructor_exists():
-    assert callable(cool::NewExpression.__init__)
+def test_cool_selftypeliteral_constructor_exists():
+    assert callable(cool_SelfTypeLiteral.__init__)
 
 
-def test_cool::newexpression_constructor_args():
-    sig = inspect.signature(cool::NewExpression.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_cool::selftypeliteral_is_not_abstract():
-    assert not inspect.isabstract(cool::SelfTypeLiteral)
-
-
-def test_cool::selftypeliteral_constructor_exists():
-    assert callable(cool::SelfTypeLiteral.__init__)
-
-
-def test_cool::selftypeliteral_constructor_args():
-    sig = inspect.signature(cool::SelfTypeLiteral.__init__)
+def test_cool_selftypeliteral_constructor_args():
+    sig = inspect.signature(cool_SelfTypeLiteral.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -247,23 +261,79 @@ def test_expression_constructor_args():
 
 
 
-def test_cool::compareexpression_is_not_abstract():
-    assert not inspect.isabstract(cool::CompareExpression)
+def test_cool_minus_is_not_abstract():
+    assert not inspect.isabstract(cool_Minus)
 
 
-def test_cool::compareexpression_constructor_exists():
-    assert callable(cool::CompareExpression.__init__)
+def test_cool_minus_constructor_exists():
+    assert callable(cool_Minus.__init__)
 
 
-def test_cool::compareexpression_constructor_args():
-    sig = inspect.signature(cool::CompareExpression.__init__)
+def test_cool_minus_constructor_args():
+    sig = inspect.signature(cool_Minus.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_cool_multiplicationexpression_is_not_abstract():
+    assert not inspect.isabstract(cool_MultiplicationExpression)
+
+
+def test_cool_multiplicationexpression_constructor_exists():
+    assert callable(cool_MultiplicationExpression.__init__)
+
+
+def test_cool_multiplicationexpression_constructor_args():
+    sig = inspect.signature(cool_MultiplicationExpression.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_cool_additionexpression_is_not_abstract():
+    assert not inspect.isabstract(cool_AdditionExpression)
+
+
+def test_cool_additionexpression_constructor_exists():
+    assert callable(cool_AdditionExpression.__init__)
+
+
+def test_cool_additionexpression_constructor_args():
+    sig = inspect.signature(cool_AdditionExpression.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_cool_div_is_not_abstract():
+    assert not inspect.isabstract(cool_Div)
+
+
+def test_cool_div_constructor_exists():
+    assert callable(cool_Div.__init__)
+
+
+def test_cool_div_constructor_args():
+    sig = inspect.signature(cool_Div.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_cool_compareexpression_is_not_abstract():
+    assert not inspect.isabstract(cool_CompareExpression)
+
+
+def test_cool_compareexpression_constructor_exists():
+    assert callable(cool_CompareExpression.__init__)
+
+
+def test_cool_compareexpression_constructor_args():
+    sig = inspect.signature(cool_CompareExpression.__init__)
     params = list(sig.parameters.keys())
     assert "op" in params, "Missing parameter 'op'"
 
-def test_cool::compareexpression_has_op():
-    assert hasattr(cool::CompareExpression, "op")
+def test_cool_compareexpression_has_op():
+    assert hasattr(cool_CompareExpression, "op")
     descriptor = None
-    for klass in cool::CompareExpression.__mro__:
+    for klass in cool_CompareExpression.__mro__:
         if "op" in klass.__dict__:
             descriptor = klass.__dict__["op"]
             break
@@ -271,86 +341,86 @@ def test_cool::compareexpression_has_op():
 
 
 
-def test_cool::primaryexpression_is_not_abstract():
-    assert not inspect.isabstract(cool::PrimaryExpression)
+def test_cool_primaryexpression_is_not_abstract():
+    assert not inspect.isabstract(cool_PrimaryExpression)
 
 
-def test_cool::primaryexpression_constructor_exists():
-    assert callable(cool::PrimaryExpression.__init__)
+def test_cool_primaryexpression_constructor_exists():
+    assert callable(cool_PrimaryExpression.__init__)
 
 
-def test_cool::primaryexpression_constructor_args():
-    sig = inspect.signature(cool::PrimaryExpression.__init__)
+def test_cool_primaryexpression_constructor_args():
+    sig = inspect.signature(cool_PrimaryExpression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_cool::expression_is_not_abstract():
-    assert not inspect.isabstract(cool::Expression)
+def test_cool_expression_is_not_abstract():
+    assert not inspect.isabstract(cool_Expression)
 
 
-def test_cool::expression_constructor_exists():
-    assert callable(cool::Expression.__init__)
+def test_cool_expression_constructor_exists():
+    assert callable(cool_Expression.__init__)
 
 
-def test_cool::expression_constructor_args():
-    sig = inspect.signature(cool::Expression.__init__)
+def test_cool_expression_constructor_args():
+    sig = inspect.signature(cool_Expression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_feature::_is_not_abstract():
-    assert not inspect.isabstract(Feature::)
+def test_feature__is_not_abstract():
+    assert not inspect.isabstract(Feature_)
 
 
-def test_feature::_constructor_exists():
-    assert callable(Feature::.__init__)
+def test_feature__constructor_exists():
+    assert callable(Feature_.__init__)
 
 
-def test_feature::_constructor_args():
-    sig = inspect.signature(Feature::.__init__)
+def test_feature__constructor_args():
+    sig = inspect.signature(Feature_.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_cool::method_is_not_abstract():
-    assert not inspect.isabstract(cool::Method)
+def test_cool_method_is_not_abstract():
+    assert not inspect.isabstract(cool_Method)
 
 
-def test_cool::method_constructor_exists():
-    assert callable(cool::Method.__init__)
+def test_cool_method_constructor_exists():
+    assert callable(cool_Method.__init__)
 
 
-def test_cool::method_constructor_args():
-    sig = inspect.signature(cool::Method.__init__)
+def test_cool_method_constructor_args():
+    sig = inspect.signature(cool_Method.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_cool::attr_is_not_abstract():
-    assert not inspect.isabstract(cool::Attr)
+def test_cool_attr_is_not_abstract():
+    assert not inspect.isabstract(cool_Attr)
 
 
-def test_cool::attr_constructor_exists():
-    assert callable(cool::Attr.__init__)
+def test_cool_attr_constructor_exists():
+    assert callable(cool_Attr.__init__)
 
 
-def test_cool::attr_constructor_args():
-    sig = inspect.signature(cool::Attr.__init__)
+def test_cool_attr_constructor_args():
+    sig = inspect.signature(cool_Attr.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_cool::type_is_not_abstract():
-    assert not inspect.isabstract(cool::Type)
+def test_cool_type_is_not_abstract():
+    assert not inspect.isabstract(cool_Type)
 
 
-def test_cool::type_constructor_exists():
-    assert callable(cool::Type.__init__)
+def test_cool_type_constructor_exists():
+    assert callable(cool_Type.__init__)
 
 
-def test_cool::type_constructor_args():
-    sig = inspect.signature(cool::Type.__init__)
+def test_cool_type_constructor_args():
+    sig = inspect.signature(cool_Type.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -369,30 +439,58 @@ def test_identifiableelement_constructor_args():
 
 
 
-def test_cool::formal_is_not_abstract():
-    assert not inspect.isabstract(cool::Formal)
+def test_cool_case_is_not_abstract():
+    assert not inspect.isabstract(cool_Case)
 
 
-def test_cool::formal_constructor_exists():
-    assert callable(cool::Formal.__init__)
+def test_cool_case_constructor_exists():
+    assert callable(cool_Case.__init__)
 
 
-def test_cool::formal_constructor_args():
-    sig = inspect.signature(cool::Formal.__init__)
+def test_cool_case_constructor_args():
+    sig = inspect.signature(cool_Case.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_cool::feature::_is_not_abstract():
-    assert not inspect.isabstract(cool::Feature::)
+def test_cool_feature__is_not_abstract():
+    assert not inspect.isabstract(cool_Feature_)
 
 
-def test_cool::feature::_constructor_exists():
-    assert callable(cool::Feature::.__init__)
+def test_cool_feature__constructor_exists():
+    assert callable(cool_Feature_.__init__)
 
 
-def test_cool::feature::_constructor_args():
-    sig = inspect.signature(cool::Feature::.__init__)
+def test_cool_feature__constructor_args():
+    sig = inspect.signature(cool_Feature_.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_cool_letdeclaration_is_not_abstract():
+    assert not inspect.isabstract(cool_LetDeclaration)
+
+
+def test_cool_letdeclaration_constructor_exists():
+    assert callable(cool_LetDeclaration.__init__)
+
+
+def test_cool_letdeclaration_constructor_args():
+    sig = inspect.signature(cool_LetDeclaration.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_cool_formal_is_not_abstract():
+    assert not inspect.isabstract(cool_Formal)
+
+
+def test_cool_formal_constructor_exists():
+    assert callable(cool_Formal.__init__)
+
+
+def test_cool_formal_constructor_args():
+    sig = inspect.signature(cool_Formal.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -411,16 +509,16 @@ def test_type_constructor_args():
 
 
 
-def test_cool::parenexpression_is_not_abstract():
-    assert not inspect.isabstract(cool::ParenExpression)
+def test_cool_parenexpression_is_not_abstract():
+    assert not inspect.isabstract(cool_ParenExpression)
 
 
-def test_cool::parenexpression_constructor_exists():
-    assert callable(cool::ParenExpression.__init__)
+def test_cool_parenexpression_constructor_exists():
+    assert callable(cool_ParenExpression.__init__)
 
 
-def test_cool::parenexpression_constructor_args():
-    sig = inspect.signature(cool::ParenExpression.__init__)
+def test_cool_parenexpression_constructor_args():
+    sig = inspect.signature(cool_ParenExpression.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -439,23 +537,23 @@ def test_literal_constructor_args():
 
 
 
-def test_cool::booleanliteral_is_not_abstract():
-    assert not inspect.isabstract(cool::BooleanLiteral)
+def test_cool_stringliteral_is_not_abstract():
+    assert not inspect.isabstract(cool_StringLiteral)
 
 
-def test_cool::booleanliteral_constructor_exists():
-    assert callable(cool::BooleanLiteral.__init__)
+def test_cool_stringliteral_constructor_exists():
+    assert callable(cool_StringLiteral.__init__)
 
 
-def test_cool::booleanliteral_constructor_args():
-    sig = inspect.signature(cool::BooleanLiteral.__init__)
+def test_cool_stringliteral_constructor_args():
+    sig = inspect.signature(cool_StringLiteral.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
 
-def test_cool::booleanliteral_has_value():
-    assert hasattr(cool::BooleanLiteral, "value")
+def test_cool_stringliteral_has_value():
+    assert hasattr(cool_StringLiteral, "value")
     descriptor = None
-    for klass in cool::BooleanLiteral.__mro__:
+    for klass in cool_StringLiteral.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -463,23 +561,23 @@ def test_cool::booleanliteral_has_value():
 
 
 
-def test_cool::stringliteral_is_not_abstract():
-    assert not inspect.isabstract(cool::StringLiteral)
+def test_cool_booleanliteral_is_not_abstract():
+    assert not inspect.isabstract(cool_BooleanLiteral)
 
 
-def test_cool::stringliteral_constructor_exists():
-    assert callable(cool::StringLiteral.__init__)
+def test_cool_booleanliteral_constructor_exists():
+    assert callable(cool_BooleanLiteral.__init__)
 
 
-def test_cool::stringliteral_constructor_args():
-    sig = inspect.signature(cool::StringLiteral.__init__)
+def test_cool_booleanliteral_constructor_args():
+    sig = inspect.signature(cool_BooleanLiteral.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
 
-def test_cool::stringliteral_has_value():
-    assert hasattr(cool::StringLiteral, "value")
+def test_cool_booleanliteral_has_value():
+    assert hasattr(cool_BooleanLiteral, "value")
     descriptor = None
-    for klass in cool::StringLiteral.__mro__:
+    for klass in cool_BooleanLiteral.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -487,23 +585,23 @@ def test_cool::stringliteral_has_value():
 
 
 
-def test_cool::numberliteral_is_not_abstract():
-    assert not inspect.isabstract(cool::NumberLiteral)
+def test_cool_numberliteral_is_not_abstract():
+    assert not inspect.isabstract(cool_NumberLiteral)
 
 
-def test_cool::numberliteral_constructor_exists():
-    assert callable(cool::NumberLiteral.__init__)
+def test_cool_numberliteral_constructor_exists():
+    assert callable(cool_NumberLiteral.__init__)
 
 
-def test_cool::numberliteral_constructor_args():
-    sig = inspect.signature(cool::NumberLiteral.__init__)
+def test_cool_numberliteral_constructor_args():
+    sig = inspect.signature(cool_NumberLiteral.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
 
-def test_cool::numberliteral_has_value():
-    assert hasattr(cool::NumberLiteral, "value")
+def test_cool_numberliteral_has_value():
+    assert hasattr(cool_NumberLiteral, "value")
     descriptor = None
-    for klass in cool::NumberLiteral.__mro__:
+    for klass in cool_NumberLiteral.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -511,37 +609,37 @@ def test_cool::numberliteral_has_value():
 
 
 
-def test_cool::literal_is_not_abstract():
-    assert not inspect.isabstract(cool::Literal)
+def test_cool_literal_is_not_abstract():
+    assert not inspect.isabstract(cool_Literal)
 
 
-def test_cool::literal_constructor_exists():
-    assert callable(cool::Literal.__init__)
+def test_cool_literal_constructor_exists():
+    assert callable(cool_Literal.__init__)
 
 
-def test_cool::literal_constructor_args():
-    sig = inspect.signature(cool::Literal.__init__)
+def test_cool_literal_constructor_args():
+    sig = inspect.signature(cool_Literal.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_cool::identifiableelement_is_not_abstract():
-    assert not inspect.isabstract(cool::IdentifiableElement)
+def test_cool_identifiableelement_is_not_abstract():
+    assert not inspect.isabstract(cool_IdentifiableElement)
 
 
-def test_cool::identifiableelement_constructor_exists():
-    assert callable(cool::IdentifiableElement.__init__)
+def test_cool_identifiableelement_constructor_exists():
+    assert callable(cool_IdentifiableElement.__init__)
 
 
-def test_cool::identifiableelement_constructor_args():
-    sig = inspect.signature(cool::IdentifiableElement.__init__)
+def test_cool_identifiableelement_constructor_args():
+    sig = inspect.signature(cool_IdentifiableElement.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_cool::identifiableelement_has_name():
-    assert hasattr(cool::IdentifiableElement, "name")
+def test_cool_identifiableelement_has_name():
+    assert hasattr(cool_IdentifiableElement, "name")
     descriptor = None
-    for klass in cool::IdentifiableElement.__mro__:
+    for klass in cool_IdentifiableElement.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -549,142 +647,44 @@ def test_cool::identifiableelement_has_name():
 
 
 
-def test_cool::identifierrefexpression_is_not_abstract():
-    assert not inspect.isabstract(cool::IdentifierRefExpression)
+def test_cool_identifierrefexpression_is_not_abstract():
+    assert not inspect.isabstract(cool_IdentifierRefExpression)
 
 
-def test_cool::identifierrefexpression_constructor_exists():
-    assert callable(cool::IdentifierRefExpression.__init__)
+def test_cool_identifierrefexpression_constructor_exists():
+    assert callable(cool_IdentifierRefExpression.__init__)
 
 
-def test_cool::identifierrefexpression_constructor_args():
-    sig = inspect.signature(cool::IdentifierRefExpression.__init__)
+def test_cool_identifierrefexpression_constructor_args():
+    sig = inspect.signature(cool_IdentifierRefExpression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_cool::class::_is_not_abstract():
-    assert not inspect.isabstract(cool::Class::)
+def test_cool_class__is_not_abstract():
+    assert not inspect.isabstract(cool_Class_)
 
 
-def test_cool::class::_constructor_exists():
-    assert callable(cool::Class::.__init__)
+def test_cool_class__constructor_exists():
+    assert callable(cool_Class_.__init__)
 
 
-def test_cool::class::_constructor_args():
-    sig = inspect.signature(cool::Class::.__init__)
+def test_cool_class__constructor_args():
+    sig = inspect.signature(cool_Class_.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_cool::program_is_not_abstract():
-    assert not inspect.isabstract(cool::Program)
+def test_cool_program_is_not_abstract():
+    assert not inspect.isabstract(cool_Program)
 
 
-def test_cool::program_constructor_exists():
-    assert callable(cool::Program.__init__)
+def test_cool_program_constructor_exists():
+    assert callable(cool_Program.__init__)
 
 
-def test_cool::program_constructor_args():
-    sig = inspect.signature(cool::Program.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_cool::div_is_not_abstract():
-    assert not inspect.isabstract(cool::Div)
-
-
-def test_cool::div_constructor_exists():
-    assert callable(cool::Div.__init__)
-
-
-def test_cool::div_constructor_args():
-    sig = inspect.signature(cool::Div.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_cool::multiplicationexpression_is_not_abstract():
-    assert not inspect.isabstract(cool::MultiplicationExpression)
-
-
-def test_cool::multiplicationexpression_constructor_exists():
-    assert callable(cool::MultiplicationExpression.__init__)
-
-
-def test_cool::multiplicationexpression_constructor_args():
-    sig = inspect.signature(cool::MultiplicationExpression.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_cool::minus_is_not_abstract():
-    assert not inspect.isabstract(cool::Minus)
-
-
-def test_cool::minus_constructor_exists():
-    assert callable(cool::Minus.__init__)
-
-
-def test_cool::minus_constructor_args():
-    sig = inspect.signature(cool::Minus.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_cool::additionexpression_is_not_abstract():
-    assert not inspect.isabstract(cool::AdditionExpression)
-
-
-def test_cool::additionexpression_constructor_exists():
-    assert callable(cool::AdditionExpression.__init__)
-
-
-def test_cool::additionexpression_constructor_args():
-    sig = inspect.signature(cool::AdditionExpression.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_cool::case_is_not_abstract():
-    assert not inspect.isabstract(cool::Case)
-
-
-def test_cool::case_constructor_exists():
-    assert callable(cool::Case.__init__)
-
-
-def test_cool::case_constructor_args():
-    sig = inspect.signature(cool::Case.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_cool::caseexpression_is_not_abstract():
-    assert not inspect.isabstract(cool::CaseExpression)
-
-
-def test_cool::caseexpression_constructor_exists():
-    assert callable(cool::CaseExpression.__init__)
-
-
-def test_cool::caseexpression_constructor_args():
-    sig = inspect.signature(cool::CaseExpression.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_cool::letdeclaration_is_not_abstract():
-    assert not inspect.isabstract(cool::LetDeclaration)
-
-
-def test_cool::letdeclaration_constructor_exists():
-    assert callable(cool::LetDeclaration.__init__)
-
-
-def test_cool::letdeclaration_constructor_args():
-    sig = inspect.signature(cool::LetDeclaration.__init__)
+def test_cool_program_constructor_args():
+    sig = inspect.signature(cool_Program.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -702,137 +702,137 @@ safe_text = st.text(
 PrimaryExpression_strategy = st.builds(
     PrimaryExpression,
 )
-cool::AssignmentExpression_strategy = st.builds(
-    cool::AssignmentExpression,
+cool_IsvoidExpression_strategy = st.builds(
+    cool_IsvoidExpression,
+)
+cool_NegationExpression_strategy = st.builds(
+    cool_NegationExpression,
+)
+cool_AssignmentExpression_strategy = st.builds(
+    cool_AssignmentExpression,
     name=
         safe_text
 )
-cool::NegationExpression_strategy = st.builds(
-    cool::NegationExpression,
+cool_ConditionalExpression_strategy = st.builds(
+    cool_ConditionalExpression,
 )
-cool::DispatchExpression_strategy = st.builds(
-    cool::DispatchExpression,
+cool_CaseExpression_strategy = st.builds(
+    cool_CaseExpression,
 )
-cool::IntegerCompositeExpression_strategy = st.builds(
-    cool::IntegerCompositeExpression,
+cool_LoopExpression_strategy = st.builds(
+    cool_LoopExpression,
 )
-cool::IsvoidExpression_strategy = st.builds(
-    cool::IsvoidExpression,
+cool_IntegerCompositeExpression_strategy = st.builds(
+    cool_IntegerCompositeExpression,
 )
-cool::LoopExpression_strategy = st.builds(
-    cool::LoopExpression,
+cool_NewExpression_strategy = st.builds(
+    cool_NewExpression,
 )
-cool::BlockExpression_strategy = st.builds(
-    cool::BlockExpression,
+cool_DispatchExpression_strategy = st.builds(
+    cool_DispatchExpression,
 )
-cool::LetExpression_strategy = st.builds(
-    cool::LetExpression,
+cool_BlockExpression_strategy = st.builds(
+    cool_BlockExpression,
 )
-cool::ConditionalExpression_strategy = st.builds(
-    cool::ConditionalExpression,
+cool_LetExpression_strategy = st.builds(
+    cool_LetExpression,
 )
-cool::NewExpression_strategy = st.builds(
-    cool::NewExpression,
-)
-cool::SelfTypeLiteral_strategy = st.builds(
-    cool::SelfTypeLiteral,
+cool_SelfTypeLiteral_strategy = st.builds(
+    cool_SelfTypeLiteral,
 )
 Expression_strategy = st.builds(
     Expression,
 )
-cool::CompareExpression_strategy = st.builds(
-    cool::CompareExpression,
+cool_Minus_strategy = st.builds(
+    cool_Minus,
+)
+cool_MultiplicationExpression_strategy = st.builds(
+    cool_MultiplicationExpression,
+)
+cool_AdditionExpression_strategy = st.builds(
+    cool_AdditionExpression,
+)
+cool_Div_strategy = st.builds(
+    cool_Div,
+)
+cool_CompareExpression_strategy = st.builds(
+    cool_CompareExpression,
     op=
         safe_text
 )
-cool::PrimaryExpression_strategy = st.builds(
-    cool::PrimaryExpression,
+cool_PrimaryExpression_strategy = st.builds(
+    cool_PrimaryExpression,
 )
-cool::Expression_strategy = st.builds(
-    cool::Expression,
+cool_Expression_strategy = st.builds(
+    cool_Expression,
 )
-Feature::_strategy = st.builds(
-    Feature::,
+Feature__strategy = st.builds(
+    Feature_,
 )
-cool::Method_strategy = st.builds(
-    cool::Method,
+cool_Method_strategy = st.builds(
+    cool_Method,
 )
-cool::Attr_strategy = st.builds(
-    cool::Attr,
+cool_Attr_strategy = st.builds(
+    cool_Attr,
 )
-cool::Type_strategy = st.builds(
-    cool::Type,
+cool_Type_strategy = st.builds(
+    cool_Type,
 )
 IdentifiableElement_strategy = st.builds(
     IdentifiableElement,
 )
-cool::Formal_strategy = st.builds(
-    cool::Formal,
+cool_Case_strategy = st.builds(
+    cool_Case,
 )
-cool::Feature::_strategy = st.builds(
-    cool::Feature::,
+cool_Feature__strategy = st.builds(
+    cool_Feature_,
+)
+cool_LetDeclaration_strategy = st.builds(
+    cool_LetDeclaration,
+)
+cool_Formal_strategy = st.builds(
+    cool_Formal,
 )
 Type_strategy = st.builds(
     Type,
 )
-cool::ParenExpression_strategy = st.builds(
-    cool::ParenExpression,
+cool_ParenExpression_strategy = st.builds(
+    cool_ParenExpression,
 )
 Literal_strategy = st.builds(
     Literal,
 )
-cool::BooleanLiteral_strategy = st.builds(
-    cool::BooleanLiteral,
+cool_StringLiteral_strategy = st.builds(
+    cool_StringLiteral,
     value=
         safe_text
 )
-cool::StringLiteral_strategy = st.builds(
-    cool::StringLiteral,
+cool_BooleanLiteral_strategy = st.builds(
+    cool_BooleanLiteral,
     value=
         safe_text
 )
-cool::NumberLiteral_strategy = st.builds(
-    cool::NumberLiteral,
+cool_NumberLiteral_strategy = st.builds(
+    cool_NumberLiteral,
     value=
         st.integers()
 )
-cool::Literal_strategy = st.builds(
-    cool::Literal,
+cool_Literal_strategy = st.builds(
+    cool_Literal,
 )
-cool::IdentifiableElement_strategy = st.builds(
-    cool::IdentifiableElement,
+cool_IdentifiableElement_strategy = st.builds(
+    cool_IdentifiableElement,
     name=
         safe_text
 )
-cool::IdentifierRefExpression_strategy = st.builds(
-    cool::IdentifierRefExpression,
+cool_IdentifierRefExpression_strategy = st.builds(
+    cool_IdentifierRefExpression,
 )
-cool::Class::_strategy = st.builds(
-    cool::Class::,
+cool_Class__strategy = st.builds(
+    cool_Class_,
 )
-cool::Program_strategy = st.builds(
-    cool::Program,
-)
-cool::Div_strategy = st.builds(
-    cool::Div,
-)
-cool::MultiplicationExpression_strategy = st.builds(
-    cool::MultiplicationExpression,
-)
-cool::Minus_strategy = st.builds(
-    cool::Minus,
-)
-cool::AdditionExpression_strategy = st.builds(
-    cool::AdditionExpression,
-)
-cool::Case_strategy = st.builds(
-    cool::Case,
-)
-cool::CaseExpression_strategy = st.builds(
-    cool::CaseExpression,
-)
-cool::LetDeclaration_strategy = st.builds(
-    cool::LetDeclaration,
+cool_Program_strategy = st.builds(
+    cool_Program,
 )
 
 @given(instance=PrimaryExpression_strategy)
@@ -840,268 +840,250 @@ cool::LetDeclaration_strategy = st.builds(
 def test_primaryexpression_instantiation(instance):
     assert isinstance(instance, PrimaryExpression)
 
-@given(instance=cool::AssignmentExpression_strategy)
+@given(instance=cool_IsvoidExpression_strategy)
 @settings(max_examples=50)
-def test_cool::assignmentexpression_instantiation(instance):
-    assert isinstance(instance, cool::AssignmentExpression)
+def test_cool_isvoidexpression_instantiation(instance):
+    assert isinstance(instance, cool_IsvoidExpression)
 
-@given(instance=cool::AssignmentExpression_strategy)
-def test_cool::assignmentexpression_name_type(instance):
-    assert isinstance(instance.name, str)
+@given(instance=cool_NegationExpression_strategy)
+@settings(max_examples=50)
+def test_cool_negationexpression_instantiation(instance):
+    assert isinstance(instance, cool_NegationExpression)
+
+@given(instance=cool_AssignmentExpression_strategy)
+@settings(max_examples=50)
+def test_cool_assignmentexpression_instantiation(instance):
+    assert isinstance(instance, cool_AssignmentExpression)
 
 
-@given(instance=cool::AssignmentExpression_strategy)
-def test_cool::assignmentexpression_name_setter(instance):
+
+@given(instance=cool_AssignmentExpression_strategy)
+def test_cool_assignmentexpression_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=cool::NegationExpression_strategy)
+@given(instance=cool_ConditionalExpression_strategy)
 @settings(max_examples=50)
-def test_cool::negationexpression_instantiation(instance):
-    assert isinstance(instance, cool::NegationExpression)
+def test_cool_conditionalexpression_instantiation(instance):
+    assert isinstance(instance, cool_ConditionalExpression)
 
-@given(instance=cool::DispatchExpression_strategy)
+@given(instance=cool_CaseExpression_strategy)
 @settings(max_examples=50)
-def test_cool::dispatchexpression_instantiation(instance):
-    assert isinstance(instance, cool::DispatchExpression)
+def test_cool_caseexpression_instantiation(instance):
+    assert isinstance(instance, cool_CaseExpression)
 
-@given(instance=cool::IntegerCompositeExpression_strategy)
+@given(instance=cool_LoopExpression_strategy)
 @settings(max_examples=50)
-def test_cool::integercompositeexpression_instantiation(instance):
-    assert isinstance(instance, cool::IntegerCompositeExpression)
+def test_cool_loopexpression_instantiation(instance):
+    assert isinstance(instance, cool_LoopExpression)
 
-@given(instance=cool::IsvoidExpression_strategy)
+@given(instance=cool_IntegerCompositeExpression_strategy)
 @settings(max_examples=50)
-def test_cool::isvoidexpression_instantiation(instance):
-    assert isinstance(instance, cool::IsvoidExpression)
+def test_cool_integercompositeexpression_instantiation(instance):
+    assert isinstance(instance, cool_IntegerCompositeExpression)
 
-@given(instance=cool::LoopExpression_strategy)
+@given(instance=cool_NewExpression_strategy)
 @settings(max_examples=50)
-def test_cool::loopexpression_instantiation(instance):
-    assert isinstance(instance, cool::LoopExpression)
+def test_cool_newexpression_instantiation(instance):
+    assert isinstance(instance, cool_NewExpression)
 
-@given(instance=cool::BlockExpression_strategy)
+@given(instance=cool_DispatchExpression_strategy)
 @settings(max_examples=50)
-def test_cool::blockexpression_instantiation(instance):
-    assert isinstance(instance, cool::BlockExpression)
+def test_cool_dispatchexpression_instantiation(instance):
+    assert isinstance(instance, cool_DispatchExpression)
 
-@given(instance=cool::LetExpression_strategy)
+@given(instance=cool_BlockExpression_strategy)
 @settings(max_examples=50)
-def test_cool::letexpression_instantiation(instance):
-    assert isinstance(instance, cool::LetExpression)
+def test_cool_blockexpression_instantiation(instance):
+    assert isinstance(instance, cool_BlockExpression)
 
-@given(instance=cool::ConditionalExpression_strategy)
+@given(instance=cool_LetExpression_strategy)
 @settings(max_examples=50)
-def test_cool::conditionalexpression_instantiation(instance):
-    assert isinstance(instance, cool::ConditionalExpression)
+def test_cool_letexpression_instantiation(instance):
+    assert isinstance(instance, cool_LetExpression)
 
-@given(instance=cool::NewExpression_strategy)
+@given(instance=cool_SelfTypeLiteral_strategy)
 @settings(max_examples=50)
-def test_cool::newexpression_instantiation(instance):
-    assert isinstance(instance, cool::NewExpression)
-
-@given(instance=cool::SelfTypeLiteral_strategy)
-@settings(max_examples=50)
-def test_cool::selftypeliteral_instantiation(instance):
-    assert isinstance(instance, cool::SelfTypeLiteral)
+def test_cool_selftypeliteral_instantiation(instance):
+    assert isinstance(instance, cool_SelfTypeLiteral)
 
 @given(instance=Expression_strategy)
 @settings(max_examples=50)
 def test_expression_instantiation(instance):
     assert isinstance(instance, Expression)
 
-@given(instance=cool::CompareExpression_strategy)
+@given(instance=cool_Minus_strategy)
 @settings(max_examples=50)
-def test_cool::compareexpression_instantiation(instance):
-    assert isinstance(instance, cool::CompareExpression)
+def test_cool_minus_instantiation(instance):
+    assert isinstance(instance, cool_Minus)
 
-@given(instance=cool::CompareExpression_strategy)
-def test_cool::compareexpression_op_type(instance):
-    assert isinstance(instance.op, str)
+@given(instance=cool_MultiplicationExpression_strategy)
+@settings(max_examples=50)
+def test_cool_multiplicationexpression_instantiation(instance):
+    assert isinstance(instance, cool_MultiplicationExpression)
+
+@given(instance=cool_AdditionExpression_strategy)
+@settings(max_examples=50)
+def test_cool_additionexpression_instantiation(instance):
+    assert isinstance(instance, cool_AdditionExpression)
+
+@given(instance=cool_Div_strategy)
+@settings(max_examples=50)
+def test_cool_div_instantiation(instance):
+    assert isinstance(instance, cool_Div)
+
+@given(instance=cool_CompareExpression_strategy)
+@settings(max_examples=50)
+def test_cool_compareexpression_instantiation(instance):
+    assert isinstance(instance, cool_CompareExpression)
 
 
-@given(instance=cool::CompareExpression_strategy)
-def test_cool::compareexpression_op_setter(instance):
+
+@given(instance=cool_CompareExpression_strategy)
+def test_cool_compareexpression_op_setter(instance):
     original = instance.op
     instance.op = original
     assert instance.op == original
 
-@given(instance=cool::PrimaryExpression_strategy)
+@given(instance=cool_PrimaryExpression_strategy)
 @settings(max_examples=50)
-def test_cool::primaryexpression_instantiation(instance):
-    assert isinstance(instance, cool::PrimaryExpression)
+def test_cool_primaryexpression_instantiation(instance):
+    assert isinstance(instance, cool_PrimaryExpression)
 
-@given(instance=cool::Expression_strategy)
+@given(instance=cool_Expression_strategy)
 @settings(max_examples=50)
-def test_cool::expression_instantiation(instance):
-    assert isinstance(instance, cool::Expression)
+def test_cool_expression_instantiation(instance):
+    assert isinstance(instance, cool_Expression)
 
-@given(instance=Feature::_strategy)
+@given(instance=Feature__strategy)
 @settings(max_examples=50)
-def test_feature::_instantiation(instance):
-    assert isinstance(instance, Feature::)
+def test_feature__instantiation(instance):
+    assert isinstance(instance, Feature_)
 
-@given(instance=cool::Method_strategy)
+@given(instance=cool_Method_strategy)
 @settings(max_examples=50)
-def test_cool::method_instantiation(instance):
-    assert isinstance(instance, cool::Method)
+def test_cool_method_instantiation(instance):
+    assert isinstance(instance, cool_Method)
 
-@given(instance=cool::Attr_strategy)
+@given(instance=cool_Attr_strategy)
 @settings(max_examples=50)
-def test_cool::attr_instantiation(instance):
-    assert isinstance(instance, cool::Attr)
+def test_cool_attr_instantiation(instance):
+    assert isinstance(instance, cool_Attr)
 
-@given(instance=cool::Type_strategy)
+@given(instance=cool_Type_strategy)
 @settings(max_examples=50)
-def test_cool::type_instantiation(instance):
-    assert isinstance(instance, cool::Type)
+def test_cool_type_instantiation(instance):
+    assert isinstance(instance, cool_Type)
 
 @given(instance=IdentifiableElement_strategy)
 @settings(max_examples=50)
 def test_identifiableelement_instantiation(instance):
     assert isinstance(instance, IdentifiableElement)
 
-@given(instance=cool::Formal_strategy)
+@given(instance=cool_Case_strategy)
 @settings(max_examples=50)
-def test_cool::formal_instantiation(instance):
-    assert isinstance(instance, cool::Formal)
+def test_cool_case_instantiation(instance):
+    assert isinstance(instance, cool_Case)
 
-@given(instance=cool::Feature::_strategy)
+@given(instance=cool_Feature__strategy)
 @settings(max_examples=50)
-def test_cool::feature::_instantiation(instance):
-    assert isinstance(instance, cool::Feature::)
+def test_cool_feature__instantiation(instance):
+    assert isinstance(instance, cool_Feature_)
+
+@given(instance=cool_LetDeclaration_strategy)
+@settings(max_examples=50)
+def test_cool_letdeclaration_instantiation(instance):
+    assert isinstance(instance, cool_LetDeclaration)
+
+@given(instance=cool_Formal_strategy)
+@settings(max_examples=50)
+def test_cool_formal_instantiation(instance):
+    assert isinstance(instance, cool_Formal)
 
 @given(instance=Type_strategy)
 @settings(max_examples=50)
 def test_type_instantiation(instance):
     assert isinstance(instance, Type)
 
-@given(instance=cool::ParenExpression_strategy)
+@given(instance=cool_ParenExpression_strategy)
 @settings(max_examples=50)
-def test_cool::parenexpression_instantiation(instance):
-    assert isinstance(instance, cool::ParenExpression)
+def test_cool_parenexpression_instantiation(instance):
+    assert isinstance(instance, cool_ParenExpression)
 
 @given(instance=Literal_strategy)
 @settings(max_examples=50)
 def test_literal_instantiation(instance):
     assert isinstance(instance, Literal)
 
-@given(instance=cool::BooleanLiteral_strategy)
+@given(instance=cool_StringLiteral_strategy)
 @settings(max_examples=50)
-def test_cool::booleanliteral_instantiation(instance):
-    assert isinstance(instance, cool::BooleanLiteral)
-
-@given(instance=cool::BooleanLiteral_strategy)
-def test_cool::booleanliteral_value_type(instance):
-    assert isinstance(instance.value, str)
+def test_cool_stringliteral_instantiation(instance):
+    assert isinstance(instance, cool_StringLiteral)
 
 
-@given(instance=cool::BooleanLiteral_strategy)
-def test_cool::booleanliteral_value_setter(instance):
+
+@given(instance=cool_StringLiteral_strategy)
+def test_cool_stringliteral_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
 
-@given(instance=cool::StringLiteral_strategy)
+@given(instance=cool_BooleanLiteral_strategy)
 @settings(max_examples=50)
-def test_cool::stringliteral_instantiation(instance):
-    assert isinstance(instance, cool::StringLiteral)
-
-@given(instance=cool::StringLiteral_strategy)
-def test_cool::stringliteral_value_type(instance):
-    assert isinstance(instance.value, str)
+def test_cool_booleanliteral_instantiation(instance):
+    assert isinstance(instance, cool_BooleanLiteral)
 
 
-@given(instance=cool::StringLiteral_strategy)
-def test_cool::stringliteral_value_setter(instance):
+
+@given(instance=cool_BooleanLiteral_strategy)
+def test_cool_booleanliteral_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
 
-@given(instance=cool::NumberLiteral_strategy)
+@given(instance=cool_NumberLiteral_strategy)
 @settings(max_examples=50)
-def test_cool::numberliteral_instantiation(instance):
-    assert isinstance(instance, cool::NumberLiteral)
-
-@given(instance=cool::NumberLiteral_strategy)
-def test_cool::numberliteral_value_type(instance):
-    assert isinstance(instance.value, int)
+def test_cool_numberliteral_instantiation(instance):
+    assert isinstance(instance, cool_NumberLiteral)
 
 
-@given(instance=cool::NumberLiteral_strategy)
-def test_cool::numberliteral_value_setter(instance):
+
+@given(instance=cool_NumberLiteral_strategy)
+def test_cool_numberliteral_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
 
-@given(instance=cool::Literal_strategy)
+@given(instance=cool_Literal_strategy)
 @settings(max_examples=50)
-def test_cool::literal_instantiation(instance):
-    assert isinstance(instance, cool::Literal)
+def test_cool_literal_instantiation(instance):
+    assert isinstance(instance, cool_Literal)
 
-@given(instance=cool::IdentifiableElement_strategy)
+@given(instance=cool_IdentifiableElement_strategy)
 @settings(max_examples=50)
-def test_cool::identifiableelement_instantiation(instance):
-    assert isinstance(instance, cool::IdentifiableElement)
-
-@given(instance=cool::IdentifiableElement_strategy)
-def test_cool::identifiableelement_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_cool_identifiableelement_instantiation(instance):
+    assert isinstance(instance, cool_IdentifiableElement)
 
 
-@given(instance=cool::IdentifiableElement_strategy)
-def test_cool::identifiableelement_name_setter(instance):
+
+@given(instance=cool_IdentifiableElement_strategy)
+def test_cool_identifiableelement_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=cool::IdentifierRefExpression_strategy)
+@given(instance=cool_IdentifierRefExpression_strategy)
 @settings(max_examples=50)
-def test_cool::identifierrefexpression_instantiation(instance):
-    assert isinstance(instance, cool::IdentifierRefExpression)
+def test_cool_identifierrefexpression_instantiation(instance):
+    assert isinstance(instance, cool_IdentifierRefExpression)
 
-@given(instance=cool::Class::_strategy)
+@given(instance=cool_Class__strategy)
 @settings(max_examples=50)
-def test_cool::class::_instantiation(instance):
-    assert isinstance(instance, cool::Class::)
+def test_cool_class__instantiation(instance):
+    assert isinstance(instance, cool_Class_)
 
-@given(instance=cool::Program_strategy)
+@given(instance=cool_Program_strategy)
 @settings(max_examples=50)
-def test_cool::program_instantiation(instance):
-    assert isinstance(instance, cool::Program)
-
-@given(instance=cool::Div_strategy)
-@settings(max_examples=50)
-def test_cool::div_instantiation(instance):
-    assert isinstance(instance, cool::Div)
-
-@given(instance=cool::MultiplicationExpression_strategy)
-@settings(max_examples=50)
-def test_cool::multiplicationexpression_instantiation(instance):
-    assert isinstance(instance, cool::MultiplicationExpression)
-
-@given(instance=cool::Minus_strategy)
-@settings(max_examples=50)
-def test_cool::minus_instantiation(instance):
-    assert isinstance(instance, cool::Minus)
-
-@given(instance=cool::AdditionExpression_strategy)
-@settings(max_examples=50)
-def test_cool::additionexpression_instantiation(instance):
-    assert isinstance(instance, cool::AdditionExpression)
-
-@given(instance=cool::Case_strategy)
-@settings(max_examples=50)
-def test_cool::case_instantiation(instance):
-    assert isinstance(instance, cool::Case)
-
-@given(instance=cool::CaseExpression_strategy)
-@settings(max_examples=50)
-def test_cool::caseexpression_instantiation(instance):
-    assert isinstance(instance, cool::CaseExpression)
-
-@given(instance=cool::LetDeclaration_strategy)
-@settings(max_examples=50)
-def test_cool::letdeclaration_instantiation(instance):
-    assert isinstance(instance, cool::LetDeclaration)
+def test_cool_program_instantiation(instance):
+    assert isinstance(instance, cool_Program)

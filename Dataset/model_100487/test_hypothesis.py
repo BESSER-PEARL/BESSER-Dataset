@@ -3,28 +3,28 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    uisut::UISUTElement,
+from python_code import (
+    uisut_UISUTElement,
     AbstractState,
-    uisut::InitialState,
-    uisut::FinalState,
-    uisut::UIState,
+    uisut_InitialState,
+    uisut_FinalState,
+    uisut_UIState,
     UITrigger,
-    uisut::ComponentTrigger,
-    uisut::UserTrigger,
+    uisut_ComponentTrigger,
+    uisut_UserTrigger,
     UISUTElement,
-    uisut::UIControl,
-    uisut::UITrigger,
-    uisut::UITransition,
-    uisut::UIDataVariable,
-    uisut::UIStatemachine,
-    uisut::AbstractState,
-    uisut::ApplicationSystem,
-    uisut::Action,
-    uisut::UICondition,
-    uisut::UISUT,
+    uisut_ApplicationSystem,
+    uisut_Action,
+    uisut_UIControl,
+    uisut_UITrigger,
+    uisut_UIStatemachine,
+    uisut_UIDataVariable,
+    uisut_UICondition,
+    uisut_AbstractState,
+    uisut_UITransition,
+    uisut_UISUT,
 )
 
 # =============================================================================
@@ -33,45 +33,45 @@ from classes import (
 
 
 
-def test_uisut::uisutelement_is_not_abstract():
-    assert not inspect.isabstract(uisut::UISUTElement)
+def test_uisut_uisutelement_is_not_abstract():
+    assert not inspect.isabstract(uisut_UISUTElement)
 
 
-def test_uisut::uisutelement_constructor_exists():
-    assert callable(uisut::UISUTElement.__init__)
+def test_uisut_uisutelement_constructor_exists():
+    assert callable(uisut_UISUTElement.__init__)
 
 
-def test_uisut::uisutelement_constructor_args():
-    sig = inspect.signature(uisut::UISUTElement.__init__)
+def test_uisut_uisutelement_constructor_args():
+    sig = inspect.signature(uisut_UISUTElement.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
-    assert "id" in params, "Missing parameter 'id'"
     assert "description" in params, "Missing parameter 'description'"
+    assert "id" in params, "Missing parameter 'id'"
 
-def test_uisut::uisutelement_has_name():
-    assert hasattr(uisut::UISUTElement, "name")
+def test_uisut_uisutelement_has_name():
+    assert hasattr(uisut_UISUTElement, "name")
     descriptor = None
-    for klass in uisut::UISUTElement.__mro__:
+    for klass in uisut_UISUTElement.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
-def test_uisut::uisutelement_has_id():
-    assert hasattr(uisut::UISUTElement, "id")
+def test_uisut_uisutelement_has_description():
+    assert hasattr(uisut_UISUTElement, "description")
     descriptor = None
-    for klass in uisut::UISUTElement.__mro__:
-        if "id" in klass.__dict__:
-            descriptor = klass.__dict__["id"]
+    for klass in uisut_UISUTElement.__mro__:
+        if "description" in klass.__dict__:
+            descriptor = klass.__dict__["description"]
             break
     assert isinstance(descriptor, property)
 
-def test_uisut::uisutelement_has_description():
-    assert hasattr(uisut::UISUTElement, "description")
+def test_uisut_uisutelement_has_id():
+    assert hasattr(uisut_UISUTElement, "id")
     descriptor = None
-    for klass in uisut::UISUTElement.__mro__:
-        if "description" in klass.__dict__:
-            descriptor = klass.__dict__["description"]
+    for klass in uisut_UISUTElement.__mro__:
+        if "id" in klass.__dict__:
+            descriptor = klass.__dict__["id"]
             break
     assert isinstance(descriptor, property)
 
@@ -91,63 +91,63 @@ def test_abstractstate_constructor_args():
 
 
 
-def test_uisut::initialstate_is_not_abstract():
-    assert not inspect.isabstract(uisut::InitialState)
+def test_uisut_initialstate_is_not_abstract():
+    assert not inspect.isabstract(uisut_InitialState)
 
 
-def test_uisut::initialstate_constructor_exists():
-    assert callable(uisut::InitialState.__init__)
+def test_uisut_initialstate_constructor_exists():
+    assert callable(uisut_InitialState.__init__)
 
 
-def test_uisut::initialstate_constructor_args():
-    sig = inspect.signature(uisut::InitialState.__init__)
+def test_uisut_initialstate_constructor_args():
+    sig = inspect.signature(uisut_InitialState.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_uisut::finalstate_is_not_abstract():
-    assert not inspect.isabstract(uisut::FinalState)
+def test_uisut_finalstate_is_not_abstract():
+    assert not inspect.isabstract(uisut_FinalState)
 
 
-def test_uisut::finalstate_constructor_exists():
-    assert callable(uisut::FinalState.__init__)
+def test_uisut_finalstate_constructor_exists():
+    assert callable(uisut_FinalState.__init__)
 
 
-def test_uisut::finalstate_constructor_args():
-    sig = inspect.signature(uisut::FinalState.__init__)
+def test_uisut_finalstate_constructor_args():
+    sig = inspect.signature(uisut_FinalState.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_uisut::uistate_is_not_abstract():
-    assert not inspect.isabstract(uisut::UIState)
+def test_uisut_uistate_is_not_abstract():
+    assert not inspect.isabstract(uisut_UIState)
 
 
-def test_uisut::uistate_constructor_exists():
-    assert callable(uisut::UIState.__init__)
+def test_uisut_uistate_constructor_exists():
+    assert callable(uisut_UIState.__init__)
 
 
-def test_uisut::uistate_constructor_args():
-    sig = inspect.signature(uisut::UIState.__init__)
+def test_uisut_uistate_constructor_args():
+    sig = inspect.signature(uisut_UIState.__init__)
     params = list(sig.parameters.keys())
-    assert "pic" in params, "Missing parameter 'pic'"
     assert "isInitial" in params, "Missing parameter 'isInitial'"
+    assert "pic" in params, "Missing parameter 'pic'"
 
-def test_uisut::uistate_has_pic():
-    assert hasattr(uisut::UIState, "pic")
+def test_uisut_uistate_has_isInitial():
+    assert hasattr(uisut_UIState, "isInitial")
     descriptor = None
-    for klass in uisut::UIState.__mro__:
-        if "pic" in klass.__dict__:
-            descriptor = klass.__dict__["pic"]
+    for klass in uisut_UIState.__mro__:
+        if "isInitial" in klass.__dict__:
+            descriptor = klass.__dict__["isInitial"]
             break
     assert isinstance(descriptor, property)
 
-def test_uisut::uistate_has_isInitial():
-    assert hasattr(uisut::UIState, "isInitial")
+def test_uisut_uistate_has_pic():
+    assert hasattr(uisut_UIState, "pic")
     descriptor = None
-    for klass in uisut::UIState.__mro__:
-        if "isInitial" in klass.__dict__:
-            descriptor = klass.__dict__["isInitial"]
+    for klass in uisut_UIState.__mro__:
+        if "pic" in klass.__dict__:
+            descriptor = klass.__dict__["pic"]
             break
     assert isinstance(descriptor, property)
 
@@ -167,30 +167,30 @@ def test_uitrigger_constructor_args():
 
 
 
-def test_uisut::componenttrigger_is_not_abstract():
-    assert not inspect.isabstract(uisut::ComponentTrigger)
+def test_uisut_componenttrigger_is_not_abstract():
+    assert not inspect.isabstract(uisut_ComponentTrigger)
 
 
-def test_uisut::componenttrigger_constructor_exists():
-    assert callable(uisut::ComponentTrigger.__init__)
+def test_uisut_componenttrigger_constructor_exists():
+    assert callable(uisut_ComponentTrigger.__init__)
 
 
-def test_uisut::componenttrigger_constructor_args():
-    sig = inspect.signature(uisut::ComponentTrigger.__init__)
+def test_uisut_componenttrigger_constructor_args():
+    sig = inspect.signature(uisut_ComponentTrigger.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_uisut::usertrigger_is_not_abstract():
-    assert not inspect.isabstract(uisut::UserTrigger)
+def test_uisut_usertrigger_is_not_abstract():
+    assert not inspect.isabstract(uisut_UserTrigger)
 
 
-def test_uisut::usertrigger_constructor_exists():
-    assert callable(uisut::UserTrigger.__init__)
+def test_uisut_usertrigger_constructor_exists():
+    assert callable(uisut_UserTrigger.__init__)
 
 
-def test_uisut::usertrigger_constructor_args():
-    sig = inspect.signature(uisut::UserTrigger.__init__)
+def test_uisut_usertrigger_constructor_args():
+    sig = inspect.signature(uisut_UserTrigger.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -209,125 +209,113 @@ def test_uisutelement_constructor_args():
 
 
 
-def test_uisut::uicontrol_is_not_abstract():
-    assert not inspect.isabstract(uisut::UIControl)
+def test_uisut_applicationsystem_is_not_abstract():
+    assert not inspect.isabstract(uisut_ApplicationSystem)
 
 
-def test_uisut::uicontrol_constructor_exists():
-    assert callable(uisut::UIControl.__init__)
+def test_uisut_applicationsystem_constructor_exists():
+    assert callable(uisut_ApplicationSystem.__init__)
 
 
-def test_uisut::uicontrol_constructor_args():
-    sig = inspect.signature(uisut::UIControl.__init__)
+def test_uisut_applicationsystem_constructor_args():
+    sig = inspect.signature(uisut_ApplicationSystem.__init__)
     params = list(sig.parameters.keys())
-    assert "valueExpression" in params, "Missing parameter 'valueExpression'"
+
+
+
+def test_uisut_action_is_not_abstract():
+    assert not inspect.isabstract(uisut_Action)
+
+
+def test_uisut_action_constructor_exists():
+    assert callable(uisut_Action.__init__)
+
+
+def test_uisut_action_constructor_args():
+    sig = inspect.signature(uisut_Action.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_uisut_uicontrol_is_not_abstract():
+    assert not inspect.isabstract(uisut_UIControl)
+
+
+def test_uisut_uicontrol_constructor_exists():
+    assert callable(uisut_UIControl.__init__)
+
+
+def test_uisut_uicontrol_constructor_args():
+    sig = inspect.signature(uisut_UIControl.__init__)
+    params = list(sig.parameters.keys())
     assert "variableName" in params, "Missing parameter 'variableName'"
+    assert "valueExpression" in params, "Missing parameter 'valueExpression'"
 
-def test_uisut::uicontrol_has_valueExpression():
-    assert hasattr(uisut::UIControl, "valueExpression")
+def test_uisut_uicontrol_has_variableName():
+    assert hasattr(uisut_UIControl, "variableName")
     descriptor = None
-    for klass in uisut::UIControl.__mro__:
-        if "valueExpression" in klass.__dict__:
-            descriptor = klass.__dict__["valueExpression"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_uisut::uicontrol_has_variableName():
-    assert hasattr(uisut::UIControl, "variableName")
-    descriptor = None
-    for klass in uisut::UIControl.__mro__:
+    for klass in uisut_UIControl.__mro__:
         if "variableName" in klass.__dict__:
             descriptor = klass.__dict__["variableName"]
             break
     assert isinstance(descriptor, property)
 
+def test_uisut_uicontrol_has_valueExpression():
+    assert hasattr(uisut_UIControl, "valueExpression")
+    descriptor = None
+    for klass in uisut_UIControl.__mro__:
+        if "valueExpression" in klass.__dict__:
+            descriptor = klass.__dict__["valueExpression"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_uisut::uitrigger_is_not_abstract():
-    assert not inspect.isabstract(uisut::UITrigger)
+
+def test_uisut_uitrigger_is_not_abstract():
+    assert not inspect.isabstract(uisut_UITrigger)
 
 
-def test_uisut::uitrigger_constructor_exists():
-    assert callable(uisut::UITrigger.__init__)
+def test_uisut_uitrigger_constructor_exists():
+    assert callable(uisut_UITrigger.__init__)
 
 
-def test_uisut::uitrigger_constructor_args():
-    sig = inspect.signature(uisut::UITrigger.__init__)
+def test_uisut_uitrigger_constructor_args():
+    sig = inspect.signature(uisut_UITrigger.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_uisut::uitransition_is_not_abstract():
-    assert not inspect.isabstract(uisut::UITransition)
+def test_uisut_uistatemachine_is_not_abstract():
+    assert not inspect.isabstract(uisut_UIStatemachine)
 
 
-def test_uisut::uitransition_constructor_exists():
-    assert callable(uisut::UITransition.__init__)
+def test_uisut_uistatemachine_constructor_exists():
+    assert callable(uisut_UIStatemachine.__init__)
 
 
-def test_uisut::uitransition_constructor_args():
-    sig = inspect.signature(uisut::UITransition.__init__)
+def test_uisut_uistatemachine_constructor_args():
+    sig = inspect.signature(uisut_UIStatemachine.__init__)
     params = list(sig.parameters.keys())
-    assert "guardStr" in params, "Missing parameter 'guardStr'"
-    assert "triggerStr" in params, "Missing parameter 'triggerStr'"
-    assert "scriptStr" in params, "Missing parameter 'scriptStr'"
-    assert "actionStr" in params, "Missing parameter 'actionStr'"
-
-def test_uisut::uitransition_has_guardStr():
-    assert hasattr(uisut::UITransition, "guardStr")
-    descriptor = None
-    for klass in uisut::UITransition.__mro__:
-        if "guardStr" in klass.__dict__:
-            descriptor = klass.__dict__["guardStr"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_uisut::uitransition_has_triggerStr():
-    assert hasattr(uisut::UITransition, "triggerStr")
-    descriptor = None
-    for klass in uisut::UITransition.__mro__:
-        if "triggerStr" in klass.__dict__:
-            descriptor = klass.__dict__["triggerStr"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_uisut::uitransition_has_scriptStr():
-    assert hasattr(uisut::UITransition, "scriptStr")
-    descriptor = None
-    for klass in uisut::UITransition.__mro__:
-        if "scriptStr" in klass.__dict__:
-            descriptor = klass.__dict__["scriptStr"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_uisut::uitransition_has_actionStr():
-    assert hasattr(uisut::UITransition, "actionStr")
-    descriptor = None
-    for klass in uisut::UITransition.__mro__:
-        if "actionStr" in klass.__dict__:
-            descriptor = klass.__dict__["actionStr"]
-            break
-    assert isinstance(descriptor, property)
 
 
 
-def test_uisut::uidatavariable_is_not_abstract():
-    assert not inspect.isabstract(uisut::UIDataVariable)
+def test_uisut_uidatavariable_is_not_abstract():
+    assert not inspect.isabstract(uisut_UIDataVariable)
 
 
-def test_uisut::uidatavariable_constructor_exists():
-    assert callable(uisut::UIDataVariable.__init__)
+def test_uisut_uidatavariable_constructor_exists():
+    assert callable(uisut_UIDataVariable.__init__)
 
 
-def test_uisut::uidatavariable_constructor_args():
-    sig = inspect.signature(uisut::UIDataVariable.__init__)
+def test_uisut_uidatavariable_constructor_args():
+    sig = inspect.signature(uisut_UIDataVariable.__init__)
     params = list(sig.parameters.keys())
     assert "constraintRE" in params, "Missing parameter 'constraintRE'"
 
-def test_uisut::uidatavariable_has_constraintRE():
-    assert hasattr(uisut::UIDataVariable, "constraintRE")
+def test_uisut_uidatavariable_has_constraintRE():
+    assert hasattr(uisut_UIDataVariable, "constraintRE")
     descriptor = None
-    for klass in uisut::UIDataVariable.__mro__:
+    for klass in uisut_UIDataVariable.__mro__:
         if "constraintRE" in klass.__dict__:
             descriptor = klass.__dict__["constraintRE"]
             break
@@ -335,86 +323,98 @@ def test_uisut::uidatavariable_has_constraintRE():
 
 
 
-def test_uisut::uistatemachine_is_not_abstract():
-    assert not inspect.isabstract(uisut::UIStatemachine)
+def test_uisut_uicondition_is_not_abstract():
+    assert not inspect.isabstract(uisut_UICondition)
 
 
-def test_uisut::uistatemachine_constructor_exists():
-    assert callable(uisut::UIStatemachine.__init__)
+def test_uisut_uicondition_constructor_exists():
+    assert callable(uisut_UICondition.__init__)
 
 
-def test_uisut::uistatemachine_constructor_args():
-    sig = inspect.signature(uisut::UIStatemachine.__init__)
+def test_uisut_uicondition_constructor_args():
+    sig = inspect.signature(uisut_UICondition.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_uisut::abstractstate_is_not_abstract():
-    assert not inspect.isabstract(uisut::AbstractState)
+def test_uisut_abstractstate_is_not_abstract():
+    assert not inspect.isabstract(uisut_AbstractState)
 
 
-def test_uisut::abstractstate_constructor_exists():
-    assert callable(uisut::AbstractState.__init__)
+def test_uisut_abstractstate_constructor_exists():
+    assert callable(uisut_AbstractState.__init__)
 
 
-def test_uisut::abstractstate_constructor_args():
-    sig = inspect.signature(uisut::AbstractState.__init__)
+def test_uisut_abstractstate_constructor_args():
+    sig = inspect.signature(uisut_AbstractState.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_uisut::applicationsystem_is_not_abstract():
-    assert not inspect.isabstract(uisut::ApplicationSystem)
+def test_uisut_uitransition_is_not_abstract():
+    assert not inspect.isabstract(uisut_UITransition)
 
 
-def test_uisut::applicationsystem_constructor_exists():
-    assert callable(uisut::ApplicationSystem.__init__)
+def test_uisut_uitransition_constructor_exists():
+    assert callable(uisut_UITransition.__init__)
 
 
-def test_uisut::applicationsystem_constructor_args():
-    sig = inspect.signature(uisut::ApplicationSystem.__init__)
+def test_uisut_uitransition_constructor_args():
+    sig = inspect.signature(uisut_UITransition.__init__)
     params = list(sig.parameters.keys())
+    assert "scriptStr" in params, "Missing parameter 'scriptStr'"
+    assert "guardStr" in params, "Missing parameter 'guardStr'"
+    assert "triggerStr" in params, "Missing parameter 'triggerStr'"
+    assert "actionStr" in params, "Missing parameter 'actionStr'"
+
+def test_uisut_uitransition_has_scriptStr():
+    assert hasattr(uisut_UITransition, "scriptStr")
+    descriptor = None
+    for klass in uisut_UITransition.__mro__:
+        if "scriptStr" in klass.__dict__:
+            descriptor = klass.__dict__["scriptStr"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_uisut_uitransition_has_guardStr():
+    assert hasattr(uisut_UITransition, "guardStr")
+    descriptor = None
+    for klass in uisut_UITransition.__mro__:
+        if "guardStr" in klass.__dict__:
+            descriptor = klass.__dict__["guardStr"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_uisut_uitransition_has_triggerStr():
+    assert hasattr(uisut_UITransition, "triggerStr")
+    descriptor = None
+    for klass in uisut_UITransition.__mro__:
+        if "triggerStr" in klass.__dict__:
+            descriptor = klass.__dict__["triggerStr"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_uisut_uitransition_has_actionStr():
+    assert hasattr(uisut_UITransition, "actionStr")
+    descriptor = None
+    for klass in uisut_UITransition.__mro__:
+        if "actionStr" in klass.__dict__:
+            descriptor = klass.__dict__["actionStr"]
+            break
+    assert isinstance(descriptor, property)
 
 
 
-def test_uisut::action_is_not_abstract():
-    assert not inspect.isabstract(uisut::Action)
+def test_uisut_uisut_is_not_abstract():
+    assert not inspect.isabstract(uisut_UISUT)
 
 
-def test_uisut::action_constructor_exists():
-    assert callable(uisut::Action.__init__)
+def test_uisut_uisut_constructor_exists():
+    assert callable(uisut_UISUT.__init__)
 
 
-def test_uisut::action_constructor_args():
-    sig = inspect.signature(uisut::Action.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_uisut::uicondition_is_not_abstract():
-    assert not inspect.isabstract(uisut::UICondition)
-
-
-def test_uisut::uicondition_constructor_exists():
-    assert callable(uisut::UICondition.__init__)
-
-
-def test_uisut::uicondition_constructor_args():
-    sig = inspect.signature(uisut::UICondition.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_uisut::uisut_is_not_abstract():
-    assert not inspect.isabstract(uisut::UISUT)
-
-
-def test_uisut::uisut_constructor_exists():
-    assert callable(uisut::UISUT.__init__)
-
-
-def test_uisut::uisut_constructor_args():
-    sig = inspect.signature(uisut::UISUT.__init__)
+def test_uisut_uisut_constructor_args():
+    sig = inspect.signature(uisut_UISUT.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -429,311 +429,275 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-uisut::UISUTElement_strategy = st.builds(
-    uisut::UISUTElement,
+uisut_UISUTElement_strategy = st.builds(
+    uisut_UISUTElement,
     name=
         safe_text,
-    id=
-        safe_text,
     description=
+        safe_text,
+    id=
         safe_text
 )
 AbstractState_strategy = st.builds(
     AbstractState,
 )
-uisut::InitialState_strategy = st.builds(
-    uisut::InitialState,
+uisut_InitialState_strategy = st.builds(
+    uisut_InitialState,
 )
-uisut::FinalState_strategy = st.builds(
-    uisut::FinalState,
+uisut_FinalState_strategy = st.builds(
+    uisut_FinalState,
 )
-uisut::UIState_strategy = st.builds(
-    uisut::UIState,
-    pic=
-        safe_text,
+uisut_UIState_strategy = st.builds(
+    uisut_UIState,
     isInitial=
-        st.booleans()
+        st.booleans(),
+    pic=
+        safe_text
 )
 UITrigger_strategy = st.builds(
     UITrigger,
 )
-uisut::ComponentTrigger_strategy = st.builds(
-    uisut::ComponentTrigger,
+uisut_ComponentTrigger_strategy = st.builds(
+    uisut_ComponentTrigger,
 )
-uisut::UserTrigger_strategy = st.builds(
-    uisut::UserTrigger,
+uisut_UserTrigger_strategy = st.builds(
+    uisut_UserTrigger,
 )
 UISUTElement_strategy = st.builds(
     UISUTElement,
 )
-uisut::UIControl_strategy = st.builds(
-    uisut::UIControl,
-    valueExpression=
-        safe_text,
+uisut_ApplicationSystem_strategy = st.builds(
+    uisut_ApplicationSystem,
+)
+uisut_Action_strategy = st.builds(
+    uisut_Action,
+)
+uisut_UIControl_strategy = st.builds(
+    uisut_UIControl,
     variableName=
+        safe_text,
+    valueExpression=
         safe_text
 )
-uisut::UITrigger_strategy = st.builds(
-    uisut::UITrigger,
+uisut_UITrigger_strategy = st.builds(
+    uisut_UITrigger,
 )
-uisut::UITransition_strategy = st.builds(
-    uisut::UITransition,
+uisut_UIStatemachine_strategy = st.builds(
+    uisut_UIStatemachine,
+)
+uisut_UIDataVariable_strategy = st.builds(
+    uisut_UIDataVariable,
+    constraintRE=
+        safe_text
+)
+uisut_UICondition_strategy = st.builds(
+    uisut_UICondition,
+)
+uisut_AbstractState_strategy = st.builds(
+    uisut_AbstractState,
+)
+uisut_UITransition_strategy = st.builds(
+    uisut_UITransition,
+    scriptStr=
+        safe_text,
     guardStr=
         safe_text,
     triggerStr=
         safe_text,
-    scriptStr=
-        safe_text,
     actionStr=
         safe_text
 )
-uisut::UIDataVariable_strategy = st.builds(
-    uisut::UIDataVariable,
-    constraintRE=
-        safe_text
-)
-uisut::UIStatemachine_strategy = st.builds(
-    uisut::UIStatemachine,
-)
-uisut::AbstractState_strategy = st.builds(
-    uisut::AbstractState,
-)
-uisut::ApplicationSystem_strategy = st.builds(
-    uisut::ApplicationSystem,
-)
-uisut::Action_strategy = st.builds(
-    uisut::Action,
-)
-uisut::UICondition_strategy = st.builds(
-    uisut::UICondition,
-)
-uisut::UISUT_strategy = st.builds(
-    uisut::UISUT,
+uisut_UISUT_strategy = st.builds(
+    uisut_UISUT,
 )
 
-@given(instance=uisut::UISUTElement_strategy)
+@given(instance=uisut_UISUTElement_strategy)
 @settings(max_examples=50)
-def test_uisut::uisutelement_instantiation(instance):
-    assert isinstance(instance, uisut::UISUTElement)
-
-@given(instance=uisut::UISUTElement_strategy)
-def test_uisut::uisutelement_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_uisut_uisutelement_instantiation(instance):
+    assert isinstance(instance, uisut_UISUTElement)
 
 
-@given(instance=uisut::UISUTElement_strategy)
-def test_uisut::uisutelement_name_setter(instance):
+
+@given(instance=uisut_UISUTElement_strategy)
+def test_uisut_uisutelement_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=uisut::UISUTElement_strategy)
-def test_uisut::uisutelement_id_type(instance):
-    assert isinstance(instance.id, str)
 
 
-@given(instance=uisut::UISUTElement_strategy)
-def test_uisut::uisutelement_id_setter(instance):
-    original = instance.id
-    instance.id = original
-    assert instance.id == original
-
-@given(instance=uisut::UISUTElement_strategy)
-def test_uisut::uisutelement_description_type(instance):
-    assert isinstance(instance.description, str)
-
-
-@given(instance=uisut::UISUTElement_strategy)
-def test_uisut::uisutelement_description_setter(instance):
+@given(instance=uisut_UISUTElement_strategy)
+def test_uisut_uisutelement_description_setter(instance):
     original = instance.description
     instance.description = original
     assert instance.description == original
+
+
+
+@given(instance=uisut_UISUTElement_strategy)
+def test_uisut_uisutelement_id_setter(instance):
+    original = instance.id
+    instance.id = original
+    assert instance.id == original
 
 @given(instance=AbstractState_strategy)
 @settings(max_examples=50)
 def test_abstractstate_instantiation(instance):
     assert isinstance(instance, AbstractState)
 
-@given(instance=uisut::InitialState_strategy)
+@given(instance=uisut_InitialState_strategy)
 @settings(max_examples=50)
-def test_uisut::initialstate_instantiation(instance):
-    assert isinstance(instance, uisut::InitialState)
+def test_uisut_initialstate_instantiation(instance):
+    assert isinstance(instance, uisut_InitialState)
 
-@given(instance=uisut::FinalState_strategy)
+@given(instance=uisut_FinalState_strategy)
 @settings(max_examples=50)
-def test_uisut::finalstate_instantiation(instance):
-    assert isinstance(instance, uisut::FinalState)
+def test_uisut_finalstate_instantiation(instance):
+    assert isinstance(instance, uisut_FinalState)
 
-@given(instance=uisut::UIState_strategy)
+@given(instance=uisut_UIState_strategy)
 @settings(max_examples=50)
-def test_uisut::uistate_instantiation(instance):
-    assert isinstance(instance, uisut::UIState)
-
-@given(instance=uisut::UIState_strategy)
-def test_uisut::uistate_pic_type(instance):
-    assert isinstance(instance.pic, str)
+def test_uisut_uistate_instantiation(instance):
+    assert isinstance(instance, uisut_UIState)
 
 
-@given(instance=uisut::UIState_strategy)
-def test_uisut::uistate_pic_setter(instance):
-    original = instance.pic
-    instance.pic = original
-    assert instance.pic == original
 
-@given(instance=uisut::UIState_strategy)
-def test_uisut::uistate_isInitial_type(instance):
-    assert isinstance(instance.isInitial, bool)
-
-
-@given(instance=uisut::UIState_strategy)
-def test_uisut::uistate_isInitial_setter(instance):
+@given(instance=uisut_UIState_strategy)
+def test_uisut_uistate_isInitial_setter(instance):
     original = instance.isInitial
     instance.isInitial = original
     assert instance.isInitial == original
+
+
+
+@given(instance=uisut_UIState_strategy)
+def test_uisut_uistate_pic_setter(instance):
+    original = instance.pic
+    instance.pic = original
+    assert instance.pic == original
 
 @given(instance=UITrigger_strategy)
 @settings(max_examples=50)
 def test_uitrigger_instantiation(instance):
     assert isinstance(instance, UITrigger)
 
-@given(instance=uisut::ComponentTrigger_strategy)
+@given(instance=uisut_ComponentTrigger_strategy)
 @settings(max_examples=50)
-def test_uisut::componenttrigger_instantiation(instance):
-    assert isinstance(instance, uisut::ComponentTrigger)
+def test_uisut_componenttrigger_instantiation(instance):
+    assert isinstance(instance, uisut_ComponentTrigger)
 
-@given(instance=uisut::UserTrigger_strategy)
+@given(instance=uisut_UserTrigger_strategy)
 @settings(max_examples=50)
-def test_uisut::usertrigger_instantiation(instance):
-    assert isinstance(instance, uisut::UserTrigger)
+def test_uisut_usertrigger_instantiation(instance):
+    assert isinstance(instance, uisut_UserTrigger)
 
 @given(instance=UISUTElement_strategy)
 @settings(max_examples=50)
 def test_uisutelement_instantiation(instance):
     assert isinstance(instance, UISUTElement)
 
-@given(instance=uisut::UIControl_strategy)
+@given(instance=uisut_ApplicationSystem_strategy)
 @settings(max_examples=50)
-def test_uisut::uicontrol_instantiation(instance):
-    assert isinstance(instance, uisut::UIControl)
+def test_uisut_applicationsystem_instantiation(instance):
+    assert isinstance(instance, uisut_ApplicationSystem)
 
-@given(instance=uisut::UIControl_strategy)
-def test_uisut::uicontrol_valueExpression_type(instance):
-    assert isinstance(instance.valueExpression, str)
+@given(instance=uisut_Action_strategy)
+@settings(max_examples=50)
+def test_uisut_action_instantiation(instance):
+    assert isinstance(instance, uisut_Action)
 
-
-@given(instance=uisut::UIControl_strategy)
-def test_uisut::uicontrol_valueExpression_setter(instance):
-    original = instance.valueExpression
-    instance.valueExpression = original
-    assert instance.valueExpression == original
-
-@given(instance=uisut::UIControl_strategy)
-def test_uisut::uicontrol_variableName_type(instance):
-    assert isinstance(instance.variableName, str)
+@given(instance=uisut_UIControl_strategy)
+@settings(max_examples=50)
+def test_uisut_uicontrol_instantiation(instance):
+    assert isinstance(instance, uisut_UIControl)
 
 
-@given(instance=uisut::UIControl_strategy)
-def test_uisut::uicontrol_variableName_setter(instance):
+
+@given(instance=uisut_UIControl_strategy)
+def test_uisut_uicontrol_variableName_setter(instance):
     original = instance.variableName
     instance.variableName = original
     assert instance.variableName == original
 
-@given(instance=uisut::UITrigger_strategy)
+
+
+@given(instance=uisut_UIControl_strategy)
+def test_uisut_uicontrol_valueExpression_setter(instance):
+    original = instance.valueExpression
+    instance.valueExpression = original
+    assert instance.valueExpression == original
+
+@given(instance=uisut_UITrigger_strategy)
 @settings(max_examples=50)
-def test_uisut::uitrigger_instantiation(instance):
-    assert isinstance(instance, uisut::UITrigger)
+def test_uisut_uitrigger_instantiation(instance):
+    assert isinstance(instance, uisut_UITrigger)
 
-@given(instance=uisut::UITransition_strategy)
+@given(instance=uisut_UIStatemachine_strategy)
 @settings(max_examples=50)
-def test_uisut::uitransition_instantiation(instance):
-    assert isinstance(instance, uisut::UITransition)
+def test_uisut_uistatemachine_instantiation(instance):
+    assert isinstance(instance, uisut_UIStatemachine)
 
-@given(instance=uisut::UITransition_strategy)
-def test_uisut::uitransition_guardStr_type(instance):
-    assert isinstance(instance.guardStr, str)
-
-
-@given(instance=uisut::UITransition_strategy)
-def test_uisut::uitransition_guardStr_setter(instance):
-    original = instance.guardStr
-    instance.guardStr = original
-    assert instance.guardStr == original
-
-@given(instance=uisut::UITransition_strategy)
-def test_uisut::uitransition_triggerStr_type(instance):
-    assert isinstance(instance.triggerStr, str)
-
-
-@given(instance=uisut::UITransition_strategy)
-def test_uisut::uitransition_triggerStr_setter(instance):
-    original = instance.triggerStr
-    instance.triggerStr = original
-    assert instance.triggerStr == original
-
-@given(instance=uisut::UITransition_strategy)
-def test_uisut::uitransition_scriptStr_type(instance):
-    assert isinstance(instance.scriptStr, str)
-
-
-@given(instance=uisut::UITransition_strategy)
-def test_uisut::uitransition_scriptStr_setter(instance):
-    original = instance.scriptStr
-    instance.scriptStr = original
-    assert instance.scriptStr == original
-
-@given(instance=uisut::UITransition_strategy)
-def test_uisut::uitransition_actionStr_type(instance):
-    assert isinstance(instance.actionStr, str)
-
-
-@given(instance=uisut::UITransition_strategy)
-def test_uisut::uitransition_actionStr_setter(instance):
-    original = instance.actionStr
-    instance.actionStr = original
-    assert instance.actionStr == original
-
-@given(instance=uisut::UIDataVariable_strategy)
+@given(instance=uisut_UIDataVariable_strategy)
 @settings(max_examples=50)
-def test_uisut::uidatavariable_instantiation(instance):
-    assert isinstance(instance, uisut::UIDataVariable)
-
-@given(instance=uisut::UIDataVariable_strategy)
-def test_uisut::uidatavariable_constraintRE_type(instance):
-    assert isinstance(instance.constraintRE, str)
+def test_uisut_uidatavariable_instantiation(instance):
+    assert isinstance(instance, uisut_UIDataVariable)
 
 
-@given(instance=uisut::UIDataVariable_strategy)
-def test_uisut::uidatavariable_constraintRE_setter(instance):
+
+@given(instance=uisut_UIDataVariable_strategy)
+def test_uisut_uidatavariable_constraintRE_setter(instance):
     original = instance.constraintRE
     instance.constraintRE = original
     assert instance.constraintRE == original
 
-@given(instance=uisut::UIStatemachine_strategy)
+@given(instance=uisut_UICondition_strategy)
 @settings(max_examples=50)
-def test_uisut::uistatemachine_instantiation(instance):
-    assert isinstance(instance, uisut::UIStatemachine)
+def test_uisut_uicondition_instantiation(instance):
+    assert isinstance(instance, uisut_UICondition)
 
-@given(instance=uisut::AbstractState_strategy)
+@given(instance=uisut_AbstractState_strategy)
 @settings(max_examples=50)
-def test_uisut::abstractstate_instantiation(instance):
-    assert isinstance(instance, uisut::AbstractState)
+def test_uisut_abstractstate_instantiation(instance):
+    assert isinstance(instance, uisut_AbstractState)
 
-@given(instance=uisut::ApplicationSystem_strategy)
+@given(instance=uisut_UITransition_strategy)
 @settings(max_examples=50)
-def test_uisut::applicationsystem_instantiation(instance):
-    assert isinstance(instance, uisut::ApplicationSystem)
+def test_uisut_uitransition_instantiation(instance):
+    assert isinstance(instance, uisut_UITransition)
 
-@given(instance=uisut::Action_strategy)
-@settings(max_examples=50)
-def test_uisut::action_instantiation(instance):
-    assert isinstance(instance, uisut::Action)
 
-@given(instance=uisut::UICondition_strategy)
-@settings(max_examples=50)
-def test_uisut::uicondition_instantiation(instance):
-    assert isinstance(instance, uisut::UICondition)
 
-@given(instance=uisut::UISUT_strategy)
+@given(instance=uisut_UITransition_strategy)
+def test_uisut_uitransition_scriptStr_setter(instance):
+    original = instance.scriptStr
+    instance.scriptStr = original
+    assert instance.scriptStr == original
+
+
+
+@given(instance=uisut_UITransition_strategy)
+def test_uisut_uitransition_guardStr_setter(instance):
+    original = instance.guardStr
+    instance.guardStr = original
+    assert instance.guardStr == original
+
+
+
+@given(instance=uisut_UITransition_strategy)
+def test_uisut_uitransition_triggerStr_setter(instance):
+    original = instance.triggerStr
+    instance.triggerStr = original
+    assert instance.triggerStr == original
+
+
+
+@given(instance=uisut_UITransition_strategy)
+def test_uisut_uitransition_actionStr_setter(instance):
+    original = instance.actionStr
+    instance.actionStr = original
+    assert instance.actionStr == original
+
+@given(instance=uisut_UISUT_strategy)
 @settings(max_examples=50)
-def test_uisut::uisut_instantiation(instance):
-    assert isinstance(instance, uisut::UISUT)
+def test_uisut_uisut_instantiation(instance):
+    assert isinstance(instance, uisut_UISUT)

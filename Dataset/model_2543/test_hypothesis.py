@@ -3,26 +3,26 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    content::W,
+from python_code import (
+    content_W,
     W,
-    content::J,
-    content::Q,
-    content::P,
-    content::H,
-    content::M,
-    content::I,
-    content::B,
-    content::R,
-    content::G,
-    content::N,
-    content::A,
-    content::E,
-    content::F,
-    content::D,
-    content::C,
+    content_G,
+    content_R,
+    content_N,
+    content_J,
+    content_H,
+    content_B,
+    content_M,
+    content_P,
+    content_Q,
+    content_I,
+    content_A,
+    content_E,
+    content_F,
+    content_D,
+    content_C,
 )
 
 # =============================================================================
@@ -31,23 +31,23 @@ from classes import (
 
 
 
-def test_content::w_is_not_abstract():
-    assert not inspect.isabstract(content::W)
+def test_content_w_is_not_abstract():
+    assert not inspect.isabstract(content_W)
 
 
-def test_content::w_constructor_exists():
-    assert callable(content::W.__init__)
+def test_content_w_constructor_exists():
+    assert callable(content_W.__init__)
 
 
-def test_content::w_constructor_args():
-    sig = inspect.signature(content::W.__init__)
+def test_content_w_constructor_args():
+    sig = inspect.signature(content_W.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_content::w_has_name():
-    assert hasattr(content::W, "name")
+def test_content_w_has_name():
+    assert hasattr(content_W, "name")
     descriptor = None
-    for klass in content::W.__mro__:
+    for klass in content_W.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -69,33 +69,75 @@ def test_w_constructor_args():
 
 
 
-def test_content::j_is_not_abstract():
-    assert not inspect.isabstract(content::J)
+def test_content_g_is_not_abstract():
+    assert not inspect.isabstract(content_G)
 
 
-def test_content::j_constructor_exists():
-    assert callable(content::J.__init__)
+def test_content_g_constructor_exists():
+    assert callable(content_G.__init__)
 
 
-def test_content::j_constructor_args():
-    sig = inspect.signature(content::J.__init__)
+def test_content_g_constructor_args():
+    sig = inspect.signature(content_G.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_content_r_is_not_abstract():
+    assert not inspect.isabstract(content_R)
+
+
+def test_content_r_constructor_exists():
+    assert callable(content_R.__init__)
+
+
+def test_content_r_constructor_args():
+    sig = inspect.signature(content_R.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_content_n_is_not_abstract():
+    assert not inspect.isabstract(content_N)
+
+
+def test_content_n_constructor_exists():
+    assert callable(content_N.__init__)
+
+
+def test_content_n_constructor_args():
+    sig = inspect.signature(content_N.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_content_j_is_not_abstract():
+    assert not inspect.isabstract(content_J)
+
+
+def test_content_j_constructor_exists():
+    assert callable(content_J.__init__)
+
+
+def test_content_j_constructor_args():
+    sig = inspect.signature(content_J.__init__)
     params = list(sig.parameters.keys())
     assert "linkName" in params, "Missing parameter 'linkName'"
     assert "cardinality" in params, "Missing parameter 'cardinality'"
 
-def test_content::j_has_linkName():
-    assert hasattr(content::J, "linkName")
+def test_content_j_has_linkName():
+    assert hasattr(content_J, "linkName")
     descriptor = None
-    for klass in content::J.__mro__:
+    for klass in content_J.__mro__:
         if "linkName" in klass.__dict__:
             descriptor = klass.__dict__["linkName"]
             break
     assert isinstance(descriptor, property)
 
-def test_content::j_has_cardinality():
-    assert hasattr(content::J, "cardinality")
+def test_content_j_has_cardinality():
+    assert hasattr(content_J, "cardinality")
     descriptor = None
-    for klass in content::J.__mro__:
+    for klass in content_J.__mro__:
         if "cardinality" in klass.__dict__:
             descriptor = klass.__dict__["cardinality"]
             break
@@ -103,198 +145,156 @@ def test_content::j_has_cardinality():
 
 
 
-def test_content::q_is_not_abstract():
-    assert not inspect.isabstract(content::Q)
+def test_content_h_is_not_abstract():
+    assert not inspect.isabstract(content_H)
 
 
-def test_content::q_constructor_exists():
-    assert callable(content::Q.__init__)
+def test_content_h_constructor_exists():
+    assert callable(content_H.__init__)
 
 
-def test_content::q_constructor_args():
-    sig = inspect.signature(content::Q.__init__)
+def test_content_h_constructor_args():
+    sig = inspect.signature(content_H.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_content::p_is_not_abstract():
-    assert not inspect.isabstract(content::P)
+def test_content_b_is_not_abstract():
+    assert not inspect.isabstract(content_B)
 
 
-def test_content::p_constructor_exists():
-    assert callable(content::P.__init__)
+def test_content_b_constructor_exists():
+    assert callable(content_B.__init__)
 
 
-def test_content::p_constructor_args():
-    sig = inspect.signature(content::P.__init__)
+def test_content_b_constructor_args():
+    sig = inspect.signature(content_B.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_content::h_is_not_abstract():
-    assert not inspect.isabstract(content::H)
+def test_content_m_is_not_abstract():
+    assert not inspect.isabstract(content_M)
 
 
-def test_content::h_constructor_exists():
-    assert callable(content::H.__init__)
+def test_content_m_constructor_exists():
+    assert callable(content_M.__init__)
 
 
-def test_content::h_constructor_args():
-    sig = inspect.signature(content::H.__init__)
+def test_content_m_constructor_args():
+    sig = inspect.signature(content_M.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_content::m_is_not_abstract():
-    assert not inspect.isabstract(content::M)
+def test_content_p_is_not_abstract():
+    assert not inspect.isabstract(content_P)
 
 
-def test_content::m_constructor_exists():
-    assert callable(content::M.__init__)
+def test_content_p_constructor_exists():
+    assert callable(content_P.__init__)
 
 
-def test_content::m_constructor_args():
-    sig = inspect.signature(content::M.__init__)
+def test_content_p_constructor_args():
+    sig = inspect.signature(content_P.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_content::i_is_not_abstract():
-    assert not inspect.isabstract(content::I)
+def test_content_q_is_not_abstract():
+    assert not inspect.isabstract(content_Q)
 
 
-def test_content::i_constructor_exists():
-    assert callable(content::I.__init__)
+def test_content_q_constructor_exists():
+    assert callable(content_Q.__init__)
 
 
-def test_content::i_constructor_args():
-    sig = inspect.signature(content::I.__init__)
+def test_content_q_constructor_args():
+    sig = inspect.signature(content_Q.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_content::b_is_not_abstract():
-    assert not inspect.isabstract(content::B)
+def test_content_i_is_not_abstract():
+    assert not inspect.isabstract(content_I)
 
 
-def test_content::b_constructor_exists():
-    assert callable(content::B.__init__)
+def test_content_i_constructor_exists():
+    assert callable(content_I.__init__)
 
 
-def test_content::b_constructor_args():
-    sig = inspect.signature(content::B.__init__)
+def test_content_i_constructor_args():
+    sig = inspect.signature(content_I.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_content::r_is_not_abstract():
-    assert not inspect.isabstract(content::R)
+def test_content_a_is_not_abstract():
+    assert not inspect.isabstract(content_A)
 
 
-def test_content::r_constructor_exists():
-    assert callable(content::R.__init__)
+def test_content_a_constructor_exists():
+    assert callable(content_A.__init__)
 
 
-def test_content::r_constructor_args():
-    sig = inspect.signature(content::R.__init__)
+def test_content_a_constructor_args():
+    sig = inspect.signature(content_A.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_content::g_is_not_abstract():
-    assert not inspect.isabstract(content::G)
+def test_content_e_is_not_abstract():
+    assert not inspect.isabstract(content_E)
 
 
-def test_content::g_constructor_exists():
-    assert callable(content::G.__init__)
+def test_content_e_constructor_exists():
+    assert callable(content_E.__init__)
 
 
-def test_content::g_constructor_args():
-    sig = inspect.signature(content::G.__init__)
+def test_content_e_constructor_args():
+    sig = inspect.signature(content_E.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_content::n_is_not_abstract():
-    assert not inspect.isabstract(content::N)
+def test_content_f_is_not_abstract():
+    assert not inspect.isabstract(content_F)
 
 
-def test_content::n_constructor_exists():
-    assert callable(content::N.__init__)
+def test_content_f_constructor_exists():
+    assert callable(content_F.__init__)
 
 
-def test_content::n_constructor_args():
-    sig = inspect.signature(content::N.__init__)
+def test_content_f_constructor_args():
+    sig = inspect.signature(content_F.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_content::a_is_not_abstract():
-    assert not inspect.isabstract(content::A)
+def test_content_d_is_not_abstract():
+    assert not inspect.isabstract(content_D)
 
 
-def test_content::a_constructor_exists():
-    assert callable(content::A.__init__)
+def test_content_d_constructor_exists():
+    assert callable(content_D.__init__)
 
 
-def test_content::a_constructor_args():
-    sig = inspect.signature(content::A.__init__)
+def test_content_d_constructor_args():
+    sig = inspect.signature(content_D.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_content::e_is_not_abstract():
-    assert not inspect.isabstract(content::E)
+def test_content_c_is_not_abstract():
+    assert not inspect.isabstract(content_C)
 
 
-def test_content::e_constructor_exists():
-    assert callable(content::E.__init__)
+def test_content_c_constructor_exists():
+    assert callable(content_C.__init__)
 
 
-def test_content::e_constructor_args():
-    sig = inspect.signature(content::E.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_content::f_is_not_abstract():
-    assert not inspect.isabstract(content::F)
-
-
-def test_content::f_constructor_exists():
-    assert callable(content::F.__init__)
-
-
-def test_content::f_constructor_args():
-    sig = inspect.signature(content::F.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_content::d_is_not_abstract():
-    assert not inspect.isabstract(content::D)
-
-
-def test_content::d_constructor_exists():
-    assert callable(content::D.__init__)
-
-
-def test_content::d_constructor_args():
-    sig = inspect.signature(content::D.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_content::c_is_not_abstract():
-    assert not inspect.isabstract(content::C)
-
-
-def test_content::c_constructor_exists():
-    assert callable(content::C.__init__)
-
-
-def test_content::c_constructor_args():
-    sig = inspect.signature(content::C.__init__)
+def test_content_c_constructor_args():
+    sig = inspect.signature(content_C.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -309,76 +309,73 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-content::W_strategy = st.builds(
-    content::W,
+content_W_strategy = st.builds(
+    content_W,
     name=
         safe_text
 )
 W_strategy = st.builds(
     W,
 )
-content::J_strategy = st.builds(
-    content::J,
+content_G_strategy = st.builds(
+    content_G,
+)
+content_R_strategy = st.builds(
+    content_R,
+)
+content_N_strategy = st.builds(
+    content_N,
+)
+content_J_strategy = st.builds(
+    content_J,
     linkName=
         safe_text,
     cardinality=
         st.integers()
 )
-content::Q_strategy = st.builds(
-    content::Q,
+content_H_strategy = st.builds(
+    content_H,
 )
-content::P_strategy = st.builds(
-    content::P,
+content_B_strategy = st.builds(
+    content_B,
 )
-content::H_strategy = st.builds(
-    content::H,
+content_M_strategy = st.builds(
+    content_M,
 )
-content::M_strategy = st.builds(
-    content::M,
+content_P_strategy = st.builds(
+    content_P,
 )
-content::I_strategy = st.builds(
-    content::I,
+content_Q_strategy = st.builds(
+    content_Q,
 )
-content::B_strategy = st.builds(
-    content::B,
+content_I_strategy = st.builds(
+    content_I,
 )
-content::R_strategy = st.builds(
-    content::R,
+content_A_strategy = st.builds(
+    content_A,
 )
-content::G_strategy = st.builds(
-    content::G,
+content_E_strategy = st.builds(
+    content_E,
 )
-content::N_strategy = st.builds(
-    content::N,
+content_F_strategy = st.builds(
+    content_F,
 )
-content::A_strategy = st.builds(
-    content::A,
+content_D_strategy = st.builds(
+    content_D,
 )
-content::E_strategy = st.builds(
-    content::E,
-)
-content::F_strategy = st.builds(
-    content::F,
-)
-content::D_strategy = st.builds(
-    content::D,
-)
-content::C_strategy = st.builds(
-    content::C,
+content_C_strategy = st.builds(
+    content_C,
 )
 
-@given(instance=content::W_strategy)
+@given(instance=content_W_strategy)
 @settings(max_examples=50)
-def test_content::w_instantiation(instance):
-    assert isinstance(instance, content::W)
-
-@given(instance=content::W_strategy)
-def test_content::w_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_content_w_instantiation(instance):
+    assert isinstance(instance, content_W)
 
 
-@given(instance=content::W_strategy)
-def test_content::w_name_setter(instance):
+
+@given(instance=content_W_strategy)
+def test_content_w_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
@@ -388,99 +385,93 @@ def test_content::w_name_setter(instance):
 def test_w_instantiation(instance):
     assert isinstance(instance, W)
 
-@given(instance=content::J_strategy)
+@given(instance=content_G_strategy)
 @settings(max_examples=50)
-def test_content::j_instantiation(instance):
-    assert isinstance(instance, content::J)
+def test_content_g_instantiation(instance):
+    assert isinstance(instance, content_G)
 
-@given(instance=content::J_strategy)
-def test_content::j_linkName_type(instance):
-    assert isinstance(instance.linkName, str)
+@given(instance=content_R_strategy)
+@settings(max_examples=50)
+def test_content_r_instantiation(instance):
+    assert isinstance(instance, content_R)
+
+@given(instance=content_N_strategy)
+@settings(max_examples=50)
+def test_content_n_instantiation(instance):
+    assert isinstance(instance, content_N)
+
+@given(instance=content_J_strategy)
+@settings(max_examples=50)
+def test_content_j_instantiation(instance):
+    assert isinstance(instance, content_J)
 
 
-@given(instance=content::J_strategy)
-def test_content::j_linkName_setter(instance):
+
+@given(instance=content_J_strategy)
+def test_content_j_linkName_setter(instance):
     original = instance.linkName
     instance.linkName = original
     assert instance.linkName == original
 
-@given(instance=content::J_strategy)
-def test_content::j_cardinality_type(instance):
-    assert isinstance(instance.cardinality, int)
 
 
-@given(instance=content::J_strategy)
-def test_content::j_cardinality_setter(instance):
+@given(instance=content_J_strategy)
+def test_content_j_cardinality_setter(instance):
     original = instance.cardinality
     instance.cardinality = original
     assert instance.cardinality == original
 
-@given(instance=content::Q_strategy)
+@given(instance=content_H_strategy)
 @settings(max_examples=50)
-def test_content::q_instantiation(instance):
-    assert isinstance(instance, content::Q)
+def test_content_h_instantiation(instance):
+    assert isinstance(instance, content_H)
 
-@given(instance=content::P_strategy)
+@given(instance=content_B_strategy)
 @settings(max_examples=50)
-def test_content::p_instantiation(instance):
-    assert isinstance(instance, content::P)
+def test_content_b_instantiation(instance):
+    assert isinstance(instance, content_B)
 
-@given(instance=content::H_strategy)
+@given(instance=content_M_strategy)
 @settings(max_examples=50)
-def test_content::h_instantiation(instance):
-    assert isinstance(instance, content::H)
+def test_content_m_instantiation(instance):
+    assert isinstance(instance, content_M)
 
-@given(instance=content::M_strategy)
+@given(instance=content_P_strategy)
 @settings(max_examples=50)
-def test_content::m_instantiation(instance):
-    assert isinstance(instance, content::M)
+def test_content_p_instantiation(instance):
+    assert isinstance(instance, content_P)
 
-@given(instance=content::I_strategy)
+@given(instance=content_Q_strategy)
 @settings(max_examples=50)
-def test_content::i_instantiation(instance):
-    assert isinstance(instance, content::I)
+def test_content_q_instantiation(instance):
+    assert isinstance(instance, content_Q)
 
-@given(instance=content::B_strategy)
+@given(instance=content_I_strategy)
 @settings(max_examples=50)
-def test_content::b_instantiation(instance):
-    assert isinstance(instance, content::B)
+def test_content_i_instantiation(instance):
+    assert isinstance(instance, content_I)
 
-@given(instance=content::R_strategy)
+@given(instance=content_A_strategy)
 @settings(max_examples=50)
-def test_content::r_instantiation(instance):
-    assert isinstance(instance, content::R)
+def test_content_a_instantiation(instance):
+    assert isinstance(instance, content_A)
 
-@given(instance=content::G_strategy)
+@given(instance=content_E_strategy)
 @settings(max_examples=50)
-def test_content::g_instantiation(instance):
-    assert isinstance(instance, content::G)
+def test_content_e_instantiation(instance):
+    assert isinstance(instance, content_E)
 
-@given(instance=content::N_strategy)
+@given(instance=content_F_strategy)
 @settings(max_examples=50)
-def test_content::n_instantiation(instance):
-    assert isinstance(instance, content::N)
+def test_content_f_instantiation(instance):
+    assert isinstance(instance, content_F)
 
-@given(instance=content::A_strategy)
+@given(instance=content_D_strategy)
 @settings(max_examples=50)
-def test_content::a_instantiation(instance):
-    assert isinstance(instance, content::A)
+def test_content_d_instantiation(instance):
+    assert isinstance(instance, content_D)
 
-@given(instance=content::E_strategy)
+@given(instance=content_C_strategy)
 @settings(max_examples=50)
-def test_content::e_instantiation(instance):
-    assert isinstance(instance, content::E)
-
-@given(instance=content::F_strategy)
-@settings(max_examples=50)
-def test_content::f_instantiation(instance):
-    assert isinstance(instance, content::F)
-
-@given(instance=content::D_strategy)
-@settings(max_examples=50)
-def test_content::d_instantiation(instance):
-    assert isinstance(instance, content::D)
-
-@given(instance=content::C_strategy)
-@settings(max_examples=50)
-def test_content::c_instantiation(instance):
-    assert isinstance(instance, content::C)
+def test_content_c_instantiation(instance):
+    assert isinstance(instance, content_C)

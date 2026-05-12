@@ -3,95 +3,95 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     Method,
-    swrtj::ProvidedMethod,
-    swrtj::RequiredMethod,
+    swrtj_ProvidedMethod,
+    swrtj_RequiredMethod,
     Field,
-    swrtj::RequiredField,
-    swrtj::FieldDeclaration,
+    swrtj_RequiredField,
+    swrtj_FieldDeclaration,
     GenericExpression,
-    swrtj::Expression,
-    swrtj::BooleanExpression,
+    swrtj_Expression,
+    swrtj_BooleanExpression,
     Parameter,
-    swrtj::LocalParameter,
-    swrtj::FormalParameter,
+    swrtj_LocalParameter,
+    swrtj_FormalParameter,
     Message,
-    swrtj::MethodInvocation,
+    swrtj_MethodInvocation,
     TraitOperation,
-    swrtj::TraitFieldRename,
-    swrtj::TraitAlias,
-    swrtj::TraitMethodRename,
-    swrtj::TraitExclude,
+    swrtj_TraitMethodRename,
+    swrtj_TraitFieldRename,
+    swrtj_TraitAlias,
+    swrtj_TraitExclude,
     RecordOperation,
-    swrtj::RecordRename,
-    swrtj::RecordExclude,
-    swrtj::FieldAccess,
+    swrtj_RecordRename,
+    swrtj_RecordExclude,
+    swrtj_FieldAccess,
     AtomicBooleanExpression,
-    swrtj::SimpleComparation,
-    swrtj::AtomicBooleanExpression,
-    swrtj::BooleanOperator,
+    swrtj_SimpleComparation,
+    swrtj_AtomicBooleanExpression,
+    swrtj_BooleanOperator,
     Start,
-    swrtj::Input,
-    swrtj::ConstructorInvocation,
-    swrtj::BooleanConstant,
-    swrtj::Args,
-    swrtj::NestedExpression,
-    swrtj::ParameterReference,
-    swrtj::Cast,
-    swrtj::StringConstant,
-    swrtj::Output,
-    swrtj::This,
-    swrtj::Number,
-    swrtj::ParameterAssignment,
-    swrtj::Null,
-    swrtj::Message,
-    swrtj::Start,
-    swrtj::DottedExpression,
-    swrtj::NestedBooleanExpression,
-    swrtj::CompareOperator,
-    swrtj::FieldName,
-    swrtj::Type,
+    swrtj_NestedExpression,
+    swrtj_ParameterReference,
+    swrtj_Args,
+    swrtj_This,
+    swrtj_Output,
+    swrtj_Number,
+    swrtj_Input,
+    swrtj_BooleanConstant,
+    swrtj_ParameterAssignment,
+    swrtj_StringConstant,
+    swrtj_Cast,
+    swrtj_ConstructorInvocation,
+    swrtj_Null,
+    swrtj_Message,
+    swrtj_Start,
+    swrtj_DottedExpression,
+    swrtj_NestedBooleanExpression,
+    swrtj_CompareOperator,
+    swrtj_FieldName,
+    swrtj_Type,
     TraitElement,
-    swrtj::TraitElement,
+    swrtj_TraitElement,
     BaseTrait,
-    swrtj::TraitName,
-    swrtj::NestedTraitExpression,
-    swrtj::AnonimousTrait,
-    swrtj::TraitOperation,
-    swrtj::BaseTrait,
+    swrtj_TraitName,
+    swrtj_NestedTraitExpression,
+    swrtj_AnonimousTrait,
+    swrtj_TraitOperation,
+    swrtj_BaseTrait,
     Statement,
-    swrtj::WhileStatement,
-    swrtj::IfThenElseStatement,
-    swrtj::ExpressionStatement,
-    swrtj::Statement,
-    swrtj::GenericExpression,
-    swrtj::ReturnStatement,
-    swrtj::Parameter,
-    swrtj::MethodName,
-    swrtj::TraitExpression,
-    swrtj::RecordExpression,
-    swrtj::Method,
+    swrtj_WhileStatement,
+    swrtj_IfThenElseStatement,
+    swrtj_ExpressionStatement,
+    swrtj_Statement,
+    swrtj_GenericExpression,
+    swrtj_ReturnStatement,
+    swrtj_Parameter,
+    swrtj_MethodName,
+    swrtj_TraitExpression,
+    swrtj_RecordExpression,
+    swrtj_Method,
     Element,
-    swrtj::Class,
-    swrtj::Trait,
-    swrtj::Record,
-    swrtj::Interface,
-    swrtj::Element,
-    swrtj::Field,
+    swrtj_Class,
+    swrtj_Trait,
+    swrtj_Record,
+    swrtj_Interface,
+    swrtj_Element,
+    swrtj_Field,
     BaseRecord,
-    swrtj::RecordName,
-    swrtj::NestedRecordExpression,
-    swrtj::AnonimousRecord,
-    swrtj::RecordOperation,
-    swrtj::BaseRecord,
-    swrtj::Block,
-    swrtj::Program,
-    swrtj::Constructor,
-    swrtj::Import,
-    swrtj::File,
+    swrtj_NestedRecordExpression,
+    swrtj_RecordName,
+    swrtj_AnonimousRecord,
+    swrtj_RecordOperation,
+    swrtj_BaseRecord,
+    swrtj_Block,
+    swrtj_Program,
+    swrtj_Constructor,
+    swrtj_Import,
+    swrtj_File,
 )
 
 # =============================================================================
@@ -114,23 +114,23 @@ def test_method_constructor_args():
 
 
 
-def test_swrtj::providedmethod_is_not_abstract():
-    assert not inspect.isabstract(swrtj::ProvidedMethod)
+def test_swrtj_providedmethod_is_not_abstract():
+    assert not inspect.isabstract(swrtj_ProvidedMethod)
 
 
-def test_swrtj::providedmethod_constructor_exists():
-    assert callable(swrtj::ProvidedMethod.__init__)
+def test_swrtj_providedmethod_constructor_exists():
+    assert callable(swrtj_ProvidedMethod.__init__)
 
 
-def test_swrtj::providedmethod_constructor_args():
-    sig = inspect.signature(swrtj::ProvidedMethod.__init__)
+def test_swrtj_providedmethod_constructor_args():
+    sig = inspect.signature(swrtj_ProvidedMethod.__init__)
     params = list(sig.parameters.keys())
     assert "isSynchronized" in params, "Missing parameter 'isSynchronized'"
 
-def test_swrtj::providedmethod_has_isSynchronized():
-    assert hasattr(swrtj::ProvidedMethod, "isSynchronized")
+def test_swrtj_providedmethod_has_isSynchronized():
+    assert hasattr(swrtj_ProvidedMethod, "isSynchronized")
     descriptor = None
-    for klass in swrtj::ProvidedMethod.__mro__:
+    for klass in swrtj_ProvidedMethod.__mro__:
         if "isSynchronized" in klass.__dict__:
             descriptor = klass.__dict__["isSynchronized"]
             break
@@ -138,16 +138,16 @@ def test_swrtj::providedmethod_has_isSynchronized():
 
 
 
-def test_swrtj::requiredmethod_is_not_abstract():
-    assert not inspect.isabstract(swrtj::RequiredMethod)
+def test_swrtj_requiredmethod_is_not_abstract():
+    assert not inspect.isabstract(swrtj_RequiredMethod)
 
 
-def test_swrtj::requiredmethod_constructor_exists():
-    assert callable(swrtj::RequiredMethod.__init__)
+def test_swrtj_requiredmethod_constructor_exists():
+    assert callable(swrtj_RequiredMethod.__init__)
 
 
-def test_swrtj::requiredmethod_constructor_args():
-    sig = inspect.signature(swrtj::RequiredMethod.__init__)
+def test_swrtj_requiredmethod_constructor_args():
+    sig = inspect.signature(swrtj_RequiredMethod.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -166,37 +166,37 @@ def test_field_constructor_args():
 
 
 
-def test_swrtj::requiredfield_is_not_abstract():
-    assert not inspect.isabstract(swrtj::RequiredField)
+def test_swrtj_requiredfield_is_not_abstract():
+    assert not inspect.isabstract(swrtj_RequiredField)
 
 
-def test_swrtj::requiredfield_constructor_exists():
-    assert callable(swrtj::RequiredField.__init__)
+def test_swrtj_requiredfield_constructor_exists():
+    assert callable(swrtj_RequiredField.__init__)
 
 
-def test_swrtj::requiredfield_constructor_args():
-    sig = inspect.signature(swrtj::RequiredField.__init__)
+def test_swrtj_requiredfield_constructor_args():
+    sig = inspect.signature(swrtj_RequiredField.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_swrtj::fielddeclaration_is_not_abstract():
-    assert not inspect.isabstract(swrtj::FieldDeclaration)
+def test_swrtj_fielddeclaration_is_not_abstract():
+    assert not inspect.isabstract(swrtj_FieldDeclaration)
 
 
-def test_swrtj::fielddeclaration_constructor_exists():
-    assert callable(swrtj::FieldDeclaration.__init__)
+def test_swrtj_fielddeclaration_constructor_exists():
+    assert callable(swrtj_FieldDeclaration.__init__)
 
 
-def test_swrtj::fielddeclaration_constructor_args():
-    sig = inspect.signature(swrtj::FieldDeclaration.__init__)
+def test_swrtj_fielddeclaration_constructor_args():
+    sig = inspect.signature(swrtj_FieldDeclaration.__init__)
     params = list(sig.parameters.keys())
     assert "modifier" in params, "Missing parameter 'modifier'"
 
-def test_swrtj::fielddeclaration_has_modifier():
-    assert hasattr(swrtj::FieldDeclaration, "modifier")
+def test_swrtj_fielddeclaration_has_modifier():
+    assert hasattr(swrtj_FieldDeclaration, "modifier")
     descriptor = None
-    for klass in swrtj::FieldDeclaration.__mro__:
+    for klass in swrtj_FieldDeclaration.__mro__:
         if "modifier" in klass.__dict__:
             descriptor = klass.__dict__["modifier"]
             break
@@ -218,50 +218,50 @@ def test_genericexpression_constructor_args():
 
 
 
-def test_swrtj::expression_is_not_abstract():
-    assert not inspect.isabstract(swrtj::Expression)
+def test_swrtj_expression_is_not_abstract():
+    assert not inspect.isabstract(swrtj_Expression)
 
 
-def test_swrtj::expression_constructor_exists():
-    assert callable(swrtj::Expression.__init__)
+def test_swrtj_expression_constructor_exists():
+    assert callable(swrtj_Expression.__init__)
 
 
-def test_swrtj::expression_constructor_args():
-    sig = inspect.signature(swrtj::Expression.__init__)
+def test_swrtj_expression_constructor_args():
+    sig = inspect.signature(swrtj_Expression.__init__)
     params = list(sig.parameters.keys())
-    assert "sign" in params, "Missing parameter 'sign'"
     assert "operatorList" in params, "Missing parameter 'operatorList'"
+    assert "sign" in params, "Missing parameter 'sign'"
 
-def test_swrtj::expression_has_sign():
-    assert hasattr(swrtj::Expression, "sign")
+def test_swrtj_expression_has_operatorList():
+    assert hasattr(swrtj_Expression, "operatorList")
     descriptor = None
-    for klass in swrtj::Expression.__mro__:
-        if "sign" in klass.__dict__:
-            descriptor = klass.__dict__["sign"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_swrtj::expression_has_operatorList():
-    assert hasattr(swrtj::Expression, "operatorList")
-    descriptor = None
-    for klass in swrtj::Expression.__mro__:
+    for klass in swrtj_Expression.__mro__:
         if "operatorList" in klass.__dict__:
             descriptor = klass.__dict__["operatorList"]
             break
     assert isinstance(descriptor, property)
 
+def test_swrtj_expression_has_sign():
+    assert hasattr(swrtj_Expression, "sign")
+    descriptor = None
+    for klass in swrtj_Expression.__mro__:
+        if "sign" in klass.__dict__:
+            descriptor = klass.__dict__["sign"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_swrtj::booleanexpression_is_not_abstract():
-    assert not inspect.isabstract(swrtj::BooleanExpression)
+
+def test_swrtj_booleanexpression_is_not_abstract():
+    assert not inspect.isabstract(swrtj_BooleanExpression)
 
 
-def test_swrtj::booleanexpression_constructor_exists():
-    assert callable(swrtj::BooleanExpression.__init__)
+def test_swrtj_booleanexpression_constructor_exists():
+    assert callable(swrtj_BooleanExpression.__init__)
 
 
-def test_swrtj::booleanexpression_constructor_args():
-    sig = inspect.signature(swrtj::BooleanExpression.__init__)
+def test_swrtj_booleanexpression_constructor_args():
+    sig = inspect.signature(swrtj_BooleanExpression.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -280,30 +280,30 @@ def test_parameter_constructor_args():
 
 
 
-def test_swrtj::localparameter_is_not_abstract():
-    assert not inspect.isabstract(swrtj::LocalParameter)
+def test_swrtj_localparameter_is_not_abstract():
+    assert not inspect.isabstract(swrtj_LocalParameter)
 
 
-def test_swrtj::localparameter_constructor_exists():
-    assert callable(swrtj::LocalParameter.__init__)
+def test_swrtj_localparameter_constructor_exists():
+    assert callable(swrtj_LocalParameter.__init__)
 
 
-def test_swrtj::localparameter_constructor_args():
-    sig = inspect.signature(swrtj::LocalParameter.__init__)
+def test_swrtj_localparameter_constructor_args():
+    sig = inspect.signature(swrtj_LocalParameter.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_swrtj::formalparameter_is_not_abstract():
-    assert not inspect.isabstract(swrtj::FormalParameter)
+def test_swrtj_formalparameter_is_not_abstract():
+    assert not inspect.isabstract(swrtj_FormalParameter)
 
 
-def test_swrtj::formalparameter_constructor_exists():
-    assert callable(swrtj::FormalParameter.__init__)
+def test_swrtj_formalparameter_constructor_exists():
+    assert callable(swrtj_FormalParameter.__init__)
 
 
-def test_swrtj::formalparameter_constructor_args():
-    sig = inspect.signature(swrtj::FormalParameter.__init__)
+def test_swrtj_formalparameter_constructor_args():
+    sig = inspect.signature(swrtj_FormalParameter.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -322,16 +322,16 @@ def test_message_constructor_args():
 
 
 
-def test_swrtj::methodinvocation_is_not_abstract():
-    assert not inspect.isabstract(swrtj::MethodInvocation)
+def test_swrtj_methodinvocation_is_not_abstract():
+    assert not inspect.isabstract(swrtj_MethodInvocation)
 
 
-def test_swrtj::methodinvocation_constructor_exists():
-    assert callable(swrtj::MethodInvocation.__init__)
+def test_swrtj_methodinvocation_constructor_exists():
+    assert callable(swrtj_MethodInvocation.__init__)
 
 
-def test_swrtj::methodinvocation_constructor_args():
-    sig = inspect.signature(swrtj::MethodInvocation.__init__)
+def test_swrtj_methodinvocation_constructor_args():
+    sig = inspect.signature(swrtj_MethodInvocation.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -350,58 +350,58 @@ def test_traitoperation_constructor_args():
 
 
 
-def test_swrtj::traitfieldrename_is_not_abstract():
-    assert not inspect.isabstract(swrtj::TraitFieldRename)
+def test_swrtj_traitmethodrename_is_not_abstract():
+    assert not inspect.isabstract(swrtj_TraitMethodRename)
 
 
-def test_swrtj::traitfieldrename_constructor_exists():
-    assert callable(swrtj::TraitFieldRename.__init__)
+def test_swrtj_traitmethodrename_constructor_exists():
+    assert callable(swrtj_TraitMethodRename.__init__)
 
 
-def test_swrtj::traitfieldrename_constructor_args():
-    sig = inspect.signature(swrtj::TraitFieldRename.__init__)
+def test_swrtj_traitmethodrename_constructor_args():
+    sig = inspect.signature(swrtj_TraitMethodRename.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_swrtj::traitalias_is_not_abstract():
-    assert not inspect.isabstract(swrtj::TraitAlias)
+def test_swrtj_traitfieldrename_is_not_abstract():
+    assert not inspect.isabstract(swrtj_TraitFieldRename)
 
 
-def test_swrtj::traitalias_constructor_exists():
-    assert callable(swrtj::TraitAlias.__init__)
+def test_swrtj_traitfieldrename_constructor_exists():
+    assert callable(swrtj_TraitFieldRename.__init__)
 
 
-def test_swrtj::traitalias_constructor_args():
-    sig = inspect.signature(swrtj::TraitAlias.__init__)
+def test_swrtj_traitfieldrename_constructor_args():
+    sig = inspect.signature(swrtj_TraitFieldRename.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_swrtj::traitmethodrename_is_not_abstract():
-    assert not inspect.isabstract(swrtj::TraitMethodRename)
+def test_swrtj_traitalias_is_not_abstract():
+    assert not inspect.isabstract(swrtj_TraitAlias)
 
 
-def test_swrtj::traitmethodrename_constructor_exists():
-    assert callable(swrtj::TraitMethodRename.__init__)
+def test_swrtj_traitalias_constructor_exists():
+    assert callable(swrtj_TraitAlias.__init__)
 
 
-def test_swrtj::traitmethodrename_constructor_args():
-    sig = inspect.signature(swrtj::TraitMethodRename.__init__)
+def test_swrtj_traitalias_constructor_args():
+    sig = inspect.signature(swrtj_TraitAlias.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_swrtj::traitexclude_is_not_abstract():
-    assert not inspect.isabstract(swrtj::TraitExclude)
+def test_swrtj_traitexclude_is_not_abstract():
+    assert not inspect.isabstract(swrtj_TraitExclude)
 
 
-def test_swrtj::traitexclude_constructor_exists():
-    assert callable(swrtj::TraitExclude.__init__)
+def test_swrtj_traitexclude_constructor_exists():
+    assert callable(swrtj_TraitExclude.__init__)
 
 
-def test_swrtj::traitexclude_constructor_args():
-    sig = inspect.signature(swrtj::TraitExclude.__init__)
+def test_swrtj_traitexclude_constructor_args():
+    sig = inspect.signature(swrtj_TraitExclude.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -420,44 +420,44 @@ def test_recordoperation_constructor_args():
 
 
 
-def test_swrtj::recordrename_is_not_abstract():
-    assert not inspect.isabstract(swrtj::RecordRename)
+def test_swrtj_recordrename_is_not_abstract():
+    assert not inspect.isabstract(swrtj_RecordRename)
 
 
-def test_swrtj::recordrename_constructor_exists():
-    assert callable(swrtj::RecordRename.__init__)
+def test_swrtj_recordrename_constructor_exists():
+    assert callable(swrtj_RecordRename.__init__)
 
 
-def test_swrtj::recordrename_constructor_args():
-    sig = inspect.signature(swrtj::RecordRename.__init__)
+def test_swrtj_recordrename_constructor_args():
+    sig = inspect.signature(swrtj_RecordRename.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_swrtj::recordexclude_is_not_abstract():
-    assert not inspect.isabstract(swrtj::RecordExclude)
+def test_swrtj_recordexclude_is_not_abstract():
+    assert not inspect.isabstract(swrtj_RecordExclude)
 
 
-def test_swrtj::recordexclude_constructor_exists():
-    assert callable(swrtj::RecordExclude.__init__)
+def test_swrtj_recordexclude_constructor_exists():
+    assert callable(swrtj_RecordExclude.__init__)
 
 
-def test_swrtj::recordexclude_constructor_args():
-    sig = inspect.signature(swrtj::RecordExclude.__init__)
+def test_swrtj_recordexclude_constructor_args():
+    sig = inspect.signature(swrtj_RecordExclude.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_swrtj::fieldaccess_is_not_abstract():
-    assert not inspect.isabstract(swrtj::FieldAccess)
+def test_swrtj_fieldaccess_is_not_abstract():
+    assert not inspect.isabstract(swrtj_FieldAccess)
 
 
-def test_swrtj::fieldaccess_constructor_exists():
-    assert callable(swrtj::FieldAccess.__init__)
+def test_swrtj_fieldaccess_constructor_exists():
+    assert callable(swrtj_FieldAccess.__init__)
 
 
-def test_swrtj::fieldaccess_constructor_args():
-    sig = inspect.signature(swrtj::FieldAccess.__init__)
+def test_swrtj_fieldaccess_constructor_args():
+    sig = inspect.signature(swrtj_FieldAccess.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -476,37 +476,37 @@ def test_atomicbooleanexpression_constructor_args():
 
 
 
-def test_swrtj::simplecomparation_is_not_abstract():
-    assert not inspect.isabstract(swrtj::SimpleComparation)
+def test_swrtj_simplecomparation_is_not_abstract():
+    assert not inspect.isabstract(swrtj_SimpleComparation)
 
 
-def test_swrtj::simplecomparation_constructor_exists():
-    assert callable(swrtj::SimpleComparation.__init__)
+def test_swrtj_simplecomparation_constructor_exists():
+    assert callable(swrtj_SimpleComparation.__init__)
 
 
-def test_swrtj::simplecomparation_constructor_args():
-    sig = inspect.signature(swrtj::SimpleComparation.__init__)
+def test_swrtj_simplecomparation_constructor_args():
+    sig = inspect.signature(swrtj_SimpleComparation.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_swrtj::atomicbooleanexpression_is_not_abstract():
-    assert not inspect.isabstract(swrtj::AtomicBooleanExpression)
+def test_swrtj_atomicbooleanexpression_is_not_abstract():
+    assert not inspect.isabstract(swrtj_AtomicBooleanExpression)
 
 
-def test_swrtj::atomicbooleanexpression_constructor_exists():
-    assert callable(swrtj::AtomicBooleanExpression.__init__)
+def test_swrtj_atomicbooleanexpression_constructor_exists():
+    assert callable(swrtj_AtomicBooleanExpression.__init__)
 
 
-def test_swrtj::atomicbooleanexpression_constructor_args():
-    sig = inspect.signature(swrtj::AtomicBooleanExpression.__init__)
+def test_swrtj_atomicbooleanexpression_constructor_args():
+    sig = inspect.signature(swrtj_AtomicBooleanExpression.__init__)
     params = list(sig.parameters.keys())
     assert "negated" in params, "Missing parameter 'negated'"
 
-def test_swrtj::atomicbooleanexpression_has_negated():
-    assert hasattr(swrtj::AtomicBooleanExpression, "negated")
+def test_swrtj_atomicbooleanexpression_has_negated():
+    assert hasattr(swrtj_AtomicBooleanExpression, "negated")
     descriptor = None
-    for klass in swrtj::AtomicBooleanExpression.__mro__:
+    for klass in swrtj_AtomicBooleanExpression.__mro__:
         if "negated" in klass.__dict__:
             descriptor = klass.__dict__["negated"]
             break
@@ -514,23 +514,23 @@ def test_swrtj::atomicbooleanexpression_has_negated():
 
 
 
-def test_swrtj::booleanoperator_is_not_abstract():
-    assert not inspect.isabstract(swrtj::BooleanOperator)
+def test_swrtj_booleanoperator_is_not_abstract():
+    assert not inspect.isabstract(swrtj_BooleanOperator)
 
 
-def test_swrtj::booleanoperator_constructor_exists():
-    assert callable(swrtj::BooleanOperator.__init__)
+def test_swrtj_booleanoperator_constructor_exists():
+    assert callable(swrtj_BooleanOperator.__init__)
 
 
-def test_swrtj::booleanoperator_constructor_args():
-    sig = inspect.signature(swrtj::BooleanOperator.__init__)
+def test_swrtj_booleanoperator_constructor_args():
+    sig = inspect.signature(swrtj_BooleanOperator.__init__)
     params = list(sig.parameters.keys())
     assert "operator" in params, "Missing parameter 'operator'"
 
-def test_swrtj::booleanoperator_has_operator():
-    assert hasattr(swrtj::BooleanOperator, "operator")
+def test_swrtj_booleanoperator_has_operator():
+    assert hasattr(swrtj_BooleanOperator, "operator")
     descriptor = None
-    for klass in swrtj::BooleanOperator.__mro__:
+    for klass in swrtj_BooleanOperator.__mro__:
         if "operator" in klass.__dict__:
             descriptor = klass.__dict__["operator"]
             break
@@ -552,85 +552,51 @@ def test_start_constructor_args():
 
 
 
-def test_swrtj::input_is_not_abstract():
-    assert not inspect.isabstract(swrtj::Input)
+def test_swrtj_nestedexpression_is_not_abstract():
+    assert not inspect.isabstract(swrtj_NestedExpression)
 
 
-def test_swrtj::input_constructor_exists():
-    assert callable(swrtj::Input.__init__)
+def test_swrtj_nestedexpression_constructor_exists():
+    assert callable(swrtj_NestedExpression.__init__)
 
 
-def test_swrtj::input_constructor_args():
-    sig = inspect.signature(swrtj::Input.__init__)
-    params = list(sig.parameters.keys())
-    assert "input" in params, "Missing parameter 'input'"
-
-def test_swrtj::input_has_input():
-    assert hasattr(swrtj::Input, "input")
-    descriptor = None
-    for klass in swrtj::Input.__mro__:
-        if "input" in klass.__dict__:
-            descriptor = klass.__dict__["input"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_swrtj::constructorinvocation_is_not_abstract():
-    assert not inspect.isabstract(swrtj::ConstructorInvocation)
-
-
-def test_swrtj::constructorinvocation_constructor_exists():
-    assert callable(swrtj::ConstructorInvocation.__init__)
-
-
-def test_swrtj::constructorinvocation_constructor_args():
-    sig = inspect.signature(swrtj::ConstructorInvocation.__init__)
+def test_swrtj_nestedexpression_constructor_args():
+    sig = inspect.signature(swrtj_NestedExpression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_swrtj::booleanconstant_is_not_abstract():
-    assert not inspect.isabstract(swrtj::BooleanConstant)
+def test_swrtj_parameterreference_is_not_abstract():
+    assert not inspect.isabstract(swrtj_ParameterReference)
 
 
-def test_swrtj::booleanconstant_constructor_exists():
-    assert callable(swrtj::BooleanConstant.__init__)
+def test_swrtj_parameterreference_constructor_exists():
+    assert callable(swrtj_ParameterReference.__init__)
 
 
-def test_swrtj::booleanconstant_constructor_args():
-    sig = inspect.signature(swrtj::BooleanConstant.__init__)
+def test_swrtj_parameterreference_constructor_args():
+    sig = inspect.signature(swrtj_ParameterReference.__init__)
     params = list(sig.parameters.keys())
-    assert "value" in params, "Missing parameter 'value'"
-
-def test_swrtj::booleanconstant_has_value():
-    assert hasattr(swrtj::BooleanConstant, "value")
-    descriptor = None
-    for klass in swrtj::BooleanConstant.__mro__:
-        if "value" in klass.__dict__:
-            descriptor = klass.__dict__["value"]
-            break
-    assert isinstance(descriptor, property)
 
 
 
-def test_swrtj::args_is_not_abstract():
-    assert not inspect.isabstract(swrtj::Args)
+def test_swrtj_args_is_not_abstract():
+    assert not inspect.isabstract(swrtj_Args)
 
 
-def test_swrtj::args_constructor_exists():
-    assert callable(swrtj::Args.__init__)
+def test_swrtj_args_constructor_exists():
+    assert callable(swrtj_Args.__init__)
 
 
-def test_swrtj::args_constructor_args():
-    sig = inspect.signature(swrtj::Args.__init__)
+def test_swrtj_args_constructor_args():
+    sig = inspect.signature(swrtj_Args.__init__)
     params = list(sig.parameters.keys())
     assert "args" in params, "Missing parameter 'args'"
 
-def test_swrtj::args_has_args():
-    assert hasattr(swrtj::Args, "args")
+def test_swrtj_args_has_args():
+    assert hasattr(swrtj_Args, "args")
     descriptor = None
-    for klass in swrtj::Args.__mro__:
+    for klass in swrtj_Args.__mro__:
         if "args" in klass.__dict__:
             descriptor = klass.__dict__["args"]
             break
@@ -638,113 +604,23 @@ def test_swrtj::args_has_args():
 
 
 
-def test_swrtj::nestedexpression_is_not_abstract():
-    assert not inspect.isabstract(swrtj::NestedExpression)
+def test_swrtj_this_is_not_abstract():
+    assert not inspect.isabstract(swrtj_This)
 
 
-def test_swrtj::nestedexpression_constructor_exists():
-    assert callable(swrtj::NestedExpression.__init__)
+def test_swrtj_this_constructor_exists():
+    assert callable(swrtj_This.__init__)
 
 
-def test_swrtj::nestedexpression_constructor_args():
-    sig = inspect.signature(swrtj::NestedExpression.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_swrtj::parameterreference_is_not_abstract():
-    assert not inspect.isabstract(swrtj::ParameterReference)
-
-
-def test_swrtj::parameterreference_constructor_exists():
-    assert callable(swrtj::ParameterReference.__init__)
-
-
-def test_swrtj::parameterreference_constructor_args():
-    sig = inspect.signature(swrtj::ParameterReference.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_swrtj::cast_is_not_abstract():
-    assert not inspect.isabstract(swrtj::Cast)
-
-
-def test_swrtj::cast_constructor_exists():
-    assert callable(swrtj::Cast.__init__)
-
-
-def test_swrtj::cast_constructor_args():
-    sig = inspect.signature(swrtj::Cast.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_swrtj::stringconstant_is_not_abstract():
-    assert not inspect.isabstract(swrtj::StringConstant)
-
-
-def test_swrtj::stringconstant_constructor_exists():
-    assert callable(swrtj::StringConstant.__init__)
-
-
-def test_swrtj::stringconstant_constructor_args():
-    sig = inspect.signature(swrtj::StringConstant.__init__)
-    params = list(sig.parameters.keys())
-    assert "value" in params, "Missing parameter 'value'"
-
-def test_swrtj::stringconstant_has_value():
-    assert hasattr(swrtj::StringConstant, "value")
-    descriptor = None
-    for klass in swrtj::StringConstant.__mro__:
-        if "value" in klass.__dict__:
-            descriptor = klass.__dict__["value"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_swrtj::output_is_not_abstract():
-    assert not inspect.isabstract(swrtj::Output)
-
-
-def test_swrtj::output_constructor_exists():
-    assert callable(swrtj::Output.__init__)
-
-
-def test_swrtj::output_constructor_args():
-    sig = inspect.signature(swrtj::Output.__init__)
-    params = list(sig.parameters.keys())
-    assert "output" in params, "Missing parameter 'output'"
-
-def test_swrtj::output_has_output():
-    assert hasattr(swrtj::Output, "output")
-    descriptor = None
-    for klass in swrtj::Output.__mro__:
-        if "output" in klass.__dict__:
-            descriptor = klass.__dict__["output"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_swrtj::this_is_not_abstract():
-    assert not inspect.isabstract(swrtj::This)
-
-
-def test_swrtj::this_constructor_exists():
-    assert callable(swrtj::This.__init__)
-
-
-def test_swrtj::this_constructor_args():
-    sig = inspect.signature(swrtj::This.__init__)
+def test_swrtj_this_constructor_args():
+    sig = inspect.signature(swrtj_This.__init__)
     params = list(sig.parameters.keys())
     assert "this" in params, "Missing parameter 'this'"
 
-def test_swrtj::this_has_this():
-    assert hasattr(swrtj::This, "this")
+def test_swrtj_this_has_this():
+    assert hasattr(swrtj_This, "this")
     descriptor = None
-    for klass in swrtj::This.__mro__:
+    for klass in swrtj_This.__mro__:
         if "this" in klass.__dict__:
             descriptor = klass.__dict__["this"]
             break
@@ -752,23 +628,47 @@ def test_swrtj::this_has_this():
 
 
 
-def test_swrtj::number_is_not_abstract():
-    assert not inspect.isabstract(swrtj::Number)
+def test_swrtj_output_is_not_abstract():
+    assert not inspect.isabstract(swrtj_Output)
 
 
-def test_swrtj::number_constructor_exists():
-    assert callable(swrtj::Number.__init__)
+def test_swrtj_output_constructor_exists():
+    assert callable(swrtj_Output.__init__)
 
 
-def test_swrtj::number_constructor_args():
-    sig = inspect.signature(swrtj::Number.__init__)
+def test_swrtj_output_constructor_args():
+    sig = inspect.signature(swrtj_Output.__init__)
+    params = list(sig.parameters.keys())
+    assert "output" in params, "Missing parameter 'output'"
+
+def test_swrtj_output_has_output():
+    assert hasattr(swrtj_Output, "output")
+    descriptor = None
+    for klass in swrtj_Output.__mro__:
+        if "output" in klass.__dict__:
+            descriptor = klass.__dict__["output"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_swrtj_number_is_not_abstract():
+    assert not inspect.isabstract(swrtj_Number)
+
+
+def test_swrtj_number_constructor_exists():
+    assert callable(swrtj_Number.__init__)
+
+
+def test_swrtj_number_constructor_args():
+    sig = inspect.signature(swrtj_Number.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
 
-def test_swrtj::number_has_value():
-    assert hasattr(swrtj::Number, "value")
+def test_swrtj_number_has_value():
+    assert hasattr(swrtj_Number, "value")
     descriptor = None
-    for klass in swrtj::Number.__mro__:
+    for klass in swrtj_Number.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -776,37 +676,137 @@ def test_swrtj::number_has_value():
 
 
 
-def test_swrtj::parameterassignment_is_not_abstract():
-    assert not inspect.isabstract(swrtj::ParameterAssignment)
+def test_swrtj_input_is_not_abstract():
+    assert not inspect.isabstract(swrtj_Input)
 
 
-def test_swrtj::parameterassignment_constructor_exists():
-    assert callable(swrtj::ParameterAssignment.__init__)
+def test_swrtj_input_constructor_exists():
+    assert callable(swrtj_Input.__init__)
 
 
-def test_swrtj::parameterassignment_constructor_args():
-    sig = inspect.signature(swrtj::ParameterAssignment.__init__)
+def test_swrtj_input_constructor_args():
+    sig = inspect.signature(swrtj_Input.__init__)
+    params = list(sig.parameters.keys())
+    assert "input" in params, "Missing parameter 'input'"
+
+def test_swrtj_input_has_input():
+    assert hasattr(swrtj_Input, "input")
+    descriptor = None
+    for klass in swrtj_Input.__mro__:
+        if "input" in klass.__dict__:
+            descriptor = klass.__dict__["input"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_swrtj_booleanconstant_is_not_abstract():
+    assert not inspect.isabstract(swrtj_BooleanConstant)
+
+
+def test_swrtj_booleanconstant_constructor_exists():
+    assert callable(swrtj_BooleanConstant.__init__)
+
+
+def test_swrtj_booleanconstant_constructor_args():
+    sig = inspect.signature(swrtj_BooleanConstant.__init__)
+    params = list(sig.parameters.keys())
+    assert "value" in params, "Missing parameter 'value'"
+
+def test_swrtj_booleanconstant_has_value():
+    assert hasattr(swrtj_BooleanConstant, "value")
+    descriptor = None
+    for klass in swrtj_BooleanConstant.__mro__:
+        if "value" in klass.__dict__:
+            descriptor = klass.__dict__["value"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_swrtj_parameterassignment_is_not_abstract():
+    assert not inspect.isabstract(swrtj_ParameterAssignment)
+
+
+def test_swrtj_parameterassignment_constructor_exists():
+    assert callable(swrtj_ParameterAssignment.__init__)
+
+
+def test_swrtj_parameterassignment_constructor_args():
+    sig = inspect.signature(swrtj_ParameterAssignment.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_swrtj::null_is_not_abstract():
-    assert not inspect.isabstract(swrtj::Null)
+def test_swrtj_stringconstant_is_not_abstract():
+    assert not inspect.isabstract(swrtj_StringConstant)
 
 
-def test_swrtj::null_constructor_exists():
-    assert callable(swrtj::Null.__init__)
+def test_swrtj_stringconstant_constructor_exists():
+    assert callable(swrtj_StringConstant.__init__)
 
 
-def test_swrtj::null_constructor_args():
-    sig = inspect.signature(swrtj::Null.__init__)
+def test_swrtj_stringconstant_constructor_args():
+    sig = inspect.signature(swrtj_StringConstant.__init__)
+    params = list(sig.parameters.keys())
+    assert "value" in params, "Missing parameter 'value'"
+
+def test_swrtj_stringconstant_has_value():
+    assert hasattr(swrtj_StringConstant, "value")
+    descriptor = None
+    for klass in swrtj_StringConstant.__mro__:
+        if "value" in klass.__dict__:
+            descriptor = klass.__dict__["value"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_swrtj_cast_is_not_abstract():
+    assert not inspect.isabstract(swrtj_Cast)
+
+
+def test_swrtj_cast_constructor_exists():
+    assert callable(swrtj_Cast.__init__)
+
+
+def test_swrtj_cast_constructor_args():
+    sig = inspect.signature(swrtj_Cast.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_swrtj_constructorinvocation_is_not_abstract():
+    assert not inspect.isabstract(swrtj_ConstructorInvocation)
+
+
+def test_swrtj_constructorinvocation_constructor_exists():
+    assert callable(swrtj_ConstructorInvocation.__init__)
+
+
+def test_swrtj_constructorinvocation_constructor_args():
+    sig = inspect.signature(swrtj_ConstructorInvocation.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_swrtj_null_is_not_abstract():
+    assert not inspect.isabstract(swrtj_Null)
+
+
+def test_swrtj_null_constructor_exists():
+    assert callable(swrtj_Null.__init__)
+
+
+def test_swrtj_null_constructor_args():
+    sig = inspect.signature(swrtj_Null.__init__)
     params = list(sig.parameters.keys())
     assert "null" in params, "Missing parameter 'null'"
 
-def test_swrtj::null_has_null():
-    assert hasattr(swrtj::Null, "null")
+def test_swrtj_null_has_null():
+    assert hasattr(swrtj_Null, "null")
     descriptor = None
-    for klass in swrtj::Null.__mro__:
+    for klass in swrtj_Null.__mro__:
         if "null" in klass.__dict__:
             descriptor = klass.__dict__["null"]
             break
@@ -814,79 +814,79 @@ def test_swrtj::null_has_null():
 
 
 
-def test_swrtj::message_is_not_abstract():
-    assert not inspect.isabstract(swrtj::Message)
+def test_swrtj_message_is_not_abstract():
+    assert not inspect.isabstract(swrtj_Message)
 
 
-def test_swrtj::message_constructor_exists():
-    assert callable(swrtj::Message.__init__)
+def test_swrtj_message_constructor_exists():
+    assert callable(swrtj_Message.__init__)
 
 
-def test_swrtj::message_constructor_args():
-    sig = inspect.signature(swrtj::Message.__init__)
+def test_swrtj_message_constructor_args():
+    sig = inspect.signature(swrtj_Message.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_swrtj::start_is_not_abstract():
-    assert not inspect.isabstract(swrtj::Start)
+def test_swrtj_start_is_not_abstract():
+    assert not inspect.isabstract(swrtj_Start)
 
 
-def test_swrtj::start_constructor_exists():
-    assert callable(swrtj::Start.__init__)
+def test_swrtj_start_constructor_exists():
+    assert callable(swrtj_Start.__init__)
 
 
-def test_swrtj::start_constructor_args():
-    sig = inspect.signature(swrtj::Start.__init__)
+def test_swrtj_start_constructor_args():
+    sig = inspect.signature(swrtj_Start.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_swrtj::dottedexpression_is_not_abstract():
-    assert not inspect.isabstract(swrtj::DottedExpression)
+def test_swrtj_dottedexpression_is_not_abstract():
+    assert not inspect.isabstract(swrtj_DottedExpression)
 
 
-def test_swrtj::dottedexpression_constructor_exists():
-    assert callable(swrtj::DottedExpression.__init__)
+def test_swrtj_dottedexpression_constructor_exists():
+    assert callable(swrtj_DottedExpression.__init__)
 
 
-def test_swrtj::dottedexpression_constructor_args():
-    sig = inspect.signature(swrtj::DottedExpression.__init__)
+def test_swrtj_dottedexpression_constructor_args():
+    sig = inspect.signature(swrtj_DottedExpression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_swrtj::nestedbooleanexpression_is_not_abstract():
-    assert not inspect.isabstract(swrtj::NestedBooleanExpression)
+def test_swrtj_nestedbooleanexpression_is_not_abstract():
+    assert not inspect.isabstract(swrtj_NestedBooleanExpression)
 
 
-def test_swrtj::nestedbooleanexpression_constructor_exists():
-    assert callable(swrtj::NestedBooleanExpression.__init__)
+def test_swrtj_nestedbooleanexpression_constructor_exists():
+    assert callable(swrtj_NestedBooleanExpression.__init__)
 
 
-def test_swrtj::nestedbooleanexpression_constructor_args():
-    sig = inspect.signature(swrtj::NestedBooleanExpression.__init__)
+def test_swrtj_nestedbooleanexpression_constructor_args():
+    sig = inspect.signature(swrtj_NestedBooleanExpression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_swrtj::compareoperator_is_not_abstract():
-    assert not inspect.isabstract(swrtj::CompareOperator)
+def test_swrtj_compareoperator_is_not_abstract():
+    assert not inspect.isabstract(swrtj_CompareOperator)
 
 
-def test_swrtj::compareoperator_constructor_exists():
-    assert callable(swrtj::CompareOperator.__init__)
+def test_swrtj_compareoperator_constructor_exists():
+    assert callable(swrtj_CompareOperator.__init__)
 
 
-def test_swrtj::compareoperator_constructor_args():
-    sig = inspect.signature(swrtj::CompareOperator.__init__)
+def test_swrtj_compareoperator_constructor_args():
+    sig = inspect.signature(swrtj_CompareOperator.__init__)
     params = list(sig.parameters.keys())
     assert "operator" in params, "Missing parameter 'operator'"
 
-def test_swrtj::compareoperator_has_operator():
-    assert hasattr(swrtj::CompareOperator, "operator")
+def test_swrtj_compareoperator_has_operator():
+    assert hasattr(swrtj_CompareOperator, "operator")
     descriptor = None
-    for klass in swrtj::CompareOperator.__mro__:
+    for klass in swrtj_CompareOperator.__mro__:
         if "operator" in klass.__dict__:
             descriptor = klass.__dict__["operator"]
             break
@@ -894,23 +894,23 @@ def test_swrtj::compareoperator_has_operator():
 
 
 
-def test_swrtj::fieldname_is_not_abstract():
-    assert not inspect.isabstract(swrtj::FieldName)
+def test_swrtj_fieldname_is_not_abstract():
+    assert not inspect.isabstract(swrtj_FieldName)
 
 
-def test_swrtj::fieldname_constructor_exists():
-    assert callable(swrtj::FieldName.__init__)
+def test_swrtj_fieldname_constructor_exists():
+    assert callable(swrtj_FieldName.__init__)
 
 
-def test_swrtj::fieldname_constructor_args():
-    sig = inspect.signature(swrtj::FieldName.__init__)
+def test_swrtj_fieldname_constructor_args():
+    sig = inspect.signature(swrtj_FieldName.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_swrtj::fieldname_has_name():
-    assert hasattr(swrtj::FieldName, "name")
+def test_swrtj_fieldname_has_name():
+    assert hasattr(swrtj_FieldName, "name")
     descriptor = None
-    for klass in swrtj::FieldName.__mro__:
+    for klass in swrtj_FieldName.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -918,23 +918,23 @@ def test_swrtj::fieldname_has_name():
 
 
 
-def test_swrtj::type_is_not_abstract():
-    assert not inspect.isabstract(swrtj::Type)
+def test_swrtj_type_is_not_abstract():
+    assert not inspect.isabstract(swrtj_Type)
 
 
-def test_swrtj::type_constructor_exists():
-    assert callable(swrtj::Type.__init__)
+def test_swrtj_type_constructor_exists():
+    assert callable(swrtj_Type.__init__)
 
 
-def test_swrtj::type_constructor_args():
-    sig = inspect.signature(swrtj::Type.__init__)
+def test_swrtj_type_constructor_args():
+    sig = inspect.signature(swrtj_Type.__init__)
     params = list(sig.parameters.keys())
     assert "primitiveType" in params, "Missing parameter 'primitiveType'"
 
-def test_swrtj::type_has_primitiveType():
-    assert hasattr(swrtj::Type, "primitiveType")
+def test_swrtj_type_has_primitiveType():
+    assert hasattr(swrtj_Type, "primitiveType")
     descriptor = None
-    for klass in swrtj::Type.__mro__:
+    for klass in swrtj_Type.__mro__:
         if "primitiveType" in klass.__dict__:
             descriptor = klass.__dict__["primitiveType"]
             break
@@ -956,16 +956,16 @@ def test_traitelement_constructor_args():
 
 
 
-def test_swrtj::traitelement_is_not_abstract():
-    assert not inspect.isabstract(swrtj::TraitElement)
+def test_swrtj_traitelement_is_not_abstract():
+    assert not inspect.isabstract(swrtj_TraitElement)
 
 
-def test_swrtj::traitelement_constructor_exists():
-    assert callable(swrtj::TraitElement.__init__)
+def test_swrtj_traitelement_constructor_exists():
+    assert callable(swrtj_TraitElement.__init__)
 
 
-def test_swrtj::traitelement_constructor_args():
-    sig = inspect.signature(swrtj::TraitElement.__init__)
+def test_swrtj_traitelement_constructor_args():
+    sig = inspect.signature(swrtj_TraitElement.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -984,72 +984,72 @@ def test_basetrait_constructor_args():
 
 
 
-def test_swrtj::traitname_is_not_abstract():
-    assert not inspect.isabstract(swrtj::TraitName)
+def test_swrtj_traitname_is_not_abstract():
+    assert not inspect.isabstract(swrtj_TraitName)
 
 
-def test_swrtj::traitname_constructor_exists():
-    assert callable(swrtj::TraitName.__init__)
+def test_swrtj_traitname_constructor_exists():
+    assert callable(swrtj_TraitName.__init__)
 
 
-def test_swrtj::traitname_constructor_args():
-    sig = inspect.signature(swrtj::TraitName.__init__)
+def test_swrtj_traitname_constructor_args():
+    sig = inspect.signature(swrtj_TraitName.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_swrtj::nestedtraitexpression_is_not_abstract():
-    assert not inspect.isabstract(swrtj::NestedTraitExpression)
+def test_swrtj_nestedtraitexpression_is_not_abstract():
+    assert not inspect.isabstract(swrtj_NestedTraitExpression)
 
 
-def test_swrtj::nestedtraitexpression_constructor_exists():
-    assert callable(swrtj::NestedTraitExpression.__init__)
+def test_swrtj_nestedtraitexpression_constructor_exists():
+    assert callable(swrtj_NestedTraitExpression.__init__)
 
 
-def test_swrtj::nestedtraitexpression_constructor_args():
-    sig = inspect.signature(swrtj::NestedTraitExpression.__init__)
+def test_swrtj_nestedtraitexpression_constructor_args():
+    sig = inspect.signature(swrtj_NestedTraitExpression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_swrtj::anonimoustrait_is_not_abstract():
-    assert not inspect.isabstract(swrtj::AnonimousTrait)
+def test_swrtj_anonimoustrait_is_not_abstract():
+    assert not inspect.isabstract(swrtj_AnonimousTrait)
 
 
-def test_swrtj::anonimoustrait_constructor_exists():
-    assert callable(swrtj::AnonimousTrait.__init__)
+def test_swrtj_anonimoustrait_constructor_exists():
+    assert callable(swrtj_AnonimousTrait.__init__)
 
 
-def test_swrtj::anonimoustrait_constructor_args():
-    sig = inspect.signature(swrtj::AnonimousTrait.__init__)
+def test_swrtj_anonimoustrait_constructor_args():
+    sig = inspect.signature(swrtj_AnonimousTrait.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_swrtj::traitoperation_is_not_abstract():
-    assert not inspect.isabstract(swrtj::TraitOperation)
+def test_swrtj_traitoperation_is_not_abstract():
+    assert not inspect.isabstract(swrtj_TraitOperation)
 
 
-def test_swrtj::traitoperation_constructor_exists():
-    assert callable(swrtj::TraitOperation.__init__)
+def test_swrtj_traitoperation_constructor_exists():
+    assert callable(swrtj_TraitOperation.__init__)
 
 
-def test_swrtj::traitoperation_constructor_args():
-    sig = inspect.signature(swrtj::TraitOperation.__init__)
+def test_swrtj_traitoperation_constructor_args():
+    sig = inspect.signature(swrtj_TraitOperation.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_swrtj::basetrait_is_not_abstract():
-    assert not inspect.isabstract(swrtj::BaseTrait)
+def test_swrtj_basetrait_is_not_abstract():
+    assert not inspect.isabstract(swrtj_BaseTrait)
 
 
-def test_swrtj::basetrait_constructor_exists():
-    assert callable(swrtj::BaseTrait.__init__)
+def test_swrtj_basetrait_constructor_exists():
+    assert callable(swrtj_BaseTrait.__init__)
 
 
-def test_swrtj::basetrait_constructor_args():
-    sig = inspect.signature(swrtj::BaseTrait.__init__)
+def test_swrtj_basetrait_constructor_args():
+    sig = inspect.signature(swrtj_BaseTrait.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1068,107 +1068,107 @@ def test_statement_constructor_args():
 
 
 
-def test_swrtj::whilestatement_is_not_abstract():
-    assert not inspect.isabstract(swrtj::WhileStatement)
+def test_swrtj_whilestatement_is_not_abstract():
+    assert not inspect.isabstract(swrtj_WhileStatement)
 
 
-def test_swrtj::whilestatement_constructor_exists():
-    assert callable(swrtj::WhileStatement.__init__)
+def test_swrtj_whilestatement_constructor_exists():
+    assert callable(swrtj_WhileStatement.__init__)
 
 
-def test_swrtj::whilestatement_constructor_args():
-    sig = inspect.signature(swrtj::WhileStatement.__init__)
+def test_swrtj_whilestatement_constructor_args():
+    sig = inspect.signature(swrtj_WhileStatement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_swrtj::ifthenelsestatement_is_not_abstract():
-    assert not inspect.isabstract(swrtj::IfThenElseStatement)
+def test_swrtj_ifthenelsestatement_is_not_abstract():
+    assert not inspect.isabstract(swrtj_IfThenElseStatement)
 
 
-def test_swrtj::ifthenelsestatement_constructor_exists():
-    assert callable(swrtj::IfThenElseStatement.__init__)
+def test_swrtj_ifthenelsestatement_constructor_exists():
+    assert callable(swrtj_IfThenElseStatement.__init__)
 
 
-def test_swrtj::ifthenelsestatement_constructor_args():
-    sig = inspect.signature(swrtj::IfThenElseStatement.__init__)
+def test_swrtj_ifthenelsestatement_constructor_args():
+    sig = inspect.signature(swrtj_IfThenElseStatement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_swrtj::expressionstatement_is_not_abstract():
-    assert not inspect.isabstract(swrtj::ExpressionStatement)
+def test_swrtj_expressionstatement_is_not_abstract():
+    assert not inspect.isabstract(swrtj_ExpressionStatement)
 
 
-def test_swrtj::expressionstatement_constructor_exists():
-    assert callable(swrtj::ExpressionStatement.__init__)
+def test_swrtj_expressionstatement_constructor_exists():
+    assert callable(swrtj_ExpressionStatement.__init__)
 
 
-def test_swrtj::expressionstatement_constructor_args():
-    sig = inspect.signature(swrtj::ExpressionStatement.__init__)
+def test_swrtj_expressionstatement_constructor_args():
+    sig = inspect.signature(swrtj_ExpressionStatement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_swrtj::statement_is_not_abstract():
-    assert not inspect.isabstract(swrtj::Statement)
+def test_swrtj_statement_is_not_abstract():
+    assert not inspect.isabstract(swrtj_Statement)
 
 
-def test_swrtj::statement_constructor_exists():
-    assert callable(swrtj::Statement.__init__)
+def test_swrtj_statement_constructor_exists():
+    assert callable(swrtj_Statement.__init__)
 
 
-def test_swrtj::statement_constructor_args():
-    sig = inspect.signature(swrtj::Statement.__init__)
+def test_swrtj_statement_constructor_args():
+    sig = inspect.signature(swrtj_Statement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_swrtj::genericexpression_is_not_abstract():
-    assert not inspect.isabstract(swrtj::GenericExpression)
+def test_swrtj_genericexpression_is_not_abstract():
+    assert not inspect.isabstract(swrtj_GenericExpression)
 
 
-def test_swrtj::genericexpression_constructor_exists():
-    assert callable(swrtj::GenericExpression.__init__)
+def test_swrtj_genericexpression_constructor_exists():
+    assert callable(swrtj_GenericExpression.__init__)
 
 
-def test_swrtj::genericexpression_constructor_args():
-    sig = inspect.signature(swrtj::GenericExpression.__init__)
+def test_swrtj_genericexpression_constructor_args():
+    sig = inspect.signature(swrtj_GenericExpression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_swrtj::returnstatement_is_not_abstract():
-    assert not inspect.isabstract(swrtj::ReturnStatement)
+def test_swrtj_returnstatement_is_not_abstract():
+    assert not inspect.isabstract(swrtj_ReturnStatement)
 
 
-def test_swrtj::returnstatement_constructor_exists():
-    assert callable(swrtj::ReturnStatement.__init__)
+def test_swrtj_returnstatement_constructor_exists():
+    assert callable(swrtj_ReturnStatement.__init__)
 
 
-def test_swrtj::returnstatement_constructor_args():
-    sig = inspect.signature(swrtj::ReturnStatement.__init__)
+def test_swrtj_returnstatement_constructor_args():
+    sig = inspect.signature(swrtj_ReturnStatement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_swrtj::parameter_is_not_abstract():
-    assert not inspect.isabstract(swrtj::Parameter)
+def test_swrtj_parameter_is_not_abstract():
+    assert not inspect.isabstract(swrtj_Parameter)
 
 
-def test_swrtj::parameter_constructor_exists():
-    assert callable(swrtj::Parameter.__init__)
+def test_swrtj_parameter_constructor_exists():
+    assert callable(swrtj_Parameter.__init__)
 
 
-def test_swrtj::parameter_constructor_args():
-    sig = inspect.signature(swrtj::Parameter.__init__)
+def test_swrtj_parameter_constructor_args():
+    sig = inspect.signature(swrtj_Parameter.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_swrtj::parameter_has_name():
-    assert hasattr(swrtj::Parameter, "name")
+def test_swrtj_parameter_has_name():
+    assert hasattr(swrtj_Parameter, "name")
     descriptor = None
-    for klass in swrtj::Parameter.__mro__:
+    for klass in swrtj_Parameter.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -1176,23 +1176,23 @@ def test_swrtj::parameter_has_name():
 
 
 
-def test_swrtj::methodname_is_not_abstract():
-    assert not inspect.isabstract(swrtj::MethodName)
+def test_swrtj_methodname_is_not_abstract():
+    assert not inspect.isabstract(swrtj_MethodName)
 
 
-def test_swrtj::methodname_constructor_exists():
-    assert callable(swrtj::MethodName.__init__)
+def test_swrtj_methodname_constructor_exists():
+    assert callable(swrtj_MethodName.__init__)
 
 
-def test_swrtj::methodname_constructor_args():
-    sig = inspect.signature(swrtj::MethodName.__init__)
+def test_swrtj_methodname_constructor_args():
+    sig = inspect.signature(swrtj_MethodName.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_swrtj::methodname_has_name():
-    assert hasattr(swrtj::MethodName, "name")
+def test_swrtj_methodname_has_name():
+    assert hasattr(swrtj_MethodName, "name")
     descriptor = None
-    for klass in swrtj::MethodName.__mro__:
+    for klass in swrtj_MethodName.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -1200,44 +1200,44 @@ def test_swrtj::methodname_has_name():
 
 
 
-def test_swrtj::traitexpression_is_not_abstract():
-    assert not inspect.isabstract(swrtj::TraitExpression)
+def test_swrtj_traitexpression_is_not_abstract():
+    assert not inspect.isabstract(swrtj_TraitExpression)
 
 
-def test_swrtj::traitexpression_constructor_exists():
-    assert callable(swrtj::TraitExpression.__init__)
+def test_swrtj_traitexpression_constructor_exists():
+    assert callable(swrtj_TraitExpression.__init__)
 
 
-def test_swrtj::traitexpression_constructor_args():
-    sig = inspect.signature(swrtj::TraitExpression.__init__)
+def test_swrtj_traitexpression_constructor_args():
+    sig = inspect.signature(swrtj_TraitExpression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_swrtj::recordexpression_is_not_abstract():
-    assert not inspect.isabstract(swrtj::RecordExpression)
+def test_swrtj_recordexpression_is_not_abstract():
+    assert not inspect.isabstract(swrtj_RecordExpression)
 
 
-def test_swrtj::recordexpression_constructor_exists():
-    assert callable(swrtj::RecordExpression.__init__)
+def test_swrtj_recordexpression_constructor_exists():
+    assert callable(swrtj_RecordExpression.__init__)
 
 
-def test_swrtj::recordexpression_constructor_args():
-    sig = inspect.signature(swrtj::RecordExpression.__init__)
+def test_swrtj_recordexpression_constructor_args():
+    sig = inspect.signature(swrtj_RecordExpression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_swrtj::method_is_not_abstract():
-    assert not inspect.isabstract(swrtj::Method)
+def test_swrtj_method_is_not_abstract():
+    assert not inspect.isabstract(swrtj_Method)
 
 
-def test_swrtj::method_constructor_exists():
-    assert callable(swrtj::Method.__init__)
+def test_swrtj_method_constructor_exists():
+    assert callable(swrtj_Method.__init__)
 
 
-def test_swrtj::method_constructor_args():
-    sig = inspect.signature(swrtj::Method.__init__)
+def test_swrtj_method_constructor_args():
+    sig = inspect.signature(swrtj_Method.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1256,106 +1256,106 @@ def test_element_constructor_args():
 
 
 
-def test_swrtj::class_is_not_abstract():
-    assert not inspect.isabstract(swrtj::Class)
+def test_swrtj_class_is_not_abstract():
+    assert not inspect.isabstract(swrtj_Class)
 
 
-def test_swrtj::class_constructor_exists():
-    assert callable(swrtj::Class.__init__)
+def test_swrtj_class_constructor_exists():
+    assert callable(swrtj_Class.__init__)
 
 
-def test_swrtj::class_constructor_args():
-    sig = inspect.signature(swrtj::Class.__init__)
+def test_swrtj_class_constructor_args():
+    sig = inspect.signature(swrtj_Class.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_swrtj::trait_is_not_abstract():
-    assert not inspect.isabstract(swrtj::Trait)
+def test_swrtj_trait_is_not_abstract():
+    assert not inspect.isabstract(swrtj_Trait)
 
 
-def test_swrtj::trait_constructor_exists():
-    assert callable(swrtj::Trait.__init__)
+def test_swrtj_trait_constructor_exists():
+    assert callable(swrtj_Trait.__init__)
 
 
-def test_swrtj::trait_constructor_args():
-    sig = inspect.signature(swrtj::Trait.__init__)
+def test_swrtj_trait_constructor_args():
+    sig = inspect.signature(swrtj_Trait.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_swrtj::record_is_not_abstract():
-    assert not inspect.isabstract(swrtj::Record)
+def test_swrtj_record_is_not_abstract():
+    assert not inspect.isabstract(swrtj_Record)
 
 
-def test_swrtj::record_constructor_exists():
-    assert callable(swrtj::Record.__init__)
+def test_swrtj_record_constructor_exists():
+    assert callable(swrtj_Record.__init__)
 
 
-def test_swrtj::record_constructor_args():
-    sig = inspect.signature(swrtj::Record.__init__)
+def test_swrtj_record_constructor_args():
+    sig = inspect.signature(swrtj_Record.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_swrtj::interface_is_not_abstract():
-    assert not inspect.isabstract(swrtj::Interface)
+def test_swrtj_interface_is_not_abstract():
+    assert not inspect.isabstract(swrtj_Interface)
 
 
-def test_swrtj::interface_constructor_exists():
-    assert callable(swrtj::Interface.__init__)
+def test_swrtj_interface_constructor_exists():
+    assert callable(swrtj_Interface.__init__)
 
 
-def test_swrtj::interface_constructor_args():
-    sig = inspect.signature(swrtj::Interface.__init__)
+def test_swrtj_interface_constructor_args():
+    sig = inspect.signature(swrtj_Interface.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_swrtj::element_is_not_abstract():
-    assert not inspect.isabstract(swrtj::Element)
+def test_swrtj_element_is_not_abstract():
+    assert not inspect.isabstract(swrtj_Element)
 
 
-def test_swrtj::element_constructor_exists():
-    assert callable(swrtj::Element.__init__)
+def test_swrtj_element_constructor_exists():
+    assert callable(swrtj_Element.__init__)
 
 
-def test_swrtj::element_constructor_args():
-    sig = inspect.signature(swrtj::Element.__init__)
+def test_swrtj_element_constructor_args():
+    sig = inspect.signature(swrtj_Element.__init__)
     params = list(sig.parameters.keys())
-    assert "name" in params, "Missing parameter 'name'"
     assert "construct" in params, "Missing parameter 'construct'"
+    assert "name" in params, "Missing parameter 'name'"
 
-def test_swrtj::element_has_name():
-    assert hasattr(swrtj::Element, "name")
+def test_swrtj_element_has_construct():
+    assert hasattr(swrtj_Element, "construct")
     descriptor = None
-    for klass in swrtj::Element.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_swrtj::element_has_construct():
-    assert hasattr(swrtj::Element, "construct")
-    descriptor = None
-    for klass in swrtj::Element.__mro__:
+    for klass in swrtj_Element.__mro__:
         if "construct" in klass.__dict__:
             descriptor = klass.__dict__["construct"]
             break
     assert isinstance(descriptor, property)
 
+def test_swrtj_element_has_name():
+    assert hasattr(swrtj_Element, "name")
+    descriptor = None
+    for klass in swrtj_Element.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_swrtj::field_is_not_abstract():
-    assert not inspect.isabstract(swrtj::Field)
+
+def test_swrtj_field_is_not_abstract():
+    assert not inspect.isabstract(swrtj_Field)
 
 
-def test_swrtj::field_constructor_exists():
-    assert callable(swrtj::Field.__init__)
+def test_swrtj_field_constructor_exists():
+    assert callable(swrtj_Field.__init__)
 
 
-def test_swrtj::field_constructor_args():
-    sig = inspect.signature(swrtj::Field.__init__)
+def test_swrtj_field_constructor_args():
+    sig = inspect.signature(swrtj_Field.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1374,121 +1374,121 @@ def test_baserecord_constructor_args():
 
 
 
-def test_swrtj::recordname_is_not_abstract():
-    assert not inspect.isabstract(swrtj::RecordName)
+def test_swrtj_nestedrecordexpression_is_not_abstract():
+    assert not inspect.isabstract(swrtj_NestedRecordExpression)
 
 
-def test_swrtj::recordname_constructor_exists():
-    assert callable(swrtj::RecordName.__init__)
+def test_swrtj_nestedrecordexpression_constructor_exists():
+    assert callable(swrtj_NestedRecordExpression.__init__)
 
 
-def test_swrtj::recordname_constructor_args():
-    sig = inspect.signature(swrtj::RecordName.__init__)
+def test_swrtj_nestedrecordexpression_constructor_args():
+    sig = inspect.signature(swrtj_NestedRecordExpression.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_swrtj::nestedrecordexpression_is_not_abstract():
-    assert not inspect.isabstract(swrtj::NestedRecordExpression)
+def test_swrtj_recordname_is_not_abstract():
+    assert not inspect.isabstract(swrtj_RecordName)
 
 
-def test_swrtj::nestedrecordexpression_constructor_exists():
-    assert callable(swrtj::NestedRecordExpression.__init__)
+def test_swrtj_recordname_constructor_exists():
+    assert callable(swrtj_RecordName.__init__)
 
 
-def test_swrtj::nestedrecordexpression_constructor_args():
-    sig = inspect.signature(swrtj::NestedRecordExpression.__init__)
+def test_swrtj_recordname_constructor_args():
+    sig = inspect.signature(swrtj_RecordName.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_swrtj::anonimousrecord_is_not_abstract():
-    assert not inspect.isabstract(swrtj::AnonimousRecord)
+def test_swrtj_anonimousrecord_is_not_abstract():
+    assert not inspect.isabstract(swrtj_AnonimousRecord)
 
 
-def test_swrtj::anonimousrecord_constructor_exists():
-    assert callable(swrtj::AnonimousRecord.__init__)
+def test_swrtj_anonimousrecord_constructor_exists():
+    assert callable(swrtj_AnonimousRecord.__init__)
 
 
-def test_swrtj::anonimousrecord_constructor_args():
-    sig = inspect.signature(swrtj::AnonimousRecord.__init__)
+def test_swrtj_anonimousrecord_constructor_args():
+    sig = inspect.signature(swrtj_AnonimousRecord.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_swrtj::recordoperation_is_not_abstract():
-    assert not inspect.isabstract(swrtj::RecordOperation)
+def test_swrtj_recordoperation_is_not_abstract():
+    assert not inspect.isabstract(swrtj_RecordOperation)
 
 
-def test_swrtj::recordoperation_constructor_exists():
-    assert callable(swrtj::RecordOperation.__init__)
+def test_swrtj_recordoperation_constructor_exists():
+    assert callable(swrtj_RecordOperation.__init__)
 
 
-def test_swrtj::recordoperation_constructor_args():
-    sig = inspect.signature(swrtj::RecordOperation.__init__)
+def test_swrtj_recordoperation_constructor_args():
+    sig = inspect.signature(swrtj_RecordOperation.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_swrtj::baserecord_is_not_abstract():
-    assert not inspect.isabstract(swrtj::BaseRecord)
+def test_swrtj_baserecord_is_not_abstract():
+    assert not inspect.isabstract(swrtj_BaseRecord)
 
 
-def test_swrtj::baserecord_constructor_exists():
-    assert callable(swrtj::BaseRecord.__init__)
+def test_swrtj_baserecord_constructor_exists():
+    assert callable(swrtj_BaseRecord.__init__)
 
 
-def test_swrtj::baserecord_constructor_args():
-    sig = inspect.signature(swrtj::BaseRecord.__init__)
+def test_swrtj_baserecord_constructor_args():
+    sig = inspect.signature(swrtj_BaseRecord.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_swrtj::block_is_not_abstract():
-    assert not inspect.isabstract(swrtj::Block)
+def test_swrtj_block_is_not_abstract():
+    assert not inspect.isabstract(swrtj_Block)
 
 
-def test_swrtj::block_constructor_exists():
-    assert callable(swrtj::Block.__init__)
+def test_swrtj_block_constructor_exists():
+    assert callable(swrtj_Block.__init__)
 
 
-def test_swrtj::block_constructor_args():
-    sig = inspect.signature(swrtj::Block.__init__)
+def test_swrtj_block_constructor_args():
+    sig = inspect.signature(swrtj_Block.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_swrtj::program_is_not_abstract():
-    assert not inspect.isabstract(swrtj::Program)
+def test_swrtj_program_is_not_abstract():
+    assert not inspect.isabstract(swrtj_Program)
 
 
-def test_swrtj::program_constructor_exists():
-    assert callable(swrtj::Program.__init__)
+def test_swrtj_program_constructor_exists():
+    assert callable(swrtj_Program.__init__)
 
 
-def test_swrtj::program_constructor_args():
-    sig = inspect.signature(swrtj::Program.__init__)
+def test_swrtj_program_constructor_args():
+    sig = inspect.signature(swrtj_Program.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_swrtj::constructor_is_not_abstract():
-    assert not inspect.isabstract(swrtj::Constructor)
+def test_swrtj_constructor_is_not_abstract():
+    assert not inspect.isabstract(swrtj_Constructor)
 
 
-def test_swrtj::constructor_constructor_exists():
-    assert callable(swrtj::Constructor.__init__)
+def test_swrtj_constructor_constructor_exists():
+    assert callable(swrtj_Constructor.__init__)
 
 
-def test_swrtj::constructor_constructor_args():
-    sig = inspect.signature(swrtj::Constructor.__init__)
+def test_swrtj_constructor_constructor_args():
+    sig = inspect.signature(swrtj_Constructor.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_swrtj::constructor_has_name():
-    assert hasattr(swrtj::Constructor, "name")
+def test_swrtj_constructor_has_name():
+    assert hasattr(swrtj_Constructor, "name")
     descriptor = None
-    for klass in swrtj::Constructor.__mro__:
+    for klass in swrtj_Constructor.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -1496,23 +1496,23 @@ def test_swrtj::constructor_has_name():
 
 
 
-def test_swrtj::import_is_not_abstract():
-    assert not inspect.isabstract(swrtj::Import)
+def test_swrtj_import_is_not_abstract():
+    assert not inspect.isabstract(swrtj_Import)
 
 
-def test_swrtj::import_constructor_exists():
-    assert callable(swrtj::Import.__init__)
+def test_swrtj_import_constructor_exists():
+    assert callable(swrtj_Import.__init__)
 
 
-def test_swrtj::import_constructor_args():
-    sig = inspect.signature(swrtj::Import.__init__)
+def test_swrtj_import_constructor_args():
+    sig = inspect.signature(swrtj_Import.__init__)
     params = list(sig.parameters.keys())
     assert "importURI" in params, "Missing parameter 'importURI'"
 
-def test_swrtj::import_has_importURI():
-    assert hasattr(swrtj::Import, "importURI")
+def test_swrtj_import_has_importURI():
+    assert hasattr(swrtj_Import, "importURI")
     descriptor = None
-    for klass in swrtj::Import.__mro__:
+    for klass in swrtj_Import.__mro__:
         if "importURI" in klass.__dict__:
             descriptor = klass.__dict__["importURI"]
             break
@@ -1520,16 +1520,16 @@ def test_swrtj::import_has_importURI():
 
 
 
-def test_swrtj::file_is_not_abstract():
-    assert not inspect.isabstract(swrtj::File)
+def test_swrtj_file_is_not_abstract():
+    assert not inspect.isabstract(swrtj_File)
 
 
-def test_swrtj::file_constructor_exists():
-    assert callable(swrtj::File.__init__)
+def test_swrtj_file_constructor_exists():
+    assert callable(swrtj_File.__init__)
 
 
-def test_swrtj::file_constructor_args():
-    sig = inspect.signature(swrtj::File.__init__)
+def test_swrtj_file_constructor_args():
+    sig = inspect.signature(swrtj_File.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -1547,306 +1547,306 @@ safe_text = st.text(
 Method_strategy = st.builds(
     Method,
 )
-swrtj::ProvidedMethod_strategy = st.builds(
-    swrtj::ProvidedMethod,
+swrtj_ProvidedMethod_strategy = st.builds(
+    swrtj_ProvidedMethod,
     isSynchronized=
         st.booleans()
 )
-swrtj::RequiredMethod_strategy = st.builds(
-    swrtj::RequiredMethod,
+swrtj_RequiredMethod_strategy = st.builds(
+    swrtj_RequiredMethod,
 )
 Field_strategy = st.builds(
     Field,
 )
-swrtj::RequiredField_strategy = st.builds(
-    swrtj::RequiredField,
+swrtj_RequiredField_strategy = st.builds(
+    swrtj_RequiredField,
 )
-swrtj::FieldDeclaration_strategy = st.builds(
-    swrtj::FieldDeclaration,
+swrtj_FieldDeclaration_strategy = st.builds(
+    swrtj_FieldDeclaration,
     modifier=
         safe_text
 )
 GenericExpression_strategy = st.builds(
     GenericExpression,
 )
-swrtj::Expression_strategy = st.builds(
-    swrtj::Expression,
-    sign=
-        safe_text,
+swrtj_Expression_strategy = st.builds(
+    swrtj_Expression,
     operatorList=
+        safe_text,
+    sign=
         safe_text
 )
-swrtj::BooleanExpression_strategy = st.builds(
-    swrtj::BooleanExpression,
+swrtj_BooleanExpression_strategy = st.builds(
+    swrtj_BooleanExpression,
 )
 Parameter_strategy = st.builds(
     Parameter,
 )
-swrtj::LocalParameter_strategy = st.builds(
-    swrtj::LocalParameter,
+swrtj_LocalParameter_strategy = st.builds(
+    swrtj_LocalParameter,
 )
-swrtj::FormalParameter_strategy = st.builds(
-    swrtj::FormalParameter,
+swrtj_FormalParameter_strategy = st.builds(
+    swrtj_FormalParameter,
 )
 Message_strategy = st.builds(
     Message,
 )
-swrtj::MethodInvocation_strategy = st.builds(
-    swrtj::MethodInvocation,
+swrtj_MethodInvocation_strategy = st.builds(
+    swrtj_MethodInvocation,
 )
 TraitOperation_strategy = st.builds(
     TraitOperation,
 )
-swrtj::TraitFieldRename_strategy = st.builds(
-    swrtj::TraitFieldRename,
+swrtj_TraitMethodRename_strategy = st.builds(
+    swrtj_TraitMethodRename,
 )
-swrtj::TraitAlias_strategy = st.builds(
-    swrtj::TraitAlias,
+swrtj_TraitFieldRename_strategy = st.builds(
+    swrtj_TraitFieldRename,
 )
-swrtj::TraitMethodRename_strategy = st.builds(
-    swrtj::TraitMethodRename,
+swrtj_TraitAlias_strategy = st.builds(
+    swrtj_TraitAlias,
 )
-swrtj::TraitExclude_strategy = st.builds(
-    swrtj::TraitExclude,
+swrtj_TraitExclude_strategy = st.builds(
+    swrtj_TraitExclude,
 )
 RecordOperation_strategy = st.builds(
     RecordOperation,
 )
-swrtj::RecordRename_strategy = st.builds(
-    swrtj::RecordRename,
+swrtj_RecordRename_strategy = st.builds(
+    swrtj_RecordRename,
 )
-swrtj::RecordExclude_strategy = st.builds(
-    swrtj::RecordExclude,
+swrtj_RecordExclude_strategy = st.builds(
+    swrtj_RecordExclude,
 )
-swrtj::FieldAccess_strategy = st.builds(
-    swrtj::FieldAccess,
+swrtj_FieldAccess_strategy = st.builds(
+    swrtj_FieldAccess,
 )
 AtomicBooleanExpression_strategy = st.builds(
     AtomicBooleanExpression,
 )
-swrtj::SimpleComparation_strategy = st.builds(
-    swrtj::SimpleComparation,
+swrtj_SimpleComparation_strategy = st.builds(
+    swrtj_SimpleComparation,
 )
-swrtj::AtomicBooleanExpression_strategy = st.builds(
-    swrtj::AtomicBooleanExpression,
+swrtj_AtomicBooleanExpression_strategy = st.builds(
+    swrtj_AtomicBooleanExpression,
     negated=
         st.booleans()
 )
-swrtj::BooleanOperator_strategy = st.builds(
-    swrtj::BooleanOperator,
+swrtj_BooleanOperator_strategy = st.builds(
+    swrtj_BooleanOperator,
     operator=
         safe_text
 )
 Start_strategy = st.builds(
     Start,
 )
-swrtj::Input_strategy = st.builds(
-    swrtj::Input,
-    input=
-        st.booleans()
+swrtj_NestedExpression_strategy = st.builds(
+    swrtj_NestedExpression,
 )
-swrtj::ConstructorInvocation_strategy = st.builds(
-    swrtj::ConstructorInvocation,
+swrtj_ParameterReference_strategy = st.builds(
+    swrtj_ParameterReference,
 )
-swrtj::BooleanConstant_strategy = st.builds(
-    swrtj::BooleanConstant,
-    value=
-        safe_text
-)
-swrtj::Args_strategy = st.builds(
-    swrtj::Args,
+swrtj_Args_strategy = st.builds(
+    swrtj_Args,
     args=
         st.booleans()
 )
-swrtj::NestedExpression_strategy = st.builds(
-    swrtj::NestedExpression,
-)
-swrtj::ParameterReference_strategy = st.builds(
-    swrtj::ParameterReference,
-)
-swrtj::Cast_strategy = st.builds(
-    swrtj::Cast,
-)
-swrtj::StringConstant_strategy = st.builds(
-    swrtj::StringConstant,
-    value=
-        safe_text
-)
-swrtj::Output_strategy = st.builds(
-    swrtj::Output,
-    output=
-        st.booleans()
-)
-swrtj::This_strategy = st.builds(
-    swrtj::This,
+swrtj_This_strategy = st.builds(
+    swrtj_This,
     this=
         st.booleans()
 )
-swrtj::Number_strategy = st.builds(
-    swrtj::Number,
+swrtj_Output_strategy = st.builds(
+    swrtj_Output,
+    output=
+        st.booleans()
+)
+swrtj_Number_strategy = st.builds(
+    swrtj_Number,
     value=
         st.integers()
 )
-swrtj::ParameterAssignment_strategy = st.builds(
-    swrtj::ParameterAssignment,
+swrtj_Input_strategy = st.builds(
+    swrtj_Input,
+    input=
+        st.booleans()
 )
-swrtj::Null_strategy = st.builds(
-    swrtj::Null,
+swrtj_BooleanConstant_strategy = st.builds(
+    swrtj_BooleanConstant,
+    value=
+        safe_text
+)
+swrtj_ParameterAssignment_strategy = st.builds(
+    swrtj_ParameterAssignment,
+)
+swrtj_StringConstant_strategy = st.builds(
+    swrtj_StringConstant,
+    value=
+        safe_text
+)
+swrtj_Cast_strategy = st.builds(
+    swrtj_Cast,
+)
+swrtj_ConstructorInvocation_strategy = st.builds(
+    swrtj_ConstructorInvocation,
+)
+swrtj_Null_strategy = st.builds(
+    swrtj_Null,
     null=
         st.booleans()
 )
-swrtj::Message_strategy = st.builds(
-    swrtj::Message,
+swrtj_Message_strategy = st.builds(
+    swrtj_Message,
 )
-swrtj::Start_strategy = st.builds(
-    swrtj::Start,
+swrtj_Start_strategy = st.builds(
+    swrtj_Start,
 )
-swrtj::DottedExpression_strategy = st.builds(
-    swrtj::DottedExpression,
+swrtj_DottedExpression_strategy = st.builds(
+    swrtj_DottedExpression,
 )
-swrtj::NestedBooleanExpression_strategy = st.builds(
-    swrtj::NestedBooleanExpression,
+swrtj_NestedBooleanExpression_strategy = st.builds(
+    swrtj_NestedBooleanExpression,
 )
-swrtj::CompareOperator_strategy = st.builds(
-    swrtj::CompareOperator,
+swrtj_CompareOperator_strategy = st.builds(
+    swrtj_CompareOperator,
     operator=
         safe_text
 )
-swrtj::FieldName_strategy = st.builds(
-    swrtj::FieldName,
+swrtj_FieldName_strategy = st.builds(
+    swrtj_FieldName,
     name=
         safe_text
 )
-swrtj::Type_strategy = st.builds(
-    swrtj::Type,
+swrtj_Type_strategy = st.builds(
+    swrtj_Type,
     primitiveType=
         safe_text
 )
 TraitElement_strategy = st.builds(
     TraitElement,
 )
-swrtj::TraitElement_strategy = st.builds(
-    swrtj::TraitElement,
+swrtj_TraitElement_strategy = st.builds(
+    swrtj_TraitElement,
 )
 BaseTrait_strategy = st.builds(
     BaseTrait,
 )
-swrtj::TraitName_strategy = st.builds(
-    swrtj::TraitName,
+swrtj_TraitName_strategy = st.builds(
+    swrtj_TraitName,
 )
-swrtj::NestedTraitExpression_strategy = st.builds(
-    swrtj::NestedTraitExpression,
+swrtj_NestedTraitExpression_strategy = st.builds(
+    swrtj_NestedTraitExpression,
 )
-swrtj::AnonimousTrait_strategy = st.builds(
-    swrtj::AnonimousTrait,
+swrtj_AnonimousTrait_strategy = st.builds(
+    swrtj_AnonimousTrait,
 )
-swrtj::TraitOperation_strategy = st.builds(
-    swrtj::TraitOperation,
+swrtj_TraitOperation_strategy = st.builds(
+    swrtj_TraitOperation,
 )
-swrtj::BaseTrait_strategy = st.builds(
-    swrtj::BaseTrait,
+swrtj_BaseTrait_strategy = st.builds(
+    swrtj_BaseTrait,
 )
 Statement_strategy = st.builds(
     Statement,
 )
-swrtj::WhileStatement_strategy = st.builds(
-    swrtj::WhileStatement,
+swrtj_WhileStatement_strategy = st.builds(
+    swrtj_WhileStatement,
 )
-swrtj::IfThenElseStatement_strategy = st.builds(
-    swrtj::IfThenElseStatement,
+swrtj_IfThenElseStatement_strategy = st.builds(
+    swrtj_IfThenElseStatement,
 )
-swrtj::ExpressionStatement_strategy = st.builds(
-    swrtj::ExpressionStatement,
+swrtj_ExpressionStatement_strategy = st.builds(
+    swrtj_ExpressionStatement,
 )
-swrtj::Statement_strategy = st.builds(
-    swrtj::Statement,
+swrtj_Statement_strategy = st.builds(
+    swrtj_Statement,
 )
-swrtj::GenericExpression_strategy = st.builds(
-    swrtj::GenericExpression,
+swrtj_GenericExpression_strategy = st.builds(
+    swrtj_GenericExpression,
 )
-swrtj::ReturnStatement_strategy = st.builds(
-    swrtj::ReturnStatement,
+swrtj_ReturnStatement_strategy = st.builds(
+    swrtj_ReturnStatement,
 )
-swrtj::Parameter_strategy = st.builds(
-    swrtj::Parameter,
+swrtj_Parameter_strategy = st.builds(
+    swrtj_Parameter,
     name=
         safe_text
 )
-swrtj::MethodName_strategy = st.builds(
-    swrtj::MethodName,
+swrtj_MethodName_strategy = st.builds(
+    swrtj_MethodName,
     name=
         safe_text
 )
-swrtj::TraitExpression_strategy = st.builds(
-    swrtj::TraitExpression,
+swrtj_TraitExpression_strategy = st.builds(
+    swrtj_TraitExpression,
 )
-swrtj::RecordExpression_strategy = st.builds(
-    swrtj::RecordExpression,
+swrtj_RecordExpression_strategy = st.builds(
+    swrtj_RecordExpression,
 )
-swrtj::Method_strategy = st.builds(
-    swrtj::Method,
+swrtj_Method_strategy = st.builds(
+    swrtj_Method,
 )
 Element_strategy = st.builds(
     Element,
 )
-swrtj::Class_strategy = st.builds(
-    swrtj::Class,
+swrtj_Class_strategy = st.builds(
+    swrtj_Class,
 )
-swrtj::Trait_strategy = st.builds(
-    swrtj::Trait,
+swrtj_Trait_strategy = st.builds(
+    swrtj_Trait,
 )
-swrtj::Record_strategy = st.builds(
-    swrtj::Record,
+swrtj_Record_strategy = st.builds(
+    swrtj_Record,
 )
-swrtj::Interface_strategy = st.builds(
-    swrtj::Interface,
+swrtj_Interface_strategy = st.builds(
+    swrtj_Interface,
 )
-swrtj::Element_strategy = st.builds(
-    swrtj::Element,
-    name=
-        safe_text,
+swrtj_Element_strategy = st.builds(
+    swrtj_Element,
     construct=
+        safe_text,
+    name=
         safe_text
 )
-swrtj::Field_strategy = st.builds(
-    swrtj::Field,
+swrtj_Field_strategy = st.builds(
+    swrtj_Field,
 )
 BaseRecord_strategy = st.builds(
     BaseRecord,
 )
-swrtj::RecordName_strategy = st.builds(
-    swrtj::RecordName,
+swrtj_NestedRecordExpression_strategy = st.builds(
+    swrtj_NestedRecordExpression,
 )
-swrtj::NestedRecordExpression_strategy = st.builds(
-    swrtj::NestedRecordExpression,
+swrtj_RecordName_strategy = st.builds(
+    swrtj_RecordName,
 )
-swrtj::AnonimousRecord_strategy = st.builds(
-    swrtj::AnonimousRecord,
+swrtj_AnonimousRecord_strategy = st.builds(
+    swrtj_AnonimousRecord,
 )
-swrtj::RecordOperation_strategy = st.builds(
-    swrtj::RecordOperation,
+swrtj_RecordOperation_strategy = st.builds(
+    swrtj_RecordOperation,
 )
-swrtj::BaseRecord_strategy = st.builds(
-    swrtj::BaseRecord,
+swrtj_BaseRecord_strategy = st.builds(
+    swrtj_BaseRecord,
 )
-swrtj::Block_strategy = st.builds(
-    swrtj::Block,
+swrtj_Block_strategy = st.builds(
+    swrtj_Block,
 )
-swrtj::Program_strategy = st.builds(
-    swrtj::Program,
+swrtj_Program_strategy = st.builds(
+    swrtj_Program,
 )
-swrtj::Constructor_strategy = st.builds(
-    swrtj::Constructor,
+swrtj_Constructor_strategy = st.builds(
+    swrtj_Constructor,
     name=
         safe_text
 )
-swrtj::Import_strategy = st.builds(
-    swrtj::Import,
+swrtj_Import_strategy = st.builds(
+    swrtj_Import,
     importURI=
         safe_text
 )
-swrtj::File_strategy = st.builds(
-    swrtj::File,
+swrtj_File_strategy = st.builds(
+    swrtj_File,
 )
 
 @given(instance=Method_strategy)
@@ -1854,49 +1854,43 @@ swrtj::File_strategy = st.builds(
 def test_method_instantiation(instance):
     assert isinstance(instance, Method)
 
-@given(instance=swrtj::ProvidedMethod_strategy)
+@given(instance=swrtj_ProvidedMethod_strategy)
 @settings(max_examples=50)
-def test_swrtj::providedmethod_instantiation(instance):
-    assert isinstance(instance, swrtj::ProvidedMethod)
-
-@given(instance=swrtj::ProvidedMethod_strategy)
-def test_swrtj::providedmethod_isSynchronized_type(instance):
-    assert isinstance(instance.isSynchronized, bool)
+def test_swrtj_providedmethod_instantiation(instance):
+    assert isinstance(instance, swrtj_ProvidedMethod)
 
 
-@given(instance=swrtj::ProvidedMethod_strategy)
-def test_swrtj::providedmethod_isSynchronized_setter(instance):
+
+@given(instance=swrtj_ProvidedMethod_strategy)
+def test_swrtj_providedmethod_isSynchronized_setter(instance):
     original = instance.isSynchronized
     instance.isSynchronized = original
     assert instance.isSynchronized == original
 
-@given(instance=swrtj::RequiredMethod_strategy)
+@given(instance=swrtj_RequiredMethod_strategy)
 @settings(max_examples=50)
-def test_swrtj::requiredmethod_instantiation(instance):
-    assert isinstance(instance, swrtj::RequiredMethod)
+def test_swrtj_requiredmethod_instantiation(instance):
+    assert isinstance(instance, swrtj_RequiredMethod)
 
 @given(instance=Field_strategy)
 @settings(max_examples=50)
 def test_field_instantiation(instance):
     assert isinstance(instance, Field)
 
-@given(instance=swrtj::RequiredField_strategy)
+@given(instance=swrtj_RequiredField_strategy)
 @settings(max_examples=50)
-def test_swrtj::requiredfield_instantiation(instance):
-    assert isinstance(instance, swrtj::RequiredField)
+def test_swrtj_requiredfield_instantiation(instance):
+    assert isinstance(instance, swrtj_RequiredField)
 
-@given(instance=swrtj::FieldDeclaration_strategy)
+@given(instance=swrtj_FieldDeclaration_strategy)
 @settings(max_examples=50)
-def test_swrtj::fielddeclaration_instantiation(instance):
-    assert isinstance(instance, swrtj::FieldDeclaration)
-
-@given(instance=swrtj::FieldDeclaration_strategy)
-def test_swrtj::fielddeclaration_modifier_type(instance):
-    assert isinstance(instance.modifier, str)
+def test_swrtj_fielddeclaration_instantiation(instance):
+    assert isinstance(instance, swrtj_FieldDeclaration)
 
 
-@given(instance=swrtj::FieldDeclaration_strategy)
-def test_swrtj::fielddeclaration_modifier_setter(instance):
+
+@given(instance=swrtj_FieldDeclaration_strategy)
+def test_swrtj_fielddeclaration_modifier_setter(instance):
     original = instance.modifier
     instance.modifier = original
     assert instance.modifier == original
@@ -1906,146 +1900,134 @@ def test_swrtj::fielddeclaration_modifier_setter(instance):
 def test_genericexpression_instantiation(instance):
     assert isinstance(instance, GenericExpression)
 
-@given(instance=swrtj::Expression_strategy)
+@given(instance=swrtj_Expression_strategy)
 @settings(max_examples=50)
-def test_swrtj::expression_instantiation(instance):
-    assert isinstance(instance, swrtj::Expression)
-
-@given(instance=swrtj::Expression_strategy)
-def test_swrtj::expression_sign_type(instance):
-    assert isinstance(instance.sign, str)
+def test_swrtj_expression_instantiation(instance):
+    assert isinstance(instance, swrtj_Expression)
 
 
-@given(instance=swrtj::Expression_strategy)
-def test_swrtj::expression_sign_setter(instance):
-    original = instance.sign
-    instance.sign = original
-    assert instance.sign == original
 
-@given(instance=swrtj::Expression_strategy)
-def test_swrtj::expression_operatorList_type(instance):
-    assert isinstance(instance.operatorList, str)
-
-
-@given(instance=swrtj::Expression_strategy)
-def test_swrtj::expression_operatorList_setter(instance):
+@given(instance=swrtj_Expression_strategy)
+def test_swrtj_expression_operatorList_setter(instance):
     original = instance.operatorList
     instance.operatorList = original
     assert instance.operatorList == original
 
-@given(instance=swrtj::BooleanExpression_strategy)
+
+
+@given(instance=swrtj_Expression_strategy)
+def test_swrtj_expression_sign_setter(instance):
+    original = instance.sign
+    instance.sign = original
+    assert instance.sign == original
+
+@given(instance=swrtj_BooleanExpression_strategy)
 @settings(max_examples=50)
-def test_swrtj::booleanexpression_instantiation(instance):
-    assert isinstance(instance, swrtj::BooleanExpression)
+def test_swrtj_booleanexpression_instantiation(instance):
+    assert isinstance(instance, swrtj_BooleanExpression)
 
 @given(instance=Parameter_strategy)
 @settings(max_examples=50)
 def test_parameter_instantiation(instance):
     assert isinstance(instance, Parameter)
 
-@given(instance=swrtj::LocalParameter_strategy)
+@given(instance=swrtj_LocalParameter_strategy)
 @settings(max_examples=50)
-def test_swrtj::localparameter_instantiation(instance):
-    assert isinstance(instance, swrtj::LocalParameter)
+def test_swrtj_localparameter_instantiation(instance):
+    assert isinstance(instance, swrtj_LocalParameter)
 
-@given(instance=swrtj::FormalParameter_strategy)
+@given(instance=swrtj_FormalParameter_strategy)
 @settings(max_examples=50)
-def test_swrtj::formalparameter_instantiation(instance):
-    assert isinstance(instance, swrtj::FormalParameter)
+def test_swrtj_formalparameter_instantiation(instance):
+    assert isinstance(instance, swrtj_FormalParameter)
 
 @given(instance=Message_strategy)
 @settings(max_examples=50)
 def test_message_instantiation(instance):
     assert isinstance(instance, Message)
 
-@given(instance=swrtj::MethodInvocation_strategy)
+@given(instance=swrtj_MethodInvocation_strategy)
 @settings(max_examples=50)
-def test_swrtj::methodinvocation_instantiation(instance):
-    assert isinstance(instance, swrtj::MethodInvocation)
+def test_swrtj_methodinvocation_instantiation(instance):
+    assert isinstance(instance, swrtj_MethodInvocation)
 
 @given(instance=TraitOperation_strategy)
 @settings(max_examples=50)
 def test_traitoperation_instantiation(instance):
     assert isinstance(instance, TraitOperation)
 
-@given(instance=swrtj::TraitFieldRename_strategy)
+@given(instance=swrtj_TraitMethodRename_strategy)
 @settings(max_examples=50)
-def test_swrtj::traitfieldrename_instantiation(instance):
-    assert isinstance(instance, swrtj::TraitFieldRename)
+def test_swrtj_traitmethodrename_instantiation(instance):
+    assert isinstance(instance, swrtj_TraitMethodRename)
 
-@given(instance=swrtj::TraitAlias_strategy)
+@given(instance=swrtj_TraitFieldRename_strategy)
 @settings(max_examples=50)
-def test_swrtj::traitalias_instantiation(instance):
-    assert isinstance(instance, swrtj::TraitAlias)
+def test_swrtj_traitfieldrename_instantiation(instance):
+    assert isinstance(instance, swrtj_TraitFieldRename)
 
-@given(instance=swrtj::TraitMethodRename_strategy)
+@given(instance=swrtj_TraitAlias_strategy)
 @settings(max_examples=50)
-def test_swrtj::traitmethodrename_instantiation(instance):
-    assert isinstance(instance, swrtj::TraitMethodRename)
+def test_swrtj_traitalias_instantiation(instance):
+    assert isinstance(instance, swrtj_TraitAlias)
 
-@given(instance=swrtj::TraitExclude_strategy)
+@given(instance=swrtj_TraitExclude_strategy)
 @settings(max_examples=50)
-def test_swrtj::traitexclude_instantiation(instance):
-    assert isinstance(instance, swrtj::TraitExclude)
+def test_swrtj_traitexclude_instantiation(instance):
+    assert isinstance(instance, swrtj_TraitExclude)
 
 @given(instance=RecordOperation_strategy)
 @settings(max_examples=50)
 def test_recordoperation_instantiation(instance):
     assert isinstance(instance, RecordOperation)
 
-@given(instance=swrtj::RecordRename_strategy)
+@given(instance=swrtj_RecordRename_strategy)
 @settings(max_examples=50)
-def test_swrtj::recordrename_instantiation(instance):
-    assert isinstance(instance, swrtj::RecordRename)
+def test_swrtj_recordrename_instantiation(instance):
+    assert isinstance(instance, swrtj_RecordRename)
 
-@given(instance=swrtj::RecordExclude_strategy)
+@given(instance=swrtj_RecordExclude_strategy)
 @settings(max_examples=50)
-def test_swrtj::recordexclude_instantiation(instance):
-    assert isinstance(instance, swrtj::RecordExclude)
+def test_swrtj_recordexclude_instantiation(instance):
+    assert isinstance(instance, swrtj_RecordExclude)
 
-@given(instance=swrtj::FieldAccess_strategy)
+@given(instance=swrtj_FieldAccess_strategy)
 @settings(max_examples=50)
-def test_swrtj::fieldaccess_instantiation(instance):
-    assert isinstance(instance, swrtj::FieldAccess)
+def test_swrtj_fieldaccess_instantiation(instance):
+    assert isinstance(instance, swrtj_FieldAccess)
 
 @given(instance=AtomicBooleanExpression_strategy)
 @settings(max_examples=50)
 def test_atomicbooleanexpression_instantiation(instance):
     assert isinstance(instance, AtomicBooleanExpression)
 
-@given(instance=swrtj::SimpleComparation_strategy)
+@given(instance=swrtj_SimpleComparation_strategy)
 @settings(max_examples=50)
-def test_swrtj::simplecomparation_instantiation(instance):
-    assert isinstance(instance, swrtj::SimpleComparation)
+def test_swrtj_simplecomparation_instantiation(instance):
+    assert isinstance(instance, swrtj_SimpleComparation)
 
-@given(instance=swrtj::AtomicBooleanExpression_strategy)
+@given(instance=swrtj_AtomicBooleanExpression_strategy)
 @settings(max_examples=50)
-def test_swrtj::atomicbooleanexpression_instantiation(instance):
-    assert isinstance(instance, swrtj::AtomicBooleanExpression)
-
-@given(instance=swrtj::AtomicBooleanExpression_strategy)
-def test_swrtj::atomicbooleanexpression_negated_type(instance):
-    assert isinstance(instance.negated, bool)
+def test_swrtj_atomicbooleanexpression_instantiation(instance):
+    assert isinstance(instance, swrtj_AtomicBooleanExpression)
 
 
-@given(instance=swrtj::AtomicBooleanExpression_strategy)
-def test_swrtj::atomicbooleanexpression_negated_setter(instance):
+
+@given(instance=swrtj_AtomicBooleanExpression_strategy)
+def test_swrtj_atomicbooleanexpression_negated_setter(instance):
     original = instance.negated
     instance.negated = original
     assert instance.negated == original
 
-@given(instance=swrtj::BooleanOperator_strategy)
+@given(instance=swrtj_BooleanOperator_strategy)
 @settings(max_examples=50)
-def test_swrtj::booleanoperator_instantiation(instance):
-    assert isinstance(instance, swrtj::BooleanOperator)
-
-@given(instance=swrtj::BooleanOperator_strategy)
-def test_swrtj::booleanoperator_operator_type(instance):
-    assert isinstance(instance.operator, str)
+def test_swrtj_booleanoperator_instantiation(instance):
+    assert isinstance(instance, swrtj_BooleanOperator)
 
 
-@given(instance=swrtj::BooleanOperator_strategy)
-def test_swrtj::booleanoperator_operator_setter(instance):
+
+@given(instance=swrtj_BooleanOperator_strategy)
+def test_swrtj_booleanoperator_operator_setter(instance):
     original = instance.operator
     instance.operator = original
     assert instance.operator == original
@@ -2055,223 +2037,190 @@ def test_swrtj::booleanoperator_operator_setter(instance):
 def test_start_instantiation(instance):
     assert isinstance(instance, Start)
 
-@given(instance=swrtj::Input_strategy)
+@given(instance=swrtj_NestedExpression_strategy)
 @settings(max_examples=50)
-def test_swrtj::input_instantiation(instance):
-    assert isinstance(instance, swrtj::Input)
+def test_swrtj_nestedexpression_instantiation(instance):
+    assert isinstance(instance, swrtj_NestedExpression)
 
-@given(instance=swrtj::Input_strategy)
-def test_swrtj::input_input_type(instance):
-    assert isinstance(instance.input, bool)
-
-
-@given(instance=swrtj::Input_strategy)
-def test_swrtj::input_input_setter(instance):
-    original = instance.input
-    instance.input = original
-    assert instance.input == original
-
-@given(instance=swrtj::ConstructorInvocation_strategy)
+@given(instance=swrtj_ParameterReference_strategy)
 @settings(max_examples=50)
-def test_swrtj::constructorinvocation_instantiation(instance):
-    assert isinstance(instance, swrtj::ConstructorInvocation)
+def test_swrtj_parameterreference_instantiation(instance):
+    assert isinstance(instance, swrtj_ParameterReference)
 
-@given(instance=swrtj::BooleanConstant_strategy)
+@given(instance=swrtj_Args_strategy)
 @settings(max_examples=50)
-def test_swrtj::booleanconstant_instantiation(instance):
-    assert isinstance(instance, swrtj::BooleanConstant)
-
-@given(instance=swrtj::BooleanConstant_strategy)
-def test_swrtj::booleanconstant_value_type(instance):
-    assert isinstance(instance.value, str)
+def test_swrtj_args_instantiation(instance):
+    assert isinstance(instance, swrtj_Args)
 
 
-@given(instance=swrtj::BooleanConstant_strategy)
-def test_swrtj::booleanconstant_value_setter(instance):
-    original = instance.value
-    instance.value = original
-    assert instance.value == original
 
-@given(instance=swrtj::Args_strategy)
-@settings(max_examples=50)
-def test_swrtj::args_instantiation(instance):
-    assert isinstance(instance, swrtj::Args)
-
-@given(instance=swrtj::Args_strategy)
-def test_swrtj::args_args_type(instance):
-    assert isinstance(instance.args, bool)
-
-
-@given(instance=swrtj::Args_strategy)
-def test_swrtj::args_args_setter(instance):
+@given(instance=swrtj_Args_strategy)
+def test_swrtj_args_args_setter(instance):
     original = instance.args
     instance.args = original
     assert instance.args == original
 
-@given(instance=swrtj::NestedExpression_strategy)
+@given(instance=swrtj_This_strategy)
 @settings(max_examples=50)
-def test_swrtj::nestedexpression_instantiation(instance):
-    assert isinstance(instance, swrtj::NestedExpression)
-
-@given(instance=swrtj::ParameterReference_strategy)
-@settings(max_examples=50)
-def test_swrtj::parameterreference_instantiation(instance):
-    assert isinstance(instance, swrtj::ParameterReference)
-
-@given(instance=swrtj::Cast_strategy)
-@settings(max_examples=50)
-def test_swrtj::cast_instantiation(instance):
-    assert isinstance(instance, swrtj::Cast)
-
-@given(instance=swrtj::StringConstant_strategy)
-@settings(max_examples=50)
-def test_swrtj::stringconstant_instantiation(instance):
-    assert isinstance(instance, swrtj::StringConstant)
-
-@given(instance=swrtj::StringConstant_strategy)
-def test_swrtj::stringconstant_value_type(instance):
-    assert isinstance(instance.value, str)
+def test_swrtj_this_instantiation(instance):
+    assert isinstance(instance, swrtj_This)
 
 
-@given(instance=swrtj::StringConstant_strategy)
-def test_swrtj::stringconstant_value_setter(instance):
-    original = instance.value
-    instance.value = original
-    assert instance.value == original
 
-@given(instance=swrtj::Output_strategy)
-@settings(max_examples=50)
-def test_swrtj::output_instantiation(instance):
-    assert isinstance(instance, swrtj::Output)
-
-@given(instance=swrtj::Output_strategy)
-def test_swrtj::output_output_type(instance):
-    assert isinstance(instance.output, bool)
-
-
-@given(instance=swrtj::Output_strategy)
-def test_swrtj::output_output_setter(instance):
-    original = instance.output
-    instance.output = original
-    assert instance.output == original
-
-@given(instance=swrtj::This_strategy)
-@settings(max_examples=50)
-def test_swrtj::this_instantiation(instance):
-    assert isinstance(instance, swrtj::This)
-
-@given(instance=swrtj::This_strategy)
-def test_swrtj::this_this_type(instance):
-    assert isinstance(instance.this, bool)
-
-
-@given(instance=swrtj::This_strategy)
-def test_swrtj::this_this_setter(instance):
+@given(instance=swrtj_This_strategy)
+def test_swrtj_this_this_setter(instance):
     original = instance.this
     instance.this = original
     assert instance.this == original
 
-@given(instance=swrtj::Number_strategy)
+@given(instance=swrtj_Output_strategy)
 @settings(max_examples=50)
-def test_swrtj::number_instantiation(instance):
-    assert isinstance(instance, swrtj::Number)
-
-@given(instance=swrtj::Number_strategy)
-def test_swrtj::number_value_type(instance):
-    assert isinstance(instance.value, int)
+def test_swrtj_output_instantiation(instance):
+    assert isinstance(instance, swrtj_Output)
 
 
-@given(instance=swrtj::Number_strategy)
-def test_swrtj::number_value_setter(instance):
+
+@given(instance=swrtj_Output_strategy)
+def test_swrtj_output_output_setter(instance):
+    original = instance.output
+    instance.output = original
+    assert instance.output == original
+
+@given(instance=swrtj_Number_strategy)
+@settings(max_examples=50)
+def test_swrtj_number_instantiation(instance):
+    assert isinstance(instance, swrtj_Number)
+
+
+
+@given(instance=swrtj_Number_strategy)
+def test_swrtj_number_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
 
-@given(instance=swrtj::ParameterAssignment_strategy)
+@given(instance=swrtj_Input_strategy)
 @settings(max_examples=50)
-def test_swrtj::parameterassignment_instantiation(instance):
-    assert isinstance(instance, swrtj::ParameterAssignment)
+def test_swrtj_input_instantiation(instance):
+    assert isinstance(instance, swrtj_Input)
 
-@given(instance=swrtj::Null_strategy)
+
+
+@given(instance=swrtj_Input_strategy)
+def test_swrtj_input_input_setter(instance):
+    original = instance.input
+    instance.input = original
+    assert instance.input == original
+
+@given(instance=swrtj_BooleanConstant_strategy)
 @settings(max_examples=50)
-def test_swrtj::null_instantiation(instance):
-    assert isinstance(instance, swrtj::Null)
-
-@given(instance=swrtj::Null_strategy)
-def test_swrtj::null_null_type(instance):
-    assert isinstance(instance.null, bool)
+def test_swrtj_booleanconstant_instantiation(instance):
+    assert isinstance(instance, swrtj_BooleanConstant)
 
 
-@given(instance=swrtj::Null_strategy)
-def test_swrtj::null_null_setter(instance):
+
+@given(instance=swrtj_BooleanConstant_strategy)
+def test_swrtj_booleanconstant_value_setter(instance):
+    original = instance.value
+    instance.value = original
+    assert instance.value == original
+
+@given(instance=swrtj_ParameterAssignment_strategy)
+@settings(max_examples=50)
+def test_swrtj_parameterassignment_instantiation(instance):
+    assert isinstance(instance, swrtj_ParameterAssignment)
+
+@given(instance=swrtj_StringConstant_strategy)
+@settings(max_examples=50)
+def test_swrtj_stringconstant_instantiation(instance):
+    assert isinstance(instance, swrtj_StringConstant)
+
+
+
+@given(instance=swrtj_StringConstant_strategy)
+def test_swrtj_stringconstant_value_setter(instance):
+    original = instance.value
+    instance.value = original
+    assert instance.value == original
+
+@given(instance=swrtj_Cast_strategy)
+@settings(max_examples=50)
+def test_swrtj_cast_instantiation(instance):
+    assert isinstance(instance, swrtj_Cast)
+
+@given(instance=swrtj_ConstructorInvocation_strategy)
+@settings(max_examples=50)
+def test_swrtj_constructorinvocation_instantiation(instance):
+    assert isinstance(instance, swrtj_ConstructorInvocation)
+
+@given(instance=swrtj_Null_strategy)
+@settings(max_examples=50)
+def test_swrtj_null_instantiation(instance):
+    assert isinstance(instance, swrtj_Null)
+
+
+
+@given(instance=swrtj_Null_strategy)
+def test_swrtj_null_null_setter(instance):
     original = instance.null
     instance.null = original
     assert instance.null == original
 
-@given(instance=swrtj::Message_strategy)
+@given(instance=swrtj_Message_strategy)
 @settings(max_examples=50)
-def test_swrtj::message_instantiation(instance):
-    assert isinstance(instance, swrtj::Message)
+def test_swrtj_message_instantiation(instance):
+    assert isinstance(instance, swrtj_Message)
 
-@given(instance=swrtj::Start_strategy)
+@given(instance=swrtj_Start_strategy)
 @settings(max_examples=50)
-def test_swrtj::start_instantiation(instance):
-    assert isinstance(instance, swrtj::Start)
+def test_swrtj_start_instantiation(instance):
+    assert isinstance(instance, swrtj_Start)
 
-@given(instance=swrtj::DottedExpression_strategy)
+@given(instance=swrtj_DottedExpression_strategy)
 @settings(max_examples=50)
-def test_swrtj::dottedexpression_instantiation(instance):
-    assert isinstance(instance, swrtj::DottedExpression)
+def test_swrtj_dottedexpression_instantiation(instance):
+    assert isinstance(instance, swrtj_DottedExpression)
 
-@given(instance=swrtj::NestedBooleanExpression_strategy)
+@given(instance=swrtj_NestedBooleanExpression_strategy)
 @settings(max_examples=50)
-def test_swrtj::nestedbooleanexpression_instantiation(instance):
-    assert isinstance(instance, swrtj::NestedBooleanExpression)
+def test_swrtj_nestedbooleanexpression_instantiation(instance):
+    assert isinstance(instance, swrtj_NestedBooleanExpression)
 
-@given(instance=swrtj::CompareOperator_strategy)
+@given(instance=swrtj_CompareOperator_strategy)
 @settings(max_examples=50)
-def test_swrtj::compareoperator_instantiation(instance):
-    assert isinstance(instance, swrtj::CompareOperator)
-
-@given(instance=swrtj::CompareOperator_strategy)
-def test_swrtj::compareoperator_operator_type(instance):
-    assert isinstance(instance.operator, str)
+def test_swrtj_compareoperator_instantiation(instance):
+    assert isinstance(instance, swrtj_CompareOperator)
 
 
-@given(instance=swrtj::CompareOperator_strategy)
-def test_swrtj::compareoperator_operator_setter(instance):
+
+@given(instance=swrtj_CompareOperator_strategy)
+def test_swrtj_compareoperator_operator_setter(instance):
     original = instance.operator
     instance.operator = original
     assert instance.operator == original
 
-@given(instance=swrtj::FieldName_strategy)
+@given(instance=swrtj_FieldName_strategy)
 @settings(max_examples=50)
-def test_swrtj::fieldname_instantiation(instance):
-    assert isinstance(instance, swrtj::FieldName)
-
-@given(instance=swrtj::FieldName_strategy)
-def test_swrtj::fieldname_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_swrtj_fieldname_instantiation(instance):
+    assert isinstance(instance, swrtj_FieldName)
 
 
-@given(instance=swrtj::FieldName_strategy)
-def test_swrtj::fieldname_name_setter(instance):
+
+@given(instance=swrtj_FieldName_strategy)
+def test_swrtj_fieldname_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=swrtj::Type_strategy)
+@given(instance=swrtj_Type_strategy)
 @settings(max_examples=50)
-def test_swrtj::type_instantiation(instance):
-    assert isinstance(instance, swrtj::Type)
-
-@given(instance=swrtj::Type_strategy)
-def test_swrtj::type_primitiveType_type(instance):
-    assert isinstance(instance.primitiveType, str)
+def test_swrtj_type_instantiation(instance):
+    assert isinstance(instance, swrtj_Type)
 
 
-@given(instance=swrtj::Type_strategy)
-def test_swrtj::type_primitiveType_setter(instance):
+
+@given(instance=swrtj_Type_strategy)
+def test_swrtj_type_primitiveType_setter(instance):
     original = instance.primitiveType
     instance.primitiveType = original
     assert instance.primitiveType == original
@@ -2281,253 +2230,235 @@ def test_swrtj::type_primitiveType_setter(instance):
 def test_traitelement_instantiation(instance):
     assert isinstance(instance, TraitElement)
 
-@given(instance=swrtj::TraitElement_strategy)
+@given(instance=swrtj_TraitElement_strategy)
 @settings(max_examples=50)
-def test_swrtj::traitelement_instantiation(instance):
-    assert isinstance(instance, swrtj::TraitElement)
+def test_swrtj_traitelement_instantiation(instance):
+    assert isinstance(instance, swrtj_TraitElement)
 
 @given(instance=BaseTrait_strategy)
 @settings(max_examples=50)
 def test_basetrait_instantiation(instance):
     assert isinstance(instance, BaseTrait)
 
-@given(instance=swrtj::TraitName_strategy)
+@given(instance=swrtj_TraitName_strategy)
 @settings(max_examples=50)
-def test_swrtj::traitname_instantiation(instance):
-    assert isinstance(instance, swrtj::TraitName)
+def test_swrtj_traitname_instantiation(instance):
+    assert isinstance(instance, swrtj_TraitName)
 
-@given(instance=swrtj::NestedTraitExpression_strategy)
+@given(instance=swrtj_NestedTraitExpression_strategy)
 @settings(max_examples=50)
-def test_swrtj::nestedtraitexpression_instantiation(instance):
-    assert isinstance(instance, swrtj::NestedTraitExpression)
+def test_swrtj_nestedtraitexpression_instantiation(instance):
+    assert isinstance(instance, swrtj_NestedTraitExpression)
 
-@given(instance=swrtj::AnonimousTrait_strategy)
+@given(instance=swrtj_AnonimousTrait_strategy)
 @settings(max_examples=50)
-def test_swrtj::anonimoustrait_instantiation(instance):
-    assert isinstance(instance, swrtj::AnonimousTrait)
+def test_swrtj_anonimoustrait_instantiation(instance):
+    assert isinstance(instance, swrtj_AnonimousTrait)
 
-@given(instance=swrtj::TraitOperation_strategy)
+@given(instance=swrtj_TraitOperation_strategy)
 @settings(max_examples=50)
-def test_swrtj::traitoperation_instantiation(instance):
-    assert isinstance(instance, swrtj::TraitOperation)
+def test_swrtj_traitoperation_instantiation(instance):
+    assert isinstance(instance, swrtj_TraitOperation)
 
-@given(instance=swrtj::BaseTrait_strategy)
+@given(instance=swrtj_BaseTrait_strategy)
 @settings(max_examples=50)
-def test_swrtj::basetrait_instantiation(instance):
-    assert isinstance(instance, swrtj::BaseTrait)
+def test_swrtj_basetrait_instantiation(instance):
+    assert isinstance(instance, swrtj_BaseTrait)
 
 @given(instance=Statement_strategy)
 @settings(max_examples=50)
 def test_statement_instantiation(instance):
     assert isinstance(instance, Statement)
 
-@given(instance=swrtj::WhileStatement_strategy)
+@given(instance=swrtj_WhileStatement_strategy)
 @settings(max_examples=50)
-def test_swrtj::whilestatement_instantiation(instance):
-    assert isinstance(instance, swrtj::WhileStatement)
+def test_swrtj_whilestatement_instantiation(instance):
+    assert isinstance(instance, swrtj_WhileStatement)
 
-@given(instance=swrtj::IfThenElseStatement_strategy)
+@given(instance=swrtj_IfThenElseStatement_strategy)
 @settings(max_examples=50)
-def test_swrtj::ifthenelsestatement_instantiation(instance):
-    assert isinstance(instance, swrtj::IfThenElseStatement)
+def test_swrtj_ifthenelsestatement_instantiation(instance):
+    assert isinstance(instance, swrtj_IfThenElseStatement)
 
-@given(instance=swrtj::ExpressionStatement_strategy)
+@given(instance=swrtj_ExpressionStatement_strategy)
 @settings(max_examples=50)
-def test_swrtj::expressionstatement_instantiation(instance):
-    assert isinstance(instance, swrtj::ExpressionStatement)
+def test_swrtj_expressionstatement_instantiation(instance):
+    assert isinstance(instance, swrtj_ExpressionStatement)
 
-@given(instance=swrtj::Statement_strategy)
+@given(instance=swrtj_Statement_strategy)
 @settings(max_examples=50)
-def test_swrtj::statement_instantiation(instance):
-    assert isinstance(instance, swrtj::Statement)
+def test_swrtj_statement_instantiation(instance):
+    assert isinstance(instance, swrtj_Statement)
 
-@given(instance=swrtj::GenericExpression_strategy)
+@given(instance=swrtj_GenericExpression_strategy)
 @settings(max_examples=50)
-def test_swrtj::genericexpression_instantiation(instance):
-    assert isinstance(instance, swrtj::GenericExpression)
+def test_swrtj_genericexpression_instantiation(instance):
+    assert isinstance(instance, swrtj_GenericExpression)
 
-@given(instance=swrtj::ReturnStatement_strategy)
+@given(instance=swrtj_ReturnStatement_strategy)
 @settings(max_examples=50)
-def test_swrtj::returnstatement_instantiation(instance):
-    assert isinstance(instance, swrtj::ReturnStatement)
+def test_swrtj_returnstatement_instantiation(instance):
+    assert isinstance(instance, swrtj_ReturnStatement)
 
-@given(instance=swrtj::Parameter_strategy)
+@given(instance=swrtj_Parameter_strategy)
 @settings(max_examples=50)
-def test_swrtj::parameter_instantiation(instance):
-    assert isinstance(instance, swrtj::Parameter)
-
-@given(instance=swrtj::Parameter_strategy)
-def test_swrtj::parameter_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_swrtj_parameter_instantiation(instance):
+    assert isinstance(instance, swrtj_Parameter)
 
 
-@given(instance=swrtj::Parameter_strategy)
-def test_swrtj::parameter_name_setter(instance):
+
+@given(instance=swrtj_Parameter_strategy)
+def test_swrtj_parameter_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=swrtj::MethodName_strategy)
+@given(instance=swrtj_MethodName_strategy)
 @settings(max_examples=50)
-def test_swrtj::methodname_instantiation(instance):
-    assert isinstance(instance, swrtj::MethodName)
-
-@given(instance=swrtj::MethodName_strategy)
-def test_swrtj::methodname_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_swrtj_methodname_instantiation(instance):
+    assert isinstance(instance, swrtj_MethodName)
 
 
-@given(instance=swrtj::MethodName_strategy)
-def test_swrtj::methodname_name_setter(instance):
+
+@given(instance=swrtj_MethodName_strategy)
+def test_swrtj_methodname_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=swrtj::TraitExpression_strategy)
+@given(instance=swrtj_TraitExpression_strategy)
 @settings(max_examples=50)
-def test_swrtj::traitexpression_instantiation(instance):
-    assert isinstance(instance, swrtj::TraitExpression)
+def test_swrtj_traitexpression_instantiation(instance):
+    assert isinstance(instance, swrtj_TraitExpression)
 
-@given(instance=swrtj::RecordExpression_strategy)
+@given(instance=swrtj_RecordExpression_strategy)
 @settings(max_examples=50)
-def test_swrtj::recordexpression_instantiation(instance):
-    assert isinstance(instance, swrtj::RecordExpression)
+def test_swrtj_recordexpression_instantiation(instance):
+    assert isinstance(instance, swrtj_RecordExpression)
 
-@given(instance=swrtj::Method_strategy)
+@given(instance=swrtj_Method_strategy)
 @settings(max_examples=50)
-def test_swrtj::method_instantiation(instance):
-    assert isinstance(instance, swrtj::Method)
+def test_swrtj_method_instantiation(instance):
+    assert isinstance(instance, swrtj_Method)
 
 @given(instance=Element_strategy)
 @settings(max_examples=50)
 def test_element_instantiation(instance):
     assert isinstance(instance, Element)
 
-@given(instance=swrtj::Class_strategy)
+@given(instance=swrtj_Class_strategy)
 @settings(max_examples=50)
-def test_swrtj::class_instantiation(instance):
-    assert isinstance(instance, swrtj::Class)
+def test_swrtj_class_instantiation(instance):
+    assert isinstance(instance, swrtj_Class)
 
-@given(instance=swrtj::Trait_strategy)
+@given(instance=swrtj_Trait_strategy)
 @settings(max_examples=50)
-def test_swrtj::trait_instantiation(instance):
-    assert isinstance(instance, swrtj::Trait)
+def test_swrtj_trait_instantiation(instance):
+    assert isinstance(instance, swrtj_Trait)
 
-@given(instance=swrtj::Record_strategy)
+@given(instance=swrtj_Record_strategy)
 @settings(max_examples=50)
-def test_swrtj::record_instantiation(instance):
-    assert isinstance(instance, swrtj::Record)
+def test_swrtj_record_instantiation(instance):
+    assert isinstance(instance, swrtj_Record)
 
-@given(instance=swrtj::Interface_strategy)
+@given(instance=swrtj_Interface_strategy)
 @settings(max_examples=50)
-def test_swrtj::interface_instantiation(instance):
-    assert isinstance(instance, swrtj::Interface)
+def test_swrtj_interface_instantiation(instance):
+    assert isinstance(instance, swrtj_Interface)
 
-@given(instance=swrtj::Element_strategy)
+@given(instance=swrtj_Element_strategy)
 @settings(max_examples=50)
-def test_swrtj::element_instantiation(instance):
-    assert isinstance(instance, swrtj::Element)
-
-@given(instance=swrtj::Element_strategy)
-def test_swrtj::element_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_swrtj_element_instantiation(instance):
+    assert isinstance(instance, swrtj_Element)
 
 
-@given(instance=swrtj::Element_strategy)
-def test_swrtj::element_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
 
-@given(instance=swrtj::Element_strategy)
-def test_swrtj::element_construct_type(instance):
-    assert isinstance(instance.construct, str)
-
-
-@given(instance=swrtj::Element_strategy)
-def test_swrtj::element_construct_setter(instance):
+@given(instance=swrtj_Element_strategy)
+def test_swrtj_element_construct_setter(instance):
     original = instance.construct
     instance.construct = original
     assert instance.construct == original
 
-@given(instance=swrtj::Field_strategy)
+
+
+@given(instance=swrtj_Element_strategy)
+def test_swrtj_element_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+@given(instance=swrtj_Field_strategy)
 @settings(max_examples=50)
-def test_swrtj::field_instantiation(instance):
-    assert isinstance(instance, swrtj::Field)
+def test_swrtj_field_instantiation(instance):
+    assert isinstance(instance, swrtj_Field)
 
 @given(instance=BaseRecord_strategy)
 @settings(max_examples=50)
 def test_baserecord_instantiation(instance):
     assert isinstance(instance, BaseRecord)
 
-@given(instance=swrtj::RecordName_strategy)
+@given(instance=swrtj_NestedRecordExpression_strategy)
 @settings(max_examples=50)
-def test_swrtj::recordname_instantiation(instance):
-    assert isinstance(instance, swrtj::RecordName)
+def test_swrtj_nestedrecordexpression_instantiation(instance):
+    assert isinstance(instance, swrtj_NestedRecordExpression)
 
-@given(instance=swrtj::NestedRecordExpression_strategy)
+@given(instance=swrtj_RecordName_strategy)
 @settings(max_examples=50)
-def test_swrtj::nestedrecordexpression_instantiation(instance):
-    assert isinstance(instance, swrtj::NestedRecordExpression)
+def test_swrtj_recordname_instantiation(instance):
+    assert isinstance(instance, swrtj_RecordName)
 
-@given(instance=swrtj::AnonimousRecord_strategy)
+@given(instance=swrtj_AnonimousRecord_strategy)
 @settings(max_examples=50)
-def test_swrtj::anonimousrecord_instantiation(instance):
-    assert isinstance(instance, swrtj::AnonimousRecord)
+def test_swrtj_anonimousrecord_instantiation(instance):
+    assert isinstance(instance, swrtj_AnonimousRecord)
 
-@given(instance=swrtj::RecordOperation_strategy)
+@given(instance=swrtj_RecordOperation_strategy)
 @settings(max_examples=50)
-def test_swrtj::recordoperation_instantiation(instance):
-    assert isinstance(instance, swrtj::RecordOperation)
+def test_swrtj_recordoperation_instantiation(instance):
+    assert isinstance(instance, swrtj_RecordOperation)
 
-@given(instance=swrtj::BaseRecord_strategy)
+@given(instance=swrtj_BaseRecord_strategy)
 @settings(max_examples=50)
-def test_swrtj::baserecord_instantiation(instance):
-    assert isinstance(instance, swrtj::BaseRecord)
+def test_swrtj_baserecord_instantiation(instance):
+    assert isinstance(instance, swrtj_BaseRecord)
 
-@given(instance=swrtj::Block_strategy)
+@given(instance=swrtj_Block_strategy)
 @settings(max_examples=50)
-def test_swrtj::block_instantiation(instance):
-    assert isinstance(instance, swrtj::Block)
+def test_swrtj_block_instantiation(instance):
+    assert isinstance(instance, swrtj_Block)
 
-@given(instance=swrtj::Program_strategy)
+@given(instance=swrtj_Program_strategy)
 @settings(max_examples=50)
-def test_swrtj::program_instantiation(instance):
-    assert isinstance(instance, swrtj::Program)
+def test_swrtj_program_instantiation(instance):
+    assert isinstance(instance, swrtj_Program)
 
-@given(instance=swrtj::Constructor_strategy)
+@given(instance=swrtj_Constructor_strategy)
 @settings(max_examples=50)
-def test_swrtj::constructor_instantiation(instance):
-    assert isinstance(instance, swrtj::Constructor)
-
-@given(instance=swrtj::Constructor_strategy)
-def test_swrtj::constructor_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_swrtj_constructor_instantiation(instance):
+    assert isinstance(instance, swrtj_Constructor)
 
 
-@given(instance=swrtj::Constructor_strategy)
-def test_swrtj::constructor_name_setter(instance):
+
+@given(instance=swrtj_Constructor_strategy)
+def test_swrtj_constructor_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=swrtj::Import_strategy)
+@given(instance=swrtj_Import_strategy)
 @settings(max_examples=50)
-def test_swrtj::import_instantiation(instance):
-    assert isinstance(instance, swrtj::Import)
-
-@given(instance=swrtj::Import_strategy)
-def test_swrtj::import_importURI_type(instance):
-    assert isinstance(instance.importURI, str)
+def test_swrtj_import_instantiation(instance):
+    assert isinstance(instance, swrtj_Import)
 
 
-@given(instance=swrtj::Import_strategy)
-def test_swrtj::import_importURI_setter(instance):
+
+@given(instance=swrtj_Import_strategy)
+def test_swrtj_import_importURI_setter(instance):
     original = instance.importURI
     instance.importURI = original
     assert instance.importURI == original
 
-@given(instance=swrtj::File_strategy)
+@given(instance=swrtj_File_strategy)
 @settings(max_examples=50)
-def test_swrtj::file_instantiation(instance):
-    assert isinstance(instance, swrtj::File)
+def test_swrtj_file_instantiation(instance):
+    assert isinstance(instance, swrtj_File)

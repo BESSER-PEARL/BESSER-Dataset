@@ -3,13 +3,13 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    a::A2,
+from python_code import (
+    a_A2,
     B2,
     B1,
-    a::A1,
+    a_A1,
 )
 
 # =============================================================================
@@ -18,16 +18,16 @@ from classes import (
 
 
 
-def test_a::a2_is_not_abstract():
-    assert not inspect.isabstract(a::A2)
+def test_a_a2_is_not_abstract():
+    assert not inspect.isabstract(a_A2)
 
 
-def test_a::a2_constructor_exists():
-    assert callable(a::A2.__init__)
+def test_a_a2_constructor_exists():
+    assert callable(a_A2.__init__)
 
 
-def test_a::a2_constructor_args():
-    sig = inspect.signature(a::A2.__init__)
+def test_a_a2_constructor_args():
+    sig = inspect.signature(a_A2.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -60,16 +60,16 @@ def test_b1_constructor_args():
 
 
 
-def test_a::a1_is_not_abstract():
-    assert not inspect.isabstract(a::A1)
+def test_a_a1_is_not_abstract():
+    assert not inspect.isabstract(a_A1)
 
 
-def test_a::a1_constructor_exists():
-    assert callable(a::A1.__init__)
+def test_a_a1_constructor_exists():
+    assert callable(a_A1.__init__)
 
 
-def test_a::a1_constructor_args():
-    sig = inspect.signature(a::A1.__init__)
+def test_a_a1_constructor_args():
+    sig = inspect.signature(a_A1.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -84,8 +84,8 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-a::A2_strategy = st.builds(
-    a::A2,
+a_A2_strategy = st.builds(
+    a_A2,
 )
 B2_strategy = st.builds(
     B2,
@@ -93,14 +93,14 @@ B2_strategy = st.builds(
 B1_strategy = st.builds(
     B1,
 )
-a::A1_strategy = st.builds(
-    a::A1,
+a_A1_strategy = st.builds(
+    a_A1,
 )
 
-@given(instance=a::A2_strategy)
+@given(instance=a_A2_strategy)
 @settings(max_examples=50)
-def test_a::a2_instantiation(instance):
-    assert isinstance(instance, a::A2)
+def test_a_a2_instantiation(instance):
+    assert isinstance(instance, a_A2)
 
 @given(instance=B2_strategy)
 @settings(max_examples=50)
@@ -112,7 +112,7 @@ def test_b2_instantiation(instance):
 def test_b1_instantiation(instance):
     assert isinstance(instance, B1)
 
-@given(instance=a::A1_strategy)
+@given(instance=a_A1_strategy)
 @settings(max_examples=50)
-def test_a::a1_instantiation(instance):
-    assert isinstance(instance, a::A1)
+def test_a_a1_instantiation(instance):
+    assert isinstance(instance, a_A1)

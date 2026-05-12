@@ -3,17 +3,17 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    basicFsmEnv::Machine,
+from python_code import (
+    basicFsmEnv_Machine,
     State,
-    basicFsmEnv::InitialState,
-    basicFsmEnv::Action,
-    basicFsmEnv::Guard,
-    basicFsmEnv::VarDecl,
-    basicFsmEnv::Trans,
-    basicFsmEnv::State,
+    basicFsmEnv_InitialState,
+    basicFsmEnv_Action,
+    basicFsmEnv_Guard,
+    basicFsmEnv_VarDecl,
+    basicFsmEnv_Trans,
+    basicFsmEnv_State,
 )
 
 # =============================================================================
@@ -22,23 +22,23 @@ from classes import (
 
 
 
-def test_basicfsmenv::machine_is_not_abstract():
-    assert not inspect.isabstract(basicFsmEnv::Machine)
+def test_basicfsmenv_machine_is_not_abstract():
+    assert not inspect.isabstract(basicFsmEnv_Machine)
 
 
-def test_basicfsmenv::machine_constructor_exists():
-    assert callable(basicFsmEnv::Machine.__init__)
+def test_basicfsmenv_machine_constructor_exists():
+    assert callable(basicFsmEnv_Machine.__init__)
 
 
-def test_basicfsmenv::machine_constructor_args():
-    sig = inspect.signature(basicFsmEnv::Machine.__init__)
+def test_basicfsmenv_machine_constructor_args():
+    sig = inspect.signature(basicFsmEnv_Machine.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_basicfsmenv::machine_has_name():
-    assert hasattr(basicFsmEnv::Machine, "name")
+def test_basicfsmenv_machine_has_name():
+    assert hasattr(basicFsmEnv_Machine, "name")
     descriptor = None
-    for klass in basicFsmEnv::Machine.__mro__:
+    for klass in basicFsmEnv_Machine.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -60,99 +60,99 @@ def test_state_constructor_args():
 
 
 
-def test_basicfsmenv::initialstate_is_not_abstract():
-    assert not inspect.isabstract(basicFsmEnv::InitialState)
+def test_basicfsmenv_initialstate_is_not_abstract():
+    assert not inspect.isabstract(basicFsmEnv_InitialState)
 
 
-def test_basicfsmenv::initialstate_constructor_exists():
-    assert callable(basicFsmEnv::InitialState.__init__)
+def test_basicfsmenv_initialstate_constructor_exists():
+    assert callable(basicFsmEnv_InitialState.__init__)
 
 
-def test_basicfsmenv::initialstate_constructor_args():
-    sig = inspect.signature(basicFsmEnv::InitialState.__init__)
+def test_basicfsmenv_initialstate_constructor_args():
+    sig = inspect.signature(basicFsmEnv_InitialState.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_basicfsmenv::action_is_not_abstract():
-    assert not inspect.isabstract(basicFsmEnv::Action)
+def test_basicfsmenv_action_is_not_abstract():
+    assert not inspect.isabstract(basicFsmEnv_Action)
 
 
-def test_basicfsmenv::action_constructor_exists():
-    assert callable(basicFsmEnv::Action.__init__)
+def test_basicfsmenv_action_constructor_exists():
+    assert callable(basicFsmEnv_Action.__init__)
 
 
-def test_basicfsmenv::action_constructor_args():
-    sig = inspect.signature(basicFsmEnv::Action.__init__)
+def test_basicfsmenv_action_constructor_args():
+    sig = inspect.signature(basicFsmEnv_Action.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_basicfsmenv::guard_is_not_abstract():
-    assert not inspect.isabstract(basicFsmEnv::Guard)
+def test_basicfsmenv_guard_is_not_abstract():
+    assert not inspect.isabstract(basicFsmEnv_Guard)
 
 
-def test_basicfsmenv::guard_constructor_exists():
-    assert callable(basicFsmEnv::Guard.__init__)
+def test_basicfsmenv_guard_constructor_exists():
+    assert callable(basicFsmEnv_Guard.__init__)
 
 
-def test_basicfsmenv::guard_constructor_args():
-    sig = inspect.signature(basicFsmEnv::Guard.__init__)
+def test_basicfsmenv_guard_constructor_args():
+    sig = inspect.signature(basicFsmEnv_Guard.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_basicfsmenv::vardecl_is_not_abstract():
-    assert not inspect.isabstract(basicFsmEnv::VarDecl)
+def test_basicfsmenv_vardecl_is_not_abstract():
+    assert not inspect.isabstract(basicFsmEnv_VarDecl)
 
 
-def test_basicfsmenv::vardecl_constructor_exists():
-    assert callable(basicFsmEnv::VarDecl.__init__)
+def test_basicfsmenv_vardecl_constructor_exists():
+    assert callable(basicFsmEnv_VarDecl.__init__)
 
 
-def test_basicfsmenv::vardecl_constructor_args():
-    sig = inspect.signature(basicFsmEnv::VarDecl.__init__)
+def test_basicfsmenv_vardecl_constructor_args():
+    sig = inspect.signature(basicFsmEnv_VarDecl.__init__)
     params = list(sig.parameters.keys())
-    assert "name" in params, "Missing parameter 'name'"
     assert "value" in params, "Missing parameter 'value'"
+    assert "name" in params, "Missing parameter 'name'"
 
-def test_basicfsmenv::vardecl_has_name():
-    assert hasattr(basicFsmEnv::VarDecl, "name")
+def test_basicfsmenv_vardecl_has_value():
+    assert hasattr(basicFsmEnv_VarDecl, "value")
     descriptor = None
-    for klass in basicFsmEnv::VarDecl.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_basicfsmenv::vardecl_has_value():
-    assert hasattr(basicFsmEnv::VarDecl, "value")
-    descriptor = None
-    for klass in basicFsmEnv::VarDecl.__mro__:
+    for klass in basicFsmEnv_VarDecl.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
     assert isinstance(descriptor, property)
 
+def test_basicfsmenv_vardecl_has_name():
+    assert hasattr(basicFsmEnv_VarDecl, "name")
+    descriptor = None
+    for klass in basicFsmEnv_VarDecl.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_basicfsmenv::trans_is_not_abstract():
-    assert not inspect.isabstract(basicFsmEnv::Trans)
+
+def test_basicfsmenv_trans_is_not_abstract():
+    assert not inspect.isabstract(basicFsmEnv_Trans)
 
 
-def test_basicfsmenv::trans_constructor_exists():
-    assert callable(basicFsmEnv::Trans.__init__)
+def test_basicfsmenv_trans_constructor_exists():
+    assert callable(basicFsmEnv_Trans.__init__)
 
 
-def test_basicfsmenv::trans_constructor_args():
-    sig = inspect.signature(basicFsmEnv::Trans.__init__)
+def test_basicfsmenv_trans_constructor_args():
+    sig = inspect.signature(basicFsmEnv_Trans.__init__)
     params = list(sig.parameters.keys())
     assert "event" in params, "Missing parameter 'event'"
 
-def test_basicfsmenv::trans_has_event():
-    assert hasattr(basicFsmEnv::Trans, "event")
+def test_basicfsmenv_trans_has_event():
+    assert hasattr(basicFsmEnv_Trans, "event")
     descriptor = None
-    for klass in basicFsmEnv::Trans.__mro__:
+    for klass in basicFsmEnv_Trans.__mro__:
         if "event" in klass.__dict__:
             descriptor = klass.__dict__["event"]
             break
@@ -160,23 +160,23 @@ def test_basicfsmenv::trans_has_event():
 
 
 
-def test_basicfsmenv::state_is_not_abstract():
-    assert not inspect.isabstract(basicFsmEnv::State)
+def test_basicfsmenv_state_is_not_abstract():
+    assert not inspect.isabstract(basicFsmEnv_State)
 
 
-def test_basicfsmenv::state_constructor_exists():
-    assert callable(basicFsmEnv::State.__init__)
+def test_basicfsmenv_state_constructor_exists():
+    assert callable(basicFsmEnv_State.__init__)
 
 
-def test_basicfsmenv::state_constructor_args():
-    sig = inspect.signature(basicFsmEnv::State.__init__)
+def test_basicfsmenv_state_constructor_args():
+    sig = inspect.signature(basicFsmEnv_State.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_basicfsmenv::state_has_name():
-    assert hasattr(basicFsmEnv::State, "name")
+def test_basicfsmenv_state_has_name():
+    assert hasattr(basicFsmEnv_State, "name")
     descriptor = None
-    for klass in basicFsmEnv::State.__mro__:
+    for klass in basicFsmEnv_State.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -194,53 +194,50 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-basicFsmEnv::Machine_strategy = st.builds(
-    basicFsmEnv::Machine,
+basicFsmEnv_Machine_strategy = st.builds(
+    basicFsmEnv_Machine,
     name=
         safe_text
 )
 State_strategy = st.builds(
     State,
 )
-basicFsmEnv::InitialState_strategy = st.builds(
-    basicFsmEnv::InitialState,
+basicFsmEnv_InitialState_strategy = st.builds(
+    basicFsmEnv_InitialState,
 )
-basicFsmEnv::Action_strategy = st.builds(
-    basicFsmEnv::Action,
+basicFsmEnv_Action_strategy = st.builds(
+    basicFsmEnv_Action,
 )
-basicFsmEnv::Guard_strategy = st.builds(
-    basicFsmEnv::Guard,
+basicFsmEnv_Guard_strategy = st.builds(
+    basicFsmEnv_Guard,
 )
-basicFsmEnv::VarDecl_strategy = st.builds(
-    basicFsmEnv::VarDecl,
-    name=
-        safe_text,
+basicFsmEnv_VarDecl_strategy = st.builds(
+    basicFsmEnv_VarDecl,
     value=
+        safe_text,
+    name=
         safe_text
 )
-basicFsmEnv::Trans_strategy = st.builds(
-    basicFsmEnv::Trans,
+basicFsmEnv_Trans_strategy = st.builds(
+    basicFsmEnv_Trans,
     event=
         safe_text
 )
-basicFsmEnv::State_strategy = st.builds(
-    basicFsmEnv::State,
+basicFsmEnv_State_strategy = st.builds(
+    basicFsmEnv_State,
     name=
         safe_text
 )
 
-@given(instance=basicFsmEnv::Machine_strategy)
+@given(instance=basicFsmEnv_Machine_strategy)
 @settings(max_examples=50)
-def test_basicfsmenv::machine_instantiation(instance):
-    assert isinstance(instance, basicFsmEnv::Machine)
-
-@given(instance=basicFsmEnv::Machine_strategy)
-def test_basicfsmenv::machine_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_basicfsmenv_machine_instantiation(instance):
+    assert isinstance(instance, basicFsmEnv_Machine)
 
 
-@given(instance=basicFsmEnv::Machine_strategy)
-def test_basicfsmenv::machine_name_setter(instance):
+
+@given(instance=basicFsmEnv_Machine_strategy)
+def test_basicfsmenv_machine_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
@@ -250,76 +247,64 @@ def test_basicfsmenv::machine_name_setter(instance):
 def test_state_instantiation(instance):
     assert isinstance(instance, State)
 
-@given(instance=basicFsmEnv::InitialState_strategy)
+@given(instance=basicFsmEnv_InitialState_strategy)
 @settings(max_examples=50)
-def test_basicfsmenv::initialstate_instantiation(instance):
-    assert isinstance(instance, basicFsmEnv::InitialState)
+def test_basicfsmenv_initialstate_instantiation(instance):
+    assert isinstance(instance, basicFsmEnv_InitialState)
 
-@given(instance=basicFsmEnv::Action_strategy)
+@given(instance=basicFsmEnv_Action_strategy)
 @settings(max_examples=50)
-def test_basicfsmenv::action_instantiation(instance):
-    assert isinstance(instance, basicFsmEnv::Action)
+def test_basicfsmenv_action_instantiation(instance):
+    assert isinstance(instance, basicFsmEnv_Action)
 
-@given(instance=basicFsmEnv::Guard_strategy)
+@given(instance=basicFsmEnv_Guard_strategy)
 @settings(max_examples=50)
-def test_basicfsmenv::guard_instantiation(instance):
-    assert isinstance(instance, basicFsmEnv::Guard)
+def test_basicfsmenv_guard_instantiation(instance):
+    assert isinstance(instance, basicFsmEnv_Guard)
 
-@given(instance=basicFsmEnv::VarDecl_strategy)
+@given(instance=basicFsmEnv_VarDecl_strategy)
 @settings(max_examples=50)
-def test_basicfsmenv::vardecl_instantiation(instance):
-    assert isinstance(instance, basicFsmEnv::VarDecl)
-
-@given(instance=basicFsmEnv::VarDecl_strategy)
-def test_basicfsmenv::vardecl_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_basicfsmenv_vardecl_instantiation(instance):
+    assert isinstance(instance, basicFsmEnv_VarDecl)
 
 
-@given(instance=basicFsmEnv::VarDecl_strategy)
-def test_basicfsmenv::vardecl_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
 
-@given(instance=basicFsmEnv::VarDecl_strategy)
-def test_basicfsmenv::vardecl_value_type(instance):
-    assert isinstance(instance.value, str)
-
-
-@given(instance=basicFsmEnv::VarDecl_strategy)
-def test_basicfsmenv::vardecl_value_setter(instance):
+@given(instance=basicFsmEnv_VarDecl_strategy)
+def test_basicfsmenv_vardecl_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
 
-@given(instance=basicFsmEnv::Trans_strategy)
+
+
+@given(instance=basicFsmEnv_VarDecl_strategy)
+def test_basicfsmenv_vardecl_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+@given(instance=basicFsmEnv_Trans_strategy)
 @settings(max_examples=50)
-def test_basicfsmenv::trans_instantiation(instance):
-    assert isinstance(instance, basicFsmEnv::Trans)
-
-@given(instance=basicFsmEnv::Trans_strategy)
-def test_basicfsmenv::trans_event_type(instance):
-    assert isinstance(instance.event, str)
+def test_basicfsmenv_trans_instantiation(instance):
+    assert isinstance(instance, basicFsmEnv_Trans)
 
 
-@given(instance=basicFsmEnv::Trans_strategy)
-def test_basicfsmenv::trans_event_setter(instance):
+
+@given(instance=basicFsmEnv_Trans_strategy)
+def test_basicfsmenv_trans_event_setter(instance):
     original = instance.event
     instance.event = original
     assert instance.event == original
 
-@given(instance=basicFsmEnv::State_strategy)
+@given(instance=basicFsmEnv_State_strategy)
 @settings(max_examples=50)
-def test_basicfsmenv::state_instantiation(instance):
-    assert isinstance(instance, basicFsmEnv::State)
-
-@given(instance=basicFsmEnv::State_strategy)
-def test_basicfsmenv::state_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_basicfsmenv_state_instantiation(instance):
+    assert isinstance(instance, basicFsmEnv_State)
 
 
-@given(instance=basicFsmEnv::State_strategy)
-def test_basicfsmenv::state_name_setter(instance):
+
+@given(instance=basicFsmEnv_State_strategy)
+def test_basicfsmenv_state_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original

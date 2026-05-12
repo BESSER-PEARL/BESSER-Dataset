@@ -3,14 +3,14 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    sQL::Column,
-    sQL::Table,
-    sQL::Database,
-    sQL::ForeignKey,
-    sQL::PrimaryKey,
+from python_code import (
+    sQL_ForeignKey,
+    sQL_PrimaryKey,
+    sQL_Column,
+    sQL_Table,
+    sQL_Database,
 )
 
 # =============================================================================
@@ -19,43 +19,71 @@ from classes import (
 
 
 
-def test_sql::column_is_not_abstract():
-    assert not inspect.isabstract(sQL::Column)
+def test_sql_foreignkey_is_not_abstract():
+    assert not inspect.isabstract(sQL_ForeignKey)
 
 
-def test_sql::column_constructor_exists():
-    assert callable(sQL::Column.__init__)
+def test_sql_foreignkey_constructor_exists():
+    assert callable(sQL_ForeignKey.__init__)
 
 
-def test_sql::column_constructor_args():
-    sig = inspect.signature(sQL::Column.__init__)
+def test_sql_foreignkey_constructor_args():
+    sig = inspect.signature(sQL_ForeignKey.__init__)
     params = list(sig.parameters.keys())
-    assert "dataType" in params, "Missing parameter 'dataType'"
+
+
+
+def test_sql_primarykey_is_not_abstract():
+    assert not inspect.isabstract(sQL_PrimaryKey)
+
+
+def test_sql_primarykey_constructor_exists():
+    assert callable(sQL_PrimaryKey.__init__)
+
+
+def test_sql_primarykey_constructor_args():
+    sig = inspect.signature(sQL_PrimaryKey.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_sql_column_is_not_abstract():
+    assert not inspect.isabstract(sQL_Column)
+
+
+def test_sql_column_constructor_exists():
+    assert callable(sQL_Column.__init__)
+
+
+def test_sql_column_constructor_args():
+    sig = inspect.signature(sQL_Column.__init__)
+    params = list(sig.parameters.keys())
     assert "notNull" in params, "Missing parameter 'notNull'"
+    assert "dataType" in params, "Missing parameter 'dataType'"
     assert "name" in params, "Missing parameter 'name'"
 
-def test_sql::column_has_dataType():
-    assert hasattr(sQL::Column, "dataType")
+def test_sql_column_has_notNull():
+    assert hasattr(sQL_Column, "notNull")
     descriptor = None
-    for klass in sQL::Column.__mro__:
-        if "dataType" in klass.__dict__:
-            descriptor = klass.__dict__["dataType"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_sql::column_has_notNull():
-    assert hasattr(sQL::Column, "notNull")
-    descriptor = None
-    for klass in sQL::Column.__mro__:
+    for klass in sQL_Column.__mro__:
         if "notNull" in klass.__dict__:
             descriptor = klass.__dict__["notNull"]
             break
     assert isinstance(descriptor, property)
 
-def test_sql::column_has_name():
-    assert hasattr(sQL::Column, "name")
+def test_sql_column_has_dataType():
+    assert hasattr(sQL_Column, "dataType")
     descriptor = None
-    for klass in sQL::Column.__mro__:
+    for klass in sQL_Column.__mro__:
+        if "dataType" in klass.__dict__:
+            descriptor = klass.__dict__["dataType"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_sql_column_has_name():
+    assert hasattr(sQL_Column, "name")
+    descriptor = None
+    for klass in sQL_Column.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -63,23 +91,23 @@ def test_sql::column_has_name():
 
 
 
-def test_sql::table_is_not_abstract():
-    assert not inspect.isabstract(sQL::Table)
+def test_sql_table_is_not_abstract():
+    assert not inspect.isabstract(sQL_Table)
 
 
-def test_sql::table_constructor_exists():
-    assert callable(sQL::Table.__init__)
+def test_sql_table_constructor_exists():
+    assert callable(sQL_Table.__init__)
 
 
-def test_sql::table_constructor_args():
-    sig = inspect.signature(sQL::Table.__init__)
+def test_sql_table_constructor_args():
+    sig = inspect.signature(sQL_Table.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_sql::table_has_name():
-    assert hasattr(sQL::Table, "name")
+def test_sql_table_has_name():
+    assert hasattr(sQL_Table, "name")
     descriptor = None
-    for klass in sQL::Table.__mro__:
+    for klass in sQL_Table.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -87,44 +115,16 @@ def test_sql::table_has_name():
 
 
 
-def test_sql::database_is_not_abstract():
-    assert not inspect.isabstract(sQL::Database)
+def test_sql_database_is_not_abstract():
+    assert not inspect.isabstract(sQL_Database)
 
 
-def test_sql::database_constructor_exists():
-    assert callable(sQL::Database.__init__)
+def test_sql_database_constructor_exists():
+    assert callable(sQL_Database.__init__)
 
 
-def test_sql::database_constructor_args():
-    sig = inspect.signature(sQL::Database.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_sql::foreignkey_is_not_abstract():
-    assert not inspect.isabstract(sQL::ForeignKey)
-
-
-def test_sql::foreignkey_constructor_exists():
-    assert callable(sQL::ForeignKey.__init__)
-
-
-def test_sql::foreignkey_constructor_args():
-    sig = inspect.signature(sQL::ForeignKey.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_sql::primarykey_is_not_abstract():
-    assert not inspect.isabstract(sQL::PrimaryKey)
-
-
-def test_sql::primarykey_constructor_exists():
-    assert callable(sQL::PrimaryKey.__init__)
-
-
-def test_sql::primarykey_constructor_args():
-    sig = inspect.signature(sQL::PrimaryKey.__init__)
+def test_sql_database_constructor_args():
+    sig = inspect.signature(sQL_Database.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -139,95 +139,83 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-sQL::Column_strategy = st.builds(
-    sQL::Column,
-    dataType=
-        safe_text,
+sQL_ForeignKey_strategy = st.builds(
+    sQL_ForeignKey,
+)
+sQL_PrimaryKey_strategy = st.builds(
+    sQL_PrimaryKey,
+)
+sQL_Column_strategy = st.builds(
+    sQL_Column,
     notNull=
         safe_text,
+    dataType=
+        safe_text,
     name=
         safe_text
 )
-sQL::Table_strategy = st.builds(
-    sQL::Table,
+sQL_Table_strategy = st.builds(
+    sQL_Table,
     name=
         safe_text
 )
-sQL::Database_strategy = st.builds(
-    sQL::Database,
-)
-sQL::ForeignKey_strategy = st.builds(
-    sQL::ForeignKey,
-)
-sQL::PrimaryKey_strategy = st.builds(
-    sQL::PrimaryKey,
+sQL_Database_strategy = st.builds(
+    sQL_Database,
 )
 
-@given(instance=sQL::Column_strategy)
+@given(instance=sQL_ForeignKey_strategy)
 @settings(max_examples=50)
-def test_sql::column_instantiation(instance):
-    assert isinstance(instance, sQL::Column)
+def test_sql_foreignkey_instantiation(instance):
+    assert isinstance(instance, sQL_ForeignKey)
 
-@given(instance=sQL::Column_strategy)
-def test_sql::column_dataType_type(instance):
-    assert isinstance(instance.dataType, str)
+@given(instance=sQL_PrimaryKey_strategy)
+@settings(max_examples=50)
+def test_sql_primarykey_instantiation(instance):
+    assert isinstance(instance, sQL_PrimaryKey)
 
-
-@given(instance=sQL::Column_strategy)
-def test_sql::column_dataType_setter(instance):
-    original = instance.dataType
-    instance.dataType = original
-    assert instance.dataType == original
-
-@given(instance=sQL::Column_strategy)
-def test_sql::column_notNull_type(instance):
-    assert isinstance(instance.notNull, str)
+@given(instance=sQL_Column_strategy)
+@settings(max_examples=50)
+def test_sql_column_instantiation(instance):
+    assert isinstance(instance, sQL_Column)
 
 
-@given(instance=sQL::Column_strategy)
-def test_sql::column_notNull_setter(instance):
+
+@given(instance=sQL_Column_strategy)
+def test_sql_column_notNull_setter(instance):
     original = instance.notNull
     instance.notNull = original
     assert instance.notNull == original
 
-@given(instance=sQL::Column_strategy)
-def test_sql::column_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
-@given(instance=sQL::Column_strategy)
-def test_sql::column_name_setter(instance):
+@given(instance=sQL_Column_strategy)
+def test_sql_column_dataType_setter(instance):
+    original = instance.dataType
+    instance.dataType = original
+    assert instance.dataType == original
+
+
+
+@given(instance=sQL_Column_strategy)
+def test_sql_column_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=sQL::Table_strategy)
+@given(instance=sQL_Table_strategy)
 @settings(max_examples=50)
-def test_sql::table_instantiation(instance):
-    assert isinstance(instance, sQL::Table)
-
-@given(instance=sQL::Table_strategy)
-def test_sql::table_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_sql_table_instantiation(instance):
+    assert isinstance(instance, sQL_Table)
 
 
-@given(instance=sQL::Table_strategy)
-def test_sql::table_name_setter(instance):
+
+@given(instance=sQL_Table_strategy)
+def test_sql_table_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=sQL::Database_strategy)
+@given(instance=sQL_Database_strategy)
 @settings(max_examples=50)
-def test_sql::database_instantiation(instance):
-    assert isinstance(instance, sQL::Database)
-
-@given(instance=sQL::ForeignKey_strategy)
-@settings(max_examples=50)
-def test_sql::foreignkey_instantiation(instance):
-    assert isinstance(instance, sQL::ForeignKey)
-
-@given(instance=sQL::PrimaryKey_strategy)
-@settings(max_examples=50)
-def test_sql::primarykey_instantiation(instance):
-    assert isinstance(instance, sQL::PrimaryKey)
+def test_sql_database_instantiation(instance):
+    assert isinstance(instance, sQL_Database)

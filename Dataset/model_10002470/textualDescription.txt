@@ -1,0 +1,17 @@
+The model has 11 class(es).
+The class 'Medical_Record_NHS_Number' has the following attributes: 'balance' of type float; 'type' of type Medical_Record_AccountType; 'accountNo' of type str.
+The class 'transaction_Interface' has the following attributes: 'id' of type int; 'amount' of type float; 'type' of type transaction_TransactionType; 'transactionTime' of type date.
+The class 'Medical_Record_CheckingAccount' has the following attributes: 'name' of type str.
+The class 'MyInterface_Interface' has no attributes.
+The class 'Login' has the following attributes: 'username' of type str; 'password' of type str; 'securityQuestion' of type str; 'lastLoginTime' of type date; 'securityAnswer' of type str.
+The class 'Medical_Record_CertificatesOfDepositAccount' has the following attributes: 'timePeriod' of type int; 'interestRate' of type float.
+The class 'transaction_Mental_Health_Trust' has no attributes.
+The class 'Medical_Record_SavingsAccount' has the following attributes: 'interestRate' of type float.
+The class 'Patient' has the following attributes: 'name' of type str; 'dateOfBirth' of type date; 'GP_Address' of type str; 'emailAddress' of type str; 'phoneNumber' of type str; 'address' of type str.
+The class 'transaction_Acute_Hospital' has no attributes.
+The class 'transaction_Community_Hospital' has the following attributes: 'sourceAccount' of type Medical_Record_NHS_Number; 'targetAccount' of type Medical_Record_NHS_Number.
+The enumeration 'Medical_Record_AccountType' does not specify any literals.
+The enumeration 'transaction_TransactionType' does not specify any literals.
+'Medical_Record_NHS_Number' (role 'Patient0', cardinality 0..*) is associated with 'Patient' (role 'a1', cardinality 0..*).
+'transaction_Interface' (role 'account3', cardinality 0..*) is associated with 'Medical_Record_NHS_Number' (role 'record_search2', cardinality 0..*).
+'Login' (role 'customer5', cardinality 0..*) is associated with 'Patient' (role 'login4', cardinality 0..*).

@@ -3,36 +3,36 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     TrgArc,
-    jointPackage::Grafcet2PetriNet::TrgPlaceToTransition,
-    jointPackage::Grafcet2PetriNet::TrgTransitionToPlace,
+    jointPackage_Grafcet2PetriNet_TrgPlaceToTransition,
+    jointPackage_Grafcet2PetriNet_TrgTransitionToPlace,
     TrgElement,
-    jointPackage::Grafcet2PetriNet::TrgTransition,
-    jointPackage::Grafcet2PetriNet::TrgPlace,
+    jointPackage_Grafcet2PetriNet_TrgTransition,
+    jointPackage_Grafcet2PetriNet_TrgPlace,
     TrgNamedElement,
-    jointPackage::Grafcet2PetriNet::TrgArc,
-    jointPackage::Grafcet2PetriNet::TrgElement,
+    jointPackage_Grafcet2PetriNet_TrgArc,
+    jointPackage_Grafcet2PetriNet_TrgElement,
     TrgLocatedElement,
-    jointPackage::Grafcet2PetriNet::TrgNamedElement,
-    jointPackage::Grafcet2PetriNet::TrgLocatedElement,
+    jointPackage_Grafcet2PetriNet_TrgNamedElement,
+    jointPackage_Grafcet2PetriNet_TrgLocatedElement,
     SrcLocatedElement,
-    jointPackage::Grafcet2PetriNet::SrcNamedElement,
+    jointPackage_Grafcet2PetriNet_SrcNamedElement,
     SrcConnection,
-    jointPackage::Grafcet2PetriNet::SrcStepToTransition,
-    jointPackage::Grafcet2PetriNet::SrcTransitionToStep,
+    jointPackage_Grafcet2PetriNet_SrcStepToTransition,
+    jointPackage_Grafcet2PetriNet_SrcTransitionToStep,
     SrcElement,
-    jointPackage::Grafcet2PetriNet::SrcTransition,
-    jointPackage::Grafcet2PetriNet::SrcStep,
+    jointPackage_Grafcet2PetriNet_SrcTransition,
+    jointPackage_Grafcet2PetriNet_SrcStep,
     SrcNamedElement,
-    jointPackage::Grafcet2PetriNet::SrcConnection,
-    jointPackage::Grafcet2PetriNet::SrcElement,
-    jointPackage::Grafcet2PetriNet::SrcLocatedElement,
-    jointPackage::Grafcet2PetriNet::TrgPetriNet,
-    jointPackage::Grafcet2PetriNet::SrcGrafcet,
-    jointPackage::Grafcet2PetriNet::JointMM,
+    jointPackage_Grafcet2PetriNet_SrcElement,
+    jointPackage_Grafcet2PetriNet_SrcConnection,
+    jointPackage_Grafcet2PetriNet_SrcLocatedElement,
+    jointPackage_Grafcet2PetriNet_TrgPetriNet,
+    jointPackage_Grafcet2PetriNet_SrcGrafcet,
+    jointPackage_Grafcet2PetriNet_JointMM,
 )
 
 # =============================================================================
@@ -55,30 +55,30 @@ def test_trgarc_constructor_args():
 
 
 
-def test_jointpackage::grafcet2petrinet::trgplacetotransition_is_not_abstract():
-    assert not inspect.isabstract(jointPackage::Grafcet2PetriNet::TrgPlaceToTransition)
+def test_jointpackage_grafcet2petrinet_trgplacetotransition_is_not_abstract():
+    assert not inspect.isabstract(jointPackage_Grafcet2PetriNet_TrgPlaceToTransition)
 
 
-def test_jointpackage::grafcet2petrinet::trgplacetotransition_constructor_exists():
-    assert callable(jointPackage::Grafcet2PetriNet::TrgPlaceToTransition.__init__)
+def test_jointpackage_grafcet2petrinet_trgplacetotransition_constructor_exists():
+    assert callable(jointPackage_Grafcet2PetriNet_TrgPlaceToTransition.__init__)
 
 
-def test_jointpackage::grafcet2petrinet::trgplacetotransition_constructor_args():
-    sig = inspect.signature(jointPackage::Grafcet2PetriNet::TrgPlaceToTransition.__init__)
+def test_jointpackage_grafcet2petrinet_trgplacetotransition_constructor_args():
+    sig = inspect.signature(jointPackage_Grafcet2PetriNet_TrgPlaceToTransition.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_jointpackage::grafcet2petrinet::trgtransitiontoplace_is_not_abstract():
-    assert not inspect.isabstract(jointPackage::Grafcet2PetriNet::TrgTransitionToPlace)
+def test_jointpackage_grafcet2petrinet_trgtransitiontoplace_is_not_abstract():
+    assert not inspect.isabstract(jointPackage_Grafcet2PetriNet_TrgTransitionToPlace)
 
 
-def test_jointpackage::grafcet2petrinet::trgtransitiontoplace_constructor_exists():
-    assert callable(jointPackage::Grafcet2PetriNet::TrgTransitionToPlace.__init__)
+def test_jointpackage_grafcet2petrinet_trgtransitiontoplace_constructor_exists():
+    assert callable(jointPackage_Grafcet2PetriNet_TrgTransitionToPlace.__init__)
 
 
-def test_jointpackage::grafcet2petrinet::trgtransitiontoplace_constructor_args():
-    sig = inspect.signature(jointPackage::Grafcet2PetriNet::TrgTransitionToPlace.__init__)
+def test_jointpackage_grafcet2petrinet_trgtransitiontoplace_constructor_args():
+    sig = inspect.signature(jointPackage_Grafcet2PetriNet_TrgTransitionToPlace.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -97,30 +97,30 @@ def test_trgelement_constructor_args():
 
 
 
-def test_jointpackage::grafcet2petrinet::trgtransition_is_not_abstract():
-    assert not inspect.isabstract(jointPackage::Grafcet2PetriNet::TrgTransition)
+def test_jointpackage_grafcet2petrinet_trgtransition_is_not_abstract():
+    assert not inspect.isabstract(jointPackage_Grafcet2PetriNet_TrgTransition)
 
 
-def test_jointpackage::grafcet2petrinet::trgtransition_constructor_exists():
-    assert callable(jointPackage::Grafcet2PetriNet::TrgTransition.__init__)
+def test_jointpackage_grafcet2petrinet_trgtransition_constructor_exists():
+    assert callable(jointPackage_Grafcet2PetriNet_TrgTransition.__init__)
 
 
-def test_jointpackage::grafcet2petrinet::trgtransition_constructor_args():
-    sig = inspect.signature(jointPackage::Grafcet2PetriNet::TrgTransition.__init__)
+def test_jointpackage_grafcet2petrinet_trgtransition_constructor_args():
+    sig = inspect.signature(jointPackage_Grafcet2PetriNet_TrgTransition.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_jointpackage::grafcet2petrinet::trgplace_is_not_abstract():
-    assert not inspect.isabstract(jointPackage::Grafcet2PetriNet::TrgPlace)
+def test_jointpackage_grafcet2petrinet_trgplace_is_not_abstract():
+    assert not inspect.isabstract(jointPackage_Grafcet2PetriNet_TrgPlace)
 
 
-def test_jointpackage::grafcet2petrinet::trgplace_constructor_exists():
-    assert callable(jointPackage::Grafcet2PetriNet::TrgPlace.__init__)
+def test_jointpackage_grafcet2petrinet_trgplace_constructor_exists():
+    assert callable(jointPackage_Grafcet2PetriNet_TrgPlace.__init__)
 
 
-def test_jointpackage::grafcet2petrinet::trgplace_constructor_args():
-    sig = inspect.signature(jointPackage::Grafcet2PetriNet::TrgPlace.__init__)
+def test_jointpackage_grafcet2petrinet_trgplace_constructor_args():
+    sig = inspect.signature(jointPackage_Grafcet2PetriNet_TrgPlace.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -139,23 +139,23 @@ def test_trgnamedelement_constructor_args():
 
 
 
-def test_jointpackage::grafcet2petrinet::trgarc_is_not_abstract():
-    assert not inspect.isabstract(jointPackage::Grafcet2PetriNet::TrgArc)
+def test_jointpackage_grafcet2petrinet_trgarc_is_not_abstract():
+    assert not inspect.isabstract(jointPackage_Grafcet2PetriNet_TrgArc)
 
 
-def test_jointpackage::grafcet2petrinet::trgarc_constructor_exists():
-    assert callable(jointPackage::Grafcet2PetriNet::TrgArc.__init__)
+def test_jointpackage_grafcet2petrinet_trgarc_constructor_exists():
+    assert callable(jointPackage_Grafcet2PetriNet_TrgArc.__init__)
 
 
-def test_jointpackage::grafcet2petrinet::trgarc_constructor_args():
-    sig = inspect.signature(jointPackage::Grafcet2PetriNet::TrgArc.__init__)
+def test_jointpackage_grafcet2petrinet_trgarc_constructor_args():
+    sig = inspect.signature(jointPackage_Grafcet2PetriNet_TrgArc.__init__)
     params = list(sig.parameters.keys())
     assert "weight" in params, "Missing parameter 'weight'"
 
-def test_jointpackage::grafcet2petrinet::trgarc_has_weight():
-    assert hasattr(jointPackage::Grafcet2PetriNet::TrgArc, "weight")
+def test_jointpackage_grafcet2petrinet_trgarc_has_weight():
+    assert hasattr(jointPackage_Grafcet2PetriNet_TrgArc, "weight")
     descriptor = None
-    for klass in jointPackage::Grafcet2PetriNet::TrgArc.__mro__:
+    for klass in jointPackage_Grafcet2PetriNet_TrgArc.__mro__:
         if "weight" in klass.__dict__:
             descriptor = klass.__dict__["weight"]
             break
@@ -163,16 +163,16 @@ def test_jointpackage::grafcet2petrinet::trgarc_has_weight():
 
 
 
-def test_jointpackage::grafcet2petrinet::trgelement_is_not_abstract():
-    assert not inspect.isabstract(jointPackage::Grafcet2PetriNet::TrgElement)
+def test_jointpackage_grafcet2petrinet_trgelement_is_not_abstract():
+    assert not inspect.isabstract(jointPackage_Grafcet2PetriNet_TrgElement)
 
 
-def test_jointpackage::grafcet2petrinet::trgelement_constructor_exists():
-    assert callable(jointPackage::Grafcet2PetriNet::TrgElement.__init__)
+def test_jointpackage_grafcet2petrinet_trgelement_constructor_exists():
+    assert callable(jointPackage_Grafcet2PetriNet_TrgElement.__init__)
 
 
-def test_jointpackage::grafcet2petrinet::trgelement_constructor_args():
-    sig = inspect.signature(jointPackage::Grafcet2PetriNet::TrgElement.__init__)
+def test_jointpackage_grafcet2petrinet_trgelement_constructor_args():
+    sig = inspect.signature(jointPackage_Grafcet2PetriNet_TrgElement.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -191,23 +191,23 @@ def test_trglocatedelement_constructor_args():
 
 
 
-def test_jointpackage::grafcet2petrinet::trgnamedelement_is_not_abstract():
-    assert not inspect.isabstract(jointPackage::Grafcet2PetriNet::TrgNamedElement)
+def test_jointpackage_grafcet2petrinet_trgnamedelement_is_not_abstract():
+    assert not inspect.isabstract(jointPackage_Grafcet2PetriNet_TrgNamedElement)
 
 
-def test_jointpackage::grafcet2petrinet::trgnamedelement_constructor_exists():
-    assert callable(jointPackage::Grafcet2PetriNet::TrgNamedElement.__init__)
+def test_jointpackage_grafcet2petrinet_trgnamedelement_constructor_exists():
+    assert callable(jointPackage_Grafcet2PetriNet_TrgNamedElement.__init__)
 
 
-def test_jointpackage::grafcet2petrinet::trgnamedelement_constructor_args():
-    sig = inspect.signature(jointPackage::Grafcet2PetriNet::TrgNamedElement.__init__)
+def test_jointpackage_grafcet2petrinet_trgnamedelement_constructor_args():
+    sig = inspect.signature(jointPackage_Grafcet2PetriNet_TrgNamedElement.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_jointpackage::grafcet2petrinet::trgnamedelement_has_name():
-    assert hasattr(jointPackage::Grafcet2PetriNet::TrgNamedElement, "name")
+def test_jointpackage_grafcet2petrinet_trgnamedelement_has_name():
+    assert hasattr(jointPackage_Grafcet2PetriNet_TrgNamedElement, "name")
     descriptor = None
-    for klass in jointPackage::Grafcet2PetriNet::TrgNamedElement.__mro__:
+    for klass in jointPackage_Grafcet2PetriNet_TrgNamedElement.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -215,23 +215,23 @@ def test_jointpackage::grafcet2petrinet::trgnamedelement_has_name():
 
 
 
-def test_jointpackage::grafcet2petrinet::trglocatedelement_is_not_abstract():
-    assert not inspect.isabstract(jointPackage::Grafcet2PetriNet::TrgLocatedElement)
+def test_jointpackage_grafcet2petrinet_trglocatedelement_is_not_abstract():
+    assert not inspect.isabstract(jointPackage_Grafcet2PetriNet_TrgLocatedElement)
 
 
-def test_jointpackage::grafcet2petrinet::trglocatedelement_constructor_exists():
-    assert callable(jointPackage::Grafcet2PetriNet::TrgLocatedElement.__init__)
+def test_jointpackage_grafcet2petrinet_trglocatedelement_constructor_exists():
+    assert callable(jointPackage_Grafcet2PetriNet_TrgLocatedElement.__init__)
 
 
-def test_jointpackage::grafcet2petrinet::trglocatedelement_constructor_args():
-    sig = inspect.signature(jointPackage::Grafcet2PetriNet::TrgLocatedElement.__init__)
+def test_jointpackage_grafcet2petrinet_trglocatedelement_constructor_args():
+    sig = inspect.signature(jointPackage_Grafcet2PetriNet_TrgLocatedElement.__init__)
     params = list(sig.parameters.keys())
     assert "location" in params, "Missing parameter 'location'"
 
-def test_jointpackage::grafcet2petrinet::trglocatedelement_has_location():
-    assert hasattr(jointPackage::Grafcet2PetriNet::TrgLocatedElement, "location")
+def test_jointpackage_grafcet2petrinet_trglocatedelement_has_location():
+    assert hasattr(jointPackage_Grafcet2PetriNet_TrgLocatedElement, "location")
     descriptor = None
-    for klass in jointPackage::Grafcet2PetriNet::TrgLocatedElement.__mro__:
+    for klass in jointPackage_Grafcet2PetriNet_TrgLocatedElement.__mro__:
         if "location" in klass.__dict__:
             descriptor = klass.__dict__["location"]
             break
@@ -253,23 +253,23 @@ def test_srclocatedelement_constructor_args():
 
 
 
-def test_jointpackage::grafcet2petrinet::srcnamedelement_is_not_abstract():
-    assert not inspect.isabstract(jointPackage::Grafcet2PetriNet::SrcNamedElement)
+def test_jointpackage_grafcet2petrinet_srcnamedelement_is_not_abstract():
+    assert not inspect.isabstract(jointPackage_Grafcet2PetriNet_SrcNamedElement)
 
 
-def test_jointpackage::grafcet2petrinet::srcnamedelement_constructor_exists():
-    assert callable(jointPackage::Grafcet2PetriNet::SrcNamedElement.__init__)
+def test_jointpackage_grafcet2petrinet_srcnamedelement_constructor_exists():
+    assert callable(jointPackage_Grafcet2PetriNet_SrcNamedElement.__init__)
 
 
-def test_jointpackage::grafcet2petrinet::srcnamedelement_constructor_args():
-    sig = inspect.signature(jointPackage::Grafcet2PetriNet::SrcNamedElement.__init__)
+def test_jointpackage_grafcet2petrinet_srcnamedelement_constructor_args():
+    sig = inspect.signature(jointPackage_Grafcet2PetriNet_SrcNamedElement.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_jointpackage::grafcet2petrinet::srcnamedelement_has_name():
-    assert hasattr(jointPackage::Grafcet2PetriNet::SrcNamedElement, "name")
+def test_jointpackage_grafcet2petrinet_srcnamedelement_has_name():
+    assert hasattr(jointPackage_Grafcet2PetriNet_SrcNamedElement, "name")
     descriptor = None
-    for klass in jointPackage::Grafcet2PetriNet::SrcNamedElement.__mro__:
+    for klass in jointPackage_Grafcet2PetriNet_SrcNamedElement.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -291,30 +291,30 @@ def test_srcconnection_constructor_args():
 
 
 
-def test_jointpackage::grafcet2petrinet::srcsteptotransition_is_not_abstract():
-    assert not inspect.isabstract(jointPackage::Grafcet2PetriNet::SrcStepToTransition)
+def test_jointpackage_grafcet2petrinet_srcsteptotransition_is_not_abstract():
+    assert not inspect.isabstract(jointPackage_Grafcet2PetriNet_SrcStepToTransition)
 
 
-def test_jointpackage::grafcet2petrinet::srcsteptotransition_constructor_exists():
-    assert callable(jointPackage::Grafcet2PetriNet::SrcStepToTransition.__init__)
+def test_jointpackage_grafcet2petrinet_srcsteptotransition_constructor_exists():
+    assert callable(jointPackage_Grafcet2PetriNet_SrcStepToTransition.__init__)
 
 
-def test_jointpackage::grafcet2petrinet::srcsteptotransition_constructor_args():
-    sig = inspect.signature(jointPackage::Grafcet2PetriNet::SrcStepToTransition.__init__)
+def test_jointpackage_grafcet2petrinet_srcsteptotransition_constructor_args():
+    sig = inspect.signature(jointPackage_Grafcet2PetriNet_SrcStepToTransition.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_jointpackage::grafcet2petrinet::srctransitiontostep_is_not_abstract():
-    assert not inspect.isabstract(jointPackage::Grafcet2PetriNet::SrcTransitionToStep)
+def test_jointpackage_grafcet2petrinet_srctransitiontostep_is_not_abstract():
+    assert not inspect.isabstract(jointPackage_Grafcet2PetriNet_SrcTransitionToStep)
 
 
-def test_jointpackage::grafcet2petrinet::srctransitiontostep_constructor_exists():
-    assert callable(jointPackage::Grafcet2PetriNet::SrcTransitionToStep.__init__)
+def test_jointpackage_grafcet2petrinet_srctransitiontostep_constructor_exists():
+    assert callable(jointPackage_Grafcet2PetriNet_SrcTransitionToStep.__init__)
 
 
-def test_jointpackage::grafcet2petrinet::srctransitiontostep_constructor_args():
-    sig = inspect.signature(jointPackage::Grafcet2PetriNet::SrcTransitionToStep.__init__)
+def test_jointpackage_grafcet2petrinet_srctransitiontostep_constructor_args():
+    sig = inspect.signature(jointPackage_Grafcet2PetriNet_SrcTransitionToStep.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -333,23 +333,23 @@ def test_srcelement_constructor_args():
 
 
 
-def test_jointpackage::grafcet2petrinet::srctransition_is_not_abstract():
-    assert not inspect.isabstract(jointPackage::Grafcet2PetriNet::SrcTransition)
+def test_jointpackage_grafcet2petrinet_srctransition_is_not_abstract():
+    assert not inspect.isabstract(jointPackage_Grafcet2PetriNet_SrcTransition)
 
 
-def test_jointpackage::grafcet2petrinet::srctransition_constructor_exists():
-    assert callable(jointPackage::Grafcet2PetriNet::SrcTransition.__init__)
+def test_jointpackage_grafcet2petrinet_srctransition_constructor_exists():
+    assert callable(jointPackage_Grafcet2PetriNet_SrcTransition.__init__)
 
 
-def test_jointpackage::grafcet2petrinet::srctransition_constructor_args():
-    sig = inspect.signature(jointPackage::Grafcet2PetriNet::SrcTransition.__init__)
+def test_jointpackage_grafcet2petrinet_srctransition_constructor_args():
+    sig = inspect.signature(jointPackage_Grafcet2PetriNet_SrcTransition.__init__)
     params = list(sig.parameters.keys())
     assert "condition" in params, "Missing parameter 'condition'"
 
-def test_jointpackage::grafcet2petrinet::srctransition_has_condition():
-    assert hasattr(jointPackage::Grafcet2PetriNet::SrcTransition, "condition")
+def test_jointpackage_grafcet2petrinet_srctransition_has_condition():
+    assert hasattr(jointPackage_Grafcet2PetriNet_SrcTransition, "condition")
     descriptor = None
-    for klass in jointPackage::Grafcet2PetriNet::SrcTransition.__mro__:
+    for klass in jointPackage_Grafcet2PetriNet_SrcTransition.__mro__:
         if "condition" in klass.__dict__:
             descriptor = klass.__dict__["condition"]
             break
@@ -357,43 +357,43 @@ def test_jointpackage::grafcet2petrinet::srctransition_has_condition():
 
 
 
-def test_jointpackage::grafcet2petrinet::srcstep_is_not_abstract():
-    assert not inspect.isabstract(jointPackage::Grafcet2PetriNet::SrcStep)
+def test_jointpackage_grafcet2petrinet_srcstep_is_not_abstract():
+    assert not inspect.isabstract(jointPackage_Grafcet2PetriNet_SrcStep)
 
 
-def test_jointpackage::grafcet2petrinet::srcstep_constructor_exists():
-    assert callable(jointPackage::Grafcet2PetriNet::SrcStep.__init__)
+def test_jointpackage_grafcet2petrinet_srcstep_constructor_exists():
+    assert callable(jointPackage_Grafcet2PetriNet_SrcStep.__init__)
 
 
-def test_jointpackage::grafcet2petrinet::srcstep_constructor_args():
-    sig = inspect.signature(jointPackage::Grafcet2PetriNet::SrcStep.__init__)
+def test_jointpackage_grafcet2petrinet_srcstep_constructor_args():
+    sig = inspect.signature(jointPackage_Grafcet2PetriNet_SrcStep.__init__)
     params = list(sig.parameters.keys())
     assert "action" in params, "Missing parameter 'action'"
     assert "isActive" in params, "Missing parameter 'isActive'"
     assert "isInitial" in params, "Missing parameter 'isInitial'"
 
-def test_jointpackage::grafcet2petrinet::srcstep_has_action():
-    assert hasattr(jointPackage::Grafcet2PetriNet::SrcStep, "action")
+def test_jointpackage_grafcet2petrinet_srcstep_has_action():
+    assert hasattr(jointPackage_Grafcet2PetriNet_SrcStep, "action")
     descriptor = None
-    for klass in jointPackage::Grafcet2PetriNet::SrcStep.__mro__:
+    for klass in jointPackage_Grafcet2PetriNet_SrcStep.__mro__:
         if "action" in klass.__dict__:
             descriptor = klass.__dict__["action"]
             break
     assert isinstance(descriptor, property)
 
-def test_jointpackage::grafcet2petrinet::srcstep_has_isActive():
-    assert hasattr(jointPackage::Grafcet2PetriNet::SrcStep, "isActive")
+def test_jointpackage_grafcet2petrinet_srcstep_has_isActive():
+    assert hasattr(jointPackage_Grafcet2PetriNet_SrcStep, "isActive")
     descriptor = None
-    for klass in jointPackage::Grafcet2PetriNet::SrcStep.__mro__:
+    for klass in jointPackage_Grafcet2PetriNet_SrcStep.__mro__:
         if "isActive" in klass.__dict__:
             descriptor = klass.__dict__["isActive"]
             break
     assert isinstance(descriptor, property)
 
-def test_jointpackage::grafcet2petrinet::srcstep_has_isInitial():
-    assert hasattr(jointPackage::Grafcet2PetriNet::SrcStep, "isInitial")
+def test_jointpackage_grafcet2petrinet_srcstep_has_isInitial():
+    assert hasattr(jointPackage_Grafcet2PetriNet_SrcStep, "isInitial")
     descriptor = None
-    for klass in jointPackage::Grafcet2PetriNet::SrcStep.__mro__:
+    for klass in jointPackage_Grafcet2PetriNet_SrcStep.__mro__:
         if "isInitial" in klass.__dict__:
             descriptor = klass.__dict__["isInitial"]
             break
@@ -415,51 +415,51 @@ def test_srcnamedelement_constructor_args():
 
 
 
-def test_jointpackage::grafcet2petrinet::srcconnection_is_not_abstract():
-    assert not inspect.isabstract(jointPackage::Grafcet2PetriNet::SrcConnection)
+def test_jointpackage_grafcet2petrinet_srcelement_is_not_abstract():
+    assert not inspect.isabstract(jointPackage_Grafcet2PetriNet_SrcElement)
 
 
-def test_jointpackage::grafcet2petrinet::srcconnection_constructor_exists():
-    assert callable(jointPackage::Grafcet2PetriNet::SrcConnection.__init__)
+def test_jointpackage_grafcet2petrinet_srcelement_constructor_exists():
+    assert callable(jointPackage_Grafcet2PetriNet_SrcElement.__init__)
 
 
-def test_jointpackage::grafcet2petrinet::srcconnection_constructor_args():
-    sig = inspect.signature(jointPackage::Grafcet2PetriNet::SrcConnection.__init__)
+def test_jointpackage_grafcet2petrinet_srcelement_constructor_args():
+    sig = inspect.signature(jointPackage_Grafcet2PetriNet_SrcElement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_jointpackage::grafcet2petrinet::srcelement_is_not_abstract():
-    assert not inspect.isabstract(jointPackage::Grafcet2PetriNet::SrcElement)
+def test_jointpackage_grafcet2petrinet_srcconnection_is_not_abstract():
+    assert not inspect.isabstract(jointPackage_Grafcet2PetriNet_SrcConnection)
 
 
-def test_jointpackage::grafcet2petrinet::srcelement_constructor_exists():
-    assert callable(jointPackage::Grafcet2PetriNet::SrcElement.__init__)
+def test_jointpackage_grafcet2petrinet_srcconnection_constructor_exists():
+    assert callable(jointPackage_Grafcet2PetriNet_SrcConnection.__init__)
 
 
-def test_jointpackage::grafcet2petrinet::srcelement_constructor_args():
-    sig = inspect.signature(jointPackage::Grafcet2PetriNet::SrcElement.__init__)
+def test_jointpackage_grafcet2petrinet_srcconnection_constructor_args():
+    sig = inspect.signature(jointPackage_Grafcet2PetriNet_SrcConnection.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_jointpackage::grafcet2petrinet::srclocatedelement_is_not_abstract():
-    assert not inspect.isabstract(jointPackage::Grafcet2PetriNet::SrcLocatedElement)
+def test_jointpackage_grafcet2petrinet_srclocatedelement_is_not_abstract():
+    assert not inspect.isabstract(jointPackage_Grafcet2PetriNet_SrcLocatedElement)
 
 
-def test_jointpackage::grafcet2petrinet::srclocatedelement_constructor_exists():
-    assert callable(jointPackage::Grafcet2PetriNet::SrcLocatedElement.__init__)
+def test_jointpackage_grafcet2petrinet_srclocatedelement_constructor_exists():
+    assert callable(jointPackage_Grafcet2PetriNet_SrcLocatedElement.__init__)
 
 
-def test_jointpackage::grafcet2petrinet::srclocatedelement_constructor_args():
-    sig = inspect.signature(jointPackage::Grafcet2PetriNet::SrcLocatedElement.__init__)
+def test_jointpackage_grafcet2petrinet_srclocatedelement_constructor_args():
+    sig = inspect.signature(jointPackage_Grafcet2PetriNet_SrcLocatedElement.__init__)
     params = list(sig.parameters.keys())
     assert "location" in params, "Missing parameter 'location'"
 
-def test_jointpackage::grafcet2petrinet::srclocatedelement_has_location():
-    assert hasattr(jointPackage::Grafcet2PetriNet::SrcLocatedElement, "location")
+def test_jointpackage_grafcet2petrinet_srclocatedelement_has_location():
+    assert hasattr(jointPackage_Grafcet2PetriNet_SrcLocatedElement, "location")
     descriptor = None
-    for klass in jointPackage::Grafcet2PetriNet::SrcLocatedElement.__mro__:
+    for klass in jointPackage_Grafcet2PetriNet_SrcLocatedElement.__mro__:
         if "location" in klass.__dict__:
             descriptor = klass.__dict__["location"]
             break
@@ -467,44 +467,44 @@ def test_jointpackage::grafcet2petrinet::srclocatedelement_has_location():
 
 
 
-def test_jointpackage::grafcet2petrinet::trgpetrinet_is_not_abstract():
-    assert not inspect.isabstract(jointPackage::Grafcet2PetriNet::TrgPetriNet)
+def test_jointpackage_grafcet2petrinet_trgpetrinet_is_not_abstract():
+    assert not inspect.isabstract(jointPackage_Grafcet2PetriNet_TrgPetriNet)
 
 
-def test_jointpackage::grafcet2petrinet::trgpetrinet_constructor_exists():
-    assert callable(jointPackage::Grafcet2PetriNet::TrgPetriNet.__init__)
+def test_jointpackage_grafcet2petrinet_trgpetrinet_constructor_exists():
+    assert callable(jointPackage_Grafcet2PetriNet_TrgPetriNet.__init__)
 
 
-def test_jointpackage::grafcet2petrinet::trgpetrinet_constructor_args():
-    sig = inspect.signature(jointPackage::Grafcet2PetriNet::TrgPetriNet.__init__)
+def test_jointpackage_grafcet2petrinet_trgpetrinet_constructor_args():
+    sig = inspect.signature(jointPackage_Grafcet2PetriNet_TrgPetriNet.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_jointpackage::grafcet2petrinet::srcgrafcet_is_not_abstract():
-    assert not inspect.isabstract(jointPackage::Grafcet2PetriNet::SrcGrafcet)
+def test_jointpackage_grafcet2petrinet_srcgrafcet_is_not_abstract():
+    assert not inspect.isabstract(jointPackage_Grafcet2PetriNet_SrcGrafcet)
 
 
-def test_jointpackage::grafcet2petrinet::srcgrafcet_constructor_exists():
-    assert callable(jointPackage::Grafcet2PetriNet::SrcGrafcet.__init__)
+def test_jointpackage_grafcet2petrinet_srcgrafcet_constructor_exists():
+    assert callable(jointPackage_Grafcet2PetriNet_SrcGrafcet.__init__)
 
 
-def test_jointpackage::grafcet2petrinet::srcgrafcet_constructor_args():
-    sig = inspect.signature(jointPackage::Grafcet2PetriNet::SrcGrafcet.__init__)
+def test_jointpackage_grafcet2petrinet_srcgrafcet_constructor_args():
+    sig = inspect.signature(jointPackage_Grafcet2PetriNet_SrcGrafcet.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_jointpackage::grafcet2petrinet::jointmm_is_not_abstract():
-    assert not inspect.isabstract(jointPackage::Grafcet2PetriNet::JointMM)
+def test_jointpackage_grafcet2petrinet_jointmm_is_not_abstract():
+    assert not inspect.isabstract(jointPackage_Grafcet2PetriNet_JointMM)
 
 
-def test_jointpackage::grafcet2petrinet::jointmm_constructor_exists():
-    assert callable(jointPackage::Grafcet2PetriNet::JointMM.__init__)
+def test_jointpackage_grafcet2petrinet_jointmm_constructor_exists():
+    assert callable(jointPackage_Grafcet2PetriNet_JointMM.__init__)
 
 
-def test_jointpackage::grafcet2petrinet::jointmm_constructor_args():
-    sig = inspect.signature(jointPackage::Grafcet2PetriNet::JointMM.__init__)
+def test_jointpackage_grafcet2petrinet_jointmm_constructor_args():
+    sig = inspect.signature(jointPackage_Grafcet2PetriNet_JointMM.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -522,72 +522,72 @@ safe_text = st.text(
 TrgArc_strategy = st.builds(
     TrgArc,
 )
-jointPackage::Grafcet2PetriNet::TrgPlaceToTransition_strategy = st.builds(
-    jointPackage::Grafcet2PetriNet::TrgPlaceToTransition,
+jointPackage_Grafcet2PetriNet_TrgPlaceToTransition_strategy = st.builds(
+    jointPackage_Grafcet2PetriNet_TrgPlaceToTransition,
 )
-jointPackage::Grafcet2PetriNet::TrgTransitionToPlace_strategy = st.builds(
-    jointPackage::Grafcet2PetriNet::TrgTransitionToPlace,
+jointPackage_Grafcet2PetriNet_TrgTransitionToPlace_strategy = st.builds(
+    jointPackage_Grafcet2PetriNet_TrgTransitionToPlace,
 )
 TrgElement_strategy = st.builds(
     TrgElement,
 )
-jointPackage::Grafcet2PetriNet::TrgTransition_strategy = st.builds(
-    jointPackage::Grafcet2PetriNet::TrgTransition,
+jointPackage_Grafcet2PetriNet_TrgTransition_strategy = st.builds(
+    jointPackage_Grafcet2PetriNet_TrgTransition,
 )
-jointPackage::Grafcet2PetriNet::TrgPlace_strategy = st.builds(
-    jointPackage::Grafcet2PetriNet::TrgPlace,
+jointPackage_Grafcet2PetriNet_TrgPlace_strategy = st.builds(
+    jointPackage_Grafcet2PetriNet_TrgPlace,
 )
 TrgNamedElement_strategy = st.builds(
     TrgNamedElement,
 )
-jointPackage::Grafcet2PetriNet::TrgArc_strategy = st.builds(
-    jointPackage::Grafcet2PetriNet::TrgArc,
+jointPackage_Grafcet2PetriNet_TrgArc_strategy = st.builds(
+    jointPackage_Grafcet2PetriNet_TrgArc,
     weight=
         st.integers()
 )
-jointPackage::Grafcet2PetriNet::TrgElement_strategy = st.builds(
-    jointPackage::Grafcet2PetriNet::TrgElement,
+jointPackage_Grafcet2PetriNet_TrgElement_strategy = st.builds(
+    jointPackage_Grafcet2PetriNet_TrgElement,
 )
 TrgLocatedElement_strategy = st.builds(
     TrgLocatedElement,
 )
-jointPackage::Grafcet2PetriNet::TrgNamedElement_strategy = st.builds(
-    jointPackage::Grafcet2PetriNet::TrgNamedElement,
+jointPackage_Grafcet2PetriNet_TrgNamedElement_strategy = st.builds(
+    jointPackage_Grafcet2PetriNet_TrgNamedElement,
     name=
         safe_text
 )
-jointPackage::Grafcet2PetriNet::TrgLocatedElement_strategy = st.builds(
-    jointPackage::Grafcet2PetriNet::TrgLocatedElement,
+jointPackage_Grafcet2PetriNet_TrgLocatedElement_strategy = st.builds(
+    jointPackage_Grafcet2PetriNet_TrgLocatedElement,
     location=
         safe_text
 )
 SrcLocatedElement_strategy = st.builds(
     SrcLocatedElement,
 )
-jointPackage::Grafcet2PetriNet::SrcNamedElement_strategy = st.builds(
-    jointPackage::Grafcet2PetriNet::SrcNamedElement,
+jointPackage_Grafcet2PetriNet_SrcNamedElement_strategy = st.builds(
+    jointPackage_Grafcet2PetriNet_SrcNamedElement,
     name=
         safe_text
 )
 SrcConnection_strategy = st.builds(
     SrcConnection,
 )
-jointPackage::Grafcet2PetriNet::SrcStepToTransition_strategy = st.builds(
-    jointPackage::Grafcet2PetriNet::SrcStepToTransition,
+jointPackage_Grafcet2PetriNet_SrcStepToTransition_strategy = st.builds(
+    jointPackage_Grafcet2PetriNet_SrcStepToTransition,
 )
-jointPackage::Grafcet2PetriNet::SrcTransitionToStep_strategy = st.builds(
-    jointPackage::Grafcet2PetriNet::SrcTransitionToStep,
+jointPackage_Grafcet2PetriNet_SrcTransitionToStep_strategy = st.builds(
+    jointPackage_Grafcet2PetriNet_SrcTransitionToStep,
 )
 SrcElement_strategy = st.builds(
     SrcElement,
 )
-jointPackage::Grafcet2PetriNet::SrcTransition_strategy = st.builds(
-    jointPackage::Grafcet2PetriNet::SrcTransition,
+jointPackage_Grafcet2PetriNet_SrcTransition_strategy = st.builds(
+    jointPackage_Grafcet2PetriNet_SrcTransition,
     condition=
         safe_text
 )
-jointPackage::Grafcet2PetriNet::SrcStep_strategy = st.builds(
-    jointPackage::Grafcet2PetriNet::SrcStep,
+jointPackage_Grafcet2PetriNet_SrcStep_strategy = st.builds(
+    jointPackage_Grafcet2PetriNet_SrcStep,
     action=
         safe_text,
     isActive=
@@ -598,25 +598,25 @@ jointPackage::Grafcet2PetriNet::SrcStep_strategy = st.builds(
 SrcNamedElement_strategy = st.builds(
     SrcNamedElement,
 )
-jointPackage::Grafcet2PetriNet::SrcConnection_strategy = st.builds(
-    jointPackage::Grafcet2PetriNet::SrcConnection,
+jointPackage_Grafcet2PetriNet_SrcElement_strategy = st.builds(
+    jointPackage_Grafcet2PetriNet_SrcElement,
 )
-jointPackage::Grafcet2PetriNet::SrcElement_strategy = st.builds(
-    jointPackage::Grafcet2PetriNet::SrcElement,
+jointPackage_Grafcet2PetriNet_SrcConnection_strategy = st.builds(
+    jointPackage_Grafcet2PetriNet_SrcConnection,
 )
-jointPackage::Grafcet2PetriNet::SrcLocatedElement_strategy = st.builds(
-    jointPackage::Grafcet2PetriNet::SrcLocatedElement,
+jointPackage_Grafcet2PetriNet_SrcLocatedElement_strategy = st.builds(
+    jointPackage_Grafcet2PetriNet_SrcLocatedElement,
     location=
         safe_text
 )
-jointPackage::Grafcet2PetriNet::TrgPetriNet_strategy = st.builds(
-    jointPackage::Grafcet2PetriNet::TrgPetriNet,
+jointPackage_Grafcet2PetriNet_TrgPetriNet_strategy = st.builds(
+    jointPackage_Grafcet2PetriNet_TrgPetriNet,
 )
-jointPackage::Grafcet2PetriNet::SrcGrafcet_strategy = st.builds(
-    jointPackage::Grafcet2PetriNet::SrcGrafcet,
+jointPackage_Grafcet2PetriNet_SrcGrafcet_strategy = st.builds(
+    jointPackage_Grafcet2PetriNet_SrcGrafcet,
 )
-jointPackage::Grafcet2PetriNet::JointMM_strategy = st.builds(
-    jointPackage::Grafcet2PetriNet::JointMM,
+jointPackage_Grafcet2PetriNet_JointMM_strategy = st.builds(
+    jointPackage_Grafcet2PetriNet_JointMM,
 )
 
 @given(instance=TrgArc_strategy)
@@ -624,90 +624,81 @@ jointPackage::Grafcet2PetriNet::JointMM_strategy = st.builds(
 def test_trgarc_instantiation(instance):
     assert isinstance(instance, TrgArc)
 
-@given(instance=jointPackage::Grafcet2PetriNet::TrgPlaceToTransition_strategy)
+@given(instance=jointPackage_Grafcet2PetriNet_TrgPlaceToTransition_strategy)
 @settings(max_examples=50)
-def test_jointpackage::grafcet2petrinet::trgplacetotransition_instantiation(instance):
-    assert isinstance(instance, jointPackage::Grafcet2PetriNet::TrgPlaceToTransition)
+def test_jointpackage_grafcet2petrinet_trgplacetotransition_instantiation(instance):
+    assert isinstance(instance, jointPackage_Grafcet2PetriNet_TrgPlaceToTransition)
 
-@given(instance=jointPackage::Grafcet2PetriNet::TrgTransitionToPlace_strategy)
+@given(instance=jointPackage_Grafcet2PetriNet_TrgTransitionToPlace_strategy)
 @settings(max_examples=50)
-def test_jointpackage::grafcet2petrinet::trgtransitiontoplace_instantiation(instance):
-    assert isinstance(instance, jointPackage::Grafcet2PetriNet::TrgTransitionToPlace)
+def test_jointpackage_grafcet2petrinet_trgtransitiontoplace_instantiation(instance):
+    assert isinstance(instance, jointPackage_Grafcet2PetriNet_TrgTransitionToPlace)
 
 @given(instance=TrgElement_strategy)
 @settings(max_examples=50)
 def test_trgelement_instantiation(instance):
     assert isinstance(instance, TrgElement)
 
-@given(instance=jointPackage::Grafcet2PetriNet::TrgTransition_strategy)
+@given(instance=jointPackage_Grafcet2PetriNet_TrgTransition_strategy)
 @settings(max_examples=50)
-def test_jointpackage::grafcet2petrinet::trgtransition_instantiation(instance):
-    assert isinstance(instance, jointPackage::Grafcet2PetriNet::TrgTransition)
+def test_jointpackage_grafcet2petrinet_trgtransition_instantiation(instance):
+    assert isinstance(instance, jointPackage_Grafcet2PetriNet_TrgTransition)
 
-@given(instance=jointPackage::Grafcet2PetriNet::TrgPlace_strategy)
+@given(instance=jointPackage_Grafcet2PetriNet_TrgPlace_strategy)
 @settings(max_examples=50)
-def test_jointpackage::grafcet2petrinet::trgplace_instantiation(instance):
-    assert isinstance(instance, jointPackage::Grafcet2PetriNet::TrgPlace)
+def test_jointpackage_grafcet2petrinet_trgplace_instantiation(instance):
+    assert isinstance(instance, jointPackage_Grafcet2PetriNet_TrgPlace)
 
 @given(instance=TrgNamedElement_strategy)
 @settings(max_examples=50)
 def test_trgnamedelement_instantiation(instance):
     assert isinstance(instance, TrgNamedElement)
 
-@given(instance=jointPackage::Grafcet2PetriNet::TrgArc_strategy)
+@given(instance=jointPackage_Grafcet2PetriNet_TrgArc_strategy)
 @settings(max_examples=50)
-def test_jointpackage::grafcet2petrinet::trgarc_instantiation(instance):
-    assert isinstance(instance, jointPackage::Grafcet2PetriNet::TrgArc)
-
-@given(instance=jointPackage::Grafcet2PetriNet::TrgArc_strategy)
-def test_jointpackage::grafcet2petrinet::trgarc_weight_type(instance):
-    assert isinstance(instance.weight, int)
+def test_jointpackage_grafcet2petrinet_trgarc_instantiation(instance):
+    assert isinstance(instance, jointPackage_Grafcet2PetriNet_TrgArc)
 
 
-@given(instance=jointPackage::Grafcet2PetriNet::TrgArc_strategy)
-def test_jointpackage::grafcet2petrinet::trgarc_weight_setter(instance):
+
+@given(instance=jointPackage_Grafcet2PetriNet_TrgArc_strategy)
+def test_jointpackage_grafcet2petrinet_trgarc_weight_setter(instance):
     original = instance.weight
     instance.weight = original
     assert instance.weight == original
 
-@given(instance=jointPackage::Grafcet2PetriNet::TrgElement_strategy)
+@given(instance=jointPackage_Grafcet2PetriNet_TrgElement_strategy)
 @settings(max_examples=50)
-def test_jointpackage::grafcet2petrinet::trgelement_instantiation(instance):
-    assert isinstance(instance, jointPackage::Grafcet2PetriNet::TrgElement)
+def test_jointpackage_grafcet2petrinet_trgelement_instantiation(instance):
+    assert isinstance(instance, jointPackage_Grafcet2PetriNet_TrgElement)
 
 @given(instance=TrgLocatedElement_strategy)
 @settings(max_examples=50)
 def test_trglocatedelement_instantiation(instance):
     assert isinstance(instance, TrgLocatedElement)
 
-@given(instance=jointPackage::Grafcet2PetriNet::TrgNamedElement_strategy)
+@given(instance=jointPackage_Grafcet2PetriNet_TrgNamedElement_strategy)
 @settings(max_examples=50)
-def test_jointpackage::grafcet2petrinet::trgnamedelement_instantiation(instance):
-    assert isinstance(instance, jointPackage::Grafcet2PetriNet::TrgNamedElement)
-
-@given(instance=jointPackage::Grafcet2PetriNet::TrgNamedElement_strategy)
-def test_jointpackage::grafcet2petrinet::trgnamedelement_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_jointpackage_grafcet2petrinet_trgnamedelement_instantiation(instance):
+    assert isinstance(instance, jointPackage_Grafcet2PetriNet_TrgNamedElement)
 
 
-@given(instance=jointPackage::Grafcet2PetriNet::TrgNamedElement_strategy)
-def test_jointpackage::grafcet2petrinet::trgnamedelement_name_setter(instance):
+
+@given(instance=jointPackage_Grafcet2PetriNet_TrgNamedElement_strategy)
+def test_jointpackage_grafcet2petrinet_trgnamedelement_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=jointPackage::Grafcet2PetriNet::TrgLocatedElement_strategy)
+@given(instance=jointPackage_Grafcet2PetriNet_TrgLocatedElement_strategy)
 @settings(max_examples=50)
-def test_jointpackage::grafcet2petrinet::trglocatedelement_instantiation(instance):
-    assert isinstance(instance, jointPackage::Grafcet2PetriNet::TrgLocatedElement)
-
-@given(instance=jointPackage::Grafcet2PetriNet::TrgLocatedElement_strategy)
-def test_jointpackage::grafcet2petrinet::trglocatedelement_location_type(instance):
-    assert isinstance(instance.location, str)
+def test_jointpackage_grafcet2petrinet_trglocatedelement_instantiation(instance):
+    assert isinstance(instance, jointPackage_Grafcet2PetriNet_TrgLocatedElement)
 
 
-@given(instance=jointPackage::Grafcet2PetriNet::TrgLocatedElement_strategy)
-def test_jointpackage::grafcet2petrinet::trglocatedelement_location_setter(instance):
+
+@given(instance=jointPackage_Grafcet2PetriNet_TrgLocatedElement_strategy)
+def test_jointpackage_grafcet2petrinet_trglocatedelement_location_setter(instance):
     original = instance.location
     instance.location = original
     assert instance.location == original
@@ -717,18 +708,15 @@ def test_jointpackage::grafcet2petrinet::trglocatedelement_location_setter(insta
 def test_srclocatedelement_instantiation(instance):
     assert isinstance(instance, SrcLocatedElement)
 
-@given(instance=jointPackage::Grafcet2PetriNet::SrcNamedElement_strategy)
+@given(instance=jointPackage_Grafcet2PetriNet_SrcNamedElement_strategy)
 @settings(max_examples=50)
-def test_jointpackage::grafcet2petrinet::srcnamedelement_instantiation(instance):
-    assert isinstance(instance, jointPackage::Grafcet2PetriNet::SrcNamedElement)
-
-@given(instance=jointPackage::Grafcet2PetriNet::SrcNamedElement_strategy)
-def test_jointpackage::grafcet2petrinet::srcnamedelement_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_jointpackage_grafcet2petrinet_srcnamedelement_instantiation(instance):
+    assert isinstance(instance, jointPackage_Grafcet2PetriNet_SrcNamedElement)
 
 
-@given(instance=jointPackage::Grafcet2PetriNet::SrcNamedElement_strategy)
-def test_jointpackage::grafcet2petrinet::srcnamedelement_name_setter(instance):
+
+@given(instance=jointPackage_Grafcet2PetriNet_SrcNamedElement_strategy)
+def test_jointpackage_grafcet2petrinet_srcnamedelement_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
@@ -738,71 +726,59 @@ def test_jointpackage::grafcet2petrinet::srcnamedelement_name_setter(instance):
 def test_srcconnection_instantiation(instance):
     assert isinstance(instance, SrcConnection)
 
-@given(instance=jointPackage::Grafcet2PetriNet::SrcStepToTransition_strategy)
+@given(instance=jointPackage_Grafcet2PetriNet_SrcStepToTransition_strategy)
 @settings(max_examples=50)
-def test_jointpackage::grafcet2petrinet::srcsteptotransition_instantiation(instance):
-    assert isinstance(instance, jointPackage::Grafcet2PetriNet::SrcStepToTransition)
+def test_jointpackage_grafcet2petrinet_srcsteptotransition_instantiation(instance):
+    assert isinstance(instance, jointPackage_Grafcet2PetriNet_SrcStepToTransition)
 
-@given(instance=jointPackage::Grafcet2PetriNet::SrcTransitionToStep_strategy)
+@given(instance=jointPackage_Grafcet2PetriNet_SrcTransitionToStep_strategy)
 @settings(max_examples=50)
-def test_jointpackage::grafcet2petrinet::srctransitiontostep_instantiation(instance):
-    assert isinstance(instance, jointPackage::Grafcet2PetriNet::SrcTransitionToStep)
+def test_jointpackage_grafcet2petrinet_srctransitiontostep_instantiation(instance):
+    assert isinstance(instance, jointPackage_Grafcet2PetriNet_SrcTransitionToStep)
 
 @given(instance=SrcElement_strategy)
 @settings(max_examples=50)
 def test_srcelement_instantiation(instance):
     assert isinstance(instance, SrcElement)
 
-@given(instance=jointPackage::Grafcet2PetriNet::SrcTransition_strategy)
+@given(instance=jointPackage_Grafcet2PetriNet_SrcTransition_strategy)
 @settings(max_examples=50)
-def test_jointpackage::grafcet2petrinet::srctransition_instantiation(instance):
-    assert isinstance(instance, jointPackage::Grafcet2PetriNet::SrcTransition)
-
-@given(instance=jointPackage::Grafcet2PetriNet::SrcTransition_strategy)
-def test_jointpackage::grafcet2petrinet::srctransition_condition_type(instance):
-    assert isinstance(instance.condition, str)
+def test_jointpackage_grafcet2petrinet_srctransition_instantiation(instance):
+    assert isinstance(instance, jointPackage_Grafcet2PetriNet_SrcTransition)
 
 
-@given(instance=jointPackage::Grafcet2PetriNet::SrcTransition_strategy)
-def test_jointpackage::grafcet2petrinet::srctransition_condition_setter(instance):
+
+@given(instance=jointPackage_Grafcet2PetriNet_SrcTransition_strategy)
+def test_jointpackage_grafcet2petrinet_srctransition_condition_setter(instance):
     original = instance.condition
     instance.condition = original
     assert instance.condition == original
 
-@given(instance=jointPackage::Grafcet2PetriNet::SrcStep_strategy)
+@given(instance=jointPackage_Grafcet2PetriNet_SrcStep_strategy)
 @settings(max_examples=50)
-def test_jointpackage::grafcet2petrinet::srcstep_instantiation(instance):
-    assert isinstance(instance, jointPackage::Grafcet2PetriNet::SrcStep)
-
-@given(instance=jointPackage::Grafcet2PetriNet::SrcStep_strategy)
-def test_jointpackage::grafcet2petrinet::srcstep_action_type(instance):
-    assert isinstance(instance.action, str)
+def test_jointpackage_grafcet2petrinet_srcstep_instantiation(instance):
+    assert isinstance(instance, jointPackage_Grafcet2PetriNet_SrcStep)
 
 
-@given(instance=jointPackage::Grafcet2PetriNet::SrcStep_strategy)
-def test_jointpackage::grafcet2petrinet::srcstep_action_setter(instance):
+
+@given(instance=jointPackage_Grafcet2PetriNet_SrcStep_strategy)
+def test_jointpackage_grafcet2petrinet_srcstep_action_setter(instance):
     original = instance.action
     instance.action = original
     assert instance.action == original
 
-@given(instance=jointPackage::Grafcet2PetriNet::SrcStep_strategy)
-def test_jointpackage::grafcet2petrinet::srcstep_isActive_type(instance):
-    assert isinstance(instance.isActive, bool)
 
 
-@given(instance=jointPackage::Grafcet2PetriNet::SrcStep_strategy)
-def test_jointpackage::grafcet2petrinet::srcstep_isActive_setter(instance):
+@given(instance=jointPackage_Grafcet2PetriNet_SrcStep_strategy)
+def test_jointpackage_grafcet2petrinet_srcstep_isActive_setter(instance):
     original = instance.isActive
     instance.isActive = original
     assert instance.isActive == original
 
-@given(instance=jointPackage::Grafcet2PetriNet::SrcStep_strategy)
-def test_jointpackage::grafcet2petrinet::srcstep_isInitial_type(instance):
-    assert isinstance(instance.isInitial, bool)
 
 
-@given(instance=jointPackage::Grafcet2PetriNet::SrcStep_strategy)
-def test_jointpackage::grafcet2petrinet::srcstep_isInitial_setter(instance):
+@given(instance=jointPackage_Grafcet2PetriNet_SrcStep_strategy)
+def test_jointpackage_grafcet2petrinet_srcstep_isInitial_setter(instance):
     original = instance.isInitial
     instance.isInitial = original
     assert instance.isInitial == original
@@ -812,43 +788,40 @@ def test_jointpackage::grafcet2petrinet::srcstep_isInitial_setter(instance):
 def test_srcnamedelement_instantiation(instance):
     assert isinstance(instance, SrcNamedElement)
 
-@given(instance=jointPackage::Grafcet2PetriNet::SrcConnection_strategy)
+@given(instance=jointPackage_Grafcet2PetriNet_SrcElement_strategy)
 @settings(max_examples=50)
-def test_jointpackage::grafcet2petrinet::srcconnection_instantiation(instance):
-    assert isinstance(instance, jointPackage::Grafcet2PetriNet::SrcConnection)
+def test_jointpackage_grafcet2petrinet_srcelement_instantiation(instance):
+    assert isinstance(instance, jointPackage_Grafcet2PetriNet_SrcElement)
 
-@given(instance=jointPackage::Grafcet2PetriNet::SrcElement_strategy)
+@given(instance=jointPackage_Grafcet2PetriNet_SrcConnection_strategy)
 @settings(max_examples=50)
-def test_jointpackage::grafcet2petrinet::srcelement_instantiation(instance):
-    assert isinstance(instance, jointPackage::Grafcet2PetriNet::SrcElement)
+def test_jointpackage_grafcet2petrinet_srcconnection_instantiation(instance):
+    assert isinstance(instance, jointPackage_Grafcet2PetriNet_SrcConnection)
 
-@given(instance=jointPackage::Grafcet2PetriNet::SrcLocatedElement_strategy)
+@given(instance=jointPackage_Grafcet2PetriNet_SrcLocatedElement_strategy)
 @settings(max_examples=50)
-def test_jointpackage::grafcet2petrinet::srclocatedelement_instantiation(instance):
-    assert isinstance(instance, jointPackage::Grafcet2PetriNet::SrcLocatedElement)
-
-@given(instance=jointPackage::Grafcet2PetriNet::SrcLocatedElement_strategy)
-def test_jointpackage::grafcet2petrinet::srclocatedelement_location_type(instance):
-    assert isinstance(instance.location, str)
+def test_jointpackage_grafcet2petrinet_srclocatedelement_instantiation(instance):
+    assert isinstance(instance, jointPackage_Grafcet2PetriNet_SrcLocatedElement)
 
 
-@given(instance=jointPackage::Grafcet2PetriNet::SrcLocatedElement_strategy)
-def test_jointpackage::grafcet2petrinet::srclocatedelement_location_setter(instance):
+
+@given(instance=jointPackage_Grafcet2PetriNet_SrcLocatedElement_strategy)
+def test_jointpackage_grafcet2petrinet_srclocatedelement_location_setter(instance):
     original = instance.location
     instance.location = original
     assert instance.location == original
 
-@given(instance=jointPackage::Grafcet2PetriNet::TrgPetriNet_strategy)
+@given(instance=jointPackage_Grafcet2PetriNet_TrgPetriNet_strategy)
 @settings(max_examples=50)
-def test_jointpackage::grafcet2petrinet::trgpetrinet_instantiation(instance):
-    assert isinstance(instance, jointPackage::Grafcet2PetriNet::TrgPetriNet)
+def test_jointpackage_grafcet2petrinet_trgpetrinet_instantiation(instance):
+    assert isinstance(instance, jointPackage_Grafcet2PetriNet_TrgPetriNet)
 
-@given(instance=jointPackage::Grafcet2PetriNet::SrcGrafcet_strategy)
+@given(instance=jointPackage_Grafcet2PetriNet_SrcGrafcet_strategy)
 @settings(max_examples=50)
-def test_jointpackage::grafcet2petrinet::srcgrafcet_instantiation(instance):
-    assert isinstance(instance, jointPackage::Grafcet2PetriNet::SrcGrafcet)
+def test_jointpackage_grafcet2petrinet_srcgrafcet_instantiation(instance):
+    assert isinstance(instance, jointPackage_Grafcet2PetriNet_SrcGrafcet)
 
-@given(instance=jointPackage::Grafcet2PetriNet::JointMM_strategy)
+@given(instance=jointPackage_Grafcet2PetriNet_JointMM_strategy)
 @settings(max_examples=50)
-def test_jointpackage::grafcet2petrinet::jointmm_instantiation(instance):
-    assert isinstance(instance, jointPackage::Grafcet2PetriNet::JointMM)
+def test_jointpackage_grafcet2petrinet_jointmm_instantiation(instance):
+    assert isinstance(instance, jointPackage_Grafcet2PetriNet_JointMM)

@@ -3,32 +3,32 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     NetContentElement,
-    PNML::Place,
-    PNML::Transition,
+    PNML_Transition,
+    PNML_Place,
     LabeledElement,
-    PNML::Name,
+    PNML_Name,
     Label,
     Name,
     NetContent,
     PNMLDocument,
     IdedElement,
-    PNML::NetContentElement,
-    PNML::Arc,
-    PNML::NetElement,
+    PNML_Arc,
+    PNML_NetContentElement,
+    PNML_NetElement,
     NetElement,
     URI,
     LocatedElement,
-    PNML::URI,
-    PNML::NetContent,
-    PNML::PNMLDocument,
-    PNML::Label,
-    PNML::IdedElement,
-    PNML::LabeledElement,
-    PNML::LocatedElement,
+    PNML_Label,
+    PNML_NetContent,
+    PNML_URI,
+    PNML_PNMLDocument,
+    PNML_IdedElement,
+    PNML_LabeledElement,
+    PNML_LocatedElement,
 )
 
 # =============================================================================
@@ -51,30 +51,30 @@ def test_netcontentelement_constructor_args():
 
 
 
-def test_pnml::place_is_not_abstract():
-    assert not inspect.isabstract(PNML::Place)
+def test_pnml_transition_is_not_abstract():
+    assert not inspect.isabstract(PNML_Transition)
 
 
-def test_pnml::place_constructor_exists():
-    assert callable(PNML::Place.__init__)
+def test_pnml_transition_constructor_exists():
+    assert callable(PNML_Transition.__init__)
 
 
-def test_pnml::place_constructor_args():
-    sig = inspect.signature(PNML::Place.__init__)
+def test_pnml_transition_constructor_args():
+    sig = inspect.signature(PNML_Transition.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_pnml::transition_is_not_abstract():
-    assert not inspect.isabstract(PNML::Transition)
+def test_pnml_place_is_not_abstract():
+    assert not inspect.isabstract(PNML_Place)
 
 
-def test_pnml::transition_constructor_exists():
-    assert callable(PNML::Transition.__init__)
+def test_pnml_place_constructor_exists():
+    assert callable(PNML_Place.__init__)
 
 
-def test_pnml::transition_constructor_args():
-    sig = inspect.signature(PNML::Transition.__init__)
+def test_pnml_place_constructor_args():
+    sig = inspect.signature(PNML_Place.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -93,16 +93,16 @@ def test_labeledelement_constructor_args():
 
 
 
-def test_pnml::name_is_not_abstract():
-    assert not inspect.isabstract(PNML::Name)
+def test_pnml_name_is_not_abstract():
+    assert not inspect.isabstract(PNML_Name)
 
 
-def test_pnml::name_constructor_exists():
-    assert callable(PNML::Name.__init__)
+def test_pnml_name_constructor_exists():
+    assert callable(PNML_Name.__init__)
 
 
-def test_pnml::name_constructor_args():
-    sig = inspect.signature(PNML::Name.__init__)
+def test_pnml_name_constructor_args():
+    sig = inspect.signature(PNML_Name.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -177,44 +177,44 @@ def test_idedelement_constructor_args():
 
 
 
-def test_pnml::netcontentelement_is_not_abstract():
-    assert not inspect.isabstract(PNML::NetContentElement)
+def test_pnml_arc_is_not_abstract():
+    assert not inspect.isabstract(PNML_Arc)
 
 
-def test_pnml::netcontentelement_constructor_exists():
-    assert callable(PNML::NetContentElement.__init__)
+def test_pnml_arc_constructor_exists():
+    assert callable(PNML_Arc.__init__)
 
 
-def test_pnml::netcontentelement_constructor_args():
-    sig = inspect.signature(PNML::NetContentElement.__init__)
+def test_pnml_arc_constructor_args():
+    sig = inspect.signature(PNML_Arc.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_pnml::arc_is_not_abstract():
-    assert not inspect.isabstract(PNML::Arc)
+def test_pnml_netcontentelement_is_not_abstract():
+    assert not inspect.isabstract(PNML_NetContentElement)
 
 
-def test_pnml::arc_constructor_exists():
-    assert callable(PNML::Arc.__init__)
+def test_pnml_netcontentelement_constructor_exists():
+    assert callable(PNML_NetContentElement.__init__)
 
 
-def test_pnml::arc_constructor_args():
-    sig = inspect.signature(PNML::Arc.__init__)
+def test_pnml_netcontentelement_constructor_args():
+    sig = inspect.signature(PNML_NetContentElement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_pnml::netelement_is_not_abstract():
-    assert not inspect.isabstract(PNML::NetElement)
+def test_pnml_netelement_is_not_abstract():
+    assert not inspect.isabstract(PNML_NetElement)
 
 
-def test_pnml::netelement_constructor_exists():
-    assert callable(PNML::NetElement.__init__)
+def test_pnml_netelement_constructor_exists():
+    assert callable(PNML_NetElement.__init__)
 
 
-def test_pnml::netelement_constructor_args():
-    sig = inspect.signature(PNML::NetElement.__init__)
+def test_pnml_netelement_constructor_args():
+    sig = inspect.signature(PNML_NetElement.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -261,75 +261,23 @@ def test_locatedelement_constructor_args():
 
 
 
-def test_pnml::uri_is_not_abstract():
-    assert not inspect.isabstract(PNML::URI)
+def test_pnml_label_is_not_abstract():
+    assert not inspect.isabstract(PNML_Label)
 
 
-def test_pnml::uri_constructor_exists():
-    assert callable(PNML::URI.__init__)
+def test_pnml_label_constructor_exists():
+    assert callable(PNML_Label.__init__)
 
 
-def test_pnml::uri_constructor_args():
-    sig = inspect.signature(PNML::URI.__init__)
-    params = list(sig.parameters.keys())
-    assert "value" in params, "Missing parameter 'value'"
-
-def test_pnml::uri_has_value():
-    assert hasattr(PNML::URI, "value")
-    descriptor = None
-    for klass in PNML::URI.__mro__:
-        if "value" in klass.__dict__:
-            descriptor = klass.__dict__["value"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_pnml::netcontent_is_not_abstract():
-    assert not inspect.isabstract(PNML::NetContent)
-
-
-def test_pnml::netcontent_constructor_exists():
-    assert callable(PNML::NetContent.__init__)
-
-
-def test_pnml::netcontent_constructor_args():
-    sig = inspect.signature(PNML::NetContent.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_pnml::pnmldocument_is_not_abstract():
-    assert not inspect.isabstract(PNML::PNMLDocument)
-
-
-def test_pnml::pnmldocument_constructor_exists():
-    assert callable(PNML::PNMLDocument.__init__)
-
-
-def test_pnml::pnmldocument_constructor_args():
-    sig = inspect.signature(PNML::PNMLDocument.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_pnml::label_is_not_abstract():
-    assert not inspect.isabstract(PNML::Label)
-
-
-def test_pnml::label_constructor_exists():
-    assert callable(PNML::Label.__init__)
-
-
-def test_pnml::label_constructor_args():
-    sig = inspect.signature(PNML::Label.__init__)
+def test_pnml_label_constructor_args():
+    sig = inspect.signature(PNML_Label.__init__)
     params = list(sig.parameters.keys())
     assert "text" in params, "Missing parameter 'text'"
 
-def test_pnml::label_has_text():
-    assert hasattr(PNML::Label, "text")
+def test_pnml_label_has_text():
+    assert hasattr(PNML_Label, "text")
     descriptor = None
-    for klass in PNML::Label.__mro__:
+    for klass in PNML_Label.__mro__:
         if "text" in klass.__dict__:
             descriptor = klass.__dict__["text"]
             break
@@ -337,23 +285,75 @@ def test_pnml::label_has_text():
 
 
 
-def test_pnml::idedelement_is_not_abstract():
-    assert not inspect.isabstract(PNML::IdedElement)
+def test_pnml_netcontent_is_not_abstract():
+    assert not inspect.isabstract(PNML_NetContent)
 
 
-def test_pnml::idedelement_constructor_exists():
-    assert callable(PNML::IdedElement.__init__)
+def test_pnml_netcontent_constructor_exists():
+    assert callable(PNML_NetContent.__init__)
 
 
-def test_pnml::idedelement_constructor_args():
-    sig = inspect.signature(PNML::IdedElement.__init__)
+def test_pnml_netcontent_constructor_args():
+    sig = inspect.signature(PNML_NetContent.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_pnml_uri_is_not_abstract():
+    assert not inspect.isabstract(PNML_URI)
+
+
+def test_pnml_uri_constructor_exists():
+    assert callable(PNML_URI.__init__)
+
+
+def test_pnml_uri_constructor_args():
+    sig = inspect.signature(PNML_URI.__init__)
+    params = list(sig.parameters.keys())
+    assert "value" in params, "Missing parameter 'value'"
+
+def test_pnml_uri_has_value():
+    assert hasattr(PNML_URI, "value")
+    descriptor = None
+    for klass in PNML_URI.__mro__:
+        if "value" in klass.__dict__:
+            descriptor = klass.__dict__["value"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_pnml_pnmldocument_is_not_abstract():
+    assert not inspect.isabstract(PNML_PNMLDocument)
+
+
+def test_pnml_pnmldocument_constructor_exists():
+    assert callable(PNML_PNMLDocument.__init__)
+
+
+def test_pnml_pnmldocument_constructor_args():
+    sig = inspect.signature(PNML_PNMLDocument.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_pnml_idedelement_is_not_abstract():
+    assert not inspect.isabstract(PNML_IdedElement)
+
+
+def test_pnml_idedelement_constructor_exists():
+    assert callable(PNML_IdedElement.__init__)
+
+
+def test_pnml_idedelement_constructor_args():
+    sig = inspect.signature(PNML_IdedElement.__init__)
     params = list(sig.parameters.keys())
     assert "id" in params, "Missing parameter 'id'"
 
-def test_pnml::idedelement_has_id():
-    assert hasattr(PNML::IdedElement, "id")
+def test_pnml_idedelement_has_id():
+    assert hasattr(PNML_IdedElement, "id")
     descriptor = None
-    for klass in PNML::IdedElement.__mro__:
+    for klass in PNML_IdedElement.__mro__:
         if "id" in klass.__dict__:
             descriptor = klass.__dict__["id"]
             break
@@ -361,37 +361,37 @@ def test_pnml::idedelement_has_id():
 
 
 
-def test_pnml::labeledelement_is_not_abstract():
-    assert not inspect.isabstract(PNML::LabeledElement)
+def test_pnml_labeledelement_is_not_abstract():
+    assert not inspect.isabstract(PNML_LabeledElement)
 
 
-def test_pnml::labeledelement_constructor_exists():
-    assert callable(PNML::LabeledElement.__init__)
+def test_pnml_labeledelement_constructor_exists():
+    assert callable(PNML_LabeledElement.__init__)
 
 
-def test_pnml::labeledelement_constructor_args():
-    sig = inspect.signature(PNML::LabeledElement.__init__)
+def test_pnml_labeledelement_constructor_args():
+    sig = inspect.signature(PNML_LabeledElement.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_pnml::locatedelement_is_not_abstract():
-    assert not inspect.isabstract(PNML::LocatedElement)
+def test_pnml_locatedelement_is_not_abstract():
+    assert not inspect.isabstract(PNML_LocatedElement)
 
 
-def test_pnml::locatedelement_constructor_exists():
-    assert callable(PNML::LocatedElement.__init__)
+def test_pnml_locatedelement_constructor_exists():
+    assert callable(PNML_LocatedElement.__init__)
 
 
-def test_pnml::locatedelement_constructor_args():
-    sig = inspect.signature(PNML::LocatedElement.__init__)
+def test_pnml_locatedelement_constructor_args():
+    sig = inspect.signature(PNML_LocatedElement.__init__)
     params = list(sig.parameters.keys())
     assert "location" in params, "Missing parameter 'location'"
 
-def test_pnml::locatedelement_has_location():
-    assert hasattr(PNML::LocatedElement, "location")
+def test_pnml_locatedelement_has_location():
+    assert hasattr(PNML_LocatedElement, "location")
     descriptor = None
-    for klass in PNML::LocatedElement.__mro__:
+    for klass in PNML_LocatedElement.__mro__:
         if "location" in klass.__dict__:
             descriptor = klass.__dict__["location"]
             break
@@ -412,17 +412,17 @@ safe_text = st.text(
 NetContentElement_strategy = st.builds(
     NetContentElement,
 )
-PNML::Place_strategy = st.builds(
-    PNML::Place,
+PNML_Transition_strategy = st.builds(
+    PNML_Transition,
 )
-PNML::Transition_strategy = st.builds(
-    PNML::Transition,
+PNML_Place_strategy = st.builds(
+    PNML_Place,
 )
 LabeledElement_strategy = st.builds(
     LabeledElement,
 )
-PNML::Name_strategy = st.builds(
-    PNML::Name,
+PNML_Name_strategy = st.builds(
+    PNML_Name,
 )
 Label_strategy = st.builds(
     Label,
@@ -439,14 +439,14 @@ PNMLDocument_strategy = st.builds(
 IdedElement_strategy = st.builds(
     IdedElement,
 )
-PNML::NetContentElement_strategy = st.builds(
-    PNML::NetContentElement,
+PNML_Arc_strategy = st.builds(
+    PNML_Arc,
 )
-PNML::Arc_strategy = st.builds(
-    PNML::Arc,
+PNML_NetContentElement_strategy = st.builds(
+    PNML_NetContentElement,
 )
-PNML::NetElement_strategy = st.builds(
-    PNML::NetElement,
+PNML_NetElement_strategy = st.builds(
+    PNML_NetElement,
 )
 NetElement_strategy = st.builds(
     NetElement,
@@ -457,32 +457,32 @@ URI_strategy = st.builds(
 LocatedElement_strategy = st.builds(
     LocatedElement,
 )
-PNML::URI_strategy = st.builds(
-    PNML::URI,
-    value=
-        safe_text
-)
-PNML::NetContent_strategy = st.builds(
-    PNML::NetContent,
-)
-PNML::PNMLDocument_strategy = st.builds(
-    PNML::PNMLDocument,
-)
-PNML::Label_strategy = st.builds(
-    PNML::Label,
+PNML_Label_strategy = st.builds(
+    PNML_Label,
     text=
         safe_text
 )
-PNML::IdedElement_strategy = st.builds(
-    PNML::IdedElement,
+PNML_NetContent_strategy = st.builds(
+    PNML_NetContent,
+)
+PNML_URI_strategy = st.builds(
+    PNML_URI,
+    value=
+        safe_text
+)
+PNML_PNMLDocument_strategy = st.builds(
+    PNML_PNMLDocument,
+)
+PNML_IdedElement_strategy = st.builds(
+    PNML_IdedElement,
     id=
         safe_text
 )
-PNML::LabeledElement_strategy = st.builds(
-    PNML::LabeledElement,
+PNML_LabeledElement_strategy = st.builds(
+    PNML_LabeledElement,
 )
-PNML::LocatedElement_strategy = st.builds(
-    PNML::LocatedElement,
+PNML_LocatedElement_strategy = st.builds(
+    PNML_LocatedElement,
     location=
         safe_text
 )
@@ -492,25 +492,25 @@ PNML::LocatedElement_strategy = st.builds(
 def test_netcontentelement_instantiation(instance):
     assert isinstance(instance, NetContentElement)
 
-@given(instance=PNML::Place_strategy)
+@given(instance=PNML_Transition_strategy)
 @settings(max_examples=50)
-def test_pnml::place_instantiation(instance):
-    assert isinstance(instance, PNML::Place)
+def test_pnml_transition_instantiation(instance):
+    assert isinstance(instance, PNML_Transition)
 
-@given(instance=PNML::Transition_strategy)
+@given(instance=PNML_Place_strategy)
 @settings(max_examples=50)
-def test_pnml::transition_instantiation(instance):
-    assert isinstance(instance, PNML::Transition)
+def test_pnml_place_instantiation(instance):
+    assert isinstance(instance, PNML_Place)
 
 @given(instance=LabeledElement_strategy)
 @settings(max_examples=50)
 def test_labeledelement_instantiation(instance):
     assert isinstance(instance, LabeledElement)
 
-@given(instance=PNML::Name_strategy)
+@given(instance=PNML_Name_strategy)
 @settings(max_examples=50)
-def test_pnml::name_instantiation(instance):
-    assert isinstance(instance, PNML::Name)
+def test_pnml_name_instantiation(instance):
+    assert isinstance(instance, PNML_Name)
 
 @given(instance=Label_strategy)
 @settings(max_examples=50)
@@ -537,20 +537,20 @@ def test_pnmldocument_instantiation(instance):
 def test_idedelement_instantiation(instance):
     assert isinstance(instance, IdedElement)
 
-@given(instance=PNML::NetContentElement_strategy)
+@given(instance=PNML_Arc_strategy)
 @settings(max_examples=50)
-def test_pnml::netcontentelement_instantiation(instance):
-    assert isinstance(instance, PNML::NetContentElement)
+def test_pnml_arc_instantiation(instance):
+    assert isinstance(instance, PNML_Arc)
 
-@given(instance=PNML::Arc_strategy)
+@given(instance=PNML_NetContentElement_strategy)
 @settings(max_examples=50)
-def test_pnml::arc_instantiation(instance):
-    assert isinstance(instance, PNML::Arc)
+def test_pnml_netcontentelement_instantiation(instance):
+    assert isinstance(instance, PNML_NetContentElement)
 
-@given(instance=PNML::NetElement_strategy)
+@given(instance=PNML_NetElement_strategy)
 @settings(max_examples=50)
-def test_pnml::netelement_instantiation(instance):
-    assert isinstance(instance, PNML::NetElement)
+def test_pnml_netelement_instantiation(instance):
+    assert isinstance(instance, PNML_NetElement)
 
 @given(instance=NetElement_strategy)
 @settings(max_examples=50)
@@ -567,81 +567,69 @@ def test_uri_instantiation(instance):
 def test_locatedelement_instantiation(instance):
     assert isinstance(instance, LocatedElement)
 
-@given(instance=PNML::URI_strategy)
+@given(instance=PNML_Label_strategy)
 @settings(max_examples=50)
-def test_pnml::uri_instantiation(instance):
-    assert isinstance(instance, PNML::URI)
-
-@given(instance=PNML::URI_strategy)
-def test_pnml::uri_value_type(instance):
-    assert isinstance(instance.value, str)
+def test_pnml_label_instantiation(instance):
+    assert isinstance(instance, PNML_Label)
 
 
-@given(instance=PNML::URI_strategy)
-def test_pnml::uri_value_setter(instance):
-    original = instance.value
-    instance.value = original
-    assert instance.value == original
 
-@given(instance=PNML::NetContent_strategy)
-@settings(max_examples=50)
-def test_pnml::netcontent_instantiation(instance):
-    assert isinstance(instance, PNML::NetContent)
-
-@given(instance=PNML::PNMLDocument_strategy)
-@settings(max_examples=50)
-def test_pnml::pnmldocument_instantiation(instance):
-    assert isinstance(instance, PNML::PNMLDocument)
-
-@given(instance=PNML::Label_strategy)
-@settings(max_examples=50)
-def test_pnml::label_instantiation(instance):
-    assert isinstance(instance, PNML::Label)
-
-@given(instance=PNML::Label_strategy)
-def test_pnml::label_text_type(instance):
-    assert isinstance(instance.text, str)
-
-
-@given(instance=PNML::Label_strategy)
-def test_pnml::label_text_setter(instance):
+@given(instance=PNML_Label_strategy)
+def test_pnml_label_text_setter(instance):
     original = instance.text
     instance.text = original
     assert instance.text == original
 
-@given(instance=PNML::IdedElement_strategy)
+@given(instance=PNML_NetContent_strategy)
 @settings(max_examples=50)
-def test_pnml::idedelement_instantiation(instance):
-    assert isinstance(instance, PNML::IdedElement)
+def test_pnml_netcontent_instantiation(instance):
+    assert isinstance(instance, PNML_NetContent)
 
-@given(instance=PNML::IdedElement_strategy)
-def test_pnml::idedelement_id_type(instance):
-    assert isinstance(instance.id, str)
+@given(instance=PNML_URI_strategy)
+@settings(max_examples=50)
+def test_pnml_uri_instantiation(instance):
+    assert isinstance(instance, PNML_URI)
 
 
-@given(instance=PNML::IdedElement_strategy)
-def test_pnml::idedelement_id_setter(instance):
+
+@given(instance=PNML_URI_strategy)
+def test_pnml_uri_value_setter(instance):
+    original = instance.value
+    instance.value = original
+    assert instance.value == original
+
+@given(instance=PNML_PNMLDocument_strategy)
+@settings(max_examples=50)
+def test_pnml_pnmldocument_instantiation(instance):
+    assert isinstance(instance, PNML_PNMLDocument)
+
+@given(instance=PNML_IdedElement_strategy)
+@settings(max_examples=50)
+def test_pnml_idedelement_instantiation(instance):
+    assert isinstance(instance, PNML_IdedElement)
+
+
+
+@given(instance=PNML_IdedElement_strategy)
+def test_pnml_idedelement_id_setter(instance):
     original = instance.id
     instance.id = original
     assert instance.id == original
 
-@given(instance=PNML::LabeledElement_strategy)
+@given(instance=PNML_LabeledElement_strategy)
 @settings(max_examples=50)
-def test_pnml::labeledelement_instantiation(instance):
-    assert isinstance(instance, PNML::LabeledElement)
+def test_pnml_labeledelement_instantiation(instance):
+    assert isinstance(instance, PNML_LabeledElement)
 
-@given(instance=PNML::LocatedElement_strategy)
+@given(instance=PNML_LocatedElement_strategy)
 @settings(max_examples=50)
-def test_pnml::locatedelement_instantiation(instance):
-    assert isinstance(instance, PNML::LocatedElement)
-
-@given(instance=PNML::LocatedElement_strategy)
-def test_pnml::locatedelement_location_type(instance):
-    assert isinstance(instance.location, str)
+def test_pnml_locatedelement_instantiation(instance):
+    assert isinstance(instance, PNML_LocatedElement)
 
 
-@given(instance=PNML::LocatedElement_strategy)
-def test_pnml::locatedelement_location_setter(instance):
+
+@given(instance=PNML_LocatedElement_strategy)
+def test_pnml_locatedelement_location_setter(instance):
     original = instance.location
     instance.location = original
     assert instance.location == original

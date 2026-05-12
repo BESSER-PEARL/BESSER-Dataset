@@ -3,16 +3,16 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    gfsm::State,
-    gfsm::Transition,
-    gfsm::Machine,
+from python_code import (
+    gfsm_State,
+    gfsm_Transition,
+    gfsm_Machine,
     State,
-    gfsm::FinalState,
-    gfsm::InitialState,
-    gfsm::Guard,
+    gfsm_FinalState,
+    gfsm_InitialState,
+    gfsm_Guard,
 )
 
 # =============================================================================
@@ -21,23 +21,23 @@ from classes import (
 
 
 
-def test_gfsm::state_is_not_abstract():
-    assert not inspect.isabstract(gfsm::State)
+def test_gfsm_state_is_not_abstract():
+    assert not inspect.isabstract(gfsm_State)
 
 
-def test_gfsm::state_constructor_exists():
-    assert callable(gfsm::State.__init__)
+def test_gfsm_state_constructor_exists():
+    assert callable(gfsm_State.__init__)
 
 
-def test_gfsm::state_constructor_args():
-    sig = inspect.signature(gfsm::State.__init__)
+def test_gfsm_state_constructor_args():
+    sig = inspect.signature(gfsm_State.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_gfsm::state_has_name():
-    assert hasattr(gfsm::State, "name")
+def test_gfsm_state_has_name():
+    assert hasattr(gfsm_State, "name")
     descriptor = None
-    for klass in gfsm::State.__mro__:
+    for klass in gfsm_State.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -45,23 +45,23 @@ def test_gfsm::state_has_name():
 
 
 
-def test_gfsm::transition_is_not_abstract():
-    assert not inspect.isabstract(gfsm::Transition)
+def test_gfsm_transition_is_not_abstract():
+    assert not inspect.isabstract(gfsm_Transition)
 
 
-def test_gfsm::transition_constructor_exists():
-    assert callable(gfsm::Transition.__init__)
+def test_gfsm_transition_constructor_exists():
+    assert callable(gfsm_Transition.__init__)
 
 
-def test_gfsm::transition_constructor_args():
-    sig = inspect.signature(gfsm::Transition.__init__)
+def test_gfsm_transition_constructor_args():
+    sig = inspect.signature(gfsm_Transition.__init__)
     params = list(sig.parameters.keys())
     assert "event" in params, "Missing parameter 'event'"
 
-def test_gfsm::transition_has_event():
-    assert hasattr(gfsm::Transition, "event")
+def test_gfsm_transition_has_event():
+    assert hasattr(gfsm_Transition, "event")
     descriptor = None
-    for klass in gfsm::Transition.__mro__:
+    for klass in gfsm_Transition.__mro__:
         if "event" in klass.__dict__:
             descriptor = klass.__dict__["event"]
             break
@@ -69,23 +69,23 @@ def test_gfsm::transition_has_event():
 
 
 
-def test_gfsm::machine_is_not_abstract():
-    assert not inspect.isabstract(gfsm::Machine)
+def test_gfsm_machine_is_not_abstract():
+    assert not inspect.isabstract(gfsm_Machine)
 
 
-def test_gfsm::machine_constructor_exists():
-    assert callable(gfsm::Machine.__init__)
+def test_gfsm_machine_constructor_exists():
+    assert callable(gfsm_Machine.__init__)
 
 
-def test_gfsm::machine_constructor_args():
-    sig = inspect.signature(gfsm::Machine.__init__)
+def test_gfsm_machine_constructor_args():
+    sig = inspect.signature(gfsm_Machine.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_gfsm::machine_has_name():
-    assert hasattr(gfsm::Machine, "name")
+def test_gfsm_machine_has_name():
+    assert hasattr(gfsm_Machine, "name")
     descriptor = None
-    for klass in gfsm::Machine.__mro__:
+    for klass in gfsm_Machine.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -107,44 +107,44 @@ def test_state_constructor_args():
 
 
 
-def test_gfsm::finalstate_is_not_abstract():
-    assert not inspect.isabstract(gfsm::FinalState)
+def test_gfsm_finalstate_is_not_abstract():
+    assert not inspect.isabstract(gfsm_FinalState)
 
 
-def test_gfsm::finalstate_constructor_exists():
-    assert callable(gfsm::FinalState.__init__)
+def test_gfsm_finalstate_constructor_exists():
+    assert callable(gfsm_FinalState.__init__)
 
 
-def test_gfsm::finalstate_constructor_args():
-    sig = inspect.signature(gfsm::FinalState.__init__)
+def test_gfsm_finalstate_constructor_args():
+    sig = inspect.signature(gfsm_FinalState.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_gfsm::initialstate_is_not_abstract():
-    assert not inspect.isabstract(gfsm::InitialState)
+def test_gfsm_initialstate_is_not_abstract():
+    assert not inspect.isabstract(gfsm_InitialState)
 
 
-def test_gfsm::initialstate_constructor_exists():
-    assert callable(gfsm::InitialState.__init__)
+def test_gfsm_initialstate_constructor_exists():
+    assert callable(gfsm_InitialState.__init__)
 
 
-def test_gfsm::initialstate_constructor_args():
-    sig = inspect.signature(gfsm::InitialState.__init__)
+def test_gfsm_initialstate_constructor_args():
+    sig = inspect.signature(gfsm_InitialState.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_gfsm::guard_is_not_abstract():
-    assert not inspect.isabstract(gfsm::Guard)
+def test_gfsm_guard_is_not_abstract():
+    assert not inspect.isabstract(gfsm_Guard)
 
 
-def test_gfsm::guard_constructor_exists():
-    assert callable(gfsm::Guard.__init__)
+def test_gfsm_guard_constructor_exists():
+    assert callable(gfsm_Guard.__init__)
 
 
-def test_gfsm::guard_constructor_args():
-    sig = inspect.signature(gfsm::Guard.__init__)
+def test_gfsm_guard_constructor_args():
+    sig = inspect.signature(gfsm_Guard.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -159,78 +159,69 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-gfsm::State_strategy = st.builds(
-    gfsm::State,
+gfsm_State_strategy = st.builds(
+    gfsm_State,
     name=
         safe_text
 )
-gfsm::Transition_strategy = st.builds(
-    gfsm::Transition,
+gfsm_Transition_strategy = st.builds(
+    gfsm_Transition,
     event=
         safe_text
 )
-gfsm::Machine_strategy = st.builds(
-    gfsm::Machine,
+gfsm_Machine_strategy = st.builds(
+    gfsm_Machine,
     name=
         safe_text
 )
 State_strategy = st.builds(
     State,
 )
-gfsm::FinalState_strategy = st.builds(
-    gfsm::FinalState,
+gfsm_FinalState_strategy = st.builds(
+    gfsm_FinalState,
 )
-gfsm::InitialState_strategy = st.builds(
-    gfsm::InitialState,
+gfsm_InitialState_strategy = st.builds(
+    gfsm_InitialState,
 )
-gfsm::Guard_strategy = st.builds(
-    gfsm::Guard,
+gfsm_Guard_strategy = st.builds(
+    gfsm_Guard,
 )
 
-@given(instance=gfsm::State_strategy)
+@given(instance=gfsm_State_strategy)
 @settings(max_examples=50)
-def test_gfsm::state_instantiation(instance):
-    assert isinstance(instance, gfsm::State)
-
-@given(instance=gfsm::State_strategy)
-def test_gfsm::state_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_gfsm_state_instantiation(instance):
+    assert isinstance(instance, gfsm_State)
 
 
-@given(instance=gfsm::State_strategy)
-def test_gfsm::state_name_setter(instance):
+
+@given(instance=gfsm_State_strategy)
+def test_gfsm_state_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=gfsm::Transition_strategy)
+@given(instance=gfsm_Transition_strategy)
 @settings(max_examples=50)
-def test_gfsm::transition_instantiation(instance):
-    assert isinstance(instance, gfsm::Transition)
-
-@given(instance=gfsm::Transition_strategy)
-def test_gfsm::transition_event_type(instance):
-    assert isinstance(instance.event, str)
+def test_gfsm_transition_instantiation(instance):
+    assert isinstance(instance, gfsm_Transition)
 
 
-@given(instance=gfsm::Transition_strategy)
-def test_gfsm::transition_event_setter(instance):
+
+@given(instance=gfsm_Transition_strategy)
+def test_gfsm_transition_event_setter(instance):
     original = instance.event
     instance.event = original
     assert instance.event == original
 
-@given(instance=gfsm::Machine_strategy)
+@given(instance=gfsm_Machine_strategy)
 @settings(max_examples=50)
-def test_gfsm::machine_instantiation(instance):
-    assert isinstance(instance, gfsm::Machine)
-
-@given(instance=gfsm::Machine_strategy)
-def test_gfsm::machine_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_gfsm_machine_instantiation(instance):
+    assert isinstance(instance, gfsm_Machine)
 
 
-@given(instance=gfsm::Machine_strategy)
-def test_gfsm::machine_name_setter(instance):
+
+@given(instance=gfsm_Machine_strategy)
+def test_gfsm_machine_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
@@ -240,17 +231,17 @@ def test_gfsm::machine_name_setter(instance):
 def test_state_instantiation(instance):
     assert isinstance(instance, State)
 
-@given(instance=gfsm::FinalState_strategy)
+@given(instance=gfsm_FinalState_strategy)
 @settings(max_examples=50)
-def test_gfsm::finalstate_instantiation(instance):
-    assert isinstance(instance, gfsm::FinalState)
+def test_gfsm_finalstate_instantiation(instance):
+    assert isinstance(instance, gfsm_FinalState)
 
-@given(instance=gfsm::InitialState_strategy)
+@given(instance=gfsm_InitialState_strategy)
 @settings(max_examples=50)
-def test_gfsm::initialstate_instantiation(instance):
-    assert isinstance(instance, gfsm::InitialState)
+def test_gfsm_initialstate_instantiation(instance):
+    assert isinstance(instance, gfsm_InitialState)
 
-@given(instance=gfsm::Guard_strategy)
+@given(instance=gfsm_Guard_strategy)
 @settings(max_examples=50)
-def test_gfsm::guard_instantiation(instance):
-    assert isinstance(instance, gfsm::Guard)
+def test_gfsm_guard_instantiation(instance):
+    assert isinstance(instance, gfsm_Guard)

@@ -3,69 +3,69 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    geom::geoff::Location,
+from python_code import (
+    geom_geoff_Location,
     SimpleGeometry,
-    geoff::geom::LineString,
-    geoff::geom::Point,
-    source::geoff::Feature,
+    geoff_geom_LineString,
+    geoff_geom_Point,
+    source_geoff_Feature,
     XYZ,
-    geoff::source::BingMaps,
-    geoff::source::MapQuest,
-    geoff::source::OSM,
+    geoff_source_MapQuest,
+    geoff_source_BingMaps,
+    geoff_source_OSM,
     TileImage,
-    style::geoff::Color,
+    style_geoff_Color,
     Text,
     Stroke,
     Fill,
     Image,
-    geoff::style::Icon,
-    geoff::style::Circle,
-    geoff::geom::Polygon,
-    geoff::StyleEntry,
-    geoff::StringToStringMapEntry,
+    geoff_style_Icon,
+    geoff_style_Circle,
+    geoff_geom_Polygon,
+    geoff_StyleEntry,
+    geoff_StringToStringMapEntry,
     Style,
     Geometry,
-    geoff::geom::SimpleGeometry,
-    geoff::source::XYZ,
+    geoff_geom_SimpleGeometry,
+    geoff_source_XYZ,
     TileSource,
-    geoff::source::TileImage,
-    layer::geoff::StyleEntry,
+    geoff_source_TileImage,
+    layer_geoff_StyleEntry,
     Source,
-    geoff::source::TileSource,
-    geoff::source::VectorSource,
+    geoff_source_VectorSource,
+    geoff_source_TileSource,
     Descriptive,
     Identifiable,
-    geoff::style::Style,
-    geoff::style::Image,
-    geoff::style::Fill,
-    geoff::layer::Layer,
-    geoff::Feature,
-    geoff::Color,
-    geoff::interaction::Interaction,
-    geoff::source::Source,
-    geoff::style::Stroke,
-    geoff::style::Text,
-    geoff::geom::Geometry,
-    geoff::GeoMap,
-    geoff::Descriptive,
-    geoff::Identifiable,
+    geoff_Color,
+    geoff_style_Image,
+    geoff_style_Fill,
+    geoff_Feature,
+    geoff_source_Source,
+    geoff_style_Style,
+    geoff_style_Text,
+    geoff_style_Stroke,
+    geoff_layer_Layer,
+    geoff_interaction_Interaction,
+    geoff_geom_Geometry,
+    geoff_GeoMap,
+    geoff_Descriptive,
+    geoff_Identifiable,
     Location,
-    geoff::XYZLocation,
-    geoff::Location,
+    geoff_XYZLocation,
+    geoff_Location,
     Interaction,
-    geoff::interaction::Select,
-    geoff::Script,
-    geoff::View,
+    geoff_interaction_Select,
+    geoff_Script,
+    geoff_View,
     Layer,
-    geoff::layer::TileLayer,
-    geoff::layer::VectorLayer,
-    EventCondition,
+    geoff_layer_VectorLayer,
+    geoff_layer_TileLayer,
     RendererHint,
-    SourceFormat,
+    EventCondition,
     ScriptContext,
+    SourceFormat,
 )
 
 # =============================================================================
@@ -74,16 +74,16 @@ from classes import (
 
 
 
-def test_geom::geoff::location_is_not_abstract():
-    assert not inspect.isabstract(geom::geoff::Location)
+def test_geom_geoff_location_is_not_abstract():
+    assert not inspect.isabstract(geom_geoff_Location)
 
 
-def test_geom::geoff::location_constructor_exists():
-    assert callable(geom::geoff::Location.__init__)
+def test_geom_geoff_location_constructor_exists():
+    assert callable(geom_geoff_Location.__init__)
 
 
-def test_geom::geoff::location_constructor_args():
-    sig = inspect.signature(geom::geoff::Location.__init__)
+def test_geom_geoff_location_constructor_args():
+    sig = inspect.signature(geom_geoff_Location.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -102,44 +102,44 @@ def test_simplegeometry_constructor_args():
 
 
 
-def test_geoff::geom::linestring_is_not_abstract():
-    assert not inspect.isabstract(geoff::geom::LineString)
+def test_geoff_geom_linestring_is_not_abstract():
+    assert not inspect.isabstract(geoff_geom_LineString)
 
 
-def test_geoff::geom::linestring_constructor_exists():
-    assert callable(geoff::geom::LineString.__init__)
+def test_geoff_geom_linestring_constructor_exists():
+    assert callable(geoff_geom_LineString.__init__)
 
 
-def test_geoff::geom::linestring_constructor_args():
-    sig = inspect.signature(geoff::geom::LineString.__init__)
+def test_geoff_geom_linestring_constructor_args():
+    sig = inspect.signature(geoff_geom_LineString.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_geoff::geom::point_is_not_abstract():
-    assert not inspect.isabstract(geoff::geom::Point)
+def test_geoff_geom_point_is_not_abstract():
+    assert not inspect.isabstract(geoff_geom_Point)
 
 
-def test_geoff::geom::point_constructor_exists():
-    assert callable(geoff::geom::Point.__init__)
+def test_geoff_geom_point_constructor_exists():
+    assert callable(geoff_geom_Point.__init__)
 
 
-def test_geoff::geom::point_constructor_args():
-    sig = inspect.signature(geoff::geom::Point.__init__)
+def test_geoff_geom_point_constructor_args():
+    sig = inspect.signature(geoff_geom_Point.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_source::geoff::feature_is_not_abstract():
-    assert not inspect.isabstract(source::geoff::Feature)
+def test_source_geoff_feature_is_not_abstract():
+    assert not inspect.isabstract(source_geoff_Feature)
 
 
-def test_source::geoff::feature_constructor_exists():
-    assert callable(source::geoff::Feature.__init__)
+def test_source_geoff_feature_constructor_exists():
+    assert callable(source_geoff_Feature.__init__)
 
 
-def test_source::geoff::feature_constructor_args():
-    sig = inspect.signature(source::geoff::Feature.__init__)
+def test_source_geoff_feature_constructor_args():
+    sig = inspect.signature(source_geoff_Feature.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -158,57 +158,23 @@ def test_xyz_constructor_args():
 
 
 
-def test_geoff::source::bingmaps_is_not_abstract():
-    assert not inspect.isabstract(geoff::source::BingMaps)
+def test_geoff_source_mapquest_is_not_abstract():
+    assert not inspect.isabstract(geoff_source_MapQuest)
 
 
-def test_geoff::source::bingmaps_constructor_exists():
-    assert callable(geoff::source::BingMaps.__init__)
+def test_geoff_source_mapquest_constructor_exists():
+    assert callable(geoff_source_MapQuest.__init__)
 
 
-def test_geoff::source::bingmaps_constructor_args():
-    sig = inspect.signature(geoff::source::BingMaps.__init__)
-    params = list(sig.parameters.keys())
-    assert "key" in params, "Missing parameter 'key'"
-    assert "imagerySet" in params, "Missing parameter 'imagerySet'"
-
-def test_geoff::source::bingmaps_has_key():
-    assert hasattr(geoff::source::BingMaps, "key")
-    descriptor = None
-    for klass in geoff::source::BingMaps.__mro__:
-        if "key" in klass.__dict__:
-            descriptor = klass.__dict__["key"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_geoff::source::bingmaps_has_imagerySet():
-    assert hasattr(geoff::source::BingMaps, "imagerySet")
-    descriptor = None
-    for klass in geoff::source::BingMaps.__mro__:
-        if "imagerySet" in klass.__dict__:
-            descriptor = klass.__dict__["imagerySet"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_geoff::source::mapquest_is_not_abstract():
-    assert not inspect.isabstract(geoff::source::MapQuest)
-
-
-def test_geoff::source::mapquest_constructor_exists():
-    assert callable(geoff::source::MapQuest.__init__)
-
-
-def test_geoff::source::mapquest_constructor_args():
-    sig = inspect.signature(geoff::source::MapQuest.__init__)
+def test_geoff_source_mapquest_constructor_args():
+    sig = inspect.signature(geoff_source_MapQuest.__init__)
     params = list(sig.parameters.keys())
     assert "layer" in params, "Missing parameter 'layer'"
 
-def test_geoff::source::mapquest_has_layer():
-    assert hasattr(geoff::source::MapQuest, "layer")
+def test_geoff_source_mapquest_has_layer():
+    assert hasattr(geoff_source_MapQuest, "layer")
     descriptor = None
-    for klass in geoff::source::MapQuest.__mro__:
+    for klass in geoff_source_MapQuest.__mro__:
         if "layer" in klass.__dict__:
             descriptor = klass.__dict__["layer"]
             break
@@ -216,16 +182,50 @@ def test_geoff::source::mapquest_has_layer():
 
 
 
-def test_geoff::source::osm_is_not_abstract():
-    assert not inspect.isabstract(geoff::source::OSM)
+def test_geoff_source_bingmaps_is_not_abstract():
+    assert not inspect.isabstract(geoff_source_BingMaps)
 
 
-def test_geoff::source::osm_constructor_exists():
-    assert callable(geoff::source::OSM.__init__)
+def test_geoff_source_bingmaps_constructor_exists():
+    assert callable(geoff_source_BingMaps.__init__)
 
 
-def test_geoff::source::osm_constructor_args():
-    sig = inspect.signature(geoff::source::OSM.__init__)
+def test_geoff_source_bingmaps_constructor_args():
+    sig = inspect.signature(geoff_source_BingMaps.__init__)
+    params = list(sig.parameters.keys())
+    assert "key" in params, "Missing parameter 'key'"
+    assert "imagerySet" in params, "Missing parameter 'imagerySet'"
+
+def test_geoff_source_bingmaps_has_key():
+    assert hasattr(geoff_source_BingMaps, "key")
+    descriptor = None
+    for klass in geoff_source_BingMaps.__mro__:
+        if "key" in klass.__dict__:
+            descriptor = klass.__dict__["key"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_geoff_source_bingmaps_has_imagerySet():
+    assert hasattr(geoff_source_BingMaps, "imagerySet")
+    descriptor = None
+    for klass in geoff_source_BingMaps.__mro__:
+        if "imagerySet" in klass.__dict__:
+            descriptor = klass.__dict__["imagerySet"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_geoff_source_osm_is_not_abstract():
+    assert not inspect.isabstract(geoff_source_OSM)
+
+
+def test_geoff_source_osm_constructor_exists():
+    assert callable(geoff_source_OSM.__init__)
+
+
+def test_geoff_source_osm_constructor_args():
+    sig = inspect.signature(geoff_source_OSM.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -244,16 +244,16 @@ def test_tileimage_constructor_args():
 
 
 
-def test_style::geoff::color_is_not_abstract():
-    assert not inspect.isabstract(style::geoff::Color)
+def test_style_geoff_color_is_not_abstract():
+    assert not inspect.isabstract(style_geoff_Color)
 
 
-def test_style::geoff::color_constructor_exists():
-    assert callable(style::geoff::Color.__init__)
+def test_style_geoff_color_constructor_exists():
+    assert callable(style_geoff_Color.__init__)
 
 
-def test_style::geoff::color_constructor_args():
-    sig = inspect.signature(style::geoff::Color.__init__)
+def test_style_geoff_color_constructor_args():
+    sig = inspect.signature(style_geoff_Color.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -314,23 +314,23 @@ def test_image_constructor_args():
 
 
 
-def test_geoff::style::icon_is_not_abstract():
-    assert not inspect.isabstract(geoff::style::Icon)
+def test_geoff_style_icon_is_not_abstract():
+    assert not inspect.isabstract(geoff_style_Icon)
 
 
-def test_geoff::style::icon_constructor_exists():
-    assert callable(geoff::style::Icon.__init__)
+def test_geoff_style_icon_constructor_exists():
+    assert callable(geoff_style_Icon.__init__)
 
 
-def test_geoff::style::icon_constructor_args():
-    sig = inspect.signature(geoff::style::Icon.__init__)
+def test_geoff_style_icon_constructor_args():
+    sig = inspect.signature(geoff_style_Icon.__init__)
     params = list(sig.parameters.keys())
     assert "src" in params, "Missing parameter 'src'"
 
-def test_geoff::style::icon_has_src():
-    assert hasattr(geoff::style::Icon, "src")
+def test_geoff_style_icon_has_src():
+    assert hasattr(geoff_style_Icon, "src")
     descriptor = None
-    for klass in geoff::style::Icon.__mro__:
+    for klass in geoff_style_Icon.__mro__:
         if "src" in klass.__dict__:
             descriptor = klass.__dict__["src"]
             break
@@ -338,23 +338,23 @@ def test_geoff::style::icon_has_src():
 
 
 
-def test_geoff::style::circle_is_not_abstract():
-    assert not inspect.isabstract(geoff::style::Circle)
+def test_geoff_style_circle_is_not_abstract():
+    assert not inspect.isabstract(geoff_style_Circle)
 
 
-def test_geoff::style::circle_constructor_exists():
-    assert callable(geoff::style::Circle.__init__)
+def test_geoff_style_circle_constructor_exists():
+    assert callable(geoff_style_Circle.__init__)
 
 
-def test_geoff::style::circle_constructor_args():
-    sig = inspect.signature(geoff::style::Circle.__init__)
+def test_geoff_style_circle_constructor_args():
+    sig = inspect.signature(geoff_style_Circle.__init__)
     params = list(sig.parameters.keys())
     assert "radius" in params, "Missing parameter 'radius'"
 
-def test_geoff::style::circle_has_radius():
-    assert hasattr(geoff::style::Circle, "radius")
+def test_geoff_style_circle_has_radius():
+    assert hasattr(geoff_style_Circle, "radius")
     descriptor = None
-    for klass in geoff::style::Circle.__mro__:
+    for klass in geoff_style_Circle.__mro__:
         if "radius" in klass.__dict__:
             descriptor = klass.__dict__["radius"]
             break
@@ -362,37 +362,37 @@ def test_geoff::style::circle_has_radius():
 
 
 
-def test_geoff::geom::polygon_is_not_abstract():
-    assert not inspect.isabstract(geoff::geom::Polygon)
+def test_geoff_geom_polygon_is_not_abstract():
+    assert not inspect.isabstract(geoff_geom_Polygon)
 
 
-def test_geoff::geom::polygon_constructor_exists():
-    assert callable(geoff::geom::Polygon.__init__)
+def test_geoff_geom_polygon_constructor_exists():
+    assert callable(geoff_geom_Polygon.__init__)
 
 
-def test_geoff::geom::polygon_constructor_args():
-    sig = inspect.signature(geoff::geom::Polygon.__init__)
+def test_geoff_geom_polygon_constructor_args():
+    sig = inspect.signature(geoff_geom_Polygon.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_geoff::styleentry_is_not_abstract():
-    assert not inspect.isabstract(geoff::StyleEntry)
+def test_geoff_styleentry_is_not_abstract():
+    assert not inspect.isabstract(geoff_StyleEntry)
 
 
-def test_geoff::styleentry_constructor_exists():
-    assert callable(geoff::StyleEntry.__init__)
+def test_geoff_styleentry_constructor_exists():
+    assert callable(geoff_StyleEntry.__init__)
 
 
-def test_geoff::styleentry_constructor_args():
-    sig = inspect.signature(geoff::StyleEntry.__init__)
+def test_geoff_styleentry_constructor_args():
+    sig = inspect.signature(geoff_StyleEntry.__init__)
     params = list(sig.parameters.keys())
     assert "key" in params, "Missing parameter 'key'"
 
-def test_geoff::styleentry_has_key():
-    assert hasattr(geoff::StyleEntry, "key")
+def test_geoff_styleentry_has_key():
+    assert hasattr(geoff_StyleEntry, "key")
     descriptor = None
-    for klass in geoff::StyleEntry.__mro__:
+    for klass in geoff_StyleEntry.__mro__:
         if "key" in klass.__dict__:
             descriptor = klass.__dict__["key"]
             break
@@ -400,33 +400,33 @@ def test_geoff::styleentry_has_key():
 
 
 
-def test_geoff::stringtostringmapentry_is_not_abstract():
-    assert not inspect.isabstract(geoff::StringToStringMapEntry)
+def test_geoff_stringtostringmapentry_is_not_abstract():
+    assert not inspect.isabstract(geoff_StringToStringMapEntry)
 
 
-def test_geoff::stringtostringmapentry_constructor_exists():
-    assert callable(geoff::StringToStringMapEntry.__init__)
+def test_geoff_stringtostringmapentry_constructor_exists():
+    assert callable(geoff_StringToStringMapEntry.__init__)
 
 
-def test_geoff::stringtostringmapentry_constructor_args():
-    sig = inspect.signature(geoff::StringToStringMapEntry.__init__)
+def test_geoff_stringtostringmapentry_constructor_args():
+    sig = inspect.signature(geoff_StringToStringMapEntry.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
     assert "key" in params, "Missing parameter 'key'"
 
-def test_geoff::stringtostringmapentry_has_value():
-    assert hasattr(geoff::StringToStringMapEntry, "value")
+def test_geoff_stringtostringmapentry_has_value():
+    assert hasattr(geoff_StringToStringMapEntry, "value")
     descriptor = None
-    for klass in geoff::StringToStringMapEntry.__mro__:
+    for klass in geoff_StringToStringMapEntry.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
     assert isinstance(descriptor, property)
 
-def test_geoff::stringtostringmapentry_has_key():
-    assert hasattr(geoff::StringToStringMapEntry, "key")
+def test_geoff_stringtostringmapentry_has_key():
+    assert hasattr(geoff_StringToStringMapEntry, "key")
     descriptor = None
-    for klass in geoff::StringToStringMapEntry.__mro__:
+    for klass in geoff_StringToStringMapEntry.__mro__:
         if "key" in klass.__dict__:
             descriptor = klass.__dict__["key"]
             break
@@ -462,30 +462,30 @@ def test_geometry_constructor_args():
 
 
 
-def test_geoff::geom::simplegeometry_is_not_abstract():
-    assert not inspect.isabstract(geoff::geom::SimpleGeometry)
+def test_geoff_geom_simplegeometry_is_not_abstract():
+    assert not inspect.isabstract(geoff_geom_SimpleGeometry)
 
 
-def test_geoff::geom::simplegeometry_constructor_exists():
-    assert callable(geoff::geom::SimpleGeometry.__init__)
+def test_geoff_geom_simplegeometry_constructor_exists():
+    assert callable(geoff_geom_SimpleGeometry.__init__)
 
 
-def test_geoff::geom::simplegeometry_constructor_args():
-    sig = inspect.signature(geoff::geom::SimpleGeometry.__init__)
+def test_geoff_geom_simplegeometry_constructor_args():
+    sig = inspect.signature(geoff_geom_SimpleGeometry.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_geoff::source::xyz_is_not_abstract():
-    assert not inspect.isabstract(geoff::source::XYZ)
+def test_geoff_source_xyz_is_not_abstract():
+    assert not inspect.isabstract(geoff_source_XYZ)
 
 
-def test_geoff::source::xyz_constructor_exists():
-    assert callable(geoff::source::XYZ.__init__)
+def test_geoff_source_xyz_constructor_exists():
+    assert callable(geoff_source_XYZ.__init__)
 
 
-def test_geoff::source::xyz_constructor_args():
-    sig = inspect.signature(geoff::source::XYZ.__init__)
+def test_geoff_source_xyz_constructor_args():
+    sig = inspect.signature(geoff_source_XYZ.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -504,30 +504,30 @@ def test_tilesource_constructor_args():
 
 
 
-def test_geoff::source::tileimage_is_not_abstract():
-    assert not inspect.isabstract(geoff::source::TileImage)
+def test_geoff_source_tileimage_is_not_abstract():
+    assert not inspect.isabstract(geoff_source_TileImage)
 
 
-def test_geoff::source::tileimage_constructor_exists():
-    assert callable(geoff::source::TileImage.__init__)
+def test_geoff_source_tileimage_constructor_exists():
+    assert callable(geoff_source_TileImage.__init__)
 
 
-def test_geoff::source::tileimage_constructor_args():
-    sig = inspect.signature(geoff::source::TileImage.__init__)
+def test_geoff_source_tileimage_constructor_args():
+    sig = inspect.signature(geoff_source_TileImage.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_layer::geoff::styleentry_is_not_abstract():
-    assert not inspect.isabstract(layer::geoff::StyleEntry)
+def test_layer_geoff_styleentry_is_not_abstract():
+    assert not inspect.isabstract(layer_geoff_StyleEntry)
 
 
-def test_layer::geoff::styleentry_constructor_exists():
-    assert callable(layer::geoff::StyleEntry.__init__)
+def test_layer_geoff_styleentry_constructor_exists():
+    assert callable(layer_geoff_StyleEntry.__init__)
 
 
-def test_layer::geoff::styleentry_constructor_args():
-    sig = inspect.signature(layer::geoff::StyleEntry.__init__)
+def test_layer_geoff_styleentry_constructor_args():
+    sig = inspect.signature(layer_geoff_StyleEntry.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -546,61 +546,61 @@ def test_source_constructor_args():
 
 
 
-def test_geoff::source::tilesource_is_not_abstract():
-    assert not inspect.isabstract(geoff::source::TileSource)
+def test_geoff_source_vectorsource_is_not_abstract():
+    assert not inspect.isabstract(geoff_source_VectorSource)
 
 
-def test_geoff::source::tilesource_constructor_exists():
-    assert callable(geoff::source::TileSource.__init__)
+def test_geoff_source_vectorsource_constructor_exists():
+    assert callable(geoff_source_VectorSource.__init__)
 
 
-def test_geoff::source::tilesource_constructor_args():
-    sig = inspect.signature(geoff::source::TileSource.__init__)
+def test_geoff_source_vectorsource_constructor_args():
+    sig = inspect.signature(geoff_source_VectorSource.__init__)
     params = list(sig.parameters.keys())
-
-
-
-def test_geoff::source::vectorsource_is_not_abstract():
-    assert not inspect.isabstract(geoff::source::VectorSource)
-
-
-def test_geoff::source::vectorsource_constructor_exists():
-    assert callable(geoff::source::VectorSource.__init__)
-
-
-def test_geoff::source::vectorsource_constructor_args():
-    sig = inspect.signature(geoff::source::VectorSource.__init__)
-    params = list(sig.parameters.keys())
-    assert "format" in params, "Missing parameter 'format'"
     assert "projection" in params, "Missing parameter 'projection'"
+    assert "format" in params, "Missing parameter 'format'"
     assert "url" in params, "Missing parameter 'url'"
 
-def test_geoff::source::vectorsource_has_format():
-    assert hasattr(geoff::source::VectorSource, "format")
+def test_geoff_source_vectorsource_has_projection():
+    assert hasattr(geoff_source_VectorSource, "projection")
     descriptor = None
-    for klass in geoff::source::VectorSource.__mro__:
-        if "format" in klass.__dict__:
-            descriptor = klass.__dict__["format"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_geoff::source::vectorsource_has_projection():
-    assert hasattr(geoff::source::VectorSource, "projection")
-    descriptor = None
-    for klass in geoff::source::VectorSource.__mro__:
+    for klass in geoff_source_VectorSource.__mro__:
         if "projection" in klass.__dict__:
             descriptor = klass.__dict__["projection"]
             break
     assert isinstance(descriptor, property)
 
-def test_geoff::source::vectorsource_has_url():
-    assert hasattr(geoff::source::VectorSource, "url")
+def test_geoff_source_vectorsource_has_format():
+    assert hasattr(geoff_source_VectorSource, "format")
     descriptor = None
-    for klass in geoff::source::VectorSource.__mro__:
+    for klass in geoff_source_VectorSource.__mro__:
+        if "format" in klass.__dict__:
+            descriptor = klass.__dict__["format"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_geoff_source_vectorsource_has_url():
+    assert hasattr(geoff_source_VectorSource, "url")
+    descriptor = None
+    for klass in geoff_source_VectorSource.__mro__:
         if "url" in klass.__dict__:
             descriptor = klass.__dict__["url"]
             break
     assert isinstance(descriptor, property)
+
+
+
+def test_geoff_source_tilesource_is_not_abstract():
+    assert not inspect.isabstract(geoff_source_TileSource)
+
+
+def test_geoff_source_tilesource_constructor_exists():
+    assert callable(geoff_source_TileSource.__init__)
+
+
+def test_geoff_source_tilesource_constructor_args():
+    sig = inspect.signature(geoff_source_TileSource.__init__)
+    params = list(sig.parameters.keys())
 
 
 
@@ -632,143 +632,53 @@ def test_identifiable_constructor_args():
 
 
 
-def test_geoff::style::style_is_not_abstract():
-    assert not inspect.isabstract(geoff::style::Style)
+def test_geoff_color_is_not_abstract():
+    assert not inspect.isabstract(geoff_Color)
 
 
-def test_geoff::style::style_constructor_exists():
-    assert callable(geoff::style::Style.__init__)
+def test_geoff_color_constructor_exists():
+    assert callable(geoff_Color.__init__)
 
 
-def test_geoff::style::style_constructor_args():
-    sig = inspect.signature(geoff::style::Style.__init__)
+def test_geoff_color_constructor_args():
+    sig = inspect.signature(geoff_Color.__init__)
     params = list(sig.parameters.keys())
-    assert "zindex" in params, "Missing parameter 'zindex'"
-
-def test_geoff::style::style_has_zindex():
-    assert hasattr(geoff::style::Style, "zindex")
-    descriptor = None
-    for klass in geoff::style::Style.__mro__:
-        if "zindex" in klass.__dict__:
-            descriptor = klass.__dict__["zindex"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_geoff::style::image_is_not_abstract():
-    assert not inspect.isabstract(geoff::style::Image)
-
-
-def test_geoff::style::image_constructor_exists():
-    assert callable(geoff::style::Image.__init__)
-
-
-def test_geoff::style::image_constructor_args():
-    sig = inspect.signature(geoff::style::Image.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_geoff::style::fill_is_not_abstract():
-    assert not inspect.isabstract(geoff::style::Fill)
-
-
-def test_geoff::style::fill_constructor_exists():
-    assert callable(geoff::style::Fill.__init__)
-
-
-def test_geoff::style::fill_constructor_args():
-    sig = inspect.signature(geoff::style::Fill.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_geoff::layer::layer_is_not_abstract():
-    assert not inspect.isabstract(geoff::layer::Layer)
-
-
-def test_geoff::layer::layer_constructor_exists():
-    assert callable(geoff::layer::Layer.__init__)
-
-
-def test_geoff::layer::layer_constructor_args():
-    sig = inspect.signature(geoff::layer::Layer.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_geoff::feature_is_not_abstract():
-    assert not inspect.isabstract(geoff::Feature)
-
-
-def test_geoff::feature_constructor_exists():
-    assert callable(geoff::Feature.__init__)
-
-
-def test_geoff::feature_constructor_args():
-    sig = inspect.signature(geoff::Feature.__init__)
-    params = list(sig.parameters.keys())
-    assert "onclick" in params, "Missing parameter 'onclick'"
-
-def test_geoff::feature_has_onclick():
-    assert hasattr(geoff::Feature, "onclick")
-    descriptor = None
-    for klass in geoff::Feature.__mro__:
-        if "onclick" in klass.__dict__:
-            descriptor = klass.__dict__["onclick"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_geoff::color_is_not_abstract():
-    assert not inspect.isabstract(geoff::Color)
-
-
-def test_geoff::color_constructor_exists():
-    assert callable(geoff::Color.__init__)
-
-
-def test_geoff::color_constructor_args():
-    sig = inspect.signature(geoff::Color.__init__)
-    params = list(sig.parameters.keys())
-    assert "alpha" in params, "Missing parameter 'alpha'"
-    assert "green" in params, "Missing parameter 'green'"
     assert "red" in params, "Missing parameter 'red'"
+    assert "green" in params, "Missing parameter 'green'"
+    assert "alpha" in params, "Missing parameter 'alpha'"
     assert "blue" in params, "Missing parameter 'blue'"
 
-def test_geoff::color_has_alpha():
-    assert hasattr(geoff::Color, "alpha")
+def test_geoff_color_has_red():
+    assert hasattr(geoff_Color, "red")
     descriptor = None
-    for klass in geoff::Color.__mro__:
-        if "alpha" in klass.__dict__:
-            descriptor = klass.__dict__["alpha"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_geoff::color_has_green():
-    assert hasattr(geoff::Color, "green")
-    descriptor = None
-    for klass in geoff::Color.__mro__:
-        if "green" in klass.__dict__:
-            descriptor = klass.__dict__["green"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_geoff::color_has_red():
-    assert hasattr(geoff::Color, "red")
-    descriptor = None
-    for klass in geoff::Color.__mro__:
+    for klass in geoff_Color.__mro__:
         if "red" in klass.__dict__:
             descriptor = klass.__dict__["red"]
             break
     assert isinstance(descriptor, property)
 
-def test_geoff::color_has_blue():
-    assert hasattr(geoff::Color, "blue")
+def test_geoff_color_has_green():
+    assert hasattr(geoff_Color, "green")
     descriptor = None
-    for klass in geoff::Color.__mro__:
+    for klass in geoff_Color.__mro__:
+        if "green" in klass.__dict__:
+            descriptor = klass.__dict__["green"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_geoff_color_has_alpha():
+    assert hasattr(geoff_Color, "alpha")
+    descriptor = None
+    for klass in geoff_Color.__mro__:
+        if "alpha" in klass.__dict__:
+            descriptor = klass.__dict__["alpha"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_geoff_color_has_blue():
+    assert hasattr(geoff_Color, "blue")
+    descriptor = None
+    for klass in geoff_Color.__mro__:
         if "blue" in klass.__dict__:
             descriptor = klass.__dict__["blue"]
             break
@@ -776,223 +686,313 @@ def test_geoff::color_has_blue():
 
 
 
-def test_geoff::interaction::interaction_is_not_abstract():
-    assert not inspect.isabstract(geoff::interaction::Interaction)
+def test_geoff_style_image_is_not_abstract():
+    assert not inspect.isabstract(geoff_style_Image)
 
 
-def test_geoff::interaction::interaction_constructor_exists():
-    assert callable(geoff::interaction::Interaction.__init__)
+def test_geoff_style_image_constructor_exists():
+    assert callable(geoff_style_Image.__init__)
 
 
-def test_geoff::interaction::interaction_constructor_args():
-    sig = inspect.signature(geoff::interaction::Interaction.__init__)
+def test_geoff_style_image_constructor_args():
+    sig = inspect.signature(geoff_style_Image.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_geoff::source::source_is_not_abstract():
-    assert not inspect.isabstract(geoff::source::Source)
+def test_geoff_style_fill_is_not_abstract():
+    assert not inspect.isabstract(geoff_style_Fill)
 
 
-def test_geoff::source::source_constructor_exists():
-    assert callable(geoff::source::Source.__init__)
+def test_geoff_style_fill_constructor_exists():
+    assert callable(geoff_style_Fill.__init__)
 
 
-def test_geoff::source::source_constructor_args():
-    sig = inspect.signature(geoff::source::Source.__init__)
+def test_geoff_style_fill_constructor_args():
+    sig = inspect.signature(geoff_style_Fill.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_geoff::style::stroke_is_not_abstract():
-    assert not inspect.isabstract(geoff::style::Stroke)
+def test_geoff_feature_is_not_abstract():
+    assert not inspect.isabstract(geoff_Feature)
 
 
-def test_geoff::style::stroke_constructor_exists():
-    assert callable(geoff::style::Stroke.__init__)
+def test_geoff_feature_constructor_exists():
+    assert callable(geoff_Feature.__init__)
 
 
-def test_geoff::style::stroke_constructor_args():
-    sig = inspect.signature(geoff::style::Stroke.__init__)
+def test_geoff_feature_constructor_args():
+    sig = inspect.signature(geoff_Feature.__init__)
     params = list(sig.parameters.keys())
-    assert "miterLimit" in params, "Missing parameter 'miterLimit'"
-    assert "lineDash" in params, "Missing parameter 'lineDash'"
-    assert "lineCap" in params, "Missing parameter 'lineCap'"
-    assert "width" in params, "Missing parameter 'width'"
-    assert "lineJoin" in params, "Missing parameter 'lineJoin'"
+    assert "onclick" in params, "Missing parameter 'onclick'"
 
-def test_geoff::style::stroke_has_miterLimit():
-    assert hasattr(geoff::style::Stroke, "miterLimit")
+def test_geoff_feature_has_onclick():
+    assert hasattr(geoff_Feature, "onclick")
     descriptor = None
-    for klass in geoff::style::Stroke.__mro__:
-        if "miterLimit" in klass.__dict__:
-            descriptor = klass.__dict__["miterLimit"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_geoff::style::stroke_has_lineDash():
-    assert hasattr(geoff::style::Stroke, "lineDash")
-    descriptor = None
-    for klass in geoff::style::Stroke.__mro__:
-        if "lineDash" in klass.__dict__:
-            descriptor = klass.__dict__["lineDash"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_geoff::style::stroke_has_lineCap():
-    assert hasattr(geoff::style::Stroke, "lineCap")
-    descriptor = None
-    for klass in geoff::style::Stroke.__mro__:
-        if "lineCap" in klass.__dict__:
-            descriptor = klass.__dict__["lineCap"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_geoff::style::stroke_has_width():
-    assert hasattr(geoff::style::Stroke, "width")
-    descriptor = None
-    for klass in geoff::style::Stroke.__mro__:
-        if "width" in klass.__dict__:
-            descriptor = klass.__dict__["width"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_geoff::style::stroke_has_lineJoin():
-    assert hasattr(geoff::style::Stroke, "lineJoin")
-    descriptor = None
-    for klass in geoff::style::Stroke.__mro__:
-        if "lineJoin" in klass.__dict__:
-            descriptor = klass.__dict__["lineJoin"]
+    for klass in geoff_Feature.__mro__:
+        if "onclick" in klass.__dict__:
+            descriptor = klass.__dict__["onclick"]
             break
     assert isinstance(descriptor, property)
 
 
 
-def test_geoff::style::text_is_not_abstract():
-    assert not inspect.isabstract(geoff::style::Text)
+def test_geoff_source_source_is_not_abstract():
+    assert not inspect.isabstract(geoff_source_Source)
 
 
-def test_geoff::style::text_constructor_exists():
-    assert callable(geoff::style::Text.__init__)
+def test_geoff_source_source_constructor_exists():
+    assert callable(geoff_source_Source.__init__)
 
 
-def test_geoff::style::text_constructor_args():
-    sig = inspect.signature(geoff::style::Text.__init__)
+def test_geoff_source_source_constructor_args():
+    sig = inspect.signature(geoff_source_Source.__init__)
     params = list(sig.parameters.keys())
-    assert "font" in params, "Missing parameter 'font'"
-    assert "offsetX" in params, "Missing parameter 'offsetX'"
-    assert "offsetY" in params, "Missing parameter 'offsetY'"
-    assert "text" in params, "Missing parameter 'text'"
-    assert "rotation" in params, "Missing parameter 'rotation'"
+
+
+
+def test_geoff_style_style_is_not_abstract():
+    assert not inspect.isabstract(geoff_style_Style)
+
+
+def test_geoff_style_style_constructor_exists():
+    assert callable(geoff_style_Style.__init__)
+
+
+def test_geoff_style_style_constructor_args():
+    sig = inspect.signature(geoff_style_Style.__init__)
+    params = list(sig.parameters.keys())
+    assert "zindex" in params, "Missing parameter 'zindex'"
+
+def test_geoff_style_style_has_zindex():
+    assert hasattr(geoff_style_Style, "zindex")
+    descriptor = None
+    for klass in geoff_style_Style.__mro__:
+        if "zindex" in klass.__dict__:
+            descriptor = klass.__dict__["zindex"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_geoff_style_text_is_not_abstract():
+    assert not inspect.isabstract(geoff_style_Text)
+
+
+def test_geoff_style_text_constructor_exists():
+    assert callable(geoff_style_Text.__init__)
+
+
+def test_geoff_style_text_constructor_args():
+    sig = inspect.signature(geoff_style_Text.__init__)
+    params = list(sig.parameters.keys())
     assert "textAlign" in params, "Missing parameter 'textAlign'"
-    assert "scale" in params, "Missing parameter 'scale'"
+    assert "offsetY" in params, "Missing parameter 'offsetY'"
+    assert "rotation" in params, "Missing parameter 'rotation'"
     assert "textBaseLine" in params, "Missing parameter 'textBaseLine'"
+    assert "font" in params, "Missing parameter 'font'"
+    assert "text" in params, "Missing parameter 'text'"
+    assert "offsetX" in params, "Missing parameter 'offsetX'"
+    assert "scale" in params, "Missing parameter 'scale'"
 
-def test_geoff::style::text_has_font():
-    assert hasattr(geoff::style::Text, "font")
+def test_geoff_style_text_has_textAlign():
+    assert hasattr(geoff_style_Text, "textAlign")
     descriptor = None
-    for klass in geoff::style::Text.__mro__:
-        if "font" in klass.__dict__:
-            descriptor = klass.__dict__["font"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_geoff::style::text_has_offsetX():
-    assert hasattr(geoff::style::Text, "offsetX")
-    descriptor = None
-    for klass in geoff::style::Text.__mro__:
-        if "offsetX" in klass.__dict__:
-            descriptor = klass.__dict__["offsetX"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_geoff::style::text_has_offsetY():
-    assert hasattr(geoff::style::Text, "offsetY")
-    descriptor = None
-    for klass in geoff::style::Text.__mro__:
-        if "offsetY" in klass.__dict__:
-            descriptor = klass.__dict__["offsetY"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_geoff::style::text_has_text():
-    assert hasattr(geoff::style::Text, "text")
-    descriptor = None
-    for klass in geoff::style::Text.__mro__:
-        if "text" in klass.__dict__:
-            descriptor = klass.__dict__["text"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_geoff::style::text_has_rotation():
-    assert hasattr(geoff::style::Text, "rotation")
-    descriptor = None
-    for klass in geoff::style::Text.__mro__:
-        if "rotation" in klass.__dict__:
-            descriptor = klass.__dict__["rotation"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_geoff::style::text_has_textAlign():
-    assert hasattr(geoff::style::Text, "textAlign")
-    descriptor = None
-    for klass in geoff::style::Text.__mro__:
+    for klass in geoff_style_Text.__mro__:
         if "textAlign" in klass.__dict__:
             descriptor = klass.__dict__["textAlign"]
             break
     assert isinstance(descriptor, property)
 
-def test_geoff::style::text_has_scale():
-    assert hasattr(geoff::style::Text, "scale")
+def test_geoff_style_text_has_offsetY():
+    assert hasattr(geoff_style_Text, "offsetY")
     descriptor = None
-    for klass in geoff::style::Text.__mro__:
-        if "scale" in klass.__dict__:
-            descriptor = klass.__dict__["scale"]
+    for klass in geoff_style_Text.__mro__:
+        if "offsetY" in klass.__dict__:
+            descriptor = klass.__dict__["offsetY"]
             break
     assert isinstance(descriptor, property)
 
-def test_geoff::style::text_has_textBaseLine():
-    assert hasattr(geoff::style::Text, "textBaseLine")
+def test_geoff_style_text_has_rotation():
+    assert hasattr(geoff_style_Text, "rotation")
     descriptor = None
-    for klass in geoff::style::Text.__mro__:
+    for klass in geoff_style_Text.__mro__:
+        if "rotation" in klass.__dict__:
+            descriptor = klass.__dict__["rotation"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_geoff_style_text_has_textBaseLine():
+    assert hasattr(geoff_style_Text, "textBaseLine")
+    descriptor = None
+    for klass in geoff_style_Text.__mro__:
         if "textBaseLine" in klass.__dict__:
             descriptor = klass.__dict__["textBaseLine"]
             break
     assert isinstance(descriptor, property)
 
+def test_geoff_style_text_has_font():
+    assert hasattr(geoff_style_Text, "font")
+    descriptor = None
+    for klass in geoff_style_Text.__mro__:
+        if "font" in klass.__dict__:
+            descriptor = klass.__dict__["font"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_geoff_style_text_has_text():
+    assert hasattr(geoff_style_Text, "text")
+    descriptor = None
+    for klass in geoff_style_Text.__mro__:
+        if "text" in klass.__dict__:
+            descriptor = klass.__dict__["text"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_geoff_style_text_has_offsetX():
+    assert hasattr(geoff_style_Text, "offsetX")
+    descriptor = None
+    for klass in geoff_style_Text.__mro__:
+        if "offsetX" in klass.__dict__:
+            descriptor = klass.__dict__["offsetX"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_geoff_style_text_has_scale():
+    assert hasattr(geoff_style_Text, "scale")
+    descriptor = None
+    for klass in geoff_style_Text.__mro__:
+        if "scale" in klass.__dict__:
+            descriptor = klass.__dict__["scale"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_geoff::geom::geometry_is_not_abstract():
-    assert not inspect.isabstract(geoff::geom::Geometry)
+
+def test_geoff_style_stroke_is_not_abstract():
+    assert not inspect.isabstract(geoff_style_Stroke)
 
 
-def test_geoff::geom::geometry_constructor_exists():
-    assert callable(geoff::geom::Geometry.__init__)
+def test_geoff_style_stroke_constructor_exists():
+    assert callable(geoff_style_Stroke.__init__)
 
 
-def test_geoff::geom::geometry_constructor_args():
-    sig = inspect.signature(geoff::geom::Geometry.__init__)
+def test_geoff_style_stroke_constructor_args():
+    sig = inspect.signature(geoff_style_Stroke.__init__)
+    params = list(sig.parameters.keys())
+    assert "miterLimit" in params, "Missing parameter 'miterLimit'"
+    assert "lineDash" in params, "Missing parameter 'lineDash'"
+    assert "width" in params, "Missing parameter 'width'"
+    assert "lineJoin" in params, "Missing parameter 'lineJoin'"
+    assert "lineCap" in params, "Missing parameter 'lineCap'"
+
+def test_geoff_style_stroke_has_miterLimit():
+    assert hasattr(geoff_style_Stroke, "miterLimit")
+    descriptor = None
+    for klass in geoff_style_Stroke.__mro__:
+        if "miterLimit" in klass.__dict__:
+            descriptor = klass.__dict__["miterLimit"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_geoff_style_stroke_has_lineDash():
+    assert hasattr(geoff_style_Stroke, "lineDash")
+    descriptor = None
+    for klass in geoff_style_Stroke.__mro__:
+        if "lineDash" in klass.__dict__:
+            descriptor = klass.__dict__["lineDash"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_geoff_style_stroke_has_width():
+    assert hasattr(geoff_style_Stroke, "width")
+    descriptor = None
+    for klass in geoff_style_Stroke.__mro__:
+        if "width" in klass.__dict__:
+            descriptor = klass.__dict__["width"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_geoff_style_stroke_has_lineJoin():
+    assert hasattr(geoff_style_Stroke, "lineJoin")
+    descriptor = None
+    for klass in geoff_style_Stroke.__mro__:
+        if "lineJoin" in klass.__dict__:
+            descriptor = klass.__dict__["lineJoin"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_geoff_style_stroke_has_lineCap():
+    assert hasattr(geoff_style_Stroke, "lineCap")
+    descriptor = None
+    for klass in geoff_style_Stroke.__mro__:
+        if "lineCap" in klass.__dict__:
+            descriptor = klass.__dict__["lineCap"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_geoff_layer_layer_is_not_abstract():
+    assert not inspect.isabstract(geoff_layer_Layer)
+
+
+def test_geoff_layer_layer_constructor_exists():
+    assert callable(geoff_layer_Layer.__init__)
+
+
+def test_geoff_layer_layer_constructor_args():
+    sig = inspect.signature(geoff_layer_Layer.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_geoff::geomap_is_not_abstract():
-    assert not inspect.isabstract(geoff::GeoMap)
+def test_geoff_interaction_interaction_is_not_abstract():
+    assert not inspect.isabstract(geoff_interaction_Interaction)
 
 
-def test_geoff::geomap_constructor_exists():
-    assert callable(geoff::GeoMap.__init__)
+def test_geoff_interaction_interaction_constructor_exists():
+    assert callable(geoff_interaction_Interaction.__init__)
 
 
-def test_geoff::geomap_constructor_args():
-    sig = inspect.signature(geoff::GeoMap.__init__)
+def test_geoff_interaction_interaction_constructor_args():
+    sig = inspect.signature(geoff_interaction_Interaction.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_geoff_geom_geometry_is_not_abstract():
+    assert not inspect.isabstract(geoff_geom_Geometry)
+
+
+def test_geoff_geom_geometry_constructor_exists():
+    assert callable(geoff_geom_Geometry.__init__)
+
+
+def test_geoff_geom_geometry_constructor_args():
+    sig = inspect.signature(geoff_geom_Geometry.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_geoff_geomap_is_not_abstract():
+    assert not inspect.isabstract(geoff_GeoMap)
+
+
+def test_geoff_geomap_constructor_exists():
+    assert callable(geoff_GeoMap.__init__)
+
+
+def test_geoff_geomap_constructor_args():
+    sig = inspect.signature(geoff_GeoMap.__init__)
     params = list(sig.parameters.keys())
     assert "rendererHint" in params, "Missing parameter 'rendererHint'"
 
-def test_geoff::geomap_has_rendererHint():
-    assert hasattr(geoff::GeoMap, "rendererHint")
+def test_geoff_geomap_has_rendererHint():
+    assert hasattr(geoff_GeoMap, "rendererHint")
     descriptor = None
-    for klass in geoff::GeoMap.__mro__:
+    for klass in geoff_GeoMap.__mro__:
         if "rendererHint" in klass.__dict__:
             descriptor = klass.__dict__["rendererHint"]
             break
@@ -1000,33 +1000,33 @@ def test_geoff::geomap_has_rendererHint():
 
 
 
-def test_geoff::descriptive_is_not_abstract():
-    assert not inspect.isabstract(geoff::Descriptive)
+def test_geoff_descriptive_is_not_abstract():
+    assert not inspect.isabstract(geoff_Descriptive)
 
 
-def test_geoff::descriptive_constructor_exists():
-    assert callable(geoff::Descriptive.__init__)
+def test_geoff_descriptive_constructor_exists():
+    assert callable(geoff_Descriptive.__init__)
 
 
-def test_geoff::descriptive_constructor_args():
-    sig = inspect.signature(geoff::Descriptive.__init__)
+def test_geoff_descriptive_constructor_args():
+    sig = inspect.signature(geoff_Descriptive.__init__)
     params = list(sig.parameters.keys())
     assert "shortDescription" in params, "Missing parameter 'shortDescription'"
     assert "longDescription" in params, "Missing parameter 'longDescription'"
 
-def test_geoff::descriptive_has_shortDescription():
-    assert hasattr(geoff::Descriptive, "shortDescription")
+def test_geoff_descriptive_has_shortDescription():
+    assert hasattr(geoff_Descriptive, "shortDescription")
     descriptor = None
-    for klass in geoff::Descriptive.__mro__:
+    for klass in geoff_Descriptive.__mro__:
         if "shortDescription" in klass.__dict__:
             descriptor = klass.__dict__["shortDescription"]
             break
     assert isinstance(descriptor, property)
 
-def test_geoff::descriptive_has_longDescription():
-    assert hasattr(geoff::Descriptive, "longDescription")
+def test_geoff_descriptive_has_longDescription():
+    assert hasattr(geoff_Descriptive, "longDescription")
     descriptor = None
-    for klass in geoff::Descriptive.__mro__:
+    for klass in geoff_Descriptive.__mro__:
         if "longDescription" in klass.__dict__:
             descriptor = klass.__dict__["longDescription"]
             break
@@ -1034,23 +1034,23 @@ def test_geoff::descriptive_has_longDescription():
 
 
 
-def test_geoff::identifiable_is_not_abstract():
-    assert not inspect.isabstract(geoff::Identifiable)
+def test_geoff_identifiable_is_not_abstract():
+    assert not inspect.isabstract(geoff_Identifiable)
 
 
-def test_geoff::identifiable_constructor_exists():
-    assert callable(geoff::Identifiable.__init__)
+def test_geoff_identifiable_constructor_exists():
+    assert callable(geoff_Identifiable.__init__)
 
 
-def test_geoff::identifiable_constructor_args():
-    sig = inspect.signature(geoff::Identifiable.__init__)
+def test_geoff_identifiable_constructor_args():
+    sig = inspect.signature(geoff_Identifiable.__init__)
     params = list(sig.parameters.keys())
     assert "id" in params, "Missing parameter 'id'"
 
-def test_geoff::identifiable_has_id():
-    assert hasattr(geoff::Identifiable, "id")
+def test_geoff_identifiable_has_id():
+    assert hasattr(geoff_Identifiable, "id")
     descriptor = None
-    for klass in geoff::Identifiable.__mro__:
+    for klass in geoff_Identifiable.__mro__:
         if "id" in klass.__dict__:
             descriptor = klass.__dict__["id"]
             break
@@ -1072,43 +1072,43 @@ def test_location_constructor_args():
 
 
 
-def test_geoff::xyzlocation_is_not_abstract():
-    assert not inspect.isabstract(geoff::XYZLocation)
+def test_geoff_xyzlocation_is_not_abstract():
+    assert not inspect.isabstract(geoff_XYZLocation)
 
 
-def test_geoff::xyzlocation_constructor_exists():
-    assert callable(geoff::XYZLocation.__init__)
+def test_geoff_xyzlocation_constructor_exists():
+    assert callable(geoff_XYZLocation.__init__)
 
 
-def test_geoff::xyzlocation_constructor_args():
-    sig = inspect.signature(geoff::XYZLocation.__init__)
+def test_geoff_xyzlocation_constructor_args():
+    sig = inspect.signature(geoff_XYZLocation.__init__)
     params = list(sig.parameters.keys())
     assert "z" in params, "Missing parameter 'z'"
     assert "y" in params, "Missing parameter 'y'"
     assert "x" in params, "Missing parameter 'x'"
 
-def test_geoff::xyzlocation_has_z():
-    assert hasattr(geoff::XYZLocation, "z")
+def test_geoff_xyzlocation_has_z():
+    assert hasattr(geoff_XYZLocation, "z")
     descriptor = None
-    for klass in geoff::XYZLocation.__mro__:
+    for klass in geoff_XYZLocation.__mro__:
         if "z" in klass.__dict__:
             descriptor = klass.__dict__["z"]
             break
     assert isinstance(descriptor, property)
 
-def test_geoff::xyzlocation_has_y():
-    assert hasattr(geoff::XYZLocation, "y")
+def test_geoff_xyzlocation_has_y():
+    assert hasattr(geoff_XYZLocation, "y")
     descriptor = None
-    for klass in geoff::XYZLocation.__mro__:
+    for klass in geoff_XYZLocation.__mro__:
         if "y" in klass.__dict__:
             descriptor = klass.__dict__["y"]
             break
     assert isinstance(descriptor, property)
 
-def test_geoff::xyzlocation_has_x():
-    assert hasattr(geoff::XYZLocation, "x")
+def test_geoff_xyzlocation_has_x():
+    assert hasattr(geoff_XYZLocation, "x")
     descriptor = None
-    for klass in geoff::XYZLocation.__mro__:
+    for klass in geoff_XYZLocation.__mro__:
         if "x" in klass.__dict__:
             descriptor = klass.__dict__["x"]
             break
@@ -1116,23 +1116,23 @@ def test_geoff::xyzlocation_has_x():
 
 
 
-def test_geoff::location_is_not_abstract():
-    assert not inspect.isabstract(geoff::Location)
+def test_geoff_location_is_not_abstract():
+    assert not inspect.isabstract(geoff_Location)
 
 
-def test_geoff::location_constructor_exists():
-    assert callable(geoff::Location.__init__)
+def test_geoff_location_constructor_exists():
+    assert callable(geoff_Location.__init__)
 
 
-def test_geoff::location_constructor_args():
-    sig = inspect.signature(geoff::Location.__init__)
+def test_geoff_location_constructor_args():
+    sig = inspect.signature(geoff_Location.__init__)
     params = list(sig.parameters.keys())
     assert "projectionCode" in params, "Missing parameter 'projectionCode'"
 
-def test_geoff::location_has_projectionCode():
-    assert hasattr(geoff::Location, "projectionCode")
+def test_geoff_location_has_projectionCode():
+    assert hasattr(geoff_Location, "projectionCode")
     descriptor = None
-    for klass in geoff::Location.__mro__:
+    for klass in geoff_Location.__mro__:
         if "projectionCode" in klass.__dict__:
             descriptor = klass.__dict__["projectionCode"]
             break
@@ -1154,77 +1154,77 @@ def test_interaction_constructor_args():
 
 
 
-def test_geoff::interaction::select_is_not_abstract():
-    assert not inspect.isabstract(geoff::interaction::Select)
+def test_geoff_interaction_select_is_not_abstract():
+    assert not inspect.isabstract(geoff_interaction_Select)
 
 
-def test_geoff::interaction::select_constructor_exists():
-    assert callable(geoff::interaction::Select.__init__)
+def test_geoff_interaction_select_constructor_exists():
+    assert callable(geoff_interaction_Select.__init__)
 
 
-def test_geoff::interaction::select_constructor_args():
-    sig = inspect.signature(geoff::interaction::Select.__init__)
+def test_geoff_interaction_select_constructor_args():
+    sig = inspect.signature(geoff_interaction_Select.__init__)
     params = list(sig.parameters.keys())
-    assert "condition" in params, "Missing parameter 'condition'"
     assert "multi" in params, "Missing parameter 'multi'"
+    assert "condition" in params, "Missing parameter 'condition'"
 
-def test_geoff::interaction::select_has_condition():
-    assert hasattr(geoff::interaction::Select, "condition")
+def test_geoff_interaction_select_has_multi():
+    assert hasattr(geoff_interaction_Select, "multi")
     descriptor = None
-    for klass in geoff::interaction::Select.__mro__:
-        if "condition" in klass.__dict__:
-            descriptor = klass.__dict__["condition"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_geoff::interaction::select_has_multi():
-    assert hasattr(geoff::interaction::Select, "multi")
-    descriptor = None
-    for klass in geoff::interaction::Select.__mro__:
+    for klass in geoff_interaction_Select.__mro__:
         if "multi" in klass.__dict__:
             descriptor = klass.__dict__["multi"]
             break
     assert isinstance(descriptor, property)
 
-
-
-def test_geoff::script_is_not_abstract():
-    assert not inspect.isabstract(geoff::Script)
-
-
-def test_geoff::script_constructor_exists():
-    assert callable(geoff::Script.__init__)
-
-
-def test_geoff::script_constructor_args():
-    sig = inspect.signature(geoff::Script.__init__)
-    params = list(sig.parameters.keys())
-    assert "src" in params, "Missing parameter 'src'"
-    assert "type" in params, "Missing parameter 'type'"
-    assert "context" in params, "Missing parameter 'context'"
-
-def test_geoff::script_has_src():
-    assert hasattr(geoff::Script, "src")
+def test_geoff_interaction_select_has_condition():
+    assert hasattr(geoff_interaction_Select, "condition")
     descriptor = None
-    for klass in geoff::Script.__mro__:
-        if "src" in klass.__dict__:
-            descriptor = klass.__dict__["src"]
+    for klass in geoff_interaction_Select.__mro__:
+        if "condition" in klass.__dict__:
+            descriptor = klass.__dict__["condition"]
             break
     assert isinstance(descriptor, property)
 
-def test_geoff::script_has_type():
-    assert hasattr(geoff::Script, "type")
+
+
+def test_geoff_script_is_not_abstract():
+    assert not inspect.isabstract(geoff_Script)
+
+
+def test_geoff_script_constructor_exists():
+    assert callable(geoff_Script.__init__)
+
+
+def test_geoff_script_constructor_args():
+    sig = inspect.signature(geoff_Script.__init__)
+    params = list(sig.parameters.keys())
+    assert "type" in params, "Missing parameter 'type'"
+    assert "src" in params, "Missing parameter 'src'"
+    assert "context" in params, "Missing parameter 'context'"
+
+def test_geoff_script_has_type():
+    assert hasattr(geoff_Script, "type")
     descriptor = None
-    for klass in geoff::Script.__mro__:
+    for klass in geoff_Script.__mro__:
         if "type" in klass.__dict__:
             descriptor = klass.__dict__["type"]
             break
     assert isinstance(descriptor, property)
 
-def test_geoff::script_has_context():
-    assert hasattr(geoff::Script, "context")
+def test_geoff_script_has_src():
+    assert hasattr(geoff_Script, "src")
     descriptor = None
-    for klass in geoff::Script.__mro__:
+    for klass in geoff_Script.__mro__:
+        if "src" in klass.__dict__:
+            descriptor = klass.__dict__["src"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_geoff_script_has_context():
+    assert hasattr(geoff_Script, "context")
+    descriptor = None
+    for klass in geoff_Script.__mro__:
         if "context" in klass.__dict__:
             descriptor = klass.__dict__["context"]
             break
@@ -1232,23 +1232,23 @@ def test_geoff::script_has_context():
 
 
 
-def test_geoff::view_is_not_abstract():
-    assert not inspect.isabstract(geoff::View)
+def test_geoff_view_is_not_abstract():
+    assert not inspect.isabstract(geoff_View)
 
 
-def test_geoff::view_constructor_exists():
-    assert callable(geoff::View.__init__)
+def test_geoff_view_constructor_exists():
+    assert callable(geoff_View.__init__)
 
 
-def test_geoff::view_constructor_args():
-    sig = inspect.signature(geoff::View.__init__)
+def test_geoff_view_constructor_args():
+    sig = inspect.signature(geoff_View.__init__)
     params = list(sig.parameters.keys())
     assert "zoom" in params, "Missing parameter 'zoom'"
 
-def test_geoff::view_has_zoom():
-    assert hasattr(geoff::View, "zoom")
+def test_geoff_view_has_zoom():
+    assert hasattr(geoff_View, "zoom")
     descriptor = None
-    for klass in geoff::View.__mro__:
+    for klass in geoff_View.__mro__:
         if "zoom" in klass.__dict__:
             descriptor = klass.__dict__["zoom"]
             break
@@ -1270,47 +1270,31 @@ def test_layer_constructor_args():
 
 
 
-def test_geoff::layer::tilelayer_is_not_abstract():
-    assert not inspect.isabstract(geoff::layer::TileLayer)
+def test_geoff_layer_vectorlayer_is_not_abstract():
+    assert not inspect.isabstract(geoff_layer_VectorLayer)
 
 
-def test_geoff::layer::tilelayer_constructor_exists():
-    assert callable(geoff::layer::TileLayer.__init__)
+def test_geoff_layer_vectorlayer_constructor_exists():
+    assert callable(geoff_layer_VectorLayer.__init__)
 
 
-def test_geoff::layer::tilelayer_constructor_args():
-    sig = inspect.signature(geoff::layer::TileLayer.__init__)
+def test_geoff_layer_vectorlayer_constructor_args():
+    sig = inspect.signature(geoff_layer_VectorLayer.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_geoff::layer::vectorlayer_is_not_abstract():
-    assert not inspect.isabstract(geoff::layer::VectorLayer)
+def test_geoff_layer_tilelayer_is_not_abstract():
+    assert not inspect.isabstract(geoff_layer_TileLayer)
 
 
-def test_geoff::layer::vectorlayer_constructor_exists():
-    assert callable(geoff::layer::VectorLayer.__init__)
+def test_geoff_layer_tilelayer_constructor_exists():
+    assert callable(geoff_layer_TileLayer.__init__)
 
 
-def test_geoff::layer::vectorlayer_constructor_args():
-    sig = inspect.signature(geoff::layer::VectorLayer.__init__)
+def test_geoff_layer_tilelayer_constructor_args():
+    sig = inspect.signature(geoff_layer_TileLayer.__init__)
     params = list(sig.parameters.keys())
-
-def test_eventcondition_exists():
-    # Check that the Enumeration exists
-    assert EventCondition is not None
-
-def test_eventcondition_has_all_literals():
-    # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in EventCondition]
-    expected_literals = [
-        "HOVER",
-        "CLICK",
-        "SINGLE_CLICK",
-    ]
-    # Check that all expected literals exist
-    for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in EventCondition"
 
 def test_rendererhint_exists():
     # Check that the Enumeration exists
@@ -1320,30 +1304,29 @@ def test_rendererhint_has_all_literals():
     # Collect the names of literals in this Enumeration
     enum_literals = [lit.name for lit in RendererHint]
     expected_literals = [
-        "WEBGL",
         "CANVAS",
+        "WEBGL",
         "DOM",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
         assert lit_name in enum_literals, f"Literal '' missing in RendererHint"
 
-def test_sourceformat_exists():
+def test_eventcondition_exists():
     # Check that the Enumeration exists
-    assert SourceFormat is not None
+    assert EventCondition is not None
 
-def test_sourceformat_has_all_literals():
+def test_eventcondition_has_all_literals():
     # Collect the names of literals in this Enumeration
-    enum_literals = [lit.name for lit in SourceFormat]
+    enum_literals = [lit.name for lit in EventCondition]
     expected_literals = [
-        "GPX",
-        "GeoJSON",
-        "KML",
-        "INTERNAL",
+        "SINGLE_CLICK",
+        "CLICK",
+        "HOVER",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
-        assert lit_name in enum_literals, f"Literal '' missing in SourceFormat"
+        assert lit_name in enum_literals, f"Literal '' missing in EventCondition"
 
 def test_scriptcontext_exists():
     # Check that the Enumeration exists
@@ -1353,13 +1336,30 @@ def test_scriptcontext_has_all_literals():
     # Collect the names of literals in this Enumeration
     enum_literals = [lit.name for lit in ScriptContext]
     expected_literals = [
-        "GLOBAL",
         "LAYER",
         "MAP",
+        "GLOBAL",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
         assert lit_name in enum_literals, f"Literal '' missing in ScriptContext"
+
+def test_sourceformat_exists():
+    # Check that the Enumeration exists
+    assert SourceFormat is not None
+
+def test_sourceformat_has_all_literals():
+    # Collect the names of literals in this Enumeration
+    enum_literals = [lit.name for lit in SourceFormat]
+    expected_literals = [
+        "KML",
+        "GPX",
+        "INTERNAL",
+        "GeoJSON",
+    ]
+    # Check that all expected literals exist
+    for lit_name in expected_literals:
+        assert lit_name in enum_literals, f"Literal '' missing in SourceFormat"
 
 
 # =============================================================================
@@ -1373,44 +1373,44 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-geom::geoff::Location_strategy = st.builds(
-    geom::geoff::Location,
+geom_geoff_Location_strategy = st.builds(
+    geom_geoff_Location,
 )
 SimpleGeometry_strategy = st.builds(
     SimpleGeometry,
 )
-geoff::geom::LineString_strategy = st.builds(
-    geoff::geom::LineString,
+geoff_geom_LineString_strategy = st.builds(
+    geoff_geom_LineString,
 )
-geoff::geom::Point_strategy = st.builds(
-    geoff::geom::Point,
+geoff_geom_Point_strategy = st.builds(
+    geoff_geom_Point,
 )
-source::geoff::Feature_strategy = st.builds(
-    source::geoff::Feature,
+source_geoff_Feature_strategy = st.builds(
+    source_geoff_Feature,
 )
 XYZ_strategy = st.builds(
     XYZ,
 )
-geoff::source::BingMaps_strategy = st.builds(
-    geoff::source::BingMaps,
+geoff_source_MapQuest_strategy = st.builds(
+    geoff_source_MapQuest,
+    layer=
+        safe_text
+)
+geoff_source_BingMaps_strategy = st.builds(
+    geoff_source_BingMaps,
     key=
         safe_text,
     imagerySet=
         safe_text
 )
-geoff::source::MapQuest_strategy = st.builds(
-    geoff::source::MapQuest,
-    layer=
-        safe_text
-)
-geoff::source::OSM_strategy = st.builds(
-    geoff::source::OSM,
+geoff_source_OSM_strategy = st.builds(
+    geoff_source_OSM,
 )
 TileImage_strategy = st.builds(
     TileImage,
 )
-style::geoff::Color_strategy = st.builds(
-    style::geoff::Color,
+style_geoff_Color_strategy = st.builds(
+    style_geoff_Color,
 )
 Text_strategy = st.builds(
     Text,
@@ -1424,26 +1424,26 @@ Fill_strategy = st.builds(
 Image_strategy = st.builds(
     Image,
 )
-geoff::style::Icon_strategy = st.builds(
-    geoff::style::Icon,
+geoff_style_Icon_strategy = st.builds(
+    geoff_style_Icon,
     src=
         safe_text
 )
-geoff::style::Circle_strategy = st.builds(
-    geoff::style::Circle,
+geoff_style_Circle_strategy = st.builds(
+    geoff_style_Circle,
     radius=
         st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False)
 )
-geoff::geom::Polygon_strategy = st.builds(
-    geoff::geom::Polygon,
+geoff_geom_Polygon_strategy = st.builds(
+    geoff_geom_Polygon,
 )
-geoff::StyleEntry_strategy = st.builds(
-    geoff::StyleEntry,
+geoff_StyleEntry_strategy = st.builds(
+    geoff_StyleEntry,
     key=
         safe_text
 )
-geoff::StringToStringMapEntry_strategy = st.builds(
-    geoff::StringToStringMapEntry,
+geoff_StringToStringMapEntry_strategy = st.builds(
+    geoff_StringToStringMapEntry,
     value=
         safe_text,
     key=
@@ -1455,35 +1455,35 @@ Style_strategy = st.builds(
 Geometry_strategy = st.builds(
     Geometry,
 )
-geoff::geom::SimpleGeometry_strategy = st.builds(
-    geoff::geom::SimpleGeometry,
+geoff_geom_SimpleGeometry_strategy = st.builds(
+    geoff_geom_SimpleGeometry,
 )
-geoff::source::XYZ_strategy = st.builds(
-    geoff::source::XYZ,
+geoff_source_XYZ_strategy = st.builds(
+    geoff_source_XYZ,
 )
 TileSource_strategy = st.builds(
     TileSource,
 )
-geoff::source::TileImage_strategy = st.builds(
-    geoff::source::TileImage,
+geoff_source_TileImage_strategy = st.builds(
+    geoff_source_TileImage,
 )
-layer::geoff::StyleEntry_strategy = st.builds(
-    layer::geoff::StyleEntry,
+layer_geoff_StyleEntry_strategy = st.builds(
+    layer_geoff_StyleEntry,
 )
 Source_strategy = st.builds(
     Source,
 )
-geoff::source::TileSource_strategy = st.builds(
-    geoff::source::TileSource,
-)
-geoff::source::VectorSource_strategy = st.builds(
-    geoff::source::VectorSource,
-    format=
-        safe_text,
+geoff_source_VectorSource_strategy = st.builds(
+    geoff_source_VectorSource,
     projection=
+        safe_text,
+    format=
         safe_text,
     url=
         safe_text
+)
+geoff_source_TileSource_strategy = st.builds(
+    geoff_source_TileSource,
 )
 Descriptive_strategy = st.builds(
     Descriptive,
@@ -1491,99 +1491,99 @@ Descriptive_strategy = st.builds(
 Identifiable_strategy = st.builds(
     Identifiable,
 )
-geoff::style::Style_strategy = st.builds(
-    geoff::style::Style,
-    zindex=
-        safe_text
-)
-geoff::style::Image_strategy = st.builds(
-    geoff::style::Image,
-)
-geoff::style::Fill_strategy = st.builds(
-    geoff::style::Fill,
-)
-geoff::layer::Layer_strategy = st.builds(
-    geoff::layer::Layer,
-)
-geoff::Feature_strategy = st.builds(
-    geoff::Feature,
-    onclick=
-        safe_text
-)
-geoff::Color_strategy = st.builds(
-    geoff::Color,
-    alpha=
-        st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False),
-    green=
-        st.integers(),
+geoff_Color_strategy = st.builds(
+    geoff_Color,
     red=
         st.integers(),
+    green=
+        st.integers(),
+    alpha=
+        st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False),
     blue=
         st.integers()
 )
-geoff::interaction::Interaction_strategy = st.builds(
-    geoff::interaction::Interaction,
+geoff_style_Image_strategy = st.builds(
+    geoff_style_Image,
 )
-geoff::source::Source_strategy = st.builds(
-    geoff::source::Source,
+geoff_style_Fill_strategy = st.builds(
+    geoff_style_Fill,
 )
-geoff::style::Stroke_strategy = st.builds(
-    geoff::style::Stroke,
+geoff_Feature_strategy = st.builds(
+    geoff_Feature,
+    onclick=
+        safe_text
+)
+geoff_source_Source_strategy = st.builds(
+    geoff_source_Source,
+)
+geoff_style_Style_strategy = st.builds(
+    geoff_style_Style,
+    zindex=
+        safe_text
+)
+geoff_style_Text_strategy = st.builds(
+    geoff_style_Text,
+    textAlign=
+        safe_text,
+    offsetY=
+        st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False),
+    rotation=
+        safe_text,
+    textBaseLine=
+        safe_text,
+    font=
+        safe_text,
+    text=
+        safe_text,
+    offsetX=
+        st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False),
+    scale=
+        safe_text
+)
+geoff_style_Stroke_strategy = st.builds(
+    geoff_style_Stroke,
     miterLimit=
         safe_text,
     lineDash=
         st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False),
-    lineCap=
-        safe_text,
     width=
         safe_text,
     lineJoin=
+        safe_text,
+    lineCap=
         safe_text
 )
-geoff::style::Text_strategy = st.builds(
-    geoff::style::Text,
-    font=
-        safe_text,
-    offsetX=
-        st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False),
-    offsetY=
-        st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False),
-    text=
-        safe_text,
-    rotation=
-        safe_text,
-    textAlign=
-        safe_text,
-    scale=
-        safe_text,
-    textBaseLine=
-        safe_text
+geoff_layer_Layer_strategy = st.builds(
+    geoff_layer_Layer,
 )
-geoff::geom::Geometry_strategy = st.builds(
-    geoff::geom::Geometry,
+geoff_interaction_Interaction_strategy = st.builds(
+    geoff_interaction_Interaction,
 )
-geoff::GeoMap_strategy = st.builds(
-    geoff::GeoMap,
+geoff_geom_Geometry_strategy = st.builds(
+    geoff_geom_Geometry,
+)
+geoff_GeoMap_strategy = st.builds(
+    geoff_GeoMap,
     rendererHint=
         safe_text
 )
-geoff::Descriptive_strategy = st.builds(
-    geoff::Descriptive,
+geoff_Descriptive_strategy = st.builds(
+    geoff_Descriptive,
     shortDescription=
         safe_text,
     longDescription=
         safe_text
 )
-geoff::Identifiable_strategy = st.builds(
-    geoff::Identifiable,
+geoff_Identifiable_strategy = st.builds(
+    geoff_Identifiable,
     id=
         safe_text
 )
 Location_strategy = st.builds(
     Location,
 )
-geoff::XYZLocation_strategy = st.builds(
-    geoff::XYZLocation,
+geoff_XYZLocation_strategy = st.builds(
+    geoff_XYZLocation,
     z=
         st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False),
     y=
@@ -1591,132 +1591,123 @@ geoff::XYZLocation_strategy = st.builds(
     x=
         st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False)
 )
-geoff::Location_strategy = st.builds(
-    geoff::Location,
+geoff_Location_strategy = st.builds(
+    geoff_Location,
     projectionCode=
         safe_text
 )
 Interaction_strategy = st.builds(
     Interaction,
 )
-geoff::interaction::Select_strategy = st.builds(
-    geoff::interaction::Select,
-    condition=
-        safe_text,
+geoff_interaction_Select_strategy = st.builds(
+    geoff_interaction_Select,
     multi=
-        st.booleans()
+        st.booleans(),
+    condition=
+        safe_text
 )
-geoff::Script_strategy = st.builds(
-    geoff::Script,
-    src=
-        safe_text,
+geoff_Script_strategy = st.builds(
+    geoff_Script,
     type=
+        safe_text,
+    src=
         safe_text,
     context=
         safe_text
 )
-geoff::View_strategy = st.builds(
-    geoff::View,
+geoff_View_strategy = st.builds(
+    geoff_View,
     zoom=
         st.integers()
 )
 Layer_strategy = st.builds(
     Layer,
 )
-geoff::layer::TileLayer_strategy = st.builds(
-    geoff::layer::TileLayer,
+geoff_layer_VectorLayer_strategy = st.builds(
+    geoff_layer_VectorLayer,
 )
-geoff::layer::VectorLayer_strategy = st.builds(
-    geoff::layer::VectorLayer,
+geoff_layer_TileLayer_strategy = st.builds(
+    geoff_layer_TileLayer,
 )
 
-@given(instance=geom::geoff::Location_strategy)
+@given(instance=geom_geoff_Location_strategy)
 @settings(max_examples=50)
-def test_geom::geoff::location_instantiation(instance):
-    assert isinstance(instance, geom::geoff::Location)
+def test_geom_geoff_location_instantiation(instance):
+    assert isinstance(instance, geom_geoff_Location)
 
 @given(instance=SimpleGeometry_strategy)
 @settings(max_examples=50)
 def test_simplegeometry_instantiation(instance):
     assert isinstance(instance, SimpleGeometry)
 
-@given(instance=geoff::geom::LineString_strategy)
+@given(instance=geoff_geom_LineString_strategy)
 @settings(max_examples=50)
-def test_geoff::geom::linestring_instantiation(instance):
-    assert isinstance(instance, geoff::geom::LineString)
+def test_geoff_geom_linestring_instantiation(instance):
+    assert isinstance(instance, geoff_geom_LineString)
 
-@given(instance=geoff::geom::Point_strategy)
+@given(instance=geoff_geom_Point_strategy)
 @settings(max_examples=50)
-def test_geoff::geom::point_instantiation(instance):
-    assert isinstance(instance, geoff::geom::Point)
+def test_geoff_geom_point_instantiation(instance):
+    assert isinstance(instance, geoff_geom_Point)
 
-@given(instance=source::geoff::Feature_strategy)
+@given(instance=source_geoff_Feature_strategy)
 @settings(max_examples=50)
-def test_source::geoff::feature_instantiation(instance):
-    assert isinstance(instance, source::geoff::Feature)
+def test_source_geoff_feature_instantiation(instance):
+    assert isinstance(instance, source_geoff_Feature)
 
 @given(instance=XYZ_strategy)
 @settings(max_examples=50)
 def test_xyz_instantiation(instance):
     assert isinstance(instance, XYZ)
 
-@given(instance=geoff::source::BingMaps_strategy)
+@given(instance=geoff_source_MapQuest_strategy)
 @settings(max_examples=50)
-def test_geoff::source::bingmaps_instantiation(instance):
-    assert isinstance(instance, geoff::source::BingMaps)
-
-@given(instance=geoff::source::BingMaps_strategy)
-def test_geoff::source::bingmaps_key_type(instance):
-    assert isinstance(instance.key, str)
+def test_geoff_source_mapquest_instantiation(instance):
+    assert isinstance(instance, geoff_source_MapQuest)
 
 
-@given(instance=geoff::source::BingMaps_strategy)
-def test_geoff::source::bingmaps_key_setter(instance):
-    original = instance.key
-    instance.key = original
-    assert instance.key == original
 
-@given(instance=geoff::source::BingMaps_strategy)
-def test_geoff::source::bingmaps_imagerySet_type(instance):
-    assert isinstance(instance.imagerySet, str)
-
-
-@given(instance=geoff::source::BingMaps_strategy)
-def test_geoff::source::bingmaps_imagerySet_setter(instance):
-    original = instance.imagerySet
-    instance.imagerySet = original
-    assert instance.imagerySet == original
-
-@given(instance=geoff::source::MapQuest_strategy)
-@settings(max_examples=50)
-def test_geoff::source::mapquest_instantiation(instance):
-    assert isinstance(instance, geoff::source::MapQuest)
-
-@given(instance=geoff::source::MapQuest_strategy)
-def test_geoff::source::mapquest_layer_type(instance):
-    assert isinstance(instance.layer, str)
-
-
-@given(instance=geoff::source::MapQuest_strategy)
-def test_geoff::source::mapquest_layer_setter(instance):
+@given(instance=geoff_source_MapQuest_strategy)
+def test_geoff_source_mapquest_layer_setter(instance):
     original = instance.layer
     instance.layer = original
     assert instance.layer == original
 
-@given(instance=geoff::source::OSM_strategy)
+@given(instance=geoff_source_BingMaps_strategy)
 @settings(max_examples=50)
-def test_geoff::source::osm_instantiation(instance):
-    assert isinstance(instance, geoff::source::OSM)
+def test_geoff_source_bingmaps_instantiation(instance):
+    assert isinstance(instance, geoff_source_BingMaps)
+
+
+
+@given(instance=geoff_source_BingMaps_strategy)
+def test_geoff_source_bingmaps_key_setter(instance):
+    original = instance.key
+    instance.key = original
+    assert instance.key == original
+
+
+
+@given(instance=geoff_source_BingMaps_strategy)
+def test_geoff_source_bingmaps_imagerySet_setter(instance):
+    original = instance.imagerySet
+    instance.imagerySet = original
+    assert instance.imagerySet == original
+
+@given(instance=geoff_source_OSM_strategy)
+@settings(max_examples=50)
+def test_geoff_source_osm_instantiation(instance):
+    assert isinstance(instance, geoff_source_OSM)
 
 @given(instance=TileImage_strategy)
 @settings(max_examples=50)
 def test_tileimage_instantiation(instance):
     assert isinstance(instance, TileImage)
 
-@given(instance=style::geoff::Color_strategy)
+@given(instance=style_geoff_Color_strategy)
 @settings(max_examples=50)
-def test_style::geoff::color_instantiation(instance):
-    assert isinstance(instance, style::geoff::Color)
+def test_style_geoff_color_instantiation(instance):
+    assert isinstance(instance, style_geoff_Color)
 
 @given(instance=Text_strategy)
 @settings(max_examples=50)
@@ -1738,82 +1729,67 @@ def test_fill_instantiation(instance):
 def test_image_instantiation(instance):
     assert isinstance(instance, Image)
 
-@given(instance=geoff::style::Icon_strategy)
+@given(instance=geoff_style_Icon_strategy)
 @settings(max_examples=50)
-def test_geoff::style::icon_instantiation(instance):
-    assert isinstance(instance, geoff::style::Icon)
-
-@given(instance=geoff::style::Icon_strategy)
-def test_geoff::style::icon_src_type(instance):
-    assert isinstance(instance.src, str)
+def test_geoff_style_icon_instantiation(instance):
+    assert isinstance(instance, geoff_style_Icon)
 
 
-@given(instance=geoff::style::Icon_strategy)
-def test_geoff::style::icon_src_setter(instance):
+
+@given(instance=geoff_style_Icon_strategy)
+def test_geoff_style_icon_src_setter(instance):
     original = instance.src
     instance.src = original
     assert instance.src == original
 
-@given(instance=geoff::style::Circle_strategy)
+@given(instance=geoff_style_Circle_strategy)
 @settings(max_examples=50)
-def test_geoff::style::circle_instantiation(instance):
-    assert isinstance(instance, geoff::style::Circle)
-
-@given(instance=geoff::style::Circle_strategy)
-def test_geoff::style::circle_radius_type(instance):
-    assert isinstance(instance.radius, float)
+def test_geoff_style_circle_instantiation(instance):
+    assert isinstance(instance, geoff_style_Circle)
 
 
-@given(instance=geoff::style::Circle_strategy)
-def test_geoff::style::circle_radius_setter(instance):
+
+@given(instance=geoff_style_Circle_strategy)
+def test_geoff_style_circle_radius_setter(instance):
     original = instance.radius
     instance.radius = original
     assert instance.radius == original
 
-@given(instance=geoff::geom::Polygon_strategy)
+@given(instance=geoff_geom_Polygon_strategy)
 @settings(max_examples=50)
-def test_geoff::geom::polygon_instantiation(instance):
-    assert isinstance(instance, geoff::geom::Polygon)
+def test_geoff_geom_polygon_instantiation(instance):
+    assert isinstance(instance, geoff_geom_Polygon)
 
-@given(instance=geoff::StyleEntry_strategy)
+@given(instance=geoff_StyleEntry_strategy)
 @settings(max_examples=50)
-def test_geoff::styleentry_instantiation(instance):
-    assert isinstance(instance, geoff::StyleEntry)
-
-@given(instance=geoff::StyleEntry_strategy)
-def test_geoff::styleentry_key_type(instance):
-    assert isinstance(instance.key, str)
+def test_geoff_styleentry_instantiation(instance):
+    assert isinstance(instance, geoff_StyleEntry)
 
 
-@given(instance=geoff::StyleEntry_strategy)
-def test_geoff::styleentry_key_setter(instance):
+
+@given(instance=geoff_StyleEntry_strategy)
+def test_geoff_styleentry_key_setter(instance):
     original = instance.key
     instance.key = original
     assert instance.key == original
 
-@given(instance=geoff::StringToStringMapEntry_strategy)
+@given(instance=geoff_StringToStringMapEntry_strategy)
 @settings(max_examples=50)
-def test_geoff::stringtostringmapentry_instantiation(instance):
-    assert isinstance(instance, geoff::StringToStringMapEntry)
-
-@given(instance=geoff::StringToStringMapEntry_strategy)
-def test_geoff::stringtostringmapentry_value_type(instance):
-    assert isinstance(instance.value, str)
+def test_geoff_stringtostringmapentry_instantiation(instance):
+    assert isinstance(instance, geoff_StringToStringMapEntry)
 
 
-@given(instance=geoff::StringToStringMapEntry_strategy)
-def test_geoff::stringtostringmapentry_value_setter(instance):
+
+@given(instance=geoff_StringToStringMapEntry_strategy)
+def test_geoff_stringtostringmapentry_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
 
-@given(instance=geoff::StringToStringMapEntry_strategy)
-def test_geoff::stringtostringmapentry_key_type(instance):
-    assert isinstance(instance.key, str)
 
 
-@given(instance=geoff::StringToStringMapEntry_strategy)
-def test_geoff::stringtostringmapentry_key_setter(instance):
+@given(instance=geoff_StringToStringMapEntry_strategy)
+def test_geoff_stringtostringmapentry_key_setter(instance):
     original = instance.key
     instance.key = original
     assert instance.key == original
@@ -1828,78 +1804,69 @@ def test_style_instantiation(instance):
 def test_geometry_instantiation(instance):
     assert isinstance(instance, Geometry)
 
-@given(instance=geoff::geom::SimpleGeometry_strategy)
+@given(instance=geoff_geom_SimpleGeometry_strategy)
 @settings(max_examples=50)
-def test_geoff::geom::simplegeometry_instantiation(instance):
-    assert isinstance(instance, geoff::geom::SimpleGeometry)
+def test_geoff_geom_simplegeometry_instantiation(instance):
+    assert isinstance(instance, geoff_geom_SimpleGeometry)
 
-@given(instance=geoff::source::XYZ_strategy)
+@given(instance=geoff_source_XYZ_strategy)
 @settings(max_examples=50)
-def test_geoff::source::xyz_instantiation(instance):
-    assert isinstance(instance, geoff::source::XYZ)
+def test_geoff_source_xyz_instantiation(instance):
+    assert isinstance(instance, geoff_source_XYZ)
 
 @given(instance=TileSource_strategy)
 @settings(max_examples=50)
 def test_tilesource_instantiation(instance):
     assert isinstance(instance, TileSource)
 
-@given(instance=geoff::source::TileImage_strategy)
+@given(instance=geoff_source_TileImage_strategy)
 @settings(max_examples=50)
-def test_geoff::source::tileimage_instantiation(instance):
-    assert isinstance(instance, geoff::source::TileImage)
+def test_geoff_source_tileimage_instantiation(instance):
+    assert isinstance(instance, geoff_source_TileImage)
 
-@given(instance=layer::geoff::StyleEntry_strategy)
+@given(instance=layer_geoff_StyleEntry_strategy)
 @settings(max_examples=50)
-def test_layer::geoff::styleentry_instantiation(instance):
-    assert isinstance(instance, layer::geoff::StyleEntry)
+def test_layer_geoff_styleentry_instantiation(instance):
+    assert isinstance(instance, layer_geoff_StyleEntry)
 
 @given(instance=Source_strategy)
 @settings(max_examples=50)
 def test_source_instantiation(instance):
     assert isinstance(instance, Source)
 
-@given(instance=geoff::source::TileSource_strategy)
+@given(instance=geoff_source_VectorSource_strategy)
 @settings(max_examples=50)
-def test_geoff::source::tilesource_instantiation(instance):
-    assert isinstance(instance, geoff::source::TileSource)
-
-@given(instance=geoff::source::VectorSource_strategy)
-@settings(max_examples=50)
-def test_geoff::source::vectorsource_instantiation(instance):
-    assert isinstance(instance, geoff::source::VectorSource)
-
-@given(instance=geoff::source::VectorSource_strategy)
-def test_geoff::source::vectorsource_format_type(instance):
-    assert isinstance(instance.format, str)
+def test_geoff_source_vectorsource_instantiation(instance):
+    assert isinstance(instance, geoff_source_VectorSource)
 
 
-@given(instance=geoff::source::VectorSource_strategy)
-def test_geoff::source::vectorsource_format_setter(instance):
-    original = instance.format
-    instance.format = original
-    assert instance.format == original
 
-@given(instance=geoff::source::VectorSource_strategy)
-def test_geoff::source::vectorsource_projection_type(instance):
-    assert isinstance(instance.projection, str)
-
-
-@given(instance=geoff::source::VectorSource_strategy)
-def test_geoff::source::vectorsource_projection_setter(instance):
+@given(instance=geoff_source_VectorSource_strategy)
+def test_geoff_source_vectorsource_projection_setter(instance):
     original = instance.projection
     instance.projection = original
     assert instance.projection == original
 
-@given(instance=geoff::source::VectorSource_strategy)
-def test_geoff::source::vectorsource_url_type(instance):
-    assert isinstance(instance.url, str)
 
 
-@given(instance=geoff::source::VectorSource_strategy)
-def test_geoff::source::vectorsource_url_setter(instance):
+@given(instance=geoff_source_VectorSource_strategy)
+def test_geoff_source_vectorsource_format_setter(instance):
+    original = instance.format
+    instance.format = original
+    assert instance.format == original
+
+
+
+@given(instance=geoff_source_VectorSource_strategy)
+def test_geoff_source_vectorsource_url_setter(instance):
     original = instance.url
     instance.url = original
     assert instance.url == original
+
+@given(instance=geoff_source_TileSource_strategy)
+@settings(max_examples=50)
+def test_geoff_source_tilesource_instantiation(instance):
+    assert isinstance(instance, geoff_source_TileSource)
 
 @given(instance=Descriptive_strategy)
 @settings(max_examples=50)
@@ -1911,325 +1878,256 @@ def test_descriptive_instantiation(instance):
 def test_identifiable_instantiation(instance):
     assert isinstance(instance, Identifiable)
 
-@given(instance=geoff::style::Style_strategy)
+@given(instance=geoff_Color_strategy)
 @settings(max_examples=50)
-def test_geoff::style::style_instantiation(instance):
-    assert isinstance(instance, geoff::style::Style)
-
-@given(instance=geoff::style::Style_strategy)
-def test_geoff::style::style_zindex_type(instance):
-    assert isinstance(instance.zindex, str)
+def test_geoff_color_instantiation(instance):
+    assert isinstance(instance, geoff_Color)
 
 
-@given(instance=geoff::style::Style_strategy)
-def test_geoff::style::style_zindex_setter(instance):
-    original = instance.zindex
-    instance.zindex = original
-    assert instance.zindex == original
 
-@given(instance=geoff::style::Image_strategy)
-@settings(max_examples=50)
-def test_geoff::style::image_instantiation(instance):
-    assert isinstance(instance, geoff::style::Image)
-
-@given(instance=geoff::style::Fill_strategy)
-@settings(max_examples=50)
-def test_geoff::style::fill_instantiation(instance):
-    assert isinstance(instance, geoff::style::Fill)
-
-@given(instance=geoff::layer::Layer_strategy)
-@settings(max_examples=50)
-def test_geoff::layer::layer_instantiation(instance):
-    assert isinstance(instance, geoff::layer::Layer)
-
-@given(instance=geoff::Feature_strategy)
-@settings(max_examples=50)
-def test_geoff::feature_instantiation(instance):
-    assert isinstance(instance, geoff::Feature)
-
-@given(instance=geoff::Feature_strategy)
-def test_geoff::feature_onclick_type(instance):
-    assert isinstance(instance.onclick, str)
-
-
-@given(instance=geoff::Feature_strategy)
-def test_geoff::feature_onclick_setter(instance):
-    original = instance.onclick
-    instance.onclick = original
-    assert instance.onclick == original
-
-@given(instance=geoff::Color_strategy)
-@settings(max_examples=50)
-def test_geoff::color_instantiation(instance):
-    assert isinstance(instance, geoff::Color)
-
-@given(instance=geoff::Color_strategy)
-def test_geoff::color_alpha_type(instance):
-    assert isinstance(instance.alpha, float)
-
-
-@given(instance=geoff::Color_strategy)
-def test_geoff::color_alpha_setter(instance):
-    original = instance.alpha
-    instance.alpha = original
-    assert instance.alpha == original
-
-@given(instance=geoff::Color_strategy)
-def test_geoff::color_green_type(instance):
-    assert isinstance(instance.green, int)
-
-
-@given(instance=geoff::Color_strategy)
-def test_geoff::color_green_setter(instance):
-    original = instance.green
-    instance.green = original
-    assert instance.green == original
-
-@given(instance=geoff::Color_strategy)
-def test_geoff::color_red_type(instance):
-    assert isinstance(instance.red, int)
-
-
-@given(instance=geoff::Color_strategy)
-def test_geoff::color_red_setter(instance):
+@given(instance=geoff_Color_strategy)
+def test_geoff_color_red_setter(instance):
     original = instance.red
     instance.red = original
     assert instance.red == original
 
-@given(instance=geoff::Color_strategy)
-def test_geoff::color_blue_type(instance):
-    assert isinstance(instance.blue, int)
 
 
-@given(instance=geoff::Color_strategy)
-def test_geoff::color_blue_setter(instance):
+@given(instance=geoff_Color_strategy)
+def test_geoff_color_green_setter(instance):
+    original = instance.green
+    instance.green = original
+    assert instance.green == original
+
+
+
+@given(instance=geoff_Color_strategy)
+def test_geoff_color_alpha_setter(instance):
+    original = instance.alpha
+    instance.alpha = original
+    assert instance.alpha == original
+
+
+
+@given(instance=geoff_Color_strategy)
+def test_geoff_color_blue_setter(instance):
     original = instance.blue
     instance.blue = original
     assert instance.blue == original
 
-@given(instance=geoff::interaction::Interaction_strategy)
+@given(instance=geoff_style_Image_strategy)
 @settings(max_examples=50)
-def test_geoff::interaction::interaction_instantiation(instance):
-    assert isinstance(instance, geoff::interaction::Interaction)
+def test_geoff_style_image_instantiation(instance):
+    assert isinstance(instance, geoff_style_Image)
 
-@given(instance=geoff::source::Source_strategy)
+@given(instance=geoff_style_Fill_strategy)
 @settings(max_examples=50)
-def test_geoff::source::source_instantiation(instance):
-    assert isinstance(instance, geoff::source::Source)
+def test_geoff_style_fill_instantiation(instance):
+    assert isinstance(instance, geoff_style_Fill)
 
-@given(instance=geoff::style::Stroke_strategy)
+@given(instance=geoff_Feature_strategy)
 @settings(max_examples=50)
-def test_geoff::style::stroke_instantiation(instance):
-    assert isinstance(instance, geoff::style::Stroke)
-
-@given(instance=geoff::style::Stroke_strategy)
-def test_geoff::style::stroke_miterLimit_type(instance):
-    assert isinstance(instance.miterLimit, str)
+def test_geoff_feature_instantiation(instance):
+    assert isinstance(instance, geoff_Feature)
 
 
-@given(instance=geoff::style::Stroke_strategy)
-def test_geoff::style::stroke_miterLimit_setter(instance):
-    original = instance.miterLimit
-    instance.miterLimit = original
-    assert instance.miterLimit == original
 
-@given(instance=geoff::style::Stroke_strategy)
-def test_geoff::style::stroke_lineDash_type(instance):
-    assert isinstance(instance.lineDash, float)
+@given(instance=geoff_Feature_strategy)
+def test_geoff_feature_onclick_setter(instance):
+    original = instance.onclick
+    instance.onclick = original
+    assert instance.onclick == original
 
-
-@given(instance=geoff::style::Stroke_strategy)
-def test_geoff::style::stroke_lineDash_setter(instance):
-    original = instance.lineDash
-    instance.lineDash = original
-    assert instance.lineDash == original
-
-@given(instance=geoff::style::Stroke_strategy)
-def test_geoff::style::stroke_lineCap_type(instance):
-    assert isinstance(instance.lineCap, str)
-
-
-@given(instance=geoff::style::Stroke_strategy)
-def test_geoff::style::stroke_lineCap_setter(instance):
-    original = instance.lineCap
-    instance.lineCap = original
-    assert instance.lineCap == original
-
-@given(instance=geoff::style::Stroke_strategy)
-def test_geoff::style::stroke_width_type(instance):
-    assert isinstance(instance.width, str)
-
-
-@given(instance=geoff::style::Stroke_strategy)
-def test_geoff::style::stroke_width_setter(instance):
-    original = instance.width
-    instance.width = original
-    assert instance.width == original
-
-@given(instance=geoff::style::Stroke_strategy)
-def test_geoff::style::stroke_lineJoin_type(instance):
-    assert isinstance(instance.lineJoin, str)
-
-
-@given(instance=geoff::style::Stroke_strategy)
-def test_geoff::style::stroke_lineJoin_setter(instance):
-    original = instance.lineJoin
-    instance.lineJoin = original
-    assert instance.lineJoin == original
-
-@given(instance=geoff::style::Text_strategy)
+@given(instance=geoff_source_Source_strategy)
 @settings(max_examples=50)
-def test_geoff::style::text_instantiation(instance):
-    assert isinstance(instance, geoff::style::Text)
+def test_geoff_source_source_instantiation(instance):
+    assert isinstance(instance, geoff_source_Source)
 
-@given(instance=geoff::style::Text_strategy)
-def test_geoff::style::text_font_type(instance):
-    assert isinstance(instance.font, str)
-
-
-@given(instance=geoff::style::Text_strategy)
-def test_geoff::style::text_font_setter(instance):
-    original = instance.font
-    instance.font = original
-    assert instance.font == original
-
-@given(instance=geoff::style::Text_strategy)
-def test_geoff::style::text_offsetX_type(instance):
-    assert isinstance(instance.offsetX, float)
+@given(instance=geoff_style_Style_strategy)
+@settings(max_examples=50)
+def test_geoff_style_style_instantiation(instance):
+    assert isinstance(instance, geoff_style_Style)
 
 
-@given(instance=geoff::style::Text_strategy)
-def test_geoff::style::text_offsetX_setter(instance):
-    original = instance.offsetX
-    instance.offsetX = original
-    assert instance.offsetX == original
 
-@given(instance=geoff::style::Text_strategy)
-def test_geoff::style::text_offsetY_type(instance):
-    assert isinstance(instance.offsetY, float)
+@given(instance=geoff_style_Style_strategy)
+def test_geoff_style_style_zindex_setter(instance):
+    original = instance.zindex
+    instance.zindex = original
+    assert instance.zindex == original
 
-
-@given(instance=geoff::style::Text_strategy)
-def test_geoff::style::text_offsetY_setter(instance):
-    original = instance.offsetY
-    instance.offsetY = original
-    assert instance.offsetY == original
-
-@given(instance=geoff::style::Text_strategy)
-def test_geoff::style::text_text_type(instance):
-    assert isinstance(instance.text, str)
+@given(instance=geoff_style_Text_strategy)
+@settings(max_examples=50)
+def test_geoff_style_text_instantiation(instance):
+    assert isinstance(instance, geoff_style_Text)
 
 
-@given(instance=geoff::style::Text_strategy)
-def test_geoff::style::text_text_setter(instance):
-    original = instance.text
-    instance.text = original
-    assert instance.text == original
 
-@given(instance=geoff::style::Text_strategy)
-def test_geoff::style::text_rotation_type(instance):
-    assert isinstance(instance.rotation, str)
-
-
-@given(instance=geoff::style::Text_strategy)
-def test_geoff::style::text_rotation_setter(instance):
-    original = instance.rotation
-    instance.rotation = original
-    assert instance.rotation == original
-
-@given(instance=geoff::style::Text_strategy)
-def test_geoff::style::text_textAlign_type(instance):
-    assert isinstance(instance.textAlign, str)
-
-
-@given(instance=geoff::style::Text_strategy)
-def test_geoff::style::text_textAlign_setter(instance):
+@given(instance=geoff_style_Text_strategy)
+def test_geoff_style_text_textAlign_setter(instance):
     original = instance.textAlign
     instance.textAlign = original
     assert instance.textAlign == original
 
-@given(instance=geoff::style::Text_strategy)
-def test_geoff::style::text_scale_type(instance):
-    assert isinstance(instance.scale, str)
 
 
-@given(instance=geoff::style::Text_strategy)
-def test_geoff::style::text_scale_setter(instance):
-    original = instance.scale
-    instance.scale = original
-    assert instance.scale == original
-
-@given(instance=geoff::style::Text_strategy)
-def test_geoff::style::text_textBaseLine_type(instance):
-    assert isinstance(instance.textBaseLine, str)
+@given(instance=geoff_style_Text_strategy)
+def test_geoff_style_text_offsetY_setter(instance):
+    original = instance.offsetY
+    instance.offsetY = original
+    assert instance.offsetY == original
 
 
-@given(instance=geoff::style::Text_strategy)
-def test_geoff::style::text_textBaseLine_setter(instance):
+
+@given(instance=geoff_style_Text_strategy)
+def test_geoff_style_text_rotation_setter(instance):
+    original = instance.rotation
+    instance.rotation = original
+    assert instance.rotation == original
+
+
+
+@given(instance=geoff_style_Text_strategy)
+def test_geoff_style_text_textBaseLine_setter(instance):
     original = instance.textBaseLine
     instance.textBaseLine = original
     assert instance.textBaseLine == original
 
-@given(instance=geoff::geom::Geometry_strategy)
+
+
+@given(instance=geoff_style_Text_strategy)
+def test_geoff_style_text_font_setter(instance):
+    original = instance.font
+    instance.font = original
+    assert instance.font == original
+
+
+
+@given(instance=geoff_style_Text_strategy)
+def test_geoff_style_text_text_setter(instance):
+    original = instance.text
+    instance.text = original
+    assert instance.text == original
+
+
+
+@given(instance=geoff_style_Text_strategy)
+def test_geoff_style_text_offsetX_setter(instance):
+    original = instance.offsetX
+    instance.offsetX = original
+    assert instance.offsetX == original
+
+
+
+@given(instance=geoff_style_Text_strategy)
+def test_geoff_style_text_scale_setter(instance):
+    original = instance.scale
+    instance.scale = original
+    assert instance.scale == original
+
+@given(instance=geoff_style_Stroke_strategy)
 @settings(max_examples=50)
-def test_geoff::geom::geometry_instantiation(instance):
-    assert isinstance(instance, geoff::geom::Geometry)
+def test_geoff_style_stroke_instantiation(instance):
+    assert isinstance(instance, geoff_style_Stroke)
 
-@given(instance=geoff::GeoMap_strategy)
+
+
+@given(instance=geoff_style_Stroke_strategy)
+def test_geoff_style_stroke_miterLimit_setter(instance):
+    original = instance.miterLimit
+    instance.miterLimit = original
+    assert instance.miterLimit == original
+
+
+
+@given(instance=geoff_style_Stroke_strategy)
+def test_geoff_style_stroke_lineDash_setter(instance):
+    original = instance.lineDash
+    instance.lineDash = original
+    assert instance.lineDash == original
+
+
+
+@given(instance=geoff_style_Stroke_strategy)
+def test_geoff_style_stroke_width_setter(instance):
+    original = instance.width
+    instance.width = original
+    assert instance.width == original
+
+
+
+@given(instance=geoff_style_Stroke_strategy)
+def test_geoff_style_stroke_lineJoin_setter(instance):
+    original = instance.lineJoin
+    instance.lineJoin = original
+    assert instance.lineJoin == original
+
+
+
+@given(instance=geoff_style_Stroke_strategy)
+def test_geoff_style_stroke_lineCap_setter(instance):
+    original = instance.lineCap
+    instance.lineCap = original
+    assert instance.lineCap == original
+
+@given(instance=geoff_layer_Layer_strategy)
 @settings(max_examples=50)
-def test_geoff::geomap_instantiation(instance):
-    assert isinstance(instance, geoff::GeoMap)
+def test_geoff_layer_layer_instantiation(instance):
+    assert isinstance(instance, geoff_layer_Layer)
 
-@given(instance=geoff::GeoMap_strategy)
-def test_geoff::geomap_rendererHint_type(instance):
-    assert isinstance(instance.rendererHint, str)
+@given(instance=geoff_interaction_Interaction_strategy)
+@settings(max_examples=50)
+def test_geoff_interaction_interaction_instantiation(instance):
+    assert isinstance(instance, geoff_interaction_Interaction)
+
+@given(instance=geoff_geom_Geometry_strategy)
+@settings(max_examples=50)
+def test_geoff_geom_geometry_instantiation(instance):
+    assert isinstance(instance, geoff_geom_Geometry)
+
+@given(instance=geoff_GeoMap_strategy)
+@settings(max_examples=50)
+def test_geoff_geomap_instantiation(instance):
+    assert isinstance(instance, geoff_GeoMap)
 
 
-@given(instance=geoff::GeoMap_strategy)
-def test_geoff::geomap_rendererHint_setter(instance):
+
+@given(instance=geoff_GeoMap_strategy)
+def test_geoff_geomap_rendererHint_setter(instance):
     original = instance.rendererHint
     instance.rendererHint = original
     assert instance.rendererHint == original
 
-@given(instance=geoff::Descriptive_strategy)
+@given(instance=geoff_Descriptive_strategy)
 @settings(max_examples=50)
-def test_geoff::descriptive_instantiation(instance):
-    assert isinstance(instance, geoff::Descriptive)
-
-@given(instance=geoff::Descriptive_strategy)
-def test_geoff::descriptive_shortDescription_type(instance):
-    assert isinstance(instance.shortDescription, str)
+def test_geoff_descriptive_instantiation(instance):
+    assert isinstance(instance, geoff_Descriptive)
 
 
-@given(instance=geoff::Descriptive_strategy)
-def test_geoff::descriptive_shortDescription_setter(instance):
+
+@given(instance=geoff_Descriptive_strategy)
+def test_geoff_descriptive_shortDescription_setter(instance):
     original = instance.shortDescription
     instance.shortDescription = original
     assert instance.shortDescription == original
 
-@given(instance=geoff::Descriptive_strategy)
-def test_geoff::descriptive_longDescription_type(instance):
-    assert isinstance(instance.longDescription, str)
 
 
-@given(instance=geoff::Descriptive_strategy)
-def test_geoff::descriptive_longDescription_setter(instance):
+@given(instance=geoff_Descriptive_strategy)
+def test_geoff_descriptive_longDescription_setter(instance):
     original = instance.longDescription
     instance.longDescription = original
     assert instance.longDescription == original
 
-@given(instance=geoff::Identifiable_strategy)
+@given(instance=geoff_Identifiable_strategy)
 @settings(max_examples=50)
-def test_geoff::identifiable_instantiation(instance):
-    assert isinstance(instance, geoff::Identifiable)
-
-@given(instance=geoff::Identifiable_strategy)
-def test_geoff::identifiable_id_type(instance):
-    assert isinstance(instance.id, str)
+def test_geoff_identifiable_instantiation(instance):
+    assert isinstance(instance, geoff_Identifiable)
 
 
-@given(instance=geoff::Identifiable_strategy)
-def test_geoff::identifiable_id_setter(instance):
+
+@given(instance=geoff_Identifiable_strategy)
+def test_geoff_identifiable_id_setter(instance):
     original = instance.id
     instance.id = original
     assert instance.id == original
@@ -2239,56 +2137,44 @@ def test_geoff::identifiable_id_setter(instance):
 def test_location_instantiation(instance):
     assert isinstance(instance, Location)
 
-@given(instance=geoff::XYZLocation_strategy)
+@given(instance=geoff_XYZLocation_strategy)
 @settings(max_examples=50)
-def test_geoff::xyzlocation_instantiation(instance):
-    assert isinstance(instance, geoff::XYZLocation)
-
-@given(instance=geoff::XYZLocation_strategy)
-def test_geoff::xyzlocation_z_type(instance):
-    assert isinstance(instance.z, float)
+def test_geoff_xyzlocation_instantiation(instance):
+    assert isinstance(instance, geoff_XYZLocation)
 
 
-@given(instance=geoff::XYZLocation_strategy)
-def test_geoff::xyzlocation_z_setter(instance):
+
+@given(instance=geoff_XYZLocation_strategy)
+def test_geoff_xyzlocation_z_setter(instance):
     original = instance.z
     instance.z = original
     assert instance.z == original
 
-@given(instance=geoff::XYZLocation_strategy)
-def test_geoff::xyzlocation_y_type(instance):
-    assert isinstance(instance.y, float)
 
 
-@given(instance=geoff::XYZLocation_strategy)
-def test_geoff::xyzlocation_y_setter(instance):
+@given(instance=geoff_XYZLocation_strategy)
+def test_geoff_xyzlocation_y_setter(instance):
     original = instance.y
     instance.y = original
     assert instance.y == original
 
-@given(instance=geoff::XYZLocation_strategy)
-def test_geoff::xyzlocation_x_type(instance):
-    assert isinstance(instance.x, float)
 
 
-@given(instance=geoff::XYZLocation_strategy)
-def test_geoff::xyzlocation_x_setter(instance):
+@given(instance=geoff_XYZLocation_strategy)
+def test_geoff_xyzlocation_x_setter(instance):
     original = instance.x
     instance.x = original
     assert instance.x == original
 
-@given(instance=geoff::Location_strategy)
+@given(instance=geoff_Location_strategy)
 @settings(max_examples=50)
-def test_geoff::location_instantiation(instance):
-    assert isinstance(instance, geoff::Location)
-
-@given(instance=geoff::Location_strategy)
-def test_geoff::location_projectionCode_type(instance):
-    assert isinstance(instance.projectionCode, str)
+def test_geoff_location_instantiation(instance):
+    assert isinstance(instance, geoff_Location)
 
 
-@given(instance=geoff::Location_strategy)
-def test_geoff::location_projectionCode_setter(instance):
+
+@given(instance=geoff_Location_strategy)
+def test_geoff_location_projectionCode_setter(instance):
     original = instance.projectionCode
     instance.projectionCode = original
     assert instance.projectionCode == original
@@ -2298,83 +2184,65 @@ def test_geoff::location_projectionCode_setter(instance):
 def test_interaction_instantiation(instance):
     assert isinstance(instance, Interaction)
 
-@given(instance=geoff::interaction::Select_strategy)
+@given(instance=geoff_interaction_Select_strategy)
 @settings(max_examples=50)
-def test_geoff::interaction::select_instantiation(instance):
-    assert isinstance(instance, geoff::interaction::Select)
-
-@given(instance=geoff::interaction::Select_strategy)
-def test_geoff::interaction::select_condition_type(instance):
-    assert isinstance(instance.condition, str)
+def test_geoff_interaction_select_instantiation(instance):
+    assert isinstance(instance, geoff_interaction_Select)
 
 
-@given(instance=geoff::interaction::Select_strategy)
-def test_geoff::interaction::select_condition_setter(instance):
-    original = instance.condition
-    instance.condition = original
-    assert instance.condition == original
 
-@given(instance=geoff::interaction::Select_strategy)
-def test_geoff::interaction::select_multi_type(instance):
-    assert isinstance(instance.multi, bool)
-
-
-@given(instance=geoff::interaction::Select_strategy)
-def test_geoff::interaction::select_multi_setter(instance):
+@given(instance=geoff_interaction_Select_strategy)
+def test_geoff_interaction_select_multi_setter(instance):
     original = instance.multi
     instance.multi = original
     assert instance.multi == original
 
-@given(instance=geoff::Script_strategy)
+
+
+@given(instance=geoff_interaction_Select_strategy)
+def test_geoff_interaction_select_condition_setter(instance):
+    original = instance.condition
+    instance.condition = original
+    assert instance.condition == original
+
+@given(instance=geoff_Script_strategy)
 @settings(max_examples=50)
-def test_geoff::script_instantiation(instance):
-    assert isinstance(instance, geoff::Script)
-
-@given(instance=geoff::Script_strategy)
-def test_geoff::script_src_type(instance):
-    assert isinstance(instance.src, str)
+def test_geoff_script_instantiation(instance):
+    assert isinstance(instance, geoff_Script)
 
 
-@given(instance=geoff::Script_strategy)
-def test_geoff::script_src_setter(instance):
-    original = instance.src
-    instance.src = original
-    assert instance.src == original
 
-@given(instance=geoff::Script_strategy)
-def test_geoff::script_type_type(instance):
-    assert isinstance(instance.type, str)
-
-
-@given(instance=geoff::Script_strategy)
-def test_geoff::script_type_setter(instance):
+@given(instance=geoff_Script_strategy)
+def test_geoff_script_type_setter(instance):
     original = instance.type
     instance.type = original
     assert instance.type == original
 
-@given(instance=geoff::Script_strategy)
-def test_geoff::script_context_type(instance):
-    assert isinstance(instance.context, str)
 
 
-@given(instance=geoff::Script_strategy)
-def test_geoff::script_context_setter(instance):
+@given(instance=geoff_Script_strategy)
+def test_geoff_script_src_setter(instance):
+    original = instance.src
+    instance.src = original
+    assert instance.src == original
+
+
+
+@given(instance=geoff_Script_strategy)
+def test_geoff_script_context_setter(instance):
     original = instance.context
     instance.context = original
     assert instance.context == original
 
-@given(instance=geoff::View_strategy)
+@given(instance=geoff_View_strategy)
 @settings(max_examples=50)
-def test_geoff::view_instantiation(instance):
-    assert isinstance(instance, geoff::View)
-
-@given(instance=geoff::View_strategy)
-def test_geoff::view_zoom_type(instance):
-    assert isinstance(instance.zoom, int)
+def test_geoff_view_instantiation(instance):
+    assert isinstance(instance, geoff_View)
 
 
-@given(instance=geoff::View_strategy)
-def test_geoff::view_zoom_setter(instance):
+
+@given(instance=geoff_View_strategy)
+def test_geoff_view_zoom_setter(instance):
     original = instance.zoom
     instance.zoom = original
     assert instance.zoom == original
@@ -2384,12 +2252,12 @@ def test_geoff::view_zoom_setter(instance):
 def test_layer_instantiation(instance):
     assert isinstance(instance, Layer)
 
-@given(instance=geoff::layer::TileLayer_strategy)
+@given(instance=geoff_layer_VectorLayer_strategy)
 @settings(max_examples=50)
-def test_geoff::layer::tilelayer_instantiation(instance):
-    assert isinstance(instance, geoff::layer::TileLayer)
+def test_geoff_layer_vectorlayer_instantiation(instance):
+    assert isinstance(instance, geoff_layer_VectorLayer)
 
-@given(instance=geoff::layer::VectorLayer_strategy)
+@given(instance=geoff_layer_TileLayer_strategy)
 @settings(max_examples=50)
-def test_geoff::layer::vectorlayer_instantiation(instance):
-    assert isinstance(instance, geoff::layer::VectorLayer)
+def test_geoff_layer_tilelayer_instantiation(instance):
+    assert isinstance(instance, geoff_layer_TileLayer)

@@ -3,20 +3,20 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     Subclass3,
-    inheritance::Sub3Subclass,
-    inheritance::Sub2Subclass,
+    inheritance_Sub3Subclass,
+    inheritance_Sub2Subclass,
     Subclass1,
-    inheritance::Sub1Subclass,
+    inheritance_Sub1Subclass,
     Superclass,
-    inheritance::Subclass3,
-    inheritance::Subclass2,
+    inheritance_Subclass3,
+    inheritance_Subclass2,
     Subclass2,
-    inheritance::Subclass1,
-    inheritance::Superclass,
+    inheritance_Subclass1,
+    inheritance_Superclass,
 )
 
 # =============================================================================
@@ -39,30 +39,30 @@ def test_subclass3_constructor_args():
 
 
 
-def test_inheritance::sub3subclass_is_not_abstract():
-    assert not inspect.isabstract(inheritance::Sub3Subclass)
+def test_inheritance_sub3subclass_is_not_abstract():
+    assert not inspect.isabstract(inheritance_Sub3Subclass)
 
 
-def test_inheritance::sub3subclass_constructor_exists():
-    assert callable(inheritance::Sub3Subclass.__init__)
+def test_inheritance_sub3subclass_constructor_exists():
+    assert callable(inheritance_Sub3Subclass.__init__)
 
 
-def test_inheritance::sub3subclass_constructor_args():
-    sig = inspect.signature(inheritance::Sub3Subclass.__init__)
+def test_inheritance_sub3subclass_constructor_args():
+    sig = inspect.signature(inheritance_Sub3Subclass.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_inheritance::sub2subclass_is_not_abstract():
-    assert not inspect.isabstract(inheritance::Sub2Subclass)
+def test_inheritance_sub2subclass_is_not_abstract():
+    assert not inspect.isabstract(inheritance_Sub2Subclass)
 
 
-def test_inheritance::sub2subclass_constructor_exists():
-    assert callable(inheritance::Sub2Subclass.__init__)
+def test_inheritance_sub2subclass_constructor_exists():
+    assert callable(inheritance_Sub2Subclass.__init__)
 
 
-def test_inheritance::sub2subclass_constructor_args():
-    sig = inspect.signature(inheritance::Sub2Subclass.__init__)
+def test_inheritance_sub2subclass_constructor_args():
+    sig = inspect.signature(inheritance_Sub2Subclass.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -81,16 +81,16 @@ def test_subclass1_constructor_args():
 
 
 
-def test_inheritance::sub1subclass_is_not_abstract():
-    assert not inspect.isabstract(inheritance::Sub1Subclass)
+def test_inheritance_sub1subclass_is_not_abstract():
+    assert not inspect.isabstract(inheritance_Sub1Subclass)
 
 
-def test_inheritance::sub1subclass_constructor_exists():
-    assert callable(inheritance::Sub1Subclass.__init__)
+def test_inheritance_sub1subclass_constructor_exists():
+    assert callable(inheritance_Sub1Subclass.__init__)
 
 
-def test_inheritance::sub1subclass_constructor_args():
-    sig = inspect.signature(inheritance::Sub1Subclass.__init__)
+def test_inheritance_sub1subclass_constructor_args():
+    sig = inspect.signature(inheritance_Sub1Subclass.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -109,30 +109,30 @@ def test_superclass_constructor_args():
 
 
 
-def test_inheritance::subclass3_is_not_abstract():
-    assert not inspect.isabstract(inheritance::Subclass3)
+def test_inheritance_subclass3_is_not_abstract():
+    assert not inspect.isabstract(inheritance_Subclass3)
 
 
-def test_inheritance::subclass3_constructor_exists():
-    assert callable(inheritance::Subclass3.__init__)
+def test_inheritance_subclass3_constructor_exists():
+    assert callable(inheritance_Subclass3.__init__)
 
 
-def test_inheritance::subclass3_constructor_args():
-    sig = inspect.signature(inheritance::Subclass3.__init__)
+def test_inheritance_subclass3_constructor_args():
+    sig = inspect.signature(inheritance_Subclass3.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_inheritance::subclass2_is_not_abstract():
-    assert not inspect.isabstract(inheritance::Subclass2)
+def test_inheritance_subclass2_is_not_abstract():
+    assert not inspect.isabstract(inheritance_Subclass2)
 
 
-def test_inheritance::subclass2_constructor_exists():
-    assert callable(inheritance::Subclass2.__init__)
+def test_inheritance_subclass2_constructor_exists():
+    assert callable(inheritance_Subclass2.__init__)
 
 
-def test_inheritance::subclass2_constructor_args():
-    sig = inspect.signature(inheritance::Subclass2.__init__)
+def test_inheritance_subclass2_constructor_args():
+    sig = inspect.signature(inheritance_Subclass2.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -151,30 +151,30 @@ def test_subclass2_constructor_args():
 
 
 
-def test_inheritance::subclass1_is_not_abstract():
-    assert not inspect.isabstract(inheritance::Subclass1)
+def test_inheritance_subclass1_is_not_abstract():
+    assert not inspect.isabstract(inheritance_Subclass1)
 
 
-def test_inheritance::subclass1_constructor_exists():
-    assert callable(inheritance::Subclass1.__init__)
+def test_inheritance_subclass1_constructor_exists():
+    assert callable(inheritance_Subclass1.__init__)
 
 
-def test_inheritance::subclass1_constructor_args():
-    sig = inspect.signature(inheritance::Subclass1.__init__)
+def test_inheritance_subclass1_constructor_args():
+    sig = inspect.signature(inheritance_Subclass1.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_inheritance::superclass_is_not_abstract():
-    assert not inspect.isabstract(inheritance::Superclass)
+def test_inheritance_superclass_is_not_abstract():
+    assert not inspect.isabstract(inheritance_Superclass)
 
 
-def test_inheritance::superclass_constructor_exists():
-    assert callable(inheritance::Superclass.__init__)
+def test_inheritance_superclass_constructor_exists():
+    assert callable(inheritance_Superclass.__init__)
 
 
-def test_inheritance::superclass_constructor_args():
-    sig = inspect.signature(inheritance::Superclass.__init__)
+def test_inheritance_superclass_constructor_args():
+    sig = inspect.signature(inheritance_Superclass.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -192,35 +192,35 @@ safe_text = st.text(
 Subclass3_strategy = st.builds(
     Subclass3,
 )
-inheritance::Sub3Subclass_strategy = st.builds(
-    inheritance::Sub3Subclass,
+inheritance_Sub3Subclass_strategy = st.builds(
+    inheritance_Sub3Subclass,
 )
-inheritance::Sub2Subclass_strategy = st.builds(
-    inheritance::Sub2Subclass,
+inheritance_Sub2Subclass_strategy = st.builds(
+    inheritance_Sub2Subclass,
 )
 Subclass1_strategy = st.builds(
     Subclass1,
 )
-inheritance::Sub1Subclass_strategy = st.builds(
-    inheritance::Sub1Subclass,
+inheritance_Sub1Subclass_strategy = st.builds(
+    inheritance_Sub1Subclass,
 )
 Superclass_strategy = st.builds(
     Superclass,
 )
-inheritance::Subclass3_strategy = st.builds(
-    inheritance::Subclass3,
+inheritance_Subclass3_strategy = st.builds(
+    inheritance_Subclass3,
 )
-inheritance::Subclass2_strategy = st.builds(
-    inheritance::Subclass2,
+inheritance_Subclass2_strategy = st.builds(
+    inheritance_Subclass2,
 )
 Subclass2_strategy = st.builds(
     Subclass2,
 )
-inheritance::Subclass1_strategy = st.builds(
-    inheritance::Subclass1,
+inheritance_Subclass1_strategy = st.builds(
+    inheritance_Subclass1,
 )
-inheritance::Superclass_strategy = st.builds(
-    inheritance::Superclass,
+inheritance_Superclass_strategy = st.builds(
+    inheritance_Superclass,
 )
 
 @given(instance=Subclass3_strategy)
@@ -228,52 +228,52 @@ inheritance::Superclass_strategy = st.builds(
 def test_subclass3_instantiation(instance):
     assert isinstance(instance, Subclass3)
 
-@given(instance=inheritance::Sub3Subclass_strategy)
+@given(instance=inheritance_Sub3Subclass_strategy)
 @settings(max_examples=50)
-def test_inheritance::sub3subclass_instantiation(instance):
-    assert isinstance(instance, inheritance::Sub3Subclass)
+def test_inheritance_sub3subclass_instantiation(instance):
+    assert isinstance(instance, inheritance_Sub3Subclass)
 
-@given(instance=inheritance::Sub2Subclass_strategy)
+@given(instance=inheritance_Sub2Subclass_strategy)
 @settings(max_examples=50)
-def test_inheritance::sub2subclass_instantiation(instance):
-    assert isinstance(instance, inheritance::Sub2Subclass)
+def test_inheritance_sub2subclass_instantiation(instance):
+    assert isinstance(instance, inheritance_Sub2Subclass)
 
 @given(instance=Subclass1_strategy)
 @settings(max_examples=50)
 def test_subclass1_instantiation(instance):
     assert isinstance(instance, Subclass1)
 
-@given(instance=inheritance::Sub1Subclass_strategy)
+@given(instance=inheritance_Sub1Subclass_strategy)
 @settings(max_examples=50)
-def test_inheritance::sub1subclass_instantiation(instance):
-    assert isinstance(instance, inheritance::Sub1Subclass)
+def test_inheritance_sub1subclass_instantiation(instance):
+    assert isinstance(instance, inheritance_Sub1Subclass)
 
 @given(instance=Superclass_strategy)
 @settings(max_examples=50)
 def test_superclass_instantiation(instance):
     assert isinstance(instance, Superclass)
 
-@given(instance=inheritance::Subclass3_strategy)
+@given(instance=inheritance_Subclass3_strategy)
 @settings(max_examples=50)
-def test_inheritance::subclass3_instantiation(instance):
-    assert isinstance(instance, inheritance::Subclass3)
+def test_inheritance_subclass3_instantiation(instance):
+    assert isinstance(instance, inheritance_Subclass3)
 
-@given(instance=inheritance::Subclass2_strategy)
+@given(instance=inheritance_Subclass2_strategy)
 @settings(max_examples=50)
-def test_inheritance::subclass2_instantiation(instance):
-    assert isinstance(instance, inheritance::Subclass2)
+def test_inheritance_subclass2_instantiation(instance):
+    assert isinstance(instance, inheritance_Subclass2)
 
 @given(instance=Subclass2_strategy)
 @settings(max_examples=50)
 def test_subclass2_instantiation(instance):
     assert isinstance(instance, Subclass2)
 
-@given(instance=inheritance::Subclass1_strategy)
+@given(instance=inheritance_Subclass1_strategy)
 @settings(max_examples=50)
-def test_inheritance::subclass1_instantiation(instance):
-    assert isinstance(instance, inheritance::Subclass1)
+def test_inheritance_subclass1_instantiation(instance):
+    assert isinstance(instance, inheritance_Subclass1)
 
-@given(instance=inheritance::Superclass_strategy)
+@given(instance=inheritance_Superclass_strategy)
 @settings(max_examples=50)
-def test_inheritance::superclass_instantiation(instance):
-    assert isinstance(instance, inheritance::Superclass)
+def test_inheritance_superclass_instantiation(instance):
+    assert isinstance(instance, inheritance_Superclass)

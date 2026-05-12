@@ -3,12 +3,12 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    orgreliablesourcecuttlefishcoremodel::internal::CuttleFishEntity,
-    orgreliablesourcecuttlefishcoremodel::IEntityFactory,
-    orgreliablesourcecuttlefishcoremodel::IEntity,
+from python_code import (
+    orgreliablesourcecuttlefishcoremodel_internal_CuttleFishEntity,
+    orgreliablesourcecuttlefishcoremodel_IEntityFactory,
+    orgreliablesourcecuttlefishcoremodel_IEntity,
 )
 
 # =============================================================================
@@ -17,44 +17,44 @@ from classes import (
 
 
 
-def test_orgreliablesourcecuttlefishcoremodel::internal::cuttlefishentity_is_not_abstract():
-    assert not inspect.isabstract(orgreliablesourcecuttlefishcoremodel::internal::CuttleFishEntity)
+def test_orgreliablesourcecuttlefishcoremodel_internal_cuttlefishentity_is_not_abstract():
+    assert not inspect.isabstract(orgreliablesourcecuttlefishcoremodel_internal_CuttleFishEntity)
 
 
-def test_orgreliablesourcecuttlefishcoremodel::internal::cuttlefishentity_constructor_exists():
-    assert callable(orgreliablesourcecuttlefishcoremodel::internal::CuttleFishEntity.__init__)
+def test_orgreliablesourcecuttlefishcoremodel_internal_cuttlefishentity_constructor_exists():
+    assert callable(orgreliablesourcecuttlefishcoremodel_internal_CuttleFishEntity.__init__)
 
 
-def test_orgreliablesourcecuttlefishcoremodel::internal::cuttlefishentity_constructor_args():
-    sig = inspect.signature(orgreliablesourcecuttlefishcoremodel::internal::CuttleFishEntity.__init__)
+def test_orgreliablesourcecuttlefishcoremodel_internal_cuttlefishentity_constructor_args():
+    sig = inspect.signature(orgreliablesourcecuttlefishcoremodel_internal_CuttleFishEntity.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_orgreliablesourcecuttlefishcoremodel::ientityfactory_is_not_abstract():
-    assert not inspect.isabstract(orgreliablesourcecuttlefishcoremodel::IEntityFactory)
+def test_orgreliablesourcecuttlefishcoremodel_ientityfactory_is_not_abstract():
+    assert not inspect.isabstract(orgreliablesourcecuttlefishcoremodel_IEntityFactory)
 
 
-def test_orgreliablesourcecuttlefishcoremodel::ientityfactory_constructor_exists():
-    assert callable(orgreliablesourcecuttlefishcoremodel::IEntityFactory.__init__)
+def test_orgreliablesourcecuttlefishcoremodel_ientityfactory_constructor_exists():
+    assert callable(orgreliablesourcecuttlefishcoremodel_IEntityFactory.__init__)
 
 
-def test_orgreliablesourcecuttlefishcoremodel::ientityfactory_constructor_args():
-    sig = inspect.signature(orgreliablesourcecuttlefishcoremodel::IEntityFactory.__init__)
+def test_orgreliablesourcecuttlefishcoremodel_ientityfactory_constructor_args():
+    sig = inspect.signature(orgreliablesourcecuttlefishcoremodel_IEntityFactory.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_orgreliablesourcecuttlefishcoremodel::ientity_is_not_abstract():
-    assert not inspect.isabstract(orgreliablesourcecuttlefishcoremodel::IEntity)
+def test_orgreliablesourcecuttlefishcoremodel_ientity_is_not_abstract():
+    assert not inspect.isabstract(orgreliablesourcecuttlefishcoremodel_IEntity)
 
 
-def test_orgreliablesourcecuttlefishcoremodel::ientity_constructor_exists():
-    assert callable(orgreliablesourcecuttlefishcoremodel::IEntity.__init__)
+def test_orgreliablesourcecuttlefishcoremodel_ientity_constructor_exists():
+    assert callable(orgreliablesourcecuttlefishcoremodel_IEntity.__init__)
 
 
-def test_orgreliablesourcecuttlefishcoremodel::ientity_constructor_args():
-    sig = inspect.signature(orgreliablesourcecuttlefishcoremodel::IEntity.__init__)
+def test_orgreliablesourcecuttlefishcoremodel_ientity_constructor_args():
+    sig = inspect.signature(orgreliablesourcecuttlefishcoremodel_IEntity.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -69,27 +69,27 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-orgreliablesourcecuttlefishcoremodel::internal::CuttleFishEntity_strategy = st.builds(
-    orgreliablesourcecuttlefishcoremodel::internal::CuttleFishEntity,
+orgreliablesourcecuttlefishcoremodel_internal_CuttleFishEntity_strategy = st.builds(
+    orgreliablesourcecuttlefishcoremodel_internal_CuttleFishEntity,
 )
-orgreliablesourcecuttlefishcoremodel::IEntityFactory_strategy = st.builds(
-    orgreliablesourcecuttlefishcoremodel::IEntityFactory,
+orgreliablesourcecuttlefishcoremodel_IEntityFactory_strategy = st.builds(
+    orgreliablesourcecuttlefishcoremodel_IEntityFactory,
 )
-orgreliablesourcecuttlefishcoremodel::IEntity_strategy = st.builds(
-    orgreliablesourcecuttlefishcoremodel::IEntity,
+orgreliablesourcecuttlefishcoremodel_IEntity_strategy = st.builds(
+    orgreliablesourcecuttlefishcoremodel_IEntity,
 )
 
-@given(instance=orgreliablesourcecuttlefishcoremodel::internal::CuttleFishEntity_strategy)
+@given(instance=orgreliablesourcecuttlefishcoremodel_internal_CuttleFishEntity_strategy)
 @settings(max_examples=50)
-def test_orgreliablesourcecuttlefishcoremodel::internal::cuttlefishentity_instantiation(instance):
-    assert isinstance(instance, orgreliablesourcecuttlefishcoremodel::internal::CuttleFishEntity)
+def test_orgreliablesourcecuttlefishcoremodel_internal_cuttlefishentity_instantiation(instance):
+    assert isinstance(instance, orgreliablesourcecuttlefishcoremodel_internal_CuttleFishEntity)
 
-@given(instance=orgreliablesourcecuttlefishcoremodel::IEntityFactory_strategy)
+@given(instance=orgreliablesourcecuttlefishcoremodel_IEntityFactory_strategy)
 @settings(max_examples=50)
-def test_orgreliablesourcecuttlefishcoremodel::ientityfactory_instantiation(instance):
-    assert isinstance(instance, orgreliablesourcecuttlefishcoremodel::IEntityFactory)
+def test_orgreliablesourcecuttlefishcoremodel_ientityfactory_instantiation(instance):
+    assert isinstance(instance, orgreliablesourcecuttlefishcoremodel_IEntityFactory)
 
-@given(instance=orgreliablesourcecuttlefishcoremodel::IEntity_strategy)
+@given(instance=orgreliablesourcecuttlefishcoremodel_IEntity_strategy)
 @settings(max_examples=50)
-def test_orgreliablesourcecuttlefishcoremodel::ientity_instantiation(instance):
-    assert isinstance(instance, orgreliablesourcecuttlefishcoremodel::IEntity)
+def test_orgreliablesourcecuttlefishcoremodel_ientity_instantiation(instance):
+    assert isinstance(instance, orgreliablesourcecuttlefishcoremodel_IEntity)

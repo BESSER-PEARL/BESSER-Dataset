@@ -3,19 +3,19 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    CoachBusWithEDataType::Passenger,
-    CoachBusWithEDataType::Ticket,
+from python_code import (
+    CoachBusWithEDataType_Passenger,
+    CoachBusWithEDataType_Ticket,
     Trip,
-    CoachBusWithEDataType::PrivateTrip,
-    CoachBusWithEDataType::RegularTrip,
-    CoachBusWithEDataType::Trip,
+    CoachBusWithEDataType_PrivateTrip,
+    CoachBusWithEDataType_RegularTrip,
+    CoachBusWithEDataType_Trip,
     Ticket,
-    CoachBusWithEDataType::AdultTicket,
-    CoachBusWithEDataType::ChildTicket,
-    CoachBusWithEDataType::Coach,
+    CoachBusWithEDataType_AdultTicket,
+    CoachBusWithEDataType_ChildTicket,
+    CoachBusWithEDataType_Coach,
     Sex,
 )
 
@@ -25,33 +25,33 @@ from classes import (
 
 
 
-def test_coachbuswithedatatype::passenger_is_not_abstract():
-    assert not inspect.isabstract(CoachBusWithEDataType::Passenger)
+def test_coachbuswithedatatype_passenger_is_not_abstract():
+    assert not inspect.isabstract(CoachBusWithEDataType_Passenger)
 
 
-def test_coachbuswithedatatype::passenger_constructor_exists():
-    assert callable(CoachBusWithEDataType::Passenger.__init__)
+def test_coachbuswithedatatype_passenger_constructor_exists():
+    assert callable(CoachBusWithEDataType_Passenger.__init__)
 
 
-def test_coachbuswithedatatype::passenger_constructor_args():
-    sig = inspect.signature(CoachBusWithEDataType::Passenger.__init__)
+def test_coachbuswithedatatype_passenger_constructor_args():
+    sig = inspect.signature(CoachBusWithEDataType_Passenger.__init__)
     params = list(sig.parameters.keys())
     assert "age" in params, "Missing parameter 'age'"
     assert "sex" in params, "Missing parameter 'sex'"
 
-def test_coachbuswithedatatype::passenger_has_age():
-    assert hasattr(CoachBusWithEDataType::Passenger, "age")
+def test_coachbuswithedatatype_passenger_has_age():
+    assert hasattr(CoachBusWithEDataType_Passenger, "age")
     descriptor = None
-    for klass in CoachBusWithEDataType::Passenger.__mro__:
+    for klass in CoachBusWithEDataType_Passenger.__mro__:
         if "age" in klass.__dict__:
             descriptor = klass.__dict__["age"]
             break
     assert isinstance(descriptor, property)
 
-def test_coachbuswithedatatype::passenger_has_sex():
-    assert hasattr(CoachBusWithEDataType::Passenger, "sex")
+def test_coachbuswithedatatype_passenger_has_sex():
+    assert hasattr(CoachBusWithEDataType_Passenger, "sex")
     descriptor = None
-    for klass in CoachBusWithEDataType::Passenger.__mro__:
+    for klass in CoachBusWithEDataType_Passenger.__mro__:
         if "sex" in klass.__dict__:
             descriptor = klass.__dict__["sex"]
             break
@@ -59,23 +59,23 @@ def test_coachbuswithedatatype::passenger_has_sex():
 
 
 
-def test_coachbuswithedatatype::ticket_is_not_abstract():
-    assert not inspect.isabstract(CoachBusWithEDataType::Ticket)
+def test_coachbuswithedatatype_ticket_is_not_abstract():
+    assert not inspect.isabstract(CoachBusWithEDataType_Ticket)
 
 
-def test_coachbuswithedatatype::ticket_constructor_exists():
-    assert callable(CoachBusWithEDataType::Ticket.__init__)
+def test_coachbuswithedatatype_ticket_constructor_exists():
+    assert callable(CoachBusWithEDataType_Ticket.__init__)
 
 
-def test_coachbuswithedatatype::ticket_constructor_args():
-    sig = inspect.signature(CoachBusWithEDataType::Ticket.__init__)
+def test_coachbuswithedatatype_ticket_constructor_args():
+    sig = inspect.signature(CoachBusWithEDataType_Ticket.__init__)
     params = list(sig.parameters.keys())
     assert "number" in params, "Missing parameter 'number'"
 
-def test_coachbuswithedatatype::ticket_has_number():
-    assert hasattr(CoachBusWithEDataType::Ticket, "number")
+def test_coachbuswithedatatype_ticket_has_number():
+    assert hasattr(CoachBusWithEDataType_Ticket, "number")
     descriptor = None
-    for klass in CoachBusWithEDataType::Ticket.__mro__:
+    for klass in CoachBusWithEDataType_Ticket.__mro__:
         if "number" in klass.__dict__:
             descriptor = klass.__dict__["number"]
             break
@@ -97,51 +97,51 @@ def test_trip_constructor_args():
 
 
 
-def test_coachbuswithedatatype::privatetrip_is_not_abstract():
-    assert not inspect.isabstract(CoachBusWithEDataType::PrivateTrip)
+def test_coachbuswithedatatype_privatetrip_is_not_abstract():
+    assert not inspect.isabstract(CoachBusWithEDataType_PrivateTrip)
 
 
-def test_coachbuswithedatatype::privatetrip_constructor_exists():
-    assert callable(CoachBusWithEDataType::PrivateTrip.__init__)
+def test_coachbuswithedatatype_privatetrip_constructor_exists():
+    assert callable(CoachBusWithEDataType_PrivateTrip.__init__)
 
 
-def test_coachbuswithedatatype::privatetrip_constructor_args():
-    sig = inspect.signature(CoachBusWithEDataType::PrivateTrip.__init__)
+def test_coachbuswithedatatype_privatetrip_constructor_args():
+    sig = inspect.signature(CoachBusWithEDataType_PrivateTrip.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_coachbuswithedatatype::regulartrip_is_not_abstract():
-    assert not inspect.isabstract(CoachBusWithEDataType::RegularTrip)
+def test_coachbuswithedatatype_regulartrip_is_not_abstract():
+    assert not inspect.isabstract(CoachBusWithEDataType_RegularTrip)
 
 
-def test_coachbuswithedatatype::regulartrip_constructor_exists():
-    assert callable(CoachBusWithEDataType::RegularTrip.__init__)
+def test_coachbuswithedatatype_regulartrip_constructor_exists():
+    assert callable(CoachBusWithEDataType_RegularTrip.__init__)
 
 
-def test_coachbuswithedatatype::regulartrip_constructor_args():
-    sig = inspect.signature(CoachBusWithEDataType::RegularTrip.__init__)
+def test_coachbuswithedatatype_regulartrip_constructor_args():
+    sig = inspect.signature(CoachBusWithEDataType_RegularTrip.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_coachbuswithedatatype::trip_is_not_abstract():
-    assert not inspect.isabstract(CoachBusWithEDataType::Trip)
+def test_coachbuswithedatatype_trip_is_not_abstract():
+    assert not inspect.isabstract(CoachBusWithEDataType_Trip)
 
 
-def test_coachbuswithedatatype::trip_constructor_exists():
-    assert callable(CoachBusWithEDataType::Trip.__init__)
+def test_coachbuswithedatatype_trip_constructor_exists():
+    assert callable(CoachBusWithEDataType_Trip.__init__)
 
 
-def test_coachbuswithedatatype::trip_constructor_args():
-    sig = inspect.signature(CoachBusWithEDataType::Trip.__init__)
+def test_coachbuswithedatatype_trip_constructor_args():
+    sig = inspect.signature(CoachBusWithEDataType_Trip.__init__)
     params = list(sig.parameters.keys())
     assert "type" in params, "Missing parameter 'type'"
 
-def test_coachbuswithedatatype::trip_has_type():
-    assert hasattr(CoachBusWithEDataType::Trip, "type")
+def test_coachbuswithedatatype_trip_has_type():
+    assert hasattr(CoachBusWithEDataType_Trip, "type")
     descriptor = None
-    for klass in CoachBusWithEDataType::Trip.__mro__:
+    for klass in CoachBusWithEDataType_Trip.__mro__:
         if "type" in klass.__dict__:
             descriptor = klass.__dict__["type"]
             break
@@ -163,51 +163,51 @@ def test_ticket_constructor_args():
 
 
 
-def test_coachbuswithedatatype::adultticket_is_not_abstract():
-    assert not inspect.isabstract(CoachBusWithEDataType::AdultTicket)
+def test_coachbuswithedatatype_adultticket_is_not_abstract():
+    assert not inspect.isabstract(CoachBusWithEDataType_AdultTicket)
 
 
-def test_coachbuswithedatatype::adultticket_constructor_exists():
-    assert callable(CoachBusWithEDataType::AdultTicket.__init__)
+def test_coachbuswithedatatype_adultticket_constructor_exists():
+    assert callable(CoachBusWithEDataType_AdultTicket.__init__)
 
 
-def test_coachbuswithedatatype::adultticket_constructor_args():
-    sig = inspect.signature(CoachBusWithEDataType::AdultTicket.__init__)
+def test_coachbuswithedatatype_adultticket_constructor_args():
+    sig = inspect.signature(CoachBusWithEDataType_AdultTicket.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_coachbuswithedatatype::childticket_is_not_abstract():
-    assert not inspect.isabstract(CoachBusWithEDataType::ChildTicket)
+def test_coachbuswithedatatype_childticket_is_not_abstract():
+    assert not inspect.isabstract(CoachBusWithEDataType_ChildTicket)
 
 
-def test_coachbuswithedatatype::childticket_constructor_exists():
-    assert callable(CoachBusWithEDataType::ChildTicket.__init__)
+def test_coachbuswithedatatype_childticket_constructor_exists():
+    assert callable(CoachBusWithEDataType_ChildTicket.__init__)
 
 
-def test_coachbuswithedatatype::childticket_constructor_args():
-    sig = inspect.signature(CoachBusWithEDataType::ChildTicket.__init__)
+def test_coachbuswithedatatype_childticket_constructor_args():
+    sig = inspect.signature(CoachBusWithEDataType_ChildTicket.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_coachbuswithedatatype::coach_is_not_abstract():
-    assert not inspect.isabstract(CoachBusWithEDataType::Coach)
+def test_coachbuswithedatatype_coach_is_not_abstract():
+    assert not inspect.isabstract(CoachBusWithEDataType_Coach)
 
 
-def test_coachbuswithedatatype::coach_constructor_exists():
-    assert callable(CoachBusWithEDataType::Coach.__init__)
+def test_coachbuswithedatatype_coach_constructor_exists():
+    assert callable(CoachBusWithEDataType_Coach.__init__)
 
 
-def test_coachbuswithedatatype::coach_constructor_args():
-    sig = inspect.signature(CoachBusWithEDataType::Coach.__init__)
+def test_coachbuswithedatatype_coach_constructor_args():
+    sig = inspect.signature(CoachBusWithEDataType_Coach.__init__)
     params = list(sig.parameters.keys())
     assert "noOfSeats" in params, "Missing parameter 'noOfSeats'"
 
-def test_coachbuswithedatatype::coach_has_noOfSeats():
-    assert hasattr(CoachBusWithEDataType::Coach, "noOfSeats")
+def test_coachbuswithedatatype_coach_has_noOfSeats():
+    assert hasattr(CoachBusWithEDataType_Coach, "noOfSeats")
     descriptor = None
-    for klass in CoachBusWithEDataType::Coach.__mro__:
+    for klass in CoachBusWithEDataType_Coach.__mro__:
         if "noOfSeats" in klass.__dict__:
             descriptor = klass.__dict__["noOfSeats"]
             break
@@ -240,86 +240,77 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-CoachBusWithEDataType::Passenger_strategy = st.builds(
-    CoachBusWithEDataType::Passenger,
+CoachBusWithEDataType_Passenger_strategy = st.builds(
+    CoachBusWithEDataType_Passenger,
     age=
         st.integers(),
     sex=
         safe_text
 )
-CoachBusWithEDataType::Ticket_strategy = st.builds(
-    CoachBusWithEDataType::Ticket,
+CoachBusWithEDataType_Ticket_strategy = st.builds(
+    CoachBusWithEDataType_Ticket,
     number=
         st.integers()
 )
 Trip_strategy = st.builds(
     Trip,
 )
-CoachBusWithEDataType::PrivateTrip_strategy = st.builds(
-    CoachBusWithEDataType::PrivateTrip,
+CoachBusWithEDataType_PrivateTrip_strategy = st.builds(
+    CoachBusWithEDataType_PrivateTrip,
 )
-CoachBusWithEDataType::RegularTrip_strategy = st.builds(
-    CoachBusWithEDataType::RegularTrip,
+CoachBusWithEDataType_RegularTrip_strategy = st.builds(
+    CoachBusWithEDataType_RegularTrip,
 )
-CoachBusWithEDataType::Trip_strategy = st.builds(
-    CoachBusWithEDataType::Trip,
+CoachBusWithEDataType_Trip_strategy = st.builds(
+    CoachBusWithEDataType_Trip,
     type=
         safe_text
 )
 Ticket_strategy = st.builds(
     Ticket,
 )
-CoachBusWithEDataType::AdultTicket_strategy = st.builds(
-    CoachBusWithEDataType::AdultTicket,
+CoachBusWithEDataType_AdultTicket_strategy = st.builds(
+    CoachBusWithEDataType_AdultTicket,
 )
-CoachBusWithEDataType::ChildTicket_strategy = st.builds(
-    CoachBusWithEDataType::ChildTicket,
+CoachBusWithEDataType_ChildTicket_strategy = st.builds(
+    CoachBusWithEDataType_ChildTicket,
 )
-CoachBusWithEDataType::Coach_strategy = st.builds(
-    CoachBusWithEDataType::Coach,
+CoachBusWithEDataType_Coach_strategy = st.builds(
+    CoachBusWithEDataType_Coach,
     noOfSeats=
         st.integers()
 )
 
-@given(instance=CoachBusWithEDataType::Passenger_strategy)
+@given(instance=CoachBusWithEDataType_Passenger_strategy)
 @settings(max_examples=50)
-def test_coachbuswithedatatype::passenger_instantiation(instance):
-    assert isinstance(instance, CoachBusWithEDataType::Passenger)
-
-@given(instance=CoachBusWithEDataType::Passenger_strategy)
-def test_coachbuswithedatatype::passenger_age_type(instance):
-    assert isinstance(instance.age, int)
+def test_coachbuswithedatatype_passenger_instantiation(instance):
+    assert isinstance(instance, CoachBusWithEDataType_Passenger)
 
 
-@given(instance=CoachBusWithEDataType::Passenger_strategy)
-def test_coachbuswithedatatype::passenger_age_setter(instance):
+
+@given(instance=CoachBusWithEDataType_Passenger_strategy)
+def test_coachbuswithedatatype_passenger_age_setter(instance):
     original = instance.age
     instance.age = original
     assert instance.age == original
 
-@given(instance=CoachBusWithEDataType::Passenger_strategy)
-def test_coachbuswithedatatype::passenger_sex_type(instance):
-    assert isinstance(instance.sex, str)
 
 
-@given(instance=CoachBusWithEDataType::Passenger_strategy)
-def test_coachbuswithedatatype::passenger_sex_setter(instance):
+@given(instance=CoachBusWithEDataType_Passenger_strategy)
+def test_coachbuswithedatatype_passenger_sex_setter(instance):
     original = instance.sex
     instance.sex = original
     assert instance.sex == original
 
-@given(instance=CoachBusWithEDataType::Ticket_strategy)
+@given(instance=CoachBusWithEDataType_Ticket_strategy)
 @settings(max_examples=50)
-def test_coachbuswithedatatype::ticket_instantiation(instance):
-    assert isinstance(instance, CoachBusWithEDataType::Ticket)
-
-@given(instance=CoachBusWithEDataType::Ticket_strategy)
-def test_coachbuswithedatatype::ticket_number_type(instance):
-    assert isinstance(instance.number, int)
+def test_coachbuswithedatatype_ticket_instantiation(instance):
+    assert isinstance(instance, CoachBusWithEDataType_Ticket)
 
 
-@given(instance=CoachBusWithEDataType::Ticket_strategy)
-def test_coachbuswithedatatype::ticket_number_setter(instance):
+
+@given(instance=CoachBusWithEDataType_Ticket_strategy)
+def test_coachbuswithedatatype_ticket_number_setter(instance):
     original = instance.number
     instance.number = original
     assert instance.number == original
@@ -329,28 +320,25 @@ def test_coachbuswithedatatype::ticket_number_setter(instance):
 def test_trip_instantiation(instance):
     assert isinstance(instance, Trip)
 
-@given(instance=CoachBusWithEDataType::PrivateTrip_strategy)
+@given(instance=CoachBusWithEDataType_PrivateTrip_strategy)
 @settings(max_examples=50)
-def test_coachbuswithedatatype::privatetrip_instantiation(instance):
-    assert isinstance(instance, CoachBusWithEDataType::PrivateTrip)
+def test_coachbuswithedatatype_privatetrip_instantiation(instance):
+    assert isinstance(instance, CoachBusWithEDataType_PrivateTrip)
 
-@given(instance=CoachBusWithEDataType::RegularTrip_strategy)
+@given(instance=CoachBusWithEDataType_RegularTrip_strategy)
 @settings(max_examples=50)
-def test_coachbuswithedatatype::regulartrip_instantiation(instance):
-    assert isinstance(instance, CoachBusWithEDataType::RegularTrip)
+def test_coachbuswithedatatype_regulartrip_instantiation(instance):
+    assert isinstance(instance, CoachBusWithEDataType_RegularTrip)
 
-@given(instance=CoachBusWithEDataType::Trip_strategy)
+@given(instance=CoachBusWithEDataType_Trip_strategy)
 @settings(max_examples=50)
-def test_coachbuswithedatatype::trip_instantiation(instance):
-    assert isinstance(instance, CoachBusWithEDataType::Trip)
-
-@given(instance=CoachBusWithEDataType::Trip_strategy)
-def test_coachbuswithedatatype::trip_type_type(instance):
-    assert isinstance(instance.type, str)
+def test_coachbuswithedatatype_trip_instantiation(instance):
+    assert isinstance(instance, CoachBusWithEDataType_Trip)
 
 
-@given(instance=CoachBusWithEDataType::Trip_strategy)
-def test_coachbuswithedatatype::trip_type_setter(instance):
+
+@given(instance=CoachBusWithEDataType_Trip_strategy)
+def test_coachbuswithedatatype_trip_type_setter(instance):
     original = instance.type
     instance.type = original
     assert instance.type == original
@@ -360,28 +348,25 @@ def test_coachbuswithedatatype::trip_type_setter(instance):
 def test_ticket_instantiation(instance):
     assert isinstance(instance, Ticket)
 
-@given(instance=CoachBusWithEDataType::AdultTicket_strategy)
+@given(instance=CoachBusWithEDataType_AdultTicket_strategy)
 @settings(max_examples=50)
-def test_coachbuswithedatatype::adultticket_instantiation(instance):
-    assert isinstance(instance, CoachBusWithEDataType::AdultTicket)
+def test_coachbuswithedatatype_adultticket_instantiation(instance):
+    assert isinstance(instance, CoachBusWithEDataType_AdultTicket)
 
-@given(instance=CoachBusWithEDataType::ChildTicket_strategy)
+@given(instance=CoachBusWithEDataType_ChildTicket_strategy)
 @settings(max_examples=50)
-def test_coachbuswithedatatype::childticket_instantiation(instance):
-    assert isinstance(instance, CoachBusWithEDataType::ChildTicket)
+def test_coachbuswithedatatype_childticket_instantiation(instance):
+    assert isinstance(instance, CoachBusWithEDataType_ChildTicket)
 
-@given(instance=CoachBusWithEDataType::Coach_strategy)
+@given(instance=CoachBusWithEDataType_Coach_strategy)
 @settings(max_examples=50)
-def test_coachbuswithedatatype::coach_instantiation(instance):
-    assert isinstance(instance, CoachBusWithEDataType::Coach)
-
-@given(instance=CoachBusWithEDataType::Coach_strategy)
-def test_coachbuswithedatatype::coach_noOfSeats_type(instance):
-    assert isinstance(instance.noOfSeats, int)
+def test_coachbuswithedatatype_coach_instantiation(instance):
+    assert isinstance(instance, CoachBusWithEDataType_Coach)
 
 
-@given(instance=CoachBusWithEDataType::Coach_strategy)
-def test_coachbuswithedatatype::coach_noOfSeats_setter(instance):
+
+@given(instance=CoachBusWithEDataType_Coach_strategy)
+def test_coachbuswithedatatype_coach_noOfSeats_setter(instance):
     original = instance.noOfSeats
     instance.noOfSeats = original
     assert instance.noOfSeats == original

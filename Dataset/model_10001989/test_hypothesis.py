@@ -3,7 +3,7 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
 from python_code import (
     Items,
@@ -294,9 +294,6 @@ Customer_strategy = st.builds(
 def test_items_instantiation(instance):
     assert isinstance(instance, Items)
 
-@given(instance=Items_strategy)
-def test_items_Description_type(instance):
-    assert isinstance(instance.Description, str)
 
 
 @given(instance=Items_strategy)
@@ -310,9 +307,6 @@ def test_items_Description_setter(instance):
 def test_warehouse_instantiation(instance):
     assert isinstance(instance, Warehouse)
 
-@given(instance=Warehouse_strategy)
-def test_warehouse_Warehouse_branch_type(instance):
-    assert isinstance(instance.Warehouse_branch, str)
 
 
 @given(instance=Warehouse_strategy)
@@ -326,9 +320,6 @@ def test_warehouse_Warehouse_branch_setter(instance):
 def test_account_instantiation(instance):
     assert isinstance(instance, Account)
 
-@given(instance=Account_strategy)
-def test_account_Address_type(instance):
-    assert isinstance(instance.Address, str)
 
 
 @given(instance=Account_strategy)
@@ -342,9 +333,6 @@ def test_account_Address_setter(instance):
 def test_order_instantiation(instance):
     assert isinstance(instance, Order)
 
-@given(instance=Order_strategy)
-def test_order_Order_ID_type(instance):
-    assert isinstance(instance.Order_ID, int)
 
 
 @given(instance=Order_strategy)
@@ -358,9 +346,6 @@ def test_order_Order_ID_setter(instance):
 def test_payment_instantiation(instance):
     assert isinstance(instance, Payment)
 
-@given(instance=Payment_strategy)
-def test_payment_Payment_ID_type(instance):
-    assert isinstance(instance.Payment_ID, int)
 
 
 @given(instance=Payment_strategy)
@@ -369,9 +354,6 @@ def test_payment_Payment_ID_setter(instance):
     instance.Payment_ID = original
     assert instance.Payment_ID == original
 
-@given(instance=Payment_strategy)
-def test_payment_Date_type(instance):
-    assert isinstance(instance.Date, int)
 
 
 @given(instance=Payment_strategy)
@@ -385,9 +367,6 @@ def test_payment_Date_setter(instance):
 def test_shopping_cart_instantiation(instance):
     assert isinstance(instance, Shopping_Cart)
 
-@given(instance=Shopping_Cart_strategy)
-def test_shopping_cart_Date_type(instance):
-    assert isinstance(instance.Date, int)
 
 
 @given(instance=Shopping_Cart_strategy)
@@ -401,9 +380,6 @@ def test_shopping_cart_Date_setter(instance):
 def test_products_instantiation(instance):
     assert isinstance(instance, Products)
 
-@given(instance=Products_strategy)
-def test_products_Product_ID_type(instance):
-    assert isinstance(instance.Product_ID, int)
 
 
 @given(instance=Products_strategy)
@@ -417,9 +393,6 @@ def test_products_Product_ID_setter(instance):
 def test_customer_instantiation(instance):
     assert isinstance(instance, Customer)
 
-@given(instance=Customer_strategy)
-def test_customer_Name_type(instance):
-    assert isinstance(instance.Name, str)
 
 
 @given(instance=Customer_strategy)
@@ -428,9 +401,6 @@ def test_customer_Name_setter(instance):
     instance.Name = original
     assert instance.Name == original
 
-@given(instance=Customer_strategy)
-def test_customer_Customer_ID_type(instance):
-    assert isinstance(instance.Customer_ID, int)
 
 
 @given(instance=Customer_strategy)

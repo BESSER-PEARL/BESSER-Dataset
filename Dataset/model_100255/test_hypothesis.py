@@ -3,16 +3,16 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     HtmlProfile,
-    wikigen::Article,
-    wikigen::Document,
-    wikigen::HtmlProfile,
-    wikigen::GenHtmlDocument,
-    wikigen::GenLatexDocument,
-    wikigen::Container,
+    wikigen_Article,
+    wikigen_Document,
+    wikigen_HtmlProfile,
+    wikigen_GenHtmlDocument,
+    wikigen_GenLatexDocument,
+    wikigen_Container,
 )
 
 # =============================================================================
@@ -35,85 +35,85 @@ def test_htmlprofile_constructor_args():
 
 
 
-def test_wikigen::article_is_not_abstract():
-    assert not inspect.isabstract(wikigen::Article)
+def test_wikigen_article_is_not_abstract():
+    assert not inspect.isabstract(wikigen_Article)
 
 
-def test_wikigen::article_constructor_exists():
-    assert callable(wikigen::Article.__init__)
+def test_wikigen_article_constructor_exists():
+    assert callable(wikigen_Article.__init__)
 
 
-def test_wikigen::article_constructor_args():
-    sig = inspect.signature(wikigen::Article.__init__)
+def test_wikigen_article_constructor_args():
+    sig = inspect.signature(wikigen_Article.__init__)
     params = list(sig.parameters.keys())
-    assert "generateTOC" in params, "Missing parameter 'generateTOC'"
     assert "nbColumns" in params, "Missing parameter 'nbColumns'"
+    assert "generateTOC" in params, "Missing parameter 'generateTOC'"
 
-def test_wikigen::article_has_generateTOC():
-    assert hasattr(wikigen::Article, "generateTOC")
+def test_wikigen_article_has_nbColumns():
+    assert hasattr(wikigen_Article, "nbColumns")
     descriptor = None
-    for klass in wikigen::Article.__mro__:
-        if "generateTOC" in klass.__dict__:
-            descriptor = klass.__dict__["generateTOC"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_wikigen::article_has_nbColumns():
-    assert hasattr(wikigen::Article, "nbColumns")
-    descriptor = None
-    for klass in wikigen::Article.__mro__:
+    for klass in wikigen_Article.__mro__:
         if "nbColumns" in klass.__dict__:
             descriptor = klass.__dict__["nbColumns"]
             break
     assert isinstance(descriptor, property)
 
+def test_wikigen_article_has_generateTOC():
+    assert hasattr(wikigen_Article, "generateTOC")
+    descriptor = None
+    for klass in wikigen_Article.__mro__:
+        if "generateTOC" in klass.__dict__:
+            descriptor = klass.__dict__["generateTOC"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_wikigen::document_is_not_abstract():
-    assert not inspect.isabstract(wikigen::Document)
+
+def test_wikigen_document_is_not_abstract():
+    assert not inspect.isabstract(wikigen_Document)
 
 
-def test_wikigen::document_constructor_exists():
-    assert callable(wikigen::Document.__init__)
+def test_wikigen_document_constructor_exists():
+    assert callable(wikigen_Document.__init__)
 
 
-def test_wikigen::document_constructor_args():
-    sig = inspect.signature(wikigen::Document.__init__)
+def test_wikigen_document_constructor_args():
+    sig = inspect.signature(wikigen_Document.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_wikigen::htmlprofile_is_not_abstract():
-    assert not inspect.isabstract(wikigen::HtmlProfile)
+def test_wikigen_htmlprofile_is_not_abstract():
+    assert not inspect.isabstract(wikigen_HtmlProfile)
 
 
-def test_wikigen::htmlprofile_constructor_exists():
-    assert callable(wikigen::HtmlProfile.__init__)
+def test_wikigen_htmlprofile_constructor_exists():
+    assert callable(wikigen_HtmlProfile.__init__)
 
 
-def test_wikigen::htmlprofile_constructor_args():
-    sig = inspect.signature(wikigen::HtmlProfile.__init__)
+def test_wikigen_htmlprofile_constructor_args():
+    sig = inspect.signature(wikigen_HtmlProfile.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_wikigen::genhtmldocument_is_not_abstract():
-    assert not inspect.isabstract(wikigen::GenHtmlDocument)
+def test_wikigen_genhtmldocument_is_not_abstract():
+    assert not inspect.isabstract(wikigen_GenHtmlDocument)
 
 
-def test_wikigen::genhtmldocument_constructor_exists():
-    assert callable(wikigen::GenHtmlDocument.__init__)
+def test_wikigen_genhtmldocument_constructor_exists():
+    assert callable(wikigen_GenHtmlDocument.__init__)
 
 
-def test_wikigen::genhtmldocument_constructor_args():
-    sig = inspect.signature(wikigen::GenHtmlDocument.__init__)
+def test_wikigen_genhtmldocument_constructor_args():
+    sig = inspect.signature(wikigen_GenHtmlDocument.__init__)
     params = list(sig.parameters.keys())
     assert "filename" in params, "Missing parameter 'filename'"
 
-def test_wikigen::genhtmldocument_has_filename():
-    assert hasattr(wikigen::GenHtmlDocument, "filename")
+def test_wikigen_genhtmldocument_has_filename():
+    assert hasattr(wikigen_GenHtmlDocument, "filename")
     descriptor = None
-    for klass in wikigen::GenHtmlDocument.__mro__:
+    for klass in wikigen_GenHtmlDocument.__mro__:
         if "filename" in klass.__dict__:
             descriptor = klass.__dict__["filename"]
             break
@@ -121,60 +121,60 @@ def test_wikigen::genhtmldocument_has_filename():
 
 
 
-def test_wikigen::genlatexdocument_is_not_abstract():
-    assert not inspect.isabstract(wikigen::GenLatexDocument)
+def test_wikigen_genlatexdocument_is_not_abstract():
+    assert not inspect.isabstract(wikigen_GenLatexDocument)
 
 
-def test_wikigen::genlatexdocument_constructor_exists():
-    assert callable(wikigen::GenLatexDocument.__init__)
+def test_wikigen_genlatexdocument_constructor_exists():
+    assert callable(wikigen_GenLatexDocument.__init__)
 
 
-def test_wikigen::genlatexdocument_constructor_args():
-    sig = inspect.signature(wikigen::GenLatexDocument.__init__)
+def test_wikigen_genlatexdocument_constructor_args():
+    sig = inspect.signature(wikigen_GenLatexDocument.__init__)
     params = list(sig.parameters.keys())
+    assert "filename" in params, "Missing parameter 'filename'"
     assert "authors" in params, "Missing parameter 'authors'"
     assert "title" in params, "Missing parameter 'title'"
-    assert "filename" in params, "Missing parameter 'filename'"
 
-def test_wikigen::genlatexdocument_has_authors():
-    assert hasattr(wikigen::GenLatexDocument, "authors")
+def test_wikigen_genlatexdocument_has_filename():
+    assert hasattr(wikigen_GenLatexDocument, "filename")
     descriptor = None
-    for klass in wikigen::GenLatexDocument.__mro__:
+    for klass in wikigen_GenLatexDocument.__mro__:
+        if "filename" in klass.__dict__:
+            descriptor = klass.__dict__["filename"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_wikigen_genlatexdocument_has_authors():
+    assert hasattr(wikigen_GenLatexDocument, "authors")
+    descriptor = None
+    for klass in wikigen_GenLatexDocument.__mro__:
         if "authors" in klass.__dict__:
             descriptor = klass.__dict__["authors"]
             break
     assert isinstance(descriptor, property)
 
-def test_wikigen::genlatexdocument_has_title():
-    assert hasattr(wikigen::GenLatexDocument, "title")
+def test_wikigen_genlatexdocument_has_title():
+    assert hasattr(wikigen_GenLatexDocument, "title")
     descriptor = None
-    for klass in wikigen::GenLatexDocument.__mro__:
+    for klass in wikigen_GenLatexDocument.__mro__:
         if "title" in klass.__dict__:
             descriptor = klass.__dict__["title"]
             break
     assert isinstance(descriptor, property)
 
-def test_wikigen::genlatexdocument_has_filename():
-    assert hasattr(wikigen::GenLatexDocument, "filename")
-    descriptor = None
-    for klass in wikigen::GenLatexDocument.__mro__:
-        if "filename" in klass.__dict__:
-            descriptor = klass.__dict__["filename"]
-            break
-    assert isinstance(descriptor, property)
 
 
-
-def test_wikigen::container_is_not_abstract():
-    assert not inspect.isabstract(wikigen::Container)
-
-
-def test_wikigen::container_constructor_exists():
-    assert callable(wikigen::Container.__init__)
+def test_wikigen_container_is_not_abstract():
+    assert not inspect.isabstract(wikigen_Container)
 
 
-def test_wikigen::container_constructor_args():
-    sig = inspect.signature(wikigen::Container.__init__)
+def test_wikigen_container_constructor_exists():
+    assert callable(wikigen_Container.__init__)
+
+
+def test_wikigen_container_constructor_args():
+    sig = inspect.signature(wikigen_Container.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -192,35 +192,35 @@ safe_text = st.text(
 HtmlProfile_strategy = st.builds(
     HtmlProfile,
 )
-wikigen::Article_strategy = st.builds(
-    wikigen::Article,
-    generateTOC=
-        st.booleans(),
+wikigen_Article_strategy = st.builds(
+    wikigen_Article,
     nbColumns=
-        st.integers()
+        st.integers(),
+    generateTOC=
+        st.booleans()
 )
-wikigen::Document_strategy = st.builds(
-    wikigen::Document,
+wikigen_Document_strategy = st.builds(
+    wikigen_Document,
 )
-wikigen::HtmlProfile_strategy = st.builds(
-    wikigen::HtmlProfile,
+wikigen_HtmlProfile_strategy = st.builds(
+    wikigen_HtmlProfile,
 )
-wikigen::GenHtmlDocument_strategy = st.builds(
-    wikigen::GenHtmlDocument,
+wikigen_GenHtmlDocument_strategy = st.builds(
+    wikigen_GenHtmlDocument,
     filename=
         safe_text
 )
-wikigen::GenLatexDocument_strategy = st.builds(
-    wikigen::GenLatexDocument,
+wikigen_GenLatexDocument_strategy = st.builds(
+    wikigen_GenLatexDocument,
+    filename=
+        safe_text,
     authors=
         safe_text,
     title=
-        safe_text,
-    filename=
         safe_text
 )
-wikigen::Container_strategy = st.builds(
-    wikigen::Container,
+wikigen_Container_strategy = st.builds(
+    wikigen_Container,
 )
 
 @given(instance=HtmlProfile_strategy)
@@ -228,98 +228,80 @@ wikigen::Container_strategy = st.builds(
 def test_htmlprofile_instantiation(instance):
     assert isinstance(instance, HtmlProfile)
 
-@given(instance=wikigen::Article_strategy)
+@given(instance=wikigen_Article_strategy)
 @settings(max_examples=50)
-def test_wikigen::article_instantiation(instance):
-    assert isinstance(instance, wikigen::Article)
-
-@given(instance=wikigen::Article_strategy)
-def test_wikigen::article_generateTOC_type(instance):
-    assert isinstance(instance.generateTOC, bool)
+def test_wikigen_article_instantiation(instance):
+    assert isinstance(instance, wikigen_Article)
 
 
-@given(instance=wikigen::Article_strategy)
-def test_wikigen::article_generateTOC_setter(instance):
-    original = instance.generateTOC
-    instance.generateTOC = original
-    assert instance.generateTOC == original
 
-@given(instance=wikigen::Article_strategy)
-def test_wikigen::article_nbColumns_type(instance):
-    assert isinstance(instance.nbColumns, int)
-
-
-@given(instance=wikigen::Article_strategy)
-def test_wikigen::article_nbColumns_setter(instance):
+@given(instance=wikigen_Article_strategy)
+def test_wikigen_article_nbColumns_setter(instance):
     original = instance.nbColumns
     instance.nbColumns = original
     assert instance.nbColumns == original
 
-@given(instance=wikigen::Document_strategy)
+
+
+@given(instance=wikigen_Article_strategy)
+def test_wikigen_article_generateTOC_setter(instance):
+    original = instance.generateTOC
+    instance.generateTOC = original
+    assert instance.generateTOC == original
+
+@given(instance=wikigen_Document_strategy)
 @settings(max_examples=50)
-def test_wikigen::document_instantiation(instance):
-    assert isinstance(instance, wikigen::Document)
+def test_wikigen_document_instantiation(instance):
+    assert isinstance(instance, wikigen_Document)
 
-@given(instance=wikigen::HtmlProfile_strategy)
+@given(instance=wikigen_HtmlProfile_strategy)
 @settings(max_examples=50)
-def test_wikigen::htmlprofile_instantiation(instance):
-    assert isinstance(instance, wikigen::HtmlProfile)
+def test_wikigen_htmlprofile_instantiation(instance):
+    assert isinstance(instance, wikigen_HtmlProfile)
 
-@given(instance=wikigen::GenHtmlDocument_strategy)
+@given(instance=wikigen_GenHtmlDocument_strategy)
 @settings(max_examples=50)
-def test_wikigen::genhtmldocument_instantiation(instance):
-    assert isinstance(instance, wikigen::GenHtmlDocument)
-
-@given(instance=wikigen::GenHtmlDocument_strategy)
-def test_wikigen::genhtmldocument_filename_type(instance):
-    assert isinstance(instance.filename, str)
+def test_wikigen_genhtmldocument_instantiation(instance):
+    assert isinstance(instance, wikigen_GenHtmlDocument)
 
 
-@given(instance=wikigen::GenHtmlDocument_strategy)
-def test_wikigen::genhtmldocument_filename_setter(instance):
+
+@given(instance=wikigen_GenHtmlDocument_strategy)
+def test_wikigen_genhtmldocument_filename_setter(instance):
     original = instance.filename
     instance.filename = original
     assert instance.filename == original
 
-@given(instance=wikigen::GenLatexDocument_strategy)
+@given(instance=wikigen_GenLatexDocument_strategy)
 @settings(max_examples=50)
-def test_wikigen::genlatexdocument_instantiation(instance):
-    assert isinstance(instance, wikigen::GenLatexDocument)
-
-@given(instance=wikigen::GenLatexDocument_strategy)
-def test_wikigen::genlatexdocument_authors_type(instance):
-    assert isinstance(instance.authors, str)
+def test_wikigen_genlatexdocument_instantiation(instance):
+    assert isinstance(instance, wikigen_GenLatexDocument)
 
 
-@given(instance=wikigen::GenLatexDocument_strategy)
-def test_wikigen::genlatexdocument_authors_setter(instance):
+
+@given(instance=wikigen_GenLatexDocument_strategy)
+def test_wikigen_genlatexdocument_filename_setter(instance):
+    original = instance.filename
+    instance.filename = original
+    assert instance.filename == original
+
+
+
+@given(instance=wikigen_GenLatexDocument_strategy)
+def test_wikigen_genlatexdocument_authors_setter(instance):
     original = instance.authors
     instance.authors = original
     assert instance.authors == original
 
-@given(instance=wikigen::GenLatexDocument_strategy)
-def test_wikigen::genlatexdocument_title_type(instance):
-    assert isinstance(instance.title, str)
 
 
-@given(instance=wikigen::GenLatexDocument_strategy)
-def test_wikigen::genlatexdocument_title_setter(instance):
+@given(instance=wikigen_GenLatexDocument_strategy)
+def test_wikigen_genlatexdocument_title_setter(instance):
     original = instance.title
     instance.title = original
     assert instance.title == original
 
-@given(instance=wikigen::GenLatexDocument_strategy)
-def test_wikigen::genlatexdocument_filename_type(instance):
-    assert isinstance(instance.filename, str)
-
-
-@given(instance=wikigen::GenLatexDocument_strategy)
-def test_wikigen::genlatexdocument_filename_setter(instance):
-    original = instance.filename
-    instance.filename = original
-    assert instance.filename == original
-
-@given(instance=wikigen::Container_strategy)
+@given(instance=wikigen_Container_strategy)
 @settings(max_examples=50)
-def test_wikigen::container_instantiation(instance):
-    assert isinstance(instance, wikigen::Container)
+def test_wikigen_container_instantiation(instance):
+    assert isinstance(instance, wikigen_Container)

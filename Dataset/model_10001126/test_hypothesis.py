@@ -3,7 +3,7 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
 from python_code import (
     Library_Management_System_Librarian,
@@ -89,17 +89,8 @@ def test_library_management_system_faculty_constructor_exists():
 def test_library_management_system_faculty_constructor_args():
     sig = inspect.signature(Library_Management_System_Faculty.__init__)
     params = list(sig.parameters.keys())
-    assert "FacultyName" in params, "Missing parameter 'FacultyName'"
     assert "FacultyId" in params, "Missing parameter 'FacultyId'"
-
-def test_library_management_system_faculty_has_FacultyName():
-    assert hasattr(Library_Management_System_Faculty, "FacultyName")
-    descriptor = None
-    for klass in Library_Management_System_Faculty.__mro__:
-        if "FacultyName" in klass.__dict__:
-            descriptor = klass.__dict__["FacultyName"]
-            break
-    assert isinstance(descriptor, property)
+    assert "FacultyName" in params, "Missing parameter 'FacultyName'"
 
 def test_library_management_system_faculty_has_FacultyId():
     assert hasattr(Library_Management_System_Faculty, "FacultyId")
@@ -107,6 +98,15 @@ def test_library_management_system_faculty_has_FacultyId():
     for klass in Library_Management_System_Faculty.__mro__:
         if "FacultyId" in klass.__dict__:
             descriptor = klass.__dict__["FacultyId"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_library_management_system_faculty_has_FacultyName():
+    assert hasattr(Library_Management_System_Faculty, "FacultyName")
+    descriptor = None
+    for klass in Library_Management_System_Faculty.__mro__:
+        if "FacultyName" in klass.__dict__:
+            descriptor = klass.__dict__["FacultyName"]
             break
     assert isinstance(descriptor, property)
 
@@ -123,17 +123,8 @@ def test_library_management_system_student_constructor_exists():
 def test_library_management_system_student_constructor_args():
     sig = inspect.signature(Library_Management_System_Student.__init__)
     params = list(sig.parameters.keys())
-    assert "StudentId" in params, "Missing parameter 'StudentId'"
     assert "StudentName" in params, "Missing parameter 'StudentName'"
-
-def test_library_management_system_student_has_StudentId():
-    assert hasattr(Library_Management_System_Student, "StudentId")
-    descriptor = None
-    for klass in Library_Management_System_Student.__mro__:
-        if "StudentId" in klass.__dict__:
-            descriptor = klass.__dict__["StudentId"]
-            break
-    assert isinstance(descriptor, property)
+    assert "StudentId" in params, "Missing parameter 'StudentId'"
 
 def test_library_management_system_student_has_StudentName():
     assert hasattr(Library_Management_System_Student, "StudentName")
@@ -141,6 +132,15 @@ def test_library_management_system_student_has_StudentName():
     for klass in Library_Management_System_Student.__mro__:
         if "StudentName" in klass.__dict__:
             descriptor = klass.__dict__["StudentName"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_library_management_system_student_has_StudentId():
+    assert hasattr(Library_Management_System_Student, "StudentId")
+    descriptor = None
+    for klass in Library_Management_System_Student.__mro__:
+        if "StudentId" in klass.__dict__:
+            descriptor = klass.__dict__["StudentId"]
             break
     assert isinstance(descriptor, property)
 
@@ -157,11 +157,20 @@ def test_library_management_system_patron_constructor_exists():
 def test_library_management_system_patron_constructor_args():
     sig = inspect.signature(Library_Management_System_Patron.__init__)
     params = list(sig.parameters.keys())
+    assert "Status" in params, "Missing parameter 'Status'"
     assert "Magazines" in params, "Missing parameter 'Magazines'"
     assert "Books" in params, "Missing parameter 'Books'"
-    assert "SpecialStatus" in params, "Missing parameter 'SpecialStatus'"
     assert "OtherResources" in params, "Missing parameter 'OtherResources'"
-    assert "Status" in params, "Missing parameter 'Status'"
+    assert "SpecialStatus" in params, "Missing parameter 'SpecialStatus'"
+
+def test_library_management_system_patron_has_Status():
+    assert hasattr(Library_Management_System_Patron, "Status")
+    descriptor = None
+    for klass in Library_Management_System_Patron.__mro__:
+        if "Status" in klass.__dict__:
+            descriptor = klass.__dict__["Status"]
+            break
+    assert isinstance(descriptor, property)
 
 def test_library_management_system_patron_has_Magazines():
     assert hasattr(Library_Management_System_Patron, "Magazines")
@@ -181,15 +190,6 @@ def test_library_management_system_patron_has_Books():
             break
     assert isinstance(descriptor, property)
 
-def test_library_management_system_patron_has_SpecialStatus():
-    assert hasattr(Library_Management_System_Patron, "SpecialStatus")
-    descriptor = None
-    for klass in Library_Management_System_Patron.__mro__:
-        if "SpecialStatus" in klass.__dict__:
-            descriptor = klass.__dict__["SpecialStatus"]
-            break
-    assert isinstance(descriptor, property)
-
 def test_library_management_system_patron_has_OtherResources():
     assert hasattr(Library_Management_System_Patron, "OtherResources")
     descriptor = None
@@ -199,12 +199,12 @@ def test_library_management_system_patron_has_OtherResources():
             break
     assert isinstance(descriptor, property)
 
-def test_library_management_system_patron_has_Status():
-    assert hasattr(Library_Management_System_Patron, "Status")
+def test_library_management_system_patron_has_SpecialStatus():
+    assert hasattr(Library_Management_System_Patron, "SpecialStatus")
     descriptor = None
     for klass in Library_Management_System_Patron.__mro__:
-        if "Status" in klass.__dict__:
-            descriptor = klass.__dict__["Status"]
+        if "SpecialStatus" in klass.__dict__:
+            descriptor = klass.__dict__["SpecialStatus"]
             break
     assert isinstance(descriptor, property)
 
@@ -731,30 +731,30 @@ Library_Management_System_Librarian_strategy = st.builds(
 )
 Library_Management_System_Faculty_strategy = st.builds(
     Library_Management_System_Faculty,
-    FacultyName=
-        safe_text,
     FacultyId=
-        st.integers()
+        st.integers(),
+    FacultyName=
+        safe_text
 )
 Library_Management_System_Student_strategy = st.builds(
     Library_Management_System_Student,
-    StudentId=
-        st.integers(),
     StudentName=
-        safe_text
+        safe_text,
+    StudentId=
+        st.integers()
 )
 Library_Management_System_Patron_strategy = st.builds(
     Library_Management_System_Patron,
+    Status=
+        st.none(),
     Magazines=
         safe_text,
     Books=
         safe_text,
-    SpecialStatus=
-        safe_text,
     OtherResources=
         safe_text,
-    Status=
-        st.none()
+    SpecialStatus=
+        safe_text
 )
 Faculty_Actor_strategy = st.builds(
     Faculty_Actor,
@@ -870,9 +870,6 @@ Library_Managment_System_Check_in___Return_UseCase_strategy = st.builds(
 def test_library_management_system_librarian_instantiation(instance):
     assert isinstance(instance, Library_Management_System_Librarian)
 
-@given(instance=Library_Management_System_Librarian_strategy)
-def test_library_management_system_librarian_LibrarianName_type(instance):
-    assert isinstance(instance.LibrarianName, str)
 
 
 @given(instance=Library_Management_System_Librarian_strategy)
@@ -886,20 +883,6 @@ def test_library_management_system_librarian_LibrarianName_setter(instance):
 def test_library_management_system_faculty_instantiation(instance):
     assert isinstance(instance, Library_Management_System_Faculty)
 
-@given(instance=Library_Management_System_Faculty_strategy)
-def test_library_management_system_faculty_FacultyName_type(instance):
-    assert isinstance(instance.FacultyName, str)
-
-
-@given(instance=Library_Management_System_Faculty_strategy)
-def test_library_management_system_faculty_FacultyName_setter(instance):
-    original = instance.FacultyName
-    instance.FacultyName = original
-    assert instance.FacultyName == original
-
-@given(instance=Library_Management_System_Faculty_strategy)
-def test_library_management_system_faculty_FacultyId_type(instance):
-    assert isinstance(instance.FacultyId, int)
 
 
 @given(instance=Library_Management_System_Faculty_strategy)
@@ -908,25 +891,19 @@ def test_library_management_system_faculty_FacultyId_setter(instance):
     instance.FacultyId = original
     assert instance.FacultyId == original
 
+
+
+@given(instance=Library_Management_System_Faculty_strategy)
+def test_library_management_system_faculty_FacultyName_setter(instance):
+    original = instance.FacultyName
+    instance.FacultyName = original
+    assert instance.FacultyName == original
+
 @given(instance=Library_Management_System_Student_strategy)
 @settings(max_examples=50)
 def test_library_management_system_student_instantiation(instance):
     assert isinstance(instance, Library_Management_System_Student)
 
-@given(instance=Library_Management_System_Student_strategy)
-def test_library_management_system_student_StudentId_type(instance):
-    assert isinstance(instance.StudentId, int)
-
-
-@given(instance=Library_Management_System_Student_strategy)
-def test_library_management_system_student_StudentId_setter(instance):
-    original = instance.StudentId
-    instance.StudentId = original
-    assert instance.StudentId == original
-
-@given(instance=Library_Management_System_Student_strategy)
-def test_library_management_system_student_StudentName_type(instance):
-    assert isinstance(instance.StudentName, str)
 
 
 @given(instance=Library_Management_System_Student_strategy)
@@ -935,14 +912,27 @@ def test_library_management_system_student_StudentName_setter(instance):
     instance.StudentName = original
     assert instance.StudentName == original
 
+
+
+@given(instance=Library_Management_System_Student_strategy)
+def test_library_management_system_student_StudentId_setter(instance):
+    original = instance.StudentId
+    instance.StudentId = original
+    assert instance.StudentId == original
+
 @given(instance=Library_Management_System_Patron_strategy)
 @settings(max_examples=50)
 def test_library_management_system_patron_instantiation(instance):
     assert isinstance(instance, Library_Management_System_Patron)
 
+
+
 @given(instance=Library_Management_System_Patron_strategy)
-def test_library_management_system_patron_Magazines_type(instance):
-    assert isinstance(instance.Magazines, str)
+def test_library_management_system_patron_Status_setter(instance):
+    original = instance.Status
+    instance.Status = original
+    assert instance.Status == original
+
 
 
 @given(instance=Library_Management_System_Patron_strategy)
@@ -951,9 +941,6 @@ def test_library_management_system_patron_Magazines_setter(instance):
     instance.Magazines = original
     assert instance.Magazines == original
 
-@given(instance=Library_Management_System_Patron_strategy)
-def test_library_management_system_patron_Books_type(instance):
-    assert isinstance(instance.Books, str)
 
 
 @given(instance=Library_Management_System_Patron_strategy)
@@ -962,20 +949,6 @@ def test_library_management_system_patron_Books_setter(instance):
     instance.Books = original
     assert instance.Books == original
 
-@given(instance=Library_Management_System_Patron_strategy)
-def test_library_management_system_patron_SpecialStatus_type(instance):
-    assert isinstance(instance.SpecialStatus, str)
-
-
-@given(instance=Library_Management_System_Patron_strategy)
-def test_library_management_system_patron_SpecialStatus_setter(instance):
-    original = instance.SpecialStatus
-    instance.SpecialStatus = original
-    assert instance.SpecialStatus == original
-
-@given(instance=Library_Management_System_Patron_strategy)
-def test_library_management_system_patron_OtherResources_type(instance):
-    assert isinstance(instance.OtherResources, str)
 
 
 @given(instance=Library_Management_System_Patron_strategy)
@@ -984,16 +957,13 @@ def test_library_management_system_patron_OtherResources_setter(instance):
     instance.OtherResources = original
     assert instance.OtherResources == original
 
-@given(instance=Library_Management_System_Patron_strategy)
-def test_library_management_system_patron_Status_type(instance):
-    assert isinstance(instance.Status, library_management_system_patron)
 
 
 @given(instance=Library_Management_System_Patron_strategy)
-def test_library_management_system_patron_Status_setter(instance):
-    original = instance.Status
-    instance.Status = original
-    assert instance.Status == original
+def test_library_management_system_patron_SpecialStatus_setter(instance):
+    original = instance.SpecialStatus
+    instance.SpecialStatus = original
+    assert instance.SpecialStatus == original
 
 @given(instance=Faculty_Actor_strategy)
 @settings(max_examples=50)

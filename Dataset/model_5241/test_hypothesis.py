@@ -3,11 +3,11 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    rhs::Y,
-    rhs::X,
+from python_code import (
+    rhs_Y,
+    rhs_X,
 )
 
 # =============================================================================
@@ -16,23 +16,23 @@ from classes import (
 
 
 
-def test_rhs::y_is_not_abstract():
-    assert not inspect.isabstract(rhs::Y)
+def test_rhs_y_is_not_abstract():
+    assert not inspect.isabstract(rhs_Y)
 
 
-def test_rhs::y_constructor_exists():
-    assert callable(rhs::Y.__init__)
+def test_rhs_y_constructor_exists():
+    assert callable(rhs_Y.__init__)
 
 
-def test_rhs::y_constructor_args():
-    sig = inspect.signature(rhs::Y.__init__)
+def test_rhs_y_constructor_args():
+    sig = inspect.signature(rhs_Y.__init__)
     params = list(sig.parameters.keys())
     assert "y" in params, "Missing parameter 'y'"
 
-def test_rhs::y_has_y():
-    assert hasattr(rhs::Y, "y")
+def test_rhs_y_has_y():
+    assert hasattr(rhs_Y, "y")
     descriptor = None
-    for klass in rhs::Y.__mro__:
+    for klass in rhs_Y.__mro__:
         if "y" in klass.__dict__:
             descriptor = klass.__dict__["y"]
             break
@@ -40,23 +40,23 @@ def test_rhs::y_has_y():
 
 
 
-def test_rhs::x_is_not_abstract():
-    assert not inspect.isabstract(rhs::X)
+def test_rhs_x_is_not_abstract():
+    assert not inspect.isabstract(rhs_X)
 
 
-def test_rhs::x_constructor_exists():
-    assert callable(rhs::X.__init__)
+def test_rhs_x_constructor_exists():
+    assert callable(rhs_X.__init__)
 
 
-def test_rhs::x_constructor_args():
-    sig = inspect.signature(rhs::X.__init__)
+def test_rhs_x_constructor_args():
+    sig = inspect.signature(rhs_X.__init__)
     params = list(sig.parameters.keys())
     assert "x" in params, "Missing parameter 'x'"
 
-def test_rhs::x_has_x():
-    assert hasattr(rhs::X, "x")
+def test_rhs_x_has_x():
+    assert hasattr(rhs_X, "x")
     descriptor = None
-    for klass in rhs::X.__mro__:
+    for klass in rhs_X.__mro__:
         if "x" in klass.__dict__:
             descriptor = klass.__dict__["x"]
             break
@@ -74,45 +74,39 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-rhs::Y_strategy = st.builds(
-    rhs::Y,
+rhs_Y_strategy = st.builds(
+    rhs_Y,
     y=
         safe_text
 )
-rhs::X_strategy = st.builds(
-    rhs::X,
+rhs_X_strategy = st.builds(
+    rhs_X,
     x=
         safe_text
 )
 
-@given(instance=rhs::Y_strategy)
+@given(instance=rhs_Y_strategy)
 @settings(max_examples=50)
-def test_rhs::y_instantiation(instance):
-    assert isinstance(instance, rhs::Y)
-
-@given(instance=rhs::Y_strategy)
-def test_rhs::y_y_type(instance):
-    assert isinstance(instance.y, str)
+def test_rhs_y_instantiation(instance):
+    assert isinstance(instance, rhs_Y)
 
 
-@given(instance=rhs::Y_strategy)
-def test_rhs::y_y_setter(instance):
+
+@given(instance=rhs_Y_strategy)
+def test_rhs_y_y_setter(instance):
     original = instance.y
     instance.y = original
     assert instance.y == original
 
-@given(instance=rhs::X_strategy)
+@given(instance=rhs_X_strategy)
 @settings(max_examples=50)
-def test_rhs::x_instantiation(instance):
-    assert isinstance(instance, rhs::X)
-
-@given(instance=rhs::X_strategy)
-def test_rhs::x_x_type(instance):
-    assert isinstance(instance.x, str)
+def test_rhs_x_instantiation(instance):
+    assert isinstance(instance, rhs_X)
 
 
-@given(instance=rhs::X_strategy)
-def test_rhs::x_x_setter(instance):
+
+@given(instance=rhs_X_strategy)
+def test_rhs_x_x_setter(instance):
     original = instance.x
     instance.x = original
     assert instance.x == original

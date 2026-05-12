@@ -3,62 +3,62 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
+from python_code import (
     BinaryOperator,
-    metamodel::Less,
-    metamodel::Different,
-    metamodel::More,
-    metamodel::Equal,
+    metamodel_Different,
+    metamodel_More,
+    metamodel_Less,
+    metamodel_Equal,
     UnaryCond,
-    metamodel::Negation,
+    metamodel_Negation,
     UnaryOperator,
-    metamodel::Positive,
-    metamodel::Negative,
-    metamodel::Sub,
-    metamodel::Add,
-    metamodel::MoreOrEqual,
-    metamodel::LessOrEqual,
+    metamodel_Positive,
+    metamodel_Negative,
+    metamodel_Sub,
+    metamodel_Add,
+    metamodel_MoreOrEqual,
+    metamodel_LessOrEqual,
     BinaryCond,
-    metamodel::And,
-    metamodel::Or,
+    metamodel_And,
+    metamodel_Or,
     Condition,
-    metamodel::UnaryCond,
-    metamodel::BinaryCond,
-    metamodel::Operator,
+    metamodel_UnaryCond,
+    metamodel_BinaryCond,
+    metamodel_Operator,
     Operator,
-    metamodel::BinaryOperator,
-    metamodel::UnaryOperator,
-    metamodel::Condition,
-    metamodel::Value,
-    metamodel::Transition,
-    metamodel::State,
-    metamodel::StateMachine,
+    metamodel_BinaryOperator,
+    metamodel_UnaryOperator,
+    metamodel_Condition,
+    metamodel_Value,
+    metamodel_Transition,
+    metamodel_State,
+    metamodel_StateMachine,
     Type,
-    metamodel::FloatVal,
-    metamodel::IntVal,
-    metamodel::BoolVal,
-    metamodel::Type,
+    metamodel_FloatVal,
+    metamodel_IntVal,
+    metamodel_BoolVal,
+    metamodel_Type,
     Sensor,
-    metamodel::LightSensor,
-    metamodel::DistanceSensor,
+    metamodel_LightSensor,
+    metamodel_DistanceSensor,
     ActionWheel,
-    metamodel::TurnRight,
-    metamodel::Forward,
-    metamodel::Stopping,
-    metamodel::Backward,
-    metamodel::TurnLeft,
+    metamodel_Forward,
+    metamodel_Backward,
+    metamodel_TurnRight,
+    metamodel_Stopping,
+    metamodel_TurnLeft,
     Action,
-    metamodel::ActionWheel,
-    metamodel::Behaviour,
-    metamodel::Robot,
+    metamodel_ActionWheel,
+    metamodel_Behaviour,
+    metamodel_Robot,
     Actuator,
-    metamodel::Group,
-    metamodel::DifferentialWheel,
-    metamodel::Action,
-    metamodel::Actuator,
-    metamodel::Sensor,
+    metamodel_Group,
+    metamodel_DifferentialWheel,
+    metamodel_Action,
+    metamodel_Actuator,
+    metamodel_Sensor,
 )
 
 # =============================================================================
@@ -81,58 +81,58 @@ def test_binaryoperator_constructor_args():
 
 
 
-def test_metamodel::less_is_not_abstract():
-    assert not inspect.isabstract(metamodel::Less)
+def test_metamodel_different_is_not_abstract():
+    assert not inspect.isabstract(metamodel_Different)
 
 
-def test_metamodel::less_constructor_exists():
-    assert callable(metamodel::Less.__init__)
+def test_metamodel_different_constructor_exists():
+    assert callable(metamodel_Different.__init__)
 
 
-def test_metamodel::less_constructor_args():
-    sig = inspect.signature(metamodel::Less.__init__)
+def test_metamodel_different_constructor_args():
+    sig = inspect.signature(metamodel_Different.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_metamodel::different_is_not_abstract():
-    assert not inspect.isabstract(metamodel::Different)
+def test_metamodel_more_is_not_abstract():
+    assert not inspect.isabstract(metamodel_More)
 
 
-def test_metamodel::different_constructor_exists():
-    assert callable(metamodel::Different.__init__)
+def test_metamodel_more_constructor_exists():
+    assert callable(metamodel_More.__init__)
 
 
-def test_metamodel::different_constructor_args():
-    sig = inspect.signature(metamodel::Different.__init__)
+def test_metamodel_more_constructor_args():
+    sig = inspect.signature(metamodel_More.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_metamodel::more_is_not_abstract():
-    assert not inspect.isabstract(metamodel::More)
+def test_metamodel_less_is_not_abstract():
+    assert not inspect.isabstract(metamodel_Less)
 
 
-def test_metamodel::more_constructor_exists():
-    assert callable(metamodel::More.__init__)
+def test_metamodel_less_constructor_exists():
+    assert callable(metamodel_Less.__init__)
 
 
-def test_metamodel::more_constructor_args():
-    sig = inspect.signature(metamodel::More.__init__)
+def test_metamodel_less_constructor_args():
+    sig = inspect.signature(metamodel_Less.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_metamodel::equal_is_not_abstract():
-    assert not inspect.isabstract(metamodel::Equal)
+def test_metamodel_equal_is_not_abstract():
+    assert not inspect.isabstract(metamodel_Equal)
 
 
-def test_metamodel::equal_constructor_exists():
-    assert callable(metamodel::Equal.__init__)
+def test_metamodel_equal_constructor_exists():
+    assert callable(metamodel_Equal.__init__)
 
 
-def test_metamodel::equal_constructor_args():
-    sig = inspect.signature(metamodel::Equal.__init__)
+def test_metamodel_equal_constructor_args():
+    sig = inspect.signature(metamodel_Equal.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -151,16 +151,16 @@ def test_unarycond_constructor_args():
 
 
 
-def test_metamodel::negation_is_not_abstract():
-    assert not inspect.isabstract(metamodel::Negation)
+def test_metamodel_negation_is_not_abstract():
+    assert not inspect.isabstract(metamodel_Negation)
 
 
-def test_metamodel::negation_constructor_exists():
-    assert callable(metamodel::Negation.__init__)
+def test_metamodel_negation_constructor_exists():
+    assert callable(metamodel_Negation.__init__)
 
 
-def test_metamodel::negation_constructor_args():
-    sig = inspect.signature(metamodel::Negation.__init__)
+def test_metamodel_negation_constructor_args():
+    sig = inspect.signature(metamodel_Negation.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -179,86 +179,86 @@ def test_unaryoperator_constructor_args():
 
 
 
-def test_metamodel::positive_is_not_abstract():
-    assert not inspect.isabstract(metamodel::Positive)
+def test_metamodel_positive_is_not_abstract():
+    assert not inspect.isabstract(metamodel_Positive)
 
 
-def test_metamodel::positive_constructor_exists():
-    assert callable(metamodel::Positive.__init__)
+def test_metamodel_positive_constructor_exists():
+    assert callable(metamodel_Positive.__init__)
 
 
-def test_metamodel::positive_constructor_args():
-    sig = inspect.signature(metamodel::Positive.__init__)
+def test_metamodel_positive_constructor_args():
+    sig = inspect.signature(metamodel_Positive.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_metamodel::negative_is_not_abstract():
-    assert not inspect.isabstract(metamodel::Negative)
+def test_metamodel_negative_is_not_abstract():
+    assert not inspect.isabstract(metamodel_Negative)
 
 
-def test_metamodel::negative_constructor_exists():
-    assert callable(metamodel::Negative.__init__)
+def test_metamodel_negative_constructor_exists():
+    assert callable(metamodel_Negative.__init__)
 
 
-def test_metamodel::negative_constructor_args():
-    sig = inspect.signature(metamodel::Negative.__init__)
+def test_metamodel_negative_constructor_args():
+    sig = inspect.signature(metamodel_Negative.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_metamodel::sub_is_not_abstract():
-    assert not inspect.isabstract(metamodel::Sub)
+def test_metamodel_sub_is_not_abstract():
+    assert not inspect.isabstract(metamodel_Sub)
 
 
-def test_metamodel::sub_constructor_exists():
-    assert callable(metamodel::Sub.__init__)
+def test_metamodel_sub_constructor_exists():
+    assert callable(metamodel_Sub.__init__)
 
 
-def test_metamodel::sub_constructor_args():
-    sig = inspect.signature(metamodel::Sub.__init__)
+def test_metamodel_sub_constructor_args():
+    sig = inspect.signature(metamodel_Sub.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_metamodel::add_is_not_abstract():
-    assert not inspect.isabstract(metamodel::Add)
+def test_metamodel_add_is_not_abstract():
+    assert not inspect.isabstract(metamodel_Add)
 
 
-def test_metamodel::add_constructor_exists():
-    assert callable(metamodel::Add.__init__)
+def test_metamodel_add_constructor_exists():
+    assert callable(metamodel_Add.__init__)
 
 
-def test_metamodel::add_constructor_args():
-    sig = inspect.signature(metamodel::Add.__init__)
+def test_metamodel_add_constructor_args():
+    sig = inspect.signature(metamodel_Add.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_metamodel::moreorequal_is_not_abstract():
-    assert not inspect.isabstract(metamodel::MoreOrEqual)
+def test_metamodel_moreorequal_is_not_abstract():
+    assert not inspect.isabstract(metamodel_MoreOrEqual)
 
 
-def test_metamodel::moreorequal_constructor_exists():
-    assert callable(metamodel::MoreOrEqual.__init__)
+def test_metamodel_moreorequal_constructor_exists():
+    assert callable(metamodel_MoreOrEqual.__init__)
 
 
-def test_metamodel::moreorequal_constructor_args():
-    sig = inspect.signature(metamodel::MoreOrEqual.__init__)
+def test_metamodel_moreorequal_constructor_args():
+    sig = inspect.signature(metamodel_MoreOrEqual.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_metamodel::lessorequal_is_not_abstract():
-    assert not inspect.isabstract(metamodel::LessOrEqual)
+def test_metamodel_lessorequal_is_not_abstract():
+    assert not inspect.isabstract(metamodel_LessOrEqual)
 
 
-def test_metamodel::lessorequal_constructor_exists():
-    assert callable(metamodel::LessOrEqual.__init__)
+def test_metamodel_lessorequal_constructor_exists():
+    assert callable(metamodel_LessOrEqual.__init__)
 
 
-def test_metamodel::lessorequal_constructor_args():
-    sig = inspect.signature(metamodel::LessOrEqual.__init__)
+def test_metamodel_lessorequal_constructor_args():
+    sig = inspect.signature(metamodel_LessOrEqual.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -277,30 +277,30 @@ def test_binarycond_constructor_args():
 
 
 
-def test_metamodel::and_is_not_abstract():
-    assert not inspect.isabstract(metamodel::And)
+def test_metamodel_and_is_not_abstract():
+    assert not inspect.isabstract(metamodel_And)
 
 
-def test_metamodel::and_constructor_exists():
-    assert callable(metamodel::And.__init__)
+def test_metamodel_and_constructor_exists():
+    assert callable(metamodel_And.__init__)
 
 
-def test_metamodel::and_constructor_args():
-    sig = inspect.signature(metamodel::And.__init__)
+def test_metamodel_and_constructor_args():
+    sig = inspect.signature(metamodel_And.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_metamodel::or_is_not_abstract():
-    assert not inspect.isabstract(metamodel::Or)
+def test_metamodel_or_is_not_abstract():
+    assert not inspect.isabstract(metamodel_Or)
 
 
-def test_metamodel::or_constructor_exists():
-    assert callable(metamodel::Or.__init__)
+def test_metamodel_or_constructor_exists():
+    assert callable(metamodel_Or.__init__)
 
 
-def test_metamodel::or_constructor_args():
-    sig = inspect.signature(metamodel::Or.__init__)
+def test_metamodel_or_constructor_args():
+    sig = inspect.signature(metamodel_Or.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -319,44 +319,44 @@ def test_condition_constructor_args():
 
 
 
-def test_metamodel::unarycond_is_not_abstract():
-    assert not inspect.isabstract(metamodel::UnaryCond)
+def test_metamodel_unarycond_is_not_abstract():
+    assert not inspect.isabstract(metamodel_UnaryCond)
 
 
-def test_metamodel::unarycond_constructor_exists():
-    assert callable(metamodel::UnaryCond.__init__)
+def test_metamodel_unarycond_constructor_exists():
+    assert callable(metamodel_UnaryCond.__init__)
 
 
-def test_metamodel::unarycond_constructor_args():
-    sig = inspect.signature(metamodel::UnaryCond.__init__)
+def test_metamodel_unarycond_constructor_args():
+    sig = inspect.signature(metamodel_UnaryCond.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_metamodel::binarycond_is_not_abstract():
-    assert not inspect.isabstract(metamodel::BinaryCond)
+def test_metamodel_binarycond_is_not_abstract():
+    assert not inspect.isabstract(metamodel_BinaryCond)
 
 
-def test_metamodel::binarycond_constructor_exists():
-    assert callable(metamodel::BinaryCond.__init__)
+def test_metamodel_binarycond_constructor_exists():
+    assert callable(metamodel_BinaryCond.__init__)
 
 
-def test_metamodel::binarycond_constructor_args():
-    sig = inspect.signature(metamodel::BinaryCond.__init__)
+def test_metamodel_binarycond_constructor_args():
+    sig = inspect.signature(metamodel_BinaryCond.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_metamodel::operator_is_not_abstract():
-    assert not inspect.isabstract(metamodel::Operator)
+def test_metamodel_operator_is_not_abstract():
+    assert not inspect.isabstract(metamodel_Operator)
 
 
-def test_metamodel::operator_constructor_exists():
-    assert callable(metamodel::Operator.__init__)
+def test_metamodel_operator_constructor_exists():
+    assert callable(metamodel_Operator.__init__)
 
 
-def test_metamodel::operator_constructor_args():
-    sig = inspect.signature(metamodel::Operator.__init__)
+def test_metamodel_operator_constructor_args():
+    sig = inspect.signature(metamodel_Operator.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -375,65 +375,65 @@ def test_operator_constructor_args():
 
 
 
-def test_metamodel::binaryoperator_is_not_abstract():
-    assert not inspect.isabstract(metamodel::BinaryOperator)
+def test_metamodel_binaryoperator_is_not_abstract():
+    assert not inspect.isabstract(metamodel_BinaryOperator)
 
 
-def test_metamodel::binaryoperator_constructor_exists():
-    assert callable(metamodel::BinaryOperator.__init__)
+def test_metamodel_binaryoperator_constructor_exists():
+    assert callable(metamodel_BinaryOperator.__init__)
 
 
-def test_metamodel::binaryoperator_constructor_args():
-    sig = inspect.signature(metamodel::BinaryOperator.__init__)
+def test_metamodel_binaryoperator_constructor_args():
+    sig = inspect.signature(metamodel_BinaryOperator.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_metamodel::unaryoperator_is_not_abstract():
-    assert not inspect.isabstract(metamodel::UnaryOperator)
+def test_metamodel_unaryoperator_is_not_abstract():
+    assert not inspect.isabstract(metamodel_UnaryOperator)
 
 
-def test_metamodel::unaryoperator_constructor_exists():
-    assert callable(metamodel::UnaryOperator.__init__)
+def test_metamodel_unaryoperator_constructor_exists():
+    assert callable(metamodel_UnaryOperator.__init__)
 
 
-def test_metamodel::unaryoperator_constructor_args():
-    sig = inspect.signature(metamodel::UnaryOperator.__init__)
+def test_metamodel_unaryoperator_constructor_args():
+    sig = inspect.signature(metamodel_UnaryOperator.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_metamodel::condition_is_not_abstract():
-    assert not inspect.isabstract(metamodel::Condition)
+def test_metamodel_condition_is_not_abstract():
+    assert not inspect.isabstract(metamodel_Condition)
 
 
-def test_metamodel::condition_constructor_exists():
-    assert callable(metamodel::Condition.__init__)
+def test_metamodel_condition_constructor_exists():
+    assert callable(metamodel_Condition.__init__)
 
 
-def test_metamodel::condition_constructor_args():
-    sig = inspect.signature(metamodel::Condition.__init__)
+def test_metamodel_condition_constructor_args():
+    sig = inspect.signature(metamodel_Condition.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_metamodel::value_is_not_abstract():
-    assert not inspect.isabstract(metamodel::Value)
+def test_metamodel_value_is_not_abstract():
+    assert not inspect.isabstract(metamodel_Value)
 
 
-def test_metamodel::value_constructor_exists():
-    assert callable(metamodel::Value.__init__)
+def test_metamodel_value_constructor_exists():
+    assert callable(metamodel_Value.__init__)
 
 
-def test_metamodel::value_constructor_args():
-    sig = inspect.signature(metamodel::Value.__init__)
+def test_metamodel_value_constructor_args():
+    sig = inspect.signature(metamodel_Value.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_metamodel::value_has_name():
-    assert hasattr(metamodel::Value, "name")
+def test_metamodel_value_has_name():
+    assert hasattr(metamodel_Value, "name")
     descriptor = None
-    for klass in metamodel::Value.__mro__:
+    for klass in metamodel_Value.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -441,23 +441,23 @@ def test_metamodel::value_has_name():
 
 
 
-def test_metamodel::transition_is_not_abstract():
-    assert not inspect.isabstract(metamodel::Transition)
+def test_metamodel_transition_is_not_abstract():
+    assert not inspect.isabstract(metamodel_Transition)
 
 
-def test_metamodel::transition_constructor_exists():
-    assert callable(metamodel::Transition.__init__)
+def test_metamodel_transition_constructor_exists():
+    assert callable(metamodel_Transition.__init__)
 
 
-def test_metamodel::transition_constructor_args():
-    sig = inspect.signature(metamodel::Transition.__init__)
+def test_metamodel_transition_constructor_args():
+    sig = inspect.signature(metamodel_Transition.__init__)
     params = list(sig.parameters.keys())
     assert "nameIn" in params, "Missing parameter 'nameIn'"
 
-def test_metamodel::transition_has_nameIn():
-    assert hasattr(metamodel::Transition, "nameIn")
+def test_metamodel_transition_has_nameIn():
+    assert hasattr(metamodel_Transition, "nameIn")
     descriptor = None
-    for klass in metamodel::Transition.__mro__:
+    for klass in metamodel_Transition.__mro__:
         if "nameIn" in klass.__dict__:
             descriptor = klass.__dict__["nameIn"]
             break
@@ -465,67 +465,67 @@ def test_metamodel::transition_has_nameIn():
 
 
 
-def test_metamodel::state_is_not_abstract():
-    assert not inspect.isabstract(metamodel::State)
+def test_metamodel_state_is_not_abstract():
+    assert not inspect.isabstract(metamodel_State)
 
 
-def test_metamodel::state_constructor_exists():
-    assert callable(metamodel::State.__init__)
+def test_metamodel_state_constructor_exists():
+    assert callable(metamodel_State.__init__)
 
 
-def test_metamodel::state_constructor_args():
-    sig = inspect.signature(metamodel::State.__init__)
+def test_metamodel_state_constructor_args():
+    sig = inspect.signature(metamodel_State.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
-    assert "uid" in params, "Missing parameter 'uid'"
     assert "isInitial" in params, "Missing parameter 'isInitial'"
+    assert "uid" in params, "Missing parameter 'uid'"
 
-def test_metamodel::state_has_name():
-    assert hasattr(metamodel::State, "name")
+def test_metamodel_state_has_name():
+    assert hasattr(metamodel_State, "name")
     descriptor = None
-    for klass in metamodel::State.__mro__:
+    for klass in metamodel_State.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
-def test_metamodel::state_has_uid():
-    assert hasattr(metamodel::State, "uid")
+def test_metamodel_state_has_isInitial():
+    assert hasattr(metamodel_State, "isInitial")
     descriptor = None
-    for klass in metamodel::State.__mro__:
-        if "uid" in klass.__dict__:
-            descriptor = klass.__dict__["uid"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_metamodel::state_has_isInitial():
-    assert hasattr(metamodel::State, "isInitial")
-    descriptor = None
-    for klass in metamodel::State.__mro__:
+    for klass in metamodel_State.__mro__:
         if "isInitial" in klass.__dict__:
             descriptor = klass.__dict__["isInitial"]
             break
     assert isinstance(descriptor, property)
 
+def test_metamodel_state_has_uid():
+    assert hasattr(metamodel_State, "uid")
+    descriptor = None
+    for klass in metamodel_State.__mro__:
+        if "uid" in klass.__dict__:
+            descriptor = klass.__dict__["uid"]
+            break
+    assert isinstance(descriptor, property)
 
 
-def test_metamodel::statemachine_is_not_abstract():
-    assert not inspect.isabstract(metamodel::StateMachine)
+
+def test_metamodel_statemachine_is_not_abstract():
+    assert not inspect.isabstract(metamodel_StateMachine)
 
 
-def test_metamodel::statemachine_constructor_exists():
-    assert callable(metamodel::StateMachine.__init__)
+def test_metamodel_statemachine_constructor_exists():
+    assert callable(metamodel_StateMachine.__init__)
 
 
-def test_metamodel::statemachine_constructor_args():
-    sig = inspect.signature(metamodel::StateMachine.__init__)
+def test_metamodel_statemachine_constructor_args():
+    sig = inspect.signature(metamodel_StateMachine.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_metamodel::statemachine_has_name():
-    assert hasattr(metamodel::StateMachine, "name")
+def test_metamodel_statemachine_has_name():
+    assert hasattr(metamodel_StateMachine, "name")
     descriptor = None
-    for klass in metamodel::StateMachine.__mro__:
+    for klass in metamodel_StateMachine.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -547,23 +547,23 @@ def test_type_constructor_args():
 
 
 
-def test_metamodel::floatval_is_not_abstract():
-    assert not inspect.isabstract(metamodel::FloatVal)
+def test_metamodel_floatval_is_not_abstract():
+    assert not inspect.isabstract(metamodel_FloatVal)
 
 
-def test_metamodel::floatval_constructor_exists():
-    assert callable(metamodel::FloatVal.__init__)
+def test_metamodel_floatval_constructor_exists():
+    assert callable(metamodel_FloatVal.__init__)
 
 
-def test_metamodel::floatval_constructor_args():
-    sig = inspect.signature(metamodel::FloatVal.__init__)
+def test_metamodel_floatval_constructor_args():
+    sig = inspect.signature(metamodel_FloatVal.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
 
-def test_metamodel::floatval_has_value():
-    assert hasattr(metamodel::FloatVal, "value")
+def test_metamodel_floatval_has_value():
+    assert hasattr(metamodel_FloatVal, "value")
     descriptor = None
-    for klass in metamodel::FloatVal.__mro__:
+    for klass in metamodel_FloatVal.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -571,23 +571,23 @@ def test_metamodel::floatval_has_value():
 
 
 
-def test_metamodel::intval_is_not_abstract():
-    assert not inspect.isabstract(metamodel::IntVal)
+def test_metamodel_intval_is_not_abstract():
+    assert not inspect.isabstract(metamodel_IntVal)
 
 
-def test_metamodel::intval_constructor_exists():
-    assert callable(metamodel::IntVal.__init__)
+def test_metamodel_intval_constructor_exists():
+    assert callable(metamodel_IntVal.__init__)
 
 
-def test_metamodel::intval_constructor_args():
-    sig = inspect.signature(metamodel::IntVal.__init__)
+def test_metamodel_intval_constructor_args():
+    sig = inspect.signature(metamodel_IntVal.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
 
-def test_metamodel::intval_has_value():
-    assert hasattr(metamodel::IntVal, "value")
+def test_metamodel_intval_has_value():
+    assert hasattr(metamodel_IntVal, "value")
     descriptor = None
-    for klass in metamodel::IntVal.__mro__:
+    for klass in metamodel_IntVal.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -595,23 +595,23 @@ def test_metamodel::intval_has_value():
 
 
 
-def test_metamodel::boolval_is_not_abstract():
-    assert not inspect.isabstract(metamodel::BoolVal)
+def test_metamodel_boolval_is_not_abstract():
+    assert not inspect.isabstract(metamodel_BoolVal)
 
 
-def test_metamodel::boolval_constructor_exists():
-    assert callable(metamodel::BoolVal.__init__)
+def test_metamodel_boolval_constructor_exists():
+    assert callable(metamodel_BoolVal.__init__)
 
 
-def test_metamodel::boolval_constructor_args():
-    sig = inspect.signature(metamodel::BoolVal.__init__)
+def test_metamodel_boolval_constructor_args():
+    sig = inspect.signature(metamodel_BoolVal.__init__)
     params = list(sig.parameters.keys())
     assert "value" in params, "Missing parameter 'value'"
 
-def test_metamodel::boolval_has_value():
-    assert hasattr(metamodel::BoolVal, "value")
+def test_metamodel_boolval_has_value():
+    assert hasattr(metamodel_BoolVal, "value")
     descriptor = None
-    for klass in metamodel::BoolVal.__mro__:
+    for klass in metamodel_BoolVal.__mro__:
         if "value" in klass.__dict__:
             descriptor = klass.__dict__["value"]
             break
@@ -619,16 +619,16 @@ def test_metamodel::boolval_has_value():
 
 
 
-def test_metamodel::type_is_not_abstract():
-    assert not inspect.isabstract(metamodel::Type)
+def test_metamodel_type_is_not_abstract():
+    assert not inspect.isabstract(metamodel_Type)
 
 
-def test_metamodel::type_constructor_exists():
-    assert callable(metamodel::Type.__init__)
+def test_metamodel_type_constructor_exists():
+    assert callable(metamodel_Type.__init__)
 
 
-def test_metamodel::type_constructor_args():
-    sig = inspect.signature(metamodel::Type.__init__)
+def test_metamodel_type_constructor_args():
+    sig = inspect.signature(metamodel_Type.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -647,30 +647,30 @@ def test_sensor_constructor_args():
 
 
 
-def test_metamodel::lightsensor_is_not_abstract():
-    assert not inspect.isabstract(metamodel::LightSensor)
+def test_metamodel_lightsensor_is_not_abstract():
+    assert not inspect.isabstract(metamodel_LightSensor)
 
 
-def test_metamodel::lightsensor_constructor_exists():
-    assert callable(metamodel::LightSensor.__init__)
+def test_metamodel_lightsensor_constructor_exists():
+    assert callable(metamodel_LightSensor.__init__)
 
 
-def test_metamodel::lightsensor_constructor_args():
-    sig = inspect.signature(metamodel::LightSensor.__init__)
+def test_metamodel_lightsensor_constructor_args():
+    sig = inspect.signature(metamodel_LightSensor.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_metamodel::distancesensor_is_not_abstract():
-    assert not inspect.isabstract(metamodel::DistanceSensor)
+def test_metamodel_distancesensor_is_not_abstract():
+    assert not inspect.isabstract(metamodel_DistanceSensor)
 
 
-def test_metamodel::distancesensor_constructor_exists():
-    assert callable(metamodel::DistanceSensor.__init__)
+def test_metamodel_distancesensor_constructor_exists():
+    assert callable(metamodel_DistanceSensor.__init__)
 
 
-def test_metamodel::distancesensor_constructor_args():
-    sig = inspect.signature(metamodel::DistanceSensor.__init__)
+def test_metamodel_distancesensor_constructor_args():
+    sig = inspect.signature(metamodel_DistanceSensor.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -689,72 +689,72 @@ def test_actionwheel_constructor_args():
 
 
 
-def test_metamodel::turnright_is_not_abstract():
-    assert not inspect.isabstract(metamodel::TurnRight)
+def test_metamodel_forward_is_not_abstract():
+    assert not inspect.isabstract(metamodel_Forward)
 
 
-def test_metamodel::turnright_constructor_exists():
-    assert callable(metamodel::TurnRight.__init__)
+def test_metamodel_forward_constructor_exists():
+    assert callable(metamodel_Forward.__init__)
 
 
-def test_metamodel::turnright_constructor_args():
-    sig = inspect.signature(metamodel::TurnRight.__init__)
+def test_metamodel_forward_constructor_args():
+    sig = inspect.signature(metamodel_Forward.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_metamodel::forward_is_not_abstract():
-    assert not inspect.isabstract(metamodel::Forward)
+def test_metamodel_backward_is_not_abstract():
+    assert not inspect.isabstract(metamodel_Backward)
 
 
-def test_metamodel::forward_constructor_exists():
-    assert callable(metamodel::Forward.__init__)
+def test_metamodel_backward_constructor_exists():
+    assert callable(metamodel_Backward.__init__)
 
 
-def test_metamodel::forward_constructor_args():
-    sig = inspect.signature(metamodel::Forward.__init__)
+def test_metamodel_backward_constructor_args():
+    sig = inspect.signature(metamodel_Backward.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_metamodel::stopping_is_not_abstract():
-    assert not inspect.isabstract(metamodel::Stopping)
+def test_metamodel_turnright_is_not_abstract():
+    assert not inspect.isabstract(metamodel_TurnRight)
 
 
-def test_metamodel::stopping_constructor_exists():
-    assert callable(metamodel::Stopping.__init__)
+def test_metamodel_turnright_constructor_exists():
+    assert callable(metamodel_TurnRight.__init__)
 
 
-def test_metamodel::stopping_constructor_args():
-    sig = inspect.signature(metamodel::Stopping.__init__)
+def test_metamodel_turnright_constructor_args():
+    sig = inspect.signature(metamodel_TurnRight.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_metamodel::backward_is_not_abstract():
-    assert not inspect.isabstract(metamodel::Backward)
+def test_metamodel_stopping_is_not_abstract():
+    assert not inspect.isabstract(metamodel_Stopping)
 
 
-def test_metamodel::backward_constructor_exists():
-    assert callable(metamodel::Backward.__init__)
+def test_metamodel_stopping_constructor_exists():
+    assert callable(metamodel_Stopping.__init__)
 
 
-def test_metamodel::backward_constructor_args():
-    sig = inspect.signature(metamodel::Backward.__init__)
+def test_metamodel_stopping_constructor_args():
+    sig = inspect.signature(metamodel_Stopping.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_metamodel::turnleft_is_not_abstract():
-    assert not inspect.isabstract(metamodel::TurnLeft)
+def test_metamodel_turnleft_is_not_abstract():
+    assert not inspect.isabstract(metamodel_TurnLeft)
 
 
-def test_metamodel::turnleft_constructor_exists():
-    assert callable(metamodel::TurnLeft.__init__)
+def test_metamodel_turnleft_constructor_exists():
+    assert callable(metamodel_TurnLeft.__init__)
 
 
-def test_metamodel::turnleft_constructor_args():
-    sig = inspect.signature(metamodel::TurnLeft.__init__)
+def test_metamodel_turnleft_constructor_args():
+    sig = inspect.signature(metamodel_TurnLeft.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -773,23 +773,23 @@ def test_action_constructor_args():
 
 
 
-def test_metamodel::actionwheel_is_not_abstract():
-    assert not inspect.isabstract(metamodel::ActionWheel)
+def test_metamodel_actionwheel_is_not_abstract():
+    assert not inspect.isabstract(metamodel_ActionWheel)
 
 
-def test_metamodel::actionwheel_constructor_exists():
-    assert callable(metamodel::ActionWheel.__init__)
+def test_metamodel_actionwheel_constructor_exists():
+    assert callable(metamodel_ActionWheel.__init__)
 
 
-def test_metamodel::actionwheel_constructor_args():
-    sig = inspect.signature(metamodel::ActionWheel.__init__)
+def test_metamodel_actionwheel_constructor_args():
+    sig = inspect.signature(metamodel_ActionWheel.__init__)
     params = list(sig.parameters.keys())
     assert "speed" in params, "Missing parameter 'speed'"
 
-def test_metamodel::actionwheel_has_speed():
-    assert hasattr(metamodel::ActionWheel, "speed")
+def test_metamodel_actionwheel_has_speed():
+    assert hasattr(metamodel_ActionWheel, "speed")
     descriptor = None
-    for klass in metamodel::ActionWheel.__mro__:
+    for klass in metamodel_ActionWheel.__mro__:
         if "speed" in klass.__dict__:
             descriptor = klass.__dict__["speed"]
             break
@@ -797,33 +797,33 @@ def test_metamodel::actionwheel_has_speed():
 
 
 
-def test_metamodel::behaviour_is_not_abstract():
-    assert not inspect.isabstract(metamodel::Behaviour)
+def test_metamodel_behaviour_is_not_abstract():
+    assert not inspect.isabstract(metamodel_Behaviour)
 
 
-def test_metamodel::behaviour_constructor_exists():
-    assert callable(metamodel::Behaviour.__init__)
+def test_metamodel_behaviour_constructor_exists():
+    assert callable(metamodel_Behaviour.__init__)
 
 
-def test_metamodel::behaviour_constructor_args():
-    sig = inspect.signature(metamodel::Behaviour.__init__)
+def test_metamodel_behaviour_constructor_args():
+    sig = inspect.signature(metamodel_Behaviour.__init__)
     params = list(sig.parameters.keys())
     assert "priority" in params, "Missing parameter 'priority'"
     assert "name" in params, "Missing parameter 'name'"
 
-def test_metamodel::behaviour_has_priority():
-    assert hasattr(metamodel::Behaviour, "priority")
+def test_metamodel_behaviour_has_priority():
+    assert hasattr(metamodel_Behaviour, "priority")
     descriptor = None
-    for klass in metamodel::Behaviour.__mro__:
+    for klass in metamodel_Behaviour.__mro__:
         if "priority" in klass.__dict__:
             descriptor = klass.__dict__["priority"]
             break
     assert isinstance(descriptor, property)
 
-def test_metamodel::behaviour_has_name():
-    assert hasattr(metamodel::Behaviour, "name")
+def test_metamodel_behaviour_has_name():
+    assert hasattr(metamodel_Behaviour, "name")
     descriptor = None
-    for klass in metamodel::Behaviour.__mro__:
+    for klass in metamodel_Behaviour.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -831,23 +831,23 @@ def test_metamodel::behaviour_has_name():
 
 
 
-def test_metamodel::robot_is_not_abstract():
-    assert not inspect.isabstract(metamodel::Robot)
+def test_metamodel_robot_is_not_abstract():
+    assert not inspect.isabstract(metamodel_Robot)
 
 
-def test_metamodel::robot_constructor_exists():
-    assert callable(metamodel::Robot.__init__)
+def test_metamodel_robot_constructor_exists():
+    assert callable(metamodel_Robot.__init__)
 
 
-def test_metamodel::robot_constructor_args():
-    sig = inspect.signature(metamodel::Robot.__init__)
+def test_metamodel_robot_constructor_args():
+    sig = inspect.signature(metamodel_Robot.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_metamodel::robot_has_name():
-    assert hasattr(metamodel::Robot, "name")
+def test_metamodel_robot_has_name():
+    assert hasattr(metamodel_Robot, "name")
     descriptor = None
-    for klass in metamodel::Robot.__mro__:
+    for klass in metamodel_Robot.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -869,47 +869,47 @@ def test_actuator_constructor_args():
 
 
 
-def test_metamodel::group_is_not_abstract():
-    assert not inspect.isabstract(metamodel::Group)
+def test_metamodel_group_is_not_abstract():
+    assert not inspect.isabstract(metamodel_Group)
 
 
-def test_metamodel::group_constructor_exists():
-    assert callable(metamodel::Group.__init__)
+def test_metamodel_group_constructor_exists():
+    assert callable(metamodel_Group.__init__)
 
 
-def test_metamodel::group_constructor_args():
-    sig = inspect.signature(metamodel::Group.__init__)
+def test_metamodel_group_constructor_args():
+    sig = inspect.signature(metamodel_Group.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_metamodel::differentialwheel_is_not_abstract():
-    assert not inspect.isabstract(metamodel::DifferentialWheel)
+def test_metamodel_differentialwheel_is_not_abstract():
+    assert not inspect.isabstract(metamodel_DifferentialWheel)
 
 
-def test_metamodel::differentialwheel_constructor_exists():
-    assert callable(metamodel::DifferentialWheel.__init__)
+def test_metamodel_differentialwheel_constructor_exists():
+    assert callable(metamodel_DifferentialWheel.__init__)
 
 
-def test_metamodel::differentialwheel_constructor_args():
-    sig = inspect.signature(metamodel::DifferentialWheel.__init__)
+def test_metamodel_differentialwheel_constructor_args():
+    sig = inspect.signature(metamodel_DifferentialWheel.__init__)
     params = list(sig.parameters.keys())
     assert "speed" in params, "Missing parameter 'speed'"
     assert "isLeft" in params, "Missing parameter 'isLeft'"
 
-def test_metamodel::differentialwheel_has_speed():
-    assert hasattr(metamodel::DifferentialWheel, "speed")
+def test_metamodel_differentialwheel_has_speed():
+    assert hasattr(metamodel_DifferentialWheel, "speed")
     descriptor = None
-    for klass in metamodel::DifferentialWheel.__mro__:
+    for klass in metamodel_DifferentialWheel.__mro__:
         if "speed" in klass.__dict__:
             descriptor = klass.__dict__["speed"]
             break
     assert isinstance(descriptor, property)
 
-def test_metamodel::differentialwheel_has_isLeft():
-    assert hasattr(metamodel::DifferentialWheel, "isLeft")
+def test_metamodel_differentialwheel_has_isLeft():
+    assert hasattr(metamodel_DifferentialWheel, "isLeft")
     descriptor = None
-    for klass in metamodel::DifferentialWheel.__mro__:
+    for klass in metamodel_DifferentialWheel.__mro__:
         if "isLeft" in klass.__dict__:
             descriptor = klass.__dict__["isLeft"]
             break
@@ -917,37 +917,37 @@ def test_metamodel::differentialwheel_has_isLeft():
 
 
 
-def test_metamodel::action_is_not_abstract():
-    assert not inspect.isabstract(metamodel::Action)
+def test_metamodel_action_is_not_abstract():
+    assert not inspect.isabstract(metamodel_Action)
 
 
-def test_metamodel::action_constructor_exists():
-    assert callable(metamodel::Action.__init__)
+def test_metamodel_action_constructor_exists():
+    assert callable(metamodel_Action.__init__)
 
 
-def test_metamodel::action_constructor_args():
-    sig = inspect.signature(metamodel::Action.__init__)
+def test_metamodel_action_constructor_args():
+    sig = inspect.signature(metamodel_Action.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_metamodel::actuator_is_not_abstract():
-    assert not inspect.isabstract(metamodel::Actuator)
+def test_metamodel_actuator_is_not_abstract():
+    assert not inspect.isabstract(metamodel_Actuator)
 
 
-def test_metamodel::actuator_constructor_exists():
-    assert callable(metamodel::Actuator.__init__)
+def test_metamodel_actuator_constructor_exists():
+    assert callable(metamodel_Actuator.__init__)
 
 
-def test_metamodel::actuator_constructor_args():
-    sig = inspect.signature(metamodel::Actuator.__init__)
+def test_metamodel_actuator_constructor_args():
+    sig = inspect.signature(metamodel_Actuator.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_metamodel::actuator_has_name():
-    assert hasattr(metamodel::Actuator, "name")
+def test_metamodel_actuator_has_name():
+    assert hasattr(metamodel_Actuator, "name")
     descriptor = None
-    for klass in metamodel::Actuator.__mro__:
+    for klass in metamodel_Actuator.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -955,35 +955,35 @@ def test_metamodel::actuator_has_name():
 
 
 
-def test_metamodel::sensor_is_not_abstract():
-    assert not inspect.isabstract(metamodel::Sensor)
+def test_metamodel_sensor_is_not_abstract():
+    assert not inspect.isabstract(metamodel_Sensor)
 
 
-def test_metamodel::sensor_constructor_exists():
-    assert callable(metamodel::Sensor.__init__)
+def test_metamodel_sensor_constructor_exists():
+    assert callable(metamodel_Sensor.__init__)
 
 
-def test_metamodel::sensor_constructor_args():
-    sig = inspect.signature(metamodel::Sensor.__init__)
+def test_metamodel_sensor_constructor_args():
+    sig = inspect.signature(metamodel_Sensor.__init__)
     params = list(sig.parameters.keys())
-    assert "sensorName" in params, "Missing parameter 'sensorName'"
     assert "name" in params, "Missing parameter 'name'"
+    assert "sensorName" in params, "Missing parameter 'sensorName'"
 
-def test_metamodel::sensor_has_sensorName():
-    assert hasattr(metamodel::Sensor, "sensorName")
+def test_metamodel_sensor_has_name():
+    assert hasattr(metamodel_Sensor, "name")
     descriptor = None
-    for klass in metamodel::Sensor.__mro__:
+    for klass in metamodel_Sensor.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_metamodel_sensor_has_sensorName():
+    assert hasattr(metamodel_Sensor, "sensorName")
+    descriptor = None
+    for klass in metamodel_Sensor.__mro__:
         if "sensorName" in klass.__dict__:
             descriptor = klass.__dict__["sensorName"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_metamodel::sensor_has_name():
-    assert hasattr(metamodel::Sensor, "name")
-    descriptor = None
-    for klass in metamodel::Sensor.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
 
@@ -1002,196 +1002,196 @@ safe_text = st.text(
 BinaryOperator_strategy = st.builds(
     BinaryOperator,
 )
-metamodel::Less_strategy = st.builds(
-    metamodel::Less,
+metamodel_Different_strategy = st.builds(
+    metamodel_Different,
 )
-metamodel::Different_strategy = st.builds(
-    metamodel::Different,
+metamodel_More_strategy = st.builds(
+    metamodel_More,
 )
-metamodel::More_strategy = st.builds(
-    metamodel::More,
+metamodel_Less_strategy = st.builds(
+    metamodel_Less,
 )
-metamodel::Equal_strategy = st.builds(
-    metamodel::Equal,
+metamodel_Equal_strategy = st.builds(
+    metamodel_Equal,
 )
 UnaryCond_strategy = st.builds(
     UnaryCond,
 )
-metamodel::Negation_strategy = st.builds(
-    metamodel::Negation,
+metamodel_Negation_strategy = st.builds(
+    metamodel_Negation,
 )
 UnaryOperator_strategy = st.builds(
     UnaryOperator,
 )
-metamodel::Positive_strategy = st.builds(
-    metamodel::Positive,
+metamodel_Positive_strategy = st.builds(
+    metamodel_Positive,
 )
-metamodel::Negative_strategy = st.builds(
-    metamodel::Negative,
+metamodel_Negative_strategy = st.builds(
+    metamodel_Negative,
 )
-metamodel::Sub_strategy = st.builds(
-    metamodel::Sub,
+metamodel_Sub_strategy = st.builds(
+    metamodel_Sub,
 )
-metamodel::Add_strategy = st.builds(
-    metamodel::Add,
+metamodel_Add_strategy = st.builds(
+    metamodel_Add,
 )
-metamodel::MoreOrEqual_strategy = st.builds(
-    metamodel::MoreOrEqual,
+metamodel_MoreOrEqual_strategy = st.builds(
+    metamodel_MoreOrEqual,
 )
-metamodel::LessOrEqual_strategy = st.builds(
-    metamodel::LessOrEqual,
+metamodel_LessOrEqual_strategy = st.builds(
+    metamodel_LessOrEqual,
 )
 BinaryCond_strategy = st.builds(
     BinaryCond,
 )
-metamodel::And_strategy = st.builds(
-    metamodel::And,
+metamodel_And_strategy = st.builds(
+    metamodel_And,
 )
-metamodel::Or_strategy = st.builds(
-    metamodel::Or,
+metamodel_Or_strategy = st.builds(
+    metamodel_Or,
 )
 Condition_strategy = st.builds(
     Condition,
 )
-metamodel::UnaryCond_strategy = st.builds(
-    metamodel::UnaryCond,
+metamodel_UnaryCond_strategy = st.builds(
+    metamodel_UnaryCond,
 )
-metamodel::BinaryCond_strategy = st.builds(
-    metamodel::BinaryCond,
+metamodel_BinaryCond_strategy = st.builds(
+    metamodel_BinaryCond,
 )
-metamodel::Operator_strategy = st.builds(
-    metamodel::Operator,
+metamodel_Operator_strategy = st.builds(
+    metamodel_Operator,
 )
 Operator_strategy = st.builds(
     Operator,
 )
-metamodel::BinaryOperator_strategy = st.builds(
-    metamodel::BinaryOperator,
+metamodel_BinaryOperator_strategy = st.builds(
+    metamodel_BinaryOperator,
 )
-metamodel::UnaryOperator_strategy = st.builds(
-    metamodel::UnaryOperator,
+metamodel_UnaryOperator_strategy = st.builds(
+    metamodel_UnaryOperator,
 )
-metamodel::Condition_strategy = st.builds(
-    metamodel::Condition,
+metamodel_Condition_strategy = st.builds(
+    metamodel_Condition,
 )
-metamodel::Value_strategy = st.builds(
-    metamodel::Value,
+metamodel_Value_strategy = st.builds(
+    metamodel_Value,
     name=
         safe_text
 )
-metamodel::Transition_strategy = st.builds(
-    metamodel::Transition,
+metamodel_Transition_strategy = st.builds(
+    metamodel_Transition,
     nameIn=
         safe_text
 )
-metamodel::State_strategy = st.builds(
-    metamodel::State,
+metamodel_State_strategy = st.builds(
+    metamodel_State,
     name=
         safe_text,
-    uid=
-        st.integers(),
     isInitial=
-        st.booleans()
+        st.booleans(),
+    uid=
+        st.integers()
 )
-metamodel::StateMachine_strategy = st.builds(
-    metamodel::StateMachine,
+metamodel_StateMachine_strategy = st.builds(
+    metamodel_StateMachine,
     name=
         safe_text
 )
 Type_strategy = st.builds(
     Type,
 )
-metamodel::FloatVal_strategy = st.builds(
-    metamodel::FloatVal,
+metamodel_FloatVal_strategy = st.builds(
+    metamodel_FloatVal,
     value=
         st.floats(min_value=0, max_value=1000,allow_nan=False, allow_infinity=False)
 )
-metamodel::IntVal_strategy = st.builds(
-    metamodel::IntVal,
+metamodel_IntVal_strategy = st.builds(
+    metamodel_IntVal,
     value=
         st.integers()
 )
-metamodel::BoolVal_strategy = st.builds(
-    metamodel::BoolVal,
+metamodel_BoolVal_strategy = st.builds(
+    metamodel_BoolVal,
     value=
         st.booleans()
 )
-metamodel::Type_strategy = st.builds(
-    metamodel::Type,
+metamodel_Type_strategy = st.builds(
+    metamodel_Type,
 )
 Sensor_strategy = st.builds(
     Sensor,
 )
-metamodel::LightSensor_strategy = st.builds(
-    metamodel::LightSensor,
+metamodel_LightSensor_strategy = st.builds(
+    metamodel_LightSensor,
 )
-metamodel::DistanceSensor_strategy = st.builds(
-    metamodel::DistanceSensor,
+metamodel_DistanceSensor_strategy = st.builds(
+    metamodel_DistanceSensor,
 )
 ActionWheel_strategy = st.builds(
     ActionWheel,
 )
-metamodel::TurnRight_strategy = st.builds(
-    metamodel::TurnRight,
+metamodel_Forward_strategy = st.builds(
+    metamodel_Forward,
 )
-metamodel::Forward_strategy = st.builds(
-    metamodel::Forward,
+metamodel_Backward_strategy = st.builds(
+    metamodel_Backward,
 )
-metamodel::Stopping_strategy = st.builds(
-    metamodel::Stopping,
+metamodel_TurnRight_strategy = st.builds(
+    metamodel_TurnRight,
 )
-metamodel::Backward_strategy = st.builds(
-    metamodel::Backward,
+metamodel_Stopping_strategy = st.builds(
+    metamodel_Stopping,
 )
-metamodel::TurnLeft_strategy = st.builds(
-    metamodel::TurnLeft,
+metamodel_TurnLeft_strategy = st.builds(
+    metamodel_TurnLeft,
 )
 Action_strategy = st.builds(
     Action,
 )
-metamodel::ActionWheel_strategy = st.builds(
-    metamodel::ActionWheel,
+metamodel_ActionWheel_strategy = st.builds(
+    metamodel_ActionWheel,
     speed=
         st.integers()
 )
-metamodel::Behaviour_strategy = st.builds(
-    metamodel::Behaviour,
+metamodel_Behaviour_strategy = st.builds(
+    metamodel_Behaviour,
     priority=
         st.integers(),
     name=
         safe_text
 )
-metamodel::Robot_strategy = st.builds(
-    metamodel::Robot,
+metamodel_Robot_strategy = st.builds(
+    metamodel_Robot,
     name=
         safe_text
 )
 Actuator_strategy = st.builds(
     Actuator,
 )
-metamodel::Group_strategy = st.builds(
-    metamodel::Group,
+metamodel_Group_strategy = st.builds(
+    metamodel_Group,
 )
-metamodel::DifferentialWheel_strategy = st.builds(
-    metamodel::DifferentialWheel,
+metamodel_DifferentialWheel_strategy = st.builds(
+    metamodel_DifferentialWheel,
     speed=
         st.integers(),
     isLeft=
         st.booleans()
 )
-metamodel::Action_strategy = st.builds(
-    metamodel::Action,
+metamodel_Action_strategy = st.builds(
+    metamodel_Action,
 )
-metamodel::Actuator_strategy = st.builds(
-    metamodel::Actuator,
+metamodel_Actuator_strategy = st.builds(
+    metamodel_Actuator,
     name=
         safe_text
 )
-metamodel::Sensor_strategy = st.builds(
-    metamodel::Sensor,
-    sensorName=
-        safe_text,
+metamodel_Sensor_strategy = st.builds(
+    metamodel_Sensor,
     name=
+        safe_text,
+    sensorName=
         safe_text
 )
 
@@ -1200,208 +1200,190 @@ metamodel::Sensor_strategy = st.builds(
 def test_binaryoperator_instantiation(instance):
     assert isinstance(instance, BinaryOperator)
 
-@given(instance=metamodel::Less_strategy)
+@given(instance=metamodel_Different_strategy)
 @settings(max_examples=50)
-def test_metamodel::less_instantiation(instance):
-    assert isinstance(instance, metamodel::Less)
+def test_metamodel_different_instantiation(instance):
+    assert isinstance(instance, metamodel_Different)
 
-@given(instance=metamodel::Different_strategy)
+@given(instance=metamodel_More_strategy)
 @settings(max_examples=50)
-def test_metamodel::different_instantiation(instance):
-    assert isinstance(instance, metamodel::Different)
+def test_metamodel_more_instantiation(instance):
+    assert isinstance(instance, metamodel_More)
 
-@given(instance=metamodel::More_strategy)
+@given(instance=metamodel_Less_strategy)
 @settings(max_examples=50)
-def test_metamodel::more_instantiation(instance):
-    assert isinstance(instance, metamodel::More)
+def test_metamodel_less_instantiation(instance):
+    assert isinstance(instance, metamodel_Less)
 
-@given(instance=metamodel::Equal_strategy)
+@given(instance=metamodel_Equal_strategy)
 @settings(max_examples=50)
-def test_metamodel::equal_instantiation(instance):
-    assert isinstance(instance, metamodel::Equal)
+def test_metamodel_equal_instantiation(instance):
+    assert isinstance(instance, metamodel_Equal)
 
 @given(instance=UnaryCond_strategy)
 @settings(max_examples=50)
 def test_unarycond_instantiation(instance):
     assert isinstance(instance, UnaryCond)
 
-@given(instance=metamodel::Negation_strategy)
+@given(instance=metamodel_Negation_strategy)
 @settings(max_examples=50)
-def test_metamodel::negation_instantiation(instance):
-    assert isinstance(instance, metamodel::Negation)
+def test_metamodel_negation_instantiation(instance):
+    assert isinstance(instance, metamodel_Negation)
 
 @given(instance=UnaryOperator_strategy)
 @settings(max_examples=50)
 def test_unaryoperator_instantiation(instance):
     assert isinstance(instance, UnaryOperator)
 
-@given(instance=metamodel::Positive_strategy)
+@given(instance=metamodel_Positive_strategy)
 @settings(max_examples=50)
-def test_metamodel::positive_instantiation(instance):
-    assert isinstance(instance, metamodel::Positive)
+def test_metamodel_positive_instantiation(instance):
+    assert isinstance(instance, metamodel_Positive)
 
-@given(instance=metamodel::Negative_strategy)
+@given(instance=metamodel_Negative_strategy)
 @settings(max_examples=50)
-def test_metamodel::negative_instantiation(instance):
-    assert isinstance(instance, metamodel::Negative)
+def test_metamodel_negative_instantiation(instance):
+    assert isinstance(instance, metamodel_Negative)
 
-@given(instance=metamodel::Sub_strategy)
+@given(instance=metamodel_Sub_strategy)
 @settings(max_examples=50)
-def test_metamodel::sub_instantiation(instance):
-    assert isinstance(instance, metamodel::Sub)
+def test_metamodel_sub_instantiation(instance):
+    assert isinstance(instance, metamodel_Sub)
 
-@given(instance=metamodel::Add_strategy)
+@given(instance=metamodel_Add_strategy)
 @settings(max_examples=50)
-def test_metamodel::add_instantiation(instance):
-    assert isinstance(instance, metamodel::Add)
+def test_metamodel_add_instantiation(instance):
+    assert isinstance(instance, metamodel_Add)
 
-@given(instance=metamodel::MoreOrEqual_strategy)
+@given(instance=metamodel_MoreOrEqual_strategy)
 @settings(max_examples=50)
-def test_metamodel::moreorequal_instantiation(instance):
-    assert isinstance(instance, metamodel::MoreOrEqual)
+def test_metamodel_moreorequal_instantiation(instance):
+    assert isinstance(instance, metamodel_MoreOrEqual)
 
-@given(instance=metamodel::LessOrEqual_strategy)
+@given(instance=metamodel_LessOrEqual_strategy)
 @settings(max_examples=50)
-def test_metamodel::lessorequal_instantiation(instance):
-    assert isinstance(instance, metamodel::LessOrEqual)
+def test_metamodel_lessorequal_instantiation(instance):
+    assert isinstance(instance, metamodel_LessOrEqual)
 
 @given(instance=BinaryCond_strategy)
 @settings(max_examples=50)
 def test_binarycond_instantiation(instance):
     assert isinstance(instance, BinaryCond)
 
-@given(instance=metamodel::And_strategy)
+@given(instance=metamodel_And_strategy)
 @settings(max_examples=50)
-def test_metamodel::and_instantiation(instance):
-    assert isinstance(instance, metamodel::And)
+def test_metamodel_and_instantiation(instance):
+    assert isinstance(instance, metamodel_And)
 
-@given(instance=metamodel::Or_strategy)
+@given(instance=metamodel_Or_strategy)
 @settings(max_examples=50)
-def test_metamodel::or_instantiation(instance):
-    assert isinstance(instance, metamodel::Or)
+def test_metamodel_or_instantiation(instance):
+    assert isinstance(instance, metamodel_Or)
 
 @given(instance=Condition_strategy)
 @settings(max_examples=50)
 def test_condition_instantiation(instance):
     assert isinstance(instance, Condition)
 
-@given(instance=metamodel::UnaryCond_strategy)
+@given(instance=metamodel_UnaryCond_strategy)
 @settings(max_examples=50)
-def test_metamodel::unarycond_instantiation(instance):
-    assert isinstance(instance, metamodel::UnaryCond)
+def test_metamodel_unarycond_instantiation(instance):
+    assert isinstance(instance, metamodel_UnaryCond)
 
-@given(instance=metamodel::BinaryCond_strategy)
+@given(instance=metamodel_BinaryCond_strategy)
 @settings(max_examples=50)
-def test_metamodel::binarycond_instantiation(instance):
-    assert isinstance(instance, metamodel::BinaryCond)
+def test_metamodel_binarycond_instantiation(instance):
+    assert isinstance(instance, metamodel_BinaryCond)
 
-@given(instance=metamodel::Operator_strategy)
+@given(instance=metamodel_Operator_strategy)
 @settings(max_examples=50)
-def test_metamodel::operator_instantiation(instance):
-    assert isinstance(instance, metamodel::Operator)
+def test_metamodel_operator_instantiation(instance):
+    assert isinstance(instance, metamodel_Operator)
 
 @given(instance=Operator_strategy)
 @settings(max_examples=50)
 def test_operator_instantiation(instance):
     assert isinstance(instance, Operator)
 
-@given(instance=metamodel::BinaryOperator_strategy)
+@given(instance=metamodel_BinaryOperator_strategy)
 @settings(max_examples=50)
-def test_metamodel::binaryoperator_instantiation(instance):
-    assert isinstance(instance, metamodel::BinaryOperator)
+def test_metamodel_binaryoperator_instantiation(instance):
+    assert isinstance(instance, metamodel_BinaryOperator)
 
-@given(instance=metamodel::UnaryOperator_strategy)
+@given(instance=metamodel_UnaryOperator_strategy)
 @settings(max_examples=50)
-def test_metamodel::unaryoperator_instantiation(instance):
-    assert isinstance(instance, metamodel::UnaryOperator)
+def test_metamodel_unaryoperator_instantiation(instance):
+    assert isinstance(instance, metamodel_UnaryOperator)
 
-@given(instance=metamodel::Condition_strategy)
+@given(instance=metamodel_Condition_strategy)
 @settings(max_examples=50)
-def test_metamodel::condition_instantiation(instance):
-    assert isinstance(instance, metamodel::Condition)
+def test_metamodel_condition_instantiation(instance):
+    assert isinstance(instance, metamodel_Condition)
 
-@given(instance=metamodel::Value_strategy)
+@given(instance=metamodel_Value_strategy)
 @settings(max_examples=50)
-def test_metamodel::value_instantiation(instance):
-    assert isinstance(instance, metamodel::Value)
-
-@given(instance=metamodel::Value_strategy)
-def test_metamodel::value_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_metamodel_value_instantiation(instance):
+    assert isinstance(instance, metamodel_Value)
 
 
-@given(instance=metamodel::Value_strategy)
-def test_metamodel::value_name_setter(instance):
+
+@given(instance=metamodel_Value_strategy)
+def test_metamodel_value_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=metamodel::Transition_strategy)
+@given(instance=metamodel_Transition_strategy)
 @settings(max_examples=50)
-def test_metamodel::transition_instantiation(instance):
-    assert isinstance(instance, metamodel::Transition)
-
-@given(instance=metamodel::Transition_strategy)
-def test_metamodel::transition_nameIn_type(instance):
-    assert isinstance(instance.nameIn, str)
+def test_metamodel_transition_instantiation(instance):
+    assert isinstance(instance, metamodel_Transition)
 
 
-@given(instance=metamodel::Transition_strategy)
-def test_metamodel::transition_nameIn_setter(instance):
+
+@given(instance=metamodel_Transition_strategy)
+def test_metamodel_transition_nameIn_setter(instance):
     original = instance.nameIn
     instance.nameIn = original
     assert instance.nameIn == original
 
-@given(instance=metamodel::State_strategy)
+@given(instance=metamodel_State_strategy)
 @settings(max_examples=50)
-def test_metamodel::state_instantiation(instance):
-    assert isinstance(instance, metamodel::State)
-
-@given(instance=metamodel::State_strategy)
-def test_metamodel::state_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_metamodel_state_instantiation(instance):
+    assert isinstance(instance, metamodel_State)
 
 
-@given(instance=metamodel::State_strategy)
-def test_metamodel::state_name_setter(instance):
+
+@given(instance=metamodel_State_strategy)
+def test_metamodel_state_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=metamodel::State_strategy)
-def test_metamodel::state_uid_type(instance):
-    assert isinstance(instance.uid, int)
 
 
-@given(instance=metamodel::State_strategy)
-def test_metamodel::state_uid_setter(instance):
-    original = instance.uid
-    instance.uid = original
-    assert instance.uid == original
-
-@given(instance=metamodel::State_strategy)
-def test_metamodel::state_isInitial_type(instance):
-    assert isinstance(instance.isInitial, bool)
-
-
-@given(instance=metamodel::State_strategy)
-def test_metamodel::state_isInitial_setter(instance):
+@given(instance=metamodel_State_strategy)
+def test_metamodel_state_isInitial_setter(instance):
     original = instance.isInitial
     instance.isInitial = original
     assert instance.isInitial == original
 
-@given(instance=metamodel::StateMachine_strategy)
+
+
+@given(instance=metamodel_State_strategy)
+def test_metamodel_state_uid_setter(instance):
+    original = instance.uid
+    instance.uid = original
+    assert instance.uid == original
+
+@given(instance=metamodel_StateMachine_strategy)
 @settings(max_examples=50)
-def test_metamodel::statemachine_instantiation(instance):
-    assert isinstance(instance, metamodel::StateMachine)
-
-@given(instance=metamodel::StateMachine_strategy)
-def test_metamodel::statemachine_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_metamodel_statemachine_instantiation(instance):
+    assert isinstance(instance, metamodel_StateMachine)
 
 
-@given(instance=metamodel::StateMachine_strategy)
-def test_metamodel::statemachine_name_setter(instance):
+
+@given(instance=metamodel_StateMachine_strategy)
+def test_metamodel_statemachine_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
@@ -1411,164 +1393,143 @@ def test_metamodel::statemachine_name_setter(instance):
 def test_type_instantiation(instance):
     assert isinstance(instance, Type)
 
-@given(instance=metamodel::FloatVal_strategy)
+@given(instance=metamodel_FloatVal_strategy)
 @settings(max_examples=50)
-def test_metamodel::floatval_instantiation(instance):
-    assert isinstance(instance, metamodel::FloatVal)
-
-@given(instance=metamodel::FloatVal_strategy)
-def test_metamodel::floatval_value_type(instance):
-    assert isinstance(instance.value, float)
+def test_metamodel_floatval_instantiation(instance):
+    assert isinstance(instance, metamodel_FloatVal)
 
 
-@given(instance=metamodel::FloatVal_strategy)
-def test_metamodel::floatval_value_setter(instance):
+
+@given(instance=metamodel_FloatVal_strategy)
+def test_metamodel_floatval_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
 
-@given(instance=metamodel::IntVal_strategy)
+@given(instance=metamodel_IntVal_strategy)
 @settings(max_examples=50)
-def test_metamodel::intval_instantiation(instance):
-    assert isinstance(instance, metamodel::IntVal)
-
-@given(instance=metamodel::IntVal_strategy)
-def test_metamodel::intval_value_type(instance):
-    assert isinstance(instance.value, int)
+def test_metamodel_intval_instantiation(instance):
+    assert isinstance(instance, metamodel_IntVal)
 
 
-@given(instance=metamodel::IntVal_strategy)
-def test_metamodel::intval_value_setter(instance):
+
+@given(instance=metamodel_IntVal_strategy)
+def test_metamodel_intval_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
 
-@given(instance=metamodel::BoolVal_strategy)
+@given(instance=metamodel_BoolVal_strategy)
 @settings(max_examples=50)
-def test_metamodel::boolval_instantiation(instance):
-    assert isinstance(instance, metamodel::BoolVal)
-
-@given(instance=metamodel::BoolVal_strategy)
-def test_metamodel::boolval_value_type(instance):
-    assert isinstance(instance.value, bool)
+def test_metamodel_boolval_instantiation(instance):
+    assert isinstance(instance, metamodel_BoolVal)
 
 
-@given(instance=metamodel::BoolVal_strategy)
-def test_metamodel::boolval_value_setter(instance):
+
+@given(instance=metamodel_BoolVal_strategy)
+def test_metamodel_boolval_value_setter(instance):
     original = instance.value
     instance.value = original
     assert instance.value == original
 
-@given(instance=metamodel::Type_strategy)
+@given(instance=metamodel_Type_strategy)
 @settings(max_examples=50)
-def test_metamodel::type_instantiation(instance):
-    assert isinstance(instance, metamodel::Type)
+def test_metamodel_type_instantiation(instance):
+    assert isinstance(instance, metamodel_Type)
 
 @given(instance=Sensor_strategy)
 @settings(max_examples=50)
 def test_sensor_instantiation(instance):
     assert isinstance(instance, Sensor)
 
-@given(instance=metamodel::LightSensor_strategy)
+@given(instance=metamodel_LightSensor_strategy)
 @settings(max_examples=50)
-def test_metamodel::lightsensor_instantiation(instance):
-    assert isinstance(instance, metamodel::LightSensor)
+def test_metamodel_lightsensor_instantiation(instance):
+    assert isinstance(instance, metamodel_LightSensor)
 
-@given(instance=metamodel::DistanceSensor_strategy)
+@given(instance=metamodel_DistanceSensor_strategy)
 @settings(max_examples=50)
-def test_metamodel::distancesensor_instantiation(instance):
-    assert isinstance(instance, metamodel::DistanceSensor)
+def test_metamodel_distancesensor_instantiation(instance):
+    assert isinstance(instance, metamodel_DistanceSensor)
 
 @given(instance=ActionWheel_strategy)
 @settings(max_examples=50)
 def test_actionwheel_instantiation(instance):
     assert isinstance(instance, ActionWheel)
 
-@given(instance=metamodel::TurnRight_strategy)
+@given(instance=metamodel_Forward_strategy)
 @settings(max_examples=50)
-def test_metamodel::turnright_instantiation(instance):
-    assert isinstance(instance, metamodel::TurnRight)
+def test_metamodel_forward_instantiation(instance):
+    assert isinstance(instance, metamodel_Forward)
 
-@given(instance=metamodel::Forward_strategy)
+@given(instance=metamodel_Backward_strategy)
 @settings(max_examples=50)
-def test_metamodel::forward_instantiation(instance):
-    assert isinstance(instance, metamodel::Forward)
+def test_metamodel_backward_instantiation(instance):
+    assert isinstance(instance, metamodel_Backward)
 
-@given(instance=metamodel::Stopping_strategy)
+@given(instance=metamodel_TurnRight_strategy)
 @settings(max_examples=50)
-def test_metamodel::stopping_instantiation(instance):
-    assert isinstance(instance, metamodel::Stopping)
+def test_metamodel_turnright_instantiation(instance):
+    assert isinstance(instance, metamodel_TurnRight)
 
-@given(instance=metamodel::Backward_strategy)
+@given(instance=metamodel_Stopping_strategy)
 @settings(max_examples=50)
-def test_metamodel::backward_instantiation(instance):
-    assert isinstance(instance, metamodel::Backward)
+def test_metamodel_stopping_instantiation(instance):
+    assert isinstance(instance, metamodel_Stopping)
 
-@given(instance=metamodel::TurnLeft_strategy)
+@given(instance=metamodel_TurnLeft_strategy)
 @settings(max_examples=50)
-def test_metamodel::turnleft_instantiation(instance):
-    assert isinstance(instance, metamodel::TurnLeft)
+def test_metamodel_turnleft_instantiation(instance):
+    assert isinstance(instance, metamodel_TurnLeft)
 
 @given(instance=Action_strategy)
 @settings(max_examples=50)
 def test_action_instantiation(instance):
     assert isinstance(instance, Action)
 
-@given(instance=metamodel::ActionWheel_strategy)
+@given(instance=metamodel_ActionWheel_strategy)
 @settings(max_examples=50)
-def test_metamodel::actionwheel_instantiation(instance):
-    assert isinstance(instance, metamodel::ActionWheel)
-
-@given(instance=metamodel::ActionWheel_strategy)
-def test_metamodel::actionwheel_speed_type(instance):
-    assert isinstance(instance.speed, int)
+def test_metamodel_actionwheel_instantiation(instance):
+    assert isinstance(instance, metamodel_ActionWheel)
 
 
-@given(instance=metamodel::ActionWheel_strategy)
-def test_metamodel::actionwheel_speed_setter(instance):
+
+@given(instance=metamodel_ActionWheel_strategy)
+def test_metamodel_actionwheel_speed_setter(instance):
     original = instance.speed
     instance.speed = original
     assert instance.speed == original
 
-@given(instance=metamodel::Behaviour_strategy)
+@given(instance=metamodel_Behaviour_strategy)
 @settings(max_examples=50)
-def test_metamodel::behaviour_instantiation(instance):
-    assert isinstance(instance, metamodel::Behaviour)
-
-@given(instance=metamodel::Behaviour_strategy)
-def test_metamodel::behaviour_priority_type(instance):
-    assert isinstance(instance.priority, int)
+def test_metamodel_behaviour_instantiation(instance):
+    assert isinstance(instance, metamodel_Behaviour)
 
 
-@given(instance=metamodel::Behaviour_strategy)
-def test_metamodel::behaviour_priority_setter(instance):
+
+@given(instance=metamodel_Behaviour_strategy)
+def test_metamodel_behaviour_priority_setter(instance):
     original = instance.priority
     instance.priority = original
     assert instance.priority == original
 
-@given(instance=metamodel::Behaviour_strategy)
-def test_metamodel::behaviour_name_type(instance):
-    assert isinstance(instance.name, str)
 
 
-@given(instance=metamodel::Behaviour_strategy)
-def test_metamodel::behaviour_name_setter(instance):
+@given(instance=metamodel_Behaviour_strategy)
+def test_metamodel_behaviour_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=metamodel::Robot_strategy)
+@given(instance=metamodel_Robot_strategy)
 @settings(max_examples=50)
-def test_metamodel::robot_instantiation(instance):
-    assert isinstance(instance, metamodel::Robot)
-
-@given(instance=metamodel::Robot_strategy)
-def test_metamodel::robot_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_metamodel_robot_instantiation(instance):
+    assert isinstance(instance, metamodel_Robot)
 
 
-@given(instance=metamodel::Robot_strategy)
-def test_metamodel::robot_name_setter(instance):
+
+@given(instance=metamodel_Robot_strategy)
+def test_metamodel_robot_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
@@ -1578,82 +1539,67 @@ def test_metamodel::robot_name_setter(instance):
 def test_actuator_instantiation(instance):
     assert isinstance(instance, Actuator)
 
-@given(instance=metamodel::Group_strategy)
+@given(instance=metamodel_Group_strategy)
 @settings(max_examples=50)
-def test_metamodel::group_instantiation(instance):
-    assert isinstance(instance, metamodel::Group)
+def test_metamodel_group_instantiation(instance):
+    assert isinstance(instance, metamodel_Group)
 
-@given(instance=metamodel::DifferentialWheel_strategy)
+@given(instance=metamodel_DifferentialWheel_strategy)
 @settings(max_examples=50)
-def test_metamodel::differentialwheel_instantiation(instance):
-    assert isinstance(instance, metamodel::DifferentialWheel)
-
-@given(instance=metamodel::DifferentialWheel_strategy)
-def test_metamodel::differentialwheel_speed_type(instance):
-    assert isinstance(instance.speed, int)
+def test_metamodel_differentialwheel_instantiation(instance):
+    assert isinstance(instance, metamodel_DifferentialWheel)
 
 
-@given(instance=metamodel::DifferentialWheel_strategy)
-def test_metamodel::differentialwheel_speed_setter(instance):
+
+@given(instance=metamodel_DifferentialWheel_strategy)
+def test_metamodel_differentialwheel_speed_setter(instance):
     original = instance.speed
     instance.speed = original
     assert instance.speed == original
 
-@given(instance=metamodel::DifferentialWheel_strategy)
-def test_metamodel::differentialwheel_isLeft_type(instance):
-    assert isinstance(instance.isLeft, bool)
 
 
-@given(instance=metamodel::DifferentialWheel_strategy)
-def test_metamodel::differentialwheel_isLeft_setter(instance):
+@given(instance=metamodel_DifferentialWheel_strategy)
+def test_metamodel_differentialwheel_isLeft_setter(instance):
     original = instance.isLeft
     instance.isLeft = original
     assert instance.isLeft == original
 
-@given(instance=metamodel::Action_strategy)
+@given(instance=metamodel_Action_strategy)
 @settings(max_examples=50)
-def test_metamodel::action_instantiation(instance):
-    assert isinstance(instance, metamodel::Action)
+def test_metamodel_action_instantiation(instance):
+    assert isinstance(instance, metamodel_Action)
 
-@given(instance=metamodel::Actuator_strategy)
+@given(instance=metamodel_Actuator_strategy)
 @settings(max_examples=50)
-def test_metamodel::actuator_instantiation(instance):
-    assert isinstance(instance, metamodel::Actuator)
-
-@given(instance=metamodel::Actuator_strategy)
-def test_metamodel::actuator_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_metamodel_actuator_instantiation(instance):
+    assert isinstance(instance, metamodel_Actuator)
 
 
-@given(instance=metamodel::Actuator_strategy)
-def test_metamodel::actuator_name_setter(instance):
+
+@given(instance=metamodel_Actuator_strategy)
+def test_metamodel_actuator_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=metamodel::Sensor_strategy)
+@given(instance=metamodel_Sensor_strategy)
 @settings(max_examples=50)
-def test_metamodel::sensor_instantiation(instance):
-    assert isinstance(instance, metamodel::Sensor)
-
-@given(instance=metamodel::Sensor_strategy)
-def test_metamodel::sensor_sensorName_type(instance):
-    assert isinstance(instance.sensorName, str)
+def test_metamodel_sensor_instantiation(instance):
+    assert isinstance(instance, metamodel_Sensor)
 
 
-@given(instance=metamodel::Sensor_strategy)
-def test_metamodel::sensor_sensorName_setter(instance):
+
+@given(instance=metamodel_Sensor_strategy)
+def test_metamodel_sensor_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
+
+
+
+@given(instance=metamodel_Sensor_strategy)
+def test_metamodel_sensor_sensorName_setter(instance):
     original = instance.sensorName
     instance.sensorName = original
     assert instance.sensorName == original
-
-@given(instance=metamodel::Sensor_strategy)
-def test_metamodel::sensor_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=metamodel::Sensor_strategy)
-def test_metamodel::sensor_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original

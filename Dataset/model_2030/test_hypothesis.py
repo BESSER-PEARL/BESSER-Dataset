@@ -3,12 +3,12 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    idm::Transition,
-    idm::State,
-    idm::StateMachine,
+from python_code import (
+    idm_Transition,
+    idm_State,
+    idm_StateMachine,
 )
 
 # =============================================================================
@@ -17,23 +17,23 @@ from classes import (
 
 
 
-def test_idm::transition_is_not_abstract():
-    assert not inspect.isabstract(idm::Transition)
+def test_idm_transition_is_not_abstract():
+    assert not inspect.isabstract(idm_Transition)
 
 
-def test_idm::transition_constructor_exists():
-    assert callable(idm::Transition.__init__)
+def test_idm_transition_constructor_exists():
+    assert callable(idm_Transition.__init__)
 
 
-def test_idm::transition_constructor_args():
-    sig = inspect.signature(idm::Transition.__init__)
+def test_idm_transition_constructor_args():
+    sig = inspect.signature(idm_Transition.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_idm::transition_has_name():
-    assert hasattr(idm::Transition, "name")
+def test_idm_transition_has_name():
+    assert hasattr(idm_Transition, "name")
     descriptor = None
-    for klass in idm::Transition.__mro__:
+    for klass in idm_Transition.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -41,23 +41,23 @@ def test_idm::transition_has_name():
 
 
 
-def test_idm::state_is_not_abstract():
-    assert not inspect.isabstract(idm::State)
+def test_idm_state_is_not_abstract():
+    assert not inspect.isabstract(idm_State)
 
 
-def test_idm::state_constructor_exists():
-    assert callable(idm::State.__init__)
+def test_idm_state_constructor_exists():
+    assert callable(idm_State.__init__)
 
 
-def test_idm::state_constructor_args():
-    sig = inspect.signature(idm::State.__init__)
+def test_idm_state_constructor_args():
+    sig = inspect.signature(idm_State.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_idm::state_has_name():
-    assert hasattr(idm::State, "name")
+def test_idm_state_has_name():
+    assert hasattr(idm_State, "name")
     descriptor = None
-    for klass in idm::State.__mro__:
+    for klass in idm_State.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -65,23 +65,23 @@ def test_idm::state_has_name():
 
 
 
-def test_idm::statemachine_is_not_abstract():
-    assert not inspect.isabstract(idm::StateMachine)
+def test_idm_statemachine_is_not_abstract():
+    assert not inspect.isabstract(idm_StateMachine)
 
 
-def test_idm::statemachine_constructor_exists():
-    assert callable(idm::StateMachine.__init__)
+def test_idm_statemachine_constructor_exists():
+    assert callable(idm_StateMachine.__init__)
 
 
-def test_idm::statemachine_constructor_args():
-    sig = inspect.signature(idm::StateMachine.__init__)
+def test_idm_statemachine_constructor_args():
+    sig = inspect.signature(idm_StateMachine.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_idm::statemachine_has_name():
-    assert hasattr(idm::StateMachine, "name")
+def test_idm_statemachine_has_name():
+    assert hasattr(idm_StateMachine, "name")
     descriptor = None
-    for klass in idm::StateMachine.__mro__:
+    for klass in idm_StateMachine.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
@@ -99,66 +99,57 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-idm::Transition_strategy = st.builds(
-    idm::Transition,
+idm_Transition_strategy = st.builds(
+    idm_Transition,
     name=
         safe_text
 )
-idm::State_strategy = st.builds(
-    idm::State,
+idm_State_strategy = st.builds(
+    idm_State,
     name=
         safe_text
 )
-idm::StateMachine_strategy = st.builds(
-    idm::StateMachine,
+idm_StateMachine_strategy = st.builds(
+    idm_StateMachine,
     name=
         safe_text
 )
 
-@given(instance=idm::Transition_strategy)
+@given(instance=idm_Transition_strategy)
 @settings(max_examples=50)
-def test_idm::transition_instantiation(instance):
-    assert isinstance(instance, idm::Transition)
-
-@given(instance=idm::Transition_strategy)
-def test_idm::transition_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_idm_transition_instantiation(instance):
+    assert isinstance(instance, idm_Transition)
 
 
-@given(instance=idm::Transition_strategy)
-def test_idm::transition_name_setter(instance):
+
+@given(instance=idm_Transition_strategy)
+def test_idm_transition_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=idm::State_strategy)
+@given(instance=idm_State_strategy)
 @settings(max_examples=50)
-def test_idm::state_instantiation(instance):
-    assert isinstance(instance, idm::State)
-
-@given(instance=idm::State_strategy)
-def test_idm::state_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_idm_state_instantiation(instance):
+    assert isinstance(instance, idm_State)
 
 
-@given(instance=idm::State_strategy)
-def test_idm::state_name_setter(instance):
+
+@given(instance=idm_State_strategy)
+def test_idm_state_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
 
-@given(instance=idm::StateMachine_strategy)
+@given(instance=idm_StateMachine_strategy)
 @settings(max_examples=50)
-def test_idm::statemachine_instantiation(instance):
-    assert isinstance(instance, idm::StateMachine)
-
-@given(instance=idm::StateMachine_strategy)
-def test_idm::statemachine_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_idm_statemachine_instantiation(instance):
+    assert isinstance(instance, idm_StateMachine)
 
 
-@given(instance=idm::StateMachine_strategy)
-def test_idm::statemachine_name_setter(instance):
+
+@given(instance=idm_StateMachine_strategy)
+def test_idm_statemachine_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original

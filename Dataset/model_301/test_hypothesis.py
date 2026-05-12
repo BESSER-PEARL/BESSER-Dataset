@@ -3,49 +3,35 @@ import pytest
 from hypothesis import given, assume, settings
 import hypothesis.strategies as st
 import copy
-from datetime import date
+from datetime import date, datetime
 
-from classes import (
-    Lendable,
+from python_code import (
     Item,
-    Library::Periodical,
-    Library::CirculatingItem,
-    Library::Lendable,
-    Library::Addressable,
-    AudioVisualItem,
-    Library::VideoCassette,
-    Library::BookOnTape,
+    Library_Lendable,
     CirculatingItem,
-    Library::AudioVisualItem,
-    Library::Book,
+    Library_Book,
     Person,
-    Library::Item,
-    Library::Borrower,
-    Library::Employee,
+    Library_Item,
+    Library_Borrower,
+    Library_Employee,
     Addressable,
-    Library::Person,
-    Library::Library,
-    Library::Writer,
+    Library_Library,
+    Library_Writer,
+    Library_Addressable,
+    Library_Person,
+    AudioVisualItem,
+    Library_VideoCassette,
+    Library_BookOnTape,
+    Library_AudioVisualItem,
+    Library_Periodical,
+    Lendable,
+    Library_CirculatingItem,
     BookCategory,
 )
 
 # =============================================================================
 # SECTION 1 — STRUCTURAL TESTS
 # =============================================================================
-
-
-
-def test_lendable_is_not_abstract():
-    assert not inspect.isabstract(Lendable)
-
-
-def test_lendable_constructor_exists():
-    assert callable(Lendable.__init__)
-
-
-def test_lendable_constructor_args():
-    sig = inspect.signature(Lendable.__init__)
-    params = list(sig.parameters.keys())
 
 
 
@@ -63,141 +49,27 @@ def test_item_constructor_args():
 
 
 
-def test_library::periodical_is_not_abstract():
-    assert not inspect.isabstract(Library::Periodical)
+def test_library_lendable_is_not_abstract():
+    assert not inspect.isabstract(Library_Lendable)
 
 
-def test_library::periodical_constructor_exists():
-    assert callable(Library::Periodical.__init__)
+def test_library_lendable_constructor_exists():
+    assert callable(Library_Lendable.__init__)
 
 
-def test_library::periodical_constructor_args():
-    sig = inspect.signature(Library::Periodical.__init__)
-    params = list(sig.parameters.keys())
-    assert "issuesPerYear" in params, "Missing parameter 'issuesPerYear'"
-    assert "title" in params, "Missing parameter 'title'"
-
-def test_library::periodical_has_issuesPerYear():
-    assert hasattr(Library::Periodical, "issuesPerYear")
-    descriptor = None
-    for klass in Library::Periodical.__mro__:
-        if "issuesPerYear" in klass.__dict__:
-            descriptor = klass.__dict__["issuesPerYear"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_library::periodical_has_title():
-    assert hasattr(Library::Periodical, "title")
-    descriptor = None
-    for klass in Library::Periodical.__mro__:
-        if "title" in klass.__dict__:
-            descriptor = klass.__dict__["title"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_library::circulatingitem_is_not_abstract():
-    assert not inspect.isabstract(Library::CirculatingItem)
-
-
-def test_library::circulatingitem_constructor_exists():
-    assert callable(Library::CirculatingItem.__init__)
-
-
-def test_library::circulatingitem_constructor_args():
-    sig = inspect.signature(Library::CirculatingItem.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_library::lendable_is_not_abstract():
-    assert not inspect.isabstract(Library::Lendable)
-
-
-def test_library::lendable_constructor_exists():
-    assert callable(Library::Lendable.__init__)
-
-
-def test_library::lendable_constructor_args():
-    sig = inspect.signature(Library::Lendable.__init__)
+def test_library_lendable_constructor_args():
+    sig = inspect.signature(Library_Lendable.__init__)
     params = list(sig.parameters.keys())
     assert "copies" in params, "Missing parameter 'copies'"
 
-def test_library::lendable_has_copies():
-    assert hasattr(Library::Lendable, "copies")
+def test_library_lendable_has_copies():
+    assert hasattr(Library_Lendable, "copies")
     descriptor = None
-    for klass in Library::Lendable.__mro__:
+    for klass in Library_Lendable.__mro__:
         if "copies" in klass.__dict__:
             descriptor = klass.__dict__["copies"]
             break
     assert isinstance(descriptor, property)
-
-
-
-def test_library::addressable_is_not_abstract():
-    assert not inspect.isabstract(Library::Addressable)
-
-
-def test_library::addressable_constructor_exists():
-    assert callable(Library::Addressable.__init__)
-
-
-def test_library::addressable_constructor_args():
-    sig = inspect.signature(Library::Addressable.__init__)
-    params = list(sig.parameters.keys())
-    assert "address" in params, "Missing parameter 'address'"
-
-def test_library::addressable_has_address():
-    assert hasattr(Library::Addressable, "address")
-    descriptor = None
-    for klass in Library::Addressable.__mro__:
-        if "address" in klass.__dict__:
-            descriptor = klass.__dict__["address"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_audiovisualitem_is_not_abstract():
-    assert not inspect.isabstract(AudioVisualItem)
-
-
-def test_audiovisualitem_constructor_exists():
-    assert callable(AudioVisualItem.__init__)
-
-
-def test_audiovisualitem_constructor_args():
-    sig = inspect.signature(AudioVisualItem.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_library::videocassette_is_not_abstract():
-    assert not inspect.isabstract(Library::VideoCassette)
-
-
-def test_library::videocassette_constructor_exists():
-    assert callable(Library::VideoCassette.__init__)
-
-
-def test_library::videocassette_constructor_args():
-    sig = inspect.signature(Library::VideoCassette.__init__)
-    params = list(sig.parameters.keys())
-
-
-
-def test_library::bookontape_is_not_abstract():
-    assert not inspect.isabstract(Library::BookOnTape)
-
-
-def test_library::bookontape_constructor_exists():
-    assert callable(Library::BookOnTape.__init__)
-
-
-def test_library::bookontape_constructor_args():
-    sig = inspect.signature(Library::BookOnTape.__init__)
-    params = list(sig.parameters.keys())
 
 
 
@@ -215,89 +87,45 @@ def test_circulatingitem_constructor_args():
 
 
 
-def test_library::audiovisualitem_is_not_abstract():
-    assert not inspect.isabstract(Library::AudioVisualItem)
+def test_library_book_is_not_abstract():
+    assert not inspect.isabstract(Library_Book)
 
 
-def test_library::audiovisualitem_constructor_exists():
-    assert callable(Library::AudioVisualItem.__init__)
+def test_library_book_constructor_exists():
+    assert callable(Library_Book.__init__)
 
 
-def test_library::audiovisualitem_constructor_args():
-    sig = inspect.signature(Library::AudioVisualItem.__init__)
+def test_library_book_constructor_args():
+    sig = inspect.signature(Library_Book.__init__)
     params = list(sig.parameters.keys())
-    assert "title" in params, "Missing parameter 'title'"
-    assert "minutesLength" in params, "Missing parameter 'minutesLength'"
-    assert "damaged" in params, "Missing parameter 'damaged'"
-
-def test_library::audiovisualitem_has_title():
-    assert hasattr(Library::AudioVisualItem, "title")
-    descriptor = None
-    for klass in Library::AudioVisualItem.__mro__:
-        if "title" in klass.__dict__:
-            descriptor = klass.__dict__["title"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_library::audiovisualitem_has_minutesLength():
-    assert hasattr(Library::AudioVisualItem, "minutesLength")
-    descriptor = None
-    for klass in Library::AudioVisualItem.__mro__:
-        if "minutesLength" in klass.__dict__:
-            descriptor = klass.__dict__["minutesLength"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_library::audiovisualitem_has_damaged():
-    assert hasattr(Library::AudioVisualItem, "damaged")
-    descriptor = None
-    for klass in Library::AudioVisualItem.__mro__:
-        if "damaged" in klass.__dict__:
-            descriptor = klass.__dict__["damaged"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_library::book_is_not_abstract():
-    assert not inspect.isabstract(Library::Book)
-
-
-def test_library::book_constructor_exists():
-    assert callable(Library::Book.__init__)
-
-
-def test_library::book_constructor_args():
-    sig = inspect.signature(Library::Book.__init__)
-    params = list(sig.parameters.keys())
+    assert "category" in params, "Missing parameter 'category'"
     assert "title" in params, "Missing parameter 'title'"
     assert "pages" in params, "Missing parameter 'pages'"
-    assert "category" in params, "Missing parameter 'category'"
 
-def test_library::book_has_title():
-    assert hasattr(Library::Book, "title")
+def test_library_book_has_category():
+    assert hasattr(Library_Book, "category")
     descriptor = None
-    for klass in Library::Book.__mro__:
+    for klass in Library_Book.__mro__:
+        if "category" in klass.__dict__:
+            descriptor = klass.__dict__["category"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_library_book_has_title():
+    assert hasattr(Library_Book, "title")
+    descriptor = None
+    for klass in Library_Book.__mro__:
         if "title" in klass.__dict__:
             descriptor = klass.__dict__["title"]
             break
     assert isinstance(descriptor, property)
 
-def test_library::book_has_pages():
-    assert hasattr(Library::Book, "pages")
+def test_library_book_has_pages():
+    assert hasattr(Library_Book, "pages")
     descriptor = None
-    for klass in Library::Book.__mro__:
+    for klass in Library_Book.__mro__:
         if "pages" in klass.__dict__:
             descriptor = klass.__dict__["pages"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_library::book_has_category():
-    assert hasattr(Library::Book, "category")
-    descriptor = None
-    for klass in Library::Book.__mro__:
-        if "category" in klass.__dict__:
-            descriptor = klass.__dict__["category"]
             break
     assert isinstance(descriptor, property)
 
@@ -317,23 +145,23 @@ def test_person_constructor_args():
 
 
 
-def test_library::item_is_not_abstract():
-    assert not inspect.isabstract(Library::Item)
+def test_library_item_is_not_abstract():
+    assert not inspect.isabstract(Library_Item)
 
 
-def test_library::item_constructor_exists():
-    assert callable(Library::Item.__init__)
+def test_library_item_constructor_exists():
+    assert callable(Library_Item.__init__)
 
 
-def test_library::item_constructor_args():
-    sig = inspect.signature(Library::Item.__init__)
+def test_library_item_constructor_args():
+    sig = inspect.signature(Library_Item.__init__)
     params = list(sig.parameters.keys())
     assert "publicationDate" in params, "Missing parameter 'publicationDate'"
 
-def test_library::item_has_publicationDate():
-    assert hasattr(Library::Item, "publicationDate")
+def test_library_item_has_publicationDate():
+    assert hasattr(Library_Item, "publicationDate")
     descriptor = None
-    for klass in Library::Item.__mro__:
+    for klass in Library_Item.__mro__:
         if "publicationDate" in klass.__dict__:
             descriptor = klass.__dict__["publicationDate"]
             break
@@ -341,30 +169,30 @@ def test_library::item_has_publicationDate():
 
 
 
-def test_library::borrower_is_not_abstract():
-    assert not inspect.isabstract(Library::Borrower)
+def test_library_borrower_is_not_abstract():
+    assert not inspect.isabstract(Library_Borrower)
 
 
-def test_library::borrower_constructor_exists():
-    assert callable(Library::Borrower.__init__)
+def test_library_borrower_constructor_exists():
+    assert callable(Library_Borrower.__init__)
 
 
-def test_library::borrower_constructor_args():
-    sig = inspect.signature(Library::Borrower.__init__)
+def test_library_borrower_constructor_args():
+    sig = inspect.signature(Library_Borrower.__init__)
     params = list(sig.parameters.keys())
 
 
 
-def test_library::employee_is_not_abstract():
-    assert not inspect.isabstract(Library::Employee)
+def test_library_employee_is_not_abstract():
+    assert not inspect.isabstract(Library_Employee)
 
 
-def test_library::employee_constructor_exists():
-    assert callable(Library::Employee.__init__)
+def test_library_employee_constructor_exists():
+    assert callable(Library_Employee.__init__)
 
 
-def test_library::employee_constructor_args():
-    sig = inspect.signature(Library::Employee.__init__)
+def test_library_employee_constructor_args():
+    sig = inspect.signature(Library_Employee.__init__)
     params = list(sig.parameters.keys())
 
 
@@ -383,95 +211,267 @@ def test_addressable_constructor_args():
 
 
 
-def test_library::person_is_not_abstract():
-    assert not inspect.isabstract(Library::Person)
+def test_library_library_is_not_abstract():
+    assert not inspect.isabstract(Library_Library)
 
 
-def test_library::person_constructor_exists():
-    assert callable(Library::Person.__init__)
+def test_library_library_constructor_exists():
+    assert callable(Library_Library.__init__)
 
 
-def test_library::person_constructor_args():
-    sig = inspect.signature(Library::Person.__init__)
+def test_library_library_constructor_args():
+    sig = inspect.signature(Library_Library.__init__)
     params = list(sig.parameters.keys())
-    assert "lastName" in params, "Missing parameter 'lastName'"
-    assert "firstName" in params, "Missing parameter 'firstName'"
-
-def test_library::person_has_lastName():
-    assert hasattr(Library::Person, "lastName")
-    descriptor = None
-    for klass in Library::Person.__mro__:
-        if "lastName" in klass.__dict__:
-            descriptor = klass.__dict__["lastName"]
-            break
-    assert isinstance(descriptor, property)
-
-def test_library::person_has_firstName():
-    assert hasattr(Library::Person, "firstName")
-    descriptor = None
-    for klass in Library::Person.__mro__:
-        if "firstName" in klass.__dict__:
-            descriptor = klass.__dict__["firstName"]
-            break
-    assert isinstance(descriptor, property)
-
-
-
-def test_library::library_is_not_abstract():
-    assert not inspect.isabstract(Library::Library)
-
-
-def test_library::library_constructor_exists():
-    assert callable(Library::Library.__init__)
-
-
-def test_library::library_constructor_args():
-    sig = inspect.signature(Library::Library.__init__)
-    params = list(sig.parameters.keys())
-    assert "people" in params, "Missing parameter 'people'"
     assert "name" in params, "Missing parameter 'name'"
+    assert "people" in params, "Missing parameter 'people'"
 
-def test_library::library_has_people():
-    assert hasattr(Library::Library, "people")
+def test_library_library_has_name():
+    assert hasattr(Library_Library, "name")
     descriptor = None
-    for klass in Library::Library.__mro__:
+    for klass in Library_Library.__mro__:
+        if "name" in klass.__dict__:
+            descriptor = klass.__dict__["name"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_library_library_has_people():
+    assert hasattr(Library_Library, "people")
+    descriptor = None
+    for klass in Library_Library.__mro__:
         if "people" in klass.__dict__:
             descriptor = klass.__dict__["people"]
             break
     assert isinstance(descriptor, property)
 
-def test_library::library_has_name():
-    assert hasattr(Library::Library, "name")
-    descriptor = None
-    for klass in Library::Library.__mro__:
-        if "name" in klass.__dict__:
-            descriptor = klass.__dict__["name"]
-            break
-    assert isinstance(descriptor, property)
 
 
-
-def test_library::writer_is_not_abstract():
-    assert not inspect.isabstract(Library::Writer)
-
-
-def test_library::writer_constructor_exists():
-    assert callable(Library::Writer.__init__)
+def test_library_writer_is_not_abstract():
+    assert not inspect.isabstract(Library_Writer)
 
 
-def test_library::writer_constructor_args():
-    sig = inspect.signature(Library::Writer.__init__)
+def test_library_writer_constructor_exists():
+    assert callable(Library_Writer.__init__)
+
+
+def test_library_writer_constructor_args():
+    sig = inspect.signature(Library_Writer.__init__)
     params = list(sig.parameters.keys())
     assert "name" in params, "Missing parameter 'name'"
 
-def test_library::writer_has_name():
-    assert hasattr(Library::Writer, "name")
+def test_library_writer_has_name():
+    assert hasattr(Library_Writer, "name")
     descriptor = None
-    for klass in Library::Writer.__mro__:
+    for klass in Library_Writer.__mro__:
         if "name" in klass.__dict__:
             descriptor = klass.__dict__["name"]
             break
     assert isinstance(descriptor, property)
+
+
+
+def test_library_addressable_is_not_abstract():
+    assert not inspect.isabstract(Library_Addressable)
+
+
+def test_library_addressable_constructor_exists():
+    assert callable(Library_Addressable.__init__)
+
+
+def test_library_addressable_constructor_args():
+    sig = inspect.signature(Library_Addressable.__init__)
+    params = list(sig.parameters.keys())
+    assert "address" in params, "Missing parameter 'address'"
+
+def test_library_addressable_has_address():
+    assert hasattr(Library_Addressable, "address")
+    descriptor = None
+    for klass in Library_Addressable.__mro__:
+        if "address" in klass.__dict__:
+            descriptor = klass.__dict__["address"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_library_person_is_not_abstract():
+    assert not inspect.isabstract(Library_Person)
+
+
+def test_library_person_constructor_exists():
+    assert callable(Library_Person.__init__)
+
+
+def test_library_person_constructor_args():
+    sig = inspect.signature(Library_Person.__init__)
+    params = list(sig.parameters.keys())
+    assert "firstName" in params, "Missing parameter 'firstName'"
+    assert "lastName" in params, "Missing parameter 'lastName'"
+
+def test_library_person_has_firstName():
+    assert hasattr(Library_Person, "firstName")
+    descriptor = None
+    for klass in Library_Person.__mro__:
+        if "firstName" in klass.__dict__:
+            descriptor = klass.__dict__["firstName"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_library_person_has_lastName():
+    assert hasattr(Library_Person, "lastName")
+    descriptor = None
+    for klass in Library_Person.__mro__:
+        if "lastName" in klass.__dict__:
+            descriptor = klass.__dict__["lastName"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_audiovisualitem_is_not_abstract():
+    assert not inspect.isabstract(AudioVisualItem)
+
+
+def test_audiovisualitem_constructor_exists():
+    assert callable(AudioVisualItem.__init__)
+
+
+def test_audiovisualitem_constructor_args():
+    sig = inspect.signature(AudioVisualItem.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_library_videocassette_is_not_abstract():
+    assert not inspect.isabstract(Library_VideoCassette)
+
+
+def test_library_videocassette_constructor_exists():
+    assert callable(Library_VideoCassette.__init__)
+
+
+def test_library_videocassette_constructor_args():
+    sig = inspect.signature(Library_VideoCassette.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_library_bookontape_is_not_abstract():
+    assert not inspect.isabstract(Library_BookOnTape)
+
+
+def test_library_bookontape_constructor_exists():
+    assert callable(Library_BookOnTape.__init__)
+
+
+def test_library_bookontape_constructor_args():
+    sig = inspect.signature(Library_BookOnTape.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_library_audiovisualitem_is_not_abstract():
+    assert not inspect.isabstract(Library_AudioVisualItem)
+
+
+def test_library_audiovisualitem_constructor_exists():
+    assert callable(Library_AudioVisualItem.__init__)
+
+
+def test_library_audiovisualitem_constructor_args():
+    sig = inspect.signature(Library_AudioVisualItem.__init__)
+    params = list(sig.parameters.keys())
+    assert "title" in params, "Missing parameter 'title'"
+    assert "minutesLength" in params, "Missing parameter 'minutesLength'"
+    assert "damaged" in params, "Missing parameter 'damaged'"
+
+def test_library_audiovisualitem_has_title():
+    assert hasattr(Library_AudioVisualItem, "title")
+    descriptor = None
+    for klass in Library_AudioVisualItem.__mro__:
+        if "title" in klass.__dict__:
+            descriptor = klass.__dict__["title"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_library_audiovisualitem_has_minutesLength():
+    assert hasattr(Library_AudioVisualItem, "minutesLength")
+    descriptor = None
+    for klass in Library_AudioVisualItem.__mro__:
+        if "minutesLength" in klass.__dict__:
+            descriptor = klass.__dict__["minutesLength"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_library_audiovisualitem_has_damaged():
+    assert hasattr(Library_AudioVisualItem, "damaged")
+    descriptor = None
+    for klass in Library_AudioVisualItem.__mro__:
+        if "damaged" in klass.__dict__:
+            descriptor = klass.__dict__["damaged"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_library_periodical_is_not_abstract():
+    assert not inspect.isabstract(Library_Periodical)
+
+
+def test_library_periodical_constructor_exists():
+    assert callable(Library_Periodical.__init__)
+
+
+def test_library_periodical_constructor_args():
+    sig = inspect.signature(Library_Periodical.__init__)
+    params = list(sig.parameters.keys())
+    assert "issuesPerYear" in params, "Missing parameter 'issuesPerYear'"
+    assert "title" in params, "Missing parameter 'title'"
+
+def test_library_periodical_has_issuesPerYear():
+    assert hasattr(Library_Periodical, "issuesPerYear")
+    descriptor = None
+    for klass in Library_Periodical.__mro__:
+        if "issuesPerYear" in klass.__dict__:
+            descriptor = klass.__dict__["issuesPerYear"]
+            break
+    assert isinstance(descriptor, property)
+
+def test_library_periodical_has_title():
+    assert hasattr(Library_Periodical, "title")
+    descriptor = None
+    for klass in Library_Periodical.__mro__:
+        if "title" in klass.__dict__:
+            descriptor = klass.__dict__["title"]
+            break
+    assert isinstance(descriptor, property)
+
+
+
+def test_lendable_is_not_abstract():
+    assert not inspect.isabstract(Lendable)
+
+
+def test_lendable_constructor_exists():
+    assert callable(Lendable.__init__)
+
+
+def test_lendable_constructor_args():
+    sig = inspect.signature(Lendable.__init__)
+    params = list(sig.parameters.keys())
+
+
+
+def test_library_circulatingitem_is_not_abstract():
+    assert not inspect.isabstract(Library_CirculatingItem)
+
+
+def test_library_circulatingitem_constructor_exists():
+    assert callable(Library_CirculatingItem.__init__)
+
+
+def test_library_circulatingitem_constructor_args():
+    sig = inspect.signature(Library_CirculatingItem.__init__)
+    params = list(sig.parameters.keys())
 
 def test_bookcategory_exists():
     # Check that the Enumeration exists
@@ -481,9 +481,9 @@ def test_bookcategory_has_all_literals():
     # Collect the names of literals in this Enumeration
     enum_literals = [lit.name for lit in BookCategory]
     expected_literals = [
-        "ScienceFiction",
         "Mystery",
         "Biography",
+        "ScienceFiction",
     ]
     # Check that all expected literals exist
     for lit_name in expected_literals:
@@ -501,46 +501,78 @@ safe_text = st.text(
     ),
     min_size=1,
 ).filter(lambda s: s[0].isalpha())
-Lendable_strategy = st.builds(
-    Lendable,
-)
 Item_strategy = st.builds(
     Item,
 )
-Library::Periodical_strategy = st.builds(
-    Library::Periodical,
-    issuesPerYear=
-        st.integers(),
-    title=
-        safe_text
-)
-Library::CirculatingItem_strategy = st.builds(
-    Library::CirculatingItem,
-)
-Library::Lendable_strategy = st.builds(
-    Library::Lendable,
+Library_Lendable_strategy = st.builds(
+    Library_Lendable,
     copies=
         st.integers()
 )
-Library::Addressable_strategy = st.builds(
-    Library::Addressable,
+CirculatingItem_strategy = st.builds(
+    CirculatingItem,
+)
+Library_Book_strategy = st.builds(
+    Library_Book,
+    category=
+        safe_text,
+    title=
+        safe_text,
+    pages=
+        st.integers()
+)
+Person_strategy = st.builds(
+    Person,
+)
+Library_Item_strategy = st.builds(
+    Library_Item,
+    publicationDate=
+        st.dates()
+)
+Library_Borrower_strategy = st.builds(
+    Library_Borrower,
+)
+Library_Employee_strategy = st.builds(
+    Library_Employee,
+)
+Addressable_strategy = st.builds(
+    Addressable,
+)
+Library_Library_strategy = st.builds(
+    Library_Library,
+    name=
+        safe_text,
+    people=
+        safe_text
+)
+Library_Writer_strategy = st.builds(
+    Library_Writer,
+    name=
+        safe_text
+)
+Library_Addressable_strategy = st.builds(
+    Library_Addressable,
     address=
+        safe_text
+)
+Library_Person_strategy = st.builds(
+    Library_Person,
+    firstName=
+        safe_text,
+    lastName=
         safe_text
 )
 AudioVisualItem_strategy = st.builds(
     AudioVisualItem,
 )
-Library::VideoCassette_strategy = st.builds(
-    Library::VideoCassette,
+Library_VideoCassette_strategy = st.builds(
+    Library_VideoCassette,
 )
-Library::BookOnTape_strategy = st.builds(
-    Library::BookOnTape,
+Library_BookOnTape_strategy = st.builds(
+    Library_BookOnTape,
 )
-CirculatingItem_strategy = st.builds(
-    CirculatingItem,
-)
-Library::AudioVisualItem_strategy = st.builds(
-    Library::AudioVisualItem,
+Library_AudioVisualItem_strategy = st.builds(
+    Library_AudioVisualItem,
     title=
         safe_text,
     minutesLength=
@@ -548,324 +580,244 @@ Library::AudioVisualItem_strategy = st.builds(
     damaged=
         st.booleans()
 )
-Library::Book_strategy = st.builds(
-    Library::Book,
-    title=
-        safe_text,
-    pages=
+Library_Periodical_strategy = st.builds(
+    Library_Periodical,
+    issuesPerYear=
         st.integers(),
-    category=
+    title=
         safe_text
 )
-Person_strategy = st.builds(
-    Person,
+Lendable_strategy = st.builds(
+    Lendable,
 )
-Library::Item_strategy = st.builds(
-    Library::Item,
-    publicationDate=
-        st.dates()
+Library_CirculatingItem_strategy = st.builds(
+    Library_CirculatingItem,
 )
-Library::Borrower_strategy = st.builds(
-    Library::Borrower,
-)
-Library::Employee_strategy = st.builds(
-    Library::Employee,
-)
-Addressable_strategy = st.builds(
-    Addressable,
-)
-Library::Person_strategy = st.builds(
-    Library::Person,
-    lastName=
-        safe_text,
-    firstName=
-        safe_text
-)
-Library::Library_strategy = st.builds(
-    Library::Library,
-    people=
-        safe_text,
-    name=
-        safe_text
-)
-Library::Writer_strategy = st.builds(
-    Library::Writer,
-    name=
-        safe_text
-)
-
-@given(instance=Lendable_strategy)
-@settings(max_examples=50)
-def test_lendable_instantiation(instance):
-    assert isinstance(instance, Lendable)
 
 @given(instance=Item_strategy)
 @settings(max_examples=50)
 def test_item_instantiation(instance):
     assert isinstance(instance, Item)
 
-@given(instance=Library::Periodical_strategy)
+@given(instance=Library_Lendable_strategy)
 @settings(max_examples=50)
-def test_library::periodical_instantiation(instance):
-    assert isinstance(instance, Library::Periodical)
-
-@given(instance=Library::Periodical_strategy)
-def test_library::periodical_issuesPerYear_type(instance):
-    assert isinstance(instance.issuesPerYear, int)
+def test_library_lendable_instantiation(instance):
+    assert isinstance(instance, Library_Lendable)
 
 
-@given(instance=Library::Periodical_strategy)
-def test_library::periodical_issuesPerYear_setter(instance):
-    original = instance.issuesPerYear
-    instance.issuesPerYear = original
-    assert instance.issuesPerYear == original
 
-@given(instance=Library::Periodical_strategy)
-def test_library::periodical_title_type(instance):
-    assert isinstance(instance.title, str)
-
-
-@given(instance=Library::Periodical_strategy)
-def test_library::periodical_title_setter(instance):
-    original = instance.title
-    instance.title = original
-    assert instance.title == original
-
-@given(instance=Library::CirculatingItem_strategy)
-@settings(max_examples=50)
-def test_library::circulatingitem_instantiation(instance):
-    assert isinstance(instance, Library::CirculatingItem)
-
-@given(instance=Library::Lendable_strategy)
-@settings(max_examples=50)
-def test_library::lendable_instantiation(instance):
-    assert isinstance(instance, Library::Lendable)
-
-@given(instance=Library::Lendable_strategy)
-def test_library::lendable_copies_type(instance):
-    assert isinstance(instance.copies, int)
-
-
-@given(instance=Library::Lendable_strategy)
-def test_library::lendable_copies_setter(instance):
+@given(instance=Library_Lendable_strategy)
+def test_library_lendable_copies_setter(instance):
     original = instance.copies
     instance.copies = original
     assert instance.copies == original
-
-@given(instance=Library::Addressable_strategy)
-@settings(max_examples=50)
-def test_library::addressable_instantiation(instance):
-    assert isinstance(instance, Library::Addressable)
-
-@given(instance=Library::Addressable_strategy)
-def test_library::addressable_address_type(instance):
-    assert isinstance(instance.address, str)
-
-
-@given(instance=Library::Addressable_strategy)
-def test_library::addressable_address_setter(instance):
-    original = instance.address
-    instance.address = original
-    assert instance.address == original
-
-@given(instance=AudioVisualItem_strategy)
-@settings(max_examples=50)
-def test_audiovisualitem_instantiation(instance):
-    assert isinstance(instance, AudioVisualItem)
-
-@given(instance=Library::VideoCassette_strategy)
-@settings(max_examples=50)
-def test_library::videocassette_instantiation(instance):
-    assert isinstance(instance, Library::VideoCassette)
-
-@given(instance=Library::BookOnTape_strategy)
-@settings(max_examples=50)
-def test_library::bookontape_instantiation(instance):
-    assert isinstance(instance, Library::BookOnTape)
 
 @given(instance=CirculatingItem_strategy)
 @settings(max_examples=50)
 def test_circulatingitem_instantiation(instance):
     assert isinstance(instance, CirculatingItem)
 
-@given(instance=Library::AudioVisualItem_strategy)
+@given(instance=Library_Book_strategy)
 @settings(max_examples=50)
-def test_library::audiovisualitem_instantiation(instance):
-    assert isinstance(instance, Library::AudioVisualItem)
-
-@given(instance=Library::AudioVisualItem_strategy)
-def test_library::audiovisualitem_title_type(instance):
-    assert isinstance(instance.title, str)
+def test_library_book_instantiation(instance):
+    assert isinstance(instance, Library_Book)
 
 
-@given(instance=Library::AudioVisualItem_strategy)
-def test_library::audiovisualitem_title_setter(instance):
-    original = instance.title
-    instance.title = original
-    assert instance.title == original
 
-@given(instance=Library::AudioVisualItem_strategy)
-def test_library::audiovisualitem_minutesLength_type(instance):
-    assert isinstance(instance.minutesLength, int)
-
-
-@given(instance=Library::AudioVisualItem_strategy)
-def test_library::audiovisualitem_minutesLength_setter(instance):
-    original = instance.minutesLength
-    instance.minutesLength = original
-    assert instance.minutesLength == original
-
-@given(instance=Library::AudioVisualItem_strategy)
-def test_library::audiovisualitem_damaged_type(instance):
-    assert isinstance(instance.damaged, bool)
-
-
-@given(instance=Library::AudioVisualItem_strategy)
-def test_library::audiovisualitem_damaged_setter(instance):
-    original = instance.damaged
-    instance.damaged = original
-    assert instance.damaged == original
-
-@given(instance=Library::Book_strategy)
-@settings(max_examples=50)
-def test_library::book_instantiation(instance):
-    assert isinstance(instance, Library::Book)
-
-@given(instance=Library::Book_strategy)
-def test_library::book_title_type(instance):
-    assert isinstance(instance.title, str)
-
-
-@given(instance=Library::Book_strategy)
-def test_library::book_title_setter(instance):
-    original = instance.title
-    instance.title = original
-    assert instance.title == original
-
-@given(instance=Library::Book_strategy)
-def test_library::book_pages_type(instance):
-    assert isinstance(instance.pages, int)
-
-
-@given(instance=Library::Book_strategy)
-def test_library::book_pages_setter(instance):
-    original = instance.pages
-    instance.pages = original
-    assert instance.pages == original
-
-@given(instance=Library::Book_strategy)
-def test_library::book_category_type(instance):
-    assert isinstance(instance.category, str)
-
-
-@given(instance=Library::Book_strategy)
-def test_library::book_category_setter(instance):
+@given(instance=Library_Book_strategy)
+def test_library_book_category_setter(instance):
     original = instance.category
     instance.category = original
     assert instance.category == original
+
+
+
+@given(instance=Library_Book_strategy)
+def test_library_book_title_setter(instance):
+    original = instance.title
+    instance.title = original
+    assert instance.title == original
+
+
+
+@given(instance=Library_Book_strategy)
+def test_library_book_pages_setter(instance):
+    original = instance.pages
+    instance.pages = original
+    assert instance.pages == original
 
 @given(instance=Person_strategy)
 @settings(max_examples=50)
 def test_person_instantiation(instance):
     assert isinstance(instance, Person)
 
-@given(instance=Library::Item_strategy)
+@given(instance=Library_Item_strategy)
 @settings(max_examples=50)
-def test_library::item_instantiation(instance):
-    assert isinstance(instance, Library::Item)
-
-@given(instance=Library::Item_strategy)
-def test_library::item_publicationDate_type(instance):
-    assert isinstance(instance.publicationDate, date)
+def test_library_item_instantiation(instance):
+    assert isinstance(instance, Library_Item)
 
 
-@given(instance=Library::Item_strategy)
-def test_library::item_publicationDate_setter(instance):
+
+@given(instance=Library_Item_strategy)
+def test_library_item_publicationDate_setter(instance):
     original = instance.publicationDate
     instance.publicationDate = original
     assert instance.publicationDate == original
 
-@given(instance=Library::Borrower_strategy)
+@given(instance=Library_Borrower_strategy)
 @settings(max_examples=50)
-def test_library::borrower_instantiation(instance):
-    assert isinstance(instance, Library::Borrower)
+def test_library_borrower_instantiation(instance):
+    assert isinstance(instance, Library_Borrower)
 
-@given(instance=Library::Employee_strategy)
+@given(instance=Library_Employee_strategy)
 @settings(max_examples=50)
-def test_library::employee_instantiation(instance):
-    assert isinstance(instance, Library::Employee)
+def test_library_employee_instantiation(instance):
+    assert isinstance(instance, Library_Employee)
 
 @given(instance=Addressable_strategy)
 @settings(max_examples=50)
 def test_addressable_instantiation(instance):
     assert isinstance(instance, Addressable)
 
-@given(instance=Library::Person_strategy)
+@given(instance=Library_Library_strategy)
 @settings(max_examples=50)
-def test_library::person_instantiation(instance):
-    assert isinstance(instance, Library::Person)
-
-@given(instance=Library::Person_strategy)
-def test_library::person_lastName_type(instance):
-    assert isinstance(instance.lastName, str)
+def test_library_library_instantiation(instance):
+    assert isinstance(instance, Library_Library)
 
 
-@given(instance=Library::Person_strategy)
-def test_library::person_lastName_setter(instance):
-    original = instance.lastName
-    instance.lastName = original
-    assert instance.lastName == original
 
-@given(instance=Library::Person_strategy)
-def test_library::person_firstName_type(instance):
-    assert isinstance(instance.firstName, str)
+@given(instance=Library_Library_strategy)
+def test_library_library_name_setter(instance):
+    original = instance.name
+    instance.name = original
+    assert instance.name == original
 
 
-@given(instance=Library::Person_strategy)
-def test_library::person_firstName_setter(instance):
-    original = instance.firstName
-    instance.firstName = original
-    assert instance.firstName == original
 
-@given(instance=Library::Library_strategy)
-@settings(max_examples=50)
-def test_library::library_instantiation(instance):
-    assert isinstance(instance, Library::Library)
-
-@given(instance=Library::Library_strategy)
-def test_library::library_people_type(instance):
-    assert isinstance(instance.people, str)
-
-
-@given(instance=Library::Library_strategy)
-def test_library::library_people_setter(instance):
+@given(instance=Library_Library_strategy)
+def test_library_library_people_setter(instance):
     original = instance.people
     instance.people = original
     assert instance.people == original
 
-@given(instance=Library::Library_strategy)
-def test_library::library_name_type(instance):
-    assert isinstance(instance.name, str)
-
-
-@given(instance=Library::Library_strategy)
-def test_library::library_name_setter(instance):
-    original = instance.name
-    instance.name = original
-    assert instance.name == original
-
-@given(instance=Library::Writer_strategy)
+@given(instance=Library_Writer_strategy)
 @settings(max_examples=50)
-def test_library::writer_instantiation(instance):
-    assert isinstance(instance, Library::Writer)
-
-@given(instance=Library::Writer_strategy)
-def test_library::writer_name_type(instance):
-    assert isinstance(instance.name, str)
+def test_library_writer_instantiation(instance):
+    assert isinstance(instance, Library_Writer)
 
 
-@given(instance=Library::Writer_strategy)
-def test_library::writer_name_setter(instance):
+
+@given(instance=Library_Writer_strategy)
+def test_library_writer_name_setter(instance):
     original = instance.name
     instance.name = original
     assert instance.name == original
+
+@given(instance=Library_Addressable_strategy)
+@settings(max_examples=50)
+def test_library_addressable_instantiation(instance):
+    assert isinstance(instance, Library_Addressable)
+
+
+
+@given(instance=Library_Addressable_strategy)
+def test_library_addressable_address_setter(instance):
+    original = instance.address
+    instance.address = original
+    assert instance.address == original
+
+@given(instance=Library_Person_strategy)
+@settings(max_examples=50)
+def test_library_person_instantiation(instance):
+    assert isinstance(instance, Library_Person)
+
+
+
+@given(instance=Library_Person_strategy)
+def test_library_person_firstName_setter(instance):
+    original = instance.firstName
+    instance.firstName = original
+    assert instance.firstName == original
+
+
+
+@given(instance=Library_Person_strategy)
+def test_library_person_lastName_setter(instance):
+    original = instance.lastName
+    instance.lastName = original
+    assert instance.lastName == original
+
+@given(instance=AudioVisualItem_strategy)
+@settings(max_examples=50)
+def test_audiovisualitem_instantiation(instance):
+    assert isinstance(instance, AudioVisualItem)
+
+@given(instance=Library_VideoCassette_strategy)
+@settings(max_examples=50)
+def test_library_videocassette_instantiation(instance):
+    assert isinstance(instance, Library_VideoCassette)
+
+@given(instance=Library_BookOnTape_strategy)
+@settings(max_examples=50)
+def test_library_bookontape_instantiation(instance):
+    assert isinstance(instance, Library_BookOnTape)
+
+@given(instance=Library_AudioVisualItem_strategy)
+@settings(max_examples=50)
+def test_library_audiovisualitem_instantiation(instance):
+    assert isinstance(instance, Library_AudioVisualItem)
+
+
+
+@given(instance=Library_AudioVisualItem_strategy)
+def test_library_audiovisualitem_title_setter(instance):
+    original = instance.title
+    instance.title = original
+    assert instance.title == original
+
+
+
+@given(instance=Library_AudioVisualItem_strategy)
+def test_library_audiovisualitem_minutesLength_setter(instance):
+    original = instance.minutesLength
+    instance.minutesLength = original
+    assert instance.minutesLength == original
+
+
+
+@given(instance=Library_AudioVisualItem_strategy)
+def test_library_audiovisualitem_damaged_setter(instance):
+    original = instance.damaged
+    instance.damaged = original
+    assert instance.damaged == original
+
+@given(instance=Library_Periodical_strategy)
+@settings(max_examples=50)
+def test_library_periodical_instantiation(instance):
+    assert isinstance(instance, Library_Periodical)
+
+
+
+@given(instance=Library_Periodical_strategy)
+def test_library_periodical_issuesPerYear_setter(instance):
+    original = instance.issuesPerYear
+    instance.issuesPerYear = original
+    assert instance.issuesPerYear == original
+
+
+
+@given(instance=Library_Periodical_strategy)
+def test_library_periodical_title_setter(instance):
+    original = instance.title
+    instance.title = original
+    assert instance.title == original
+
+@given(instance=Lendable_strategy)
+@settings(max_examples=50)
+def test_lendable_instantiation(instance):
+    assert isinstance(instance, Lendable)
+
+@given(instance=Library_CirculatingItem_strategy)
+@settings(max_examples=50)
+def test_library_circulatingitem_instantiation(instance):
+    assert isinstance(instance, Library_CirculatingItem)
